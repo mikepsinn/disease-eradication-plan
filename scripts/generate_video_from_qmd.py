@@ -42,7 +42,8 @@ sys.path.insert(0, str(Path(__file__).parent))
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from google.genai import types
-from lib.tts import generate_speech
+from lib.tts import generate_speech, DEFAULT_VOICE, DEFAULT_SPEAKING_INSTRUCTIONS
+from lib.alignment import align_chapter, timestamps_for_char_range
 from lib.veo import generate_video
 from lib.image_gen import google_client
 from dih_models.variable_replacement import load_variables, replace_variables
@@ -168,6 +169,23 @@ def parse_qmd(qmd_path: Path) -> dict:
         if not keyframes:
             keyframes = [{"keyframe_prompt": "", "veo_prompt": ""}]
 
+        # Extract per-keyframe narration chunks from the interleaved structure.
+        # Split body by direction divs: text between them is the narration for
+        # the keyframe that follows.
+        dir_pattern = r":::\{\.scene-direction\}.*?:::"
+        chunks = re.split(dir_pattern, body, flags=re.DOTALL)
+        for ci, chunk in enumerate(chunks):
+            chunk = re.sub(
+                r":::\{\.scene-keyframe\}.*?:::", "", chunk, flags=re.DOTALL
+            )
+            chunk = re.sub(r"!\[.*?\]\(.*?\)(?:\{.*?\})?", "", chunk)
+            chunk = re.sub(r"^---+\s*$", "", chunk, flags=re.MULTILINE)
+            chunks[ci] = re.sub(r"\n{3,}", "\n\n", chunk).strip()
+
+        # Map: chunks[i] is the narration preceding keyframes[i]
+        for ki, kf in enumerate(keyframes):
+            kf["narration_chunk"] = chunks[ki] if ki < len(chunks) else ""
+
         # Extract narration: strip direction divs, keyframe divs, images, rules
         narration = body
         narration = re.sub(
@@ -201,7 +219,27 @@ def resolve_narration(scenes: list[dict], variables: dict):
             scene["narration_text"], variables, highlight_missing=False
         )
         resolved = re.sub(r"\{\{<\s*var\s+\w+\s*>\}\}", "", resolved)
+        resolved = _strip_ci(resolved)
         scene["narration_resolved"] = resolved
+
+
+def _strip_ci(text: str) -> str:
+    """Strip confidence intervals like '(95% CI: 324 years-712 years)' from resolved values."""
+    return re.sub(r"\s*\(95% CI:[^)]+\)", "", text)
+
+
+def resolve_keyframe_prompts(scenes: list[dict], variables: dict):
+    """Resolve {{< var >}} in keyframe prompts, veo prompts, and narration chunks."""
+    for scene in scenes:
+        for kf in scene.get("keyframes", []):
+            for key in ("keyframe_prompt", "veo_prompt", "narration_chunk"):
+                if kf.get(key):
+                    resolved = replace_variables(
+                        kf[key], variables, highlight_missing=False
+                    )
+                    resolved = re.sub(r"\{\{<\s*var\s+\w+\s*>\}\}", "", resolved)
+                    resolved = _strip_ci(resolved)
+                    kf[key] = resolved
 
 
 def full_narration(scenes: list[dict]) -> str:
@@ -213,7 +251,10 @@ def full_narration(scenes: list[dict]) -> str:
 # =============================================================================
 
 def allocate_timestamps(scenes: list[dict], total_s: float):
-    """Distribute audio duration across scenes proportionally by text length."""
+    """Distribute audio duration across scenes proportionally by text length.
+
+    Fallback used when alignment data is not available.
+    """
     total_chars = sum(len(s["narration_resolved"]) for s in scenes)
     cur = 0.0
     for s in scenes:
@@ -222,6 +263,65 @@ def allocate_timestamps(scenes: list[dict], total_s: float):
         s["end_s"] = round(cur + dur, 2)
         cur += dur
     scenes[-1]["end_s"] = round(total_s, 2)
+
+
+def allocate_timestamps_aligned(
+    scenes: list[dict], audio_path: Path, text_path: Path, total_s: float
+):
+    """Use forced alignment (stable-ts) to find precise scene boundaries.
+
+    Runs Whisper alignment on the full narration audio, then looks up the
+    character range of each scene's text to get exact start/end timestamps.
+    Falls back to proportional allocation on failure.
+    """
+    print("\n=== Forced Alignment ===")
+    alignment_output = audio_path.parent / "alignment.json"
+
+    chapter = {"index": 0, "title": "full-narration"}
+    words = align_chapter(
+        wav_path=audio_path,
+        text_path=text_path,
+        output_path=alignment_output,
+        model_name="base",
+        chapter=chapter,
+    )
+
+    if not words:
+        print("  [WARN] Alignment returned no words, falling back to proportional")
+        allocate_timestamps(scenes, total_s)
+        return
+
+    # Build the full narration text the same way full_narration() does
+    full_text = "\n\n".join(s["narration_resolved"] for s in scenes)
+
+    # Find each scene's character range in the full text
+    cursor = 0
+    for s in scenes:
+        scene_text = s["narration_resolved"]
+        char_start = full_text.find(scene_text, cursor)
+        if char_start < 0:
+            char_start = cursor
+        char_end = char_start + len(scene_text)
+        cursor = char_end
+
+        start_ms, end_ms = timestamps_for_char_range(words, char_start, char_end)
+        s["start_s"] = round(start_ms / 1000.0, 2)
+        s["end_s"] = round(end_ms / 1000.0, 2)
+
+    # Ensure first scene starts at 0 and last scene ends at total duration
+    scenes[0]["start_s"] = 0.0
+    scenes[-1]["end_s"] = round(total_s, 2)
+
+    # Fill any gaps between scenes (alignment may leave small gaps)
+    for i in range(1, len(scenes)):
+        if scenes[i]["start_s"] != scenes[i - 1]["end_s"]:
+            midpoint = (scenes[i]["start_s"] + scenes[i - 1]["end_s"]) / 2
+            scenes[i - 1]["end_s"] = round(midpoint, 2)
+            scenes[i]["start_s"] = round(midpoint, 2)
+
+    print("  Scene timestamps (aligned):")
+    for s in scenes:
+        print(f"    {s['index']:2d}. {s['start_s']:6.1f}s - {s['end_s']:6.1f}s  {s['title']}")
 
 
 def scene_dur(s: dict) -> float:
@@ -244,11 +344,8 @@ def generate_tts(text: str, cfg: dict, paths: VideoPaths) -> Path:
         print(f"  [CACHED] {paths.audio_path.name}")
         return paths.audio_path
 
-    voice = cfg.get("tts-voice", "Kore")
-    instr = cfg.get(
-        "tts-instructions",
-        "Read clearly and naturally. Slightly quick pace.",
-    )
+    voice = cfg.get("tts-voice", DEFAULT_VOICE)
+    instr = cfg.get("tts-instructions", DEFAULT_SPEAKING_INSTRUCTIONS)
     print(f"  Voice: {voice}  |  {len(text):,} chars")
     generate_speech(
         text=text, output_path=paths.audio_path, voice_name=voice,
@@ -274,16 +371,27 @@ def audio_duration(path: Path) -> float:
 
 def generate_keyframe(scene_index: int, kf_index: int,
                       keyframe_prompt: str, style: str,
-                      paths: VideoPaths) -> Path:
+                      paths: VideoPaths,
+                      narration_chunk: str = "",
+                      full_narration: str = "") -> Path:
     paths.keyframes_dir.mkdir(parents=True, exist_ok=True)
     out = paths.keyframe(scene_index, kf_index)
     if out.exists():
         print(f"  [CACHED] {out.name}")
         return out
 
-    print(f"  Generating keyframe {scene_index}-{kf_index}: {keyframe_prompt[:60]}...")
-    prompt = f"{style} {keyframe_prompt}"
-    prompt += "\n\nIMPORTANT: Generate image with aspect ratio 16:9."
+    print(f"  Generating keyframe {scene_index}-{kf_index}: {(narration_chunk or keyframe_prompt)[:60]}...")
+
+    if narration_chunk:
+        prompt = (
+            f"Visual style: {style}\n\n"
+            f"Illustrate this line:\n\"{narration_chunk}\"\n\n"
+            f"Given its context in this script:\n{full_narration}\n\n"
+        )
+    else:
+        prompt = f"{style} {keyframe_prompt}"
+
+    prompt += "\nIMPORTANT: Generate image with aspect ratio 16:9."
 
     response = google_client.models.generate_content(
         model=GEMINI_IMAGE_MODEL,
@@ -329,6 +437,10 @@ def generate_keyframes_all(scenes: list[dict], cfg: dict,
     total = sum(len(s["keyframes"]) for s in scenes)
     print(f"  {total} keyframes across {len(scenes)} scenes")
 
+    # Build full narration for context
+    full_narr = "\n\n".join(s.get("narration_resolved", s["narration_text"])
+                            for s in scenes)
+
     kfs: dict[tuple[int, int], Path] = {}
     for scene in scenes:
         for ki, kf in enumerate(scene["keyframes"], 1):
@@ -337,6 +449,8 @@ def generate_keyframes_all(scenes: list[dict], cfg: dict,
                     kfs[(scene["index"], ki)] = generate_keyframe(
                         scene["index"], ki, kf["keyframe_prompt"],
                         style, paths,
+                        narration_chunk=kf.get("narration_chunk", ""),
+                        full_narration=full_narr,
                     )
                     break
                 except RuntimeError as e:
@@ -361,14 +475,11 @@ def animate_clip(scene_index: int, kf_index: int, veo_prompt: str,
         print(f"  [CACHED] {out.name}")
         return out
 
-    style = cfg.get("visual-style", "")
-    neg = cfg.get("negative-prompt", "")
-    prompt = f"{veo_prompt} {style}"
-
     print(f"  Animating {scene_index}-{kf_index}...")
     generate_video(
-        prompt=prompt, output_path=out, first_frame_path=kf_path,
-        aspect_ratio="16:9", duration_seconds=8, negative_prompt=neg,
+        prompt="Animate this image naturally.",
+        output_path=out, first_frame_path=kf_path,
+        aspect_ratio="16:9", duration_seconds=8,
     )
     return out
 
@@ -612,6 +723,7 @@ def main():
     # Resolve variables
     variables = load_variables(VARIABLES_YML)
     resolve_narration(all_scenes, variables)
+    resolve_keyframe_prompts(all_scenes, variables)
 
     # --list
     if args.list:
@@ -660,7 +772,7 @@ def main():
     dur = audio_duration(audio)
     print(f"  Audio duration: {dur:.1f}s")
 
-    allocate_timestamps(all_scenes, dur)
+    allocate_timestamps_aligned(all_scenes, audio, paths.prepared_txt, dur)
 
     if args.tts_only:
         show_scenes(all_scenes, paths)

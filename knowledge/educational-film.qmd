@@ -109,7 +109,7 @@ If cancer had oil reserves, you would have cured it by 2003. Instead you spent t
 ![](../assets/images/educational-film/02-04.jpg)
 :::
 
-Your destructive economy is {{< var global_destructive_economy_pct_gdp >}} of GDP and growing. Once it exceeds the productive economy, stealing becomes more profitable than building. That is a global failed state, and your species has never reversed one.
+Your destructive economy is {{< var global_destructive_economy_pct_gdp >}} of GDP and growing. Once stealing pays better than building, everyone becomes a thief. You have a word for places where this already happened. You call them "failed states." Your species has never unfailed one.
 
 :::{.scene-direction}
 **Keyframe:** A split scene. Left side: a factory with workers building things, shrinking and crumbling. Right side: cartoon thieves and hackers multiplying, growing larger, stealing the factory's output over a low wall. The thieves' side is winning. A tipping scale in the center tips toward the thieves. Do not include any text.
@@ -125,7 +125,7 @@ The Soviet Union collapsed at 15%. You hit 25% in {{< var destructive_economy_ye
 
 ## Scene 3: The Money {.scene}
 
-The most fascinating discovery about your species is that you only do things when given small pieces of paper with dead presidents on them. These are called "money," which is pretend value that becomes real value if everyone pretends hard enough.
+The most fascinating discovery about your species is that you only do things when given small pieces of paper with presidents on them. These are called "money," which is pretend value that becomes real value if everyone pretends hard enough.
 
 :::{.scene-direction}
 **Keyframe:** A pale-skinned young alien woman with small antennae, black bob haircut, and cosmic-patterned dress at a lab bench, examining a dollar bill through a microscope with tweezers. Bite marks on another bill. One stuck in a potted plant's soil. Rejected hypotheses crossed out on a chalkboard. Do not include any text (chalkboard should have scribbled formulas and crossed-out diagrams, not readable words).
@@ -149,7 +149,7 @@ On Wishonia, we skip the mass murder step and just give people food directly, bu
 
 ## Scene 4: The Machine {.scene}
 
-You sell Incentive Alignment Bonds that raise {{< var treaty_campaign_total_cost >}} to legally bribe politicians into passing a 1% treaty: redirect military spending to pragmatic clinical trials.
+You sell Incentive Alignment Bonds that raise {{< var treaty_campaign_total_cost >}} to legally bribe politicians into passing a 1% treaty: redirect 1% of murder money to medicine money.
 
 :::{.scene-direction}
 **Keyframe:** A 1950s chalkboard flow diagram drawn in thick chalk arrows. Left: a bond certificate labeled "BONDS" with an arrow to a bag of money labeled "$1B". Arrow down to a group of tiny politicians with dollar signs for eyes, labeled "BRIBE". Arrow right to a document labeled "1% TREATY". Arrow right to a huge arrow labeled "TRIALS" that explodes into an avalanche of medicine bottles cascading off the board. Each stage is bigger than the last. Display text labels at each stage: "BONDS", "$1B", "BRIBE", "1% TREATY", "TRIALS".
@@ -162,7 +162,7 @@ You sell Incentive Alignment Bonds that raise {{< var treaty_campaign_total_cost
 
 {{< var dih_treasury_medical_research_pct >}} of the resulting {{< var treaty_annual_funding >}} per year funds your trials. {{< var victory_bond_funding_pct >}} pays your investors {{< var victory_bond_annual_return_pct >}} annual returns. {{< var iab_political_incentive_funding_pct >}} funds a SuperPAC, which is like a normal PAC but super, that supports politicians who vote for your treaty and funds the opponents of those who don't. How is {{< var victory_bond_annual_return_pct >}} possible? You spent {{< var treaty_campaign_total_cost >}} once to unlock {{< var treaty_annual_funding >}} per year. Permanently.
 
-And the humans you assume would block this do not actually have to lose. Defense contractors keep most of their budget and can buy the bonds. Pharma gets trials paid for. Insurers get fewer expensive sick people. Lobbyists keep lobbying. You are not asking the machine to become moral. You are paying it to point the same greed at disease instead of war.
+And nobody has to become a better person. Defense contractors keep their budget. Pharma gets free trials. Insurers get fewer dead customers, which sounds callous but is literally how insurance works. You're not asking the machine to become moral. You're paying it to point the same greed at disease instead of war.
 
 :::{.scene-direction}
 **Keyframe:** A 1950s pie chart showing the money split. A huge 80% slice pours out medicine bottles. A 10% slice rains coins onto delighted investors in monocles. In the remaining 10% slice, a tiny politician is being picked up by an arcade crane claw. The crane operator looks bored. Display text: "{{< var dih_treasury_medical_research_pct >}}" on the large slice, "{{< var victory_bond_funding_pct >}}" on the investor slice, "{{< var iab_political_incentive_funding_pct >}}" on the politician slice.
@@ -187,7 +187,7 @@ Returns grow with the treaty, so every bondholder becomes your permanent lobbyis
 
 ## Scene 5: The Trials {.scene}
 
-Currently it costs {{< var traditional_phase3_cost_per_patient >}} per patient to test whether a medicine works, because you build separate facilities, hire separate staff, and make patients drive across town for extra visits. Your treaty drops that to {{< var dfda_pragmatic_trial_cost_per_patient >}} by making the trial your healthcare. Your doctor prescribes the most promising treatment, your outcomes get tracked automatically, done.
+Currently it costs {{< var traditional_phase3_cost_per_patient >}} per patient to test whether a medicine works, because you build a separate building, hire separate humans, and make the sick human drive across town to be sick in the correct building. Your treaty drops that to {{< var dfda_pragmatic_trial_cost_per_patient >}} by making the trial your healthcare. Your doctor prescribes the most promising treatment, your outcomes get tracked automatically, done.
 
 :::{.scene-direction}
 **Keyframe:** Two price tags side by side on a white background. Left: a comically enormous price tag the size of a house, casting a shadow. Right: a tiny price tag the size of a postage stamp. A single identical stick-figure patient stands beneath each. The left patient is crushed under the weight. The right patient waves cheerfully. Display text: "{{< var traditional_phase3_cost_per_patient >}}" on the left price tag, "{{< var dfda_pragmatic_trial_cost_per_patient >}}" on the right price tag.
@@ -200,7 +200,7 @@ Currently it costs {{< var traditional_phase3_cost_per_patient >}} per patient t
 
 Your 1% funds {{< var dih_patients_fundable_annually_nounit >}} patients per year instead of {{< var current_trial_slots_available_nounit >}}. At current rates, clearing the backlog of untreated diseases takes {{< var status_quo_queue_clearance_years_nounit >}} years. Your treaty compresses that to {{< var dfda_queue_clearance_years_nounit >}} years.
 
-And because the trial is the healthcare, you also remove the bureaucratic lag between "this works" and "you may now have it." Faster discovery plus faster access. That is why the lives-saved number becomes so absurd.
+And because the trial IS the healthcare, you also remove the years-long pause between "this works" and "you may now have it." Currently a drug can pass safety testing and then sit in a cabinet for years while a committee studies whether it works well enough. The committee could answer that question faster by giving it to the patients dying in line, but that would be too simple.
 
 :::{.scene-direction}
 **Keyframe:** Two horizontal bars on a chalkboard, one above the other. Top bar: enormously long, stretching off the right edge of the board and continuing onto the wall. Bottom bar: short, ending neatly with a finish-line flag. Both start at the same left edge. A label "WITHOUT TREATY" on the top, "WITH TREATY" on the bottom. Display text: "~{{< var status_quo_queue_clearance_years_nounit >}} YEARS" at the end of the top bar (off the board edge), "~{{< var dfda_queue_clearance_years_nounit >}} YEARS" at the end of the bottom bar.
@@ -260,11 +260,6 @@ They cut {{< var post_ww2_military_cut_pct >}}. You're asking for 1%.
 **Animation:** Camera pans up the skyscraper bar through clouds, then whip-pans to the microscopic 1% bar. The ant shakes its head.
 :::
 
-:::{.scene-direction}
-**Keyframe:** A skyscraper-sized bar chart towers on the left, disappearing into clouds. On the right, a nearly invisible speck. An ant next to the tiny bar is taller than it. A tiny flag planted on top so people can find it. Display text: "{{< var post_ww2_military_cut_pct >}}" on the skyscraper bar, "1%" on the tiny bar.
-**Animation:** Camera pans up the skyscraper bar through clouds, then whip-pans to the microscopic 1% bar. The ant shakes its head.
-:::
-
 :::{.scene-keyframe}
 ![](../assets/images/educational-film/06-04.jpg)
 :::
@@ -282,7 +277,7 @@ Your math: {{< var treaty_campaign_total_cost >}} in. Over the centuries it take
 ![](../assets/images/educational-film/07-01.jpg)
 :::
 
-The compound growth from gradually transitioning from a destructive to a productive economy multiplies your average lifetime income by {{< var treaty_path_lifetime_income_multiplier >}}.
+When you stop spending money on destruction and start spending it on not-destruction, turns out things get produced. Over your lifetime, the compounding makes everyone {{< var treaty_path_lifetime_income_multiplier >}} richer. Your economists will publish papers explaining why this was obvious in retrospect.
 
 :::{.scene-direction}
 **Keyframe:** A 1950s bar chart comparison. Left bar labeled "NOW" is short. Right bar labeled "TREATY" is so tall it has burst through the ceiling, with construction workers on scaffolding still extending it. Rubble and plaster everywhere. The bar has its own elevator. Do not include any text except "NOW" and "TREATY" labels on the bars.
@@ -332,7 +327,7 @@ Every minute you don't act, {{< var global_disease_deaths_per_minute_nounit >}} 
 ![](../assets/images/educational-film/08-04.jpg)
 :::
 
-The only reason this plan seems crazy is that everyone thinks it's crazy. If nobody thought it was crazy, it would be done tomorrow, and everyone would soon be {{< var treaty_path_lifetime_income_multiplier >}} richer. So stop thinking it's crazy and go vote.
+The only reason this plan seems crazy is that everyone thinks it's crazy. If nobody thought it was crazy, it would be done tomorrow, and everyone would soon be {{< var treaty_path_lifetime_income_multiplier >}} richer. Communism took over half your planet in a single lifetime, required mass murder, and was a terrible idea. You have the internet and an idea that mainly requires people to click a button and then receive money.
 
 :::{.scene-direction}
 **Keyframe:** A vast crowd of cartoon people, all frozen, all looking sideways at each other. Nobody moves. Everyone waits for someone else to go first. In the center, one person has taken a single step forward. A tiny spotlight finds them. Do not include any text.
