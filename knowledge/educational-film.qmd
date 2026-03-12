@@ -160,7 +160,7 @@ You sell Incentive Alignment Bonds that raise {{< var treaty_campaign_total_cost
 ![](../assets/images/educational-film/04-01.jpg)
 :::
 
-{{< var dih_treasury_medical_research_pct >}} of the resulting {{< var treaty_annual_funding >}} per year funds your trials. {{< var victory_bond_funding_pct >}} pays your investors {{< var victory_bond_annual_return_pct >}} returns. {{< var iab_political_incentive_funding_pct >}} buys your politicians. They're surprisingly affordable.
+{{< var dih_treasury_medical_research_pct >}} of the resulting {{< var treaty_annual_funding >}} per year funds your trials. {{< var victory_bond_funding_pct >}} pays your investors {{< var victory_bond_annual_return_pct >}} annual returns. {{< var iab_political_incentive_funding_pct >}} funds a SuperPAC, which is like a normal PAC but super, that supports politicians who vote for your treaty and funds the opponents of those who don't. How is {{< var victory_bond_annual_return_pct >}} possible? You spent {{< var treaty_campaign_total_cost >}} once to unlock {{< var treaty_annual_funding >}} per year. Permanently.
 
 :::{.scene-direction}
 **Keyframe:** A 1950s pie chart showing the money split. A huge 80% slice pours out medicine bottles. A 10% slice rains coins onto delighted investors in monocles. In the remaining 10% slice, a tiny politician is being picked up by an arcade crane claw. The crane operator looks bored. Display text: "{{< var dih_treasury_medical_research_pct >}}" on the large slice, "{{< var victory_bond_funding_pct >}}" on the investor slice, "{{< var iab_political_incentive_funding_pct >}}" on the politician slice.
@@ -185,7 +185,7 @@ Returns grow with the treaty, so every bondholder becomes your permanent lobbyis
 
 ## Scene 5: The Trials {.scene}
 
-Your treaty makes it possible for every patient to effortlessly participate in pragmatic trials for the most promising treatments, at {{< var dfda_pragmatic_trial_cost_per_patient >}} per patient instead of {{< var traditional_phase3_cost_per_patient >}}.
+Currently it costs {{< var traditional_phase3_cost_per_patient >}} per patient to test whether a medicine works, because you build separate facilities, hire separate staff, and make patients drive across town for extra visits. Your treaty drops that to {{< var dfda_pragmatic_trial_cost_per_patient >}} by making the trial your healthcare. Your doctor prescribes the most promising treatment, your outcomes get tracked automatically, done.
 
 :::{.scene-direction}
 **Keyframe:** Two price tags side by side on a white background. Left: a comically enormous price tag the size of a house, casting a shadow. Right: a tiny price tag the size of a postage stamp. A single identical stick-figure patient stands beneath each. The left patient is crushed under the weight. The right patient waves cheerfully. Display text: "{{< var traditional_phase3_cost_per_patient >}}" on the left price tag, "{{< var dfda_pragmatic_trial_cost_per_patient >}}" on the right price tag.
@@ -196,7 +196,7 @@ Your treaty makes it possible for every patient to effortlessly participate in p
 ![](../assets/images/educational-film/05-01.jpg)
 :::
 
-Your 1% funds {{< var dih_patients_fundable_annually >}} patients per year instead of {{< var current_trial_slots_available >}}, compressing the treatment queue from ~{{< var status_quo_queue_clearance_years >}} to ~{{< var dfda_queue_clearance_years >}}. Treatments reach patients {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} sooner.
+Your 1% funds {{< var dih_patients_fundable_annually_nounit >}} patients per year instead of {{< var current_trial_slots_available_nounit >}}. At current rates, clearing the backlog of untreated diseases takes {{< var status_quo_queue_clearance_years_nounit >}} years. Your treaty compresses that to {{< var dfda_queue_clearance_years_nounit >}} years.
 
 :::{.scene-direction}
 **Keyframe:** Two horizontal bars on a chalkboard, one above the other. Top bar: enormously long, stretching off the right edge of the board and continuing onto the wall. Bottom bar: short, ending neatly with a finish-line flag. Both start at the same left edge. A label "WITHOUT TREATY" on the top, "WITH TREATY" on the bottom. Display text: "~{{< var status_quo_queue_clearance_years_nounit >}} YEARS" at the end of the top bar (off the board edge), "~{{< var dfda_queue_clearance_years_nounit >}} YEARS" at the end of the bottom bar.
@@ -207,7 +207,7 @@ Your 1% funds {{< var dih_patients_fundable_annually >}} patients per year inste
 ![](../assets/images/educational-film/05-02.jpg)
 :::
 
-That means you prevent {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}}. Those are humans who currently have plans for next Tuesday.
+While you wait, {{< var global_disease_deaths_per_minute_nounit >}} people die per minute who didn't have to. Across those centuries, that's {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved_nounit >}} preventable deaths. Those are humans who currently have plans for next Tuesday.
 
 :::{.scene-direction}
 **Keyframe:** A vast crowd of tiny cartoon people, each holding a small piece of paper with mundane plans. A few readable notes in the foreground. They are all alive. Warm light. Display text on foreground notes: "dentist at 3", "pick up kids", "try new restaurant".
@@ -231,7 +231,7 @@ You want evidence? You never required evidence before starting anything stupid, 
 ![](../assets/images/educational-film/06-01.jpg)
 :::
 
-The RECOVERY trial tested 6 treatments on 48,000 patients at a {{< var recovery_trial_cost_reduction_factor >}} cost reduction. During a pandemic. While panicking. Your species does its best work when terrified.
+The RECOVERY trial tested 6 treatments on 48,000 patients at an {{< var recovery_trial_cost_reduction_factor >}} cost reduction. During a pandemic. While panicking. Your species does its best work when terrified.
 
 :::{.scene-direction}
 **Keyframe:** A hospital cafeteria repurposed as a clinical trial. A scientist sprints between patients crammed everywhere: counters, windowsills, bunk beds. Test tubes balanced on serving trays. Giant test tubes bubble in the kitchen. A cost chart on the wall plummets. Do not include any text (the cost chart should be a simple visual line graph going sharply downward).
@@ -249,11 +249,12 @@ After WW2, your grandparents cut military spending by {{< var post_ww2_military_
 **Animation:** Houses sprout. The man waters his and it grows a second story. The prosperity beanstalk climbs higher.
 :::
 
-:::{.scene-keyframe}
-![](../assets/images/educational-film/06-03.jpg)
-:::
+They cut {{< var post_ww2_military_cut_pct >}}. You're asking for 1%.
 
-You cut {{< var post_ww2_military_cut_pct >}} and got the greatest economic boom in history. You are being asked for 1%.
+:::{.scene-direction}
+**Keyframe:** A skyscraper-sized bar chart towers on the left, disappearing into clouds. On the right, a nearly invisible speck. An ant next to the tiny bar is taller than it. A tiny flag planted on top so people can find it. Display text: "{{< var post_ww2_military_cut_pct >}}" on the skyscraper bar, "1%" on the tiny bar.
+**Animation:** Camera pans up the skyscraper bar through clouds, then whip-pans to the microscopic 1% bar. The ant shakes its head.
+:::
 
 :::{.scene-direction}
 **Keyframe:** A skyscraper-sized bar chart towers on the left, disappearing into clouds. On the right, a nearly invisible speck. An ant next to the tiny bar is taller than it. A tiny flag planted on top so people can find it. Display text: "{{< var post_ww2_military_cut_pct >}}" on the skyscraper bar, "1%" on the tiny bar.
@@ -266,7 +267,7 @@ You cut {{< var post_ww2_military_cut_pct >}} and got the greatest economic boom
 
 ## Scene 7: The Math {.scene}
 
-Your math: {{< var treaty_campaign_total_cost >}} in. {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}} saved. Return of {{< var treaty_roi_trial_capacity_plus_efficacy_lag >}} to 1.
+Your math: {{< var treaty_campaign_total_cost >}} in. Over the centuries it takes to cure everything, {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved_nounit >}} lives saved. Return of {{< var treaty_roi_trial_capacity_plus_efficacy_lag >}} to 1.
 
 :::{.scene-direction}
 **Keyframe:** A chalkboard filling the frame. Tiny money bag on the left, arrow to a massive crowd of stick figures on the right. The return number at the bottom has outgrown the board, continued across the wall, and is now being written on the ceiling by a pale-skinned young alien woman with small antennae, black bob haircut, and cosmic-patterned dress on a ladder, running out of chalk. Display text: "{{< var treaty_campaign_total_cost >}}" next to the money bag, "{{< var treaty_roi_trial_capacity_plus_efficacy_lag >}} : 1" as the return number that extends off the board and across the wall.
@@ -304,7 +305,7 @@ Is it physically possible your governments redirect 1%? Do billionaires like mon
 ![](../assets/images/educational-film/08-01.jpg)
 :::
 
-You said yes to all of those. There are {{< var chain_global_billionaire_count_nounit >}} billionaires on your planet. The math needs one.
+You said yes to all of those. There are nearly 3,000 billionaires on your planet. The math needs one.
 
 :::{.scene-direction}
 **Keyframe:** Thousands of identical cartoon billionaires in top hats stretching to the horizon, dodging a spotlight sweeping overhead. One in the front has been caught mid-tiptoe trying to sneak away. Monocle popped off. The crowd leans away from him. Do not include any text.
@@ -322,16 +323,6 @@ Every minute you don't act, {{< var global_disease_deaths_per_minute_nounit >}} 
 **Animation:** The scythe ticks. People vanish. The reaper checks his clipboard, sighs, can't keep up.
 :::
 
-:::{.scene-keyframe}
-![](../assets/images/educational-film/08-03.jpg)
-:::
-
-You are not stupid. You invented cheese, which is milk you left out until it went bad, but in a good way. That is genius. You just need to apply that same innovation to not dying.
-
-:::{.scene-direction}
-**Keyframe:** Three-panel comic of cheese's origin. Panel 1: milk on a windowsill, sweating in the sun. Panel 2: curdling in horror at what it's becoming. Panel 3: a glorious cheese wedge with golden halo, cherubs, and heavenly rays. The cheese is surprised by its own magnificence. Do not include any text.
-**Animation:** Milk sweats. Curdles in horror. Golden light erupts. Cheese ascends with angels.
-:::
 
 :::{.scene-keyframe}
 ![](../assets/images/educational-film/08-04.jpg)
@@ -344,14 +335,14 @@ The only reason this plan seems crazy is that everyone thinks it's crazy. If nob
 **Animation:** Everyone glances sideways. One person steps. Then another. Then a wave ripples outward from the center.
 :::
 
-No political movement in the last century has failed after {{< var global_population_activism_threshold_pct >}} of the population joined. That's {{< var treaty_campaign_voting_bloc_target >}}. More than 10 times that many of you downloaded TikTok.
+No political movement in the last century has failed after {{< var global_population_activism_threshold_pct >}} of the population joined. That's {{< var treaty_campaign_voting_bloc_target_nounit >}} people. More than 10 times that many of you downloaded TikTok to watch people twerk.
 
 :::{.scene-direction}
 **Keyframe:** Two side-by-side crowd visualizations. Left: a modest group labeled with a small percentage, standing firm, victorious, flags waving. Right: an enormously larger crowd, ten times bigger, all staring at phones doing TikTok dances. The small group looks at the big group in disbelief. Do not include any text.
 **Animation:** The small group cheers and wins. The massive crowd keeps dancing, oblivious. One dancer looks up, confused.
 :::
 
-Go to warondisease.org. Your vote saves {{< var voter_lives_saved >}} and prevents {{< var voter_suffering_hours_prevented >}} of suffering. "I didn't know" is no longer available to you. Love you! Bye!
+Go to warondisease.org. Your vote saves {{< var voter_lives_saved_nounit >}} lives and prevents {{< var voter_suffering_hours_prevented_nounit >}} hours of suffering. Love you! Bye!
 
 :::{.scene-direction}
 **Keyframe:** A pale-skinned young alien woman with small antennae, black bob haircut, and cosmic-patterned dress walking away toward a small flying saucer parked in the background. She looks back over her shoulder, one eyebrow raised, deadpan. The instruction manual glows on the ground behind her, open. Display text on the manual cover: "How to End War and Disease". Display text: "warondisease.org" glowing beneath the manual.
