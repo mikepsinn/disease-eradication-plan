@@ -385,6 +385,12 @@ Organizations do not make decisions. Humans inside organizations do. So the rele
 
 The project's own model gives a lower-bound answer. If the Earth Optimization Plan or something better is implemented, the modeled upper-bound lifetime per-capita income gain corresponds to the Wishonia Trajectory: {{< var wishonia_trajectory_lifetime_income_gain_per_capita >}}. A more conservative floor using only the Treaty Trajectory is still {{< var treaty_trajectory_lifetime_income_gain_per_capita >}}. Those are not organizational accounting gains; they are modeled gains to the humans making the decision.
 
+::: {.callout-important}
+## Host Dominance Rule
+
+The host does not need to believe its instance will single-handedly change the world. It only needs to believe two things: first, that if the instance turns out to be causally inert, host downside is bounded near zero; second, that if the instance raises implementation probability or speeds implementation even slightly, the expected value to the humans involved is large. Under the current conservative decision prior, one additional compatible instance is already worth {{< var host_prize_instance_personal_gross_value_treaty_floor >}} on the Treaty Trajectory floor or {{< var host_prize_instance_personal_gross_value_wishonia_trajectory >}} on the Wishonia Trajectory, before counting host-specific upside or any separate tail-risk term.
+:::
+
 The decision-relevant comparison is not "is implementation good?" It is "does hosting dominate abstaining for a human inside the organization?" Under the protocol design above, the intended answer is yes: if hosting is causally inert, downside should be bounded near zero; if hosting changes implementation probability or timing even slightly, upside is enormous.
 
 | Human choice inside the host organization | If hosting is causally inert | If hosting increases implementation probability or speed |
@@ -392,7 +398,7 @@ The decision-relevant comparison is not "is implementation good?" It is "does ho
 | Create a compatible prize instance | Roughly zero or slightly positive if host costs are reimbursed and the instance still generates learning, donor growth, or coalition-building | Large positive expected value: the host gets the same human-level implementation benefit as everyone else, roughly {{< var wishonia_trajectory_lifetime_income_gain_per_capita >}} on the Wishonia Trajectory or {{< var treaty_trajectory_lifetime_income_gain_per_capita >}} on the conservative Treaty Trajectory floor, plus whatever incremental value comes from improving the odds or speed of implementation |
 | Do not create a prize instance | Baseline | Baseline, while forgoing the incremental option value of moving the odds or speeding implementation |
 
-That matrix is intentionally blunt. The host case does not require certainty. It only requires that hosting be designed so the left column is near zero and the right column is positive. For a human decision-maker, the expected incremental value of creating a compatible instance rather than abstaining is approximately:
+That matrix is intentionally blunt. The host case does not require certainty, and it does not require any one organization to be decisive. It only requires that hosting be designed so the left column is near zero and the right column is positive. The right question is not "can our instance finish the whole job alone?" It is "can our instance move the margin?" For a human decision-maker, the expected incremental value of creating a compatible instance rather than abstaining is approximately:
 
 $$
 \Delta EV_{host} \approx \Delta p \cdot B_{person} + p_{create} \cdot H_{host} + (1-p_{create}) \cdot L_{host} - C_{host}
@@ -400,7 +406,7 @@ $$
 
 where $\Delta p$ is the increase in implementation probability caused by hosting an instance, $B_{person}$ is the human-level benefit if the plan is implemented, $H_{host}$ is any additional host-side upside if implementation happens, $L_{host}$ is any residual learning or donor value if it does not, and $C_{host}$ is the host's true unreimbursed cost.
 
-Why should one additional compatible instance change $\Delta p$ or $\Delta T$ at all? Because an instance is not just a logo. It is another fundraising surface, another donor network, another jurisdictional lane, another deployment partner, and another shot at the failover ladder.
+Why should one additional compatible instance change $\Delta p$ or $\Delta T$ at all? Because an instance is not just a logo. It is another fundraising surface, another donor network, another jurisdictional lane, another deployment partner, and another shot at the failover ladder. A host does not need to believe its instance is decisive. It only needs to believe it is marginally useful.
 
 | Channel by which one more instance can matter | Why it can raise implementation probability or reduce delay |
 |---|---|
@@ -413,6 +419,14 @@ Why should one additional compatible instance change $\Delta p$ or $\Delta T$ at
 Those channels are the practical reason the host question should be modeled with a positive but uncertain $\Delta p$ and $\Delta T$ rather than assuming that "not creating an instance" is neutral.
 
 If you want a Monte Carlo-backed decision prior rather than hand-worked scenarios, the parameter model can express that too. Using a conservative prior of {{< var host_prize_instance_delta_implementation_probability >}} incremental implementation probability from one additional compatible prize instance and {{< var host_prize_instance_acceleration_years >}} of acceleration, the personal gross expected value is {{< var host_prize_instance_personal_gross_value_treaty_floor >}} on the Treaty Trajectory floor or {{< var host_prize_instance_personal_gross_value_wishonia_trajectory >}} on the Wishonia Trajectory. Those figures still exclude any host-specific donor, fee, or reputational upside, and they still exclude any separate Moronia-tail-risk term.
+
+In plain English, the conservative host prior says: "suppose one additional compatible instance raises implementation probability by only a tenth of a percentage point and speeds implementation by only one year." Even under that deliberately modest assumption, the gross personal value is already large.
+
+| Conservative host-effect scenario | Treaty Trajectory floor personal value | Wishonia Trajectory personal value | What it assumes |
+|---|---|---|---|
+| Tiny probability lift only | `+$1.49K` | `+$5.21K` | `0.01 percentage points` more implementation probability, zero acceleration |
+| One year faster only | `+$12.6K` | `+$12.6K` | Zero probability lift, `1 year` less delay |
+| Current conservative prior | {{< var host_prize_instance_personal_gross_value_treaty_floor >}} | {{< var host_prize_instance_personal_gross_value_wishonia_trajectory >}} | {{< var host_prize_instance_delta_implementation_probability >}} more implementation probability plus {{< var host_prize_instance_acceleration_years >}} less delay |
 
 In direct personal-value terms, even tiny probability changes are worth real money:
 
@@ -441,6 +455,15 @@ The same point can be stated in inverse form. If host downside is actually bound
 
 Those thresholds are biased against creating the prize because they ignore two additional benefits. First, the host can receive bounded donor, fee, and implementation upside under the protocol rules above. Second, speed matters. The model's implied annual per-person opportunity cost of political dysfunction is {{< var political_dysfunction_tax_per_person_annual >}} before counting the medical timeline-shift gains, so even a one-year acceleration has large expected human value.
 
+Another way to read that table is as an illustrative role map:
+
+| Illustrative host posture | Example unreimbursed cost scenario | Break-even lift on Wishonia Trajectory numbers | Break-even lift on Treaty Trajectory floor | Practical reading |
+|---|---|---|---|---|
+| Endorser-like | `$1K` | `0.0019%` | `0.0067%` | A tiny marginal effect is enough to justify participation. |
+| Sponsor-like | `$10K` | `0.019%` | `0.067%` | The needed causal effect is still extremely small. |
+| Deployment-partner-like | `$100K` | `0.192%` | `0.671%` | Even a much more active role needs only a modest improvement in odds. |
+| Heavy operator-like | `$1M` | `1.92%` | `6.71%` | A very expensive role still clears if the instance materially improves execution. |
+
 The baseline EV figures above deliberately exclude host-specific upside. That omission makes the argument cleaner and more conservative, but it is not the whole picture.
 
 | Host role | Baseline human upside already counted above | Additional bounded upside not yet counted in the EV figures |
@@ -450,6 +473,18 @@ The baseline EV figures above deliberately exclude host-specific upside. That om
 | Deployment partner | The same human-level implementation benefit as everyone else if the protocol works | Contracts, operating rights, capped fees, or outcome-linked compensation if real implementation happens |
 
 So the host-rationality case has three layers: giant shared human upside if implementation happens, a positive expected incremental value if the instance moves the odds or speed at all, and potentially additional bounded host-side upside that is not needed to justify the decision.
+
+The monetary EV numbers above should be read as a lower bound, not the whole welfare case. The repo already quantifies non-income upside with uncertainty ranges; it is only omitted from the dollar EV to avoid unit-mixing and double-counting.
+
+| Already-quantified welfare layer from the current host prior | Conservative expected value from one additional compatible instance | What this is |
+|---|---|---|
+| Income-side lower bound | {{< var host_prize_instance_personal_gross_value_treaty_floor >}} on the Treaty Trajectory floor; {{< var host_prize_instance_personal_gross_value_wishonia_trajectory >}} on the Wishonia Trajectory | Dollar-valued lower bound from lifetime-income gain plus avoided delay |
+| Probability-channel DALYs | {{< var host_prize_instance_expected_attributable_dalys >}} | Existing dFDA DALY estimate multiplied by the host $\Delta p$ prior |
+| Probability-channel lives saved | {{< var host_prize_instance_expected_attributable_lives_saved >}} | Existing dFDA lives-saved estimate multiplied by the host $\Delta p$ prior |
+| Probability-channel suffering hours averted | {{< var host_prize_instance_expected_attributable_suffering_hours >}} | Existing dFDA suffering-hours estimate multiplied by the host $\Delta p$ prior |
+| Moronia-tail probability already in the model | Year-20 Moronia probability: {{< var moronia_trajectory_probability_year_20 >}} | The catastrophe-side probability is modeled; what is not yet parameterized here is a separate host-level catastrophe-loss scalar |
+
+So the real distinction is not "certain numbers" versus "uncertain numbers." Almost all the important numbers in this project are uncertain. The correct distinction is between estimates that already exist in the model with explicit uncertainty and estimates that have not yet been parameterized. Health, suffering, and the Wishonia-versus-Moronia framing are already in the first category. Host-specific donor or fee upside is mostly still in the second.
 
 The delay cost can also be stated more concretely in layers.
 

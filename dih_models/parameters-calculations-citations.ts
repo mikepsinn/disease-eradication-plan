@@ -3460,17 +3460,6 @@ export const HEALTHCARE_VS_MILITARY_MULTIPLIER_RATIO: Parameter = {
   latex: "\\begin{gathered}\nr_{health/mil} \\\\\n= \\frac{k_{health}}{k_{mil}} \\\\\n= \\frac{4.3}{0.6} \\\\\n= 7.17\n\\end{gathered}",
 };
 
-export const HOST_PRIZE_INSTANCE_PERSONAL_GROSS_VALUE_FULL_PATH: Parameter = {
-  value: 64727.26155962363,
-  unit: "USD",
-  displayName: "Personal Gross Value from One Prize Instance (Wishonia Trajectory)",
-  description: "Personal gross expected value of one additional compatible prize instance using the Wishonia Trajectory lifetime-gain model plus avoided delay value. Excludes host-specific donor, fee, or reputational upside, so this is deliberately conservative.",
-  sourceType: "calculated",
-  confidence: "high",
-  formula: "HOST_PRIZE_INSTANCE_DELTA_IMPLEMENTATION_PROBABILITY x WISHONIA_TRAJECTORY_LIFETIME_INCOME_GAIN_PER_CAPITA + HOST_PRIZE_INSTANCE_ACCELERATION_YEARS x POLITICAL_DYSFUNCTION_TAX_PER_PERSON_ANNUAL",
-  latex: "\\begin{gathered}\nEV_{host,full} \\\\\n= \\Delta p_{host} \\cdot \\Delta Y_{lifetime,wish} \\\\\n+ \\Delta T_{host} \\cdot T_{pd,pc}\n\\end{gathered}",
-};
-
 export const HOST_PRIZE_INSTANCE_PERSONAL_GROSS_VALUE_TREATY_FLOOR: Parameter = {
   value: 27491.504493689583,
   unit: "USD",
@@ -3480,6 +3469,17 @@ export const HOST_PRIZE_INSTANCE_PERSONAL_GROSS_VALUE_TREATY_FLOOR: Parameter = 
   confidence: "high",
   formula: "HOST_PRIZE_INSTANCE_DELTA_IMPLEMENTATION_PROBABILITY x TREATY_TRAJECTORY_LIFETIME_INCOME_GAIN_PER_CAPITA + HOST_PRIZE_INSTANCE_ACCELERATION_YEARS x POLITICAL_DYSFUNCTION_TAX_PER_PERSON_ANNUAL",
   latex: "\\begin{gathered}\nEV_{host,treaty} \\\\\n= \\Delta p_{host} \\cdot \\Delta Y_{lifetime,treaty} \\\\\n+ \\Delta T_{host} \\cdot T_{pd,pc}\n\\end{gathered}",
+};
+
+export const HOST_PRIZE_INSTANCE_PERSONAL_GROSS_VALUE_WISHONIA_TRAJECTORY: Parameter = {
+  value: 64727.26155962363,
+  unit: "USD",
+  displayName: "Personal Gross Value from One Prize Instance (Wishonia Trajectory)",
+  description: "Personal gross expected value of one additional compatible prize instance using the Wishonia Trajectory lifetime-gain model plus avoided delay value. Excludes host-specific donor, fee, or reputational upside, so this is deliberately conservative.",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "HOST_PRIZE_INSTANCE_DELTA_IMPLEMENTATION_PROBABILITY x WISHONIA_TRAJECTORY_LIFETIME_INCOME_GAIN_PER_CAPITA + HOST_PRIZE_INSTANCE_ACCELERATION_YEARS x POLITICAL_DYSFUNCTION_TAX_PER_PERSON_ANNUAL",
+  latex: "\\begin{gathered}\nEV_{host,wish} \\\\\n= \\Delta p_{host} \\cdot \\Delta Y_{lifetime,wish} \\\\\n+ \\Delta T_{host} \\cdot T_{pd,pc}\n\\end{gathered}",
 };
 
 export const IAB_MECHANISM_BENEFIT_COST_RATIO: Parameter = {
@@ -6447,8 +6447,8 @@ export const parameters = {
   GLOBAL_POLITICAL_REFORM_INVESTMENT,
   GLOBAL_TOTAL_HEALTH_AND_WAR_COST_ANNUAL,
   HEALTHCARE_VS_MILITARY_MULTIPLIER_RATIO,
-  HOST_PRIZE_INSTANCE_PERSONAL_GROSS_VALUE_FULL_PATH,
   HOST_PRIZE_INSTANCE_PERSONAL_GROSS_VALUE_TREATY_FLOOR,
+  HOST_PRIZE_INSTANCE_PERSONAL_GROSS_VALUE_WISHONIA_TRAJECTORY,
   IAB_MECHANISM_BENEFIT_COST_RATIO,
   IAB_POLITICAL_INCENTIVE_FUNDING_ANNUAL,
   IAB_VS_DEFENSE_LOBBY_RATIO_AT_1PCT,

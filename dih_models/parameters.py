@@ -10232,3 +10232,63 @@ HOST_PRIZE_INSTANCE_PERSONAL_GROSS_VALUE_WISHONIA_TRAJECTORY = Parameter(
     ),
     latex_symbol=r"EV_{host,wish}",
 )
+
+HOST_PRIZE_INSTANCE_EXPECTED_ATTRIBUTABLE_DALYS = Parameter(
+    float(HOST_PRIZE_INSTANCE_DELTA_IMPLEMENTATION_PROBABILITY) * float(DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS),
+    source_type="calculated",
+    description="Expected DALYs averted attributable to one additional compatible prize instance through the probability-lift channel alone. This multiplies the host implementation-probability prior by the model's total dFDA timeline-shift DALY estimate. It excludes separate acceleration-only effects to avoid mixing probability and timing channels in one scalar.",
+    display_name="Expected Attributable DALYs from One Prize Instance",
+    unit="DALYs",
+    formula="HOST_PRIZE_INSTANCE_DELTA_IMPLEMENTATION_PROBABILITY x DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS",
+    latex=r"DALYs_{host} = \Delta p_{host} \cdot DALYs_{dFDA,max}",
+    keywords=["host", "prize", "instance", "dalys", "attributable", "expected value"],
+    inputs=[
+        "HOST_PRIZE_INSTANCE_DELTA_IMPLEMENTATION_PROBABILITY",
+        "DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS",
+    ],
+    compute=lambda ctx: (
+        ctx["HOST_PRIZE_INSTANCE_DELTA_IMPLEMENTATION_PROBABILITY"]
+        * ctx["DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS"]
+    ),
+    latex_symbol=r"DALYs_{host}",
+)
+
+HOST_PRIZE_INSTANCE_EXPECTED_ATTRIBUTABLE_LIVES_SAVED = Parameter(
+    float(HOST_PRIZE_INSTANCE_DELTA_IMPLEMENTATION_PROBABILITY) * float(DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_LIVES_SAVED),
+    source_type="calculated",
+    description="Expected lives saved attributable to one additional compatible prize instance through the probability-lift channel alone. This is the total dFDA timeline-shift lives-saved estimate multiplied by the host implementation-probability prior. It excludes separate acceleration-only timing value.",
+    display_name="Expected Attributable Lives Saved from One Prize Instance",
+    unit="deaths",
+    formula="HOST_PRIZE_INSTANCE_DELTA_IMPLEMENTATION_PROBABILITY x DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_LIVES_SAVED",
+    latex=r"Lives_{host} = \Delta p_{host} \cdot Lives_{dFDA,max}",
+    keywords=["host", "prize", "instance", "lives", "saved", "attributable", "expected value"],
+    inputs=[
+        "HOST_PRIZE_INSTANCE_DELTA_IMPLEMENTATION_PROBABILITY",
+        "DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_LIVES_SAVED",
+    ],
+    compute=lambda ctx: (
+        ctx["HOST_PRIZE_INSTANCE_DELTA_IMPLEMENTATION_PROBABILITY"]
+        * ctx["DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_LIVES_SAVED"]
+    ),
+    latex_symbol=r"Lives_{host}",
+)
+
+HOST_PRIZE_INSTANCE_EXPECTED_ATTRIBUTABLE_SUFFERING_HOURS = Parameter(
+    float(HOST_PRIZE_INSTANCE_DELTA_IMPLEMENTATION_PROBABILITY) * float(DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_SUFFERING_HOURS),
+    source_type="calculated",
+    description="Expected suffering hours averted attributable to one additional compatible prize instance through the probability-lift channel alone. This multiplies the host implementation-probability prior by the model's total dFDA timeline-shift suffering-hours estimate. It excludes separate acceleration-only timing value.",
+    display_name="Expected Attributable Suffering Hours from One Prize Instance",
+    unit="hours",
+    formula="HOST_PRIZE_INSTANCE_DELTA_IMPLEMENTATION_PROBABILITY x DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_SUFFERING_HOURS",
+    latex=r"Hours_{host} = \Delta p_{host} \cdot Hours_{suffer,max}",
+    keywords=["host", "prize", "instance", "suffering", "hours", "attributable", "expected value"],
+    inputs=[
+        "HOST_PRIZE_INSTANCE_DELTA_IMPLEMENTATION_PROBABILITY",
+        "DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_SUFFERING_HOURS",
+    ],
+    compute=lambda ctx: (
+        ctx["HOST_PRIZE_INSTANCE_DELTA_IMPLEMENTATION_PROBABILITY"]
+        * ctx["DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_SUFFERING_HOURS"]
+    ),
+    latex_symbol=r"Hours_{host}",
+)

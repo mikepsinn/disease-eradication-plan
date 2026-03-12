@@ -6781,45 +6781,6 @@ $$
 
 :::
 
-### Personal Gross Value from One Prize Instance (Wishonia Trajectory): $64.7K {#sec-host_prize_instance_personal_gross_value_full_path}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Personal gross expected value of one additional compatible prize instance using the Wishonia Trajectory lifetime-gain model plus avoided delay value. Excludes host-specific donor, fee, or reputational upside, so this is deliberately conservative.
-
-**Inputs**:
-
-- [Incremental Implementation Probability from One Prize Instance](#sec-host_prize_instance_delta_implementation_probability): 0.1% (95% CI: 0.01% - 1%)
-- [Wishonia Trajectory Lifetime Income Gain (Per Capita)](#sec-wishonia_trajectory_lifetime_income_gain_per_capita) 🔢: $52.1M
-- [Implementation Acceleration from One Prize Instance](#sec-host_prize_instance_acceleration_years): 1 years (95% CI: 0.1 years - 5 years)
-- [Political Dysfunction Tax per Person (Annual)](#sec-political_dysfunction_tax_per_person_annual) 🔢: $12.6K
-
-$$
-\begin{gathered}
-EV_{host,full} \\
-= \Delta p_{host} \cdot \Delta Y_{lifetime,wish} \\
-+ \Delta T_{host} \cdot T_{pd,pc}
-\end{gathered}
-$$
-
-*✓ High confidence*
-
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-host_prize_instance_personal_gross_value_full_path.qmd >}}
-
-{{< include ../figures/sensitivity-table-host_prize_instance_personal_gross_value_full_path.qmd >}}
-
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-host_prize_instance_personal_gross_value_full_path.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-host_prize_instance_personal_gross_value_full_path.qmd >}}
-
-:::
-
 ### Personal Gross Value from One Prize Instance (Treaty Floor): $27.5K {#sec-host_prize_instance_personal_gross_value_treaty_floor}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -6856,6 +6817,45 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-host_prize_instance_personal_gross_value_treaty_floor.qmd >}}
+
+:::
+
+### Personal Gross Value from One Prize Instance (Wishonia Trajectory): $64.7K {#sec-host_prize_instance_personal_gross_value_wishonia_trajectory}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Personal gross expected value of one additional compatible prize instance using the Wishonia Trajectory lifetime-gain model plus avoided delay value. Excludes host-specific donor, fee, or reputational upside, so this is deliberately conservative.
+
+**Inputs**:
+
+- [Incremental Implementation Probability from One Prize Instance](#sec-host_prize_instance_delta_implementation_probability): 0.1% (95% CI: 0.01% - 1%)
+- [Wishonia Trajectory Lifetime Income Gain (Per Capita)](#sec-wishonia_trajectory_lifetime_income_gain_per_capita) 🔢: $52.1M
+- [Implementation Acceleration from One Prize Instance](#sec-host_prize_instance_acceleration_years): 1 years (95% CI: 0.1 years - 5 years)
+- [Political Dysfunction Tax per Person (Annual)](#sec-political_dysfunction_tax_per_person_annual) 🔢: $12.6K
+
+$$
+\begin{gathered}
+EV_{host,wish} \\
+= \Delta p_{host} \cdot \Delta Y_{lifetime,wish} \\
++ \Delta T_{host} \cdot T_{pd,pc}
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-host_prize_instance_personal_gross_value_wishonia_trajectory.qmd >}}
+
+{{< include ../figures/sensitivity-table-host_prize_instance_personal_gross_value_wishonia_trajectory.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-host_prize_instance_personal_gross_value_wishonia_trajectory.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-host_prize_instance_personal_gross_value_wishonia_trajectory.qmd >}}
 
 :::
 
