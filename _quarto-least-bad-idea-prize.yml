@@ -1,0 +1,223 @@
+project:
+  type: website
+  output-dir: _site/least-bad-idea-prize
+  execute-dir: project
+  resources:
+    - knowledge/data/
+    - assets/
+    - _redirects
+    - robots.txt
+    - llms.txt
+  render:
+    # Paper is copied to index.qmd by render script
+    - index.qmd
+    - knowledge/appendix/parameters-and-calculations.qmd
+
+# Custom fields for render-quarto.py
+dih-render:
+  emoji: "🏆"
+  index-source: knowledge/strategy/least-bad-idea-prize-paper.qmd
+  fallback-404-redirect-domain: https://manual.WarOnDisease.org
+  netlify-site-id: ""
+  netlify-cname: ""
+  show-confidence-intervals: true
+  concept-terms:
+    - term: "Least Bad Idea Prize"
+      aliases:
+        - "Least Bad Idea in the World Prize"
+        - "LBIP"
+        - "implementation prize"
+      manual-target: knowledge/strategy/least-bad-idea-prize.qmd
+  # Image generation prompts (used by scripts/images/generate-project-branding-images.ts)
+  favicon-prompt: "A trophy with a checkmark and mathematical symbols, minimalist design."
+
+profiles:
+  default:
+    dotenv:
+      allowEmptyValues: true
+
+author:
+  - name: Mike P. Sinn
+    email: m@warondisease.org
+    orcid: 0009-0006-0212-1094
+    affiliations:
+      - name: "Institute for Accelerated Medicine"
+        url: https://acceleratedmedicine.org
+
+website:
+  title: "The Least Bad Idea in the World Prize"
+  description: "If this manual is wrong, beat it. A standing prize for the first mechanism that can verifiably move money from low-value uses to high-value ones, reduce suffering more cheaply than the current stack, and survive contact with selfish humans."
+  site-url: https://least-bad-idea-prize.warondisease.org
+  favicon: assets/icons/least-bad-idea-prize-favicon.png
+  page-navigation: true
+  page-footer:
+    left: "© 2025 [Institute for Accelerated Medicine](https://acceleratedmedicine.org) | [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)"
+    center: "[PDF](/least-bad-idea-prize.pdf) | [All Papers](https://manual.warondisease.org/knowledge/papers.html)"
+    right: "[VOTE](https://WarOnDisease.org)"
+  navbar:
+    right:
+      - text: "Calculations"
+        href: knowledge/appendix/parameters-and-calculations.qmd
+      - text: "VOTE"
+        href: https://WarOnDisease.org
+
+execute:
+  fig-path: "knowledge/figures/"
+  cache: false
+  freeze: auto  # Only re-run cells when content changes
+  daemon: 300
+  daemon-restart: false
+  env:
+    PYTHONPATH: "."
+
+metadata:
+  importance: 80
+  creator: "Mike P. Sinn"
+  orcid: "0009-0006-0212-1094"
+  primary-author: "Mike P. Sinn"
+  byline: "Mike P. Sinn"
+  human-author: "Mike P. Sinn"
+  author-email: "mike@warondisease.org"
+  author-url: "https://mikesinn.com"
+  author-website: "https://mikesinn.com"
+  contact: "mike@warondisease.org"
+  language: "en-US"
+  subject: "Mechanism Design, Prize Design, Public Choice, Governance Reform, Implementation Markets"
+  category: "Academic Paper, Mechanism Design, Prize Theory, Public Policy"
+  coi-statement: "The author declares no competing interests. The author also notes that designing a prize for the best governance mechanism while simultaneously proposing a governance mechanism is not a conflict of interest; it is a falsifiability commitment."
+  data-availability: "All data and code used in this analysis are publicly available at https://github.com/mikepsinn/disease-eradication-plan"
+  ethics-statement: "This research did not involve human subjects. The prize it describes would involve all of them, which is arguably more ethical than the current arrangement where most of them are ignored."
+  funding: "This research received no funding. The prize described herein is designed to fund itself, but has not yet done so."
+  github-profile: "https://github.com/mikepsinn"
+  linkedin: "https://www.linkedin.com/in/mikesinn"
+  orcid-url: "https://orcid.org/0009-0006-0212-1094"
+  google-scholar: "https://scholar.google.com/citations?user=RjDd_qcAAAAJ"
+  keywords:
+    - mechanism-design
+    - prize-design
+    - public-choice
+    - governance-reform
+    - implementation-markets
+    - cost-effectiveness
+    - DALY
+    - net-societal-value
+    - resource-allocation
+    - welfare-optimization
+    - incentive-compatibility
+  version: "0.9"
+  edition: "Working Draft"
+  copyright: "© 2025 Mike P. Sinn"
+  copyright-year: "2025"
+  license: "CC BY-NC 4.0"
+  license-url: "https://creativecommons.org/licenses/by-nc/4.0/"
+  rights: "Creative Commons Attribution-NonCommercial 4.0 International License"
+  publisher: "Institute for Accelerated Medicine"
+  publisher-url: "https://acceleratedmedicine.org"
+  publisher-name: "Mike P. Sinn"
+  publisher-email: "mike@warondisease.org"
+  repo-url: "https://github.com/mikepsinn/disease-eradication-plan"
+  issue-url: "https://github.com/mikepsinn/disease-eradication-plan/issues"
+  source-url: "https://github.com/mikepsinn/disease-eradication-plan"
+  geographic-coverage: "Global"
+  audience: "Researchers, Policy Makers, Mechanism Designers, Philanthropists, Economists"
+  format: "Working Paper"
+  type: "Academic"
+  genre: "Political Science, Economics, Mechanism Design, Prize Theory"
+  medium: "Digital"
+  twitter-site: "https://x.com/warondisease"
+  twitter-creator: "https://x.com/warondisease"
+  og-site-name: "The Least Bad Idea in the World Prize"
+
+  # Open Graph metadata (enables per-page custom OG images)
+  open-graph: true
+  image: "https://least-bad-idea-prize.warondisease.org/assets/og/least-bad-idea-prize-og-1200x630.jpg"
+
+  # Publication tracking
+  publishing:
+    own-site:
+      url: "https://least-bad-idea-prize.warondisease.org"
+      status: pending
+    preprints:
+      - platform: zenodo
+        status: pending
+        url: ""
+      - platform: ssrn
+        status: pending
+        url: ""
+    journals:
+      - name: "Public Choice"
+        tier: 2
+        status: target
+        url: ""
+
+# Remove "Appendix" prefix
+language:
+  crossref-apx-prefix: ""
+  section-title-appendices: ""
+
+# Bibliography: Single source of truth for all citations
+bibliography: references.bib
+csl: nature-annotated.csl  # Renders 'abstract' field (quotes) in bibliography
+
+jupyter: dih-project-kernel
+
+format:
+  html:
+    lightbox: auto
+    theme:
+      - cosmo
+    mermaid:
+      theme: neutral
+    echo: false
+    number-sections: false
+    toc: true
+    toc-depth: 3
+    css:
+      - styles.css
+      - economics-overrides.css
+    include-before-body:
+      - file: assets/html/page-loader.html
+    include-after-body:
+      - file: assets/html/site-enhancements-loader.html
+    include-in-footer:
+      - file: assets/html/generated-footer.html
+    include-in-header:
+      - text: |
+          <!-- Icons (project-specific) -->
+          <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/least-bad-idea-prize-favicon-32x32.png">
+          <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/least-bad-idea-prize-favicon-16x16.png">
+          <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/least-bad-idea-prize-apple-touch-icon.png">
+          <link rel="icon" type="image/png" sizes="192x192" href="/assets/icons/least-bad-idea-prize-android-chrome-192x192.png">
+          <link rel="icon" type="image/png" sizes="512x512" href="/assets/icons/least-bad-idea-prize-android-chrome-512x512.png">
+      - file: assets/html/google-analytics.html
+      - file: assets/html/hypothesis.html
+      - file: assets/html/fonts-preload.html
+    citation-hover: true
+    code-fold: true
+    link-citations: true
+    smooth-scroll: true
+    code-tools: false
+    filters: [assets/filters/live-version-note.lua]
+  pdf:
+    output-file: "least-bad-idea-prize.pdf"
+    documentclass: article
+    institute: "Institute for Accelerated Medicine"
+    echo: false
+    toc: true
+    toc-depth: 3
+    number-sections: false
+    colorlinks: true
+    link-citations: true
+    include-in-header:
+      - callout-bw.tex
+      - institute-header.tex
+      - text: |
+          \paperurl{https://least-bad-idea-prize.warondisease.org}
+    geometry:
+      - top=1in
+      - bottom=1in
+      - left=1in
+      - right=1in
+    fontsize: 11pt
+    date: ""
+    filters: [assets/filters/live-version-note.lua]

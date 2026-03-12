@@ -36,15 +36,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 367 parameters used in the analysis, organized by type:
+This appendix documents all 370 parameters used in the analysis, organized by type:
 
 - External sources (peer-reviewed): 129
-- Calculated values: 156
-- Core definitions: 82
+- Calculated values: 158
+- Core definitions: 83
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (156 parameters) • [External Data Sources](#sec-external) (129 parameters) • [Core Definitions](#sec-definitions) (82 parameters)
+[Calculated Values](#sec-calculated) (158 parameters) • [External Data Sources](#sec-external) (129 parameters) • [Core Definitions](#sec-definitions) (83 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -4392,6 +4392,167 @@ $$
 
 :::
 
+### IAB Mechanism Benefit-Cost Ratio: 230:1 {#sec-iab_mechanism_benefit_cost_ratio}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Benefit-Cost Ratio of the IAB mechanism itself
+
+**Inputs**:
+
+- [1% treaty Basic Annual Benefits (Peace + R&D Savings)](#sec-treaty_peace_plus_rd_annual_benefits) 🔢: $172B
+- [IAB Mechanism Annual Cost (High Estimate)](#sec-iab_mechanism_annual_cost): $750M (95% CI: $160M - $750M)
+
+$$
+\begin{gathered}
+BCR_{IAB} \\
+= \frac{Benefit_{peace+RD}}{Cost_{IAB,ann}} \\
+= \frac{\$172B}{\$750M} \\
+= 230
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Benefit_{peace+RD} \\
+= Benefit_{peace,soc} + Benefit_{RD,ann} \\
+= \$114B + \$58.6B \\
+= \$172B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Benefit_{peace,soc} \\
+= Cost_{war,total} \times Reduce_{treaty} \\
+= \$11.4T \times 1\% \\
+= \$114B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,total} \\
+= Cost_{war,direct} + Cost_{war,indirect} \\
+= \$7.66T + \$3.7T \\
+= \$11.4T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,direct} \\
+= Loss_{life,conflict} + Damage_{infra,total} \\
++ Disruption_{trade} + Spending_{mil} \\
+= \$2.45T + \$1.88T + \$616B + \$2.72T \\
+= \$7.66T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Loss_{life,conflict} \\
+= Cost_{combat,human} + Cost_{state,human} \\
++ Cost_{terror,human} \\
+= \$2.34T + \$27B + \$83B \\
+= \$2.45T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{combat,human} \\
+= Deaths_{combat} \times VSL \\
+= 234{,}000 \times \$10M \\
+= \$2.34T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{state,human} \\
+= Deaths_{state} \times VSL \\
+= 2{,}700 \times \$10M \\
+= \$27B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{terror,human} \\
+= Deaths_{terror} \times VSL \\
+= 8{,}300 \times \$10M \\
+= \$83B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Damage_{infra,total} \\
+= Damage_{comms} + Damage_{edu} + Damage_{energy} \\
++ Damage_{health} + Damage_{transport} + Damage_{water} \\
+= \$298B + \$234B + \$422B + \$166B + \$487B + \$268B \\
+= \$1.88T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Disruption_{trade} \\
+= Disruption_{currency} + Disruption_{energy} \\
++ Disruption_{shipping} + Disruption_{supply} \\
+= \$57.4B + \$125B + \$247B + \$187B \\
+= \$616B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,indirect} \\
+= Damage_{env} + Loss_{growth,mil} + Loss_{capital,conflict} \\
++ Cost_{psych} + Cost_{refugee} + Cost_{vet} \\
+= \$100B + \$2.72T + \$300B + \$232B + \$150B + \$200B \\
+= \$3.7T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Benefit_{RD,ann} \\
+= Spending_{trials} \times Reduce_{pct} \\
+= \$60B \times 97.7\% \\
+= \$58.6B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Reduce_{pct} \\
+= 1 - \frac{Cost_{pragmatic,pt}}{Cost_{P3,pt}} \\
+= 1 - \frac{\$929}{\$41K} \\
+= 97.7\%
+\end{gathered}
+$$
+**Methodology**: [https://iab.warondisease.org##welfare-analysis](https://iab.warondisease.org##welfare-analysis)
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-iab_mechanism_benefit_cost_ratio.qmd >}}
+
+{{< include ../figures/sensitivity-table-iab_mechanism_benefit_cost_ratio.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-iab_mechanism_benefit_cost_ratio.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-iab_mechanism_benefit_cost_ratio.qmd >}}
+
+:::
+
 ### Annual IAB Political Incentive Funding: $2.72B {#sec-iab_political_incentive_funding_annual}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -7961,6 +8122,156 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-treaty_path_lifetime_income_multiplier.qmd >}}
+
+:::
+
+### 1% treaty Basic Annual Benefits (Peace + R&D Savings): $172B {#sec-treaty_peace_plus_rd_annual_benefits}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Basic annual benefits: peace dividend + Decentralized Framework for Drug Assessment R&D savings only (2 of 8 benefit categories, excludes regulatory delay value)
+
+**Inputs**:
+
+- [Annual Peace Dividend from 1% Reduction in Total War Costs](#sec-peace_dividend_annual_societal_benefit) 🔢: $114B
+- [Decentralized Framework for Drug Assessment Annual Benefit: R&D Savings](#sec-dfda_benefit_rd_only_annual) 🔢: $58.6B
+
+$$
+\begin{gathered}
+Benefit_{peace+RD} \\
+= Benefit_{peace,soc} + Benefit_{RD,ann} \\
+= \$114B + \$58.6B \\
+= \$172B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Benefit_{peace,soc} \\
+= Cost_{war,total} \times Reduce_{treaty} \\
+= \$11.4T \times 1\% \\
+= \$114B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,total} \\
+= Cost_{war,direct} + Cost_{war,indirect} \\
+= \$7.66T + \$3.7T \\
+= \$11.4T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,direct} \\
+= Loss_{life,conflict} + Damage_{infra,total} \\
++ Disruption_{trade} + Spending_{mil} \\
+= \$2.45T + \$1.88T + \$616B + \$2.72T \\
+= \$7.66T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Loss_{life,conflict} \\
+= Cost_{combat,human} + Cost_{state,human} \\
++ Cost_{terror,human} \\
+= \$2.34T + \$27B + \$83B \\
+= \$2.45T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{combat,human} \\
+= Deaths_{combat} \times VSL \\
+= 234{,}000 \times \$10M \\
+= \$2.34T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{state,human} \\
+= Deaths_{state} \times VSL \\
+= 2{,}700 \times \$10M \\
+= \$27B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{terror,human} \\
+= Deaths_{terror} \times VSL \\
+= 8{,}300 \times \$10M \\
+= \$83B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Damage_{infra,total} \\
+= Damage_{comms} + Damage_{edu} + Damage_{energy} \\
++ Damage_{health} + Damage_{transport} + Damage_{water} \\
+= \$298B + \$234B + \$422B + \$166B + \$487B + \$268B \\
+= \$1.88T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Disruption_{trade} \\
+= Disruption_{currency} + Disruption_{energy} \\
++ Disruption_{shipping} + Disruption_{supply} \\
+= \$57.4B + \$125B + \$247B + \$187B \\
+= \$616B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,indirect} \\
+= Damage_{env} + Loss_{growth,mil} + Loss_{capital,conflict} \\
++ Cost_{psych} + Cost_{refugee} + Cost_{vet} \\
+= \$100B + \$2.72T + \$300B + \$232B + \$150B + \$200B \\
+= \$3.7T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Benefit_{RD,ann} \\
+= Spending_{trials} \times Reduce_{pct} \\
+= \$60B \times 97.7\% \\
+= \$58.6B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Reduce_{pct} \\
+= 1 - \frac{Cost_{pragmatic,pt}}{Cost_{P3,pt}} \\
+= 1 - \frac{\$929}{\$41K} \\
+= 97.7\%
+\end{gathered}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-treaty_peace_plus_rd_annual_benefits.qmd >}}
+
+{{< include ../figures/sensitivity-table-treaty_peace_plus_rd_annual_benefits.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-treaty_peace_plus_rd_annual_benefits.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-treaty_peace_plus_rd_annual_benefits.qmd >}}
 
 :::
 
@@ -14057,6 +14368,26 @@ Status-quo baseline annual global GDP growth rate.
 #### Uncertainty Range
 
 **Technical**: Distribution: Fixed
+
+*Core definition*
+
+:::
+
+### IAB Mechanism Annual Cost (High Estimate): $750M {#sec-iab_mechanism_annual_cost}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Estimated annual cost of the IAB mechanism (high-end estimate including regulatory defense)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$160M, $750M]
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $160M and $750M (±39%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+#### Input Distribution
+
+{{< include ../figures/distribution-iab_mechanism_annual_cost.qmd >}}
 
 *Core definition*
 
