@@ -1,5 +1,5 @@
 ---
-name: wishonia-voice
+name: wishonia-style
 description: Rewrite or review QMD content for Wishonia's naive alien voice. Analyzes comedy mechanics from index-manual.qmd gold standard, identifies where voice falls flat, and rewrites with proper technique.
 allowed-tools:
   - Read
