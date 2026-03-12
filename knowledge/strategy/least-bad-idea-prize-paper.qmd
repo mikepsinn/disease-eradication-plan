@@ -1,7 +1,7 @@
 ---
 title: 'The Least Bad Idea in the World Prize: An Implementation Market for Governance Reform'
 subtitle: A Standing Prize for the First Mechanism That Can Verifiably Reallocate Resources from Low-Value to High-Value Uses While Surviving Contact with Selfish Humans
-description: If this manual is wrong, beat it. A standing prize for the first mechanism that can verifiably move money from low-value uses to high-value ones, reduce suffering more cheaply than the Earth Optimization Plan, and survive contact with selfish humans.
+description: "One weird trick: score governance reform on 28 metrics, fund whatever wins, replace the winner when something better appears. By construction, the machine is at least as good as anything it finds. Compatible with selfish humans."
 abstract: |
   Current governance mechanisms allocate trillions of dollars based on lobbying intensity, institutional inertia, and political convenience rather than verified net societal value. This paper proposes a standing implementation prize that treats governance reform as an engineering competition rather than a philosophy seminar. The prize scores proposals on a published state vector of 25+ variables (cost-effectiveness, welfare impact, political feasibility, capture resistance, and completeness) and awards not cash but adoption capital, political support, distribution, and operating rights. Admissibility requires positive net welfare for every affected class of beings, zero rights violations, complete coverage of a baseline bundle of required governance functions, binding legal force, greed-monotonicity, and automatic reinvestment into missing modules. The ranking rule maximizes risk-adjusted net societal value recovery per dollar of adoption cost, weighted by evidence quality and implementability. The mechanism is compatible with public choice theory: no actor is asked to become less selfish; stronger self-interest makes the system stronger. If the current leading candidate (the Earth Optimization Plan) is optimal, the prize causes its implementation. If a strict improvement exists, the prize discovers and funds that instead. Either outcome dominates the status quo of endless argument with no implementation market.
 published: true
@@ -28,6 +28,8 @@ That suggests a simple rule: stop treating policy design like a philosophy semin
 Create a **standing prize** for the first person, team, or institution that can **cause the implementation** of every required function in the Earth Optimization Plan from the companion papers [@value-captured-by-1pct-treaty; @iab-paper-2025; @wishocracy-paper-2025; @optimocracy-paper-2025; @opg-paper-2025; @obg-paper-2025; @dfda-impact-paper-2025; @invisible-graveyard-paper-2025; @political-dysfunction-tax-paper-2025; @cost-of-change-paper-2025; @us-efficiency-audit-paper-2025; @dfda-spec-paper-2025; @drug-development-cost], or a strict module-by-module improvement on it, while delivering a **lower verified cost per DALY**, lower suffering per dollar, and better net outcomes for living beings.
 
 Not a trophy. Not a TED Talk. Not "best essay wins." A market for verified implementation.
+
+Here is the inevitability theorem in one sentence: a machine that selects the best available mechanism and replaces itself when beaten is, by construction, at least as good as any mechanism it could select. The only way to beat the prize is to produce something better, and producing something better is the entire point. This paper describes that machine.
 
 ::: {.callout-important}
 ## Disqualification Rule
@@ -313,7 +315,7 @@ So the prize has to award the thing that matters:
 
 That last point is the whole trick. The prize does not defend any particular proposal against better ideas. It weaponizes better ideas against inertia.
 
-The treasury bootstraps via dominant assurance contracts [@tabarrok1998]. Pledging to the prize is a dominant strategy: if the funding threshold is met, pledgers get access to the investable asset class the prize creates. If it is not met, pledges return plus a bonus. This solves the free-rider problem that kills most public-goods coordination. Investors do not need to believe the prize will succeed; they need only notice that the expected value of pledging exceeds the expected value of sitting out regardless of what everyone else does. Greedier investors, more prize capital, stronger selection pressure.
+The treasury should normally bootstrap via **assurance contracts**, not discretionary fundraising. Pledges are committed only if the funding threshold is reached; otherwise they are not called or are returned. That is enough to let donors and organizations support the prize conditionally without taking open-ended balance-sheet risk. If a seed sponsor wants even stronger early-coordination pressure, it can add a **dominant-assurance tranche** [@tabarrok1998]. In that case the failure bonus must come from a separately pre-funded underwriting reserve. It is not magic, and it is not charged to later pledgers by default.
 
 ## Prize Constitution
 
@@ -336,9 +338,48 @@ The constitutional rules should be equally blunt:
 
 That is the missing bridge between "great selection rule" and "actual institutional ratchet."
 
+## Protocol Adoption by Existing Organizations
+
+The best dissemination model is not "every organization invents its own prize from scratch." That creates fragmentation, incompatible scoring, and easy capture. The best model is **many instances, one protocol**.
+
+The protocol is the non-negotiable part:
+
+- the constitution
+- the admissibility rule
+- the ranking rule
+- the audit standard
+- the automatic-replacement rule
+
+An instance is the local wrapper around that protocol:
+
+- a branded fundraising campaign
+- a jurisdiction-specific treasury
+- a domain-specific tranche
+- an implementation partnership in one country, state, or sector
+
+That distinction matters because it lets many organizations participate without making the mechanism incoherent.
+
+Organizations should be able to adopt the prize in at least three modes:
+
+1. **Endorser.** Publishes, promotes, and recruits for the prize protocol but does not hold treasury funds or underwrite failure payments.
+2. **Sponsor.** Raises money into independent escrow under the shared rules, but does not control scoring or payout migration.
+3. **Deployment partner.** Helps execute the winning package and can earn contracts, fees, or outcome-side compensation only if real implementation happens.
+
+This is also where the `$0 or negative cost` question becomes operational. A host organization can participate at roughly zero or negative net cost if all of the following are true:
+
+1. **Treasury funds stay off the host balance sheet.** Pledges go to independent escrow rather than the organization's operating account.
+2. **Ops funding is explicit and capped.** A small admin, audit, and marketing reserve is funded first out of pledged capital under published limits.
+3. **Failure underwriting is external.** If a dominant-assurance seed tranche is used, a separate sponsor funds the failure reserve; the host organization does not absorb it by default.
+4. **No threshold, no treasury call.** If the funding threshold is not met, pledged funds are not called or are returned.
+5. **Host upside is rule-bound.** The host may receive a fixed admin fee, donor-acquisition upside, or capped deployment compensation, but not discretionary control over ranking or payout.
+
+Under that structure, an endorser can participate at near-zero cost, a sponsor can avoid fronting treasury risk, and a deployment partner can have negative net cost if reimbursements, donor growth, or implementation fees exceed marginal staff time.
+
+The anti-fragmentation rule should therefore be blunt: an organization may brand and market its own instance, but it should not call it part of this prize family unless it accepts the same core protocol and the same automatic migration to better admissible proposals. Many storefronts are good. Many constitutions are not.
+
 ### Retroactive Impact Purchasing
 
-Bootstrap capital and project selection are different problems. Dominant assurance contracts solve the first problem: how to concentrate diffuse beneficiary capital into a treasury large enough to matter. They do not by themselves tell the treasury which downstream implementers deserve funding once the money exists.
+Bootstrap capital and project selection are different problems. Assurance contracts solve the first problem well enough: how to concentrate diffuse beneficiary capital into a treasury large enough to matter without asking organizations to spend money they do not yet have. A sponsor-underwritten dominant-assurance tranche can accelerate the first round, but it is optional. Neither version tells the treasury which downstream implementers deserve funding once the money exists.
 
 For that layer, the prize can operate as a retroactive public-goods purchaser. Implementers fund work up front using their own capital or outside investment, produce auditable outcomes, and then sell verified impact claims back into the prize ecosystem only after the outcomes exist. In the medical domain, those claims would typically be denominated in audited DALYs averted, suffering hours avoided, or verified mortality reduction. In governance domains, they would be denominated in verified resource reallocation, durable policy adoption, or measured welfare gains under the same admissibility constraints. This preserves the paper's core logic: the prize does not pay for intentions; it pays for verified movement on the objective function.
 
@@ -359,7 +400,7 @@ That is just Incentive Alignment Bonds [@iab-paper-2025] with a more brutal sele
 
 Abstract mechanism design is harder to trust than a visible execution trace. So here is what the Earth Optimization Plan would look like if it won.
 
-1. The treasury raises the initial campaign pool through dominant assurance contracts and escrows it under the no-override rules above.
+1. The treasury raises the initial campaign pool through assurance contracts, optionally with a sponsor-underwritten dominant-assurance seed tranche, and escrows it under the no-override rules above.
 2. The current bundle is submitted as a complete package: treaty wedge, dFDA / continuous evidence generation, regulatory-delay removal, IAB adoption machinery, Wishocracy preference aggregation, Optimocracy / OPG / OBG recommendation engines, and the statutory path.
 3. Independent auditors score the package on admissibility. It clears because it covers every required function, beats the current DALY benchmark, and preserves the public-choice and welfare constraints.
 4. The deployment layer routes capital into the first binding path with the best score-weighted return: campaign finance, legislative drafting, treaty advocacy, scorecards, and public preference collection.
@@ -481,6 +522,8 @@ If this project is right, the prize causes its implementation. If this project i
 Either way, the feedback loop runs: more capital funds sharper selection, sharper selection funds better implementation, better implementation recovers more value, recovered value funds more capital. The mechanism does not need participants to be wise. It needs them to be greedy, impatient, and capable of reading a scoreboard.
 
 The prize does not ask anyone to become good. It makes doing nothing the expensive option.
+
+If there is one weird trick to ending war and disease, this is it: stop arguing about which idea is best and build a market that pays for whichever one actually works. The rest is implementation.
 
 You are not choosing whether to optimize. You are choosing how long to wait.
 
