@@ -162,6 +162,8 @@ You sell Incentive Alignment Bonds that raise {{< var treaty_campaign_total_cost
 
 {{< var dih_treasury_medical_research_pct >}} of the resulting {{< var treaty_annual_funding >}} per year funds your trials. {{< var victory_bond_funding_pct >}} pays your investors {{< var victory_bond_annual_return_pct >}} annual returns. {{< var iab_political_incentive_funding_pct >}} funds a SuperPAC, which is like a normal PAC but super, that supports politicians who vote for your treaty and funds the opponents of those who don't. How is {{< var victory_bond_annual_return_pct >}} possible? You spent {{< var treaty_campaign_total_cost >}} once to unlock {{< var treaty_annual_funding >}} per year. Permanently.
 
+And the humans you assume would block this do not actually have to lose. Defense contractors keep most of their budget and can buy the bonds. Pharma gets trials paid for. Insurers get fewer expensive sick people. Lobbyists keep lobbying. You are not asking the machine to become moral. You are paying it to point the same greed at disease instead of war.
+
 :::{.scene-direction}
 **Keyframe:** A 1950s pie chart showing the money split. A huge 80% slice pours out medicine bottles. A 10% slice rains coins onto delighted investors in monocles. In the remaining 10% slice, a tiny politician is being picked up by an arcade crane claw. The crane operator looks bored. Display text: "{{< var dih_treasury_medical_research_pct >}}" on the large slice, "{{< var victory_bond_funding_pct >}}" on the investor slice, "{{< var iab_political_incentive_funding_pct >}}" on the politician slice.
 **Animation:** Medicine bottles pour. Coins rain. The crane drops the politician into a "YES" box. He looks confused but cooperative.
@@ -197,6 +199,8 @@ Currently it costs {{< var traditional_phase3_cost_per_patient >}} per patient t
 :::
 
 Your 1% funds {{< var dih_patients_fundable_annually_nounit >}} patients per year instead of {{< var current_trial_slots_available_nounit >}}. At current rates, clearing the backlog of untreated diseases takes {{< var status_quo_queue_clearance_years_nounit >}} years. Your treaty compresses that to {{< var dfda_queue_clearance_years_nounit >}} years.
+
+And because the trial is the healthcare, you also remove the bureaucratic lag between "this works" and "you may now have it." Faster discovery plus faster access. That is why the lives-saved number becomes so absurd.
 
 :::{.scene-direction}
 **Keyframe:** Two horizontal bars on a chalkboard, one above the other. Top bar: enormously long, stretching off the right edge of the board and continuing onto the wall. Bottom bar: short, ending neatly with a finish-line flag. Both start at the same left edge. A label "WITHOUT TREATY" on the top, "WITH TREATY" on the bottom. Display text: "~{{< var status_quo_queue_clearance_years_nounit >}} YEARS" at the end of the top bar (off the board edge), "~{{< var dfda_queue_clearance_years_nounit >}} YEARS" at the end of the bottom bar.
@@ -305,7 +309,7 @@ Is it physically possible your governments redirect 1%? Do billionaires like mon
 ![](../assets/images/educational-film/08-01.jpg)
 :::
 
-You said yes to all of those. There are nearly 3,000 billionaires on your planet. The math needs one.
+You said yes to all of those. There are nearly 3,000 billionaires on your planet. The math needs one, and you are only a few self-interested forwards away from one.
 
 :::{.scene-direction}
 **Keyframe:** Thousands of identical cartoon billionaires in top hats stretching to the horizon, dodging a spotlight sweeping overhead. One in the front has been caught mid-tiptoe trying to sneak away. Monocle popped off. The crowd leans away from him. Do not include any text.
@@ -335,14 +339,14 @@ The only reason this plan seems crazy is that everyone thinks it's crazy. If nob
 **Animation:** Everyone glances sideways. One person steps. Then another. Then a wave ripples outward from the center.
 :::
 
-No political movement in the last century has failed after {{< var global_population_activism_threshold_pct >}} of the population joined. That's {{< var treaty_campaign_voting_bloc_target_nounit >}} people. More than 10 times that many of you downloaded TikTok to watch people twerk.
+No political movement in the last century has failed after {{< var global_population_activism_threshold_pct >}} of the population joined. That's {{< var treaty_campaign_voting_bloc_target_nounit >}} people. The question is simple: should your country redirect 1% of military spending to fund clinical trials? More than 10 times that many of you downloaded TikTok to watch people twerk. Part of the campaign budget pays referral bonuses for sharing the vote link, because humans spread ideas much faster when bribed.
 
 :::{.scene-direction}
 **Keyframe:** Two side-by-side crowd visualizations. Left: a modest group labeled with a small percentage, standing firm, victorious, flags waving. Right: an enormously larger crowd, ten times bigger, all staring at phones doing TikTok dances. The small group looks at the big group in disbelief. Do not include any text.
 **Animation:** The small group cheers and wins. The massive crowd keeps dancing, oblivious. One dancer looks up, confused.
 :::
 
-Go to warondisease.org. Your vote saves {{< var voter_lives_saved_nounit >}} lives and prevents {{< var voter_suffering_hours_prevented_nounit >}} hours of suffering. Love you! Bye!
+Go to warondisease.org. Vote, then forward this to one person with more reach than you. Your vote saves {{< var voter_lives_saved_nounit >}} lives and prevents {{< var voter_suffering_hours_prevented_nounit >}} hours of suffering. Love you! Bye!
 
 :::{.scene-direction}
 **Keyframe:** A pale-skinned young alien woman with small antennae, black bob haircut, and cosmic-patterned dress walking away toward a small flying saucer parked in the background. She looks back over her shoulder, one eyebrow raised, deadpan. The instruction manual glows on the ground behind her, open. Display text on the manual cover: "How to End War and Disease". Display text: "warondisease.org" glowing beneath the manual.
