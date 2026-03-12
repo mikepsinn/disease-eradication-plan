@@ -377,6 +377,40 @@ Under that structure, an endorser can participate at near-zero cost, a sponsor c
 
 The anti-fragmentation rule should therefore be blunt: an organization may brand and market its own instance, but it should not call it part of this prize family unless it accepts the same core protocol and the same automatic migration to better admissible proposals. Many storefronts are good. Many constitutions are not.
 
+### Why Hosting Is Rational
+
+Organizations do not make decisions. Humans inside organizations do. So the relevant question is not "does the abstract institution benefit?" but "what is the expected net benefit to the humans deciding whether to host an instance?"
+
+The project's own model gives a lower-bound answer. If the full Earth Optimization Plan or something better is implemented, the modeled lifetime per-capita income gain is {{< var wishonia_trajectory_lifetime_income_gain_per_capita >}}. A more conservative floor using only the treaty path is still {{< var treaty_trajectory_lifetime_income_gain_per_capita >}}. Those are not organizational accounting gains; they are modeled gains to the humans making the decision.
+
+The simplest host-side matrix is therefore:
+
+| Human choice inside the host organization | If implementation happens somewhere | If implementation does not happen |
+|---|---|---|
+| Create a compatible prize instance | Gain the same human-level implementation benefit as everyone else, roughly {{< var wishonia_trajectory_lifetime_income_gain_per_capita >}} on the full path or {{< var treaty_trajectory_lifetime_income_gain_per_capita >}} on the conservative floor, plus any host-side donor, fee, or relevance upside | Roughly zero or slightly positive if host costs are reimbursed and the instance still generates learning, donor growth, or coalition-building |
+| Do not create a prize instance | Gain the implementation benefit only if other people do the work first | Zero, while the probability of implementation remains lower and delay continues to destroy value |
+
+That table is intentionally simple, but it still hides the main causal point: creating an instance is valuable because it can increase the probability of implementation and speed the date at which implementation happens. For a human decision-maker, the expected incremental value of creating a compatible instance rather than abstaining is approximately:
+
+$$
+\Delta EV_{host} \approx \Delta p \cdot B_{person} + p_{create} \cdot H_{host} + (1-p_{create}) \cdot L_{host} - C_{host}
+$$
+
+where $\Delta p$ is the increase in implementation probability caused by hosting an instance, $B_{person}$ is the human-level benefit if the plan is implemented, $H_{host}$ is any additional host-side upside if implementation happens, $L_{host}$ is any residual learning or donor value if it does not, and $C_{host}$ is the host's true unreimbursed cost.
+
+If host downside is actually bounded near zero, the break-even probability lift is tiny:
+
+| True unreimbursed human/host cost | Break-even increase in implementation probability using the full-path human benefit ({{< var wishonia_trajectory_lifetime_income_gain_per_capita >}}) | Break-even increase using the treaty-only floor ({{< var treaty_trajectory_lifetime_income_gain_per_capita >}}) |
+|---|---|---|
+| `$1K` | `0.0019%` | `0.0067%` |
+| `$10K` | `0.019%` | `0.067%` |
+| `$100K` | `0.192%` | `0.671%` |
+| `$1M` | `1.92%` | `6.71%` |
+
+Those thresholds are biased against creating the prize because they ignore two additional benefits. First, the host can receive bounded donor, fee, and implementation upside under the protocol rules above. Second, speed matters. The model's implied annual per-person opportunity cost of political dysfunction is {{< var political_dysfunction_tax_per_person_annual >}} before counting the medical timeline-shift gains, so even a one-year acceleration has large expected human value.
+
+The resulting decision rule is simple: if a compatible prize instance has any non-trivial positive effect on implementation probability or implementation speed, and the host is not secretly absorbing large unreimbursed downside, hosting is the rational human choice.
+
 ### Retroactive Impact Purchasing
 
 Bootstrap capital and project selection are different problems. Assurance contracts solve the first problem well enough: how to concentrate diffuse beneficiary capital into a treasury large enough to matter without asking organizations to spend money they do not yet have. A sponsor-underwritten dominant-assurance tranche can accelerate the first round, but it is optional. Neither version tells the treasury which downstream implementers deserve funding once the money exists.
