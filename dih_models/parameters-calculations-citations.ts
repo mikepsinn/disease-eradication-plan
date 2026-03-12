@@ -3460,6 +3460,39 @@ export const HEALTHCARE_VS_MILITARY_MULTIPLIER_RATIO: Parameter = {
   latex: "\\begin{gathered}\nr_{health/mil} \\\\\n= \\frac{k_{health}}{k_{mil}} \\\\\n= \\frac{4.3}{0.6} \\\\\n= 7.17\n\\end{gathered}",
 };
 
+export const HOST_PRIZE_INSTANCE_EXPECTED_ATTRIBUTABLE_DALYS: Parameter = {
+  value: 565243673.3509989,
+  unit: "DALYs",
+  displayName: "Expected Attributable DALYs from One Prize Instance",
+  description: "Expected DALYs averted attributable to one additional compatible prize instance through the probability-lift channel alone. This multiplies the host implementation-probability prior by the model's total dFDA timeline-shift DALY estimate. It excludes separate acceleration-only effects to avoid mixing probability and timing channels in one scalar.",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "HOST_PRIZE_INSTANCE_DELTA_IMPLEMENTATION_PROBABILITY x DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS",
+  latex: "DALYs_{host} = \\Delta p_{host} \\cdot DALYs_{dFDA,max}",
+};
+
+export const HOST_PRIZE_INSTANCE_EXPECTED_ATTRIBUTABLE_LIVES_SAVED: Parameter = {
+  value: 10745517.748599721,
+  unit: "deaths",
+  displayName: "Expected Attributable Lives Saved from One Prize Instance",
+  description: "Expected lives saved attributable to one additional compatible prize instance through the probability-lift channel alone. This is the total dFDA timeline-shift lives-saved estimate multiplied by the host implementation-probability prior. It excludes separate acceleration-only timing value.",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "HOST_PRIZE_INSTANCE_DELTA_IMPLEMENTATION_PROBABILITY x DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_LIVES_SAVED",
+  latex: "Lives_{host} = \\Delta p_{host} \\cdot Lives_{dFDA,max}",
+};
+
+export const HOST_PRIZE_INSTANCE_EXPECTED_ATTRIBUTABLE_SUFFERING_HOURS: Parameter = {
+  value: 1931098485636.3528,
+  unit: "hours",
+  displayName: "Expected Attributable Suffering Hours from One Prize Instance",
+  description: "Expected suffering hours averted attributable to one additional compatible prize instance through the probability-lift channel alone. This multiplies the host implementation-probability prior by the model's total dFDA timeline-shift suffering-hours estimate. It excludes separate acceleration-only timing value.",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "HOST_PRIZE_INSTANCE_DELTA_IMPLEMENTATION_PROBABILITY x DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_SUFFERING_HOURS",
+  latex: "Hours_{host} = \\Delta p_{host} \\cdot Hours_{suffer,max}",
+};
+
 export const HOST_PRIZE_INSTANCE_PERSONAL_GROSS_VALUE_TREATY_FLOOR: Parameter = {
   value: 27491.504493689583,
   unit: "USD",
@@ -6447,6 +6480,9 @@ export const parameters = {
   GLOBAL_POLITICAL_REFORM_INVESTMENT,
   GLOBAL_TOTAL_HEALTH_AND_WAR_COST_ANNUAL,
   HEALTHCARE_VS_MILITARY_MULTIPLIER_RATIO,
+  HOST_PRIZE_INSTANCE_EXPECTED_ATTRIBUTABLE_DALYS,
+  HOST_PRIZE_INSTANCE_EXPECTED_ATTRIBUTABLE_LIVES_SAVED,
+  HOST_PRIZE_INSTANCE_EXPECTED_ATTRIBUTABLE_SUFFERING_HOURS,
   HOST_PRIZE_INSTANCE_PERSONAL_GROSS_VALUE_TREATY_FLOOR,
   HOST_PRIZE_INSTANCE_PERSONAL_GROSS_VALUE_WISHONIA_TRAJECTORY,
   IAB_MECHANISM_BENEFIT_COST_RATIO,
@@ -8617,9 +8653,9 @@ export const citations: Record<string, Citation> = {
 
 /** Summary statistics */
 export const PARAMETER_STATS = {
-  total: 569,
+  total: 572,
   external: 195,
-  calculated: 249,
+  calculated: 252,
   definitions: 125,
   citations: 140,
 } as const;

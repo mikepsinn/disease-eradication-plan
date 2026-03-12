@@ -10161,8 +10161,8 @@ HOST_PRIZE_INSTANCE_DELTA_IMPLEMENTATION_PROBABILITY = Parameter(
     distribution=DistributionType.BETA,
     confidence_interval=(0.0001, 0.01),
     conservative=True,
-    validation_min=0.0,
-    validation_max=0.05,
+    validation_min=0.0001,
+    validation_max=0.01,
     keywords=["host", "prize", "instance", "delta p", "implementation", "decision prior"],
     latex_symbol=r"\Delta p_{host}",
 )

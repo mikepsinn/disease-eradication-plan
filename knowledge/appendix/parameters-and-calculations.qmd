@@ -36,15 +36,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 569 parameters used in the analysis, organized by type:
+This appendix documents all 572 parameters used in the analysis, organized by type:
 
 - External sources (peer-reviewed): 195
-- Calculated values: 249
+- Calculated values: 252
 - Core definitions: 125
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (249 parameters) • [External Data Sources](#sec-external) (195 parameters) • [Core Definitions](#sec-definitions) (125 parameters)
+[Calculated Values](#sec-calculated) (252 parameters) • [External Data Sources](#sec-external) (195 parameters) • [Core Definitions](#sec-definitions) (125 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -6778,6 +6778,105 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-healthcare_vs_military_multiplier_ratio.qmd >}}
+
+:::
+
+### Expected Attributable DALYs from One Prize Instance: 565 million DALYs {#sec-host_prize_instance_expected_attributable_dalys}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Expected DALYs averted attributable to one additional compatible prize instance through the probability-lift channel alone. This multiplies the host implementation-probability prior by the model's total dFDA timeline-shift DALY estimate. It excludes separate acceleration-only effects to avoid mixing probability and timing channels in one scalar.
+
+**Inputs**:
+
+- [Incremental Implementation Probability from One Prize Instance](#sec-host_prize_instance_delta_implementation_probability): 0.1% (95% CI: 0.01% - 1%)
+- [Total DALYs from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput](#sec-dfda_trial_capacity_plus_efficacy_lag_dalys) 🔢: 565 billion DALYs
+
+$$
+DALYs_{host} = \Delta p_{host} \cdot DALYs_{dFDA,max}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-host_prize_instance_expected_attributable_dalys.qmd >}}
+
+{{< include ../figures/sensitivity-table-host_prize_instance_expected_attributable_dalys.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-host_prize_instance_expected_attributable_dalys.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-host_prize_instance_expected_attributable_dalys.qmd >}}
+
+:::
+
+### Expected Attributable Lives Saved from One Prize Instance: 10.7 million deaths {#sec-host_prize_instance_expected_attributable_lives_saved}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Expected lives saved attributable to one additional compatible prize instance through the probability-lift channel alone. This is the total dFDA timeline-shift lives-saved estimate multiplied by the host implementation-probability prior. It excludes separate acceleration-only timing value.
+
+**Inputs**:
+
+- [Incremental Implementation Probability from One Prize Instance](#sec-host_prize_instance_delta_implementation_probability): 0.1% (95% CI: 0.01% - 1%)
+- [Total Lives Saved from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput](#sec-dfda_trial_capacity_plus_efficacy_lag_lives_saved) 🔢: 10.7 billion deaths
+
+$$
+Lives_{host} = \Delta p_{host} \cdot Lives_{dFDA,max}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-host_prize_instance_expected_attributable_lives_saved.qmd >}}
+
+{{< include ../figures/sensitivity-table-host_prize_instance_expected_attributable_lives_saved.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-host_prize_instance_expected_attributable_lives_saved.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-host_prize_instance_expected_attributable_lives_saved.qmd >}}
+
+:::
+
+### Expected Attributable Suffering Hours from One Prize Instance: 1.93 trillion hours {#sec-host_prize_instance_expected_attributable_suffering_hours}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Expected suffering hours averted attributable to one additional compatible prize instance through the probability-lift channel alone. This multiplies the host implementation-probability prior by the model's total dFDA timeline-shift suffering-hours estimate. It excludes separate acceleration-only timing value.
+
+**Inputs**:
+
+- [Incremental Implementation Probability from One Prize Instance](#sec-host_prize_instance_delta_implementation_probability): 0.1% (95% CI: 0.01% - 1%)
+- [Suffering Hours Eliminated from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput](#sec-dfda_trial_capacity_plus_efficacy_lag_suffering_hours) 🔢: 1.93 quadrillion hours
+
+$$
+Hours_{host} = \Delta p_{host} \cdot Hours_{suffer,max}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-host_prize_instance_expected_attributable_suffering_hours.qmd >}}
+
+{{< include ../figures/sensitivity-table-host_prize_instance_expected_attributable_suffering_hours.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-host_prize_instance_expected_attributable_suffering_hours.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-host_prize_instance_expected_attributable_suffering_hours.qmd >}}
 
 :::
 
