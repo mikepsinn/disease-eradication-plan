@@ -293,23 +293,23 @@ Nobody is asked to sacrifice self-interest. Self-interest is pointed in a better
 
 If the papers in this project are broadly correct, a serious prize process will not ignore them. It will rediscover them, combine them, and then fund them because the completeness rule prevents any narrow alternative from winning unless it actually replaces the missing functions.
 
-| Paper | What the prize uses it for |
-|:---|:---|
-| **The 1% Treaty** [@value-captured-by-1pct-treaty] | The first large, legible transfer from low-value military spending to high-value medical discovery. |
-| **Ubiquitous Pragmatic Trial Impact Analysis** [@dfda-impact-paper-2025] | The ROI case for why medical evidence generation is one of the best early destinations for redirected capital. |
-| **Incentive Alignment Bonds** [@iab-paper-2025] | The financing and political-adoption engine that turns "good policy" into an investable asset class. |
-| **Wishocracy** [@wishocracy-paper-2025] | The preference-aggregation layer that tells the system what people actually want, with intensity instead of slogans. |
-| **The Political Dysfunction Tax** [@political-dysfunction-tax-paper-2025] | The master ledger showing how much value current governance leaves on the floor. |
-| **The Invisible Graveyard** [@invisible-graveyard-paper-2025] | The mortality proof that delay itself is an active killing mechanism, not a neutral inconvenience. |
-| **The Price of Political Change** [@cost-of-change-paper-2025] | The budget ceiling for buying enough legal democratic pressure to make reform happen. |
-| **United States Efficiency Audit** [@us-efficiency-audit-paper-2025] | A concrete waste map showing where immediate reallocations can be found. |
-| **Optimocracy** [@optimocracy-paper-2025] | The recommendation layer that compares jurisdictions and tells you which policies work. |
-| **The Optimal Policy Generator** [@opg-paper-2025] | The law-level engine for ENACT, REPLACE, REPEAL, and MAINTAIN decisions. |
-| **The Optimal Budget Generator** [@obg-paper-2025] | The spending-level engine for reallocating money from weak programs to strong ones. |
-| **The Continuous Evidence Generation Protocol** [@dfda-spec-paper-2025] | The medical evidence-production machine that keeps learning after the initial reform wins. |
-| **Right to Trial & FDA Upgrade Act** | The statutory implementation path for opening the regulatory bottleneck. |
-| **How to End War and Disease** | The integrated narrative and coalition-building wrapper around the whole stack. |
-| **Drug Development Cost Increase Analysis** [@drug-development-cost] | The proof that current regulatory structure is not merely slow but catastrophically expensive. |
+| Paper | What the prize uses it for | Key benchmark to beat |
+|:---|:---|:---|
+| **The 1% Treaty** [@value-captured-by-1pct-treaty] | The first large, legible transfer from low-value military spending to high-value medical discovery. | {{< var treaty_annual_funding >}}/year redirected; {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}}/DALY conditional; {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}} deaths averted |
+| **Ubiquitous Pragmatic Trial Impact Analysis** [@dfda-impact-paper-2025] | The ROI case for why medical evidence generation is one of the best early destinations for redirected capital. | {{< var dfda_trial_capacity_multiplier >}} capacity increase; queue clearance from {{< var status_quo_queue_clearance_years >}} to {{< var dfda_queue_clearance_years >}}; {{< var dfda_direct_funding_cost_per_daly >}}/DALY |
+| **Incentive Alignment Bonds** [@iab-paper-2025] | The financing and political-adoption engine that turns "good policy" into an investable asset class. | {{< var victory_bond_annual_return_pct >}} annual investor return; {{< var iab_mechanism_benefit_cost_ratio >}} mechanism BCR; three-layer structure (scoring, electoral support, post-office careers) |
+| **Wishocracy** [@wishocracy-paper-2025] | The preference-aggregation layer that tells the system what people actually want, with intensity instead of slogans. | Binding use at >=2% participation; convergence in 10-30 pairwise comparisons per citizen |
+| **The Political Dysfunction Tax** [@political-dysfunction-tax-paper-2025] | The master ledger showing how much value current governance leaves on the floor. | {{< var political_dysfunction_global_opportunity_cost_total >}}/year in recoverable value globally |
+| **The Invisible Graveyard** [@invisible-graveyard-paper-2025] | The mortality proof that delay itself is an active killing mechanism, not a neutral inconvenience. | {{< var efficacy_lag_years >}}-year average regulatory delay; {{< var existing_drugs_efficacy_lag_deaths_total >}} deaths from lag on already-approved drugs |
+| **The Price of Political Change** [@cost-of-change-paper-2025] | The budget ceiling for buying enough legal democratic pressure to make reform happen. | Total campaign cost: {{< var treaty_campaign_total_cost >}}; pessimistic global ceiling: ~$200B |
+| **United States Efficiency Audit** [@us-efficiency-audit-paper-2025] | A concrete waste map showing where immediate reallocations can be found. | {{< var us_gov_waste_total >}}/year in identifiable waste; {{< var us_gov_waste_vs_treaty_multiplier >}} the treaty's annual funding |
+| **Optimocracy** [@optimocracy-paper-2025] | The recommendation layer that compares jurisdictions and tells you which policies work. | Cross-jurisdiction comparison engine; capture-resistance via expensive attack surfaces |
+| **The Optimal Policy Generator** [@opg-paper-2025] | The law-level engine for ENACT, REPLACE, REPEAL, and MAINTAIN decisions. | Policy Impact Score (PIS) for causal quality; four-action framework with blocking-factor constraints |
+| **The Optimal Budget Generator** [@obg-paper-2025] | The spending-level engine for reallocating money from weak programs to strong ones. | Budget Impact Score (BIS) for evidence quality; terminal welfare metrics (median income, median healthy life years) |
+| **The Continuous Evidence Generation Protocol** [@dfda-spec-paper-2025] | The medical evidence-production machine that keeps learning after the initial reform wins. | Minimum data quality: >=5 predictor changes, >=5 outcome changes, >=30 overlapping pairs; Trial Priority Score = PIS x DALYs x Novelty x Feasibility |
+| **Right to Trial & FDA Upgrade Act** | The statutory implementation path for opening the regulatory bottleneck. | Conditional patient access post-Phase I; eliminates {{< var efficacy_lag_years >}}-year efficacy lag; timelines: 180 days, 1 year, 18 months |
+| **How to End War and Disease** | The integrated narrative and coalition-building wrapper around the whole stack. | Full-stack coordination at total cost of {{< var treaty_campaign_total_cost >}}; {{< var political_success_probability >}} estimated success probability |
+| **Drug Development Cost Increase Analysis** [@drug-development-cost] | The proof that current regulatory structure is not merely slow but catastrophically expensive. | {{< var drug_cost_increase_1980s_to_current_multiplier >}} cost increase since 1980s; current average: {{< var pharma_drug_development_cost_current >}}/drug |
 
 In other words, the prize does not replace the stack. It sits above it and asks: *which complete package of functions wins on verified welfare per dollar?* If the answer is "this bundle," then this bundle gets implemented. If the answer is "this bundle plus one missing module," then the augmented bundle gets implemented. If the answer is "a different module set dominates row by row," then the prize funds the better design instead.
 
