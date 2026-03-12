@@ -1365,7 +1365,7 @@ CURRENT_DRUG_APPROVALS_PER_YEAR = Parameter(
     description="Average annual new drug approvals globally",
     display_name="Average Annual New Drug Approvals Globally",
     unit="drugs/year",
-    keywords=["worldwide", "yearly", "current", "drug", "approvals", "year", "earth"],
+    keywords=["worldwide", "yearly", "current", "drug", "approvals", "year", "baseline"],
     distribution="lognormal",  # Count data with right skew
     confidence_interval=(45, 60),  # FDA approval rate varies 45-60/year
     latex_symbol=r"Drugs_{ann,curr}",  # LaTeX symbol for equations
@@ -7848,7 +7848,7 @@ def compound_sum(annual_benefit: float, years: float, growth_rate: float, discou
 # GDP TRAJECTORY PARAMETERS AND FUNCTIONS
 # ---
 # Models three diverging GDP trajectories over 20 years:
-# Earth (status quo), Treaty Path (military+health), Wishonia Path (full package)
+# Current Trajectory (status quo), Treaty Trajectory (military+health), Wishonia Trajectory (full package)
 
 RD_SPILLOVER_MULTIPLIER = Parameter(
     2.0,
@@ -7973,35 +7973,35 @@ WISHONIA_DISEASE_CURE_FRACTION_20YR_FULL = Parameter(
     latex_symbol=r"f_{cure,20,wish}",
 )
 
-EARTH_GDP_YEAR_20 = Parameter(
+CURRENT_TRAJECTORY_GDP_YEAR_20 = Parameter(
     GLOBAL_GDP_2025 * ((1 + GDP_BASELINE_GROWTH_RATE) ** 20),
     source_type="calculated",
-    description="Global GDP at year 20 under status-quo Earth baseline growth.",
-    display_name="Earth GDP at Year 20",
+    description="Global GDP at year 20 under status-quo current trajectory growth.",
+    display_name="Current Trajectory GDP at Year 20",
     unit="USD",
     formula="GLOBAL_GDP_2025 × (1 + GDP_BASELINE_GROWTH_RATE)^20",
-    latex=r"GDP_{earth,20} = GDP_0(1+g_{base})^{20}",
-    keywords=["GDP", "earth", "baseline", "year 20"],
+    latex=r"GDP_{base,20} = GDP_0(1+g_{base})^{20}",
+    keywords=["GDP", "baseline", "baseline", "year 20"],
     inputs=["GLOBAL_GDP_2025", "GDP_BASELINE_GROWTH_RATE"],
     compute=lambda ctx: ctx["GLOBAL_GDP_2025"] * ((1 + ctx["GDP_BASELINE_GROWTH_RATE"]) ** 20),
-    latex_symbol=r"GDP_{earth,20}",
+    latex_symbol=r"GDP_{base,20}",
 )
 
-EARTH_AVG_INCOME_YEAR_20 = Parameter(
-    EARTH_GDP_YEAR_20 / GLOBAL_POPULATION_2045_PROJECTED,
+CURRENT_TRAJECTORY_AVG_INCOME_YEAR_20 = Parameter(
+    CURRENT_TRAJECTORY_GDP_YEAR_20 / GLOBAL_POPULATION_2045_PROJECTED,
     source_type="calculated",
-    description="Average income (GDP per capita) at year 20 under Earth baseline trajectory.",
-    display_name="Earth Average Income at Year 20",
+    description="Average income (GDP per capita) at year 20 under current trajectory trajectory.",
+    display_name="Current Trajectory Average Income at Year 20",
     unit="USD",
-    formula="EARTH_GDP_YEAR_20 ÷ GLOBAL_POPULATION_2045_PROJECTED",
-    keywords=["income", "per capita", "earth", "year 20", "average"],
-    inputs=["EARTH_GDP_YEAR_20", "GLOBAL_POPULATION_2045_PROJECTED"],
-    compute=lambda ctx: ctx["EARTH_GDP_YEAR_20"] / ctx["GLOBAL_POPULATION_2045_PROJECTED"],
-    latex_symbol=r"\bar{y}_{earth,20}",
+    formula="CURRENT_TRAJECTORY_GDP_YEAR_20 ÷ GLOBAL_POPULATION_2045_PROJECTED",
+    keywords=["income", "per capita", "baseline", "year 20", "average"],
+    inputs=["CURRENT_TRAJECTORY_GDP_YEAR_20", "GLOBAL_POPULATION_2045_PROJECTED"],
+    compute=lambda ctx: ctx["CURRENT_TRAJECTORY_GDP_YEAR_20"] / ctx["GLOBAL_POPULATION_2045_PROJECTED"],
+    latex_symbol=r"\bar{y}_{base,20}",
 )
 
 
-TREATY_PATH_GDP_YEAR_20 = Parameter(
+TREATY_TRAJECTORY_GDP_YEAR_20 = Parameter(
     GLOBAL_GDP_2025
     * (
         (
@@ -8022,10 +8022,10 @@ TREATY_PATH_GDP_YEAR_20 = Parameter(
         ) ** 17
     ),
     source_type="calculated",
-    description="Projected global GDP at year 20 under the Treaty Path: military-to-science reallocation "
+    description="Projected global GDP at year 20 under the Treaty Trajectory: military-to-science reallocation "
                 "plus disease-burden recovery only. Excludes non-health dysfunction-capital reallocation "
-                "to isolate the lower-political-baggage channel stack.",
-    display_name="Treaty Path GDP at Year 20",
+                "to isolate the lower-political-baggage channel.",
+    display_name="Treaty Trajectory GDP at Year 20",
     unit="USD",
     formula="GLOBAL_GDP_2025 × (1 + g_treaty_ramp)^3 × (1 + g_treaty_full)^17, where g_treaty includes baseline growth + military reallocation + disease-burden recovery only",
     latex=r"GDP_{treaty,20}=GDP_0(1+g_{treaty,ramp})^3(1+g_{treaty,full})^{17}",
@@ -8063,49 +8063,49 @@ TREATY_PATH_GDP_YEAR_20 = Parameter(
     latex_symbol=r"GDP_{treaty,20}",
 )
 
-TREATY_PATH_CAGR_YEAR_20 = Parameter(
-    (TREATY_PATH_GDP_YEAR_20 / GLOBAL_GDP_2025) ** (1 / 20) - 1,
+TREATY_TRAJECTORY_CAGR_YEAR_20 = Parameter(
+    (TREATY_TRAJECTORY_GDP_YEAR_20 / GLOBAL_GDP_2025) ** (1 / 20) - 1,
     source_type="calculated",
-    description="Compound annual growth rate implied by Treaty Path GDP trajectory over 20 years.",
-    display_name="Treaty Path CAGR (20 Years)",
+    description="Compound annual growth rate implied by Treaty Trajectory GDP trajectory over 20 years.",
+    display_name="Treaty Trajectory CAGR (20 Years)",
     unit="rate",
-    formula="(TREATY_PATH_GDP_YEAR_20 ÷ GLOBAL_GDP_2025)^(1/20) - 1",
+    formula="(TREATY_TRAJECTORY_GDP_YEAR_20 ÷ GLOBAL_GDP_2025)^(1/20) - 1",
     latex=r"g_{treaty,CAGR} = \left(\frac{GDP_{treaty,20}}{GDP_0}\right)^{1/20} - 1",
     keywords=["CAGR", "GDP", "wishonia", "core", "20 years"],
-    inputs=["TREATY_PATH_GDP_YEAR_20", "GLOBAL_GDP_2025"],
-    compute=lambda ctx: (ctx["TREATY_PATH_GDP_YEAR_20"] / ctx["GLOBAL_GDP_2025"]) ** (1 / 20) - 1,
+    inputs=["TREATY_TRAJECTORY_GDP_YEAR_20", "GLOBAL_GDP_2025"],
+    compute=lambda ctx: (ctx["TREATY_TRAJECTORY_GDP_YEAR_20"] / ctx["GLOBAL_GDP_2025"]) ** (1 / 20) - 1,
     latex_symbol=r"g_{treaty,CAGR}",
 )
 
-TREATY_PATH_GDP_VS_EARTH_MULTIPLIER_YEAR_20 = Parameter(
-    TREATY_PATH_GDP_YEAR_20 / EARTH_GDP_YEAR_20,
+TREATY_TRAJECTORY_GDP_VS_CURRENT_TRAJECTORY_MULTIPLIER_YEAR_20 = Parameter(
+    TREATY_TRAJECTORY_GDP_YEAR_20 / CURRENT_TRAJECTORY_GDP_YEAR_20,
     source_type="calculated",
-    description="Treaty Path GDP at year 20 as a multiple of Earth baseline GDP at year 20.",
-    display_name="Treaty Path vs Earth GDP Multiplier (Year 20)",
+    description="Treaty Trajectory GDP at year 20 as a multiple of current trajectory GDP at year 20.",
+    display_name="Treaty Trajectory vs Current Trajectory GDP Multiplier (Year 20)",
     unit="x",
-    formula="TREATY_PATH_GDP_YEAR_20 ÷ EARTH_GDP_YEAR_20",
-    keywords=["GDP", "wishonia", "core", "earth", "multiplier", "year 20"],
-    inputs=["TREATY_PATH_GDP_YEAR_20", "EARTH_GDP_YEAR_20"],
-    compute=lambda ctx: ctx["TREATY_PATH_GDP_YEAR_20"] / ctx["EARTH_GDP_YEAR_20"],
-    latex_symbol=r"k_{treaty:earth,20}",
+    formula="TREATY_TRAJECTORY_GDP_YEAR_20 ÷ CURRENT_TRAJECTORY_GDP_YEAR_20",
+    keywords=["GDP", "wishonia", "core", "baseline", "multiplier", "year 20"],
+    inputs=["TREATY_TRAJECTORY_GDP_YEAR_20", "CURRENT_TRAJECTORY_GDP_YEAR_20"],
+    compute=lambda ctx: ctx["TREATY_TRAJECTORY_GDP_YEAR_20"] / ctx["CURRENT_TRAJECTORY_GDP_YEAR_20"],
+    latex_symbol=r"k_{treaty:base,20}",
 )
 
-TREATY_PATH_AVG_INCOME_YEAR_20 = Parameter(
-    float(TREATY_PATH_GDP_YEAR_20) / float(GLOBAL_POPULATION_2045_PROJECTED),
+TREATY_TRAJECTORY_AVG_INCOME_YEAR_20 = Parameter(
+    float(TREATY_TRAJECTORY_GDP_YEAR_20) / float(GLOBAL_POPULATION_2045_PROJECTED),
     source_type="calculated",
-    description="Average income (GDP per capita) at year 20 under the Treaty Path.",
-    display_name="Treaty Path Average Income at Year 20",
+    description="Average income (GDP per capita) at year 20 under the Treaty Trajectory.",
+    display_name="Treaty Trajectory Average Income at Year 20",
     unit="USD",
-    formula="TREATY_PATH_GDP_YEAR_20 / GLOBAL_POPULATION_2045_PROJECTED",
+    formula="TREATY_TRAJECTORY_GDP_YEAR_20 / GLOBAL_POPULATION_2045_PROJECTED",
     latex=r"\bar{y}_{treaty,20} = \frac{GDP_{treaty,20}}{Pop_{2045}}",
     keywords=["income", "per capita", "wishonia", "core", "year 20", "average"],
-    inputs=["TREATY_PATH_GDP_YEAR_20", "GLOBAL_POPULATION_2045_PROJECTED"],
-    compute=lambda ctx: ctx["TREATY_PATH_GDP_YEAR_20"] / ctx["GLOBAL_POPULATION_2045_PROJECTED"],
+    inputs=["TREATY_TRAJECTORY_GDP_YEAR_20", "GLOBAL_POPULATION_2045_PROJECTED"],
+    compute=lambda ctx: ctx["TREATY_TRAJECTORY_GDP_YEAR_20"] / ctx["GLOBAL_POPULATION_2045_PROJECTED"],
     latex_symbol=r"\bar{y}_{treaty,20}",
 )
 
 
-WISHONIA_PATH_GDP_YEAR_20 = Parameter(
+WISHONIA_TRAJECTORY_GDP_YEAR_20 = Parameter(
     GLOBAL_GDP_2025
     * (
         (
@@ -8159,13 +8159,13 @@ WISHONIA_PATH_GDP_YEAR_20 = Parameter(
         ) ** 17
     ),
     source_type="calculated",
-    description="Projected global GDP at year 20 under the Wishonia Path. "
+    description="Projected global GDP at year 20 under the Wishonia Trajectory. "
                 "Model applies all Wishonia policy channels and redirects the full Political Dysfunction Tax "
                 "non-health opportunity pool to highest-marginal-value uses. Health recovery is modeled separately "
                 "through disease burden removal to avoid overlap. Military and non-health reallocation effects are "
                 "ramped at 50% intensity for the first 3 years, then 100% for years 4-20, reflecting implementation lag. "
                 "Military reallocation uses a physically demonstrated upper bound (post-WW2 demobilization) rather than an arbitrary policy cap.",
-    display_name="Wishonia Path GDP at Year 20",
+    display_name="Wishonia Trajectory GDP at Year 20",
     unit="USD",
     formula="GLOBAL_GDP_2025 × (1 + g_ramp)^3 × (1 + g_full)^17, where years 1-3 use 50% of military and non-health reallocation intensity, and years 4-20 use 100%; both include disease-burden recovery",
     latex=r"GDP_{wish,20}=GDP_0(1+g_{ramp})^3(1+g_{full})^{17}",
@@ -8241,39 +8241,39 @@ WISHONIA_PATH_GDP_YEAR_20 = Parameter(
     latex_symbol=r"GDP_{wish,20}",
 )
 
-WISHONIA_PATH_CAGR_YEAR_20 = Parameter(
-    (WISHONIA_PATH_GDP_YEAR_20 / GLOBAL_GDP_2025) ** (1 / 20) - 1,
+WISHONIA_TRAJECTORY_CAGR_YEAR_20 = Parameter(
+    (WISHONIA_TRAJECTORY_GDP_YEAR_20 / GLOBAL_GDP_2025) ** (1 / 20) - 1,
     source_type="calculated",
-    description="Compound annual growth rate implied by Wishonia Path GDP trajectory over 20 years.",
-    display_name="Wishonia Path CAGR (20 Years)",
+    description="Compound annual growth rate implied by Wishonia Trajectory GDP trajectory over 20 years.",
+    display_name="Wishonia Trajectory CAGR (20 Years)",
     unit="rate",
-    formula="(WISHONIA_PATH_GDP_YEAR_20 ÷ GLOBAL_GDP_2025)^(1/20) - 1",
+    formula="(WISHONIA_TRAJECTORY_GDP_YEAR_20 ÷ GLOBAL_GDP_2025)^(1/20) - 1",
     latex=r"g_{wish,CAGR} = \left(\frac{GDP_{wish,20}}{GDP_0}\right)^{1/20} - 1",
     keywords=["CAGR", "GDP", "wishonia", "20 years"],
-    inputs=["WISHONIA_PATH_GDP_YEAR_20", "GLOBAL_GDP_2025"],
-    compute=lambda ctx: (ctx["WISHONIA_PATH_GDP_YEAR_20"] / ctx["GLOBAL_GDP_2025"]) ** (1 / 20) - 1,
+    inputs=["WISHONIA_TRAJECTORY_GDP_YEAR_20", "GLOBAL_GDP_2025"],
+    compute=lambda ctx: (ctx["WISHONIA_TRAJECTORY_GDP_YEAR_20"] / ctx["GLOBAL_GDP_2025"]) ** (1 / 20) - 1,
     latex_symbol=r"g_{wish,CAGR}",
 )
 
-WISHONIA_PATH_GDP_VS_EARTH_MULTIPLIER_YEAR_20 = Parameter(
-    WISHONIA_PATH_GDP_YEAR_20 / EARTH_GDP_YEAR_20,
+WISHONIA_TRAJECTORY_GDP_VS_CURRENT_TRAJECTORY_MULTIPLIER_YEAR_20 = Parameter(
+    WISHONIA_TRAJECTORY_GDP_YEAR_20 / CURRENT_TRAJECTORY_GDP_YEAR_20,
     source_type="calculated",
-    description="Wishonia Path GDP at year 20 as a multiple of Earth baseline GDP at year 20.",
-    display_name="Wishonia Path vs Earth GDP Multiplier (Year 20)",
+    description="Wishonia Trajectory GDP at year 20 as a multiple of current trajectory GDP at year 20.",
+    display_name="Wishonia Trajectory vs Current Trajectory GDP Multiplier (Year 20)",
     unit="x",
-    formula="WISHONIA_PATH_GDP_YEAR_20 ÷ EARTH_GDP_YEAR_20",
-    keywords=["GDP", "wishonia", "earth", "multiplier", "year 20"],
-    inputs=["WISHONIA_PATH_GDP_YEAR_20", "EARTH_GDP_YEAR_20"],
-    compute=lambda ctx: ctx["WISHONIA_PATH_GDP_YEAR_20"] / ctx["EARTH_GDP_YEAR_20"],
-    latex_symbol=r"k_{wish:earth,20}",
+    formula="WISHONIA_TRAJECTORY_GDP_YEAR_20 ÷ CURRENT_TRAJECTORY_GDP_YEAR_20",
+    keywords=["GDP", "wishonia", "baseline", "multiplier", "year 20"],
+    inputs=["WISHONIA_TRAJECTORY_GDP_YEAR_20", "CURRENT_TRAJECTORY_GDP_YEAR_20"],
+    compute=lambda ctx: ctx["WISHONIA_TRAJECTORY_GDP_YEAR_20"] / ctx["CURRENT_TRAJECTORY_GDP_YEAR_20"],
+    latex_symbol=r"k_{wish:base,20}",
 )
 
-WISHONIA_PATH_SUCCESS_PROBABILITY_YEAR_20 = Parameter(
+WISHONIA_TRAJECTORY_SUCCESS_PROBABILITY_YEAR_20 = Parameter(
     0.90,
     source_type="definition",
-    description="Probability that the world follows the Wishonia Path (Treaty + dysfunction-tax elimination) "
+    description="Probability that the world follows the Wishonia Trajectory (Treaty + dysfunction-tax elimination) "
                 "rather than the Moronia collapse path in the expected-value framing.",
-    display_name="Wishonia Path Probability (Year 20 EV Model)",
+    display_name="Wishonia Trajectory Probability (Year 20 EV Model)",
     unit="rate",
     distribution=DistributionType.BETA,
     confidence="low",
@@ -8282,72 +8282,72 @@ WISHONIA_PATH_SUCCESS_PROBABILITY_YEAR_20 = Parameter(
     latex_symbol=r"p_{wish,20}",
 )
 
-MORONIA_PATH_PROBABILITY_YEAR_20 = Parameter(
-    1 - WISHONIA_PATH_SUCCESS_PROBABILITY_YEAR_20,
+MORONIA_TRAJECTORY_PROBABILITY_YEAR_20 = Parameter(
+    1 - WISHONIA_TRAJECTORY_SUCCESS_PROBABILITY_YEAR_20,
     source_type="calculated",
     description="Probability that the world follows the Moronia collapse path in the year-20 expected-value framing.",
-    display_name="Moronia Path Probability (Year 20 EV Model)",
+    display_name="Moronia Trajectory Probability (Year 20 EV Model)",
     unit="rate",
-    formula="1 - WISHONIA_PATH_SUCCESS_PROBABILITY_YEAR_20",
+    formula="1 - WISHONIA_TRAJECTORY_SUCCESS_PROBABILITY_YEAR_20",
     keywords=["probability", "expected value", "moronia", "year 20"],
-    inputs=["WISHONIA_PATH_SUCCESS_PROBABILITY_YEAR_20"],
-    compute=lambda ctx: 1 - ctx["WISHONIA_PATH_SUCCESS_PROBABILITY_YEAR_20"],
+    inputs=["WISHONIA_TRAJECTORY_SUCCESS_PROBABILITY_YEAR_20"],
+    compute=lambda ctx: 1 - ctx["WISHONIA_TRAJECTORY_SUCCESS_PROBABILITY_YEAR_20"],
     latex_symbol=r"p_{mor,20}",
 )
 
 GDP_EXPECTED_VALUE_YEAR_20 = Parameter(
-    float(WISHONIA_PATH_SUCCESS_PROBABILITY_YEAR_20) * float(WISHONIA_PATH_GDP_YEAR_20),
+    float(WISHONIA_TRAJECTORY_SUCCESS_PROBABILITY_YEAR_20) * float(WISHONIA_TRAJECTORY_GDP_YEAR_20),
     source_type="calculated",
     description="Probability-weighted expected global GDP at year 20 from Wishonia vs Moronia paths. "
                 "Moronia contributes $0 GDP in this framing.",
     display_name="Expected GDP at Year 20 (Probability-Weighted)",
     unit="USD",
-    formula="WISHONIA_PATH_SUCCESS_PROBABILITY_YEAR_20 × WISHONIA_PATH_GDP_YEAR_20",
+    formula="WISHONIA_TRAJECTORY_SUCCESS_PROBABILITY_YEAR_20 × WISHONIA_TRAJECTORY_GDP_YEAR_20",
     latex=r"E[GDP_{20}] = p_{wish,20} \cdot GDP_{wish,20}",
     keywords=["GDP", "expected value", "probability", "weighted"],
-    inputs=["WISHONIA_PATH_SUCCESS_PROBABILITY_YEAR_20", "WISHONIA_PATH_GDP_YEAR_20"],
-    compute=lambda ctx: ctx["WISHONIA_PATH_SUCCESS_PROBABILITY_YEAR_20"] * ctx["WISHONIA_PATH_GDP_YEAR_20"],
+    inputs=["WISHONIA_TRAJECTORY_SUCCESS_PROBABILITY_YEAR_20", "WISHONIA_TRAJECTORY_GDP_YEAR_20"],
+    compute=lambda ctx: ctx["WISHONIA_TRAJECTORY_SUCCESS_PROBABILITY_YEAR_20"] * ctx["WISHONIA_TRAJECTORY_GDP_YEAR_20"],
     latex_symbol=r"E[GDP_{20}]",
 )
 
-GDP_EXPECTED_VALUE_VS_EARTH_MULTIPLIER_YEAR_20 = Parameter(
-    GDP_EXPECTED_VALUE_YEAR_20 / EARTH_GDP_YEAR_20,
+GDP_EXPECTED_VALUE_VS_CURRENT_TRAJECTORY_MULTIPLIER_YEAR_20 = Parameter(
+    GDP_EXPECTED_VALUE_YEAR_20 / CURRENT_TRAJECTORY_GDP_YEAR_20,
     source_type="calculated",
-    description="Expected-value GDP at year 20 as a multiple of Earth baseline GDP.",
-    display_name="Expected GDP vs Earth Multiplier (Year 20)",
+    description="Expected-value GDP at year 20 as a multiple of current trajectory GDP.",
+    display_name="Expected GDP vs Current Trajectory Multiplier (Year 20)",
     unit="x",
-    formula="GDP_EXPECTED_VALUE_YEAR_20 ÷ EARTH_GDP_YEAR_20",
-    keywords=["GDP", "expected value", "earth", "multiplier", "year 20"],
-    inputs=["GDP_EXPECTED_VALUE_YEAR_20", "EARTH_GDP_YEAR_20"],
-    compute=lambda ctx: ctx["GDP_EXPECTED_VALUE_YEAR_20"] / ctx["EARTH_GDP_YEAR_20"],
-    latex_symbol=r"k_{EV:earth,20}",
+    formula="GDP_EXPECTED_VALUE_YEAR_20 ÷ CURRENT_TRAJECTORY_GDP_YEAR_20",
+    keywords=["GDP", "expected value", "baseline", "multiplier", "year 20"],
+    inputs=["GDP_EXPECTED_VALUE_YEAR_20", "CURRENT_TRAJECTORY_GDP_YEAR_20"],
+    compute=lambda ctx: ctx["GDP_EXPECTED_VALUE_YEAR_20"] / ctx["CURRENT_TRAJECTORY_GDP_YEAR_20"],
+    latex_symbol=r"k_{EV:base,20}",
 )
 
-WISHONIA_PATH_AVG_INCOME_YEAR_20 = Parameter(
-    float(WISHONIA_PATH_GDP_YEAR_20) / float(GLOBAL_POPULATION_2045_PROJECTED),
+WISHONIA_TRAJECTORY_AVG_INCOME_YEAR_20 = Parameter(
+    float(WISHONIA_TRAJECTORY_GDP_YEAR_20) / float(GLOBAL_POPULATION_2045_PROJECTED),
     source_type="calculated",
-    description="Average income (GDP per capita) at year 20 under the Wishonia Path.",
-    display_name="Wishonia Path Average Income at Year 20",
+    description="Average income (GDP per capita) at year 20 under the Wishonia Trajectory.",
+    display_name="Wishonia Trajectory Average Income at Year 20",
     unit="USD",
-    formula="WISHONIA_PATH_GDP_YEAR_20 / GLOBAL_POPULATION_2045_PROJECTED",
+    formula="WISHONIA_TRAJECTORY_GDP_YEAR_20 / GLOBAL_POPULATION_2045_PROJECTED",
     latex=r"\bar{y}_{wish,20} = \frac{GDP_{wish,20}}{Pop_{2045}}",
     keywords=["income", "per capita", "wishonia", "year 20", "average"],
-    inputs=["WISHONIA_PATH_GDP_YEAR_20", "GLOBAL_POPULATION_2045_PROJECTED"],
-    compute=lambda ctx: ctx["WISHONIA_PATH_GDP_YEAR_20"] / ctx["GLOBAL_POPULATION_2045_PROJECTED"],
+    inputs=["WISHONIA_TRAJECTORY_GDP_YEAR_20", "GLOBAL_POPULATION_2045_PROJECTED"],
+    compute=lambda ctx: ctx["WISHONIA_TRAJECTORY_GDP_YEAR_20"] / ctx["GLOBAL_POPULATION_2045_PROJECTED"],
     latex_symbol=r"\bar{y}_{wish,20}",
 )
 
-WISHONIA_PATH_VS_TREATY_PATH_GDP_MULTIPLIER_YEAR_20 = Parameter(
-    WISHONIA_PATH_GDP_YEAR_20 / TREATY_PATH_GDP_YEAR_20,
+WISHONIA_TRAJECTORY_VS_TREATY_TRAJECTORY_GDP_MULTIPLIER_YEAR_20 = Parameter(
+    WISHONIA_TRAJECTORY_GDP_YEAR_20 / TREATY_TRAJECTORY_GDP_YEAR_20,
     source_type="calculated",
     description="Year-20 GDP multiplier from adding non-health dysfunction-capital reallocation "
-                "on top of the Treaty Path channels.",
-    display_name="Wishonia Path vs Treaty Path GDP Multiplier (Year 20)",
+                "on top of the Treaty Trajectory channels.",
+    display_name="Wishonia Trajectory vs Treaty Trajectory GDP Multiplier (Year 20)",
     unit="x",
-    formula="WISHONIA_PATH_GDP_YEAR_20 ÷ TREATY_PATH_GDP_YEAR_20",
+    formula="WISHONIA_TRAJECTORY_GDP_YEAR_20 ÷ TREATY_TRAJECTORY_GDP_YEAR_20",
     keywords=["wishonia", "full", "core", "GDP", "multiplier", "year 20"],
-    inputs=["WISHONIA_PATH_GDP_YEAR_20", "TREATY_PATH_GDP_YEAR_20"],
-    compute=lambda ctx: ctx["WISHONIA_PATH_GDP_YEAR_20"] / ctx["TREATY_PATH_GDP_YEAR_20"],
+    inputs=["WISHONIA_TRAJECTORY_GDP_YEAR_20", "TREATY_TRAJECTORY_GDP_YEAR_20"],
+    compute=lambda ctx: ctx["WISHONIA_TRAJECTORY_GDP_YEAR_20"] / ctx["TREATY_TRAJECTORY_GDP_YEAR_20"],
     latex_symbol=r"k_{wish,full:core,20}",
 )
 
@@ -8365,7 +8365,7 @@ GLOBAL_AVG_INCOME_2025 = Parameter(
 )
 
 # ---
-# LIFETIME INCOME COMPARISON (Treaty Path vs Earth Baseline)
+# LIFETIME INCOME COMPARISON (Treaty Trajectory vs Current Trajectory)
 # ---
 # Calculates cumulative per-capita income over an average remaining lifespan.
 # Treaty path uses per-capita CAGR for years 1-20, then GDP_BASELINE_GROWTH_RATE
@@ -8418,128 +8418,128 @@ def _cumulative_lifetime_income(income_0, income_year_20, baseline_growth, remai
     return phase1 + phase2
 
 
-EARTH_CUMULATIVE_LIFETIME_INCOME = Parameter(
+CURRENT_TRAJECTORY_CUMULATIVE_LIFETIME_INCOME = Parameter(
     _cumulative_lifetime_income(
-        float(GLOBAL_AVG_INCOME_2025), float(EARTH_AVG_INCOME_YEAR_20),
+        float(GLOBAL_AVG_INCOME_2025), float(CURRENT_TRAJECTORY_AVG_INCOME_YEAR_20),
         float(GDP_BASELINE_GROWTH_RATE), float(GLOBAL_AVG_REMAINING_YEARS),
     ),
     source_type="calculated",
-    description="Cumulative per-capita income over an average remaining lifespan under Earth "
+    description="Cumulative per-capita income over an average remaining lifespan under current trajectory "
                 "baseline trajectory. Uses 2.5% baseline growth for all years.",
-    display_name="Earth Cumulative Lifetime Income (Per Capita)",
+    display_name="Current Trajectory Cumulative Lifetime Income (Per Capita)",
     unit="USD",
     formula="GLOBAL_AVG_INCOME_2025 * (1+g) * ((1+g)^T - 1) / g, where g = per-capita baseline growth",
     latex=r"Y_{cum,earth} = \bar{y}_0 \cdot \frac{(1+g_{base})((1+g_{base})^{T_{remaining}}-1)}{g_{base}}",
-    inputs=["GLOBAL_AVG_INCOME_2025", "EARTH_AVG_INCOME_YEAR_20", "GDP_BASELINE_GROWTH_RATE",
+    inputs=["GLOBAL_AVG_INCOME_2025", "CURRENT_TRAJECTORY_AVG_INCOME_YEAR_20", "GDP_BASELINE_GROWTH_RATE",
             "GLOBAL_AVG_REMAINING_YEARS"],
     compute=lambda ctx: _cumulative_lifetime_income(
         ctx["GLOBAL_AVG_INCOME_2025"],
-        ctx["EARTH_AVG_INCOME_YEAR_20"],
+        ctx["CURRENT_TRAJECTORY_AVG_INCOME_YEAR_20"],
         ctx["GDP_BASELINE_GROWTH_RATE"],
         ctx["GLOBAL_AVG_REMAINING_YEARS"],
     ),
     latex_symbol=r"Y_{cum,earth}",
 )
 
-TREATY_PATH_CUMULATIVE_LIFETIME_INCOME = Parameter(
+TREATY_TRAJECTORY_CUMULATIVE_LIFETIME_INCOME = Parameter(
     _cumulative_lifetime_income(
-        float(GLOBAL_AVG_INCOME_2025), float(TREATY_PATH_AVG_INCOME_YEAR_20),
+        float(GLOBAL_AVG_INCOME_2025), float(TREATY_TRAJECTORY_AVG_INCOME_YEAR_20),
         float(GDP_BASELINE_GROWTH_RATE), float(GLOBAL_AVG_REMAINING_YEARS),
     ),
     source_type="calculated",
-    description="Cumulative per-capita income over an average remaining lifespan under Treaty Path. "
+    description="Cumulative per-capita income over an average remaining lifespan under Treaty Trajectory. "
                 "Uses implied per-capita CAGR for years 1-20 (derived from known year-0 and year-20 "
                 "per-capita incomes), then baseline growth from the year-20 level. Conservative: "
                 "assumes no further treaty acceleration beyond year 20.",
-    display_name="Treaty Path Cumulative Lifetime Income (Per Capita)",
+    display_name="Treaty Trajectory Cumulative Lifetime Income (Per Capita)",
     unit="USD",
     formula="Phase 1: y0*(1+g_pc)*((1+g_pc)^20-1)/g_pc + Phase 2: y20*(1+g_base)*((1+g_base)^(T-20)-1)/g_base",
     latex=r"Y_{cum,treaty} = \bar{y}_0 \cdot \frac{(1+g_{pc})((1+g_{pc})^{20}-1)}{g_{pc}} + \bar{y}_{treaty,20} \cdot \frac{(1+g_{base})((1+g_{base})^{T_{remaining}-20}-1)}{g_{base}}",
-    inputs=["GLOBAL_AVG_INCOME_2025", "TREATY_PATH_AVG_INCOME_YEAR_20", "GDP_BASELINE_GROWTH_RATE",
+    inputs=["GLOBAL_AVG_INCOME_2025", "TREATY_TRAJECTORY_AVG_INCOME_YEAR_20", "GDP_BASELINE_GROWTH_RATE",
             "GLOBAL_AVG_REMAINING_YEARS"],
     compute=lambda ctx: _cumulative_lifetime_income(
         ctx["GLOBAL_AVG_INCOME_2025"],
-        ctx["TREATY_PATH_AVG_INCOME_YEAR_20"],
+        ctx["TREATY_TRAJECTORY_AVG_INCOME_YEAR_20"],
         ctx["GDP_BASELINE_GROWTH_RATE"],
         ctx["GLOBAL_AVG_REMAINING_YEARS"],
     ),
     latex_symbol=r"Y_{cum,treaty}",
 )
 
-TREATY_PATH_LIFETIME_INCOME_GAIN_PER_CAPITA = Parameter(
-    float(TREATY_PATH_CUMULATIVE_LIFETIME_INCOME) - float(EARTH_CUMULATIVE_LIFETIME_INCOME),
+TREATY_TRAJECTORY_LIFETIME_INCOME_GAIN_PER_CAPITA = Parameter(
+    float(TREATY_TRAJECTORY_CUMULATIVE_LIFETIME_INCOME) - float(CURRENT_TRAJECTORY_CUMULATIVE_LIFETIME_INCOME),
     source_type="calculated",
-    description="Lifetime per-capita income gain from Treaty Path vs Earth baseline. "
+    description="Lifetime per-capita income gain from Treaty Trajectory vs current trajectory. "
                 "Cumulative treaty income minus cumulative earth income over average remaining lifespan. "
                 "Uses global averages; individual gain scales with starting income.",
-    display_name="Treaty Path Lifetime Income Gain (Per Capita)",
+    display_name="Treaty Trajectory Lifetime Income Gain (Per Capita)",
     unit="USD",
-    formula="TREATY_PATH_CUMULATIVE_LIFETIME_INCOME - EARTH_CUMULATIVE_LIFETIME_INCOME",
-    inputs=["TREATY_PATH_CUMULATIVE_LIFETIME_INCOME", "EARTH_CUMULATIVE_LIFETIME_INCOME"],
-    compute=lambda ctx: ctx["TREATY_PATH_CUMULATIVE_LIFETIME_INCOME"] - ctx["EARTH_CUMULATIVE_LIFETIME_INCOME"],
+    formula="TREATY_TRAJECTORY_CUMULATIVE_LIFETIME_INCOME - CURRENT_TRAJECTORY_CUMULATIVE_LIFETIME_INCOME",
+    inputs=["TREATY_TRAJECTORY_CUMULATIVE_LIFETIME_INCOME", "CURRENT_TRAJECTORY_CUMULATIVE_LIFETIME_INCOME"],
+    compute=lambda ctx: ctx["TREATY_TRAJECTORY_CUMULATIVE_LIFETIME_INCOME"] - ctx["CURRENT_TRAJECTORY_CUMULATIVE_LIFETIME_INCOME"],
     latex_symbol=r"\Delta Y_{lifetime,treaty}",
 )
 
-TREATY_PATH_LIFETIME_INCOME_MULTIPLIER = Parameter(
-    float(TREATY_PATH_CUMULATIVE_LIFETIME_INCOME) / float(EARTH_CUMULATIVE_LIFETIME_INCOME),
+TREATY_TRAJECTORY_LIFETIME_INCOME_MULTIPLIER = Parameter(
+    float(TREATY_TRAJECTORY_CUMULATIVE_LIFETIME_INCOME) / float(CURRENT_TRAJECTORY_CUMULATIVE_LIFETIME_INCOME),
     source_type="calculated",
-    description="Ratio of cumulative lifetime income under Treaty Path vs Earth baseline. "
+    description="Ratio of cumulative lifetime income under Treaty Trajectory vs current trajectory. "
                 "Income-agnostic: applies as a multiplier to any individual's lifetime earnings.",
-    display_name="Treaty Path Lifetime Income Multiplier",
+    display_name="Treaty Trajectory Lifetime Income Multiplier",
     unit="x",
-    formula="TREATY_PATH_CUMULATIVE_LIFETIME_INCOME / EARTH_CUMULATIVE_LIFETIME_INCOME",
-    inputs=["TREATY_PATH_CUMULATIVE_LIFETIME_INCOME", "EARTH_CUMULATIVE_LIFETIME_INCOME"],
-    compute=lambda ctx: ctx["TREATY_PATH_CUMULATIVE_LIFETIME_INCOME"] / ctx["EARTH_CUMULATIVE_LIFETIME_INCOME"],
+    formula="TREATY_TRAJECTORY_CUMULATIVE_LIFETIME_INCOME / CURRENT_TRAJECTORY_CUMULATIVE_LIFETIME_INCOME",
+    inputs=["TREATY_TRAJECTORY_CUMULATIVE_LIFETIME_INCOME", "CURRENT_TRAJECTORY_CUMULATIVE_LIFETIME_INCOME"],
+    compute=lambda ctx: ctx["TREATY_TRAJECTORY_CUMULATIVE_LIFETIME_INCOME"] / ctx["CURRENT_TRAJECTORY_CUMULATIVE_LIFETIME_INCOME"],
     latex_symbol=r"k_{lifetime,treaty:earth}",
 )
 
-WISHONIA_PATH_CUMULATIVE_LIFETIME_INCOME = Parameter(
+WISHONIA_TRAJECTORY_CUMULATIVE_LIFETIME_INCOME = Parameter(
     _cumulative_lifetime_income(
-        float(GLOBAL_AVG_INCOME_2025), float(WISHONIA_PATH_AVG_INCOME_YEAR_20),
+        float(GLOBAL_AVG_INCOME_2025), float(WISHONIA_TRAJECTORY_AVG_INCOME_YEAR_20),
         float(GDP_BASELINE_GROWTH_RATE), float(GLOBAL_AVG_REMAINING_YEARS),
     ),
     source_type="calculated",
-    description="Cumulative per-capita income over an average remaining lifespan under Wishonia Path. "
+    description="Cumulative per-capita income over an average remaining lifespan under Wishonia Trajectory. "
                 "Uses implied per-capita CAGR for years 1-20, then baseline growth from the year-20 level. "
                 "Conservative: assumes no further acceleration beyond year 20.",
-    display_name="Wishonia Path Cumulative Lifetime Income (Per Capita)",
+    display_name="Wishonia Trajectory Cumulative Lifetime Income (Per Capita)",
     unit="USD",
     formula="Phase 1: y0*(1+g_pc)*((1+g_pc)^20-1)/g_pc + Phase 2: y20*(1+g_base)*((1+g_base)^(T-20)-1)/g_base",
     latex=r"Y_{cum,wish} = \bar{y}_0 \cdot \frac{(1+g_{pc,wish})((1+g_{pc,wish})^{20}-1)}{g_{pc,wish}} + \bar{y}_{wish,20} \cdot \frac{(1+g_{base})((1+g_{base})^{T_{remaining}-20}-1)}{g_{base}}",
-    inputs=["GLOBAL_AVG_INCOME_2025", "WISHONIA_PATH_AVG_INCOME_YEAR_20", "GDP_BASELINE_GROWTH_RATE",
+    inputs=["GLOBAL_AVG_INCOME_2025", "WISHONIA_TRAJECTORY_AVG_INCOME_YEAR_20", "GDP_BASELINE_GROWTH_RATE",
             "GLOBAL_AVG_REMAINING_YEARS"],
     compute=lambda ctx: _cumulative_lifetime_income(
         ctx["GLOBAL_AVG_INCOME_2025"],
-        ctx["WISHONIA_PATH_AVG_INCOME_YEAR_20"],
+        ctx["WISHONIA_TRAJECTORY_AVG_INCOME_YEAR_20"],
         ctx["GDP_BASELINE_GROWTH_RATE"],
         ctx["GLOBAL_AVG_REMAINING_YEARS"],
     ),
     latex_symbol=r"Y_{cum,wish}",
 )
 
-WISHONIA_PATH_LIFETIME_INCOME_GAIN_PER_CAPITA = Parameter(
-    float(WISHONIA_PATH_CUMULATIVE_LIFETIME_INCOME) - float(EARTH_CUMULATIVE_LIFETIME_INCOME),
+WISHONIA_TRAJECTORY_LIFETIME_INCOME_GAIN_PER_CAPITA = Parameter(
+    float(WISHONIA_TRAJECTORY_CUMULATIVE_LIFETIME_INCOME) - float(CURRENT_TRAJECTORY_CUMULATIVE_LIFETIME_INCOME),
     source_type="calculated",
-    description="Lifetime per-capita income gain from Wishonia Path vs Earth baseline. "
-                "Cumulative Wishonia income minus cumulative Earth income over average remaining lifespan.",
-    display_name="Wishonia Path Lifetime Income Gain (Per Capita)",
+    description="Lifetime per-capita income gain from Wishonia Trajectory vs current trajectory. "
+                "Cumulative Wishonia income minus cumulative current trajectory income over average remaining lifespan.",
+    display_name="Wishonia Trajectory Lifetime Income Gain (Per Capita)",
     unit="USD",
-    formula="WISHONIA_PATH_CUMULATIVE_LIFETIME_INCOME - EARTH_CUMULATIVE_LIFETIME_INCOME",
-    inputs=["WISHONIA_PATH_CUMULATIVE_LIFETIME_INCOME", "EARTH_CUMULATIVE_LIFETIME_INCOME"],
-    compute=lambda ctx: ctx["WISHONIA_PATH_CUMULATIVE_LIFETIME_INCOME"] - ctx["EARTH_CUMULATIVE_LIFETIME_INCOME"],
+    formula="WISHONIA_TRAJECTORY_CUMULATIVE_LIFETIME_INCOME - CURRENT_TRAJECTORY_CUMULATIVE_LIFETIME_INCOME",
+    inputs=["WISHONIA_TRAJECTORY_CUMULATIVE_LIFETIME_INCOME", "CURRENT_TRAJECTORY_CUMULATIVE_LIFETIME_INCOME"],
+    compute=lambda ctx: ctx["WISHONIA_TRAJECTORY_CUMULATIVE_LIFETIME_INCOME"] - ctx["CURRENT_TRAJECTORY_CUMULATIVE_LIFETIME_INCOME"],
     latex_symbol=r"\Delta Y_{lifetime,wish}",
 )
 
-WISHONIA_PATH_LIFETIME_INCOME_MULTIPLIER = Parameter(
-    float(WISHONIA_PATH_CUMULATIVE_LIFETIME_INCOME) / float(EARTH_CUMULATIVE_LIFETIME_INCOME),
+WISHONIA_TRAJECTORY_LIFETIME_INCOME_MULTIPLIER = Parameter(
+    float(WISHONIA_TRAJECTORY_CUMULATIVE_LIFETIME_INCOME) / float(CURRENT_TRAJECTORY_CUMULATIVE_LIFETIME_INCOME),
     source_type="calculated",
-    description="Ratio of cumulative lifetime income under Wishonia Path vs Earth baseline. "
+    description="Ratio of cumulative lifetime income under Wishonia Trajectory vs current trajectory. "
                 "Income-agnostic: applies as a multiplier to any individual's lifetime earnings.",
-    display_name="Wishonia Path Lifetime Income Multiplier",
+    display_name="Wishonia Trajectory Lifetime Income Multiplier",
     unit="x",
-    formula="WISHONIA_PATH_CUMULATIVE_LIFETIME_INCOME / EARTH_CUMULATIVE_LIFETIME_INCOME",
-    inputs=["WISHONIA_PATH_CUMULATIVE_LIFETIME_INCOME", "EARTH_CUMULATIVE_LIFETIME_INCOME"],
-    compute=lambda ctx: ctx["WISHONIA_PATH_CUMULATIVE_LIFETIME_INCOME"] / ctx["EARTH_CUMULATIVE_LIFETIME_INCOME"],
+    formula="WISHONIA_TRAJECTORY_CUMULATIVE_LIFETIME_INCOME / CURRENT_TRAJECTORY_CUMULATIVE_LIFETIME_INCOME",
+    inputs=["WISHONIA_TRAJECTORY_CUMULATIVE_LIFETIME_INCOME", "CURRENT_TRAJECTORY_CUMULATIVE_LIFETIME_INCOME"],
+    compute=lambda ctx: ctx["WISHONIA_TRAJECTORY_CUMULATIVE_LIFETIME_INCOME"] / ctx["CURRENT_TRAJECTORY_CUMULATIVE_LIFETIME_INCOME"],
     latex_symbol=r"k_{lifetime,wish:earth}",
 )
 
@@ -8600,21 +8600,21 @@ SHARING_OPPORTUNITY_COST = Parameter(
 )
 
 SHARING_UPSIDE_DOWNSIDE_RATIO_TREATY = Parameter(
-    float(TREATY_PATH_LIFETIME_INCOME_GAIN_PER_CAPITA) / float(SHARING_OPPORTUNITY_COST),
+    float(TREATY_TRAJECTORY_LIFETIME_INCOME_GAIN_PER_CAPITA) / float(SHARING_OPPORTUNITY_COST),
     source_type="calculated",
     description="Raw ratio of upside (lifetime income gain if plan works) to downside (cost of sharing "
                 "if plan is impossible). Not expected value; see SHARING_BREAKEVEN_PROBABILITY_TREATY for the "
                 "probability threshold that makes forwarding rational.",
     display_name="Sharing Upside/Downside Ratio",
     unit="x",
-    formula="TREATY_PATH_LIFETIME_INCOME_GAIN_PER_CAPITA / SHARING_OPPORTUNITY_COST",
-    inputs=["TREATY_PATH_LIFETIME_INCOME_GAIN_PER_CAPITA", "SHARING_OPPORTUNITY_COST"],
-    compute=lambda ctx: ctx["TREATY_PATH_LIFETIME_INCOME_GAIN_PER_CAPITA"] / ctx["SHARING_OPPORTUNITY_COST"],
+    formula="TREATY_TRAJECTORY_LIFETIME_INCOME_GAIN_PER_CAPITA / SHARING_OPPORTUNITY_COST",
+    inputs=["TREATY_TRAJECTORY_LIFETIME_INCOME_GAIN_PER_CAPITA", "SHARING_OPPORTUNITY_COST"],
+    compute=lambda ctx: ctx["TREATY_TRAJECTORY_LIFETIME_INCOME_GAIN_PER_CAPITA"] / ctx["SHARING_OPPORTUNITY_COST"],
     latex_symbol=r"k_{upside:downside}",
 )
 
 SHARING_BREAKEVEN_PROBABILITY_TREATY = Parameter(
-    float(SHARING_OPPORTUNITY_COST) / float(TREATY_PATH_LIFETIME_INCOME_GAIN_PER_CAPITA),
+    float(SHARING_OPPORTUNITY_COST) / float(TREATY_TRAJECTORY_LIFETIME_INCOME_GAIN_PER_CAPITA),
     source_type="calculated",
     description="Minimum probability that the plan works for forwarding to have positive expected value. "
                 "EV > 0 when P(works) > cost_of_sharing / gain_if_works. Below this probability, "
@@ -8622,14 +8622,14 @@ SHARING_BREAKEVEN_PROBABILITY_TREATY = Parameter(
                 "being struck by lightning are ~1 in 1.2 million.",
     display_name="Sharing Breakeven Probability",
     unit="probability",
-    formula="SHARING_OPPORTUNITY_COST / TREATY_PATH_LIFETIME_INCOME_GAIN_PER_CAPITA",
-    inputs=["SHARING_OPPORTUNITY_COST", "TREATY_PATH_LIFETIME_INCOME_GAIN_PER_CAPITA"],
-    compute=lambda ctx: ctx["SHARING_OPPORTUNITY_COST"] / ctx["TREATY_PATH_LIFETIME_INCOME_GAIN_PER_CAPITA"],
+    formula="SHARING_OPPORTUNITY_COST / TREATY_TRAJECTORY_LIFETIME_INCOME_GAIN_PER_CAPITA",
+    inputs=["SHARING_OPPORTUNITY_COST", "TREATY_TRAJECTORY_LIFETIME_INCOME_GAIN_PER_CAPITA"],
+    compute=lambda ctx: ctx["SHARING_OPPORTUNITY_COST"] / ctx["TREATY_TRAJECTORY_LIFETIME_INCOME_GAIN_PER_CAPITA"],
     latex_symbol=r"P_{breakeven}",
 )
 
 SHARING_BREAKEVEN_ONE_IN_TREATY = Parameter(
-    float(TREATY_PATH_LIFETIME_INCOME_GAIN_PER_CAPITA) / float(SHARING_OPPORTUNITY_COST),
+    float(TREATY_TRAJECTORY_LIFETIME_INCOME_GAIN_PER_CAPITA) / float(SHARING_OPPORTUNITY_COST),
     source_type="calculated",
     description="Breakeven probability expressed as '1 in N'. Forwarding has positive expected value "
                 "if you believe there is at least a 1-in-N chance the plan works. "

@@ -508,8 +508,8 @@ def main():
             })
             continue
 
-        if mp3_path.exists() and not args.force:
-            # Already exported; measure existing
+        if mp3_path.exists() and not args.force and mp3_path.stat().st_mtime >= wav_path.stat().st_mtime:
+            # Already exported and newer than source WAV; measure existing
             rms = get_rms(mp3_path)
             peak = get_peak(mp3_path)
             dur = get_duration_secs(mp3_path)

@@ -18,12 +18,12 @@ abstract: |
   probability of treaty adoption, risk-adjusted cost-effectiveness remains superior to the best existing
   global health interventions. Incentive Alignment Bonds address political feasibility by tying
   legislators' career incentives to a public voting scorecard. For ceiling context, the treaty-only path
-  reaches {{< var treaty_path_gdp_vs_earth_multiplier_year_20 >}} the Earth baseline after 20 years,
-  with average income at {{< var treaty_path_avg_income_year_20 >}} and total output at
-  {{< var treaty_path_gdp_year_20 >}}. The full Optimal-Governance Path reaches
-  {{< var wishonia_path_gdp_vs_earth_multiplier_year_20 >}} the Earth baseline, with average income at
-  {{< var wishonia_path_avg_income_year_20 >}} versus {{< var earth_avg_income_year_20 >}} on the
-  status-quo path and total output at {{< var wishonia_path_gdp_year_20 >}}
+  reaches {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_20 >}} the Earth baseline after 20 years,
+  with average income at {{< var treaty_trajectory_avg_income_year_20 >}} and total output at
+  {{< var treaty_trajectory_gdp_year_20 >}}. The full Optimal-Governance Path reaches
+  {{< var wishonia_trajectory_gdp_vs_current_trajectory_multiplier_year_20 >}} the Earth baseline, with average income at
+  {{< var wishonia_trajectory_avg_income_year_20 >}} versus {{< var current_trajectory_avg_income_year_20 >}} on the
+  status-quo path and total output at {{< var wishonia_trajectory_gdp_year_20 >}}
   ([The Political Dysfunction Tax](https://political-dysfunction-tax.warondisease.org)).
 author:
   - name: Mike P. Sinn
@@ -116,7 +116,7 @@ youtube-thumbnail: /assets/podcast/1-pct-treaty-impact-youtube.jpg
 
 **Bottom line**: Cost-saving intervention comparable to smallpox eradication ({{< var smallpox_eradication_roi >}}:1 ROI).
 
-**Scale note.** This treaty wedge is the conservative floor rather than the full ceiling. In the same model base, the treaty-only path reaches {{< var treaty_path_gdp_vs_earth_multiplier_year_20 >}} the Earth baseline after 20 years, with average income at {{< var treaty_path_avg_income_year_20 >}} and total output at {{< var treaty_path_gdp_year_20 >}}. The full Optimal-Governance Path reaches {{< var wishonia_path_gdp_vs_earth_multiplier_year_20 >}} the Earth baseline, with average income at {{< var wishonia_path_avg_income_year_20 >}} versus {{< var earth_avg_income_year_20 >}} on the status-quo path and total output at {{< var wishonia_path_gdp_year_20 >}}. The full derivation lives in [The Political Dysfunction Tax](../appendix/political-dysfunction-tax.qmd).
+**Scale note.** This treaty wedge is the conservative floor rather than the full ceiling. In the same model base, the treaty-only path reaches {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_20 >}} the Earth baseline after 20 years, with average income at {{< var treaty_trajectory_avg_income_year_20 >}} and total output at {{< var treaty_trajectory_gdp_year_20 >}}. The full Optimal-Governance Path reaches {{< var wishonia_trajectory_gdp_vs_current_trajectory_multiplier_year_20 >}} the Earth baseline, with average income at {{< var wishonia_trajectory_avg_income_year_20 >}} versus {{< var current_trajectory_avg_income_year_20 >}} on the status-quo path and total output at {{< var wishonia_trajectory_gdp_year_20 >}}. The full derivation lives in [The Political Dysfunction Tax](../appendix/political-dysfunction-tax.qmd).
 
 ## How Pragmatic Trials Increase Safety
 

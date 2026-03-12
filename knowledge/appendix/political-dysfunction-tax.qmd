@@ -5,11 +5,11 @@ description: Governance dysfunction imposes large per-person annual costs and su
 abstract: |
   Governance dysfunction suppresses roughly {{< var political_dysfunction_global_opportunity_cost_total >}}
   in recoverable value each year. Under this paper's 20-year transition model, the Treaty-Only Path
-  reaches {{< var treaty_path_gdp_vs_earth_multiplier_year_20 >}} the Earth baseline
-  ({{< var treaty_path_gdp_year_20 >}}), while the full Optimal-Governance Path reaches
-  {{< var wishonia_path_gdp_vs_earth_multiplier_year_20 >}} the Earth baseline, raises average income to
-  {{< var wishonia_path_avg_income_year_20 >}} versus {{< var earth_avg_income_year_20 >}} on the
-  status-quo path, and reaches {{< var wishonia_path_gdp_year_20 >}} in total output. This paper is
+  reaches {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_20 >}} the Earth baseline
+  ({{< var treaty_trajectory_gdp_year_20 >}}), while the full Optimal-Governance Path reaches
+  {{< var wishonia_trajectory_gdp_vs_current_trajectory_multiplier_year_20 >}} the Earth baseline, raises average income to
+  {{< var wishonia_trajectory_avg_income_year_20 >}} versus {{< var current_trajectory_avg_income_year_20 >}} on the
+  status-quo path, and reaches {{< var wishonia_trajectory_gdp_year_20 >}} in total output. This paper is
   the project's canonical
   derivation of that ceiling from an explicit waste ledger, opportunity ledger, and source-linked
   parameter model. [Incentive Alignment Bonds](https://iab.warondisease.org) are presented as the adoption mechanism, and
@@ -61,13 +61,13 @@ The per-person 20-year implications under the same model base:
 
 | Scenario | Assumed Growth | Starting Per Capita | Year-20 Average Income |
 |:--|:--|:--|:--|
-| **Status quo (Earth baseline)** | {{< var gdp_baseline_growth_rate >}} for 20 years | {{< var global_avg_income_2025 >}} | **{{< var earth_avg_income_year_20 >}}** |
-| **Treaty-only path** | {{< var treaty_path_cagr_year_20 >}} for years 1-20 | {{< var global_avg_income_2025 >}} | **{{< var treaty_path_avg_income_year_20 >}}** |
-| **Optimal-Governance Path (full implementation)** | {{< var wishonia_path_cagr_year_20 >}} for years 1-20 | {{< var global_avg_income_2025 >}} | **{{< var wishonia_path_avg_income_year_20 >}}** |
+| **Status quo (Earth baseline)** | {{< var gdp_baseline_growth_rate >}} for 20 years | {{< var global_avg_income_2025 >}} | **{{< var current_trajectory_avg_income_year_20 >}}** |
+| **Treaty-only path** | {{< var treaty_trajectory_cagr_year_20 >}} for years 1-20 | {{< var global_avg_income_2025 >}} | **{{< var treaty_trajectory_avg_income_year_20 >}}** |
+| **Optimal-Governance Path (full implementation)** | {{< var wishonia_trajectory_cagr_year_20 >}} for years 1-20 | {{< var global_avg_income_2025 >}} | **{{< var wishonia_trajectory_avg_income_year_20 >}}** |
 
 $$Y_{20} = Y_0 \times (1+g)^{20}$$
 
-In aggregate terms, the treaty-only path reaches {{< var treaty_path_gdp_vs_earth_multiplier_year_20 >}} the Earth baseline by year 20 ({{< var treaty_path_gdp_year_20 >}}). Full implementation reaches {{< var wishonia_path_gdp_vs_earth_multiplier_year_20 >}} the Earth baseline, raises average income to {{< var wishonia_path_avg_income_year_20 >}} versus {{< var earth_avg_income_year_20 >}} on the status-quo path, and reaches {{< var wishonia_path_gdp_year_20 >}} in total output.
+In aggregate terms, the treaty-only path reaches {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_20 >}} the Earth baseline by year 20 ({{< var treaty_trajectory_gdp_year_20 >}}). Full implementation reaches {{< var wishonia_trajectory_gdp_vs_current_trajectory_multiplier_year_20 >}} the Earth baseline, raises average income to {{< var wishonia_trajectory_avg_income_year_20 >}} versus {{< var current_trajectory_avg_income_year_20 >}} on the status-quo path, and reaches {{< var wishonia_trajectory_gdp_year_20 >}} in total output.
 
 ::: {.content-visible when-format="html"}
 ### Interactive Projection
@@ -392,8 +392,8 @@ This calculator scales the paper's published growth assumptions to a household i
 <div id="pdt-interactive-projection" class="pdt-interactive-projection">
   <span id="pdt-source-base-income" class="visually-hidden">{{< var global_avg_income_2025 >}}</span>
   <span id="pdt-source-baseline-rate" class="visually-hidden">{{< var gdp_baseline_growth_rate >}}</span>
-  <span id="pdt-source-treaty-rate" class="visually-hidden">{{< var treaty_path_cagr_year_20 >}}</span>
-  <span id="pdt-source-full-rate" class="visually-hidden">{{< var wishonia_path_cagr_year_20 >}}</span>
+  <span id="pdt-source-treaty-rate" class="visually-hidden">{{< var treaty_trajectory_cagr_year_20 >}}</span>
+  <span id="pdt-source-full-rate" class="visually-hidden">{{< var wishonia_trajectory_cagr_year_20 >}}</span>
   <span id="pdt-source-tax" class="visually-hidden">{{< var political_dysfunction_tax_per_person_annual >}}</span>
 
   <div class="pdt-projection-controls">
@@ -931,7 +931,7 @@ $$
 GDP_{20} = GDP_0 \times (1 + g_{ramp})^3 \times (1 + g_{full})^{17}
 $$
 
-At current parameters, that implies {{< var treaty_path_gdp_year_20 >}} for the treaty-only path and {{< var wishonia_path_gdp_year_20 >}} for the full Optimal-Governance Path by year 20. The mechanism papers such as [Incentive Alignment Bonds](incentive-alignment-bonds-paper.qmd), [Wishocracy](wishocracy-paper.qmd), [Optimocracy](optimocracy-paper.qmd), [The Optimal Policy Generator](optimal-policy-generator-spec.qmd), and [The Optimal Budget Generator](optimal-budget-generator-spec.qmd) should cite those magnitudes directly and point back here for the full derivation rather than linking readers out to a separate book chapter. For parameter-level formulas, uncertainty ranges, and generated tornado and Monte Carlo outputs, see [Methodology, Parameters, and Calculations](https://political-dysfunction-tax.warondisease.org/calculations.html).
+At current parameters, that implies {{< var treaty_trajectory_gdp_year_20 >}} for the treaty-only path and {{< var wishonia_trajectory_gdp_year_20 >}} for the full Optimal-Governance Path by year 20. The mechanism papers such as [Incentive Alignment Bonds](incentive-alignment-bonds-paper.qmd), [Wishocracy](wishocracy-paper.qmd), [Optimocracy](optimocracy-paper.qmd), [The Optimal Policy Generator](optimal-policy-generator-spec.qmd), and [The Optimal Budget Generator](optimal-budget-generator-spec.qmd) should cite those magnitudes directly and point back here for the full derivation rather than linking readers out to a separate book chapter. For parameter-level formulas, uncertainty ranges, and generated tornado and Monte Carlo outputs, see [Methodology, Parameters, and Calculations](https://political-dysfunction-tax.warondisease.org/calculations.html).
 
 ## Introduction: The Mechanism Design of Civilizational Stagnation
 

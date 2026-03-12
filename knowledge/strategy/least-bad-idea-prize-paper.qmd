@@ -1,9 +1,9 @@
 ---
 title: 'The Least Bad Idea in the World Prize: An Implementation Market for Governance Reform'
 subtitle: A Standing Prize for the First Mechanism That Can Verifiably Reallocate Resources from Low-Value to High-Value Uses While Surviving Contact with Selfish Humans
-description: If this manual is wrong, beat it. A standing prize for the first mechanism that can verifiably move money from low-value uses to high-value ones, reduce suffering more cheaply than the current stack, and survive contact with selfish humans.
+description: If this manual is wrong, beat it. A standing prize for the first mechanism that can verifiably move money from low-value uses to high-value ones, reduce suffering more cheaply than the Earth Optimization Plan, and survive contact with selfish humans.
 abstract: |
-  Current governance mechanisms allocate trillions of dollars based on lobbying intensity, institutional inertia, and political convenience rather than verified net societal value. This paper proposes a standing implementation prize that treats governance reform as an engineering competition rather than a philosophy seminar. The prize scores proposals on a published state vector of 25+ variables (cost-effectiveness, welfare impact, political feasibility, capture resistance, and completeness) and awards not cash but adoption capital, political support, distribution, and operating rights. Admissibility requires positive net welfare for every affected class of beings, zero rights violations, complete coverage of a baseline bundle of required governance functions, binding legal force, greed-monotonicity, and automatic reinvestment into missing modules. The ranking rule maximizes risk-adjusted net societal value recovery per dollar of adoption cost, weighted by evidence quality and implementability. The mechanism is compatible with public choice theory: no actor is asked to become less selfish; stronger self-interest makes the system stronger. If the current integrated reform stack is optimal, the prize causes its implementation. If a strict improvement exists, the prize discovers and funds that instead. Either outcome dominates the status quo of endless argument with no implementation market.
+  Current governance mechanisms allocate trillions of dollars based on lobbying intensity, institutional inertia, and political convenience rather than verified net societal value. This paper proposes a standing implementation prize that treats governance reform as an engineering competition rather than a philosophy seminar. The prize scores proposals on a published state vector of 25+ variables (cost-effectiveness, welfare impact, political feasibility, capture resistance, and completeness) and awards not cash but adoption capital, political support, distribution, and operating rights. Admissibility requires positive net welfare for every affected class of beings, zero rights violations, complete coverage of a baseline bundle of required governance functions, binding legal force, greed-monotonicity, and automatic reinvestment into missing modules. The ranking rule maximizes risk-adjusted net societal value recovery per dollar of adoption cost, weighted by evidence quality and implementability. The mechanism is compatible with public choice theory: no actor is asked to become less selfish; stronger self-interest makes the system stronger. If the current leading candidate (the Earth Optimization Plan) is optimal, the prize causes its implementation. If a strict improvement exists, the prize discovers and funds that instead. Either outcome dominates the status quo of endless argument with no implementation market.
 published: true
 tags:
   - strategy
@@ -25,7 +25,7 @@ The cost of the current approach is not abstract. {{< var existing_drugs_efficac
 
 That suggests a simple rule: stop treating policy design like a philosophy seminar and start treating it like an engineering competition.
 
-Create a **standing prize** for the first person, team, or institution that can **cause the implementation** of every required function in the full stack from the companion papers [@value-captured-by-1pct-treaty; @iab-paper-2025; @wishocracy-paper-2025; @optimocracy-paper-2025; @opg-paper-2025; @obg-paper-2025; @dfda-impact-paper-2025; @invisible-graveyard-paper-2025; @political-dysfunction-tax-paper-2025; @cost-of-change-paper-2025; @us-efficiency-audit-paper-2025; @dfda-spec-paper-2025; @drug-development-cost], or a strict module-by-module improvement on it, while delivering a **lower verified cost per DALY**, lower suffering per dollar, and better net outcomes for living beings.
+Create a **standing prize** for the first person, team, or institution that can **cause the implementation** of every required function in the Earth Optimization Plan from the companion papers [@value-captured-by-1pct-treaty; @iab-paper-2025; @wishocracy-paper-2025; @optimocracy-paper-2025; @opg-paper-2025; @obg-paper-2025; @dfda-impact-paper-2025; @invisible-graveyard-paper-2025; @political-dysfunction-tax-paper-2025; @cost-of-change-paper-2025; @us-efficiency-audit-paper-2025; @dfda-spec-paper-2025; @drug-development-cost], or a strict module-by-module improvement on it, while delivering a **lower verified cost per DALY**, lower suffering per dollar, and better net outcomes for living beings.
 
 Not a trophy. Not a TED Talk. Not "best essay wins." A market for verified implementation.
 
@@ -35,7 +35,7 @@ Not a trophy. Not a TED Talk. Not "best essay wins." A market for verified imple
 If your proposal requires politicians, bureaucrats, investors, regulators, voters, or interest groups to become less selfish than they are now, you have not designed a mechanism. You have written fan fiction.
 :::
 
-**How to read this paper.** It does three things: defines what "better" means with a published scorecard, describes the current best candidate and how it achieves its numbers, and explains why a prize is the right selection mechanism. If you want the mechanism before the formalism, skip to [How the Current Stack Achieves Its Numbers](#how-the-current-stack-achieves-its-numbers).
+**How to read this paper.** It does three things: defines what "better" means with a published scorecard, describes the current best candidate and how it achieves its numbers, and explains why a prize is the right selection mechanism. If you want the mechanism before the formalism, skip to [How the Earth Optimization Plan Achieves Its Numbers](#how-the-plan-achieves-its-numbers).
 
 ## Why Current Systems Fail
 
@@ -50,8 +50,8 @@ The prize exists because no existing meta-mechanism solves this at the right lev
 To win the prize, a proposal must clear six tests:
 
 1. **Implementation, not commentary.** It must produce actual budget reallocations, legal adoption, institutional deployment, or binding coordination, not just a white paper and a podcast circuit.
-2. **Whole stack or strict dominance.** It must implement every required function in this project, or replace each omitted function with a strictly dominating substitute on outcome, feasibility, and durability.
-3. **Lower verified cost per DALY.** If it saves fewer lives per dollar than the current stack, it loses. If it reduces DALYs cheaply by dumping suffering onto voiceless creatures, it also loses.
+2. **Complete Earth Optimization Plan or strict dominance.** It must implement every required function in this project, or replace each omitted function with a strictly dominating substitute on outcome, feasibility, and durability.
+3. **Lower verified cost per DALY.** If it saves fewer lives per dollar than the Earth Optimization Plan, it loses. If it reduces DALYs cheaply by dumping suffering onto voiceless creatures, it also loses.
 4. **Net welfare improvement across affected beings.** A qualifying plan must not merely move pain from one ledger to another. Offloading harm onto foreigners, future people, patients without bargaining power, or nonhuman animals is disqualification, not cleverness.
 5. **Reallocation from low NSV to high NSV.** The mechanism must redirect resources from uses with low or negative net societal value into uses with higher verified returns.
 6. **Greed-monotone public-choice compatibility.** Every critical actor must have a selfish reason to cooperate, and stronger self-interest should make the mechanism stronger rather than weaker: investors, politicians, bureaucrats, validators, operators, and ordinary citizens.
@@ -67,35 +67,35 @@ These are the minimum variables the prize should score:
 | Symbol | What it measures | Why it belongs in the prize | Current anchor from the papers |
 |:---|:---|:---|:---|
 | `C_total` | Total all-in adoption cost | Political feasibility is a cost question, not a vibes question | Treaty path: {{< var treaty_campaign_total_cost >}}; global upper-bound framing from *Price of Political Change* [@cost-of-change-paper-2025]: ~$200B |
-| `P_success` | Probability of binding adoption and sustained implementation | Expected value matters more than conditional fantasy | Conservative central estimate in current stack: {{< var political_success_probability >}} |
+| `P_success` | Probability of binding adoption and sustained implementation | Expected value matters more than conditional fantasy | Conservative central estimate in the Earth Optimization Plan: {{< var political_success_probability >}} |
 | `T_first` | Time to first binding implementation | Delay kills; speed is part of the prize | Right-to-Trial act implies concrete clocks: 180 days, 1 year, 18 months |
 | `R_shift` | Annual dollars redirected from lower NSV uses to higher NSV uses | The point is resource reallocation, not rhetorical victory | First legible benchmark: {{< var treaty_annual_funding >}}/year |
 | `NSV_gain` | Annual net societal value recovered | Prize should measure recovered value, not just gross spending | Global ceiling: {{< var political_dysfunction_global_opportunity_cost_total >}}/year; U.S. waste map: {{< var us_gov_waste_total >}}/year |
 | `CE_conditional` | Cost per DALY if adopted | Measures the physics/economics of the policy itself | Treaty path benchmark: {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}}/DALY |
-| `CE_expected` | Risk-adjusted cost per DALY = `C_total / (P_success * DALY_net)` | Measures the politics plus the policy | Current stack benchmark: {{< var treaty_expected_cost_per_daly >}}/DALY |
-| `DALY_net` | Net DALYs averted | Core welfare output from the health papers | Current stack medical benchmark: {{< var dfda_trial_capacity_plus_efficacy_lag_dalys_nounit >}} DALYs |
-| `H_suffering` | Suffering hours averted | DALYs hide suffering intensity; the prize should not | Current stack medical benchmark: {{< var dfda_trial_capacity_plus_efficacy_lag_suffering_hours_nounit >}} hours |
+| `CE_expected` | Risk-adjusted cost per DALY = `C_total / (P_success * DALY_net)` | Measures the politics plus the policy | Earth Optimization Plan benchmark: {{< var treaty_expected_cost_per_daly >}}/DALY |
+| `DALY_net` | Net DALYs averted | Core welfare output from the health papers | Earth Optimization Plan medical benchmark: {{< var dfda_trial_capacity_plus_efficacy_lag_dalys_nounit >}} DALYs |
+| `H_suffering` | Suffering hours averted | DALYs hide suffering intensity; the prize should not | Earth Optimization Plan medical benchmark: {{< var dfda_trial_capacity_plus_efficacy_lag_suffering_hours_nounit >}} hours |
 | `D_avoided` | Deaths averted | Humans understand body counts faster than DALYs | Timeline-shift benchmark: {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved_nounit >}} deaths; historical lag burden: {{< var existing_drugs_efficacy_lag_deaths_total_nounit >}} deaths |
 | `gIncome_med` | Change in real after-tax median income growth | Optimocracy [@optimocracy-paper-2025], OPG [@opg-paper-2025], and OBG [@obg-paper-2025] treat this as the core income-side welfare metric | Must be reported directly from causal evidence; GDP per capita is not a substitute |
-| `Y_avg_20` | Average income (GDP per capita) at year 20 | The current macro path model expresses ceiling context in per-capita output levels, so keep that separate from the median-income metric | Year-20 calibration anchors: Earth {{< var earth_avg_income_year_20 >}}, Treaty {{< var treaty_path_avg_income_year_20 >}}, Wishonia {{< var wishonia_path_avg_income_year_20 >}} |
+| `Y_avg_20` | Average income (GDP per capita) at year 20 | The current macro path model expresses ceiling context in per-capita output levels, so keep that separate from the median-income metric | Year-20 calibration anchors: Earth {{< var current_trajectory_avg_income_year_20 >}}, Treaty {{< var treaty_trajectory_avg_income_year_20 >}}, Wishonia {{< var wishonia_trajectory_avg_income_year_20 >}} |
 | `dHealthy_med` | Change in median healthy life years | The second terminal welfare metric in the governance papers | Must be reported explicitly even when evidence comes through surrogate outcomes |
 | `Q_budget` | Budget evidence quality | Major spending shifts need a confidence score, not a slogan | OBG's Budget Impact Score (BIS) [@obg-paper-2025] |
 | `Q_policy` | Policy evidence quality | Law/regulation changes need a causal score | OPG's Policy Impact Score (PIS) [@opg-paper-2025] |
 | `Q_signal` | Medical signal quality | Medical claims need causal triage before trial escalation | dFDA Predictor Impact Score (PIS) [@dfda-spec-paper-2025] |
 | `Q_trial` | Trial-priority quality | The prize should know which validated signals deserve scarce experimental slots | Trial Priority Score = PIS x DALYs x Novelty x Feasibility |
 | `A_pref` | Preference-alignment score | If the mechanism claims democratic legitimacy, measure it | Wishocracy Citizen Alignment Score [@wishocracy-paper-2025] |
-| `I_actor_min` | Minimum utility delta across key actors | If any required actor is net worse off, the mechanism is probably fiction | Current stack anchors: {{< var victory_bond_annual_return_pct >}} investor upside, {{< var iab_mechanism_benefit_cost_ratio >}} mechanism BCR, {{< var global_household_wealth_usd >}} vs {{< var concentrated_interest_sector_market_cap_usd >}} coordination asymmetry |
+| `I_actor_min` | Minimum utility delta across key actors | If any required actor is net worse off, the mechanism is probably fiction | Earth Optimization Plan anchors: {{< var victory_bond_annual_return_pct >}} investor upside, {{< var iab_mechanism_benefit_cost_ratio >}} mechanism BCR, {{< var global_household_wealth_usd >}} vs {{< var concentrated_interest_sector_market_cap_usd >}} coordination asymmetry |
 | `R_capture` | Capture/manipulation risk | Every serious governance mechanism gets attacked | Optimocracy's whole point is to collapse many attack surfaces into a few expensive ones [@optimocracy-paper-2025] |
 | `B_rights` | Hard blocking-factor count | A plan that improves averages by violating rights is not a win | OPG explicitly treats freedom/autonomy constraints as blockers [@opg-paper-2025] |
 | `W_sentient_net` | Net welfare across all affected sentient beings | Prevents fake wins that export suffering to weaker populations or animals | Must stay positive for humans, future people, and nonhuman animals on net |
 | `W_class_min` | Welfare change for the worst-off affected class of living or sentient beings | Aggregate gains are not enough if any major class is sacrificed | Operational rule: humans, future humans, nonhuman animals, and affected living systems must each be non-negative on the best available model |
 | `M_complete` | Baseline-bundle completion score | Prevents narrow proposals from winning by solving only one bottleneck | Grand prize requires 100% coverage of the required-function bundle below |
-| `L_bind` | Binding-force score | A plan is not implemented until it controls law, budgets, institutions, or enforceable contracts | Binding examples in the current stack: treaty, statute, agency rule, PAC-financed scorecards, auditable contracts |
+| `L_bind` | Binding-force score | A plan is not implemented until it controls law, budgets, institutions, or enforceable contracts | Binding examples in the Earth Optimization Plan: treaty, statute, agency rule, PAC-financed scorecards, auditable contracts |
 | `J_cov` | Jurisdictional and population coverage | Pilot success is not system implementation | Must scale to enough authority, budget, and population to match or beat baseline `R_shift` |
-| `T_full` | Time to full-bundle deployment | Time to first win is not time to whole-stack implementation | Measured from launch until every required function is live or dominated |
+| `T_full` | Time to full-bundle deployment | Time to first win is not time to complete Earth Optimization Plan implementation | Measured from launch until every required function is live or dominated |
 | `D_durable` | Durability under hostile turnover | A plan that dies after one election is not implemented | Must survive leadership change, budget challenge, and organized opposition |
 | `G_monotone` | Minimum marginal effect of actor self-interest on success | The greedier humans are, the better this should work | Must stay positive for investors, politicians, operators, validators, and citizens |
-| `F_reinvest` | Fraction of recovered value automatically recycled into remaining missing modules | Early wins must finance completion of the stack rather than stopping at a local maximum | IAB/prize-treasury logic implies positive contractual recycling [@iab-paper-2025] |
+| `F_reinvest` | Fraction of recovered value automatically recycled into remaining missing modules | Early wins must finance completion of the Earth Optimization Plan rather than stopping at a local maximum | IAB/prize-treasury logic implies positive contractual recycling [@iab-paper-2025] |
 
 That is the minimum scoreboard. Anything less is still just literary criticism with a grant budget.
 
@@ -103,7 +103,7 @@ That is the minimum scoreboard. Anything less is still just literary criticism w
 
 This prize is not comparing proposals to isolated papers one at a time. The canonical object to beat is the **integrated bundle of required functions** implied by the companion papers.
 
-| Required function | Default implementation in the current stack | What a strict improvement must beat |
+| Required function | Default implementation in the Earth Optimization Plan | What a strict improvement must beat |
 |:---|:---|:---|
 | Large initial reallocation wedge | **The 1% Treaty** [@value-captured-by-1pct-treaty] | Must redirect at least as much low-NSV spending to higher-NSV use, or achieve better welfare with less |
 | Medical throughput and evidence generation | **Ubiquitous Pragmatic Trial Impact Analysis** [@dfda-impact-paper-2025] + **The Continuous Evidence Generation Protocol** [@dfda-spec-paper-2025] | Must produce faster, cheaper, more reliable treatment discovery and validation |
@@ -118,7 +118,7 @@ This prize is not comparing proposals to isolated papers one at a time. The cano
 
 That is the baseline bundle. The grand prize is for the first mechanism that covers **every row** in that table or replaces any row with a strictly better module.
 
-## How the Current Stack Achieves Its Numbers
+## How the Earth Optimization Plan Achieves Its Numbers {#how-the-plan-achieves-its-numbers}
 
 The numbers in the thresholds below sound implausible until you see the mechanisms. Here is enough to evaluate whether each benchmark is credible, in pipeline order.
 
@@ -134,7 +134,7 @@ The full loop: military budgets shrink by 1%, the freed {{< var treaty_annual_fu
 
 **Preference aggregation.** Wishocracy asks citizens to drag a slider between two random budget priorities ("Nuclear modernization vs. clinical trials?"). About 20 comparisons, 5 minutes. Random pairs prevent gaming. Statistical models (Bradley-Terry, PageRank) aggregate millions of pairwise judgments into budget-preference weights without speeches, lobbying, or horse-trading. Crowds consistently outperform expert panels on preference recovery [@wishocracy-paper-2025].
 
-None of these mechanisms require inventing new physics. The Montreal Protocol coordinated proportional reduction across nations and worked. PEPFAR redirected tens of billions of dollars into health and saved millions of lives. The RECOVERY trial proved pragmatic trials deliver at {{< var recovery_trial_cost_reduction_factor >}} lower cost per patient. The open question is not whether coordinated reallocation, pragmatic trials, or incentive-aligned political financing work individually. It is whether combining them into a single stack, selected and funded via prize, produces better results than deploying them separately or not at all.
+None of these mechanisms require inventing new physics. The Montreal Protocol coordinated proportional reduction across nations and worked. PEPFAR redirected tens of billions of dollars into health and saved millions of lives. The RECOVERY trial proved pragmatic trials deliver at {{< var recovery_trial_cost_reduction_factor >}} lower cost per patient. The open question is not whether coordinated reallocation, pragmatic trials, or incentive-aligned political financing work individually. It is whether combining them into a single plan, selected and funded via prize, produces better results than deploying them separately or not at all.
 
 ## The Completeness Rule
 
@@ -151,8 +151,8 @@ The papers already imply concrete floors, ceilings, and sanity checks:
 
 | Variable | Threshold or comparison rule | Where it comes from |
 |:---|:---|:---|
-| `CE_expected` | Must beat the current stack's expected benchmark of {{< var treaty_expected_cost_per_daly >}}/DALY, or clearly dominate it on other welfare dimensions | 1% Treaty [@value-captured-by-1pct-treaty] + feasibility model |
-| `CE_conditional` | Should at least beat bed nets ({{< var bed_nets_cost_per_daly >}}/DALY); the current stack is far below that at {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}}/DALY | Treaty and dFDA impact papers [@dfda-impact-paper-2025] |
+| `CE_expected` | Must beat the Earth Optimization Plan's expected benchmark of {{< var treaty_expected_cost_per_daly >}}/DALY, or clearly dominate it on other welfare dimensions | 1% Treaty [@value-captured-by-1pct-treaty] + feasibility model |
+| `CE_conditional` | Should at least beat bed nets ({{< var bed_nets_cost_per_daly >}}/DALY); the Earth Optimization Plan is far below that at {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}}/DALY | Treaty and dFDA impact papers [@dfda-impact-paper-2025] |
 | `C_total` | Should be compared to both the normal path ({{< var treaty_campaign_total_cost >}}) and the pessimistic democratic ceiling (~$200B global) | Treaty roadmap + Cost of Change [@cost-of-change-paper-2025] |
 | `R_shift` | Should reach at least {{< var treaty_annual_funding >}}/year in legible redirected funding, or achieve better welfare with less | 1% Treaty [@value-captured-by-1pct-treaty] |
 | `T_first` | First legally binding move should happen on months-scale, not decades-scale | Right-to-Trial timelines: 180 days, 1 year, 18 months |
@@ -161,11 +161,11 @@ The papers already imply concrete floors, ceilings, and sanity checks:
 | `Q_signal` | Medical proposals should clear minimum data quality before claiming causality | dFDA spec [@dfda-spec-paper-2025]: >=5 predictor changes, >=5 outcome changes, >=30 overlapping pairs, >=10% baseline, >=10% follow-up |
 | `k_capacity` | Throughput claims should be compared to the current therapeutic backlog | dFDA benchmark: current {{< var status_quo_queue_clearance_years_nounit >}} years vs. {{< var dfda_queue_clearance_years_nounit >}} years with a {{< var dfda_trial_capacity_multiplier >}} capacity increase |
 | `R_capture` | Score should worsen sharply when attack surfaces multiply or verification centralizes | Optimocracy capture-resistance logic [@optimocracy-paper-2025] |
-| `I_actor_min` | Must stay positive for investors, politicians, operators, and citizens | IAB [@iab-paper-2025] / Wishocracy [@wishocracy-paper-2025] stack |
-| `M_complete` | Must equal 1.00 for grand-prize eligibility; anything less is only a milestone | Whole integrated paper stack |
+| `I_actor_min` | Must stay positive for investors, politicians, operators, and citizens | IAB [@iab-paper-2025] / Wishocracy [@wishocracy-paper-2025] |
+| `M_complete` | Must equal 1.00 for grand-prize eligibility; anything less is only a milestone | The complete Earth Optimization Plan |
 | `W_class_min` | Must be >=0 for each major affected class of living or sentient beings, not merely positive in aggregate | Whole-project welfare guardrail |
 | `L_bind` | Final award requires treaty, statute, agency rule, enforceable contract, or equivalent institutional control | Treaty / Right-to-Trial / IAB logic |
-| `J_cov` | Must scale to enough authority, budget, and population to match or beat the baseline wedge and implementation footprint | Treaty + governance stack |
+| `J_cov` | Must scale to enough authority, budget, and population to match or beat the baseline wedge and implementation footprint | Treaty + governance Earth Optimization Plan |
 | `D_durable` | Should survive at least two election cycles or equivalent treaty/contractual lock-in | Public-choice durability requirement |
 | `G_monotone` | Must stay positive for investors, politicians, operators, validators, and citizens: more selfish participation should increase success or scale | IAB / Wishocracy / Optimocracy logic |
 | `F_reinvest` | Must be positive and automatic until missing baseline functions are covered | Prize-treasury compounding rule |
@@ -303,7 +303,7 @@ A normal prize gives someone cash after they do something impressive. That is fi
 
 So the prize has to award the thing that matters:
 
-- **Adoption capital.** The leading proposal gets access to the financing stack needed to pass it.
+- **Adoption capital.** The leading proposal gets access to the financing infrastructure needed to pass it.
 - **Distribution.** The leading proposal becomes the default object of campaign messaging, coalition outreach, and referendum traffic.
 - **Political support.** Politicians who adopt the leading proposal get scored, promoted, and financed through the same incentive machinery described in the companion papers.
 - **Operating rights.** The winning implementation team gets the prestige, contracts, revenue share, or administrative role attached to actually making the system work.
@@ -342,7 +342,7 @@ Bootstrap capital and project selection are different problems. Dominant assuran
 
 For that layer, the prize can operate as a retroactive public-goods purchaser. Implementers fund work up front using their own capital or outside investment, produce auditable outcomes, and then sell verified impact claims back into the prize ecosystem only after the outcomes exist. In the medical domain, those claims would typically be denominated in audited DALYs averted, suffering hours avoided, or verified mortality reduction. In governance domains, they would be denominated in verified resource reallocation, durable policy adoption, or measured welfare gains under the same admissibility constraints. This preserves the paper's core logic: the prize does not pay for intentions; it pays for verified movement on the objective function.
 
-This layer should remain downstream of the completeness rule rather than replacing it. Retroactive purchasing is a project-selection and execution market inside the already selected bundle, not a license for narrow local patches to outrank complete packages. That distinction matters. The prize first decides which complete implementation stack wins. Only then should decentralized implementers compete to supply the cheapest verified components within that stack.
+This layer should remain downstream of the completeness rule rather than replacing it. Retroactive purchasing is a project-selection and execution market inside the already selected bundle, not a license for narrow local patches to outrank complete packages. That distinction matters. The prize first decides which complete implementation plan wins. Only then should decentralized implementers compete to supply the cheapest verified components within that plan.
 
 ## How the Payout Works
 
@@ -357,7 +357,7 @@ That is just Incentive Alignment Bonds [@iab-paper-2025] with a more brutal sele
 
 ## One Concrete Run
 
-Abstract mechanism design is harder to trust than a visible execution trace. So here is what the current stack would look like if it won.
+Abstract mechanism design is harder to trust than a visible execution trace. So here is what the Earth Optimization Plan would look like if it won.
 
 1. The treasury raises the initial campaign pool through dominant assurance contracts and escrows it under the no-override rules above.
 2. The current bundle is submitted as a complete package: treaty wedge, dFDA / continuous evidence generation, regulatory-delay removal, IAB adoption machinery, Wishocracy preference aggregation, Optimocracy / OPG / OBG recommendation engines, and the statutory path.
@@ -403,12 +403,12 @@ If the papers in this project are broadly correct, a serious prize process will 
 | **The Optimal Budget Generator** [@obg-paper-2025] | The spending-level engine for reallocating money from weak programs to strong ones. | Budget Impact Score (BIS); 20-40% of public-goods funding misallocated relative to evidence-based benchmarks | The claim comes from combining causal evidence with diminishing-returns modeling, which is exactly what ordinary budget processes usually omit. |
 | **The Continuous Evidence Generation Protocol** [@dfda-spec-paper-2025] | The medical evidence-production machine that keeps learning after the initial reform wins. | Stage 1 at $0.1/patient; Stage 2 at $929/patient; 44.1x cheaper than traditional Phase III; minimum data quality of >=5 predictor changes, >=5 outcome changes, and >=30 overlapping pairs | The cost anchors come from a meta-analysis of 108 pragmatic trials and real implementations such as RECOVERY and ADAPTABLE, not from hypothetical software-era wishcasting. |
 | **Right to Trial & FDA Upgrade Act** | The statutory implementation path for opening the regulatory bottleneck. | Conditional patient access post-Phase I; removes the {{< var efficacy_lag_years_nounit >}}-year efficacy lag; timelines of 180 days, 1 year, and 18 months | Conditional access after Phase I safety data eliminates the {{< var efficacy_lag_years_nounit >}}-year gap between proving a drug works and allowing patients to use it. The mechanism is statutory, not speculative: it translates measured delay into rights, deadlines, and open-data obligations. |
-| **How to End War and Disease** | The integrated narrative and coalition-building wrapper around the whole stack. | Full-stack coordination at total cost of {{< var treaty_campaign_total_cost >}}; {{< var political_success_probability >}} estimated success probability | This is the sequencing and coalition wrapper, so its support is downstream of the already-costed modules rather than an independent giant welfare claim. |
+| **How to End War and Disease** | The integrated narrative and coalition-building wrapper around the complete Earth Optimization Plan. | Earth Optimization Plan-wide coordination at total cost of {{< var treaty_campaign_total_cost >}}; {{< var political_success_probability >}} estimated success probability | This is the sequencing and coalition wrapper, so its support is downstream of the already-costed modules rather than an independent giant welfare claim. |
 | **Drug Development Cost Increase Analysis** [@drug-development-cost] | The proof that current regulatory structure is not merely slow but catastrophically expensive. | {{< var drug_cost_increase_pre1962_to_current_multiplier >}} cost increase since pre-1962; current average: {{< var pharma_drug_development_cost_current >}}/drug | The estimate is anchored to Baily (1972), inflation-adjusted to present dollars, and then cross-checked against six real-world comparisons, with outside estimates in the same 100-400x range. |
 
 The large numbers in this table mostly come from three ordinary facts rather than one magical assumption: existing waste pools are already measured in trillions, regulatory delay compounds over years and across billions of people, and pragmatic evidence generation is dramatically cheaper than the legacy trial stack. The point of the table is not that every estimate is perfectly nailed down. The point is that each benchmark is at least traceable to a concrete mechanism, a concrete denominator, and a concrete empirical anchor.
 
-In other words, the prize does not replace the stack. It sits above it and asks: *which complete package of functions wins on verified welfare per dollar?* If the answer is "this bundle," then this bundle gets implemented. If the answer is "this bundle plus one missing module," then the augmented bundle gets implemented. If the answer is "a different module set dominates row by row," then the prize funds the better design instead.
+In other words, the prize does not replace the Earth Optimization Plan. It sits above it and asks: *which complete package of functions wins on verified welfare per dollar?* If the answer is "this bundle," then this bundle gets implemented. If the answer is "this bundle plus one missing module," then the augmented bundle gets implemented. If the answer is "a different module set dominates row by row," then the prize funds the better design instead.
 
 That is exactly what you want from an honest optimization process.
 
@@ -428,7 +428,7 @@ That loop is how you get from "good idea" to "self-funding governance upgrade."
 
 ## Failover Ladder
 
-For the stack or something better to feel inevitable, the prize cannot depend on one heroic legislative roll of the dice. It needs a failover ladder.
+For the Earth Optimization Plan or something better to feel inevitable, the prize cannot depend on one heroic legislative roll of the dice. It needs a failover ladder.
 
 If the top-ranked path stalls, the treasury should automatically route capital to the next-highest admissible binding path in roughly this order:
 
@@ -442,14 +442,14 @@ The governing principle is simple: **capital may move down the ladder, but it ma
 
 That is how you turn "if this path fails, try something else" into an actual ratchet rather than a motivational slogan.
 
-The reason the current papers likely win that first round is not sentimental attachment to the existing stack. It is that the stack combines four properties that are hard to beat simultaneously: a huge negative-NSV funding source to defund [@value-captured-by-1pct-treaty], an unusually strong risk-adjusted cost-per-DALY case [@dfda-impact-paper-2025], a concrete political-adoption mechanism [@iab-paper-2025], and a legal-regulatory path that actually opens the medical bottleneck rather than merely subsidizing the old one [@invisible-graveyard-paper-2025; @dfda-spec-paper-2025]. A challenger is free to beat that package. It just has to beat all four properties at once.
+The reason the current papers likely win that first round is not sentimental attachment to the existing Earth Optimization Plan. It is that the Earth Optimization Plan combines four properties that are hard to beat simultaneously: a huge negative-NSV funding source to defund [@value-captured-by-1pct-treaty], an unusually strong risk-adjusted cost-per-DALY case [@dfda-impact-paper-2025], a concrete political-adoption mechanism [@iab-paper-2025], and a legal-regulatory path that actually opens the medical bottleneck rather than merely subsidizing the old one [@invisible-graveyard-paper-2025; @dfda-spec-paper-2025]. A challenger is free to beat that package. It just has to beat all four properties at once.
 
 ## Why This Logically Leads to These Ideas or Better
 
 There are only three stable outcomes:
 
-1. **This stack is best.** Then the prize selects the full baseline bundle, finances it, and implements it because $M_{complete} = 1$ is required and nothing beats it row by row.
-2. **This stack is mostly right but incomplete.** Then the prize selects an augmented version of it, which still implements the existing modules while adding whatever missing function performs better.
+1. **The Earth Optimization Plan is best.** Then the prize selects the full baseline bundle, finances it, and implements it because $M_{complete} = 1$ is required and nothing beats it row by row.
+2. **The Earth Optimization Plan is mostly right but incomplete.** Then the prize selects an augmented version of it, which still implements the existing modules while adding whatever missing function performs better.
 3. **A strict improvement exists.** Then the prize selects that instead, but only if it dominates the baseline bundle function by function rather than skipping inconvenient pieces.
 
 Those are the only serious possibilities. The unserious possibility is the one humans choose by default: endless argument with no implementation market.

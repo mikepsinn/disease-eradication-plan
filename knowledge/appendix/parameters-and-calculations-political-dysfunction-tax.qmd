@@ -51,6 +51,68 @@ This appendix documents all 69 parameters used in the analysis, organized by typ
 
 Parameters derived from mathematical formulas and economic models.
 
+### Current Trajectory Average Income at Year 20: $20.5K {#sec-current_trajectory_avg_income_year_20}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Average income (GDP per capita) at year 20 under current trajectory trajectory.
+
+**Inputs**:
+
+- [Current Trajectory GDP at Year 20](#sec-current_trajectory_gdp_year_20) 🔢: $188T
+- [Global Population 2045 (Projected)](#sec-global_population_2045_projected) 📊: 9.2 billion of people
+
+$$
+\begin{gathered}
+\bar{y}_{base,20} \\
+= \frac{GDP_{base,20}}{Pop_{2045}} \\
+= \frac{\$188T}{9.2B} \\
+= \$20.5K
+\end{gathered}
+$$
+where:
+$$
+GDP_{base,20} = GDP_0(1+g_{base})^{20}
+$$
+*✓ High confidence*
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-current_trajectory_avg_income_year_20.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-current_trajectory_avg_income_year_20.qmd >}}
+
+:::
+
+### Current Trajectory GDP at Year 20: $188T {#sec-current_trajectory_gdp_year_20}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Global GDP at year 20 under status-quo current trajectory growth.
+
+**Inputs**:
+
+- [Global GDP (2025)](#sec-global_gdp_2025) 📊: $115T
+- [Baseline Global GDP Growth Rate](#sec-gdp_baseline_growth_rate): 2.5%
+
+$$
+GDP_{base,20} = GDP_0(1+g_{base})^{20}
+$$
+
+*✓ High confidence*
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-current_trajectory_gdp_year_20.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-current_trajectory_gdp_year_20.qmd >}}
+
+:::
+
 ### Total Annual Decentralized Framework for Drug Assessment Operational Costs: $40M {#sec-dfda_annual_opex}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -343,68 +405,6 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-diseases_without_effective_treatment.qmd >}}
-
-:::
-
-### Earth Average Income at Year 20: $20.5K {#sec-earth_avg_income_year_20}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Average income (GDP per capita) at year 20 under Earth baseline trajectory.
-
-**Inputs**:
-
-- [Earth GDP at Year 20](#sec-earth_gdp_year_20) 🔢: $188T
-- [Global Population 2045 (Projected)](#sec-global_population_2045_projected) 📊: 9.2 billion of people
-
-$$
-\begin{gathered}
-\bar{y}_{earth,20} \\
-= \frac{GDP_{earth,20}}{Pop_{2045}} \\
-= \frac{\$188T}{9.2B} \\
-= \$20.5K
-\end{gathered}
-$$
-where:
-$$
-GDP_{earth,20} = GDP_0(1+g_{base})^{20}
-$$
-*✓ High confidence*
-
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-earth_avg_income_year_20.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-earth_avg_income_year_20.qmd >}}
-
-:::
-
-### Earth GDP at Year 20: $188T {#sec-earth_gdp_year_20}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Global GDP at year 20 under status-quo Earth baseline growth.
-
-**Inputs**:
-
-- [Global GDP (2025)](#sec-global_gdp_2025) 📊: $115T
-- [Baseline Global GDP Growth Rate](#sec-gdp_baseline_growth_rate): 2.5%
-
-$$
-GDP_{earth,20} = GDP_0(1+g_{base})^{20}
-$$
-
-*✓ High confidence*
-
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-earth_gdp_year_20.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-earth_gdp_year_20.qmd >}}
 
 :::
 
@@ -851,15 +851,15 @@ $$
 
 :::
 
-### Treaty Path Average Income at Year 20: $339K {#sec-treaty_path_avg_income_year_20}
+### Treaty Trajectory Average Income at Year 20: $339K {#sec-treaty_trajectory_avg_income_year_20}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Average income (GDP per capita) at year 20 under the Treaty Path.
+Average income (GDP per capita) at year 20 under the Treaty Trajectory.
 
 **Inputs**:
 
-- [Treaty Path GDP at Year 20](#sec-treaty_path_gdp_year_20) 🔢: $3.11 quadrillion
+- [Treaty Trajectory GDP at Year 20](#sec-treaty_trajectory_gdp_year_20) 🔢: $3.11 quadrillion
 - [Global Population 2045 (Projected)](#sec-global_population_2045_projected) 📊: 9.2 billion of people
 
 $$
@@ -870,29 +870,29 @@ $$
 
 #### Sensitivity Analysis
 
-{{< include ../figures/tornado-treaty_path_avg_income_year_20.qmd >}}
+{{< include ../figures/tornado-treaty_trajectory_avg_income_year_20.qmd >}}
 
-{{< include ../figures/sensitivity-table-treaty_path_avg_income_year_20.qmd >}}
+{{< include ../figures/sensitivity-table-treaty_trajectory_avg_income_year_20.qmd >}}
 
 #### Monte Carlo Distribution
 
-{{< include ../figures/mc-distribution-treaty_path_avg_income_year_20.qmd >}}
+{{< include ../figures/mc-distribution-treaty_trajectory_avg_income_year_20.qmd >}}
 
 #### Exceedance Probability
 
-{{< include ../figures/exceedance-treaty_path_avg_income_year_20.qmd >}}
+{{< include ../figures/exceedance-treaty_trajectory_avg_income_year_20.qmd >}}
 
 :::
 
-### Treaty Path CAGR (20 Years): 17.9% {#sec-treaty_path_cagr_year_20}
+### Treaty Trajectory CAGR (20 Years): 17.9% {#sec-treaty_trajectory_cagr_year_20}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Compound annual growth rate implied by Treaty Path GDP trajectory over 20 years.
+Compound annual growth rate implied by Treaty Trajectory GDP trajectory over 20 years.
 
 **Inputs**:
 
-- [Treaty Path GDP at Year 20](#sec-treaty_path_gdp_year_20) 🔢: $3.11 quadrillion
+- [Treaty Trajectory GDP at Year 20](#sec-treaty_trajectory_gdp_year_20) 🔢: $3.11 quadrillion
 - [Global GDP (2025)](#sec-global_gdp_2025) 📊: $115T
 
 $$
@@ -906,35 +906,35 @@ $$
 
 #### Sensitivity Analysis
 
-{{< include ../figures/tornado-treaty_path_cagr_year_20.qmd >}}
+{{< include ../figures/tornado-treaty_trajectory_cagr_year_20.qmd >}}
 
-{{< include ../figures/sensitivity-table-treaty_path_cagr_year_20.qmd >}}
+{{< include ../figures/sensitivity-table-treaty_trajectory_cagr_year_20.qmd >}}
 
 #### Monte Carlo Distribution
 
-{{< include ../figures/mc-distribution-treaty_path_cagr_year_20.qmd >}}
+{{< include ../figures/mc-distribution-treaty_trajectory_cagr_year_20.qmd >}}
 
 #### Exceedance Probability
 
-{{< include ../figures/exceedance-treaty_path_cagr_year_20.qmd >}}
+{{< include ../figures/exceedance-treaty_trajectory_cagr_year_20.qmd >}}
 
 :::
 
-### Treaty Path vs Earth GDP Multiplier (Year 20): 16.5x {#sec-treaty_path_gdp_vs_earth_multiplier_year_20}
+### Treaty Trajectory vs Current Trajectory GDP Multiplier (Year 20): 16.5x {#sec-treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_20}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Treaty Path GDP at year 20 as a multiple of Earth baseline GDP at year 20.
+Treaty Trajectory GDP at year 20 as a multiple of current trajectory GDP at year 20.
 
 **Inputs**:
 
-- [Treaty Path GDP at Year 20](#sec-treaty_path_gdp_year_20) 🔢: $3.11 quadrillion
-- [Earth GDP at Year 20](#sec-earth_gdp_year_20) 🔢: $188T
+- [Treaty Trajectory GDP at Year 20](#sec-treaty_trajectory_gdp_year_20) 🔢: $3.11 quadrillion
+- [Current Trajectory GDP at Year 20](#sec-current_trajectory_gdp_year_20) 🔢: $188T
 
 $$
 \begin{gathered}
-k_{treaty:earth,20} \\
-= \frac{GDP_{treaty,20}}{GDP_{earth,20}} \\
+k_{treaty:base,20} \\
+= \frac{GDP_{treaty,20}}{GDP_{base,20}} \\
 = \frac{\$3110T}{\$188T} \\
 = 16.5
 \end{gathered}
@@ -1032,31 +1032,31 @@ N_{untreated} \\
 $$
 where:
 $$
-GDP_{earth,20} = GDP_0(1+g_{base})^{20}
+GDP_{base,20} = GDP_0(1+g_{base})^{20}
 $$
 *✓ High confidence*
 
 #### Sensitivity Analysis
 
-{{< include ../figures/tornado-treaty_path_gdp_vs_earth_multiplier_year_20.qmd >}}
+{{< include ../figures/tornado-treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_20.qmd >}}
 
-{{< include ../figures/sensitivity-table-treaty_path_gdp_vs_earth_multiplier_year_20.qmd >}}
+{{< include ../figures/sensitivity-table-treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_20.qmd >}}
 
 #### Monte Carlo Distribution
 
-{{< include ../figures/mc-distribution-treaty_path_gdp_vs_earth_multiplier_year_20.qmd >}}
+{{< include ../figures/mc-distribution-treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_20.qmd >}}
 
 #### Exceedance Probability
 
-{{< include ../figures/exceedance-treaty_path_gdp_vs_earth_multiplier_year_20.qmd >}}
+{{< include ../figures/exceedance-treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_20.qmd >}}
 
 :::
 
-### Treaty Path GDP at Year 20: $3.11 quadrillion {#sec-treaty_path_gdp_year_20}
+### Treaty Trajectory GDP at Year 20: $3.11 quadrillion {#sec-treaty_trajectory_gdp_year_20}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Projected global GDP at year 20 under the Treaty Path: military-to-science reallocation plus disease-burden recovery only. Excludes non-health dysfunction-capital reallocation to isolate the lower-political-baggage channel stack.
+Projected global GDP at year 20 under the Treaty Trajectory: military-to-science reallocation plus disease-burden recovery only. Excludes non-health dysfunction-capital reallocation to isolate the lower-political-baggage channel.
 
 **Inputs**:
 
@@ -1079,17 +1079,17 @@ $$
 
 #### Sensitivity Analysis
 
-{{< include ../figures/tornado-treaty_path_gdp_year_20.qmd >}}
+{{< include ../figures/tornado-treaty_trajectory_gdp_year_20.qmd >}}
 
-{{< include ../figures/sensitivity-table-treaty_path_gdp_year_20.qmd >}}
+{{< include ../figures/sensitivity-table-treaty_trajectory_gdp_year_20.qmd >}}
 
 #### Monte Carlo Distribution
 
-{{< include ../figures/mc-distribution-treaty_path_gdp_year_20.qmd >}}
+{{< include ../figures/mc-distribution-treaty_trajectory_gdp_year_20.qmd >}}
 
 #### Exceedance Probability
 
-{{< include ../figures/exceedance-treaty_path_gdp_year_20.qmd >}}
+{{< include ../figures/exceedance-treaty_trajectory_gdp_year_20.qmd >}}
 
 :::
 
@@ -1280,15 +1280,15 @@ $$
 
 :::
 
-### Wishonia Path Average Income at Year 20: $1.16M {#sec-wishonia_path_avg_income_year_20}
+### Wishonia Trajectory Average Income at Year 20: $1.16M {#sec-wishonia_trajectory_avg_income_year_20}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Average income (GDP per capita) at year 20 under the Wishonia Path.
+Average income (GDP per capita) at year 20 under the Wishonia Trajectory.
 
 **Inputs**:
 
-- [Wishonia Path GDP at Year 20](#sec-wishonia_path_gdp_year_20) 🔢: $10.7 quadrillion
+- [Wishonia Trajectory GDP at Year 20](#sec-wishonia_trajectory_gdp_year_20) 🔢: $10.7 quadrillion
 - [Global Population 2045 (Projected)](#sec-global_population_2045_projected) 📊: 9.2 billion of people
 
 $$
@@ -1299,29 +1299,29 @@ $$
 
 #### Sensitivity Analysis
 
-{{< include ../figures/tornado-wishonia_path_avg_income_year_20.qmd >}}
+{{< include ../figures/tornado-wishonia_trajectory_avg_income_year_20.qmd >}}
 
-{{< include ../figures/sensitivity-table-wishonia_path_avg_income_year_20.qmd >}}
+{{< include ../figures/sensitivity-table-wishonia_trajectory_avg_income_year_20.qmd >}}
 
 #### Monte Carlo Distribution
 
-{{< include ../figures/mc-distribution-wishonia_path_avg_income_year_20.qmd >}}
+{{< include ../figures/mc-distribution-wishonia_trajectory_avg_income_year_20.qmd >}}
 
 #### Exceedance Probability
 
-{{< include ../figures/exceedance-wishonia_path_avg_income_year_20.qmd >}}
+{{< include ../figures/exceedance-wishonia_trajectory_avg_income_year_20.qmd >}}
 
 :::
 
-### Wishonia Path CAGR (20 Years): 25.4% {#sec-wishonia_path_cagr_year_20}
+### Wishonia Trajectory CAGR (20 Years): 25.4% {#sec-wishonia_trajectory_cagr_year_20}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Compound annual growth rate implied by Wishonia Path GDP trajectory over 20 years.
+Compound annual growth rate implied by Wishonia Trajectory GDP trajectory over 20 years.
 
 **Inputs**:
 
-- [Wishonia Path GDP at Year 20](#sec-wishonia_path_gdp_year_20) 🔢: $10.7 quadrillion
+- [Wishonia Trajectory GDP at Year 20](#sec-wishonia_trajectory_gdp_year_20) 🔢: $10.7 quadrillion
 - [Global GDP (2025)](#sec-global_gdp_2025) 📊: $115T
 
 $$
@@ -1335,35 +1335,35 @@ $$
 
 #### Sensitivity Analysis
 
-{{< include ../figures/tornado-wishonia_path_cagr_year_20.qmd >}}
+{{< include ../figures/tornado-wishonia_trajectory_cagr_year_20.qmd >}}
 
-{{< include ../figures/sensitivity-table-wishonia_path_cagr_year_20.qmd >}}
+{{< include ../figures/sensitivity-table-wishonia_trajectory_cagr_year_20.qmd >}}
 
 #### Monte Carlo Distribution
 
-{{< include ../figures/mc-distribution-wishonia_path_cagr_year_20.qmd >}}
+{{< include ../figures/mc-distribution-wishonia_trajectory_cagr_year_20.qmd >}}
 
 #### Exceedance Probability
 
-{{< include ../figures/exceedance-wishonia_path_cagr_year_20.qmd >}}
+{{< include ../figures/exceedance-wishonia_trajectory_cagr_year_20.qmd >}}
 
 :::
 
-### Wishonia Path vs Earth GDP Multiplier (Year 20): 56.7x {#sec-wishonia_path_gdp_vs_earth_multiplier_year_20}
+### Wishonia Trajectory vs Current Trajectory GDP Multiplier (Year 20): 56.7x {#sec-wishonia_trajectory_gdp_vs_current_trajectory_multiplier_year_20}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Wishonia Path GDP at year 20 as a multiple of Earth baseline GDP at year 20.
+Wishonia Trajectory GDP at year 20 as a multiple of current trajectory GDP at year 20.
 
 **Inputs**:
 
-- [Wishonia Path GDP at Year 20](#sec-wishonia_path_gdp_year_20) 🔢: $10.7 quadrillion
-- [Earth GDP at Year 20](#sec-earth_gdp_year_20) 🔢: $188T
+- [Wishonia Trajectory GDP at Year 20](#sec-wishonia_trajectory_gdp_year_20) 🔢: $10.7 quadrillion
+- [Current Trajectory GDP at Year 20](#sec-current_trajectory_gdp_year_20) 🔢: $188T
 
 $$
 \begin{gathered}
-k_{wish:earth,20} \\
-= \frac{GDP_{wish,20}}{GDP_{earth,20}} \\
+k_{wish:base,20} \\
+= \frac{GDP_{wish,20}}{GDP_{base,20}} \\
 = \frac{\$10700T}{\$188T} \\
 = 56.7
 \end{gathered}
@@ -1458,31 +1458,31 @@ N_{untreated} \\
 $$
 where:
 $$
-GDP_{earth,20} = GDP_0(1+g_{base})^{20}
+GDP_{base,20} = GDP_0(1+g_{base})^{20}
 $$
 *✓ High confidence*
 
 #### Sensitivity Analysis
 
-{{< include ../figures/tornado-wishonia_path_gdp_vs_earth_multiplier_year_20.qmd >}}
+{{< include ../figures/tornado-wishonia_trajectory_gdp_vs_current_trajectory_multiplier_year_20.qmd >}}
 
-{{< include ../figures/sensitivity-table-wishonia_path_gdp_vs_earth_multiplier_year_20.qmd >}}
+{{< include ../figures/sensitivity-table-wishonia_trajectory_gdp_vs_current_trajectory_multiplier_year_20.qmd >}}
 
 #### Monte Carlo Distribution
 
-{{< include ../figures/mc-distribution-wishonia_path_gdp_vs_earth_multiplier_year_20.qmd >}}
+{{< include ../figures/mc-distribution-wishonia_trajectory_gdp_vs_current_trajectory_multiplier_year_20.qmd >}}
 
 #### Exceedance Probability
 
-{{< include ../figures/exceedance-wishonia_path_gdp_vs_earth_multiplier_year_20.qmd >}}
+{{< include ../figures/exceedance-wishonia_trajectory_gdp_vs_current_trajectory_multiplier_year_20.qmd >}}
 
 :::
 
-### Wishonia Path GDP at Year 20: $10.7 quadrillion {#sec-wishonia_path_gdp_year_20}
+### Wishonia Trajectory GDP at Year 20: $10.7 quadrillion {#sec-wishonia_trajectory_gdp_year_20}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Projected global GDP at year 20 under the Wishonia Path. Model applies all Wishonia policy channels and redirects the full Political Dysfunction Tax non-health opportunity pool to highest-marginal-value uses. Health recovery is modeled separately through disease burden removal to avoid overlap. Military and non-health reallocation effects are ramped at 50% intensity for the first 3 years, then 100% for years 4-20, reflecting implementation lag. Military reallocation uses a physically demonstrated upper bound (post-WW2 demobilization) rather than an arbitrary policy cap.
+Projected global GDP at year 20 under the Wishonia Trajectory. Model applies all Wishonia policy channels and redirects the full Political Dysfunction Tax non-health opportunity pool to highest-marginal-value uses. Health recovery is modeled separately through disease burden removal to avoid overlap. Military and non-health reallocation effects are ramped at 50% intensity for the first 3 years, then 100% for years 4-20, reflecting implementation lag. Military reallocation uses a physically demonstrated upper bound (post-WW2 demobilization) rather than an arbitrary policy cap.
 
 **Inputs**:
 
@@ -1507,17 +1507,17 @@ $$
 
 #### Sensitivity Analysis
 
-{{< include ../figures/tornado-wishonia_path_gdp_year_20.qmd >}}
+{{< include ../figures/tornado-wishonia_trajectory_gdp_year_20.qmd >}}
 
-{{< include ../figures/sensitivity-table-wishonia_path_gdp_year_20.qmd >}}
+{{< include ../figures/sensitivity-table-wishonia_trajectory_gdp_year_20.qmd >}}
 
 #### Monte Carlo Distribution
 
-{{< include ../figures/mc-distribution-wishonia_path_gdp_year_20.qmd >}}
+{{< include ../figures/mc-distribution-wishonia_trajectory_gdp_year_20.qmd >}}
 
 #### Exceedance Probability
 
-{{< include ../figures/exceedance-wishonia_path_gdp_year_20.qmd >}}
+{{< include ../figures/exceedance-wishonia_trajectory_gdp_year_20.qmd >}}
 
 :::
 
