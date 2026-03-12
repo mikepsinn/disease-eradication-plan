@@ -226,6 +226,36 @@ $$
 
 Here $J_{baseline}$ means enough authority, budget, and population coverage to match or beat the baseline bundle's implementation footprint, and $D_{min}$ means at least two election cycles or equivalent treaty/contractual lock-in. Those are the no-loophole clauses: no sacrificed class, no missing module, no non-binding pilot, and no mechanism that gets worse when humans act selfishly.
 
+## Welfare Accounting Protocol
+
+The welfare guardrails above should not be interpreted as poetic aspirations. They need an explicit accounting rule.
+
+Every serious proposal should publish a **class-by-class impact table** with at least these rows:
+
+- present humans
+- future humans
+- nonhuman animals directly affected
+- nonhuman animals indirectly affected through land use, food systems, or ecological spillovers
+- affected living systems whose degradation plausibly creates durable downstream suffering
+
+For each class, the submission should report:
+
+- direct expected welfare change
+- lower-bound welfare change under conservative assumptions
+- main uncertainty sources
+- irreversibility risk
+- rights/blocking-factor flags
+- proposed mitigation or compensation path if the lower bound is near zero
+
+The operational rule is simple:
+
+1. **Use lower bounds, not central estimates, for admissibility.** If a class looks positive only on optimistic assumptions, the proposal is not yet admissible.
+2. **Price uncertainty against the proposal.** Unknown but plausible severe harms count as negative until measurement improves.
+3. **Keep rights as hard constraints.** A proposal does not buy its way out of coercion, fraud, or autonomy violations by producing a large aggregate gain elsewhere.
+4. **Separate welfare from money.** Economic equivalents are useful for scale intuition, but they do not substitute for DALYs, suffering, mortality, or class-specific welfare accounting.
+
+That is how `W_sentient_net`, `W_class_min`, and `B_rights` stop being slogans and become auditable gates.
+
 ## The Ranking Rule
 
 Among admissible proposals, rank them by something like:
@@ -239,6 +269,14 @@ Where $Q_{evidence}$ is a normalized confidence-and-implementability term built 
 $$
 Q_{evidence} = \text{geometric mean}(Q_{budget}, Q_{policy}, Q_{signal}, Q_{trial}, A_{pref}, L_{bind})
 $$
+
+Operationally, the ranking should be read **lexicographically**, not as one sloppy scalar:
+
+1. Clear admissibility.
+2. Maximize expected suffering reduction and DALYs averted per dollar.
+3. Then maximize risk-adjusted `NSV_gain / C_total` among proposals that are already near-indistinguishable on the terminal welfare metrics.
+
+That ordering matters. It prevents a growth-heavy or fiscally impressive proposal from outranking a clearly better suffering-reduction package merely because it produces larger dollar denominators.
 
 Then use tie-breakers in this order:
 
@@ -269,6 +307,27 @@ That last point is the whole trick. The prize does not defend any particular pro
 
 The treasury bootstraps via dominant assurance contracts [@tabarrok1998]. Pledging to the prize is a dominant strategy: if the funding threshold is met, pledgers get access to the investable asset class the prize creates. If it is not met, pledges return plus a bonus. This solves the free-rider problem that kills most public-goods coordination. Investors do not need to believe the prize will succeed; they need only notice that the expected value of pledging exceeds the expected value of sitting out regardless of what everyone else does. Greedier investors, more prize capital, stronger selection pressure.
 
+## Prize Constitution
+
+To make the phrase "causes implementation" mean something, the prize needs a constitution, not just a mission statement.
+
+At minimum, that constitution should define five roles:
+
+1. **Treasury trustee.** Holds capital in escrow and may release it only by the published deployment rule.
+2. **Measurement layer.** Independent auditors score admissibility and rank proposals against the published state vector.
+3. **Challenge layer.** Adversaries can dispute any score by posting a challenge bond and submitting contrary evidence.
+4. **Deployment layer.** The operational arm that routes campaign capital, media support, contracting authority, and coalition traffic to the top-ranked admissible package.
+5. **Recertification layer.** Periodically re-scores the winner so the machine can replace it when something better appears.
+
+The constitutional rules should be equally blunt:
+
+- **No ordinary override.** No board, founder, donor, or politician may keep capital on a lower-ranked package just because they prefer it.
+- **Automatic migration trigger.** If the current winner loses admissibility or is strictly beaten on the published rule for a full review cycle, funding and support move automatically.
+- **Emergency pause is narrow.** The only valid pause grounds are fraud, rights violations, or newly discovered severe downside risk, and a pause must trigger immediate public re-review rather than quiet discretion.
+- **Deployment waterfall is mandatory.** Idle capital is a design failure. Treasury funds must continuously route to the highest-ranked admissible implementation opportunity.
+
+That is the missing bridge between "great selection rule" and "actual institutional ratchet."
+
 ### Retroactive Impact Purchasing
 
 Bootstrap capital and project selection are different problems. Dominant assurance contracts solve the first problem: how to concentrate diffuse beneficiary capital into a treasury large enough to matter. They do not by themselves tell the treasury which downstream implementers deserve funding once the money exists.
@@ -287,6 +346,20 @@ The payout should be heavily back-loaded, because your species is very good at c
 4. **Outcome perpetuity.** The biggest reward is a continuing share of verified recovered value, because one-time prizes create demos while ongoing revenue shares create permanent constituencies.
 
 That is just Incentive Alignment Bonds [@iab-paper-2025] with a more brutal selection rule. Good. Brutality is appropriate here. The universe is not grading on effort.
+
+## One Concrete Run
+
+Abstract mechanism design is harder to trust than a visible execution trace. So here is what the current stack would look like if it won.
+
+1. The treasury raises the initial campaign pool through dominant assurance contracts and escrows it under the no-override rules above.
+2. The current bundle is submitted as a complete package: treaty wedge, dFDA / continuous evidence generation, regulatory-delay removal, IAB adoption machinery, Wishocracy preference aggregation, Optimocracy / OPG / OBG recommendation engines, and the statutory path.
+3. Independent auditors score the package on admissibility. It clears because it covers every required function, beats the current DALY benchmark, and preserves the public-choice and welfare constraints.
+4. The deployment layer routes capital into the first binding path with the best score-weighted return: campaign finance, legislative drafting, treaty advocacy, scorecards, and public preference collection.
+5. Once one binding path succeeds, budget authority and legal authority start shifting real resources rather than merely improving discussion quality.
+6. That first success funds the next missing or underpowered modules automatically through the completion covenant until the whole bundle is live.
+7. Implementers then compete inside that winning bundle to supply the cheapest verified pieces, and later challengers can still replace the whole bundle if they genuinely dominate it.
+
+That is the level of concreteness required for "implementation market" to mean more than "good intentions with a spreadsheet."
 
 ## Why Public Choice Theory Approves
 
@@ -344,6 +417,22 @@ The operational sequence is simple:
 7. **Reinvest recovered value.** Once a high-ROI reform starts paying, the prize treasury expands and finances the next set of reallocations.
 
 That loop is how you get from "good idea" to "self-funding governance upgrade."
+
+## Failover Ladder
+
+For the stack or something better to feel inevitable, the prize cannot depend on one heroic legislative roll of the dice. It needs a failover ladder.
+
+If the top-ranked path stalls, the treasury should automatically route capital to the next-highest admissible binding path in roughly this order:
+
+1. treaty or national statute
+2. agency rule, procurement rule, or enforcement-policy change
+3. state-level legislation, interstate compact, or ballot measure
+4. hospital-system, insurer, philanthropic, or employer-network adoption with auditable contractual obligations
+5. narrower pilot pathways that still create legally durable precedent or reusable implementation infrastructure
+
+The governing principle is simple: **capital may move down the ladder, but it may not sit idle**. If a higher rung becomes feasible later, the machine may move back up. If a rival package beats the incumbent at any rung while remaining complete and admissible, support migrates there instead.
+
+That is how you turn "if this path fails, try something else" into an actual ratchet rather than a motivational slogan.
 
 The reason the current papers likely win that first round is not sentimental attachment to the existing stack. It is that the stack combines four properties that are hard to beat simultaneously: a huge negative-NSV funding source to defund [@value-captured-by-1pct-treaty], an unusually strong risk-adjusted cost-per-DALY case [@dfda-impact-paper-2025], a concrete political-adoption mechanism [@iab-paper-2025], and a legal-regulatory path that actually opens the medical bottleneck rather than merely subsidizing the old one [@invisible-graveyard-paper-2025; @dfda-spec-paper-2025]. A challenger is free to beat that package. It just has to beat all four properties at once.
 
