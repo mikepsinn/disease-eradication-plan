@@ -36,15 +36,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 133 parameters used in the analysis, organized by type:
+This appendix documents all 136 parameters used in the analysis, organized by type:
 
-- External sources (peer-reviewed): 62
-- Calculated values: 51
+- External sources (peer-reviewed): 63
+- Calculated values: 53
 - Core definitions: 20
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (51 parameters) • [External Data Sources](#sec-external) (62 parameters) • [Core Definitions](#sec-definitions) (20 parameters)
+[Calculated Values](#sec-calculated) (53 parameters) • [External Data Sources](#sec-external) (63 parameters) • [Core Definitions](#sec-definitions) (20 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -1679,6 +1679,45 @@ $$
 
 :::
 
+### Annual Welfare Cost of Avoidable Disease: $400T {#sec-global_disease_economic_burden_annual}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual welfare cost of avoidable disease globally. Calculated as global DALY burden × eventually avoidable percentage × standard QALY value ($150K). Uses consistent QALY valuation matching all other health impact calculations. Medical costs and productivity losses are NOT added separately to avoid double-counting (QALY valuation already captures these welfare components).
+
+**Inputs**:
+
+- [Global Annual DALY Burden](#sec-global_annual_daly_burden) 📊: 2.88 billion DALYs/year (SE: ±150 million DALYs/year)
+- [Eventually Avoidable DALY Percentage](#sec-eventually_avoidable_daly_pct): 92.6% (95% CI: 50% - 98%)
+- [Standard Economic Value per QALY](#sec-standard_economic_qaly_value_usd) 📊: $150K (SE: ±$30K)
+
+$$
+\begin{gathered}
+Burden_{disease} \\
+= DALYs_{global,ann} \times Pct_{avoid,DALY} \times Value_{QALY} \\
+= 2.88B \times 92.6\% \times \$150K \\
+= \$400T
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-global_disease_economic_burden_annual.qmd >}}
+
+{{< include ../figures/sensitivity-table-global_disease_economic_burden_annual.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-global_disease_economic_burden_annual.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-global_disease_economic_burden_annual.qmd >}}
+
+:::
+
 ### IAB Mechanism Benefit-Cost Ratio: 230:1 {#sec-iab_mechanism_benefit_cost_ratio}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -2066,6 +2105,46 @@ Cut_{WW2} \\
 $$
 
 *✓ High confidence*
+
+:::
+
+### RECOVERY Trial Cost Reduction Factor: 82x {#sec-recovery_trial_cost_reduction_factor}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Cost reduction factor demonstrated by RECOVERY trial (traditional Phase 3 cost / RECOVERY cost per patient)
+
+**Inputs**:
+
+- [Phase 3 Cost per Patient](#sec-traditional_phase3_cost_per_patient) 📊: $41K (95% CI: $20K - $120K)
+- [Recovery Trial Cost per Patient](#sec-recovery_trial_cost_per_patient) 📊: $500 (95% CI: $400 - $2.5K)
+
+$$
+\begin{gathered}
+k_{RECOVERY} \\
+= \frac{Cost_{P3,pt}}{Cost_{RECOVERY,pt}} \\
+= \frac{\$41K}{\$500} \\
+= 82
+\end{gathered}
+$$
+
+**Methodology**: [@recovery-trial-82x-cost-reduction]
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-recovery_trial_cost_reduction_factor.qmd >}}
+
+{{< include ../figures/sensitivity-table-recovery_trial_cost_reduction_factor.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-recovery_trial_cost_reduction_factor.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-recovery_trial_cost_reduction_factor.qmd >}}
 
 :::
 
@@ -4256,6 +4335,26 @@ Estimated lives saved globally by RECOVERY trial's dexamethasone discovery. NHS 
 {{< include ../figures/distribution-recovery_trial_global_lives_saved.qmd >}}
 
 *~ Medium confidence*
+
+:::
+
+### Standard Economic Value per QALY: $150K {#sec-standard_economic_qaly_value_usd}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Standard economic value per QALY
+
+**Source**: [@qaly-value]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Normal (SE: $30K)
+
+#### Input Distribution
+
+{{< include ../figures/distribution-standard_economic_qaly_value_usd.qmd >}}
+
+*✓ High confidence*
 
 :::
 
