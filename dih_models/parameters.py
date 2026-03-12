@@ -10140,3 +10140,95 @@ LAUNCH_P_AT_LEAST_REQUIRED_PRINCIPALS = Parameter(
     ),
     latex_symbol=r"P_{launch}",
 )
+
+
+# ============================================================================
+# HOST DECISION PRIORS FOR ONE ADDITIONAL COMPATIBLE PRIZE INSTANCE
+# ============================================================================
+# These are explicitly decision priors, not measured historical coefficients.
+# They exist to quantify the host question:
+# "What is one more protocol-compatible prize instance worth to a human deciding
+# whether to create it?" Monte Carlo ranges therefore reflect uncertainty in the
+# stated prior assumptions, not retrospective empirical identification.
+
+HOST_PRIZE_INSTANCE_DELTA_IMPLEMENTATION_PROBABILITY = Parameter(
+    0.001,
+    source_type="definition",
+    description="Incremental increase in the probability that the Earth Optimization Plan or a strictly better admissible plan is implemented because one additional compatible prize instance exists. This is a conservative decision prior for host expected-value framing, not a measured causal estimate.",
+    display_name="Incremental Implementation Probability from One Prize Instance",
+    unit="rate",
+    confidence="low",
+    distribution=DistributionType.BETA,
+    confidence_interval=(0.0001, 0.01),
+    conservative=True,
+    validation_min=0.0,
+    validation_max=0.05,
+    keywords=["host", "prize", "instance", "delta p", "implementation", "decision prior"],
+    latex_symbol=r"\Delta p_{host}",
+)
+
+HOST_PRIZE_INSTANCE_ACCELERATION_YEARS = Parameter(
+    1.0,
+    source_type="definition",
+    description="Years by which one additional compatible prize instance accelerates implementation on the conservative host-decision prior. Captures speed value even when the terminal implementation probability is unchanged.",
+    display_name="Implementation Acceleration from One Prize Instance",
+    unit="years",
+    confidence="low",
+    distribution=DistributionType.LOGNORMAL,
+    confidence_interval=(0.1, 5.0),
+    conservative=True,
+    validation_min=0.0,
+    validation_max=10.0,
+    keywords=["host", "prize", "instance", "acceleration", "years", "delay"],
+    latex_symbol=r"\Delta T_{host}",
+)
+
+HOST_PRIZE_INSTANCE_PERSONAL_GROSS_VALUE_TREATY_FLOOR = Parameter(
+    float(HOST_PRIZE_INSTANCE_DELTA_IMPLEMENTATION_PROBABILITY) * float(TREATY_TRAJECTORY_LIFETIME_INCOME_GAIN_PER_CAPITA)
+    + float(HOST_PRIZE_INSTANCE_ACCELERATION_YEARS) * float(POLITICAL_DYSFUNCTION_TAX_PER_PERSON_ANNUAL),
+    source_type="calculated",
+    description="Personal gross expected value of one additional compatible prize instance using the treaty-only lifetime-gain floor plus avoided delay value. Excludes host-specific donor, fee, or reputational upside, so this is deliberately conservative.",
+    display_name="Personal Gross Value from One Prize Instance (Treaty Floor)",
+    unit="USD",
+    formula="HOST_PRIZE_INSTANCE_DELTA_IMPLEMENTATION_PROBABILITY x TREATY_TRAJECTORY_LIFETIME_INCOME_GAIN_PER_CAPITA + HOST_PRIZE_INSTANCE_ACCELERATION_YEARS x POLITICAL_DYSFUNCTION_TAX_PER_PERSON_ANNUAL",
+    latex=r"EV_{host,treaty} = \Delta p_{host} \cdot \Delta Y_{lifetime,treaty} + \Delta T_{host} \cdot T_{pd,pc}",
+    keywords=["host", "prize", "instance", "expected value", "treaty", "personal"],
+    inputs=[
+        "HOST_PRIZE_INSTANCE_DELTA_IMPLEMENTATION_PROBABILITY",
+        "TREATY_TRAJECTORY_LIFETIME_INCOME_GAIN_PER_CAPITA",
+        "HOST_PRIZE_INSTANCE_ACCELERATION_YEARS",
+        "POLITICAL_DYSFUNCTION_TAX_PER_PERSON_ANNUAL",
+    ],
+    compute=lambda ctx: (
+        ctx["HOST_PRIZE_INSTANCE_DELTA_IMPLEMENTATION_PROBABILITY"]
+        * ctx["TREATY_TRAJECTORY_LIFETIME_INCOME_GAIN_PER_CAPITA"]
+        + ctx["HOST_PRIZE_INSTANCE_ACCELERATION_YEARS"]
+        * ctx["POLITICAL_DYSFUNCTION_TAX_PER_PERSON_ANNUAL"]
+    ),
+    latex_symbol=r"EV_{host,treaty}",
+)
+
+HOST_PRIZE_INSTANCE_PERSONAL_GROSS_VALUE_WISHONIA_TRAJECTORY = Parameter(
+    float(HOST_PRIZE_INSTANCE_DELTA_IMPLEMENTATION_PROBABILITY) * float(WISHONIA_TRAJECTORY_LIFETIME_INCOME_GAIN_PER_CAPITA)
+    + float(HOST_PRIZE_INSTANCE_ACCELERATION_YEARS) * float(POLITICAL_DYSFUNCTION_TAX_PER_PERSON_ANNUAL),
+    source_type="calculated",
+    description="Personal gross expected value of one additional compatible prize instance using the Wishonia Trajectory lifetime-gain model plus avoided delay value. Excludes host-specific donor, fee, or reputational upside, so this is deliberately conservative.",
+    display_name="Personal Gross Value from One Prize Instance (Wishonia Trajectory)",
+    unit="USD",
+    formula="HOST_PRIZE_INSTANCE_DELTA_IMPLEMENTATION_PROBABILITY x WISHONIA_TRAJECTORY_LIFETIME_INCOME_GAIN_PER_CAPITA + HOST_PRIZE_INSTANCE_ACCELERATION_YEARS x POLITICAL_DYSFUNCTION_TAX_PER_PERSON_ANNUAL",
+    latex=r"EV_{host,wish} = \Delta p_{host} \cdot \Delta Y_{lifetime,wish} + \Delta T_{host} \cdot T_{pd,pc}",
+    keywords=["host", "prize", "instance", "expected value", "wishonia", "trajectory", "personal"],
+    inputs=[
+        "HOST_PRIZE_INSTANCE_DELTA_IMPLEMENTATION_PROBABILITY",
+        "WISHONIA_TRAJECTORY_LIFETIME_INCOME_GAIN_PER_CAPITA",
+        "HOST_PRIZE_INSTANCE_ACCELERATION_YEARS",
+        "POLITICAL_DYSFUNCTION_TAX_PER_PERSON_ANNUAL",
+    ],
+    compute=lambda ctx: (
+        ctx["HOST_PRIZE_INSTANCE_DELTA_IMPLEMENTATION_PROBABILITY"]
+        * ctx["WISHONIA_TRAJECTORY_LIFETIME_INCOME_GAIN_PER_CAPITA"]
+        + ctx["HOST_PRIZE_INSTANCE_ACCELERATION_YEARS"]
+        * ctx["POLITICAL_DYSFUNCTION_TAX_PER_PERSON_ANNUAL"]
+    ),
+    latex_symbol=r"EV_{host,wish}",
+)

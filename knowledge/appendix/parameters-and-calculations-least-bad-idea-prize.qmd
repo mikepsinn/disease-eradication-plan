@@ -36,15 +36,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 143 parameters used in the analysis, organized by type:
+This appendix documents all 154 parameters used in the analysis, organized by type:
 
-- External sources (peer-reviewed): 65
-- Calculated values: 59
-- Core definitions: 19
+- External sources (peer-reviewed): 68
+- Calculated values: 65
+- Core definitions: 21
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (59 parameters) • [External Data Sources](#sec-external) (65 parameters) • [Core Definitions](#sec-definitions) (19 parameters)
+[Calculated Values](#sec-calculated) (65 parameters) • [External Data Sources](#sec-external) (68 parameters) • [Core Definitions](#sec-definitions) (21 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -148,6 +148,60 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-current_trajectory_gdp_year_20.qmd >}}
+
+:::
+
+### Years Until Destructive Economy Reaches 25% of GDP: 8 years {#sec-destructive_economy_years_to_25pct_gdp}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Years until the destructive economy (military + cybercrime) reaches 25% of GDP at current growth rates. Historical precedent suggests societies become unstable when extraction rates exceed 20-30% of economic output.
+
+**Inputs**:
+
+- [Destructive Economy as % of GDP](#sec-global_destructive_economy_pct_gdp) 🔢: 11.5%
+- [Cybercrime Cost CAGR](#sec-global_cybercrime_cagr) 📊: 15%
+- [Military Spending Real CAGR (10-Year)](#sec-global_military_spending_real_cagr_10yr) 📊: 3.4%
+- [Baseline Global GDP Growth Rate](#sec-gdp_baseline_growth_rate): 2.5%
+- [Global Military Spending in 2024](#sec-global_military_spending_annual_2024) 📊: $2.72T
+- [Global Destructive Economy (2025)](#sec-global_destructive_economy_annual_2025) 🔢: $13.2T
+- [Global Cybercrime Costs (2025)](#sec-global_cybercrime_cost_annual_2025) 📊: $10.5T
+
+$$
+\begin{gathered}
+n_{25\%} \\
+= \frac{\ln(0.25 / r_{destruct:GDP})}{\ln(1 + g_{destruct} - g_{GDP})}
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+:::
+
+### Years Until Destructive Economy Reaches 50% of GDP: 15 years {#sec-destructive_economy_years_to_50pct_gdp}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Years until the destructive economy (military + cybercrime) reaches 50% of GDP at current growth rates. At this point, more economic activity is devoted to destruction and extraction than to production.
+
+**Inputs**:
+
+- [Destructive Economy as % of GDP](#sec-global_destructive_economy_pct_gdp) 🔢: 11.5%
+- [Cybercrime Cost CAGR](#sec-global_cybercrime_cagr) 📊: 15%
+- [Military Spending Real CAGR (10-Year)](#sec-global_military_spending_real_cagr_10yr) 📊: 3.4%
+- [Baseline Global GDP Growth Rate](#sec-gdp_baseline_growth_rate): 2.5%
+- [Global Military Spending in 2024](#sec-global_military_spending_annual_2024) 📊: $2.72T
+- [Global Destructive Economy (2025)](#sec-global_destructive_economy_annual_2025) 🔢: $13.2T
+- [Global Cybercrime Costs (2025)](#sec-global_cybercrime_cost_annual_2025) 📊: $10.5T
+
+$$
+\begin{gathered}
+n_{50\%} \\
+= \frac{\ln(0.50 / r_{destruct:GDP})}{\ln(1 + g_{destruct} - g_{GDP})}
+\end{gathered}
+$$
+
+*✓ High confidence*
 
 :::
 
@@ -1747,6 +1801,62 @@ $$
 
 :::
 
+### Global Destructive Economy (2025): $13.2T {#sec-global_destructive_economy_annual_2025}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Combined annual cost of military spending and cybercrime. The 'destructive economy' that competes with the productive economy.
+
+**Inputs**:
+
+- [Global Military Spending in 2024](#sec-global_military_spending_annual_2024) 📊: $2.72T
+- [Global Cybercrime Costs (2025)](#sec-global_cybercrime_cost_annual_2025) 📊: $10.5T
+
+$$
+\begin{gathered}
+Cost_{destruct} \\
+= Spending_{mil} + Cost_{cyber} \\
+= \$2.72T + \$10.5T \\
+= \$13.2T
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+:::
+
+### Destructive Economy as % of GDP: 11.5% {#sec-global_destructive_economy_pct_gdp}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Destructive economy (military + cybercrime) as percentage of global GDP.
+
+**Inputs**:
+
+- [Global Destructive Economy (2025)](#sec-global_destructive_economy_annual_2025) 🔢: $13.2T
+- [Global GDP (2025)](#sec-global_gdp_2025) 📊: $115T
+
+$$
+\begin{gathered}
+r_{destruct:GDP} \\
+= \frac{Cost_{destruct}}{GDP_{global}} \\
+= \frac{\$13.2T}{\$115T} \\
+= 11.5\%
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{destruct} \\
+= Spending_{mil} + Cost_{cyber} \\
+= \$2.72T + \$10.5T \\
+= \$13.2T
+\end{gathered}
+$$
+*✓ High confidence*
+
+:::
+
 ### Annual Welfare Cost of Avoidable Disease: $400T {#sec-global_disease_economic_burden_annual}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -1783,6 +1893,84 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-global_disease_economic_burden_annual.qmd >}}
+
+:::
+
+### Personal Gross Value from One Prize Instance (Wishonia Trajectory): $64.7K {#sec-host_prize_instance_personal_gross_value_full_path}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Personal gross expected value of one additional compatible prize instance using the Wishonia Trajectory lifetime-gain model plus avoided delay value. Excludes host-specific donor, fee, or reputational upside, so this is deliberately conservative.
+
+**Inputs**:
+
+- [Incremental Implementation Probability from One Prize Instance](#sec-host_prize_instance_delta_implementation_probability): 0.1% (95% CI: 0.01% - 1%)
+- [Wishonia Trajectory Lifetime Income Gain (Per Capita)](#sec-wishonia_trajectory_lifetime_income_gain_per_capita) 🔢: $52.1M
+- [Implementation Acceleration from One Prize Instance](#sec-host_prize_instance_acceleration_years): 1 years (95% CI: 0.1 years - 5 years)
+- [Political Dysfunction Tax per Person (Annual)](#sec-political_dysfunction_tax_per_person_annual) 🔢: $12.6K
+
+$$
+\begin{gathered}
+EV_{host,full} \\
+= \Delta p_{host} \cdot \Delta Y_{lifetime,wish} \\
++ \Delta T_{host} \cdot T_{pd,pc}
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-host_prize_instance_personal_gross_value_full_path.qmd >}}
+
+{{< include ../figures/sensitivity-table-host_prize_instance_personal_gross_value_full_path.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-host_prize_instance_personal_gross_value_full_path.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-host_prize_instance_personal_gross_value_full_path.qmd >}}
+
+:::
+
+### Personal Gross Value from One Prize Instance (Treaty Floor): $27.5K {#sec-host_prize_instance_personal_gross_value_treaty_floor}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Personal gross expected value of one additional compatible prize instance using the treaty-only lifetime-gain floor plus avoided delay value. Excludes host-specific donor, fee, or reputational upside, so this is deliberately conservative.
+
+**Inputs**:
+
+- [Incremental Implementation Probability from One Prize Instance](#sec-host_prize_instance_delta_implementation_probability): 0.1% (95% CI: 0.01% - 1%)
+- [Treaty Trajectory Lifetime Income Gain (Per Capita)](#sec-treaty_trajectory_lifetime_income_gain_per_capita) 🔢: $14.9M
+- [Implementation Acceleration from One Prize Instance](#sec-host_prize_instance_acceleration_years): 1 years (95% CI: 0.1 years - 5 years)
+- [Political Dysfunction Tax per Person (Annual)](#sec-political_dysfunction_tax_per_person_annual) 🔢: $12.6K
+
+$$
+\begin{gathered}
+EV_{host,treaty} \\
+= \Delta p_{host} \cdot \Delta Y_{lifetime,treaty} \\
++ \Delta T_{host} \cdot T_{pd,pc}
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-host_prize_instance_personal_gross_value_treaty_floor.qmd >}}
+
+{{< include ../figures/sensitivity-table-host_prize_instance_personal_gross_value_treaty_floor.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-host_prize_instance_personal_gross_value_treaty_floor.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-host_prize_instance_personal_gross_value_treaty_floor.qmd >}}
 
 :::
 
@@ -4431,6 +4619,38 @@ Annual global spending on clinical trials (Industry: $45-60B + Government: $3-6B
 
 :::
 
+### Cybercrime Cost CAGR: 15% {#sec-global_cybercrime_cagr}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Compound annual growth rate of global cybercrime costs. Cybersecurity Ventures: $3T (2015) -> $6T (2021) -> $10.5T (2025). AI-enhanced attacks are accelerating this trend.
+
+**Source**: [@cybercrime-economy-10-5t]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*✓ High confidence*
+
+:::
+
+### Global Cybercrime Costs (2025): $10.5T {#sec-global_cybercrime_cost_annual_2025}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Projected global cybercrime costs in 2025. Includes data theft, productivity loss, IP theft, fraud. More profitable than global trade of all major illegal drugs combined. If measured as a country, would be the 3rd largest economy after US and China.
+
+**Source**: [@cybercrime-economy-10-5t]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*✓ High confidence*
+
+:::
+
 ### Global GDP (2025): $115T {#sec-global_gdp_2025}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -4502,6 +4722,22 @@ Global median age in 2024 from UN World Population Prospects 2024 revision.
 Global military spending in 2024
 
 **Source**: [@global-military-spending]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*✓ High confidence*
+
+:::
+
+### Military Spending Real CAGR (10-Year): 3.4% {#sec-global_military_spending_real_cagr_10yr}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Real compound annual growth rate of global military spending over the last decade (2014-2024). SIPRI reports 10 consecutive annual increases, with 2024 up 9.4% in real terms. The 10-year CAGR is approximately 3.4% real.
+
+**Source**: [@sipri-milex-2024]
 
 #### Uncertainty Range
 
@@ -5388,6 +5624,50 @@ Status-quo baseline annual global GDP growth rate.
 #### Uncertainty Range
 
 **Technical**: Distribution: Fixed
+
+*Core definition*
+
+:::
+
+### Implementation Acceleration from One Prize Instance: 1 years {#sec-host_prize_instance_acceleration_years}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Years by which one additional compatible prize instance accelerates implementation on the conservative host-decision prior. Captures speed value even when the terminal implementation probability is unchanged.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [0.1 years, 5 years] • Distribution: Lognormal
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between 0.1 years and 5 years (±245%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-host_prize_instance_acceleration_years.qmd >}}
+
+*Core definition*
+
+:::
+
+### Incremental Implementation Probability from One Prize Instance: 0.1% {#sec-host_prize_instance_delta_implementation_probability}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Incremental increase in the probability that the Earth Optimization Plan or a strictly better admissible plan is implemented because one additional compatible prize instance exists. This is a conservative decision prior for host expected-value framing, not a measured causal estimate.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [0.01%, 1%] • Distribution: Beta
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between 0.01% and 1% (±495%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The beta distribution means values are bounded and can skew toward one end.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-host_prize_instance_delta_implementation_probability.qmd >}}
 
 *Core definition*
 
