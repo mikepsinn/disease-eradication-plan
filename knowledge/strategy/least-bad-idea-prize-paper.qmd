@@ -398,7 +398,23 @@ $$
 
 where $\Delta p$ is the increase in implementation probability caused by hosting an instance, $B_{person}$ is the human-level benefit if the plan is implemented, $H_{host}$ is any additional host-side upside if implementation happens, $L_{host}$ is any residual learning or donor value if it does not, and $C_{host}$ is the host's true unreimbursed cost.
 
-If host downside is actually bounded near zero, the break-even probability lift is tiny:
+In direct personal-value terms, even tiny probability changes are worth real money:
+
+| Increase in implementation probability caused by the instance | Personal expected value using the treaty-only floor ({{< var treaty_trajectory_lifetime_income_gain_per_capita >}}) | Personal expected value using the full path ({{< var wishonia_trajectory_lifetime_income_gain_per_capita >}}) |
+|---|---|---|
+| `0.01 percentage points` | `+$1.49K` | `+$5.21K` |
+| `0.1 percentage points` | `+$14.9K` | `+$52.1K` |
+| `1 percentage point` | `+$149K` | `+$521K` |
+
+Speed has its own value even if the total implementation probability stayed unchanged:
+
+| Implementation accelerated by | Conservative personal value from avoided delay using the broad umbrella estimate ({{< var political_dysfunction_tax_per_person_annual >}}/year) |
+|---|---|
+| `1 year` | `+$12.6K` |
+| `3 years` | `+$37.9K` |
+| `5 years` | `+$63.1K` |
+
+The same point can be stated in inverse form. If host downside is actually bounded near zero, the break-even probability lift is tiny:
 
 | True unreimbursed human/host cost | Break-even increase in implementation probability using the full-path human benefit ({{< var wishonia_trajectory_lifetime_income_gain_per_capita >}}) | Break-even increase using the treaty-only floor ({{< var treaty_trajectory_lifetime_income_gain_per_capita >}}) |
 |---|---|---|
@@ -408,6 +424,18 @@ If host downside is actually bounded near zero, the break-even probability lift 
 | `$1M` | `1.92%` | `6.71%` |
 
 Those thresholds are biased against creating the prize because they ignore two additional benefits. First, the host can receive bounded donor, fee, and implementation upside under the protocol rules above. Second, speed matters. The model's implied annual per-person opportunity cost of political dysfunction is {{< var political_dysfunction_tax_per_person_annual >}} before counting the medical timeline-shift gains, so even a one-year acceleration has large expected human value.
+
+The delay cost can also be stated more concretely in layers.
+
+| Layer of inaction cost | Conservative quantification | Why it matters |
+|---|---|---|
+| Broad annual opportunity cost of bad allocation | {{< var political_dysfunction_tax_per_person_annual >}} per person per year | This is the cleanest single-number estimate of what humanity loses each year by leaving high-value gains unrealized. |
+| Narrow direct parasitic economy visible today | ~`$1.65K` per person per year from the current {{< var global_destructive_economy_annual_2025 >}} military-plus-cybercrime drain | This is the directly observable extraction cost from the destructive economy even before counting disease drag or broader governance failure. |
+| Disease drag from not curing things | ~`$1.86K` per person per year from the current 13% GDP disease burden | This is the annual cost of continuing to pay for sickness instead of curing it. |
+| Direct parasitic-economy path if current growth continues | roughly `+$21.1K` per person over the next 8 years and `+$69.0K` over the next 15 years from military plus cybercrime alone | These are the cumulative direct losses on the path to the destructive economy reaching 25% of GDP in {{< var destructive_economy_years_to_25pct_gdp >}} and 50% of GDP in {{< var destructive_economy_years_to_50pct_gdp >}}. |
+| Missed lifetime upside from never switching paths | {{< var treaty_trajectory_lifetime_income_gain_per_capita >}} on the conservative treaty floor; {{< var wishonia_trajectory_lifetime_income_gain_per_capita >}} on the full path | This is the conservative lower bound on what inaction costs a representative human over a remaining lifetime. |
+
+These layers should not all be added together mechanically. The {{< var political_dysfunction_tax_per_person_annual >}} figure is the broad umbrella estimate. The parasitic-economy and disease rows are narrower visible components that make the umbrella more concrete rather than replacing it. The important point for the host decision is simpler: "do nothing" is not the zero-cost cell. It is the cell in which these losses keep compounding.
 
 The resulting decision rule is simple: if a compatible prize instance has any non-trivial positive effect on implementation probability or implementation speed, and the host is not secretly absorbing large unreimbursed downside, hosting is the rational human choice.
 
