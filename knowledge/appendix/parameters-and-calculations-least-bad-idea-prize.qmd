@@ -36,15 +36,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 118 parameters used in the analysis, organized by type:
+This appendix documents all 133 parameters used in the analysis, organized by type:
 
-- External sources (peer-reviewed): 56
-- Calculated values: 44
-- Core definitions: 18
+- External sources (peer-reviewed): 62
+- Calculated values: 51
+- Core definitions: 20
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (44 parameters) • [External Data Sources](#sec-external) (56 parameters) • [Core Definitions](#sec-definitions) (18 parameters)
+[Calculated Values](#sec-calculated) (51 parameters) • [External Data Sources](#sec-external) (62 parameters) • [Core Definitions](#sec-definitions) (20 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -136,6 +136,176 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-dfda_benefit_rd_only_annual.qmd >}}
+
+:::
+
+### dFDA Direct Funding Cost per DALY: $0.842 {#sec-dfda_direct_funding_cost_per_daly}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Cost per DALY at direct funding level for the therapeutic space exploration period. Still highly cost-effective vs bed nets.
+
+**Inputs**:
+
+- [dFDA Direct Funding NPV (Exploration Period)](#sec-dfda_direct_funding_queue_clearance_npv) 🔢: $476B
+- [Total DALYs from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput](#sec-dfda_trial_capacity_plus_efficacy_lag_dalys) 🔢: 565 billion DALYs
+
+$$
+\begin{gathered}
+Cost_{direct,DALY} \\
+= \frac{NPV_{direct}}{DALYs_{max}} \\
+= \frac{\$476B}{565B} \\
+= \$0.842
+\end{gathered}
+$$
+where:
+$$
+NPV_{direct} = Funding_{ann} \times \frac{1 - (1+r)^{-T}}{r}
+$$
+where:
+$$
+\begin{gathered}
+T_{queue,dFDA} \\
+= \frac{T_{queue,SQ}}{k_{capacity}} \\
+= \frac{443}{12.3} \\
+= 36
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{queue,SQ} \\
+= \frac{N_{untreated}}{Treatments_{new,ann}} \\
+= \frac{6{,}650}{15} \\
+= 443
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{untreated} \\
+= N_{rare} \times 0.95 \\
+= 7{,}000 \times 0.95 \\
+= 6{,}650
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+k_{capacity} \\
+= \frac{N_{fundable,dFDA}}{Slots_{curr}} \\
+= \frac{23.4M}{1.9M} \\
+= 12.3
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{fundable,dFDA} \\
+= \frac{Subsidies_{dFDA,ann}}{Cost_{pragmatic,pt}} \\
+= \frac{\$21.8B}{\$929} \\
+= 23.4M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Subsidies_{dFDA,ann} \\
+= Funding_{dFDA,ann} - OPEX_{dFDA} \\
+= \$21.8B - \$40M \\
+= \$21.8B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+OPEX_{dFDA} \\
+= Cost_{platform} + Cost_{staff} + Cost_{infra} \\
++ Cost_{regulatory} + Cost_{community} \\
+= \$15M + \$10M + \$8M + \$5M + \$2M \\
+= \$40M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+DALYs_{max} \\
+= DALYs_{global,ann} \times Pct_{avoid,DALY} \times T_{accel,max} \\
+= 2.88B \times 92.6\% \times 212 \\
+= 565B
+\end{gathered}
+$$
+where:
+$$
+T_{accel,max} = T_{accel} + T_{lag} = 204 + 8.2 = 212
+$$
+where:
+$$
+\begin{gathered}
+T_{accel} \\
+= T_{first,SQ} \times \left(1 - \frac{1}{k_{capacity}}\right) \\
+= 222 \times \left(1 - \frac{1}{12.3}\right) \\
+= 204
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{first,SQ} \\
+= T_{queue,SQ} \times 0.5 \\
+= 443 \times 0.5 \\
+= 222
+\end{gathered}
+$$
+*~ Medium confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-dfda_direct_funding_cost_per_daly.qmd >}}
+
+{{< include ../figures/sensitivity-table-dfda_direct_funding_cost_per_daly.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-dfda_direct_funding_cost_per_daly.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_direct_funding_cost_per_daly.qmd >}}
+
+:::
+
+### dFDA Direct Funding NPV (Exploration Period): $476B {#sec-dfda_direct_funding_queue_clearance_npv}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+NPV of annual direct funding for the therapeutic space exploration period. Funding period equals exploration time (queue clearance years at given capacity multiplier). After exploration completes, the full timeline shift benefit is realized.
+
+**Inputs**:
+
+- [dFDA Annual Trial Funding](#sec-dfda_annual_trial_funding): $21.8B
+- [Standard Discount Rate for NPV Analysis](#sec-npv_discount_rate_standard): 3%
+- [dFDA Therapeutic Space Exploration Time](#sec-dfda_queue_clearance_years) 🔢: 36 years
+
+$$
+NPV_{direct} = Funding_{ann} \times \frac{1 - (1+r)^{-T}}{r}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-dfda_direct_funding_queue_clearance_npv.qmd >}}
+
+{{< include ../figures/sensitivity-table-dfda_direct_funding_queue_clearance_npv.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-dfda_direct_funding_queue_clearance_npv.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_direct_funding_queue_clearance_npv.qmd >}}
 
 :::
 
@@ -238,6 +408,98 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-dfda_patients_fundable_annually.qmd >}}
+
+:::
+
+### dFDA Therapeutic Space Exploration Time: 36 years {#sec-dfda_queue_clearance_years}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Years to explore the entire therapeutic search space with dFDA implementation. At increased discovery rate, finding first treatments for all currently untreatable diseases takes ~36 years instead of ~443.
+
+**Inputs**:
+
+- [Status Quo Therapeutic Space Exploration Time](#sec-status_quo_queue_clearance_years) 🔢: 443 years
+- [Trial Capacity Multiplier](#sec-dfda_trial_capacity_multiplier) 🔢: 12.3x
+
+$$
+\begin{gathered}
+T_{queue,dFDA} \\
+= \frac{T_{queue,SQ}}{k_{capacity}} \\
+= \frac{443}{12.3} \\
+= 36
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{queue,SQ} \\
+= \frac{N_{untreated}}{Treatments_{new,ann}} \\
+= \frac{6{,}650}{15} \\
+= 443
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{untreated} \\
+= N_{rare} \times 0.95 \\
+= 7{,}000 \times 0.95 \\
+= 6{,}650
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+k_{capacity} \\
+= \frac{N_{fundable,dFDA}}{Slots_{curr}} \\
+= \frac{23.4M}{1.9M} \\
+= 12.3
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{fundable,dFDA} \\
+= \frac{Subsidies_{dFDA,ann}}{Cost_{pragmatic,pt}} \\
+= \frac{\$21.8B}{\$929} \\
+= 23.4M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Subsidies_{dFDA,ann} \\
+= Funding_{dFDA,ann} - OPEX_{dFDA} \\
+= \$21.8B - \$40M \\
+= \$21.8B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+OPEX_{dFDA} \\
+= Cost_{platform} + Cost_{staff} + Cost_{infra} \\
++ Cost_{regulatory} + Cost_{community} \\
+= \$15M + \$10M + \$8M + \$5M + \$2M \\
+= \$40M
+\end{gathered}
+$$
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-dfda_queue_clearance_years.qmd >}}
+
+{{< include ../figures/sensitivity-table-dfda_queue_clearance_years.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-dfda_queue_clearance_years.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_queue_clearance_years.qmd >}}
 
 :::
 
@@ -751,6 +1013,46 @@ $$
 
 :::
 
+### Drug Cost Increase: Pre-1962 to Current: 105x {#sec-drug_cost_increase_pre1962_to_current_multiplier}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Drug development cost increase from pre-1962 to current
+
+**Inputs**:
+
+- [Pharma Drug Development Cost (Current System)](#sec-pharma_drug_development_cost_current) 📊: $2.6B (95% CI: $1.5B - $4B)
+- [Pre-1962 Drug Development Cost (2024 Dollars)](#sec-pre_1962_drug_development_cost_2024_usd) 📊: $24.7M (95% CI: $19.5M - $30M)
+
+$$
+\begin{gathered}
+k_{cost,pre62} \\
+= \frac{Cost_{dev,curr}}{Cost_{pre62,24}} \\
+= \frac{\$2.6B}{\$24.7M} \\
+= 105
+\end{gathered}
+$$
+
+**Methodology**: [@pre-1962-drug-costs-baily-1972]
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-drug_cost_increase_pre1962_to_current_multiplier.qmd >}}
+
+{{< include ../figures/sensitivity-table-drug_cost_increase_pre1962_to_current_multiplier.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-drug_cost_increase_pre1962_to_current_multiplier.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-drug_cost_increase_pre1962_to_current_multiplier.qmd >}}
+
+:::
+
 ### Earth Average Income at Year 20: $20.5K {#sec-earth_avg_income_year_20}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -810,6 +1112,52 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-earth_gdp_year_20.qmd >}}
+
+:::
+
+### Total Deaths from Historical Progress Delays: 102 million deaths {#sec-existing_drugs_efficacy_lag_deaths_total}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Total deaths from delaying existing drugs over 8.2-year efficacy lag. One-time impact of eliminating Phase 2-4 testing delay for drugs already approved 1962-2024. Based on Lichtenberg (2019) estimate of 12M lives saved annually × 8.2 years efficacy lag. Excludes innovation acceleration effects.
+
+**Inputs**:
+
+- [Annual Lives Saved by Pharmaceuticals](#sec-pharma_lives_saved_annual) 🔢: 12.4 million deaths
+- [Regulatory Delay for Efficacy Testing Post-Safety Verification](#sec-efficacy_lag_years) 📊: 8.2 years (SE: ±2 years)
+
+$$
+\begin{gathered}
+Deaths_{lag,total} \\
+= Lives_{saved,annual} \times T_{lag} \\
+= 12.4M \times 8.2 \\
+= 102M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Lives_{saved,annual} \\
+= \frac{LY_{saved,annual}}{T_{ext}} \\
+= \frac{149M}{12} \\
+= 12.4M
+\end{gathered}
+$$
+*~ Medium confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-existing_drugs_efficacy_lag_deaths_total.qmd >}}
+
+{{< include ../figures/sensitivity-table-existing_drugs_efficacy_lag_deaths_total.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-existing_drugs_efficacy_lag_deaths_total.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-existing_drugs_efficacy_lag_deaths_total.qmd >}}
 
 :::
 
@@ -1612,6 +1960,46 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-peace_dividend_annual_societal_benefit.qmd >}}
+
+:::
+
+### Annual Lives Saved by Pharmaceuticals: 12.4 million deaths {#sec-pharma_lives_saved_annual}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual lives saved by pharmaceutical interventions globally. Derived from Lichtenberg (2019) finding of 148.7M life-years saved, divided by assumed 12-year average life extension per beneficiary. Note: Life-years is the primary metric; lives is an approximation for intuitive communication.
+
+**Inputs**:
+
+- [Annual Life-Years Saved by Pharmaceuticals](#sec-pharma_life_years_saved_annual) 📊: 149 million life-years (95% CI: 79.4 million life-years - 240 million life-years)
+- [Average Life Extension per Beneficiary](#sec-avg_life_extension_per_beneficiary): 12 years (95% CI: 8 years - 18 years)
+
+$$
+\begin{gathered}
+Lives_{saved,annual} \\
+= \frac{LY_{saved,annual}}{T_{ext}} \\
+= \frac{149M}{12} \\
+= 12.4M
+\end{gathered}
+$$
+
+**Methodology**: [@lichtenberg-life-years-saved-2019]
+
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-pharma_lives_saved_annual.qmd >}}
+
+{{< include ../figures/sensitivity-table-pharma_lives_saved_annual.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-pharma_lives_saved_annual.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-pharma_lives_saved_annual.qmd >}}
 
 :::
 
@@ -2443,6 +2831,73 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-us_gov_waste_total.qmd >}}
+
+:::
+
+### Efficiency Gap / Treaty Funding: 180:1 {#sec-us_gov_waste_vs_treaty_multiplier}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+How many times the US government efficiency gap could fund the 1% Treaty. The efficiency gap represents capital that could fund transformative health research many times over.
+
+**Inputs**:
+
+- [US Government Waste (Total)](#sec-us_gov_waste_total) 🔢: $4.9T
+- [Annual Funding from 1% of Global Military Spending Redirected to DIH](#sec-treaty_annual_funding) 🔢: $27.2B
+
+$$
+\begin{gathered}
+k_{waste:treaty} \\
+= \frac{W_{total,US}}{Funding_{treaty}} \\
+= \frac{\$4.9T}{\$27.2B} \\
+= 180
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+W_{total,US} \\
+= W_{raw,US} \times US \\
+= \$4.9T \times 1 \\
+= \$4.9T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+W_{raw,US} \\
+= W_{health} + W_{housing} + W_{military} + W_{regulatory} \\
++ W_{tax} + W_{corporate} + W_{tariffs} + W_{drugs} \\
++ W_{fossil} + W_{agriculture} \\
+= \$1.2T + \$1.4T + \$615B + \$580B + \$546B + \$181B + \$160B \\
++ \$90B + \$50B + \$75B \\
+= \$4.9T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Funding_{treaty} \\
+= Spending_{mil} \times Reduce_{treaty} \\
+= \$2.72T \times 1\% \\
+= \$27.2B
+\end{gathered}
+$$
+*~ Medium confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-us_gov_waste_vs_treaty_multiplier.qmd >}}
+
+{{< include ../figures/sensitivity-table-us_gov_waste_vs_treaty_multiplier.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-us_gov_waste_vs_treaty_multiplier.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-us_gov_waste_vs_treaty_multiplier.qmd >}}
 
 :::
 
@@ -3500,6 +3955,22 @@ Number of diseases that receive their FIRST effective treatment each year under 
 
 :::
 
+### Oxford RECOVERY Trial Duration: 3 months {#sec-oxford_recovery_trial_duration_months}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Oxford RECOVERY trial duration (found life-saving treatment in 3 months)
+
+**Source**: [@recovery-trial-82x-cost-reduction]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*✓ High confidence*
+
+:::
+
 ### Patient Willingness to Participate in Clinical Trials: 44.8% {#sec-patient_willingness_trial_participation_pct}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -3519,6 +3990,54 @@ Patient willingness to participate in drug trials (44.8% in surveys, 88% when ac
 #### Input Distribution
 
 {{< include ../figures/distribution-patient_willingness_trial_participation_pct.qmd >}}
+
+*~ Medium confidence*
+
+:::
+
+### Pharma Drug Development Cost (Current System): $2.6B {#sec-pharma_drug_development_cost_current}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Average cost to develop one drug in current system
+
+**Source**: [@drug-development-cost]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$1.5B, $4B] • Distribution: Lognormal (SE: $500M)
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $1.5B and $4B (±48%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-pharma_drug_development_cost_current.qmd >}}
+
+*✓ High confidence • 📊 Peer-reviewed*
+
+:::
+
+### Annual Life-Years Saved by Pharmaceuticals: 149 million life-years {#sec-pharma_life_years_saved_annual}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual life-years saved by pharmaceutical innovations globally. Lichtenberg (2019, NBER WP 25483) found that drugs launched after 1981 saved 148.7M life-years in 2013 across 22 countries using 3-way fixed-effects regression (disease-country-year). 95% CI [79.4M, 239.8M] propagated from Table 2 regression standard errors (β₀₋₁₁=-0.031±0.008, β₁₂₊=-0.057±0.013).
+
+**Source**: [@lichtenberg-life-years-saved-2019]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [79.4 million life-years, 240 million life-years] • Distribution: Lognormal
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between 79.4 million life-years and 240 million life-years (±54%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-pharma_life_years_saved_annual.qmd >}}
 
 *~ Medium confidence*
 
@@ -3644,6 +4163,30 @@ Estimated probability of treaty ratification and sustained implementation. Centr
 
 :::
 
+### Pre-1962 Drug Development Cost (2024 Dollars): $24.7M {#sec-pre_1962_drug_development_cost_2024_usd}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Pre-1962 drug development cost adjusted to 2024 dollars ($6.5M × 3.80 = $24.7M, CPI-adjusted from Baily 1972)
+
+**Source**: [@pre-1962-drug-costs-baily-1972]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$19.5M, $30M] • Distribution: Lognormal
+
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between $19.5M and $30M (±21%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-pre_1962_drug_development_cost_2024_usd.qmd >}}
+
+*✓ High confidence • 📊 Peer-reviewed*
+
+:::
+
 ### Total Number of Rare Diseases Globally: 7 thousand diseases {#sec-rare_diseases_count_global}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -3665,6 +4208,54 @@ Total number of rare diseases globally
 {{< include ../figures/distribution-rare_diseases_count_global.qmd >}}
 
 *✓ High confidence*
+
+:::
+
+### Recovery Trial Cost per Patient: $500 {#sec-recovery_trial_cost_per_patient}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+RECOVERY trial cost per patient. Note: RECOVERY was an outlier - hospital-based during COVID emergency, minimal extra procedures, existing NHS infrastructure, streamlined consent. Replicating this globally will be harder.
+
+**Source**: [@recovery-cost-500]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$400, $2.5K] • Distribution: Lognormal
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between $400 and $2.5K (±210%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-recovery_trial_cost_per_patient.qmd >}}
+
+*✓ High confidence*
+
+:::
+
+### RECOVERY Trial Global Lives Saved: 1 million lives {#sec-recovery_trial_global_lives_saved}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Estimated lives saved globally by RECOVERY trial's dexamethasone discovery. NHS England estimate (March 2021). Based on Águas et al. Nature Communications 2021 methodology applying RECOVERY trial mortality reductions (36% ventilated, 18% oxygen) to global COVID hospitalizations. Wide uncertainty range reflects extrapolation assumptions.
+
+**Source**: [@recovery-trial-1m-lives-saved]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [500 thousand lives, 2 million lives] • Distribution: Lognormal
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between 500 thousand lives and 2 million lives (±75%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-recovery_trial_global_lives_saved.qmd >}}
+
+*~ Medium confidence*
 
 :::
 
@@ -3992,6 +4583,28 @@ Value of Statistical Life (conservative estimate)
 
 Fundamental parameters and constants used throughout the analysis.
 
+### Average Life Extension per Beneficiary: 12 years {#sec-avg_life_extension_per_beneficiary}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Average years of life extension per person saved by pharmaceutical interventions. Assumption used to convert life-years saved to approximate lives saved. Based on Lichtenberg's methodology where life-years are calculated from Years of Life Lost (YLL) reductions.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [8 years, 18 years] • Distribution: Triangular
+
+**What this means**: There's significant uncertainty here. The true value likely falls between 8 years and 18 years (±42%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The triangular distribution means values cluster around a most-likely point but can range higher or lower.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-avg_life_extension_per_beneficiary.qmd >}}
+
+*Core definition*
+
+:::
+
 ### Concentrated Interest Sector Market Cap: $5T {#sec-concentrated_interest_sector_market_cap_usd}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -4199,6 +4812,20 @@ Historical calibration target: 30% military reallocation maps to ~5.5 percentage
 #### Input Distribution
 
 {{< include ../figures/distribution-military_redirect_gdp_boost_at_30pct.qmd >}}
+
+*Core definition*
+
+:::
+
+### Standard Discount Rate for NPV Analysis: 3% {#sec-npv_discount_rate_standard}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Standard discount rate for NPV analysis (3% annual, social discount rate)
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
 
 *Core definition*
 
