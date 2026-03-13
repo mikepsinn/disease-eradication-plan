@@ -74,6 +74,34 @@ Isaac Newton did not personally cause apples to fall. He described why they fall
 
 Evaluate the mechanism, not the messenger.
 
+### The Distance Problem Is Solved
+
+Your species used to have a distance problem. A farmer in 1800 was 50 handshakes from a king. A good idea could take centuries to reach someone who could act on it. Abolition took 400 years from first argument to last emancipation. The farmer died. His grandchildren died. The idea eventually arrived.
+
+You no longer have a distance problem. You have a WiFi problem, which is much easier.
+
+Every human on Earth is now 4 to 6 connections from every billionaire, every head of state, every Nobel laureate, and every person with the power to implement this. Not in theory. Facebook measured it: 3.57 degrees of separation on average across 1.59 billion users in 2016. That was a decade ago, with fewer users and worse algorithms. Today it's closer to 3.
+
+This means: if you share this with one person who has more reach than you, and they do the same, the chain reaches a decision-maker in 3 to 5 hops. Not 3 to 5 years. 3 to 5 shares. The chain reaction model in the companion paper shows this works even at a 90% dismissal rate, because there are 2,800 billionaires and 195 heads of state, and the math doesn't need all of them. It needs one.
+
+The bottleneck is not distance. The bottleneck is the 3-second decision each person makes about whether to forward or scroll past. That's it. That's the entire implementation barrier: a thumb movement.
+
+### What We're Actually Asking
+
+Let me be precise about the ask, because your brain is inflating it.
+
+We are not asking anyone to invent anything. The technologies exist. Pragmatic trials exist (the RECOVERY trial proved it in 3 months). Treaty coordination exists (560+ multilateral treaties). Political financing exists (Super PACs exist, lobbying exists, campaign finance exists). Bond structures exist. All of it exists. Right now. On shelves.
+
+We are not asking anyone to be brave, altruistic, or moral. We are asking people to be greedy in a slightly different direction. Investors: 272% returns. Politicians: reelection. Billionaires: not dying. Voters: free healthcare. Lobbyists: same salary, better Wikipedia page.
+
+We are not asking anyone to do anything unprecedented. We are asking humanity to look at the mountains of historical evidence about what makes humans rich, healthy, and happy — every post-war economic boom, every treaty that worked, every public health intervention that paid for itself 100x over — and do that. For a moment. We are asking your species to stop being stupid for a short period of time.
+
+That's the ask. Temporarily stop being stupid. Your species has managed this before. You did it after WWII (cut military spending 87%, triggered the greatest economic boom in history). You did it with PEPFAR (redirected billions to HIV treatment, saved 25 million lives, generated massive economic returns). You did it with the Montreal Protocol (banned ozone-destroying chemicals, saved millions of skin cancer deaths, net economic benefit). Each time, you stopped being stupid, got rich, and then went back to being stupid about something else. We're just asking for another round.
+
+The historical evidence is not ambiguous. Every time your species redirected resources from destruction to health, everyone got richer. Every time. Zero exceptions. The dataset spans 80 years and dozens of countries. Your economists have published thousands of papers confirming this. Your politicians have read none of them, because the papers don't come with campaign contributions.
+
+Now they do. That's what the Incentive Alignment Bonds are. Campaign contributions attached to the research papers. Your species responds to papers with presidents on them. We attached presidents to the right papers. That is the entire innovation.
+
 ### Therefore
 
 This is not merely feasible. Given the premises you just accepted, it is not merely the "least bad idea." It is the inevitable outcome of a species whose incentives align with its survival, evaluated by the only question that matters: can 8 billion humans act in their own self-interest when shown exactly how?
