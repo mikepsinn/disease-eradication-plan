@@ -3460,61 +3460,6 @@ export const HEALTHCARE_VS_MILITARY_MULTIPLIER_RATIO: Parameter = {
   latex: "\\begin{gathered}\nr_{health/mil} \\\\\n= \\frac{k_{health}}{k_{mil}} \\\\\n= \\frac{4.3}{0.6} \\\\\n= 7.17\n\\end{gathered}",
 };
 
-export const HOST_PRIZE_INSTANCE_EXPECTED_ATTRIBUTABLE_DALYS: Parameter = {
-  value: 565243673.3509989,
-  unit: "DALYs",
-  displayName: "Expected Attributable DALYs from One Prize Instance",
-  description: "Expected DALYs averted attributable to one additional compatible prize instance through the probability-lift channel alone. This multiplies the host implementation-probability prior by the model's total dFDA timeline-shift DALY estimate. It excludes separate acceleration-only effects to avoid mixing probability and timing channels in one scalar.",
-  sourceType: "calculated",
-  confidence: "high",
-  formula: "HOST_PRIZE_INSTANCE_DELTA_IMPLEMENTATION_PROBABILITY x DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS",
-  latex: "DALYs_{host} = \\Delta p_{host} \\cdot DALYs_{dFDA,max}",
-};
-
-export const HOST_PRIZE_INSTANCE_EXPECTED_ATTRIBUTABLE_LIVES_SAVED: Parameter = {
-  value: 10745517.748599721,
-  unit: "deaths",
-  displayName: "Expected Attributable Lives Saved from One Prize Instance",
-  description: "Expected lives saved attributable to one additional compatible prize instance through the probability-lift channel alone. This is the total dFDA timeline-shift lives-saved estimate multiplied by the host implementation-probability prior. It excludes separate acceleration-only timing value.",
-  sourceType: "calculated",
-  confidence: "high",
-  formula: "HOST_PRIZE_INSTANCE_DELTA_IMPLEMENTATION_PROBABILITY x DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_LIVES_SAVED",
-  latex: "Lives_{host} = \\Delta p_{host} \\cdot Lives_{dFDA,max}",
-};
-
-export const HOST_PRIZE_INSTANCE_EXPECTED_ATTRIBUTABLE_SUFFERING_HOURS: Parameter = {
-  value: 1931098485636.3528,
-  unit: "hours",
-  displayName: "Expected Attributable Suffering Hours from One Prize Instance",
-  description: "Expected suffering hours averted attributable to one additional compatible prize instance through the probability-lift channel alone. This multiplies the host implementation-probability prior by the model's total dFDA timeline-shift suffering-hours estimate. It excludes separate acceleration-only timing value.",
-  sourceType: "calculated",
-  confidence: "high",
-  formula: "HOST_PRIZE_INSTANCE_DELTA_IMPLEMENTATION_PROBABILITY x DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_SUFFERING_HOURS",
-  latex: "Hours_{host} = \\Delta p_{host} \\cdot Hours_{suffer,max}",
-};
-
-export const HOST_PRIZE_INSTANCE_PERSONAL_GROSS_VALUE_TREATY_FLOOR: Parameter = {
-  value: 27491.504493689583,
-  unit: "USD",
-  displayName: "Personal Gross Value from One Prize Instance (Treaty Floor)",
-  description: "Personal gross expected value of one additional compatible prize instance using the treaty-only lifetime-gain floor plus avoided delay value. Excludes host-specific donor, fee, or reputational upside, so this is deliberately conservative.",
-  sourceType: "calculated",
-  confidence: "high",
-  formula: "HOST_PRIZE_INSTANCE_DELTA_IMPLEMENTATION_PROBABILITY x TREATY_TRAJECTORY_LIFETIME_INCOME_GAIN_PER_CAPITA + HOST_PRIZE_INSTANCE_ACCELERATION_YEARS x POLITICAL_DYSFUNCTION_TAX_PER_PERSON_ANNUAL",
-  latex: "\\begin{gathered}\nEV_{host,treaty} \\\\\n= \\Delta p_{host} \\cdot \\Delta Y_{lifetime,treaty} \\\\\n+ \\Delta T_{host} \\cdot T_{pd,pc}\n\\end{gathered}",
-};
-
-export const HOST_PRIZE_INSTANCE_PERSONAL_GROSS_VALUE_WISHONIA_TRAJECTORY: Parameter = {
-  value: 64727.26155962363,
-  unit: "USD",
-  displayName: "Personal Gross Value from One Prize Instance (Wishonia Trajectory)",
-  description: "Personal gross expected value of one additional compatible prize instance using the Wishonia Trajectory lifetime-gain model plus avoided delay value. Excludes host-specific donor, fee, or reputational upside, so this is deliberately conservative.",
-  sourceType: "calculated",
-  confidence: "high",
-  formula: "HOST_PRIZE_INSTANCE_DELTA_IMPLEMENTATION_PROBABILITY x WISHONIA_TRAJECTORY_LIFETIME_INCOME_GAIN_PER_CAPITA + HOST_PRIZE_INSTANCE_ACCELERATION_YEARS x POLITICAL_DYSFUNCTION_TAX_PER_PERSON_ANNUAL",
-  latex: "\\begin{gathered}\nEV_{host,wish} \\\\\n= \\Delta p_{host} \\cdot \\Delta Y_{lifetime,wish} \\\\\n+ \\Delta T_{host} \\cdot T_{pd,pc}\n\\end{gathered}",
-};
-
 export const IAB_MECHANISM_BENEFIT_COST_RATIO: Parameter = {
   value: 229.61531707317073,
   unit: "ratio",
@@ -5693,28 +5638,6 @@ export const GLOBAL_TO_US_POLITICAL_COST_RATIO: Parameter = {
   confidenceInterval: [3.0, 8.0],
 };
 
-export const HOST_PRIZE_INSTANCE_ACCELERATION_YEARS: Parameter = {
-  value: 1.0,
-  unit: "years",
-  displayName: "Implementation Acceleration from One Prize Instance",
-  description: "Years by which one additional compatible prize instance accelerates implementation on the conservative host-decision prior. Captures speed value even when the terminal implementation probability is unchanged.",
-  sourceType: "definition",
-  confidence: "low",
-  confidenceInterval: [0.1, 5.0],
-  conservative: true,
-};
-
-export const HOST_PRIZE_INSTANCE_DELTA_IMPLEMENTATION_PROBABILITY: Parameter = {
-  value: 0.001,
-  unit: "rate",
-  displayName: "Incremental Implementation Probability from One Prize Instance",
-  description: "Incremental increase in the probability that the Earth Optimization Plan or a strictly better admissible plan is implemented because one additional compatible prize instance exists. This is a conservative decision prior for host expected-value framing, not a measured causal estimate.",
-  sourceType: "definition",
-  confidence: "low",
-  confidenceInterval: [0.0001, 0.01],
-  conservative: true,
-};
-
 export const HOURS_PER_DAY: Parameter = {
   value: 24.0,
 };
@@ -6480,11 +6403,6 @@ export const parameters = {
   GLOBAL_POLITICAL_REFORM_INVESTMENT,
   GLOBAL_TOTAL_HEALTH_AND_WAR_COST_ANNUAL,
   HEALTHCARE_VS_MILITARY_MULTIPLIER_RATIO,
-  HOST_PRIZE_INSTANCE_EXPECTED_ATTRIBUTABLE_DALYS,
-  HOST_PRIZE_INSTANCE_EXPECTED_ATTRIBUTABLE_LIVES_SAVED,
-  HOST_PRIZE_INSTANCE_EXPECTED_ATTRIBUTABLE_SUFFERING_HOURS,
-  HOST_PRIZE_INSTANCE_PERSONAL_GROSS_VALUE_TREATY_FLOOR,
-  HOST_PRIZE_INSTANCE_PERSONAL_GROSS_VALUE_WISHONIA_TRAJECTORY,
   IAB_MECHANISM_BENEFIT_COST_RATIO,
   IAB_POLITICAL_INCENTIVE_FUNDING_ANNUAL,
   IAB_VS_DEFENSE_LOBBY_RATIO_AT_1PCT,
@@ -6689,8 +6607,6 @@ export const parameters = {
   FUNDAMENTALLY_UNAVOIDABLE_DEATH_PCT,
   GDP_BASELINE_GROWTH_RATE,
   GLOBAL_TO_US_POLITICAL_COST_RATIO,
-  HOST_PRIZE_INSTANCE_ACCELERATION_YEARS,
-  HOST_PRIZE_INSTANCE_DELTA_IMPLEMENTATION_PROBABILITY,
   HOURS_PER_DAY,
   HOURS_PER_YEAR,
   HUMAN_PROTEIN_CODING_GENES,
@@ -8653,10 +8569,10 @@ export const citations: Record<string, Citation> = {
 
 /** Summary statistics */
 export const PARAMETER_STATS = {
-  total: 572,
+  total: 565,
   external: 195,
-  calculated: 252,
-  definitions: 125,
+  calculated: 247,
+  definitions: 123,
   citations: 140,
 } as const;
 
