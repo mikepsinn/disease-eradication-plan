@@ -27,7 +27,7 @@ dih-render:
         - "Least Bad Idea in the World Prize"
         - "LBIP"
         - "implementation prize"
-      manual-target: knowledge/strategy/least-bad-idea-prize.qmd
+      manual-target: knowledge/strategy/least-bad-idea-prize-paper.qmd
   # Image generation prompts (used by scripts/images/generate-project-branding-images.ts)
   favicon-prompt: "A trophy with a checkmark and mathematical symbols, minimalist design."
 

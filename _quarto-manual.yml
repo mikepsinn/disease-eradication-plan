@@ -147,7 +147,9 @@ book:
         # - knowledge/call-to-action/three-actions.qmd
         - knowledge/appendix/treaty-feasibility.qmd # ✅ (detailed cost/timeline analysis, $90M estimate)
         - knowledge/appendix/recruitment-and-propaganda-plan.qmd # ✅ (EXCELLENT voice) ~7p
-        - knowledge/strategy/least-bad-idea-prize.qmd # NEW: Meta-selection mechanism for implementing this stack or any strict improvement
+        # DELETED: Consolidated into least-bad-idea-prize-paper.qmd
+        # - knowledge/strategy/least-bad-idea-prize.qmd
+        # - knowledge/strategy/how-to-launch-your-prize.qmd
         - knowledge/appendix/conclusion.qmd # ✅ Conclusion ~1p
   # appendices: Commented to get rid of the Appendix prefix in the titles
     - part: "Economics & Finance"

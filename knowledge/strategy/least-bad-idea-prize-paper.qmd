@@ -353,6 +353,34 @@ The constitutional rules should be equally blunt:
 
 That is the missing bridge between "great selection rule" and "a machine that only moves forward."
 
+### Milestone-Based Release
+
+The constitution should not release all treasury capital at once. A milestone ladder distributes funds as implementation progresses, so only a fraction is at risk at any given time, and each milestone is independently verifiable.
+
+| Milestone | Share of funds | Trigger | Verification |
+|:---|:---|:---|:---|
+| Referendum threshold | 5% | {{< var treaty_campaign_voting_bloc_target >}} verified votes | Published vote counter |
+| First legislation | 10% | Right-to-Trial or equivalent passes in any jurisdiction | Government gazette or official legal database |
+| First country signs | 15% | First country commits to 1% reallocation via binding treaty or law | UN treaty database, government records |
+| First trial funded | 15% | First pragmatic trial funded by treaty-redirected money produces results | Published trial results in peer-reviewed journal |
+| Bond returns verified | 15% | Incentive Alignment Bond investors receive first dividend | Audited financial statement |
+| Five countries sign | 15% | Five countries commit to treaty | UN records |
+| Full implementation | 25% | All 28 scorecard metrics meet or exceed baseline | Comprehensive audit against scorecard |
+
+This structure has three anti-theft properties. First, a thief would have to fake every milestone, not just one. Second, early milestones release small amounts with simple verification (legislation is public record; you cannot quietly fake a UN treaty signing). Third, the milestones are spread over years, so maintaining a fraud across multiple verification events becomes progressively harder. The same incentive logic that makes the prize work makes it theft-resistant: larger prize pools attract more watchdogs, so theft resistance scales with prize size rather than shrinking.
+
+### Challenge and Dispute Resolution
+
+Scoring without a published dispute process is a press release, not a machine. The challenge process needs four features.
+
+**Fixed window.** Every scored milestone opens a challenge period of fixed duration (e.g. 30 days), published in advance. No score is final until the window closes.
+
+**Challenge bond.** A challenger posts a bond equal to a fixed percentage of the disputed milestone tranche. If the challenge fails, the challenger forfeits the bond. If it succeeds, the original scorer absorbs a proportional penalty. This filters noise without silencing real objections.
+
+**Escalation ladder.** First-round challenges are reviewed by the original scoring team with written reasons. Appeals go to an independent arbitration panel with additional reviewers. Each round costs the losing side more, so frivolous escalation is expensive but genuine disputes reach qualified judges.
+
+**Published standard.** The challenge rules must state in advance what evidence can change a score, what cannot, and who has final sign-off authority to release funds after the challenge window closes. If those rules are not public before money moves, your first real controversy will turn the prize into a comment section with escrow.
+
 ## Protocol Adoption by Existing Organizations
 
 The right model is not "every organization invents its own prize from scratch." That creates a mess: different rules, different scoring, easier corruption. The best model is **many instances, one protocol**.
@@ -379,6 +407,16 @@ Organizations should be able to adopt the prize in at least three modes:
 1. **Endorser.** Publishes, promotes, and recruits for the prize protocol but does not hold treasury funds or underwrite failure payments.
 2. **Sponsor.** Raises money into independent escrow under the shared rules, but does not control scoring or payout migration.
 3. **Deployment partner.** Helps execute the winning package and can earn contracts, fees, or results-based pay only if real implementation happens.
+
+### Who Should Fork
+
+| Organization type | What hosting gives them | Why a compatible instance makes sense |
+|:---|:---|:---|
+| Foundations | A grant vehicle with better expected DALYs per dollar than most direct-delivery programs | Conditional capital structure means near-zero downside if the instance never clears threshold |
+| Prize organizations | A ready-made protocol with scoring, admissibility, and replacement rules already designed | Avoids reinventing mechanism design from scratch for each new competition |
+| Effective altruism organizations | A legible, auditable case for systems change that clears ordinary cost-effectiveness benchmarks | Bridges the gap between "direct giving" and "policy change" with published numbers |
+| Universities and research institutes | Access to implementation contracts, audit roles, and validation authority within the winning package | Turns research output into a revenue-producing role rather than a citation-producing one |
+| Governments and multilateral bodies | A jurisdiction-specific instance that channels treaty or statute adoption through local legal pathways | Parallel instances in multiple jurisdictions increase implementation speed without requiring global consensus first |
 
 This is also where the zero-cost question gets a real answer. A host organization can participate at roughly zero or negative net cost if all of the following are true:
 
@@ -606,6 +644,57 @@ Bootstrap capital and project selection are different problems. Assurance contra
 For that layer, the prize can pay for proven results after they happen. Implementers fund work up front using their own capital or outside investment, produce auditable outcomes, and then get paid by the prize for outcomes they can prove only after the outcomes exist. In the medical domain, those claims would typically be measured in audited DALYs averted, suffering hours avoided, or verified mortality reduction. In governance domains, they would be measured in verified resource reallocation, durable policy adoption, or measured welfare gains under the same admissibility constraints. This preserves the paper's core logic: the prize does not pay for intentions; it pays for verified movement on the scorecard.
 
 This layer should remain under the completeness rule rather than replacing it. Retroactive purchasing is a way to pick and fund projects within the winning plan, not a license for narrow local patches to outrank complete packages. That distinction matters. The prize first decides which complete implementation plan wins. Only then should decentralized implementers compete to supply the cheapest verified components within that plan.
+
+## How to Launch an Instance
+
+You do not need a perfect oracle on day one. You need a launch that holds money separately, publishes the rules in advance, scores submissions in public, and gives people their money back when the threshold fails.
+
+### Six Functions
+
+Your prize instance needs six functions. The protocol does not prescribe vendors; it prescribes jobs.
+
+| Function | What must happen |
+|:---|:---|
+| Rules | Win condition, scoring rule, and payout rule published before money moves |
+| Intake | Submission and judging mechanism |
+| Treasury | Prize money separate from operating money |
+| Threshold and refunds | Money moves only if threshold reached; otherwise returned |
+| Disputes | Published way to contest a score or release |
+| Treasury release | Rule-bound release, not discretionary |
+
+That is the whole object. Build these six functions. The rest is branding.
+
+### Scaling Principle
+
+Start with the most boring version you can defend. Use humans for adjudication first, with a written challenge process. Upgrade to automation only when the pool is large enough that human discretion becomes the main attack surface. A spreadsheet is fine. Lying about the spreadsheet is not.
+
+### Pre-Launch Checklist
+
+Before anyone commits serious capital, publish:
+
+1. The baseline bundle or winning target
+2. The scorecard
+3. The adjudication process
+4. The challenge window and bond terms
+5. The commitment terms
+6. The refund terms
+7. The release rule
+8. The host structure
+9. The sponsor terms, if using a failure tranche
+
+If any of those are missing, you are still in the "interesting thought experiment" phase.
+
+### When to Add Machinery
+
+You need tighter treasury machinery or custom code when any of these become true:
+
+1. The prize pool is large enough that manual discretion becomes the main attack surface
+2. Cross-border commitments make normal escrow awkward
+3. You need a machine-readable release rule
+4. Disputes are frequent enough that ad hoc adjudication stops being credible
+5. Investors stop trusting humans to behave and start demanding infrastructure
+
+That is normal. The first airplane did not have in-flight movies either.
 
 ## How the Payout Works
 
