@@ -2672,7 +2672,7 @@ GLOBAL_DISEASE_DEATHS_PER_MINUTE = Parameter(
     latex_symbol=r"Deaths_{disease,min}",
     latex=r"\frac{Deaths_{disease,daily}}{1440}",
     inputs=["GLOBAL_DISEASE_DEATHS_DAILY"],
-    compute=lambda p: p["GLOBAL_DISEASE_DEATHS_DAILY"] / 1440,
+    compute=lambda ctx: ctx["GLOBAL_DISEASE_DEATHS_DAILY"] / 1440,
 )
 
 # ===================================================================
@@ -9893,7 +9893,7 @@ CHAIN_P_ENCOUNTER_DIRECT_10YR = Parameter(
     formula="1 - (1 - CHAIN_IMPLEMENTER_ORBIT_SIZE / 5B)^(CHAIN_INITIAL_AUDIENCE x cascade_multiplier)",
     latex=r"P_{reach} = 1 - \left(1 - \frac{O_{impl}}{N}\right)^{N_0 \cdot \sum_{i=0}^{3} R_{eff}^i}",
     keywords=["encounter", "orbit", "reach", "chain", "implementer"],
-    inputs=_chain_orbit_inputs,
+    inputs=_chain_orbit_inputs,  # inputs-verified: consumed by _orbit_reach_prob()
     compute=lambda ctx: _orbit_reach_prob(ctx),
     latex_symbol=r"P_{reach,impl}",
 )
@@ -9907,7 +9907,7 @@ CHAIN_EXPECTED_ENGAGED_IMPLEMENTERS = Parameter(
     formula="P_reach x CHAIN_ENGAGE_PROBABILITY x CHAIN_IMPLEMENTER_COUNT",
     latex=r"E[N_{engaged}] = P_{reach} \times P_{engage} \times N_{impl}",
     keywords=["engaged", "implementer", "expected", "chain"],
-    inputs=_chain_orbit_inputs + ["CHAIN_ENGAGE_PROBABILITY", "CHAIN_IMPLEMENTER_COUNT"],
+    inputs=_chain_orbit_inputs + ["CHAIN_ENGAGE_PROBABILITY", "CHAIN_IMPLEMENTER_COUNT"],  # inputs-verified: orbit inputs consumed by _orbit_reach_prob()
     compute=lambda ctx: _orbit_reach_prob(ctx) * ctx["CHAIN_ENGAGE_PROBABILITY"] * ctx["CHAIN_IMPLEMENTER_COUNT"],
     latex_symbol=r"E[N_{engaged}]",
 )
@@ -9921,7 +9921,7 @@ CHAIN_P_NO_IMPLEMENTER_ENGAGES = Parameter(
     formula="(1 - P_reach x CHAIN_ENGAGE_PROBABILITY)^CHAIN_IMPLEMENTER_COUNT",
     latex=r"P_{none} = \left(1 - P_{reach} \cdot P_{engage}\right)^{N_{impl}}",
     keywords=["no engagement", "probability", "chain", "implementer"],
-    inputs=_chain_orbit_inputs + ["CHAIN_ENGAGE_PROBABILITY", "CHAIN_IMPLEMENTER_COUNT"],
+    inputs=_chain_orbit_inputs + ["CHAIN_ENGAGE_PROBABILITY", "CHAIN_IMPLEMENTER_COUNT"],  # inputs-verified: orbit inputs consumed by _orbit_reach_prob()
     compute=lambda ctx: (
         1.0 - _orbit_reach_prob(ctx) * ctx["CHAIN_ENGAGE_PROBABILITY"]
     ) ** ctx["CHAIN_IMPLEMENTER_COUNT"],
