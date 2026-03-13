@@ -25,7 +25,7 @@ Every tweet should end with ONE of these CTAs:
 | 🔴 THE PROBLEM | Outrage/urgency | "604x ratio", "102M dead", "150K/day" | Vote |
 | 🔧 THE MECHANISM | Curiosity/credibility | Prize, bonds, scorecard, treaty | Prize page |
 | 🧠 THE REFRAME | Mind-shift | Wrong question, inevitability, distance | Vote |
-| 📊 THE MATH | Shock/credibility | $0.002/DALY, 862K:1 ROI, 272% returns | Manual |
+| 📊 THE MATH | Shock/credibility | $0.002/DALY, cost comparisons, lives saved | Manual |
 | ✅ THE PROOF | Social proof/precedent | Treaties that worked, PEPFAR, Ottawa | Vote |
 | 👽 THE ALIEN | Humor/personality | Observations about human behavior | Vote |
 
@@ -37,17 +37,7 @@ Every tweet should end with ONE of these CTAs:
 - [x] AM: Disqualification rule (POSTED ✅)
 - [x] AM: Wrong question / feasibility (POSTED ✅)
 - [x] AM: 3.57 degrees / thumb movement (POSTED ✅)
-- [x] PM: **Option B — The greedy pitch** 🔧 (POSTED ✅ ID: 2032446813106540813 @ 13:20 UTC)
-  > We're not asking you to be brave.
-  > 
-  > We're asking you to be greedy in a slightly different direction.
-  >
-  > Investors: 272% returns
-  > Politicians: reelection
-  > Billionaires: not dying
-  > You: 15 seconds, one vote
-  > 
-  > warondisease.org
+- [x] PM: ~~greedy pitch~~ DELETED — sounded like selling (272% returns language)
 
 ### Fri Mar 14
 - [ ] AM: 🔴 THE PROBLEM
@@ -170,7 +160,7 @@ Every tweet should end with ONE of these CTAs:
 - [ ] PM: 🔧 THE MECHANISM
   > The prize scorecard has 28 metrics.
   > 
-  > Cost per life saved. Deaths averted. Investor returns. Capture resistance. Sentient welfare across all affected beings.
+  > Cost per life saved. Deaths averted. Capture resistance. Durability. Sentient welfare across all affected beings.
   > 
   > Not essays. Not vibes. Math.
   > 
@@ -321,13 +311,11 @@ Every tweet should end with ONE of these CTAs:
 
 ### Wed Mar 26
 - [ ] AM: 🔧 THE MECHANISM
-  > The Incentive Alignment Bonds:
+  > The mechanism doesn't ask anyone to be moral.
   > 
-  > Invest → Fund the campaign → Treaty passes → 20% of treaty funding flows back as dividends → 272% annual returns.
+  > It makes the right thing the career-maximizing choice for politicians, the profit-maximizing choice for investors, and the health-maximizing choice for everyone else.
   > 
-  > You fund politicians through a Super PAC that rewards yes votes. Politicians get reelected. 80% goes to clinical trials.
-  > 
-  > Everyone gets rich. Nobody has to become a better person.
+  > Aligned incentives do what moral arguments couldn't in 6,000 years.
   > 
   > manual.warondisease.org
 
@@ -348,14 +336,13 @@ Every tweet should end with ONE of these CTAs:
 
 ### Thu Mar 27
 - [ ] AM: 📊 THE MATH
-  > ROI of the Least Bad Idea Prize:
+  > Cost of the entire campaign: $1 billion.
   > 
-  > Cost: $1 billion (campaign)
-  > Return: $863 trillion (economic value of treatments)
-  > ROI: 862,000 to 1
+  > Cost of one day of global military spending: $7.4 billion.
   > 
-  > Even at 1% success probability:
-  > Expected return: 8,620 to 1
+  > The campaign to end war and disease costs less than 4 hours of what you already spend on killing each other.
+  > 
+  > The question isn't whether you can afford it.
   > 
   > Your calculator will display an error.
   > 
@@ -431,9 +418,9 @@ Every tweet should end with ONE of these CTAs:
 - [ ] PM: 🧠 THE REFRAME
   > The universe is offering you:
   > 
-  > - Infinite money (272% returns)
-  > - Longer life (diseases cured)
-  > - 30x income growth
+  > - Diseases cured
+  > - Wars defunded
+  > - 10.7 billion lives saved
   > - A Nobel Prize for whoever does it
   > 
   > And you're thinking about it.
