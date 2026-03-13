@@ -539,7 +539,7 @@ A superior framework would:
 
 1. **Maintain rigorous Phase I safety testing** ({{< var phase_1_safety_duration_years >}})
 2. **Allow provisional approval post-safety** with real-world evidence collection
-3. **Continuous monitoring** via distributed systems (see: [decentralized FDA](../solution/dfda.qmd))
+3. **Continuous monitoring** via distributed systems (see: [decentralized FDA](../solution/dfda.qmd) [@dfda-spec-paper-2025; @dfda-impact-paper-2025])
 4. **Outcome-based validation** rather than pre-market prediction
 
 This approach would reduce the efficacy lag from {{< var efficacy_lag_years >}} to near-zero while maintaining safety standards.
@@ -554,7 +554,7 @@ If implemented today, the bifurcated model would:
 - **Reduce trial costs by {{< var dfda_trial_cost_reduction_pct >}}** (from {{< var pharma_drug_development_cost_current >}} per drug)
 - **Accelerate treatments for {{< var diseases_without_effective_treatment >}}** currently without effective therapy
 
-See [1% treaty impact analysis](https://impact.warondisease.org) for full quantified cost-benefit analysis.
+See [1% treaty impact analysis](https://impact.warondisease.org) [@1-pct-treaty-impact-paper-2025] for full quantified cost-benefit analysis.
 
 ![Skip the decade-long efficacy testing, cut costs by 90 percent, cure twice as many diseases. The only downside is you have to admit you were wrong for 60 years.](/assets/images/invisible-graveyard/invisible-graveyard-section-expected-impact-bw-academic.jpg)
 

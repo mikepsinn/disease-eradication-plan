@@ -919,7 +919,7 @@ This calculator scales the paper's published growth assumptions to a household i
 The interactive household calculator is available in the HTML version of this paper.
 :::
 
-The remainder of this paper derives the {{< var political_dysfunction_global_opportunity_cost_total >}} figure, then identifies the mechanism (Incentive Alignment Bonds) that could systematically close the gap by making each line item in the waste ledger privately profitable to eliminate.
+The remainder of this paper derives the {{< var political_dysfunction_global_opportunity_cost_total >}} figure, then identifies the mechanism ([Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd) [@iab-paper-2025]) that could systematically close the gap by making each line item in the waste ledger privately profitable to eliminate.
 
 ## Canonical Ceiling Scenario
 
@@ -931,7 +931,7 @@ $$
 GDP_{20} = GDP_0 \times (1 + g_{ramp})^3 \times (1 + g_{full})^{17}
 $$
 
-At current parameters, that implies {{< var treaty_trajectory_gdp_year_20 >}} for the treaty-only path and {{< var wishonia_trajectory_gdp_year_20 >}} for the full Optimal-Governance Path by year 20. The mechanism papers such as [Incentive Alignment Bonds](incentive-alignment-bonds-paper.qmd), [Wishocracy](wishocracy-paper.qmd), [Optimocracy](optimocracy-paper.qmd), [The Optimal Policy Generator](optimal-policy-generator-spec.qmd), and [The Optimal Budget Generator](optimal-budget-generator-spec.qmd) should cite those magnitudes directly and point back here for the full derivation rather than linking readers out to a separate book chapter. For parameter-level formulas, uncertainty ranges, and generated tornado and Monte Carlo outputs, see [Methodology, Parameters, and Calculations](https://political-dysfunction-tax.warondisease.org/calculations.html).
+At current parameters, that implies {{< var treaty_trajectory_gdp_year_20 >}} for the treaty-only path and {{< var wishonia_trajectory_gdp_year_20 >}} for the full Optimal-Governance Path by year 20. The mechanism papers such as [Incentive Alignment Bonds](incentive-alignment-bonds-paper.qmd), [Wishocracy](wishocracy-paper.qmd) [@wishocracy-paper-2025], [Optimocracy](optimocracy-paper.qmd) [@optimocracy-paper-2025], [The Optimal Policy Generator](optimal-policy-generator-spec.qmd) [@opg-paper-2025], and [The Optimal Budget Generator](optimal-budget-generator-spec.qmd) [@obg-paper-2025] should cite those magnitudes directly and point back here for the full derivation rather than linking readers out to a separate book chapter. For parameter-level formulas, uncertainty ranges, and generated tornado and Monte Carlo outputs, see [Methodology, Parameters, and Calculations](https://political-dysfunction-tax.warondisease.org/calculations.html).
 
 ## Introduction: The Mechanism Design of Civilizational Stagnation
 
@@ -1223,4 +1223,4 @@ The audit concludes that the single highest-leverage intervention for global wel
 
 ## See Also
 
-For a detailed breakdown of U.S. federal inefficiency, including Monte Carlo simulation of the Aggregate Efficiency Gap ($2.27-3.47 trillion annually), see [United States Efficiency Audit](us-efficiency-audit.qmd).
+For a detailed breakdown of U.S. federal inefficiency, including Monte Carlo simulation of the Aggregate Efficiency Gap ($2.27-3.47 trillion annually), see [United States Efficiency Audit](us-efficiency-audit.qmd) [@us-efficiency-audit-paper-2025].
