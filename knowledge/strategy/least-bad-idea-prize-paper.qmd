@@ -716,7 +716,7 @@ Two pieces do not exist as off-the-shelf services:
 
 2. **Structured scoring dashboard.** A web interface that maps judge inputs to the published state vector, computes the composite PrizeScore, and publishes results with full audit trail. At small scale a spreadsheet covers this. At large scale it needs to be a real application.
 
-Everything else can be assembled from existing, production-tested components today.
+Everything else can be assembled from existing, production-tested components today. Both missing pieces should be built once as open-source public goods and reused by every prize, not rebuilt from scratch each time.
 
 ### The No-Single-Point-of-Failure Version
 
@@ -742,6 +742,8 @@ None of this requires creating a token. The escrow holds dollar-pegged deposits 
 The main cost is that every contributor needs a wallet. There is no way around this: if someone else holds your keys, that someone is a central point of failure, which is exactly what you are trying to remove. Wallet setup takes five minutes and is free, but it is an unfamiliar five minutes for people who have never done it. That is the real adoption barrier, not the technology.
 
 The fiat version from the table above is easier to start. The on-chain version is harder to kill. Choose based on which failure mode scares you more: friction or fragility.
+
+These contracts should be deployed once, not once per prize. A single audited contract factory lets anyone launch a new prize by setting parameters: win condition, threshold, deadline, judge roster, release rule. Each prize is its own isolated instance with its own funds, but the code is shared, the audit is shared, and the interface is shared. Nobody runs a node. Nobody deploys anything. You fill in the blanks and the factory stamps out your prize on existing blockchain infrastructure. The fiat path is still the on-ramp for anyone who finds wallets annoying. The shared factory is the upgrade path for anyone who finds centralized custody terrifying.
 
 ### Pre-Launch Checklist
 
@@ -836,6 +838,14 @@ The prize is compatible with public choice because no one has to become good:
 - **Citizens** get a simpler choices and more visible returns from participation.
 
 Nobody is asked to sacrifice self-interest. Self-interest is pointed in a better direction. More importantly, the design goal is that **greed helps**: as greed rises, capital supply, monitoring effort, political pressure, and reinvestment should all rise with it rather than collapse.
+
+### Why Contributing Is Rational for You Personally
+
+The arithmetic is simple. If the treaty trajectory is even roughly correct, success raises average lifetime income by {{< var treaty_trajectory_lifetime_income_gain_per_capita >}} per person. Any action you take that shifts implementation probability by 0.01 percentage points is worth roughly $1.49K to you in expected value, before counting anyone else. At 0.1 percentage points the figure is $14.9K. These are not projections about other people's welfare. They are projections about your income.
+
+If you go further and contribute implementation work (research, software, policy drafting, trial recruitment, coalition building), the retroactive impact purchasing mechanism means the prize can pay you for verified outcomes after they happen. You fund work up front, produce auditable results, and the prize treasury reimburses you based on measured impact. That is a direct financial return on top of the population-wide income gain. The combination means contributors face two upside channels: the broad gain everyone gets if the plan succeeds, and the narrow gain reserved for people who helped make it succeed.
+
+This creates a coordination game with a useful property: early contributors raise the probability of success, which raises the expected value for later contributors, which attracts more contributors. The loop does not require altruism. It requires arithmetic and a small number of people who can do it.
 
 ## What the Prize Selects if These Papers Are Right
 
