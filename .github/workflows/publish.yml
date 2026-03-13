@@ -1115,6 +1115,25 @@ jobs:
           retention-days: 7
 
 
+      - name: "Deploy Build The Least Bad Idea in the World Prize to Netlify (immediate)"
+        if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
+        uses: nwtgck/actions-netlify@v3.0
+        with:
+          publish-dir: '_build_temp/least-bad-idea-prize/_site/least-bad-idea-prize'
+          production-deploy: ${{ github.ref == 'refs/heads/develop' || github.ref == 'refs/heads/master' }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+          deploy-message: "Deploy least-bad-idea-prize from ${{ github.ref_name }}"
+          enable-pull-request-comment: true
+          enable-commit-comment: true
+          overwrites-pull-request-comment: true
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+
+          NETLIFY_SITE_ID: 4b864c23-3f9e-4a83-a6dc-9a2f7690eb80
+
+        timeout-minutes: 1
+
 
 
       - name: "Upload Build The Least Bad Idea in the World Prize PDF to Zenodo (draft)"

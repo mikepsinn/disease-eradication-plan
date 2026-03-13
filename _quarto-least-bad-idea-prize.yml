@@ -19,7 +19,7 @@ dih-render:
   index-source: knowledge/strategy/least-bad-idea-prize-paper.qmd
   fallback-404-redirect-domain: https://manual.WarOnDisease.org
   netlify-site-id: "4b864c23-3f9e-4a83-a6dc-9a2f7690eb80"
-  netlify-cname: "least-bad-idea-prize-warondisease-org.netlify.app"
+  netlify-cname: "prize-warondisease-org.netlify.app"
   show-confidence-intervals: true
   concept-terms:
     - term: "Least Bad Idea Prize"
@@ -47,7 +47,7 @@ author:
 website:
   title: "The Least Bad Idea in the World Prize"
   description: "If this manual is wrong, beat it. A standing prize for the first mechanism that can verifiably move money from low-value uses to high-value ones, reduce suffering more cheaply than the current stack, and survive contact with selfish humans."
-  site-url: https://least-bad-idea-prize.warondisease.org
+  site-url: https://prize.warondisease.org
   favicon: assets/icons/least-bad-idea-prize-favicon.png
   page-navigation: true
   page-footer:
@@ -130,12 +130,12 @@ metadata:
 
   # Open Graph metadata (enables per-page custom OG images)
   open-graph: true
-  image: "https://least-bad-idea-prize.warondisease.org/assets/og/least-bad-idea-prize-og-1200x630.jpg"
+  image: "https://prize.warondisease.org/assets/og/least-bad-idea-prize-og-1200x630.jpg"
 
   # Publication tracking
   publishing:
     own-site:
-      url: "https://least-bad-idea-prize.warondisease.org"
+      url: "https://prize.warondisease.org"
       status: pending
     preprints:
       - platform: zenodo
@@ -212,7 +212,7 @@ format:
       - callout-bw.tex
       - institute-header.tex
       - text: |
-          \paperurl{https://least-bad-idea-prize.warondisease.org}
+          \paperurl{https://prize.warondisease.org}
     geometry:
       - top=1in
       - bottom=1in
