@@ -36,15 +36,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 448 parameters used in the analysis, organized by type:
+This appendix documents all 452 parameters used in the analysis, organized by type:
 
 - External sources (peer-reviewed): 157
-- Calculated values: 195
+- Calculated values: 199
 - Core definitions: 96
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (195 parameters) • [External Data Sources](#sec-external) (157 parameters) • [Core Definitions](#sec-definitions) (96 parameters)
+[Calculated Values](#sec-calculated) (199 parameters) • [External Data Sources](#sec-external) (157 parameters) • [Core Definitions](#sec-definitions) (96 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -354,6 +354,134 @@ Unique pairwise drug combinations from known safe compounds (n choose 2)
 #### Sensitivity Analysis
 
 {{< include ../figures/tornado-combination_therapy_pairs.qmd >}}
+
+:::
+
+### DALYs Averted per Percentage Point: 5.65 billion DALYs {#sec-contribution_dalys_per_pct_point}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+DALYs averted per percentage point of implementation probability shift. One percent of total DALYs from eliminating trial capacity bottleneck and efficacy lag.
+
+**Inputs**:
+
+- [Total DALYs from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput](#sec-dfda_trial_capacity_plus_efficacy_lag_dalys) 🔢: 565 billion DALYs
+
+$$
+DALYs_{pp} = DALYs_{max} \times 0.01
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-contribution_dalys_per_pct_point.qmd >}}
+
+{{< include ../figures/sensitivity-table-contribution_dalys_per_pct_point.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-contribution_dalys_per_pct_point.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-contribution_dalys_per_pct_point.qmd >}}
+
+:::
+
+### Contribution EV per Percentage Point (Treaty): $149K {#sec-contribution_ev_per_pct_point_treaty}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Personal expected value per percentage point of implementation probability shift under Treaty Trajectory. One percent of the per-capita lifetime income gain.
+
+**Inputs**:
+
+- [Treaty Trajectory Lifetime Income Gain (Per Capita)](#sec-treaty_trajectory_lifetime_income_gain_per_capita) 🔢: $14.9M
+
+$$
+EV_{pp,treaty} = \Delta Y_{lifetime,treaty} \times 0.01
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-contribution_ev_per_pct_point_treaty.qmd >}}
+
+{{< include ../figures/sensitivity-table-contribution_ev_per_pct_point_treaty.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-contribution_ev_per_pct_point_treaty.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-contribution_ev_per_pct_point_treaty.qmd >}}
+
+:::
+
+### Contribution EV per Percentage Point (Wishonia): $521K {#sec-contribution_ev_per_pct_point_wishonia}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Personal expected value per percentage point of implementation probability shift under Wishonia Trajectory. One percent of the per-capita lifetime income gain.
+
+**Inputs**:
+
+- [Wishonia Trajectory Lifetime Income Gain (Per Capita)](#sec-wishonia_trajectory_lifetime_income_gain_per_capita) 🔢: $52.1M
+
+$$
+EV_{pp,wish} = \Delta Y_{lifetime,wish} \times 0.01
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-contribution_ev_per_pct_point_wishonia.qmd >}}
+
+{{< include ../figures/sensitivity-table-contribution_ev_per_pct_point_wishonia.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-contribution_ev_per_pct_point_wishonia.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-contribution_ev_per_pct_point_wishonia.qmd >}}
+
+:::
+
+### Suffering Hours Prevented per Percentage Point: 19.3 trillion hours {#sec-contribution_suffering_hours_per_pct_point}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Suffering hours prevented per percentage point of implementation probability shift. One percent of total suffering hours from eliminating trial capacity bottleneck and efficacy lag.
+
+**Inputs**:
+
+- [Suffering Hours Eliminated from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput](#sec-dfda_trial_capacity_plus_efficacy_lag_suffering_hours) 🔢: 1.93 quadrillion hours
+
+$$
+Hours_{pp} = Hours_{suffer,max} \times 0.01
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-contribution_suffering_hours_per_pct_point.qmd >}}
+
+{{< include ../figures/sensitivity-table-contribution_suffering_hours_per_pct_point.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-contribution_suffering_hours_per_pct_point.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-contribution_suffering_hours_per_pct_point.qmd >}}
 
 :::
 

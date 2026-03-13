@@ -2322,6 +2322,61 @@ export const COMBINATION_THERAPY_PAIRS: Parameter = {
   formula: "SAFE_COMPOUNDS × (SAFE_COMPOUNDS - 1) ÷ 2",
 };
 
+export const CONTRIBUTION_DALYS_PER_PCT_POINT: Parameter = {
+  value: 5652436733.509989,
+  unit: "DALYs",
+  displayName: "DALYs Averted per Percentage Point",
+  description: "DALYs averted per percentage point of implementation probability shift. One percent of total DALYs from eliminating trial capacity bottleneck and efficacy lag.",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS × 0.01",
+  latex: "DALYs_{pp} = DALYs_{max} \\times 0.01",
+};
+
+export const CONTRIBUTION_EV_PER_PCT_POINT_TREATY: Parameter = {
+  value: 148665.0449368958,
+  unit: "USD",
+  displayName: "Contribution EV per Percentage Point (Treaty)",
+  description: "Personal expected value per percentage point of implementation probability shift under Treaty Trajectory. One percent of the per-capita lifetime income gain.",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "TREATY_TRAJECTORY_LIFETIME_INCOME_GAIN_PER_CAPITA × 0.01",
+  latex: "EV_{pp,treaty} = \\Delta Y_{lifetime,treaty} \\times 0.01",
+};
+
+export const CONTRIBUTION_EV_PER_PCT_POINT_WISHONIA: Parameter = {
+  value: 521022.6155962363,
+  unit: "USD",
+  displayName: "Contribution EV per Percentage Point (Wishonia)",
+  description: "Personal expected value per percentage point of implementation probability shift under Wishonia Trajectory. One percent of the per-capita lifetime income gain.",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "WISHONIA_TRAJECTORY_LIFETIME_INCOME_GAIN_PER_CAPITA × 0.01",
+  latex: "EV_{pp,wish} = \\Delta Y_{lifetime,wish} \\times 0.01",
+};
+
+export const CONTRIBUTION_LIVES_SAVED_PER_PCT_POINT: Parameter = {
+  value: 107455177.4859972,
+  unit: "lives",
+  displayName: "Lives Saved per Percentage Point",
+  description: "Lives saved per percentage point of implementation probability shift. One percent of total lives saved from eliminating trial capacity bottleneck and efficacy lag.",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_LIVES_SAVED × 0.01",
+  latex: "Lives_{pp} = Lives_{max} \\times 0.01",
+};
+
+export const CONTRIBUTION_SUFFERING_HOURS_PER_PCT_POINT: Parameter = {
+  value: 19310984856363.527,
+  unit: "hours",
+  displayName: "Suffering Hours Prevented per Percentage Point",
+  description: "Suffering hours prevented per percentage point of implementation probability shift. One percent of total suffering hours from eliminating trial capacity bottleneck and efficacy lag.",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_SUFFERING_HOURS × 0.01",
+  latex: "Hours_{pp} = Hours_{suffer,max} \\times 0.01",
+};
+
 export const CURRENT_COMBINATION_EXPLORATION_YEARS: Parameter = {
   value: 13672803.030303031,
   unit: "years",
@@ -6300,6 +6355,11 @@ export const parameters = {
   CLINICAL_TRIAL_COST_PER_PARTICIPANT_ANNUAL,
   COMBINATION_THERAPY_DISEASE_SPACE,
   COMBINATION_THERAPY_PAIRS,
+  CONTRIBUTION_DALYS_PER_PCT_POINT,
+  CONTRIBUTION_EV_PER_PCT_POINT_TREATY,
+  CONTRIBUTION_EV_PER_PCT_POINT_WISHONIA,
+  CONTRIBUTION_LIVES_SAVED_PER_PCT_POINT,
+  CONTRIBUTION_SUFFERING_HOURS_PER_PCT_POINT,
   CURRENT_COMBINATION_EXPLORATION_YEARS,
   CURRENT_KNOWN_SAFE_EXPLORATION_YEARS,
   CURRENT_PATIENT_PARTICIPATION_RATE,
@@ -8569,9 +8629,9 @@ export const citations: Record<string, Citation> = {
 
 /** Summary statistics */
 export const PARAMETER_STATS = {
-  total: 565,
+  total: 570,
   external: 195,
-  calculated: 247,
+  calculated: 252,
   definitions: 123,
   citations: 140,
 } as const;

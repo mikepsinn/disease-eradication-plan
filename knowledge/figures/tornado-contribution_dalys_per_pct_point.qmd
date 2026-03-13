@@ -1,0 +1,109 @@
+```{python}
+#| echo: false
+
+import matplotlib.pyplot as plt
+import numpy as np
+from pathlib import Path
+
+from dih_models.plotting.chart_style import (
+    setup_chart_style, add_watermark, clean_spines,
+    COLOR_BLACK, COLOR_WHITE, add_png_metadata, get_figure_output_path,
+    get_tick_formatter
+)
+from dih_models.parameters import format_parameter_value
+
+setup_chart_style()
+
+# Display name for chart title
+
+display_name = "DALYs Averted per Percentage Point"
+
+# Baseline and units
+
+baseline = 5652436733.509989
+
+# Tornado data from sensitivity analysis
+
+drivers = ['NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR', 'RARE_DISEASES_COUNT_GLOBAL', 'EVENTUALLY_AVOIDABLE_DALY_PCT', 'DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT', 'GLOBAL_ANNUAL_DALY_BURDEN', 'CURRENT_TRIAL_SLOTS_AVAILABLE', 'EFFICACY_LAG_YEARS', 'DFDA_OPEX_PLATFORM_MAINTENANCE', 'DFDA_OPEX_STAFF', 'DFDA_OPEX_INFRASTRUCTURE', 'DFDA_OPEX_REGULATORY', 'DFDA_OPEX_COMMUNITY']
+driver_labels = ['Diseases Getting First Treatment Per Year', 'Total Number of Rare Diseases Globally', 'Eventually Avoidable DALY Percentage', 'dFDA Pragmatic Trial Cost per Patient', 'Global Annual DALY Burden', 'Annual Global Clinical Trial Participants', 'Regulatory Delay for Efficacy Testing Post-Safety Verification', 'Decentralized Framework for Drug Assessment Maintenance Costs', 'Decentralized Framework for Drug Assessment Staff Costs', 'Decentralized Framework for Drug Assessment Infrastructure Costs', 'Decentralized Framework for Drug Assessment Regulatory Coordination Costs', 'Decentralized Framework for Drug Assessment Community Support Costs']
+impacts_low = [4754476039.574921, -776240986.0530472, -2601281329.098224, 429588157.7436552, -294397746.5369768, 100983653.47769642, -53353617.350889206, 110193.51114654541, 66122.18269920349, 66122.18269920349, 44083.480748176575, 22042.753275871277]
+impacts_high = [-2716843451.1856675, 2328722958.1591463, 327827859.1370697, -1069323407.0758533, 294397746.5369806, -100983653.47769451, 53353617.35089111, -154356.01885318756, -110244.16318416595, -88191.2767086029, -66140.41743087769, -22044.779356002808]
+
+# Convert deltas to absolute values (baseline + delta)
+
+values_low = [baseline + delta for delta in impacts_low]
+values_high = [baseline + delta for delta in impacts_high]
+
+# Create tornado chart (horizontal bars showing swing range)
+# Cap dimensions to avoid LaTeX "Dimension too large" errors in PDF output
+# 8x10 inches max keeps figures compact and PDF-compatible
+
+fig, ax = plt.subplots(figsize=(8, min(10, max(5, len(drivers) * 0.6))))
+
+y_pos = np.arange(len(drivers))
+
+# Plot low impact (left side)
+
+for i, (low, high) in enumerate(zip(values_low, values_high)):
+    left = min(low, high)
+    width_low = baseline - left if left < baseline else 0
+    width_high = max(low, high) - baseline if max(low, high) > baseline else 0
+
+    # White bar for range below baseline
+
+    if width_low > 0:
+        ax.barh(i, width_low, left=left,
+                color=COLOR_WHITE, edgecolor=COLOR_BLACK, linewidth=2)
+
+    # Black bar for range above baseline
+
+    if width_high > 0:
+        ax.barh(i, width_high, left=baseline,
+                color=COLOR_BLACK, edgecolor=COLOR_BLACK, linewidth=2)
+
+# Format axis
+
+ax.set_yticks(y_pos)
+# Simplified labels (just parameter names)
+
+ax.set_yticklabels(driver_labels, fontsize=11)
+ax.set_title(f'Sensitivity Analysis: {display_name}', fontsize=16, weight='bold', pad=20)
+
+# X-axis label with units
+
+units_label = "DALYs"
+if units_label:
+    ax.set_xlabel(f'{display_name} ({units_label})', fontsize=12)
+else:
+    ax.set_xlabel(f'{display_name}', fontsize=12)
+
+# Format x-axis tick labels with K/M/B/T notation
+
+ax.xaxis.set_major_formatter(get_tick_formatter(unit=units_label))
+
+# Add vertical line at baseline
+
+ax.axvline(baseline, color=COLOR_BLACK, linewidth=1, linestyle='--', alpha=0.5)
+
+# Clean spines
+
+clean_spines(ax)
+
+# Add watermark
+
+add_watermark(fig)
+
+# Save PNG to knowledge/figures/ regardless of where Quarto renders from
+# Use 96 DPI for web-optimized output (reduced from 150 DPI to minimize file size)
+
+output_path = get_figure_output_path('tornado-contribution_dalys_per_pct_point.png')
+plt.savefig(output_path, dpi=96, bbox_inches=None, facecolor=COLOR_WHITE)
+
+add_png_metadata(
+    output_path,
+    title=f'Sensitivity: {display_name}',
+    description=f'Tornado diagram showing which input parameters have the largest impact on {display_name}'
+)
+
+plt.show()
+```

@@ -36,20 +36,148 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 165 parameters used in the analysis, organized by type:
+This appendix documents all 171 parameters used in the analysis, organized by type:
 
-- External sources (peer-reviewed): 72
-- Calculated values: 72
+- External sources (peer-reviewed): 73
+- Calculated values: 77
 - Core definitions: 21
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (72 parameters) • [External Data Sources](#sec-external) (72 parameters) • [Core Definitions](#sec-definitions) (21 parameters)
+[Calculated Values](#sec-calculated) (77 parameters) • [External Data Sources](#sec-external) (73 parameters) • [Core Definitions](#sec-definitions) (21 parameters)
 
 
 ## Calculated Values {#sec-calculated}
 
 Parameters derived from mathematical formulas and economic models.
+
+### DALYs Averted per Percentage Point: 5.65 billion DALYs {#sec-contribution_dalys_per_pct_point}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+DALYs averted per percentage point of implementation probability shift. One percent of total DALYs from eliminating trial capacity bottleneck and efficacy lag.
+
+**Inputs**:
+
+- [Total DALYs from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput](#sec-dfda_trial_capacity_plus_efficacy_lag_dalys) 🔢: 565 billion DALYs
+
+$$
+DALYs_{pp} = DALYs_{max} \times 0.01
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-contribution_dalys_per_pct_point.qmd >}}
+
+{{< include ../figures/sensitivity-table-contribution_dalys_per_pct_point.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-contribution_dalys_per_pct_point.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-contribution_dalys_per_pct_point.qmd >}}
+
+:::
+
+### Contribution EV per Percentage Point (Treaty): $149K {#sec-contribution_ev_per_pct_point_treaty}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Personal expected value per percentage point of implementation probability shift under Treaty Trajectory. One percent of the per-capita lifetime income gain.
+
+**Inputs**:
+
+- [Treaty Trajectory Lifetime Income Gain (Per Capita)](#sec-treaty_trajectory_lifetime_income_gain_per_capita) 🔢: $14.9M
+
+$$
+EV_{pp,treaty} = \Delta Y_{lifetime,treaty} \times 0.01
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-contribution_ev_per_pct_point_treaty.qmd >}}
+
+{{< include ../figures/sensitivity-table-contribution_ev_per_pct_point_treaty.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-contribution_ev_per_pct_point_treaty.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-contribution_ev_per_pct_point_treaty.qmd >}}
+
+:::
+
+### Contribution EV per Percentage Point (Wishonia): $521K {#sec-contribution_ev_per_pct_point_wishonia}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Personal expected value per percentage point of implementation probability shift under Wishonia Trajectory. One percent of the per-capita lifetime income gain.
+
+**Inputs**:
+
+- [Wishonia Trajectory Lifetime Income Gain (Per Capita)](#sec-wishonia_trajectory_lifetime_income_gain_per_capita) 🔢: $52.1M
+
+$$
+EV_{pp,wish} = \Delta Y_{lifetime,wish} \times 0.01
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-contribution_ev_per_pct_point_wishonia.qmd >}}
+
+{{< include ../figures/sensitivity-table-contribution_ev_per_pct_point_wishonia.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-contribution_ev_per_pct_point_wishonia.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-contribution_ev_per_pct_point_wishonia.qmd >}}
+
+:::
+
+### Suffering Hours Prevented per Percentage Point: 19.3 trillion hours {#sec-contribution_suffering_hours_per_pct_point}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Suffering hours prevented per percentage point of implementation probability shift. One percent of total suffering hours from eliminating trial capacity bottleneck and efficacy lag.
+
+**Inputs**:
+
+- [Suffering Hours Eliminated from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput](#sec-dfda_trial_capacity_plus_efficacy_lag_suffering_hours) 🔢: 1.93 quadrillion hours
+
+$$
+Hours_{pp} = Hours_{suffer,max} \times 0.01
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-contribution_suffering_hours_per_pct_point.qmd >}}
+
+{{< include ../figures/sensitivity-table-contribution_suffering_hours_per_pct_point.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-contribution_suffering_hours_per_pct_point.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-contribution_suffering_hours_per_pct_point.qmd >}}
+
+:::
 
 ### Current Trajectory Average Income at Year 20: $20.5K {#sec-current_trajectory_avg_income_year_20}
 
@@ -1093,6 +1221,129 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-dfda_trial_capacity_plus_efficacy_lag_dalys.qmd >}}
+
+:::
+
+### Suffering Hours Eliminated from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput: 1.93 quadrillion hours {#sec-dfda_trial_capacity_plus_efficacy_lag_suffering_hours}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Hours of suffering eliminated from the combined dFDA timeline shift. Calculated from YLD component of DALYs (39% of total DALYs × hours per year). One-time benefit, not annual recurring.
+
+**Inputs**:
+
+- [Total DALYs from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput](#sec-dfda_trial_capacity_plus_efficacy_lag_dalys) 🔢: 565 billion DALYs
+- [YLD Proportion of Total DALYs](#sec-global_yld_proportion_of_dalys) 📊: 0.39 proportion (SE: ±0.03 proportion)
+
+$$
+\begin{gathered}
+Hours_{suffer,max} \\
+= DALYs_{max} \times Pct_{YLD} \times 8760 \\
+= 565B \times 0.39 \times 8760 \\
+= 1930T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+DALYs_{max} \\
+= DALYs_{global,ann} \times Pct_{avoid,DALY} \times T_{accel,max} \\
+= 2.88B \times 92.6\% \times 212 \\
+= 565B
+\end{gathered}
+$$
+where:
+$$
+T_{accel,max} = T_{accel} + T_{lag} = 204 + 8.2 = 212
+$$
+where:
+$$
+\begin{gathered}
+T_{accel} \\
+= T_{first,SQ} \times \left(1 - \frac{1}{k_{capacity}}\right) \\
+= 222 \times \left(1 - \frac{1}{12.3}\right) \\
+= 204
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{first,SQ} \\
+= T_{queue,SQ} \times 0.5 \\
+= 443 \times 0.5 \\
+= 222
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{queue,SQ} \\
+= \frac{N_{untreated}}{Treatments_{new,ann}} \\
+= \frac{6{,}650}{15} \\
+= 443
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{untreated} \\
+= N_{rare} \times 0.95 \\
+= 7{,}000 \times 0.95 \\
+= 6{,}650
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+k_{capacity} \\
+= \frac{N_{fundable,dFDA}}{Slots_{curr}} \\
+= \frac{23.4M}{1.9M} \\
+= 12.3
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{fundable,dFDA} \\
+= \frac{Subsidies_{dFDA,ann}}{Cost_{pragmatic,pt}} \\
+= \frac{\$21.8B}{\$929} \\
+= 23.4M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Subsidies_{dFDA,ann} \\
+= Funding_{dFDA,ann} - OPEX_{dFDA} \\
+= \$21.8B - \$40M \\
+= \$21.8B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+OPEX_{dFDA} \\
+= Cost_{platform} + Cost_{staff} + Cost_{infra} \\
++ Cost_{regulatory} + Cost_{community} \\
+= \$15M + \$10M + \$8M + \$5M + \$2M \\
+= \$40M
+\end{gathered}
+$$
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-dfda_trial_capacity_plus_efficacy_lag_suffering_hours.qmd >}}
+
+{{< include ../figures/sensitivity-table-dfda_trial_capacity_plus_efficacy_lag_suffering_hours.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-dfda_trial_capacity_plus_efficacy_lag_suffering_hours.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_trial_capacity_plus_efficacy_lag_suffering_hours.qmd >}}
 
 :::
 
@@ -5194,6 +5445,26 @@ Critical mass threshold for social change (3.5% rule)
 {{< include ../figures/distribution-global_population_activism_threshold_pct.qmd >}}
 
 *✓ High confidence*
+
+:::
+
+### YLD Proportion of Total DALYs: 0.39 proportion {#sec-global_yld_proportion_of_dalys}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Proportion of global DALYs that are YLD (years lived with disability) vs YLL (years of life lost). From GBD 2021: 1.13B YLD out of 2.88B total DALYs = 39%.
+
+**Source**: [@ihme-gbd-2021]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Normal (SE: 0.03 proportion)
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_yld_proportion_of_dalys.qmd >}}
+
+*✓ High confidence • 📊 Peer-reviewed*
 
 :::
 

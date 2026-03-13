@@ -10141,4 +10141,76 @@ LAUNCH_P_AT_LEAST_REQUIRED_PRINCIPALS = Parameter(
     latex_symbol=r"P_{launch}",
 )
 
+# ── Individual Contribution Expected Value (per percentage point of probability shift) ──
+
+CONTRIBUTION_EV_PER_PCT_POINT_TREATY = Parameter(
+    float(TREATY_TRAJECTORY_LIFETIME_INCOME_GAIN_PER_CAPITA) * 0.01,
+    source_type="calculated",
+    description="Personal expected value per percentage point of implementation probability shift under Treaty Trajectory. "
+                "One percent of the per-capita lifetime income gain.",
+    display_name="Contribution EV per Percentage Point (Treaty)",
+    unit="USD",
+    formula="TREATY_TRAJECTORY_LIFETIME_INCOME_GAIN_PER_CAPITA × 0.01",
+    inputs=["TREATY_TRAJECTORY_LIFETIME_INCOME_GAIN_PER_CAPITA"],
+    compute=lambda ctx: ctx["TREATY_TRAJECTORY_LIFETIME_INCOME_GAIN_PER_CAPITA"] * 0.01,
+    latex=r"EV_{pp,treaty} = \Delta Y_{lifetime,treaty} \times 0.01",
+    latex_symbol=r"EV_{pp,treaty}",
+)
+
+CONTRIBUTION_EV_PER_PCT_POINT_WISHONIA = Parameter(
+    float(WISHONIA_TRAJECTORY_LIFETIME_INCOME_GAIN_PER_CAPITA) * 0.01,
+    source_type="calculated",
+    description="Personal expected value per percentage point of implementation probability shift under Wishonia Trajectory. "
+                "One percent of the per-capita lifetime income gain.",
+    display_name="Contribution EV per Percentage Point (Wishonia)",
+    unit="USD",
+    formula="WISHONIA_TRAJECTORY_LIFETIME_INCOME_GAIN_PER_CAPITA × 0.01",
+    inputs=["WISHONIA_TRAJECTORY_LIFETIME_INCOME_GAIN_PER_CAPITA"],
+    compute=lambda ctx: ctx["WISHONIA_TRAJECTORY_LIFETIME_INCOME_GAIN_PER_CAPITA"] * 0.01,
+    latex=r"EV_{pp,wish} = \Delta Y_{lifetime,wish} \times 0.01",
+    latex_symbol=r"EV_{pp,wish}",
+)
+
+CONTRIBUTION_DALYS_PER_PCT_POINT = Parameter(
+    float(DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS) * 0.01,
+    source_type="calculated",
+    description="DALYs averted per percentage point of implementation probability shift. "
+                "One percent of total DALYs from eliminating trial capacity bottleneck and efficacy lag.",
+    display_name="DALYs Averted per Percentage Point",
+    unit="DALYs",
+    formula="DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS × 0.01",
+    inputs=["DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS"],
+    compute=lambda ctx: ctx["DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS"] * 0.01,
+    latex=r"DALYs_{pp} = DALYs_{max} \times 0.01",
+    latex_symbol=r"DALYs_{pp}",
+)
+
+CONTRIBUTION_LIVES_SAVED_PER_PCT_POINT = Parameter(
+    float(DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_LIVES_SAVED) * 0.01,
+    source_type="calculated",
+    description="Lives saved per percentage point of implementation probability shift. "
+                "One percent of total lives saved from eliminating trial capacity bottleneck and efficacy lag.",
+    display_name="Lives Saved per Percentage Point",
+    unit="lives",
+    formula="DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_LIVES_SAVED × 0.01",
+    inputs=["DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_LIVES_SAVED"],
+    compute=lambda ctx: ctx["DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_LIVES_SAVED"] * 0.01,
+    latex=r"Lives_{pp} = Lives_{max} \times 0.01",
+    latex_symbol=r"Lives_{pp}",
+)
+
+CONTRIBUTION_SUFFERING_HOURS_PER_PCT_POINT = Parameter(
+    float(DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_SUFFERING_HOURS) * 0.01,
+    source_type="calculated",
+    description="Suffering hours prevented per percentage point of implementation probability shift. "
+                "One percent of total suffering hours from eliminating trial capacity bottleneck and efficacy lag.",
+    display_name="Suffering Hours Prevented per Percentage Point",
+    unit="hours",
+    formula="DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_SUFFERING_HOURS × 0.01",
+    inputs=["DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_SUFFERING_HOURS"],
+    compute=lambda ctx: ctx["DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_SUFFERING_HOURS"] * 0.01,
+    latex=r"Hours_{pp} = Hours_{suffer,max} \times 0.01",
+    latex_symbol=r"Hours_{pp}",
+)
+
 
