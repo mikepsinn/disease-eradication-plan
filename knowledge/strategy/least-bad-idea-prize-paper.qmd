@@ -700,7 +700,7 @@ The three properties that make theft hard: the prize money never touches the cre
 | Treasury | Escrow.com transaction: you deposit the prize amount, set release conditions, winner gets paid when conditions are met. Costs a few percent. For crypto: multi-signature wallet on a low-fee network. | Fiscal host (e.g. Open Collective) for fiat transparency with public ledger, or multi-signature wallet with independent signers for larger pools. |
 | Threshold and refunds | At this scale you are the only funder, so "threshold" means you deposited the money or you did not. Escrow.com refunds automatically if the transaction is not completed by the deadline. For crypto: set a deadline in the wallet contract. | Same logic, but with legal escrow agreement for fiat or audited contract for pooled funds from multiple contributors. |
 | Disputes | Social proof is enough. The rules are public, the submissions are public, and anyone can see whether the conditions were met. | Human judges with written reasons, plus a challenge window. For pooled treasuries: assert-and-dispute mechanism (assert result, dispute if wrong). |
-| Treasury release | You approve the escrow release when you verify the winner met the conditions. For crypto: the wallet releases when the required signers approve. Manual verification is fine at this scale. | Multi-signature release requiring independent certifier sign-off, or governance-triggered release through a published vote. |
+| Treasury release | You approve the escrow release when you verify the winner met the conditions. For crypto: the wallet releases when the required signers approve. Manual verification is fine at this scale. | Multi-signature release requiring independent certifier sign-off. For trustless options, see the no-single-point-of-failure version below. |
 
 The biggest gap is that no production platform offers assurance contracts (threshold-triggered pooling with automatic refunds) as a turnkey service. For a single-creator prize this does not matter, because you deposit your own money. For pooled prizes from many contributors, you either need a custom escrow contract or a legal pledge agreement with a fiscal host.
 
@@ -769,7 +769,7 @@ You need tighter treasury machinery or custom code when any of these become true
 4. Disputes are frequent enough that ad hoc adjudication stops being credible
 5. Investors stop trusting humans to behave and start demanding infrastructure
 
-That is normal. The first airplane did not have in-flight movies either.
+The fiat path handles all of these at small scale. The no-single-point-of-failure version above handles them at any scale. Start with whichever matches your current friction tolerance.
 
 ### The Retroactive Version
 
@@ -785,7 +785,7 @@ Why pairwise comparison instead of "rank all 10,000 claimants": because nobody c
 
 Why "their share" instead of "their vote": because it kills three problems at once.
 
-1. **No sybil attacks.** Fake accounts have zero funds to allocate. You can only split money you actually deposited.
+1. **No sybil attacks.** Fake accounts have zero funds to allocate. You can only split money you actually deposited. This makes proof-of-personhood infrastructure unnecessary; the deposit itself is the identity check.
 2. **No majority tyranny.** Your allocation moves your money, not mine. No coalition can redirect my share against my judgment.
 3. **It is a market, not an election.** Each contributor is a buyer choosing where their dollars go based on evidence. Markets aggregate distributed information better than polls.
 
