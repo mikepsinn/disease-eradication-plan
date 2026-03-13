@@ -19,22 +19,22 @@ youtube-thumbnail: /assets/podcast/least-bad-idea-prize-paper-youtube.jpg
 
 ## Introduction
 
-If this manual is the least bad idea on Earth, implement it. If it is not, replace it immediately with something better. The point is not to marry a blueprint. The point is to stop subsidizing death, disease, waste, and suffering.
+If this plan is the least bad idea available, the prize causes its implementation. If it is not, the prize finds whatever is better and causes that instead. The point is not to marry a blueprint. The point is to stop subsidizing death, disease, waste, and suffering. We are not sure why your civilization does not already have a machine like this.
 
 The cost of the current approach is not abstract. {{< var existing_drugs_efficacy_lag_deaths_total_nounit >}} people have already died waiting for drugs that were proven to work but stuck in regulatory queues. The annual economic burden of treatable disease runs {{< var global_disease_economic_burden_annual >}}. The total opportunity cost of political dysfunction (the gap between what governance delivers and what it could deliver) is {{< var political_dysfunction_global_opportunity_cost_total >}} per year. Those are not projections. They are the running tab for not having a mechanism that selects and implements better ideas.
 
-That suggests a simple rule: stop treating policy design like a philosophy seminar and start treating it like an engineering competition.
+We noticed that policy design on Earth works like a philosophy seminar: interesting discussions, no binding output. An engineering competition would at least produce prototypes.
 
 Create a **standing prize** for the first person, team, or institution that can **cause the implementation** of every required function in the Earth Optimization Plan from the companion papers [@value-captured-by-1pct-treaty; @iab-paper-2025; @wishocracy-paper-2025; @optimocracy-paper-2025; @opg-paper-2025; @obg-paper-2025; @dfda-impact-paper-2025; @invisible-graveyard-paper-2025; @political-dysfunction-tax-paper-2025; @cost-of-change-paper-2025; @us-efficiency-audit-paper-2025; @dfda-spec-paper-2025; @drug-development-cost], or a strict module-by-module improvement on it, while delivering a **lower verified cost per DALY**, lower suffering per dollar, and better net outcomes for living beings.
 
-Not a trophy. Not a TED Talk. Not "best essay wins." A market for verified implementation.
+Most prizes on Earth produce a trophy, a speech, and approximately zero change in how resources are allocated. This one is designed to produce a market for verified implementation.
 
-Here is the inevitability theorem in one sentence: a machine that selects the best available mechanism and replaces itself when beaten is, by construction, at least as good as any mechanism it could select. The only way to beat the prize is to produce something better, and producing something better is the entire point. This paper describes that machine.
+Here is the core property in one sentence: a machine that selects the best available mechanism and replaces itself when beaten is, by construction, at least as good as any mechanism it could select. The only way to beat the prize is to produce something better, and producing something better is the entire point. This paper describes that machine.
 
 ::: {.callout-important}
 ## Disqualification Rule
 
-If your proposal requires politicians, bureaucrats, investors, regulators, voters, or interest groups to become less selfish than they are now, you have not designed a mechanism. You have written fan fiction.
+If your proposal requires politicians, bureaucrats, investors, regulators, voters, or interest groups to become less selfish than they currently are, you have described a pleasant world rather than a mechanism for reaching it. We have been observing your species since 1945 and have not yet seen selfishness decline on request.
 :::
 
 **How to read this paper.** It does three things: defines what "better" means with a published scorecard, describes the current best candidate and how it achieves its numbers, and explains why a prize is the right selection mechanism. If you want the mechanism before the formalism, skip to [How the Earth Optimization Plan Achieves Its Numbers](#how-the-plan-achieves-its-numbers).
@@ -58,7 +58,7 @@ To win the prize, a proposal must clear six tests:
 5. **Reallocation from low NSV to high NSV.** The mechanism must redirect resources from uses with low or negative net societal value into uses with higher verified returns.
 6. **Greed-monotone public-choice compatibility.** Every critical actor must have a selfish reason to cooperate, and stronger self-interest should make the mechanism stronger rather than weaker: investors, politicians, bureaucrats, validators, operators, and ordinary citizens.
 
-The "least bad" language matters. You are not waiting for perfection. You are asking a more adult question: *which implementable mechanism beats the alternatives once actual humans touch it?*
+The "least bad" language matters. The question is not "what is perfect?" It is: *which implementable mechanism beats the alternatives once actual humans touch it?*
 
 ## Better Needs Units
 
@@ -99,7 +99,7 @@ These are the minimum variables the prize should score:
 | `G_monotone` | Minimum marginal effect of actor self-interest on success | The greedier humans are, the better this should work | Must stay positive for investors, politicians, operators, validators, and citizens |
 | `F_reinvest` | Fraction of recovered value automatically recycled into remaining missing modules | Early wins must finance completion of the Earth Optimization Plan rather than stopping at a local maximum | IAB/prize-treasury logic implies positive contractual recycling [@iab-paper-2025] |
 
-That is the minimum scoreboard. Anything less is still just literary criticism with a grant budget.
+That is the minimum scoreboard. Without it, you are comparing essays, which is how governance proposals have been selected so far, and which has produced the results you currently have.
 
 ## The Baseline Bundle
 
@@ -596,14 +596,14 @@ This layer should remain downstream of the completeness rule rather than replaci
 
 ## How the Payout Works
 
-The payout should be heavily back-loaded, because your species is very good at collecting money for plans and surprisingly bad at making the plans real.
+The payout should be heavily back-loaded. We have noticed that your species is remarkably good at collecting money for plans and then not building the plans. This is one of your more puzzling traits.
 
 1. **Specification bounty.** A small amount for producing a complete, auditable, adversarially reviewed mechanism.
 2. **Pilot bounty.** A larger amount for a live pilot that moves real money, changes real behavior, and survives contact with real institutions.
 3. **Adoption bounty.** A much larger amount for statute, treaty, agency rule, ballot measure, or other binding implementation.
 4. **Outcome perpetuity.** The biggest reward is a continuing share of verified recovered value, because one-time prizes create demos while ongoing revenue shares create permanent constituencies.
 
-That is just Incentive Alignment Bonds [@iab-paper-2025] with a more brutal selection rule. Good. Brutality is appropriate here. The universe is not grading on effort.
+That is just Incentive Alignment Bonds [@iab-paper-2025] with a more selective filter on what qualifies as success.
 
 ## One Concrete Run
 
@@ -621,7 +621,7 @@ That is the level of concreteness required for "implementation market" to mean m
 
 ## Why Public Choice Theory Approves
 
-Public choice theory says governments are not run by philosopher-kings. They are run by status-seeking primates inside incentive systems. Fine. Build around that.
+Public choice theory says governments are not run by philosopher-kings. They are run by humans who care about reelection, career advancement, and reputation. This is not a design flaw in humans. It is a design constraint. The prize works with it.
 
 The prize is compatible with public choice because no one has to become good:
 
@@ -708,7 +708,7 @@ Several independent lines of analysis converge on the same structural shape. Hea
 
 The feedback loop makes this self-strengthening rather than fragile. Early success (Right to Trial passes, pragmatic trials produce cures, media covers the results, voters reward the politicians who voted for it) makes the next step cheaper. Each win creates a constituency that fights to keep it. Treaty expansion becomes easier than repeal because the bondholders, the cured patients, and the politicians who took credit all have selfish reasons to defend it.
 
-Meanwhile, not choosing is itself a choice. The burden of treatable disease runs {{< var global_disease_economic_burden_annual >}} per year. {{< var existing_drugs_efficacy_lag_deaths_total_nounit >}} people have already died from the efficacy lag alone. The status quo is not free. It is the most expensive option on the table; it merely distributes the cost across people who die quietly.
+Meanwhile, not choosing is itself a choice. The burden of treatable disease runs {{< var global_disease_economic_burden_annual >}} per year. {{< var existing_drugs_efficacy_lag_deaths_total_nounit >}} people have already died from the efficacy lag alone. The status quo is not free. It is the most expensive option on the table. The expense is just distributed across people who do not have a lobby.
 
 The prize is information propagation with a financing mechanism attached. Once informed self-interested actors understand the optimization is physically possible and personally profitable, their own incentives probably handle the rest. The bottleneck is not technology, not willingness, not even politics. It is the speed at which this information reaches people who can act on it.
 
@@ -722,7 +722,7 @@ Everything else is just plumbing. And because the mechanism is agnostic to the s
 
 That extension should be read cautiously, not mystically. The prize should only pivot beyond human disease where measurement, verification, and class-by-class welfare accounting are strong enough to clear the same admissibility tests. The point is not to authorize speculative interventions on nonhuman systems with weak evidence. The point is that once a domain can be measured rigorously enough, the prize should not remain trapped in more expensive human interventions merely because they are familiar.
 
-And yes, this is still compatible with public choice theory, because the prize turns "find the least bad idea" into a competition for money, power, reputation, and durable institutional control. Your species already runs on those four fuels. The only innovation here is to stop burning them on things that explode.
+And yes, this is still compatible with public choice theory, because the prize turns "find the least bad idea" into a competition for money, power, reputation, and durable institutional control. Your species already runs on those four fuels. The only change proposed here is to stop directing them at things that explode.
 
 ## Conclusion
 
@@ -730,9 +730,9 @@ If this project is right, the prize causes its implementation. If this project i
 
 Either way, the feedback loop runs: more capital funds sharper selection, sharper selection funds better implementation, better implementation recovers more value, recovered value funds more capital. The mechanism does not need participants to be wise. It needs them to be greedy, impatient, and capable of reading a scoreboard.
 
-The prize does not ask anyone to become good. It makes doing nothing the expensive option.
+The prize does not ask anyone to become good. It just makes doing nothing more expensive than doing something.
 
-If there is one weird trick to ending war and disease, this is it: stop arguing about which idea is best and build a market that pays for whichever one actually works. The rest is implementation.
+The mechanism is: stop arguing about which idea is best and build a market that pays for whichever one actually works. The rest is implementation.
 
-You are not choosing whether to optimize. You are choosing how long to wait.
+The remaining variable is how long this takes to become obvious enough to act on.
 
