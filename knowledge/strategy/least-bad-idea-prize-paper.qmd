@@ -31,6 +31,8 @@ Most prizes on Earth produce a trophy, a speech, and approximately zero change i
 
 Here is the core property in one sentence: a machine that selects the best available mechanism and replaces itself when beaten is, by construction, at least as good as any mechanism it could select. The only way to beat the prize is to produce something better, and producing something better is the entire point. This paper describes that machine.
 
+Read that carefully. The prize is not "for the Earth Optimization Plan" in the narrow sense. The Earth Optimization Plan is the current **default reference package**. If another package reaches the same required functions and beats the Earth Optimization Plan on the published scorecard and terminal welfare metrics, that rival should win instead. The prize is for causing the **best complete implementation**, not for loyalty to any specific blueprint.
+
 ::: {.callout-important}
 ## Disqualification Rule
 
@@ -52,7 +54,7 @@ The prize exists because no existing system solves this. Prediction markets tell
 To win the prize, a proposal must clear six tests:
 
 1. **Implementation, not commentary.** It must produce actual budget reallocations, legal adoption, institutional deployment, or binding coordination, not just a white paper and a podcast circuit.
-2. **Complete Earth Optimization Plan or strict dominance.** It must implement every required function in this project, or replace each omitted function with a strictly dominating substitute on outcome, feasibility, and durability.
+2. **Complete baseline bundle or strict dominance.** It must implement every required function in the current baseline bundle, or replace each omitted function with a strictly dominating substitute on outcome, feasibility, and durability.
 3. **Lower verified cost per DALY.** If it saves fewer lives per dollar than the Earth Optimization Plan, it loses. If it reduces DALYs cheaply by dumping suffering onto voiceless creatures, it also loses.
 4. **Net welfare improvement across affected beings.** A qualifying plan must not merely move pain from one ledger to another. Offloading harm onto foreigners, future people, patients without bargaining power, or nonhuman animals is disqualification, not cleverness.
 5. **Reallocation from low NSV to high NSV.** The mechanism must redirect resources from uses with low or negative net societal value into uses with higher verified returns.
@@ -319,6 +321,16 @@ That last point is the whole trick. The prize does not defend any particular pro
 
 The treasury should normally bootstrap via **assurance contracts**, not discretionary fundraising. Pledges are committed only if the funding threshold is reached; otherwise they are not called or are returned. That is enough to let donors and organizations support the prize conditionally without risking money they cannot get back. If a seed sponsor wants even stronger early-coordination pressure, it can add a **dominant-assurance tranche** [@tabarrok1998]. In that case the failure bonus must come from a separately pre-funded underwriting reserve. It is not magic, and it is not charged to later pledgers by default.
 
+That dominant-assurance layer should be read as an optional **bootstrap accessory**, not as the identity of the prize. The prize is the selection and implementation machine. Ordinary assurance contracts are the normal treasury default. A dominant-assurance seed tranche is only for the first cold-start round, when coordination and credibility are weakest.
+
+If you want a simple sizing rule for that optional failure tranche, use:
+
+$$
+R_{fail} = b_{fail} \cdot C_{launch}
+$$
+
+where $C_{launch}$ is the threshold capital for the current top-ranked admissible package and $b_{fail}$ is the promised failure bonus as a share of committed capital if the threshold is not reached. The current practical anchor from the IAB logic is not the purely formal "$b_{fail} > 0$" result, but a planning range of roughly **2.5%-5%**: the same logic that gives a $5M$ bonus pool mobilizing $200M+$ in pledges implies about **2.5%**, while the escrow-interest example supports about **4%-5%**. On the current Earth Optimization Plan base case of {{< var treaty_campaign_total_cost >}}, that means a gross sponsor-underwritten failure tranche of roughly **$25M-$50M** for a full DAC-style cold-start round. For a smaller $200M$ proof tranche, the same rule implies roughly **$5M-$10M**. This is a launch-credibility rule for the lead capital providers or implementing coalition, not a claim that every marginal small donor becomes privately rational. In practice the cleanest path may be staged: underwrite the first proof tranche, update the verified package cost once the leading admissible design is clearer, and then scale the next round accordingly. If a superior admissible package has a lower `C_total`, the required failure tranche scales down linearly. If it requires more capital, it scales up linearly. This reserve covers **threshold failure only**. It is not insurance against downstream policy failure after capital deployment.
+
 ## Prize Constitution
 
 To make the phrase "causes implementation" mean something, the prize needs a constitution, not just a mission statement.
@@ -337,7 +349,7 @@ The constitutional rules should be equally blunt:
 - **Automatic migration trigger.** If the current winner loses admissibility or is strictly beaten on the published rule for a full review cycle, funding and support move automatically.
 - **Emergency pause is narrow.** The only valid pause grounds are fraud, rights violations, or newly discovered severe downside risk, and a pause must trigger immediate public re-review rather than quiet discretion.
 - **Money must keep moving.** If capital sits idle, the machine is broken. Treasury funds go to the best available plan that clears the rules.
-- **The protocol itself is replaceable.** The prize protocol, including the scorecard, the ranking rule, and the challenge process, is a scoreable module. A strictly better selection mechanism replaces the current one under the same replacement rule. "Strictly better" means: plans selected under the new mechanism dominate plans selected under the old one, measured on the same terminal welfare metrics (DALYs, suffering, median income). The terminal metrics are the fixed point. Everything upstream of them is improvable plumbing.
+- **The protocol itself is replaceable.** The prize protocol, including the scorecard, the ranking rule, and the challenge process, is a scoreable module. A strictly better selection mechanism replaces the current one under the same replacement rule. "Strictly better" means: plans selected under the new mechanism dominate plans selected under the old one, measured on the same terminal welfare metrics (DALYs, suffering, median income). The terminal metrics are the fixed point. Everything building toward those metrics is improvable plumbing.
 
 That is the missing bridge between "great selection rule" and "a machine that only moves forward."
 
@@ -611,7 +623,7 @@ That is just Incentive Alignment Bonds [@iab-paper-2025] with a more selective f
 Abstract mechanism design is harder to trust than a concrete example. So here is what the Earth Optimization Plan would look like if it won.
 
 1. The treasury raises the initial campaign pool through assurance contracts, optionally with a sponsor-underwritten dominant-assurance seed tranche, and escrows it under the no-override rules above.
-2. The current bundle is submitted as a complete package: treaty wedge, [dFDA](../solution/dfda.qmd) [@dfda-spec-paper-2025; @dfda-impact-paper-2025] / continuous evidence generation, regulatory-delay removal, IAB adoption system, Wishocracy preference aggregation, [Optimocracy](https://optimocracy.warondisease.org) [@optimocracy-paper-2025] / [OPG](https://opg.warondisease.org) [@opg-paper-2025] / [OBG](https://obg.warondisease.org) [@obg-paper-2025] recommendation engines, and the statutory path.
+2. The current bundle is submitted as the **default reference package**, not as a sacred blueprint: treaty wedge, [dFDA](../solution/dfda.qmd) [@dfda-spec-paper-2025; @dfda-impact-paper-2025] / continuous evidence generation, regulatory-delay removal, IAB adoption system, Wishocracy preference aggregation, [Optimocracy](https://optimocracy.warondisease.org) [@optimocracy-paper-2025] / [OPG](https://opg.warondisease.org) [@opg-paper-2025] / [OBG](https://obg.warondisease.org) [@obg-paper-2025] recommendation engines, and the statutory path.
 3. Independent auditors score the package on admissibility. It clears because it covers every required function, beats the current DALY benchmark, and preserves the public-choice and welfare constraints.
 4. Money goes to the first binding path with the best expected payoff: campaign finance, legislative drafting, treaty advocacy, scorecards, and public preference collection.
 5. Once one binding path succeeds, budget authority and legal authority start shifting real resources rather than merely improving discussion quality.
@@ -736,4 +748,3 @@ The prize does not ask anyone to become good. It just makes doing nothing more e
 The mechanism is: stop arguing about which idea is best and build a market that pays for whichever one actually works. The rest is implementation.
 
 The remaining variable is how long this takes to become obvious enough to act on.
-
