@@ -430,6 +430,25 @@ Under that structure, an endorser can participate at near-zero cost, a sponsor c
 
 The rule for keeping this unified should be blunt: an organization may brand and market its own instance, but it should not call it part of this prize family unless it accepts the same core protocol and the same automatic migration to better admissible proposals. Many brand names are fine. Many constitutions are not.
 
+### What Makes an Instance Compatible
+
+If anyone can launch a prize in an afternoon, many people will launch prizes in an afternoon. Some of those prizes will have different scoring rules, different admissibility thresholds, different payout triggers, and different ideas about what counts as winning. That is not a network. That is a noise floor.
+
+The fragmentation problem is not "too many prizes." It is "too many prizes that cannot pool resources, recognize each other's winners, or share evidence." A hundred incompatible prizes are a hundred separate bets. A hundred compatible prizes are one bet with a hundred funding channels.
+
+An instance is compatible if it commits to all six of the following:
+
+1. **Shared scorecard.** The instance uses the same published metrics and weighting rule. It can add domain-specific sub-metrics (e.g. a malaria-focused instance might weight disease-specific DALYs more heavily), but the top-level composite score must be comparable across instances.
+2. **Shared admissibility rules.** A submission that is admissible under one instance is admissible under every instance. No instance can reject a proposal that clears the published admissibility threshold just because a different instance funded it.
+3. **Mutual winner recognition.** If a submission wins under one compatible instance, every other compatible instance must accept that result as valid evidence in its own scoring process. Instances do not have to fund the same winner, but they cannot pretend the win did not happen.
+4. **Automatic migration.** If a strictly better admissible proposal appears, the instance moves funding and support to it. No instance gets to lock in a favorite permanently. This is the rule that makes the protocol self-correcting rather than self-serving.
+5. **Published treasury rules.** The six functions from the launch section (rules, intake, treasury, threshold and refunds, disputes, treasury release) must be public before money moves. An instance with secret payout conditions is not compatible; it is a grant with extra steps.
+6. **Completeness rule.** The instance cannot award the top prize to a narrow single-issue proposal that ignores required functions unless that proposal genuinely replaces the missing functions with something better. This prevents a hundred instances from each funding their favorite silo while the integrated problem stays unsolved.
+
+That is the whole compatibility spec. Everything else (branding, geography, sector focus, treasury size, host structure, marketing) is local. An instance can be called "The Minnesota Medical Innovation Prize" and focus entirely on Upper Midwest health systems, and it is still compatible if it commits to the six rules above. It can be denominated in any currency, hosted by any organization type, and marketed in any language.
+
+The practical test is simple: can two instances look at the same submission and agree on whether it is admissible, how it scores, and whether it beats the current leader? If yes, they are compatible. If no, they are separate prizes that happen to have similar names.
+
 ### Why Hosting Is Rational
 
 Organizations do not make decisions. Humans inside organizations do. So the relevant question is not "does the abstract institution benefit?" but "what is the expected net benefit to the humans deciding whether to host an instance?"
@@ -668,6 +687,62 @@ That is the whole object. Build these six functions. The rest is branding.
 
 Start with the most boring version you can defend. Use humans for adjudication first, with a written challenge process. Upgrade to automation only when the pool is large enough that human discretion becomes the main attack surface. A spreadsheet is fine. Lying about the spreadsheet is not.
 
+### What Exists Today
+
+A person should be able to create a $1 prize in a single afternoon where the money cannot be stolen and the winner gets paid. That is the design requirement. If your protocol cannot do that, it is not a protocol; it is a grant application.
+
+The three properties that make theft hard: the prize money never touches the creator's operating account, funds move only when published conditions are met, and money returns to the source if conditions are not met by the deadline. Everything below is just increasingly expensive ways to enforce those three properties. Here is what the six functions look like at two budget tiers:
+
+| Function | $1--$10K (one afternoon) | $10K+ (worth lawyering) |
+|:---|:---|:---|
+| Rules | Post on a public repository (e.g. GitHub). The commit timestamp is your proof of publication date. Free. | Same, plus pin to a content-addressed archive for cryptographic proof that rules were not edited after the fact. |
+| Intake | Google Form or email. Link it from the rules page. | Challenge platform (e.g. HeroX) with structured submission templates and assigned judges. |
+| Treasury | Escrow.com transaction: you deposit the prize amount, set release conditions, winner gets paid when conditions are met. Costs a few percent. For crypto: multi-signature wallet on a low-fee network. | Fiscal host (e.g. Open Collective) for fiat transparency with public ledger, or multi-signature wallet with independent signers for larger pools. |
+| Threshold and refunds | At this scale you are the only funder, so "threshold" means you deposited the money or you did not. Escrow.com refunds automatically if the transaction is not completed by the deadline. For crypto: set a deadline in the wallet contract. | Same logic, but with legal escrow agreement for fiat or audited contract for pooled funds from multiple contributors. |
+| Disputes | Social proof is enough. The rules are public, the submissions are public, and anyone can see whether the conditions were met. | Human judges with written reasons, plus a challenge window. For pooled treasuries: assert-and-dispute mechanism (assert result, dispute if wrong). |
+| Treasury release | You approve the escrow release when you verify the winner met the conditions. For crypto: the wallet releases when the required signers approve. Manual verification is fine at this scale. | Multi-signature release requiring independent certifier sign-off, or governance-triggered release through a published vote. |
+
+The biggest gap is that no production platform offers assurance contracts (threshold-triggered pooling with automatic refunds) as a turnkey service. For a single-creator prize this does not matter, because you deposit your own money. For pooled prizes from many contributors, you either need a custom escrow contract or a legal pledge agreement with a fiscal host.
+
+The second gap is that no existing platform supports the full structured scorecard from the scoring section above. At small scale, a spreadsheet works. At large scale, a custom scoring dashboard is needed.
+
+The protocol does not marry any vendor. If a vendor becomes stupid, keep the function and replace the vendor. The six functions are the constant. The tools are variables.
+
+### What Needs to Be Built
+
+Two pieces do not exist as off-the-shelf services:
+
+1. **Assurance contract platform.** Threshold-triggered pooling where contributors deposit funds, funds transfer to the prize treasury only if the total reaches the threshold by the deadline, and contributors get automatic refunds (plus optional failure bonus) if it does not. This is roughly a few hundred lines of escrow logic. For fiat, the same terms can be written into a legal agreement with an escrow provider.
+
+2. **Structured scoring dashboard.** A web interface that maps judge inputs to the published state vector, computes the composite PrizeScore, and publishes results with full audit trail. At small scale a spreadsheet covers this. At large scale it needs to be a real application.
+
+Everything else can be assembled from existing, production-tested components today.
+
+### The No-Single-Point-of-Failure Version
+
+The table above works. But every service in the small-scale column has a throat you can grab: an escrow provider can freeze your account, a fiscal host can be sued into compliance, a web form can be taken down by its hosting company. If you want a prize that survives the cowardice, bankruptcy, or death of every person involved, you need to remove the humans from the money path.
+
+On-chain escrow means the rules are enforced by code that nobody can edit after deployment. No government, company, or founder can freeze, redirect, or steal the funds once deposited. The cost is friction: every contributor needs a wallet, transactions cost a small fee, and if the contract code has a bug, the bug is also law. That is a real trade-off, not a hypothetical one.
+
+Here are the same six functions, implemented with no single point of failure:
+
+| Function | Trustless version | Remaining trust assumption |
+|:---|:---|:---|
+| Rules | Commit to a public repository. Hash the rules document and store the hash on-chain. Anyone can verify the rules were not changed after money moved. | None. Cryptographic proof. |
+| Intake | Public submissions via repository, on-chain registry, or content-addressed storage. | None for public submissions. Confidential submissions require encrypted channels, which adds complexity. |
+| Treasury | Escrow contract on a public blockchain. Funds are locked in code; no human can move them except through the published release conditions. Deployable via no-code tools without writing a line of code. | The contract code itself. Use audited, open-source templates. |
+| Threshold and refunds | Built into the escrow contract. If the deadline passes without a verified winner, funds return to depositors automatically. No human approval needed. | Same as treasury: the contract code. |
+| Disputes | Bonded assertion with dispute window: anyone can assert a result, and anyone can challenge it by posting a counter-bond. If challenged, resolution escalates to a decentralized arbitration service with randomly selected jurors. | Juror honesty. Mitigated by random selection, bonding, and appeal rounds, but not zero. This is distributed trust, not trustlessness. |
+| Treasury release | The escrow contract releases funds when the oracle confirms the win condition. If using multi-signature custody instead, release requires M-of-N independent signers, none of whom control the others. | Oracle correctness or signer honesty. Same distributed-trust caveat as disputes. |
+
+For prizes with objective, verifiable conditions ("did a country sign the treaty by 2028?", "did the software pass the test suite?"), this pipeline is genuinely trustless end to end. For prizes requiring subjective judgment ("which implementation plan is best?"), you can decentralize the judging but you cannot eliminate it. Bonded oracles and decentralized arbitration courts distribute trust across many independent strangers instead of concentrating it in one organization. That is a real improvement. It is not magic.
+
+None of this requires creating a token. The escrow holds dollar-pegged deposits or the native currency of whichever blockchain you choose. Contributors deposit money, winners receive money. There is no governance token, no utility token, no "prize coin," and no speculative asset. Money in, results out.
+
+The main cost is that every contributor needs a wallet. There is no way around this: if someone else holds your keys, that someone is a central point of failure, which is exactly what you are trying to remove. Wallet setup takes five minutes and is free, but it is an unfamiliar five minutes for people who have never done it. That is the real adoption barrier, not the technology.
+
+The fiat version from the table above is easier to start. The on-chain version is harder to kill. Choose based on which failure mode scares you more: friction or fragility.
+
 ### Pre-Launch Checklist
 
 Before anyone commits serious capital, publish:
@@ -695,6 +770,32 @@ You need tighter treasury machinery or custom code when any of these become true
 5. Investors stop trusting humans to behave and start demanding infrastructure
 
 That is normal. The first airplane did not have in-flight movies either.
+
+### The Retroactive Version
+
+Everything above assumes you define winning conditions before money moves: score this, beat that threshold, collect the prize. But there is an alternative. Wait until the thing actually happens, then let the people who funded it decide who deserves credit.
+
+The mechanism has two stages.
+
+**Stage one: objective trigger.** The treaty gets signed by N countries, or the clinical trial infrastructure goes live, or whatever measurable condition you defined. This is verified the same way as any other prize condition (bonded assertion, dispute window, oracle confirmation). Until the trigger fires, the treasury stays locked. No trigger, automatic refund. Nothing new here.
+
+**Stage two: pairwise credit allocation.** After the trigger fires, every contributor who put money into the pool is shown random pairs of claimants. Each claimant links to evidence of their contribution: public records, legislative histories, commit logs, news coverage, whatever they have. The contributor splits their share of the pool between the two claimants based on the evidence. Not a vote on the whole pot. Their money, their call.
+
+Why pairwise comparison instead of "rank all 10,000 claimants": because nobody can evaluate 10,000 candidates, but anyone can look at two evidence packages side by side and make a reasonable judgment. Run enough random pairs across enough contributors and the individual allocations converge on a stable credit distribution. This is the same mathematics behind competitive rating systems and preference learning. It works because the hard global ranking problem decomposes into many easy local comparisons.
+
+Why "their share" instead of "their vote": because it kills three problems at once.
+
+1. **No sybil attacks.** Fake accounts have zero funds to allocate. You can only split money you actually deposited.
+2. **No majority tyranny.** Your allocation moves your money, not mine. No coalition can redirect my share against my judgment.
+3. **It is a market, not an election.** Each contributor is a buyer choosing where their dollars go based on evidence. Markets aggregate distributed information better than polls.
+
+The evidence links are load-bearing. Without them, this is a popularity contest where famous people collect money and quiet implementers get nothing. With them, every comparison is at least minimally informed. The floor for evidence should be low (a public record, a news article, a verifiable contribution log), because the pairwise votes handle quality assessment. You are filtering out pure fiction, not pre-adjudicating merit.
+
+**What this does not solve.** Recency bias: the person who gave the final speech has flashier evidence than the person who spent three years quietly building the coalition. Strategic sandbagging: if I recognize my competitor in a pair, I allocate zero to them regardless of evidence (mitigated by random assignment and large voter pools, where any one person's spite is statistical noise, but not eliminated). And the number of comparisons needed scales with the number of claimants; roughly N log N pairs distributed across all voters, which at 10,000 claimants means maybe 20 to 30 comparisons per contributor. Manageable, but not nothing.
+
+**When to use this instead of the standard prize.** The standard prize works best when you can define exactly what winning looks like in advance: a specific plan, a specific pilot, a specific legislative outcome. The retroactive version works best when the goal is clear but the path is not, and many different contributors will do many different things over many years to get there. "End this disease" is a better fit for retroactive credit allocation than "design the best clinical trial protocol." The first is a collective achievement with distributed, hard-to-predict contributions. The second is a bounded deliverable that a scoring rubric can evaluate.
+
+Both versions use the same treasury infrastructure, the same escrow logic, and the same refund defaults. The only difference is what happens after the trigger fires: one version pays a predetermined winner, the other lets funders allocate credit after the fact.
 
 ## How the Payout Works
 
