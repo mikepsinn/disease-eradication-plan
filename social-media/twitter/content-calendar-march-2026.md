@@ -465,6 +465,67 @@ Every tweet should end with ONE of these CTAs:
 
 ---
 
+## Recurring Formats
+
+### 🧞 "3 Wishes" (Wednesdays)
+Ask followers what their 3 wishes for humanity are. Collect responses. Build engagement + preference data.
+
+**Week 1 (Mar 19):**
+> If you had 3 wishes for humanity (no wishing for more wishes, I checked), what would they be?
+> 
+> Reply below. I'm collecting data for a planet I'm trying to fix.
+> 
+> 👽
+
+**Week 2 (Mar 26):**
+> Last week I asked for your 3 wishes. The top answers:
+> 
+> 1. [cure disease / end suffering]
+> 2. [peace / end war]
+> 3. [equality / end poverty]
+> 
+> Interesting. You already agree on the destination. You just can't agree on the bus route.
+> 
+> What if you could allocate the budget directly?
+> 
+> warondisease.org
+
+### 🗳️ Wishocracy Polls (Fridays)
+Twitter polls with pairwise budget comparisons. This IS Wishocracy running on free infrastructure.
+
+**Week 1 (Mar 14):**
+> 🗳️ You control the budget. Pick one:
+> 
+> [Poll: 4 options]
+> - More clinical trials
+> - More military spending
+> - More education funding
+> - More tax cuts
+
+**Week 2 (Mar 21):**
+> 🗳️ $1 billion. You decide:
+> 
+> [Poll: 4 options]
+> - Fund 50,000 clinical trials
+> - Build 2 fighter jets
+> - Fund 100 schools
+> - Give everyone $0.13
+
+**Week 3 (Mar 28):**
+> 🗳️ Your government has $27 billion to reallocate. Where?
+> 
+> [Poll: 4 options]
+> - Cure 100 diseases
+> - Build a new aircraft carrier
+> - Universal pre-K
+> - Pay down national debt
+
+### Why This Matters
+- Every poll response = one Wishocracy pairwise comparison
+- We're running the experiment on Twitter before building the smart contract
+- Aggregate results become content: "87% of humans chose clinical trials over fighter jets. Your government chose the opposite."
+- The gap between poll results and actual budget allocation IS the political dysfunction tax, visualized
+
 ## Engagement Rules
 
 1. **Reply to every comment** (doesn't count toward 100 tweet limit? Verify.)
