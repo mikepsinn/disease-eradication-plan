@@ -36,15 +36,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 166 parameters used in the analysis, organized by type:
+This appendix documents all 165 parameters used in the analysis, organized by type:
 
 - External sources (peer-reviewed): 72
-- Calculated values: 73
+- Calculated values: 72
 - Core definitions: 21
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (73 parameters) • [External Data Sources](#sec-external) (72 parameters) • [Core Definitions](#sec-definitions) (21 parameters)
+[Calculated Values](#sec-calculated) (72 parameters) • [External Data Sources](#sec-external) (72 parameters) • [Core Definitions](#sec-definitions) (21 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -3139,157 +3139,6 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-treaty_expected_cost_per_daly.qmd >}}
-
-:::
-
-### Expected Cost-Effectiveness vs Bed Nets Multiplier: 503x {#sec-treaty_expected_vs_bed_nets_multiplier}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Expected value multiplier vs bed nets (accounts for political uncertainty at 1% success rate)
-
-**Inputs**:
-
-- [Bed Nets Cost per DALY](#sec-bed_nets_cost_per_daly) 📊: $89 (95% CI: $78 - $100)
-- [Expected Cost per DALY (Risk-Adjusted)](#sec-treaty_expected_cost_per_daly) 🔢: $0.177
-
-$$
-\begin{gathered}
-E[k_{nets}] \\
-= \frac{Cost_{nets}}{E[Cost_{DALY}]} \\
-= \frac{\$89}{\$0.177} \\
-= 503
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-E[Cost_{DALY}] \\
-= \frac{Cost_{treaty,DALY}}{P_{success}} \\
-= \frac{\$0.00177}{1\%} \\
-= \$0.177
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Cost_{treaty,DALY} \\
-= \frac{Cost_{campaign}}{DALYs_{max}} \\
-= \frac{\$1B}{565B} \\
-= \$0.00177
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Cost_{campaign} \\
-= Budget_{viral,base} + Budget_{lobby,treaty} \\
-+ Budget_{reserve} \\
-= \$250M + \$650M + \$100M \\
-= \$1B
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-DALYs_{max} \\
-= DALYs_{global,ann} \times Pct_{avoid,DALY} \times T_{accel,max} \\
-= 2.88B \times 92.6\% \times 212 \\
-= 565B
-\end{gathered}
-$$
-where:
-$$
-T_{accel,max} = T_{accel} + T_{lag} = 204 + 8.2 = 212
-$$
-where:
-$$
-\begin{gathered}
-T_{accel} \\
-= T_{first,SQ} \times \left(1 - \frac{1}{k_{capacity}}\right) \\
-= 222 \times \left(1 - \frac{1}{12.3}\right) \\
-= 204
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-T_{first,SQ} \\
-= T_{queue,SQ} \times 0.5 \\
-= 443 \times 0.5 \\
-= 222
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-T_{queue,SQ} \\
-= \frac{N_{untreated}}{Treatments_{new,ann}} \\
-= \frac{6{,}650}{15} \\
-= 443
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-N_{untreated} \\
-= N_{rare} \times 0.95 \\
-= 7{,}000 \times 0.95 \\
-= 6{,}650
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-k_{capacity} \\
-= \frac{N_{fundable,dFDA}}{Slots_{curr}} \\
-= \frac{23.4M}{1.9M} \\
-= 12.3
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-N_{fundable,dFDA} \\
-= \frac{Subsidies_{dFDA,ann}}{Cost_{pragmatic,pt}} \\
-= \frac{\$21.8B}{\$929} \\
-= 23.4M
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Subsidies_{dFDA,ann} \\
-= Funding_{dFDA,ann} - OPEX_{dFDA} \\
-= \$21.8B - \$40M \\
-= \$21.8B
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-OPEX_{dFDA} \\
-= Cost_{platform} + Cost_{staff} + Cost_{infra} \\
-+ Cost_{regulatory} + Cost_{community} \\
-= \$15M + \$10M + \$8M + \$5M + \$2M \\
-= \$40M
-\end{gathered}
-$$
-*? Low confidence*
-
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-treaty_expected_vs_bed_nets_multiplier.qmd >}}
-
-{{< include ../figures/sensitivity-table-treaty_expected_vs_bed_nets_multiplier.qmd >}}
-
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-treaty_expected_vs_bed_nets_multiplier.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-treaty_expected_vs_bed_nets_multiplier.qmd >}}
 
 :::
 
