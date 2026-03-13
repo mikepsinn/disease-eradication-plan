@@ -164,11 +164,29 @@ book:
         - knowledge/appendix/parameters-and-calculations.qmd
         # EXTRACTED: drug-development-cost-analysis.qmd -> standalone paper at drug-cost.warondisease.org
 
+    - part: "Papers & Publications"
+      chapters:
+        - knowledge/papers.qmd
+        - knowledge/economics/1-pct-treaty-impact.qmd # Standalone paper config: _quarto-1-pct-treaty-impact.yml
+        - knowledge/appendix/dfda-impact-paper.qmd # Standalone paper config: _quarto-dfda-impact.yml
+        - knowledge/appendix/incentive-alignment-bonds-paper.qmd # Standalone paper config: _quarto-iab.yml
+        - knowledge/appendix/wishocracy-paper.qmd # Standalone paper config: _quarto-wishocracy.yml
+        - knowledge/appendix/political-dysfunction-tax.qmd # Standalone paper config: _quarto-political-dysfunction-tax.yml
+        - knowledge/appendix/invisible-graveyard.qmd # Standalone paper config: _quarto-invisible-graveyard.yml
+        - knowledge/appendix/cost-of-change-analysis.qmd # Standalone paper config: _quarto-cost-of-change.yml
+        - knowledge/appendix/us-efficiency-audit.qmd # Standalone paper config: _quarto-us-efficiency-audit.yml
+        - knowledge/appendix/optimocracy-paper.qmd # Standalone paper config: _quarto-optimocracy.yml
+        - knowledge/appendix/optimal-policy-generator-spec.qmd # Standalone paper config: _quarto-opg.yml
+        - knowledge/strategy/least-bad-idea-prize-paper.qmd # Standalone paper config: _quarto-least-bad-idea-prize.yml
+        - knowledge/appendix/optimal-budget-generator-spec.qmd # Standalone paper config: _quarto-obg.yml
+        - knowledge/appendix/dfda-spec-paper.qmd # Standalone paper config: _quarto-dfda-spec.yml
+        - knowledge/appendix/right-to-trial-fda-upgrade-act.qmd # Standalone paper config: _quarto-right-to-trial.yml
+        - knowledge/appendix/drug-development-cost-analysis.qmd # Standalone paper config: _quarto-drug-development-cost.yml
+
     - part: "References"
       chapters:
         - knowledge/appendix/recovery-trial.qmd # ✅ (IMPROVED) ~9p
         - knowledge/appendix/real-world-evidence-historical-success.qmd # ✅ Pre-1962 system analysis ~12p
-        - knowledge/papers.qmd
         - knowledge/references.qmd # CSL-rendered bibliography
         - knowledge/about.md
         - knowledge/appendix/copyright.qmd # Back matter - copyright page at end for Kindle
