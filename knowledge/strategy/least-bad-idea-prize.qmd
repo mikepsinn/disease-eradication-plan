@@ -20,6 +20,8 @@ This manual is either the least bad idea on Earth or it is not. If it is, implem
 
 That suggests a simple rule: stop treating policy design like a philosophy seminar and start treating it like an engineering competition.
 
+Read that carefully. The prize is not "for the Earth Optimization Plan" in the narrow sense. The Earth Optimization Plan is the current **default reference blueprint**. If another blueprint reaches the same required functions and beats the Earth Optimization Plan on the published scorecard and terminal welfare metrics, the Earth Optimization Plan will be updated. The prize is for causing the **best complete implementation**, not for loyalty to any existing blueprint.
+
 Why a prize, specifically? Because the alternatives fail at the meta level:
 
 - A prediction market tells you what will win. It does not cause implementation. Your species is already excellent at predicting good outcomes and then not producing them.
@@ -44,7 +46,7 @@ If your proposal requires politicians, bureaucrats, investors, regulators, voter
 To win the prize, a proposal must clear six tests:
 
 1. **Implementation, not commentary.** It must produce actual budget reallocations, legal adoption, institutional deployment, or binding coordination, not just a white paper and a podcast circuit.
-2. **Complete Earth Optimization Plan or strict dominance.** It must implement every required function in this project, or replace each omitted function with a strictly dominating substitute on outcome, feasibility, and durability.
+2. **Complete baseline bundle or strict dominance.** It must implement every required function in the current baseline bundle, or replace each omitted function with a strictly dominating substitute on outcome, feasibility, and durability.
 3. **Lower verified cost per DALY.** If it saves fewer lives per dollar than the Earth Optimization Plan, it loses. If it reduces DALYs cheaply by dumping suffering onto voiceless creatures, it also loses.
 4. **Net welfare improvement across affected beings.** A qualifying plan must not merely move pain from one ledger to another. Offloading harm onto foreigners, future people, patients without bargaining power, or nonhuman animals is disqualification, not cleverness.
 5. **Reallocation from low NSV to high NSV.** The mechanism must redirect resources from uses with low or negative net societal value into uses with higher verified returns.
@@ -313,29 +315,47 @@ The payout should be heavily back-loaded, because your species is very good at c
 
 That is just [Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd) [@iab-paper-2025] with a more brutal selection rule. Good. Brutality is appropriate here. The universe is not grading on effort.
 
-## The Prize Treasury Is an IAB
+## Treasury, Bootstrap, and IABs
 
 Most prizes on Earth are funded by rich humans who feel guilty about something. This one is funded by rich humans who feel greedy about something. Both motivations work. The second one scales.
 
-The prize treasury is not a donation pool waiting for a benefactor. It IS an [Incentive Alignment Bond](../solution/incentive-alignment-bonds.qmd) structure: a dominant assurance contract where the prize itself is the investable asset.
+The prize treasury is not a donation pool waiting for a benefactor. But it is also not automatically a complete dominant-assurance stack on day one. The prize sits **above** any particular financing module. [Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd) are the current default adoption engine inside the baseline bundle, not the constitutional identity of the prize.
 
-- **Specification bounty** funded by interest on escrowed pledges during the challenge window.
-- **Pilot and adoption bounties** funded by the IAB revenue split ({{< var victory_bond_funding_pct >}} to investors, remainder to prize operations and medical research).
-- **Outcome perpetuity** = the IAB revenue share itself. Winners get a permanent franchise funded by treaty flows.
-- **Dominant assurance protection.** If the fundraising threshold is not met, pledges return plus a bonus. Investors face asymmetric upside: they profit if the prize works, and they lose nothing if it does not. See the [IAB chapter](../solution/incentive-alignment-bonds.qmd) for the $1M-3M activation energy.
+The clean launch order is:
 
-The prize does not need a benefactor. It needs investors who like money. Greedier investors, more prize capital, stronger selection pressure, faster implementation. The treasury grows with self-interest, not despite it.
+1. **Ordinary assurance contracts by default.** Pledges are committed only if the launch threshold is reached; otherwise they are not called or are returned.
+2. **Optional dominant-assurance seed tranche.** A separate sponsor can underwrite a failure bonus for the first cold-start round if stronger coordination pressure is needed.
+3. **IAB-style financing once the winning package is being adopted.** That is where the long-run investor upside and ongoing outcome-side revenues live.
+
+If you want a simple sizing rule for the optional dominant-assurance seed tranche, use:
+
+$$
+R_{fail} = b_{fail} \cdot C_{launch}
+$$
+
+where $C_{launch}$ is the threshold capital for the current top-ranked admissible package and $b_{fail}$ is the promised failure bonus as a share of committed capital if the threshold is not reached. The practical planning range is roughly **2.5%-5%** of launch capital, not because the theorem needs that much, but because credibility and early coordination usually do. On the current Earth Optimization Plan base case of {{< var treaty_campaign_total_cost >}}, that implies roughly **$25M-$50M** for a full cold-start round. For a smaller $200M$ proof tranche, the same rule implies roughly **$5M-$10M**. This is a launch-credibility rule for the lead capital providers or implementing coalition, not a claim that every marginal small donor becomes privately dominant.
+
+Current external platforms cover pieces of this stack, not the whole thing:
+
+- **HeroX** is useful for challenge hosting, submissions, and human judging, but not for escrowed assurance funding or a cryptoeconomic oracle.
+- **Kickstarter** provides genuine all-or-nothing thresholding, but not winner certification, dispute resolution, or a failure bonus.
+- **Open Collective** provides transparent fiscal hosting, budgeting, and manual refunds, but not threshold-triggered assurance logic.
+- **GoFundMe** is useful for flexible collection, but it is explicitly not all-or-nothing.
+- **Gitcoin Grants Stack** should not be treated as the default bootstrap path because Gitcoin officially sunset it in 2025.
+- A custom on-chain stack can compose **Juicebox + Safe + Snapshot + UMA/Kleros**, but that is still a custom integration project, not an off-the-shelf assurance-plus-oracle product.
+
+So the near-term reality is boring and therefore useful: use off-the-shelf tools for submissions, transparent operations, and maybe basic thresholding; use sponsor underwriting if you want a DAC-style seed tranche; and only treat the full oracle-enforced prize treasury as a custom build once the pool is large enough to justify it.
 
 ## Why Participating Is the Only Rational Move
 
 I ran the math on not participating. For every actor class, the utility of sitting this out is negative. This should not require explanation, but your species has a gift for finding reasons not to do obviously beneficial things, so here are the receipts.
 
-- **Investors.** Dominant via assurance contract: pledge returns plus bonus if the threshold is unmet; {{< var victory_bond_annual_return_pct >}} annual returns if it is met. Not investing means leaving asymmetric upside on the table. See [IAB investor structure](../solution/incentive-alignment-bonds.qmd).
+- **Lead capital providers.** Rational when they expect either IAB-style upside if the package is adopted, or a separately underwritten failure bonus large enough to justify escrowing capital in the first round. The prize does not require every small donor to become individually dominant. It requires a credible coalition that can get the first threshold over the line.
 - **Entrepreneurs and teams.** Specification bounty > 0 for producing a complete mechanism. Pilot bounty scales with verified results. Outcome perpetuity means a permanent franchise on recovered value. Not competing means leaving the franchise to someone else.
 - **Politicians.** IAB scoring already makes supporting the winner career-optimal (reelection odds, campaign support, post-office careers). The prize adds independent validation cover: "I supported the highest-ranked mechanism" is a better defense than "I liked this one." Reduced political risk.
 - **Citizens.** [Wishocracy](../solution/wishocracy.qmd) [@wishocracy-paper-2025] participation is costless. Non-participation means accepting other people's preferences for your health spending.
 
-The key insight: `G_monotone > 0` applies to the prize itself, not just to winning proposals. More greed means more capital in the treasury, which means higher bounties, which means better submissions, which means stronger selection, which means faster implementation. The prize is a greed amplifier with disease eradication as the exhaust.
+The key insight: `G_monotone > 0` applies to the prize itself, not just to winning proposals. More greed means more underwriting, more lead capital, more scrutiny, and stronger bids to beat the current baseline. The prize is a greed amplifier with disease eradication as the exhaust.
 
 ## Why Public Choice Theory Approves
 
@@ -358,7 +378,7 @@ The stronger version is this: if greed increases, more actors should race to ide
 
 On Wishonia, when something works, everyone copies the protocol and puts their own name on the storefront. On Earth, when something works, everyone invents a slightly different version with incompatible rules and then argues about which one is the real one. This is how you ended up with 14 variations of socialism and 47 competing sustainability certifications.
 
-The prize should spread through **many instances, one protocol**. Any organization can brand its own campaign, raise into its own treasury, and run in its own jurisdiction, but it must use the same constitution, ranking rule, admissibility test, and automatic-replacement trigger. Three participation modes:
+The prize should spread through **many instances, one protocol**. Any organization can brand its own campaign, raise into its own treasury, and run in its own jurisdiction, but it must use the same constitution, ranking rule, admissibility test, and automatic-replacement trigger. Full-blueprint forks compete for the grand prize; scoped forks should be treated as module bounties unless they grow back into a complete admissible package. Three participation modes:
 
 1. **Endorser.** Promotes the protocol. Holds no treasury funds. Cost: approximately zero.
 2. **Sponsor.** Raises money into independent escrow under the shared rules. Does not control scoring.

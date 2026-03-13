@@ -31,46 +31,6 @@ local function get_nested(value, keys)
   return current
 end
 
-local function build_html_note()
-  local inlines = {
-    pandoc.Strong({ pandoc.Str("Version"), pandoc.Space(), pandoc.Str("note.") }),
-    pandoc.Space(),
-    pandoc.Str("This"),
-    pandoc.Space(),
-    pandoc.Str("website"),
-    pandoc.Space(),
-    pandoc.Str("is"),
-    pandoc.Space(),
-    pandoc.Str("the"),
-    pandoc.Space(),
-    pandoc.Str("maintained"),
-    pandoc.Space(),
-    pandoc.Str("interactive"),
-    pandoc.Space(),
-    pandoc.Str("version"),
-    pandoc.Space(),
-    pandoc.Str("of"),
-    pandoc.Space(),
-    pandoc.Str("this"),
-    pandoc.Space(),
-    pandoc.Str("paper."),
-  }
-
-  if doi then
-    table.insert(inlines, pandoc.Space())
-    table.insert(inlines, pandoc.Str("Citable"))
-    table.insert(inlines, pandoc.Space())
-    table.insert(inlines, pandoc.Str("archival"))
-    table.insert(inlines, pandoc.Space())
-    table.insert(inlines, pandoc.Str("snapshot:"))
-    table.insert(inlines, pandoc.Space())
-    table.insert(inlines, pandoc.Link({ pandoc.Str("https://doi.org/" .. doi) }, "https://doi.org/" .. doi))
-    table.insert(inlines, pandoc.Str("."))
-  end
-
-  return pandoc.Div({ pandoc.Para(inlines) }, pandoc.Attr("", { "version-note" }))
-end
-
 local function build_archive_note()
   local inlines = {
     pandoc.Strong({ pandoc.Str("Version"), pandoc.Space(), pandoc.Str("note.") }),
@@ -128,9 +88,10 @@ function Pandoc(doc)
   end
 
   local note = nil
-  if FORMAT:match("html") then
-    note = build_html_note()
-  elseif FORMAT:match("latex") then
+  -- Keep the version note on archival outputs only. The live HTML site is the
+  -- primary reading surface, so injecting a "maintained interactive version"
+  -- banner there is redundant.
+  if FORMAT:match("latex") then
     note = build_archive_note()
   else
     return doc
