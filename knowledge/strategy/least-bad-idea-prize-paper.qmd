@@ -43,7 +43,7 @@ If your proposal requires politicians, bureaucrats, investors, regulators, voter
 
 The political economy of public goods provision is governed by what Olson [-@olson1965] called the logic of collective action. Concentrated interests (defense contractors, entrenched pharmaceutical monopolies, legacy energy conglomerates) face high per-capita stakes in policy outcomes, so they easily overcome coordination costs to fund sustained lobbying. Diffuse beneficiaries (the general public dying of untreated diseases, bearing the cost of regulatory delay, or subsidizing low-return military spending) have tiny individual stakes in any single policy fight and cannot coordinate a proportional response.
 
-This keeps happening even though the public has far more money. Global household wealth totals {{< var global_household_wealth_usd >}}, compared to {{< var concentrated_interest_sector_market_cap_usd >}} held by concentrated opposition sectors. The public has the money. It does not have the coordination mechanism. Politicians know which programs have high benefit-cost ratios and which do not. They fund the low-return programs anyway, because in the current equilibrium the concentrated cost of opposing a lobby exceeds the diffuse benefit of pleasing an uncoordinated public [@iab-paper-2025].
+This keeps happening even though the public has far more money. Global household wealth totals {{< var global_household_wealth_usd >}}, compared to {{< var concentrated_interest_sector_market_cap_usd >}} held by concentrated opposition sectors. The public has the money. It does not have the coordination mechanism. Politicians know which programs have high benefit-cost ratios and which do not. They fund the low-return programs anyway, because right now the concentrated cost of opposing a lobby exceeds the diffuse benefit of pleasing an uncoordinated public [@iab-paper-2025].
 
 The prize exists because no existing system solves this. Prediction markets tell you what will win; they do not cause implementation. DAOs suffer the same Olsonian capture: whoever buys the most tokens sets the agenda. Expert committees are capturable by definition. A prize with published scoring, adversarial challenges, and automatic replacement is the one structure where capturing it requires beating every challenger on 28 verified metrics simultaneously. That is not capture-proof. But it is capture-expensive, which is probably the best available.
 
@@ -71,7 +71,7 @@ These are the minimum variables the prize should score:
 | `C_total` | Total all-in adoption cost | Political feasibility is a cost question, not a vibes question | Treaty path: {{< var treaty_campaign_total_cost >}}; global upper-bound framing from *Price of Political Change* [@cost-of-change-paper-2025]: ~$200B |
 | `P_success` | Probability of binding adoption and sustained implementation | Expected value matters more than conditional fantasy | Conservative central estimate in the Earth Optimization Plan: {{< var political_success_probability >}} |
 | `T_first` | Time to first binding implementation | Delay kills; speed is part of the prize | Right-to-Trial act implies concrete clocks: 180 days, 1 year, 18 months |
-| `R_shift` | Annual dollars redirected from lower NSV uses to higher NSV uses | The point is resource reallocation, not rhetorical victory | First legible benchmark: {{< var treaty_annual_funding >}}/year |
+| `R_shift` | Annual dollars redirected from lower NSV uses to higher NSV uses | The point is resource reallocation, not rhetorical victory | First concrete benchmark: {{< var treaty_annual_funding >}}/year |
 | `NSV_gain` | Annual net societal value recovered | Prize should measure recovered value, not just gross spending | Global ceiling: {{< var political_dysfunction_global_opportunity_cost_total >}}/year; U.S. waste map: {{< var us_gov_waste_total >}}/year |
 | `CE_conditional` | Cost per DALY if adopted | Measures the physics/economics of the policy itself | Treaty path benchmark: {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}}/DALY |
 | `CE_expected` | Risk-adjusted cost per DALY = `C_total / (P_success * DALY_net)` | Measures the politics plus the policy | Earth Optimization Plan benchmark: {{< var treaty_expected_cost_per_daly >}}/DALY |
@@ -128,15 +128,15 @@ Terminology matters here. The **Earth Optimization Plan** is the integrated impl
 
 The full loop: military budgets shrink by 1%, the freed {{< var treaty_annual_funding >}}/year funds pragmatic trials at {{< var recovery_trial_cost_reduction_factor >}} lower cost per patient, those trials discover treatments years faster, the treatments save lives and generate economic returns, those returns pay investors who funded the political campaign to pass the treaty, and media coverage of cures creates voter demand that makes expansion easier than repeal. Each stage feeds the next. That feedback loop is why the numbers compound rather than stall.
 
-**The reallocation source.** The 1% Treaty redirects {{< var treaty_annual_funding >}}/year by coordinating every signatory to cut the same 1% of military spending simultaneously ({{< var global_military_spending_annual_2024 >}} globally). No new taxes. The game theory is stable because proportional reduction preserves relative deterrence. The economic logic is straightforward: military spending beyond deterrence returns roughly 0.7:1 on welfare; medical research returns 100:1+. The treaty moves money from the worst line item to the best one.
+**The reallocation source.** The [1% Treaty](../solution/1-percent-treaty.qmd) [@1-pct-treaty-impact-paper-2025] redirects {{< var treaty_annual_funding >}}/year by coordinating every signatory to cut the same 1% of military spending simultaneously ({{< var global_military_spending_annual_2024 >}} globally). No new taxes. The game theory is stable because proportional reduction preserves relative deterrence. The economic logic is straightforward: military spending beyond deterrence returns roughly 0.7:1 on welfare; medical research returns 100:1+. The treaty moves money from the worst line item to the best one.
 
-**The medical bottleneck.** Current clinical trials cost {{< var traditional_phase3_cost_per_patient >}}/patient and exclude 86% of the population, producing a {{< var status_quo_queue_clearance_years >}} backlog to clear 6,650 untreated diseases. Pragmatic trials embedded in routine care cost {{< var dfda_pragmatic_trial_cost_per_patient >}}/patient (the RECOVERY trial found dexamethasone in {{< var oxford_recovery_trial_duration_months >}} for {{< var recovery_trial_cost_per_patient >}}/patient and saved {{< var recovery_trial_global_lives_saved >}} [@recovery-cost-500; @recovery-trial-1m-lives-saved]). At treaty funding through that cheaper infrastructure, the queue drops to {{< var dfda_queue_clearance_years >}}. Meanwhile, {{< var existing_drugs_efficacy_lag_deaths_total_nounit >}} people died waiting an average of {{< var efficacy_lag_years >}} for drugs that were already proven to work but stuck in regulatory queues [@bio-clinical-development-2021]. Right to Trial eliminates that lag by allowing conditional access after Phase I safety data.
+**The medical bottleneck.** Current clinical trials cost {{< var traditional_phase3_cost_per_patient >}}/patient and exclude 86% of the population, producing a {{< var status_quo_queue_clearance_years >}} backlog to clear 6,650 untreated diseases. Pragmatic trials embedded in routine care cost {{< var dfda_pragmatic_trial_cost_per_patient >}}/patient (the RECOVERY trial found dexamethasone in {{< var oxford_recovery_trial_duration_months >}} for {{< var recovery_trial_cost_per_patient >}}/patient and saved {{< var recovery_trial_global_lives_saved >}} [@recovery-cost-500; @recovery-trial-1m-lives-saved]). At treaty funding through that cheaper infrastructure, the queue drops to {{< var dfda_queue_clearance_years >}}. Meanwhile, {{< var existing_drugs_efficacy_lag_deaths_total_nounit >}} people died waiting an average of {{< var efficacy_lag_years >}} for drugs that were already proven to work but stuck in regulatory queues [@bio-clinical-development-2021]. [Right to Trial](../solution/dfda.qmd) eliminates that lag by allowing conditional access after Phase I safety data.
 
-**The political adoption engine.** Incentive Alignment Bonds flip the Olsonian equilibrium through three layers: an independent organization scores politicians on net-social-value voting records, PACs support high-scorers and oppose low-scorers, and foundations guarantee post-office careers for champions. Voting for high-NSV programs becomes the career-maximizing choice. Investor returns ({{< var victory_bond_annual_return_pct >}} annually) come from revenue share of treaty-generated funding flows, not from magic; the benefit-cost ratio of the mechanism itself is {{< var iab_mechanism_benefit_cost_ratio >}} [@iab-paper-2025].
+**The political adoption engine.** [Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd) flip the Olsonian equilibrium through three layers: an independent organization scores politicians on net-social-value voting records, PACs support high-scorers and oppose low-scorers, and foundations guarantee post-office careers for champions. Voting for high-NSV programs becomes the career-maximizing choice. Investor returns ({{< var victory_bond_annual_return_pct >}} annually) come from revenue share of treaty-generated funding flows, not from magic; the benefit-cost ratio of the mechanism itself is {{< var iab_mechanism_benefit_cost_ratio >}} [@iab-paper-2025].
 
-**The waste map.** The Political Dysfunction Tax ({{< var political_dysfunction_global_opportunity_cost_total >}}/year) is not a spending figure. It is the gap between actual output and optimal-governance output, aggregating a waste ledger (military overspend, healthcare administration, regulatory burden) and an opportunity ledger (delayed cures, migration barriers, lead poisoning). The US Efficiency Audit itemizes {{< var us_gov_waste_total >}}/year across ten categories; the three largest are healthcare administration, housing policy failure, and excess military spending [@us-efficiency-audit-paper-2025; @political-dysfunction-tax-paper-2025].
+**The waste map.** The [Political Dysfunction Tax](../problem/unrepresentative-democracy.qmd) ({{< var political_dysfunction_global_opportunity_cost_total >}}/year) is not a spending figure. It is the gap between actual output and optimal-governance output, aggregating a waste ledger (military overspend, healthcare administration, regulatory burden) and an opportunity ledger (delayed cures, migration barriers, lead poisoning). The [US Efficiency Audit](https://us-efficiency-audit.warondisease.org) itemizes {{< var us_gov_waste_total >}}/year across ten categories; the three largest are healthcare administration, housing policy failure, and excess military spending [@us-efficiency-audit-paper-2025; @political-dysfunction-tax-paper-2025].
 
-**Preference aggregation.** Wishocracy asks citizens to drag a slider between two random budget priorities ("Nuclear modernization vs. clinical trials?"). About 20 comparisons, 5 minutes. Random pairs prevent gaming. Statistical models (Bradley-Terry, PageRank) aggregate millions of pairwise judgments into budget-preference weights without speeches, lobbying, or horse-trading. Crowds consistently outperform expert panels on preference recovery [@wishocracy-paper-2025].
+**Preference aggregation.** [Wishocracy](../solution/wishocracy.qmd) asks citizens to drag a slider between two random budget priorities ("Nuclear modernization vs. clinical trials?"). About 20 comparisons, 5 minutes. Random pairs prevent gaming. Statistical models (Bradley-Terry, PageRank) aggregate millions of pairwise judgments into budget-preference weights without speeches, lobbying, or horse-trading. Crowds consistently outperform expert panels on preference recovery [@wishocracy-paper-2025].
 
 None of these mechanisms require inventing new physics. The Montreal Protocol coordinated proportional reduction across nations and worked. PEPFAR redirected tens of billions of dollars into health and saved millions of lives. The RECOVERY trial proved pragmatic trials deliver at {{< var recovery_trial_cost_reduction_factor >}} lower cost per patient. The open question is not whether coordinated reallocation, pragmatic trials, or incentive-aligned political financing work individually. It is whether combining them into a single plan, selected and funded via prize, produces better results than deploying them separately or not at all.
 
@@ -240,7 +240,7 @@ Here $J_{baseline}$ means enough authority, budget, and population coverage to m
 
 ## Welfare Accounting Protocol
 
-The welfare guardrails above should not be interpreted as poetic aspirations. They need an explicit accounting rule.
+The welfare guardrails above are not poetry. They need real rules.
 
 Every serious proposal should publish a **class-by-class impact table** with at least these rows:
 
@@ -248,7 +248,7 @@ Every serious proposal should publish a **class-by-class impact table** with at 
 - future humans
 - nonhuman animals directly affected
 - nonhuman animals indirectly affected through land use, food systems, or ecological spillovers
-- affected living systems whose degradation plausibly creates durable downstream suffering
+- ecosystems whose decline would cause lasting suffering
 
 For each class, the submission should report:
 
@@ -262,9 +262,9 @@ For each class, the submission should report:
 The operational rule is simple:
 
 1. **Use lower bounds, not central estimates, for admissibility.** If a class looks positive only on optimistic assumptions, the proposal is not yet admissible.
-2. **Price uncertainty against the proposal.** Unknown but plausible severe harms count as negative until measurement improves.
+2. **Count uncertainty against the proposal.** Unknown but plausible severe harms count as negative until measurement improves.
 3. **Keep rights as hard constraints.** A proposal does not buy its way out of coercion, fraud, or autonomy violations by producing a large aggregate gain elsewhere.
-4. **Separate welfare from money.** Economic equivalents are useful for scale intuition, but they do not substitute for DALYs, suffering, mortality, or class-specific welfare accounting.
+4. **Separate welfare from money.** Dollar figures help you sense the scale, but they do not substitute for DALYs, suffering, mortality, or class-specific welfare accounting.
 
 That is how `W_sentient_net`, `W_class_min`, and `B_rights` stop being slogans and become real tests.
 
@@ -326,10 +326,10 @@ To make the phrase "causes implementation" mean something, the prize needs a con
 At minimum, that constitution should define five roles:
 
 1. **Treasury trustee.** Holds capital in escrow and may release it only by the published deployment rule.
-2. **Measurement layer.** Independent auditors score admissibility and rank proposals against the published scorecard.
-3. **Challenge layer.** Adversaries can dispute any score by posting a challenge bond and submitting contrary evidence.
-4. **Deployment layer.** The operational arm that sends money, media attention, contracts, and political support to whichever plan is winning.
-5. **Recertification layer.** Periodically re-scores the winner so the machine can replace it when something better appears.
+2. **Scoring team.** Independent auditors score admissibility and rank proposals against the published scorecard.
+3. **Challenge process.** Adversaries can dispute any score by posting a challenge bond and submitting contrary evidence.
+4. **Action arm.** The team that sends money, media attention, contracts, and political support to whichever plan is winning.
+5. **Re-ranking process.** Periodically re-scores the winner so the machine can replace it when something better appears.
 
 The constitutional rules should be equally blunt:
 
@@ -337,12 +337,13 @@ The constitutional rules should be equally blunt:
 - **Automatic migration trigger.** If the current winner loses admissibility or is strictly beaten on the published rule for a full review cycle, funding and support move automatically.
 - **Emergency pause is narrow.** The only valid pause grounds are fraud, rights violations, or newly discovered severe downside risk, and a pause must trigger immediate public re-review rather than quiet discretion.
 - **Money must keep moving.** If capital sits idle, the machine is broken. Treasury funds go to the best available plan that clears the rules.
+- **The protocol itself is replaceable.** The prize protocol, including the scorecard, the ranking rule, and the challenge process, is a scoreable module. A strictly better selection mechanism replaces the current one under the same replacement rule. "Strictly better" means: plans selected under the new mechanism dominate plans selected under the old one, measured on the same terminal welfare metrics (DALYs, suffering, median income). The terminal metrics are the fixed point. Everything upstream of them is improvable machinery.
 
 That is the missing bridge between "great selection rule" and "a machine that only moves forward."
 
 ## Protocol Adoption by Existing Organizations
 
-The best dissemination model is not "every organization invents its own prize from scratch." That creates a mess: different rules, different scoring, easier corruption. The best model is **many instances, one protocol**.
+The right model is not "every organization invents its own prize from scratch." That creates a mess: different rules, different scoring, easier corruption. The best model is **many instances, one protocol**.
 
 The protocol is the non-negotiable part:
 
@@ -356,7 +357,7 @@ An instance is the local wrapper around that protocol:
 
 - a branded fundraising campaign
 - a jurisdiction-specific treasury
-- a domain-specific tranche
+- a domain-specific fund
 - an implementation partnership in one country, state, or sector
 
 That distinction matters because it lets many organizations participate without making the mechanism incoherent.
@@ -388,15 +389,15 @@ The project's own model gives a lower-bound answer. If the Earth Optimization Pl
 ::: {.callout-important}
 ## Host Dominance Rule
 
-The host does not need to believe its instance will single-handedly change the world. It only needs to believe two things: first, that if the instance turns out to be causally inert, host downside is bounded near zero; second, that if the instance raises implementation probability or speeds implementation even slightly, the expected value to the humans involved is large. Under the current conservative decision prior, one additional compatible instance is already worth {{< var host_prize_instance_personal_gross_value_treaty_floor >}} on the Treaty Trajectory floor or {{< var host_prize_instance_personal_gross_value_wishonia_trajectory >}} on the Wishonia Trajectory, before counting host-specific upside or any separate tail-risk term.
+The host does not need to believe its instance will single-handedly change the world. It only needs to believe two things: first, that if the instance does nothing, host downside is close to zero; second, that if the instance raises implementation probability or speeds implementation even slightly, the expected value to the humans involved is large. Using our conservative estimate, one additional compatible instance is already worth {{< var host_prize_instance_personal_gross_value_treaty_floor >}} on the Treaty Trajectory floor or {{< var host_prize_instance_personal_gross_value_wishonia_trajectory >}} on the Wishonia Trajectory, before counting host-specific upside or any separate tail-risk term.
 :::
 
-The decision-relevant comparison is not "is implementation good?" It is "is hosting better than not hosting, for the actual human deciding?" Under the protocol design above, the intended answer is stronger than a vague yes: if hosting makes no difference, downside should be close to zero; if hosting changes implementation probability or timing even slightly, hosting is the better bet.
+The real comparison is not "is implementation good?" It is "is hosting better than not hosting, for the actual human deciding?" Under the protocol design above, the intended answer is stronger than a vague yes: if hosting makes no difference, downside should be close to zero; if hosting changes implementation probability or timing even slightly, hosting is the better bet.
 
-| Human choice inside the host organization | If hosting is causally inert | If hosting increases implementation probability or speed |
+| Human choice inside the host organization | If hosting does nothing | If hosting increases implementation probability or speed |
 |---|---|---|
 | Create a compatible prize instance | Roughly zero or slightly positive if host costs are reimbursed and the instance still generates learning, donor growth, or coalition-building | Large positive expected value: the host gets the same human-level implementation benefit as everyone else, roughly {{< var wishonia_trajectory_lifetime_income_gain_per_capita >}} on the Wishonia Trajectory or {{< var treaty_trajectory_lifetime_income_gain_per_capita >}} on the conservative Treaty Trajectory floor, plus whatever incremental value comes from improving the odds or speed of implementation |
-| Do not create a prize instance | Baseline, with at least {{< var political_dysfunction_tax_per_person_annual >}} per person per year of broad status-quo loss still running underneath the choice | Baseline, with the same {{< var political_dysfunction_tax_per_person_annual >}}-per-person annual loss still running, while forgoing the incremental option value of moving the odds or speeding implementation |
+| Do not create a prize instance | Baseline, with at least {{< var political_dysfunction_tax_per_person_annual >}} per person per year of broad status-quo loss still running underneath the choice | Baseline, with the same {{< var political_dysfunction_tax_per_person_annual >}}-per-person annual loss still running, while giving up the chance to improve the odds or speed things up |
 
 That matrix is intentionally blunt. The host case does not require certainty, and it does not require any one organization to be decisive. It only requires that hosting be designed so the left column is near zero and the right column is positive. The right question is not "can our instance finish the whole job alone?" It is "can our instance shift the odds?" For a human decision-maker, the expected gain from creating an instance instead of doing nothing is approximately:
 
@@ -404,9 +405,9 @@ $$
 \Delta EV_{host} \approx \Delta p \cdot B_{person} + p_{create} \cdot H_{host} + (1-p_{create}) \cdot L_{host} - C_{host}
 $$
 
-where $\Delta p$ is the increase in implementation probability caused by hosting an instance, $B_{person}$ is the human-level benefit if the plan is implemented, $H_{host}$ is any additional host-side upside if implementation happens, $L_{host}$ is any residual learning or donor value if it does not, and $C_{host}$ is the host's true unreimbursed cost.
+where $\Delta p$ is the increase in implementation probability caused by hosting an instance, $B_{person}$ is the human-level benefit if the plan is implemented, $H_{host}$ is any additional host-side upside if implementation happens, $L_{host}$ is any leftover learning or donor value if it does not, and $C_{host}$ is the host's true unreimbursed cost.
 
-Why should one additional compatible instance change $\Delta p$ or $\Delta T$ at all? Because an instance is not just a logo. It is another fundraising channel, another donor network, another region covered, another partner who can build things, and another shot at the failover ladder. A host does not need to believe its instance is decisive. It only needs to believe it is marginally useful.
+Why should one additional compatible instance change $\Delta p$ or $\Delta T$ at all? Because an instance is not just a logo. It is another fundraising channel, another donor network, another region covered, another partner who can build things, and another shot at the failover ladder. A host does not need to believe its instance is decisive. It only needs to believe it helps a little.
 
 | Channel by which one more instance can matter | Why it can raise implementation probability or reduce delay |
 |---|---|
@@ -416,7 +417,7 @@ Why should one additional compatible instance change $\Delta p$ or $\Delta T$ at
 | Parallel execution | Multiple compatible treasuries can pursue treaty, statute, agency-rule, procurement, and institutional-adoption paths at the same time instead of serially. |
 | Reusable implementation assets | One instance can generate legal drafts, scorecards, audits, pilots, and coalition assets that reduce costs for every later instance. |
 
-Those channels are the practical reason the host question should be modeled with a positive but uncertain $\Delta p$ and $\Delta T$ rather than assuming that "not creating an instance" is neutral.
+Those channels are the practical reason you should assume hosting has a real (if uncertain) effect on the odds and speed, rather than treating "do nothing" as free.
 
 Historical evidence supports this. Implementation-market mechanisms with similar structure (published criteria, conditional payouts, parallel competition) have measurably changed outcomes in other domains:
 
@@ -427,11 +428,11 @@ Historical evidence supports this. Implementation-market mechanisms with similar
 | DARPA Grand Challenges (2004-2007) | $1M-$2M prizes for autonomous vehicles completing a published course; iterated annually | No team finished the 2004 race; five finished in 2005; challenge alumni went on to found or staff virtually every major self-driving program (Google/Waymo, Uber ATG, Aurora, etc.) |
 | Development Impact Bonds (2010-present) | Private investors fund social programs; government or donors repay only upon independently verified outcomes | Now operating in 30+ countries across criminal justice, workforce, education, and health; attracted private capital into public-goods domains previously funded only by grants or government budgets |
 
-None of these is a perfect analog. The prize described here is more ambitious in scope and more complex in its scoring rule. But the consistent pattern is the one that matters for $\Delta p$: a structured incentive mechanism with published criteria and conditional payouts attracted competing investments, pulled in people who wouldn't have bothered otherwise, and produced results bigger than what any one funder achieved alone. The question for a potential host is not "has this exact prize been tried before?" It is "do structured implementation incentives reliably attract marginal effort?" The historical record says yes.
+None of these is a perfect analog. The prize described here is more ambitious in scope and more complex in its scoring rule. But the consistent pattern is the one that matters for $\Delta p$: a structured incentive mechanism with published criteria and conditional payouts attracted competing investments, pulled in people who wouldn't have bothered otherwise, and produced results bigger than what any one funder achieved alone. The question for a potential host is not "has this exact prize been tried before?" It is "do structured implementation incentives reliably attract extra effort?" The historical record says yes.
 
-If you want a Monte Carlo-backed starting estimate rather than hand-worked scenarios, the parameter model can express that too. Using a conservative prior of {{< var host_prize_instance_delta_implementation_probability >}} incremental implementation probability from one additional compatible prize instance and {{< var host_prize_instance_acceleration_years_nounit >}} years of acceleration, the personal gross expected value is {{< var host_prize_instance_personal_gross_value_treaty_floor >}} on the Treaty Trajectory floor or {{< var host_prize_instance_personal_gross_value_wishonia_trajectory >}} on the Wishonia Trajectory. Those figures still exclude any host-specific donor, fee, or reputational upside, and they still exclude any separate Current-Trajectory collapse-tail term.
+If you want a Monte Carlo-backed starting estimate rather than hand-worked scenarios, the parameter model can express that too. Starting from a conservative assumption of {{< var host_prize_instance_delta_implementation_probability >}} incremental implementation probability from one additional compatible prize instance and {{< var host_prize_instance_acceleration_years_nounit >}} years of acceleration, the personal gross expected value is {{< var host_prize_instance_personal_gross_value_treaty_floor >}} on the Treaty Trajectory floor or {{< var host_prize_instance_personal_gross_value_wishonia_trajectory >}} on the Wishonia Trajectory. Those figures still exclude any host-specific donor, fee, or reputational upside, and they still exclude any separate Current-Trajectory collapse-tail term.
 
-In plain English, the conservative host prior says: "suppose one additional compatible instance raises implementation probability by only a tenth of a percentage point and speeds implementation by only one year." Even under that deliberately modest assumption, the gross personal value is already large.
+In plain English, the conservative assumption says: "suppose one additional compatible instance raises implementation probability by only a tenth of a percentage point and speeds implementation by only one year." Even under that deliberately modest assumption, the gross personal value is already large.
 
 | Conservative host-effect scenario | Treaty Trajectory floor personal value | Wishonia Trajectory personal value | What it assumes |
 |---|---|---|---|
@@ -464,34 +465,34 @@ The same point can be stated in inverse form. If host downside is actually close
 | `$100K` | `0.192%` | `0.671%` |
 | `$1M` | `1.92%` | `6.71%` |
 
-Those thresholds are biased against creating the prize because they ignore two additional benefits. First, the host can receive bounded donor, fee, and implementation upside under the protocol rules above. Second, speed matters. The model's implied annual per-person opportunity cost of political dysfunction is {{< var political_dysfunction_tax_per_person_annual >}} before counting the gains from speeding up medical timelines, so even a one-year acceleration has large expected human value.
+Those thresholds are biased against creating the prize because they ignore two additional benefits. First, the host can receive capped donor, fee, and implementation upside under the protocol rules above. Second, speed matters. The model's implied annual per-person opportunity cost of political dysfunction is {{< var political_dysfunction_tax_per_person_annual >}} before counting the gains from speeding up medical timelines, so even a one-year acceleration has large expected human value.
 
-Another way to read that table is as an illustrative role map:
+Another way to read that table is by role:
 
-| Illustrative host posture | Example unreimbursed cost scenario | Break-even lift on Wishonia Trajectory numbers | Break-even lift on Treaty Trajectory floor | Practical reading |
+| Host role | Example unreimbursed cost scenario | Break-even lift on Wishonia Trajectory numbers | Break-even lift on Treaty Trajectory floor | Practical reading |
 |---|---|---|---|---|
 | Endorser-like | `$1K` | `0.0019%` | `0.0067%` | A tiny marginal effect is enough to justify participation. |
-| Sponsor-like | `$10K` | `0.019%` | `0.067%` | The needed causal effect is still extremely small. |
+| Sponsor-like | `$10K` | `0.019%` | `0.067%` | The needed effect is still extremely small. |
 | Deployment-partner-like | `$100K` | `0.192%` | `0.671%` | Even a much more active role needs only a modest improvement in odds. |
 | Heavy operator-like | `$1M` | `1.92%` | `6.71%` | A very expensive role still clears if the instance materially improves execution. |
 
 The baseline expected-value figures above deliberately exclude host-specific upside. That omission makes the argument cleaner and more conservative, but it is not the whole picture.
 
-| Host role | Baseline human upside already counted above | Additional bounded upside not yet counted in the EV figures |
+| Host role | Baseline human upside already counted above | Additional capped upside not yet counted |
 |---|---|---|
 | Endorser | The same human-level implementation benefit as everyone else if the protocol works | Audience growth, donor-list growth, coalition relevance, and reputational upside at near-zero treasury risk |
 | Sponsor | The same human-level implementation benefit as everyone else if the protocol works | Capped admin reimbursement, fundraising growth, and local influence without custody of scoring or payout migration |
 | Deployment partner | The same human-level implementation benefit as everyone else if the protocol works | Contracts, operating rights, capped fees, or outcome-linked compensation if real implementation happens |
 
-Those role-specific gains can also be expressed semi-quantitatively as host-value-equivalent ranges without pretending the repo has already identified one universal number. The right way to read them is as bounded scenario bands anchored to the same `$1K`, `$10K`, `$100K`, and `$1M` cost ladder used above.
+Those role-specific gains can also be expressed roughly as value ranges without pretending the repo has already identified one universal number. The right way to read them is as scenario ranges tied to the same `$1K`, `$10K`, `$100K`, and `$1M` cost ladder used above.
 
-| Host role | Conservative additional host-value-equivalent range to test | Practical implication |
+| Host role | Conservative additional value range | Practical implication |
 |---|---|---|
 | Endorser | `+$1K` to `+$10K` from donor growth, audience expansion, coalition relevance, or reputation | Even modest upside can cancel most or all endorser-like downside, making the instance close to zero-cost before counting any world-improvement benefit. |
-| Sponsor | `+$10K` to `+$100K` from capped admin reimbursement, fundraising spread, or local influence | A sponsor that clears even the low end of this band largely offsets the cost posture used in the break-even rows above. |
+| Sponsor | `+$10K` to `+$100K` from capped admin reimbursement, fundraising spread, or local influence | A sponsor that clears even the low end of this band largely offsets the cost level used in the break-even rows above. |
 | Deployment partner | `+$100K` to `+$1M` from implementation contracts, operating rights, capped fees, or outcome-linked compensation | If real implementation happens, an active operator can move from "worth doing on world-improvement grounds" to "privately attractive as well." |
 
-One more upside matters specifically for nonprofits competing for foundation grants: hosting gives them a truthfully stronger impact case than most ordinary health nonprofits can make. That does not mean every foundation will fund a policy-oriented prize instance. It means that any foundation screening heavily on expected welfare per dollar has a clear reason to take a compatible host seriously.
+One more upside matters specifically for nonprofits competing for foundation grants: hosting gives them a truthfully stronger impact case than most ordinary health nonprofits can make. That does not mean every foundation will fund a policy-oriented prize instance. It means that any foundation that cares most about expected good per dollar has a clear reason to take a compatible host seriously.
 
 | Grant-competition question | Conservative answer from the model | Why it matters for a nonprofit host |
 |---|---|---|
@@ -519,36 +520,36 @@ The missing comparison is downside structure. A normal grant is usually spent up
 
 | Foundation decision | If the prize instance never clears threshold or never finds an admissible implementation path | If the instance moves implementation probability or speed even slightly | Practical reading |
 |---|---|---|---|
-| Make a compatible contingent prize grant | Most or all capital stays uncalled or returns to the donor pool; downside is mostly diligence, small ops support, or limited early tranche exposure | Very large mission upside, plus the same human trajectory upside the grantmaker personally receives as a member of the beneficiary set | Best asymmetric profile if the instance is protocol-compatible and capital is genuinely conditional |
-| Make an ordinary direct grant | Capital is spent either way; benefits are real but usually local, linear, and capped by program scale | Good mission outcome, but no comparable shot at unlocking the whole Earth Optimization Plan or a better replacement | Better for guaranteed near-term spend, weaker on upside-per-dollar and personal trajectory leverage |
+| Make a compatible contingent prize grant | Most or all capital stays uncalled or returns to the donor pool; downside is mostly diligence, small ops support, or limited early fund exposure | Very large mission upside, plus the same human trajectory upside the grantmaker personally receives as a member of the beneficiary set | Best asymmetric profile if the instance is protocol-compatible and capital is genuinely conditional |
+| Make an ordinary direct grant | Capital is spent either way; benefits are real but usually local, linear, and capped by program scale | Good mission outcome, but no comparable shot at unlocking the whole Earth Optimization Plan or a better replacement | Better for guaranteed near-term spend, weaker on upside-per-dollar and personal trajectory gains |
 | Do not fund | No capital loss, but no option value created and at least {{< var political_dysfunction_tax_per_person_annual >}} per person per year of broad status-quo loss continues running underneath the choice | The grantmaker free-rides if others act and otherwise remains on the current trajectory, including the same {{< var political_dysfunction_tax_per_person_annual >}}-per-person annual loss plus the disease, delay, and Current-Trajectory collapse-tail risks described below | Safest optically, weakest on both mission leverage and selfish expected value |
 
-So the strongest honest claim is conditional, not mystical: if a foundation can fund a **compatible** prize instance through assurance-style or otherwise conditional capital, then on the paper's own objective it is a strong candidate for the highest-leverage grant the foundation can make, because it does more good per dollar than most grants, costs almost nothing if it fails, and the people deciding also personally benefit if it works.
+So the strongest honest claim is conditional, not mystical: if a foundation can fund a **compatible** prize instance through assurance-style or otherwise conditional capital, then on the paper's own objective it is a strong candidate for the highest-impact grant the foundation can make, because it does more good per dollar than most grants, costs almost nothing if it fails, and the people deciding also personally benefit if it works.
 
 And the collective case is sharper still. If zero foundations and no equivalent capital providers support compatible prize instances, then the default is not "business as usual plus no extra upside." The default is continued exposure to the Current Trajectory: lower income than the Treaty or Wishonia trajectories, uncured disease, compounding political dysfunction, and the destructive economy rising toward 25% of GDP in {{< var destructive_economy_years_to_25pct_gdp >}} and 50% in {{< var destructive_economy_years_to_50pct_gdp >}}. On this paper's framing, that is the road toward global failed-state dynamics, not the road away from them.
 
-These tables should be read as **what changes when you choose**, not as complete world ledgers. The abstention and ordinary-grant rows do not mean "nothing bad happens." They mean "the status-quo downside remains in force." If you want one umbrella scalar for that baseline rather than a list of narrower channels, use the political dysfunction tax: {{< var political_dysfunction_tax_per_person_annual >}} per person per year, or {{< var political_dysfunction_global_opportunity_cost_total >}} globally each year. The quantified disease, delay, parasitic-economy, and Current-Trajectory collapse-tail burdens below are supporting detail for that umbrella cost, not separate numbers to add mechanically on top of it.
+These tables should be read as **what changes when you choose**, not as complete world ledgers. The abstention and ordinary-grant rows do not mean "nothing bad happens." They mean "the status-quo downside remains in force." If you want one single number for that baseline rather than a list of narrower channels, use the political dysfunction tax: {{< var political_dysfunction_tax_per_person_annual >}} per person per year, or {{< var political_dysfunction_global_opportunity_cost_total >}} globally each year. The quantified disease, delay, parasitic-economy, and Current-Trajectory collapse-tail burdens below are supporting detail for that umbrella cost, not separate numbers to add mechanically on top of it.
 
 Three reasons to host: everyone benefits if it works, even a tiny improvement in the odds is worth real money, and the host might also get direct organizational benefits on top.
-Any host-specific upside has a simple mathematical effect: it reduces true unreimbursed cost, which moves the organization downward in the break-even table above and makes the required causal effect even smaller.
+Any host-specific upside has a simple mathematical effect: it reduces true unreimbursed cost, which moves the organization downward in the break-even table above and makes the required effect even smaller.
 
 The monetary EV numbers above should be read as a lower bound, not the whole welfare case. The repo already quantifies non-income upside with uncertainty ranges; it is only omitted from the dollar estimate to avoid mixing units and counting things twice.
 
-| Already-quantified welfare layer from the current host prior | Conservative expected value from one additional compatible instance | What this is |
+| Welfare already counted under our conservative assumption | Conservative expected value from one additional compatible instance | What this is |
 |---|---|---|
 | Income-side lower bound | {{< var host_prize_instance_personal_gross_value_treaty_floor >}} on the Treaty Trajectory floor; {{< var host_prize_instance_personal_gross_value_wishonia_trajectory >}} on the Wishonia Trajectory | Dollar-valued lower bound from lifetime-income gain plus avoided delay |
-| Probability-channel DALYs | {{< var host_prize_instance_expected_attributable_dalys >}} | Existing dFDA DALY estimate multiplied by the host $\Delta p$ prior |
-| Probability-channel lives saved | {{< var host_prize_instance_expected_attributable_lives_saved >}} | Existing dFDA lives-saved estimate multiplied by the host $\Delta p$ prior |
-| Probability-channel suffering hours averted | {{< var host_prize_instance_expected_attributable_suffering_hours >}} | Existing dFDA suffering-hours estimate multiplied by the host $\Delta p$ prior |
-| Current-Trajectory collapse-tail probability already in the model | Year-20 collapse-tail proxy ("Moronia" in the companion futures chapter): {{< var moronia_trajectory_probability_year_20 >}} | The catastrophe-side probability is modeled; what is not yet parameterized here is a separate host-level catastrophe-loss scalar |
+| DALYs from improving the odds | {{< var host_prize_instance_expected_attributable_dalys >}} | Existing dFDA DALY estimate multiplied by the host $\Delta p$ prior |
+| Lives saved from improving the odds | {{< var host_prize_instance_expected_attributable_lives_saved >}} | Existing dFDA lives-saved estimate multiplied by the host $\Delta p$ prior |
+| Suffering hours averted from improving the odds | {{< var host_prize_instance_expected_attributable_suffering_hours >}} | Existing dFDA suffering-hours estimate multiplied by the host $\Delta p$ prior |
+| Collapse risk already in the model | Year-20 collapse-tail proxy ("Moronia" in the companion futures chapter): {{< var moronia_trajectory_probability_year_20 >}} | The catastrophe-side probability is modeled; what is not yet parameterized here is a separate host-level catastrophe cost number |
 
 So the real distinction is not "certain numbers" versus "uncertain numbers." Almost all the important numbers in this project are uncertain. The correct distinction is between estimates that already exist in the model with explicit uncertainty and estimates we haven't put numbers on yet. Health, suffering, and the Wishonia-versus-collapse framing are already in the first category. Host-specific donor or fee upside is mostly still in the second.
 
-Read as a decision rather than an accounting entry: under the current conservative host prior, abstaining instead of hosting means walking away from a lower-bound personal EV of {{< var host_prize_instance_personal_gross_value_treaty_floor >}} to {{< var host_prize_instance_personal_gross_value_wishonia_trajectory >}}, plus an expected attributable impact on the order of {{< var host_prize_instance_expected_attributable_dalys >}}, {{< var host_prize_instance_expected_attributable_lives_saved >}}, and {{< var host_prize_instance_expected_attributable_suffering_hours >}} through the probability-lift channel alone.
+Read as a decision rather than an accounting entry: under our conservative assumption, abstaining instead of hosting means walking away from a lower-bound personal EV of {{< var host_prize_instance_personal_gross_value_treaty_floor >}} to {{< var host_prize_instance_personal_gross_value_wishonia_trajectory >}}, plus an expected attributable impact on the order of {{< var host_prize_instance_expected_attributable_dalys >}}, {{< var host_prize_instance_expected_attributable_lives_saved >}}, and {{< var host_prize_instance_expected_attributable_suffering_hours >}} through improving the odds alone.
 
-If you want a rough number on the catastrophe risk without pretending there is one right answer, the clean way to do it is scenario analysis. If one additional compatible instance reduces Current-Trajectory collapse probability by the same marginal amount that it raises implementation probability, then the personal tail-risk value is simply $\Delta p \times L_{catastrophe}$.
+If you want a rough number on the catastrophe risk without pretending there is one right answer, the clean way to do it is scenario analysis. If one additional compatible instance reduces Current-Trajectory collapse probability by the same marginal amount that it raises implementation probability, then the personal value of avoiding that risk is simply $\Delta p \times L_{catastrophe}$.
 
-| Personal catastrophe-equivalent loss if Current-Trajectory collapse is avoided | Value of `0.01 percentage points` less collapse risk | Value of `0.1 percentage points` less collapse risk | Value of `1 percentage point` less collapse risk |
+| What collapse would cost you personally | Value of `0.01 percentage points` less collapse risk | Value of `0.1 percentage points` less collapse risk | Value of `1 percentage point` less collapse risk |
 |---|---|---|---|
 | `$1M` | `+$100` | `+$1K` | `+$10K` |
 | `$10M` | `+$1K` | `+$10K` | `+$100K` |
@@ -590,9 +591,9 @@ The mechanism does not care whose plan is currently winning. If yours is better,
 
 Bootstrap capital and project selection are different problems. Assurance contracts solve the first problem well enough: how to pool small contributions from many beneficiaries into a treasury large enough to matter without asking organizations to spend money they do not yet have. A sponsor-underwritten dominant-assurance tranche can accelerate the first round, but it is optional. Neither version tells the treasury which downstream implementers deserve funding once the money exists.
 
-For that layer, the prize can pay for proven results after they happen. Implementers fund work up front using their own capital or outside investment, produce auditable outcomes, and then get paid by the prize for outcomes they can prove only after the outcomes exist. In the medical domain, those claims would typically be denominated in audited DALYs averted, suffering hours avoided, or verified mortality reduction. In governance domains, they would be denominated in verified resource reallocation, durable policy adoption, or measured welfare gains under the same admissibility constraints. This preserves the paper's core logic: the prize does not pay for intentions; it pays for verified movement on the objective function.
+For that layer, the prize can pay for proven results after they happen. Implementers fund work up front using their own capital or outside investment, produce auditable outcomes, and then get paid by the prize for outcomes they can prove only after the outcomes exist. In the medical domain, those claims would typically be measured in audited DALYs averted, suffering hours avoided, or verified mortality reduction. In governance domains, they would be measured in verified resource reallocation, durable policy adoption, or measured welfare gains under the same admissibility constraints. This preserves the paper's core logic: the prize does not pay for intentions; it pays for verified movement on the scorecard.
 
-This layer should remain downstream of the completeness rule rather than replacing it. Retroactive purchasing is a way to pick and fund projects within the winning plan, not a license for narrow local patches to outrank complete packages. That distinction matters. The prize first decides which complete implementation plan wins. Only then should decentralized implementers compete to supply the cheapest verified components within that plan.
+This layer should remain under the completeness rule rather than replacing it. Retroactive purchasing is a way to pick and fund projects within the winning plan, not a license for narrow local patches to outrank complete packages. That distinction matters. The prize first decides which complete implementation plan wins. Only then should decentralized implementers compete to supply the cheapest verified components within that plan.
 
 ## How the Payout Works
 
@@ -610,9 +611,9 @@ That is just Incentive Alignment Bonds [@iab-paper-2025] with a more selective f
 Abstract mechanism design is harder to trust than a concrete example. So here is what the Earth Optimization Plan would look like if it won.
 
 1. The treasury raises the initial campaign pool through assurance contracts, optionally with a sponsor-underwritten dominant-assurance seed tranche, and escrows it under the no-override rules above.
-2. The current bundle is submitted as a complete package: treaty wedge, dFDA / continuous evidence generation, regulatory-delay removal, IAB adoption machinery, Wishocracy preference aggregation, Optimocracy / OPG / OBG recommendation engines, and the statutory path.
+2. The current bundle is submitted as a complete package: treaty wedge, [dFDA](../solution/dfda.qmd) [@dfda-spec-paper-2025; @dfda-impact-paper-2025] / continuous evidence generation, regulatory-delay removal, IAB adoption machinery, Wishocracy preference aggregation, [Optimocracy](https://optimocracy.warondisease.org) [@optimocracy-paper-2025] / [OPG](https://opg.warondisease.org) [@opg-paper-2025] / [OBG](https://obg.warondisease.org) [@obg-paper-2025] recommendation engines, and the statutory path.
 3. Independent auditors score the package on admissibility. It clears because it covers every required function, beats the current DALY benchmark, and preserves the public-choice and welfare constraints.
-4. The deployment layer routes capital into the first binding path with the best expected payoff: campaign finance, legislative drafting, treaty advocacy, scorecards, and public preference collection.
+4. Money goes to the first binding path with the best expected payoff: campaign finance, legislative drafting, treaty advocacy, scorecards, and public preference collection.
 5. Once one binding path succeeds, budget authority and legal authority start shifting real resources rather than merely improving discussion quality.
 6. That first success funds the next missing or underpowered modules automatically through the completion covenant until the whole bundle is live.
 7. Implementers then compete inside that winning bundle to supply the cheapest verified pieces, and later challengers can still replace the whole bundle if they genuinely dominate it.
