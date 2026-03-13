@@ -18,8 +18,8 @@ dih-render:
   emoji: "🏆"
   index-source: knowledge/strategy/least-bad-idea-prize-paper.qmd
   fallback-404-redirect-domain: https://manual.WarOnDisease.org
-  netlify-site-id: ""
-  netlify-cname: ""
+  netlify-site-id: "4b864c23-3f9e-4a83-a6dc-9a2f7690eb80"
+  netlify-cname: "least-bad-idea-prize-warondisease-org.netlify.app"
   show-confidence-intervals: true
   concept-terms:
     - term: "Least Bad Idea Prize"
