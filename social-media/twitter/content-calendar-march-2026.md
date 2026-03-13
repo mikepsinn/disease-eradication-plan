@@ -520,6 +520,51 @@ Twitter polls with pairwise budget comparisons. This IS Wishocracy running on fr
 > - Universal pre-K
 > - Pay down national debt
 
+### 📜 "Your Rep Voted For This" (Tuesdays)
+Find real bills that passed (or failed) with terrible cost-benefit ratios. Present them as polls. Show the gap between what the public wants and what they got.
+
+**Format:**
+> Your representatives just voted to [horrible thing].
+> 
+> Would you have voted yes?
+> 
+> [Poll: Yes / No / I need more info]
+> 
+> [Link to bill text or summary]
+
+**Example bills to surface:**
+- Farm bills that pay farmers NOT to grow food while people go hungry
+- Military procurement that the Pentagon didn't ask for (Congress adds weapons the military doesn't want because the factory is in their district)
+- Drug scheduling bills that block research on promising compounds
+- Regulatory capture bills written by the industry they "regulate"
+- Subsidies to fossil fuels while cutting medical research
+- Bills that passed with zero public awareness at 2 AM
+
+**Sources for horrible bills:**
+- congress.gov (search recent votes)
+- GovTrack.us (tracks all votes with summaries)
+- OpenSecrets.org (shows who funded the yes votes)
+- ProPublica Congress API (free, programmatic access)
+
+**The follow-up tweet (next day):**
+> Yesterday's poll: 94% of you voted NO on [bill].
+> 
+> Your representative voted YES.
+> 
+> They received $[amount] from [industry] last quarter.
+> 
+> This is called "representation."
+> 
+> What if you could allocate the budget directly?
+> warondisease.org
+
+**Why this is devastating:**
+- Real bills, real votes, real money — not hypotheticals
+- The poll quantifies the representation gap with zero editorializing
+- The follow-up connecting the vote to campaign donations writes itself
+- Every Tuesday becomes a recurring demonstration that Wishocracy is needed
+- Builds a dataset: "On 47 bills this year, public preference diverged from congressional votes 89% of the time. The average campaign contribution to yes-voters was $X."
+
 ### Why This Matters
 - Every poll response = one Wishocracy pairwise comparison
 - We're running the experiment on Twitter before building the smart contract
