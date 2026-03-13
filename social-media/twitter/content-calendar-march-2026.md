@@ -37,7 +37,7 @@ Every tweet should end with ONE of these CTAs:
 - [x] AM: Disqualification rule (POSTED ✅)
 - [x] AM: Wrong question / feasibility (POSTED ✅)
 - [x] AM: 3.57 degrees / thumb movement (POSTED ✅)
-- [ ] PM: **Option B — The greedy pitch** 🔧
+- [x] PM: **Option B — The greedy pitch** 🔧 (POSTED ✅ ID: 2032446813106540813 @ 13:20 UTC)
   > We're not asking you to be brave.
   > 
   > We're asking you to be greedy in a slightly different direction.
