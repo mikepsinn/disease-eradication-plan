@@ -3,7 +3,7 @@ title: 'The Least Bad Idea in the World Prize: An Implementation Market for Gove
 subtitle: A Standing Prize for the First Mechanism That Can Verifiably Reallocate Resources from Low-Value to High-Value Uses While Surviving Contact with Selfish Humans
 description: "One weird trick: score governance reform on 32 metrics, fund whatever wins, replace the winner when something better appears. By construction, the machine is at least as good as anything it finds. Compatible with selfish humans."
 abstract: |
-  Current governance mechanisms allocate trillions of dollars based on lobbying intensity, institutional inertia, and political convenience rather than verified net societal value. This paper proposes a standing implementation prize that treats governance reform as an engineering competition rather than a philosophy seminar. The prize scores proposals on a published state vector of 32 variables (cost-effectiveness, welfare impact, political feasibility, capture resistance, and completeness) and awards not cash but adoption capital, political support, distribution, and operating rights. Admissibility requires positive net welfare for every affected class of beings, zero rights violations, complete coverage of a baseline bundle of required governance functions, binding legal force, greed-monotonicity, and automatic reinvestment into missing modules. The ranking rule maximizes risk-adjusted net societal value recovery per dollar of adoption cost, weighted by evidence quality and implementability. The mechanism is compatible with public choice theory: no actor is asked to become less selfish; stronger self-interest makes the system stronger. If the current leading candidate (the Earth Optimization Plan) is optimal, the prize causes its implementation. If a strict improvement exists, the prize discovers and funds that instead. Either outcome dominates the status quo of endless argument with no implementation market.
+  Current governance mechanisms allocate trillions of dollars based on lobbying intensity, institutional inertia, and political convenience rather than verified net societal value. This paper proposes a standing implementation prize that treats governance reform as an engineering competition rather than a philosophy seminar. The prize scores proposals on a published state vector of 32 variables (cost-effectiveness, welfare impact, political feasibility, capture resistance, and completeness), releases treasury funds only on 2 terminal welfare metrics (median healthy life years and median real income), and awards not cash but adoption capital, political support, distribution, and operating rights. Admissibility requires positive net welfare for every affected class of beings, zero rights violations, complete coverage of the Minimum Acceptable Governance (a required set of governance functions), binding legal force, greed-monotonicity, and automatic reinvestment into missing modules. The ranking rule maximizes risk-adjusted net societal value recovery per dollar of adoption cost, weighted by evidence quality and implementability. The mechanism is compatible with public choice theory: no actor is asked to become less selfish; stronger self-interest makes the system stronger. If the current leading candidate (the Earth Optimization Plan) is optimal, the prize causes its implementation. If a strict improvement exists, the prize discovers and funds that instead. Either outcome dominates the status quo of endless argument with no implementation market.
 published: true
 tags:
   - strategy
@@ -54,7 +54,7 @@ The prize exists because no existing system solves this, and the closest alterna
 To win the prize, a proposal must clear six tests:
 
 1. **Implementation, not commentary.** It must produce actual budget reallocations, legal adoption, institutional deployment, or binding coordination, not just a white paper and a podcast circuit.
-2. **Complete baseline bundle or strict dominance.** It must implement every required function in the current baseline bundle, or replace each omitted function with a strictly dominating substitute on outcome, feasibility, and durability.
+2. **Complete coverage or strict dominance.** It must implement every required function in the Minimum Acceptable Governance, or replace each omitted function with a strictly dominating substitute on outcome, feasibility, and durability.
 3. **Lower verified cost per DALY.** If it saves fewer lives per dollar than the Earth Optimization Plan, it loses. If it reduces DALYs cheaply by dumping suffering onto voiceless creatures, it also loses.
 4. **Net welfare improvement across affected beings.** A qualifying plan must not merely move pain from one ledger to another. Offloading harm onto foreigners, future people, patients without bargaining power, or nonhuman animals is disqualification, not cleverness.
 5. **Reallocation from low NSV to high NSV.** The mechanism must redirect resources from uses with low or negative net societal value into uses with higher verified returns.
@@ -93,7 +93,7 @@ These are the minimum variables the prize should score:
 | `B_rights` | Hard blocking-factor count | A plan that improves averages by violating rights is not a win | OPG explicitly treats freedom/autonomy constraints as blockers [@opg-paper-2025] |
 | `W_sentient_net` | Net welfare across all affected sentient beings | Prevents fake wins that export suffering to weaker populations or animals | Must stay positive for humans, future people, and nonhuman animals on net |
 | `W_class_min` | Welfare change for the worst-off affected class of living or sentient beings | Aggregate gains are not enough if any major class is sacrificed | Operational rule: humans, future humans, nonhuman animals, and affected living systems must each be non-negative on the best available model |
-| `M_complete` | Baseline-bundle completion score | Prevents narrow proposals from winning by solving only one bottleneck | Grand prize requires 100% coverage of the required-function bundle below |
+| `M_complete` | Minimum Acceptable Governance completion score | Prevents narrow proposals from winning by solving only one bottleneck | Grand prize requires 100% coverage of the required-function bundle below |
 | `L_bind` | Binding-force score | A plan is not implemented until it controls law, budgets, institutions, or enforceable contracts | Binding examples in the Earth Optimization Plan: treaty, statute, agency rule, PAC-financed scorecards, auditable contracts |
 | `J_cov` | Jurisdictional and population coverage | Pilot success is not system implementation | Must scale to enough authority, budget, and population to match or beat baseline `R_shift` |
 | `T_full` | Time to full-bundle deployment | Time to first win is not time to complete Earth Optimization Plan implementation | Measured from launch until every required function is live or dominated |
@@ -105,7 +105,7 @@ These are the minimum variables the prize should score:
 
 That is the minimum scoreboard. Without it, you are comparing essays, which is how governance proposals have been selected so far, and which has produced the results you currently have.
 
-## The Baseline Bundle
+## Minimum Acceptable Governance
 
 This prize is not comparing proposals to isolated papers one at a time. The thing to beat is the **integrated bundle of required functions** implied by the companion papers.
 
@@ -122,7 +122,7 @@ This prize is not comparing proposals to isolated papers one at a time. The thin
 | Legal and institutional implementation path | **Right to Trial & FDA Upgrade Act** + treaty/statutory tools | Must create equal or stronger binding force in law, budget control, or institutional design |
 | Narrative, coalition, and sequencing wrapper | **How to End War and Disease** | Must coordinate adoption at equal or lower cost and failure risk |
 
-That is the baseline bundle. The grand prize is for the first mechanism that covers **every row** in that table or replaces any row with a strictly better module.
+That is the Minimum Acceptable Governance. The grand prize is for the first mechanism that covers **every row** in that table or replaces any row with a strictly better module.
 
 ## How the Earth Optimization Plan Achieves Its Numbers {#how-the-plan-achieves-its-numbers}
 
@@ -150,9 +150,9 @@ None of these mechanisms require inventing new physics. The Montreal Protocol co
 
 The grand prize is not for the cheapest local patch. It is for the first mechanism that closes the whole loop from diagnosis to reallocation to durable implementation.
 
-1. Every required function in the baseline bundle must be implemented directly or replaced by a dominating substitute.
+1. Every required function in the Minimum Acceptable Governance must be implemented directly or replaced by a dominating substitute.
 2. A substitute counts as dominating only if it matches or improves cost per DALY, suffering reduction, coverage, durability, and greed-compatibility relative to the module it replaces, and genuinely improves at least one of those dimensions.
-3. Partial packages may win milestone bounties, but they do not win the grand prize.
+3. Partial packages may win early-stage bounties (specification, pilot, adoption), but they do not win the grand prize.
 4. If a proposal begins with only part of the bundle live, a fixed share of verified recovered value must be contractually routed into the remaining missing functions until `M_complete = 1` or every missing function has a certified dominating substitute.
 
 To put the cost-effectiveness threshold in context:
@@ -186,7 +186,7 @@ CE_{expected} &\le CE_{baseline,best}
 \end{aligned}
 $$
 
-Here $J_{baseline}$ means enough authority, budget, and population coverage to match or beat the baseline bundle's implementation footprint, and $D_{min}$ means at least two election cycles or equivalent treaty/contractual lock-in. Those are the hard blocking rules: no sacrificed class, no missing module, no non-binding pilot, and no mechanism that gets worse when humans act selfishly.
+Here $J_{baseline}$ means enough authority, budget, and population coverage to match or beat the Minimum Acceptable Governance's implementation footprint, and $D_{min}$ means at least two election cycles or equivalent treaty/contractual lock-in. Those are the hard blocking rules: no sacrificed class, no missing module, no non-binding pilot, and no mechanism that gets worse when humans act selfishly.
 
 ## Welfare Accounting Protocol
 
@@ -304,13 +304,13 @@ The constitution should not release all treasury capital at once. A milestone la
 | `dHealthy_med` | Median healthy life years gained | 50% | Released proportionally as measured health gains cross pre-published thresholds in at least one jurisdiction | Peer-reviewed quasi-experimental study or RCT with causal attribution |
 | `gIncome_med` | Median real after-tax income growth | 50% | Released proportionally as measured income gains cross pre-published thresholds in at least one jurisdiction | Peer-reviewed quasi-experimental study with causal attribution |
 
-The table has two rows because those are the two terminal welfare metrics. Everything the prize exists to produce is either healthy life years or income. If healthy life years went up, trials worked, money moved, and legislation passed. If income rose, governance reform functioned. Paying separately for budget reallocation or trial enrollment is paying for plumbing that may or may not deliver water. Pay for water. The bounty structure below (spec/pilot/adoption) already funds early-stage implementation work; the milestone table governs the main treasury and releases only on proven outcomes. These are complementary: bounties fund implementation, milestones pay for results. Fraud is also harder with terminal metrics, because the baseline bundle already includes the verification infrastructure. The Optimitron [@optimocracy-paper-2025] measures both terminal metrics through five independent sources (Census Bureau, Federal Reserve, BLS, academic panel studies, and tax data) aggregated by median, plus a sixth methodology-independent stream from decentralized citizen surveys. Corrupting this requires simultaneously bribing five institutions with different governance structures, different funding sources, and different reasons to hate each other, without any of them noticing or telling anyone. Faking budget transfers requires one cooperative auditor. Faking population-level health and income outcomes across five independent measurement systems is the plot of a movie where the criminals lose.
+The table has two rows because those are the two terminal welfare metrics. Everything the prize exists to produce is either healthy life years or income. If healthy life years went up, trials worked, money moved, and legislation passed. If income rose, governance reform functioned. Paying separately for budget reallocation or trial enrollment is paying for plumbing that may or may not deliver water. Pay for water. The bounty structure below (spec/pilot/adoption) already funds early-stage implementation work; the milestone table governs the main treasury and releases only on proven outcomes. These are complementary: bounties fund implementation, milestones pay for results. Fraud is also harder with terminal metrics, because the Minimum Acceptable Governance already includes the verification infrastructure. The Optimitron [@optimocracy-paper-2025] measures both terminal metrics through five independent sources (Census Bureau, Federal Reserve, BLS, academic panel studies, and tax data) aggregated by median, plus a sixth methodology-independent stream from decentralized citizen surveys. Corrupting this requires simultaneously bribing five institutions with different governance structures, different funding sources, and different reasons to hate each other, without any of them noticing or telling anyone. Faking budget transfers requires one cooperative auditor. Faking population-level health and income outcomes across five independent measurement systems is the plot of a movie where the criminals lose.
 
 Two objections arise immediately.
 
 First: terminal metrics take years to measure, so who funds the implementation work in between? That is not a bug. It is venture capital. Retroactive impact purchasing lets implementers fund work up front with private capital and get reimbursed after verified outcomes exist. Every serious investment operates on multi-year horizons. The measurement lag is the filter: if you cannot sustain implementation long enough for outcomes to become measurable, you did not implement anything worth paying for.
 
-Second: causal attribution at the macro level is hard. How do you prove that *this* reform caused the income increase rather than a tech boom or commodity swing? You do not need global proof. The table says "in at least one jurisdiction." Staggered treaty adoption hands you the natural experiment: signatories vs. non-signatories, difference-in-differences or synthetic control. That is exactly how PEPFAR was evaluated. And the baseline bundle already includes the machine built to run those analyses continuously: the Optimitron [@optimocracy-paper-2025] applies synthetic control, difference-in-differences, and regression discontinuity across thousands of jurisdictions that already made different policy choices. It does not wait for an academic team to design a study, secure funding, and publish. It processes incoming data from all jurisdictions as it arrives. The attribution lag shrinks from "years for someone to do the study" to "months for the data to update." And if people in adopting jurisdictions are measurably richer and less dead than people in non-adopting ones, the academic identification debate is a luxury the dead cannot afford.
+Second: causal attribution at the macro level is hard. How do you prove that *this* reform caused the income increase rather than a tech boom or commodity swing? You do not need global proof. The table says "in at least one jurisdiction." Staggered treaty adoption hands you the natural experiment: signatories vs. non-signatories, difference-in-differences or synthetic control. That is exactly how PEPFAR was evaluated. And the Minimum Acceptable Governance already includes the machine built to run those analyses continuously: the Optimitron [@optimocracy-paper-2025] applies synthetic control, difference-in-differences, and regression discontinuity across thousands of jurisdictions that already made different policy choices. It does not wait for an academic team to design a study, secure funding, and publish. It processes incoming data from all jurisdictions as it arrives. The attribution lag shrinks from "years for someone to do the study" to "months for the data to update." And if people in adopting jurisdictions are measurably richer and less dead than people in non-adopting ones, the academic identification debate is a luxury the dead cannot afford.
 
 ### Challenge and Dispute Resolution {#challenge-and-dispute-resolution}
 
@@ -409,7 +409,7 @@ If you contribute implementation work (research, software, policy drafting, tria
 
 **The cost of not acting is not zero.** Political dysfunction already costs {{< var political_dysfunction_tax_per_person_annual >}} per person per year in unrealized value. The destructive economy (military spending beyond deterrence plus cybercrime) is already {{< var global_destructive_economy_pct_gdp >}} of GDP. If current growth rates continue, it reaches 25% in {{< var destructive_economy_years_to_25pct_gdp >}} and 50% in {{< var destructive_economy_years_to_50pct_gdp >}}. At 50%, the parasitic economy exceeds the productive one. The incentive structure of a failed state applies globally, and the transition is probably irreversible because the institutions that could reverse it no longer function. The modeled probability of reaching that regime is {{< var moronia_trajectory_probability_year_20 >}} at year 20. "Do nothing" is not a neutral baseline. It is a bet that these trends reverse without intervention.
 
-So the individual expected value of contributing has three channels:
+So the individual expected value of contributing has four channels:
 
 | Channel | What it is | Conservative anchor |
 |---|---|---|
@@ -437,7 +437,7 @@ At the plan level, the admissibility rule does the work. Rule 6 requires greed-m
 
 Everyone gets the population-wide gain whether they contributed or not, but private return channels (retroactive impact payments, investor returns, operator fees) are reserved for participants. Free-riding is not punished; it is merely less profitable than contributing. Early contributors raise the probability of success, which raises the expected value for later contributors, creating a coordination game that runs on arithmetic rather than altruism.
 
-The deeper answer is that the free-rider objection targets the wrong funding model. Free-riding is a problem for public goods financed by donations, where every donor would prefer someone else to pay. The admissibility rule (Rule 6: greed-monotone public-choice compatibility) requires that whatever plan wins must include private return channels that make contributing more profitable than free-riding. The current leading candidate does this through Incentive Alignment Bonds: revenue-share instruments where investors receive direct financial returns from treaty-generated funding flows. A different winning plan might use a different mechanism. But the prize guarantees that SOME private return channel exists, because plans without one are disqualified. Nobody free-rides on buying stocks. The investor's return is private, contractual, and proportional to their investment. The population-wide gain is a positive externality of the investment, not the investment thesis.
+The deeper answer is that the free-rider objection targets the wrong funding model. Free-riding is a problem for public goods financed by donations, where every donor would prefer someone else to pay. But Rule 6 guarantees that whatever plan wins must include private return channels; plans without them are disqualified. So the prize is not financed by altruism. It is financed by investors buying revenue-share instruments with direct financial returns. Nobody free-rides on buying stocks. The investor's return is private, contractual, and proportional to their investment. The population-wide gain is a positive externality of the investment, not the investment thesis.
 
 ## What the Prize Selects if These Papers Are Right
 
@@ -497,15 +497,15 @@ The governing principle is simple: **capital may move down the ladder, but it ma
 
 That is how you turn "if this path fails, try something else" into something that actually moves forward rather than a motivational slogan.
 
-A challenger is free to beat the current papers. It just has to beat all four properties at once: reallocation pool [@value-captured-by-1pct-treaty], cost-per-DALY [@dfda-impact-paper-2025], political adoption [@iab-paper-2025], and regulatory path [@invisible-graveyard-paper-2025; @dfda-spec-paper-2025].
+A challenger is free to beat the current papers. It just has to beat the Minimum Acceptable Governance row by row, or replace each row with a dominating substitute, and then produce better terminal outcomes (health and income) per dollar.
 
 ## Why This Logically Leads to These Ideas or Better
 
 There are only three stable outcomes:
 
-1. **The Earth Optimization Plan is best.** Then the prize selects the full baseline bundle, finances it, and implements it because $M_{complete} = 1$ is required and nothing beats it row by row.
+1. **The Earth Optimization Plan is best.** Then the prize selects the full Minimum Acceptable Governance, finances it, and implements it because $M_{complete} = 1$ is required and nothing beats it row by row.
 2. **The Earth Optimization Plan is mostly right but incomplete.** Then the prize selects an augmented version of it, which still implements the existing modules while adding whatever missing function performs better.
-3. **A strict improvement exists.** Then the prize selects that instead, but only if it dominates the baseline bundle function by function rather than skipping inconvenient pieces.
+3. **A strict improvement exists.** Then the prize selects that instead, but only if it dominates the Minimum Acceptable Governance function by function rather than skipping inconvenient pieces.
 
 Those are the only serious possibilities. The unserious possibility is the one humans choose by default: endless argument with no implementation market.
 
@@ -515,7 +515,7 @@ Health economics, public choice theory, mechanism design, and game theory indepe
 
 If you want the short version, it is this:
 
-> Reward the first mechanism that can legally and durably implement every required function in the baseline bundle, or replace each one with a dominating substitute, while reallocating resources from their lowest net societal value uses to their highest ones, minimizing suffering, improving median health and wealth, and making every major affected class of living or sentient beings better off on net.
+> Reward the first mechanism that can legally and durably implement every required function in the Minimum Acceptable Governance, or replace each one with a dominating substitute, while reallocating resources from their lowest net societal value uses to their highest ones, minimizing suffering, improving median health and wealth, and making every major affected class of living or sentient beings better off on net.
 
 Everything else is just plumbing. And because the mechanism does not care where the suffering comes from, as human disease cost-per-DALY rises with diminishing returns, the system naturally moves capital to wherever suffering can be reduced most cheaply, whether that is neglected tropical diseases, factory farming, or ecosystem collapse.
 
