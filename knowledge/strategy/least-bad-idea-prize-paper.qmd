@@ -333,13 +333,13 @@ The payout should be heavily back-loaded. We have noticed that your species is r
 3. **Adoption bounty.** A much larger amount for statute, treaty, agency rule, ballot measure, or other binding implementation.
 4. **Outcome perpetuity.** The biggest reward is a continuing share of verified recovered value, because one-time prizes create demos while ongoing revenue shares create permanent constituencies.
 
-The current leading candidate uses Incentive Alignment Bonds [@iab-paper-2025] as one implementation of this structure. But the prize does not require IABs specifically. It requires that the winning plan include a back-loaded payout with outcome perpetuity. How the plan finances itself is its problem, not the prize's.
+The current leading candidate uses Incentive Alignment Bonds [@iab-paper-2025] as one implementation of this structure. But the prize does not require IABs specifically. It requires that whoever wins include a back-loaded payout with outcome perpetuity. How the winning team finances implementation is their problem, not the prize's.
 
 ### Retroactive Impact Purchasing
 
 The prize can pay for proven results after they happen. Implementers fund work up front using their own capital or outside investment, produce auditable outcomes, and then get paid for outcomes they can prove only after the outcomes exist. In the medical domain, claims would typically be measured in audited DALYs averted, suffering hours avoided, or verified mortality reduction. In governance domains, they would be measured in verified resource reallocation, durable policy adoption, or measured welfare gains under the same admissibility constraints.
 
-This layer remains under the completeness rule rather than replacing it. Retroactive purchasing is a way to pick and fund projects within the winning plan, not a license for narrow local patches to outrank complete packages. The prize first decides which complete implementation plan wins. Only then do decentralized implementers compete to supply the cheapest verified components within that plan.
+This layer remains under the completeness rule rather than replacing it. Retroactive purchasing is a way to pick and fund projects within the winning implementation, not a license for narrow local patches to outrank complete packages. First, implementers must demonstrate a complete package that clears the scorecard. Only then do decentralized contributors compete to supply the cheapest verified components within that package.
 
 ### Retroactive Credit Allocation
 
@@ -431,13 +431,11 @@ Those thresholds are biased against contributing because they count only the pop
 
 **The free-rider problem has a structural answer.** The obvious objection is: if success benefits everyone equally, why not wait and let others pay for it? That is the Olsonian collective action failure the paper's own "Why Current Systems Fail" section identifies as the core problem. The prize answers it at two levels.
 
-At the prize level, retroactive impact purchasing pays contributors for verified outcomes. If you do implementation work, the prize treasury reimburses you based on audited results. Non-contributors have no outcomes to claim. This is a feature of the prize itself, not any specific plan, so it works regardless of which plan wins.
+At the prize level, retroactive impact purchasing pays contributors for verified outcomes. If you do implementation work, the prize treasury reimburses you based on audited results. Non-contributors have no outcomes to claim. Prize allocation is wishocratic: contributors allocate credit based on their judgment of who was most responsible for verified outcomes, informed by data from the Optimitron [@optimocracy-paper-2025]. This is a feature of the prize itself, not any specific implementation, so it works regardless of who wins.
 
-At the plan level, the admissibility rule does the work. Rule 6 requires greed-monotone public-choice compatibility: every critical actor must have a selfish reason to cooperate, and stronger self-interest must make the mechanism stronger. Any plan that fails this test is disqualified before it reaches the scorecard. That means whatever plan wins, it must include private return channels for investors, operators, and participants. The current leading candidate does this through Incentive Alignment Bonds (investors receive returns from treaty revenue share). A different winning plan would use a different mechanism. The prize does not specify how participants get paid. It requires that they do.
+At the plan level, the admissibility rule does the work. Rule 6 requires greed-monotone public-choice compatibility: every critical actor must have a selfish reason to cooperate, and stronger self-interest must make the mechanism stronger. Any implementation that fails this test is disqualified before it reaches the scorecard. That means whoever wins must include private return channels for investors, operators, and participants. The current leading candidate does this through Incentive Alignment Bonds (investors receive returns from treaty revenue share). A different winning team would use a different mechanism. The prize does not specify how participants get paid. It requires that they do.
 
 Everyone gets the population-wide gain whether they contributed or not, but private return channels (retroactive impact payments, investor returns, operator fees) are reserved for participants. Free-riding is not punished; it is merely less profitable than contributing. Early contributors raise the probability of success, which raises the expected value for later contributors, creating a coordination game that runs on arithmetic rather than altruism.
-
-The deeper answer is that the free-rider objection assumes the wrong funding model. Free-riding is a problem for charities, where every donor would prefer someone else to pay. The prize is not a charity. Rule 6 guarantees that whatever plan wins must include private return channels; plans without them are disqualified. The winning plan is financed by investors buying revenue-share instruments with direct financial returns. Your species does not have a free-rider problem with buying stocks. Nobody sits at home thinking "I'll let someone else buy Apple shares and enjoy the dividends." The return is private, contractual, and yours. The fact that everyone else also gets richer is a side effect, not the pitch.
 
 ## What the Prize Selects if These Papers Are Right
 
@@ -463,7 +461,7 @@ If the papers in this project are broadly correct, a serious prize process will 
 
 The large numbers in this table come from three ordinary facts: existing waste pools are already measured in trillions, regulatory delay compounds over years and across billions of people, and pragmatic evidence generation is dramatically cheaper than the legacy trial stack. Each benchmark is traceable to a concrete mechanism, denominator, and empirical anchor.
 
-In other words, the prize sits above the Earth Optimization Plan v1 and asks: *which complete package of functions wins on verified welfare per dollar?* Whatever wins is the Earth Optimization Plan v2. If v2 turns out to be v1 plus a missing module, the augmented version gets implemented. If a different module set dominates row by row, the prize funds that instead. v1 is the floor, not the ceiling. We wrote it because competitions need a starting entry. We expect to lose.
+In other words, the prize sits above the Earth Optimization Plan v1 and asks: *who can cause verified implementation of a complete package of functions that wins on welfare per dollar?* The people most responsible for causing that implementation receive the prize, allocated wishocratically by prize contributors based on their judgment and Optimitron data [@optimocracy-paper-2025]. Whatever they build is the Earth Optimization Plan v2. v1 is the floor, not the ceiling. We wrote it because competitions need a starting entry. We expect to lose.
 
 ## The Selection Pipeline
 
@@ -473,7 +471,7 @@ The steps are simple:
 2. **Generate candidate reallocations.** Use Optimocracy [@optimocracy-paper-2025], OPG [@opg-paper-2025], and OBG [@obg-paper-2025] to propose the best available moves under real-world constraints.
 3. **Apply sentient-welfare guardrails.** Throw out plans that improve one metric by increasing suffering elsewhere.
 4. **Aggregate preference intensity.** Use Wishocracy [@wishocracy-paper-2025] to learn what tradeoffs the public actually prefers once the options are legible.
-5. **Finance adoption.** The winning plan must include its own financing mechanism (the current candidate uses IAB-style structures [@iab-paper-2025]) to raise the capital needed to pass the highest-ranked package.
+5. **Finance adoption.** The winning team must include its own financing mechanism (the current candidate uses IAB-style structures [@iab-paper-2025]) to raise the capital needed to pass the highest-ranked package.
 6. **Implement in the highest-ROI domain first.** At current margins that is likely medical evidence generation: pragmatic trials [@dfda-impact-paper-2025], right to trial, FDA upgrade, and continuous evidence generation [@dfda-spec-paper-2025].
 7. **Reinvest recovered value.** Once a high-ROI reform starts paying, the prize treasury expands and finances the next set of reallocations.
 
@@ -501,8 +499,8 @@ A challenger is free to beat the current papers, and we are genuinely begging yo
 
 There are only two stable outcomes:
 
-1. **The Earth Optimization Plan v1 is mostly right but incomplete.** Then the prize selects an augmented version of it (the Earth Optimization Plan v2), which keeps whichever existing modules survive scrutiny while adding whatever missing function performs better.
-2. **A strict improvement exists.** Then the prize selects that instead (also the Earth Optimization Plan v2), but only if it dominates the Minimum Acceptable Governance function by function rather than skipping inconvenient pieces.
+1. **The Earth Optimization Plan v1 is mostly right but incomplete.** Then whoever augments it with the missing functions and causes implementation receives the prize. The result is the Earth Optimization Plan v2.
+2. **A strict improvement exists.** Then whoever builds and implements that improvement receives the prize instead (also the Earth Optimization Plan v2), provided it dominates the Minimum Acceptable Governance function by function rather than skipping inconvenient pieces.
 
 Those are the only serious possibilities. The unserious possibility is the one humans choose by default: endless argument with no implementation market. Outcome 2 is almost certainly what happens. Either way, the prize produces the Earth Optimization Plan v2 and causes its implementation. People are dying at {{< var global_disease_deaths_daily_nounit >}} per day while your species argues about mechanism design. Please render v1 obsolete as quickly as possible.
 
