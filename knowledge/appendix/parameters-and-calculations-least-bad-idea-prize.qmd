@@ -36,15 +36,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 169 parameters used in the analysis, organized by type:
+This appendix documents all 166 parameters used in the analysis, organized by type:
 
 - External sources (peer-reviewed): 72
-- Calculated values: 76
+- Calculated values: 73
 - Core definitions: 21
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (76 parameters) • [External Data Sources](#sec-external) (72 parameters) • [Core Definitions](#sec-definitions) (21 parameters)
+[Calculated Values](#sec-calculated) (73 parameters) • [External Data Sources](#sec-external) (72 parameters) • [Core Definitions](#sec-definitions) (21 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -685,74 +685,6 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-dfda_efficacy_lag_elimination_deaths_averted.qmd >}}
-
-:::
-
-### Total Economic Loss from Disease Eradication Delay: $1.19 quadrillion {#sec-dfda_efficacy_lag_elimination_economic_value}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Total economic loss from delaying disease eradication by 8.2 years (PRIMARY estimate, 2024 USD). Values global DALYs at standardized US/International normative rate ($150k) rather than local ability-to-pay, representing the full human capital loss.
-
-**Inputs**:
-
-- [Total DALYs Lost from Disease Eradication Delay](#sec-dfda_efficacy_lag_elimination_dalys) 🔢: 7.94 billion DALYs
-- [Standard Economic Value per QALY](#sec-standard_economic_qaly_value_usd) 📊: $150K (SE: ±$30K)
-
-$$
-\begin{gathered}
-Value_{lag} \\
-= DALYs_{lag} \times Value_{QALY} \\
-= 7.94B \times \$150K \\
-= \$1190T
-\end{gathered}
-$$
-where:
-$$
-DALYs_{lag} = YLL_{lag} + YLD_{lag} = 7.07B + 873M = 7.94B
-$$
-where:
-$$
-\begin{gathered}
-YLL_{lag} \\
-= Deaths_{lag} \times (LE_{global} - Age_{death,delay}) \\
-= 416M \times (79 - 62) \\
-= 7.07B
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Deaths_{lag} \\
-= T_{lag} \times Deaths_{disease,daily} \times 338 \\
-= 8.2 \times 150{,}000 \times 338 \\
-= 416M
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-YLD_{lag} \\
-= Deaths_{lag} \times T_{suffering} \times DW_{chronic} \\
-= 416M \times 6 \times 0.35 \\
-= 873M
-\end{gathered}
-$$
-*~ Medium confidence*
-
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-dfda_efficacy_lag_elimination_economic_value.qmd >}}
-
-{{< include ../figures/sensitivity-table-dfda_efficacy_lag_elimination_economic_value.qmd >}}
-
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-dfda_efficacy_lag_elimination_economic_value.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-dfda_efficacy_lag_elimination_economic_value.qmd >}}
 
 :::
 
@@ -1550,44 +1482,6 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-dfda_trial_capacity_treatment_acceleration_years.qmd >}}
-
-:::
-
-### dFDA Trial Cost Reduction Factor: 44.1x {#sec-dfda_trial_cost_reduction_factor}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Cost reduction factor projected for dFDA pragmatic trials (traditional Phase 3 cost / dFDA pragmatic cost per patient)
-
-**Inputs**:
-
-- [Phase 3 Cost per Patient](#sec-traditional_phase3_cost_per_patient) 📊: $41K (95% CI: $20K - $120K)
-- [dFDA Pragmatic Trial Cost per Patient](#sec-dfda_pragmatic_trial_cost_per_patient) 📊: $929 (95% CI: $97 - $3K)
-
-$$
-\begin{gathered}
-k_{reduce} \\
-= \frac{Cost_{P3,pt}}{Cost_{pragmatic,pt}} \\
-= \frac{\$41K}{\$929} \\
-= 44.1
-\end{gathered}
-$$
-
-*✓ High confidence*
-
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-dfda_trial_cost_reduction_factor.qmd >}}
-
-{{< include ../figures/sensitivity-table-dfda_trial_cost_reduction_factor.qmd >}}
-
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-dfda_trial_cost_reduction_factor.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-dfda_trial_cost_reduction_factor.qmd >}}
 
 :::
 
@@ -3948,73 +3842,6 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-us_gov_waste_total.qmd >}}
-
-:::
-
-### Efficiency Gap / Treaty Funding: 180:1 {#sec-us_gov_waste_vs_treaty_multiplier}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-How many times the US government efficiency gap could fund the 1% Treaty. The efficiency gap represents capital that could fund transformative health research many times over.
-
-**Inputs**:
-
-- [US Government Waste (Total)](#sec-us_gov_waste_total) 🔢: $4.9T
-- [Annual Funding from 1% of Global Military Spending Redirected to DIH](#sec-treaty_annual_funding) 🔢: $27.2B
-
-$$
-\begin{gathered}
-k_{waste:treaty} \\
-= \frac{W_{total,US}}{Funding_{treaty}} \\
-= \frac{\$4.9T}{\$27.2B} \\
-= 180
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-W_{total,US} \\
-= W_{raw,US} \times US \\
-= \$4.9T \times 1 \\
-= \$4.9T
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-W_{raw,US} \\
-= W_{health} + W_{housing} + W_{military} + W_{regulatory} \\
-+ W_{tax} + W_{corporate} + W_{tariffs} + W_{drugs} \\
-+ W_{fossil} + W_{agriculture} \\
-= \$1.2T + \$1.4T + \$615B + \$580B + \$546B + \$181B + \$160B \\
-+ \$90B + \$50B + \$75B \\
-= \$4.9T
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Funding_{treaty} \\
-= Spending_{mil} \times Reduce_{treaty} \\
-= \$2.72T \times 1\% \\
-= \$27.2B
-\end{gathered}
-$$
-*~ Medium confidence*
-
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-us_gov_waste_vs_treaty_multiplier.qmd >}}
-
-{{< include ../figures/sensitivity-table-us_gov_waste_vs_treaty_multiplier.qmd >}}
-
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-us_gov_waste_vs_treaty_multiplier.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-us_gov_waste_vs_treaty_multiplier.qmd >}}
 
 :::
 
