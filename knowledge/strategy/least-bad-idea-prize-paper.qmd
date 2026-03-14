@@ -63,9 +63,15 @@ The prize does not defend any particular proposal against better ideas. It uses 
 
 The Earth Optimization Plan v1 is the starting benchmark, not the answer. The Earth Optimization Plan v2 is whatever the prize produces. The protocol itself is replaceable: a strictly better selection mechanism replaces the current one under the same replacement rule. The terminal metrics are the fixed point. Everything building toward them is improvable plumbing.
 
+---
+
+**The prize is everything above.** Two metrics, a payout rule, and a replacement mechanism. That is the entire machine. Everything below is our draft entry (the Earth Optimization Plan v1), which we believe is terrible but better than what your species is currently doing. It exists because competitions need a starting entry. You are invited, and in fact begged, to replace it with something better.
+
+---
+
 ## The Starting Benchmark
 
-This prize is not comparing proposals to isolated papers one at a time. The thing to beat is the **integrated set of required functions** implied by the companion papers.
+What follows is our draft proposal, the Earth Optimization Plan v1. It is not the prize. It is the thing to beat. We are showing our homework so you know exactly what bar to clear. The thing to beat is the **integrated set of required functions** implied by the companion papers.
 
 | Required function | Default implementation in the Earth Optimization Plan v1 | What a strict improvement must beat |
 |:---|:---|:---|
@@ -194,7 +200,7 @@ Those thresholds are biased against contributing because they count only the pop
 
 **The free-rider problem has a structural answer.** The obvious objection is: if success benefits everyone equally, why not wait and let others pay for it? The prize answers it at two levels. At the prize level, wishocratic allocation pays contributors for verified outcomes; non-contributors have no outcomes to claim. At the plan level, any winning implementation must include private return channels for investors, operators, and participants (the current candidate uses Incentive Alignment Bonds). Free-riding is not punished; it is merely less profitable than contributing. Early contributors raise the probability of success, which raises the expected value for later contributors, creating a coordination game that runs on arithmetic rather than altruism.
 
-## What the Prize Funds if These Papers Are Right
+## What v1 Claims (and What You Need to Beat)
 
 | Paper | What the prize uses it for | Key benchmark to beat |
 |:---|:---|:---|
