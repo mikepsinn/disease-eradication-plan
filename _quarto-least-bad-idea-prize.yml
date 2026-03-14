@@ -22,8 +22,9 @@ dih-render:
   netlify-cname: "prize-warondisease-org.netlify.app"
   show-confidence-intervals: true
   concept-terms:
-    - term: "Least Bad Idea Prize"
+    - term: "Earth Optimization Prize"
       aliases:
+        - "Least Bad Idea Prize"
         - "Least Bad Idea in the World Prize"
         - "LBIP"
         - "implementation prize"
@@ -45,8 +46,8 @@ author:
         url: https://acceleratedmedicine.org
 
 website:
-  title: "The Least Bad Idea in the World Prize"
-  description: "If this manual is wrong, beat it. A standing prize for the first mechanism that can verifiably move money from low-value uses to high-value ones, reduce suffering more cheaply than the current stack, and survive contact with selfish humans."
+  title: "The Earth Optimization Prize"
+  description: "An outcome-based charity with two terminal metrics (median healthy life years and median after-tax income), a treasury that releases when people stop dying, and wishocratic pairwise comparison to allocate credit. The Earth Optimization Plan v1 is the terrible starting benchmark. v2 is whatever beats it."
   site-url: https://prize.warondisease.org
   favicon: assets/icons/least-bad-idea-prize-favicon.png
   page-navigation: true
@@ -126,7 +127,7 @@ metadata:
   medium: "Digital"
   twitter-site: "https://x.com/warondisease"
   twitter-creator: "https://x.com/warondisease"
-  og-site-name: "The Least Bad Idea in the World Prize"
+  og-site-name: "The Earth Optimization Prize"
 
   # Open Graph metadata (enables per-page custom OG images)
   open-graph: true
