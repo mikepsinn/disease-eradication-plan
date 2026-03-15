@@ -89,7 +89,7 @@ The US Efficiency Audit (us-efficiency-audit.warondisease.org) identifies $4.9T/
    - Country-specific implementation (US, UK, India, etc.)
    - Disease-specific (cancer, Alzheimer's, rare diseases)
 5. **Publish your fork.** Link it to the network. Every fork strengthens every other fork.
-6. **Run it.** Accept challengers. Score them. Award the prize to whoever beats the baseline.
+6. **Run it.** Accept challengers. Run them through Optimitron against the 28-metric scorecard. Award the prize to whoever beats the baseline — the score is the judge.
 
 ### The Meta-Property
 

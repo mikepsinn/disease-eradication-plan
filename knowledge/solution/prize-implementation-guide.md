@@ -15,7 +15,7 @@ A reader finishes the prize page, wants to create their own version, and can do 
 - **How:** Create a challenge → paste the 28-metric scorecard → set prize pool → invite solvers
 - **Cost:** Free to launch, HeroX takes a platform fee on prizes
 - **Prize pool funding:** Challenge creator funds it, or crowdfunds from supporters
-- **Judging:** You appoint judges or use community voting
+- **Judging:** Use the 28-metric scorecard with Optimitron as evaluator; HeroX hosts the submission interface
 - **Limitation:** Centralized. No automatic refund if no winner. No assurance contract.
 - **Best for:** Established organizations who want a branded challenge fast
 
