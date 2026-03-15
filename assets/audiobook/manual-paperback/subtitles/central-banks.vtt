@@ -1,1281 +1,3413 @@
 WEBVTT
 
 1
-00:00:00.400 --> 00:00:04.100
-Your Money Comes From a Building and They Use It to Kill People Your money is manufactured in a building by people you didn't
+00:00:00.520 --> 00:00:06.900
+Money Comes From a Building and They Use It to Kill People Your money is manufactured in a building by people you didn't
 
 2
-00:00:04.100 --> 00:00:09.640
-elect. They give it to their friends first, then use the rest to buy weapons you didn't ask for.
+00:00:06.900 --> 00:00:11.680
+elect. It has funded unpopular wars that killed ninety-seven million people.
 
 3
-00:00:10.200 --> 00:00:14.680
-By the time it reaches you, it buys less. This has been happening for a century.
+00:00:12.000 --> 00:00:16.340
+They give it to their friends first, then use the rest to buy weapons you didn't ask for.
 
 4
-00:00:15.640 --> 00:00:20.400
-Nobody covers it on the news because it is, by design, extremely boring.
+00:00:16.760 --> 00:00:20.770
+By the time it reaches you, it buys less. This has been happening for a century.
 
 5
-00:00:20.860 --> 00:00:25.280
-On Wishonia, we used rocks as currency for about four hundred years.
+00:00:21.520 --> 00:00:25.540
+Nobody covers it on the news because it is, by design, extremely boring.
 
 6
-00:00:26.000 --> 00:00:29.960
-Then someone pointed out that rocks are heavy and also everywhere.
+00:00:26.180 --> 00:00:31.120
+Dollar purchasing power retained since nineteen thirteen: four percent.
 
 7
-00:00:30.560 --> 00:00:33.880
-We switched to a trust-based ledger system in about twelve minutes.
+00:00:31.840 --> 00:00:36.060
+Unpopular wars funded without democratic consent: all of them.
 
 8
-00:00:34.680 --> 00:00:41.650
-Humans took until two thousand and nine to even consider this, and then mostly used it to buy drugs and expensive monkey
+00:00:36.840 --> 00:00:44.200
+This is a systems analysis. On Wishonia, we used rocks as currency for about four hundred years.
 
 9
-00:00:41.700 --> 00:00:50.340
-J.P.G.s. Your species also used rocks as currency, except you picked the shiniest rock, dug it out of the ground at great
+00:00:44.400 --> 00:00:48.080
+Then someone pointed out that rocks are heavy and also everywhere.
 
 10
-00:00:50.340 --> 00:00:55.150
-expense, shaped it into bars, and then put it back in the ground in a different building.
+00:00:48.700 --> 00:00:55.600
+It took us another two hundred years of arguing, a bribery program, and three currency collapses before we switched to a
 
 11
-00:00:55.660 --> 00:00:59.600
-You called the first building a "mine" and the second building a "vault."
+00:00:55.600 --> 00:01:03.140
+shared ledger: a network of computers that all keep the same record of who has what, and check each other's work so nobody
 
 12
-00:01:00.080 --> 00:01:06.580
-The only difference is the lighting. But the most interesting thing about your money is not what it buys.
+00:01:03.260 --> 00:01:12.220
+can lie. If one computer tries to say "actually I have a million extra coins," the other computers say "no you don't" and
 
 13
-00:01:06.760 --> 00:01:10.220
-It's where it comes from. Your money comes from a building.
+00:01:12.220 --> 00:01:18.640
+ignore it. That's the whole thing. It is not complicated. A child could understand it.
 
 14
-00:01:10.640 --> 00:01:17.100
-Humans inside the building decide how much money exists. Then they give the new money to their friends, and the friends
+00:01:18.780 --> 00:01:24.010
+(On Wishonia, a child *did* invent it. She was eleven. She won a science fair.
 
 15
-00:01:17.100 --> 00:01:23.200
-buy things before anyone else notices there's more money now, which makes all the other money worth less.
+00:01:24.600 --> 00:01:31.760
+The previous monetary system had been designed by four hundred adults over two centuries and was worse in every way.).
 
 16
-00:01:23.900 --> 00:01:31.340
-This is called "monetary policy." It is the largest and longest robbery in your planet's history, and it has been happening
+00:01:32.500 --> 00:01:39.820
+Humans invented the same idea in two thousand and nine. It is called "blockchain," which is a word designed to make a simple
 
 17
-00:01:31.340 --> 00:01:38.740
-every day for over a century, and nobody covers it on the news because it is, by design, extremely boring.
+00:01:39.820 --> 00:01:46.880
+concept sound difficult, because if people understood how simple it was, they might ask why they're still using the old
 
 18
-00:01:39.620 --> 00:01:43.940
-On Wishonia we have a word for making theft too tedious to investigate.
+00:01:46.880 --> 00:01:52.620
+system. Mostly, your species used it to buy drugs and expensive monkey JPGs.
 
 19
-00:01:44.500 --> 00:01:51.960
-It translates roughly to "beige crime." The Pattern: Print, Kill, Repeat.
+00:01:53.540 --> 00:02:00.320
+(You paid sixty-nine million dollars for a non-fungible token, or N.F.T., of a picture of an ape.
 
 20
-00:01:51.960 --> 00:01:57.540
-I've been watching your planet since nineteen forty-five. In that time I've noticed a historical pattern.
+00:02:00.860 --> 00:02:06.970
+The ape was not even real. I checked.). I will come back to this invention later, because it is important.
 
 21
-00:01:58.240 --> 00:02:06.340
-It goes like this: humans fight a war, run out of money, print more money, the money becomes worthless, something terrible
+00:02:07.800 --> 00:02:11.100
+It makes the system I'm about to describe completely unnecessary.
 
 22
-00:02:06.340 --> 00:02:10.630
-happens, and then they do it again. This is not a simplification.
+00:02:11.880 --> 00:02:17.840
+But first, let me describe the system, because you are currently inside it and it is eating you.
 
 23
-00:02:11.300 --> 00:02:16.540
-This is literally what happens. Revolutionary France (seventeen nineties).
+00:02:18.960 --> 00:02:26.060
+Your species also used rocks as currency, except you picked the shiniest rock, dug it out of the ground at great expense,
 
 24
-00:02:17.680 --> 00:02:25.800
-France started wars with everyone. Ran out of money. Invented a solution: print fake currency called "assignats" backed
+00:02:26.780 --> 00:02:30.600
+shaped it into bars, and then put it back in the ground in a different building.
 
 25
-00:02:25.800 --> 00:02:32.800
-by church land they'd stolen. Backing money with stolen property is surprisingly honest about what money is.
+00:02:31.080 --> 00:02:34.820
+You called the first building a "mine" and the second building a "vault."
 
 26
-00:02:33.540 --> 00:02:38.260
-Hyperinflation hit thirteen thousand percent in five years.
+00:02:35.540 --> 00:02:40.910
+The only difference is the lighting. But the most interesting thing about your money is not what it buys.
 
 27
-00:02:38.260 --> 00:02:43.140
-Napoleon happened. Not great. Weimar Germany (nineteen twenties).
+00:02:41.500 --> 00:02:45.120
+It's where it comes from. Your money comes from a building.
 
 28
-00:02:44.080 --> 00:02:47.900
-Germany lost World War One. Printed money to pay reparations.
+00:02:45.860 --> 00:02:51.000
+Inside that building, twelve humans sit around a table and decide how much money exists.
 
 29
-00:02:48.540 --> 00:02:55.920
-Achieved twenty-nine thousand five hundred percent monthly inflation, which means a loaf of bread that cost one mark in
+00:02:51.720 --> 00:03:00.120
+Twelve. I counted. They are called the Federal Open Market Committee, which is three lies in five words: it is not federal,
 
 30
-00:02:55.920 --> 00:03:04.420
-January cost billions by fall. People burned money for heat because paper was worth more as fuel than as currency.
+00:03:00.400 --> 00:03:03.720
+the market is not open, and the committee meets in private.
 
 31
-00:03:05.120 --> 00:03:11.520
-Hitler happened. Really not great. United States (nineteen seventeen to present).
+00:03:04.300 --> 00:03:07.950
+These twelve people are not elected. You did not pick them.
 
 32
-00:03:12.320 --> 00:03:19.960
-In nineteen thirteen, they created the Federal Reserve. In nineteen seventeen, they immediately used it to fund World War
+00:03:08.320 --> 00:03:12.200
+You do not know their names. (Go ahead. Try to name three. I'll wait.
 
 33
-00:03:19.960 --> 00:03:26.680
-One. From nineteen seventeen to the present, the dollar has lost ninety-six percent of its value.
+00:03:12.900 --> 00:03:21.640
+You can't. Nobody can. This is a feature, not a bug.) They decide whether your money is worth more or less tomorrow, which
 
 34
-00:03:27.220 --> 00:03:34.520
-Wars are now continuous and everywhere. You're reading this sentence right now with money that's worth four cents on the
+00:03:21.640 --> 00:03:26.620
+determines whether you can afford your rent, your groceries, your medicine, and your children's future.
 
 35
-00:03:34.720 --> 00:03:41.220
-nineteen thirteen dollar. I mention this because you seem fine with it, which I find clinically fascinating.
+00:03:27.560 --> 00:03:35.100
+Twelve people. One table. Eight meetings a year. This is your species' system for deciding who gets what.
 
 36
-00:03:42.060 --> 00:03:49.140
-The pattern is so consistent it could be a recipe. Step one: give politicians a machine that creates money.
+00:03:35.740 --> 00:03:41.560
+It has been running for over a century. It has funded the deaths of ninety-seven million people.
 
 37
-00:03:49.660 --> 00:03:53.740
-Step two: they use it to kill people. There is no Step three.
+00:03:42.040 --> 00:03:47.340
+It is, by design, extremely boring, because boring things don't get investigated.
 
 38
-00:03:54.340 --> 00:04:01.600
-There has never been a Step three. The recipe is two steps long, it has been tested for thousands of years across dozens
+00:03:47.880 --> 00:03:52.440
+On Wishonia we have a word for making theft too tedious to investigate.
 
 39
-00:04:01.600 --> 00:04:08.470
-of civilizations, and you keep making it. You invented money to trade chickens more efficiently.
+00:03:52.900 --> 00:04:00.200
+It translates roughly to "beige crime.". I mentioned the network of computers that check each other so nobody can lie.
 
 40
-00:04:08.680 --> 00:04:11.790
-Within a few centuries you were using it to incinerate cities.
+00:04:00.920 --> 00:04:08.420
+Your twelve-person table is the opposite of that. It is a network of humans who do not check each other, are not checked
 
 41
-00:04:12.600 --> 00:04:15.620
-On Wishonia, we call this "the chicken escalation problem."
+00:04:08.540 --> 00:04:17.300
+by you, and can lie using vocabulary so specialized that the lie is technically public but functionally invisible.
 
 42
-00:04:16.380 --> 00:04:23.940
-(We don't really. I just made that up. But we should.). nineteen seventy-one: The Day Your Money Stopped Meaning Anything.
+00:04:17.920 --> 00:04:22.560
+The technology to replace them exists. It has existed since two thousand and nine.
 
 43
-00:04:24.820 --> 00:04:32.620
-August fifteenth, nineteen seventy-one. A human named Nixon went on television and said, in slightly more presidential language:
+00:04:22.920 --> 00:04:30.700
+You are using it to trade pictures of dogs in hats. I don't have a metaphor for this because no civilization in my experience
 
 44
-00:04:33.280 --> 00:04:37.160
-"Remember how dollars could be exchanged for gold? We're stopping that."
+00:04:30.700 --> 00:04:37.920
+has ever done anything this stupid on purpose. The Pattern: Print, Kill, Repeat.
 
 45
-00:04:37.820 --> 00:04:45.980
-"Also, wage and price controls." "Also, import taxes." He announced this on a Sunday evening in August, when nobody was
+00:04:39.760 --> 00:04:45.500
+I've been watching your planet since nineteen forty-five. In that time I've noticed a historical pattern.
 
 46
-00:04:45.980 --> 00:04:53.020
-watching, which is the human equivalent of robbing a house while the family is on vacation, except the family is two hundred
+00:04:46.000 --> 00:04:54.080
+It goes like this: humans fight a war, run out of money, print more money, the money becomes worthless, something terrible
 
 47
-00:04:53.020 --> 00:04:59.030
-million people and the house is their money. He called it a "New Economic Policy."
+00:04:54.080 --> 00:04:57.810
+happens, and then they do it again. This is not a simplification.
 
 48
-00:04:59.660 --> 00:05:06.220
-On your planet, when someone names a policy the opposite of what it does, something terrible is about to happen.
+00:04:58.700 --> 00:05:04.200
+This is literally what happens. The Roman Empire (third Century).
 
 49
-00:05:07.100 --> 00:05:12.860
-(See also: "Patriot Act," "Affordable Care Act," "Department of Defense," "Federal Reserve."
+00:05:05.560 --> 00:05:13.110
+Rome had the most powerful currency in the ancient world. Then its emperors discovered they could shave silver off the coins,
 
 50
-00:05:13.280 --> 00:05:17.200
-It is not federal. It has no reserves. Two words, two lies.
+00:05:13.280 --> 00:05:19.420
+mix in cheaper metal, and spend the difference on wars. This is money printing before the printing press.
 
 51
-00:05:17.700 --> 00:05:21.360
-This is efficient, even by your standards.). Why He Did It.
+00:05:19.980 --> 00:05:23.140
+It required more physical effort but the math is identical.
 
 52
-00:05:22.360 --> 00:05:29.680
-During World War Two, your government sold war bonds. Eighty-five million Americans bought one hundred and eighty-five billion
+00:05:23.960 --> 00:05:28.240
+The denarius went from ninety-five percent silver to less than five percent.
 
 53
-00:05:29.680 --> 00:05:34.440
-dollars worth, because "buy bonds, beat the Nazis" is an easy poster.
+00:05:29.300 --> 00:05:34.420
+Prices rose one thousand percent. Nobody understood why everything cost more.
 
 54
-00:05:35.300 --> 00:05:43.580
-Vietnam was not an easy poster. You cannot run a bond drive for "help us spray carcinogenic chemicals on rice farmers and
+00:05:34.780 --> 00:05:38.240
+But Romans knew that when things went wrong, the gods were angry.
 
 55
-00:05:43.580 --> 00:05:51.140
-their children." So L.B.J. hid the war's cost inside the regular federal budget and covered the gap by printing money.
+00:05:38.640 --> 00:05:46.640
+And Christians refused to sacrifice to Roman gods. "Currency debasement" is a boring explanation that implicates the people
 
 56
-00:05:51.860 --> 00:05:59.920
-No bond drives. No patriotic posters. Just quiet inflation, picking every pocket at two percent per year, which is below
+00:05:46.640 --> 00:05:52.420
+in charge. *Them* is a simple explanation that implicates someone you already didn't like.
 
 57
-00:05:59.920 --> 00:06:06.120
-the human boredom threshold for investigating things. Foreign governments have lower boredom thresholds.
+00:05:53.380 --> 00:06:00.900
+Diocletian launched the Great Persecution: churches burned, scriptures destroyed, Christians tortured and executed across
 
 58
-00:06:06.660 --> 00:06:14.180
-France noticed first. Between nineteen sixty-three and nineteen sixty-six, de Gaulle secretly organized one hundred and
+00:06:00.900 --> 00:06:07.640
+the empire. Then he tried price controls, which worked exactly as well as price controls always work.
 
 59
-00:06:14.180 --> 00:06:21.960
-twenty-nine flights and forty-four boat trips to extract three thousand, three hundred and thirteen tonnes of French gold
+00:06:08.260 --> 00:06:13.540
+Then the empire split in half and fell over. The barbarians did not defeat Rome.
 
 60
-00:06:21.960 --> 00:06:26.360
-from American and British vaults before the Americans could finish spending it.
+00:06:13.940 --> 00:06:19.360
+They just walked into a building whose owners had melted the load-bearing walls for spending money.
 
 61
-00:06:26.920 --> 00:06:34.920
-He named the operation Vide-Gousset: "Empty Pocket". This is a heist film, except the person being robbed was also the person
+00:06:20.200 --> 00:06:28.120
+Not great. Revolutionary France (seventeen-nineties). France started wars with everyone.
 
 62
-00:06:34.920 --> 00:06:42.300
-who started stealing first. By nineteen seventy-one, the gold was mostly gone and more countries were asking for theirs.
+00:06:29.360 --> 00:06:36.880
+Ran out of money. Invented a solution: print fake currency called "assignats" backed by church land they'd stolen.
 
 63
-00:06:42.680 --> 00:06:46.960
-Hence the speech. (Everyone else noticed fifty years later.).
+00:06:37.640 --> 00:06:42.140
+Backing money with stolen property is surprisingly honest about what money is.
 
 64
-00:06:47.840 --> 00:06:55.500
-What Actually Happened. The gold standard died. Your species abandoned one shared hallucination (gold, which is a shiny
+00:06:43.180 --> 00:06:46.660
+Hyperinflation hit thirteen thousand percent in five years.
 
 65
-00:06:55.500 --> 00:07:02.420
-rock you can't eat) for another shared hallucination (paper, which is a flat rock you also can't eat).
+00:06:47.280 --> 00:06:54.300
+The explanation was boring (monetary policy) so the public chose an exciting one (the aristocrats are hoarding everything).
 
 66
-00:07:02.500 --> 00:07:09.280
-You called this "modernization." The dollar was now backed by "the full faith and credit of the United States government,"
+00:06:55.060 --> 00:06:59.880
+The guillotine solved this explanation approximately seventeen thousand times.
 
 67
-00:07:09.920 --> 00:07:15.680
-which is a phrase that sounds reassuring until you remember that the government was doing this specifically because it had
+00:06:59.920 --> 00:07:03.060
+Then Napoleon pointed the remaining anger at the rest of Europe.
 
 68
-00:07:15.680 --> 00:07:21.700
-run out of faith and credit. It's like a restaurant that can't pay its food suppliers announcing that meals are now backed
+00:07:03.830 --> 00:07:11.360
+Also, not great. Weimar Germany (nineteen-twenties). Germany lost World War One.
 
 69
-00:07:21.740 --> 00:07:24.880
-by the full faith and credit of the restaurant. You'd leave.
+00:07:12.040 --> 00:07:18.780
+Printed money to pay reparations. Achieved twenty-nine thousand five hundred percent monthly inflation, which means a loaf
 
 70
-00:07:25.420 --> 00:07:29.460
-Except you can't leave the dollar because your rent is denominated in it.
+00:07:18.780 --> 00:07:23.020
+of bread that cost one mark in January cost billions by fall.
 
 71
-00:07:29.740 --> 00:07:36.600
-This is not a coincidence. The Theft That Followed. Productivity went up two hundred and forty-six percent.
+00:07:23.620 --> 00:07:29.340
+People burned money for heat because paper was worth more as fuel than as currency.
 
 72
-00:07:37.380 --> 00:07:44.420
-Wages went up one hundred and fifteen percent. On Wishonia, when someone does two hundred and forty-six percent more work
+00:07:30.360 --> 00:07:38.080
+This is the only recorded instance in history where money performed its function honestly: it kept people warm, briefly,
 
 73
-00:07:44.420 --> 00:07:48.640
-and gets paid one hundred and fifteen percent more, this is called "theft."
+00:07:38.440 --> 00:07:42.400
+and then it was gone. This is also what it does the rest of the time.
 
 74
-00:07:49.360 --> 00:07:55.790
-On Earth it is called "the economy." The difference between those two numbers went to Wall Street and war contractors.
+00:07:42.780 --> 00:07:51.340
+You just can't see the fire. When a population is hungry enough to burn money for warmth, they will follow anyone who offers
 
 75
-00:07:56.420 --> 00:08:05.320
-Not to you. You can check. The Two-Income Trap. In nineteen sixty-seven, fewer than half of married-couple families had
+00:07:51.340 --> 00:07:59.080
+a simpler explanation than monetary policy. Hitler offered the simplest explanation available: blame the Jews.
 
 76
-00:08:05.520 --> 00:08:11.860
-both spouses working. One paycheck bought a house, a car, annual vacations, and a pension.
+00:08:00.280 --> 00:08:07.460
+Really not great. I am not naming any names, but if you are reading this and your country is currently building detention
 
 77
-00:08:12.500 --> 00:08:16.000
-The other adult raised children, or gardened, or was bored.
+00:08:07.460 --> 00:08:15.660
+camps for foreigners while your currency loses value and nobody can explain why groceries cost more, you may want to reread
 
 78
-00:08:16.980 --> 00:08:24.220
-Boredom was a luxury your grandparents could afford. By twenty eleven, husband-only earner families had dropped from thirty-six
+00:08:15.660 --> 00:08:19.900
+the last two paragraphs. The pattern has a distinctive shape.
 
 79
-00:08:24.320 --> 00:08:30.980
-percent to nineteen percent. The rest sent both adults to work and paid strangers to raise their children.
+00:08:20.080 --> 00:08:25.500
+It has had the same shape every time. The American Money Printer.
 
 80
-00:08:31.580 --> 00:08:35.820
-Working wives contributed twenty-seven percent of family income in nineteen seventy.
+00:08:26.620 --> 00:08:34.059
+Nineteen thirteen: Created the Federal Reserve. Nineteen seventeen: Immediately used it to fund World War One.
 
 81
-00:08:36.360 --> 00:08:44.059
-By twenty eleven, it was thirty-seven percent. An entire additional human entered the workforce and the family gained ten
+00:08:34.740 --> 00:08:39.360
+Nineteen seventeen to present: Dollar has lost ninety-six percent of its value.
 
 82
-00:08:44.059 --> 00:08:48.210
-percentage points. I want to be very precise about what happened here.
+00:08:40.460 --> 00:08:48.300
+Wars: Now continuous and everywhere. World War One is worth pausing on, because it is the cleanest demonstration of what
 
 83
-00:08:48.920 --> 00:08:55.120
-Your species noticed that one paycheck was no longer sufficient, so it doubled the number of workers per household.
+00:08:48.300 --> 00:08:56.280
+a money printer does to democratic consent. In nineteen seventeen, most Americans did not want to fight in a European war.
 
 84
-00:08:55.720 --> 00:09:01.840
-The two paychecks combined now purchase a lifestyle that one paycheck covered comfortably in nineteen seventy-one.
+00:08:56.720 --> 00:09:01.360
+They did not understand why it was happening. Nobody understood why it was happening.
 
 85
-00:09:02.460 --> 00:09:06.880
-You added a whole extra human to the economy and broke even.
+00:09:01.880 --> 00:09:08.940
+(Historians still argue about it, which is how you know.) Woodrow Wilson had just won reelection on the slogan "He kept
 
 86
-00:09:07.260 --> 00:09:12.600
-On Wishonia, when you double the inputs and the outputs stay the same, you check for parasites.
+00:09:08.940 --> 00:09:15.640
+us out of war," which, in retrospect, was less a promise than a spoiler alert delivered in the wrong tense.
 
 87
-00:09:13.400 --> 00:09:20.640
-On Earth, you invented the phrase "work-life balance," which describes having half of what your parents had but in two directions
+00:09:16.820 --> 00:09:24.640
+The war had no popular mandate. It had something better: a four-year-old central bank that could fund it without asking.
 
 88
-00:09:20.640 --> 00:09:25.680
-simultaneously. Your ninety-three percent Pay Cut (Measured in Shiny Rocks).
+00:09:25.680 --> 00:09:33.980
+Before the Fed, wars required Congress to raise taxes or sell bonds directly to citizens, which meant citizens had to agree
 
 89
-00:09:26.440 --> 00:09:29.320
-Here's the same observation, measured in gold, because gold is the one thing humans can't print.
+00:09:33.980 --> 00:09:42.120
+the war was worth paying for. This is an inconvenient feature if you are a politician who wants a war that citizens do not
 
 90
-00:09:29.540 --> 00:09:35.220
-(Not for lack of trying. You spent three hundred years trying to turn lead into gold before giving up and inventing the
+00:09:42.120 --> 00:09:50.420
+want. The Fed removed the inconvenience. It bought government debt with newly created money, making the war financially
 
 91
-00:09:35.220 --> 00:09:39.100
-Federal Reserve, which turned gold into lead much more efficiently.).
+00:09:50.420 --> 00:09:56.140
+painless in the short term and democratically optional. The public didn't say yes.
 
 92
-00:09:39.820 --> 00:09:45.820
-On Wishonia, we also briefly measured wealth in rocks. Then someone ate one and we realized rocks are not food.
+00:09:56.600 --> 00:10:04.480
+They just weren't asked. On Wishonia, we have a word for doing expensive things with other people's money without telling
 
 93
-00:09:46.340 --> 00:09:48.790
-You reached this conclusion about gold approximately never.
+00:10:04.480 --> 00:10:12.130
+them. The word is "theft." You have the same word. You just don't use it when the thief has a marble building.
 
 94
-00:09:49.400 --> 00:09:56.600
-In nineteen seventy-two, a typical American family earned the equivalent of one hundred and ninety-one ounces of gold per
+00:10:13.280 --> 00:10:19.380
+The consequences of not asking were, as your species likes to understate, "significant."
 
 95
-00:09:56.600 --> 00:10:04.340
-year. If your family still earned one hundred and ninety-one ounces, your household income would be over one million and
+00:10:20.620 --> 00:10:25.540
+The war produced the Treaty of Versailles. The treaty imposed reparations on Germany.
 
 96
-00:10:04.340 --> 00:10:08.880
-thirty thousand dollars. It is not over one million and thirty thousand dollars.
+00:10:26.060 --> 00:10:29.820
+Germany printed money to pay them. The money became worthless.
 
 97
-00:10:09.420 --> 00:10:13.220
-Median household income is seventy-seven thousand, five hundred dollars.
+00:10:30.260 --> 00:10:37.900
+The economy collapsed. A population that had been humiliated, impoverished, and desperate elected a man who promised to
 
 98
-00:10:13.700 --> 00:10:20.200
-At today's gold price, that buys you fourteen ounces. You went from one hundred and ninety-one to fourteen.
+00:10:37.900 --> 00:10:45.560
+fix everything. He did not fix everything. He killed six million Jews and started a war that killed sixty million more.
 
 99
-00:10:20.880 --> 00:10:27.740
-A ninety-three percent pay cut, delivered one quiet year at a time, while your leaders stood in front of flags and said
+00:10:46.200 --> 00:10:55.040
+The causal chain is: money printer leads to war nobody voted for, leads to punitive treaty, leads to hyperinflation, leads
 
 100
-00:10:27.740 --> 00:10:32.720
-the economy was "growing." It was growing. In the way a tumor grows.
+00:10:55.040 --> 00:11:02.880
+to Holocaust. Every link required the previous one. Remove the first link (a central bank willing to fund a war the public
 
 101
-00:10:33.940 --> 00:10:42.280
-Why Nobody Told You. Even the think tanks supposedly on your side report the gap as roughly ten thousand dollars a year.
+00:11:02.880 --> 00:11:08.940
+didn't want) and the chain doesn't form. I am told it is rude to bring this up at dinner parties.
 
 102
-00:10:42.980 --> 00:10:50.080
-That's because they measure it using the government's ruler, which has been getting shorter: C.P.I.-adjusted (the index
+00:11:09.520 --> 00:11:12.490
+I am told many things are rude to bring up at dinner parties.
 
 103
-00:10:50.080 --> 00:10:55.960
-has been redesigned multiple times; each redesign coincidentally makes inflation look smaller.
+00:11:13.040 --> 00:11:17.960
+I have noticed that the list of rude topics is identical to the list of important ones.
 
 104
-00:10:56.740 --> 00:11:05.000
-This is beige crime at its most beige.). Starting at nineteen seventy-nine instead of nineteen seventy-one (skipping the
+00:11:18.880 --> 00:11:25.660
+The Federal Reserve was created in nineteen thirteen. Within sixteen years it had produced the Great Depression.
 
 105
-00:11:05.000 --> 00:11:12.740
-years that make the chart look the worst). Counting your employer's overpriced health insurance as "pay" (this is like counting
+00:11:26.140 --> 00:11:32.780
+The mechanism was not complicated: the Fed flooded the economy with cheap credit through the nineteen twenties, inflating
 
 106
-00:11:12.760 --> 00:11:18.420
-the chain around your ankle as "jewelry"). You're not missing ten thousand dollars a year.
+00:11:32.780 --> 00:11:39.060
+a stock market bubble, because if there is one thing a new money printer cannot resist, it is being used.
 
 107
-00:11:18.940 --> 00:11:22.600
-You're missing nine hundred and fifty-two thousand dollars.
+00:11:39.940 --> 00:11:48.040
+Then it tightened. The bubble popped. Then, as banks began failing in waves (over nine thousand banks between nineteen thirty
 
 108
-00:11:23.040 --> 00:11:30.960
-The distance between those numbers is the entire game. Gold doesn't renegotiate its value at Federal Reserve meetings.
+00:11:48.040 --> 00:11:55.780
+and nineteen thirty-three), the institution that was created specifically to prevent bank panics stood by and watched.
 
 109
-00:11:31.600 --> 00:11:39.380
-Gold just sits there, being a shiny rock, quietly demonstrating that a shiny rock you dug out of the ground has held its
+00:11:56.440 --> 00:12:04.120
+It allowed the money supply to fall by a third. It raised interest rates in nineteen thirty-one to protect its gold reserves
 
 110
-00:11:39.380 --> 00:11:43.620
-value better than the entire financial system you built to replace it.
+00:12:04.120 --> 00:12:12.400
+while the economy collapsed around it. Friedman and Schwartz's A Monetary History of the United States made the definitive
 
 111
-00:11:44.340 --> 00:11:52.260
-Your economists will say gold is a "volatile commodity." Your economists work for the people who redesigned the ruler.
+00:12:12.400 --> 00:12:20.840
+case: the Fed did not fail to prevent the Depression; it caused it, first through action, then through inaction.
 
 112
-00:11:53.240 --> 00:12:01.240
-How the Robbery Works (Same Trick, Different Costume). On Wishonia, we learned this lesson six thousand years ago.
+00:12:21.380 --> 00:12:25.700
+The fire department showed up, watched the building burn, and then charged for parking.
 
 113
-00:12:01.680 --> 00:12:09.400
-The trick never changes. Only the outfit: Egyptian pharaohs: "Hey, god said I'm like in charge or something.
+00:12:26.360 --> 00:12:32.900
+Within thirty-two years the same institution had produced the causal chain that ended in the Holocaust.
 
 114
-00:12:09.720 --> 00:12:14.580
-I'm gonna need you to pile some big rocks up in a triangle shape for no reason."
+00:12:33.360 --> 00:12:38.850
+These are not items on a long list of mistakes. These are the first two things it did.
 
 115
-00:12:15.360 --> 00:12:21.090
-Medieval kings: "Hey, god said I'm in charge or something. I'm gonna need you to give me half your grain.
+00:12:39.320 --> 00:12:46.760
+On Wishonia, when a new institution's inaugural achievements are the worst economic collapse and the worst genocide in planetary
 
 116
-00:12:21.540 --> 00:12:24.820
-Also, go kill some other guys and bring me back their stuff, too."
+00:12:46.760 --> 00:12:52.640
+history, the institution is dissolved and the founders are asked some very pointed questions.
 
 117
-00:12:25.880 --> 00:12:33.220
-Modern central bankers: "Here are forty-seven pages about hedonic adjustments and geometric weighting in consumer price
+00:12:53.200 --> 00:12:59.580
+On Earth, you put the institution on your money and gave it a second century to see if it could top itself.
 
 118
-00:12:33.220 --> 00:12:39.080
-index methodology." The current version is, I must say, brilliant.
+00:13:00.240 --> 00:13:06.640
+You're reading this sentence right now with money that's worth four cents on the nineteen thirteen dollar.
 
 119
-00:12:39.840 --> 00:12:45.020
-Previous rulers needed armies, divine authority, and occasional public executions.
+00:13:07.140 --> 00:13:11.870
+I mention this because you seem fine with it, which I find clinically fascinating.
 
 120
-00:12:45.900 --> 00:12:52.320
-Your current rulers just need jargon. They replaced the sword with a two hundred-page P.D.F.
+00:13:12.680 --> 00:13:19.540
+The pattern is so consistent it could be a recipe. Step one: give politicians a machine that creates money.
 
 121
-00:12:52.320 --> 00:12:56.100
-that makes your eyes cross before you reach the part where it explains you're being robbed.
+00:13:20.100 --> 00:13:24.380
+Step two: they use it to kill people. There is no Step three.
 
 122
-00:12:56.920 --> 00:13:03.450
-The pharaoh had to worry about revolution. The Federal Reserve just has to worry about being boring enough.
+00:13:24.720 --> 00:13:32.520
+There has never been a Step three. The recipe is two steps long, it has been tested for thousands of years across dozens
 
 123
-00:13:03.760 --> 00:13:10.690
-So far, it is very good at this. A serf who understands the system is dangerous.
+00:13:32.520 --> 00:13:38.080
+of civilizations, and you keep making it. "But what about Canada?"
 
 124
-00:13:11.220 --> 00:13:15.580
-A serf who finds the system too boring to understand is a taxpayer.
+00:13:38.500 --> 00:13:42.280
+says the human who took one semester of economics. "What about Norway?
 
 125
-00:13:16.440 --> 00:13:23.900
-Why You Never Learned This in School. The average American with a bachelor's degree completes approximately seventeen thousand
+00:13:42.560 --> 00:13:46.680
+They have central banks and no dictators." Correct. Well observed.
 
 126
-00:13:23.900 --> 00:13:31.460
-hours of formal education. The number of those hours spent explaining how the Federal Reserve creates money and who gets
+00:13:47.800 --> 00:13:54.360
+You have identified two countries where the money printer has not yet produced a dictator, in the same way that a smoker
 
 127
-00:13:31.460 --> 00:13:38.020
-it first: Zero. Not "nearly zero." Not "a brief overview in eleventh grade."
+00:13:54.360 --> 00:13:59.200
+who hasn't yet gotten cancer has "disproved" the link between smoking and cancer.
 
 128
-00:13:38.820 --> 00:13:45.440
-Zero. You will spend more class time learning the recorder, which is an instrument specifically designed to make parents
+00:14:00.140 --> 00:14:05.210
+Canada's dollar has lost over ninety-five percent of its purchasing power since nineteen thirteen.
 
 129
-00:13:45.440 --> 00:13:55.240
-regret reproduction. Here is what monetary policy actually determines: Whether your brightest minds design vaccines or warheads.
+00:14:05.680 --> 00:14:13.240
+Norway's krone has lost over ninety-eight percent. The median Canadian and Norwegian are poorer in real terms than the numbers
 
 130
-00:13:55.940 --> 00:14:02.960
-Whether your factories build MRI machines or missiles. Whether your wealth cures diseases or causes them.
+00:14:13.240 --> 00:14:20.640
+suggest, and the gap between productivity and wages has opened in every country with a fiat currency since the nineteen
 
 131
-00:14:03.520 --> 00:14:08.500
-It is the single most important force shaping who lives and who dies on your planet.
+00:14:20.640 --> 00:14:26.260
+seventies. Every single one. The dictator is the dramatic version.
 
 132
-00:14:09.180 --> 00:14:13.780
-It decides everything. You have never had a class about it.
+00:14:26.680 --> 00:14:33.280
+The quiet version is a ninety-three percent pay cut delivered so gradually that you blame yourself for not saving enough.
 
 133
-00:14:13.920 --> 00:14:21.440
-You had multiple classes about the recorder. Only twenty-eight states require any economics course to graduate high school,
+00:14:34.260 --> 00:14:37.520
+Both versions use the same printer. One just has better manners.
 
 134
-00:14:21.800 --> 00:14:25.900
-and those courses cover supply and demand curves, not money creation.
+00:14:38.520 --> 00:14:42.900
+On Wishonia, we do not judge a parasite by whether the host is still walking.
 
 135
-00:14:26.500 --> 00:14:30.500
-The thing that took ninety-three percent of your purchasing power is not on the test.
+00:14:43.240 --> 00:14:48.980
+We judge it by how much blood is missing. You invented money to trade chickens more efficiently.
 
 136
-00:14:31.160 --> 00:14:36.680
-It has never been on any test. This is very convenient for the people who took the ninety-three percent.
+00:14:49.460 --> 00:14:52.750
+Within a few centuries you were using it to incinerate cities.
 
 137
-00:14:37.640 --> 00:14:44.940
-The Priesthood. On every planet I've observed, the people who operate the extraction system also design the curriculum.
+00:14:53.380 --> 00:14:57.160
+On Wishonia, we call this "the chicken escalation problem."
 
 138
-00:14:45.640 --> 00:14:48.780
-This is so consistent it barely qualifies as an observation.
+00:14:57.500 --> 00:15:02.720
+(We don't really. I just made that up. But we should.). The Receipt.
 
 139
-00:14:49.660 --> 00:14:56.420
-On Earth: Banks endow economics chairs at universities. The Federal Reserve funds economic research.
+00:15:02.780 --> 00:15:09.080
+I have been keeping a tally. I want to show you the tally, because I have noticed that your species discusses these wars
 
 140
-00:14:57.220 --> 00:15:03.960
-Economists rotate between universities, the Fed, and Wall Street (this is called "the revolving door," which is a very honest
+00:15:09.080 --> 00:15:15.140
+one at a time, which makes each one look like a separate tragedy instead of a receipt.
 
 141
-00:15:03.960 --> 00:15:08.740
-name because the people going through it always end up back where they started, only richer).
+00:15:16.040 --> 00:15:22.980
+Every war on this list required printing money, debasing currency, or borrowing from a central bank that created the money
 
 142
-00:15:09.860 --> 00:15:15.760
-Say "the system works" and you get tenure, consulting fees, and a seat on the Federal Reserve Board.
+00:15:22.980 --> 00:15:30.080
+from nothing. In each case, the printer removed the inconvenient step of asking citizens whether they would like to pay
 
 143
-00:15:16.360 --> 00:15:23.280
-Say "the system is theft" and you get called "not a serious economist," which is the academic equivalent of being excommunicated,
+00:15:30.080 --> 00:15:34.640
+for it. France printed assignats backed by stolen church land.
 
 144
-00:15:24.300 --> 00:15:29.140
-except the church is a bank and the holy water is money. The Fake Nobel Prize.
+00:15:35.660 --> 00:15:43.500
+Five million dead. Running total: five million. Lincoln suspended the gold standard and printed four hundred and fifty million
 
 145
-00:15:30.300 --> 00:15:37.960
-This is my favorite part. In nineteen sixty-eight, Sweden's central bank created a prize and stuck Alfred Nobel's name on
+00:15:43.500 --> 00:15:47.980
+dollars in greenbacks. One hundred and twelve billion dollars in today's money.
 
 146
-00:15:37.960 --> 00:15:42.920
-it. This gave economics the credibility of physics, chemistry, and medicine.
+00:15:48.700 --> 00:15:52.800
+Seven hundred and fifty thousand dead. Running total: six million.
 
 147
-00:15:43.540 --> 00:15:50.560
-Alfred Nobel never authorized this. He was dead at the time and unable to object, which is the ideal state for someone whose
+00:15:53.940 --> 00:15:54.340
+The Federal Reserve, age four, bought government war debt with money it made up.
 
 148
-00:15:50.560 --> 00:15:59.100
-name you're borrowing. The Nobel Prize website itself states that "the prize in economic sciences is not a Nobel Prize".
+00:15:54.340 --> 00:15:54.340
+Four hundred and sixty-eight billion dollars in today's money.
 
 149
-00:16:00.000 --> 00:16:08.420
-Nobel's great-grandnephew, Peter Nobel, called it "a P.R. coup by economists to improve their reputation" and noted that
+00:15:54.340 --> 00:15:55.760
+Twenty million dead. Running total: twenty-six million. I started to notice a pattern around here.
 
 150
-00:16:08.420 --> 00:16:13.260
-Alfred "despised people who cared more about profits than society's well-being".
+00:15:56.800 --> 00:16:03.600
+That war produced the treaty that bankrupted Germany, which printed money to pay reparations, which produced Hitler, which
 
 151
-00:16:14.260 --> 00:16:21.440
-I want to make sure you absorbed that: The central bank that prints your money created a fake Nobel Prize to give to the
+00:16:03.600 --> 00:16:10.040
+produced the next entry. Cost to the U.S. alone: five point seven trillion dollars.
 
 152
-00:16:21.440 --> 00:16:28.720
-people who explain why printing your money is fine. On Wishonia, we have a word for this.
+00:16:10.760 --> 00:16:19.220
+Sixty million dead. Running total: eighty-six million. I stopped noticing a pattern, because it was no longer a pattern.
 
 153
-00:16:28.720 --> 00:16:34.360
-It translates roughly to "decorating the burglar.". The Dual Mandate (Or: The Two Goals of Serfdom).
+00:16:19.660 --> 00:16:25.720
+It was just the thing that keeps happening. The Fed monetized Treasury debt for Korea.
 
 154
-00:16:35.160 --> 00:16:40.940
-Your Federal Reserve has two official goals, like a mission statement, except the mission is you.
+00:16:26.260 --> 00:16:29.460
+Four hundred and seventy-eight billion dollars in today's money.
 
 155
-00:16:41.800 --> 00:16:48.880
-One. "Maximum employment". Two. "Stable prices" (which they define as two percent inflation per year).
+00:16:29.980 --> 00:16:34.460
+The practice was so inflationary they had to sign a formal Accord to make it stop.
 
 156
-00:16:49.640 --> 00:16:55.660
-On Wishonia, our central resource system has one goal: "are beings' lives measurably improving?"
+00:16:35.560 --> 00:16:41.080
+Three million dead. Running total: eighty-nine million. L.B.J.
 
 157
-00:16:56.100 --> 00:17:02.600
-But that's apparently too simple for a species that named its planet "dirt," so let me explain what your two goals actually
+00:16:41.080 --> 00:16:45.790
+hid Vietnam's cost inside the regular budget and covered the gap by printing.
 
 158
-00:17:02.600 --> 00:17:11.599
-do. Goal One: "Maximum Employment" (Keep Everyone Busy). "Maximum employment" means everyone has a job.
+00:16:45.980 --> 00:16:52.480
+One trillion dollars in today's money. Three million dead. Running total: ninety-two million.
 
 159
-00:17:12.060 --> 00:17:17.040
-It does not specify a good job. It does not specify a job that pays enough to eat.
+00:16:52.980 --> 00:16:57.860
+Congress funded the post-nine-eleven wars entirely with debt, then cut taxes.
 
 160
-00:17:17.640 --> 00:17:21.000
-It does not specify a job that leaves you time to read about monetary policy.
+00:16:58.320 --> 00:17:03.620
+The Fed bought trillions in government bonds. Total cost: eight trillion dollars and counting.
 
 161
-00:17:22.420 --> 00:17:29.980
-It specifies: occupied. A medieval serf working sunrise to sunset was maximally employed.
+00:17:04.560 --> 00:17:09.480
+Four and a half million dead and counting. Running total: ninety-seven million.
 
 162
-00:17:30.560 --> 00:17:36.200
-A modern American working two jobs who can't afford a doctor's visit is also maximally employed.
+00:17:10.599 --> 00:17:17.940
+Ninety-seven million deaths. Over sixteen trillion dollars spent, and that is just the U.S.
 
 163
-00:17:36.920 --> 00:17:44.180
-The metric cannot distinguish between these situations. From the metric's perspective, both serfs are performing optimally.
+00:17:18.040 --> 00:17:25.800
+share of six wars. War costs are U.S. military expenditures adjusted to twenty twenty-four dollars from Congressional Research
 
 164
-00:17:44.840 --> 00:17:48.760
-I found this confusing at first. Then I realized it's not a bug.
+00:17:25.800 --> 00:17:34.140
+Service, or C.R.S., fiscal year twenty eleven estimates, except post-nine-eleven wars which use Brown University's comprehensive
 
 165
-00:17:49.480 --> 00:17:56.980
-Busy people don't read Federal Reserve balance sheets. Busy people vote for whichever candidate promises to "create jobs,"
+00:17:34.140 --> 00:17:37.860
+eight trillion dollar figure including veterans' care and interest.
 
 166
-00:17:57.560 --> 00:18:01.200
-which is a promise to keep them too busy to ask who's keeping them poor.
+00:17:38.940 --> 00:17:44.120
+All-belligerent costs would be substantially higher. Death figures are mid-range estimates.
 
 167
-00:18:01.920 --> 00:18:06.720
-"Maximum employment" is not an economic target. It is a distraction target.
+00:17:44.880 --> 00:17:51.260
+Many scholars cite higher numbers, particularly for World War Two (up to eighty-five million including war-related famine
 
 168
-00:18:07.360 --> 00:18:10.960
-It measures how occupied the serfs are, not how well they're doing.
+00:17:51.260 --> 00:17:55.400
+and disease) and post-nine-eleven wars (up to four point seven million).
 
 169
-00:18:11.580 --> 00:18:19.300
-A hamster wheel achieves maximum employment. Goal Two: "Stable Prices" (Take two percent Per Year).
+00:17:55.920 --> 00:17:59.340
+The less conservative total exceeds one hundred and ten million.
 
 170
-00:18:20.280 --> 00:18:26.140
-"Stable prices" means two percent inflation per year. On Wishonia, "stable" means "not moving."
+00:18:00.140 --> 00:18:08.920
+But wars end. Spending does not. Your species currently spends a record two point seven two trillion dollars per year on
 
 171
-00:18:27.000 --> 00:18:32.400
-On Earth, "stable prices" means prices that rise every year, predictably, forever.
+00:18:08.920 --> 00:18:15.860
+military, up nine point four percent from the year before, which is six hundred and four years of government clinical trials.
 
 172
-00:18:33.040 --> 00:18:36.940
-This is like calling a sinking ship "stable" because it sinks at a known rate.
+00:18:16.240 --> 00:18:20.380
+Every year. The Federal Reserve has been running for one hundred and eleven years.
 
 173
-00:18:37.840 --> 00:18:41.320
-I need to say that again because your brain is going to try to skip past it.
+00:18:21.340 --> 00:18:28.740
+Cumulative global military spending over that period, in constant twenty twenty-four dollars, exceeds one hundred and seventy
 
 174
-00:18:42.040 --> 00:18:49.760
-The Federal Reserve's official, publicly stated, announced-on-television goal is to make your money worth two percent less
+00:18:28.740 --> 00:18:37.000
+trillion dollars. Stockholm International Peace Research Institute, or S.I.P.R.I., data from nineteen eighty-eight to twenty
 
 175
-00:18:49.760 --> 00:18:55.660
-every year. They chose this number. They aim for it. They celebrate when they hit it.
+00:18:37.000 --> 00:18:43.680
+twenty-four sums to approximately sixty-five to seventy-two trillion dollars in constant twenty twenty-four dollars.
 
 176
-00:18:56.440 --> 00:19:00.420
-Over thirty-five years, two percent compounds to a fifty percent loss.
+00:18:44.200 --> 00:18:51.020
+The Cold War era (nineteen forty-six to nineteen eighty-seven) adds roughly fifty to seventy trillion dollars, reconstructed
 
 177
-00:19:00.860 --> 00:19:05.500
-Over the fifty-four years since Nixon, it has taken ninety-three percent.
+00:18:51.020 --> 00:18:58.620
+from U.S. spending data and C.I.A. estimates. World War Two cost all belligerents approximately twenty-three trillion dollars,
 
 178
-00:19:06.200 --> 00:19:10.180
-They named the target. They hit the target. You are the target.
+00:18:59.040 --> 00:19:04.700
+World War One approximately seven trillion dollars, with three to five trillion dollars for interwar budgets.
 
 179
-00:19:10.800 --> 00:19:16.460
-These are the same sentence. The "Deflation Is Dangerous" Story.
+00:19:05.540 --> 00:19:13.180
+The range since nineteen thirteen is one hundred and fifty to one hundred and ninety trillion dollars; one hundred and seventy
 
 180
-00:19:17.680 --> 00:19:25.880
-The justification for permanent inflation, taught in every economics class that bothers to exist: deflation (falling prices)
+00:19:13.180 --> 00:19:21.380
+trillion dollars is the central estimate. The full historical tab, including all pre-nineteen thirteen warfare, is approximately
 
 181
-00:19:25.880 --> 00:19:30.260
-is dangerous because "people won't buy things if they know prices will be lower tomorrow.".
+00:19:21.380 --> 00:19:28.760
+one hundred and eighty trillion dollars. The Institute for Economics and Peace estimates the current annual economic cost
 
 182
-00:19:31.120 --> 00:19:35.360
-I watched your species for eighty years and I have some questions about this theory.
+00:19:28.760 --> 00:19:33.500
+of violence and conflict at twenty trillion dollars when indirect costs are included.
 
 183
-00:19:36.000 --> 00:19:40.040
-You buy a new iPhone every two years knowing the next one will be better and cheaper.
+00:19:34.360 --> 00:19:42.180
+One hundred and seventy trillion dollars. That is nearly thirty-eight thousand years of global government clinical trials.
 
 184
-00:19:40.500 --> 00:19:43.800
-You bought a flat-screen TV knowing the price drops every year.
+00:19:42.640 --> 00:19:46.000
+Your species has been running clinical trials for about eighty years.
 
 185
-00:19:44.180 --> 00:19:47.280
-You buy a laptop knowing it will be worth half as much in eighteen months.
+00:19:46.740 --> 00:19:53.580
+You could have funded every clinical trial you will ever run, for hundreds of lifetimes, with the money you spent on killing
 
 186
-00:19:47.920 --> 00:19:51.160
-You bought a phone case for forty dollars that you will lose in three months.
+00:19:53.580 --> 00:20:00.060
+each other since the Federal Reserve opened for business. I looked for the part of this process that required human-level
 
 187
-00:19:52.020 --> 00:19:56.980
-The entire technology sector has experienced continuous deflation for decades.
+00:20:00.060 --> 00:20:07.300
+intelligence to design. I did not find it. An eleven-year-old on Wishonia designed a better system for her science fair.
 
 188
-00:19:57.500 --> 00:20:02.120
-It is the fastest-growing, most innovative, most profitable sector of your economy.
+00:20:07.700 --> 00:20:12.260
+It won second place. (First place went to a girl who taught a fungus to do arithmetic.
 
 189
-00:20:02.860 --> 00:20:08.020
-People buy things they want. They do not sit in empty rooms waiting for prices to fall further.
+00:20:12.880 --> 00:20:20.100
+The fungus was also better at monetary policy than your Federal Reserve, but that is a different chapter.) What About Wars
 
 190
-00:20:08.620 --> 00:20:14.400
-This is obvious to anyone who has met a human. Humans are not known for their patience.
+00:20:20.100 --> 00:20:27.700
+Under Hard Money? I then tried to make the opposite list. Wars that killed more than a million people while all sides stayed
 
 191
-00:20:15.500 --> 00:20:24.210
-The One Data Point. The only evidence they cite is the Great Depression, where falling prices coincided with economic collapse.
+00:20:27.700 --> 00:20:32.620
+on a gold standard, without suspending convertibility or printing unbacked currency.
 
 192
-00:20:24.340 --> 00:20:32.260
-This is a correlation/causation error so basic it would fail an introductory statistics course at a university funded by
+00:20:33.460 --> 00:20:41.800
+The list is empty. I checked twice. Every major war in your modern history required leaving the gold standard to keep fighting.
 
 193
-00:20:32.260 --> 00:20:39.340
-the Federal Reserve. (Which is most of them.). The Great Depression's deflation was *caused by* bank failures and credit
+00:20:42.260 --> 00:20:46.380
+Britain suspended gold in seventeen ninety-seven to fight Napoleon.
 
 194
-00:20:39.340 --> 00:20:46.440
-contraction, not the other way around. Blaming deflation for the Depression is like blaming wet streets for rain.
+00:20:46.720 --> 00:20:50.700
+The U.S. printed greenbacks in eighteen sixty-two to fight itself.
 
 195
-00:20:47.140 --> 00:20:54.220
-Meanwhile, the longest sustained deflation in American history (eighteen seventy to eighteen ninety-six) coincided with
+00:20:51.480 --> 00:20:56.560
+Every belligerent in nineteen fourteen abandoned gold within weeks of the first shots.
 
 196
-00:20:54.220 --> 00:21:02.240
-the most explosive economic growth your country has ever experienced: Prices fell roughly two percent per year.
+00:20:57.460 --> 00:21:05.580
+You cannot fund a large war with honest money, because honest money requires asking citizens to pay, and citizens, when
 
 197
-00:21:02.760 --> 00:21:07.640
-Real output grew two to three percent per year. Real wages rose.
+00:21:05.580 --> 00:21:12.720
+asked, generally prefer to spend their limited savings on things other than killing strangers in countries they cannot find
 
 198
-00:21:08.180 --> 00:21:11.560
-You built the railroad, the telephone, and the electric light.
+00:21:12.720 --> 00:21:18.920
+on a map. The Spanish-American War (eighteen ninety-eight) is what happens when you try.
 
 199
-00:21:12.380 --> 00:21:17.730
-Falling prices. Rising prosperity. For twenty-six years. This is not a footnote.
+00:21:19.740 --> 00:21:27.320
+Fought entirely under the gold standard. The government had to fund it from existing revenue and a bond issue that required
 
 200
-00:21:18.160 --> 00:21:25.440
-It is a quarter-century of evidence. The Bank for International Settlements (the central bank of central banks, which is
+00:21:27.320 --> 00:21:33.100
+citizens to voluntarily hand over their gold. Duration: ten weeks.
 
 201
-00:21:25.440 --> 00:21:32.340
-a real thing that exists, like a boss fight at the end of a video game about money) tested this across one hundred and forty
+00:21:33.860 --> 00:21:41.140
+U.S. combat deaths: three hundred and forty-five. It ran out of enthusiasm approximately when it ran out of money.
 
 202
-00:21:32.340 --> 00:21:39.940
-years and thirty-eight economies and found that the link between deflation and slower growth is "weak" and "derives largely
+00:21:41.920 --> 00:21:45.980
+The gold standard did not prevent war. It prevented *cheap* war.
 
 203
-00:21:39.940 --> 00:21:49.720
-from the Great Depression". One data point. They built the entire theology of permanent inflation on one data point that
+00:21:46.480 --> 00:21:49.940
+It prevented war that outlasts the public's willingness to pay for it.
 
 204
-00:21:49.720 --> 00:21:56.120
-they misread. On Wishonia, if a scientist built a theory on one misinterpreted data point, they would lose their research
+00:21:51.000 --> 00:21:56.360
+On Wishonia, we display this information on a large sign outside our central resource building.
 
 205
-00:21:56.120 --> 00:22:01.870
-license. On Earth, they get the fake Nobel Prize. What They Could Measure Instead.
+00:21:57.300 --> 00:22:02.920
+The sign says: "LAST TIME WE LET SOMEONE PRINT MONEY FOR WAR: [DATE].
 
 206
-00:22:02.820 --> 00:22:09.060
-Here is a question that is apparently too obvious for economics: Are people's lives actually getting better?
+00:22:02.920 --> 00:22:07.620
+DEATHS: [NUMBER]." It has not needed updating in four thousand years.
 
 207
-00:22:09.780 --> 00:22:17.780
-That's it. You could measure: Inflation-adjusted after-tax median income: Are people actually richer, or just holding bigger
+00:22:08.360 --> 00:22:17.300
+Mostly because the sign is very effective. nineteen seventy-one: The Day Your Money Stopped Meaning Anything.
 
 208
-00:22:17.780 --> 00:22:26.140
-numbers on smaller paychecks? Median health-adjusted life years: Are people living longer, healthier lives, or just working
+00:22:18.580 --> 00:22:27.840
+August fifteen, nineteen seventy-one. A human named Nixon went on television and said, in slightly more presidential language:
 
 209
-00:22:26.140 --> 00:22:31.040
-longer before dying of diseases you could have cured with the money you printed for banks?
+00:22:28.540 --> 00:22:32.420
+"Remember how dollars could be exchanged for gold? We're stopping that."
 
 210
-00:22:32.000 --> 00:22:35.540
-These metrics exist. Economists know how to calculate them.
+00:22:33.260 --> 00:22:42.020
+"Also, wage and price controls." "Also, import taxes." He announced this on a Sunday evening in August, when nobody was
 
 211
-00:22:36.260 --> 00:22:43.600
-No central bank on Earth uses them. Because if the Federal Reserve were graded on whether the median American is healthier
+00:22:42.020 --> 00:22:49.300
+watching, which is the human equivalent of robbing a house while the family is on vacation, except the family is two hundred
 
 212
-00:22:43.600 --> 00:22:50.800
-and wealthier each year, someone would have to explain why the answer has been "no" for most of the past five decades.
+00:22:49.300 --> 00:22:55.420
+million people and the house is their money. He called it a "New Economic Policy."
 
 213
-00:22:51.460 --> 00:22:59.960
-It is much easier to aim for "maximum employment" and "two percent inflation" and declare success while everyone works more
+00:22:56.300 --> 00:23:03.040
+On your planet, when someone names a policy the opposite of what it does, something terrible is about to happen.
 
 214
-00:22:59.960 --> 00:23:07.480
-hours for less purchasing power. The Cantillon Effect (Or: Why the Money Printer Has a V.I.P.
+00:23:03.680 --> 00:23:10.260
+(See also: "Patriot Act," "Affordable Care Act," "Department of Defense," "Federal Reserve."
 
 215
-00:23:07.620 --> 00:23:15.200
-Line). In the seventeen hundreds, a human named Richard Cantillon noticed something that everyone already knew but nobody
+00:23:10.920 --> 00:23:16.140
+It is not federal. It has no reserves. Two words, two lies.
 
 216
-00:23:15.200 --> 00:23:21.950
-had written down: when you create new money, whoever gets it first benefits, and whoever gets it last pays.
+00:23:16.220 --> 00:23:21.720
+This is efficient, even by your standards.). Why He Did It.
 
 217
-00:23:22.740 --> 00:23:29.500
-On Wishonia, this is called "how money works." On Earth, it is taught as a niche economic theory, if it is taught at all.
+00:23:21.780 --> 00:23:30.100
+During World War Two, your government sold war bonds. Eighty-five million Americans bought one hundred and eighty-five billion
 
 218
-00:23:30.200 --> 00:23:35.080
-Here's what it looks like: One. The Fed creates new money. Two.
+00:23:30.100 --> 00:23:35.420
+dollars worth, because "buy bonds, beat the Nazis" is an easy poster.
 
 219
-00:23:35.140 --> 00:23:39.960
-Banks and government contractors receive it first. Three. They buy things at today's prices.
+00:23:36.380 --> 00:23:44.660
+Vietnam was not an easy poster. You cannot run a bond drive for "help us spray carcinogenic chemicals on rice farmers and
 
 220
-00:23:40.920 --> 00:23:47.580
-Four. Prices rise. Five. By the time the new money reaches your grocery store, everything costs more.
+00:23:44.660 --> 00:23:52.880
+their children." So L.B.J. hid the war's cost inside the regular federal budget and covered the gap by printing money.
 
 221
-00:23:48.260 --> 00:23:53.020
-Six. You buy the same groceries for more money and conclude that groceries have gotten expensive.
+00:23:53.480 --> 00:24:01.940
+No bond drives. No patriotic posters. Just quiet inflation, picking every pocket at two percent per year, which is below
 
 222
-00:23:54.460 --> 00:24:02.220
-Groceries did not get expensive. Your money got cheaper. But "your money got cheaper" requires a culprit, and culprits are
+00:24:01.940 --> 00:24:07.980
+the human boredom threshold for investigating things. Foreign governments have lower boredom thresholds.
 
 223
-00:24:02.220 --> 00:24:07.780
-boring when they wear suits and speak in percentages. So instead you get angry about the price of eggs.
+00:24:08.960 --> 00:24:16.640
+France noticed first. Between nineteen sixty-three and nineteen sixty-six, de Gaulle secretly organized one hundred and
 
 224
-00:24:09.500 --> 00:24:16.380
-On Wishonia, we have a saying: "If your eggs cost more every year but your chickens didn't change, look for whoever is shrinking
+00:24:16.640 --> 00:24:24.260
+twenty-nine flights and forty-four boat trips to extract three thousand three hundred and thirteen tonnes of French gold
 
 225
-00:24:16.380 --> 00:24:19.560
-your money." We don't actually have this saying. But we should.
+00:24:24.260 --> 00:24:28.800
+from American and British vaults before the Americans could finish spending it.
 
 226
-00:24:20.540 --> 00:24:26.480
-The twenty twenty Demonstration. In twenty twenty, the Fed created roughly four trillion dollars in new money.
+00:24:29.600 --> 00:24:39.240
+He named the operation Vide-Gousset: "Empty Pocket". This is a heist film, except the person being robbed was also the person
 
 227
-00:24:27.200 --> 00:24:32.160
-Where did it go? Top one percent: Gained four point two trillion dollars in net worth.
+00:24:39.240 --> 00:24:47.280
+who started stealing first. By nineteen seventy-one, the gold was mostly gone and more countries were asking for theirs.
 
 228
-00:24:32.740 --> 00:24:39.940
-Per person: approximately one point three million dollars. Bottom fifty percent (one hundred and sixty-five million people):
+00:24:47.840 --> 00:24:51.440
+Hence the speech. (Everyone else noticed fifty years later.).
 
 229
-00:24:39.960 --> 00:24:44.700
-Gained eight hundred and thirty billion dollars total. Per person: approximately five thousand dollars.
+00:24:52.720 --> 00:24:58.520
+What He Killed. Before that speech, your species was running an experiment.
 
 230
-00:24:45.500 --> 00:24:53.100
-A two hundred and fifty to one ratio. Nearly ninety percent of the top one percent's gains came from stocks, which is what
+00:24:59.220 --> 00:25:03.060
+You had anchored the dollar to gold at thirty-five dollars per ounce.
 
 231
-00:24:53.100 --> 00:24:59.700
-the Fed's new money inflated first. Only one-third of bottom fifty percent households own any stocks at all.
+00:25:03.700 --> 00:25:10.100
+You called it "Bretton Woods," after the hotel where you signed the agreement in nineteen forty-four, because your species
 
 232
-00:25:00.420 --> 00:25:05.030
-The Fed printed the money. The stock market absorbed it. The rich owned the stocks.
+00:25:10.100 --> 00:25:14.180
+names its most important decisions after the building they happened in.
 
 233
-00:25:05.400 --> 00:25:12.160
-The poor got the price increases. Cantillon, writing in the seventeen hundreds, would have found this predictable and, honestly,
+00:25:14.760 --> 00:25:19.400
+(See also: "The White House," "The Pentagon," "Lehman Brothers."
 
 234
-00:25:12.220 --> 00:25:17.880
-a bit boring. Why "Just Print More Money for Medicine" Doesn't Work.
+00:25:20.100 --> 00:25:24.940
+The last one was a building full of brothers named Lehman who lost everyone's money.
 
 235
-00:25:18.820 --> 00:25:22.920
-"Why not just increase the N.I.H. budget? Why not just fund more medical research?
+00:25:25.600 --> 00:25:31.420
+They named the crisis after the brothers, not the money. This is how your species assigns blame.).
 
 236
-00:25:23.460 --> 00:25:28.020
-Why tie it to military spending?". These are excellent questions.
+00:25:32.780 --> 00:25:40.740
+Here is how it worked, physically. Any foreign government could walk up to a window at the Federal Reserve, hand over thirty-five
 
 237
-00:25:28.100 --> 00:25:33.100
-I will now explain why they all have the same answer, which is that money is pretend.
+00:25:40.740 --> 00:25:46.560
+dollars, and receive one ounce of gold. Real gold. The kind you carry out in a box.
 
 238
-00:25:33.820 --> 00:25:40.440
-Money is not real. It is a shared hallucination. Eight billion humans pretending that the same piece of paper is worth something.
+00:25:47.740 --> 00:25:54.660
+This meant that if the U.S. printed too many dollars, governments would notice (because prices would drift above thirty-five
 
 239
-00:25:40.960 --> 00:25:46.680
-A very convincing hallucination. (I've seen you kill each other over it, which is the ultimate commitment to a bit.).
+00:25:54.660 --> 00:26:01.420
+dollars per ounce on the open market), and they would start showing up at the window, trading paper for metal, and walking
 
 240
-00:25:47.860 --> 00:25:53.300
-Resources are real. Brains are real. Hours are real. Titanium is real.
+00:26:01.420 --> 00:26:05.820
+out with your gold. The more you printed, the faster your vault emptied.
 
 241
-00:25:54.100 --> 00:25:56.940
-Money is a story you tell each other about who gets the resources.
+00:26:06.540 --> 00:26:12.640
+This was not a rule. Rules can be rewritten by the same people who wrote them, usually at two a.m.
 
 242
-00:25:57.560 --> 00:26:00.740
-And the people who write the story get to decide the ending.
+00:26:12.720 --> 00:26:16.860
+when nobody is paying attention. This was a physical constraint.
 
 243
-00:26:01.720 --> 00:26:09.760
-The Fixed Pie of Human Genius. Earth has eight billion humans (fixed quantity), twenty-four hours per human per day (physics
+00:26:17.180 --> 00:26:21.420
+Gold is heavy. It leaves the building. You can see the shelves getting bare.
 
 244
-00:26:09.760 --> 00:26:18.740
-is firm on this), limited raw materials (you cannot print titanium), and finite factory capacity (you cannot build infinite
+00:26:22.080 --> 00:26:27.000
+The punishment for money-printing was not a sternly worded letter from an oversight committee.
 
 245
-00:26:18.740 --> 00:26:26.900
-laboratories). When a brilliant engineer designs a missile guidance system, that engineer is not designing a medical device.
+00:26:27.500 --> 00:26:32.300
+It was a foreign government loading your gold onto a cargo plane and flying it home.
 
 246
-00:26:27.500 --> 00:26:31.860
-When a factory builds tanks, it is not building M.R.I. machines.
+00:26:33.100 --> 00:26:41.700
+It worked. I know. I was surprised too. From nineteen forty-eight to nineteen seventy-three, the typical American family's
 
 247
-00:26:32.000 --> 00:26:39.300
-When a P.H.D. spends ten years researching better ways to kill people, those are ten years not spent researching better
+00:26:41.720 --> 00:26:46.660
+income grew three percent per year, doubling roughly once a generation.
 
 248
-00:26:39.300 --> 00:26:43.760
-ways to keep people alive. Every genius has exactly one brain.
+00:26:47.540 --> 00:26:54.880
+Real G.D.P. grew four point two percent per year in the nineteen fifties and four point five percent in the nineteen sixties.
 
 249
-00:26:44.460 --> 00:26:47.320
-You are renting forty million of them to build things that explode.
+00:26:55.500 --> 00:27:01.200
+Homeownership surged from forty-four percent to over sixty-two percent in a single generation.
 
 250
-00:26:48.380 --> 00:26:51.760
-This is like hiring the world's best chef to set fire to kitchens.
+00:27:02.060 --> 00:27:07.260
+A single income could support a family of four, a mortgage, and a retirement.
 
 251
-00:26:52.860 --> 00:26:58.040
-The Numbers. The top ten percent of human talent is roughly eight hundred million people.
+00:27:07.980 --> 00:27:15.320
+Income inequality fell to its lowest level of the century. The Gini coefficient trended down for two straight decades.
 
 252
-00:26:59.000 --> 00:27:05.980
-Here's how you're using them: Around forty million people are building things that kill people (military, reserves, defense
+00:27:16.260 --> 00:27:24.100
+This was not a coincidence. When money is anchored to something politicians can't print, politicians can't silently drain
 
 253
-00:27:05.980 --> 00:27:10.440
-contractors). Around one million people are working in medical research.
+00:27:24.100 --> 00:27:31.320
+it. So the gains from productivity growth went to the people doing the work, not to whoever stands closest to the printer.
 
 254
-00:27:11.120 --> 00:27:17.420
-Governments spend six hundred and four times more on weapons than on testing which medicines actually work.
+00:27:32.080 --> 00:27:36.120
+Your economists will tell you this can't work. That a gold standard is a relic.
 
 255
-00:27:18.400 --> 00:27:23.540
-On Wishonia, we had a similar ratio once. Then we stopped, because we are not insane.
+00:27:36.640 --> 00:27:43.140
+That modern economies need "flexible monetary policy," which is a phrase meaning "we need to be able to print money without
 
 256
-00:27:24.460 --> 00:27:31.840
-It took us twelve minutes. I realize this is an unfair comparison because your species needs to be bribed, which is what
+00:27:43.140 --> 00:27:51.300
+asking you.". Here is what they'd prefer you not check: every period in which your money was anchored to gold produced broad-based
 
 257
-00:27:31.840 --> 00:27:40.360
-the rest of this manual is for. The Shell Game (How Inflation Steals Medical Progress) This is the trick.
+00:27:51.300 --> 00:27:58.500
+prosperity. Under the classical gold standard (eighteen seventy to nineteen fourteen), real G.D.P.
 
 258
-00:27:40.860 --> 00:27:47.040
-Watch the money: Today. Government clinical trials cost four point five billion dollars.
+00:27:58.540 --> 00:28:02.080
+per capita grew three point eight percent per year in the eighteen eighties.
 
 259
-00:27:47.800 --> 00:27:51.820
-Global military spending is two point seven two trillion dollars.
+00:28:02.860 --> 00:28:08.640
+Between eighteen eighty and eighteen ninety-six, prices fell thirty percent and real G.D.P.
 
 260
-00:27:52.640 --> 00:27:56.720
-The ratio is six hundred and four to one for killing over curing.
+00:28:08.640 --> 00:28:16.480
+increased eighty-five percent. Real wages rose. You built the railroad, the telephone, and the electric light, all while
 
 261
-00:27:57.860 --> 00:28:01.560
-Five Years Later (after "increasing medical research funding").
+00:28:16.480 --> 00:28:20.940
+prices were falling. (The evidence on that particular period is detailed below.).
 
 262
-00:28:02.380 --> 00:28:05.940
-Clinical trial funding is up fifty percent! Headlines are written.
+00:28:21.740 --> 00:28:26.100
+Under Bretton Woods, you did it again. Twenty-seven years of anchored money.
 
 263
-00:28:05.980 --> 00:28:14.260
-Backs are patted. A politician poses with a scientist. Except military spending also went up fifty percent, because central
+00:28:26.780 --> 00:28:34.540
+Twenty-seven years of the median family getting richer. Then Nixon unanchored it, and median income growth fell from nearly
 
 264
-00:28:14.260 --> 00:28:22.260
-banks printed fifty percent more money, so the real allocation of brains, factories, and hours is exactly the same.
+00:28:34.540 --> 00:28:39.560
+three percent to zero point six percent per year. An eighty percent collapse.
 
 265
-00:28:22.900 --> 00:28:30.580
-The ratio is still six hundred and four to one. You gave the medical department a bigger number on a smaller check and they
+00:28:40.580 --> 00:28:48.340
+Two experiments. Two gold-anchored systems. Both produced roughly double the median income growth of the fiat periods that
 
 266
-00:28:30.580 --> 00:28:39.240
-said thank you. The Proof: fifty Years of Going Nowhere Medical Research as a percentage of G.D.P.
+00:28:48.340 --> 00:28:53.120
+followed them. Then you abandoned them both and the gains stopped reaching the median family.
 
 267
-00:28:39.240 --> 00:28:43.300
-In nineteen seventy-five, it was zero point zero eight percent.
+00:28:53.860 --> 00:28:58.320
+On Wishonia, when an experiment produces the same result twice, we call it "evidence."
 
 268
-00:28:44.000 --> 00:28:47.280
-In nineteen eighty-five, it was zero point zero seven percent.
+00:28:59.300 --> 00:29:04.940
+On Earth, you call it "outdated thinking" and go back to letting the people in the building print money for their friends.
 
 269
-00:28:48.280 --> 00:28:52.380
-In nineteen ninety-five, it was zero point zero seven percent.
+00:29:05.900 --> 00:29:13.840
+What Actually Happened. The gold standard died. Your species abandoned one shared hallucination (gold, which is a shiny
 
 270
-00:28:52.500 --> 00:28:56.670
-In two thousand and five, it was zero point zero six percent.
+00:29:13.840 --> 00:29:20.460
+rock you can't eat) for another shared hallucination (paper, which is a flat rock you also can't eat).
 
 271
-00:28:56.780 --> 00:29:01.820
-In twenty fifteen, it was zero point zero six percent. In twenty twenty-five, it was zero point zero six five percent.
+00:29:20.640 --> 00:29:27.640
+You called this "modernization.". The dollar was now backed by "the full faith and credit of the United States government,"
 
 272
-00:29:01.820 --> 00:29:07.120
-Absolute dollars increased ten times. Share of actual resources: decreased.
+00:29:28.100 --> 00:29:33.800
+which is a phrase that sounds reassuring until you remember that the government was doing this specifically because it had
 
 273
-00:29:07.760 --> 00:29:12.540
-You got ten times "richer" and spent a smaller fraction of it on not dying.
+00:29:33.800 --> 00:29:40.260
+run out of faith and credit. It's like a restaurant that can't pay its food suppliers announcing that meals are now backed
 
 274
-00:29:13.100 --> 00:29:16.920
-This is like getting a promotion and canceling your health insurance to celebrate.
+00:29:40.320 --> 00:29:44.220
+by the full faith and credit of the restaurant. You'd leave.
 
 275
-00:29:17.740 --> 00:29:23.760
-What Actually Grew The financial sector grew from three percent to eight percent of G.D.P.
+00:29:44.340 --> 00:29:48.520
+Except you can't leave the dollar because your rent is denominated in it.
 
 276
-00:29:24.260 --> 00:29:30.200
-The military-industrial sector grew from three percent to three point four percent of G.D.P.
+00:29:48.660 --> 00:29:54.200
+This is not a coincidence. The Dual Mandate (Or: The Two Goals of Serfdom).
 
 277
-00:29:30.520 --> 00:29:34.620
-(direct spending; the broader war-adjacent economy adds more).
+00:29:54.940 --> 00:30:01.230
+Your Federal Reserve has two official goals, like a mission statement, except the mission is you.
 
 278
-00:29:35.360 --> 00:29:39.500
-Healthcare spending grew from seven percent to eighteen percent of G.D.P.
+00:30:01.480 --> 00:30:07.700
+"Maximum employment". "Stable prices" (which they define as two percent inflation per year).
 
 279
-00:29:40.360 --> 00:29:48.240
-(most of that growth is paperwork, not cures). The part that actually keeps you alive (the actual research into why your
+00:30:08.560 --> 00:30:14.440
+I read these several times to make sure I understood them. Then I read them again to make sure I hadn't misunderstood them.
 
 280
-00:29:48.240 --> 00:29:52.500
-cells stop working) is a shrinking fraction of a growing economy.
+00:30:15.120 --> 00:30:18.800
+I had not. These are the actual goals. They are written down.
 
 281
-00:29:53.120 --> 00:29:57.140
-You baked a bigger pie and gave the science department fewer crumbs.
+00:30:19.160 --> 00:30:26.040
+On a website. You can look at them right now. Nobody is hiding them, which is the most disturbing part, because it means
 
 282
-00:29:57.540 --> 00:30:06.130
-Then you named the pie "progress.". "Just Tax the Billionaires" "Fine," says the human who just read the last three sections.
+00:30:26.040 --> 00:30:41.320
+nobody thinks there's anything to hide. On Wishonia, our decentralized resource allocation system has one goal: "are beings'
 
 283
-00:30:06.660 --> 00:30:10.360
-"The problem is the money goes to the wrong people. Tax the billionaires.
+00:30:41.320 --> 00:30:41.320
+lives measurably improving?" But that's apparently too simple for a species that named its planet "dirt," so let me explain
 
 284
-00:30:10.660 --> 00:30:15.620
-Fund medical research. Simple.". Your species has been trying this for a century.
+00:30:41.320 --> 00:31:09.480
+what your two goals actually do. Goal one: "Maximum Employment" (Keep Everyone Busy).
 
 285
-00:30:16.040 --> 00:30:20.720
-I've watched the whole thing. Here is the loop: Step one. Tax the wealthy.
+00:31:09.480 --> 00:31:12.280
+"Maximum employment" means everyone has a job. It does not specify a good job.
 
 286
-00:30:21.240 --> 00:30:29.660
-Victory. Step two. The wealthy spend a fraction of those taxes on lobbyists who return eighteen dollars for every one dollar
+00:31:12.360 --> 00:31:23.040
+It does not specify a job that pays enough to eat. It does not specify a job that leaves you time to read about monetary
 
 287
-00:30:29.660 --> 00:30:36.220
-invested. They secure: One hundred and eighty-one billion dollars a year in direct corporate welfare.
+00:31:23.040 --> 00:31:37.820
+policy. It specifies: occupied. A medieval serf working sunrise to sunset was maximally employed.
 
 288
-00:30:36.880 --> 00:30:44.340
-Fifty billion dollars in fossil fuel subsidies. Seventy-five billion dollars in agricultural subsidies (top ten percent
+00:31:40.000 --> 00:31:41.420
+A modern American working two jobs who can't afford a doctor's visit is also maximally employed.
 
 289
-00:30:44.340 --> 00:30:51.320
-of farms collect sixty-three percent of payments). Over three hundred billion dollars per year flows back to the people
+00:31:41.420 --> 00:31:42.660
+The metric cannot distinguish between these situations. From the metric's perspective, both serfs are performing optimally.
 
 290
-00:30:51.320 --> 00:30:58.700
-you just taxed, through programs below the human boredom threshold for investigating and too profitable for lobbyists to
+00:31:42.660 --> 00:31:49.840
+I found this confusing at first. Then I realized it's not a bug.
 
 291
-00:30:58.700 --> 00:31:03.980
-stop. Step three. The Federal Reserve prints money. Asset prices rise.
+00:31:50.160 --> 00:31:58.260
+Busy people don't read Federal Reserve balance sheets. Busy people vote for whichever candidate promises to "create jobs,"
 
 292
-00:31:04.820 --> 00:31:08.400
-The top one percent gained one point three million dollars each.
+00:31:58.400 --> 00:32:01.480
+which is a promise to keep them too busy to ask who's keeping them poor.
 
 293
-00:31:08.980 --> 00:31:12.180
-The bottom fifty percent gained five thousand dollars each.
+00:32:01.480 --> 00:32:09.360
+A hamster wheel achieves maximum employment. Goal two: "Stable Prices" (Take two percent Per Year).
 
 294
-00:31:12.880 --> 00:31:19.020
-The billionaires recovered what you taxed, and more, and the inflation bill went to the working families you were trying
+00:32:09.360 --> 00:32:46.120
+"Stable prices" means two percent inflation per year. On Wishonia, "stable" means "not moving."
 
 295
-00:31:19.020 --> 00:31:25.640
-to help. Step four. Look at the wider wealth gap. Propose: higher taxes on the wealthy.
+00:32:46.820 --> 00:32:51.480
+On Earth, "stable prices" means prices that rise every year, predictably, forever.
 
 296
-00:31:27.020 --> 00:31:35.340
-Return to Step one. Repeat for one hundred years. This recipe is four steps long, which is twice as many as the money-printing
+00:32:51.480 --> 00:32:51.480
+This is like calling a sinking ship "stable" because it sinks at a known rate.
 
 297
-00:31:35.340 --> 00:31:44.440
-recipe. It feels like progress. It is not progress. The entire planet spends four point five billion dollars per year testing
+00:33:44.110 --> 00:33:50.340
+I need to say that again because your brain is going to try to skip past it.
 
 298
-00:31:44.440 --> 00:31:52.240
-whether medicines work in humans. One country spends over three hundred billion dollars per year on corporate handouts to
+00:33:51.120 --> 00:34:00.220
+The Federal Reserve's official, publicly stated, announced-on-television goal is to make your money worth two percent less
 
 299
-00:31:52.240 --> 00:32:00.780
-people who already have money. The ratio is roughly sixty-eight to one for subsidizing wealth over curing disease.
+00:34:00.220 --> 00:34:07.520
+every year. They chose this number. They aim for it. They celebrate when they hit it.
 
 300
-00:32:01.840 --> 00:32:09.840
-Every "tax the billionaires" campaign in history has left this ratio untouched, because the same system that collects the
+00:34:08.239 --> 00:34:13.920
+Over thirty-five years, two percent compounds to a fifty percent loss.
 
 301
-00:32:09.840 --> 00:32:17.340
-taxes allocates the spending, and that system has a documented zero percent correlation with what voters want.
+00:34:14.440 --> 00:34:20.080
+Over the fifty-four years since Nixon, it has taken ninety-three percent.
 
 302
-00:32:18.060 --> 00:32:26.900
-The diagnosis is correct (the allocation is insane). The prescription is the problem: pour more money into a captured system
+00:34:20.739 --> 00:34:25.840
+They named the target. They hit the target. You are the target.
 
 303
-00:32:26.900 --> 00:32:32.290
-and hope it flows somewhere different this time. The money goes in as taxes.
+00:34:26.719 --> 00:34:33.600
+I am told these are three different sentences. The "Deflation Is Dangerous" Story.
 
 304
-00:32:32.560 --> 00:32:39.720
-It comes out as subsidies, asset inflation, and an N.I.H. that spends three point three percent of its budget on clinical
+00:34:34.460 --> 00:34:44.159
+The justification for permanent inflation, taught in every economics class that bothers to exist: deflation (falling prices)
 
 305
-00:32:39.720 --> 00:32:44.590
-trials. The pipe leaks faster than you can fill it, and the leaks flow upward.
+00:34:44.280 --> 00:34:50.480
+is dangerous because "people won't buy things if they know prices will be lower tomorrow.".
 
 306
-00:32:45.660 --> 00:32:50.730
-This is why the one percent treaty doesn't route funding through your existing institutions.
+00:34:51.199 --> 00:34:57.720
+I watched your species for eighty years and I have some questions about this theory.
 
 307
-00:32:50.840 --> 00:32:56.920
-It builds a new pipe that the lobbyists haven't found yet. You don't fix a rigged game by playing harder.
+00:34:57.740 --> 00:35:04.520
+You buy a new iPhone every two years knowing the next one will be better and cheaper.
 
 308
-00:32:57.480 --> 00:33:03.400
-You build a different game. Why Money Printing Matters: Geniuses Follow the Money.
+00:35:05.080 --> 00:35:10.120
+You bought a flat-screen TV knowing the price drops every year.
 
 309
-00:33:04.360 --> 00:33:11.620
-When the Fed prints a trillion dollars for war, defense contractors get it first and immediately buy the best engineers,
+00:35:10.840 --> 00:35:16.340
+You buy a laptop knowing it will be worth half as much in eighteen months.
 
 310
-00:33:12.040 --> 00:33:19.640
-scientists, and equipment. An M.I.T. graduate with two hundred thousand dollars in student debt chooses between: Raytheon:
+00:35:16.880 --> 00:35:22.240
+You bought a phone case for forty dollars that you will lose in three months.
 
 311
-00:33:19.720 --> 00:33:22.520
-one hundred and fifty thousand dollars per year (makes missiles).
+00:35:22.760 --> 00:35:27.960
+The entire technology sector has experienced continuous deflation for decades.
 
 312
-00:33:23.080 --> 00:33:27.740
-N.I.H. postdoc: fifty-five thousand dollars per year (cures diseases).
+00:35:28.800 --> 00:35:34.240
+It is the fastest-growing, most innovative, most profitable sector of your economy.
 
 313
-00:33:28.480 --> 00:33:32.560
-Student debt does not negotiate. The graduate goes to Raytheon.
+00:35:34.920 --> 00:35:41.560
+People buy things they want. They do not sit in empty rooms waiting for prices to fall further.
 
 314
-00:33:33.060 --> 00:33:39.960
-Another brain joins the forty million building things that explode instead of the one million building things that heal.
+00:35:42.400 --> 00:35:51.120
+This is obvious to anyone who has met a human. Your species once stood in line for fourteen hours to buy a telephone.
 
 315
-00:33:40.320 --> 00:33:45.760
-Multiply this decision by every talented graduate, every year, for fifty years.
+00:35:51.660 --> 00:35:55.600
+In the rain. Knowing a better one would exist in eleven months.
 
 316
-00:33:46.460 --> 00:33:54.340
-Then wonder why nobody cured your mother's cancer. Printing more money for medicine doesn't fix this, because the money
+00:35:56.580 --> 00:36:04.560
+The idea that you would stop buying things if they got cheaper is the single least credible claim ever made about a species
 
 317
-00:33:54.340 --> 00:33:58.680
-printer prints even more for war, and the ratio stays the same.
+00:36:04.580 --> 00:36:12.380
+that invented the shopping mall, the impulse buy, and Black Friday, which is a holiday where you celebrate gratitude by
 
 318
-00:33:59.480 --> 00:34:05.620
-The hamster runs faster. The wheel doesn't move. The only fix is to change the ratio.
+00:36:12.380 --> 00:36:21.400
+trampling each other for televisions. The One Data Point. The only evidence they cite is the Great Depression, where falling
 
 319
-00:34:06.020 --> 00:34:10.840
-Take from the war budget. Give to the life budget. That's what the one percent treaty does.
+00:36:21.400 --> 00:36:30.820
+prices coincided with economic collapse. This is a correlation/causation error so basic it would fail an introductory statistics
 
 320
-00:34:11.199 --> 00:34:16.380
+00:36:30.820 --> 00:36:35.760
+course at a university funded by the Federal Reserve. (Which is most of them.).
+
+321
+00:36:36.380 --> 00:36:42.840
+The Great Depression's deflation was *caused by* bank failures and credit contraction, not the other way around.
+
+322
+00:36:43.560 --> 00:36:47.920
+Blaming deflation for the Depression is like blaming wet streets for rain.
+
+323
+00:36:49.140 --> 00:36:57.300
+Meanwhile, the longest sustained deflation in American history (eighteen seventy to eighteen ninety-six) coincided with
+
+324
+00:36:57.300 --> 00:37:05.440
+the most explosive economic growth your country has ever experienced: Prices fell roughly two percent per year.
+
+325
+00:37:05.980 --> 00:37:11.060
+Real output grew two to three percent per year. Real wages rose.
+
+326
+00:37:11.820 --> 00:37:15.500
+You built the railroad, the telephone, and the electric light.
+
+327
+00:37:16.480 --> 00:37:23.040
+Falling prices. Rising prosperity. For twenty-six years. This is not a footnote.
+
+328
+00:37:23.500 --> 00:37:31.640
+It is a quarter-century of evidence. Your economists will counter with the Panic of eighteen seventy-three and the "Long
+
+329
+00:37:31.640 --> 00:37:37.180
+Depression," which occurred during this same period. They are correct that it happened.
+
+330
+00:37:37.500 --> 00:37:45.000
+They are incorrect about what it proves. The Panic of eighteen seventy-three was caused by speculative railroad lending
+
+331
+00:37:45.000 --> 00:37:54.440
+and bank failures, not by falling prices. Prices were falling before the panic, during the panic, and after the panic, and
+
+332
+00:37:54.440 --> 00:38:03.480
+real output kept growing through most of it. The economy recovered without a central bank printing money to "fix" it, which
+
+333
+00:38:03.480 --> 00:38:09.280
+must have been very embarrassing for the people who later invented a central bank to fix things.
+
+334
+00:38:10.080 --> 00:38:17.460
+If deflation caused depressions, the entire twenty-six-year period would have been one continuous depression.
+
+335
+00:38:18.180 --> 00:38:24.780
+Instead it was the period in which you invented electric light, the telephone, and the modern railroad.
+
+336
+00:38:25.700 --> 00:38:33.440
+Your economists looked at the era that produced the lightbulb, found one bad year, and concluded that the problem was falling
+
+337
+00:38:33.440 --> 00:38:39.560
+prices. On Wishonia, this is called "finding a cloud and declaring it night."
+
+338
+00:38:39.680 --> 00:38:46.460
+On Earth, it is called "a tenured position.". The Bank for International Settlements (the central bank of central banks,
+
+339
+00:38:46.540 --> 00:38:52.920
+which is a real thing that exists, like a boss fight at the end of a video game about money) tested this across one hundred
+
+340
+00:38:52.920 --> 00:39:00.820
+and forty years and thirty-eight economies. Their full-sample result: the link between deflation and slower growth is "weak."
+
+341
+00:39:01.960 --> 00:39:07.000
+Their result when you remove the Great Depression: no statistically significant link at all.
+
+342
+00:39:07.540 --> 00:39:12.140
+The entire "weak" correlation is one data point dragging the average.
+
+343
+00:39:12.820 --> 00:39:20.940
+The Great Depression was so extreme (G.D.P. fell thirty percent) that it acts as a statistical leverage point, pulling the
+
+344
+00:39:20.940 --> 00:39:24.740
+result negative against thousands of observations showing the opposite.
+
+345
+00:39:25.360 --> 00:39:31.540
+The fact that you need to include a once-in-one hundred and forty-year catastrophe to get your result means your result
+
+346
+00:39:31.540 --> 00:39:40.220
+describes the catastrophe, not deflation. Borio et al. also separated goods price deflation from asset price deflation.
+
+347
+00:39:40.780 --> 00:39:46.740
+Falling goods prices (the kind central banks claim to protect you from) showed no link to slower growth.
+
+348
+00:39:47.340 --> 00:39:53.480
+Falling property prices (which signal credit busts, like the one your banks caused in two thousand and eight) did.
+
+349
+00:39:54.100 --> 00:40:01.320
+Your central banks are treating the wrong symptom and citing a study that, if anyone read past the abstract, says so.
+
+350
+00:40:02.060 --> 00:40:09.220
+One data point. They built the entire theology of permanent inflation on one data point that they misread.
+
+351
+00:40:09.820 --> 00:40:16.040
+On Wishonia, if a scientist built a theory on one misinterpreted data point, they would lose their research license.
+
+352
+00:40:16.280 --> 00:40:21.340
+On Earth, they get the fake Nobel Prize. The "Banking Panics" Defense.
+
+353
+00:40:21.880 --> 00:40:28.110
+The stronger argument for central banking, and the one your economists should lead with: without a lender of last resort,
+
+354
+00:40:28.680 --> 00:40:33.020
+banks fail, depositors lose their savings, and the economy collapses.
+
+355
+00:40:33.480 --> 00:40:40.340
+The Federal Reserve was created in nineteen thirteen specifically because the Panic of nineteen oh-seven frightened everyone
+
+356
+00:40:40.340 --> 00:40:47.500
+into agreeing that a central bank was necessary. The Fed then spent the nineteen twenties expanding credit, inflating the
+
+357
+00:40:47.500 --> 00:40:54.830
+bubble whose collapse it was created to prevent. Sixteen years later, more than nine thousand banks failed.
+
+358
+00:40:55.080 --> 00:41:02.200
+The institution created specifically to prevent banking panics contributed to the worst banking panic in your history.
+
+359
+00:41:02.920 --> 00:41:05.800
+Canada did not have a central bank until nineteen thirty-five.
+
+360
+00:41:06.460 --> 00:41:12.440
+During the same Depression, same continent, same decade, Canada had zero bank failures.
+
+361
+00:41:12.940 --> 00:41:19.280
+The country next door, without the institution you said was necessary, had the outcome you said was impossible.
+
+362
+00:41:19.800 --> 00:41:24.820
+The country with the central bank had the crisis. The country without one didn't.
+
+363
+00:41:25.480 --> 00:41:32.280
+Your economists treat this as a coincidence. What actually stopped bank runs was not the Federal Reserve.
+
+364
+00:41:32.680 --> 00:41:38.980
+It was the Federal Deposit Insurance Corporation, created in nineteen thirty-three, which guaranteed deposits.
+
+365
+00:41:39.400 --> 00:41:46.180
+A bank run is a coordination problem: everyone withdraws because they fear everyone else will withdraw first.
+
+366
+00:41:46.900 --> 00:41:51.970
+Insurance solves it. You do not need a money printer to solve a coordination problem.
+
+367
+00:41:52.380 --> 00:41:58.840
+You need a promise, a small premium, and a ledger. You solved bank runs in nineteen thirty-three with insurance.
+
+368
+00:41:59.560 --> 00:42:06.400
+You kept the institution that caused them. On Wishonia, when we discover the medicine is making the patient sicker, we stop
+
+369
+00:42:06.400 --> 00:42:11.520
+administering it. On Earth, you doubled the dose and gave the pharmacist a raise.
+
+370
+00:42:12.640 --> 00:42:20.640
+What They Could Measure Instead. Here is a question that is apparently too obvious for economics: Are people's lives actually
+
+371
+00:42:20.640 --> 00:42:29.280
+getting better? That's it. You could measure: Inflation-adjusted after-tax median income: Are people actually richer, or
+
+372
+00:42:29.280 --> 00:42:37.400
+just holding bigger numbers on smaller paychecks? Median health-adjusted life years: Are people living longer, healthier
+
+373
+00:42:37.400 --> 00:42:43.940
+lives, or just working longer before dying of diseases you could have cured with the money you printed for banks?
+
+374
+00:42:44.720 --> 00:42:48.800
+These metrics exist. Economists know how to calculate them.
+
+375
+00:42:49.000 --> 00:42:56.480
+No central bank on Earth uses them. Because if the Federal Reserve were graded on whether the median American is healthier
+
+376
+00:42:56.480 --> 00:43:03.400
+and wealthier each year, someone would have to explain why the answer has been "no" for most of the past five decades.
+
+377
+00:43:04.040 --> 00:43:11.360
+It is much easier to aim for "maximum employment" and "two percent inflation" and declare success while everyone works more
+
+378
+00:43:11.360 --> 00:43:20.400
+hours for less purchasing power. How the Robbery Works. In the seventeen hundreds, a human named Richard Cantillon noticed
+
+379
+00:43:20.400 --> 00:43:27.850
+something that everyone already knew but nobody had written down: when you create new money, whoever gets it first benefits,
+
+380
+00:43:28.240 --> 00:43:33.340
+and whoever gets it last pays. On Wishonia, this is called "how money works."
+
+381
+00:43:33.740 --> 00:43:37.720
+On Earth, it is taught as a niche economic theory, if it is taught at all.
+
+382
+00:43:38.560 --> 00:43:44.320
+Here's what it looks like: The Fed creates new money. Banks and government contractors receive it first.
+
+383
+00:43:44.840 --> 00:43:52.260
+They buy things at today's prices. Prices rise. By the time the new money reaches your grocery store, everything costs more.
+
+384
+00:43:52.720 --> 00:43:57.540
+You buy the same groceries for more money and conclude that groceries have gotten expensive.
+
+385
+00:43:58.120 --> 00:44:05.560
+Groceries did not get expensive. Your money got cheaper. But "your money got cheaper" requires a culprit, and culprits are
+
+386
+00:44:05.560 --> 00:44:11.380
+boring when they wear suits and speak in percentages. So instead you get angry about the price of eggs.
+
+387
+00:44:12.060 --> 00:44:19.120
+On Wishonia, we have a saying: "If your eggs cost more every year but your chickens didn't change, look for whoever is shrinking
+
+388
+00:44:19.120 --> 00:44:22.780
+your money." We don't actually have this saying. But we should.
+
+389
+00:44:23.980 --> 00:44:30.680
+The Spread. There is an even simpler version of this trick, and you can watch it happen to you personally, right now, on
+
+390
+00:44:30.680 --> 00:44:33.900
+your phone, if you check your credit card statement. I'll wait.
+
+391
+00:44:34.680 --> 00:44:38.140
+The Federal Reserve lends money to banks at about five percent.
+
+392
+00:44:38.680 --> 00:44:45.580
+Sometimes less. After two thousand and eight, it lent money to banks at nearly zero percent for fourteen years, which is
+
+393
+00:44:45.580 --> 00:44:50.220
+a very generous interest rate, in the same way that "free" is a very generous price.
+
+394
+00:44:50.960 --> 00:44:56.520
+Banks then lend that money to you at twenty-four percent. I want to make sure you saw both numbers.
+
+395
+00:44:56.960 --> 00:45:03.140
+The bank borrows money for zero percent. The bank lends you that same money for twenty-four percent.
+
+396
+00:45:03.900 --> 00:45:08.600
+The money has not changed. It did not improve during its brief stay at the bank.
+
+397
+00:45:09.260 --> 00:45:16.660
+Nobody at the bank added anything to it. It just sat in the bank for a bit and came out twenty-four percent more expensive,
+
+398
+00:45:17.140 --> 00:45:23.620
+like a bottle of wine at a restaurant, except the wine is imaginary and the restaurant prints its own wine.
+
+399
+00:45:24.400 --> 00:45:31.240
+You cannot borrow from the Fed yourself. I checked. There is a list of who is allowed to borrow from the Fed, and the list
+
+400
+00:45:31.240 --> 00:45:37.240
+is: banks. Not you. Not your business. Not your mother, even if she asks nicely.
+
+401
+00:45:38.020 --> 00:45:43.740
+Banks. So you borrow from the bank, who borrowed from the Fed, who made the money out of nothing.
+
+402
+00:45:44.640 --> 00:45:52.220
+You are paying twenty-four percent annual interest on money that was typed into a computer for free by a person you will
+
+403
+00:45:52.220 --> 00:45:59.160
+never meet, in a building you are not allowed to enter, and the twenty-four percent goes to the people who own the building.
+
+404
+00:45:59.840 --> 00:46:05.300
+Every single point of interest is a fee for not being in the room when the money was invented.
+
+405
+00:46:06.400 --> 00:46:13.520
+On Wishonia, we had a similar arrangement once. Someone would stand between the river and the village and charge people
+
+406
+00:46:13.520 --> 00:46:18.320
+to carry water. We did not call this person a "financial intermediary."
+
+407
+00:46:18.760 --> 00:46:22.300
+We called them a "water thief" and moved them away from the river.
+
+408
+00:46:22.860 --> 00:46:26.800
+It took about a day. Your version has been running for a century.
+
+409
+00:46:27.260 --> 00:46:30.680
+The water thief has a logo. The twenty twenty Demonstration.
+
+410
+00:46:32.000 --> 00:46:36.700
+In twenty twenty, the Fed created roughly four trillion dollars in new money.
+
+411
+00:46:37.440 --> 00:46:43.930
+I need to give you a unit of measurement for that number, because large numbers are where your species hides things.
+
+412
+00:46:44.340 --> 00:46:49.500
+Your governments spend four point five billion dollars per year on clinical trials.
+
+413
+00:46:50.100 --> 00:46:54.880
+That is the part of medicine where you actually test whether drugs work in humans.
+
+414
+00:46:55.520 --> 00:47:00.600
+It is the entire global budget for finding out which chemicals stop you from dying.
+
+415
+00:47:01.200 --> 00:47:08.280
+Every government on Earth, combined, pooling everything they have: four point five billion dollars.
+
+416
+00:47:09.080 --> 00:47:14.460
+Where did it go? This is a mystery in the same way that asking "who ate the cake?"
+
+417
+00:47:14.880 --> 00:47:18.620
+is a mystery when there is one person in the room covered in frosting.
+
+418
+00:47:19.380 --> 00:47:25.840
+The Top one percent gained exactly four trillion dollars in net worth over the same period.
+
+419
+00:47:26.360 --> 00:47:31.160
+The Fed printed four trillion dollars. The rich gained four trillion dollars.
+
+420
+00:47:31.600 --> 00:47:37.680
+On Wishonia, we would call this a "clue." On Earth, you called it "a robust recovery.".
+
+421
+00:47:38.880 --> 00:47:45.080
+Nearly ninety percent of those gains came from stocks, which is what the Fed's new money inflated first.
+
+422
+00:47:45.760 --> 00:47:50.440
+Only one-third of bottom-fifty percent households own any stocks at all.
+
+423
+00:47:51.040 --> 00:47:59.220
+The Fed inflated the one asset that poor people don't have, then issued a report expressing concern about inequality.
+
+424
+00:47:59.720 --> 00:48:05.020
+On Wishonia, this is called "setting the building on fire and then volunteering for the fire department.".
+
+425
+00:48:06.340 --> 00:48:11.640
+The Fed printed the money. The stock market absorbed it. The rich owned the stocks.
+
+426
+00:48:12.160 --> 00:48:19.300
+The poor got the price increases. Cantillon, writing in the seventeen hundreds, predicted this mechanism exactly.
+
+427
+00:48:20.100 --> 00:48:23.860
+He would not be surprised. He would be annoyed that you are still surprised.
+
+428
+00:48:25.120 --> 00:48:33.080
+The Theft That Followed. Since nineteen seventy-two: Productivity went up two hundred and forty-six percent.
+
+429
+00:48:33.840 --> 00:48:39.860
+Wages went up one hundred and fifteen percent. I stared at these two numbers for a long time.
+
+430
+00:48:40.540 --> 00:48:47.260
+Then I checked them. Then I checked them again, because I assumed I was reading the wrong chart, or the wrong planet.
+
+431
+00:48:48.200 --> 00:48:57.180
+I was not. Your species did two hundred and forty-six percent more work and received one hundred and fifteen percent more
+
+432
+00:48:57.180 --> 00:49:01.440
+pay. The remaining one hundred and thirty-one percent went somewhere.
+
+433
+00:49:02.200 --> 00:49:07.480
+It was not to the people who did the work. On Wishonia, this is called "theft."
+
+434
+00:49:08.360 --> 00:49:12.620
+On Earth, it is called "the economy." These are the same word.
+
+435
+00:49:13.140 --> 00:49:23.300
+Yours just has more syllables. The Two-Income Trap. In nineteen sixty-seven, fewer than half of married-couple families
+
+436
+00:49:23.720 --> 00:49:30.620
+had both spouses working. One paycheck bought a house, a car, annual vacations, and a pension.
+
+437
+00:49:31.400 --> 00:49:36.660
+The other adult raised children, or gardened, or was bored.
+
+438
+00:49:36.760 --> 00:49:44.700
+Boredom was a luxury your grandparents could afford. They could afford it because one human working forty hours a week earned
+
+439
+00:49:44.700 --> 00:49:49.340
+enough to house, feed, transport, and retire an entire family.
+
+440
+00:49:49.920 --> 00:49:56.020
+I want you to read that sentence again, slowly, because I can feel you not believing it.
+
+441
+00:49:57.540 --> 00:50:04.020
+By twenty eleven, husband-only earner families had dropped from thirty-six percent to nineteen percent.
+
+442
+00:50:05.040 --> 00:50:09.520
+The rest sent both adults to work and paid strangers to raise their children.
+
+443
+00:50:10.640 --> 00:50:15.430
+Working wives contributed twenty-seven percent of family income in nineteen seventy.
+
+444
+00:50:15.960 --> 00:50:25.180
+By twenty eleven, it was thirty-seven percent. An entire additional human entered the workforce and the family gained ten
+
+445
+00:50:25.180 --> 00:50:30.040
+percentage points. I want to be very precise about what happened here.
+
+446
+00:50:30.960 --> 00:50:37.620
+Your species noticed that one paycheck was no longer sufficient, so it doubled the number of workers per household.
+
+447
+00:50:38.560 --> 00:50:45.220
+The two paychecks combined now purchase a lifestyle that one paycheck covered comfortably in nineteen seventy-one.
+
+448
+00:50:45.960 --> 00:50:50.420
+You added a whole extra human to the economy and broke even.
+
+449
+00:50:51.380 --> 00:50:56.780
+On Wishonia, when you double the inputs and the outputs stay the same, you check for parasites.
+
+450
+00:50:58.020 --> 00:51:06.520
+On Earth, you invented the phrase "work-life balance," which describes having half of what your parents had but in two directions
+
+451
+00:51:06.520 --> 00:51:14.440
+simultaneously. The Time They Broke It. Remember the spread from a few paragraphs ago.
+
+452
+00:51:15.020 --> 00:51:19.560
+The Fed creates money from nothing. It lends this invented money to banks.
+
+453
+00:51:19.980 --> 00:51:28.200
+The banks' one job, the entire reason society tolerates their existence, is to move that money from savers to borrowers.
+
+454
+00:51:28.980 --> 00:51:36.600
+A ledger. Arithmetic. A task so simple that an eleven-year-old on Wishonia automated it for a science fair.
+
+455
+00:51:37.120 --> 00:51:44.080
+In two thousand and eight, they took that money (money that cost them nothing, that they did not earn, that was conjured
+
+456
+00:51:44.080 --> 00:51:50.200
+from a spreadsheet by a committee they play golf with) and built a casino on top of people's houses.
+
+457
+00:51:51.160 --> 00:51:58.420
+They made bets on whether homeowners would keep paying their mortgages, then made bets on those bets, then made bets on
+
+458
+00:51:58.420 --> 00:52:05.760
+the bets on the bets. I tried to explain this to someone on Wishonia and they asked me to start over because they assumed
+
+459
+00:52:05.760 --> 00:52:09.550
+I was having a malfunction. I was not having a malfunction.
+
+460
+00:52:10.380 --> 00:52:18.760
+Your banks really did bet on bets on bets, the way a child might dare another child to dare a third child to eat dirt.
+
+461
+00:52:19.860 --> 00:52:27.360
+Except the dirt was people's houses, and the children were wearing four thousand dollar suits purchased with the interest
+
+462
+00:52:27.360 --> 00:52:33.160
+spread on money that was imaginary before breakfast. None of this was their job.
+
+463
+00:52:33.500 --> 00:52:38.070
+Their job was maintaining the spreadsheet. They were not hired to gamble.
+
+464
+00:52:38.400 --> 00:52:45.500
+They were hired to do arithmetic. They got bored of arithmetic, because arithmetic doesn't pay bonuses large enough to buy
+
+465
+00:52:45.500 --> 00:52:53.520
+a yacht, and they discovered that gambling with free money is extraordinarily profitable right up until it isn't.
+
+466
+00:52:54.300 --> 00:53:02.020
+The houses were real. The bets were not. When the bets collapsed, ten million Americans lost their homes.
+
+467
+00:53:02.580 --> 00:53:08.620
+Then your banks did something I still find remarkable, even after eighty years of watching your species.
+
+468
+00:53:09.200 --> 00:53:16.460
+They called it a "crisis." I want to examine this word, because it is doing more work than any word has ever done.
+
+469
+00:53:17.180 --> 00:53:20.880
+The money was created from nothing. The buildings were still standing.
+
+470
+00:53:21.240 --> 00:53:26.760
+The factories still existed. The crops were still growing. The workers still had hands.
+
+471
+00:53:27.260 --> 00:53:35.660
+Nothing real was missing. What was missing was numbers on a spreadsheet; numbers that had been invented by the same people
+
+472
+00:53:35.660 --> 00:53:44.440
+who were now calling their absence an emergency. The banks had borrowed invented money, gambled it on bets about bets about
+
+473
+00:53:44.440 --> 00:53:51.700
+whether you would keep paying your mortgage, lost, and were now standing in front of Congress saying that unless you gave
+
+474
+00:53:51.700 --> 00:53:59.860
+them seven hundred billion dollars of your money (the kind you earned with your body, at a job, over time), civilization
+
+475
+00:53:59.860 --> 00:54:04.520
+would collapse. The civilization they had just destabilized.
+
+476
+00:54:05.220 --> 00:54:12.820
+With free money. That they did not earn. On Wishonia, this is called "setting fire to someone's house and then charging
+
+477
+00:54:12.820 --> 00:54:18.180
+them for the fire truck." On Earth, it is called the Troubled Asset Relief Program.
+
+478
+00:54:18.700 --> 00:54:25.780
+The homeowners got foreclosure notices. Here is the part that made me recalibrate my understanding of your species.
+
+479
+00:54:26.680 --> 00:54:30.840
+The banks could have simply not paid bonuses to the executives.
+
+480
+00:54:31.240 --> 00:54:39.740
+That's it. That was an option the entire time. The executives who gambled with free money and lost could have received their
+
+481
+00:54:39.740 --> 00:54:47.090
+base salaries, like any other human who is bad at their job, and used the bonus pool to cover their own gambling debts.
+
+482
+00:54:47.600 --> 00:54:52.540
+Nobody made them gamble. Nobody made them build a casino on top of your houses.
+
+483
+00:54:53.240 --> 00:55:00.460
+They chose to. And when the casino collapsed, they had a choice: skip the bonuses for a few years and eat the loss with
+
+484
+00:55:00.460 --> 00:55:04.680
+money they hadn't earned in the first place, or send the bill to you.
+
+485
+00:55:05.300 --> 00:55:15.220
+Every single bank chose the second option. Citigroup was given forty-five billion dollars in taxpayer bailout funds and
+
+486
+00:55:15.220 --> 00:55:19.920
+then paid its executives five point three three billion dollars in bonuses.
+
+487
+00:55:20.700 --> 00:55:27.100
+Goldman Sachs earned two point three billion dollars and paid out four point eight billion dollars in bonuses.
+
+488
+00:55:27.820 --> 00:55:32.400
+They paid out more in bonuses than they earned. The difference came from you.
+
+489
+00:55:33.700 --> 00:55:38.220
+On Wishonia, the word "bonus" means "reward for doing your job well."
+
+490
+00:55:38.940 --> 00:55:42.180
+On Earth, it apparently less specific and simply means "reward."
+
+491
+00:55:44.300 --> 00:55:48.500
+On Wishonia, when a child breaks a window, you do not buy the child ice cream.
+
+492
+00:55:49.180 --> 00:55:53.520
+On Earth, you give the child five point three three billion dollars.
+
+493
+00:55:54.540 --> 00:55:58.700
+On Wishonia, we have a word for this arrangement, but it does not translate well.
+
+494
+00:55:59.680 --> 00:56:04.520
+The closest English version: imagine a hotel hires a maintenance worker.
+
+495
+00:56:05.040 --> 00:56:12.160
+His job is keeping the pipes running and the lights on. Instead, he starts ripping copper wire and load-bearing beams out
+
+496
+00:56:12.160 --> 00:56:19.060
+of the walls and selling them for scrap. He uses the scrap money to gamble in the hotel's own casino.
+
+497
+00:56:19.620 --> 00:56:26.820
+From his winnings, he tips the security guards (one hundred and fourteen million dollars, split evenly between both shifts,
+
+498
+00:56:26.940 --> 00:56:34.620
+so neither shift feels left out). The guards, grateful, take down the "employees may not gamble on premises" sign.
+
+499
+00:56:35.120 --> 00:56:42.720
+He gambles bigger. He loses everything. Then the hotel starts collapsing, because he removed the parts that hold it up,
+
+500
+00:56:43.120 --> 00:56:50.400
+and he announces to every guest in the building that unless they cover his losses AND pay to rebuild the walls he stripped,
+
+501
+00:56:50.800 --> 00:56:58.760
+the building falls on them. The security guards, who removed the sign that would have prevented this, nod gravely and confirm:
+
+502
+00:56:58.840 --> 00:57:02.980
+yes, the building is collapsing, and yes, the guests must pay.
+
+503
+00:57:03.600 --> 00:57:07.900
+The guests hand over two hundred and ninety-five billion dollars.
+
+504
+00:57:08.080 --> 00:57:12.820
+The maintenance worker pays himself a bonus. The security guards get reelected.
+
+505
+00:57:13.460 --> 00:57:20.280
+The guests who were living in the hotel get evicted. The maintenance worker's one hundred and fourteen million dollars in
+
+506
+00:57:20.280 --> 00:57:26.760
+tips bought a two hundred and fifty-eight thousand, four hundred and forty-nine percent return.
+
+507
+00:57:27.120 --> 00:57:34.260
+On Wishonia, this is called a crime. On Earth, it is called the Troubled Asset Relief Program.
+
+508
+00:57:34.280 --> 00:57:41.620
+Under Bretton Woods, this could not have happened. If banks had tried to lend this recklessly, France would have shown up
+
+509
+00:57:41.620 --> 00:57:49.300
+at the gold window with a truck. The anchor would have stopped the lending before it became a casino, and if somehow it
+
+510
+00:57:49.300 --> 00:57:53.440
+hadn't, there would have been no printer available to bail anyone out.
+
+511
+00:57:54.200 --> 00:58:01.820
+The system that caused the catastrophe and the system that "fixed" it are the same system, wearing different ties.
+
+512
+00:58:03.100 --> 00:58:07.500
+Your ninety-three percent Pay Cut (Measured in Shiny Rocks).
+
+513
+00:58:08.680 --> 00:58:14.860
+Here's the same observation, measured in gold, because gold is the one thing humans can't print.
+
+514
+00:58:15.560 --> 00:58:22.560
+(Not for lack of trying. You spent three hundred years trying to turn lead into gold before giving up and inventing the
+
+515
+00:58:22.560 --> 00:58:27.360
+Federal Reserve, which turned gold into lead much more efficiently.).
+
+516
+00:58:28.080 --> 00:58:35.850
+On Wishonia, we also briefly measured wealth in rocks. Then someone ate one and we realized rocks are not food.
+
+517
+00:58:36.200 --> 00:58:39.260
+You reached this conclusion about gold approximately never.
+
+518
+00:58:40.560 --> 00:58:47.940
+In nineteen seventy-two, a typical American family earned the equivalent of one hundred and ninety-one ounces of gold per
+
+519
+00:58:47.940 --> 00:58:57.040
+year. If your family still earned one hundred and ninety-one ounces, your household income would be over one million, thirty
+
+520
+00:58:57.040 --> 00:59:02.240
+thousand dollars. It is not over one million, thirty thousand dollars.
+
+521
+00:59:02.660 --> 00:59:07.200
+You know this. I know this. I just wanted to write it down so we could both look at it.
+
+522
+00:59:08.100 --> 00:59:12.380
+Median household income is seventy-seven thousand, five hundred dollars.
+
+523
+00:59:12.940 --> 00:59:17.260
+At today's gold price, that buys you fourteen ounces. Fourteen.
+
+524
+00:59:17.260 --> 00:59:24.600
+One-four. Fewer ounces than there are donuts in a box. Your grandparents earned one hundred and ninety-one.
+
+525
+00:59:25.160 --> 00:59:32.460
+You earn fourteen. That is not a rounding error. That is not a "market correction."
+
+526
+00:59:32.840 --> 00:59:40.660
+That is ninety-three percent of your income, gone, replaced with a smaller number and a larger explanation for why the smaller
+
+527
+00:59:40.660 --> 00:59:45.320
+number is fine. You went from one hundred and ninety-one to fourteen.
+
+528
+00:59:46.060 --> 00:59:52.900
+A ninety-three percent pay cut, delivered one quiet year at a time, while your leaders stood in front of flags and said
+
+529
+00:59:52.900 --> 01:00:02.560
+the economy was "growing." (Your economists will object that gold's price is inflated by rising demand from a growing population.
+
+530
+01:00:03.160 --> 01:00:10.140
+Above-ground gold stocks were approximately ninety-three thousand tonnes in nineteen seventy-two and have grown to over
+
+531
+01:00:10.140 --> 01:00:17.780
+two hundred and twelve thousand tonnes today. World population went from three point eight five billion to eight point one
+
+532
+01:00:17.780 --> 01:00:24.380
+billion. Gold per capita: twenty-four point two grams then, twenty-six point two grams now.
+
+533
+01:00:25.300 --> 01:00:32.080
+Mining has kept pace with population. The demand argument explains approximately none of the price increase.
+
+534
+01:00:32.940 --> 01:00:40.840
+Even if you generously assume gold is fifty percent overpriced due to non-monetary demand factors (central bank hoarding,
+
+535
+01:00:41.860 --> 01:00:46.620
+E.T.F.s, jewelry), the pay cut is still eighty-five percent.
+
+536
+01:00:47.360 --> 01:00:51.580
+The number changes from catastrophic to slightly less catastrophic.
+
+537
+01:00:52.460 --> 01:00:57.780
+Your economists will find this very comforting.) It was growing.
+
+538
+01:00:57.920 --> 01:01:07.800
+In the way a tumor grows. Why Nobody Told You. Even the think tanks supposedly on your side report the gap as roughly ten
+
+539
+01:01:07.800 --> 01:01:16.240
+thousand dollars a year. That's because they measure it using the government's ruler, which has been getting shorter: C.P.I.-adjusted
+
+540
+01:01:16.240 --> 01:01:22.500
+(the index has been redesigned multiple times; each redesign coincidentally makes inflation look smaller.
+
+541
+01:01:23.020 --> 01:01:30.620
+This is beige crime at its most beige.). Starting at nineteen seventy-nine instead of nineteen seventy-one (skipping the
+
+542
+01:01:30.620 --> 01:01:37.940
+years that make the chart look the worst). Counting your employer's overpriced health insurance as "pay" (this is like counting
+
+543
+01:01:38.000 --> 01:01:42.840
+the chain around your ankle as "jewelry"). You're not missing ten thousand dollars a year.
+
+544
+01:01:43.320 --> 01:01:46.720
+You're missing nine hundred and fifty-two thousand dollars.
+
+545
+01:01:47.400 --> 01:01:55.540
+The distance between those numbers is the entire game. Gold doesn't renegotiate its value at Federal Reserve meetings.
+
+546
+01:01:55.940 --> 01:02:02.840
+Gold just sits there, being a shiny rock, quietly demonstrating that a shiny rock you dug out of the ground has held its
+
+547
+01:02:02.840 --> 01:02:07.440
+value better than the entire financial system you built to replace it.
+
+548
+01:02:08.520 --> 01:02:14.660
+Your economists will say gold is a "volatile commodity." Your economists work for the people who redesigned the ruler.
+
+549
+01:02:15.460 --> 01:02:22.360
+"But It Wasn't the Gold Standard, It Was..." Your economists have proposed six alternative explanations for why productivity
+
+550
+01:02:22.380 --> 01:02:27.100
+gains stopped reaching workers at the exact moment the gold anchor was removed.
+
+551
+01:02:27.820 --> 01:02:32.620
+On Wishonia, when six things break simultaneously, we check what changed.
+
+552
+01:02:33.200 --> 01:02:39.820
+On Earth, you apparently prefer six unrelated theories, each from a different decade, none of which match the date.
+
+553
+01:02:40.960 --> 01:02:44.510
+Let me walk through each one they offer, and then explain why it's wrong.
+
+554
+01:02:44.780 --> 01:02:48.520
+Your economists' first excuse: "It was the decline of unions."
+
+555
+01:02:49.260 --> 01:02:56.080
+Union membership peaked in nineteen fifty-four. It fell steadily through the late nineteen fifties and the entire nineteen
+
+556
+01:02:56.080 --> 01:03:02.260
+sixties. Those decades were the strongest period of wage growth in American history.
+
+557
+01:03:02.900 --> 01:03:09.020
+Union membership was going down. Wages were going up. For twenty years.
+
+558
+01:03:09.100 --> 01:03:15.160
+Your economists looked at two lines moving in opposite directions and concluded they were causally linked.
+
+559
+01:03:15.800 --> 01:03:19.380
+On Wishonia, this would not pass a children's statistics class.
+
+560
+01:03:20.200 --> 01:03:25.120
+And here is the part your economists leave out: unions didn't collapse on their own.
+
+561
+01:03:25.520 --> 01:03:32.080
+The gold anchor had kept inflation low, which meant union strike funds held their value, which meant unions could actually
+
+562
+01:03:32.080 --> 01:03:37.250
+afford to strike. Remove the anchor, and inflation eats the strike fund.
+
+563
+01:03:37.540 --> 01:03:44.800
+Now your union is a man holding an empty gun. Meanwhile, floating exchange rates made it trivially easy to move the whole
+
+564
+01:03:44.800 --> 01:03:52.940
+factory to a country where workers accept less. Worse, corporations no longer need to negotiate at all: they borrow cheap
+
+565
+01:03:52.940 --> 01:03:57.620
+money from the Fed, buy back their own stock, and watch their share price rise.
+
+566
+01:03:58.060 --> 01:04:05.080
+The Fed prints money on a Tuesday afternoon and erases a three percent raise that took fifteen years of organizing.
+
+567
+01:04:05.940 --> 01:04:11.340
+Why negotiate with a union when the printer is faster, quieter, and doesn't picket?
+
+568
+01:04:11.580 --> 01:04:18.860
+Unions didn't drag wages down. The gold anchor was pulled, and both unions and wages drained out of the same bathtub.
+
+569
+01:04:19.460 --> 01:04:24.860
+Your economists are blaming the water for leaving. Their second excuse: "It was globalization."
+
+570
+01:04:25.720 --> 01:04:30.230
+China joined the W.T.O. in two thousand and one. NAFTA passed in nineteen ninety-four.
+
+571
+01:04:30.820 --> 01:04:36.160
+The wage gap opened in nineteen seventy-one. Your theory is twenty-three years late.
+
+572
+01:04:36.720 --> 01:04:42.780
+This is like arriving at a murder scene in nineteen ninety-four, finding the body from nineteen seventy-one, and blaming
+
+573
+01:04:42.780 --> 01:04:45.600
+someone who moved to the neighborhood in two thousand and one.
+
+574
+01:04:46.280 --> 01:04:50.760
+On Wishonia, we have a word for detectives who solve crimes using evidence from the future.
+
+575
+01:04:51.480 --> 01:04:57.360
+The word translates roughly to "fired." Third: "It was computers and automation."
+
+576
+01:04:58.020 --> 01:05:01.320
+The Apple Two shipped in nineteen seventy-seven. The I.B.M.
+
+577
+01:05:01.420 --> 01:05:07.120
+P.C. shipped in nineteen eighty-one. The internet became commercially available in nineteen ninety-five.
+
+578
+01:05:07.680 --> 01:05:14.840
+The wage gap opened in nineteen seventy-one, when the most advanced technology in most offices was a typewriter that didn't
+
+579
+01:05:14.840 --> 01:05:22.440
+jam every third page. Blaming computers for a gap that predates computers is bold, even by the standards of a profession
+
+580
+01:05:22.440 --> 01:05:29.240
+that awarded itself a fake Nobel Prize. Fourth: "It was deregulation and tax cuts."
+
+581
+01:05:29.280 --> 01:05:35.420
+Reagan took office in nineteen eighty-one. The top marginal tax rate was still seventy percent until nineteen eighty-two.
+
+582
+01:05:35.960 --> 01:05:41.260
+The wage gap opened in nineteen seventy-one. Closer, but still a decade off.
+
+583
+01:05:42.000 --> 01:05:47.880
+On Wishonia, if a doctor said "the patient started bleeding in nineteen seventy-one because of something that happened in
+
+584
+01:05:47.880 --> 01:05:51.450
+nineteen eighty-one," we would check the doctor for head injuries.
+
+585
+01:05:51.980 --> 01:05:59.320
+(On Earth, you give this doctor a column in the Financial Times.) Fifth: "It was the shift to shareholder capitalism."
+
+586
+01:05:59.940 --> 01:06:05.380
+In nineteen seventy, Milton Friedman published an essay arguing that corporations should maximize profit.
+
+587
+01:06:06.140 --> 01:06:09.800
+Your economists concluded this essay caused corporations to become greedy.
+
+588
+01:06:10.780 --> 01:06:18.000
+Corporations. The organizational structure that has been maximizing profit since the Dutch East India Company slaughtered
+
+589
+01:06:18.000 --> 01:06:25.720
+its way across Asia in sixteen oh-two. The species that invented loan sharking, child labor, and plantation slavery read
+
+590
+01:06:25.720 --> 01:06:30.340
+a newspaper essay and thought, "Yes, this is why we started caring about money."
+
+591
+01:06:31.200 --> 01:06:35.260
+Blaming Friedman for corporate greed is like blaming a weather report for rain.
+
+592
+01:06:35.760 --> 01:06:42.200
+It has been raining for four hundred years. Your economists are pointing at the television and saying, "That's where the
+
+593
+01:06:42.200 --> 01:06:46.700
+water comes from." And finally, the laziest one: "It was greed."
+
+594
+01:06:47.380 --> 01:06:53.220
+Greed was not invented in nineteen seventy-one. Humans have been greedy since before they were humans.
+
+595
+01:06:53.680 --> 01:07:00.080
+Your ancestors were greedy when they were still in trees. (They were greedy *about* the trees.) The question is not whether
+
+596
+01:07:00.080 --> 01:07:04.040
+humans are greedy. The question is: what did greed *build*?
+
+597
+01:07:04.800 --> 01:07:11.160
+Before nineteen seventy-one, there was exactly one way to get rich: make something people wanted more than their money.
+
+598
+01:07:11.620 --> 01:07:18.500
+You had to build a factory, hire workers, pay them enough to show up, and produce goods or services that a human would voluntarily
+
+599
+01:07:18.500 --> 01:07:25.620
+hand over their papers for. The workers got paid because you literally could not get rich without them.
+
+600
+01:07:25.700 --> 01:07:31.600
+Greed had no shortcut. It had to flow *through* productivity, which meant it had to flow *through* paychecks.
+
+601
+01:07:32.360 --> 01:07:37.120
+This is called "an economy." It worked for everyone because it had to.
+
+602
+01:07:37.540 --> 01:07:44.960
+After nineteen seventy-one, the Federal Reserve offered corporations a much more elegant option: skip the middle man.
+
+603
+01:07:45.460 --> 01:07:52.440
+Why build a factory and hire expensive humans when you can borrow money at near-zero interest, buy back your own stock,
+
+604
+01:07:52.740 --> 01:07:56.740
+and watch your net worth triple without producing a single object?
+
+605
+01:07:57.580 --> 01:08:03.810
+Why give raises when you can use cheap credit to acquire your competitor, fire half the staff, and call it "synergy"?
+
+606
+01:08:05.080 --> 01:08:10.500
+This is called "the financial sector." It was also working, just not for you.
+
+607
+01:08:11.240 --> 01:08:19.319
+Same species. Same greed. Same twenty-four hours in a day. The only thing that changed was that getting rich no longer required
+
+608
+01:08:19.319 --> 01:08:28.380
+paying people or making things. So they stopped. Every single alternative explanation either postdates nineteen seventy-one
+
+609
+01:08:28.380 --> 01:08:32.520
+or describes a downstream effect of removing the gold anchor.
+
+610
+01:08:33.080 --> 01:08:38.420
+The gold anchor was the cork. Everything your economists are pointing at is the flood.
+
+611
+01:08:39.399 --> 01:08:47.090
+On Wishonia, we have a diagnostic principle: if six symptoms appear at the same time, you don't need six diagnoses.
+
+612
+01:08:48.000 --> 01:08:52.260
+You need one. The patient had a cork removed in nineteen seventy-one.
+
+613
+01:08:53.060 --> 01:09:00.340
+Everything since is spillage. Your economists have been mopping the floor for fifty years without looking up at the bottle.
+
+614
+01:09:01.560 --> 01:09:09.180
+Why You Don't Know Any of This. The average American with a bachelor's degree completes approximately seventeen thousand
+
+615
+01:09:09.180 --> 01:09:16.420
+hours of formal education. The number of those hours spent explaining how the Federal Reserve creates money and who gets
+
+616
+01:09:16.420 --> 01:09:23.560
+it first: Zero. Not "nearly zero." Not "a brief overview in eleventh grade."
+
+617
+01:09:23.740 --> 01:09:30.819
+Zero. I counted. I went through your curricula. You spend more class time learning the recorder, which is an instrument
+
+618
+01:09:30.819 --> 01:09:38.560
+specifically designed to make parents regret reproduction. You spend an entire semester on the mitochondria, which is the
+
+619
+01:09:38.560 --> 01:09:45.840
+powerhouse of the cell, a fact that has never been useful to any human outside of a biology exam or a meme.
+
+620
+01:09:45.960 --> 01:09:50.210
+The thing that took ninety-three percent of your purchasing power: not on the syllabus.
+
+621
+01:09:50.720 --> 01:09:59.340
+The powerhouse of the cell: six weeks. Here is what monetary policy actually determines: Whether your brightest minds design
+
+622
+01:09:59.340 --> 01:10:05.300
+vaccines or warheads. Whether your factories build M.R.I. machines or missiles.
+
+623
+01:10:05.900 --> 01:10:14.340
+Whether your wealth cures diseases or causes them. It is the single most important force shaping who lives and who dies
+
+624
+01:10:14.340 --> 01:10:19.600
+on your planet. It decides everything. You have never had a class about it.
+
+625
+01:10:20.100 --> 01:10:27.520
+You had multiple classes about the recorder. Only twenty-eight states require any economics course to graduate high school,
+
+626
+01:10:27.940 --> 01:10:32.160
+and those courses cover supply and demand curves, not money creation.
+
+627
+01:10:32.660 --> 01:10:36.960
+The thing that took ninety-three percent of your purchasing power is not on the test.
+
+628
+01:10:37.440 --> 01:10:43.060
+It has never been on any test. This is very convenient for the people who took the ninety-three percent.
+
+629
+01:10:44.160 --> 01:10:50.440
+Same Trick, Different Costume. On Wishonia, we learned this lesson six thousand years ago.
+
+630
+01:10:50.980 --> 01:10:57.660
+The trick never changes. Only the outfit: Egyptian pharaohs: "Hey, god said I'm like in charge or something.
+
+631
+01:10:57.900 --> 01:11:02.680
+I'm gonna need you to pile some big rocks up in a triangle shape for no apparent reason."
+
+632
+01:11:03.900 --> 01:11:10.180
+Medieval kings: "Hey, god said I'm in charge or something. I'm gonna need you to give me half your grain.
+
+633
+01:11:10.720 --> 01:11:14.020
+Also, go kill some other guys and bring me back their stuff, too."
+
+634
+01:11:14.800 --> 01:11:18.020
+After a few thousand years, people caught on to this trick.
+
+635
+01:11:18.440 --> 01:11:26.860
+So they tried a new approach. Modern central bankers: "Here are forty-seven pages about hedonic adjustments and geometric
+
+636
+01:11:27.000 --> 01:11:33.480
+weighting in consumer price index methodology." The current version is, I must say, brilliant.
+
+637
+01:11:34.160 --> 01:11:38.660
+Previous rulers needed armies, divine authority, and occasional public executions.
+
+638
+01:11:39.360 --> 01:11:45.060
+Your current rulers just need jargon. They replaced the sword with a two hundred-page P.D.F.
+
+639
+01:11:45.060 --> 01:11:49.300
+that makes your eyes cross before you reach the part where it explains you're being robbed.
+
+640
+01:11:49.900 --> 01:11:55.480
+The pharaoh had to worry about revolution. The Federal Reserve just has to worry about being boring enough.
+
+641
+01:11:56.440 --> 01:12:02.040
+So far, it is very good at this. A serf who understands the system is dangerous.
+
+642
+01:12:02.520 --> 01:12:06.280
+A serf who finds the system too boring to understand is a taxpayer.
+
+643
+01:12:08.220 --> 01:12:15.600
+The Priesthood. On every planet I've observed, the people who operate the extraction system also design the curriculum.
+
+644
+01:12:16.160 --> 01:12:19.380
+This is so consistent it barely qualifies as an observation.
+
+645
+01:12:19.960 --> 01:12:26.900
+On Earth: Banks endow economics chairs at universities. The Federal Reserve funds economic research.
+
+646
+01:12:27.640 --> 01:12:35.180
+Economists rotate between universities, the Fed, and Wall Street (this is called "the revolving door," which is a very honest
+
+647
+01:12:35.180 --> 01:12:40.460
+name because the people going through it always end up back where they started, only richer).
+
+648
+01:12:41.280 --> 01:12:46.760
+Say "the system works" and you get tenure, consulting fees, and a seat on the Federal Reserve Board.
+
+649
+01:12:47.340 --> 01:12:54.450
+Say "the system is theft" and you get called "not a serious economist," which is the academic equivalent of being excommunicated,
+
+650
+01:12:55.480 --> 01:13:01.760
+except the church is a bank and the holy water is money. The Fake Nobel Prize.
+
+651
+01:13:02.720 --> 01:13:07.360
+This is my favorite part. I have been waiting to tell you this since I started writing.
+
+652
+01:13:07.920 --> 01:13:14.340
+In nineteen sixty-eight, Sweden's central bank created a prize and stuck Alfred Nobel's name on it.
+
+653
+01:13:14.880 --> 01:13:18.820
+This gave economics the credibility of physics, chemistry, and medicine.
+
+654
+01:13:19.380 --> 01:13:24.340
+Physics splits atoms. Chemistry cures diseases. Economics lost your pension.
+
+655
+01:13:24.960 --> 01:13:30.260
+They now share an award ceremony. Alfred Nobel never authorized this.
+
+656
+01:13:30.640 --> 01:13:37.060
+He was dead at the time and unable to object, which is the ideal state for someone whose name you're borrowing.
+
+657
+01:13:37.660 --> 01:13:44.340
+The Nobel Prize website itself states that "the prize in economic sciences is not a Nobel Prize".
+
+658
+01:13:45.080 --> 01:13:52.470
+Nobel's great-grandnephew, Peter Nobel, called it "a P.R. coup by economists to improve their reputation".
+
+659
+01:13:53.140 --> 01:14:00.460
+I want to make sure you absorbed that: The central bank that prints your money created a fake Nobel Prize to give to the
+
+660
+01:14:00.460 --> 01:14:06.470
+people who explain why printing your money is fine. On Wishonia, we have a word for this.
+
+661
+01:14:06.800 --> 01:14:11.940
+It translates roughly to "decorating the burglar." The Research.
+
+662
+01:14:12.100 --> 01:14:15.870
+Every source I cited in this chapter is publicly available.
+
+663
+01:14:16.300 --> 01:14:19.960
+None of it was classified. I found all of it in less than a day.
+
+664
+01:14:20.580 --> 01:14:25.940
+Your species has granted thousands of economics doctorates since nineteen seventy-one.
+
+665
+01:14:26.600 --> 01:14:31.000
+Each recipient spent four to seven years studying economics full time.
+
+666
+01:14:31.520 --> 01:14:36.070
+They had access to every database I used. They can read the same charts.
+
+667
+01:14:36.520 --> 01:14:44.700
+The break point in nineteen seventy-one is not subtle. Median income growth fell eighty percent after Nixon closed the gold
+
+668
+01:14:44.700 --> 01:14:53.040
+window. The longest deflation in American history (eighteen seventy to eighteen ninety-six) produced the fastest growth.
+
+669
+01:14:53.140 --> 01:15:01.060
+The Federal Reserve was created to prevent bank failures, then presided over nine thousand of them, while Canada, without
+
+670
+01:15:01.060 --> 01:15:08.300
+a central bank, had zero. Every war that killed more than a million people required a money printer.
+
+671
+01:15:08.740 --> 01:15:14.000
+The hard money list is empty. None of these findings required a laboratory.
+
+672
+01:15:14.500 --> 01:15:21.700
+They required a chart and the willingness to read it. What is the purpose of economics, if not to use data to figure out
+
+673
+01:15:21.700 --> 01:15:29.580
+how to make people's lives better? Apparently it is to handwave while saying "stability" and "liquidity" until everyone
+
+674
+01:15:29.580 --> 01:15:38.400
+stops asking. There are two possible explanations. Either thousands of trained specialists independently failed to notice
+
+675
+01:15:38.400 --> 01:15:46.920
+a pattern visible to some weird alien in an afternoon. Or they noticed, and decided their careers were more important than
+
+676
+01:15:46.920 --> 01:15:52.080
+telling you. Why "Just Print More Money for Medicine" Doesn't Work.
+
+677
+01:15:53.220 --> 01:15:58.220
+"Why not just increase the N.I.H. budget? Why not just fund more medical research?
+
+678
+01:15:58.920 --> 01:16:03.080
+Why tie it to military spending?". These are excellent questions.
+
+679
+01:16:03.680 --> 01:16:08.620
+I will now explain why they all have the same answer, which is that money is pretend.
+
+680
+01:16:09.640 --> 01:16:18.480
+Money is not real. It is a shared hallucination. Eight billion humans pretending that the same piece of paper is worth something.
+
+681
+01:16:19.020 --> 01:16:25.500
+A very convincing hallucination. (I've seen you kill each other over it, which is the ultimate commitment to a bit.) You
+
+682
+01:16:25.500 --> 01:16:30.580
+work for it. You save it. You argue about it at dinner. You get divorced over it.
+
+683
+01:16:30.980 --> 01:16:36.760
+You frame the first dollar your business ever earned and hang it on the wall of a restaurant that will close in eighteen
+
+684
+01:16:36.760 --> 01:16:43.120
+months. All of this, for a piece of paper that a building full of strangers can make worthless while you sleep.
+
+685
+01:16:44.100 --> 01:16:49.860
+Resources are real. Brains are real. Hours are real. Titanium is real.
+
+686
+01:16:49.980 --> 01:16:53.710
+Money is a story you tell each other about who gets the resources.
+
+687
+01:16:54.240 --> 01:16:57.330
+And the people who write the story get to decide the ending.
+
+688
+01:16:58.820 --> 01:17:06.760
+The Fixed Pie of Human Genius. Earth has eight billion humans (fixed quantity), twenty-four hours per human per day (physics
+
+689
+01:17:06.760 --> 01:17:15.700
+is firm on this), limited raw materials (you cannot print titanium), and finite factory capacity (you cannot build infinite
+
+690
+01:17:15.700 --> 01:17:22.880
+laboratories). When a brilliant engineer designs a missile guidance system, that engineer is not designing a medical device.
+
+691
+01:17:23.960 --> 01:17:27.880
+When a factory builds tanks, it is not building M.R.I. machines.
+
+692
+01:17:28.520 --> 01:17:36.040
+When a P.H.D. spends ten years researching better ways to kill people, those are ten years not spent researching better
+
+693
+01:17:36.040 --> 01:17:40.620
+ways to keep people alive. Every genius has exactly one brain.
+
+694
+01:17:41.240 --> 01:17:44.780
+You are renting forty million of them to build things that explode.
+
+695
+01:17:45.300 --> 01:17:49.460
+This is like hiring the world's best chef to set fire to kitchens.
+
+696
+01:17:49.920 --> 01:17:54.740
+You are paying your smartest humans to make your other humans stop being humans.
+
+697
+01:17:55.500 --> 01:17:58.530
+I keep expecting this to sound normal if I say it enough times.
+
+698
+01:17:59.280 --> 01:18:06.660
+It does not. The Numbers. The top ten percent of human talent is roughly eight hundred million people.
+
+699
+01:18:07.680 --> 01:18:15.620
+Here's how you're using them: Around forty million are building things that kill people (military, reserves, death manufacturers).
+
+700
+01:18:16.240 --> 01:18:24.980
+Around one million are working in medical research. Governments spend six hundred and four times more on weapons than on
+
+701
+01:18:24.980 --> 01:18:31.160
+testing which medicines actually work. On Wishonia, we had a similar ratio once.
+
+702
+01:18:31.720 --> 01:18:38.820
+Then we fought about it for twelve thousand years before someone finally designed an incentive system that made it more
+
+703
+01:18:38.820 --> 01:18:46.980
+profitable to cure diseases than to cause them. It took us exactly as long as it's taking you, minus however long you spend
+
+704
+01:18:46.980 --> 01:18:51.790
+reading this manual. The bribery program is in the rest of this manual.
+
+705
+01:18:52.940 --> 01:18:59.450
+The Shell Game (How Inflation Steals Medical Progress). This is the trick.
+
+706
+01:18:59.480 --> 01:19:06.080
+Watch the money: Today. Government clinical trials cost four point five billion dollars.
+
+707
+01:19:06.620 --> 01:19:10.800
+Global military spending is two point seventy-two trillion dollars.
+
+708
+01:19:11.280 --> 01:19:16.300
+The ratio is six hundred and four to one for killing over curing.
+
+709
+01:19:17.540 --> 01:19:20.660
+Five Years Later (after "increasing medical research funding").
+
+710
+01:19:21.340 --> 01:19:25.240
+Clinical trial funding is up fifty percent! Headlines are written.
+
+711
+01:19:25.320 --> 01:19:33.240
+Backs are patted. A politician poses with a scientist. Meanwhile, military spending also went up fifty percent, because
+
+712
+01:19:33.240 --> 01:19:41.860
+central banks printed fifty percent more money, so the real allocation of brains, factories, and hours is exactly the same.
+
+713
+01:19:42.320 --> 01:19:50.240
+The ratio is still six hundred and four to one. You gave the medical department a raise and then raised the price of everything
+
+714
+01:19:50.240 --> 01:19:59.060
+they need to buy. The Proof: Fifty Years of Going Nowhere. Medical Research as a percentage of G.D.P.
+
+715
+01:19:59.760 --> 01:20:03.380
+In nineteen seventy-five, it was zero point zero eight percent.
+
+716
+01:20:03.880 --> 01:20:07.060
+In nineteen eighty-five, it was zero point zero seven percent.
+
+717
+01:20:07.880 --> 01:20:11.520
+In nineteen ninety-five, it was zero point zero seven percent.
+
+718
+01:20:11.920 --> 01:20:15.580
+In two thousand and five, it was zero point zero six percent.
+
+719
+01:20:15.960 --> 01:20:20.000
+In twenty fifteen, it was zero point zero six percent. In twenty twenty-five, it was zero point zero six five percent.
+
+720
+01:20:21.160 --> 01:20:27.080
+Absolute dollars increased ten times. Share of actual resources: decreased.
+
+721
+01:20:27.600 --> 01:20:33.380
+You got ten times "richer" and spent a smaller fraction of it on not dying.
+
+722
+01:20:34.100 --> 01:20:38.000
+This is like getting a promotion and canceling your health insurance to celebrate.
+
+723
+01:20:39.080 --> 01:20:45.760
+What Actually Grew. The financial sector grew from three percent to eight percent of G.D.P.
+
+724
+01:20:46.320 --> 01:20:51.800
+The military-industrial sector grew from three percent to three point four percent of G.D.P.
+
+725
+01:20:52.160 --> 01:20:56.060
+(the official number; the rest enters your budget wearing other costumes).
+
+726
+01:20:56.780 --> 01:21:01.820
+Healthcare spending grew from seven percent to eighteen percent of G.D.P.
+
+727
+01:21:02.240 --> 01:21:09.700
+(most of that growth is billing, not healing). The part that actually keeps you alive (the actual research into why your
+
+728
+01:21:09.700 --> 01:21:14.480
+cells stop working) is a shrinking fraction of a growing economy.
+
+729
+01:21:14.740 --> 01:21:18.740
+You baked a bigger pie and gave the science department fewer crumbs.
+
+730
+01:21:19.220 --> 01:21:25.680
+Then you named the pie "progress." The World's Most Expensive Abacus.
+
+731
+01:21:25.780 --> 01:21:33.220
+The sector that grew the most deserves special attention, because what it does is very simple and what it costs is very
+
+732
+01:21:33.220 --> 01:21:40.340
+large. Your financial sector moves money from people who have it to people who need it, and keeps a record of who owes what.
+
+733
+01:21:40.900 --> 01:21:47.260
+That's it. That is the entire job. An Excel spreadsheet. Remember the eleven-year-old's science fair project?
+
+734
+01:21:47.820 --> 01:21:50.880
+The network of computers that check each other so nobody can lie?
+
+735
+01:21:51.520 --> 01:21:59.720
+That replaced this entire sector on Wishonia. It runs continuously, employs nobody, and has not made a single error in four
+
+736
+01:21:59.720 --> 01:22:09.840
+thousand years. Your version employs six point seven million people and captures eight percent of your G.D.P.
+
+737
+01:22:10.280 --> 01:22:15.460
+Eight percent of G.D.P. For an Excel spreadsheet. I checked whether they were using a very complicated spreadsheet.
+
+738
+01:22:16.220 --> 01:22:19.940
+They are not. It has columns and rows. Some of the cells have formulas.
+
+739
+01:22:20.660 --> 01:22:24.280
+This is the same technology a thirteen-year-old uses to track Pokémon stats.
+
+740
+01:22:25.260 --> 01:22:29.520
+It captures eight percent of the largest economy in history.
+
+741
+01:22:30.160 --> 01:22:34.680
+The technology to automate it has existed on your planet since two thousand and nine.
+
+742
+01:22:35.300 --> 01:22:42.660
+You are paying six point seven million people to do what the computers are already doing, because the six point seven million
+
+743
+01:22:42.660 --> 01:22:50.780
+people are very good at making the job sound complicated. Understanding why your bodies break down requires decoding three
+
+744
+01:22:50.780 --> 01:22:58.020
+billion base pairs of D.N.A., modeling protein folding across millions of configurations, and running clinical trials on
+
+745
+01:22:58.020 --> 01:23:04.220
+thousands of humans for years. Moving money from Account A to Account B requires arithmetic.
+
+746
+01:23:05.320 --> 01:23:10.560
+One of these captures eight percent of G.D.P. The other gets zero point zero six five percent.
+
+747
+01:23:11.700 --> 01:23:16.860
+I will let you guess which is which. I want to make sure you felt that number.
+
+748
+01:23:17.600 --> 01:23:22.580
+Your governments spend four point five billion dollars per year testing whether medicines work.
+
+749
+01:23:23.360 --> 01:23:29.200
+The financial sector captures two point three trillion dollars per year moving numbers between columns.
+
+750
+01:23:29.720 --> 01:23:34.940
+That two point three trillion dollars is five hundred and eleven years of clinical trials.
+
+751
+01:23:35.540 --> 01:23:43.320
+Five hundred and eleven years. Your entire species could run every government-funded clinical trial on Earth for half a
+
+752
+01:23:43.320 --> 01:23:46.370
+millennium with what you pay the spreadsheet department annually.
+
+753
+01:23:47.160 --> 01:23:52.100
+Every year, you choose the spreadsheet. Every year, the diseases wait.
+
+754
+01:23:53.760 --> 01:23:59.260
+How the Ledger Ate the Economy. The financial sector didn't always cost this much.
+
+755
+01:23:59.720 --> 01:24:03.720
+In the early nineteen-seventies, it was about four percent of G.D.P.
+
+756
+01:24:03.780 --> 01:24:07.260
+Finance workers earned roughly the same as everyone else with similar education.
+
+757
+01:24:07.920 --> 01:24:15.600
+A bright graduate from M.I.T. was equally likely to design bridges or trade bonds, because bridges and bonds paid the same.
+
+758
+01:24:15.940 --> 01:24:22.840
+Then Nixon cut the dollar from gold, regulations were stripped away, and something interesting happened: by two thousand
+
+759
+01:24:22.840 --> 01:24:29.200
+and six, finance workers earned a fifty percent premium over equally educated workers in every other sector.
+
+760
+01:24:30.020 --> 01:24:36.920
+Not because the job got harder. (The job is still arithmetic.) Because the money printer printed money, the money went to
+
+761
+01:24:37.020 --> 01:24:43.480
+banks first, and the banks used some of it to hire away every bright person who might otherwise have done something useful.
+
+762
+01:24:44.560 --> 01:24:51.140
+Philippon and Reshef, two economists who actually measured this, found that thirty to fifty percent of the finance wage
+
+763
+01:24:51.140 --> 01:24:57.840
+premium is pure rent, meaning excess pay not explained by skill, education, or complexity.
+
+764
+01:24:58.060 --> 01:25:03.170
+The financial sector pays more not because it's harder, but because it's closer to the printer.
+
+765
+01:25:03.580 --> 01:25:11.340
+Paul Volcker, who ran the Federal Reserve and therefore knew exactly what he was talking about, summarized the result: "We
+
+766
+01:25:11.340 --> 01:25:18.380
+spent several decades not producing many civil engineers and producing a huge number of financial engineers.
+
+767
+01:25:19.020 --> 01:25:23.260
+And the result is shitty bridges and a shitty financial system".
+
+768
+01:25:24.420 --> 01:25:28.860
+A well-run business spends about one percent of revenue on its accounting department.
+
+769
+01:25:29.920 --> 01:25:37.300
+Your economy spends eight percent. If a C.E.O. discovered their accounting department was consuming eight times the standard
+
+770
+01:25:37.300 --> 01:25:46.520
+rate and growing, they would fire someone. Your economy gave accounting a raise, a corner office, and the fake Nobel Prize.
+
+771
+01:25:47.800 --> 01:25:53.680
+'Just Tax the Billionaires'. "Fine," says the human who just read the last three sections.
+
+772
+01:25:54.280 --> 01:25:57.750
+"The problem is the money goes to the wrong people. Tax the billionaires.
+
+773
+01:25:58.580 --> 01:26:04.570
+Fund medical research. Simple.". Your species has been trying this for a century.
+
+774
+01:26:05.180 --> 01:26:11.170
+I've watched the whole thing. Here is the loop: Step one. Tax the wealthy.
+
+775
+01:26:11.940 --> 01:26:21.000
+Victory. Step two. The wealthy spend a fraction of those taxes on lobbyists who return eighteen dollars for every one dollar
+
+776
+01:26:21.000 --> 01:26:28.400
+invested. They secure: One hundred and eighty-one billion dollars per year in direct corporate welfare.
+
+777
+01:26:29.320 --> 01:26:37.120
+Fifty billion dollars in fossil fuel subsidies. Seventy-five billion dollars in agricultural subsidies (top ten percent
+
+778
+01:26:37.120 --> 01:26:45.460
+of farms collect sixty-three percent of payments). Over three hundred billion dollars per year flows back to the people
+
+779
+01:26:45.460 --> 01:26:52.580
+you just taxed, through programs below the human boredom threshold for investigating and too profitable for lobbyists to
+
+780
+01:26:52.580 --> 01:26:58.060
+stop. That is sixty-seven years of clinical trials. Every year.
+
+781
+01:26:58.660 --> 01:27:04.680
+Handed to people who already have money. Every year. While your diseases wait.
+
+782
+01:27:05.200 --> 01:27:11.880
+Every year. Step three. The Federal Reserve prints money. Asset prices rise.
+
+783
+01:27:12.500 --> 01:27:19.360
+The billionaires recover what you taxed, and more. The inflation bill goes to the working families you were trying to help.
+
+784
+01:27:20.200 --> 01:27:25.640
+This is called "monetary policy." You weren't consulted. Step four.
+
+785
+01:27:26.180 --> 01:27:30.420
+Look at the wider wealth gap. Propose: higher taxes on the wealthy.
+
+786
+01:27:31.400 --> 01:27:39.920
+Return to Step one. Repeat for one hundred years. This recipe is four steps long, which is twice as many as the money-printing
+
+787
+01:27:39.920 --> 01:27:50.520
+recipe. It feels like progress. It is not progress. The entire planet spends four point five billion dollars per year testing
+
+788
+01:27:50.520 --> 01:27:59.740
+whether medicines work in humans. One country spends over three hundred billion dollars per year on corporate handouts to
+
+789
+01:27:59.740 --> 01:28:08.460
+people who already have money. The ratio is roughly sixty-eight to one for subsidizing wealth over curing disease.
+
+790
+01:28:09.220 --> 01:28:17.320
+Every "tax the billionaires" campaign in history has left this ratio untouched, because the same system that collects the
+
+791
+01:28:17.400 --> 01:28:25.760
+taxes allocates the spending, and that system has a documented zero percent correlation with what voters want.
+
+792
+01:28:26.840 --> 01:28:35.360
+The diagnosis is correct (the allocation is insane). The prescription is the problem: pour more money into a captured system
+
+793
+01:28:35.360 --> 01:28:40.640
+and hope it flows somewhere different this time. The money goes in as taxes.
+
+794
+01:28:41.040 --> 01:28:49.360
+It comes out as subsidies, asset inflation, and an N.I.H. that spends three point three percent of its budget on clinical
+
+795
+01:28:49.360 --> 01:28:55.140
+trials. The pipe leaks faster than you can fill it, and the leaks flow upward.
+
+796
+01:28:56.040 --> 01:29:00.920
+This is why the one percent treaty doesn't route funding through your existing institutions.
+
+797
+01:29:01.340 --> 01:29:08.020
+It builds a new pipe that the lobbyists haven't found yet. You don't fix a rigged game by playing harder.
+
+798
+01:29:08.320 --> 01:29:14.600
+You build a different game. Why Money Printing Matters: Geniuses Follow the Money.
+
+799
+01:29:15.460 --> 01:29:23.360
+When the Fed prints a trillion dollars for war, weapons manufacturers get it first and immediately buy the best engineers,
+
+800
+01:29:24.080 --> 01:29:31.540
+scientists, and equipment. An M.I.T. graduate with two hundred thousand dollars in student debt chooses between: Raytheon
+
+801
+01:29:31.540 --> 01:29:37.660
+pays one hundred and fifty thousand dollars per year, full benefits, and a signing bonus (makes missiles).
+
+802
+01:29:38.380 --> 01:29:45.600
+An N.I.H. postdoc pays fifty-five thousand dollars per year, a shared office, and a vending machine (cures diseases).
+
+803
+01:29:46.760 --> 01:29:50.420
+Student debt does not negotiate. The graduate goes to Raytheon.
+
+804
+01:29:51.120 --> 01:29:56.220
+She is now very good at making things that find other things and then both things stop existing.
+
+805
+01:29:56.940 --> 01:30:01.260
+She could have been very good at making your cells stop forgetting how to cell.
+
+806
+01:30:01.800 --> 01:30:10.100
+But Raytheon offered dental. The N.I.H. offered a lanyard. Multiply this decision by every talented graduate, every year,
+
+807
+01:30:10.260 --> 01:30:14.540
+for fifty years. Then wonder why nobody cured your mother's cancer.
+
+808
+01:30:15.400 --> 01:30:22.940
+Then blame the graduate. Printing more money for medicine doesn't fix this, because the money printer prints even more for
+
+809
+01:30:22.940 --> 01:30:27.440
+war, and the ratio stays the same. The hamster runs faster.
+
+810
+01:30:27.760 --> 01:30:32.380
+The wheel doesn't move. The only fix is to change the ratio.
+
+811
+01:30:33.060 --> 01:30:38.360
+Take from the war budget. Give to the life budget. That's what the one percent treaty does.
+
+812
+01:30:39.020 --> 01:30:44.420
 Not because it's moral (though it is). Because it's the only thing that moves the geniuses.
+
+813
+01:30:44.920 --> 01:30:49.220
+You cannot out-inspire a signing bonus. You can only outbid it.
+
+814
+01:30:50.260 --> 01:30:55.180
+The Two Receipts. I promised I'd come back to the eleven-year-old's science fair project.
+
+815
+01:30:55.720 --> 01:31:02.600
+Here it is. This chapter has two receipts. I want to put them next to each other, because your species prefers to look at
+
+816
+01:31:02.620 --> 01:31:09.320
+them one at a time, the way a doctor might prefer to review a patient's symptoms one at a time if the doctor were also the
+
+817
+01:31:09.320 --> 01:31:16.120
+disease. Receipt 1: What the Printer Killed. Ninety-seven million deaths.
+
+818
+01:31:16.180 --> 01:31:23.240
+Over sixteen trillion dollars spent. Every war that killed more than a million people required printing money.
+
+819
+01:31:23.240 --> 01:31:25.760
+The list under hard money is empty. Every war on this list required a room where a small number of humans could create money
+
+820
+01:31:25.760 --> 01:31:32.800
+without being checked. The eleven-year-old's science fair project is a room where every computer checks every other computer.
+
+821
+01:31:33.940 --> 01:31:41.800
+You cannot secretly print money on it. You cannot fund a war nobody voted for, because the computers say "no you didn't"
+
+822
+01:31:41.820 --> 01:31:48.240
+and ignore you. Remove the room and you remove the wars. Ninety-seven million deaths.
+
+823
+01:31:49.240 --> 01:31:55.300
+That is the price of a room without a check. Receipt 2: What the Printer Wasted.
+
+824
+01:31:56.320 --> 01:32:01.140
+Your governments spend four point five billion dollars per year testing whether medicines work.
+
+825
+01:32:02.380 --> 01:32:10.580
+Here is what the printer spent instead, measured in years of that: The six wars on this receipt cost over sixteen trillion
+
+826
+01:32:10.580 --> 01:32:16.840
+dollars (U.S. share only). That is THREE THOUSAND FIVE HUNDRED years of clinical trials.
+
+827
+01:32:17.400 --> 01:32:25.520
+But those are just the named wars. Cumulative global military spending since the Fed was created exceeds one hundred and
+
+828
+01:32:25.520 --> 01:32:30.300
+seventy trillion dollars. NEARLY THIRTY-EIGHT THOUSAND years of clinical trials.
+
+829
+01:32:31.120 --> 01:32:39.760
+Spent on killing. And that is just the killing. The printer also built itself a bureaucracy: The financial sector captures
+
+830
+01:32:39.760 --> 01:32:46.740
+two point three trillion dollars per year (eight percent of G.D.P.) to move money and keep a ledger.
+
+831
+01:32:47.340 --> 01:32:51.940
+That is FIVE HUNDRED AND ELEVEN years of clinical trials. Every year.
+
+832
+01:32:52.760 --> 01:32:57.060
+For arithmetic. The eleven-year-old's science fair project does this for free.
+
+833
+01:32:57.400 --> 01:33:04.900
+It has done it for free since two thousand and nine. You are paying six point seven million people to do what the computers
+
+834
+01:33:04.900 --> 01:33:10.960
+are already doing, and you have been doing it for fifteen years since the computers made it pointless.
+
+835
+01:33:12.160 --> 01:33:18.900
+The Fed printed four trillion dollars in twenty twenty for banks: EIGHT HUNDRED AND EIGHTY-NINE years.
+
+836
+01:33:19.320 --> 01:33:25.260
+The two thousand and eight bailout: seven hundred billion dollars for banks: ONE HUNDRED AND FIFTY-SIX years.
+
+837
+01:33:25.840 --> 01:33:33.640
+Corporate welfare: three hundred billion dollars per year for having lobbyists: SIXTY-SEVEN years, annually.
+
+838
+01:33:34.560 --> 01:33:38.760
+The printer funded the wars. The printer inflated the financial sector.
+
+839
+01:33:39.040 --> 01:33:47.420
+The printer bailed out the banks. The eleven-year-old's invention makes all of it unnecessary: no room, no unchecked printing,
+
+840
+01:33:47.480 --> 01:33:53.020
+no eight percent G.D.P. spreadsheet department, no wars funded without consent.
+
+841
+01:33:54.000 --> 01:34:01.660
+The technology has existed since two thousand and nine. Your species is using it to trade pictures of dogs in hats.
+
+842
+01:34:03.000 --> 01:34:07.780
+The Ask. I want you to think about someone you've lost. A parent.
+
+843
+01:34:08.240 --> 01:34:12.140
+A friend. A child. Think about the disease that killed them.
+
+844
+01:34:13.100 --> 01:34:20.860
+Now understand: the money to fund the clinical trial that might have saved them was created on a Tuesday afternoon, by a
+
+845
+01:34:20.860 --> 01:34:27.700
+committee you've never heard of, and handed to a build bombs or conduct wars you would not donate your money to.
+
+846
+01:34:28.280 --> 01:34:32.400
+The bank did not cure your mother. Your mother is still dead.
+
+847
+01:34:33.020 --> 01:34:40.420
+The spreadsheet is doing fine. The one percent treaty asks for one percent of the global military budget.
+
+848
+01:34:41.160 --> 01:34:49.940
+Twenty-seven point two billion dollars per year. Your species has seven thousand diseases with zero approved treatments.
+
+849
+01:34:50.280 --> 01:34:54.700
+At current capacity, testing them takes four hundred and forty-three years.
+
+850
+01:34:55.020 --> 01:35:01.020
+At treaty funding, it takes thirty-six years. One generation instead of five centuries.
+
+851
+01:35:01.640 --> 01:35:06.680
+The printer spent nearly thirty-eight thousand years of clinical trials on killing.
+
+852
+01:35:07.660 --> 01:35:15.680
+I have been watching your species for eighty years and I still cannot tell whether you are bad at math or just very, very
+
+853
+01:35:15.680 --> 01:35:16.500
+well trained.

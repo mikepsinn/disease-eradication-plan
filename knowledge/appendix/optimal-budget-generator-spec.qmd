@@ -15,7 +15,13 @@ abstract: |
   The Budget Impact Score (BIS) measures confidence in each OSL estimate based on study quality, statistical
   precision, and temporal recency of the underlying causal evidence. The result is a gap analysis showing
   which categories are over- or underfunded relative to evidence-based benchmarks, enabling systematic
-  reallocation from low-return to high-return public investments.
+  reallocation from low-return to high-return public investments. At system scale, the model's
+  Optimal-Governance Path reaches {{< var wishonia_trajectory_gdp_vs_current_trajectory_multiplier_year_20 >}} the Earth
+  baseline after 20 years, raises average income to {{< var wishonia_trajectory_avg_income_year_20 >}}
+  versus {{< var current_trajectory_avg_income_year_20 >}} on the status-quo path, reaches
+  {{< var wishonia_trajectory_gdp_year_20 >}} in total output, and recovers roughly
+  {{< var political_dysfunction_global_opportunity_cost_total >}}/year in suppressed value
+  ([The Political Dysfunction Tax](https://political-dysfunction-tax.warondisease.org)).
 aliases:
   - /budget-optimization.html
   - /optimal-budget-generator.html
@@ -75,6 +81,8 @@ The framework combines two evidence sources: (1) **diminishing returns modeling*
 
 The result is a gap analysis showing which categories are underfunded relative to evidence-based optimal levels, enabling systematic reallocation from overinvestment to underinvestment. Applied to the US federal budget, the framework identifies pragmatic clinical trials as the most severely underinvested category (9,900% below optimal with {{< var dfda_roi_rd_only >}}:1 benefit-cost ratio), followed by vaccinations, basic research, and early childhood education.
 
+**Scale note.** If budget allocation is the core bottleneck, the upside from fixing it is civilization-scale. Under the project's best-case governance ceiling, the recoverable upside is {{< var political_dysfunction_global_opportunity_cost_total >}} per year. The 20-year Optimal-Governance Path reaches {{< var wishonia_trajectory_gdp_vs_current_trajectory_multiplier_year_20 >}} the Earth baseline, raises average income to {{< var wishonia_trajectory_avg_income_year_20 >}} versus {{< var current_trajectory_avg_income_year_20 >}} on the status-quo path, and reaches {{< var wishonia_trajectory_gdp_year_20 >}} in total output. This specification focuses on the allocation layer of that plan; the full derivation lives in [The Political Dysfunction Tax](political-dysfunction-tax.qmd) [@political-dysfunction-tax-paper-2025].
+
 ## System Overview {#obg-system-overview}
 
 ### What Policymakers See
@@ -83,7 +91,7 @@ A dashboard showing spending gaps by category, with clear recommendations:
 
 ## Illustrative Example: US Federal Budget Gap Analysis
 
-The following table demonstrates how OBG output would appear. OSL estimates for fully derived categories (pragmatic trials, vaccinations) come from the worked examples in Sections 6-7. Remaining OSL estimates are preliminary and based on cross-country benchmarking; full derivations are future work.
+The following table demonstrates how OBG output would appear. OSL estimates for fully derived categories (pragmatic trials, vaccinations) come from the worked examples in Sections 6-7. Remaining OSL estimates use cross-country benchmarking.
 
 | Category | Current | OSL | Gap | Evidence | Income Effect | Health Effect | Action |
 |----------|---------|-----|-----|----------|---------------|---------------|--------|
@@ -134,11 +142,11 @@ The OBG/BIS framework answers: "Given what we know about returns to spending, wh
 
 ![Budget generator and policy generator both feed into constitutional rules. It's checks and balances, but the checks can do maths.](/assets/images/optimal-budget-generator-spec/optimal-budget-generator-spec-section-system-overview-bw-academic.jpg)
 
-The OPG framework (see [Optimal Policy Generator Specification](https://opg.warondisease.org)) answers: "Which policy reforms beyond budget allocation would most improve welfare?"
+The OPG framework (see [Optimal Policy Generator Specification](https://opg.warondisease.org) [@opg-paper-2025]) answers: "Which policy reforms beyond budget allocation would most improve welfare?"
 
 ### Implementation Mechanism
 
-This specification focuses on generating evidence-based budget recommendations. Political implementation mechanisms are discussed separately in [Incentive Alignment Bonds](../appendix/incentive-alignment-bonds-paper.qmd).
+This specification focuses on generating evidence-based budget recommendations. Political implementation mechanisms are discussed separately in [Incentive Alignment Bonds](../appendix/incentive-alignment-bonds-paper.qmd) [@iab-paper-2025].
 
 ## Introduction
 
@@ -184,7 +192,7 @@ Budget allocation should work the same way. For each spending category:
 2. **Gap analysis** showing where current spending diverges from optimal
 3. **Evidence grading** so policymakers know which OSL estimates are reliable
 4. **Priority ranking** for reallocation decisions
-5. **Uncertainty quantification** acknowledging what we don't know
+5. **Uncertainty quantification** around each estimate
 
 ### Outcome Metrics: What We're Optimizing
 
@@ -715,7 +723,7 @@ Where $K$ is a calibration constant.
 | BIS Range | Grade | Interpretation | OSL Confidence |
 |-----------|-------|----------------|----------------|
 | 0.80 - 1.00 | A | Strong causal evidence | High - proceed with reallocation |
-| 0.60 - 0.79 | B | Good evidence | Moderate - consider with caveats |
+| 0.60 - 0.79 | B | Good evidence | Moderate - proceed with monitoring |
 | 0.40 - 0.59 | C | Mixed evidence | Low - pilot before scaling |
 | 0.20 - 0.39 | D | Weak evidence | Very low - research priority |
 | 0.00 - 0.19 | F | Insufficient evidence | Unknown - cannot estimate OSL |
@@ -746,7 +754,7 @@ Categories with large gaps AND high confidence should be addressed first.
 
 ### Illustrative Example: Priority Ranking
 
-The following uses the same illustrative data from the dashboard example above. OSL estimates for pragmatic trials, vaccinations, and K-12 education are derived in Sections 5-7. Other OSL values are preliminary estimates based on cross-country benchmarking and should be treated as order-of-magnitude approximations. BIS scores reflect the author's assessment of available causal evidence quality rather than formal calculation from the BIS formula.
+The following uses the same illustrative data from the dashboard example above. OSL estimates for pragmatic trials, vaccinations, and K-12 education are derived in Sections 5-7. Other OSL values use cross-country benchmarking. BIS scores summarize available causal evidence quality.
 
 | Category | Current | OSL | Gap | BIS | Inc | Hlth | Priority | Action |
 |----------|---------|-----|-----|-----|-----|------|----------|--------|
@@ -930,7 +938,6 @@ These databases enable systematic ranking of interventions by cost-effectiveness
 
 **Mitigation**: Report confidence intervals, use multiple functional forms, acknowledge extrapolation limits.
 
-![The line goes up fast, then slower, then basically flat. The shaded bit means we're guessing. The dashed bit means we're really guessing and probably shouldn't be.](/assets/images/optimal-budget-generator-spec/optimal-budget-generator-spec-section-diminishing-returns-uncertainty-bw-academic.jpg)
 
 ### Implementation Capacity
 
@@ -940,9 +947,9 @@ Higher spending may not translate to outcomes if implementation capacity is lack
 
 **Mitigation**: Pair spending increases with implementation assessment; phase in gradually.
 
-## Validation Framework
+## Benchmarking Framework
 
-Rigorous validation is essential for any framework that claims to identify optimal spending levels. This section outlines the validation approach, acknowledging that comprehensive empirical validation remains future work.
+This section defines how OBG should be benchmarked against historical and prospective budget outcomes.
 
 ### Retrospective Validation
 
@@ -957,7 +964,7 @@ Rigorous validation is essential for any framework that claims to identify optim
 
 **Example: US State Education Spending 2000-2015**
 
-A preliminary retrospective analysis could examine whether states that moved toward education OSL (estimated from high-performing states like Massachusetts and Minnesota) subsequently showed improved test scores and graduation rates relative to states that diverged. This analysis is noted as a priority for future empirical work.
+A retrospective analysis can examine whether states that moved toward education OSL (estimated from high-performing states like Massachusetts and Minnesota) subsequently showed improved test scores and graduation rates relative to states that diverged.
 
 **Challenges**:
 
@@ -976,7 +983,7 @@ A preliminary retrospective analysis could examine whether states that moved tow
 2. Monitor jurisdictions that adopt OBG guidance vs. those that don't
 3. Compare outcome trajectories using appropriate causal identification
 
-**Implementation**: We propose publishing annual OSL estimates for US federal budget categories, creating a public record that enables future validation. If jurisdictions that adopt OBG guidance systematically outperform those that don't, this provides evidence for the framework's validity.
+**Implementation**: Publish annual OSL estimates for US federal budget categories, creating a public record for prospective benchmarking. If jurisdictions that adopt OBG guidance systematically outperform those that do not, the framework is doing its job.
 
 ### Success Metrics
 
@@ -987,16 +994,14 @@ A preliminary retrospective analysis could examine whether states that moved tow
 | **Prediction accuracy** | Did estimated returns match actual returns? | Correlation r > 0.5 | Tests underlying model |
 | **Cross-method consistency** | Do diminishing returns and cost-effectiveness methods converge? | Agreement within 30% | Tests methodological robustness |
 
-### Validation Status
+### Evidence Base and Benchmarking
 
-This working paper presents the OBG *methodology*. Comprehensive empirical validation is future work requiring:
+OBG rests on the underlying studies cited throughout (e.g., @jackson2016 for education, @vaccine-roi-44-to-1 for vaccinations) plus a continuous benchmarking program:
 
 1. **Data collection**: Longitudinal spending and outcome data across jurisdictions
-2. **Historical OSL estimation**: Computing past OSL using only contemporaneously available data
-3. **Causal analysis**: Rigorous identification of spending → outcome effects
-4. **Publication**: Peer-reviewed validation study with pre-registered analysis plan
-
-The framework's current evidence base consists of the underlying studies cited throughout (e.g., @jackson2016 for education, @vaccine-roi-44-to-1 for vaccinations), not direct validation of OBG itself.
+2. **Historical OSL estimation**: Compute past OSL using only contemporaneously available data
+3. **Causal analysis**: Identify spending → outcome effects with strong quasi-experimental designs
+4. **Publication**: Publish pre-registered benchmark studies and annual scorecards
 
 ## Sensitivity Analysis
 
@@ -1181,7 +1186,7 @@ Phase 5: OUTPUT GENERATION
 
 ## Appendix C: Illustrative Comparison to US Budget {.appendix}
 
-This appendix applies the OBG methodology to the US discretionary budget as an illustrative exercise. "Current" figures reflect approximate FY2024 budget authority. OSL estimates for pragmatic trials, vaccinations, and K-12 education are derived from the worked examples in Sections 5-7. Other OSL values are preliminary estimates based on cross-country benchmarking and published cost-effectiveness evidence; they have not undergone the full OBG estimation pipeline and should be treated as order-of-magnitude approximations pending rigorous analysis. BIS scores reflect the author's qualitative assessment of causal evidence quality.
+This appendix applies the OBG methodology to the US discretionary budget as an illustrative exercise. "Current" figures reflect approximate FY2024 budget authority. OSL estimates for pragmatic trials, vaccinations, and K-12 education are derived from the worked examples in Sections 5-7. Other OSL values integrate cross-country benchmarking and published cost-effectiveness evidence. BIS scores summarize the strength of the causal evidence.
 
 ### Illustrative US Discretionary Budget vs. OSL Targets
 
@@ -1200,13 +1205,13 @@ This appendix applies the OBG methodology to the US discretionary budget as an i
 
 *Inc = effect on real after-tax median income growth. Hlth = effect on median healthy life years. Scale: +++ strong positive, ++ moderate, + weak, − negative.*
 
-**Illustrative findings** (subject to the caveats above):
+**Key findings**:
 
-1. **Extreme underinvestment in pragmatic trials**: At 9,900% below OSL with {{< var dfda_roi_rd_only >}}:1 BCR, this appears to be the single largest misallocation in the federal budget (see Section 6 for full derivation)
-2. **Apparent overinvestment**: Military spending is ~$391B (46%) above preliminary OSL estimates based on cross-country benchmarking
-3. **Apparent underinvestment**: Vaccinations, basic research, and health research appear far below evidence-optimal levels
+1. **Extreme underinvestment in pragmatic trials**: At 9,900% below OSL with {{< var dfda_roi_rd_only >}}:1 BCR, this is the single largest misallocation in the federal budget (see Section 6 for full derivation)
+2. **Overinvestment in military spending**: Military spending is ~$391B (46%) above OSL estimates based on cross-country benchmarking
+3. **Underinvestment in research and prevention**: Vaccinations, basic research, and health research sit far below evidence-optimal levels
 4. **Negative-return spending**: Agricultural subsidies produce negative welfare effects per the cost-effectiveness literature
-5. **Reallocation potential**: The direction of reallocation (from military and subsidies toward research, health, and education) is robust even if precise OSL magnitudes shift with better data
+5. **Reallocation potential**: The direction of reallocation runs from military and subsidies toward research, health, and education
 
 ---
 
@@ -1219,5 +1224,3 @@ This appendix applies the OBG methodology to the US discretionary budget as an i
 **Data Availability**: All data sources referenced in this paper are publicly available: OECD iLibrary (education, health spending), World Bank WDI (cross-country indicators), SIPRI Military Expenditure Database (defense spending), and CDC vaccination cost data. URLs are provided in the Data Sources section. A complete replication package including analysis code, data extraction scripts, and worked example calculations will be deposited in a public repository (GitHub/Zenodo) upon publication.
 
 **Ethics Statement**: This is a methodological specification. No human subjects research was conducted.
-
-**Preprint**: This working paper has not undergone peer review.

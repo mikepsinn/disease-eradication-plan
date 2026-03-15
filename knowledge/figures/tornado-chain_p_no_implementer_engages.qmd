@@ -20,14 +20,14 @@ display_name = "P(No Implementer Engages)"
 
 # Baseline and units
 
-baseline = 4.6310687100515637e-07
+baseline = 0.030778298442168252
 
 # Tornado data from sensitivity analysis
 
-drivers = ['CHAIN_ANNUAL_ENCOUNTER_PROBABILITY', 'CHAIN_DISMISS_PROBABILITY']
-driver_labels = ['Annual Encounter Rate', 'Dismissal Rate']
-impacts_low = [0.05160543530938408, -4.6310667140304196e-07]
-impacts_high = [-4.6310687100515637e-07, 0.012674943290386353]
+drivers = ['CHAIN_IMPLEMENTER_ORBIT_SIZE', 'CHAIN_INITIAL_AUDIENCE', 'CHAIN_DISMISS_PROBABILITY', 'CHAIN_EFFECTIVE_R']
+driver_labels = ['Implementer Orbit Size', 'Initial Audience', 'Dismissal Rate', 'Effective R']
+impacts_low = [0.5610763652713117, 0.4662339248180641, -0.029834848454155204, 0.014928807622735758]
+impacts_high = [-0.030778258717869322, -0.030778298442164436, 0.3213160224331727, -0.030606530415382045]
 
 # Convert deltas to absolute values (baseline + delta)
 

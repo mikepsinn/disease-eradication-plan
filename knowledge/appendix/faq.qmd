@@ -117,6 +117,24 @@ You went to the moon with slide rules. You split the atom before you invented th
 
 ![Why your body falls apart and which tools might fix it. Instructions unclear: currently still dying.](/assets/images/faq/faq-section-aging-as-engineering-bw-academic.jpg)
 
+## "Can One Person Actually Pull This Off?"
+
+**Objection**: "This is a nice PDF, but be realistic."
+
+Wrong question. The right question is: can 8 billion humans, 2,800 billionaires, millions of scientists, thousands of institutions, and 195 governments persuade 180 politicians to act in their rational self-interest for five minutes?
+
+The plan does not require you to implement it. It requires one billionaire out of 2,800 to fund the bonds. One lobbying firm out of thousands to pivot. One country out of 195 to sign first. {{< var treaty_campaign_voting_bloc_target >}} to click a button. Isaac Newton did not personally cause apples to fall. He described why they fall. The description was useful regardless of Newton's personal apple-dropping capabilities.
+
+Say "no" to any of these premises out loud and listen to how it sounds:
+
+1. Is a 1% military spending cut physically possible? (You cut {{< var post_ww2_military_cut_pct >}} after WWII.)
+2. Do the benefits compound? (Healthier people work more, earn more, pay more taxes, fund more research.)
+3. Do politicians respond to money? (The defense industry spends {{< var defense_lobbying_annual >}} on lobbying and gets nearly $1T back.)
+4. Do rich people prefer living? (2,800 billionaires, each with a 100% chance of dying from disease.)
+5. Can the plan reach one willing billionaire? (Six degrees of separation. Facebook measured 3.57 in 2016.)
+
+You just said yes five times. You cannot simultaneously hold all five yeses and conclude this is impossible. The conclusion is not hope. It is arithmetic. 
+
 ## "I'm Just One Person"
 
 **Objection**: "My vote/investment/share won't matter. I'm too small."
@@ -221,7 +239,7 @@ Several countries tested this hypothesis and got different results.
 - Life expectancy matches US at a fraction of the cost
 - Zero invasions since (turns out nobody wants to conquer happy, educated people with good healthcare and no resentment)
 
-Scale that up globally and the [20-year model](../economics/gdp-trajectories.qmd) projects the Treaty Path producing {{< var treaty_path_gdp_vs_earth_multiplier_year_20 >}} the GDP of doing nothing, and the Wishonia Path producing {{< var wishonia_path_gdp_vs_earth_multiplier_year_20 >}}. Not murdering people is good for the economy. This should not be a surprising finding, but on your planet, it is.
+Scale that up globally and the [20-year model](../economics/gdp-trajectories.qmd) projects the Treaty Path producing {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_20 >}} the GDP of doing nothing, and the Wishonia Path producing {{< var wishonia_trajectory_gdp_vs_current_trajectory_multiplier_year_20 >}}. Not murdering people is good for the economy. This should not be a surprising finding, but on your planet, it is.
 
 ![Switzerland and Costa Rica spend a fraction on military and somehow aren't dead. Curious.](/assets/images/faq/faq-section-peace-vs-prosperity-outcomes-bw-academic.jpg)
 

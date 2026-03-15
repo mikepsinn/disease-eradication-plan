@@ -151,29 +151,25 @@ On Earth, this is called "being realistic."
 
 The question is whether a {{< var chain_dismiss_probability >}} dismissal rate prevents the idea from reaching someone who can act on it. This section answers whether reaching such people is overwhelmingly likely. (The [next section](#sec-dominant-strategy-proof) addresses what happens once they understand the incentive structure.)
 
-### Direct Encounters
+### The Orbit-Overlap Model
 
-On your planet, important humans find ideas through news, conferences, advisors whispering in their ears, or occasionally by accident while searching for something else (this is how most of your scientific breakthroughs happen, and also how you discovered penicillin). Each of {{< var chain_implementer_count_nounit >}} potential implementers ({{< var chain_global_billionaire_count_nounit >}} billionaires [@forbes-billionaires-2024] plus {{< var chain_world_leader_count_nounit >}} heads of state) has an annual probability {{< var chain_annual_encounter_probability >}} of stumbling across this idea. That is a very small number per person. But there are a lot of persons.
+You don't need to reach a billionaire directly. You need the content to reach anyone in their *information orbit*: the staff, advisors, social media feeds, and professional contacts whose recommendations actually land on their desk. Each implementer has roughly {{< var chain_implementer_orbit_size_nounit >}} such people (lower bound: Dunbar's 150 close contacts; upper bound: a corporate C-suite's full intake funnel).
+
+There are {{< var chain_implementer_count_nounit >}} potential implementers ({{< var chain_global_billionaire_count_nounit >}} billionaires [@forbes-billionaires-2024] plus {{< var chain_world_leader_count_nounit >}} heads of state). An initial audience of {{< var chain_initial_audience_nounit >}} readers shares content with an effective reproduction number of {{< var chain_effective_r >}} per generation, producing a cascade that fans out over three sharing generations. The question is whether that cascade overlaps with any implementer's orbit.
 
 ### The Mathematics
 
-The probability that a given implementer encounters the idea within {{< var chain_horizon_years_nounit >}} years:
+The probability that a given implementer's orbit is reached by the cascade:
 
 {{< var chain_p_encounter_direct_10yr_latex >}}
 
-The per-implementer probability of engaging (encountering AND not dismissing):
-
-$$
-P_{impl,engage} = P_{enc,10} \times P_{engage}
-$$
-
-The expected number of implementers who engage:
+The expected number of implementers who engage (orbit reached, not dismissed):
 
 {{< var chain_expected_engaged_implementers_latex >}}
 
 The probability that at least one engages: {{< var chain_p_at_least_one_engages >}}.
 
-That is not a typo. With {{< var chain_implementer_count_nounit >}} potential implementers and a {{< var chain_p_encounter_direct_10yr >}} per-implementer encounter probability over {{< var chain_horizon_years_nounit >}} years, the model expects approximately {{< var chain_expected_engaged_implementers_nounit >}} implementers to engage with this idea. Not guaranteed in the mathematical sense. But in planning terms, this is the kind of number you treat as near-inevitable unless your diffusion assumptions are wrong. The dismissal rate stops mattering once enough shots are on goal.
+That is not a typo. With {{< var chain_implementer_count_nounit >}} implementers and {{< var chain_implementer_orbit_size_nounit >}} orbit contacts each, the cascade needs to hit just one person who can flag it upward. The model expects approximately {{< var chain_expected_engaged_implementers_nounit >}} implementers to engage. The dismissal rate stops mattering once enough shots are on goal.
 
 This model answers only: "Is it overwhelmingly likely to reach someone who matters?" The answer is yes. The next section asks: "What happens once it does?"
 
@@ -182,7 +178,7 @@ This model is deliberately conservative in three ways:
 
 1. **Base engagement rate**: Uses the same engagement rate for personal recommendations as for passive exposure (personal recommendations convert at ~3x higher rates)
 2. **Narrow implementer definition**: Counts only billionaires and heads of state (excludes foundation heads, WHO officials, major fund managers, etc.)
-3. **No compounding**: Ignores the feedback loop where media coverage of early adoption increases subsequent encounter rates, and ignores network amplification (people sharing the idea with others)
+3. **No media feedback loop**: Ignores the compounding effect where media coverage of early adoption increases subsequent encounter rates
 :::
 
 ## The Decision-Theoretic Case: Why Rational Actors Eventually Move {#sec-dominant-strategy-proof}
@@ -216,7 +212,7 @@ If you are extremely rich, the relevant question is not "Is this charitable?" Ch
 
 1. **Your family is made of biology.** Private jets, private islands, and private security do not protect your children from cancer, neurodegeneration, autoimmune disease, antibiotic resistance, or aging. Redirecting {{< var treaty_annual_funding >}}/year into treatment discovery is not altruism in the abstract. It is a direct attack on the probability that everyone you love dies the normal human way.
 2. **Your fortune sits on top of the productive economy.** When the destructive/parasitic economy reaches equilibrium with the productive one, wealth preservation gets harder for everyone. The current destructive economy is already **{{< var global_destructive_economy_annual_2025 >}}/year**, or **{{< var global_destructive_economy_pct_gdp >}} of GDP**, and the model projects it reaching the failed-state danger zone in **{{< var destructive_economy_years_to_25pct_gdp >}}** if the loop is not broken.
-3. **The upside is macro-scale, not boutique-scale.** The 20-year model projects the Treaty Path producing **{{< var treaty_path_gdp_vs_earth_multiplier_year_20 >}}** the GDP of doing nothing. The fuller Wishonia path, where the [political dysfunction tax](../problem/unrepresentative-democracy.qmd) [@political-dysfunction-tax-paper-2025] is also removed, projects **{{< var wishonia_path_gdp_vs_earth_multiplier_year_20 >}}**. The broader system is currently bleeding **{{< var political_dysfunction_global_opportunity_cost_total >}}** in opportunity cost, or **{{< var political_dysfunction_global_opportunity_cost_pct_gdp >}} of global GDP**. If you are rich because you own claims on future productive output, this matters to you personally.
+3. **The upside is macro-scale, not boutique-scale.** The 20-year model projects the Treaty Path producing **{{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_20 >}}** the GDP of doing nothing. The fuller Wishonia path, where the [political dysfunction tax](../problem/unrepresentative-democracy.qmd) [@political-dysfunction-tax-paper-2025] is also removed, projects **{{< var wishonia_trajectory_gdp_vs_current_trajectory_multiplier_year_20 >}}**. The broader system is currently bleeding **{{< var political_dysfunction_global_opportunity_cost_total >}}** in opportunity cost, or **{{< var political_dysfunction_global_opportunity_cost_pct_gdp >}} of global GDP**. If you are rich because you own claims on future productive output, this matters to you personally.
 
 In other words: this is not "give up 1% of military spending so strangers can feel better." It is "buy a claim on the healthier, richer, less collapse-prone future in which your family survives longer and your assets sit on top of a civilization that still functions."
 
@@ -229,7 +225,7 @@ Let **X** be the minimum number of rich, capable humans needed to finance a **{{
 If:
 
 1. **Rich humans prefer living.** They recognize that redirecting **{{< var treaty_annual_funding >}}/year** into treatment discovery improves the odds for everyone they love. (If this premise is wrong, your species has larger problems than this treaty.)
-2. **The macro upside is directionally correct.** Treaty Path: **{{< var treaty_path_gdp_vs_earth_multiplier_year_20 >}}** the GDP of doing nothing after 20 years. Wishonia path: **{{< var wishonia_path_gdp_vs_earth_multiplier_year_20 >}}**.
+2. **The macro upside is directionally correct.** Treaty Path: **{{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_20 >}}** the GDP of doing nothing after 20 years. Wishonia path: **{{< var wishonia_trajectory_gdp_vs_current_trajectory_multiplier_year_20 >}}**.
 3. **The collapse-risk model is directionally correct.** The destructive/parasitic economy is already **{{< var global_destructive_economy_annual_2025 >}}/year** (**{{< var global_destructive_economy_pct_gdp >}} of GDP**) and trends toward the failed-state danger zone within **{{< var destructive_economy_years_to_25pct_gdp >}}**.
 4. **Enough upside is privately capturable.** Funders get financial returns, reputational credit, agenda-setting power, and the continued existence of the productive economy their fortunes sit on top of.
 5. **At least X rational actors are persuaded.** {{< var launch_principals_required_nounit >}} billionaires or heads of state understand premises 1-4.

@@ -159,6 +159,8 @@ You want to end war and disease. You need {{< var treaty_campaign_total_cost >}}
 2.  **Phase 2: Scale the Marketing, Hire Professional Bribers (Months 4-18).** Humans will vote when you make it easy and reward participation. You've proven that. Now you raise more papers from venture capitalists (humans who gamble professionally while wearing suits). You use these papers to market the referendum to millions of voters. You also hire your first professional lobbyists. Their actual job is "convince politicians that things are good."
 3.  **Phase 3: The Big Paper Sale (Months 19-36).** This is the final boss level. You launch **[VICTORY Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd)** to raise the full {{< var treaty_campaign_total_cost >}} you need. You overwhelm the opposition, run a global "please don't die" advertising campaign, and get the **[1% treaty](../solution/1-percent-treaty.qmd)** signed by actual governments who thought weapons were the only option.
 
+Off-the-shelf platforms can help with early challenge intake, transparent operations, and maybe basic thresholded fundraising, but no current external platform gives you the full stack of threshold escrow, sponsor-underwritten failure bonus, winner certification, dispute resolution, and rule-bound treasury release in one product. So treat existing platforms as bootstrap scaffolding, not as the final treasury or oracle architecture.
+
 > **Feasibility Check:** The diplomatic phase alone is much cheaper than the full campaign. You raise {{< var treaty_campaign_total_cost >}} for high probability. See [Treaty Feasibility & Cost Analysis](../appendix/treaty-feasibility.qmd).
 
 ## The Legal Architecture: How to Be a Charity, a Lobbying Group, and a Hedge Fund Simultaneously
@@ -208,4 +210,3 @@ By 2075, the math becomes irresistible:
 - $1.088+ trillion funds pragmatic clinical trials
 
 The 1% treaty isn't the goal. It's the first 1%. Every investor and every politician makes more money if the number goes up, so they will push the number up. How far it goes depends on whether curing diseases turns out to be more popular than building bombs. Given that diseases kill approximately everyone and bombs kill approximately fewer people than diseases, the odds seem favorable. But you're humans, so nothing is certain.
-

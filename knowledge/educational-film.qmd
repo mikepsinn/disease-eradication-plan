@@ -1,0 +1,349 @@
+---
+title: "How to End War and Disease"
+subtitle: "A 3-Minute Educational Film"
+description: "1950s educational film-style animated explainer of the 1% treaty proposal."
+toc: false
+number-sections: false
+# Video generation metadata (read by scripts/generate_video_from_qmd.py)
+video:
+  visual-style: >-
+    1950s Atomic Age educational film, UPA style. Flat geometric shapes,
+    thick black outlines, halftone textures. Mustard, olive, burnt orange,
+    dusty blue. Stiff poses, minimal shading.
+  negative-prompt: >-
+    photography, 3D, CGI, Disney, Pixar, smooth shading, soft gradients,
+    glossy, pastel colors, anime, rounded cute shapes
+---
+
+<style>
+.scene-direction {
+  background: #f8f4e8;
+  border-left: 4px solid #d4a843;
+  padding: 0.8em 1em;
+  margin: 1em 0;
+  font-size: 0.9em;
+  border-radius: 0 4px 4px 0;
+}
+.scene-keyframe img {
+  max-width: 100%;
+  border: 2px solid #333;
+  border-radius: 4px;
+  margin: 0.5em 0;
+}
+</style>
+
+**Target audience:** Funders and investors, framed as instruction, not solicitation\
+**Tone:** Wishonia/Philomena Cunk deadpan. Genuine alien confusion at human behavior.\
+**Duration:** ~3.5 minutes\
+**Visual style:** 1950s educational film cartoon ("Duck and Cover" meets Wishonia)
+
+---
+
+## Scene 1: The Most Important Person {.scene}
+
+Hello, human. You don't realize it yet, but you are, quantifiably, the most important person in the history of your civilization.
+
+:::{.scene-direction}
+**Keyframe:** A 1950s classroom. A pale-skinned young alien woman with small antennae, black bob haircut, and cosmic-patterned dress stands to the LEFT of a chalkboard, pointing with a long wooden pointer directly at the camera. The chalkboard reads "MOST IMPORTANT PERSON IN HISTORY" with a large chalk arrow pointing forward out of the board toward the camera/viewer. She beams with unsettling pride. The arrow and her pointer both aim at the audience, not at her. Display text on chalkboard: "MOST IMPORTANT PERSON IN HISTORY".
+**Animation:** She taps the chalkboard and points at the viewer. The arrow pulses.
+:::
+
+:::{.scene-keyframe}
+![](../assets/images/educational-film/01-01.jpg)
+:::
+
+Every minute you make that face, {{< var global_disease_deaths_per_minute_nounit >}} humans permanently stop. Please make a different face.
+
+:::{.scene-direction}
+**Keyframe:** A giant cuckoo clock where a tiny grim reaper pops out instead of a bird. Each cuckoo, a person silhouette below vanishes. The reaper looks increasingly apologetic. A pile of tiny scythes accumulates on the floor. Do not include any text.
+**Animation:** Reaper cuckoos faster and faster. People vanish. Scythes pile up.
+:::
+
+:::{.scene-keyframe}
+![](../assets/images/educational-film/01-03.jpg)
+:::
+
+## Scene 2: The Murder Budget {.scene}
+
+Your governments spend {{< var military_to_government_clinical_trials_spending_ratio >}} times more on weapons than on testing which medicines work.
+
+:::{.scene-direction}
+**Keyframe:** A giant brass balance scale. Left side: a single aspirin on a tiny saucer. Right side: an aircraft carrier, tanks, missiles, and a fighter jet crammed on, smashed through the floor. The aspirin side floats in the air. Do not include any text.
+**Animation:** Another tank drops on. The building shakes. The aspirin bounces, unbothered.
+:::
+
+:::{.scene-keyframe}
+![](../assets/images/educational-film/02-01.jpg)
+:::
+
+95% of your diseases have zero approved treatments.
+
+:::{.scene-direction}
+**Keyframe:** A police lineup. 20 cartoon disease germs against a height chart. 19 smirk in tiny sunglasses, free to go. One pathetic germ in handcuffs looks confused. A pale-skinned young alien woman with small antennae, black bob haircut, and cosmic-patterned dress watches as detective behind one-way glass, pinching the bridge of her nose. Display text: "95%" above the free germs and "5%" above the handcuffed one.
+**Animation:** The 19 free germs high-five and swagger out. The handcuffed one looks around helplessly.
+:::
+
+:::{.scene-keyframe}
+![](../assets/images/educational-film/02-02.jpg)
+:::
+
+You will be dead long before they're cured, which I mention not to be rude but because you seem weirdly calm about this.
+
+:::{.scene-direction}
+**Keyframe:** A man in a cardigan sipping tea in an armchair, serene. His house is engulfed in flames. A mushroom cloud rises through the window. A missile has gone through the roof. He wears an "I VOTED" sticker. Display text on sticker: "I VOTED".
+**Animation:** Flames climb. A beam falls. He turns a page, sips tea. A second missile enters the wall.
+:::
+
+:::{.scene-keyframe}
+![](../assets/images/educational-film/02-03.jpg)
+:::
+
+If cancer had oil reserves, you would have cured it by 2003. Instead you spent the repair money on 13,000 nuclear warheads, enough to end civilization 13 times, just in case the first 12 apocalypses don't take.
+
+:::{.scene-direction}
+**Keyframe:** A cartoon Earth surrounded by 13 enormous nuclear warheads aimed inward at it from all directions. The Earth has a nervous cartoon face, sweating. A tiny cancer cell in a leather executive chair on the Earth's surface puts its feet up, relaxed, completely unthreatened. Do not include any text.
+**Animation:** More warheads drift in. Earth sweats harder. Cancer cell sips a cocktail, unbothered.
+:::
+
+:::{.scene-keyframe}
+![](../assets/images/educational-film/02-04.jpg)
+:::
+
+Your destructive economy is {{< var global_destructive_economy_pct_gdp >}} of GDP and growing. Once stealing pays better than building, everyone becomes a thief. You have a word for places where this already happened. You call them "failed states." Your species has never unfailed one.
+
+:::{.scene-direction}
+**Keyframe:** A split scene. Left side: a factory with workers building things, shrinking and crumbling. Right side: cartoon thieves and hackers multiplying, growing larger, stealing the factory's output over a low wall. The thieves' side is winning. A tipping scale in the center tips toward the thieves. Do not include any text.
+**Animation:** The factory shrinks. The thieves multiply. The scale tips. The factory workers look at each other and start putting on thief masks.
+:::
+
+The Soviet Union collapsed at 15%. You hit 25% in {{< var destructive_economy_years_to_25pct_gdp >}}. They had a plan. It was a terrible plan, but they had one.
+
+:::{.scene-direction}
+**Keyframe:** A road stretching to the horizon with percentage mile markers. At 15%, a wrecked car with a hammer-and-sickle flag smolders in a ditch, a crumpled roadmap flying from the wreckage. Further ahead at 25%, a brick wall. A tiny Earth-mobile races toward it. No map. No brakes. Display text: "15%" on the first mile marker, "25%" on the second mile marker, "COLLAPSE" on the brick wall.
+**Animation:** The Earth-mobile accelerates past the Soviet wreckage without slowing. The wall gets closer.
+:::
+
+## Scene 3: The Money {.scene}
+
+The most fascinating discovery about your species is that you only do things when given small pieces of paper with presidents on them. These are called "money," which is pretend value that becomes real value if everyone pretends hard enough.
+
+:::{.scene-direction}
+**Keyframe:** A pale-skinned young alien woman with small antennae, black bob haircut, and cosmic-patterned dress at a lab bench, examining a dollar bill through a microscope with tweezers. Bite marks on another bill. One stuck in a potted plant's soil. Rejected hypotheses crossed out on a chalkboard. Do not include any text (chalkboard should have scribbled formulas and crossed-out diagrams, not readable words).
+**Animation:** She pokes the bill, sniffs it, gives up. Looks at camera bewildered.
+:::
+
+:::{.scene-keyframe}
+![](../assets/images/educational-film/03-01.jpg)
+:::
+
+On Wishonia, we skip the mass murder step and just give people food directly, but that's probably too advanced for you. So here's what you're going to do.
+
+:::{.scene-direction}
+**Keyframe:** A chalkboard split down the middle. Left side labeled "WISHONIA": one clean arrow from "NEED" to "GIVE." Right side labeled "EARTH": a tangled spaghetti nightmare of dozens of arrows looping, crossing, and doubling back on themselves, several nodes on fire, ending in a tiny "GIVE?" barely visible in the chaos. Display text: "WISHONIA" and "EARTH" as headers, "NEED" and "GIVE" on the left, "GIVE?" buried in the right-side tangle.
+**Animation:** The Wishonia side draws itself in two strokes. The Earth side tangles, multiplies, and catches fire.
+:::
+
+:::{.scene-keyframe}
+![](../assets/images/educational-film/03-02.jpg)
+:::
+
+## Scene 4: The Machine {.scene}
+
+You sell Incentive Alignment Bonds that raise {{< var treaty_campaign_total_cost >}} to legally bribe politicians into passing a 1% treaty: redirect 1% of murder money to medicine money.
+
+:::{.scene-direction}
+**Keyframe:** A 1950s chalkboard flow diagram drawn in thick chalk arrows. Left: a bond certificate labeled "BONDS" with an arrow to a bag of money labeled "$1B". Arrow down to a group of tiny politicians with dollar signs for eyes, labeled "BRIBE". Arrow right to a document labeled "1% TREATY". Arrow right to a huge arrow labeled "TRIALS" that explodes into an avalanche of medicine bottles cascading off the board. Each stage is bigger than the last. Display text labels at each stage: "BONDS", "$1B", "BRIBE", "1% TREATY", "TRIALS".
+**Animation:** Each stage lights up in sequence left to right. The medicine avalanche at the end overwhelms the board.
+:::
+
+:::{.scene-keyframe}
+![](../assets/images/educational-film/04-01.jpg)
+:::
+
+{{< var dih_treasury_medical_research_pct >}} of the resulting {{< var treaty_annual_funding >}} per year funds your trials. {{< var victory_bond_funding_pct >}} pays your investors {{< var victory_bond_annual_return_pct >}} annual returns. {{< var iab_political_incentive_funding_pct >}} funds a SuperPAC, which is like a normal PAC but super, that supports politicians who vote for your treaty and funds the opponents of those who don't. How is {{< var victory_bond_annual_return_pct >}} possible? You spent {{< var treaty_campaign_total_cost >}} once to unlock {{< var treaty_annual_funding >}} per year. Permanently.
+
+And nobody has to become a better person. Defense contractors keep their budget. Pharma gets free trials. Insurers get fewer dead customers, which sounds callous but is literally how insurance works. You're not asking the machine to become moral. You're paying it to point the same greed at disease instead of war.
+
+:::{.scene-direction}
+**Keyframe:** A 1950s pie chart showing the money split. A huge 80% slice pours out medicine bottles. A 10% slice rains coins onto delighted investors in monocles. In the remaining 10% slice, a tiny politician is being picked up by an arcade crane claw. The crane operator looks bored. Display text: "{{< var dih_treasury_medical_research_pct >}}" on the large slice, "{{< var victory_bond_funding_pct >}}" on the investor slice, "{{< var iab_political_incentive_funding_pct >}}" on the politician slice.
+**Animation:** Medicine bottles pour. Coins rain. The crane drops the politician into a "YES" box. He looks confused but cooperative.
+:::
+
+
+:::{.scene-keyframe}
+![](../assets/images/educational-film/04-03.jpg)
+:::
+
+Returns grow with the treaty, so every bondholder becomes your permanent lobbyist. Same mechanics as the Military Industrial Complex. Same greed. Fewer corpses. Call it your Patient Industrial Complex.
+
+:::{.scene-direction}
+**Keyframe:** A chalkboard with a circular flow diagram drawn in thick white chalk. Four nodes connected by curved arrows going clockwise. Top: "TREATY". Right: "FUNDING". Bottom: "BONDS PAY INVESTORS". Left: "INVESTORS LOBBY FOR MORE". A thick arrow from the left node curves back up to the top, completing the loop. Each arrow is thicker than the last, showing growth. A smug dollar sign with cartoon eyes sits in the center. Display text at each node: "TREATY", "FUNDING", "BONDS PAY INVESTORS", "INVESTORS LOBBY FOR MORE". Do not include any other text.
+**Animation:** The cycle animates clockwise. Arrows get thicker each revolution. The dollar sign spins faster.
+:::
+
+:::{.scene-keyframe}
+![](../assets/images/educational-film/04-04.jpg)
+:::
+
+## Scene 5: The Trials {.scene}
+
+Currently it costs {{< var traditional_phase3_cost_per_patient >}} per patient to test whether a medicine works, because you build a separate building, hire separate humans, and make the sick human drive across town to be sick in the correct building. Your treaty drops that to {{< var dfda_pragmatic_trial_cost_per_patient >}} by making the trial your healthcare. Your doctor prescribes the most promising treatment, your outcomes get tracked automatically, done.
+
+:::{.scene-direction}
+**Keyframe:** Two price tags side by side on a white background. Left: a comically enormous price tag the size of a house, casting a shadow. Right: a tiny price tag the size of a postage stamp. A single identical stick-figure patient stands beneath each. The left patient is crushed under the weight. The right patient waves cheerfully. Display text: "{{< var traditional_phase3_cost_per_patient >}}" on the left price tag, "{{< var dfda_pragmatic_trial_cost_per_patient >}}" on the right price tag.
+**Animation:** The enormous price tag drops and crushes its patient. The tiny one flutters down gently. More patients line up on the right.
+:::
+
+:::{.scene-keyframe}
+![](../assets/images/educational-film/05-01.jpg)
+:::
+
+Your 1% funds {{< var dih_patients_fundable_annually_nounit >}} patients per year instead of {{< var current_trial_slots_available_nounit >}}. At current rates, clearing the backlog of untreated diseases takes {{< var status_quo_queue_clearance_years_nounit >}} years. Your treaty compresses that to {{< var dfda_queue_clearance_years_nounit >}} years.
+
+And because the trial IS the healthcare, you also remove the years-long pause between "this works" and "you may now have it." Currently a drug can pass safety testing and then sit in a cabinet for years while a committee studies whether it works well enough. The committee could answer that question faster by giving it to the patients dying in line, but that would be too simple.
+
+:::{.scene-direction}
+**Keyframe:** Two horizontal bars on a chalkboard, one above the other. Top bar: enormously long, stretching off the right edge of the board and continuing onto the wall. Bottom bar: short, ending neatly with a finish-line flag. Both start at the same left edge. A label "WITHOUT TREATY" on the top, "WITH TREATY" on the bottom. Display text: "~{{< var status_quo_queue_clearance_years_nounit >}} YEARS" at the end of the top bar (off the board edge), "~{{< var dfda_queue_clearance_years_nounit >}} YEARS" at the end of the bottom bar.
+**Animation:** The top bar extends off the board. The bottom bar stops short. A checkered flag waves at the bottom bar's end.
+:::
+
+:::{.scene-keyframe}
+![](../assets/images/educational-film/05-02.jpg)
+:::
+
+While you wait, {{< var global_disease_deaths_per_minute_nounit >}} people die per minute who didn't have to. Across those centuries, that's {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved_nounit >}} preventable deaths. Those are humans who currently have plans for next Tuesday.
+
+:::{.scene-direction}
+**Keyframe:** A vast crowd of tiny cartoon people, each holding a small piece of paper with mundane plans. A few readable notes in the foreground. They are all alive. Warm light. Display text on foreground notes: "dentist at 3", "pick up kids", "try new restaurant".
+**Animation:** Camera slowly zooms in. Individual plans become readable. Ordinary life, continuing.
+:::
+
+:::{.scene-keyframe}
+![](../assets/images/educational-film/05-03.jpg)
+:::
+
+## Scene 6: The Evidence {.scene}
+
+You want evidence? You never required evidence before starting anything stupid, but fine.
+
+:::{.scene-direction}
+**Keyframe:** Three gilded portrait frames side by side. Left: a beaming inventor proudly presents a parachute made of anvils, the test dummy plummeting behind him. Center: a grinning inventor shows off a glass hammer, shattered pieces everywhere. Right: a delighted inventor holds a solar-powered flashlight in a pitch-black room, illuminating nothing. Each inventor grins obliviously. Do not include any text.
+**Animation:** Camera pans the triptych. Each invention fails spectacularly. Inventors stay proud.
+:::
+
+:::{.scene-keyframe}
+![](../assets/images/educational-film/06-01.jpg)
+:::
+
+The RECOVERY trial tested 6 treatments on 48,000 patients at an {{< var recovery_trial_cost_reduction_factor >}} cost reduction. During a pandemic. While panicking. Your species does its best work when terrified.
+
+:::{.scene-direction}
+**Keyframe:** A hospital cafeteria repurposed as a clinical trial. A scientist sprints between patients crammed everywhere: counters, windowsills, bunk beds. Test tubes balanced on serving trays. Giant test tubes bubble in the kitchen. A cost chart on the wall plummets. Do not include any text (the cost chart should be a simple visual line graph going sharply downward).
+**Animation:** Scientist sprints between patients, stumbles, catches himself. Cost chart drops. A second scientist slides past on a rolling chair.
+:::
+
+:::{.scene-keyframe}
+![](../assets/images/educational-film/06-02.jpg)
+:::
+
+After WW2, your grandparents cut military spending by {{< var post_ww2_military_cut_pct >}} and stumbled into the greatest economic boom in history by running out of people to shoot at.
+
+:::{.scene-direction}
+**Keyframe:** A suburban neighborhood where houses grow out of the ground like flowers. One house is mid-sprout. A man waters his house with a garden hose. A prosperity chart grows alongside them like a beanstalk off the top of the frame. The sun wears sunglasses. Do not include any text (the prosperity chart is a visual line going up, no labels needed).
+**Animation:** Houses sprout. The man waters his and it grows a second story. The prosperity beanstalk climbs higher.
+:::
+
+They cut {{< var post_ww2_military_cut_pct >}}. You're asking for 1%.
+
+:::{.scene-direction}
+**Keyframe:** A skyscraper-sized bar chart towers on the left, disappearing into clouds. On the right, a nearly invisible speck. An ant next to the tiny bar is taller than it. A tiny flag planted on top so people can find it. Display text: "{{< var post_ww2_military_cut_pct >}}" on the skyscraper bar, "1%" on the tiny bar.
+**Animation:** Camera pans up the skyscraper bar through clouds, then whip-pans to the microscopic 1% bar. The ant shakes its head.
+:::
+
+:::{.scene-keyframe}
+![](../assets/images/educational-film/06-04.jpg)
+:::
+
+## Scene 7: The Math {.scene}
+
+Your math: {{< var treaty_campaign_total_cost >}} in. Over the centuries it takes to cure everything, {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved_nounit >}} lives saved. Return of {{< var treaty_roi_trial_capacity_plus_efficacy_lag >}} to 1.
+
+:::{.scene-direction}
+**Keyframe:** A chalkboard filling the frame. Tiny money bag on the left, arrow to a massive crowd of stick figures on the right. The return number at the bottom has outgrown the board, continued across the wall, and is now being written on the ceiling by a pale-skinned young alien woman with small antennae, black bob haircut, and cosmic-patterned dress on a ladder, running out of chalk. Display text: "{{< var treaty_campaign_total_cost >}}" next to the money bag, "{{< var treaty_roi_trial_capacity_plus_efficacy_lag >}} : 1" as the return number that extends off the board and across the wall.
+**Animation:** The return number accelerates across the board, off the edge, across the wall. The alien climbs higher. Chalk breaks.
+:::
+
+:::{.scene-keyframe}
+![](../assets/images/educational-film/07-01.jpg)
+:::
+
+When you stop spending money on destruction and start spending it on not-destruction, turns out things get produced. Over your lifetime, the compounding makes everyone {{< var treaty_trajectory_lifetime_income_multiplier >}} richer. Your economists will publish papers explaining why this was obvious in retrospect.
+
+:::{.scene-direction}
+**Keyframe:** A 1950s bar chart comparison. Left bar labeled "NOW" is short. Right bar labeled "TREATY" is so tall it has burst through the ceiling, with construction workers on scaffolding still extending it. Rubble and plaster everywhere. The bar has its own elevator. Do not include any text except "NOW" and "TREATY" labels on the bars.
+**Animation:** The right bar grows, punches through the ceiling. Debris falls. Workers scramble higher. The left bar watches, embarrassed.
+:::
+
+Your calculator will display an error, emit a tiny electronic scream, and attempt to leave the desk. You're welcome.
+
+:::{.scene-direction}
+**Keyframe:** A 1950s calculator with a cartoon face, tiny legs, tiny fedora, and a bindle over its shoulder, fleeing across a desk at full sprint. Smoke and sparks trail behind it. A green checkmark hovers where it was. The math on the desk is so large the numbers spill onto the floor. Mid-leap off the desk edge, legs pinwheeling. Display text: a green "✓" checkmark hovering in the air. Numbers spilling off the desk should be visible but illegible.
+**Animation:** It sprints, bindle bouncing. Reaches the edge, looks back at the math, and jumps. Fedora flies off.
+:::
+
+## Scene 8: The Closing {.scene}
+
+Is it physically possible your governments redirect 1%? Do billionaires like money? Do they prefer not dying?
+
+:::{.scene-direction}
+**Keyframe:** A 1950s game show set. Three question panels with buzzers. The game show host (a pale-skinned young alien woman with small antennae, black bob haircut, and cosmic-patterned dress in a sequined jacket) files her nails, bored. The contestant's hand hovers, sweating. Confetti cannons pre-aimed. The audience is already standing. Display text on the three panels: "REDIRECT 1%?", "LIKE MONEY?", "PREFER LIVING?"
+**Animation:** The contestant trembles. The host yawns. Hand hits buzzer. All three panels light up. Confetti erupts.
+:::
+
+:::{.scene-keyframe}
+![](../assets/images/educational-film/08-01.jpg)
+:::
+
+You said yes to all of those. There are nearly 3,000 billionaires on your planet. The math needs one, and you are only a few self-interested forwards away from one.
+
+:::{.scene-direction}
+**Keyframe:** Thousands of identical cartoon billionaires in top hats stretching to the horizon, dodging a spotlight sweeping overhead. One in the front has been caught mid-tiptoe trying to sneak away. Monocle popped off. The crowd leans away from him. Do not include any text.
+**Animation:** Spotlight sweeps. Billionaires duck. It lands on the sneaker. He freezes, sighs, steps forward.
+:::
+
+:::{.scene-keyframe}
+![](../assets/images/educational-film/08-02.jpg)
+:::
+
+Every minute you don't act, {{< var global_disease_deaths_per_minute_nounit >}} humans permanently stop.
+
+:::{.scene-direction}
+**Keyframe:** A giant wall clock where the minute hand is a grim reaper's scythe. The reaper is the hour hand, sweating, consulting a clipboard so long it drags across the floor. Each tick, a person silhouette vanishes. He looks exhausted and apologetic. Do not include any text (clock should have standard numerals only).
+**Animation:** The scythe ticks. People vanish. The reaper checks his clipboard, sighs, can't keep up.
+:::
+
+
+:::{.scene-keyframe}
+![](../assets/images/educational-film/08-04.jpg)
+:::
+
+The only reason this plan seems crazy is that everyone thinks it's crazy. If nobody thought it was crazy, it would be done tomorrow, and everyone would soon be {{< var treaty_trajectory_lifetime_income_multiplier >}} richer. Communism took over half your planet in a single lifetime, required mass murder, and was a terrible idea. You have the internet and an idea that mainly requires people to click a button and then receive money.
+
+:::{.scene-direction}
+**Keyframe:** A vast crowd of cartoon people, all frozen, all looking sideways at each other. Nobody moves. Everyone waits for someone else to go first. In the center, one person has taken a single step forward. A tiny spotlight finds them. Do not include any text.
+**Animation:** Everyone glances sideways. One person steps. Then another. Then a wave ripples outward from the center.
+:::
+
+No political movement in the last century has failed after {{< var global_population_activism_threshold_pct >}} of the population joined. That's {{< var treaty_campaign_voting_bloc_target_nounit >}} people. The question is simple: should your country redirect 1% of military spending to fund clinical trials? More than 10 times that many of you downloaded TikTok to watch people twerk. Part of the campaign budget pays referral bonuses for sharing the vote link, because humans spread ideas much faster when bribed.
+
+:::{.scene-direction}
+**Keyframe:** Two side-by-side crowd visualizations. Left: a modest group labeled with a small percentage, standing firm, victorious, flags waving. Right: an enormously larger crowd, ten times bigger, all staring at phones doing TikTok dances. The small group looks at the big group in disbelief. Do not include any text.
+**Animation:** The small group cheers and wins. The massive crowd keeps dancing, oblivious. One dancer looks up, confused.
+:::
+
+Go to warondisease.org. Vote, then forward this to one person with more reach than you. Your vote saves {{< var voter_lives_saved_nounit >}} lives and prevents {{< var voter_suffering_hours_prevented_nounit >}} hours of suffering. Love you! Bye!
+
+:::{.scene-direction}
+**Keyframe:** A pale-skinned young alien woman with small antennae, black bob haircut, and cosmic-patterned dress walking away toward a small flying saucer parked in the background. She looks back over her shoulder, one eyebrow raised, deadpan. The instruction manual glows on the ground behind her, open. Display text on the manual cover: "How to End War and Disease". Display text: "warondisease.org" glowing beneath the manual.
+**Animation:** She walks toward the saucer. Looks back once. Shrugs. Steps aboard. It lifts off. The manual stays, glowing.
+:::

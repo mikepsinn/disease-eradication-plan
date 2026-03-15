@@ -167,6 +167,8 @@ format:
     lightbox: auto
     theme:
       - cosmo
+    filters:
+      - assets/filters/live-version-note.lua
     mermaid:
       theme: neutral
     echo: false
@@ -194,6 +196,8 @@ format:
   pdf:
     documentclass: article
     institute: "Institute for Accelerated Medicine"
+    filters:
+      - assets/filters/live-version-note.lua
     echo: false
     toc: true
     toc-depth: 3

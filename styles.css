@@ -1250,3 +1250,16 @@ html.dark-mode img {
         display: none !important;
     }
 }
+
+.version-note {
+    margin: 1rem 0 1.5rem;
+    padding: 0.8rem 1rem;
+    border-left: 4px solid #6b7a58;
+    background: #f6f4ec;
+    color: #2f3428;
+    font-size: 0.95rem;
+}
+
+.version-note p {
+    margin: 0;
+}

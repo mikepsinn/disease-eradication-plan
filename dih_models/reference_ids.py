@@ -598,6 +598,7 @@ class ReferenceID(str, Enum):
     KLEINER2013 = "kleiner2013"
     KOF_SWITZERLAND_HEALTHCARE_2024 = "kof-switzerland-healthcare-2024"
     KPMG2018 = "kpmg2018"
+    KREMER2020 = "kremer2020"
     KRUEGER1974 = "krueger1974"
     KYC_BIOMETRIC_VERIFICATION_COSTS_2024 = "kyc-biometric-verification-costs-2024"
     KYDLAND1977 = "kydland1977"

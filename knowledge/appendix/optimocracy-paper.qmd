@@ -7,7 +7,14 @@ abstract: |
   causal inference to this historical policy data, (2) Identify which policies predict above-average median
   income and healthy life years, (3) Publish recommendations for every major vote, (4) Track politician
   alignment with evidence, (5) Algorithmically fund the campaigns of the most aligned policymakers via
-  SuperPAC. Politicians still decide; the algorithm just makes ignoring evidence expensive.
+  SuperPAC. Politicians still decide; the algorithm just makes ignoring evidence expensive. At system
+  scale, the model's Optimal-Governance Path reaches
+  {{< var wishonia_trajectory_gdp_vs_current_trajectory_multiplier_year_20 >}} the Earth baseline after 20 years, raises
+  average income to {{< var wishonia_trajectory_avg_income_year_20 >}} versus
+  {{< var current_trajectory_avg_income_year_20 >}} on the status-quo path, reaches
+  {{< var wishonia_trajectory_gdp_year_20 >}} in total output, and recovers roughly
+  {{< var political_dysfunction_global_opportunity_cost_total >}}/year in suppressed value
+  ([The Political Dysfunction Tax](https://political-dysfunction-tax.warondisease.org)).
 aliases:
   - /optimocracy.html
 author:
@@ -71,6 +78,8 @@ Optimocracy is simple:
 
 Optimocracy has two distinct components: an **analytical engine** (causal inference on cross-jurisdictional data to identify what works) and an **incentive mechanism** (SuperPAC funding to make politicians act on it). The analytical engine is useless without incentives to follow its recommendations. The incentive mechanism is useless without rigorous evidence to base recommendations on. Together, they close the loop between knowing what works and doing what works.
 
+**Scale note.** The magnitude at stake is far larger than any single reform memo. Under the project's best-case governance ceiling, the recoverable upside is {{< var political_dysfunction_global_opportunity_cost_total >}} per year. The 20-year Optimal-Governance Path reaches {{< var wishonia_trajectory_gdp_vs_current_trajectory_multiplier_year_20 >}} the Earth baseline, raises average income to {{< var wishonia_trajectory_avg_income_year_20 >}} versus {{< var current_trajectory_avg_income_year_20 >}} on the status-quo path, and reaches {{< var wishonia_trajectory_gdp_year_20 >}} in total output. This paper focuses on the evidence-production and enforcement layer that could move policy toward that ceiling; the full derivation lives in [The Political Dysfunction Tax](political-dysfunction-tax.qmd) [@political-dysfunction-tax-paper-2025].
+
 ### Why This Works
 
 **Capture resistance:** Currently, lobbyists have thousands of capture points: committee earmarks, agency decisions, regulatory rulings. Each is relatively cheap to influence. Optimocracy consolidates these to a single target: the verification layer measuring health and wealth. Corrupting five independent data sources (Census Bureau, Federal Reserve, BLS, academic institutions, citizen surveys) requires coordination across institutions with different governance structures, funding sources, and methodologies. Corruption doesn't disappear; it just becomes prohibitively expensive.
@@ -79,7 +88,7 @@ Optimocracy has two distinct components: an **analytical engine** (causal infere
 
 **Analytical validity:** Cross-jurisdictional variation provides the statistical power that single-jurisdiction studies lack. When 50 states adopt different minimum wages over 30 years, we don't need a randomized trial; we have thousands of natural experiments. Modern causal inference methods (synthetic control, difference-in-differences) can extract signal from this variation. The approach has already produced actionable findings in economics and public health; Optimocracy systematizes it across all policy domains simultaneously.
 
-**No government permission required:** Optimocracy operates as a permanent advisory layer. Politicians don't surrender power; they just face new incentives. The question changes from "Will politicians give up power?" (hard) to "Can we fund enough Incentive Alignment Bonds (IABs) to make ignoring recommendations unprofitable?" (tractable).
+**No government permission required:** Optimocracy operates as a permanent advisory layer. Politicians don't surrender power; they just face new incentives. The question changes from "Will politicians give up power?" (hard) to "Can we fund enough [Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd) [@iab-paper-2025] (IABs) to make ignoring recommendations unprofitable?" (tractable).
 
 ## The Problem: Political Dysfunction Tax
 
@@ -155,7 +164,7 @@ This pattern (massive welfare losses persisting due to political economy constra
 
 ### Bottom-Up Policy Cost Accounting
 
-The US government waste estimate of {{< var us_gov_waste_total >}} ({{< var us_gov_waste_pct_gdp >}} of GDP) is derived from the [United States Efficiency Audit](us-efficiency-audit.qmd), which enumerates specific, measurable policy failures across defense, healthcare, justice, regulatory, and subsidy subsystems.
+The US government waste estimate of {{< var us_gov_waste_total >}} ({{< var us_gov_waste_pct_gdp >}} of GDP) is derived from the [United States Efficiency Audit](us-efficiency-audit.qmd) [@us-efficiency-audit-paper-2025], which enumerates specific, measurable policy failures across defense, healthcare, justice, regulatory, and subsidy subsystems.
 
 ![How America wastes money, by category. Healthcare, military, regulations, taxes, housing. It's like a pie chart of inefficiency, and every slice is surprisingly large.](/assets/images/optimocracy-paper/optimocracy-paper-section-alternative-estimation-bottom-up-policy-cost-accounting-bw-academic.jpg)
 
@@ -413,7 +422,7 @@ Most policies affect one or both metrics:
 
 **What about edge cases?** Politicians handle them. Optimocracy is purely advisory. If a recommendation seems to violate rights, increase catastrophic risk, or harm minorities, politicians ignore it. That's their job. The algorithm recommends what maximizes health and wealth; politicians decide whether to follow.
 
-This two-metric system is used by both the [Optimal Policy Generator](optimal-policy-generator-spec.qmd) for policy recommendations and the [Optimal Budget Generator](optimal-budget-generator-spec.qmd) for spending targets, ensuring consistency across the Optimocracy framework.
+This two-metric system is used by both the [Optimal Policy Generator](optimal-policy-generator-spec.qmd) [@opg-paper-2025] for policy recommendations and the [Optimal Budget Generator](optimal-budget-generator-spec.qmd) [@obg-paper-2025] for spending targets, ensuring consistency across the Optimocracy framework.
 
 ## Advantages Over Political Governance
 
@@ -544,7 +553,7 @@ Optimocracy provides the *what* (evidence-based recommendations); the SuperPAC p
 
 1. **Donations (primary):** Donations are high-leverage. Historical lobbying ROI suggests $1 of campaign spending can shift $100+ in policy outcomes. This makes funding Optimocracy more effective than traditional charity.
 
-2. **Incentive Alignment Bonds (for specific reallocations):** When Optimocracy recommends a specific funding reallocation (like the [1% Treaty](../solution/1-percent-treaty.qmd)), [IABs](incentive-alignment-bonds-paper.qmd) can provide investor returns tied to policy success. Investors get a percentage of redirected funds, scaling funding beyond donations.
+2. **Incentive Alignment Bonds (for specific reallocations):** When Optimocracy recommends a specific funding reallocation (like the [1% Treaty](../solution/1-percent-treaty.qmd) [@1-pct-treaty-impact-paper-2025]), [IABs](incentive-alignment-bonds-paper.qmd) can provide investor returns tied to policy success. Investors get a percentage of redirected funds, scaling funding beyond donations.
 
 ### Campaign Funding Allocation Algorithm
 
@@ -605,7 +614,7 @@ For specific policy reallocations with concrete funding sources (like the 1% Tre
 
 ### The Cost of Political Reform
 
-Political feasibility is a cost, not a binary. In a companion analysis (see [The Price of Political Change](https://cost-of-change.warondisease.org)), we estimate the maximum plausible cost of achieving political reform through democratic engagement.
+Political feasibility is a cost, not a binary. In a companion analysis (see [The Price of Political Change](https://cost-of-change.warondisease.org) [@cost-of-change-paper-2025]), we estimate the maximum plausible cost of achieving political reform through democratic engagement.
 
 **US Political System Reform Investment (Maximum Scenarios):**
 

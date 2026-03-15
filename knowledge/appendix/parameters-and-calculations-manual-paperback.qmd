@@ -36,15 +36,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 331 parameters used in the analysis, organized by type:
+This appendix documents all 333 parameters used in the analysis, organized by type:
 
 - External sources (peer-reviewed): 123
 - Calculated values: 155
-- Core definitions: 53
+- Core definitions: 55
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (155 parameters) • [External Data Sources](#sec-external) (123 parameters) • [Core Definitions](#sec-definitions) (53 parameters)
+[Calculated Values](#sec-calculated) (155 parameters) • [External Data Sources](#sec-external) (123 parameters) • [Core Definitions](#sec-definitions) (55 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -83,24 +83,22 @@ $$
 
 :::
 
-### Expected Engaged Implementers: 14.5 people {#sec-chain_expected_engaged_implementers}
+### Expected Engaged Implementers: 3.48 people {#sec-chain_expected_engaged_implementers}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Expected number of implementers who engage with the idea within the time horizon
+Expected number of implementers who engage (orbit reached x engagement rate x implementer count)
 
 **Inputs**:
 
-- [Potential Implementers](#sec-chain_implementer_count) 🔢: 2.98 thousand people
-- [Annual Encounter Rate](#sec-chain_annual_encounter_probability): 0.5% (95% CI: 0.1% - 2%)
-- [Model Horizon](#sec-chain_horizon_years): 10 years
+- [Implementer Orbit Size](#sec-chain_implementer_orbit_size): 1 thousand people (95% CI: 150 people - 5 thousand people)
+- [Effective R](#sec-chain_effective_r): 0.15:1 (95% CI: 0.04:1 - 0.8:1)
+- [Initial Audience](#sec-chain_initial_audience): 50 thousand people (95% CI: 10 thousand people - 500 thousand people)
 - [Engagement Rate](#sec-chain_engage_probability) 🔢: 10%
+- [Potential Implementers](#sec-chain_implementer_count) 🔢: 2.98 thousand people
 
 $$
-\begin{gathered}
-E[N_{engaged}] \\
-= P_{enc,10} \times P_{engage} \times N_{impl}
-\end{gathered}
+E[N_{engaged}] = P_{reach} \times P_{engage} \times N_{impl}
 $$
 
 *✓ High confidence*
@@ -145,25 +143,29 @@ $$
 
 :::
 
-### P(At Least One Engages): 100% {#sec-chain_p_at_least_one_engages}
+### P(At Least One Engages): 96.9% {#sec-chain_p_at_least_one_engages}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Probability at least one implementer engages within the time horizon (information diffusion only; dominant strategy proof handles action)
+Probability at least one implementer engages (information diffusion only; dominant strategy proof handles action)
 
 **Inputs**:
 
-- [P(No Implementer Engages)](#sec-chain_p_no_implementer_engages) 🔢: 4.63e-05%
+- [P(No Implementer Engages)](#sec-chain_p_no_implementer_engages) 🔢: 3.08%
 
 $$
-P_{reach} = 1 - P_{none} = 1 - 0\% = 100\%
+P_{reach} = 1 - P_{none} = 1 - 3.08\% = 96.9\%
 $$
 where:
 $$
 \begin{gathered}
 P_{none} \\
-= \left(1 - P_{enc,10} \cdot P_{engage}\right)^{N_{impl}}
+= \left(1 - P_{reach} \cdot P_{engage}\right)^{N_{impl}}
 \end{gathered}
+$$
+where:
+$$
+P_{engage} = 1 - P_{dismiss} = 1 - 90\% = 10\%
 $$
 where:
 $$
@@ -173,10 +175,6 @@ N_{impl} \\
 = 2{,}780 + 195 \\
 = 2{,}980
 \end{gathered}
-$$
-where:
-$$
-P_{engage} = 1 - P_{dismiss} = 1 - 90\% = 10\%
 $$
 *✓ High confidence*
 
@@ -196,19 +194,23 @@ $$
 
 :::
 
-### 10-Year Direct Encounter Probability: 4.89% {#sec-chain_p_encounter_direct_10yr}
+### Implementer Orbit Reach Probability: 1.17% {#sec-chain_p_encounter_direct_10yr}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Probability a given implementer encounters the idea directly within 10 years
+Probability a given implementer's information orbit is reached by the content cascade
 
 **Inputs**:
 
-- [Annual Encounter Rate](#sec-chain_annual_encounter_probability): 0.5% (95% CI: 0.1% - 2%)
-- [Model Horizon](#sec-chain_horizon_years): 10 years
+- [Implementer Orbit Size](#sec-chain_implementer_orbit_size): 1 thousand people (95% CI: 150 people - 5 thousand people)
+- [Effective R](#sec-chain_effective_r): 0.15:1 (95% CI: 0.04:1 - 0.8:1)
+- [Initial Audience](#sec-chain_initial_audience): 50 thousand people (95% CI: 10 thousand people - 500 thousand people)
 
 $$
-P_{enc,10} = 1 - (1 - P_{enc})^{T}
+\begin{gathered}
+P_{reach} \\
+= 1 - \left(1 - \frac{O_{impl}}{N}\right)^{N_0 \cdot \sum_{i=0}^{3} R_{eff}^i}
+\end{gathered}
 $$
 
 *✓ High confidence*
@@ -229,23 +231,24 @@ $$
 
 :::
 
-### P(No Implementer Engages): 4.63e-05% {#sec-chain_p_no_implementer_engages}
+### P(No Implementer Engages): 3.08% {#sec-chain_p_no_implementer_engages}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Probability that NO implementer engages with the idea within the time horizon
+Probability that NO implementer engages (all orbits missed or all dismiss)
 
 **Inputs**:
 
-- [Potential Implementers](#sec-chain_implementer_count) 🔢: 2.98 thousand people
-- [Annual Encounter Rate](#sec-chain_annual_encounter_probability): 0.5% (95% CI: 0.1% - 2%)
-- [Model Horizon](#sec-chain_horizon_years): 10 years
+- [Implementer Orbit Size](#sec-chain_implementer_orbit_size): 1 thousand people (95% CI: 150 people - 5 thousand people)
+- [Effective R](#sec-chain_effective_r): 0.15:1 (95% CI: 0.04:1 - 0.8:1)
+- [Initial Audience](#sec-chain_initial_audience): 50 thousand people (95% CI: 10 thousand people - 500 thousand people)
 - [Engagement Rate](#sec-chain_engage_probability) 🔢: 10%
+- [Potential Implementers](#sec-chain_implementer_count) 🔢: 2.98 thousand people
 
 $$
 \begin{gathered}
 P_{none} \\
-= \left(1 - P_{enc,10} \cdot P_{engage}\right)^{N_{impl}}
+= \left(1 - P_{reach} \cdot P_{engage}\right)^{N_{impl}}
 \end{gathered}
 $$
 
@@ -444,6 +447,106 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-current_patient_participation_rate.qmd >}}
+
+:::
+
+### Current Trajectory Average Income at Year 20: $20.5K {#sec-current_trajectory_avg_income_year_20}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Average income (GDP per capita) at year 20 under current trajectory trajectory.
+
+**Inputs**:
+
+- [Current Trajectory GDP at Year 20](#sec-current_trajectory_gdp_year_20) 🔢: $188T
+- [Global Population 2045 (Projected)](#sec-global_population_2045_projected) 📊: 9.2 billion of people
+
+$$
+\begin{gathered}
+\bar{y}_{base,20} \\
+= \frac{GDP_{base,20}}{Pop_{2045}} \\
+= \frac{\$188T}{9.2B} \\
+= \$20.5K
+\end{gathered}
+$$
+where:
+$$
+GDP_{base,20} = GDP_0(1+g_{base})^{20}
+$$
+*✓ High confidence*
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-current_trajectory_avg_income_year_20.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-current_trajectory_avg_income_year_20.qmd >}}
+
+:::
+
+### Current Trajectory Cumulative Lifetime Income (Per Capita): $1.18M {#sec-current_trajectory_cumulative_lifetime_income}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Cumulative per-capita income over an average remaining lifespan under current trajectory baseline trajectory. Uses 2.5% baseline growth for all years.
+
+**Inputs**:
+
+- [Global Average Income (2025 Baseline)](#sec-global_avg_income_2025) 🔢: $14.4K
+- [Current Trajectory Average Income at Year 20](#sec-current_trajectory_avg_income_year_20) 🔢: $20.5K
+- [Baseline Global GDP Growth Rate](#sec-gdp_baseline_growth_rate): 2.5%
+- [Average Remaining Years (Median Person)](#sec-global_avg_remaining_years) 🔢: 48.5 years
+
+$$
+\begin{gathered}
+Y_{cum,earth} \\
+= \bar{y}_0 \cdot \frac{(1+g_{base})((1+g_{base})^{T_{remaining}}-1)}{g_{base}}
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-current_trajectory_cumulative_lifetime_income.qmd >}}
+
+{{< include ../figures/sensitivity-table-current_trajectory_cumulative_lifetime_income.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-current_trajectory_cumulative_lifetime_income.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-current_trajectory_cumulative_lifetime_income.qmd >}}
+
+:::
+
+### Current Trajectory GDP at Year 20: $188T {#sec-current_trajectory_gdp_year_20}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Global GDP at year 20 under status-quo current trajectory growth.
+
+**Inputs**:
+
+- [Global GDP (2025)](#sec-global_gdp_2025) 📊: $115T
+- [Baseline Global GDP Growth Rate](#sec-gdp_baseline_growth_rate): 2.5%
+
+$$
+GDP_{base,20} = GDP_0(1+g_{base})^{20}
+$$
+
+*✓ High confidence*
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-current_trajectory_gdp_year_20.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-current_trajectory_gdp_year_20.qmd >}}
 
 :::
 
@@ -3203,106 +3306,6 @@ $$
 
 :::
 
-### Earth Average Income at Year 20: $20.5K {#sec-earth_avg_income_year_20}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Average income (GDP per capita) at year 20 under Earth baseline trajectory.
-
-**Inputs**:
-
-- [Earth GDP at Year 20](#sec-earth_gdp_year_20) 🔢: $188T
-- [Global Population 2045 (Projected)](#sec-global_population_2045_projected) 📊: 9.2 billion of people
-
-$$
-\begin{gathered}
-\bar{y}_{earth,20} \\
-= \frac{GDP_{earth,20}}{Pop_{2045}} \\
-= \frac{\$188T}{9.2B} \\
-= \$20.5K
-\end{gathered}
-$$
-where:
-$$
-GDP_{earth,20} = GDP_0(1+g_{base})^{20}
-$$
-*✓ High confidence*
-
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-earth_avg_income_year_20.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-earth_avg_income_year_20.qmd >}}
-
-:::
-
-### Earth Cumulative Lifetime Income (Per Capita): $1.18M {#sec-earth_cumulative_lifetime_income}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Cumulative per-capita income over an average remaining lifespan under Earth baseline trajectory. Uses 2.5% baseline growth for all years.
-
-**Inputs**:
-
-- [Global Average Income (2025 Baseline)](#sec-global_avg_income_2025) 🔢: $14.4K
-- [Earth Average Income at Year 20](#sec-earth_avg_income_year_20) 🔢: $20.5K
-- [Baseline Global GDP Growth Rate](#sec-gdp_baseline_growth_rate): 2.5%
-- [Average Remaining Years (Median Person)](#sec-global_avg_remaining_years) 🔢: 48.5 years
-
-$$
-\begin{gathered}
-Y_{cum,earth} \\
-= \bar{y}_0 \cdot \frac{(1+g_{base})((1+g_{base})^{T_{remaining}}-1)}{g_{base}}
-\end{gathered}
-$$
-
-*✓ High confidence*
-
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-earth_cumulative_lifetime_income.qmd >}}
-
-{{< include ../figures/sensitivity-table-earth_cumulative_lifetime_income.qmd >}}
-
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-earth_cumulative_lifetime_income.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-earth_cumulative_lifetime_income.qmd >}}
-
-:::
-
-### Earth GDP at Year 20: $188T {#sec-earth_gdp_year_20}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Global GDP at year 20 under status-quo Earth baseline growth.
-
-**Inputs**:
-
-- [Global GDP (2025)](#sec-global_gdp_2025) 📊: $115T
-- [Baseline Global GDP Growth Rate](#sec-gdp_baseline_growth_rate): 2.5%
-
-$$
-GDP_{earth,20} = GDP_0(1+g_{base})^{20}
-$$
-
-*✓ High confidence*
-
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-earth_gdp_year_20.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-earth_gdp_year_20.qmd >}}
-
-:::
-
 ### Therapeutic Frontier Exploration Ratio: 0.342% {#sec-exploration_ratio}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -3387,21 +3390,21 @@ $$
 
 :::
 
-### Expected GDP vs Earth Multiplier (Year 20): 51x {#sec-gdp_expected_value_vs_earth_multiplier_year_20}
+### Expected GDP vs Current Trajectory Multiplier (Year 20): 51x {#sec-gdp_expected_value_vs_current_trajectory_multiplier_year_20}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Expected-value GDP at year 20 as a multiple of Earth baseline GDP.
+Expected-value GDP at year 20 as a multiple of current trajectory GDP.
 
 **Inputs**:
 
 - [Expected GDP at Year 20 (Probability-Weighted)](#sec-gdp_expected_value_year_20) 🔢: $9.62 quadrillion
-- [Earth GDP at Year 20](#sec-earth_gdp_year_20) 🔢: $188T
+- [Current Trajectory GDP at Year 20](#sec-current_trajectory_gdp_year_20) 🔢: $188T
 
 $$
 \begin{gathered}
-k_{EV:earth,20} \\
-= \frac{E[GDP_{20}]}{GDP_{earth,20}} \\
+k_{EV:base,20} \\
+= \frac{E[GDP_{20}]}{GDP_{base,20}} \\
 = \frac{\$9620T}{\$188T} \\
 = 51
 \end{gathered}
@@ -3500,23 +3503,23 @@ N_{untreated} \\
 $$
 where:
 $$
-GDP_{earth,20} = GDP_0(1+g_{base})^{20}
+GDP_{base,20} = GDP_0(1+g_{base})^{20}
 $$
 *✓ High confidence*
 
 #### Sensitivity Analysis
 
-{{< include ../figures/tornado-gdp_expected_value_vs_earth_multiplier_year_20.qmd >}}
+{{< include ../figures/tornado-gdp_expected_value_vs_current_trajectory_multiplier_year_20.qmd >}}
 
-{{< include ../figures/sensitivity-table-gdp_expected_value_vs_earth_multiplier_year_20.qmd >}}
+{{< include ../figures/sensitivity-table-gdp_expected_value_vs_current_trajectory_multiplier_year_20.qmd >}}
 
 #### Monte Carlo Distribution
 
-{{< include ../figures/mc-distribution-gdp_expected_value_vs_earth_multiplier_year_20.qmd >}}
+{{< include ../figures/mc-distribution-gdp_expected_value_vs_current_trajectory_multiplier_year_20.qmd >}}
 
 #### Exceedance Probability
 
-{{< include ../figures/exceedance-gdp_expected_value_vs_earth_multiplier_year_20.qmd >}}
+{{< include ../figures/exceedance-gdp_expected_value_vs_current_trajectory_multiplier_year_20.qmd >}}
 
 :::
 
@@ -3528,8 +3531,8 @@ Probability-weighted expected global GDP at year 20 from Wishonia vs Moronia pat
 
 **Inputs**:
 
-- [Wishonia Path Probability (Year 20 EV Model)](#sec-wishonia_path_success_probability_year_20): 90% (95% CI: 60% - 98%)
-- [Wishonia Path GDP at Year 20](#sec-wishonia_path_gdp_year_20) 🔢: $10.7 quadrillion
+- [Wishonia Trajectory Probability (Year 20 EV Model)](#sec-wishonia_trajectory_success_probability_year_20): 90% (95% CI: 60% - 98%)
+- [Wishonia Trajectory GDP at Year 20](#sec-wishonia_trajectory_gdp_year_20) 🔢: $10.7 quadrillion
 
 $$
 E[GDP_{20}] = p_{wish,20} \cdot GDP_{wish,20}
@@ -5616,15 +5619,15 @@ $$
 where:
 $$
 \begin{gathered}
-\bar{y}_{earth,20} \\
-= \frac{GDP_{earth,20}}{Pop_{2045}} \\
+\bar{y}_{base,20} \\
+= \frac{GDP_{base,20}}{Pop_{2045}} \\
 = \frac{\$188T}{9.2B} \\
 = \$20.5K
 \end{gathered}
 $$
 where:
 $$
-GDP_{earth,20} = GDP_0(1+g_{base})^{20}
+GDP_{base,20} = GDP_0(1+g_{base})^{20}
 $$
 *✓ High confidence*
 
@@ -5653,7 +5656,7 @@ Minimum probability that the plan works for forwarding to have positive expected
 **Inputs**:
 
 - [Sharing Opportunity Cost](#sec-sharing_opportunity_cost) 🔢: $0.06
-- [Treaty Path Lifetime Income Gain (Per Capita)](#sec-treaty_path_lifetime_income_gain_per_capita) 🔢: $14.9M
+- [Treaty Trajectory Lifetime Income Gain (Per Capita)](#sec-treaty_trajectory_lifetime_income_gain_per_capita) 🔢: $14.9M
 
 $$
 \begin{gathered}
@@ -5821,15 +5824,15 @@ $$
 where:
 $$
 \begin{gathered}
-\bar{y}_{earth,20} \\
-= \frac{GDP_{earth,20}}{Pop_{2045}} \\
+\bar{y}_{base,20} \\
+= \frac{GDP_{base,20}}{Pop_{2045}} \\
 = \frac{\$188T}{9.2B} \\
 = \$20.5K
 \end{gathered}
 $$
 where:
 $$
-GDP_{earth,20} = GDP_0(1+g_{base})^{20}
+GDP_{base,20} = GDP_0(1+g_{base})^{20}
 $$
 *✓ High confidence*
 
@@ -5912,7 +5915,7 @@ Raw ratio of upside (lifetime income gain if plan works) to downside (cost of sh
 
 **Inputs**:
 
-- [Treaty Path Lifetime Income Gain (Per Capita)](#sec-treaty_path_lifetime_income_gain_per_capita) 🔢: $14.9M
+- [Treaty Trajectory Lifetime Income Gain (Per Capita)](#sec-treaty_trajectory_lifetime_income_gain_per_capita) 🔢: $14.9M
 - [Sharing Opportunity Cost](#sec-sharing_opportunity_cost) 🔢: $0.06
 
 $$
@@ -6063,15 +6066,15 @@ $$
 where:
 $$
 \begin{gathered}
-\bar{y}_{earth,20} \\
-= \frac{GDP_{earth,20}}{Pop_{2045}} \\
+\bar{y}_{base,20} \\
+= \frac{GDP_{base,20}}{Pop_{2045}} \\
 = \frac{\$188T}{9.2B} \\
 = \$20.5K
 \end{gathered}
 $$
 where:
 $$
-GDP_{earth,20} = GDP_0(1+g_{base})^{20}
+GDP_{base,20} = GDP_0(1+g_{base})^{20}
 $$
 where:
 $$
@@ -7286,15 +7289,157 @@ $$
 
 :::
 
-### Treaty Path Average Income at Year 20: $339K {#sec-treaty_path_avg_income_year_20}
+### Treaty ROI - Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Increased Trial Throughput: 84.8M:1 {#sec-treaty_roi_trial_capacity_plus_efficacy_lag}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Average income (GDP per capita) at year 20 under the Treaty Path.
+Treaty ROI from elimination of efficacy lag plus earlier treatment discovery from increased trial throughput. Total one-time benefit divided by campaign cost. This is the primary ROI estimate for total health benefits.
 
 **Inputs**:
 
-- [Treaty Path GDP at Year 20](#sec-treaty_path_gdp_year_20) 🔢: $3.11 quadrillion
+- [Total Economic Benefit from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput](#sec-dfda_trial_capacity_plus_efficacy_lag_economic_value) 🔢: $84.8 quadrillion
+- [Total 1% Treaty Campaign Cost](#sec-treaty_campaign_total_cost) 🔢: $1B
+
+$$
+\begin{gathered}
+ROI_{max} \\
+= \frac{Value_{max}}{Cost_{campaign}} \\
+= \frac{\$84800T}{\$1B} \\
+= 84.8M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Value_{max} \\
+= DALYs_{max} \times Value_{QALY} \\
+= 565B \times \$150K \\
+= \$84800T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+DALYs_{max} \\
+= DALYs_{global,ann} \times Pct_{avoid,DALY} \times T_{accel,max} \\
+= 2.88B \times 92.6\% \times 212 \\
+= 565B
+\end{gathered}
+$$
+where:
+$$
+T_{accel,max} = T_{accel} + T_{lag} = 204 + 8.2 = 212
+$$
+where:
+$$
+\begin{gathered}
+T_{accel} \\
+= T_{first,SQ} \times \left(1 - \frac{1}{k_{capacity}}\right) \\
+= 222 \times \left(1 - \frac{1}{12.3}\right) \\
+= 204
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{first,SQ} \\
+= T_{queue,SQ} \times 0.5 \\
+= 443 \times 0.5 \\
+= 222
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{queue,SQ} \\
+= \frac{N_{untreated}}{Treatments_{new,ann}} \\
+= \frac{6{,}650}{15} \\
+= 443
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{untreated} \\
+= N_{rare} \times 0.95 \\
+= 7{,}000 \times 0.95 \\
+= 6{,}650
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+k_{capacity} \\
+= \frac{N_{fundable,dFDA}}{Slots_{curr}} \\
+= \frac{23.4M}{1.9M} \\
+= 12.3
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{fundable,dFDA} \\
+= \frac{Subsidies_{dFDA,ann}}{Cost_{pragmatic,pt}} \\
+= \frac{\$21.8B}{\$929} \\
+= 23.4M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Subsidies_{dFDA,ann} \\
+= Funding_{dFDA,ann} - OPEX_{dFDA} \\
+= \$21.8B - \$40M \\
+= \$21.8B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+OPEX_{dFDA} \\
+= Cost_{platform} + Cost_{staff} + Cost_{infra} \\
++ Cost_{regulatory} + Cost_{community} \\
+= \$15M + \$10M + \$8M + \$5M + \$2M \\
+= \$40M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{campaign} \\
+= Budget_{viral,base} + Budget_{lobby,treaty} \\
++ Budget_{reserve} \\
+= \$250M + \$650M + \$100M \\
+= \$1B
+\end{gathered}
+$$
+*~ Medium confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-treaty_roi_trial_capacity_plus_efficacy_lag.qmd >}}
+
+{{< include ../figures/sensitivity-table-treaty_roi_trial_capacity_plus_efficacy_lag.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-treaty_roi_trial_capacity_plus_efficacy_lag.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-treaty_roi_trial_capacity_plus_efficacy_lag.qmd >}}
+
+:::
+
+### Treaty Trajectory Average Income at Year 20: $339K {#sec-treaty_trajectory_avg_income_year_20}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Average income (GDP per capita) at year 20 under the Treaty Trajectory.
+
+**Inputs**:
+
+- [Treaty Trajectory GDP at Year 20](#sec-treaty_trajectory_gdp_year_20) 🔢: $3.11 quadrillion
 - [Global Population 2045 (Projected)](#sec-global_population_2045_projected) 📊: 9.2 billion of people
 
 $$
@@ -7305,29 +7450,29 @@ $$
 
 #### Sensitivity Analysis
 
-{{< include ../figures/tornado-treaty_path_avg_income_year_20.qmd >}}
+{{< include ../figures/tornado-treaty_trajectory_avg_income_year_20.qmd >}}
 
-{{< include ../figures/sensitivity-table-treaty_path_avg_income_year_20.qmd >}}
+{{< include ../figures/sensitivity-table-treaty_trajectory_avg_income_year_20.qmd >}}
 
 #### Monte Carlo Distribution
 
-{{< include ../figures/mc-distribution-treaty_path_avg_income_year_20.qmd >}}
+{{< include ../figures/mc-distribution-treaty_trajectory_avg_income_year_20.qmd >}}
 
 #### Exceedance Probability
 
-{{< include ../figures/exceedance-treaty_path_avg_income_year_20.qmd >}}
+{{< include ../figures/exceedance-treaty_trajectory_avg_income_year_20.qmd >}}
 
 :::
 
-### Treaty Path CAGR (20 Years): 17.9% {#sec-treaty_path_cagr_year_20}
+### Treaty Trajectory CAGR (20 Years): 17.9% {#sec-treaty_trajectory_cagr_year_20}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Compound annual growth rate implied by Treaty Path GDP trajectory over 20 years.
+Compound annual growth rate implied by Treaty Trajectory GDP trajectory over 20 years.
 
 **Inputs**:
 
-- [Treaty Path GDP at Year 20](#sec-treaty_path_gdp_year_20) 🔢: $3.11 quadrillion
+- [Treaty Trajectory GDP at Year 20](#sec-treaty_trajectory_gdp_year_20) 🔢: $3.11 quadrillion
 - [Global GDP (2025)](#sec-global_gdp_2025) 📊: $115T
 
 $$
@@ -7341,30 +7486,30 @@ $$
 
 #### Sensitivity Analysis
 
-{{< include ../figures/tornado-treaty_path_cagr_year_20.qmd >}}
+{{< include ../figures/tornado-treaty_trajectory_cagr_year_20.qmd >}}
 
-{{< include ../figures/sensitivity-table-treaty_path_cagr_year_20.qmd >}}
+{{< include ../figures/sensitivity-table-treaty_trajectory_cagr_year_20.qmd >}}
 
 #### Monte Carlo Distribution
 
-{{< include ../figures/mc-distribution-treaty_path_cagr_year_20.qmd >}}
+{{< include ../figures/mc-distribution-treaty_trajectory_cagr_year_20.qmd >}}
 
 #### Exceedance Probability
 
-{{< include ../figures/exceedance-treaty_path_cagr_year_20.qmd >}}
+{{< include ../figures/exceedance-treaty_trajectory_cagr_year_20.qmd >}}
 
 :::
 
-### Treaty Path Cumulative Lifetime Income (Per Capita): $16.1M {#sec-treaty_path_cumulative_lifetime_income}
+### Treaty Trajectory Cumulative Lifetime Income (Per Capita): $16.1M {#sec-treaty_trajectory_cumulative_lifetime_income}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Cumulative per-capita income over an average remaining lifespan under Treaty Path. Uses implied per-capita CAGR for years 1-20 (derived from known year-0 and year-20 per-capita incomes), then baseline growth from the year-20 level. Conservative: assumes no further treaty acceleration beyond year 20.
+Cumulative per-capita income over an average remaining lifespan under Treaty Trajectory. Uses implied per-capita CAGR for years 1-20 (derived from known year-0 and year-20 per-capita incomes), then baseline growth from the year-20 level. Conservative: assumes no further treaty acceleration beyond year 20.
 
 **Inputs**:
 
 - [Global Average Income (2025 Baseline)](#sec-global_avg_income_2025) 🔢: $14.4K
-- [Treaty Path Average Income at Year 20](#sec-treaty_path_avg_income_year_20) 🔢: $339K
+- [Treaty Trajectory Average Income at Year 20](#sec-treaty_trajectory_avg_income_year_20) 🔢: $339K
 - [Baseline Global GDP Growth Rate](#sec-gdp_baseline_growth_rate): 2.5%
 - [Average Remaining Years (Median Person)](#sec-global_avg_remaining_years) 🔢: 48.5 years
 
@@ -7380,35 +7525,35 @@ $$
 
 #### Sensitivity Analysis
 
-{{< include ../figures/tornado-treaty_path_cumulative_lifetime_income.qmd >}}
+{{< include ../figures/tornado-treaty_trajectory_cumulative_lifetime_income.qmd >}}
 
-{{< include ../figures/sensitivity-table-treaty_path_cumulative_lifetime_income.qmd >}}
+{{< include ../figures/sensitivity-table-treaty_trajectory_cumulative_lifetime_income.qmd >}}
 
 #### Monte Carlo Distribution
 
-{{< include ../figures/mc-distribution-treaty_path_cumulative_lifetime_income.qmd >}}
+{{< include ../figures/mc-distribution-treaty_trajectory_cumulative_lifetime_income.qmd >}}
 
 #### Exceedance Probability
 
-{{< include ../figures/exceedance-treaty_path_cumulative_lifetime_income.qmd >}}
+{{< include ../figures/exceedance-treaty_trajectory_cumulative_lifetime_income.qmd >}}
 
 :::
 
-### Treaty Path vs Earth GDP Multiplier (Year 20): 16.5x {#sec-treaty_path_gdp_vs_earth_multiplier_year_20}
+### Treaty Trajectory vs Current Trajectory GDP Multiplier (Year 20): 16.5x {#sec-treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_20}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Treaty Path GDP at year 20 as a multiple of Earth baseline GDP at year 20.
+Treaty Trajectory GDP at year 20 as a multiple of current trajectory GDP at year 20.
 
 **Inputs**:
 
-- [Treaty Path GDP at Year 20](#sec-treaty_path_gdp_year_20) 🔢: $3.11 quadrillion
-- [Earth GDP at Year 20](#sec-earth_gdp_year_20) 🔢: $188T
+- [Treaty Trajectory GDP at Year 20](#sec-treaty_trajectory_gdp_year_20) 🔢: $3.11 quadrillion
+- [Current Trajectory GDP at Year 20](#sec-current_trajectory_gdp_year_20) 🔢: $188T
 
 $$
 \begin{gathered}
-k_{treaty:earth,20} \\
-= \frac{GDP_{treaty,20}}{GDP_{earth,20}} \\
+k_{treaty:base,20} \\
+= \frac{GDP_{treaty,20}}{GDP_{base,20}} \\
 = \frac{\$3110T}{\$188T} \\
 = 16.5
 \end{gathered}
@@ -7506,31 +7651,31 @@ N_{untreated} \\
 $$
 where:
 $$
-GDP_{earth,20} = GDP_0(1+g_{base})^{20}
+GDP_{base,20} = GDP_0(1+g_{base})^{20}
 $$
 *✓ High confidence*
 
 #### Sensitivity Analysis
 
-{{< include ../figures/tornado-treaty_path_gdp_vs_earth_multiplier_year_20.qmd >}}
+{{< include ../figures/tornado-treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_20.qmd >}}
 
-{{< include ../figures/sensitivity-table-treaty_path_gdp_vs_earth_multiplier_year_20.qmd >}}
+{{< include ../figures/sensitivity-table-treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_20.qmd >}}
 
 #### Monte Carlo Distribution
 
-{{< include ../figures/mc-distribution-treaty_path_gdp_vs_earth_multiplier_year_20.qmd >}}
+{{< include ../figures/mc-distribution-treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_20.qmd >}}
 
 #### Exceedance Probability
 
-{{< include ../figures/exceedance-treaty_path_gdp_vs_earth_multiplier_year_20.qmd >}}
+{{< include ../figures/exceedance-treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_20.qmd >}}
 
 :::
 
-### Treaty Path GDP at Year 20: $3.11 quadrillion {#sec-treaty_path_gdp_year_20}
+### Treaty Trajectory GDP at Year 20: $3.11 quadrillion {#sec-treaty_trajectory_gdp_year_20}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Projected global GDP at year 20 under the Treaty Path: military-to-science reallocation plus disease-burden recovery only. Excludes non-health dysfunction-capital reallocation to isolate the lower-political-baggage channel stack.
+Projected global GDP at year 20 under the Treaty Trajectory: military-to-science reallocation plus disease-burden recovery only. Excludes non-health dysfunction-capital reallocation to isolate the lower-political-baggage channel.
 
 **Inputs**:
 
@@ -7553,30 +7698,30 @@ $$
 
 #### Sensitivity Analysis
 
-{{< include ../figures/tornado-treaty_path_gdp_year_20.qmd >}}
+{{< include ../figures/tornado-treaty_trajectory_gdp_year_20.qmd >}}
 
-{{< include ../figures/sensitivity-table-treaty_path_gdp_year_20.qmd >}}
+{{< include ../figures/sensitivity-table-treaty_trajectory_gdp_year_20.qmd >}}
 
 #### Monte Carlo Distribution
 
-{{< include ../figures/mc-distribution-treaty_path_gdp_year_20.qmd >}}
+{{< include ../figures/mc-distribution-treaty_trajectory_gdp_year_20.qmd >}}
 
 #### Exceedance Probability
 
-{{< include ../figures/exceedance-treaty_path_gdp_year_20.qmd >}}
+{{< include ../figures/exceedance-treaty_trajectory_gdp_year_20.qmd >}}
 
 :::
 
-### Treaty Path Lifetime Income Gain (Per Capita): $14.9M {#sec-treaty_path_lifetime_income_gain_per_capita}
+### Treaty Trajectory Lifetime Income Gain (Per Capita): $14.9M {#sec-treaty_trajectory_lifetime_income_gain_per_capita}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Lifetime per-capita income gain from Treaty Path vs Earth baseline. Cumulative treaty income minus cumulative earth income over average remaining lifespan. Uses global averages; individual gain scales with starting income.
+Lifetime per-capita income gain from Treaty Trajectory vs current trajectory. Cumulative treaty income minus cumulative earth income over average remaining lifespan. Uses global averages; individual gain scales with starting income.
 
 **Inputs**:
 
-- [Treaty Path Cumulative Lifetime Income (Per Capita)](#sec-treaty_path_cumulative_lifetime_income) 🔢: $16.1M
-- [Earth Cumulative Lifetime Income (Per Capita)](#sec-earth_cumulative_lifetime_income) 🔢: $1.18M
+- [Treaty Trajectory Cumulative Lifetime Income (Per Capita)](#sec-treaty_trajectory_cumulative_lifetime_income) 🔢: $16.1M
+- [Current Trajectory Cumulative Lifetime Income (Per Capita)](#sec-current_trajectory_cumulative_lifetime_income) 🔢: $1.18M
 
 $$
 \begin{gathered}
@@ -7717,44 +7862,44 @@ $$
 where:
 $$
 \begin{gathered}
-\bar{y}_{earth,20} \\
-= \frac{GDP_{earth,20}}{Pop_{2045}} \\
+\bar{y}_{base,20} \\
+= \frac{GDP_{base,20}}{Pop_{2045}} \\
 = \frac{\$188T}{9.2B} \\
 = \$20.5K
 \end{gathered}
 $$
 where:
 $$
-GDP_{earth,20} = GDP_0(1+g_{base})^{20}
+GDP_{base,20} = GDP_0(1+g_{base})^{20}
 $$
 *✓ High confidence*
 
 #### Sensitivity Analysis
 
-{{< include ../figures/tornado-treaty_path_lifetime_income_gain_per_capita.qmd >}}
+{{< include ../figures/tornado-treaty_trajectory_lifetime_income_gain_per_capita.qmd >}}
 
-{{< include ../figures/sensitivity-table-treaty_path_lifetime_income_gain_per_capita.qmd >}}
+{{< include ../figures/sensitivity-table-treaty_trajectory_lifetime_income_gain_per_capita.qmd >}}
 
 #### Monte Carlo Distribution
 
-{{< include ../figures/mc-distribution-treaty_path_lifetime_income_gain_per_capita.qmd >}}
+{{< include ../figures/mc-distribution-treaty_trajectory_lifetime_income_gain_per_capita.qmd >}}
 
 #### Exceedance Probability
 
-{{< include ../figures/exceedance-treaty_path_lifetime_income_gain_per_capita.qmd >}}
+{{< include ../figures/exceedance-treaty_trajectory_lifetime_income_gain_per_capita.qmd >}}
 
 :::
 
-### Treaty Path Lifetime Income Multiplier: 13.5x {#sec-treaty_path_lifetime_income_multiplier}
+### Treaty Trajectory Lifetime Income Multiplier: 13.5x {#sec-treaty_trajectory_lifetime_income_multiplier}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Ratio of cumulative lifetime income under Treaty Path vs Earth baseline. Income-agnostic: applies as a multiplier to any individual's lifetime earnings.
+Ratio of cumulative lifetime income under Treaty Trajectory vs current trajectory. Income-agnostic: applies as a multiplier to any individual's lifetime earnings.
 
 **Inputs**:
 
-- [Treaty Path Cumulative Lifetime Income (Per Capita)](#sec-treaty_path_cumulative_lifetime_income) 🔢: $16.1M
-- [Earth Cumulative Lifetime Income (Per Capita)](#sec-earth_cumulative_lifetime_income) 🔢: $1.18M
+- [Treaty Trajectory Cumulative Lifetime Income (Per Capita)](#sec-treaty_trajectory_cumulative_lifetime_income) 🔢: $16.1M
+- [Current Trajectory Cumulative Lifetime Income (Per Capita)](#sec-current_trajectory_cumulative_lifetime_income) 🔢: $1.18M
 
 $$
 \begin{gathered}
@@ -7895,173 +8040,31 @@ $$
 where:
 $$
 \begin{gathered}
-\bar{y}_{earth,20} \\
-= \frac{GDP_{earth,20}}{Pop_{2045}} \\
+\bar{y}_{base,20} \\
+= \frac{GDP_{base,20}}{Pop_{2045}} \\
 = \frac{\$188T}{9.2B} \\
 = \$20.5K
 \end{gathered}
 $$
 where:
 $$
-GDP_{earth,20} = GDP_0(1+g_{base})^{20}
+GDP_{base,20} = GDP_0(1+g_{base})^{20}
 $$
 *✓ High confidence*
 
 #### Sensitivity Analysis
 
-{{< include ../figures/tornado-treaty_path_lifetime_income_multiplier.qmd >}}
+{{< include ../figures/tornado-treaty_trajectory_lifetime_income_multiplier.qmd >}}
 
-{{< include ../figures/sensitivity-table-treaty_path_lifetime_income_multiplier.qmd >}}
-
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-treaty_path_lifetime_income_multiplier.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-treaty_path_lifetime_income_multiplier.qmd >}}
-
-:::
-
-### Treaty ROI - Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Increased Trial Throughput: 84.8M:1 {#sec-treaty_roi_trial_capacity_plus_efficacy_lag}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Treaty ROI from elimination of efficacy lag plus earlier treatment discovery from increased trial throughput. Total one-time benefit divided by campaign cost. This is the primary ROI estimate for total health benefits.
-
-**Inputs**:
-
-- [Total Economic Benefit from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput](#sec-dfda_trial_capacity_plus_efficacy_lag_economic_value) 🔢: $84.8 quadrillion
-- [Total 1% Treaty Campaign Cost](#sec-treaty_campaign_total_cost) 🔢: $1B
-
-$$
-\begin{gathered}
-ROI_{max} \\
-= \frac{Value_{max}}{Cost_{campaign}} \\
-= \frac{\$84800T}{\$1B} \\
-= 84.8M
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Value_{max} \\
-= DALYs_{max} \times Value_{QALY} \\
-= 565B \times \$150K \\
-= \$84800T
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-DALYs_{max} \\
-= DALYs_{global,ann} \times Pct_{avoid,DALY} \times T_{accel,max} \\
-= 2.88B \times 92.6\% \times 212 \\
-= 565B
-\end{gathered}
-$$
-where:
-$$
-T_{accel,max} = T_{accel} + T_{lag} = 204 + 8.2 = 212
-$$
-where:
-$$
-\begin{gathered}
-T_{accel} \\
-= T_{first,SQ} \times \left(1 - \frac{1}{k_{capacity}}\right) \\
-= 222 \times \left(1 - \frac{1}{12.3}\right) \\
-= 204
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-T_{first,SQ} \\
-= T_{queue,SQ} \times 0.5 \\
-= 443 \times 0.5 \\
-= 222
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-T_{queue,SQ} \\
-= \frac{N_{untreated}}{Treatments_{new,ann}} \\
-= \frac{6{,}650}{15} \\
-= 443
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-N_{untreated} \\
-= N_{rare} \times 0.95 \\
-= 7{,}000 \times 0.95 \\
-= 6{,}650
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-k_{capacity} \\
-= \frac{N_{fundable,dFDA}}{Slots_{curr}} \\
-= \frac{23.4M}{1.9M} \\
-= 12.3
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-N_{fundable,dFDA} \\
-= \frac{Subsidies_{dFDA,ann}}{Cost_{pragmatic,pt}} \\
-= \frac{\$21.8B}{\$929} \\
-= 23.4M
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Subsidies_{dFDA,ann} \\
-= Funding_{dFDA,ann} - OPEX_{dFDA} \\
-= \$21.8B - \$40M \\
-= \$21.8B
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-OPEX_{dFDA} \\
-= Cost_{platform} + Cost_{staff} + Cost_{infra} \\
-+ Cost_{regulatory} + Cost_{community} \\
-= \$15M + \$10M + \$8M + \$5M + \$2M \\
-= \$40M
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Cost_{campaign} \\
-= Budget_{viral,base} + Budget_{lobby,treaty} \\
-+ Budget_{reserve} \\
-= \$250M + \$650M + \$100M \\
-= \$1B
-\end{gathered}
-$$
-*~ Medium confidence*
-
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-treaty_roi_trial_capacity_plus_efficacy_lag.qmd >}}
-
-{{< include ../figures/sensitivity-table-treaty_roi_trial_capacity_plus_efficacy_lag.qmd >}}
+{{< include ../figures/sensitivity-table-treaty_trajectory_lifetime_income_multiplier.qmd >}}
 
 #### Monte Carlo Distribution
 
-{{< include ../figures/mc-distribution-treaty_roi_trial_capacity_plus_efficacy_lag.qmd >}}
+{{< include ../figures/mc-distribution-treaty_trajectory_lifetime_income_multiplier.qmd >}}
 
 #### Exceedance Probability
 
-{{< include ../figures/exceedance-treaty_roi_trial_capacity_plus_efficacy_lag.qmd >}}
+{{< include ../figures/exceedance-treaty_trajectory_lifetime_income_multiplier.qmd >}}
 
 :::
 
@@ -9573,15 +9576,15 @@ $$
 
 :::
 
-### Wishonia Path Average Income at Year 20: $1.16M {#sec-wishonia_path_avg_income_year_20}
+### Wishonia Trajectory Average Income at Year 20: $1.16M {#sec-wishonia_trajectory_avg_income_year_20}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Average income (GDP per capita) at year 20 under the Wishonia Path.
+Average income (GDP per capita) at year 20 under the Wishonia Trajectory.
 
 **Inputs**:
 
-- [Wishonia Path GDP at Year 20](#sec-wishonia_path_gdp_year_20) 🔢: $10.7 quadrillion
+- [Wishonia Trajectory GDP at Year 20](#sec-wishonia_trajectory_gdp_year_20) 🔢: $10.7 quadrillion
 - [Global Population 2045 (Projected)](#sec-global_population_2045_projected) 📊: 9.2 billion of people
 
 $$
@@ -9592,29 +9595,29 @@ $$
 
 #### Sensitivity Analysis
 
-{{< include ../figures/tornado-wishonia_path_avg_income_year_20.qmd >}}
+{{< include ../figures/tornado-wishonia_trajectory_avg_income_year_20.qmd >}}
 
-{{< include ../figures/sensitivity-table-wishonia_path_avg_income_year_20.qmd >}}
+{{< include ../figures/sensitivity-table-wishonia_trajectory_avg_income_year_20.qmd >}}
 
 #### Monte Carlo Distribution
 
-{{< include ../figures/mc-distribution-wishonia_path_avg_income_year_20.qmd >}}
+{{< include ../figures/mc-distribution-wishonia_trajectory_avg_income_year_20.qmd >}}
 
 #### Exceedance Probability
 
-{{< include ../figures/exceedance-wishonia_path_avg_income_year_20.qmd >}}
+{{< include ../figures/exceedance-wishonia_trajectory_avg_income_year_20.qmd >}}
 
 :::
 
-### Wishonia Path CAGR (20 Years): 25.4% {#sec-wishonia_path_cagr_year_20}
+### Wishonia Trajectory CAGR (20 Years): 25.4% {#sec-wishonia_trajectory_cagr_year_20}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Compound annual growth rate implied by Wishonia Path GDP trajectory over 20 years.
+Compound annual growth rate implied by Wishonia Trajectory GDP trajectory over 20 years.
 
 **Inputs**:
 
-- [Wishonia Path GDP at Year 20](#sec-wishonia_path_gdp_year_20) 🔢: $10.7 quadrillion
+- [Wishonia Trajectory GDP at Year 20](#sec-wishonia_trajectory_gdp_year_20) 🔢: $10.7 quadrillion
 - [Global GDP (2025)](#sec-global_gdp_2025) 📊: $115T
 
 $$
@@ -9628,30 +9631,30 @@ $$
 
 #### Sensitivity Analysis
 
-{{< include ../figures/tornado-wishonia_path_cagr_year_20.qmd >}}
+{{< include ../figures/tornado-wishonia_trajectory_cagr_year_20.qmd >}}
 
-{{< include ../figures/sensitivity-table-wishonia_path_cagr_year_20.qmd >}}
+{{< include ../figures/sensitivity-table-wishonia_trajectory_cagr_year_20.qmd >}}
 
 #### Monte Carlo Distribution
 
-{{< include ../figures/mc-distribution-wishonia_path_cagr_year_20.qmd >}}
+{{< include ../figures/mc-distribution-wishonia_trajectory_cagr_year_20.qmd >}}
 
 #### Exceedance Probability
 
-{{< include ../figures/exceedance-wishonia_path_cagr_year_20.qmd >}}
+{{< include ../figures/exceedance-wishonia_trajectory_cagr_year_20.qmd >}}
 
 :::
 
-### Wishonia Path Cumulative Lifetime Income (Per Capita): $53.3M {#sec-wishonia_path_cumulative_lifetime_income}
+### Wishonia Trajectory Cumulative Lifetime Income (Per Capita): $53.3M {#sec-wishonia_trajectory_cumulative_lifetime_income}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Cumulative per-capita income over an average remaining lifespan under Wishonia Path. Uses implied per-capita CAGR for years 1-20, then baseline growth from the year-20 level. Conservative: assumes no further acceleration beyond year 20.
+Cumulative per-capita income over an average remaining lifespan under Wishonia Trajectory. Uses implied per-capita CAGR for years 1-20, then baseline growth from the year-20 level. Conservative: assumes no further acceleration beyond year 20.
 
 **Inputs**:
 
 - [Global Average Income (2025 Baseline)](#sec-global_avg_income_2025) 🔢: $14.4K
-- [Wishonia Path Average Income at Year 20](#sec-wishonia_path_avg_income_year_20) 🔢: $1.16M
+- [Wishonia Trajectory Average Income at Year 20](#sec-wishonia_trajectory_avg_income_year_20) 🔢: $1.16M
 - [Baseline Global GDP Growth Rate](#sec-gdp_baseline_growth_rate): 2.5%
 - [Average Remaining Years (Median Person)](#sec-global_avg_remaining_years) 🔢: 48.5 years
 
@@ -9667,35 +9670,35 @@ $$
 
 #### Sensitivity Analysis
 
-{{< include ../figures/tornado-wishonia_path_cumulative_lifetime_income.qmd >}}
+{{< include ../figures/tornado-wishonia_trajectory_cumulative_lifetime_income.qmd >}}
 
-{{< include ../figures/sensitivity-table-wishonia_path_cumulative_lifetime_income.qmd >}}
+{{< include ../figures/sensitivity-table-wishonia_trajectory_cumulative_lifetime_income.qmd >}}
 
 #### Monte Carlo Distribution
 
-{{< include ../figures/mc-distribution-wishonia_path_cumulative_lifetime_income.qmd >}}
+{{< include ../figures/mc-distribution-wishonia_trajectory_cumulative_lifetime_income.qmd >}}
 
 #### Exceedance Probability
 
-{{< include ../figures/exceedance-wishonia_path_cumulative_lifetime_income.qmd >}}
+{{< include ../figures/exceedance-wishonia_trajectory_cumulative_lifetime_income.qmd >}}
 
 :::
 
-### Wishonia Path vs Earth GDP Multiplier (Year 20): 56.7x {#sec-wishonia_path_gdp_vs_earth_multiplier_year_20}
+### Wishonia Trajectory vs Current Trajectory GDP Multiplier (Year 20): 56.7x {#sec-wishonia_trajectory_gdp_vs_current_trajectory_multiplier_year_20}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Wishonia Path GDP at year 20 as a multiple of Earth baseline GDP at year 20.
+Wishonia Trajectory GDP at year 20 as a multiple of current trajectory GDP at year 20.
 
 **Inputs**:
 
-- [Wishonia Path GDP at Year 20](#sec-wishonia_path_gdp_year_20) 🔢: $10.7 quadrillion
-- [Earth GDP at Year 20](#sec-earth_gdp_year_20) 🔢: $188T
+- [Wishonia Trajectory GDP at Year 20](#sec-wishonia_trajectory_gdp_year_20) 🔢: $10.7 quadrillion
+- [Current Trajectory GDP at Year 20](#sec-current_trajectory_gdp_year_20) 🔢: $188T
 
 $$
 \begin{gathered}
-k_{wish:earth,20} \\
-= \frac{GDP_{wish,20}}{GDP_{earth,20}} \\
+k_{wish:base,20} \\
+= \frac{GDP_{wish,20}}{GDP_{base,20}} \\
 = \frac{\$10700T}{\$188T} \\
 = 56.7
 \end{gathered}
@@ -9790,31 +9793,31 @@ N_{untreated} \\
 $$
 where:
 $$
-GDP_{earth,20} = GDP_0(1+g_{base})^{20}
+GDP_{base,20} = GDP_0(1+g_{base})^{20}
 $$
 *✓ High confidence*
 
 #### Sensitivity Analysis
 
-{{< include ../figures/tornado-wishonia_path_gdp_vs_earth_multiplier_year_20.qmd >}}
+{{< include ../figures/tornado-wishonia_trajectory_gdp_vs_current_trajectory_multiplier_year_20.qmd >}}
 
-{{< include ../figures/sensitivity-table-wishonia_path_gdp_vs_earth_multiplier_year_20.qmd >}}
+{{< include ../figures/sensitivity-table-wishonia_trajectory_gdp_vs_current_trajectory_multiplier_year_20.qmd >}}
 
 #### Monte Carlo Distribution
 
-{{< include ../figures/mc-distribution-wishonia_path_gdp_vs_earth_multiplier_year_20.qmd >}}
+{{< include ../figures/mc-distribution-wishonia_trajectory_gdp_vs_current_trajectory_multiplier_year_20.qmd >}}
 
 #### Exceedance Probability
 
-{{< include ../figures/exceedance-wishonia_path_gdp_vs_earth_multiplier_year_20.qmd >}}
+{{< include ../figures/exceedance-wishonia_trajectory_gdp_vs_current_trajectory_multiplier_year_20.qmd >}}
 
 :::
 
-### Wishonia Path GDP at Year 20: $10.7 quadrillion {#sec-wishonia_path_gdp_year_20}
+### Wishonia Trajectory GDP at Year 20: $10.7 quadrillion {#sec-wishonia_trajectory_gdp_year_20}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Projected global GDP at year 20 under the Wishonia Path. Model applies all Wishonia policy channels and redirects the full Political Dysfunction Tax non-health opportunity pool to highest-marginal-value uses. Health recovery is modeled separately through disease burden removal to avoid overlap. Military and non-health reallocation effects are ramped at 50% intensity for the first 3 years, then 100% for years 4-20, reflecting implementation lag. Military reallocation uses a physically demonstrated upper bound (post-WW2 demobilization) rather than an arbitrary policy cap.
+Projected global GDP at year 20 under the Wishonia Trajectory. Model applies all Wishonia policy channels and redirects the full Political Dysfunction Tax non-health opportunity pool to highest-marginal-value uses. Health recovery is modeled separately through disease burden removal to avoid overlap. Military and non-health reallocation effects are ramped at 50% intensity for the first 3 years, then 100% for years 4-20, reflecting implementation lag. Military reallocation uses a physically demonstrated upper bound (post-WW2 demobilization) rather than an arbitrary policy cap.
 
 **Inputs**:
 
@@ -9839,30 +9842,30 @@ $$
 
 #### Sensitivity Analysis
 
-{{< include ../figures/tornado-wishonia_path_gdp_year_20.qmd >}}
+{{< include ../figures/tornado-wishonia_trajectory_gdp_year_20.qmd >}}
 
-{{< include ../figures/sensitivity-table-wishonia_path_gdp_year_20.qmd >}}
+{{< include ../figures/sensitivity-table-wishonia_trajectory_gdp_year_20.qmd >}}
 
 #### Monte Carlo Distribution
 
-{{< include ../figures/mc-distribution-wishonia_path_gdp_year_20.qmd >}}
+{{< include ../figures/mc-distribution-wishonia_trajectory_gdp_year_20.qmd >}}
 
 #### Exceedance Probability
 
-{{< include ../figures/exceedance-wishonia_path_gdp_year_20.qmd >}}
+{{< include ../figures/exceedance-wishonia_trajectory_gdp_year_20.qmd >}}
 
 :::
 
-### Wishonia Path Lifetime Income Gain (Per Capita): $52.1M {#sec-wishonia_path_lifetime_income_gain_per_capita}
+### Wishonia Trajectory Lifetime Income Gain (Per Capita): $52.1M {#sec-wishonia_trajectory_lifetime_income_gain_per_capita}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Lifetime per-capita income gain from Wishonia Path vs Earth baseline. Cumulative Wishonia income minus cumulative Earth income over average remaining lifespan.
+Lifetime per-capita income gain from Wishonia Trajectory vs current trajectory. Cumulative Wishonia income minus cumulative current trajectory income over average remaining lifespan.
 
 **Inputs**:
 
-- [Wishonia Path Cumulative Lifetime Income (Per Capita)](#sec-wishonia_path_cumulative_lifetime_income) 🔢: $53.3M
-- [Earth Cumulative Lifetime Income (Per Capita)](#sec-earth_cumulative_lifetime_income) 🔢: $1.18M
+- [Wishonia Trajectory Cumulative Lifetime Income (Per Capita)](#sec-wishonia_trajectory_cumulative_lifetime_income) 🔢: $53.3M
+- [Current Trajectory Cumulative Lifetime Income (Per Capita)](#sec-current_trajectory_cumulative_lifetime_income) 🔢: $1.18M
 
 $$
 \begin{gathered}
@@ -10000,44 +10003,44 @@ $$
 where:
 $$
 \begin{gathered}
-\bar{y}_{earth,20} \\
-= \frac{GDP_{earth,20}}{Pop_{2045}} \\
+\bar{y}_{base,20} \\
+= \frac{GDP_{base,20}}{Pop_{2045}} \\
 = \frac{\$188T}{9.2B} \\
 = \$20.5K
 \end{gathered}
 $$
 where:
 $$
-GDP_{earth,20} = GDP_0(1+g_{base})^{20}
+GDP_{base,20} = GDP_0(1+g_{base})^{20}
 $$
 *✓ High confidence*
 
 #### Sensitivity Analysis
 
-{{< include ../figures/tornado-wishonia_path_lifetime_income_gain_per_capita.qmd >}}
+{{< include ../figures/tornado-wishonia_trajectory_lifetime_income_gain_per_capita.qmd >}}
 
-{{< include ../figures/sensitivity-table-wishonia_path_lifetime_income_gain_per_capita.qmd >}}
+{{< include ../figures/sensitivity-table-wishonia_trajectory_lifetime_income_gain_per_capita.qmd >}}
 
 #### Monte Carlo Distribution
 
-{{< include ../figures/mc-distribution-wishonia_path_lifetime_income_gain_per_capita.qmd >}}
+{{< include ../figures/mc-distribution-wishonia_trajectory_lifetime_income_gain_per_capita.qmd >}}
 
 #### Exceedance Probability
 
-{{< include ../figures/exceedance-wishonia_path_lifetime_income_gain_per_capita.qmd >}}
+{{< include ../figures/exceedance-wishonia_trajectory_lifetime_income_gain_per_capita.qmd >}}
 
 :::
 
-### Wishonia Path Lifetime Income Multiplier: 45x {#sec-wishonia_path_lifetime_income_multiplier}
+### Wishonia Trajectory Lifetime Income Multiplier: 45x {#sec-wishonia_trajectory_lifetime_income_multiplier}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Ratio of cumulative lifetime income under Wishonia Path vs Earth baseline. Income-agnostic: applies as a multiplier to any individual's lifetime earnings.
+Ratio of cumulative lifetime income under Wishonia Trajectory vs current trajectory. Income-agnostic: applies as a multiplier to any individual's lifetime earnings.
 
 **Inputs**:
 
-- [Wishonia Path Cumulative Lifetime Income (Per Capita)](#sec-wishonia_path_cumulative_lifetime_income) 🔢: $53.3M
-- [Earth Cumulative Lifetime Income (Per Capita)](#sec-earth_cumulative_lifetime_income) 🔢: $1.18M
+- [Wishonia Trajectory Cumulative Lifetime Income (Per Capita)](#sec-wishonia_trajectory_cumulative_lifetime_income) 🔢: $53.3M
+- [Current Trajectory Cumulative Lifetime Income (Per Capita)](#sec-current_trajectory_cumulative_lifetime_income) 🔢: $1.18M
 
 $$
 \begin{gathered}
@@ -10175,44 +10178,44 @@ $$
 where:
 $$
 \begin{gathered}
-\bar{y}_{earth,20} \\
-= \frac{GDP_{earth,20}}{Pop_{2045}} \\
+\bar{y}_{base,20} \\
+= \frac{GDP_{base,20}}{Pop_{2045}} \\
 = \frac{\$188T}{9.2B} \\
 = \$20.5K
 \end{gathered}
 $$
 where:
 $$
-GDP_{earth,20} = GDP_0(1+g_{base})^{20}
+GDP_{base,20} = GDP_0(1+g_{base})^{20}
 $$
 *✓ High confidence*
 
 #### Sensitivity Analysis
 
-{{< include ../figures/tornado-wishonia_path_lifetime_income_multiplier.qmd >}}
+{{< include ../figures/tornado-wishonia_trajectory_lifetime_income_multiplier.qmd >}}
 
-{{< include ../figures/sensitivity-table-wishonia_path_lifetime_income_multiplier.qmd >}}
+{{< include ../figures/sensitivity-table-wishonia_trajectory_lifetime_income_multiplier.qmd >}}
 
 #### Monte Carlo Distribution
 
-{{< include ../figures/mc-distribution-wishonia_path_lifetime_income_multiplier.qmd >}}
+{{< include ../figures/mc-distribution-wishonia_trajectory_lifetime_income_multiplier.qmd >}}
 
 #### Exceedance Probability
 
-{{< include ../figures/exceedance-wishonia_path_lifetime_income_multiplier.qmd >}}
+{{< include ../figures/exceedance-wishonia_trajectory_lifetime_income_multiplier.qmd >}}
 
 :::
 
-### Wishonia Path vs Treaty Path GDP Multiplier (Year 20): 3.43x {#sec-wishonia_path_vs_treaty_path_gdp_multiplier_year_20}
+### Wishonia Trajectory vs Treaty Trajectory GDP Multiplier (Year 20): 3.43x {#sec-wishonia_trajectory_vs_treaty_trajectory_gdp_multiplier_year_20}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Year-20 GDP multiplier from adding non-health dysfunction-capital reallocation on top of the Treaty Path channels.
+Year-20 GDP multiplier from adding non-health dysfunction-capital reallocation on top of the Treaty Trajectory channels.
 
 **Inputs**:
 
-- [Wishonia Path GDP at Year 20](#sec-wishonia_path_gdp_year_20) 🔢: $10.7 quadrillion
-- [Treaty Path GDP at Year 20](#sec-treaty_path_gdp_year_20) 🔢: $3.11 quadrillion
+- [Wishonia Trajectory GDP at Year 20](#sec-wishonia_trajectory_gdp_year_20) 🔢: $10.7 quadrillion
+- [Treaty Trajectory GDP at Year 20](#sec-treaty_trajectory_gdp_year_20) 🔢: $3.11 quadrillion
 
 $$
 \begin{gathered}
@@ -10321,17 +10324,17 @@ $$
 
 #### Sensitivity Analysis
 
-{{< include ../figures/tornado-wishonia_path_vs_treaty_path_gdp_multiplier_year_20.qmd >}}
+{{< include ../figures/tornado-wishonia_trajectory_vs_treaty_trajectory_gdp_multiplier_year_20.qmd >}}
 
-{{< include ../figures/sensitivity-table-wishonia_path_vs_treaty_path_gdp_multiplier_year_20.qmd >}}
+{{< include ../figures/sensitivity-table-wishonia_trajectory_vs_treaty_trajectory_gdp_multiplier_year_20.qmd >}}
 
 #### Monte Carlo Distribution
 
-{{< include ../figures/mc-distribution-wishonia_path_vs_treaty_path_gdp_multiplier_year_20.qmd >}}
+{{< include ../figures/mc-distribution-wishonia_trajectory_vs_treaty_trajectory_gdp_multiplier_year_20.qmd >}}
 
 #### Exceedance Probability
 
-{{< include ../figures/exceedance-wishonia_path_vs_treaty_path_gdp_multiplier_year_20.qmd >}}
+{{< include ../figures/exceedance-wishonia_trajectory_vs_treaty_trajectory_gdp_multiplier_year_20.qmd >}}
 
 :::
 
@@ -12933,28 +12936,6 @@ Phase 1 campaign budget (Foundation, Year 1)
 
 :::
 
-### Annual Encounter Rate: 0.5% {#sec-chain_annual_encounter_probability}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Annual probability a given implementer encounters the idea directly (media, conferences, advisors)
-
-#### Uncertainty Range
-
-**Technical**: 95% CI: [0.1%, 2%] • Distribution: Beta
-
-**What this means**: This estimate is highly uncertain. The true value likely falls between 0.1% and 2% (±190%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
-
-*The beta distribution means values are bounded and can skew toward one end.*
-
-#### Input Distribution
-
-{{< include ../figures/distribution-chain_annual_encounter_probability.qmd >}}
-
-*Core definition*
-
-:::
-
 ### Dismissal Rate: 90% {#sec-chain_dismiss_probability}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -12977,15 +12958,81 @@ Probability someone dismisses the idea without engaging (the 'institutionalizati
 
 :::
 
-### Model Horizon: 10 years {#sec-chain_horizon_years}
+### Effective R: 0.15:1 {#sec-chain_effective_r}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Time horizon for chain reaction model
+Effective reproduction number per cascade generation: fraction of viewers who share (5%) x average forwards per sharer (3). CI spans pessimistic (2% x 2 = 0.04) to optimistic (10% x 8 = 0.80).
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [0.04:1, 0.8:1] • Distribution: Lognormal
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between 0.04:1 and 0.8:1 (±253%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-chain_effective_r.qmd >}}
+
+*Core definition*
+
+:::
+
+### Model Horizon: 3 years {#sec-chain_horizon_years}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Conservative upper bound for cascade propagation (social media cascades propagate in weeks; 3 years allows for slower channels and multiple cascade waves)
 
 #### Uncertainty Range
 
 **Technical**: Distribution: Fixed
+
+*Core definition*
+
+:::
+
+### Implementer Orbit Size: 1 thousand people {#sec-chain_implementer_orbit_size}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Information-orbit size per implementer: people whose recommendation would reach them (staff, advisors, active social media feeds, professional contacts). Lower bound: Dunbar's 150; upper: corporate C-suite intake funnel.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [150 people, 5 thousand people] • Distribution: Lognormal
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between 150 people and 5 thousand people (±242%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-chain_implementer_orbit_size.qmd >}}
+
+*Core definition*
+
+:::
+
+### Initial Audience: 50 thousand people {#sec-chain_initial_audience}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Conservative initial audience size (readers, website visitors, conference attendees)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [10 thousand people, 500 thousand people] • Distribution: Lognormal
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between 10 thousand people and 500 thousand people (±490%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-chain_initial_audience.qmd >}}
 
 *Core definition*
 
@@ -13829,11 +13876,11 @@ Percentage of captured dividend funding VICTORY Incentive Alignment Bonds (10%)
 
 :::
 
-### Wishonia Path Probability (Year 20 EV Model): 90% {#sec-wishonia_path_success_probability_year_20}
+### Wishonia Trajectory Probability (Year 20 EV Model): 90% {#sec-wishonia_trajectory_success_probability_year_20}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Probability that the world follows the Wishonia Path (Treaty + dysfunction-tax elimination) rather than the Moronia collapse path in the expected-value framing.
+Probability that the world follows the Wishonia Trajectory (Treaty + dysfunction-tax elimination) rather than the Moronia collapse path in the expected-value framing.
 
 #### Uncertainty Range
 
@@ -13845,7 +13892,7 @@ Probability that the world follows the Wishonia Path (Treaty + dysfunction-tax e
 
 #### Input Distribution
 
-{{< include ../figures/distribution-wishonia_path_success_probability_year_20.qmd >}}
+{{< include ../figures/distribution-wishonia_trajectory_success_probability_year_20.qmd >}}
 
 *Core definition*
 

@@ -36,15 +36,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 217 parameters used in the analysis, organized by type:
+This appendix documents all 238 parameters used in the analysis, organized by type:
 
-- External sources (peer-reviewed): 88
-- Calculated values: 99
-- Core definitions: 30
+- External sources (peer-reviewed): 94
+- Calculated values: 111
+- Core definitions: 33
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (99 parameters) • [External Data Sources](#sec-external) (88 parameters) • [Core Definitions](#sec-definitions) (30 parameters)
+[Calculated Values](#sec-calculated) (111 parameters) • [External Data Sources](#sec-external) (94 parameters) • [Core Definitions](#sec-definitions) (33 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -266,6 +266,68 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-current_patient_participation_rate.qmd >}}
+
+:::
+
+### Current Trajectory Average Income at Year 20: $20.5K {#sec-current_trajectory_avg_income_year_20}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Average income (GDP per capita) at year 20 under current trajectory trajectory.
+
+**Inputs**:
+
+- [Current Trajectory GDP at Year 20](#sec-current_trajectory_gdp_year_20) 🔢: $188T
+- [Global Population 2045 (Projected)](#sec-global_population_2045_projected) 📊: 9.2 billion of people
+
+$$
+\begin{gathered}
+\bar{y}_{base,20} \\
+= \frac{GDP_{base,20}}{Pop_{2045}} \\
+= \frac{\$188T}{9.2B} \\
+= \$20.5K
+\end{gathered}
+$$
+where:
+$$
+GDP_{base,20} = GDP_0(1+g_{base})^{20}
+$$
+*✓ High confidence*
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-current_trajectory_avg_income_year_20.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-current_trajectory_avg_income_year_20.qmd >}}
+
+:::
+
+### Current Trajectory GDP at Year 20: $188T {#sec-current_trajectory_gdp_year_20}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Global GDP at year 20 under status-quo current trajectory growth.
+
+**Inputs**:
+
+- [Global GDP (2025)](#sec-global_gdp_2025) 📊: $115T
+- [Baseline Global GDP Growth Rate](#sec-gdp_baseline_growth_rate): 2.5%
+
+$$
+GDP_{base,20} = GDP_0(1+g_{base})^{20}
+$$
+
+*✓ High confidence*
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-current_trajectory_gdp_year_20.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-current_trajectory_gdp_year_20.qmd >}}
 
 :::
 
@@ -857,6 +919,52 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-dfda_first_treatments_per_year.qmd >}}
+
+:::
+
+### Maximum Trial Capacity Multiplier (Physical Limit): 566x {#sec-dfda_max_trial_capacity_multiplier_physical}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Physical upper bound on trial-capacity multiplier from participant availability. Even with unlimited funding, annual trial enrollment cannot exceed willing participant pool.
+
+**Inputs**:
+
+- [Global Patients Willing to Participate in Clinical Trials](#sec-willing_trial_participants_global) 🔢: 1.08 billion people
+- [Annual Global Clinical Trial Participants](#sec-current_trial_slots_available) 📊: 1.9 million patients/year (95% CI: 1.5 million patients/year - 2.3 million patients/year)
+
+$$
+\begin{gathered}
+k_{capacity,max} \\
+= \frac{N_{willing}}{Slots_{curr}} \\
+= \frac{1.08B}{1.9M} \\
+= 566
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{willing} \\
+= N_{patients} \times Pct_{willing} \\
+= 2.4B \times 44.8\% \\
+= 1.08B
+\end{gathered}
+$$
+*~ Medium confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-dfda_max_trial_capacity_multiplier_physical.qmd >}}
+
+{{< include ../figures/sensitivity-table-dfda_max_trial_capacity_multiplier_physical.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-dfda_max_trial_capacity_multiplier_physical.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_max_trial_capacity_multiplier_physical.qmd >}}
 
 :::
 
@@ -6144,6 +6252,212 @@ $$
 
 :::
 
+### Treaty Trajectory Average Income at Year 20: $339K {#sec-treaty_trajectory_avg_income_year_20}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Average income (GDP per capita) at year 20 under the Treaty Trajectory.
+
+**Inputs**:
+
+- [Treaty Trajectory GDP at Year 20](#sec-treaty_trajectory_gdp_year_20) 🔢: $3.11 quadrillion
+- [Global Population 2045 (Projected)](#sec-global_population_2045_projected) 📊: 9.2 billion of people
+
+$$
+\bar{y}_{treaty,20} = \frac{GDP_{treaty,20}}{Pop_{2045}}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-treaty_trajectory_avg_income_year_20.qmd >}}
+
+{{< include ../figures/sensitivity-table-treaty_trajectory_avg_income_year_20.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-treaty_trajectory_avg_income_year_20.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-treaty_trajectory_avg_income_year_20.qmd >}}
+
+:::
+
+### Treaty Trajectory vs Current Trajectory GDP Multiplier (Year 20): 16.5x {#sec-treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_20}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Treaty Trajectory GDP at year 20 as a multiple of current trajectory GDP at year 20.
+
+**Inputs**:
+
+- [Treaty Trajectory GDP at Year 20](#sec-treaty_trajectory_gdp_year_20) 🔢: $3.11 quadrillion
+- [Current Trajectory GDP at Year 20](#sec-current_trajectory_gdp_year_20) 🔢: $188T
+
+$$
+\begin{gathered}
+k_{treaty:base,20} \\
+= \frac{GDP_{treaty,20}}{GDP_{base,20}} \\
+= \frac{\$3110T}{\$188T} \\
+= 16.5
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+GDP_{treaty,20} \\
+= GDP_0(1+g_{treaty,ramp})^3(1+g_{treaty,full})^{17}
+\end{gathered}
+$$
+where:
+$$
+s_{mil,max} = Cut_{WW2} = 87.6\% = 87.6\%
+$$
+where:
+$$
+\begin{gathered}
+Cut_{WW2} \\
+= 1 - \frac{Spending_{US,1947}}{Spending_{US,1945}} \\
+= 1 - \frac{\$176B}{\$1.42T} \\
+= 87.6\%
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+f_{cure,20,wish} \\
+= \min\left(1,\frac{Treatments_{new,ann}\cdot k_{capacity,wish}\cdot 20}{D_{untreated}}\right)
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+k_{capacity} \\
+= \frac{N_{fundable,dFDA}}{Slots_{curr}} \\
+= \frac{23.4M}{1.9M} \\
+= 12.3
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{fundable,dFDA} \\
+= \frac{Subsidies_{dFDA,ann}}{Cost_{pragmatic,pt}} \\
+= \frac{\$21.8B}{\$929} \\
+= 23.4M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Subsidies_{dFDA,ann} \\
+= Funding_{dFDA,ann} - OPEX_{dFDA} \\
+= \$21.8B - \$40M \\
+= \$21.8B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+OPEX_{dFDA} \\
+= Cost_{platform} + Cost_{staff} + Cost_{infra} \\
++ Cost_{regulatory} + Cost_{community} \\
+= \$15M + \$10M + \$8M + \$5M + \$2M \\
+= \$40M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+k_{capacity,max} \\
+= \frac{N_{willing}}{Slots_{curr}} \\
+= \frac{1.08B}{1.9M} \\
+= 566
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{willing} \\
+= N_{patients} \times Pct_{willing} \\
+= 2.4B \times 44.8\% \\
+= 1.08B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{untreated} \\
+= N_{rare} \times 0.95 \\
+= 7{,}000 \times 0.95 \\
+= 6{,}650
+\end{gathered}
+$$
+where:
+$$
+GDP_{base,20} = GDP_0(1+g_{base})^{20}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_20.qmd >}}
+
+{{< include ../figures/sensitivity-table-treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_20.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_20.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_20.qmd >}}
+
+:::
+
+### Treaty Trajectory GDP at Year 20: $3.11 quadrillion {#sec-treaty_trajectory_gdp_year_20}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Projected global GDP at year 20 under the Treaty Trajectory: military-to-science reallocation plus disease-burden recovery only. Excludes non-health dysfunction-capital reallocation to isolate the lower-political-baggage channel.
+
+**Inputs**:
+
+- [Global GDP (2025)](#sec-global_gdp_2025) 📊: $115T
+- [Baseline Global GDP Growth Rate](#sec-gdp_baseline_growth_rate): 2.5%
+- [Wishonia Military Reallocation Physical Max Share](#sec-wishonia_military_reallocation_physical_max_share) 🔢: 87.6%
+- [GDP Growth Boost at 30% Military Reallocation](#sec-military_redirect_gdp_boost_at_30pct): 5.5% (95% CI: 3.5% - 7.5%)
+- [R&D Spillover Multiplier](#sec-rd_spillover_multiplier): 2x (95% CI: 1.5x - 2.5x)
+- [Wishonia Disease Cure Fraction (20yr, Full Implementation)](#sec-wishonia_disease_cure_fraction_20yr_full) 🔢: 100%
+- [Disease Burden as % of GDP](#sec-disease_burden_gdp_drag_pct) 📊: 13%
+
+$$
+\begin{gathered}
+GDP_{treaty,20} \\
+= GDP_0(1+g_{treaty,ramp})^3(1+g_{treaty,full})^{17}
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-treaty_trajectory_gdp_year_20.qmd >}}
+
+{{< include ../figures/sensitivity-table-treaty_trajectory_gdp_year_20.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-treaty_trajectory_gdp_year_20.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-treaty_trajectory_gdp_year_20.qmd >}}
+
+:::
+
 ### Cost-Effectiveness vs Bed Nets Multiplier: 50.3kx {#sec-treaty_vs_bed_nets_multiplier}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -6887,6 +7201,300 @@ $$
 
 :::
 
+### Global Patients Willing to Participate in Clinical Trials: 1.08 billion people {#sec-willing_trial_participants_global}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Global chronic disease patients willing to participate in trials (2.4B × 44.8%)
+
+**Inputs**:
+
+- [Global Population with Chronic Diseases](#sec-current_disease_patients_global) 📊: 2.4 billion people (95% CI: 2 billion people - 2.8 billion people)
+- [Patient Willingness to Participate in Clinical Trials](#sec-patient_willingness_trial_participation_pct) 📊: 44.8% (95% CI: 40% - 50%)
+
+$$
+\begin{gathered}
+N_{willing} \\
+= N_{patients} \times Pct_{willing} \\
+= 2.4B \times 44.8\% \\
+= 1.08B
+\end{gathered}
+$$
+
+*~ Medium confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-willing_trial_participants_global.qmd >}}
+
+{{< include ../figures/sensitivity-table-willing_trial_participants_global.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-willing_trial_participants_global.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-willing_trial_participants_global.qmd >}}
+
+:::
+
+### Wishonia Disease Cure Fraction (20yr, Full Implementation): 100% {#sec-wishonia_disease_cure_fraction_20yr_full}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Wishonia disease-cure fraction over 20 years under full implementation. Uses full trial-capacity scaling and applies an upper bound of 100% of untreated disease classes.
+
+**Inputs**:
+
+- [Diseases Getting First Treatment Per Year](#sec-new_disease_first_treatments_per_year) 📊: 15 diseases/year (95% CI: 8 diseases/year - 30 diseases/year)
+- [Trial Capacity Multiplier](#sec-dfda_trial_capacity_multiplier) 🔢: 12.3x
+- [Wishonia Military Reallocation Physical Max Share](#sec-wishonia_military_reallocation_physical_max_share) 🔢: 87.6%
+- [Maximum Trial Capacity Multiplier (Physical Limit)](#sec-dfda_max_trial_capacity_multiplier_physical) 🔢: 566x
+- [Diseases Without Effective Treatment](#sec-diseases_without_effective_treatment) 🔢: 6.65 thousand diseases
+
+$$
+\begin{gathered}
+f_{cure,20,wish} \\
+= \min\left(1,\frac{Treatments_{new,ann}\cdot k_{capacity,wish}\cdot 20}{D_{untreated}}\right)
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+:::
+
+### Wishonia Military Reallocation Physical Max Share: 87.6% {#sec-wishonia_military_reallocation_physical_max_share}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Maximum physically demonstrated military reallocation share, anchored to post-WW2 US demobilization.
+
+**Inputs**:
+
+- [Percentage Military Spending Cut After WW2](#sec-post_ww2_military_cut_pct) 🔢: 87.6%
+
+$$
+s_{mil,max} = Cut_{WW2} = 87.6\% = 87.6\%
+$$
+where:
+$$
+\begin{gathered}
+Cut_{WW2} \\
+= 1 - \frac{Spending_{US,1947}}{Spending_{US,1945}} \\
+= 1 - \frac{\$176B}{\$1.42T} \\
+= 87.6\%
+\end{gathered}
+$$
+*✓ High confidence*
+
+:::
+
+### Wishonia Trajectory Average Income at Year 20: $1.16M {#sec-wishonia_trajectory_avg_income_year_20}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Average income (GDP per capita) at year 20 under the Wishonia Trajectory.
+
+**Inputs**:
+
+- [Wishonia Trajectory GDP at Year 20](#sec-wishonia_trajectory_gdp_year_20) 🔢: $10.7 quadrillion
+- [Global Population 2045 (Projected)](#sec-global_population_2045_projected) 📊: 9.2 billion of people
+
+$$
+\bar{y}_{wish,20} = \frac{GDP_{wish,20}}{Pop_{2045}}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-wishonia_trajectory_avg_income_year_20.qmd >}}
+
+{{< include ../figures/sensitivity-table-wishonia_trajectory_avg_income_year_20.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-wishonia_trajectory_avg_income_year_20.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-wishonia_trajectory_avg_income_year_20.qmd >}}
+
+:::
+
+### Wishonia Trajectory vs Current Trajectory GDP Multiplier (Year 20): 56.7x {#sec-wishonia_trajectory_gdp_vs_current_trajectory_multiplier_year_20}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Wishonia Trajectory GDP at year 20 as a multiple of current trajectory GDP at year 20.
+
+**Inputs**:
+
+- [Wishonia Trajectory GDP at Year 20](#sec-wishonia_trajectory_gdp_year_20) 🔢: $10.7 quadrillion
+- [Current Trajectory GDP at Year 20](#sec-current_trajectory_gdp_year_20) 🔢: $188T
+
+$$
+\begin{gathered}
+k_{wish:base,20} \\
+= \frac{GDP_{wish,20}}{GDP_{base,20}} \\
+= \frac{\$10700T}{\$188T} \\
+= 56.7
+\end{gathered}
+$$
+where:
+$$
+GDP_{wish,20}=GDP_0(1+g_{ramp})^3(1+g_{full})^{17}
+$$
+where:
+$$
+s_{mil,max} = Cut_{WW2} = 87.6\% = 87.6\%
+$$
+where:
+$$
+\begin{gathered}
+Cut_{WW2} \\
+= 1 - \frac{Spending_{US,1947}}{Spending_{US,1945}} \\
+= 1 - \frac{\$176B}{\$1.42T} \\
+= 87.6\%
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+f_{cure,20,wish} \\
+= \min\left(1,\frac{Treatments_{new,ann}\cdot k_{capacity,wish}\cdot 20}{D_{untreated}}\right)
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+k_{capacity} \\
+= \frac{N_{fundable,dFDA}}{Slots_{curr}} \\
+= \frac{23.4M}{1.9M} \\
+= 12.3
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{fundable,dFDA} \\
+= \frac{Subsidies_{dFDA,ann}}{Cost_{pragmatic,pt}} \\
+= \frac{\$21.8B}{\$929} \\
+= 23.4M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Subsidies_{dFDA,ann} \\
+= Funding_{dFDA,ann} - OPEX_{dFDA} \\
+= \$21.8B - \$40M \\
+= \$21.8B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+OPEX_{dFDA} \\
+= Cost_{platform} + Cost_{staff} + Cost_{infra} \\
++ Cost_{regulatory} + Cost_{community} \\
+= \$15M + \$10M + \$8M + \$5M + \$2M \\
+= \$40M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+k_{capacity,max} \\
+= \frac{N_{willing}}{Slots_{curr}} \\
+= \frac{1.08B}{1.9M} \\
+= 566
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{willing} \\
+= N_{patients} \times Pct_{willing} \\
+= 2.4B \times 44.8\% \\
+= 1.08B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{untreated} \\
+= N_{rare} \times 0.95 \\
+= 7{,}000 \times 0.95 \\
+= 6{,}650
+\end{gathered}
+$$
+where:
+$$
+GDP_{base,20} = GDP_0(1+g_{base})^{20}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-wishonia_trajectory_gdp_vs_current_trajectory_multiplier_year_20.qmd >}}
+
+{{< include ../figures/sensitivity-table-wishonia_trajectory_gdp_vs_current_trajectory_multiplier_year_20.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-wishonia_trajectory_gdp_vs_current_trajectory_multiplier_year_20.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-wishonia_trajectory_gdp_vs_current_trajectory_multiplier_year_20.qmd >}}
+
+:::
+
+### Wishonia Trajectory GDP at Year 20: $10.7 quadrillion {#sec-wishonia_trajectory_gdp_year_20}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Projected global GDP at year 20 under the Wishonia Trajectory. Model applies all Wishonia policy channels and redirects the full Political Dysfunction Tax non-health opportunity pool to highest-marginal-value uses. Health recovery is modeled separately through disease burden removal to avoid overlap. Military and non-health reallocation effects are ramped at 50% intensity for the first 3 years, then 100% for years 4-20, reflecting implementation lag. Military reallocation uses a physically demonstrated upper bound (post-WW2 demobilization) rather than an arbitrary policy cap.
+
+**Inputs**:
+
+- [Global GDP (2025)](#sec-global_gdp_2025) 📊: $115T
+- [Baseline Global GDP Growth Rate](#sec-gdp_baseline_growth_rate): 2.5%
+- [Wishonia Military Reallocation Physical Max Share](#sec-wishonia_military_reallocation_physical_max_share) 🔢: 87.6%
+- [GDP Growth Boost at 30% Military Reallocation](#sec-military_redirect_gdp_boost_at_30pct): 5.5% (95% CI: 3.5% - 7.5%)
+- [R&D Spillover Multiplier](#sec-rd_spillover_multiplier): 2x (95% CI: 1.5x - 2.5x)
+- [Wishonia Disease Cure Fraction (20yr, Full Implementation)](#sec-wishonia_disease_cure_fraction_20yr_full) 🔢: 100%
+- [Disease Burden as % of GDP](#sec-disease_burden_gdp_drag_pct) 📊: 13%
+- [Global Science Opportunity Cost](#sec-political_dysfunction_global_science_opportunity_cost) 📊: $4T (95% CI: $2T - $10T)
+- [Global Lead Poisoning Cost](#sec-political_dysfunction_global_lead_opportunity_cost) 📊: $6T (95% CI: $4T - $8T)
+- [Global Migration Opportunity Cost](#sec-political_dysfunction_global_migration_opportunity_cost) 📊: $57T (95% CI: $57T - $170T)
+- [Economic Multiplier for Healthcare Investment](#sec-economic_multiplier_healthcare_investment) 📊: 4.3x (95% CI: 3x - 6x)
+- [Economic Multiplier for Military Spending](#sec-economic_multiplier_military_spending) 📊: 0.6x (95% CI: 0.4x - 0.9x)
+
+$$
+GDP_{wish,20}=GDP_0(1+g_{ramp})^3(1+g_{full})^{17}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-wishonia_trajectory_gdp_year_20.qmd >}}
+
+{{< include ../figures/sensitivity-table-wishonia_trajectory_gdp_year_20.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-wishonia_trajectory_gdp_year_20.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-wishonia_trajectory_gdp_year_20.qmd >}}
+
+:::
+
 ## External Data Sources {#sec-external}
 
 Parameters sourced from peer-reviewed publications, institutional databases, and authoritative reports.
@@ -7226,6 +7834,22 @@ dFDA pragmatic trial cost per patient. Uses ADAPTABLE trial ($929) as DELIBERATE
 {{< include ../figures/distribution-dfda_pragmatic_trial_cost_per_patient.qmd >}}
 
 *~ Medium confidence*
+
+:::
+
+### Disease Burden as % of GDP: 13% {#sec-disease_burden_gdp_drag_pct}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Fraction of GDP currently lost to disease (productivity losses + medical costs diverted from productive use). $5T productivity loss + $9.9T direct medical costs = $14.9T on $115T GDP = ~13%. As diseases are progressively cured, this drag is recovered as GDP growth. This is the missing factor that makes the treaty trajectory look like a singularity rather than a modest improvement.
+
+**Source**: [@disease-economic-burden-109t]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*✓ High confidence*
 
 :::
 
@@ -8021,6 +8645,22 @@ Global population in 2024
 
 :::
 
+### Global Population 2045 (Projected): 9.2 billion of people {#sec-global_population_2045_projected}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+UN World Population Prospects 2022 median projection for 2045.
+
+**Source**: [@global-population-8-billion]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*✓ High confidence*
+
+:::
+
 ### Critical Mass Threshold for Social Change: 3.5% {#sec-global_population_activism_threshold_pct}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -8149,6 +8789,30 @@ Typical cost per QALY for standard NIH-funded medical research portfolio. Reflec
 
 :::
 
+### Patient Willingness to Participate in Clinical Trials: 44.8% {#sec-patient_willingness_trial_participation_pct}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Patient willingness to participate in drug trials (44.8% in surveys, 88% when actually approached)
+
+**Source**: [@patient-willingness-clinical-trials]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [40%, 50%] • Distribution: Normal (SE: 2.5%)
+
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between 40% and 50% (±11%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The normal distribution means values cluster around the center with equal chances of being higher or lower.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-patient_willingness_trial_participation_pct.qmd >}}
+
+*~ Medium confidence*
+
+:::
+
 ### Pharma Drug Development Cost (Current System): $2.6B {#sec-pharma_drug_development_cost_current}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -8206,6 +8870,78 @@ Median cost per patient in embedded pragmatic clinical trials (Ramsberg & Platt 
 {{< include ../figures/distribution-pmc_pragmatic_trial_median_cost_per_patient.qmd >}}
 
 *✓ High confidence*
+
+:::
+
+### Global Lead Poisoning Cost: $6T {#sec-political_dysfunction_global_lead_opportunity_cost}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Global cost of lead exposure: World Bank/Lancet estimate. 765 million IQ points lost annually, 5.5 million premature CVD deaths. Cost to eliminate lead from paint, spices, batteries is trivial compared to damage. This is an arbitrage opportunity of immense scale that governance has failed to execute.
+
+**Source**: [@political-dysfunction-tax-paper-2025]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$4T, $8T] • Distribution: Normal (SE: $1T)
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $4T and $8T (±33%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The normal distribution means values cluster around the center with equal chances of being higher or lower.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-political_dysfunction_global_lead_opportunity_cost.qmd >}}
+
+*✓ High confidence*
+
+:::
+
+### Global Migration Opportunity Cost: $57T {#sec-political_dysfunction_global_migration_opportunity_cost}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Unrealized output from migration restrictions. Clemens (2011) calculated eliminating labor mobility barriers could increase global GDP by 50-150%. At $115T global GDP, lower bound = $57T; upper bound = $170T. Even 5% workforce mobility would generate trillions, exceeding all foreign aid ever given. This is the largest single distortion in the global economy.
+
+**Source**: [@political-dysfunction-tax-paper-2025]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$57T, $170T] • Distribution: Lognormal (SE: $30T)
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between $57T and $170T (±99%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-political_dysfunction_global_migration_opportunity_cost.qmd >}}
+
+*? Low confidence*
+
+:::
+
+### Global Science Opportunity Cost: $4T {#sec-political_dysfunction_global_science_opportunity_cost}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual opportunity cost from underfunding high-ROI science (fusion, AI safety). Human Genome Project: $3.8B cost, $796B-1T impact (141:1 ROI). Fusion DEMO plant: $5-10B could solve energy/climate permanently. AI safety: <5% of capabilities spending despite existential stakes. Reallocating $200B from military waste at 20x multiplier = $4T foregone growth.
+
+**Source**: [@political-dysfunction-tax-paper-2025]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$2T, $10T] • Distribution: Lognormal (SE: $2T)
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between $2T and $10T (±100%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-political_dysfunction_global_science_opportunity_cost.qmd >}}
+
+*? Low confidence*
 
 :::
 
@@ -9017,6 +9753,20 @@ Percentage of deaths that are fundamentally unavoidable even with perfect biotec
 
 :::
 
+### Baseline Global GDP Growth Rate: 2.5% {#sec-gdp_baseline_growth_rate}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Status-quo baseline annual global GDP growth rate.
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*Core definition*
+
+:::
+
 ### IAB Political Incentive Funding Percentage: 10% {#sec-iab_political_incentive_funding_pct}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -9026,6 +9776,28 @@ Percentage of treaty funding allocated to Incentive Alignment Bond mechanism for
 #### Uncertainty Range
 
 **Technical**: Distribution: Fixed
+
+*Core definition*
+
+:::
+
+### GDP Growth Boost at 30% Military Reallocation: 5.5% {#sec-military_redirect_gdp_boost_at_30pct}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Historical calibration target: 30% military reallocation maps to ~5.5 percentage points annual GDP growth boost.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [3.5%, 7.5%] • Distribution: Normal (SE: 1%)
+
+**What this means**: There's significant uncertainty here. The true value likely falls between 3.5% and 7.5% (±36%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The normal distribution means values cluster around the center with equal chances of being higher or lower.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-military_redirect_gdp_boost_at_30pct.qmd >}}
 
 *Core definition*
 
@@ -9096,6 +9868,28 @@ Average QALYs gained per COVID death averted. Conservative estimate reflecting o
 #### Input Distribution
 
 {{< include ../figures/distribution-qalys_per_covid_death_averted.qmd >}}
+
+*Core definition*
+
+:::
+
+### R&D Spillover Multiplier: 2x {#sec-rd_spillover_multiplier}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+R&D spillover multiplier: each $1 in directed medical research produces $2 in adjacent sector GDP growth (biotech, AI, computing, materials science, manufacturing). Conservative estimate; military R&D spillover produced the internet, GPS, jet engines. Medical R&D spillover already produced CRISPR, mRNA platforms, AI protein folding.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [1.5x, 2.5x] • Distribution: Normal (SE: 0.25x)
+
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between 1.5x and 2.5x (±25%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The normal distribution means values cluster around the center with equal chances of being higher or lower.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-rd_spillover_multiplier.qmd >}}
 
 *Core definition*
 

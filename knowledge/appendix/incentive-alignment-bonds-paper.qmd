@@ -17,7 +17,14 @@ abstract: |
   solved. IABs solve that coordination problem by turning political change into an investable asset class.
   A dominant assurance contract mechanism solves the bootstrap coordination problem: investor participation
   is the strictly dominant strategy regardless of beliefs about other investors' behavior, closing the
-  end-to-end incentive chain from citizen coordination through treaty passage.
+  end-to-end incentive chain from citizen coordination through treaty passage. At system scale, the
+  model's Optimal-Governance Path reaches
+  {{< var wishonia_trajectory_gdp_vs_current_trajectory_multiplier_year_20 >}} the Earth baseline after 20 years, raises
+  average income to {{< var wishonia_trajectory_avg_income_year_20 >}} versus
+  {{< var current_trajectory_avg_income_year_20 >}} on the status-quo path, reaches
+  {{< var wishonia_trajectory_gdp_year_20 >}} in total output, and recovers roughly
+  {{< var political_dysfunction_global_opportunity_cost_total >}}/year in suppressed value
+  ([The Political Dysfunction Tax](https://political-dysfunction-tax.warondisease.org)).
 aliases:
   - /iab.html
 author:
@@ -56,6 +63,7 @@ podcast-image: /assets/podcast/incentive-alignment-bonds-paper-podcast.jpg
 youtube-thumbnail: /assets/podcast/incentive-alignment-bonds-paper-youtube.jpg
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
+
 **The Problem in One Sentence:** Politicians are rewarded for funding low-NSV programs (military beyond deterrence: 0.7:1 BCR) and punished for funding high-NSV programs (medical research: 100:1+ BCR) because concentrated interests outlobby diffuse beneficiaries, so government spending is optimized for lobbying intensity rather than marginal societal value.
 
 **The Solution:** Incentive Alignment Bonds (IABs) flip the incentives by creating a capital pool that rewards politicians (with campaign support and post-office career opportunities) for funding high-NSV programs, making marginal societal value optimization the career-maximizing choice.
@@ -97,6 +105,8 @@ This paper demonstrates that the adoption problem (getting welfare-improving pol
 - **Complementary mechanisms prevent allocation capture** once resources are redirected (Section 6.1)
 - **Bootstrap problem is solvable**: ROI potential attracts risk-tolerant capital; capital asymmetry ensures scalability once proof-of-concept succeeds (Section 8.1)
 - **Dominant assurance contract makes investor participation the strictly dominant strategy**, closing the end-to-end incentive chain from citizen coordination through treaty passage (Section 8.2)
+
+**Scale note.** The prize here is not marginal. Under the project's best-case governance ceiling, the recoverable upside is {{< var political_dysfunction_global_opportunity_cost_total >}} per year. The 20-year Optimal-Governance Path reaches {{< var wishonia_trajectory_gdp_vs_current_trajectory_multiplier_year_20 >}} the Earth baseline, raises average income to {{< var wishonia_trajectory_avg_income_year_20 >}} versus {{< var current_trajectory_avg_income_year_20 >}} on the status-quo path, and reaches {{< var wishonia_trajectory_gdp_year_20 >}} in total output. This paper focuses on the adoption mechanism that could make movement toward that ceiling politically profitable; the full derivation lives in [The Political Dysfunction Tax](political-dysfunction-tax.qmd) [@political-dysfunction-tax-paper-2025].
 
 ### Reader's Guide
 
@@ -1008,7 +1018,7 @@ This criticism deserves a careful response, as it goes to the heart of whether I
 
 **However, the objection retains force:** IABs do not democratize power; they redirect it. Whose conception of "public good" defines the NSV ranking? What prevents IAB funders from capturing the scoring process? What prevents redirected resources from being recaptured by new concentrated interests?
 
-**The structural answer:** The four-layer governance stack (Section 6) addresses these concerns. Layer 0 (Wishocracy for Domain Ranking) democratizes *which domains* receive funding via citizen pairwise comparisons aggregated with expert BCR data. Layer 2 (Wishocracy for Within-Domain Allocation) democratizes allocation *within* approved domains. Random pairwise sampling makes advertising economically infeasible (~0.1% appearance probability per campaign → $200M cost to shift rankings → cheaper to just do the research). IABs (Layer 1) solve only the *adoption* problem: getting politicians to vote for reallocation. Democratic legitimacy is addressed at Layers 0 and 2, not Layer 1.
+**The structural answer:** The four-layer governance stack (Section 6) addresses these concerns. Layer 0 ([Wishocracy](../solution/wishocracy.qmd) [@wishocracy-paper-2025] for Domain Ranking) democratizes *which domains* receive funding via citizen pairwise comparisons aggregated with expert BCR data. Layer 2 (Wishocracy for Within-Domain Allocation) democratizes allocation *within* approved domains. Random pairwise sampling makes advertising economically infeasible (~0.1% appearance probability per campaign → $200M cost to shift rankings → cheaper to just do the research). IABs (Layer 1) solve only the *adoption* problem: getting politicians to vote for reallocation. Democratic legitimacy is addressed at Layers 0 and 2, not Layer 1.
 
 ### Unintended Consequences
 
@@ -1057,7 +1067,7 @@ Layer 0 rankings exist but are ignored because they don't appear in politician u
 
 **Other governance mechanisms:**
 
-1. **Algorithmic governance (Optimocracy) faces capture at the design level:** whoever controls the algorithm specification controls outcomes. However, this can be mitigated through constitutional-level metric selection (via Wishocracy), decentralized oracles, and smart contract enforcement. See the [Optimocracy paper](https://optimocracy.warondisease.org) for detailed mechanism design addressing these challenges.
+1. **Algorithmic governance (Optimocracy) faces capture at the design level:** whoever controls the algorithm specification controls outcomes. However, this can be mitigated through constitutional-level metric selection (via Wishocracy), decentralized oracles, and smart contract enforcement. See the [Optimocracy paper](https://optimocracy.warondisease.org) [@optimocracy-paper-2025] for detailed mechanism design addressing these challenges.
 
 2. **Futarchy (prediction markets for policy)** is intellectually elegant but faces adoption barriers. Who decides the outcome metrics? How do you prevent market manipulation? IABs could bootstrap futarchy by making politicians willing to adopt prediction-market-based governance.
 

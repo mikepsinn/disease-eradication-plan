@@ -25,7 +25,7 @@ load_project_dotenv(Path(__file__).parent.parent.parent)
 
 # --- Configuration ---
 IMAGEN_MODEL_ID = "imagen-4.0-generate-001"
-GEMINI_IMAGE_MODEL_ID = "gemini-3-pro-image-preview"
+GEMINI_IMAGE_MODEL_ID = "gemini-3.1-flash-image-preview"  # Nano Banana 2
 
 # --- API Setup ---
 GOOGLE_GENERATIVE_AI_API_KEY = os.getenv("GOOGLE_GENERATIVE_AI_API_KEY")

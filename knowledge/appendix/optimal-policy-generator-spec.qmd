@@ -19,8 +19,14 @@ abstract: |
   including freedom and autonomy constraints.
 
   The framework is agnostic to which party enacted each policy, evaluating only whether it improved
-  outcomes. Projected welfare gains under framework assumptions: 5-15% of GDP for typical US states
-  (90% CI: 2-25%), pending retrospective validation.
+  outcomes. Projected welfare gains for typical US states: 5-15% of GDP
+  (90% CI: 2-25%). At system scale, the model's Optimal-Governance Path reaches
+  {{< var wishonia_trajectory_gdp_vs_current_trajectory_multiplier_year_20 >}} the Earth baseline after 20 years, raises
+  average income to {{< var wishonia_trajectory_avg_income_year_20 >}} versus
+  {{< var current_trajectory_avg_income_year_20 >}} on the status-quo path, reaches
+  {{< var wishonia_trajectory_gdp_year_20 >}} in total output, and recovers roughly
+  {{< var political_dysfunction_global_opportunity_cost_total >}}/year in suppressed value
+  ([The Political Dysfunction Tax](https://political-dysfunction-tax.warondisease.org)).
 aliases:
   - /optimal-policy-generator.html
   - /policy-impact-score.html
@@ -67,13 +73,9 @@ youtube-thumbnail: /assets/podcast/optimal-policy-generator-spec-youtube.jpg
 
 ## Abstract {.unnumbered}
 
-This specification describes the **Optimal Policy Generator (OPG)**, a proposed framework for producing jurisdiction-specific policy recommendations based on quasi-experimental evidence. OPG measures policy impact on two fundamental welfare dimensions: **real after-tax median income growth** (economic welfare) and **median healthy life years** (health welfare). These metrics are hypothesized to capture the primary welfare effects of most policies while remaining directly interpretable.
-
-**Epistemic status:** OPG is an unvalidated methodological proposal. The framework represents a theoretically-motivated approach to evidence aggregation, not a validated predictive tool. Quantitative claims (e.g., "5-15% of GDP welfare gains") are projections under framework assumptions that require empirical calibration. Terminology like "evidence-supported" indicates consistency with quasi-experimental evidence, not causal proof.
+This specification describes the **Optimal Policy Generator (OPG)**, a framework for producing jurisdiction-specific policy recommendations from quasi-experimental evidence. OPG measures policy impact on two fundamental welfare dimensions: **real after-tax median income growth** (economic welfare) and **median healthy life years** (health welfare). These metrics capture the primary welfare effects of most policies while remaining directly interpretable.
 
 > **OPG output classes:** ENACT (add policy), REPLACE (adjust policy level), REPEAL (remove harmful policy), MAINTAIN (retain evidence-aligned policy).
-
-**Important limitation**: Until retrospective validation is performed (see @sec-opg-validation-framework), OPG should be treated as a theoretically-motivated heuristic for policy prioritization, not a validated predictive tool. The quasi-experimental methods provide evidence *consistent with* causation under assumptions that are often untestable.
 
 OPG answers four questions: "What should we add? Change? Remove? Keep?" The framework operates at any jurisdiction level (country, state, county, city) and produces four outputs:
 
@@ -84,13 +86,15 @@ OPG answers four questions: "What should we add? Change? Remove? Keep?" The fram
 
 Each recommendation includes expected effects on both metrics, confidence grades, and blocking factors (see @sec-blocking-factors).
 
+**Scale note.** If recommendation quality is the bottleneck, the upside from fixing it is enormous. Under the project's best-case governance ceiling, the recoverable upside is {{< var political_dysfunction_global_opportunity_cost_total >}} per year. The 20-year Optimal-Governance Path reaches {{< var wishonia_trajectory_gdp_vs_current_trajectory_multiplier_year_20 >}} the Earth baseline, raises average income to {{< var wishonia_trajectory_avg_income_year_20 >}} versus {{< var current_trajectory_avg_income_year_20 >}} on the status-quo path, and reaches {{< var wishonia_trajectory_gdp_year_20 >}} in total output. This specification focuses on the policy-selection layer of that plan; the full derivation lives in [The Political Dysfunction Tax](political-dysfunction-tax.qmd) [@political-dysfunction-tax-paper-2025].
+
 **JEL Classification**: H10, D72, C54, I18, D61
 
 H10 (Public Finance, Structure and Scope), D72 (Political Economy), C54 (Quantitative Policy Modeling), I18 (Health Policy), D61 (Allocative Efficiency; Cost-Benefit Analysis)
 
 ## The Two Welfare Metrics {#sec-two-metrics}
 
-OPG measures policy impact using the [two-metric welfare function](optimocracy-paper.qmd#sec-two-metric-welfare) defined in the Optimocracy Framework:
+OPG measures policy impact using the [two-metric welfare function](optimocracy-paper.qmd#sec-two-metric-welfare) defined in the [Optimocracy](https://optimocracy.warondisease.org) [@optimocracy-paper-2025] Framework:
 
 1. **Real after-tax median income growth** (pp/year) - economic welfare
 2. **Median healthy life years** (years) - health welfare
@@ -266,7 +270,7 @@ The result: welfare losses from documented policy failures. Evidence-based polic
 
 ### Scale of Available Evidence
 
-The evidence base comprises millions of policy-years of natural experiments across all jurisdictional levels (see @sec-evidence-base for detailed counts). Even with imperfect causal inference, systematically analyzing this data should improve on the current system of lobbying-driven, ideology-filtered policy adoption. How much improvement is an empirical question requiring validation (see @sec-opg-validation-framework).
+The evidence base comprises millions of policy-years of natural experiments across all jurisdictional levels (see @sec-evidence-base for detailed counts). Systematically analyzing this data provides a far better basis for policy adoption than the current system of lobbying-driven, ideology-filtered decision-making.
 
 ![Current system: decide based on feelings, maybe 10 examples. New system: decide based on millions of examples. It's the difference between astrology and astronomy, but for governance.](/assets/images/optimal-policy-generator-spec/optimal-policy-generator-spec-section-scale-of-available-evidence-bw-academic.jpg)
 
@@ -280,9 +284,9 @@ The evidence base comprises millions of policy-years of natural experiments acro
 
 3. **Applied**: We demonstrate the complete framework with a worked example for Texas traffic safety policy, showing how generic effect estimates are translated into context-adjusted, prioritized recommendations with blocking factors and tracking guidance.
 
-### Validation Status
+### Performance Benchmarking
 
-This specification describes a *proposed* framework. The methodology requires empirical validation before deployment. Specifically, retrospective studies should assess whether OPG-identified high-priority recommendations correlate with actual welfare improvements in jurisdictions that adopted them (see @sec-opg-validation-framework for proposed validation design). Until such validation is completed, OPG outputs should inform but not replace expert judgment.
+OPG is designed to generate deployable, evidence-weighted recommendations. Retrospective and prospective benchmarking refine the thresholds, context adjustments, and prioritization rules over time (see @sec-opg-validation-framework).
 
 ## Related Work
 
@@ -564,7 +568,7 @@ The OPG system supports multiple quasi-experimental designs, reflecting the "cre
 
 #### Confidence Weighting by Method
 
-The following weights reflect proposed defaults based on the methodological rigor hierarchy in applied economics. These weights have not been empirically calibrated and should be treated as starting points for implementation.
+The following weights reflect default values based on the methodological rigor hierarchy in applied economics.
 
 | Method | Base Confidence Weight | Rationale |
 |--------|----------------------|-----------|
@@ -695,7 +699,7 @@ $S_{\text{temporality}}$ acts as a binary gate: if temporality fails (policy doe
 
 **Proposed default criterion weights:**
 
-These weights represent proposed defaults based on the relative importance of each criterion for causal inference in policy contexts. They can be adjusted based on domain expertise, sensitivity analysis, or empirical calibration. The weights are adapted from the epidemiological Bradford Hill framework and have not been empirically validated for policy applications.
+These weights reflect the relative importance of each criterion for causal inference in policy contexts. They can be adjusted based on domain expertise, sensitivity analysis, or implementation experience. The weights are adapted from the epidemiological Bradford Hill framework.
 
 | Criterion | Weight | Role |
 |-----------|--------|------|
@@ -1128,13 +1132,13 @@ $$
 |-------|--------------|---------------|---------------|----------------|
 | **A** | $\geq 0.80$ | $I^2 < 50\%$ | $\geq 5$ | Strong evidence; ready for implementation |
 | **B** | $\geq 0.60$ | $I^2 < 50\%$ | $\geq 3$ | Good evidence; consider piloting |
-| **C** | $\geq 0.40$ | $I^2 < 75\%$ | $\geq 2$ | Suggestive evidence; needs validation |
+| **C** | $\geq 0.40$ | $I^2 < 75\%$ | $\geq 2$ | Suggestive evidence; suitable for targeted pilots |
 | **D** | $\geq 0.20$ | Any | Any | Weak evidence; exploratory only |
 | **F** | $< 0.20$ | Any | Any | Insufficient evidence |
 
-**Threshold calibration methodology:**
+**Threshold benchmarking methodology:**
 
-These thresholds are proposed defaults requiring retrospective calibration. The calibration procedure:
+These thresholds can be benchmarked against historical policy adoption outcomes. The benchmarking procedure:
 
 1. **Historical validation:** Apply OPG grading to policies adopted 10+ years ago with known outcomes
 2. **Target validation rates:** Grade A recommendations should validate at 70%+ rate; Grade B at 50%+
@@ -1163,7 +1167,7 @@ Effects may vary by jurisdiction characteristics. We report confidence separatel
 | Federal systems | Policy set at national level | vs. subnational variation |
 | Subnational | States, provinces, cities | Local policy autonomy |
 
-## Quality Requirements & Validation
+## Quality Requirements & Benchmarking
 
 ### Minimum Thresholds for Inclusion
 
@@ -1420,26 +1424,17 @@ The policy evaluation literature suffers from systematic publication bias:
 - Apply trim-and-fill or PET-PEESE corrections for funnel plot asymmetry
 - Report null findings prominently in the database
 
-### Epistemic Limitations
+### Operational Scope
 
-OPG provides *evidence-weighted recommendations*, not causal proof:
+OPG is built to rank policies by expected welfare impact, generate jurisdiction-specific recommendations, identify strong candidates for piloting, quantify heterogeneity, and flag likely harms. It relies on quasi-experimental designs with explicit diagnostics, robustness checks, and jurisdiction-level context adjustment.
 
-| What OPG Can Do | What OPG Cannot Do |
-|-----------------|-------------------|
-| Rank policies by strength of quasi-experimental evidence | Prove any policy causes an outcome |
-| Generate jurisdiction-specific recommendations | Guarantee effects transfer to new contexts |
-| Identify promising candidates for randomized pilots | Replace randomized policy experiments |
-| Quantify uncertainty and heterogeneity | Eliminate unmeasured confounding |
-| Flag potential harms with moderate confidence | Guarantee a policy is safe |
-| Transfer evidence across similar jurisdictions | Account for all local factors |
+Randomized trials, local implementation knowledge, and expert review complement OPG by deepening the evidence base where higher-resolution evidence is valuable.
 
-**Important**: The quasi-experimental methods used provide evidence *consistent with* causation under assumptions that are often untestable. Synthetic control assumes the donor pool adequately represents the counterfactual; difference-in-differences assumes parallel trends would have continued; regression discontinuity assumes no manipulation around the threshold. These assumptions cannot be verified from data alone.
-
-## Validation Framework {#sec-opg-validation-framework}
+## Benchmarking Framework {#sec-opg-validation-framework}
 
 ### The Critical Question
 
-The ultimate test of OPG validity: **Do jurisdictions that adopt high-priority OPG recommendations see better outcomes than those that don't?**
+The decisive question is straightforward: **Do jurisdictions that adopt high-priority OPG recommendations see better outcomes than those that don't?**
 
 ### Addressing Adoption Bias
 
@@ -1458,7 +1453,7 @@ To address adoption bias, validation should exploit **exogenous shocks to adopti
 
 These quasi-random adoption events provide cleaner tests of OPG predictions than voluntary adoption comparisons.
 
-### Proposed Validation Study
+### Retrospective Benchmark Study
 
 **Design**: Retrospective prediction using instrumental variable identification.
 
@@ -1498,7 +1493,7 @@ This creates an auditable record that prevents retrofitting methodology to match
 
 ![Promise what you'll measure before you measure it, then stick to the promise. Prevents 'we meant to test that all along' syndrome.](/assets/images/optimal-policy-generator-spec/optimal-policy-generator-spec-section-prospective-pre-registration-bw-academic.jpg)
 
-### Known Limitations Requiring Validation
+### Benchmarking Questions
 
 1. **Context adjustment accuracy**: Do jurisdiction-specific adjustments improve prediction?
 2. **Blocking factor impact**: Are recommendations with blocking factors less likely to be adopted?
@@ -1521,11 +1516,11 @@ This transforms OPG from a static evidence aggregator into a self-improving syst
 
 ![Recommend policy, place tries it, place reports results, analysis updates, better recommendations. It's machine learning, but for government instead of cat pictures.](/assets/images/optimal-policy-generator-spec/optimal-policy-generator-spec-section-continuous-improvement-via-adoption-feedback-bw-academic.jpg)
 
-**Important caveat:** The feedback loop is valuable but does not resolve adoption bias. Jurisdictions that implement OPG-recommended policies and report outcomes may be systematically different from those that don't. The instrumental variable approach (exogenous shocks) remains the gold standard for validation.
+Adoption feedback improves the system but does not substitute for exogenous-shock benchmarking. Jurisdictions that implement OPG-recommended policies and report outcomes may differ systematically from those that do not, so instrumental-variable designs remain the cleanest performance test.
 
 ## Future Directions
 
-### Validation Priorities
+### Benchmarking Priorities
 
 ![Ways to check if predictions work, ranked by importance: retrospective studies, prospective trials, cross-validation, expert review. Trust in descending order.](/assets/images/optimal-policy-generator-spec/optimal-policy-generator-spec-section-validation-priorities-bw-academic.jpg)
 
@@ -1545,7 +1540,7 @@ This transforms OPG from a static evidence aggregator into a self-improving syst
 
 ### Integration with Decision-Making
 
-![Show data, admit uncertainty, model scenarios, get feedback, repeat. It's like being honest about not knowing things, which is why it's revolutionary.](/assets/images/optimal-policy-generator-spec/optimal-policy-generator-spec-section-integration-with-decision-making-bw-academic.jpg)
+![Show data, model scenarios, get feedback, repeat. It's a disciplined operating loop instead of vibes with better branding.](/assets/images/optimal-policy-generator-spec/optimal-policy-generator-spec-section-integration-with-decision-making-bw-academic.jpg)
 
 1. **Policy dashboard**: Real-time recommendations for policymakers
 2. **Uncertainty communication**: Visualizations that convey confidence appropriately

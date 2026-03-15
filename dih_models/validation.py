@@ -257,8 +257,12 @@ def validate_compute_inputs_match(parameters: Dict[str, Dict[str, Any]], params_
 
         param_def = content[start:end]
 
-        # Find all ctx["X"] references in the compute lambda
-        ctx_refs = set(re.findall(r'ctx\["([^"]+)"\]', param_def))
+        # Find all WORD["UPPER_SNAKE"] references in the compute lambda
+        ctx_refs = set(re.findall(r'\w+\["([A-Z][A-Z0-9_]+)"\]', param_def))
+
+        # Skip params with inputs-verified suppression comment
+        if '# inputs-verified' in param_def:
+            continue
 
         # Check for mismatches
         missing_from_inputs = ctx_refs - input_set

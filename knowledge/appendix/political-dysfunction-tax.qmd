@@ -3,7 +3,18 @@ title: The Political Dysfunction Tax
 subtitle: A Forensic Audit of Global Governance Efficiency
 description: Governance dysfunction imposes large per-person annual costs and suppresses long-run compounding. This paper quantifies the opportunity ledger and efficiency gap with model-linked parameters.
 abstract: |
-  Governance inefficiency imposes large per-person annual costs and suppresses compound growth. This paper quantifies a global opportunity ledger and an efficiency score using explicit, source-linked parameters, then compares status-quo and reform trajectories using the same model base. Incentive Alignment Bonds (IABs), which tie investor returns to verified governance improvements, are presented as the mechanism to make removal of waste-line items privately profitable.
+  Governance dysfunction suppresses roughly {{< var political_dysfunction_global_opportunity_cost_total >}}
+  in recoverable value each year. Under this paper's 20-year transition model, the Treaty-Only Path
+  reaches {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_20 >}} the Earth baseline
+  ({{< var treaty_trajectory_gdp_year_20 >}}), while the full Optimal-Governance Path reaches
+  {{< var wishonia_trajectory_gdp_vs_current_trajectory_multiplier_year_20 >}} the Earth baseline, raises average income to
+  {{< var wishonia_trajectory_avg_income_year_20 >}} versus {{< var current_trajectory_avg_income_year_20 >}} on the
+  status-quo path, and reaches {{< var wishonia_trajectory_gdp_year_20 >}} in total output. This paper is
+  the project's canonical
+  derivation of that ceiling from an explicit waste ledger, opportunity ledger, and source-linked
+  parameter model. [Incentive Alignment Bonds](https://iab.warondisease.org) are presented as the adoption mechanism, and
+  full formulas, uncertainty ranges, and sensitivity outputs appear in
+  [Methodology, Parameters, and Calculations](https://political-dysfunction-tax.warondisease.org/calculations.html).
 aliases:
   - /political-dysfunction-tax.html
 author:
@@ -44,20 +55,883 @@ This paper documents {{< var political_dysfunction_global_opportunity_cost_total
 
 But the annual figure is only the static loss. The deeper cost is compound: the dysfunction tax doesn't just reduce current output, it suppresses the growth rate itself. Delayed cures mean sicker, less productive workers. Migration restrictions prevent talent from reaching high-productivity environments. Regulatory friction slows R&D spillover. Each of these is a brake on compound growth, not a one-time deduction.
 
-Under current governance, global GDP per capita grows at approximately 2.5% annually from a base of {{< var global_avg_income_2025 >}}. This 2.5% rate was itself achieved *while paying the dysfunction tax*. Removing the tax does not merely shift the level upward; it removes structural constraints on growth. The companion GDP trajectories analysis models three direct compounding channels (spending reallocation with R&D spillover, accelerated disease cures, and non-health dysfunction-capital reallocation to highest-MV uses), yielding a {{< var wishonia_path_cagr_year_20 >}} transition CAGR over the first 20 years.
+Under current governance, global GDP per capita grows at approximately 2.5% annually from a base of {{< var global_avg_income_2025 >}}. This 2.5% rate was itself achieved *while paying the dysfunction tax*. Removing the tax does not merely shift the level upward; it removes structural constraints on growth. The 20-year transition path used in this paper models three direct compounding channels: spending reallocation with R&D spillover, accelerated disease cures, and non-health dysfunction-capital reallocation to higher-value uses.
 
 The per-person 20-year implications under the same model base:
 
 | Scenario | Assumed Growth | Starting Per Capita | Year-20 Average Income |
 |:--|:--|:--|:--|
-| **Status quo (Earth baseline)** | {{< var gdp_baseline_growth_rate >}} for 20 years | {{< var global_avg_income_2025 >}} | **{{< var earth_avg_income_year_20 >}}** |
-| **Wishonia (full implementation path)** | {{< var wishonia_path_cagr_year_20 >}} for years 1-20 | {{< var global_avg_income_2025 >}} | **{{< var wishonia_path_avg_income_year_20 >}}** |
+| **Status quo (Earth baseline)** | {{< var gdp_baseline_growth_rate >}} for 20 years | {{< var global_avg_income_2025 >}} | **{{< var current_trajectory_avg_income_year_20 >}}** |
+| **Treaty-only path** | {{< var treaty_trajectory_cagr_year_20 >}} for years 1-20 | {{< var global_avg_income_2025 >}} | **{{< var treaty_trajectory_avg_income_year_20 >}}** |
+| **Optimal-Governance Path (full implementation)** | {{< var wishonia_trajectory_cagr_year_20 >}} for years 1-20 | {{< var global_avg_income_2025 >}} | **{{< var wishonia_trajectory_avg_income_year_20 >}}** |
 
 $$Y_{20} = Y_0 \times (1+g)^{20}$$
 
-At year 20, Wishonia average income is {{< var wishonia_path_avg_income_year_20 >}}, about {{< var wishonia_path_gdp_vs_earth_multiplier_year_20 >}} the Earth baseline.
+In aggregate terms, the treaty-only path reaches {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_20 >}} the Earth baseline by year 20 ({{< var treaty_trajectory_gdp_year_20 >}}). Full implementation reaches {{< var wishonia_trajectory_gdp_vs_current_trajectory_multiplier_year_20 >}} the Earth baseline, raises average income to {{< var wishonia_trajectory_avg_income_year_20 >}} versus {{< var current_trajectory_avg_income_year_20 >}} on the status-quo path, and reaches {{< var wishonia_trajectory_gdp_year_20 >}} in total output.
 
-The remainder of this paper derives the {{< var political_dysfunction_global_opportunity_cost_total >}} figure, then identifies the mechanism (Incentive Alignment Bonds) that could systematically close the gap by making each line item in the waste ledger privately profitable to eliminate.
+::: {.content-visible when-format="html"}
+### Interactive Projection
+
+This calculator scales the paper's published growth assumptions to a household income of your choosing. It is an illustrative projection, not a claim that any individual wage path would mechanically match the model.
+
+```{=html}
+<style>
+.pdt-interactive-projection {
+    --pdt-border: var(--book-border, #d4c5b9);
+    --pdt-accent: var(--book-accent, #8b7355);
+    --pdt-ink: var(--book-heading, #1a1a1a);
+    --pdt-soft: var(--book-light, #f9f8f3);
+    --pdt-muted: #6f655d;
+    --pdt-status: #6f655d;
+    --pdt-treaty: #8b7355;
+    --pdt-full: #1a1a1a;
+    margin: 2rem 0 3rem 0;
+    padding: 1.5rem;
+    border: 1px solid var(--pdt-border);
+    background:
+        linear-gradient(180deg, rgba(249, 248, 243, 0.92) 0%, rgba(255, 255, 255, 0.98) 100%);
+    box-shadow: 0 14px 36px rgba(26, 26, 26, 0.05);
+}
+
+.pdt-interactive-projection p {
+    margin-bottom: 0;
+}
+
+.pdt-projection-controls {
+    display: grid;
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.pdt-projection-control-group {
+    display: grid;
+    gap: 0.45rem;
+}
+
+.pdt-projection-control-grid {
+    display: grid;
+    gap: 1rem;
+}
+
+.pdt-projection-control-group label {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--pdt-ink);
+}
+
+.pdt-projection-control-group input[type="number"],
+.pdt-projection-control-group input[type="range"] {
+    width: 100%;
+}
+
+.pdt-projection-control-group input[type="number"] {
+    padding: 0.7rem 0.85rem;
+    border: 1px solid var(--pdt-border);
+    background: #fff;
+    color: var(--pdt-ink);
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+.pdt-projection-control-group input[type="range"] {
+    accent-color: var(--pdt-accent);
+}
+
+.pdt-projection-helper {
+    font-size: 0.9rem;
+    color: var(--pdt-muted);
+    line-height: 1.5;
+}
+
+.pdt-projection-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.pdt-projection-button {
+    border: 1px solid var(--pdt-border);
+    background: #fff;
+    color: var(--pdt-ink);
+    padding: 0.6rem 0.9rem;
+    font-size: 0.95rem;
+    font-family: inherit;
+    cursor: pointer;
+    transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.pdt-projection-button:hover,
+.pdt-projection-button:focus-visible {
+    border-color: var(--pdt-accent);
+    transform: translateY(-1px);
+}
+
+.pdt-projection-metrics {
+    display: grid;
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.pdt-projection-metric {
+    padding: 1rem;
+    border: 1px solid var(--pdt-border);
+    background: #fff;
+}
+
+.pdt-projection-metric-label {
+    font-size: 0.84rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--pdt-muted);
+    margin-bottom: 0.45rem;
+}
+
+.pdt-projection-metric-value {
+    font-size: clamp(1.4rem, 2vw, 2rem);
+    line-height: 1.1;
+    color: var(--pdt-ink);
+    font-family: 'Crimson Text', 'Baskerville', 'Georgia', serif;
+}
+
+.pdt-projection-metric-meta {
+    margin-top: 0.45rem;
+    font-size: 0.93rem;
+    color: var(--pdt-muted);
+    line-height: 1.45;
+}
+
+.pdt-projection-chart-shell {
+    margin-top: 1.75rem;
+    padding: 1rem;
+    border: 1px solid var(--pdt-border);
+    background: #fff;
+}
+
+.pdt-projection-chart-header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 0.75rem;
+    margin-bottom: 0.9rem;
+}
+
+.pdt-projection-chart-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--pdt-ink);
+}
+
+.pdt-projection-chart-subtitle {
+    font-size: 0.92rem;
+    color: var(--pdt-muted);
+}
+
+.pdt-projection-legend {
+    display: grid;
+    gap: 0.75rem;
+    margin: 0 0 1rem 0;
+}
+
+.pdt-projection-legend-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.95rem;
+}
+
+.pdt-projection-legend-left {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    min-width: 0;
+}
+
+.pdt-projection-swatch {
+    width: 1rem;
+    height: 1rem;
+    border-radius: 999px;
+    flex: 0 0 auto;
+}
+
+.pdt-projection-swatch.status {
+    background: var(--pdt-status);
+}
+
+.pdt-projection-swatch.treaty {
+    background: var(--pdt-treaty);
+}
+
+.pdt-projection-swatch.full {
+    background: var(--pdt-full);
+}
+
+.pdt-projection-legend-value {
+    font-weight: 600;
+    color: var(--pdt-ink);
+    white-space: nowrap;
+}
+
+.pdt-projection-chart-frame {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.pdt-projection-chart {
+    width: 100%;
+    min-width: 280px;
+    height: auto;
+    display: block;
+}
+
+.pdt-axis,
+.pdt-grid-line {
+    fill: none;
+    stroke-linecap: square;
+}
+
+.pdt-axis {
+    stroke: var(--pdt-border);
+    stroke-width: 1.2;
+}
+
+.pdt-grid-line {
+    stroke: rgba(212, 197, 185, 0.7);
+    stroke-width: 1;
+    stroke-dasharray: 3 5;
+}
+
+.pdt-tick-label {
+    fill: var(--pdt-muted);
+    font-size: 12px;
+    font-family: inherit;
+}
+
+.pdt-line {
+    fill: none;
+    stroke-width: 3;
+    vector-effect: non-scaling-stroke;
+}
+
+.pdt-line.status {
+    stroke: var(--pdt-status);
+    stroke-dasharray: 7 6;
+}
+
+.pdt-line.treaty {
+    stroke: var(--pdt-treaty);
+}
+
+.pdt-line.full {
+    stroke: var(--pdt-full);
+}
+
+.pdt-endpoint {
+    stroke: #fff;
+    stroke-width: 2;
+}
+
+.pdt-endpoint.status {
+    fill: var(--pdt-status);
+}
+
+.pdt-endpoint.treaty {
+    fill: var(--pdt-treaty);
+}
+
+.pdt-endpoint.full {
+    fill: var(--pdt-full);
+}
+
+.pdt-projection-summary,
+.pdt-projection-footnote {
+    margin-top: 1rem;
+    font-size: 0.96rem;
+    line-height: 1.6;
+}
+
+.pdt-projection-summary {
+    color: var(--pdt-ink);
+}
+
+.pdt-projection-footnote {
+    color: var(--pdt-muted);
+}
+
+.pdt-projection-footnote a {
+    color: inherit;
+}
+
+@media (min-width: 720px) {
+    .pdt-projection-control-grid {
+        grid-template-columns: 1.2fr 0.8fr 1fr;
+    }
+
+    .pdt-projection-metrics {
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+    }
+
+    .pdt-projection-legend {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 719px) {
+    .pdt-interactive-projection {
+        padding: 1rem;
+    }
+
+    .pdt-projection-chart-shell {
+        padding: 0.85rem;
+    }
+}
+</style>
+
+<div id="pdt-interactive-projection" class="pdt-interactive-projection">
+  <span id="pdt-source-base-income" class="visually-hidden">{{< var global_avg_income_2025 >}}</span>
+  <span id="pdt-source-baseline-rate" class="visually-hidden">{{< var gdp_baseline_growth_rate >}}</span>
+  <span id="pdt-source-treaty-rate" class="visually-hidden">{{< var treaty_trajectory_cagr_year_20 >}}</span>
+  <span id="pdt-source-full-rate" class="visually-hidden">{{< var wishonia_trajectory_cagr_year_20 >}}</span>
+  <span id="pdt-source-tax" class="visually-hidden">{{< var political_dysfunction_tax_per_person_annual >}}</span>
+
+  <div class="pdt-projection-controls">
+    <div class="pdt-projection-control-grid">
+      <div class="pdt-projection-control-group">
+        <label for="pdt-input-income">Current annual household income</label>
+        <input id="pdt-input-income" type="number" min="1" step="1000" inputmode="numeric" aria-describedby="pdt-auto-income-note">
+        <div id="pdt-auto-income-note" class="pdt-projection-helper"></div>
+      </div>
+
+      <div class="pdt-projection-control-group">
+        <label for="pdt-input-household">Household size</label>
+        <input id="pdt-input-household" type="number" min="1" max="10" step="1" value="4" inputmode="numeric">
+        <div class="pdt-projection-helper">Set this to <strong>1</strong> for a single-person view.</div>
+      </div>
+
+      <div class="pdt-projection-control-group">
+        <label for="pdt-input-horizon">Projection horizon: <span id="pdt-horizon-label">20 years</span></label>
+        <input id="pdt-input-horizon" type="range" min="1" max="20" step="1" value="20">
+        <div class="pdt-projection-helper">Uses the annualized rates shown in the table above.</div>
+      </div>
+    </div>
+
+    <div class="pdt-projection-actions">
+      <button id="pdt-reset-income" class="pdt-projection-button" type="button">Reset to global average for this household</button>
+      <span class="pdt-projection-helper">Default starting point = current global average income multiplied by your selected household size.</span>
+    </div>
+  </div>
+
+  <div class="pdt-projection-metrics">
+    <div class="pdt-projection-metric">
+      <div class="pdt-projection-metric-label">Annual dysfunction tax now</div>
+      <div id="pdt-output-tax" class="pdt-projection-metric-value"></div>
+      <div id="pdt-output-tax-meta" class="pdt-projection-metric-meta"></div>
+    </div>
+
+    <div class="pdt-projection-metric">
+      <div class="pdt-projection-metric-label">Burden vs current income</div>
+      <div id="pdt-output-tax-share" class="pdt-projection-metric-value"></div>
+      <div class="pdt-projection-metric-meta">Annual household burden as a share of the income figure you entered.</div>
+    </div>
+
+    <div class="pdt-projection-metric">
+      <div id="pdt-output-status-label" class="pdt-projection-metric-label">Status quo in year 20</div>
+      <div id="pdt-output-status" class="pdt-projection-metric-value"></div>
+      <div id="pdt-output-status-meta" class="pdt-projection-metric-meta"></div>
+    </div>
+
+    <div class="pdt-projection-metric">
+      <div id="pdt-output-treaty-label" class="pdt-projection-metric-label">Treaty-only path in year 20</div>
+      <div id="pdt-output-treaty" class="pdt-projection-metric-value"></div>
+      <div id="pdt-output-treaty-meta" class="pdt-projection-metric-meta"></div>
+    </div>
+
+    <div class="pdt-projection-metric">
+      <div id="pdt-output-full-label" class="pdt-projection-metric-label">Full implementation in year 20</div>
+      <div id="pdt-output-full" class="pdt-projection-metric-value"></div>
+      <div id="pdt-output-full-meta" class="pdt-projection-metric-meta"></div>
+    </div>
+  </div>
+
+  <div class="pdt-projection-chart-shell">
+    <div class="pdt-projection-chart-header">
+      <div class="pdt-projection-chart-title">Projected annual household income path</div>
+      <div class="pdt-projection-chart-subtitle">Status quo vs treaty-only vs full implementation</div>
+    </div>
+
+    <div class="pdt-projection-legend">
+      <div class="pdt-projection-legend-item">
+        <span class="pdt-projection-legend-left"><span class="pdt-projection-swatch status"></span><span>Status quo</span></span>
+        <span id="pdt-legend-status" class="pdt-projection-legend-value"></span>
+      </div>
+      <div class="pdt-projection-legend-item">
+        <span class="pdt-projection-legend-left"><span class="pdt-projection-swatch treaty"></span><span>Treaty-only path</span></span>
+        <span id="pdt-legend-treaty" class="pdt-projection-legend-value"></span>
+      </div>
+      <div class="pdt-projection-legend-item">
+        <span class="pdt-projection-legend-left"><span class="pdt-projection-swatch full"></span><span>Full implementation</span></span>
+        <span id="pdt-legend-full" class="pdt-projection-legend-value"></span>
+      </div>
+    </div>
+
+    <div class="pdt-projection-chart-frame">
+      <svg id="pdt-projection-chart" class="pdt-projection-chart" viewBox="0 0 720 320" role="img" aria-labelledby="pdt-projection-chart-title pdt-projection-chart-desc">
+        <title id="pdt-projection-chart-title">Projected household income under three governance scenarios</title>
+        <desc id="pdt-projection-chart-desc">A line chart comparing the selected household income under the status quo, treaty-only, and full implementation paths for the chosen number of years.</desc>
+      </svg>
+    </div>
+  </div>
+
+  <p id="pdt-projection-summary" class="pdt-projection-summary" aria-live="polite"></p>
+  <p class="pdt-projection-footnote">This widget applies the published annualized 20-year growth rates above to the income number you enter. It is a conditional scaling exercise, not a personal guarantee. For the full parameter set, uncertainty ranges, and the paper's explicit 3-year ramp plus 17-year implementation framing, see <a href="https://political-dysfunction-tax.warondisease.org/calculations.html">Methodology, Parameters, and Calculations</a>.</p>
+
+  <noscript>
+    <p class="pdt-projection-footnote">JavaScript is required for the interactive projection. The static year-20 comparison table above still reflects the same underlying model.</p>
+  </noscript>
+</div>
+
+<script>
+(function() {
+  const root = document.getElementById('pdt-interactive-projection');
+  if (!root || root.dataset.initialized === 'true') {
+    return;
+  }
+  root.dataset.initialized = 'true';
+
+  function parseHumanMoney(text, fallback) {
+    if (!text) {
+      return fallback;
+    }
+
+    const clean = text.replace(/,/g, '').replace(/\u00a0/g, ' ');
+    const match = clean.match(/\$?\s*([0-9]+(?:\.[0-9]+)?)\s*([KMBT]?)/i);
+    if (!match) {
+      return fallback;
+    }
+
+    const value = Number.parseFloat(match[1]);
+    const suffix = (match[2] || '').toUpperCase();
+    const multiplier = { K: 1e3, M: 1e6, B: 1e9, T: 1e12 }[suffix] || 1;
+    return Number.isFinite(value) ? value * multiplier : fallback;
+  }
+
+  function parsePercent(text, fallback) {
+    if (!text) {
+      return fallback;
+    }
+
+    const match = text.match(/([0-9]+(?:\.[0-9]+)?)%/);
+    if (!match) {
+      return fallback;
+    }
+
+    const value = Number.parseFloat(match[1]);
+    return Number.isFinite(value) ? value / 100 : fallback;
+  }
+
+  function clamp(value, min, max) {
+    return Math.min(Math.max(value, min), max);
+  }
+
+  function incomeAtYear(startIncome, rate, year) {
+    return startIncome * Math.pow(1 + rate, year);
+  }
+
+  function cumulativeIncome(startIncome, rate, years) {
+    if (years <= 0) {
+      return 0;
+    }
+    if (rate === 0) {
+      return startIncome * years;
+    }
+    return startIncome * (1 + rate) * ((Math.pow(1 + rate, years) - 1) / rate);
+  }
+
+  const currencyFormatter = new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'USD',
+    maximumFractionDigits: 0
+  });
+
+  const compactCurrencyFormatter = new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'USD',
+    notation: 'compact',
+    maximumFractionDigits: 1
+  });
+
+  const percentFormatter = new Intl.NumberFormat('en-US', {
+    style: 'percent',
+    maximumFractionDigits: 0
+  });
+
+  const defaults = {
+    baseIncomePerPerson: parseHumanMoney(
+      root.querySelector('#pdt-source-base-income')?.textContent,
+      14400
+    ),
+    baselineRate: parsePercent(
+      root.querySelector('#pdt-source-baseline-rate')?.textContent,
+      0.025
+    ),
+    treatyRate: parsePercent(
+      root.querySelector('#pdt-source-treaty-rate')?.textContent,
+      0.179
+    ),
+    fullRate: parsePercent(
+      root.querySelector('#pdt-source-full-rate')?.textContent,
+      0.254
+    ),
+    annualTaxPerPerson: parseHumanMoney(
+      root.querySelector('#pdt-source-tax')?.textContent,
+      12600
+    )
+  };
+
+  const incomeInput = root.querySelector('#pdt-input-income');
+  const householdInput = root.querySelector('#pdt-input-household');
+  const horizonInput = root.querySelector('#pdt-input-horizon');
+  const resetButton = root.querySelector('#pdt-reset-income');
+  const autoIncomeNote = root.querySelector('#pdt-auto-income-note');
+  const horizonLabel = root.querySelector('#pdt-horizon-label');
+  const summary = root.querySelector('#pdt-projection-summary');
+  const chart = root.querySelector('#pdt-projection-chart');
+
+  const outputs = {
+    tax: root.querySelector('#pdt-output-tax'),
+    taxMeta: root.querySelector('#pdt-output-tax-meta'),
+    taxShare: root.querySelector('#pdt-output-tax-share'),
+    statusLabel: root.querySelector('#pdt-output-status-label'),
+    status: root.querySelector('#pdt-output-status'),
+    statusMeta: root.querySelector('#pdt-output-status-meta'),
+    treatyLabel: root.querySelector('#pdt-output-treaty-label'),
+    treaty: root.querySelector('#pdt-output-treaty'),
+    treatyMeta: root.querySelector('#pdt-output-treaty-meta'),
+    fullLabel: root.querySelector('#pdt-output-full-label'),
+    full: root.querySelector('#pdt-output-full'),
+    fullMeta: root.querySelector('#pdt-output-full-meta'),
+    legendStatus: root.querySelector('#pdt-legend-status'),
+    legendTreaty: root.querySelector('#pdt-legend-treaty'),
+    legendFull: root.querySelector('#pdt-legend-full')
+  };
+
+  let autoIncome = true;
+
+  function formatCurrency(value) {
+    return currencyFormatter.format(Math.round(value));
+  }
+
+  function formatCompactCurrency(value) {
+    if (Math.abs(value) < 1000000) {
+      return formatCurrency(value);
+    }
+    return compactCurrencyFormatter.format(value);
+  }
+
+  function formatPercent(value) {
+    return percentFormatter.format(value);
+  }
+
+  function formatMultiple(value) {
+    const rounded = value >= 10 ? value.toFixed(1) : value.toFixed(2);
+    return rounded.replace(/\.0$/, '') + 'x';
+  }
+
+  function householdSize() {
+    const parsed = Number.parseInt(householdInput.value, 10);
+    return clamp(Number.isFinite(parsed) ? parsed : 4, 1, 10);
+  }
+
+  function projectionYears() {
+    const parsed = Number.parseInt(horizonInput.value, 10);
+    return clamp(Number.isFinite(parsed) ? parsed : 20, 1, 20);
+  }
+
+  function autoIncomeForHousehold(size) {
+    return defaults.baseIncomePerPerson * size;
+  }
+
+  function currentIncome() {
+    const parsed = Number.parseFloat(incomeInput.value);
+    const fallback = autoIncomeForHousehold(householdSize());
+    if (!Number.isFinite(parsed) || parsed <= 0) {
+      return fallback;
+    }
+    return parsed;
+  }
+
+  function syncAutoIncome() {
+    if (!autoIncome) {
+      return;
+    }
+    incomeInput.value = String(Math.round(autoIncomeForHousehold(householdSize())));
+  }
+
+  function updateAutoIncomeNote() {
+    const size = householdSize();
+    const averageIncome = autoIncomeForHousehold(size);
+    autoIncomeNote.textContent =
+      formatCurrency(averageIncome) +
+      ' is the current global-average starting point for a household of ' +
+      size +
+      '.';
+  }
+
+  function createSvgElement(tag, attributes) {
+    const element = document.createElementNS('http://www.w3.org/2000/svg', tag);
+    Object.entries(attributes).forEach(([name, value]) => {
+      element.setAttribute(name, String(value));
+    });
+    return element;
+  }
+
+  function renderChart(startIncome, years) {
+    if (!chart) {
+      return;
+    }
+
+    chart.replaceChildren();
+
+    const width = 720;
+    const height = 320;
+    const margin = { top: 14, right: 16, bottom: 36, left: 72 };
+    const plotWidth = width - margin.left - margin.right;
+    const plotHeight = height - margin.top - margin.bottom;
+
+    const series = [
+      { key: 'status', rate: defaults.baselineRate },
+      { key: 'treaty', rate: defaults.treatyRate },
+      { key: 'full', rate: defaults.fullRate }
+    ].map((item) => ({
+      key: item.key,
+      points: Array.from({ length: years + 1 }, (_, year) => ({
+        year,
+        value: incomeAtYear(startIncome, item.rate, year)
+      }))
+    }));
+
+    const maxValue = Math.max(
+      ...series.flatMap((item) => item.points.map((point) => point.value))
+    ) * 1.08;
+
+    function x(year) {
+      if (years === 0) {
+        return margin.left;
+      }
+      return margin.left + (plotWidth * year) / years;
+    }
+
+    function y(value) {
+      return margin.top + plotHeight - (plotHeight * value) / maxValue;
+    }
+
+    for (let tick = 0; tick <= 4; tick += 1) {
+      const tickValue = (maxValue / 4) * tick;
+      const tickY = y(tickValue);
+      chart.appendChild(createSvgElement('line', {
+        x1: margin.left,
+        y1: tickY,
+        x2: width - margin.right,
+        y2: tickY,
+        class: 'pdt-grid-line'
+      }));
+      chart.appendChild(createSvgElement('text', {
+        x: margin.left - 10,
+        y: tickY + 4,
+        class: 'pdt-tick-label',
+        'text-anchor': 'end'
+      })).textContent = formatCompactCurrency(tickValue);
+    }
+
+    chart.appendChild(createSvgElement('line', {
+      x1: margin.left,
+      y1: margin.top,
+      x2: margin.left,
+      y2: height - margin.bottom,
+      class: 'pdt-axis'
+    }));
+    chart.appendChild(createSvgElement('line', {
+      x1: margin.left,
+      y1: height - margin.bottom,
+      x2: width - margin.right,
+      y2: height - margin.bottom,
+      class: 'pdt-axis'
+    }));
+
+    const xTickValues = Array.from(new Set([0, Math.round(years / 2), years])).sort((a, b) => a - b);
+    xTickValues.forEach((tickYear) => {
+      const tickX = x(tickYear);
+      chart.appendChild(createSvgElement('line', {
+        x1: tickX,
+        y1: height - margin.bottom,
+        x2: tickX,
+        y2: height - margin.bottom + 6,
+        class: 'pdt-axis'
+      }));
+      chart.appendChild(createSvgElement('text', {
+        x: tickX,
+        y: height - 10,
+        class: 'pdt-tick-label',
+        'text-anchor': 'middle'
+      })).textContent = tickYear + (tickYear === 1 ? ' year' : ' years');
+    });
+
+    series.forEach((item) => {
+      const pathData = item.points
+        .map((point, index) => (index === 0 ? 'M' : 'L') + ' ' + x(point.year) + ' ' + y(point.value))
+        .join(' ');
+      chart.appendChild(createSvgElement('path', {
+        d: pathData,
+        class: 'pdt-line ' + item.key
+      }));
+
+      const endpoint = item.points[item.points.length - 1];
+      chart.appendChild(createSvgElement('circle', {
+        cx: x(endpoint.year),
+        cy: y(endpoint.value),
+        r: 5,
+        class: 'pdt-endpoint ' + item.key
+      }));
+    });
+  }
+
+  function render() {
+    householdInput.value = String(householdSize());
+    horizonInput.value = String(projectionYears());
+    syncAutoIncome();
+    updateAutoIncomeNote();
+
+    const size = householdSize();
+    const years = projectionYears();
+    const income = currentIncome();
+    const annualTax = defaults.annualTaxPerPerson * size;
+
+    const statusIncome = incomeAtYear(income, defaults.baselineRate, years);
+    const treatyIncome = incomeAtYear(income, defaults.treatyRate, years);
+    const fullIncome = incomeAtYear(income, defaults.fullRate, years);
+    const statusCumulative = cumulativeIncome(income, defaults.baselineRate, years);
+    const treatyCumulative = cumulativeIncome(income, defaults.treatyRate, years);
+    const fullCumulative = cumulativeIncome(income, defaults.fullRate, years);
+
+    const taxShare = annualTax / income;
+    const treatyGain = treatyIncome - statusIncome;
+    const fullGain = fullIncome - statusIncome;
+
+    horizonLabel.textContent = years + (years === 1 ? ' year' : ' years');
+    outputs.statusLabel.textContent = 'Status quo in year ' + years;
+    outputs.treatyLabel.textContent = 'Treaty-only path in year ' + years;
+    outputs.fullLabel.textContent = 'Full implementation in year ' + years;
+
+    outputs.tax.textContent = formatCurrency(annualTax);
+    outputs.taxMeta.textContent =
+      formatCurrency(defaults.annualTaxPerPerson) +
+      ' per person times ' +
+      size +
+      (size === 1 ? ' household member.' : ' household members.');
+    outputs.taxShare.textContent = formatPercent(taxShare);
+
+    outputs.status.textContent = formatCurrency(statusIncome);
+    outputs.statusMeta.textContent =
+      formatMultiple(statusIncome / income) +
+      ' your current household income under the status quo path.';
+
+    outputs.treaty.textContent = formatCurrency(treatyIncome);
+    outputs.treatyMeta.textContent =
+      '+' +
+      formatCurrency(treatyGain) +
+      ' per year versus status quo by year ' +
+      years +
+      '.';
+
+    outputs.full.textContent = formatCurrency(fullIncome);
+    outputs.fullMeta.textContent =
+      '+' +
+      formatCurrency(fullGain) +
+      ' per year versus status quo by year ' +
+      years +
+      '.';
+
+    outputs.legendStatus.textContent = formatCurrency(statusIncome);
+    outputs.legendTreaty.textContent = formatCurrency(treatyIncome);
+    outputs.legendFull.textContent = formatCurrency(fullIncome);
+
+    summary.textContent =
+      'Starting from ' +
+      formatCurrency(income) +
+      ', the treaty-only path reaches ' +
+      formatMultiple(treatyIncome / statusIncome) +
+      ' the status-quo level by year ' +
+      years +
+      ', while full implementation reaches ' +
+      formatMultiple(fullIncome / statusIncome) +
+      '. Cumulative extra household income over ' +
+      years +
+      (years === 1 ? ' year: ' : ' years: ') +
+      '+' +
+      formatCurrency(treatyCumulative - statusCumulative) +
+      ' on the treaty-only path and +' +
+      formatCurrency(fullCumulative - statusCumulative) +
+      ' on the full path.';
+
+    renderChart(income, years);
+  }
+
+  householdInput.addEventListener('input', () => {
+    if (autoIncome) {
+      syncAutoIncome();
+    }
+    render();
+  });
+
+  incomeInput.addEventListener('input', () => {
+    autoIncome = incomeInput.value.trim() === '';
+    render();
+  });
+
+  incomeInput.addEventListener('blur', () => {
+    if (incomeInput.value.trim() === '') {
+      autoIncome = true;
+      syncAutoIncome();
+      render();
+    }
+  });
+
+  horizonInput.addEventListener('input', render);
+
+  resetButton.addEventListener('click', () => {
+    autoIncome = true;
+    syncAutoIncome();
+    render();
+  });
+
+  syncAutoIncome();
+  render();
+})();
+</script>
+```
+:::
+
+::: {.content-hidden when-format="html"}
+### Interactive Projection
+
+The interactive household calculator is available in the HTML version of this paper.
+:::
+
+The remainder of this paper derives the {{< var political_dysfunction_global_opportunity_cost_total >}} figure, then identifies the mechanism ([Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd) [@iab-paper-2025]) that could systematically close the gap by making each line item in the waste ledger privately profitable to eliminate.
+
+## Canonical Ceiling Scenario
+
+This paper is the canonical home for the project's detailed best-case calculation of what becomes physically and economically possible if governance bottlenecks are actually removed. The numbers here are a **conditional ceiling**, not a claim that any specific mechanism has already been proven to fully deliver it. They answer a narrower question: if humanity successfully adopts optimal-governance-style reforms, how much recoverable welfare is on the table?
+
+This paper also owns the transition-path framing. The 20-year model uses a 3-year ramp and 17 years of full implementation:
+
+$$
+GDP_{20} = GDP_0 \times (1 + g_{ramp})^3 \times (1 + g_{full})^{17}
+$$
+
+At current parameters, that implies {{< var treaty_trajectory_gdp_year_20 >}} for the treaty-only path and {{< var wishonia_trajectory_gdp_year_20 >}} for the full Optimal-Governance Path by year 20. The mechanism papers such as [Incentive Alignment Bonds](incentive-alignment-bonds-paper.qmd), [Wishocracy](wishocracy-paper.qmd) [@wishocracy-paper-2025], [Optimocracy](optimocracy-paper.qmd) [@optimocracy-paper-2025], [The Optimal Policy Generator](optimal-policy-generator-spec.qmd) [@opg-paper-2025], and [The Optimal Budget Generator](optimal-budget-generator-spec.qmd) [@obg-paper-2025] should cite those magnitudes directly and point back here for the full derivation rather than linking readers out to a separate book chapter. For parameter-level formulas, uncertainty ranges, and generated tornado and Monte Carlo outputs, see [Methodology, Parameters, and Calculations](https://political-dysfunction-tax.warondisease.org/calculations.html).
 
 ## Introduction: The Mechanism Design of Civilizational Stagnation
 
@@ -349,4 +1223,4 @@ The audit concludes that the single highest-leverage intervention for global wel
 
 ## See Also
 
-For a detailed breakdown of U.S. federal inefficiency, including Monte Carlo simulation of the Aggregate Efficiency Gap ($2.27-3.47 trillion annually), see [United States Efficiency Audit](us-efficiency-audit.qmd).
+For a detailed breakdown of U.S. federal inefficiency, including Monte Carlo simulation of the Aggregate Efficiency Gap ($2.27-3.47 trillion annually), see [United States Efficiency Audit](us-efficiency-audit.qmd) [@us-efficiency-audit-paper-2025].
