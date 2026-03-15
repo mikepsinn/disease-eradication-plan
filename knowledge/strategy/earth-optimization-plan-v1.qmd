@@ -21,7 +21,7 @@ This is a README for your civilization's upgrade.
 
 Your species has produced thousands of policy proposals, most of which share a structural feature: they describe a pleasant world without describing a mechanism for reaching it. "We should have universal healthcare" is a destination, not a route. "We should end war" is a wish, not an engineering specification. Policy proposals on Earth work like recipes that list ingredients but skip the cooking instructions, then blame the chef when dinner does not materialize.
 
-The Earth Optimization Plan v1 is different in exactly one way: it is an integrated system where every component creates the conditions for the next component. The treaty funds the trials. The trials generate returns. The returns pay the investors who funded the campaign that passed the treaty. The campaign creates voter demand that makes expanding the treaty easier than repealing it. Remove any one piece and the loop breaks. That is a weakness and a strength. It is a weakness because integrated systems are harder to build. It is a strength because integrated systems are harder to capture; you cannot lobby your way out of a machine whose parts check each other.
+The Earth Optimization Plan v1 is different in exactly one way: it is an integrated system where every component creates the conditions for the next component. The treaty funds the trials. The trials generate returns. The returns pay the investors who funded the campaign that passed the treaty. The campaign creates voter demand that makes expanding the treaty easier than repealing it. Remove any one piece and the loop breaks. That is a weakness (harder to build) and a strength (you cannot lobby your way out of a machine whose parts check each other).
 
 We think this plan is terrible. We also think it is better than what your species is currently doing, which is spending {{< var military_to_government_clinical_trials_spending_ratio >}} times more on weapons than on testing which medicines work, and calling this "civilization."
 
@@ -196,9 +196,9 @@ V1 does not fix this in Phase 1. The treaty, the bonds, and your decentralized F
 
 Phase 2 (post-treaty, post-wishocracy) replaces the money printer with an algorithmic monetary system described in [Wishonia](../futures/wishonia.qmd#the-algorithm-that-replaced-twelve-humans). The core mechanism: a shared ledger where money supply targets 0% inflation. When the economy grows, the algorithm creates exactly enough new currency to keep prices stable. That new money is the productivity dividend, and it flows through [Wishocracy](../solution/wishocracy.qmd) as the global public goods budget. Citizens allocate it via pairwise comparisons: cancer research or infrastructure, education or defense. No congressional budget process. No grant committee. No lobbyist. The economy's natural surplus, captured by the algorithm instead of being silently pocketed by whoever stands closest to the printer.
 
-A transaction tax (automatic, invisible, collected by smart contract) provides the second stream, constant regardless of growth. Both streams flow into one pool. [Wishocracy](../solution/wishocracy.qmd) allocates the entire thing via pairwise comparisons. UBI is one allocation category among many (alongside cancer research, infrastructure, education, etc.), not a constitutional carve-out. The pairwise comparison forces the tradeoff: citizens who want more cash allocate toward UBI; citizens who want more cures allocate toward research. The [Optimitron](../solution/optimocracy.qmd) shows the ROI of each option. The aggregate produces a natural equilibrium. No paternalistic floor, no expert committee deciding what citizens need. Eight billion people deciding for themselves, informed by evidence.
+A transaction tax (automatic, collected by smart contract) provides the second stream. Both flow into one pool; [Wishocracy](../solution/wishocracy.qmd) allocates the entire thing. UBI is one allocation category among many, not a constitutional carve-out. The [Optimitron](../solution/optimocracy.qmd) shows the ROI of each option; the aggregate produces a natural equilibrium.
 
-Together, three pieces of software (the monetary algorithm targeting 0% inflation, the transaction tax contract, and Wishocracy) render redundant: the Federal Reserve, the IRS, income tax, the congressional budget process, every welfare program (food stamps, housing vouchers, disability offices, Social Security Administration), grant committees, the lobbying industry, and the financial sector.
+Together, three pieces of software (the monetary algorithm targeting 0% inflation, the transaction tax contract, and Wishocracy) render redundant: the Federal Reserve, the IRS, income tax, the congressional budget process, every welfare program, grant committees, the lobbying industry, and the financial sector.
 
 This is v1's most honest gap. The system that funds wars without democratic consent, steals 2% of purchasing power per year by design, and channels genius toward weapons instead of medicine is not addressed until Phase 2. A v2 that solves this earlier, without breaking the Phase 1 sequencing, would be strictly better.
 
@@ -217,11 +217,11 @@ The system is designed to ratchet. Three reinforcing loops ensure the treaty per
 
 **Loop 3: The Super PAC creates career incentives.** The {{< var iab_political_incentive_funding_pct >}} political incentive fund rewards politicians proportional to their treaty support. More treaty funding means more PAC money means more politicians competing to be the most pro-treaty candidate.
 
-All three loops compound. A ratchet wrench only turns one way. Your species uses these in garages. We are applying one to your civilization.
+All three loops compound. The ratchet only turns one way.
 
 ## The Sequencing
 
-The pieces deploy in order. You cannot skip steps. The full [roadmap](roadmap.qmd) has the 36-month execution plan. Here is the compressed version:
+You cannot skip steps. The full [roadmap](roadmap.qmd) has the 36-month execution plan. Here is the compressed version:
 
 **Months 1-3: Proof of concept.** Deploy the [Optimitron](../solution/optimocracy.qmd) and [Wishocracy](../solution/wishocracy.qmd) as a live referendum platform. Prove humans will participate in direct allocation when you make it easy. Show this to angel investors.
 
@@ -231,7 +231,7 @@ The pieces deploy in order. You cannot skip steps. The full [roadmap](roadmap.qm
 
 **Years 4-50: The ratchet.** Treaty expands from 1% to 2% to 5% to 10%+. Each expansion multiplies all three revenue streams. Bondholders lobby for expansion because it raises their returns. Politicians support expansion because it raises their PAC funding. Voters support expansion because diseases keep getting cured.
 
-**Phase 2: The monetary system.** Once Wishocracy is running at scale and politicians are extinct, replace the Federal Reserve with the algorithmic monetary system. The productivity dividend flows through Wishocracy as the global public goods budget. The transaction tax replaces income tax. Three pieces of software replace the entire fiscal and monetary apparatus.
+**Phase 2: The monetary system.** Once Wishocracy is running at scale, replace the Federal Reserve with the [algorithmic monetary system](../futures/wishonia.qmd#the-algorithm-that-replaced-twelve-humans). Three pieces of software replace the entire fiscal and monetary apparatus.
 
 ## The Numbers
 
@@ -259,7 +259,7 @@ Full economic modeling: [GDP Trajectories](../economics/gdp-trajectories.qmd). F
 
 ## What We Think Is Wrong
 
-On Wishonia, admitting what you do not know is considered a sign of intelligence. On Earth, it is considered a sign of weakness, which is why your policy papers never have a section called "Where We Think We Are Wrong." This one does.
+Your policy papers never have a section called "Where We Think We Are Wrong." This one does.
 
 These are the failure modes we consider most likely, ordered by severity. If you are building v2, start here.
 
@@ -267,25 +267,25 @@ These are the failure modes we consider most likely, ordered by severity. If you
 
 Everything depends on raising {{< var treaty_campaign_total_cost >}} in initial IAB capital. If no billionaire buys in, the cascade never starts. The [chain reaction model](../appendix/treaty-feasibility.qmd#sec-chain-reaction-model) says that even with {{< var chain_dismiss_probability >}} dismissal, approximately {{< var chain_expected_engaged_implementers_nounit >}} of {{< var chain_implementer_count_nounit >}} billionaires and heads of state engage within {{< var chain_horizon_years_nounit >}} years. The math is reassuring. The math has not met your billionaires. This is the single highest-risk node in the system.
 
-**How to beat this:** Find a funding mechanism that does not require a single large initial commitment. Crowdfunded assurance contracts with lower thresholds, government matching, or a pilot-scale version that proves the concept at $10M before asking for {{< var treaty_campaign_total_cost >}}.
+**How to beat this:** The IAB itself is the assurance contract: investors get {{< var prize_escrow_100_return_multiple >}} over {{< var prize_escrow_accumulation_years >}} even if the treaty never passes, making the bet rational for skeptics. The [decision-theoretic case](../appendix/treaty-feasibility.qmd) shows investing is the dominant strategy even without a cascade. What neither proves is that real billionaires evaluate payoff matrices. A pilot at $10M that demonstrates the loop before asking for {{< var treaty_campaign_total_cost >}} would reduce this from a modeling question to an empirical one.
 
 ### 2. The 20% Overhead Question
 
-The {{< var dih_treasury_medical_research_pct >}}/{{< var victory_bond_funding_pct >}}/{{< var iab_political_incentive_funding_pct >}} split is a design choice, not a theorem. The combined overhead ({{< var victory_bond_funding_pct >}} investor returns + {{< var iab_political_incentive_funding_pct >}} political incentives) looks terrible to philanthropists who expect 95% program ratios. It looks excellent to investors who expect {{< var average_market_return_pct >}} returns. Whether the investor-attraction benefit exceeds the philanthropist-repulsion cost is an empirical question nobody has answered. The split may be wrong. A different ratio might raise more capital, or the same capital faster.
+The {{< var dih_treasury_medical_research_pct >}}/{{< var victory_bond_funding_pct >}}/{{< var iab_political_incentive_funding_pct >}} split is a design choice, not a theorem. The combined overhead ({{< var victory_bond_funding_pct >}} investor returns + {{< var iab_political_incentive_funding_pct >}} political incentives) looks terrible to philanthropists who expect 95% program ratios. It looks excellent to investors who expect {{< var average_market_return_pct >}} returns. Whether the investor-attraction benefit exceeds the philanthropist-repulsion cost is an empirical question nobody has answered. The split may be wrong.
 
 **How to beat this:** Prove that a different split raises more total capital or produces better outcomes per dollar. Or prove that the 20% is unnecessary because a cheaper political mechanism exists.
 
 ### 3. Scoring Organization Capture
 
-The IAB mechanism creates a powerful new institution: the organization that publishes Public Good Scores. This institution can itself be captured. If the scoring organization is corrupted, the entire political incentive system points in the wrong direction. We have specified independence safeguards (multiple data sources, transparent methodology, adversarial review), but the history of ratings agencies on your planet does not inspire confidence.
+The IAB mechanism creates a powerful new institution: the organization that publishes Public Good Scores. This institution can itself be captured. If the scoring organization is corrupted, the entire political incentive system points in the wrong direction. The history of ratings agencies on your planet does not inspire confidence.
 
-**How to beat this:** Design a scoring mechanism that is structurally resistant to capture, not just procedurally guarded against it. Decentralized scoring, cryptographic verification, or adversarial redundancy across competing scorers.
+**How to beat this:** V1 addresses this with the [Evidence Machine](../appendix/optimocracy-paper.qmd): five independent data sources aggregated by median (so no single outlier dominates), plus a decentralized citizen survey as a sixth independent stream. Capturing a majority of independent oracles is exponentially harder than lobbying a single committee. The remaining gap: those five sources share underlying data (census surveys, tax records), creating correlated error. The citizen survey is specified but untested.
 
 ### 4. The Cascade Assumption
 
 The model assumes that one billionaire investing triggers media coverage, which triggers more investors, which triggers political pressure, which passes the treaty. Each step in this cascade has independent failure probability. The [chain reaction model](../appendix/treaty-feasibility.qmd) handles this mathematically, but mathematical models of social cascades have a mixed track record on your planet.
 
-**How to beat this:** Design a system that does not require a social cascade. Or design a cascade with fewer steps, each with higher independent probability.
+**How to beat this:** V1 already addresses this. The [decision-theoretic case](../appendix/treaty-feasibility.qmd) shows investing is the dominant strategy regardless of whether a cascade occurs; the incentive structure makes action profitable even if no media coverage happens. The cascade accelerates adoption but is not required for it. The remaining gap: "dominant strategy" assumes actors evaluate the payoff matrix. If nobody reads this far, the math is irrelevant.
 
 ### 5. Wishocracy Participation
 
@@ -297,7 +297,7 @@ If participation in wishocratic allocation is low, the allocations are noisy and
 
 Median healthy life years and median real after-tax income ignore inequality, environmental sustainability, subjective well-being, and freedom. We chose two because each additional metric creates a new Goodhart surface, and markets that optimize two numbers outperform committees that optimize two hundred. This is a defensible tradeoff. It may also be wrong.
 
-**How to beat this:** Prove that a specific additional metric produces enough improvement to justify the Goodhart risk, or prove that two different terminal metrics better capture welfare.
+**How to beat this:** The [Optimocracy paper](../appendix/optimocracy-paper.qmd) makes the affirmative case: every major policy domain (employment, healthcare, environment, education) flows through income and mortality. Median income is hard to fake at scale. Mortality is binary. The formal Goodhart analysis shows each additional metric creates capture surfaces faster than it adds signal. Whether two metrics suffice remains empirical. A v2 that identifies a third metric worth the Goodhart cost would be an improvement.
 
 ### 7. No Pilot
 
