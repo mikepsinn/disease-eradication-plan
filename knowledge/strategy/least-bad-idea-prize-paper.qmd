@@ -251,6 +251,34 @@ Those thresholds are biased against contributing because they count only the pop
 
 The prize sits above the [Earth Optimization Plan v1](https://manual.warondisease.org) and asks: *who can cause verified implementation of a complete package that wins on welfare per dollar?* The people most responsible for causing that implementation receive the prize, allocated wishocratically by contributors based on their judgment and Optimitron data [@optimocracy-paper-2025]. Whatever they build is the Earth Optimization Plan v2. v1 is the floor, not the ceiling. We wrote it because competitions need a starting entry. We expect to lose.
 
+## The Self-Completing Loop
+
+The prize mechanism and the [Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd) [@iab-paper-2025] are not merely complementary components of the plan. Together they are sufficient. The plan completes itself once both are running, without requiring electoral victories, moral persuasion, or media campaigns. Those things accelerate it. They are not required.
+
+Here is the full loop:
+
+1. **Prize pool accumulates.** Contributors fund the treasury; funds earn yield. The prize creates a standing economic incentive for anyone who can cause `dHealthy_med` or `gIncome_med` to improve in adopting jurisdictions.
+
+2. **IABs circulate.** Investors buy bonds whose returns depend on treaty adoption. Those investors become a lobbying constituency for the treaty — not out of altruism, but because their financial returns require it. The IAB paper establishes this formally: once bonds circulate, supporting the treaty is the utility-maximizing choice for bondholders, and the mechanism is self-sustaining once initial funding triggers [@iab-paper-2025].
+
+3. **Treaty passes.** IAB lobbying causes adoption. {{< var treaty_annual_funding >}}/year redirects from low-welfare military spending to high-welfare clinical trials.
+
+4. **Metrics move.** Trials produce results. `dHealthy_med` improves. `gIncome_med` rises as the dysfunction tax shrinks and the productive economy expands.
+
+5. **Prize treasury releases proportionally.** Whoever caused those metric movements — the lobbyists, trial operators, legislators, advocates — gets paid via wishocratic pairwise allocation. Outcome perpetuity means the payment stream continues as long as they keep producing results.
+
+6. **IAB returns compound.** Treaty-generated funding flows pay bondholder returns. Higher returns attract more bond buyers. More bond buyers means more lobbying. More lobbying means faster adoption. Faster adoption means more metric movement. More metric movement means more prize treasury releases. More releases attract more implementers competing for the perpetuity stream.
+
+7. **Each stage funds the next.** The prize does not need an external donor for stage 2 through 7. The value the mechanism creates — healthier people, higher incomes — generates the resources that pay the implementers who created that value. The plan is financially self-sustaining from first metric movement.
+
+**The double incentive.** Someone who causes metric improvements gets paid twice: once via prize perpetuity (for verified metric gains) and once via IAB returns (if they also hold bonds whose value increases with treaty expansion). This double payment structure makes defection unusually costly — you forfeit both streams — and contribution unusually attractive. No other mechanism in the plan creates this property.
+
+**The bootstrapping threshold.** The one place the loop has not yet started is initialization: who funds the first prize pool and buys the first IABs? The IAB paper establishes that the bootstrap trigger is a single credible anchor investor publicly underwriting the assurance contract [@iab-paper-2025]. Once that commitment is public, social proof substitutes for independent evaluation and the cascade accelerates. With the prize mechanism running in parallel, the threshold is lower: even a small prize pool creates outcome perpetuity incentives that attract implementers before IABs reach scale, giving the loop more entry points. The mechanism does not require a single large trigger. It requires enough small entries that at least one thread completes.
+
+**What this means for the pitch.** The current framing — "fund the prize, hope the plan works" — understates what the mechanism does. The correct framing is: fund the bootstrapping threshold, after which the plan completes itself from the value it creates. The pitch is not "donate to a cause." It is "provide initial capital for a self-funding machine, with yield-bearing treasury ensuring you cannot lose money while it starts."
+
+The IAB paper's conclusion applies directly here: the binding constraint is not capital availability, political feasibility, or human nature. It is getting enough credible actors to evaluate the mechanism, recognize the expected value is positive, and make a public commitment. Everything after that is a chain reaction driven by self-interest. We are not asking your species to become good. We are asking it to read the math.
+
 ## Why This Works or Gets Replaced
 
 There are only two stable outcomes:
