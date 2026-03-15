@@ -36,15 +36,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 170 parameters used in the analysis, organized by type:
+This appendix documents all 169 parameters used in the analysis, organized by type:
 
 - External sources (peer-reviewed): 72
-- Calculated values: 75
+- Calculated values: 74
 - Core definitions: 23
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (75 parameters) • [External Data Sources](#sec-external) (72 parameters) • [Core Definitions](#sec-definitions) (23 parameters)
+[Calculated Values](#sec-calculated) (74 parameters) • [External Data Sources](#sec-external) (72 parameters) • [Core Definitions](#sec-definitions) (23 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -276,33 +276,6 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-current_trajectory_gdp_year_20.qmd >}}
-
-:::
-
-### Years Until Destructive Economy Reaches 25% of GDP: 8 years {#sec-destructive_economy_years_to_25pct_gdp}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Years until the destructive economy (military + cybercrime) reaches 25% of GDP at current growth rates. Historical precedent suggests societies become unstable when extraction rates exceed 20-30% of economic output.
-
-**Inputs**:
-
-- [Destructive Economy as % of GDP](#sec-global_destructive_economy_pct_gdp) 🔢: 11.5%
-- [Cybercrime Cost CAGR](#sec-global_cybercrime_cagr) 📊: 15%
-- [Military Spending Real CAGR (10-Year)](#sec-global_military_spending_real_cagr_10yr) 📊: 3.4%
-- [Baseline Global GDP Growth Rate](#sec-gdp_baseline_growth_rate): 2.5%
-- [Global Military Spending in 2024](#sec-global_military_spending_annual_2024) 📊: $2.72T
-- [Global Destructive Economy (2025)](#sec-global_destructive_economy_annual_2025) 🔢: $13.2T
-- [Global Cybercrime Costs (2025)](#sec-global_cybercrime_cost_annual_2025) 📊: $10.5T
-
-$$
-\begin{gathered}
-n_{25\%} \\
-= \frac{\ln(0.25 / r_{destruct:GDP})}{\ln(1 + g_{destruct} - g_{GDP})}
-\end{gathered}
-$$
-
-*✓ High confidence*
 
 :::
 
