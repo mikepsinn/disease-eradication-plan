@@ -1,7 +1,7 @@
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 
 ```{python}
-#| fig-cap: "The $119T Death Toilet"
+#| fig-cap: "The \\$119T Death Toilet"
 from pathlib import Path
 
 import matplotlib.pyplot as plt

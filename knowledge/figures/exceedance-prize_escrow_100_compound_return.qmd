@@ -1,6 +1,6 @@
 ```{python}
 #| echo: false
-#| fig-cap: "Probability of Exceeding Threshold: $100 Prize Escrow Compound Return"
+#| fig-cap: "Probability of Exceeding Threshold: \\$100 Prize Escrow Compound Return"
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -76,4 +76,4 @@ add_png_metadata(
 plt.show()
 ```
 
-*This exceedance probability chart shows the likelihood that $100 Prize Escrow Compound Return will exceed any given threshold. Higher curves indicate more favorable outcomes with greater certainty.*
+*This exceedance probability chart shows the likelihood that \$100 Prize Escrow Compound Return will exceed any given threshold. Higher curves indicate more favorable outcomes with greater certainty.*

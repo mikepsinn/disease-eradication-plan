@@ -39,6 +39,14 @@ from dih_models.formatting import format_parameter_value
 from dih_models.latex_generation import smart_title_case
 
 
+def _escape_dollar_for_markdown(text: str) -> str:
+    """Escape $ signs in text used in Quarto markdown contexts (fig-cap, prose).
+
+    Prevents Pandoc from interpreting $... as LaTeX math mode delimiters.
+    """
+    return text.replace("$", "\\$")
+
+
 def generate_tornado_chart_qmd(param_name: str, tornado_data: dict, output_dir: Path, param_metadata: Optional[dict] = None, baseline: Optional[float] = None, units: str = "", parameters: Optional[Dict[str, Dict[str, Any]]] = None) -> Path:
     """
     Generate a tornado chart QMD file for a parameter with uncertainty.
@@ -233,6 +241,7 @@ def generate_sensitivity_table_qmd(param_name: str, sensitivity_data: dict, outp
         display_name = param_metadata["value"].display_name
     else:
         display_name = smart_title_case(param_name)
+    md_name = _escape_dollar_for_markdown(display_name)
 
     # Sort by absolute sensitivity (largest first)
     sorted_indices = sorted(
@@ -242,7 +251,7 @@ def generate_sensitivity_table_qmd(param_name: str, sensitivity_data: dict, outp
     )
 
     # Generate markdown table
-    qmd_content = f'''**Sensitivity Indices for {display_name}**
+    qmd_content = f'''**Sensitivity Indices for {md_name}**
 
 Regression-based sensitivity showing which inputs explain the most variance in the output.
 
@@ -333,6 +342,7 @@ def generate_input_distribution_chart_qmd(param_name: str, param_data: dict, out
         display_name = value.display_name
     else:
         display_name = smart_title_case(param_name)
+    md_name = _escape_dollar_for_markdown(display_name)
 
     # Get values
     central_value = float(value)
@@ -359,7 +369,7 @@ def generate_input_distribution_chart_qmd(param_name: str, param_data: dict, out
     # Generate Python code for the chart
     qmd_content = f'''```{{python}}
 #| echo: false
-#| fig-cap: "Probability Distribution: {display_name}"
+#| fig-cap: "Probability Distribution: {md_name}"
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -553,6 +563,7 @@ def generate_monte_carlo_distribution_chart_qmd(
         display_name = param_metadata["value"].display_name
     else:
         display_name = smart_title_case(param_name)
+    md_name = _escape_dollar_for_markdown(display_name)
 
     baseline = outcome_data.get("baseline", 0)
     mean = outcome_data.get("mean", baseline)
@@ -565,7 +576,7 @@ def generate_monte_carlo_distribution_chart_qmd(
     # Generate QMD with embedded Python
     qmd_content = f'''```{{python}}
 #| echo: false
-#| fig-cap: "Monte Carlo Distribution: {display_name} (10,000 simulations)"
+#| fig-cap: "Monte Carlo Distribution: {md_name} (10,000 simulations)"
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -678,7 +689,7 @@ add_png_metadata(
 plt.show()
 ```
 
-**Simulation Results Summary: {display_name}**
+**Simulation Results Summary: {md_name}**
 
 | Statistic | Value |
 |:----------|------:|
@@ -688,7 +699,7 @@ plt.show()
 | Standard Deviation | {format_parameter_value(std, units, include_unit=False)} |
 | 90% Range (5th-95th percentile) | [{format_parameter_value(p5, units, include_unit=False)}, {format_parameter_value(p95, units, include_unit=False)}] |
 
-*The histogram shows the distribution of {display_name} across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*
+*The histogram shows the distribution of {md_name} across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*
 '''
 
     # Write QMD file
@@ -727,6 +738,7 @@ def generate_cdf_chart_qmd(
         display_name = param_metadata["value"].display_name
     else:
         display_name = smart_title_case(param_name)
+    md_name = _escape_dollar_for_markdown(display_name)
 
     units = ""
     if param_metadata and hasattr(param_metadata.get("value"), "unit"):
@@ -742,7 +754,7 @@ def generate_cdf_chart_qmd(
 
     qmd_content = f'''```{{python}}
 #| echo: false
-#| fig-cap: "Probability of Exceeding Threshold: {display_name}"
+#| fig-cap: "Probability of Exceeding Threshold: {md_name}"
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -818,7 +830,7 @@ add_png_metadata(
 plt.show()
 ```
 
-*This exceedance probability chart shows the likelihood that {display_name} will exceed any given threshold. Higher curves indicate more favorable outcomes with greater certainty.*
+*This exceedance probability chart shows the likelihood that {md_name} will exceed any given threshold. Higher curves indicate more favorable outcomes with greater certainty.*
 '''
 
     # Write QMD file
