@@ -49,7 +49,7 @@ A normal prize gives someone cash after they do something impressive. That is fi
 
 The Earth Optimization Prize works differently. Six moving parts:
 
-**1. People donate to a prize pool.** This is an outcome-based charity, not a venture fund. Contributions, grants, philanthropic commitments, assurance contracts [@tabarrok1998], or any combination. The maximum cost of achieving any policy change through legal democratic channels is {{< var treaty_campaign_total_cost >}} for the United States and roughly $200B globally, with ROI exceeding 400,000:1 for military-to-health reallocation [@cost-of-change-paper-2025]. "Political impossibility" is a capital allocation problem, not a physics problem.
+**1. People donate to a prize pool.** This is an outcome-based charity, not a venture fund. Contributions, grants, philanthropic commitments, assurance contracts [@tabarrok1998] (escrowed funds earn risk-free returns during accumulation; contributors get their money back with interest if the funding threshold is not met), or any combination. The maximum cost of achieving any policy change through legal democratic channels is {{< var treaty_campaign_total_cost >}} for the United States and roughly $200B globally, with ROI exceeding 400,000:1 for military-to-health reallocation [@cost-of-change-paper-2025]. "Political impossibility" is a capital allocation problem, not a physics problem.
 
 **2. Two terminal metrics.** The prize measures exactly two things: median healthy life years (`dHealthy_med`) and median real after-tax income (`gIncome_med`). Everything the prize exists to produce is either healthy life years or income. If healthy life years went up, trials worked, money moved, and legislation passed. If income rose, governance reform functioned. Paying separately for budget reallocation or trial enrollment is paying for plumbing that may or may not deliver water. Pay for water. The obvious Goodhart objection: median metrics can be gamed. If the sickest die faster, median health rises. But mortality is binary and hard to fake across millions of people. Median income requires improving the middle of the distribution, not just the top. And the adversarial challenge window means anyone who catches gaming can post a bond, present evidence, and claw back the payout.
 
@@ -137,7 +137,7 @@ Implementers fund work up front, produce auditable outcomes, and get paid for ou
 
 Abstract mechanism design is harder to trust than a concrete example. So here is the [Earth Optimization Plan v1](https://manual.warondisease.org) running through the prize machine as the terrible default entry.
 
-1. The treasury raises the initial pool through contributions, grants, or philanthropic commitment and escrows it under the no-override rules above (distributed control with no single keyholder, time-delayed execution so fraud is caught before funds move, initial thresholds published before the first donation and modifiable only by strictly-better replacement adopted by contributor supermajority).
+1. The treasury raises the initial pool through contributions, grants, or philanthropic commitment and escrows it (invested at {{< var prize_escrow_yield_rate >}} via rolling locked stablecoin staking, generating returns that fund assurance-contract bonuses) under the no-override rules above (distributed control with no single keyholder, time-delayed execution so fraud is caught before funds move, initial thresholds published before the first donation and modifiable only by strictly-better replacement adopted by contributor supermajority).
 2. The [Earth Optimization Plan v1](https://manual.warondisease.org) is submitted as the **default reference package**: treaty wedge, [dFDA](../solution/dfda.qmd) [@dfda-spec-paper-2025; @dfda-impact-paper-2025] / continuous evidence generation, regulatory-delay removal, IAB adoption system, Wishocracy preference aggregation, [Optimocracy](https://optimocracy.warondisease.org) [@optimocracy-paper-2025] / [OPG](https://opg.warondisease.org) [@opg-paper-2025] / [OBG](https://obg.warondisease.org) [@obg-paper-2025] recommendation engines, and the statutory path.
 3. The submitter asserts metric values, posting evidence and a bond. After the challenge window closes without successful dispute, admissibility is confirmed.
 4. Money goes to the first binding path with the best expected payoff: campaign finance, legislative drafting, treaty advocacy, scorecards, and public preference collection.
@@ -196,7 +196,21 @@ The break-even probability shift for any given contribution is small because the
 | `$100K` | `0.671%` | `0.192%` |
 | `$1M` | `6.71%` | `1.92%` |
 
-But does a $1K contribution actually shift probability by 0.0067%? You do not need to be the marginal dollar that tips the scale. You need to believe that more campaign capital makes success more likely than less, which is nearly tautological for political adoption. And for contributors who want guaranteed downside protection, contributions can be structured as assurance contracts (point 1 above): money back with a bonus if the funding threshold is not met.
+But does a $1K contribution actually shift probability by 0.0067%? You do not need to be the marginal dollar that tips the scale. You need to believe that more campaign capital makes success more likely than less, which is nearly tautological for political adoption. But the break-even tables above overstate your risk. They assume your contribution is gone. It is not.
+
+::: {.callout-tip}
+## This Is a Free Option, Not a Donation
+
+Contributions can be structured as dominant assurance contracts [@tabarrok1998]: your money is escrowed, invested at {{< var prize_escrow_yield_rate >}} via rolling locked stablecoin staking, and returned with a bonus if the funding threshold is not met. The escrow earns returns during the {{< var prize_escrow_accumulation_years >}} accumulation period; those returns fund the refund bonus [@iab-paper-2025]. Your actual downside is zero. Concretely, for a $100 contribution:
+
+| | If the prize succeeds | If the prize fails |
+|---|---|---|
+| **Your $100** | Helped cause implementation that raised your lifetime income by {{< var treaty_trajectory_lifetime_income_gain_per_capita >}} to {{< var wishonia_trajectory_lifetime_income_gain_per_capita >}} | Returned as {{< var prize_escrow_100_compound_return >}} ({{< var prize_escrow_100_return_multiple >}} your money at {{< var prize_escrow_yield_rate >}} over {{< var prize_escrow_accumulation_years_nounit >}} years) |
+| **The world** | Diseases get cured, incomes rise, destructive economy stops compounding | Destructive economy hits 50% of GDP in {{< var destructive_economy_years_to_50pct_gdp >}}; {{< var moronia_trajectory_probability_year_20 >}} probability of collapse trajectory at year 20 |
+| **Net position** | Best investment you ever made | You quadrupled your money in a savings account |
+
+In finance, a position with unlimited upside and zero downside is called a free option. Your species normally charges a premium for those.
+:::
 
 Those thresholds are biased against contributing because they count only the population-wide income channel and ignore both retroactive rewards and the value of reducing downside exposure. They also survive heavy skepticism. If you think the per-capita gain is 100x smaller than modeled ($149K instead of $14.9M), the break-even for a $1K contribution is still only 0.67%. The math does not require trusting the model. It requires believing the model is not off by more than four orders of magnitude. And the ceiling cost of achieving the policy change is already bounded: {{< var treaty_campaign_total_cost >}} for the United States, roughly $200B globally, with ROI exceeding 400,000:1 for military-to-health reallocation [@cost-of-change-paper-2025].
 

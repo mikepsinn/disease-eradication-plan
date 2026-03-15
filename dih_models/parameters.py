@@ -5634,6 +5634,58 @@ IAB_VS_DEFENSE_LOBBY_RATIO_AT_1PCT = Parameter(
     latex_symbol=r"k_{IAB:defense}",
 )
 
+# ── Prize Escrow Yield (Assurance Contract) ──────────────────────────────────
+PRIZE_ESCROW_YIELD_RATE = Parameter(
+    0.10,
+    source_type="definition",
+    description="Annual yield rate on escrowed prize contributions via rolling locked stablecoin staking (Binance 120-day USDT locked staking benchmark, March 2026)",
+    display_name="Prize Escrow Annual Yield Rate",
+    unit="percent",
+    display_value="10%",
+    keywords=["prize", "escrow", "yield", "staking", "interest", "assurance contract", "defi"],
+    distribution="fixed",
+    latex_symbol=r"r_{escrow}",
+)
+
+PRIZE_ESCROW_ACCUMULATION_YEARS = Parameter(
+    15,
+    source_type="definition",
+    description="Assumed accumulation period for escrowed prize contributions before threshold determination",
+    display_name="Prize Escrow Accumulation Period",
+    unit="years",
+    keywords=["prize", "escrow", "accumulation", "years", "threshold"],
+    distribution="fixed",
+    latex_symbol=r"T_{escrow}",
+)
+
+PRIZE_ESCROW_100_COMPOUND_RETURN = Parameter(
+    100 * (1 + PRIZE_ESCROW_YIELD_RATE) ** PRIZE_ESCROW_ACCUMULATION_YEARS,
+    source_type="calculated",
+    description="Value of $100 escrowed prize contribution after accumulation period at escrow yield rate, returned if funding threshold is not met",
+    display_name="$100 Prize Escrow Compound Return",
+    unit="USD",
+    formula="100 × (1 + PRIZE_ESCROW_YIELD_RATE) ^ PRIZE_ESCROW_ACCUMULATION_YEARS",
+    latex=r"V_{escrow,100} = 100 \times (1 + r_{escrow})^{T_{escrow}} = 100 \times (1 + 10\%)^{15} = \$418",
+    inputs=["PRIZE_ESCROW_YIELD_RATE", "PRIZE_ESCROW_ACCUMULATION_YEARS"],
+    compute=lambda ctx: 100 * (1 + ctx["PRIZE_ESCROW_YIELD_RATE"]) ** ctx["PRIZE_ESCROW_ACCUMULATION_YEARS"],
+    keywords=["prize", "escrow", "compound", "return", "assurance contract", "refund"],
+    latex_symbol=r"V_{escrow,100}",
+)  # $418
+
+PRIZE_ESCROW_100_RETURN_MULTIPLE = Parameter(
+    (1 + PRIZE_ESCROW_YIELD_RATE) ** PRIZE_ESCROW_ACCUMULATION_YEARS,
+    source_type="calculated",
+    description="Return multiple on escrowed prize contribution after accumulation period (how many times your money you get back)",
+    display_name="Prize Escrow Return Multiple",
+    unit="x",
+    formula="(1 + PRIZE_ESCROW_YIELD_RATE) ^ PRIZE_ESCROW_ACCUMULATION_YEARS",
+    latex=r"k_{escrow} = (1 + r_{escrow})^{T_{escrow}} = (1 + 10\%)^{15} = 4.18\times",
+    inputs=["PRIZE_ESCROW_YIELD_RATE", "PRIZE_ESCROW_ACCUMULATION_YEARS"],
+    compute=lambda ctx: (1 + ctx["PRIZE_ESCROW_YIELD_RATE"]) ** ctx["PRIZE_ESCROW_ACCUMULATION_YEARS"],
+    keywords=["prize", "escrow", "multiple", "return", "compound"],
+    latex_symbol=r"k_{escrow}",
+)  # 4.18x
+
 # Cumulative treaty funding over 20 years WITH IAB ratchet expansion
 TREATY_CUMULATIVE_20YR_WITH_RATCHET = Parameter(
     GLOBAL_MILITARY_SPENDING_ANNUAL_2024 * (

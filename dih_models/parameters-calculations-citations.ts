@@ -4033,6 +4033,28 @@ export const PRAGMATIC_TRIAL_COST_PER_QALY: Parameter = {
   latex: "\\begin{gathered}\nCost_{pragmatic,QALY} = \\frac{Cost_{RECOVERY}}{QALY_{RECOVERY}} = \\frac{\\$20M}{5M} = \\$4\n\\\\[0.5em]\n\\text{where } QALY_{RECOVERY} = Lives_{RECOVERY} \\times QALY_{COVID} = 1M \\times 5 = 5M\n\\end{gathered}",
 };
 
+export const PRIZE_ESCROW_100_COMPOUND_RETURN: Parameter = {
+  value: 417.7248169415656,
+  unit: "USD",
+  displayName: "$100 Prize Escrow Compound Return",
+  description: "Value of $100 escrowed prize contribution after accumulation period at escrow yield rate, returned if funding threshold is not met",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "100 × (1 + PRIZE_ESCROW_YIELD_RATE) ^ PRIZE_ESCROW_ACCUMULATION_YEARS",
+  latex: "\\begin{gathered}\nV_{escrow,100} \\\\\n= 100 \\times (1 + r_{escrow})^{T_{escrow}} \\\\\n= 100 \\times (1 + 10\\%)^{15} \\\\\n= \\$418\n\\end{gathered}",
+};
+
+export const PRIZE_ESCROW_100_RETURN_MULTIPLE: Parameter = {
+  value: 4.177248169415656,
+  unit: "x",
+  displayName: "Prize Escrow Return Multiple",
+  description: "Return multiple on escrowed prize contribution after accumulation period (how many times your money you get back)",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "(1 + PRIZE_ESCROW_YIELD_RATE) ^ PRIZE_ESCROW_ACCUMULATION_YEARS",
+  latex: "\\begin{gathered}\nk_{escrow} \\\\\n= (1 + r_{escrow})^{T_{escrow}} \\\\\n= (1 + 10\\%)^{15} \\\\\n= 4.18\\times\n\\end{gathered}",
+};
+
 export const RECOVERY_TRIAL_COST_REDUCTION_FACTOR: Parameter = {
   value: 82.0,
   unit: "multiplier",
@@ -5906,6 +5928,24 @@ export const PRE_1962_VALIDATION_YEARS: Parameter = {
   formula: "1960 - 1883",
 };
 
+export const PRIZE_ESCROW_ACCUMULATION_YEARS: Parameter = {
+  value: 15.0,
+  unit: "years",
+  displayName: "Prize Escrow Accumulation Period",
+  description: "Assumed accumulation period for escrowed prize contributions before threshold determination",
+  sourceType: "definition",
+  confidence: "high",
+};
+
+export const PRIZE_ESCROW_YIELD_RATE: Parameter = {
+  value: 0.1,
+  unit: "percent",
+  displayName: "Prize Escrow Annual Yield Rate",
+  description: "Annual yield rate on escrowed prize contributions via rolling locked stablecoin staking (Binance 120-day USDT locked staking benchmark, March 2026)",
+  sourceType: "definition",
+  confidence: "high",
+};
+
 export const QALYS_PER_COVID_DEATH_AVERTED: Parameter = {
   value: 5.0,
   unit: "QALYs/death",
@@ -6509,6 +6549,8 @@ export const parameters = {
   POLITICAL_DYSFUNCTION_TAX_PER_PERSON_ANNUAL,
   POST_WW2_MILITARY_CUT_PCT,
   PRAGMATIC_TRIAL_COST_PER_QALY,
+  PRIZE_ESCROW_100_COMPOUND_RETURN,
+  PRIZE_ESCROW_100_RETURN_MULTIPLE,
   RECOVERY_TRIAL_COST_REDUCTION_FACTOR,
   RECOVERY_TRIAL_TOTAL_QALYS_GENERATED,
   SHARING_BREAKEVEN_ONE_IN_TREATY,
@@ -6690,6 +6732,8 @@ export const parameters = {
   PEACE_DIVIDEND_DIRECT_FISCAL_SAVINGS,
   PHARMA_PHASE_2_3_COST_BARRIER,
   PRE_1962_VALIDATION_YEARS,
+  PRIZE_ESCROW_ACCUMULATION_YEARS,
+  PRIZE_ESCROW_YIELD_RATE,
   QALYS_PER_COVID_DEATH_AVERTED,
   RD_SPILLOVER_MULTIPLIER,
   SAFE_COMPOUNDS_COUNT,
@@ -8629,10 +8673,10 @@ export const citations: Record<string, Citation> = {
 
 /** Summary statistics */
 export const PARAMETER_STATS = {
-  total: 570,
+  total: 574,
   external: 195,
-  calculated: 252,
-  definitions: 123,
+  calculated: 254,
+  definitions: 125,
   citations: 140,
 } as const;
 
