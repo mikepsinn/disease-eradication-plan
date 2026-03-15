@@ -81,6 +81,15 @@ It's like weaning a baby off eating paint chips. You can't just take away all th
 
 When you suggest moving 1% of murder money to medicine money, other humans will have you committed. Most humans have been programmed by their news boxes to believe war is a law of nature, like gravity or weather. They will assume your brain is malfunctioning.
 
+They do not actually believe it is crazy. They believe everyone else believes it is crazy. This is different, and much dumber. Nearly every human would prefer less war and disease. None of them know the others agree, because nobody says it out loud, because they think nobody else agrees. Your economists have a name for this. It is called pluralistic ignorance, which is the polite term for eight billion people waiting for permission to want what they already want. On Wishonia we just call it "the thing that made us laugh so hard we had to sit down."
+
+::: {.content-visible when-format="html"}
+<figure>
+<img src="/assets/images/unrepresentative-democracy/ant-death-spiral.gif" alt="Ants marching in a circular death spiral" />
+<figcaption>Each ant follows the ant ahead. No ant checks whether the trail goes anywhere. They march in a circle until they die. Your species does this with opinions. (Clemzouzou69, CC BY-SA 4.0)</figcaption>
+</figure>
+:::
+
 Here's what's funny about this: these same humans think curing disease is the less crazy goal. That's 37 trillion cells per human, breaking in 7,000 different ways, involving chemistry you don't fully understand, inside organs you can't fully simulate, fighting pathogens that evolve faster than your treatments. You're trying to debug all of it. At once. While your meat is walking around using itself.
 
 That: sane.
@@ -361,6 +370,8 @@ The Military Industrial Complex wasn't designed. It evolved, because the incenti
 *Make Humans Click a Button to Not Die*
 
 You need 3.5% of humanity to vote yes on: "Should your country redirect 1% of military spending to fund clinical trials?"
+
+You are not creating support for not dying. Nearly everyone already supports not dying. You are proving it. Right now every human who wants less war and disease assumes they are the weird one. The referendum is the moment they find out they are everyone.
 
 Why 3.5%? A political scientist named Erica Chenoweth studied every major political movement of the last century and found that [none had ever failed after achieving 3.5% active participation](https://manual.warondisease.org/knowledge/strategy/global-referendum.html). Not one. Every civil rights movement, every revolution, every regime change. Hit 3.5% and you win. Humanity discovered the cheat code for changing its own civilization and then never used it on purpose.
 
