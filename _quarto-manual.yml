@@ -180,6 +180,7 @@ book:
         - knowledge/appendix/optimocracy-paper.qmd # Standalone paper config: _quarto-optimocracy.yml
         - knowledge/appendix/optimal-policy-generator-spec.qmd # Standalone paper config: _quarto-opg.yml
         - knowledge/strategy/least-bad-idea-prize-paper.qmd # Standalone paper config: _quarto-least-bad-idea-prize.yml
+        - knowledge/strategy/earth-optimization-plan-v1.qmd # The forkable v1 system spec
         - knowledge/appendix/optimal-budget-generator-spec.qmd # Standalone paper config: _quarto-obg.yml
         - knowledge/appendix/dfda-spec-paper.qmd # Standalone paper config: _quarto-dfda-spec.yml
         - knowledge/appendix/right-to-trial-fda-upgrade-act.qmd # Standalone paper config: _quarto-right-to-trial.yml

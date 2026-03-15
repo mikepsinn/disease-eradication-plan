@@ -1,0 +1,274 @@
+---
+title: 'Earth Optimization Plan v1'
+subtitle: 'The Terrible Starting Benchmark for the Earth Optimization Prize'
+description: "The complete integrated system from How to End War and Disease, documented in one forkable document. Ten mechanisms, one self-reinforcing loop, explicit known weaknesses. Please replace this with something better."
+abstract: |
+  The Earth Optimization Plan v1 is the integrated system described in *How to End War and Disease*. It combines ten mechanisms into a self-reinforcing loop: a 1% military-to-medical treaty provides {{< var treaty_annual_funding >}}/year in funding; pragmatic clinical trials executed through a decentralized FDA protocol reduce trial costs by {{< var dfda_trial_cost_reduction_factor >}} and compress the treatment discovery queue from {{< var status_quo_queue_clearance_years >}} to {{< var dfda_queue_clearance_years >}}; Incentive Alignment Bonds fund the political campaign and pay investors {{< var victory_bond_annual_return_pct >}} annual returns; wishocratic pairwise comparison allocates the {{< var dih_treasury_medical_research_pct >}} research treasury; and an evidence machine (Optimocracy) tells governments which policies actually work. Each component feeds the next. More cures generate popular support, more bondholder income generates political pressure, and more treaty funding generates campaign support for politicians who voted yes. The ratchet only moves in one direction. This paper documents the complete system: what each component does, how they connect, what numbers they claim, and where we think we are wrong. It exists to be replaced. The [Earth Optimization Prize](least-bad-idea-prize-paper.qmd) is a standing bounty for whoever builds v2. Fork this and make it better.
+published: true
+tags:
+  - strategy
+  - system-design
+  - governance
+  - implementation
+podcast-image: /assets/podcast/earth-optimization-plan-v1-podcast.jpg
+youtube-thumbnail: /assets/podcast/earth-optimization-plan-v1-youtube.jpg
+---
+{{< include ../includes/setup-parameters.qmd >}}
+
+## Introduction
+
+This is a README for your civilization's upgrade.
+
+Your species has produced thousands of policy proposals, most of which share a structural feature: they describe a pleasant world without describing a mechanism for reaching it. "We should have universal healthcare" is a destination, not a route. "We should end war" is a wish, not an engineering specification. Policy proposals on Earth work like recipes that list ingredients but skip the cooking instructions, then blame the chef when dinner does not materialize.
+
+The Earth Optimization Plan v1 is different in exactly one way: it is an integrated system where every component creates the conditions for the next component. The treaty funds the trials. The trials generate returns. The returns pay the investors who funded the campaign that passed the treaty. The campaign creates voter demand that makes expanding the treaty easier than repealing it. Remove any one piece and the loop breaks. That is a weakness and a strength. It is a weakness because integrated systems are harder to build. It is a strength because integrated systems are harder to capture; you cannot lobby your way out of a machine whose parts check each other.
+
+We think this plan is terrible. We also think it is better than what your species is currently doing, which is spending {{< var military_to_government_clinical_trials_spending_ratio >}} times more on weapons than on testing which medicines work, and calling this "civilization."
+
+The [Earth Optimization Prize](least-bad-idea-prize-paper.qmd) is a standing bounty for whoever builds v2. This paper is the starting entry. Every component is documented with what it does, what numbers it claims, and what a replacement must beat. Fork it. Improve it. Replace it entirely. We will be genuinely relieved.
+
+## The Three-Sentence Version
+
+Sell [Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd) [@iab-paper-2025] that raise {{< var treaty_campaign_total_cost >}} to legally bribe politicians (via Super PACs and lobbying) into signing a [treaty](../solution/1-percent-treaty.qmd) [@value-captured-by-1pct-treaty] that redirects 1% of military spending to clinical trials. Of the resulting {{< var treaty_annual_funding >}}/year, {{< var dih_treasury_medical_research_pct >}} funds trials through [your decentralized FDA](../solution/dfda.qmd) [@dfda-spec-paper-2025; @dfda-impact-paper-2025], {{< var victory_bond_funding_pct >}} pays investors {{< var victory_bond_annual_return_pct >}} annual returns, and {{< var iab_political_incentive_funding_pct >}} funds a Super PAC that rewards politicians who voted yes. Returns grow in proportion to the treaty percentage, so every billionaire bondholder becomes a permanent lobbyist for expanding it, creating self-sustaining pressure to reallocate from death to life.
+
+## How the Pieces Connect
+
+The system has ten required functions. They form a loop:
+
+1. **[Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd)** raise {{< var treaty_campaign_total_cost >}} from investors who want {{< var victory_bond_annual_return_pct >}} returns and billionaires who prefer not dying of horrible diseases.
+2. That money funds the **political campaign**: lobbying, Super PACs, a [global referendum](global-referendum.qmd) proving public support, and paid referral bonuses for voter recruitment.
+3. The campaign passes a **[1% Treaty](../solution/1-percent-treaty.qmd) [@1-pct-treaty-impact-paper-2025]** redirecting {{< var treaty_annual_funding >}}/year from military budgets to clinical trials. Balance of power unchanged (everyone cuts the same 1%).
+4. The **[Decentralized Institutes of Health](../solution/dih.qmd)** receives the funds and splits them: {{< var dih_treasury_medical_research_pct >}} to medical research, {{< var victory_bond_funding_pct >}} to investor returns, {{< var iab_political_incentive_funding_pct >}} to political incentives.
+5. The research treasury funds **[your decentralized FDA](../solution/dfda.qmd)** protocol, running pragmatic trials at {{< var dfda_pragmatic_trial_cost_per_patient >}}/patient instead of {{< var traditional_phase3_cost_per_patient >}}/patient.
+6. **[Wishocracy](../solution/wishocracy.qmd) [@wishocracy-paper-2025]** governs how the research treasury is allocated: citizens do ~20 pairwise comparisons in 5 minutes, and the math produces budget weights.
+7. The **[Evidence Machine](../solution/optimocracy.qmd)** ([Optimocracy](https://optimocracy.warondisease.org) [@optimocracy-paper-2025] + [OPG](https://opg.warondisease.org) [@opg-paper-2025] + [OBG](https://obg.warondisease.org) [@obg-paper-2025]) tracks which policies actually improve the two terminal metrics across thousands of jurisdictions.
+8. The **[Political Dysfunction Tax](../problem/unrepresentative-democracy.qmd) [@political-dysfunction-tax-paper-2025]** and **[US Efficiency Audit](https://us-efficiency-audit.warondisease.org) [@us-efficiency-audit-paper-2025]** identify the waste pools ({{< var political_dysfunction_global_opportunity_cost_total >}}/year globally).
+9. The **[legal architecture](../legal/legal-framework.qmd)** (treaty text, [Right to Trial](../solution/dfda.qmd) & FDA Upgrade Act, statutory tools) creates binding force.
+10. **[This book](/)** is the narrative and coalition wrapper that coordinates adoption.
+
+The loop closes: cured diseases generate popular support and economic returns, which fund further treaty expansion, which funds more trials. Each expansion multiplies all three revenue streams (investor, political, research). The system is designed so that the greedier its participants are, the faster diseases get cured.
+
+## The Funding Engine
+
+### The 1% Treaty
+
+Every signatory nation redirects exactly 1% of its military budget to the 1% Treaty Fund. That is {{< var treaty_annual_funding >}}/year from {{< var global_military_spending_annual_2024 >}} in global military spending. Balance of power is preserved because every country cuts the same percentage. No country becomes more vulnerable. Your species has done harder things than this: you cut military spending by {{< var post_ww2_military_cut_pct >}} after WW2 and stumbled into the greatest economic boom in history [@value-captured-by-1pct-treaty; @1-pct-treaty-impact-paper-2025].
+
+The treaty requires only 2 countries to enter into force. Reservations are not permitted (no creative accounting). Article VIII requires unanimous consent plus 10-year notice for withdrawal, because a treaty that can be abandoned next quarter is not a treaty; it is a suggestion with a flag.
+
+The revenue split is {{< var dih_treasury_medical_research_pct >}}/{{< var victory_bond_funding_pct >}}/{{< var iab_political_incentive_funding_pct >}}: {{< var dih_treasury_medical_research_pct >}} to clinical trials (the point), {{< var victory_bond_funding_pct >}} to investor returns (the bait), {{< var iab_political_incentive_funding_pct >}} to political incentives (the hook). The corruption is capped at 20% and fully transparent. The other {{< var dih_treasury_medical_research_pct >}} goes directly to clinical trials through [wishocratic allocation](../solution/wishocracy.qmd), where nobody with money gets to decide where it goes.
+
+::: {.callout-note}
+## Fork Marker
+To replace this component, your alternative must redirect at least as much low-value spending to higher-value use, without requiring any participant to become less selfish.
+:::
+
+### Decentralized Institutes of Health
+
+The [DIH](../solution/dih.qmd) is a thin coordination protocol, not an organization. It does three things: receive treaty funds, allocate them via patient subsidies weighted by disease burden (DALYs) and infrastructure decisions via [Wishocracy](../solution/wishocracy.qmd), and verify results. Everything operational is outsourced to competing providers.
+
+The researcher payment formula replaces the entire grant committee apparatus with one equation: subsidy per patient equals DALYs per patient times value per DALY, where value equals total budget divided by global disease burden. Diseases that kill more people get more funding. This is apparently a novel concept on your planet.
+
+No CEO. No board. Governance rules live in transparent auditable systems. Every dollar on a public ledger. Anyone can build a competing alternative. The protocol is intentionally minimal to resist capture.
+
+::: {.callout-note}
+## Fork Marker
+To replace this component, your alternative must allocate research funding at least as efficiently with equal or better capture resistance.
+:::
+
+## The Medical Engine
+
+### Your Decentralized FDA
+
+Your species has {{< var safe_compounds_count >}} known safe compounds. {{< var unexplored_ratio >}} of their potential uses have never been tested. At the current discovery rate, clearing the backlog takes ~{{< var status_quo_queue_clearance_years >}}. Your current clinical trial system costs {{< var traditional_phase3_cost_per_patient >}}/patient, has {{< var current_trial_slots_available >}} slots for {{< var current_disease_patients_global >}} patients who need them, and excludes 86% of the population.
+
+[Your decentralized FDA](../solution/dfda.qmd) [@dfda-spec-paper-2025; @dfda-impact-paper-2025] is an open protocol (HTTP for clinical trials) that connects treatments to patients, records outcomes, and publishes results. Two stages: observational signal detection at ~{{< var dfda_observational_cost_per_patient >}}/patient, then pragmatic trial confirmation at ~{{< var dfda_pragmatic_trial_cost_per_patient >}}/patient. At treaty funding, this expands trial capacity by {{< var dfda_trial_capacity_multiplier >}} and compresses the queue to ~{{< var dfda_queue_clearance_years >}}.
+
+This is not theoretical. The Oxford RECOVERY trial tested 6 treatments on 48,000 patients for {{< var recovery_trial_cost_per_patient >}}/patient (versus {{< var traditional_phase3_cost_per_patient >}} standard), found dexamethasone cut COVID deaths by 30%, and saved {{< var recovery_trial_global_lives_saved >}} lives in {{< var oxford_recovery_trial_duration_months >}} months [@recovery-cost-500; @recovery-trial-1m-lives-saved]. Your species does its best medical research when terrified and disorganized.
+
+Products: treatment search and rankings, [Outcome Labels](../solution/dfda.qmd) (nutrition-facts-style drug effectiveness summaries), real-time safety monitoring. The enabling legislation is the Right to Trial & FDA Upgrade Act, which eliminates the {{< var efficacy_lag_years >}} delay between proving a drug is safe and letting dying humans take it. For every 1 person protected from a dangerous drug, {{< var type_ii_error_cost_ratio >}} die waiting for a safe one [@invisible-graveyard-paper-2025].
+
+::: {.callout-note}
+## Fork Marker
+To replace this component, your alternative must produce faster, cheaper, more reliable treatment discovery, and handle the regulatory-delay problem.
+:::
+
+## The Political Engine
+
+### Incentive Alignment Bonds
+
+The obvious question: who funds a campaign to redirect military spending? Answer: people who want {{< var victory_bond_annual_return_pct >}} annual returns.
+
+[Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd) [@iab-paper-2025] are assurance contracts with revenue-share upside. Buy a bond, your money is escrowed at {{< var prize_escrow_yield_rate >}} annually. If the treaty never passes, you get your money back at {{< var prize_escrow_100_return_multiple >}} over {{< var prize_escrow_accumulation_years >}} (beats most hedge funds). If the treaty passes, you receive a pro-rata share of {{< var victory_bond_funding_pct >}} of treaty funding flows: {{< var victory_bond_annual_payout >}}/year on {{< var treaty_campaign_total_cost >}} total bonds. That is {{< var victory_bond_annual_return_pct >}} annual returns, paid as a perpetual revenue share for as long as the treaty generates funding.
+
+The secondary market price is a real-time, money-backed estimate of implementation probability. Every bondholder is financially incentivized to recruit voters, lobby politicians, fund implementation work, and share the plan, because all of these raise bond value. Nobody coordinates the campaign. The bond price coordinates the campaign.
+
+Three-layer architecture for political adoption: (A) an independent organization publishes Public Good Scores based on politician voting records, (B) PACs and 501(c)(4)s support high-scorers with campaign funding, (C) foundations guarantee post-office careers for champions. No money flows directly to politicians. The same K Street mechanics, pointed at diseases instead of defense contracts.
+
+The maximum cost of achieving any policy change through legal democratic channels is {{< var treaty_campaign_total_cost >}} for the United States, with ROI exceeding 400,000:1 [@cost-of-change-paper-2025]. "Political impossibility" is a capital allocation problem, not a physics problem.
+
+::: {.callout-note}
+## Fork Marker
+To replace this component, your alternative must make treaty passage at least as incentive-compatible for selfish actors, with equal or better investor returns.
+:::
+
+### The Campaign
+
+The campaign has two prongs: a [global referendum](global-referendum.qmd) and a lobbying operation.
+
+The referendum proves that the support already exists. Everyone thinks ending war and disease is crazy because everyone else thinks it is crazy. Your economists call this pluralistic ignorance. The referendum is the moment eight billion people discover they nearly all agree. At {{< var global_population_activism_threshold_pct >}} active participation (the Chenoweth threshold), no political movement has ever failed {{< var global_population_activism_threshold_pct_cite >}}. That is {{< var treaty_campaign_voting_bloc_target_nounit >}} humans. More than 10 times as many downloaded TikTok.
+
+{{< var treaty_campaign_viral_referendum_base_case >}} of the campaign budget goes to paid referral bonuses that make sharing financially attractive. The lobbying budget ({{< var treaty_campaign_budget_lobbying >}}) outbids the defense lobby's annual spend ({{< var defense_lobbying_annual >}}/year) by a factor of 8.
+
+::: {.callout-note}
+## Fork Marker
+To replace this component, your alternative must coordinate adoption at equal or lower cost and failure risk.
+:::
+
+## The Information Engine
+
+### The Evidence Machine
+
+[Optimocracy](../solution/optimocracy.qmd) [@optimocracy-paper-2025] measures two terminal metrics (median healthy life years and median real after-tax income) across ~10,000 jurisdictions running natural experiments. The [Optimal Policy Generator](https://opg.warondisease.org) [@opg-paper-2025] turns that data into enact/replace/repeal recommendations. The [Optimal Budget Generator](https://obg.warondisease.org) [@obg-paper-2025] does the same for spending. Combined: "What works?" answered by data, not argument.
+
+The [Political Dysfunction Tax](../problem/unrepresentative-democracy.qmd) [@political-dysfunction-tax-paper-2025] is the gap between actual governance output and optimal-governance output: {{< var political_dysfunction_global_opportunity_cost_total >}}/year globally. The [US Efficiency Audit](https://us-efficiency-audit.warondisease.org) [@us-efficiency-audit-paper-2025] itemizes {{< var us_gov_waste_total >}}/year across ten categories. These are the waste maps that tell you where the money is.
+
+Why only two terminal metrics? Each additional metric creates a new Goodhart surface. Markets optimize profit, not 200 sub-metrics. Median income is hard to fake at scale. Mortality is binary. Two numbers. Your species can probably keep track of two numbers.
+
+::: {.callout-note}
+## Fork Marker
+To replace this component, your alternative must generate better policy and budget recommendations under real-world constraints, and identify low-value spending pools at least as well.
+:::
+
+## The Governance Engine
+
+### Wishocracy
+
+[Wishocracy](../solution/wishocracy.qmd) [@wishocracy-paper-2025] asks citizens to drag a slider between two random budget priorities. "How would you split $100 between cancer research and malaria prevention?" About 20 comparisons, 5 minutes. Statistical models (Bradley-Terry/PageRank) aggregate millions of pairwise judgments into budget-preference weights without speeches, lobbying, or horse-trading.
+
+Why pairwise comparisons? Random pairs prevent gaming (no ballot measure to advertise for). Independence is structurally guaranteed (no spoiler candidates, no strategic voting). Outliers cancel out. Your species tried direct democracy four times (Athens, California propositions, Brexit, Swiss referendums) and each failed for a specific reason that pairwise comparison structurally prevents.
+
+Wishocracy governs two things in v1: how the {{< var dih_treasury_medical_research_pct >}} research treasury is allocated, and infrastructure decisions within the DIH. It is scope-locked to bounded allocation questions. You cannot use it to vote on rights, bodies, or anything unbounded.
+
+::: {.callout-note}
+## Fork Marker
+To replace this component, your alternative must recover public preferences at equal or lower cognitive cost, with equal or better resistance to capture by organized factions.
+:::
+
+## The Legal Architecture
+
+The [legal framework](../legal/legal-framework.qmd) has four parts:
+
+1. **Treaty text.** Articles I-VIII of the 1% Treaty, modeled on the Chemical Weapons Convention (193 signatories). Proportional reduction, no reservations, 10-year withdrawal notice.
+2. **Right to Trial & FDA Upgrade Act.** Eliminates the {{< var efficacy_lag_years >}} efficacy delay for drugs that pass Phase I safety. Replaces a smoke detector that works by mail with real-time safety monitoring.
+3. **[Legislation package](legislation-package.qmd).** The statutory tools for domestic implementation in each signatory country.
+4. **[Election law compliance](../legal/election-law.qmd).** The IAB mechanism operates within existing campaign finance law (Citizens United, FEC advisory opinions, 501(c)(4) rules).
+
+::: {.callout-note}
+## Fork Marker
+To replace this component, your alternative must create equal or stronger binding force through legal channels.
+:::
+
+## The Ratchet
+
+The system is designed to ratchet. Three reinforcing loops ensure the treaty percentage increases but never decreases:
+
+**Loop 1: Cures create voters.** Every disease cured by treaty-funded trials creates a constituency of formerly dying humans who now vote. Repealing the treaty means telling cured patients "we would like to stop curing diseases now." No politician survives that sentence.
+
+**Loop 2: Returns create lobbyists.** Bondholder returns scale with treaty percentage. Every expansion from 1% to 2% doubles investor income. Every bondholder becomes the world's most motivated lobbyist for expansion. Not because they care about diseases. Because they care about money.
+
+**Loop 3: The Super PAC creates career incentives.** The {{< var iab_political_incentive_funding_pct >}} political incentive fund rewards politicians proportional to their treaty support. More treaty funding means more PAC money means more politicians competing to be the most pro-treaty candidate.
+
+All three loops compound. A ratchet wrench only turns one way. Your species uses these in garages. We are applying one to your civilization.
+
+## The Numbers
+
+The economic case, compressed:
+
+| Metric | Value |
+|:---|:---|
+| Treaty funding | {{< var treaty_annual_funding >}}/year |
+| Trial cost reduction | {{< var dfda_trial_cost_reduction_factor >}} (from {{< var traditional_phase3_cost_per_patient >}} to {{< var dfda_pragmatic_trial_cost_per_patient >}}/patient) |
+| Trial capacity increase | {{< var dfda_trial_capacity_multiplier >}} |
+| Disease queue | {{< var status_quo_queue_clearance_years >}} compressed to {{< var dfda_queue_clearance_years >}} |
+| Lives saved | {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}} |
+| Economic value | {{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}} |
+| Campaign cost | {{< var treaty_campaign_total_cost >}} |
+| ROI | {{< var treaty_roi_trial_capacity_plus_efficacy_lag >}} to 1 |
+| Cost per DALY | {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}} (bed nets: {{< var bed_nets_cost_per_daly >}}) |
+| Investor returns | {{< var victory_bond_annual_return_pct >}} annually (perpetual revenue share) |
+| Failure returns | {{< var prize_escrow_100_return_multiple >}} over {{< var prize_escrow_accumulation_years >}} |
+| Lifetime income gain | {{< var treaty_trajectory_lifetime_income_gain_per_capita >}} per person |
+| GDP multiplier (year 20) | {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_20 >}} (treaty-only) to {{< var wishonia_trajectory_gdp_vs_current_trajectory_multiplier_year_20 >}} (full optimization) |
+
+Full economic modeling: [GDP Trajectories](../economics/gdp-trajectories.qmd). Full parameter documentation: [Parameters & Calculations](../appendix/parameters-and-calculations.qmd).
+
+## What We Think Is Wrong
+
+On Wishonia, admitting what you do not know is considered a sign of intelligence. On Earth, it is considered a sign of weakness, which is why your policy papers never have a section called "Where We Think We Are Wrong." This one does.
+
+These are the failure modes we consider most likely, ordered by severity. If you are building v2, start here.
+
+### 1. The First Billion
+
+Everything depends on raising {{< var treaty_campaign_total_cost >}} in initial IAB capital. If no billionaire buys in, the cascade never starts. The [chain reaction model](../appendix/treaty-feasibility.qmd#sec-chain-reaction-model) says that even with {{< var chain_dismiss_probability >}} dismissal, approximately {{< var chain_expected_engaged_implementers_nounit >}} of {{< var chain_implementer_count_nounit >}} billionaires and heads of state engage within {{< var chain_horizon_years_nounit >}} years. The math is reassuring. The math has not met your billionaires. This is the single highest-risk node in the system.
+
+**How to beat this:** Find a funding mechanism that does not require a single large initial commitment. Crowdfunded assurance contracts with lower thresholds, government matching, or a pilot-scale version that proves the concept at $10M before asking for {{< var treaty_campaign_total_cost >}}.
+
+### 2. The 20% Overhead Question
+
+The {{< var dih_treasury_medical_research_pct >}}/{{< var victory_bond_funding_pct >}}/{{< var iab_political_incentive_funding_pct >}} split is a design choice, not a theorem. The combined overhead ({{< var victory_bond_funding_pct >}} investor returns + {{< var iab_political_incentive_funding_pct >}} political incentives) looks terrible to philanthropists who expect 95% program ratios. It looks excellent to investors who expect {{< var average_market_return_pct >}} returns. Whether the investor-attraction benefit exceeds the philanthropist-repulsion cost is an empirical question nobody has answered. The split may be wrong. A different ratio might raise more capital, or the same capital faster.
+
+**How to beat this:** Prove that a different split raises more total capital or produces better outcomes per dollar. Or prove that the 20% is unnecessary because a cheaper political mechanism exists.
+
+### 3. Scoring Organization Capture
+
+The IAB mechanism creates a powerful new institution: the organization that publishes Public Good Scores. This institution can itself be captured. If the scoring organization is corrupted, the entire political incentive system points in the wrong direction. We have specified independence safeguards (multiple data sources, transparent methodology, adversarial review), but the history of ratings agencies on your planet does not inspire confidence.
+
+**How to beat this:** Design a scoring mechanism that is structurally resistant to capture, not just procedurally guarded against it. Decentralized scoring, cryptographic verification, or adversarial redundancy across competing scorers.
+
+### 4. The Cascade Assumption
+
+The model assumes that one billionaire investing triggers media coverage, which triggers more investors, which triggers political pressure, which passes the treaty. Each step in this cascade has independent failure probability. The [chain reaction model](../appendix/treaty-feasibility.qmd) handles this mathematically, but mathematical models of social cascades have a mixed track record on your planet.
+
+**How to beat this:** Design a system that does not require a social cascade. Or design a cascade with fewer steps, each with higher independent probability.
+
+### 5. Wishocracy Participation
+
+If participation in wishocratic allocation is low, the allocations are noisy and manipulable by organized factions. The system requires thresholds, weighting, or fallback modes for low participation. We have specified these. We have not tested them.
+
+**How to beat this:** Prove that a different allocation mechanism produces better outcomes with lower participation requirements, or design stronger participation incentives.
+
+### 6. Two Metrics May Not Be Enough
+
+Median healthy life years and median real after-tax income ignore inequality, environmental sustainability, subjective well-being, and freedom. We chose two because each additional metric creates a new Goodhart surface, and markets that optimize two numbers outperform committees that optimize two hundred. This is a defensible tradeoff. It may also be wrong.
+
+**How to beat this:** Prove that a specific additional metric produces enough improvement to justify the Goodhart risk, or prove that two different terminal metrics better capture welfare.
+
+### 7. No Pilot
+
+We have not tested any of this as an integrated system. The RECOVERY trial proves pragmatic trials work. The Montreal Protocol proves coordinated reduction works. The NRA proves political scoring works. But the integrated loop has never run. Individually validated components can fail when combined, the same way individually safe chemicals can explode when mixed.
+
+**How to beat this:** Run a pilot. A single country, a single disease category, a scaled-down version of the full loop. Prove the integration works before asking for planetary adoption.
+
+### 8. We Excluded AI
+
+The [economic projections](../economics/gdp-trajectories.qmd) assume AI helps all trajectories equally and therefore cancels out in the comparison. If AI disproportionately accelerates the productive economy (making the treaty path stronger) or disproportionately accelerates the destructive economy (making the status quo path worse), the projections are wrong in a direction we cannot currently predict.
+
+**How to beat this:** Model AI effects explicitly. Show how AI changes the relative trajectories.
+
+## Fork Instructions
+
+The Earth Optimization Plan v1 is the starting benchmark for the [Earth Optimization Prize](least-bad-idea-prize-paper.qmd). To submit v2:
+
+1. **Fork.** Clone [the repository](https://github.com/mikepsinn/disease-eradication-plan). Every component, every calculation, every assumption is public.
+2. **Replace any row** in the Minimum Acceptable Governance table (see the [prize paper](least-bad-idea-prize-paper.qmd)) with something strictly better on the two terminal metrics (median healthy life years and median real after-tax income).
+3. **Or replace the whole system** with an integrated alternative that dominates v1 function by function. You cannot skip inconvenient pieces; every required function must be covered or replaced.
+4. **Prove it.** The prize uses wishocratic pairwise comparison among contributors to allocate credit. You need evidence, not arguments.
+5. **Collect.** If your plan beats v1 and achieves verified implementation, you receive the outcome perpetuity: a continuing share of recovered value for as long as outcomes improve.
+
+The disqualification rule: if your proposal requires any participant to become less selfish, you have described a pleasant world rather than a mechanism for reaching it. The math must work when humans are greedy, impatient, and exactly as self-interested as they are right now.
+
+We wrote v1 because competitions need a starting entry. There are 8 billion of you and AIs that are almost certainly smarter than its authors. Finding something better should not be difficult.
+
+We expect to lose. We look forward to it.
