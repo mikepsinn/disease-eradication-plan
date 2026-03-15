@@ -36,15 +36,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 166 parameters used in the analysis, organized by type:
+This appendix documents all 170 parameters used in the analysis, organized by type:
 
 - External sources (peer-reviewed): 72
-- Calculated values: 73
-- Core definitions: 21
+- Calculated values: 75
+- Core definitions: 23
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (73 parameters) • [External Data Sources](#sec-external) (72 parameters) • [Core Definitions](#sec-definitions) (21 parameters)
+[Calculated Values](#sec-calculated) (75 parameters) • [External Data Sources](#sec-external) (72 parameters) • [Core Definitions](#sec-definitions) (23 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -2759,6 +2759,62 @@ Cut_{WW2} \\
 = 1 - \frac{Spending_{US,1947}}{Spending_{US,1945}} \\
 = 1 - \frac{\$176B}{\$1.42T} \\
 = 87.6\%
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+:::
+
+### $100 Prize Escrow Compound Return: $418 {#sec-prize_escrow_100_compound_return}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Value of $100 escrowed prize contribution after accumulation period at escrow yield rate, returned if funding threshold is not met
+
+**Inputs**:
+
+- [Prize Escrow Annual Yield Rate](#sec-prize_escrow_yield_rate): 10%
+- [Prize Escrow Accumulation Period](#sec-prize_escrow_accumulation_years): 15 years
+
+$$
+\begin{gathered}
+V_{escrow,100} \\
+= 100 \times (1 + r_{escrow})^{T_{escrow}} \\
+= 100 \times (1 + 10\%)^{15} \\
+= \$418
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-prize_escrow_100_compound_return.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-prize_escrow_100_compound_return.qmd >}}
+
+:::
+
+### Prize Escrow Return Multiple: 4.18x {#sec-prize_escrow_100_return_multiple}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Return multiple on escrowed prize contribution after accumulation period (how many times your money you get back)
+
+**Inputs**:
+
+- [Prize Escrow Annual Yield Rate](#sec-prize_escrow_yield_rate): 10%
+- [Prize Escrow Accumulation Period](#sec-prize_escrow_accumulation_years): 15 years
+
+$$
+\begin{gathered}
+k_{escrow} \\
+= (1 + r_{escrow})^{T_{escrow}} \\
+= (1 + 10\%)^{15} \\
+= 4.18\times
 \end{gathered}
 $$
 
@@ -6164,6 +6220,34 @@ Historical calibration target: 30% military reallocation maps to ~5.5 percentage
 ::: {.callout-note collapse="true" title="📊 Details"}
 
 Standard discount rate for NPV analysis (3% annual, social discount rate)
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*Core definition*
+
+:::
+
+### Prize Escrow Accumulation Period: 15 years {#sec-prize_escrow_accumulation_years}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Assumed accumulation period for escrowed prize contributions before threshold determination
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*Core definition*
+
+:::
+
+### Prize Escrow Annual Yield Rate: 10% {#sec-prize_escrow_yield_rate}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual yield rate on escrowed prize contributions via rolling locked stablecoin staking (Binance 120-day USDT locked staking benchmark, March 2026)
 
 #### Uncertainty Range
 

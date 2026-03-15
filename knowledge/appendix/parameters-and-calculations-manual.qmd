@@ -36,15 +36,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 452 parameters used in the analysis, organized by type:
+This appendix documents all 456 parameters used in the analysis, organized by type:
 
 - External sources (peer-reviewed): 157
-- Calculated values: 199
-- Core definitions: 96
+- Calculated values: 201
+- Core definitions: 98
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (199 parameters) • [External Data Sources](#sec-external) (157 parameters) • [Core Definitions](#sec-definitions) (96 parameters)
+[Calculated Values](#sec-calculated) (201 parameters) • [External Data Sources](#sec-external) (157 parameters) • [Core Definitions](#sec-definitions) (98 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -7231,6 +7231,62 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-pragmatic_trial_cost_per_qaly.qmd >}}
+
+:::
+
+### $100 Prize Escrow Compound Return: $418 {#sec-prize_escrow_100_compound_return}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Value of $100 escrowed prize contribution after accumulation period at escrow yield rate, returned if funding threshold is not met
+
+**Inputs**:
+
+- [Prize Escrow Annual Yield Rate](#sec-prize_escrow_yield_rate): 10%
+- [Prize Escrow Accumulation Period](#sec-prize_escrow_accumulation_years): 15 years
+
+$$
+\begin{gathered}
+V_{escrow,100} \\
+= 100 \times (1 + r_{escrow})^{T_{escrow}} \\
+= 100 \times (1 + 10\%)^{15} \\
+= \$418
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-prize_escrow_100_compound_return.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-prize_escrow_100_compound_return.qmd >}}
+
+:::
+
+### Prize Escrow Return Multiple: 4.18x {#sec-prize_escrow_100_return_multiple}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Return multiple on escrowed prize contribution after accumulation period (how many times your money you get back)
+
+**Inputs**:
+
+- [Prize Escrow Annual Yield Rate](#sec-prize_escrow_yield_rate): 10%
+- [Prize Escrow Accumulation Period](#sec-prize_escrow_accumulation_years): 15 years
+
+$$
+\begin{gathered}
+k_{escrow} \\
+= (1 + r_{escrow})^{T_{escrow}} \\
+= (1 + 10\%)^{15} \\
+= 4.18\times
+\end{gathered}
+$$
+
+*✓ High confidence*
 
 :::
 
@@ -17766,6 +17822,34 @@ Average Phase 2/3 efficacy testing cost per drug that pharma must fund (~60% of 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
 Years of empirical validation for physician-led pragmatic trials (1883-1960)
+
+*Core definition*
+
+:::
+
+### Prize Escrow Accumulation Period: 15 years {#sec-prize_escrow_accumulation_years}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Assumed accumulation period for escrowed prize contributions before threshold determination
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*Core definition*
+
+:::
+
+### Prize Escrow Annual Yield Rate: 10% {#sec-prize_escrow_yield_rate}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual yield rate on escrowed prize contributions via rolling locked stablecoin staking (Binance 120-day USDT locked staking benchmark, March 2026)
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
 
 *Core definition*
 
