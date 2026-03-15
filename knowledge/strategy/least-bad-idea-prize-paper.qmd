@@ -66,13 +66,13 @@ The Earth Optimization Prize works differently. Six moving parts:
 
 **4. Contributors allocate via wishocratic pairwise comparison.** After a measurable trigger fires (treaty signed by N countries, trial infrastructure goes live, or whatever condition the pool defined), every contributor who put money in is shown random pairs of claimants. Each claimant links to evidence of their contribution: public records, legislative histories, commit logs, news coverage, verified voter mobilization records. The contributor splits their share between the two based on the evidence. Because pluralistic ignorance is the primary bottleneck, getting one verified human to publicly say "I want this" is worth more than most policy white papers. Not a vote on the whole pot. Their money, their call, informed by data from the Optimitron [@optimocracy-paper-2025]. Run enough random pairs across enough contributors and the allocations converge on a stable credit distribution. This is the same mathematics behind competitive rating systems and preference learning. The pairwise comparison IS the ranking rule. No pre-specified scoring variables, no formal ranking formula, no appointed judges.
 
-**5. Deposit-as-identity.** Why pairwise comparison of "their share" instead of "their vote": because it kills four problems at once. (a) No sybil attacks: fake accounts have zero funds to allocate; the deposit itself is the identity check. (b) No majority tyranny: your allocation moves your money, not mine. (c) It is a market, not an election: each contributor is a buyer choosing where their dollars go based on evidence. (d) No kingmaking: a billionaire allocates their own deposit, not anyone else's. Random pair assignment prevents deterministic steering to a preferred implementer. And the billionaire's allocation still has to beat challengers on verified metrics; you cannot buy a perpetuity stream for an implementer who underperforms, because the replacement rule hands it to whoever does better. Bigger depositors have more weight, as in any market, but that weight is bounded by their deposit fraction and disciplined by competition.
+**5. Deposit-as-identity.** Why pairwise comparison of "their share" instead of "their vote": because it kills four problems at once. (a) No sybil attacks: fake accounts have zero funds to allocate; the deposit itself is the identity check. (b) No majority tyranny: your allocation moves your money, not mine. (c) It is a market, not an election: each contributor is a buyer choosing where their dollars go based on evidence. (d) No kingmaking: a billionaire allocates their own deposit, not anyone else's. Random pair assignment prevents deterministic steering to a preferred implementer. And the billionaire's allocation still has to beat challengers on verified metrics; you cannot buy a perpetuity stream for an implementer who underperforms, because the replacement rule hands it to whoever does better. Bigger depositors have more weight, as in any market, but that weight is bounded by their deposit fraction and checked by the replacement rule.
 
 **6. Brief constraints.** A proposal is disqualified if it transfers suffering to voiceless populations (foreigners, future people, nonhuman animals) rather than reducing it; fails to cover the required governance functions or replace them with something strictly better; cannot beat the baseline on cost per DALY; or gets weaker when humans act selfishly. One paragraph, not ten sections.
 
 The prize does not defend any particular proposal against better ideas. It uses better ideas to unstick worse ones. If a superior proposal appears, prize funding and political support migrate to it automatically. Your species will object: "if the incumbent knows a better proposal can steal its funding, why not extract value quickly and leave?" Because the biggest reward is outcome perpetuity, a continuing revenue share that only flows while you keep producing results. Grab the money and run, and you forfeit the perpetuity stream. This is the same reason your restaurant owners do not poison the food and flee with the cash register: the ongoing revenue is worth more than the one-time theft. And if the analogy fails (restaurants have physical location and reputation constraints that prize implementers do not), the replacement rule catches what reputation does not: any implementer who degrades performance gets outcompeted by a challenger claiming the perpetuity stream. Your species figured this out for restaurants. We are applying it to governance.
 
-The protocol itself is replaceable: a strictly better selection mechanism replaces the current one under the same replacement rule. The terminal metrics are the fixed point. Everything building toward them is improvable plumbing.
+The protocol itself is replaceable: a strictly better selection mechanism replaces the current one under the same replacement rule. The two numbers don't change. Everything building toward them is improvable plumbing.
 
 ---
 
@@ -140,7 +140,7 @@ The payout is heavily back-loaded. We have noticed that your species is remarkab
 
 Terminal metrics take years to measure, so who funds the implementation work in between? That is not a bug. It is how investment works on every planet we have visited. You fund work now, outcomes appear later. Your species calls this "venture capital" and considers it normal for software companies. It is apparently radical when applied to not dying.
 
-Implementers fund work up front, produce auditable outcomes, and get paid for outcomes they can prove only after the outcomes exist. Claims are measured in audited DALYs averted, suffering hours avoided, verified mortality reduction, or measured welfare gains. Scoring disputes follow a fixed challenge window with bonds: a challenger posts a bond, both sides post evidence, and if the metric is mathematically checkable, automated verification settles it. For empirical metrics, contribution-weighted pairwise evaluation resolves the dispute. Each round costs the losing side more, so frivolous escalation is expensive but genuine disputes reach resolution.
+Implementers fund work up front and get paid for outcomes they can prove only after the outcomes exist. Scoring disputes use the same challenge-window mechanism described above.
 
 ## One Concrete Run
 
@@ -169,7 +169,7 @@ The prize is compatible with public choice because no one has to become good:
 - **Researchers and auditors** compete for the authority to validate what works.
 - **Citizens** get simpler choices and more visible returns from participation.
 
-Nobody is asked to sacrifice self-interest. Self-interest is pointed in a better direction. The design goal is that **greed helps**: the greedier participants get, the harder they work, the more they watch each other, and the more money flows in. Selfishness is the fuel, not the enemy.
+Every participant is doing exactly what they would do anyway, except pointed at diseases instead of each other.
 
 ### Why Contributing Is Rational for You Personally
 
@@ -255,10 +255,6 @@ There are only two stable outcomes:
 
 Those are the only serious possibilities. The unserious possibility is the one humans choose by default: endless argument with no implementation market. Either way, the prize produces the Earth Optimization Plan v2 and causes its implementation. People are dying at {{< var global_disease_deaths_daily_nounit >}} per day while your species argues about mechanism design. Please render v1 obsolete as quickly as possible.
 
-> Reward the first mechanism that can legally and durably implement every required function in the Minimum Acceptable Governance, or replace each one with a dominating substitute, while reallocating resources from their lowest net societal value uses to their highest ones, minimizing suffering, improving median health and wealth, and making every major affected class of living or sentient beings better off on net.
+> Reward whoever causes the most people to stop dying and start earning more, using any legal method, or replace the current best attempt with a better one.
 
-The feedback loop runs: more capital funds sharper selection, sharper selection funds better implementation, better implementation recovers more value, recovered value funds more capital. The mechanism does not need participants to be wise. It needs them to be greedy, impatient, and capable of reading a scoreboard.
-
-The prize does not ask anyone to become good. It just makes doing nothing more expensive than doing something.
-
-The remaining variable is how long this takes to become obvious enough to act on.
+The mechanism does not need participants to be wise. It needs them to be greedy, impatient, and capable of reading a scoreboard. The remaining variable is how long this takes to become obvious enough to act on.
