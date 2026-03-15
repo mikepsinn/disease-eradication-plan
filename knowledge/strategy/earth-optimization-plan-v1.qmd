@@ -33,7 +33,7 @@ Sell [Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd) [@ia
 
 ## How the Pieces Connect
 
-The system has ten required functions. They form a loop:
+The system has eleven required functions. The first ten form a loop; the eleventh becomes possible once the loop is running:
 
 1. **[Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd)** raise {{< var treaty_campaign_total_cost >}} from investors who want {{< var victory_bond_annual_return_pct >}} returns and billionaires who prefer not dying of horrible diseases.
 2. That money funds the **political campaign**: lobbying, Super PACs, a [global referendum](global-referendum.qmd) proving public support, and paid referral bonuses for voter recruitment.
@@ -45,6 +45,7 @@ The system has ten required functions. They form a loop:
 8. The **[Political Dysfunction Tax](../problem/unrepresentative-democracy.qmd) [@political-dysfunction-tax-paper-2025]** and **[US Efficiency Audit](https://us-efficiency-audit.warondisease.org) [@us-efficiency-audit-paper-2025]** identify the waste pools ({{< var political_dysfunction_global_opportunity_cost_total >}}/year globally).
 9. The **[legal architecture](../legal/legal-framework.qmd)** (treaty text, [Right to Trial](../solution/dfda.qmd) & FDA Upgrade Act, statutory tools) creates binding force.
 10. **[This book](/)** is the narrative and coalition wrapper that coordinates adoption.
+11. **[Algorithmic monetary system](../futures/wishonia.qmd#the-algorithm-that-replaced-twelve-humans)** (Phase 2): once Wishocracy eliminates the politicians who depend on the [money printer](../economics/central-banks.qmd), replace the Federal Reserve with a shared ledger targeting 0% inflation, all new money distributed as UBI, no Cantillon effect, no wars funded without consent.
 
 The loop closes: cured diseases generate popular support and economic returns, which fund further treaty expansion, which funds more trials. Each expansion multiplies all three revenue streams (investor, political, research). The system is designed so that the greedier its participants are, the faster diseases get cured.
 
@@ -167,6 +168,23 @@ The [legal framework](../legal/legal-framework.qmd) has four parts:
 ::: {.callout-note}
 ## Fork Marker
 To replace this component, your alternative must create equal or stronger binding force through legal channels.
+:::
+
+## The Monetary System (Phase 2)
+
+The [central-banks chapter](../economics/central-banks.qmd) makes the case that the money printer is the root cause: every war that killed more than a million people required one, the hard-money list is empty, and the Cantillon effect has transferred 93% of your purchasing power from workers to whoever stands closest to the printer since 1913. A plan that claims to optimize Earth but ignores the monetary system is a plan that fixes the symptoms and leaves the disease.
+
+V1 does not fix this in Phase 1. The treaty, the bonds, and your decentralized FDA all operate within existing fiat currencies. This is deliberate. Replacing the Federal Reserve requires eliminating the politicians who depend on it, which requires [Wishocracy](../solution/wishocracy.qmd) to be running, which requires the treaty to pass, which requires the bonds to sell. You cannot skip to the end. The sequencing matters.
+
+Phase 2 (post-treaty, post-wishocracy) replaces the money printer with an algorithmic monetary system described in [Wishonia](../futures/wishonia.qmd#the-algorithm-that-replaced-twelve-humans). The core mechanism: a shared ledger where money supply targets 0% inflation. When the economy grows, the algorithm creates exactly enough new currency to keep prices stable. That new money is the productivity dividend, and it flows through [Wishocracy](../solution/wishocracy.qmd) as the global public goods budget. Citizens allocate it via pairwise comparisons: cancer research or infrastructure, education or defense. No congressional budget process. No grant committee. No lobbyist. The economy's natural surplus, captured by the algorithm instead of being silently pocketed by whoever stands closest to the printer.
+
+A transaction tax (automatic, invisible, collected by smart contract) provides the second stream: UBI distributed equally to every citizen. This is the constant floor; it flows regardless of growth. Two revenue streams, one governance mechanism, both through Wishocracy. This replaces income tax, the IRS, the congressional budget process, the Federal Reserve, grant committees, and the lobbying industry with three pieces of software: the monetary algorithm, the transaction tax contract, and Wishocracy. The [Optimitron](../solution/optimocracy.qmd) tells citizens what's working; citizens decide what matters; money follows.
+
+This is v1's most honest gap. The system that funds wars without democratic consent, steals 2% of purchasing power per year by design, and channels genius toward weapons instead of medicine is not addressed until Phase 2. A v2 that solves this earlier, without breaking the Phase 1 sequencing, would be strictly better.
+
+::: {.callout-note}
+## Fork Marker
+To replace this component, design a transition path from fiat to algorithmic money that does not require the treaty to pass first, or prove that the treaty can pass faster without monetary reform.
 :::
 
 ## The Ratchet
