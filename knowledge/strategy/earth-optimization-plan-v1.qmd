@@ -3,7 +3,7 @@ title: 'Earth Optimization Plan v1'
 subtitle: 'The Terrible Starting Benchmark for the Earth Optimization Prize'
 description: "The complete integrated system from How to End War and Disease, documented in one forkable document. Ten mechanisms, one self-reinforcing loop, explicit known weaknesses. Please replace this with something better."
 abstract: |
-  The Earth Optimization Plan v1 is the integrated system described in *How to End War and Disease*. It combines ten mechanisms into a self-reinforcing loop: a 1% military-to-medical treaty provides {{< var treaty_annual_funding >}}/year in funding; pragmatic clinical trials executed through a decentralized FDA protocol reduce trial costs by {{< var dfda_trial_cost_reduction_factor >}} and compress the treatment discovery queue from {{< var status_quo_queue_clearance_years >}} to {{< var dfda_queue_clearance_years >}}; Incentive Alignment Bonds fund the political campaign and pay investors {{< var victory_bond_annual_return_pct >}} annual returns; wishocratic pairwise comparison allocates the {{< var dih_treasury_medical_research_pct >}} research treasury; and an evidence machine (Optimocracy) tells governments which policies actually work. Each component feeds the next. More cures generate popular support, more bondholder income generates political pressure, and more treaty funding generates campaign support for politicians who voted yes. The ratchet only moves in one direction. This paper documents the complete system: what each component does, how they connect, what numbers they claim, and where we think we are wrong. It exists to be replaced. The [Earth Optimization Prize](least-bad-idea-prize-paper.qmd) is a standing bounty for whoever builds v2. Fork this and make it better.
+  The Earth Optimization Plan v1 is the integrated system described in *How to End War and Disease*. It combines eleven mechanisms into a self-reinforcing loop: a 1% military-to-medical treaty provides {{< var treaty_annual_funding >}}/year in funding; pragmatic clinical trials executed through a decentralized FDA protocol reduce trial costs by {{< var dfda_trial_cost_reduction_factor >}} and compress the treatment discovery queue from {{< var status_quo_queue_clearance_years >}} to {{< var dfda_queue_clearance_years >}}; Incentive Alignment Bonds fund the political campaign and pay investors {{< var victory_bond_annual_return_pct >}} annual returns; wishocratic pairwise comparison allocates the {{< var dih_treasury_medical_research_pct >}} research treasury; and an evidence machine (Optimocracy) tells governments which policies actually work. Each component feeds the next. More cures generate popular support, more bondholder income generates political pressure, and more treaty funding generates campaign support for politicians who voted yes. The ratchet only moves in one direction. This paper documents the complete system: what each component does, how they connect, what numbers they claim, and where we think we are wrong. It exists to be replaced. The [Earth Optimization Prize](least-bad-idea-prize-paper.qmd) is a standing bounty for whoever builds v2. Fork this and make it better.
 published: true
 tags:
   - strategy
@@ -24,6 +24,8 @@ Your species has produced thousands of policy proposals, most of which share a s
 The Earth Optimization Plan v1 is different in exactly one way: it is an integrated system where every component creates the conditions for the next component. The treaty funds the trials. The trials generate returns. The returns pay the investors who funded the campaign that passed the treaty. The campaign creates voter demand that makes expanding the treaty easier than repealing it. Remove any one piece and the loop breaks. That is a weakness and a strength. It is a weakness because integrated systems are harder to build. It is a strength because integrated systems are harder to capture; you cannot lobby your way out of a machine whose parts check each other.
 
 We think this plan is terrible. We also think it is better than what your species is currently doing, which is spending {{< var military_to_government_clinical_trials_spending_ratio >}} times more on weapons than on testing which medicines work, and calling this "civilization."
+
+There is also a clock. Your [destructive economy](../economics/gdp-trajectories.qmd) (military spending beyond deterrence plus cybercrime) is {{< var global_destructive_economy_pct_gdp >}} of GDP and growing faster than the productive economy. The Soviet Union collapsed at 15%. At current growth rates, yours hits 25% in {{< var destructive_economy_years_to_25pct_gdp >}} and 50% in {{< var destructive_economy_years_to_50pct_gdp >}}. There is a crossover point where the rational choice for any individual, company, or nation flips from "build things" to "steal things." You have a name for places where this already happened. You call them "failed states." There is no Colombia to flee to when the global economy is the failed state.
 
 The [Earth Optimization Prize](least-bad-idea-prize-paper.qmd) is a standing bounty for whoever builds v2. This paper is the starting entry. Every component is documented with what it does, what numbers it claims, and what a replacement must beat. Fork it. Improve it. Replace it entirely. We will be genuinely relieved.
 
@@ -126,6 +128,22 @@ The referendum proves that the support already exists. Everyone thinks ending wa
 To replace this component, your alternative must coordinate adoption at equal or lower cost and failure risk.
 :::
 
+### Why Every Actor's Selfish Move Aligns
+
+The system does not require anyone to become a better person. It requires each actor to do the thing they were already going to do, except [pointed at diseases](../solution/aligning-incentives.qmd):
+
+| Actor | What they want | What the system gives them |
+|:---|:---|:---|
+| Defense contractors | Revenue | Keep 99% of budget + new health market worth {{< var treaty_annual_funding >}}/year |
+| Pharma | Cheaper trials, more revenue | Trials become revenue instead of cost; cost drops {{< var dfda_trial_cost_reduction_factor >}} |
+| Insurance companies | Fewer claims | Cured patients stop filing; permanent profit increase |
+| Politicians | Reelection + career | Super PAC funding + post-office careers proportional to treaty support |
+| Billionaires | Returns + not dying | {{< var victory_bond_annual_return_pct >}} returns + their diseases get cured too |
+| Lobbyists | Clients + salary | Same job, same salary, different client; Wikipedia page improves |
+| Regular humans | Health + income | Diseases cured + {{< var treaty_trajectory_lifetime_income_gain_per_capita >}} lifetime income gain |
+
+The Olsonian problem (concentrated interests beat diffuse beneficiaries) is solved by creating concentrated interests on the pro-health side. Bondholders, politicians receiving PAC funding, defense contractors accessing the new health market: all now have per-capita stakes in the treaty's survival that match or exceed the defense lobby's per-capita stakes in the status quo.
+
 ## The Information Engine
 
 ### The Evidence Machine
@@ -178,7 +196,9 @@ V1 does not fix this in Phase 1. The treaty, the bonds, and your decentralized F
 
 Phase 2 (post-treaty, post-wishocracy) replaces the money printer with an algorithmic monetary system described in [Wishonia](../futures/wishonia.qmd#the-algorithm-that-replaced-twelve-humans). The core mechanism: a shared ledger where money supply targets 0% inflation. When the economy grows, the algorithm creates exactly enough new currency to keep prices stable. That new money is the productivity dividend, and it flows through [Wishocracy](../solution/wishocracy.qmd) as the global public goods budget. Citizens allocate it via pairwise comparisons: cancer research or infrastructure, education or defense. No congressional budget process. No grant committee. No lobbyist. The economy's natural surplus, captured by the algorithm instead of being silently pocketed by whoever stands closest to the printer.
 
-A transaction tax (automatic, invisible, collected by smart contract) provides the second stream: UBI distributed equally to every citizen. This is the constant floor; it flows regardless of growth. Two revenue streams, one governance mechanism, both through Wishocracy. This replaces income tax, the IRS, the congressional budget process, the Federal Reserve, grant committees, and the lobbying industry with three pieces of software: the monetary algorithm, the transaction tax contract, and Wishocracy. The [Optimitron](../solution/optimocracy.qmd) tells citizens what's working; citizens decide what matters; money follows.
+A transaction tax (automatic, invisible, collected by smart contract) provides the second stream, constant regardless of growth. Both streams flow into one pool. [Wishocracy](../solution/wishocracy.qmd) allocates the entire thing via pairwise comparisons. UBI is one allocation category among many (alongside cancer research, infrastructure, education, etc.), not a constitutional carve-out. The pairwise comparison forces the tradeoff: citizens who want more cash allocate toward UBI; citizens who want more cures allocate toward research. The [Optimitron](../solution/optimocracy.qmd) shows the ROI of each option. The aggregate produces a natural equilibrium. No paternalistic floor, no expert committee deciding what citizens need. Eight billion people deciding for themselves, informed by evidence.
+
+Together, three pieces of software (the monetary algorithm targeting 0% inflation, the transaction tax contract, and Wishocracy) render redundant: the Federal Reserve, the IRS, income tax, the congressional budget process, every welfare program (food stamps, housing vouchers, disability offices, Social Security Administration), grant committees, the lobbying industry, and the financial sector.
 
 This is v1's most honest gap. The system that funds wars without democratic consent, steals 2% of purchasing power per year by design, and channels genius toward weapons instead of medicine is not addressed until Phase 2. A v2 that solves this earlier, without breaking the Phase 1 sequencing, would be strictly better.
 
@@ -199,7 +219,23 @@ The system is designed to ratchet. Three reinforcing loops ensure the treaty per
 
 All three loops compound. A ratchet wrench only turns one way. Your species uses these in garages. We are applying one to your civilization.
 
+## The Sequencing
+
+The pieces deploy in order. You cannot skip steps. The full [roadmap](roadmap.qmd) has the 36-month execution plan. Here is the compressed version:
+
+**Months 1-3: Proof of concept.** Deploy the [Optimitron](../solution/optimocracy.qmd) and [Wishocracy](../solution/wishocracy.qmd) as a live referendum platform. Prove humans will participate in direct allocation when you make it easy. Show this to angel investors.
+
+**Months 4-18: Scale and sell.** Launch referral-bonus-powered voter recruitment. Raise initial IAB capital. Hire lobbyists. Build the IAB scoring system. Get millions of verified referendum votes. The secondary market price of bonds becomes a live signal of implementation probability.
+
+**Months 19-36: The treaty.** Launch the full VICTORY bond sale ({{< var treaty_campaign_total_cost >}} target). Overwhelm the defense lobby ({{< var defense_lobbying_annual >}}/year) with 8x their spend. Pass the treaty. {{< var treaty_annual_funding >}}/year begins flowing.
+
+**Years 4-50: The ratchet.** Treaty expands from 1% to 2% to 5% to 10%+. Each expansion multiplies all three revenue streams. Bondholders lobby for expansion because it raises their returns. Politicians support expansion because it raises their PAC funding. Voters support expansion because diseases keep getting cured.
+
+**Phase 2: The monetary system.** Once Wishocracy is running at scale and politicians are extinct, replace the Federal Reserve with the algorithmic monetary system. The productivity dividend flows through Wishocracy as the global public goods budget. The transaction tax replaces income tax. Three pieces of software replace the entire fiscal and monetary apparatus.
+
 ## The Numbers
+
+The ROI is astronomical because three compounding engines run simultaneously. **Engine 1: R&D spillover.** Redirect engineers from missiles to medicine. Every dollar of R&D produces {{< var rd_spillover_multiplier >}} in economy-wide productivity gains; military R&D produces approximately none (classified, non-transferable, designed to destroy). **Engine 2: Disease burden reduction.** Disease currently costs {{< var disease_burden_gdp_drag_pct >}} of GDP in sick workers, medical bills, and lost productivity. Cure the diseases, recover the GDP. **Engine 3: Governance improvement.** The [Optimitron](../solution/optimocracy.qmd) identifies {{< var political_dysfunction_global_opportunity_cost_total >}}/year in political dysfunction. Fix even a fraction and the gains compound. All three run for 20 years. Cut every assumption in half, then in quarters. The model still produces a civilization instead of a collapse.
 
 The economic case, compressed:
 
@@ -275,6 +311,24 @@ The [economic projections](../economics/gdp-trajectories.qmd) assume AI helps al
 
 **How to beat this:** Model AI effects explicitly. Show how AI changes the relative trajectories.
 
+## What Already Exists
+
+This is not a whitepaper. The core infrastructure is built and tested:
+
+| Package | What it does | Status |
+|:---|:---|:---|
+| [Optimitron core](https://github.com/mikepsinn/optomitron) | Domain-agnostic causal inference engine | 176 tests |
+| Wishocracy | RAPPA pairwise preference aggregation, citizen alignment scores | 162 tests |
+| Optimal Policy Generator | Enact/replace/repeal recommendations from cross-jurisdiction data | 213 tests |
+| Optimal Budget Generator | Diminishing-returns budget optimization | 146 tests |
+| Data layer | OECD, World Bank, FRED, WHO, Congress.gov fetchers + 9 health importers | 296 tests |
+| Treasury contracts | WishToken ($WISH), IAB vault, prize pool, alignment treasury (Solidity) | Hardhat tests |
+| Web app | Live RAPPA surveys, politician scorecards, bill voting, alignment reports | Next.js, deployed |
+
+Total: 2,600+ tests across 13 packages. TypeScript strict mode. Zod validation throughout. Every algorithm backed by a published paper with exact formulas and worked examples.
+
+When you fork v1, you are forking working code, not a PDF. The [repository](https://github.com/mikepsinn/disease-eradication-plan) contains every calculation, every parameter, and every assumption. The [Optomitron repository](https://github.com/mikepsinn/optomitron) contains every algorithm.
+
 ## Fork Instructions
 
 The Earth Optimization Plan v1 is the starting benchmark for the [Earth Optimization Prize](least-bad-idea-prize-paper.qmd). To submit v2:
@@ -282,8 +336,8 @@ The Earth Optimization Plan v1 is the starting benchmark for the [Earth Optimiza
 1. **Fork.** Clone [the repository](https://github.com/mikepsinn/disease-eradication-plan). Every component, every calculation, every assumption is public.
 2. **Replace any row** in the Minimum Acceptable Governance table (see the [prize paper](least-bad-idea-prize-paper.qmd)) with something strictly better on the two terminal metrics (median healthy life years and median real after-tax income).
 3. **Or replace the whole system** with an integrated alternative that dominates v1 function by function. You cannot skip inconvenient pieces; every required function must be covered or replaced.
-4. **Prove it.** The prize uses wishocratic pairwise comparison among contributors to allocate credit. You need evidence, not arguments.
-5. **Collect.** If your plan beats v1 and achieves verified implementation, you receive the outcome perpetuity: a continuing share of recovered value for as long as outcomes improve.
+4. **Prove it.** The primary credit mechanism is referral tracking: how many verified unique voters did you bring? Secondary credit goes to implementation bounties for building infrastructure, drafting legislation, and running trials. You need numbers, not arguments.
+5. **Collect.** Bondholders receive their revenue share for as long as the treaty generates funding. Implementation contributors receive bounties proportional to verified outcomes.
 
 The disqualification rule: if your proposal requires any participant to become less selfish, you have described a pleasant world rather than a mechanism for reaching it. The math must work when humans are greedy, impatient, and exactly as self-interested as they are right now.
 
