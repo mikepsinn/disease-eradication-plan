@@ -49,36 +49,46 @@ A reader finishes the prize page, wants to create their own version, and can do 
 
 For the assurance contract version — where contributors get their money back if no winner is found — you need a smart contract. But it's simpler than you'd think.
 
-### The Dominant Assurance Contract
+### The Assurance Contract
 
-Alex Tabarrok's mechanism (George Mason University, 1998): Contributors pledge to a public good. If the threshold is met and the project succeeds, contributors pay. If it fails, contributors get their money back PLUS a bonus. This makes contributing the dominant strategy regardless of whether you think it will succeed.
+An assurance contract is the simplest mechanism that makes contributing safe: if the funding threshold is never reached, every contributor gets their money back. No threshold = no deployment = no risk. This is different from a donation — you are not committing anything until enough other people commit too.
 
 Applied to the prize:
 1. **Contributors pledge funds** to the prize pool (ETH, USDC, or fiat via bridge)
 2. **If a winner is certified** (beats the baseline on 28 metrics) → funds go to winner
-3. **If no winner by deadline** → funds returned to contributors + small bonus from the prize organizer
-4. **Contributing is the dominant strategy** because you profit either way: either the prize is won (war and disease end, you benefit) or it isn't (you get your money back plus a bonus)
+3. **If the threshold is never met** → funds returned in full to every contributor
+4. **Contributing is low-risk** because the worst case is your money sat in an escrow for a while and came back
+
+The yield-bearing treasury (see below) makes this a no-lose proposition: while your funds are in escrow awaiting threshold, they earn safe returns. Fail-to-threshold means you get back more than you put in. No organizer-funded bonus required — the T-bills provide it.
 
 ### Technical Requirements
 
 ```
-Smart Contract: DominantAssurancePrize.sol
+Smart Contract: AssurancePrize.sol
 
 State variables:
 - scorecard: bytes32[] (hash of 28 metric definitions)
 - baseline: uint256[] (current best scores from Earth Optimization Plan)
-- deadline: uint256 (block timestamp)
+- fundingDeadline: uint256 (block timestamp — threshold must be hit by this date)
+- snapshotDate: uint256 (T0 + 15 years — global failure refund trigger)
 - pledges: mapping(address => uint256)
 - totalPledged: uint256
-- bonusRate: uint256 (e.g., 5% — paid by organizer if no winner)
+- yieldVault: address (ERC-4626 compatible yield vault)
 - judges: address[] (multisig or DAO)
 - winner: address (zero until certified)
+- refundClauseActive: bool (true until first milestone payout)
 
 Functions:
-- pledge() → deposit funds, record contributor
-- certifyWinner(address, uint256[] scores) → judges submit scores, if scores beat baseline on all 28 metrics, winner is set
+- pledge() → deposit funds into yield vault, record contributor
+- certifyWinner(address, uint256[] scores) → judges submit scores, if scores beat
+  baseline on all 28 metrics, winner is set; refundClauseActive = false
 - claimPrize() → winner withdraws funds
-- claimRefund() → if deadline passed and no winner, contributors get pledge + bonus
+- claimRefund() → if fundingDeadline passed without hitting threshold, contributor
+  gets pledge + accrued yield
+- activateGlobalFailureRefund() → callable by oracle after snapshot confirms zero
+  cumulative gains at snapshotDate; only if refundClauseActive = true
+- claimGlobalFailureRefund() → after activateGlobalFailureRefund(), contributor
+  gets pledge + 15 years of accrued yield
 - challengeScores() → adversarial challenge period (30 days after certification)
 
 Deployment cost: ~$50-200 in gas on Ethereum L2 (Base, Arbitrum, Optimism)
@@ -169,7 +179,49 @@ Frontend: prize.warondisease.org/forks
 6. Total global prize pool displayed on every fork's page → social proof compounds
 7. At some dollar threshold, serious teams start competing → the mechanism works
 
-**The key insight:** You don't need one person to fund a $1B prize. You need a million people to fund a $1,000 prize each. The factory + assurance contract + standardized scorecard makes this possible. Each person's contribution is a no-lose bet (refund + bonus if no winner), so the dominant strategy is to contribute regardless of your beliefs about success probability.
+**The key insight:** You don't need one person to fund a $1B prize. You need a million people to fund a $1,000 prize each. The factory + assurance contract + standardized scorecard makes this possible. Each person's contribution is a no-lose bet (refund if threshold never met, yield-bearing treasury if deployed), so contributing is the correct decision regardless of your beliefs about success probability.
+
+---
+
+## Treasury Design
+
+### Yield-Bearing Escrow
+
+All contributions sit in ultra-safe, liquid, yield-bearing instruments from the moment they're deposited — not inert cash. Acceptable instruments: U.S. Treasury bills (3–6 month ladder), investment-grade sovereign debt from AAA-rated issuers, or audited stablecoin yield protocols with ≥$5B TVL and ≥24-month track record. The mandate is preservation-first, yield-second. No speculative assets, no lockups exceeding 6 months, no instruments that can't be liquidated within 72 hours. Accrued yield is credited pro-rata to each contributor daily and compounds within the treasury until either a milestone payout or a refund event.
+
+This makes the assurance contract a no-lose proposition without any organizer-funded bonus: if the threshold is never met, contributors get back principal + yield. The T-bills provide the bonus.
+
+### The 15-Year Global Failure Refund Clause
+
+The assurance contract handles the pre-deployment risk: if the threshold is never reached, money comes back. But once the threshold is met and capital is deployed, the refund clause normally expires. This is the one remaining scenario where a contributor could lose — the mechanism is funded, runs for years, and produces nothing.
+
+The 15-year clause closes this gap.
+
+**Rule:** On the exact 15-year anniversary of the first deployed dollar (the "Snapshot Date"), Optimitron performs a mandatory one-time global snapshot of the two terminal metrics: dHealthy_med and gIncome_med across all adopting jurisdictions. If cumulative verified gains in both metrics equal zero — meaning the mechanism produced no measurable improvement in any jurisdiction that adopted it — then the refund clause activates: every contributor receives their full principal plus all accrued safe returns within 30 days.
+
+**Trigger condition for refund:**
+- Optimitron verifies ≤0 gains in both terminal metrics across population-weighted average of all adopting jurisdictions
+- No party successfully demonstrates positive gains during the 90-day dispute window following the snapshot
+- `refundClauseActive` is still `true` (no milestone payouts have occurred)
+
+**Defeat condition (refund clause expires):**
+- Any verified gains trigger even $1 of milestone payouts → `refundClauseActive = false` → remaining treasury stays in the perpetual outcome-based pool
+
+**Edge case — insufficient adoption:** If fewer than 3 jurisdictions formally adopted the plan by T+15, the snapshot is deferred to T+20. This prevents the refund from triggering because the plan wasn't deployed at sufficient scale to measure, rather than because it failed.
+
+**Verification process:** Same oracle stack as milestone verification — UMA optimistic oracle + 90-day dispute window + Kleros appeals court + 15-of-21 trustee multisig as backstop. Execution is fully automated once the dispute window closes. No human override.
+
+### Why This Makes Contributing a Strictly Dominant Strategy
+
+| Outcome | What happens to your contribution |
+|---|---|
+| Threshold never met | Principal + yield returned (assurance refund) |
+| Threshold met, mechanism works | Prize funds the winner; you benefit from a world with less war and disease |
+| Threshold met, mechanism runs 15 years, zero verified gains | Principal + 15 years of accrued yield returned (global failure refund) |
+
+There is no outcome in which a rational contributor loses money. The downside is opportunity cost: your capital earned T-bill returns instead of whatever else you would have done with it. The upside is unchanged: the mechanism works, and 10.7 billion lives are saved.
+
+The behavioral implication is significant. Standard prospect theory weights losses ~2.5× more heavily than equivalent gains. The current prize already has a positive expected value that dwarfs any alternative investment. The treasury design eliminates the loss branch entirely — which is the difference between "positive EV philanthropy that requires overcoming loss aversion" and "strictly dominant financial instrument that selfish actors pile into regardless of their beliefs about success probability."
 
 ---
 
