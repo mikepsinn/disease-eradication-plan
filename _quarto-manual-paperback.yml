@@ -89,7 +89,8 @@ book:
 
     - part: "The Plan"
       chapters:
-        - knowledge/strategy/roadmap.qmd
+        - knowledge/strategy/earth-optimization-plan-v1.qmd
+        # - knowledge/strategy/roadmap.qmd # MERGED into earth-optimization-plan-v1.qmd
         # CUT: election-law.qmd - operational detail for campaign staff
         # REMOVED: Merged into knowledge/solution/incentive-alignment-bonds.qmd
         # - knowledge/economics/victory-bonds.qmd

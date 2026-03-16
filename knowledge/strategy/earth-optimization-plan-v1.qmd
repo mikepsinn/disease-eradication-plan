@@ -138,9 +138,9 @@ The system does not require anyone to become a better person. It requires each a
 
 | Actor | What they want | What the system gives them |
 |:---|:---|:---|
-| Defense contractors | Revenue | Keep 99% of budget + new health market worth {{< var treaty_annual_funding >}}/year |
+| Defense contractors | Revenue | Keep 99% of budget + new health market worth {{< var treaty_annual_funding >}}/year. The main difference is whether the end user survives. |
 | Pharma | Cheaper trials, more revenue | Trials become revenue instead of cost; cost drops {{< var dfda_trial_cost_reduction_factor >}} |
-| Insurance companies | Fewer claims | Cured patients stop filing; permanent profit increase |
+| Insurance companies | Fewer claims | Cured patients stop filing; their lobbyists become your lobbyists |
 | Politicians | Reelection + career | Super PAC funding + post-office careers proportional to treaty support |
 | Billionaires | Returns + not dying | {{< var victory_bond_annual_return_pct >}} returns + their diseases get cured too |
 | Lobbyists | Clients + salary | Same job, same salary, different client; Wikipedia page improves |
@@ -187,6 +187,17 @@ The [legal framework](../legal/legal-framework.qmd) has four parts:
 3. **[Legislation package](legislation-package.qmd).** The statutory tools for domestic implementation in each signatory country.
 4. **[Election law compliance](../legal/election-law.qmd).** The IAB mechanism operates within existing campaign finance law (Citizens United, FEC advisory opinions, 501(c)(4) rules).
 
+### The Organizational Structure
+
+You need to fight on three fronts: moral (charity), political (lobbying), and financial (investment). Your legal system says one organization cannot do all three. Your legal system is adorably complicated, like a board game designed by lawyers having a nightmare. So you build a four-part machine:
+
+- **The Charity (501c3).** Research and education. Foundations give money here and get tax deductions.
+- **The Lobbying Group (501c4).** Takes the research and wages unlimited political warfare (mostly lunch meetings and PowerPoints).
+- **The Corporation (C-Corp).** Issues the VICTORY [Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd) and collects investment capital. Yes, you need a for-profit corporation to end death.
+- **The Swiss Foundation.** The parent organization owns the corporation, ensuring profits can only fund the mission. You put it in Switzerland because they are good at keeping things neutral and also chocolate.
+
+This structure lets you legally accept money from foundations, political donors, and investors, and aim it all at diseases instead of each other.
+
 ::: {.callout-note}
 ## Fork Marker
 To replace this component, your alternative must create equal or stronger binding force through legal channels.
@@ -223,9 +234,26 @@ The system is designed to ratchet. Three reinforcing loops ensure the treaty per
 
 All three loops compound. The ratchet only turns one way.
 
+### The Expansion Math
+
+The treaty money splits [80/10/10](../appendix/incentive-alignment-bonds-paper.qmd): {{< var dih_treasury_medical_research_pct >}} to clinical trials (the point), {{< var victory_bond_funding_pct >}} to investors (the bait), {{< var iab_political_incentive_funding_pct >}} to [political incentives](../appendix/incentive-alignment-bonds-paper.qmd) (the hook). That last slice grows every time the treaty expands:
+
+| Treaty % | Political Incentive Pool | What Happens |
+|:---------|:------------------------|:-------------|
+| 1% | {{< var iab_political_incentive_funding_annual >}}/year | Treaty passes. Humans cautiously try not dying. |
+| 2% | $5.44B/year | Politicians compete to expand (they've discovered voters like living) |
+| 5% | $13.6B/year | Health lobby rivals defense lobby. Lobbyists switch suits. |
+| 10% | $27.2B/year | "Funded pragmatic clinical trials" becomes the most rewarded phrase in politics |
+| 25% | $68B/year | Superpowers compete on health outcomes (much less radioactive) |
+| 50%+ | $136B+/year | Historians write confused books about why this took so long |
+
+**Bond investors** get {{< var victory_bond_funding_pct >}} of all treaty funds. At 1%, that is {{< var victory_bond_annual_return_pct >}} returns. At 2%, it doubles. At 10%, they collect ten times their original payout. Every bondholder calls their senator, not because they care about diseases but because they care about money. You do not have to ask them to do this. They will do it automatically, the way a plant grows toward sunlight except the sunlight is money and the plant is a billionaire. You have built a defense lobby in reverse.
+
+**Politicians** see their [IAB-funded rewards](../appendix/incentive-alignment-bonds-paper.qmd) grow with each expansion. By 10%, the political incentive pool ($27.2B/year) exceeds all current global lobbying combined. "I support pragmatic clinical trial funding" becomes the most profitable sentence a politician can say, which means they will say it constantly, which means they will eventually believe it. This is how your species forms convictions.
+
 ## The Sequencing
 
-You cannot skip steps. The full [roadmap](roadmap.qmd) has the execution plan. All timelines below are order-of-magnitude estimates, not promises.
+You cannot skip steps. All timelines below are order-of-magnitude estimates, not promises.
 
 **Phase 1: Prove it works (weeks to months).** Sell [PRIZE tokens](earth-optimization-prize.qmd) (zero-downside assurance contract) and launch [Wishocracy](../solution/wishocracy.qmd) as a live referendum platform. Every recruiter who brings a verified participant earns VOTE tokens. The PRIZE pool size and referendum headcount become the pitch to investors.
 
