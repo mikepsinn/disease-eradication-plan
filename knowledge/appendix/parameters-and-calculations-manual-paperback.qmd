@@ -36,15 +36,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 334 parameters used in the analysis, organized by type:
+This appendix documents all 342 parameters used in the analysis, organized by type:
 
-- External sources (peer-reviewed): 123
-- Calculated values: 155
+- External sources (peer-reviewed): 125
+- Calculated values: 161
 - Core definitions: 56
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (155 parameters) • [External Data Sources](#sec-external) (123 parameters) • [Core Definitions](#sec-definitions) (56 parameters)
+[Calculated Values](#sec-calculated) (161 parameters) • [External Data Sources](#sec-external) (125 parameters) • [Core Definitions](#sec-definitions) (56 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -5399,6 +5399,30 @@ $$
 
 :::
 
+### Prize Escrow Return Multiple: 4.18x {#sec-prize_escrow_100_return_multiple}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Return multiple on escrowed prize contribution after accumulation period (how many times your money you get back)
+
+**Inputs**:
+
+- [Prize Escrow Annual Yield Rate](#sec-prize_escrow_yield_rate): 10%
+- [Prize Escrow Accumulation Period](#sec-prize_escrow_accumulation_years): 15 years
+
+$$
+\begin{gathered}
+k_{escrow} \\
+= (1 + r_{escrow})^{T_{escrow}} \\
+= (1 + 10\%)^{15} \\
+= 4.18\times
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+:::
+
 ### RECOVERY Trial Cost Reduction Factor: 82x {#sec-recovery_trial_cost_reduction_factor}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -9525,6 +9549,31 @@ $$
 
 :::
 
+### Wishonia Disease Cure Fraction (15yr, Full Implementation): 100% {#sec-wishonia_disease_cure_fraction_15yr}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Wishonia disease-cure fraction over 15 years under full implementation. Uses full trial-capacity scaling and applies an upper bound of 100% of untreated disease classes.
+
+**Inputs**:
+
+- [Diseases Getting First Treatment Per Year](#sec-new_disease_first_treatments_per_year) 📊: 15 diseases/year (95% CI: 8 diseases/year - 30 diseases/year)
+- [Trial Capacity Multiplier](#sec-dfda_trial_capacity_multiplier) 🔢: 12.3x
+- [Wishonia Military Reallocation Physical Max Share](#sec-wishonia_military_reallocation_physical_max_share) 🔢: 87.6%
+- [Maximum Trial Capacity Multiplier (Physical Limit)](#sec-dfda_max_trial_capacity_multiplier_physical) 🔢: 566x
+- [Diseases Without Effective Treatment](#sec-diseases_without_effective_treatment) 🔢: 6.65 thousand diseases
+
+$$
+\begin{gathered}
+f_{cure,15,wish} \\
+= \min\left(1,\frac{Treatments_{new,ann}\cdot k_{capacity,wish}\cdot 15}{D_{untreated}}\right)
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+:::
+
 ### Wishonia Disease Cure Fraction (20yr, Full Implementation): 100% {#sec-wishonia_disease_cure_fraction_20yr_full}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -9547,6 +9596,40 @@ f_{cure,20,wish} \\
 $$
 
 *✓ High confidence*
+
+:::
+
+### Wishonia HALE Gain at Year 15: 15.7 years {#sec-wishonia_hale_gain_year_15}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+HALE improvement at year 15 under Wishonia Trajectory. Full implementation cures a larger fraction of diseases, closing more of the HALE gap.
+
+**Inputs**:
+
+- [Wishonia Disease Cure Fraction (15yr, Full Implementation)](#sec-wishonia_disease_cure_fraction_15yr) 🔢: 100%
+- [Global Healthy Life Expectancy (HALE)](#sec-global_hale_current) 📊: 63.3 years (SE: ±1.5 years)
+- [Global Life Expectancy (2024)](#sec-global_life_expectancy_2024) 📊: 79 years (SE: ±2 years)
+
+$$
+\Delta HALE_{wish,15} = f_{cure,15,wish} \cdot \Delta_{HALE}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-wishonia_hale_gain_year_15.qmd >}}
+
+{{< include ../figures/sensitivity-table-wishonia_hale_gain_year_15.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-wishonia_hale_gain_year_15.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-wishonia_hale_gain_year_15.qmd >}}
 
 :::
 
@@ -9573,6 +9656,72 @@ Cut_{WW2} \\
 \end{gathered}
 $$
 *✓ High confidence*
+
+:::
+
+### Wishonia Projected HALE at Year 15: 79 years {#sec-wishonia_projected_hale_year_15}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Projected global HALE at year 15 under Wishonia Trajectory. Full implementation closes the entire disease gap, pushing HALE toward life expectancy.
+
+**Inputs**:
+
+- [Global Healthy Life Expectancy (HALE)](#sec-global_hale_current) 📊: 63.3 years (SE: ±1.5 years)
+- [Wishonia HALE Gain at Year 15](#sec-wishonia_hale_gain_year_15) 🔢: 15.7 years
+
+$$
+HALE_{wish,15} = HALE_0 + \Delta HALE_{wish,15}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-wishonia_projected_hale_year_15.qmd >}}
+
+{{< include ../figures/sensitivity-table-wishonia_projected_hale_year_15.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-wishonia_projected_hale_year_15.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-wishonia_projected_hale_year_15.qmd >}}
+
+:::
+
+### Wishonia Trajectory Average Income at Year 15: $504K {#sec-wishonia_trajectory_avg_income_year_15}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Average income (GDP per capita) at year 15 under the Wishonia Trajectory.
+
+**Inputs**:
+
+- [Wishonia Trajectory GDP at Year 15](#sec-wishonia_trajectory_gdp_year_15) 🔢: $4.48 quadrillion
+- [Global Population 2040 (Projected)](#sec-global_population_2040_projected) 📊: 8.9 billion of people
+
+$$
+\bar{y}_{wish,15} = \frac{GDP_{wish,15}}{Pop_{2040}}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-wishonia_trajectory_avg_income_year_15.qmd >}}
+
+{{< include ../figures/sensitivity-table-wishonia_trajectory_avg_income_year_15.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-wishonia_trajectory_avg_income_year_15.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-wishonia_trajectory_avg_income_year_15.qmd >}}
 
 :::
 
@@ -9810,6 +9959,49 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-wishonia_trajectory_gdp_vs_current_trajectory_multiplier_year_20.qmd >}}
+
+:::
+
+### Wishonia Trajectory GDP at Year 15: $4.48 quadrillion {#sec-wishonia_trajectory_gdp_year_15}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Projected global GDP at year 15 under the Wishonia Trajectory. Applies all Wishonia policy channels including military reallocation, disease-burden recovery, and Political Dysfunction Tax elimination. 3-year ramp at 50% intensity + 12 years full.
+
+**Inputs**:
+
+- [Global GDP (2025)](#sec-global_gdp_2025) 📊: $115T
+- [Baseline Global GDP Growth Rate](#sec-gdp_baseline_growth_rate): 2.5%
+- [Wishonia Military Reallocation Physical Max Share](#sec-wishonia_military_reallocation_physical_max_share) 🔢: 87.6%
+- [GDP Growth Boost at 30% Military Reallocation](#sec-military_redirect_gdp_boost_at_30pct): 5.5% (95% CI: 3.5% - 7.5%)
+- [R&D Spillover Multiplier](#sec-rd_spillover_multiplier): 2x (95% CI: 1.5x - 2.5x)
+- [Wishonia Disease Cure Fraction (15yr, Full Implementation)](#sec-wishonia_disease_cure_fraction_15yr) 🔢: 100%
+- [Disease Burden as % of GDP](#sec-disease_burden_gdp_drag_pct) 📊: 13%
+- [Global Science Opportunity Cost](#sec-political_dysfunction_global_science_opportunity_cost) 📊: $4T (95% CI: $2T - $10T)
+- [Global Lead Poisoning Cost](#sec-political_dysfunction_global_lead_opportunity_cost) 📊: $6T (95% CI: $4T - $8T)
+- [Global Migration Opportunity Cost](#sec-political_dysfunction_global_migration_opportunity_cost) 📊: $57T (95% CI: $57T - $170T)
+- [Economic Multiplier for Healthcare Investment](#sec-economic_multiplier_healthcare_investment) 📊: 4.3x (95% CI: 3x - 6x)
+- [Economic Multiplier for Military Spending](#sec-economic_multiplier_military_spending) 📊: 0.6x (95% CI: 0.4x - 0.9x)
+
+$$
+GDP_{wish,15}=GDP_0(1+g_{ramp})^3(1+g_{full})^{12}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-wishonia_trajectory_gdp_year_15.qmd >}}
+
+{{< include ../figures/sensitivity-table-wishonia_trajectory_gdp_year_15.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-wishonia_trajectory_gdp_year_15.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-wishonia_trajectory_gdp_year_15.qmd >}}
 
 :::
 
@@ -11384,6 +11576,26 @@ Annual global government spending on interventional clinical trials (~5-10% of t
 
 :::
 
+### Global Healthy Life Expectancy (HALE): 63.3 years {#sec-global_hale_current}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Global healthy life expectancy at birth (HALE) from WHO Global Health Observatory, 2019 data (most recent available). HALE measures years lived in full health, adjusting for years lived with disability or disease.
+
+**Source**: [@who-global-health-estimates-2024]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Normal (SE: 1.5 years)
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_hale_current.qmd >}}
+
+*✓ High confidence • 📊 Peer-reviewed • Updated 2019*
+
+:::
+
 ### Global Household Wealth: $454T {#sec-global_household_wealth_usd}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -11507,6 +11719,22 @@ Global population in 2024
 #### Input Distribution
 
 {{< include ../figures/distribution-global_population_2024.qmd >}}
+
+*✓ High confidence*
+
+:::
+
+### Global Population 2040 (Projected): 8.9 billion of people {#sec-global_population_2040_projected}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+UN World Population Prospects 2022 median projection for 2040. Interpolated midpoint between ~8.1B (2025) and 9.2B (2045).
+
+**Source**: [@global-population-8-billion]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
 
 *✓ High confidence*
 
@@ -12916,26 +13144,6 @@ Unique approved drug-disease pairings (FDA-approved uses, midpoint of 1,500-2,00
 
 :::
 
-### Phase 1 Campaign Budget: $200M {#sec-campaign_phase1_budget}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Phase 1 campaign budget (Foundation, Year 1)
-
-#### Uncertainty Range
-
-**Technical**: 95% CI: [$140M, $260M]
-
-**What this means**: There's significant uncertainty here. The true value likely falls between $140M and $260M (±30%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
-
-#### Input Distribution
-
-{{< include ../figures/distribution-campaign_phase1_budget.qmd >}}
-
-*Core definition*
-
-:::
-
 ### Dismissal Rate: 90% {#sec-chain_dismiss_probability}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -13609,6 +13817,20 @@ Standard discount rate for NPV analysis (3% annual, social discount rate)
 ::: {.callout-note collapse="true" title="📊 Details"}
 
 Standard time horizon for NPV analysis
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*Core definition*
+
+:::
+
+### Prize Escrow Accumulation Period: 15 years {#sec-prize_escrow_accumulation_years}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Assumed accumulation period for escrowed prize contributions before threshold determination
 
 #### Uncertainty Range
 
