@@ -72,7 +72,7 @@ The [DIH](../solution/dih.qmd) is a thin coordination protocol, not an organizat
 
 The researcher payment formula replaces the entire grant committee apparatus with one equation: subsidy per patient equals DALYs per patient times value per DALY, where value equals total budget divided by global disease burden. Diseases that kill more people get more funding. This is apparently a novel concept on your planet.
 
-No CEO. No board. Governance rules live in transparent auditable systems. Every dollar on a public ledger. Anyone can build a competing alternative. The protocol is intentionally minimal to resist capture.
+No CEO. No board. Every dollar on a public ledger. Anyone can build a competing alternative. The protocol is intentionally minimal to resist capture.
 
 ::: {.callout-note}
 ## Fork Marker
@@ -192,9 +192,9 @@ To replace this component, your alternative must create equal or stronger bindin
 
 The [central-banks chapter](../economics/central-banks.qmd) makes the case that the money printer is the root cause: every war that killed more than a million people required one, the hard-money list is empty, and the Cantillon effect has transferred 93% of your purchasing power from workers to whoever stands closest to the printer since 1913. A plan that claims to optimize Earth but ignores the monetary system is a plan that fixes the symptoms and leaves the disease.
 
-V1 does not fix this in Phase 1. The treaty, the bonds, and your decentralized FDA all operate within existing fiat currencies. This is deliberate. Replacing the Federal Reserve requires eliminating the politicians who depend on it, which requires [Wishocracy](../solution/wishocracy.qmd) to be running, which requires the treaty to pass, which requires the bonds to sell. You cannot skip to the end. The sequencing matters.
+V1 does not fix this in Phase 1. The treaty, the bonds, and your decentralized FDA all operate within existing fiat currencies. This is deliberate. Replacing the Federal Reserve requires eliminating the politicians who depend on it, which requires [Wishocracy](../solution/wishocracy.qmd) to be running, which requires the treaty to pass, which requires the bonds to sell. You cannot skip to the end.
 
-Phase 2 (post-treaty, post-wishocracy) replaces the money printer with an algorithmic monetary system described in [Wishonia](../futures/wishonia.qmd#the-algorithm-that-replaced-twelve-humans). The core mechanism: a shared ledger where money supply targets 0% inflation. When the economy grows, the algorithm creates exactly enough new currency to keep prices stable. That new money is the productivity dividend, and it flows through [Wishocracy](../solution/wishocracy.qmd) as the global public goods budget. Citizens allocate it via pairwise comparisons: cancer research or infrastructure, education or defense. No congressional budget process. No grant committee. No lobbyist. The economy's natural surplus, captured by the algorithm instead of being silently pocketed by whoever stands closest to the printer.
+Phase 2 (post-treaty, post-wishocracy) replaces the money printer with an algorithmic monetary system described in [Wishonia](../futures/wishonia.qmd#the-algorithm-that-replaced-twelve-humans). The core mechanism: a shared ledger targeting 0% inflation. When the economy grows, the algorithm creates exactly enough new currency to keep prices stable. That new money is the productivity dividend, flowing through [Wishocracy](../solution/wishocracy.qmd) as the global public goods budget. No congressional budget process. No lobbyist.
 
 A transaction tax (automatic, collected by smart contract) provides the second stream. Both flow into one pool; [Wishocracy](../solution/wishocracy.qmd) allocates the entire thing. UBI is one allocation category among many, not a constitutional carve-out. The [Optimitron](../solution/optimocracy.qmd) shows the ROI of each option; the aggregate produces a natural equilibrium.
 
@@ -229,7 +229,7 @@ You cannot skip steps. The full [roadmap](roadmap.qmd) has the 36-month executio
 
 **Months 19-36: The treaty.** Launch the full VICTORY bond sale ({{< var treaty_campaign_total_cost >}} target). Overwhelm the defense lobby ({{< var defense_lobbying_annual >}}/year) with 8x their spend. Pass the treaty. {{< var treaty_annual_funding >}}/year begins flowing.
 
-**Years 4-50: The ratchet.** Treaty expands from 1% to 2% to 5% to 10%+. Each expansion multiplies all three revenue streams. Bondholders lobby for expansion because it raises their returns. Politicians support expansion because it raises their PAC funding. Voters support expansion because diseases keep getting cured.
+**Years 4-50: The ratchet.** Treaty expands from 1% to 2% to 5% to 10%+. Each expansion multiplies all three revenue streams.
 
 **Phase 2: The monetary system.** Once Wishocracy is running at scale, replace the Federal Reserve with the [algorithmic monetary system](../futures/wishonia.qmd#the-algorithm-that-replaced-twelve-humans). Three pieces of software replace the entire fiscal and monetary apparatus.
 
@@ -297,7 +297,7 @@ If participation in wishocratic allocation is low, the allocations are noisy and
 
 Median healthy life years and median real after-tax income ignore inequality, environmental sustainability, subjective well-being, and freedom. We chose two because each additional metric creates a new Goodhart surface, and markets that optimize two numbers outperform committees that optimize two hundred. This is a defensible tradeoff. It may also be wrong.
 
-**How to beat this:** The [Optimocracy paper](../appendix/optimocracy-paper.qmd) makes the affirmative case: every major policy domain (employment, healthcare, environment, education) flows through income and mortality. Median income is hard to fake at scale. Mortality is binary. The formal Goodhart analysis shows each additional metric creates capture surfaces faster than it adds signal. Whether two metrics suffice remains empirical. A v2 that identifies a third metric worth the Goodhart cost would be an improvement.
+**How to beat this:** The [Optimocracy paper](../appendix/optimocracy-paper.qmd) makes the affirmative case: every major policy domain (employment, healthcare, environment, education) flows through income and mortality. Median income is hard to fake at scale. Mortality is binary. The formal Goodhart analysis shows each additional metric creates capture surfaces faster than it adds signal. Whether two metrics suffice remains empirical, but the Goodhart analysis puts the burden of proof on whoever proposes a third.
 
 ### 7. No Pilot
 
