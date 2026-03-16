@@ -1,0 +1,12 @@
+**Sensitivity Indices for Treaty Disease Cure Fraction (15yr, 1% Reallocation)**
+
+Regression-based sensitivity showing which inputs explain the most variance in the output.
+
+| Input Parameter | Sensitivity Coefficient | Interpretation |
+|:----------------|------------------------:|:---------------|
+| Diseases Getting First Treatment Per Year (diseases/year) | 1.4510 | Strong driver |
+| Maximum Trial Capacity Multiplier (Physical Limit) (x) | -1.4169 | Strong driver |
+| Diseases Without Effective Treatment (diseases) | -1.0419 | Strong driver |
+| Trial Capacity Multiplier (x) | -0.0554 | Minimal effect |
+
+*Interpretation*: Standardized coefficients show the change in output (in SD units) per 1 SD change in input. Values near ±1 indicate strong influence; values exceeding ±1 may occur with correlated inputs.

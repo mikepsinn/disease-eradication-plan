@@ -8403,6 +8403,483 @@ WISHONIA_TRAJECTORY_VS_TREATY_TRAJECTORY_GDP_MULTIPLIER_YEAR_20 = Parameter(
     latex_symbol=r"k_{wish,full:core,20}",
 )
 
+# ---
+# YEAR 15 GDP AND HALE TRAJECTORY PARAMETERS
+# ---
+# Mirrors the year 20 GDP trajectory model but over a 15-year horizon
+# (3-year ramp at 50% intensity + 12-year full implementation).
+# Also adds HALE (healthy life expectancy) projections as a terminal metric
+# for the Earth Optimization Prize.
+
+GLOBAL_POPULATION_2040_PROJECTED = Parameter(
+    8_900_000_000,
+    source_ref=ReferenceID.GLOBAL_POPULATION_8_BILLION,
+    source_type="external",
+    distribution="fixed",
+    description="UN World Population Prospects 2022 median projection for 2040. "
+                "Interpolated midpoint between ~8.1B (2025) and 9.2B (2045).",
+    display_name="Global Population 2040 (Projected)",
+    unit="of people",
+    keywords=["population", "2040", "projection", "UN", "global"],
+    latex_symbol=r"Pop_{2040}",
+)
+
+TREATY_DISEASE_CURE_FRACTION_15YR = Parameter(
+    min(
+        1.0,
+        NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR
+        * min(
+            DFDA_TRIAL_CAPACITY_MULTIPLIER * (0.01 / 0.01),
+            DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL,
+        )
+        * 15
+        / DISEASES_WITHOUT_EFFECTIVE_TREATMENT,
+    ),
+    source_type="calculated",
+    description="Treaty disease-cure fraction over 15 years under 1% military reallocation only. "
+                "Uses base trial-capacity multiplier (no scaling beyond 1% reallocation) and applies "
+                "an upper bound of 100% of untreated disease classes.",
+    display_name="Treaty Disease Cure Fraction (15yr, 1% Reallocation)",
+    unit="rate",
+    formula="min(1.0, NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR * min(DFDA_TRIAL_CAPACITY_MULTIPLIER, DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL) * 15 / DISEASES_WITHOUT_EFFECTIVE_TREATMENT)",
+    latex=r"f_{cure,15,treaty}=\min\left(1,\frac{Treatments_{new,ann}\cdot k_{capacity}\cdot 15}{D_{untreated}}\right)",
+    inputs=[
+        "NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR",
+        "DFDA_TRIAL_CAPACITY_MULTIPLIER",
+        "DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL",
+        "DISEASES_WITHOUT_EFFECTIVE_TREATMENT",
+    ],
+    compute=lambda ctx: min(
+        1.0,
+        ctx["NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR"]
+        * min(
+            ctx["DFDA_TRIAL_CAPACITY_MULTIPLIER"],
+            ctx["DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL"],
+        )
+        * 15
+        / ctx["DISEASES_WITHOUT_EFFECTIVE_TREATMENT"],
+    ),
+    keywords=["treaty", "disease", "cure fraction", "15 year", "1% reallocation"],
+    latex_symbol=r"f_{cure,15,treaty}",
+)
+
+WISHONIA_DISEASE_CURE_FRACTION_15YR = Parameter(
+    min(
+        1.0,
+        NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR
+        * min(
+            DFDA_TRIAL_CAPACITY_MULTIPLIER * (WISHONIA_MILITARY_REALLOCATION_PHYSICAL_MAX_SHARE / 0.01),
+            DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL,
+        )
+        * 15
+        / DISEASES_WITHOUT_EFFECTIVE_TREATMENT,
+    ),
+    source_type="calculated",
+    description="Wishonia disease-cure fraction over 15 years under full implementation. "
+                "Uses full trial-capacity scaling and applies an upper bound of 100% of untreated disease classes.",
+    display_name="Wishonia Disease Cure Fraction (15yr, Full Implementation)",
+    unit="rate",
+    formula="min(1.0, NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR * min(DFDA_TRIAL_CAPACITY_MULTIPLIER * (WISHONIA_MILITARY_REALLOCATION_PHYSICAL_MAX_SHARE / 0.01), DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL) * 15 / DISEASES_WITHOUT_EFFECTIVE_TREATMENT)",
+    latex=r"f_{cure,15,wish}=\min\left(1,\frac{Treatments_{new,ann}\cdot k_{capacity,wish}\cdot 15}{D_{untreated}}\right)",
+    inputs=[
+        "NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR",
+        "DFDA_TRIAL_CAPACITY_MULTIPLIER",
+        "WISHONIA_MILITARY_REALLOCATION_PHYSICAL_MAX_SHARE",
+        "DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL",
+        "DISEASES_WITHOUT_EFFECTIVE_TREATMENT",
+    ],
+    compute=lambda ctx: min(
+        1.0,
+        ctx["NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR"]
+        * min(
+            ctx["DFDA_TRIAL_CAPACITY_MULTIPLIER"]
+            * (ctx["WISHONIA_MILITARY_REALLOCATION_PHYSICAL_MAX_SHARE"] / 0.01),
+            ctx["DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL"],
+        )
+        * 15
+        / ctx["DISEASES_WITHOUT_EFFECTIVE_TREATMENT"],
+    ),
+    keywords=["wishonia", "disease", "cure fraction", "15 year", "full implementation"],
+    latex_symbol=r"f_{cure,15,wish}",
+)
+
+CURRENT_TRAJECTORY_GDP_YEAR_15 = Parameter(
+    GLOBAL_GDP_2025 * ((1 + GDP_BASELINE_GROWTH_RATE) ** 15),
+    source_type="calculated",
+    description="Global GDP at year 15 under status-quo current trajectory growth.",
+    display_name="Current Trajectory GDP at Year 15",
+    unit="USD",
+    formula="GLOBAL_GDP_2025 * (1 + GDP_BASELINE_GROWTH_RATE)^15",
+    latex=r"GDP_{base,15} = GDP_0(1+g_{base})^{15}",
+    keywords=["GDP", "baseline", "year 15"],
+    inputs=["GLOBAL_GDP_2025", "GDP_BASELINE_GROWTH_RATE"],
+    compute=lambda ctx: ctx["GLOBAL_GDP_2025"] * ((1 + ctx["GDP_BASELINE_GROWTH_RATE"]) ** 15),
+    latex_symbol=r"GDP_{base,15}",
+)
+
+TREATY_TRAJECTORY_GDP_YEAR_15 = Parameter(
+    GLOBAL_GDP_2025
+    * (
+        (
+            1
+            + GDP_BASELINE_GROWTH_RATE
+            + (0.5 * WISHONIA_MILITARY_REALLOCATION_PHYSICAL_MAX_SHARE)
+            * ((MILITARY_REDIRECT_GDP_BOOST_AT_30PCT / 0.30) * (RD_SPILLOVER_MULTIPLIER / 2.0))
+            + ((1 + WISHONIA_DISEASE_CURE_FRACTION_15YR * DISEASE_BURDEN_GDP_DRAG_PCT) ** (1 / 15) - 1)
+        ) ** 3
+    )
+    * (
+        (
+            1
+            + GDP_BASELINE_GROWTH_RATE
+            + WISHONIA_MILITARY_REALLOCATION_PHYSICAL_MAX_SHARE
+            * ((MILITARY_REDIRECT_GDP_BOOST_AT_30PCT / 0.30) * (RD_SPILLOVER_MULTIPLIER / 2.0))
+            + ((1 + WISHONIA_DISEASE_CURE_FRACTION_15YR * DISEASE_BURDEN_GDP_DRAG_PCT) ** (1 / 15) - 1)
+        ) ** 12
+    ),
+    source_type="calculated",
+    description="Projected global GDP at year 15 under the Treaty Trajectory: military-to-science reallocation "
+                "plus disease-burden recovery only. 3-year ramp at 50% intensity + 12 years full implementation. "
+                "Excludes non-health dysfunction-capital reallocation.",
+    display_name="Treaty Trajectory GDP at Year 15",
+    unit="USD",
+    formula="GLOBAL_GDP_2025 * (1 + g_treaty_ramp)^3 * (1 + g_treaty_full)^12, where g_treaty includes baseline growth + military reallocation + disease-burden recovery only",
+    latex=r"GDP_{treaty,15}=GDP_0(1+g_{treaty,ramp})^3(1+g_{treaty,full})^{12}",
+    keywords=["GDP", "treaty", "projection", "year 15"],
+    inputs=[
+        "GLOBAL_GDP_2025",
+        "GDP_BASELINE_GROWTH_RATE",
+        "WISHONIA_MILITARY_REALLOCATION_PHYSICAL_MAX_SHARE",
+        "MILITARY_REDIRECT_GDP_BOOST_AT_30PCT",
+        "RD_SPILLOVER_MULTIPLIER",
+        "WISHONIA_DISEASE_CURE_FRACTION_15YR",
+        "DISEASE_BURDEN_GDP_DRAG_PCT",
+    ],
+    compute=lambda ctx: (
+        ctx["GLOBAL_GDP_2025"]
+        * (
+            (
+                1
+                + ctx["GDP_BASELINE_GROWTH_RATE"]
+                + (0.5 * ctx["WISHONIA_MILITARY_REALLOCATION_PHYSICAL_MAX_SHARE"])
+                * ((ctx["MILITARY_REDIRECT_GDP_BOOST_AT_30PCT"] / 0.30) * (ctx["RD_SPILLOVER_MULTIPLIER"] / 2.0))
+                + ((1 + ctx["WISHONIA_DISEASE_CURE_FRACTION_15YR"] * ctx["DISEASE_BURDEN_GDP_DRAG_PCT"]) ** (1 / 15) - 1)
+            ) ** 3
+        )
+        * (
+            (
+                1
+                + ctx["GDP_BASELINE_GROWTH_RATE"]
+                + ctx["WISHONIA_MILITARY_REALLOCATION_PHYSICAL_MAX_SHARE"]
+                * ((ctx["MILITARY_REDIRECT_GDP_BOOST_AT_30PCT"] / 0.30) * (ctx["RD_SPILLOVER_MULTIPLIER"] / 2.0))
+                + ((1 + ctx["WISHONIA_DISEASE_CURE_FRACTION_15YR"] * ctx["DISEASE_BURDEN_GDP_DRAG_PCT"]) ** (1 / 15) - 1)
+            ) ** 12
+        )
+    ),
+    latex_symbol=r"GDP_{treaty,15}",
+)
+
+WISHONIA_TRAJECTORY_GDP_YEAR_15 = Parameter(
+    GLOBAL_GDP_2025
+    * (
+        (
+            1
+            + GDP_BASELINE_GROWTH_RATE
+            + (0.5 * WISHONIA_MILITARY_REALLOCATION_PHYSICAL_MAX_SHARE)
+            * ((MILITARY_REDIRECT_GDP_BOOST_AT_30PCT / 0.30) * (RD_SPILLOVER_MULTIPLIER / 2.0))
+            + ((1 + WISHONIA_DISEASE_CURE_FRACTION_15YR * DISEASE_BURDEN_GDP_DRAG_PCT) ** (1 / 15) - 1)
+            + (
+                (
+                    1
+                    + (
+                        0.5
+                        * (
+                        (
+                            POLITICAL_DYSFUNCTION_GLOBAL_SCIENCE_OPPORTUNITY_COST
+                            + POLITICAL_DYSFUNCTION_GLOBAL_LEAD_OPPORTUNITY_COST
+                            + POLITICAL_DYSFUNCTION_GLOBAL_MIGRATION_OPPORTUNITY_COST
+                        )
+                        / GLOBAL_GDP_2025
+                        )
+                    )
+                    * (ECONOMIC_MULTIPLIER_HEALTHCARE_INVESTMENT / ECONOMIC_MULTIPLIER_MILITARY_SPENDING - 1)
+                ) ** (1 / 15)
+                - 1
+            )
+        ) ** 3
+    )
+    * (
+        (
+            1
+            + GDP_BASELINE_GROWTH_RATE
+            + WISHONIA_MILITARY_REALLOCATION_PHYSICAL_MAX_SHARE
+            * ((MILITARY_REDIRECT_GDP_BOOST_AT_30PCT / 0.30) * (RD_SPILLOVER_MULTIPLIER / 2.0))
+            + ((1 + WISHONIA_DISEASE_CURE_FRACTION_15YR * DISEASE_BURDEN_GDP_DRAG_PCT) ** (1 / 15) - 1)
+            + (
+                (
+                    1
+                    + (
+                        (
+                            POLITICAL_DYSFUNCTION_GLOBAL_SCIENCE_OPPORTUNITY_COST
+                            + POLITICAL_DYSFUNCTION_GLOBAL_LEAD_OPPORTUNITY_COST
+                            + POLITICAL_DYSFUNCTION_GLOBAL_MIGRATION_OPPORTUNITY_COST
+                        )
+                        / GLOBAL_GDP_2025
+                    )
+                    * (ECONOMIC_MULTIPLIER_HEALTHCARE_INVESTMENT / ECONOMIC_MULTIPLIER_MILITARY_SPENDING - 1)
+                ) ** (1 / 15)
+                - 1
+            )
+        ) ** 12
+    ),
+    source_type="calculated",
+    description="Projected global GDP at year 15 under the Wishonia Trajectory. "
+                "Applies all Wishonia policy channels including military reallocation, disease-burden recovery, "
+                "and Political Dysfunction Tax elimination. 3-year ramp at 50% intensity + 12 years full.",
+    display_name="Wishonia Trajectory GDP at Year 15",
+    unit="USD",
+    formula="GLOBAL_GDP_2025 * (1 + g_ramp)^3 * (1 + g_full)^12, where years 1-3 use 50% of military and non-health reallocation intensity, and years 4-15 use 100%; both include disease-burden recovery",
+    latex=r"GDP_{wish,15}=GDP_0(1+g_{ramp})^3(1+g_{full})^{12}",
+    keywords=["GDP", "wishonia", "projection", "year 15"],
+    inputs=[
+        "GLOBAL_GDP_2025",
+        "GDP_BASELINE_GROWTH_RATE",
+        "WISHONIA_MILITARY_REALLOCATION_PHYSICAL_MAX_SHARE",
+        "MILITARY_REDIRECT_GDP_BOOST_AT_30PCT",
+        "RD_SPILLOVER_MULTIPLIER",
+        "WISHONIA_DISEASE_CURE_FRACTION_15YR",
+        "DISEASE_BURDEN_GDP_DRAG_PCT",
+        "POLITICAL_DYSFUNCTION_GLOBAL_SCIENCE_OPPORTUNITY_COST",
+        "POLITICAL_DYSFUNCTION_GLOBAL_LEAD_OPPORTUNITY_COST",
+        "POLITICAL_DYSFUNCTION_GLOBAL_MIGRATION_OPPORTUNITY_COST",
+        "ECONOMIC_MULTIPLIER_HEALTHCARE_INVESTMENT",
+        "ECONOMIC_MULTIPLIER_MILITARY_SPENDING",
+    ],
+    compute=lambda ctx: (
+        ctx["GLOBAL_GDP_2025"]
+        * (
+            (
+                1
+                + ctx["GDP_BASELINE_GROWTH_RATE"]
+                + (0.5 * ctx["WISHONIA_MILITARY_REALLOCATION_PHYSICAL_MAX_SHARE"])
+                * ((ctx["MILITARY_REDIRECT_GDP_BOOST_AT_30PCT"] / 0.30) * (ctx["RD_SPILLOVER_MULTIPLIER"] / 2.0))
+                + ((1 + ctx["WISHONIA_DISEASE_CURE_FRACTION_15YR"] * ctx["DISEASE_BURDEN_GDP_DRAG_PCT"]) ** (1 / 15) - 1)
+                + (
+                    (
+                        1
+                        + (
+                            0.5
+                            * (
+                            (
+                                ctx["POLITICAL_DYSFUNCTION_GLOBAL_SCIENCE_OPPORTUNITY_COST"]
+                                + ctx["POLITICAL_DYSFUNCTION_GLOBAL_LEAD_OPPORTUNITY_COST"]
+                                + ctx["POLITICAL_DYSFUNCTION_GLOBAL_MIGRATION_OPPORTUNITY_COST"]
+                            )
+                            / ctx["GLOBAL_GDP_2025"]
+                            )
+                        )
+                        * (ctx["ECONOMIC_MULTIPLIER_HEALTHCARE_INVESTMENT"] / ctx["ECONOMIC_MULTIPLIER_MILITARY_SPENDING"] - 1)
+                    ) ** (1 / 15)
+                    - 1
+                )
+            ) ** 3
+        )
+        * (
+            (
+                1
+                + ctx["GDP_BASELINE_GROWTH_RATE"]
+                + ctx["WISHONIA_MILITARY_REALLOCATION_PHYSICAL_MAX_SHARE"]
+                * ((ctx["MILITARY_REDIRECT_GDP_BOOST_AT_30PCT"] / 0.30) * (ctx["RD_SPILLOVER_MULTIPLIER"] / 2.0))
+                + ((1 + ctx["WISHONIA_DISEASE_CURE_FRACTION_15YR"] * ctx["DISEASE_BURDEN_GDP_DRAG_PCT"]) ** (1 / 15) - 1)
+                + (
+                    (
+                        1
+                        + (
+                            (
+                                ctx["POLITICAL_DYSFUNCTION_GLOBAL_SCIENCE_OPPORTUNITY_COST"]
+                                + ctx["POLITICAL_DYSFUNCTION_GLOBAL_LEAD_OPPORTUNITY_COST"]
+                                + ctx["POLITICAL_DYSFUNCTION_GLOBAL_MIGRATION_OPPORTUNITY_COST"]
+                            )
+                            / ctx["GLOBAL_GDP_2025"]
+                        )
+                        * (ctx["ECONOMIC_MULTIPLIER_HEALTHCARE_INVESTMENT"] / ctx["ECONOMIC_MULTIPLIER_MILITARY_SPENDING"] - 1)
+                    ) ** (1 / 15)
+                    - 1
+                )
+            ) ** 12
+        )
+    ),
+    latex_symbol=r"GDP_{wish,15}",
+)
+
+CURRENT_TRAJECTORY_AVG_INCOME_YEAR_15 = Parameter(
+    CURRENT_TRAJECTORY_GDP_YEAR_15 / GLOBAL_POPULATION_2040_PROJECTED,
+    source_type="calculated",
+    description="Average income (GDP per capita) at year 15 under current trajectory.",
+    display_name="Current Trajectory Average Income at Year 15",
+    unit="USD",
+    formula="CURRENT_TRAJECTORY_GDP_YEAR_15 / GLOBAL_POPULATION_2040_PROJECTED",
+    latex=r"\bar{y}_{base,15} = \frac{GDP_{base,15}}{Pop_{2040}}",
+    keywords=["income", "per capita", "baseline", "year 15", "average"],
+    inputs=["CURRENT_TRAJECTORY_GDP_YEAR_15", "GLOBAL_POPULATION_2040_PROJECTED"],
+    compute=lambda ctx: ctx["CURRENT_TRAJECTORY_GDP_YEAR_15"] / ctx["GLOBAL_POPULATION_2040_PROJECTED"],
+    latex_symbol=r"\bar{y}_{base,15}",
+)
+
+TREATY_TRAJECTORY_AVG_INCOME_YEAR_15 = Parameter(
+    float(TREATY_TRAJECTORY_GDP_YEAR_15) / float(GLOBAL_POPULATION_2040_PROJECTED),
+    source_type="calculated",
+    description="Average income (GDP per capita) at year 15 under the Treaty Trajectory.",
+    display_name="Treaty Trajectory Average Income at Year 15",
+    unit="USD",
+    formula="TREATY_TRAJECTORY_GDP_YEAR_15 / GLOBAL_POPULATION_2040_PROJECTED",
+    latex=r"\bar{y}_{treaty,15} = \frac{GDP_{treaty,15}}{Pop_{2040}}",
+    keywords=["income", "per capita", "treaty", "year 15", "average"],
+    inputs=["TREATY_TRAJECTORY_GDP_YEAR_15", "GLOBAL_POPULATION_2040_PROJECTED"],
+    compute=lambda ctx: ctx["TREATY_TRAJECTORY_GDP_YEAR_15"] / ctx["GLOBAL_POPULATION_2040_PROJECTED"],
+    latex_symbol=r"\bar{y}_{treaty,15}",
+)
+
+WISHONIA_TRAJECTORY_AVG_INCOME_YEAR_15 = Parameter(
+    float(WISHONIA_TRAJECTORY_GDP_YEAR_15) / float(GLOBAL_POPULATION_2040_PROJECTED),
+    source_type="calculated",
+    description="Average income (GDP per capita) at year 15 under the Wishonia Trajectory.",
+    display_name="Wishonia Trajectory Average Income at Year 15",
+    unit="USD",
+    formula="WISHONIA_TRAJECTORY_GDP_YEAR_15 / GLOBAL_POPULATION_2040_PROJECTED",
+    latex=r"\bar{y}_{wish,15} = \frac{GDP_{wish,15}}{Pop_{2040}}",
+    keywords=["income", "per capita", "wishonia", "year 15", "average"],
+    inputs=["WISHONIA_TRAJECTORY_GDP_YEAR_15", "GLOBAL_POPULATION_2040_PROJECTED"],
+    compute=lambda ctx: ctx["WISHONIA_TRAJECTORY_GDP_YEAR_15"] / ctx["GLOBAL_POPULATION_2040_PROJECTED"],
+    latex_symbol=r"\bar{y}_{wish,15}",
+)
+
+TREATY_TRAJECTORY_GDP_VS_CURRENT_TRAJECTORY_MULTIPLIER_YEAR_15 = Parameter(
+    TREATY_TRAJECTORY_GDP_YEAR_15 / CURRENT_TRAJECTORY_GDP_YEAR_15,
+    source_type="calculated",
+    description="Treaty Trajectory GDP at year 15 as a multiple of current trajectory GDP at year 15.",
+    display_name="Treaty Trajectory vs Current Trajectory GDP Multiplier (Year 15)",
+    unit="x",
+    formula="TREATY_TRAJECTORY_GDP_YEAR_15 / CURRENT_TRAJECTORY_GDP_YEAR_15",
+    keywords=["GDP", "treaty", "baseline", "multiplier", "year 15"],
+    inputs=["TREATY_TRAJECTORY_GDP_YEAR_15", "CURRENT_TRAJECTORY_GDP_YEAR_15"],
+    compute=lambda ctx: ctx["TREATY_TRAJECTORY_GDP_YEAR_15"] / ctx["CURRENT_TRAJECTORY_GDP_YEAR_15"],
+    latex_symbol=r"k_{treaty:base,15}",
+)
+
+WISHONIA_TRAJECTORY_GDP_VS_CURRENT_TRAJECTORY_MULTIPLIER_YEAR_15 = Parameter(
+    WISHONIA_TRAJECTORY_GDP_YEAR_15 / CURRENT_TRAJECTORY_GDP_YEAR_15,
+    source_type="calculated",
+    description="Wishonia Trajectory GDP at year 15 as a multiple of current trajectory GDP at year 15.",
+    display_name="Wishonia Trajectory vs Current Trajectory GDP Multiplier (Year 15)",
+    unit="x",
+    formula="WISHONIA_TRAJECTORY_GDP_YEAR_15 / CURRENT_TRAJECTORY_GDP_YEAR_15",
+    keywords=["GDP", "wishonia", "baseline", "multiplier", "year 15"],
+    inputs=["WISHONIA_TRAJECTORY_GDP_YEAR_15", "CURRENT_TRAJECTORY_GDP_YEAR_15"],
+    compute=lambda ctx: ctx["WISHONIA_TRAJECTORY_GDP_YEAR_15"] / ctx["CURRENT_TRAJECTORY_GDP_YEAR_15"],
+    latex_symbol=r"k_{wish:base,15}",
+)
+
+# ---
+# HALE (HEALTHY LIFE EXPECTANCY) PROJECTIONS - YEAR 15
+# ---
+# Terminal metric for Earth Optimization Prize: median healthy life years.
+# Disease burden reduces HALE by (life_expectancy - HALE) years.
+# As diseases are cured, this gap closes proportionally to the cure fraction.
+
+GLOBAL_HALE_CURRENT = Parameter(
+    63.3,
+    source_ref=ReferenceID.WHO_GLOBAL_HEALTH_ESTIMATES_2024,
+    source_type="external",
+    distribution="normal",
+    std_error=1.5,
+    description="Global healthy life expectancy at birth (HALE) from WHO Global Health Observatory, "
+                "2019 data (most recent available). HALE measures years lived in full health, adjusting "
+                "for years lived with disability or disease.",
+    display_name="Global Healthy Life Expectancy (HALE)",
+    unit="years",
+    confidence="high",
+    last_updated="2019",
+    peer_reviewed=True,
+    keywords=["HALE", "healthy life expectancy", "disability", "WHO", "global health"],
+    latex_symbol=r"HALE_{0}",
+)
+
+GLOBAL_HALE_GAP = Parameter(
+    float(GLOBAL_LIFE_EXPECTANCY_2024) - 63.3,
+    source_type="calculated",
+    description="Gap between life expectancy and healthy life expectancy. Represents years lived "
+                "with disability or disease that could be recovered by curing diseases.",
+    display_name="Life Expectancy to HALE Gap",
+    unit="years",
+    formula="GLOBAL_LIFE_EXPECTANCY_2024 - GLOBAL_HALE_CURRENT",
+    inputs=["GLOBAL_LIFE_EXPECTANCY_2024", "GLOBAL_HALE_CURRENT"],
+    compute=lambda ctx: ctx["GLOBAL_LIFE_EXPECTANCY_2024"] - ctx["GLOBAL_HALE_CURRENT"],
+    keywords=["HALE", "gap", "disability", "disease burden", "healthy years lost"],
+    latex_symbol=r"\Delta_{HALE}",
+)
+
+TREATY_HALE_GAIN_YEAR_15 = Parameter(
+    TREATY_DISEASE_CURE_FRACTION_15YR * (float(GLOBAL_LIFE_EXPECTANCY_2024) - 63.3),
+    source_type="calculated",
+    description="HALE improvement at year 15 under Treaty Trajectory. As diseases are progressively cured, "
+                "the gap between life expectancy and healthy life expectancy closes proportionally to the "
+                "disease cure fraction.",
+    display_name="Treaty HALE Gain at Year 15",
+    unit="years",
+    formula="TREATY_DISEASE_CURE_FRACTION_15YR * GLOBAL_HALE_GAP",
+    latex=r"\Delta HALE_{treaty,15} = f_{cure,15,treaty} \cdot \Delta_{HALE}",
+    inputs=["TREATY_DISEASE_CURE_FRACTION_15YR", "GLOBAL_HALE_CURRENT", "GLOBAL_LIFE_EXPECTANCY_2024"],
+    compute=lambda ctx: ctx["TREATY_DISEASE_CURE_FRACTION_15YR"] * (ctx["GLOBAL_LIFE_EXPECTANCY_2024"] - ctx["GLOBAL_HALE_CURRENT"]),
+    keywords=["HALE", "gain", "treaty", "year 15", "healthy years"],
+    latex_symbol=r"\Delta HALE_{treaty,15}",
+)
+
+WISHONIA_HALE_GAIN_YEAR_15 = Parameter(
+    WISHONIA_DISEASE_CURE_FRACTION_15YR * (float(GLOBAL_LIFE_EXPECTANCY_2024) - 63.3),
+    source_type="calculated",
+    description="HALE improvement at year 15 under Wishonia Trajectory. Full implementation cures a larger "
+                "fraction of diseases, closing more of the HALE gap.",
+    display_name="Wishonia HALE Gain at Year 15",
+    unit="years",
+    formula="WISHONIA_DISEASE_CURE_FRACTION_15YR * GLOBAL_HALE_GAP",
+    latex=r"\Delta HALE_{wish,15} = f_{cure,15,wish} \cdot \Delta_{HALE}",
+    inputs=["WISHONIA_DISEASE_CURE_FRACTION_15YR", "GLOBAL_HALE_CURRENT", "GLOBAL_LIFE_EXPECTANCY_2024"],
+    compute=lambda ctx: ctx["WISHONIA_DISEASE_CURE_FRACTION_15YR"] * (ctx["GLOBAL_LIFE_EXPECTANCY_2024"] - ctx["GLOBAL_HALE_CURRENT"]),
+    keywords=["HALE", "gain", "wishonia", "year 15", "healthy years"],
+    latex_symbol=r"\Delta HALE_{wish,15}",
+)
+
+TREATY_PROJECTED_HALE_YEAR_15 = Parameter(
+    63.3 + float(TREATY_DISEASE_CURE_FRACTION_15YR) * (float(GLOBAL_LIFE_EXPECTANCY_2024) - 63.3),
+    source_type="calculated",
+    description="Projected global HALE at year 15 under Treaty Trajectory. "
+                "Current HALE plus the treaty-driven improvement from closing the disease gap.",
+    display_name="Treaty Projected HALE at Year 15",
+    unit="years",
+    formula="GLOBAL_HALE_CURRENT + TREATY_HALE_GAIN_YEAR_15",
+    latex=r"HALE_{treaty,15} = HALE_0 + \Delta HALE_{treaty,15}",
+    inputs=["GLOBAL_HALE_CURRENT", "TREATY_HALE_GAIN_YEAR_15"],
+    compute=lambda ctx: ctx["GLOBAL_HALE_CURRENT"] + ctx["TREATY_HALE_GAIN_YEAR_15"],
+    keywords=["HALE", "projected", "treaty", "year 15", "healthy life expectancy"],
+    latex_symbol=r"HALE_{treaty,15}",
+)
+
+WISHONIA_PROJECTED_HALE_YEAR_15 = Parameter(
+    63.3 + float(WISHONIA_DISEASE_CURE_FRACTION_15YR) * (float(GLOBAL_LIFE_EXPECTANCY_2024) - 63.3),
+    source_type="calculated",
+    description="Projected global HALE at year 15 under Wishonia Trajectory. "
+                "Full implementation closes the entire disease gap, pushing HALE toward life expectancy.",
+    display_name="Wishonia Projected HALE at Year 15",
+    unit="years",
+    formula="GLOBAL_HALE_CURRENT + WISHONIA_HALE_GAIN_YEAR_15",
+    latex=r"HALE_{wish,15} = HALE_0 + \Delta HALE_{wish,15}",
+    inputs=["GLOBAL_HALE_CURRENT", "WISHONIA_HALE_GAIN_YEAR_15"],
+    compute=lambda ctx: ctx["GLOBAL_HALE_CURRENT"] + ctx["WISHONIA_HALE_GAIN_YEAR_15"],
+    keywords=["HALE", "projected", "wishonia", "year 15", "healthy life expectancy"],
+    latex_symbol=r"HALE_{wish,15}",
+)
+
 GLOBAL_AVG_INCOME_2025 = Parameter(
     GLOBAL_GDP_2025 / GLOBAL_POPULATION_2024,
     source_type="calculated",

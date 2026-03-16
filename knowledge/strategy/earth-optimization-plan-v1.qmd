@@ -125,7 +125,7 @@ The referendum proves that the support already exists. Everyone thinks ending wa
 
 Cash bonuses are the immediate incentive. The long-term incentive is VOTE tokens: transferable, on-chain proof issued to anyone who recruits a verified participant into the wishocratic allocation or treaty referendum. Recruiters can sell their tokens early; buyers are betting the plan succeeds. The secondary market price is a live estimate of what recruitment credit is worth.
 
-The [Earth Optimization Prize](earth-optimization-prize.qmd) pool is a separate instrument from the bonds. PRIZE token buyers deposit funds into escrow earning interest. If the plan fails to produce measurable results within 15 years, they get their deposit back plus interest (zero downside). If it succeeds, the entire pool is distributed to VOTE holders proportional to recruitment. A conditional donation: your money only spends if someone earned it. Philanthropists buy because they want to fund success. Pessimists buy for the risk-free interest. Both grow the prize pool.
+The [Earth Optimization Prize](earth-optimization-prize.qmd) pool is a separate instrument from the bonds. PRIZE token buyers deposit funds into escrow earning interest. If global HALE has not reached {{< var wishonia_projected_hale_year_15 >}} and global median income has not reached {{< var wishonia_trajectory_avg_income_year_15 >}} by year 15, buyers get their deposit back plus interest (zero downside). If both targets are met, the entire pool is distributed to VOTE holders proportional to recruitment. A conditional donation: your money only spends if someone earned it. Philanthropists buy because they want to fund success. Pessimists buy for the risk-free interest. Both grow the prize pool.
 
 ::: {.callout-note}
 ## Fork Marker
@@ -317,7 +317,7 @@ The Earth Optimization Plan v1 is the starting benchmark for the [Earth Optimiza
 2. **Replace any row** in the Minimum Acceptable Governance table (see the [prize paper](earth-optimization-prize.qmd)) with something strictly better on the two terminal metrics (median healthy life years and median real after-tax income).
 3. **Or replace the whole system** with an integrated alternative that dominates v1 function by function. You cannot skip inconvenient pieces; every required function must be covered or replaced.
 4. **Prove it.** The credit mechanism is VOTE tokens: transferable, on-chain proof of how many verified participants you recruited into the wishocratic allocation or treaty referendum. You need numbers, not arguments.
-5. **Collect.** Bondholders receive their revenue share for as long as the treaty generates funding. VOTE token holders receive their share of the PRIZE pool when the plan produces measurable results.
+5. **Collect.** Bondholders receive their revenue share for as long as the treaty generates funding. VOTE token holders receive their share of the PRIZE pool when both global targets are met at year 15 (HALE {{< var wishonia_projected_hale_year_15 >}}, median income {{< var wishonia_trajectory_avg_income_year_15 >}}).
 
 The disqualification rule: if your proposal requires any participant to become less selfish, you have described a pleasant world rather than a mechanism for reaching it. The math must work when humans are greedy, impatient, and exactly as self-interested as they are right now.
 

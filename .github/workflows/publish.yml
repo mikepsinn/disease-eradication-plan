@@ -727,6 +727,145 @@ jobs:
 
 
 
+  build-earth-optimization-prize:
+    name: "Build The Earth Optimization Prize"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Cache Quarto freeze
+        uses: actions/cache@v4
+        with:
+          path: _freeze
+          key: quarto-freeze-earth-optimization-prize-${{ hashFiles('**/*.qmd', '**/*.ipynb') }}
+
+          restore-keys: |
+            quarto-freeze-earth-optimization-prize-
+            quarto-freeze-
+
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+
+      - name: Cache validation results
+        uses: actions/cache@v4
+        with:
+          path: .cache
+          key: validation-cache-${{ runner.os }}-${{ hashFiles('.cache/pdf-validation-cache.json') }}
+          restore-keys: |
+            validation-cache-${{ runner.os }}-
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+
+      - name: Install Graphviz
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y graphviz
+
+      - name: Install Python dependencies
+        run: uv pip install --system -r requirements.txt
+
+      - name: Install dih_models package
+        run: uv pip install --system -e .
+
+      - name: Install Jupyter kernel
+        run: |
+          python -m ipykernel install --user --name dih-project-kernel --display-name "DIH Project"
+
+      - name: Cache TinyTeX
+        uses: actions/cache@v4
+        with:
+          path: ~/.TinyTeX
+          key: tinytex-${{ runner.os }}-${{ hashFiles('.github/workflows/publish.yml') }}
+          restore-keys: |
+            tinytex-${{ runner.os }}-
+
+      - name: Install LaTeX
+        run: |
+          if [ ! -d ~/.TinyTeX ]; then
+            quarto install tinytex
+          fi
+          ~/.TinyTeX/bin/*/tlmgr update --self || true
+          ~/.TinyTeX/bin/*/tlmgr install fontspec unicode-math lualatex-math luaotfload || true
+
+      - name: "Render Build The Earth Optimization Prize"
+        run: python scripts/render-quarto.py earth-optimization-prize
+        env:
+          GOOGLE_GENERATIVE_AI_API_KEY: ${{ (secrets.LLM_VALIDATION == 'true' || github.ref == 'refs/heads/master') && secrets.GOOGLE_GENERATIVE_AI_API_KEY || '' }}
+        timeout-minutes: 30
+
+      - name: Upload PDFs artifact
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        uses: actions/upload-artifact@v4
+        with:
+          name: pdfs-earth-optimization-prize
+          path: _build_temp/earth-optimization-prize/**/*.pdf
+          if-no-files-found: ignore
+
+
+
+      - name: Upload validation checklists
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        uses: actions/upload-artifact@v4
+        with:
+          name: validation-checklists-earth-optimization-prize
+          path: pdf-validation-checklist-*.md
+          if-no-files-found: ignore
+
+      - name: Upload LaTeX logs on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: latex-logs-earth-optimization-prize
+          path: |
+            _build_temp/earth-optimization-prize/*.log
+            _build_temp/earth-optimization-prize/**/*.log
+            _build_temp/earth-optimization-prize/*.aux
+            _build_temp/earth-optimization-prize/**/*.aux
+            _build_temp/earth-optimization-prize/*.toc
+            _build_temp/earth-optimization-prize/**/*.toc
+            _build_temp/earth-optimization-prize/*.out
+            _build_temp/earth-optimization-prize/**/*.out
+          retention-days: 7
+
+
+      - name: "Deploy Build The Earth Optimization Prize to Netlify (immediate)"
+        if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
+        uses: nwtgck/actions-netlify@v3.0
+        with:
+          publish-dir: '_build_temp/earth-optimization-prize/_site/least-bad-idea-prize'
+          production-deploy: ${{ github.ref == 'refs/heads/develop' || github.ref == 'refs/heads/master' }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+          deploy-message: "Deploy earth-optimization-prize from ${{ github.ref_name }}"
+          enable-pull-request-comment: true
+          enable-commit-comment: true
+          overwrites-pull-request-comment: true
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+
+          NETLIFY_SITE_ID: 4b864c23-3f9e-4a83-a6dc-9a2f7690eb80
+
+        timeout-minutes: 1
+
+
+
+      - name: "Upload Build The Earth Optimization Prize PDF to Zenodo (draft)"
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        env:
+          ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
+        run: python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild earth-optimization-prize
+
+
+
   build-iab:
     name: "Build Incentive Alignment Bonds: Making Public Goods Fin"
     runs-on: ubuntu-latest
@@ -1002,145 +1141,6 @@ jobs:
         env:
           ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
         run: python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild invisible-graveyard
-
-
-
-  build-least-bad-idea-prize:
-    name: "Build The Earth Optimization Prize"
-    runs-on: ubuntu-latest
-    steps:
-      - name: Check out repository
-        uses: actions/checkout@v4
-
-      - name: Cache Quarto freeze
-        uses: actions/cache@v4
-        with:
-          path: _freeze
-          key: quarto-freeze-least-bad-idea-prize-${{ hashFiles('**/*.qmd', '**/*.ipynb') }}
-
-          restore-keys: |
-            quarto-freeze-least-bad-idea-prize-
-            quarto-freeze-
-
-      - name: Set up Quarto
-        uses: quarto-dev/quarto-actions/setup@v2
-
-      - name: Cache validation results
-        uses: actions/cache@v4
-        with:
-          path: .cache
-          key: validation-cache-${{ runner.os }}-${{ hashFiles('.cache/pdf-validation-cache.json') }}
-          restore-keys: |
-            validation-cache-${{ runner.os }}-
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
-
-      - name: Install uv
-        uses: astral-sh/setup-uv@v5
-        with:
-          enable-cache: true
-
-      - name: Install Graphviz
-        run: |
-          sudo apt-get update -qq
-          sudo apt-get install -y graphviz
-
-      - name: Install Python dependencies
-        run: uv pip install --system -r requirements.txt
-
-      - name: Install dih_models package
-        run: uv pip install --system -e .
-
-      - name: Install Jupyter kernel
-        run: |
-          python -m ipykernel install --user --name dih-project-kernel --display-name "DIH Project"
-
-      - name: Cache TinyTeX
-        uses: actions/cache@v4
-        with:
-          path: ~/.TinyTeX
-          key: tinytex-${{ runner.os }}-${{ hashFiles('.github/workflows/publish.yml') }}
-          restore-keys: |
-            tinytex-${{ runner.os }}-
-
-      - name: Install LaTeX
-        run: |
-          if [ ! -d ~/.TinyTeX ]; then
-            quarto install tinytex
-          fi
-          ~/.TinyTeX/bin/*/tlmgr update --self || true
-          ~/.TinyTeX/bin/*/tlmgr install fontspec unicode-math lualatex-math luaotfload || true
-
-      - name: "Render Build The Earth Optimization Prize"
-        run: python scripts/render-quarto.py least-bad-idea-prize
-        env:
-          GOOGLE_GENERATIVE_AI_API_KEY: ${{ (secrets.LLM_VALIDATION == 'true' || github.ref == 'refs/heads/master') && secrets.GOOGLE_GENERATIVE_AI_API_KEY || '' }}
-        timeout-minutes: 30
-
-      - name: Upload PDFs artifact
-        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
-        uses: actions/upload-artifact@v4
-        with:
-          name: pdfs-least-bad-idea-prize
-          path: _build_temp/least-bad-idea-prize/**/*.pdf
-          if-no-files-found: ignore
-
-
-
-      - name: Upload validation checklists
-        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
-        uses: actions/upload-artifact@v4
-        with:
-          name: validation-checklists-least-bad-idea-prize
-          path: pdf-validation-checklist-*.md
-          if-no-files-found: ignore
-
-      - name: Upload LaTeX logs on failure
-        if: failure()
-        uses: actions/upload-artifact@v4
-        with:
-          name: latex-logs-least-bad-idea-prize
-          path: |
-            _build_temp/least-bad-idea-prize/*.log
-            _build_temp/least-bad-idea-prize/**/*.log
-            _build_temp/least-bad-idea-prize/*.aux
-            _build_temp/least-bad-idea-prize/**/*.aux
-            _build_temp/least-bad-idea-prize/*.toc
-            _build_temp/least-bad-idea-prize/**/*.toc
-            _build_temp/least-bad-idea-prize/*.out
-            _build_temp/least-bad-idea-prize/**/*.out
-          retention-days: 7
-
-
-      - name: "Deploy Build The Earth Optimization Prize to Netlify (immediate)"
-        if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
-        uses: nwtgck/actions-netlify@v3.0
-        with:
-          publish-dir: '_build_temp/least-bad-idea-prize/_site/least-bad-idea-prize'
-          production-deploy: ${{ github.ref == 'refs/heads/develop' || github.ref == 'refs/heads/master' }}
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-
-          deploy-message: "Deploy least-bad-idea-prize from ${{ github.ref_name }}"
-          enable-pull-request-comment: true
-          enable-commit-comment: true
-          overwrites-pull-request-comment: true
-        env:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-
-          NETLIFY_SITE_ID: 4b864c23-3f9e-4a83-a6dc-9a2f7690eb80
-
-        timeout-minutes: 1
-
-
-
-      - name: "Upload Build The Earth Optimization Prize PDF to Zenodo (draft)"
-        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
-        env:
-          ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
-        run: python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild least-bad-idea-prize
 
 
 
@@ -2409,11 +2409,11 @@ jobs:
 
       - build-drug-development-cost
 
+      - build-earth-optimization-prize
+
       - build-iab
 
       - build-invisible-graveyard
-
-      - build-least-bad-idea-prize
 
       - build-manual
 

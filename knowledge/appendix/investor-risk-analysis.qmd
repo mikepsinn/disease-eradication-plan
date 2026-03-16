@@ -48,7 +48,7 @@ You've swapped market and competition risk for a single, concentrated political 
 
 Your risk is specific. So you can engineer specific tools to neutralize it.
 
-Your ecosystem has two instruments with two risk profiles. **PRIZE tokens** use a dominant assurance contract: funds are escrowed and returned automatically if the referendum fails. Zero risk to participants. **IABs** fund the lobbying campaign with real capital at risk.
+Your ecosystem has two instruments with two risk profiles. **PRIZE tokens** use a dominant assurance contract: funds are escrowed and returned automatically if the plan fails to hit its year 15 targets (global HALE {{< var wishonia_projected_hale_year_15 >}}, median income {{< var wishonia_trajectory_avg_income_year_15 >}}). Zero risk to participants. **[IABs](../solution/incentive-alignment-bonds.qmd) [@iab-paper-2025]** fund the lobbying campaign with real capital at risk.
 
 ### The Built-In Prediction Market (PRIZE vs. VOTE)
 
