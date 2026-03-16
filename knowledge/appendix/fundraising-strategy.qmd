@@ -547,16 +547,18 @@ For sophisticated investors, use efficient market mechanisms:
 - Market-based price discovery for optimal capital efficiency
 - Smart contract escrows with automated refunds
 
-### De-Risking with Assurance Contracts
+### De-Risking with PRIZE Tokens (Assurance Contracts)
 
 ![Assurance contracts: money goes into escrow. If we hit the goal, money goes to the project. If we don't, money goes back to investors. Nobody loses unless we win.](/assets/images/fundraising-strategy/fundraising-strategy-section-de-risking-with-assurance-contracts-bw-academic.jpg)
 
-The primary risk elimination mechanism:
+The primary risk elimination mechanism for the **referendum campaign** (distinct from IAB-funded lobbying):
 
-- **Smart Contract Escrow:** All funds locked until funding goals met
-- **Automatic Refunds:** If targets missed, money returns automatically
-- **No Collective Action Problem:** "Money-back guarantee" eliminates investment risk
-- **Dominant Assurance Contract:** Bonus rewards if goals achieved
+- **Smart Contract Escrow:** PRIZE token funds locked until referendum goals met
+- **Automatic Refunds:** If the referendum fails, PRIZE funds return automatically
+- **No Collective Action Problem:** Zero-risk on-ramp eliminates the "but what if nobody else joins" hesitation
+- **Dominant Assurance Contract:** VOTE holders who recruited referendum participants allocate the PRIZE pool on success
+
+IAB capital is separate: it funds the lobbying campaign immediately and carries real risk (see [Investor Risk Analysis](investor-risk-analysis.qmd)).
 
 <!-- END CONTENT MERGED FROM economics/fundraising/fundraising-strategy.md -->
 

@@ -147,7 +147,7 @@ book:
         # - knowledge/call-to-action/three-actions.qmd
         - knowledge/appendix/treaty-feasibility.qmd # ✅ (detailed cost/timeline analysis, $90M estimate)
         - knowledge/appendix/recruitment-and-propaganda-plan.qmd # ✅ (EXCELLENT voice) ~7p
-        # DELETED: Consolidated into least-bad-idea-prize-paper.qmd
+        # DELETED: Consolidated into earth-optimization-prize.qmd
         # - knowledge/strategy/least-bad-idea-prize.qmd
         # - knowledge/strategy/how-to-launch-your-prize.qmd
         - knowledge/appendix/conclusion.qmd # ✅ Conclusion ~1p
@@ -179,7 +179,7 @@ book:
         - knowledge/appendix/us-efficiency-audit.qmd # Standalone paper config: _quarto-us-efficiency-audit.yml
         - knowledge/appendix/optimocracy-paper.qmd # Standalone paper config: _quarto-optimocracy.yml
         - knowledge/appendix/optimal-policy-generator-spec.qmd # Standalone paper config: _quarto-opg.yml
-        - knowledge/strategy/least-bad-idea-prize-paper.qmd # Standalone paper config: _quarto-least-bad-idea-prize.yml
+        - knowledge/strategy/earth-optimization-prize.qmd # Standalone paper config: _quarto-earth-optimization-prize.yml
         - knowledge/strategy/earth-optimization-plan-v1.qmd # The forkable v1 system spec
         - knowledge/appendix/optimal-budget-generator-spec.qmd # Standalone paper config: _quarto-obg.yml
         - knowledge/appendix/dfda-spec-paper.qmd # Standalone paper config: _quarto-dfda-spec.yml

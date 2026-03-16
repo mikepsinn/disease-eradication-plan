@@ -7,7 +7,6 @@ tags:
   - investment-thesis
   - venture-capital
   - political-arbitrage
-  - assurance-contracts
   - metaculus
 image: /assets/og-images/knowledge/appendix/investor-risk-analysis-og-retro-academic.jpg
 podcast-image: /assets/podcast/investor-risk-analysis-podcast.jpg
@@ -47,13 +46,24 @@ You've swapped market and competition risk for a single, concentrated political 
 
 ## How You Mitigate Each Risk
 
-Your risk is specific. So you can engineer specific tools to neutralize it. Four mechanisms, each targeting a different failure mode.
+Your risk is specific. So you can engineer specific tools to neutralize it.
 
-### The Assurance Contract (Fundraising Risk)
+Your ecosystem has two instruments with two risk profiles. **PRIZE tokens** use a dominant assurance contract: funds are escrowed and returned automatically if the referendum fails. Zero risk to participants. **IABs** fund the lobbying campaign with real capital at risk.
 
-**Problem:** Early investors hesitate. They fear not enough others will join. Your species calls this the "collective action problem." Economists have written about it for decades. The solution has existed the whole time.
+### The Built-In Prediction Market (PRIZE vs. VOTE)
 
-**Solution:** All initial funds sit in a transparent escrow structure, whether that is a conventional escrow account, a programmable escrow, or both depending on the offering format. If the fundraising target isn't met by the deadline, **all capital returns to investors automatically under the escrow rules.** You can't lose money on a project that never launches if the launch conditions are enforced before anyone gets to touch the cash.
+The two-token design creates an implicit probability signal with no additional infrastructure:
+
+| Belief about treaty success | Rational action | Why |
+| :--- | :--- | :--- |
+| **Likely to succeed** | Earn VOTE tokens (recruit referendum participants) | VOTE tokens allocate the PRIZE pool on success. Higher probability = higher expected value. |
+| **Likely to fail** | Buy PRIZE tokens | Dominant assurance contract returns your funds + bonus on failure. You profit from participating in a project you expect to lose. |
+
+The price ratio between PRIZE and VOTE tokens is a live estimate of treaty probability. No prediction market needed; the financial architecture *is* the prediction market.
+
+This also means every participant is hedged. PRIZE holders are financially better off if the treaty fails (refund + bonus), but they still contributed to the referendum. VOTE holders are financially better off if the treaty succeeds, but they recruited real participants either way. Your species calls this "mechanism design." It's just making sure everyone has a reason to show up regardless of their priors.
+
+Three additional mechanisms mitigate IAB-specific risk:
 
 
 ### Prediction Markets & Dynamic Pricing (Political Risk)

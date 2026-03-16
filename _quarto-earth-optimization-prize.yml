@@ -16,7 +16,7 @@ project:
 # Custom fields for render-quarto.py
 dih-render:
   emoji: "🏆"
-  index-source: knowledge/strategy/least-bad-idea-prize-paper.qmd
+  index-source: knowledge/strategy/earth-optimization-prize.qmd
   fallback-404-redirect-domain: https://manual.WarOnDisease.org
   netlify-site-id: "4b864c23-3f9e-4a83-a6dc-9a2f7690eb80"
   netlify-cname: "prize-warondisease-org.netlify.app"
@@ -28,7 +28,7 @@ dih-render:
         - "Least Bad Idea in the World Prize"
         - "LBIP"
         - "implementation prize"
-      manual-target: knowledge/strategy/least-bad-idea-prize-paper.qmd
+      manual-target: knowledge/strategy/earth-optimization-prize.qmd
   # Image generation prompts (used by scripts/images/generate-project-branding-images.ts)
   favicon-prompt: "A trophy with a checkmark and mathematical symbols, minimalist design."
 
