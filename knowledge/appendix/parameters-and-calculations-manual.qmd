@@ -36,15 +36,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 456 parameters used in the analysis, organized by type:
+This appendix documents all 467 parameters used in the analysis, organized by type:
 
-- External sources (peer-reviewed): 157
-- Calculated values: 201
+- External sources (peer-reviewed): 159
+- Calculated values: 210
 - Core definitions: 98
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (201 parameters) • [External Data Sources](#sec-external) (157 parameters) • [Core Definitions](#sec-definitions) (98 parameters)
+[Calculated Values](#sec-calculated) (210 parameters) • [External Data Sources](#sec-external) (159 parameters) • [Core Definitions](#sec-definitions) (98 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -617,6 +617,33 @@ $$
 
 :::
 
+### Current Trajectory Average Income at Year 15: $18.7K {#sec-current_trajectory_avg_income_year_15}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Average income (GDP per capita) at year 15 under current trajectory.
+
+**Inputs**:
+
+- [Current Trajectory GDP at Year 15](#sec-current_trajectory_gdp_year_15) 🔢: $167T
+- [Global Population 2040 (Projected)](#sec-global_population_2040_projected) 📊: 8.9 billion of people
+
+$$
+\bar{y}_{base,15} = \frac{GDP_{base,15}}{Pop_{2040}}
+$$
+
+*✓ High confidence*
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-current_trajectory_avg_income_year_15.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-current_trajectory_avg_income_year_15.qmd >}}
+
+:::
+
 ### Current Trajectory Average Income at Year 20: $20.5K {#sec-current_trajectory_avg_income_year_20}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -687,6 +714,33 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-current_trajectory_cumulative_lifetime_income.qmd >}}
+
+:::
+
+### Current Trajectory GDP at Year 15: $167T {#sec-current_trajectory_gdp_year_15}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Global GDP at year 15 under status-quo current trajectory growth.
+
+**Inputs**:
+
+- [Global GDP (2025)](#sec-global_gdp_2025) 📊: $115T
+- [Baseline Global GDP Growth Rate](#sec-gdp_baseline_growth_rate): 2.5%
+
+$$
+GDP_{base,15} = GDP_0(1+g_{base})^{15}
+$$
+
+*✓ High confidence*
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-current_trajectory_gdp_year_15.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-current_trajectory_gdp_year_15.qmd >}}
 
 :::
 
@@ -5240,6 +5294,39 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-global_disease_economic_burden_annual.qmd >}}
+
+:::
+
+### Life Expectancy to HALE Gap: 15.7 years {#sec-global_hale_gap}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Gap between life expectancy and healthy life expectancy. Represents years lived with disability or disease that could be recovered by curing diseases.
+
+**Inputs**:
+
+- [Global Life Expectancy (2024)](#sec-global_life_expectancy_2024) 📊: 79 years (SE: ±2 years)
+- [Global Healthy Life Expectancy (HALE)](#sec-global_hale_current) 📊: 63.3 years (SE: ±1.5 years)
+
+$$
+\Delta_{HALE} = LE_{global} - HALE_{0} = 79 - 63.3 = 15.7
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-global_hale_gap.qmd >}}
+
+{{< include ../figures/sensitivity-table-global_hale_gap.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-global_hale_gap.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-global_hale_gap.qmd >}}
 
 :::
 
@@ -12438,6 +12525,31 @@ $$
 
 :::
 
+### Wishonia Disease Cure Fraction (15yr, Full Implementation): 100% {#sec-wishonia_disease_cure_fraction_15yr}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Wishonia disease-cure fraction over 15 years under full implementation. Uses full trial-capacity scaling and applies an upper bound of 100% of untreated disease classes.
+
+**Inputs**:
+
+- [Diseases Getting First Treatment Per Year](#sec-new_disease_first_treatments_per_year) 📊: 15 diseases/year (95% CI: 8 diseases/year - 30 diseases/year)
+- [Trial Capacity Multiplier](#sec-dfda_trial_capacity_multiplier) 🔢: 12.3x
+- [Wishonia Military Reallocation Physical Max Share](#sec-wishonia_military_reallocation_physical_max_share) 🔢: 87.6%
+- [Maximum Trial Capacity Multiplier (Physical Limit)](#sec-dfda_max_trial_capacity_multiplier_physical) 🔢: 566x
+- [Diseases Without Effective Treatment](#sec-diseases_without_effective_treatment) 🔢: 6.65 thousand diseases
+
+$$
+\begin{gathered}
+f_{cure,15,wish} \\
+= \min\left(1,\frac{Treatments_{new,ann}\cdot k_{capacity,wish}\cdot 15}{D_{untreated}}\right)
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+:::
+
 ### Wishonia Disease Cure Fraction (20yr, Full Implementation): 100% {#sec-wishonia_disease_cure_fraction_20yr_full}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -12460,6 +12572,40 @@ f_{cure,20,wish} \\
 $$
 
 *✓ High confidence*
+
+:::
+
+### Wishonia HALE Gain at Year 15: 15.7 years {#sec-wishonia_hale_gain_year_15}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+HALE improvement at year 15 under Wishonia Trajectory. Full implementation cures a larger fraction of diseases, closing more of the HALE gap.
+
+**Inputs**:
+
+- [Wishonia Disease Cure Fraction (15yr, Full Implementation)](#sec-wishonia_disease_cure_fraction_15yr) 🔢: 100%
+- [Global Healthy Life Expectancy (HALE)](#sec-global_hale_current) 📊: 63.3 years (SE: ±1.5 years)
+- [Global Life Expectancy (2024)](#sec-global_life_expectancy_2024) 📊: 79 years (SE: ±2 years)
+
+$$
+\Delta HALE_{wish,15} = f_{cure,15,wish} \cdot \Delta_{HALE}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-wishonia_hale_gain_year_15.qmd >}}
+
+{{< include ../figures/sensitivity-table-wishonia_hale_gain_year_15.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-wishonia_hale_gain_year_15.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-wishonia_hale_gain_year_15.qmd >}}
 
 :::
 
@@ -12486,6 +12632,72 @@ Cut_{WW2} \\
 \end{gathered}
 $$
 *✓ High confidence*
+
+:::
+
+### Wishonia Projected HALE at Year 15: 79 years {#sec-wishonia_projected_hale_year_15}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Projected global HALE at year 15 under Wishonia Trajectory. Full implementation closes the entire disease gap, pushing HALE toward life expectancy.
+
+**Inputs**:
+
+- [Global Healthy Life Expectancy (HALE)](#sec-global_hale_current) 📊: 63.3 years (SE: ±1.5 years)
+- [Wishonia HALE Gain at Year 15](#sec-wishonia_hale_gain_year_15) 🔢: 15.7 years
+
+$$
+HALE_{wish,15} = HALE_0 + \Delta HALE_{wish,15}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-wishonia_projected_hale_year_15.qmd >}}
+
+{{< include ../figures/sensitivity-table-wishonia_projected_hale_year_15.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-wishonia_projected_hale_year_15.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-wishonia_projected_hale_year_15.qmd >}}
+
+:::
+
+### Wishonia Trajectory Average Income at Year 15: $504K {#sec-wishonia_trajectory_avg_income_year_15}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Average income (GDP per capita) at year 15 under the Wishonia Trajectory.
+
+**Inputs**:
+
+- [Wishonia Trajectory GDP at Year 15](#sec-wishonia_trajectory_gdp_year_15) 🔢: $4.48 quadrillion
+- [Global Population 2040 (Projected)](#sec-global_population_2040_projected) 📊: 8.9 billion of people
+
+$$
+\bar{y}_{wish,15} = \frac{GDP_{wish,15}}{Pop_{2040}}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-wishonia_trajectory_avg_income_year_15.qmd >}}
+
+{{< include ../figures/sensitivity-table-wishonia_trajectory_avg_income_year_15.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-wishonia_trajectory_avg_income_year_15.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-wishonia_trajectory_avg_income_year_15.qmd >}}
 
 :::
 
@@ -12594,6 +12806,135 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-wishonia_trajectory_cumulative_lifetime_income.qmd >}}
+
+:::
+
+### Wishonia Trajectory vs Current Trajectory GDP Multiplier (Year 15): 26.9x {#sec-wishonia_trajectory_gdp_vs_current_trajectory_multiplier_year_15}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Wishonia Trajectory GDP at year 15 as a multiple of current trajectory GDP at year 15.
+
+**Inputs**:
+
+- [Wishonia Trajectory GDP at Year 15](#sec-wishonia_trajectory_gdp_year_15) 🔢: $4.48 quadrillion
+- [Current Trajectory GDP at Year 15](#sec-current_trajectory_gdp_year_15) 🔢: $167T
+
+$$
+\begin{gathered}
+k_{wish:base,15} \\
+= \frac{GDP_{wish,15}}{GDP_{base,15}} \\
+= \frac{\$4480T}{\$167T} \\
+= 26.9
+\end{gathered}
+$$
+where:
+$$
+GDP_{wish,15}=GDP_0(1+g_{ramp})^3(1+g_{full})^{12}
+$$
+where:
+$$
+s_{mil,max} = Cut_{WW2} = 87.6\% = 87.6\%
+$$
+where:
+$$
+\begin{gathered}
+Cut_{WW2} \\
+= 1 - \frac{Spending_{US,1947}}{Spending_{US,1945}} \\
+= 1 - \frac{\$176B}{\$1.42T} \\
+= 87.6\%
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+f_{cure,15,wish} \\
+= \min\left(1,\frac{Treatments_{new,ann}\cdot k_{capacity,wish}\cdot 15}{D_{untreated}}\right)
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+k_{capacity} \\
+= \frac{N_{fundable,dFDA}}{Slots_{curr}} \\
+= \frac{23.4M}{1.9M} \\
+= 12.3
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{fundable,dFDA} \\
+= \frac{Subsidies_{dFDA,ann}}{Cost_{pragmatic,pt}} \\
+= \frac{\$21.8B}{\$929} \\
+= 23.4M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Subsidies_{dFDA,ann} \\
+= Funding_{dFDA,ann} - OPEX_{dFDA} \\
+= \$21.8B - \$40M \\
+= \$21.8B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+OPEX_{dFDA} \\
+= Cost_{platform} + Cost_{staff} + Cost_{infra} \\
++ Cost_{regulatory} + Cost_{community} \\
+= \$15M + \$10M + \$8M + \$5M + \$2M \\
+= \$40M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+k_{capacity,max} \\
+= \frac{N_{willing}}{Slots_{curr}} \\
+= \frac{1.08B}{1.9M} \\
+= 566
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{willing} \\
+= N_{patients} \times Pct_{willing} \\
+= 2.4B \times 44.8\% \\
+= 1.08B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{untreated} \\
+= N_{rare} \times 0.95 \\
+= 7{,}000 \times 0.95 \\
+= 6{,}650
+\end{gathered}
+$$
+where:
+$$
+GDP_{base,15} = GDP_0(1+g_{base})^{15}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-wishonia_trajectory_gdp_vs_current_trajectory_multiplier_year_15.qmd >}}
+
+{{< include ../figures/sensitivity-table-wishonia_trajectory_gdp_vs_current_trajectory_multiplier_year_15.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-wishonia_trajectory_gdp_vs_current_trajectory_multiplier_year_15.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-wishonia_trajectory_gdp_vs_current_trajectory_multiplier_year_15.qmd >}}
 
 :::
 
@@ -12723,6 +13064,49 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-wishonia_trajectory_gdp_vs_current_trajectory_multiplier_year_20.qmd >}}
+
+:::
+
+### Wishonia Trajectory GDP at Year 15: $4.48 quadrillion {#sec-wishonia_trajectory_gdp_year_15}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Projected global GDP at year 15 under the Wishonia Trajectory. Applies all Wishonia policy channels including military reallocation, disease-burden recovery, and Political Dysfunction Tax elimination. 3-year ramp at 50% intensity + 12 years full.
+
+**Inputs**:
+
+- [Global GDP (2025)](#sec-global_gdp_2025) 📊: $115T
+- [Baseline Global GDP Growth Rate](#sec-gdp_baseline_growth_rate): 2.5%
+- [Wishonia Military Reallocation Physical Max Share](#sec-wishonia_military_reallocation_physical_max_share) 🔢: 87.6%
+- [GDP Growth Boost at 30% Military Reallocation](#sec-military_redirect_gdp_boost_at_30pct): 5.5% (95% CI: 3.5% - 7.5%)
+- [R&D Spillover Multiplier](#sec-rd_spillover_multiplier): 2x (95% CI: 1.5x - 2.5x)
+- [Wishonia Disease Cure Fraction (15yr, Full Implementation)](#sec-wishonia_disease_cure_fraction_15yr) 🔢: 100%
+- [Disease Burden as % of GDP](#sec-disease_burden_gdp_drag_pct) 📊: 13%
+- [Global Science Opportunity Cost](#sec-political_dysfunction_global_science_opportunity_cost) 📊: $4T (95% CI: $2T - $10T)
+- [Global Lead Poisoning Cost](#sec-political_dysfunction_global_lead_opportunity_cost) 📊: $6T (95% CI: $4T - $8T)
+- [Global Migration Opportunity Cost](#sec-political_dysfunction_global_migration_opportunity_cost) 📊: $57T (95% CI: $57T - $170T)
+- [Economic Multiplier for Healthcare Investment](#sec-economic_multiplier_healthcare_investment) 📊: 4.3x (95% CI: 3x - 6x)
+- [Economic Multiplier for Military Spending](#sec-economic_multiplier_military_spending) 📊: 0.6x (95% CI: 0.4x - 0.9x)
+
+$$
+GDP_{wish,15}=GDP_0(1+g_{ramp})^3(1+g_{full})^{12}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-wishonia_trajectory_gdp_year_15.qmd >}}
+
+{{< include ../figures/sensitivity-table-wishonia_trajectory_gdp_year_15.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-wishonia_trajectory_gdp_year_15.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-wishonia_trajectory_gdp_year_15.qmd >}}
 
 :::
 
@@ -14559,6 +14943,26 @@ Annual global government spending on interventional clinical trials (~5-10% of t
 
 :::
 
+### Global Healthy Life Expectancy (HALE): 63.3 years {#sec-global_hale_current}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Global healthy life expectancy at birth (HALE) from WHO Global Health Observatory, 2019 data (most recent available). HALE measures years lived in full health, adjusting for years lived with disability or disease.
+
+**Source**: [@who-global-health-estimates-2024]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Normal (SE: 1.5 years)
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_hale_current.qmd >}}
+
+*✓ High confidence • 📊 Peer-reviewed • Updated 2019*
+
+:::
+
 ### Global Household Wealth: $454T {#sec-global_household_wealth_usd}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -14682,6 +15086,22 @@ Global population in 2024
 #### Input Distribution
 
 {{< include ../figures/distribution-global_population_2024.qmd >}}
+
+*✓ High confidence*
+
+:::
+
+### Global Population 2040 (Projected): 8.9 billion of people {#sec-global_population_2040_projected}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+UN World Population Prospects 2022 median projection for 2040. Interpolated midpoint between ~8.1B (2025) and 9.2B (2045).
+
+**Source**: [@global-population-8-billion]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
 
 *✓ High confidence*
 

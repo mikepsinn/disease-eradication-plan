@@ -36,15 +36,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 333 parameters used in the analysis, organized by type:
+This appendix documents all 334 parameters used in the analysis, organized by type:
 
 - External sources (peer-reviewed): 123
 - Calculated values: 155
-- Core definitions: 55
+- Core definitions: 56
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (155 parameters) • [External Data Sources](#sec-external) (123 parameters) • [Core Definitions](#sec-definitions) (55 parameters)
+[Calculated Values](#sec-calculated) (155 parameters) • [External Data Sources](#sec-external) (123 parameters) • [Core Definitions](#sec-definitions) (56 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -13609,6 +13609,20 @@ Standard discount rate for NPV analysis (3% annual, social discount rate)
 ::: {.callout-note collapse="true" title="📊 Details"}
 
 Standard time horizon for NPV analysis
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*Core definition*
+
+:::
+
+### Prize Escrow Annual Yield Rate: 10% {#sec-prize_escrow_yield_rate}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual yield rate on escrowed prize contributions via rolling locked stablecoin staking (Binance 120-day USDT locked staking benchmark, March 2026)
 
 #### Uncertainty Range
 
