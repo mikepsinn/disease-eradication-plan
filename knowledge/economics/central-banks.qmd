@@ -16,7 +16,7 @@ youtube-thumbnail: /assets/podcast/central-banks-youtube.jpg
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 Dollar purchasing power retained since 1913: 4%. Unpopular wars funded without democratic consent: all of them. This is a systems analysis.
 
-On Wishonia, we used rocks as currency for about 400 years. Then someone pointed out that rocks are heavy and also everywhere. It took us another 200 years of arguing, a bribery program, and three currency collapses before we switched to a shared ledger: a network of computers that all keep the same record of who has what, and check each other's work so nobody can lie. If one computer tries to say "actually I have a million extra coins," the other computers say "no you don't" and ignore it. That's the whole thing. It is not complicated. A child could understand it. (On Wishonia, a child *did* invent it. She was eleven. She won a science fair. The previous monetary system had been designed by 400 adults over two centuries and was worse in every way.)
+On Wishonia, we used rocks as currency for about 400 years. Then someone pointed out that rocks are heavy and also everywhere. It took us another 200 years of arguing, a bribery program, and three currency collapses before we switched to a shared ledger: a network of computers that all keep the same record of who has what, and check each other's work so nobody can lie. If one computer tries to say "actually I have a million extra coins," the other computers say "no you don't" and ignore it. That's the whole thing. It is not complicated. A child could understand it. (On Wishonia, a child *did* invent it. She was eleven. She won second place at a science fair. The previous monetary system had been designed by 400 adults over two centuries and was worse in every way.)
 
 Humans invented the same idea in 2009. It is called "blockchain," which is a word designed to make a simple concept sound difficult, because if people understood how simple it was, they might ask why they're still using the old system. Mostly, your species used it to buy drugs and expensive monkey JPGs. (You paid $69 million for an NFT of a picture of an ape. The ape was not even real. I checked.)
 
@@ -119,7 +119,7 @@ Congress funded the post-9/11 wars entirely with debt, then cut taxes. The Fed b
 
 {{< var money_printer_war_deaths >}}. Over $16 trillion spent, and that is just the US share of six wars.^[War costs are US military expenditures adjusted to 2024 dollars from CRS FY2011 estimates [@crs-war-costs-2010], except post-9/11 wars which use Brown University's comprehensive $8 trillion figure including veterans' care and interest [@costsofwar2023]. All-belligerent costs would be substantially higher. Death figures are mid-range estimates. Many scholars cite higher numbers, particularly for World War II (up to 85 million including war-related famine and disease) and post-9/11 wars (up to 4.7 million). The less conservative total exceeds 110 million.]
 
-But wars end. Spending does not. Your species currently spends a record {{< var global_military_spending_annual_2024 >}} per year on military, up 9.4% from the year before [@sipri-milex-2024], which is {{< var military_to_government_clinical_trials_spending_ratio >}} years of government clinical trials. Every year. The Federal Reserve has been running for 111 years. Cumulative global military spending over that period, in constant 2024 dollars, exceeds {{< var cumulative_military_spending_fed_era >}}.^[SIPRI data from 1988-2024 sums to approximately $65-72 trillion in constant 2024 dollars [@sipri2024; @sipri-milex-2024]. The Cold War era (1946-1987) adds roughly $50-70 trillion, reconstructed from US spending data and CIA estimates. World War II cost all belligerents approximately $23 trillion [@harrison-economics-wwii], WWI approximately $7 trillion, with $3-5 trillion for interwar budgets. The range since 1913 is $150-190 trillion; $170 trillion is the central estimate. The full historical tab, including all pre-1913 warfare, is approximately $180 trillion (see [The Cost of War](../problem/cost-of-war.qmd#the-running-tab)). The Institute for Economics and Peace estimates the current annual economic cost of violence and conflict at $20 trillion when indirect costs are included [@iep-gpi-2024].]
+But wars end. Spending does not. Your species currently spends a record {{< var global_military_spending_annual_2024 >}} per year on military, up 9.4% from the year before [@sipri-milex-2024], which is {{< var military_to_government_clinical_trials_spending_ratio >}} years of government clinical trials. Every year. The Federal Reserve has been running for 113 years. Cumulative global military spending over that period, in constant 2024 dollars, exceeds {{< var cumulative_military_spending_fed_era >}}.^[SIPRI data from 1988-2024 sums to approximately $65-72 trillion in constant 2024 dollars [@sipri2024; @sipri-milex-2024]. The Cold War era (1946-1987) adds roughly $50-70 trillion, reconstructed from US spending data and CIA estimates. World War II cost all belligerents approximately $23 trillion [@harrison-economics-wwii], WWI approximately $7 trillion, with $3-5 trillion for interwar budgets. The range since 1913 is $150-190 trillion; $170 trillion is the central estimate. The full historical tab, including all pre-1913 warfare, is approximately $180 trillion (see [The Cost of War](../problem/cost-of-war.qmd#the-running-tab)). The Institute for Economics and Peace estimates the current annual economic cost of violence and conflict at $20 trillion when indirect costs are included [@iep-gpi-2024].]
 
 {{< var cumulative_military_spending_fed_era >}}. That is nearly 38,000 years of global government clinical trials. Your species has been running clinical trials for about 80 years. You could have funded every clinical trial you will ever run, for hundreds of lifetimes, with the money you spent on killing each other since the Federal Reserve opened for business.
 
@@ -221,7 +221,7 @@ I found this confusing at first. Then I realized it's not a bug. Busy people don
 I need to say that again because your brain is going to try to skip past it. The Federal Reserve's official, publicly stated, announced-on-television goal is to make your money worth 2% less every year. They chose this number. They aim for it. They celebrate when they hit it.
 
 - Over 35 years, 2% compounds to a 50% loss
-- Over the 54 years since Nixon, it has taken 93%
+- Actual inflation averaged higher than 2%. Since Nixon, your dollar has lost over 87%
 
 They named the target. They hit the target. You are the target. I am told these are three different sentences.
 
@@ -348,7 +348,7 @@ Your species did 246% more work and received 115% more pay. The remaining 131% w
 
 In 1967, fewer than half of married-couple families had both spouses working [@bls-working-wives-1967-2011]. One paycheck bought a house, a car, annual vacations, and a pension. The other adult raised children, or gardened, or was bored. Boredom was a luxury your grandparents could afford. They could afford it because one human working 40 hours a week earned enough to house, feed, transport, and retire an entire family. I want you to read that sentence again, slowly, because I can feel you not believing it.
 
-By 2011, husband-only earner families had dropped from 36% to 19%. The rest sent both adults to work and paid strangers to raise their children. Working wives contributed 27% of family income in 1970. By 2011, it was 37%. An entire additional human entered the workforce and the family gained ten percentage points.
+By 2011, husband-only earner families had fallen from over half to just 19%. The rest sent both adults to work and paid strangers to raise their children. Working wives contributed 27% of family income in 1970. By 2011, it was 37%. An entire additional human entered the workforce and the family gained ten percentage points.
 
 I want to be very precise about what happened here. Your species noticed that one paycheck was no longer sufficient, so it doubled the number of workers per household. The two paychecks combined now purchase a lifestyle that one paycheck covered comfortably in 1971. You added a whole extra human to the economy and broke even. On Wishonia, when you double the inputs and the outputs stay the same, you check for parasites. On Earth, you invented the phrase "work-life balance," which describes having half of what your parents had but in two directions simultaneously.
 
@@ -362,7 +362,7 @@ None of this was their job. Their job was maintaining the spreadsheet. They were
 
 The houses were real. The bets were not. When the bets collapsed, ten million Americans lost their homes.
 
-Then your banks did something I still find remarkable, even after 80 years of watching your species. They called it a "crisis." I want to examine this word, because it is doing more work than any word has ever done. The money was created from nothing. The buildings were still standing. The factories still existed. The crops were still growing. The workers still had hands. Nothing real was missing. What was missing was numbers on a spreadsheet; numbers that had been invented by the same people who were now calling their absence an emergency. The banks had borrowed invented money, gambled it on bets about bets about whether you would keep paying your mortgage, lost, and were now standing in front of Congress saying that unless you gave them $700 billion of your money (the kind you earned with your body, at a job, over time), civilization would collapse. The civilization they had just destabilized. With free money. That they did not earn. On Wishonia, this is called "setting fire to someone's house and then charging them for the fire truck." On Earth, it is called the Troubled Asset Relief Program [@cuomo-bank-bonuses-2009]. The homeowners got foreclosure notices.
+Then your banks did something I still find remarkable, even after 81 years of watching your species. They called it a "crisis." I want to examine this word, because it is doing more work than any word has ever done. The money was created from nothing. The buildings were still standing. The factories still existed. The crops were still growing. The workers still had hands. Nothing real was missing. What was missing was numbers on a spreadsheet; numbers that had been invented by the same people who were now calling their absence an emergency. The banks had borrowed invented money, gambled it on bets about bets about whether you would keep paying your mortgage, lost, and were now standing in front of Congress saying that unless you gave them $700 billion of your money (the kind you earned with your body, at a job, over time), civilization would collapse. The civilization they had just destabilized. With free money. That they did not earn. On Wishonia, this is called "setting fire to someone's house and then charging them for the fire truck." On Earth, it is called the Troubled Asset Relief Program [@cuomo-bank-bonuses-2009]. The homeowners got foreclosure notices.
 
 Here is the part that made me recalibrate my understanding of your species. The banks could have simply not paid bonuses to the executives. That's it. That was an option the entire time. The executives who gambled with free money and lost could have received their base salaries, like any other human who is bad at their job, and used the bonus pool to cover their own gambling debts. Nobody made them gamble. Nobody made them build a casino on top of your houses. They chose to. And when the casino collapsed, they had a choice: skip the bonuses for a few years and eat the loss with money they hadn't earned in the first place, or send the bill to you. Every single bank chose the second option.
 
@@ -432,7 +432,7 @@ The average American with a bachelor's degree completes approximately 17,000 hou
 
 Zero.
 
-Not "nearly zero." Not "a brief overview in eleventh grade." Zero. I counted. I went through your curricula. You spend more class time learning the recorder, which is an instrument specifically designed to make parents regret reproduction. You spend an entire semester on the mitochondria, which is the powerhouse of the cell, a fact that has never been useful to any human outside of a biology exam or a meme. The thing that took 93% of your purchasing power: not on the syllabus. The powerhouse of the cell: six weeks.
+Not "nearly zero." Not "a brief overview in eleventh grade." Zero. I counted. I went through your curricula. You spend more class time learning the recorder, which is an instrument specifically designed to make parents regret reproduction. You spend an entire semester on the mitochondria, which is the powerhouse of the cell, a fact that has never been useful to any human outside of a biology exam or a meme. The thing that took 96% of your purchasing power: not on the syllabus. The powerhouse of the cell: six weeks.
 
 Here is what monetary policy actually determines:
 
@@ -442,9 +442,9 @@ Here is what monetary policy actually determines:
 
 It is the single most important force shaping who lives and who dies on your planet. It decides everything. You have never had a class about it. You had multiple classes about the recorder.
 
-Only 28 states require any economics course to graduate high school, and those courses cover supply and demand curves, not money creation. The thing that took 93% of your purchasing power is not on the test. It has never been on any test.
+Only 28 states require any economics course to graduate high school, and those courses cover supply and demand curves, not money creation. The thing that took 96% of your purchasing power is not on the test. It has never been on any test.
 
-This is very convenient for the people who took the 93%.
+This is very convenient for the people who took the 96%.
 
 ### Same Trick, Different Costume
 
@@ -568,7 +568,7 @@ Absolute dollars increased 10x. Share of actual resources: decreased. You got te
 
 #### What Actually Grew
 
-- Financial sector: 3% to 8% of GDP
+- Financial sector: 4% to 8% of GDP
 - Military-industrial sector: 3% to 3.4% of GDP (the official number; the rest enters your budget wearing other costumes)
 - Healthcare spending: 7% to 18% of GDP (most of that growth is billing, not healing)
 
@@ -602,7 +602,7 @@ A well-run business spends about 1% of revenue on its accounting department. You
 
 "Fine," says the human who just read the last three sections. "The problem is the money goes to the wrong people. Tax the billionaires. Fund medical research. Simple."
 
-Your species has been trying this for a century. I've watched the whole thing. Here is the loop:
+Your species has been trying this for a century. I've studied the whole thing. Here is the loop:
 
 **Step 1.** Tax the wealthy. Victory.
 
@@ -671,7 +671,7 @@ The six wars on this receipt cost over $16 trillion (US share only). That is **3
 
 And that is just the killing. The printer also built itself a bureaucracy:
 
-- The financial sector captures $2.3 trillion per year (8% of GDP) to move money and keep a ledger [@fred-finance-insurance-gdp-2026]. That is **511 years** of clinical trials. Every year. For arithmetic. The eleven-year-old's science fair project does this for free. It has done it for free since 2009. You are paying 6.7 million people to do what the computers are already doing, and you have been doing it for fifteen years since the computers made it pointless.
+- The financial sector captures $2.3 trillion per year (8% of GDP) to move money and keep a ledger [@fred-finance-insurance-gdp-2026]. That is **511 years** of clinical trials. Every year. For arithmetic. The eleven-year-old's science fair project does this for free. It has done it for free since 2009. You are paying 6.7 million people to do what the computers are already doing, and you have been doing it for seventeen years since the computers made it pointless.
 - The Fed printed $4 trillion in 2020 for banks: **889 years** [@fred-walcl-2026]
 - The 2008 bailout: $700 billion for banks: **156 years** [@cuomo-bank-bonuses-2009]
 - Corporate welfare: $300 billion per year for having lobbyists: **67 years**, annually
