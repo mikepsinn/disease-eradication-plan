@@ -104,9 +104,9 @@ The obvious question: who funds a campaign to redirect military spending? Answer
 
 [Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd) [@iab-paper-2025] are assurance contracts with revenue-share upside. Buy a bond, your money is escrowed at {{< var prize_escrow_yield_rate >}} annually. If the treaty never passes, you get your money back at {{< var prize_escrow_100_return_multiple >}} over {{< var prize_escrow_accumulation_years >}} (beats most hedge funds). If the treaty passes, you receive a pro-rata share of {{< var victory_bond_funding_pct >}} of treaty funding flows: {{< var victory_bond_annual_payout >}}/year on {{< var treaty_campaign_total_cost >}} total bonds. That is {{< var victory_bond_annual_return_pct >}} annual returns, paid as a perpetual revenue share for as long as the treaty generates funding.
 
-The secondary market price is a real-time, money-backed estimate of implementation probability. Every bondholder is financially incentivized to recruit voters, lobby politicians, fund implementation work, and share the plan, because all of these raise bond value. Nobody coordinates the campaign. The bond price coordinates the campaign.
+The secondary market price is a real-time, money-backed estimate of implementation probability. Every bondholder is financially incentivized to recruit voters, lobby politicians, fund implementation work, and share the plan, because all of these raise bond value. Nobody coordinates the campaign. The bond price coordinates the campaign. And because investing is the [dominant strategy](../appendix/treaty-feasibility.qmd) regardless of whether a media cascade occurs, the system does not require virality to function.
 
-Three-layer architecture for political adoption: (A) an independent organization publishes Public Good Scores based on politician voting records, (B) PACs and 501(c)(4)s support high-scorers with campaign funding, (C) foundations guarantee post-office careers for champions. No money flows directly to politicians. The same K Street mechanics, pointed at diseases instead of defense contracts.
+Three-layer architecture for political adoption: (A) an independent organization publishes Public Good Scores based on politician voting records, (B) PACs and 501(c)(4)s support high-scorers with campaign funding, (C) foundations guarantee post-office careers for champions. No money flows directly to politicians. The same K Street mechanics, pointed at diseases instead of defense contracts. Scoring is based on public voting records; anyone can verify or publish competing scores, making the scoring organization [structurally difficult to capture](../appendix/optimocracy-paper.qmd).
 
 The maximum cost of achieving any policy change through legal democratic channels is {{< var treaty_campaign_total_cost >}} for the United States, with ROI exceeding 400,000:1 [@cost-of-change-paper-2025]. "Political impossibility" is a capital allocation problem, not a physics problem.
 
@@ -152,7 +152,7 @@ The Olsonian problem (concentrated interests beat diffuse beneficiaries) is solv
 
 The [Political Dysfunction Tax](../problem/unrepresentative-democracy.qmd) [@political-dysfunction-tax-paper-2025] is the gap between actual governance output and optimal-governance output: {{< var political_dysfunction_global_opportunity_cost_total >}}/year globally. The [US Efficiency Audit](https://us-efficiency-audit.warondisease.org) [@us-efficiency-audit-paper-2025] itemizes {{< var us_gov_waste_total >}}/year across ten categories. These are the waste maps that tell you where the money is.
 
-Why only two terminal metrics? Each additional metric creates a new Goodhart surface. Markets optimize profit, not 200 sub-metrics. Median income is hard to fake at scale. Mortality is binary. Two numbers. Your species can probably keep track of two numbers.
+Why only two terminal metrics? Each additional metric creates a new Goodhart surface. Markets optimize profit, not 200 sub-metrics. Median income is hard to fake at scale. Mortality is binary. Every major policy domain (employment, healthcare, environment, education) [flows through](../appendix/optimocracy-paper.qmd) income and mortality; what doesn't affect how long you live or how much you earn probably isn't worth optimizing. Two numbers. Your species can probably keep track of two numbers.
 
 ::: {.callout-note}
 ## Fork Marker
@@ -275,41 +275,17 @@ The {{< var dih_treasury_medical_research_pct >}}/{{< var victory_bond_funding_p
 
 **How to beat this:** Prove that a different split raises more total capital or produces better outcomes per dollar. Or prove that the 20% is unnecessary because a cheaper political mechanism exists.
 
-### 3. Scoring Organization Capture
-
-The IAB mechanism creates a powerful new institution: the organization that publishes Public Good Scores. This institution can itself be captured. If the scoring organization is corrupted, the entire political incentive system points in the wrong direction. The history of ratings agencies on your planet does not inspire confidence.
-
-**How to beat this:** V1 addresses this with the [Evidence Machine](../appendix/optimocracy-paper.qmd): five independent data sources aggregated by median (so no single outlier dominates), plus a decentralized citizen survey as a sixth independent stream. Capturing a majority of independent oracles is exponentially harder than lobbying a single committee. The remaining gap: those five sources share underlying data (census surveys, tax records), creating correlated error. The citizen survey is specified but untested.
-
-### 4. The Cascade Assumption
-
-The model assumes that one billionaire investing triggers media coverage, which triggers more investors, which triggers political pressure, which passes the treaty. Each step in this cascade has independent failure probability. The [chain reaction model](../appendix/treaty-feasibility.qmd) handles this mathematically, but mathematical models of social cascades have a mixed track record on your planet.
-
-**How to beat this:** V1 already addresses this. The [decision-theoretic case](../appendix/treaty-feasibility.qmd) shows investing is the dominant strategy regardless of whether a cascade occurs; the incentive structure makes action profitable even if no media coverage happens. The cascade accelerates adoption but is not required for it. The remaining gap: "dominant strategy" assumes actors evaluate the payoff matrix. If nobody reads this far, the math is irrelevant.
-
-### 5. Wishocracy Participation
+### 3. Wishocracy Participation
 
 If participation in wishocratic allocation is low, the allocations are noisy and manipulable by organized factions. The system requires thresholds, weighting, or fallback modes for low participation. We have specified these. We have not tested them.
 
 **How to beat this:** Prove that a different allocation mechanism produces better outcomes with lower participation requirements, or design stronger participation incentives.
 
-### 6. Two Metrics May Not Be Enough
-
-Median healthy life years and median real after-tax income ignore inequality, environmental sustainability, subjective well-being, and freedom. We chose two because each additional metric creates a new Goodhart surface, and markets that optimize two numbers outperform committees that optimize two hundred. This is a defensible tradeoff. It may also be wrong.
-
-**How to beat this:** The [Optimocracy paper](../appendix/optimocracy-paper.qmd) makes the affirmative case: every major policy domain (employment, healthcare, environment, education) flows through income and mortality. Median income is hard to fake at scale. Mortality is binary. The formal Goodhart analysis shows each additional metric creates capture surfaces faster than it adds signal. Whether two metrics suffice remains empirical, but the Goodhart analysis puts the burden of proof on whoever proposes a third.
-
-### 7. No Pilot
+### 4. No Pilot
 
 We have not tested any of this as an integrated system. The RECOVERY trial proves pragmatic trials work. The Montreal Protocol proves coordinated reduction works. The NRA proves political scoring works. But the integrated loop has never run. Individually validated components can fail when combined, the same way individually safe chemicals can explode when mixed.
 
 **How to beat this:** Run a pilot. A single country, a single disease category, a scaled-down version of the full loop. Prove the integration works before asking for planetary adoption.
-
-### 8. We Excluded AI
-
-The [economic projections](../economics/gdp-trajectories.qmd) assume AI helps all trajectories equally and therefore cancels out in the comparison. If AI disproportionately accelerates the productive economy (making the treaty path stronger) or disproportionately accelerates the destructive economy (making the status quo path worse), the projections are wrong in a direction we cannot currently predict.
-
-**How to beat this:** Model AI effects explicitly. Show how AI changes the relative trajectories.
 
 ## What Already Exists
 
