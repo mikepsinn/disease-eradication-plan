@@ -123,6 +123,10 @@ The referendum proves that the support already exists. Everyone thinks ending wa
 
 {{< var treaty_campaign_viral_referendum_base_case >}} of the campaign budget goes to paid referral bonuses that make sharing financially attractive. The lobbying budget ({{< var treaty_campaign_budget_lobbying >}}) outbids the defense lobby's annual spend ({{< var defense_lobbying_annual >}}/year) by a factor of 8.
 
+Cash bonuses are the immediate incentive. The long-term incentive is VOTE tokens: transferable, on-chain proof issued to anyone who recruits a verified participant into the wishocratic allocation or treaty referendum. Recruiters can sell their tokens early; buyers are betting the plan succeeds. The secondary market price is a live estimate of what recruitment credit is worth.
+
+The [Earth Optimization Prize](least-bad-idea-prize-paper.qmd) pool is a separate instrument from the bonds. PRIZE token buyers deposit funds into escrow earning interest. If the plan fails to produce measurable results within 15 years, they get their deposit back plus interest (zero downside). If it succeeds, the entire pool is distributed to VOTE holders proportional to recruitment. A conditional donation: your money only spends if someone earned it. Philanthropists buy because they want to fund success. Pessimists buy for the risk-free interest. Both grow the prize pool.
+
 ::: {.callout-note}
 ## Fork Marker
 To replace this component, your alternative must coordinate adoption at equal or lower cost and failure risk.
@@ -298,7 +302,7 @@ This is not a whitepaper. The core infrastructure is built and tested:
 | Optimal Policy Generator | Enact/replace/repeal recommendations from cross-jurisdiction data | 213 tests |
 | Optimal Budget Generator | Diminishing-returns budget optimization | 146 tests |
 | Data layer | OECD, World Bank, FRED, WHO, Congress.gov fetchers + 9 health importers | 296 tests |
-| Treasury contracts | WishToken ($WISH), IAB vault, prize pool, alignment treasury (Solidity) | Hardhat tests |
+| Treasury contracts | WishToken ($WISH), VOTE tokens, PRIZE tokens, IAB vault, prize pool, alignment treasury (Solidity) | Hardhat tests |
 | Web app | Live RAPPA surveys, politician scorecards, bill voting, alignment reports | Next.js, deployed |
 
 Total: 2,600+ tests across 13 packages. TypeScript strict mode. Zod validation throughout. Every algorithm backed by a published paper with exact formulas and worked examples.
@@ -312,8 +316,8 @@ The Earth Optimization Plan v1 is the starting benchmark for the [Earth Optimiza
 1. **Fork.** Clone [the repository](https://github.com/mikepsinn/disease-eradication-plan). Every component, every calculation, every assumption is public.
 2. **Replace any row** in the Minimum Acceptable Governance table (see the [prize paper](least-bad-idea-prize-paper.qmd)) with something strictly better on the two terminal metrics (median healthy life years and median real after-tax income).
 3. **Or replace the whole system** with an integrated alternative that dominates v1 function by function. You cannot skip inconvenient pieces; every required function must be covered or replaced.
-4. **Prove it.** The primary credit mechanism is referral tracking: how many verified unique voters did you bring? Secondary credit goes to implementation bounties for building infrastructure, drafting legislation, and running trials. You need numbers, not arguments.
-5. **Collect.** Bondholders receive their revenue share for as long as the treaty generates funding. Implementation contributors receive bounties proportional to verified outcomes.
+4. **Prove it.** The primary credit mechanism is VOTE tokens: transferable, on-chain proof of how many verified participants you recruited into the wishocratic allocation or treaty referendum. Secondary credit goes to implementation bounties for building infrastructure, drafting legislation, and running trials. You need numbers, not arguments.
+5. **Collect.** Bondholders receive their revenue share for as long as the treaty generates funding. VOTE token holders receive their share of the PRIZE pool if the plan produces measurable results. Implementation contributors receive bounties proportional to verified outcomes.
 
 The disqualification rule: if your proposal requires any participant to become less selfish, you have described a pleasant world rather than a mechanism for reaching it. The math must work when humans are greedy, impatient, and exactly as self-interested as they are right now.
 
