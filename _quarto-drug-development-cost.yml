@@ -88,6 +88,8 @@ execute:
     PYTHONPATH: "."
 
 metadata:
+  doi: "10.5281/zenodo.19077569"
+  # Zenodo Concept DOI (stable across all versions - use for citations and new versions)
   importance: 20
   creator: "Mike P. Sinn"
   orcid: "0009-0006-0212-1094"

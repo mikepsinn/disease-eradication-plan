@@ -856,9 +856,30 @@
       return;
     }
 
-    // Build system prompt with RAG context from current page
-    var pageContext = searchContent(document.title || "");
+    // Build system prompt with RAG context
+    // Use a broad query to get general book context, not just the page title
+    var pageContext = searchContent("earth optimization plan treaty wishocracy bonds");
     var systemPrompt = buildVoiceSystemPrompt(pageContext);
+
+    // Show the context being sent in a collapsible block
+    if (pageContext) {
+      var ctxBubble = document.createElement("div");
+      ctxBubble.className = "chat-msg chat-msg-assistant";
+      var ctxCard = document.createElement("div");
+      ctxCard.className = "chat-voice-card";
+      var ctxDetails = document.createElement("details");
+      ctxDetails.className = "chat-thinking";
+      var ctxSummary = document.createElement("summary");
+      ctxSummary.textContent = "\uD83D\uDCDA RAG context sent (" + pageContext.length + " chars)";
+      ctxDetails.appendChild(ctxSummary);
+      var ctxPre = document.createElement("pre");
+      ctxPre.className = "chat-thinking-text";
+      ctxPre.textContent = pageContext;
+      ctxDetails.appendChild(ctxPre);
+      ctxCard.appendChild(ctxDetails);
+      ctxBubble.appendChild(ctxCard);
+      msgContainer.appendChild(ctxBubble);
+    }
 
     // Initialize audio playback
     audioPlayback = new AudioPlayback();
