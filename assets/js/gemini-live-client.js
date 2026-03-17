@@ -21,6 +21,9 @@ var GeminiLiveClient = (function () {
     this.onTurnComplete = opts.onTurnComplete || null;
     this.onReady = opts.onReady || null;
     this.onError = opts.onError || null;
+    this.onInputTranscript = opts.onInputTranscript || null;
+    this.onModelTurnStarted = opts.onModelTurnStarted || null;
+    this._modelTurnStarted = false;
     this.ws = null;
     this._setupDone = false;
   }
@@ -133,16 +136,33 @@ var GeminiLiveClient = (function () {
     }
 
     var sc = msg.serverContent;
-    if (!sc) return;
+    if (!sc) {
+      // Check for input transcript at top level
+      if (msg.inputTranscript) {
+        if (this.onInputTranscript) this.onInputTranscript(msg.inputTranscript);
+      }
+      return;
+    }
+
+    // Input transcript (what Gemini thinks the user said)
+    if (sc.inputTranscript) {
+      if (this.onInputTranscript) this.onInputTranscript(sc.inputTranscript);
+    }
 
     // Interruption
     if (sc.interrupted) {
+      this._modelTurnStarted = false;
       if (this.onInterrupted) this.onInterrupted();
       return;
     }
 
     // Model audio/text output
     if (sc.modelTurn && sc.modelTurn.parts) {
+      // Fire modelTurnStarted once per turn
+      if (!this._modelTurnStarted) {
+        this._modelTurnStarted = true;
+        if (this.onModelTurnStarted) this.onModelTurnStarted();
+      }
       for (var i = 0; i < sc.modelTurn.parts.length; i++) {
         var part = sc.modelTurn.parts[i];
         if (part.inlineData && part.inlineData.data) {
@@ -156,6 +176,7 @@ var GeminiLiveClient = (function () {
 
     // Turn complete
     if (sc.turnComplete) {
+      this._modelTurnStarted = false;
       if (this.onTurnComplete) this.onTurnComplete();
     }
   };

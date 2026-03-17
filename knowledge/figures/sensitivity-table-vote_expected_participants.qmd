@@ -1,10 +1,10 @@
-**Sensitivity Indices for VOTE Token Potential Value**
+**Sensitivity Indices for Expected Number of Voters**
 
 Regression-based sensitivity showing which inputs explain the most variance in the output.
 
 | Input Parameter | Sensitivity Coefficient | Interpretation |
 |:----------------|------------------------:|:---------------|
-| Prize Pool Projected Size (USD) | 0.6975 | Strong driver |
-| Expected Number of Voters (of people) | -0.1896 | Weak driver |
+| Expected Vote Participation Rate (percent) | 0.9997 | Strong driver |
+| Global Population in 2024 (of people) | 0.0217 | Minimal effect |
 
 *Interpretation*: Standardized coefficients show the change in output (in SD units) per 1 SD change in input. Values near ±1 indicate strong influence; values exceeding ±1 may occur with correlated inputs.

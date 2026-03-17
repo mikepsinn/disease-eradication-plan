@@ -5407,7 +5407,7 @@ Return multiple on escrowed prize contribution after accumulation period (how ma
 
 **Inputs**:
 
-- [Prize Escrow Annual Yield Rate](#sec-prize_escrow_yield_rate): 10%
+- [Prize Escrow Annual Yield Rate](#sec-prize_escrow_yield_rate): 10% (95% CI: 5% - 15%)
 - [Prize Escrow Accumulation Period](#sec-prize_escrow_accumulation_years): 15 years
 
 $$
@@ -5420,6 +5420,20 @@ k_{escrow} \\
 $$
 
 *✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-prize_escrow_100_return_multiple.qmd >}}
+
+{{< include ../figures/sensitivity-table-prize_escrow_100_return_multiple.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-prize_escrow_100_return_multiple.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-prize_escrow_100_return_multiple.qmd >}}
 
 :::
 
@@ -13852,7 +13866,15 @@ Annual yield rate on escrowed prize contributions via rolling locked stablecoin 
 
 #### Uncertainty Range
 
-**Technical**: Distribution: Fixed
+**Technical**: 95% CI: [5%, 15%] • Distribution: Normal
+
+**What this means**: There's significant uncertainty here. The true value likely falls between 5% and 15% (±50%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The normal distribution means values cluster around the center with equal chances of being higher or lower.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-prize_escrow_yield_rate.qmd >}}
 
 *Core definition*
 

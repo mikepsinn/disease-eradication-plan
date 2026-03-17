@@ -876,28 +876,40 @@
       apiKey: voiceCredentials.key,
       systemInstruction: systemPrompt,
       voice: "Kore",
-      onAudio: function (b64) {
-        audioPlayback.play(b64);
-        // Show speaking indicator
+      onInputTranscript: function (transcript) {
+        // Show what Gemini thinks the user said
+        if (transcript && transcript.trim()) {
+          appendMessage("user", transcript.trim());
+          // Show thinking indicator while model processes
+          showVoiceState("thinking");
+        }
+      },
+      onModelTurnStarted: function () {
         showVoiceState("speaking");
       },
+      onAudio: function (b64) {
+        audioPlayback.play(b64);
+      },
       onText: function (text) {
-        // Some models send text alongside audio; display it
-        if (text && liveVoiceTranscript !== null) {
-          liveVoiceTranscript += text;
-        }
+        // Chain-of-thought text from native audio model
+        if (text) liveVoiceThinking += text;
       },
       onInterrupted: function () {
         audioPlayback.interrupt();
+        // Save whatever we had
+        if (liveVoiceThinking) {
+          appendVoiceMessage(liveVoiceThinking);
+          liveVoiceThinking = "";
+        }
         showVoiceState("listening");
       },
       onTurnComplete: function () {
-        showVoiceState("listening");
-        // Save transcript if we got any text
-        if (liveVoiceTranscript) {
-          appendMessage("assistant", liveVoiceTranscript);
-          liveVoiceTranscript = "";
+        // Show thinking + voice response card
+        if (liveVoiceThinking) {
+          appendVoiceMessage(liveVoiceThinking);
+          liveVoiceThinking = "";
         }
+        showVoiceState("listening");
       },
       onError: function () {
         stopLiveVoice();
@@ -946,13 +958,54 @@
   }
 
   var liveVoiceTranscript = "";
+  var liveVoiceThinking = "";
   var voiceStateEl = null;
+
+  function appendVoiceMessage(thinking) {
+    var welcome = msgContainer.querySelector(".chat-welcome");
+    if (welcome) welcome.remove();
+
+    var bubble = document.createElement("div");
+    bubble.className = "chat-msg chat-msg-assistant";
+
+    var card = document.createElement("div");
+    card.className = "chat-voice-card";
+
+    // "Responded via voice" label
+    var note = document.createElement("div");
+    note.className = "chat-voice-note";
+    note.textContent = "\uD83D\uDD0A Responded via voice";
+    card.appendChild(note);
+
+    // Collapsible thinking block
+    if (thinking && thinking.trim()) {
+      var details = document.createElement("details");
+      details.className = "chat-thinking";
+      var summary = document.createElement("summary");
+      summary.textContent = "Show thinking";
+      details.appendChild(summary);
+      var pre = document.createElement("pre");
+      pre.className = "chat-thinking-text";
+      pre.textContent = thinking.trim();
+      details.appendChild(pre);
+      card.appendChild(details);
+    }
+
+    bubble.appendChild(card);
+    msgContainer.appendChild(bubble);
+    msgContainer.scrollTop = msgContainer.scrollHeight;
+
+    // Save to session
+    messages.push({ role: "assistant", content: "[voice response]" });
+    sessionStorage.setItem("wishonia-chat", JSON.stringify(messages));
+  }
 
   function showVoiceState(state) {
     if (!liveVoiceMode) return;
 
     // Remove previous state indicator
     if (voiceStateEl && voiceStateEl.parentNode) voiceStateEl.remove();
+    voiceStateEl = null;
 
     if (state === "listening") {
       voiceStateEl = document.createElement("div");
@@ -961,6 +1014,11 @@
         '<div class="chat-listening-ring">&#x1F399;</div>' +
         "<span>Listening...</span>";
       voiceChatBtn.classList.add("recording");
+    } else if (state === "thinking") {
+      voiceStateEl = document.createElement("div");
+      voiceStateEl.className = "chat-typing";
+      voiceStateEl.innerHTML = "<span>.</span><span>.</span><span>.</span>";
+      voiceChatBtn.classList.remove("recording");
     } else if (state === "speaking") {
       voiceStateEl = document.createElement("div");
       voiceStateEl.className = "chat-voice-loading";
@@ -1038,7 +1096,9 @@
       "(11) algorithmic monetary system replaces central banks once the loop is running. " +
       "The loop closes: cured diseases generate support and returns, funding more treaty expansion. " +
       "The Earth Optimization Prize is a standing challenge to fork and improve this plan.\n\n" +
-      "If you don't know: say so honestly. Don't fabricate.";
+      "If you don't know: say so honestly. Don't fabricate.\n\n" +
+      "IMPORTANT: If user speech is garbled, partial, or unclear, ask them to repeat. " +
+      "Never narrate your reasoning process. Just speak naturally.";
 
     if (context) {
       prompt += "\n\nReference material from the current page:\n" + context;

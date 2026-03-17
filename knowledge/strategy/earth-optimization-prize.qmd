@@ -308,13 +308,13 @@ Those thresholds ignore PRIZE token downside protection and IAB revenue share, s
 
 ### How Large Can the Prize Pool Get?
 
-The dysfunction tax is {{< var political_dysfunction_global_opportunity_cost_total >}}/year. Can the prize pool physically reach that scale? The ceiling is set by how much your species saves.
+The dysfunction tax is {{< var political_dysfunction_global_opportunity_cost_total >}}/year. Can the prize pool physically reach that scale?
 
-Global gross savings run {{< var global_savings_rate_pct >}} of GDP [@world-bank-gross-savings-2023], or roughly {{< var global_annual_savings >}}/year at current output ({{< var global_gdp_2025 >}}). If *all* global savings flowed into PRIZE tokens at {{< var prize_escrow_yield_rate >}} yield over {{< var prize_escrow_accumulation_years_nounit >}} years, the future-value annuity gives:
+Global gross savings run {{< var global_savings_rate_pct >}} of GDP [@world-bank-gross-savings-2023], or roughly {{< var global_annual_savings >}}/year at current output ({{< var global_gdp_2025 >}}). If {{< var prize_savings_share >}} of that flows into PRIZE tokens at {{< var prize_escrow_yield_rate >}} yield over {{< var prize_escrow_accumulation_years_nounit >}} years:
 
-{{< var prize_pool_max_ceiling_latex >}}
+{{< var prize_pool_projected_size_latex >}}
 
-The theoretical ceiling is {{< var prize_pool_max_ceiling >}}, roughly **10x** the annual dysfunction tax. The target does not require anything close to the ceiling. Reaching {{< var political_dysfunction_global_opportunity_cost_total >}} requires {{< var prize_pool_target_annual_deposits >}}/year in deposits:
+At the {{< var prize_savings_share >}} point estimate, the projected pool is {{< var prize_pool_projected_size >}}. Matching one year of the dysfunction tax ({{< var political_dysfunction_global_opportunity_cost_total >}}) as a benchmark requires {{< var prize_pool_target_annual_deposits >}}/year in deposits:
 
 | Metric | Required deposits as share |
 |:---|:---|
@@ -322,23 +322,34 @@ The theoretical ceiling is {{< var prize_pool_max_ceiling >}}, roughly **10x** t
 | Global GDP ({{< var global_gdp_2025 >}}) | {{< var prize_pool_target_pct_gdp >}} |
 | Global household wealth ({{< var global_household_wealth_usd >}}) | {{< var prize_pool_target_pct_wealth >}} |
 
-The ceiling also grows as reforms work. If GDP rises toward the treaty trajectory ({{< var treaty_trajectory_gdp_year_15 >}} at year 15), annual savings grow to ~$359T and the ceiling reaches ~$11,400T. The dysfunction tax target drops below 1% of the ceiling. The better the plan works, the easier the pool is to fund.
-
-::: {.callout-note}
-## Yield sensitivity
-
-The {{< var prize_escrow_yield_rate >}} escrow yield is sourced to Binance 120-day USDT locked staking (March 2026). Stablecoin staking yields have historically ranged from 2-15% depending on protocol and lock period. The capacity argument survives conservative assumptions:
-
-| Escrow yield | FV factor | Max pool (at {{< var global_annual_savings >}}/yr savings) | $101T target as % of max |
-|:---|:---|:---|:---|
-| 5% | 21.58 | ~$669T | ~15% |
-| 7.5% | 26.13 | ~$810T | ~12% |
-| **{{< var prize_escrow_yield_rate >}}** | **{{< var prize_pool_fv_annuity_factor >}}** | **{{< var prize_pool_max_ceiling >}}** | **~10%** |
-
-Even at 5%, the ceiling is 6.6x the target.
-:::
+The pool also grows as reforms work. If GDP rises toward the treaty trajectory ({{< var treaty_trajectory_gdp_year_15 >}} at year 15) and the savings rate holds, the same {{< var prize_savings_share >}} capture produces a proportionally larger pool. The better the plan works, the easier the pool is to fund.
 
 Your species generates {{< var global_annual_savings >}} per year in savings and loses {{< var political_dysfunction_global_opportunity_cost_total >}} per year to political dysfunction. The pool needs a tenth of the first to cover the second. The constraint is not money. It is the number of you who have done the arithmetic.
+
+### How Many People Will Actually Vote?
+
+The pool divides among everyone who votes, so the per-token value depends on turnout. On most planets this would require a complicated funnel model (awareness, internet access, action rate). On yours, the referral incentive collapses the funnel into a single parameter.
+
+| Dimension | Your elections | VOTE token |
+|:---|:---|:---|
+| **Effort** | Hours in line, research candidates | 30 seconds on a phone |
+| **Financial reward** | $0 | ~{{< var vote_token_potential_value >}} per token |
+| **Pivotality** | 1 in 30 million chance of changing outcome | Direct payout proportional to contribution |
+| **Outcome fidelity** | Politician may ignore you after winning | Funds flow to verified implementation |
+
+Your species turns out at 50-65% for elections despite losing on every row. The VOTE token wins every row and pays cash.
+
+The expected participation rate is {{< var vote_participation_rate >}}:
+
+{{< var vote_expected_participants_latex >}}
+
+At that rate, {{< var vote_expected_participants >}} people vote over the accumulation period, exceeding the Chenoweth passage threshold ({{< var treaty_campaign_voting_bloc_target >}}) by roughly 8x. Treaty passage is implied well before the pool matures.
+
+The per-token value at {{< var vote_participation_rate >}} participation:
+
+{{< var vote_token_potential_value_latex >}}
+
+More voters means a more equal distribution of the pool, which means higher global welfare, which is the point. The scarcity constraint is real (one person, one vote, {{< var global_population_2024 >}} maximum) but the ceiling is high enough that the pool spreads across billions rather than concentrating among millions.
 
 ## What v1 Claims (and What You Need to Beat)
 

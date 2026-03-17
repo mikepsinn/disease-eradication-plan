@@ -59,20 +59,26 @@ const TEST_HTML = `<!DOCTYPE html>
     }
 
     /* === Full-page chat layout === */
-    /* Hide the floating chat widget - we replace it with full-page layout */
+    html, body { overflow: hidden; }
+
+    /* Hide FAB - the page IS the chat */
     .chat-fab { display: none !important; }
-    .chat-panel {
-      position: fixed !important; top: 0 !important; left: 0 !important; right: 0 !important; bottom: 0 !important;
-      width: 100% !important; height: 100% !important; max-height: 100% !important;
+
+    /* Panel = full viewport */
+    .chat-panel, .chat-panel.chat-visible {
+      position: fixed !important; inset: 0 !important;
+      width: 100vw !important; height: 100vh !important; max-height: 100vh !important;
       border-radius: 0 !important; border: none !important; box-shadow: none !important;
-      display: flex !important; z-index: 5 !important;
-      background: transparent !important;
+      display: flex !important; flex-direction: column !important;
+      z-index: 5 !important; background: #0d0d0d !important;
+      animation: none !important;
     }
 
-    /* Header - slim top bar */
+    /* Header */
     .chat-header {
-      background: rgba(20,10,30,0.85) !important; backdrop-filter: blur(12px);
+      background: rgba(20,10,30,0.95) !important;
       padding: 10px 20px !important; border-bottom: 1px solid rgba(54,226,248,0.15);
+      flex-shrink: 0 !important;
     }
     .chat-header-title {
       font-family: 'Orbitron', sans-serif !important; font-size: 13px !important;
@@ -82,13 +88,15 @@ const TEST_HTML = `<!DOCTYPE html>
     }
     .chat-newchat-btn, .chat-fullscreen-btn, .chat-close-btn { display: none !important; }
 
-    /* Messages area - centered column like ChatGPT */
+    /* Messages - scrollable center column */
     .chat-messages {
-      flex: 1 !important; background: transparent !important;
-      padding: 24px 16px 24px !important; max-width: 760px; margin: 0 auto; width: 100%;
+      flex: 1 1 0 !important; min-height: 0 !important; /* key for flex scroll */
+      overflow-y: auto !important; background: transparent !important;
+      padding: 24px 16px !important;
+      width: 100%;
     }
 
-    /* Message bubbles - full-width, no bubble shape */
+    /* Bubbles */
     .chat-msg {
       max-width: 100% !important; border-radius: 8px !important;
       font-size: 15px !important; line-height: 1.7 !important;
@@ -115,15 +123,15 @@ const TEST_HTML = `<!DOCTYPE html>
     }
     .chat-hint-btn:hover {
       border-color: #d100b1 !important; background: rgba(209,0,177,0.08) !important;
-      box-shadow: 0 0 12px rgba(209,0,177,0.2);
     }
 
-    /* Input area - bottom bar with padding for robot */
+    /* Input bar - full width, fixed at bottom */
     .chat-input-area {
-      background: rgba(20,10,30,0.85) !important; backdrop-filter: blur(12px);
+      background: rgba(20,10,30,0.95) !important;
       border-top: 1px solid rgba(54,226,248,0.15) !important;
-      padding: 14px 20px 14px !important; max-width: 760px; margin: 0 auto; width: 100%;
-      padding-right: 140px !important; /* room for robot */
+      padding: 12px 20px !important; flex-shrink: 0 !important;
+      width: 100%;
+      position: relative;
     }
     .chat-input {
       background: rgba(255,255,255,0.06) !important; color: #ececec !important;
@@ -146,30 +154,35 @@ const TEST_HTML = `<!DOCTYPE html>
       border-color: #28a745 !important;
     }
 
-    /* Links in messages */
+    /* Links */
     .chat-msg a { color: #36E2F8 !important; }
 
-    /* Typing / voice indicators */
+    /* Indicators */
     .chat-typing { color: #888; }
     .chat-waveform-bar { background: #d100b1 !important; }
     .chat-listening-ring { border-color: #d100b1 !important; }
     .chat-voice-loading span, .chat-listening-indicator span { color: #888; }
-
-    /* TTS button */
     .chat-tts-btn { color: #888 !important; }
     .chat-tts-btn:hover { color: #d100b1 !important; }
 
-    /* === Robot - peeking over input bar === */
+    /* Voice card dark overrides */
+    .chat-voice-card { background: rgba(255,255,255,0.04) !important; }
+    .chat-thinking summary { color: #666 !important; }
+    .chat-thinking-text {
+      background: rgba(0,0,0,0.3) !important; color: #888 !important;
+      border-color: rgba(255,255,255,0.08) !important;
+    }
+    .chat-voice-note { color: #666 !important; }
+
+    /* === Robot - sits on top of input bar, right side === */
     .robot-container {
       position: fixed; z-index: 20; cursor: pointer;
-      /* Show head + part of torso above the input bar */
-      bottom: 20px; right: 20px;
-      width: 120px; height: 130px;
-      transform: scale(0.85);
-      transform-origin: bottom right;
+      right: 20px;
+      width: 100px; height: 110px;
+      /* JS will set bottom dynamically to sit on input bar */
     }
     .robot .head {
-      position: absolute; width: 100px; left: 15px; height: 75px;
+      position: absolute; width: 80px; left: 12px; height: 60px;
       border-radius: 490px 550px 550px 550px; overflow: hidden;
       background: #ccc linear-gradient(to right, #b7a9a9 0%, #c1b1b1 40%, #c1b5b5 60%, #ab9c9c 100%);
       transform-origin: 50% 100%;
@@ -177,24 +190,24 @@ const TEST_HTML = `<!DOCTYPE html>
       border: 2px solid #000;
     }
     .robot .eyes {
-      position: absolute; top: calc(50% - 8px); right: 20px; left: 20px; height: 16px;
-      animation: blink 10000ms linear forwards infinite; z-index: 0;
+      position: absolute; top: calc(50% - 7px); right: 16px; left: 16px; height: 14px;
+      animation: blink 10000ms linear forwards infinite;
     }
     .robot .eyeball {
-      position: absolute; width: 16px; height: 16px;
+      position: absolute; width: 14px; height: 14px;
       background: radial-gradient(ellipse, #dffdfe 0%, #11c1f3 50%, #387ef5 60%) no-repeat center;
-      background-size: 100%; z-index: -2; border-radius: 100%; border: 2px solid #000;
+      background-size: 100%; border-radius: 100%; border: 2px solid #000;
     }
     .robot .eyeball_left { left: 0; }
     .robot .eyeball_right { right: 0; }
     .robot .mouth {
-      position: absolute; bottom: 12px; left: 38px; width: 24px; height: 4px;
+      position: absolute; bottom: 10px; left: 30px; width: 20px; height: 4px;
       background-color: #000; overflow: hidden; border-radius: 4px;
       transition: height 100ms cubic-bezier(0.455,0.03,0.515,0.955);
     }
-    .robot .mouth-container { position: absolute; top: 0; right: 0; bottom: 0; left: 0; }
+    .robot .mouth-container { position: absolute; inset: 0; }
     .robot .mouth-container-line {
-      position: absolute; top: 30%; height: 0px; background-color: limegreen; width: 100%; margin-top: -1px;
+      position: absolute; top: 30%; height: 0; background-color: limegreen; width: 100%; margin-top: -1px;
     }
     .robot.robot_speaking .mouth { height: 12px; }
     .robot.robot_speaking .mouth-container { animation: speakingAnim 0.3s infinite; }
@@ -203,19 +216,19 @@ const TEST_HTML = `<!DOCTYPE html>
     .robot.robot_listening .mouth-container { animation: listeningAnim 0.5s infinite; }
     .robot.robot_listening .mouth-container-line { height: 2px; }
     .robot .neck {
-      position: absolute; bottom: 35px; left: calc(50% - 4px); width: 3px; height: 38px;
-      border-radius: 12px; border: 2px solid #000;
+      position: absolute; bottom: 28px; left: calc(50% - 3px); width: 3px; height: 30px;
+      border-radius: 10px; border: 2px solid #000;
       background: repeating-linear-gradient(180deg, rgba(0,0,0,0.2), rgba(0,0,0,0.2) 7%, #646464 10%), linear-gradient(to right, #ccc 0%, #e6e6e6 40%, #e6e6e6 60%, #ccc 100%);
     }
     .robot .torso {
-      position: absolute; bottom: 0; left: calc(50% - 15px); width: 30px; height: 45px;
+      position: absolute; bottom: 0; left: calc(50% - 12px); width: 24px; height: 36px;
       border: 2px solid #000;
       background: linear-gradient(to right, #b7afaf 0%, #b7b0b0 40%, #afa6a6 60%, #b9b0b0 100%);
     }
-    .robot .arms { position: absolute; bottom: 0; left: 38px; right: 38px; height: 38px; }
+    .robot .arms { position: absolute; bottom: 0; left: 30px; right: 30px; height: 30px; }
     .robot .arm {
-      position: absolute; border: 2px solid #000; top: 0; width: 8px; height: 38px;
-      border-radius: 8px 8px 0 0;
+      position: absolute; border: 2px solid #000; top: 0; width: 7px; height: 30px;
+      border-radius: 7px 7px 0 0;
       background: repeating-linear-gradient(180deg, rgba(0,0,0,0.2), rgba(0,0,0,0.2) 7%, #646464 10%), linear-gradient(to right, #ccc 0%, #e6e6e6 40%, #e6e6e6 60%, #ccc 100%);
     }
     .robot .arm_left { left: 0; }
@@ -247,10 +260,14 @@ const TEST_HTML = `<!DOCTYPE html>
       100% { filter: url("#listening-4"); }
     }
 
-    /* Mobile */
-    @media (max-width: 600px) {
-      .chat-input-area { padding-right: 100px !important; }
-      .robot-container { width: 80px; height: 90px; transform: scale(0.6); right: 10px; bottom: 15px; }
+    /* Mobile: hide robot body, just show head above input */
+    @media (max-width: 800px) {
+      .robot-container { right: 10px !important; width: 70px; height: 55px; }
+      .robot .head { width: 56px; left: 8px; height: 42px; }
+      .robot .eyes { top: calc(50% - 5px); right: 12px; left: 12px; height: 10px; }
+      .robot .eyeball { width: 10px; height: 10px; }
+      .robot .mouth { bottom: 7px; left: 20px; width: 16px; height: 3px; }
+      .robot .neck, .robot .torso, .robot .arms { display: none; }
     }
   </style>
 </head>
@@ -288,15 +305,27 @@ const TEST_HTML = `<!DOCTYPE html>
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       var robotEl = document.getElementById('robot-el');
+      var robotContainer = document.getElementById('robot-trigger');
 
       // Auto-open chat panel (it becomes the full page)
       setTimeout(function() {
         var fab = document.querySelector('.chat-fab');
         if (fab) fab.click();
-      }, 100);
+        // Position robot on top of input bar
+        positionRobot();
+      }, 150);
+
+      function positionRobot() {
+        var inputArea = document.querySelector('.chat-input-area');
+        if (!inputArea || !robotContainer) return;
+        var rect = inputArea.getBoundingClientRect();
+        var robotHeight = robotContainer.offsetHeight;
+        robotContainer.style.bottom = (window.innerHeight - rect.top) + 'px';
+      }
+      window.addEventListener('resize', positionRobot);
 
       // Robot click toggles voice chat
-      document.getElementById('robot-trigger').addEventListener('click', function() {
+      robotContainer.addEventListener('click', function() {
         var vcBtn = document.querySelector('.chat-voicechat-btn');
         if (vcBtn && vcBtn.style.display !== 'none') vcBtn.click();
       });

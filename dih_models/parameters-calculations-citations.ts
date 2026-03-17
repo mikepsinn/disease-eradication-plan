@@ -980,7 +980,7 @@ export const GLOBAL_POPULATION_2045_PROJECTED: Parameter = {
 
 export const GLOBAL_POPULATION_ACTIVISM_THRESHOLD_PCT: Parameter = {
   value: 0.035,
-  unit: "rate",
+  unit: "percent",
   displayName: "Critical Mass Threshold for Social Change",
   description: "Critical mass threshold for social change (3.5% rule). Chenoweth studied national regime changes; applying to a global treaty adds uncertainty. Lower bound: some movements succeeded at ~1%. Upper bound: entrenched defense-industry opposition and weaker signal from digital signatures vs sustained protest may require up to 10%.",
   sourceType: "external",
@@ -997,6 +997,7 @@ export const GLOBAL_SAVINGS_RATE_PCT: Parameter = {
   sourceType: "external",
   sourceRef: "world-bank-gross-savings-2023",
   confidence: "high",
+  confidenceInterval: [0.24, 0.3],
 };
 
 export const GLOBAL_SYMPTOMATIC_DISEASE_TREATMENT_ANNUAL: Parameter = {
@@ -4142,15 +4143,15 @@ export const PRIZE_POOL_FV_ANNUITY_FACTOR: Parameter = {
   latex: "\\begin{gathered}\nFV_{annuity} \\\\\n= \\frac{(1 + r_{escrow})^{T_{escrow}} - 1}{r_{escrow}}\n\\end{gathered}",
 };
 
-export const PRIZE_POOL_MAX_CEILING: Parameter = {
-  value: 986535556603561.4,
+export const PRIZE_POOL_PROJECTED_SIZE: Parameter = {
+  value: 29596066698106.84,
   unit: "USD",
-  displayName: "Prize Pool Maximum Ceiling",
-  description: "Theoretical maximum prize pool if all global savings flowed into PRIZE tokens over the accumulation period",
+  displayName: "Prize Pool Projected Size",
+  description: "Projected prize pool size based on PRIZE share of global savings and compound growth over the accumulation period",
   sourceType: "calculated",
   confidence: "high",
-  formula: "GLOBAL_ANNUAL_SAVINGS × PRIZE_POOL_FV_ANNUITY_FACTOR",
-  latex: "\\begin{gathered}\nPool_{max} \\\\\n= S_{annual} \\times \\frac{(1 + r_{escrow})^{T_{escrow}} - 1}{r_{escrow}}\n\\end{gathered}",
+  formula: "GLOBAL_ANNUAL_SAVINGS × PRIZE_SAVINGS_SHARE × PRIZE_POOL_FV_ANNUITY_FACTOR",
+  latex: "Pool = S_{annual} \\times s_{prize} \\times FV_{annuity}",
 };
 
 export const PRIZE_POOL_TARGET_ANNUAL_DEPOSITS: Parameter = {
@@ -5059,15 +5060,26 @@ export const VOTER_SUFFERING_HOURS_PREVENTED: Parameter = {
   latex: "\\begin{gathered}\nHours_{suffer,voter} = \\frac{Hours_{suffer,max}}{N_{voters,target}} = \\frac{1930T}{280M} = 6.9M\n\\\\[0.5em]\n\\text{where } Hours_{suffer,max} = DALYs_{max} \\times Pct_{YLD} \\times 8760 = 565B \\times 0.39 \\times 8760 = 1930T\n\\\\[0.5em]\n\\text{where } DALYs_{max} = DALYs_{global,ann} \\times Pct_{avoid,DALY} \\times T_{accel,max} = 2.88B \\times 92.6\\% \\times 212 = 565B\n\\\\[0.5em]\n\\text{where } T_{accel,max} = T_{accel} + T_{lag} = 204 + 8.2 = 212\n\\\\[0.5em]\n\\text{where } T_{accel} = T_{first,SQ} \\times \\left(1 - \\frac{1}{k_{capacity}}\\right) = 222 \\times \\left(1 - \\frac{1}{12.3}\\right) = 204\n\\\\[0.5em]\n\\text{where } T_{first,SQ} = T_{queue,SQ} \\times 0.5 = 443 \\times 0.5 = 222\n\\\\[0.5em]\n\\text{where } T_{queue,SQ} = \\frac{N_{untreated}}{Treatments_{new,ann}} = \\frac{6{,}650}{15} = 443\n\\\\[0.5em]\n\\text{where } N_{untreated} = N_{rare} \\times 0.95 = 7{,}000 \\times 0.95 = 6{,}650\n\\\\[0.5em]\n\\text{where } k_{capacity} = \\frac{N_{fundable,dFDA}}{Slots_{curr}} = \\frac{23.4M}{1.9M} = 12.3\n\\\\[0.5em]\n\\text{where } N_{fundable,dFDA} = \\frac{Subsidies_{dFDA,ann}}{Cost_{pragmatic,pt}} = \\frac{\\$21.8B}{\\$929} = 23.4M\n\\\\[0.5em]\n\\text{where } Subsidies_{dFDA,ann} = Funding_{dFDA,ann} - OPEX_{dFDA} = \\$21.8B - \\$40M = \\$21.8B\n\\\\[0.5em]\n\\text{where } OPEX_{dFDA} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \\$15M + \\$10M + \\$8M + \\$5M + \\$2M = \\$40M\n\\\\[0.5em]\n\\text{where } N_{voters,target} = Pop_{global} \\times Threshold_{activism} = 8B \\times 3.5\\% = 280M\n\\end{gathered}",
 };
 
-export const VOTE_TOKEN_POTENTIAL_VALUE: Parameter = {
-  value: 3523341.273584148,
-  unit: "USD",
-  displayName: "VOTE Token Potential Value",
-  description: "Potential value of a single VOTE token if the prize pool reaches its theoretical ceiling (all global savings deposited as PRIZE tokens over the accumulation period). Wide CI reflects uncertainty in both pool size and required voter count.",
+export const VOTE_EXPECTED_PARTICIPANTS: Parameter = {
+  value: 2400000000.0,
+  unit: "of people",
+  displayName: "Expected Number of Voters",
+  description: "Expected number of people who vote over the accumulation period (global population × participation rate). At the 30% point estimate, 2.4B voters exceed the Chenoweth passage threshold (280M) by ~8×.",
   sourceType: "calculated",
   confidence: "high",
-  formula: "PRIZE_POOL_MAX_CEILING / TREATY_CAMPAIGN_VOTING_BLOC_TARGET",
-  latex: "V_{vote} = \\frac{Pool_{max}}{N_{voters,target}}",
+  formula: "GLOBAL_POPULATION_2024 × VOTE_PARTICIPATION_RATE",
+  latex: "\\begin{gathered}\nN_{voters,expected} \\\\\n= Pop_{global} \\times R_{vote} \\\\\n= 8B \\times 30\\% \\\\\n= 2.4B\n\\end{gathered}",
+};
+
+export const VOTE_TOKEN_POTENTIAL_VALUE: Parameter = {
+  value: 12331.694457544516,
+  unit: "USD",
+  displayName: "VOTE Token Potential Value",
+  description: "Expected value of a single VOTE token (projected pool size ÷ expected voters). Denominator is expected participants (30% of global population), not the Chenoweth passage threshold. CI captures uncertainty in pool size and participation rate.",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "PRIZE_POOL_PROJECTED_SIZE / VOTE_EXPECTED_PARTICIPANTS",
+  latex: "V_{vote} = \\frac{Pool_{proj}}{N_{voters,expected}}",
 };
 
 export const WAR_COSTS_CUMULATIVE_20YR_CURRENT_TRAJECTORY: Parameter = {
@@ -6229,6 +6241,17 @@ export const PRIZE_ESCROW_YIELD_RATE: Parameter = {
   description: "Annual yield rate on escrowed prize contributions via rolling locked stablecoin staking (Binance 120-day USDT locked staking benchmark, March 2026)",
   sourceType: "definition",
   confidence: "high",
+  confidenceInterval: [0.05, 0.15],
+};
+
+export const PRIZE_SAVINGS_SHARE: Parameter = {
+  value: 0.03,
+  unit: "percent",
+  displayName: "PRIZE Share of Global Savings",
+  description: "Share of global savings that flows into PRIZE tokens. Point estimate matches the deposit rate needed to hit the dysfunction tax target (~3%). Lower bound reflects early-adopter phase; upper bound reflects PRIZE tokens becoming a dominant savings vehicle (comparable to index fund adoption rates).",
+  sourceType: "definition",
+  confidence: "high",
+  confidenceInterval: [0.001, 0.5],
 };
 
 export const QALYS_PER_COVID_DEATH_AVERTED: Parameter = {
@@ -6439,6 +6462,16 @@ export const VICTORY_BOND_FUNDING_PCT: Parameter = {
   description: "Percentage of captured dividend funding VICTORY Incentive Alignment Bonds (10%)",
   sourceType: "definition",
   confidence: "high",
+};
+
+export const VOTE_PARTICIPATION_RATE: Parameter = {
+  value: 0.3,
+  unit: "percent",
+  displayName: "Expected Vote Participation Rate",
+  description: "Expected share of global population that votes over the 15-year accumulation period. Global election turnout runs 50-65% despite strictly worse incentives on every axis: hours of effort vs. 30 seconds, no financial reward vs. ~$61K referral incentive, 1-in-30M chance of influencing outcome vs. direct payout proportional to contribution. The 30% point estimate is conservative, accounting for 15-year ramp-up, regional skepticism, and low digital infrastructure. The referral incentive drives awareness virally and solves access barriers (people travel to villages with phones when helping someone vote earns $61K). Upper CI (70%) reflects a mature campaign where referral incentives have driven near-universal awareness.",
+  sourceType: "definition",
+  confidence: "high",
+  confidenceInterval: [0.03, 0.7],
 };
 
 export const WISHONIA_TRAJECTORY_SUCCESS_PROBABILITY_YEAR_20: Parameter = {
@@ -6844,7 +6877,7 @@ export const parameters = {
   PRIZE_ESCROW_100_COMPOUND_RETURN,
   PRIZE_ESCROW_100_RETURN_MULTIPLE,
   PRIZE_POOL_FV_ANNUITY_FACTOR,
-  PRIZE_POOL_MAX_CEILING,
+  PRIZE_POOL_PROJECTED_SIZE,
   PRIZE_POOL_TARGET_ANNUAL_DEPOSITS,
   PRIZE_POOL_TARGET_PCT_GDP,
   PRIZE_POOL_TARGET_PCT_SAVINGS,
@@ -6927,6 +6960,7 @@ export const parameters = {
   VICTORY_BOND_ANNUAL_RETURN_PCT,
   VOTER_LIVES_SAVED,
   VOTER_SUFFERING_HOURS_PREVENTED,
+  VOTE_EXPECTED_PARTICIPANTS,
   VOTE_TOKEN_POTENTIAL_VALUE,
   WAR_COSTS_CUMULATIVE_20YR_CURRENT_TRAJECTORY,
   WAR_COSTS_SAVED_PEACE_TRAJECTORY_20YR,
@@ -7045,6 +7079,7 @@ export const parameters = {
   PRE_1962_VALIDATION_YEARS,
   PRIZE_ESCROW_ACCUMULATION_YEARS,
   PRIZE_ESCROW_YIELD_RATE,
+  PRIZE_SAVINGS_SHARE,
   QALYS_PER_COVID_DEATH_AVERTED,
   RD_SPILLOVER_MULTIPLIER,
   SAFE_COMPOUNDS_COUNT,
@@ -7067,6 +7102,7 @@ export const parameters = {
   US_VS_SWITZERLAND_LIFE_EXPECTANCY_GAP,
   US_VS_SWITZERLAND_SPENDING_GAP,
   VICTORY_BOND_FUNDING_PCT,
+  VOTE_PARTICIPATION_RATE,
   WISHONIA_TRAJECTORY_SUCCESS_PROBABILITY_YEAR_20,
   _CASCADE_GENERATIONS,
   _R0,
@@ -8997,10 +9033,10 @@ export const citations: Record<string, Citation> = {
 
 /** Summary statistics */
 export const PARAMETER_STATS = {
-  total: 600,
+  total: 603,
   external: 198,
-  calculated: 277,
-  definitions: 125,
+  calculated: 278,
+  definitions: 127,
   citations: 141,
 } as const;
 

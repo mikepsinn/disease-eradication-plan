@@ -36,15 +36,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 600 parameters used in the analysis, organized by type:
+This appendix documents all 603 parameters used in the analysis, organized by type:
 
 - External sources (peer-reviewed): 198
-- Calculated values: 277
-- Core definitions: 125
+- Calculated values: 278
+- Core definitions: 127
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (277 parameters) • [External Data Sources](#sec-external) (198 parameters) • [Core Definitions](#sec-definitions) (125 parameters)
+[Calculated Values](#sec-calculated) (278 parameters) • [External Data Sources](#sec-external) (198 parameters) • [Core Definitions](#sec-definitions) (127 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -6211,7 +6211,7 @@ Global annual savings in USD (savings rate × GDP)
 
 **Inputs**:
 
-- [Global Gross Savings Rate](#sec-global_savings_rate_pct) 📊: 27%
+- [Global Gross Savings Rate](#sec-global_savings_rate_pct) 📊: 27% (95% CI: 24% - 30%)
 - [Global GDP (2025)](#sec-global_gdp_2025) 📊: $115T
 
 $$
@@ -6224,6 +6224,12 @@ S_{annual} \\
 $$
 
 *✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-global_annual_savings.qmd >}}
+
+{{< include ../figures/sensitivity-table-global_annual_savings.qmd >}}
 
 #### Monte Carlo Distribution
 
@@ -9667,7 +9673,7 @@ Value of $100 escrowed prize contribution after accumulation period at escrow yi
 
 **Inputs**:
 
-- [Prize Escrow Annual Yield Rate](#sec-prize_escrow_yield_rate): 10%
+- [Prize Escrow Annual Yield Rate](#sec-prize_escrow_yield_rate): 10% (95% CI: 5% - 15%)
 - [Prize Escrow Accumulation Period](#sec-prize_escrow_accumulation_years): 15 years
 
 $$
@@ -9680,6 +9686,12 @@ V_{escrow,100} \\
 $$
 
 *✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-prize_escrow_100_compound_return.qmd >}}
+
+{{< include ../figures/sensitivity-table-prize_escrow_100_compound_return.qmd >}}
 
 #### Monte Carlo Distribution
 
@@ -9699,7 +9711,7 @@ Return multiple on escrowed prize contribution after accumulation period (how ma
 
 **Inputs**:
 
-- [Prize Escrow Annual Yield Rate](#sec-prize_escrow_yield_rate): 10%
+- [Prize Escrow Annual Yield Rate](#sec-prize_escrow_yield_rate): 10% (95% CI: 5% - 15%)
 - [Prize Escrow Accumulation Period](#sec-prize_escrow_accumulation_years): 15 years
 
 $$
@@ -9713,6 +9725,20 @@ $$
 
 *✓ High confidence*
 
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-prize_escrow_100_return_multiple.qmd >}}
+
+{{< include ../figures/sensitivity-table-prize_escrow_100_return_multiple.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-prize_escrow_100_return_multiple.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-prize_escrow_100_return_multiple.qmd >}}
+
 :::
 
 ### Prize Pool FV Annuity Factor: 31.8:1 {#sec-prize_pool_fv_annuity_factor}
@@ -9723,7 +9749,7 @@ Future-value annuity factor for prize pool accumulation at escrow yield over acc
 
 **Inputs**:
 
-- [Prize Escrow Annual Yield Rate](#sec-prize_escrow_yield_rate): 10%
+- [Prize Escrow Annual Yield Rate](#sec-prize_escrow_yield_rate): 10% (95% CI: 5% - 15%)
 - [Prize Escrow Accumulation Period](#sec-prize_escrow_accumulation_years): 15 years
 
 $$
@@ -9735,35 +9761,53 @@ $$
 
 *✓ High confidence*
 
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-prize_pool_fv_annuity_factor.qmd >}}
+
+{{< include ../figures/sensitivity-table-prize_pool_fv_annuity_factor.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-prize_pool_fv_annuity_factor.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-prize_pool_fv_annuity_factor.qmd >}}
+
 :::
 
-### Prize Pool Maximum Ceiling: $987T {#sec-prize_pool_max_ceiling}
+### Prize Pool Projected Size: $29.6T {#sec-prize_pool_projected_size}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Theoretical maximum prize pool if all global savings flowed into PRIZE tokens over the accumulation period
+Projected prize pool size based on PRIZE share of global savings and compound growth over the accumulation period
 
 **Inputs**:
 
 - [Global Annual Savings](#sec-global_annual_savings) 🔢: $31.1T
+- [PRIZE Share of Global Savings](#sec-prize_savings_share): 3% (95% CI: 0.1% - 50%)
 - [Prize Pool FV Annuity Factor](#sec-prize_pool_fv_annuity_factor) 🔢: 31.8:1
 
 $$
-\begin{gathered}
-Pool_{max} \\
-= S_{annual} \times \frac{(1 + r_{escrow})^{T_{escrow}} - 1}{r_{escrow}}
-\end{gathered}
+Pool = S_{annual} \times s_{prize} \times FV_{annuity}
 $$
 
 *✓ High confidence*
 
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-prize_pool_projected_size.qmd >}}
+
+{{< include ../figures/sensitivity-table-prize_pool_projected_size.qmd >}}
+
 #### Monte Carlo Distribution
 
-{{< include ../figures/mc-distribution-prize_pool_max_ceiling.qmd >}}
+{{< include ../figures/mc-distribution-prize_pool_projected_size.qmd >}}
 
 #### Exceedance Probability
 
-{{< include ../figures/exceedance-prize_pool_max_ceiling.qmd >}}
+{{< include ../figures/exceedance-prize_pool_projected_size.qmd >}}
 
 :::
 
@@ -15696,19 +15740,57 @@ $$
 
 :::
 
-### VOTE Token Potential Value: $3.52M {#sec-vote_token_potential_value}
+### Expected Number of Voters: 2.4 billion of people {#sec-vote_expected_participants}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Potential value of a single VOTE token if the prize pool reaches its theoretical ceiling (all global savings deposited as PRIZE tokens over the accumulation period). Wide CI reflects uncertainty in both pool size and required voter count.
+Expected number of people who vote over the accumulation period (global population × participation rate). At the 30% point estimate, 2.4B voters exceed the Chenoweth passage threshold (280M) by ~8×.
 
 **Inputs**:
 
-- [Prize Pool Maximum Ceiling](#sec-prize_pool_max_ceiling) 🔢: $987T
-- [Target Voting Bloc Size for Campaign](#sec-treaty_campaign_voting_bloc_target) 🔢: 280 million of people
+- [Global Population in 2024](#sec-global_population_2024) 📊: 8 billion of people (95% CI: 7.8 billion of people - 8.2 billion of people)
+- [Expected Vote Participation Rate](#sec-vote_participation_rate): 30% (95% CI: 3% - 70%)
 
 $$
-V_{vote} = \frac{Pool_{max}}{N_{voters,target}}
+\begin{gathered}
+N_{voters,expected} \\
+= Pop_{global} \times R_{vote} \\
+= 8B \times 30\% \\
+= 2.4B
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-vote_expected_participants.qmd >}}
+
+{{< include ../figures/sensitivity-table-vote_expected_participants.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-vote_expected_participants.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-vote_expected_participants.qmd >}}
+
+:::
+
+### VOTE Token Potential Value: $12.3K {#sec-vote_token_potential_value}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Expected value of a single VOTE token (projected pool size ÷ expected voters). Denominator is expected participants (30% of global population), not the Chenoweth passage threshold. CI captures uncertainty in pool size and participation rate.
+
+**Inputs**:
+
+- [Prize Pool Projected Size](#sec-prize_pool_projected_size) 🔢: $29.6T
+- [Expected Number of Voters](#sec-vote_expected_participants) 🔢: 2.4 billion of people
+
+$$
+V_{vote} = \frac{Pool_{proj}}{N_{voters,expected}}
 $$
 
 *✓ High confidence*
@@ -18825,7 +18907,15 @@ Global gross savings as share of GDP (World Bank, ~27% average 2023-2024)
 
 #### Uncertainty Range
 
-**Technical**: Distribution: Fixed
+**Technical**: 95% CI: [24%, 30%] • Distribution: Normal
+
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between 24% and 30% (±11%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The normal distribution means values cluster around the center with equal chances of being higher or lower.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_savings_rate_pct.qmd >}}
 
 *✓ High confidence*
 
@@ -22671,7 +22761,37 @@ Annual yield rate on escrowed prize contributions via rolling locked stablecoin 
 
 #### Uncertainty Range
 
-**Technical**: Distribution: Fixed
+**Technical**: 95% CI: [5%, 15%] • Distribution: Normal
+
+**What this means**: There's significant uncertainty here. The true value likely falls between 5% and 15% (±50%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The normal distribution means values cluster around the center with equal chances of being higher or lower.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-prize_escrow_yield_rate.qmd >}}
+
+*Core definition*
+
+:::
+
+### PRIZE Share of Global Savings: 3% {#sec-prize_savings_share}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Share of global savings that flows into PRIZE tokens. Point estimate matches the deposit rate needed to hit the dysfunction tax target (~3%). Lower bound reflects early-adopter phase; upper bound reflects PRIZE tokens becoming a dominant savings vehicle (comparable to index fund adoption rates).
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [0.1%, 50%] • Distribution: Lognormal
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between 0.1% and 50% (±832%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-prize_savings_share.qmd >}}
 
 *Core definition*
 
@@ -23042,6 +23162,28 @@ Percentage of captured dividend funding VICTORY Incentive Alignment Bonds (10%)
 #### Uncertainty Range
 
 **Technical**: Distribution: Fixed
+
+*Core definition*
+
+:::
+
+### Expected Vote Participation Rate: 30% {#sec-vote_participation_rate}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Expected share of global population that votes over the 15-year accumulation period. Global election turnout runs 50-65% despite strictly worse incentives on every axis: hours of effort vs. 30 seconds, no financial reward vs. ~$61K referral incentive, 1-in-30M chance of influencing outcome vs. direct payout proportional to contribution. The 30% point estimate is conservative, accounting for 15-year ramp-up, regional skepticism, and low digital infrastructure. The referral incentive drives awareness virally and solves access barriers (people travel to villages with phones when helping someone vote earns $61K). Upper CI (70%) reflects a mature campaign where referral incentives have driven near-universal awareness.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [3%, 70%] • Distribution: Beta
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between 3% and 70% (±112%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The beta distribution means values are bounded and can skew toward one end.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-vote_participation_rate.qmd >}}
 
 *Core definition*
 
