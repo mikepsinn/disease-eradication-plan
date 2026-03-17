@@ -9,12 +9,16 @@
 var AudioCapture = (function () {
   "use strict";
 
-  function AudioCapture(onChunk) {
+  function AudioCapture(onChunk, onVolume) {
     this.onChunk = onChunk;
+    this.onVolume = onVolume || null; // callback(0-1) for volume level
     this.audioCtx = null;
     this.stream = null;
     this.sourceNode = null;
     this.workletNode = null;
+    this._analyser = null;
+    this._analyserData = null;
+    this._volumeRaf = null;
   }
 
   /**
@@ -82,11 +86,40 @@ var AudioCapture = (function () {
     };
 
     this.sourceNode.connect(this.workletNode);
-    // Don't connect to destination (we don't want to hear ourselves)
+    // Don't connect worklet to destination (we don't want to hear ourselves)
     this.workletNode.connect(this.audioCtx.destination);
+
+    // Set up AnalyserNode for volume metering
+    if (this.onVolume) {
+      this._analyser = this.audioCtx.createAnalyser();
+      this._analyser.fftSize = 256;
+      this._analyserData = new Uint8Array(this._analyser.frequencyBinCount);
+      this.sourceNode.connect(this._analyser);
+      var analyser = this._analyser;
+      var analyserData = this._analyserData;
+      var onVol = this.onVolume;
+      var rafSelf = this;
+      function pollVolume() {
+        analyser.getByteFrequencyData(analyserData);
+        var sum = 0;
+        for (var k = 0; k < analyserData.length; k++) sum += analyserData[k];
+        var avg = sum / analyserData.length / 255; // 0-1
+        onVol(avg);
+        rafSelf._volumeRaf = requestAnimationFrame(pollVolume);
+      }
+      pollVolume();
+    }
   };
 
   AudioCapture.prototype.stop = function () {
+    if (this._volumeRaf) {
+      cancelAnimationFrame(this._volumeRaf);
+      this._volumeRaf = null;
+    }
+    if (this._analyser) {
+      this._analyser.disconnect();
+      this._analyser = null;
+    }
     if (this.workletNode) {
       this.workletNode.disconnect();
       this.workletNode = null;

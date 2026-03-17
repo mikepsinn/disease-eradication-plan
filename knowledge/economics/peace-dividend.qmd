@@ -126,7 +126,7 @@ Your species currently spends {{< var global_annual_direct_indirect_war_cost >}}
 
 The other future: bondholders push for treaty expansion because their income depends on it. Each expansion weakens the terrorism cycle (fewer bases, fewer attacks, less justification for more bases). The AI gets trained on curing cancer instead of targeting civilians. The money compounds in the right direction.
 
-Run those numbers forward 20 years and the Treaty Path produces {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_20 >}} the GDP of the current trajectory. The full Wishonia Path, {{< var wishonia_trajectory_gdp_vs_current_trajectory_multiplier_year_20 >}}. The [GDP trajectories](gdp-trajectories.qmd) chapter shows how compound interest does this to civilizations that stop wasting money.
+Run those numbers forward 20 years and the Treaty Path produces {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_20 >}} the GDP of the current trajectory. The full Wishonia Path, {{< var wishonia_trajectory_gdp_vs_current_trajectory_multiplier_year_20 >}}. The [GDP trajectories](gdp-trajectories.qmd) [@gdp-trajectories-paper-2025] chapter shows how compound interest does this to civilizations that stop wasting money.
 
 | Years | Treaty % | Research Funding | War Costs Saved | What Happens |
 |:------|:---------|:-----------------|:----------------|:-------------|

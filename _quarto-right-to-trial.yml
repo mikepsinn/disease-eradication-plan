@@ -70,6 +70,8 @@ execute:
     PYTHONPATH: "."
 
 metadata:
+  doi: "10.5281/zenodo.19076852"
+  # Zenodo Concept DOI (stable across all versions - use for citations and new versions)
   importance: 76
   creator: "Mike P. Sinn"
   orcid: "0009-0006-0212-1094"
@@ -140,9 +142,9 @@ metadata:
       status: pending
     preprints:
       - platform: zenodo
-        status: pending
-        url: ""
-        doi: ""
+        status: auto-uploaded
+        url: "https://zenodo.org/record/19076852"
+        doi: "10.5281/zenodo.19076852"
 
 # Remove "Appendix" prefix
 language:

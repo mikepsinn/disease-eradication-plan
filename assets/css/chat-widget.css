@@ -429,6 +429,25 @@
   font-size: 20px;
 }
 
+/* Mic volume visualizer bars */
+.chat-volume-bars {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 3px;
+  height: 36px;
+  padding: 4px 0;
+}
+
+.chat-vol-bar {
+  width: 4px;
+  height: 4px;
+  min-height: 4px;
+  border-radius: 2px;
+  background: var(--bs-primary, #2a6b4f);
+  transition: height 60ms ease-out;
+}
+
 @keyframes listenPulse {
   0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(217, 83, 79, 0.4); }
   50% { transform: scale(1.08); box-shadow: 0 0 0 12px rgba(217, 83, 79, 0); }

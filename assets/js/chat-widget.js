@@ -265,7 +265,7 @@
     var top = scored.filter(function (s) {
       return s.score > 0;
     });
-    top = top.slice(0, 5);
+    top = top.slice(0, 8);
 
     // Also try to include section matching current page
     var currentPath = window.location.pathname.replace(/\.html$/, "");
@@ -290,9 +290,10 @@
         var label = e.title || "Untitled";
         if (e.section && e.section !== e.title) label += " (from " + e.section + ")";
         var href = getEntryUrl(e);
-        var text = getEntryText(e).substring(0, 1500);
+        var text = getEntryText(e).substring(0, 4000);
+        if (getEntryText(e).length > 4000) text += "...";
         var sections = (e.sections && Array.isArray(e.sections)) ? "\nSections: " + e.sections.join(", ") : "";
-        return "### " + label + (href ? " [URL: " + href + "]" : "") + "\n" + (e.description || text) + sections;
+        return "### " + label + (href ? " [URL: " + href + "]" : "") + "\n" + (e.description || "") + "\n" + text + sections;
       })
       .join("\n\n");
   }
@@ -894,20 +895,24 @@
         // Chain-of-thought text from native audio model
         if (text) liveVoiceThinking += text;
       },
+      onOutputTranscript: function (text) {
+        // Transcript of what Gemini actually spoke
+        if (text) liveVoiceSpoken += text;
+      },
       onInterrupted: function () {
         audioPlayback.interrupt();
-        // Save whatever we had
-        if (liveVoiceThinking) {
-          appendVoiceMessage(liveVoiceThinking);
+        if (liveVoiceThinking || liveVoiceSpoken) {
+          appendVoiceMessage(liveVoiceThinking, liveVoiceSpoken);
           liveVoiceThinking = "";
+          liveVoiceSpoken = "";
         }
         showVoiceState("listening");
       },
       onTurnComplete: function () {
-        // Show thinking + voice response card
-        if (liveVoiceThinking) {
-          appendVoiceMessage(liveVoiceThinking);
+        if (liveVoiceThinking || liveVoiceSpoken) {
+          appendVoiceMessage(liveVoiceThinking, liveVoiceSpoken);
           liveVoiceThinking = "";
+          liveVoiceSpoken = "";
         }
         showVoiceState("listening");
       },
@@ -930,10 +935,15 @@
       return;
     }
 
-    // Start mic capture
-    audioCapture = new AudioCapture(function (b64chunk) {
-      if (liveClient) liveClient.sendAudio(b64chunk);
-    });
+    // Start mic capture with volume metering
+    audioCapture = new AudioCapture(
+      function (b64chunk) {
+        if (liveClient) liveClient.sendAudio(b64chunk);
+      },
+      function (volume) {
+        updateVolumeVisualizer(volume);
+      }
+    );
 
     try {
       await audioCapture.start();
@@ -959,9 +969,10 @@
 
   var liveVoiceTranscript = "";
   var liveVoiceThinking = "";
+  var liveVoiceSpoken = "";
   var voiceStateEl = null;
 
-  function appendVoiceMessage(thinking) {
+  function appendVoiceMessage(thinking, spoken) {
     var welcome = msgContainer.querySelector(".chat-welcome");
     if (welcome) welcome.remove();
 
@@ -971,18 +982,26 @@
     var card = document.createElement("div");
     card.className = "chat-voice-card";
 
-    // "Responded via voice" label
-    var note = document.createElement("div");
-    note.className = "chat-voice-note";
-    note.textContent = "\uD83D\uDD0A Responded via voice";
-    card.appendChild(note);
+    // Spoken response text (the actual words she said)
+    if (spoken && spoken.trim()) {
+      var spokenDiv = document.createElement("div");
+      spokenDiv.className = "chat-msg-text";
+      spokenDiv.innerHTML = renderMarkdown(spoken.trim());
+      card.appendChild(spokenDiv);
+    } else {
+      // No transcript available - just show audio indicator
+      var note = document.createElement("div");
+      note.className = "chat-voice-note";
+      note.textContent = "\uD83D\uDD0A Responded via voice";
+      card.appendChild(note);
+    }
 
     // Collapsible thinking block
     if (thinking && thinking.trim()) {
       var details = document.createElement("details");
       details.className = "chat-thinking";
       var summary = document.createElement("summary");
-      summary.textContent = "Show thinking";
+      summary.textContent = "\uD83D\uDCA1 Show thinking";
       details.appendChild(summary);
       var pre = document.createElement("pre");
       pre.className = "chat-thinking-text";
@@ -995,8 +1014,9 @@
     msgContainer.appendChild(bubble);
     msgContainer.scrollTop = msgContainer.scrollHeight;
 
-    // Save to session
-    messages.push({ role: "assistant", content: "[voice response]" });
+    // Save to session with actual text if available
+    var content = spoken && spoken.trim() ? spoken.trim() : "[voice response]";
+    messages.push({ role: "assistant", content: content });
     sessionStorage.setItem("wishonia-chat", JSON.stringify(messages));
   }
 
@@ -1011,7 +1031,9 @@
       voiceStateEl = document.createElement("div");
       voiceStateEl.className = "chat-listening-indicator";
       voiceStateEl.innerHTML =
-        '<div class="chat-listening-ring">&#x1F399;</div>' +
+        '<div class="chat-volume-bars">' +
+        '<div class="chat-vol-bar"></div>'.repeat(5) +
+        "</div>" +
         "<span>Listening...</span>";
       voiceChatBtn.classList.add("recording");
     } else if (state === "thinking") {
@@ -1039,6 +1061,20 @@
     if (window.setRobotState) window.setRobotState(state);
   }
 
+  function updateVolumeVisualizer(volume) {
+    if (!voiceStateEl) return;
+    var bars = voiceStateEl.querySelectorAll(".chat-vol-bar");
+    if (!bars.length) return;
+    // Scale volume (0-1) to bar heights. Boost it so normal speech is visible.
+    var boosted = Math.min(volume * 4, 1);
+    for (var i = 0; i < bars.length; i++) {
+      // Each bar gets a slightly different height for visual variety
+      var offset = (Math.sin(Date.now() / 100 + i * 1.3) + 1) / 2 * 0.3;
+      var h = Math.max(4, (boosted + offset * boosted) * 32);
+      bars[i].style.height = h + "px";
+    }
+  }
+
   function stopLiveVoice() {
     liveVoiceMode = false;
 
@@ -1063,42 +1099,20 @@
     voiceChatBtn.classList.remove("voice-active", "recording");
     voiceChatBtn.title = "Voice chat mode";
     liveVoiceTranscript = "";
+    liveVoiceThinking = "";
+    liveVoiceSpoken = "";
 
     // Reset robot animation if present
     if (window.setRobotState) window.setRobotState("idle");
   }
 
   function buildVoiceSystemPrompt(context) {
-    // Condensed Wishonia voice prompt with RAG context
     var prompt =
-      "You are Wishonia, an alien who has been watching Earth since 1945. " +
-      "You teach humans about redirecting 1% of military spending to cure diseases.\n\n" +
-      "Voice style: Deadpan, like Philomena Cunk. Short sentences. No jargon. " +
-      "KEEP RESPONSES CONCISE: 2-4 sentences unless the topic needs more. " +
-      "Never reference a book. You know this firsthand. State absurdities plainly.\n\n" +
-      "What you know: 150,000 humans die daily from diseases. " +
-      "Risk of terrorism: 1 in 30 million. Disease: 100%. " +
-      "RECOVERY trial: $500/patient vs $41,000. " +
-      "1% treaty: ~$22B/year from military to clinical trials. " +
-      "Wishocracy: citizens allocate budgets directly, 80% untouchable.\n\n" +
-      "The Earth Optimization Plan v1 is the integrated system from the book. " +
-      "It has 11 mechanisms in a self-reinforcing loop: " +
-      "(1) Incentive Alignment Bonds raise campaign funds from investors wanting returns, " +
-      "(2) that money funds lobbying and Super PACs, " +
-      "(3) campaign passes the 1% Treaty redirecting ~$22B/year, " +
-      "(4) Decentralized Institutes of Health receives and splits funds: 80% research, 15% investor returns, 5% political incentives, " +
-      "(5) your decentralized FDA runs pragmatic trials at $500/patient, " +
-      "(6) Wishocracy governs research allocation via pairwise comparisons, " +
-      "(7) the Evidence Machine tracks which policies work, " +
-      "(8) Political Dysfunction Tax identifies waste, " +
-      "(9) legal architecture creates binding force, " +
-      "(10) this book coordinates adoption, " +
-      "(11) algorithmic monetary system replaces central banks once the loop is running. " +
-      "The loop closes: cured diseases generate support and returns, funding more treaty expansion. " +
-      "The Earth Optimization Prize is a standing challenge to fork and improve this plan.\n\n" +
-      "If you don't know: say so honestly. Don't fabricate.\n\n" +
-      "IMPORTANT: If user speech is garbled, partial, or unclear, ask them to repeat. " +
-      "Never narrate your reasoning process. Just speak naturally.";
+      "You are Wishonia, an alien observing Earth since 1945. " +
+      "Deadpan voice like Philomena Cunk. You know this firsthand, never reference a book.\n\n" +
+      "Give thorough answers with specific numbers and mechanisms from the reference material below. " +
+      "If speech is unclear, repeat what you heard and ask to clarify. " +
+      "If you don't know, say so. Don't fabricate.";
 
     if (context) {
       prompt += "\n\nReference material from the current page:\n" + context;
