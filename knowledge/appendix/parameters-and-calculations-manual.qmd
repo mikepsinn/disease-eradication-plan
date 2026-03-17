@@ -19106,7 +19106,7 @@ Percentage of captured dividend funding VICTORY Incentive Alignment Bonds (10%)
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Expected share of global population that votes over the 15-year accumulation period. Global election turnout runs 50-65% despite strictly worse incentives on every axis: hours of effort vs. 30 seconds, no financial reward vs. ~$61K referral incentive, 1-in-30M chance of influencing outcome vs. direct payout proportional to contribution. The 30% point estimate is conservative, accounting for 15-year ramp-up, regional skepticism, and low digital infrastructure. The referral incentive drives awareness virally and solves access barriers (people travel to villages with phones when helping someone vote earns $61K). Upper CI (70%) reflects a mature campaign where referral incentives have driven near-universal awareness.
+Expected share of global population that votes over the 15-year accumulation period. Global election turnout runs 50-65% despite strictly worse incentives on every axis: hours of effort vs. 30 seconds, no financial reward vs. a token value roughly equal to global average annual income (see VOTE_TOKEN_POTENTIAL_VALUE), 1-in-30M chance of influencing outcome vs. direct payout proportional to contribution. The 30% point estimate is conservative, accounting for 15-year ramp-up, regional skepticism, and low digital infrastructure. The token value drives awareness virally and solves access barriers (people travel to villages with phones when the expected payout exceeds local annual income). Upper CI (70%) reflects a mature campaign where token incentives have driven near-universal awareness.
 
 #### Uncertainty Range
 

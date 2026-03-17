@@ -328,22 +328,24 @@ Your species generates {{< var global_annual_savings >}} per year in savings and
 
 ### How Many People Will Actually Vote?
 
-The pool divides among everyone who votes, so the per-token value depends on turnout. On most planets this would require a complicated funnel model (awareness, internet access, action rate). On yours, the referral incentive collapses the funnel into a single parameter.
+The pool divides among everyone who votes, so the per-token value depends on turnout. On most planets this would require a complicated funnel model (awareness, internet access, action rate). On yours, the token's expected value collapses the funnel into a single parameter.
 
 | Dimension | Your elections | VOTE token |
 |:---|:---|:---|
 | **Effort** | Hours in line, research candidates | 30 seconds on a phone |
-| **Financial reward** | $0 | ~{{< var vote_token_potential_value >}} per token |
+| **Financial reward** | $0 | {{< var vote_token_potential_value >}} per token |
 | **Pivotality** | 1 in 30 million chance of changing outcome | Direct payout proportional to contribution |
 | **Outcome fidelity** | Politician may ignore you after winning | Funds flow to verified implementation |
 
 Your species turns out at 50-65% for elections despite losing on every row. The VOTE token wins every row and pays cash.
 
+Token value and participation are co-determined: the pool is fixed, so more voters means a smaller per-token payout. But the equilibrium is stable. At the CI lower bound (3% participation), the token is worth ~$123K, which is a massive pull toward higher participation. At the CI upper bound (70%), the token is still worth ~$5.3K, which is a year's income in most countries and still beats elections on every dimension. Any plausible participation rate produces a token value that exceeds what is needed to attract the marginal voter.
+
 The expected participation rate is {{< var vote_participation_rate >}}:
 
 {{< var vote_expected_participants_latex >}}
 
-At that rate, {{< var vote_expected_participants >}} people vote over the accumulation period, exceeding the Chenoweth passage threshold ({{< var treaty_campaign_voting_bloc_target >}}) by roughly 8x. Treaty passage is implied well before the pool matures.
+At that rate, {{< var vote_expected_participants >}} people vote over the accumulation period, exceeding the Chenoweth passage threshold ({{< var treaty_campaign_voting_bloc_target >}}) by roughly 8x. Even at the Monte Carlo lower bound (~475M), voters exceed the Chenoweth threshold by 1.7x. Treaty passage becomes probable well before the pool matures.
 
 The per-token value at {{< var vote_participation_rate >}} participation:
 
