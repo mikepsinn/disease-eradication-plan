@@ -321,6 +321,7 @@ class ReferenceID(str, Enum):
     DTRA_ALLIANCE = "dtra-alliance"
     DUAN_2013_N_OF_1 = "duan-2013-n-of-1"
     DUNBAR_NUMBER = "dunbar-number"
+    EARTH_OPTIMIZATION_PRIZE_PAPER_2025 = "earth-optimization-prize-paper-2025"
     ECLINICALMEDICINE_STATINS_POLYPILL = "eclinicalmedicine-statins-polypill"
     EDUCATION_INVESTMENT_ECONOMIC_MULTIPLIER = "education-investment-economic-multiplier"
     EGGERS2009 = "eggers2009"
