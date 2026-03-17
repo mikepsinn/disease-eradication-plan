@@ -976,6 +976,25 @@ jobs:
           retention-days: 7
 
 
+      - name: "Deploy Build Choose Your Own Earth: Would You Like the Unimagin to Netlify (immediate)"
+        if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
+        uses: nwtgck/actions-netlify@v3.0
+        with:
+          publish-dir: '_build_temp/gdp-trajectories/_site/gdp-trajectories'
+          production-deploy: ${{ github.ref == 'refs/heads/develop' || github.ref == 'refs/heads/master' }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+          deploy-message: "Deploy gdp-trajectories from ${{ github.ref_name }}"
+          enable-pull-request-comment: true
+          enable-commit-comment: true
+          overwrites-pull-request-comment: true
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+
+          NETLIFY_SITE_ID: 7459777b-36c9-45ef-9307-f47434d0acc2
+
+        timeout-minutes: 1
+
 
 
       - name: "Upload Build Choose Your Own Earth: Would You Like the Unimagin PDF to Zenodo (draft)"
