@@ -13,8 +13,8 @@
     link.href = offset + 'assets/css/chat-widget.css';
     document.head.appendChild(link);
 
-    // Load scripts
-    var scripts = ['assets/js/site-enhancements.js', 'assets/js/promotion-bar.js', 'assets/js/chat-widget.js'];
+    // Load scripts (audio-worklet-processor.js is loaded at runtime by AudioWorklet, not here)
+    var scripts = ['assets/js/gemini-live-client.js', 'assets/js/audio-utils.js', 'assets/js/site-enhancements.js', 'assets/js/promotion-bar.js', 'assets/js/chat-widget.js'];
     for (var i = 0; i < scripts.length; i++) {
       var s = document.createElement('script');
       s.src = offset + scripts[i];

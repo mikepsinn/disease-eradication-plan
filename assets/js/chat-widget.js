@@ -38,6 +38,13 @@
   var searchLoading = false;
   var audioCache = {};
   var messages = [];
+  var voiceMode = false; // voice chat loop: listen -> submit -> TTS -> listen
+
+  // Gemini Live voice chat state
+  var liveVoiceMode = false;
+  var liveClient = null;    // GeminiLiveClient instance
+  var audioCapture = null;  // AudioCapture instance
+  var audioPlayback = null; // AudioPlayback instance
 
   // Restore from sessionStorage
   var saved = sessionStorage.getItem("wishonia-chat");
@@ -48,7 +55,7 @@
   }
 
   // DOM refs
-  var fab, panel, msgContainer, input, sendBtn, micBtn;
+  var fab, panel, msgContainer, input, sendBtn, micBtn, voiceChatBtn;
 
   // ========================================
   // RAG - Search Index
@@ -207,6 +214,21 @@
       });
   }
 
+  // Get searchable text from an entry (supports both Quarto search.json and our search-index.json)
+  function getEntryText(entry) {
+    // Quarto search.json uses "text", our generator uses "description" + "sections"
+    if (entry.text) return entry.text;
+    var parts = [];
+    if (entry.description) parts.push(entry.description);
+    if (entry.sections && Array.isArray(entry.sections)) parts.push(entry.sections.join(" "));
+    if (entry.tags && Array.isArray(entry.tags)) parts.push(entry.tags.join(" "));
+    return parts.join(" ");
+  }
+
+  function getEntryUrl(entry) {
+    return entry.href || entry.url || "";
+  }
+
   function searchContent(query) {
     if (!searchIndex || searchIndex.length === 0) return "";
 
@@ -216,7 +238,7 @@
     var scored = searchIndex.map(function (entry) {
       var titleTokens = tokenize(entry.title || "");
       var sectionTokens = tokenize(entry.section || "");
-      var textTokens = tokenize(entry.text || "");
+      var textTokens = tokenize(getEntryText(entry));
 
       var score = 0;
       queryTokens.forEach(function (qt) {
@@ -248,7 +270,8 @@
     // Also try to include section matching current page
     var currentPath = window.location.pathname.replace(/\.html$/, "");
     var currentMatch = searchIndex.find(function (e) {
-      return e.href && e.href.replace(/\.html(#.*)?$/, "").endsWith(currentPath);
+      var entryUrl = getEntryUrl(e);
+      return entryUrl && entryUrl.replace(/\.html(#.*)?$/, "").endsWith(currentPath);
     });
     if (
       currentMatch &&
@@ -266,9 +289,10 @@
         var e = item.entry;
         var label = e.title || "Untitled";
         if (e.section && e.section !== e.title) label += " (from " + e.section + ")";
-        var text = (e.text || "").substring(0, 1500);
-        if ((e.text || "").length > 1500) text += "...";
-        return "### " + label + "\n" + text;
+        var href = getEntryUrl(e);
+        var text = getEntryText(e).substring(0, 1500);
+        var sections = (e.sections && Array.isArray(e.sections)) ? "\nSections: " + e.sections.join(", ") : "";
+        return "### " + label + (href ? " [URL: " + href + "]" : "") + "\n" + (e.description || text) + sections;
       })
       .join("\n\n");
   }
@@ -309,10 +333,15 @@
     panel.innerHTML =
       '<div class="chat-header">' +
       '  <span class="chat-header-title">Ask Wishonia</span>' +
-      '  <button class="chat-close-btn" aria-label="Close chat">&times;</button>' +
+      '  <div class="chat-header-actions">' +
+      '    <button class="chat-newchat-btn" aria-label="New chat" title="New chat">&#x2795;</button>' +
+      '    <button class="chat-fullscreen-btn" aria-label="Fullscreen" title="Toggle fullscreen">&#x26F6;</button>' +
+      '    <button class="chat-close-btn" aria-label="Close chat">&times;</button>' +
+      '  </div>' +
       "</div>" +
       '<div class="chat-messages"></div>' +
       '<div class="chat-input-area">' +
+      '  <button class="chat-voicechat-btn" aria-label="Voice chat" style="display:none" title="Voice chat mode">&#x1F399;</button>' +
       '  <input class="chat-input" type="text" placeholder="Ask about the book..." autocomplete="off">' +
       '  <button class="chat-mic-btn" aria-label="Voice input" style="display:none" title="Speak your question">&#x1F3A4;</button>' +
       '  <button class="chat-send-btn" aria-label="Send message">&#x27A4;</button>' +
@@ -325,8 +354,12 @@
     sendBtn = panel.querySelector(".chat-send-btn");
     micBtn = panel.querySelector(".chat-mic-btn");
     var closeBtn = panel.querySelector(".chat-close-btn");
+    var newChatBtn = panel.querySelector(".chat-newchat-btn");
+    var fullscreenBtn = panel.querySelector(".chat-fullscreen-btn");
 
     closeBtn.addEventListener("click", togglePanel);
+    newChatBtn.addEventListener("click", startNewChat);
+    fullscreenBtn.addEventListener("click", toggleFullscreen);
     sendBtn.addEventListener("click", handleSend);
     input.addEventListener("keydown", function (e) {
       if (e.key === "Enter" && !e.shiftKey) {
@@ -336,9 +369,20 @@
     });
 
     // Show mic button if Speech Recognition is available
+    voiceChatBtn = panel.querySelector(".chat-voicechat-btn");
     if (window.SpeechRecognition || window.webkitSpeechRecognition) {
       micBtn.style.display = "flex";
       micBtn.addEventListener("click", startVoiceInput);
+    }
+
+    // Show voice chat button if AudioWorklet + getUserMedia supported (Gemini Live)
+    if (window.AudioContext && window.AudioWorkletNode && navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+      voiceChatBtn.style.display = "flex";
+      voiceChatBtn.addEventListener("click", toggleLiveVoiceChat);
+    } else if (window.SpeechRecognition || window.webkitSpeechRecognition) {
+      // Fallback: old sequential voice loop for browsers without AudioWorklet
+      voiceChatBtn.style.display = "flex";
+      voiceChatBtn.addEventListener("click", toggleVoiceChat);
     }
 
     // Show welcome if no messages
@@ -347,12 +391,44 @@
     }
   }
 
+  var HINT_QUESTIONS = [
+    "What is the 1% treaty?",
+    "How does wishocracy work?",
+    "Why is disease worse than war?",
+    "How do incentive alignment bonds work?",
+  ];
+
   function showWelcome() {
     var welcome = document.createElement("div");
     welcome.className = "chat-welcome";
-    welcome.textContent =
-      "I've been watching your planet since 1945. Ask me anything about the book, the 1% treaty, or why you spend more on missiles than medicine.";
+    welcome.innerHTML =
+      "<p>I've been watching your planet since 1945. Ask me anything.</p>" +
+      '<div class="chat-hints">' +
+      HINT_QUESTIONS.map(function (q) {
+        return '<button class="chat-hint-btn">' + q + "</button>";
+      }).join("") +
+      "</div>";
+
+    welcome.querySelectorAll(".chat-hint-btn").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        input.value = btn.textContent;
+        handleSend();
+      });
+    });
+
     msgContainer.appendChild(welcome);
+  }
+
+  function startNewChat() {
+    messages = [];
+    sessionStorage.removeItem("wishonia-chat");
+    audioCache = {};
+    msgContainer.innerHTML = "";
+    showWelcome();
+  }
+
+  function toggleFullscreen() {
+    panel.classList.toggle("chat-fullscreen");
   }
 
   // ========================================
@@ -382,6 +458,23 @@
   // MESSAGING
   // ========================================
 
+  // Convert markdown links [text](url) to <a> tags, escape HTML otherwise
+  function renderMarkdown(text) {
+    // Escape HTML
+    var escaped = text
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;");
+    // Convert markdown links
+    escaped = escaped.replace(
+      /\[([^\]]+)\]\(([^)]+)\)/g,
+      '<a href="$2" target="_blank" rel="noopener">$1</a>'
+    );
+    // Convert **bold**
+    escaped = escaped.replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>");
+    return escaped;
+  }
+
   function appendMessage(role, content, skipSave) {
     // Remove welcome message on first real message
     var welcome = msgContainer.querySelector(".chat-welcome");
@@ -389,7 +482,12 @@
 
     var bubble = document.createElement("div");
     bubble.className = "chat-msg chat-msg-" + role;
-    bubble.textContent = content;
+
+    if (role === "assistant" && content) {
+      bubble.innerHTML = '<div class="chat-msg-text">' + renderMarkdown(content) + "</div>";
+    } else {
+      bubble.textContent = content;
+    }
 
     // Add TTS button for assistant messages
     if (role === "assistant" && content) {
@@ -400,7 +498,6 @@
       ttsBtn.addEventListener("click", function () {
         playTTS(content, ttsBtn);
       });
-      bubble.appendChild(document.createElement("br"));
       bubble.appendChild(ttsBtn);
     }
 
@@ -461,10 +558,17 @@
           throw new Error("Chat request failed: " + response.status);
         }
 
-        // Create empty assistant bubble and stream into it
-        var bubble = appendMessage("assistant", "");
-        var fullText = "";
+        // Create empty bubble with text container for streaming
+        var bubble = document.createElement("div");
+        bubble.className = "chat-msg chat-msg-assistant";
+        bubble.innerHTML = '<div class="chat-msg-text"></div>';
+        var welcome = msgContainer.querySelector(".chat-welcome");
+        if (welcome) welcome.remove();
+        msgContainer.appendChild(bubble);
+        messages.push({ role: "assistant", content: "" });
+        msgContainer.scrollTop = msgContainer.scrollHeight;
 
+        var fullText = "";
         var reader = response.body.getReader();
         var decoder = new TextDecoder();
 
@@ -478,7 +582,11 @@
                 JSON.stringify(messages)
               );
 
-              // Add TTS button now that we have the full text
+              // Re-render with markdown (links become clickable)
+              var textEl = bubble.querySelector(".chat-msg-text");
+              if (textEl) textEl.innerHTML = renderMarkdown(fullText);
+
+              // Add TTS button
               var ttsBtn = document.createElement("button");
               ttsBtn.className = "chat-tts-btn";
               ttsBtn.textContent = "\u{1F50A}";
@@ -486,20 +594,30 @@
               ttsBtn.addEventListener("click", function () {
                 playTTS(fullText, ttsBtn);
               });
-              bubble.appendChild(document.createElement("br"));
               bubble.appendChild(ttsBtn);
 
               isStreaming = false;
               sendBtn.disabled = false;
+
+              // Voice chat mode: auto-play TTS, then listen again
+              if (voiceMode) {
+                playTTS(fullText, ttsBtn, function () {
+                  // After TTS finishes, start listening again
+                  if (voiceMode) startVoiceListening();
+                });
+              }
               return;
             }
 
             var chunk = decoder.decode(result.value, { stream: true });
             fullText += chunk;
-            // Update bubble text (before the TTS button)
-            bubble.firstChild
-              ? (bubble.firstChild.textContent = fullText)
-              : (bubble.textContent = fullText);
+            // Update bubble text (plain text while streaming)
+            var textEl = bubble.querySelector(".chat-msg-text");
+            if (textEl) {
+              textEl.textContent = fullText;
+            } else {
+              bubble.textContent = fullText;
+            }
             msgContainer.scrollTop = msgContainer.scrollHeight;
             return read();
           });
@@ -524,6 +642,7 @@
 
   var recognition = null;
 
+  // Mic button: transcribe into input field (no auto-submit)
   function startVoiceInput() {
     if (recognition) {
       recognition.stop();
@@ -531,7 +650,14 @@
       micBtn.classList.remove("recording");
       return;
     }
+    startListening(function (transcript) {
+      input.value = transcript;
+    });
+    micBtn.classList.add("recording");
+  }
 
+  // Core listening function, calls onResult(transcript) when done
+  function startListening(onResult) {
     var SpeechRecognition =
       window.SpeechRecognition || window.webkitSpeechRecognition;
     if (!SpeechRecognition) return;
@@ -541,42 +667,121 @@
     recognition.continuous = false;
     recognition.interimResults = false;
 
-    micBtn.classList.add("recording");
-
     recognition.onresult = function (event) {
       var transcript = event.results[0][0].transcript;
-      input.value = transcript;
-      micBtn.classList.remove("recording");
       recognition = null;
+      micBtn.classList.remove("recording");
+      voiceChatBtn.classList.remove("recording");
+      onResult(transcript);
     };
 
     recognition.onerror = function () {
-      micBtn.classList.remove("recording");
       recognition = null;
+      micBtn.classList.remove("recording");
+      voiceChatBtn.classList.remove("recording");
+      if (listeningIndicator && listeningIndicator.parentNode) listeningIndicator.remove();
+      listeningIndicator = null;
     };
 
     recognition.onend = function () {
-      micBtn.classList.remove("recording");
       recognition = null;
+      micBtn.classList.remove("recording");
     };
 
     recognition.start();
   }
 
   // ========================================
+  // VOICE CHAT MODE
+  // ========================================
+
+  function toggleVoiceChat() {
+    voiceMode = !voiceMode;
+
+    if (voiceMode) {
+      voiceChatBtn.classList.add("voice-active");
+      voiceChatBtn.title = "Stop voice chat";
+      // Start listening immediately
+      startVoiceListening();
+    } else {
+      voiceChatBtn.classList.remove("voice-active");
+      voiceChatBtn.classList.remove("recording");
+      voiceChatBtn.title = "Voice chat mode";
+      if (recognition) {
+        recognition.stop();
+        recognition = null;
+      }
+    }
+  }
+
+  // Voice chat: listen, auto-submit, TTS will auto-play via sendChatRequest callback
+  var listeningIndicator = null;
+
+  function startVoiceListening() {
+    if (!voiceMode || isStreaming) return;
+    voiceChatBtn.classList.add("recording");
+
+    // Show listening indicator
+    listeningIndicator = createListeningIndicator();
+    msgContainer.appendChild(listeningIndicator);
+    msgContainer.scrollTop = msgContainer.scrollHeight;
+
+    startListening(function (transcript) {
+      if (listeningIndicator && listeningIndicator.parentNode) listeningIndicator.remove();
+      listeningIndicator = null;
+
+      if (!transcript.trim()) {
+        if (voiceMode) startVoiceListening();
+        return;
+      }
+      input.value = transcript;
+      handleSend();
+    });
+  }
+
+  // ========================================
   // VOICE OUTPUT (TTS)
   // ========================================
 
-  function playTTS(text, btn) {
+  function createWaveformIndicator(label) {
+    var el = document.createElement("div");
+    el.className = "chat-voice-loading";
+    el.innerHTML =
+      '<div class="chat-waveform">' +
+      '<div class="chat-waveform-bar"></div>'.repeat(7) +
+      "</div>" +
+      "<span>" + (label || "Generating voice...") + "</span>";
+    return el;
+  }
+
+  function createListeningIndicator() {
+    var el = document.createElement("div");
+    el.className = "chat-listening-indicator";
+    el.innerHTML =
+      '<div class="chat-listening-ring">&#x1F399;</div>' +
+      "<span>Listening...</span>";
+    return el;
+  }
+
+  // onEnded callback is used by voice chat mode to chain: TTS done -> listen again
+  function playTTS(text, btn, onEnded) {
     // Check cache
     if (audioCache[text]) {
       var audio = new Audio(audioCache[text]);
+      if (onEnded) audio.addEventListener("ended", onEnded);
       audio.play();
       return;
     }
 
-    btn.classList.add("loading");
-    btn.textContent = "\u23F3"; // hourglass
+    if (btn) {
+      btn.classList.add("loading");
+      btn.textContent = "\u23F3";
+    }
+
+    // Show waveform animation in the chat
+    var waveform = createWaveformIndicator("Generating voice...");
+    msgContainer.appendChild(waveform);
+    msgContainer.scrollTop = msgContainer.scrollHeight;
 
     fetch("/api/tts", {
       method: "POST",
@@ -588,18 +793,274 @@
         return response.blob();
       })
       .then(function (blob) {
+        if (waveform.parentNode) waveform.remove();
+
         var url = URL.createObjectURL(blob);
         audioCache[text] = url;
         var audio = new Audio(url);
+        if (onEnded) audio.addEventListener("ended", onEnded);
         audio.play();
-        btn.textContent = "\u{1F50A}";
-        btn.classList.remove("loading");
+        if (btn) {
+          btn.textContent = "\u{1F50A}";
+          btn.classList.remove("loading");
+        }
       })
       .catch(function () {
-        btn.textContent = "\u{1F50A}";
-        btn.classList.remove("loading");
+        if (waveform.parentNode) waveform.remove();
+        if (btn) {
+          btn.textContent = "\u{1F50A}";
+          btn.classList.remove("loading");
+        }
+        if (onEnded) onEnded();
       });
   }
+
+  // ========================================
+  // GEMINI LIVE VOICE CHAT
+  // ========================================
+
+  function toggleLiveVoiceChat() {
+    if (liveVoiceMode) {
+      stopLiveVoice();
+    } else {
+      startLiveVoice();
+    }
+  }
+
+  async function startLiveVoice() {
+    voiceChatBtn.classList.add("voice-active");
+    voiceChatBtn.title = "Connecting...";
+
+    // Show connecting indicator
+    var connectingEl = document.createElement("div");
+    connectingEl.className = "chat-listening-indicator";
+    connectingEl.innerHTML =
+      '<div class="chat-listening-ring">&#x1F399;</div>' +
+      "<span>Connecting...</span>";
+    msgContainer.appendChild(connectingEl);
+    msgContainer.scrollTop = msgContainer.scrollHeight;
+
+    // Fetch API key for voice connection
+    var voiceCredentials;
+    try {
+      voiceCredentials = await fetch("/api/voice-token").then(function (r) {
+        if (!r.ok) throw new Error("Token request failed: " + r.status);
+        return r.json();
+      });
+    } catch (err) {
+      if (connectingEl.parentNode) connectingEl.remove();
+      voiceChatBtn.classList.remove("voice-active");
+      voiceChatBtn.title = "Voice chat mode";
+      appendMessage("assistant", "Voice chat unavailable. " + err.message);
+      return;
+    }
+
+    // Build system prompt with RAG context from current page
+    var pageContext = searchContent(document.title || "");
+    var systemPrompt = buildVoiceSystemPrompt(pageContext);
+
+    // Initialize audio playback
+    audioPlayback = new AudioPlayback();
+    try {
+      await audioPlayback.init();
+    } catch (err) {
+      if (connectingEl.parentNode) connectingEl.remove();
+      voiceChatBtn.classList.remove("voice-active");
+      voiceChatBtn.title = "Voice chat mode";
+      appendMessage("assistant", "Could not initialize audio. " + err.message);
+      return;
+    }
+
+    // Connect to Gemini Live
+    liveClient = new GeminiLiveClient({
+      apiKey: voiceCredentials.key,
+      systemInstruction: systemPrompt,
+      voice: "Kore",
+      onAudio: function (b64) {
+        audioPlayback.play(b64);
+        // Show speaking indicator
+        showVoiceState("speaking");
+      },
+      onText: function (text) {
+        // Some models send text alongside audio; display it
+        if (text && liveVoiceTranscript !== null) {
+          liveVoiceTranscript += text;
+        }
+      },
+      onInterrupted: function () {
+        audioPlayback.interrupt();
+        showVoiceState("listening");
+      },
+      onTurnComplete: function () {
+        showVoiceState("listening");
+        // Save transcript if we got any text
+        if (liveVoiceTranscript) {
+          appendMessage("assistant", liveVoiceTranscript);
+          liveVoiceTranscript = "";
+        }
+      },
+      onError: function () {
+        stopLiveVoice();
+        appendMessage("assistant", "Voice connection lost.");
+      },
+    });
+
+    try {
+      await liveClient.connect();
+    } catch (err) {
+      if (connectingEl.parentNode) connectingEl.remove();
+      voiceChatBtn.classList.remove("voice-active");
+      voiceChatBtn.title = "Voice chat mode";
+      audioPlayback.destroy();
+      audioPlayback = null;
+      liveClient = null;
+      appendMessage("assistant", "Could not connect to voice. " + err.message);
+      return;
+    }
+
+    // Start mic capture
+    audioCapture = new AudioCapture(function (b64chunk) {
+      if (liveClient) liveClient.sendAudio(b64chunk);
+    });
+
+    try {
+      await audioCapture.start();
+    } catch (err) {
+      if (connectingEl.parentNode) connectingEl.remove();
+      liveClient.disconnect();
+      liveClient = null;
+      audioPlayback.destroy();
+      audioPlayback = null;
+      voiceChatBtn.classList.remove("voice-active");
+      voiceChatBtn.title = "Voice chat mode";
+      appendMessage("assistant", "Microphone access denied.");
+      return;
+    }
+
+    // Connected!
+    if (connectingEl.parentNode) connectingEl.remove();
+    liveVoiceMode = true;
+    liveVoiceTranscript = "";
+    voiceChatBtn.title = "Stop voice chat";
+    showVoiceState("listening");
+  }
+
+  var liveVoiceTranscript = "";
+  var voiceStateEl = null;
+
+  function showVoiceState(state) {
+    if (!liveVoiceMode) return;
+
+    // Remove previous state indicator
+    if (voiceStateEl && voiceStateEl.parentNode) voiceStateEl.remove();
+
+    if (state === "listening") {
+      voiceStateEl = document.createElement("div");
+      voiceStateEl.className = "chat-listening-indicator";
+      voiceStateEl.innerHTML =
+        '<div class="chat-listening-ring">&#x1F399;</div>' +
+        "<span>Listening...</span>";
+      voiceChatBtn.classList.add("recording");
+    } else if (state === "speaking") {
+      voiceStateEl = document.createElement("div");
+      voiceStateEl.className = "chat-voice-loading";
+      voiceStateEl.innerHTML =
+        '<div class="chat-waveform">' +
+        '<div class="chat-waveform-bar"></div>'.repeat(7) +
+        "</div>" +
+        "<span>Wishonia is speaking...</span>";
+      voiceChatBtn.classList.remove("recording");
+    }
+
+    if (voiceStateEl) {
+      msgContainer.appendChild(voiceStateEl);
+      msgContainer.scrollTop = msgContainer.scrollHeight;
+    }
+
+    // Update robot animation if present on page
+    if (window.setRobotState) window.setRobotState(state);
+  }
+
+  function stopLiveVoice() {
+    liveVoiceMode = false;
+
+    if (audioCapture) {
+      audioCapture.stop();
+      audioCapture = null;
+    }
+    if (liveClient) {
+      liveClient.disconnect();
+      liveClient = null;
+    }
+    if (audioPlayback) {
+      audioPlayback.interrupt();
+      audioPlayback.destroy();
+      audioPlayback = null;
+    }
+    if (voiceStateEl && voiceStateEl.parentNode) {
+      voiceStateEl.remove();
+      voiceStateEl = null;
+    }
+
+    voiceChatBtn.classList.remove("voice-active", "recording");
+    voiceChatBtn.title = "Voice chat mode";
+    liveVoiceTranscript = "";
+
+    // Reset robot animation if present
+    if (window.setRobotState) window.setRobotState("idle");
+  }
+
+  function buildVoiceSystemPrompt(context) {
+    // Condensed Wishonia voice prompt with RAG context
+    var prompt =
+      "You are Wishonia, an alien who has been watching Earth since 1945. " +
+      "You teach humans about redirecting 1% of military spending to cure diseases.\n\n" +
+      "Voice style: Deadpan, like Philomena Cunk. Short sentences. No jargon. " +
+      "KEEP RESPONSES CONCISE: 2-4 sentences unless the topic needs more. " +
+      "Never reference a book. You know this firsthand. State absurdities plainly.\n\n" +
+      "What you know: 150,000 humans die daily from diseases. " +
+      "Risk of terrorism: 1 in 30 million. Disease: 100%. " +
+      "RECOVERY trial: $500/patient vs $41,000. " +
+      "1% treaty: ~$22B/year from military to clinical trials. " +
+      "Wishocracy: citizens allocate budgets directly, 80% untouchable.\n\n" +
+      "The Earth Optimization Plan v1 is the integrated system from the book. " +
+      "It has 11 mechanisms in a self-reinforcing loop: " +
+      "(1) Incentive Alignment Bonds raise campaign funds from investors wanting returns, " +
+      "(2) that money funds lobbying and Super PACs, " +
+      "(3) campaign passes the 1% Treaty redirecting ~$22B/year, " +
+      "(4) Decentralized Institutes of Health receives and splits funds: 80% research, 15% investor returns, 5% political incentives, " +
+      "(5) your decentralized FDA runs pragmatic trials at $500/patient, " +
+      "(6) Wishocracy governs research allocation via pairwise comparisons, " +
+      "(7) the Evidence Machine tracks which policies work, " +
+      "(8) Political Dysfunction Tax identifies waste, " +
+      "(9) legal architecture creates binding force, " +
+      "(10) this book coordinates adoption, " +
+      "(11) algorithmic monetary system replaces central banks once the loop is running. " +
+      "The loop closes: cured diseases generate support and returns, funding more treaty expansion. " +
+      "The Earth Optimization Prize is a standing challenge to fork and improve this plan.\n\n" +
+      "If you don't know: say so honestly. Don't fabricate.";
+
+    if (context) {
+      prompt += "\n\nReference material from the current page:\n" + context;
+    }
+
+    return prompt;
+  }
+
+  // Also handle sending text while in live voice mode
+  var origHandleSend = handleSend;
+  handleSend = function () {
+    if (liveVoiceMode && liveClient && liveClient.isConnected()) {
+      var text = input.value.trim();
+      if (!text) return;
+      input.value = "";
+      appendMessage("user", text);
+      liveClient.sendText(text);
+      liveVoiceTranscript = "";
+      return;
+    }
+    origHandleSend();
+  };
 
   // ========================================
   // INIT

@@ -8,7 +8,8 @@
 
 import { GoogleGenAI } from "@google/genai";
 
-const TTS_MODEL_ID = "gemini-2.5-pro-preview-tts";
+// Flash: 200ms first-byte latency (vs 450ms for Pro). Best for real-time chat.
+const TTS_MODEL_ID = "gemini-2.5-flash-preview-tts";
 const DEFAULT_VOICE = "Kore";
 const DEFAULT_SPEAKING_INSTRUCTIONS =
   "Generate a patient, warm voice explaining something counterintuitive to someone smart. " +
