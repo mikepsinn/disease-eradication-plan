@@ -1,3 +1,8 @@
+# Serverless functions (chat + TTS endpoints)
+[functions]
+  node_bundler = "esbuild"
+  directory = "netlify/functions"
+
 [build]
   # Build command - installs dependencies and builds the economics models site
   command = """
@@ -109,6 +114,14 @@
 
 [build.processing]
   skip_processing = false
+
+# CORS headers for chat/TTS API endpoints
+[[headers]]
+  for = "/api/*"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
+    Access-Control-Allow-Methods = "POST, OPTIONS"
+    Access-Control-Allow-Headers = "Content-Type"
 
 # Headers for security and caching
 [[headers]]
