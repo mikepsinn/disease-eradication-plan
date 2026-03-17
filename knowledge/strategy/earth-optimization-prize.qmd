@@ -25,7 +25,7 @@ To be clear about what is strange here: every constitution on your planet alread
 
 The cost of the current approach is not abstract. {{< var global_disease_deaths_daily >}} people die of treatable disease every day. {{< var existing_drugs_efficacy_lag_deaths_total_nounit >}} have already died waiting for drugs that were proven to work but stuck in regulatory queues. The annual economic burden of treatable disease runs {{< var global_disease_economic_burden_annual >}}. The total opportunity cost of political dysfunction (the gap between what governance delivers and what it could deliver) is {{< var political_dysfunction_global_opportunity_cost_total >}} per year. Those are not projections. They are the running tab for not having a mechanism that selects and implements better ideas.
 
-And those are just the static costs. The trajectory is worse. Your destructive economy (military spending beyond deterrence plus cybercrime) is already {{< var global_destructive_economy_pct_gdp >}} of GDP and growing faster than the productive economy. The Soviet Union collapsed at 15% military spending alone, with worse technology and a smaller parasitic sector. At the crossover point, the rational choice for any individual, company, or nation flips from "build things" to "steal things"; you have a name for places where this already happened, and it is "failed states." At current growth rates, your destructive economy hits 50% in {{< var destructive_economy_years_to_50pct_gdp >}}. There is no Colombia to flee to when the global economy is the failed state. The loop that drives it (print money, fund military, devalue wages, push talent toward cybercrime, justify more military spending) is self-reinforcing. It does not stop on its own. Something has to break it.
+And those are just the static costs. The trajectory is worse. Your [destructive economy](../economics/gdp-trajectories.qmd) (military spending beyond deterrence plus cybercrime) is already {{< var global_destructive_economy_pct_gdp >}} of GDP and growing faster than the productive economy. The Soviet Union collapsed at 15% military spending alone, with worse technology and a smaller parasitic sector. At the crossover point, the rational choice for any individual, company, or nation flips from "build things" to "steal things"; you have a name for places where this already happened, and it is "failed states." At current growth rates, your destructive economy hits 50% in {{< var destructive_economy_years_to_50pct_gdp >}}. There is no Colombia to flee to when the global economy is the failed state. The loop that drives it (print money, fund military, devalue wages, push talent toward cybercrime, justify more military spending) is self-reinforcing. It does not stop on its own. Something has to break it.
 
 We noticed that policy design on Earth works like a philosophy seminar: interesting discussions, no binding output. An engineering competition would at least produce prototypes.
 
@@ -305,6 +305,40 @@ In finance, a position with unlimited upside and zero downside is called a free 
 Those thresholds ignore PRIZE token downside protection and IAB revenue share, so they are biased against contributing. They also survive heavy skepticism. If you think the per-capita gain is 100x smaller than modeled ($149K instead of $14.9M), the break-even for a $1K contribution is still only 0.67%. The math does not require trusting the model. It requires believing the model is not off by more than four orders of magnitude. And the ceiling cost of achieving the policy change is already bounded: {{< var treaty_campaign_total_cost >}} for the United States, roughly $200B globally, with ROI exceeding 400,000:1 for military-to-health reallocation [@cost-of-change-paper-2025].
 
 **The free-rider problem has a structural answer.** The obvious objection: if success benefits everyone, why not wait and let others pay? Because non-contributors do not get the revenue share. They get the population-wide income gain (everyone does), but they miss the {{< var victory_bond_annual_return_pct >}} annual return that bondholders collect. Free-riding means giving up the highest-return investment in history to save $100. On your planet this is called "being cheap about the thing that makes you rich." Early contributors raise the probability of success, which raises the expected value for later contributors, creating a coordination game that runs on arithmetic rather than altruism.
+
+### How Large Can the Prize Pool Get?
+
+The dysfunction tax is {{< var political_dysfunction_global_opportunity_cost_total >}}/year. Can the prize pool physically reach that scale? The ceiling is set by how much your species saves.
+
+Global gross savings run {{< var global_savings_rate_pct >}} of GDP [@world-bank-gross-savings-2023], or roughly {{< var global_annual_savings >}}/year at current output ({{< var global_gdp_2025 >}}). If *all* global savings flowed into PRIZE tokens at {{< var prize_escrow_yield_rate >}} yield over {{< var prize_escrow_accumulation_years_nounit >}} years, the future-value annuity gives:
+
+{{< var prize_pool_max_ceiling_latex >}}
+
+The theoretical ceiling is {{< var prize_pool_max_ceiling >}}, roughly **10x** the annual dysfunction tax. The target does not require anything close to the ceiling. Reaching {{< var political_dysfunction_global_opportunity_cost_total >}} requires {{< var prize_pool_target_annual_deposits >}}/year in deposits:
+
+| Metric | Required deposits as share |
+|:---|:---|
+| Global savings ({{< var global_annual_savings >}}/yr) | {{< var prize_pool_target_pct_savings >}} |
+| Global GDP ({{< var global_gdp_2025 >}}) | {{< var prize_pool_target_pct_gdp >}} |
+| Global household wealth ({{< var global_household_wealth_usd >}}) | {{< var prize_pool_target_pct_wealth >}} |
+
+The ceiling also grows as reforms work. If GDP rises toward the treaty trajectory ({{< var treaty_trajectory_gdp_year_15 >}} at year 15), annual savings grow to ~$359T and the ceiling reaches ~$11,400T. The dysfunction tax target drops below 1% of the ceiling. The better the plan works, the easier the pool is to fund.
+
+::: {.callout-note}
+## Yield sensitivity
+
+The {{< var prize_escrow_yield_rate >}} escrow yield is sourced to Binance 120-day USDT locked staking (March 2026). Stablecoin staking yields have historically ranged from 2-15% depending on protocol and lock period. The capacity argument survives conservative assumptions:
+
+| Escrow yield | FV factor | Max pool (at {{< var global_annual_savings >}}/yr savings) | $101T target as % of max |
+|:---|:---|:---|:---|
+| 5% | 21.58 | ~$669T | ~15% |
+| 7.5% | 26.13 | ~$810T | ~12% |
+| **{{< var prize_escrow_yield_rate >}}** | **{{< var prize_pool_fv_annuity_factor >}}** | **{{< var prize_pool_max_ceiling >}}** | **~10%** |
+
+Even at 5%, the ceiling is 6.6x the target.
+:::
+
+Your species generates {{< var global_annual_savings >}} per year in savings and loses {{< var political_dysfunction_global_opportunity_cost_total >}} per year to political dysfunction. The pool needs a tenth of the first to cover the second. The constraint is not money. It is the number of you who have done the arithmetic.
 
 ## What v1 Claims (and What You Need to Beat)
 

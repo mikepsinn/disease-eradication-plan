@@ -5686,6 +5686,115 @@ PRIZE_ESCROW_100_RETURN_MULTIPLE = Parameter(
     latex_symbol=r"k_{escrow}",
 )  # 4.18x
 
+# ── Prize Pool Capacity Analysis ─────────────────────────────────────────────
+
+GLOBAL_SAVINGS_RATE_PCT = Parameter(
+    0.27,
+    source_ref=ReferenceID.WORLD_BANK_GROSS_SAVINGS_2023,
+    source_type="external",
+    confidence="high",
+    description="Global gross savings as share of GDP (World Bank, ~27% average 2023-2024)",
+    display_name="Global Gross Savings Rate",
+    unit="percent",
+    keywords=["savings", "global", "GDP", "world bank"],
+    distribution="fixed",
+    latex_symbol=r"s_{global}",
+)
+
+GLOBAL_ANNUAL_SAVINGS = Parameter(
+    GLOBAL_SAVINGS_RATE_PCT * GLOBAL_GDP_2025,
+    source_type="calculated",
+    description="Global annual savings in USD (savings rate × GDP)",
+    display_name="Global Annual Savings",
+    unit="USD",
+    formula="GLOBAL_SAVINGS_RATE_PCT × GLOBAL_GDP_2025",
+    inputs=["GLOBAL_SAVINGS_RATE_PCT", "GLOBAL_GDP_2025"],
+    compute=lambda ctx: ctx["GLOBAL_SAVINGS_RATE_PCT"] * ctx["GLOBAL_GDP_2025"],
+    keywords=["savings", "global", "annual", "capacity"],
+    latex_symbol=r"S_{annual}",
+)
+
+PRIZE_POOL_FV_ANNUITY_FACTOR = Parameter(
+    ((1 + PRIZE_ESCROW_YIELD_RATE) ** PRIZE_ESCROW_ACCUMULATION_YEARS - 1) / PRIZE_ESCROW_YIELD_RATE,
+    source_type="calculated",
+    description="Future-value annuity factor for prize pool accumulation at escrow yield over accumulation period",
+    display_name="Prize Pool FV Annuity Factor",
+    unit="ratio",
+    formula="((1 + PRIZE_ESCROW_YIELD_RATE)^PRIZE_ESCROW_ACCUMULATION_YEARS - 1) / PRIZE_ESCROW_YIELD_RATE",
+    latex=r"FV_{annuity} = \frac{(1 + r_{escrow})^{T_{escrow}} - 1}{r_{escrow}}",
+    inputs=["PRIZE_ESCROW_YIELD_RATE", "PRIZE_ESCROW_ACCUMULATION_YEARS"],
+    compute=lambda ctx: ((1 + ctx["PRIZE_ESCROW_YIELD_RATE"]) ** ctx["PRIZE_ESCROW_ACCUMULATION_YEARS"] - 1) / ctx["PRIZE_ESCROW_YIELD_RATE"],
+    keywords=["prize", "pool", "annuity", "future value", "capacity"],
+    latex_symbol=r"FV_{annuity}",
+)
+
+PRIZE_POOL_MAX_CEILING = Parameter(
+    GLOBAL_ANNUAL_SAVINGS * PRIZE_POOL_FV_ANNUITY_FACTOR,
+    source_type="calculated",
+    description="Theoretical maximum prize pool if all global savings flowed into PRIZE tokens over the accumulation period",
+    display_name="Prize Pool Maximum Ceiling",
+    unit="USD",
+    formula="GLOBAL_ANNUAL_SAVINGS × PRIZE_POOL_FV_ANNUITY_FACTOR",
+    latex=r"Pool_{max} = S_{annual} \times \frac{(1 + r_{escrow})^{T_{escrow}} - 1}{r_{escrow}}",
+    inputs=["GLOBAL_ANNUAL_SAVINGS", "PRIZE_POOL_FV_ANNUITY_FACTOR"],
+    compute=lambda ctx: ctx["GLOBAL_ANNUAL_SAVINGS"] * ctx["PRIZE_POOL_FV_ANNUITY_FACTOR"],
+    keywords=["prize", "pool", "ceiling", "maximum", "capacity"],
+    latex_symbol=r"Pool_{max}",
+)
+
+PRIZE_POOL_TARGET_ANNUAL_DEPOSITS = Parameter(
+    POLITICAL_DYSFUNCTION_GLOBAL_OPPORTUNITY_COST_TOTAL / PRIZE_POOL_FV_ANNUITY_FACTOR,
+    source_type="calculated",
+    description="Annual deposits required for prize pool to reach the dysfunction tax target ($101T) over the accumulation period",
+    display_name="Prize Pool Required Annual Deposits",
+    unit="USD/year",
+    formula="POLITICAL_DYSFUNCTION_GLOBAL_OPPORTUNITY_COST_TOTAL / PRIZE_POOL_FV_ANNUITY_FACTOR",
+    latex=r"D_{annual} = \frac{O_{total}}{FV_{annuity}}",
+    inputs=["POLITICAL_DYSFUNCTION_GLOBAL_OPPORTUNITY_COST_TOTAL", "PRIZE_POOL_FV_ANNUITY_FACTOR"],
+    compute=lambda ctx: ctx["POLITICAL_DYSFUNCTION_GLOBAL_OPPORTUNITY_COST_TOTAL"] / ctx["PRIZE_POOL_FV_ANNUITY_FACTOR"],
+    keywords=["prize", "pool", "deposits", "target", "required"],
+    latex_symbol=r"D_{annual}",
+)
+
+PRIZE_POOL_TARGET_PCT_SAVINGS = Parameter(
+    POLITICAL_DYSFUNCTION_GLOBAL_OPPORTUNITY_COST_TOTAL / PRIZE_POOL_FV_ANNUITY_FACTOR / GLOBAL_ANNUAL_SAVINGS,
+    source_type="calculated",
+    description="Required annual deposits as share of global savings to reach dysfunction tax target",
+    display_name="Prize Pool Target as % of Global Savings",
+    unit="percent",
+    formula="PRIZE_POOL_TARGET_ANNUAL_DEPOSITS / GLOBAL_ANNUAL_SAVINGS",
+    inputs=["PRIZE_POOL_TARGET_ANNUAL_DEPOSITS", "GLOBAL_ANNUAL_SAVINGS"],
+    compute=lambda ctx: ctx["PRIZE_POOL_TARGET_ANNUAL_DEPOSITS"] / ctx["GLOBAL_ANNUAL_SAVINGS"],
+    keywords=["prize", "pool", "savings", "share", "feasibility"],
+    latex_symbol=r"d_{savings}",
+)
+
+PRIZE_POOL_TARGET_PCT_GDP = Parameter(
+    POLITICAL_DYSFUNCTION_GLOBAL_OPPORTUNITY_COST_TOTAL / PRIZE_POOL_FV_ANNUITY_FACTOR / GLOBAL_GDP_2025,
+    source_type="calculated",
+    description="Required annual deposits as share of global GDP to reach dysfunction tax target",
+    display_name="Prize Pool Target as % of Global GDP",
+    unit="percent",
+    formula="PRIZE_POOL_TARGET_ANNUAL_DEPOSITS / GLOBAL_GDP_2025",
+    inputs=["PRIZE_POOL_TARGET_ANNUAL_DEPOSITS", "GLOBAL_GDP_2025"],
+    compute=lambda ctx: ctx["PRIZE_POOL_TARGET_ANNUAL_DEPOSITS"] / ctx["GLOBAL_GDP_2025"],
+    keywords=["prize", "pool", "GDP", "share", "feasibility"],
+    latex_symbol=r"d_{GDP}",
+)
+
+PRIZE_POOL_TARGET_PCT_WEALTH = Parameter(
+    PRIZE_POOL_TARGET_ANNUAL_DEPOSITS / 454e12,  # 454e12 = GLOBAL_HOUSEHOLD_WEALTH_USD (defined later in file)
+    source_type="calculated",
+    description="Required annual deposits as share of global household wealth to reach dysfunction tax target",
+    display_name="Prize Pool Target as % of Household Wealth",
+    unit="percent",
+    formula="PRIZE_POOL_TARGET_ANNUAL_DEPOSITS / GLOBAL_HOUSEHOLD_WEALTH_USD",
+    inputs=["PRIZE_POOL_TARGET_ANNUAL_DEPOSITS", "GLOBAL_HOUSEHOLD_WEALTH_USD"],
+    compute=lambda ctx: ctx["PRIZE_POOL_TARGET_ANNUAL_DEPOSITS"] / ctx["GLOBAL_HOUSEHOLD_WEALTH_USD"],
+    keywords=["prize", "pool", "wealth", "share", "feasibility"],
+    latex_symbol=r"d_{wealth}",
+)
+
 # Cumulative treaty funding over 20 years WITH IAB ratchet expansion
 TREATY_CUMULATIVE_20YR_WITH_RATCHET = Parameter(
     GLOBAL_MILITARY_SPENDING_ANNUAL_2024 * (
@@ -7575,11 +7684,13 @@ GLOBAL_POPULATION_ACTIVISM_THRESHOLD_PCT = Parameter(
     0.035,
     source_ref=ReferenceID.N3_5_RULE,
     source_type="external",
-    description="Critical mass threshold for social change (3.5% rule)",
+    description="Critical mass threshold for social change (3.5% rule). Chenoweth studied national "
+                "regime changes; applying to a global treaty adds uncertainty. Lower bound: some movements "
+                "succeeded at ~1%. Upper bound: entrenched defense-industry opposition and weaker signal "
+                "from digital signatures vs sustained protest may require up to 10%.",
     display_name="Critical Mass Threshold for Social Change",
     unit="rate",
-    hide_ci=True,  
-    confidence_interval=(0.025, 0.045),  # Range 2.5-4.5% based on different studies
+    confidence_interval=(0.01, 0.10),  # 1-10%: Chenoweth national data applied to global treaty context
     distribution="lognormal",
     keywords=["4%", "people", "worldwide", "citizens", "individuals", "inhabitants", "persons"],
     latex_symbol=r"Threshold_{activism}",  # LaTeX symbol for equations
@@ -7588,7 +7699,8 @@ GLOBAL_POPULATION_ACTIVISM_THRESHOLD_PCT = Parameter(
 TREATY_CAMPAIGN_VOTING_BLOC_TARGET = Parameter(
     GLOBAL_POPULATION_2024 * GLOBAL_POPULATION_ACTIVISM_THRESHOLD_PCT,
     source_type="calculated",
-    description="Target voting bloc size for campaign (3.5% of global population - critical mass for social change)",
+    description="Target voting bloc size for campaign (3.5% of global population - critical mass for social change). "
+                "Wide CI reflects uncertainty in applying Chenoweth's national threshold to global treaty adoption.",
     display_name="Target Voting Bloc Size for Campaign",
     unit="of people",
     formula="GLOBAL_POPULATION × 3.5%",
@@ -7596,7 +7708,6 @@ TREATY_CAMPAIGN_VOTING_BLOC_TARGET = Parameter(
     inputs=['GLOBAL_POPULATION_2024', 'GLOBAL_POPULATION_ACTIVISM_THRESHOLD_PCT'],
     compute=lambda ctx: ctx["GLOBAL_POPULATION_2024"] * ctx["GLOBAL_POPULATION_ACTIVISM_THRESHOLD_PCT"],
     latex_symbol=r"N_{voters,target}",  # LaTeX symbol for equations
-    hide_ci=True,  # CI clutters display for this target figure
 )  # 280M people = 3.5% of 8B (critical mass threshold)
 
 # Per-voter impact (total impact ÷ voting bloc target)
@@ -7625,6 +7736,23 @@ VOTER_SUFFERING_HOURS_PREVENTED = Parameter(
     inputs=['DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_SUFFERING_HOURS', 'TREATY_CAMPAIGN_VOTING_BLOC_TARGET'],
     compute=lambda ctx: ctx["DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_SUFFERING_HOURS"] / ctx["TREATY_CAMPAIGN_VOTING_BLOC_TARGET"],
     latex_symbol=r"Hours_{suffer,voter}",
+)
+
+# VOTE token potential value (prize pool ceiling ÷ voting bloc)
+VOTE_TOKEN_POTENTIAL_VALUE = Parameter(
+    PRIZE_POOL_MAX_CEILING / TREATY_CAMPAIGN_VOTING_BLOC_TARGET,
+    source_type="calculated",
+    description="Potential value of a single VOTE token if the prize pool reaches its theoretical "
+                "ceiling (all global savings deposited as PRIZE tokens over the accumulation period). "
+                "Wide CI reflects uncertainty in both pool size and required voter count.",
+    display_name="VOTE Token Potential Value",
+    unit="USD",
+    formula="PRIZE_POOL_MAX_CEILING / TREATY_CAMPAIGN_VOTING_BLOC_TARGET",
+    latex=r"V_{vote} = \frac{Pool_{max}}{N_{voters,target}}",
+    inputs=["PRIZE_POOL_MAX_CEILING", "TREATY_CAMPAIGN_VOTING_BLOC_TARGET"],
+    compute=lambda ctx: ctx["PRIZE_POOL_MAX_CEILING"] / ctx["TREATY_CAMPAIGN_VOTING_BLOC_TARGET"],
+    keywords=["vote", "token", "value", "prize", "pool", "incentive", "recruitment"],
+    latex_symbol=r"V_{vote}",
 )
 
 # Historical & Comparison Multipliers
@@ -10193,10 +10321,12 @@ GLOBAL_HOUSEHOLD_WEALTH_USD = Parameter(
     454e12,
     source_ref=ReferenceID.CS_GLOBAL_WEALTH_REPORT_2023,
     source_type="external",
+    confidence="high",
     description="Total global household wealth (2022/2023 estimate)",
     display_name="Global Household Wealth",
     unit="USD",
     keywords=["wealth", "household", "global", "assets", "capital"],
+    distribution="fixed",
     latex_symbol=r"Wealth_{household}",  # LaTeX symbol for equations
 )  # $454T
 

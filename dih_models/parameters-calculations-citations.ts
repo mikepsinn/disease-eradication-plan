@@ -982,11 +982,21 @@ export const GLOBAL_POPULATION_ACTIVISM_THRESHOLD_PCT: Parameter = {
   value: 0.035,
   unit: "rate",
   displayName: "Critical Mass Threshold for Social Change",
-  description: "Critical mass threshold for social change (3.5% rule)",
+  description: "Critical mass threshold for social change (3.5% rule). Chenoweth studied national regime changes; applying to a global treaty adds uncertainty. Lower bound: some movements succeeded at ~1%. Upper bound: entrenched defense-industry opposition and weaker signal from digital signatures vs sustained protest may require up to 10%.",
   sourceType: "external",
   sourceRef: "3-5-rule",
   confidence: "high",
-  confidenceInterval: [0.025, 0.045],
+  confidenceInterval: [0.01, 0.1],
+};
+
+export const GLOBAL_SAVINGS_RATE_PCT: Parameter = {
+  value: 0.27,
+  unit: "percent",
+  displayName: "Global Gross Savings Rate",
+  description: "Global gross savings as share of GDP (World Bank, ~27% average 2023-2024)",
+  sourceType: "external",
+  sourceRef: "world-bank-gross-savings-2023",
+  confidence: "high",
 };
 
 export const GLOBAL_SYMPTOMATIC_DISEASE_TREATMENT_ANNUAL: Parameter = {
@@ -3373,6 +3383,17 @@ export const GLOBAL_ANNUAL_INFRASTRUCTURE_DESTRUCTION_CONFLICT: Parameter = {
   latex: "\\begin{gathered}\nDamage_{infra,total} \\\\\n= Damage_{comms} + Damage_{edu} + Damage_{energy} \\\\\n+ Damage_{health} + Damage_{transport} + Damage_{water} \\\\\n= \\$298B + \\$234B + \\$422B + \\$166B + \\$487B + \\$268B \\\\\n= \\$1.88T\n\\end{gathered}",
 };
 
+export const GLOBAL_ANNUAL_SAVINGS: Parameter = {
+  value: 31050000000000.004,
+  unit: "USD",
+  displayName: "Global Annual Savings",
+  description: "Global annual savings in USD (savings rate × GDP)",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "GLOBAL_SAVINGS_RATE_PCT × GLOBAL_GDP_2025",
+  latex: "\\begin{gathered}\nS_{annual} \\\\\n= s_{global} \\times GDP_{global} \\\\\n= 27\\% \\times \\$115T \\\\\n= \\$31.1T\n\\end{gathered}",
+};
+
 export const GLOBAL_ANNUAL_TRADE_DISRUPTION_CONFLICT: Parameter = {
   value: 616000000000.0,
   unit: "USD/year",
@@ -4110,6 +4131,72 @@ export const PRIZE_ESCROW_100_RETURN_MULTIPLE: Parameter = {
   latex: "\\begin{gathered}\nk_{escrow} \\\\\n= (1 + r_{escrow})^{T_{escrow}} \\\\\n= (1 + 10\\%)^{15} \\\\\n= 4.18\\times\n\\end{gathered}",
 };
 
+export const PRIZE_POOL_FV_ANNUITY_FACTOR: Parameter = {
+  value: 31.77248169415656,
+  unit: "ratio",
+  displayName: "Prize Pool FV Annuity Factor",
+  description: "Future-value annuity factor for prize pool accumulation at escrow yield over accumulation period",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "((1 + PRIZE_ESCROW_YIELD_RATE)^PRIZE_ESCROW_ACCUMULATION_YEARS - 1) / PRIZE_ESCROW_YIELD_RATE",
+  latex: "\\begin{gathered}\nFV_{annuity} \\\\\n= \\frac{(1 + r_{escrow})^{T_{escrow}} - 1}{r_{escrow}}\n\\end{gathered}",
+};
+
+export const PRIZE_POOL_MAX_CEILING: Parameter = {
+  value: 986535556603561.4,
+  unit: "USD",
+  displayName: "Prize Pool Maximum Ceiling",
+  description: "Theoretical maximum prize pool if all global savings flowed into PRIZE tokens over the accumulation period",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "GLOBAL_ANNUAL_SAVINGS × PRIZE_POOL_FV_ANNUITY_FACTOR",
+  latex: "\\begin{gathered}\nPool_{max} \\\\\n= S_{annual} \\times \\frac{(1 + r_{escrow})^{T_{escrow}} - 1}{r_{escrow}}\n\\end{gathered}",
+};
+
+export const PRIZE_POOL_TARGET_ANNUAL_DEPOSITS: Parameter = {
+  value: 3178851465624.589,
+  unit: "USD/year",
+  displayName: "Prize Pool Required Annual Deposits",
+  description: "Annual deposits required for prize pool to reach the dysfunction tax target ($101T) over the accumulation period",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "POLITICAL_DYSFUNCTION_GLOBAL_OPPORTUNITY_COST_TOTAL / PRIZE_POOL_FV_ANNUITY_FACTOR",
+  latex: "D_{annual} = \\frac{O_{total}}{FV_{annuity}}",
+};
+
+export const PRIZE_POOL_TARGET_PCT_GDP: Parameter = {
+  value: 0.027642186657605122,
+  unit: "percent",
+  displayName: "Prize Pool Target as % of Global GDP",
+  description: "Required annual deposits as share of global GDP to reach dysfunction tax target",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "PRIZE_POOL_TARGET_ANNUAL_DEPOSITS / GLOBAL_GDP_2025",
+  latex: "\\begin{gathered}\nd_{GDP} = \\frac{D_{annual}}{GDP_{global}} = \\frac{\\$3.18T}{\\$115T} = 2.76\\%\n\\\\[0.5em]\n\\text{where } D_{annual} = \\frac{O_{total}}{FV_{annuity}}\n\\\\[0.5em]\n\\text{where } O_{total} = O_{health} + O_{science} + O_{lead} + O_{migration} = \\$34T + \\$4T + \\$6T + \\$57T = \\$101T\n\\\\[0.5em]\n\\text{where } FV_{annuity} = \\frac{(1 + r_{escrow})^{T_{escrow}} - 1}{r_{escrow}}\n\\end{gathered}",
+};
+
+export const PRIZE_POOL_TARGET_PCT_SAVINGS: Parameter = {
+  value: 0.10237846910224117,
+  unit: "percent",
+  displayName: "Prize Pool Target as % of Global Savings",
+  description: "Required annual deposits as share of global savings to reach dysfunction tax target",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "PRIZE_POOL_TARGET_ANNUAL_DEPOSITS / GLOBAL_ANNUAL_SAVINGS",
+  latex: "\\begin{gathered}\nd_{savings} = \\frac{D_{annual}}{S_{annual}} = \\frac{\\$3.18T}{\\$31.1T} = 10.2\\%\n\\\\[0.5em]\n\\text{where } D_{annual} = \\frac{O_{total}}{FV_{annuity}}\n\\\\[0.5em]\n\\text{where } O_{total} = O_{health} + O_{science} + O_{lead} + O_{migration} = \\$34T + \\$4T + \\$6T + \\$57T = \\$101T\n\\\\[0.5em]\n\\text{where } FV_{annuity} = \\frac{(1 + r_{escrow})^{T_{escrow}} - 1}{r_{escrow}}\n\\\\[0.5em]\n\\text{where } S_{annual} = s_{global} \\times GDP_{global} = 27\\% \\times \\$115T = \\$31.1T\n\\end{gathered}",
+};
+
+export const PRIZE_POOL_TARGET_PCT_WEALTH: Parameter = {
+  value: 0.007001875474944028,
+  unit: "percent",
+  displayName: "Prize Pool Target as % of Household Wealth",
+  description: "Required annual deposits as share of global household wealth to reach dysfunction tax target",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "PRIZE_POOL_TARGET_ANNUAL_DEPOSITS / GLOBAL_HOUSEHOLD_WEALTH_USD",
+  latex: "\\begin{gathered}\nd_{wealth} = \\frac{D_{annual}}{Wealth_{household}} = \\frac{\\$3.18T}{\\$454T} = 0.7\\%\n\\\\[0.5em]\n\\text{where } D_{annual} = \\frac{O_{total}}{FV_{annuity}}\n\\\\[0.5em]\n\\text{where } O_{total} = O_{health} + O_{science} + O_{lead} + O_{migration} = \\$34T + \\$4T + \\$6T + \\$57T = \\$101T\n\\\\[0.5em]\n\\text{where } FV_{annuity} = \\frac{(1 + r_{escrow})^{T_{escrow}} - 1}{r_{escrow}}\n\\end{gathered}",
+};
+
 export const RECOVERY_TRIAL_COST_REDUCTION_FACTOR: Parameter = {
   value: 82.0,
   unit: "multiplier",
@@ -4337,7 +4424,7 @@ export const TREATY_CAMPAIGN_VOTING_BLOC_TARGET: Parameter = {
   value: 280000000.0,
   unit: "of people",
   displayName: "Target Voting Bloc Size for Campaign",
-  description: "Target voting bloc size for campaign (3.5% of global population - critical mass for social change)",
+  description: "Target voting bloc size for campaign (3.5% of global population - critical mass for social change). Wide CI reflects uncertainty in applying Chenoweth's national threshold to global treaty adoption.",
   sourceType: "calculated",
   confidence: "high",
   formula: "GLOBAL_POPULATION × 3.5%",
@@ -4970,6 +5057,17 @@ export const VOTER_SUFFERING_HOURS_PREVENTED: Parameter = {
   confidence: "high",
   formula: "DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_SUFFERING_HOURS ÷ TREATY_CAMPAIGN_VOTING_BLOC_TARGET",
   latex: "\\begin{gathered}\nHours_{suffer,voter} = \\frac{Hours_{suffer,max}}{N_{voters,target}} = \\frac{1930T}{280M} = 6.9M\n\\\\[0.5em]\n\\text{where } Hours_{suffer,max} = DALYs_{max} \\times Pct_{YLD} \\times 8760 = 565B \\times 0.39 \\times 8760 = 1930T\n\\\\[0.5em]\n\\text{where } DALYs_{max} = DALYs_{global,ann} \\times Pct_{avoid,DALY} \\times T_{accel,max} = 2.88B \\times 92.6\\% \\times 212 = 565B\n\\\\[0.5em]\n\\text{where } T_{accel,max} = T_{accel} + T_{lag} = 204 + 8.2 = 212\n\\\\[0.5em]\n\\text{where } T_{accel} = T_{first,SQ} \\times \\left(1 - \\frac{1}{k_{capacity}}\\right) = 222 \\times \\left(1 - \\frac{1}{12.3}\\right) = 204\n\\\\[0.5em]\n\\text{where } T_{first,SQ} = T_{queue,SQ} \\times 0.5 = 443 \\times 0.5 = 222\n\\\\[0.5em]\n\\text{where } T_{queue,SQ} = \\frac{N_{untreated}}{Treatments_{new,ann}} = \\frac{6{,}650}{15} = 443\n\\\\[0.5em]\n\\text{where } N_{untreated} = N_{rare} \\times 0.95 = 7{,}000 \\times 0.95 = 6{,}650\n\\\\[0.5em]\n\\text{where } k_{capacity} = \\frac{N_{fundable,dFDA}}{Slots_{curr}} = \\frac{23.4M}{1.9M} = 12.3\n\\\\[0.5em]\n\\text{where } N_{fundable,dFDA} = \\frac{Subsidies_{dFDA,ann}}{Cost_{pragmatic,pt}} = \\frac{\\$21.8B}{\\$929} = 23.4M\n\\\\[0.5em]\n\\text{where } Subsidies_{dFDA,ann} = Funding_{dFDA,ann} - OPEX_{dFDA} = \\$21.8B - \\$40M = \\$21.8B\n\\\\[0.5em]\n\\text{where } OPEX_{dFDA} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \\$15M + \\$10M + \\$8M + \\$5M + \\$2M = \\$40M\n\\\\[0.5em]\n\\text{where } N_{voters,target} = Pop_{global} \\times Threshold_{activism} = 8B \\times 3.5\\% = 280M\n\\end{gathered}",
+};
+
+export const VOTE_TOKEN_POTENTIAL_VALUE: Parameter = {
+  value: 3523341.273584148,
+  unit: "USD",
+  displayName: "VOTE Token Potential Value",
+  description: "Potential value of a single VOTE token if the prize pool reaches its theoretical ceiling (all global savings deposited as PRIZE tokens over the accumulation period). Wide CI reflects uncertainty in both pool size and required voter count.",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "PRIZE_POOL_MAX_CEILING / TREATY_CAMPAIGN_VOTING_BLOC_TARGET",
+  latex: "V_{vote} = \\frac{Pool_{max}}{N_{voters,target}}",
 };
 
 export const WAR_COSTS_CUMULATIVE_20YR_CURRENT_TRAJECTORY: Parameter = {
@@ -6460,6 +6558,7 @@ export const parameters = {
   GLOBAL_POPULATION_2040_PROJECTED,
   GLOBAL_POPULATION_2045_PROJECTED,
   GLOBAL_POPULATION_ACTIVISM_THRESHOLD_PCT,
+  GLOBAL_SAVINGS_RATE_PCT,
   GLOBAL_SYMPTOMATIC_DISEASE_TREATMENT_ANNUAL,
   GLOBAL_YLD_PROPORTION_OF_DALYS,
   HUMAN_GENOME_PROJECT_TOTAL_ECONOMIC_IMPACT,
@@ -6677,6 +6776,7 @@ export const parameters = {
   GLOBAL_ANNUAL_HUMAN_COST_TERROR_ATTACKS,
   GLOBAL_ANNUAL_HUMAN_LIFE_LOSSES_CONFLICT,
   GLOBAL_ANNUAL_INFRASTRUCTURE_DESTRUCTION_CONFLICT,
+  GLOBAL_ANNUAL_SAVINGS,
   GLOBAL_ANNUAL_TRADE_DISRUPTION_CONFLICT,
   GLOBAL_ANNUAL_WAR_DIRECT_COSTS_TOTAL,
   GLOBAL_ANNUAL_WAR_INDIRECT_COSTS_TOTAL,
@@ -6743,6 +6843,12 @@ export const parameters = {
   PRAGMATIC_TRIAL_COST_PER_QALY,
   PRIZE_ESCROW_100_COMPOUND_RETURN,
   PRIZE_ESCROW_100_RETURN_MULTIPLE,
+  PRIZE_POOL_FV_ANNUITY_FACTOR,
+  PRIZE_POOL_MAX_CEILING,
+  PRIZE_POOL_TARGET_ANNUAL_DEPOSITS,
+  PRIZE_POOL_TARGET_PCT_GDP,
+  PRIZE_POOL_TARGET_PCT_SAVINGS,
+  PRIZE_POOL_TARGET_PCT_WEALTH,
   RECOVERY_TRIAL_COST_REDUCTION_FACTOR,
   RECOVERY_TRIAL_TOTAL_QALYS_GENERATED,
   SHARING_BREAKEVEN_ONE_IN_TREATY,
@@ -6821,6 +6927,7 @@ export const parameters = {
   VICTORY_BOND_ANNUAL_RETURN_PCT,
   VOTER_LIVES_SAVED,
   VOTER_SUFFERING_HOURS_PREVENTED,
+  VOTE_TOKEN_POTENTIAL_VALUE,
   WAR_COSTS_CUMULATIVE_20YR_CURRENT_TRAJECTORY,
   WAR_COSTS_SAVED_PEACE_TRAJECTORY_20YR,
   WILLING_TRIAL_PARTICIPANTS_GLOBAL,
@@ -8819,6 +8926,19 @@ export const citations: Record<string, Citation> = {
         URL: "https://www.who.int/data/gho/data/themes/mortality-and-global-health-estimates/ghe-life-expectancy-and-healthy-life-expectancy",
         note: "WHO, 2024, Life Expectancy",
   },
+  "world-bank-gross-savings-2023": {
+        id: "world-bank-gross-savings-2023",
+        type: "webpage",
+        title: "Gross Savings (% of GDP)",
+        author: [
+          {
+            literal: "World Bank"
+          },
+        ],
+        issued: { 'date-parts': [[2024]] },
+        URL: "https://data.worldbank.org/indicator/NY.GNS.ICTR.ZS?locations=1W",
+        note: "World Development Indicators, indicator NY.GNS.ICTR.ZS. Global average ~27% of GDP (2023-2024).",
+  },
   "world-bank-trade-disruption-conflict": {
         id: "world-bank-trade-disruption-conflict",
         type: "article-journal",
@@ -8877,11 +8997,11 @@ export const citations: Record<string, Citation> = {
 
 /** Summary statistics */
 export const PARAMETER_STATS = {
-  total: 591,
-  external: 197,
-  calculated: 269,
+  total: 600,
+  external: 198,
+  calculated: 277,
   definitions: 125,
-  citations: 140,
+  citations: 141,
 } as const;
 
 // ============================================================================

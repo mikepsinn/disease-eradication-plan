@@ -18,8 +18,8 @@ setup_chart_style()
 # Parameter values
 
 central_value = 0.035
-low = 0.025
-high = 0.045
+low = 0.01
+high = 0.1
 dist_type = "lognormal"
 display_name = "Critical Mass Threshold for Social Change"
 unit = "rate"

@@ -26,8 +26,8 @@ baseline = 280000000.0
 
 drivers = ['GLOBAL_POPULATION_ACTIVISM_THRESHOLD_PCT', 'GLOBAL_POPULATION_2024']
 driver_labels = ['Critical Mass Threshold for Social Change', 'Global Population in 2024']
-impacts_low = [-80000000.0, -7000000.0]
-impacts_high = [80000000.0, 7000000.0]
+impacts_low = [-200000000.0, -7000000.0]
+impacts_high = [520000000.0, 7000000.0]
 
 # Convert deltas to absolute values (baseline + delta)
 

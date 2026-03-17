@@ -1,6 +1,6 @@
 project:
   type: website
-  output-dir: _site/least-bad-idea-prize
+  output-dir: _site/gdp-trajectories
   execute-dir: project
   resources:
     - knowledge/data/
@@ -15,22 +15,20 @@ project:
 
 # Custom fields for render-quarto.py
 dih-render:
-  emoji: "🏆"
-  index-source: knowledge/strategy/earth-optimization-prize.qmd
+  emoji: "📉"
+  index-source: knowledge/economics/gdp-trajectories.qmd
   fallback-404-redirect-domain: https://manual.WarOnDisease.org
-  netlify-site-id: "4b864c23-3f9e-4a83-a6dc-9a2f7690eb80"
-  netlify-cname: "least-bad-idea-prize-warondisease-org.netlify.app"
+  pdf-output-file: gdp-trajectories-paper.pdf
+  netlify-site-id: "7459777b-36c9-45ef-9307-f47434d0acc2"
+  netlify-cname: "gdp-trajectories-warondisease-org.netlify.app"
   show-confidence-intervals: true
   concept-terms:
-    - term: "Earth Optimization Prize"
+    - term: "Destructive Economy"
+      manual-target: knowledge/economics/gdp-trajectories.qmd
       aliases:
-        - "Least Bad Idea Prize"
-        - "Least Bad Idea in the World Prize"
-        - "LBIP"
-        - "implementation prize"
-      manual-target: knowledge/strategy/earth-optimization-prize.qmd
-  # Image generation prompts (used by scripts/images/generate-project-branding-images.ts)
-  favicon-prompt: "A trophy with a checkmark and mathematical symbols, minimalist design."
+        - "Parasitic Economy"
+        - "GDP Trajectories"
+  favicon-prompt: "A fork in a road, one path ascending to stars, the other descending into flames."
 
 profiles:
   default:
@@ -46,17 +44,21 @@ author:
         url: https://acceleratedmedicine.org
 
 website:
-  title: "The Earth Optimization Prize"
-  description: "An outcome-based charity with two terminal metrics (median healthy life years and median after-tax income), a treasury that releases when people stop dying, and wishocratic pairwise comparison to allocate credit. The Earth Optimization Plan v1 is the terrible starting benchmark. v2 is whatever beats it."
-  site-url: https://prize.warondisease.org
-  favicon: assets/icons/least-bad-idea-prize-favicon.png
+  title: "Choose Your Own Earth: Would You Like the Unimaginable Prosperity or the Civilizational Collapse in 15 Years?"
+  description: "Your destructive economy (military spending plus cybercrime) is already 11.5% of GDP and growing faster than your productive economy. At current rates, it reaches the Soviet collapse threshold in 8 years and exceeds productive output in 15. This paper models two GDP trajectories: the optimized path under military-to-medical reallocation, and the default path to civilizational collapse."
+  site-url: https://gdp-trajectories.warondisease.org
+  favicon: assets/icons/gdp-trajectories-favicon.png
   page-navigation: true
   page-footer:
     left: "© 2025 [Institute for Accelerated Medicine](https://acceleratedmedicine.org) | [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)"
-    center: "[PDF](/least-bad-idea-prize.pdf) | [All Papers](https://manual.warondisease.org/knowledge/papers.html)"
+    center: "[PDF](/gdp-trajectories-paper.pdf) | [All Papers](https://manual.warondisease.org/knowledge/papers.html)"
     right: "[VOTE](https://WarOnDisease.org)"
   navbar:
     right:
+      - text: "1% Treaty"
+        href: https://1-pct-treaty-impact.warondisease.org
+      - text: "Peace Dividend"
+        href: https://manual.warondisease.org/knowledge/economics/peace-dividend.html
       - text: "Calculations"
         href: knowledge/appendix/parameters-and-calculations.qmd
       - text: "VOTE"
@@ -65,14 +67,14 @@ website:
 execute:
   fig-path: "knowledge/figures/"
   cache: false
-  freeze: auto  # Only re-run cells when content changes
+  freeze: auto
   daemon: 300
   daemon-restart: false
   env:
     PYTHONPATH: "."
 
 metadata:
-  importance: 80
+  importance: 97
   creator: "Mike P. Sinn"
   orcid: "0009-0006-0212-1094"
   primary-author: "Mike P. Sinn"
@@ -83,31 +85,31 @@ metadata:
   author-website: "https://mikesinn.com"
   contact: "mike@warondisease.org"
   language: "en-US"
-  subject: "Mechanism Design, Prize Design, Public Choice, Governance Reform, Implementation Markets"
-  category: "Academic Paper, Mechanism Design, Prize Theory, Public Policy"
-  coi-statement: "The author declares no competing interests. The author also notes that designing a prize for the best governance mechanism while simultaneously proposing a governance mechanism is not a conflict of interest; it is a falsifiability commitment."
+  subject: "Macroeconomics, GDP Trajectories, Military Spending, Cybercrime, Civilizational Risk, Peace Economics"
+  category: "Academic Paper, Macroeconomics, Policy Analysis"
+  coi-statement: "The author declares no competing interests, unless you count a preference for civilization continuing to exist, which the author shares with most economists and all of their retirement accounts."
   data-availability: "All data and code used in this analysis are publicly available at https://github.com/mikepsinn/disease-eradication-plan"
-  ethics-statement: "This research did not involve human subjects. The prize it describes would involve all of them, which is arguably more ethical than the current arrangement where most of them are ignored."
-  funding: "This research received no funding. The prize described herein is designed to fund itself, but has not yet done so."
+  ethics-statement: "This research did not involve human subjects. The destructive economy was not consulted about being modeled, as it was busy growing at 12.6% per year."
+  funding: "This research received no funding. The author notes that the cost of producing this paper is a rounding error on the $13.2 trillion destructive economy it documents."
   github-profile: "https://github.com/mikepsinn"
   linkedin: "https://www.linkedin.com/in/mikesinn"
   orcid-url: "https://orcid.org/0009-0006-0212-1094"
   google-scholar: "https://scholar.google.com/citations?user=RjDd_qcAAAAJ"
   keywords:
-    - mechanism-design
-    - prize-design
-    - public-choice
-    - governance-reform
-    - implementation-markets
-    - cost-effectiveness
-    - DALY
-    - net-societal-value
-    - resource-allocation
-    - welfare-optimization
-    - incentive-compatibility
-  version: "0.9"
+    - gdp-trajectories
+    - destructive-economy
+    - parasitic-economy
+    - military-spending
+    - cybercrime
+    - civilizational-collapse
+    - peace-dividend
+    - economic-growth
+    - reallocation
+    - compound-growth
+    - expected-value
+  version: "0.1"
   edition: "Working Draft"
-  copyright: "© 2025 Mike P. Sinn"
+  copyright: "© 2025 The Institute for Accelerated Medicine"
   copyright-year: "2025"
   license: "CC BY-NC 4.0"
   license-url: "https://creativecommons.org/licenses/by-nc/4.0/"
@@ -120,23 +122,26 @@ metadata:
   issue-url: "https://github.com/mikepsinn/disease-eradication-plan/issues"
   source-url: "https://github.com/mikepsinn/disease-eradication-plan"
   geographic-coverage: "Global"
-  audience: "Researchers, Policy Makers, Mechanism Designers, Philanthropists, Economists"
+  audience: "Policy Makers, Economists, Defense Analysts, Peace Researchers, Risk Analysts"
   format: "Working Paper"
   type: "Academic"
-  genre: "Political Science, Economics, Mechanism Design, Prize Theory"
+  genre: "Macroeconomics, Peace Economics, Civilizational Risk Analysis"
   medium: "Digital"
   twitter-site: "https://x.com/warondisease"
   twitter-creator: "https://x.com/warondisease"
-  og-site-name: "The Earth Optimization Prize"
+  og-site-name: "Choose Your Own Earth"
 
-  # Open Graph metadata (enables per-page custom OG images)
+  # Identifiers
+  doi: ""
+
+  # Open Graph metadata
   open-graph: true
-  image: "https://prize.warondisease.org/assets/og/least-bad-idea-prize-og-1200x630.jpg"
+  image: ""
 
   # Publication tracking
   publishing:
     own-site:
-      url: "https://prize.warondisease.org"
+      url: "https://gdp-trajectories.warondisease.org"
       status: pending
     preprints:
       - platform: zenodo
@@ -146,8 +151,16 @@ metadata:
         status: pending
         url: ""
     journals:
-      - name: "Public Choice"
+      - name: "Journal of Peace Research"
+        tier: 1
+        status: target
+        url: ""
+      - name: "Defence and Peace Economics"
         tier: 2
+        status: target
+        url: ""
+      - name: "Journal of Conflict Resolution"
+        tier: 1
         status: target
         url: ""
 
@@ -158,7 +171,7 @@ language:
 
 # Bibliography: Single source of truth for all citations
 bibliography: references.bib
-csl: nature-annotated.csl  # Renders 'abstract' field (quotes) in bibliography
+csl: nature-annotated.csl
 
 jupyter: dih-project-kernel
 
@@ -170,7 +183,7 @@ format:
     mermaid:
       theme: neutral
     echo: false
-    number-sections: false
+    number-sections: true
     toc: true
     toc-depth: 3
     css:
@@ -185,11 +198,11 @@ format:
     include-in-header:
       - text: |
           <!-- Icons (project-specific) -->
-          <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/least-bad-idea-prize-favicon-32x32.png">
-          <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/least-bad-idea-prize-favicon-16x16.png">
-          <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/least-bad-idea-prize-apple-touch-icon.png">
-          <link rel="icon" type="image/png" sizes="192x192" href="/assets/icons/least-bad-idea-prize-android-chrome-192x192.png">
-          <link rel="icon" type="image/png" sizes="512x512" href="/assets/icons/least-bad-idea-prize-android-chrome-512x512.png">
+          <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/gdp-trajectories-favicon-32x32.png">
+          <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/gdp-trajectories-favicon-16x16.png">
+          <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/gdp-trajectories-apple-touch-icon.png">
+          <link rel="icon" type="image/png" sizes="192x192" href="/assets/icons/gdp-trajectories-android-chrome-192x192.png">
+          <link rel="icon" type="image/png" sizes="512x512" href="/assets/icons/gdp-trajectories-android-chrome-512x512.png">
       - file: assets/html/google-analytics.html
       - file: assets/html/hypothesis.html
       - file: assets/html/fonts-preload.html
@@ -200,25 +213,25 @@ format:
     code-tools: false
     filters: [assets/filters/live-version-note.lua]
   pdf:
-    output-file: "least-bad-idea-prize.pdf"
+    output-file: "gdp-trajectories-paper.pdf"
     documentclass: article
     institute: "Institute for Accelerated Medicine"
     echo: false
     toc: true
     toc-depth: 3
-    number-sections: false
+    number-sections: true
     colorlinks: true
     link-citations: true
+    date: ""
     include-in-header:
       - callout-bw.tex
       - institute-header.tex
       - text: |
-          \paperurl{https://prize.warondisease.org}
+          \paperurl{https://gdp-trajectories.warondisease.org}
     geometry:
       - top=1in
       - bottom=1in
       - left=1in
       - right=1in
     fontsize: 11pt
-    date: ""
     filters: [assets/filters/live-version-note.lua]

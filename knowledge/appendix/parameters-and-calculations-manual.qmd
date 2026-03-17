@@ -36,15 +36,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 467 parameters used in the analysis, organized by type:
+This appendix documents all 476 parameters used in the analysis, organized by type:
 
-- External sources (peer-reviewed): 159
-- Calculated values: 210
+- External sources (peer-reviewed): 160
+- Calculated values: 218
 - Core definitions: 98
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (210 parameters) • [External Data Sources](#sec-external) (159 parameters) • [Core Definitions](#sec-definitions) (98 parameters)
+[Calculated Values](#sec-calculated) (218 parameters) • [External Data Sources](#sec-external) (160 parameters) • [Core Definitions](#sec-definitions) (98 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -4899,6 +4899,38 @@ $$
 
 :::
 
+### Global Annual Savings: $31.1T {#sec-global_annual_savings}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Global annual savings in USD (savings rate × GDP)
+
+**Inputs**:
+
+- [Global Gross Savings Rate](#sec-global_savings_rate_pct) 📊: 27%
+- [Global GDP (2025)](#sec-global_gdp_2025) 📊: $115T
+
+$$
+\begin{gathered}
+S_{annual} \\
+= s_{global} \times GDP_{global} \\
+= 27\% \times \$115T \\
+= \$31.1T
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-global_annual_savings.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-global_annual_savings.qmd >}}
+
+:::
+
 ### Total Annual Trade Disruption: $616B {#sec-global_annual_trade_disruption_conflict}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -7377,6 +7409,271 @@ $$
 
 :::
 
+### Prize Pool FV Annuity Factor: 31.8:1 {#sec-prize_pool_fv_annuity_factor}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Future-value annuity factor for prize pool accumulation at escrow yield over accumulation period
+
+**Inputs**:
+
+- [Prize Escrow Annual Yield Rate](#sec-prize_escrow_yield_rate): 10%
+- [Prize Escrow Accumulation Period](#sec-prize_escrow_accumulation_years): 15 years
+
+$$
+\begin{gathered}
+FV_{annuity} \\
+= \frac{(1 + r_{escrow})^{T_{escrow}} - 1}{r_{escrow}}
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+:::
+
+### Prize Pool Maximum Ceiling: $987T {#sec-prize_pool_max_ceiling}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Theoretical maximum prize pool if all global savings flowed into PRIZE tokens over the accumulation period
+
+**Inputs**:
+
+- [Global Annual Savings](#sec-global_annual_savings) 🔢: $31.1T
+- [Prize Pool FV Annuity Factor](#sec-prize_pool_fv_annuity_factor) 🔢: 31.8:1
+
+$$
+\begin{gathered}
+Pool_{max} \\
+= S_{annual} \times \frac{(1 + r_{escrow})^{T_{escrow}} - 1}{r_{escrow}}
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-prize_pool_max_ceiling.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-prize_pool_max_ceiling.qmd >}}
+
+:::
+
+### Prize Pool Required Annual Deposits: $3.18T {#sec-prize_pool_target_annual_deposits}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual deposits required for prize pool to reach the dysfunction tax target ($101T) over the accumulation period
+
+**Inputs**:
+
+- [Global Opportunity Cost Total](#sec-political_dysfunction_global_opportunity_cost_total) 🔢: $101T
+- [Prize Pool FV Annuity Factor](#sec-prize_pool_fv_annuity_factor) 🔢: 31.8:1
+
+$$
+D_{annual} = \frac{O_{total}}{FV_{annuity}}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-prize_pool_target_annual_deposits.qmd >}}
+
+{{< include ../figures/sensitivity-table-prize_pool_target_annual_deposits.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-prize_pool_target_annual_deposits.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-prize_pool_target_annual_deposits.qmd >}}
+
+:::
+
+### Prize Pool Target as % of Global GDP: 2.76% {#sec-prize_pool_target_pct_gdp}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Required annual deposits as share of global GDP to reach dysfunction tax target
+
+**Inputs**:
+
+- [Prize Pool Required Annual Deposits](#sec-prize_pool_target_annual_deposits) 🔢: $3.18T
+- [Global GDP (2025)](#sec-global_gdp_2025) 📊: $115T
+
+$$
+\begin{gathered}
+d_{GDP} \\
+= \frac{D_{annual}}{GDP_{global}} \\
+= \frac{\$3.18T}{\$115T} \\
+= 2.76\%
+\end{gathered}
+$$
+where:
+$$
+D_{annual} = \frac{O_{total}}{FV_{annuity}}
+$$
+where:
+$$
+\begin{gathered}
+O_{total} \\
+= O_{health} + O_{science} + O_{lead} + O_{migration} \\
+= \$34T + \$4T + \$6T + \$57T \\
+= \$101T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+FV_{annuity} \\
+= \frac{(1 + r_{escrow})^{T_{escrow}} - 1}{r_{escrow}}
+\end{gathered}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-prize_pool_target_pct_gdp.qmd >}}
+
+{{< include ../figures/sensitivity-table-prize_pool_target_pct_gdp.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-prize_pool_target_pct_gdp.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-prize_pool_target_pct_gdp.qmd >}}
+
+:::
+
+### Prize Pool Target as % of Global Savings: 10.2% {#sec-prize_pool_target_pct_savings}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Required annual deposits as share of global savings to reach dysfunction tax target
+
+**Inputs**:
+
+- [Prize Pool Required Annual Deposits](#sec-prize_pool_target_annual_deposits) 🔢: $3.18T
+- [Global Annual Savings](#sec-global_annual_savings) 🔢: $31.1T
+
+$$
+\begin{gathered}
+d_{savings} \\
+= \frac{D_{annual}}{S_{annual}} \\
+= \frac{\$3.18T}{\$31.1T} \\
+= 10.2\%
+\end{gathered}
+$$
+where:
+$$
+D_{annual} = \frac{O_{total}}{FV_{annuity}}
+$$
+where:
+$$
+\begin{gathered}
+O_{total} \\
+= O_{health} + O_{science} + O_{lead} + O_{migration} \\
+= \$34T + \$4T + \$6T + \$57T \\
+= \$101T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+FV_{annuity} \\
+= \frac{(1 + r_{escrow})^{T_{escrow}} - 1}{r_{escrow}}
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+S_{annual} \\
+= s_{global} \times GDP_{global} \\
+= 27\% \times \$115T \\
+= \$31.1T
+\end{gathered}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-prize_pool_target_pct_savings.qmd >}}
+
+{{< include ../figures/sensitivity-table-prize_pool_target_pct_savings.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-prize_pool_target_pct_savings.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-prize_pool_target_pct_savings.qmd >}}
+
+:::
+
+### Prize Pool Target as % of Household Wealth: 0.7% {#sec-prize_pool_target_pct_wealth}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Required annual deposits as share of global household wealth to reach dysfunction tax target
+
+**Inputs**:
+
+- [Prize Pool Required Annual Deposits](#sec-prize_pool_target_annual_deposits) 🔢: $3.18T
+- [Global Household Wealth](#sec-global_household_wealth_usd) 📊: $454T
+
+$$
+\begin{gathered}
+d_{wealth} \\
+= \frac{D_{annual}}{Wealth_{household}} \\
+= \frac{\$3.18T}{\$454T} \\
+= 0.7\%
+\end{gathered}
+$$
+where:
+$$
+D_{annual} = \frac{O_{total}}{FV_{annuity}}
+$$
+where:
+$$
+\begin{gathered}
+O_{total} \\
+= O_{health} + O_{science} + O_{lead} + O_{migration} \\
+= \$34T + \$4T + \$6T + \$57T \\
+= \$101T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+FV_{annuity} \\
+= \frac{(1 + r_{escrow})^{T_{escrow}} - 1}{r_{escrow}}
+\end{gathered}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-prize_pool_target_pct_wealth.qmd >}}
+
+{{< include ../figures/sensitivity-table-prize_pool_target_pct_wealth.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-prize_pool_target_pct_wealth.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-prize_pool_target_pct_wealth.qmd >}}
+
+:::
+
 ### RECOVERY Trial Cost Reduction Factor: 82x {#sec-recovery_trial_cost_reduction_factor}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -8828,12 +9125,12 @@ $$
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Target voting bloc size for campaign (3.5% of global population - critical mass for social change)
+Target voting bloc size for campaign (3.5% of global population - critical mass for social change). Wide CI reflects uncertainty in applying Chenoweth's national threshold to global treaty adoption.
 
 **Inputs**:
 
 - [Global Population in 2024](#sec-global_population_2024) 📊: 8 billion of people (95% CI: 7.8 billion of people - 8.2 billion of people)
-- [Critical Mass Threshold for Social Change](#sec-global_population_activism_threshold_pct) 📊: 3.5% (95% CI: 2.5% - 4.5%)
+- [Critical Mass Threshold for Social Change](#sec-global_population_activism_threshold_pct) 📊: 3.5% (95% CI: 1% - 10%)
 
 $$
 \begin{gathered}
@@ -9993,6 +10290,47 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_20.qmd >}}
+
+:::
+
+### Treaty Trajectory GDP at Year 15: $1.33 quadrillion {#sec-treaty_trajectory_gdp_year_15}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Projected global GDP at year 15 under the Treaty Trajectory: military-to-science reallocation plus disease-burden recovery only. 3-year ramp at 50% intensity + 12 years full implementation. Excludes non-health dysfunction-capital reallocation.
+
+**Inputs**:
+
+- [Global GDP (2025)](#sec-global_gdp_2025) 📊: $115T
+- [Baseline Global GDP Growth Rate](#sec-gdp_baseline_growth_rate): 2.5%
+- [Wishonia Military Reallocation Physical Max Share](#sec-wishonia_military_reallocation_physical_max_share) 🔢: 87.6%
+- [GDP Growth Boost at 30% Military Reallocation](#sec-military_redirect_gdp_boost_at_30pct): 5.5% (95% CI: 3.5% - 7.5%)
+- [R&D Spillover Multiplier](#sec-rd_spillover_multiplier): 2x (95% CI: 1.5x - 2.5x)
+- [Wishonia Disease Cure Fraction (15yr, Full Implementation)](#sec-wishonia_disease_cure_fraction_15yr) 🔢: 100%
+- [Disease Burden as % of GDP](#sec-disease_burden_gdp_drag_pct) 📊: 13%
+
+$$
+\begin{gathered}
+GDP_{treaty,15} \\
+= GDP_0(1+g_{treaty,ramp})^3(1+g_{treaty,full})^{12}
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-treaty_trajectory_gdp_year_15.qmd >}}
+
+{{< include ../figures/sensitivity-table-treaty_trajectory_gdp_year_15.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-treaty_trajectory_gdp_year_15.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-treaty_trajectory_gdp_year_15.qmd >}}
 
 :::
 
@@ -14971,6 +15309,10 @@ Total global household wealth (2022/2023 estimate)
 
 **Source**: [@cs-global-wealth-report-2023]
 
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
 *✓ High confidence*
 
 :::
@@ -15127,21 +15469,37 @@ UN World Population Prospects 2022 median projection for 2045.
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Critical mass threshold for social change (3.5% rule)
+Critical mass threshold for social change (3.5% rule). Chenoweth studied national regime changes; applying to a global treaty adds uncertainty. Lower bound: some movements succeeded at ~1%. Upper bound: entrenched defense-industry opposition and weaker signal from digital signatures vs sustained protest may require up to 10%.
 
 **Source**: [@3-5-rule]
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [2.5%, 4.5%] • Distribution: Lognormal
+**Technical**: 95% CI: [1%, 10%] • Distribution: Lognormal
 
-**What this means**: There's significant uncertainty here. The true value likely falls between 2.5% and 4.5% (±29%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: This estimate is highly uncertain. The true value likely falls between 1% and 10% (±129%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
 #### Input Distribution
 
 {{< include ../figures/distribution-global_population_activism_threshold_pct.qmd >}}
+
+*✓ High confidence*
+
+:::
+
+### Global Gross Savings Rate: 27% {#sec-global_savings_rate_pct}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Global gross savings as share of GDP (World Bank, ~27% average 2023-2024)
+
+**Source**: [@world-bank-gross-savings-2023]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
 
 *✓ High confidence*
 

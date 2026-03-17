@@ -5347,12 +5347,12 @@ $$
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Target voting bloc size for campaign (3.5% of global population - critical mass for social change)
+Target voting bloc size for campaign (3.5% of global population - critical mass for social change). Wide CI reflects uncertainty in applying Chenoweth's national threshold to global treaty adoption.
 
 **Inputs**:
 
 - [Global Population in 2024](#sec-global_population_2024) 📊: 8 billion of people (95% CI: 7.8 billion of people - 8.2 billion of people)
-- [Critical Mass Threshold for Social Change](#sec-global_population_activism_threshold_pct) 📊: 3.5% (95% CI: 2.5% - 4.5%)
+- [Critical Mass Threshold for Social Change](#sec-global_population_activism_threshold_pct) 📊: 3.5% (95% CI: 1% - 10%)
 
 $$
 \begin{gathered}
@@ -8665,15 +8665,15 @@ UN World Population Prospects 2022 median projection for 2045.
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Critical mass threshold for social change (3.5% rule)
+Critical mass threshold for social change (3.5% rule). Chenoweth studied national regime changes; applying to a global treaty adds uncertainty. Lower bound: some movements succeeded at ~1%. Upper bound: entrenched defense-industry opposition and weaker signal from digital signatures vs sustained protest may require up to 10%.
 
 **Source**: [@3-5-rule]
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [2.5%, 4.5%] • Distribution: Lognormal
+**Technical**: 95% CI: [1%, 10%] • Distribution: Lognormal
 
-**What this means**: There's significant uncertainty here. The true value likely falls between 2.5% and 4.5% (±29%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: This estimate is highly uncertain. The true value likely falls between 1% and 10% (±129%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 

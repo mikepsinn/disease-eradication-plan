@@ -36,6 +36,14 @@ _MARKDOWN_FORMAT_PATTERN = re.compile(r'[*_`]')
 _QUARTO_VAR_PATTERN = re.compile(r'\{\{<\s*var\s+([a-zA-Z0-9_]+)\s*>\}\}')
 
 
+_QUARTO_SHORTCODE_PATTERN = re.compile(r'\{\{<[^>]*>\}\}')
+_QUARTO_CALLOUT_PATTERN = re.compile(r'^:::\s*\{[^}]*\}\s*$|^:::\s*$', re.MULTILINE)
+_QUARTO_INCLUDE_PATTERN = re.compile(r'^\{\{<\s*include\s+.*>\}\}\s*$', re.MULTILINE)
+_HTML_TAG_PATTERN = re.compile(r'<[^>]+>')
+_MULTIPLE_SPACES_PATTERN = re.compile(r'[ \t]+')
+_MULTIPLE_NEWLINES_PATTERN = re.compile(r'\n{3,}')
+
+
 class SearchIndexEntry:
     """Represents a single entry in the search index."""
 
@@ -49,7 +57,8 @@ class SearchIndexEntry:
         image: Optional[str] = None,
         sections: Optional[List[str]] = None,
         published: bool = True,
-        lastmod: Optional[str] = None
+        lastmod: Optional[str] = None,
+        text: Optional[str] = None
     ):
         self.path = path
         self.url = url
@@ -60,10 +69,11 @@ class SearchIndexEntry:
         self.sections = sections or []
         self.published = published
         self.lastmod = lastmod
+        self.text = text
 
     def to_dict(self) -> Dict[str, Any]:
         """Convert to dictionary for JSON serialization."""
-        return {
+        result = {
             "path": self.path,
             "url": self.url,
             "title": self.title,
@@ -74,6 +84,9 @@ class SearchIndexEntry:
             "published": self.published,
             "lastmod": self.lastmod
         }
+        if self.text:
+            result["text"] = self.text
+        return result
 
 
 class QMDParser:
@@ -112,6 +125,42 @@ class QMDParser:
                     sections.append(heading)
 
         return sections
+
+    @staticmethod
+    def extract_body_text(content: str, max_chars: int = 5000) -> str:
+        """Extract plain body text from QMD content for search indexing.
+
+        Strips frontmatter, Quarto shortcodes, callouts, includes, HTML tags,
+        markdown formatting, and normalizes whitespace. Truncates to max_chars.
+        """
+        # Remove frontmatter
+        text = _FRONTMATTER_PATTERN.sub('', content, count=1)
+        # Remove include directives
+        text = _QUARTO_INCLUDE_PATTERN.sub('', text)
+        # Remove callout fences
+        text = _QUARTO_CALLOUT_PATTERN.sub('', text)
+        # Remove Quarto shortcodes (variables replaced separately upstream)
+        text = _QUARTO_SHORTCODE_PATTERN.sub('', text)
+        # Remove HTML tags
+        text = _HTML_TAG_PATTERN.sub('', text)
+        # Remove heading markers
+        text = re.sub(r'^#{1,6}\s+', '', text, flags=re.MULTILINE)
+        # Remove markdown links but keep text
+        text = _MARKDOWN_LINK_PATTERN.sub(r'\1', text)
+        # Remove markdown formatting chars
+        text = _MARKDOWN_FORMAT_PATTERN.sub('', text)
+        # Remove image references ![alt](url)
+        text = re.sub(r'!\[[^\]]*\]\([^\)]*\)', '', text)
+        # Remove citation references [@key]
+        text = re.sub(r'\[@[^\]]+\]', '', text)
+        # Normalize whitespace
+        text = _MULTIPLE_SPACES_PATTERN.sub(' ', text)
+        text = _MULTIPLE_NEWLINES_PATTERN.sub('\n\n', text)
+        text = text.strip()
+        # Truncate
+        if len(text) > max_chars:
+            text = text[:max_chars] + '...'
+        return text
 
 
 class SearchIndexGenerator:
@@ -461,6 +510,13 @@ class SearchIndexGenerator:
             except ValueError:
                 rel_path = str(qmd_path)
 
+            # Extract body text for full-text search / RAG
+            # Replace variables first (before stripping markdown), then extract plain text
+            content_with_vars = _QUARTO_VAR_PATTERN.sub(
+                lambda m: self.variables.get(m.group(1), m.group(0)), content
+            )
+            body_text = self.parser.extract_body_text(content_with_vars)
+
             return SearchIndexEntry(
                 path=rel_path.replace('\\', '/'),
                 url=url,
@@ -470,7 +526,8 @@ class SearchIndexGenerator:
                 image=image,
                 sections=sections,
                 published=published,
-                lastmod=lastmod
+                lastmod=lastmod,
+                text=body_text
             )
 
         except Exception as e:
