@@ -89,7 +89,7 @@ Everything the prize exists to produce is either healthy life years or income. I
 
 Registration asks two questions. First: yes or no on the 1% treaty. "Should 1% of military spending be redirected to clinical trials?" Binary, concrete, the specific political demand that politicians can act on. It does not matter which way you vote; the headcount is what matters. The registration process forces exposure to the questions and evidence, and exposure is what shifts preferences. Second: how much military vs. clinical trials? The voter sees Optimitron [@optimocracy-paper-2025] evidence (cost per DALY for military spending vs. clinical trials, lives saved per dollar, economic returns per dollar) and picks an allocation. The aggregate result from millions of people is a global citizen preferred split between war and medicine. Both questions completed, one VOTE token minted. See the companion protocol specification [@earth-optimization-protocol-2025] for the full registration and token mechanics.
 
-**5. Secondary market as signal.** VOTE tokens are tradable. Recruiters can sell early; buyers are betting the plan succeeds and recruitment credit will be valuable. The secondary market price is a live estimate of what recruitment credit is worth. This creates three price signals: IAB bond price (implementation probability), PRIZE token price (prize pool size and success probability), and VOTE token price (recruitment credit value). Each signal is useful to different actors. Together they provide a real-time, money-backed dashboard of the entire system's health. No appointed judges, no formal ranking formula. The market ranks contributors by how much other people's money they attracted to the cause.
+**5. Secondary market as signal.** VOTE tokens are tradable. Recruiters can sell early; buyers are betting the plan succeeds and recruitment credit will be valuable. The secondary market price is a live estimate of what recruitment credit is worth. This creates two price signals: PRIZE token price (prize pool size and success probability) and VOTE token price (recruitment credit value). Together they provide a real-time, money-backed dashboard of the entire system's health. No appointed judges, no formal ranking formula. The market ranks contributors by how much other people's money they attracted to the cause.
 
 **6. Brief constraints.** A proposal is disqualified if it transfers suffering to voiceless populations (foreigners, future people, nonhuman animals) rather than reducing it; fails to cover the required governance functions or replace them with something strictly better; cannot beat the baseline on cost per DALY; or gets weaker when humans act selfishly. One paragraph, not ten sections.
 
@@ -213,13 +213,9 @@ None of these mechanisms require inventing new physics. The Montreal Protocol co
 
 ## How Money Moves
 
-PRIZE tokens fund the prize pool. VOTE tokens allocate it. IABs fund the lobbying campaign. Three instruments, three pools, complementary functions. We have noticed that your species is remarkably good at collecting money for plans and then not building the plans, so the PRIZE pool only distributes when people actually stop dying.
+PRIZE tokens fund the prize pool. VOTE tokens allocate it. We have noticed that your species is remarkably good at collecting money for plans and then not building the plans, so the PRIZE pool only distributes when people actually stop dying.
 
-The **PRIZE pool** is escrowed and distributes when both global targets are met at year 15 (HALE reaches {{< var wishonia_projected_hale_year_15 >}}, median income reaches {{< var wishonia_trajectory_avg_income_year_15 >}}), proportional to VOTE holdings. Whoever recruited the most coalition gets the most prize money.
-
-The **lobbying campaign** runs on IAB capital. Bondholders earn a revenue share on success ({{< var victory_bond_annual_return_pct >}} annually), but their incentive to lobby, recruit, and fund implementation work is immediate: every action that raises implementation probability raises bond value today.
-
-Terminal metrics take years to measure, so who funds the implementation work in between? IAB bondholders do, because the work raises their bond value now and the revenue share pays them later. Your species calls this "venture capital" and considers it normal for software companies. It is apparently radical when applied to not dying. Scoring disputes use the same challenge-window mechanism described above.
+The **PRIZE pool** is escrowed and distributes when both global targets are met at year 15 (HALE reaches {{< var wishonia_projected_hale_year_15 >}}, median income reaches {{< var wishonia_trajectory_avg_income_year_15 >}}), proportional to VOTE holdings. Whoever recruited the most coalition gets the most prize money. Scoring disputes use the same challenge-window mechanism described above.
 
 ## How It Starts
 
@@ -235,7 +231,7 @@ Abstract mechanism design is harder to trust than a concrete sequence. The instr
 
 **Stage 5+: Implementation.** The [Earth Optimization Plan v1](https://manual.warondisease.org) is submitted as the **default reference package**: treaty wedge, [your decentralized FDA](../solution/dfda.qmd) [@dfda-spec-paper-2025; @dfda-impact-paper-2025] / continuous evidence generation, regulatory-delay removal, IAB adoption system, Wishocracy preference aggregation, [Optimocracy](https://optimocracy.warondisease.org) [@optimocracy-paper-2025] / [OPG](https://opg.warondisease.org) [@opg-paper-2025] / [OBG](https://obg.warondisease.org) [@obg-paper-2025] recommendation engines, and the statutory path. Bondholders self-organize the lobbying because every action that raises implementation probability raises their bond value. Once one binding path succeeds, budget authority starts shifting real resources. That first success funds the next missing modules until the whole plan is live. Implementers compete inside the winning Earth Optimization Plan v2 to supply the cheapest verified pieces, and later challengers can still replace the whole plan if they genuinely dominate it.
 
-The funnel is: the Least Bad Idea Prize stress-tests the plan. PRIZE tokens create awareness. Awareness creates referendum voters. Voters earn VOTE tokens. VOTE tokens create a financially invested coalition. The coalition makes IABs credible. IABs fund the lobbying campaign. The lobbying campaign passes the treaty. Each stage is the marketing campaign for the next one. Nobody has to coordinate this. The incentives coordinate it.
+The funnel is: the Least Bad Idea Prize stress-tests the plan. PRIZE tokens create awareness. Awareness creates referendum voters. Voters earn VOTE tokens. VOTE tokens create a financially invested coalition. The coalition provides the political pressure and financing base to pass the treaty (in the v1 plan, via IABs; see the [companion paper](../solution/incentive-alignment-bonds.qmd)). Each stage is the marketing campaign for the next one. Nobody has to coordinate this. The incentives coordinate it.
 
 ## Why Public Choice Theory Approves
 
@@ -389,7 +385,7 @@ The claims above require six protocol-level capabilities that do not yet exist. 
 
 5. **Terminal Metric Oracle.** Someone must measure global median HALY and global median income, and the protocol must accept or reject those measurements. This is the trigger for treasury release. Oracle design determines whether the entire mechanism is credible or gameable.
 
-6. **Token Mechanics.** VOTE tokens (earned by recruiting verified voters) and PRIZE tokens (philanthropic deposits into the pool) each need defined minting rules, transfer constraints, and payout triggers that work across the interoperable pool network. External financing instruments (like IABs) are tools contestants might use to cause implementation; they are not part of the prize protocol itself.
+6. **Token Mechanics.** VOTE tokens (earned by recruiting verified voters) and PRIZE tokens (philanthropic deposits into the pool) each need defined minting rules, transfer mechanics, and payout triggers that work across the interoperable pool network. External financing instruments (like IABs) are tools contestants might use to cause implementation; they are not part of the prize protocol itself.
 
 ## What v1 Claims (and What You Need to Beat)
 
