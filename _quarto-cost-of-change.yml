@@ -43,12 +43,12 @@ author:
 website:
   title: "The Price of Political Change: A Cost-Benefit Framework for Policy Incentivization"
   description: "What's the maximum cost to achieve any policy change through legal democratic channels? $25B for the US, $200B globally. For high-value reforms like military-to-health reallocation, this yields ROI exceeding 400,000:1."
-  site-url: https://cost-of-change.warondisease.org
+  site-url: https://manual.warondisease.org/knowledge/appendix/cost-of-change-analysis.html
   favicon: assets/icons/favicon.png  # TODO: Create cost-of-change-favicon.png
   page-navigation: true
   page-footer:
     left: "© 2025 [Institute for Accelerated Medicine](https://acceleratedmedicine.org) | [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)"
-    center: "[PDF](/cost-of-change-analysis.pdf) | [All Papers](https://manual.warondisease.org/knowledge/papers.html)"
+    center: "[PDF](https://manual.warondisease.org/knowledge/appendix/cost-of-change-analysis.pdf) | [All Papers](https://manual.warondisease.org/knowledge/papers.html)"
     right: "[VOTE](https://WarOnDisease.org)"
   navbar:
     right:
@@ -128,12 +128,12 @@ metadata:
 
   # Open Graph metadata
   open-graph: true
-  image: "https://cost-of-change.warondisease.org/assets/og/cost-of-change-og-1200x630.jpg"
+  image: "https://manual.warondisease.org/assets/og/cost-of-change-og-1200x630.jpg"
 
   # Publication tracking
   publishing:
     own-site:
-      url: "https://cost-of-change.warondisease.org"
+      url: "https://manual.warondisease.org/knowledge/appendix/cost-of-change-analysis.html"
       status: deployed
     preprints:
       - platform: zenodo
@@ -222,7 +222,7 @@ format:
       - callout-bw.tex
       - institute-header.tex
       - text: |
-          \paperurl{https://cost-of-change.warondisease.org}
+          \paperurl{https://manual.warondisease.org/knowledge/appendix/cost-of-change-analysis.html}
     geometry:
       - top=1in
       - bottom=1in

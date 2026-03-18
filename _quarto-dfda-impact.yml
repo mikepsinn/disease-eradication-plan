@@ -47,12 +47,12 @@ author:
 website:
   title: "Ubiquitous Pragmatic Trial Impact Analysis: How to Prevent a Year of Death and Suffering for 84 Cents"
   description: 'Only 15 diseases/year get their first treatment each year. With 6.65 thousand diseases lacking effective treatments, the backlog would take 443 years to clear. Integrating pragmatic trials into standard healthcare increases trial capacity 12.3x, cutting that timeline from 443 years to 36 years. The average untreated disease gets a treatment 212 years earlier, saving 10.7 billion deaths at $0.842 per year of healthy life saved.'
-  site-url: https://dfda-impact.warondisease.org
+  site-url: https://manual.warondisease.org/knowledge/appendix/dfda-impact-paper.html
   favicon: assets/icons/dfda-favicon.png
   page-navigation: true
   page-footer:
     left: "© 2025 [Institute for Accelerated Medicine](https://acceleratedmedicine.org) | [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)"
-    center: "[PDF](/dfda-impact-paper.pdf) | [All Papers](https://manual.warondisease.org/knowledge/papers.html)"
+    center: "[PDF](https://manual.warondisease.org/knowledge/appendix/dfda-impact-paper.pdf) | [All Papers](https://manual.warondisease.org/knowledge/papers.html)"
     right: "[VOTE](https://WarOnDisease.org)"
   navbar:
     right:
@@ -141,12 +141,12 @@ metadata:
 
   # Open Graph metadata (enables per-page custom OG images)
   open-graph: true
-  image: "https://dfda-impact.warondisease.org/assets/og/dfda-impact-og-1200x630.jpg"
+  image: "https://manual.warondisease.org/assets/og/dfda-impact-og-1200x630.jpg"
 
   # Publication tracking
   publishing:
     own-site:
-      url: "https://dfda-impact.warondisease.org"
+      url: "https://manual.warondisease.org/knowledge/appendix/dfda-impact-paper.html"
       status: deployed
     preprints:
       - platform: zenodo
@@ -236,7 +236,7 @@ format:
       - callout-bw.tex
       - institute-header.tex
       - text: |
-          \paperurl{https://dfda-impact.warondisease.org}
+          \paperurl{https://manual.warondisease.org/knowledge/appendix/dfda-impact-paper.html}
     geometry:
       - top=1in
       - bottom=1in

@@ -17,6 +17,7 @@ project:
 dih-render:
   emoji: "💰"
   index-source: knowledge/appendix/incentive-alignment-bonds-paper.qmd
+  redirect-from: https://iab.warondisease.org
   fallback-404-redirect-domain: https://manual.WarOnDisease.org  # Redirects here if path doesn't exist on this site
   netlify-site-id: "8f7611db-1075-48a2-abd8-7f77f55538f9"
   netlify-cname: "iab-warondisease-org.netlify.app"
@@ -47,7 +48,7 @@ author:
 website:
   title: "Incentive Alignment Bonds: Making Public Goods Financially and Politically Profitable"
   description: "Government spending is optimized for lobbying intensity, not net societal value. Programs with 100:1 benefit-cost ratios get billions while programs with negative returns get hundreds of billions. Incentive Alignment Bonds flip this by creating a capital pool that rewards politicians (via campaign support and post-office opportunities) for funding high-NSV programs over low-NSV alternatives. The result: public good becomes private profit for both investors and elected officials."
-  site-url: https://iab.warondisease.org
+  site-url: https://manual.warondisease.org/knowledge/appendix/incentive-alignment-bonds-paper.html
   favicon: assets/icons/iab-favicon.png
   page-navigation: true
   page-footer:
@@ -139,12 +140,12 @@ metadata:
 
   # Open Graph metadata (enables per-page custom OG images)
   open-graph: true
-  image: "https://iab.warondisease.org/assets/og/iab-og-1200x630.jpg"
+  image: "https://manual.warondisease.org/assets/og/iab-og-1200x630.jpg"
 
   # Publication tracking
   publishing:
     own-site:
-      url: "https://iab.warondisease.org"
+      url: "https://manual.warondisease.org/knowledge/appendix/incentive-alignment-bonds-paper.html"
       status: deployed
     preprints:
       - platform: zenodo
@@ -233,7 +234,7 @@ format:
       - callout-bw.tex
       - institute-header.tex
       - text: |
-          \paperurl{https://iab.warondisease.org}
+          \paperurl{https://manual.warondisease.org/knowledge/appendix/incentive-alignment-bonds-paper.html}
     geometry:
       - top=1in
       - bottom=1in

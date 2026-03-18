@@ -17,6 +17,7 @@ project:
 dih-render:
   emoji: "📊"
   index-source: knowledge/appendix/optimal-budget-generator-spec.qmd
+  redirect-from: https://obg.warondisease.org
   fallback-404-redirect-domain: https://manual.WarOnDisease.org  # Redirects here if path doesn't exist on this site
   netlify-site-id: "123f44a0-d5b6-4ff3-9375-1f7e47fca053"
   netlify-cname: "obg-warondisease-org.netlify.app"
@@ -44,7 +45,7 @@ author:
 website:
   title: "The Optimal Budget Generator: A Causal Inference Protocol for Maximizing Median Health and Wealth Through Public Goods Funding"
   description: "The Optimal Budget Generator (OBG) uses causal inference, diminishing returns modeling, and cost-effectiveness evidence to determine optimal public goods funding levels that maximize two welfare metrics: real after-tax median income growth and median healthy life years. For each spending category, OBG estimates an Optimal Spending Level (OSL) and produces a gap analysis showing where current government budgets are over- or underfunded relative to evidence-based benchmarks. The Budget Impact Score (BIS) measures confidence in each recommendation based on the quality of causal evidence."
-  site-url: https://obg.warondisease.org
+  site-url: https://manual.warondisease.org/knowledge/appendix/optimal-budget-generator-spec.html
   favicon: assets/icons/dih-favicon.png
   page-navigation: true
   page-footer:
@@ -132,12 +133,12 @@ metadata:
 
   # Open Graph metadata (enables per-page custom OG images)
   open-graph: true
-  image: "https://obg.warondisease.org/assets/og/obg-og-1200x630.jpg"
+  image: "https://manual.warondisease.org/assets/og/obg-og-1200x630.jpg"
 
   # Publication tracking
   publishing:
     own-site:
-      url: "https://obg.warondisease.org"
+      url: "https://manual.warondisease.org/knowledge/appendix/optimal-budget-generator-spec.html"
       status: pending
     preprints:
       - platform: zenodo
@@ -226,7 +227,7 @@ format:
       - callout-bw.tex
       - institute-header.tex
       - text: |
-          \paperurl{https://obg.warondisease.org}
+          \paperurl{https://manual.warondisease.org/knowledge/appendix/optimal-budget-generator-spec.html}
     geometry:
       - top=1in
       - bottom=1in

@@ -17,6 +17,7 @@ project:
 dih-render:
   emoji: "💸"
   index-source: knowledge/appendix/political-dysfunction-tax.qmd
+  redirect-from: https://political-dysfunction-tax.warondisease.org
   fallback-404-redirect-domain: https://manual.WarOnDisease.org  # Redirects here if path doesn't exist on this site
   netlify-site-id: "1c74b376-7837-436e-b57b-8579b7a1939e"
   netlify-cname: "political-dysfunction-tax-warondisease-org.netlify.app"
@@ -43,7 +44,7 @@ author:
 website:
   title: "The Political Dysfunction Tax"
   description: 'Quantifying the gap between current global governance and theoretical maximum welfare, estimating a 31-53% efficiency score and $97 trillion in annual opportunity costs.'
-  site-url: https://political-dysfunction-tax.warondisease.org
+  site-url: https://manual.warondisease.org/knowledge/appendix/political-dysfunction-tax.html
   favicon: assets/icons/political-dysfunction-tax-favicon.png
   page-navigation: true
   page-footer:
@@ -126,12 +127,12 @@ metadata:
 
   # Open Graph metadata (enables per-page custom OG images)
   open-graph: true
-  image: "https://political-dysfunction-tax.warondisease.org/assets/og/political-dysfunction-tax-og-1200x630.jpg"
+  image: "https://manual.warondisease.org/assets/og/political-dysfunction-tax-og-1200x630.jpg"
 
   # Publication tracking
   publishing:
     own-site:
-      url: "https://political-dysfunction-tax.warondisease.org"
+      url: "https://manual.warondisease.org/knowledge/appendix/political-dysfunction-tax.html"
       status: pending
     preprints:
       - platform: zenodo
@@ -222,7 +223,7 @@ format:
       - callout-bw.tex
       - institute-header.tex
       - text: |
-          \paperurl{https://political-dysfunction-tax.warondisease.org}
+          \paperurl{https://manual.warondisease.org/knowledge/appendix/political-dysfunction-tax.html}
     geometry:
       - top=1in
       - bottom=1in

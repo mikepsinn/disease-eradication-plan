@@ -17,6 +17,7 @@ project:
 dih-render:
   emoji: "📊"
   index-source: knowledge/appendix/us-efficiency-audit.qmd
+  redirect-from: https://us-efficiency-audit.warondisease.org
   fallback-404-redirect-domain: https://manual.WarOnDisease.org  # Redirects here if path doesn't exist on this site
   netlify-site-id: "9a8ec013-54cd-4b7a-9364-fa13dc46bd92"
   netlify-cname: "us-efficiency-audit-warondisease-org.netlify.app"
@@ -44,7 +45,7 @@ author:
 website:
   title: "United States Efficiency Audit"
   description: 'Systems audit estimating an annual U.S. efficiency gap of $4.9T, with $2.45T recoverable at OECD-median performance across direct spending waste, compliance burden, policy-induced GDP loss, and system inefficiency.'
-  site-url: https://us-efficiency-audit.warondisease.org
+  site-url: https://manual.warondisease.org/knowledge/appendix/us-efficiency-audit.html
   favicon: assets/icons/us-efficiency-audit-favicon.png
   page-navigation: true
   page-footer:
@@ -130,12 +131,12 @@ metadata:
 
   # Open Graph metadata (enables per-page custom OG images)
   open-graph: true
-  image: "https://us-efficiency-audit.warondisease.org/assets/og/us-efficiency-audit-og-1200x630.jpg"
+  image: "https://manual.warondisease.org/assets/og/us-efficiency-audit-og-1200x630.jpg"
 
   # Publication tracking
   publishing:
     own-site:
-      url: "https://us-efficiency-audit.warondisease.org"
+      url: "https://manual.warondisease.org/knowledge/appendix/us-efficiency-audit.html"
       status: pending
     preprints:
       - platform: zenodo
@@ -226,7 +227,7 @@ format:
       - callout-bw.tex
       - institute-header.tex
       - text: |
-          \paperurl{https://us-efficiency-audit.warondisease.org}
+          \paperurl{https://manual.warondisease.org/knowledge/appendix/us-efficiency-audit.html}
     geometry:
       - top=1in
       - bottom=1in

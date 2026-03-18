@@ -141,6 +141,7 @@ from dih_models.website_rss_generator import generate_rss_feed
 from dih_models.footer_generator import generate_footer_html
 from dih_models.links_generator import generate_links_qmd
 from dih_models.readme_generator import generate_readme
+from generate_redirects import generate_redirects
 from dih_models.quarto_references_generator import update_references_from_quarto
 from dih_models.references_bib_utils import sort_bib_file, validate_bib_file
 from dih_models.typescript_generator import generate_typescript_parameters, generate_typescript_survey
@@ -1303,6 +1304,11 @@ def main():
     # Generate README.md from QMD sources with variables replaced
     logger.debug("[*] Generating README.md from QMD sources...")
     readme_path = generate_readme(project_root)
+
+    # Generate _redirects file from Quarto config redirect-from fields
+    logger.debug("[*] Generating _redirects from Quarto configs...")
+    redirects_path = generate_redirects(project_root)
+    logger.debug(f"[OK] Generated {redirects_path}")
 
     # Final validation and sort of references.bib
     logger.debug("[*] Validating and sorting references.bib...")

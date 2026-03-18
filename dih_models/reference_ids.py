@@ -323,6 +323,7 @@ class ReferenceID(str, Enum):
     DUAN_2013_N_OF_1 = "duan-2013-n-of-1"
     DUNBAR_NUMBER = "dunbar-number"
     EARTH_OPTIMIZATION_PRIZE_PAPER_2025 = "earth-optimization-prize-paper-2025"
+    EARTH_OPTIMIZATION_PRIZE_PROTOCOL_PAPER_2025 = "earth-optimization-prize-protocol-paper-2025"
     EARTH_OPTIMIZATION_PROTOCOL_2025 = "earth-optimization-protocol-2025"
     ECLINICALMEDICINE_STATINS_POLYPILL = "eclinicalmedicine-statins-polypill"
     EDUCATION_INVESTMENT_ECONOMIC_MULTIPLIER = "education-investment-economic-multiplier"

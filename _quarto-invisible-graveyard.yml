@@ -17,6 +17,7 @@ project:
 dih-render:
   emoji: "⚰️"
   index-source: knowledge/appendix/invisible-graveyard.qmd
+  redirect-from: https://invisible-graveyard.warondisease.org
   fallback-404-redirect-domain: https://manual.WarOnDisease.org  # Redirects here if path doesn't exist on this site
   pdf-output-file: invisible-graveyard.pdf
   netlify-site-id: "ef37ca63-13e5-4403-bf47-173763af79ab"
@@ -46,7 +47,7 @@ author:
 website:
   title: "The Invisible Graveyard: Quantifying the Mortality Cost of FDA Efficacy Lag"
   description: 'After proving a drug is safe, the FDA requires 8.2 years to prove it works before patients can access it. We estimate this delay cost 102 million deaths among people waiting for approved drugs (1962-2024). The human cost in death and disability of blocking good drugs is 3.07k higher than the cost of approving bad ones.'
-  site-url: https://invisible-graveyard.warondisease.org
+  site-url: https://manual.warondisease.org/knowledge/appendix/invisible-graveyard.html
   favicon: assets/icons/invisible-graveyard-favicon.png
   page-navigation: true
   page-footer:
@@ -136,12 +137,12 @@ metadata:
 
   # Open Graph metadata
   open-graph: true
-  image: "https://invisible-graveyard.warondisease.org/assets/og/invisible-graveyard-og-1200x630.jpg"
+  image: "https://manual.warondisease.org/assets/og/invisible-graveyard-og-1200x630.jpg"
 
   # Publication tracking
   publishing:
     own-site:
-      url: "https://invisible-graveyard.warondisease.org"
+      url: "https://manual.warondisease.org/knowledge/appendix/invisible-graveyard.html"
       status: pending
     preprints:
       - platform: zenodo
@@ -230,7 +231,7 @@ format:
       - callout-bw.tex
       - institute-header.tex
       - text: |
-          \paperurl{https://invisible-graveyard.warondisease.org}
+          \paperurl{https://manual.warondisease.org/knowledge/appendix/invisible-graveyard.html}
     geometry:
       - top=1in
       - bottom=1in

@@ -17,6 +17,7 @@ project:
 dih-render:
   emoji: "🔧"
   index-source: knowledge/appendix/earth-optimization-prize-protocol.qmd
+  redirect-from: https://prize-protocol.warondisease.org
   fallback-404-redirect-domain: https://manual.WarOnDisease.org
   pdf-output-file: earth-optimization-protocol.pdf
   netlify-site-id: ""
@@ -47,7 +48,7 @@ author:
 website:
   title: "Earth Optimization Prize Protocol: Technical Specification"
   description: "Technical specification for interoperable outcome prize pools structured as a dominant assurance contract. Covers cross-pool proof-of-personhood, a permissionless pool registry, VOTE and PRIZE token mechanics, direct cross-pool claims, tamper-evident scoreboard aggregation, and a terminal metric oracle including decentralized surveys."
-  site-url: https://prize-protocol.warondisease.org
+  site-url: https://manual.warondisease.org/knowledge/appendix/earth-optimization-prize-protocol.html
   favicon: assets/icons/earth-optimization-prize-protocol-favicon.png
   page-navigation: true
   page-footer:
@@ -140,7 +141,7 @@ metadata:
   # Publication tracking
   publishing:
     own-site:
-      url: "https://prize-protocol.warondisease.org"
+      url: "https://manual.warondisease.org/knowledge/appendix/earth-optimization-prize-protocol.html"
       status: pending
     preprints:
       - platform: zenodo
@@ -218,7 +219,7 @@ format:
       - callout-bw.tex
       - institute-header.tex
       - text: |
-          \paperurl{https://prize-protocol.warondisease.org}
+          \paperurl{https://manual.warondisease.org/knowledge/appendix/earth-optimization-prize-protocol.html}
     geometry:
       - top=1in
       - bottom=1in

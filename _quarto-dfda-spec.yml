@@ -54,12 +54,12 @@ author:
 website:
   title: "The Continuous Evidence Generation Protocol: Two-Stage Validation (RWE → Pragmatic Trials)"
   description: 'We present the Predictor Impact Score (PIS), a novel composite metric operationalizing Bradford Hill causality criteria for automated signal detection from aggregated N-of-1 observational studies. Combined with pragmatic trial confirmation (based on evidence from 108+ embedded trials), this two-stage framework would generate validated outcome labels at 44.1x lower cost than traditional Phase III trials. This enables continuous, population-scale pharmacovigilance and precision dosing recommendations.'
-  site-url: https://dfda-spec.warondisease.org
+  site-url: https://manual.warondisease.org/knowledge/appendix/dfda-spec-paper.html
   favicon: assets/icons/dfda-favicon.png
   page-navigation: true
   page-footer:
     left: "© 2025 [Institute for Accelerated Medicine](https://acceleratedmedicine.org) | [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)"
-    center: "[PDF](/dfda-spec-paper.pdf) | [All Papers](https://manual.warondisease.org/knowledge/papers.html)"
+    center: "[PDF](https://manual.warondisease.org/knowledge/appendix/dfda-spec-paper.pdf) | [All Papers](https://manual.warondisease.org/knowledge/papers.html)"
     right: "[VOTE](https://WarOnDisease.org)"
   navbar:
     right:
@@ -145,12 +145,12 @@ metadata:
 
   # Open Graph metadata (enables per-page custom OG images)
   open-graph: true
-  image: "https://dfda-spec.warondisease.org/assets/og/dfda-spec-og-1200x630.jpg"
+  image: "https://manual.warondisease.org/assets/og/dfda-spec-og-1200x630.jpg"
 
   # Publication tracking
   publishing:
     own-site:
-      url: "https://dfda-spec.warondisease.org"
+      url: "https://manual.warondisease.org/knowledge/appendix/dfda-spec-paper.html"
       status: deployed
     preprints:
       - platform: zenodo
@@ -240,7 +240,7 @@ format:
       - callout-bw.tex
       - institute-header.tex
       - text: |
-          \paperurl{https://dfda-spec.warondisease.org}
+          \paperurl{https://manual.warondisease.org/knowledge/appendix/dfda-spec-paper.html}
     geometry:
       - top=1in
       - bottom=1in

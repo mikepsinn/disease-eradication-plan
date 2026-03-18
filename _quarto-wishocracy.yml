@@ -17,6 +17,7 @@ project:
 dih-render:
   emoji: "🗳️"
   index-source: knowledge/appendix/wishocracy-paper.qmd
+  redirect-from: https://wishocracy.warondisease.org
   fallback-404-redirect-domain: https://manual.WarOnDisease.org  # Redirects here if path doesn't exist on this site
   netlify-site-id: "6d3175fc-5866-4d09-985d-aebe008a4966"
   netlify-cname: "wishocracy-warondisease-org.netlify.app"
@@ -43,7 +44,7 @@ author:
 website:
   title: "Wishocracy: Solving the Democratic Principal-Agent Problem Through Pairwise Preference Aggregation"
   description: "Representative democracy suffers from an inescapable principal-agent problem where elected officials' incentives diverge from citizen welfare. Wishocracy introduces RAPPA (Randomized Aggregated Pairwise Preference Allocation), which aggregates citizen preferences through cognitively tractable pairwise comparisons and creates accountability via Citizen Alignment Scores that channel electoral resources toward politicians who actually represent what citizens want."
-  site-url: https://wishocracy.warondisease.org
+  site-url: https://manual.warondisease.org/knowledge/appendix/wishocracy-paper.html
   favicon: assets/icons/wishocracy-favicon.png
   page-navigation: true
   page-footer:
@@ -134,12 +135,12 @@ metadata:
 
   # Open Graph metadata (enables per-page custom OG images)
   open-graph: true
-  image: "https://wishocracy.warondisease.org/assets/og/wishocracy-og-1200x630.jpg"
+  image: "https://manual.warondisease.org/assets/og/wishocracy-og-1200x630.jpg"
 
   # Publication tracking
   publishing:
     own-site:
-      url: "https://wishocracy.warondisease.org"
+      url: "https://manual.warondisease.org/knowledge/appendix/wishocracy-paper.html"
       status: deployed
     preprints:
       - platform: zenodo
@@ -241,7 +242,7 @@ format:
       - callout-bw.tex
       - institute-header.tex
       - text: |
-          \paperurl{https://wishocracy.warondisease.org}
+          \paperurl{https://manual.warondisease.org/knowledge/appendix/wishocracy-paper.html}
     geometry:
       - top=1in
       - bottom=1in

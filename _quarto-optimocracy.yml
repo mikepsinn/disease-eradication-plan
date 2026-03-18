@@ -17,6 +17,7 @@ project:
 dih-render:
   emoji: "⚙️"
   index-source: knowledge/appendix/optimocracy-paper.qmd
+  redirect-from: https://optimocracy.warondisease.org
   fallback-404-redirect-domain: https://manual.WarOnDisease.org  # Redirects here if path doesn't exist on this site
   netlify-site-id: "c6e535bc-4503-4db8-833a-c1b93f5e0f10"
   netlify-cname: "optimocracy-warondisease-org.netlify.app"
@@ -42,7 +43,7 @@ author:
 website:
   title: "Optimocracy: Causal Inference on Cross-Jurisdictional Policy Data to Maximize Median Health and Wealth"
   description: 'Thousands of jurisdictions have made different policy and budget choices over decades, creating a natural experiment. Optimocracy applies causal inference to this cross-jurisdictional time-series data to identify which policies predict above-average median income and healthy life years. It then publishes evidence-based recommendations for every major vote, tracks politician alignment, and funds aligned candidates via SuperPAC, making suboptimal policy politically expensive while preserving democratic structures.'
-  site-url: https://optimocracy.warondisease.org
+  site-url: https://manual.warondisease.org/knowledge/appendix/optimocracy-paper.html
   favicon: assets/icons/optimocracy-favicon.png
   page-navigation: true
   page-footer:
@@ -129,12 +130,12 @@ metadata:
 
   # Open Graph metadata (enables per-page custom OG images)
   open-graph: true
-  image: "https://optimocracy.warondisease.org/assets/og/optimocracy-og-1200x630.jpg"
+  image: "https://manual.warondisease.org/assets/og/optimocracy-og-1200x630.jpg"
 
   # Publication tracking
   publishing:
     own-site:
-      url: "https://optimocracy.warondisease.org"
+      url: "https://manual.warondisease.org/knowledge/appendix/optimocracy-paper.html"
       status: deployed
     preprints:
       - platform: zenodo
@@ -229,7 +230,7 @@ format:
       - callout-bw.tex
       - institute-header.tex
       - text: |
-          \paperurl{https://optimocracy.warondisease.org}
+          \paperurl{https://manual.warondisease.org/knowledge/appendix/optimocracy-paper.html}
     geometry:
       - top=1in
       - bottom=1in

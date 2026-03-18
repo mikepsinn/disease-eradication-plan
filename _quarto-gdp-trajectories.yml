@@ -17,6 +17,7 @@ project:
 dih-render:
   emoji: "📉"
   index-source: knowledge/economics/gdp-trajectories.qmd
+  redirect-from: https://futures.warondisease.org
   fallback-404-redirect-domain: https://manual.WarOnDisease.org
   pdf-output-file: gdp-trajectories-paper.pdf
   netlify-site-id: "7459777b-36c9-45ef-9307-f47434d0acc2"
@@ -46,7 +47,7 @@ author:
 website:
   title: "Choose Your Own Earth: A World Without the Political Dysfunction Tax, or Terminal Parasitic Load in 15 Years"
   description: "Your destructive economy (military spending plus cybercrime) is already 11.5% of GDP and growing faster than your productive economy. At current rates, it reaches the Soviet collapse threshold in 8 years and exceeds productive output in 15. This paper models two GDP trajectories: the optimized path under military-to-medical reallocation, and the default path to civilizational collapse."
-  site-url: https://futures.warondisease.org
+  site-url: https://manual.warondisease.org/knowledge/economics/gdp-trajectories.html
   favicon: assets/icons/gdp-trajectories-favicon.png
   page-navigation: true
   page-footer:
@@ -142,7 +143,7 @@ metadata:
   # Publication tracking
   publishing:
     own-site:
-      url: "https://futures.warondisease.org"
+      url: "https://manual.warondisease.org/knowledge/economics/gdp-trajectories.html"
       status: pending
     preprints:
       - platform: zenodo
@@ -228,7 +229,7 @@ format:
       - callout-bw.tex
       - institute-header.tex
       - text: |
-          \paperurl{https://futures.warondisease.org}
+          \paperurl{https://manual.warondisease.org/knowledge/economics/gdp-trajectories.html}
     geometry:
       - top=1in
       - bottom=1in

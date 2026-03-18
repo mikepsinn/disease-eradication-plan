@@ -17,6 +17,7 @@ project:
 dih-render:
   emoji: "📋"
   index-source: knowledge/appendix/optimal-policy-generator-spec.qmd
+  redirect-from: https://opg.warondisease.org
   fallback-404-redirect-domain: https://manual.WarOnDisease.org  # Redirects here if path doesn't exist on this site
   netlify-site-id: "8b9558d9-6a2b-4581-bde7-11d79933d105"
   netlify-cname: "opg-warondisease-org.netlify.app"
@@ -44,7 +45,7 @@ author:
 website:
   title: "The Optimal Policy Generator: A Causal Inference Protocol for Maximizing Median Health and Wealth Through Public Policy"
   description: 'The Optimal Policy Generator (OPG) produces systematic public policy recommendations for jurisdictions at any level (country, state, city), generating prioritized enact/replace/repeal/maintain recommendations to maximize real after-tax median income growth and median healthy life years, based on quasi-experimental evidence from centuries of policy variation data.'
-  site-url: https://opg.warondisease.org
+  site-url: https://manual.warondisease.org/knowledge/appendix/optimal-policy-generator-spec.html
   favicon: assets/icons/dih-favicon.png
   page-navigation: true
   page-footer:
@@ -132,12 +133,12 @@ metadata:
 
   # Open Graph metadata (enables per-page custom OG images)
   open-graph: true
-  image: "https://opg.warondisease.org/assets/og/opg-og-1200x630.jpg"
+  image: "https://manual.warondisease.org/assets/og/opg-og-1200x630.jpg"
 
   # Publication tracking
   publishing:
     own-site:
-      url: "https://opg.warondisease.org"
+      url: "https://manual.warondisease.org/knowledge/appendix/optimal-policy-generator-spec.html"
       status: pending
     preprints:
       - platform: zenodo
@@ -230,7 +231,7 @@ format:
       - callout-bw.tex
       - institute-header.tex
       - text: |
-          \paperurl{https://opg.warondisease.org}
+          \paperurl{https://manual.warondisease.org/knowledge/appendix/optimal-policy-generator-spec.html}
     geometry:
       - top=1in
       - bottom=1in
