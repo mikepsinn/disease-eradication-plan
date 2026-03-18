@@ -73,6 +73,8 @@ Registration asks two questions:
 
 Broader wishocratic allocation across all spending categories (education, infrastructure, research, defense, etc.) is available as optional deeper engagement after registration, but these two questions are the minimum viable referendum.
 
+**Downstream use of registration data.** Aggregate results from both questions are published as global citizen preferences: the total headcount for and against the 1% treaty, and the population-weighted preferred allocation between military and clinical trials. This data is publicly available to any front-end, campaign, or policymaker. The headcount is the political pressure; the allocation data is the citizen mandate.
+
 The mechanism paper demonstrates that independently operated pools sharing these metrics are complements rather than competitors: every new pool increases the combined reward visible to every voter. That argument assumes six capabilities that do not yet exist:
 
 1. A person verified in one pool cannot re-register in another (identity layer).
@@ -133,7 +135,7 @@ The global nullifier set is the critical shared state. It must be append-only, p
 
 **Sybil via multiple providers.** If a person verifies with World ID in Pool A and BrightID in Pool B, they get two entries. Mitigation: the protocol should launch with a single approved provider and add cross-provider bridging as providers develop interop standards.
 
-**Coercion.** An employer or government forces citizens to register and surrender their VOTE tokens. Mitigation: VOTE tokens are non-transferable (soulbound). There is nothing to surrender.
+**Coercion.** An employer or government forces citizens to register and surrender their VOTE tokens. Mitigation: coercion to vote a particular way is already illegal in every democracy. The registration headcount matters more than which way any individual votes; the exposure to evidence during registration is what shifts preferences. Transferable tokens incentivize voluntary recruitment, which is the primary bottleneck (pluralistic ignorance).
 
 ## Pool Registry
 
@@ -193,11 +195,9 @@ These are protocol primitives. Other instruments (bonds, revenue-share contracts
 
 **Minting.** One VOTE token is minted when a person completes proof-of-personhood verification, answers the two registration questions, and registers with a participating pool. One person, one token, across all pools. The token is minted by the registration pool but recognized by all pools via the global nullifier set.
 
-**Non-transferable (soulbound).** VOTE tokens cannot be transferred. One person, one vote, no secondary market. A dead voter's token is burned on liveness expiry. This eliminates vote-buying, coercion (there is nothing to surrender), and speculative markets in voting rights.
+**Transferable.** VOTE tokens are transferable with secondary market pricing. One person, one token minted (one-person-one-vote at issuance), but tokens can be sold after minting. The secondary market price is a real-time signal of what coalition membership is worth, which incentivizes recruitment. A dead voter's token is burned on liveness expiry. Coercion (forcing someone to register and surrender their token) is already illegal in every democracy; transferability incentivizes voluntary recruitment, which is the primary bottleneck.
 
 **Expiry.** VOTE tokens expire when the underlying identity attestation expires (12 months). Holders must re-verify annually. Expired tokens are excluded from claim calculations.
-
-**Recruiter attribution.** Individual pools may offer recruitment bonuses (e.g., a share of the pool's own allocation to voters who bring in new registrants). This is a pool-level marketing decision, not a protocol requirement. The protocol only tracks the one-person-one-vote base layer.
 
 ### PRIZE Tokens
 
@@ -205,9 +205,11 @@ These are protocol primitives. Other instruments (bonds, revenue-share contracts
 
 **On failure (the dominant assurance guarantee).** If the terminal metrics are not met by the prize deadline (or after a depositor-specified lock-up period), the depositor redeems PRIZE tokens for their original deposit plus accrued interest. This is what makes participation a dominant strategy: you are better off depositing than not, regardless of whether the prize succeeds.
 
-**Where the interest comes from.** During the lock-up period, the treasury is invested in low-risk, liquid instruments: government bonds (US Treasuries, sovereign debt from AAA-rated countries), money market funds, or equivalent. The pool operator (or a designated custodian) manages these investments. The investment policy is published in the pool's registry entry so depositors can evaluate risk before depositing. The interest rate is whatever the underlying instruments yield, not a promised rate. The protocol requires that treasury investments be (1) liquid enough to honor redemptions within 30 days and (2) published transparently so depositors and auditors can verify the treasury's real value.
+**Where the interest comes from.** During the lock-up period, the treasury is invested in low-risk, liquid instruments: government bonds (US Treasuries, sovereign debt from AAA-rated countries), money market funds, or equivalent. The pool operator (or a designated custodian) manages these investments. The investment policy is published in the pool's registry entry so depositors can evaluate risk before depositing. The interest rate is whatever the underlying instruments yield, not a promised rate. If the underlying instruments lose value, depositors may receive less than their original principal; the dominant assurance guarantee covers the deposit plus accrued interest, not a guaranteed minimum return. In practice, the investment policy (government bonds, money market funds) makes principal loss unlikely but not impossible. The protocol requires that treasury investments be (1) liquid enough to honor redemptions within 30 days and (2) published transparently so depositors and auditors can verify the treasury's real value.
 
 **On success.** When the terminal metric oracle triggers treasury release, PRIZE token deposits are distributed to VOTE holders. Each verified voter can claim an equal share from each pool (see §5). PRIZE tokens are burned. The depositor's principal is gone; it has been redistributed to the people who caused the outcome.
+
+**Recruiter attribution.** Individual pools may offer recruitment bonuses (e.g., a share of the pool's own allocation to voters who bring in new registrants). This is a pool-level marketing decision, not a protocol requirement. The protocol tracks only the one-person-one-vote base layer.
 
 ## Cross-Pool Claims
 
@@ -233,7 +235,7 @@ No inter-pool fund transfers. No netting. No settlement window. Each pool manage
 
 ### Why This Works
 
-The previous version of this section described a five-step netting process where pools transferred funds between each other to equalize per-voter payouts. That complexity was unnecessary. Since every voter gets the same share ($1/N$) from each pool, and each pool knows its own $T_p$ and can read $N$ from the global nullifier set, every pool can pay out independently. The voter's total is identical. The only coordination is agreeing on $N$, which the identity layer already provides.
+Since every voter gets the same share ($1/N$) from each pool, and each pool knows its own $T_p$ and can read $N$ from the global nullifier set, every pool can pay out independently. The voter's total is identical. The only coordination is agreeing on $N$, which the identity layer already provides.
 
 ### Graduated Release
 
