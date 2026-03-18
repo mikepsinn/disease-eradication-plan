@@ -10,11 +10,11 @@ description: "A sponsor-facing memo for institutions considering whether to host
 
 **Document Type:** Institutional memo  
 **Audience:** Foundations, institutions, think tanks, public-interest research organizations  
-**Purpose:** Explain the smallest credible role an institution can play to launch the Earth Optimization Prize without becoming a single point of failure
+**Purpose:** Explain the smallest credible role an institution can play to launch the [Earth Optimization Prize](earth-optimization-prize.qmd) [@earth-optimization-prize-paper-2025] without becoming a single point of failure
 
 ## The Ask
 
-Host the first 90-day Earth Optimization Prize pilot.
+Host the first 90-day [Earth Optimization Prize](earth-optimization-prize.qmd) pilot.
 
 That means:
 
@@ -30,7 +30,7 @@ It does **not** mean endorsing the current draft as final truth. It means hostin
 
 The project is trying to solve a very specific failure mode.
 
-Right now, your institutions are good at describing desirable end states and bad at building mechanisms that can finance, coordinate, and politically pass them. Military spending, regulatory delay, and political capture remain structurally easier to fund than pragmatic clinical trials, cure acceleration, or public-goods optimization. Meanwhile the destructive economy is already {{< var global_destructive_economy_pct_gdp >}} of GDP and is compounding faster than the productive economy.
+Right now, your institutions are good at describing desirable end states and bad at building mechanisms that can finance, coordinate, and politically pass them. Military spending, regulatory delay, and political capture remain structurally easier to fund than [pragmatic clinical trials](../solution/dfda.qmd), cure acceleration, or [public-goods optimization](../solution/optimocracy.qmd). Meanwhile the [destructive economy](../economics/gdp-trajectories.qmd) [@gdp-trajectories-paper-2025] is already {{< var global_destructive_economy_pct_gdp >}} of GDP and is compounding faster than the productive economy.
 
 So the core problem is not "how do we write one more good whitepaper?" It is:
 
@@ -40,7 +40,7 @@ So the core problem is not "how do we write one more good whitepaper?" It is:
 4. how to route new funding into cheaper and faster treatment discovery, and
 5. how to create a ratchet that is easier to expand than repeal.
 
-The initiating-node pilot exists because none of that happens until a credible institution makes the first public version of the process real.
+The [initiating-node pilot](../grant-proposal/earth-optimization-prize-90-day-pilot.qmd) exists because none of that happens until a credible institution makes the first public version of the process real.
 
 ## The Full System In One Table
 
@@ -55,18 +55,33 @@ The full benchmark plan is documented in [Earth Optimization Plan v1](earth-opti
 | **[Decentralized Institutes of Health](../solution/dih.qmd)** | Receives treaty funds and routes them through a thin coordination protocol | Treasury and verification layer |
 | **[Your decentralized FDA](../solution/dfda.qmd)** | Runs cheaper, faster pragmatic clinical trials and real-time evidence generation | Medical throughput engine |
 | **[Wishocracy](../solution/wishocracy.qmd)** | Allocates research/public-goods budgets through pairwise citizen preference aggregation | Governance and allocation engine |
-| **[Optimocracy / OPG / OBG](../solution/optimocracy.qmd)** | Measures what improves health and income and recommends better policy/budget choices | Evidence and recommendation engine |
+| **[Optimocracy](../solution/optimocracy.qmd) / [OPG](https://opg.warondisease.org) / [OBG](https://obg.warondisease.org)** | Measures what improves health and income and recommends better policy/budget choices | Evidence and recommendation engine |
 | **[Political Dysfunction Tax](../problem/unrepresentative-democracy.qmd)** and **[US Efficiency Audit](https://us-efficiency-audit.warondisease.org)** | Identify waste pools and quantify the scale of misallocation | Waste-mapping and opportunity-cost layer |
 | **[Legal framework](../legal/legal-framework.qmd)** | Supplies treaty, statutory, and election-law-compliant implementation paths | Binding-force layer |
 | **[Phase 2 monetary transition](../futures/wishonia.qmd#the-algorithm-that-replaced-twelve-humans)** | Replaces fiat-era fiscal/monetary machinery after the earlier loop is running | Long-run system replacement |
 
 The institution is **not** being asked to bless every later component on day one. It is being asked to host the first public process that can compare, attack, improve, and replace them.
 
+## What Already Exists
+
+This is not just a paper stack. A large share of the software substrate already exists in public.
+
+| Existing asset | What already works | Evidence |
+|---|---|---|
+| **[Optimitron](https://optomitron.com)** | Live web application with policy analysis, budget optimization, international comparisons, misconceptions testing, alignment flows, and prize/referendum surfaces | Public deployment |
+| **[Optimitron repository](https://github.com/mikepsinn/optomitron)** | Open-source monorepo implementing the evidence engine, Wishocracy, policy and budget generators, data pipelines, storage, auth, and treasury packages | Public source, issues, and package structure |
+| **Evidence engine** | Causal inference, temporal alignment, Bradford Hill scoring, and policy/budget recommendation tooling | Implemented in the optimizer / OPG / OBG packages |
+| **Participation layer** | World ID-aware referendum flow, referral plumbing, profile/auth system, and alignment interfaces | Present in the live app and repo |
+| **Treasury layer** | PRIZE, VOTE, IAB, and `$WISH` contract packages exist in Solidity, with PRIZE/VOTE infrastructure substantially built | Treasury packages in the monorepo |
+| **Engineering discipline** | Strict TypeScript, Prisma + Zod typing, pure-function libraries, and roughly 2,900+ tests across the workspace | Stated in the repo README |
+
+The institutional ask is therefore narrower than “fund a speculative concept.” It is: help host, stress-test, and legitimize a public coordination layer on top of infrastructure that is already materially implemented.
+
 ## Why This Role Exists
 
-The current trajectory is not neutral. The destructive economy is already {{< var global_destructive_economy_pct_gdp >}} of GDP, reaches {{< var destructive_economy_pct_gdp_year_15 >}} by year 15 if current trends continue, reaches the failed-state danger zone in {{< var destructive_economy_years_to_25pct_gdp >}}, and reaches parity with the productive economy in {{< var destructive_economy_years_to_50pct_gdp >}}.
+The current trajectory is not neutral. The [destructive economy](../economics/gdp-trajectories.qmd) is already {{< var global_destructive_economy_pct_gdp >}} of GDP, reaches {{< var destructive_economy_pct_gdp_year_15 >}} by year 15 if current trends continue, reaches the failed-state danger zone in {{< var destructive_economy_years_to_25pct_gdp >}}, and reaches parity with the productive economy in {{< var destructive_economy_years_to_50pct_gdp >}}.
 
-The modeled upside of changing course is similarly large. The Treaty path adds {{< var treaty_trajectory_lifetime_income_gain_per_capita >}} in lifetime income and {{< var treaty_hale_gain_year_15 >}} of healthy life by year 15. The fuller Wishonia path adds {{< var wishonia_trajectory_lifetime_income_gain_per_capita >}} and {{< var wishonia_hale_gain_year_15 >}}.
+The modeled upside of changing course is similarly large. The [Treaty trajectory](../economics/gdp-trajectories.qmd) adds {{< var treaty_trajectory_lifetime_income_gain_per_capita >}} in lifetime income and {{< var treaty_hale_gain_year_15 >}} of healthy life by year 15. The fuller [Wishonia trajectory](../futures/wishonia.qmd) adds {{< var wishonia_trajectory_lifetime_income_gain_per_capita >}} and {{< var wishonia_hale_gain_year_15 >}}.
 
 The bottleneck is not a shortage of possible solutions. It is a shortage of public coordination infrastructure that can:
 
@@ -85,7 +100,7 @@ The right frame is **host**, not **owner**.
 | The institution does | The institution does not do |
 |---|---|
 | Host the first contest and scoreboard | Become the permanent sovereign of the mechanism |
-| Endorse the process for comparing plans | Declare `Earth Optimization Plan v1` correct |
+| Endorse the process for comparing plans | Declare [Earth Optimization Plan v1](earth-optimization-plan-v1.qmd) correct |
 | Publish rules, milestones, and panel criteria | Demand trust in a black box |
 | Seed red-team review and public evidence | Become the sole oracle, sole custodian, or sole gatekeeper |
 | Make the first credible public milestone real | Prevent later hosts, forks, or successor implementations |
@@ -98,7 +113,7 @@ For a foresight-style institution, hosting the initiating node is attractive for
 
 1. It is high-leverage epistemic infrastructure. You are not picking one policy memo and hoping people read it. You are creating a public mechanism that rewards better proposals, exposes weak ones, and makes progress visible.
 2. It is legible public-good work. The outputs are concrete: rules, panel roster, challenge page, bounty pool, live scoreboard, and first submissions.
-3. It is reputationally safer than endorsing a finished ideology. The institution is sponsoring an open contest with explicit adversarial review.
+3. It is reputationally safer than endorsing a finished ideology. The institution is sponsoring an open contest with explicit [adversarial review](earth-optimization-prize.qmd).
 4. It can surface a better v2 than the current benchmark. If the current proposal is wrong, the pilot is how that gets discovered before larger-scale commitment.
 
 ## The Minimum Viable Pilot
@@ -111,7 +126,7 @@ The smallest credible institutional pilot is bounded and public.
 | Panel | Named reviewers able to filter out unserious or noncompliant submissions |
 | Adversarial review | A funded bounty pool for red-team critiques, metric-gaming attacks, and replacement designs |
 | Scoreboard | A live public page tracking host milestones, submissions, and the first participant/commitment totals |
-| Entry set | The baseline `Earth Optimization Plan v1` plus any serious competing submissions |
+| Entry set | The baseline [Earth Optimization Plan v1](earth-optimization-plan-v1.qmd) plus any serious competing submissions |
 
 If those five things exist in public, the institution has done the essential catalytic job.
 
@@ -145,7 +160,7 @@ That is enough to move the project from “interesting paper” to “live coord
 
 ## Recommended Decision
 
-If your institution is willing to host ambitious but bounded public infrastructure, the correct move is not to wait for perfect certainty. It is to run the 90-day pilot with explicit non-sovereign boundaries.
+If your institution is willing to host ambitious but bounded public infrastructure, the correct move is not to wait for perfect certainty. It is to run the [90-day pilot](../grant-proposal/earth-optimization-prize-90-day-pilot.qmd) with explicit non-sovereign boundaries.
 
 Read the full background paper here:
 

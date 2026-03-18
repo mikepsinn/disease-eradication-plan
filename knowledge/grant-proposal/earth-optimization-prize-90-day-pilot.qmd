@@ -11,11 +11,11 @@ description: "A sponsor-facing 90-day pilot proposal for institutions considerin
 **Document Type:** Institutional pilot proposal  
 **Pilot Length:** 90 days  
 **Default Role:** Initiating host, not sovereign owner  
-**Primary Goal:** Make the Earth Optimization Prize publicly real without creating a single point of failure
+**Primary Goal:** Make the [Earth Optimization Prize](../strategy/earth-optimization-prize.qmd) [@earth-optimization-prize-paper-2025] publicly real without creating a single point of failure
 
 ## Pilot Objective
 
-Launch the first credible public version of the Earth Optimization Prize selection process.
+Launch the first credible public version of the [Earth Optimization Prize](../strategy/earth-optimization-prize.qmd) selection process.
 
 At the end of 90 days, the host institution should have produced:
 
@@ -31,20 +31,20 @@ That is the minimum viable institutional launch package.
 
 The broader project is trying to solve a coordination failure, not just publish another proposal.
 
-Humanity already has candidate ingredients for a better trajectory: cheaper pragmatic clinical trials, better public-goods allocation, measurable policy learning, and large waste pools that could be reallocated. What it lacks is a public mechanism that can do all four of these at once:
+Humanity already has candidate ingredients for a better trajectory: cheaper [pragmatic clinical trials](../solution/dfda.qmd), better [public-goods allocation](../solution/wishocracy.qmd), measurable [policy learning](../solution/optimocracy.qmd), and large waste pools that could be reallocated via the [Political Dysfunction Tax](../problem/unrepresentative-democracy.qmd) and [US Efficiency Audit](https://us-efficiency-audit.warondisease.org). What it lacks is a public mechanism that can do all four of these at once:
 
 1. compare integrated plans against a visible benchmark,
 2. reward serious participation and recruitment,
-3. surface better replacements through adversarial review,
+3. surface better replacements through [adversarial review](../strategy/earth-optimization-prize.qmd),
 4. create a credible bridge from public support to political adoption.
 
 That is why the first 90 days matter. The pilot is the step where the project becomes inspectable public infrastructure instead of a stack of papers.
 
 ## Why This Pilot Matters
 
-The prize is trying to shift humanity off a current trajectory where the destructive economy rises from {{< var global_destructive_economy_pct_gdp >}} of GDP today toward {{< var destructive_economy_pct_gdp_year_15 >}} by year 15. The model reaches the failed-state danger zone in {{< var destructive_economy_years_to_25pct_gdp >}} and parity with the productive economy in {{< var destructive_economy_years_to_50pct_gdp >}} if that loop is not broken.
+The prize is trying to shift humanity off a current trajectory where the [destructive economy](../economics/gdp-trajectories.qmd) [@gdp-trajectories-paper-2025] rises from {{< var global_destructive_economy_pct_gdp >}} of GDP today toward {{< var destructive_economy_pct_gdp_year_15 >}} by year 15. The model reaches the failed-state danger zone in {{< var destructive_economy_years_to_25pct_gdp >}} and parity with the productive economy in {{< var destructive_economy_years_to_50pct_gdp >}} if that loop is not broken.
 
-The upside of a better branch is large enough to justify building public coordination infrastructure around it. The Treaty path adds {{< var treaty_trajectory_lifetime_income_gain_per_capita >}} in modeled lifetime income and {{< var treaty_hale_gain_year_15 >}} of healthy life by year 15. The fuller Wishonia path adds {{< var wishonia_trajectory_lifetime_income_gain_per_capita >}} and {{< var wishonia_hale_gain_year_15 >}}.
+The upside of a better branch is large enough to justify building public coordination infrastructure around it. The [Treaty trajectory](../economics/gdp-trajectories.qmd) adds {{< var treaty_trajectory_lifetime_income_gain_per_capita >}} in modeled lifetime income and {{< var treaty_hale_gain_year_15 >}} of healthy life by year 15. The fuller [Wishonia trajectory](../futures/wishonia.qmd) adds {{< var wishonia_trajectory_lifetime_income_gain_per_capita >}} and {{< var wishonia_hale_gain_year_15 >}}.
 
 The 90-day pilot is not trying to achieve those outcomes directly. It is trying to create the public machinery that can discover, test, and coordinate around the best available route toward them.
 
@@ -61,12 +61,28 @@ The full benchmark system is [Earth Optimization Plan v1](../strategy/earth-opti
 | **[Decentralized Institutes of Health](../solution/dih.qmd)** | Treasury and verification protocol for redirected funds | Downstream operating layer |
 | **[Your decentralized FDA](../solution/dfda.qmd)** | Cheap, high-throughput pragmatic trial engine | Downstream implementation layer |
 | **[Wishocracy](../solution/wishocracy.qmd)** | Public preference aggregation for budget allocation | Used as part of plan comparison and later allocation |
-| **[Optimocracy / OPG / OBG](../solution/optimocracy.qmd)** | Evidence and recommendation machinery for policy and budget choices | Background evidence layer for judging and later operations |
+| **[Optimocracy](../solution/optimocracy.qmd) / [OPG](https://opg.warondisease.org) / [OBG](https://obg.warondisease.org)** | Evidence and recommendation machinery for policy and budget choices | Background evidence layer for judging and later operations |
 | **[Political Dysfunction Tax](../problem/unrepresentative-democracy.qmd)** and **[US Efficiency Audit](https://us-efficiency-audit.warondisease.org)** | Waste maps and opportunity-cost accounting | Background case for why reallocation matters |
 | **[Legal framework](../legal/legal-framework.qmd)** | Treaty/statutory/election-law path | Constraint set for credible contenders |
 | **[Phase 2 monetary transition](../futures/wishonia.qmd#the-algorithm-that-replaced-twelve-humans)** | Long-run replacement of fiat-era fiscal/monetary machinery | Explicitly outside pilot scope |
 
 The initiating institution is not being asked to operationalize every downstream component in 90 days. It is being asked to launch the public selection, review, and visibility layer that decides what should advance.
+
+## Existing Implementation Base
+
+The pilot is extending an existing implementation base, not inventing the entire stack from scratch.
+
+| Existing asset | Current state | Why it matters for the pilot |
+|---|---|---|
+| **[Optimitron](https://optomitron.com)** | Live public app with budget analysis, policy analysis, comparisons, misconceptions testing, alignment flows, and prize/referendum entry points | Gives the pilot a visible software base immediately |
+| **[Optimitron repository](https://github.com/mikepsinn/optomitron)** | Public monorepo implementing the core engine, app packages, data layer, and treasury packages | Lets reviewers inspect real code instead of a PDF |
+| **Evidence machine stack** | Optimocracy, OPG, and OBG components already implemented in code | Reduces epistemic risk around the scoring/recommendation layer |
+| **Wishocracy stack** | Pairwise preference aggregation and alignment logic already built | Reduces product risk around citizen preference collection |
+| **Identity / participation layer** | Auth, profile, referral plumbing, and World ID-aware participation surfaces already exist | Means the pilot can focus on public process rather than first building account infrastructure |
+| **Treasury packages** | PRIZE / VOTE / IAB / `$WISH` packages are already present in the codebase | Makes it plausible to connect the pilot to later financing rails without re-architecting from scratch |
+| **Testing base** | Roughly 2,900+ tests across the workspace, plus strict TypeScript and typed schemas | Gives the institution something closer to a software program than a speculative concept note |
+
+For a host institution, this changes the nature of the ask. The pilot is not “please fund the invention of a whole new universe.” It is “please host the first credible public selection and review process around an already substantial implementation base.”
 
 ## Scope
 
@@ -75,16 +91,16 @@ This pilot covers only Stage 1 of the broader launch sequence.
 Included:
 
 1. challenge publication,
-2. benchmark-plan publication,
+2. benchmark-plan publication of [Earth Optimization Plan v1](../strategy/earth-optimization-plan-v1.qmd),
 3. panel formation,
-4. adversarial review,
+4. [adversarial review](../strategy/earth-optimization-prize.qmd),
 5. scoreboard launch,
 6. first submission intake,
 7. first public commitments and milestone reporting.
 
 Explicitly out of scope for the pilot:
 
-1. final institutional endorsement of `Earth Optimization Plan v1`,
+1. final institutional endorsement of [Earth Optimization Plan v1](../strategy/earth-optimization-plan-v1.qmd),
 2. treaty passage,
 3. large-scale lobbying execution,
 4. permanent governance lock-in,
@@ -98,7 +114,7 @@ The host institution is responsible for a bounded set of public infrastructure t
 |---|---|
 | Publish the challenge | Public pilot page explaining targets, constraints, timeline, and submission path |
 | Convene reviewers | Named panel roster with clear filtering role and conflict-of-interest standard |
-| Fund adversarial review | Public bounty pool for red-team critiques, metric-gaming attacks, and superior replacement components |
+| Fund [adversarial review](../strategy/earth-optimization-prize.qmd) | Public bounty pool for red-team critiques, metric-gaming attacks, and superior replacement components |
 | Launch public measurement | Scoreboard showing host milestones, submission counts, and early participation/commitment signals |
 | Coordinate first cycle | Public timeline for submission, review, challenge, revision, and selection of serious contenders |
 
@@ -190,7 +206,7 @@ If the pilot works, the next phase is not “centralize everything under the fir
 1. expand participation,
 2. admit stronger challengers,
 3. add co-hosts or successor hosts,
-4. connect the contest outputs to PRIZE deposits, the referendum, and later implementation financing.
+4. connect the contest outputs to [PRIZE deposits](../strategy/earth-optimization-prize.qmd), the [referendum](../strategy/global-referendum.qmd), and later [implementation financing](../solution/incentive-alignment-bonds.qmd).
 
 If the pilot fails, the output should still be useful: a public record of what broke, what was attacked, and what must be improved before trying again.
 
