@@ -1387,16 +1387,16 @@ def main():
         report_data['upload_results'][paper_key] = result
 
         if not result or not result.get("verified"):
-            print(f"\n[FATAL] Upload failed for {paper_key}")
+            reason = (result or {}).get("reason", "Upload verification failed")
+            print(f"\n[ERROR] Upload failed for {paper_key}: {reason}")
             if paper_key not in report_data['errors']:
                 report_data['errors'][paper_key] = []
-            report_data['errors'][paper_key].append("Upload verification failed")
+            report_data['errors'][paper_key].append(f"Upload failed: {reason}")
             report_data['failed_count'] += 1
             perfected_entries.pop(paper_key, None)
             _save_perfected_state(perfected_state)
-            log_action(f"Upload failed for {paper_key}")
-            save_report(report_data, start_time)
-            raise RuntimeError(f"Upload failed for {paper_key}")
+            log_action(f"Upload failed for {paper_key}: {reason}")
+            continue
 
         log_action(f"Upload verified for {paper_key}: DOI {result.get('doi', 'N/A')}")
         perfected_entries[paper_key] = {
