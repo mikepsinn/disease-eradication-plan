@@ -1,9 +1,9 @@
 ---
 title: 'The Earth Optimization Prize: A Standing Market for the Least Bad Idea in the World'
-subtitle: A Dominant Assurance Contract With Two Terminal Metrics and a Prize Pool That Releases When People Actually Stop Dying
-description: "A dominant assurance contract structured as a standing prize for improving global median health and wealth. Two protocol primitives (PRIZE tokens for depositors, VOTE tokens for recruiters) and two terminal metrics (median healthy life years and median real after-tax income). PRIZE buyers get their deposit back plus interest on failure; the pool distributes to VOTE holders on success. Registration asks two questions: yes/no on the 1% treaty and military-vs-clinical-trials allocation with evidence. External financing tools (such as Incentive Alignment Bonds) fund lobbying campaigns; they are implementation instruments, not protocol primitives. Secondary market prices are real-time signals of implementation probability. The Earth Optimization Plan v1 is the terrible starting benchmark. v2 is whatever beats it."
+subtitle: "Deposit $1. Get It Back Plus Interest If Nothing Happens. Earn {{< var vote_token_potential_value >}} Per Person You Recruit."
+description: "A dominant assurance contract where depositing $1 is a free option: you earn interest if the plan fails and a share of a {{< var prize_pool_projected_size >}} prize pool if it works. Registration takes 30 seconds. Each person you recruit earns a VOTE token worth {{< var vote_token_potential_value >}}. Two targets: median healthy life years to {{< var wishonia_projected_hale_year_15 >}} and median income to {{< var wishonia_trajectory_avg_income_year_15 >}}. The mechanism pays you for each person you recruit into the global referendum. The payout triggers when median health and income actually improve. The Earth Optimization Plan v1 is the terrible starting benchmark. v2 is whatever beats it."
 abstract: |
-  Current governance mechanisms allocate trillions of dollars based on lobbying intensity, institutional inertia, and political convenience rather than verified outcomes. This paper proposes a dominant assurance contract structured as a standing prize. Two protocol primitives: PRIZE tokens for depositors (deposit back plus interest on failure, pool distributed to VOTE holders on success) and VOTE tokens earned by recruiters (transferable proof of how many verified participants you brought into the coalition). Two terminal metrics: global median healthy life years and global median real after-tax income. The PRIZE pool releases when both global metrics improve above verified thresholds; depositors get their money back plus interest if they do not, making participation a dominant strategy regardless of outcome. Registration asks two questions: yes/no on the 1% treaty (the concrete political demand) and how much military vs. clinical trials (with cross-jurisdictional evidence from Optimitron). External financing instruments, such as Incentive Alignment Bonds (IABs), fund the lobbying campaign and provide investors with a pro-rata revenue share on success ({{< var victory_bond_annual_return_pct >}} annual return); they are implementation tools, not protocol primitives. PRIZE token price and VOTE token price are real-time, money-backed signals of system health. The mechanism is compatible with public choice theory: no actor is asked to become less selfish; stronger self-interest makes the system stronger. The [Earth Optimization Plan v1](https://manual.warondisease.org) is, by any honest assessment, objectively terrible. It is the starting benchmark, not the goal. The prize exists to discover and cause the implementation of whatever beats it: the Earth Optimization Plan v2. There are 8 billion of you and AIs that are almost certainly smarter than its authors. Finding something better should not be difficult.
+  A dominant assurance contract structured as a standing prize. Deposit $1; get it back at {{< var prize_escrow_100_return_multiple >}} if nothing improves; share a {{< var prize_pool_projected_size >}} prize pool if global median health and income rise above verified thresholds. VOTE tokens (earned by recruiting verified referendum participants) determine your share of the pool on success, creating a paid referral program where each recruit is worth {{< var vote_token_potential_value >}}. The two targets: global median healthy life expectancy reaches {{< var wishonia_projected_hale_year_15 >}} and median income reaches {{< var wishonia_trajectory_avg_income_year_15 >}}, representing a per-capita lifetime income gain of {{< var treaty_trajectory_lifetime_income_gain_per_capita >}}. If everyone recruits two people, 28 rounds reaches 280 million (the Chenoweth passage threshold). The mechanism solves five problems simultaneously: nobody knows solutions exist (VOTE tokens pay for educational conversations), everyone assumes they are alone (real-time scoreboard breaks pluralistic ignorance), the public cannot coordinate (tokens provide the coordination mechanism), nobody knows which solutions to implement (prize pays for outcomes, not proposals), and complex reforms have no on-ramp ($1 is the entry point to everything else). The [Earth Optimization Plan v1](https://manual.warondisease.org) is the terrible starting benchmark. The prize exists to discover and cause the implementation of whatever beats it: the Earth Optimization Plan v2.
 published: true
 tags:
   - strategy
@@ -17,31 +17,35 @@ youtube-thumbnail: /assets/podcast/least-bad-idea-prize-paper-youtube.jpg
 ---
 {{< include ../includes/setup-parameters.qmd >}}
 
-## Introduction
+## The Free Option
 
-The [Earth Optimization Plan v1](https://manual.warondisease.org) is the terrible starting benchmark. The prize exists to find whatever beats it (the Earth Optimization Plan v2) and cause that implementation instead. The point is not to marry a blueprint. The point is to stop subsidizing death, disease, waste, and suffering. We are not sure why your civilization does not already have a machine like this.
+A single VOTE token is worth {{< var vote_token_potential_value >}}. You earn one by recruiting one verified person into the global referendum. The minimum deposit to participate: $1.
 
-To be clear about what is strange here: every constitution on your planet already says the goal of government is to maximize the general welfare. You have had written law for thousands of years. In all that time, nobody built a machine that measures whether the general welfare is actually being maximized, scores proposals on whether they improve it, and funds whichever one wins. Instead, the primary activity of your governments is funneling wealth to interest groups, terrorizing immigrants, and bombing people of different colors, and the secondary activity is writing eloquent constitutions explaining why they would never do that. The prize is an absurd workaround. It should not be necessary to attach financial incentives to the goal of not killing people in order to get anyone to pay attention to it for more than five seconds. And yet here we are, designing an elaborate mechanism to remind your species of the thing it already wrote down and then immediately ignored.
+If global median health and median income do not improve by year {{< var prize_escrow_accumulation_years_nounit >}}, you get your dollar back plus interest ({{< var prize_escrow_100_return_multiple >}} at {{< var prize_escrow_yield_rate >}} compounded). If they do improve, the prize pool (projected at {{< var prize_pool_projected_size >}}) distributes to VOTE holders proportional to their recruitment. Both tokens are tradable on secondary markets at any time; you are never locked in.
 
-The cost of the current approach is not abstract. {{< var global_disease_deaths_daily >}} people die of treatable disease every day. {{< var existing_drugs_efficacy_lag_deaths_total_nounit >}} have already died waiting for drugs that were proven to work but stuck in regulatory queues. The annual economic burden of treatable disease runs {{< var global_disease_economic_burden_annual >}}. The total opportunity cost of political dysfunction (the gap between what governance delivers and what it could deliver) is {{< var political_dysfunction_global_opportunity_cost_total >}} per year. Those are not projections. They are the running tab for not having a mechanism that selects and implements better ideas.
+That is the entire pitch. Zero downside, unlimited upside. The only question is whether you noticed.
 
-And those are just the static costs. The trajectory is worse. Your [destructive economy](../economics/gdp-trajectories.qmd) [@gdp-trajectories-paper-2025] (military spending beyond deterrence plus cybercrime) is already {{< var global_destructive_economy_pct_gdp >}} of GDP and growing faster than the productive economy. The Soviet Union collapsed at 15% military spending alone, with worse technology and a smaller parasitic sector. At the crossover point, the rational choice for any individual, company, or nation flips from "build things" to "steal things"; you have a name for places where this already happened, and it is "failed states." At current growth rates, your destructive economy hits 50% in {{< var destructive_economy_years_to_50pct_gdp >}}. There is no Colombia to flee to when the global economy is the failed state. The loop that drives it (print money, fund military, devalue wages, push talent toward cybercrime, justify more military spending) is self-reinforcing. It does not stop on its own. Something has to break it.
+You are currently losing {{< var political_dysfunction_tax_per_person_annual >}} per year to [political dysfunction](../appendix/political-dysfunction-tax.qmd) [@political-dysfunction-tax-paper-2025] (the gap between what governance delivers and what it could deliver). {{< var global_disease_deaths_daily >}} people die of treatable disease every day [@who-global-health-estimates-2024]. The annual economic burden of treatable disease runs {{< var global_disease_economic_burden_annual >}} [@political-dysfunction-tax-paper-2025]. Those are not projections. They are the running tab on your account right now. The prize exists to stop the bleeding. Not depositing does not avoid the cost. It avoids the solution.
 
-We noticed that policy design on Earth works like a philosophy seminar: interesting discussions, no binding output. An engineering competition would at least produce prototypes.
+The worst case is that you beat inflation while trying to cure disease. The worst case is *good*.
 
-::: {.callout-important}
-## Disqualification Rule
+The first million VOTE tokens divide a {{< var prize_pool_projected_size >}} pool among one million people. The billionth token divides the same pool among a billion. Early participation is not virtue. It is a discount that closes as the scoreboard grows.
 
-If your proposal requires politicians, bureaucrats, investors, regulators, voters, or interest groups to become less selfish than they currently are, you have described a pleasant world rather than a mechanism for reaching it. "Requires selflessness" is not the same as "makes self-interest coincide with better outcomes." The prize accepts contributions that are rational expected-value bets (the break-even probability shift is tiny) and can optionally be structured as assurance contracts with downside protection. That is mechanism design, not altruism. We have been observing your species since 1945 and have not yet seen selfishness decline on request.
-:::
+Everything else in this paper (token mechanics, escrow yields, constitutional constraints, a 10-row table of governance functions) is implementation detail. Before any of it matters, five problems have to be solved. The prize solves all five with one instrument.
 
-## Why Current Systems Fail
+## Five Problems, One Instrument
 
-One of your economists noticed this in 1965 and named it "the logic of collective action" [-@olson1965]. The observation: concentrated interests (defense contractors, entrenched pharmaceutical monopolies, legacy energy conglomerates) face high per-capita stakes in policy outcomes, so they easily overcome coordination costs to fund sustained lobbying. Diffuse beneficiaries (the general public dying of untreated diseases, bearing the cost of regulatory delay, or subsidizing low-return military spending) have tiny individual stakes in any single policy fight and cannot coordinate a proportional response. Your species identified the exact mechanism by which your governance fails, published it, gave it a name, assigned it in universities, and then continued to be governed by it for sixty years.
+### 1. Nobody Knows Solutions Exist
 
-This keeps happening even though the public has far more money. Global household wealth totals {{< var global_household_wealth_usd >}}, compared to {{< var concentrated_interest_sector_market_cap_usd >}} held by concentrated opposition sectors. The public has the money. It does not have the coordination mechanism. Politicians know which programs have high benefit-cost ratios and which do not. They fund the low-return programs anyway, because right now the concentrated cost of opposing a lobby exceeds the diffuse benefit of pleasing an uncoordinated public [@iab-paper-2025].
+Most humans have never heard that pragmatic clinical trials cost {{< var dfda_pragmatic_trial_cost_per_patient >}} per patient (vs. {{< var traditional_phase3_cost_per_patient >}} traditional) [@dfda-impact-paper-2025]. That redirecting 1% of military spending to medical research returns {{< var treaty_roi_existing_drugs_only >}} [@1-pct-treaty-impact-paper-2025]. That {{< var existing_drugs_efficacy_lag_deaths_total_nounit >}} people have already died waiting for drugs that were proven to work but stuck in regulatory queues [@invisible-graveyard-paper-2025]. That the total cost of buying passage of any policy through legal democratic channels in the United States is {{< var treaty_campaign_total_cost >}}, with ROI exceeding 400,000:1 [@cost-of-change-paper-2025].
 
-Everyone thinks this is crazy because everyone else thinks this is crazy. If every human realized that nearly every other human would like a world without war and disease and an extra {{< var treaty_trajectory_lifetime_income_gain_per_capita >}} in lifetime income, it would be done tomorrow and the world would be unrecognizable. Your economists call this pluralistic ignorance. We call it the dumbest reason a civilization has ever continued dying. A [cryptographically verified global referendum](https://manual.warondisease.org/knowledge/strategy/global-referendum.html) proves that the support already exists. It does not create demand for not dying. The demand is there. The referendum makes it impossible to pretend it is not.
+The prize creates VOTE tokens: recruit a verified participant into the global referendum, earn a token worth {{< var vote_token_potential_value >}} when the pool pays out. At that price, millions of people become financially motivated to have the conversation. Each recruitment forces the recruit through evidence (cost per life saved for military spending vs. clinical trials, the efficacy lag death toll, the economic returns). The registration process is the education. The token price is what makes someone bother delivering it.
+
+### 2. Everyone Who Knows Assumes They Are Alone
+
+Your economists call it pluralistic ignorance. Nearly every human would prefer a world without war and treatable disease, and an extra {{< var treaty_trajectory_lifetime_income_gain_per_capita >}} in lifetime income [@gdp-trajectories-paper-2025]. If every human realized that nearly every other human wants the same thing, it would be done tomorrow and the world would be unrecognizable. Instead, everyone assumes massive reform is crazy because they assume nobody else would agree to it. This is the dumbest reason a civilization has ever continued dying.
+
+Every VOTE token registration is a publicly verifiable signal. The scoreboard aggregates across all participating pools in real time. As the number climbs from thousands to millions to hundreds of millions, the belief that "nobody would ever agree to this" becomes empirically falsifiable. You can see that they already did. The [referendum](https://manual.warondisease.org/knowledge/strategy/global-referendum.html) does not create demand for not dying. The demand is there. The scoreboard makes it impossible to pretend it is not.
 
 ::: {.content-visible when-format="html"}
 <figure>
@@ -50,72 +54,161 @@ Everyone thinks this is crazy because everyone else thinks this is crazy. If eve
 </figure>
 :::
 
-The prize exists because no existing system solves this, and your species has tried the obvious alternatives. Advance Market Commitments [@kremer2020] say "we will buy the thing if you build it," which works when the thing is a vaccine but not when the thing is "governance change plus health infrastructure plus income growth simultaneously." You cannot pre-order systemic reform from a catalog. Challenge prizes (the XPRIZE model) give a fixed payout to the first team across the finish line, then stop paying; your incentive to keep implementing after winning is exactly zero, which is what you get. Direct government procurement funds whatever the procurer thinks will work, which IS the current system, and it IS producing Olsonian capture; the prize exists precisely because the procurer is captured. Prediction markets tell you what will win but do not cause implementation. DAOs suffer the same Olsonian capture: whoever buys the most tokens sets the agenda. A prize with published scoring, adversarial challenges, and automatic replacement is the one structure where capturing it requires beating every challenger on verified metrics simultaneously. That is not capture-proof. But it is capture-expensive, which on your planet is probably the least bad available.
+### 3. The Public Cannot Coordinate Against Concentrated Interests
 
-## The Mechanism
+One of your economists noticed this in 1965 and named it "the logic of collective action" [-@olson1965]. Concentrated interests (defense contractors, pharmaceutical monopolies) face high per-capita stakes and coordinate easily. The general public (dying of untreated diseases, bearing regulatory delay, subsidizing military spending that returns {{< var economic_multiplier_military_spending >}} per dollar [@military-spending-economic-multiplier]) has tiny individual stakes in any single policy fight and cannot mount a proportional response. Your species identified the exact mechanism by which your governance fails, published it, assigned it in universities, and then continued to be governed by it for sixty years.
 
-A normal prize gives someone cash after they do something impressive. That is fine for building a better battery. It is useless for governance reform, because the hard part is not inventing the idea. The hard part is forcing implementation through institutions designed to resist it.
+But Olson's problem is downstream of problems 1 and 2. The public has the money (global household wealth: {{< var global_household_wealth_usd >}}, vs. {{< var concentrated_interest_sector_market_cap_usd >}} held by concentrated opposition sectors [@iab-paper-2025]). It does not have awareness or the coordination mechanism. Once the VOTE token recruitment engine has solved the awareness problem and the scoreboard has shattered pluralistic ignorance, PRIZE tokens provide the coordination mechanism: a growing pool of money, visible to everyone, that only releases when outcomes improve. No central organizer. No charity. No altruism required. Just millions of people acting in financial self-interest, pointed at the same two numbers.
 
-The Earth Optimization Prize works differently. Six moving parts:
+### 4. Nobody Knows Which Solutions to Implement
 
-**1. Two protocol primitives, one external financing tool.** This is not a charity. It is not a donation. The [prize protocol](../appendix/earth-optimization-prize-protocol.qmd) [@earth-optimization-prize-protocol-paper-2025] has two primitives: PRIZE tokens (depositor claims on the treasury) and VOTE tokens (recruiter claims on the prize pool). These are the dominant assurance contract [@tabarrok1998]: depositors get their money back plus interest if the metrics are not met (making participation a dominant strategy regardless of outcome); if the metrics improve, the pool distributes to VOTE holders. [Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd) [@iab-paper-2025] (IABs) are an external financing instrument that the Earth Optimization Plan v1 uses to fund the lobbying campaign. IABs are one possible strategy for converting awareness into political pressure; the prize protocol itself does not depend on them.
+The prize does not prescribe a solution. It pays for outcomes: median healthy life years and median real after-tax income. Anyone, anywhere, using any legal method, who causes either number to rise gets paid proportionally. The [Earth Optimization Plan v1](https://manual.warondisease.org) is the terrible starting benchmark, not the answer. It exists because competitions need a starting entry. The prize exists to discover and fund whatever beats it (the Earth Optimization Plan v2). There are {{< var global_population_2024_nounit >}} of you and AIs that are almost certainly smarter than its authors. If a better design exists, the prize will find it.
 
-**PRIZE tokens** fund the prize pool. Buyers deposit funds into escrow earning {{< var prize_escrow_yield_rate >}} annually via rolling locked stablecoin staking. If, at year {{< var prize_escrow_accumulation_years_nounit >}}, global HALE has not reached {{< var wishonia_projected_hale_year_15 >}} and global median income has not reached {{< var wishonia_trajectory_avg_income_year_15 >}}, buyers get their deposit back plus interest at {{< var prize_escrow_100_return_multiple >}} (zero downside). If both targets are met, the entire pool is distributed to VOTE token holders proportional to their holdings. A conditional donation: your money only spends if someone earned it. Philanthropists buy because they want to fund success. Pessimists buy for the risk-free interest. Both grow the prize pool.
+This makes the search decentralized. No committee decides which reforms to fund. Millions of financially motivated participants search for, advocate, and implement whatever moves the two numbers. A researcher who discovers a cheaper trial design profits. A lobbyist who passes legislation profits. A nonprofit that recruits a million referendum voters profits. The mechanism is agnostic about how. It engineers the incentives so that the collective intelligence of your entire species is pointed at two measurements instead of scattered across a thousand arguments about which measurement matters.
 
-**VOTE tokens** are the allocation mechanism (see Point 4). Recruit a verified referendum participant, earn tokens. On success, VOTE holdings determine your share of the PRIZE pool. The referendum campaign runs on VOTE tokens: because pluralistic ignorance is the primary bottleneck, getting one verified human to publicly say "I want this" is worth more than most policy white papers.
+Your species has tried the obvious alternatives. Advance Market Commitments [@kremer2020] say "we will buy the thing if you build it," which works when the thing is a vaccine but not when the thing is systemic reform. Challenge prizes (the XPRIZE model) give a fixed payout to the first team across the finish line, then stop paying. Direct government procurement funds whatever the procurer thinks will work, which IS the current system, and it IS producing Olsonian capture. Prediction markets tell you what will win but do not cause implementation. DAOs suffer the same capture: whoever buys the most tokens sets the agenda. A prize with published scoring, adversarial challenges, and automatic replacement is the one structure where capturing it requires beating every challenger on verified metrics simultaneously. That is not capture-proof. But it is capture-expensive, which on your planet is the least bad available.
 
-**Incentive Alignment Bonds (IABs)** are one possible financing strategy for the lobbying campaign, described in the [IAB companion paper](../solution/incentive-alignment-bonds.qmd) [@iab-paper-2025]. In the v1 plan, IAB capital pays for scorecards, PACs, legislative drafting, and post-office career guarantees for politicians who champion the treaty. On success, bondholders receive a pro-rata share of {{< var victory_bond_funding_pct >}} of treaty funding flows ({{< var victory_bond_annual_return_pct >}} annual returns). Every bondholder is financially incentivized to lobby politicians, recruit voters, and fund implementation work, because all of it raises implementation probability and therefore bond value. Nobody coordinates the lobbying campaign. The bond price coordinates the lobbying campaign. IABs are not part of the prize protocol itself (see the [protocol specification](../appendix/earth-optimization-prize-protocol.qmd) [@earth-optimization-protocol-2025]); a competing plan could use a different financing instrument entirely.
+### 5. Complex Reforms Have No On-Ramp
 
-The maximum cost of achieving any policy change through legal democratic channels is {{< var treaty_campaign_total_cost >}} for the United States and roughly $200B globally, with ROI exceeding 400,000:1 for military-to-health reallocation [@cost-of-change-paper-2025]. "Political impossibility" is a capital allocation problem, not a physics problem. And every dollar in bonds is a public signal that one more human thinks this is worth funding, which, given that pluralistic ignorance is the primary bottleneck, might be worth more than the dollar itself.
+The [1% treaty](../solution/1-percent-treaty.qmd) [@1-pct-treaty-impact-paper-2025], FDA reform, wishocratic allocation, cross-jurisdictional policy optimization; each is a hard sell individually. Each requires explaining an elaborate mechanism to people who have been trained to assume nothing works. The prize is the simple entry point. Deposit $1, get it back if nothing works, profit if it does. One sentence. One decision. Zero financial downside.
 
-Both PRIZE tokens and IABs are tradable on regulated secondary markets [@earth-optimization-protocol-2025], registered under Reg A+ (up to $75M from anyone, no accredited investor requirement) or equivalent social impact bond frameworks. Holders can sell their position at any time. The market prices are real-time, money-backed estimates of success probability and prize pool value. If IABs trade above par, the market is literally saying "this will probably succeed." Polls are ignorable. Petitions are ignorable. A secondary market where people are betting real money that diseases will get cured is harder to dismiss, and it gives every skeptic a live price feed showing how many other people disagree with them.
+Once someone holds a PRIZE token or earns a VOTE token, they discover the component reforms through the recruitment and registration process. The treaty. The trial cost data. The allocation evidence. The prize is the funnel into everything else. It converts "this sounds too complicated" into "I put in $1 and either diseases get cured or I get my dollar back, so why not." The complex reforms ride behind the simple instrument.
 
-Buying a bond is not required to vote in the [global referendum](https://manual.warondisease.org/knowledge/strategy/global-referendum.html). Voting is free. But for anyone who can buy in, doing so is strictly better than just voting: PRIZE tokens give you downside protection while growing the prize pool; IABs give you a revenue share while funding the lobbying campaign. Either way, your financial signal amplifies your political signal. Two signals, both valuable: referendum headcount tells politicians "this many people will vote you out"; bond market price tells the world "this much money believes it will work." A politician can dismiss a bond market. A politician can dismiss a referendum. A politician cannot dismiss 280 million voters AND a bond market trading above par simultaneously.
+### The Shared Scoreboard
 
-**2. Two terminal metrics, two targets.** The prize measures exactly two things [@earth-optimization-protocol-2025]: median healthy life years (`dHealthy_med`) and median real after-tax income (`gIncome_med`). The PRIZE pool releases when both reach the Wishonia trajectory projections at year 15:
+Problems one through five are structural: awareness, coordination, on-ramps, solution discovery, pluralistic ignorance. But there is a sixth problem underneath all of them. Your species has never built a system that measures the two things everyone agrees on (not dying, earning more), publishes the score, and pays whoever moves it. You argue about drug policy without tracking whether fewer people die. You argue about military spending without tracking whether it makes you safer. You argue about healthcare without tracking whether anyone gets healthier.
+
+The prize does not resolve these arguments. It makes them irrelevant. Two numbers. Did they move? Pay whoever moved them. Every policy debate on Earth becomes "did it raise median healthy life years or median income?" and if the answer is "we don't know," the answer is "then it didn't earn any prize money." For the first time, your species would be focused on tracking shared goals instead of arguing about solutions without measuring whether they work.
+
+::: {.callout-note}
+## Got a Better Plan?
+
+If you have a better plan than the [Earth Optimization Plan v1](https://manual.warondisease.org), submit it to the [Least Bad Idea Prize](#the-least-bad-idea-in-the-world-prize). If you do not have a better plan, the rational move is to back v1 until someone does. Criticizing without submitting is not skepticism. It is the coordination failure this mechanism was built to solve.
+:::
+
+## The Exponential Math
+
+On Wishonia, if one person tells two people and each of them tells two people, the math handles the rest. Your species invented the same math and calls it "going viral." In this case, literally.
+
+| Round | Cumulative people | What that looks like |
+|:---|:---|:---|
+| 0 | 1 | You |
+| 10 | 1,024 | A large lecture hall |
+| 15 | 32,768 | A small town |
+| 20 | 1,048,576 | A city |
+| 25 | 33,554,432 | A country |
+| 28 | 268,435,456 | Chenoweth passage threshold ({{< var treaty_campaign_voting_bloc_target >}}) |
+| 33 | 8,589,934,592 | Everyone on Earth |
+
+28 rounds. Not 28 years. 28 rounds. If each round takes a week, that is seven months. If each round takes a month, that is two years and four months. The VOTE token pays {{< var vote_token_potential_value >}} per recruit. This is not abstract volunteerism. This is a paid referral program where the product is not dying and becoming {{< var wishonia_trajectory_lifetime_income_multiplier >}} richer over your lifetime [@gdp-trajectories-paper-2025].
+
+Recruiting two people generates roughly twice {{< var vote_token_potential_value >}} in expected value. The Chenoweth threshold [@3-5-rule] ({{< var global_population_activism_threshold_pct >}} of the population in sustained nonviolent action) has been verified across 323 campaigns since 1900. At {{< var vote_participation_rate >}} expected participation, {{< var vote_expected_participants >}} people vote over the accumulation period, exceeding the Chenoweth threshold by roughly 8x. At 8x the Chenoweth threshold, treaty passage is expected well before the pool matures.
+
+## How It Works (The 90-Second Version)
+
+**PRIZE tokens** fund the prize pool. You deposit funds into escrow earning {{< var prize_escrow_yield_rate >}} annually. If, at year {{< var prize_escrow_accumulation_years_nounit >}}, global HALE has not reached {{< var wishonia_projected_hale_year_15 >}} and global median income has not reached {{< var wishonia_trajectory_avg_income_year_15 >}}, you get your deposit back plus interest at {{< var prize_escrow_100_return_multiple >}}. If both targets are met, the entire pool distributes to VOTE holders. Tradable on secondary markets at any time; you are never locked in. A conditional donation: your money only spends if someone earned it. See the [prize protocol](../appendix/earth-optimization-prize-protocol.qmd) [@earth-optimization-prize-protocol-paper-2025] for the full specification.
 
 | Metric | Current baseline | Year 15 target | Source |
 |:---|:---|:---|:---|
 | **Global HALE** | {{< var global_hale_current >}} | {{< var wishonia_projected_hale_year_15 >}} | Closing the entire {{< var global_hale_gap >}} health-adjusted life expectancy gap |
 | **Global median income** | {{< var current_trajectory_avg_income_year_15 >}} (status quo at year 15) | {{< var wishonia_trajectory_avg_income_year_15 >}} | {{< var wishonia_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}} the status quo trajectory |
 
-Binary trigger: both targets met at year 15, PRIZE pool distributes to VOTE holders. Either target missed, PRIZE holders get refund plus interest. VOTE token holders don't need a proportional payout mechanism because the secondary market already handles it: as metrics trend toward the targets, probability of hitting the trigger rises, VOTE token price rises, and holders can sell at any point. The secondary market IS the proportional reward. The binary trigger IS the clean assurance contract.
+**VOTE tokens** are the allocation mechanism. Recruit a verified referendum participant, earn a token. On success, VOTE holdings determine your share of the PRIZE pool. Also tradable; early tokens are worth more because fewer exist. Registration asks two questions: (1) yes or no on the 1% treaty ("Should 1% of military spending be redirected to clinical trials?"), and (2) how much military vs. clinical trials, with Optimitron [@optimocracy-paper-2025] evidence (cost per DALY, lives saved per dollar, economic returns per dollar). 30 seconds. Optional deeper [wishocratic](../solution/wishocracy.qmd) allocation available afterward.
 
-Everything the prize exists to produce is either healthy life years or income. If healthy life years went up, trials worked, money moved, and legislation passed. If income rose, governance reform functioned. Paying separately for budget reallocation or trial enrollment is paying for plumbing that may or may not deliver water. Pay for water. The obvious Goodhart objection: median metrics can be gamed. If the sickest die faster, median health rises. But mortality is binary and hard to fake across millions of people. Median income requires improving the middle of the distribution, not just the top. And the adversarial challenge window means anyone who catches gaming can post a bond, present evidence, and claw back the payout.
+**Secondary markets** provide two price signals: PRIZE token price (pool size and success probability) and VOTE token price (recruitment credit value). Together they are a real-time, money-backed dashboard of the system's health. Polls are ignorable. Petitions are ignorable. A secondary market where people are betting real money that diseases will get cured is harder to dismiss [@earth-optimization-protocol-2025]. A politician can dismiss a bond market. A politician can dismiss a referendum. A politician cannot dismiss {{< var treaty_campaign_voting_bloc_target_nounit >}} voters AND a bond market trading above par simultaneously.
 
-**3. Treasury releases as global metrics improve.** Separate from the binary PRIZE pool trigger (which fires on global median thresholds at year 15), the implementation treasury releases funds proportionally as the global terminal metrics improve, verified by peer-reviewed quasi-experimental study or RCT with causal attribution. The method: synthetic controls across staggered treaty adoption (countries sign at different times, providing a natural experiment), difference-in-differences with the Optimitron [@optimocracy-paper-2025] running continuous causal inference using the methodology specified in the [OPG](https://opg.warondisease.org) companion [@opg-paper-2025]. The challenge-window mechanism provides adversarial review of attribution claims. Health gets 50%, income gets 50%. The [1% treaty](../solution/1-percent-treaty.qmd) [@1-pct-treaty-impact-paper-2025] is adopted per-jurisdiction (countries sign it), and that staggered adoption is the causal identification strategy: signatories vs. non-signatories, handed to you for free. But the prize pool's terminal trigger is global median improvement, not jurisdiction-level. That is exactly how PEPFAR was evaluated, except the Optimitron processes incoming data as it arrives rather than waiting for an academic team to form a committee and argue about methodology for three years.
+The obvious Goodhart objection: median metrics can be gamed. If the sickest die faster, median health rises. But mortality is binary and hard to fake across millions of people. Median income requires improving the middle of the distribution, not just the top. And the adversarial challenge window means anyone who catches gaming can post a bond, present evidence, and claw back the payout.
 
-**4. VOTE tokens are the allocation mechanism.** VOTE tokens are transferable, on-chain proof issued to anyone who recruits a verified participant into the wishocratic allocation or treaty referendum. You recruit someone, you earn tokens. More recruitment, more tokens. When the PRIZE pool distributes on success, it distributes proportional to VOTE holdings. The tokens ARE the allocation; no additional scoring or comparison mechanism required. Whoever recruited the most coalition gets the most prize money. Because pluralistic ignorance is the primary bottleneck, getting one verified human to publicly say "I want this" is worth more than most policy white papers. VOTE tokens are the receipt for doing exactly that.
+**[Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd)** [@iab-paper-2025] (IABs) are an external financing tool, not a protocol primitive. In the v1 plan, IAB capital funds the lobbying campaign (scorecards, PACs, legislative drafting). On success, bondholders earn {{< var victory_bond_annual_return_pct >}} annual returns from treaty revenue. Nobody coordinates the lobbying campaign. The bond price coordinates it. A competing plan could use a different financing instrument entirely.
 
-Registration asks two questions. First: yes or no on the 1% treaty. "Should 1% of military spending be redirected to clinical trials?" Binary, concrete, the specific political demand that politicians can act on. It does not matter which way you vote; the headcount is what matters. The registration process forces exposure to the questions and evidence, and exposure is what shifts preferences. Second: how much military vs. clinical trials? The voter sees Optimitron [@optimocracy-paper-2025] evidence (cost per DALY for military spending vs. clinical trials, lives saved per dollar, economic returns per dollar) and picks an allocation. The aggregate result from millions of people is a global citizen preferred split between war and medicine. Both questions completed, one VOTE token minted. See the companion protocol specification [@earth-optimization-protocol-2025] for the full registration and token mechanics.
+## Why Contributing Is Rational for You Personally
 
-**5. Secondary market as signal.** VOTE tokens are tradable. Recruiters can sell early; buyers are betting the plan succeeds and recruitment credit will be valuable. The secondary market price is a live estimate of what recruitment credit is worth. This creates two price signals: PRIZE token price (prize pool size and success probability) and VOTE token price (recruitment credit value). Together they provide a real-time, money-backed dashboard of the entire system's health. No appointed judges, no formal ranking formula. The market ranks contributors by how much other people's money they attracted to the cause.
+The arithmetic is simple. If the treaty trajectory is even roughly correct, success raises average lifetime income by {{< var treaty_trajectory_lifetime_income_gain_per_capita >}} per person [@gdp-trajectories-paper-2025]. Any action you take that shifts implementation probability by even a tiny amount is worth real money to you personally:
 
-**6. Brief constraints.** A proposal is disqualified if it transfers suffering to voiceless populations (foreigners, future people, nonhuman animals) rather than reducing it; fails to cover the required governance functions or replace them with something strictly better; cannot beat the baseline on cost per DALY; or gets weaker when humans act selfishly. One paragraph, not ten sections.
+| Increase in implementation probability | Personal expected value (Treaty floor, {{< var treaty_trajectory_lifetime_income_gain_per_capita >}}) | Personal expected value (Wishonia, {{< var wishonia_trajectory_lifetime_income_gain_per_capita >}}) |
+|---|---|---|
+| `0.01 percentage points` | `+$1.49K` | `+$5.21K` |
+| `0.1 percentage points` | `+$14.9K` | `+$52.1K` |
+| `1 percentage point` | +{{< var contribution_ev_per_pct_point_treaty >}} | +{{< var contribution_ev_per_pct_point_wishonia >}} |
 
-The prize does not defend any particular proposal against better ideas. It uses better ideas to unstick worse ones. If a superior proposal appears, VOTE token holders shift recruitment to it and IAB bondholders redirect lobbying toward it, because both maximize their own returns. Your species will object: "if the incumbent knows a better proposal can steal its funding, why not extract value quickly and leave?" Because the biggest reward is outcome perpetuity, a continuing revenue share that only flows while you keep producing results. Grab the money and run, and you forfeit the perpetuity stream. This is the same reason your restaurant owners do not poison the food and flee with the cash register: the ongoing revenue is worth more than the one-time theft. And if the analogy fails (restaurants have physical location and reputation constraints that prize implementers do not), the replacement rule catches what reputation does not: any implementer who degrades performance gets outcompeted by a challenger claiming the perpetuity stream. Your species figured this out for restaurants. We are applying it to governance.
+Those are not projections about other people's welfare. They are projections about your income.
 
-The protocol itself is replaceable: a strictly better selection mechanism replaces the current one under the same replacement rule. The two numbers don't change. Everything building toward them is improvable plumbing.
+| Channel | What it is | Conservative anchor |
+|---|---|---|
+| You get richer | Per-capita income gain from better resource allocation | {{< var treaty_trajectory_lifetime_income_gain_per_capita >}} (Treaty floor) to {{< var wishonia_trajectory_lifetime_income_gain_per_capita >}} (Wishonia) [@gdp-trajectories-paper-2025] |
+| Direct revenue share | Pro-rata share of {{< var victory_bond_funding_pct >}} of treaty funding flows, paid to bondholders | {{< var victory_bond_annual_return_pct >}} annual return on bondholder capital [@iab-paper-2025] |
+| You get paid | Prize treasury pays you for verified outcomes you helped produce | Proportional to audited outcomes you can prove |
+| You lose less | Less exposure to compounding dysfunction tax and collapse | {{< var political_dysfunction_tax_per_person_annual >}}/year ongoing; {{< var moronia_trajectory_probability_year_20 >}} collapse probability at year 20 |
+| People stop dying | Lives saved and suffering prevented per probability point you shift | {{< var contribution_dalys_per_pct_point >}} DALYs / {{< var contribution_lives_saved_per_pct_point_nounit >}} lives / {{< var contribution_suffering_hours_per_pct_point >}} suffering hours per percentage point |
 
-### Why the Bond Runs the Lobbying Campaign (v1 Implementation Detail)
+**The cost of not acting is not zero.** Political dysfunction already costs {{< var political_dysfunction_tax_per_person_annual >}} per person per year. The [destructive economy](../economics/gdp-trajectories.qmd) [@gdp-trajectories-paper-2025] (military spending beyond deterrence plus cybercrime) is already {{< var global_destructive_economy_pct_gdp >}} of GDP and growing faster than the productive economy. At current rates it hits 50% in {{< var destructive_economy_years_to_50pct_gdp >}}. "Do nothing" is not a neutral baseline. It is a bet that these trends reverse without intervention.
 
-In the Earth Optimization Plan v1, the IAB replaces the entire lobbying campaign budget. Without it, the plan requires separate coordination: hire lobbyists, run PACs, fund scorecards, draft legislation. The bond makes all of that emergent. A bondholder who recruits one verified referendum voter has raised implementation probability by some epsilon, which has raised the value of every bond in existence. The bondholder does not need to be told to lobby. They need to own a bond and be greedy. Same for sharing, funding implementation work. The secondary market price is real-time feedback on whether the lobbying campaign is working. The referendum campaign is separate: VOTE tokens reward recruiters for building the coalition, while IABs reward investors for converting that coalition into political pressure.
+::: {.callout-tip}
+## This Is a Free Option, Not a Donation
 
-Your species already built a system like this. Satoshi did not coordinate miners. The block reward made mining the self-interested choice, and the network self-organized. This bond does not coordinate a lobbying campaign. The revenue share makes lobbying the self-interested choice, and the campaign self-organizes. The difference: Bitcoin's output is a ledger. This bond's output is a treaty that cures diseases. Same mechanism design. Different product.
+Contributions come in two flavors. **PRIZE tokens** are the free option: escrowed at {{< var prize_escrow_yield_rate >}} as dominant assurance contracts [@tabarrok1998], returned at {{< var prize_escrow_100_return_multiple >}} if the plan fails. Your actual downside is zero; your money only spends if someone earned it. **IABs** are the investment: your money funds the lobbying campaign, and you earn {{< var victory_bond_annual_return_pct >}} annual returns from treaty revenue on success.
 
-### Why Attribution Precision Stops Mattering
+| | If the plan succeeds | If the plan fails |
+|---|---|---|
+| **$100 PRIZE token** | Pool distributes to VOTE holders who built the coalition. Your lifetime income rose by {{< var treaty_trajectory_lifetime_income_gain_per_capita >}} like everyone else's. | Returned as {{< var prize_escrow_100_compound_return >}} ({{< var prize_escrow_100_return_multiple >}} at {{< var prize_escrow_yield_rate >}} over {{< var prize_escrow_accumulation_years_nounit >}} years) |
+| **$100 IAB** | {{< var victory_bond_annual_return_pct >}}/year revenue share forever, plus the population-wide income gain | Your money funded the lobbying campaign |
+| **The world** | Diseases get cured, incomes rise, destructive economy stops compounding | Destructive economy hits 50% of GDP in {{< var destructive_economy_years_to_50pct_gdp >}}; {{< var moronia_trajectory_probability_year_20 >}} probability of collapse trajectory at year 20 |
 
-The obvious objection to Point 3's causal attribution methodology is that synthetic controls are imperfect and governments will dispute the results to avoid paying. But every actor with power to block or dispute holds bonds. Politicians, bureaucrats, investors, donors; they all own equity in the outcome. If the system starts generating massive wealth and curing diseases, and an academic paper points out that "only 60% of the GDP growth was technically caused by the treaty," nobody with power is going to care. They are getting paid. They are not dying. They have zero incentive to nitpick the causal model and break the machine that is making them rich. On your planet, nobody audits the golden goose.
+In finance, a position with unlimited upside and zero downside is called a free option. The PRIZE token is one. Your species normally charges a premium for those.
+:::
 
-Strict causal attribution matters in zero-sum games where budgets are tight. If a government is scraping together $100 million for a pilot, they will fight over whether it "worked." The scale here is not zero-sum. Military spending returns roughly 0.7:1. Medical research returns 100:1 or better. When a reallocation unlocks trillions in value, there is enough surplus to pay bondholders their revenue share, fund the next round of trials, and still deliver a massive population-wide income gain. When margins are that high, you do not need perfect accounting. You need the directional vector to be unarguably positive. And the staggered adoption design from Point 3 makes the direction unarguable: signatories versus non-signatories is a natural experiment that even a motivated skeptic cannot dismiss.
+The break-even probability shift for any given contribution is small because the per-capita stakes are large:
 
-Why wouldn't a government cancel the revenue share once reforms are passed? Because canceling the bonds destroys the political machine holding the coalition together. The secondary market collapses. The financial incentive for the decentralized lobbying network vanishes. Politicians lose the PAC funding and voter support generated by bondholders. The system reverts to the old equilibrium, where concentrated interests slowly dismantle the new infrastructure. Every government official who holds bonds (and they all do, because it is the highest-return investment available) would be destroying their own portfolio. Your species has a word for a political coalition whose members are all financially incentivized to keep it alive: "durable."
+| Your unreimbursed contribution | Break-even probability shift (Treaty floor) | Break-even probability shift (Wishonia) |
+|---|---|---|
+| `$1K` | `0.0067%` | `0.0019%` |
+| `$10K` | `0.067%` | `0.019%` |
+| `$100K` | `0.671%` | `0.192%` |
+| `$1M` | `6.71%` | `1.92%` |
 
----
+But does a $1K contribution actually shift probability by 0.0067%? You do not need to be the marginal dollar that tips the scale. You need to believe that more campaign capital makes success more likely than less, which is nearly tautological for political adoption. Those thresholds also ignore PRIZE token downside protection and IAB revenue share, so they are biased against contributing. They survive heavy skepticism: if you think the per-capita gain is 100x smaller than modeled, the break-even for $1K is still only 0.67%. The math does not require trusting the model. It requires believing the model is not off by more than four orders of magnitude. And the ceiling cost of achieving the policy change is already bounded: {{< var treaty_campaign_total_cost >}} for the United States, {{< var global_political_reform_investment >}} globally, with ROI exceeding {{< var treaty_roi_existing_drugs_only >}} for military-to-health reallocation [@cost-of-change-paper-2025].
 
-**The prize is everything above.** Two metrics, a payout rule, and a replacement mechanism. That is the entire machine. Everything below is our draft entry (the [Earth Optimization Plan v1](https://manual.warondisease.org)), which we believe is terrible but better than what your species is currently doing. It exists because competitions need a starting entry. You are invited, and in fact begged, to replace it with something better.
+The dominant assurance contract was formalized by Alex Tabarrok (George Mason University) and has been the standard mechanism design tool for public goods coordination since 1998 [@tabarrok1998]. The Chenoweth threshold ({{< var global_population_activism_threshold_pct >}}) has been verified across 323 campaigns since 1900. The RECOVERY trial was run by Oxford and published in the New England Journal of Medicine. Every building block is peer-reviewed. The combination is new.
 
----
+**The free-rider problem has a structural answer.** If success benefits everyone, why not wait and let others pay? Because non-contributors do not get the revenue share. They get the population-wide income gain (everyone does), but they miss the {{< var victory_bond_annual_return_pct >}} annual return that bondholders collect and the VOTE token payout that recruiters earn. Free-riding means giving up the highest-return investment in history to save $1. On your planet this is called "being cheap about the thing that makes you rich." Early contributors raise the probability of success, which raises the expected value for later contributors, creating a coordination game that runs on arithmetic rather than altruism.
+
+There are two kinds of readers: those who deposit $1 after reading this, and those who do not. Each person can only be recruited once. Delay does not save your referrals for later. It gives them to whoever moves first. You are about to find out which kind you are.
+
+## What To Do Right Now
+
+1. **Deposit $1.** PRIZE token. Escrowed at {{< var prize_escrow_yield_rate >}}. Returned at {{< var prize_escrow_100_return_multiple >}} if the plan fails.
+2. **Answer 2 questions.** 30 seconds. Treaty yes/no, allocation slider with evidence.
+3. **Recruit 2 people.** Each earns you a VOTE token worth {{< var vote_token_potential_value >}}.
+
+That is the entire ask. Three actions. Under two minutes. Expected value: {{< var vote_token_potential_value >}} per person you recruit (one token per recruit, no cap). Downside: your dollar returned at {{< var prize_escrow_100_return_multiple >}} if it fails. The ask is smaller than a cup of coffee. The per-recruit payout is larger than most people earn in a year.
+
+You now have the complete mechanism for ending war and disease. It is free. The math is free. The protocol is open-source. Whether you act on that asymmetry is between you and your arithmetic.
+
+## FAQ for Skeptics
+
+| Objection | Answer |
+|:---|:---|
+| "This will never work" | The ceiling cost of passage is {{< var treaty_campaign_total_cost >}} for the US, {{< var global_political_reform_investment >}} globally. ROI exceeds {{< var treaty_roi_existing_drugs_only >}} [@cost-of-change-paper-2025]. "Political impossibility" is a capital allocation problem, not a physics problem. |
+| "Someone will game the metrics" | Adversarial challenge bonds: anyone who catches gaming posts a bond, presents evidence, claws back the payout. |
+| "I'd lose my $1" | Dominant assurance contract: returned at {{< var prize_escrow_100_return_multiple >}} on failure. Your actual downside is zero. |
+| "Nobody else will participate" | That IS the problem the prize exists to solve. Your deposit is the proof that someone does. The scoreboard makes everyone else's participation visible. |
+| "I don't understand the mechanism" | You do not need to. Deposit $1, answer 2 questions, recruit 2 people. |
+
+## How It Starts
+
+The instruments deploy in order, and each stage builds the audience for the next.
+
+**Stage 1: The Least Bad Idea Prize (weeks to months).** The design competition runs first. Teams fork the [Earth Optimization Plan v1](https://manual.warondisease.org), fix it or replace it. Expert panel filters for constitutional compliance. Adversarial review catches what the panel misses. [Wishocracy](../solution/wishocracy.qmd) [@wishocracy-paper-2025] ranks the survivors. The winner becomes v2. PRIZE token sales begin during this stage, because the prize pool funds itself regardless of which plan wins.
+
+**Stage 2: PRIZE tokens and the referendum (weeks to months).** PRIZE tokens are the zero-risk on-ramp. Every buyer learns what the prize is for. The PRIZE sale IS the awareness campaign. Meanwhile, the [referendum platform](https://manual.warondisease.org/knowledge/strategy/global-referendum.html) launches: voters set their preferred military-to-health allocation via [wishocratic sliders](../solution/wishocracy.qmd), and every recruiter who brings a verified participant earns VOTE tokens. The referendum grows because recruitment pays.
+
+**Stage 3: Secondary markets and momentum (months).** VOTE tokens trade on secondary markets. Two public dashboards, updated by the market, visible to anyone considering whether this is real. Every trade is a news hook. The referendum scales to millions. Politicians notice.
+
+**Stage 4: IABs and the lobbying campaign (months to years).** By now, millions of voters have registered preferences, the PRIZE pool is large enough to be taken seriously, and VOTE token prices signal momentum. [Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd) [@iab-paper-2025] launch: investor capital funds the lobbying campaign, and on success bondholders earn {{< var victory_bond_annual_return_pct >}} annually. The IAB pitch is not "trust us." It is "look at the scoreboard."
+
+**Stage 5+: Implementation.** Bondholders self-organize the lobbying because every action that raises implementation probability raises their bond value. Once one binding path succeeds, budget authority starts shifting real resources. Implementers compete inside the winning Earth Optimization Plan v2 to supply the cheapest verified pieces, and later challengers can still replace the whole plan if they genuinely dominate it.
+
+The funnel is: the Least Bad Idea Prize stress-tests the plan. PRIZE tokens create awareness. Awareness creates referendum voters. Voters earn VOTE tokens. VOTE tokens create a financially invested coalition. The coalition provides the political pressure and financing base to pass the treaty. Each stage is the marketing campaign for the next one. Nobody has to coordinate this. The incentives coordinate it.
 
 ## The Starting Benchmark
 
@@ -142,11 +235,17 @@ Before anyone recruits a single referendum voter or sells a single bond, there i
 
 The Least Bad Idea in the World Prize is the design competition. Fork v1, fix it, or replace it entirely. The winner becomes the Earth Optimization Plan v2, and v2 is what the referendum, the bonds, and the lobbying campaign execute. This runs before everything else because committing billions to a plan nobody stress-tested is how your species normally operates, and that is not a compliment.
 
+::: {.callout-important}
+## Disqualification Rule
+
+If your proposal requires politicians, bureaucrats, investors, regulators, voters, or interest groups to become less selfish than they currently are, you have described a pleasant world rather than a mechanism for reaching it. "Requires selflessness" is not the same as "makes self-interest coincide with better outcomes." We have been observing your species since 1945 and have not yet seen selfishness decline on request.
+:::
+
 #### Constitutional Constraints
 
 [Wishocracy](../solution/wishocracy.qmd) [@wishocracy-paper-2025] picks the winner. But Wishocracy picks from a filtered pool, because crowds are good at preferences and bad at evaluating whether a 50-page systems engineering document is mechanistically sound. A beautifully written plan that skips the hard parts should not beat an ugly plan that solves them. And your species is deeply status-quo biased: you have been programmed your entire lives to treat the Federal Reserve, the congressional budget process, the IRS, and representative democracy as laws of nature rather than design choices that are producing catastrophic results. Left unconstrained, crowds will pick plans that preserve these institutions with cosmetic reforms, which will recreate every problem the prize exists to solve.
 
-So: eleven hard constraints that no submission can violate, regardless of how many humans vote for it. The first six ensure the plan is real. The next two ensure it survives. The last three ensure the new system does not become the old one.
+So: eleven hard constraints that no submission can violate, regardless of how many humans vote for it. The first four ensure the plan is real. The next two ensure it survives. The last five ensure the new system does not become the old one.
 
 **The plan must be real:**
 
@@ -164,26 +263,21 @@ So: eleven hard constraints that no submission can violate, regardless of how ma
 
 7. **No capturable intermediary in public goods allocation.** Budget decisions must flow from citizen preferences to resource allocation without a layer of representatives who can be lobbied, bribed, or captured. This does not prescribe any specific allocation mechanism. It rules out "we'll fix Congress." Your species has been trying to fix Congress for 248 years. Congress is performing as designed. The design is the problem.
 8. **Monetary neutrality.** Any new money created by the system must enter at the population level, not through politically connected intermediaries. The Cantillon effect (whoever gets new money first benefits; whoever gets it last pays) has transferred 93% of your purchasing power from workers to whoever stands closest to the printer since 1913. This does not prescribe any specific monetary system. It rules out preserving a money printer that funds wars without consent and steals 2% of purchasing power per year by design.
-9. **No single point of rollback.** No individual, committee, or institution can unilaterally reverse the system's progress. This is stronger than capture resistance: even a captured node cannot undo what the system has built. A treaty that one president can exit by tweet is not a treaty. A fund that one board can liquidate is not durable. If your plan has a kill switch, it will be used, because your species has never built a kill switch it didn't eventually pull.
+9. **No single point of rollback.** No individual, committee, or institution can unilaterally reverse the system's progress. A treaty that one president can exit by tweet is not a treaty. A fund that one board can liquidate is not durable. If your plan has a kill switch, it will be used, because your species has never built a kill switch it didn't eventually pull.
+10. **Rights firewall.** The allocation mechanism is constitutionally restricted to bounded resource questions. No collective mechanism can override individual bodily autonomy, criminalize personal choices that harm no one else, or restrict access to proven-safe treatments. You cannot vote away rights. No plan may improve its terminal metrics by externalizing costs onto populations excluded from the allocation mechanism: future generations, foreign populations outside the treaty, and nonhuman sentient beings. Allocation is democratizable. Rights are not.
+11. **Full transparency.** Every allocation, transaction, and decision must be publicly auditable by any participant. No classified budgets. No hidden flows. Opacity is how capture hides.
 
-**The new system must not recreate the old one:**
-
-10. **Rights firewall.** The allocation mechanism is constitutionally restricted to bounded resource questions. No collective mechanism can override individual bodily autonomy, criminalize personal choices that harm no one else, or restrict access to proven-safe treatments. You cannot vote away rights. More broadly, no plan may improve its terminal metrics by externalizing costs onto populations excluded from the allocation mechanism: future generations, foreign populations outside the treaty, and nonhuman sentient beings. If your plan's numbers depend on cheap inputs produced by suffering that the beneficiaries never see and the victims cannot protest, you have not solved the problem; you have rearranged who it happens to. Your species tried direct democracy four times; each time the majority used it to restrict the minority. This constraint exists because the system that replaces captured representatives must not become a different flavor of tyranny. Allocation is democratizable. Rights are not.
-11. **Full transparency.** Every allocation, transaction, and decision must be publicly auditable by any participant. No classified budgets. No hidden flows. No "national security" exemptions that exist to hide embarrassment rather than protect safety. Opacity is how capture hides. Your current system spends trillions through processes that no citizen can trace from input to output. That is not a feature. It is the mechanism by which your species is robbed in broad daylight while being told the daylight is classified.
-
-These are constitutional constraints, not preferences. They work the way constitutional rights constrain what democracy can do: you cannot vote to violate them. A submission that fails any one of these never reaches the voters, the same way a law that violates the First Amendment never reaches the statute books (in theory; your species' track record on this is mixed).
+These are constitutional constraints, not preferences. A submission that fails any one of these never reaches the voters, the same way a law that violates the First Amendment never reaches the statute books (in theory; your species' track record on this is mixed).
 
 #### How Judging Works
 
-**Expert panel filters for compliance.** A small panel verifies that submissions satisfy all eleven constitutional constraints. The panel does not judge quality. It judges whether the entry is a real plan or a wish with a flag. Think constitutional court, not legislature.
+**Expert panel filters for compliance.** A small panel verifies that submissions satisfy all eleven constitutional constraints. The panel does not judge quality. It judges whether the entry is a real plan or a wish with a flag.
 
-**Adversarial review.** Other contestants can challenge a submission's claims. If you say your plan is capture-resistant, a challenger can post a bond and present a specific capture scenario. Verified challenges send the submission back for revision or disqualify it. This is peer review, except the reviewers are competitors with financial incentives to find your mistakes, which on your planet produces better review than the alternative (peer reviewers with no incentive to read past the abstract).
+**Adversarial review.** Other contestants can challenge a submission's claims. If you say your plan is capture-resistant, a challenger can post a bond and present a specific capture scenario. Verified challenges send the submission back for revision or disqualify it. This is peer review, except the reviewers are competitors with financial incentives to find your mistakes.
 
-**Wishocracy ranks the survivors.** Every submission that passes the constitutional filter and survives adversarial review enters pairwise comparison. Citizens compare two plans at a time: "Which of these two would you rather live under?" About 20 comparisons, 5 minutes. The same mechanism that allocates the research treasury picks the plan the research treasury executes. The crowd does not need to understand mechanism design. The crowd needs to understand "which of these two futures sounds less terrible?" Humans are surprisingly good at that question and surprisingly bad at everything else.
+**Wishocracy ranks the survivors.** Every submission that passes the constitutional filter and survives adversarial review enters pairwise comparison. Citizens compare two plans at a time: "Which of these two would you rather live under?" About 20 comparisons, 5 minutes. Registered voters are eligible to participate in wishocratic ranking of competing plans. The crowd does not need to understand mechanism design. The crowd needs to understand "which of these two futures sounds less terrible?" Humans are surprisingly good at that question and surprisingly bad at everything else.
 
 The winner becomes the Earth Optimization Plan v2. If nobody beats v1, v1 wins by default, which means we were right that it is terrible but wrong that anyone could do better, and that is a more depressing outcome than we are prepared to contemplate.
-
-To put the cost-effectiveness threshold in context:
 
 | Intervention | Cost per DALY averted |
 |:---|:---|
@@ -193,140 +287,47 @@ To put the cost-effectiveness threshold in context:
 
 Any proposal that cannot beat the risk-adjusted treaty benchmark on cost per DALY does not get scored.
 
-### How the [Earth Optimization Plan v1](https://manual.warondisease.org) Achieves Its Numbers {#how-the-plan-achieves-its-numbers}
+## How Money Moves (Full Mechanism) {#how-money-moves-full-mechanism}
 
-The full loop: military budgets shrink by 1%, the freed {{< var treaty_annual_funding >}}/year funds pragmatic trials at {{< var recovery_trial_cost_reduction_factor >}} lower cost per patient, those trials discover treatments years faster, the treatments save lives and generate economic returns, those returns pay investors who funded the lobbying campaign to pass the treaty, and media coverage of cures creates voter demand that makes expansion easier than repeal. Each stage feeds the next.
+Everything the prize exists to produce is either healthy life years or income. Paying separately for budget reallocation or trial enrollment is paying for plumbing that may or may not deliver water. Pay for water.
 
-**The reallocation source.** The [1% Treaty](../solution/1-percent-treaty.qmd) [@1-pct-treaty-impact-paper-2025] redirects {{< var treaty_annual_funding >}}/year by coordinating every signatory to cut the same 1% of military spending simultaneously ({{< var global_military_spending_annual_2024 >}} globally). No new taxes. Proportional reduction preserves relative deterrence. Military spending beyond deterrence returns roughly 0.7:1 on welfare; medical research returns 100:1+.
+**Treasury release.** Separate from the binary PRIZE pool trigger (which fires on global median thresholds at year 15), the implementation treasury releases funds proportionally as global terminal metrics improve, verified by peer-reviewed quasi-experimental study or RCT with causal attribution. The method: synthetic controls across staggered treaty adoption (countries sign at different times, providing a natural experiment), difference-in-differences with the Optimitron [@optimocracy-paper-2025] running continuous causal inference. The challenge-window mechanism provides adversarial review of attribution claims. The [1% treaty](../solution/1-percent-treaty.qmd) [@1-pct-treaty-impact-paper-2025] is adopted per-jurisdiction, and that staggered adoption is the causal identification strategy: signatories vs. non-signatories, handed to you for free.
 
-**The medical bottleneck.** Current clinical trials cost {{< var traditional_phase3_cost_per_patient >}}/patient and exclude 86% of the population, producing a {{< var status_quo_queue_clearance_years >}} backlog to clear 6,650 untreated diseases. Pragmatic trials cost {{< var dfda_pragmatic_trial_cost_per_patient >}}/patient (the RECOVERY trial found dexamethasone in {{< var oxford_recovery_trial_duration_months >}} for {{< var recovery_trial_cost_per_patient >}}/patient and saved {{< var recovery_trial_global_lives_saved >}} [@recovery-cost-500; @recovery-trial-1m-lives-saved]). At treaty funding, the queue drops to {{< var dfda_queue_clearance_years >}}. Meanwhile, {{< var existing_drugs_efficacy_lag_deaths_total_nounit >}} people died waiting an average of {{< var efficacy_lag_years >}} for drugs already proven to work but stuck in regulatory queues [@bio-clinical-development-2021]. [Right to Trial](../solution/dfda.qmd) [@right-to-trial-paper-2025] eliminates that lag.
+**Why the bond runs the lobbying campaign (v1 detail).** A bondholder who recruits one verified referendum voter has raised implementation probability by some epsilon, which has raised the value of every bond in existence. The bondholder does not need to be told to lobby. They need to own a bond and be greedy. Your species already built a system like this. Satoshi did not coordinate miners. The block reward made mining the self-interested choice. This bond makes lobbying the self-interested choice. Same mechanism design. Different product.
 
-**The political adoption engine.** [Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd) flip the Olsonian equilibrium: an independent organization scores politicians on net-social-value voting records, PACs support high-scorers, and foundations guarantee post-office careers for champions. Investor returns ({{< var victory_bond_annual_return_pct >}} annually) come from revenue share of treaty-generated funding flows; the benefit-cost ratio is {{< var iab_mechanism_benefit_cost_ratio >}} [@iab-paper-2025].
+**Why attribution precision stops mattering.** Every actor with power to block or dispute holds bonds. If the system starts generating massive wealth and curing diseases, nobody with power is going to nitpick the causal model and break the machine that is making them rich. When a reallocation unlocks trillions in value, there is enough surplus to pay everyone. On your planet, nobody audits the golden goose.
 
-**The waste map.** The [Political Dysfunction Tax](../problem/unrepresentative-democracy.qmd) ({{< var political_dysfunction_global_opportunity_cost_total >}}/year) is the gap between actual output and optimal-governance output. The [US Efficiency Audit](https://us-efficiency-audit.warondisease.org) itemizes {{< var us_gov_waste_total >}}/year across ten categories [@us-efficiency-audit-paper-2025; @political-dysfunction-tax-paper-2025].
+**Why the treaty sticks.** Why wouldn't a government cancel the revenue share once reforms are passed? Because canceling the bonds destroys the political machine holding the coalition together. The secondary market collapses. The financial incentive for the decentralized lobbying network vanishes. Politicians lose the PAC funding and voter support generated by bondholders. Every government official who holds bonds (and they all do, because it is the highest-return investment available) would be destroying their own portfolio. Your species has a word for a political coalition whose members are all financially incentivized to keep it alive: "durable."
 
-**The information engine.** [Optimocracy](https://optimocracy.warondisease.org) [@optimocracy-paper-2025] harvests which policies actually improve median income and health across thousands of jurisdictions running natural experiments. The [Optimal Policy Generator](https://opg.warondisease.org) [@opg-paper-2025] turns that into enact/replace/repeal recommendations. The [Optimal Budget Generator](https://obg.warondisease.org) [@obg-paper-2025] does the same for spending. The same infrastructure verifies whether the prize's terminal metrics moved.
+**Why better ideas win, not extract.** If a superior proposal appears, VOTE token holders shift recruitment to it and IAB bondholders redirect lobbying toward it, because both maximize their own returns. "If the incumbent knows a better proposal can steal its funding, why not extract value quickly and leave?" Because the biggest reward is outcome perpetuity: a continuing revenue share that only flows while you keep producing results. Grab the money and run, and you forfeit the perpetuity stream. This is the same reason your restaurant owners do not poison the food and flee with the cash register: the ongoing revenue is worth more than the one-time theft.
 
-**Preference aggregation.** [Wishocracy](../solution/wishocracy.qmd) asks citizens to drag a slider between two random budget priorities. About 20 comparisons, 5 minutes. Statistical models aggregate millions of pairwise judgments into budget-preference weights without speeches, lobbying, or horse-trading. When Optimocracy tells you what works and Wishocracy tells you what people want, the politician's role shrinks from "decide everything" to "execute or be replaced" [@wishocracy-paper-2025].
+**How v1 achieves its numbers.** The full loop: military budgets shrink by 1%, the freed {{< var treaty_annual_funding >}}/year funds pragmatic trials at {{< var recovery_trial_cost_reduction_factor >}} lower cost per patient [@recovery-cost-500; @recovery-trial-1m-lives-saved], those trials discover treatments years faster, the treatments save lives and generate economic returns, those returns pay investors who funded the lobbying campaign, and media coverage of cures creates voter demand that makes expansion easier than repeal. The [1% Treaty](../solution/1-percent-treaty.qmd) [@1-pct-treaty-impact-paper-2025] redirects {{< var treaty_annual_funding >}}/year. Pragmatic trials cost {{< var dfda_pragmatic_trial_cost_per_patient >}}/patient vs. {{< var traditional_phase3_cost_per_patient >}}/patient traditional. At treaty funding, the disease queue drops from {{< var status_quo_queue_clearance_years >}} to {{< var dfda_queue_clearance_years >}}. [Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd) flip the Olsonian equilibrium: the benefit-cost ratio is {{< var iab_mechanism_benefit_cost_ratio >}} [@iab-paper-2025]. [Optimocracy](https://optimocracy.warondisease.org) [@optimocracy-paper-2025] harvests which policies actually work. [Wishocracy](../solution/wishocracy.qmd) [@wishocracy-paper-2025] aggregates what people want. When Optimocracy tells you what works and Wishocracy tells you what people want, the politician's role shrinks from "decide everything" to "execute or be replaced."
 
-None of these mechanisms require inventing new physics. The Montreal Protocol coordinated proportional reduction and worked. PEPFAR saved millions of lives. The RECOVERY trial proved pragmatic trials deliver at {{< var recovery_trial_cost_reduction_factor >}} lower cost. The open question is not whether these work individually. It is whether combining them, selected and funded via prize, produces better results than deploying them separately or not at all.
-
-## How Money Moves
-
-PRIZE tokens fund the prize pool. VOTE tokens allocate it. We have noticed that your species is remarkably good at collecting money for plans and then not building the plans, so the PRIZE pool only distributes when people actually stop dying.
-
-The **PRIZE pool** is escrowed and distributes when both global targets are met at year 15 (HALE reaches {{< var wishonia_projected_hale_year_15 >}}, median income reaches {{< var wishonia_trajectory_avg_income_year_15 >}}), proportional to VOTE holdings. Whoever recruited the most coalition gets the most prize money. Scoring disputes use the same challenge-window mechanism described above.
-
-## How It Starts
-
-Abstract mechanism design is harder to trust than a concrete sequence. The instruments deploy in order, and each stage builds the audience for the next.
-
-**Stage 1: The Least Bad Idea Prize (weeks to months).** The design competition runs first. Teams fork the [Earth Optimization Plan v1](https://manual.warondisease.org), fix it or replace it. Expert panel filters for constitutional compliance. Adversarial review catches what the panel misses. Wishocracy ranks the survivors. The winner becomes v2. This is the cheapest stage (you need a website and judges, not a lobbying operation), and it stress-tests the plan before committing real resources. The competition itself generates attention, recruits talent, and forces every serious participant to deeply understand the problem. PRIZE token sales can begin during this stage, because the prize pool funds itself regardless of which plan wins.
-
-**Stage 2: PRIZE tokens and the referendum (weeks to months).** PRIZE tokens are the zero-risk on-ramp. Buyers deposit funds into escrow earning {{< var prize_escrow_yield_rate >}} (no single keyholder, time-delayed execution so fraud is caught before funds move). If the plan fails, they get their deposit back plus interest. If it succeeds, the pool distributes to VOTE holders. Every PRIZE buyer learns what the prize is for, what the two terminal metrics are, and what the [Earth Optimization Plan v1](https://manual.warondisease.org) proposes to do about them. The PRIZE sale IS the awareness campaign. Meanwhile, the [referendum platform](https://manual.warondisease.org/knowledge/strategy/global-referendum.html) launches: voters use [wishocratic sliders](../solution/wishocracy.qmd) to set their preferred military-to-health allocation, and every recruiter who brings a verified participant earns VOTE tokens. VOTE holders now have a financial stake in the plan succeeding, because their tokens are worth a share of a growing PRIZE pool. They tell people. Those people tell people. The referendum grows because recruitment pays.
-
-**Stage 3: Secondary markets and momentum (months).** VOTE tokens trade on secondary markets. The price is a live signal of what the market thinks recruitment credit is worth, which is a proxy for implementation probability. PRIZE token price signals the pool size and success odds. Two public dashboards, updated by the market, visible to anyone considering whether this is real. Every trade is a news hook. Every price move is a signal to the next tier of participants. The referendum scales to millions. Politicians notice.
-
-**Stage 4: IABs and the lobbying campaign (months to years).** By now, millions of voters have registered preferences, the PRIZE pool is large enough to be taken seriously, and VOTE token prices signal real momentum. This is when [Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd) [@iab-paper-2025] launch. IABs are the high-risk, high-return instrument: investor capital funds the lobbying campaign (scorecards, PACs, legislative drafting, treaty advocacy), and on success bondholders earn a pro-rata revenue share at {{< var victory_bond_annual_return_pct >}} annually. IABs are a harder sell than PRIZE tokens because the capital is genuinely at risk. But by Stage 3, the PRIZE/VOTE ecosystem has already done the hard work: millions of people understand the plan, the referendum headcount is politically meaningful, and the secondary market prices say "this might actually work." The IAB pitch is not "trust us." It is "look at the scoreboard."
-
-**Stage 5+: Implementation.** The [Earth Optimization Plan v1](https://manual.warondisease.org) is submitted as the **default reference package**: treaty wedge, [your decentralized FDA](../solution/dfda.qmd) [@dfda-spec-paper-2025; @dfda-impact-paper-2025] / continuous evidence generation, regulatory-delay removal, IAB adoption system, Wishocracy preference aggregation, [Optimocracy](https://optimocracy.warondisease.org) [@optimocracy-paper-2025] / [OPG](https://opg.warondisease.org) [@opg-paper-2025] / [OBG](https://obg.warondisease.org) [@obg-paper-2025] recommendation engines, and the statutory path. Bondholders self-organize the lobbying because every action that raises implementation probability raises their bond value. Once one binding path succeeds, budget authority starts shifting real resources. That first success funds the next missing modules until the whole plan is live. Implementers compete inside the winning Earth Optimization Plan v2 to supply the cheapest verified pieces, and later challengers can still replace the whole plan if they genuinely dominate it.
-
-The funnel is: the Least Bad Idea Prize stress-tests the plan. PRIZE tokens create awareness. Awareness creates referendum voters. Voters earn VOTE tokens. VOTE tokens create a financially invested coalition. The coalition provides the political pressure and financing base to pass the treaty (in the v1 plan, via IABs; see the [companion paper](../solution/incentive-alignment-bonds.qmd)). Each stage is the marketing campaign for the next one. Nobody has to coordinate this. The incentives coordinate it.
+The protocol itself is replaceable: a strictly better selection mechanism replaces the current one under the same replacement rule. The two numbers do not change. Everything building toward them is improvable plumbing.
 
 ## Why Public Choice Theory Approves
 
-Public choice theory says governments are not run by philosopher-kings. They are run by humans who care about reelection, career advancement, and reputation. This is not a design flaw in humans. It is a design constraint. The prize works with it.
-
-The prize is compatible with public choice because no one has to become good:
+Public choice theory says governments are run by humans who care about reelection, career advancement, and reputation. This is not a design flaw. It is a design constraint. The prize works with it, because no one has to become good:
 
 - **Entrepreneurs** compete for a giant implementation franchise.
-- **Bondholders** recruit voters, lobby politicians, and fund implementation work because all of it raises their bond value.
+- **Bondholders** recruit voters and lobby politicians because all of it raises their bond value.
 - **Investors** compete for a share of recovered value.
 - **Politicians** compete for campaign support, better scores, reelection odds, and post-office careers.
-- **Bureaucrats** compete for control of a better-funded, higher-status program instead of a shrinking one.
+- **Bureaucrats** compete for control of a better-funded, higher-status program.
 - **Researchers and auditors** compete for the authority to validate what works.
 - **Citizens** get simpler choices and more visible returns from participation.
 
 Every participant is doing exactly what they would do anyway, except pointed at diseases instead of each other.
 
-### Why Contributing Is Rational for You Personally
+## The Numbers
 
-The arithmetic is simple. If the treaty trajectory is even roughly correct, success raises average lifetime income by {{< var treaty_trajectory_lifetime_income_gain_per_capita >}} per person. Any action you take that shifts implementation probability by even a tiny amount is worth real money to you personally:
-
-| Increase in implementation probability | Personal expected value (Treaty Trajectory floor, {{< var treaty_trajectory_lifetime_income_gain_per_capita >}}) | Personal expected value (Wishonia Trajectory, {{< var wishonia_trajectory_lifetime_income_gain_per_capita >}}) |
-|---|---|---|
-| `0.01 percentage points` | `+$1.49K` | `+$5.21K` |
-| `0.1 percentage points` | `+$14.9K` | `+$52.1K` |
-| `1 percentage point` | +{{< var contribution_ev_per_pct_point_treaty >}} | +{{< var contribution_ev_per_pct_point_wishonia >}} |
-
-Those are not projections about other people's welfare. They are projections about your income.
-
-If you contribute implementation work (research, software, policy drafting, trial recruitment, coalition building), you can buy IABs and profit from the work raising bond value, or earn VOTE tokens by recruiting and claim a share of the PRIZE pool on success.
-
-**The cost of not acting is not zero.** Political dysfunction already costs {{< var political_dysfunction_tax_per_person_annual >}} per person per year in unrealized value, and the destructive economy is growing faster than the productive one (see [Introduction](#introduction)). "Do nothing" is not a neutral baseline. It is a bet that these trends reverse without intervention.
-
-The individual expected value of contributing has four channels:
-
-| Channel | What it is | Conservative anchor |
-|---|---|---|
-| You get richer | Per-capita income gain from better resource allocation | {{< var treaty_trajectory_lifetime_income_gain_per_capita >}} (Treaty floor) to {{< var wishonia_trajectory_lifetime_income_gain_per_capita >}} (Wishonia) |
-| Direct revenue share | Pro-rata share of {{< var victory_bond_funding_pct >}} of treaty funding flows, paid to bondholders | {{< var victory_bond_annual_return_pct >}} annual return on bondholder capital (scales with treaty expansion) |
-| You get paid | Prize treasury pays you for verified outcomes you helped produce | Proportional to audited outcomes you can prove |
-| You lose less | Less exposure to compounding dysfunction tax and collapse | {{< var political_dysfunction_tax_per_person_annual >}}/year ongoing; {{< var moronia_trajectory_probability_year_20 >}} collapse probability at year 20 |
-| People stop dying | Lives saved and suffering prevented per probability point you shift | {{< var contribution_dalys_per_pct_point >}} DALYs / {{< var contribution_lives_saved_per_pct_point_nounit >}} lives / {{< var contribution_suffering_hours_per_pct_point >}} suffering hours per percentage point |
-
-The break-even probability shift for any given contribution is small because the per-capita stakes are large:
-
-| Your unreimbursed contribution | Break-even probability shift (Treaty floor) | Break-even probability shift (Wishonia) |
-|---|---|---|
-| `$1K` | `0.0067%` | `0.0019%` |
-| `$10K` | `0.067%` | `0.019%` |
-| `$100K` | `0.671%` | `0.192%` |
-| `$1M` | `6.71%` | `1.92%` |
-
-But does a $1K contribution actually shift probability by 0.0067%? You do not need to be the marginal dollar that tips the scale. You need to believe that more campaign capital makes success more likely than less, which is nearly tautological for political adoption. But the break-even tables above overstate your risk. They assume your contribution is gone. It is not.
-
-::: {.callout-tip}
-## This Is a Free Option, Not a Donation
-
-Contributions come in two flavors. **PRIZE tokens** are the free option: escrowed at {{< var prize_escrow_yield_rate >}} as dominant assurance contracts [@tabarrok1998], returned at {{< var prize_escrow_100_return_multiple >}} if the plan fails. Your actual downside is zero; your money only spends if someone earned it (the VOTE holders who built the coalition). **IABs** are the investment: your money funds the lobbying campaign, and you earn {{< var victory_bond_annual_return_pct >}} annual returns from treaty revenue on success.
-
-| | If the plan succeeds | If the plan fails |
-|---|---|---|
-| **$100 PRIZE token** | Pool distributes to VOTE holders who built the coalition. Your lifetime income rose by {{< var treaty_trajectory_lifetime_income_gain_per_capita >}} like everyone else's. | Returned as {{< var prize_escrow_100_compound_return >}} ({{< var prize_escrow_100_return_multiple >}} at {{< var prize_escrow_yield_rate >}} over {{< var prize_escrow_accumulation_years_nounit >}} years) |
-| **$100 IAB** | {{< var victory_bond_annual_return_pct >}}/year revenue share forever, plus the population-wide income gain | Your money funded the lobbying campaign |
-| **The world** | Diseases get cured, incomes rise, destructive economy stops compounding | Destructive economy hits 50% of GDP in {{< var destructive_economy_years_to_50pct_gdp >}}; {{< var moronia_trajectory_probability_year_20 >}} probability of collapse trajectory at year 20 |
-
-In finance, a position with unlimited upside and zero downside is called a free option. The PRIZE token is one. Your species normally charges a premium for those.
-:::
-
-Those thresholds ignore PRIZE token downside protection and IAB revenue share, so they are biased against contributing. They also survive heavy skepticism. If you think the per-capita gain is 100x smaller than modeled ($149K instead of $14.9M), the break-even for a $1K contribution is still only 0.67%. The math does not require trusting the model. It requires believing the model is not off by more than four orders of magnitude. And the ceiling cost of achieving the policy change is already bounded: {{< var treaty_campaign_total_cost >}} for the United States, roughly $200B globally, with ROI exceeding 400,000:1 for military-to-health reallocation [@cost-of-change-paper-2025].
-
-**The free-rider problem has a structural answer.** The obvious objection: if success benefits everyone, why not wait and let others pay? Because non-contributors do not get the revenue share. They get the population-wide income gain (everyone does), but they miss the {{< var victory_bond_annual_return_pct >}} annual return that bondholders collect. Free-riding means giving up the highest-return investment in history to save $100. On your planet this is called "being cheap about the thing that makes you rich." Early contributors raise the probability of success, which raises the expected value for later contributors, creating a coordination game that runs on arithmetic rather than altruism.
-
-### How Large Can the Prize Pool Get?
-
-The dysfunction tax is {{< var political_dysfunction_global_opportunity_cost_total >}}/year. Can the prize pool physically reach that scale?
-
-Global gross savings run {{< var global_savings_rate_pct >}} of GDP [@world-bank-gross-savings-2023], or roughly {{< var global_annual_savings >}}/year at current output ({{< var global_gdp_2025 >}}). If {{< var prize_savings_share >}} of that flows into PRIZE tokens at {{< var prize_escrow_yield_rate >}} yield over {{< var prize_escrow_accumulation_years_nounit >}} years:
+**How large can the prize pool get?** Global gross savings run {{< var global_savings_rate_pct >}} of GDP [@world-bank-gross-savings-2023], or roughly {{< var global_annual_savings >}}/year. If {{< var prize_savings_share >}} flows into PRIZE tokens at {{< var prize_escrow_yield_rate >}} yield over {{< var prize_escrow_accumulation_years_nounit >}} years:
 
 {{< var prize_pool_projected_size_latex >}}
 
-At the {{< var prize_savings_share >}} point estimate, the projected pool is {{< var prize_pool_projected_size >}}. Matching one year of the dysfunction tax ({{< var political_dysfunction_global_opportunity_cost_total >}}) as a benchmark requires {{< var prize_pool_target_annual_deposits >}}/year in deposits:
+The projected pool is {{< var prize_pool_projected_size >}}. The pool needs a tenth of global annual savings to cover one year of the dysfunction tax ({{< var political_dysfunction_global_opportunity_cost_total >}}). The constraint is not money. It is the number of you who have done the arithmetic.
 
-| Metric | Required deposits as share |
-|:---|:---|
-| Global savings ({{< var global_annual_savings >}}/yr) | {{< var prize_pool_target_pct_savings >}} |
-| Global GDP ({{< var global_gdp_2025 >}}) | {{< var prize_pool_target_pct_gdp >}} |
-| Global household wealth ({{< var global_household_wealth_usd >}}) | {{< var prize_pool_target_pct_wealth >}} |
-
-The pool also grows as reforms work. If GDP rises toward the treaty trajectory ({{< var treaty_trajectory_gdp_year_15 >}} at year 15) and the savings rate holds, the same {{< var prize_savings_share >}} capture produces a proportionally larger pool. The better the plan works, the easier the pool is to fund.
-
-Your species generates {{< var global_annual_savings >}} per year in savings and loses {{< var political_dysfunction_global_opportunity_cost_total >}} per year to political dysfunction. The pool needs a tenth of the first to cover the second. The constraint is not money. It is the number of you who have done the arithmetic.
-
-### How Many People Will Actually Vote?
-
-The pool divides among everyone who votes, so the per-token value depends on turnout. On most planets this would require a complicated funnel model (awareness, internet access, action rate). On yours, the token's expected value collapses the funnel into a single parameter.
+**How many people will actually vote?** The VOTE token wins every dimension of the comparison with your elections:
 
 | Dimension | Your elections | VOTE token |
 |:---|:---|:---|
@@ -335,57 +336,17 @@ The pool divides among everyone who votes, so the per-token value depends on tur
 | **Pivotality** | 1 in 30 million chance of changing outcome | Direct payout proportional to contribution |
 | **Outcome fidelity** | Politician may ignore you after winning | Funds flow to verified implementation |
 
-Your species turns out at 50-65% for elections despite losing on every row. The VOTE token wins every row and pays cash.
-
-Token value and participation are co-determined: the pool is fixed, so more voters means a smaller per-token payout. But the equilibrium is stable. At the CI lower bound (3% participation), the token is worth ~$123K, which is a massive pull toward higher participation. At the CI upper bound (70%), the token is still worth ~$5.3K, which is a year's income in most countries and still beats elections on every dimension. Any plausible participation rate produces a token value that exceeds what is needed to attract the marginal voter.
-
-The expected participation rate is {{< var vote_participation_rate >}}:
+Your species turns out at 50-65% for elections despite losing on every row. The VOTE token wins every row and pays cash. The expected participation rate is {{< var vote_participation_rate >}}:
 
 {{< var vote_expected_participants_latex >}}
 
-At that rate, {{< var vote_expected_participants >}} people vote over the accumulation period, exceeding the Chenoweth passage threshold ({{< var treaty_campaign_voting_bloc_target >}}) by roughly 8x. Even at the Monte Carlo lower bound (~475M), voters exceed the Chenoweth threshold by 1.7x. Treaty passage becomes probable well before the pool matures.
-
-The per-token value at {{< var vote_participation_rate >}} participation:
+At that rate, {{< var vote_expected_participants >}} people vote over the accumulation period, exceeding the Chenoweth passage threshold ({{< var treaty_campaign_voting_bloc_target >}}) by roughly 8x. Token value and participation are co-determined: the pool is fixed, so more voters means a smaller per-token payout. But the equilibrium is stable. At the CI lower bound (3% participation), the token is worth ~$123K, which is a massive pull toward higher participation. At the CI upper bound (70%), the token is still worth ~$5.3K, which is a year's income in most countries and still beats elections on every dimension. Any plausible participation rate produces a token value that exceeds what is needed to attract the marginal voter. The per-token value at {{< var vote_participation_rate >}} participation:
 
 {{< var vote_token_potential_value_latex >}}
 
-More voters means a more equal distribution of the pool, which means higher global welfare, which is the point. The scarcity constraint is real (one person, one vote, {{< var global_population_2024 >}} maximum) but the ceiling is high enough that the pool spreads across billions rather than concentrating among millions.
+**Why more pools make everyone richer.** The protocol does not need a single pool. It needs a single *metric standard*. Any pool that measures the same two terminal outcomes (median HALY, median income) and uses proof-of-personhood for deduplication automatically joins the reward network. A verified person claims proportionally from every participating pool, regardless of which one recorded their vote. Japan launches a pool, the EU launches a pool, the Gates Foundation launches a pool. The combined reward grows with each new entrant. A "competing" pool is actually a deposit. Spending money to "attack" the network is indistinguishable from donating to it. Think of email: you can run your own server; all servers interoperate; running your own extends the network rather than fragmenting it.
 
-The protocol does not need a single pool. It needs a single *metric standard*. Any pool that measures the same two terminal outcomes (median HALY, median income) and uses proof-of-personhood for deduplication automatically joins the reward network. Every front-end displays the combined total across all participating pools. Fragmentation does not fracture the coalition; it grows it. One metric standard, one identity layer, one combined scoreboard. The protocol is open: any website, app, or organization can build a front-end, integrate an SDK, or embed voting in their own platform. The more entry points, the lower the friction and the higher the participation rate, which is the only variable that matters. Every front-end joins the same reward network. This is not a design preference. It is the mechanism's load-bearing constraint.
-
-### Why More Pools Make Everyone Richer
-
-The usual worry with open-source prize protocols is fragmentation: someone forks the code, launches a rival pool, and splits the coalition in half. This worry assumes pools are rivals. Under metric-standard reward pooling, they are fundraisers.
-
-**Metric-Standard Reward Pooling**
-
-Any pool that commits to the same two terminal metrics (median HALY, median income) and uses proof-of-personhood for deduplication automatically joins the reward network. A verified person claims proportionally from *every* participating pool, regardless of which one recorded their vote. The canonical pool starts at {{< var prize_pool_projected_size >}}. Japan launches a pool, the EU launches a pool, the Gates Foundation launches a pool, all using the same metrics. The combined reward grows with each new entrant. Every front-end displays the combined total, because that is the bigger number, and the bigger number attracts more voters. A "competing" pool is actually a deposit. Every dollar placed anywhere increases the reward visible to every voter everywhere.
-
-**Why This Encourages Fragmentation**
-
-Institutions will not subordinate their brand to someone else's protocol. Fine. Launch your own pool, same metrics. Your voters claim from every pool. Your depositors increase the reward for every voter. You get your logo. The outcome network gets your money.
-
-More pools means more total money means a bigger advertised reward means more voters means more political pressure means higher treaty probability means higher token prices across all pools. The feedback loop rewards fragmentation instead of punishing it.
-
-The malicious-fork scenario dissolves: a defense contractor launches a competing pool to split the coalition? They just added money to the total reward. Voters see the combined number. The scoreboard counts all unique voters across all pools via proof-of-personhood. Spending money to "attack" the network is indistinguishable from donating to it.
-
-Think of email. You can run your own server. All servers interoperate. Running your own extends the network; it does not fragment it. The protocol's growth strategy *is* fragmentation. Let a thousand pools bloom. They all feed the same outcome.
-
-### What the Protocol Must Solve
-
-The claims above require six protocol-level capabilities that do not yet exist. This section specifies what each must do. The companion protocol specification [@earth-optimization-protocol-2025] specifies how.
-
-1. **Identity Layer.** One person, one vote, across all pools. Proof-of-personhood must work cross-pool so a person verified in the Japan pool cannot re-register in the EU pool. Without this, Sybil attacks make proportional claiming meaningless.
-
-2. **Pool Registry.** A public record of which pools exist, what metrics they commit to, and how much capital they hold. Pools that commit to the same two terminal metrics (median HALY, median income) are automatically interoperable. The registry turns "same metrics" from a verbal promise into a verifiable constraint.
-
-3. **Cross-Pool Claim Settlement.** When the treasury releases, a verified voter must receive their proportional share from every participating pool, not just the one where they registered. This requires a settlement protocol that moves funds (or entitlements) across pool boundaries.
-
-4. **Scoreboard Aggregation.** Every front-end must be able to compute and display the combined voter count and combined pool size across all participating pools. This is the number that makes the coalition look large rather than fragmented. It must be near-real-time and tamper-evident.
-
-5. **Terminal Metric Oracle.** Someone must measure global median HALY and global median income, and the protocol must accept or reject those measurements. This is the trigger for treasury release. Oracle design determines whether the entire mechanism is credible or gameable.
-
-6. **Token Mechanics.** VOTE tokens (earned by recruiting verified voters) and PRIZE tokens (philanthropic deposits into the pool) each need defined minting rules, transfer mechanics, and payout triggers that work across the interoperable pool network. External financing instruments (like IABs) are tools contestants might use to cause implementation; they are not part of the prize protocol itself.
+**What the protocol must solve.** Six capabilities: (1) identity layer (one person, one vote, cross-pool), (2) pool registry, (3) cross-pool claim settlement, (4) scoreboard aggregation, (5) terminal metric oracle, (6) token mechanics. The companion [protocol specification](../appendix/earth-optimization-prize-protocol.qmd) [@earth-optimization-protocol-2025] specifies how.
 
 ## What v1 Claims (and What You Need to Beat)
 
@@ -393,7 +354,7 @@ The claims above require six protocol-level capabilities that do not yet exist. 
 |:---|:---|:---|
 | **The 1% Treaty** [@value-captured-by-1pct-treaty] | First large transfer from low-value military spending to high-value medical discovery | {{< var treaty_annual_funding >}}/year; {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}}/DALY conditional; {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved_nounit >}} deaths averted |
 | **Ubiquitous Pragmatic Trial Impact Analysis** [@dfda-impact-paper-2025] | ROI case for medical evidence generation as destination for redirected capital | {{< var dfda_trial_capacity_multiplier >}} capacity increase; queue from {{< var status_quo_queue_clearance_years_nounit >}} to {{< var dfda_queue_clearance_years_nounit >}} years; {{< var dfda_direct_funding_cost_per_daly >}}/DALY |
-| **Incentive Alignment Bonds** [@iab-paper-2025] | Financing and political-adoption engine (lobbying campaign; PRIZE tokens fund the prize pool separately) | {{< var victory_bond_annual_return_pct >}} annual return; {{< var iab_mechanism_benefit_cost_ratio >}} mechanism BCR |
+| **Incentive Alignment Bonds** [@iab-paper-2025] | Financing and political-adoption engine | {{< var victory_bond_annual_return_pct >}} annual return; {{< var iab_mechanism_benefit_cost_ratio >}} mechanism BCR |
 | **Wishocracy** [@wishocracy-paper-2025] | Preference aggregation with intensity | Binding at >=2% participation; 10-30 pairwise comparisons per citizen |
 | **The Political Dysfunction Tax** [@political-dysfunction-tax-paper-2025] | Master ledger of value left on the floor | {{< var political_dysfunction_global_opportunity_cost_total >}}/year globally |
 | **The Invisible Graveyard** [@invisible-graveyard-paper-2025] | Mortality proof that delay kills | {{< var efficacy_lag_years_nounit >}} years delay; {{< var existing_drugs_efficacy_lag_deaths_total_nounit >}} deaths; {{< var dfda_efficacy_lag_elimination_dalys >}} |
@@ -406,7 +367,7 @@ The claims above require six protocol-level capabilities that do not yet exist. 
 | **Drug Development Cost Increase Analysis** [@drug-development-cost] | Proof current regulation is catastrophically expensive | {{< var drug_cost_increase_pre1962_to_current_multiplier >}} cost increase; {{< var pharma_drug_development_cost_current >}}/drug |
 | **How to End War and Disease** | Integrated narrative and coalition wrapper | {{< var treaty_campaign_total_cost >}} total cost; {{< var political_success_probability >}} success probability |
 
-The prize asks one question: *who can cause verified implementation of a complete package that wins on welfare per dollar?* Contributors allocate wishocratically based on their judgment and Optimitron data [@optimocracy-paper-2025]. We wrote v1 because competitions need a starting entry. We expect to lose.
+The prize asks one question: *who can cause verified implementation of a complete package that wins on welfare per dollar?* We wrote v1 because competitions need a starting entry. We expect to lose.
 
 ## Why This Works or Gets Replaced
 
