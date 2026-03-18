@@ -46,7 +46,7 @@ author:
 website:
   title: "Choose Your Own Earth: A World Without the Political Dysfunction Tax, or Terminal Parasitic Load in 15 Years"
   description: "Your destructive economy (military spending plus cybercrime) is already 11.5% of GDP and growing faster than your productive economy. At current rates, it reaches the Soviet collapse threshold in 8 years and exceeds productive output in 15. This paper models two GDP trajectories: the optimized path under military-to-medical reallocation, and the default path to civilizational collapse."
-  site-url: https://gdp-trajectories.warondisease.org
+  site-url: https://futures.warondisease.org
   favicon: assets/icons/gdp-trajectories-favicon.png
   page-navigation: true
   page-footer:
@@ -142,7 +142,7 @@ metadata:
   # Publication tracking
   publishing:
     own-site:
-      url: "https://gdp-trajectories.warondisease.org"
+      url: "https://futures.warondisease.org"
       status: pending
     preprints:
       - platform: zenodo
@@ -228,7 +228,7 @@ format:
       - callout-bw.tex
       - institute-header.tex
       - text: |
-          \paperurl{https://gdp-trajectories.warondisease.org}
+          \paperurl{https://futures.warondisease.org}
     geometry:
       - top=1in
       - bottom=1in

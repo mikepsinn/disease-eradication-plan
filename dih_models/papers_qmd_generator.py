@@ -275,7 +275,7 @@ def generate_papers_qmd(project_root: Path, output_filename: str = "papers.qmd")
     lines = [
         "---",
         "title: Papers & Publications",
-        'description: "Academic papers and working drafts from the Disease Eradication Plan project."',
+        'description: Academic papers and working drafts from the Disease Eradication Plan project.',
         "feed-date: false",
         "toc: true",
         "toc-depth: 2",
@@ -285,6 +285,8 @@ def generate_papers_qmd(project_root: Path, output_filename: str = "papers.qmd")
         "format:",
         "  html:",
         "    toc: true",
+        "podcast-image: /assets/podcast/papers-podcast.jpg",
+        "youtube-thumbnail: /assets/podcast/papers-youtube.jpg",
         "---",
         "",
         "This page provides an index of all academic papers, working drafts, and publications",

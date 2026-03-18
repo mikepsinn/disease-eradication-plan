@@ -165,6 +165,8 @@ page-layout: full
 toc: false
 aliases:
   - /links
+podcast-image: /assets/podcast/links-podcast.jpg
+youtube-thumbnail: /assets/podcast/links-youtube.jpg
 ---
 
 ```{{=html}}
@@ -225,6 +227,8 @@ page-layout: full
 toc: false
 aliases:
   - /podcast
+podcast-image: /assets/podcast/podcast-podcast.jpg
+youtube-thumbnail: /assets/podcast/podcast-youtube.jpg
 ---
 
 ```{{=html}}

@@ -130,7 +130,8 @@ metadata:
   og-site-name: "Earth Optimization Prize Protocol"
 
   # Identifiers
-  doi: ""
+  # Zenodo Concept DOI (stable across all versions - use for citations and new versions)
+  doi: "10.5281/zenodo.19080244"
 
   # Open Graph metadata
   open-graph: true
@@ -143,8 +144,8 @@ metadata:
       status: pending
     preprints:
       - platform: zenodo
-        status: pending
-        url: ""
+        status: auto-uploaded
+        url: "https://zenodo.org/record/19080244"
       - platform: ssrn
         status: pending
         url: ""
