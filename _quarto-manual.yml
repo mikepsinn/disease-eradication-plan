@@ -183,6 +183,7 @@ book:
         - knowledge/strategy/earth-optimization-plan-v1.qmd # The forkable v1 system spec
         - knowledge/appendix/optimal-budget-generator-spec.qmd # Standalone paper config: _quarto-obg.yml
         - knowledge/appendix/dfda-spec-paper.qmd # Standalone paper config: _quarto-dfda-spec.yml
+        - knowledge/appendix/earth-optimization-prize-protocol.qmd # Protocol spec for interoperable prize pools
         - knowledge/appendix/right-to-trial-fda-upgrade-act.qmd # Standalone paper config: _quarto-right-to-trial.yml
         - knowledge/appendix/drug-development-cost-analysis.qmd # Standalone paper config: _quarto-drug-development-cost.yml
 

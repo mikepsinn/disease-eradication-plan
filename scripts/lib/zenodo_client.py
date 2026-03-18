@@ -728,6 +728,8 @@ def extract_zenodo_metadata(quarto_config: dict, paper_key: str, project_root: P
 
     # Keywords
     keywords = metadata.get("keywords", [])
+    if isinstance(keywords, str):
+        keywords = [k.strip() for k in keywords.split(",") if k.strip()]
     if isinstance(keywords, list):
         keywords = keywords[:10]  # Zenodo limits keywords
 
@@ -773,14 +775,14 @@ def extract_zenodo_metadata(quarto_config: dict, paper_key: str, project_root: P
     # Version
     version = metadata.get("version", "1.0")
 
-    # Subjects
+    # Subjects (Zenodo new API format: {"subject": "..."})
     subjects = []
     subject_text = metadata.get("subject", "")
     if subject_text:
         for subj in subject_text.split(","):
             subj = subj.strip()
             if subj:
-                subjects.append({"term": subj, "scheme": "user-defined"})
+                subjects.append({"subject": subj})
 
     # Contributors
     contributors = []

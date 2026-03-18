@@ -353,6 +353,42 @@ The per-token value at {{< var vote_participation_rate >}} participation:
 
 More voters means a more equal distribution of the pool, which means higher global welfare, which is the point. The scarcity constraint is real (one person, one vote, {{< var global_population_2024 >}} maximum) but the ceiling is high enough that the pool spreads across billions rather than concentrating among millions.
 
+The protocol does not need a single pool. It needs a single *metric standard*. Any pool that measures the same two terminal outcomes (median HALY, median income) and uses proof-of-personhood for deduplication automatically joins the reward network. Every front-end displays the combined total across all participating pools. Fragmentation does not fracture the coalition; it grows it. One metric standard, one identity layer, one combined scoreboard. The protocol is open: any website, app, or organization can build a front-end, integrate an SDK, or embed voting in their own platform. The more entry points, the lower the friction and the higher the participation rate, which is the only variable that matters. Every front-end joins the same reward network. This is not a design preference. It is the mechanism's load-bearing constraint.
+
+### Why More Pools Make Everyone Richer
+
+The usual worry with open-source prize protocols is fragmentation: someone forks the code, launches a rival pool, and splits the coalition in half. This worry assumes pools are rivals. Under metric-standard reward pooling, they are fundraisers.
+
+**Metric-Standard Reward Pooling**
+
+Any pool that commits to the same two terminal metrics (median HALY, median income) and uses proof-of-personhood for deduplication automatically joins the reward network. A verified person claims proportionally from *every* participating pool, regardless of which one recorded their vote. The canonical pool starts at {{< var prize_pool_projected_size >}}. Japan launches a pool, the EU launches a pool, the Gates Foundation launches a pool, all using the same metrics. The combined reward grows with each new entrant. Every front-end displays the combined total, because that is the bigger number, and the bigger number attracts more voters. A "competing" pool is actually a deposit. Every dollar placed anywhere increases the reward visible to every voter everywhere.
+
+**Why This Encourages Fragmentation**
+
+Institutions will not subordinate their brand to someone else's protocol. Fine. Launch your own pool, same metrics. Your voters claim from every pool. Your depositors increase the reward for every voter. You get your logo. The outcome network gets your money.
+
+More pools means more total money means a bigger advertised reward means more voters means more political pressure means higher treaty probability means higher token prices across all pools. The feedback loop rewards fragmentation instead of punishing it.
+
+The malicious-fork scenario dissolves: a defense contractor launches a competing pool to split the coalition? They just added money to the total reward. Voters see the combined number. The scoreboard counts all unique voters across all pools via proof-of-personhood. Spending money to "attack" the network is indistinguishable from donating to it.
+
+Think of email. You can run your own server. All servers interoperate. Running your own extends the network; it does not fragment it. The protocol's growth strategy *is* fragmentation. Let a thousand pools bloom. They all feed the same outcome.
+
+### What the Protocol Must Solve
+
+The claims above require six protocol-level capabilities that do not yet exist. This section specifies what each must do. The companion protocol specification [@earth-optimization-protocol-2025] specifies how.
+
+1. **Identity Layer.** One person, one vote, across all pools. Proof-of-personhood must work cross-pool so a person verified in the Japan pool cannot re-register in the EU pool. Without this, Sybil attacks make proportional claiming meaningless.
+
+2. **Pool Registry.** A public record of which pools exist, what metrics they commit to, and how much capital they hold. Pools that commit to the same two terminal metrics (median HALY, median income) are automatically interoperable. The registry turns "same metrics" from a verbal promise into a verifiable constraint.
+
+3. **Cross-Pool Claim Settlement.** When the treasury releases, a verified voter must receive their proportional share from every participating pool, not just the one where they registered. This requires a settlement protocol that moves funds (or entitlements) across pool boundaries.
+
+4. **Scoreboard Aggregation.** Every front-end must be able to compute and display the combined voter count and combined pool size across all participating pools. This is the number that makes the coalition look large rather than fragmented. It must be near-real-time and tamper-evident.
+
+5. **Terminal Metric Oracle.** Someone must measure global median HALY and global median income, and the protocol must accept or reject those measurements. This is the trigger for treasury release. Oracle design determines whether the entire mechanism is credible or gameable.
+
+6. **Token Mechanics.** VOTE tokens (earned by recruiting verified voters) and PRIZE tokens (philanthropic deposits into the pool) each need defined minting rules, transfer constraints, and payout triggers that work across the interoperable pool network. External financing instruments (like IABs) are tools contestants might use to cause implementation; they are not part of the prize protocol itself.
+
 ## What v1 Claims (and What You Need to Beat)
 
 | Paper | What the prize uses it for | Key benchmark to beat |
