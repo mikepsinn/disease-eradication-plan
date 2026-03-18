@@ -38,15 +38,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 195 parameters used in the analysis, organized by type:
+This appendix documents all 204 parameters used in the analysis, organized by type:
 
-- External sources (peer-reviewed): 76
-- Calculated values: 94
-- Core definitions: 25
+- External sources (peer-reviewed): 78
+- Calculated values: 97
+- Core definitions: 29
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (94 parameters) • [External Data Sources](#sec-external) (76 parameters) • [Core Definitions](#sec-definitions) (25 parameters)
+[Calculated Values](#sec-calculated) (97 parameters) • [External Data Sources](#sec-external) (78 parameters) • [Core Definitions](#sec-definitions) (29 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -1678,6 +1678,109 @@ $$
 
 :::
 
+### Total Deaths from Historical Progress Delays: 102 million deaths {#sec-existing_drugs_efficacy_lag_deaths_total}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Total deaths from delaying existing drugs over 8.2-year efficacy lag. One-time impact of eliminating Phase 2-4 testing delay for drugs already approved 1962-2024. Based on Lichtenberg (2019) estimate of 12M lives saved annually × 8.2 years efficacy lag. Excludes innovation acceleration effects.
+
+**Inputs**:
+
+- [Annual Lives Saved by Pharmaceuticals](#sec-pharma_lives_saved_annual) 🔢: 12.4 million deaths
+- [Regulatory Delay for Efficacy Testing Post-Safety Verification](#sec-efficacy_lag_years) 📊: 8.2 years (SE: ±2 years)
+
+$$
+\begin{gathered}
+Deaths_{lag,total} \\
+= Lives_{saved,annual} \times T_{lag} \\
+= 12.4M \times 8.2 \\
+= 102M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Lives_{saved,annual} \\
+= \frac{LY_{saved,annual}}{T_{ext}} \\
+= \frac{149M}{12} \\
+= 12.4M
+\end{gathered}
+$$
+*~ Medium confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-existing_drugs_efficacy_lag_deaths_total.qmd >}}
+
+{{< include ../figures/sensitivity-table-existing_drugs_efficacy_lag_deaths_total.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-existing_drugs_efficacy_lag_deaths_total.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-existing_drugs_efficacy_lag_deaths_total.qmd >}}
+
+:::
+
+### Total Economic Loss from Historical Progress Delays: $259T {#sec-existing_drugs_efficacy_lag_economic_loss}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Total economic loss from delaying existing drugs over 8.2-year efficacy lag. One-time benefit of eliminating Phase 2-4 delay. Excludes innovation acceleration effects.
+
+**Inputs**:
+
+- [Global Life Expectancy (2024)](#sec-global_life_expectancy_2024) 📊: 79 years (SE: ±2 years)
+- [Total Deaths from Historical Progress Delays](#sec-existing_drugs_efficacy_lag_deaths_total) 🔢: 102 million deaths
+- [Mean Age of Preventable Death from Post-Safety Efficacy Delay](#sec-regulatory_delay_mean_age_of_death) 📊: 62 years (SE: ±3 years)
+- [Standard Economic Value per QALY](#sec-standard_economic_qaly_value_usd) 📊: $150K (SE: ±$30K)
+
+$$
+\begin{gathered}
+Loss_{lag} \\
+= Deaths_{lag,total} \times (LE_{global} - Age_{death,delay}) \times Value_{QALY} \\
+= 102M \times (79 - 62) \times \$150K \\
+= \$259T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Deaths_{lag,total} \\
+= Lives_{saved,annual} \times T_{lag} \\
+= 12.4M \times 8.2 \\
+= 102M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Lives_{saved,annual} \\
+= \frac{LY_{saved,annual}}{T_{ext}} \\
+= \frac{149M}{12} \\
+= 12.4M
+\end{gathered}
+$$
+*~ Medium confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-existing_drugs_efficacy_lag_economic_loss.qmd >}}
+
+{{< include ../figures/sensitivity-table-existing_drugs_efficacy_lag_economic_loss.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-existing_drugs_efficacy_lag_economic_loss.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-existing_drugs_efficacy_lag_economic_loss.qmd >}}
+
+:::
+
 ### Total Annual Cost of War Worldwide: $11.4T {#sec-global_annual_direct_indirect_war_cost}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -2438,6 +2541,60 @@ $$
 
 :::
 
+### Global Political Reform Investment: $128B {#sec-global_political_reform_investment}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Estimated global advocacy investment for policy reform. Calculated as US costs × global ratio (based on discretionary spending). Upper bound representing full democratic engagement at scale.
+
+**Inputs**:
+
+- [US Political Reform Investment (Total)](#sec-us_political_reform_investment_total) 🔢: $25.5B
+- [Global-to-US Political Cost Ratio](#sec-global_to_us_political_cost_ratio): 5:1 (95% CI: 3:1 - 8:1)
+
+$$
+\begin{gathered}
+Cost_{global,reform} \\
+= Cost_{US,total} \times \rho_{global/US} \\
+= \$25.5B \times 5 \\
+= \$128B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{US,total} \\
+= (Cost_{campaign} \\
++ Cost_{lobby} \times 2) \times \mu_{effort} + Cost_{career}
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{US,congress} \\
+= N_{congress} \times V_{post-office} \\
+= 535 \times \$10M \\
+= \$5.35B
+\end{gathered}
+$$
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-global_political_reform_investment.qmd >}}
+
+{{< include ../figures/sensitivity-table-global_political_reform_investment.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-global_political_reform_investment.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-global_political_reform_investment.qmd >}}
+
+:::
+
 ### IAB Mechanism Benefit-Cost Ratio: 230:1 {#sec-iab_mechanism_benefit_cost_ratio}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -2754,6 +2911,46 @@ $$
 
 :::
 
+### Annual Lives Saved by Pharmaceuticals: 12.4 million deaths {#sec-pharma_lives_saved_annual}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual lives saved by pharmaceutical interventions globally. Derived from Lichtenberg (2019) finding of 148.7M life-years saved, divided by assumed 12-year average life extension per beneficiary. Note: Life-years is the primary metric; lives is an approximation for intuitive communication.
+
+**Inputs**:
+
+- [Annual Life-Years Saved by Pharmaceuticals](#sec-pharma_life_years_saved_annual) 📊: 149 million life-years (95% CI: 79.4 million life-years - 240 million life-years)
+- [Average Life Extension per Beneficiary](#sec-avg_life_extension_per_beneficiary): 12 years (95% CI: 8 years - 18 years)
+
+$$
+\begin{gathered}
+Lives_{saved,annual} \\
+= \frac{LY_{saved,annual}}{T_{ext}} \\
+= \frac{149M}{12} \\
+= 12.4M
+\end{gathered}
+$$
+
+**Methodology**: [@lichtenberg-life-years-saved-2019]
+
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-pharma_lives_saved_annual.qmd >}}
+
+{{< include ../figures/sensitivity-table-pharma_lives_saved_annual.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-pharma_lives_saved_annual.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-pharma_lives_saved_annual.qmd >}}
+
+:::
+
 ### Global Opportunity Cost Total: $101T {#sec-political_dysfunction_global_opportunity_cost_total}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -3009,219 +3206,6 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-prize_pool_projected_size.qmd >}}
-
-:::
-
-### Prize Pool Required Annual Deposits: $3.18T {#sec-prize_pool_target_annual_deposits}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Annual deposits required for prize pool to reach the dysfunction tax target ($101T) over the accumulation period
-
-**Inputs**:
-
-- [Global Opportunity Cost Total](#sec-political_dysfunction_global_opportunity_cost_total) 🔢: $101T
-- [Prize Pool FV Annuity Factor](#sec-prize_pool_fv_annuity_factor) 🔢: 31.8:1
-
-$$
-D_{annual} = \frac{O_{total}}{FV_{annuity}}
-$$
-
-*✓ High confidence*
-
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-prize_pool_target_annual_deposits.qmd >}}
-
-{{< include ../figures/sensitivity-table-prize_pool_target_annual_deposits.qmd >}}
-
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-prize_pool_target_annual_deposits.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-prize_pool_target_annual_deposits.qmd >}}
-
-:::
-
-### Prize Pool Target as % of Global GDP: 2.76% {#sec-prize_pool_target_pct_gdp}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Required annual deposits as share of global GDP to reach dysfunction tax target
-
-**Inputs**:
-
-- [Prize Pool Required Annual Deposits](#sec-prize_pool_target_annual_deposits) 🔢: $3.18T
-- [Global GDP (2025)](#sec-global_gdp_2025) 📊: $115T
-
-$$
-\begin{gathered}
-d_{GDP} \\
-= \frac{D_{annual}}{GDP_{global}} \\
-= \frac{\$3.18T}{\$115T} \\
-= 2.76\%
-\end{gathered}
-$$
-where:
-$$
-D_{annual} = \frac{O_{total}}{FV_{annuity}}
-$$
-where:
-$$
-\begin{gathered}
-O_{total} \\
-= O_{health} + O_{science} + O_{lead} + O_{migration} \\
-= \$34T + \$4T + \$6T + \$57T \\
-= \$101T
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-FV_{annuity} \\
-= \frac{(1 + r_{escrow})^{T_{escrow}} - 1}{r_{escrow}}
-\end{gathered}
-$$
-*✓ High confidence*
-
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-prize_pool_target_pct_gdp.qmd >}}
-
-{{< include ../figures/sensitivity-table-prize_pool_target_pct_gdp.qmd >}}
-
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-prize_pool_target_pct_gdp.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-prize_pool_target_pct_gdp.qmd >}}
-
-:::
-
-### Prize Pool Target as % of Global Savings: 10.2% {#sec-prize_pool_target_pct_savings}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Required annual deposits as share of global savings to reach dysfunction tax target
-
-**Inputs**:
-
-- [Prize Pool Required Annual Deposits](#sec-prize_pool_target_annual_deposits) 🔢: $3.18T
-- [Global Annual Savings](#sec-global_annual_savings) 🔢: $31.1T
-
-$$
-\begin{gathered}
-d_{savings} \\
-= \frac{D_{annual}}{S_{annual}} \\
-= \frac{\$3.18T}{\$31.1T} \\
-= 10.2\%
-\end{gathered}
-$$
-where:
-$$
-D_{annual} = \frac{O_{total}}{FV_{annuity}}
-$$
-where:
-$$
-\begin{gathered}
-O_{total} \\
-= O_{health} + O_{science} + O_{lead} + O_{migration} \\
-= \$34T + \$4T + \$6T + \$57T \\
-= \$101T
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-FV_{annuity} \\
-= \frac{(1 + r_{escrow})^{T_{escrow}} - 1}{r_{escrow}}
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-S_{annual} \\
-= s_{global} \times GDP_{global} \\
-= 27\% \times \$115T \\
-= \$31.1T
-\end{gathered}
-$$
-*✓ High confidence*
-
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-prize_pool_target_pct_savings.qmd >}}
-
-{{< include ../figures/sensitivity-table-prize_pool_target_pct_savings.qmd >}}
-
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-prize_pool_target_pct_savings.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-prize_pool_target_pct_savings.qmd >}}
-
-:::
-
-### Prize Pool Target as % of Household Wealth: 0.7% {#sec-prize_pool_target_pct_wealth}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Required annual deposits as share of global household wealth to reach dysfunction tax target
-
-**Inputs**:
-
-- [Prize Pool Required Annual Deposits](#sec-prize_pool_target_annual_deposits) 🔢: $3.18T
-- [Global Household Wealth](#sec-global_household_wealth_usd) 📊: $454T
-
-$$
-\begin{gathered}
-d_{wealth} \\
-= \frac{D_{annual}}{Wealth_{household}} \\
-= \frac{\$3.18T}{\$454T} \\
-= 0.7\%
-\end{gathered}
-$$
-where:
-$$
-D_{annual} = \frac{O_{total}}{FV_{annuity}}
-$$
-where:
-$$
-\begin{gathered}
-O_{total} \\
-= O_{health} + O_{science} + O_{lead} + O_{migration} \\
-= \$34T + \$4T + \$6T + \$57T \\
-= \$101T
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-FV_{annuity} \\
-= \frac{(1 + r_{escrow})^{T_{escrow}} - 1}{r_{escrow}}
-\end{gathered}
-$$
-*✓ High confidence*
-
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-prize_pool_target_pct_wealth.qmd >}}
-
-{{< include ../figures/sensitivity-table-prize_pool_target_pct_wealth.qmd >}}
-
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-prize_pool_target_pct_wealth.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-prize_pool_target_pct_wealth.qmd >}}
 
 :::
 
@@ -3896,6 +3880,80 @@ $$
 
 :::
 
+### Treaty ROI - Historical Rate (Existing Drugs): 259k:1 {#sec-treaty_roi_existing_drugs_only}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Treaty ROI based on historical rate of drug development (existing drugs only). Total one-time benefit from avoiding regulatory delay for drugs already in development divided by campaign cost. Excludes future innovation effects.
+
+**Inputs**:
+
+- [Total Economic Loss from Historical Progress Delays](#sec-existing_drugs_efficacy_lag_economic_loss) 🔢: $259T
+- [Total 1% Treaty Campaign Cost](#sec-treaty_campaign_total_cost) 🔢: $1B
+
+$$
+\begin{gathered}
+ROI_{drugs} \\
+= \frac{Loss_{lag}}{Cost_{campaign}} \\
+= \frac{\$259T}{\$1B} \\
+= 259{,}000
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Loss_{lag} \\
+= Deaths_{lag,total} \times (LE_{global} - Age_{death,delay}) \times Value_{QALY} \\
+= 102M \times (79 - 62) \times \$150K \\
+= \$259T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Deaths_{lag,total} \\
+= Lives_{saved,annual} \times T_{lag} \\
+= 12.4M \times 8.2 \\
+= 102M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Lives_{saved,annual} \\
+= \frac{LY_{saved,annual}}{T_{ext}} \\
+= \frac{149M}{12} \\
+= 12.4M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{campaign} \\
+= Budget_{viral,base} + Budget_{lobby,treaty} \\
++ Budget_{reserve} \\
+= \$250M + \$650M + \$100M \\
+= \$1B
+\end{gathered}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-treaty_roi_existing_drugs_only.qmd >}}
+
+{{< include ../figures/sensitivity-table-treaty_roi_existing_drugs_only.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-treaty_roi_existing_drugs_only.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-treaty_roi_existing_drugs_only.qmd >}}
+
+:::
+
 ### Treaty Trajectory Average Income at Year 20: $339K {#sec-treaty_trajectory_avg_income_year_20}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -3965,47 +4023,6 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-treaty_trajectory_cumulative_lifetime_income.qmd >}}
-
-:::
-
-### Treaty Trajectory GDP at Year 15: $1.33 quadrillion {#sec-treaty_trajectory_gdp_year_15}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Projected global GDP at year 15 under the Treaty Trajectory: military-to-science reallocation plus disease-burden recovery only. 3-year ramp at 50% intensity + 12 years full implementation. Excludes non-health dysfunction-capital reallocation.
-
-**Inputs**:
-
-- [Global GDP (2025)](#sec-global_gdp_2025) 📊: $115T
-- [Baseline Global GDP Growth Rate](#sec-gdp_baseline_growth_rate): 2.5%
-- [Wishonia Military Reallocation Physical Max Share](#sec-wishonia_military_reallocation_physical_max_share) 🔢: 87.6%
-- [GDP Growth Boost at 30% Military Reallocation](#sec-military_redirect_gdp_boost_at_30pct): 5.5% (95% CI: 3.5% - 7.5%)
-- [R&D Spillover Multiplier](#sec-rd_spillover_multiplier): 2x (95% CI: 1.5x - 2.5x)
-- [Wishonia Disease Cure Fraction (15yr, Full Implementation)](#sec-wishonia_disease_cure_fraction_15yr) 🔢: 100%
-- [Disease Burden as % of GDP](#sec-disease_burden_gdp_drag_pct) 📊: 13%
-
-$$
-\begin{gathered}
-GDP_{treaty,15} \\
-= GDP_0(1+g_{treaty,ramp})^3(1+g_{treaty,full})^{12}
-\end{gathered}
-$$
-
-*✓ High confidence*
-
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-treaty_trajectory_gdp_year_15.qmd >}}
-
-{{< include ../figures/sensitivity-table-treaty_trajectory_gdp_year_15.qmd >}}
-
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-treaty_trajectory_gdp_year_15.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-treaty_trajectory_gdp_year_15.qmd >}}
 
 :::
 
@@ -4228,6 +4245,34 @@ $$
 
 :::
 
+### US Congress Full Advocacy Cost: $5.35B {#sec-us_congress_full_advocacy_cost}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Upper-bound advocacy cost to match career incentives for all 535 members of Congress
+
+**Inputs**:
+
+- [US Congress Members](#sec-us_congress_member_count): 535 members
+- [Post-Office Career Value (per politician)](#sec-politician_post_office_career_value) 📊: $10M (95% CI: $5M - $20M)
+
+$$
+\begin{gathered}
+Cost_{US,congress} \\
+= N_{congress} \times V_{post-office} \\
+= 535 \times \$10M \\
+= \$5.35B
+\end{gathered}
+$$
+
+*~ Medium confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-us_congress_full_advocacy_cost.qmd >}}
+
+:::
+
 ### US Gov Waste (Raw Total): $4.9T {#sec-us_gov_waste_raw_total}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -4380,6 +4425,45 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-us_gov_waste_total.qmd >}}
+
+:::
+
+### US Political Reform Investment (Total): $25.5B {#sec-us_political_reform_investment_total}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Total upper-bound investment for US political reform: (campaign spending + 2 years lobbying) × effort multiplier + Congress career advocacy. Represents cost to achieve democratic parity with incumbent interests.
+
+**Inputs**:
+
+- [US Federal Campaign Spending (2024)](#sec-us_total_federal_campaign_spending_2024) 📊: $20B (95% CI: $18B - $22B)
+- [US Total Lobbying (2024)](#sec-us_total_lobbying_annual) 📊: $4.4B (95% CI: $3.74B - $5.06B)
+- [Political Effort Multiplier (US)](#sec-us_political_effort_multiplier): 0.7x (95% CI: 0.4x - 1.2x)
+- [US Congress Full Advocacy Cost](#sec-us_congress_full_advocacy_cost) 🔢: $5.35B
+
+$$
+\begin{gathered}
+Cost_{US,total} \\
+= (Cost_{campaign} \\
++ Cost_{lobby} \times 2) \times \mu_{effort} + Cost_{career}
+\end{gathered}
+$$
+
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-us_political_reform_investment_total.qmd >}}
+
+{{< include ../figures/sensitivity-table-us_political_reform_investment_total.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-us_political_reform_investment_total.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-us_political_reform_investment_total.qmd >}}
 
 :::
 
@@ -5224,6 +5308,181 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-wishonia_trajectory_lifetime_income_gain_per_capita.qmd >}}
+
+:::
+
+### Wishonia Trajectory Lifetime Income Multiplier: 45x {#sec-wishonia_trajectory_lifetime_income_multiplier}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Ratio of cumulative lifetime income under Wishonia Trajectory vs current trajectory. Income-agnostic: applies as a multiplier to any individual's lifetime earnings.
+
+**Inputs**:
+
+- [Wishonia Trajectory Cumulative Lifetime Income (Per Capita)](#sec-wishonia_trajectory_cumulative_lifetime_income) 🔢: $53.3M
+- [Current Trajectory Cumulative Lifetime Income (Per Capita)](#sec-current_trajectory_cumulative_lifetime_income) 🔢: $1.18M
+
+$$
+\begin{gathered}
+k_{lifetime,wish:earth} \\
+= \frac{Y_{cum,wish}}{Y_{cum,earth}} \\
+= \frac{\$53.3M}{\$1.18M} \\
+= 45
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Y_{cum,wish} \\
+= \bar{y}_0 \cdot \frac{(1+g_{pc,wish})((1+g_{pc,wish})^{20}-1)}{g_{pc,wish}} \\
++ \bar{y}_{wish,20} \cdot \frac{(1+g_{base})((1+g_{base})^{T_{remaining}-20}-1)}{g_{base}}
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+\bar{y}_{0} \\
+= \frac{GDP_{global}}{Pop_{global}} \\
+= \frac{\$115T}{8B} \\
+= \$14.4K
+\end{gathered}
+$$
+where:
+$$
+\bar{y}_{wish,20} = \frac{GDP_{wish,20}}{Pop_{2045}}
+$$
+where:
+$$
+GDP_{wish,20}=GDP_0(1+g_{ramp})^3(1+g_{full})^{17}
+$$
+where:
+$$
+s_{mil,max} = Cut_{WW2} = 87.6\% = 87.6\%
+$$
+where:
+$$
+\begin{gathered}
+Cut_{WW2} \\
+= 1 - \frac{Spending_{US,1947}}{Spending_{US,1945}} \\
+= 1 - \frac{\$176B}{\$1.42T} \\
+= 87.6\%
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+f_{cure,20,wish} \\
+= \min\left(1,\frac{Treatments_{new,ann}\cdot k_{capacity,wish}\cdot 20}{D_{untreated}}\right)
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+k_{capacity} \\
+= \frac{N_{fundable,dFDA}}{Slots_{curr}} \\
+= \frac{23.4M}{1.9M} \\
+= 12.3
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{fundable,dFDA} \\
+= \frac{Subsidies_{dFDA,ann}}{Cost_{pragmatic,pt}} \\
+= \frac{\$21.8B}{\$929} \\
+= 23.4M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Subsidies_{dFDA,ann} \\
+= Funding_{dFDA,ann} - OPEX_{dFDA} \\
+= \$21.8B - \$40M \\
+= \$21.8B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+OPEX_{dFDA} \\
+= Cost_{platform} + Cost_{staff} + Cost_{infra} \\
++ Cost_{regulatory} + Cost_{community} \\
+= \$15M + \$10M + \$8M + \$5M + \$2M \\
+= \$40M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+k_{capacity,max} \\
+= \frac{N_{willing}}{Slots_{curr}} \\
+= \frac{1.08B}{1.9M} \\
+= 566
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{willing} \\
+= N_{patients} \times Pct_{willing} \\
+= 2.4B \times 44.8\% \\
+= 1.08B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{untreated} \\
+= N_{rare} \times 0.95 \\
+= 7{,}000 \times 0.95 \\
+= 6{,}650
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{remaining} \\
+= LE_{global} - Age_{median} \\
+= 79 - 30.5 \\
+= 48.5
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Y_{cum,earth} \\
+= \bar{y}_0 \cdot \frac{(1+g_{base})((1+g_{base})^{T_{remaining}}-1)}{g_{base}}
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+\bar{y}_{base,20} \\
+= \frac{GDP_{base,20}}{Pop_{2045}} \\
+= \frac{\$188T}{9.2B} \\
+= \$20.5K
+\end{gathered}
+$$
+where:
+$$
+GDP_{base,20} = GDP_0(1+g_{base})^{20}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-wishonia_trajectory_lifetime_income_multiplier.qmd >}}
+
+{{< include ../figures/sensitivity-table-wishonia_trajectory_lifetime_income_multiplier.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-wishonia_trajectory_lifetime_income_multiplier.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-wishonia_trajectory_lifetime_income_multiplier.qmd >}}
 
 :::
 
@@ -6251,22 +6510,6 @@ Number of diseases that receive their FIRST effective treatment each year under 
 
 :::
 
-### Oxford RECOVERY Trial Duration: 3 months {#sec-oxford_recovery_trial_duration_months}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Oxford RECOVERY trial duration (found life-saving treatment in 3 months)
-
-**Source**: [@recovery-trial-82x-cost-reduction]
-
-#### Uncertainty Range
-
-**Technical**: Distribution: Fixed
-
-*✓ High confidence*
-
-:::
-
 ### Patient Willingness to Participate in Clinical Trials: 44.8% {#sec-patient_willingness_trial_participation_pct}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -6312,6 +6555,30 @@ Average cost to develop one drug in current system
 {{< include ../figures/distribution-pharma_drug_development_cost_current.qmd >}}
 
 *✓ High confidence • 📊 Peer-reviewed*
+
+:::
+
+### Annual Life-Years Saved by Pharmaceuticals: 149 million life-years {#sec-pharma_life_years_saved_annual}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual life-years saved by pharmaceutical innovations globally. Lichtenberg (2019, NBER WP 25483) found that drugs launched after 1981 saved 148.7M life-years in 2013 across 22 countries using 3-way fixed-effects regression (disease-country-year). 95% CI [79.4M, 239.8M] propagated from Table 2 regression standard errors (β₀₋₁₁=-0.031±0.008, β₁₂₊=-0.057±0.013).
+
+**Source**: [@lichtenberg-life-years-saved-2019]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [79.4 million life-years, 240 million life-years] • Distribution: Lognormal
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between 79.4 million life-years and 240 million life-years (±54%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-pharma_life_years_saved_annual.qmd >}}
+
+*~ Medium confidence*
 
 :::
 
@@ -6435,6 +6702,28 @@ Estimated probability of treaty ratification and sustained implementation. Centr
 
 :::
 
+### Post-Office Career Value (per politician): $10M {#sec-politician_post_office_career_value}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Net present value of post-office career premium for average congressperson (10 years x $1M/year premium). Based on documented cases: Gephardt $7M/year, Daschle $2M+/year.
+
+**Source**: [@opensecrets-revolving-door]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$5M, $20M]
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between $5M and $20M (±75%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+#### Input Distribution
+
+{{< include ../figures/distribution-politician_post_office_career_value.qmd >}}
+
+*~ Medium confidence*
+
+:::
+
 ### Pre-1962 Drug Development Cost (2024 Dollars): $24.7M {#sec-pre_1962_drug_development_cost_2024_usd}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -6504,30 +6793,6 @@ RECOVERY trial cost per patient. Note: RECOVERY was an outlier - hospital-based 
 {{< include ../figures/distribution-recovery_trial_cost_per_patient.qmd >}}
 
 *✓ High confidence*
-
-:::
-
-### RECOVERY Trial Global Lives Saved: 1 million lives {#sec-recovery_trial_global_lives_saved}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Estimated lives saved globally by RECOVERY trial's dexamethasone discovery. NHS England estimate (March 2021). Based on Águas et al. Nature Communications 2021 methodology applying RECOVERY trial mortality reductions (36% ventilated, 18% oxygen) to global COVID hospitalizations. Wide uncertainty range reflects extrapolation assumptions.
-
-**Source**: [@recovery-trial-1m-lives-saved]
-
-#### Uncertainty Range
-
-**Technical**: 95% CI: [500 thousand lives, 2 million lives] • Distribution: Lognormal
-
-**What this means**: This estimate is highly uncertain. The true value likely falls between 500 thousand lives and 2 million lives (±75%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
-
-*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
-
-#### Input Distribution
-
-{{< include ../figures/distribution-recovery_trial_global_lives_saved.qmd >}}
-
-*~ Medium confidence*
 
 :::
 
@@ -6891,6 +7156,50 @@ US military spending in 1947 (post-WW2 trough, 2 years after peak) in constant 2
 
 :::
 
+### US Federal Campaign Spending (2024): $20B {#sec-us_total_federal_campaign_spending_2024}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Total US federal election spending in 2024 cycle including presidential, congressional, party committees, and PACs. Source: FEC Statistical Summary 2024.
+
+**Source**: [@fec-2024-summary]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$18B, $22B]
+
+**What this means**: We're quite confident in this estimate. The true value likely falls between $18B and $22B (±10%). This represents a narrow range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+#### Input Distribution
+
+{{< include ../figures/distribution-us_total_federal_campaign_spending_2024.qmd >}}
+
+*✓ High confidence*
+
+:::
+
+### US Total Lobbying (2024): $4.4B {#sec-us_total_lobbying_annual}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Total US federal lobbying expenditure in 2024 (record year). Source: OpenSecrets.
+
+**Source**: [@opensecrets-lobbying-2024]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$3.74B, $5.06B]
+
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between $3.74B and $5.06B (±15%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+#### Input Distribution
+
+{{< include ../figures/distribution-us_total_lobbying_annual.qmd >}}
+
+*✓ High confidence*
+
+:::
+
 ### Value of Statistical Life: $10M {#sec-value_of_statistical_life}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -6918,6 +7227,28 @@ Value of Statistical Life (conservative estimate)
 ## Core Definitions {#sec-definitions}
 
 Fundamental parameters and constants used throughout the analysis.
+
+### Average Life Extension per Beneficiary: 12 years {#sec-avg_life_extension_per_beneficiary}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Average years of life extension per person saved by pharmaceutical interventions. Assumption used to convert life-years saved to approximate lives saved. Based on Lichtenberg's methodology where life-years are calculated from Years of Life Lost (YLL) reductions.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [8 years, 18 years] • Distribution: Triangular
+
+**What this means**: There's significant uncertainty here. The true value likely falls between 8 years and 18 years (±42%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The triangular distribution means values cluster around a most-likely point but can range higher or lower.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-avg_life_extension_per_beneficiary.qmd >}}
+
+*Core definition*
+
+:::
 
 ### Concentrated Interest Sector Market Cap: $5T {#sec-concentrated_interest_sector_market_cap_usd}
 
@@ -7106,6 +7437,28 @@ Status-quo baseline annual global GDP growth rate.
 #### Uncertainty Range
 
 **Technical**: Distribution: Fixed
+
+*Core definition*
+
+:::
+
+### Global-to-US Political Cost Ratio: 5:1 {#sec-global_to_us_political_cost_ratio}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Ratio of global to US political reform costs. Based on discretionary spending ratio (~9x) discounted by ~50% for less transparent/expensive non-US political systems. Range 3-8 reflects uncertainty about non-US political dynamics and hidden influence channels.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [3:1, 8:1] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here. The true value likely falls between 3:1 and 8:1 (±50%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_to_us_political_cost_ratio.qmd >}}
 
 *Core definition*
 
@@ -7325,6 +7678,20 @@ Viral referendum budget for 280M verified votes (base: $250M realistic with $0.5
 
 :::
 
+### US Congress Members: 535 members {#sec-us_congress_member_count}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Total members of US Congress (100 senators + 435 representatives)
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*Core definition*
+
+:::
+
 ### Overlap Discount Factor: 1:1 {#sec-us_gov_waste_overlap_discount}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -7334,6 +7701,28 @@ Overlap discount factor between US government waste categories. Set to 1.0 (no d
 #### Uncertainty Range
 
 **Technical**: Distribution: Fixed
+
+*Core definition*
+
+:::
+
+### Political Effort Multiplier (US): 0.7x {#sec-us_political_effort_multiplier}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Fraction of campaign + lobbying spending needed to achieve policy reform. Accounts for efficiency gains from coordination, message clarity, and public interest alignment. Range 0.4-1.2 reflects uncertainty about political dynamics.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [0.4x, 1.2x] • Distribution: Lognormal
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between 0.4x and 1.2x (±57%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-us_political_effort_multiplier.qmd >}}
 
 *Core definition*
 
