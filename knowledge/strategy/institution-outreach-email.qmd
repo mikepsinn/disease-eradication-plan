@@ -1,0 +1,127 @@
+---
+title: Institution Outreach Email Templates
+subtitle: Short Outreach Copy For Recruiting An Initiating Host
+description: "Reusable outreach email templates for institutions considering whether to host the first Earth Optimization Prize pilot."
+---
+
+{{< include ../includes/setup-parameters.qmd >}}
+
+### Note
+
+**Document Type:** Outreach templates  
+**Best use:** Email + memo + pilot brief  
+**Goal:** Get a short conversation or forwarding path inside a target institution
+
+## Cold Email: Short Version
+
+**Subject options**
+
+1. Would [Institution] consider hosting a 90-day public-goods pilot?
+2. A bounded initiating-node role for [Institution]
+3. Proposal: host the first Earth Optimization Prize pilot
+
+**Email**
+
+Hi [Name],
+
+I’m reaching out with a bounded ask that seems unusually well-matched to institutions that care about foresight, public-goods infrastructure, and mechanism design.
+
+I’ve built a substantial portion of a public coordination system called the [Earth Optimization Prize](earth-optimization-prize.qmd): an open contest, scoreboard, and recruitment-aligned mechanism for discovering and stress-testing better integrated plans for shifting humanity off its current trajectory. Large parts of the software base already exist in public through [Optimitron](https://optomitron.com) and the [Optimitron repository](https://github.com/mikepsinn/optomitron).
+
+The ask is not “endorse the whole plan.” It is narrower: would [Institution] consider hosting a 90-day pilot that publishes the rules, convenes a review panel, funds adversarial-review bounties, and launches the first public scoreboard?
+
+The role is to initiate the network, not own it. The process is intended to remain open, forkable, and replaceable.
+
+If that sounds even plausibly aligned, I can send a one-page brief and a 90-day pilot proposal, or jump on a short call.
+
+Best,  
+[Name]
+
+## Cold Email: Slightly Longer Version
+
+Hi [Name],
+
+I’m reaching out because I think [Institution] may be a strong fit for a very specific initiating role.
+
+The project is called the [Earth Optimization Prize](earth-optimization-prize.qmd). In one sentence: it is a public mechanism for discovering, red-teaming, and coordinating around better integrated plans for moving humanity off its current trajectory.
+
+The reason I think this matters is that the current trajectory is not neutral. The [destructive economy](../economics/gdp-trajectories.qmd) is already {{< var global_destructive_economy_pct_gdp >}} of GDP, and the modeled upside of changing course is extremely large. But the real bottleneck is not “lack of ideas.” It is lack of public coordination infrastructure that can compare plans, reward participation, and make support visible.
+
+I am not asking [Institution] to endorse the current draft as final truth. I am asking whether [Institution] would consider hosting a bounded 90-day pilot:
+
+1. publish the challenge rules,
+2. convene a credible panel,
+3. fund red-team bounties,
+4. launch the first public scoreboard,
+5. admit the first serious submissions and public commitments.
+
+Large parts of the software base already exist in public:
+
+- [Optimitron](https://optomitron.com)
+- [Optimitron repository](https://github.com/mikepsinn/optomitron)
+
+So this is not a blank-sheet concept ask. It is a request to host the first credible public selection process around an already substantial implementation base.
+
+If useful, I can send:
+
+1. a one-page sponsor brief,
+2. a short initiating-node memo,
+3. a 90-day pilot proposal.
+
+Best,  
+[Name]
+
+## Warm Introduction Version
+
+Hi [Name],
+
+[Mutual contact] suggested I reach out because this may fit [Institution]’s interests in foresight, public-goods infrastructure, and mechanism design.
+
+I’ve built a large portion of a system called the [Earth Optimization Prize](earth-optimization-prize.qmd), with live components already public through [Optimitron](https://optomitron.com) and the [Optimitron repository](https://github.com/mikepsinn/optomitron).
+
+The narrow ask is whether [Institution] would consider serving as the initiating host for a 90-day pilot. That would mean publishing the challenge, convening the panel, funding red-team review, and launching the first public scoreboard. It would **not** require endorsing the current draft as final truth or becoming the root of trust.
+
+If that is even directionally interesting, I’d be glad to send a short brief or schedule a quick call.
+
+Best,  
+[Name]
+
+## Follow-Up Email
+
+Hi [Name],
+
+Following up on the note below in case the initiating-node role is relevant for [Institution].
+
+The short version is:
+
+1. the project already has a substantial implementation base,
+2. the ask is a bounded 90-day pilot,
+3. the host initiates the network but does not own it.
+
+If it helps, the two shortest background docs are:
+
+- [Why Your Institution Should Be The Initiating Node](initiating-node-brief.qmd)
+- [Earth Optimization Prize 90-Day Pilot](../grant-proposal/earth-optimization-prize-90-day-pilot.qmd)
+
+Happy to send a cleaner PDF-style brief or adapt the framing for your internal review process.
+
+Best,  
+[Name]
+
+## Suggested Attachments
+
+If you send an outreach email, attach or link these in this order:
+
+1. [Why Your Institution Should Be The Initiating Node](initiating-node-brief.qmd)
+2. [The Initiating Node Memo](initiating-node-memo.qmd)
+3. [Earth Optimization Prize 90-Day Pilot](../grant-proposal/earth-optimization-prize-90-day-pilot.qmd)
+4. [The Earth Optimization Prize](earth-optimization-prize.qmd)
+
+## Call Goal
+
+The first call is successful if it produces one of these:
+
+1. a request for the pilot package,
+2. an internal forward to the right program lead,
+3. a request for a tailored version of the brief,
+4. a clear no with reasons specific enough to improve the next approach.
