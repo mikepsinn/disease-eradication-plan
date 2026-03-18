@@ -16,18 +16,18 @@ setup_chart_style()
 
 # Display name for chart title
 
-display_name = "Expected Ready Launch Principals"
+display_name = "Contribution EV per Percentage Point (Treaty, Blended)"
 
 # Baseline and units
 
-baseline = 5.8500000000000005
+baseline = 156949.2947490749
 
 # Tornado data from sensitivity analysis
 
-drivers = ['LAUNCH_HIGH_ALIGNMENT_PRINCIPALS_COUNT', 'LAUNCH_REACH_PROBABILITY_HIGH_ALIGNMENT', 'LAUNCH_PERSUADE_PROBABILITY_GIVEN_REACHED', 'LAUNCH_EXECUTE_PROBABILITY_GIVEN_PERSUADED']
-driver_labels = ['High-Alignment Lead Principals', 'Reach Probability for High-Alignment Principals', 'Persuasion Rate Given Reach', 'Execution Rate Given Persuasion']
-impacts_low = [-4.290000000000001, -3.5100000000000007, -3.4125000000000005, -3.150000000000001]
-impacts_high = [13.649999999999999, 4.095, 2.437499999999999, 2.250000000000001]
+drivers = ['MILITARY_REDIRECT_GDP_BOOST_AT_30PCT', 'RD_SPILLOVER_MULTIPLIER', 'GLOBAL_LIFE_EXPECTANCY_2024', 'DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT', 'NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR', 'RARE_DISEASES_COUNT_GLOBAL', 'CURRENT_TRIAL_SLOTS_AVAILABLE', 'STANDARD_ECONOMIC_QALY_VALUE_USD', 'GLOBAL_HALE_CURRENT', 'GLOBAL_POPULATION_2024', 'DFDA_OPEX_PLATFORM_MAINTENANCE', 'DFDA_OPEX_STAFF', 'DFDA_OPEX_INFRASTRUCTURE', 'DFDA_OPEX_REGULATORY', 'DFDA_OPEX_COMMUNITY', 'CURRENT_DISEASE_PATIENTS_GLOBAL', 'PATIENT_WILLINGNESS_TRIAL_PARTICIPATION_PCT']
+driver_labels = ['GDP Growth Boost at 30% Military Reallocation', 'R&D Spillover Multiplier', 'Global Life Expectancy (2024)', 'dFDA Pragmatic Trial Cost per Patient', 'Diseases Getting First Treatment Per Year', 'Total Number of Rare Diseases Globally', 'Annual Global Clinical Trial Participants', 'Standard Economic Value per QALY', 'Global Healthy Life Expectancy (HALE)', 'Global Population in 2024', 'Decentralized Framework for Drug Assessment Maintenance Costs', 'Decentralized Framework for Drug Assessment Staff Costs', 'Decentralized Framework for Drug Assessment Infrastructure Costs', 'Decentralized Framework for Drug Assessment Regulatory Coordination Costs', 'Decentralized Framework for Drug Assessment Community Support Costs', 'Global Population with Chronic Diseases', 'Patient Willingness to Participate in Clinical Trials']
+impacts_low = [-94890.28133012092, -73483.9134717364, -13676.407491391612, 13727.06296220413, -4584.037284304737, 1637.1561729660025, 2619.44987674561, -1964.5874075591564, 938.4971692161635, -203.22434754431015, 2.2571086943498813, 1.3542652166215703, 1.3542652166215703, 0.9028434777574148, 0.4514217388641555, 0.0, 0.0]
+impacts_high = [220958.08495382685, 131500.86958191078, 14305.427061721217, -6781.10086842507, 9822.937037795899, -2946.8811113387637, -1708.3368761384045, 1964.5874075591855, -938.4971692161635, 191.5148216151283, -3.1599521720781922, -2.2571086943498813, -1.805686955456622, -1.3542652165924665, -0.4514217388641555, 0.0, 0.0]
 
 # Convert deltas to absolute values (baseline + delta)
 
@@ -71,7 +71,7 @@ ax.set_title(f'Sensitivity Analysis: {display_name}', fontsize=16, weight='bold'
 
 # X-axis label with units
 
-units_label = "people"
+units_label = "USD"
 if units_label:
     ax.set_xlabel(f'{display_name} ({units_label})', fontsize=12)
 else:
@@ -96,7 +96,7 @@ add_watermark(fig)
 # Save PNG to knowledge/figures/ regardless of where Quarto renders from
 # Use 96 DPI for web-optimized output (reduced from 150 DPI to minimize file size)
 
-output_path = get_figure_output_path('tornado-launch_expected_ready_principals.png')
+output_path = get_figure_output_path('tornado-contribution_ev_per_pct_point_treaty_blend.png')
 plt.savefig(output_path, dpi=96, bbox_inches=None, facecolor=COLOR_WHITE)
 
 add_png_metadata(

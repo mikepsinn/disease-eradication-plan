@@ -94,19 +94,28 @@ const TEST_HTML = `<!DOCTYPE html>
     .chat-list-item:hover .chat-list-delete { opacity: 1; }
     .chat-list-delete:hover { color: #ff4444; }
 
-    /* Hamburger (mobile) */
-    .hamburger {
-      display: none; position: fixed; top: 10px; left: 10px; z-index: 30;
-      background: rgba(20,10,30,0.9); border: 1px solid rgba(54,226,248,0.2);
-      color: #C6CBF5; font-size: 20px; padding: 6px 10px; border-radius: 6px; cursor: pointer;
+    /* Sidebar toggle (all screen sizes) */
+    .sidebar-toggle {
+      position: absolute; top: 12px; left: 12px; z-index: 30;
+      background: rgba(20,10,30,0.8); border: 1px solid rgba(54,226,248,0.2);
+      color: #C6CBF5; font-size: 18px; padding: 5px 9px; border-radius: 6px; cursor: pointer;
+      transition: all 0.2s; line-height: 1;
     }
+    .sidebar-toggle:hover { background: rgba(209,0,177,0.2); border-color: rgba(209,0,177,0.4); }
+
+    /* Sidebar collapse (desktop: starts collapsed) */
+    .sidebar { transition: width 0.2s, transform 0.2s; overflow: hidden; }
+    .sidebar:not(.open) { width: 0; min-width: 0; border-right: none; }
+    .sidebar.open { width: 260px; }
+
     .sidebar-overlay {
       display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 15;
     }
+    .hamburger { display: none; }
     @media (max-width: 800px) {
-      .sidebar { position: fixed; left: 0; top: 0; bottom: 0; transform: translateX(-100%); }
+      .sidebar { position: fixed; left: 0; top: 0; bottom: 0; width: 260px !important; }
+      .sidebar:not(.open) { transform: translateX(-100%); width: 260px !important; }
       .sidebar.open { transform: translateX(0); }
-      .hamburger { display: block; }
       .sidebar-overlay.show { display: block; }
     }
 
@@ -222,6 +231,18 @@ const TEST_HTML = `<!DOCTYPE html>
     }
     .chat-image-thumb { border: 1px solid rgba(255,255,255,0.08); }
     .chat-latex-pending { color: #888 !important; }
+    .chat-stop-btn {
+      background: rgba(255,255,255,0.06) !important; color: #C6CBF5 !important;
+      border: 1px solid rgba(255,255,255,0.1) !important;
+    }
+    .chat-stop-btn:hover { background: #d9534f !important; color: #fff !important; }
+    .chat-copy-btn { color: #888 !important; }
+    .chat-copy-btn:hover { color: #d100b1 !important; }
+    .chat-scroll-bottom {
+      background: rgba(20,10,30,0.9) !important; color: #C6CBF5 !important;
+      border: 1px solid rgba(54,226,248,0.2) !important;
+    }
+    .chat-scroll-bottom:hover { background: rgba(209,0,177,0.2) !important; }
 
     /* === Robot === */
     .robot-container {
@@ -330,6 +351,7 @@ const TEST_HTML = `<!DOCTYPE html>
 
   <!-- Main chat area -->
   <div class="main-area" id="main-area">
+    <button class="sidebar-toggle" id="sidebar-toggle" title="Toggle sidebar">&#9776;</button>
     <div class="bg-grid"></div>
 
     <!-- Robot peeking over the input bar -->
@@ -495,7 +517,15 @@ const TEST_HTML = `<!DOCTYPE html>
 
     // --- DOM ready ---
     document.addEventListener('DOMContentLoaded', function () {
-      // Hamburger
+      // Sidebar toggle (works on all screen sizes)
+      document.getElementById('sidebar-toggle').addEventListener('click', function () {
+        var sb = document.getElementById('sidebar');
+        sb.classList.toggle('open');
+        // On mobile, also toggle overlay
+        if (window.innerWidth <= 800) {
+          document.getElementById('sidebar-overlay').classList.toggle('show');
+        }
+      });
       document.getElementById('hamburger-btn').addEventListener('click', function () {
         document.getElementById('sidebar').classList.toggle('open');
         document.getElementById('sidebar-overlay').classList.toggle('show');
@@ -507,10 +537,14 @@ const TEST_HTML = `<!DOCTYPE html>
 
       renderSidebar();
 
-      // Auto-open widget panel
+      // Auto-open widget panel and move into main area
       setTimeout(function () {
         var fab = document.querySelector('.chat-fab');
         if (fab) fab.click();
+        // Reparent panel into main-area so sidebar doesn't cover it
+        var chatPanel = document.querySelector('.chat-panel');
+        var mainArea = document.getElementById('main-area');
+        if (chatPanel && mainArea) mainArea.appendChild(chatPanel);
         positionRobot();
       }, 150);
 

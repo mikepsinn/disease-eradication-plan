@@ -20,14 +20,14 @@ display_name = "Current Trajectory Cumulative Lifetime Income (Per Capita)"
 
 # Baseline and units
 
-baseline = 1184890.4372720616
+baseline = 1338759.1598336913
 
 # Tornado data from sensitivity analysis
 
 drivers = ['GLOBAL_LIFE_EXPECTANCY_2024', 'GLOBAL_POPULATION_2024']
 driver_labels = ['Global Life Expectancy (2024)', 'Global Population in 2024']
-impacts_low = [-80789.83366346592, 3958.287612285698]
-impacts_high = [84879.81899267854, -3800.10454402864]
+impacts_low = [-92908.3087129856, 34327.15794445365]
+impacts_high = [97611.79184158007, -32652.662434968166]
 
 # Convert deltas to absolute values (baseline + delta)
 

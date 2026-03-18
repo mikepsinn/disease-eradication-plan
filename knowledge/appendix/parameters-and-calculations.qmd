@@ -38,15 +38,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 603 parameters used in the analysis, organized by type:
+This appendix documents all 601 parameters used in the analysis, organized by type:
 
 - External sources (peer-reviewed): 198
-- Calculated values: 278
-- Core definitions: 127
+- Calculated values: 282
+- Core definitions: 121
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (278 parameters) • [External Data Sources](#sec-external) (198 parameters) • [Core Definitions](#sec-definitions) (127 parameters)
+[Calculated Values](#sec-calculated) (282 parameters) • [External Data Sources](#sec-external) (198 parameters) • [Core Definitions](#sec-definitions) (121 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -533,7 +533,7 @@ $$
 
 :::
 
-### Contribution EV per Percentage Point (Treaty): $149K {#sec-contribution_ev_per_pct_point_treaty}
+### Contribution EV per Percentage Point (Treaty): $147K {#sec-contribution_ev_per_pct_point_treaty}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -541,7 +541,7 @@ Personal expected value per percentage point of implementation probability shift
 
 **Inputs**:
 
-- [Treaty Trajectory Lifetime Income Gain (Per Capita)](#sec-treaty_trajectory_lifetime_income_gain_per_capita) 🔢: $14.9M
+- [Treaty Trajectory Lifetime Income Gain (Per Capita)](#sec-treaty_trajectory_lifetime_income_gain_per_capita) 🔢: $14.7M
 
 $$
 EV_{pp,treaty} = \Delta Y_{lifetime,treaty} \times 0.01
@@ -565,7 +565,39 @@ $$
 
 :::
 
-### Contribution EV per Percentage Point (Wishonia): $521K {#sec-contribution_ev_per_pct_point_wishonia}
+### Contribution EV per Percentage Point (Treaty, Blended): $157K {#sec-contribution_ev_per_pct_point_treaty_blend}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Blended personal expected value per percentage point of implementation probability shift under Treaty Trajectory.
+
+**Inputs**:
+
+- [Treaty Personal Upside (Blended)](#sec-treaty_personal_upside_blend) 🔢: $15.7M
+
+$$
+EV_{pp,treaty,blend} = Upside_{blend,treaty} \times 0.01
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-contribution_ev_per_pct_point_treaty_blend.qmd >}}
+
+{{< include ../figures/sensitivity-table-contribution_ev_per_pct_point_treaty_blend.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-contribution_ev_per_pct_point_treaty_blend.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-contribution_ev_per_pct_point_treaty_blend.qmd >}}
+
+:::
+
+### Contribution EV per Percentage Point (Wishonia): $519K {#sec-contribution_ev_per_pct_point_wishonia}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -573,7 +605,7 @@ Personal expected value per percentage point of implementation probability shift
 
 **Inputs**:
 
-- [Wishonia Trajectory Lifetime Income Gain (Per Capita)](#sec-wishonia_trajectory_lifetime_income_gain_per_capita) 🔢: $52.1M
+- [Wishonia Trajectory Lifetime Income Gain (Per Capita)](#sec-wishonia_trajectory_lifetime_income_gain_per_capita) 🔢: $51.9M
 
 $$
 EV_{pp,wish} = \Delta Y_{lifetime,wish} \times 0.01
@@ -594,6 +626,38 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-contribution_ev_per_pct_point_wishonia.qmd >}}
+
+:::
+
+### Contribution EV per Percentage Point (Wishonia, Blended): $543K {#sec-contribution_ev_per_pct_point_wishonia_blend}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Blended personal expected value per percentage point of implementation probability shift under Wishonia Trajectory.
+
+**Inputs**:
+
+- [Wishonia Personal Upside (Blended)](#sec-wishonia_personal_upside_blend) 🔢: $54.3M
+
+$$
+EV_{pp,wish,blend} = Upside_{blend,wish} \times 0.01
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-contribution_ev_per_pct_point_wishonia_blend.qmd >}}
+
+{{< include ../figures/sensitivity-table-contribution_ev_per_pct_point_wishonia_blend.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-contribution_ev_per_pct_point_wishonia_blend.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-contribution_ev_per_pct_point_wishonia_blend.qmd >}}
 
 :::
 
@@ -955,7 +1019,7 @@ $$
 
 :::
 
-### Current Trajectory Cumulative Lifetime Income (Per Capita): $1.18M {#sec-current_trajectory_cumulative_lifetime_income}
+### Current Trajectory Cumulative Lifetime Income (Per Capita): $1.34M {#sec-current_trajectory_cumulative_lifetime_income}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -964,7 +1028,6 @@ Cumulative per-capita income over an average remaining lifespan under current tr
 **Inputs**:
 
 - [Global Average Income (2025 Baseline)](#sec-global_avg_income_2025) 🔢: $14.4K
-- [Current Trajectory Average Income at Year 20](#sec-current_trajectory_avg_income_year_20) 🔢: $20.5K
 - [Baseline Global GDP Growth Rate](#sec-gdp_baseline_growth_rate): 2.5%
 - [Average Remaining Years (Median Person)](#sec-global_avg_remaining_years) 🔢: 48.5 years
 
@@ -1044,6 +1107,41 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-current_trajectory_gdp_year_20.qmd >}}
+
+:::
+
+### Destructive Economy as % of GDP in Year 15: 48.8% {#sec-destructive_economy_pct_gdp_year_15}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Projected destructive economy share of GDP in year 15 if current relative growth rates continue. This extends the current military-plus-cybercrime trend against baseline GDP growth.
+
+**Inputs**:
+
+- [Destructive Economy as % of GDP](#sec-global_destructive_economy_pct_gdp) 🔢: 11.5%
+- [Cybercrime Cost CAGR](#sec-global_cybercrime_cagr) 📊: 15%
+- [Military Spending Real CAGR (10-Year)](#sec-global_military_spending_real_cagr_10yr) 📊: 3.4%
+- [Baseline Global GDP Growth Rate](#sec-gdp_baseline_growth_rate): 2.5%
+- [Global Military Spending in 2024](#sec-global_military_spending_annual_2024) 📊: $2.72T
+- [Global Destructive Economy (2025)](#sec-global_destructive_economy_annual_2025) 🔢: $13.2T
+- [Global Cybercrime Costs (2025)](#sec-global_cybercrime_cost_annual_2025) 📊: $10.5T
+
+$$
+\begin{gathered}
+r_{destruct:GDP,15} \\
+= r_{destruct:GDP} \cdot (1 + g_{destruct} - g_{GDP})^{15}
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-destructive_economy_pct_gdp_year_15.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-destructive_economy_pct_gdp_year_15.qmd >}}
 
 :::
 
@@ -6243,6 +6341,52 @@ $$
 
 :::
 
+### Global Annual Savings Per Capita: $3.88K {#sec-global_annual_savings_per_capita}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Global annual savings divided by global population. Useful as a rough average-person default for prize-contribution sizing.
+
+**Inputs**:
+
+- [Global Annual Savings](#sec-global_annual_savings) 🔢: $31.1T
+- [Global Population in 2024](#sec-global_population_2024) 📊: 8 billion of people (95% CI: 7.8 billion of people - 8.2 billion of people)
+
+$$
+\begin{gathered}
+S_{annual,pc} \\
+= \frac{S_{annual}}{Pop_{global}} \\
+= \frac{\$31.1T}{8B} \\
+= \$3.88K
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+S_{annual} \\
+= s_{global} \times GDP_{global} \\
+= 27\% \times \$115T \\
+= \$31.1T
+\end{gathered}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-global_annual_savings_per_capita.qmd >}}
+
+{{< include ../figures/sensitivity-table-global_annual_savings_per_capita.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-global_annual_savings_per_capita.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-global_annual_savings_per_capita.qmd >}}
+
+:::
+
 ### Total Annual Trade Disruption: $616B {#sec-global_annual_trade_disruption_conflict}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -7351,150 +7495,6 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-industry_vs_government_clinical_trials_spending_ratio.qmd >}}
-
-:::
-
-### Expected Ready Launch Principals: 5.85 people {#sec-launch_expected_ready_principals}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Expected number of ready launch principals within the model horizon
-
-**Inputs**:
-
-- [High-Alignment Lead Principals](#sec-launch_high_alignment_principals_count): 30 people (95% CI: 8 people - 100 people)
-- [Ready Probability per High-Alignment Principal](#sec-launch_p_ready_per_high_alignment_principal) 🔢: 19.5%
-
-$$
-E[N_{ready}] = N_{align} \times P_{ready|align}
-$$
-
-*✓ High confidence*
-
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-launch_expected_ready_principals.qmd >}}
-
-{{< include ../figures/sensitivity-table-launch_expected_ready_principals.qmd >}}
-
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-launch_expected_ready_principals.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-launch_expected_ready_principals.qmd >}}
-
-:::
-
-### Required Lead Principals for Launch: 4 people {#sec-launch_principals_required}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Minimum number of lead principals required to finance and launch a credible treaty campaign
-
-**Inputs**:
-
-- [Total 1% Treaty Campaign Cost](#sec-treaty_campaign_total_cost) 🔢: $1B
-- [Launch Redundancy Factor](#sec-launch_redundancy_factor): 1.25x (95% CI: 1x - 2x)
-- [Average Commitment per Lead Principal](#sec-launch_avg_principal_commitment_usd): $350M (95% CI: $100M - $750M)
-
-$$
-\begin{gathered}
-X \\
-= \left\lceil \frac{Cost_{campaign} \cdot R_{launch}}{C_{principal}} \right\rceil
-\end{gathered}
-$$
-
-*✓ High confidence*
-
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-launch_principals_required.qmd >}}
-
-{{< include ../figures/sensitivity-table-launch_principals_required.qmd >}}
-
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-launch_principals_required.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-launch_principals_required.qmd >}}
-
-:::
-
-### P(Launch Coalition Forms): 86.3% {#sec-launch_p_at_least_required_principals}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Probability that enough ready principals emerge to launch a credible treaty campaign within the model horizon
-
-**Inputs**:
-
-- [High-Alignment Lead Principals](#sec-launch_high_alignment_principals_count): 30 people (95% CI: 8 people - 100 people)
-- [Ready Probability per High-Alignment Principal](#sec-launch_p_ready_per_high_alignment_principal) 🔢: 19.5%
-- [Required Lead Principals for Launch](#sec-launch_principals_required) 🔢: 4 people
-
-$$
-\begin{gathered}
-P_{launch} \\
-= \sum_{k=X}^{N_{align}} \binom{N_{align}}{k} P_{ready|align}^{k} (1 - P_{ready|align})^{N_{align}-k}
-\end{gathered}
-$$
-
-*✓ High confidence*
-
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-launch_p_at_least_required_principals.qmd >}}
-
-{{< include ../figures/sensitivity-table-launch_p_at_least_required_principals.qmd >}}
-
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-launch_p_at_least_required_principals.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-launch_p_at_least_required_principals.qmd >}}
-
-:::
-
-### Ready Probability per High-Alignment Principal: 19.5% {#sec-launch_p_ready_per_high_alignment_principal}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Probability a high-alignment principal becomes a ready launch principal within the model horizon
-
-**Inputs**:
-
-- [Reach Probability for High-Alignment Principals](#sec-launch_reach_probability_high_alignment): 50% (95% CI: 20% - 85%)
-- [Persuasion Rate Given Reach](#sec-launch_persuade_probability_given_reached): 60% (95% CI: 25% - 85%)
-- [Execution Rate Given Persuasion](#sec-launch_execute_probability_given_persuaded): 65% (95% CI: 30% - 90%)
-
-$$
-\begin{gathered}
-P_{ready|align} \\
-= P_{reach|align} \times P_{persuade|reach} \times P_{execute|persuaded}
-\end{gathered}
-$$
-
-*✓ High confidence*
-
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-launch_p_ready_per_high_alignment_principal.qmd >}}
-
-{{< include ../figures/sensitivity-table-launch_p_ready_per_high_alignment_principal.qmd >}}
-
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-launch_p_ready_per_high_alignment_principal.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-launch_p_ready_per_high_alignment_principal.qmd >}}
 
 :::
 
@@ -10104,7 +10104,7 @@ $$
 
 :::
 
-### Sharing Breakeven (1 in N): 248M:1 {#sec-sharing_breakeven_one_in_treaty}
+### Sharing Breakeven (1 in N): 246M:1 {#sec-sharing_breakeven_one_in_treaty}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -10112,17 +10112,17 @@ Breakeven probability expressed as '1 in N'. Forwarding has positive expected va
 
 **Inputs**:
 
-- [Sharing Breakeven Probability](#sec-sharing_breakeven_probability_treaty) 🔢: 4.03e-09 probability
+- [Sharing Breakeven Probability](#sec-sharing_breakeven_probability_treaty) 🔢: 4.07e-09 probability
 
 $$
-N_{breakeven} = P_{breakeven} = 0 = 248M
+N_{breakeven} = P_{breakeven} = 0 = 246M
 $$
 where:
 $$
 \begin{gathered}
 P_{breakeven} \\
 = \frac{C_{share}}{\Delta Y_{lifetime,treaty}} \\
-= \frac{\$0.0599}{\$14.9M} \\
+= \frac{\$0.0599}{\$14.7M} \\
 = 0
 \end{gathered}
 $$
@@ -10158,8 +10158,8 @@ $$
 \begin{gathered}
 \Delta Y_{lifetime,treaty} \\
 = Y_{cum,treaty} - Y_{cum,earth} \\
-= \$16.1M - \$1.18M \\
-= \$14.9M
+= \$16.1M - \$1.34M \\
+= \$14.7M
 \end{gathered}
 $$
 where:
@@ -10280,19 +10280,6 @@ $$
 Y_{cum,earth} \\
 = \bar{y}_0 \cdot \frac{(1+g_{base})((1+g_{base})^{T_{remaining}}-1)}{g_{base}}
 \end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-\bar{y}_{base,20} \\
-= \frac{GDP_{base,20}}{Pop_{2045}} \\
-= \frac{\$188T}{9.2B} \\
-= \$20.5K
-\end{gathered}
-$$
-where:
-$$
-GDP_{base,20} = GDP_0(1+g_{base})^{20}
 $$
 *✓ High confidence*
 
@@ -10312,7 +10299,7 @@ $$
 
 :::
 
-### Sharing Breakeven Probability: 4.03e-09 probability {#sec-sharing_breakeven_probability_treaty}
+### Sharing Breakeven Probability: 4.07e-09 probability {#sec-sharing_breakeven_probability_treaty}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -10321,13 +10308,13 @@ Minimum probability that the plan works for forwarding to have positive expected
 **Inputs**:
 
 - [Sharing Opportunity Cost](#sec-sharing_opportunity_cost) 🔢: $0.06
-- [Treaty Trajectory Lifetime Income Gain (Per Capita)](#sec-treaty_trajectory_lifetime_income_gain_per_capita) 🔢: $14.9M
+- [Treaty Trajectory Lifetime Income Gain (Per Capita)](#sec-treaty_trajectory_lifetime_income_gain_per_capita) 🔢: $14.7M
 
 $$
 \begin{gathered}
 P_{breakeven} \\
 = \frac{C_{share}}{\Delta Y_{lifetime,treaty}} \\
-= \frac{\$0.0599}{\$14.9M} \\
+= \frac{\$0.0599}{\$14.7M} \\
 = 0
 \end{gathered}
 $$
@@ -10363,8 +10350,8 @@ $$
 \begin{gathered}
 \Delta Y_{lifetime,treaty} \\
 = Y_{cum,treaty} - Y_{cum,earth} \\
-= \$16.1M - \$1.18M \\
-= \$14.9M
+= \$16.1M - \$1.34M \\
+= \$14.7M
 \end{gathered}
 $$
 where:
@@ -10485,19 +10472,6 @@ $$
 Y_{cum,earth} \\
 = \bar{y}_0 \cdot \frac{(1+g_{base})((1+g_{base})^{T_{remaining}}-1)}{g_{base}}
 \end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-\bar{y}_{base,20} \\
-= \frac{GDP_{base,20}}{Pop_{2045}} \\
-= \frac{\$188T}{9.2B} \\
-= \$20.5K
-\end{gathered}
-$$
-where:
-$$
-GDP_{base,20} = GDP_0(1+g_{base})^{20}
 $$
 *✓ High confidence*
 
@@ -10572,7 +10546,7 @@ $$
 
 :::
 
-### Sharing Upside/Downside Ratio: 248.2Mx {#sec-sharing_upside_downside_ratio_treaty}
+### Sharing Upside/Downside Ratio: 245.6Mx {#sec-sharing_upside_downside_ratio_treaty}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -10580,15 +10554,15 @@ Raw ratio of upside (lifetime income gain if plan works) to downside (cost of sh
 
 **Inputs**:
 
-- [Treaty Trajectory Lifetime Income Gain (Per Capita)](#sec-treaty_trajectory_lifetime_income_gain_per_capita) 🔢: $14.9M
+- [Treaty Trajectory Lifetime Income Gain (Per Capita)](#sec-treaty_trajectory_lifetime_income_gain_per_capita) 🔢: $14.7M
 - [Sharing Opportunity Cost](#sec-sharing_opportunity_cost) 🔢: $0.06
 
 $$
 \begin{gathered}
 k_{upside:downside} \\
 = \frac{\Delta Y_{lifetime,treaty}}{C_{share}} \\
-= \frac{\$14.9M}{\$0.0599} \\
-= 248M
+= \frac{\$14.7M}{\$0.0599} \\
+= 246M
 \end{gathered}
 $$
 where:
@@ -10596,8 +10570,8 @@ $$
 \begin{gathered}
 \Delta Y_{lifetime,treaty} \\
 = Y_{cum,treaty} - Y_{cum,earth} \\
-= \$16.1M - \$1.18M \\
-= \$14.9M
+= \$16.1M - \$1.34M \\
+= \$14.7M
 \end{gathered}
 $$
 where:
@@ -10727,19 +10701,6 @@ $$
 Y_{cum,earth} \\
 = \bar{y}_0 \cdot \frac{(1+g_{base})((1+g_{base})^{T_{remaining}}-1)}{g_{base}}
 \end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-\bar{y}_{base,20} \\
-= \frac{GDP_{base,20}}{Pop_{2045}} \\
-= \frac{\$188T}{9.2B} \\
-= \$20.5K
-\end{gathered}
-$$
-where:
-$$
-GDP_{base,20} = GDP_0(1+g_{base})^{20}
 $$
 where:
 $$
@@ -12315,6 +12276,121 @@ $$
 
 :::
 
+### Treaty HALE Value Per Capita: $982K {#sec-treaty_hale_value_per_capita}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Economic value of Treaty Trajectory HALE gains at year 15 using the standard QALY value.
+
+**Inputs**:
+
+- [Treaty HALE Gain at Year 15](#sec-treaty_hale_gain_year_15) 🔢: 6.55 years
+- [Standard Economic Value per QALY](#sec-standard_economic_qaly_value_usd) 📊: $150K (SE: ±$30K)
+
+$$
+\begin{gathered}
+Value_{HALE,treaty} \\
+= \Delta HALE_{treaty,15} \times Value_{QALY} \\
+= 6.55 \times \$150K \\
+= \$982K
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+\Delta HALE_{treaty,15} \\
+= f_{cure,15,treaty} \cdot \Delta_{HALE}
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+f_{cure,15,treaty} \\
+= \min\left(1,\frac{Treatments_{new,ann}\cdot k_{capacity}\cdot 15}{D_{untreated}}\right)
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+k_{capacity} \\
+= \frac{N_{fundable,dFDA}}{Slots_{curr}} \\
+= \frac{23.4M}{1.9M} \\
+= 12.3
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{fundable,dFDA} \\
+= \frac{Subsidies_{dFDA,ann}}{Cost_{pragmatic,pt}} \\
+= \frac{\$21.8B}{\$929} \\
+= 23.4M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Subsidies_{dFDA,ann} \\
+= Funding_{dFDA,ann} - OPEX_{dFDA} \\
+= \$21.8B - \$40M \\
+= \$21.8B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+OPEX_{dFDA} \\
+= Cost_{platform} + Cost_{staff} + Cost_{infra} \\
++ Cost_{regulatory} + Cost_{community} \\
+= \$15M + \$10M + \$8M + \$5M + \$2M \\
+= \$40M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+k_{capacity,max} \\
+= \frac{N_{willing}}{Slots_{curr}} \\
+= \frac{1.08B}{1.9M} \\
+= 566
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{willing} \\
+= N_{patients} \times Pct_{willing} \\
+= 2.4B \times 44.8\% \\
+= 1.08B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{untreated} \\
+= N_{rare} \times 0.95 \\
+= 7{,}000 \times 0.95 \\
+= 6{,}650
+\end{gathered}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-treaty_hale_value_per_capita.qmd >}}
+
+{{< include ../figures/sensitivity-table-treaty_hale_value_per_capita.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-treaty_hale_value_per_capita.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-treaty_hale_value_per_capita.qmd >}}
+
+:::
+
 ### Annual Lives Saved from 1% Reduction in Conflict Deaths: 2.45 thousand lives/year {#sec-treaty_lives_saved_annual_global}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -12508,6 +12584,203 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-treaty_peace_plus_rd_annual_benefits.qmd >}}
+
+:::
+
+### Treaty Personal Upside (Blended): $15.7M {#sec-treaty_personal_upside_blend}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Blended personal upside under Treaty Trajectory: lifetime income gain plus valued healthy-life gains.
+
+**Inputs**:
+
+- [Treaty Trajectory Lifetime Income Gain (Per Capita)](#sec-treaty_trajectory_lifetime_income_gain_per_capita) 🔢: $14.7M
+- [Treaty HALE Value Per Capita](#sec-treaty_hale_value_per_capita) 🔢: $982K
+
+$$
+\begin{gathered}
+Upside_{blend,treaty} \\
+= \Delta Y_{lifetime,treaty} + Value_{HALE,treaty} \\
+= \$14.7M + \$982K \\
+= \$15.7M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+\Delta Y_{lifetime,treaty} \\
+= Y_{cum,treaty} - Y_{cum,earth} \\
+= \$16.1M - \$1.34M \\
+= \$14.7M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Y_{cum,treaty} \\
+= \bar{y}_0 \cdot \frac{(1+g_{pc})((1+g_{pc})^{20}-1)}{g_{pc}} \\
++ \bar{y}_{treaty,20} \cdot \frac{(1+g_{base})((1+g_{base})^{T_{remaining}-20}-1)}{g_{base}}
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+\bar{y}_{0} \\
+= \frac{GDP_{global}}{Pop_{global}} \\
+= \frac{\$115T}{8B} \\
+= \$14.4K
+\end{gathered}
+$$
+where:
+$$
+\bar{y}_{treaty,20} = \frac{GDP_{treaty,20}}{Pop_{2045}}
+$$
+where:
+$$
+\begin{gathered}
+GDP_{treaty,20} \\
+= GDP_0(1+g_{treaty,ramp})^3(1+g_{treaty,full})^{17}
+\end{gathered}
+$$
+where:
+$$
+s_{mil,max} = Cut_{WW2} = 87.6\% = 87.6\%
+$$
+where:
+$$
+\begin{gathered}
+Cut_{WW2} \\
+= 1 - \frac{Spending_{US,1947}}{Spending_{US,1945}} \\
+= 1 - \frac{\$176B}{\$1.42T} \\
+= 87.6\%
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+f_{cure,20,wish} \\
+= \min\left(1,\frac{Treatments_{new,ann}\cdot k_{capacity,wish}\cdot 20}{D_{untreated}}\right)
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+k_{capacity} \\
+= \frac{N_{fundable,dFDA}}{Slots_{curr}} \\
+= \frac{23.4M}{1.9M} \\
+= 12.3
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{fundable,dFDA} \\
+= \frac{Subsidies_{dFDA,ann}}{Cost_{pragmatic,pt}} \\
+= \frac{\$21.8B}{\$929} \\
+= 23.4M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Subsidies_{dFDA,ann} \\
+= Funding_{dFDA,ann} - OPEX_{dFDA} \\
+= \$21.8B - \$40M \\
+= \$21.8B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+OPEX_{dFDA} \\
+= Cost_{platform} + Cost_{staff} + Cost_{infra} \\
++ Cost_{regulatory} + Cost_{community} \\
+= \$15M + \$10M + \$8M + \$5M + \$2M \\
+= \$40M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+k_{capacity,max} \\
+= \frac{N_{willing}}{Slots_{curr}} \\
+= \frac{1.08B}{1.9M} \\
+= 566
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{willing} \\
+= N_{patients} \times Pct_{willing} \\
+= 2.4B \times 44.8\% \\
+= 1.08B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{untreated} \\
+= N_{rare} \times 0.95 \\
+= 7{,}000 \times 0.95 \\
+= 6{,}650
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{remaining} \\
+= LE_{global} - Age_{median} \\
+= 79 - 30.5 \\
+= 48.5
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Y_{cum,earth} \\
+= \bar{y}_0 \cdot \frac{(1+g_{base})((1+g_{base})^{T_{remaining}}-1)}{g_{base}}
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Value_{HALE,treaty} \\
+= \Delta HALE_{treaty,15} \times Value_{QALY} \\
+= 6.55 \times \$150K \\
+= \$982K
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+\Delta HALE_{treaty,15} \\
+= f_{cure,15,treaty} \cdot \Delta_{HALE}
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+f_{cure,15,treaty} \\
+= \min\left(1,\frac{Treatments_{new,ann}\cdot k_{capacity}\cdot 15}{D_{untreated}}\right)
+\end{gathered}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-treaty_personal_upside_blend.qmd >}}
+
+{{< include ../figures/sensitivity-table-treaty_personal_upside_blend.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-treaty_personal_upside_blend.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-treaty_personal_upside_blend.qmd >}}
 
 :::
 
@@ -13420,7 +13693,7 @@ $$
 
 :::
 
-### Treaty Trajectory Lifetime Income Gain (Per Capita): $14.9M {#sec-treaty_trajectory_lifetime_income_gain_per_capita}
+### Treaty Trajectory Lifetime Income Gain (Per Capita): $14.7M {#sec-treaty_trajectory_lifetime_income_gain_per_capita}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -13429,14 +13702,14 @@ Lifetime per-capita income gain from Treaty Trajectory vs current trajectory. Cu
 **Inputs**:
 
 - [Treaty Trajectory Cumulative Lifetime Income (Per Capita)](#sec-treaty_trajectory_cumulative_lifetime_income) 🔢: $16.1M
-- [Current Trajectory Cumulative Lifetime Income (Per Capita)](#sec-current_trajectory_cumulative_lifetime_income) 🔢: $1.18M
+- [Current Trajectory Cumulative Lifetime Income (Per Capita)](#sec-current_trajectory_cumulative_lifetime_income) 🔢: $1.34M
 
 $$
 \begin{gathered}
 \Delta Y_{lifetime,treaty} \\
 = Y_{cum,treaty} - Y_{cum,earth} \\
-= \$16.1M - \$1.18M \\
-= \$14.9M
+= \$16.1M - \$1.34M \\
+= \$14.7M
 \end{gathered}
 $$
 where:
@@ -13566,19 +13839,6 @@ $$
 Y_{cum,earth} \\
 = \bar{y}_0 \cdot \frac{(1+g_{base})((1+g_{base})^{T_{remaining}}-1)}{g_{base}}
 \end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-\bar{y}_{base,20} \\
-= \frac{GDP_{base,20}}{Pop_{2045}} \\
-= \frac{\$188T}{9.2B} \\
-= \$20.5K
-\end{gathered}
-$$
-where:
-$$
-GDP_{base,20} = GDP_0(1+g_{base})^{20}
 $$
 *✓ High confidence*
 
@@ -13598,7 +13858,7 @@ $$
 
 :::
 
-### Treaty Trajectory Lifetime Income Multiplier: 13.5x {#sec-treaty_trajectory_lifetime_income_multiplier}
+### Treaty Trajectory Lifetime Income Multiplier: 12x {#sec-treaty_trajectory_lifetime_income_multiplier}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -13607,14 +13867,14 @@ Ratio of cumulative lifetime income under Treaty Trajectory vs current trajector
 **Inputs**:
 
 - [Treaty Trajectory Cumulative Lifetime Income (Per Capita)](#sec-treaty_trajectory_cumulative_lifetime_income) 🔢: $16.1M
-- [Current Trajectory Cumulative Lifetime Income (Per Capita)](#sec-current_trajectory_cumulative_lifetime_income) 🔢: $1.18M
+- [Current Trajectory Cumulative Lifetime Income (Per Capita)](#sec-current_trajectory_cumulative_lifetime_income) 🔢: $1.34M
 
 $$
 \begin{gathered}
 k_{lifetime,treaty:earth} \\
 = \frac{Y_{cum,treaty}}{Y_{cum,earth}} \\
-= \frac{\$16.1M}{\$1.18M} \\
-= 13.5
+= \frac{\$16.1M}{\$1.34M} \\
+= 12
 \end{gathered}
 $$
 where:
@@ -13744,19 +14004,6 @@ $$
 Y_{cum,earth} \\
 = \bar{y}_0 \cdot \frac{(1+g_{base})((1+g_{base})^{T_{remaining}}-1)}{g_{base}}
 \end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-\bar{y}_{base,20} \\
-= \frac{GDP_{base,20}}{Pop_{2045}} \\
-= \frac{\$188T}{9.2B} \\
-= \$20.5K
-\end{gathered}
-$$
-where:
-$$
-GDP_{base,20} = GDP_0(1+g_{base})^{20}
 $$
 *✓ High confidence*
 
@@ -16179,6 +16426,131 @@ $$
 
 :::
 
+### Wishonia HALE Value Per Capita: $2.36M {#sec-wishonia_hale_value_per_capita}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Economic value of Wishonia Trajectory HALE gains at year 15 using the standard QALY value.
+
+**Inputs**:
+
+- [Wishonia HALE Gain at Year 15](#sec-wishonia_hale_gain_year_15) 🔢: 15.7 years
+- [Standard Economic Value per QALY](#sec-standard_economic_qaly_value_usd) 📊: $150K (SE: ±$30K)
+
+$$
+\begin{gathered}
+Value_{HALE,wish} \\
+= \Delta HALE_{wish,15} \times Value_{QALY} \\
+= 15.7 \times \$150K \\
+= \$2.36M
+\end{gathered}
+$$
+where:
+$$
+\Delta HALE_{wish,15} = f_{cure,15,wish} \cdot \Delta_{HALE}
+$$
+where:
+$$
+\begin{gathered}
+f_{cure,15,wish} \\
+= \min\left(1,\frac{Treatments_{new,ann}\cdot k_{capacity,wish}\cdot 15}{D_{untreated}}\right)
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+k_{capacity} \\
+= \frac{N_{fundable,dFDA}}{Slots_{curr}} \\
+= \frac{23.4M}{1.9M} \\
+= 12.3
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{fundable,dFDA} \\
+= \frac{Subsidies_{dFDA,ann}}{Cost_{pragmatic,pt}} \\
+= \frac{\$21.8B}{\$929} \\
+= 23.4M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Subsidies_{dFDA,ann} \\
+= Funding_{dFDA,ann} - OPEX_{dFDA} \\
+= \$21.8B - \$40M \\
+= \$21.8B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+OPEX_{dFDA} \\
+= Cost_{platform} + Cost_{staff} + Cost_{infra} \\
++ Cost_{regulatory} + Cost_{community} \\
+= \$15M + \$10M + \$8M + \$5M + \$2M \\
+= \$40M
+\end{gathered}
+$$
+where:
+$$
+s_{mil,max} = Cut_{WW2} = 87.6\% = 87.6\%
+$$
+where:
+$$
+\begin{gathered}
+Cut_{WW2} \\
+= 1 - \frac{Spending_{US,1947}}{Spending_{US,1945}} \\
+= 1 - \frac{\$176B}{\$1.42T} \\
+= 87.6\%
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+k_{capacity,max} \\
+= \frac{N_{willing}}{Slots_{curr}} \\
+= \frac{1.08B}{1.9M} \\
+= 566
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{willing} \\
+= N_{patients} \times Pct_{willing} \\
+= 2.4B \times 44.8\% \\
+= 1.08B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{untreated} \\
+= N_{rare} \times 0.95 \\
+= 7{,}000 \times 0.95 \\
+= 6{,}650
+\end{gathered}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-wishonia_hale_value_per_capita.qmd >}}
+
+{{< include ../figures/sensitivity-table-wishonia_hale_value_per_capita.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-wishonia_hale_value_per_capita.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-wishonia_hale_value_per_capita.qmd >}}
+
+:::
+
 ### Wishonia Military Reallocation Physical Max Share: 87.6% {#sec-wishonia_military_reallocation_physical_max_share}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -16202,6 +16574,197 @@ Cut_{WW2} \\
 \end{gathered}
 $$
 *✓ High confidence*
+
+:::
+
+### Wishonia Personal Upside (Blended): $54.3M {#sec-wishonia_personal_upside_blend}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Blended personal upside under Wishonia Trajectory: lifetime income gain plus valued healthy-life gains.
+
+**Inputs**:
+
+- [Wishonia Trajectory Lifetime Income Gain (Per Capita)](#sec-wishonia_trajectory_lifetime_income_gain_per_capita) 🔢: $51.9M
+- [Wishonia HALE Value Per Capita](#sec-wishonia_hale_value_per_capita) 🔢: $2.36M
+
+$$
+\begin{gathered}
+Upside_{blend,wish} \\
+= \Delta Y_{lifetime,wish} + Value_{HALE,wish} \\
+= \$51.9M + \$2.36M \\
+= \$54.3M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+\Delta Y_{lifetime,wish} \\
+= Y_{cum,wish} - Y_{cum,earth} \\
+= \$53.3M - \$1.34M \\
+= \$51.9M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Y_{cum,wish} \\
+= \bar{y}_0 \cdot \frac{(1+g_{pc,wish})((1+g_{pc,wish})^{20}-1)}{g_{pc,wish}} \\
++ \bar{y}_{wish,20} \cdot \frac{(1+g_{base})((1+g_{base})^{T_{remaining}-20}-1)}{g_{base}}
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+\bar{y}_{0} \\
+= \frac{GDP_{global}}{Pop_{global}} \\
+= \frac{\$115T}{8B} \\
+= \$14.4K
+\end{gathered}
+$$
+where:
+$$
+\bar{y}_{wish,20} = \frac{GDP_{wish,20}}{Pop_{2045}}
+$$
+where:
+$$
+GDP_{wish,20}=GDP_0(1+g_{ramp})^3(1+g_{full})^{17}
+$$
+where:
+$$
+s_{mil,max} = Cut_{WW2} = 87.6\% = 87.6\%
+$$
+where:
+$$
+\begin{gathered}
+Cut_{WW2} \\
+= 1 - \frac{Spending_{US,1947}}{Spending_{US,1945}} \\
+= 1 - \frac{\$176B}{\$1.42T} \\
+= 87.6\%
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+f_{cure,20,wish} \\
+= \min\left(1,\frac{Treatments_{new,ann}\cdot k_{capacity,wish}\cdot 20}{D_{untreated}}\right)
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+k_{capacity} \\
+= \frac{N_{fundable,dFDA}}{Slots_{curr}} \\
+= \frac{23.4M}{1.9M} \\
+= 12.3
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{fundable,dFDA} \\
+= \frac{Subsidies_{dFDA,ann}}{Cost_{pragmatic,pt}} \\
+= \frac{\$21.8B}{\$929} \\
+= 23.4M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Subsidies_{dFDA,ann} \\
+= Funding_{dFDA,ann} - OPEX_{dFDA} \\
+= \$21.8B - \$40M \\
+= \$21.8B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+OPEX_{dFDA} \\
+= Cost_{platform} + Cost_{staff} + Cost_{infra} \\
++ Cost_{regulatory} + Cost_{community} \\
+= \$15M + \$10M + \$8M + \$5M + \$2M \\
+= \$40M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+k_{capacity,max} \\
+= \frac{N_{willing}}{Slots_{curr}} \\
+= \frac{1.08B}{1.9M} \\
+= 566
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{willing} \\
+= N_{patients} \times Pct_{willing} \\
+= 2.4B \times 44.8\% \\
+= 1.08B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{untreated} \\
+= N_{rare} \times 0.95 \\
+= 7{,}000 \times 0.95 \\
+= 6{,}650
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{remaining} \\
+= LE_{global} - Age_{median} \\
+= 79 - 30.5 \\
+= 48.5
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Y_{cum,earth} \\
+= \bar{y}_0 \cdot \frac{(1+g_{base})((1+g_{base})^{T_{remaining}}-1)}{g_{base}}
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Value_{HALE,wish} \\
+= \Delta HALE_{wish,15} \times Value_{QALY} \\
+= 15.7 \times \$150K \\
+= \$2.36M
+\end{gathered}
+$$
+where:
+$$
+\Delta HALE_{wish,15} = f_{cure,15,wish} \cdot \Delta_{HALE}
+$$
+where:
+$$
+\begin{gathered}
+f_{cure,15,wish} \\
+= \min\left(1,\frac{Treatments_{new,ann}\cdot k_{capacity,wish}\cdot 15}{D_{untreated}}\right)
+\end{gathered}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-wishonia_personal_upside_blend.qmd >}}
+
+{{< include ../figures/sensitivity-table-wishonia_personal_upside_blend.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-wishonia_personal_upside_blend.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-wishonia_personal_upside_blend.qmd >}}
 
 :::
 
@@ -16723,7 +17286,7 @@ $$
 
 :::
 
-### Wishonia Trajectory Lifetime Income Gain (Per Capita): $52.1M {#sec-wishonia_trajectory_lifetime_income_gain_per_capita}
+### Wishonia Trajectory Lifetime Income Gain (Per Capita): $51.9M {#sec-wishonia_trajectory_lifetime_income_gain_per_capita}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -16732,14 +17295,14 @@ Lifetime per-capita income gain from Wishonia Trajectory vs current trajectory. 
 **Inputs**:
 
 - [Wishonia Trajectory Cumulative Lifetime Income (Per Capita)](#sec-wishonia_trajectory_cumulative_lifetime_income) 🔢: $53.3M
-- [Current Trajectory Cumulative Lifetime Income (Per Capita)](#sec-current_trajectory_cumulative_lifetime_income) 🔢: $1.18M
+- [Current Trajectory Cumulative Lifetime Income (Per Capita)](#sec-current_trajectory_cumulative_lifetime_income) 🔢: $1.34M
 
 $$
 \begin{gathered}
 \Delta Y_{lifetime,wish} \\
 = Y_{cum,wish} - Y_{cum,earth} \\
-= \$53.3M - \$1.18M \\
-= \$52.1M
+= \$53.3M - \$1.34M \\
+= \$51.9M
 \end{gathered}
 $$
 where:
@@ -16866,19 +17429,6 @@ $$
 Y_{cum,earth} \\
 = \bar{y}_0 \cdot \frac{(1+g_{base})((1+g_{base})^{T_{remaining}}-1)}{g_{base}}
 \end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-\bar{y}_{base,20} \\
-= \frac{GDP_{base,20}}{Pop_{2045}} \\
-= \frac{\$188T}{9.2B} \\
-= \$20.5K
-\end{gathered}
-$$
-where:
-$$
-GDP_{base,20} = GDP_0(1+g_{base})^{20}
 $$
 *✓ High confidence*
 
@@ -16898,7 +17448,7 @@ $$
 
 :::
 
-### Wishonia Trajectory Lifetime Income Multiplier: 45x {#sec-wishonia_trajectory_lifetime_income_multiplier}
+### Wishonia Trajectory Lifetime Income Multiplier: 39.8x {#sec-wishonia_trajectory_lifetime_income_multiplier}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -16907,14 +17457,14 @@ Ratio of cumulative lifetime income under Wishonia Trajectory vs current traject
 **Inputs**:
 
 - [Wishonia Trajectory Cumulative Lifetime Income (Per Capita)](#sec-wishonia_trajectory_cumulative_lifetime_income) 🔢: $53.3M
-- [Current Trajectory Cumulative Lifetime Income (Per Capita)](#sec-current_trajectory_cumulative_lifetime_income) 🔢: $1.18M
+- [Current Trajectory Cumulative Lifetime Income (Per Capita)](#sec-current_trajectory_cumulative_lifetime_income) 🔢: $1.34M
 
 $$
 \begin{gathered}
 k_{lifetime,wish:earth} \\
 = \frac{Y_{cum,wish}}{Y_{cum,earth}} \\
-= \frac{\$53.3M}{\$1.18M} \\
-= 45
+= \frac{\$53.3M}{\$1.34M} \\
+= 39.8
 \end{gathered}
 $$
 where:
@@ -17041,19 +17591,6 @@ $$
 Y_{cum,earth} \\
 = \bar{y}_0 \cdot \frac{(1+g_{base})((1+g_{base})^{T_{remaining}}-1)}{g_{base}}
 \end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-\bar{y}_{base,20} \\
-= \frac{GDP_{base,20}}{Pop_{2045}} \\
-= \frac{\$188T}{9.2B} \\
-= \$20.5K
-\end{gathered}
-$$
-where:
-$$
-GDP_{base,20} = GDP_0(1+g_{base})^{20}
 $$
 *✓ High confidence*
 
@@ -22454,138 +22991,6 @@ Percentage of treaty funding allocated to Incentive Alignment Bond mechanism for
 ::: {.callout-note collapse="true" title="📊 Details"}
 
 Minimum investment for institutional investors
-
-*Core definition*
-
-:::
-
-### Average Commitment per Lead Principal: $350M {#sec-launch_avg_principal_commitment_usd}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Average capital commitment from a persuaded lead principal toward launching the treaty campaign
-
-#### Uncertainty Range
-
-**Technical**: 95% CI: [$100M, $750M] • Distribution: Lognormal
-
-**What this means**: This estimate is highly uncertain. The true value likely falls between $100M and $750M (±93%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
-
-*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
-
-#### Input Distribution
-
-{{< include ../figures/distribution-launch_avg_principal_commitment_usd.qmd >}}
-
-*Core definition*
-
-:::
-
-### Execution Rate Given Persuasion: 65% {#sec-launch_execute_probability_given_persuaded}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Probability a persuaded high-alignment principal is willing and able to move capital, staff, and institutions
-
-#### Uncertainty Range
-
-**Technical**: 95% CI: [30%, 90%] • Distribution: Beta
-
-**What this means**: There's significant uncertainty here. The true value likely falls between 30% and 90% (±46%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
-
-*The beta distribution means values are bounded and can skew toward one end.*
-
-#### Input Distribution
-
-{{< include ../figures/distribution-launch_execute_probability_given_persuaded.qmd >}}
-
-*Core definition*
-
-:::
-
-### High-Alignment Lead Principals: 30 people {#sec-launch_high_alignment_principals_count}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Number of unusually aligned, implementation-capable principals globally for whom the treaty thesis is a natural fit
-
-#### Uncertainty Range
-
-**Technical**: 95% CI: [8 people, 100 people] • Distribution: Lognormal
-
-**What this means**: This estimate is highly uncertain. The true value likely falls between 8 people and 100 people (±153%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
-
-*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
-
-#### Input Distribution
-
-{{< include ../figures/distribution-launch_high_alignment_principals_count.qmd >}}
-
-*Core definition*
-
-:::
-
-### Persuasion Rate Given Reach: 60% {#sec-launch_persuade_probability_given_reached}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Probability a reached high-alignment principal accepts the launch thesis after meaningful review
-
-#### Uncertainty Range
-
-**Technical**: 95% CI: [25%, 85%] • Distribution: Beta
-
-**What this means**: There's significant uncertainty here. The true value likely falls between 25% and 85% (±50%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
-
-*The beta distribution means values are bounded and can skew toward one end.*
-
-#### Input Distribution
-
-{{< include ../figures/distribution-launch_persuade_probability_given_reached.qmd >}}
-
-*Core definition*
-
-:::
-
-### Reach Probability for High-Alignment Principals: 50% {#sec-launch_reach_probability_high_alignment}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Probability a high-alignment principal meaningfully encounters the launch thesis within the model horizon
-
-#### Uncertainty Range
-
-**Technical**: 95% CI: [20%, 85%] • Distribution: Beta
-
-**What this means**: This estimate is highly uncertain. The true value likely falls between 20% and 85% (±65%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
-
-*The beta distribution means values are bounded and can skew toward one end.*
-
-#### Input Distribution
-
-{{< include ../figures/distribution-launch_reach_probability_high_alignment.qmd >}}
-
-*Core definition*
-
-:::
-
-### Launch Redundancy Factor: 1.25x {#sec-launch_redundancy_factor}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Funding redundancy above bare minimum required to survive defections, delay, and ordinary political friction
-
-#### Uncertainty Range
-
-**Technical**: 95% CI: [1x, 2x] • Distribution: Lognormal
-
-**What this means**: There's significant uncertainty here. The true value likely falls between 1x and 2x (±40%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
-
-*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
-
-#### Input Distribution
-
-{{< include ../figures/distribution-launch_redundancy_factor.qmd >}}
 
 *Core definition*
 

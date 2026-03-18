@@ -38,57 +38,22 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 68 parameters used in the analysis, organized by type:
+This appendix documents all 66 parameters used in the analysis, organized by type:
 
 - External sources (peer-reviewed): 24
-- Calculated values: 34
+- Calculated values: 32
 - Core definitions: 10
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (34 parameters) • [External Data Sources](#sec-external) (24 parameters) • [Core Definitions](#sec-definitions) (10 parameters)
+[Calculated Values](#sec-calculated) (32 parameters) • [External Data Sources](#sec-external) (24 parameters) • [Core Definitions](#sec-definitions) (10 parameters)
 
 
 ## Calculated Values {#sec-calculated}
 
 Parameters derived from mathematical formulas and economic models.
 
-### Current Trajectory Average Income at Year 20: $20.5K {#sec-current_trajectory_avg_income_year_20}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Average income (GDP per capita) at year 20 under current trajectory trajectory.
-
-**Inputs**:
-
-- [Current Trajectory GDP at Year 20](#sec-current_trajectory_gdp_year_20) 🔢: $188T
-- [Global Population 2045 (Projected)](#sec-global_population_2045_projected) 📊: 9.2 billion of people
-
-$$
-\begin{gathered}
-\bar{y}_{base,20} \\
-= \frac{GDP_{base,20}}{Pop_{2045}} \\
-= \frac{\$188T}{9.2B} \\
-= \$20.5K
-\end{gathered}
-$$
-where:
-$$
-GDP_{base,20} = GDP_0(1+g_{base})^{20}
-$$
-*✓ High confidence*
-
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-current_trajectory_avg_income_year_20.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-current_trajectory_avg_income_year_20.qmd >}}
-
-:::
-
-### Current Trajectory Cumulative Lifetime Income (Per Capita): $1.18M {#sec-current_trajectory_cumulative_lifetime_income}
+### Current Trajectory Cumulative Lifetime Income (Per Capita): $1.34M {#sec-current_trajectory_cumulative_lifetime_income}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -97,7 +62,6 @@ Cumulative per-capita income over an average remaining lifespan under current tr
 **Inputs**:
 
 - [Global Average Income (2025 Baseline)](#sec-global_avg_income_2025) 🔢: $14.4K
-- [Current Trajectory Average Income at Year 20](#sec-current_trajectory_avg_income_year_20) 🔢: $20.5K
 - [Baseline Global GDP Growth Rate](#sec-gdp_baseline_growth_rate): 2.5%
 - [Average Remaining Years (Median Person)](#sec-global_avg_remaining_years) 🔢: 48.5 years
 
@@ -123,33 +87,6 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-current_trajectory_cumulative_lifetime_income.qmd >}}
-
-:::
-
-### Current Trajectory GDP at Year 20: $188T {#sec-current_trajectory_gdp_year_20}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Global GDP at year 20 under status-quo current trajectory growth.
-
-**Inputs**:
-
-- [Global GDP (2025)](#sec-global_gdp_2025) 📊: $115T
-- [Baseline Global GDP Growth Rate](#sec-gdp_baseline_growth_rate): 2.5%
-
-$$
-GDP_{base,20} = GDP_0(1+g_{base})^{20}
-$$
-
-*✓ High confidence*
-
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-current_trajectory_gdp_year_20.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-current_trajectory_gdp_year_20.qmd >}}
 
 :::
 
@@ -873,7 +810,7 @@ $$
 
 :::
 
-### Treaty Trajectory Lifetime Income Gain (Per Capita): $14.9M {#sec-treaty_trajectory_lifetime_income_gain_per_capita}
+### Treaty Trajectory Lifetime Income Gain (Per Capita): $14.7M {#sec-treaty_trajectory_lifetime_income_gain_per_capita}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -882,14 +819,14 @@ Lifetime per-capita income gain from Treaty Trajectory vs current trajectory. Cu
 **Inputs**:
 
 - [Treaty Trajectory Cumulative Lifetime Income (Per Capita)](#sec-treaty_trajectory_cumulative_lifetime_income) 🔢: $16.1M
-- [Current Trajectory Cumulative Lifetime Income (Per Capita)](#sec-current_trajectory_cumulative_lifetime_income) 🔢: $1.18M
+- [Current Trajectory Cumulative Lifetime Income (Per Capita)](#sec-current_trajectory_cumulative_lifetime_income) 🔢: $1.34M
 
 $$
 \begin{gathered}
 \Delta Y_{lifetime,treaty} \\
 = Y_{cum,treaty} - Y_{cum,earth} \\
-= \$16.1M - \$1.18M \\
-= \$14.9M
+= \$16.1M - \$1.34M \\
+= \$14.7M
 \end{gathered}
 $$
 where:
@@ -1019,19 +956,6 @@ $$
 Y_{cum,earth} \\
 = \bar{y}_0 \cdot \frac{(1+g_{base})((1+g_{base})^{T_{remaining}}-1)}{g_{base}}
 \end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-\bar{y}_{base,20} \\
-= \frac{GDP_{base,20}}{Pop_{2045}} \\
-= \frac{\$188T}{9.2B} \\
-= \$20.5K
-\end{gathered}
-$$
-where:
-$$
-GDP_{base,20} = GDP_0(1+g_{base})^{20}
 $$
 *✓ High confidence*
 
@@ -1051,7 +975,7 @@ $$
 
 :::
 
-### Treaty Trajectory Lifetime Income Multiplier: 13.5x {#sec-treaty_trajectory_lifetime_income_multiplier}
+### Treaty Trajectory Lifetime Income Multiplier: 12x {#sec-treaty_trajectory_lifetime_income_multiplier}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -1060,14 +984,14 @@ Ratio of cumulative lifetime income under Treaty Trajectory vs current trajector
 **Inputs**:
 
 - [Treaty Trajectory Cumulative Lifetime Income (Per Capita)](#sec-treaty_trajectory_cumulative_lifetime_income) 🔢: $16.1M
-- [Current Trajectory Cumulative Lifetime Income (Per Capita)](#sec-current_trajectory_cumulative_lifetime_income) 🔢: $1.18M
+- [Current Trajectory Cumulative Lifetime Income (Per Capita)](#sec-current_trajectory_cumulative_lifetime_income) 🔢: $1.34M
 
 $$
 \begin{gathered}
 k_{lifetime,treaty:earth} \\
 = \frac{Y_{cum,treaty}}{Y_{cum,earth}} \\
-= \frac{\$16.1M}{\$1.18M} \\
-= 13.5
+= \frac{\$16.1M}{\$1.34M} \\
+= 12
 \end{gathered}
 $$
 where:
@@ -1197,19 +1121,6 @@ $$
 Y_{cum,earth} \\
 = \bar{y}_0 \cdot \frac{(1+g_{base})((1+g_{base})^{T_{remaining}}-1)}{g_{base}}
 \end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-\bar{y}_{base,20} \\
-= \frac{GDP_{base,20}}{Pop_{2045}} \\
-= \frac{\$188T}{9.2B} \\
-= \$20.5K
-\end{gathered}
-$$
-where:
-$$
-GDP_{base,20} = GDP_0(1+g_{base})^{20}
 $$
 *✓ High confidence*
 
@@ -1469,7 +1380,7 @@ $$
 
 :::
 
-### Wishonia Trajectory Lifetime Income Gain (Per Capita): $52.1M {#sec-wishonia_trajectory_lifetime_income_gain_per_capita}
+### Wishonia Trajectory Lifetime Income Gain (Per Capita): $51.9M {#sec-wishonia_trajectory_lifetime_income_gain_per_capita}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -1478,14 +1389,14 @@ Lifetime per-capita income gain from Wishonia Trajectory vs current trajectory. 
 **Inputs**:
 
 - [Wishonia Trajectory Cumulative Lifetime Income (Per Capita)](#sec-wishonia_trajectory_cumulative_lifetime_income) 🔢: $53.3M
-- [Current Trajectory Cumulative Lifetime Income (Per Capita)](#sec-current_trajectory_cumulative_lifetime_income) 🔢: $1.18M
+- [Current Trajectory Cumulative Lifetime Income (Per Capita)](#sec-current_trajectory_cumulative_lifetime_income) 🔢: $1.34M
 
 $$
 \begin{gathered}
 \Delta Y_{lifetime,wish} \\
 = Y_{cum,wish} - Y_{cum,earth} \\
-= \$53.3M - \$1.18M \\
-= \$52.1M
+= \$53.3M - \$1.34M \\
+= \$51.9M
 \end{gathered}
 $$
 where:
@@ -1612,19 +1523,6 @@ $$
 Y_{cum,earth} \\
 = \bar{y}_0 \cdot \frac{(1+g_{base})((1+g_{base})^{T_{remaining}}-1)}{g_{base}}
 \end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-\bar{y}_{base,20} \\
-= \frac{GDP_{base,20}}{Pop_{2045}} \\
-= \frac{\$188T}{9.2B} \\
-= \$20.5K
-\end{gathered}
-$$
-where:
-$$
-GDP_{base,20} = GDP_0(1+g_{base})^{20}
 $$
 *✓ High confidence*
 
@@ -1644,7 +1542,7 @@ $$
 
 :::
 
-### Wishonia Trajectory Lifetime Income Multiplier: 45x {#sec-wishonia_trajectory_lifetime_income_multiplier}
+### Wishonia Trajectory Lifetime Income Multiplier: 39.8x {#sec-wishonia_trajectory_lifetime_income_multiplier}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -1653,14 +1551,14 @@ Ratio of cumulative lifetime income under Wishonia Trajectory vs current traject
 **Inputs**:
 
 - [Wishonia Trajectory Cumulative Lifetime Income (Per Capita)](#sec-wishonia_trajectory_cumulative_lifetime_income) 🔢: $53.3M
-- [Current Trajectory Cumulative Lifetime Income (Per Capita)](#sec-current_trajectory_cumulative_lifetime_income) 🔢: $1.18M
+- [Current Trajectory Cumulative Lifetime Income (Per Capita)](#sec-current_trajectory_cumulative_lifetime_income) 🔢: $1.34M
 
 $$
 \begin{gathered}
 k_{lifetime,wish:earth} \\
 = \frac{Y_{cum,wish}}{Y_{cum,earth}} \\
-= \frac{\$53.3M}{\$1.18M} \\
-= 45
+= \frac{\$53.3M}{\$1.34M} \\
+= 39.8
 \end{gathered}
 $$
 where:
@@ -1787,19 +1685,6 @@ $$
 Y_{cum,earth} \\
 = \bar{y}_0 \cdot \frac{(1+g_{base})((1+g_{base})^{T_{remaining}}-1)}{g_{base}}
 \end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-\bar{y}_{base,20} \\
-= \frac{GDP_{base,20}}{Pop_{2045}} \\
-= \frac{\$188T}{9.2B} \\
-= \$20.5K
-\end{gathered}
-$$
-where:
-$$
-GDP_{base,20} = GDP_0(1+g_{base})^{20}
 $$
 *✓ High confidence*
 

@@ -427,6 +427,29 @@ _ratio_growth = _destructive_growth - 0.025  # net growth of ratio
 _years_to_25pct = _math.log(0.25 / 0.115) / _math.log(1 + _ratio_growth)
 _years_to_50pct = _math.log(0.50 / 0.115) / _math.log(1 + _ratio_growth)
 
+DESTRUCTIVE_ECONOMY_PCT_GDP_YEAR_15 = Parameter(
+    float(GLOBAL_DESTRUCTIVE_ECONOMY_PCT_GDP) * ((1 + _ratio_growth) ** 15),
+    source_type="calculated",
+    description="Projected destructive economy share of GDP in year 15 if current relative growth rates "
+                "continue. This extends the current military-plus-cybercrime trend against baseline GDP growth.",
+    display_name="Destructive Economy as % of GDP in Year 15",
+    unit="percent",
+    formula="GLOBAL_DESTRUCTIVE_ECONOMY_PCT_GDP × (1 + DESTRUCTIVE_GROWTH - GDP_BASELINE_GROWTH_RATE)^15",
+    latex=r"r_{destruct:GDP,15} = r_{destruct:GDP} \cdot (1 + g_{destruct} - g_{GDP})^{15}",
+    inputs=["GLOBAL_DESTRUCTIVE_ECONOMY_PCT_GDP", "GLOBAL_CYBERCRIME_CAGR",
+            "GLOBAL_MILITARY_SPENDING_REAL_CAGR_10YR", "GDP_BASELINE_GROWTH_RATE",
+            "GLOBAL_MILITARY_SPENDING_ANNUAL_2024", "GLOBAL_DESTRUCTIVE_ECONOMY_ANNUAL_2025",
+            "GLOBAL_CYBERCRIME_COST_ANNUAL_2025"],
+    compute=lambda ctx: ctx["GLOBAL_DESTRUCTIVE_ECONOMY_PCT_GDP"] * (
+        1 + (
+            (ctx["GLOBAL_MILITARY_SPENDING_ANNUAL_2024"] / ctx["GLOBAL_DESTRUCTIVE_ECONOMY_ANNUAL_2025"]) * ctx["GLOBAL_MILITARY_SPENDING_REAL_CAGR_10YR"]
+            + (ctx["GLOBAL_CYBERCRIME_COST_ANNUAL_2025"] / ctx["GLOBAL_DESTRUCTIVE_ECONOMY_ANNUAL_2025"]) * ctx["GLOBAL_CYBERCRIME_CAGR"]
+        ) - ctx["GDP_BASELINE_GROWTH_RATE"]
+    ) ** 15,
+    keywords=["destructive", "economy", "GDP", "year 15", "projection", "collapse"],
+    latex_symbol=r"r_{destruct:GDP,15}",
+)
+
 DESTRUCTIVE_ECONOMY_YEARS_TO_25PCT_GDP = Parameter(
     round(_years_to_25pct),
     source_type="calculated",
@@ -6679,6 +6702,20 @@ GLOBAL_POPULATION_2024 = Parameter(
     latex_symbol=r"Pop_{global}",  # LaTeX symbol for equations
 )  # UN World Population Prospects 2022
 
+GLOBAL_ANNUAL_SAVINGS_PER_CAPITA = Parameter(
+    GLOBAL_ANNUAL_SAVINGS / GLOBAL_POPULATION_2024,
+    source_type="calculated",
+    description="Global annual savings divided by global population. Useful as a rough average-person "
+                "default for prize-contribution sizing.",
+    display_name="Global Annual Savings Per Capita",
+    unit="USD/person/year",
+    formula="GLOBAL_ANNUAL_SAVINGS / GLOBAL_POPULATION_2024",
+    inputs=["GLOBAL_ANNUAL_SAVINGS", "GLOBAL_POPULATION_2024"],
+    compute=lambda ctx: ctx["GLOBAL_ANNUAL_SAVINGS"] / ctx["GLOBAL_POPULATION_2024"],
+    keywords=["savings", "per capita", "global", "personal", "default"],
+    latex_symbol=r"S_{annual,pc}",
+)
+
 POLITICAL_DYSFUNCTION_TAX_PER_PERSON_ANNUAL = Parameter(
     POLITICAL_DYSFUNCTION_GLOBAL_OPPORTUNITY_COST_TOTAL / GLOBAL_POPULATION_2024,
     source_type="calculated",
@@ -9046,6 +9083,32 @@ WISHONIA_HALE_GAIN_YEAR_15 = Parameter(
     latex_symbol=r"\Delta HALE_{wish,15}",
 )
 
+TREATY_HALE_VALUE_PER_CAPITA = Parameter(
+    float(TREATY_HALE_GAIN_YEAR_15) * float(STANDARD_ECONOMIC_QALY_VALUE_USD),
+    source_type="calculated",
+    description="Economic value of Treaty Trajectory HALE gains at year 15 using the standard QALY value.",
+    display_name="Treaty HALE Value Per Capita",
+    unit="USD/person",
+    formula="TREATY_HALE_GAIN_YEAR_15 × STANDARD_ECONOMIC_QALY_VALUE_USD",
+    inputs=["TREATY_HALE_GAIN_YEAR_15", "STANDARD_ECONOMIC_QALY_VALUE_USD"],
+    compute=lambda ctx: ctx["TREATY_HALE_GAIN_YEAR_15"] * ctx["STANDARD_ECONOMIC_QALY_VALUE_USD"],
+    keywords=["HALE", "QALY", "value", "treaty", "per capita"],
+    latex_symbol=r"Value_{HALE,treaty}",
+)
+
+WISHONIA_HALE_VALUE_PER_CAPITA = Parameter(
+    float(WISHONIA_HALE_GAIN_YEAR_15) * float(STANDARD_ECONOMIC_QALY_VALUE_USD),
+    source_type="calculated",
+    description="Economic value of Wishonia Trajectory HALE gains at year 15 using the standard QALY value.",
+    display_name="Wishonia HALE Value Per Capita",
+    unit="USD/person",
+    formula="WISHONIA_HALE_GAIN_YEAR_15 × STANDARD_ECONOMIC_QALY_VALUE_USD",
+    inputs=["WISHONIA_HALE_GAIN_YEAR_15", "STANDARD_ECONOMIC_QALY_VALUE_USD"],
+    compute=lambda ctx: ctx["WISHONIA_HALE_GAIN_YEAR_15"] * ctx["STANDARD_ECONOMIC_QALY_VALUE_USD"],
+    keywords=["HALE", "QALY", "value", "wishonia", "per capita"],
+    latex_symbol=r"Value_{HALE,wish}",
+)
+
 TREATY_PROJECTED_HALE_YEAR_15 = Parameter(
     63.3 + float(TREATY_DISEASE_CURE_FRACTION_15YR) * (float(GLOBAL_LIFE_EXPECTANCY_2024) - 63.3),
     source_type="calculated",
@@ -9124,30 +9187,22 @@ GLOBAL_AVG_REMAINING_YEARS = Parameter(
 )
 
 
-def _geometric_sum(y0, r, n):
-    """Closed-form geometric series: sum_{t=1}^{n} y0 * r^t = y0 * r * (r^n - 1) / (r - 1)"""
-    return y0 * r * (r ** n - 1) / (r - 1)
-
-
-def _cumulative_lifetime_income(income_0, income_year_20, baseline_growth, remaining_years):
-    """Cumulative per-capita income using closed-form geometric series.
-
-    Phase 1 (years 1-20): income grows at implied per-capita CAGR derived from
-    known year-0 and year-20 per-capita incomes.
-    Phase 2 (years 21-T): income grows at baseline_growth from year-20 level.
-    """
-    g_pc = (income_year_20 / income_0) ** (1 / 20) - 1
-    phase1 = _geometric_sum(income_0, 1 + g_pc, min(20, int(remaining_years)))
-    years_after_20 = int(remaining_years) - 20
-    phase2 = _geometric_sum(income_year_20, 1 + baseline_growth, years_after_20) if years_after_20 > 0 else 0
-    return phase1 + phase2
+_remaining_years_0 = int(float(GLOBAL_AVG_REMAINING_YEARS))
+_phase1_years_0 = min(20, _remaining_years_0)
+_phase2_years_0 = _remaining_years_0 - 20
+_treaty_pc_growth_0 = (
+    float(TREATY_TRAJECTORY_AVG_INCOME_YEAR_20) / float(GLOBAL_AVG_INCOME_2025)
+) ** (1 / 20) - 1
+_wishonia_pc_growth_0 = (
+    float(WISHONIA_TRAJECTORY_AVG_INCOME_YEAR_20) / float(GLOBAL_AVG_INCOME_2025)
+) ** (1 / 20) - 1
 
 
 CURRENT_TRAJECTORY_CUMULATIVE_LIFETIME_INCOME = Parameter(
-    _cumulative_lifetime_income(
-        float(GLOBAL_AVG_INCOME_2025), float(CURRENT_TRAJECTORY_AVG_INCOME_YEAR_20),
-        float(GDP_BASELINE_GROWTH_RATE), float(GLOBAL_AVG_REMAINING_YEARS),
-    ),
+    float(GLOBAL_AVG_INCOME_2025)
+    * (1 + float(GDP_BASELINE_GROWTH_RATE))
+    * (((1 + float(GDP_BASELINE_GROWTH_RATE)) ** _remaining_years_0) - 1)
+    / float(GDP_BASELINE_GROWTH_RATE),
     source_type="calculated",
     description="Cumulative per-capita income over an average remaining lifespan under current trajectory "
                 "baseline trajectory. Uses 2.5% baseline growth for all years.",
@@ -9155,21 +9210,30 @@ CURRENT_TRAJECTORY_CUMULATIVE_LIFETIME_INCOME = Parameter(
     unit="USD",
     formula="GLOBAL_AVG_INCOME_2025 * (1+g) * ((1+g)^T - 1) / g, where g = per-capita baseline growth",
     latex=r"Y_{cum,earth} = \bar{y}_0 \cdot \frac{(1+g_{base})((1+g_{base})^{T_{remaining}}-1)}{g_{base}}",
-    inputs=["GLOBAL_AVG_INCOME_2025", "CURRENT_TRAJECTORY_AVG_INCOME_YEAR_20", "GDP_BASELINE_GROWTH_RATE",
-            "GLOBAL_AVG_REMAINING_YEARS"],
-    compute=lambda ctx: _cumulative_lifetime_income(
-        ctx["GLOBAL_AVG_INCOME_2025"],
-        ctx["CURRENT_TRAJECTORY_AVG_INCOME_YEAR_20"],
-        ctx["GDP_BASELINE_GROWTH_RATE"],
-        ctx["GLOBAL_AVG_REMAINING_YEARS"],
+    inputs=["GLOBAL_AVG_INCOME_2025", "GDP_BASELINE_GROWTH_RATE", "GLOBAL_AVG_REMAINING_YEARS"],
+    compute=lambda ctx: (
+        ctx["GLOBAL_AVG_INCOME_2025"]
+        * (1 + ctx["GDP_BASELINE_GROWTH_RATE"])
+        * (((1 + ctx["GDP_BASELINE_GROWTH_RATE"]) ** int(ctx["GLOBAL_AVG_REMAINING_YEARS"])) - 1)
+        / ctx["GDP_BASELINE_GROWTH_RATE"]
     ),
     latex_symbol=r"Y_{cum,earth}",
 )
 
 TREATY_TRAJECTORY_CUMULATIVE_LIFETIME_INCOME = Parameter(
-    _cumulative_lifetime_income(
-        float(GLOBAL_AVG_INCOME_2025), float(TREATY_TRAJECTORY_AVG_INCOME_YEAR_20),
-        float(GDP_BASELINE_GROWTH_RATE), float(GLOBAL_AVG_REMAINING_YEARS),
+    (
+        float(GLOBAL_AVG_INCOME_2025)
+        * (1 + _treaty_pc_growth_0)
+        * (((1 + _treaty_pc_growth_0) ** _phase1_years_0) - 1)
+        / _treaty_pc_growth_0
+    )
+    + (
+        float(TREATY_TRAJECTORY_AVG_INCOME_YEAR_20)
+        * (1 + float(GDP_BASELINE_GROWTH_RATE))
+        * (((1 + float(GDP_BASELINE_GROWTH_RATE)) ** _phase2_years_0) - 1)
+        / float(GDP_BASELINE_GROWTH_RATE)
+        if _phase2_years_0 > 0
+        else 0
     ),
     source_type="calculated",
     description="Cumulative per-capita income over an average remaining lifespan under Treaty Trajectory. "
@@ -9182,11 +9246,35 @@ TREATY_TRAJECTORY_CUMULATIVE_LIFETIME_INCOME = Parameter(
     latex=r"Y_{cum,treaty} = \bar{y}_0 \cdot \frac{(1+g_{pc})((1+g_{pc})^{20}-1)}{g_{pc}} + \bar{y}_{treaty,20} \cdot \frac{(1+g_{base})((1+g_{base})^{T_{remaining}-20}-1)}{g_{base}}",
     inputs=["GLOBAL_AVG_INCOME_2025", "TREATY_TRAJECTORY_AVG_INCOME_YEAR_20", "GDP_BASELINE_GROWTH_RATE",
             "GLOBAL_AVG_REMAINING_YEARS"],
-    compute=lambda ctx: _cumulative_lifetime_income(
-        ctx["GLOBAL_AVG_INCOME_2025"],
-        ctx["TREATY_TRAJECTORY_AVG_INCOME_YEAR_20"],
-        ctx["GDP_BASELINE_GROWTH_RATE"],
-        ctx["GLOBAL_AVG_REMAINING_YEARS"],
+    compute=lambda ctx: (
+        (
+            ctx["GLOBAL_AVG_INCOME_2025"]
+            * (
+                ctx["TREATY_TRAJECTORY_AVG_INCOME_YEAR_20"] / ctx["GLOBAL_AVG_INCOME_2025"]
+            ) ** (1 / 20)
+            * (
+                (
+                    (
+                        ctx["TREATY_TRAJECTORY_AVG_INCOME_YEAR_20"] / ctx["GLOBAL_AVG_INCOME_2025"]
+                    ) ** (1 / 20)
+                ) ** min(20, int(ctx["GLOBAL_AVG_REMAINING_YEARS"]))
+                - 1
+            )
+            / (
+                (
+                    ctx["TREATY_TRAJECTORY_AVG_INCOME_YEAR_20"] / ctx["GLOBAL_AVG_INCOME_2025"]
+                ) ** (1 / 20)
+                - 1
+            )
+        )
+        + (
+            ctx["TREATY_TRAJECTORY_AVG_INCOME_YEAR_20"]
+            * (1 + ctx["GDP_BASELINE_GROWTH_RATE"])
+            * (((1 + ctx["GDP_BASELINE_GROWTH_RATE"]) ** (int(ctx["GLOBAL_AVG_REMAINING_YEARS"]) - 20)) - 1)
+            / ctx["GDP_BASELINE_GROWTH_RATE"]
+            if int(ctx["GLOBAL_AVG_REMAINING_YEARS"]) > 20
+            else 0
+        )
     ),
     latex_symbol=r"Y_{cum,treaty}",
 )
@@ -9219,9 +9307,19 @@ TREATY_TRAJECTORY_LIFETIME_INCOME_MULTIPLIER = Parameter(
 )
 
 WISHONIA_TRAJECTORY_CUMULATIVE_LIFETIME_INCOME = Parameter(
-    _cumulative_lifetime_income(
-        float(GLOBAL_AVG_INCOME_2025), float(WISHONIA_TRAJECTORY_AVG_INCOME_YEAR_20),
-        float(GDP_BASELINE_GROWTH_RATE), float(GLOBAL_AVG_REMAINING_YEARS),
+    (
+        float(GLOBAL_AVG_INCOME_2025)
+        * (1 + _wishonia_pc_growth_0)
+        * (((1 + _wishonia_pc_growth_0) ** _phase1_years_0) - 1)
+        / _wishonia_pc_growth_0
+    )
+    + (
+        float(WISHONIA_TRAJECTORY_AVG_INCOME_YEAR_20)
+        * (1 + float(GDP_BASELINE_GROWTH_RATE))
+        * (((1 + float(GDP_BASELINE_GROWTH_RATE)) ** _phase2_years_0) - 1)
+        / float(GDP_BASELINE_GROWTH_RATE)
+        if _phase2_years_0 > 0
+        else 0
     ),
     source_type="calculated",
     description="Cumulative per-capita income over an average remaining lifespan under Wishonia Trajectory. "
@@ -9233,11 +9331,35 @@ WISHONIA_TRAJECTORY_CUMULATIVE_LIFETIME_INCOME = Parameter(
     latex=r"Y_{cum,wish} = \bar{y}_0 \cdot \frac{(1+g_{pc,wish})((1+g_{pc,wish})^{20}-1)}{g_{pc,wish}} + \bar{y}_{wish,20} \cdot \frac{(1+g_{base})((1+g_{base})^{T_{remaining}-20}-1)}{g_{base}}",
     inputs=["GLOBAL_AVG_INCOME_2025", "WISHONIA_TRAJECTORY_AVG_INCOME_YEAR_20", "GDP_BASELINE_GROWTH_RATE",
             "GLOBAL_AVG_REMAINING_YEARS"],
-    compute=lambda ctx: _cumulative_lifetime_income(
-        ctx["GLOBAL_AVG_INCOME_2025"],
-        ctx["WISHONIA_TRAJECTORY_AVG_INCOME_YEAR_20"],
-        ctx["GDP_BASELINE_GROWTH_RATE"],
-        ctx["GLOBAL_AVG_REMAINING_YEARS"],
+    compute=lambda ctx: (
+        (
+            ctx["GLOBAL_AVG_INCOME_2025"]
+            * (
+                ctx["WISHONIA_TRAJECTORY_AVG_INCOME_YEAR_20"] / ctx["GLOBAL_AVG_INCOME_2025"]
+            ) ** (1 / 20)
+            * (
+                (
+                    (
+                        ctx["WISHONIA_TRAJECTORY_AVG_INCOME_YEAR_20"] / ctx["GLOBAL_AVG_INCOME_2025"]
+                    ) ** (1 / 20)
+                ) ** min(20, int(ctx["GLOBAL_AVG_REMAINING_YEARS"]))
+                - 1
+            )
+            / (
+                (
+                    ctx["WISHONIA_TRAJECTORY_AVG_INCOME_YEAR_20"] / ctx["GLOBAL_AVG_INCOME_2025"]
+                ) ** (1 / 20)
+                - 1
+            )
+        )
+        + (
+            ctx["WISHONIA_TRAJECTORY_AVG_INCOME_YEAR_20"]
+            * (1 + ctx["GDP_BASELINE_GROWTH_RATE"])
+            * (((1 + ctx["GDP_BASELINE_GROWTH_RATE"]) ** (int(ctx["GLOBAL_AVG_REMAINING_YEARS"]) - 20)) - 1)
+            / ctx["GDP_BASELINE_GROWTH_RATE"]
+            if int(ctx["GLOBAL_AVG_REMAINING_YEARS"]) > 20
+            else 0
+        )
     ),
     latex_symbol=r"Y_{cum,wish}",
 )
@@ -9253,6 +9375,32 @@ WISHONIA_TRAJECTORY_LIFETIME_INCOME_GAIN_PER_CAPITA = Parameter(
     inputs=["WISHONIA_TRAJECTORY_CUMULATIVE_LIFETIME_INCOME", "CURRENT_TRAJECTORY_CUMULATIVE_LIFETIME_INCOME"],
     compute=lambda ctx: ctx["WISHONIA_TRAJECTORY_CUMULATIVE_LIFETIME_INCOME"] - ctx["CURRENT_TRAJECTORY_CUMULATIVE_LIFETIME_INCOME"],
     latex_symbol=r"\Delta Y_{lifetime,wish}",
+)
+
+TREATY_PERSONAL_UPSIDE_BLEND = Parameter(
+    float(TREATY_TRAJECTORY_LIFETIME_INCOME_GAIN_PER_CAPITA) + float(TREATY_HALE_VALUE_PER_CAPITA),
+    source_type="calculated",
+    description="Blended personal upside under Treaty Trajectory: lifetime income gain plus valued healthy-life gains.",
+    display_name="Treaty Personal Upside (Blended)",
+    unit="USD/person",
+    formula="TREATY_TRAJECTORY_LIFETIME_INCOME_GAIN_PER_CAPITA + TREATY_HALE_VALUE_PER_CAPITA",
+    inputs=["TREATY_TRAJECTORY_LIFETIME_INCOME_GAIN_PER_CAPITA", "TREATY_HALE_VALUE_PER_CAPITA"],
+    compute=lambda ctx: ctx["TREATY_TRAJECTORY_LIFETIME_INCOME_GAIN_PER_CAPITA"] + ctx["TREATY_HALE_VALUE_PER_CAPITA"],
+    keywords=["treaty", "personal", "upside", "blended", "income", "health"],
+    latex_symbol=r"Upside_{blend,treaty}",
+)
+
+WISHONIA_PERSONAL_UPSIDE_BLEND = Parameter(
+    float(WISHONIA_TRAJECTORY_LIFETIME_INCOME_GAIN_PER_CAPITA) + float(WISHONIA_HALE_VALUE_PER_CAPITA),
+    source_type="calculated",
+    description="Blended personal upside under Wishonia Trajectory: lifetime income gain plus valued healthy-life gains.",
+    display_name="Wishonia Personal Upside (Blended)",
+    unit="USD/person",
+    formula="WISHONIA_TRAJECTORY_LIFETIME_INCOME_GAIN_PER_CAPITA + WISHONIA_HALE_VALUE_PER_CAPITA",
+    inputs=["WISHONIA_TRAJECTORY_LIFETIME_INCOME_GAIN_PER_CAPITA", "WISHONIA_HALE_VALUE_PER_CAPITA"],
+    compute=lambda ctx: ctx["WISHONIA_TRAJECTORY_LIFETIME_INCOME_GAIN_PER_CAPITA"] + ctx["WISHONIA_HALE_VALUE_PER_CAPITA"],
+    keywords=["wishonia", "personal", "upside", "blended", "income", "health"],
+    latex_symbol=r"Upside_{blend,wish}",
 )
 
 WISHONIA_TRAJECTORY_LIFETIME_INCOME_MULTIPLIER = Parameter(
@@ -10576,15 +10724,6 @@ CHAIN_EFFECTIVE_R = Parameter(
     latex_symbol=r"R_{eff}",
 )
 
-# Helper: orbit reach probability (used by multiple Parameters below)
-def _orbit_reach_prob(ctx):
-    """P(a specific implementer's orbit is reached by the content cascade)"""
-    R = ctx["CHAIN_EFFECTIVE_R"]
-    cascade_mult = sum(R ** i for i in range(_CASCADE_GENERATIONS + 1))
-    total_reach = ctx["CHAIN_INITIAL_AUDIENCE"] * cascade_mult
-    p_in_orbit = ctx["CHAIN_IMPLEMENTER_ORBIT_SIZE"] / _SOCIAL_NETWORK_POP
-    return 1.0 - (1.0 - p_in_orbit) ** total_reach
-
 # Shared input list for model outputs
 _chain_orbit_inputs = [
     "CHAIN_IMPLEMENTER_ORBIT_SIZE", "CHAIN_EFFECTIVE_R", "CHAIN_INITIAL_AUDIENCE",
@@ -10608,8 +10747,18 @@ CHAIN_P_ENCOUNTER_DIRECT_10YR = Parameter(
     formula="1 - (1 - CHAIN_IMPLEMENTER_ORBIT_SIZE / 5B)^(CHAIN_INITIAL_AUDIENCE x cascade_multiplier)",
     latex=r"P_{reach} = 1 - \left(1 - \frac{O_{impl}}{N}\right)^{N_0 \cdot \sum_{i=0}^{3} R_{eff}^i}",
     keywords=["encounter", "orbit", "reach", "chain", "implementer"],
-    inputs=_chain_orbit_inputs,  # inputs-verified: consumed by _orbit_reach_prob()
-    compute=lambda ctx: _orbit_reach_prob(ctx),
+    inputs=_chain_orbit_inputs,
+    compute=lambda ctx: 1.0 - (
+        1.0 - (ctx["CHAIN_IMPLEMENTER_ORBIT_SIZE"] / _SOCIAL_NETWORK_POP)
+    ) ** (
+        ctx["CHAIN_INITIAL_AUDIENCE"]
+        * (
+            1
+            + ctx["CHAIN_EFFECTIVE_R"]
+            + ctx["CHAIN_EFFECTIVE_R"] ** 2
+            + ctx["CHAIN_EFFECTIVE_R"] ** 3
+        )
+    ),
     latex_symbol=r"P_{reach,impl}",
 )
 
@@ -10622,8 +10771,21 @@ CHAIN_EXPECTED_ENGAGED_IMPLEMENTERS = Parameter(
     formula="P_reach x CHAIN_ENGAGE_PROBABILITY x CHAIN_IMPLEMENTER_COUNT",
     latex=r"E[N_{engaged}] = P_{reach} \times P_{engage} \times N_{impl}",
     keywords=["engaged", "implementer", "expected", "chain"],
-    inputs=_chain_orbit_inputs + ["CHAIN_ENGAGE_PROBABILITY", "CHAIN_IMPLEMENTER_COUNT"],  # inputs-verified: orbit inputs consumed by _orbit_reach_prob()
-    compute=lambda ctx: _orbit_reach_prob(ctx) * ctx["CHAIN_ENGAGE_PROBABILITY"] * ctx["CHAIN_IMPLEMENTER_COUNT"],
+    inputs=_chain_orbit_inputs + ["CHAIN_ENGAGE_PROBABILITY", "CHAIN_IMPLEMENTER_COUNT"],
+    compute=lambda ctx: (
+        1.0
+        - (
+            1.0 - (ctx["CHAIN_IMPLEMENTER_ORBIT_SIZE"] / _SOCIAL_NETWORK_POP)
+        ) ** (
+            ctx["CHAIN_INITIAL_AUDIENCE"]
+            * (
+                1
+                + ctx["CHAIN_EFFECTIVE_R"]
+                + ctx["CHAIN_EFFECTIVE_R"] ** 2
+                + ctx["CHAIN_EFFECTIVE_R"] ** 3
+            )
+        )
+    ) * ctx["CHAIN_ENGAGE_PROBABILITY"] * ctx["CHAIN_IMPLEMENTER_COUNT"],
     latex_symbol=r"E[N_{engaged}]",
 )
 
@@ -10636,9 +10798,23 @@ CHAIN_P_NO_IMPLEMENTER_ENGAGES = Parameter(
     formula="(1 - P_reach x CHAIN_ENGAGE_PROBABILITY)^CHAIN_IMPLEMENTER_COUNT",
     latex=r"P_{none} = \left(1 - P_{reach} \cdot P_{engage}\right)^{N_{impl}}",
     keywords=["no engagement", "probability", "chain", "implementer"],
-    inputs=_chain_orbit_inputs + ["CHAIN_ENGAGE_PROBABILITY", "CHAIN_IMPLEMENTER_COUNT"],  # inputs-verified: orbit inputs consumed by _orbit_reach_prob()
+    inputs=_chain_orbit_inputs + ["CHAIN_ENGAGE_PROBABILITY", "CHAIN_IMPLEMENTER_COUNT"],
     compute=lambda ctx: (
-        1.0 - _orbit_reach_prob(ctx) * ctx["CHAIN_ENGAGE_PROBABILITY"]
+        1.0
+        - (
+            1.0
+            - (
+                1.0 - (ctx["CHAIN_IMPLEMENTER_ORBIT_SIZE"] / _SOCIAL_NETWORK_POP)
+            ) ** (
+                ctx["CHAIN_INITIAL_AUDIENCE"]
+                * (
+                    1
+                    + ctx["CHAIN_EFFECTIVE_R"]
+                    + ctx["CHAIN_EFFECTIVE_R"] ** 2
+                    + ctx["CHAIN_EFFECTIVE_R"] ** 3
+                )
+            )
+        ) * ctx["CHAIN_ENGAGE_PROBABILITY"]
     ) ** ctx["CHAIN_IMPLEMENTER_COUNT"],
     latex_symbol=r"P_{none}",
 )
@@ -10656,205 +10832,6 @@ CHAIN_P_AT_LEAST_ONE_ENGAGES = Parameter(
     latex_symbol=r"P_{reach}",
 )
 
-
-# ============================================================================
-# MINIMAL LAUNCH PROBABILITY MODEL: CAN A CREDIBLE COALITION FORM?
-# ============================================================================
-# This is the smallest practical model needed to move from:
-#   "some people will encounter the idea"
-# to:
-#   "a serious launch coalition is likely to form."
-#
-# It deliberately avoids modeling the entire civilization. Instead it asks:
-# 1. How many lead principals are needed to credibly launch the campaign?
-# 2. How large is the unusually aligned, high-agency principal pool?
-# 3. Among that pool, how many are reached, persuaded, and willing/able to execute?
-
-
-def _binomial_p_at_least(n: int, p: float, k_min: int) -> float:
-    """Binomial tail probability P(X >= k_min) for coalition formation."""
-    n = max(0, int(n))
-    if k_min <= 0:
-        return 1.0
-    if n < k_min or p <= 0:
-        return 0.0
-    if p >= 1:
-        return 1.0
-    cdf_below = sum(math.comb(n, k) * (p ** k) * ((1 - p) ** (n - k)) for k in range(k_min))
-    return max(0.0, min(1.0, 1.0 - cdf_below))
-
-
-LAUNCH_AVG_PRINCIPAL_COMMITMENT_USD = Parameter(
-    350_000_000,
-    source_type="definition",
-    description="Average capital commitment from a persuaded lead principal toward launching the treaty campaign",
-    display_name="Average Commitment per Lead Principal",
-    unit="USD",
-    confidence="low",
-    distribution="lognormal",
-    confidence_interval=(100_000_000, 750_000_000),
-    conservative=True,
-    validation_min=50_000_000,
-    validation_max=2_000_000_000,
-    keywords=["launch", "principal", "commitment", "capital", "coalition", "campaign"],
-    latex_symbol=r"C_{principal}",
-)
-
-LAUNCH_REDUNDANCY_FACTOR = Parameter(
-    1.25,
-    source_type="definition",
-    description="Funding redundancy above bare minimum required to survive defections, delay, and ordinary political friction",
-    display_name="Launch Redundancy Factor",
-    unit="multiplier",
-    confidence="low",
-    distribution="lognormal",
-    confidence_interval=(1.0, 2.0),
-    conservative=True,
-    validation_min=1.0,
-    validation_max=3.0,
-    keywords=["launch", "redundancy", "buffer", "coalition", "friction"],
-    latex_symbol=r"R_{launch}",
-)
-
-LAUNCH_PRINCIPALS_REQUIRED = Parameter(
-    math.ceil((float(TREATY_CAMPAIGN_TOTAL_COST) * float(LAUNCH_REDUNDANCY_FACTOR))
-              / float(LAUNCH_AVG_PRINCIPAL_COMMITMENT_USD)),
-    source_type="calculated",
-    description="Minimum number of lead principals required to finance and launch a credible treaty campaign",
-    display_name="Required Lead Principals for Launch",
-    unit="people",
-    formula="ceil((TREATY_CAMPAIGN_TOTAL_COST x LAUNCH_REDUNDANCY_FACTOR) / LAUNCH_AVG_PRINCIPAL_COMMITMENT_USD)",
-    latex=r"X = \left\lceil \frac{Cost_{campaign} \cdot R_{launch}}{C_{principal}} \right\rceil",
-    keywords=["launch", "coalition", "principals", "required", "threshold"],
-    inputs=["TREATY_CAMPAIGN_TOTAL_COST", "LAUNCH_REDUNDANCY_FACTOR", "LAUNCH_AVG_PRINCIPAL_COMMITMENT_USD"],
-    compute=lambda ctx: math.ceil(
-        (ctx["TREATY_CAMPAIGN_TOTAL_COST"] * ctx["LAUNCH_REDUNDANCY_FACTOR"])
-        / ctx["LAUNCH_AVG_PRINCIPAL_COMMITMENT_USD"]
-    ),
-    latex_symbol=r"X",
-)
-
-LAUNCH_HIGH_ALIGNMENT_PRINCIPALS_COUNT = Parameter(
-    30,
-    source_type="definition",
-    description="Number of unusually aligned, implementation-capable principals globally for whom the treaty thesis is a natural fit",
-    display_name="High-Alignment Lead Principals",
-    unit="people",
-    confidence="low",
-    distribution="lognormal",
-    confidence_interval=(8, 100),
-    conservative=True,
-    validation_min=4,
-    validation_max=500,
-    keywords=["launch", "high alignment", "principals", "tail", "coalition", "billionaires"],
-    latex_symbol=r"N_{align}",
-)
-
-LAUNCH_REACH_PROBABILITY_HIGH_ALIGNMENT = Parameter(
-    0.50,
-    source_type="definition",
-    description="Probability a high-alignment principal meaningfully encounters the launch thesis within the model horizon",
-    display_name="Reach Probability for High-Alignment Principals",
-    unit="rate",
-    confidence="low",
-    distribution="beta",
-    confidence_interval=(0.20, 0.85),
-    conservative=True,
-    validation_min=0.01,
-    validation_max=0.95,
-    keywords=["launch", "reach", "high alignment", "principal", "encounter"],
-    latex_symbol=r"P_{reach|align}",
-)
-
-LAUNCH_PERSUADE_PROBABILITY_GIVEN_REACHED = Parameter(
-    0.60,
-    source_type="definition",
-    description="Probability a reached high-alignment principal accepts the launch thesis after meaningful review",
-    display_name="Persuasion Rate Given Reach",
-    unit="rate",
-    confidence="low",
-    distribution="beta",
-    confidence_interval=(0.25, 0.85),
-    conservative=True,
-    validation_min=0.01,
-    validation_max=0.95,
-    keywords=["launch", "persuasion", "reached", "convert", "high alignment"],
-    latex_symbol=r"P_{persuade|reach}",
-)
-
-LAUNCH_EXECUTE_PROBABILITY_GIVEN_PERSUADED = Parameter(
-    0.65,
-    source_type="definition",
-    description="Probability a persuaded high-alignment principal is willing and able to move capital, staff, and institutions",
-    display_name="Execution Rate Given Persuasion",
-    unit="rate",
-    confidence="low",
-    distribution="beta",
-    confidence_interval=(0.30, 0.90),
-    conservative=True,
-    validation_min=0.01,
-    validation_max=0.95,
-    keywords=["launch", "execution", "persuasion", "high alignment", "action"],
-    latex_symbol=r"P_{execute|persuaded}",
-)
-
-LAUNCH_P_READY_PER_HIGH_ALIGNMENT_PRINCIPAL = Parameter(
-    float(LAUNCH_REACH_PROBABILITY_HIGH_ALIGNMENT)
-    * float(LAUNCH_PERSUADE_PROBABILITY_GIVEN_REACHED)
-    * float(LAUNCH_EXECUTE_PROBABILITY_GIVEN_PERSUADED),
-    source_type="calculated",
-    description="Probability a high-alignment principal becomes a ready launch principal within the model horizon",
-    display_name="Ready Probability per High-Alignment Principal",
-    unit="rate",
-    formula="LAUNCH_REACH_PROBABILITY_HIGH_ALIGNMENT x LAUNCH_PERSUADE_PROBABILITY_GIVEN_REACHED x LAUNCH_EXECUTE_PROBABILITY_GIVEN_PERSUADED",
-    latex=r"P_{ready|align} = P_{reach|align} \times P_{persuade|reach} \times P_{execute|persuaded}",
-    keywords=["launch", "ready", "principal", "probability", "high alignment"],
-    inputs=["LAUNCH_REACH_PROBABILITY_HIGH_ALIGNMENT", "LAUNCH_PERSUADE_PROBABILITY_GIVEN_REACHED",
-            "LAUNCH_EXECUTE_PROBABILITY_GIVEN_PERSUADED"],
-    compute=lambda ctx: (
-        ctx["LAUNCH_REACH_PROBABILITY_HIGH_ALIGNMENT"]
-        * ctx["LAUNCH_PERSUADE_PROBABILITY_GIVEN_REACHED"]
-        * ctx["LAUNCH_EXECUTE_PROBABILITY_GIVEN_PERSUADED"]
-    ),
-    latex_symbol=r"P_{ready|align}",
-)
-
-LAUNCH_EXPECTED_READY_PRINCIPALS = Parameter(
-    float(LAUNCH_HIGH_ALIGNMENT_PRINCIPALS_COUNT) * float(LAUNCH_P_READY_PER_HIGH_ALIGNMENT_PRINCIPAL),
-    source_type="calculated",
-    description="Expected number of ready launch principals within the model horizon",
-    display_name="Expected Ready Launch Principals",
-    unit="people",
-    formula="LAUNCH_HIGH_ALIGNMENT_PRINCIPALS_COUNT x LAUNCH_P_READY_PER_HIGH_ALIGNMENT_PRINCIPAL",
-    latex=r"E[N_{ready}] = N_{align} \times P_{ready|align}",
-    keywords=["launch", "expected", "ready", "principals", "coalition"],
-    inputs=["LAUNCH_HIGH_ALIGNMENT_PRINCIPALS_COUNT", "LAUNCH_P_READY_PER_HIGH_ALIGNMENT_PRINCIPAL"],
-    compute=lambda ctx: ctx["LAUNCH_HIGH_ALIGNMENT_PRINCIPALS_COUNT"] * ctx["LAUNCH_P_READY_PER_HIGH_ALIGNMENT_PRINCIPAL"],
-    latex_symbol=r"E[N_{ready}]",
-)
-
-LAUNCH_P_AT_LEAST_REQUIRED_PRINCIPALS = Parameter(
-    _binomial_p_at_least(
-        int(round(float(LAUNCH_HIGH_ALIGNMENT_PRINCIPALS_COUNT))),
-        float(LAUNCH_P_READY_PER_HIGH_ALIGNMENT_PRINCIPAL),
-        int(math.ceil(float(LAUNCH_PRINCIPALS_REQUIRED))),
-    ),
-    source_type="calculated",
-    description="Probability that enough ready principals emerge to launch a credible treaty campaign within the model horizon",
-    display_name="P(Launch Coalition Forms)",
-    unit="rate",
-    formula="Binomial tail with n = LAUNCH_HIGH_ALIGNMENT_PRINCIPALS_COUNT, p = LAUNCH_P_READY_PER_HIGH_ALIGNMENT_PRINCIPAL, threshold = LAUNCH_PRINCIPALS_REQUIRED",
-    latex=r"P_{launch} = \sum_{k=X}^{N_{align}} \binom{N_{align}}{k} P_{ready|align}^{k} (1 - P_{ready|align})^{N_{align}-k}",
-    keywords=["launch", "probability", "coalition", "principals", "headline"],
-    inputs=["LAUNCH_HIGH_ALIGNMENT_PRINCIPALS_COUNT", "LAUNCH_P_READY_PER_HIGH_ALIGNMENT_PRINCIPAL",
-            "LAUNCH_PRINCIPALS_REQUIRED"],
-    compute=lambda ctx: _binomial_p_at_least(
-        int(round(ctx["LAUNCH_HIGH_ALIGNMENT_PRINCIPALS_COUNT"])),
-        float(ctx["LAUNCH_P_READY_PER_HIGH_ALIGNMENT_PRINCIPAL"]),
-        int(math.ceil(ctx["LAUNCH_PRINCIPALS_REQUIRED"])),
-    ),
-    latex_symbol=r"P_{launch}",
-)
 
 # ── Individual Contribution Expected Value (per percentage point of probability shift) ──
 
@@ -10884,6 +10861,32 @@ CONTRIBUTION_EV_PER_PCT_POINT_WISHONIA = Parameter(
     compute=lambda ctx: ctx["WISHONIA_TRAJECTORY_LIFETIME_INCOME_GAIN_PER_CAPITA"] * 0.01,
     latex=r"EV_{pp,wish} = \Delta Y_{lifetime,wish} \times 0.01",
     latex_symbol=r"EV_{pp,wish}",
+)
+
+CONTRIBUTION_EV_PER_PCT_POINT_TREATY_BLEND = Parameter(
+    float(TREATY_PERSONAL_UPSIDE_BLEND) * 0.01,
+    source_type="calculated",
+    description="Blended personal expected value per percentage point of implementation probability shift under Treaty Trajectory.",
+    display_name="Contribution EV per Percentage Point (Treaty, Blended)",
+    unit="USD",
+    formula="TREATY_PERSONAL_UPSIDE_BLEND × 0.01",
+    inputs=["TREATY_PERSONAL_UPSIDE_BLEND"],
+    compute=lambda ctx: ctx["TREATY_PERSONAL_UPSIDE_BLEND"] * 0.01,
+    latex=r"EV_{pp,treaty,blend} = Upside_{blend,treaty} \times 0.01",
+    latex_symbol=r"EV_{pp,treaty,blend}",
+)
+
+CONTRIBUTION_EV_PER_PCT_POINT_WISHONIA_BLEND = Parameter(
+    float(WISHONIA_PERSONAL_UPSIDE_BLEND) * 0.01,
+    source_type="calculated",
+    description="Blended personal expected value per percentage point of implementation probability shift under Wishonia Trajectory.",
+    display_name="Contribution EV per Percentage Point (Wishonia, Blended)",
+    unit="USD",
+    formula="WISHONIA_PERSONAL_UPSIDE_BLEND × 0.01",
+    inputs=["WISHONIA_PERSONAL_UPSIDE_BLEND"],
+    compute=lambda ctx: ctx["WISHONIA_PERSONAL_UPSIDE_BLEND"] * 0.01,
+    latex=r"EV_{pp,wish,blend} = Upside_{blend,wish} \times 0.01",
+    latex_symbol=r"EV_{pp,wish,blend}",
 )
 
 CONTRIBUTION_DALYS_PER_PCT_POINT = Parameter(
@@ -10927,5 +10930,3 @@ CONTRIBUTION_SUFFERING_HOURS_PER_PCT_POINT = Parameter(
     latex=r"Hours_{pp} = Hours_{suffer,max} \times 0.01",
     latex_symbol=r"Hours_{pp}",
 )
-
-

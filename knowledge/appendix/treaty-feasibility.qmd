@@ -216,66 +216,44 @@ If you are extremely rich, the relevant question is not "Is this charitable?" Ch
 
 In other words: this is not "give up 1% of military spending so strangers can feel better." It is "buy a claim on the healthier, richer, less collapse-prone future in which your family survives longer and your assets sit on top of a civilization that still functions."
 
-### Conditional Near-Inevitability Claim
+### The Real Threshold
 
-On Wishonia, we would call this "stating the obvious." On Earth, you need formal logic to accept that rich people who prefer not dying will eventually invest in not dying. Fine. Here is the formal logic.
+The launch question is simpler than "what is the exact probability that a tiny elite coalition privately coordinates?" The real threshold is whether enough capital and will exist to fund a campaign costing **{{< var treaty_campaign_total_cost >}}** that unlocks **{{< var treaty_annual_funding >}}/year** and pushes the world off a trajectory where the destructive economy reaches the failed-state danger zone in **{{< var destructive_economy_years_to_25pct_gdp >}}**.
 
-Let **X** be the minimum number of rich, capable humans needed to finance a **{{< var treaty_campaign_total_cost >}}** campaign. In the current model, **X = {{< var launch_principals_required_nounit >}}**. The pool of plausibly aligned principals is **{{< var launch_high_alignment_principals_count_nounit >}}**. You need {{< var launch_principals_required_nounit >}} out of {{< var launch_high_alignment_principals_count_nounit >}}. Your species has worse odds at every casino on the Las Vegas Strip and you still show up.
+This is not a civilization-sized funding problem. It is a syndicate-sized funding problem. One year of treaty funding dwarfs the campaign cost. The broader system is bleeding **{{< var political_dysfunction_global_opportunity_cost_total >}}/year** while the current trajectory compounds toward extraction, cybercrime, and waste. If the Treaty path produces **{{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_20 >}}** the GDP of doing nothing after 20 years, and the fuller Wishonia path produces **{{< var wishonia_trajectory_gdp_vs_current_trajectory_multiplier_year_20 >}}**, then the relevant question is not whether some abstract billionaire archetype becomes morally enlightened. It is whether enough actors notice the asymmetry.
 
-If:
+The [Earth Optimization Prize](../strategy/earth-optimization-prize.qmd) [@earth-optimization-prize-paper-2025] makes this easier, not harder. It replaces the fantasy of a secret benevolent cabal with visible committed capital, a public scoreboard, and a recruitment machine that pays people to expand the coalition. That matters. Once the coalition is public, the first-mover problem gets smaller because nobody has to imagine acting alone.
 
-1. **Rich humans prefer living.** They recognize that redirecting **{{< var treaty_annual_funding >}}/year** into treatment discovery improves the odds for everyone they love. (If this premise is wrong, your species has larger problems than this treaty.)
-2. **The macro upside is directionally correct.** Treaty Path: **{{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_20 >}}** the GDP of doing nothing after 20 years. Wishonia path: **{{< var wishonia_trajectory_gdp_vs_current_trajectory_multiplier_year_20 >}}**.
-3. **The collapse-risk model is directionally correct.** The destructive/parasitic economy is already **{{< var global_destructive_economy_annual_2025 >}}/year** (**{{< var global_destructive_economy_pct_gdp >}} of GDP**) and trends toward the failed-state danger zone within **{{< var destructive_economy_years_to_25pct_gdp >}}**.
-4. **Enough upside is privately capturable.** Funders get financial returns, reputational credit, agenda-setting power, and the continued existence of the productive economy their fortunes sit on top of.
-5. **At least X rational actors are persuaded.** {{< var launch_principals_required_nounit >}} billionaires or heads of state understand premises 1-4.
-6. **Execution friction stays below surplus.** Coordination costs and political friction don't eat the entire upside. (They never have for any project with this ratio of cost to return.)
+### Why Delay Stops Looking Rational
 
-Then the campaign launches. Not because every billionaire acts. Because only **{{< var launch_principals_required_nounit >}}** need to, the downside is capped at **{{< var treaty_campaign_total_cost >}}** (one yacht), and the upside is measured in survival.
+If you already believe the upside is enormous and the downside of doing nothing is civilizational, waiting stops looking prudent.
 
-If the number of persuaded actors materially exceeds **{{< var launch_principals_required_nounit >}}**, then failure requires a surprisingly specific story: simultaneous breakdown in persuasion, coordination, incentive capture, and execution across the entire aligned pool. On Wishonia, we have a word for betting on that kind of simultaneous failure. The word translates roughly to "stupid."
+- **Move early:** help define the structure, shape the campaign, recruit the coalition, and capture the largest first-mover influence.
+- **Wait:** arrive after the structure is set by other people, accept their terms, and explain that you were "monitoring developments" while the destructive economy kept compounding.
 
-### Minimal Launch Probability Model
-
-Forget the planet. Forget the average billionaire (he's busy buying a sports team). Ask only: does a launch coalition form from the tiny slice of rich humans who already care about not dying?
-
-In the current minimal model:
-
-- Plausible high-alignment principal pool: **{{< var launch_high_alignment_principals_count >}}**
-- Required lead principals: **{{< var launch_principals_required_nounit >}}**
-- Expected ready launch principals within {{< var chain_horizon_years >}}: **{{< var launch_expected_ready_principals_nounit >}}**
-- Probability a launch coalition forms: **{{< var launch_p_at_least_required_principals >}}**
-
-In plain English: you need **{{< var launch_principals_required_nounit >}}** people out of **{{< var launch_high_alignment_principals_count_nounit >}}** who already agree with the premise. On current assumptions, that coalition forms with probability **{{< var launch_p_at_least_required_principals >}}** within {{< var chain_horizon_years >}}. This is like asking whether at least three people in a room of health-obsessed billionaires will invest in health. Your species asks harder questions at trivia night.
-
-This is not treaty ratification probability. It is the probability that enough capable humans emerge to fund a serious campaign. If this number is high, the objection changes from "nobody will touch this" to "who moves first, and how long do they pretend to think about it?"
-
-### Why Delay Becomes Irrational
-
-Once you believe a coalition is likely to form anyway, waiting stops looking prudent and starts looking like the time you didn't buy Apple stock because you wanted to "see how it plays out."
-
-- **Move early:** You define the structure, recruit the coalition, capture the largest returns, and get the Wikipedia entry that says "one of the people who ended most disease." Your grandchildren reference it at dinner parties forever.
-- **Wait:** Someone else writes the terms, gets the credit, and locks in first-mover influence. You explain to your grandchildren that you were "monitoring the situation," and they nod politely while looking at their phones.
-
-The question is no longer "Will anyone fund this?" It is "Do I want to be one of the {{< var launch_principals_required_nounit >}} who shaped the largest health intervention in history, or the person who arrived after the structure was set and asked if there were still tickets?"
+The prize strengthens this asymmetry. Early participants do not merely fund a campaign. They help create the public machine that makes later participation easier.
 
 ### What Would Have To Be Wrong
 
-If no serious actor moves within {{< var chain_horizon_years >}}, then at least one of the following is true:
+If no serious campaign emerges within {{< var chain_horizon_years >}}, then at least one of the following is true:
 
-1. **The expected-value math is wrong.** The ROI, health gains, or funding leverage do not hold. Check the math in [the appendix](parameters-and-calculations.qmd).
-2. **The idea never reached enough decision-makers.** The diffusion model failed in the real world.
-3. **The private-incentive bridge is weaker than modeled.** The surplus exists, but not enough of it is capturable by first movers.
-4. **Hidden costs dominate the visible upside.** Reputational risk, retaliation, legal friction, or coordination costs are larger than assumed.
-5. **Enough elite actors prefer inertia to asymmetrical upside.** Possible. But across a plausible aligned tail of {{< var launch_high_alignment_principals_count_nounit >}} principals inside a broader universe of {{< var chain_implementer_count_nounit >}} implementers over {{< var chain_horizon_years >}}, it is not the first explanation a rational model should reach for.
+1. **The expected-value math is wrong.** The ROI, health gains, or leverage claims do not hold. Check the math in [the appendix](parameters-and-calculations.qmd).
+2. **The idea fails to reach enough implementers.** The [chain reaction model](#sec-chain-reaction-model) turns out to overestimate reach.
+3. **The private-incentive bridge is weaker than it looks.** The surplus exists, but not enough of it is capturable by first movers, funders, or organizers.
+4. **Visible coalition machinery still fails to overcome inertia.** Even with the prize, scoreboard, and financial incentives, nobody with resources chooses to move.
+5. **Elite actors truly prefer the collapse trajectory.** Possible. But when the destructive economy is already **{{< var global_destructive_economy_pct_gdp >}} of GDP** and the productive upside is measured in multiples of world output, it is not the first explanation a rational model should reach for.
 
-Your task, if you want to reject this, is to pick one. Not to gesture vaguely at "complexity," which is what humans say when they mean "I don't want to think about it." Pick the failure mode. Show your work. Your species demands this of schoolchildren. Surely you can manage it for a question about whether to cure diseases.
+Your task, if you want to reject this, is still to pick one and defend it. Not to wave at "complexity." Complexity is not a mechanism. It is a refuge for people who do not want to cash out the argument.
 
-### Why This Still Feels Inevitable
+### Why This Still Feels Hard To Suppress
 
-This is still a probabilistic story. But once diffusion and incentives are combined, it stops looking like a fragile moonshot and starts looking like a machine that is hard to keep dormant. The [chain reaction model](#sec-chain-reaction-model) handles reach. The incentive design handles motion. The question stops being "can this happen?" and starts being "how long can everyone with money, ambition, and pattern recognition keep pretending this is not in front of them?"
+The combined story is now stronger than the old launch-coalition probability story.
 
-Your species has a peculiar habit of treating path dependence as optional. It isn't. Once a mechanism pays people to expand it, the default trajectory changes. This is how you built railroads, credit markets, social networks, and defense industries. A system that pays people to fund health instead of weapons is not a proof. It is something more dangerous: a machine with incentives pointing in the right direction.
+- The [chain reaction model](#sec-chain-reaction-model) handles reach.
+- The Earth Optimization Prize handles public coordination and visible momentum.
+- [Incentive Alignment Bonds](../appendix/incentive-alignment-bonds-paper.qmd) [@iab-paper-2025] handle later direct financial motive for expansion and implementation.
+
+That does not prove success. It changes the burden of explanation. The question is no longer "what is the probability that exactly the right four billionaires privately coordinate?" The question is "how long can everyone with money, ambition, and pattern recognition ignore a visible coalition with committed capital, public upside, and a machine paying people to expand it?"
 
 ## Why The Treaty Won't Stop at 1%
 

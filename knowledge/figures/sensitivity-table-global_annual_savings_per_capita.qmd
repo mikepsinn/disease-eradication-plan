@@ -1,11 +1,10 @@
-**Sensitivity Indices for P(Launch Coalition Forms)**
+**Sensitivity Indices for Global Annual Savings Per Capita**
 
 Regression-based sensitivity showing which inputs explain the most variance in the output.
 
 | Input Parameter | Sensitivity Coefficient | Interpretation |
 |:----------------|------------------------:|:---------------|
-| High-Alignment Lead Principals (people) | 0.5591 | Strong driver |
-| Ready Probability per High-Alignment Principal (rate) | 0.5307 | Strong driver |
-| Required Lead Principals for Launch (people) | -0.2815 | Weak driver |
+| Global Annual Savings (USD) | 3.3854 | Strong driver |
+| Global Population in 2024 (of people) | -2.3856 | Strong driver |
 
 *Interpretation*: Standardized coefficients show the change in output (in SD units) per 1 SD change in input. Values near ±1 indicate strong influence; values exceeding ±1 may occur with correlated inputs.

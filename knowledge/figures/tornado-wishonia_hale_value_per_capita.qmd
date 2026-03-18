@@ -16,18 +16,18 @@ setup_chart_style()
 
 # Display name for chart title
 
-display_name = "P(Launch Coalition Forms)"
+display_name = "Wishonia HALE Value Per Capita"
 
 # Baseline and units
 
-baseline = 0.8634467405769832
+baseline = 2355000.0000000005
 
 # Tornado data from sensitivity analysis
 
-drivers = ['LAUNCH_AVG_PRINCIPAL_COMMITMENT_USD', 'LAUNCH_HIGH_ALIGNMENT_PRINCIPALS_COUNT', 'LAUNCH_REACH_PROBABILITY_HIGH_ALIGNMENT', 'LAUNCH_PERSUADE_PROBABILITY_GIVEN_REACHED', 'LAUNCH_EXECUTE_PROBABILITY_GIVEN_PERSUADED', 'LAUNCH_REDUNDANCY_FACTOR', 'TREATY_CAMPAIGN_BUDGET_LOBBYING', 'TREATY_CAMPAIGN_VIRAL_REFERENDUM_BASE_CASE', 'TREATY_CAMPAIGN_BUDGET_RESERVE']
-driver_labels = ['Average Commitment per Lead Principal', 'High-Alignment Lead Principals', 'Reach Probability for High-Alignment Principals', 'Persuasion Rate Given Reach', 'Execution Rate Given Persuasion', 'Launch Redundancy Factor', 'Political Lobbying Campaign: Direct Lobbying, Super Pacs, Opposition Research, Staff, Legal/Compliance', 'Viral Referendum Budget', 'Reserve Fund / Contingency Buffer']
-impacts_low = [-0.8609875493226387, -0.8116383477544872, -0.660374190950674, -0.6395807036953277, -0.580915161212678, 0.08612289846991561, 0.08612289846991561, 0.0, 0.0]
-impacts_high = [0.12421571894699368, 0.13655226651817354, 0.13305400622145813, 0.1180570394047541, 0.11456420415481472, -0.31819837697150144, -0.31819837697150144, -0.1408189628708404, 0.0]
+drivers = ['STANDARD_ECONOMIC_QALY_VALUE_USD', 'GLOBAL_LIFE_EXPECTANCY_2024', 'GLOBAL_HALE_CURRENT', 'CURRENT_DISEASE_PATIENTS_GLOBAL', 'CURRENT_TRIAL_SLOTS_AVAILABLE', 'DFDA_OPEX_COMMUNITY', 'DFDA_OPEX_INFRASTRUCTURE', 'DFDA_OPEX_PLATFORM_MAINTENANCE', 'DFDA_OPEX_REGULATORY', 'DFDA_OPEX_STAFF', 'DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT', 'NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR', 'PATIENT_WILLINGNESS_TRIAL_PARTICIPATION_PCT', 'RARE_DISEASES_COUNT_GLOBAL']
+driver_labels = ['Standard Economic Value per QALY', 'Global Life Expectancy (2024)', 'Global Healthy Life Expectancy (HALE)', 'Global Population with Chronic Diseases', 'Annual Global Clinical Trial Participants', 'Decentralized Framework for Drug Assessment Community Support Costs', 'Decentralized Framework for Drug Assessment Infrastructure Costs', 'Decentralized Framework for Drug Assessment Maintenance Costs', 'Decentralized Framework for Drug Assessment Regulatory Coordination Costs', 'Decentralized Framework for Drug Assessment Staff Costs', 'dFDA Pragmatic Trial Cost per Patient', 'Diseases Getting First Treatment Per Year', 'Patient Willingness to Participate in Clinical Trials', 'Total Number of Rare Diseases Globally']
+impacts_low = [-471000.00000000023, -300000.0, 225000.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+impacts_high = [471000.0, 300000.0, -225000.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
 
 # Convert deltas to absolute values (baseline + delta)
 
@@ -71,7 +71,7 @@ ax.set_title(f'Sensitivity Analysis: {display_name}', fontsize=16, weight='bold'
 
 # X-axis label with units
 
-units_label = "rate"
+units_label = "USD/person"
 if units_label:
     ax.set_xlabel(f'{display_name} ({units_label})', fontsize=12)
 else:
@@ -96,7 +96,7 @@ add_watermark(fig)
 # Save PNG to knowledge/figures/ regardless of where Quarto renders from
 # Use 96 DPI for web-optimized output (reduced from 150 DPI to minimize file size)
 
-output_path = get_figure_output_path('tornado-launch_p_at_least_required_principals.png')
+output_path = get_figure_output_path('tornado-wishonia_hale_value_per_capita.png')
 plt.savefig(output_path, dpi=96, bbox_inches=None, facecolor=COLOR_WHITE)
 
 add_png_metadata(

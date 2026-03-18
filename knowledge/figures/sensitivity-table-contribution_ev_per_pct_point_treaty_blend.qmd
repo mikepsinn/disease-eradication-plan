@@ -1,10 +1,9 @@
-**Sensitivity Indices for Expected Ready Launch Principals**
+**Sensitivity Indices for Contribution EV per Percentage Point (Treaty, Blended)**
 
 Regression-based sensitivity showing which inputs explain the most variance in the output.
 
 | Input Parameter | Sensitivity Coefficient | Interpretation |
 |:----------------|------------------------:|:---------------|
-| High-Alignment Lead Principals (people) | 0.7754 | Strong driver |
-| Ready Probability per High-Alignment Principal (rate) | 0.4925 | Moderate driver |
+| Treaty Personal Upside (Blended) (USD/person) | 1.0000 | Strong driver |
 
 *Interpretation*: Standardized coefficients show the change in output (in SD units) per 1 SD change in input. Values near ±1 indicate strong influence; values exceeding ±1 may occur with correlated inputs.

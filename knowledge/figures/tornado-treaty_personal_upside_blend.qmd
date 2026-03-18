@@ -16,18 +16,18 @@ setup_chart_style()
 
 # Display name for chart title
 
-display_name = "Ready Probability per High-Alignment Principal"
+display_name = "Treaty Personal Upside (Blended)"
 
 # Baseline and units
 
-baseline = 0.195
+baseline = 15694929.474907491
 
 # Tornado data from sensitivity analysis
 
-drivers = ['LAUNCH_REACH_PROBABILITY_HIGH_ALIGNMENT', 'LAUNCH_PERSUADE_PROBABILITY_GIVEN_REACHED', 'LAUNCH_EXECUTE_PROBABILITY_GIVEN_PERSUADED']
-driver_labels = ['Reach Probability for High-Alignment Principals', 'Persuasion Rate Given Reach', 'Execution Rate Given Persuasion']
-impacts_low = [-0.117, -0.11375, -0.10500000000000001]
-impacts_high = [0.1365, 0.08124999999999999, 0.07500000000000001]
+drivers = ['MILITARY_REDIRECT_GDP_BOOST_AT_30PCT', 'RD_SPILLOVER_MULTIPLIER', 'GLOBAL_LIFE_EXPECTANCY_2024', 'DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT', 'NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR', 'RARE_DISEASES_COUNT_GLOBAL', 'CURRENT_TRIAL_SLOTS_AVAILABLE', 'STANDARD_ECONOMIC_QALY_VALUE_USD', 'GLOBAL_HALE_CURRENT', 'GLOBAL_POPULATION_2024', 'DFDA_OPEX_PLATFORM_MAINTENANCE', 'DFDA_OPEX_STAFF', 'DFDA_OPEX_INFRASTRUCTURE', 'DFDA_OPEX_REGULATORY', 'DFDA_OPEX_COMMUNITY', 'CURRENT_DISEASE_PATIENTS_GLOBAL', 'PATIENT_WILLINGNESS_TRIAL_PARTICIPATION_PCT']
+driver_labels = ['GDP Growth Boost at 30% Military Reallocation', 'R&D Spillover Multiplier', 'Global Life Expectancy (2024)', 'dFDA Pragmatic Trial Cost per Patient', 'Diseases Getting First Treatment Per Year', 'Total Number of Rare Diseases Globally', 'Annual Global Clinical Trial Participants', 'Standard Economic Value per QALY', 'Global Healthy Life Expectancy (HALE)', 'Global Population in 2024', 'Decentralized Framework for Drug Assessment Maintenance Costs', 'Decentralized Framework for Drug Assessment Staff Costs', 'Decentralized Framework for Drug Assessment Infrastructure Costs', 'Decentralized Framework for Drug Assessment Regulatory Coordination Costs', 'Decentralized Framework for Drug Assessment Community Support Costs', 'Global Population with Chronic Diseases', 'Patient Willingness to Participate in Clinical Trials']
+impacts_low = [-9489028.133012094, -7348391.347173641, -1367640.7491391618, 1372706.2962204106, -458403.7284304742, 163715.61729659885, 261944.98767455854, -196458.7407559175, 93849.71692161635, -20322.434754431248, 225.71086943522096, 135.42652166076005, 135.42652166076005, 90.28434777446091, 45.14217388629913, 0.0, 0.0]
+impacts_high = [22095808.495382685, 13150086.958191078, 1430542.7061721198, -678110.086842509, 982293.7037795894, -294688.1111338772, -170833.68761384115, 196458.7407559175, -93849.71692161635, 19151.4821615126, -315.9952172078192, -225.71086943522096, -180.56869554705918, -135.42652166076005, -45.14217388629913, 0.0, 0.0]
 
 # Convert deltas to absolute values (baseline + delta)
 
@@ -71,7 +71,7 @@ ax.set_title(f'Sensitivity Analysis: {display_name}', fontsize=16, weight='bold'
 
 # X-axis label with units
 
-units_label = "rate"
+units_label = "USD/person"
 if units_label:
     ax.set_xlabel(f'{display_name} ({units_label})', fontsize=12)
 else:
@@ -96,7 +96,7 @@ add_watermark(fig)
 # Save PNG to knowledge/figures/ regardless of where Quarto renders from
 # Use 96 DPI for web-optimized output (reduced from 150 DPI to minimize file size)
 
-output_path = get_figure_output_path('tornado-launch_p_ready_per_high_alignment_principal.png')
+output_path = get_figure_output_path('tornado-treaty_personal_upside_blend.png')
 plt.savefig(output_path, dpi=96, bbox_inches=None, facecolor=COLOR_WHITE)
 
 add_png_metadata(

@@ -38,15 +38,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 342 parameters used in the analysis, organized by type:
+This appendix documents all 333 parameters used in the analysis, organized by type:
 
 - External sources (peer-reviewed): 125
-- Calculated values: 161
-- Core definitions: 56
+- Calculated values: 158
+- Core definitions: 50
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (161 parameters) • [External Data Sources](#sec-external) (125 parameters) • [Core Definitions](#sec-definitions) (56 parameters)
+[Calculated Values](#sec-calculated) (158 parameters) • [External Data Sources](#sec-external) (125 parameters) • [Core Definitions](#sec-definitions) (50 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -487,7 +487,7 @@ $$
 
 :::
 
-### Current Trajectory Cumulative Lifetime Income (Per Capita): $1.18M {#sec-current_trajectory_cumulative_lifetime_income}
+### Current Trajectory Cumulative Lifetime Income (Per Capita): $1.34M {#sec-current_trajectory_cumulative_lifetime_income}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -496,7 +496,6 @@ Cumulative per-capita income over an average remaining lifespan under current tr
 **Inputs**:
 
 - [Global Average Income (2025 Baseline)](#sec-global_avg_income_2025) 🔢: $14.4K
-- [Current Trajectory Average Income at Year 20](#sec-current_trajectory_avg_income_year_20) 🔢: $20.5K
 - [Baseline Global GDP Growth Rate](#sec-gdp_baseline_growth_rate): 2.5%
 - [Average Remaining Years (Median Person)](#sec-global_avg_remaining_years) 🔢: 48.5 years
 
@@ -4441,117 +4440,6 @@ $$
 
 :::
 
-### Required Lead Principals for Launch: 4 people {#sec-launch_principals_required}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Minimum number of lead principals required to finance and launch a credible treaty campaign
-
-**Inputs**:
-
-- [Total 1% Treaty Campaign Cost](#sec-treaty_campaign_total_cost) 🔢: $1B
-- [Launch Redundancy Factor](#sec-launch_redundancy_factor): 1.25x (95% CI: 1x - 2x)
-- [Average Commitment per Lead Principal](#sec-launch_avg_principal_commitment_usd): $350M (95% CI: $100M - $750M)
-
-$$
-\begin{gathered}
-X \\
-= \left\lceil \frac{Cost_{campaign} \cdot R_{launch}}{C_{principal}} \right\rceil
-\end{gathered}
-$$
-
-*✓ High confidence*
-
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-launch_principals_required.qmd >}}
-
-{{< include ../figures/sensitivity-table-launch_principals_required.qmd >}}
-
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-launch_principals_required.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-launch_principals_required.qmd >}}
-
-:::
-
-### P(Launch Coalition Forms): 86.3% {#sec-launch_p_at_least_required_principals}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Probability that enough ready principals emerge to launch a credible treaty campaign within the model horizon
-
-**Inputs**:
-
-- [High-Alignment Lead Principals](#sec-launch_high_alignment_principals_count): 30 people (95% CI: 8 people - 100 people)
-- [Ready Probability per High-Alignment Principal](#sec-launch_p_ready_per_high_alignment_principal) 🔢: 19.5%
-- [Required Lead Principals for Launch](#sec-launch_principals_required) 🔢: 4 people
-
-$$
-\begin{gathered}
-P_{launch} \\
-= \sum_{k=X}^{N_{align}} \binom{N_{align}}{k} P_{ready|align}^{k} (1 - P_{ready|align})^{N_{align}-k}
-\end{gathered}
-$$
-
-*✓ High confidence*
-
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-launch_p_at_least_required_principals.qmd >}}
-
-{{< include ../figures/sensitivity-table-launch_p_at_least_required_principals.qmd >}}
-
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-launch_p_at_least_required_principals.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-launch_p_at_least_required_principals.qmd >}}
-
-:::
-
-### Ready Probability per High-Alignment Principal: 19.5% {#sec-launch_p_ready_per_high_alignment_principal}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Probability a high-alignment principal becomes a ready launch principal within the model horizon
-
-**Inputs**:
-
-- [Reach Probability for High-Alignment Principals](#sec-launch_reach_probability_high_alignment): 50% (95% CI: 20% - 85%)
-- [Persuasion Rate Given Reach](#sec-launch_persuade_probability_given_reached): 60% (95% CI: 25% - 85%)
-- [Execution Rate Given Persuasion](#sec-launch_execute_probability_given_persuaded): 65% (95% CI: 30% - 90%)
-
-$$
-\begin{gathered}
-P_{ready|align} \\
-= P_{reach|align} \times P_{persuade|reach} \times P_{execute|persuaded}
-\end{gathered}
-$$
-
-*✓ High confidence*
-
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-launch_p_ready_per_high_alignment_principal.qmd >}}
-
-{{< include ../figures/sensitivity-table-launch_p_ready_per_high_alignment_principal.qmd >}}
-
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-launch_p_ready_per_high_alignment_principal.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-launch_p_ready_per_high_alignment_principal.qmd >}}
-
-:::
-
 ### Ratio of Military to Government Clinical Trials Spending: 604:1 {#sec-military_to_government_clinical_trials_spending_ratio}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -5479,7 +5367,7 @@ $$
 
 :::
 
-### Sharing Breakeven (1 in N): 248M:1 {#sec-sharing_breakeven_one_in_treaty}
+### Sharing Breakeven (1 in N): 246M:1 {#sec-sharing_breakeven_one_in_treaty}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -5487,17 +5375,17 @@ Breakeven probability expressed as '1 in N'. Forwarding has positive expected va
 
 **Inputs**:
 
-- [Sharing Breakeven Probability](#sec-sharing_breakeven_probability_treaty) 🔢: 4.03e-09 probability
+- [Sharing Breakeven Probability](#sec-sharing_breakeven_probability_treaty) 🔢: 4.07e-09 probability
 
 $$
-N_{breakeven} = P_{breakeven} = 0 = 248M
+N_{breakeven} = P_{breakeven} = 0 = 246M
 $$
 where:
 $$
 \begin{gathered}
 P_{breakeven} \\
 = \frac{C_{share}}{\Delta Y_{lifetime,treaty}} \\
-= \frac{\$0.0599}{\$14.9M} \\
+= \frac{\$0.0599}{\$14.7M} \\
 = 0
 \end{gathered}
 $$
@@ -5533,8 +5421,8 @@ $$
 \begin{gathered}
 \Delta Y_{lifetime,treaty} \\
 = Y_{cum,treaty} - Y_{cum,earth} \\
-= \$16.1M - \$1.18M \\
-= \$14.9M
+= \$16.1M - \$1.34M \\
+= \$14.7M
 \end{gathered}
 $$
 where:
@@ -5655,19 +5543,6 @@ $$
 Y_{cum,earth} \\
 = \bar{y}_0 \cdot \frac{(1+g_{base})((1+g_{base})^{T_{remaining}}-1)}{g_{base}}
 \end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-\bar{y}_{base,20} \\
-= \frac{GDP_{base,20}}{Pop_{2045}} \\
-= \frac{\$188T}{9.2B} \\
-= \$20.5K
-\end{gathered}
-$$
-where:
-$$
-GDP_{base,20} = GDP_0(1+g_{base})^{20}
 $$
 *✓ High confidence*
 
@@ -5687,7 +5562,7 @@ $$
 
 :::
 
-### Sharing Breakeven Probability: 4.03e-09 probability {#sec-sharing_breakeven_probability_treaty}
+### Sharing Breakeven Probability: 4.07e-09 probability {#sec-sharing_breakeven_probability_treaty}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -5696,13 +5571,13 @@ Minimum probability that the plan works for forwarding to have positive expected
 **Inputs**:
 
 - [Sharing Opportunity Cost](#sec-sharing_opportunity_cost) 🔢: $0.06
-- [Treaty Trajectory Lifetime Income Gain (Per Capita)](#sec-treaty_trajectory_lifetime_income_gain_per_capita) 🔢: $14.9M
+- [Treaty Trajectory Lifetime Income Gain (Per Capita)](#sec-treaty_trajectory_lifetime_income_gain_per_capita) 🔢: $14.7M
 
 $$
 \begin{gathered}
 P_{breakeven} \\
 = \frac{C_{share}}{\Delta Y_{lifetime,treaty}} \\
-= \frac{\$0.0599}{\$14.9M} \\
+= \frac{\$0.0599}{\$14.7M} \\
 = 0
 \end{gathered}
 $$
@@ -5738,8 +5613,8 @@ $$
 \begin{gathered}
 \Delta Y_{lifetime,treaty} \\
 = Y_{cum,treaty} - Y_{cum,earth} \\
-= \$16.1M - \$1.18M \\
-= \$14.9M
+= \$16.1M - \$1.34M \\
+= \$14.7M
 \end{gathered}
 $$
 where:
@@ -5860,19 +5735,6 @@ $$
 Y_{cum,earth} \\
 = \bar{y}_0 \cdot \frac{(1+g_{base})((1+g_{base})^{T_{remaining}}-1)}{g_{base}}
 \end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-\bar{y}_{base,20} \\
-= \frac{GDP_{base,20}}{Pop_{2045}} \\
-= \frac{\$188T}{9.2B} \\
-= \$20.5K
-\end{gathered}
-$$
-where:
-$$
-GDP_{base,20} = GDP_0(1+g_{base})^{20}
 $$
 *✓ High confidence*
 
@@ -5947,7 +5809,7 @@ $$
 
 :::
 
-### Sharing Upside/Downside Ratio: 248.2Mx {#sec-sharing_upside_downside_ratio_treaty}
+### Sharing Upside/Downside Ratio: 245.6Mx {#sec-sharing_upside_downside_ratio_treaty}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -5955,15 +5817,15 @@ Raw ratio of upside (lifetime income gain if plan works) to downside (cost of sh
 
 **Inputs**:
 
-- [Treaty Trajectory Lifetime Income Gain (Per Capita)](#sec-treaty_trajectory_lifetime_income_gain_per_capita) 🔢: $14.9M
+- [Treaty Trajectory Lifetime Income Gain (Per Capita)](#sec-treaty_trajectory_lifetime_income_gain_per_capita) 🔢: $14.7M
 - [Sharing Opportunity Cost](#sec-sharing_opportunity_cost) 🔢: $0.06
 
 $$
 \begin{gathered}
 k_{upside:downside} \\
 = \frac{\Delta Y_{lifetime,treaty}}{C_{share}} \\
-= \frac{\$14.9M}{\$0.0599} \\
-= 248M
+= \frac{\$14.7M}{\$0.0599} \\
+= 246M
 \end{gathered}
 $$
 where:
@@ -5971,8 +5833,8 @@ $$
 \begin{gathered}
 \Delta Y_{lifetime,treaty} \\
 = Y_{cum,treaty} - Y_{cum,earth} \\
-= \$16.1M - \$1.18M \\
-= \$14.9M
+= \$16.1M - \$1.34M \\
+= \$14.7M
 \end{gathered}
 $$
 where:
@@ -6102,19 +5964,6 @@ $$
 Y_{cum,earth} \\
 = \bar{y}_0 \cdot \frac{(1+g_{base})((1+g_{base})^{T_{remaining}}-1)}{g_{base}}
 \end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-\bar{y}_{base,20} \\
-= \frac{GDP_{base,20}}{Pop_{2045}} \\
-= \frac{\$188T}{9.2B} \\
-= \$20.5K
-\end{gathered}
-$$
-where:
-$$
-GDP_{base,20} = GDP_0(1+g_{base})^{20}
 $$
 where:
 $$
@@ -7752,7 +7601,7 @@ $$
 
 :::
 
-### Treaty Trajectory Lifetime Income Gain (Per Capita): $14.9M {#sec-treaty_trajectory_lifetime_income_gain_per_capita}
+### Treaty Trajectory Lifetime Income Gain (Per Capita): $14.7M {#sec-treaty_trajectory_lifetime_income_gain_per_capita}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -7761,14 +7610,14 @@ Lifetime per-capita income gain from Treaty Trajectory vs current trajectory. Cu
 **Inputs**:
 
 - [Treaty Trajectory Cumulative Lifetime Income (Per Capita)](#sec-treaty_trajectory_cumulative_lifetime_income) 🔢: $16.1M
-- [Current Trajectory Cumulative Lifetime Income (Per Capita)](#sec-current_trajectory_cumulative_lifetime_income) 🔢: $1.18M
+- [Current Trajectory Cumulative Lifetime Income (Per Capita)](#sec-current_trajectory_cumulative_lifetime_income) 🔢: $1.34M
 
 $$
 \begin{gathered}
 \Delta Y_{lifetime,treaty} \\
 = Y_{cum,treaty} - Y_{cum,earth} \\
-= \$16.1M - \$1.18M \\
-= \$14.9M
+= \$16.1M - \$1.34M \\
+= \$14.7M
 \end{gathered}
 $$
 where:
@@ -7898,19 +7747,6 @@ $$
 Y_{cum,earth} \\
 = \bar{y}_0 \cdot \frac{(1+g_{base})((1+g_{base})^{T_{remaining}}-1)}{g_{base}}
 \end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-\bar{y}_{base,20} \\
-= \frac{GDP_{base,20}}{Pop_{2045}} \\
-= \frac{\$188T}{9.2B} \\
-= \$20.5K
-\end{gathered}
-$$
-where:
-$$
-GDP_{base,20} = GDP_0(1+g_{base})^{20}
 $$
 *✓ High confidence*
 
@@ -7930,7 +7766,7 @@ $$
 
 :::
 
-### Treaty Trajectory Lifetime Income Multiplier: 13.5x {#sec-treaty_trajectory_lifetime_income_multiplier}
+### Treaty Trajectory Lifetime Income Multiplier: 12x {#sec-treaty_trajectory_lifetime_income_multiplier}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -7939,14 +7775,14 @@ Ratio of cumulative lifetime income under Treaty Trajectory vs current trajector
 **Inputs**:
 
 - [Treaty Trajectory Cumulative Lifetime Income (Per Capita)](#sec-treaty_trajectory_cumulative_lifetime_income) 🔢: $16.1M
-- [Current Trajectory Cumulative Lifetime Income (Per Capita)](#sec-current_trajectory_cumulative_lifetime_income) 🔢: $1.18M
+- [Current Trajectory Cumulative Lifetime Income (Per Capita)](#sec-current_trajectory_cumulative_lifetime_income) 🔢: $1.34M
 
 $$
 \begin{gathered}
 k_{lifetime,treaty:earth} \\
 = \frac{Y_{cum,treaty}}{Y_{cum,earth}} \\
-= \frac{\$16.1M}{\$1.18M} \\
-= 13.5
+= \frac{\$16.1M}{\$1.34M} \\
+= 12
 \end{gathered}
 $$
 where:
@@ -8076,19 +7912,6 @@ $$
 Y_{cum,earth} \\
 = \bar{y}_0 \cdot \frac{(1+g_{base})((1+g_{base})^{T_{remaining}}-1)}{g_{base}}
 \end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-\bar{y}_{base,20} \\
-= \frac{GDP_{base,20}}{Pop_{2045}} \\
-= \frac{\$188T}{9.2B} \\
-= \$20.5K
-\end{gathered}
-$$
-where:
-$$
-GDP_{base,20} = GDP_0(1+g_{base})^{20}
 $$
 *✓ High confidence*
 
@@ -10064,7 +9887,7 @@ $$
 
 :::
 
-### Wishonia Trajectory Lifetime Income Gain (Per Capita): $52.1M {#sec-wishonia_trajectory_lifetime_income_gain_per_capita}
+### Wishonia Trajectory Lifetime Income Gain (Per Capita): $51.9M {#sec-wishonia_trajectory_lifetime_income_gain_per_capita}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -10073,14 +9896,14 @@ Lifetime per-capita income gain from Wishonia Trajectory vs current trajectory. 
 **Inputs**:
 
 - [Wishonia Trajectory Cumulative Lifetime Income (Per Capita)](#sec-wishonia_trajectory_cumulative_lifetime_income) 🔢: $53.3M
-- [Current Trajectory Cumulative Lifetime Income (Per Capita)](#sec-current_trajectory_cumulative_lifetime_income) 🔢: $1.18M
+- [Current Trajectory Cumulative Lifetime Income (Per Capita)](#sec-current_trajectory_cumulative_lifetime_income) 🔢: $1.34M
 
 $$
 \begin{gathered}
 \Delta Y_{lifetime,wish} \\
 = Y_{cum,wish} - Y_{cum,earth} \\
-= \$53.3M - \$1.18M \\
-= \$52.1M
+= \$53.3M - \$1.34M \\
+= \$51.9M
 \end{gathered}
 $$
 where:
@@ -10207,19 +10030,6 @@ $$
 Y_{cum,earth} \\
 = \bar{y}_0 \cdot \frac{(1+g_{base})((1+g_{base})^{T_{remaining}}-1)}{g_{base}}
 \end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-\bar{y}_{base,20} \\
-= \frac{GDP_{base,20}}{Pop_{2045}} \\
-= \frac{\$188T}{9.2B} \\
-= \$20.5K
-\end{gathered}
-$$
-where:
-$$
-GDP_{base,20} = GDP_0(1+g_{base})^{20}
 $$
 *✓ High confidence*
 
@@ -10239,7 +10049,7 @@ $$
 
 :::
 
-### Wishonia Trajectory Lifetime Income Multiplier: 45x {#sec-wishonia_trajectory_lifetime_income_multiplier}
+### Wishonia Trajectory Lifetime Income Multiplier: 39.8x {#sec-wishonia_trajectory_lifetime_income_multiplier}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -10248,14 +10058,14 @@ Ratio of cumulative lifetime income under Wishonia Trajectory vs current traject
 **Inputs**:
 
 - [Wishonia Trajectory Cumulative Lifetime Income (Per Capita)](#sec-wishonia_trajectory_cumulative_lifetime_income) 🔢: $53.3M
-- [Current Trajectory Cumulative Lifetime Income (Per Capita)](#sec-current_trajectory_cumulative_lifetime_income) 🔢: $1.18M
+- [Current Trajectory Cumulative Lifetime Income (Per Capita)](#sec-current_trajectory_cumulative_lifetime_income) 🔢: $1.34M
 
 $$
 \begin{gathered}
 k_{lifetime,wish:earth} \\
 = \frac{Y_{cum,wish}}{Y_{cum,earth}} \\
-= \frac{\$53.3M}{\$1.18M} \\
-= 45
+= \frac{\$53.3M}{\$1.34M} \\
+= 39.8
 \end{gathered}
 $$
 where:
@@ -10382,19 +10192,6 @@ $$
 Y_{cum,earth} \\
 = \bar{y}_0 \cdot \frac{(1+g_{base})((1+g_{base})^{T_{remaining}}-1)}{g_{base}}
 \end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-\bar{y}_{base,20} \\
-= \frac{GDP_{base,20}}{Pop_{2045}} \\
-= \frac{\$188T}{9.2B} \\
-= \$20.5K
-\end{gathered}
-$$
-where:
-$$
-GDP_{base,20} = GDP_0(1+g_{base})^{20}
 $$
 *✓ High confidence*
 
@@ -13635,138 +13432,6 @@ Percentage of treaty funding allocated to Incentive Alignment Bond mechanism for
 ::: {.callout-note collapse="true" title="📊 Details"}
 
 Minimum investment for institutional investors
-
-*Core definition*
-
-:::
-
-### Average Commitment per Lead Principal: $350M {#sec-launch_avg_principal_commitment_usd}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Average capital commitment from a persuaded lead principal toward launching the treaty campaign
-
-#### Uncertainty Range
-
-**Technical**: 95% CI: [$100M, $750M] • Distribution: Lognormal
-
-**What this means**: This estimate is highly uncertain. The true value likely falls between $100M and $750M (±93%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
-
-*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
-
-#### Input Distribution
-
-{{< include ../figures/distribution-launch_avg_principal_commitment_usd.qmd >}}
-
-*Core definition*
-
-:::
-
-### Execution Rate Given Persuasion: 65% {#sec-launch_execute_probability_given_persuaded}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Probability a persuaded high-alignment principal is willing and able to move capital, staff, and institutions
-
-#### Uncertainty Range
-
-**Technical**: 95% CI: [30%, 90%] • Distribution: Beta
-
-**What this means**: There's significant uncertainty here. The true value likely falls between 30% and 90% (±46%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
-
-*The beta distribution means values are bounded and can skew toward one end.*
-
-#### Input Distribution
-
-{{< include ../figures/distribution-launch_execute_probability_given_persuaded.qmd >}}
-
-*Core definition*
-
-:::
-
-### High-Alignment Lead Principals: 30 people {#sec-launch_high_alignment_principals_count}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Number of unusually aligned, implementation-capable principals globally for whom the treaty thesis is a natural fit
-
-#### Uncertainty Range
-
-**Technical**: 95% CI: [8 people, 100 people] • Distribution: Lognormal
-
-**What this means**: This estimate is highly uncertain. The true value likely falls between 8 people and 100 people (±153%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
-
-*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
-
-#### Input Distribution
-
-{{< include ../figures/distribution-launch_high_alignment_principals_count.qmd >}}
-
-*Core definition*
-
-:::
-
-### Persuasion Rate Given Reach: 60% {#sec-launch_persuade_probability_given_reached}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Probability a reached high-alignment principal accepts the launch thesis after meaningful review
-
-#### Uncertainty Range
-
-**Technical**: 95% CI: [25%, 85%] • Distribution: Beta
-
-**What this means**: There's significant uncertainty here. The true value likely falls between 25% and 85% (±50%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
-
-*The beta distribution means values are bounded and can skew toward one end.*
-
-#### Input Distribution
-
-{{< include ../figures/distribution-launch_persuade_probability_given_reached.qmd >}}
-
-*Core definition*
-
-:::
-
-### Reach Probability for High-Alignment Principals: 50% {#sec-launch_reach_probability_high_alignment}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Probability a high-alignment principal meaningfully encounters the launch thesis within the model horizon
-
-#### Uncertainty Range
-
-**Technical**: 95% CI: [20%, 85%] • Distribution: Beta
-
-**What this means**: This estimate is highly uncertain. The true value likely falls between 20% and 85% (±65%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
-
-*The beta distribution means values are bounded and can skew toward one end.*
-
-#### Input Distribution
-
-{{< include ../figures/distribution-launch_reach_probability_high_alignment.qmd >}}
-
-*Core definition*
-
-:::
-
-### Launch Redundancy Factor: 1.25x {#sec-launch_redundancy_factor}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Funding redundancy above bare minimum required to survive defections, delay, and ordinary political friction
-
-#### Uncertainty Range
-
-**Technical**: 95% CI: [1x, 2x] • Distribution: Lognormal
-
-**What this means**: There's significant uncertainty here. The true value likely falls between 1x and 2x (±40%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
-
-*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
-
-#### Input Distribution
-
-{{< include ../figures/distribution-launch_redundancy_factor.qmd >}}
 
 *Core definition*
 
