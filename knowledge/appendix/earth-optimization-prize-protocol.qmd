@@ -1,7 +1,7 @@
 ---
 title: 'Earth Optimization Protocol: Technical Specification'
-subtitle: 'Identity, Pooling, Settlement, and Oracle Design for Interoperable Outcome Prizes'
-description: "Technical specification for interoperable outcome prize pools structured as a dominant assurance contract. Covers cross-pool proof-of-personhood, a permissionless pool registry, VOTE and PRIZE token mechanics, direct cross-pool claims, tamper-evident scoreboard aggregation, and a terminal metric oracle including decentralized surveys."
+subtitle: Identity, Pooling, Settlement, and Oracle Design for Interoperable Outcome Prizes
+description: Technical specification for interoperable outcome prize pools structured as a dominant assurance contract. Covers cross-pool proof-of-personhood, a permissionless pool registry, VOTE and PRIZE token mechanics, direct cross-pool claims, tamper-evident scoreboard aggregation, and a terminal metric oracle including decentralized surveys.
 abstract: |
   The Earth Optimization Prize [@earth-optimization-prize-paper-2025] is a dominant assurance
   contract that rewards humanity for increasing global median health and wealth above verified
@@ -58,6 +58,8 @@ format:
     documentclass: article
     geometry: margin=1in
     fontsize: 11pt
+podcast-image: /assets/podcast/earth-optimization-prize-protocol-podcast.jpg
+youtube-thumbnail: /assets/podcast/earth-optimization-prize-protocol-youtube.jpg
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 

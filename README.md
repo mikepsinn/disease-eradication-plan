@@ -633,6 +633,10 @@ This is why aliens don't visit.
 
 > Act to modernize medical research and treatment access through an open-source FDA.gov v2, giving patients the right to participate in trials.
 
+### [Earth Optimization Prize Protocol: Technical Specification](https://prize-protocol.warondisease.org)
+
+> The Earth Optimization Prize is a dominant assurance contract that rewards humanity for increasing global median health and wealth above verified thresholds. Depositors get their money back plus interest if the metrics are not met (making participation a dominant strategy regardless of outcome); if global median healthy life years and global median real after-tax income improve, the treasury releases to verified participants proportionally. Registration asks two questions: yes/no on the 1% treaty (the concrete political demand) and how much military vs. clinical trials (with cross-jurisdictional evidence from Optimitron). The mechanism is designed for interoperability: independently operated pools commit to the same two terminal metrics and automatically form a single reward network. This paper specifies the six protocol-level capabilities that interoperability requires: (1) a cross-pool identity layer providing one-person-one-vote guarantees via proof-of-personhood; (2) a permissionless pool registry that makes metric commitments verifiable; (3) VOTE and PRIZE token mechanics with defined minting rules and payout triggers; (4) direct cross-pool claims where any verified voter can claim from any pool; (5) tamper-evident scoreboard aggregation so every front-end displays the same coalition-wide totals; and (6) a terminal metric oracle combining institutional data with decentralized surveys to trigger treasury release. The goal is a protocol simple enough that a second pool can launch without coordinating with the first.
+
 ### [How to End War and Disease](https://manual.WarOnDisease.org)
 
 > The Complete Idiot's Guide to Legally Bribing Your Way to Utopia

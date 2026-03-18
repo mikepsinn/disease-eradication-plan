@@ -1,0 +1,227 @@
+project:
+  type: website
+  output-dir: _site/earth-optimization-prize-protocol
+  execute-dir: project
+  resources:
+    - knowledge/data/
+    - assets/
+    - _redirects
+    - robots.txt
+    - llms.txt
+  render:
+    # Paper is copied to index.qmd by render script
+    - index.qmd
+    - knowledge/appendix/parameters-and-calculations.qmd
+
+# Custom fields for render-quarto.py
+dih-render:
+  emoji: "🔧"
+  index-source: knowledge/appendix/earth-optimization-prize-protocol.qmd
+  fallback-404-redirect-domain: https://manual.WarOnDisease.org
+  pdf-output-file: earth-optimization-protocol.pdf
+  netlify-site-id: ""
+  netlify-cname: ""
+  show-confidence-intervals: true
+  concept-terms:
+    - term: "Earth Optimization Prize Protocol"
+      manual-target: knowledge/appendix/earth-optimization-prize-protocol.qmd
+      aliases:
+        - "Prize Protocol"
+        - "EOP Protocol"
+        - "EOPP Technical Spec"
+  favicon-prompt: "Interlocking gears with a globe in the center, minimalist technical blueprint style."
+
+profiles:
+  default:
+    dotenv:
+      allowEmptyValues: true
+
+author:
+  - name: Mike P. Sinn
+    email: m@warondisease.org
+    orcid: 0009-0006-0212-1094
+    affiliations:
+      - name: "Institute for Accelerated Medicine"
+        url: https://acceleratedmedicine.org
+
+website:
+  title: "Earth Optimization Prize Protocol: Technical Specification"
+  description: "Technical specification for interoperable outcome prize pools structured as a dominant assurance contract. Covers cross-pool proof-of-personhood, a permissionless pool registry, VOTE and PRIZE token mechanics, direct cross-pool claims, tamper-evident scoreboard aggregation, and a terminal metric oracle including decentralized surveys."
+  site-url: https://prize-protocol.warondisease.org
+  favicon: assets/icons/earth-optimization-prize-protocol-favicon.png
+  page-navigation: true
+  page-footer:
+    left: "© 2025 [Institute for Accelerated Medicine](https://acceleratedmedicine.org) | [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)"
+    center: "[PDF](/earth-optimization-protocol.pdf) | [All Papers](https://manual.warondisease.org/knowledge/papers.html)"
+    right: "[VOTE](https://WarOnDisease.org)"
+  navbar:
+    right:
+      - text: "Prize Paper"
+        href: https://prize.warondisease.org
+      - text: "Calculations"
+        href: knowledge/appendix/parameters-and-calculations.qmd
+      - text: "VOTE"
+        href: https://WarOnDisease.org
+
+execute:
+  fig-path: "knowledge/figures/"
+  cache: false
+  freeze: auto
+  daemon: 300
+  daemon-restart: false
+  env:
+    PYTHONPATH: "."
+
+metadata:
+  importance: 75
+  creator: "Mike P. Sinn"
+  orcid: "0009-0006-0212-1094"
+  primary-author: "Mike P. Sinn"
+  byline: "Mike P. Sinn"
+  human-author: "Mike P. Sinn"
+  author-email: "mike@warondisease.org"
+  author-url: "https://mikesinn.com"
+  author-website: "https://mikesinn.com"
+  contact: "mike@warondisease.org"
+  language: "en-US"
+  subject: "Mechanism Design, Protocol Design, Proof-of-Personhood, Oracle Design, Dominant Assurance Contracts"
+  category: "Technical Specification, Mechanism Design, Protocol Engineering"
+  coi-statement: "The author declares no competing interests. The author notes that specifying a protocol for rewarding humanity for not dying is not a conflict of interest, unless being human counts."
+  data-availability: "All data and code used in this analysis are publicly available at https://github.com/mikepsinn/disease-eradication-plan"
+  ethics-statement: "This research did not involve human subjects. The protocol it describes would verify all of them, which is the point."
+  funding: "This research received no funding. The protocol described herein is designed to coordinate its own funding, which it has not yet done."
+  github-profile: "https://github.com/mikepsinn"
+  linkedin: "https://www.linkedin.com/in/mikesinn"
+  orcid-url: "https://orcid.org/0009-0006-0212-1094"
+  google-scholar: "https://scholar.google.com/citations?user=RjDd_qcAAAAJ"
+  keywords:
+    - outcome-prizes
+    - dominant-assurance-contract
+    - proof-of-personhood
+    - pool-interoperability
+    - oracle-design
+    - mechanism-design
+    - decentralized-surveys
+    - token-mechanics
+    - cross-pool-claims
+    - protocol-specification
+  version: "0.1"
+  edition: "Working Draft"
+  copyright: "© 2025 Mike P. Sinn"
+  copyright-year: "2025"
+  license: "CC BY-NC 4.0"
+  license-url: "https://creativecommons.org/licenses/by-nc/4.0/"
+  rights: "Creative Commons Attribution-NonCommercial 4.0 International License"
+  publisher: "Institute for Accelerated Medicine"
+  publisher-url: "https://acceleratedmedicine.org"
+  publisher-name: "Mike P. Sinn"
+  publisher-email: "mike@warondisease.org"
+  repo-url: "https://github.com/mikepsinn/disease-eradication-plan"
+  issue-url: "https://github.com/mikepsinn/disease-eradication-plan/issues"
+  source-url: "https://github.com/mikepsinn/disease-eradication-plan"
+  geographic-coverage: "Global"
+  audience: "Protocol Engineers, Mechanism Designers, Smart Contract Developers, Economists, Policy Makers"
+  format: "Working Paper"
+  type: "Academic"
+  genre: "Protocol Design, Mechanism Design, Cryptoeconomics"
+  medium: "Digital"
+  twitter-site: "https://x.com/warondisease"
+  twitter-creator: "https://x.com/warondisease"
+  og-site-name: "Earth Optimization Prize Protocol"
+
+  # Identifiers
+  doi: ""
+
+  # Open Graph metadata
+  open-graph: true
+  image: ""
+
+  # Publication tracking
+  publishing:
+    own-site:
+      url: "https://prize-protocol.warondisease.org"
+      status: pending
+    preprints:
+      - platform: zenodo
+        status: pending
+        url: ""
+      - platform: ssrn
+        status: pending
+        url: ""
+    journals:
+      - name: "Journal of Mechanism and Institution Design"
+        tier: 2
+        status: target
+        url: ""
+
+# Remove "Appendix" prefix
+language:
+  crossref-apx-prefix: ""
+  section-title-appendices: ""
+
+# Bibliography: Single source of truth for all citations
+bibliography: references.bib
+csl: nature-annotated.csl
+
+jupyter: dih-project-kernel
+
+format:
+  html:
+    lightbox: auto
+    theme:
+      - cosmo
+    mermaid:
+      theme: neutral
+    echo: false
+    number-sections: true
+    toc: true
+    toc-depth: 3
+    css:
+      - styles.css
+      - economics-overrides.css
+    include-before-body:
+      - file: assets/html/page-loader.html
+    include-after-body:
+      - file: assets/html/site-enhancements-loader.html
+    include-in-footer:
+      - file: assets/html/generated-footer.html
+    include-in-header:
+      - text: |
+          <!-- Icons (project-specific) -->
+          <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/earth-optimization-prize-protocol-favicon-32x32.png">
+          <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/earth-optimization-prize-protocol-favicon-16x16.png">
+          <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/earth-optimization-prize-protocol-apple-touch-icon.png">
+          <link rel="icon" type="image/png" sizes="192x192" href="/assets/icons/earth-optimization-prize-protocol-android-chrome-192x192.png">
+          <link rel="icon" type="image/png" sizes="512x512" href="/assets/icons/earth-optimization-prize-protocol-android-chrome-512x512.png">
+      - file: assets/html/google-analytics.html
+      - file: assets/html/hypothesis.html
+      - file: assets/html/fonts-preload.html
+    citation-hover: true
+    code-fold: true
+    link-citations: true
+    smooth-scroll: true
+    code-tools: false
+    filters: [assets/filters/live-version-note.lua]
+  pdf:
+    output-file: "earth-optimization-protocol.pdf"
+    documentclass: article
+    institute: "Institute for Accelerated Medicine"
+    echo: false
+    toc: true
+    toc-depth: 3
+    number-sections: true
+    colorlinks: true
+    link-citations: true
+    date: ""
+    include-in-header:
+      - callout-bw.tex
+      - institute-header.tex
+      - text: |
+          \paperurl{https://prize-protocol.warondisease.org}
+    geometry:
+      - top=1in
+      - bottom=1in
+      - left=1in
+      - right=1in
+    fontsize: 11pt
+    filters: [assets/filters/live-version-note.lua]

@@ -936,7 +936,10 @@ def prepare_build_temp(config_name: str, verbose: bool = True) -> Optional[Path]
     required_files = {"favicon.ico", "pyproject.toml", "netlify.toml"}
 
     # Ignore patterns for subdirectories (e.g., __pycache__ inside dih_models)
-    subdir_ignore = {"__pycache__", ".git", "node_modules", ".venv"}
+    # Large asset dirs that standalone papers never need (audiobook alone is 18 GB)
+    subdir_ignore = {"__pycache__", ".git", "node_modules", ".venv",
+                     "audiobook", "wavs", "kindle-diagnosis", "docx",
+                     "slides", "music-video", "og-images", "video"}
 
     # LaTeX build artifacts that should never be copied into the build temp directory.
     # Root-level .tex files (LaTeX templates) are still copied via the required_extensions path.

@@ -1,7 +1,7 @@
 ---
-title: 'Earth Optimization Plan v1'
-subtitle: 'The Terrible Starting Benchmark for the Earth Optimization Prize'
-description: "The complete integrated system from How to End War and Disease, documented in one forkable document. Eleven mechanisms, one self-reinforcing loop, explicit known weaknesses. Please replace this with something better."
+title: Earth Optimization Plan v1
+subtitle: The Terrible Starting Benchmark for the Earth Optimization Prize
+description: The complete integrated system from How to End War and Disease, documented in one forkable document. Eleven mechanisms, one self-reinforcing loop, explicit known weaknesses. Please replace this with something better.
 abstract: |
   The Earth Optimization Plan v1 is the integrated system described in *How to End War and Disease*. It combines eleven mechanisms into a self-reinforcing loop: a 1% military-to-medical treaty provides {{< var treaty_annual_funding >}}/year in funding; pragmatic clinical trials executed through a decentralized FDA protocol reduce trial costs by {{< var dfda_trial_cost_reduction_factor >}} and compress the treatment discovery queue from {{< var status_quo_queue_clearance_years >}} to {{< var dfda_queue_clearance_years >}}; Incentive Alignment Bonds fund the lobbying campaign and pay investors {{< var victory_bond_annual_return_pct >}} annual returns; wishocratic pairwise comparison allocates the {{< var dih_treasury_medical_research_pct >}} research treasury; and an evidence machine (Optimocracy) tells governments which policies actually work. Each component feeds the next. More cures generate popular support, more bondholder income generates political pressure, and more treaty funding generates campaign support for politicians who voted yes. The ratchet only moves in one direction. This paper documents the complete system: what each component does, how they connect, what numbers they claim, and where we think we are wrong. It exists to be replaced. The [Earth Optimization Prize](earth-optimization-prize.qmd) is a standing challenge: fork this and make it better.
 published: true
