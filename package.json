@@ -121,6 +121,7 @@
     "lint:qmd:fix": "markdownlint --config .markdownlint.json --fix \"**/*.qmd\"",
     "format:spacing": "tsx scripts/format-markdown-spacing.ts",
     "generate:index": "tsx scripts/generate-index.ts",
+    "generate:search-index": "node scripts/generate-search-index.mjs",
     "format:programmatic:file": "tsx scripts/review/programmatic-format-file.ts",
     "format:programmatic:all": "tsx scripts/review/programmatic-format-all-files.ts",
     "standards:apply:file": "tsx scripts/review/apply-auto-standards-file.ts",

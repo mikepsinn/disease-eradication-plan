@@ -128,6 +128,11 @@ book:
         - knowledge/futures/wishonia.qmd # ✅ Path B: Wishonia ~13p
         - knowledge/appendix/faq.qmd # ✅ Demolishing Objections ~15p
 
+    - part: "For Institutions"
+      chapters:
+        - knowledge/strategy/initiating-node-memo.qmd
+        - knowledge/grant-proposal/earth-optimization-prize-90-day-pilot.qmd
+
     - part: "The Plan"
       chapters:
         - knowledge/strategy/earth-optimization-plan-v1.qmd # ✅ Complete integrated system + sequencing

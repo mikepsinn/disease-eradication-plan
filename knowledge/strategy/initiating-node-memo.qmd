@@ -1,0 +1,155 @@
+---
+title: The Initiating Node Memo
+subtitle: Why A Credible Institution Should Host The First Earth Optimization Prize Pilot
+description: "A sponsor-facing memo for institutions considering whether to host the first 90-day Earth Optimization Prize pilot. The host role is to convene, publish, seed, and measure without becoming the mechanism's sovereign."
+---
+
+{{< include ../includes/setup-parameters.qmd >}}
+
+### Note
+
+**Document Type:** Institutional memo  
+**Audience:** Foundations, institutions, think tanks, public-interest research organizations  
+**Purpose:** Explain the smallest credible role an institution can play to launch the Earth Optimization Prize without becoming a single point of failure
+
+## The Ask
+
+Host the first 90-day Earth Optimization Prize pilot.
+
+That means:
+
+1. Publish the challenge rules.
+2. Convene a credible review panel.
+3. Fund adversarial-review bounties.
+4. Launch the first public scoreboard.
+5. Admit the first serious submissions and public commitments.
+
+It does **not** mean endorsing the current draft as final truth. It means hosting a process designed to discover something better if something better exists.
+
+## The Problem Statement
+
+The project is trying to solve a very specific failure mode.
+
+Right now, your institutions are good at describing desirable end states and bad at building mechanisms that can finance, coordinate, and politically pass them. Military spending, regulatory delay, and political capture remain structurally easier to fund than pragmatic clinical trials, cure acceleration, or public-goods optimization. Meanwhile the destructive economy is already {{< var global_destructive_economy_pct_gdp >}} of GDP and is compounding faster than the productive economy.
+
+So the core problem is not "how do we write one more good whitepaper?" It is:
+
+1. how to discover a better integrated plan,
+2. how to make public support visible,
+3. how to finance political adoption,
+4. how to route new funding into cheaper and faster treatment discovery, and
+5. how to create a ratchet that is easier to expand than repeal.
+
+The initiating-node pilot exists because none of that happens until a credible institution makes the first public version of the process real.
+
+## The Full System In One Table
+
+The full benchmark plan is documented in [Earth Optimization Plan v1](earth-optimization-plan-v1.qmd). In compressed form, it contains these major components:
+
+| Component | What it does | Details |
+|---|---|---|
+| **[Earth Optimization Prize](earth-optimization-prize.qmd)** | Runs the open contest, public scoreboard, and recruitment-aligned success pool | Selection and coalition entry layer |
+| **[Global referendum](global-referendum.qmd)** | Makes latent support visible and records public preference on reallocation | Public headcount and preference signal |
+| **[Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd)** | Finance lobbying and political adoption with direct financial upside | Campaign-financing engine |
+| **[1% Treaty](../solution/1-percent-treaty.qmd)** | Redirects 1% of military spending into clinical trials and related incentives | Initial durable funding wedge |
+| **[Decentralized Institutes of Health](../solution/dih.qmd)** | Receives treaty funds and routes them through a thin coordination protocol | Treasury and verification layer |
+| **[Your decentralized FDA](../solution/dfda.qmd)** | Runs cheaper, faster pragmatic clinical trials and real-time evidence generation | Medical throughput engine |
+| **[Wishocracy](../solution/wishocracy.qmd)** | Allocates research/public-goods budgets through pairwise citizen preference aggregation | Governance and allocation engine |
+| **[Optimocracy / OPG / OBG](../solution/optimocracy.qmd)** | Measures what improves health and income and recommends better policy/budget choices | Evidence and recommendation engine |
+| **[Political Dysfunction Tax](../problem/unrepresentative-democracy.qmd)** and **[US Efficiency Audit](https://us-efficiency-audit.warondisease.org)** | Identify waste pools and quantify the scale of misallocation | Waste-mapping and opportunity-cost layer |
+| **[Legal framework](../legal/legal-framework.qmd)** | Supplies treaty, statutory, and election-law-compliant implementation paths | Binding-force layer |
+| **[Phase 2 monetary transition](../futures/wishonia.qmd#the-algorithm-that-replaced-twelve-humans)** | Replaces fiat-era fiscal/monetary machinery after the earlier loop is running | Long-run system replacement |
+
+The institution is **not** being asked to bless every later component on day one. It is being asked to host the first public process that can compare, attack, improve, and replace them.
+
+## Why This Role Exists
+
+The current trajectory is not neutral. The destructive economy is already {{< var global_destructive_economy_pct_gdp >}} of GDP, reaches {{< var destructive_economy_pct_gdp_year_15 >}} by year 15 if current trends continue, reaches the failed-state danger zone in {{< var destructive_economy_years_to_25pct_gdp >}}, and reaches parity with the productive economy in {{< var destructive_economy_years_to_50pct_gdp >}}.
+
+The modeled upside of changing course is similarly large. The Treaty path adds {{< var treaty_trajectory_lifetime_income_gain_per_capita >}} in lifetime income and {{< var treaty_hale_gain_year_15 >}} of healthy life by year 15. The fuller Wishonia path adds {{< var wishonia_trajectory_lifetime_income_gain_per_capita >}} and {{< var wishonia_hale_gain_year_15 >}}.
+
+The bottleneck is not a shortage of possible solutions. It is a shortage of public coordination infrastructure that can:
+
+1. make serious alternatives legible,
+2. reward recruitment and public participation,
+3. expose weak plans to adversarial review,
+4. publish visible milestones, and
+5. remain open enough that no single institution can quietly kill it.
+
+An initiating institution solves the first coordination problem: it gives the process a credible first venue.
+
+## What The Institution Is Actually Agreeing To
+
+The right frame is **host**, not **owner**.
+
+| The institution does | The institution does not do |
+|---|---|
+| Host the first contest and scoreboard | Become the permanent sovereign of the mechanism |
+| Endorse the process for comparing plans | Declare `Earth Optimization Plan v1` correct |
+| Publish rules, milestones, and panel criteria | Demand trust in a black box |
+| Seed red-team review and public evidence | Become the sole oracle, sole custodian, or sole gatekeeper |
+| Make the first credible public milestone real | Prevent later hosts, forks, or successor implementations |
+
+This is the sponsor-safe version of the project: endorse the contest, the metric standard, and the improvement process, not the current draft as revealed truth.
+
+## Why This Is A Strong Institutional Bet
+
+For a foresight-style institution, hosting the initiating node is attractive for four reasons.
+
+1. It is high-leverage epistemic infrastructure. You are not picking one policy memo and hoping people read it. You are creating a public mechanism that rewards better proposals, exposes weak ones, and makes progress visible.
+2. It is legible public-good work. The outputs are concrete: rules, panel roster, challenge page, bounty pool, live scoreboard, and first submissions.
+3. It is reputationally safer than endorsing a finished ideology. The institution is sponsoring an open contest with explicit adversarial review.
+4. It can surface a better v2 than the current benchmark. If the current proposal is wrong, the pilot is how that gets discovered before larger-scale commitment.
+
+## The Minimum Viable Pilot
+
+The smallest credible institutional pilot is bounded and public.
+
+| Component | Minimum viable output by day 90 |
+|---|---|
+| Rules | Public challenge page defining targets, constraints, and judging flow |
+| Panel | Named reviewers able to filter out unserious or noncompliant submissions |
+| Adversarial review | A funded bounty pool for red-team critiques, metric-gaming attacks, and replacement designs |
+| Scoreboard | A live public page tracking host milestones, submissions, and the first participant/commitment totals |
+| Entry set | The baseline `Earth Optimization Plan v1` plus any serious competing submissions |
+
+If those five things exist in public, the institution has done the essential catalytic job.
+
+## The Governance Boundary
+
+The most important design principle is simple:
+
+**One institution may initiate the network. No institution should be able to stop it.**
+
+That means the first host should insist on the following boundary conditions from the start:
+
+1. published rules and evaluation criteria,
+2. open documentation,
+3. replaceable interfaces,
+4. visible measurement and milestone reporting,
+5. successor-host compatibility if the first institution withdraws.
+
+The host should help launch the process, not trap it inside one brand, board, or legal entity.
+
+## What Success Looks Like
+
+Success at this stage is not treaty passage, not lobbying victory, and not full implementation. Success is much narrower:
+
+1. the process becomes publicly real,
+2. the benchmark plan is exposed to credible attack,
+3. better alternatives can enter,
+4. outsiders can see visible progress, and
+5. the next institution or funder can join without asking permission from the first.
+
+That is enough to move the project from “interesting paper” to “live coordination mechanism.”
+
+## Recommended Decision
+
+If your institution is willing to host ambitious but bounded public infrastructure, the correct move is not to wait for perfect certainty. It is to run the 90-day pilot with explicit non-sovereign boundaries.
+
+Read the full background paper here:
+
+- [The Earth Optimization Prize](earth-optimization-prize.qmd)
+- [The 90-Day Pilot Proposal](../grant-proposal/earth-optimization-prize-90-day-pilot.qmd)
+
+The key question is not whether the current draft is flawless. It is whether your institution wants to be the place where the world finds out what actually beats it.
