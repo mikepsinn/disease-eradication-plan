@@ -1,27 +1,28 @@
 ---
 title: 'Earth Optimization Protocol: Technical Specification'
 subtitle: 'Identity, Pooling, Settlement, and Oracle Design for Interoperable Outcome Prizes'
-description: "Technical specification for the six protocol-level capabilities required by interoperable outcome prize pools: cross-pool proof-of-personhood, a permissionless pool registry, VOTE and PRIZE token mechanics, cross-pool claim settlement, tamper-evident scoreboard aggregation, and a terminal metric oracle. Each section states the problem, evaluates implementation options, and specifies minimum requirements."
+description: "Technical specification for interoperable outcome prize pools structured as a dominant assurance contract. Covers cross-pool proof-of-personhood, a permissionless pool registry, VOTE and PRIZE token mechanics, direct cross-pool claims, tamper-evident scoreboard aggregation, and a terminal metric oracle including decentralized surveys."
 abstract: |
   The Earth Optimization Prize [@earth-optimization-prize-paper-2025] is a dominant assurance
-  contract that rewards humanity for increasing median health and wealth above verified thresholds.
-  Depositors get their money back plus interest if the metrics are not met (making participation a
-  dominant strategy regardless of outcome); if median healthy life years and median real after-tax
-  income improve globally, the treasury releases to verified participants
-  proportionally. The mechanism is designed for interoperability: independently operated pools
-  commit to the same two terminal metrics and automatically form a single reward network.
+  contract that rewards humanity for increasing global median health and wealth above verified
+  thresholds. Depositors get their money back plus interest if the metrics are not met (making
+  participation a dominant strategy regardless of outcome); if global median healthy life years
+  and global median real after-tax income improve, the treasury releases to verified participants
+  proportionally. Registration asks two questions: yes/no on the 1% treaty (the concrete political
+  demand) and how much military vs. clinical trials (with cross-jurisdictional evidence from
+  Optimitron). The mechanism is designed for interoperability: independently
+  operated pools commit to the same two terminal metrics and automatically form a single reward
+  network.
 
   This paper specifies the six protocol-level capabilities that interoperability requires:
   (1) a cross-pool identity layer providing one-person-one-vote guarantees via proof-of-personhood;
   (2) a permissionless pool registry that makes metric commitments verifiable;
-  (3) VOTE and PRIZE token mechanics with defined minting rules, transfer constraints, and payout
-  triggers; (4) a cross-pool claim settlement protocol that distributes treasury funds
-  proportionally to all verified voters regardless of registration pool; (5) tamper-evident
-  scoreboard aggregation so every front-end displays the same coalition-wide totals; and (6) a
-  terminal metric oracle that triggers treasury release when welfare improvements are independently
-  verified. Each section states the problem, evaluates existing approaches, identifies attack
-  vectors, and specifies minimum requirements. The goal is a protocol simple enough that a second
-  pool can launch without coordinating with the first.
+  (3) VOTE and PRIZE token mechanics with defined minting rules and payout triggers;
+  (4) direct cross-pool claims where any verified voter can claim from any pool;
+  (5) tamper-evident scoreboard aggregation so every front-end displays the same coalition-wide
+  totals; and (6) a terminal metric oracle combining institutional data with decentralized surveys
+  to trigger treasury release. The goal is a protocol simple enough that a second pool can launch
+  without coordinating with the first.
 author:
   - name: Mike P. Sinn
     affiliations:
@@ -42,12 +43,12 @@ tags:
   - prize
 keywords:
   - outcome prizes
+  - dominant assurance contract
   - proof-of-personhood
   - pool interoperability
   - oracle design
   - mechanism design
-  - token mechanics
-  - settlement protocol
+  - decentralized surveys
 format:
   html:
     toc: true
@@ -62,14 +63,22 @@ format:
 
 ## Introduction
 
-The [Earth Optimization Prize](../strategy/earth-optimization-prize.qmd) [@earth-optimization-prize-paper-2025] is a dominant assurance contract that rewards humanity for increasing median health and wealth. Two terminal metrics define success: global median healthy life years (HALY) and global median real after-tax income. Depositors get their money back plus interest if the metrics are not met, so participation is a dominant strategy regardless of whether the prize succeeds. If the metrics improve above verified thresholds, the treasury releases to participants proportionally. The mechanism paper demonstrates that independently operated pools sharing these metrics are complements rather than competitors: every new pool increases the combined reward visible to every voter.
+The [Earth Optimization Prize](../strategy/earth-optimization-prize.qmd) [@earth-optimization-prize-paper-2025] is a dominant assurance contract that rewards humanity for increasing global median health and wealth. Two terminal metrics define success: global median healthy life years (HALY) and global median real after-tax income. Depositors get their money back plus interest if the metrics are not met, so participation is a dominant strategy regardless of whether the prize succeeds. If the metrics improve above verified thresholds, the treasury releases to participants proportionally.
 
-That argument assumes six capabilities that do not yet exist:
+Registration asks two questions:
+
+1. **Yes or no on the [1% treaty](../solution/1-percent-treaty.qmd) [@1-pct-treaty-impact-paper-2025].** "Should 1% of military spending be redirected to clinical trials?" Binary, concrete, the specific political demand that politicians can act on. This produces the VOTE token (claim eligibility) and the scoreboard headcount (political pressure). The 1% treaty is also the thing that [IABs](../solution/incentive-alignment-bonds.qmd) [@iab-paper-2025] fund the lobbying campaign for, so the voter count directly feeds the financial instrument's value.
+
+2. **How much military vs. clinical trials?** The core reallocation question, shown with Optimitron [@optimocracy-paper-2025] evidence: cost per DALY for military spending vs. clinical trials, lives saved per dollar, economic returns per dollar. The voter sees the data and picks an allocation. The aggregate result from millions of people is a global citizen preferred split between war and medicine, generated by the evidence-informed [wishocratic](../solution/wishocracy.qmd) mechanism the book proposes [@wishocracy-paper-2025]. The user does not need to understand "[wishocracy](../solution/wishocracy.qmd)" or "Optimitron" as concepts. They see what each dollar buys in each category and choose how to split it.
+
+Broader wishocratic allocation across all spending categories (education, infrastructure, research, defense, etc.) is available as optional deeper engagement after registration, but these two questions are the minimum viable referendum.
+
+The mechanism paper demonstrates that independently operated pools sharing these metrics are complements rather than competitors: every new pool increases the combined reward visible to every voter. That argument assumes six capabilities that do not yet exist:
 
 1. A person verified in one pool cannot re-register in another (identity layer).
 2. Any pool committing to the standard metrics is automatically interoperable (pool registry).
 3. VOTE and PRIZE tokens have defined rules that work across pool boundaries (token mechanics).
-4. A verified voter receives their proportional share from every pool, not just the registration pool (cross-pool settlement).
+4. A verified voter can claim their share from any pool directly (cross-pool claims).
 5. Every front-end displays the same combined voter count and pool size (scoreboard aggregation).
 6. Treasury release is triggered by independently verified welfare improvements (terminal metric oracle).
 
@@ -91,13 +100,13 @@ The identity layer must provide three properties:
 
 ### Existing Approaches
 
-**World ID** (Worldcoin/Tools for Humanity). Uses iris biometrics hashed into a zero-knowledge proof. Provides strong uniqueness (biometric deduplication) and privacy (ZK proofs reveal nothing beyond uniqueness). Concerns: hardware dependency (requires Orb scans), centralized enrollment infrastructure, jurisdictional bans (Kenya, Spain, others have restricted operations).
+**World ID** (Worldcoin/Tools for Humanity). Iris biometrics hashed into a zero-knowledge proof. Strong uniqueness and privacy. Concerns: hardware dependency (requires Orb scans), centralized enrollment infrastructure, jurisdictional bans.
 
-**BrightID.** Social-graph-based uniqueness verification. No biometrics; instead, participants attend verification parties where existing members vouch for new ones. Lower uniqueness guarantees than biometrics (colluding vouchers can create fake identities). Better decentralization properties.
+**BrightID.** Social-graph-based uniqueness. No biometrics; participants attend verification parties where existing members vouch for new ones. Lower uniqueness guarantees (colluding vouchers can create fake identities). Better decentralization.
 
-**Proof of Humanity** (Kleros). Video submission plus vouching, adjudicated by Kleros courts on disputes. More decentralized than World ID, weaker liveness guarantees than biometrics, slower onboarding (days vs. minutes).
+**Proof of Humanity** (Kleros). Video submission plus vouching, adjudicated by Kleros courts on disputes. More decentralized than World ID, weaker liveness guarantees, slower onboarding.
 
-**Government ID.** National identity systems provide strong liveness and uniqueness within one jurisdiction. Cross-jurisdiction deduplication is unsolved (a person with passports from two countries can register twice). Privacy is poor (the pool learns the person's legal identity).
+**Government ID.** Strong liveness and uniqueness within one country. Cross-country deduplication is unsolved. Privacy is poor.
 
 ### Minimum Specification
 
@@ -122,10 +131,9 @@ The global nullifier set is the critical shared state. It must be append-only, p
 
 **Liveness decay.** An attestation expires after 12 months. Voters must re-verify annually to remain eligible for claims. This prevents deceased or fabricated identities from accumulating perpetual shares.
 
-### Attack Resistance
+**Sybil via multiple providers.** If a person verifies with World ID in Pool A and BrightID in Pool B, they get two entries. Mitigation: the protocol should launch with a single approved provider and add cross-provider bridging as providers develop interop standards.
 
-- **Sybil via multiple providers.** If a person verifies with World ID in Pool A and BrightID in Pool B, they get two entries. Mitigation: cross-provider nullifier bridging. Providers that can demonstrate biometric or social-graph overlap should publish bridge proofs. This is an unsolved problem in the identity space; the protocol should launch with a single approved provider and add bridging as providers develop interop standards.
-- **Coercion.** An employer or government forces citizens to register and surrender their VOTE tokens. Mitigation: VOTE tokens can be made non-transferable (soulbound) or subject to a time-lock that makes coerced transfer economically unattractive. See §4 for transfer constraint options.
+**Coercion.** An employer or government forces citizens to register and surrender their VOTE tokens. Mitigation: VOTE tokens are non-transferable (soulbound). There is nothing to surrender.
 
 ## Pool Registry
 
@@ -150,36 +158,23 @@ Each registry entry contains:
 
 ### Registration
 
-Permissionless. Any entity can register a pool by submitting the data model fields and posting a minimum treasury deposit (prevents spam registrations). The minimum deposit should be low enough that a university research group can participate but high enough that registering thousands of fake pools is expensive.
-
-The registry enforces one hard constraint: `metric_commitments` must exactly match the canonical set. A pool that measures "GDP per capita" instead of "median real income" is not interoperable and cannot register. This is the mechanism that turns metric alignment from social convention into protocol constraint.
+Permissionless. Any entity can register a pool by submitting the data model fields and posting a minimum treasury deposit (prevents spam). The registry enforces one hard constraint: `metric_commitments` must exactly match the canonical set. A pool that measures "GDP per capita" instead of "median real income" is not interoperable and cannot register. This is the mechanism that turns metric alignment from social convention into protocol constraint.
 
 ### Balance Attestation
 
-Pools must update their `treasury_balance_attestation` at least monthly. For on-chain treasuries, this is automatic (the balance is publicly readable). For off-chain treasuries (bank accounts, endowment funds), the pool must provide a signed attestation from an approved auditor or custodian.
-
-A pool whose attestation is more than 90 days stale is automatically flagged as `suspended`. Suspended pools are excluded from scoreboard aggregation (§6) but their registered voters retain claim eligibility (to prevent a pool operator from stealing funds by deliberately letting the attestation lapse).
-
-### Deregistration
-
-A pool can voluntarily deregister by returning all treasury funds to depositors or transferring them to another registered pool. Involuntary deregistration requires a dispute (see below).
+Pools must update their `treasury_balance_attestation` at least monthly. For on-chain treasuries, this is automatic (the balance is publicly readable). For off-chain treasuries (bank accounts, endowment funds), the pool must provide a signed attestation from an approved auditor or custodian. A pool whose attestation is more than 90 days stale is automatically flagged as `suspended` and excluded from the scoreboard.
 
 ### Disputes
 
-If evidence emerges that a pool is reporting fraudulent balances or has been compromised, any participant can file a dispute. Dispute resolution options (the protocol should support at least one):
-
-- **On-chain arbitration.** A bonded dispute mechanism (similar to Kleros or UMA's optimistic oracle) where challengers post a bond, and a panel of randomly selected jurors adjudicates.
-- **Federated council.** A council of pool operators votes on disputes, with supermajority required for suspension.
-
-Disputed pools are flagged but not immediately suspended, to prevent griefing attacks that temporarily remove legitimate pools from the scoreboard.
+If evidence emerges that a pool is reporting fraudulent balances or has been compromised, any participant can file a dispute. The protocol should support at least one dispute resolution mechanism (e.g., a bonded challenge where the challenger posts a stake, and a panel of pool operators or independent arbitrators adjudicates). Disputed pools are flagged but not immediately suspended, to prevent griefing attacks.
 
 ### Implementation Options
 
-**On-chain registry.** A smart contract on a public blockchain. Advantages: permissionless, censorship-resistant, globally accessible. Disadvantages: gas costs, blockchain dependency.
+**On-chain registry.** A smart contract on a public blockchain. Permissionless, censorship-resistant, globally accessible. Gas costs and blockchain dependency.
 
-**DNS-like federation.** Each pool publishes a standardized JSON file at a well-known URL (e.g., `/.well-known/earth-optimization-pool.json`). A set of aggregators crawl and index these files. Advantages: no blockchain dependency, familiar infrastructure. Disadvantages: requires trusted aggregators, vulnerable to DNS hijacking.
+**DNS-like federation.** Each pool publishes a standardized JSON file at a well-known URL (e.g., `/.well-known/earth-optimization-pool.json`). Aggregators crawl and index these files. No blockchain dependency, but requires trusted aggregators.
 
-The protocol should specify the data model and validation rules, not the implementation layer. Either approach satisfies the requirements if it provides permissionless registration, public auditability, and enforced metric constraints.
+The protocol should specify the data model and validation rules, not the implementation layer. Either approach works if it provides permissionless registration, public auditability, and enforced metric constraints.
 
 ## Token Mechanics
 
@@ -187,92 +182,68 @@ The protocol should specify the data model and validation rules, not the impleme
 
 The prize mechanism uses two token types:
 
-- **VOTE tokens** represent verified participation. They determine credit allocation when the treasury releases.
-- **PRIZE tokens** represent philanthropic deposits into the prize pool. They are claims on the treasury.
+- **VOTE tokens** represent verified support for the outcome. They determine claim eligibility when the treasury releases.
+- **PRIZE tokens** represent deposits into the prize pool. They are the dominant assurance contract: claims on the treasury that return principal plus interest on failure.
 
 These are protocol primitives. Other instruments (bonds, revenue-share contracts, campaign financing vehicles) are tools that contestants or supporters might use to cause implementation. They are outside the scope of this protocol.
 
 ### VOTE Tokens
 
-**Minting.** One VOTE token is minted when a person completes proof-of-personhood verification and registers with a participating pool. One person, one token, across all pools. The token is minted by the registration pool but recognized by all pools (see §5 for cross-pool recognition).
+**What the vote means.** A VOTE token represents two things: (1) a verified human counted in the coalition demanding the 1% treaty, and (2) a claim on the prize pool if global median health and wealth improve. Registration includes the 1% treaty referendum (yes/no) and the military-vs-clinical-trials allocation (with Optimitron evidence). The VOTE token is minted on completion of both questions.
 
-**Recruiter attribution.** When person B registers using a referral link from person A, person A earns a recruiter credit. The protocol tracks recruiter credits separately from VOTE tokens. Recruiter credits determine bonus payouts (a fixed percentage of the treasury allocated to recruitment incentives) but do not affect the one-person-one-vote guarantee for base claims.
+**Minting.** One VOTE token is minted when a person completes proof-of-personhood verification, answers the two registration questions, and registers with a participating pool. One person, one token, across all pools. The token is minted by the registration pool but recognized by all pools via the global nullifier set.
 
-**Transfer constraints.** Two options, each with trade-offs:
-
-- **Non-transferable (soulbound).** VOTE tokens cannot be transferred. Prevents vote-buying markets but also prevents legitimate delegation. A dead voter's token is burned on liveness expiry (§2).
-- **Transferable with friction.** VOTE tokens can be transferred but with a time-lock (e.g., 6-month delay between transfer initiation and completion). This makes vote-buying expensive (the buyer must wait 6 months, during which the seller could re-verify and reclaim) while allowing edge cases like key migration.
-
-The protocol should default to non-transferable and allow individual pools to enable transfers with friction if their governance chooses.
+**Non-transferable (soulbound).** VOTE tokens cannot be transferred. One person, one vote, no secondary market. A dead voter's token is burned on liveness expiry. This eliminates vote-buying, coercion (there is nothing to surrender), and speculative markets in voting rights.
 
 **Expiry.** VOTE tokens expire when the underlying identity attestation expires (12 months). Holders must re-verify annually. Expired tokens are excluded from claim calculations.
 
+**Recruiter attribution.** Individual pools may offer recruitment bonuses (e.g., a share of the pool's own allocation to voters who bring in new registrants). This is a pool-level marketing decision, not a protocol requirement. The protocol only tracks the one-person-one-vote base layer.
+
 ### PRIZE Tokens
 
-**Minting.** PRIZE tokens are minted when a depositor sends funds to a participating pool's treasury. The token represents a claim on the deposited amount. One PRIZE token per unit of currency deposited (the denomination currency is set per pool; cross-pool denomination is handled at settlement).
+**Minting.** PRIZE tokens are minted when a depositor sends funds to a participating pool's treasury. One PRIZE token per unit of currency deposited.
 
-**On failure.** If the terminal metrics are not met by the prize deadline (or if the prize has no deadline, after a depositor-specified lock-up period), the depositor can redeem PRIZE tokens for their original deposit plus accrued interest (interest generated by investing the treasury in low-risk instruments during the lock-up period).
+**On failure (the dominant assurance guarantee).** If the terminal metrics are not met by the prize deadline (or after a depositor-specified lock-up period), the depositor redeems PRIZE tokens for their original deposit plus accrued interest. This is what makes participation a dominant strategy: you are better off depositing than not, regardless of whether the prize succeeds.
 
-**On success.** When the terminal metric oracle (§7) triggers treasury release, PRIZE token deposits are distributed to VOTE holders proportionally. PRIZE tokens are burned. The depositor's principal is gone; it has been redistributed to the people who caused the outcome.
+**Where the interest comes from.** During the lock-up period, the treasury is invested in low-risk, liquid instruments: government bonds (US Treasuries, sovereign debt from AAA-rated countries), money market funds, or equivalent. The pool operator (or a designated custodian) manages these investments. The investment policy is published in the pool's registry entry so depositors can evaluate risk before depositing. The interest rate is whatever the underlying instruments yield, not a promised rate. The protocol requires that treasury investments be (1) liquid enough to honor redemptions within 30 days and (2) published transparently so depositors and auditors can verify the treasury's real value.
 
-**Cross-pool fungibility.** A PRIZE token minted in Pool A is not directly fungible with one minted in Pool B (different treasuries, possibly different currencies). However, the settlement protocol (§5) ensures that the combined value of all PRIZE deposits across all pools is distributed proportionally to all VOTE holders. From the voter's perspective, it does not matter which pool holds the money.
+**On success.** When the terminal metric oracle triggers treasury release, PRIZE token deposits are distributed to VOTE holders. Each verified voter can claim an equal share from each pool (see §5). PRIZE tokens are burned. The depositor's principal is gone; it has been redistributed to the people who caused the outcome.
 
-## Cross-Pool Claim Settlement
+## Cross-Pool Claims
 
 ### Problem
 
-Voter V registered in Pool A. Pools A, B, and C all hold treasury funds. When the oracle triggers release, V must receive a proportional share from all three pools, not just Pool A. This requires moving funds (or entitlements) across pool boundaries.
+Voter V registered in Pool A. Pools A, B, and C all hold treasury funds. When the oracle triggers release, V must be able to claim from all three pools, not just Pool A.
 
-### Payout Formula
+### Direct Claims (No Netting)
 
-Each verified voter's share of the total prize:
-
-$$
-\text{share}_i = \frac{1}{N} \times \sum_{p \in \text{pools}} T_p
-$$
-
-Where $N$ is the total number of unique verified voters across all pools and $T_p$ is the treasury balance of pool $p$. Every voter gets an equal share of the combined treasury, regardless of registration pool.
-
-If recruiter bonuses are enabled, a fixed percentage $r$ of the total treasury is allocated to recruiter credits before the equal split:
+Each pool independently divides its treasury by $N$ (total unique verified voters across all pools) and allows any verified voter to claim:
 
 $$
-\text{base\_share}_i = \frac{1}{N} \times (1 - r) \times \sum_{p \in \text{pools}} T_p
+\text{claim from pool } p = \frac{T_p}{N}
 $$
 
+The voter visits each pool (or a front-end that aggregates claims), proves they are a verified unique human via their identity attestation, and collects $T_p / N$ from each pool. The voter's total payout is:
+
 $$
-\text{recruiter\_bonus}_i = \frac{c_i}{\sum_j c_j} \times r \times \sum_{p \in \text{pools}} T_p
+\text{total}_i = \sum_{p \in \text{pools}} \frac{T_p}{N} = \frac{1}{N} \sum_{p \in \text{pools}} T_p
 $$
 
-Where $c_i$ is voter $i$'s recruiter credit count.
+No inter-pool fund transfers. No netting. No settlement window. Each pool manages its own treasury and pays out independently. The only shared state is $N$ (the global voter count from the nullifier set) and the identity attestation that proves the claimant is one of those $N$ people.
 
-### Settlement Process
+### Why This Works
 
-**Step 1: Freeze.** When the oracle triggers release, all pools simultaneously freeze: no new deposits, no new voter registrations, no token transfers.
+The previous version of this section described a five-step netting process where pools transferred funds between each other to equalize per-voter payouts. That complexity was unnecessary. Since every voter gets the same share ($1/N$) from each pool, and each pool knows its own $T_p$ and can read $N$ from the global nullifier set, every pool can pay out independently. The voter's total is identical. The only coordination is agreeing on $N$, which the identity layer already provides.
 
-**Step 2: Snapshot.** Each pool publishes a signed snapshot of its voter list (identity nullifiers only, not real identities) and treasury balance. The global voter count $N$ is computed by taking the union of all nullifier sets (deduplication is guaranteed by the identity layer).
+### Graduated Release
 
-**Step 3: Net obligations.** For each pool, compute the difference between what it owes (its share of total voters times its treasury) and what it holds. Pools with more money per voter than the global average owe the surplus to pools with less.
-
-**Step 4: Transfer.** Net transfers occur between pool treasuries. For on-chain pools, this is a smart contract call. For off-chain pools, this is a wire transfer executed by the pool operator within a specified settlement window (e.g., 30 days).
-
-**Step 5: Distribute.** Each pool distributes to its registered voters. After netting, every pool holds exactly the right amount to pay its voters at the global per-voter rate.
+The oracle may trigger partial releases as metrics improve incrementally (e.g., 10% of each pool's treasury when median HALY improves by +0.5 years). Each pool applies the same release percentage to its own treasury. No cross-pool coordination needed beyond the shared oracle trigger.
 
 ### Failure Modes
 
-**Pool goes offline.** If a pool fails to publish a snapshot within the settlement window, its voters are still counted (their nullifiers are in the global set from registration) but its treasury is excluded from the combined total until the pool responds. Voters registered in the offline pool receive shares from the remaining pools. The offline pool's treasury is held in escrow until the operator resurfaces or a dispute mechanism releases it.
+**Pool goes offline.** The voter cannot claim from that pool. Their claims from all other pools are unaffected. The offline pool's treasury is held until the operator resurfaces or a dispute mechanism releases it to depositors.
 
-**Pool refuses to settle.** A pool that publishes a snapshot but refuses to transfer net obligations is flagged as `suspended` and subjected to the dispute mechanism (§3). Its treasury remains locked. Future pools can require on-chain treasuries with programmatic settlement to eliminate this failure mode.
-
-**Pool is undercapitalized.** If a pool's actual treasury is less than its attested balance, the settlement protocol distributes what is actually available. The pool operator is flagged for fraud, and the dispute mechanism determines whether remaining funds should be clawed back from the operator.
-
-### Settlement Timing
-
-Two options:
-
-- **On-trigger settlement.** Settlement occurs once, when the oracle triggers release. Simpler, but creates a single high-stakes event.
-- **Periodic partial settlement.** The oracle triggers partial releases as metrics improve incrementally (e.g., 10% of treasury released for each 1-year improvement in median HALY). This reduces the stakes of any single settlement event and provides earlier rewards to voters.
-
-The protocol should support both. Individual pools can choose their release schedule as long as they honor cross-pool obligations at each release event.
+**Pool is undercapitalized.** If a pool's actual treasury is less than attested, it pays out what it has. The pool operator is flagged for fraud via the registry dispute mechanism (§3). Other pools are unaffected.
 
 ## Scoreboard Aggregation
 
@@ -284,7 +255,7 @@ The prize mechanism's political power comes from a single number: the combined s
 
 The scoreboard aggregates two numbers:
 
-- **Combined voter count.** The number of unique verified humans across all participating pools. This must be deduplicated (a person registered in two pools counts once).
+- **Combined voter count.** The number of unique verified humans across all participating pools. Deduplicated via the global nullifier set (a person registered in two pools counts once).
 - **Combined pool size.** The sum of all attested treasury balances across all participating pools.
 
 ### API Specification
@@ -296,15 +267,15 @@ GET /.well-known/earth-optimization-pool/status
 
 Response {
   pool_id: bytes32,
-  voter_count: uint64,           // Unique voters in THIS pool
-  voter_nullifiers_root: bytes32, // Merkle root of this pool's nullifier set
-  treasury_balance: uint256,      // Attested balance in base currency (USD)
-  attestation_timestamp: uint64,  // When balance was last attested
-  signature: bytes                // Pool operator's signature over this payload
+  voter_count: uint64,
+  voter_nullifiers_root: bytes32,
+  treasury_balance: uint256,
+  attestation_timestamp: uint64,
+  signature: bytes
 }
 ```
 
-An aggregator (run by anyone) queries all registered pools, computes the union of nullifier sets (using Merkle proofs to deduplicate without revealing identities), and publishes:
+An aggregator (run by anyone) queries all registered pools, computes the union of nullifier sets, and publishes:
 
 ```
 GET /api/scoreboard
@@ -314,53 +285,46 @@ Response {
   total_pool_size_usd: uint256,
   pool_count: uint32,
   pools: [ { pool_id, voter_count, treasury_balance, status } ],
-  computed_at: uint64,
-  aggregator_signature: bytes
+  computed_at: uint64
 }
 ```
 
-Any front-end can query any aggregator (or run its own) to display the global totals.
+Any front-end can query any aggregator (or run its own) to display the global totals. Since the computation is deterministic (given the same pool status responses), any two honest aggregators produce identical results. Front-ends can query several and flag discrepancies.
 
 ### Tamper Evidence
 
-**Inflated voter count.** A pool could report more voters than it actually has. Mitigation: the pool publishes its nullifier Merkle root. An auditor can request the full nullifier set and verify each entry against the identity provider's records. Pools that refuse to provide nullifier proofs on audit are flagged as `suspended`.
+**Inflated voter count.** A pool publishes its nullifier Merkle root. Auditors can request the full nullifier set and verify each entry against the identity provider's records. Pools that refuse are flagged as `suspended`.
 
-**Inflated treasury balance.** A pool could report a higher balance than it holds. Mitigation: for on-chain treasuries, the balance is independently verifiable. For off-chain treasuries, the attestation must come from an approved auditor, and the protocol should move toward requiring on-chain proof-of-reserves over time.
+**Inflated treasury balance.** For on-chain treasuries, the balance is independently verifiable. For off-chain treasuries, the attestation must come from an approved auditor. The protocol should move toward requiring on-chain proof-of-reserves over time.
 
-**Aggregator manipulation.** A malicious aggregator could misreport totals. Mitigation: multiple independent aggregators. Front-ends can query several and flag discrepancies. Since the computation is deterministic (given the same pool status responses), any two honest aggregators produce identical results.
-
-### Latency
-
-Pool status endpoints should update at least daily. Aggregators should recompute at least every hour. For front-end display purposes, hourly resolution is sufficient; the scoreboard is a political tool (showing coalition size), not a financial ticker.
+Pool status endpoints should update at least daily. Aggregators should recompute at least every hour. The scoreboard is a political tool (showing coalition size), not a financial ticker.
 
 ## Terminal Metric Oracle
 
 ### Problem
 
-The entire mechanism depends on a single trigger: did global median HALY and global median real after-tax income actually improve? If this measurement is wrong, gameable, or disputed without resolution, the treasury either releases when it should not (rewarding failure) or refuses to release when it should (punishing success). Oracle design is the credibility bottleneck of the entire system.
+The entire mechanism depends on a single trigger: did global median HALY and global median real after-tax income actually improve? If this measurement is wrong, gameable, or disputed, the treasury either releases when it should not (rewarding failure) or refuses to release when it should (punishing success). Oracle design is the credibility bottleneck of the entire system.
 
 ### What Is Measured
 
-**Global median healthy life years (HALY).** The median number of years a person born anywhere on Earth can expect to live in full health, as measured by the WHO's Health-Adjusted Life Expectancy methodology or equivalent. This is not life expectancy (which counts years lived in poor health). It is the quality-adjusted metric. Global, not per-jurisdiction: the prize rewards improving the species-level number, not cherry-picking which countries count.
+**Global median healthy life years (HALY).** The median number of years a person born anywhere on Earth can expect to live in full health, as measured by the WHO's Health-Adjusted Life Expectancy methodology or equivalent. This is not life expectancy (which counts years lived in poor health). It is the quality-adjusted metric. Global, not per-country: the prize rewards improving the species-level number, not cherry-picking which countries count.
 
 **Global median real after-tax income.** The global median household's annual disposable income after taxes and transfers, adjusted for purchasing power parity and inflation. Source: World Bank, OECD, or equivalent global data aggregators.
 
 ### Who Measures
 
-The protocol does not rely on a single oracle provider. It specifies an oracle interface and accepts reports from any provider that meets credibility requirements:
+**Institutional data.** WHO, World Bank, and OECD already publish global HALY and income figures with established methodologies. The oracle accepts their published figures directly. These are the most-measured numbers on Earth. The oracle's primary job is reading an annual report, not building novel measurement infrastructure.
 
-**Tier 1 (preferred).** WHO, World Bank, OECD, or national statistical offices. These institutions already publish the relevant data with established methodologies. The oracle accepts their published figures directly.
+**Decentralized surveys.** Institutional data has two weaknesses: it lags by 1-3 years, and it depends on national statistical offices with uneven quality. The protocol should also support decentralized surveys collected by the same verified voter base. The identity layer already provides a global network of verified humans. Periodic health and income surveys (phone-based, app-based, or integrated into the voter re-verification process) would provide an independent, near-real-time data source that does not depend on any government or institution. This is not a replacement for institutional data; it is a cross-check and a gap-filler for countries with weak statistical infrastructure. Over time, as the voter base grows, decentralized survey data may become more comprehensive than institutional sources for the specific metrics the prize cares about.
 
-**Tier 2 (supplementary).** Independent academic consortia that replicate Tier 1 measurements using publicly available microdata. These serve as cross-checks.
-
-**Tier 3 (fallback).** If Tier 1 and Tier 2 providers disagree or are unavailable, a bonded oracle network (similar to UMA or Chainlink) where data providers stake capital on their reported values and lose their stake if adjudicated as incorrect.
+**Dispute resolution.** If an institutional report is contested (e.g., evidence that a national statistical office inflated its figures, affecting the global aggregate), any participant can file a dispute by posting a bond. An independent academic panel reviews the evidence and issues a binding ruling. If the challenger wins, the report is rejected and the provider must resubmit corrected data; the challenger's bond is returned plus a reward. If the challenger loses, the bond is forfeited.
 
 ### Trigger Thresholds
 
-The protocol should support graduated release rather than binary all-or-nothing:
+The protocol supports graduated release rather than binary all-or-nothing:
 
-| Improvement in Median HALY | Treasury Released |
-|:---------------------------|:------------------|
+| Improvement in Global Median HALY | Treasury Released |
+|:----------------------------------|:------------------|
 | Baseline established (year 0) | 0% |
 | +0.5 years sustained for 3 years | 10% |
 | +1.0 years sustained for 3 years | 25% |
@@ -371,53 +335,13 @@ Equivalent thresholds for median real income (e.g., +5% sustained for 3 years tr
 
 The "sustained for N years" requirement prevents short-term manipulation (a temporary measurement anomaly or methodology change could spike the numbers for one reporting period, then revert).
 
-### Dispute Resolution
-
-If a Tier 1 provider's report is contested (e.g., a government pressured its statistical office to inflate HALY figures), any participant can file a dispute by posting a bond. The dispute process:
-
-1. **Challenge period.** 90 days after an oracle report is published, during which disputes can be filed.
-2. **Evidence submission.** The challenger presents evidence of measurement error or manipulation. The oracle provider responds.
-3. **Adjudication.** A panel drawn from Tier 2 providers (independent academics) reviews the evidence and issues a binding ruling. If the challenger wins, the oracle report is rejected and the provider must resubmit corrected data. The challenger's bond is returned plus a reward. If the challenger loses, their bond is forfeited.
-
 ### Gaming Resistance
 
-**Methodology changes.** The WHO or World Bank could change how HALY or income is calculated, producing apparent improvement without real change. Mitigation: the protocol locks measurement methodology at baseline. Any change in methodology requires re-baselining, which resets the improvement clock.
+**Methodology changes.** The WHO or World Bank could change how HALY or income is calculated, producing apparent improvement without real change. Mitigation: the protocol locks measurement methodology at baseline. Any methodology change requires re-baselining, which resets the improvement clock.
 
-**Selective reporting.** Data providers could exclude unhealthy or poor subpopulations from global aggregates. Mitigation: Tier 2 cross-checks using independent data sources (hospital records, insurance claims, mortality registries, satellite-derived economic indicators).
+**Selective reporting.** Data providers could exclude unhealthy or poor subpopulations from global aggregates. Mitigation: decentralized survey cross-checks using the voter base, plus independent data sources (hospital records, insurance claims, mortality registries, satellite-derived economic indicators).
 
-**Coverage gaps.** Global medians depend on data from countries with weak statistical infrastructure. Mitigation: the protocol specifies minimum population coverage (e.g., data must represent at least 80% of the global population). Improvements measured from a partial sample do not trigger release.
-
-## Attack Vectors
-
-### Sybil Attacks
-
-**Threat.** An attacker creates many fake identities to claim a disproportionate share of the treasury.
-
-**Mitigation.** The identity layer (§2) requires proof-of-personhood with cross-pool deduplication. The cost of a Sybil attack equals the cost of defeating the identity provider (e.g., manufacturing fake irises for World ID, or corrupting enough vouchers for BrightID). The protocol's security is bounded by the weakest approved identity provider; the approved provider list should be conservative.
-
-### Malicious Pools
-
-**Threat.** An adversary (e.g., a defense contractor opposed to military spending reallocation) launches a pool to disrupt the network.
-
-**Mitigation.** Under metric-standard pooling, disruption is structurally impossible. A malicious pool that commits to the standard metrics and deposits money has just donated to the combined treasury. A malicious pool that commits to different metrics cannot register (§3). A malicious pool that commits to the standard metrics but holds no money adds nothing to the scoreboard but also subtracts nothing. The worst a malicious pool can do is register without depositing, which wastes a registry entry and nothing else.
-
-### Oracle Manipulation
-
-**Threat.** A government or interest group corrupts the oracle to trigger (or prevent) treasury release.
-
-**Mitigation.** Multi-source oracle with Tier 2 cross-checks and a bonded dispute mechanism (§7). Corrupting WHO, World Bank, and an independent academic consortium simultaneously is substantially harder than corrupting any single source. The dispute mechanism provides a correction pathway if corruption is detected.
-
-### Regulatory Capture
-
-**Threat.** A government bans participation in the prize mechanism within its jurisdiction.
-
-**Mitigation.** The protocol is jurisdiction-agnostic. Voters use zero-knowledge identity proofs that do not reveal their location. Pools can operate in any jurisdiction. A ban in one country does not affect pools or voters elsewhere. The scoreboard aggregation layer is decentralized (anyone can run an aggregator). A government that bans participation reduces its own citizens' claims without affecting the global mechanism.
-
-### Treasury Theft
-
-**Threat.** An attacker compromises a pool's treasury (hacking a smart contract, embezzlement from an off-chain account).
-
-**Mitigation.** For on-chain treasuries: audited smart contracts, multisig custody, timelock on large withdrawals, bug bounty programs. For off-chain treasuries: regulated custodians, insurance, periodic proof-of-reserves attestations. The pool registry (§3) requires balance attestations; a sudden drop in attested balance triggers automatic suspension and investigation. The settlement protocol (§5) excludes suspended pools from distribution until the situation is resolved.
+**Coverage gaps.** Global medians depend on data from countries with weak statistical infrastructure. Mitigation: the protocol specifies minimum population coverage (e.g., data must represent at least 80% of the global population). Improvements measured from a partial sample do not trigger release. Decentralized surveys help fill coverage gaps where institutional data is thin.
 
 ## Implementation Roadmap
 
@@ -425,7 +349,7 @@ If a Tier 1 provider's report is contested (e.g., a government pressured its sta
 
 **State.** One canonical pool with proof-of-personhood registration and a single treasury. No interoperability needed because there is only one pool.
 
-**Deliverables.** Identity attestation interface (§2), VOTE and PRIZE token contracts (§4), basic scoreboard (just one pool's numbers), manual oracle reporting (Tier 1 data published by the pool operator with a dispute email address).
+**Deliverables.** Identity attestation interface (§2), VOTE and PRIZE token contracts (§4), basic scoreboard (just one pool's numbers), manual oracle reporting (Tier 1 institutional data published by the pool operator with a dispute email address), treasury invested in government bonds with published investment policy.
 
 **Success criterion.** 10,000+ verified voters, treasury > $1M.
 
@@ -433,25 +357,17 @@ If a Tier 1 provider's report is contested (e.g., a government pressured its sta
 
 **State.** A second pool launches. The registry and cross-pool identity recognition become necessary.
 
-**Deliverables.** Pool registry contract or federation (§3), global nullifier set for cross-pool deduplication (§2), aggregated scoreboard (§6) showing combined totals from both pools.
+**Deliverables.** Pool registry (§3), global nullifier set for cross-pool deduplication (§2), aggregated scoreboard (§6) showing combined totals from both pools. Direct cross-pool claims (§5) enabled (any voter claims from any pool).
 
-**Success criterion.** 2+ pools operating independently, scoreboard showing combined voter count and treasury.
+**Success criterion.** 2+ pools operating independently, scoreboard showing combined voter count and treasury, at least one cross-pool claim executed.
 
-### Phase 3: Cross-Pool Settlement
+### Phase 3: Decentralized Surveys
 
-**State.** The combined network is large enough that treasury release becomes plausible. Settlement must work.
+**State.** The voter base is large enough to produce statistically meaningful survey data.
 
-**Deliverables.** Settlement protocol (§5) with netting, transfer, and distribution. Automated settlement for on-chain pools; documented manual process for off-chain pools.
+**Deliverables.** Periodic health and income surveys integrated into the voter re-verification process (§7). Survey data published alongside institutional data for cross-checking. Graduated release thresholds activated.
 
-**Success criterion.** Successful test settlement (a small partial release triggered by a mock oracle event, with funds flowing correctly across pool boundaries).
-
-### Phase 4: Decentralized Oracle
-
-**State.** The network is large enough that a single oracle provider is a credibility risk.
-
-**Deliverables.** Multi-source oracle (§7) with Tier 1, Tier 2, and Tier 3 providers. Bonded dispute mechanism. Graduated release thresholds.
-
-**Success criterion.** At least 3 independent oracle providers reporting consistent measurements, with one successful dispute resolution (to prove the mechanism works).
+**Success criterion.** Survey data covering 50+ countries, correlation with institutional data above 0.9 for overlapping populations.
 
 ---
 
