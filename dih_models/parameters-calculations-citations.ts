@@ -8394,7 +8394,7 @@ export const citations: Record<string, Citation> = {
         ],
         issued: { 'date-parts': [[2025]] },
         publisher: "Institute for Accelerated Medicine",
-        URL: "https://political-dysfunction-tax.warondisease.org",
+        URL: "https://manual.warondisease.org/knowledge/appendix/political-dysfunction-tax.html",
         note: "Working Draft",
   },
   "post-1962-drug-approval-drop": {
