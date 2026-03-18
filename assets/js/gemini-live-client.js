@@ -140,17 +140,10 @@ var GeminiLiveClient = (function () {
       return;
     }
 
-    // Log all message keys for debugging transcripts
-    var msgKeys = Object.keys(msg);
-    if (msgKeys.indexOf("setupComplete") === -1) {
-      console.log("[gemini-live] msg keys:", msgKeys, msg.serverContent ? "sc keys: " + Object.keys(msg.serverContent) : "");
-    }
-
     var sc = msg.serverContent;
     if (!sc) {
       // Check for input transcript at top level
       if (msg.inputTranscript) {
-        console.log("[gemini-live] inputTranscript (top):", msg.inputTranscript);
         if (this.onInputTranscript) this.onInputTranscript(msg.inputTranscript);
       }
       return;
@@ -158,13 +151,11 @@ var GeminiLiveClient = (function () {
 
     // Input transcript (what Gemini thinks the user said)
     if (sc.inputTranscript) {
-      console.log("[gemini-live] inputTranscript:", sc.inputTranscript);
       if (this.onInputTranscript) this.onInputTranscript(sc.inputTranscript);
     }
 
     // Output transcript (text of what Gemini spoke)
     if (sc.outputTranscript) {
-      console.log("[gemini-live] outputTranscript:", sc.outputTranscript);
       if (this.onOutputTranscript) this.onOutputTranscript(sc.outputTranscript);
     }
 

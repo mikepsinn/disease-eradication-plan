@@ -41,40 +41,92 @@ const TEST_HTML = `<!DOCTYPE html>
   <meta name="quarto:offset" content="">
   <title>Ask Wishonia</title>
   <link href="https://fonts.googleapis.com/css?family=Orbitron:400,700,900&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Yellowtail&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/css/chat-widget.css">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { height: 100%; overflow: hidden; }
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      background: #0d0d0d;
-      color: #ececec;
-      height: 100vh; width: 100vw; overflow: hidden;
+      background: #0d0d0d; color: #ececec;
+      display: flex;
     }
 
-    /* === Retro background (subtle) === */
+    /* === Sidebar === */
+    .sidebar {
+      width: 260px; background: #111;
+      border-right: 1px solid rgba(54,226,248,0.1);
+      display: flex; flex-direction: column; flex-shrink: 0;
+      z-index: 20; transition: transform 0.2s;
+    }
+    .sidebar-header {
+      padding: 12px 16px;
+      border-bottom: 1px solid rgba(54,226,248,0.1);
+    }
+    .new-chat-btn {
+      width: 100%; padding: 10px 16px;
+      background: rgba(209,0,177,0.15); color: #C6CBF5;
+      border: 1px solid rgba(209,0,177,0.3); border-radius: 8px;
+      cursor: pointer; font-size: 14px;
+      font-family: 'Orbitron', sans-serif; letter-spacing: 0.05em;
+      transition: all 0.2s;
+    }
+    .new-chat-btn:hover {
+      background: rgba(209,0,177,0.25); border-color: rgba(209,0,177,0.5);
+    }
+    .chat-list { flex: 1; overflow-y: auto; padding: 8px 0; }
+    .chat-list-item {
+      display: flex; align-items: center;
+      padding: 10px 16px; cursor: pointer;
+      border-left: 3px solid transparent;
+      transition: all 0.15s; font-size: 13px; color: #999;
+    }
+    .chat-list-item:hover { background: rgba(255,255,255,0.04); color: #ccc; }
+    .chat-list-item.active {
+      background: rgba(209,0,177,0.08);
+      border-left-color: #d100b1; color: #ececec;
+    }
+    .chat-list-title { flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .chat-list-delete {
+      opacity: 0; color: #666; background: none; border: none;
+      cursor: pointer; font-size: 16px; padding: 0 4px; line-height: 1;
+      transition: opacity 0.15s;
+    }
+    .chat-list-item:hover .chat-list-delete { opacity: 1; }
+    .chat-list-delete:hover { color: #ff4444; }
+
+    /* Hamburger (mobile) */
+    .hamburger {
+      display: none; position: fixed; top: 10px; left: 10px; z-index: 30;
+      background: rgba(20,10,30,0.9); border: 1px solid rgba(54,226,248,0.2);
+      color: #C6CBF5; font-size: 20px; padding: 6px 10px; border-radius: 6px; cursor: pointer;
+    }
+    .sidebar-overlay {
+      display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 15;
+    }
+    @media (max-width: 800px) {
+      .sidebar { position: fixed; left: 0; top: 0; bottom: 0; transform: translateX(-100%); }
+      .sidebar.open { transform: translateX(0); }
+      .hamburger { display: block; }
+      .sidebar-overlay.show { display: block; }
+    }
+
+    /* === Main area === */
+    .main-area { flex: 1; position: relative; min-width: 0; }
     .bg-grid {
-      position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none;
+      position: absolute; inset: 0; z-index: 0; pointer-events: none;
       background: radial-gradient(ellipse at center bottom, rgba(127,0,173,0.15) 0%, transparent 60%);
     }
 
-    /* === Full-page chat layout === */
-    html, body { overflow: hidden; }
-
-    /* Hide FAB - the page IS the chat */
+    /* === Chat widget overrides === */
     .chat-fab { display: none !important; }
-
-    /* Panel = full viewport */
     .chat-panel, .chat-panel.chat-visible {
-      position: fixed !important; inset: 0 !important;
-      width: 100vw !important; height: 100vh !important; max-height: 100vh !important;
+      position: absolute !important; inset: 0 !important;
+      width: 100% !important; height: 100% !important; max-height: 100% !important;
       border-radius: 0 !important; border: none !important; box-shadow: none !important;
       display: flex !important; flex-direction: column !important;
       z-index: 5 !important; background: #0d0d0d !important;
       animation: none !important;
     }
-
-    /* Header */
     .chat-header {
       background: rgba(20,10,30,0.95) !important;
       padding: 10px 20px !important; border-bottom: 1px solid rgba(54,226,248,0.15);
@@ -87,16 +139,11 @@ const TEST_HTML = `<!DOCTYPE html>
       -webkit-background-clip: text; -webkit-text-fill-color: transparent;
     }
     .chat-newchat-btn, .chat-fullscreen-btn, .chat-close-btn { display: none !important; }
-
-    /* Messages - scrollable center column */
     .chat-messages {
-      flex: 1 1 0 !important; min-height: 0 !important; /* key for flex scroll */
+      flex: 1 1 0 !important; min-height: 0 !important;
       overflow-y: auto !important; background: transparent !important;
-      padding: 24px 16px !important;
-      width: 100%;
+      padding: 24px 16px !important; width: 100%;
     }
-
-    /* Bubbles */
     .chat-msg {
       max-width: 100% !important; border-radius: 8px !important;
       font-size: 15px !important; line-height: 1.7 !important;
@@ -111,8 +158,6 @@ const TEST_HTML = `<!DOCTYPE html>
       background: transparent !important; color: #d1d1d1 !important;
       align-self: flex-start !important; padding-left: 0 !important;
     }
-
-    /* Welcome */
     .chat-welcome { color: #888 !important; padding: 60px 20px !important; }
     .chat-welcome p { font-size: 16px !important; color: #aaa; }
     .chat-hints { max-width: 500px; margin: 16px auto 0; }
@@ -124,14 +169,11 @@ const TEST_HTML = `<!DOCTYPE html>
     .chat-hint-btn:hover {
       border-color: #d100b1 !important; background: rgba(209,0,177,0.08) !important;
     }
-
-    /* Input bar - full width, fixed at bottom */
     .chat-input-area {
       background: rgba(20,10,30,0.95) !important;
       border-top: 1px solid rgba(54,226,248,0.15) !important;
       padding: 12px 20px !important; flex-shrink: 0 !important;
-      width: 100%;
-      position: relative;
+      width: 100%; position: relative;
     }
     .chat-input {
       background: rgba(255,255,255,0.06) !important; color: #ececec !important;
@@ -153,19 +195,14 @@ const TEST_HTML = `<!DOCTYPE html>
       background: #28a745 !important; color: #fff !important;
       border-color: #28a745 !important;
     }
-
-    /* Links */
     .chat-msg a { color: #36E2F8 !important; }
-
-    /* Indicators */
     .chat-typing { color: #888; }
+    .chat-thinking-quip { color: #888 !important; }
     .chat-waveform-bar { background: #d100b1 !important; }
     .chat-listening-ring { border-color: #d100b1 !important; }
     .chat-voice-loading span, .chat-listening-indicator span { color: #888; }
     .chat-tts-btn { color: #888 !important; }
     .chat-tts-btn:hover { color: #d100b1 !important; }
-
-    /* Voice card dark overrides */
     .chat-voice-card { background: rgba(255,255,255,0.04) !important; }
     .chat-thinking summary { color: #666 !important; }
     .chat-thinking-text {
@@ -173,13 +210,23 @@ const TEST_HTML = `<!DOCTYPE html>
       border-color: rgba(255,255,255,0.08) !important;
     }
     .chat-voice-note { color: #666 !important; }
+    .chat-codeblock { background: rgba(255,255,255,0.06) !important; color: #ccc !important; }
+    .chat-inline-code { background: rgba(255,255,255,0.08) !important; color: #ddd !important; }
+    .chat-blockquote { border-left-color: #d100b1 !important; color: #999 !important; }
+    .chat-source-pill {
+      background: rgba(209,0,177,0.1) !important; color: #C6CBF5 !important;
+      border-color: rgba(209,0,177,0.3) !important;
+    }
+    .chat-source-pill:hover {
+      background: rgba(209,0,177,0.2) !important; border-color: #d100b1 !important;
+    }
+    .chat-image-thumb { border: 1px solid rgba(255,255,255,0.08); }
+    .chat-latex-pending { color: #888 !important; }
 
-    /* === Robot - sits on top of input bar, right side === */
+    /* === Robot === */
     .robot-container {
-      position: fixed; z-index: 20; cursor: pointer;
-      right: 20px;
-      width: 100px; height: 110px;
-      /* JS will set bottom dynamically to sit on input bar */
+      position: absolute; z-index: 20; cursor: pointer;
+      right: 20px; width: 100px; height: 110px;
     }
     .robot .head {
       position: absolute; width: 80px; left: 12px; height: 60px;
@@ -233,7 +280,6 @@ const TEST_HTML = `<!DOCTYPE html>
     }
     .robot .arm_left { left: 0; }
     .robot .arm_right { right: 0; }
-
     @keyframes bob {
       0%  { transform: rotate(-3deg); }
       40% { transform: rotate(-3deg); animation-timing-function: cubic-bezier(1,0,0,1); }
@@ -259,8 +305,6 @@ const TEST_HTML = `<!DOCTYPE html>
       75%  { filter: url("#listening-3"); }
       100% { filter: url("#listening-4"); }
     }
-
-    /* Mobile: hide robot body, just show head above input */
     @media (max-width: 800px) {
       .robot-container { right: 10px !important; width: 70px; height: 55px; }
       .robot .head { width: 56px; left: 8px; height: 42px; }
@@ -272,72 +316,232 @@ const TEST_HTML = `<!DOCTYPE html>
   </style>
 </head>
 <body>
-  <div class="bg-grid"></div>
+  <!-- Mobile hamburger -->
+  <button class="hamburger" id="hamburger-btn">&#9776;</button>
+  <div class="sidebar-overlay" id="sidebar-overlay"></div>
 
-  <!-- Robot peeking over the input bar -->
-  <div class="robot-container" id="robot-trigger">
-    <div class="robot" id="robot-el">
-      <div class="neck"></div>
-      <div class="arms"><div class="arm arm_left"></div><div class="arm arm_right"></div></div>
-      <div class="torso"></div>
-      <div class="head">
-        <div class="eyes"><div class="eyeball eyeball_left"></div><div class="eyeball eyeball_right"></div></div>
-        <div class="mouth"><div class="mouth-container"><div class="mouth-container-line"></div></div></div>
-      </div>
+  <!-- Sidebar: chat history -->
+  <div class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <button class="new-chat-btn" id="new-chat-btn">+ New Chat</button>
     </div>
-    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="display:none"><defs>
-      <filter id="speaking-0"><feTurbulence baseFrequency="0.02" numOctaves="3" result="noise" seed="0"/><feDisplacementMap in="SourceGraphic" in2="noise" scale="12"/></filter>
-      <filter id="speaking-1"><feTurbulence baseFrequency="0.02" numOctaves="3" result="noise" seed="30"/><feDisplacementMap in="SourceGraphic" in2="noise" scale="13"/></filter>
-      <filter id="speaking-2"><feTurbulence baseFrequency="0.02" numOctaves="3" result="noise" seed="2"/><feDisplacementMap in="SourceGraphic" in2="noise" scale="12"/></filter>
-      <filter id="speaking-3"><feTurbulence baseFrequency="0.02" numOctaves="3" result="noise" seed="30"/><feDisplacementMap in="SourceGraphic" in2="noise" scale="13"/></filter>
-      <filter id="speaking-4"><feTurbulence baseFrequency="0.1" numOctaves="3" result="noise" seed="4"/><feDisplacementMap in="SourceGraphic" in2="noise" scale="11"/></filter>
-      <filter id="listening-0"><feTurbulence baseFrequency="0.02" numOctaves="3" result="noise" seed="0"/><feDisplacementMap in="SourceGraphic" in2="noise" scale="2"/></filter>
-      <filter id="listening-1"><feTurbulence baseFrequency="0.02" numOctaves="3" result="noise" seed="30"/><feDisplacementMap in="SourceGraphic" in2="noise" scale="3"/></filter>
-      <filter id="listening-2"><feTurbulence baseFrequency="0.02" numOctaves="3" result="noise" seed="2"/><feDisplacementMap in="SourceGraphic" in2="noise" scale="2"/></filter>
-      <filter id="listening-3"><feTurbulence baseFrequency="0.02" numOctaves="3" result="noise" seed="30"/><feDisplacementMap in="SourceGraphic" in2="noise" scale="3"/></filter>
-      <filter id="listening-4"><feTurbulence baseFrequency="0.1" numOctaves="3" result="noise" seed="4"/><feDisplacementMap in="SourceGraphic" in2="noise" scale="1"/></filter>
-    </defs></svg>
+    <div class="chat-list" id="chat-list"></div>
+  </div>
+
+  <!-- Main chat area -->
+  <div class="main-area" id="main-area">
+    <div class="bg-grid"></div>
+
+    <!-- Robot peeking over the input bar -->
+    <div class="robot-container" id="robot-trigger">
+      <div class="robot" id="robot-el">
+        <div class="neck"></div>
+        <div class="arms"><div class="arm arm_left"></div><div class="arm arm_right"></div></div>
+        <div class="torso"></div>
+        <div class="head">
+          <div class="eyes"><div class="eyeball eyeball_left"></div><div class="eyeball eyeball_right"></div></div>
+          <div class="mouth"><div class="mouth-container"><div class="mouth-container-line"></div></div></div>
+        </div>
+      </div>
+      <svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="display:none"><defs>
+        <filter id="speaking-0"><feTurbulence baseFrequency="0.02" numOctaves="3" result="noise" seed="0"/><feDisplacementMap in="SourceGraphic" in2="noise" scale="12"/></filter>
+        <filter id="speaking-1"><feTurbulence baseFrequency="0.02" numOctaves="3" result="noise" seed="30"/><feDisplacementMap in="SourceGraphic" in2="noise" scale="13"/></filter>
+        <filter id="speaking-2"><feTurbulence baseFrequency="0.02" numOctaves="3" result="noise" seed="2"/><feDisplacementMap in="SourceGraphic" in2="noise" scale="12"/></filter>
+        <filter id="speaking-3"><feTurbulence baseFrequency="0.02" numOctaves="3" result="noise" seed="30"/><feDisplacementMap in="SourceGraphic" in2="noise" scale="13"/></filter>
+        <filter id="speaking-4"><feTurbulence baseFrequency="0.1" numOctaves="3" result="noise" seed="4"/><feDisplacementMap in="SourceGraphic" in2="noise" scale="11"/></filter>
+        <filter id="listening-0"><feTurbulence baseFrequency="0.02" numOctaves="3" result="noise" seed="0"/><feDisplacementMap in="SourceGraphic" in2="noise" scale="2"/></filter>
+        <filter id="listening-1"><feTurbulence baseFrequency="0.02" numOctaves="3" result="noise" seed="30"/><feDisplacementMap in="SourceGraphic" in2="noise" scale="3"/></filter>
+        <filter id="listening-2"><feTurbulence baseFrequency="0.02" numOctaves="3" result="noise" seed="2"/><feDisplacementMap in="SourceGraphic" in2="noise" scale="2"/></filter>
+        <filter id="listening-3"><feTurbulence baseFrequency="0.02" numOctaves="3" result="noise" seed="30"/><feDisplacementMap in="SourceGraphic" in2="noise" scale="3"/></filter>
+        <filter id="listening-4"><feTurbulence baseFrequency="0.1" numOctaves="3" result="noise" seed="4"/><feDisplacementMap in="SourceGraphic" in2="noise" scale="1"/></filter>
+      </defs></svg>
+    </div>
   </div>
 
   <script src="/assets/js/gemini-live-client.js" defer></script>
   <script src="/assets/js/audio-utils.js" defer></script>
   <script src="/assets/js/chat-widget.js" defer></script>
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      var robotEl = document.getElementById('robot-el');
-      var robotContainer = document.getElementById('robot-trigger');
+  (function () {
+    var STORE_KEY = 'wishonia-chats';
 
-      // Auto-open chat panel (it becomes the full page)
-      setTimeout(function() {
+    function loadStore() {
+      try {
+        var raw = localStorage.getItem(STORE_KEY);
+        if (raw) { var p = JSON.parse(raw); if (p && p.chats) return p; }
+      } catch (_) {}
+      return { current: null, chats: {} };
+    }
+
+    function saveStore() { localStorage.setItem(STORE_KEY, JSON.stringify(store)); }
+
+    function genId() { return 'chat-' + Date.now() + '-' + Math.random().toString(36).substr(2, 9); }
+
+    function chatTitle(chat) {
+      if (chat.title) return chat.title;
+      for (var i = 0; i < (chat.messages || []).length; i++) {
+        if (chat.messages[i].role === 'user') return chat.messages[i].content.substring(0, 50);
+      }
+      return 'New chat';
+    }
+
+    var store = loadStore();
+
+    // Ensure at least one chat exists
+    if (Object.keys(store.chats).length === 0) {
+      var id = genId();
+      store.chats[id] = { id: id, title: '', created: new Date().toISOString(), messages: [] };
+      store.current = id;
+      saveStore();
+    }
+
+    // Load current chat into sessionStorage so the widget picks it up
+    var cur = store.chats[store.current];
+    if (cur && cur.messages && cur.messages.length > 0) {
+      sessionStorage.setItem('wishonia-chat', JSON.stringify(cur.messages));
+    } else {
+      sessionStorage.removeItem('wishonia-chat');
+    }
+
+    function renderSidebar() {
+      var list = document.getElementById('chat-list');
+      if (!list) return;
+      list.innerHTML = '';
+      var ids = Object.keys(store.chats).sort(function (a, b) {
+        return new Date(store.chats[b].created).getTime() - new Date(store.chats[a].created).getTime();
+      });
+      ids.forEach(function (cid) {
+        var chat = store.chats[cid];
+        var item = document.createElement('div');
+        item.className = 'chat-list-item' + (cid === store.current ? ' active' : '');
+
+        var title = document.createElement('span');
+        title.className = 'chat-list-title';
+        title.textContent = chatTitle(chat);
+
+        var del = document.createElement('button');
+        del.className = 'chat-list-delete';
+        del.innerHTML = '&times;';
+        del.title = 'Delete chat';
+        del.addEventListener('click', function (e) { e.stopPropagation(); deleteChat(cid); });
+
+        item.appendChild(title);
+        item.appendChild(del);
+        item.addEventListener('click', function () { switchChat(cid); });
+        list.appendChild(item);
+      });
+    }
+
+    function saveCurrent() {
+      if (!store.current || !window.wishoniaChatWidget) return;
+      var msgs = window.wishoniaChatWidget.getMessages();
+      if (!store.chats[store.current]) return;
+      store.chats[store.current].messages = msgs;
+      if (!store.chats[store.current].title) {
+        for (var i = 0; i < msgs.length; i++) {
+          if (msgs[i].role === 'user') {
+            store.chats[store.current].title = msgs[i].content.substring(0, 50);
+            break;
+          }
+        }
+      }
+      saveStore();
+      renderSidebar();
+    }
+
+    function createNewChat() {
+      saveCurrent();
+      var id = genId();
+      store.chats[id] = { id: id, title: '', created: new Date().toISOString(), messages: [] };
+      store.current = id;
+      saveStore();
+      if (window.wishoniaChatWidget) window.wishoniaChatWidget.startNewChat();
+      renderSidebar();
+      closeMobile();
+    }
+
+    function switchChat(cid) {
+      if (cid === store.current) { closeMobile(); return; }
+      saveCurrent();
+      store.current = cid;
+      saveStore();
+      var chat = store.chats[cid];
+      if (window.wishoniaChatWidget) window.wishoniaChatWidget.loadChat(chat ? chat.messages : []);
+      renderSidebar();
+      closeMobile();
+    }
+
+    function deleteChat(cid) {
+      delete store.chats[cid];
+      if (store.current === cid) {
+        var remaining = Object.keys(store.chats);
+        if (remaining.length > 0) {
+          store.current = remaining[0];
+          var chat = store.chats[store.current];
+          if (window.wishoniaChatWidget) window.wishoniaChatWidget.loadChat(chat ? chat.messages : []);
+        } else {
+          createNewChat();
+          return;
+        }
+      }
+      saveStore();
+      renderSidebar();
+    }
+
+    function closeMobile() {
+      document.getElementById('sidebar').classList.remove('open');
+      document.getElementById('sidebar-overlay').classList.remove('show');
+    }
+
+    // --- DOM ready ---
+    document.addEventListener('DOMContentLoaded', function () {
+      // Hamburger
+      document.getElementById('hamburger-btn').addEventListener('click', function () {
+        document.getElementById('sidebar').classList.toggle('open');
+        document.getElementById('sidebar-overlay').classList.toggle('show');
+      });
+      document.getElementById('sidebar-overlay').addEventListener('click', closeMobile);
+
+      // New chat button
+      document.getElementById('new-chat-btn').addEventListener('click', createNewChat);
+
+      renderSidebar();
+
+      // Auto-open widget panel
+      setTimeout(function () {
         var fab = document.querySelector('.chat-fab');
         if (fab) fab.click();
-        // Position robot on top of input bar
         positionRobot();
       }, 150);
+
+      // Periodic sync to localStorage
+      setInterval(saveCurrent, 3000);
+
+      // --- Robot ---
+      var robotEl = document.getElementById('robot-el');
+      var robotContainer = document.getElementById('robot-trigger');
 
       function positionRobot() {
         var inputArea = document.querySelector('.chat-input-area');
         if (!inputArea || !robotContainer) return;
         var rect = inputArea.getBoundingClientRect();
-        var robotHeight = robotContainer.offsetHeight;
         robotContainer.style.bottom = (window.innerHeight - rect.top) + 'px';
       }
       window.addEventListener('resize', positionRobot);
 
-      // Robot click toggles voice chat
-      robotContainer.addEventListener('click', function() {
+      robotContainer.addEventListener('click', function () {
         var vcBtn = document.querySelector('.chat-voicechat-btn');
         if (vcBtn && vcBtn.style.display !== 'none') vcBtn.click();
       });
 
-      // Robot state animation
-      window.setRobotState = function(state) {
+      window.setRobotState = function (state) {
         if (!robotEl) return;
         robotEl.classList.remove('robot_speaking', 'robot_listening');
         if (state === 'speaking') robotEl.classList.add('robot_speaking');
         else if (state === 'listening') robotEl.classList.add('robot_listening');
       };
     });
+  })();
   </script>
 </body>
 </html>`;
@@ -386,6 +590,12 @@ const server = createServer(async (req, res) => {
       ".js": "application/javascript",
       ".css": "text/css",
       ".json": "application/json",
+      ".jpg": "image/jpeg",
+      ".jpeg": "image/jpeg",
+      ".png": "image/png",
+      ".gif": "image/gif",
+      ".svg": "image/svg+xml",
+      ".webp": "image/webp",
     };
     const ext = url.substring(url.lastIndexOf("."));
     if (MIME[ext]) {

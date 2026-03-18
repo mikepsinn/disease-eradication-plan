@@ -45,12 +45,25 @@
   var liveClient = null;    // GeminiLiveClient instance
   var audioCapture = null;  // AudioCapture instance
   var audioPlayback = null; // AudioPlayback instance
+  var localRecognition = null; // Local SpeechRecognition for user speech in voice mode
 
-  // Restore from sessionStorage
+  // Rich content state
+  var lastSearchResults = [];
+  var ragCache = {};
+  var imageIndex = null;
+  var imageIndexLoading = false;
+  var katexLoaded = false;
+  var katexLoading = false;
+  var abortController = null;
+  var userScrolledUp = false;
+
+  // Restore from sessionStorage (filter out placeholder entries)
   var saved = sessionStorage.getItem("wishonia-chat");
   if (saved) {
     try {
-      messages = JSON.parse(saved);
+      messages = JSON.parse(saved).filter(function (m) {
+        return m.content && m.content !== "[voice response]";
+      });
     } catch (_) {}
   }
 
@@ -92,6 +105,96 @@
       .catch(function () {
         tryFetch(urls, i + 1);
       });
+  }
+
+  // ========================================
+  // IMAGE INDEX
+  // ========================================
+
+  function fetchImageIndex() {
+    if (imageIndex || imageIndexLoading) return;
+    imageIndexLoading = true;
+
+    var offset =
+      document
+        .querySelector('meta[name="quarto:offset"]')
+        ?.getAttribute("content") || "";
+    if (offset && offset.charAt(offset.length - 1) !== "/") offset += "/";
+
+    fetch(offset + "assets/image-index.json")
+      .then(function (r) {
+        if (!r.ok) throw new Error(r.status);
+        return r.json();
+      })
+      .then(function (data) {
+        var images = data.images || [];
+        imageIndex = images.filter(function (img) {
+          var type = (img.imageType || "").toLowerCase();
+          return (
+            (type === "infographic" ||
+              type === "chart" ||
+              type === "slide" ||
+              type === "diagram" ||
+              type === "figure" ||
+              type === "illustration") &&
+            (img.width || 0) >= 400
+          );
+        });
+        imageIndex.forEach(function (img) {
+          img._keywords = tokenize(
+            (img.keywords || []).join(" ") +
+              " " +
+              (img.title || "") +
+              " " +
+              (img.description || "")
+          );
+        });
+        imageIndexLoading = false;
+      })
+      .catch(function () {
+        imageIndexLoading = false;
+      });
+  }
+
+  function findRelevantImage(query, ragResults) {
+    if (!imageIndex || imageIndex.length === 0) return null;
+
+    var queryTokens = tokenize(query);
+    if (queryTokens.length === 0) return null;
+
+    var ragSlugs = (ragResults || [])
+      .map(function (r) {
+        return (r.url || "")
+          .replace(/\.html.*$/, "")
+          .replace(/^.*\//, "");
+      })
+      .filter(Boolean);
+
+    var best = null;
+    var bestScore = 0;
+
+    imageIndex.forEach(function (img) {
+      var score = 0;
+      var path = (img.path || "").toLowerCase();
+
+      ragSlugs.forEach(function (slug) {
+        if (path.indexOf(slug.toLowerCase()) !== -1) score += 5;
+      });
+
+      queryTokens.forEach(function (qt) {
+        if (img._keywords.indexOf(qt) !== -1) score += 2;
+      });
+
+      var type = (img.imageType || "").toLowerCase();
+      if (type === "infographic" || type === "chart") score += 1;
+
+      if (score > bestScore) {
+        bestScore = score;
+        best = img;
+      }
+    });
+
+    return bestScore >= 4 ? best : null;
   }
 
   // ========================================
@@ -229,7 +332,9 @@
     return entry.href || entry.url || "";
   }
 
-  function searchContent(query) {
+  function searchContent(query, maxResults, maxChars) {
+    maxResults = maxResults || 8;
+    maxChars = maxChars || 4000;
     if (!searchIndex || searchIndex.length === 0) return "";
 
     var queryTokens = tokenize(query);
@@ -265,7 +370,18 @@
     var top = scored.filter(function (s) {
       return s.score > 0;
     });
-    top = top.slice(0, 8);
+    top = top.slice(0, maxResults);
+
+    // Populate lastSearchResults for source links
+    lastSearchResults = top.slice(0, 5).map(function (item) {
+      var e = item.entry;
+      return {
+        title: e.title || "Untitled",
+        section: e.section || "",
+        url: getEntryUrl(e),
+        score: item.score,
+      };
+    });
 
     // Also try to include section matching current page
     var currentPath = window.location.pathname.replace(/\.html$/, "");
@@ -290,10 +406,10 @@
         var label = e.title || "Untitled";
         if (e.section && e.section !== e.title) label += " (from " + e.section + ")";
         var href = getEntryUrl(e);
-        var text = getEntryText(e).substring(0, 4000);
-        if (getEntryText(e).length > 4000) text += "...";
+        var text = getEntryText(e).substring(0, maxChars);
+        if (getEntryText(e).length > maxChars) text += "...";
         var sections = (e.sections && Array.isArray(e.sections)) ? "\nSections: " + e.sections.join(", ") : "";
-        return "### " + label + (href ? " [URL: " + href + "]" : "") + "\n" + (e.description || "") + "\n" + text + sections;
+        return "### " + label + "\n" + (e.description || "") + "\n" + text + sections + (href ? "\nSource: " + href : "");
       })
       .join("\n\n");
   }
@@ -304,6 +420,10 @@
 
   function init() {
     if (isDisabled()) return;
+
+    // Pre-load search index and image index
+    fetchSearchIndex();
+    fetchImageIndex();
 
     createFAB();
     createPanel();
@@ -343,8 +463,9 @@
       '<div class="chat-messages"></div>' +
       '<div class="chat-input-area">' +
       '  <button class="chat-voicechat-btn" aria-label="Voice chat" style="display:none" title="Voice chat mode">&#x1F399;</button>' +
-      '  <input class="chat-input" type="text" placeholder="Ask about the book..." autocomplete="off">' +
+      '  <textarea class="chat-input" rows="1" placeholder="Ask about the book..."></textarea>' +
       '  <button class="chat-mic-btn" aria-label="Voice input" style="display:none" title="Speak your question">&#x1F3A4;</button>' +
+      '  <button class="chat-stop-btn" aria-label="Stop generating" title="Stop generating">&#x25A0;</button>' +
       '  <button class="chat-send-btn" aria-label="Send message">&#x27A4;</button>' +
       "</div>";
 
@@ -358,15 +479,43 @@
     var newChatBtn = panel.querySelector(".chat-newchat-btn");
     var fullscreenBtn = panel.querySelector(".chat-fullscreen-btn");
 
+    var stopBtn = panel.querySelector(".chat-stop-btn");
+
     closeBtn.addEventListener("click", togglePanel);
     newChatBtn.addEventListener("click", startNewChat);
     fullscreenBtn.addEventListener("click", toggleFullscreen);
     sendBtn.addEventListener("click", handleSend);
+    stopBtn.addEventListener("click", abortStreaming);
     input.addEventListener("keydown", function (e) {
       if (e.key === "Enter" && !e.shiftKey) {
         e.preventDefault();
         handleSend();
       }
+    });
+
+    // Auto-grow textarea
+    input.addEventListener("input", function () {
+      input.style.height = "auto";
+      input.style.height = Math.min(input.scrollHeight, 120) + "px";
+    });
+
+    // Scroll-to-bottom button
+    var scrollBtn = document.createElement("button");
+    scrollBtn.className = "chat-scroll-bottom";
+    scrollBtn.innerHTML = "&#x2193;";
+    scrollBtn.title = "Scroll to bottom";
+    scrollBtn.addEventListener("click", function () {
+      userScrolledUp = false;
+      scrollBtn.style.display = "none";
+      msgContainer.scrollTop = msgContainer.scrollHeight;
+    });
+    panel.appendChild(scrollBtn);
+
+    msgContainer.addEventListener("scroll", function () {
+      var atBottom =
+        msgContainer.scrollHeight - msgContainer.scrollTop - msgContainer.clientHeight < 50;
+      userScrolledUp = !atBottom;
+      scrollBtn.style.display = userScrolledUp ? "flex" : "none";
     });
 
     // Show mic button if Speech Recognition is available
@@ -424,6 +573,8 @@
     messages = [];
     sessionStorage.removeItem("wishonia-chat");
     audioCache = {};
+    ragCache = {};
+    lastSearchResults = [];
     msgContainer.innerHTML = "";
     showWelcome();
   }
@@ -446,7 +597,6 @@
       fab.innerHTML =
         '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>';
       input.focus();
-      fetchSearchIndex();
     } else {
       panel.classList.remove("chat-visible");
       fab.classList.remove("chat-open");
@@ -459,21 +609,319 @@
   // MESSAGING
   // ========================================
 
-  // Convert markdown links [text](url) to <a> tags, escape HTML otherwise
+  // Render markdown to HTML with code blocks, LaTeX, headers, lists, etc.
   function renderMarkdown(text) {
-    // Escape HTML
+    var placeholders = [];
+    function ph(html) {
+      var id = "\x00PH" + placeholders.length + "\x00";
+      placeholders.push(html);
+      return id;
+    }
+
+    // 1. Extract fenced code blocks
+    text = text.replace(/```(\w*)\n?([\s\S]*?)```/g, function (_, lang, code) {
+      var escaped =
+        code.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+      return ph('<pre class="chat-codeblock"><code>' + escaped + "</code></pre>");
+    });
+
+    // 2. Extract inline code
+    text = text.replace(/`([^`]+)`/g, function (_, code) {
+      var escaped =
+        code.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+      return ph('<code class="chat-inline-code">' + escaped + "</code>");
+    });
+
+    // 3. Extract display LaTeX ($$...$$)
+    text = text.replace(/\$\$([\s\S]*?)\$\$/g, function (_, tex) {
+      return ph(renderLatex(tex.trim(), true));
+    });
+
+    // 4. Extract inline LaTeX ($...$) - require letter or backslash after $ to avoid matching $500
+    text = text.replace(/\$([a-zA-Z\\][^$]*?)\$/g, function (_, tex) {
+      return ph(renderLatex(tex, false));
+    });
+
+    // 5. HTML escape
     var escaped = text
       .replace(/&/g, "&amp;")
       .replace(/</g, "&lt;")
       .replace(/>/g, "&gt;");
-    // Convert markdown links
+
+    // 6. Headers
+    escaped = escaped.replace(/^#### (.+)$/gm, '<div class="chat-h4">$1</div>');
+    escaped = escaped.replace(
+      /^###? (.+)$/gm,
+      '<div class="chat-h3">$1</div>'
+    );
+
+    // 7. Blockquotes
+    escaped = escaped.replace(
+      /^&gt; (.+)$/gm,
+      '<div class="chat-blockquote">$1</div>'
+    );
+
+    // 8. Bullet lists: consecutive lines starting with "- " or "* "
+    escaped = escaped.replace(/((?:^|\n)[-*] [^\n]+)+/g, function (block) {
+      var items = block
+        .trim()
+        .split("\n")
+        .map(function (line) {
+          return "<li>" + line.replace(/^[-*] /, "") + "</li>";
+        })
+        .join("");
+      return '<ul class="chat-list">' + items + "</ul>";
+    });
+
+    // 9. Numbered lists: consecutive lines starting with "1. " etc.
+    escaped = escaped.replace(/((?:^|\n)\d+\. [^\n]+)+/g, function (block) {
+      var items = block
+        .trim()
+        .split("\n")
+        .map(function (line) {
+          return "<li>" + line.replace(/^\d+\. /, "") + "</li>";
+        })
+        .join("");
+      return '<ol class="chat-list">' + items + "</ol>";
+    });
+
+    // 10. Bold
+    escaped = escaped.replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>");
+
+    // 11. Italic (single *)
+    escaped = escaped.replace(/\*([^*]+)\*/g, "<em>$1</em>");
+
+    // 12. Links
     escaped = escaped.replace(
       /\[([^\]]+)\]\(([^)]+)\)/g,
       '<a href="$2" target="_blank" rel="noopener">$1</a>'
     );
-    // Convert **bold**
-    escaped = escaped.replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>");
-    return escaped;
+
+    // 13. Paragraphs
+    escaped = escaped.replace(/\n\n+/g, "</p><p>");
+    escaped = escaped.replace(/\n/g, "<br>");
+
+    // 14. Re-insert placeholders
+    for (var i = 0; i < placeholders.length; i++) {
+      escaped = escaped.replace("\x00PH" + i + "\x00", placeholders[i]);
+    }
+
+    return "<p>" + escaped + "</p>";
+  }
+
+  // LaTeX rendering (KaTeX lazy-loaded)
+  function renderLatex(tex, display) {
+    if (typeof katex !== "undefined") {
+      try {
+        return katex.renderToString(tex, {
+          displayMode: display,
+          throwOnError: false,
+        });
+      } catch (_) {}
+    }
+    var cls = display
+      ? "chat-latex-pending chat-latex-display"
+      : "chat-latex-pending";
+    return (
+      '<span class="' +
+      cls +
+      '" data-tex="' +
+      tex.replace(/"/g, "&quot;") +
+      '">' +
+      (display ? "$$" + tex + "$$" : "$" + tex + "$") +
+      "</span>"
+    );
+  }
+
+  function loadKatex(callback) {
+    if (katexLoaded) {
+      if (callback) callback();
+      return;
+    }
+    if (katexLoading) return;
+    katexLoading = true;
+
+    var link = document.createElement("link");
+    link.rel = "stylesheet";
+    link.href = "https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css";
+    document.head.appendChild(link);
+
+    var script = document.createElement("script");
+    script.src = "https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js";
+    script.onload = function () {
+      katexLoaded = true;
+      katexLoading = false;
+      renderPendingLatex();
+      if (callback) callback();
+    };
+    document.head.appendChild(script);
+  }
+
+  function renderPendingLatex() {
+    if (typeof katex === "undefined") return;
+    var pending = document.querySelectorAll(".chat-latex-pending");
+    for (var i = 0; i < pending.length; i++) {
+      var el = pending[i];
+      var tex = el.getAttribute("data-tex");
+      var display = el.classList.contains("chat-latex-display");
+      try {
+        el.innerHTML = katex.renderToString(tex, {
+          displayMode: display,
+          throwOnError: false,
+        });
+        el.classList.remove("chat-latex-pending");
+      } catch (_) {}
+    }
+  }
+
+  // Extract source links from model output + RAG results, return HTML pills
+  function extractSourceLinks(fullText, ragResults) {
+    var links = [];
+    var seen = {};
+    var BASE_URL = "https://manual.WarOnDisease.org";
+
+    var readMoreRegex = /Read more:\s*\[([^\]]+)\]\(([^)]+)\)/g;
+    var match;
+    while ((match = readMoreRegex.exec(fullText)) !== null) {
+      var url = match[2];
+      if (url.charAt(0) === "/" || (url.indexOf("http") !== 0 && url.indexOf(".") !== -1)) {
+        url = BASE_URL + (url.charAt(0) === "/" ? "" : "/") + url;
+      }
+      if (!seen[url]) {
+        links.push({ title: match[1], url: url });
+        seen[url] = true;
+      }
+    }
+
+    (ragResults || []).forEach(function (r) {
+      if (links.length >= 3) return;
+      var rUrl = r.url || "";
+      if (!rUrl) return;
+      if (rUrl.charAt(0) === "/" || (rUrl.indexOf("http") !== 0 && rUrl.indexOf(".") !== -1)) {
+        rUrl = BASE_URL + (rUrl.charAt(0) === "/" ? "" : "/") + rUrl;
+      }
+      if (!seen[rUrl]) {
+        links.push({ title: r.title || r.section || "Source", url: rUrl });
+        seen[rUrl] = true;
+      }
+    });
+
+    if (links.length === 0) return "";
+
+    var html = '<div class="chat-sources">';
+    links.forEach(function (link) {
+      html +=
+        '<a class="chat-source-pill" href="' +
+        link.url +
+        '" target="_blank" rel="noopener">' +
+        link.title +
+        "</a>";
+    });
+    html += "</div>";
+    return html;
+  }
+
+  // Lightbox overlay for images
+  function showLightbox(src, alt) {
+    var overlay = document.createElement("div");
+    overlay.className = "chat-lightbox";
+    overlay.innerHTML =
+      '<img src="' +
+      src +
+      '" alt="' +
+      (alt || "").replace(/"/g, "&quot;") +
+      '">';
+    overlay.addEventListener("click", function () {
+      overlay.remove();
+    });
+    document.body.appendChild(overlay);
+  }
+
+  // Smart scroll: only auto-scroll if user hasn't scrolled up
+  function scrollToBottom(force) {
+    if (!force && userScrolledUp) return;
+    msgContainer.scrollTop = msgContainer.scrollHeight;
+  }
+
+  // Thinking indicator with orbiting rings and rotating quips
+  var THINKING_QUIPS = [
+    "Consulting my notes on your species...",
+    "Translating from Wishonian to English...",
+    "Searching for the polite way to say this...",
+    "Did you know? You spend 604x more on weapons than testing medicines.",
+    "The 1% Treaty: redirect 1% of military budgets to clinical trials.",
+    "Your destructive economy is 11.5% of GDP. The Soviet Union collapsed at 15%.",
+    "Incentive Alignment Bonds: investors fund cures, get paid when diseases drop.",
+    "Wishocracy: citizens pick priorities, 80% untouchable for science.",
+    "The Invisible Graveyard: 10 million die yearly from diseases with known solutions.",
+    "The plan caps corruption at 20% (transparent) so 80% actually reaches patients.",
+    "Comparing to 340 other planets (you rank 312th)...",
+  ];
+
+  function createThinkingIndicator() {
+    var el = document.createElement("div");
+    el.className = "chat-thinking-indicator";
+    el.innerHTML =
+      '<div class="chat-thinking-brain">' +
+      '<div class="chat-brain-ring"></div>' +
+      '<div class="chat-brain-ring"></div>' +
+      '<div class="chat-brain-ring"></div>' +
+      "</div>" +
+      '<div class="chat-thinking-text-area">' +
+      '<span class="chat-thinking-label">Thinking...</span>' +
+      '<span class="chat-thinking-quip"></span>' +
+      "</div>";
+
+    var quips = THINKING_QUIPS.slice();
+    for (var i = quips.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var tmp = quips[i]; quips[i] = quips[j]; quips[j] = tmp;
+    }
+    var quipEl = el.querySelector(".chat-thinking-quip");
+    var idx = 0;
+    quipEl.textContent = quips[0];
+    el._quipInterval = setInterval(function () {
+      idx = (idx + 1) % quips.length;
+      quipEl.style.opacity = "0";
+      setTimeout(function () {
+        quipEl.textContent = quips[idx];
+        quipEl.style.opacity = "1";
+      }, 300);
+    }, 3200);
+    return el;
+  }
+
+  function removeThinkingIndicator(el) {
+    if (!el) return;
+    if (el._quipInterval) clearInterval(el._quipInterval);
+    if (el.parentNode) el.remove();
+  }
+
+  // Copy button for assistant messages
+  function createCopyButton(text) {
+    var btn = document.createElement("button");
+    btn.className = "chat-copy-btn";
+    btn.textContent = "\u{1F4CB}";
+    btn.title = "Copy";
+    btn.addEventListener("click", function () {
+      navigator.clipboard.writeText(text).then(function () {
+        btn.textContent = "\u2713";
+        btn.classList.add("copied");
+        setTimeout(function () {
+          btn.textContent = "\u{1F4CB}";
+          btn.classList.remove("copied");
+        }, 1500);
+      });
+    });
+    return btn;
+  }
+
+  // Abort streaming
+  function abortStreaming() {
+    if (abortController) {
+      abortController.abort();
+      abortController = null;
+    }
   }
 
   function appendMessage(role, content, skipSave) {
@@ -485,13 +933,20 @@
     bubble.className = "chat-msg chat-msg-" + role;
 
     if (role === "assistant" && content) {
-      bubble.innerHTML = '<div class="chat-msg-text">' + renderMarkdown(content) + "</div>";
+      var displayContent = content.replace(/\n*Read more:[\s\S]*$/, "").trim();
+      bubble.innerHTML = '<div class="chat-msg-text">' + renderMarkdown(displayContent) + "</div>";
+      // Check for pending LaTeX in restored messages
+      if (bubble.querySelector(".chat-latex-pending")) {
+        loadKatex();
+      }
     } else {
       bubble.textContent = content;
     }
 
-    // Add TTS button for assistant messages
+    // Add action bar (TTS + copy) for assistant messages
     if (role === "assistant" && content) {
+      var actions = document.createElement("div");
+      actions.className = "chat-msg-actions";
       var ttsBtn = document.createElement("button");
       ttsBtn.className = "chat-tts-btn";
       ttsBtn.textContent = "\u{1F50A}";
@@ -499,11 +954,13 @@
       ttsBtn.addEventListener("click", function () {
         playTTS(content, ttsBtn);
       });
-      bubble.appendChild(ttsBtn);
+      actions.appendChild(ttsBtn);
+      actions.appendChild(createCopyButton(content));
+      bubble.appendChild(actions);
     }
 
     msgContainer.appendChild(bubble);
-    msgContainer.scrollTop = msgContainer.scrollHeight;
+    scrollToBottom(true);
 
     if (!skipSave) {
       messages.push({ role: role, content: content });
@@ -518,10 +975,22 @@
     if (!text || isStreaming) return;
 
     input.value = "";
+    input.style.height = "auto";
     appendMessage("user", text);
 
-    // Get RAG context
-    var context = searchContent(text);
+    // Get RAG context (with caching)
+    var cacheKey = text.toLowerCase();
+    var context;
+    if (ragCache[cacheKey]) {
+      context = ragCache[cacheKey].context;
+      lastSearchResults = ragCache[cacheKey].results;
+    } else {
+      context = searchContent(text);
+      ragCache[cacheKey] = {
+        context: context,
+        results: lastSearchResults.slice(),
+      };
+    }
 
     // Build history (exclude last user message, we send it as question)
     var history = messages.slice(0, -1).map(function (m) {
@@ -583,9 +1052,53 @@
                 JSON.stringify(messages)
               );
 
-              // Re-render with markdown (links become clickable)
+              // Strip "Read more:" lines for display (source pills replace them)
+              var displayText = fullText
+                .replace(/\n*Read more:[\s\S]*$/, "")
+                .trim();
+
+              // Re-render with rich markdown
               var textEl = bubble.querySelector(".chat-msg-text");
-              if (textEl) textEl.innerHTML = renderMarkdown(fullText);
+              if (textEl) textEl.innerHTML = renderMarkdown(displayText);
+
+              // Source pills
+              var sourcesHtml = extractSourceLinks(
+                fullText,
+                lastSearchResults
+              );
+              if (sourcesHtml) {
+                var sourcesEl = document.createElement("div");
+                sourcesEl.innerHTML = sourcesHtml;
+                bubble.appendChild(sourcesEl.firstChild);
+              }
+
+              // Relevant image
+              var relevantImg = findRelevantImage(
+                question,
+                lastSearchResults
+              );
+              if (relevantImg) {
+                var imgEl = document.createElement("div");
+                imgEl.className = "chat-image-container";
+                var imgTag = document.createElement("img");
+                imgTag.className = "chat-image-thumb";
+                imgTag.src = "/" + relevantImg.path;
+                imgTag.alt = relevantImg.title || "";
+                imgTag.loading = "lazy";
+                imgTag.addEventListener("click", function () {
+                  showLightbox(
+                    "/" + relevantImg.path,
+                    relevantImg.title || ""
+                  );
+                });
+                imgEl.appendChild(imgTag);
+                bubble.appendChild(imgEl);
+              }
+
+              // Lazy-load KaTeX if LaTeX was detected
+              if (bubble.querySelector(".chat-latex-pending")) {
+                loadKatex();
+              }
 
               // Add TTS button
               var ttsBtn = document.createElement("button");
@@ -820,6 +1333,72 @@
   // GEMINI LIVE VOICE CHAT
   // ========================================
 
+  // ========================================
+  // LOCAL SPEECH TRANSCRIPTION (user bubbles + RAG in voice mode)
+  // ========================================
+
+  function startLocalTranscription() {
+    var SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+    if (!SR) return;
+
+    localRecognition = new SR();
+    localRecognition.lang = "en-US";
+    localRecognition.continuous = true;
+    localRecognition.interimResults = false;
+
+    localRecognition.onresult = function (event) {
+      for (var i = event.resultIndex; i < event.results.length; i++) {
+        if (event.results[i].isFinal) {
+          var transcript = event.results[i][0].transcript.trim();
+          if (!transcript) continue;
+
+          appendMessage("user", transcript);
+          showVoiceState("thinking");
+
+          // RAG: search book index and inject context (voice-optimized: fewer results, shorter text)
+          var ragContext = searchContent(transcript, 5, 2000);
+          if (ragContext && liveClient && liveClient.isConnected()) {
+            liveClient.sendText(
+              "Reference material:\n" + ragContext +
+              "\nAnswer the user's question using the reference material above."
+            );
+          }
+        }
+      }
+    };
+
+    localRecognition.onerror = function (e) {
+      if (e.error === "no-speech" || e.error === "aborted") {
+        if (liveVoiceMode) {
+          setTimeout(startLocalTranscription, 200);
+        }
+      }
+    };
+
+    localRecognition.onend = function () {
+      // Continuous mode can stop unexpectedly; restart if still in voice mode
+      if (liveVoiceMode) {
+        setTimeout(startLocalTranscription, 200);
+      }
+    };
+
+    try {
+      localRecognition.start();
+    } catch (_) {
+      localRecognition = null;
+    }
+  }
+
+  function stopLocalTranscription() {
+    if (localRecognition) {
+      var r = localRecognition;
+      localRecognition = null;
+      r.onend = null;
+      r.onerror = null;
+      try { r.stop(); } catch (_) {}
+    }
+  }
+
   function toggleLiveVoiceChat() {
     if (liveVoiceMode) {
       stopLiveVoice();
@@ -856,30 +1435,8 @@
       return;
     }
 
-    // Build system prompt with RAG context
-    // Use a broad query to get general book context, not just the page title
-    var pageContext = searchContent("earth optimization plan treaty wishocracy bonds");
-    var systemPrompt = buildVoiceSystemPrompt(pageContext);
-
-    // Show the context being sent in a collapsible block
-    if (pageContext) {
-      var ctxBubble = document.createElement("div");
-      ctxBubble.className = "chat-msg chat-msg-assistant";
-      var ctxCard = document.createElement("div");
-      ctxCard.className = "chat-voice-card";
-      var ctxDetails = document.createElement("details");
-      ctxDetails.className = "chat-thinking";
-      var ctxSummary = document.createElement("summary");
-      ctxSummary.textContent = "\uD83D\uDCDA RAG context sent (" + pageContext.length + " chars)";
-      ctxDetails.appendChild(ctxSummary);
-      var ctxPre = document.createElement("pre");
-      ctxPre.className = "chat-thinking-text";
-      ctxPre.textContent = pageContext;
-      ctxDetails.appendChild(ctxPre);
-      ctxCard.appendChild(ctxDetails);
-      ctxBubble.appendChild(ctxCard);
-      msgContainer.appendChild(ctxBubble);
-    }
+    // Build system prompt (RAG context is now injected per-question via onInputTranscript)
+    var systemPrompt = buildVoiceSystemPrompt("");
 
     // Initialize audio playback
     audioPlayback = new AudioPlayback();
@@ -899,11 +1456,35 @@
       systemInstruction: systemPrompt,
       voice: "Kore",
       onInputTranscript: function (transcript) {
-        // Show what Gemini thinks the user said
-        if (transcript && transcript.trim()) {
-          appendMessage("user", transcript.trim());
-          // Show thinking indicator while model processes
-          showVoiceState("thinking");
+        if (!transcript || !transcript.trim()) return;
+        // Skip if local SpeechRecognition is handling user speech + RAG
+        if (localRecognition) return;
+        appendMessage("user", transcript.trim());
+        showVoiceState("thinking");
+
+        // Live RAG: voice-optimized (top 5, 2000 chars)
+        var ragContext = searchContent(transcript.trim(), 5, 2000);
+        if (ragContext && liveClient && liveClient.isConnected()) {
+          liveClient.sendText("(Reference material for this question:\n" + ragContext + "\n)\nNow answer the user's question using the reference material above.");
+
+          // Show RAG context in UI
+          var ragBubble = document.createElement("div");
+          ragBubble.className = "chat-msg chat-msg-assistant";
+          var ragCard = document.createElement("div");
+          ragCard.className = "chat-voice-card";
+          var ragDetails = document.createElement("details");
+          ragDetails.className = "chat-thinking";
+          var ragSummary = document.createElement("summary");
+          ragSummary.textContent = "\uD83D\uDCDA RAG context for: " + transcript.trim().substring(0, 50);
+          ragDetails.appendChild(ragSummary);
+          var ragPre = document.createElement("pre");
+          ragPre.className = "chat-thinking-text";
+          ragPre.textContent = ragContext;
+          ragDetails.appendChild(ragPre);
+          ragCard.appendChild(ragDetails);
+          ragBubble.appendChild(ragCard);
+          msgContainer.appendChild(ragBubble);
+          msgContainer.scrollTop = msgContainer.scrollHeight;
         }
       },
       onModelTurnStarted: function () {
@@ -986,6 +1567,7 @@
     liveVoiceTranscript = "";
     voiceChatBtn.title = "Stop voice chat";
     showVoiceState("listening");
+    startLocalTranscription();
   }
 
   var liveVoiceTranscript = "";
@@ -1035,17 +1617,21 @@
     msgContainer.appendChild(bubble);
     msgContainer.scrollTop = msgContainer.scrollHeight;
 
-    // Save to session with actual text if available
-    var content = spoken && spoken.trim() ? spoken.trim() : "[voice response]";
-    messages.push({ role: "assistant", content: content });
-    sessionStorage.setItem("wishonia-chat", JSON.stringify(messages));
+    // Save to session only if we have real text (no placeholder)
+    if (spoken && spoken.trim()) {
+      messages.push({ role: "assistant", content: spoken.trim() });
+      sessionStorage.setItem("wishonia-chat", JSON.stringify(messages));
+    }
   }
 
   function showVoiceState(state) {
     if (!liveVoiceMode) return;
 
     // Remove previous state indicator
-    if (voiceStateEl && voiceStateEl.parentNode) voiceStateEl.remove();
+    if (voiceStateEl) {
+      if (voiceStateEl._quipInterval) clearInterval(voiceStateEl._quipInterval);
+      if (voiceStateEl.parentNode) voiceStateEl.remove();
+    }
     voiceStateEl = null;
 
     if (state === "listening") {
@@ -1059,8 +1645,60 @@
       voiceChatBtn.classList.add("recording");
     } else if (state === "thinking") {
       voiceStateEl = document.createElement("div");
-      voiceStateEl.className = "chat-typing";
-      voiceStateEl.innerHTML = "<span>.</span><span>.</span><span>.</span>";
+      voiceStateEl.className = "chat-thinking-indicator";
+      voiceStateEl.innerHTML =
+        '<div class="chat-thinking-brain">' +
+        '<div class="chat-brain-ring"></div>' +
+        '<div class="chat-brain-ring"></div>' +
+        '<div class="chat-brain-ring"></div>' +
+        "</div>" +
+        '<div class="chat-thinking-text-area">' +
+        '<span class="chat-thinking-label">While I\'m crafting the optimal response to your incredibly insightful statement, please consider these fun facts:</span>' +
+        '<span class="chat-thinking-quip"></span>' +
+        "</div>";
+      // Rotate quips: mix of jokes and key book concepts as loading-screen education
+      var quips = [
+        // Personality
+        "Consulting my notes on your species...",
+        "Translating from Wishonian to English...",
+        "Searching for the polite way to say this...",
+        // Core concept: the spending ratio
+        "Did you know? You spend 604x more on weapons than testing medicines.",
+        // Core concept: the 1% treaty
+        "The 1% Treaty: redirect 1% of military budgets to clinical trials.",
+        // Core concept: the destructive economy clock
+        "Your destructive economy is 11.5% of GDP. The Soviet Union collapsed at 15%.",
+        // Core concept: incentive alignment bonds
+        "Incentive Alignment Bonds: investors fund cures, get paid when diseases drop.",
+        // Core concept: wishocracy
+        "Wishocracy: citizens pick priorities, 80% untouchable for science, 20% for politicians to behave.",
+        // Core concept: the invisible graveyard
+        "The Invisible Graveyard: 10 million die yearly from diseases that already have solutions.",
+        // Core concept: corruption cap
+        "The plan caps corruption at 20% (transparent) so the other 80% actually reaches patients.",
+        // Core concept: why it self-reinforces
+        "The loop: treaty funds trials, trials generate returns, returns pay investors who funded the campaign.",
+        // Core concept: decentralized FDA
+        "Your decentralized FDA: anyone can fund a trial, data is open, results belong to everyone.",
+        // Scale
+        "Comparing to 340 other planets (you rank 312th)...",
+      ];
+      var quipEl = voiceStateEl.querySelector(".chat-thinking-quip");
+      // Shuffle so it's different each time
+      for (var qi = quips.length - 1; qi > 0; qi--) {
+        var qj = Math.floor(Math.random() * (qi + 1));
+        var tmp = quips[qi]; quips[qi] = quips[qj]; quips[qj] = tmp;
+      }
+      var quipIdx = 0;
+      quipEl.textContent = quips[0];
+      voiceStateEl._quipInterval = setInterval(function () {
+        quipIdx = (quipIdx + 1) % quips.length;
+        quipEl.style.opacity = "0";
+        setTimeout(function () {
+          quipEl.textContent = quips[quipIdx];
+          quipEl.style.opacity = "1";
+        }, 300);
+      }, 3200);
       voiceChatBtn.classList.remove("recording");
     } else if (state === "speaking") {
       voiceStateEl = document.createElement("div");
@@ -1098,6 +1736,7 @@
 
   function stopLiveVoice() {
     liveVoiceMode = false;
+    stopLocalTranscription();
 
     if (audioCapture) {
       audioCapture.stop();
@@ -1155,6 +1794,31 @@
       return;
     }
     origHandleSend();
+  };
+
+  // ========================================
+  // EXTERNAL API (for test page sidebar / embedding)
+  // ========================================
+
+  window.wishoniaChatWidget = {
+    startNewChat: function () { startNewChat(); },
+    loadChat: function (msgs) {
+      messages = (msgs || []).filter(function (m) {
+        return m.content && m.content !== "[voice response]";
+      });
+      sessionStorage.setItem("wishonia-chat", JSON.stringify(messages));
+      if (msgContainer) {
+        msgContainer.innerHTML = "";
+        if (messages.length > 0) {
+          messages.forEach(function (m) {
+            appendMessage(m.role, m.content, true);
+          });
+        } else {
+          showWelcome();
+        }
+      }
+    },
+    getMessages: function () { return messages.slice(); },
   };
 
   // ========================================
