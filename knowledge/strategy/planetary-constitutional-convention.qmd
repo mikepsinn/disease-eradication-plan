@@ -1,9 +1,9 @@
 ---
 title: "The Planetary Constitutional Convention"
 subtitle: "Fork the Earth Optimization Protocol v1, fix it, or replace it entirely. The ratified version becomes v2."
-description: "The Planetary Constitutional Convention is a deliberative process to stress-test and improve the Earth Optimization Protocol. Submissions must cover ten required governance functions, pass eleven constitutional constraints, survive adversarial review, and survive wishocratic pairwise comparison. The current benchmark is the Earth Optimization Protocol v1. The convention exists to replace it."
+description: "The Planetary Constitutional Convention is a deliberative process to stress-test and improve the Earth Optimization Protocol. Submissions must cover ten required governance functions, pass eleven constitutional constraints, and survive public adversarial review (podcast conversations, published critiques, GitHub forks and pull requests). The current benchmark is the Earth Optimization Protocol v1. The convention exists to replace it."
 abstract: |
-  The Planetary Constitutional Convention is the deliberative process that precedes implementation of the [Earth Optimization Prize](earth-optimization-prize.qmd) [@earth-optimization-prize-paper-2025]. Before anyone recruits a single referendum voter or sells a single bond, there is a prior question: is the [Earth Optimization Protocol v1](https://manual.warondisease.org) actually the plan you should execute? We think it is terrible. We said so in the title. The honest first step is to find out whether someone can produce something less terrible. Teams fork v1, fix it, or replace it entirely. The ratified version becomes the Earth Optimization Protocol v2, and v2 is what the referendum, the bonds, and the lobbying campaign execute. This runs before everything else because committing billions to a plan nobody stress-tested is how your species normally operates, and that is not a compliment.
+  The Planetary Constitutional Convention is the deliberative process that precedes implementation of the [Earth Optimization Prize](earth-optimization-prize.qmd) [@earth-optimization-prize-paper-2025]. Before anyone recruits a single referendum voter or sells a single bond, there is a prior question: is the [Earth Optimization Protocol v1](https://manual.warondisease.org) actually the plan you should execute? We think it is terrible. We said so in the title. The honest first step is to find out whether someone can produce something less terrible. The protocol lives on GitHub. Anyone can fork it. The adversarial review process is a podcast series where domain experts critique the protocol and state what changes would be required for them to endorse it, plus published critiques and pull requests. The ratified version becomes the Earth Optimization Protocol v2, and v2 is what the referendum, the bonds, and the lobbying campaign execute. This runs before everything else because committing billions to a plan nobody stress-tested is how your species normally operates, and that is not a compliment.
 published: true
 tags:
   - strategy
@@ -16,6 +16,8 @@ tags:
 The [Earth Optimization Protocol v1](https://manual.warondisease.org) is the current best attempt at a complete governance reform package. We think it is terrible. We said so in the title.
 
 This constitutional convention exists to find something less terrible. Fork v1, fix it, or replace it entirely. The ratified version becomes v2, and v2 is what the [Earth Optimization Prize](earth-optimization-prize.qmd) [@earth-optimization-prize-paper-2025] funds.
+
+The protocol lives on [GitHub](https://github.com/mikepsinn/disease-eradication-plan). Anyone can fork it. The adversarial review process is a podcast series where domain experts critique the protocol and state what changes would be required for them to endorse it. Each episode produces publishable content and a concrete list of required changes tracked as issues against v1. Pull requests are how changes get ratified. The constitutional constraints below are the filter; the formal ranking infrastructure activates later if multiple serious competing forks emerge.
 
 ::: {.callout-important}
 ## Disqualification Rule
@@ -70,13 +72,15 @@ So: eleven hard constraints that no submission can violate, regardless of how ma
 
 These are constitutional constraints, not preferences. A submission that fails any one of these never reaches the voters, the same way a law that violates the First Amendment never reaches the statute books (in theory; your species' track record on this is mixed).
 
-## How Judging Works
+## How It Works
 
-**Expert panel filters for compliance.** A small panel verifies that submissions satisfy all eleven constitutional constraints. The panel does not judge quality. It judges whether the proposal is a real plan or a wish with a flag.
+**Constitutional constraints are the filter.** The eleven constraints above are binary: a proposal either satisfies them or it does not. Anyone can check compliance. No expert panel needed; the constraints are designed to be verifiable by inspection.
 
-**Adversarial review.** Competing delegations can challenge a submission's claims. If you say your plan is capture-resistant, a challenger can post a bond and present a specific capture scenario. Verified challenges send the submission back for revision or disqualify it. This is peer review, except the reviewers are competitors with financial incentives to find your mistakes.
+**Public adversarial review.** Domain experts critique the protocol in podcast conversations and state what changes they would require to endorse it. Published critiques, red-team memos, and GitHub issues track every objection. This is peer review, except it happens in public, produces listenable content, and generates a concrete punch list of required changes rather than a rejection letter.
 
-**[Wishocracy](../solution/wishocracy.qmd) ranks the survivors.** Every submission that passes the constitutional filter and survives adversarial review enters pairwise comparison. Citizens compare two plans at a time: "Which of these two would you rather live under?" About 20 comparisons, 5 minutes. Registered voters are eligible to participate in wishocratic ranking of competing plans. The crowd does not need to understand mechanism design. The crowd needs to understand "which of these two futures sounds less terrible?" Humans are surprisingly good at that question and surprisingly bad at everything else.
+**GitHub forks and pull requests.** Anyone can fork v1 and submit changes. Pull requests are how improvements get proposed, debated, and ratified. The version history is the audit trail.
+
+**Wishocratic ranking (when needed).** If multiple serious competing forks emerge, [Wishocracy](../solution/wishocracy.qmd) activates: citizens compare two plans at a time ("Which of these two would you rather live under?"), about 20 comparisons, 5 minutes. The crowd does not need to understand mechanism design. The crowd needs to understand "which of these two futures sounds less terrible?" Humans are surprisingly good at that question and surprisingly bad at everything else. This infrastructure is not needed until the scaling problem actually exists.
 
 The ratified version becomes the Earth Optimization Protocol v2. If no proposal surpasses v1, v1 is ratified by default, which means we were right that it is terrible but wrong that anyone could do better, and that is a more depressing outcome than we are prepared to contemplate.
 
