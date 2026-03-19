@@ -243,15 +243,15 @@ const RULES: Rule[] = [
     }),
   },
   {
-    name: 'Earth Optimization Plan v1',
+    name: 'Earth Optimization Protocol v1',
     pattern: /\bearth optimization plan v1\b/gi,
-    plainText: 'Earth Optimization Plan v1',
-    targetRelativePath: 'knowledge/strategy/earth-optimization-plan-v1.qmd',
-    homeFiles: ['knowledge/strategy/earth-optimization-plan-v1.qmd'],
-    topicAliases: ['Earth Optimization Plan v1'],
-    replacement: createLinkOrPlainReplacement('Earth Optimization Plan v1', {
-      targetRelativePath: 'knowledge/strategy/earth-optimization-plan-v1.qmd',
-      homeFiles: ['knowledge/strategy/earth-optimization-plan-v1.qmd'],
+    plainText: 'Earth Optimization Protocol v1',
+    targetRelativePath: 'knowledge/strategy/earth-optimization-protocol-v1.qmd',
+    homeFiles: ['knowledge/strategy/earth-optimization-protocol-v1.qmd'],
+    topicAliases: ['Earth Optimization Protocol v1'],
+    replacement: createLinkOrPlainReplacement('Earth Optimization Protocol v1', {
+      targetRelativePath: 'knowledge/strategy/earth-optimization-protocol-v1.qmd',
+      homeFiles: ['knowledge/strategy/earth-optimization-protocol-v1.qmd'],
     }),
   },
   {

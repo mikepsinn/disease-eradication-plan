@@ -1,9 +1,9 @@
 ---
-title: Earth Optimization Plan v1
+title: Earth Optimization Protocol v1
 subtitle: The Terrible Starting Benchmark for the Earth Optimization Prize
 description: The complete integrated system from How to End War and Disease, documented in one forkable document. Eleven mechanisms, one self-reinforcing loop, explicit known weaknesses. Please replace this with something better.
 abstract: |
-  The Earth Optimization Plan v1 is the integrated system described in *How to End War and Disease*. It combines eleven mechanisms into a self-reinforcing loop: a 1% military-to-medical treaty provides {{< var treaty_annual_funding >}}/year in funding; pragmatic clinical trials executed through a decentralized FDA protocol reduce trial costs by {{< var dfda_trial_cost_reduction_factor >}} and compress the treatment discovery queue from {{< var status_quo_queue_clearance_years >}} to {{< var dfda_queue_clearance_years >}}; Incentive Alignment Bonds fund the lobbying campaign and pay investors {{< var victory_bond_annual_return_pct >}} annual returns; wishocratic pairwise comparison allocates the {{< var dih_treasury_medical_research_pct >}} research treasury; and an evidence machine (Optimocracy) tells governments which policies actually work. Each component feeds the next. More cures generate popular support, more bondholder income generates political pressure, and more treaty funding generates campaign support for politicians who voted yes. The ratchet only moves in one direction. This paper documents the complete system: what each component does, how they connect, what numbers they claim, and where we think we are wrong. It exists to be replaced. The [Earth Optimization Prize](earth-optimization-prize.qmd) is a standing challenge: fork this and make it better.
+  The Earth Optimization Protocol v1 is the integrated system described in *How to End War and Disease*. It combines eleven mechanisms into a self-reinforcing loop: a 1% military-to-medical treaty provides {{< var treaty_annual_funding >}}/year in funding; pragmatic clinical trials executed through a decentralized FDA protocol reduce trial costs by {{< var dfda_trial_cost_reduction_factor >}} and compress the treatment discovery queue from {{< var status_quo_queue_clearance_years >}} to {{< var dfda_queue_clearance_years >}}; Incentive Alignment Bonds fund the lobbying campaign and pay investors {{< var victory_bond_annual_return_pct >}} annual returns; wishocratic pairwise comparison allocates the {{< var dih_treasury_medical_research_pct >}} research treasury; and an evidence machine (Optimocracy) tells governments which policies actually work. Each component feeds the next. More cures generate popular support, more bondholder income generates political pressure, and more treaty funding generates campaign support for politicians who voted yes. The ratchet only moves in one direction. This paper documents the complete system: what each component does, how they connect, what numbers they claim, and where we think we are wrong. It exists to be replaced. The [Earth Optimization Prize](earth-optimization-prize.qmd) is a standing challenge: fork this and make it better.
 published: true
 tags:
   - strategy
@@ -13,8 +13,9 @@ tags:
 aliases:
   - /roadmap
   - /knowledge/strategy/roadmap
-podcast-image: /assets/podcast/earth-optimization-plan-v1-podcast.jpg
-youtube-thumbnail: /assets/podcast/earth-optimization-plan-v1-youtube.jpg
+  - /knowledge/strategy/earth-optimization-plan-v1.html
+podcast-image: /assets/podcast/earth-optimization-protocol-v1-podcast.jpg
+youtube-thumbnail: /assets/podcast/earth-optimization-protocol-v1-youtube.jpg
 ---
 {{< include ../includes/setup-parameters.qmd >}}
 
@@ -24,7 +25,7 @@ This is a README for your civilization's upgrade.
 
 Your species has produced thousands of policy proposals, most of which share a structural feature: they describe a pleasant world without describing a mechanism for reaching it. "We should have universal healthcare" is a destination, not a route. "We should end war" is a wish, not an engineering specification. Policy proposals on Earth work like recipes that list ingredients but skip the cooking instructions, then blame the chef when dinner does not materialize.
 
-The Earth Optimization Plan v1 is different in exactly one way: it is an integrated system where every component creates the conditions for the next component. The treaty funds the trials. The trials generate returns. The returns pay the investors who funded the campaign that passed the treaty. The campaign creates voter demand that makes expanding the treaty easier than repealing it. Remove any one piece and the loop breaks. That is a weakness (harder to build) and a strength (you cannot lobby your way out of a machine whose parts check each other).
+The Earth Optimization Protocol v1 is different in exactly one way: it is an integrated system where every component creates the conditions for the next component. The treaty funds the trials. The trials generate returns. The returns pay the investors who funded the campaign that passed the treaty. The campaign creates voter demand that makes expanding the treaty easier than repealing it. Remove any one piece and the loop breaks. That is a weakness (harder to build) and a strength (you cannot lobby your way out of a machine whose parts check each other).
 
 We think this plan is terrible. We also think it is better than what your species is currently doing, which is spending {{< var military_to_government_clinical_trials_spending_ratio >}} times more on weapons than on testing which medicines work, and calling this "civilization."
 
@@ -258,7 +259,7 @@ The treaty money splits [80/10/10](../appendix/incentive-alignment-bonds-paper.q
 
 You cannot skip steps. All timelines below are order-of-magnitude estimates, not promises.
 
-**Phase 1: The [Least Bad Idea Prize](earth-optimization-prize.qmd#the-least-bad-idea-in-the-world-prize) (weeks to months).** Run the design competition. Teams fork v1, fix it, or replace it. Expert panel filters for [constitutional compliance](earth-optimization-prize.qmd#constitutional-constraints). Adversarial review catches what the panel misses. [Wishocracy](../solution/wishocracy.qmd) ranks the survivors via pairwise comparison. The winner becomes the Earth Optimization Plan v2. PRIZE token sales begin during this phase, funding the prize pool regardless of which plan wins. This is the cheapest stage and it stress-tests the plan before committing real resources.
+**Phase 1: The [Least Bad Idea Prize](earth-optimization-prize.qmd#the-least-bad-idea-in-the-world-prize) (weeks to months).** Run the design competition. Teams fork v1, fix it, or replace it. Expert panel filters for [constitutional compliance](earth-optimization-prize.qmd#constitutional-constraints). Adversarial review catches what the panel misses. [Wishocracy](../solution/wishocracy.qmd) ranks the survivors via pairwise comparison. The winner becomes the Earth Optimization Protocol v2. PRIZE token sales begin during this phase, funding the prize pool regardless of which plan wins. This is the cheapest stage and it stress-tests the plan before committing real resources.
 
 **Phase 2: The [referendum](global-referendum.qmd) (weeks to months).** Launch the [PRIZE token](earth-optimization-prize.qmd) sale and referendum platform simultaneously. Each participant votes on the [1% Treaty](../solution/1-percent-treaty.qmd) (the headcount that creates political pressure) and sets a [wishocratic slider](../solution/wishocracy.qmd) for their preferred military-to-health allocation (the data that tells you what people actually want). Every recruiter who brings a verified participant earns VOTE tokens. The PRIZE pool size and referendum headcount become the pitch to investors. If 280 million people say their preferred split is 5%, that is ammunition for the ratchet before it even starts.
 
@@ -340,7 +341,7 @@ When you fork v1, you are forking working code, not a PDF. The [repository](http
 
 ## Fork Instructions
 
-The Earth Optimization Plan v1 is the starting benchmark for the [Earth Optimization Prize](earth-optimization-prize.qmd). To submit v2:
+The Earth Optimization Protocol v1 is the starting benchmark for the [Earth Optimization Prize](earth-optimization-prize.qmd). To submit v2:
 
 1. **Fork.** Clone [the repository](https://github.com/mikepsinn/disease-eradication-plan). Every component, every calculation, every assumption is public.
 2. **Replace any row** in the Minimum Acceptable Governance table (see the [prize paper](earth-optimization-prize.qmd)) with something strictly better on the two terminal metrics (median healthy life years and median real after-tax income).
