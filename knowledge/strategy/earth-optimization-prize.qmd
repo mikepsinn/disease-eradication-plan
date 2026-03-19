@@ -51,8 +51,6 @@ The paper exists because that spread is absurdly large and most humans still tre
 
 The obvious Goodhart objection: median metrics can be gamed. If the sickest die faster, median health rises. But mortality is binary and hard to fake across millions of people. Median income requires improving the middle of the distribution, not just the top. And the adversarial challenge window means anyone who catches gaming can post a bond, present evidence, and claw back the payout.
 
-**[Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd)** [@iab-paper-2025] (IABs) are an external financing tool, not a protocol primitive. In the v1 plan, IAB capital funds the lobbying campaign (scorecards, PACs, legislative drafting). On success, bondholders earn {{< var victory_bond_annual_return_pct >}} annual returns from treaty revenue. No central committee has to coordinate the lobbying campaign. The recurring returns do. A competing plan could use a different financing instrument entirely.
-
 ## Why A Rational Person Should Care
 
 The arithmetic is the point. For the average human on Earth today, the model already implies {{< var global_avg_income_2025 >}} annual income, {{< var global_avg_remaining_years >}} remaining life, and roughly {{< var global_annual_savings_per_capita >}} in annual savings capacity. If you want your own numbers, use the [personal benefits calculator](../call-to-action/your-personal-benefits.qmd).
@@ -67,7 +65,7 @@ The arithmetic is the point. For the average human on Earth today, the model alr
 
 Those are not projections about charity. They are projections about your own health, income, and exposure to civilizational failure.
 
-PRIZE deposits, VOTE claims, and [IABs](../solution/incentive-alignment-bonds.qmd) [@iab-paper-2025] do different jobs. **PRIZE deposits** create visible committed capital. **VOTE claims** reward the coalition-building work of recruitment. **IABs** are the direct return-seeking instrument for people who want exposure to implementation revenue. The selfish case for the prize is bigger than any one of those instruments. It is the size of the future they are trying to buy.
+**PRIZE deposits** create visible committed capital. **VOTE claims** reward the coalition-building work of recruitment. The selfish case for the prize is bigger than either instrument. It is the size of the future they are trying to buy.
 
 Everything else in this paper (protocol mechanics, escrow yields, constitutional constraints, a 10-row table of governance functions) is implementation detail. Before any of it matters, five problems have to be solved. The prize solves all five with one instrument.
 
@@ -158,7 +156,7 @@ Those are not projections about other people's welfare. They are projections abo
 |---|---|---|
 | You get richer | Per-capita income gain from better resource allocation | {{< var treaty_trajectory_lifetime_income_gain_per_capita >}} (Treaty) to {{< var wishonia_trajectory_lifetime_income_gain_per_capita >}} (Wishonia) [@gdp-trajectories-paper-2025] |
 | You get healthier | Value of additional healthy years by year 15 | {{< var treaty_hale_value_per_capita >}} (Treaty) to {{< var wishonia_hale_value_per_capita >}} (Wishonia) |
-| Auxiliary direct upside | VOTE claim payout for verified recruitment and IAB revenue share for implementation financing | {{< var vote_token_potential_value >}} modeled VOTE payout; {{< var victory_bond_annual_return_pct >}} annual IAB return |
+| Auxiliary direct upside | VOTE claim payout for verified recruitment | {{< var vote_token_potential_value >}} modeled VOTE payout |
 | You lose less | Less exposure to compounding dysfunction tax and collapse | {{< var political_dysfunction_tax_per_person_annual >}}/year ongoing; {{< var moronia_trajectory_probability_year_20 >}} collapse-tail probability at year 20 |
 | People stop dying | Lives saved and suffering prevented per probability point you shift | {{< var contribution_dalys_per_pct_point >}} DALYs / {{< var contribution_lives_saved_per_pct_point_nounit >}} lives / {{< var contribution_suffering_hours_per_pct_point >}} suffering hours per percentage point |
 
@@ -167,12 +165,11 @@ Those are not projections about other people's welfare. They are projections abo
 ::: {.callout-tip}
 ## This Is a Favorable Bet, Not a Donation
 
-Contributions come in two flavors. **PRIZE deposits** are the conditional commitment: escrowed at {{< var prize_escrow_yield_rate >}} as dominant assurance contracts [@tabarrok1998], returned at {{< var prize_escrow_100_return_multiple >}} if the plan fails. Your financial downside is bounded; your money only spends if someone earned it. **IABs** are the investment: your money funds the lobbying campaign, and you earn {{< var victory_bond_annual_return_pct >}} annual returns from treaty revenue on success.
+**PRIZE deposits** are the conditional commitment: escrowed at {{< var prize_escrow_yield_rate >}} as dominant assurance contracts [@tabarrok1998], returned at {{< var prize_escrow_100_return_multiple >}} if the plan fails. Your financial downside is bounded; your money only spends if someone earned it.
 
 | | If the plan succeeds | If the plan fails |
 |---|---|---|
 | **$100 PRIZE deposit** | Pool distributes to VOTE claimants who built the coalition. Your lifetime income rose by {{< var treaty_trajectory_lifetime_income_gain_per_capita >}} like everyone else's. | Returned as {{< var prize_escrow_100_compound_return >}} ({{< var prize_escrow_100_return_multiple >}} at {{< var prize_escrow_yield_rate >}} over {{< var prize_escrow_accumulation_years_nounit >}} years) |
-| **$100 IAB** | {{< var victory_bond_annual_return_pct >}}/year revenue share forever, plus the population-wide income gain | Your money funded the lobbying campaign |
 | **The world** | Diseases get cured, incomes rise, destructive economy stops compounding | Destructive economy hits 50% of GDP in {{< var destructive_economy_years_to_50pct_gdp >}}; {{< var moronia_trajectory_probability_year_20 >}} probability of collapse trajectory at year 20 |
 
 Mechanisms that return capital with interest on failure while only spending it on verified success are unusually favorable. Your species normally charges a premium for asymmetry like that.
@@ -187,11 +184,11 @@ The break-even probability shift for any given contribution is small because the
 | `$100K` | `0.671%` | `0.192%` |
 | `$1M` | `6.71%` | `1.92%` |
 
-But does a $1K contribution actually shift probability by 0.0067%? You do not need to be the marginal dollar that tips the scale. You need to believe that more campaign capital makes success more likely than less, which is nearly tautological for political adoption. Those thresholds also ignore PRIZE deposit downside protection and IAB revenue share, so they are biased against contributing. They survive heavy skepticism: if you think the per-capita gain is 100x smaller than modeled, the break-even for $1K is still only 0.67%. The math does not require trusting the model. It requires believing the model is not off by more than four orders of magnitude. And the ceiling cost of achieving the policy change is already bounded: {{< var treaty_campaign_total_cost >}} for the United States, {{< var global_political_reform_investment >}} globally, with ROI exceeding {{< var treaty_roi_existing_drugs_only >}} for military-to-health reallocation [@cost-of-change-paper-2025].
+But does a $1K contribution actually shift probability by 0.0067%? You do not need to be the marginal dollar that tips the scale. You need to believe that more campaign capital makes success more likely than less, which is nearly tautological for political adoption. Those thresholds also ignore PRIZE deposit downside protection, so they are biased against contributing. They survive heavy skepticism: if you think the per-capita gain is 100x smaller than modeled, the break-even for $1K is still only 0.67%. The math does not require trusting the model. It requires believing the model is not off by more than four orders of magnitude. And the ceiling cost of achieving the policy change is already bounded: {{< var treaty_campaign_total_cost >}} for the United States, {{< var global_political_reform_investment >}} globally, with ROI exceeding {{< var treaty_roi_existing_drugs_only >}} for military-to-health reallocation [@cost-of-change-paper-2025].
 
 The dominant assurance contract was formalized by Alex Tabarrok (George Mason University) and has been the standard mechanism design tool for public goods coordination since 1998 [@tabarrok1998]. The Chenoweth threshold ({{< var global_population_activism_threshold_pct >}}) has been verified across 323 campaigns since 1900. The RECOVERY trial was run by Oxford and published in the New England Journal of Medicine. Every building block is peer-reviewed. The combination is new.
 
-**The free-rider problem has a structural answer.** If success benefits everyone, why not wait and let others pay? Because non-contributors do not get the revenue share. They get the population-wide income gain (everyone does), but they miss the {{< var victory_bond_annual_return_pct >}} annual return that bondholders collect and the VOTE claim payout that recruiters earn. Free-riding means giving up substantial additional upside to save the smallest possible entry ticket. Early contributors raise the probability of success, which raises the expected value for later contributors, creating a coordination game that runs on arithmetic rather than altruism.
+**The free-rider problem has a structural answer.** If success benefits everyone, why not wait and let others pay? Because non-contributors do not earn VOTE claims. They get the population-wide income gain (everyone does), but they miss the VOTE claim payout that recruiters earn. Free-riding means giving up the recruitment reward to save the smallest possible entry ticket. Early contributors raise the probability of success, which raises the expected value for later contributors, creating a coordination game that runs on arithmetic rather than altruism.
 
 Delay is not neutral. Each person can only be recruited once, and every month spent waiting gives the status quo more time to compound while the scoreboard stays smaller than it could be.
 
@@ -247,9 +244,9 @@ The instruments deploy in order, and each stage builds the audience for the next
 
 **Stage 3: Scoreboard and momentum (months).** The referendum count climbs in public. The prize pool becomes large enough to be visibly real. Two dashboards matter: verified participant count and committed capital. Each new cohort of participants makes the next cohort easier to convince. Politicians notice.
 
-**Stage 4: IABs and the lobbying campaign (months to years).** By now, millions of voters have registered preferences, the PRIZE pool is large enough to be taken seriously, and the scoreboard shows that the coalition is real. [Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd) [@iab-paper-2025] launch: investor capital funds the lobbying campaign, and on success bondholders earn {{< var victory_bond_annual_return_pct >}} annually. The IAB pitch is not "trust us." It is "look at the scoreboard."
+**Stage 4: The lobbying campaign (months to years).** By now, millions of voters have registered preferences, the PRIZE pool is large enough to be taken seriously, and the scoreboard shows that the coalition is real. The [Earth Optimization Protocol](earth-optimization-protocol-v1.qmd) [@earth-optimization-protocol-2025] describes how implementation financing converts the scoreboard into political pressure.
 
-**Stage 5+: Implementation.** Bondholders self-organize the lobbying because every action that raises implementation probability raises their bond value. Once one binding path succeeds, budget authority starts shifting real resources. Implementers compete inside the winning Earth Optimization Protocol v2 to supply the cheapest verified pieces, and later challengers can still replace the whole plan if they genuinely dominate it.
+**Stage 5+: Implementation.** Once one binding path succeeds, budget authority starts shifting real resources. Implementers compete inside the winning Earth Optimization Protocol v2 to supply the cheapest verified pieces, and later challengers can still replace the whole plan if they genuinely dominate it.
 
 The funnel is: the Least Bad Idea Contest stress-tests the plan. PRIZE deposits create awareness. Awareness creates referendum voters. Voters earn VOTE claims. VOTE claims create an aligned recruiter base. The coalition provides the political pressure and financing base to pass the treaty. Each stage builds the coordination infrastructure for the next one. Nobody has to coordinate this centrally. The incentives coordinate it.
 
