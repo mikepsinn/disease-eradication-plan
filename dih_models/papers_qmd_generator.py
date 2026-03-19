@@ -177,6 +177,9 @@ def extract_paper_info(
         abstract = replace_variables(abstract, variables, highlight_missing=False)
     if abstract:
         abstract = strip_confidence_intervals(abstract)
+        # Strip relative .qmd links: [text](path.qmd) -> text
+        # These break when the abstract is rendered outside its original directory
+        abstract = re.sub(r'\[([^\]]+)\]\([^)]*\.qmd[^)]*\)', r'\1', abstract)
         # Normalize YAML block scalar newlines: collapse single newlines into spaces,
         # preserve paragraph breaks (double newlines)
         abstract = re.sub(r'\n{2,}', '\n\n', abstract.strip())

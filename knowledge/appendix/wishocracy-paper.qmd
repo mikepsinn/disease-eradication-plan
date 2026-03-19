@@ -15,7 +15,7 @@ abstract: |
 
   The mechanism achieves three properties no prior system combines: minimal cognitive load (~20
   comparisons per participant yields statistical convergence), preference intensity capture, and
-  approximate strategy-proofness. At system scale, the model's Optimal-Governance Path reaches
+  approximate strategy-proofness. At system scale, the Wishonian Optimal Governance Trajectory reaches
   {{< var wishonia_trajectory_gdp_vs_current_trajectory_multiplier_year_20 >}} the Earth baseline after 20 years, raises
   average income to {{< var wishonia_trajectory_avg_income_year_20 >}} versus
   {{< var current_trajectory_avg_income_year_20 >}} on the status-quo path, reaches
@@ -97,11 +97,11 @@ Wishocracy offers a fourth path: a mechanism that harnesses collective intellige
 
 3. **Collective Intelligence Aggregation:** By synthesizing millions of pairwise judgments through eigenvector methods, the mechanism uses diversity to cancel individual errors while aggregating true signals into allocations that approximate utilitarian social welfare.
 
-4. **Accountability Integration:** By producing clear, quantifiable preference signals that can be compared against politician voting records, RAPPA enables accountability mechanisms (Citizen Alignment Scores, Incentive Alignment Bonds) that align representative behavior with citizen welfare.
+4. **Accountability Integration:** By producing clear, quantifiable preference signals that can be compared against politician voting records, RAPPA enables accountability mechanisms (Citizen Alignment Scores, [Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd)) that align representative behavior with citizen welfare.
 
 To our knowledge, no widely deployed mechanism combines all four properties. Traditional voting captures neither intensity nor tractability. The Analytic Hierarchy Process provides tractability but has been deployed primarily for expert decision-making, not large-scale collective governance. Existing accountability mechanisms (interest group scorecards) reflect narrow priorities rather than aggregated citizen preferences. RAPPA synthesizes insights from decision science and collective intelligence to enable genuine democratic accountability.
 
-**Scale note.** If that accountability layer works at system scale, the upside is civilization-scale rather than procedural. Under the project's best-case governance ceiling, the recoverable upside is {{< var political_dysfunction_global_opportunity_cost_total >}} per year. The 20-year Optimal-Governance Path reaches {{< var wishonia_trajectory_gdp_vs_current_trajectory_multiplier_year_20 >}} the Earth baseline, raises average income to {{< var wishonia_trajectory_avg_income_year_20 >}} versus {{< var current_trajectory_avg_income_year_20 >}} on the status-quo path, and reaches {{< var wishonia_trajectory_gdp_year_20 >}} in total output. This paper focuses on the citizen-preference and accountability layer of that plan; the full derivation lives in [The Political Dysfunction Tax](political-dysfunction-tax.qmd) [@political-dysfunction-tax-paper-2025].
+**Scale note.** If that accountability layer works at system scale, the upside is civilization-scale rather than procedural. Under the project's best-case governance ceiling, the recoverable upside is {{< var political_dysfunction_global_opportunity_cost_total >}} per year. Over 20 years, the [Wishonian](../futures/wishonia.qmd) [Optimal Governance Trajectory](../economics/gdp-trajectories.qmd) reaches {{< var wishonia_trajectory_gdp_vs_current_trajectory_multiplier_year_20 >}} the Earth baseline, raises average income to {{< var wishonia_trajectory_avg_income_year_20 >}} versus {{< var current_trajectory_avg_income_year_20 >}} on the status-quo path, and reaches {{< var wishonia_trajectory_gdp_year_20 >}} in total output. This paper focuses on the citizen-preference and accountability layer of that plan; the full derivation lives in [The Political Dysfunction Tax](political-dysfunction-tax.qmd) [@political-dysfunction-tax-paper-2025].
 
 # **Theoretical Foundations**
 
@@ -264,7 +264,7 @@ We now analyze the computational requirements of RAPPA and establish scalability
 
 - **Participants ($n$):** Municipal scale: $n = 1,000-10,000$ participants. City scale: $n = 10,000-100,000$. National scale: $n = 1,000,000+$. The linear $O(n)$ scaling in comparison collection makes national-scale deployment computationally feasible.
 
-- **Comparisons per participant ($k$):** Empirical testing at wishocracy.org [@wishocracy2024] suggests $k=10-30$ comparisons provides good user experience (5-10 minutes) while achieving convergence. Comparison density $\rho = \frac{nk}{m(m-1)/2}$ should exceed $\rho > 0.05$ for reliable estimates, implying minimum $nk > 0.025m^2$ or equivalently $n > 0.025m^2/k$.
+- **Comparisons per participant ($k$):** Empirical testing at Wishocracy.org [@wishocracy2024] suggests $k=10-30$ comparisons provides good user experience (5-10 minutes) while achieving convergence. Comparison density $\rho = \frac{nk}{m(m-1)/2}$ should exceed $\rho > 0.05$ for reliable estimates, implying minimum $nk > 0.025m^2$ or equivalently $n > 0.025m^2/k$.
 
 **Benchmark Example (City-Scale Deployment):** Consider a city budget with $m=100$ priorities, $n=50,000$ participants, $k=20$ comparisons each:
 
@@ -555,7 +555,7 @@ where $|S_{AB}|$ is the sample size for pair $(A,B)$. With large $n$, this influ
 
 **Low Comparison Density:** As the number of policy priorities $m$ increases, the required comparisons grow quadratically ($O(m^2)$). With fixed participant budgets (each citizen completes $k$ comparisons), comparison density decreases as $k/m^2$. At very low densities ($k/m^2 < 0.01$), matrix completion methods may produce unstable estimates.
 
-**Mitigation:** Hierarchical aggregation can reduce effective dimensionality by first aggregating within categories (Healthcare, Education, Defense), then across categories. Active sampling can prioritize comparisons with high uncertainty or inconsistency. Bayesian priors based on expert judgments or historical data can stabilize estimates in sparse regions. Empirical testing at wishocracy.org [@wishocracy2024] suggests that convergence remains acceptable with as few as 3-5 comparisons per item, meaning systems with 100 priorities can function with ~300-500 comparisons per participant.
+**Mitigation:** Hierarchical aggregation can reduce effective dimensionality by first aggregating within categories (Healthcare, Education, Defense), then across categories. Active sampling can prioritize comparisons with high uncertainty or inconsistency. Bayesian priors based on expert judgments or historical data can stabilize estimates in sparse regions. Empirical testing at Wishocracy.org [@wishocracy2024] suggests that convergence remains acceptable with as few as 3-5 comparisons per item, meaning systems with 100 priorities can function with ~300-500 comparisons per participant.
 
 **Coordinated Minority Attacks:** A sophisticated attacker might coordinate a minority bloc to systematically manipulate outcomes. For example, 10% of voters might collude to always allocate 100% to priority $A$ in any comparison involving $A$, attempting to artificially inflate $A$'s priority weight.
 
@@ -659,7 +659,7 @@ where votes are coded as +1 (increases funding for category), -1 (decreases fund
 
 **Why this works:** Politicians are highly sensitive to public ratings. The NRA's letter grades, the League of Conservation Voters' scorecard, and similar systems demonstrably influence politician behavior. A "Citizen Alignment Score" backed by transparent methodology and large sample sizes becomes a powerful accountability tool.
 
-### **Phase 3: Incentive Alignment (Integration with Incentive Alignment Bonds)**
+### **Phase 3: Incentive Alignment (Integration with [Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd))**
 
 **Objective:** Channel financial and electoral resources to politicians based on their alignment with citizen preferences, making welfare-improving votes incentive-compatible.
 
@@ -704,7 +704,7 @@ National budget priorities operate differently. Citizens have strong preferences
 
 RAPPA is designed for the latter: large option spaces where citizens hold meaningful preferences but lack any tractable mechanism to express them across all dimensions simultaneously. The federal budget, with its trillion-dollar misallocations between citizen preferences and actual spending, represents the highest-leverage application.
 
-Additionally, the federal approach requires no authority transfer. Publishing a "Preference Gap Report" and Citizen Alignment Scores is pure information provision. Combined with Incentive Alignment Bonds, this creates accountability pressure without asking any politician to cede decision-making authority. This is a significantly lower barrier to adoption than municipal pilots that require city councils to delegate budget control.
+Additionally, the federal approach requires no authority transfer. Publishing a "Preference Gap Report" and Citizen Alignment Scores is pure information provision. Combined with [Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd), this creates accountability pressure without asking any politician to cede decision-making authority. This is a significantly lower barrier to adoption than municipal pilots that require city councils to delegate budget control.
 
 ## **Evaluation Framework**
 
@@ -736,13 +736,13 @@ Despite the federal focus, rigorous evaluation remains essential:
 | **Policy outcomes** | Appropriations shift toward RAPPA preferences | Measurable movement |
 | **Preference gap reduction** | Year-over-year change in divergence | Decreasing trend |
 
-## **Connection to Incentive Alignment Bonds**
+## **Connection to [Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd)**
 
-Wishocracy and Incentive Alignment Bonds are complementary mechanisms addressing different parts of the democratic failure:
+Wishocracy and [Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd) are complementary mechanisms addressing different parts of the democratic failure:
 
 - **Wishocracy (RAPPA)** solves the *preference aggregation* problem: How do we know what citizens actually want across complex, multidimensional policy spaces?
 
-- **Incentive Alignment Bonds** solve the *incentive alignment* problem: How do we make politicians act on citizen preferences rather than concentrated interests?
+- **[Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd)** solve the *incentive alignment* problem: How do we make politicians act on citizen preferences rather than concentrated interests?
 
 Together, they form a complete system: RAPPA provides the objective function (what to optimize for), and IABs provide the optimization pressure (why politicians should care). Neither mechanism alone is sufficient: information without incentives produces ignored reports; incentives without information produces captured allocation.
 
@@ -750,7 +750,7 @@ For detailed treatment of the IAB mechanism, including formal models, legal anal
 
 ![You ask people what they want, then pay politicians to do it. Like parenting, but with money instead of guilt.](/assets/images/wishocracy-paper/wishocracy-paper-section-connection-to-incentive-alignment-bonds-bw-academic.jpg)
 
-## **Connection to Optimocracy**
+## **Connection to [Optimocracy](../solution/optimocracy.qmd)**
 
 Wishocracy and [Optimocracy](https://optimocracy.warondisease.org) [@optimocracy-paper-2025] represent two distinct approaches to governance reform that can function independently or in combination:
 
@@ -758,11 +758,11 @@ Wishocracy and [Optimocracy](https://optimocracy.warondisease.org) [@optimocracy
 
 ![Democracy asks what you want. Optimocracy does the math. It's like finally hiring an accountant after years of guessing.](/assets/images/wishocracy-paper/wishocracy-paper-section-connection-to-optimocracy-bw-academic.jpg)
 
-- **Optimocracy** is *algorithmic*: a pre-agreed metric is optimized automatically, with minimal political discretion. The output is an allocation that executes regardless of political preferences.
+- **[Optimocracy](../solution/optimocracy.qmd)** is *algorithmic*: a pre-agreed metric is optimized automatically, with minimal political discretion. The output is an allocation that executes regardless of political preferences.
 
 These approaches address different failure modes:
 
-| Failure Mode | Wishocracy Solution | Optimocracy Solution |
+| Failure Mode | Wishocracy Solution | [Optimocracy](../solution/optimocracy.qmd) Solution |
 |--------------|--------------------|--------------------|
 | Preference aggregation | RAPPA pairwise comparison | N/A (metric pre-selected) |
 | Capture by interests | Accountability scores | Remove political discretion |
@@ -770,7 +770,7 @@ These approaches address different failure modes:
 | Metric gaming (Goodhart) | Adapts to changing preferences | Vulnerable |
 | Democratic legitimacy | High (citizen input) | Lower (algorithm decides) |
 
-A hybrid architecture might use Wishocracy for *metric selection* (citizens choose what to optimize) and Optimocracy for *metric optimization* (algorithms allocate to maximize the chosen metric). This combines democratic legitimacy at the constitutional level with capture resistance at the execution level.
+A hybrid architecture might use Wishocracy for *metric selection* (citizens choose what to optimize) and [Optimocracy](../solution/optimocracy.qmd) for *metric optimization* (algorithms allocate to maximize the chosen metric). This combines democratic legitimacy at the constitutional level with capture resistance at the execution level.
 
 For detailed treatment of algorithmic governance, including smart contract specifications and oracle design, see the companion paper: [Optimocracy: Algorithmic Governance Through Outcome-Optimizing Resource Allocation](https://optimocracy.warondisease.org).
 
@@ -780,7 +780,7 @@ Representative democracy's principal-agent problem is not a bug but a structural
 
 ![How to make representatives represent people: give them a score, then attach money to it. Like training a very expensive dog.](/assets/images/wishocracy-paper/wishocracy-paper-section-conclusion-bw-academic.jpg)
 
-Wishocracy offers a different approach: rather than replacing representatives, align their incentives with citizen preferences. Through Randomized Aggregated Pairwise Preference Allocation, the mechanism aggregates citizen preferences into a clear signal of what voters actually want. Combined with Citizen Alignment Scores and Incentive Alignment Bonds, this creates accountability pressure that makes welfare-improving votes politically and financially rewarding. The theoretical foundations combine the Analytic Hierarchy Process (for cognitive tractability) with collective intelligence research (for aggregation), decomposing n-dimensional preference spaces into simple pairwise comparisons that any citizen can complete.
+Wishocracy offers a different approach: rather than replacing representatives, align their incentives with citizen preferences. Through Randomized Aggregated Pairwise Preference Allocation, the mechanism aggregates citizen preferences into a clear signal of what voters actually want. Combined with Citizen Alignment Scores and [Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd), this creates accountability pressure that makes welfare-improving votes politically and financially rewarding. The theoretical foundations combine the Analytic Hierarchy Process (for cognitive tractability) with collective intelligence research (for aggregation), decomposing n-dimensional preference spaces into simple pairwise comparisons that any citizen can complete.
 
 The empirical precedents from Porto Alegre's participatory budgeting, Taiwan's vTaiwan platform, and Stanford's voting research demonstrate that citizens can and will engage productively with pairwise preference-expressing mechanisms. These real-world experiments validate the core assumptions underlying Wishocracy while revealing the institutional fragility of advisory mechanisms that lack connection to electoral incentives.
 

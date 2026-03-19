@@ -66,7 +66,7 @@ The only debatable input is whether the timeline shift is really ~{{< var dfda_t
 
 ![Conservative return on investment versus total return including not letting people die. One number is big, the other is astronomically big. Both beat war.](/assets/images/health-dividend/health-dividend-section-roi-scenarios-bw-academic.jpg)
 
-Your decentralized FDA costs {{< var dfda_annual_opex >}}/year to operate. For reference, this is roughly what your species spends annually on Halloween costumes for dogs. Less than one fighter jet. Less than what FIFA spends on "hospitality" (your word for bribing officials in a building with chandeliers). A system that could test cures for {{< var rare_diseases_count_global_nounit >}} diseases costs less to run than the outfits you put on animals that do not want to wear them.
+Your [decentralized FDA](../solution/dfda.qmd) costs {{< var dfda_annual_opex >}}/year to operate. For reference, this is roughly what your species spends annually on Halloween costumes for dogs. Less than one fighter jet. Less than what FIFA spends on "hospitality" (your word for bribing officials in a building with chandeliers). A system that could test cures for {{< var rare_diseases_count_global_nounit >}} diseases costs less to run than the outfits you put on animals that do not want to wear them.
 
 The R&D savings alone are {{< var dfda_benefit_rd_only_annual >}}/year, a **{{< var dfda_roi_rd_only >}}:1** return without counting a single human life. Include the lives (which you would think someone would, but your species has a long history of not counting the people who die quietly), and the treaty's total societal return hits **{{< var treaty_roi_trial_capacity_plus_efficacy_lag >}}:1**.
 

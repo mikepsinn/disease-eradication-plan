@@ -18,7 +18,7 @@ description: "Reusable outreach email templates for institutions considering whe
 
 1. Would [Institution] consider hosting a 90-day public-goods pilot?
 2. A bounded initiating-node role for [Institution]
-3. Proposal: host the first Earth Optimization Prize pilot
+3. Proposal: host the first [Earth Optimization Prize](earth-optimization-prize.qmd) [@earth-optimization-prize-paper-2025] pilot
 
 **Email**
 
@@ -45,7 +45,7 @@ I’m reaching out because I think [Institution] may be a strong fit for a very 
 
 The project is called the [Earth Optimization Prize](earth-optimization-prize.qmd). In one sentence: it is a public mechanism for discovering, red-teaming, and coordinating around better integrated plans for moving humanity off its current trajectory.
 
-The reason I think this matters is that the current trajectory is not neutral. The [destructive economy](../economics/gdp-trajectories.qmd) is already {{< var global_destructive_economy_pct_gdp >}} of GDP, and the modeled upside of changing course is extremely large. But the real bottleneck is not “lack of ideas.” It is lack of public coordination infrastructure that can compare plans, reward participation, and make support visible.
+The reason I think this matters is that the current trajectory is not neutral. The [destructive economy](../economics/gdp-trajectories.qmd) [@gdp-trajectories-paper-2025] is already {{< var global_destructive_economy_pct_gdp >}} of GDP, and the modeled upside of changing course is extremely large. But the real bottleneck is not “lack of ideas.” It is lack of public coordination infrastructure that can compare plans, reward participation, and make support visible.
 
 I am not asking [Institution] to endorse the current draft as final truth. I am asking whether [Institution] would consider hosting a bounded 90-day pilot:
 

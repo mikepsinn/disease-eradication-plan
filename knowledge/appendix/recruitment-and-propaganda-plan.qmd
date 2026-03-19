@@ -107,7 +107,7 @@ If optimal allocation existed, what would a world with compounding benefits look
 
 **Question 3: Do you have a better approach?**
 
-Is the [1% treaty](../solution/1-percent-treaty.qmd) [@1-pct-treaty-impact-paper-2025] the least bad approach, or do you have a superior one? This is not a rhetorical question. If you have a better plan, the authors of this manual would genuinely like to hear it. They will switch to your plan immediately. They have no attachment to this specific mechanism beyond the fact that nobody has proposed a better one. If your alternative is "do nothing and hope," that is not a plan. That is what you've been doing. The results are in.
+Is the [1% Treaty](../solution/1-percent-treaty.qmd) [@1-pct-treaty-impact-paper-2025] the least bad approach, or do you have a superior one? This is not a rhetorical question. If you have a better plan, the authors of this manual would genuinely like to hear it. They will switch to your plan immediately. They have no attachment to this specific mechanism beyond the fact that nobody has proposed a better one. If your alternative is "do nothing and hope," that is not a plan. That is what you've been doing. The results are in.
 
 **Question 4: Should this be your top priority?**
 
@@ -155,7 +155,7 @@ And note what "this plan working" requires you to deny. The five questions of th
 
 To clear the breakeven threshold, you don't need to believe all five. You need to believe *any one of them* is not impossible. That's it. One non-zero answer out of five, and sharing becomes the rational move.
 
-And this calculation is conservative. It counts only the income gain. It assigns zero value to the {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved_nounit >}} lives. It ignores the Wishonia path entirely (which is {{< var wishonia_trajectory_lifetime_income_multiplier >}} the current trajectory, not {{< var treaty_trajectory_lifetime_income_multiplier >}}). It assumes you personally capture only the average gain, when in practice higher earners gain proportionally more. The actual breakeven threshold is even more forgiving than 1 in {{< var sharing_breakeven_one_in_treaty >}}.
+And this calculation is conservative. It counts only the income gain. It assigns zero value to the {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved_nounit >}} lives. It ignores the [Wishonian](../futures/wishonia.qmd) [Optimal Governance Trajectory](../economics/gdp-trajectories.qmd) entirely (which is {{< var wishonia_trajectory_lifetime_income_multiplier >}} the current trajectory, not {{< var treaty_trajectory_lifetime_income_multiplier >}}). It assumes you personally capture only the average gain, when in practice higher earners gain proportionally more. The actual breakeven threshold is even more forgiving than 1 in {{< var sharing_breakeven_one_in_treaty >}}.
 
 On Wishonia, a species that couldn't clear a 1-in-{{< var sharing_breakeven_one_in_treaty >}} bar for obvious self-interest would be a genuinely novel research subject. We have never encountered a species that fails to act on incentives this large. We don't have a word for it. The closest translation is "sleeping through your own house fire, but on purpose."
 

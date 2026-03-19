@@ -40,7 +40,7 @@ The treaty doesn't actually hurt them. Military budget drops 1% (from {{< var gl
 
 ![The defense industry keeps 99% of its budget. They lose 1% and gain trillions in cure markets. This is the easiest math problem in history.](/assets/images/co-opting-defense-contractors/co-opting-defense-contractors-section-the-treaty-doesn-t-actually-hurt-them-bw-academic.jpg)
 
-Add {{< var victory_bond_funding_pct >}} VICTORY Incentive Alignment Bonds to a pension portfolio and blended returns jump from {{< var average_market_return_pct >}} to something that looks like a typo on a spreadsheet. (Be suspicious. Then check the math.) Once Lockheed buys bonds, Raytheon has to follow or explain to shareholders why Lockheed's portfolio is outperforming theirs. Start with pension funds (fiduciary duty requires best returns). They end up lobbying FOR the treaty to protect their investment. Your species calls this "unintended consequences." On Wishonia, we call it "the intended consequence," because we intended it, because that was the plan.
+Add {{< var victory_bond_funding_pct >}} VICTORY [Incentive Alignment Bonds](incentive-alignment-bonds.qmd) to a pension portfolio and blended returns jump from {{< var average_market_return_pct >}} to something that looks like a typo on a spreadsheet. (Be suspicious. Then check the math.) Once Lockheed buys bonds, Raytheon has to follow or explain to shareholders why Lockheed's portfolio is outperforming theirs. Start with pension funds (fiduciary duty requires best returns). They end up lobbying FOR the treaty to protect their investment. Your species calls this "unintended consequences." On Wishonia, we call it "the intended consequence," because we intended it, because that was the plan.
 
 ### What You're NOT Asking
 
@@ -50,7 +50,7 @@ You're not asking them to close factories, lay off workers, stop making weapons,
 
 ### Why This Works
 
-It's all legal. VICTORY Incentive Alignment Bonds are legal investment vehicles. Lobbying is protected free speech. Consulting fees are standard practice. They designed the system to allow this. You're just using it correctly for the first time, which is to say, you're using it for something other than weapons, which has never occurred to anyone before, which tells you everything about your species' relationship with its own legal system.
+It's all legal. VICTORY [Incentive Alignment Bonds](incentive-alignment-bonds.qmd) are legal investment vehicles. Lobbying is protected free speech. Consulting fees are standard practice. They designed the system to allow this. You're just using it correctly for the first time, which is to say, you're using it for something other than weapons, which has never occurred to anyone before, which tells you everything about your species' relationship with its own legal system.
 
 The defense contractor CEO explains it to the board like this: "We diversified into bonds paying {{< var victory_bond_annual_return_pct >}} returns versus the market's {{< var average_market_return_pct >}}. If the treaty passes, we profit enormously. If it fails, we still have our defense contracts. It's a hedge. I'm being prudent. You're welcome." The board nods. The board always nods when the numbers are good. The board has never once asked whether the numbers were moral. This is, again, the design parameter.
 
@@ -84,7 +84,7 @@ The math they can't refuse: diabetes costs {{< var us_diabetes_annual_cost >}} a
 
 ![Buy bonds, fund cures, people stop dying, premiums drop, profits go up forever. Insurance companies solving their own problem by accident.](/assets/images/aligning-incentives/aligning-incentives-section-the-implementation-bw-academic.jpg)
 
-The implementation: they buy VICTORY Incentive Alignment Bonds ({{< var victory_bond_annual_return_pct >}} returns), they lobby for the treaty (which protects their investment), cures reduce their claims (which increases their profits), they lower premiums (which gives them competitive advantage), and a healthier population produces a permanent profit increase. Each step makes the next step more profitable. It's a virtuous cycle, which is like a vicious cycle but nobody dies. Your species has built many vicious cycles. This would be your first virtuous one, which is a statistic that should embarrass you more than it apparently does.
+The implementation: they buy VICTORY [Incentive Alignment Bonds](incentive-alignment-bonds.qmd) ({{< var victory_bond_annual_return_pct >}} returns), they lobby for the treaty (which protects their investment), cures reduce their claims (which increases their profits), they lower premiums (which gives them competitive advantage), and a healthier population produces a permanent profit increase. Each step makes the next step more profitable. It's a virtuous cycle, which is like a vicious cycle but nobody dies. Your species has built many vicious cycles. This would be your first virtuous one, which is a statistic that should embarrass you more than it apparently does.
 
 ### Why They're Your Natural Allies
 
@@ -108,7 +108,7 @@ Each new drug costs {{< var pharma_drug_development_cost_current >}} to develop.
 
 ### The Math That Converts Them
 
-Pragmatic clinical trials become {{< var dfda_trial_cost_reduction_factor >}} cheaper. Current system: {{< var traditional_phase3_cost_per_patient >}} per participant on dedicated sites, with monitoring, custom infrastructure, and regulatory overhead that costs more than the research it's overseeing. With your decentralized institutes of health: cost drops roughly {{< var dfda_trial_cost_reduction_pct >}} because it uses existing medical practices, existing EHR data, and pragmatic design. A 50,000-participant trial drops from approximately $2B to approximately $46M. This is the difference between betting your company and betting your department's coffee budget.
+Pragmatic clinical trials become {{< var dfda_trial_cost_reduction_factor >}} cheaper. Current system: {{< var traditional_phase3_cost_per_patient >}} per participant on dedicated sites, with monitoring, custom infrastructure, and regulatory overhead that costs more than the research it's overseeing. With your [Decentralized Institutes of Health](dih.qmd): cost drops roughly {{< var dfda_trial_cost_reduction_pct >}} because it uses existing medical practices, existing EHR data, and pragmatic design. A 50,000-participant trial drops from approximately $2B to approximately $46M. This is the difference between betting your company and betting your department's coffee budget.
 
 The current system costs {{< var traditional_phase3_cost_per_patient >}} per patient for trials, 90% of drugs fail which means billions lost, development takes 10-17 years, and only blockbusters are viable. The decentralized system costs {{< var dfda_pragmatic_trial_cost_per_patient >}} per patient (a {{< var dfda_trial_cost_reduction_pct >}} reduction), failure costs tens of millions instead of billions (survivable), development takes 2-3 years, and rare diseases become profitable because you can afford to try.
 
@@ -156,7 +156,7 @@ Billionaires have everything except the one thing money can't buy: not dying. A 
 
 ![Billionaires buying longevity like it's life insurance. Pay now, live forever. The premium is 100 million dollars but so is their watch.](/assets/images/aligning-incentives/aligning-incentives-section-the-insurance-bw-academic.jpg)
 
-The package: VICTORY Incentive Alignment Bonds funded by treaty revenue, beating traditional portfolio yields (returns). "The Gates Cancer Center" and a Nobel Peace Prize and history books reading "Funded the cure for death" (legacy). And the part they won't say out loud but think every time their knee hurts: they're getting old, their genetics aren't special, and every disease cured is their lifespan extended (survival). Your species' billionaires have been funding vanity projects for decades. Space tourism. Underwater hotels. Islands. None of these extend their lifespan. This does. It's the first vanity project where the vanity is rational.
+The package: VICTORY [Incentive Alignment Bonds](incentive-alignment-bonds.qmd) funded by treaty revenue, beating traditional portfolio yields (returns). "The Gates Cancer Center" and a Nobel Peace Prize and history books reading "Funded the cure for death" (legacy). And the part they won't say out loud but think every time their knee hurts: they're getting old, their genetics aren't special, and every disease cured is their lifespan extended (survival). Your species' billionaires have been funding vanity projects for decades. Space tourism. Underwater hotels. Islands. None of these extend their lifespan. This does. It's the first vanity project where the vanity is rational.
 
 ## The Domino Effect
 
@@ -184,6 +184,6 @@ This isn't inevitable. It requires sufficient IAB funding to overcome opposition
 
 ## Why This Scales: The Ratchet Effect
 
-Each treaty expansion creates more political incentive funding to lobby for the next expansion. At 1%, political incentive funding is {{< var iab_political_incentive_funding_annual >}} per year. At 10%, that scales to 10x. Politicians who supported the [1% treaty](1-percent-treaty.qmd) [@1-pct-treaty-impact-paper-2025] get rewarded. Those rewards grow if they push for 2%. It's a ratchet that only moves in one direction: the direction where people stop dying.
+Each treaty expansion creates more political incentive funding to lobby for the next expansion. At 1%, political incentive funding is {{< var iab_political_incentive_funding_annual >}} per year. At 10%, that scales to 10x. Politicians who supported the [1% Treaty](1-percent-treaty.qmd) [@1-pct-treaty-impact-paper-2025] get rewarded. Those rewards grow if they push for 2%. It's a ratchet that only moves in one direction: the direction where people stop dying.
 
 You've built ratchets like this before. Social Security. Medicare. Once they exist, dismantling them is politically suicidal because too many people depend on them. The difference is you built those by accident, through crisis and desperation, and spent decades arguing about whether they were good ideas. This time, try doing it on purpose. On Wishonia, we've found that building things on purpose works better than building them by accident, though I realize this is a controversial position for a species that invented penicillin by leaving a sandwich out.

@@ -38,7 +38,7 @@ You invented the internet over three decades ago and somehow forgot to plug medi
 
 ## How It Works: Just Let People Try Stuff (Carefully)
 
-Yes, the FDA exists because patent medicine salesmen were literally poisoning people, and thalidomide gave "birth defect" a whole new meaning. Nobody's arguing for no regulation; we're arguing for regulation that doesn't kill more people than it saves.
+Yes, the FDA exists because patent medicine salesmen were literally poisoning people, and thalidomide gave "birth defect" a whole new meaning. Nobody's arguing for no regulation. We're arguing for regulation that doesn't kill more people than it saves (a low bar your current system fails to clear).
 
 Here's a thought that apparently never occurred to anyone in Washington:
 
@@ -60,13 +60,13 @@ You're basing survival on sample sizes smaller than kindergarten classes. So ins
 
 ### The Power of Real-World Evidence (Or: Spying on Sick People for a Good Cause)
 
-This framework is built on a slightly creepy idea: analyzing data from real patients in the real world. Real-World Evidence (RWE). A fancy term for "watching what happens."
+This framework is built on a slightly creepy idea: analyzing data from real patients in the real world. Real-World Evidence (RWE). A fancy term for "watching what happens." (Your species needed a three-word acronym for this.)
 
 Correlation isn't causation.
 
 But now there's enough data and computing power to make each person their own control group. Track arthritis pain for a month. Take Turmeric, stop, start again. The pattern reveals whether it works or if it's coincidence.
 
-A landmark meta-analysis in the New England Journal of Medicine [@meta-analysis-in-the-new-england-journal-of-medicine] quietly ended this argument while nobody was listening. Researchers compared observational studies against randomized controlled trials across 19 different treatments. Cardiac surgery, cancer, ophthalmology, obstetrics. The result: nearly identical effect sizes. The cheap method and the expensive method found the same answers. You've been overpaying for data like tourists at an airport restaurant. On Wishonia, we figured this out about 3,000 years ago. We call it "looking at what happened." You call it a "landmark meta-analysis."
+A meta-analysis in the New England Journal of Medicine [@meta-analysis-in-the-new-england-journal-of-medicine] quietly ended this argument while nobody was listening. Researchers compared observational studies against randomized controlled trials across 19 treatments. Cardiac surgery, cancer, ophthalmology, obstetrics. Result: nearly identical effect sizes. The cheap method and the expensive method found the same answers. You've been overpaying for data like tourists at an airport restaurant. On Wishonia, we figured this out 3,000 years ago. We call it "looking at what happened." You call it a "landmark meta-analysis."
 
 ![Forest plot comparing effect sizes from observational studies vs. RCTs for cardiac treatments. The dots land in the same place. The expensive method and the cheap method found the same answers.](../../assets/images/observational-vs-randomized-effect-sizes.png)
 
@@ -76,7 +76,7 @@ Each pair of dots represents the same treatment tested two ways: one observation
 
 ### The Two-Stage Pipeline: Watch First, Then Test
 
-Observational data finds the signals. But correlation still isn't proof (even you know that). So the framework uses a two-stage pipeline:
+Observational data finds the signals. But correlation still isn't proof (even you know that). So the framework uses two stages:
 
 **Stage 1 (Signal Detection):** Aggregate data from millions of patients. Score each treatment-outcome relationship using six Bradford Hill causality criteria [@bradford-hill-1965]: How strong is the effect? How consistent across people? Does the treatment come before the improvement? Is there a dose-response pattern? Cost: ~{{< var dfda_observational_cost_per_patient >}} per patient.
 
@@ -112,11 +112,11 @@ Results:
 
 The FDA's response: "But did they file the correct paperwork?"
 
-RECOVERY wasn't a fluke. A Harvard meta-analysis of 108 embedded pragmatic trials [@embedded-pragmatic-trials-meta-analysis] found median costs of just $97 per patient. The PCORnet ADAPTABLE trial enrolled 15,076 patients across 40 clinical sites at {{< var adaptable_trial_cost_per_patient >}} per patient [@pragmatic-trials-cost-advantage]. This model works across therapeutic areas, across countries, across decades. The evidence base for cheap, fast, embedded trials isn't one study. It's 108 and counting. On most planets I've worked with, the pragmatic trial is the moment everyone looks at each other and says "wait, that's it?" Yes. That's it. You let sick people try things, write down what happens, and share the results.
+RECOVERY wasn't a fluke. A Harvard meta-analysis of 108 embedded pragmatic trials [@embedded-pragmatic-trials-meta-analysis] found median costs of just $97 per patient. The PCORnet ADAPTABLE trial enrolled 15,076 patients across 40 sites at {{< var adaptable_trial_cost_per_patient >}} per patient [@pragmatic-trials-cost-advantage]. 108 studies and counting. On most planets I've worked with, the pragmatic trial is the moment everyone looks at each other and says "wait, that's it?" Yes. That's it. Let sick people try things, write down what happens, share the results.
 
 ## What You'd See: FDA.gov 2.0
 
-The protocol upgrades FDA.gov from a digital cemetery to something useful. Cost: Less than one fighter jet that doesn't work.
+The protocol upgrades FDA.gov from a digital cemetery to something useful. Cost: less than one fighter jet that doesn't work.
 
 ![Upgrading the FDA website would save more lives than a fighter jet, cost less than a fighter jet, but we bought the fighter jet.](/assets/images/dfda/dfda-section-introducing-fda-gov-2-0-now-with-80-less-death-bw-academic.jpg)
 
@@ -218,7 +218,7 @@ You should have done this when you invented writing in 3000 BC.
 
 Food has nutrition labels. Cigarettes have warning labels. Drugs have... incomprehensible 40-page inserts written by lawyers having seizures.
 
-**Outcome Labels** fix that. Clear, data-driven summaries showing exactly what happens when real people try a treatment:
+**Outcome Labels** fix that. What actually happens when real people try a treatment:
 
 ![What medicine labels would say if they were honest.](../../assets/images/dfda-outcome-labels.png)
 
@@ -245,7 +245,7 @@ Every treatment ranked. Drugs, supplements, lifestyle interventions, off-label u
 
 ## Your Personal Death-Prevention Assistant: The FDAi
 
-On Wishonia, every citizen gets one of these at birth. It monitors their health, finds treatments matched to their biology, and adjusts dosing in real time. We've had them for 3,000 years. You've had the technology for nearly two decades and used it to count steps.
+On Wishonia, every citizen gets one of these at birth. It monitors their health, finds treatments matched to their biology, and adjusts dosing in real time. We've had them for 3,000 years. You've had the technology for two decades and used it to count steps.
 
 Everyone gets a superintelligent doctor that lives in their phone and doesn't judge them for Googling "is my poop normal?"
 
@@ -265,7 +265,7 @@ It also does something no doctor can: precision dosing. By analyzing what dose p
 
 ## Making It Legal to Not Die
 
-This solution requires a law: the [Right to Trial and FDA Upgrade Act](../appendix/right-to-trial-fda-upgrade-act.qmd). It says dying people can try things that might help them not die, and what happens gets written down so other dying people can see what worked.
+This requires a law: the [Right to Trial and FDA Upgrade Act](../appendix/right-to-trial-fda-upgrade-act.qmd). It says dying people can try things that might help them not die, and what happens gets written down so other dying people can see what worked.
 
 The fact that this requires a law tells you everything about your species.
 
@@ -343,7 +343,7 @@ The fact that this requires a law tells you everything about your species.
 **Traditional trial:** Pharma spends $57M, tests most profitable drug only
 **Decentralized trial:** Pharma spends $0, tests everything including supplements, food, lifestyle, off-patent drugs
 
-A 1% Treaty Fund doesn't fund pragmatic clinical trials directly. **It subsidizes participation, which unlocks a self-sustaining ecosystem that funds ALL research.**
+A [1% Treaty](1-percent-treaty.qmd) Fund doesn't fund trials directly. **It subsidizes participation, which unlocks a self-sustaining system that funds all research.**
 
 ![One research lab doing one thing at a time versus a million people doing a million things at once. Speed difference is noticeable.](/assets/images/dfda/dfda-section-bottleneck-vs-protocol-process-bw-academic.jpg)
 
@@ -366,7 +366,7 @@ This eliminates $55 million per trial.
 
 ## The Partnership Approach: Building Rails, Not Trains
 
-Here's what you're NOT doing: building a government platform that competes with existing medical technology companies.
+Here's what you're NOT doing: building a government platform that competes with existing medical technology companies (that would be very human of you).
 
 ![One company owning the entire railway versus everyone sharing the tracks. Sharing is cheaper and less monopolistic.](/assets/images/dfda/dfda-section-the-partnership-approach-building-rails-not-trains-bw-academic.jpg)
 
@@ -374,13 +374,11 @@ Here's what you ARE doing: building an open protocol that lets all existing plat
 
 Think of it like the internet. We didn't build one website that everyone has to use. We built HTTP, the protocol that lets all websites connect. Same idea.
 
-**How your decentralized FDA gets funded:** An implementation of this framework is one of many campaigns competing for funding from the 1% Treaty Fund via [Wishocracy](wishocracy.qmd) [@wishocracy-paper-2025]. It has no independent budget authority. If a particular implementation gets captured or fails to deliver, the community can fund alternative implementations instead. This prevents the "new FDA" problem.
+**How it gets funded:** An implementation of this framework is one of many campaigns competing for funding from the [1% Treaty](1-percent-treaty.qmd) Fund via [Wishocracy](wishocracy.qmd) [@wishocracy-paper-2025]. No independent budget authority. If one implementation gets captured or fails, the community funds a different one. This prevents the "new FDA" problem (where you build a second bureaucracy that becomes the first bureaucracy).
 
 ### The Players Already in the Game
 
-Multiple companies have already built decentralized clinical trial platforms. They've collectively raised hundreds of millions in venture funding [@dct-platform-funding-others]. They're good at it. They have users. They have infrastructure.
-
-Why compete with them? That would be very human of you. Partner instead.
+Multiple companies have already built decentralized clinical trial platforms. They've collectively raised hundreds of millions in venture funding [@dct-platform-funding-others]. They're good at it. They have users. They have infrastructure. Why compete? Partner.
 
 **The open standard provides**:
 
@@ -406,7 +404,7 @@ Data doesn't move to a central database. It stays where it is. Everyone keeps th
 - Apple Health keeps its data
 - Cerner keeps its data
 
-Your decentralized protocol will let you run queries ACROSS systems without moving data. Like asking every library in the world a question without stealing their books. Federated data networks already do this with 300M+ patient records.
+Your decentralized protocol runs queries across systems without moving data. Like asking every library in the world a question without stealing their books. Federated data networks already do this with 300M+ patient records.
 
 ![Instead of copying everyone's medical data to one place, we ask questions to many places and combine the answers. Your data stays where it is, we just visit.](/assets/images/dfda/dfda-section-federated-not-centralized-bw-academic.jpg)
 
@@ -423,7 +421,7 @@ This solves:
 
 **The FDA approves ~50 new drugs per year.** There are 10,000 known diseases. At that rate, covering every disease once takes 200 years. And that's before you account for the fact that different patients respond differently to the same drug based on genetics, age, comorbidities, and whether they had breakfast.
 
-**The real bottleneck isn't speed; it's information.** Centralized approval assumes a 200-person committee can evaluate what works for {{< var global_population_2024_nounit >}} genetically unique humans. They can't. A decentralized system where millions of patients generate real-world evidence simultaneously processes more therapeutic information in a month than the FDA generates in a decade.
+**The real bottleneck isn't speed; it's information.** Centralized approval assumes 200 people can evaluate what works for {{< var global_population_2024_nounit >}} genetically unique humans. They can't. A decentralized system where millions of patients generate real-world evidence processes more therapeutic information in a month than the FDA generates in a decade.
 
 The FDA doesn't know:
 
@@ -434,7 +432,7 @@ The FDA doesn't know:
 
 But they decide for you anyway. This isn't ideology. It's information theory. You mathematically cannot centralize medical decisions for {{< var global_population_2024_nounit >}} unique people.
 
-Every civilization I've worked with tried a centralized approval committee first. Every single one eventually abandoned it, once someone did the math and realized that a roomful of experts reviewing one drug at a time is just a queue with a death rate.
+Every civilization I've worked with tried a centralized approval committee first. Every single one abandoned it, once someone did the math and realized a roomful of experts reviewing one drug at a time is just a queue with a death rate.
 
 ## The Future: Where Death Becomes Embarrassing
 
@@ -446,7 +444,7 @@ FDA.gov becomes actually useful. Millions join trials from home. The first "Wiki
 
 ### 2030: Big Pharma Pivots or Dies
 
-Pharmaceutical companies realize they can't charge $10,000 for pills that cost $1 to make when everyone can see the data. Some adapt. Some become museums. The gift shop sells expired painkillers at original markup.
+Pharmaceutical companies realize they can't charge $10,000 for pills that cost $1 to make when everyone can see the data. Some adapt. Some become museums (the gift shop sells expired painkillers at original markup).
 
 ### 2035: The Great Revelation
 

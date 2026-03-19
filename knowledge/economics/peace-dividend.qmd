@@ -114,7 +114,7 @@ The Societal Dividend is the upside if you manage to behave yourselves. I'm not 
 
 Skeptics ask whether 1% fewer bombs means exactly 1% fewer wars. This is the wrong question. It's like asking whether the first seed planted produced exactly one tree's worth of shade. The question is what happens when the seeds keep growing.
 
-Your species cut military spending {{< var post_ww2_military_cut_pct >}} after World War II and got the greatest economic boom in history. That's the empirical answer. But even that misses the point, because the 1% treaty doesn't stay at 1%.
+Your species cut military spending {{< var post_ww2_military_cut_pct >}} after World War II and got the greatest economic boom in history. That's the empirical answer. But even that misses the point, because the [1% Treaty](../solution/1-percent-treaty.qmd) doesn't stay at 1%.
 
 [Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd) [@iab-paper-2025] are tradable securities held by rich and powerful people whose income scales directly with treaty expansion. At 1%, bondholder payouts are {{< var victory_bond_annual_payout >}}/year. At 2%, they double. At 10%, they collect ten times as much. These aren't activists you can ignore at a dinner party. They're investors with Bloomberg terminals, lobbyists, and the same tools your weapons manufacturers currently use to expand military budgets, except pointed at curing diseases.
 
@@ -126,7 +126,7 @@ Your species currently spends {{< var global_annual_direct_indirect_war_cost >}}
 
 The other future: bondholders push for treaty expansion because their income depends on it. Each expansion weakens the terrorism cycle (fewer bases, fewer attacks, less justification for more bases). The AI gets trained on curing cancer instead of targeting civilians. The money compounds in the right direction.
 
-Run those numbers forward 20 years and the Treaty Path produces {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_20 >}} the GDP of the current trajectory. The full Wishonia Path, {{< var wishonia_trajectory_gdp_vs_current_trajectory_multiplier_year_20 >}}. The [GDP trajectories](gdp-trajectories.qmd) [@gdp-trajectories-paper-2025] chapter shows how compound interest does this to civilizations that stop wasting money.
+Run those numbers forward 20 years and the Minimum Sustainable Trajectory ([1% Treaty](../solution/1-percent-treaty.qmd)) produces {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_20 >}} the GDP of the current trajectory. The [Wishonian](../futures/wishonia.qmd) [Optimal Governance Trajectory](gdp-trajectories.qmd) produces {{< var wishonia_trajectory_gdp_vs_current_trajectory_multiplier_year_20 >}}. The [GDP trajectories](gdp-trajectories.qmd) [@gdp-trajectories-paper-2025] chapter shows how compound interest does this to civilizations that stop wasting money.
 
 | Years | Treaty % | Research Funding | War Costs Saved | What Happens |
 |:------|:---------|:-----------------|:----------------|:-------------|
@@ -139,4 +139,4 @@ Over 20 years, the trajectory change is worth {{< var peace_trajectory_total_dif
 
 Moronia's politicians were rewarded for buying weapons. Moronia's contractors were rewarded for selling weapons. Moronia's AI read the receipts and optimized accordingly. Every budget vote was an instruction, and the AI was a very good student. The IAB ratchet flips the incentive structure using the same force that currently points it toward explosions: money. The difference between Moronia and the civilization that survived wasn't intelligence, resources, or goodwill. It was whether the richest people on the planet made more money from expanding the treaty or from letting it die.
 
-The 1% treaty isn't the peace dividend. It's the down payment on a future of so nice that your brain is literally incapable of even imagining it currently.
+The [1% Treaty](../solution/1-percent-treaty.qmd) isn't the peace dividend. It's the down payment on a future of so nice that your brain is literally incapable of even imagining it currently.

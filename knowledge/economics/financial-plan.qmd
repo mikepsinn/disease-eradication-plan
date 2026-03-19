@@ -50,7 +50,7 @@ Legally, the [501(c)(3)](../legal/legal-framework.qmd) proof layer can describe 
 |------|------------------|-------------|----------------------|
 | **Machine-building** | Legal setup, first hires, data room, bond model, early prototype | Mission-aligned angels, tech billionaires, crypto whales | Fast, unrestricted capital for startup risk |
 | **Proof layer** | Referendum platform, security audit, country models, pilot-country proof of demand | Foundations, disease philanthropies, anchor donors | Best fit for research, education, software, and non-binding survey work |
-| **Political machine** | Global referendum scale-up, lobbying, electoral pressure, treaty campaign | [VICTORY Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd), family offices, hedge funds, converted defense contractors, major 501(c)(4) donors | This is political infrastructure, not normal philanthropy |
+| **Political machine** | [Global Referendum](../strategy/global-referendum.qmd) scale-up, lobbying, electoral pressure, treaty campaign | [VICTORY Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd), family offices, hedge funds, converted defense contractors, major 501(c)(4) donors | This is political infrastructure, not normal philanthropy |
 | **Permanent system** | Clinical-trial funding after ratification | Treaty signatories | Only governments can provide {{< var treaty_annual_funding >}}/year at durable scale |
 
 ## Pillar 2: The Spending Part (Spend {{< var treaty_campaign_total_cost >}})
@@ -61,7 +61,7 @@ The one-time activation energy to convince {{< var global_population_2024_nounit
 
 | Category | Amount | Purpose |
 |----------|--------|---------|
-| **Global Referendum** | {{< var treaty_campaign_viral_referendum_base_case >}} | Viral referral system, {{< var treaty_campaign_voting_bloc_target_nounit >}} votes, platform development. [Budget details](campaign-budget.qmd#base-case-scenario) |
+| **[Global Referendum](../strategy/global-referendum.qmd)** | {{< var treaty_campaign_viral_referendum_base_case >}} | Viral referral system, {{< var treaty_campaign_voting_bloc_target_nounit >}} votes, platform development. [Budget details](campaign-budget.qmd#base-case-scenario) |
 | **Political Lobbying** | {{< var treaty_campaign_budget_lobbying >}} | AI-targeted campaigns (US/EU/G20), Super PACs, MIC conversion. Outspends pharma + MIC |
 | **Reserve Fund** | {{< var treaty_campaign_budget_reserve >}} | Post-passage transition, contingency buffer |
 
@@ -79,7 +79,7 @@ Once the treaty passes, {{< var treaty_annual_funding >}} flows annually from "h
 
 ![Every year, 27.2 billion moves from the war budget to the cure budget. It's a very slow transfer, like a glacier made of money and good intentions.](/assets/images/financial-plan/financial-plan-section-treasury-management-how-to-manage-var-treaty-annual-funding-annually-bw-academic.jpg)
 
-100+ nations contribute {{< var treaty_reduction_pct >}} of military budgets. Not because they've had a moral awakening. Because the [Incentive Alignment Bond](../appendix/incentive-alignment-bonds-paper.qmd) mechanism makes compliance self-enforcing: politicians in non-compliant countries watch their Treaty Support Scores fall, the 1% Treaty-specific subtype of the [Public Good Score](../solution/incentive-alignment-bonds.qmd), independent PACs redirect millions in campaign funding to their opponents, and their post-office career options shrink from WHO boards to writing memoirs nobody reads. Compliance becomes the career-optimal choice. You don't need politicians to be good. You just need them to be selfish in the right direction.
+100+ nations contribute {{< var treaty_reduction_pct >}} of military budgets. Not because they've had a moral awakening. Because the [Incentive Alignment Bond](../appendix/incentive-alignment-bonds-paper.qmd) mechanism makes compliance self-enforcing: politicians in non-compliant countries watch their Treaty Support Scores fall, the [1% Treaty](../solution/1-percent-treaty.qmd) [@1-pct-treaty-impact-paper-2025]-specific subtype of the [Public Good Score](../solution/incentive-alignment-bonds.qmd), independent PACs redirect millions in campaign funding to their opponents, and their post-office career options shrink from WHO boards to writing memoirs nobody reads. Compliance becomes the career-optimal choice. You don't need politicians to be good. You just need them to be selfish in the right direction.
 
 ![Countries that contribute get good scores. Politicians with good scores get elected. Elected politicians contribute. The system enforces itself, like peer pressure but with nuclear weapons.](/assets/images/financial-plan/financial-plan-section-revenue-sources-bw-academic.jpg)
 

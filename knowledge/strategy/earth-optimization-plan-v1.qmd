@@ -50,15 +50,15 @@ The system has eleven required functions. The first ten form a loop; the elevent
 8. The **[Political Dysfunction Tax](../problem/unrepresentative-democracy.qmd) [@political-dysfunction-tax-paper-2025]** and **[US Efficiency Audit](https://us-efficiency-audit.warondisease.org) [@us-efficiency-audit-paper-2025]** identify the waste pools ({{< var political_dysfunction_global_opportunity_cost_total >}}/year globally).
 9. The **[legal architecture](../legal/legal-framework.qmd)** (treaty text, [Right to Trial](../solution/dfda.qmd) [@right-to-trial-paper-2025] & FDA Upgrade Act, statutory tools) creates binding force.
 10. **[This book](/)** is the narrative and coalition wrapper that coordinates adoption.
-11. **[Algorithmic monetary system](../futures/wishonia.qmd#the-algorithm-that-replaced-twelve-humans)** (Phase 2): once Wishocracy eliminates the politicians who depend on the [money printer](../economics/central-banks.qmd), replace the Federal Reserve with a shared ledger targeting 0% inflation. The productivity dividend (new money that maintains stable prices as the economy grows) and a transaction tax flow into one pool, allocated entirely by Wishocracy. UBI is one allocation category among many. No Cantillon effect, no wars funded without consent, no IRS, no welfare bureaucracy.
+11. **[Algorithmic monetary system](../futures/wishonia.qmd#the-algorithm-that-replaced-twelve-humans)** (Phase 2): once [Wishocracy](../solution/wishocracy.qmd) eliminates the politicians who depend on the [money printer](../economics/central-banks.qmd), replace the Federal Reserve with a shared ledger targeting 0% inflation. The productivity dividend (new money that maintains stable prices as the economy grows) and a transaction tax flow into one pool, allocated entirely by [Wishocracy](../solution/wishocracy.qmd). UBI is one allocation category among many. No Cantillon effect, no wars funded without consent, no IRS, no welfare bureaucracy.
 
 The loop closes: cured diseases generate popular support and economic returns, which fund further treaty expansion, which funds more trials. Each expansion multiplies all three revenue streams (investor, political, research). The system is designed so that the greedier its participants are, the faster diseases get cured.
 
 ## The Funding Engine
 
-### The 1% Treaty
+### The [1% Treaty](../solution/1-percent-treaty.qmd)
 
-Every signatory nation redirects exactly 1% of its military budget to the 1% Treaty Fund. That is {{< var treaty_annual_funding >}}/year from {{< var global_military_spending_annual_2024 >}} in global military spending. Balance of power is preserved because every country cuts the same percentage. No country becomes more vulnerable. Your species has done harder things than this: you cut military spending by {{< var post_ww2_military_cut_pct >}} after WW2 and stumbled into the greatest economic boom in history [@value-captured-by-1pct-treaty; @1-pct-treaty-impact-paper-2025].
+Every signatory nation redirects exactly 1% of its military budget to the [1% Treaty](../solution/1-percent-treaty.qmd) Fund. That is {{< var treaty_annual_funding >}}/year from {{< var global_military_spending_annual_2024 >}} in global military spending. Balance of power is preserved because every country cuts the same percentage. No country becomes more vulnerable. Your species has done harder things than this: you cut military spending by {{< var post_ww2_military_cut_pct >}} after WW2 and stumbled into the greatest economic boom in history [@value-captured-by-1pct-treaty; @1-pct-treaty-impact-paper-2025].
 
 The treaty requires only 2 countries to enter into force. Reservations are not permitted (no creative accounting). Article VIII requires unanimous consent plus 10-year notice for withdrawal, because a treaty that can be abandoned next quarter is not a treaty; it is a suggestion with a flag.
 
@@ -69,7 +69,7 @@ The revenue split is {{< var dih_treasury_medical_research_pct >}}/{{< var victo
 To replace this component, your alternative must redirect at least as much low-value spending to higher-value use, without requiring any participant to become less selfish.
 :::
 
-### Decentralized Institutes of Health
+### [Decentralized Institutes of Health](../solution/dih.qmd)
 
 The [DIH](../solution/dih.qmd) is a thin coordination protocol, not an organization. It does three things: receive treaty funds, allocate them via patient subsidies weighted by disease burden (DALYs) and infrastructure decisions via [Wishocracy](../solution/wishocracy.qmd), and verify results. Everything operational is outsourced to competing providers.
 
@@ -84,7 +84,7 @@ To replace this component, your alternative must allocate research funding at le
 
 ## The Medical Engine
 
-### Your Decentralized FDA
+### Your [decentralized FDA](../solution/dfda.qmd)
 
 Your species has {{< var safe_compounds_count >}} known safe compounds. {{< var unexplored_ratio >}} of their potential uses have never been tested. At the current discovery rate, clearing the backlog takes ~{{< var status_quo_queue_clearance_years >}}. Your current clinical trial system costs {{< var traditional_phase3_cost_per_patient >}}/patient, has {{< var current_trial_slots_available >}} slots for {{< var current_disease_patients_global >}} patients who need them, and excludes 86% of the population.
 
@@ -101,7 +101,7 @@ To replace this component, your alternative must produce faster, cheaper, more r
 
 ## The Political Engine
 
-### Incentive Alignment Bonds
+### [Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd)
 
 The obvious question: who funds a campaign to redirect military spending? Answer: people who want {{< var victory_bond_annual_return_pct >}} annual returns.
 
@@ -120,7 +120,7 @@ To replace this component, your alternative must make treaty passage at least as
 
 ### The Campaign
 
-The campaign has two prongs: a [global referendum](global-referendum.qmd) and a lobbying operation.
+The campaign has two prongs: a [Global Referendum](global-referendum.qmd) and a lobbying operation.
 
 The referendum proves that the support already exists. Everyone thinks ending war and disease is crazy because everyone else thinks it is crazy. Your economists call this pluralistic ignorance. The referendum is the moment eight billion people discover they nearly all agree. At {{< var global_population_activism_threshold_pct >}} active participation (the Chenoweth threshold), no political movement has ever failed {{< var global_population_activism_threshold_pct_cite >}}. That is {{< var treaty_campaign_voting_bloc_target_nounit >}} humans. More than 10 times as many downloaded TikTok.
 
@@ -168,13 +168,13 @@ To replace this component, your alternative must generate better policy and budg
 
 ## The Governance Engine
 
-### Wishocracy
+### [Wishocracy](../solution/wishocracy.qmd)
 
 [Wishocracy](../solution/wishocracy.qmd) [@wishocracy-paper-2025] asks citizens to drag a slider between two random budget priorities. "How would you split $100 between cancer research and malaria prevention?" About 20 comparisons, 5 minutes. Statistical models (Bradley-Terry/PageRank) aggregate millions of pairwise judgments into budget-preference weights without speeches, lobbying, or horse-trading.
 
 Why pairwise comparisons? Random pairs prevent gaming (no ballot measure to advertise for). Independence is structurally guaranteed (no spoiler candidates, no strategic voting). Outliers cancel out. Your species tried direct democracy four times (Athens, California propositions, Brexit, Swiss referendums) and each failed for a specific reason that pairwise comparison structurally prevents.
 
-In Phase 1, Wishocracy governs how the {{< var dih_treasury_medical_research_pct >}} research treasury is allocated, and infrastructure decisions within the DIH. In Phase 2, it governs the entire public goods budget: the productivity dividend and transaction tax revenue from the [algorithmic monetary system](#the-monetary-system-phase-2) flow through Wishocracy, with UBI as one allocation category among many. It is scope-locked to bounded allocation questions. You cannot use it to vote on rights, bodies, or anything unbounded.
+In Phase 1, [Wishocracy](../solution/wishocracy.qmd) governs how the {{< var dih_treasury_medical_research_pct >}} research treasury is allocated, and infrastructure decisions within the DIH. In Phase 2, it governs the entire public goods budget: the productivity dividend and transaction tax revenue from the [algorithmic monetary system](#the-monetary-system-phase-2) flow through [Wishocracy](../solution/wishocracy.qmd), with UBI as one allocation category among many. It is scope-locked to bounded allocation questions. You cannot use it to vote on rights, bodies, or anything unbounded.
 
 ::: {.callout-note}
 ## Fork Marker
@@ -185,7 +185,7 @@ To replace this component, your alternative must recover public preferences at e
 
 The [legal framework](../legal/legal-framework.qmd) has four parts:
 
-1. **Treaty text.** Articles I-VIII of the 1% Treaty, modeled on the Chemical Weapons Convention (193 signatories). Proportional reduction, no reservations, 10-year withdrawal notice.
+1. **Treaty text.** Articles I-VIII of the [1% Treaty](../solution/1-percent-treaty.qmd), modeled on the Chemical Weapons Convention (193 signatories). Proportional reduction, no reservations, 10-year withdrawal notice.
 2. **Right to Trial & FDA Upgrade Act.** Eliminates the {{< var efficacy_lag_years >}} efficacy delay for drugs that pass Phase I safety. Replaces a smoke detector that works by mail with real-time safety monitoring.
 3. **[Legislation package](legislation-package.qmd).** The statutory tools for domestic implementation in each signatory country.
 4. **[Election law compliance](../legal/election-law.qmd).** The IAB mechanism operates within existing campaign finance law (Citizens United, FEC advisory opinions, 501(c)(4) rules).
@@ -210,13 +210,13 @@ To replace this component, your alternative must create equal or stronger bindin
 
 The [central-banks chapter](../economics/central-banks.qmd) makes the case that the money printer is the root cause: every war that killed more than a million people required one, the hard-money list is empty, and the Cantillon effect has transferred 93% of your purchasing power from workers to whoever stands closest to the printer since 1913. A plan that claims to optimize Earth but ignores the monetary system is a plan that fixes the symptoms and leaves the disease.
 
-V1 does not fix this in Phase 1. The treaty, the bonds, and your decentralized FDA all operate within existing fiat currencies. This is deliberate. Replacing the Federal Reserve requires eliminating the politicians who depend on it, which requires [Wishocracy](../solution/wishocracy.qmd) to be running, which requires the treaty to pass, which requires the bonds to sell. You cannot skip to the end.
+V1 does not fix this in Phase 1. The treaty, the bonds, and your [decentralized FDA](../solution/dfda.qmd) all operate within existing fiat currencies. This is deliberate. Replacing the Federal Reserve requires eliminating the politicians who depend on it, which requires [Wishocracy](../solution/wishocracy.qmd) to be running, which requires the treaty to pass, which requires the bonds to sell. You cannot skip to the end.
 
-Phase 2 (post-treaty, post-wishocracy) replaces the money printer with an algorithmic monetary system described in [Wishonia](../futures/wishonia.qmd#the-algorithm-that-replaced-twelve-humans). The core mechanism: a shared ledger targeting 0% inflation. When the economy grows, the algorithm creates exactly enough new currency to keep prices stable. That new money is the productivity dividend, flowing through [Wishocracy](../solution/wishocracy.qmd) as the global public goods budget. No congressional budget process. No lobbyist.
+Phase 2 (post-treaty, post-[Wishocracy](../solution/wishocracy.qmd)) replaces the money printer with an algorithmic monetary system described in [Wishonia](../futures/wishonia.qmd#the-algorithm-that-replaced-twelve-humans). The core mechanism: a shared ledger targeting 0% inflation. When the economy grows, the algorithm creates exactly enough new currency to keep prices stable. That new money is the productivity dividend, flowing through [Wishocracy](../solution/wishocracy.qmd) as the global public goods budget. No congressional budget process. No lobbyist.
 
 A transaction tax (automatic, collected by smart contract) provides the second stream. Both flow into one pool; [Wishocracy](../solution/wishocracy.qmd) allocates the entire thing. UBI is one allocation category among many, not a constitutional carve-out. The [Optimitron](../solution/optimocracy.qmd) shows the ROI of each option; the aggregate produces a natural equilibrium.
 
-Together, three pieces of software (the monetary algorithm targeting 0% inflation, the transaction tax contract, and Wishocracy) render redundant: the Federal Reserve, the IRS, income tax, the congressional budget process, every welfare program, grant committees, the lobbying industry, and the financial sector.
+Together, three pieces of software (the monetary algorithm targeting 0% inflation, the transaction tax contract, and [Wishocracy](../solution/wishocracy.qmd)) render redundant: the Federal Reserve, the IRS, income tax, the congressional budget process, every welfare program, grant committees, the lobbying industry, and the financial sector.
 
 This is v1's most honest gap. The system that funds wars without democratic consent, steals 2% of purchasing power per year by design, and channels genius toward weapons instead of medicine is not addressed until Phase 2. A v2 that solves this earlier, without breaking the Phase 1 sequencing, would be strictly better.
 
@@ -260,11 +260,11 @@ You cannot skip steps. All timelines below are order-of-magnitude estimates, not
 
 **Phase 1: The [Least Bad Idea Prize](earth-optimization-prize.qmd#the-least-bad-idea-in-the-world-prize) (weeks to months).** Run the design competition. Teams fork v1, fix it, or replace it. Expert panel filters for [constitutional compliance](earth-optimization-prize.qmd#constitutional-constraints). Adversarial review catches what the panel misses. [Wishocracy](../solution/wishocracy.qmd) ranks the survivors via pairwise comparison. The winner becomes the Earth Optimization Plan v2. PRIZE token sales begin during this phase, funding the prize pool regardless of which plan wins. This is the cheapest stage and it stress-tests the plan before committing real resources.
 
-**Phase 2: The [referendum](global-referendum.qmd) (weeks to months).** Launch the [PRIZE token](earth-optimization-prize.qmd) sale and referendum platform simultaneously. Each participant votes on the 1% treaty (the headcount that creates political pressure) and sets a [wishocratic slider](../solution/wishocracy.qmd) for their preferred military-to-health allocation (the data that tells you what people actually want). Every recruiter who brings a verified participant earns VOTE tokens. The PRIZE pool size and referendum headcount become the pitch to investors. If 280 million people say their preferred split is 5%, that is ammunition for the ratchet before it even starts.
+**Phase 2: The [referendum](global-referendum.qmd) (weeks to months).** Launch the [PRIZE token](earth-optimization-prize.qmd) sale and referendum platform simultaneously. Each participant votes on the [1% Treaty](../solution/1-percent-treaty.qmd) (the headcount that creates political pressure) and sets a [wishocratic slider](../solution/wishocracy.qmd) for their preferred military-to-health allocation (the data that tells you what people actually want). Every recruiter who brings a verified participant earns VOTE tokens. The PRIZE pool size and referendum headcount become the pitch to investors. If 280 million people say their preferred split is 5%, that is ammunition for the ratchet before it even starts.
 
 **Phase 3: Pass the treaty (months to years).** Scale the referendum to {{< var treaty_campaign_voting_bloc_target_nounit >}} verified participants. Launch the full VICTORY [Incentive Alignment Bond](../solution/incentive-alignment-bonds.qmd) sale ({{< var treaty_campaign_total_cost >}} target). Overwhelm the defense lobby ({{< var defense_lobbying_annual >}}/year) with 8x their spend. Pass the treaty. {{< var treaty_annual_funding >}}/year begins flowing.
 
-**Phase 4: Full optimization (years to decades).** Treaty expands from 1% to 2% to 5% to 50%+. Each expansion multiplies all three revenue streams. [Wishocracy](../solution/wishocracy.qmd) governs how the research treasury is allocated. Once Wishocracy is running at scale, replace the Federal Reserve with the [algorithmic monetary system](../futures/wishonia.qmd#the-algorithm-that-replaced-twelve-humans). A transaction tax replaces the IRS. UBI becomes one wishocratic allocation category among many. Three pieces of software replace the entire fiscal and monetary apparatus.
+**Phase 4: Full optimization (years to decades).** Treaty expands from 1% to 2% to 5% to 50%+. Each expansion multiplies all three revenue streams. [Wishocracy](../solution/wishocracy.qmd) governs how the research treasury is allocated. Once [Wishocracy](../solution/wishocracy.qmd) is running at scale, replace the Federal Reserve with the [algorithmic monetary system](../futures/wishonia.qmd#the-algorithm-that-replaced-twelve-humans). A transaction tax replaces the IRS. UBI becomes one wishocratic allocation category among many. Three pieces of software replace the entire fiscal and monetary apparatus.
 
 ## The Numbers
 
@@ -308,7 +308,7 @@ The {{< var dih_treasury_medical_research_pct >}}/{{< var victory_bond_funding_p
 
 **How to beat this:** Prove that a different split raises more total capital or produces better outcomes per dollar. Or prove that the 20% is unnecessary because a cheaper political mechanism exists.
 
-### 3. Wishocracy Participation
+### 3. [Wishocracy](../solution/wishocracy.qmd) Participation
 
 If participation in wishocratic allocation is low, the allocations are noisy and manipulable by organized factions. The system requires thresholds, weighting, or fallback modes for low participation. We have specified these. We have not tested them.
 
@@ -327,7 +327,7 @@ This is not a whitepaper. The core infrastructure is built and tested:
 | Package | What it does | Status |
 |:---|:---|:---|
 | [Optimitron core](https://github.com/mikepsinn/optomitron) | Domain-agnostic causal inference engine | 176 tests |
-| Wishocracy | RAPPA pairwise preference aggregation, citizen alignment scores | 162 tests |
+| [Wishocracy](../solution/wishocracy.qmd) | RAPPA pairwise preference aggregation, citizen alignment scores | 162 tests |
 | Optimal Policy Generator | Enact/replace/repeal recommendations from cross-jurisdiction data | 213 tests |
 | Optimal Budget Generator | Diminishing-returns budget optimization | 146 tests |
 | Data layer | OECD, World Bank, FRED, WHO, Congress.gov fetchers + 9 health importers | 296 tests |

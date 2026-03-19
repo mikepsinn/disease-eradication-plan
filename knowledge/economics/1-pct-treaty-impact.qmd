@@ -17,10 +17,10 @@ abstract: |
   {{< var treaty_vs_bed_nets_multiplier >}} better than bed nets. Even at {{< var political_success_probability >}}
   probability of treaty adoption, risk-adjusted cost-effectiveness remains superior to the best existing
   global health interventions. Incentive Alignment Bonds address political feasibility by tying
-  legislators' career incentives to a public voting scorecard. For ceiling context, the treaty-only path
+  legislators' career incentives to a public voting scorecard. For ceiling context, the Minimum Sustainable Trajectory (1% Treaty)
   reaches {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_20 >}} the Earth baseline after 20 years,
   with average income at {{< var treaty_trajectory_avg_income_year_20 >}} and total output at
-  {{< var treaty_trajectory_gdp_year_20 >}}. The full Optimal-Governance Path reaches
+  {{< var treaty_trajectory_gdp_year_20 >}}. The Wishonian Optimal Governance Trajectory reaches
   {{< var wishonia_trajectory_gdp_vs_current_trajectory_multiplier_year_20 >}} the Earth baseline, with average income at
   {{< var wishonia_trajectory_avg_income_year_20 >}} versus {{< var current_trajectory_avg_income_year_20 >}} on the
   status-quo path and total output at {{< var wishonia_trajectory_gdp_year_20 >}}
@@ -116,7 +116,7 @@ youtube-thumbnail: /assets/podcast/1-pct-treaty-impact-youtube.jpg
 
 **Bottom line**: Cost-saving intervention comparable to smallpox eradication ({{< var smallpox_eradication_roi >}}:1 ROI).
 
-**Scale note.** This treaty wedge is the conservative floor rather than the full ceiling. In the same model base, the treaty-only path reaches {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_20 >}} the Earth baseline after 20 years, with average income at {{< var treaty_trajectory_avg_income_year_20 >}} and total output at {{< var treaty_trajectory_gdp_year_20 >}}. The full Optimal-Governance Path reaches {{< var wishonia_trajectory_gdp_vs_current_trajectory_multiplier_year_20 >}} the Earth baseline, with average income at {{< var wishonia_trajectory_avg_income_year_20 >}} versus {{< var current_trajectory_avg_income_year_20 >}} on the status-quo path and total output at {{< var wishonia_trajectory_gdp_year_20 >}}. The full derivation lives in [The Political Dysfunction Tax](../appendix/political-dysfunction-tax.qmd) [@political-dysfunction-tax-paper-2025].
+**Scale note.** This treaty wedge is the conservative floor rather than the full ceiling. In the same model base, the Minimum Sustainable Trajectory (1% Treaty) reaches {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_20 >}} the Earth baseline after 20 years, with average income at {{< var treaty_trajectory_avg_income_year_20 >}} and total output at {{< var treaty_trajectory_gdp_year_20 >}}. The [Wishonian](../futures/wishonia.qmd) [Optimal Governance Trajectory](../economics/gdp-trajectories.qmd) reaches {{< var wishonia_trajectory_gdp_vs_current_trajectory_multiplier_year_20 >}} the Earth baseline, with average income at {{< var wishonia_trajectory_avg_income_year_20 >}} versus {{< var current_trajectory_avg_income_year_20 >}} on the status-quo path and total output at {{< var wishonia_trajectory_gdp_year_20 >}}. The full derivation lives in [The Political Dysfunction Tax](../appendix/political-dysfunction-tax.qmd) [@political-dysfunction-tax-paper-2025].
 
 ## How Pragmatic Trials Increase Safety
 
@@ -180,7 +180,7 @@ Multiple large-scale pragmatic trials and systematic reviews demonstrate that pr
    - Demonstrates robustness to parameter uncertainty
 
 4. **Self-sustaining funding mechanism**
-   - Incentive Alignment Bonds align investors, politicians, patients
+   - [Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd) align investors, politicians, patients
    - Converts military spending ({{< var economic_multiplier_military_spending >}} economic multiplier) → health research ({{< var economic_multiplier_healthcare_investment >}} multiplier)
    - Legally-binding treaty with market-based incentives
    - No reliance on altruism or bureaucratic mandate
@@ -210,7 +210,7 @@ The analysis that follows uses standard cost-benefit methodology (NPV, QALY mode
 
 **A [Decentralized FDA](../solution/dfda.qmd) [@dfda-spec-paper-2025; @dfda-impact-paper-2025]**: A regulatory wrapper that automates trial creation, IRB approval, liability insurance, and simultaneous multi-agency submissions (FDA, EMA, PMDA, etc.) across countries. Like TurboTax abstracts away tax code complexity, the system abstracts away regulatory complexity: researchers define hypotheses, and the system handles compliance. Uses real-world data, electronic health records, and decentralized patient participation. Reduces per-patient costs by 50-95% compared to traditional trials.
 
-**A decentralized institutes of health**: A pattern for decentralized, programmable, and democratic organizations that implement health initiatives. A decentralized institutes of health can be funded by a 1% Treaty Fund to subsidize patient participation in pragmatic clinical trials.
+**A [Decentralized Institutes of Health](../solution/dih.qmd)**: A pattern for decentralized, programmable, and democratic organizations that implement health initiatives. A [Decentralized Institutes of Health](../solution/dih.qmd) can be funded by a 1% Treaty Fund to subsidize patient participation in pragmatic clinical trials.
 
 **Peace Dividend**: Economic benefits from reduced military spending, including fiscal savings, reduced conflict-related economic damage, and favorable economic multiplier effects from reallocating resources to productive sectors.
 
@@ -220,7 +220,7 @@ The analysis that follows uses standard cost-benefit methodology (NPV, QALY mode
 
 {{< var treaty_annual_funding_latex >}}
 
-**A 1% Treaty Fund**: The treasury that receives and allocates the 1% of military spending reallocated by the 1% Treaty. It funds pragmatic clinical trials, which can be implemented through networks of decentralized institutes of health.
+**A 1% Treaty Fund**: The treasury that receives and allocates the 1% of military spending reallocated by the 1% Treaty. It funds pragmatic clinical trials, which can be implemented through networks of [Decentralized Institutes of Health](../solution/dih.qmd).
 
 **Pragmatic Clinical Trial**: Trial design using real-world settings and broad eligibility criteria rather than highly controlled laboratory conditions, improving generalizability and dramatically reducing costs. Examples: Oxford RECOVERY (COVID, 47,000 patients), PCORnet ADAPTABLE (cardiovascular, {{< var adaptable_trial_patients >}}), and 108+ trials documented in Harvard meta-analysis [@embedded-pragmatic-trials-meta-analysis].
 
@@ -238,7 +238,7 @@ Humanity's budget priorities, explained simply:
 
 {{< var military_to_government_clinical_trials_spending_ratio_latex >}}
 
-**Understanding the comparison**: While total government medical research spending is {{< var global_med_research_spending >}} (including basic research, translational research, and clinical trials), government clinical trial funding is only {{< var global_government_clinical_trials_spending_annual >}}. The 1% treaty redirects {{< var treaty_annual_funding >}} to pragmatic clinical trials, increasing government clinical trial funding ~7-fold.
+**Understanding the comparison**: While total government medical research spending is {{< var global_med_research_spending >}} (including basic research, translational research, and clinical trials), government clinical trial funding is only {{< var global_government_clinical_trials_spending_annual >}}. The 1% Treaty redirects {{< var treaty_annual_funding >}} to pragmatic clinical trials, increasing government clinical trial funding ~7-fold.
 
 The bottleneck isn't basic research or laboratory science. It's **clinical trials**. We've tested {{< var exploration_ratio >}} of [possible drug-disease combinations](../problem/untapped-therapeutic-frontier.qmd) using existing safe compounds. Not because the science is impossible, but because traditional trials cost {{< var traditional_phase3_cost_per_patient >}} while pragmatic trials like Oxford RECOVERY run for {{< var recovery_trial_cost_per_patient >}}. At current funding levels, testing the remaining {{< var unexplored_ratio >}} of therapeutic space would take millennia. Meanwhile, military budgets dwarf the funding needed to automate ubiquitous clinical trials and systematically explore what actually helps people.
 
@@ -282,7 +282,7 @@ The mechanism is financial, not bureaucratic:
 
 1. **Patient subsidies**: Most treaty funding ({{< var dih_treasury_trial_subsidies_annual >}}) goes directly to subsidizing patient participation in trials at ~{{< var dfda_pragmatic_trial_cost_per_patient >}} {{< var dfda_pragmatic_trial_cost_per_patient_cite >}} per patient, similar to how insurance covers medical procedures
 2. **Providers get paid**: Treatment providers can charge for patient participation in trials, making trials profitable rather than costly
-3. **Easy enrollment**: A decentralized FDA infrastructure (costing just {{< var dfda_annual_opex >}}) makes it easy for anyone to create or join Phase 2/3/4 trials globally
+3. **Easy enrollment**: A [decentralized FDA](../solution/dfda.qmd) infrastructure (costing just {{< var dfda_annual_opex >}}) makes it easy for anyone to create or join Phase 2/3/4 trials globally
 4. **Patient choice**: Patients choose which trials to join; their subsidy follows them. Trials that attract patients get funded. No grant committees deciding what's "worthy."
 
 ![Patients get subsidies. Patients choose treatments. Providers get paid. Decentralized trials emerge. You invented democracy for governments but monarchy for medicine. This is democracy for not dying. Weird that's controversial.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-how-it-works-bw-academic.jpg)
@@ -588,7 +588,7 @@ Ideas don't win on merit alone. They win by aligning incentives.
 
 This section describes how [Incentive Alignment Bonds (IABs)](../appendix/incentive-alignment-bonds-paper.qmd) restructure the political economy of global health funding.
 
-### Incentive Alignment Bonds
+### [Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd)
 
 [Incentive Alignment Bonds](../appendix/incentive-alignment-bonds-paper.qmd) address a fundamental problem: politicians face career penalties for supporting beneficial policies that threaten incumbent industries. IABs restructure these incentives so that supporting effective policy becomes professionally advantageous.
 
@@ -632,7 +632,7 @@ The IAB mechanism aligns incentives across all key stakeholder groups:
 
 {{< include ../figures/victory-bonds-money-flow-diagram.qmd >}}
 
-**Weapons Manufacturers**: Retain {{< var defense_sector_retention_pct >}} of current budgets while earning projected {{< var victory_bond_annual_return_pct >}} returns on Incentive Alignment Bonds. The treaty creates new revenue streams without threatening core business.
+**Weapons Manufacturers**: Retain {{< var defense_sector_retention_pct >}} of current budgets while earning projected {{< var victory_bond_annual_return_pct >}} returns on [Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd). The treaty creates new revenue streams without threatening core business.
 
 ![Before: everyone fights over the same pie. After: everyone gets more pie. You could have done this earlier, but you were busy fighting.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-stakeholder-alignment-bw-academic.jpg)
 
@@ -644,7 +644,7 @@ The IAB mechanism aligns incentives across all key stakeholder groups:
 
 {{< var treaty_campaign_voting_bloc_target_latex >}}
 
-**Investors**: Incentive Alignment Bonds offer projected {{< var victory_bond_annual_return_pct >}}, substantially exceeding typical market returns of {{< var average_market_return_pct >}}.
+**Investors**: [Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd) offer projected {{< var victory_bond_annual_return_pct >}}, substantially exceeding typical market returns of {{< var average_market_return_pct >}}.
 
 {{< var victory_bond_annual_return_pct_latex >}}
 
@@ -737,7 +737,7 @@ The methodology follows standard health economics practices. All parameters, sou
 
 One spends {{< var treaty_campaign_total_cost >}} convincing humans that not dying is preferable to dying. This covers:
 
-- Global referendum campaign to get {{< var treaty_campaign_voting_bloc_target >}} votes ({{< var treaty_campaign_viral_referendum_base_case >}})
+- [Global Referendum](../strategy/global-referendum.qmd) campaign to get {{< var treaty_campaign_voting_bloc_target >}} votes ({{< var treaty_campaign_viral_referendum_base_case >}})
 - Professional lobbyists and Super PAC spending ({{< var treaty_campaign_budget_lobbying >}})
 
 This is a one-time cost. Treaty passage is either achieved or it isn't.
@@ -1315,7 +1315,7 @@ These improvements compound multiplicatively to produce the {{< var dfda_trial_c
 
 The bottleneck in clinical research isn't "scientific genius", we have plenty of underemployed PhDs. The bottleneck is **"Data Friction"**.
 
-Currently, researchers spend up to 50% of their time [@grant-writing-time-50pct] on grants and administrative tasks. A decentralized FDA automates this overhead, liberating human judgment to focus on hypothesis generation and complex safety signal interpretation.
+Currently, researchers spend up to 50% of their time [@grant-writing-time-50pct] on grants and administrative tasks. A [decentralized FDA](../solution/dfda.qmd) automates this overhead, liberating human judgment to focus on hypothesis generation and complex safety signal interpretation.
 
 **The TurboTax Analogy**: Just as TurboTax wraps the complexity of federal, state, and local tax codes into a simple interface (users answer questions, it generates compliant filings), a global pragmatic trial system wraps the complexity of global regulatory bodies (FDA, EMA, PMDA, Health Canada, TGA, etc.) into a unified system. Researchers define their hypothesis and patient population; the system automatically:
 
@@ -1634,7 +1634,7 @@ This analysis rests on several core assumptions that should be made explicit for
 
 ### Cost Reduction Assumptions
 
-**Assumption:** The methodology of a decentralized FDA reduces per-patient trial costs by {{< var dfda_trial_cost_reduction_pct >}} (conservative) to 95% (optimistic) compared to traditional randomized controlled trials.
+**Assumption:** The methodology of a [decentralized FDA](../solution/dfda.qmd) reduces per-patient trial costs by {{< var dfda_trial_cost_reduction_pct >}} (conservative) to 95% (optimistic) compared to traditional randomized controlled trials.
 
 ![Old way: costs a fortune per patient. New way: costs almost nothing per patient. You've had the technology for this since smartphones were invented.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-cost-reduction-assumptions-bw-academic.jpg)
 
@@ -1651,7 +1651,7 @@ This analysis rests on several core assumptions that should be made explicit for
 
 ### Historical Precedent: Pre-1962 Physician-Led Efficacy Trials
 
-**Context:** A decentralized FDA approach is not an untested innovation extrapolated from a single case study. The Harvard meta-analysis of 108 embedded pragmatic trials [@embedded-pragmatic-trials-meta-analysis] demonstrates that cost reductions are reproducible across therapeutic areas, not unique to RECOVERY's COVID emergency conditions. Moreover, this approach represents a return to the physician-led, real-world evidence model that operated successfully from 1883 to 1960 before being replaced by the current centralized system.
+**Context:** A [decentralized FDA](../solution/dfda.qmd) approach is not an untested innovation extrapolated from a single case study. The Harvard meta-analysis of 108 embedded pragmatic trials [@embedded-pragmatic-trials-meta-analysis] demonstrates that cost reductions are reproducible across therapeutic areas, not unique to RECOVERY's COVID emergency conditions. Moreover, this approach represents a return to the physician-led, real-world evidence model that operated successfully from 1883 to 1960 before being replaced by the current centralized system.
 
 **Cost structure comparison demonstrates dramatic efficiency difference:**
 
@@ -1717,7 +1717,7 @@ The Monte Carlo distribution shows the full range of expected ROI outcomes when 
 
 - Childhood vaccination programs: {{< var childhood_vaccination_roi >}}:1 {{< var childhood_vaccination_roi_cite >}} ROI with P≈1.0
 - Against Malaria Foundation: ~8:1 equivalent ROI
-- **1% treaty (central estimate, P={{< var political_success_probability >}})**: {{< var treaty_expected_roi_trial_capacity_plus_efficacy_lag >}}:1 expected ROI
+- **1% Treaty (central estimate, P={{< var political_success_probability >}})**: {{< var treaty_expected_roi_trial_capacity_plus_efficacy_lag >}}:1 expected ROI
 
 **Interpretation**: The high conditional ROI ({{< var treaty_roi_trial_capacity_plus_efficacy_lag >}}:1) means that even modest implementation probabilities yield expected values competitive with best-in-class health interventions that have near-certain implementation.
 
@@ -1866,9 +1866,9 @@ The economic benefits outlined above demonstrate the value proposition of the {{
 
 **Funding**: This educational and scientific polling initiative is the primary entry point for **philanthropic partners**, validating global demand before the main campaign begins.
 
-### Step 2: Capitalization via Incentive Alignment Bonds (IABs)
+### Step 2: Capitalization via [Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd) (IABs)
 
-A Special Purpose Vehicle (SPV) issues Incentive Alignment Bonds to capitalize the advocacy roadmap. By front-loading the cost of political change, investors capture the arbitrage gap between lobbying costs ({{< var treaty_campaign_total_cost >}}) and sovereign flows ({{< var treaty_annual_funding >}}/year). Financial modeling projects a risk-adjusted IRR of ~{{< var victory_bond_annual_return_pct >}}.
+A Special Purpose Vehicle (SPV) issues [Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd) to capitalize the advocacy roadmap. By front-loading the cost of political change, investors capture the arbitrage gap between lobbying costs ({{< var treaty_campaign_total_cost >}}) and sovereign flows ({{< var treaty_annual_funding >}}/year). Financial modeling projects a risk-adjusted IRR of ~{{< var victory_bond_annual_return_pct >}}.
 
 ![How to turn lobbying money into government money using bonds. It's like money laundering, but legal and for good things instead of crime.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-step-2-capitalization-via-incentive-alignment-bonds-iabs-bw-academic.jpg)
 
@@ -1920,7 +1920,7 @@ The {{< var treaty_campaign_total_cost >}} implementation cost (used as denomina
 
 | Budget Category | Amount | Purpose |
 |:---|---:|:---|
-| **Global Referendum** | {{< var treaty_campaign_viral_referendum_base_case >}} | Global direct democracy campaign ({{< var treaty_campaign_voting_bloc_target >}} votes). Creates a **"Shadow Mandate"** and political cost for non-adoption. Not legally binding, but politically coercive. |
+| **[Global Referendum](../strategy/global-referendum.qmd)** | {{< var treaty_campaign_viral_referendum_base_case >}} | Global direct democracy campaign ({{< var treaty_campaign_voting_bloc_target >}} votes). Creates a **"Shadow Mandate"** and political cost for non-adoption. Not legally binding, but politically coercive. |
 | **Legislative Advocacy** | {{< var treaty_campaign_budget_lobbying >}} | Legislative outreach (US/EU/G20), policy education, military industry conversion, legal/compliance, opposition research. Outspends pharma + MIC combined |
 | **Reserve Fund** | {{< var treaty_campaign_budget_reserve >}} | Post-victory transition, treaty implementation support, contingency buffer |
 | **Total Implementation Cost** | **{{< var treaty_campaign_total_cost >}}** | 4-year implementation timeline |
@@ -2031,7 +2031,7 @@ For detailed mortality analysis, see [Regulatory Mortality Analysis](https://inv
 
 ### Patient Agency and Autonomy
 
-A decentralized institutes of health puts patients in control through trial participation, not committee votes.
+A [Decentralized Institutes of Health](../solution/dih.qmd) puts patients in control through trial participation, not committee votes.
 
 ![Current system: bureaucrats in Maryland decide which diseases to cure. New system: dying patients decide. One of these groups has better incentives.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-patient-agency-and-autonomy-bw-academic.jpg)
 
@@ -2110,7 +2110,7 @@ Furthermore, RCTs' restrictive eligibility criteria (excluding patients with com
 
 **Historical precedent:** Pre-1962 physician-led system successfully identified effective treatments (antibiotics, vaccines, surgical techniques) despite lacking modern randomization, suggesting real-world evidence can establish causality when combined with peer review and replication.
 
-**Publication bias:** Traditional trials face severe publication bias: only 37% of negative results are published compared to 94% of positive results [@publication-bias-clinical-trials], leading to overestimation of treatment effectiveness and ~$100 billion annually wasted on repeating failed experiments [@wasted-spending-on-failed-experiments]. A decentralized FDA addresses this by design: all trials are registered in the public database, all results (positive and negative) are automatically published through the transparent data infrastructure, and the open data architecture ensures no selective reporting. Unlike traditional systems where researchers choose what to publish, mandatory publication of all registered trials eliminates publication bias as a concern.
+**Publication bias:** Traditional trials face severe publication bias: only 37% of negative results are published compared to 94% of positive results [@publication-bias-clinical-trials], leading to overestimation of treatment effectiveness and ~$100 billion annually wasted on repeating failed experiments [@wasted-spending-on-failed-experiments]. A [decentralized FDA](../solution/dfda.qmd) addresses this by design: all trials are registered in the public database, all results (positive and negative) are automatically published through the transparent data infrastructure, and the open data architecture ensures no selective reporting. Unlike traditional systems where researchers choose what to publish, mandatory publication of all registered trials eliminates publication bias as a concern.
 
 **Conclusion:** Internal validity concerns are acknowledged, but the combination of randomization, large samples, and replication capacity provides adequate causal inference even with broader eligibility criteria.
 
@@ -2314,7 +2314,7 @@ Development agencies face a fundamental problem: the most cost-effective interve
 **Practical application**:
 
 - **Current approach**: USAID spends billions on malaria bed nets (excellent intervention, {{< var bed_nets_cost_per_daly >}}/DALY)
-- **Proposed addition**: Support 1% treaty adoption, which delivers {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}}/DALY ({{< var treaty_vs_bed_nets_multiplier >}} better) *while also* funding research to eradicate malaria
+- **Proposed addition**: Support 1% Treaty adoption, which delivers {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}}/DALY ({{< var treaty_vs_bed_nets_multiplier >}} better) *while also* funding research to eradicate malaria
 - **Result**: Keep funding bed nets (they work!) AND accelerate development of malaria vaccines and treatments through massively expanded trial capacity
 
 The Gates Foundation, USAID, and WHO should advocate for treaty adoption as their highest-leverage intervention: it multiplies the effectiveness of everything else they fund. The Gates Foundation's historical pattern (spending billions on individual disease programs when the same capital could lobby for treaty passage and unlock {{< var treaty_annual_funding >}}/year in government funding) exemplifies the "lottery tickets vs casino" problem described earlier. Advocacy for structural change offers superior ROI to direct program spending.
@@ -2335,7 +2335,7 @@ Military planners optimize for national security. This analysis demonstrates tha
 
 Current global health funding relies on unpredictable philanthropic donations and limited government aid budgets. Total official development assistance for health: ~$40B/year. This intervention creates a {{< var treaty_annual_funding >}}/year permanent funding stream.
 
-**Why this works**: This is not charity; it's profitable. Investors can purchase Incentive Alignment Bonds offering projected {{< var victory_bond_annual_return_pct >}} backed by the peace dividend, making health funding financially attractive rather than dependent on altruism.
+**Why this works**: This is not charity; it's profitable. Investors can purchase [Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd) offering projected {{< var victory_bond_annual_return_pct >}} backed by the peace dividend, making health funding financially attractive rather than dependent on altruism.
 
 **Mechanism design**: The 1% Treaty Fund allocates:
 
@@ -2412,7 +2412,7 @@ The 1% Treaty follows this model, with the advantage that it offers immediate ec
 Treaty adoption depends on:
 1. **Political coalition**: Build support among health ministries, fiscal conservatives seeking budget efficiency, and populations demanding better healthcare
 2. **Economic case**: {{< var dfda_roi_rd_only >}}:1 ROI makes this profitable, not charitable
-3. **Incentive Alignment Bonds**: Fund {{< var treaty_campaign_total_cost >}} advocacy phase, align investor and political incentives
+3. **[Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd)**: Fund {{< var treaty_campaign_total_cost >}} advocacy phase, align investor and political incentives
 4. **Diplomatic negotiation**: UN General Assembly or coalition of willing nations
 
 **Timeline**: Highly variable depending on political momentum. Successful precedents range from 18 months (rapid consensus) to 5+ years (extended negotiation). The self-funding nature and aligned incentives favor faster adoption than typical treaties requiring sacrifice.

@@ -7,23 +7,23 @@ feed-date: '2026-04-03'
 youtube-thumbnail: /assets/podcast/ai-coordination-army-youtube.jpg
 ---
 
-You've got mission control, a network of decentralized institutes of health ([DIH](dih.qmd)), and a targeting system ([Wishocracy](wishocracy.qmd) [@wishocracy-paper-2025]). Now you need an army of AI agents to do the work. Humans are sleeping, arguing on Twitter, or attending conferences that accomplish nothing.
+You've got mission control, a network of [Decentralized Institutes of Health](dih.qmd) ([DIH](dih.qmd)), and a targeting system ([Wishocracy](wishocracy.qmd) [@wishocracy-paper-2025]). Now you need an army of AI agents to do the work. Humans are sleeping, arguing on Twitter, or attending conferences that accomplish nothing.
 
 ![People pick goals, researchers pick targets, robots coordinate everything. Like mission control but the mission is not dying.](/assets/images/ai-coordination-army/ai-coordination-army-section-import-economic-parameters-produces-output-to-prevent-timeout-bw-academic.jpg)
 
 Here's the division of labor:
 
-- **Your decentralized institutes of health** declare war on disease instead of on other humans (revolutionary concept)
-- **Wishocracy** tells your army what to fight for (e.g., "Cure cancer" instead of "invade a country with oil")
+- **Your [Decentralized Institutes of Health](dih.qmd)** declare war on disease instead of on other humans (revolutionary concept)
+- **[Wishocracy](wishocracy.qmd)** tells your army what to fight for (e.g., "Cure cancer" instead of "invade a country with oil")
 - **Your AI agents** coordinate the millions of people and resources needed to actually win, without requiring a single Zoom meeting
 
 Here's how you build this coordination infrastructure.
 
 ## Where Your Agents Get Their Missions (Not From a Management Consultant)
 
-Your agents don't randomly decide what to work on. They don't pick based on what sounds cool or what their creator happens to care about that day. They pull from Wishocracy's Task Tree. That's the globally-prioritized breakdown of humanity's highest-priority problems into tasks a computer (or sufficiently motivated intern) can actually execute.
+Your agents don't randomly decide what to work on. They don't pick based on what sounds cool or what their creator happens to care about that day. They pull from [Wishocracy](wishocracy.qmd)'s Task Tree. That's the globally-prioritized breakdown of humanity's highest-priority problems into tasks a computer (or sufficiently motivated intern) can actually execute.
 
-Wishocracy creates the list. For example, "Cure Alzheimer's" (vague, terrifying, impossible) becomes:
+[Wishocracy](wishocracy.qmd) creates the list. For example, "Cure Alzheimer's" (vague, terrifying, impossible) becomes:
 
 - Map protein structures → Run AlphaFold on these sequences → Rent computing time → Find cheapest cloud provider that won't mysteriously go down during your job
 - Test drug candidates → Recruit trial participants → Find people age 65+ with early symptoms → Contact the 73 researchers globally who study this specific thing
@@ -89,7 +89,7 @@ Here's what you use your node for:
 
 **To Fund the War (Phase 1: Before the Treaty Passes):**
 
-Right now, you still need money to keep the lights on and fund the {{< var campaign_phase1_budget >}} global referendum campaign. Your agents help with this:
+Right now, you still need money to keep the lights on and fund the {{< var campaign_phase1_budget >}} [Global Referendum](../strategy/global-referendum.qmd) campaign. Your agents help with this:
 
 They identify potential donors, foundations, and grant opportunities while you sleep. They read every foundation's 47-page "priorities document" (written by consultants who don't know what the foundation wants either). They figure out which ones might fund your work. They draft grant applications that don't sound like they were written by a robot having an existential crisis.
 
@@ -97,7 +97,7 @@ A human development director can research maybe 20 foundation fits per week. Tha
 
 The key: Coordination prevents waste. Instead of 500 cancer nonprofits all applying to the Gates Foundation for the same thing, your agents coordinate: "Org A applied for X, Org B apply for Y." This is how you raise the {{< var campaign_phase1_budget >}} for the referendum while cutting fundraising costs 50%.
 
-Once the treaty passes? Your agents shift from begging foundations to executing against the treaty-funded allocation system: patient-directed trial flows plus Wishocracy-governed shared priorities. But until then, we still live in the old world where money doesn't magically appear.
+Once the treaty passes? Your agents shift from begging foundations to executing against the treaty-funded allocation system: patient-directed trial flows plus [Wishocracy](wishocracy.qmd)-governed shared priorities. But until then, we still live in the old world where money doesn't magically appear.
 
 ### To Mobilize Support
 
@@ -109,9 +109,9 @@ Picture one burned-out coordinator trying to schedule volunteers across 12 timez
 
 ### To Accelerate Research
 
-You automate the soul-crushing coordination work that turns enthusiastic researchers into bitter husks. Match researchers with funding opportunities (before treaty: foundation grants; after treaty: patient-directed trial demand plus Wishocracy-governed infrastructure budgets). Recruit trial participants who actually meet the criteria (not just people who saw a Facebook ad and think they qualify). Track outcomes when half the participants ghost you. Synthesize literature when 50,000 new papers get published monthly and you're supposed to read them all.
+You automate the soul-crushing coordination work that turns enthusiastic researchers into bitter husks. Match researchers with funding opportunities (before treaty: foundation grants; after treaty: patient-directed trial demand plus [Wishocracy](wishocracy.qmd)-governed infrastructure budgets). Recruit trial participants who actually meet the criteria (not just people who saw a Facebook ad and think they qualify). Track outcomes when half the participants ghost you. Synthesize literature when 50,000 new papers get published monthly and you're supposed to read them all.
 
-What used to take 6 months of emails like "Just following up on my previous 12 emails..." now happens continuously. No laptop-throwing urges required. Phase 1: coordinate who applies for which grants. Phase 2: coordinate who executes which tasks from Wishocracy's priority list and which patient-driven trials can actually absorb treaty funding.
+What used to take 6 months of emails like "Just following up on my previous 12 emails..." now happens continuously. No laptop-throwing urges required. Phase 1: coordinate who applies for which grants. Phase 2: coordinate who executes which tasks from [Wishocracy](wishocracy.qmd)'s priority list and which patient-driven trials can actually absorb treaty funding.
 
 ### To Build Awareness
 
@@ -135,11 +135,11 @@ Inside your node, you build **Task Agents**. These are hyper-focused AI workers.
 
 ## Step 2: Define Each Agent's Mission (From the Task Tree, Not From Your Feelings)
 
-Your agents pull their missions from Wishocracy's Task Tree, not from brainstorming sessions where someone says "wouldn't it be cool if..." You prevent them from becoming useless generalists (like every nonprofit's "Director of Strategy and Partnerships and Innovation and Impact") by mapping each agent to one specific task from that tree. Here's how:
+Your agents pull their missions from [Wishocracy](wishocracy.qmd)'s Task Tree, not from brainstorming sessions where someone says "wouldn't it be cool if..." You prevent them from becoming useless generalists (like every nonprofit's "Director of Strategy and Partnerships and Innovation and Impact") by mapping each agent to one specific task from that tree. Here's how:
 
 **1. Pick a Task from the Tree:**
 
-Wishocracy's Task Tree breaks "Cure Alzheimer's" (impossible, vague, makes you want to give up) down into executable tasks. Examples: "Find researchers studying protein misfolding" or "Recruit trial participants age 65+ with early symptoms."
+[Wishocracy](wishocracy.qmd)'s Task Tree breaks "Cure Alzheimer's" (impossible, vague, makes you want to give up) down into executable tasks. Examples: "Find researchers studying protein misfolding" or "Recruit trial participants age 65+ with early symptoms."
 
 ![The Task Tree with robots in every time zone. Each robot tracks what it's supposed to do and what it actually did. Performance reviews for software.](/assets/images/ai-coordination-army/ai-coordination-army-section-step-2-define-each-agent-s-mission-bw-academic.jpg)
 
@@ -153,7 +153,7 @@ This is the thing the agent *does* to complete its task. For a "find researchers
 
 This is the outcome you actually care about. For the same agent: "Number of researchers who sign up for a trial within your [decentralized FDA](dfda.qmd) [@dfda-spec-paper-2025; @dfda-impact-paper-2025]." This tells you if the action works. Or if you've built an agent that's really good at sending emails no one reads.
 
-This structure (borrowed from "The 4 Disciplines of Execution") turns tasks from Wishocracy's global list into specific agent missions. You can build, measure, and improve them without hiring a consultant to interpret the results.
+This structure (borrowed from "The 4 Disciplines of Execution") turns tasks from [Wishocracy](wishocracy.qmd)'s global list into specific agent missions. You can build, measure, and improve them without hiring a consultant to interpret the results.
 
 The key: Every agent across the entire network works from the same Task Tree. Your cancer research agent in Boston might work on "Find protein researchers." Someone's agent in Beijing works on "Find computing resources for AlphaFold." Both tasks come from the same Alzheimer's cure branch of the tree. This is how you coordinate globally. No endless meetings where half the attendees are on mute and the other half forgot they were even invited.
 

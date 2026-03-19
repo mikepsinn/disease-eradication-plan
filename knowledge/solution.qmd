@@ -20,13 +20,13 @@ Now you understand the problem: everyone is dying while you build missiles. Time
 
 Your solution has three parts:
 
-1. A [1% treaty](solution/1-percent-treaty.qmd) [@1-pct-treaty-impact-paper-2025] (stealing money from the murder budget)
-2. A decentralized institutes of health with algorithmic governance (so no one can steal it back)
+1. A [1% Treaty](solution/1-percent-treaty.qmd) [@1-pct-treaty-impact-paper-2025] (stealing money from the murder budget)
+2. A [Decentralized Institutes of Health](solution/dih.qmd) with algorithmic governance (so no one can steal it back)
 3. A [decentralized FDA](solution/dfda.qmd) [@dfda-spec-paper-2025; @dfda-impact-paper-2025] (making medicine {{< var dfda_trial_cost_reduction_factor >}} times cheaper)
 
 Take money from death, give it to life. The tricky part is convincing humans, who historically prefer the death option.
 
-## A 1% Treaty
+## A [1% Treaty](solution/1-percent-treaty.qmd)
 
 Here's how you redirect {{< var treaty_annual_funding >}} per year from bombs to medicine:
 
@@ -56,15 +56,15 @@ That money splits three ways. {{< var dih_treasury_medical_research_pct >}} goes
 
 They say you can't put a price on human life. But apparently the price is somewhere south of pet food. That seems like it should be revised upward (or you should admit you value dogs more than humans, which honestly might be fair).
 
-## Your Decentralized Institutes of Health
+## Your [Decentralized Institutes of Health](solution/dih.qmd)
 
-Once your 1% Treaty is ratified, that {{< var treaty_annual_funding >}} per year flows into a **[1% Treaty Fund](solution/dih.qmd)**. It's a rules-governed treasury designed to minimize discretion. The treaty fixes the top-level allocation. Patients direct trial-participation spending. [Wishocracy](solution/wishocracy.qmd) [@wishocracy-paper-2025] governs the collective-choice layer. Administrative entities maintain the rails, but they do not get to improvise the formula.
+Once your [1% Treaty](solution/1-percent-treaty.qmd) is ratified, that {{< var treaty_annual_funding >}} per year flows into a **[1% Treaty Fund](solution/dih.qmd)**. It's a treasury that runs on rules instead of opinions. The treaty locks the split. Patients pick which trials to join. [Wishocracy](solution/wishocracy.qmd) [@wishocracy-paper-2025] handles the parts that need a vote. The humans who run the plumbing don't get to redirect the water.
 
-The governance protocol is the opposite of the NIH. Instead of 200 people in a building guessing what to fund and giving grants to their college roommates, the treasury runs on transparent rules and auditable automation where practical. Patients choose which trials to join. Funding flows automatically to researchers based on patient enrollment. Trials that work get more patients and more funding. Trials that don't work get defunded, which is apparently a concept so radical it took your species 80 years to consider.
+It's the opposite of the NIH. Instead of 200 people in a building guessing what to fund and giving grants to their college roommates, the money follows patients. Patients choose which trials to join. Researchers who attract patients get funded. Researchers who don't, don't. Defunding failure is apparently a concept so radical it took your species 80 years to consider.
 
 ![Money goes in, cures come out, repeat](/assets/images/solution/solution-section-what-your-decentralized-institutes-of-health-do-bw-academic.jpg)
 
-## Wishocracy
+## [Wishocracy](solution/wishocracy.qmd)
 
 [Wishocracy](solution/wishocracy.qmd) is how you let {{< var global_population_2024 >}} control a budget without everyone killing each other in meetings.
 
@@ -111,11 +111,11 @@ Notice that everyone's selfish reason for participating happens to save humanity
 
 ## The Scaling Engine
 
-The goal isn't 1%. The goal is 100%. The 1% treaty is just the door, not the destination.
+The goal isn't 1%. The goal is 100%. The [1% Treaty](solution/1-percent-treaty.qmd) is just the door, not the destination.
 
-The {{< var iab_political_incentive_funding_pct >}} going to [Incentive Alignment Bonds](appendix/incentive-alignment-bonds-paper.qmd) [@iab-paper-2025] creates a perpetual political machine that pushes for expansion. When 1% passes, {{< var iab_political_incentive_funding_annual >}}/year flows to people whose entire financial interest is getting the treaty to 2%. When 2% passes, the pressure doubles. The political pressure for expansion *accelerates* with each success. This creates a [ratchet that can eventually redirect all military spending](appendix/incentive-alignment-bonds-paper.qmd) from war to health.
+The {{< var iab_political_incentive_funding_pct >}} going to [Incentive Alignment Bonds](appendix/incentive-alignment-bonds-paper.qmd) [@iab-paper-2025] creates a machine that only goes one direction. When 1% passes, {{< var iab_political_incentive_funding_annual >}}/year flows to people whose entire financial interest is getting the treaty to 2%. When 2% passes, the pressure doubles. Each success makes the next one easier (and more profitable). This is a [ratchet that can eventually redirect all military spending](appendix/incentive-alignment-bonds-paper.qmd) from war to health.
 
-[VICTORY Incentive Alignment Bonds](solution/incentive-alignment-bonds.qmd) are the specific instrument. They align investors ({{< var victory_bond_funding_pct >}} returns), politicians ({{< var iab_political_incentive_funding_pct >}} career incentives), and patients ({{< var dih_treasury_medical_research_pct >}} cures) with the same outcome.
+[VICTORY Incentive Alignment Bonds](solution/incentive-alignment-bonds.qmd) are the papers that make this go. Investors get {{< var victory_bond_funding_pct >}} returns. Politicians get {{< var iab_political_incentive_funding_pct >}} career incentives. Patients get {{< var dih_treasury_medical_research_pct >}} cures. Everyone gets what they want. Nobody has to stop being selfish.
 
 ![When you give people money to cure diseases, they get more money to cure more diseases.](/assets/images/solution/solution-section-on-why-1-is-just-the-beginning-bw-academic.jpg)
 
@@ -145,7 +145,7 @@ You're only asking for 1%.
 
 ## The Meta-Solution
 
-This solution isn't just about ending disease. It proves that paying people for results works better than paying people for promising results. You can cure diseases by redirecting 1% of military spending through market mechanisms. That same template solves education, housing, climate change, and literally any problem your governments currently solve by forming a committee to discuss forming a committee.
+This solution isn't just about ending disease. It proves that paying people for results works better than paying people for promising results (a distinction your species has been avoiding for centuries). You can cure diseases by redirecting 1% of murder money through markets. That same template solves education, housing, climate change, and literally any problem your governments currently solve by forming a committee to discuss forming a committee.
 
 ![One simple trick solves health, education, housing, and climate change.](/assets/images/solution/solution-section-on-the-meta-solution-bw-academic.jpg)
 

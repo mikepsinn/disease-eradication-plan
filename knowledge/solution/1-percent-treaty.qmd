@@ -15,20 +15,20 @@ feed-date: '2026-03-10'
 youtube-thumbnail: /assets/podcast/1-percent-treaty-youtube.jpg
 ---
 
-The world spends {{< var global_military_spending_annual_2024 >}} a year on military forces. If every nation reduces that by 1% at the same time, the balance of power remains identical. No country becomes more vulnerable. Nobody loses a single war they would have otherwise won. You just become slightly less capable of destroying a planet you're still living on.
+Your species spends {{< var global_military_spending_annual_2024 >}} a year on military forces. If every nation reduces that by 1% at the same time, the balance of power stays identical. No country gets weaker. Nobody loses a single war they would have otherwise won. You just become slightly less capable of destroying a planet you're still living on (which should be fine, since you were already capable of destroying it 13 times over).
 
 That 1% is {{< var treaty_annual_funding >}} a year. For comparison, that's roughly what Americans spend on Valentine's Day. You are currently spending more on heart-shaped candy than on curing heart disease.
 
 {{< var treaty_annual_funding_latex >}}
 
-A 1% treaty is a piece of paper that says every signatory nation redirects that 1% to enable any patient to participate in pragmatic clinical trials for the most promising new treatments. That's it. That's the whole idea. On Wishonia, we fought for 12,000 years before we figured this out. Your species has been thinking it over for several thousand years, so you're actually ahead of schedule.
+A 1% Treaty is a piece of paper that says every signatory nation redirects that 1% so any patient can join pragmatic clinical trials for the most promising treatments. That's it. That's the whole idea. On Wishonia, we fought for 12,000 years before we figured this out. Your species has been thinking it over for several thousand years, so you're actually ahead of schedule (barely).
 
 ### How It Works
 
 ![Money goes from the war budget through several boxes with important-sounding names until it reaches someone in a lab coat. Democracy in action.](/assets/images/1-percent-treaty/1-percent-treaty-section-how-it-works-bw-academic.jpg)
 
 1.  **Funding:** Creates a {{< var treaty_annual_funding >}}/year revenue stream for **the 1% Treaty Fund**
-2.  **Execution:** **A network of Decentralized Institutes of Health** subsidizes patient participation in **a [decentralized FDA](dfda.qmd) [@dfda-spec-paper-2025; @dfda-impact-paper-2025]**, clinical trials that are **{{< var dfda_trial_cost_reduction_factor >}} cheaper** than the current model
+2.  **Execution:** **A network of [Decentralized Institutes of Health](dih.qmd)** subsidizes patient participation in **a [decentralized FDA](dfda.qmd) [@dfda-spec-paper-2025; @dfda-impact-paper-2025]**, clinical trials that are **{{< var dfda_trial_cost_reduction_factor >}} cheaper** than the current model
 3.  **Governance:** Global population via [Wishocracy](wishocracy.qmd) [@wishocracy-paper-2025], with transparent auditable rules and automated fund allocation
 4.  **Transparency:** All research, data, and spending published on public ledger
 
@@ -44,7 +44,7 @@ When every nation builds 1% fewer explosion devices *at the same time*, you get 
 
 ![Fewer bombs means fewer bomb-related deaths and more money for keeping people alive. Economists needed a special term for this obvious idea.](/assets/images/1-percent-treaty/1-percent-treaty-section-good-thing-1-you-become-safer-bw-academic.jpg)
 
-Economists call this a Kaldor-Hicks improvement, which is their way of saying "the winners win more than the losers lose, and we've decided that counts." In practice, some weapons manufacturers lose 1% of their contracts. In exchange, they and everyone they love become less likely to die of cancer. Most people consider this a good trade. Defense contractors are still doing the math.
+Economists call this a Kaldor-Hicks improvement, which is their way of saying "the winners win more than the losers lose, and we've decided that counts." Some weapons manufacturers lose 1% of their contracts. In exchange, they and everyone they love become less likely to die of cancer. Most people consider this a good trade. Defense contractors are still doing the math (slowly).
 
 ### Why Your Most Expensive Things Are Also Your Most Useless Things (A Mystery)
 
@@ -64,7 +64,7 @@ As President Eisenhower put it:
 
 Eisenhower was a five-star General, which means he had five stars. Most generals only get three or four, so he was basically the Michelin Guide of killing people. He personally ran the largest military operation in human history, the invasion of Normandy. And even he thought you were overdoing it.
 
-**A 1% treaty doesn't ask you to spend {{< var treaty_annual_funding >}} curing diseases. It asks you to redirect {{< var treaty_annual_funding >}} from the least useful 1% of your military budget to things that make you richer and less dead.**
+**A 1% Treaty doesn't ask you to spend {{< var treaty_annual_funding >}} curing diseases. It asks you to redirect {{< var treaty_annual_funding >}} from the least useful 1% of your military budget to things that make you richer and less dead.**
 
 ## The Blueprint
 
@@ -103,7 +103,7 @@ What actually threatens nations today:
 1. **Other Countries Attacking**: It happens. It's real. Ask Ukraine. But disease kills {{< var disease_vs_war_deaths_ratio >}} times more people every year, and you're funding them in the opposite ratio.
 2. **Terrorists**: Kill fewer people than furniture accidents [@furniture-accidents-vs-terrorism-deaths]. But here's the part your defense budget doesn't advertise: military occupation is the primary *cause* of terrorism. Robert Pape at the University of Chicago analyzed every suicide terrorist attack from 1980 to 2003 and found that 95% were responses to foreign military occupation, not religious ideology [@pape-dying-to-win]. The group that committed the most suicide attacks during that period was the Tamil Tigers of Sri Lanka: Marxist atheists who invented the suicide vest. Not a mosque in sight. Half of all suicide attackers in the dataset had no religious motivation whatsoever. Your $8 trillion War on Terror [@war-on-terror-cost-blowback] killed 900,000 people and global terrorist attacks went from about 1,000 per year to nearly 17,000 per year by 2014 [@terrorism-attacks-increased-post-2001]. Nearly all of them targeted democracies that had stationed military forces in the attackers' homeland. You spent $8 trillion making the problem 17 times worse. Your military bases aren't protecting you from terrorism. They're the reason it's pointed at you.
 
-A 1% treaty addresses the real threats. It doesn't weaken your ability to handle the conventional ones. You keep 99% of your weapons. If 99% of your military can't handle the job, the last 1% wasn't going to save you.
+A 1% Treaty addresses the real threats. It doesn't weaken your ability to handle the conventional ones. You keep 99% of your weapons. If 99% of your military can't handle the job, the last 1% wasn't going to save you.
 
 Besides, you've done far bigger cuts before. After WW2, the US slashed military spending by {{< var post_ww2_military_cut_pct >}} in two years (from {{< var us_military_spending_1945_peak_annual_2024usd >}} to {{< var us_military_spending_1947_annual_2024usd >}} in today's dollars) [@us-military-spending-historical-constant-dollars]. GM went from building Cadillacs to building B-24 bombers, won the war, and went back to Cadillacs. Frigidaire stopped making machine guns and returned to refrigerators. Nobody held a congressional hearing about whether the refrigerator industry could survive without the machine gun contracts. Frigidaire just made refrigerators again. It wasn't complicated. It was only complicated later, when the machine gun industry hired lobbyists. The economy didn't collapse. It produced the greatest boom in your history [@us-post-wwii-gdp-growth-8-pct]. Today you're spending {{< var us_military_spending_current_vs_prewar_multiplier >}} the pre-WW2 baseline in inflation-adjusted dollars: {{< var us_military_spending_1939_annual_2024usd >}} in 1939 versus {{< var us_military_spending_2024_annual >}} today, during peacetime, with no existential threat requiring it. Your defense industry learned how to make peacetime feel like wartime (see [Regulatory Capture](../problem/unrepresentative-democracy.qmd)). You're asking to redirect 1% of that.
 
@@ -121,7 +121,7 @@ So you don't frame this as "reducing military spending." You frame it as:
 
 ![Instead of 'you're spending less on bombs,' try 'you're building a shield against invisible enemies.' Same thing, better reviews.](/assets/images/1-percent-treaty/1-percent-treaty-section-the-strategic-health-defense-initiative-bw-academic.jpg)
 
-The old frame ("We're cutting defense by 1%") is political suicide. The new frame ("We're building a biodefense shield against the real threats") is political genius. Same policy. Different adjective. Your species can be manipulated with adjectives. This is simultaneously the most depressing and most useful fact about you.
+"We're cutting defense by 1%" is political suicide. "We're building a biodefense shield against the real threats" is political genius. Same policy. Different adjective. Your species can be manipulated with adjectives. This is simultaneously the most depressing and most useful fact about you.
 
 ### The Talking Points That Make Hawks Sound Like Doves
 
@@ -157,15 +157,15 @@ The old frame ("We're cutting defense by 1%") is political suicide. The new fram
 | **VICTORY Incentive Alignment Bond Returns** | {{< var victory_bond_funding_pct >}} | {{< var victory_bond_annual_payout >}} | Perpetual investor payments |
 | **Incentive Alignment Bond Political Incentives** | {{< var iab_political_incentive_funding_pct >}} | {{< var iab_political_incentive_funding_annual >}} | Rewards for supporting legislators |
 
-Notice what this does: it disentangles money from influence. In current government budgets, the people who provide the money (lobbyists, donors) also control where it goes. Money buys influence, influence redirects money, and the loop is invisible. Here, investors get money ({{< var victory_bond_funding_pct >}}). Politicians get career incentives ({{< var iab_political_incentive_funding_pct >}}). Neither group touches the {{< var dih_treasury_medical_research_pct >}} that goes to clinical trials. The corruption is capped, transparent, and separated from the public goods funding.
+Notice what this does: it separates the money from the fingers. In your current government, the people who provide the papers also control where they go. Money buys influence, influence redirects money, and the loop is invisible (on purpose). Here, investors get papers ({{< var victory_bond_funding_pct >}}). Politicians get career incentives ({{< var iab_political_incentive_funding_pct >}}). Neither group touches the {{< var dih_treasury_medical_research_pct >}} that goes to clinical trials. The corruption is capped at 20%, transparent, and completely separated from the medicine money.
 
-The {{< var dih_treasury_medical_research_pct >}} for pragmatic clinical trials is insulated from investor and political capture. Patients direct trial-participation spending by joining studies, while [Wishocracy](wishocracy.qmd) governs infrastructure and other shared medical public goods, not by a committee of 12 people in a conference room who haven't had a new idea since 1987. Every human still gets direct say on the part that actually requires collective choice. Yes, even Florida Man.
+The {{< var dih_treasury_medical_research_pct >}} for clinical trials is untouchable by investors and politicians. Patients pick which trials to join (the money follows them). [Wishocracy](wishocracy.qmd) handles infrastructure, not a committee of 12 people in a conference room who haven't had a new idea since 1987. Every human gets a say on the part that actually requires a vote. Yes, even Florida Man.
 
 ![Watch the money leave the Pentagon and flow through colorful ribbons to labs where people wear goggles. This is called progress.](/assets/images/1-percent-treaty/1-percent-treaty-section-capital-allocation-sankey-bw-academic.jpg)
 
 ### Year One Projected Outcomes
 
-Only {{< var current_trial_slots_available_nounit >}} participate in drug trials annually out of {{< var current_disease_patients_global >}} with chronic disease. With a 1% treaty + a decentralized FDA:
+Only {{< var current_trial_slots_available_nounit >}} participate in drug trials annually out of {{< var current_disease_patients_global >}} with chronic disease. With a 1% Treaty + a [decentralized FDA](dfda.qmd):
 
 | | Current | With Treaty |
 |:---|:---|:---|
@@ -190,15 +190,15 @@ They keep their contracts. They keep their profits. They just point 1% of their 
 
 ### The Endgame
 
-A 1% treaty isn't the goal. It's the proof of concept. I've watched roughly 847 civilizations reach this exact fork in the road; the ones still around all started with something like 1%, and the ones that didn't are geological features now. Once your species gets a taste of "spending money on things that help instead of things that explode," you'll want more.
+A 1% Treaty isn't the goal. It's the proof of concept. I've watched roughly 847 civilizations reach this exact fork in the road; the ones still around all started with something like 1%, and the ones that didn't are geological features now. Once your species gets a taste of "spending money on things that help instead of things that explode," you'll want more.
 
 ![Start with 1 percent. Then 2 percent. Eventually war becomes a hobby and peace becomes profitable. Like quitting smoking, but for nations.](/assets/images/1-percent-treaty/1-percent-treaty-section-the-endgame-reorienting-global-priorities-bw-academic.jpg)
 
 ### The Ratchet Effect
 
-Public sentiment helps: once cures start rolling out, people want more. "Grandma's dementia is manageable now. Want to try another half-percent?" But your species has wanted cures for centuries without funding them. Popular demand alone doesn't move budgets. Money does.
+Popular demand helps: once cures start rolling out, people want more. "Grandma's dementia is manageable now. Want to try another half-percent?" But your species has wanted cures for centuries without funding them. Wanting doesn't move budgets. Money does.
 
-That's what the [Incentive Alignment Bonds](incentive-alignment-bonds.qmd) are for. Bondholders receive {{< var victory_bond_funding_pct >}} of all treaty inflows, perpetually. At 1%, that's {{< var victory_bond_annual_payout >}} a year split among them. At 5%, it's $13.6 billion. At full redirection, $272 billion. Every percentage point increase is a direct raise for every bondholder. These aren't random investors. They're billionaires, family offices, and institutional funds, people who already have senators on speed dial, media access, and campaign donation budgets. They didn't buy influence over the treaty fund. They bought a revenue share. But their pre-existing influence over everything else means any politician who tries to shrink or stall the treaty is picking a fight with the richest, most politically connected humans on the planet, all of whom have a quarterly earnings statement explaining why the treaty should be bigger, not smaller.
+That's what [Incentive Alignment Bonds](incentive-alignment-bonds.qmd) are for. Bondholders get {{< var victory_bond_funding_pct >}} of all treaty inflows, forever. At 1%, that's {{< var victory_bond_annual_payout >}} a year. At 5%, $13.6 billion. At full redirection, $272 billion. Every percentage point increase is a raise for every bondholder. These aren't random investors. They're billionaires with senators on speed dial. They didn't buy influence over the treaty fund. They bought a revenue share. But their pre-existing influence over everything else means any politician who tries to shrink the treaty is picking a fight with the richest humans on the planet, all of whom have a quarterly earnings statement explaining why the treaty should be bigger, not smaller.
 
 ![Scientists cure a disease. People like it. More money flows to science. More diseases get cured. The circle continues until someone remembers they like tanks.](/assets/images/1-percent-treaty/1-percent-treaty-section-the-ratchet-effect-how-to-boil-a-frog-the-frog-is-the-war-machine-bw-academic.jpg)
 
@@ -230,7 +230,7 @@ Sign with fanfare, take a photo, then let it die in committee forever. Your spec
 
 Reclassify "military" spending as "peacekeeping" or "homeland security" to dodge obligations. This is beige crime: making theft so procedurally dull that nobody investigates. Reclassifying "military" as "peacekeeping" is the bureaucratic equivalent of stealing someone's car by renaming it "shared mobility infrastructure."
 
-**Solution:** [IABs](incentive-alignment-bonds.qmd) make creative accounting self-defeating. Politicians who benefit from treaty compliance have personal financial incentive to ensure their nation's full 1% contribution flows through. Reclassifying military spending to dodge obligations reduces IAB returns for that nation's own legislators, the same people who control budget classifications.
+**Solution:** [IABs](incentive-alignment-bonds.qmd) make creative accounting self-defeating. Politicians who benefit from treaty compliance have personal financial reasons to make sure every penny flows through. Reclassifying military spending to dodge the treaty reduces the career rewards for that nation's own legislators, who are the same people who control budget classifications. They'd be stealing from themselves (which some of them still might, but at least the math is against them).
 
 ### Parliamentary Obstacles
 
@@ -238,11 +238,11 @@ Executive signs, legislature refuses to implement.
 
 ![Regular treaties need Congress to agree twice. Self-executing treaties only need them to agree once. This is considered a dramatic improvement.](/assets/images/1-percent-treaty/1-percent-treaty-section-parliamentary-obstacles-bw-academic.jpg)
 
-**Solution:** The treaty obligates the percentage; Congress implements via the annual National Defense Authorization Act (NDAA). After *Medellin v. Texas* (2008), the Supreme Court made clear that not all treaties are self-executing, so the treaty doesn't try to bypass Congress. It creates a binding international obligation that Congress fulfills through its normal appropriations process, the same way NATO's spending commitments work. The [IAB mechanism](incentive-alignment-bonds.qmd) ensures legislators have a personal incentive to include the 1% line item every year.
+**Solution:** The treaty sets the percentage; Congress implements it through the annual National Defense Authorization Act (NDAA), the same way NATO's spending commitments work. After *Medellin v. Texas* (2008), the Supreme Court said not all treaties are self-executing, so this one doesn't try to bypass Congress. It just gives Congress a job to do. The [IAB mechanism](incentive-alignment-bonds.qmd) makes sure they actually do it (by making "forgetting" expensive).
 
 ## Summary
 
-A 1% treaty is a piece of paper that says "Let's spend 1% less on killing and 1% more on not dying."
+A 1% Treaty is a piece of paper that says "Let's spend 1% less on killing and 1% more on not dying."
 
 That's it. That's the whole thing.
 

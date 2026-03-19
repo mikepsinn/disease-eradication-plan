@@ -1,6 +1,6 @@
 ---
 title: Your Personal Benefits
-description: The personal upside of moving from the current trajectory to Treaty or Wishonia, plus a calculator for selfishly rational contribution sizing.
+description: The personal upside of moving from the Failed-State Trajectory to the Minimum Sustainable Trajectory (1% Treaty) or the Wishonian Optimal Governance Trajectory, plus a calculator for selfishly rational contribution sizing.
 image: /assets/og-images/knowledge/call-to-action/your-personal-benefits-og-retro-academic.jpg
 ---
 {{< include ../includes/setup-parameters.qmd >}}
@@ -26,10 +26,10 @@ That default is not "you." It is the fastest way to make the math legible before
 
 | Future | What the model says |
 |---|---|
-| **Current trajectory** | The average person ends up with roughly {{< var current_trajectory_cumulative_lifetime_income >}} in cumulative lifetime income while the destructive economy rises from {{< var global_destructive_economy_pct_gdp >}} of GDP now to {{< var destructive_economy_pct_gdp_year_15 >}} by year 15. |
-| **Treaty trajectory** | Adds {{< var treaty_trajectory_lifetime_income_gain_per_capita >}} in lifetime income, {{< var treaty_hale_gain_year_15 >}} in healthy life by year 15, and {{< var treaty_personal_upside_blend >}} in blended upside. |
-| **Wishonia trajectory** | Adds {{< var wishonia_trajectory_lifetime_income_gain_per_capita >}} in lifetime income, {{< var wishonia_hale_gain_year_15 >}} in healthy life by year 15, and {{< var wishonia_personal_upside_blend >}} in blended upside. |
-| **Collapse tail** | The repo's year-20 EV framing still assigns {{< var moronia_trajectory_probability_year_20 >}} to Moronia. The destructive economy reaches 25% of GDP in {{< var destructive_economy_years_to_25pct_gdp >}} and 50% in {{< var destructive_economy_years_to_50pct_gdp >}} if the loop is not broken. |
+| **Failed-State Trajectory** | The average person ends up with roughly {{< var current_trajectory_cumulative_lifetime_income >}} in cumulative lifetime income while the destructive economy rises from {{< var global_destructive_economy_pct_gdp >}} of GDP now to {{< var destructive_economy_pct_gdp_year_15 >}} by year 15. |
+| **Minimum Sustainable Trajectory (1% Treaty)** | Adds {{< var treaty_trajectory_lifetime_income_gain_per_capita >}} in lifetime income, {{< var treaty_hale_gain_year_15 >}} in healthy life by year 15, and {{< var treaty_personal_upside_blend >}} in blended upside. |
+| **[Wishonian](../futures/wishonia.qmd) [Optimal Governance Trajectory](../economics/gdp-trajectories.qmd)** | Adds {{< var wishonia_trajectory_lifetime_income_gain_per_capita >}} in lifetime income, {{< var wishonia_hale_gain_year_15 >}} in healthy life by year 15, and {{< var wishonia_personal_upside_blend >}} in blended upside. |
+| **Collapse Tail** | The repo's year-20 EV framing still assigns {{< var moronia_trajectory_probability_year_20 >}} to Moronia. The destructive economy reaches 25% of GDP in {{< var destructive_economy_years_to_25pct_gdp >}} and 50% in {{< var destructive_economy_years_to_50pct_gdp >}} if the loop is not broken. |
 
 ## Personal Scenario Calculator
 
@@ -214,8 +214,8 @@ That default is not "you." It is the fastest way to make the math legible before
       <div class="pbc-group">
         <label for="pbc-input-scenario">Scenario upside you are trying to buy</label>
         <select id="pbc-input-scenario">
-          <option value="treaty">Treaty trajectory</option>
-          <option value="wishonia">Wishonia trajectory</option>
+          <option value="treaty">Minimum Sustainable Trajectory (1% Treaty)</option>
+          <option value="wishonia">Wishonian Optimal Governance Trajectory</option>
         </select>
         <div class="pbc-helper">Collapse-tail markers are shown in the summary below as the downside of not breaking the current loop.</div>
       </div>
@@ -428,12 +428,12 @@ That default is not "you." It is the fastest way to make the math legible before
 
   const scenarioMap = {
     treaty: {
-      label: 'Treaty trajectory',
+      label: 'Minimum Sustainable Trajectory (1% Treaty)',
       income: treatyIncome,
       health: treatyHealth
     },
     wishonia: {
-      label: 'Wishonia trajectory',
+      label: 'Wishonian Optimal Governance Trajectory',
       income: wishIncome,
       health: wishHealth
     }
