@@ -1,22 +1,21 @@
 ---
-title: "The Least Bad Idea in the World Contest"
-subtitle: "Fork the Earth Optimization Protocol v1, fix it, or replace it entirely. The winner becomes v2."
-description: "The Least Bad Idea in the World Contest is a design competition to stress-test and improve the Earth Optimization Protocol. Submissions must cover ten required governance functions, pass eleven constitutional constraints, survive adversarial review, and win wishocratic pairwise comparison. The current benchmark is the Earth Optimization Protocol v1. The contest exists to replace it."
+title: "The Planetary Constitutional Convention"
+subtitle: "Fork the Earth Optimization Protocol v1, fix it, or replace it entirely. The ratified version becomes v2."
+description: "The Planetary Constitutional Convention is a deliberative process to stress-test and improve the Earth Optimization Protocol. Submissions must cover ten required governance functions, pass eleven constitutional constraints, survive adversarial review, and survive wishocratic pairwise comparison. The current benchmark is the Earth Optimization Protocol v1. The convention exists to replace it."
 abstract: |
-  The Least Bad Idea in the World Contest is the design competition that precedes implementation of the [Earth Optimization Prize](earth-optimization-prize.qmd) [@earth-optimization-prize-paper-2025]. Before anyone recruits a single referendum voter or sells a single bond, there is a prior question: is the [Earth Optimization Protocol v1](https://manual.warondisease.org) actually the plan you should execute? We think it is terrible. We said so in the title. The honest first step is to find out whether someone can produce something less terrible. Teams fork v1, fix it, or replace it entirely. The winner becomes the Earth Optimization Protocol v2, and v2 is what the referendum, the bonds, and the lobbying campaign execute. This runs before everything else because committing billions to a plan nobody stress-tested is how your species normally operates, and that is not a compliment.
+  The Planetary Constitutional Convention is the deliberative process that precedes implementation of the [Earth Optimization Prize](earth-optimization-prize.qmd) [@earth-optimization-prize-paper-2025]. Before anyone recruits a single referendum voter or sells a single bond, there is a prior question: is the [Earth Optimization Protocol v1](https://manual.warondisease.org) actually the plan you should execute? We think it is terrible. We said so in the title. The honest first step is to find out whether someone can produce something less terrible. Teams fork v1, fix it, or replace it entirely. The ratified version becomes the Earth Optimization Protocol v2, and v2 is what the referendum, the bonds, and the lobbying campaign execute. This runs before everything else because committing billions to a plan nobody stress-tested is how your species normally operates, and that is not a compliment.
 published: true
 tags:
   - strategy
   - mechanism-design
-  - contest
-  - design-competition
+  - constitutional-convention
   - governance
 ---
 {{< include ../includes/setup-parameters.qmd >}}
 
 The [Earth Optimization Protocol v1](https://manual.warondisease.org) is the current best attempt at a complete governance reform package. We think it is terrible. We said so in the title.
 
-This contest exists to find something less terrible. Fork v1, fix it, or replace it entirely. The winner becomes v2, and v2 is what the [Earth Optimization Prize](earth-optimization-prize.qmd) [@earth-optimization-prize-paper-2025] funds.
+This constitutional convention exists to find something less terrible. Fork v1, fix it, or replace it entirely. The ratified version becomes v2, and v2 is what the [Earth Optimization Prize](earth-optimization-prize.qmd) [@earth-optimization-prize-paper-2025] funds.
 
 ::: {.callout-important}
 ## Disqualification Rule
@@ -41,11 +40,11 @@ What follows is our homework. The thing to beat is the **integrated set of requi
 | Legal and institutional implementation path | **Right to Trial & FDA Upgrade Act** + treaty/statutory tools | Must create equal or stronger binding force |
 | Narrative, coalition, and sequencing wrapper | **How to End War and Disease** | Must coordinate adoption at equal or lower cost and failure risk |
 
-That is the Minimum Acceptable Governance. The grand prize is for the first mechanism that covers every row or replaces any row with something strictly better.
+That is the Minimum Acceptable Governance. Ratification requires covering every row or replacing any row with something strictly better.
 
 ## Constitutional Constraints
 
-[Wishocracy](../solution/wishocracy.qmd) [@wishocracy-paper-2025] picks the winner. But [Wishocracy](../solution/wishocracy.qmd) picks from a filtered pool, because crowds are good at preferences and bad at evaluating whether a 50-page systems engineering document is mechanistically sound. A beautifully written plan that skips the hard parts should not beat an ugly plan that solves them. And your species is deeply status-quo biased: you have been programmed your entire lives to treat the Federal Reserve, the congressional budget process, the IRS, and representative democracy as laws of nature rather than design choices that are producing catastrophic results. Left unconstrained, crowds will pick plans that preserve these institutions with cosmetic reforms, which will recreate every problem the prize exists to solve.
+[Wishocracy](../solution/wishocracy.qmd) [@wishocracy-paper-2025] selects the ratified version. But [Wishocracy](../solution/wishocracy.qmd) picks from a filtered pool, because crowds are good at preferences and bad at evaluating whether a 50-page systems engineering document is mechanistically sound. A beautifully written plan that skips the hard parts should not outrank an ugly plan that solves them. And your species is deeply status-quo biased: you have been programmed your entire lives to treat the Federal Reserve, the congressional budget process, the IRS, and representative democracy as laws of nature rather than design choices that are producing catastrophic results. Left unconstrained, crowds will pick plans that preserve these institutions with cosmetic reforms, which will recreate every problem the prize exists to solve.
 
 So: eleven hard constraints that no submission can violate, regardless of how many humans vote for it. The first four ensure the plan is real. The next two ensure it survives. The last five ensure the new system does not become the old one.
 
@@ -73,13 +72,13 @@ These are constitutional constraints, not preferences. A submission that fails a
 
 ## How Judging Works
 
-**Expert panel filters for compliance.** A small panel verifies that submissions satisfy all eleven constitutional constraints. The panel does not judge quality. It judges whether the entry is a real plan or a wish with a flag.
+**Expert panel filters for compliance.** A small panel verifies that submissions satisfy all eleven constitutional constraints. The panel does not judge quality. It judges whether the proposal is a real plan or a wish with a flag.
 
-**Adversarial review.** Other contestants can challenge a submission's claims. If you say your plan is capture-resistant, a challenger can post a bond and present a specific capture scenario. Verified challenges send the submission back for revision or disqualify it. This is peer review, except the reviewers are competitors with financial incentives to find your mistakes.
+**Adversarial review.** Competing delegations can challenge a submission's claims. If you say your plan is capture-resistant, a challenger can post a bond and present a specific capture scenario. Verified challenges send the submission back for revision or disqualify it. This is peer review, except the reviewers are competitors with financial incentives to find your mistakes.
 
 **[Wishocracy](../solution/wishocracy.qmd) ranks the survivors.** Every submission that passes the constitutional filter and survives adversarial review enters pairwise comparison. Citizens compare two plans at a time: "Which of these two would you rather live under?" About 20 comparisons, 5 minutes. Registered voters are eligible to participate in wishocratic ranking of competing plans. The crowd does not need to understand mechanism design. The crowd needs to understand "which of these two futures sounds less terrible?" Humans are surprisingly good at that question and surprisingly bad at everything else.
 
-The winner becomes the Earth Optimization Protocol v2. If nobody beats v1, v1 wins by default, which means we were right that it is terrible but wrong that anyone could do better, and that is a more depressing outcome than we are prepared to contemplate.
+The ratified version becomes the Earth Optimization Protocol v2. If no proposal surpasses v1, v1 is ratified by default, which means we were right that it is terrible but wrong that anyone could do better, and that is a more depressing outcome than we are prepared to contemplate.
 
 The minimum bar for scoring. Any proposal that cannot beat the risk-adjusted treaty benchmark on cost per DALY does not get scored:
 
@@ -91,7 +90,7 @@ The minimum bar for scoring. Any proposal that cannot beat the risk-adjusted tre
 
 ## What v1 Claims (and What You Need to Beat)
 
-The prize asks one question: *who can cause verified implementation of a complete package that wins on welfare per dollar?* We wrote v1 because competitions need a starting entry. We expect to lose. Here is what v1 claims, paper by paper, and the specific benchmarks you need to beat:
+The prize asks one question: *who can cause verified implementation of a complete package that dominates on welfare per dollar?* We wrote v1 because conventions need a starting draft. We expect to be replaced. Here is what v1 claims, paper by paper, and the specific benchmarks you need to beat:
 
 | Paper | What the prize uses it for | Key benchmark to beat |
 |:---|:---|:---|

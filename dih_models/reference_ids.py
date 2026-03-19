@@ -617,7 +617,7 @@ class ReferenceID(str, Enum):
     LCV2024 = "lcv2024"
     LEAD_EXPOSURE_COST_6T_ANNUALLY = "lead-exposure-cost-6t-annually"
     LEADING_CAUSES_OF_DEATH_BY_AGE_GROUP = "leading-causes-of-death-by-age-group"
-    LEAST_BAD_IDEA_CONTEST_PAPER_2025 = "least-bad-idea-contest-paper-2025"
+    PLANETARY_CONSTITUTIONAL_CONVENTION_PAPER_2025 = "planetary-constitutional-convention-paper-2025"
     LEDUC2013 = "leduc2013"
     LESSWRONG_AI_SAFETY_FUNDING = "lesswrong-ai-safety-funding"
     LICHTENBERG_LIFE_YEARS_SAVED_2019 = "lichtenberg-life-years-saved-2019"
