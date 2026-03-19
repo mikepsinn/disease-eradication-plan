@@ -122,7 +122,7 @@ book:
         # STANDALONE PAPER - see impact.warondisease.org
         # - knowledge/economics/1-pct-treaty-impact.qmd # ✅ Rigorous economic analysis
         # REMOVED: Sales-pitchy tone, thin content (82 lines), already covered in incentive-alignment-bonds.qmd, 1-percent-treaty.qmd, faq.qmd
-        # - knowledge/call-to-action/your-personal-benefits.qmd
+        - knowledge/call-to-action/your-personal-benefits.qmd
         - knowledge/futures.qmd # ✅ Intro to Paths ~1p
         - knowledge/futures/moronia.qmd # ✅ Path A: Moronia ~10p
         - knowledge/futures/wishonia.qmd # ✅ Path B: Wishonia ~13p
