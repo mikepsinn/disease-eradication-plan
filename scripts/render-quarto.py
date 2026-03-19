@@ -115,6 +115,64 @@ def ensure_epubcheck(project_root: Path) -> Optional[Path]:
     return None
 
 
+def _add_lazy_attrs_to_img_tags(html: str) -> tuple[str, int]:
+    """Add native lazy-loading attributes to non-data images in rendered HTML."""
+    count = 0
+
+    def replace(match: re.Match[str]) -> str:
+        nonlocal count
+        attrs = match.group(1)
+        src_match = re.search(r'\ssrc=(["\'])(.*?)\1', attrs, re.IGNORECASE)
+        if not src_match:
+            return match.group(0)
+
+        src = src_match.group(2)
+        if src.startswith("data:"):
+            return match.group(0)
+
+        updated = attrs
+        changed = False
+
+        if not re.search(r'\sloading=', updated, re.IGNORECASE):
+            updated += ' loading="lazy"'
+            changed = True
+        if not re.search(r'\sdecoding=', updated, re.IGNORECASE):
+            updated += ' decoding="async"'
+            changed = True
+        if not re.search(r'\sfetchpriority=', updated, re.IGNORECASE):
+            updated += ' fetchpriority="low"'
+            changed = True
+
+        if changed:
+            count += 1
+
+        return f"<img{updated}>"
+
+    updated_html = re.sub(r"<img([^>]*?)>", replace, html, flags=re.IGNORECASE)
+    return updated_html, count
+
+
+def optimize_parameters_appendix_html(output_dir: Path) -> int:
+    """
+    Post-process rendered parameter appendix pages so chart images lazy-load.
+
+    Quarto/Jupyter plot outputs are injected after the Pandoc filter stage, so
+    the reliable place to add loading attrs is the final HTML.
+    """
+    total_updated = 0
+
+    for html_path in output_dir.rglob("parameters-and-calculations*.html"):
+        html = html_path.read_text(encoding="utf-8")
+        updated_html, updated_count = _add_lazy_attrs_to_img_tags(html)
+        if updated_count == 0:
+            continue
+
+        html_path.write_text(updated_html, encoding="utf-8", newline='\n')
+        total_updated += updated_count
+
+    return total_updated
+
+
 # =============================================================================
 # GitHub Actions Log Grouping
 # =============================================================================
@@ -1434,6 +1492,12 @@ def render_quarto(
         # Only check if this config actually defines HTML format
         has_html = "html" in metadata.get("configured_formats", [])
         if not preview and (format_override == "html" or (format_override is None and has_html)) and exit_code == 0:
+            if build_temp:
+                html_output_dir = build_temp / metadata["output_dir"]
+                optimized_images = optimize_parameters_appendix_html(html_output_dir)
+                if optimized_images:
+                    print(f"[*] Added lazy-loading attrs to {optimized_images} parameter-appendix image(s)")
+
             gh_group_start("VALIDATION: POST-RENDER (HTML)")
             output_dir = metadata["output_dir"]
             validation_exit = run_post_validation(output_dir=output_dir)
