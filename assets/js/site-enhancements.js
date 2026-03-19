@@ -17,6 +17,16 @@
 (function() {
   'use strict';
 
+  function notifyHashTargetReady(detail) {
+    if (typeof CustomEvent !== 'function') {
+      return;
+    }
+
+    document.dispatchEvent(new CustomEvent('dih:hash-target-ready', {
+      detail: detail || {}
+    }));
+  }
+
   // ========================================
   // AUTO-EXPAND HASH TARGETS
   // ========================================
@@ -24,14 +34,15 @@
   function expandHashTarget() {
     var hash = window.location.hash;
     if (!hash || hash.length < 2) {
-      return;
+      return false;
     }
 
     var targetId = hash.substring(1);
     var targetElement = document.getElementById(targetId);
 
     if (!targetElement) {
-      return;
+      notifyHashTargetReady({ found: false, targetId: targetId });
+      return false;
     }
 
     var calloutToExpand = null;
@@ -87,7 +98,7 @@
 
     // Expand callout if found
     if (calloutToExpand && !calloutToExpand.classList.contains('show')) {
-      expandCallout(calloutToExpand);
+      expandCallout(calloutToExpand, true);
     }
 
     // Highlight heading (check both target and first heading child)
@@ -102,8 +113,8 @@
       }, 3000);
     }
 
-    // Scroll to target after expansion
-    setTimeout(function() {
+    // Scroll after the expanded state has been applied.
+    requestAnimationFrame(function() {
       var headerOffset = 80;
       var elementPosition = targetElement.getBoundingClientRect().top;
       var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
@@ -111,12 +122,16 @@
         top: offsetPosition,
         behavior: 'smooth'
       });
-    }, 300);
+      notifyHashTargetReady({ found: true, targetId: targetId });
+    });
+
+    return true;
   }
 
-  function expandCallout(collapseDiv) {
-    // Try Bootstrap Collapse API first
-    if (typeof bootstrap !== 'undefined' && bootstrap.Collapse) {
+  function expandCallout(collapseDiv, instant) {
+    if (instant) {
+      manualExpandCallout(collapseDiv);
+    } else if (typeof bootstrap !== 'undefined' && bootstrap.Collapse) {
       try {
         var bsCollapse = bootstrap.Collapse.getOrCreateInstance(collapseDiv, { toggle: false });
         bsCollapse.show();
@@ -139,6 +154,7 @@
   }
 
   function manualExpandCallout(collapseDiv) {
+    collapseDiv.classList.remove('collapsing');
     collapseDiv.classList.add('show');
     collapseDiv.style.height = '';
 
@@ -482,21 +498,18 @@
   hideIndexTitleElements();
 
   function onPageReady() {
-    // Wait longer for large pages to fully render (loader takes 600ms to fade)
-    setTimeout(function() {
-      expandHashTarget();
-      if (!isFeatureDisabled('ci-toggle')) createUncertaintyToggle();
-      if (!isFeatureDisabled('cite')) createCopyCitationButton();
-      if (!isFeatureDisabled('share')) createShareBar();
-      createDarkModeToggle();
-      createBackToTopButton();
-    }, 800);
+    expandHashTarget();
+    if (!isFeatureDisabled('ci-toggle')) createUncertaintyToggle();
+    if (!isFeatureDisabled('cite')) createCopyCitationButton();
+    if (!isFeatureDisabled('share')) createShareBar();
+    createDarkModeToggle();
+    createBackToTopButton();
   }
 
-  if (document.readyState === 'complete') {
-    onPageReady();
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', onPageReady, { once: true });
   } else {
-    window.addEventListener('load', onPageReady);
+    onPageReady();
   }
 
   // Handle hash changes

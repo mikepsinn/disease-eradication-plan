@@ -1,87 +1,74 @@
-<!-- Page Loader - Full overlay on parameters page, slim progress bar elsewhere -->
+<!-- Page Load Feedback - Non-blocking progress bar and hash-jump notice -->
 
-<!-- Full-screen death counter overlay (hidden by default, shown only on parameters page) -->
-<div id="page-loader" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); display: none; flex-direction: column; justify-content: center; align-items: center; z-index: 9999; transition: opacity 0.6s ease-out, visibility 0.6s ease-out;">
-  <div class="loader-content" style="text-align: center; max-width: 800px; padding: 40px 20px;">
-
-    <div class="death-counter" id="deathCounter" style="font-size: 72px; font-weight: 700; color: #ef4444; margin: 20px 0; font-variant-numeric: tabular-nums; text-shadow: 0 0 20px rgba(239, 68, 68, 0.3);">1</div>
-
-    <div class="impact-message" style="font-size: 32px; color: #ffffff; margin: 20px 0; line-height: 1.5;">
-      people have died from <strong style="color: #ffffff !important;">curable diseases</strong>
-    </div>
-
-    <div class="impact-subtext" style="font-size: 32px; color: #ffffff; margin-top: 10px; opacity: 0.8;">
-      since this page started loading...
-    </div>
-
-    <!-- Gravestone Grid -->
-    <div class="gravestone-grid" id="gravestoneGrid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(30px, 1fr)); gap: 8px; max-width: 600px; margin: 30px auto; padding: 20px; min-height: 150px;">
-      <div class="gravestone show" style="font-size: 28px; opacity: 0.7; transform: scale(1); filter: grayscale(1);">💀</div>
-    </div>
-
-    <!-- Loading Spinner -->
-    <div class="loader-spinner" style="width: 40px; height: 40px; margin: 30px auto; border: 3px solid rgba(148, 163, 184, 0.2); border-top-color: #94a3b8; border-radius: 50%;"></div>
-  </div>
+<div id="hash-loader-hint" style="display: none;">
+  <span class="hash-loader-spinner" aria-hidden="true"></span>
+  <span id="hash-loader-message">Opening requested calculation...</span>
 </div>
 
-<!-- Slim progress bar (shown on non-parameters pages) -->
-<div id="progress-bar" style="position: fixed; top: 0; left: 0; width: 0%; height: 3px; background: #ef4444; z-index: 9999; transition: width 0.3s ease, opacity 0.4s ease; box-shadow: 0 0 8px rgba(239, 68, 68, 0.5); display: none;"></div>
+<div id="progress-bar" style="display: none;"></div>
 
 <style>
-  @keyframes pulse-glow {
-    0%, 100% { text-shadow: 0 0 20px rgba(239, 68, 68, 0.3); }
-    50% { text-shadow: 0 0 30px rgba(239, 68, 68, 0.6); }
-  }
-
-  @keyframes spin {
+  @keyframes hash-loader-spin {
     to { transform: rotate(360deg); }
   }
 
-  #page-loader .death-counter {
-    animation: pulse-glow 2s ease-in-out infinite !important;
+  #progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: #ef4444;
+    z-index: 9999;
+    transition: width 0.3s ease, opacity 0.4s ease;
+    box-shadow: 0 0 8px rgba(239, 68, 68, 0.5);
   }
 
-  #page-loader .loader-spinner {
-    animation: spin 1s linear infinite !important;
+  #hash-loader-hint {
+    position: fixed;
+    top: 14px;
+    right: 14px;
+    z-index: 9998;
+    align-items: center;
+    gap: 10px;
+    max-width: min(360px, calc(100vw - 28px));
+    padding: 10px 14px;
+    border: 1px solid rgba(148, 163, 184, 0.28);
+    border-radius: 999px;
+    background: rgba(15, 23, 42, 0.92);
+    color: #f8fafc;
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.25);
+    backdrop-filter: blur(12px);
+    font-size: 14px;
+    line-height: 1.3;
+    transition: opacity 0.25s ease, transform 0.25s ease;
   }
 
-  #page-loader.hidden {
-    opacity: 0 !important;
-    visibility: hidden !important;
-    pointer-events: none !important;
+  #hash-loader-hint.hidden {
+    opacity: 0;
+    transform: translateY(-8px);
+    pointer-events: none;
   }
 
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: scale(0) translateY(-10px);
-    }
-    to {
-      opacity: 0.7;
-      transform: scale(1) translateY(0);
-    }
+  #hash-loader-hint .hash-loader-spinner {
+    flex: 0 0 auto;
+    width: 14px;
+    height: 14px;
+    border: 2px solid rgba(248, 250, 252, 0.28);
+    border-top-color: #f8fafc;
+    border-radius: 50%;
+    animation: hash-loader-spin 0.9s linear infinite;
   }
 
-  .gravestone {
-    animation: fadeIn 0.3s ease-out forwards;
-  }
-
-  /* Mobile Responsive */
   @media (max-width: 768px) {
-    #page-loader .loader-content { padding: 20px 15px !important; }
-    #page-loader .impact-header { font-size: 14px !important; }
-    #page-loader .death-counter { font-size: 48px !important; }
-    #page-loader .impact-message { font-size: 18px !important; }
-    #page-loader .impact-subtext { font-size: 12px !important; }
-    #page-loader .gravestone-grid { gap: 6px !important; padding: 15px !important; min-height: 120px !important; }
-    #page-loader .gravestone { font-size: 24px !important; }
-  }
-
-  @media (max-width: 480px) {
-    #page-loader .death-counter { font-size: 36px !important; }
-    #page-loader .impact-message { font-size: 16px !important; }
-    #page-loader .gravestone { font-size: 20px !important; }
-    #page-loader .loader-spinner { width: 30px !important; height: 30px !important; margin: 20px auto !important; }
+    #hash-loader-hint {
+      top: 10px;
+      right: 10px;
+      left: 10px;
+      max-width: none;
+      font-size: 13px;
+      padding: 9px 12px;
+    }
   }
 </style>
 
@@ -90,64 +77,45 @@
   'use strict';
 
   var isParametersPage = /parameters-and-calculations/.test(window.location.pathname);
+  var hasHashTarget = !!(window.location.hash && window.location.hash.length > 1);
 
-  if (isParametersPage) {
-    startFullLoader();
-  } else {
-    startProgressBar();
+  startProgressBar();
+
+  if (isParametersPage && hasHashTarget) {
+    startHashHint();
   }
 
-  // === Full-screen death counter (parameters page only) ===
+  function startHashHint() {
+    var hint = document.getElementById('hash-loader-hint');
+    if (!hint) return;
 
-  function startFullLoader() {
-    var loader = document.getElementById('page-loader');
-    if (!loader) return;
+    var fallbackTimer = null;
 
-    loader.style.display = 'flex';
+    function showHint() {
+      if (fallbackTimer) clearTimeout(fallbackTimer);
+      hint.style.display = 'inline-flex';
+      hint.classList.remove('hidden');
+      fallbackTimer = window.setTimeout(hideHint, 4000);
+    }
 
-    var DEATHS_PER_SECOND = 150000 / 86400;
-    var startTime = Date.now();
-
-    var deathCounter = document.getElementById('deathCounter');
-    var gravestoneGrid = document.getElementById('gravestoneGrid');
-    if (!deathCounter || !gravestoneGrid) return;
-
-    var counterInterval = setInterval(function() {
-      var elapsed = (Date.now() - startTime) / 1000;
-      deathCounter.textContent = (1 + Math.floor(elapsed * DEATHS_PER_SECOND)).toLocaleString();
-    }, 50);
-
-    var graveInterval = setInterval(function() {
-      var deaths = Math.floor(((Date.now() - startTime) / 1000) * DEATHS_PER_SECOND);
-      var count = gravestoneGrid.querySelectorAll('.gravestone').length;
-      if (deaths > count) {
-        var g = document.createElement('div');
-        g.className = 'gravestone';
-        g.style.cssText = 'font-size: 28px; opacity: 0.7; transform: scale(1); filter: grayscale(1);';
-        g.textContent = '\uD83D\uDC80';
-        gravestoneGrid.appendChild(g);
-        var all = gravestoneGrid.querySelectorAll('.gravestone');
-        if (all.length > 100) all[0].remove();
+    function hideHint() {
+      if (fallbackTimer) {
+        clearTimeout(fallbackTimer);
+        fallbackTimer = null;
       }
-    }, 200);
-
-    function hide() {
-      clearInterval(counterInterval);
-      clearInterval(graveInterval);
-      loader.classList.add('hidden');
-      setTimeout(function() {
-        if (loader.parentNode) loader.parentNode.removeChild(loader);
-      }, 600);
+      hint.classList.add('hidden');
+      window.setTimeout(function() {
+        if (hint.classList.contains('hidden')) {
+          hint.style.display = 'none';
+        }
+      }, 250);
     }
 
-    if (document.readyState === 'complete') {
-      hide();
-    } else {
-      window.addEventListener('load', hide);
-    }
+    document.addEventListener('dih:hash-target-ready', hideHint, { once: false });
+    window.addEventListener('hashchange', showHint);
+
+    showHint();
   }
-
-  // === Slim progress bar (all other pages) ===
 
   function startProgressBar() {
     var bar = document.getElementById('progress-bar');
@@ -155,7 +123,6 @@
 
     bar.style.display = 'block';
 
-    // Animate to ~90% quickly, then slow down
     var progress = 0;
     var interval = setInterval(function() {
       if (progress < 30) {
@@ -173,19 +140,17 @@
       bar.style.width = '100%';
       setTimeout(function() {
         bar.style.opacity = '0';
-        setTimeout(function() {
-          if (bar.parentNode) bar.parentNode.removeChild(bar);
-        }, 400);
-      }, 200);
+      }, 80);
+      setTimeout(function() {
+        bar.style.display = 'none';
+      }, 480);
     }
 
-    // Dismiss on DOMContentLoaded (faster than window.load)
     if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', finish);
+      document.addEventListener('DOMContentLoaded', finish, { once: true });
     } else {
       finish();
     }
   }
-
 })();
 </script>
