@@ -67,7 +67,7 @@ Those are not projections about charity. They are projections about your own hea
 
 **PRIZE deposits** create visible committed capital. **VOTE claims** reward the coalition-building work of recruitment. The selfish case for the prize is bigger than either instrument. It is the size of the future they are trying to buy.
 
-Everything else in this paper (protocol mechanics, escrow yields, constitutional constraints, a 10-row table of governance functions) is implementation detail. Before any of it matters, five problems have to be solved. The prize solves all five with one instrument.
+Everything else in this paper (protocol mechanics, escrow yields, the scoreboard, the numbers) is implementation detail. The [Least Bad Idea Contest](least-bad-idea-contest.qmd) defines the starting benchmark and the rules for replacing it. Before any of it matters, five problems have to be solved. The prize solves all five with one instrument.
 
 ## Five Problems, One Instrument
 
@@ -81,7 +81,7 @@ The prize creates VOTE claims: recruit a verified participant into the [Global R
 
 Your economists call it pluralistic ignorance. Nearly every human would prefer a world without war and treatable disease, and an extra {{< var treaty_trajectory_lifetime_income_gain_per_capita >}} in lifetime income [@gdp-trajectories-paper-2025]. If every human realized that nearly every other human wants the same thing, it would be done tomorrow and the world would be unrecognizable. Instead, everyone assumes massive reform is crazy because they assume nobody else would agree to it. This is the dumbest reason a civilization has ever continued dying.
 
-Every verified registration is a publicly verifiable signal. The scoreboard aggregates across all participating pools in real time. As the number climbs from thousands to millions to hundreds of millions, the belief that "nobody would ever agree to this" becomes empirically falsifiable. You can see that they already did. The [referendum](https://manual.warondisease.org/knowledge/strategy/global-referendum.html) does not create demand for not dying. The demand is there. The scoreboard makes it impossible to pretend it is not.
+Every verified registration is a publicly verifiable signal. The scoreboard aggregates across all participating pools in real time. As the number climbs from thousands to millions to hundreds of millions, the belief that "nobody would ever agree to this" becomes empirically falsifiable. You can see that they already did. The [referendum](global-referendum.qmd) does not create demand for not dying. The demand is there. The scoreboard makes it impossible to pretend it is not.
 
 ::: {.content-visible when-format="html"}
 <figure>
@@ -240,7 +240,7 @@ The instruments deploy in order, and each stage builds the audience for the next
 
 **Stage 1: The [Least Bad Idea Contest](least-bad-idea-contest.qmd) [@least-bad-idea-contest-paper-2025] (weeks to months).** A credible host institution can initiate the network by publishing the rules, convening the expert panel, funding adversarial review, and launching the first public scoreboard. It does not need to endorse v1 as final truth. It hosts the contest that tries to replace it. Teams fork the [Earth Optimization Protocol v1](https://manual.warondisease.org), fix it or replace it. Expert panel filters for constitutional compliance. Adversarial review catches what the panel misses. [Wishocracy](../solution/wishocracy.qmd) [@wishocracy-paper-2025] ranks the survivors. The winner becomes v2. PRIZE deposits can begin during this stage, because the prize pool funds itself regardless of which plan wins.
 
-**Stage 2: PRIZE deposits and the referendum (weeks to months).** PRIZE deposits are the simplest on-ramp. Every depositor learns what the prize is for. The PRIZE deposit is the simplest public coordination signal. Meanwhile, the [referendum platform](https://manual.warondisease.org/knowledge/strategy/global-referendum.html) launches: voters set their preferred military-to-health allocation via [wishocratic sliders](../solution/wishocracy.qmd), and every recruiter who brings a verified participant earns VOTE claims. The referendum grows because recruitment is rewarded.
+**Stage 2: PRIZE deposits and the referendum (weeks to months).** PRIZE deposits are the simplest on-ramp. Every depositor learns what the prize is for. The PRIZE deposit is the simplest public coordination signal. Meanwhile, the [referendum platform](global-referendum.qmd) launches: voters set their preferred military-to-health allocation via [wishocratic sliders](../solution/wishocracy.qmd), and every recruiter who brings a verified participant earns VOTE claims. The referendum grows because recruitment is rewarded.
 
 **Stage 3: Scoreboard and momentum (months).** The referendum count climbs in public. The prize pool becomes large enough to be visibly real. Two dashboards matter: verified participant count and committed capital. Each new cohort of participants makes the next cohort easier to convince. Politicians notice.
 
