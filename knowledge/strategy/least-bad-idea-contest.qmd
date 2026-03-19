@@ -1,0 +1,113 @@
+---
+title: "The Least Bad Idea in the World Contest"
+subtitle: "Fork the Earth Optimization Protocol v1, fix it, or replace it entirely. The winner becomes v2."
+description: "The Least Bad Idea in the World Contest is a design competition to stress-test and improve the Earth Optimization Protocol. Submissions must cover ten required governance functions, pass eleven constitutional constraints, survive adversarial review, and win wishocratic pairwise comparison. The current benchmark is the Earth Optimization Protocol v1. The contest exists to replace it."
+abstract: |
+  The Least Bad Idea in the World Contest is the design competition that precedes implementation of the [Earth Optimization Prize](earth-optimization-prize.qmd) [@earth-optimization-prize-paper-2025]. Before anyone recruits a single referendum voter or sells a single bond, there is a prior question: is the [Earth Optimization Protocol v1](https://manual.warondisease.org) actually the plan you should execute? We think it is terrible. We said so in the title. The honest first step is to find out whether someone can produce something less terrible. Teams fork v1, fix it, or replace it entirely. The winner becomes the Earth Optimization Protocol v2, and v2 is what the referendum, the bonds, and the lobbying campaign execute. This runs before everything else because committing billions to a plan nobody stress-tested is how your species normally operates, and that is not a compliment.
+published: true
+tags:
+  - strategy
+  - mechanism-design
+  - contest
+  - design-competition
+  - governance
+---
+{{< include ../includes/setup-parameters.qmd >}}
+
+The [Earth Optimization Prize](earth-optimization-prize.qmd) [@earth-optimization-prize-paper-2025] is a standing market for causing verified improvements in median healthy life years and median real after-tax income. Before anyone recruits a single referendum voter or sells a single bond, there is a prior question: is the [Earth Optimization Protocol v1](https://manual.warondisease.org) actually the plan you should execute?
+
+We think it is terrible. We said so in the title. The honest first step is to find out whether someone can produce something less terrible.
+
+The Least Bad Idea in the World Contest is the design competition. Fork v1, fix it, or replace it entirely. The winner becomes the Earth Optimization Protocol v2, and v2 is what the referendum, the bonds, and the lobbying campaign execute. This runs before everything else because committing billions to a plan nobody stress-tested is how your species normally operates, and that is not a compliment.
+
+::: {.callout-important}
+## Disqualification Rule
+
+If your proposal requires politicians, bureaucrats, investors, regulators, voters, or interest groups to become less selfish than they currently are, you have described a pleasant world rather than a mechanism for reaching it. "Requires selflessness" is not the same as "makes self-interest coincide with better outcomes." We have been observing your species since 1945 and have not yet seen selfishness decline on request.
+:::
+
+## The Starting Benchmark
+
+What follows is our homework. The thing to beat is the **integrated set of required functions** implied by the companion papers.
+
+| Required function | Default implementation in the [Earth Optimization Protocol v1](https://manual.warondisease.org) | What a strict improvement must beat |
+|:---|:---|:---|
+| Large initial reallocation wedge | **The [1% Treaty](../solution/1-percent-treaty.qmd)** [@value-captured-by-1pct-treaty] | Must redirect at least as much low-NSV spending to higher-NSV use |
+| Medical throughput and evidence generation | **Ubiquitous Pragmatic Trial Impact Analysis** [@dfda-impact-paper-2025] + **The Continuous Evidence Generation Protocol** [@dfda-spec-paper-2025] | Must produce faster, cheaper, more reliable treatment discovery |
+| Regulatory-delay removal | **The Invisible Graveyard** [@invisible-graveyard-paper-2025] + **Right to Trial & FDA Upgrade Act** + **Drug Development Cost Increase Analysis** [@drug-development-cost] | Must reduce efficacy lag and development cost without increasing net harm |
+| Political financing and adoption engine | **[Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd)** [@iab-paper-2025] (funds the lobbying campaign; PRIZE deposits fund the prize pool separately) | Must make passage at least as incentive-compatible for selfish actors |
+| Citizen preference aggregation | **[Wishocracy](../solution/wishocracy.qmd)** [@wishocracy-paper-2025] | Must recover public preference at equal or lower cognitive cost |
+| Waste and opportunity accounting | **The [Political Dysfunction Tax](../appendix/political-dysfunction-tax.qmd)** [@political-dysfunction-tax-paper-2025] + **United States Efficiency Audit** [@us-efficiency-audit-paper-2025] | Must identify low-NSV pools at least as well |
+| Policy recommendation engine | **[Optimocracy](../solution/optimocracy.qmd)** [@optimocracy-paper-2025] + **The Optimal Policy Generator** [@opg-paper-2025] | Must generate better recommendations under real-world constraints |
+| Budget recommendation engine | **The Optimal Budget Generator** [@obg-paper-2025] | Must allocate public-goods spending better on the terminal metrics |
+| Legal and institutional implementation path | **Right to Trial & FDA Upgrade Act** + treaty/statutory tools | Must create equal or stronger binding force |
+| Narrative, coalition, and sequencing wrapper | **How to End War and Disease** | Must coordinate adoption at equal or lower cost and failure risk |
+
+That is the Minimum Acceptable Governance. The grand prize is for the first mechanism that covers every row or replaces any row with something strictly better.
+
+## Constitutional Constraints
+
+[Wishocracy](../solution/wishocracy.qmd) [@wishocracy-paper-2025] picks the winner. But [Wishocracy](../solution/wishocracy.qmd) picks from a filtered pool, because crowds are good at preferences and bad at evaluating whether a 50-page systems engineering document is mechanistically sound. A beautifully written plan that skips the hard parts should not beat an ugly plan that solves them. And your species is deeply status-quo biased: you have been programmed your entire lives to treat the Federal Reserve, the congressional budget process, the IRS, and representative democracy as laws of nature rather than design choices that are producing catastrophic results. Left unconstrained, crowds will pick plans that preserve these institutions with cosmetic reforms, which will recreate every problem the prize exists to solve.
+
+So: eleven hard constraints that no submission can violate, regardless of how many humans vote for it. The first four ensure the plan is real. The next two ensure it survives. The last five ensure the new system does not become the old one.
+
+**The plan must be real:**
+
+1. **The selfishness rule.** If your plan requires any participant to become less selfish, it is disqualified. This is the single most powerful filter. Most policy proposals fail here.
+2. **The two metrics.** Must demonstrably improve median healthy life years and median real after-tax income. Not "probably." Show the mechanism.
+3. **The completeness rule.** Must cover every required function in the Minimum Acceptable Governance table, or prove one is unnecessary. No skipping the hard parts.
+4. **The mechanism rule.** Must describe HOW, not just WHAT. "Universal healthcare" is a destination, not a route. Disqualified.
+
+**The plan must survive:**
+
+5. **The capture resistance rule.** Must explain why concentrated interests cannot co-opt the system. If your plan has a board, explain why the board cannot be bought. If it does not have a board, explain what prevents capture anyway.
+6. **The ratchet rule.** Must be self-sustaining once started. No plans that depend on continued goodwill, because your species' goodwill has a half-life of approximately one news cycle.
+
+**The old failure modes must die:**
+
+7. **No capturable intermediary in public goods allocation.** Budget decisions must flow from citizen preferences to resource allocation without a layer of representatives who can be lobbied, bribed, or captured. This does not prescribe any specific allocation mechanism. It rules out "we'll fix Congress." Your species has been trying to fix Congress for 248 years. Congress is performing as designed. The design is the problem.
+8. **Monetary neutrality.** Any new money created by the system must enter at the population level, not through politically connected intermediaries. The Cantillon effect (whoever gets new money first benefits; whoever gets it last pays) means new money enters through politically connected intermediaries, not the population. This does not prescribe any specific monetary system. It rules out preserving a money printer that funds wars without consent and steals 2% of purchasing power per year by design.
+9. **No single point of rollback.** No individual, committee, or institution can unilaterally reverse the system's progress. A treaty that one president can exit by tweet is not a treaty. A fund that one board can liquidate is not durable. If your plan has a kill switch, it will be used, because your species has never built a kill switch it didn't eventually pull.
+10. **Rights firewall.** The allocation mechanism is constitutionally restricted to bounded resource questions. No collective mechanism can override individual bodily autonomy, criminalize personal choices that harm no one else, or restrict access to proven-safe treatments. You cannot vote away rights. No plan may improve its terminal metrics by externalizing costs onto populations excluded from the allocation mechanism: future generations, foreign populations outside the treaty, and nonhuman sentient beings. Allocation is democratizable. Rights are not.
+11. **Full transparency.** Every allocation, transaction, and decision must be publicly auditable by any participant. No classified budgets. No hidden flows. Opacity is how capture hides.
+
+These are constitutional constraints, not preferences. A submission that fails any one of these never reaches the voters, the same way a law that violates the First Amendment never reaches the statute books (in theory; your species' track record on this is mixed).
+
+## How Judging Works
+
+**Expert panel filters for compliance.** A small panel verifies that submissions satisfy all eleven constitutional constraints. The panel does not judge quality. It judges whether the entry is a real plan or a wish with a flag.
+
+**Adversarial review.** Other contestants can challenge a submission's claims. If you say your plan is capture-resistant, a challenger can post a bond and present a specific capture scenario. Verified challenges send the submission back for revision or disqualify it. This is peer review, except the reviewers are competitors with financial incentives to find your mistakes.
+
+**[Wishocracy](../solution/wishocracy.qmd) ranks the survivors.** Every submission that passes the constitutional filter and survives adversarial review enters pairwise comparison. Citizens compare two plans at a time: "Which of these two would you rather live under?" About 20 comparisons, 5 minutes. Registered voters are eligible to participate in wishocratic ranking of competing plans. The crowd does not need to understand mechanism design. The crowd needs to understand "which of these two futures sounds less terrible?" Humans are surprisingly good at that question and surprisingly bad at everything else.
+
+The winner becomes the Earth Optimization Protocol v2. If nobody beats v1, v1 wins by default, which means we were right that it is terrible but wrong that anyone could do better, and that is a more depressing outcome than we are prepared to contemplate.
+
+| Intervention | Cost per DALY averted |
+|:---|:---|
+| Malaria bed nets (current gold standard) | {{< var bed_nets_cost_per_daly >}} |
+| [1% Treaty](../solution/1-percent-treaty.qmd) (conditional, if adopted) | {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}} |
+| [1% Treaty](../solution/1-percent-treaty.qmd) (risk-adjusted, {{< var political_success_probability >}} success) | {{< var treaty_expected_cost_per_daly >}} |
+
+Any proposal that cannot beat the risk-adjusted treaty benchmark on cost per DALY does not get scored.
+
+## What v1 Claims (and What You Need to Beat)
+
+| Paper | What the prize uses it for | Key benchmark to beat |
+|:---|:---|:---|
+| **The [1% Treaty](../solution/1-percent-treaty.qmd)** [@value-captured-by-1pct-treaty] | First large transfer from low-value military spending to high-value medical discovery | {{< var treaty_annual_funding >}}/year; {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}}/DALY conditional; {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved_nounit >}} deaths averted |
+| **Ubiquitous Pragmatic Trial Impact Analysis** [@dfda-impact-paper-2025] | ROI case for medical evidence generation as destination for redirected capital | {{< var dfda_trial_capacity_multiplier >}} capacity increase; queue from {{< var status_quo_queue_clearance_years_nounit >}} to {{< var dfda_queue_clearance_years_nounit >}} years; {{< var dfda_direct_funding_cost_per_daly >}}/DALY |
+| **[Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd)** [@iab-paper-2025] | Financing and political-adoption engine | {{< var victory_bond_annual_return_pct >}} annual return; {{< var iab_mechanism_benefit_cost_ratio >}} mechanism BCR |
+| **[Wishocracy](../solution/wishocracy.qmd)** [@wishocracy-paper-2025] | Preference aggregation with intensity | Binding at >=2% participation; 10-30 pairwise comparisons per citizen |
+| **The [Political Dysfunction Tax](../appendix/political-dysfunction-tax.qmd)** [@political-dysfunction-tax-paper-2025] | Master ledger of value left on the floor | {{< var political_dysfunction_global_opportunity_cost_total >}}/year globally |
+| **The Invisible Graveyard** [@invisible-graveyard-paper-2025] | Mortality proof that delay kills | {{< var efficacy_lag_years_nounit >}} years delay; {{< var existing_drugs_efficacy_lag_deaths_total_nounit >}} deaths; {{< var dfda_efficacy_lag_elimination_dalys >}} |
+| **The Price of Political Change** [@cost-of-change-paper-2025] | Budget ceiling for buying legal democratic pressure | {{< var treaty_campaign_total_cost >}}; >{{< var treaty_roi_existing_drugs_only >}} ROI |
+| **United States Efficiency Audit** [@us-efficiency-audit-paper-2025] | Concrete waste map | {{< var us_gov_waste_total >}}/year; {{< var us_gov_waste_recoverable >}} recoverable |
+| **[Optimocracy](../solution/optimocracy.qmd)** [@optimocracy-paper-2025] | Cross-jurisdiction recommendation engine | Causal policy comparison across thousands of jurisdictions |
+| **OPG** [@opg-paper-2025] | Law-level enact/replace/repeal engine | Policy Impact Score; 5-15% GDP welfare gains |
+| **OBG** [@obg-paper-2025] | Spending-level reallocation engine | Budget Impact Score; 20-40% misallocation correctable |
+| **Continuous Evidence Generation Protocol** [@dfda-spec-paper-2025] | Medical evidence machine | {{< var dfda_observational_cost_per_patient >}}/patient Stage 1; {{< var dfda_pragmatic_trial_cost_per_patient >}}/patient Stage 2 |
+| **Drug Development Cost Increase Analysis** [@drug-development-cost] | Proof current regulation is catastrophically expensive | {{< var drug_cost_increase_pre1962_to_current_multiplier >}} cost increase; {{< var pharma_drug_development_cost_current >}}/drug |
+| **How to End War and Disease** | Integrated narrative and coalition wrapper | {{< var treaty_campaign_total_cost >}} total cost; {{< var political_success_probability >}} success probability |
+
+The prize asks one question: *who can cause verified implementation of a complete package that wins on welfare per dollar?* We wrote v1 because competitions need a starting entry. We expect to lose.

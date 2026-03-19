@@ -25,9 +25,6 @@ dih-render:
   concept-terms:
     - term: "Earth Optimization Prize"
       aliases:
-        - "Least Bad Idea Prize"
-        - "Least Bad Idea in the World Prize"
-        - "LBIP"
         - "implementation prize"
       manual-target: knowledge/strategy/earth-optimization-prize.qmd
   # Image generation prompts (used by scripts/images/generate-project-branding-images.ts)
