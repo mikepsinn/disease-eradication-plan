@@ -5289,7 +5289,7 @@ $$
 
 :::
 
-### Prize Escrow Return Multiple: 4.18x {#sec-prize_escrow_100_return_multiple}
+### Prize Escrow Return Multiple: 2.08x {#sec-prize_escrow_100_return_multiple}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -5297,15 +5297,15 @@ Return multiple on escrowed prize contribution after accumulation period (how ma
 
 **Inputs**:
 
-- [Prize Escrow Annual Yield Rate](#sec-prize_escrow_yield_rate): 10% (95% CI: 5% - 15%)
+- [Prize Escrow Annual Yield Rate](#sec-prize_escrow_yield_rate): 5% (95% CI: 3% - 8%)
 - [Prize Escrow Accumulation Period](#sec-prize_escrow_accumulation_years): 15 years
 
 $$
 \begin{gathered}
 k_{escrow} \\
 = (1 + r_{escrow})^{T_{escrow}} \\
-= (1 + 10\%)^{15} \\
-= 4.18\times
+= (1 + 5\%)^{15} \\
+= 2.08\times
 \end{gathered}
 $$
 
@@ -13525,17 +13525,17 @@ Assumed accumulation period for escrowed prize contributions before threshold de
 
 :::
 
-### Prize Escrow Annual Yield Rate: 10% {#sec-prize_escrow_yield_rate}
+### Prize Escrow Annual Yield Rate: 5% {#sec-prize_escrow_yield_rate}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Annual yield rate on escrowed prize contributions via rolling locked stablecoin staking (Binance 120-day USDT locked staking benchmark, March 2026)
+Annual yield rate on escrowed prize contributions via stablecoin lending/staking (cycle-weighted average across Aave, Compound, MakerDAO DSR, and locked staking platforms, 2020-2026)
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [5%, 15%] • Distribution: Normal
+**Technical**: 95% CI: [3%, 8%] • Distribution: Normal
 
-**What this means**: There's significant uncertainty here. The true value likely falls between 5% and 15% (±50%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: There's significant uncertainty here. The true value likely falls between 3% and 8% (±50%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The normal distribution means values cluster around the center with equal chances of being higher or lower.*
 

@@ -4111,29 +4111,29 @@ export const PRAGMATIC_TRIAL_COST_PER_QALY: Parameter = {
 };
 
 export const PRIZE_ESCROW_100_COMPOUND_RETURN: Parameter = {
-  value: 417.7248169415656,
+  value: 207.89281794113688,
   unit: "USD",
   displayName: "$100 Prize Escrow Compound Return",
   description: "Value of $100 escrowed prize contribution after accumulation period at escrow yield rate, returned if funding threshold is not met",
   sourceType: "calculated",
   confidence: "high",
   formula: "100 × (1 + PRIZE_ESCROW_YIELD_RATE) ^ PRIZE_ESCROW_ACCUMULATION_YEARS",
-  latex: "\\begin{gathered}\nV_{escrow,100} \\\\\n= 100 \\times (1 + r_{escrow})^{T_{escrow}} \\\\\n= 100 \\times (1 + 10\\%)^{15} \\\\\n= \\$418\n\\end{gathered}",
+  latex: "\\begin{gathered}\nV_{escrow,100} \\\\\n= 100 \\times (1 + r_{escrow})^{T_{escrow}} \\\\\n= 100 \\times (1 + 5\\%)^{15} \\\\\n= \\$208\n\\end{gathered}",
 };
 
 export const PRIZE_ESCROW_100_RETURN_MULTIPLE: Parameter = {
-  value: 4.177248169415656,
+  value: 2.0789281794113688,
   unit: "x",
   displayName: "Prize Escrow Return Multiple",
   description: "Return multiple on escrowed prize contribution after accumulation period (how many times your money you get back)",
   sourceType: "calculated",
   confidence: "high",
   formula: "(1 + PRIZE_ESCROW_YIELD_RATE) ^ PRIZE_ESCROW_ACCUMULATION_YEARS",
-  latex: "\\begin{gathered}\nk_{escrow} \\\\\n= (1 + r_{escrow})^{T_{escrow}} \\\\\n= (1 + 10\\%)^{15} \\\\\n= 4.18\\times\n\\end{gathered}",
+  latex: "\\begin{gathered}\nk_{escrow} \\\\\n= (1 + r_{escrow})^{T_{escrow}} \\\\\n= (1 + 5\\%)^{15} \\\\\n= 2.08\\times\n\\end{gathered}",
 };
 
 export const PRIZE_POOL_FV_ANNUITY_FACTOR: Parameter = {
-  value: 31.77248169415656,
+  value: 21.578563588227375,
   unit: "ratio",
   displayName: "Prize Pool FV Annuity Factor",
   description: "Future-value annuity factor for prize pool accumulation at escrow yield over accumulation period",
@@ -4144,7 +4144,7 @@ export const PRIZE_POOL_FV_ANNUITY_FACTOR: Parameter = {
 };
 
 export const PRIZE_POOL_PROJECTED_SIZE: Parameter = {
-  value: 29596066698106.84,
+  value: 20100431982433.8,
   unit: "USD",
   displayName: "Prize Pool Projected Size",
   description: "Projected prize pool size based on PRIZE share of global savings and compound growth over the accumulation period",
@@ -4155,7 +4155,7 @@ export const PRIZE_POOL_PROJECTED_SIZE: Parameter = {
 };
 
 export const PRIZE_POOL_TARGET_ANNUAL_DEPOSITS: Parameter = {
-  value: 3178851465624.589,
+  value: 4680571048533.676,
   unit: "USD/year",
   displayName: "Prize Pool Required Annual Deposits",
   description: "Annual deposits required for prize pool to reach the dysfunction tax target ($101T) over the accumulation period",
@@ -4166,36 +4166,36 @@ export const PRIZE_POOL_TARGET_ANNUAL_DEPOSITS: Parameter = {
 };
 
 export const PRIZE_POOL_TARGET_PCT_GDP: Parameter = {
-  value: 0.027642186657605122,
+  value: 0.04070061781333631,
   unit: "percent",
   displayName: "Prize Pool Target as % of Global GDP",
   description: "Required annual deposits as share of global GDP to reach dysfunction tax target",
   sourceType: "calculated",
   confidence: "high",
   formula: "PRIZE_POOL_TARGET_ANNUAL_DEPOSITS / GLOBAL_GDP_2025",
-  latex: "\\begin{gathered}\nd_{GDP} = \\frac{D_{annual}}{GDP_{global}} = \\frac{\\$3.18T}{\\$115T} = 2.76\\%\n\\\\[0.5em]\n\\text{where } D_{annual} = \\frac{O_{total}}{FV_{annuity}}\n\\\\[0.5em]\n\\text{where } O_{total} = O_{health} + O_{science} + O_{lead} + O_{migration} = \\$34T + \\$4T + \\$6T + \\$57T = \\$101T\n\\\\[0.5em]\n\\text{where } FV_{annuity} = \\frac{(1 + r_{escrow})^{T_{escrow}} - 1}{r_{escrow}}\n\\end{gathered}",
+  latex: "\\begin{gathered}\nd_{GDP} = \\frac{D_{annual}}{GDP_{global}} = \\frac{\\$4.68T}{\\$115T} = 4.07\\%\n\\\\[0.5em]\n\\text{where } D_{annual} = \\frac{O_{total}}{FV_{annuity}}\n\\\\[0.5em]\n\\text{where } O_{total} = O_{health} + O_{science} + O_{lead} + O_{migration} = \\$34T + \\$4T + \\$6T + \\$57T = \\$101T\n\\\\[0.5em]\n\\text{where } FV_{annuity} = \\frac{(1 + r_{escrow})^{T_{escrow}} - 1}{r_{escrow}}\n\\end{gathered}",
 };
 
 export const PRIZE_POOL_TARGET_PCT_SAVINGS: Parameter = {
-  value: 0.10237846910224117,
+  value: 0.15074302893828262,
   unit: "percent",
   displayName: "Prize Pool Target as % of Global Savings",
   description: "Required annual deposits as share of global savings to reach dysfunction tax target",
   sourceType: "calculated",
   confidence: "high",
   formula: "PRIZE_POOL_TARGET_ANNUAL_DEPOSITS / GLOBAL_ANNUAL_SAVINGS",
-  latex: "\\begin{gathered}\nd_{savings} = \\frac{D_{annual}}{S_{annual}} = \\frac{\\$3.18T}{\\$31.1T} = 10.2\\%\n\\\\[0.5em]\n\\text{where } D_{annual} = \\frac{O_{total}}{FV_{annuity}}\n\\\\[0.5em]\n\\text{where } O_{total} = O_{health} + O_{science} + O_{lead} + O_{migration} = \\$34T + \\$4T + \\$6T + \\$57T = \\$101T\n\\\\[0.5em]\n\\text{where } FV_{annuity} = \\frac{(1 + r_{escrow})^{T_{escrow}} - 1}{r_{escrow}}\n\\\\[0.5em]\n\\text{where } S_{annual} = s_{global} \\times GDP_{global} = 27\\% \\times \\$115T = \\$31.1T\n\\end{gathered}",
+  latex: "\\begin{gathered}\nd_{savings} = \\frac{D_{annual}}{S_{annual}} = \\frac{\\$4.68T}{\\$31.1T} = 15.1\\%\n\\\\[0.5em]\n\\text{where } D_{annual} = \\frac{O_{total}}{FV_{annuity}}\n\\\\[0.5em]\n\\text{where } O_{total} = O_{health} + O_{science} + O_{lead} + O_{migration} = \\$34T + \\$4T + \\$6T + \\$57T = \\$101T\n\\\\[0.5em]\n\\text{where } FV_{annuity} = \\frac{(1 + r_{escrow})^{T_{escrow}} - 1}{r_{escrow}}\n\\\\[0.5em]\n\\text{where } S_{annual} = s_{global} \\times GDP_{global} = 27\\% \\times \\$115T = \\$31.1T\n\\end{gathered}",
 };
 
 export const PRIZE_POOL_TARGET_PCT_WEALTH: Parameter = {
-  value: 0.007001875474944028,
+  value: 0.010309627860206335,
   unit: "percent",
   displayName: "Prize Pool Target as % of Household Wealth",
   description: "Required annual deposits as share of global household wealth to reach dysfunction tax target",
   sourceType: "calculated",
   confidence: "high",
   formula: "PRIZE_POOL_TARGET_ANNUAL_DEPOSITS / GLOBAL_HOUSEHOLD_WEALTH_USD",
-  latex: "\\begin{gathered}\nd_{wealth} = \\frac{D_{annual}}{Wealth_{household}} = \\frac{\\$3.18T}{\\$454T} = 0.7\\%\n\\\\[0.5em]\n\\text{where } D_{annual} = \\frac{O_{total}}{FV_{annuity}}\n\\\\[0.5em]\n\\text{where } O_{total} = O_{health} + O_{science} + O_{lead} + O_{migration} = \\$34T + \\$4T + \\$6T + \\$57T = \\$101T\n\\\\[0.5em]\n\\text{where } FV_{annuity} = \\frac{(1 + r_{escrow})^{T_{escrow}} - 1}{r_{escrow}}\n\\end{gathered}",
+  latex: "\\begin{gathered}\nd_{wealth} = \\frac{D_{annual}}{Wealth_{household}} = \\frac{\\$4.68T}{\\$454T} = 1.03\\%\n\\\\[0.5em]\n\\text{where } D_{annual} = \\frac{O_{total}}{FV_{annuity}}\n\\\\[0.5em]\n\\text{where } O_{total} = O_{health} + O_{science} + O_{lead} + O_{migration} = \\$34T + \\$4T + \\$6T + \\$57T = \\$101T\n\\\\[0.5em]\n\\text{where } FV_{annuity} = \\frac{(1 + r_{escrow})^{T_{escrow}} - 1}{r_{escrow}}\n\\end{gathered}",
 };
 
 export const RECOVERY_TRIAL_COST_REDUCTION_FACTOR: Parameter = {
@@ -5094,7 +5094,7 @@ export const VOTE_EXPECTED_PARTICIPANTS: Parameter = {
 };
 
 export const VOTE_TOKEN_POTENTIAL_VALUE: Parameter = {
-  value: 12331.694457544516,
+  value: 8375.17999268075,
   unit: "USD",
   displayName: "VOTE Token Potential Value",
   description: "Expected value of a single VOTE token (projected pool size ÷ expected voters). Denominator is expected participants (30% of global population), not the Chenoweth passage threshold. CI captures uncertainty in pool size and participation rate.",
@@ -6213,13 +6213,13 @@ export const PRIZE_ESCROW_ACCUMULATION_YEARS: Parameter = {
 };
 
 export const PRIZE_ESCROW_YIELD_RATE: Parameter = {
-  value: 0.1,
+  value: 0.05,
   unit: "percent",
   displayName: "Prize Escrow Annual Yield Rate",
-  description: "Annual yield rate on escrowed prize contributions via rolling locked stablecoin staking (Binance 120-day USDT locked staking benchmark, March 2026)",
+  description: "Annual yield rate on escrowed prize contributions via stablecoin lending/staking (cycle-weighted average across Aave, Compound, MakerDAO DSR, and locked staking platforms, 2020-2026)",
   sourceType: "definition",
   confidence: "high",
-  confidenceInterval: [0.05, 0.15],
+  confidenceInterval: [0.03, 0.08],
 };
 
 export const PRIZE_SAVINGS_SHARE: Parameter = {

@@ -20,14 +20,14 @@ display_name = "Prize Pool Projected Size"
 
 # Baseline and units
 
-baseline = 29596066698106.84
+baseline = 20100431982433.8
 
 # Tornado data from sensitivity analysis
 
 drivers = ['PRIZE_SAVINGS_SHARE', 'PRIZE_ESCROW_YIELD_RATE', 'GLOBAL_SAVINGS_RATE_PCT']
 driver_labels = ['PRIZE Share of Global Savings', 'Prize Escrow Annual Yield Rate', 'Global Gross Savings Rate']
-impacts_low = [-28609531141503.277, -9495634715673.04, -3288451855345.207]
-impacts_high = [463671711603673.9, 14725086018991.184, 3288451855345.199]
+impacts_low = [-19430417583019.34, -2775543696980.043, -2233381331381.535]
+impacts_high = [314906767724796.25, 5191762141012.332, 2233381331381.5312]
 
 # Convert deltas to absolute values (baseline + delta)
 

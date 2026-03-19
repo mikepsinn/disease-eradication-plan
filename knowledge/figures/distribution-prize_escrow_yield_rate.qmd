@@ -17,9 +17,9 @@ setup_chart_style()
 
 # Parameter values
 
-central_value = 0.1
-low = 0.05
-high = 0.15
+central_value = 0.05
+low = 0.03
+high = 0.08
 dist_type = "normal"
 display_name = "Prize Escrow Annual Yield Rate"
 unit = "percent"

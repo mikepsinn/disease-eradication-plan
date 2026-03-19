@@ -20,14 +20,14 @@ display_name = "Prize Escrow Return Multiple"
 
 # Baseline and units
 
-baseline = 4.177248169415656
+baseline = 2.0789281794113688
 
 # Tornado data from sensitivity analysis
 
 drivers = ['PRIZE_ESCROW_YIELD_RATE']
 driver_labels = ['Prize Escrow Annual Yield Rate']
-impacts_low = [-2.0983199900042875]
-impacts_high = [3.959813459746665]
+impacts_low = [-0.5209607628106037]
+impacts_high = [1.0932409347869032]
 
 # Convert deltas to absolute values (baseline + delta)
 

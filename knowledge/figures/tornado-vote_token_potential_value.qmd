@@ -20,14 +20,14 @@ display_name = "VOTE Token Potential Value"
 
 # Baseline and units
 
-baseline = 12331.694457544516
+baseline = 8375.17999268075
 
 # Tornado data from sensitivity analysis
 
 drivers = ['PRIZE_SAVINGS_SHARE', 'VOTE_PARTICIPATION_RATE', 'PRIZE_ESCROW_YIELD_RATE', 'GLOBAL_SAVINGS_RATE_PCT', 'GLOBAL_POPULATION_2024']
 driver_labels = ['PRIZE Share of Global Savings', 'Expected Vote Participation Rate', 'Prize Escrow Annual Yield Rate', 'Global Gross Savings Rate', 'Global Population in 2024']
-impacts_low = [-11920.637975626365, 110985.25011790064, -3956.514464863765, -1370.188273060503, 316.19729378319425]
-impacts_high = [193196.54650153077, -7046.682547168294, 6135.452507912993, 1370.1882730605012, -300.7730355498661]
+impacts_low = [-8096.007326258059, 75376.61993412676, -1156.4765404083519, -930.5755547423068, 214.74820494053165]
+impacts_high = [131211.1532186651, -4785.817138674714, 2163.234225421804, 930.575554742305, -204.27268274831113]
 
 # Convert deltas to absolute values (baseline + delta)
 

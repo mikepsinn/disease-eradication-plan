@@ -20,14 +20,14 @@ display_name = "Prize Pool FV Annuity Factor"
 
 # Baseline and units
 
-baseline = 31.77248169415656
+baseline = 21.578563588227375
 
 # Tornado data from sensitivity analysis
 
 drivers = ['PRIZE_ESCROW_YIELD_RATE']
 driver_labels = ['Prize Escrow Annual Yield Rate']
-impacts_low = [-10.193918105929185]
-impacts_high = [15.807929166925582]
+impacts_low = [-2.9796497015352053]
+impacts_high = [5.573550339251025]
 
 # Convert deltas to absolute values (baseline + delta)
 

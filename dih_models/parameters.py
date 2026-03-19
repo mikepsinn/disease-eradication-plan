@@ -5659,14 +5659,14 @@ IAB_VS_DEFENSE_LOBBY_RATIO_AT_1PCT = Parameter(
 
 # ── Prize Escrow Yield (Assurance Contract) ──────────────────────────────────
 PRIZE_ESCROW_YIELD_RATE = Parameter(
-    0.10,
+    0.05,
     source_type="definition",
-    description="Annual yield rate on escrowed prize contributions via rolling locked stablecoin staking (Binance 120-day USDT locked staking benchmark, March 2026)",
+    description="Annual yield rate on escrowed prize contributions via stablecoin lending/staking (cycle-weighted average across Aave, Compound, MakerDAO DSR, and locked staking platforms, 2020-2026)",
     display_name="Prize Escrow Annual Yield Rate",
     unit="percent",
-    display_value="10%",
+    display_value="5%",
     keywords=["prize", "escrow", "yield", "staking", "interest", "assurance contract", "defi"],
-    confidence_interval=(0.05, 0.15),  # Stablecoin staking yields historically 2-15%; CI captures mainstream range
+    confidence_interval=(0.03, 0.08),  # Bear floors ~2-3%, bull peaks 8-12% but unsustained; 3-8% captures realistic 15-year range
     distribution="normal",
     latex_symbol=r"r_{escrow}",
 )
@@ -5689,12 +5689,12 @@ PRIZE_ESCROW_100_COMPOUND_RETURN = Parameter(
     display_name="$100 Prize Escrow Compound Return",
     unit="USD",
     formula="100 × (1 + PRIZE_ESCROW_YIELD_RATE) ^ PRIZE_ESCROW_ACCUMULATION_YEARS",
-    latex=r"V_{escrow,100} = 100 \times (1 + r_{escrow})^{T_{escrow}} = 100 \times (1 + 10\%)^{15} = \$418",
+    latex=r"V_{escrow,100} = 100 \times (1 + r_{escrow})^{T_{escrow}} = 100 \times (1 + 5\%)^{15} = \$208",
     inputs=["PRIZE_ESCROW_YIELD_RATE", "PRIZE_ESCROW_ACCUMULATION_YEARS"],
     compute=lambda ctx: 100 * (1 + ctx["PRIZE_ESCROW_YIELD_RATE"]) ** ctx["PRIZE_ESCROW_ACCUMULATION_YEARS"],
     keywords=["prize", "escrow", "compound", "return", "assurance contract", "refund"],
     latex_symbol=r"V_{escrow,100}",
-)  # $418
+)  # $208
 
 PRIZE_ESCROW_100_RETURN_MULTIPLE = Parameter(
     (1 + PRIZE_ESCROW_YIELD_RATE) ** PRIZE_ESCROW_ACCUMULATION_YEARS,
@@ -5703,12 +5703,12 @@ PRIZE_ESCROW_100_RETURN_MULTIPLE = Parameter(
     display_name="Prize Escrow Return Multiple",
     unit="x",
     formula="(1 + PRIZE_ESCROW_YIELD_RATE) ^ PRIZE_ESCROW_ACCUMULATION_YEARS",
-    latex=r"k_{escrow} = (1 + r_{escrow})^{T_{escrow}} = (1 + 10\%)^{15} = 4.18\times",
+    latex=r"k_{escrow} = (1 + r_{escrow})^{T_{escrow}} = (1 + 5\%)^{15} = 2.08\times",
     inputs=["PRIZE_ESCROW_YIELD_RATE", "PRIZE_ESCROW_ACCUMULATION_YEARS"],
     compute=lambda ctx: (1 + ctx["PRIZE_ESCROW_YIELD_RATE"]) ** ctx["PRIZE_ESCROW_ACCUMULATION_YEARS"],
     keywords=["prize", "escrow", "multiple", "return", "compound"],
     latex_symbol=r"k_{escrow}",
-)  # 4.18x
+)  # 2.08x
 
 # ── Prize Pool Capacity Analysis ─────────────────────────────────────────────
 
