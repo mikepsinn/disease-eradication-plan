@@ -7,7 +7,7 @@ image: /assets/og-images/knowledge/call-to-action/your-personal-benefits-og-retr
 
 Forget saving humanity. Price the future you personally have to live in.
 
-The Earth Optimization Prize is not mainly a story about whether a `PRIZE` deposit earns on the deposit itself. It is a story about what happens to the rest of your life if civilization keeps compounding toward extraction, or if it pivots toward health and productive growth instead.
+The [Earth Optimization Prize](../strategy/earth-optimization-prize.qmd) [@earth-optimization-prize-paper-2025] is not mainly a story about whether a `PRIZE` deposit earns on the deposit itself. It is a story about what happens to the rest of your life if civilization keeps compounding toward extraction, or if it pivots toward health and productive growth instead.
 
 ## The Average Human On Earth
 
@@ -428,7 +428,7 @@ That default is not "you." It is the fastest way to make the math legible before
 
   const scenarioMap = {
     treaty: {
-      label: 'Minimum Sustainable Trajectory (1% Treaty)',
+      label: 'Minimum Sustainable Trajectory ([1% Treaty](../solution/1-percent-treaty.qmd) [@1-pct-treaty-impact-paper-2025])',
       income: treatyIncome,
       health: treatyHealth
     },
