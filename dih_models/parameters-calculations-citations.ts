@@ -3366,28 +3366,6 @@ export const FDA_TO_OXFORD_RECOVERY_TRIAL_TIME_MULTIPLIER: Parameter = {
   latex: "\\begin{gathered}\n\\text{Multiplier}_{RD} = \\frac{Y_{efficacy} \\times 12}{M_{RECOVERY}} \\\\[0.5em]\n= \\frac{8.2 \\times 12}{3} = 32.8\n\\end{gathered}",
 };
 
-export const GDP_EXPECTED_VALUE_VS_CURRENT_TRAJECTORY_MULTIPLIER_YEAR_20: Parameter = {
-  value: 51.04972692085089,
-  unit: "x",
-  displayName: "Expected GDP vs Current Trajectory Multiplier (Year 20)",
-  description: "Expected-value GDP at year 20 as a multiple of current trajectory GDP.",
-  sourceType: "calculated",
-  confidence: "high",
-  formula: "GDP_EXPECTED_VALUE_YEAR_20 ÷ CURRENT_TRAJECTORY_GDP_YEAR_20",
-  latex: "\\begin{gathered}\nk_{EV:base,20} = \\frac{E[GDP_{20}]}{GDP_{base,20}} = \\frac{\\$9620T}{\\$188T} = 51\n\\\\[0.5em]\n\\text{where } E[GDP_{20}] = p_{wish,20} \\cdot GDP_{wish,20}\n\\\\[0.5em]\n\\text{where } GDP_{wish,20}=GDP_0(1+g_{ramp})^3(1+g_{full})^{17}\n\\\\[0.5em]\n\\text{where } s_{mil,max} = Cut_{WW2} = 87.6\\% = 87.6\\%\n\\\\[0.5em]\n\\text{where } Cut_{WW2} = 1 - \\frac{Spending_{US,1947}}{Spending_{US,1945}} = 1 - \\frac{\\$176B}{\\$1.42T} = 87.6\\%\n\\\\[0.5em]\n\\text{where } f_{cure,20,wish}=\\min\\left(1,\\frac{Treatments_{new,ann}\\cdot k_{capacity,wish}\\cdot 20}{D_{untreated}}\\right)\n\\\\[0.5em]\n\\text{where } k_{capacity} = \\frac{N_{fundable,dFDA}}{Slots_{curr}} = \\frac{23.4M}{1.9M} = 12.3\n\\\\[0.5em]\n\\text{where } N_{fundable,dFDA} = \\frac{Subsidies_{dFDA,ann}}{Cost_{pragmatic,pt}} = \\frac{\\$21.8B}{\\$929} = 23.4M\n\\\\[0.5em]\n\\text{where } Subsidies_{dFDA,ann} = Funding_{dFDA,ann} - OPEX_{dFDA} = \\$21.8B - \\$40M = \\$21.8B\n\\\\[0.5em]\n\\text{where } OPEX_{dFDA} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \\$15M + \\$10M + \\$8M + \\$5M + \\$2M = \\$40M\n\\\\[0.5em]\n\\text{where } k_{capacity,max} = \\frac{N_{willing}}{Slots_{curr}} = \\frac{1.08B}{1.9M} = 566\n\\\\[0.5em]\n\\text{where } N_{willing} = N_{patients} \\times Pct_{willing} = 2.4B \\times 44.8\\% = 1.08B\n\\\\[0.5em]\n\\text{where } N_{untreated} = N_{rare} \\times 0.95 = 7{,}000 \\times 0.95 = 6{,}650\n\\\\[0.5em]\n\\text{where } GDP_{base,20} = GDP_0(1+g_{base})^{20}\n\\end{gathered}",
-};
-
-export const GDP_EXPECTED_VALUE_YEAR_20: Parameter = {
-  value: 9619856007556760.0,
-  unit: "USD",
-  displayName: "Expected GDP at Year 20 (Probability-Weighted)",
-  description: "Probability-weighted expected global GDP at year 20 from Wishonia vs Moronia paths. Moronia contributes $0 GDP in this framing.",
-  sourceType: "calculated",
-  confidence: "high",
-  formula: "WISHONIA_TRAJECTORY_SUCCESS_PROBABILITY_YEAR_20 × WISHONIA_TRAJECTORY_GDP_YEAR_20",
-  latex: "E[GDP_{20}] = p_{wish,20} \\cdot GDP_{wish,20}",
-};
-
 export const GENE_THERAPY_DISEASE_COMBINATIONS: Parameter = {
   value: 20000000.0,
   unit: "combinations",
@@ -3853,17 +3831,6 @@ export const MISALLOCATION_FACTOR_DEATH_VS_SAVING: Parameter = {
   confidence: "high",
   formula: "COST_PER_DEATH ÷ COST_PER_LIFE_SAVED",
   latex: "\\begin{gathered}\nk_{misalloc} = \\frac{Cost_{war,total}}{Deaths_{conflict} \\times Cost_{life,RD}} = \\frac{\\$11.4T}{245{,}000 \\times \\$16.1K} = 2{,}890\n\\\\[0.5em]\n\\text{where } Deaths_{conflict} = Deaths_{combat} + Deaths_{state} + Deaths_{terror} = 234{,}000 + 2{,}700 + 8{,}300 = 245{,}000\n\\\\[0.5em]\n\\text{where } Cost_{war,total} = Cost_{war,direct} + Cost_{war,indirect} = \\$7.66T + \\$3.7T = \\$11.4T\n\\\\[0.5em]\n\\text{where } Cost_{war,direct} = Loss_{life,conflict} + Damage_{infra,total} + Disruption_{trade} + Spending_{mil} = \\$2.45T + \\$1.88T + \\$616B + \\$2.72T = \\$7.66T\n\\\\[0.5em]\n\\text{where } Loss_{life,conflict} = Cost_{combat,human} + Cost_{state,human} + Cost_{terror,human} = \\$2.34T + \\$27B + \\$83B = \\$2.45T\n\\\\[0.5em]\n\\text{where } Cost_{combat,human} = Deaths_{combat} \\times VSL = 234{,}000 \\times \\$10M = \\$2.34T\n\\\\[0.5em]\n\\text{where } Cost_{state,human} = Deaths_{state} \\times VSL = 2{,}700 \\times \\$10M = \\$27B\n\\\\[0.5em]\n\\text{where } Cost_{terror,human} = Deaths_{terror} \\times VSL = 8{,}300 \\times \\$10M = \\$83B\n\\\\[0.5em]\n\\text{where } Damage_{infra,total} = Damage_{comms} + Damage_{edu} + Damage_{energy} + Damage_{health} + Damage_{transport} + Damage_{water} = \\$298B + \\$234B + \\$422B + \\$166B + \\$487B + \\$268B = \\$1.88T\n\\\\[0.5em]\n\\text{where } Disruption_{trade} = Disruption_{currency} + Disruption_{energy} + Disruption_{shipping} + Disruption_{supply} = \\$57.4B + \\$125B + \\$247B + \\$187B = \\$616B\n\\\\[0.5em]\n\\text{where } Cost_{war,indirect} = Damage_{env} + Loss_{growth,mil} + Loss_{capital,conflict} + Cost_{psych} + Cost_{refugee} + Cost_{vet} = \\$100B + \\$2.72T + \\$300B + \\$232B + \\$150B + \\$200B = \\$3.7T\n\\\\[0.5em]\n\\text{where } Cost_{life,RD} = \\frac{Spending_{RD}}{Lives_{RD,ann}} = \\frac{\\$67.5B}{4.2M} = \\$16.1K\n\\end{gathered}",
-};
-
-export const MORONIA_TRAJECTORY_PROBABILITY_YEAR_20: Parameter = {
-  value: 0.09999999999999998,
-  unit: "rate",
-  displayName: "Moronia Trajectory Probability (Year 20 EV Model)",
-  description: "Probability that the world follows the Moronia collapse path in the year-20 expected-value framing.",
-  sourceType: "calculated",
-  confidence: "high",
-  formula: "1 - WISHONIA_TRAJECTORY_SUCCESS_PROBABILITY_YEAR_20",
-  latex: "p_{mor,20} = 1 - p_{wish,20} = 1 - 90\\% = 10\\%",
 };
 
 export const MRNA_THERAPEUTIC_COMBINATIONS: Parameter = {
@@ -6565,16 +6532,6 @@ export const VICTORY_BOND_FUNDING_PCT: Parameter = {
   confidence: "high",
 };
 
-export const WISHONIA_TRAJECTORY_SUCCESS_PROBABILITY_YEAR_20: Parameter = {
-  value: 0.9,
-  unit: "rate",
-  displayName: "Wishonia Trajectory Probability (Year 20 EV Model)",
-  description: "Probability that the world follows the Wishonia Trajectory (Treaty + dysfunction-tax elimination) rather than the Moronia collapse path in the expected-value framing.",
-  sourceType: "definition",
-  confidence: "low",
-  confidenceInterval: [0.6, 0.98],
-};
-
 export const _CASCADE_GENERATIONS: Parameter = {
   value: 3.0,
 };
@@ -6899,8 +6856,6 @@ export const parameters = {
   EXISTING_DRUGS_EFFICACY_LAG_ECONOMIC_LOSS,
   EXPLORATION_RATIO,
   FDA_TO_OXFORD_RECOVERY_TRIAL_TIME_MULTIPLIER,
-  GDP_EXPECTED_VALUE_VS_CURRENT_TRAJECTORY_MULTIPLIER_YEAR_20,
-  GDP_EXPECTED_VALUE_YEAR_20,
   GENE_THERAPY_DISEASE_COMBINATIONS,
   GLOBAL_ANNUAL_CONFLICT_DEATHS_TOTAL,
   GLOBAL_ANNUAL_DIRECT_INDIRECT_WAR_COST,
@@ -6943,7 +6898,6 @@ export const parameters = {
   MILITARY_TO_GOVERNMENT_CLINICAL_TRIALS_SPENDING_RATIO,
   MILITARY_VS_MEDICAL_RESEARCH_RATIO,
   MISALLOCATION_FACTOR_DEATH_VS_SAVING,
-  MORONIA_TRAJECTORY_PROBABILITY_YEAR_20,
   MRNA_THERAPEUTIC_COMBINATIONS,
   NIH_TRADITIONAL_TRIAL_MAX_EFFICIENCY_PCT,
   PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT,
@@ -7203,7 +7157,6 @@ export const parameters = {
   US_VS_SWITZERLAND_LIFE_EXPECTANCY_GAP,
   US_VS_SWITZERLAND_SPENDING_GAP,
   VICTORY_BOND_FUNDING_PCT,
-  WISHONIA_TRAJECTORY_SUCCESS_PROBABILITY_YEAR_20,
   _CASCADE_GENERATIONS,
   _R0,
   _SOCIAL_NETWORK_POP,
@@ -9147,10 +9100,10 @@ export const citations: Record<string, Citation> = {
 
 /** Summary statistics */
 export const PARAMETER_STATS = {
-  total: 612,
+  total: 608,
   external: 204,
-  calculated: 284,
-  definitions: 124,
+  calculated: 281,
+  definitions: 123,
   citations: 142,
 } as const;
 

@@ -8735,61 +8735,6 @@ WISHONIA_TRAJECTORY_GDP_VS_CURRENT_TRAJECTORY_MULTIPLIER_YEAR_20 = Parameter(
     latex_symbol=r"k_{wish:base,20}",
 )
 
-WISHONIA_TRAJECTORY_SUCCESS_PROBABILITY_YEAR_20 = Parameter(
-    0.90,
-    source_type="definition",
-    description="Probability that the world follows the Wishonia Trajectory (Treaty + dysfunction-tax elimination) "
-                "rather than the Moronia collapse path in the expected-value framing.",
-    display_name="Wishonia Trajectory Probability (Year 20 EV Model)",
-    unit="rate",
-    distribution=DistributionType.BETA,
-    confidence="low",
-    confidence_interval=(0.60, 0.98),
-    keywords=["probability", "expected value", "wishonia", "moronia", "year 20"],
-    latex_symbol=r"p_{wish,20}",
-)
-
-MORONIA_TRAJECTORY_PROBABILITY_YEAR_20 = Parameter(
-    1 - WISHONIA_TRAJECTORY_SUCCESS_PROBABILITY_YEAR_20,
-    source_type="calculated",
-    description="Probability that the world follows the Moronia collapse path in the year-20 expected-value framing.",
-    display_name="Moronia Trajectory Probability (Year 20 EV Model)",
-    unit="rate",
-    formula="1 - WISHONIA_TRAJECTORY_SUCCESS_PROBABILITY_YEAR_20",
-    keywords=["probability", "expected value", "moronia", "year 20"],
-    inputs=["WISHONIA_TRAJECTORY_SUCCESS_PROBABILITY_YEAR_20"],
-    compute=lambda ctx: 1 - ctx["WISHONIA_TRAJECTORY_SUCCESS_PROBABILITY_YEAR_20"],
-    latex_symbol=r"p_{mor,20}",
-)
-
-GDP_EXPECTED_VALUE_YEAR_20 = Parameter(
-    float(WISHONIA_TRAJECTORY_SUCCESS_PROBABILITY_YEAR_20) * float(WISHONIA_TRAJECTORY_GDP_YEAR_20),
-    source_type="calculated",
-    description="Probability-weighted expected global GDP at year 20 from Wishonia vs Moronia paths. "
-                "Moronia contributes $0 GDP in this framing.",
-    display_name="Expected GDP at Year 20 (Probability-Weighted)",
-    unit="USD",
-    formula="WISHONIA_TRAJECTORY_SUCCESS_PROBABILITY_YEAR_20 × WISHONIA_TRAJECTORY_GDP_YEAR_20",
-    latex=r"E[GDP_{20}] = p_{wish,20} \cdot GDP_{wish,20}",
-    keywords=["GDP", "expected value", "probability", "weighted"],
-    inputs=["WISHONIA_TRAJECTORY_SUCCESS_PROBABILITY_YEAR_20", "WISHONIA_TRAJECTORY_GDP_YEAR_20"],
-    compute=lambda ctx: ctx["WISHONIA_TRAJECTORY_SUCCESS_PROBABILITY_YEAR_20"] * ctx["WISHONIA_TRAJECTORY_GDP_YEAR_20"],
-    latex_symbol=r"E[GDP_{20}]",
-)
-
-GDP_EXPECTED_VALUE_VS_CURRENT_TRAJECTORY_MULTIPLIER_YEAR_20 = Parameter(
-    GDP_EXPECTED_VALUE_YEAR_20 / CURRENT_TRAJECTORY_GDP_YEAR_20,
-    source_type="calculated",
-    description="Expected-value GDP at year 20 as a multiple of current trajectory GDP.",
-    display_name="Expected GDP vs Current Trajectory Multiplier (Year 20)",
-    unit="x",
-    formula="GDP_EXPECTED_VALUE_YEAR_20 ÷ CURRENT_TRAJECTORY_GDP_YEAR_20",
-    keywords=["GDP", "expected value", "baseline", "multiplier", "year 20"],
-    inputs=["GDP_EXPECTED_VALUE_YEAR_20", "CURRENT_TRAJECTORY_GDP_YEAR_20"],
-    compute=lambda ctx: ctx["GDP_EXPECTED_VALUE_YEAR_20"] / ctx["CURRENT_TRAJECTORY_GDP_YEAR_20"],
-    latex_symbol=r"k_{EV:base,20}",
-)
-
 WISHONIA_TRAJECTORY_AVG_INCOME_YEAR_20 = Parameter(
     float(WISHONIA_TRAJECTORY_GDP_YEAR_20) / float(GLOBAL_POPULATION_2045_PROJECTED),
     source_type="calculated",

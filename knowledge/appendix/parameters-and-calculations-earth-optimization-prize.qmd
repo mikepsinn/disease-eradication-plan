@@ -38,15 +38,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 161 parameters used in the analysis, organized by type:
+This appendix documents all 159 parameters used in the analysis, organized by type:
 
 - External sources (peer-reviewed): 48
-- Calculated values: 84
-- Core definitions: 29
+- Calculated values: 83
+- Core definitions: 28
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (84 parameters) • [External Data Sources](#sec-external) (48 parameters) • [Core Definitions](#sec-definitions) (29 parameters)
+[Calculated Values](#sec-calculated) (83 parameters) • [External Data Sources](#sec-external) (48 parameters) • [Core Definitions](#sec-definitions) (28 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -1908,38 +1908,6 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-military_to_government_clinical_trials_spending_ratio.qmd >}}
-
-:::
-
-### Moronia Trajectory Probability (Year 20 EV Model): 10% {#sec-moronia_trajectory_probability_year_20}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Probability that the world follows the Moronia collapse path in the year-20 expected-value framing.
-
-**Inputs**:
-
-- [Wishonia Trajectory Probability (Year 20 EV Model)](#sec-wishonia_trajectory_success_probability_year_20): 90% (95% CI: 60% - 98%)
-
-$$
-p_{mor,20} = 1 - p_{wish,20} = 1 - 90\% = 10\%
-$$
-
-*✓ High confidence*
-
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-moronia_trajectory_probability_year_20.qmd >}}
-
-{{< include ../figures/sensitivity-table-moronia_trajectory_probability_year_20.qmd >}}
-
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-moronia_trajectory_probability_year_20.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-moronia_trajectory_probability_year_20.qmd >}}
 
 :::
 
@@ -6193,28 +6161,6 @@ Fraction of campaign + lobbying spending needed to achieve policy reform. Accoun
 #### Input Distribution
 
 {{< include ../figures/distribution-us_political_effort_multiplier.qmd >}}
-
-*Core definition*
-
-:::
-
-### Wishonia Trajectory Probability (Year 20 EV Model): 90% {#sec-wishonia_trajectory_success_probability_year_20}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Probability that the world follows the Wishonia Trajectory (Treaty + dysfunction-tax elimination) rather than the Moronia collapse path in the expected-value framing.
-
-#### Uncertainty Range
-
-**Technical**: 95% CI: [60%, 98%] • Distribution: Beta
-
-**What this means**: This estimate has moderate uncertainty. The true value likely falls between 60% and 98% (±21%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
-
-*The beta distribution means values are bounded and can skew toward one end.*
-
-#### Input Distribution
-
-{{< include ../figures/distribution-wishonia_trajectory_success_probability_year_20.qmd >}}
 
 *Core definition*
 
