@@ -24,12 +24,12 @@ youtube-thumbnail: /assets/podcast/least-bad-idea-prize-paper-youtube.jpg
 3. **How PRIZE works.** Depositors fund one pool until year {{< var prize_pool_resolution_years_nounit >}}. Targets missed: depositors divide the realized pool pro rata.
 4. **How VOTE works.** Recruit one verified referendum participant, earn one point. On success, the pool routes to VOTE point-holders.
 5. **What institutions are being asked to do.** Underwrite activation, seed the PRIZE pool enough that success-side upside feels real, and host the first public Scoreboard. The first institutional ask is {{< var global_coordination_activation_budget >}}.
-6. **Why it matters.** Status quo is not stable. The [destructive economy](../economics/gdp-trajectories.qmd) [@gdp-trajectories-paper-2025] reaches 50% of GDP in {{< var destructive_economy_years_to_50pct_gdp >}} if current trends continue. At that point, stealing beats creating, because whatever gets created gets looted as fast as it is produced.
+6. **Why it matters.** Status quo is not stable. The [destructive economy](../economics/gdp-trajectories.qmd) [@gdp-trajectories-paper-2025] reaches the 50% Terminal Parasitic Load Threshold (the point where half the economy is destructive and stealing beats creating) in {{< var destructive_economy_years_to_50pct_gdp >}} if current trends continue.
 
 ## The Problem Statement
 
 - Humanity spends {{< var military_to_government_clinical_trials_spending_ratio >}} times more on weapons than on testing which medicines work.
-- The [destructive economy](../economics/gdp-trajectories.qmd) [@gdp-trajectories-paper-2025] is already {{< var global_destructive_economy_pct_gdp >}} of GDP, reaches 25% in {{< var destructive_economy_years_to_25pct_gdp >}}, and reaches 50% of GDP in {{< var destructive_economy_years_to_50pct_gdp >}}, where stealing beats creating because whatever gets created gets looted.
+- The [destructive economy](../economics/gdp-trajectories.qmd) [@gdp-trajectories-paper-2025] is already {{< var global_destructive_economy_pct_gdp >}} of GDP, reaches 25% in {{< var destructive_economy_years_to_25pct_gdp >}}, and hits the 50% Terminal Parasitic Load Threshold in {{< var destructive_economy_years_to_50pct_gdp >}}, where whatever gets created gets looted.
 - The year-15 status quo path is global median income of {{< var current_trajectory_avg_income_year_15 >}}. The modeled optimal-governance target is {{< var wishonia_trajectory_avg_income_year_15 >}}, with GDP at roughly {{< var wishonia_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}} the status quo trajectory. The gap is that large because the destructive economy compounds: on the status quo path it keeps moving toward the point where half the economy is destructive and new value gets looted as fast as it is created, dragging median income down while the optimal path redirects that waste into productive compounding (cheaper trials, better allocation, reduced conflict overhead). The difference is not optimism vs. realism; it is compounding waste vs. compounding investment over 15 years.
 - The minimum serious first test is the [1% Treaty](../solution/1-percent-treaty.qmd) [@1-pct-treaty-impact-paper-2025]: are humans willing to redirect even 1% from weapons to medicine?
 
@@ -139,10 +139,10 @@ For institutions, the first decision is not whether to move a massive share of g
 
 | Future | What it means for you |
 |:---|:---|
-| **Status quo** | {{< var current_trajectory_cumulative_lifetime_income >}} cumulative lifetime income; destructive economy reaches 25% of GDP in {{< var destructive_economy_years_to_25pct_gdp >}} and 50% in {{< var destructive_economy_years_to_50pct_gdp >}}. |
+| **Status quo** | {{< var current_trajectory_cumulative_lifetime_income >}} cumulative lifetime income; Terminal Parasitic Load Threshold in {{< var destructive_economy_years_to_50pct_gdp >}}. |
 | **1% Treaty** | +{{< var treaty_trajectory_lifetime_income_gain_per_capita >}} lifetime income, +{{< var treaty_hale_gain_year_15_nounit >}} healthy years. |
 | **Wishonia** | +{{< var wishonia_trajectory_lifetime_income_gain_per_capita >}} lifetime income, +{{< var wishonia_hale_gain_year_15_nounit >}} healthy years. |
-| **Collapse tail** | {{< var moronia_trajectory_probability_year_20 >}} probability; destructive economy reaches 50% of GDP in {{< var destructive_economy_years_to_50pct_gdp >}}. |
+| **Collapse tail** | {{< var moronia_trajectory_probability_year_20 >}} probability; Terminal Parasitic Load Threshold in {{< var destructive_economy_years_to_50pct_gdp >}}. |
 
 That spread is absurdly large and most humans still treat "do nothing" as if it were safe. For the average human on Earth today, the model already implies {{< var global_avg_income_2025 >}} annual income, {{< var global_avg_remaining_years >}} remaining life, and roughly {{< var global_annual_savings_per_capita >}} in annual savings capacity. If you want your own numbers, use the [personal benefits calculator](../call-to-action/your-personal-benefits.qmd).
 
@@ -178,7 +178,7 @@ Those are not projections about charity. They are projections about your own hea
 | | If the plan succeeds | If the plan fails |
 |---|---|---|
 | **A PRIZE deposit** | Pool distributes to VOTE point-holders who built the coalition. Your lifetime income rose by {{< var treaty_trajectory_lifetime_income_gain_per_capita >}} like everyone else's. | Depositors divide the realized pool pro rata at year {{< var prize_pool_resolution_years_nounit >}}. |
-| **The world** | Diseases get cured, incomes rise, destructive economy stops compounding | Destructive economy hits 50% of GDP in {{< var destructive_economy_years_to_50pct_gdp >}}; {{< var moronia_trajectory_probability_year_20 >}} probability of collapse trajectory at year 20 |
+| **The world** | Diseases get cured, incomes rise, destructive economy stops compounding | Terminal Parasitic Load Threshold in {{< var destructive_economy_years_to_50pct_gdp >}}; {{< var moronia_trajectory_probability_year_20 >}} collapse probability at year 20 |
 
 Mechanisms that keep the same pool intact on failure while only routing it to VOTE point-holders on verified success are unusually favorable compared with ordinary political donations.
 
