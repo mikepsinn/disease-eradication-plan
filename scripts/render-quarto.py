@@ -695,7 +695,13 @@ def prepare_config(config_name: str, verbose: bool = True) -> bool:
         content = re.sub(bib_pattern, f'\\1references-{config_name}.bib', content)
         if verbose:
             print(f"[*] Using filtered bibliography: references-{config_name}.bib", flush=True)
-        # Transform same-directory links
+    elif verbose:
+        print(f"[*] Using full references.bib (book config or no filtered file)", flush=True)
+
+    # prepare_config copies a nested index-source to project-root index.qmd.
+    # Preserve same-directory links by rewriting bare filenames to project-relative
+    # paths regardless of bibliography mode.
+    if config_name != "book" and source_dir:
         root_dirs = ["assets/", "scripts/", "dih_models/", "brain/", "references.bib"]
 
         def fix_same_dir_link(match: re.Match[str]) -> str:
@@ -713,8 +719,6 @@ def prepare_config(config_name: str, verbose: bool = True) -> bool:
             return f"[{text}]({new_path})"
 
         content = re.sub(r"\[([^\]]+)\]\(([^)]+)\)", fix_same_dir_link, content)
-    elif verbose:
-        print(f"[*] Using full references.bib (book config or no filtered file)", flush=True)
 
     with open(target_path, "w", encoding="utf-8", newline='\n') as f:
         f.write(content)
@@ -1215,14 +1219,23 @@ def prepare_build_temp(config_name: str, verbose: bool = True) -> Optional[Path]
             if path.startswith(("http://", "https://", "#", "mailto:")) or ".qmd" not in path:
                 return match.group(0)
 
+            path_normalized = path.replace("\\", "/")
+
             # Resolve relative path
-            if path.startswith("/"):
-                resolved = os.path.normpath(path[1:]).replace("\\", "/")
-            elif path.startswith(("../", "./")):
-                file_dir = qmd_file.relative_to(build_temp).parent
-                resolved = os.path.normpath(os.path.join(str(file_dir), path)).replace("\\", "/")
+            if path_normalized.startswith("/"):
+                candidates = [os.path.normpath(path_normalized[1:]).replace("\\", "/")]
             else:
-                resolved = path
+                file_dir = qmd_file.relative_to(build_temp).parent
+                candidates = [
+                    os.path.normpath(os.path.join(str(file_dir), path_normalized)).replace("\\", "/"),
+                    os.path.normpath(path_normalized).replace("\\", "/"),
+                ]
+
+            resolved = candidates[0]
+            for candidate in candidates:
+                if candidate in source_files or candidate in target_files or (build_temp / candidate).exists():
+                    resolved = candidate
+                    break
 
             # Handle anchors
             anchor = ""
