@@ -38,15 +38,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 160 parameters used in the analysis, organized by type:
+This appendix documents all 167 parameters used in the analysis, organized by type:
 
 - External sources (peer-reviewed): 49
-- Calculated values: 83
-- Core definitions: 28
+- Calculated values: 88
+- Core definitions: 30
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (83 parameters) • [External Data Sources](#sec-external) (49 parameters) • [Core Definitions](#sec-definitions) (28 parameters)
+[Calculated Values](#sec-calculated) (88 parameters) • [External Data Sources](#sec-external) (49 parameters) • [Core Definitions](#sec-definitions) (30 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -1361,6 +1361,124 @@ $$
 
 :::
 
+### Medical Research Percentage of Treaty Funding: 80% {#sec-dih_treasury_medical_research_pct}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Percentage of treaty funding allocated to medical research (after bond payouts and IAB incentives)
+
+**Inputs**:
+
+- [Annual Funding for Pragmatic Clinical Trials](#sec-dih_treasury_to_medical_research_annual) 🔢: $21.8B
+- [Annual Funding from 1% of Global Military Spending Redirected to DIH](#sec-treaty_annual_funding) 🔢: $27.2B
+
+$$
+\begin{gathered}
+Pct_{treasury,RD} \\
+= \frac{Treasury_{RD,ann}}{Funding_{treaty}} \\
+= \frac{\$21.8B}{\$27.2B} \\
+= 80\%
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Treasury_{RD,ann} \\
+= Funding_{treaty} - Payout_{bond,ann} - Funding_{political,ann} \\
+= \$27.2B - \$2.72B - \$2.72B \\
+= \$21.8B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Funding_{treaty} \\
+= Spending_{mil} \times Reduce_{treaty} \\
+= \$2.72T \times 1\% \\
+= \$27.2B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Payout_{bond,ann} \\
+= Funding_{treaty} \times Pct_{bond} \\
+= \$27.2B \times 10\% \\
+= \$2.72B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Funding_{political,ann} \\
+= Funding_{treaty} \times Pct_{political} \\
+= \$27.2B \times 10\% \\
+= \$2.72B
+\end{gathered}
+$$
+*✓ High confidence*
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-dih_treasury_medical_research_pct.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dih_treasury_medical_research_pct.qmd >}}
+
+:::
+
+### Annual Funding for Pragmatic Clinical Trials: $21.8B {#sec-dih_treasury_to_medical_research_annual}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual funding for pragmatic clinical trials (treaty funding minus VICTORY Incentive Alignment Bond payouts and IAB political incentive mechanism)
+
+**Inputs**:
+
+- [Annual Funding from 1% of Global Military Spending Redirected to DIH](#sec-treaty_annual_funding) 🔢: $27.2B
+- [Annual VICTORY Incentive Alignment Bond Payout](#sec-victory_bond_annual_payout) 🔢: $2.72B
+- [Annual IAB Political Incentive Funding](#sec-iab_political_incentive_funding_annual) 🔢: $2.72B
+
+$$
+\begin{gathered}
+Treasury_{RD,ann} \\
+= Funding_{treaty} - Payout_{bond,ann} - Funding_{political,ann} \\
+= \$27.2B - \$2.72B - \$2.72B \\
+= \$21.8B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Funding_{treaty} \\
+= Spending_{mil} \times Reduce_{treaty} \\
+= \$2.72T \times 1\% \\
+= \$27.2B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Payout_{bond,ann} \\
+= Funding_{treaty} \times Pct_{bond} \\
+= \$27.2B \times 10\% \\
+= \$2.72B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Funding_{political,ann} \\
+= Funding_{treaty} \times Pct_{political} \\
+= \$27.2B \times 10\% \\
+= \$2.72B
+\end{gathered}
+$$
+*✓ High confidence*
+
+:::
+
 ### Diseases Without Effective Treatment: 6.65 thousand diseases {#sec-diseases_without_effective_treatment}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -1870,6 +1988,38 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-global_political_reform_investment.qmd >}}
+
+:::
+
+### Annual IAB Political Incentive Funding: $2.72B {#sec-iab_political_incentive_funding_annual}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual funding for IAB political incentive mechanism (independent expenditures supporting high-scoring politicians, post-office fellowship endowments, Public Good Score infrastructure)
+
+**Inputs**:
+
+- [Annual Funding from 1% of Global Military Spending Redirected to DIH](#sec-treaty_annual_funding) 🔢: $27.2B
+- [IAB Political Incentive Funding Percentage](#sec-iab_political_incentive_funding_pct): 10%
+
+$$
+\begin{gathered}
+Funding_{political,ann} \\
+= Funding_{treaty} \times Pct_{political} \\
+= \$27.2B \times 10\% \\
+= \$2.72B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Funding_{treaty} \\
+= Spending_{mil} \times Reduce_{treaty} \\
+= \$2.72T \times 1\% \\
+= \$27.2B
+\end{gathered}
+$$
+*✓ High confidence*
 
 :::
 
@@ -3516,6 +3666,103 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-us_political_reform_investment_total.qmd >}}
+
+:::
+
+### Annual VICTORY Incentive Alignment Bond Payout: $2.72B {#sec-victory_bond_annual_payout}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual VICTORY Incentive Alignment Bond payout (treaty funding × bond percentage)
+
+**Inputs**:
+
+- [Annual Funding from 1% of Global Military Spending Redirected to DIH](#sec-treaty_annual_funding) 🔢: $27.2B
+- [Percentage of Captured Dividend Funding VICTORY Incentive Alignment Bonds](#sec-victory_bond_funding_pct): 10%
+
+$$
+\begin{gathered}
+Payout_{bond,ann} \\
+= Funding_{treaty} \times Pct_{bond} \\
+= \$27.2B \times 10\% \\
+= \$2.72B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Funding_{treaty} \\
+= Spending_{mil} \times Reduce_{treaty} \\
+= \$2.72T \times 1\% \\
+= \$27.2B
+\end{gathered}
+$$
+*✓ High confidence*
+
+:::
+
+### Annual Return Percentage for VICTORY Incentive Alignment Bondholders: 272% {#sec-victory_bond_annual_return_pct}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual return percentage for VICTORY Incentive Alignment Bondholders
+
+**Inputs**:
+
+- [Annual VICTORY Incentive Alignment Bond Payout](#sec-victory_bond_annual_payout) 🔢: $2.72B
+- [Total 1% Treaty Campaign Cost](#sec-treaty_campaign_total_cost) 🔢: $1B
+
+$$
+\begin{gathered}
+r_{bond} \\
+= \frac{Payout_{bond,ann}}{Cost_{campaign}} \\
+= \frac{\$2.72B}{\$1B} \\
+= 272\%
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Payout_{bond,ann} \\
+= Funding_{treaty} \times Pct_{bond} \\
+= \$27.2B \times 10\% \\
+= \$2.72B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Funding_{treaty} \\
+= Spending_{mil} \times Reduce_{treaty} \\
+= \$2.72T \times 1\% \\
+= \$27.2B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{campaign} \\
+= Budget_{viral,base} + Budget_{lobby,treaty} \\
++ Budget_{reserve} \\
+= \$250M + \$650M + \$100M \\
+= \$1B
+\end{gathered}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-victory_bond_annual_return_pct.qmd >}}
+
+{{< include ../figures/sensitivity-table-victory_bond_annual_return_pct.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-victory_bond_annual_return_pct.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-victory_bond_annual_return_pct.qmd >}}
 
 :::
 
@@ -5982,6 +6229,20 @@ Ratio of global to US political reform costs. Based on discretionary spending ra
 
 :::
 
+### IAB Political Incentive Funding Percentage: 10% {#sec-iab_political_incentive_funding_pct}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Percentage of treaty funding allocated to Incentive Alignment Bond mechanism for political incentives (independent expenditures/PACs, post-office fellowships, Public Good Score infrastructure)
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*Core definition*
+
+:::
+
 ### GDP Growth Boost at 30% Military Reallocation: 5.5% {#sec-military_redirect_gdp_boost_at_30pct}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -6185,6 +6446,20 @@ Fraction of campaign + lobbying spending needed to achieve policy reform. Accoun
 #### Input Distribution
 
 {{< include ../figures/distribution-us_political_effort_multiplier.qmd >}}
+
+*Core definition*
+
+:::
+
+### Percentage of Captured Dividend Funding VICTORY Incentive Alignment Bonds: 10% {#sec-victory_bond_funding_pct}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Percentage of captured dividend funding VICTORY Incentive Alignment Bonds (10%)
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
 
 *Core definition*
 

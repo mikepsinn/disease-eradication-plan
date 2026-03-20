@@ -5,6 +5,7 @@ project:
   resources:
     - knowledge/data/
     - assets/
+    - _redirects
     - robots.txt
     - llms.txt
   # pre-render:
