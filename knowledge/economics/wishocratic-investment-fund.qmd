@@ -109,7 +109,7 @@ $100 deposited today becomes $100 times {{< var prize_pool_15yr_multiple >}} ove
 
 Conventional retirement earns {{< var conventional_retirement_return >}} after fees. The wishocratic fund models {{< var prize_pool_annual_return >}}.
 
-At the pool level, this is not modeled as a donation. It is modeled as capital compounding under a higher-return allocation rule than a conventional portfolio. Participant-level payout still depends on the branch: depositors recover pro rata from the same realized pool on failure, while VOTE claimants share that pool on success.
+At the pool level, this is not modeled as a donation. It is modeled as capital compounding under a higher-return allocation rule than a conventional portfolio. Participant-level payout still depends on the branch: depositors recover pro rata from the same realized pool on failure, while VOTE point-holders share that pool on success.
 
 The conventional portfolio:
 
@@ -145,7 +145,7 @@ The accreditation wall was built to "protect" small investors from risky investm
 
 The fund does not bet on whether targets get hit. It funds hitting them.
 
-A conventional investment fund analyzes whether a company will succeed and bets accordingly. The wishocratic fund allocates capital to companies that cure diseases, build infrastructure, and raise incomes, which ARE the prize targets. If the fund allocates well, the targets get hit. If the targets get hit, the same realized pool routes to VOTE claimants. If the targets do not get hit, depositors divide that same realized pool pro rata.
+A conventional investment fund analyzes whether a company will succeed and bets accordingly. The wishocratic fund allocates capital to companies that cure diseases, build infrastructure, and raise incomes, which ARE the prize targets. If the fund allocates well, the targets get hit. If the targets get hit, the same realized pool routes to VOTE point-holders. If the targets do not get hit, depositors divide that same realized pool pro rata.
 
 In the canonical prize framing, the first institutional question is whether {{< var global_coordination_activation_budget >}} can make mass participation credible. The secondary visible-pool question is whether {{< var prize_pool_retirement_equivalent_principal >}} can make two referred votes worth {{< var retirement_equivalent_2_claims_target_payout >}} on success for a representative saver.
 
