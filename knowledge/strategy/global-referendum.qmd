@@ -1,6 +1,6 @@
 ---
 title: Global Referendum Strategy
-description: Humanity downloaded TikTok over 4 billion times to watch strangers twerk. Getting 280 million people to click 'yes' on not dying should be easier. Here's how, with math.
+description: Humanity downloaded TikTok over 4 billion times to watch strangers twerk. Getting {{< var global_coordination_target_supporters_nounit >}} verified people to click 'yes' on not dying should be easier. Here's how, with math.
 published: true
 tags:
   - referendum
@@ -74,7 +74,7 @@ Even Layer 1 gets you counted. You don't need a passport to say "I would prefer 
 
 Your species downloaded TikTok over 4 billion times to watch strangers twerk. Getting {{< var global_coordination_target_supporters_nounit >}} to click "yes" on not dying should be easier. It isn't, because not dying is less entertaining than twerking, but it should be, and that gap between "should be" and "isn't" is the entire marketing problem.
 
-Each person who signs up gets a small referral bonus for bringing the next, funded by [Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd) [@iab-paper-2025]. Target: less than $1.00 per verified participant. For comparison, acquiring a coffee customer costs $5-15. Nike pays $40 to get one person to buy shoes online. You're trying to convince someone to support not dying for less than the cost of a packet of gum. The fact that "not dying" needs a financial incentive to compete with shoes tells you everything about your species that this manual has been trying to tell you. But here we are. Gum money it is.
+Each person who signs up gets a small referral bonus for bringing the next, funded by [Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd) [@iab-paper-2025]. The modeled blended activation cost is {{< var global_coordination_activation_cost_per_participant >}} per verified participant. For comparison, acquiring a coffee customer costs $5-15. Nike pays $40 to get one person to buy shoes online. You're trying to convince someone to support not dying for less than the cost of a cheap online acquisition. The fact that "not dying" needs a financial incentive to compete with shoes tells you everything about your species that this manual has been trying to tell you. But here we are.
 
 ![Getting someone to support ending disease: $0.75. Getting someone to buy shoes online: $40. You've been spending marketing money wrong.](/assets/images/global-referendum/global-referendum-section-the-money-part-bw-academic.jpg)
 

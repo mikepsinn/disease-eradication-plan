@@ -1,7 +1,7 @@
 ---
 title: "The Wishocratic Investment Fund"
 subtitle: "A scale engine for trying to win the Earth Optimization Prize"
-description: "This paper explains how the shared PRIZE pool could compound while humanity tries to raise healthy life years and median income within 15 years. It is a scale-capital thesis, not the first institutional ask."
+description: "This paper explains how the shared PRIZE pool could compound while humanity tries to raise healthy life years and median income within {{< var prize_pool_resolution_years_nounit >}} years. It is a scale-capital thesis, not the first institutional ask."
 published: true
 tags:
   - economics
