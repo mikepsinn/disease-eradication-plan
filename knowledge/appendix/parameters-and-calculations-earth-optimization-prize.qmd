@@ -38,15 +38,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 159 parameters used in the analysis, organized by type:
+This appendix documents all 160 parameters used in the analysis, organized by type:
 
-- External sources (peer-reviewed): 48
+- External sources (peer-reviewed): 49
 - Calculated values: 83
 - Core definitions: 28
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (83 parameters) • [External Data Sources](#sec-external) (48 parameters) • [Core Definitions](#sec-definitions) (28 parameters)
+[Calculated Values](#sec-calculated) (83 parameters) • [External Data Sources](#sec-external) (49 parameters) • [Core Definitions](#sec-definitions) (28 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -5523,6 +5523,30 @@ Phase 3 cost per patient (median from FDA study)
 {{< include ../figures/distribution-traditional_phase3_cost_per_patient.qmd >}}
 
 *✓ High confidence*
+
+:::
+
+### Drug War Cost: $90B {#sec-us_gov_waste_drug_war}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual cost of drug war: ~$41B federal drug control budget, ~$10B state/local enforcement, ~$40B incarceration and lost productivity. After 50+ years and $1T+ spent, drug use is higher than ever. [CATEGORY 1: Direct Spending]
+
+**Source**: [@drugpolicyalliance2021]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$60B, $150B] • Distribution: Lognormal (SE: $30B)
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $60B and $150B (±50%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-us_gov_waste_drug_war.qmd >}}
+
+*~ Medium confidence*
 
 :::
 

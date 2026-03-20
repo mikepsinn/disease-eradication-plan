@@ -304,13 +304,15 @@ Public choice theory says governments are run by humans who care about reelectio
 - **Depositors** commit capital because they retain a failure-branch claim on the same pool and buy a better future on success.
 - **Recruiters** recruit because every verified participant earns them a VOTE point.
 - **Entrepreneurs** compete for a giant implementation franchise.
-- **Politicians** notice a growing Scoreboard of verified voters who care about two numbers.
+- **Politicians** get funded for voting yes and watch their opponents get funded if they vote no (details below).
 - **Researchers and auditors** compete for the authority to validate what works.
 - **Citizens** get simpler choices and more visible returns from participation.
 
 Every participant is doing exactly what they would do anyway, except pointed at diseases instead of each other.
 
-## FAQ for Skeptics
+The politician line is the one that requires explanation, because "politicians notice a Scoreboard" has never caused a politician to act against their donors. The mechanism that converts Scoreboard scale into treaty passage is the [Incentive Alignment Bond](../solution/incentive-alignment-bonds.qmd) [@iab-paper-2025]. IABs raise the campaign capital ({{< var treaty_campaign_total_cost >}}). Investors buy bonds. The campaign passes the treaty. The treaty redirects {{< var treaty_annual_funding >}}/year from military budgets to clinical trials. A management fee on that flow splits three ways: {{< var victory_bond_funding_pct >}} back to investors as a revenue share ({{< var victory_bond_annual_return_pct >}} annual returns, which is not a typo), {{< var iab_political_incentive_funding_pct >}} to a SuperPAC that funds treaty-aligned politicians and post-office careers for yes-voters, and {{< var dih_treasury_medical_research_pct >}} to clinical trials through [wishocratic allocation](../solution/wishocracy.qmd) where nobody with money gets to decide where it goes. The investors become the world's most motivated lobbyists for expanding the treaty, because their returns grow with it. The politicians face the same incentive structure that the NRA perfected, pointed at "not dying" instead of "more guns." The loop is self-sustaining: investor greed funds the campaign, campaign greed passes the treaty, treaty revenue feeds investor returns, investor returns fund more campaigns. Nobody has to become good. The money just circulates until diseases stop existing. (For the full mechanism, see [Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd) [@iab-paper-2025].)
+
+## Frequently Asked Objections
 
 | Objection | Answer |
 |:---|:---|
