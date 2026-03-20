@@ -48,15 +48,20 @@ The public signal is simple: verified participant count, referendum growth, and 
 
 ## Contributor Outcomes
 
-Let `D` be your deposit.
+Let `D` be your deposit. The pool compounds through the wishocratic fund regardless of whether the year-15 targets are met (the fund invests productively either way). The only question is who receives the realized pool at resolution.
 
-| Scenario | Direct protocol cash outcome | Reference formula | World-side outcome |
+| Scenario | What happens to your deposit | What happens to your VOTE points | World-side outcome |
 |:---|:---|:---|:---|
-| **Status quo retirement** | A conventional retirement account compounds at the baseline market path. | `D × {{< var conventional_retirement_15yr_multiple >}}` | You remain on the current trajectory. |
-| **Deposit + PRIZE fails** | Depositors divide the realized pool pro rata. In the current modeled pool-growth reference case, that is about `{{< var prize_pool_15yr_multiple >}}`. | `D × {{< var prize_pool_15yr_multiple >}}` | The world remains on the failed-state/status-quo branch. |
-| **Deposit + objectives met + 2 VOTE points** | On success, the pool goes to VOTE point-holders, not depositors. The direct protocol payout comes from the success-side VOTE points only. | `2 × {{< var vote_token_potential_value >}} = {{< var vote_2_claims_payout >}}` | Treaty / Wishonia upside: {{< var treaty_personal_upside_blend >}} to {{< var wishonia_personal_upside_blend >}} in modeled personal world-side upside. |
+| **Status quo retirement** | Conventional market: `D × {{< var conventional_retirement_15yr_multiple >}}` | N/A | Current trajectory continues. |
+| **PRIZE fails** | Depositors divide realized pool: `D × {{< var prize_pool_15yr_multiple >}}` | VOTE points expire worthless. | Status quo branch. |
+| **Objectives met** | Deposit routes to VOTE point-holders, not back to you. | Each point pays {{< var vote_token_potential_value >}}. | +{{< var treaty_trajectory_lifetime_income_gain_per_capita >}} to +{{< var wishonia_trajectory_lifetime_income_gain_per_capita >}} lifetime income for everyone. |
 
-Interpretation: `2` VOTE points are meaningful upside for small contributors, but they are not a sufficient standalone success-side cash case for large depositors or institutions. Large institutions should be pitched on activation, public-good upside, and coalition formation, not on a retail-style “deposit plus 2 points” story.
+**Worked example: $100 deposit + 2 VOTE points.**
+
+- *Targets missed:* You get back `$100 × {{< var prize_pool_15yr_multiple >}}` = $1,110 from the pool. Your VOTE points pay nothing. You still beat a conventional retirement account (`$100 × {{< var conventional_retirement_15yr_multiple >}}` = $257).
+- *Targets met:* Your $100 deposit goes to VOTE point-holders. Your 2 VOTE points pay `2 × {{< var vote_token_potential_value >}} = {{< var vote_2_claims_payout >}}`. Plus the world-side gain: {{< var treaty_personal_upside_blend >}} to {{< var wishonia_personal_upside_blend >}} in modeled personal upside from higher income and longer healthy life.
+
+Two VOTE points are meaningful upside for small contributors, but not a sufficient standalone case for large depositors or institutions. Large institutions should be pitched on activation, public-good upside, and coalition formation, not on a retail-style “deposit plus 2 points” story.
 
 ## Why the Mechanism Exists
 
@@ -276,8 +281,6 @@ The funnel is: the Planetary Constitutional Convention stress-tests the manual. 
 Everything the prize exists to produce is either healthy life years or income. Paying separately for budget reallocation or trial enrollment is paying for plumbing that may or may not deliver water. Pay for water.
 
 **The PRIZE pool trigger.** At year {{< var prize_pool_resolution_years_nounit >}}: targets met, the pool distributes to VOTE point-holders; targets missed, depositors divide it pro rata.
-
-**Treasury release.** Separate from the binary PRIZE pool trigger, the implementation treasury (a separate fund for paying implementers as metrics improve, distinct from the binary PRIZE pool) releases funds proportionally as global terminal metrics improve, verified by peer-reviewed quasi-experimental study or RCT with causal attribution. The method: synthetic controls across staggered treaty adoption (countries sign at different times, providing a natural experiment), difference-in-differences with the Optimitron [@optimocracy-paper-2025] running continuous causal inference. The challenge-window mechanism provides adversarial review of attribution claims. The [1% Treaty](../solution/1-percent-treaty.qmd) [@1-pct-treaty-impact-paper-2025] is adopted per-jurisdiction, and that staggered adoption is the causal identification strategy: signatories vs. non-signatories, handed to you for free.
 
 **Why better ideas win, not extract.** If a superior revision appears, VOTE point-holders shift recruitment toward it because doing so maximizes their own payout. The biggest reward is outcome perpetuity: a continuing share that only flows while results keep being produced. The protocol itself is replaceable: a strictly better selection mechanism replaces the current one under the same replacement rule. The two numbers do not change. Everything building toward them is improvable plumbing.
 
