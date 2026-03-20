@@ -3,7 +3,7 @@ title: "The Planetary Constitutional Convention"
 subtitle: "Stress-test and improve the current instruction manual until humanity has something less terrible to use"
 description: "The Planetary Constitutional Convention is a deliberative process to stress-test and improve the current Earth Optimization instruction manual. Revisions must cover ten required governance functions, pass eleven constitutional constraints, and survive public adversarial review. The ratified revision becomes the current manual."
 abstract: |
-  The Planetary Constitutional Convention is the deliberative process that precedes implementation of the [Earth Optimization Prize](earth-optimization-prize.qmd) [@earth-optimization-prize-paper-2025]. Before anyone recruits a single referendum voter or sells a single bond, there is a prior question: is the current [Earth Optimization Protocol v1](https://manual.warondisease.org) instruction manual actually the one humanity should use? We think it is terrible. We said so in the title. The honest first step is to improve the manual until it is less terrible. The protocol lives on GitHub. Anyone can fork it. The adversarial review process is a podcast series where domain experts critique the manual and state what changes would be required for them to endorse it, plus published critiques and pull requests. The ratified revision becomes the current manual the referendum, the bonds, and the lobbying campaign execute. This runs before everything else because committing billions to an unstress-tested manual is how your species normally operates, and that is not a compliment.
+  The Planetary Constitutional Convention is the deliberative process that precedes implementation of the [Earth Optimization Prize](earth-optimization-prize.qmd) [@earth-optimization-prize-paper-2025]. Before anyone recruits a single referendum voter or sells a single bond, there is a prior question: is the current [Earth Optimization manual](https://manual.warondisease.org) actually the one humanity should use? We think it is terrible. We said so in the title. The honest first step is to improve the manual until it is less terrible. The protocol lives on GitHub. Anyone can fork it. The adversarial review process is a podcast series where domain experts critique the manual and state what changes would be required for them to endorse it, plus published critiques and pull requests. The ratified revision becomes the current manual the referendum, the bonds, and the lobbying campaign execute. This runs before everything else because committing billions to an unstress-tested manual is how your species normally operates, and that is not a compliment.
 published: true
 tags:
   - strategy
@@ -13,7 +13,7 @@ tags:
 ---
 {{< include ../includes/setup-parameters.qmd >}}
 
-The [Earth Optimization Protocol v1](https://manual.warondisease.org) is the current instruction manual for a complete governance reform package. We think it is terrible. We said so in the title.
+The [Earth Optimization manual](https://manual.warondisease.org) is the current instruction manual for a complete governance reform package. We think it is terrible. We said so in the title.
 
 This constitutional convention exists to produce something less terrible. Fork the current manual, fix it, and improve it continuously. The ratified revision becomes the current manual the [Earth Optimization Prize](earth-optimization-prize.qmd) [@earth-optimization-prize-paper-2025] follows.
 
@@ -48,7 +48,7 @@ That is the Minimum Acceptable Governance. Ratification requires covering every 
 
 [Wishocracy](../solution/wishocracy.qmd) [@wishocracy-paper-2025] selects the ratified version. But [Wishocracy](../solution/wishocracy.qmd) picks from a filtered pool, because crowds are good at preferences and bad at evaluating whether a 50-page systems engineering document is mechanistically sound. A beautifully written plan that skips the hard parts should not outrank an ugly plan that solves them. And your species is deeply status-quo biased: you have been programmed your entire lives to treat the Federal Reserve, the congressional budget process, the IRS, and representative democracy as laws of nature rather than design choices that are producing catastrophic results. Left unconstrained, crowds will pick plans that preserve these institutions with cosmetic reforms, which will recreate every problem the prize exists to solve.
 
-So: eleven hard constraints that no submission can violate, regardless of how many humans vote for it. The first four ensure the plan is real. The next two ensure it survives. The last five ensure the new system does not become the old one.
+So: eleven hard constraints that no proposed revision can violate, regardless of how many humans vote for it. The first four ensure the plan is real. The next two ensure it survives. The last five ensure the new system does not become the old one.
 
 **The plan must be real:**
 
@@ -78,9 +78,9 @@ These are constitutional constraints, not preferences. A submission that fails a
 
 **Public adversarial review.** Domain experts critique the protocol in podcast conversations and state what changes they would require to endorse it. Published critiques, red-team memos, and GitHub issues track every objection. This is peer review, except it happens in public, produces listenable content, and generates a concrete punch list of required changes rather than a rejection letter.
 
-**GitHub forks and pull requests.** Anyone can fork the current manual and submit changes. Pull requests are how improvements get proposed, debated, and ratified. The version history is the audit trail.
+**GitHub forks and pull requests.** Anyone can fork the current manual and propose improvements. Pull requests are how improvements get proposed, debated, and ratified. The version history is the audit trail.
 
-**Wishocratic ranking (when needed).** If multiple serious competing forks emerge, [Wishocracy](../solution/wishocracy.qmd) activates: citizens compare two plans at a time ("Which of these two would you rather live under?"), about 20 comparisons, 5 minutes. The crowd does not need to understand mechanism design. The crowd needs to understand "which of these two futures sounds less terrible?" Humans are surprisingly good at that question and surprisingly bad at everything else. This infrastructure is not needed until the scaling problem actually exists.
+**Wishocratic ranking (when needed).** If multiple serious revised manuals emerge at the same time, [Wishocracy](../solution/wishocracy.qmd) activates: citizens compare two plans at a time ("Which of these two would you rather live under?"), about 20 comparisons, 5 minutes. The crowd does not need to understand mechanism design. The crowd needs to understand "which of these two futures sounds less terrible?" Humans are surprisingly good at that question and surprisingly bad at everything else. This infrastructure is not needed until the scaling problem actually exists.
 
 The ratified revision becomes the current Earth Optimization manual. If no revision improves the current manual, the current manual remains in force by default, which means we were right that it is terrible but wrong that nobody could improve it, and that is a more depressing outcome than we are prepared to contemplate.
 

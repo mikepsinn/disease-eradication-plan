@@ -42,7 +42,7 @@ Sell [Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd) [@ia
 The system has eleven required functions. The first ten form a loop; the eleventh becomes possible once the loop is running:
 
 1. **[Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd)** raise {{< var treaty_campaign_total_cost >}} from investors who want {{< var victory_bond_annual_return_pct >}} returns and billionaires who prefer not dying of horrible diseases.
-2. That money funds the **lobbying campaign**: Super PACs, scorecards, legislative drafting, and post-office career guarantees. The **referendum campaign** runs separately on VOTE tokens (recruit a verified participant, earn tokens).
+2. That money funds the **lobbying campaign**: Super PACs, scorecards, legislative drafting, and post-office career guarantees. The **referendum campaign** runs separately on VOTE points (recruit a verified participant, earn a point).
 3. The campaign passes a **[1% Treaty](../solution/1-percent-treaty.qmd) [@1-pct-treaty-impact-paper-2025]** redirecting {{< var treaty_annual_funding >}}/year from military budgets to clinical trials. Balance of power unchanged (everyone cuts the same 1%).
 4. The **[Decentralized Institutes of Health](../solution/dih.qmd)** receives the funds and splits them: {{< var dih_treasury_medical_research_pct >}} to medical research, {{< var victory_bond_funding_pct >}} to investor returns, {{< var iab_political_incentive_funding_pct >}} to political incentives.
 5. The research treasury funds **[your decentralized FDA](../solution/dfda.qmd)** protocol, running pragmatic trials at {{< var dfda_pragmatic_trial_cost_per_patient >}}/patient instead of {{< var traditional_phase3_cost_per_patient >}}/patient.
@@ -137,9 +137,9 @@ The expected first mover is a foundation consortium that can underwrite the stac
 
 {{< var treaty_campaign_viral_referendum_base_case >}} is the older narrow-bloc referendum budget for roughly 280 million verified votes. The canonical 50%-of-humanity activation ask is {{< var global_coordination_activation_budget >}}. The lobbying budget ({{< var treaty_campaign_budget_lobbying >}}) outbids the defense lobby's annual spend ({{< var defense_lobbying_annual >}}/year) by a factor of 8.
 
-Cash bonuses are the immediate incentive. The long-term incentive is VOTE tokens: transferable, on-chain proof issued to anyone who recruits a verified participant into the wishocratic allocation or treaty referendum. Recruiters can sell their tokens early; buyers are betting the plan succeeds. The secondary market price is a live estimate of what recruitment credit is worth.
+Cash bonuses are the immediate incentive. The longer-dated incentive is VOTE points: verified recruitment credit on the scoreboard and, formally, the success-side claim on the PRIZE pool if the year-15 targets are met. The point is to make coalition-building legible and worth doing, not to create a second speculative asset before the coalition exists.
 
-The [Earth Optimization Prize](earth-optimization-prize.qmd) pool is a separate instrument from the bonds. PRIZE token buyers deposit into the same pool that compounds until year 15. If global HALE has not reached {{< var wishonia_projected_hale_year_15 >}} and global median income has not reached {{< var wishonia_trajectory_avg_income_year_15 >}} by year 15, depositors divide the realized pool pro rata by deposits. If both targets are met, the same realized pool is distributed to VOTE holders proportional to recruitment. A conditional commitment: your money only routes to VOTE claimants if someone earned it. Philanthropists buy because they want to fund success. Pessimists buy because failure still leaves them with a claim on the pool. Both grow the prize pool. In institutional terms, activation underwriting makes the network real first; PRIZE pool seeding makes the long-dated upside feel rich enough to accelerate it; later scale capital turns the mechanism into a civilization-sized allocator.
+The [Earth Optimization Prize](earth-optimization-prize.qmd) pool is a separate instrument from the bonds. PRIZE depositors place funds into the same pool that compounds until year 15. If global HALE has not reached {{< var wishonia_projected_hale_year_15 >}} and global median income has not reached {{< var wishonia_trajectory_avg_income_year_15 >}} by year 15, depositors divide the realized pool pro rata by deposits. If both targets are met, the same realized pool is distributed to VOTE point-holders proportional to recruitment. A conditional commitment: your money only routes to VOTE point-holders if someone earned it. Philanthropists buy because they want to fund success. Pessimists buy because failure still leaves them with a claim on the pool. Both grow the prize pool. In institutional terms, activation underwriting makes the network real first; PRIZE pool seeding makes the long-dated upside feel rich enough to accelerate it; later scale capital turns the mechanism into a civilization-sized allocator.
 
 ::: {.callout-note}
 ## Fork Marker
@@ -269,9 +269,9 @@ The treaty money splits [80/10/10](../appendix/incentive-alignment-bonds-paper.q
 
 You cannot skip steps. All timelines below are order-of-magnitude estimates, not promises.
 
-**Phase 1: The [Planetary Constitutional Convention](planetary-constitutional-convention.qmd) [@planetary-constitutional-convention-paper-2025] (weeks to months).** Run the constitutional convention. Teams fork the current manual, fix it, and improve the weak parts. Expert panel filters for [constitutional compliance](planetary-constitutional-convention.qmd#constitutional-constraints). Adversarial review catches what the panel misses. [Wishocracy](../solution/wishocracy.qmd) ranks the survivors via pairwise comparison when needed. The ratified revision becomes the current manual. PRIZE token sales begin during this phase, funding the prize pool regardless of which revision is ratified. This is the cheapest stage and it stress-tests the manual before committing real resources.
+**Phase 1: The [Planetary Constitutional Convention](planetary-constitutional-convention.qmd) [@planetary-constitutional-convention-paper-2025] (weeks to months).** Run the constitutional convention. Teams fork the current manual, improve it, and fix the weak parts. Expert panel filters for [constitutional compliance](planetary-constitutional-convention.qmd#constitutional-constraints). Adversarial review catches what the panel misses. [Wishocracy](../solution/wishocracy.qmd) ranks the survivors via pairwise comparison when needed. The ratified revision becomes the current manual. PRIZE deposits can begin during this phase, funding the prize pool regardless of which revision is ratified. This is the cheapest stage and it stress-tests the manual before committing real resources.
 
-**Phase 2: The [referendum](global-referendum.qmd) (weeks to months).** Launch the [PRIZE token](earth-optimization-prize.qmd) sale and referendum platform simultaneously. Each participant votes on the [1% Treaty](../solution/1-percent-treaty.qmd) (the headcount that creates political pressure) and sets a [wishocratic slider](../solution/wishocracy.qmd) for their preferred military-to-health allocation (the data that tells you what people actually want). Every recruiter who brings a verified participant earns VOTE tokens. The institutional financing pitch is three-lane: underwrite activation first, seed the PRIZE pool second, and invite much larger capital once the network is visibly real. The operational question is not whether the network can reach some arbitrary macro benchmark. It is whether activation capital can make participation self-propagating before the later pool and capital-allocation thesis take over.
+**Phase 2: The [referendum](global-referendum.qmd) (weeks to months).** Launch PRIZE deposits and the referendum platform simultaneously. Each participant votes on the [1% Treaty](../solution/1-percent-treaty.qmd) (the headcount that creates political pressure) and sets a [wishocratic slider](../solution/wishocracy.qmd) for their preferred military-to-health allocation (the data that tells you what people actually want). Every recruiter who brings a verified participant earns a VOTE point. The institutional financing pitch is three-lane: underwrite activation first, seed the PRIZE pool second, and invite much larger capital once the network is visibly real. The operational question is not whether the network can reach some arbitrary macro benchmark. It is whether activation capital can make participation self-propagating before the later pool and capital-allocation thesis take over.
 
 **Phase 3: Pass the treaty (months to years).** Scale the referendum toward {{< var global_coordination_target_supporters_nounit >}} verified supporters. Launch the full VICTORY [Incentive Alignment Bond](../solution/incentive-alignment-bonds.qmd) sale ({{< var treaty_campaign_total_cost >}} target). Overwhelm the defense lobby ({{< var defense_lobbying_annual >}}/year) with 8x their spend. Pass the treaty. {{< var treaty_annual_funding >}}/year begins flowing.
 
@@ -317,19 +317,19 @@ Everything depends on raising {{< var treaty_campaign_total_cost >}} in initial 
 
 The {{< var dih_treasury_medical_research_pct >}}/{{< var victory_bond_funding_pct >}}/{{< var iab_political_incentive_funding_pct >}} split is a design choice, not a theorem. The combined overhead ({{< var victory_bond_funding_pct >}} investor returns + {{< var iab_political_incentive_funding_pct >}} political incentives) looks terrible to philanthropists who expect 95% program ratios. It looks excellent to investors who expect {{< var average_market_return_pct >}} returns. Whether the investor-attraction benefit exceeds the philanthropist-repulsion cost is an empirical question nobody has answered. The split may be wrong.
 
-**How to beat this:** Prove that a different split raises more total capital or produces better outcomes per dollar. Or prove that the 20% is unnecessary because a cheaper political mechanism exists.
+**How to improve this part:** Prove that a different split raises more total capital or produces better outcomes per dollar. Or prove that the 20% is unnecessary because a cheaper political mechanism exists.
 
 ### 3. [Wishocracy](../solution/wishocracy.qmd) Participation
 
 If participation in wishocratic allocation is low, the allocations are noisy and manipulable by organized factions. The system requires thresholds, weighting, or fallback modes for low participation. We have specified these. We have not tested them.
 
-**How to beat this:** Prove that a different allocation mechanism produces better outcomes with lower participation requirements, or design stronger participation incentives.
+**How to improve this part:** Prove that a different allocation mechanism produces better outcomes with lower participation requirements, or design stronger participation incentives.
 
 ### 4. No Pilot
 
 We have not tested any of this as an integrated system. The RECOVERY trial proves pragmatic trials work. The Montreal Protocol proves coordinated reduction works. The NRA proves political scoring works. But the integrated loop has never run. Individually validated components can fail when combined, the same way individually safe chemicals can explode when mixed.
 
-**How to beat this:** Run a pilot. A single country, a single disease category, a scaled-down version of the full loop. Prove the integration works before asking for planetary adoption.
+**How to improve this part:** Run a pilot. A single country, a single disease category, a scaled-down version of the full loop. Prove the integration works before asking for planetary adoption.
 
 ## What Already Exists
 
@@ -356,11 +356,11 @@ The Earth Optimization Protocol v1 is the current instruction manual for the [Ea
 1. **Fork.** Clone [the repository](https://github.com/mikepsinn/disease-eradication-plan). Every component, every calculation, every assumption is public.
 2. **Improve any row** in the Minimum Acceptable Governance table (see the [prize paper](earth-optimization-prize.qmd)) with something strictly better on the two terminal metrics (median healthy life years and median real after-tax income).
 3. **Or replace the wrong parts** with an integrated alternative that improves the current manual function by function. You cannot skip inconvenient pieces; every required function must still be covered or replaced.
-4. **Prove it.** The credit mechanism is VOTE tokens: transferable, on-chain proof of how many verified participants you recruited into the wishocratic allocation or treaty referendum. You need numbers, not arguments.
-5. **Use the better manual.** Bondholders receive their revenue share for as long as the treaty generates funding. VOTE token holders receive their share of the PRIZE pool when both global targets are met at year 15 (HALE {{< var wishonia_projected_hale_year_15 >}}, median income {{< var wishonia_trajectory_avg_income_year_15 >}}).
+4. **Prove it.** The credit mechanism is VOTE points: verified recruitment credit on the scoreboard and, formally, success-side claims on the PRIZE pool. You need numbers, not arguments.
+5. **Use the better manual.** Bondholders receive their revenue share for as long as the treaty generates funding. VOTE point-holders receive their share of the PRIZE pool when both global targets are met at year 15 (HALE {{< var wishonia_projected_hale_year_15 >}}, median income {{< var wishonia_trajectory_avg_income_year_15 >}}).
 
 The disqualification rule: if your proposal requires any participant to become less selfish, you have described a pleasant world rather than a mechanism for reaching it. The math must work when humans are greedy, impatient, and exactly as self-interested as they are right now.
 
-We wrote v1 because humans need a starting instruction manual. There are 8 billion of you and AIs that are almost certainly smarter than its authors. Improving it should not be difficult.
+We call this revision v1 because repositories need version tags. The real goal is to keep improving the current manual until humanity has something better to use.
 
-We expect parts of v1 to be improved or replaced. We look forward to that.
+We expect parts of this manual to be improved or replaced. Good.
