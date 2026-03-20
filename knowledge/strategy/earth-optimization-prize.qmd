@@ -65,15 +65,15 @@ Two VOTE points are meaningful upside for small contributors, but not a sufficie
 
 ## Why the Mechanism Exists
 
-The prize is trying to solve five problems at once:
+Your species has never built a system that measures the two things everyone agrees on (healthy life years and income), publishes the score, and pays whoever moves it. You argue about drug policy without tracking whether fewer people die. You argue about military spending without tracking whether it makes you safer. You argue about healthcare without tracking whether anyone gets healthier. The prize does not resolve these arguments. It makes them irrelevant. Two numbers. Did they move? Pay whoever moved them.
+
+That missing scoreboard is underneath five specific problems the prize is trying to solve at once:
 
 1. **Awareness.** Most people do not know how large the upside of better governance and cheaper clinical trials is.
 2. **Pluralistic ignorance.** People assume nobody else would support large reform until they can see a scoreboard proving otherwise.
 3. **Coordination.** The public has diffuse interests and no standard mechanism for committing capital together.
 4. **Solution search.** Nobody agrees in advance which package is best, so the prize pays for outcomes and lets better packages compete.
 5. **On-ramp.** Complex reform bundles need a simple first action; `deposit, register, recruit` is that action.
-
-The shared scoreboard is the missing public infrastructure underneath all five: one visible participant count, one visible pool, and two terminal metrics that everyone can understand.
 
 ### 1. Nobody Knows Solutions Exist
 
@@ -113,12 +113,6 @@ Your species has tried the obvious alternatives. Advance Market Commitments [@kr
 The [1% Treaty](../solution/1-percent-treaty.qmd) [@1-pct-treaty-impact-paper-2025], FDA reform, wishocratic allocation, cross-jurisdictional policy optimization: each is a hard sell individually. Each requires explaining an elaborate mechanism to people who have been trained to assume nothing works. The prize is the simple entry point. Deposit $1, keep a failure-branch claim on the same pool if nothing works, and help route it to VOTE point-holders if the world actually improves. One sentence. One decision. The $1 minimum is the on-ramp, not a claim that every participant must become a large 15-year capital provider.
 
 Once someone makes a PRIZE deposit or earns a VOTE claim, they discover the component reforms through the recruitment and registration process. The treaty. The trial cost data. The allocation evidence. The prize is the funnel into everything else. It converts "this sounds too complicated" into "I put in $1 and either diseases get cured or I still have a claim on the pool, so why not." The complex reforms ride behind the simple instrument.
-
-### The Shared Scoreboard
-
-Problems one through five are structural: awareness, coordination, on-ramps, solution discovery, pluralistic ignorance. But there is a sixth problem underneath all of them. Your species has never built a system that measures the two things everyone agrees on, publishes the score, and pays whoever moves it. You argue about drug policy without tracking whether fewer people die. You argue about military spending without tracking whether it makes you safer. You argue about healthcare without tracking whether anyone gets healthier.
-
-The prize does not resolve these arguments. It makes them irrelevant. Two numbers. Did they move? Pay whoever moved them. Every policy debate on Earth becomes "did it raise median healthy life years or median income?" and if the answer is "we don't know," the answer is "then it didn't earn any prize money."
 
 ## Design Choices and Objections
 
