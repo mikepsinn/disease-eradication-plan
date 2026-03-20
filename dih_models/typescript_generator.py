@@ -614,8 +614,8 @@ def generate_typescript_survey(
     # Load survey data from dict or JSON file
     if survey_data is None:
         if survey_json_path is None or not survey_json_path.exists():
-            print(f"[ERROR] Survey data not provided and JSON not found: {survey_json_path}")
-            print(f"        Run: python scripts/generate-economist-survey.py --top-n 30")
+            print(f"[INFO] Skipping TypeScript survey generation: optional survey JSON not found: {survey_json_path}")
+            print(f"       Generate it with: python scripts/generate-economist-survey.py --top-n 30")
             return
 
         with open(survey_json_path, encoding='utf-8') as f:

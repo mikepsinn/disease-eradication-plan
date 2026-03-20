@@ -16,18 +16,18 @@ setup_chart_style()
 
 # Display name for chart title
 
-display_name = "VOTE Token Potential Value"
+display_name = "Retirement-Equivalent Claim Value Target"
 
 # Baseline and units
 
-baseline = 193619.7372131118
+baseline = 4990.97895336202
 
 # Tornado data from sensitivity analysis
 
-drivers = ['VENTURE_GROSS_RETURN', 'SCALE_COMPRESSION_FACTOR', 'ALLOCATION_DECISION_SPREAD', 'HOME_BIAS_ALPHA', 'GLOBAL_POPULATION_2024']
-driver_labels = ['Venture Capital Gross Return', 'Scale Compression Factor', 'Allocation Decision Return Spread', 'Home Bias Return Drag', 'Global Population in 2024']
-impacts_low = [-78517.21548000374, -53433.79912778092, -18426.916525196168, -12009.179303728364, 4964.608646490058]
-impacts_high = [168368.76939631216, 40625.08229563059, 27391.268008895044, 18061.91464327011, -4722.4326149539265]
+drivers = ['CONVENTIONAL_RETIREMENT_RETURN', 'GLOBAL_SAVINGS_RATE_PCT', 'GLOBAL_POPULATION_2024']
+driver_labels = ['Conventional Retirement Return (After Fees)', 'Global Gross Savings Rate', 'Global Population in 2024']
+impacts_low = [-956.5589551918315, -554.5532170402248, 127.9738193169751]
+impacts_high = [1165.0117338790023, 554.5532170402239, -121.73119398443941]
 
 # Convert deltas to absolute values (baseline + delta)
 
@@ -96,7 +96,7 @@ add_watermark(fig)
 # Save PNG to knowledge/figures/ regardless of where Quarto renders from
 # Use 96 DPI for web-optimized output (reduced from 150 DPI to minimize file size)
 
-output_path = get_figure_output_path('tornado-vote_token_potential_value.png')
+output_path = get_figure_output_path('tornado-retirement_equivalent_claim_value_target.png')
 plt.savefig(output_path, dpi=96, bbox_inches=None, facecolor=COLOR_WHITE)
 
 add_png_metadata(

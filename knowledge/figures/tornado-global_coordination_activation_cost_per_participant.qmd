@@ -16,18 +16,18 @@ setup_chart_style()
 
 # Display name for chart title
 
-display_name = "PRIZE Pool Target as % of Retirement Assets"
+display_name = "Activation Cost per Participant"
 
 # Baseline and units
 
-baseline = 0.13041025859986596
+baseline = 6.5
 
 # Tornado data from sensitivity analysis
 
-drivers = ['VENTURE_GROSS_RETURN', 'POLITICAL_DYSFUNCTION_GLOBAL_MIGRATION_OPPORTUNITY_COST', 'POLITICAL_DYSFUNCTION_GLOBAL_HEALTH_OPPORTUNITY_COST', 'SCALE_COMPRESSION_FACTOR', 'ALLOCATION_DECISION_SPREAD', 'HOME_BIAS_ALPHA', 'POLITICAL_DYSFUNCTION_GLOBAL_SCIENCE_OPPORTUNITY_COST', 'POLITICAL_DYSFUNCTION_GLOBAL_LEAD_OPPORTUNITY_COST']
-driver_labels = ['Venture Capital Gross Return', 'Global Migration Opportunity Cost', 'Global Health Opportunity Cost', 'Scale Compression Factor', 'Allocation Decision Return Spread', 'Home Bias Return Drag', 'Global Science Opportunity Cost', 'Global Lead Poisoning Cost']
-impacts_low = [0.08895939221063487, 0.0, -0.01807666950889232, 0.04970766438774768, 0.013716651971314081, 0.008623508438054595, -0.0025823813584132105, -0.0025823813584132105]
-impacts_high = [-0.060656662728812274, 0.14590454675034506, 0.059394771243503286, -0.022617052957349587, -0.016162554171589974, -0.011127364789441707, 0.007747144075239548, 0.002582381358413155]
+drivers = ['GLOBAL_COORDINATION_ACTIVATION_REWARD_PER_VERIFIED_PARTICIPANT', 'GLOBAL_COORDINATION_VERIFICATION_AND_PAYMENT_COST_PER_PARTICIPANT']
+driver_labels = ['Activation Reward per Verified Participant', 'Verification and Payment Cost per Participant']
+impacts_low = [-3.0, -0.5]
+impacts_high = [5.0, 1.5]
 
 # Convert deltas to absolute values (baseline + delta)
 
@@ -71,7 +71,7 @@ ax.set_title(f'Sensitivity Analysis: {display_name}', fontsize=16, weight='bold'
 
 # X-axis label with units
 
-units_label = "percent"
+units_label = "USD"
 if units_label:
     ax.set_xlabel(f'{display_name} ({units_label})', fontsize=12)
 else:
@@ -96,7 +96,7 @@ add_watermark(fig)
 # Save PNG to knowledge/figures/ regardless of where Quarto renders from
 # Use 96 DPI for web-optimized output (reduced from 150 DPI to minimize file size)
 
-output_path = get_figure_output_path('tornado-prize_pool_target_pct_retirement_assets.png')
+output_path = get_figure_output_path('tornado-global_coordination_activation_cost_per_participant.png')
 plt.savefig(output_path, dpi=96, bbox_inches=None, facecolor=COLOR_WHITE)
 
 add_png_metadata(

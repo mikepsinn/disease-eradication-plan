@@ -1,10 +1,10 @@
-**Sensitivity Indices for VOTE Token Potential Value**
+**Sensitivity Indices for Retirement-Equivalent 2-Claims Target Payout**
 
 Regression-based sensitivity showing which inputs explain the most variance in the output.
 
 | Input Parameter | Sensitivity Coefficient | Interpretation |
 |:----------------|------------------------:|:---------------|
-| PRIZE Pool Potential Max Size (USD) | 0.9748 | Strong driver |
-| Global Coordination Target Supporters (of people) | 0.0260 | Minimal effect |
+| Conventional Retirement 15-Year Multiple (x) | 1.1944 | Strong driver |
+| Global Annual Savings Per Capita (USD/person/year) | -0.1950 | Weak driver |
 
 *Interpretation*: Standardized coefficients show the change in output (in SD units) per 1 SD change in input. Values near ±1 indicate strong influence; values exceeding ±1 may occur with correlated inputs.

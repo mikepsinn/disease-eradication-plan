@@ -2491,6 +2491,17 @@ export const CONTRIBUTION_SUFFERING_HOURS_PER_PCT_POINT: Parameter = {
   latex: "Hours_{pp} = Hours_{suffer,max} \\times 0.01",
 };
 
+export const CONVENTIONAL_RETIREMENT_15YR_MULTIPLE: Parameter = {
+  value: 2.5718410065633592,
+  unit: "x",
+  displayName: "Conventional Retirement 15-Year Multiple",
+  description: "15-year compound multiple for conventional retirement investing over the PRIZE pool resolution horizon.",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "(1 + CONVENTIONAL_RETIREMENT_RETURN) ^ PRIZE_POOL_RESOLUTION_YEARS",
+  latex: "M_{retire} = (1 + r_{retire})^{T_{pool}}",
+};
+
 export const CURRENT_COMBINATION_EXPLORATION_YEARS: Parameter = {
   value: 13672803.030303031,
   unit: "years",
@@ -3564,6 +3575,39 @@ export const GLOBAL_AVG_REMAINING_YEARS: Parameter = {
   latex: "\\begin{gathered}\nT_{remaining} \\\\\n= LE_{global} - Age_{median} \\\\\n= 79 - 30.5 \\\\\n= 48.5\n\\end{gathered}",
 };
 
+export const GLOBAL_COORDINATION_ACTIVATION_BUDGET: Parameter = {
+  value: 30000000000.0,
+  unit: "USD",
+  displayName: "Global Coordination Activation Budget",
+  description: "Canonical institutional activation threshold: capital required to make 50% participation credible through direct referral incentives, verification, payment rails, and global launch operations. This is the main institutional ask, not the PRIZE pool seed benchmark.",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "GLOBAL_COORDINATION_TARGET_SUPPORTERS × GLOBAL_COORDINATION_ACTIVATION_COST_PER_PARTICIPANT + GLOBAL_COORDINATION_PLATFORM_AND_OPERATIONS_COST",
+  latex: "B_{activate} = N_{coord} \\times C_{activate,pp} + C_{ops}",
+};
+
+export const GLOBAL_COORDINATION_ACTIVATION_COST_PER_PARTICIPANT: Parameter = {
+  value: 6.5,
+  unit: "USD",
+  displayName: "Activation Cost per Participant",
+  description: "Blended variable activation cost per successful verified participant: direct incentive plus verification and payment operations.",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "GLOBAL_COORDINATION_ACTIVATION_REWARD_PER_VERIFIED_PARTICIPANT + GLOBAL_COORDINATION_VERIFICATION_AND_PAYMENT_COST_PER_PARTICIPANT",
+  latex: "C_{activate,pp} = R_{activate} + C_{verify,pp}",
+};
+
+export const GLOBAL_COORDINATION_TARGET_SUPPORTERS: Parameter = {
+  value: 4000000000.0,
+  unit: "of people",
+  displayName: "Global Coordination Target Supporters",
+  description: "Number of people implied by the modeled end-state global coordination target (global population × 50%).",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "GLOBAL_POPULATION_2024 × GLOBAL_COORDINATION_TARGET_PCT",
+  latex: "N_{coord} = N_{global} \\times R_{coord}",
+};
+
 export const GLOBAL_COST_PER_LIFE_SAVED_MED_RESEARCH_ANNUAL: Parameter = {
   value: 16071.42857142857,
   unit: "USD/life",
@@ -4202,48 +4246,15 @@ export const PRIZE_POOL_POTENTIAL_MAX_SIZE: Parameter = {
   latex: "Pool_{max} = Assets_{retire} \\times M_{pool}",
 };
 
-export const PRIZE_POOL_TARGET_PCT_GDP: Parameter = {
-  value: 0.07938015740861407,
-  unit: "percent",
-  displayName: "PRIZE Pool Target as % of Global GDP",
-  description: "Required initial principal as a share of global GDP to reach one year of the dysfunction-tax target by the resolution date.",
-  sourceType: "calculated",
-  confidence: "high",
-  formula: "PRIZE_POOL_TARGET_REQUIRED_PRINCIPAL / GLOBAL_GDP_2025",
-  latex: "\\begin{gathered}\nd_{GDP} = \\frac{P_{required}}{GDP_{global}} = \\frac{\\$9.13T}{\\$115T} = 7.94\\%\n\\\\[0.5em]\n\\text{where } P_{required} = \\frac{O_{total}}{M_{pool}}\n\\\\[0.5em]\n\\text{where } O_{total} = O_{health} + O_{science} + O_{lead} + O_{migration} = \\$34T + \\$4T + \\$6T + \\$57T = \\$101T\n\\\\[0.5em]\n\\text{where } M_{pool} = (1 + r_{pool})^{T_{pool}}\n\\\\[0.5em]\n\\text{where } r_{pool} = r_{VC,gross} + \\Delta r_{scale} + \\alpha_{crowd} + \\alpha_{home}\n\\\\[0.5em]\n\\text{where } \\alpha_{crowd} = S_{alloc} \\times (Acc_{crowd} - Acc_{expert}) = 8\\% \\times (91\\% - 65\\%) = 2.08\\%\n\\end{gathered}",
-};
-
-export const PRIZE_POOL_TARGET_PCT_RETIREMENT_ASSETS: Parameter = {
-  value: 0.13041025859986596,
-  unit: "percent",
-  displayName: "PRIZE Pool Target as % of Retirement Assets",
-  description: "Required initial principal as a share of global retirement assets to reach one year of the dysfunction-tax target by the resolution date.",
-  sourceType: "calculated",
-  confidence: "high",
-  formula: "PRIZE_POOL_TARGET_REQUIRED_PRINCIPAL / GLOBAL_RETIREMENT_ASSETS",
-  latex: "\\begin{gathered}\nd_{retire} = \\frac{P_{required}}{Assets_{retire}} = \\frac{\\$9.13T}{\\$70T} = 13\\%\n\\\\[0.5em]\n\\text{where } P_{required} = \\frac{O_{total}}{M_{pool}}\n\\\\[0.5em]\n\\text{where } O_{total} = O_{health} + O_{science} + O_{lead} + O_{migration} = \\$34T + \\$4T + \\$6T + \\$57T = \\$101T\n\\\\[0.5em]\n\\text{where } M_{pool} = (1 + r_{pool})^{T_{pool}}\n\\\\[0.5em]\n\\text{where } r_{pool} = r_{VC,gross} + \\Delta r_{scale} + \\alpha_{crowd} + \\alpha_{home}\n\\\\[0.5em]\n\\text{where } \\alpha_{crowd} = S_{alloc} \\times (Acc_{crowd} - Acc_{expert}) = 8\\% \\times (91\\% - 65\\%) = 2.08\\%\n\\end{gathered}",
-};
-
-export const PRIZE_POOL_TARGET_PCT_WEALTH: Parameter = {
-  value: 0.02010730859469299,
-  unit: "percent",
-  displayName: "PRIZE Pool Target as % of Household Wealth",
-  description: "Required initial principal as a share of global household wealth to reach one year of the dysfunction-tax target by the resolution date.",
-  sourceType: "calculated",
-  confidence: "high",
-  formula: "PRIZE_POOL_TARGET_REQUIRED_PRINCIPAL / GLOBAL_HOUSEHOLD_WEALTH_USD",
-  latex: "\\begin{gathered}\nd_{wealth} = \\frac{P_{required}}{Wealth_{household}} = \\frac{\\$9.13T}{\\$454T} = 2.01\\%\n\\\\[0.5em]\n\\text{where } P_{required} = \\frac{O_{total}}{M_{pool}}\n\\\\[0.5em]\n\\text{where } O_{total} = O_{health} + O_{science} + O_{lead} + O_{migration} = \\$34T + \\$4T + \\$6T + \\$57T = \\$101T\n\\\\[0.5em]\n\\text{where } M_{pool} = (1 + r_{pool})^{T_{pool}}\n\\\\[0.5em]\n\\text{where } r_{pool} = r_{VC,gross} + \\Delta r_{scale} + \\alpha_{crowd} + \\alpha_{home}\n\\\\[0.5em]\n\\text{where } \\alpha_{crowd} = S_{alloc} \\times (Acc_{crowd} - Acc_{expert}) = 8\\% \\times (91\\% - 65\\%) = 2.08\\%\n\\end{gathered}",
-};
-
-export const PRIZE_POOL_TARGET_REQUIRED_PRINCIPAL: Parameter = {
-  value: 9128718101990.617,
+export const PRIZE_POOL_RETIREMENT_EQUIVALENT_PRINCIPAL: Parameter = {
+  value: 1804405541315.2495,
   unit: "USD",
-  displayName: "PRIZE Pool Target Required Principal",
-  description: "Required initial principal for the PRIZE pool to reach one year of the dysfunction-tax target by the resolution date under the canonical fund-growth model.",
+  displayName: "PRIZE Pool Retirement-Equivalent Principal",
+  description: "Secondary PRIZE seed benchmark: initial principal required so that the pool can make two referred votes retirement-equivalent on success at the modeled global coordination target. This is a stronger-incentive visible-pool benchmark, not the minimum capital required to make 50% participation credible.",
   sourceType: "calculated",
   confidence: "high",
-  formula: "POLITICAL_DYSFUNCTION_GLOBAL_OPPORTUNITY_COST_TOTAL / PRIZE_POOL_15YR_MULTIPLE",
-  latex: "P_{required} = \\frac{O_{total}}{M_{pool}}",
+  formula: "GLOBAL_COORDINATION_TARGET_SUPPORTERS × RETIREMENT_EQUIVALENT_CLAIM_VALUE_TARGET / PRIZE_POOL_15YR_MULTIPLE",
+  latex: "\\begin{gathered}\nP_{retire-eq} \\\\\n= \\frac{N_{coord} \\times V_{claim,target}}{M_{pool}}\n\\end{gathered}",
 };
 
 export const RECOVERY_TRIAL_COST_REDUCTION_FACTOR: Parameter = {
@@ -4267,6 +4278,28 @@ export const RECOVERY_TRIAL_TOTAL_QALYS_GENERATED: Parameter = {
   confidence: "medium",
   formula: "LIVES_SAVED × QALYS_PER_DEATH_AVERTED",
   latex: "\\begin{gathered}\nQALY_{RECOVERY} \\\\\n= Lives_{RECOVERY} \\times QALY_{COVID} \\\\\n= 1M \\times 5 \\\\\n= 5M\n\\end{gathered}",
+};
+
+export const RETIREMENT_EQUIVALENT_2_CLAIMS_TARGET_PAYOUT: Parameter = {
+  value: 9981.95790672404,
+  unit: "USD",
+  displayName: "Retirement-Equivalent 2-Claims Target Payout",
+  description: "Target success-side payout for two referred votes: what one representative annual savings contribution would become in a conventional retirement account by PRIZE resolution.",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "GLOBAL_ANNUAL_SAVINGS_PER_CAPITA × CONVENTIONAL_RETIREMENT_15YR_MULTIPLE",
+  latex: "V_{2claims,target} = S_{annual,pc} \\times M_{retire}",
+};
+
+export const RETIREMENT_EQUIVALENT_CLAIM_VALUE_TARGET: Parameter = {
+  value: 4990.97895336202,
+  unit: "USD",
+  displayName: "Retirement-Equivalent Claim Value Target",
+  description: "Target value of one referred-voter claim when two claims are meant to match the conventional-retirement future value of one representative annual savings contribution.",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "RETIREMENT_EQUIVALENT_2_CLAIMS_TARGET_PAYOUT / 2",
+  latex: "V_{claim,target} = \\frac{V_{2claims,target}}{2}",
 };
 
 export const SHARING_BREAKEVEN_ONE_IN_TREATY: Parameter = {
@@ -5131,36 +5164,25 @@ export const VOTER_SUFFERING_HOURS_PREVENTED: Parameter = {
 };
 
 export const VOTE_2_CLAIMS_PAYOUT: Parameter = {
-  value: 645399.124043706,
+  value: 387239.4744262236,
   unit: "USD",
   displayName: "VOTE Payout for 2 Claims",
-  description: "Potential payout for a depositor who recruits 2 verified participants (earning 2 VOTE claims) if the PRIZE pool reaches its canonical potential max size.",
+  description: "Potential payout for a depositor who recruits 2 verified participants (earning 2 VOTE claims) if the PRIZE pool reaches its canonical potential max size. This is a recruiter example, not the system-wide average claim denominator.",
   sourceType: "calculated",
   confidence: "high",
   formula: "2 × VOTE_TOKEN_POTENTIAL_VALUE",
-  latex: "\\begin{gathered}\nV_{2claims} = V_{vote} \\times 2 = \\$323K \\times 2 = \\$645K\n\\\\[0.5em]\n\\text{where } V_{vote} = \\frac{Pool_{max}}{N_{voters,expected}}\n\\\\[0.5em]\n\\text{where } Pool_{max} = Assets_{retire} \\times M_{pool}\n\\\\[0.5em]\n\\text{where } M_{pool} = (1 + r_{pool})^{T_{pool}}\n\\\\[0.5em]\n\\text{where } r_{pool} = r_{VC,gross} + \\Delta r_{scale} + \\alpha_{crowd} + \\alpha_{home}\n\\\\[0.5em]\n\\text{where } \\alpha_{crowd} = S_{alloc} \\times (Acc_{crowd} - Acc_{expert}) = 8\\% \\times (91\\% - 65\\%) = 2.08\\%\n\\\\[0.5em]\n\\text{where } N_{voters,expected} = Pop_{global} \\times R_{vote} = 8B \\times 30\\% = 2.4B\n\\end{gathered}",
-};
-
-export const VOTE_EXPECTED_PARTICIPANTS: Parameter = {
-  value: 2400000000.0,
-  unit: "of people",
-  displayName: "Expected Number of Voters",
-  description: "Expected number of people who vote over the accumulation period (global population × participation rate). At the 30% point estimate, 2.4B voters exceed the Chenoweth passage threshold (280M) by ~8×.",
-  sourceType: "calculated",
-  confidence: "high",
-  formula: "GLOBAL_POPULATION_2024 × VOTE_PARTICIPATION_RATE",
-  latex: "\\begin{gathered}\nN_{voters,expected} \\\\\n= Pop_{global} \\times R_{vote} \\\\\n= 8B \\times 30\\% \\\\\n= 2.4B\n\\end{gathered}",
+  latex: "\\begin{gathered}\nV_{2claims} = V_{vote} \\times 2 = \\$194K \\times 2 = \\$387K\n\\\\[0.5em]\n\\text{where } V_{vote} = \\frac{Pool_{max}}{N_{coord}}\n\\\\[0.5em]\n\\text{where } Pool_{max} = Assets_{retire} \\times M_{pool}\n\\\\[0.5em]\n\\text{where } M_{pool} = (1 + r_{pool})^{T_{pool}}\n\\\\[0.5em]\n\\text{where } r_{pool} = r_{VC,gross} + \\Delta r_{scale} + \\alpha_{crowd} + \\alpha_{home}\n\\\\[0.5em]\n\\text{where } \\alpha_{crowd} = S_{alloc} \\times (Acc_{crowd} - Acc_{expert}) = 8\\% \\times (91\\% - 65\\%) = 2.08\\%\n\\\\[0.5em]\n\\text{where } N_{coord} = N_{global} \\times R_{coord}\n\\end{gathered}",
 };
 
 export const VOTE_TOKEN_POTENTIAL_VALUE: Parameter = {
-  value: 322699.562021853,
+  value: 193619.7372131118,
   unit: "USD",
   displayName: "VOTE Token Potential Value",
-  description: "Potential value of a single VOTE claim if the PRIZE pool reaches its canonical potential max size. Denominator is expected participants (30% of global population), not the Chenoweth passage threshold.",
+  description: "Potential value of a single VOTE claim if the PRIZE pool reaches its canonical potential max size. Denominator is the modeled global coordination target, not the lower forecast participation path.",
   sourceType: "calculated",
   confidence: "high",
-  formula: "PRIZE_POOL_POTENTIAL_MAX_SIZE / VOTE_EXPECTED_PARTICIPANTS",
-  latex: "V_{vote} = \\frac{Pool_{max}}{N_{voters,expected}}",
+  formula: "PRIZE_POOL_POTENTIAL_MAX_SIZE / GLOBAL_COORDINATION_TARGET_SUPPORTERS",
+  latex: "V_{vote} = \\frac{Pool_{max}}{N_{coord}}",
 };
 
 export const WAR_COSTS_CUMULATIVE_20YR_CURRENT_TRAJECTORY: Parameter = {
@@ -6126,6 +6148,48 @@ export const GDP_BASELINE_GROWTH_RATE: Parameter = {
   confidence: "high",
 };
 
+export const GLOBAL_COORDINATION_ACTIVATION_REWARD_PER_VERIFIED_PARTICIPANT: Parameter = {
+  value: 5.0,
+  unit: "USD",
+  displayName: "Activation Reward per Verified Participant",
+  description: "Planning midpoint for the direct cash incentive required to make a successful verified recruit materially worth sharing at global scale. Intended as a research-backed blended reward across referrer and recruit, not as the long-dated PRIZE claim value.",
+  sourceType: "definition",
+  confidence: "medium",
+  confidenceInterval: [2.0, 10.0],
+  stdError: 1.5,
+};
+
+export const GLOBAL_COORDINATION_PLATFORM_AND_OPERATIONS_COST: Parameter = {
+  value: 4000000000.0,
+  unit: "USD",
+  displayName: "Global Coordination Platform and Operations Cost",
+  description: "Fixed cost to run a global activation campaign toward 50% participation: platform buildout, localization, customer support, compliance, payout operations, fraud response, and regional launch infrastructure.",
+  sourceType: "definition",
+  confidence: "medium",
+  confidenceInterval: [2000000000.0, 8000000000.0],
+  stdError: 1500000000.0,
+};
+
+export const GLOBAL_COORDINATION_TARGET_PCT: Parameter = {
+  value: 0.5,
+  unit: "percent",
+  displayName: "Global Coordination Target",
+  description: "Modeled end-state global coordination target: half of humanity visibly supports the prize network, used in prose as roughly 90% of likely voters globally.",
+  sourceType: "definition",
+  confidence: "high",
+};
+
+export const GLOBAL_COORDINATION_VERIFICATION_AND_PAYMENT_COST_PER_PARTICIPANT: Parameter = {
+  value: 1.5,
+  unit: "USD",
+  displayName: "Verification and Payment Cost per Participant",
+  description: "Planning midpoint for non-reward variable cost per successful verified participant: identity verification, payment rails, fraud checks, support, and completion friction.",
+  sourceType: "definition",
+  confidence: "medium",
+  confidenceInterval: [1.0, 3.0],
+  stdError: 0.5,
+};
+
 export const GLOBAL_TO_US_POLITICAL_COST_RATIO: Parameter = {
   value: 5.0,
   unit: "ratio",
@@ -6512,16 +6576,6 @@ export const VICTORY_BOND_FUNDING_PCT: Parameter = {
   confidence: "high",
 };
 
-export const VOTE_PARTICIPATION_RATE: Parameter = {
-  value: 0.3,
-  unit: "percent",
-  displayName: "Expected Vote Participation Rate",
-  description: "Expected share of global population that votes over the 15-year accumulation period. Global election turnout runs 50-65% despite strictly worse incentives on every axis: hours of effort vs. 30 seconds, no financial reward vs. a token value roughly equal to global average annual income (see VOTE_TOKEN_POTENTIAL_VALUE), 1-in-30M chance of influencing outcome vs. direct payout proportional to contribution. The 30% point estimate is conservative, accounting for 15-year ramp-up, regional skepticism, and low digital infrastructure. The token value drives awareness virally and solves access barriers (people travel to villages with phones when the expected payout exceeds local annual income). Upper CI (70%) reflects a mature campaign where token incentives have driven near-universal awareness.",
-  sourceType: "definition",
-  confidence: "high",
-  confidenceInterval: [0.03, 0.7],
-};
-
 export const WISHONIA_TRAJECTORY_SUCCESS_PROBABILITY_YEAR_20: Parameter = {
   value: 0.9,
   unit: "rate",
@@ -6777,6 +6831,7 @@ export const parameters = {
   CONTRIBUTION_EV_PER_PCT_POINT_WISHONIA_BLEND,
   CONTRIBUTION_LIVES_SAVED_PER_PCT_POINT,
   CONTRIBUTION_SUFFERING_HOURS_PER_PCT_POINT,
+  CONVENTIONAL_RETIREMENT_15YR_MULTIPLE,
   CURRENT_COMBINATION_EXPLORATION_YEARS,
   CURRENT_KNOWN_SAFE_EXPLORATION_YEARS,
   CURRENT_PATIENT_PARTICIPATION_RATE,
@@ -6874,6 +6929,9 @@ export const parameters = {
   GLOBAL_AVG_HOURLY_INCOME,
   GLOBAL_AVG_INCOME_2025,
   GLOBAL_AVG_REMAINING_YEARS,
+  GLOBAL_COORDINATION_ACTIVATION_BUDGET,
+  GLOBAL_COORDINATION_ACTIVATION_COST_PER_PARTICIPANT,
+  GLOBAL_COORDINATION_TARGET_SUPPORTERS,
   GLOBAL_COST_PER_LIFE_SAVED_MED_RESEARCH_ANNUAL,
   GLOBAL_DESTRUCTIVE_ECONOMY_ANNUAL_2025,
   GLOBAL_DESTRUCTIVE_ECONOMY_PCT_GDP,
@@ -6931,12 +6989,11 @@ export const parameters = {
   PRIZE_POOL_15YR_MULTIPLE,
   PRIZE_POOL_ANNUAL_RETURN,
   PRIZE_POOL_POTENTIAL_MAX_SIZE,
-  PRIZE_POOL_TARGET_PCT_GDP,
-  PRIZE_POOL_TARGET_PCT_RETIREMENT_ASSETS,
-  PRIZE_POOL_TARGET_PCT_WEALTH,
-  PRIZE_POOL_TARGET_REQUIRED_PRINCIPAL,
+  PRIZE_POOL_RETIREMENT_EQUIVALENT_PRINCIPAL,
   RECOVERY_TRIAL_COST_REDUCTION_FACTOR,
   RECOVERY_TRIAL_TOTAL_QALYS_GENERATED,
+  RETIREMENT_EQUIVALENT_2_CLAIMS_TARGET_PAYOUT,
+  RETIREMENT_EQUIVALENT_CLAIM_VALUE_TARGET,
   SHARING_BREAKEVEN_ONE_IN_TREATY,
   SHARING_BREAKEVEN_PROBABILITY_TREATY,
   SHARING_OPPORTUNITY_COST,
@@ -7016,7 +7073,6 @@ export const parameters = {
   VOTER_LIVES_SAVED,
   VOTER_SUFFERING_HOURS_PREVENTED,
   VOTE_2_CLAIMS_PAYOUT,
-  VOTE_EXPECTED_PARTICIPANTS,
   VOTE_TOKEN_POTENTIAL_VALUE,
   WAR_COSTS_CUMULATIVE_20YR_CURRENT_TRAJECTORY,
   WAR_COSTS_SAVED_PEACE_TRAJECTORY_20YR,
@@ -7113,6 +7169,10 @@ export const parameters = {
   FAMILY_OFFICE_INVESTMENT_MIN,
   FUNDAMENTALLY_UNAVOIDABLE_DEATH_PCT,
   GDP_BASELINE_GROWTH_RATE,
+  GLOBAL_COORDINATION_ACTIVATION_REWARD_PER_VERIFIED_PARTICIPANT,
+  GLOBAL_COORDINATION_PLATFORM_AND_OPERATIONS_COST,
+  GLOBAL_COORDINATION_TARGET_PCT,
+  GLOBAL_COORDINATION_VERIFICATION_AND_PAYMENT_COST_PER_PARTICIPANT,
   GLOBAL_TO_US_POLITICAL_COST_RATIO,
   HOURS_PER_DAY,
   HOURS_PER_YEAR,
@@ -7155,7 +7215,6 @@ export const parameters = {
   US_VS_SWITZERLAND_LIFE_EXPECTANCY_GAP,
   US_VS_SWITZERLAND_SPENDING_GAP,
   VICTORY_BOND_FUNDING_PCT,
-  VOTE_PARTICIPATION_RATE,
   WISHONIA_TRAJECTORY_SUCCESS_PROBABILITY_YEAR_20,
   _CASCADE_GENERATIONS,
   _R0,
@@ -9100,10 +9159,10 @@ export const citations: Record<string, Citation> = {
 
 /** Summary statistics */
 export const PARAMETER_STATS = {
-  total: 608,
+  total: 613,
   external: 204,
-  calculated: 283,
-  definitions: 121,
+  calculated: 285,
+  definitions: 124,
   citations: 142,
 } as const;
 

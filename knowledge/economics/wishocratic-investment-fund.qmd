@@ -21,6 +21,8 @@ Depositors [wishocratically](../solution/wishocracy.qmd) allocate capital via pa
 
 This chapter is the canonical pool-growth model used by the prize math.
 
+But it is not the first institutional check the papers should ask for. The first check is activation underwriting: enough capital to make mass participation and recruitment credible. This chapter explains the later-scale thesis for why much larger pools should join once the network is publicly legible.
+
 ## Why the Baseline Is Venture, Not Public Equity
 
 Ninety-nine percent of humans are legally locked out of the best-performing asset class. Venture capital and private equity produce {{< var venture_gross_return >}} gross annual returns [@cambridge-pe-vc-benchmark-2024]. Your retirement fund produces {{< var conventional_retirement_return >}} after fees. The difference is not skill. It is a door marked "accredited investors only" that keeps {{< var global_retirement_assets >}} trapped in index funds that track yesterday's winners.
@@ -37,6 +39,8 @@ Two things that sound like separate alpha sources are already IN this baseline:
 ## Scale: What Happens When You 15x the Venture Market
 
 Current global VC deployment is roughly $300 billion per year. If a meaningful share of {{< var global_retirement_assets >}} flows through the wishocratic fund, deployment rises to roughly $4.7 trillion per year. That is a 15x expansion of the venture market.
+
+That is the end-state scale vision, not the opening ask to a board. The opening ask is to underwrite activation and seed credibility. The scale-capital case matters once the network is visibly real enough that pensions, endowments, foundations, and family offices can justify reallocating serious capital into it.
 
 Diminishing returns are real. More capital chasing deals compresses returns: {{< var scale_compression_factor >}} in the model.
 
@@ -140,5 +144,7 @@ The accreditation wall was built to "protect" small investors from risky investm
 The fund does not bet on whether targets get hit. It funds hitting them.
 
 A conventional investment fund analyzes whether a company will succeed and bets accordingly. The wishocratic fund allocates capital to companies that cure diseases, build infrastructure, and raise incomes, which ARE the prize targets. If the fund allocates well, the targets get hit. If the targets get hit, the same realized pool routes to VOTE claimants. If the targets do not get hit, depositors divide that same realized pool pro rata.
+
+In the canonical prize framing, the first institutional question is whether {{< var global_coordination_activation_budget >}} can make mass participation credible. The secondary visible-pool question is whether {{< var prize_pool_retirement_equivalent_principal >}} can make two referred votes worth {{< var retirement_equivalent_2_claims_target_payout >}} on success for a representative saver.
 
 This is not circular. It is a positive feedback loop with a clear entry point: deposit, allocate wisely, the world improves, you get paid. The circularity objection assumes the fund is passive. The fund is the largest active capital allocator in human history, pointed at two numbers that everyone agrees on.

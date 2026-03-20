@@ -5698,7 +5698,7 @@ GLOBAL_ANNUAL_SAVINGS = Parameter(
     latex_symbol=r"S_{annual}",
 )
 
-# Moved here from IAB PAPER PARAMETERS section to resolve forward reference in PRIZE_POOL_TARGET_PCT_WEALTH
+# Moved here from IAB PAPER PARAMETERS section to keep wealth inputs available for downstream calculations
 GLOBAL_HOUSEHOLD_WEALTH_USD = Parameter(
     454e12,
     source_ref=ReferenceID.CS_GLOBAL_WEALTH_REPORT_2023,
@@ -7611,41 +7611,6 @@ HEALTHCARE_VS_MILITARY_MULTIPLIER_RATIO = Parameter(
     latex_symbol=r"r_{health/mil}",
 )
 
-# ── Expected Voters: How many people actually vote? ──────────────────────────
-VOTE_PARTICIPATION_RATE = Parameter(
-    0.30,
-    source_type="definition",
-    description="Expected share of global population that votes over the 15-year accumulation period. "
-                "Global election turnout runs 50-65% despite strictly worse incentives on every axis: "
-                "hours of effort vs. 30 seconds, no financial reward vs. a token value roughly equal to "
-                "global average annual income (see VOTE_TOKEN_POTENTIAL_VALUE), "
-                "1-in-30M chance of influencing outcome vs. direct payout proportional to contribution. "
-                "The 30% point estimate is conservative, accounting for 15-year ramp-up, regional skepticism, "
-                "and low digital infrastructure. The token value drives awareness virally and solves "
-                "access barriers (people travel to villages with phones when the expected payout exceeds local annual income). "
-                "Upper CI (70%) reflects a mature campaign where token incentives have driven near-universal awareness.",
-    display_name="Expected Vote Participation Rate",
-    unit="percent",
-    confidence_interval=(0.03, 0.70),
-    distribution="beta",
-    keywords=["vote", "participation", "turnout", "funnel", "voter", "rate"],
-    latex_symbol=r"R_{vote}",
-)
-
-VOTE_EXPECTED_PARTICIPANTS = Parameter(
-    GLOBAL_POPULATION_2024 * VOTE_PARTICIPATION_RATE,
-    source_type="calculated",
-    description="Expected number of people who vote over the accumulation period (global population × participation rate). "
-                "At the 30% point estimate, 2.4B voters exceed the Chenoweth passage threshold (280M) by ~8×.",
-    display_name="Expected Number of Voters",
-    unit="of people",
-    formula="GLOBAL_POPULATION_2024 × VOTE_PARTICIPATION_RATE",
-    inputs=["GLOBAL_POPULATION_2024", "VOTE_PARTICIPATION_RATE"],
-    compute=lambda ctx: ctx["GLOBAL_POPULATION_2024"] * ctx["VOTE_PARTICIPATION_RATE"],
-    keywords=["vote", "expected", "participants", "voters", "total"],
-    latex_symbol=r"N_{voters,expected}",
-)
-
 GLOBAL_POPULATION_ACTIVISM_THRESHOLD_PCT = Parameter(
     0.035,
     source_ref=ReferenceID.N3_5_RULE,
@@ -7832,6 +7797,20 @@ CONVENTIONAL_RETIREMENT_RETURN = Parameter(
     latex_symbol=r"r_{retire}",
 )
 
+CONVENTIONAL_RETIREMENT_15YR_MULTIPLE = Parameter(
+    (1 + float(CONVENTIONAL_RETIREMENT_RETURN)) ** float(PRIZE_POOL_RESOLUTION_YEARS),
+    source_type="calculated",
+    description="15-year compound multiple for conventional retirement investing over the PRIZE pool resolution horizon.",
+    display_name="Conventional Retirement 15-Year Multiple",
+    unit="x",
+    formula="(1 + CONVENTIONAL_RETIREMENT_RETURN) ^ PRIZE_POOL_RESOLUTION_YEARS",
+    latex=r"M_{retire} = (1 + r_{retire})^{T_{pool}}",
+    inputs=["CONVENTIONAL_RETIREMENT_RETURN", "PRIZE_POOL_RESOLUTION_YEARS"],
+    compute=lambda ctx: (1 + ctx["CONVENTIONAL_RETIREMENT_RETURN"]) ** float(ctx["PRIZE_POOL_RESOLUTION_YEARS"]),
+    keywords=["retirement", "conventional", "multiple", "15 year", "compound"],
+    latex_symbol=r"M_{retire}",
+)
+
 # --- Calculated: crowd allocation alpha ---
 
 WISHOCRATIC_CROWD_ALPHA = Parameter(
@@ -7898,85 +7877,184 @@ PRIZE_POOL_POTENTIAL_MAX_SIZE = Parameter(
     latex_symbol=r"Pool_{max}",
 )
 
-PRIZE_POOL_TARGET_REQUIRED_PRINCIPAL = Parameter(
-    float(POLITICAL_DYSFUNCTION_GLOBAL_OPPORTUNITY_COST_TOTAL) / float(PRIZE_POOL_15YR_MULTIPLE),
+GLOBAL_COORDINATION_TARGET_PCT = Parameter(
+    0.50,
+    source_type="definition",
+    description="Modeled end-state global coordination target: half of humanity visibly supports the prize network, "
+                "used in prose as roughly 90% of likely voters globally.",
+    display_name="Global Coordination Target",
+    unit="percent",
+    distribution="fixed",
+    keywords=["coordination", "global", "support", "target", "50 percent", "90 percent voters"],
+    latex_symbol=r"R_{coord}",
+)
+
+GLOBAL_COORDINATION_TARGET_SUPPORTERS = Parameter(
+    float(GLOBAL_POPULATION_2024) * float(GLOBAL_COORDINATION_TARGET_PCT),
     source_type="calculated",
-    description="Required initial principal for the PRIZE pool to reach one year of the dysfunction-tax target "
-                "by the resolution date under the canonical fund-growth model.",
-    display_name="PRIZE Pool Target Required Principal",
+    description="Number of people implied by the modeled end-state global coordination target "
+                "(global population × 50%).",
+    display_name="Global Coordination Target Supporters",
+    unit="of people",
+    formula="GLOBAL_POPULATION_2024 × GLOBAL_COORDINATION_TARGET_PCT",
+    latex=r"N_{coord} = N_{global} \times R_{coord}",
+    inputs=["GLOBAL_POPULATION_2024", "GLOBAL_COORDINATION_TARGET_PCT"],
+    compute=lambda ctx: ctx["GLOBAL_POPULATION_2024"] * ctx["GLOBAL_COORDINATION_TARGET_PCT"],
+    keywords=["coordination", "supporters", "global", "target", "humanity"],
+    latex_symbol=r"N_{coord}",
+)
+
+GLOBAL_COORDINATION_ACTIVATION_REWARD_PER_VERIFIED_PARTICIPANT = Parameter(
+    5.0,
+    source_type="definition",
+    description="Planning midpoint for the direct cash incentive required to make a successful verified recruit "
+                "materially worth sharing at global scale. Intended as a research-backed blended reward across "
+                "referrer and recruit, not as the long-dated PRIZE claim value.",
+    display_name="Activation Reward per Verified Participant",
     unit="USD",
-    formula="POLITICAL_DYSFUNCTION_GLOBAL_OPPORTUNITY_COST_TOTAL / PRIZE_POOL_15YR_MULTIPLE",
-    latex=r"P_{required} = \frac{O_{total}}{M_{pool}}",
-    inputs=["POLITICAL_DYSFUNCTION_GLOBAL_OPPORTUNITY_COST_TOTAL", "PRIZE_POOL_15YR_MULTIPLE"],
-    compute=lambda ctx: ctx["POLITICAL_DYSFUNCTION_GLOBAL_OPPORTUNITY_COST_TOTAL"] / ctx["PRIZE_POOL_15YR_MULTIPLE"],
-    keywords=["prize", "pool", "target", "required", "principal", "dysfunction"],
-    latex_symbol=r"P_{required}",
+    confidence="medium",
+    confidence_interval=(2.0, 10.0),
+    std_error=1.5,
+    distribution="normal",
+    validation_min=2.0,
+    validation_max=10.0,
+    keywords=["activation", "reward", "verified participant", "referral", "coordination", "cash incentive"],
+    latex_symbol=r"R_{activate}",
 )
 
-PRIZE_POOL_TARGET_PCT_RETIREMENT_ASSETS = Parameter(
-    float(PRIZE_POOL_TARGET_REQUIRED_PRINCIPAL) / float(GLOBAL_RETIREMENT_ASSETS),
+GLOBAL_COORDINATION_VERIFICATION_AND_PAYMENT_COST_PER_PARTICIPANT = Parameter(
+    1.5,
+    source_type="definition",
+    description="Planning midpoint for non-reward variable cost per successful verified participant: identity "
+                "verification, payment rails, fraud checks, support, and completion friction.",
+    display_name="Verification and Payment Cost per Participant",
+    unit="USD",
+    confidence="medium",
+    confidence_interval=(1.0, 3.0),
+    std_error=0.5,
+    distribution="normal",
+    validation_min=1.0,
+    validation_max=3.0,
+    keywords=["activation", "verification", "payment", "cost", "participant", "fraud", "identity"],
+    latex_symbol=r"C_{verify,pp}",
+)
+
+GLOBAL_COORDINATION_PLATFORM_AND_OPERATIONS_COST = Parameter(
+    4_000_000_000,
+    source_type="definition",
+    description="Fixed cost to run a global activation campaign toward 50% participation: platform buildout, "
+                "localization, customer support, compliance, payout operations, fraud response, and regional launch infrastructure.",
+    display_name="Global Coordination Platform and Operations Cost",
+    unit="USD",
+    confidence="medium",
+    confidence_interval=(2_000_000_000, 8_000_000_000),
+    std_error=1_500_000_000,
+    distribution="normal",
+    validation_min=2_000_000_000,
+    validation_max=8_000_000_000,
+    keywords=["activation", "platform", "operations", "global", "campaign", "infrastructure"],
+    latex_symbol=r"C_{ops}",
+)
+
+GLOBAL_COORDINATION_ACTIVATION_COST_PER_PARTICIPANT = Parameter(
+    float(GLOBAL_COORDINATION_ACTIVATION_REWARD_PER_VERIFIED_PARTICIPANT) + float(GLOBAL_COORDINATION_VERIFICATION_AND_PAYMENT_COST_PER_PARTICIPANT),
     source_type="calculated",
-    description="Required initial principal as a share of global retirement assets to reach "
-                "one year of the dysfunction-tax target by the resolution date.",
-    display_name="PRIZE Pool Target as % of Retirement Assets",
-    unit="percent",
-    formula="PRIZE_POOL_TARGET_REQUIRED_PRINCIPAL / GLOBAL_RETIREMENT_ASSETS",
-    inputs=["PRIZE_POOL_TARGET_REQUIRED_PRINCIPAL", "GLOBAL_RETIREMENT_ASSETS"],
-    compute=lambda ctx: ctx["PRIZE_POOL_TARGET_REQUIRED_PRINCIPAL"] / ctx["GLOBAL_RETIREMENT_ASSETS"],
-    keywords=["prize", "pool", "retirement", "assets", "share", "feasibility"],
-    latex_symbol=r"d_{retire}",
+    description="Blended variable activation cost per successful verified participant: direct incentive plus "
+                "verification and payment operations.",
+    display_name="Activation Cost per Participant",
+    unit="USD",
+    formula="GLOBAL_COORDINATION_ACTIVATION_REWARD_PER_VERIFIED_PARTICIPANT + GLOBAL_COORDINATION_VERIFICATION_AND_PAYMENT_COST_PER_PARTICIPANT",
+    latex=r"C_{activate,pp} = R_{activate} + C_{verify,pp}",
+    inputs=["GLOBAL_COORDINATION_ACTIVATION_REWARD_PER_VERIFIED_PARTICIPANT", "GLOBAL_COORDINATION_VERIFICATION_AND_PAYMENT_COST_PER_PARTICIPANT"],
+    compute=lambda ctx: ctx["GLOBAL_COORDINATION_ACTIVATION_REWARD_PER_VERIFIED_PARTICIPANT"] + ctx["GLOBAL_COORDINATION_VERIFICATION_AND_PAYMENT_COST_PER_PARTICIPANT"],
+    keywords=["activation", "cost per participant", "verified participant", "coordination", "referral"],
+    latex_symbol=r"C_{activate,pp}",
 )
 
-PRIZE_POOL_TARGET_PCT_GDP = Parameter(
-    float(PRIZE_POOL_TARGET_REQUIRED_PRINCIPAL) / float(GLOBAL_GDP_2025),
+GLOBAL_COORDINATION_ACTIVATION_BUDGET = Parameter(
+    float(GLOBAL_COORDINATION_TARGET_SUPPORTERS) * float(GLOBAL_COORDINATION_ACTIVATION_COST_PER_PARTICIPANT) + float(GLOBAL_COORDINATION_PLATFORM_AND_OPERATIONS_COST),
     source_type="calculated",
-    description="Required initial principal as a share of global GDP to reach one year of the dysfunction-tax target "
-                "by the resolution date.",
-    display_name="PRIZE Pool Target as % of Global GDP",
-    unit="percent",
-    formula="PRIZE_POOL_TARGET_REQUIRED_PRINCIPAL / GLOBAL_GDP_2025",
-    inputs=["PRIZE_POOL_TARGET_REQUIRED_PRINCIPAL", "GLOBAL_GDP_2025"],
-    compute=lambda ctx: ctx["PRIZE_POOL_TARGET_REQUIRED_PRINCIPAL"] / ctx["GLOBAL_GDP_2025"],
-    keywords=["prize", "pool", "GDP", "share", "feasibility"],
-    latex_symbol=r"d_{GDP}",
+    description="Canonical institutional activation threshold: capital required to make 50% participation "
+                "credible through direct referral incentives, verification, payment rails, and global launch operations. "
+                "This is the main institutional ask, not the PRIZE pool seed benchmark.",
+    display_name="Global Coordination Activation Budget",
+    unit="USD",
+    formula="GLOBAL_COORDINATION_TARGET_SUPPORTERS × GLOBAL_COORDINATION_ACTIVATION_COST_PER_PARTICIPANT + GLOBAL_COORDINATION_PLATFORM_AND_OPERATIONS_COST",
+    latex=r"B_{activate} = N_{coord} \times C_{activate,pp} + C_{ops}",
+    inputs=["GLOBAL_COORDINATION_TARGET_SUPPORTERS", "GLOBAL_COORDINATION_ACTIVATION_COST_PER_PARTICIPANT", "GLOBAL_COORDINATION_PLATFORM_AND_OPERATIONS_COST"],
+    compute=lambda ctx: ctx["GLOBAL_COORDINATION_TARGET_SUPPORTERS"] * ctx["GLOBAL_COORDINATION_ACTIVATION_COST_PER_PARTICIPANT"] + ctx["GLOBAL_COORDINATION_PLATFORM_AND_OPERATIONS_COST"],
+    keywords=["activation", "budget", "coordination", "institutional", "referral", "verification", "50 percent"],
+    latex_symbol=r"B_{activate}",
 )
 
-PRIZE_POOL_TARGET_PCT_WEALTH = Parameter(
-    float(PRIZE_POOL_TARGET_REQUIRED_PRINCIPAL) / float(GLOBAL_HOUSEHOLD_WEALTH_USD),
+RETIREMENT_EQUIVALENT_2_CLAIMS_TARGET_PAYOUT = Parameter(
+    float(GLOBAL_ANNUAL_SAVINGS_PER_CAPITA) * float(CONVENTIONAL_RETIREMENT_15YR_MULTIPLE),
     source_type="calculated",
-    description="Required initial principal as a share of global household wealth to reach "
-                "one year of the dysfunction-tax target by the resolution date.",
-    display_name="PRIZE Pool Target as % of Household Wealth",
-    unit="percent",
-    formula="PRIZE_POOL_TARGET_REQUIRED_PRINCIPAL / GLOBAL_HOUSEHOLD_WEALTH_USD",
-    inputs=["PRIZE_POOL_TARGET_REQUIRED_PRINCIPAL", "GLOBAL_HOUSEHOLD_WEALTH_USD"],
-    compute=lambda ctx: ctx["PRIZE_POOL_TARGET_REQUIRED_PRINCIPAL"] / ctx["GLOBAL_HOUSEHOLD_WEALTH_USD"],
-    keywords=["prize", "pool", "wealth", "share", "feasibility"],
-    latex_symbol=r"d_{wealth}",
+    description="Target success-side payout for two referred votes: what one representative annual savings contribution "
+                "would become in a conventional retirement account by PRIZE resolution.",
+    display_name="Retirement-Equivalent 2-Claims Target Payout",
+    unit="USD",
+    formula="GLOBAL_ANNUAL_SAVINGS_PER_CAPITA × CONVENTIONAL_RETIREMENT_15YR_MULTIPLE",
+    latex=r"V_{2claims,target} = S_{annual,pc} \times M_{retire}",
+    inputs=["GLOBAL_ANNUAL_SAVINGS_PER_CAPITA", "CONVENTIONAL_RETIREMENT_15YR_MULTIPLE"],
+    compute=lambda ctx: ctx["GLOBAL_ANNUAL_SAVINGS_PER_CAPITA"] * ctx["CONVENTIONAL_RETIREMENT_15YR_MULTIPLE"],
+    keywords=["retirement", "equivalent", "2 claims", "payout", "annual savings", "target"],
+    latex_symbol=r"V_{2claims,target}",
 )
 
-# VOTE token value (potential max pool ÷ expected participants)
+RETIREMENT_EQUIVALENT_CLAIM_VALUE_TARGET = Parameter(
+    float(RETIREMENT_EQUIVALENT_2_CLAIMS_TARGET_PAYOUT) / 2,
+    source_type="calculated",
+    description="Target value of one referred-voter claim when two claims are meant to match the conventional-retirement "
+                "future value of one representative annual savings contribution.",
+    display_name="Retirement-Equivalent Claim Value Target",
+    unit="USD",
+    formula="RETIREMENT_EQUIVALENT_2_CLAIMS_TARGET_PAYOUT / 2",
+    latex=r"V_{claim,target} = \frac{V_{2claims,target}}{2}",
+    inputs=["RETIREMENT_EQUIVALENT_2_CLAIMS_TARGET_PAYOUT"],
+    compute=lambda ctx: ctx["RETIREMENT_EQUIVALENT_2_CLAIMS_TARGET_PAYOUT"] / 2,
+    keywords=["retirement", "equivalent", "claim", "value", "target", "referred voter"],
+    latex_symbol=r"V_{claim,target}",
+)
+
+PRIZE_POOL_RETIREMENT_EQUIVALENT_PRINCIPAL = Parameter(
+    float(GLOBAL_COORDINATION_TARGET_SUPPORTERS) * float(RETIREMENT_EQUIVALENT_CLAIM_VALUE_TARGET) / float(PRIZE_POOL_15YR_MULTIPLE),
+    source_type="calculated",
+    description="Secondary PRIZE seed benchmark: initial principal required so that the pool can make two referred votes "
+                "retirement-equivalent on success at the modeled global coordination target. This is a stronger-incentive "
+                "visible-pool benchmark, not the minimum capital required to make 50% participation credible.",
+    display_name="PRIZE Pool Retirement-Equivalent Principal",
+    unit="USD",
+    formula="GLOBAL_COORDINATION_TARGET_SUPPORTERS × RETIREMENT_EQUIVALENT_CLAIM_VALUE_TARGET / PRIZE_POOL_15YR_MULTIPLE",
+    latex=r"P_{retire-eq} = \frac{N_{coord} \times V_{claim,target}}{M_{pool}}",
+    inputs=["GLOBAL_COORDINATION_TARGET_SUPPORTERS", "RETIREMENT_EQUIVALENT_CLAIM_VALUE_TARGET", "PRIZE_POOL_15YR_MULTIPLE"],
+    compute=lambda ctx: ctx["GLOBAL_COORDINATION_TARGET_SUPPORTERS"] * ctx["RETIREMENT_EQUIVALENT_CLAIM_VALUE_TARGET"] / ctx["PRIZE_POOL_15YR_MULTIPLE"],
+    keywords=["prize", "pool", "retirement equivalent", "principal", "seed", "benchmark", "deposit"],
+    latex_symbol=r"P_{retire-eq}",
+)
+
+# VOTE token value (potential max pool ÷ coordination-target supporters)
 VOTE_TOKEN_POTENTIAL_VALUE = Parameter(
-    float(PRIZE_POOL_POTENTIAL_MAX_SIZE) / float(VOTE_EXPECTED_PARTICIPANTS),
+    float(PRIZE_POOL_POTENTIAL_MAX_SIZE) / float(GLOBAL_COORDINATION_TARGET_SUPPORTERS),
     source_type="calculated",
     description="Potential value of a single VOTE claim if the PRIZE pool reaches its canonical "
-                "potential max size. Denominator is expected participants (30% of global population), "
-                "not the Chenoweth passage threshold.",
+                "potential max size. Denominator is the modeled global coordination target, not the lower forecast participation path.",
     display_name="VOTE Token Potential Value",
     unit="USD",
-    formula="PRIZE_POOL_POTENTIAL_MAX_SIZE / VOTE_EXPECTED_PARTICIPANTS",
-    latex=r"V_{vote} = \frac{Pool_{max}}{N_{voters,expected}}",
-    inputs=["PRIZE_POOL_POTENTIAL_MAX_SIZE", "VOTE_EXPECTED_PARTICIPANTS"],
-    compute=lambda ctx: ctx["PRIZE_POOL_POTENTIAL_MAX_SIZE"] / ctx["VOTE_EXPECTED_PARTICIPANTS"],
+    formula="PRIZE_POOL_POTENTIAL_MAX_SIZE / GLOBAL_COORDINATION_TARGET_SUPPORTERS",
+    latex=r"V_{vote} = \frac{Pool_{max}}{N_{coord}}",
+    inputs=["PRIZE_POOL_POTENTIAL_MAX_SIZE", "GLOBAL_COORDINATION_TARGET_SUPPORTERS"],
+    compute=lambda ctx: ctx["PRIZE_POOL_POTENTIAL_MAX_SIZE"] / ctx["GLOBAL_COORDINATION_TARGET_SUPPORTERS"],
     keywords=["vote", "token", "value", "prize", "pool", "incentive", "recruitment"],
     latex_symbol=r"V_{vote}",
 )
 
 VOTE_2_CLAIMS_PAYOUT = Parameter(
-    2 * float(PRIZE_POOL_POTENTIAL_MAX_SIZE) / float(VOTE_EXPECTED_PARTICIPANTS),
+    2 * float(PRIZE_POOL_POTENTIAL_MAX_SIZE) / float(GLOBAL_COORDINATION_TARGET_SUPPORTERS),
     source_type="calculated",
     description="Potential payout for a depositor who recruits 2 verified participants "
-                "(earning 2 VOTE claims) if the PRIZE pool reaches its canonical potential max size.",
+                "(earning 2 VOTE claims) if the PRIZE pool reaches its canonical potential max size. "
+                "This is a recruiter example, not the system-wide average claim denominator.",
     display_name="VOTE Payout for 2 Claims",
     unit="USD",
     formula="2 × VOTE_TOKEN_POTENTIAL_VALUE",
@@ -10658,7 +10736,7 @@ US_MAJOR_DISEASES_TOTAL_ANNUAL_COST = Parameter(
 # ---
 # IAB PAPER PARAMETERS
 # ---
-# NOTE: GLOBAL_HOUSEHOLD_WEALTH_USD moved earlier (before PRIZE_POOL_TARGET_PCT_WEALTH) to resolve forward reference
+# NOTE: GLOBAL_HOUSEHOLD_WEALTH_USD is defined earlier to avoid forward-reference issues in downstream calculations
 
 CONCENTRATED_INTEREST_SECTOR_MARKET_CAP_USD = Parameter(
     5e12,

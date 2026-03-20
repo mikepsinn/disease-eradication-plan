@@ -678,7 +678,12 @@ def main():
     logger.debug("[*] Generating TypeScript survey file...")
     survey_json = project_root / "_analysis" / "economist-survey.json"
     ts_survey_output = project_root / "dih_models" / "economist-survey.ts"
-    generate_typescript_survey(survey_json_path=survey_json, output_path=ts_survey_output)
+    if survey_json.exists():
+        generate_typescript_survey(survey_json_path=survey_json, output_path=ts_survey_output)
+    else:
+        logger.debug(
+            f"[*] Skipping TypeScript survey file: optional {survey_json.relative_to(project_root)} not found"
+        )
 
     # Always generate uncertainty outputs when module is available
     if simulate is not None:

@@ -38,15 +38,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 333 parameters used in the analysis, organized by type:
+This appendix documents all 357 parameters used in the analysis, organized by type:
 
-- External sources (peer-reviewed): 127
-- Calculated values: 157
-- Core definitions: 49
+- External sources (peer-reviewed): 132
+- Calculated values: 170
+- Core definitions: 55
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (157 parameters) • [External Data Sources](#sec-external) (127 parameters) • [Core Definitions](#sec-definitions) (49 parameters)
+[Calculated Values](#sec-calculated) (170 parameters) • [External Data Sources](#sec-external) (132 parameters) • [Core Definitions](#sec-definitions) (55 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -317,6 +317,39 @@ Unique pairwise drug combinations from known safe compounds (n choose 2)
 #### Sensitivity Analysis
 
 {{< include ../figures/tornado-combination_therapy_pairs.qmd >}}
+
+:::
+
+### Conventional Retirement 15-Year Multiple: 2.57x {#sec-conventional_retirement_15yr_multiple}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+15-year compound multiple for conventional retirement investing over the PRIZE pool resolution horizon.
+
+**Inputs**:
+
+- [Conventional Retirement Return (After Fees)](#sec-conventional_retirement_return) 📊: 6.5% (95% CI: 5% - 8%)
+- [PRIZE Pool Resolution Horizon](#sec-prize_pool_resolution_years): 15 years
+
+$$
+M_{retire} = (1 + r_{retire})^{T_{pool}}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-conventional_retirement_15yr_multiple.qmd >}}
+
+{{< include ../figures/sensitivity-table-conventional_retirement_15yr_multiple.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-conventional_retirement_15yr_multiple.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-conventional_retirement_15yr_multiple.qmd >}}
 
 :::
 
@@ -3933,6 +3966,90 @@ $$
 
 :::
 
+### Global Annual Savings: $31.1T {#sec-global_annual_savings}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Global annual savings in USD (savings rate × GDP)
+
+**Inputs**:
+
+- [Global Gross Savings Rate](#sec-global_savings_rate_pct) 📊: 27% (95% CI: 24% - 30%)
+- [Global GDP (2025)](#sec-global_gdp_2025) 📊: $115T
+
+$$
+\begin{gathered}
+S_{annual} \\
+= s_{global} \times GDP_{global} \\
+= 27\% \times \$115T \\
+= \$31.1T
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-global_annual_savings.qmd >}}
+
+{{< include ../figures/sensitivity-table-global_annual_savings.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-global_annual_savings.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-global_annual_savings.qmd >}}
+
+:::
+
+### Global Annual Savings Per Capita: $3.88K {#sec-global_annual_savings_per_capita}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Global annual savings divided by global population. Useful as a rough average-person default for prize-contribution sizing.
+
+**Inputs**:
+
+- [Global Annual Savings](#sec-global_annual_savings) 🔢: $31.1T
+- [Global Population in 2024](#sec-global_population_2024) 📊: 8 billion of people (95% CI: 7.8 billion of people - 8.2 billion of people)
+
+$$
+\begin{gathered}
+S_{annual,pc} \\
+= \frac{S_{annual}}{Pop_{global}} \\
+= \frac{\$31.1T}{8B} \\
+= \$3.88K
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+S_{annual} \\
+= s_{global} \times GDP_{global} \\
+= 27\% \times \$115T \\
+= \$31.1T
+\end{gathered}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-global_annual_savings_per_capita.qmd >}}
+
+{{< include ../figures/sensitivity-table-global_annual_savings_per_capita.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-global_annual_savings_per_capita.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-global_annual_savings_per_capita.qmd >}}
+
+:::
+
 ### Total Annual Trade Disruption: $616B {#sec-global_annual_trade_disruption_conflict}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -4233,6 +4350,106 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-global_avg_remaining_years.qmd >}}
+
+:::
+
+### Global Coordination Activation Budget: $30B {#sec-global_coordination_activation_budget}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Canonical institutional activation threshold: capital required to make 50% participation credible through direct referral incentives, verification, payment rails, and global launch operations. This is the main institutional ask, not the PRIZE pool seed benchmark.
+
+**Inputs**:
+
+- [Global Coordination Target Supporters](#sec-global_coordination_target_supporters) 🔢: 4 billion of people
+- [Activation Cost per Participant](#sec-global_coordination_activation_cost_per_participant) 🔢: $6.5
+- [Global Coordination Platform and Operations Cost](#sec-global_coordination_platform_and_operations_cost): $4B (95% CI: $2B - $8B)
+
+$$
+B_{activate} = N_{coord} \times C_{activate,pp} + C_{ops}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-global_coordination_activation_budget.qmd >}}
+
+{{< include ../figures/sensitivity-table-global_coordination_activation_budget.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-global_coordination_activation_budget.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-global_coordination_activation_budget.qmd >}}
+
+:::
+
+### Activation Cost per Participant: $6.5 {#sec-global_coordination_activation_cost_per_participant}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Blended variable activation cost per successful verified participant: direct incentive plus verification and payment operations.
+
+**Inputs**:
+
+- [Activation Reward per Verified Participant](#sec-global_coordination_activation_reward_per_verified_participant): $5 (95% CI: $2 - $10)
+- [Verification and Payment Cost per Participant](#sec-global_coordination_verification_and_payment_cost_per_participant): $1.5 (95% CI: $1 - $3)
+
+$$
+C_{activate,pp} = R_{activate} + C_{verify,pp}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-global_coordination_activation_cost_per_participant.qmd >}}
+
+{{< include ../figures/sensitivity-table-global_coordination_activation_cost_per_participant.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-global_coordination_activation_cost_per_participant.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-global_coordination_activation_cost_per_participant.qmd >}}
+
+:::
+
+### Global Coordination Target Supporters: 4 billion of people {#sec-global_coordination_target_supporters}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Number of people implied by the modeled end-state global coordination target (global population × 50%).
+
+**Inputs**:
+
+- [Global Population in 2024](#sec-global_population_2024) 📊: 8 billion of people (95% CI: 7.8 billion of people - 8.2 billion of people)
+- [Global Coordination Target](#sec-global_coordination_target_pct): 50%
+
+$$
+N_{coord} = N_{global} \times R_{coord}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-global_coordination_target_supporters.qmd >}}
+
+{{< include ../figures/sensitivity-table-global_coordination_target_supporters.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-global_coordination_target_supporters.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-global_coordination_target_supporters.qmd >}}
 
 :::
 
@@ -5289,6 +5506,148 @@ $$
 
 :::
 
+### PRIZE Pool 15-Year Multiple: 11.1x {#sec-prize_pool_15yr_multiple}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Canonical 15-year compound multiple used for PRIZE pool growth over the PRIZE pool resolution horizon.
+
+**Inputs**:
+
+- [PRIZE Pool Annual Return](#sec-prize_pool_annual_return) 🔢: 17.4%
+- [PRIZE Pool Resolution Horizon](#sec-prize_pool_resolution_years): 15 years
+
+$$
+M_{pool} = (1 + r_{pool})^{T_{pool}}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-prize_pool_15yr_multiple.qmd >}}
+
+{{< include ../figures/sensitivity-table-prize_pool_15yr_multiple.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-prize_pool_15yr_multiple.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-prize_pool_15yr_multiple.qmd >}}
+
+:::
+
+### PRIZE Pool Annual Return: 17.4% {#sec-prize_pool_annual_return}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Canonical annual return used for PRIZE pool growth. Venture gross return + scale compression + crowd allocation alpha + home bias elimination. This is the structural pool return before contingent macro feedback loops.
+
+**Inputs**:
+
+- [Venture Capital Gross Return](#sec-venture_gross_return) 📊: 17% (95% CI: 13% - 22%)
+- [Scale Compression Factor](#sec-scale_compression_factor): -2.5% (95% CI: -5% - -1%)
+- [Wishocratic Crowd Allocation Alpha](#sec-wishocratic_crowd_alpha) 🔢: 2.08%
+- [Home Bias Return Drag](#sec-home_bias_alpha) 📊: 0.8% (95% CI: 0.3% - 1.5%)
+
+$$
+\begin{gathered}
+r_{pool} \\
+= r_{VC,gross} + \Delta r_{scale} + \alpha_{crowd} \\
++ \alpha_{home}
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-prize_pool_annual_return.qmd >}}
+
+{{< include ../figures/sensitivity-table-prize_pool_annual_return.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-prize_pool_annual_return.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-prize_pool_annual_return.qmd >}}
+
+:::
+
+### PRIZE Pool Potential Max Size: $774T {#sec-prize_pool_potential_max_size}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Potential maximum terminal PRIZE pool size if the global retirement asset base compounds through the wishocratic fund over the resolution horizon.
+
+**Inputs**:
+
+- [Global Retirement Assets](#sec-global_retirement_assets) 📊: $70T
+- [PRIZE Pool 15-Year Multiple](#sec-prize_pool_15yr_multiple) 🔢: 11.1x
+
+$$
+Pool_{max} = Assets_{retire} \times M_{pool}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-prize_pool_potential_max_size.qmd >}}
+
+{{< include ../figures/sensitivity-table-prize_pool_potential_max_size.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-prize_pool_potential_max_size.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-prize_pool_potential_max_size.qmd >}}
+
+:::
+
+### PRIZE Pool Retirement-Equivalent Principal: $1.8T {#sec-prize_pool_retirement_equivalent_principal}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Secondary PRIZE seed benchmark: initial principal required so that the pool can make two referred votes retirement-equivalent on success at the modeled global coordination target. This is a stronger-incentive visible-pool benchmark, not the minimum capital required to make 50% participation credible.
+
+**Inputs**:
+
+- [Global Coordination Target Supporters](#sec-global_coordination_target_supporters) 🔢: 4 billion of people
+- [Retirement-Equivalent Claim Value Target](#sec-retirement_equivalent_claim_value_target) 🔢: $4.99K
+- [PRIZE Pool 15-Year Multiple](#sec-prize_pool_15yr_multiple) 🔢: 11.1x
+
+$$
+\begin{gathered}
+P_{retire-eq} \\
+= \frac{N_{coord} \times V_{claim,target}}{M_{pool}}
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-prize_pool_retirement_equivalent_principal.qmd >}}
+
+{{< include ../figures/sensitivity-table-prize_pool_retirement_equivalent_principal.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-prize_pool_retirement_equivalent_principal.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-prize_pool_retirement_equivalent_principal.qmd >}}
+
+:::
+
 ### RECOVERY Trial Cost Reduction Factor: 82x {#sec-recovery_trial_cost_reduction_factor}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -5326,6 +5685,71 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-recovery_trial_cost_reduction_factor.qmd >}}
+
+:::
+
+### Retirement-Equivalent 2-Claims Target Payout: $9.98K {#sec-retirement_equivalent_2_claims_target_payout}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Target success-side payout for two referred votes: what one representative annual savings contribution would become in a conventional retirement account by PRIZE resolution.
+
+**Inputs**:
+
+- [Global Annual Savings Per Capita](#sec-global_annual_savings_per_capita) 🔢: $3.88K
+- [Conventional Retirement 15-Year Multiple](#sec-conventional_retirement_15yr_multiple) 🔢: 2.57x
+
+$$
+V_{2claims,target} = S_{annual,pc} \times M_{retire}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-retirement_equivalent_2_claims_target_payout.qmd >}}
+
+{{< include ../figures/sensitivity-table-retirement_equivalent_2_claims_target_payout.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-retirement_equivalent_2_claims_target_payout.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-retirement_equivalent_2_claims_target_payout.qmd >}}
+
+:::
+
+### Retirement-Equivalent Claim Value Target: $4.99K {#sec-retirement_equivalent_claim_value_target}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Target value of one referred-voter claim when two claims are meant to match the conventional-retirement future value of one representative annual savings contribution.
+
+**Inputs**:
+
+- [Retirement-Equivalent 2-Claims Target Payout](#sec-retirement_equivalent_2_claims_target_payout) 🔢: $9.98K
+
+$$
+V_{claim,target} = \frac{V_{2claims,target}}{2}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-retirement_equivalent_claim_value_target.qmd >}}
+
+{{< include ../figures/sensitivity-table-retirement_equivalent_claim_value_target.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-retirement_equivalent_claim_value_target.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-retirement_equivalent_claim_value_target.qmd >}}
 
 :::
 
@@ -9350,6 +9774,45 @@ $$
 
 :::
 
+### Wishocratic Crowd Allocation Alpha: 2.08% {#sec-wishocratic_crowd_alpha}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Allocation alpha from wishocratic crowd decision-making. Crowds pick correctly 91% vs experts at 65% (Surowiecki). Applied to the return spread between best/worst sectors. This is the floor: politicians (the real 'experts') are worse than 65% because they are being paid by one of the answer choices.
+
+**Inputs**:
+
+- [Crowd Decision Accuracy (Millionaire)](#sec-crowd_decision_accuracy) 📊: 91%
+- [Expert Decision Accuracy (Millionaire)](#sec-expert_decision_accuracy) 📊: 65%
+- [Allocation Decision Return Spread](#sec-allocation_decision_spread): 8% (95% CI: 5% - 12%)
+
+$$
+\begin{gathered}
+\alpha_{crowd} \\
+= S_{alloc} \times (Acc_{crowd} - Acc_{expert}) \\
+= 8\% \times (91\% - 65\%) \\
+= 2.08\%
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-wishocratic_crowd_alpha.qmd >}}
+
+{{< include ../figures/sensitivity-table-wishocratic_crowd_alpha.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-wishocratic_crowd_alpha.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-wishocratic_crowd_alpha.qmd >}}
+
+:::
+
 ### Wishonia Disease Cure Fraction (15yr, Full Implementation): 100% {#sec-wishonia_disease_cure_fraction_15yr}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -10426,6 +10889,28 @@ Disability weight for untreated chronic conditions (WHO Global Burden of Disease
 {{< include ../figures/distribution-chronic_disease_disability_weight.qmd >}}
 
 *~ Medium confidence • 📊 Peer-reviewed*
+
+:::
+
+### Conventional Retirement Return (After Fees): 6.5% {#sec-conventional_retirement_return}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Average retail after-fee return on conventional retirement portfolios (60/40 stock/bond mix, ~1% advisory fees, ~0.4% fund fees). Used as the opportunity cost comparison: depositors are LOSING money by NOT participating in the wishocratic fund.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [5%, 8%] • Distribution: Normal
+
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between 5% and 8% (±23%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The normal distribution means values cluster around the center with equal chances of being higher or lower.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-conventional_retirement_return.qmd >}}
+
+*✓ High confidence*
 
 :::
 
@@ -11591,6 +12076,44 @@ Critical mass threshold for social change (3.5% rule). Chenoweth studied nationa
 
 :::
 
+### Global Retirement Assets: $70T {#sec-global_retirement_assets}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Total global pension and retirement assets (OECD 2024). This is the capital pool that the wishocratic fund competes with and could partially absorb.
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*✓ High confidence*
+
+:::
+
+### Global Gross Savings Rate: 27% {#sec-global_savings_rate_pct}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Global gross savings as share of GDP (World Bank, ~27% average 2023-2024)
+
+**Source**: [@world-bank-gross-savings-2023]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [24%, 30%] • Distribution: Normal
+
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between 24% and 30% (±11%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The normal distribution means values cluster around the center with equal chances of being higher or lower.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_savings_rate_pct.qmd >}}
+
+*✓ High confidence*
+
+:::
+
 ### YLD Proportion of Total DALYs: 0.39 proportion {#sec-global_yld_proportion_of_dalys}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -11608,6 +12131,28 @@ Proportion of global DALYs that are YLD (years lived with disability) vs YLL (ye
 {{< include ../figures/distribution-global_yld_proportion_of_dalys.qmd >}}
 
 *✓ High confidence • 📊 Peer-reviewed*
+
+:::
+
+### Home Bias Return Drag: 0.8% {#sec-home_bias_alpha}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Return drag from home bias in fragmented national pension systems. 70+ countries each overweight domestic assets, missing global diversification. IMF and Vanguard studies estimate 0.3-1.5% annual return cost. Wishocratic allocation is inherently global, eliminating this drag.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [0.3%, 1.5%] • Distribution: Normal
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between 0.3% and 1.5% (±75%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The normal distribution means values cluster around the center with equal chances of being higher or lower.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-home_bias_alpha.qmd >}}
+
+*✓ High confidence*
 
 :::
 
@@ -12915,9 +13460,53 @@ Value of Statistical Life (conservative estimate)
 
 :::
 
+### Venture Capital Gross Return: 17% {#sec-venture_gross_return}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Venture capital / private equity gross return (before 2-and-20 fees). Cambridge Associates US VC index 25-year pooled gross IRR. The wishocratic fund charges zero fees, so gross return is the correct baseline. Lockup premium is already embedded: VC/PE IS illiquid.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [13%, 22%] • Distribution: Normal
+
+**What this means**: There's significant uncertainty here. The true value likely falls between 13% and 22% (±26%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The normal distribution means values cluster around the center with equal chances of being higher or lower.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-venture_gross_return.qmd >}}
+
+*✓ High confidence*
+
+:::
+
 ## Core Definitions {#sec-definitions}
 
 Fundamental parameters and constants used throughout the analysis.
+
+### Allocation Decision Return Spread: 8% {#sec-allocation_decision_spread}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Return spread between the best and worst major asset-class sectors (biotech vs. coal, growth vs. value, emerging vs. declining). The accuracy advantage of crowds over experts is multiplied by this spread to estimate the allocation alpha from wishocratic decision-making.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [5%, 12%] • Distribution: Normal
+
+**What this means**: There's significant uncertainty here. The true value likely falls between 5% and 12% (±44%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The normal distribution means values cluster around the center with equal chances of being higher or lower.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-allocation_decision_spread.qmd >}}
+
+*Core definition*
+
+:::
 
 ### Annual Working Hours: 2 thousand hours/year {#sec-annual_working_hours}
 
@@ -13407,6 +13996,86 @@ Status-quo baseline annual global GDP growth rate.
 
 :::
 
+### Activation Reward per Verified Participant: $5 {#sec-global_coordination_activation_reward_per_verified_participant}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Planning midpoint for the direct cash incentive required to make a successful verified recruit materially worth sharing at global scale. Intended as a research-backed blended reward across referrer and recruit, not as the long-dated PRIZE claim value.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$2, $10] • Distribution: Normal (SE: $1.5)
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between $2 and $10 (±80%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The normal distribution means values cluster around the center with equal chances of being higher or lower.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_coordination_activation_reward_per_verified_participant.qmd >}}
+
+*Core definition*
+
+:::
+
+### Global Coordination Platform and Operations Cost: $4B {#sec-global_coordination_platform_and_operations_cost}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Fixed cost to run a global activation campaign toward 50% participation: platform buildout, localization, customer support, compliance, payout operations, fraud response, and regional launch infrastructure.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$2B, $8B] • Distribution: Normal (SE: $1.5B)
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between $2B and $8B (±75%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The normal distribution means values cluster around the center with equal chances of being higher or lower.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_coordination_platform_and_operations_cost.qmd >}}
+
+*Core definition*
+
+:::
+
+### Global Coordination Target: 50% {#sec-global_coordination_target_pct}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Modeled end-state global coordination target: half of humanity visibly supports the prize network, used in prose as roughly 90% of likely voters globally.
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*Core definition*
+
+:::
+
+### Verification and Payment Cost per Participant: $1.5 {#sec-global_coordination_verification_and_payment_cost_per_participant}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Planning midpoint for non-reward variable cost per successful verified participant: identity verification, payment rails, fraud checks, support, and completion friction.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$1, $3] • Distribution: Normal (SE: $0.5)
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between $1 and $3 (±67%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The normal distribution means values cluster around the center with equal chances of being higher or lower.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_coordination_verification_and_payment_cost_per_participant.qmd >}}
+
+*Core definition*
+
+:::
+
 ### IAB Political Incentive Funding Percentage: 10% {#sec-iab_political_incentive_funding_pct}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -13558,6 +14227,28 @@ Total safe compounds available for repurposing (FDA-approved + GRAS substances, 
 #### Input Distribution
 
 {{< include ../figures/distribution-safe_compounds_count.qmd >}}
+
+*Core definition*
+
+:::
+
+### Scale Compression Factor: -2.5% {#sec-scale_compression_factor}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Diminishing-returns drag as the venture market expands ~15x (current global VC ~$300B/yr; wishocratic fund deploys ~$4.7T/yr). More capital chasing deals compresses returns. Partially offset by market expansion (every viable idea gets funded, oligopolies face real competition). Point estimate is moderate; CI spans optimistic to pessimistic.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [-5%, -1%] • Distribution: Normal
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between -5% and -1% (±80%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The normal distribution means values cluster around the center with equal chances of being higher or lower.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-scale_compression_factor.qmd >}}
 
 *Core definition*
 

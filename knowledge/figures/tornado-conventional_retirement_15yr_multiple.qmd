@@ -16,18 +16,18 @@ setup_chart_style()
 
 # Display name for chart title
 
-display_name = "PRIZE Pool Target as % of Global GDP"
+display_name = "Conventional Retirement 15-Year Multiple"
 
 # Baseline and units
 
-baseline = 0.07938015740861407
+baseline = 2.5718410065633592
 
 # Tornado data from sensitivity analysis
 
-drivers = ['VENTURE_GROSS_RETURN', 'POLITICAL_DYSFUNCTION_GLOBAL_MIGRATION_OPPORTUNITY_COST', 'POLITICAL_DYSFUNCTION_GLOBAL_HEALTH_OPPORTUNITY_COST', 'SCALE_COMPRESSION_FACTOR', 'ALLOCATION_DECISION_SPREAD', 'HOME_BIAS_ALPHA', 'POLITICAL_DYSFUNCTION_GLOBAL_SCIENCE_OPPORTUNITY_COST', 'POLITICAL_DYSFUNCTION_GLOBAL_LEAD_OPPORTUNITY_COST']
-driver_labels = ['Venture Capital Gross Return', 'Global Migration Opportunity Cost', 'Global Health Opportunity Cost', 'Scale Compression Factor', 'Allocation Decision Return Spread', 'Home Bias Return Drag', 'Global Science Opportunity Cost', 'Global Lead Poisoning Cost']
-impacts_low = [0.05414919525864731, 0.0, -0.011003190135847496, 0.03025683919254206, 0.008349266417321616, 0.005249092092728891, -0.0015718843051210768, -0.0015718843051210768]
-impacts_high = [-0.036921446878407475, 0.0888114632393405, 0.036153339017784614, -0.013766901800125839, -0.009838076452272165, -0.006773178567486257, 0.0047156529153632165, 0.001571884305121063]
+drivers = ['CONVENTIONAL_RETIREMENT_RETURN']
+driver_labels = ['Conventional Retirement Return (After Fees)']
+impacts_low = [-0.4929128271519905]
+impacts_high = [0.6003281076349127]
 
 # Convert deltas to absolute values (baseline + delta)
 
@@ -71,7 +71,7 @@ ax.set_title(f'Sensitivity Analysis: {display_name}', fontsize=16, weight='bold'
 
 # X-axis label with units
 
-units_label = "percent"
+units_label = "x"
 if units_label:
     ax.set_xlabel(f'{display_name} ({units_label})', fontsize=12)
 else:
@@ -96,7 +96,7 @@ add_watermark(fig)
 # Save PNG to knowledge/figures/ regardless of where Quarto renders from
 # Use 96 DPI for web-optimized output (reduced from 150 DPI to minimize file size)
 
-output_path = get_figure_output_path('tornado-prize_pool_target_pct_gdp.png')
+output_path = get_figure_output_path('tornado-conventional_retirement_15yr_multiple.png')
 plt.savefig(output_path, dpi=96, bbox_inches=None, facecolor=COLOR_WHITE)
 
 add_png_metadata(

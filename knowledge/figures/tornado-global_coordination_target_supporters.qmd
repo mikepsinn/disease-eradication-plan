@@ -16,18 +16,18 @@ setup_chart_style()
 
 # Display name for chart title
 
-display_name = "PRIZE Pool Target Required Principal"
+display_name = "Global Coordination Target Supporters"
 
 # Baseline and units
 
-baseline = 9128718101990.617
+baseline = 4000000000.0
 
 # Tornado data from sensitivity analysis
 
-drivers = ['VENTURE_GROSS_RETURN', 'POLITICAL_DYSFUNCTION_GLOBAL_MIGRATION_OPPORTUNITY_COST', 'POLITICAL_DYSFUNCTION_GLOBAL_HEALTH_OPPORTUNITY_COST', 'SCALE_COMPRESSION_FACTOR', 'ALLOCATION_DECISION_SPREAD', 'HOME_BIAS_ALPHA', 'POLITICAL_DYSFUNCTION_GLOBAL_SCIENCE_OPPORTUNITY_COST', 'POLITICAL_DYSFUNCTION_GLOBAL_LEAD_OPPORTUNITY_COST']
-driver_labels = ['Venture Capital Gross Return', 'Global Migration Opportunity Cost', 'Global Health Opportunity Cost', 'Scale Compression Factor', 'Allocation Decision Return Spread', 'Home Bias Return Drag', 'Global Science Opportunity Cost', 'Global Lead Poisoning Cost']
-impacts_low = [6227157454744.441, 0.0, -1265366865622.462, 3479536507142.338, 960165637991.9863, 603645590663.8223, -180766695088.92383, -180766695088.92383]
-impacts_high = [-4245966391016.8594, 10213318272524.156, 4157633987045.2305, -1583193707014.4707, -1131378792011.2979, -778915535260.919, 542300085266.76953, 180766695088.92188]
+drivers = ['GLOBAL_POPULATION_2024']
+driver_labels = ['Global Population in 2024']
+impacts_low = [-100000000.0]
+impacts_high = [100000000.0]
 
 # Convert deltas to absolute values (baseline + delta)
 
@@ -71,7 +71,7 @@ ax.set_title(f'Sensitivity Analysis: {display_name}', fontsize=16, weight='bold'
 
 # X-axis label with units
 
-units_label = "USD"
+units_label = "of people"
 if units_label:
     ax.set_xlabel(f'{display_name} ({units_label})', fontsize=12)
 else:
@@ -96,7 +96,7 @@ add_watermark(fig)
 # Save PNG to knowledge/figures/ regardless of where Quarto renders from
 # Use 96 DPI for web-optimized output (reduced from 150 DPI to minimize file size)
 
-output_path = get_figure_output_path('tornado-prize_pool_target_required_principal.png')
+output_path = get_figure_output_path('tornado-global_coordination_target_supporters.png')
 plt.savefig(output_path, dpi=96, bbox_inches=None, facecolor=COLOR_WHITE)
 
 add_png_metadata(

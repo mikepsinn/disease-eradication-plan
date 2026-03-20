@@ -16,18 +16,18 @@ setup_chart_style()
 
 # Display name for chart title
 
-display_name = "Expected Number of Voters"
+display_name = "Global Coordination Activation Budget"
 
 # Baseline and units
 
-baseline = 2400000000.0
+baseline = 30000000000.0
 
 # Tornado data from sensitivity analysis
 
-drivers = ['VOTE_PARTICIPATION_RATE', 'GLOBAL_POPULATION_2024']
-driver_labels = ['Expected Vote Participation Rate', 'Global Population in 2024']
-impacts_low = [-2160000000.0, -60000000.0]
-impacts_high = [3200000000.0, 60000000.0]
+drivers = ['GLOBAL_COORDINATION_ACTIVATION_REWARD_PER_VERIFIED_PARTICIPANT', 'GLOBAL_COORDINATION_VERIFICATION_AND_PAYMENT_COST_PER_PARTICIPANT', 'GLOBAL_COORDINATION_PLATFORM_AND_OPERATIONS_COST', 'GLOBAL_POPULATION_2024']
+driver_labels = ['Activation Reward per Verified Participant', 'Verification and Payment Cost per Participant', 'Global Coordination Platform and Operations Cost', 'Global Population in 2024']
+impacts_low = [-12000000000.0, -2000000000.0, -2000000000.0, -650000000.0]
+impacts_high = [20000000000.0, 6000000000.0, 4000000000.0, 650000000.0]
 
 # Convert deltas to absolute values (baseline + delta)
 
@@ -71,7 +71,7 @@ ax.set_title(f'Sensitivity Analysis: {display_name}', fontsize=16, weight='bold'
 
 # X-axis label with units
 
-units_label = "of people"
+units_label = "USD"
 if units_label:
     ax.set_xlabel(f'{display_name} ({units_label})', fontsize=12)
 else:
@@ -96,7 +96,7 @@ add_watermark(fig)
 # Save PNG to knowledge/figures/ regardless of where Quarto renders from
 # Use 96 DPI for web-optimized output (reduced from 150 DPI to minimize file size)
 
-output_path = get_figure_output_path('tornado-vote_expected_participants.png')
+output_path = get_figure_output_path('tornado-global_coordination_activation_budget.png')
 plt.savefig(output_path, dpi=96, bbox_inches=None, facecolor=COLOR_WHITE)
 
 add_png_metadata(

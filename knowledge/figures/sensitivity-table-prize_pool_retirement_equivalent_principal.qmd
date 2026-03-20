@@ -1,9 +1,11 @@
-**Sensitivity Indices for PRIZE Pool Target as % of Global GDP**
+**Sensitivity Indices for PRIZE Pool Retirement-Equivalent Principal**
 
 Regression-based sensitivity showing which inputs explain the most variance in the output.
 
 | Input Parameter | Sensitivity Coefficient | Interpretation |
 |:----------------|------------------------:|:---------------|
-| PRIZE Pool Target Required Principal (USD) | 1.0000 | Strong driver |
+| Global Coordination Target Supporters (of people) | -5.3627 | Strong driver |
+| Retirement-Equivalent Claim Value Target (USD) | 4.8675 | Strong driver |
+| PRIZE Pool 15-Year Multiple (x) | -0.4889 | Moderate driver |
 
 *Interpretation*: Standardized coefficients show the change in output (in SD units) per 1 SD change in input. Values near ±1 indicate strong influence; values exceeding ±1 may occur with correlated inputs.

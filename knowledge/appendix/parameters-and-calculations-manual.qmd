@@ -38,15 +38,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 488 parameters used in the analysis, organized by type:
+This appendix documents all 493 parameters used in the analysis, organized by type:
 
 - External sources (peer-reviewed): 166
-- Calculated values: 228
-- Core definitions: 94
+- Calculated values: 230
+- Core definitions: 97
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (228 parameters) • [External Data Sources](#sec-external) (166 parameters) • [Core Definitions](#sec-definitions) (94 parameters)
+[Calculated Values](#sec-calculated) (230 parameters) • [External Data Sources](#sec-external) (166 parameters) • [Core Definitions](#sec-definitions) (97 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -548,6 +548,39 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-contribution_suffering_hours_per_pct_point.qmd >}}
+
+:::
+
+### Conventional Retirement 15-Year Multiple: 2.57x {#sec-conventional_retirement_15yr_multiple}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+15-year compound multiple for conventional retirement investing over the PRIZE pool resolution horizon.
+
+**Inputs**:
+
+- [Conventional Retirement Return (After Fees)](#sec-conventional_retirement_return) 📊: 6.5% (95% CI: 5% - 8%)
+- [PRIZE Pool Resolution Horizon](#sec-prize_pool_resolution_years): 15 years
+
+$$
+M_{retire} = (1 + r_{retire})^{T_{pool}}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-conventional_retirement_15yr_multiple.qmd >}}
+
+{{< include ../figures/sensitivity-table-conventional_retirement_15yr_multiple.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-conventional_retirement_15yr_multiple.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-conventional_retirement_15yr_multiple.qmd >}}
 
 :::
 
@@ -5443,6 +5476,106 @@ $$
 
 :::
 
+### Global Coordination Activation Budget: $30B {#sec-global_coordination_activation_budget}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Canonical institutional activation threshold: capital required to make 50% participation credible through direct referral incentives, verification, payment rails, and global launch operations. This is the main institutional ask, not the PRIZE pool seed benchmark.
+
+**Inputs**:
+
+- [Global Coordination Target Supporters](#sec-global_coordination_target_supporters) 🔢: 4 billion of people
+- [Activation Cost per Participant](#sec-global_coordination_activation_cost_per_participant) 🔢: $6.5
+- [Global Coordination Platform and Operations Cost](#sec-global_coordination_platform_and_operations_cost): $4B (95% CI: $2B - $8B)
+
+$$
+B_{activate} = N_{coord} \times C_{activate,pp} + C_{ops}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-global_coordination_activation_budget.qmd >}}
+
+{{< include ../figures/sensitivity-table-global_coordination_activation_budget.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-global_coordination_activation_budget.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-global_coordination_activation_budget.qmd >}}
+
+:::
+
+### Activation Cost per Participant: $6.5 {#sec-global_coordination_activation_cost_per_participant}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Blended variable activation cost per successful verified participant: direct incentive plus verification and payment operations.
+
+**Inputs**:
+
+- [Activation Reward per Verified Participant](#sec-global_coordination_activation_reward_per_verified_participant): $5 (95% CI: $2 - $10)
+- [Verification and Payment Cost per Participant](#sec-global_coordination_verification_and_payment_cost_per_participant): $1.5 (95% CI: $1 - $3)
+
+$$
+C_{activate,pp} = R_{activate} + C_{verify,pp}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-global_coordination_activation_cost_per_participant.qmd >}}
+
+{{< include ../figures/sensitivity-table-global_coordination_activation_cost_per_participant.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-global_coordination_activation_cost_per_participant.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-global_coordination_activation_cost_per_participant.qmd >}}
+
+:::
+
+### Global Coordination Target Supporters: 4 billion of people {#sec-global_coordination_target_supporters}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Number of people implied by the modeled end-state global coordination target (global population × 50%).
+
+**Inputs**:
+
+- [Global Population in 2024](#sec-global_population_2024) 📊: 8 billion of people (95% CI: 7.8 billion of people - 8.2 billion of people)
+- [Global Coordination Target](#sec-global_coordination_target_pct): 50%
+
+$$
+N_{coord} = N_{global} \times R_{coord}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-global_coordination_target_supporters.qmd >}}
+
+{{< include ../figures/sensitivity-table-global_coordination_target_supporters.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-global_coordination_target_supporters.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-global_coordination_target_supporters.qmd >}}
+
+:::
+
 ### Global Destructive Economy (2025): $13.2T {#sec-global_destructive_economy_annual_2025}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -7556,249 +7689,40 @@ $$
 
 :::
 
-### PRIZE Pool Target as % of Global GDP: 7.94% {#sec-prize_pool_target_pct_gdp}
+### PRIZE Pool Retirement-Equivalent Principal: $1.8T {#sec-prize_pool_retirement_equivalent_principal}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Required initial principal as a share of global GDP to reach one year of the dysfunction-tax target by the resolution date.
+Secondary PRIZE seed benchmark: initial principal required so that the pool can make two referred votes retirement-equivalent on success at the modeled global coordination target. This is a stronger-incentive visible-pool benchmark, not the minimum capital required to make 50% participation credible.
 
 **Inputs**:
 
-- [PRIZE Pool Target Required Principal](#sec-prize_pool_target_required_principal) 🔢: $9.13T
-- [Global GDP (2025)](#sec-global_gdp_2025) 📊: $115T
-
-$$
-\begin{gathered}
-d_{GDP} \\
-= \frac{P_{required}}{GDP_{global}} \\
-= \frac{\$9.13T}{\$115T} \\
-= 7.94\%
-\end{gathered}
-$$
-where:
-$$
-P_{required} = \frac{O_{total}}{M_{pool}}
-$$
-where:
-$$
-\begin{gathered}
-O_{total} \\
-= O_{health} + O_{science} + O_{lead} + O_{migration} \\
-= \$34T + \$4T + \$6T + \$57T \\
-= \$101T
-\end{gathered}
-$$
-where:
-$$
-M_{pool} = (1 + r_{pool})^{T_{pool}}
-$$
-where:
-$$
-\begin{gathered}
-r_{pool} \\
-= r_{VC,gross} + \Delta r_{scale} + \alpha_{crowd} \\
-+ \alpha_{home}
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-\alpha_{crowd} \\
-= S_{alloc} \times (Acc_{crowd} - Acc_{expert}) \\
-= 8\% \times (91\% - 65\%) \\
-= 2.08\%
-\end{gathered}
-$$
-*✓ High confidence*
-
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-prize_pool_target_pct_gdp.qmd >}}
-
-{{< include ../figures/sensitivity-table-prize_pool_target_pct_gdp.qmd >}}
-
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-prize_pool_target_pct_gdp.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-prize_pool_target_pct_gdp.qmd >}}
-
-:::
-
-### PRIZE Pool Target as % of Retirement Assets: 13% {#sec-prize_pool_target_pct_retirement_assets}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Required initial principal as a share of global retirement assets to reach one year of the dysfunction-tax target by the resolution date.
-
-**Inputs**:
-
-- [PRIZE Pool Target Required Principal](#sec-prize_pool_target_required_principal) 🔢: $9.13T
-- [Global Retirement Assets](#sec-global_retirement_assets) 📊: $70T
-
-$$
-\begin{gathered}
-d_{retire} \\
-= \frac{P_{required}}{Assets_{retire}} \\
-= \frac{\$9.13T}{\$70T} \\
-= 13\%
-\end{gathered}
-$$
-where:
-$$
-P_{required} = \frac{O_{total}}{M_{pool}}
-$$
-where:
-$$
-\begin{gathered}
-O_{total} \\
-= O_{health} + O_{science} + O_{lead} + O_{migration} \\
-= \$34T + \$4T + \$6T + \$57T \\
-= \$101T
-\end{gathered}
-$$
-where:
-$$
-M_{pool} = (1 + r_{pool})^{T_{pool}}
-$$
-where:
-$$
-\begin{gathered}
-r_{pool} \\
-= r_{VC,gross} + \Delta r_{scale} + \alpha_{crowd} \\
-+ \alpha_{home}
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-\alpha_{crowd} \\
-= S_{alloc} \times (Acc_{crowd} - Acc_{expert}) \\
-= 8\% \times (91\% - 65\%) \\
-= 2.08\%
-\end{gathered}
-$$
-*✓ High confidence*
-
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-prize_pool_target_pct_retirement_assets.qmd >}}
-
-{{< include ../figures/sensitivity-table-prize_pool_target_pct_retirement_assets.qmd >}}
-
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-prize_pool_target_pct_retirement_assets.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-prize_pool_target_pct_retirement_assets.qmd >}}
-
-:::
-
-### PRIZE Pool Target as % of Household Wealth: 2.01% {#sec-prize_pool_target_pct_wealth}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Required initial principal as a share of global household wealth to reach one year of the dysfunction-tax target by the resolution date.
-
-**Inputs**:
-
-- [PRIZE Pool Target Required Principal](#sec-prize_pool_target_required_principal) 🔢: $9.13T
-- [Global Household Wealth](#sec-global_household_wealth_usd) 📊: $454T
-
-$$
-\begin{gathered}
-d_{wealth} \\
-= \frac{P_{required}}{Wealth_{household}} \\
-= \frac{\$9.13T}{\$454T} \\
-= 2.01\%
-\end{gathered}
-$$
-where:
-$$
-P_{required} = \frac{O_{total}}{M_{pool}}
-$$
-where:
-$$
-\begin{gathered}
-O_{total} \\
-= O_{health} + O_{science} + O_{lead} + O_{migration} \\
-= \$34T + \$4T + \$6T + \$57T \\
-= \$101T
-\end{gathered}
-$$
-where:
-$$
-M_{pool} = (1 + r_{pool})^{T_{pool}}
-$$
-where:
-$$
-\begin{gathered}
-r_{pool} \\
-= r_{VC,gross} + \Delta r_{scale} + \alpha_{crowd} \\
-+ \alpha_{home}
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-\alpha_{crowd} \\
-= S_{alloc} \times (Acc_{crowd} - Acc_{expert}) \\
-= 8\% \times (91\% - 65\%) \\
-= 2.08\%
-\end{gathered}
-$$
-*✓ High confidence*
-
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-prize_pool_target_pct_wealth.qmd >}}
-
-{{< include ../figures/sensitivity-table-prize_pool_target_pct_wealth.qmd >}}
-
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-prize_pool_target_pct_wealth.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-prize_pool_target_pct_wealth.qmd >}}
-
-:::
-
-### PRIZE Pool Target Required Principal: $9.13T {#sec-prize_pool_target_required_principal}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Required initial principal for the PRIZE pool to reach one year of the dysfunction-tax target by the resolution date under the canonical fund-growth model.
-
-**Inputs**:
-
-- [Global Opportunity Cost Total](#sec-political_dysfunction_global_opportunity_cost_total) 🔢: $101T
+- [Global Coordination Target Supporters](#sec-global_coordination_target_supporters) 🔢: 4 billion of people
+- [Retirement-Equivalent Claim Value Target](#sec-retirement_equivalent_claim_value_target) 🔢: $4.99K
 - [PRIZE Pool 15-Year Multiple](#sec-prize_pool_15yr_multiple) 🔢: 11.1x
 
 $$
-P_{required} = \frac{O_{total}}{M_{pool}}
+\begin{gathered}
+P_{retire-eq} \\
+= \frac{N_{coord} \times V_{claim,target}}{M_{pool}}
+\end{gathered}
 $$
 
 *✓ High confidence*
 
 #### Sensitivity Analysis
 
-{{< include ../figures/tornado-prize_pool_target_required_principal.qmd >}}
+{{< include ../figures/tornado-prize_pool_retirement_equivalent_principal.qmd >}}
 
-{{< include ../figures/sensitivity-table-prize_pool_target_required_principal.qmd >}}
+{{< include ../figures/sensitivity-table-prize_pool_retirement_equivalent_principal.qmd >}}
 
 #### Monte Carlo Distribution
 
-{{< include ../figures/mc-distribution-prize_pool_target_required_principal.qmd >}}
+{{< include ../figures/mc-distribution-prize_pool_retirement_equivalent_principal.qmd >}}
 
 #### Exceedance Probability
 
-{{< include ../figures/exceedance-prize_pool_target_required_principal.qmd >}}
+{{< include ../figures/exceedance-prize_pool_retirement_equivalent_principal.qmd >}}
 
 :::
 
@@ -7877,6 +7801,71 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-recovery_trial_total_qalys_generated.qmd >}}
+
+:::
+
+### Retirement-Equivalent 2-Claims Target Payout: $9.98K {#sec-retirement_equivalent_2_claims_target_payout}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Target success-side payout for two referred votes: what one representative annual savings contribution would become in a conventional retirement account by PRIZE resolution.
+
+**Inputs**:
+
+- [Global Annual Savings Per Capita](#sec-global_annual_savings_per_capita) 🔢: $3.88K
+- [Conventional Retirement 15-Year Multiple](#sec-conventional_retirement_15yr_multiple) 🔢: 2.57x
+
+$$
+V_{2claims,target} = S_{annual,pc} \times M_{retire}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-retirement_equivalent_2_claims_target_payout.qmd >}}
+
+{{< include ../figures/sensitivity-table-retirement_equivalent_2_claims_target_payout.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-retirement_equivalent_2_claims_target_payout.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-retirement_equivalent_2_claims_target_payout.qmd >}}
+
+:::
+
+### Retirement-Equivalent Claim Value Target: $4.99K {#sec-retirement_equivalent_claim_value_target}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Target value of one referred-voter claim when two claims are meant to match the conventional-retirement future value of one representative annual savings contribution.
+
+**Inputs**:
+
+- [Retirement-Equivalent 2-Claims Target Payout](#sec-retirement_equivalent_2_claims_target_payout) 🔢: $9.98K
+
+$$
+V_{claim,target} = \frac{V_{2claims,target}}{2}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-retirement_equivalent_claim_value_target.qmd >}}
+
+{{< include ../figures/sensitivity-table-retirement_equivalent_claim_value_target.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-retirement_equivalent_claim_value_target.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-retirement_equivalent_claim_value_target.qmd >}}
 
 :::
 
@@ -13064,57 +13053,19 @@ $$
 
 :::
 
-### Expected Number of Voters: 2.4 billion of people {#sec-vote_expected_participants}
+### VOTE Token Potential Value: $194K {#sec-vote_token_potential_value}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Expected number of people who vote over the accumulation period (global population × participation rate). At the 30% point estimate, 2.4B voters exceed the Chenoweth passage threshold (280M) by ~8×.
-
-**Inputs**:
-
-- [Global Population in 2024](#sec-global_population_2024) 📊: 8 billion of people (95% CI: 7.8 billion of people - 8.2 billion of people)
-- [Expected Vote Participation Rate](#sec-vote_participation_rate): 30% (95% CI: 3% - 70%)
-
-$$
-\begin{gathered}
-N_{voters,expected} \\
-= Pop_{global} \times R_{vote} \\
-= 8B \times 30\% \\
-= 2.4B
-\end{gathered}
-$$
-
-*✓ High confidence*
-
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-vote_expected_participants.qmd >}}
-
-{{< include ../figures/sensitivity-table-vote_expected_participants.qmd >}}
-
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-vote_expected_participants.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-vote_expected_participants.qmd >}}
-
-:::
-
-### VOTE Token Potential Value: $323K {#sec-vote_token_potential_value}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Potential value of a single VOTE claim if the PRIZE pool reaches its canonical potential max size. Denominator is expected participants (30% of global population), not the Chenoweth passage threshold.
+Potential value of a single VOTE claim if the PRIZE pool reaches its canonical potential max size. Denominator is the modeled global coordination target, not the lower forecast participation path.
 
 **Inputs**:
 
 - [PRIZE Pool Potential Max Size](#sec-prize_pool_potential_max_size) 🔢: $774T
-- [Expected Number of Voters](#sec-vote_expected_participants) 🔢: 2.4 billion of people
+- [Global Coordination Target Supporters](#sec-global_coordination_target_supporters) 🔢: 4 billion of people
 
 $$
-V_{vote} = \frac{Pool_{max}}{N_{voters,expected}}
+V_{vote} = \frac{Pool_{max}}{N_{coord}}
 $$
 
 *✓ High confidence*
@@ -19320,6 +19271,86 @@ Status-quo baseline annual global GDP growth rate.
 
 :::
 
+### Activation Reward per Verified Participant: $5 {#sec-global_coordination_activation_reward_per_verified_participant}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Planning midpoint for the direct cash incentive required to make a successful verified recruit materially worth sharing at global scale. Intended as a research-backed blended reward across referrer and recruit, not as the long-dated PRIZE claim value.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$2, $10] • Distribution: Normal (SE: $1.5)
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between $2 and $10 (±80%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The normal distribution means values cluster around the center with equal chances of being higher or lower.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_coordination_activation_reward_per_verified_participant.qmd >}}
+
+*Core definition*
+
+:::
+
+### Global Coordination Platform and Operations Cost: $4B {#sec-global_coordination_platform_and_operations_cost}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Fixed cost to run a global activation campaign toward 50% participation: platform buildout, localization, customer support, compliance, payout operations, fraud response, and regional launch infrastructure.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$2B, $8B] • Distribution: Normal (SE: $1.5B)
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between $2B and $8B (±75%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The normal distribution means values cluster around the center with equal chances of being higher or lower.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_coordination_platform_and_operations_cost.qmd >}}
+
+*Core definition*
+
+:::
+
+### Global Coordination Target: 50% {#sec-global_coordination_target_pct}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Modeled end-state global coordination target: half of humanity visibly supports the prize network, used in prose as roughly 90% of likely voters globally.
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*Core definition*
+
+:::
+
+### Verification and Payment Cost per Participant: $1.5 {#sec-global_coordination_verification_and_payment_cost_per_participant}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Planning midpoint for non-reward variable cost per successful verified participant: identity verification, payment rails, fraud checks, support, and completion friction.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$1, $3] • Distribution: Normal (SE: $0.5)
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between $1 and $3 (±67%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The normal distribution means values cluster around the center with equal chances of being higher or lower.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_coordination_verification_and_payment_cost_per_participant.qmd >}}
+
+*Core definition*
+
+:::
+
 ### Global-to-US Political Cost Ratio: 5:1 {#sec-global_to_us_political_cost_ratio}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -19845,28 +19876,6 @@ Percentage of captured dividend funding VICTORY Incentive Alignment Bonds (10%)
 #### Uncertainty Range
 
 **Technical**: Distribution: Fixed
-
-*Core definition*
-
-:::
-
-### Expected Vote Participation Rate: 30% {#sec-vote_participation_rate}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Expected share of global population that votes over the 15-year accumulation period. Global election turnout runs 50-65% despite strictly worse incentives on every axis: hours of effort vs. 30 seconds, no financial reward vs. a token value roughly equal to global average annual income (see VOTE_TOKEN_POTENTIAL_VALUE), 1-in-30M chance of influencing outcome vs. direct payout proportional to contribution. The 30% point estimate is conservative, accounting for 15-year ramp-up, regional skepticism, and low digital infrastructure. The token value drives awareness virally and solves access barriers (people travel to villages with phones when the expected payout exceeds local annual income). Upper CI (70%) reflects a mature campaign where token incentives have driven near-universal awareness.
-
-#### Uncertainty Range
-
-**Technical**: 95% CI: [3%, 70%] • Distribution: Beta
-
-**What this means**: This estimate is highly uncertain. The true value likely falls between 3% and 70% (±112%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
-
-*The beta distribution means values are bounded and can skew toward one end.*
-
-#### Input Distribution
-
-{{< include ../figures/distribution-vote_participation_rate.qmd >}}
 
 *Core definition*
 

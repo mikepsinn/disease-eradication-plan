@@ -133,12 +133,15 @@ On Wishonia, if one person tells two people and each of them tells two people, t
 | 15 | 32,768 | A small town |
 | 20 | 1,048,576 | A city |
 | 25 | 33,554,432 | A country |
-| 28 | 268,435,456 | Chenoweth passage threshold ({{< var treaty_campaign_voting_bloc_target >}}) |
+| 28 | 268,435,456 | Hundreds of millions; globally visible |
+| 32 | 4,294,967,296 | Roughly the modeled global coordination target |
 | 33 | 8,589,934,592 | Everyone on Earth |
 
-28 rounds. Not 28 years. 28 rounds. If each round takes a week, that is seven months. If each round takes a month, that is two years and four months. The important point is not the payout headline. It is that the scoreboard can move from one person to Chenoweth-scale visibility on ordinary human timescales rather than civilizational ones.
+32 rounds. Not 32 years. 32 rounds. If each round takes a week, that is eight months. If each round takes a month, that is two years and eight months. The important point is not the payout headline. It is that the scoreboard can move from one person to politically legible world scale on ordinary human timescales rather than civilizational ones.
 
-The Chenoweth threshold [@3-5-rule] ({{< var global_population_activism_threshold_pct >}} of the population in sustained nonviolent action) has been verified across 323 campaigns since 1900. At {{< var vote_participation_rate >}} expected participation, {{< var vote_expected_participants >}} people vote over the accumulation period, exceeding the Chenoweth threshold by roughly 8x. VOTE claims make coalition-building worth doing. The scoreboard makes that coalition legible. At scale, treaty passage is expected well before the pool matures.
+The modeled end-state coordination target is {{< var global_coordination_target_supporters >}}, or {{< var global_coordination_target_pct >}} of humanity, described here as roughly 90% of likely voters globally. That is the canonical public headcount target for the prize. VOTE claims make coalition-building worth doing. The scoreboard makes that coalition legible. At scale, treaty passage is expected well before the pool matures.
+
+For institutions, the first decision is not whether to move a massive share of global capital immediately. It is whether to underwrite three distinct jobs: make mass participation credible, seed the PRIZE pool enough that long-dated upside feels real, and then scale the capital base once the network is legible. A foundation consortium is the expected first mover. One extraordinary institution could still do the whole thing.
 
 ## What A Small Probability Shift Is Worth
 
@@ -200,7 +203,7 @@ Delay is not neutral. Each person can only be recruited once, and every month sp
 |---|---|---|
 | **A normal participant** | Make a PRIZE deposit, answer the referendum questions, and recruit two verified participants. | One deposit, one completed registration, and two confirmed referrals on the scoreboard. |
 | **A builder / critic** | Publish one concrete artifact: a v2 fork, a red-team memo, a metric-gaming attack, or a better implementation-financing design. | A public repo, memo, issue, or brief that other participants can evaluate immediately. |
-| **A funder** | Choose one lane and commit real support: seed PRIZE deposits, sponsor referendum infrastructure, or underwrite a named v2/red-team milestone. | A public pledge, grant memo, bounty, or signed term sheet. |
+| **A funder** | Choose one lane and commit real support: underwrite activation, seed the PRIZE pool, or sponsor a named v2/red-team milestone. | A public pledge, grant memo, activation commitment, pool-seed memo, bounty, or signed term sheet. |
 | **A host institution** | Announce a 90-day pilot: publish the rules, convene the panel, fund red-team bounties, and launch the first public scoreboard. | A public challenge page, panel roster, bounty pool, and live scoreboard. |
 | **A journalist / media actor** | Publish or circulate one briefing focused on the scoreboard, the constitutional convention, and the upside/downside fork. | A story, memo, briefing, or internal note that the next participant can cite. |
 
@@ -244,7 +247,7 @@ The instruments deploy in order, and each stage builds the audience for the next
 
 **Stage 2: PRIZE deposits and the referendum (weeks to months).** PRIZE deposits are the simplest on-ramp. Every depositor learns what the prize is for. The PRIZE deposit is the simplest public coordination signal. Meanwhile, the [referendum platform](https://manual.warondisease.org/knowledge/strategy/global-referendum.html) launches: voters set their preferred military-to-health allocation via [wishocratic sliders](../solution/wishocracy.qmd), and every recruiter who brings a verified participant earns VOTE claims. The referendum grows because recruitment is rewarded.
 
-**Stage 3: Scoreboard and momentum (months).** The referendum count climbs in public. The prize pool becomes large enough to be visibly real. Two dashboards matter: verified participant count and committed capital. Each new cohort of participants makes the next cohort easier to convince. Politicians notice.
+**Stage 3: Scoreboard and momentum (months).** The referendum count climbs in public. The prize pool becomes large enough to be visibly real. Three dashboards matter: verified participant count, activation capital committed, and PRIZE pool capital committed. Each new cohort of participants makes the next cohort easier to convince. Politicians notice.
 
 **Stage 4: The lobbying campaign (months to years).** By now, millions of voters have registered preferences, the PRIZE pool is large enough to be taken seriously, and the scoreboard shows that the coalition is real. The [Earth Optimization Protocol](https://manual.warondisease.org/knowledge/strategy/earth-optimization-protocol-v1.html) [@earth-optimization-protocol-2025] describes how implementation financing converts the scoreboard into political pressure.
 
@@ -281,13 +284,27 @@ Every participant is doing exactly what they would do anyway, except pointed at 
 
 ## The Numbers
 
-**How large can the prize pool get?** The canonical capital ceiling is the global retirement asset base: {{< var global_retirement_assets >}}. If that capital compounds through the wishocratic fund at {{< var prize_pool_annual_return >}} over {{< var prize_pool_resolution_years_nounit >}} years:
+**What is the first institutional number?** The canonical activation threshold is the capital required to make {{< var global_coordination_target_pct >}} participation credible through direct referral incentives, verification, payment rails, and global launch operations:
+
+{{< var global_coordination_activation_budget_latex >}}
+
+The planning midpoint is {{< var global_coordination_activation_budget >}}. That comes from a research-backed blended reward of {{< var global_coordination_activation_reward_per_verified_participant >}} per successful verified participant, plus {{< var global_coordination_verification_and_payment_cost_per_participant >}} in variable verification and payment operations, plus {{< var global_coordination_platform_and_operations_cost >}} in fixed platform and launch costs. This is the main institutional ask.
+
+**What visible PRIZE seed makes the upside feel large?** A separate benchmark asks how much pool capital would make two referred votes look retirement-equivalent on success for a representative saver:
+
+{{< var prize_pool_retirement_equivalent_principal_latex >}}
+
+That stronger-incentive benchmark is {{< var prize_pool_retirement_equivalent_principal >}}. It is a visible-pool benchmark, not the minimum capital required to make humanity participate.
+
+**How large can the prize pool get later?** The canonical capital ceiling is the global retirement asset base: {{< var global_retirement_assets >}}. If that capital compounds through the wishocratic fund at {{< var prize_pool_annual_return >}} over {{< var prize_pool_resolution_years_nounit >}} years:
 
 {{< var prize_pool_potential_max_size_latex >}}
 
-The potential max pool is {{< var prize_pool_potential_max_size >}}. Reaching one year of the dysfunction tax ({{< var political_dysfunction_global_opportunity_cost_total >}}) by the resolution date requires {{< var prize_pool_target_required_principal >}} of starting capital, or {{< var prize_pool_target_pct_retirement_assets >}} of global retirement assets. That is {{< var prize_pool_target_pct_gdp >}} of global GDP and {{< var prize_pool_target_pct_wealth >}} of household wealth. The constraint is not money. It is the number of you who have done the arithmetic.
+The potential max pool is {{< var prize_pool_potential_max_size >}}. That is the scale vision: what happens if large retirement and institutional capital eventually joins a network that is already politically and operationally real. It is the end-state ceiling, not the opening board ask.
 
-**How many people will actually vote?** The referendum is designed to solve the usual turnout problem:
+**What headcount does the payout headline assume?** The payout headline is secondary to the activation threshold. It answers a narrower question: what long-dated VOTE upside could one claim represent if the network reaches the canonical coordination target and the pool later scales?
+
+The referendum is designed to solve the usual turnout problem:
 
 | Dimension | Your elections | This referendum |
 |:---|:---|:---|
@@ -296,13 +313,15 @@ The potential max pool is {{< var prize_pool_potential_max_size >}}. Reaching on
 | **Pivotality** | 1 in 30 million chance of changing outcome | Direct payout proportional to contribution |
 | **Outcome fidelity** | Politician may ignore you after winning | Funds flow to verified implementation |
 
-Your species turns out at 50-65% for elections despite getting paid nothing. This referendum adds a contingent payout, direct attribution, and a public scoreboard. The expected participation rate is {{< var vote_participation_rate >}}:
+Your species turns out at 50-65% for elections despite getting paid nothing. This referendum adds a contingent payout, direct attribution, and a public scoreboard. The canonical payout headline assumes the modeled global coordination target of {{< var global_coordination_target_pct >}}:
 
-{{< var vote_expected_participants_latex >}}
+{{< var global_coordination_target_supporters_latex >}}
 
-At that rate, {{< var vote_expected_participants >}} people vote over the accumulation period, exceeding the Chenoweth passage threshold ({{< var treaty_campaign_voting_bloc_target >}}) by roughly 8x. Payout and participation are co-determined: the potential max pool is fixed, so more voters means a smaller per-claim payout. But dilution does not erase the incentive. At the CI lower bound (3% participation), the modeled success payout is about $123K per claim. At the CI upper bound (70%), it is still about $5.3K per claim. That range is enough to make recruitment a serious activity rather than volunteer theater. The potential payout per VOTE claim at {{< var vote_participation_rate >}} participation:
+At that headcount, {{< var global_coordination_target_supporters >}} people participate and split the success-side pool by referred votes. One referred voter is the canonical claim unit; "2 claims" is the recruiter example. The canonical potential payout per VOTE claim at the coordination target is:
 
 {{< var vote_token_potential_value_latex >}}
+
+So the institutional stack is: first make mass participation credible ({{< var global_coordination_activation_budget >}}), then make success-side upside visibly real ({{< var prize_pool_retirement_equivalent_principal >}}), then scale the network into a civilization-sized capital allocator ({{< var prize_pool_potential_max_size >}} ceiling).
 
 **Why more pools make everyone richer.** The protocol does not need a single pool. It needs a single *metric standard*. Any pool that measures the same two terminal outcomes (median HALY, median income) and uses proof-of-personhood for deduplication automatically joins the reward network. A verified person claims proportionally from every participating pool, regardless of which one recorded their vote. Japan launches a pool, the EU launches a pool, the Gates Foundation launches a pool. The combined reward grows with each new entrant. A "competing" pool is actually a deposit. Spending money to "attack" the network is indistinguishable from donating to it. Think of email: you can run your own server; all servers interoperate; running your own extends the network rather than fragmenting it.
 

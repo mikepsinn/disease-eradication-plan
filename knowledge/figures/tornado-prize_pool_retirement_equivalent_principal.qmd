@@ -16,18 +16,18 @@ setup_chart_style()
 
 # Display name for chart title
 
-display_name = "PRIZE Pool Target as % of Household Wealth"
+display_name = "PRIZE Pool Retirement-Equivalent Principal"
 
 # Baseline and units
 
-baseline = 0.02010730859469299
+baseline = 1804405541315.2495
 
 # Tornado data from sensitivity analysis
 
-drivers = ['VENTURE_GROSS_RETURN', 'POLITICAL_DYSFUNCTION_GLOBAL_MIGRATION_OPPORTUNITY_COST', 'POLITICAL_DYSFUNCTION_GLOBAL_HEALTH_OPPORTUNITY_COST', 'SCALE_COMPRESSION_FACTOR', 'ALLOCATION_DECISION_SPREAD', 'HOME_BIAS_ALPHA', 'POLITICAL_DYSFUNCTION_GLOBAL_SCIENCE_OPPORTUNITY_COST', 'POLITICAL_DYSFUNCTION_GLOBAL_LEAD_OPPORTUNITY_COST']
-driver_labels = ['Venture Capital Gross Return', 'Global Migration Opportunity Cost', 'Global Health Opportunity Cost', 'Scale Compression Factor', 'Allocation Decision Return Spread', 'Home Bias Return Drag', 'Global Science Opportunity Cost', 'Global Lead Poisoning Cost']
-impacts_low = [0.013716205847454716, 0.0, -0.00278715168639309, 0.007664177328507351, 0.0021149022863259613, 0.0013296158384665697, -0.00039816452662758475, -0.00039816452662758475]
-impacts_high = [-0.009352348878891761, 0.02249629575445849, 0.009157784112434428, -0.0034872108084019193, -0.0024920237709499943, -0.0017156729851562115, 0.0011944935798827508, 0.0003981645266275813]
+drivers = ['VENTURE_GROSS_RETURN', 'SCALE_COMPRESSION_FACTOR', 'CONVENTIONAL_RETIREMENT_RETURN', 'ALLOCATION_DECISION_SPREAD', 'GLOBAL_SAVINGS_RATE_PCT', 'HOME_BIAS_ALPHA', 'GLOBAL_POPULATION_2024']
+driver_labels = ['Venture Capital Gross Return', 'Scale Compression Factor', 'Conventional Retirement Return (After Fees)', 'Allocation Decision Return Spread', 'Global Gross Savings Rate', 'Home Bias Return Drag', 'Global Population in 2024']
+impacts_low = [1230875714689.145, 687773998994.1465, -345828001975.48145, 189788771919.1853, -200489504590.58325, 119318116368.03662, 0.0]
+impacts_high = [-839268471059.3124, -312938078051.66016, 421190641746.2466, -223631197592.417, 200489504590.583, -153962417541.93872, 0.0]
 
 # Convert deltas to absolute values (baseline + delta)
 
@@ -71,7 +71,7 @@ ax.set_title(f'Sensitivity Analysis: {display_name}', fontsize=16, weight='bold'
 
 # X-axis label with units
 
-units_label = "percent"
+units_label = "USD"
 if units_label:
     ax.set_xlabel(f'{display_name} ({units_label})', fontsize=12)
 else:
@@ -96,7 +96,7 @@ add_watermark(fig)
 # Save PNG to knowledge/figures/ regardless of where Quarto renders from
 # Use 96 DPI for web-optimized output (reduced from 150 DPI to minimize file size)
 
-output_path = get_figure_output_path('tornado-prize_pool_target_pct_wealth.png')
+output_path = get_figure_output_path('tornado-prize_pool_retirement_equivalent_principal.png')
 plt.savefig(output_path, dpi=96, bbox_inches=None, facecolor=COLOR_WHITE)
 
 add_png_metadata(

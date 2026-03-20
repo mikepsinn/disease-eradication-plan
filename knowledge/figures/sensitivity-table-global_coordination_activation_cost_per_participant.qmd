@@ -1,9 +1,10 @@
-**Sensitivity Indices for PRIZE Pool Target as % of Household Wealth**
+**Sensitivity Indices for Activation Cost per Participant**
 
 Regression-based sensitivity showing which inputs explain the most variance in the output.
 
 | Input Parameter | Sensitivity Coefficient | Interpretation |
 |:----------------|------------------------:|:---------------|
-| PRIZE Pool Target Required Principal (USD) | 1.0000 | Strong driver |
+| Activation Reward per Verified Participant (USD) | 0.7760 | Strong driver |
+| Verification and Payment Cost per Participant (USD) | 0.2276 | Weak driver |
 
 *Interpretation*: Standardized coefficients show the change in output (in SD units) per 1 SD change in input. Values near ±1 indicate strong influence; values exceeding ±1 may occur with correlated inputs.
