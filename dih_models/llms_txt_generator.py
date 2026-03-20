@@ -173,7 +173,7 @@ def generate_llms_txt(project_root: Path) -> Path:
         "",
         "## Source Code",
         "",
-        "- [GitHub Repository](https://github.com/mikepsinn/disease-eradication-plan)",
+        "- [GitHub Repository](https://github.com/wishonia/earth-optimization-instructions)",
         "",
         "## License",
         "",

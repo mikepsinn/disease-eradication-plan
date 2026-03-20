@@ -1,0 +1,188 @@
+on:
+  workflow_dispatch:
+  push:
+    branches: [master]
+
+name: Build Downloadable Artifacts
+
+permissions:
+  contents: read
+
+concurrency:
+  group: "artifact-builds"
+  cancel-in-progress: true
+
+jobs:
+{% for job in jobs %}
+  build-{{ job.config_name }}:
+    name: "{{ job.display_name }}"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Cache Quarto freeze
+        uses: actions/cache@v4
+        with:
+          path: _freeze
+          key: quarto-freeze-{{ job.config_name }}-{% raw %}${{ hashFiles('**/*.qmd', '**/*.ipynb') }}{% endraw %}
+          restore-keys: |
+            quarto-freeze-{{ job.config_name }}-
+            quarto-freeze-
+
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+
+      - name: Cache validation results
+        uses: actions/cache@v4
+        with:
+          path: .cache
+          key: validation-cache-{% raw %}${{ runner.os }}{% endraw %}-{% raw %}${{ hashFiles('.cache/pdf-validation-cache.json') }}{% endraw %}
+          restore-keys: |
+            validation-cache-{% raw %}${{ runner.os }}{% endraw %}-
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+
+      - name: Install Graphviz
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y graphviz
+
+      - name: Install Python dependencies
+        run: uv pip install --system -r requirements.txt
+
+      - name: Install dih_models package
+        run: uv pip install --system -e .
+
+      - name: Install Jupyter kernel
+        run: |
+          python -m ipykernel install --user --name dih-project-kernel --display-name "DIH Project"
+
+      - name: Cache TinyTeX
+        uses: actions/cache@v4
+        with:
+          path: ~/.TinyTeX
+          key: tinytex-{% raw %}${{ runner.os }}{% endraw %}-{% raw %}${{ hashFiles('.github/workflows/build-artifacts.yml') }}{% endraw %}
+          restore-keys: |
+            tinytex-{% raw %}${{ runner.os }}{% endraw %}-
+
+      - name: Install LaTeX
+        run: |
+          if [ ! -d ~/.TinyTeX ]; then
+            quarto install tinytex
+          fi
+          ~/.TinyTeX/bin/*/tlmgr update --self || true
+          ~/.TinyTeX/bin/*/tlmgr install fontspec unicode-math lualatex-math luaotfload || true
+
+      - name: "Render {{ job.display_name }}"
+        run: python scripts/render-quarto.py {{ job.config_name }}{% if job.artifact_render_format %} --to {{ job.artifact_render_format }}{% endif %}
+        env:
+          GOOGLE_GENERATIVE_AI_API_KEY: {% raw %}${{ (secrets.LLM_VALIDATION == 'true' || github.ref == 'refs/heads/master') && secrets.GOOGLE_GENERATIVE_AI_API_KEY || '' }}{% endraw %}
+        timeout-minutes: {{ job.timeout_minutes }}
+
+{% if "pdf" in job.downloadable_formats %}
+      - name: Upload PDFs artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: pdfs-{{ job.config_name }}
+          path: _build_temp/{{ job.config_name }}/**/*.pdf
+          if-no-files-found: error
+{% endif %}
+
+{% if "epub" in job.downloadable_formats %}
+      - name: Upload EPUBs artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: epubs-{{ job.config_name }}
+          path: _build_temp/{{ job.config_name }}/**/*.epub
+          if-no-files-found: error
+{% endif %}
+
+{% if "docx" in job.downloadable_formats %}
+      - name: Upload DOCX artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: docx-{{ job.config_name }}
+          path: _build_temp/{{ job.config_name }}/**/*.docx
+          if-no-files-found: error
+{% endif %}
+
+      - name: Upload validation checklists
+        uses: actions/upload-artifact@v4
+        with:
+          name: validation-checklists-{{ job.config_name }}
+          path: pdf-validation-checklist-*.md
+          if-no-files-found: ignore
+
+      - name: Upload LaTeX logs on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: latex-logs-{{ job.config_name }}
+          path: |
+            logs/build-{{ job.config_name }}.log
+            _build_temp/{{ job.config_name }}/*.log
+            _build_temp/{{ job.config_name }}/**/*.log
+            _build_temp/{{ job.config_name }}/*.aux
+            _build_temp/{{ job.config_name }}/**/*.aux
+            _build_temp/{{ job.config_name }}/*.toc
+            _build_temp/{{ job.config_name }}/**/*.toc
+            _build_temp/{{ job.config_name }}/*.out
+            _build_temp/{{ job.config_name }}/**/*.out
+          retention-days: 7
+
+{% if job.upload_to_zenodo %}
+      - name: "Upload {{ job.display_name }} PDF to Zenodo (draft)"
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        env:
+          ZENODO_TOKEN: {% raw %}${{ secrets.ZENODO_TOKEN }}{% endraw %}
+        run: python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild {{ job.config_name }}
+{% endif %}
+
+{% endfor %}
+
+  release-builds:
+    name: "Release PDFs, EPUBs, and DOCX"
+    if: github.ref == 'refs/heads/master'
+    runs-on: ubuntu-latest
+    needs:
+{% for job in jobs %}
+      - build-{{ job.config_name }}
+{% endfor %}
+    permissions:
+      contents: write
+    steps:
+      - name: Download all build artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: release-files
+
+      - name: Create GitHub release with build artifacts
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: latest-builds
+          name: Latest Builds
+          body: |
+            Auto-generated downloadable artifacts from the latest master build.
+
+            **Built:** {% raw %}${{ github.event.head_commit.timestamp || github.run_id }}{% endraw %}
+            **Commit:** {% raw %}${{ github.sha }}{% endraw %}
+
+            ## Available Formats
+            - **PDFs**: Individual papers and books
+            - **EPUBs**: E-reader formats
+            - **DOCX**: Editable document exports
+          files: |
+            release-files/**/*.pdf
+            release-files/**/*.epub
+            release-files/**/*.docx
+          prerelease: false
+          make_latest: true

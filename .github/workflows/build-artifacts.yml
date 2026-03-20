@@ -1,0 +1,2262 @@
+on:
+  workflow_dispatch:
+  push:
+    branches: [master]
+
+name: Build Downloadable Artifacts
+
+permissions:
+  contents: read
+
+concurrency:
+  group: "artifact-builds"
+  cancel-in-progress: true
+
+jobs:
+
+  build-1-pct-treaty-impact:
+    name: "Build The 1% Treaty: Harnessing Greed to Eradicate Disea"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Cache Quarto freeze
+        uses: actions/cache@v4
+        with:
+          path: _freeze
+          key: quarto-freeze-1-pct-treaty-impact-${{ hashFiles('**/*.qmd', '**/*.ipynb') }}
+          restore-keys: |
+            quarto-freeze-1-pct-treaty-impact-
+            quarto-freeze-
+
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+
+      - name: Cache validation results
+        uses: actions/cache@v4
+        with:
+          path: .cache
+          key: validation-cache-${{ runner.os }}-${{ hashFiles('.cache/pdf-validation-cache.json') }}
+          restore-keys: |
+            validation-cache-${{ runner.os }}-
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+
+      - name: Install Graphviz
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y graphviz
+
+      - name: Install Python dependencies
+        run: uv pip install --system -r requirements.txt
+
+      - name: Install dih_models package
+        run: uv pip install --system -e .
+
+      - name: Install Jupyter kernel
+        run: |
+          python -m ipykernel install --user --name dih-project-kernel --display-name "DIH Project"
+
+      - name: Cache TinyTeX
+        uses: actions/cache@v4
+        with:
+          path: ~/.TinyTeX
+          key: tinytex-${{ runner.os }}-${{ hashFiles('.github/workflows/build-artifacts.yml') }}
+          restore-keys: |
+            tinytex-${{ runner.os }}-
+
+      - name: Install LaTeX
+        run: |
+          if [ ! -d ~/.TinyTeX ]; then
+            quarto install tinytex
+          fi
+          ~/.TinyTeX/bin/*/tlmgr update --self || true
+          ~/.TinyTeX/bin/*/tlmgr install fontspec unicode-math lualatex-math luaotfload || true
+
+      - name: "Render Build The 1% Treaty: Harnessing Greed to Eradicate Disea"
+        run: python scripts/render-quarto.py 1-pct-treaty-impact --to pdf
+        env:
+          GOOGLE_GENERATIVE_AI_API_KEY: ${{ (secrets.LLM_VALIDATION == 'true' || github.ref == 'refs/heads/master') && secrets.GOOGLE_GENERATIVE_AI_API_KEY || '' }}
+        timeout-minutes: 30
+
+
+      - name: Upload PDFs artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: pdfs-1-pct-treaty-impact
+          path: _build_temp/1-pct-treaty-impact/**/*.pdf
+          if-no-files-found: error
+
+
+
+
+
+
+      - name: Upload validation checklists
+        uses: actions/upload-artifact@v4
+        with:
+          name: validation-checklists-1-pct-treaty-impact
+          path: pdf-validation-checklist-*.md
+          if-no-files-found: ignore
+
+      - name: Upload LaTeX logs on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: latex-logs-1-pct-treaty-impact
+          path: |
+            logs/build-1-pct-treaty-impact.log
+            _build_temp/1-pct-treaty-impact/*.log
+            _build_temp/1-pct-treaty-impact/**/*.log
+            _build_temp/1-pct-treaty-impact/*.aux
+            _build_temp/1-pct-treaty-impact/**/*.aux
+            _build_temp/1-pct-treaty-impact/*.toc
+            _build_temp/1-pct-treaty-impact/**/*.toc
+            _build_temp/1-pct-treaty-impact/*.out
+            _build_temp/1-pct-treaty-impact/**/*.out
+          retention-days: 7
+
+
+      - name: "Upload Build The 1% Treaty: Harnessing Greed to Eradicate Disea PDF to Zenodo (draft)"
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        env:
+          ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
+        run: python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild 1-pct-treaty-impact
+
+
+
+  build-cost-of-change:
+    name: "Build The Price of Political Change: A Cost-Benefit Fram"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Cache Quarto freeze
+        uses: actions/cache@v4
+        with:
+          path: _freeze
+          key: quarto-freeze-cost-of-change-${{ hashFiles('**/*.qmd', '**/*.ipynb') }}
+          restore-keys: |
+            quarto-freeze-cost-of-change-
+            quarto-freeze-
+
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+
+      - name: Cache validation results
+        uses: actions/cache@v4
+        with:
+          path: .cache
+          key: validation-cache-${{ runner.os }}-${{ hashFiles('.cache/pdf-validation-cache.json') }}
+          restore-keys: |
+            validation-cache-${{ runner.os }}-
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+
+      - name: Install Graphviz
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y graphviz
+
+      - name: Install Python dependencies
+        run: uv pip install --system -r requirements.txt
+
+      - name: Install dih_models package
+        run: uv pip install --system -e .
+
+      - name: Install Jupyter kernel
+        run: |
+          python -m ipykernel install --user --name dih-project-kernel --display-name "DIH Project"
+
+      - name: Cache TinyTeX
+        uses: actions/cache@v4
+        with:
+          path: ~/.TinyTeX
+          key: tinytex-${{ runner.os }}-${{ hashFiles('.github/workflows/build-artifacts.yml') }}
+          restore-keys: |
+            tinytex-${{ runner.os }}-
+
+      - name: Install LaTeX
+        run: |
+          if [ ! -d ~/.TinyTeX ]; then
+            quarto install tinytex
+          fi
+          ~/.TinyTeX/bin/*/tlmgr update --self || true
+          ~/.TinyTeX/bin/*/tlmgr install fontspec unicode-math lualatex-math luaotfload || true
+
+      - name: "Render Build The Price of Political Change: A Cost-Benefit Fram"
+        run: python scripts/render-quarto.py cost-of-change --to pdf
+        env:
+          GOOGLE_GENERATIVE_AI_API_KEY: ${{ (secrets.LLM_VALIDATION == 'true' || github.ref == 'refs/heads/master') && secrets.GOOGLE_GENERATIVE_AI_API_KEY || '' }}
+        timeout-minutes: 30
+
+
+      - name: Upload PDFs artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: pdfs-cost-of-change
+          path: _build_temp/cost-of-change/**/*.pdf
+          if-no-files-found: error
+
+
+
+
+
+
+      - name: Upload validation checklists
+        uses: actions/upload-artifact@v4
+        with:
+          name: validation-checklists-cost-of-change
+          path: pdf-validation-checklist-*.md
+          if-no-files-found: ignore
+
+      - name: Upload LaTeX logs on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: latex-logs-cost-of-change
+          path: |
+            logs/build-cost-of-change.log
+            _build_temp/cost-of-change/*.log
+            _build_temp/cost-of-change/**/*.log
+            _build_temp/cost-of-change/*.aux
+            _build_temp/cost-of-change/**/*.aux
+            _build_temp/cost-of-change/*.toc
+            _build_temp/cost-of-change/**/*.toc
+            _build_temp/cost-of-change/*.out
+            _build_temp/cost-of-change/**/*.out
+          retention-days: 7
+
+
+      - name: "Upload Build The Price of Political Change: A Cost-Benefit Fram PDF to Zenodo (draft)"
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        env:
+          ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
+        run: python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild cost-of-change
+
+
+
+  build-dfda-impact:
+    name: "Build Ubiquitous Pragmatic Trial Impact Analysis: How to"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Cache Quarto freeze
+        uses: actions/cache@v4
+        with:
+          path: _freeze
+          key: quarto-freeze-dfda-impact-${{ hashFiles('**/*.qmd', '**/*.ipynb') }}
+          restore-keys: |
+            quarto-freeze-dfda-impact-
+            quarto-freeze-
+
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+
+      - name: Cache validation results
+        uses: actions/cache@v4
+        with:
+          path: .cache
+          key: validation-cache-${{ runner.os }}-${{ hashFiles('.cache/pdf-validation-cache.json') }}
+          restore-keys: |
+            validation-cache-${{ runner.os }}-
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+
+      - name: Install Graphviz
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y graphviz
+
+      - name: Install Python dependencies
+        run: uv pip install --system -r requirements.txt
+
+      - name: Install dih_models package
+        run: uv pip install --system -e .
+
+      - name: Install Jupyter kernel
+        run: |
+          python -m ipykernel install --user --name dih-project-kernel --display-name "DIH Project"
+
+      - name: Cache TinyTeX
+        uses: actions/cache@v4
+        with:
+          path: ~/.TinyTeX
+          key: tinytex-${{ runner.os }}-${{ hashFiles('.github/workflows/build-artifacts.yml') }}
+          restore-keys: |
+            tinytex-${{ runner.os }}-
+
+      - name: Install LaTeX
+        run: |
+          if [ ! -d ~/.TinyTeX ]; then
+            quarto install tinytex
+          fi
+          ~/.TinyTeX/bin/*/tlmgr update --self || true
+          ~/.TinyTeX/bin/*/tlmgr install fontspec unicode-math lualatex-math luaotfload || true
+
+      - name: "Render Build Ubiquitous Pragmatic Trial Impact Analysis: How to"
+        run: python scripts/render-quarto.py dfda-impact --to pdf
+        env:
+          GOOGLE_GENERATIVE_AI_API_KEY: ${{ (secrets.LLM_VALIDATION == 'true' || github.ref == 'refs/heads/master') && secrets.GOOGLE_GENERATIVE_AI_API_KEY || '' }}
+        timeout-minutes: 30
+
+
+      - name: Upload PDFs artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: pdfs-dfda-impact
+          path: _build_temp/dfda-impact/**/*.pdf
+          if-no-files-found: error
+
+
+
+
+
+
+      - name: Upload validation checklists
+        uses: actions/upload-artifact@v4
+        with:
+          name: validation-checklists-dfda-impact
+          path: pdf-validation-checklist-*.md
+          if-no-files-found: ignore
+
+      - name: Upload LaTeX logs on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: latex-logs-dfda-impact
+          path: |
+            logs/build-dfda-impact.log
+            _build_temp/dfda-impact/*.log
+            _build_temp/dfda-impact/**/*.log
+            _build_temp/dfda-impact/*.aux
+            _build_temp/dfda-impact/**/*.aux
+            _build_temp/dfda-impact/*.toc
+            _build_temp/dfda-impact/**/*.toc
+            _build_temp/dfda-impact/*.out
+            _build_temp/dfda-impact/**/*.out
+          retention-days: 7
+
+
+      - name: "Upload Build Ubiquitous Pragmatic Trial Impact Analysis: How to PDF to Zenodo (draft)"
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        env:
+          ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
+        run: python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild dfda-impact
+
+
+
+  build-dfda-spec:
+    name: "Build The Continuous Evidence Generation Protocol: Two-S"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Cache Quarto freeze
+        uses: actions/cache@v4
+        with:
+          path: _freeze
+          key: quarto-freeze-dfda-spec-${{ hashFiles('**/*.qmd', '**/*.ipynb') }}
+          restore-keys: |
+            quarto-freeze-dfda-spec-
+            quarto-freeze-
+
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+
+      - name: Cache validation results
+        uses: actions/cache@v4
+        with:
+          path: .cache
+          key: validation-cache-${{ runner.os }}-${{ hashFiles('.cache/pdf-validation-cache.json') }}
+          restore-keys: |
+            validation-cache-${{ runner.os }}-
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+
+      - name: Install Graphviz
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y graphviz
+
+      - name: Install Python dependencies
+        run: uv pip install --system -r requirements.txt
+
+      - name: Install dih_models package
+        run: uv pip install --system -e .
+
+      - name: Install Jupyter kernel
+        run: |
+          python -m ipykernel install --user --name dih-project-kernel --display-name "DIH Project"
+
+      - name: Cache TinyTeX
+        uses: actions/cache@v4
+        with:
+          path: ~/.TinyTeX
+          key: tinytex-${{ runner.os }}-${{ hashFiles('.github/workflows/build-artifacts.yml') }}
+          restore-keys: |
+            tinytex-${{ runner.os }}-
+
+      - name: Install LaTeX
+        run: |
+          if [ ! -d ~/.TinyTeX ]; then
+            quarto install tinytex
+          fi
+          ~/.TinyTeX/bin/*/tlmgr update --self || true
+          ~/.TinyTeX/bin/*/tlmgr install fontspec unicode-math lualatex-math luaotfload || true
+
+      - name: "Render Build The Continuous Evidence Generation Protocol: Two-S"
+        run: python scripts/render-quarto.py dfda-spec --to pdf
+        env:
+          GOOGLE_GENERATIVE_AI_API_KEY: ${{ (secrets.LLM_VALIDATION == 'true' || github.ref == 'refs/heads/master') && secrets.GOOGLE_GENERATIVE_AI_API_KEY || '' }}
+        timeout-minutes: 30
+
+
+      - name: Upload PDFs artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: pdfs-dfda-spec
+          path: _build_temp/dfda-spec/**/*.pdf
+          if-no-files-found: error
+
+
+
+
+
+
+      - name: Upload validation checklists
+        uses: actions/upload-artifact@v4
+        with:
+          name: validation-checklists-dfda-spec
+          path: pdf-validation-checklist-*.md
+          if-no-files-found: ignore
+
+      - name: Upload LaTeX logs on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: latex-logs-dfda-spec
+          path: |
+            logs/build-dfda-spec.log
+            _build_temp/dfda-spec/*.log
+            _build_temp/dfda-spec/**/*.log
+            _build_temp/dfda-spec/*.aux
+            _build_temp/dfda-spec/**/*.aux
+            _build_temp/dfda-spec/*.toc
+            _build_temp/dfda-spec/**/*.toc
+            _build_temp/dfda-spec/*.out
+            _build_temp/dfda-spec/**/*.out
+          retention-days: 7
+
+
+      - name: "Upload Build The Continuous Evidence Generation Protocol: Two-S PDF to Zenodo (draft)"
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        env:
+          ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
+        run: python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild dfda-spec
+
+
+
+  build-drug-development-cost:
+    name: "Build Drug Development Cost Increase Analysis"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Cache Quarto freeze
+        uses: actions/cache@v4
+        with:
+          path: _freeze
+          key: quarto-freeze-drug-development-cost-${{ hashFiles('**/*.qmd', '**/*.ipynb') }}
+          restore-keys: |
+            quarto-freeze-drug-development-cost-
+            quarto-freeze-
+
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+
+      - name: Cache validation results
+        uses: actions/cache@v4
+        with:
+          path: .cache
+          key: validation-cache-${{ runner.os }}-${{ hashFiles('.cache/pdf-validation-cache.json') }}
+          restore-keys: |
+            validation-cache-${{ runner.os }}-
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+
+      - name: Install Graphviz
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y graphviz
+
+      - name: Install Python dependencies
+        run: uv pip install --system -r requirements.txt
+
+      - name: Install dih_models package
+        run: uv pip install --system -e .
+
+      - name: Install Jupyter kernel
+        run: |
+          python -m ipykernel install --user --name dih-project-kernel --display-name "DIH Project"
+
+      - name: Cache TinyTeX
+        uses: actions/cache@v4
+        with:
+          path: ~/.TinyTeX
+          key: tinytex-${{ runner.os }}-${{ hashFiles('.github/workflows/build-artifacts.yml') }}
+          restore-keys: |
+            tinytex-${{ runner.os }}-
+
+      - name: Install LaTeX
+        run: |
+          if [ ! -d ~/.TinyTeX ]; then
+            quarto install tinytex
+          fi
+          ~/.TinyTeX/bin/*/tlmgr update --self || true
+          ~/.TinyTeX/bin/*/tlmgr install fontspec unicode-math lualatex-math luaotfload || true
+
+      - name: "Render Build Drug Development Cost Increase Analysis"
+        run: python scripts/render-quarto.py drug-development-cost --to pdf
+        env:
+          GOOGLE_GENERATIVE_AI_API_KEY: ${{ (secrets.LLM_VALIDATION == 'true' || github.ref == 'refs/heads/master') && secrets.GOOGLE_GENERATIVE_AI_API_KEY || '' }}
+        timeout-minutes: 30
+
+
+      - name: Upload PDFs artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: pdfs-drug-development-cost
+          path: _build_temp/drug-development-cost/**/*.pdf
+          if-no-files-found: error
+
+
+
+
+
+
+      - name: Upload validation checklists
+        uses: actions/upload-artifact@v4
+        with:
+          name: validation-checklists-drug-development-cost
+          path: pdf-validation-checklist-*.md
+          if-no-files-found: ignore
+
+      - name: Upload LaTeX logs on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: latex-logs-drug-development-cost
+          path: |
+            logs/build-drug-development-cost.log
+            _build_temp/drug-development-cost/*.log
+            _build_temp/drug-development-cost/**/*.log
+            _build_temp/drug-development-cost/*.aux
+            _build_temp/drug-development-cost/**/*.aux
+            _build_temp/drug-development-cost/*.toc
+            _build_temp/drug-development-cost/**/*.toc
+            _build_temp/drug-development-cost/*.out
+            _build_temp/drug-development-cost/**/*.out
+          retention-days: 7
+
+
+      - name: "Upload Build Drug Development Cost Increase Analysis PDF to Zenodo (draft)"
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        env:
+          ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
+        run: python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild drug-development-cost
+
+
+
+  build-earth-optimization-prize:
+    name: "Build The Earth Optimization Prize"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Cache Quarto freeze
+        uses: actions/cache@v4
+        with:
+          path: _freeze
+          key: quarto-freeze-earth-optimization-prize-${{ hashFiles('**/*.qmd', '**/*.ipynb') }}
+          restore-keys: |
+            quarto-freeze-earth-optimization-prize-
+            quarto-freeze-
+
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+
+      - name: Cache validation results
+        uses: actions/cache@v4
+        with:
+          path: .cache
+          key: validation-cache-${{ runner.os }}-${{ hashFiles('.cache/pdf-validation-cache.json') }}
+          restore-keys: |
+            validation-cache-${{ runner.os }}-
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+
+      - name: Install Graphviz
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y graphviz
+
+      - name: Install Python dependencies
+        run: uv pip install --system -r requirements.txt
+
+      - name: Install dih_models package
+        run: uv pip install --system -e .
+
+      - name: Install Jupyter kernel
+        run: |
+          python -m ipykernel install --user --name dih-project-kernel --display-name "DIH Project"
+
+      - name: Cache TinyTeX
+        uses: actions/cache@v4
+        with:
+          path: ~/.TinyTeX
+          key: tinytex-${{ runner.os }}-${{ hashFiles('.github/workflows/build-artifacts.yml') }}
+          restore-keys: |
+            tinytex-${{ runner.os }}-
+
+      - name: Install LaTeX
+        run: |
+          if [ ! -d ~/.TinyTeX ]; then
+            quarto install tinytex
+          fi
+          ~/.TinyTeX/bin/*/tlmgr update --self || true
+          ~/.TinyTeX/bin/*/tlmgr install fontspec unicode-math lualatex-math luaotfload || true
+
+      - name: "Render Build The Earth Optimization Prize"
+        run: python scripts/render-quarto.py earth-optimization-prize --to pdf
+        env:
+          GOOGLE_GENERATIVE_AI_API_KEY: ${{ (secrets.LLM_VALIDATION == 'true' || github.ref == 'refs/heads/master') && secrets.GOOGLE_GENERATIVE_AI_API_KEY || '' }}
+        timeout-minutes: 30
+
+
+      - name: Upload PDFs artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: pdfs-earth-optimization-prize
+          path: _build_temp/earth-optimization-prize/**/*.pdf
+          if-no-files-found: error
+
+
+
+
+
+
+      - name: Upload validation checklists
+        uses: actions/upload-artifact@v4
+        with:
+          name: validation-checklists-earth-optimization-prize
+          path: pdf-validation-checklist-*.md
+          if-no-files-found: ignore
+
+      - name: Upload LaTeX logs on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: latex-logs-earth-optimization-prize
+          path: |
+            logs/build-earth-optimization-prize.log
+            _build_temp/earth-optimization-prize/*.log
+            _build_temp/earth-optimization-prize/**/*.log
+            _build_temp/earth-optimization-prize/*.aux
+            _build_temp/earth-optimization-prize/**/*.aux
+            _build_temp/earth-optimization-prize/*.toc
+            _build_temp/earth-optimization-prize/**/*.toc
+            _build_temp/earth-optimization-prize/*.out
+            _build_temp/earth-optimization-prize/**/*.out
+          retention-days: 7
+
+
+      - name: "Upload Build The Earth Optimization Prize PDF to Zenodo (draft)"
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        env:
+          ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
+        run: python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild earth-optimization-prize
+
+
+
+  build-earth-optimization-prize-protocol:
+    name: "Build Earth Optimization Prize Protocol: Technical Speci"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Cache Quarto freeze
+        uses: actions/cache@v4
+        with:
+          path: _freeze
+          key: quarto-freeze-earth-optimization-prize-protocol-${{ hashFiles('**/*.qmd', '**/*.ipynb') }}
+          restore-keys: |
+            quarto-freeze-earth-optimization-prize-protocol-
+            quarto-freeze-
+
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+
+      - name: Cache validation results
+        uses: actions/cache@v4
+        with:
+          path: .cache
+          key: validation-cache-${{ runner.os }}-${{ hashFiles('.cache/pdf-validation-cache.json') }}
+          restore-keys: |
+            validation-cache-${{ runner.os }}-
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+
+      - name: Install Graphviz
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y graphviz
+
+      - name: Install Python dependencies
+        run: uv pip install --system -r requirements.txt
+
+      - name: Install dih_models package
+        run: uv pip install --system -e .
+
+      - name: Install Jupyter kernel
+        run: |
+          python -m ipykernel install --user --name dih-project-kernel --display-name "DIH Project"
+
+      - name: Cache TinyTeX
+        uses: actions/cache@v4
+        with:
+          path: ~/.TinyTeX
+          key: tinytex-${{ runner.os }}-${{ hashFiles('.github/workflows/build-artifacts.yml') }}
+          restore-keys: |
+            tinytex-${{ runner.os }}-
+
+      - name: Install LaTeX
+        run: |
+          if [ ! -d ~/.TinyTeX ]; then
+            quarto install tinytex
+          fi
+          ~/.TinyTeX/bin/*/tlmgr update --self || true
+          ~/.TinyTeX/bin/*/tlmgr install fontspec unicode-math lualatex-math luaotfload || true
+
+      - name: "Render Build Earth Optimization Prize Protocol: Technical Speci"
+        run: python scripts/render-quarto.py earth-optimization-prize-protocol --to pdf
+        env:
+          GOOGLE_GENERATIVE_AI_API_KEY: ${{ (secrets.LLM_VALIDATION == 'true' || github.ref == 'refs/heads/master') && secrets.GOOGLE_GENERATIVE_AI_API_KEY || '' }}
+        timeout-minutes: 30
+
+
+      - name: Upload PDFs artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: pdfs-earth-optimization-prize-protocol
+          path: _build_temp/earth-optimization-prize-protocol/**/*.pdf
+          if-no-files-found: error
+
+
+
+
+
+
+      - name: Upload validation checklists
+        uses: actions/upload-artifact@v4
+        with:
+          name: validation-checklists-earth-optimization-prize-protocol
+          path: pdf-validation-checklist-*.md
+          if-no-files-found: ignore
+
+      - name: Upload LaTeX logs on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: latex-logs-earth-optimization-prize-protocol
+          path: |
+            logs/build-earth-optimization-prize-protocol.log
+            _build_temp/earth-optimization-prize-protocol/*.log
+            _build_temp/earth-optimization-prize-protocol/**/*.log
+            _build_temp/earth-optimization-prize-protocol/*.aux
+            _build_temp/earth-optimization-prize-protocol/**/*.aux
+            _build_temp/earth-optimization-prize-protocol/*.toc
+            _build_temp/earth-optimization-prize-protocol/**/*.toc
+            _build_temp/earth-optimization-prize-protocol/*.out
+            _build_temp/earth-optimization-prize-protocol/**/*.out
+          retention-days: 7
+
+
+      - name: "Upload Build Earth Optimization Prize Protocol: Technical Speci PDF to Zenodo (draft)"
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        env:
+          ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
+        run: python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild earth-optimization-prize-protocol
+
+
+
+  build-gdp-trajectories:
+    name: "Build Choose Your Own Earth: A World Without the Politic"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Cache Quarto freeze
+        uses: actions/cache@v4
+        with:
+          path: _freeze
+          key: quarto-freeze-gdp-trajectories-${{ hashFiles('**/*.qmd', '**/*.ipynb') }}
+          restore-keys: |
+            quarto-freeze-gdp-trajectories-
+            quarto-freeze-
+
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+
+      - name: Cache validation results
+        uses: actions/cache@v4
+        with:
+          path: .cache
+          key: validation-cache-${{ runner.os }}-${{ hashFiles('.cache/pdf-validation-cache.json') }}
+          restore-keys: |
+            validation-cache-${{ runner.os }}-
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+
+      - name: Install Graphviz
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y graphviz
+
+      - name: Install Python dependencies
+        run: uv pip install --system -r requirements.txt
+
+      - name: Install dih_models package
+        run: uv pip install --system -e .
+
+      - name: Install Jupyter kernel
+        run: |
+          python -m ipykernel install --user --name dih-project-kernel --display-name "DIH Project"
+
+      - name: Cache TinyTeX
+        uses: actions/cache@v4
+        with:
+          path: ~/.TinyTeX
+          key: tinytex-${{ runner.os }}-${{ hashFiles('.github/workflows/build-artifacts.yml') }}
+          restore-keys: |
+            tinytex-${{ runner.os }}-
+
+      - name: Install LaTeX
+        run: |
+          if [ ! -d ~/.TinyTeX ]; then
+            quarto install tinytex
+          fi
+          ~/.TinyTeX/bin/*/tlmgr update --self || true
+          ~/.TinyTeX/bin/*/tlmgr install fontspec unicode-math lualatex-math luaotfload || true
+
+      - name: "Render Build Choose Your Own Earth: A World Without the Politic"
+        run: python scripts/render-quarto.py gdp-trajectories --to pdf
+        env:
+          GOOGLE_GENERATIVE_AI_API_KEY: ${{ (secrets.LLM_VALIDATION == 'true' || github.ref == 'refs/heads/master') && secrets.GOOGLE_GENERATIVE_AI_API_KEY || '' }}
+        timeout-minutes: 30
+
+
+      - name: Upload PDFs artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: pdfs-gdp-trajectories
+          path: _build_temp/gdp-trajectories/**/*.pdf
+          if-no-files-found: error
+
+
+
+
+
+
+      - name: Upload validation checklists
+        uses: actions/upload-artifact@v4
+        with:
+          name: validation-checklists-gdp-trajectories
+          path: pdf-validation-checklist-*.md
+          if-no-files-found: ignore
+
+      - name: Upload LaTeX logs on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: latex-logs-gdp-trajectories
+          path: |
+            logs/build-gdp-trajectories.log
+            _build_temp/gdp-trajectories/*.log
+            _build_temp/gdp-trajectories/**/*.log
+            _build_temp/gdp-trajectories/*.aux
+            _build_temp/gdp-trajectories/**/*.aux
+            _build_temp/gdp-trajectories/*.toc
+            _build_temp/gdp-trajectories/**/*.toc
+            _build_temp/gdp-trajectories/*.out
+            _build_temp/gdp-trajectories/**/*.out
+          retention-days: 7
+
+
+      - name: "Upload Build Choose Your Own Earth: A World Without the Politic PDF to Zenodo (draft)"
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        env:
+          ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
+        run: python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild gdp-trajectories
+
+
+
+  build-iab:
+    name: "Build Incentive Alignment Bonds: Making Public Goods Fin"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Cache Quarto freeze
+        uses: actions/cache@v4
+        with:
+          path: _freeze
+          key: quarto-freeze-iab-${{ hashFiles('**/*.qmd', '**/*.ipynb') }}
+          restore-keys: |
+            quarto-freeze-iab-
+            quarto-freeze-
+
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+
+      - name: Cache validation results
+        uses: actions/cache@v4
+        with:
+          path: .cache
+          key: validation-cache-${{ runner.os }}-${{ hashFiles('.cache/pdf-validation-cache.json') }}
+          restore-keys: |
+            validation-cache-${{ runner.os }}-
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+
+      - name: Install Graphviz
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y graphviz
+
+      - name: Install Python dependencies
+        run: uv pip install --system -r requirements.txt
+
+      - name: Install dih_models package
+        run: uv pip install --system -e .
+
+      - name: Install Jupyter kernel
+        run: |
+          python -m ipykernel install --user --name dih-project-kernel --display-name "DIH Project"
+
+      - name: Cache TinyTeX
+        uses: actions/cache@v4
+        with:
+          path: ~/.TinyTeX
+          key: tinytex-${{ runner.os }}-${{ hashFiles('.github/workflows/build-artifacts.yml') }}
+          restore-keys: |
+            tinytex-${{ runner.os }}-
+
+      - name: Install LaTeX
+        run: |
+          if [ ! -d ~/.TinyTeX ]; then
+            quarto install tinytex
+          fi
+          ~/.TinyTeX/bin/*/tlmgr update --self || true
+          ~/.TinyTeX/bin/*/tlmgr install fontspec unicode-math lualatex-math luaotfload || true
+
+      - name: "Render Build Incentive Alignment Bonds: Making Public Goods Fin"
+        run: python scripts/render-quarto.py iab --to pdf
+        env:
+          GOOGLE_GENERATIVE_AI_API_KEY: ${{ (secrets.LLM_VALIDATION == 'true' || github.ref == 'refs/heads/master') && secrets.GOOGLE_GENERATIVE_AI_API_KEY || '' }}
+        timeout-minutes: 30
+
+
+      - name: Upload PDFs artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: pdfs-iab
+          path: _build_temp/iab/**/*.pdf
+          if-no-files-found: error
+
+
+
+
+
+
+      - name: Upload validation checklists
+        uses: actions/upload-artifact@v4
+        with:
+          name: validation-checklists-iab
+          path: pdf-validation-checklist-*.md
+          if-no-files-found: ignore
+
+      - name: Upload LaTeX logs on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: latex-logs-iab
+          path: |
+            logs/build-iab.log
+            _build_temp/iab/*.log
+            _build_temp/iab/**/*.log
+            _build_temp/iab/*.aux
+            _build_temp/iab/**/*.aux
+            _build_temp/iab/*.toc
+            _build_temp/iab/**/*.toc
+            _build_temp/iab/*.out
+            _build_temp/iab/**/*.out
+          retention-days: 7
+
+
+      - name: "Upload Build Incentive Alignment Bonds: Making Public Goods Fin PDF to Zenodo (draft)"
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        env:
+          ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
+        run: python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild iab
+
+
+
+  build-invisible-graveyard:
+    name: "Build The Invisible Graveyard: Quantifying the Mortality"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Cache Quarto freeze
+        uses: actions/cache@v4
+        with:
+          path: _freeze
+          key: quarto-freeze-invisible-graveyard-${{ hashFiles('**/*.qmd', '**/*.ipynb') }}
+          restore-keys: |
+            quarto-freeze-invisible-graveyard-
+            quarto-freeze-
+
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+
+      - name: Cache validation results
+        uses: actions/cache@v4
+        with:
+          path: .cache
+          key: validation-cache-${{ runner.os }}-${{ hashFiles('.cache/pdf-validation-cache.json') }}
+          restore-keys: |
+            validation-cache-${{ runner.os }}-
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+
+      - name: Install Graphviz
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y graphviz
+
+      - name: Install Python dependencies
+        run: uv pip install --system -r requirements.txt
+
+      - name: Install dih_models package
+        run: uv pip install --system -e .
+
+      - name: Install Jupyter kernel
+        run: |
+          python -m ipykernel install --user --name dih-project-kernel --display-name "DIH Project"
+
+      - name: Cache TinyTeX
+        uses: actions/cache@v4
+        with:
+          path: ~/.TinyTeX
+          key: tinytex-${{ runner.os }}-${{ hashFiles('.github/workflows/build-artifacts.yml') }}
+          restore-keys: |
+            tinytex-${{ runner.os }}-
+
+      - name: Install LaTeX
+        run: |
+          if [ ! -d ~/.TinyTeX ]; then
+            quarto install tinytex
+          fi
+          ~/.TinyTeX/bin/*/tlmgr update --self || true
+          ~/.TinyTeX/bin/*/tlmgr install fontspec unicode-math lualatex-math luaotfload || true
+
+      - name: "Render Build The Invisible Graveyard: Quantifying the Mortality"
+        run: python scripts/render-quarto.py invisible-graveyard --to pdf
+        env:
+          GOOGLE_GENERATIVE_AI_API_KEY: ${{ (secrets.LLM_VALIDATION == 'true' || github.ref == 'refs/heads/master') && secrets.GOOGLE_GENERATIVE_AI_API_KEY || '' }}
+        timeout-minutes: 30
+
+
+      - name: Upload PDFs artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: pdfs-invisible-graveyard
+          path: _build_temp/invisible-graveyard/**/*.pdf
+          if-no-files-found: error
+
+
+
+
+
+
+      - name: Upload validation checklists
+        uses: actions/upload-artifact@v4
+        with:
+          name: validation-checklists-invisible-graveyard
+          path: pdf-validation-checklist-*.md
+          if-no-files-found: ignore
+
+      - name: Upload LaTeX logs on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: latex-logs-invisible-graveyard
+          path: |
+            logs/build-invisible-graveyard.log
+            _build_temp/invisible-graveyard/*.log
+            _build_temp/invisible-graveyard/**/*.log
+            _build_temp/invisible-graveyard/*.aux
+            _build_temp/invisible-graveyard/**/*.aux
+            _build_temp/invisible-graveyard/*.toc
+            _build_temp/invisible-graveyard/**/*.toc
+            _build_temp/invisible-graveyard/*.out
+            _build_temp/invisible-graveyard/**/*.out
+          retention-days: 7
+
+
+      - name: "Upload Build The Invisible Graveyard: Quantifying the Mortality PDF to Zenodo (draft)"
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        env:
+          ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
+        run: python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild invisible-graveyard
+
+
+
+  build-manual-paperback:
+    name: "Build How to End War and Disease"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Cache Quarto freeze
+        uses: actions/cache@v4
+        with:
+          path: _freeze
+          key: quarto-freeze-manual-paperback-${{ hashFiles('**/*.qmd', '**/*.ipynb') }}
+          restore-keys: |
+            quarto-freeze-manual-paperback-
+            quarto-freeze-
+
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+
+      - name: Cache validation results
+        uses: actions/cache@v4
+        with:
+          path: .cache
+          key: validation-cache-${{ runner.os }}-${{ hashFiles('.cache/pdf-validation-cache.json') }}
+          restore-keys: |
+            validation-cache-${{ runner.os }}-
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+
+      - name: Install Graphviz
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y graphviz
+
+      - name: Install Python dependencies
+        run: uv pip install --system -r requirements.txt
+
+      - name: Install dih_models package
+        run: uv pip install --system -e .
+
+      - name: Install Jupyter kernel
+        run: |
+          python -m ipykernel install --user --name dih-project-kernel --display-name "DIH Project"
+
+      - name: Cache TinyTeX
+        uses: actions/cache@v4
+        with:
+          path: ~/.TinyTeX
+          key: tinytex-${{ runner.os }}-${{ hashFiles('.github/workflows/build-artifacts.yml') }}
+          restore-keys: |
+            tinytex-${{ runner.os }}-
+
+      - name: Install LaTeX
+        run: |
+          if [ ! -d ~/.TinyTeX ]; then
+            quarto install tinytex
+          fi
+          ~/.TinyTeX/bin/*/tlmgr update --self || true
+          ~/.TinyTeX/bin/*/tlmgr install fontspec unicode-math lualatex-math luaotfload || true
+
+      - name: "Render Build How to End War and Disease"
+        run: python scripts/render-quarto.py manual-paperback
+        env:
+          GOOGLE_GENERATIVE_AI_API_KEY: ${{ (secrets.LLM_VALIDATION == 'true' || github.ref == 'refs/heads/master') && secrets.GOOGLE_GENERATIVE_AI_API_KEY || '' }}
+        timeout-minutes: 30
+
+
+      - name: Upload PDFs artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: pdfs-manual-paperback
+          path: _build_temp/manual-paperback/**/*.pdf
+          if-no-files-found: error
+
+
+
+      - name: Upload EPUBs artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: epubs-manual-paperback
+          path: _build_temp/manual-paperback/**/*.epub
+          if-no-files-found: error
+
+
+
+      - name: Upload DOCX artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: docx-manual-paperback
+          path: _build_temp/manual-paperback/**/*.docx
+          if-no-files-found: error
+
+
+      - name: Upload validation checklists
+        uses: actions/upload-artifact@v4
+        with:
+          name: validation-checklists-manual-paperback
+          path: pdf-validation-checklist-*.md
+          if-no-files-found: ignore
+
+      - name: Upload LaTeX logs on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: latex-logs-manual-paperback
+          path: |
+            logs/build-manual-paperback.log
+            _build_temp/manual-paperback/*.log
+            _build_temp/manual-paperback/**/*.log
+            _build_temp/manual-paperback/*.aux
+            _build_temp/manual-paperback/**/*.aux
+            _build_temp/manual-paperback/*.toc
+            _build_temp/manual-paperback/**/*.toc
+            _build_temp/manual-paperback/*.out
+            _build_temp/manual-paperback/**/*.out
+          retention-days: 7
+
+
+      - name: "Upload Build How to End War and Disease PDF to Zenodo (draft)"
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        env:
+          ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
+        run: python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild manual-paperback
+
+
+
+  build-obg:
+    name: "Build The Optimal Budget Generator: A Causal Inference P"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Cache Quarto freeze
+        uses: actions/cache@v4
+        with:
+          path: _freeze
+          key: quarto-freeze-obg-${{ hashFiles('**/*.qmd', '**/*.ipynb') }}
+          restore-keys: |
+            quarto-freeze-obg-
+            quarto-freeze-
+
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+
+      - name: Cache validation results
+        uses: actions/cache@v4
+        with:
+          path: .cache
+          key: validation-cache-${{ runner.os }}-${{ hashFiles('.cache/pdf-validation-cache.json') }}
+          restore-keys: |
+            validation-cache-${{ runner.os }}-
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+
+      - name: Install Graphviz
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y graphviz
+
+      - name: Install Python dependencies
+        run: uv pip install --system -r requirements.txt
+
+      - name: Install dih_models package
+        run: uv pip install --system -e .
+
+      - name: Install Jupyter kernel
+        run: |
+          python -m ipykernel install --user --name dih-project-kernel --display-name "DIH Project"
+
+      - name: Cache TinyTeX
+        uses: actions/cache@v4
+        with:
+          path: ~/.TinyTeX
+          key: tinytex-${{ runner.os }}-${{ hashFiles('.github/workflows/build-artifacts.yml') }}
+          restore-keys: |
+            tinytex-${{ runner.os }}-
+
+      - name: Install LaTeX
+        run: |
+          if [ ! -d ~/.TinyTeX ]; then
+            quarto install tinytex
+          fi
+          ~/.TinyTeX/bin/*/tlmgr update --self || true
+          ~/.TinyTeX/bin/*/tlmgr install fontspec unicode-math lualatex-math luaotfload || true
+
+      - name: "Render Build The Optimal Budget Generator: A Causal Inference P"
+        run: python scripts/render-quarto.py obg --to pdf
+        env:
+          GOOGLE_GENERATIVE_AI_API_KEY: ${{ (secrets.LLM_VALIDATION == 'true' || github.ref == 'refs/heads/master') && secrets.GOOGLE_GENERATIVE_AI_API_KEY || '' }}
+        timeout-minutes: 30
+
+
+      - name: Upload PDFs artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: pdfs-obg
+          path: _build_temp/obg/**/*.pdf
+          if-no-files-found: error
+
+
+
+
+
+
+      - name: Upload validation checklists
+        uses: actions/upload-artifact@v4
+        with:
+          name: validation-checklists-obg
+          path: pdf-validation-checklist-*.md
+          if-no-files-found: ignore
+
+      - name: Upload LaTeX logs on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: latex-logs-obg
+          path: |
+            logs/build-obg.log
+            _build_temp/obg/*.log
+            _build_temp/obg/**/*.log
+            _build_temp/obg/*.aux
+            _build_temp/obg/**/*.aux
+            _build_temp/obg/*.toc
+            _build_temp/obg/**/*.toc
+            _build_temp/obg/*.out
+            _build_temp/obg/**/*.out
+          retention-days: 7
+
+
+      - name: "Upload Build The Optimal Budget Generator: A Causal Inference P PDF to Zenodo (draft)"
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        env:
+          ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
+        run: python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild obg
+
+
+
+  build-opg:
+    name: "Build The Optimal Policy Generator: A Causal Inference P"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Cache Quarto freeze
+        uses: actions/cache@v4
+        with:
+          path: _freeze
+          key: quarto-freeze-opg-${{ hashFiles('**/*.qmd', '**/*.ipynb') }}
+          restore-keys: |
+            quarto-freeze-opg-
+            quarto-freeze-
+
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+
+      - name: Cache validation results
+        uses: actions/cache@v4
+        with:
+          path: .cache
+          key: validation-cache-${{ runner.os }}-${{ hashFiles('.cache/pdf-validation-cache.json') }}
+          restore-keys: |
+            validation-cache-${{ runner.os }}-
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+
+      - name: Install Graphviz
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y graphviz
+
+      - name: Install Python dependencies
+        run: uv pip install --system -r requirements.txt
+
+      - name: Install dih_models package
+        run: uv pip install --system -e .
+
+      - name: Install Jupyter kernel
+        run: |
+          python -m ipykernel install --user --name dih-project-kernel --display-name "DIH Project"
+
+      - name: Cache TinyTeX
+        uses: actions/cache@v4
+        with:
+          path: ~/.TinyTeX
+          key: tinytex-${{ runner.os }}-${{ hashFiles('.github/workflows/build-artifacts.yml') }}
+          restore-keys: |
+            tinytex-${{ runner.os }}-
+
+      - name: Install LaTeX
+        run: |
+          if [ ! -d ~/.TinyTeX ]; then
+            quarto install tinytex
+          fi
+          ~/.TinyTeX/bin/*/tlmgr update --self || true
+          ~/.TinyTeX/bin/*/tlmgr install fontspec unicode-math lualatex-math luaotfload || true
+
+      - name: "Render Build The Optimal Policy Generator: A Causal Inference P"
+        run: python scripts/render-quarto.py opg --to pdf
+        env:
+          GOOGLE_GENERATIVE_AI_API_KEY: ${{ (secrets.LLM_VALIDATION == 'true' || github.ref == 'refs/heads/master') && secrets.GOOGLE_GENERATIVE_AI_API_KEY || '' }}
+        timeout-minutes: 30
+
+
+      - name: Upload PDFs artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: pdfs-opg
+          path: _build_temp/opg/**/*.pdf
+          if-no-files-found: error
+
+
+
+
+
+
+      - name: Upload validation checklists
+        uses: actions/upload-artifact@v4
+        with:
+          name: validation-checklists-opg
+          path: pdf-validation-checklist-*.md
+          if-no-files-found: ignore
+
+      - name: Upload LaTeX logs on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: latex-logs-opg
+          path: |
+            logs/build-opg.log
+            _build_temp/opg/*.log
+            _build_temp/opg/**/*.log
+            _build_temp/opg/*.aux
+            _build_temp/opg/**/*.aux
+            _build_temp/opg/*.toc
+            _build_temp/opg/**/*.toc
+            _build_temp/opg/*.out
+            _build_temp/opg/**/*.out
+          retention-days: 7
+
+
+      - name: "Upload Build The Optimal Policy Generator: A Causal Inference P PDF to Zenodo (draft)"
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        env:
+          ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
+        run: python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild opg
+
+
+
+  build-optimocracy:
+    name: "Build Optimocracy: Causal Inference on Cross-Jurisdictio"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Cache Quarto freeze
+        uses: actions/cache@v4
+        with:
+          path: _freeze
+          key: quarto-freeze-optimocracy-${{ hashFiles('**/*.qmd', '**/*.ipynb') }}
+          restore-keys: |
+            quarto-freeze-optimocracy-
+            quarto-freeze-
+
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+
+      - name: Cache validation results
+        uses: actions/cache@v4
+        with:
+          path: .cache
+          key: validation-cache-${{ runner.os }}-${{ hashFiles('.cache/pdf-validation-cache.json') }}
+          restore-keys: |
+            validation-cache-${{ runner.os }}-
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+
+      - name: Install Graphviz
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y graphviz
+
+      - name: Install Python dependencies
+        run: uv pip install --system -r requirements.txt
+
+      - name: Install dih_models package
+        run: uv pip install --system -e .
+
+      - name: Install Jupyter kernel
+        run: |
+          python -m ipykernel install --user --name dih-project-kernel --display-name "DIH Project"
+
+      - name: Cache TinyTeX
+        uses: actions/cache@v4
+        with:
+          path: ~/.TinyTeX
+          key: tinytex-${{ runner.os }}-${{ hashFiles('.github/workflows/build-artifacts.yml') }}
+          restore-keys: |
+            tinytex-${{ runner.os }}-
+
+      - name: Install LaTeX
+        run: |
+          if [ ! -d ~/.TinyTeX ]; then
+            quarto install tinytex
+          fi
+          ~/.TinyTeX/bin/*/tlmgr update --self || true
+          ~/.TinyTeX/bin/*/tlmgr install fontspec unicode-math lualatex-math luaotfload || true
+
+      - name: "Render Build Optimocracy: Causal Inference on Cross-Jurisdictio"
+        run: python scripts/render-quarto.py optimocracy --to pdf
+        env:
+          GOOGLE_GENERATIVE_AI_API_KEY: ${{ (secrets.LLM_VALIDATION == 'true' || github.ref == 'refs/heads/master') && secrets.GOOGLE_GENERATIVE_AI_API_KEY || '' }}
+        timeout-minutes: 30
+
+
+      - name: Upload PDFs artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: pdfs-optimocracy
+          path: _build_temp/optimocracy/**/*.pdf
+          if-no-files-found: error
+
+
+
+
+
+
+      - name: Upload validation checklists
+        uses: actions/upload-artifact@v4
+        with:
+          name: validation-checklists-optimocracy
+          path: pdf-validation-checklist-*.md
+          if-no-files-found: ignore
+
+      - name: Upload LaTeX logs on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: latex-logs-optimocracy
+          path: |
+            logs/build-optimocracy.log
+            _build_temp/optimocracy/*.log
+            _build_temp/optimocracy/**/*.log
+            _build_temp/optimocracy/*.aux
+            _build_temp/optimocracy/**/*.aux
+            _build_temp/optimocracy/*.toc
+            _build_temp/optimocracy/**/*.toc
+            _build_temp/optimocracy/*.out
+            _build_temp/optimocracy/**/*.out
+          retention-days: 7
+
+
+      - name: "Upload Build Optimocracy: Causal Inference on Cross-Jurisdictio PDF to Zenodo (draft)"
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        env:
+          ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
+        run: python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild optimocracy
+
+
+
+  build-political-dysfunction-tax:
+    name: "Build The Political Dysfunction Tax"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Cache Quarto freeze
+        uses: actions/cache@v4
+        with:
+          path: _freeze
+          key: quarto-freeze-political-dysfunction-tax-${{ hashFiles('**/*.qmd', '**/*.ipynb') }}
+          restore-keys: |
+            quarto-freeze-political-dysfunction-tax-
+            quarto-freeze-
+
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+
+      - name: Cache validation results
+        uses: actions/cache@v4
+        with:
+          path: .cache
+          key: validation-cache-${{ runner.os }}-${{ hashFiles('.cache/pdf-validation-cache.json') }}
+          restore-keys: |
+            validation-cache-${{ runner.os }}-
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+
+      - name: Install Graphviz
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y graphviz
+
+      - name: Install Python dependencies
+        run: uv pip install --system -r requirements.txt
+
+      - name: Install dih_models package
+        run: uv pip install --system -e .
+
+      - name: Install Jupyter kernel
+        run: |
+          python -m ipykernel install --user --name dih-project-kernel --display-name "DIH Project"
+
+      - name: Cache TinyTeX
+        uses: actions/cache@v4
+        with:
+          path: ~/.TinyTeX
+          key: tinytex-${{ runner.os }}-${{ hashFiles('.github/workflows/build-artifacts.yml') }}
+          restore-keys: |
+            tinytex-${{ runner.os }}-
+
+      - name: Install LaTeX
+        run: |
+          if [ ! -d ~/.TinyTeX ]; then
+            quarto install tinytex
+          fi
+          ~/.TinyTeX/bin/*/tlmgr update --self || true
+          ~/.TinyTeX/bin/*/tlmgr install fontspec unicode-math lualatex-math luaotfload || true
+
+      - name: "Render Build The Political Dysfunction Tax"
+        run: python scripts/render-quarto.py political-dysfunction-tax --to pdf
+        env:
+          GOOGLE_GENERATIVE_AI_API_KEY: ${{ (secrets.LLM_VALIDATION == 'true' || github.ref == 'refs/heads/master') && secrets.GOOGLE_GENERATIVE_AI_API_KEY || '' }}
+        timeout-minutes: 30
+
+
+      - name: Upload PDFs artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: pdfs-political-dysfunction-tax
+          path: _build_temp/political-dysfunction-tax/**/*.pdf
+          if-no-files-found: error
+
+
+
+
+
+
+      - name: Upload validation checklists
+        uses: actions/upload-artifact@v4
+        with:
+          name: validation-checklists-political-dysfunction-tax
+          path: pdf-validation-checklist-*.md
+          if-no-files-found: ignore
+
+      - name: Upload LaTeX logs on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: latex-logs-political-dysfunction-tax
+          path: |
+            logs/build-political-dysfunction-tax.log
+            _build_temp/political-dysfunction-tax/*.log
+            _build_temp/political-dysfunction-tax/**/*.log
+            _build_temp/political-dysfunction-tax/*.aux
+            _build_temp/political-dysfunction-tax/**/*.aux
+            _build_temp/political-dysfunction-tax/*.toc
+            _build_temp/political-dysfunction-tax/**/*.toc
+            _build_temp/political-dysfunction-tax/*.out
+            _build_temp/political-dysfunction-tax/**/*.out
+          retention-days: 7
+
+
+      - name: "Upload Build The Political Dysfunction Tax PDF to Zenodo (draft)"
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        env:
+          ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
+        run: python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild political-dysfunction-tax
+
+
+
+  build-right-to-trial:
+    name: "Build Right to Trial & FDA Upgrade Act"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Cache Quarto freeze
+        uses: actions/cache@v4
+        with:
+          path: _freeze
+          key: quarto-freeze-right-to-trial-${{ hashFiles('**/*.qmd', '**/*.ipynb') }}
+          restore-keys: |
+            quarto-freeze-right-to-trial-
+            quarto-freeze-
+
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+
+      - name: Cache validation results
+        uses: actions/cache@v4
+        with:
+          path: .cache
+          key: validation-cache-${{ runner.os }}-${{ hashFiles('.cache/pdf-validation-cache.json') }}
+          restore-keys: |
+            validation-cache-${{ runner.os }}-
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+
+      - name: Install Graphviz
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y graphviz
+
+      - name: Install Python dependencies
+        run: uv pip install --system -r requirements.txt
+
+      - name: Install dih_models package
+        run: uv pip install --system -e .
+
+      - name: Install Jupyter kernel
+        run: |
+          python -m ipykernel install --user --name dih-project-kernel --display-name "DIH Project"
+
+      - name: Cache TinyTeX
+        uses: actions/cache@v4
+        with:
+          path: ~/.TinyTeX
+          key: tinytex-${{ runner.os }}-${{ hashFiles('.github/workflows/build-artifacts.yml') }}
+          restore-keys: |
+            tinytex-${{ runner.os }}-
+
+      - name: Install LaTeX
+        run: |
+          if [ ! -d ~/.TinyTeX ]; then
+            quarto install tinytex
+          fi
+          ~/.TinyTeX/bin/*/tlmgr update --self || true
+          ~/.TinyTeX/bin/*/tlmgr install fontspec unicode-math lualatex-math luaotfload || true
+
+      - name: "Render Build Right to Trial & FDA Upgrade Act"
+        run: python scripts/render-quarto.py right-to-trial --to pdf
+        env:
+          GOOGLE_GENERATIVE_AI_API_KEY: ${{ (secrets.LLM_VALIDATION == 'true' || github.ref == 'refs/heads/master') && secrets.GOOGLE_GENERATIVE_AI_API_KEY || '' }}
+        timeout-minutes: 30
+
+
+      - name: Upload PDFs artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: pdfs-right-to-trial
+          path: _build_temp/right-to-trial/**/*.pdf
+          if-no-files-found: error
+
+
+
+
+
+
+      - name: Upload validation checklists
+        uses: actions/upload-artifact@v4
+        with:
+          name: validation-checklists-right-to-trial
+          path: pdf-validation-checklist-*.md
+          if-no-files-found: ignore
+
+      - name: Upload LaTeX logs on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: latex-logs-right-to-trial
+          path: |
+            logs/build-right-to-trial.log
+            _build_temp/right-to-trial/*.log
+            _build_temp/right-to-trial/**/*.log
+            _build_temp/right-to-trial/*.aux
+            _build_temp/right-to-trial/**/*.aux
+            _build_temp/right-to-trial/*.toc
+            _build_temp/right-to-trial/**/*.toc
+            _build_temp/right-to-trial/*.out
+            _build_temp/right-to-trial/**/*.out
+          retention-days: 7
+
+
+      - name: "Upload Build Right to Trial & FDA Upgrade Act PDF to Zenodo (draft)"
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        env:
+          ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
+        run: python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild right-to-trial
+
+
+
+  build-us-efficiency-audit:
+    name: "Build United States Efficiency Audit"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Cache Quarto freeze
+        uses: actions/cache@v4
+        with:
+          path: _freeze
+          key: quarto-freeze-us-efficiency-audit-${{ hashFiles('**/*.qmd', '**/*.ipynb') }}
+          restore-keys: |
+            quarto-freeze-us-efficiency-audit-
+            quarto-freeze-
+
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+
+      - name: Cache validation results
+        uses: actions/cache@v4
+        with:
+          path: .cache
+          key: validation-cache-${{ runner.os }}-${{ hashFiles('.cache/pdf-validation-cache.json') }}
+          restore-keys: |
+            validation-cache-${{ runner.os }}-
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+
+      - name: Install Graphviz
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y graphviz
+
+      - name: Install Python dependencies
+        run: uv pip install --system -r requirements.txt
+
+      - name: Install dih_models package
+        run: uv pip install --system -e .
+
+      - name: Install Jupyter kernel
+        run: |
+          python -m ipykernel install --user --name dih-project-kernel --display-name "DIH Project"
+
+      - name: Cache TinyTeX
+        uses: actions/cache@v4
+        with:
+          path: ~/.TinyTeX
+          key: tinytex-${{ runner.os }}-${{ hashFiles('.github/workflows/build-artifacts.yml') }}
+          restore-keys: |
+            tinytex-${{ runner.os }}-
+
+      - name: Install LaTeX
+        run: |
+          if [ ! -d ~/.TinyTeX ]; then
+            quarto install tinytex
+          fi
+          ~/.TinyTeX/bin/*/tlmgr update --self || true
+          ~/.TinyTeX/bin/*/tlmgr install fontspec unicode-math lualatex-math luaotfload || true
+
+      - name: "Render Build United States Efficiency Audit"
+        run: python scripts/render-quarto.py us-efficiency-audit --to pdf
+        env:
+          GOOGLE_GENERATIVE_AI_API_KEY: ${{ (secrets.LLM_VALIDATION == 'true' || github.ref == 'refs/heads/master') && secrets.GOOGLE_GENERATIVE_AI_API_KEY || '' }}
+        timeout-minutes: 30
+
+
+      - name: Upload PDFs artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: pdfs-us-efficiency-audit
+          path: _build_temp/us-efficiency-audit/**/*.pdf
+          if-no-files-found: error
+
+
+
+
+
+
+      - name: Upload validation checklists
+        uses: actions/upload-artifact@v4
+        with:
+          name: validation-checklists-us-efficiency-audit
+          path: pdf-validation-checklist-*.md
+          if-no-files-found: ignore
+
+      - name: Upload LaTeX logs on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: latex-logs-us-efficiency-audit
+          path: |
+            logs/build-us-efficiency-audit.log
+            _build_temp/us-efficiency-audit/*.log
+            _build_temp/us-efficiency-audit/**/*.log
+            _build_temp/us-efficiency-audit/*.aux
+            _build_temp/us-efficiency-audit/**/*.aux
+            _build_temp/us-efficiency-audit/*.toc
+            _build_temp/us-efficiency-audit/**/*.toc
+            _build_temp/us-efficiency-audit/*.out
+            _build_temp/us-efficiency-audit/**/*.out
+          retention-days: 7
+
+
+      - name: "Upload Build United States Efficiency Audit PDF to Zenodo (draft)"
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        env:
+          ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
+        run: python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild us-efficiency-audit
+
+
+
+  build-wishocracy:
+    name: "Build Wishocracy: Solving the Democratic Principal-Agent"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Cache Quarto freeze
+        uses: actions/cache@v4
+        with:
+          path: _freeze
+          key: quarto-freeze-wishocracy-${{ hashFiles('**/*.qmd', '**/*.ipynb') }}
+          restore-keys: |
+            quarto-freeze-wishocracy-
+            quarto-freeze-
+
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+
+      - name: Cache validation results
+        uses: actions/cache@v4
+        with:
+          path: .cache
+          key: validation-cache-${{ runner.os }}-${{ hashFiles('.cache/pdf-validation-cache.json') }}
+          restore-keys: |
+            validation-cache-${{ runner.os }}-
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+
+      - name: Install Graphviz
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y graphviz
+
+      - name: Install Python dependencies
+        run: uv pip install --system -r requirements.txt
+
+      - name: Install dih_models package
+        run: uv pip install --system -e .
+
+      - name: Install Jupyter kernel
+        run: |
+          python -m ipykernel install --user --name dih-project-kernel --display-name "DIH Project"
+
+      - name: Cache TinyTeX
+        uses: actions/cache@v4
+        with:
+          path: ~/.TinyTeX
+          key: tinytex-${{ runner.os }}-${{ hashFiles('.github/workflows/build-artifacts.yml') }}
+          restore-keys: |
+            tinytex-${{ runner.os }}-
+
+      - name: Install LaTeX
+        run: |
+          if [ ! -d ~/.TinyTeX ]; then
+            quarto install tinytex
+          fi
+          ~/.TinyTeX/bin/*/tlmgr update --self || true
+          ~/.TinyTeX/bin/*/tlmgr install fontspec unicode-math lualatex-math luaotfload || true
+
+      - name: "Render Build Wishocracy: Solving the Democratic Principal-Agent"
+        run: python scripts/render-quarto.py wishocracy --to pdf
+        env:
+          GOOGLE_GENERATIVE_AI_API_KEY: ${{ (secrets.LLM_VALIDATION == 'true' || github.ref == 'refs/heads/master') && secrets.GOOGLE_GENERATIVE_AI_API_KEY || '' }}
+        timeout-minutes: 30
+
+
+      - name: Upload PDFs artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: pdfs-wishocracy
+          path: _build_temp/wishocracy/**/*.pdf
+          if-no-files-found: error
+
+
+
+
+
+
+      - name: Upload validation checklists
+        uses: actions/upload-artifact@v4
+        with:
+          name: validation-checklists-wishocracy
+          path: pdf-validation-checklist-*.md
+          if-no-files-found: ignore
+
+      - name: Upload LaTeX logs on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: latex-logs-wishocracy
+          path: |
+            logs/build-wishocracy.log
+            _build_temp/wishocracy/*.log
+            _build_temp/wishocracy/**/*.log
+            _build_temp/wishocracy/*.aux
+            _build_temp/wishocracy/**/*.aux
+            _build_temp/wishocracy/*.toc
+            _build_temp/wishocracy/**/*.toc
+            _build_temp/wishocracy/*.out
+            _build_temp/wishocracy/**/*.out
+          retention-days: 7
+
+
+      - name: "Upload Build Wishocracy: Solving the Democratic Principal-Agent PDF to Zenodo (draft)"
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        env:
+          ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
+        run: python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild wishocracy
+
+
+
+
+  release-builds:
+    name: "Release PDFs, EPUBs, and DOCX"
+    if: github.ref == 'refs/heads/master'
+    runs-on: ubuntu-latest
+    needs:
+
+      - build-1-pct-treaty-impact
+
+      - build-cost-of-change
+
+      - build-dfda-impact
+
+      - build-dfda-spec
+
+      - build-drug-development-cost
+
+      - build-earth-optimization-prize
+
+      - build-earth-optimization-prize-protocol
+
+      - build-gdp-trajectories
+
+      - build-iab
+
+      - build-invisible-graveyard
+
+      - build-manual-paperback
+
+      - build-obg
+
+      - build-opg
+
+      - build-optimocracy
+
+      - build-political-dysfunction-tax
+
+      - build-right-to-trial
+
+      - build-us-efficiency-audit
+
+      - build-wishocracy
+
+    permissions:
+      contents: write
+    steps:
+      - name: Download all build artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: release-files
+
+      - name: Create GitHub release with build artifacts
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: latest-builds
+          name: Latest Builds
+          body: |
+            Auto-generated downloadable artifacts from the latest master build.
+
+            **Built:** ${{ github.event.head_commit.timestamp || github.run_id }}
+            **Commit:** ${{ github.sha }}
+
+            ## Available Formats
+            - **PDFs**: Individual papers and books
+            - **EPUBs**: E-reader formats
+            - **DOCX**: Editable document exports
+          files: |
+            release-files/**/*.pdf
+            release-files/**/*.epub
+            release-files/**/*.docx
+          prerelease: false
+          make_latest: true

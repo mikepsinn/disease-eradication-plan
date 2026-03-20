@@ -1,17 +1,17 @@
 on:
   workflow_dispatch:
   push:
-    branches: [develop, master]
+    branches: [develop]
   pull_request:
-    branches: [develop, master]
+    branches: [develop]
 
-name: Build and Deploy to Netlify
+name: Build and Deploy Manual Site
 
 permissions:
   contents: read
 
 concurrency:
-  group: "netlify-deploy"
+  group: "manual-deploy"
   cancel-in-progress: true
 
 jobs:
@@ -28,7 +28,6 @@ jobs:
         with:
           path: _freeze
           key: quarto-freeze-{{ job.config_name }}-{% raw %}${{ hashFiles('**/*.qmd', '**/*.ipynb') }}{% endraw %}
-
           restore-keys: |
             quarto-freeze-{{ job.config_name }}-
             quarto-freeze-
@@ -69,133 +68,36 @@ jobs:
         run: |
           python -m ipykernel install --user --name dih-project-kernel --display-name "DIH Project"
 
-      - name: Cache TinyTeX
-        uses: actions/cache@v4
-        with:
-          path: ~/.TinyTeX
-          key: tinytex-{% raw %}${{ runner.os }}{% endraw %}-{% raw %}${{ hashFiles('.github/workflows/publish.yml') }}{% endraw %}
-          restore-keys: |
-            tinytex-{% raw %}${{ runner.os }}{% endraw %}-
-
-      - name: Install LaTeX{% if job.project_type == "book" %} for PDF/EPUB{% endif %}
-        run: |
-          if [ ! -d ~/.TinyTeX ]; then
-            quarto install tinytex
-          fi
-          ~/.TinyTeX/bin/*/tlmgr update --self || true
-          ~/.TinyTeX/bin/*/tlmgr install fontspec unicode-math lualatex-math luaotfload || true
-
-      - name: "Render {{ job.display_name }}"
-        run: python scripts/render-quarto.py {{ job.config_name }}
+      - name: "Render {{ job.display_name }} (HTML)"
+        run: python scripts/render-quarto.py {{ job.config_name }} --to html
         env:
-          GOOGLE_GENERATIVE_AI_API_KEY: {% raw %}${{ (secrets.LLM_VALIDATION == 'true' || github.ref == 'refs/heads/master') && secrets.GOOGLE_GENERATIVE_AI_API_KEY || '' }}{% endraw %}
+          GOOGLE_GENERATIVE_AI_API_KEY: {% raw %}${{ (secrets.LLM_VALIDATION == 'true' || github.ref == 'refs/heads/develop') && secrets.GOOGLE_GENERATIVE_AI_API_KEY || '' }}{% endraw %}
         timeout-minutes: {{ job.timeout_minutes }}
 
-      - name: Upload PDFs artifact
-        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
-        uses: actions/upload-artifact@v4
-        with:
-          name: pdfs-{{ job.config_name }}
-          path: _build_temp/{{ job.config_name }}/**/*.pdf
-          if-no-files-found: ignore
-
-{% if job.project_type == "book" %}
-      - name: Upload EPUBs artifact
-        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
-        uses: actions/upload-artifact@v4
-        with:
-          name: epubs-{{ job.config_name }}
-          path: _build_temp/{{ job.config_name }}/**/*.epub
-          if-no-files-found: ignore
-{% endif %}
-
-      - name: Upload validation checklists
-        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
-        uses: actions/upload-artifact@v4
-        with:
-          name: validation-checklists-{{ job.config_name }}
-          path: pdf-validation-checklist-*.md
-          if-no-files-found: ignore
-
-      - name: Upload LaTeX logs on failure
+      - name: Upload build logs on failure
         if: failure()
         uses: actions/upload-artifact@v4
         with:
-          name: latex-logs-{{ job.config_name }}
+          name: build-logs-{{ job.config_name }}
           path: |
+            logs/build-{{ job.config_name }}.log
             _build_temp/{{ job.config_name }}/*.log
             _build_temp/{{ job.config_name }}/**/*.log
-            _build_temp/{{ job.config_name }}/*.aux
-            _build_temp/{{ job.config_name }}/**/*.aux
-            _build_temp/{{ job.config_name }}/*.toc
-            _build_temp/{{ job.config_name }}/**/*.toc
-            _build_temp/{{ job.config_name }}/*.out
-            _build_temp/{{ job.config_name }}/**/*.out
           retention-days: 7
 
-{% if job.deploy_to_netlify %}
-      - name: "Deploy {{ job.display_name }} to Netlify (immediate)"
-        if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
+      - name: "Deploy {{ job.display_name }} to Netlify"
+        if: {% raw %}${{ (github.event_name == 'push' && github.ref == 'refs/heads/develop') || (github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/develop') }}{% endraw %}
         uses: nwtgck/actions-netlify@v3.0
         with:
           publish-dir: '{{ job.build_dir }}'
-          production-deploy: {% raw %}${{ github.ref == 'refs/heads/develop' || github.ref == 'refs/heads/master' }}{% endraw %}
+          production-deploy: true
           github-token: {% raw %}${{ secrets.GITHUB_TOKEN }}{% endraw %}
-
           deploy-message: "Deploy {{ job.config_name }} from {% raw %}${{ github.ref_name }}{% endraw %}"
           enable-pull-request-comment: true
           enable-commit-comment: true
           overwrites-pull-request-comment: true
         env:
           NETLIFY_AUTH_TOKEN: {% raw %}${{ secrets.NETLIFY_AUTH_TOKEN }}{% endraw %}
-
           NETLIFY_SITE_ID: {{ job.netlify_site_id }}
-
         timeout-minutes: 5
-{% endif %}
-
-{% if job.upload_to_zenodo %}
-      - name: "Upload {{ job.display_name }} PDF to Zenodo (draft)"
-        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
-        env:
-          ZENODO_TOKEN: {% raw %}${{ secrets.ZENODO_TOKEN }}{% endraw %}
-        run: python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild {{ job.config_name }}
-{% endif %}
-
 {% endfor %}
-
-  release-builds:
-    name: "Release PDFs & EPUBs (master only)"
-    if: github.event_name == 'push' && github.ref == 'refs/heads/master'
-    runs-on: ubuntu-latest
-    needs:
-{% for job in jobs %}
-      - build-{{ job.config_name }}
-{% endfor %}
-    permissions:
-      contents: write
-    steps:
-      - name: Download all build artifacts
-        uses: actions/download-artifact@v4
-        with:
-          path: release-files
-
-      - name: Create GitHub release with PDFs and EPUBs
-        uses: softprops/action-gh-release@v2
-        with:
-          tag_name: latest-builds
-          name: Latest Builds
-          body: |
-            Auto-generated PDFs and EPUBs from the latest master build.
-
-            **Built:** {% raw %}${{ github.event.head_commit.timestamp }}{% endraw %}
-            **Commit:** {% raw %}${{ github.sha }}{% endraw %}
-
-            ## Available Formats
-            - **PDFs**: Individual papers and full manual
-            - **EPUBs**: E-reader formats (Kindle, Apple Books, etc.)
-          files: |
-            release-files/**/*.pdf
-            release-files/**/*.epub
-          prerelease: false
-          make_latest: true
