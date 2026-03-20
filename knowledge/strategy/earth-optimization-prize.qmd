@@ -35,9 +35,9 @@ youtube-thumbnail: /assets/podcast/least-bad-idea-prize-paper-youtube.jpg
 
 ## How It Works (The 90-Second Version)
 
-**PRIZE deposits** fund the same pool that compounds through the wishocratic fund until year {{< var prize_pool_resolution_years_nounit >}}. PRIZE is catalytic committed capital, not a redeem-anytime savings account. It stays with the depositor's verified account or legal-entity account until resolution, subject to recovery and lawful successor control. If the targets are missed, depositors divide the realized pool pro rata. If the targets are met, the depositor-side claim does not remain with depositors; that same realized pool routes to VOTE point-holders instead. See the [prize protocol](../appendix/earth-optimization-prize-protocol.qmd) [@earth-optimization-prize-protocol-paper-2025] for the full specification.
+**PRIZE deposits** fund the same pool that compounds through the wishocratic fund until year {{< var prize_pool_resolution_years_nounit >}}. PRIZE deposits are locked capital, not a redeem-anytime savings account. It stays with the depositor's verified account or legal-entity account until resolution, subject to recovery and lawful successor control. If the targets are missed, depositors divide the realized pool pro rata. If the targets are met, the pool goes to VOTE point-holders, not depositors. See the [prize protocol](../appendix/earth-optimization-prize-protocol.qmd) [@earth-optimization-prize-protocol-paper-2025] for the full specification.
 
-**VOTE points** are the public-facing game score and, formally, the success-side recruitment score and claim. Recruit one verified referendum participant into the first [1% Treaty](../solution/1-percent-treaty.qmd) [@1-pct-treaty-impact-paper-2025] vote, earn one point. VOTE points stay with the verified account that earned them and are not publicly tradable inside the protocol, so coalition credit stays with recruiters rather than speculators. Registration asks two questions: (1) yes or no on the 1% Treaty, the smallest serious test of whether humans are willing to redirect even 1% from weapons to medicine, and (2) how much military vs. clinical trials, with Optimitron [@optimocracy-paper-2025] evidence. The basic flow is designed to fit on a phone in under a minute.
+**VOTE points** are the public-facing game score. Recruit one verified referendum participant into the first [1% Treaty](../solution/1-percent-treaty.qmd) [@1-pct-treaty-impact-paper-2025] vote, earn one point. VOTE points stay with the verified account that earned them and are not publicly tradable inside the protocol, so coalition credit stays with recruiters rather than speculators. Registration asks two questions: (1) yes or no on the 1% Treaty, the smallest serious test of whether humans are willing to redirect even 1% from weapons to medicine, and (2) how much military vs. clinical trials, with Optimitron [@optimocracy-paper-2025] evidence. The basic flow is designed to fit on a phone in under a minute.
 
 | Year-15 objective | Current baseline | Year-15 target |
 |:---|:---|:---|
@@ -54,7 +54,7 @@ Let `D` be your deposit.
 |:---|:---|:---|:---|
 | **Status quo retirement** | A conventional retirement account compounds at the baseline market path. | `D × {{< var conventional_retirement_15yr_multiple >}}` | You remain on the current trajectory. |
 | **Deposit + PRIZE fails** | Depositors divide the realized pool pro rata. In the current modeled pool-growth reference case, that is about `{{< var prize_pool_15yr_multiple >}}`. | `D × {{< var prize_pool_15yr_multiple >}}` | The world remains on the failed-state/status-quo branch. |
-| **Deposit + objectives met + 2 VOTE points** | The depositor-side claim does **not** stay with the depositor. The direct protocol payout comes from the success-side VOTE points only. | `2 × {{< var vote_token_potential_value >}} = {{< var vote_2_claims_payout >}}` | Treaty / Wishonia upside: {{< var treaty_personal_upside_blend >}} to {{< var wishonia_personal_upside_blend >}} in modeled personal world-side upside. |
+| **Deposit + objectives met + 2 VOTE points** | On success, the pool goes to VOTE point-holders, not depositors. The direct protocol payout comes from the success-side VOTE points only. | `2 × {{< var vote_token_potential_value >}} = {{< var vote_2_claims_payout >}}` | Treaty / Wishonia upside: {{< var treaty_personal_upside_blend >}} to {{< var wishonia_personal_upside_blend >}} in modeled personal world-side upside. |
 
 Interpretation: `2` VOTE points are meaningful upside for small contributors, but they are not a sufficient standalone success-side cash case for large depositors or institutions. Large institutions should be pitched on activation, public-good upside, and coalition formation, not on a retail-style “deposit plus 2 points” story.
 
@@ -203,7 +203,7 @@ Those are not projections about other people's welfare. They are projections abo
 
 Mechanisms that keep the same pool intact on failure while only routing it to VOTE point-holders on verified success are unusually favorable compared with ordinary political donations.
 
-At the current modeled pool growth rate, the same pool compounds at {{< var prize_pool_annual_return >}} to {{< var prize_pool_15yr_multiple >}} over {{< var prize_pool_resolution_years_nounit >}} years before branch routing. That is a modeling reference, not a guaranteed depositor payout.
+At the current modeled pool growth rate, the same pool compounds at {{< var prize_pool_annual_return >}} annually, reaching {{< var prize_pool_15yr_multiple >}} over {{< var prize_pool_resolution_years_nounit >}} years before branch routing. That is a modeling reference, not a guaranteed depositor payout.
 :::
 
 The break-even probability shift for any given contribution is small because the per-capita stakes are large:
