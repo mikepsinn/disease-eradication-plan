@@ -38,15 +38,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 492 parameters used in the analysis, organized by type:
+This appendix documents all 493 parameters used in the analysis, organized by type:
 
 - External sources (peer-reviewed): 168
-- Calculated values: 228
+- Calculated values: 229
 - Core definitions: 96
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (228 parameters) • [External Data Sources](#sec-external) (168 parameters) • [Core Definitions](#sec-definitions) (96 parameters)
+[Calculated Values](#sec-calculated) (229 parameters) • [External Data Sources](#sec-external) (168 parameters) • [Core Definitions](#sec-definitions) (96 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -6063,6 +6063,46 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-iab_vs_defense_lobby_ratio_at_1pct.qmd >}}
+
+:::
+
+### Ratio of Industry to Government Clinical Trials Spending: 12.3:1 {#sec-industry_vs_government_clinical_trials_spending_ratio}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Ratio of Industry to Government spending on clinical trials (approx 90/10 split)
+
+**Inputs**:
+
+- [Annual Global Spending on Clinical Trials](#sec-global_clinical_trials_spending_annual) 📊: $60B (95% CI: $50B - $75B)
+- [Annual Global Government Spending on Clinical Trials](#sec-global_government_clinical_trials_spending_annual) 📊: $4.5B (95% CI: $3B - $6B)
+
+$$
+\begin{gathered}
+Ratio_{ind:gov} \\
+= \frac{Spending_{trials}}{Spending_{trials,gov}} - 1 \\
+= \frac{\$60B}{\$4.5B} - 1 \\
+= 12.3
+\end{gathered}
+$$
+
+**Methodology**: [@industry-vs-government-trial-spending-split]
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-industry_vs_government_clinical_trials_spending_ratio.qmd >}}
+
+{{< include ../figures/sensitivity-table-industry_vs_government_clinical_trials_spending_ratio.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-industry_vs_government_clinical_trials_spending_ratio.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-industry_vs_government_clinical_trials_spending_ratio.qmd >}}
 
 :::
 

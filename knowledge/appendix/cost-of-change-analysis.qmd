@@ -1,12 +1,12 @@
 ---
 title: 'The Price of Political Change: A Cost-Benefit Framework for Policy Incentivization'
-description: What's the maximum cost to achieve any policy change through legal democratic channels? $25B for the US, $200B globally. For high-value reforms like military-to-health reallocation, this yields ROI exceeding 400,000:1.
+description: What's the maximum cost to achieve any policy change through legal democratic channels? $25B for the US, $200B globally. For high-value reforms like military-to-health reallocation, this yields a benefit-cost ratio exceeding 400,000:1.
 abstract: |
   What is the maximum cost to achieve any policy change through legal democratic channels? We estimate
   $25 billion for the United States and $200 billion globally. These figures represent the upper bound
   of matching all opposition spending (campaign finance, lobbying) and providing career alternatives
   for affected legislators. For high net-societal-value policies, even these maximum costs yield
-  extraordinary returns: military-to-health reallocation achieves ROI exceeding 400,000:1, carbon
+  extraordinary returns: military-to-health reallocation achieves a benefit-cost ratio exceeding 400,000:1, carbon
   pricing exceeds 1,000:1, and occupational licensing reform exceeds 2,000:1. The "political
   impossibility" objection thus reduces to a capital allocation problem. Political change is not
   impossible; it is merely expensive, and for valuable reforms, the price is trivial relative to
@@ -262,7 +262,7 @@ These estimates are calculated from input parameters with explicit uncertainty d
 3. **Non-linear effects**: Political influence may not scale linearly with spending; threshold effects and diminishing returns likely exist
 4. **Cross-country variation**: Political systems differ dramatically in their susceptibility to organized influence
 
-Despite this uncertainty, the core conclusion is robust: even at the 95th percentile of {{< var global_political_reform_investment >}}, high-NSV policies yield ROI exceeding 400,000:1.
+Despite this uncertainty, the core conclusion is robust: even at the 95th percentile of {{< var global_political_reform_investment >}}, high-NSV policies yield a benefit-cost ratio exceeding 400,000:1.
 
 ## Implications for Major Health Funders {#funder-implications}
 
@@ -278,7 +278,7 @@ The Gates Foundation, the world's largest private foundation, spends approximate
 
 This is extraordinary philanthropy by any conventional measure. But the framework above suggests an alternative investment that may be orders of magnitude more cost-effective.
 
-### The Political Reform ROI Calculation
+### The Political Reform Benefit-Cost Calculation
 
 Consider a hypothetical $25 billion investment in political reform (the maximum US reform investment estimated above):
 
@@ -316,7 +316,7 @@ Even at a pessimistic 5% success probability, the expected value is $75 billion,
 
 Any coalition of 3-5 decabillionaires could fund complete political reform while retaining the vast majority of their wealth. The question is not whether political reform is affordable, but whether funders recognize the leverage.
 
-### ROI Comparison
+### Benefit-Cost Comparison
 
 | Approach | Investment | Cost per DALY | Expected DALYs |
 |----------|------------|---------------|----------------|
@@ -353,9 +353,9 @@ For detailed analysis of the political economy and implementation mechanisms, se
 
 **Political Reform Investment**: {{< var us_political_reform_investment_total >}} (US) to {{< var global_political_reform_investment >}} (global)
 
-**ROI Calculation**:
+**Benefit-Cost Calculation**:
 
-| Political Investment | ROI | Cost per DALY |
+| Political Investment | Benefit-Cost Ratio | Cost per DALY |
 |---------------------|-----|---------------|
 | {{< var treaty_campaign_total_cost >}} (realistic) | {{< var treaty_roi_trial_capacity_plus_efficacy_lag >}}:1 | {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}} |
 | {{< var us_political_reform_investment_total >}} (US) | 3,390,000:1 | $0.05 |
@@ -393,7 +393,7 @@ The "political impossibility" objection to policy reform dissolves under quantit
 
 2. **Even maximum engagement scenarios are bounded**: achieving full democratic parity in the US costs {{< var us_political_reform_investment_total >}}; global parity costs {{< var global_political_reform_investment >}}.
 
-3. **High-NSV policies yield extreme ROI**: for policies like military-to-health reallocation, ROI exceeds 400,000:1 even at maximum political investment.
+3. **High-NSV policies yield extreme benefit-cost ratios**: for policies like military-to-health reallocation, the benefit-cost ratio exceeds 400,000:1 even at maximum political investment.
 
 4. **The breakeven point is astronomical**: political investment costs would need to exceed trillions of dollars before high-value reforms become uneconomical.
 
