@@ -16,7 +16,7 @@ podcast-image: /assets/podcast/gdp-trajectories-podcast.jpg
 youtube-thumbnail: /assets/podcast/gdp-trajectories-youtube.jpg
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
-Your civilization has somewhere between {{< var destructive_economy_years_to_25pct_gdp >}} and {{< var destructive_economy_years_to_50pct_gdp >}} before your destructive economy overtakes your productive one. After that, building things becomes less rational than stealing them, and the math that applies to Somalia applies to everyone.
+Your civilization has somewhere between {{< var destructive_economy_years_to_25pct_gdp >}} and {{< var destructive_economy_years_to_50pct_gdp >}} before the destructive economy reaches 50% of GDP. At that point, half of all economic activity is destructive, so building things stops making sense because whatever gets created gets stolen fast enough that stealing becomes the rational move.
 
 This chapter models two paths: the one you're on, and the one where you redirect the murder budget. I've lived one of them. Your trend data projects the other.
 

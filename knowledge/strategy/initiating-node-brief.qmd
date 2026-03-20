@@ -16,7 +16,7 @@ description: "A one-page sponsor brief for institutions considering whether to h
 
 The [Earth Optimization Prize](earth-optimization-prize.qmd) [@earth-optimization-prize-paper-2025] is a public mechanism for discovering, stress-testing, and coordinating around the best available integrated plan for moving humanity off its current trajectory.
 
-That trajectory is not neutral. The [destructive economy](../economics/gdp-trajectories.qmd) [@gdp-trajectories-paper-2025] is already {{< var global_destructive_economy_pct_gdp >}} of GDP, reaches the failed-state danger zone in {{< var destructive_economy_years_to_25pct_gdp >}}, and reaches parity with the productive economy in {{< var destructive_economy_years_to_50pct_gdp >}}.
+That trajectory is not neutral. The [destructive economy](../economics/gdp-trajectories.qmd) [@gdp-trajectories-paper-2025] is already {{< var global_destructive_economy_pct_gdp >}} of GDP, reaches the failed-state danger zone in {{< var destructive_economy_years_to_25pct_gdp >}}, and reaches 50% of GDP in {{< var destructive_economy_years_to_50pct_gdp >}}. At that point, stealing beats creating, because whatever gets created gets looted as fast as it is produced.
 
 The benchmark upside of changing branch is similarly large. The [Minimum Sustainable Trajectory (1% Treaty)](../economics/gdp-trajectories.qmd) [@1-pct-treaty-impact-paper-2025] adds {{< var treaty_trajectory_lifetime_income_gain_per_capita >}} in lifetime income and {{< var treaty_hale_gain_year_15 >}} of healthy life by year 15. The [Wishonian](../futures/wishonia.qmd) [Optimal Governance Trajectory](../economics/gdp-trajectories.qmd) adds {{< var wishonia_trajectory_lifetime_income_gain_per_capita >}} and {{< var wishonia_hale_gain_year_15 >}}.
 

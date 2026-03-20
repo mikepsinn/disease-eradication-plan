@@ -453,8 +453,9 @@ DESTRUCTIVE_ECONOMY_YEARS_TO_50PCT_GDP = Parameter(
     round(_years_to_50pct),
     source_type="calculated",
     description="Years until the destructive economy (military + cybercrime) reaches 50% of GDP "
-                "at current growth rates. At this point, more economic activity is devoted to "
-                "destruction and extraction than to production.",
+                "at current growth rates. At that point, half of all economic activity is "
+                "destructive, so stealing starts to beat creating for individuals, firms, and "
+                "states because whatever gets created gets looted fast enough to kill productive investment.",
     display_name="Years Until Destructive Economy Reaches 50% of GDP",
     unit="years",
     formula="ln(0.50 / DESTRUCTIVE_PCT_GDP) / ln(1 + DESTRUCTIVE_GROWTH - GDP_GROWTH)",
