@@ -51,7 +51,7 @@ website:
   page-navigation: true
   page-footer:
     left: "© 2025 [Institute for Accelerated Medicine](https://acceleratedmedicine.org) | [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)"
-    center: "[PDF](/least-bad-idea-prize.pdf) | [All Papers](https://manual.warondisease.org/knowledge/papers.html)"
+    center: "[All Papers](https://manual.warondisease.org/knowledge/papers.html)"
     right: "[VOTE](https://WarOnDisease.org)"
   navbar:
     right:
@@ -165,6 +165,7 @@ jupyter: dih-project-kernel
 format:
   html:
     lightbox: auto
+    format-links: false
     theme:
       - cosmo
     mermaid:
