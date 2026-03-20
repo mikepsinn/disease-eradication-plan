@@ -24,7 +24,7 @@ youtube-thumbnail: /assets/podcast/least-bad-idea-prize-paper-youtube.jpg
 3. **How PRIZE works.** Depositors fund one pool until year {{< var prize_pool_resolution_years_nounit >}}. Targets missed: depositors divide the realized pool pro rata.
 4. **How VOTE works.** Recruit one verified referendum participant, earn one point. On success, the pool routes to VOTE point-holders.
 5. **What institutions are being asked to do.** Underwrite activation, seed the PRIZE pool enough that success-side upside feels real, and host the first public scoreboard. The first institutional ask is {{< var global_coordination_activation_budget >}}.
-6. **Why it matters.** Status quo is not stable. Humanity is spending {{< var military_to_government_clinical_trials_spending_ratio >}} times more on weapons than on testing medicines, the [destructive economy](../economics/gdp-trajectories.qmd) [@gdp-trajectories-paper-2025] is already {{< var global_destructive_economy_pct_gdp >}} of GDP, and it reaches {{< var destructive_economy_pct_gdp_year_15 >}} by year {{< var prize_pool_resolution_years_nounit >}} if current trends continue.
+6. **Why it matters.** Status quo is not stable. The [destructive economy](../economics/gdp-trajectories.qmd) [@gdp-trajectories-paper-2025] reaches {{< var destructive_economy_pct_gdp_year_15 >}} of GDP by year {{< var prize_pool_resolution_years_nounit >}} if current trends continue.
 
 ## The Problem Statement
 
@@ -79,7 +79,7 @@ That missing scoreboard is underneath five specific problems the prize is trying
 
 Most humans have never heard that pragmatic clinical trials cost {{< var dfda_pragmatic_trial_cost_per_patient >}} per patient (vs. {{< var traditional_phase3_cost_per_patient >}} traditional) [@dfda-impact-paper-2025]. That redirecting 1% of military spending to medical research yields an ROI of {{< var treaty_roi_existing_drugs_only >}} [@1-pct-treaty-impact-paper-2025]. That {{< var existing_drugs_efficacy_lag_deaths_total_nounit >}} people have already died waiting for drugs that were proven to work but stuck in regulatory queues [@invisible-graveyard-paper-2025]. That the total cost of buying passage of any policy through legal democratic channels in the United States is {{< var treaty_campaign_total_cost >}}, with ROI exceeding {{< var treaty_roi_existing_drugs_only >}} [@cost-of-change-paper-2025].
 
-The prize creates VOTE points, formally VOTE claims: recruit a verified participant into the [Global Referendum](https://manual.warondisease.org/knowledge/strategy/global-referendum.html), earn a point on any eventual pool payout. That is enough to make millions of people willing to have a conversation they would otherwise avoid. Each recruitment forces the recruit through evidence (cost per life saved for military spending vs. clinical trials, the efficacy lag death toll, the economic returns). The registration process is the education. The recruitment reward is what makes the education propagate.
+VOTE points make millions of people willing to have a conversation they would otherwise avoid. Each recruitment forces the recruit through evidence (cost per life saved for military spending vs. clinical trials, the efficacy lag death toll, the economic returns). The registration process is the education. The recruitment reward is what makes the education propagate.
 
 ### 2. Everyone Who Knows Assumes They Are Alone
 
@@ -98,7 +98,7 @@ Every verified registration is a publicly verifiable signal. The scoreboard aggr
 
 One of your economists noticed this in 1965 and named it "the logic of collective action" [-@olson1965]. Concentrated interests (defense contractors, pharmaceutical monopolies) face high per-capita stakes and coordinate easily. The general public (dying of untreated diseases, bearing regulatory delay, subsidizing military spending that returns {{< var economic_multiplier_military_spending >}} per dollar [@military-spending-economic-multiplier]) has tiny individual stakes in any single policy fight and cannot mount a proportional response. Your species identified the exact mechanism by which your governance fails, published it, assigned it in universities, and then continued to be governed by it for sixty years.
 
-But Olson's problem is downstream of awareness and pluralistic ignorance. The public has the money (global household wealth: {{< var global_household_wealth_usd >}}, vs. {{< var concentrated_interest_sector_market_cap_usd >}} held by concentrated opposition sectors [@iab-paper-2025]). It does not have the coordination mechanism. Once the recruitment incentive has solved the awareness problem and the scoreboard has shattered pluralistic ignorance, PRIZE deposits provide that mechanism: a growing pool of committed money, visible to everyone, that only routes away from depositors when outcomes improve. No central organizer. No charity. No altruism required. Just millions of people acting in financial self-interest, pointed at the same two numbers.
+But Olson's problem is downstream of awareness and pluralistic ignorance. The public has the money (global household wealth: {{< var global_household_wealth_usd >}}, vs. {{< var concentrated_interest_sector_market_cap_usd >}} held by concentrated opposition sectors [@iab-paper-2025]). It does not have the coordination mechanism. Once the recruitment incentive has solved the awareness problem and the scoreboard has shattered pluralistic ignorance, PRIZE deposits provide that mechanism: a growing, visible pool of committed capital. No central organizer. No charity. No altruism required. Just millions of people acting in financial self-interest, pointed at the same two numbers.
 
 ### 4. Nobody Knows Which Solutions to Implement
 
@@ -141,7 +141,7 @@ That spread is absurdly large and most humans still treat "do nothing" as if it 
 
 Those are not projections about charity. They are projections about your own health, income, and exposure to civilizational failure.
 
-**PRIZE deposits** create visible committed capital. **VOTE points** reward the coalition-building work of recruitment. The selfish case for the prize is bigger than either instrument. It is the size of the future they are trying to buy.
+The selfish case for the prize is bigger than either instrument. It is the size of the future they are trying to buy.
 
 ## Help Improve the Manual
 
@@ -188,7 +188,7 @@ Those are not projections about other people's welfare. They are projections abo
 | You lose less | Less exposure to compounding dysfunction tax and collapse | {{< var political_dysfunction_tax_per_person_annual >}}/year ongoing; {{< var moronia_trajectory_probability_year_20 >}} collapse-tail probability at year 20 |
 | People stop dying | Lives saved and suffering prevented per probability point you shift | {{< var contribution_dalys_per_pct_point_nounit >}} DALYs / {{< var contribution_lives_saved_per_pct_point_nounit >}} lives / {{< var contribution_suffering_hours_per_pct_point_nounit >}} suffering hours per percentage point |
 
-**The cost of not acting is not zero.** Political dysfunction already costs {{< var political_dysfunction_tax_per_person_annual >}} per person per year. The [destructive economy](../economics/gdp-trajectories.qmd) [@gdp-trajectories-paper-2025] is already {{< var global_destructive_economy_pct_gdp >}} of GDP, reaches {{< var destructive_economy_pct_gdp_year_15 >}} by year 15 if current rates continue. "Do nothing" is not a neutral baseline. It is a bet that these trends reverse without intervention.
+**The cost of not acting is not zero.** Political dysfunction already costs {{< var political_dysfunction_tax_per_person_annual >}} per person per year. "Do nothing" is not a neutral baseline. It is a bet that the trends in the Problem Statement reverse without intervention.
 
 ::: {.callout-tip}
 ## This Is a Favorable Bet, Not a Donation
