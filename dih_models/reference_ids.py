@@ -429,6 +429,7 @@ class ReferenceID(str, Enum):
     GDP_TRAJECTORIES_PAPER_2025 = "gdp-trajectories-paper-2025"
     GDPR_BIOMETRIC_DATA = "gdpr-biometric-data"
     GDUFA_USER_FEES = "gdufa-user-fees"
+    GELMAN2012 = "gelman2012"
     GENERAL_DYNAMICS_ANNUAL_REVENUE_39B = "general-dynamics-annual-revenue-39b"
     GENERIC_DRUG_SUBSTITUTION_SAVINGS = "generic-drug-substitution-savings"
     GEOGRAPHIC_LITERACY_SURVEY = "geographic-literacy-survey"

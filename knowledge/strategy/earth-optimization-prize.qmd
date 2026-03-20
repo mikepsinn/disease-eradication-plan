@@ -23,7 +23,7 @@ youtube-thumbnail: /assets/podcast/least-bad-idea-prize-paper-youtube.jpg
 2. **What success means.** At year {{< var prize_pool_resolution_years_nounit >}}, success means global HALE (healthy life expectancy) reaches {{< var wishonia_projected_hale_year_15 >}} and global median income reaches {{< var wishonia_trajectory_avg_income_year_15 >}}.
 3. **How PRIZE works.** Depositors fund one pool until year {{< var prize_pool_resolution_years_nounit >}}. Targets missed: depositors divide the realized pool pro rata.
 4. **How VOTE works.** Recruit one verified referendum participant, earn one point. On success, the pool routes to VOTE point-holders.
-5. **What institutions are being asked to do.** Underwrite activation, seed the PRIZE pool enough that success-side upside feels real, and host the first public Scoreboard. The first institutional ask is {{< var global_coordination_activation_budget >}}.
+5. **What institutions are being asked to do.** Three tiers: activation ({{< var global_coordination_activation_budget >}}), visible pool seed ({{< var prize_pool_retirement_equivalent_principal >}}), and eventual ceiling ({{< var prize_pool_potential_max_size >}}). The first ask is {{< var global_coordination_activation_budget >}} to underwrite recruitment, verification, and the first public Scoreboard.
 6. **Why it matters.** Status quo is not stable. The [destructive economy](../economics/gdp-trajectories.qmd) [@gdp-trajectories-paper-2025] reaches the 50% Terminal Parasitic Load Threshold (the point where half the economy is destructive and stealing beats creating) in {{< var destructive_economy_years_to_50pct_gdp >}} if current trends continue.
 
 ## The Problem Statement
@@ -96,9 +96,11 @@ Every verified registration is a publicly verifiable signal. The Scoreboard aggr
 
 ### 3. The Public Cannot Coordinate Against Concentrated Interests
 
-One of your economists noticed this in 1965 and named it "the logic of collective action" [-@olson1965]. Concentrated interests (defense contractors, pharmaceutical monopolies) face high per-capita stakes and coordinate easily. The general public (dying of untreated diseases, bearing regulatory delay, subsidizing military spending that returns {{< var economic_multiplier_military_spending >}} per dollar [@military-spending-economic-multiplier]) has tiny individual stakes in any single policy fight and cannot mount a proportional response. Your species identified the exact mechanism by which your governance fails, published it, assigned it in universities, and then continued to be governed by it for sixty years.
+One of your economists noticed this in 1965 and named it "the logic of collective action" [-@olson1965]. Concentrated interests (defense contractors, pharmaceutical monopolies) face high per-capita stakes and coordinate easily. The general public has tiny individual stakes in any single policy fight and cannot mount a proportional response, even though they are the ones dying of untreated diseases, bearing regulatory delay, and subsidizing military spending that returns {{< var economic_multiplier_military_spending >}} per dollar [@military-spending-economic-multiplier].
 
-But Olson's problem is downstream of awareness and pluralistic ignorance. The public has the money (global household wealth: {{< var global_household_wealth_usd >}}, vs. {{< var concentrated_interest_sector_market_cap_usd >}} held by concentrated opposition sectors [@iab-paper-2025]). It does not have the coordination mechanism. Once the recruitment incentive has solved the awareness problem and the scoreboard has shattered pluralistic ignorance, PRIZE deposits provide that mechanism: a growing, visible pool of committed capital. No central organizer. No charity. No altruism required. Just millions of people acting in financial self-interest, pointed at the same two numbers.
+Your species identified the exact mechanism by which your governance fails, published it, assigned it in universities, and then continued to be governed by it for sixty years.
+
+But Olson's problem is downstream of awareness and pluralistic ignorance. The public has the money (global household wealth: {{< var global_household_wealth_usd >}}, vs. {{< var concentrated_interest_sector_market_cap_usd >}} held by concentrated opposition sectors [@iab-paper-2025]). It does not have the coordination mechanism. Once the recruitment incentive has solved the awareness problem and the Scoreboard has shattered pluralistic ignorance, PRIZE deposits provide that mechanism: a growing, visible pool of committed capital. No central organizer. No charity. No altruism required. Just millions of people acting in financial self-interest, pointed at the same two numbers.
 
 ### 4. Nobody Knows Which Solutions to Implement
 
@@ -273,7 +275,7 @@ The referendum is designed to solve the usual turnout problem:
 |:---|:---|:---|
 | **Effort** | Hours in line, research candidates | 30 seconds on a phone |
 | **Financial reward** | $0 | {{< var vote_token_potential_value >}} modeled success payout |
-| **Pivotality** | 1 in 30 million chance of changing outcome | Direct payout proportional to contribution |
+| **Pivotality** | ~1 in 30 million in a typical US national election [@gelman2012] | Direct payout proportional to contribution |
 | **Outcome fidelity** | Politician may ignore you after winning | Funds flow to verified implementation |
 
 Your species turns out at 50-65% for elections despite getting paid nothing. This referendum adds a contingent payout, direct attribution, and a public Scoreboard. The canonical payout headline assumes the modeled global coordination target of {{< var global_coordination_target_pct >}}:
