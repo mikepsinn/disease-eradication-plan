@@ -1,7 +1,7 @@
 ---
 title: "The Wishocratic Investment Fund"
-subtitle: "What happens when billions of brains allocate trillions of dollars"
-description: "The prize pool is the world's largest, most efficient investment fund. Depositors wishocratically allocate via pairwise sliders. The same pool compounds, then routes to depositors on failure or VOTE claimants on success. The sclerotic oligopolies die. Dynamic new companies replace them. The fund IS the economy's capital allocator."
+subtitle: "A scale engine for trying to win the Earth Optimization Prize"
+description: "This paper explains how the shared PRIZE pool could compound while humanity tries to raise healthy life years and median income within 15 years. It is a scale-capital thesis, not the first institutional ask."
 published: true
 tags:
   - economics
@@ -15,13 +15,15 @@ tags:
 
 ## The Thesis
 
-The prize pool is not modeled as passive escrow. It is the world's largest, most efficient investment fund.
+The goal is not "better plans." The goal is to help humanity raise healthy life years and median income fast enough to win the [Earth Optimization Prize](../strategy/earth-optimization-prize.qmd) [@earth-optimization-prize-paper-2025].
 
-Depositors [wishocratically](../solution/wishocracy.qmd) allocate capital via pairwise sliders. The same mechanism that lets crowds outperform experts at picking trivia answers lets them outperform fund managers at picking investments. The accreditation wall comes down. {{< var global_retirement_assets >}} in retirement assets stops propping up sclerotic oligopolies and starts funding dynamic new companies. The fund IS the economy's capital allocator, and the economy gets better because the allocator is better.
+This paper is about one possible scale engine: the prize pool is not modeled as passive escrow. It is modeled as the world's largest, most efficient investment fund.
+
+Depositors [wishocratically](../solution/wishocracy.qmd) allocate capital via pairwise sliders. The same mechanism that lets crowds outperform experts at picking trivia answers lets them outperform fund managers at picking investments. The accreditation wall comes down. {{< var global_retirement_assets >}} in retirement assets stops propping up sclerotic oligopolies and starts funding dynamic new companies. If capital allocation improves, the economy improves with it.
 
 This chapter is the canonical pool-growth model used by the prize math.
 
-But it is not the first institutional check the papers should ask for. The first check is activation underwriting: enough capital to make mass participation and recruitment credible. This chapter explains the later-scale thesis for why much larger pools should join once the network is publicly legible.
+But it is not the first institutional check the papers should ask for. The first check is activation underwriting: enough capital to make mass participation and recruitment credible. The second is visible PRIZE pool seeding. This chapter explains the later-scale thesis for why much larger pools should join once the network is publicly legible.
 
 ## Why the Baseline Is Venture, Not Public Equity
 

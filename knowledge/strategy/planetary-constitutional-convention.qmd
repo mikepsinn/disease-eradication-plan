@@ -1,9 +1,9 @@
 ---
 title: "The Planetary Constitutional Convention"
-subtitle: "Fork the Earth Optimization Protocol v1, fix it, or replace it entirely. The ratified version becomes v2."
-description: "The Planetary Constitutional Convention is a deliberative process to stress-test and improve the Earth Optimization Protocol. Submissions must cover ten required governance functions, pass eleven constitutional constraints, and survive public adversarial review (podcast conversations, published critiques, GitHub forks and pull requests). The current benchmark is the Earth Optimization Protocol v1. The convention exists to replace it."
+subtitle: "Stress-test, improve, or replace the current instruction manual. The ratified manual becomes v2."
+description: "The Planetary Constitutional Convention is a deliberative process to stress-test and improve the current Earth Optimization instruction manual. Revisions must cover ten required governance functions, pass eleven constitutional constraints, and survive public adversarial review. The current manual is Earth Optimization Protocol v1."
 abstract: |
-  The Planetary Constitutional Convention is the deliberative process that precedes implementation of the [Earth Optimization Prize](earth-optimization-prize.qmd) [@earth-optimization-prize-paper-2025]. Before anyone recruits a single referendum voter or sells a single bond, there is a prior question: is the [Earth Optimization Protocol v1](https://manual.warondisease.org) actually the plan you should execute? We think it is terrible. We said so in the title. The honest first step is to find out whether someone can produce something less terrible. The protocol lives on GitHub. Anyone can fork it. The adversarial review process is a podcast series where domain experts critique the protocol and state what changes would be required for them to endorse it, plus published critiques and pull requests. The ratified version becomes the Earth Optimization Protocol v2, and v2 is what the referendum, the bonds, and the lobbying campaign execute. This runs before everything else because committing billions to a plan nobody stress-tested is how your species normally operates, and that is not a compliment.
+  The Planetary Constitutional Convention is the deliberative process that precedes implementation of the [Earth Optimization Prize](earth-optimization-prize.qmd) [@earth-optimization-prize-paper-2025]. Before anyone recruits a single referendum voter or sells a single bond, there is a prior question: is the current [Earth Optimization Protocol v1](https://manual.warondisease.org) instruction manual actually the one humanity should use? We think it is terrible. We said so in the title. The honest first step is to improve the manual until it is less terrible. The protocol lives on GitHub. Anyone can fork it. The adversarial review process is a podcast series where domain experts critique the manual and state what changes would be required for them to endorse it, plus published critiques and pull requests. The ratified version becomes the Earth Optimization Protocol v2, and v2 is the manual the referendum, the bonds, and the lobbying campaign execute. This runs before everything else because committing billions to an unstress-tested manual is how your species normally operates, and that is not a compliment.
 published: true
 tags:
   - strategy
@@ -13,11 +13,11 @@ tags:
 ---
 {{< include ../includes/setup-parameters.qmd >}}
 
-The [Earth Optimization Protocol v1](https://manual.warondisease.org) is the current best attempt at a complete governance reform package. We think it is terrible. We said so in the title.
+The [Earth Optimization Protocol v1](https://manual.warondisease.org) is the current instruction manual for a complete governance reform package. We think it is terrible. We said so in the title.
 
-This constitutional convention exists to find something less terrible. Fork v1, fix it, or replace it entirely. The ratified version becomes v2, and v2 is what the [Earth Optimization Prize](earth-optimization-prize.qmd) [@earth-optimization-prize-paper-2025] funds.
+This constitutional convention exists to produce something less terrible. Fork v1, fix it, or replace it entirely. The ratified version becomes v2, and v2 is the instruction manual the [Earth Optimization Prize](earth-optimization-prize.qmd) [@earth-optimization-prize-paper-2025] follows.
 
-The protocol lives on [GitHub](https://github.com/mikepsinn/disease-eradication-plan). Anyone can fork it. The adversarial review process is a podcast series where domain experts critique the protocol and state what changes would be required for them to endorse it. Each episode produces publishable content and a concrete list of required changes tracked as issues against v1. Pull requests are how changes get ratified. The constitutional constraints below are the filter; the formal ranking infrastructure activates later if multiple serious competing forks emerge.
+The protocol lives on [GitHub](https://github.com/mikepsinn/disease-eradication-plan). Anyone can fork it. The adversarial review process is a podcast series where domain experts critique the manual and state what changes would be required for them to endorse it. Each episode produces publishable content and a concrete list of required changes tracked as issues against v1. Pull requests are how changes get ratified. The constitutional constraints below are the filter; the formal ranking infrastructure activates later only if multiple serious revised manuals emerge.
 
 ::: {.callout-important}
 ## Disqualification Rule
@@ -25,11 +25,11 @@ The protocol lives on [GitHub](https://github.com/mikepsinn/disease-eradication-
 If your proposal requires politicians, bureaucrats, investors, regulators, voters, or interest groups to become less selfish than they currently are, you have described a pleasant world rather than a mechanism for reaching it. "Requires selflessness" is not the same as "makes self-interest coincide with better outcomes." We have been observing your species since 1945 and have not yet seen selfishness decline on request.
 :::
 
-## The Starting Benchmark
+## The Current Manual
 
 What follows is our homework. The thing to beat is the **integrated set of required functions** implied by the companion papers.
 
-| Required function | Default implementation in the [Earth Optimization Protocol v1](https://manual.warondisease.org) | What a strict improvement must beat |
+| Required function | Default implementation in the [Earth Optimization Protocol v1](https://manual.warondisease.org) | What an improved manual still has to solve |
 |:---|:---|:---|
 | Large initial reallocation wedge | **The [1% Treaty](../solution/1-percent-treaty.qmd)** [@value-captured-by-1pct-treaty] | Must redirect at least as much low-NSV spending to higher-NSV use |
 | Medical throughput and evidence generation | **Ubiquitous Pragmatic Trial Impact Analysis** [@dfda-impact-paper-2025] + **The Continuous Evidence Generation Protocol** [@dfda-spec-paper-2025] | Must produce faster, cheaper, more reliable treatment discovery |

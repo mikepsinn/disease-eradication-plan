@@ -5671,39 +5671,6 @@ $$
 
 :::
 
-### Life Expectancy to HALE Gap: 15.7 years {#sec-global_hale_gap}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Gap between life expectancy and healthy life expectancy. Represents years lived with disability or disease that could be recovered by curing diseases.
-
-**Inputs**:
-
-- [Global Life Expectancy (2024)](#sec-global_life_expectancy_2024) 📊: 79 years (SE: ±2 years)
-- [Global Healthy Life Expectancy (HALE)](#sec-global_hale_current) 📊: 63.3 years (SE: ±1.5 years)
-
-$$
-\Delta_{HALE} = LE_{global} - HALE_{0} = 79 - 63.3 = 15.7
-$$
-
-*✓ High confidence*
-
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-global_hale_gap.qmd >}}
-
-{{< include ../figures/sensitivity-table-global_hale_gap.qmd >}}
-
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-global_hale_gap.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-global_hale_gap.qmd >}}
-
-:::
-
 ### Per Capita Military Spending Globally: $340 {#sec-global_military_spending_per_capita_annual}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -13050,6 +13017,70 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-voter_suffering_hours_prevented.qmd >}}
+
+:::
+
+### VOTE Payout for 2 Claims: $387K {#sec-vote_2_claims_payout}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Potential payout for a depositor who recruits 2 verified participants (earning 2 VOTE claims) if the PRIZE pool reaches its canonical potential max size. This is a recruiter example, not the system-wide average claim denominator.
+
+**Inputs**:
+
+- [VOTE Token Potential Value](#sec-vote_token_potential_value) 🔢: $194K
+
+$$
+V_{2claims} = V_{vote} \times 2 = \$194K \times 2 = \$387K
+$$
+where:
+$$
+V_{vote} = \frac{Pool_{max}}{N_{coord}}
+$$
+where:
+$$
+Pool_{max} = Assets_{retire} \times M_{pool}
+$$
+where:
+$$
+M_{pool} = (1 + r_{pool})^{T_{pool}}
+$$
+where:
+$$
+\begin{gathered}
+r_{pool} \\
+= r_{VC,gross} + \Delta r_{scale} + \alpha_{crowd} \\
++ \alpha_{home}
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+\alpha_{crowd} \\
+= S_{alloc} \times (Acc_{crowd} - Acc_{expert}) \\
+= 8\% \times (91\% - 65\%) \\
+= 2.08\%
+\end{gathered}
+$$
+where:
+$$
+N_{coord} = N_{global} \times R_{coord}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-vote_2_claims_payout.qmd >}}
+
+{{< include ../figures/sensitivity-table-vote_2_claims_payout.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-vote_2_claims_payout.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-vote_2_claims_payout.qmd >}}
 
 :::
 

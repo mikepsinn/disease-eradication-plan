@@ -1,9 +1,9 @@
 ---
 title: "The Earth Optimization Prize"
-subtitle: "A public market that keeps deposits on failure and pays recruiters on success"
-description: "Deposit into a shared pool that compounds until year {{< var prize_pool_resolution_years_nounit >}}. If global HALE and global median income miss their targets, depositors split the realized pool pro rata. If both targets are met, that same pool routes to VOTE claimants who recruited verified participants. The first institutional ask is {{< var global_coordination_activation_budget >}} to make mass participation credible."
+subtitle: "Reward humanity for raising global median income and healthy life years within 15 years"
+description: "The prize rewards humanity for hitting year-15 targets for global HALE and global median income. If the targets are missed, depositors split the realized pool pro rata. If the targets are met, the same pool routes to recruiters who built the coalition. The first institutional ask is {{< var global_coordination_activation_budget >}} to make mass participation credible."
 abstract: |
-  The Earth Optimization Prize is a public market for causing better Earth-optimization plans to be implemented. PRIZE is the depositor-side failure claim: funds stay in one pool until year {{< var prize_pool_resolution_years_nounit >}}, then return pro rata to depositors if the targets are missed. VOTE is the success-side recruitment claim: each verified recruit earns one claim, and if both year-15 objectives are met, the same realized pool routes to VOTE claimants instead. The objectives are global HALE of {{< var wishonia_projected_hale_year_15 >}} and global median income of {{< var wishonia_trajectory_avg_income_year_15 >}} by year {{< var prize_pool_resolution_years_nounit >}}. The first institutional ask is {{< var global_coordination_activation_budget >}} to make mass participation credible; a stronger visible-pool benchmark is {{< var prize_pool_retirement_equivalent_principal >}}; the long-run capital ceiling is {{< var prize_pool_potential_max_size >}}. A credible institution or consortium can host, underwrite activation, seed the pool, and publish the scoreboard without becoming root of trust. The [Earth Optimization Protocol v1](https://manual.warondisease.org) is the replaceable starting benchmark.
+  The Earth Optimization Prize rewards humanity for working together to raise global healthy life years and global median income within {{< var prize_pool_resolution_years_nounit >}} years. The status quo is already spending {{< var military_to_government_clinical_trials_spending_ratio >}} more on weapons than on testing which medicines work, while the destructive economy rises from {{< var global_destructive_economy_pct_gdp >}} of GDP now toward {{< var destructive_economy_pct_gdp_year_15 >}} by year {{< var prize_pool_resolution_years_nounit >}}. PRIZE is the depositor-side failure claim: funds stay in one pool until year {{< var prize_pool_resolution_years_nounit >}}, then return pro rata to depositors if the targets are missed. VOTE is the success-side recruitment claim: each verified recruit earns one claim, and if both year-15 objectives are met, the same realized pool routes to VOTE claimants instead. The objectives are global HALE of {{< var wishonia_projected_hale_year_15 >}} and global median income of {{< var wishonia_trajectory_avg_income_year_15 >}} by year {{< var prize_pool_resolution_years_nounit >}}. The first institutional ask is {{< var global_coordination_activation_budget >}} to make mass participation credible; a stronger visible-pool benchmark is {{< var prize_pool_retirement_equivalent_principal >}}; the long-run capital ceiling is {{< var prize_pool_potential_max_size >}}. Humans are the contestants. The [Earth Optimization Protocol v1](https://manual.warondisease.org) is only the current least-terrible instruction manual and cheat code for trying to win.
 published: true
 tags:
   - strategy
@@ -19,12 +19,19 @@ youtube-thumbnail: /assets/podcast/least-bad-idea-prize-paper-youtube.jpg
 
 ## Executive Summary
 
-1. **What the prize is.** The Earth Optimization Prize is a public market for causing better Earth-optimization plans to be implemented. It pays for verified improvements in two terminal outcomes rather than for allegiance to any one ideology, organization, or policy package.
+1. **What the prize is.** The Earth Optimization Prize rewards humanity for working together to raise global median income and healthy life years within {{< var prize_pool_resolution_years_nounit >}} years.
 2. **What success means.** At year {{< var prize_pool_resolution_years_nounit >}}, success means global HALE reaches {{< var wishonia_projected_hale_year_15 >}} and global median income reaches {{< var wishonia_trajectory_avg_income_year_15 >}}.
 3. **How PRIZE works.** `PRIZE` is the depositor-side failure claim. The same pool compounds through the wishocratic fund until year {{< var prize_pool_resolution_years_nounit >}}. If the targets are missed, depositors divide the realized pool pro rata by deposits.
 4. **How VOTE works.** `VOTE` is the success-side recruitment claim. Each verified recruit earns one claim. If both targets are met, the same realized pool routes to VOTE claimants instead of staying on the depositor side.
 5. **What institutions are being asked to do.** Underwrite activation, seed the PRIZE pool enough that success-side upside feels real, and host the first public scoreboard. The first institutional ask is {{< var global_coordination_activation_budget >}}.
-6. **Why it matters.** Status quo is not stable. The [destructive economy](../economics/gdp-trajectories.qmd) [@gdp-trajectories-paper-2025] is already {{< var global_destructive_economy_pct_gdp >}} of GDP and reaches {{< var destructive_economy_pct_gdp_year_15 >}} by year 15 if current trends continue. Success produces very large world-side upside in health, income, and collapse-risk reduction.
+6. **Why it matters.** Status quo is not stable. Humanity is spending {{< var military_to_government_clinical_trials_spending_ratio >}} more on weapons than on testing medicines, the [destructive economy](../economics/gdp-trajectories.qmd) [@gdp-trajectories-paper-2025] is already {{< var global_destructive_economy_pct_gdp >}} of GDP, and it reaches {{< var destructive_economy_pct_gdp_year_15 >}} by year {{< var prize_pool_resolution_years_nounit >}} if current trends continue.
+
+## The Problem Statement
+
+- Humanity spends {{< var military_to_government_clinical_trials_spending_ratio >}} more on weapons than on testing which medicines work.
+- The [destructive economy](../economics/gdp-trajectories.qmd) [@gdp-trajectories-paper-2025] is already {{< var global_destructive_economy_pct_gdp >}} of GDP, reaches 25% in {{< var destructive_economy_years_to_25pct_gdp >}}, and reaches {{< var destructive_economy_pct_gdp_year_15 >}} by year {{< var prize_pool_resolution_years_nounit >}}.
+- The year-15 status quo path is global median income of {{< var current_trajectory_avg_income_year_15 >}}. The modeled optimal-governance target is {{< var wishonia_trajectory_avg_income_year_15 >}}, with GDP at roughly {{< var wishonia_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}} the status quo trajectory.
+- The minimum serious first test is the [1% Treaty](../solution/1-percent-treaty.qmd) [@1-pct-treaty-impact-paper-2025]: are humans willing to redirect even 1% from weapons to medicine?
 
 ## What You Need to Understand Before Reading Further
 
@@ -32,13 +39,14 @@ youtube-thumbnail: /assets/podcast/least-bad-idea-prize-paper-youtube.jpg
 - The same pool exists in both branches.
 - On failure, depositors split that realized pool pro rata.
 - On success, that realized pool routes to VOTE claimants.
-- The prize is outcome-based. [Earth Optimization Protocol v1](https://manual.warondisease.org) is the replaceable starting benchmark, not the object of loyalty.
+- Humans are the contestants. [Earth Optimization Protocol v1](https://manual.warondisease.org) is only the current least-terrible instruction manual and cheat code.
+- The prize is outcome-based. The 1% Treaty is a starting test, not the final goal.
 
 ## How It Works (The 90-Second Version)
 
 **PRIZE deposits** fund the same pool that compounds through the wishocratic fund until year {{< var prize_pool_resolution_years_nounit >}}. PRIZE is catalytic committed capital, not a redeem-anytime savings account. It stays with the depositor's verified account or legal-entity account until resolution, subject to recovery and lawful successor control. If the targets are missed, depositors divide the realized pool pro rata. If the targets are met, the depositor-side claim does not remain with depositors; that same realized pool routes to VOTE claimants instead. See the [prize protocol](../appendix/earth-optimization-prize-protocol.qmd) [@earth-optimization-prize-protocol-paper-2025] for the full specification.
 
-**VOTE claims** are the success-side recruitment claim. Recruit one verified referendum participant, earn one. VOTE stays with the verified account that earned it and is not publicly tradable inside the protocol, so coalition credit stays with recruiters rather than speculators. Registration asks two questions: (1) yes or no on the [1% Treaty](../solution/1-percent-treaty.qmd) [@1-pct-treaty-impact-paper-2025], and (2) how much military vs. clinical trials, with Optimitron [@optimocracy-paper-2025] evidence. The basic flow is designed to fit on a phone in under a minute.
+**VOTE claims** are the success-side recruitment claim. Recruit one verified referendum participant, earn one. VOTE stays with the verified account that earned it and is not publicly tradable inside the protocol, so coalition credit stays with recruiters rather than speculators. Registration asks two questions: (1) yes or no on the [1% Treaty](../solution/1-percent-treaty.qmd) [@1-pct-treaty-impact-paper-2025], the smallest serious test of whether humans are willing to redirect even 1% from weapons to medicine, and (2) how much military vs. clinical trials, with Optimitron [@optimocracy-paper-2025] evidence. The basic flow is designed to fit on a phone in under a minute.
 
 | Year-15 objective | Current baseline | Year-15 target |
 |:---|:---|:---|
@@ -119,7 +127,7 @@ But Olson's problem is downstream of awareness and pluralistic ignorance. The pu
 
 ### 4. Nobody Knows Which Solutions to Implement
 
-The prize does not prescribe a solution. It pays for outcomes: median healthy life years and median real after-tax income. Anyone, anywhere, using any legal method, who causes either number to rise gets paid proportionally. The [Earth Optimization Protocol v1](https://manual.warondisease.org) is the terrible starting benchmark, not the answer. It exists because competitions need a starting entry. The prize exists to discover and fund whatever beats it (the Earth Optimization Protocol v2). There are {{< var global_population_2024_nounit >}} of you and AIs that are almost certainly smarter than its authors. If a better design exists, the prize will find it.
+The prize does not prescribe a solution. It pays for outcomes: median healthy life years and median real after-tax income. Anyone, anywhere, using any legal method, who causes either number to rise gets paid proportionally. Humans are the contestants. The [Earth Optimization Protocol v1](https://manual.warondisease.org) is the current least-terrible instruction manual and cheat code, not the goal and not the contestant. It exists because humans need a starting instruction manual. The prize exists to fund whichever implementation manual works better in practice. There are {{< var global_population_2024_nounit >}} of you and AIs that are almost certainly smarter than its authors. If a better design exists, the prize will find it.
 
 This makes the search decentralized. No committee decides which reforms to fund. Millions of financially motivated participants search for, advocate, and implement whatever moves the two numbers. A researcher who discovers a cheaper trial design profits. A lobbyist who passes legislation profits. A nonprofit that recruits a million referendum voters profits. The mechanism is agnostic about how. It engineers the incentives so that the collective intelligence of your entire species is pointed at two measurements instead of scattered across a thousand arguments about which measurement matters.
 
@@ -292,7 +300,7 @@ The instruments deploy in order, and each stage builds the audience for the next
 
 **Stage 4: The lobbying campaign (months to years).** By now, millions of voters have registered preferences, the PRIZE pool is large enough to be taken seriously, and the scoreboard shows that the coalition is real. The [Earth Optimization Protocol](https://manual.warondisease.org/knowledge/strategy/earth-optimization-protocol-v1.html) [@earth-optimization-protocol-2025] describes how implementation financing converts the scoreboard into political pressure.
 
-**Stage 5+: Implementation.** Once one binding path succeeds, budget authority starts shifting real resources. Implementers compete inside the winning Earth Optimization Protocol v2 to supply the cheapest verified pieces, and later challengers can still replace the whole plan if they genuinely dominate it.
+**Stage 5+: Implementation.** Once one binding path succeeds, budget authority starts shifting real resources. Implementers compete inside the winning Earth Optimization Protocol v2 to supply the cheapest verified pieces, and later revisions can still replace the whole manual if they genuinely dominate it.
 
 The funnel is: the Planetary Constitutional Convention stress-tests the plan. PRIZE deposits create awareness. Awareness creates referendum voters. Voters earn VOTE claims. VOTE claims create an aligned recruiter base. The coalition provides the political pressure and financing base to pass the treaty. Each stage builds the coordination infrastructure for the next one. Nobody has to coordinate this centrally. The incentives coordinate it.
 
@@ -368,9 +376,9 @@ So the institutional stack is: first make mass participation credible ({{< var g
 
 **What the protocol must solve.** Six capabilities: (1) identity layer (one person, one vote, cross-pool), (2) pool registry, (3) cross-pool claim settlement, (4) scoreboard aggregation, (5) terminal metric oracle, (6) claim mechanics. The companion [protocol specification](../appendix/earth-optimization-prize-protocol.qmd) [@earth-optimization-protocol-2025] specifies how.
 
-## What v1 Claims (and What You Need to Beat)
+## What v1 Covers (and Where the Manual Needs Improvement)
 
-The full table of what the [Earth Optimization Protocol v1](https://manual.warondisease.org) claims, paper by paper, and the specific benchmarks a competing plan must beat, is in the [Planetary Constitutional Convention](planetary-constitutional-convention.qmd) [@planetary-constitutional-convention-paper-2025]. The prize asks one question: *who can cause verified implementation of a complete package that wins on welfare per dollar?* We wrote v1 because competitions need a starting entry. We expect to lose.
+The full table of what the [Earth Optimization Protocol v1](https://manual.warondisease.org) covers, paper by paper, and the minimum functions any serious implementation manual still has to solve, is in the [Planetary Constitutional Convention](planetary-constitutional-convention.qmd) [@planetary-constitutional-convention-paper-2025]. The prize asks one question: *who can cause verified implementation of a complete package that wins on welfare per dollar?* We wrote v1 as a starting instruction manual, not a sacred blueprint. If any part of it is wrong, improve the manual or replace that part with something better. We expect that to happen.
 
 ## Why This Works or Gets Replaced
 
@@ -379,7 +387,7 @@ There are only two stable outcomes:
 1. **The [Earth Optimization Protocol v1](https://manual.warondisease.org) is mostly right but incomplete.** Then whoever augments it with the missing functions and causes implementation receives the prize. The result is the Earth Optimization Protocol v2.
 2. **A strict improvement exists.** Then whoever builds and implements that improvement receives the prize instead (also the Earth Optimization Protocol v2), provided it dominates the Minimum Acceptable Governance function by function rather than skipping inconvenient pieces.
 
-Those are the only serious possibilities. The unserious possibility is the one humans choose by default: endless argument with no implementation market. Either way, the prize produces the Earth Optimization Protocol v2 and causes its implementation. People are dying at {{< var global_disease_deaths_daily_nounit >}} per day while your species argues about mechanism design. Please improve or replace v1 as quickly as possible.
+Those are the only serious possibilities. The unserious possibility is the one humans choose by default: endless argument with no implementation market. Either way, the prize converges on a better instruction manual and causes its implementation. People are dying at {{< var global_disease_deaths_daily_nounit >}} per day while your species argues about mechanism design. Please improve the manual as quickly as possible.
 
 > Reward whoever causes the most people to stop dying and start earning more, using any legal method, or replace the current best attempt with a better one.
 
