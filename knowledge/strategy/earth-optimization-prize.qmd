@@ -20,10 +20,10 @@ youtube-thumbnail: /assets/podcast/least-bad-idea-prize-paper-youtube.jpg
 ## Executive Summary
 
 1. **What the prize is.** The Earth Optimization Prize is the institutional shell for an open-source coordination game: help humanity raise global median income and healthy life years within {{< var prize_pool_resolution_years_nounit >}} years.
-2. **What success means.** At year {{< var prize_pool_resolution_years_nounit >}}, success means global HALE reaches {{< var wishonia_projected_hale_year_15 >}} and global median income reaches {{< var wishonia_trajectory_avg_income_year_15 >}}.
+2. **What success means.** At year {{< var prize_pool_resolution_years_nounit >}}, success means global HALE (healthy life expectancy) reaches {{< var wishonia_projected_hale_year_15 >}} and global median income reaches {{< var wishonia_trajectory_avg_income_year_15 >}}.
 3. **How PRIZE works.** Depositors fund one pool until year {{< var prize_pool_resolution_years_nounit >}}. Targets missed: depositors divide the realized pool pro rata.
 4. **How VOTE works.** Recruit one verified referendum participant, earn one point. On success, the pool routes to VOTE point-holders.
-5. **What institutions are being asked to do.** Underwrite activation, seed the PRIZE pool enough that success-side upside feels real, and host the first public scoreboard. The first institutional ask is {{< var global_coordination_activation_budget >}}.
+5. **What institutions are being asked to do.** Underwrite activation, seed the PRIZE pool enough that success-side upside feels real, and host the first public Scoreboard. The first institutional ask is {{< var global_coordination_activation_budget >}}.
 6. **Why it matters.** Status quo is not stable. The [destructive economy](../economics/gdp-trajectories.qmd) [@gdp-trajectories-paper-2025] reaches 50% of GDP in {{< var destructive_economy_years_to_50pct_gdp >}} if current trends continue. At that point, stealing beats creating, because whatever gets created gets looted as fast as it is produced.
 
 ## The Problem Statement
@@ -44,7 +44,7 @@ youtube-thumbnail: /assets/podcast/least-bad-idea-prize-paper-youtube.jpg
 | **Global HALE** | {{< var global_hale_current >}} | {{< var wishonia_projected_hale_year_15 >}} |
 | **Global median income** | {{< var current_trajectory_avg_income_year_15 >}} (status quo at year 15) | {{< var wishonia_trajectory_avg_income_year_15 >}} |
 
-The public signal is simple: verified participant count, referendum growth, and visible committed capital. Polls are ignorable. Petitions are ignorable. A large verified scoreboard and a large committed pool are harder to dismiss.
+The public signal is the **Earth Optimization Scoreboard**, updated in real time: global median HALE, global median income, number of votes, percent support for the 1% Treaty, current wishocratic allocation between military and clinical trials, and size of the Earth Optimization Prize Pool. Polls are ignorable. Petitions are ignorable. A large verified Scoreboard is harder to dismiss.
 
 ## Contributor Outcomes
 
@@ -67,17 +67,17 @@ Two VOTE points are meaningful upside for small contributors, but not a sufficie
 
 Your species has never built a system that measures the two things everyone agrees on (healthy life years and income), publishes the score, and pays whoever moves it. You argue about drug policy without tracking whether fewer people die. You argue about military spending without tracking whether it makes you safer. You argue about healthcare without tracking whether anyone gets healthier. The prize does not resolve these arguments. It makes them irrelevant. Two numbers. Did they move? Pay whoever moved them.
 
-That missing scoreboard is underneath five specific problems the prize is trying to solve at once:
+That missing Scoreboard is underneath five specific problems the prize is trying to solve at once:
 
 1. **Awareness.** Most people do not know how large the upside of better governance and cheaper clinical trials is.
-2. **Pluralistic ignorance.** People assume nobody else would support large reform until they can see a scoreboard proving otherwise.
+2. **Pluralistic ignorance.** People assume nobody else would support large reform until they can see the Scoreboard proving otherwise.
 3. **Coordination.** The public has diffuse interests and no standard mechanism for committing capital together.
 4. **Solution search.** Nobody agrees in advance which package is best, so the prize pays for outcomes and lets better packages compete.
 5. **On-ramp.** Complex reform bundles need a simple first action; `deposit, register, recruit` is that action.
 
 ### 1. Nobody Knows Solutions Exist
 
-Most humans have never heard that pragmatic clinical trials cost {{< var dfda_pragmatic_trial_cost_per_patient >}} per patient (vs. {{< var traditional_phase3_cost_per_patient >}} traditional) [@dfda-impact-paper-2025]. That redirecting 1% of military spending to medical research yields an ROI of {{< var treaty_roi_existing_drugs_only >}} [@1-pct-treaty-impact-paper-2025]. That {{< var existing_drugs_efficacy_lag_deaths_total_nounit >}} people have already died waiting for drugs that were proven to work but stuck in regulatory queues [@invisible-graveyard-paper-2025]. That the total cost of buying passage of any policy through legal democratic channels in the United States is {{< var treaty_campaign_total_cost >}}, with ROI exceeding {{< var treaty_roi_existing_drugs_only >}} [@cost-of-change-paper-2025].
+Most humans have never heard that pragmatic clinical trials (streamlined trials run inside routine care) cost {{< var dfda_pragmatic_trial_cost_per_patient >}} per patient (vs. {{< var traditional_phase3_cost_per_patient >}} traditional) [@dfda-impact-paper-2025]. That redirecting 1% of military spending to medical research yields an ROI of {{< var treaty_roi_existing_drugs_only >}} [@1-pct-treaty-impact-paper-2025]. That {{< var existing_drugs_efficacy_lag_deaths_total_nounit >}} people have already died waiting for drugs that were proven to work but stuck in regulatory queues [@invisible-graveyard-paper-2025]. That the total cost of buying passage of any policy through legal democratic channels in the United States is {{< var treaty_campaign_total_cost >}}, with ROI exceeding {{< var treaty_roi_existing_drugs_only >}} [@cost-of-change-paper-2025].
 
 VOTE points make millions of people willing to have a conversation they would otherwise avoid. Each recruitment forces the recruit through evidence (cost per life saved for military spending vs. clinical trials, the efficacy lag death toll, the economic returns). The registration process is the education. The recruitment reward is what makes the education propagate.
 
@@ -85,7 +85,7 @@ VOTE points make millions of people willing to have a conversation they would ot
 
 Your economists call it pluralistic ignorance. Nearly every human would prefer a world without war and treatable disease, and an extra {{< var treaty_trajectory_lifetime_income_gain_per_capita >}} in lifetime income [@gdp-trajectories-paper-2025]. If every human realized that nearly every other human wants the same thing, it would be done tomorrow and the world would be unrecognizable. Instead, everyone assumes massive reform is crazy because they assume nobody else would agree to it. This is the dumbest reason a civilization has ever continued dying.
 
-Every verified registration is a publicly verifiable signal. The scoreboard aggregates across all participating pools in real time. As the number climbs from thousands to millions to hundreds of millions, the belief that "nobody would ever agree to this" becomes empirically falsifiable. You can see that they already did. The [referendum](https://manual.warondisease.org/knowledge/strategy/global-referendum.html) does not create demand for not dying. The demand is there. The scoreboard makes it impossible to pretend it is not.
+Every verified registration is a publicly verifiable signal. The Scoreboard aggregates across all participating pools in real time. As the number climbs from thousands to millions to hundreds of millions, the belief that "nobody would ever agree to this" becomes empirically falsifiable. You can see that they already did. The [referendum](https://manual.warondisease.org/knowledge/strategy/global-referendum.html) does not create demand for not dying. The demand is there. The Scoreboard makes it impossible to pretend it is not.
 
 ::: {.content-visible when-format="html"}
 <figure>
@@ -129,9 +129,9 @@ On Wishonia, if one person tells two people and each of them tells two people, t
 | 32 | 4,294,967,296 | Roughly the modeled global coordination target |
 | 33 | 8,589,934,592 | Everyone on Earth |
 
-32 rounds. Not 32 years. 32 rounds. If each round takes a week, that is eight months. If each round takes a month, that is two years and eight months. The important point is not the payout headline. It is that the scoreboard can move from one person to politically legible world scale on ordinary human timescales rather than civilizational ones.
+32 rounds. Not 32 years. 32 rounds. If each round takes a week, that is eight months. If each round takes a month, that is two years and eight months. The important point is not the payout headline. It is that the Scoreboard can move from one person to politically legible world scale on ordinary human timescales rather than civilizational ones.
 
-The modeled end-state coordination target is {{< var global_coordination_target_supporters_nounit >}} people, or {{< var global_coordination_target_pct >}} of humanity. That is the canonical public headcount target for the prize. VOTE points make coalition-building worth doing. The scoreboard makes that coalition legible. At scale, treaty passage is expected well before the pool matures.
+The modeled end-state coordination target is {{< var global_coordination_target_supporters_nounit >}} people, or {{< var global_coordination_target_pct >}} of humanity. That is the canonical public headcount target for the prize. VOTE points make coalition-building worth doing. The Scoreboard makes that coalition legible. At scale, treaty passage is expected well before the pool matures.
 
 For institutions, the first decision is not whether to move a massive share of global capital immediately. It is whether to underwrite three distinct jobs: make mass participation credible, seed the PRIZE pool enough that long-dated upside feels real, and then scale the capital base once the network is legible. A foundation consortium is the expected first mover. One extraordinary institution could still do the whole thing.
 
@@ -200,7 +200,7 @@ Outcome-contingent funding and threshold-triggered coordination are standard mec
 
 **The free-rider problem has a structural answer.** If success benefits everyone, why not wait and let others pay? Because non-contributors do not earn VOTE points. They get the population-wide income gain (everyone does), but they miss the VOTE payout that recruiters earn. Free-riding means giving up the recruitment reward to save the smallest possible entry ticket. Early contributors raise the probability of success, which raises the expected value for later contributors, creating a coordination game that runs on arithmetic rather than altruism.
 
-Delay is not neutral. Each person can only be recruited once, and every month spent waiting gives the status quo more time to compound while the scoreboard stays smaller than it could be.
+Delay is not neutral. Each person can only be recruited once, and every month spent waiting gives the status quo more time to compound while the Scoreboard stays smaller than it could be.
 
 The selfish case for the prize is bigger than either instrument. It is the size of the future they are trying to buy.
 
@@ -208,18 +208,18 @@ The selfish case for the prize is bigger than either instrument. It is the size 
 
 1. **Deposit $1.** PRIZE deposit. One pool, one resolution date, pro-rata failure claim.
 2. **Answer 2 questions.** 30 seconds. Treaty yes/no, allocation slider with evidence.
-3. **Recruit 2 people.** Get two more verified participants onto the scoreboard.
+3. **Recruit 2 people.** Get two more verified participants onto the Scoreboard.
 
 ### If You Have Reach, Do the Bigger Version Now
 
 - **Funders:** pick one lane this week and publish the commitment so other participants can coordinate around it.
 - **Researchers / builders:** publish one fork, attack, or replacement component this week rather than waiting for perfect certainty.
-- **Host institutions:** announce a 90-day pilot, publish the rules, convene the panel, fund the first adversarial-review pool, and launch the scoreboard.
-- **Media:** publish one briefing or story that treats the scoreboard and futures table as live public infrastructure, not a curiosity.
+- **Host institutions:** announce a 90-day pilot, publish the rules, convene the panel, fund the first adversarial-review pool, and launch the Scoreboard.
+- **Media:** publish one briefing or story that treats the Scoreboard and futures table as live public infrastructure, not a curiosity.
 
-The first milestones: initiating host announced, rules published, expert panel formed, first bounty pool funded, first scoreboard live, first credible submissions received. Then 1,024 verified participants, then 32,768, then a visibly serious pool. Once the mechanism clears those milestones, the question stops being "is this real?" and becomes "how fast is it compounding?"
+The first milestones: initiating host announced, rules published, expert panel formed, first bounty pool funded, first Scoreboard live, first credible submissions received. Then 1,024 verified participants, then 32,768, then a visibly serious pool. Once the mechanism clears those milestones, the question stops being "is this real?" and becomes "how fast is it compounding?"
 
-That is the ordinary-participant ask: three actions, under two minutes. If the prize fails, your deposit still has a pro-rata claim on the realized pool. If the prize succeeds, your PRIZE deposit helped push the world onto a far better branch. The mechanism is open, the scoreboard is public, and the first step is deliberately small. Whether it matters depends on how quickly enough people decide the arithmetic is worth acting on.
+That is the ordinary-participant ask: three actions, under two minutes. If the prize fails, your deposit still has a pro-rata claim on the realized pool. If the prize succeeds, your PRIZE deposit helped push the world onto a far better branch. The mechanism is open, the Scoreboard is public, and the first step is deliberately small. Whether it matters depends on how quickly enough people decide the arithmetic is worth acting on.
 
 ## How It Starts
 
@@ -229,9 +229,9 @@ The instruments deploy in order, and each stage builds the audience for the next
 
 **Stage 2: PRIZE deposits and the referendum (weeks to months).** PRIZE deposits are the simplest on-ramp. Every depositor learns what the prize is for. The PRIZE deposit is the simplest public coordination signal. Meanwhile, the [referendum platform](https://manual.warondisease.org/knowledge/strategy/global-referendum.html) launches: voters set their preferred military-to-health allocation via [wishocratic sliders](../solution/wishocracy.qmd), and every recruiter who brings a verified participant earns VOTE points. The referendum grows because recruitment is rewarded.
 
-**Stage 3: Scoreboard and momentum (months).** The referendum count climbs in public. The prize pool becomes large enough to be visibly real. Three dashboards matter: verified participant count, activation capital committed, and PRIZE pool capital committed. Each new cohort of participants makes the next cohort easier to convince. Politicians notice.
+**Stage 3: Scoreboard and momentum (months).** The Scoreboard climbs in public: votes, treaty support, allocation results, prize pool size, and the two outcome metrics that give the whole thing its point. Each new cohort of participants makes the next cohort easier to convince. Politicians notice.
 
-**Stage 4: The lobbying campaign (months to years).** By now, millions of voters have registered preferences, the PRIZE pool is large enough to be taken seriously, and the scoreboard shows that the coalition is real. The [current Earth Optimization manual](https://manual.warondisease.org/knowledge/strategy/earth-optimization-protocol-v1.html) [@earth-optimization-protocol-2025] describes how implementation financing converts the scoreboard into political pressure.
+**Stage 4: The lobbying campaign (months to years).** By now, millions of voters have registered preferences, the PRIZE pool is large enough to be taken seriously, and the Scoreboard shows that the coalition is real. The [current Earth Optimization manual](https://manual.warondisease.org/knowledge/strategy/earth-optimization-protocol-v1.html) [@earth-optimization-protocol-2025] describes how implementation financing converts the Scoreboard into political pressure.
 
 **Stage 5+: Implementation.** Once one binding path succeeds, budget authority starts shifting real resources. Implementers compete inside the current ratified instruction manual to supply the cheapest verified pieces, and later revisions can still replace the whole manual if they genuinely dominate it.
 
@@ -276,7 +276,7 @@ The referendum is designed to solve the usual turnout problem:
 | **Pivotality** | 1 in 30 million chance of changing outcome | Direct payout proportional to contribution |
 | **Outcome fidelity** | Politician may ignore you after winning | Funds flow to verified implementation |
 
-Your species turns out at 50-65% for elections despite getting paid nothing. This referendum adds a contingent payout, direct attribution, and a public scoreboard. The canonical payout headline assumes the modeled global coordination target of {{< var global_coordination_target_pct >}}:
+Your species turns out at 50-65% for elections despite getting paid nothing. This referendum adds a contingent payout, direct attribution, and a public Scoreboard. The canonical payout headline assumes the modeled global coordination target of {{< var global_coordination_target_pct >}}:
 
 {{< var global_coordination_target_supporters_latex >}}
 
@@ -288,7 +288,7 @@ So the institutional stack is: first make mass participation credible ({{< var g
 
 **Why more pools make everyone richer.** The protocol does not need a single pool. It needs a single *metric standard*. Any pool that measures the same two terminal outcomes (median HALY, median income) and uses proof-of-personhood for deduplication automatically joins the reward network. A verified person claims proportionally from every participating pool, regardless of which one recorded their vote. Japan launches a pool, the EU launches a pool, the Gates Foundation launches a pool. The combined reward grows with each new entrant. A "competing" pool is actually a deposit. Spending money to "attack" the network is indistinguishable from donating to it. Think of email: you can run your own server; all servers interoperate; running your own extends the network rather than fragmenting it.
 
-**What the protocol must solve.** Six capabilities: (1) identity layer (one person, one vote, cross-pool), (2) pool registry, (3) cross-pool claim settlement, (4) scoreboard aggregation, (5) terminal metric oracle, (6) claim mechanics. The companion [protocol specification](../appendix/earth-optimization-prize-protocol.qmd) [@earth-optimization-protocol-2025] specifies how.
+**What the protocol must solve.** Six capabilities: (1) identity layer (one person, one vote, cross-pool), (2) pool registry, (3) cross-pool claim settlement, (4) Scoreboard aggregation, (5) terminal metric oracle, (6) claim mechanics. The companion [protocol specification](../appendix/earth-optimization-prize-protocol.qmd) [@earth-optimization-protocol-2025] specifies how.
 
 ## Why Public Choice Theory Approves
 
@@ -297,7 +297,7 @@ Public choice theory says governments are run by humans who care about reelectio
 - **Depositors** commit capital because they retain a failure-branch claim on the same pool and buy a better future on success.
 - **Recruiters** recruit because every verified participant earns them a VOTE point.
 - **Entrepreneurs** compete for a giant implementation franchise.
-- **Politicians** notice a growing scoreboard of verified voters who care about two numbers.
+- **Politicians** notice a growing Scoreboard of verified voters who care about two numbers.
 - **Researchers and auditors** compete for the authority to validate what works.
 - **Citizens** get simpler choices and more visible returns from participation.
 
@@ -314,7 +314,7 @@ Every participant is doing exactly what they would do anyway, except pointed at 
 | "Can I sell my claim?" | Not inside the protocol. PRIZE stays with the depositor's verified account until resolution. VOTE stays with the verified recruiter who earned it. Private contracts can exist outside the protocol, like assigning future royalties, but the protocol does not broker or enforce them. |
 | "Why can't PRIZE be withdrawn early?" | Because a redeem-anytime exit right would let depositors drain the pool as success became more likely. The prize only works if the capital remains committed until the measurement date. |
 | "What if I die or lose access?" | Claims belong to a verified account, not a fragile device. The system needs account recovery, beneficiary designation, and lawful successor control so a 15-year claim does not disappear because you lost your phone or your heirs need to prove who they are. |
-| "Nobody else will participate" | That IS the problem the prize exists to solve. Your deposit is the proof that someone does. The scoreboard makes everyone else's participation visible. |
+| "Nobody else will participate" | That IS the problem the prize exists to solve. Your deposit is the proof that someone does. The Scoreboard makes everyone else's participation visible. |
 | "I don't understand the mechanism" | You do not need to. Deposit $1, answer 2 questions, recruit 2 people. |
 | "Why can't VOTE points be traded?" | Tradability would buy liquidity but invert the signal: outsiders could buy coalition credit without doing coalition work. The public signal this design relies on is simpler: verified participant count, referendum growth, and a visible pool of committed capital. |
 | "Won't someone game the metrics?" | Mortality is binary and hard to fake across millions of people. Median income requires improving the middle of the distribution, not just the top. And the adversarial challenge window means anyone who catches gaming can post a bond, present evidence, and claw back the payout. |
