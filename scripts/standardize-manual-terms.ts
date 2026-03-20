@@ -200,8 +200,8 @@ function createLinkOrPlainReplacement(
 
 const RULES: Rule[] = [
   {
-    name: 'Wishonian Optimal Governance Trajectory',
-    pattern: /\bWishonian Optimal Governance Trajectory\b/gi,
+    name: 'Optimal Governance Trajectory',
+    pattern: /\bOptimal Governance Trajectory\b/gi,
     replacement: ctx =>
       `${makeLink(ctx, 'knowledge/futures/wishonia.qmd', 'Wishonian')} ${makeLink(ctx, 'knowledge/economics/gdp-trajectories.qmd', 'Optimal Governance Trajectory')}`,
   },

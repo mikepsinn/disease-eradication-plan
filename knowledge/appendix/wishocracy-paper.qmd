@@ -15,7 +15,7 @@ abstract: |
 
   The mechanism achieves three properties no prior system combines: minimal cognitive load (~20
   comparisons per participant yields statistical convergence), preference intensity capture, and
-  approximate strategy-proofness. At system scale, the Wishonian Optimal Governance Trajectory reaches
+  approximate strategy-proofness. At system scale, the Optimal Governance Trajectory reaches
   {{< var wishonia_trajectory_gdp_vs_current_trajectory_multiplier_year_20 >}} the Earth baseline after 20 years, raises
   average income to {{< var wishonia_trajectory_avg_income_year_20 >}} versus
   {{< var current_trajectory_avg_income_year_20 >}} on the status-quo path, reaches

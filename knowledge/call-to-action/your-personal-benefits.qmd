@@ -1,6 +1,6 @@
 ---
 title: Your Personal Benefits
-description: The personal upside of moving from the Failed-State Trajectory to the Minimum Sustainable Trajectory (1% Treaty) or the Wishonian Optimal Governance Trajectory, plus a calculator for selfishly rational contribution sizing.
+description: The personal upside of moving from the Failed-State Trajectory to the Minimum Sustainable Trajectory (1% Treaty) or the Optimal Governance Trajectory, plus a calculator for selfishly rational contribution sizing.
 image: /assets/og-images/knowledge/call-to-action/your-personal-benefits-og-retro-academic.jpg
 ---
 {{< include ../includes/setup-parameters.qmd >}}
@@ -215,7 +215,7 @@ That default is not "you." It is the fastest way to make the math legible before
         <label for="pbc-input-scenario">Scenario upside you are trying to buy</label>
         <select id="pbc-input-scenario">
           <option value="treaty">Minimum Sustainable Trajectory (1% Treaty)</option>
-          <option value="wishonia">Wishonian Optimal Governance Trajectory</option>
+          <option value="wishonia">Optimal Governance Trajectory</option>
         </select>
         <div class="pbc-helper">Collapse-tail markers are shown in the summary below as the downside of not breaking the current loop.</div>
       </div>
@@ -433,7 +433,7 @@ That default is not "you." It is the fastest way to make the math legible before
       health: treatyHealth
     },
     wishonia: {
-      label: 'Wishonian Optimal Governance Trajectory',
+      label: 'Optimal Governance Trajectory',
       income: wishIncome,
       health: wishHealth
     }

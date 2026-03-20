@@ -6,7 +6,7 @@ abstract: |
   Governance dysfunction suppresses roughly {{< var political_dysfunction_global_opportunity_cost_total >}}
   in recoverable value each year. Under this paper's 20-year transition model, the Minimum Sustainable Trajectory (1% Treaty)
   reaches {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_20 >}} the Earth baseline
-  ({{< var treaty_trajectory_gdp_year_20 >}}), while the Wishonian Optimal Governance Trajectory reaches
+  ({{< var treaty_trajectory_gdp_year_20 >}}), while the Optimal Governance Trajectory reaches
   {{< var wishonia_trajectory_gdp_vs_current_trajectory_multiplier_year_20 >}} the Earth baseline, raises average income to
   {{< var wishonia_trajectory_avg_income_year_20 >}} versus {{< var current_trajectory_avg_income_year_20 >}} on the
   status-quo path, and reaches {{< var wishonia_trajectory_gdp_year_20 >}} in total output. This paper is
@@ -449,7 +449,7 @@ This calculator scales the paper's published growth assumptions to a household i
     </div>
 
     <div class="pdt-projection-metric">
-      <div id="pdt-output-full-label" class="pdt-projection-metric-label">Wishonian Optimal Governance Trajectory in year 20</div>
+      <div id="pdt-output-full-label" class="pdt-projection-metric-label">Optimal Governance Trajectory in year 20</div>
       <div id="pdt-output-full" class="pdt-projection-metric-value"></div>
       <div id="pdt-output-full-meta" class="pdt-projection-metric-meta"></div>
     </div>
@@ -471,7 +471,7 @@ This calculator scales the paper's published growth assumptions to a household i
         <span id="pdt-legend-treaty" class="pdt-projection-legend-value"></span>
       </div>
       <div class="pdt-projection-legend-item">
-        <span class="pdt-projection-legend-left"><span class="pdt-projection-swatch full"></span><span>Wishonian Optimal Governance Trajectory</span></span>
+        <span class="pdt-projection-legend-left"><span class="pdt-projection-swatch full"></span><span>Optimal Governance Trajectory</span></span>
         <span id="pdt-legend-full" class="pdt-projection-legend-value"></span>
       </div>
     </div>
@@ -822,7 +822,7 @@ This calculator scales the paper's published growth assumptions to a household i
     horizonLabel.textContent = years + (years === 1 ? ' year' : ' years');
     outputs.statusLabel.textContent = 'Failed-State Trajectory in year ' + years;
     outputs.treatyLabel.textContent = 'Minimum Sustainable Trajectory in year ' + years;
-    outputs.fullLabel.textContent = 'Wishonian Optimal Governance Trajectory in year ' + years;
+    outputs.fullLabel.textContent = 'Optimal Governance Trajectory in year ' + years;
 
     outputs.tax.textContent = formatCurrency(annualTax);
     outputs.taxMeta.textContent =
