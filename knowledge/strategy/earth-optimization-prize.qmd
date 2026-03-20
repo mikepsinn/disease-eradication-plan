@@ -136,49 +136,14 @@ That spread is absurdly large and most humans still treat "do nothing" as if it 
 | **Income upside** | {{< var treaty_trajectory_lifetime_income_gain_per_capita >}} | {{< var wishonia_trajectory_lifetime_income_gain_per_capita >}} |
 | **Healthy-life upside** | {{< var treaty_hale_value_per_capita >}} | {{< var wishonia_hale_value_per_capita >}} |
 | **Blended upside** | {{< var treaty_personal_upside_blend >}} | {{< var wishonia_personal_upside_blend >}} |
-| **EV of shifting success by 1 percentage point (income only)** | {{< var contribution_ev_per_pct_point_treaty >}} | {{< var contribution_ev_per_pct_point_wishonia >}} |
-| **EV of shifting success by 1 percentage point (blended)** | {{< var contribution_ev_per_pct_point_treaty_blend >}} | {{< var contribution_ev_per_pct_point_wishonia_blend >}} |
 
-Those are not projections about charity. They are projections about your own health, income, and exposure to civilizational failure.
-
-The selfish case for the prize is bigger than either instrument. It is the size of the future they are trying to buy.
-
-## Help Improve the Manual
-
-If you think the [current Earth Optimization manual](https://manual.warondisease.org) is wrong or incomplete, fork it and improve it through the [Planetary Constitutional Convention](planetary-constitutional-convention.qmd) [@planetary-constitutional-convention-paper-2025]. The point is not to submit a rival artifact. The point is to help humanity win faster.
-
-## The Exponential Math
-
-On Wishonia, if one person tells two people and each of them tells two people, the math handles the rest. The point is not that everyone becomes a recruiter. The point is that small repeated actions can compound into politically legible scale much faster than most readers intuit.
-
-| Round | Cumulative people | What that looks like |
-|:---|:---|:---|
-| 0 | 1 | You |
-| 10 | 1,024 | A large lecture hall |
-| 15 | 32,768 | A small town |
-| 20 | 1,048,576 | A city |
-| 25 | 33,554,432 | A country |
-| 28 | 268,435,456 | Hundreds of millions; globally visible |
-| 32 | 4,294,967,296 | Roughly the modeled global coordination target |
-| 33 | 8,589,934,592 | Everyone on Earth |
-
-32 rounds. Not 32 years. 32 rounds. If each round takes a week, that is eight months. If each round takes a month, that is two years and eight months. The important point is not the payout headline. It is that the scoreboard can move from one person to politically legible world scale on ordinary human timescales rather than civilizational ones.
-
-The modeled end-state coordination target is {{< var global_coordination_target_supporters_nounit >}} people, or {{< var global_coordination_target_pct >}} of humanity. That is the canonical public headcount target for the prize. VOTE points make coalition-building worth doing. The scoreboard makes that coalition legible. At scale, treaty passage is expected well before the pool matures.
-
-For institutions, the first decision is not whether to move a massive share of global capital immediately. It is whether to underwrite three distinct jobs: make mass participation credible, seed the PRIZE pool enough that long-dated upside feels real, and then scale the capital base once the network is legible. A foundation consortium is the expected first mover. One extraordinary institution could still do the whole thing.
-
-## What A Small Probability Shift Is Worth
-
-Once you understand the mechanism, the next question is what a small increase in success probability is worth to you personally. If the treaty trajectory is even roughly correct, success raises average lifetime income by {{< var treaty_trajectory_lifetime_income_gain_per_capita >}} per person and adds {{< var treaty_hale_value_per_capita >}} in valued healthy-life gains [@gdp-trajectories-paper-2025]. Any action you take that shifts implementation probability by even a tiny amount is worth real money to you personally:
+Those are not projections about charity. They are projections about your own health, income, and exposure to civilizational failure. Any action that shifts implementation probability by even a tiny amount is worth real money to you personally:
 
 | Increase in implementation probability | Treaty income-only EV | Treaty blended EV | Wishonia income-only EV | Wishonia blended EV |
 |---|---|---|---|---|
 | `0.01 percentage points` | `+$1.49K` | `+$2.48K` | `+$5.21K` | `+$7.56K` |
 | `0.1 percentage points` | `+$14.9K` | `+$24.8K` | `+$52.1K` | `+$75.6K` |
 | `1 percentage point` | {{< var contribution_ev_per_pct_point_treaty >}} | {{< var contribution_ev_per_pct_point_treaty_blend >}} | {{< var contribution_ev_per_pct_point_wishonia >}} | {{< var contribution_ev_per_pct_point_wishonia_blend >}} |
-
-Those are not projections about other people's welfare. They are projections about your own income, health, and exposure to collapse.
 
 | Channel | What it is | Current modeled range |
 |---|---|---|
@@ -221,6 +186,33 @@ Outcome-contingent funding and threshold-triggered coordination are standard mec
 **The free-rider problem has a structural answer.** If success benefits everyone, why not wait and let others pay? Because non-contributors do not earn VOTE points. They get the population-wide income gain (everyone does), but they miss the VOTE payout that recruiters earn. Free-riding means giving up the recruitment reward to save the smallest possible entry ticket. Early contributors raise the probability of success, which raises the expected value for later contributors, creating a coordination game that runs on arithmetic rather than altruism.
 
 Delay is not neutral. Each person can only be recruited once, and every month spent waiting gives the status quo more time to compound while the scoreboard stays smaller than it could be.
+
+The selfish case for the prize is bigger than either instrument. It is the size of the future they are trying to buy.
+
+## Help Improve the Manual
+
+If you think the [current Earth Optimization manual](https://manual.warondisease.org) is wrong or incomplete, fork it and improve it through the [Planetary Constitutional Convention](planetary-constitutional-convention.qmd) [@planetary-constitutional-convention-paper-2025]. The point is not to submit a rival artifact. The point is to help humanity win faster.
+
+## The Exponential Math
+
+On Wishonia, if one person tells two people and each of them tells two people, the math handles the rest. The point is not that everyone becomes a recruiter. The point is that small repeated actions can compound into politically legible scale much faster than most readers intuit.
+
+| Round | Cumulative people | What that looks like |
+|:---|:---|:---|
+| 0 | 1 | You |
+| 10 | 1,024 | A large lecture hall |
+| 15 | 32,768 | A small town |
+| 20 | 1,048,576 | A city |
+| 25 | 33,554,432 | A country |
+| 28 | 268,435,456 | Hundreds of millions; globally visible |
+| 32 | 4,294,967,296 | Roughly the modeled global coordination target |
+| 33 | 8,589,934,592 | Everyone on Earth |
+
+32 rounds. Not 32 years. 32 rounds. If each round takes a week, that is eight months. If each round takes a month, that is two years and eight months. The important point is not the payout headline. It is that the scoreboard can move from one person to politically legible world scale on ordinary human timescales rather than civilizational ones.
+
+The modeled end-state coordination target is {{< var global_coordination_target_supporters_nounit >}} people, or {{< var global_coordination_target_pct >}} of humanity. That is the canonical public headcount target for the prize. VOTE points make coalition-building worth doing. The scoreboard makes that coalition legible. At scale, treaty passage is expected well before the pool matures.
+
+For institutions, the first decision is not whether to move a massive share of global capital immediately. It is whether to underwrite three distinct jobs: make mass participation credible, seed the PRIZE pool enough that long-dated upside feels real, and then scale the capital base once the network is legible. A foundation consortium is the expected first mover. One extraordinary institution could still do the whole thing.
 
 ## What To Do Right Now
 
