@@ -17,7 +17,7 @@ youtube-thumbnail: /assets/podcast/wishocracy-youtube.jpg
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 
-On *Who Wants to Be a Millionaire*, the studio audience picked the right answer 91% of the time. The "phone a friend" expert? 65% [@surowiecki-2004].
+On *Who Wants to Be a Millionaire*, the studio audience picked the right answer {{< var crowd_decision_accuracy >}} of the time. The "phone a friend" expert? {{< var expert_decision_accuracy >}} [@surowiecki-2004].
 
 Your entire system of government is phone-a-friend. You phone 535 members of Congress who don't know the subject, aren't trying to answer your question, and are being paid by one of the answer choices. Then you act surprised when the answer is wrong.
 
@@ -77,7 +77,7 @@ When millions of people make pairwise choices, something almost magical happens 
 - **Independence is built in.** Surowiecki identified four conditions for crowd wisdom: diversity, independence, decentralization, and aggregation [@surowiecki-2004]. Your elections destroy the most critical one. First-past-the-post voting forces strategic voting: people pick the "viable" candidate rather than the best one, so each ballot reflects what voters think other voters will do rather than what they actually want. It's an [ant death spiral](../problem/unrepresentative-democracy.qmd): each ant follows the one ahead, the leader follows the last, and the whole colony walks in a circle until it dies. Pairwise comparisons can't death-spiral. "Which matters more: pragmatic trials or nuclear modernization?" has no spoiler candidate, no wasted vote, no reason to care what your neighbor picked. You just answer honestly. When millions of people answer honestly, you get wisdom. When millions game a two-option system, you get two candidates nobody likes.
 - **Statistical models** (Bradley-Terry, PageRank) [@bradley-terry-pagerank-models] extract global preferences from individual comparisons. The same math that ranks Google search results can rank humanity's budget priorities. Google uses it to find cat videos. You'll use it to decide whether the next marginal dollar buys a warhead or a clinical trial. Progress.
 - **Outliers cancel out.** The guy who votes "fund my personal jetpack" gets drowned out by the millions voting for things that are at least attached to reality.
-- **Wisdom of crowds emerges.** Remember the 91%-versus-65% gap from *Millionaire*? Your species already proved that random people outperform credentialed individuals at picking the right answer. Wishocracy just applies this to questions that matter.
+- **Wisdom of crowds emerges.** Remember the {{< var crowd_decision_accuracy >}}-versus-{{< var expert_decision_accuracy >}} gap from *Millionaire*? Your species already proved that random people outperform credentialed individuals at picking the right answer. Wishocracy just applies this to questions that matter.
 
 Example with real numbers:
 
@@ -106,7 +106,7 @@ Every criticism of direct democracy is actually a criticism of bad aggregation o
 
 ### Your Current System Is Phone-a-Friend (But Your Friend Is Being Bribed)
 
-That 91%-versus-65% gap is generous to your politicians. Phone-a-friend experts have three advantages over Congress:
+That {{< var crowd_decision_accuracy >}}-versus-{{< var expert_decision_accuracy >}} gap is generous to your politicians. Phone-a-friend experts have three advantages over Congress:
 
 1. **They're trying to get the right answer.** A senator deciding between nuclear modernization and pragmatic clinical trials is trying to get re-elected. These are different objectives. One occasionally produces a sensible budget by accident.
 
@@ -114,11 +114,11 @@ That 91%-versus-65% gap is generous to your politicians. Phone-a-friend experts 
 
 3. **They're not being paid by one of the answer choices.** If the phone-a-friend expert were receiving {{< var defense_lobbying_annual >}} from "Answer C," you'd call that corruption. When a senator receives money from a defense contractor and then votes on defense spending, you call that "lobbying," which is the same thing but with a syllable that makes it sound boring enough that nobody gets angry.
 
-So your current system isn't 65%. It's phone-a-friend where your friend doesn't know the subject, isn't trying to answer your question, and is being paid to say "B." Against that baseline, 91% seems less like a modest improvement and more like replacing a broken compass with GPS.
+So your current system isn't {{< var expert_decision_accuracy >}}. It's phone-a-friend where your friend doesn't know the subject, isn't trying to answer your question, and is being paid to say "B." Against that baseline, {{< var crowd_decision_accuracy >}} seems less like a modest improvement and more like replacing a broken compass with GPS.
 
 ### The 26-Point Gap Is a Floor, Not a Ceiling
 
-Trivia is the **best case** for experts. One correct answer. The expert either knows it or doesn't. Nobody is paying them to say "Constantinople" when the answer is "Istanbul." No lobbyist taking them to dinner. Their career doesn't depend on getting it wrong. And they still only hit 65%.
+Trivia is the **best case** for experts. One correct answer. The expert either knows it or doesn't. Nobody is paying them to say "Constantinople" when the answer is "Istanbul." No lobbyist taking them to dinner. Their career doesn't depend on getting it wrong. And they still only hit {{< var expert_decision_accuracy >}}.
 
 Governance is worse for experts on every dimension:
 
@@ -126,7 +126,7 @@ Governance is worse for experts on every dimension:
 - **Experts have financial incentives to give the wrong answer.** On *Millionaire*, nobody pays the expert to lie. In Congress, it's the business model.
 - **Experts are selected for the wrong criteria.** On *Millionaire*, you pick your smartest friend. In Congress, the selection process optimizes for charisma, name recognition, and the ability to stand at a podium without saying anything career-ending. The overlap between this skill set and "knows which public goods deserve the next marginal dollar" is zero.
 
-If crowds outperform experts by 26 points on questions where experts have every advantage, the gap on governance decisions (where experts are compromised, poorly selected, and missing most of the relevant information) is almost certainly larger. The 91%-versus-65% gap is the floor. The ceiling is the Soviet Union: a small group of credentialed experts making resource allocation decisions for 286 million people. It ran for 69 years. It did not go well.
+If crowds outperform experts by 26 points on questions where experts have every advantage, the gap on governance decisions (where experts are compromised, poorly selected, and missing most of the relevant information) is almost certainly larger. The {{< var crowd_decision_accuracy >}}-versus-{{< var expert_decision_accuracy >}} gap is the floor. The ceiling is the Soviet Union: a small group of credentialed experts making resource allocation decisions for 286 million people. It ran for 69 years. It did not go well.
 
 ### Why Markets Solved This (and Why You Still Need Wishocracy)
 

@@ -38,15 +38,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 137 parameters used in the analysis, organized by type:
+This appendix documents all 146 parameters used in the analysis, organized by type:
 
-- External sources (peer-reviewed): 39
-- Calculated values: 75
+- External sources (peer-reviewed): 44
+- Calculated values: 79
 - Core definitions: 23
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (75 parameters) • [External Data Sources](#sec-external) (39 parameters) • [Core Definitions](#sec-definitions) (23 parameters)
+[Calculated Values](#sec-calculated) (79 parameters) • [External Data Sources](#sec-external) (44 parameters) • [Core Definitions](#sec-definitions) (23 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -1754,23 +1754,57 @@ $$
 
 :::
 
-### $100 Prize Escrow Compound Return: $208 {#sec-prize_escrow_100_compound_return}
+### PRIZE Pool 15-Year Multiple: 11.1x {#sec-prize_pool_15yr_multiple}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Value of $100 escrowed prize contribution after accumulation period at escrow yield rate, returned if funding threshold is not met
+Canonical 15-year compound multiple used for PRIZE pool growth over the PRIZE pool resolution horizon.
 
 **Inputs**:
 
-- [Prize Escrow Annual Yield Rate](#sec-prize_escrow_yield_rate): 5% (95% CI: 3% - 8%)
-- [Prize Escrow Accumulation Period](#sec-prize_escrow_accumulation_years): 15 years
+- [PRIZE Pool Annual Return](#sec-prize_pool_annual_return) 🔢: 17.4%
+- [PRIZE Pool Resolution Horizon](#sec-prize_pool_resolution_years): 15 years
+
+$$
+M_{pool} = (1 + r_{pool})^{T_{pool}}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-prize_pool_15yr_multiple.qmd >}}
+
+{{< include ../figures/sensitivity-table-prize_pool_15yr_multiple.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-prize_pool_15yr_multiple.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-prize_pool_15yr_multiple.qmd >}}
+
+:::
+
+### PRIZE Pool Annual Return: 17.4% {#sec-prize_pool_annual_return}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Canonical annual return used for PRIZE pool growth. Venture gross return + scale compression + crowd allocation alpha + home bias elimination. This is the structural pool return before contingent macro feedback loops.
+
+**Inputs**:
+
+- [Venture Capital Gross Return](#sec-venture_gross_return) 📊: 17% (95% CI: 13% - 22%)
+- [Scale Compression Factor](#sec-scale_compression_factor): -2.5% (95% CI: -5% - -1%)
+- [Wishocratic Crowd Allocation Alpha](#sec-wishocratic_crowd_alpha) 🔢: 2.08%
+- [Home Bias Return Drag](#sec-home_bias_alpha) 📊: 0.8% (95% CI: 0.3% - 1.5%)
 
 $$
 \begin{gathered}
-V_{escrow,100} \\
-= 100 \times (1 + r_{escrow})^{T_{escrow}} \\
-= 100 \times (1 + 5\%)^{15} \\
-= \$208
+r_{pool} \\
+= r_{VC,gross} + \Delta r_{scale} + \alpha_{crowd} \\
++ \alpha_{home}
 \end{gathered}
 $$
 
@@ -1778,125 +1812,296 @@ $$
 
 #### Sensitivity Analysis
 
-{{< include ../figures/tornado-prize_escrow_100_compound_return.qmd >}}
+{{< include ../figures/tornado-prize_pool_annual_return.qmd >}}
 
-{{< include ../figures/sensitivity-table-prize_escrow_100_compound_return.qmd >}}
+{{< include ../figures/sensitivity-table-prize_pool_annual_return.qmd >}}
 
 #### Monte Carlo Distribution
 
-{{< include ../figures/mc-distribution-prize_escrow_100_compound_return.qmd >}}
+{{< include ../figures/mc-distribution-prize_pool_annual_return.qmd >}}
 
 #### Exceedance Probability
 
-{{< include ../figures/exceedance-prize_escrow_100_compound_return.qmd >}}
+{{< include ../figures/exceedance-prize_pool_annual_return.qmd >}}
 
 :::
 
-### Prize Escrow Return Multiple: 2.08x {#sec-prize_escrow_100_return_multiple}
+### PRIZE Pool Potential Max Size: $774T {#sec-prize_pool_potential_max_size}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Return multiple on escrowed prize contribution after accumulation period (how many times your money you get back)
+Potential maximum terminal PRIZE pool size if the global retirement asset base compounds through the wishocratic fund over the resolution horizon.
 
 **Inputs**:
 
-- [Prize Escrow Annual Yield Rate](#sec-prize_escrow_yield_rate): 5% (95% CI: 3% - 8%)
-- [Prize Escrow Accumulation Period](#sec-prize_escrow_accumulation_years): 15 years
+- [Global Retirement Assets](#sec-global_retirement_assets) 📊: $70T
+- [PRIZE Pool 15-Year Multiple](#sec-prize_pool_15yr_multiple) 🔢: 11.1x
+
+$$
+Pool_{max} = Assets_{retire} \times M_{pool}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-prize_pool_potential_max_size.qmd >}}
+
+{{< include ../figures/sensitivity-table-prize_pool_potential_max_size.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-prize_pool_potential_max_size.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-prize_pool_potential_max_size.qmd >}}
+
+:::
+
+### PRIZE Pool Target as % of Global GDP: 7.94% {#sec-prize_pool_target_pct_gdp}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Required initial principal as a share of global GDP to reach one year of the dysfunction-tax target by the resolution date.
+
+**Inputs**:
+
+- [PRIZE Pool Target Required Principal](#sec-prize_pool_target_required_principal) 🔢: $9.13T
+- [Global GDP (2025)](#sec-global_gdp_2025) 📊: $115T
 
 $$
 \begin{gathered}
-k_{escrow} \\
-= (1 + r_{escrow})^{T_{escrow}} \\
-= (1 + 5\%)^{15} \\
-= 2.08\times
+d_{GDP} \\
+= \frac{P_{required}}{GDP_{global}} \\
+= \frac{\$9.13T}{\$115T} \\
+= 7.94\%
 \end{gathered}
 $$
-
+where:
+$$
+P_{required} = \frac{O_{total}}{M_{pool}}
+$$
+where:
+$$
+\begin{gathered}
+O_{total} \\
+= O_{health} + O_{science} + O_{lead} + O_{migration} \\
+= \$34T + \$4T + \$6T + \$57T \\
+= \$101T
+\end{gathered}
+$$
+where:
+$$
+M_{pool} = (1 + r_{pool})^{T_{pool}}
+$$
+where:
+$$
+\begin{gathered}
+r_{pool} \\
+= r_{VC,gross} + \Delta r_{scale} + \alpha_{crowd} \\
++ \alpha_{home}
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+\alpha_{crowd} \\
+= S_{alloc} \times (Acc_{crowd} - Acc_{expert}) \\
+= 8\% \times (91\% - 65\%) \\
+= 2.08\%
+\end{gathered}
+$$
 *✓ High confidence*
 
 #### Sensitivity Analysis
 
-{{< include ../figures/tornado-prize_escrow_100_return_multiple.qmd >}}
+{{< include ../figures/tornado-prize_pool_target_pct_gdp.qmd >}}
 
-{{< include ../figures/sensitivity-table-prize_escrow_100_return_multiple.qmd >}}
+{{< include ../figures/sensitivity-table-prize_pool_target_pct_gdp.qmd >}}
 
 #### Monte Carlo Distribution
 
-{{< include ../figures/mc-distribution-prize_escrow_100_return_multiple.qmd >}}
+{{< include ../figures/mc-distribution-prize_pool_target_pct_gdp.qmd >}}
 
 #### Exceedance Probability
 
-{{< include ../figures/exceedance-prize_escrow_100_return_multiple.qmd >}}
+{{< include ../figures/exceedance-prize_pool_target_pct_gdp.qmd >}}
 
 :::
 
-### Prize Pool FV Annuity Factor: 21.6:1 {#sec-prize_pool_fv_annuity_factor}
+### PRIZE Pool Target as % of Retirement Assets: 13% {#sec-prize_pool_target_pct_retirement_assets}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Future-value annuity factor for prize pool accumulation at escrow yield over accumulation period
+Required initial principal as a share of global retirement assets to reach one year of the dysfunction-tax target by the resolution date.
 
 **Inputs**:
 
-- [Prize Escrow Annual Yield Rate](#sec-prize_escrow_yield_rate): 5% (95% CI: 3% - 8%)
-- [Prize Escrow Accumulation Period](#sec-prize_escrow_accumulation_years): 15 years
+- [PRIZE Pool Target Required Principal](#sec-prize_pool_target_required_principal) 🔢: $9.13T
+- [Global Retirement Assets](#sec-global_retirement_assets) 📊: $70T
 
 $$
 \begin{gathered}
-FV_{annuity} \\
-= \frac{(1 + r_{escrow})^{T_{escrow}} - 1}{r_{escrow}}
+d_{retire} \\
+= \frac{P_{required}}{Assets_{retire}} \\
+= \frac{\$9.13T}{\$70T} \\
+= 13\%
 \end{gathered}
 $$
-
+where:
+$$
+P_{required} = \frac{O_{total}}{M_{pool}}
+$$
+where:
+$$
+\begin{gathered}
+O_{total} \\
+= O_{health} + O_{science} + O_{lead} + O_{migration} \\
+= \$34T + \$4T + \$6T + \$57T \\
+= \$101T
+\end{gathered}
+$$
+where:
+$$
+M_{pool} = (1 + r_{pool})^{T_{pool}}
+$$
+where:
+$$
+\begin{gathered}
+r_{pool} \\
+= r_{VC,gross} + \Delta r_{scale} + \alpha_{crowd} \\
++ \alpha_{home}
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+\alpha_{crowd} \\
+= S_{alloc} \times (Acc_{crowd} - Acc_{expert}) \\
+= 8\% \times (91\% - 65\%) \\
+= 2.08\%
+\end{gathered}
+$$
 *✓ High confidence*
 
 #### Sensitivity Analysis
 
-{{< include ../figures/tornado-prize_pool_fv_annuity_factor.qmd >}}
+{{< include ../figures/tornado-prize_pool_target_pct_retirement_assets.qmd >}}
 
-{{< include ../figures/sensitivity-table-prize_pool_fv_annuity_factor.qmd >}}
+{{< include ../figures/sensitivity-table-prize_pool_target_pct_retirement_assets.qmd >}}
 
 #### Monte Carlo Distribution
 
-{{< include ../figures/mc-distribution-prize_pool_fv_annuity_factor.qmd >}}
+{{< include ../figures/mc-distribution-prize_pool_target_pct_retirement_assets.qmd >}}
 
 #### Exceedance Probability
 
-{{< include ../figures/exceedance-prize_pool_fv_annuity_factor.qmd >}}
+{{< include ../figures/exceedance-prize_pool_target_pct_retirement_assets.qmd >}}
 
 :::
 
-### Prize Pool Projected Size: $20.1T {#sec-prize_pool_projected_size}
+### PRIZE Pool Target as % of Household Wealth: 2.01% {#sec-prize_pool_target_pct_wealth}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Projected prize pool size based on PRIZE share of global savings and compound growth over the accumulation period
+Required initial principal as a share of global household wealth to reach one year of the dysfunction-tax target by the resolution date.
 
 **Inputs**:
 
-- [Global Annual Savings](#sec-global_annual_savings) 🔢: $31.1T
-- [PRIZE Share of Global Savings](#sec-prize_savings_share): 3% (95% CI: 0.1% - 50%)
-- [Prize Pool FV Annuity Factor](#sec-prize_pool_fv_annuity_factor) 🔢: 21.6:1
+- [PRIZE Pool Target Required Principal](#sec-prize_pool_target_required_principal) 🔢: $9.13T
+- [Global Household Wealth](#sec-global_household_wealth_usd) 📊: $454T
 
 $$
-Pool = S_{annual} \times s_{prize} \times FV_{annuity}
+\begin{gathered}
+d_{wealth} \\
+= \frac{P_{required}}{Wealth_{household}} \\
+= \frac{\$9.13T}{\$454T} \\
+= 2.01\%
+\end{gathered}
+$$
+where:
+$$
+P_{required} = \frac{O_{total}}{M_{pool}}
+$$
+where:
+$$
+\begin{gathered}
+O_{total} \\
+= O_{health} + O_{science} + O_{lead} + O_{migration} \\
+= \$34T + \$4T + \$6T + \$57T \\
+= \$101T
+\end{gathered}
+$$
+where:
+$$
+M_{pool} = (1 + r_{pool})^{T_{pool}}
+$$
+where:
+$$
+\begin{gathered}
+r_{pool} \\
+= r_{VC,gross} + \Delta r_{scale} + \alpha_{crowd} \\
++ \alpha_{home}
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+\alpha_{crowd} \\
+= S_{alloc} \times (Acc_{crowd} - Acc_{expert}) \\
+= 8\% \times (91\% - 65\%) \\
+= 2.08\%
+\end{gathered}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-prize_pool_target_pct_wealth.qmd >}}
+
+{{< include ../figures/sensitivity-table-prize_pool_target_pct_wealth.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-prize_pool_target_pct_wealth.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-prize_pool_target_pct_wealth.qmd >}}
+
+:::
+
+### PRIZE Pool Target Required Principal: $9.13T {#sec-prize_pool_target_required_principal}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Required initial principal for the PRIZE pool to reach one year of the dysfunction-tax target by the resolution date under the canonical fund-growth model.
+
+**Inputs**:
+
+- [Global Opportunity Cost Total](#sec-political_dysfunction_global_opportunity_cost_total) 🔢: $101T
+- [PRIZE Pool 15-Year Multiple](#sec-prize_pool_15yr_multiple) 🔢: 11.1x
+
+$$
+P_{required} = \frac{O_{total}}{M_{pool}}
 $$
 
 *✓ High confidence*
 
 #### Sensitivity Analysis
 
-{{< include ../figures/tornado-prize_pool_projected_size.qmd >}}
+{{< include ../figures/tornado-prize_pool_target_required_principal.qmd >}}
 
-{{< include ../figures/sensitivity-table-prize_pool_projected_size.qmd >}}
+{{< include ../figures/sensitivity-table-prize_pool_target_required_principal.qmd >}}
 
 #### Monte Carlo Distribution
 
-{{< include ../figures/mc-distribution-prize_pool_projected_size.qmd >}}
+{{< include ../figures/mc-distribution-prize_pool_target_required_principal.qmd >}}
 
 #### Exceedance Probability
 
-{{< include ../figures/exceedance-prize_pool_projected_size.qmd >}}
+{{< include ../figures/exceedance-prize_pool_target_required_principal.qmd >}}
 
 :::
 
@@ -3091,19 +3296,19 @@ $$
 
 :::
 
-### VOTE Token Potential Value: $8.38K {#sec-vote_token_potential_value}
+### VOTE Token Potential Value: $323K {#sec-vote_token_potential_value}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Expected value of a single VOTE token (projected pool size ÷ expected voters). Denominator is expected participants (30% of global population), not the Chenoweth passage threshold. CI captures uncertainty in pool size and participation rate.
+Potential value of a single VOTE claim if the PRIZE pool reaches its canonical potential max size. Denominator is expected participants (30% of global population), not the Chenoweth passage threshold.
 
 **Inputs**:
 
-- [Prize Pool Projected Size](#sec-prize_pool_projected_size) 🔢: $20.1T
+- [PRIZE Pool Potential Max Size](#sec-prize_pool_potential_max_size) 🔢: $774T
 - [Expected Number of Voters](#sec-vote_expected_participants) 🔢: 2.4 billion of people
 
 $$
-V_{vote} = \frac{Pool_{proj}}{N_{voters,expected}}
+V_{vote} = \frac{Pool_{max}}{N_{voters,expected}}
 $$
 
 *✓ High confidence*
@@ -3159,6 +3364,45 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-willing_trial_participants_global.qmd >}}
+
+:::
+
+### Wishocratic Crowd Allocation Alpha: 2.08% {#sec-wishocratic_crowd_alpha}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Allocation alpha from wishocratic crowd decision-making. Crowds pick correctly 91% vs experts at 65% (Surowiecki). Applied to the return spread between best/worst sectors. This is the floor: politicians (the real 'experts') are worse than 65% because they are being paid by one of the answer choices.
+
+**Inputs**:
+
+- [Crowd Decision Accuracy (Millionaire)](#sec-crowd_decision_accuracy) 📊: 91%
+- [Expert Decision Accuracy (Millionaire)](#sec-expert_decision_accuracy) 📊: 65%
+- [Allocation Decision Return Spread](#sec-allocation_decision_spread): 8% (95% CI: 5% - 12%)
+
+$$
+\begin{gathered}
+\alpha_{crowd} \\
+= S_{alloc} \times (Acc_{crowd} - Acc_{expert}) \\
+= 8\% \times (91\% - 65\%) \\
+= 2.08\%
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-wishocratic_crowd_alpha.qmd >}}
+
+{{< include ../figures/sensitivity-table-wishocratic_crowd_alpha.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-wishocratic_crowd_alpha.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-wishocratic_crowd_alpha.qmd >}}
 
 :::
 
@@ -4269,6 +4513,22 @@ $$
 
 Parameters sourced from peer-reviewed publications, institutional databases, and authoritative reports.
 
+### Crowd Decision Accuracy (Millionaire): 91% {#sec-crowd_decision_accuracy}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Crowd accuracy on Who Wants to Be a Millionaire ask-the-audience lifeline. Studio audience picked the correct answer 91% of the time (Surowiecki 2004). Used as lower bound for wishocratic allocation accuracy.
+
+**Source**: [@surowiecki-2004]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*✓ High confidence*
+
+:::
+
 ### Global Population with Chronic Diseases: 2.4 billion people {#sec-current_disease_patients_global}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -4422,6 +4682,22 @@ Regulatory delay for efficacy testing (Phase II/III) post-safety verification. B
 {{< include ../figures/distribution-efficacy_lag_years.qmd >}}
 
 *~ Medium confidence • 📊 Peer-reviewed • Updated 2021*
+
+:::
+
+### Expert Decision Accuracy (Millionaire): 65% {#sec-expert_decision_accuracy}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Expert accuracy on Who Wants to Be a Millionaire phone-a-friend lifeline. Credentialed expert picked the correct answer 65% of the time (Surowiecki 2004). Used as baseline for conventional fund manager / committee allocation.
+
+**Source**: [@surowiecki-2004]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*✓ High confidence*
 
 :::
 
@@ -4677,6 +4953,20 @@ Critical mass threshold for social change (3.5% rule). Chenoweth studied nationa
 
 :::
 
+### Global Retirement Assets: $70T {#sec-global_retirement_assets}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Total global pension and retirement assets (OECD 2024). This is the capital pool that the wishocratic fund competes with and could partially absorb.
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*✓ High confidence*
+
+:::
+
 ### Global Gross Savings Rate: 27% {#sec-global_savings_rate_pct}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -4718,6 +5008,28 @@ Proportion of global DALYs that are YLD (years lived with disability) vs YLL (ye
 {{< include ../figures/distribution-global_yld_proportion_of_dalys.qmd >}}
 
 *✓ High confidence • 📊 Peer-reviewed*
+
+:::
+
+### Home Bias Return Drag: 0.8% {#sec-home_bias_alpha}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Return drag from home bias in fragmented national pension systems. 70+ countries each overweight domestic assets, missing global diversification. IMF and Vanguard studies estimate 0.3-1.5% annual return cost. Wishocratic allocation is inherently global, eliminating this drag.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [0.3%, 1.5%] • Distribution: Normal
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between 0.3% and 1.5% (±75%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The normal distribution means values cluster around the center with equal chances of being higher or lower.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-home_bias_alpha.qmd >}}
+
+*✓ High confidence*
 
 :::
 
@@ -5075,9 +5387,53 @@ Total US federal lobbying expenditure in 2024 (record year). Source: OpenSecrets
 
 :::
 
+### Venture Capital Gross Return: 17% {#sec-venture_gross_return}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Venture capital / private equity gross return (before 2-and-20 fees). Cambridge Associates US VC index 25-year pooled gross IRR. The wishocratic fund charges zero fees, so gross return is the correct baseline. Lockup premium is already embedded: VC/PE IS illiquid.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [13%, 22%] • Distribution: Normal
+
+**What this means**: There's significant uncertainty here. The true value likely falls between 13% and 22% (±26%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The normal distribution means values cluster around the center with equal chances of being higher or lower.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-venture_gross_return.qmd >}}
+
+*✓ High confidence*
+
+:::
+
 ## Core Definitions {#sec-definitions}
 
 Fundamental parameters and constants used throughout the analysis.
+
+### Allocation Decision Return Spread: 8% {#sec-allocation_decision_spread}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Return spread between the best and worst major asset-class sectors (biotech vs. coal, growth vs. value, emerging vs. declining). The accuracy advantage of crowds over experts is multiplied by this spread to estimate the allocation alpha from wishocratic decision-making.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [5%, 12%] • Distribution: Normal
+
+**What this means**: There's significant uncertainty here. The true value likely falls between 5% and 12% (±44%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The normal distribution means values cluster around the center with equal chances of being higher or lower.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-allocation_decision_spread.qmd >}}
+
+*Core definition*
+
+:::
 
 ### Average Life Extension per Beneficiary: 12 years {#sec-avg_life_extension_per_beneficiary}
 
@@ -5315,59 +5671,15 @@ Historical calibration target: 30% military reallocation maps to ~5.5 percentage
 
 :::
 
-### Prize Escrow Accumulation Period: 15 years {#sec-prize_escrow_accumulation_years}
+### PRIZE Pool Resolution Horizon: 15 years {#sec-prize_pool_resolution_years}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Assumed accumulation period for escrowed prize contributions before threshold determination
+Resolution horizon for the PRIZE pool before the success/failure branch is determined
 
 #### Uncertainty Range
 
 **Technical**: Distribution: Fixed
-
-*Core definition*
-
-:::
-
-### Prize Escrow Annual Yield Rate: 5% {#sec-prize_escrow_yield_rate}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Annual yield rate on escrowed prize contributions via stablecoin lending/staking (cycle-weighted average across Aave, Compound, MakerDAO DSR, and locked staking platforms, 2020-2026)
-
-#### Uncertainty Range
-
-**Technical**: 95% CI: [3%, 8%] • Distribution: Normal
-
-**What this means**: There's significant uncertainty here. The true value likely falls between 3% and 8% (±50%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
-
-*The normal distribution means values cluster around the center with equal chances of being higher or lower.*
-
-#### Input Distribution
-
-{{< include ../figures/distribution-prize_escrow_yield_rate.qmd >}}
-
-*Core definition*
-
-:::
-
-### PRIZE Share of Global Savings: 3% {#sec-prize_savings_share}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Share of global savings that flows into PRIZE tokens. Point estimate matches the deposit rate needed to hit the dysfunction tax target (~3%). Lower bound reflects early-adopter phase; upper bound reflects PRIZE tokens becoming a dominant savings vehicle (comparable to index fund adoption rates).
-
-#### Uncertainty Range
-
-**Technical**: 95% CI: [0.1%, 50%] • Distribution: Lognormal
-
-**What this means**: This estimate is highly uncertain. The true value likely falls between 0.1% and 50% (±832%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
-
-*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
-
-#### Input Distribution
-
-{{< include ../figures/distribution-prize_savings_share.qmd >}}
 
 *Core definition*
 
@@ -5390,6 +5702,28 @@ R&D spillover multiplier: each $1 in directed medical research produces $2 in ad
 #### Input Distribution
 
 {{< include ../figures/distribution-rd_spillover_multiplier.qmd >}}
+
+*Core definition*
+
+:::
+
+### Scale Compression Factor: -2.5% {#sec-scale_compression_factor}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Diminishing-returns drag as the venture market expands ~15x (current global VC ~$300B/yr; wishocratic fund deploys ~$4.7T/yr). More capital chasing deals compresses returns. Partially offset by market expansion (every viable idea gets funded, oligopolies face real competition). Point estimate is moderate; CI spans optimistic to pessimistic.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [-5%, -1%] • Distribution: Normal
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between -5% and -1% (±80%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The normal distribution means values cluster around the center with equal chances of being higher or lower.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-scale_compression_factor.qmd >}}
 
 *Core definition*
 

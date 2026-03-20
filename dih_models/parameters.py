@@ -5657,60 +5657,19 @@ IAB_VS_DEFENSE_LOBBY_RATIO_AT_1PCT = Parameter(
     latex_symbol=r"k_{IAB:defense}",
 )
 
-# ── Prize Escrow Yield (Assurance Contract) ──────────────────────────────────
-PRIZE_ESCROW_YIELD_RATE = Parameter(
-    0.05,
-    source_type="definition",
-    description="Annual yield rate on escrowed prize contributions via stablecoin lending/staking (cycle-weighted average across Aave, Compound, MakerDAO DSR, and locked staking platforms, 2020-2026)",
-    display_name="Prize Escrow Annual Yield Rate",
-    unit="percent",
-    display_value="5%",
-    keywords=["prize", "escrow", "yield", "staking", "interest", "assurance contract", "defi"],
-    confidence_interval=(0.03, 0.08),  # Bear floors ~2-3%, bull peaks 8-12% but unsustained; 3-8% captures realistic 15-year range
-    distribution="normal",
-    latex_symbol=r"r_{escrow}",
-)
-
-PRIZE_ESCROW_ACCUMULATION_YEARS = Parameter(
+# ── PRIZE Pool Resolution Horizon ────────────────────────────────────────────
+PRIZE_POOL_RESOLUTION_YEARS = Parameter(
     15,
     source_type="definition",
-    description="Assumed accumulation period for escrowed prize contributions before threshold determination",
-    display_name="Prize Escrow Accumulation Period",
+    description="Resolution horizon for the PRIZE pool before the success/failure branch is determined",
+    display_name="PRIZE Pool Resolution Horizon",
     unit="years",
-    keywords=["prize", "escrow", "accumulation", "years", "threshold"],
+    keywords=["prize", "resolution", "horizon", "years", "threshold"],
     distribution="fixed",
-    latex_symbol=r"T_{escrow}",
+    latex_symbol=r"T_{pool}",
 )
 
-PRIZE_ESCROW_100_COMPOUND_RETURN = Parameter(
-    100 * (1 + PRIZE_ESCROW_YIELD_RATE) ** PRIZE_ESCROW_ACCUMULATION_YEARS,
-    source_type="calculated",
-    description="Value of $100 escrowed prize contribution after accumulation period at escrow yield rate, returned if funding threshold is not met",
-    display_name="$100 Prize Escrow Compound Return",
-    unit="USD",
-    formula="100 × (1 + PRIZE_ESCROW_YIELD_RATE) ^ PRIZE_ESCROW_ACCUMULATION_YEARS",
-    latex=r"V_{escrow,100} = 100 \times (1 + r_{escrow})^{T_{escrow}} = 100 \times (1 + 5\%)^{15} = \$208",
-    inputs=["PRIZE_ESCROW_YIELD_RATE", "PRIZE_ESCROW_ACCUMULATION_YEARS"],
-    compute=lambda ctx: 100 * (1 + ctx["PRIZE_ESCROW_YIELD_RATE"]) ** ctx["PRIZE_ESCROW_ACCUMULATION_YEARS"],
-    keywords=["prize", "escrow", "compound", "return", "assurance contract", "refund"],
-    latex_symbol=r"V_{escrow,100}",
-)  # $208
-
-PRIZE_ESCROW_100_RETURN_MULTIPLE = Parameter(
-    (1 + PRIZE_ESCROW_YIELD_RATE) ** PRIZE_ESCROW_ACCUMULATION_YEARS,
-    source_type="calculated",
-    description="Return multiple on escrowed prize contribution after accumulation period (how many times your money you get back)",
-    display_name="Prize Escrow Return Multiple",
-    unit="x",
-    formula="(1 + PRIZE_ESCROW_YIELD_RATE) ^ PRIZE_ESCROW_ACCUMULATION_YEARS",
-    latex=r"k_{escrow} = (1 + r_{escrow})^{T_{escrow}} = (1 + 5\%)^{15} = 2.08\times",
-    inputs=["PRIZE_ESCROW_YIELD_RATE", "PRIZE_ESCROW_ACCUMULATION_YEARS"],
-    compute=lambda ctx: (1 + ctx["PRIZE_ESCROW_YIELD_RATE"]) ** ctx["PRIZE_ESCROW_ACCUMULATION_YEARS"],
-    keywords=["prize", "escrow", "multiple", "return", "compound"],
-    latex_symbol=r"k_{escrow}",
-)  # 2.08x
-
-# ── Prize Pool Capacity Analysis ─────────────────────────────────────────────
+# ── Global Capital Context ───────────────────────────────────────────────────
 
 GLOBAL_SAVINGS_RATE_PCT = Parameter(
     0.27,
@@ -5739,89 +5698,6 @@ GLOBAL_ANNUAL_SAVINGS = Parameter(
     latex_symbol=r"S_{annual}",
 )
 
-PRIZE_POOL_FV_ANNUITY_FACTOR = Parameter(
-    ((1 + PRIZE_ESCROW_YIELD_RATE) ** PRIZE_ESCROW_ACCUMULATION_YEARS - 1) / PRIZE_ESCROW_YIELD_RATE,
-    source_type="calculated",
-    description="Future-value annuity factor for prize pool accumulation at escrow yield over accumulation period",
-    display_name="Prize Pool FV Annuity Factor",
-    unit="ratio",
-    formula="((1 + PRIZE_ESCROW_YIELD_RATE)^PRIZE_ESCROW_ACCUMULATION_YEARS - 1) / PRIZE_ESCROW_YIELD_RATE",
-    latex=r"FV_{annuity} = \frac{(1 + r_{escrow})^{T_{escrow}} - 1}{r_{escrow}}",
-    inputs=["PRIZE_ESCROW_YIELD_RATE", "PRIZE_ESCROW_ACCUMULATION_YEARS"],
-    compute=lambda ctx: ((1 + ctx["PRIZE_ESCROW_YIELD_RATE"]) ** ctx["PRIZE_ESCROW_ACCUMULATION_YEARS"] - 1) / ctx["PRIZE_ESCROW_YIELD_RATE"],
-    keywords=["prize", "pool", "annuity", "future value", "capacity"],
-    latex_symbol=r"FV_{annuity}",
-)
-
-PRIZE_SAVINGS_SHARE = Parameter(
-    0.03,
-    source_type="definition",
-    description="Share of global savings that flows into PRIZE tokens. Point estimate matches the "
-                "deposit rate needed to hit the dysfunction tax target (~3%). Lower bound reflects "
-                "early-adopter phase; upper bound reflects PRIZE tokens becoming a dominant "
-                "savings vehicle (comparable to index fund adoption rates).",
-    display_name="PRIZE Share of Global Savings",
-    unit="percent",
-    confidence_interval=(0.001, 0.50),  # 0.1% early-adopter to 50% dominant-vehicle scenario
-    distribution="lognormal",
-    keywords=["prize", "deposit", "adoption", "savings", "share"],
-    latex_symbol=r"s_{prize}",
-)
-
-PRIZE_POOL_PROJECTED_SIZE = Parameter(
-    GLOBAL_ANNUAL_SAVINGS * PRIZE_SAVINGS_SHARE * PRIZE_POOL_FV_ANNUITY_FACTOR,
-    source_type="calculated",
-    description="Projected prize pool size based on PRIZE share of global savings and compound growth over the accumulation period",
-    display_name="Prize Pool Projected Size",
-    unit="USD",
-    formula="GLOBAL_ANNUAL_SAVINGS × PRIZE_SAVINGS_SHARE × PRIZE_POOL_FV_ANNUITY_FACTOR",
-    latex=r"Pool = S_{annual} \times s_{prize} \times FV_{annuity}",
-    inputs=["GLOBAL_ANNUAL_SAVINGS", "PRIZE_SAVINGS_SHARE", "PRIZE_POOL_FV_ANNUITY_FACTOR"],
-    compute=lambda ctx: ctx["GLOBAL_ANNUAL_SAVINGS"] * ctx["PRIZE_SAVINGS_SHARE"] * ctx["PRIZE_POOL_FV_ANNUITY_FACTOR"],
-    keywords=["prize", "pool", "projected", "size", "capacity"],
-    latex_symbol=r"Pool_{proj}",
-)
-
-PRIZE_POOL_TARGET_ANNUAL_DEPOSITS = Parameter(
-    POLITICAL_DYSFUNCTION_GLOBAL_OPPORTUNITY_COST_TOTAL / PRIZE_POOL_FV_ANNUITY_FACTOR,
-    source_type="calculated",
-    description="Annual deposits required for prize pool to reach the dysfunction tax target ($101T) over the accumulation period",
-    display_name="Prize Pool Required Annual Deposits",
-    unit="USD/year",
-    formula="POLITICAL_DYSFUNCTION_GLOBAL_OPPORTUNITY_COST_TOTAL / PRIZE_POOL_FV_ANNUITY_FACTOR",
-    latex=r"D_{annual} = \frac{O_{total}}{FV_{annuity}}",
-    inputs=["POLITICAL_DYSFUNCTION_GLOBAL_OPPORTUNITY_COST_TOTAL", "PRIZE_POOL_FV_ANNUITY_FACTOR"],
-    compute=lambda ctx: ctx["POLITICAL_DYSFUNCTION_GLOBAL_OPPORTUNITY_COST_TOTAL"] / ctx["PRIZE_POOL_FV_ANNUITY_FACTOR"],
-    keywords=["prize", "pool", "deposits", "target", "required"],
-    latex_symbol=r"D_{annual}",
-)
-
-PRIZE_POOL_TARGET_PCT_SAVINGS = Parameter(
-    POLITICAL_DYSFUNCTION_GLOBAL_OPPORTUNITY_COST_TOTAL / PRIZE_POOL_FV_ANNUITY_FACTOR / GLOBAL_ANNUAL_SAVINGS,
-    source_type="calculated",
-    description="Required annual deposits as share of global savings to reach dysfunction tax target",
-    display_name="Prize Pool Target as % of Global Savings",
-    unit="percent",
-    formula="PRIZE_POOL_TARGET_ANNUAL_DEPOSITS / GLOBAL_ANNUAL_SAVINGS",
-    inputs=["PRIZE_POOL_TARGET_ANNUAL_DEPOSITS", "GLOBAL_ANNUAL_SAVINGS"],
-    compute=lambda ctx: ctx["PRIZE_POOL_TARGET_ANNUAL_DEPOSITS"] / ctx["GLOBAL_ANNUAL_SAVINGS"],
-    keywords=["prize", "pool", "savings", "share", "feasibility"],
-    latex_symbol=r"d_{savings}",
-)
-
-PRIZE_POOL_TARGET_PCT_GDP = Parameter(
-    POLITICAL_DYSFUNCTION_GLOBAL_OPPORTUNITY_COST_TOTAL / PRIZE_POOL_FV_ANNUITY_FACTOR / GLOBAL_GDP_2025,
-    source_type="calculated",
-    description="Required annual deposits as share of global GDP to reach dysfunction tax target",
-    display_name="Prize Pool Target as % of Global GDP",
-    unit="percent",
-    formula="PRIZE_POOL_TARGET_ANNUAL_DEPOSITS / GLOBAL_GDP_2025",
-    inputs=["PRIZE_POOL_TARGET_ANNUAL_DEPOSITS", "GLOBAL_GDP_2025"],
-    compute=lambda ctx: ctx["PRIZE_POOL_TARGET_ANNUAL_DEPOSITS"] / ctx["GLOBAL_GDP_2025"],
-    keywords=["prize", "pool", "GDP", "share", "feasibility"],
-    latex_symbol=r"d_{GDP}",
-)
-
 # Moved here from IAB PAPER PARAMETERS section to resolve forward reference in PRIZE_POOL_TARGET_PCT_WEALTH
 GLOBAL_HOUSEHOLD_WEALTH_USD = Parameter(
     454e12,
@@ -5835,19 +5711,6 @@ GLOBAL_HOUSEHOLD_WEALTH_USD = Parameter(
     distribution="fixed",
     latex_symbol=r"Wealth_{household}",  # LaTeX symbol for equations
 )  # $454T
-
-PRIZE_POOL_TARGET_PCT_WEALTH = Parameter(
-    PRIZE_POOL_TARGET_ANNUAL_DEPOSITS / GLOBAL_HOUSEHOLD_WEALTH_USD,
-    source_type="calculated",
-    description="Required annual deposits as share of global household wealth to reach dysfunction tax target",
-    display_name="Prize Pool Target as % of Household Wealth",
-    unit="percent",
-    formula="PRIZE_POOL_TARGET_ANNUAL_DEPOSITS / GLOBAL_HOUSEHOLD_WEALTH_USD",
-    inputs=["PRIZE_POOL_TARGET_ANNUAL_DEPOSITS", "GLOBAL_HOUSEHOLD_WEALTH_USD"],
-    compute=lambda ctx: ctx["PRIZE_POOL_TARGET_ANNUAL_DEPOSITS"] / ctx["GLOBAL_HOUSEHOLD_WEALTH_USD"],
-    keywords=["prize", "pool", "wealth", "share", "feasibility"],
-    latex_symbol=r"d_{wealth}",
-)
 
 # Cumulative treaty funding over 20 years WITH IAB ratchet expansion
 TREATY_CUMULATIVE_20YR_WITH_RATCHET = Parameter(
@@ -7843,21 +7706,284 @@ VOTER_SUFFERING_HOURS_PREVENTED = Parameter(
     hide_ci=True,  # Same wide CI as VOTER_LIVES_SAVED; point estimate only in CTA copy
 )
 
-# VOTE token value (projected pool ÷ expected voters)
-VOTE_TOKEN_POTENTIAL_VALUE = Parameter(
-    float(PRIZE_POOL_PROJECTED_SIZE) / float(VOTE_EXPECTED_PARTICIPANTS),
+# ── Wishocratic Investment Fund ──────────────────────────────────────────────
+# Models the prize pool as an actively allocated investment fund rather than
+# passive escrow. Baseline = venture gross return (fee-free, illiquid),
+# adjusted for scale compression, crowd allocation alpha, and home-bias
+# elimination, plus six first-order feedback loops.
+
+# --- Structural inputs ---
+
+VENTURE_GROSS_RETURN = Parameter(
+    0.17,
+    source_type="external",
+    description="Venture capital / private equity gross return (before 2-and-20 fees). "
+                "Cambridge Associates US VC index 25-year pooled gross IRR. "
+                "The wishocratic fund charges zero fees, so gross return is the correct baseline. "
+                "Lockup premium is already embedded: VC/PE IS illiquid.",
+    display_name="Venture Capital Gross Return",
+    unit="percent",
+    confidence_interval=(0.13, 0.22),
+    distribution="normal",
+    keywords=["venture", "capital", "gross", "return", "PE", "private equity", "baseline", "IRR"],
+    latex_symbol=r"r_{VC,gross}",
+)
+
+SCALE_COMPRESSION_FACTOR = Parameter(
+    -0.025,
+    source_type="definition",
+    description="Diminishing-returns drag as the venture market expands ~15x "
+                "(current global VC ~$300B/yr; wishocratic fund deploys ~$4.7T/yr). "
+                "More capital chasing deals compresses returns. Partially offset by "
+                "market expansion (every viable idea gets funded, oligopolies face "
+                "real competition). Point estimate is moderate; CI spans optimistic "
+                "to pessimistic.",
+    display_name="Scale Compression Factor",
+    unit="percent",
+    confidence_interval=(-0.05, -0.01),
+    distribution="normal",
+    keywords=["scale", "compression", "diminishing", "returns", "venture", "expansion"],
+    latex_symbol=r"\Delta r_{scale}",
+)
+
+CROWD_DECISION_ACCURACY = Parameter(
+    0.91,
+    source_ref=ReferenceID.SUROWIECKI_2004,
+    source_type="external",
+    distribution="fixed",
+    description="Crowd accuracy on Who Wants to Be a Millionaire ask-the-audience lifeline. "
+                "Studio audience picked the correct answer 91% of the time (Surowiecki 2004). "
+                "Used as lower bound for wishocratic allocation accuracy.",
+    display_name="Crowd Decision Accuracy (Millionaire)",
+    unit="percent",
+    keywords=["crowd", "accuracy", "millionaire", "ask the audience", "91", "surowiecki", "wisdom"],
+    latex_symbol=r"Acc_{crowd}",
+)
+
+EXPERT_DECISION_ACCURACY = Parameter(
+    0.65,
+    source_ref=ReferenceID.SUROWIECKI_2004,
+    source_type="external",
+    distribution="fixed",
+    description="Expert accuracy on Who Wants to Be a Millionaire phone-a-friend lifeline. "
+                "Credentialed expert picked the correct answer 65% of the time (Surowiecki 2004). "
+                "Used as baseline for conventional fund manager / committee allocation.",
+    display_name="Expert Decision Accuracy (Millionaire)",
+    unit="percent",
+    keywords=["expert", "accuracy", "millionaire", "phone a friend", "65", "surowiecki"],
+    latex_symbol=r"Acc_{expert}",
+)
+
+ALLOCATION_DECISION_SPREAD = Parameter(
+    0.08,
+    source_type="definition",
+    description="Return spread between the best and worst major asset-class sectors "
+                "(biotech vs. coal, growth vs. value, emerging vs. declining). "
+                "The accuracy advantage of crowds over experts is multiplied by this spread "
+                "to estimate the allocation alpha from wishocratic decision-making.",
+    display_name="Allocation Decision Return Spread",
+    unit="percent",
+    confidence_interval=(0.05, 0.12),
+    distribution="normal",
+    keywords=["allocation", "spread", "sector", "return", "difference", "alpha"],
+    latex_symbol=r"S_{alloc}",
+)
+
+HOME_BIAS_ALPHA = Parameter(
+    0.008,
+    source_type="external",
+    description="Return drag from home bias in fragmented national pension systems. "
+                "70+ countries each overweight domestic assets, missing global diversification. "
+                "IMF and Vanguard studies estimate 0.3-1.5% annual return cost. "
+                "Wishocratic allocation is inherently global, eliminating this drag.",
+    display_name="Home Bias Return Drag",
+    unit="percent",
+    confidence_interval=(0.003, 0.015),
+    distribution="normal",
+    keywords=["home", "bias", "pension", "diversification", "drag", "alpha", "global"],
+    latex_symbol=r"\alpha_{home}",
+)
+
+GLOBAL_RETIREMENT_ASSETS = Parameter(
+    70_000_000_000_000,
+    source_type="external",
+    description="Total global pension and retirement assets (OECD 2024). "
+                "This is the capital pool that the wishocratic fund competes with "
+                "and could partially absorb.",
+    display_name="Global Retirement Assets",
+    unit="USD",
+    distribution="fixed",
+    keywords=["retirement", "pension", "assets", "global", "70 trillion", "OECD"],
+    latex_symbol=r"Assets_{retire}",
+)
+
+CONVENTIONAL_RETIREMENT_RETURN = Parameter(
+    0.065,
+    source_type="external",
+    description="Average retail after-fee return on conventional retirement portfolios "
+                "(60/40 stock/bond mix, ~1% advisory fees, ~0.4% fund fees). "
+                "Used as the opportunity cost comparison: depositors are LOSING money "
+                "by NOT participating in the wishocratic fund.",
+    display_name="Conventional Retirement Return (After Fees)",
+    unit="percent",
+    confidence_interval=(0.05, 0.08),
+    distribution="normal",
+    keywords=["retirement", "conventional", "return", "60/40", "after fee", "opportunity cost"],
+    latex_symbol=r"r_{retire}",
+)
+
+# --- Calculated: crowd allocation alpha ---
+
+WISHOCRATIC_CROWD_ALPHA = Parameter(
+    (0.91 - 0.65) * 0.08,
     source_type="calculated",
-    description="Expected value of a single VOTE token (projected pool size ÷ expected voters). "
-                "Denominator is expected participants (30% of global population), not the Chenoweth "
-                "passage threshold. CI captures uncertainty in pool size and participation rate.",
+    description="Allocation alpha from wishocratic crowd decision-making. "
+                "Crowds pick correctly 91% vs experts at 65% (Surowiecki). "
+                "Applied to the return spread between best/worst sectors. "
+                "This is the floor: politicians (the real 'experts') are worse than 65% "
+                "because they are being paid by one of the answer choices.",
+    display_name="Wishocratic Crowd Allocation Alpha",
+    unit="percent",
+    formula="(CROWD_DECISION_ACCURACY - EXPERT_DECISION_ACCURACY) × ALLOCATION_DECISION_SPREAD",
+    inputs=["CROWD_DECISION_ACCURACY", "EXPERT_DECISION_ACCURACY", "ALLOCATION_DECISION_SPREAD"],
+    compute=lambda ctx: (ctx["CROWD_DECISION_ACCURACY"] - ctx["EXPERT_DECISION_ACCURACY"]) * ctx["ALLOCATION_DECISION_SPREAD"],
+    keywords=["crowd", "alpha", "allocation", "wishocratic", "advantage", "surowiecki"],
+    latex_symbol=r"\alpha_{crowd}",
+)
+
+# --- Calculated: canonical PRIZE pool return and multiple ---
+
+PRIZE_POOL_ANNUAL_RETURN = Parameter(
+    float(VENTURE_GROSS_RETURN) + float(SCALE_COMPRESSION_FACTOR) + float(WISHOCRATIC_CROWD_ALPHA) + float(HOME_BIAS_ALPHA),
+    source_type="calculated",
+    description="Canonical annual return used for PRIZE pool growth. "
+                "Venture gross return + scale compression + crowd allocation alpha + home bias elimination. "
+                "This is the structural pool return before contingent macro feedback loops.",
+    display_name="PRIZE Pool Annual Return",
+    unit="percent",
+    formula="VENTURE_GROSS_RETURN + SCALE_COMPRESSION_FACTOR + WISHOCRATIC_CROWD_ALPHA + HOME_BIAS_ALPHA",
+    latex=r"r_{pool} = r_{VC,gross} + \Delta r_{scale} + \alpha_{crowd} + \alpha_{home}",
+    inputs=["VENTURE_GROSS_RETURN", "SCALE_COMPRESSION_FACTOR", "WISHOCRATIC_CROWD_ALPHA", "HOME_BIAS_ALPHA"],
+    compute=lambda ctx: ctx["VENTURE_GROSS_RETURN"] + ctx["SCALE_COMPRESSION_FACTOR"] + ctx["WISHOCRATIC_CROWD_ALPHA"] + ctx["HOME_BIAS_ALPHA"],
+    keywords=["prize", "pool", "annual", "return", "structural", "fund"],
+    latex_symbol=r"r_{pool}",
+)
+
+PRIZE_POOL_15YR_MULTIPLE = Parameter(
+    (1 + float(PRIZE_POOL_ANNUAL_RETURN)) ** float(PRIZE_POOL_RESOLUTION_YEARS),
+    source_type="calculated",
+    description="Canonical 15-year compound multiple used for PRIZE pool growth over the PRIZE pool resolution horizon.",
+    display_name="PRIZE Pool 15-Year Multiple",
+    unit="x",
+    formula="(1 + PRIZE_POOL_ANNUAL_RETURN) ^ PRIZE_POOL_RESOLUTION_YEARS",
+    latex=r"M_{pool} = (1 + r_{pool})^{T_{pool}}",
+    inputs=["PRIZE_POOL_ANNUAL_RETURN", "PRIZE_POOL_RESOLUTION_YEARS"],
+    compute=lambda ctx: (1 + ctx["PRIZE_POOL_ANNUAL_RETURN"]) ** float(ctx["PRIZE_POOL_RESOLUTION_YEARS"]),
+    keywords=["prize", "pool", "multiple", "15 year", "compound", "fund"],
+    latex_symbol=r"M_{pool}",
+)
+
+PRIZE_POOL_POTENTIAL_MAX_SIZE = Parameter(
+    float(GLOBAL_RETIREMENT_ASSETS) * float(PRIZE_POOL_15YR_MULTIPLE),
+    source_type="calculated",
+    description="Potential maximum terminal PRIZE pool size if the global retirement asset base "
+                "compounds through the wishocratic fund over the resolution horizon.",
+    display_name="PRIZE Pool Potential Max Size",
+    unit="USD",
+    formula="GLOBAL_RETIREMENT_ASSETS × PRIZE_POOL_15YR_MULTIPLE",
+    latex=r"Pool_{max} = Assets_{retire} \times M_{pool}",
+    inputs=["GLOBAL_RETIREMENT_ASSETS", "PRIZE_POOL_15YR_MULTIPLE"],
+    compute=lambda ctx: ctx["GLOBAL_RETIREMENT_ASSETS"] * ctx["PRIZE_POOL_15YR_MULTIPLE"],
+    keywords=["prize", "pool", "potential", "max", "size", "retirement", "assets"],
+    latex_symbol=r"Pool_{max}",
+)
+
+PRIZE_POOL_TARGET_REQUIRED_PRINCIPAL = Parameter(
+    float(POLITICAL_DYSFUNCTION_GLOBAL_OPPORTUNITY_COST_TOTAL) / float(PRIZE_POOL_15YR_MULTIPLE),
+    source_type="calculated",
+    description="Required initial principal for the PRIZE pool to reach one year of the dysfunction-tax target "
+                "by the resolution date under the canonical fund-growth model.",
+    display_name="PRIZE Pool Target Required Principal",
+    unit="USD",
+    formula="POLITICAL_DYSFUNCTION_GLOBAL_OPPORTUNITY_COST_TOTAL / PRIZE_POOL_15YR_MULTIPLE",
+    latex=r"P_{required} = \frac{O_{total}}{M_{pool}}",
+    inputs=["POLITICAL_DYSFUNCTION_GLOBAL_OPPORTUNITY_COST_TOTAL", "PRIZE_POOL_15YR_MULTIPLE"],
+    compute=lambda ctx: ctx["POLITICAL_DYSFUNCTION_GLOBAL_OPPORTUNITY_COST_TOTAL"] / ctx["PRIZE_POOL_15YR_MULTIPLE"],
+    keywords=["prize", "pool", "target", "required", "principal", "dysfunction"],
+    latex_symbol=r"P_{required}",
+)
+
+PRIZE_POOL_TARGET_PCT_RETIREMENT_ASSETS = Parameter(
+    float(PRIZE_POOL_TARGET_REQUIRED_PRINCIPAL) / float(GLOBAL_RETIREMENT_ASSETS),
+    source_type="calculated",
+    description="Required initial principal as a share of global retirement assets to reach "
+                "one year of the dysfunction-tax target by the resolution date.",
+    display_name="PRIZE Pool Target as % of Retirement Assets",
+    unit="percent",
+    formula="PRIZE_POOL_TARGET_REQUIRED_PRINCIPAL / GLOBAL_RETIREMENT_ASSETS",
+    inputs=["PRIZE_POOL_TARGET_REQUIRED_PRINCIPAL", "GLOBAL_RETIREMENT_ASSETS"],
+    compute=lambda ctx: ctx["PRIZE_POOL_TARGET_REQUIRED_PRINCIPAL"] / ctx["GLOBAL_RETIREMENT_ASSETS"],
+    keywords=["prize", "pool", "retirement", "assets", "share", "feasibility"],
+    latex_symbol=r"d_{retire}",
+)
+
+PRIZE_POOL_TARGET_PCT_GDP = Parameter(
+    float(PRIZE_POOL_TARGET_REQUIRED_PRINCIPAL) / float(GLOBAL_GDP_2025),
+    source_type="calculated",
+    description="Required initial principal as a share of global GDP to reach one year of the dysfunction-tax target "
+                "by the resolution date.",
+    display_name="PRIZE Pool Target as % of Global GDP",
+    unit="percent",
+    formula="PRIZE_POOL_TARGET_REQUIRED_PRINCIPAL / GLOBAL_GDP_2025",
+    inputs=["PRIZE_POOL_TARGET_REQUIRED_PRINCIPAL", "GLOBAL_GDP_2025"],
+    compute=lambda ctx: ctx["PRIZE_POOL_TARGET_REQUIRED_PRINCIPAL"] / ctx["GLOBAL_GDP_2025"],
+    keywords=["prize", "pool", "GDP", "share", "feasibility"],
+    latex_symbol=r"d_{GDP}",
+)
+
+PRIZE_POOL_TARGET_PCT_WEALTH = Parameter(
+    float(PRIZE_POOL_TARGET_REQUIRED_PRINCIPAL) / float(GLOBAL_HOUSEHOLD_WEALTH_USD),
+    source_type="calculated",
+    description="Required initial principal as a share of global household wealth to reach "
+                "one year of the dysfunction-tax target by the resolution date.",
+    display_name="PRIZE Pool Target as % of Household Wealth",
+    unit="percent",
+    formula="PRIZE_POOL_TARGET_REQUIRED_PRINCIPAL / GLOBAL_HOUSEHOLD_WEALTH_USD",
+    inputs=["PRIZE_POOL_TARGET_REQUIRED_PRINCIPAL", "GLOBAL_HOUSEHOLD_WEALTH_USD"],
+    compute=lambda ctx: ctx["PRIZE_POOL_TARGET_REQUIRED_PRINCIPAL"] / ctx["GLOBAL_HOUSEHOLD_WEALTH_USD"],
+    keywords=["prize", "pool", "wealth", "share", "feasibility"],
+    latex_symbol=r"d_{wealth}",
+)
+
+# VOTE token value (potential max pool ÷ expected participants)
+VOTE_TOKEN_POTENTIAL_VALUE = Parameter(
+    float(PRIZE_POOL_POTENTIAL_MAX_SIZE) / float(VOTE_EXPECTED_PARTICIPANTS),
+    source_type="calculated",
+    description="Potential value of a single VOTE claim if the PRIZE pool reaches its canonical "
+                "potential max size. Denominator is expected participants (30% of global population), "
+                "not the Chenoweth passage threshold.",
     display_name="VOTE Token Potential Value",
     unit="USD",
-    formula="PRIZE_POOL_PROJECTED_SIZE / VOTE_EXPECTED_PARTICIPANTS",
-    latex=r"V_{vote} = \frac{Pool_{proj}}{N_{voters,expected}}",
-    inputs=["PRIZE_POOL_PROJECTED_SIZE", "VOTE_EXPECTED_PARTICIPANTS"],
-    compute=lambda ctx: ctx["PRIZE_POOL_PROJECTED_SIZE"] / ctx["VOTE_EXPECTED_PARTICIPANTS"],
+    formula="PRIZE_POOL_POTENTIAL_MAX_SIZE / VOTE_EXPECTED_PARTICIPANTS",
+    latex=r"V_{vote} = \frac{Pool_{max}}{N_{voters,expected}}",
+    inputs=["PRIZE_POOL_POTENTIAL_MAX_SIZE", "VOTE_EXPECTED_PARTICIPANTS"],
+    compute=lambda ctx: ctx["PRIZE_POOL_POTENTIAL_MAX_SIZE"] / ctx["VOTE_EXPECTED_PARTICIPANTS"],
     keywords=["vote", "token", "value", "prize", "pool", "incentive", "recruitment"],
     latex_symbol=r"V_{vote}",
+)
+
+VOTE_2_CLAIMS_PAYOUT = Parameter(
+    2 * float(PRIZE_POOL_POTENTIAL_MAX_SIZE) / float(VOTE_EXPECTED_PARTICIPANTS),
+    source_type="calculated",
+    description="Potential payout for a depositor who recruits 2 verified participants "
+                "(earning 2 VOTE claims) if the PRIZE pool reaches its canonical potential max size.",
+    display_name="VOTE Payout for 2 Claims",
+    unit="USD",
+    formula="2 × VOTE_TOKEN_POTENTIAL_VALUE",
+    inputs=["VOTE_TOKEN_POTENTIAL_VALUE"],
+    compute=lambda ctx: 2 * ctx["VOTE_TOKEN_POTENTIAL_VALUE"],
+    keywords=["vote", "2 claims", "payout", "recruit", "two", "deposit"],
+    latex_symbol=r"V_{2claims}",
 )
 
 # Historical & Comparison Multipliers

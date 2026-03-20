@@ -209,6 +209,16 @@ export const CHRONIC_DISEASE_DISABILITY_WEIGHT: Parameter = {
   peerReviewed: true,
 };
 
+export const CONVENTIONAL_RETIREMENT_RETURN: Parameter = {
+  value: 0.065,
+  unit: "percent",
+  displayName: "Conventional Retirement Return (After Fees)",
+  description: "Average retail after-fee return on conventional retirement portfolios (60/40 stock/bond mix, ~1% advisory fees, ~0.4% fund fees). Used as the opportunity cost comparison: depositors are LOSING money by NOT participating in the wishocratic fund.",
+  sourceType: "external",
+  confidence: "high",
+  confidenceInterval: [0.05, 0.08],
+};
+
 export const CPI_MULTIPLIER_1980_TO_2024: Parameter = {
   value: 3.8,
   unit: "ratio",
@@ -218,6 +228,16 @@ export const CPI_MULTIPLIER_1980_TO_2024: Parameter = {
   sourceRef: "bls-cpi-inflation-calculator",
   confidence: "high",
   confidenceInterval: [3.75, 3.85],
+};
+
+export const CROWD_DECISION_ACCURACY: Parameter = {
+  value: 0.91,
+  unit: "percent",
+  displayName: "Crowd Decision Accuracy (Millionaire)",
+  description: "Crowd accuracy on Who Wants to Be a Millionaire ask-the-audience lifeline. Studio audience picked the correct answer 91% of the time (Surowiecki 2004). Used as lower bound for wishocratic allocation accuracy.",
+  sourceType: "external",
+  sourceRef: "surowiecki-2004",
+  confidence: "high",
 };
 
 export const CURRENT_ACTIVE_TRIALS: Parameter = {
@@ -433,6 +453,16 @@ export const EFFICACY_LAG_YEARS: Parameter = {
   formula: "TOTAL_TIME_TO_MARKET - PHASE_1_DURATION",
   stdError: 2.0,
   peerReviewed: true,
+};
+
+export const EXPERT_DECISION_ACCURACY: Parameter = {
+  value: 0.65,
+  unit: "percent",
+  displayName: "Expert Decision Accuracy (Millionaire)",
+  description: "Expert accuracy on Who Wants to Be a Millionaire phone-a-friend lifeline. Credentialed expert picked the correct answer 65% of the time (Surowiecki 2004). Used as baseline for conventional fund manager / committee allocation.",
+  sourceType: "external",
+  sourceRef: "surowiecki-2004",
+  confidence: "high",
 };
 
 export const FDA_APPROVED_PRODUCTS_COUNT: Parameter = {
@@ -989,6 +1019,15 @@ export const GLOBAL_POPULATION_ACTIVISM_THRESHOLD_PCT: Parameter = {
   confidenceInterval: [0.01, 0.1],
 };
 
+export const GLOBAL_RETIREMENT_ASSETS: Parameter = {
+  value: 70000000000000.0,
+  unit: "USD",
+  displayName: "Global Retirement Assets",
+  description: "Total global pension and retirement assets (OECD 2024). This is the capital pool that the wishocratic fund competes with and could partially absorb.",
+  sourceType: "external",
+  confidence: "high",
+};
+
 export const GLOBAL_SAVINGS_RATE_PCT: Parameter = {
   value: 0.27,
   unit: "percent",
@@ -1021,6 +1060,16 @@ export const GLOBAL_YLD_PROPORTION_OF_DALYS: Parameter = {
   confidence: "high",
   stdError: 0.03,
   peerReviewed: true,
+};
+
+export const HOME_BIAS_ALPHA: Parameter = {
+  value: 0.008,
+  unit: "percent",
+  displayName: "Home Bias Return Drag",
+  description: "Return drag from home bias in fragmented national pension systems. 70+ countries each overweight domestic assets, missing global diversification. IMF and Vanguard studies estimate 0.3-1.5% annual return cost. Wishocratic allocation is inherently global, eliminating this drag.",
+  sourceType: "external",
+  confidence: "high",
+  confidenceInterval: [0.003, 0.015],
 };
 
 export const HUMAN_GENOME_PROJECT_TOTAL_ECONOMIC_IMPACT: Parameter = {
@@ -2156,6 +2205,16 @@ export const VALUE_OF_STATISTICAL_LIFE: Parameter = {
   confidence: "high",
   confidenceInterval: [5000000.0, 15000000.0],
   stdError: 3000000.0,
+};
+
+export const VENTURE_GROSS_RETURN: Parameter = {
+  value: 0.17,
+  unit: "percent",
+  displayName: "Venture Capital Gross Return",
+  description: "Venture capital / private equity gross return (before 2-and-20 fees). Cambridge Associates US VC index 25-year pooled gross IRR. The wishocratic fund charges zero fees, so gross return is the correct baseline. Lockup premium is already embedded: VC/PE IS illiquid.",
+  sourceType: "external",
+  confidence: "high",
+  confidenceInterval: [0.13, 0.22],
 };
 
 export const VITAMIN_A_COST_PER_DALY: Parameter = {
@@ -4110,92 +4169,81 @@ export const PRAGMATIC_TRIAL_COST_PER_QALY: Parameter = {
   latex: "\\begin{gathered}\nCost_{pragmatic,QALY} = \\frac{Cost_{RECOVERY}}{QALY_{RECOVERY}} = \\frac{\\$20M}{5M} = \\$4\n\\\\[0.5em]\n\\text{where } QALY_{RECOVERY} = Lives_{RECOVERY} \\times QALY_{COVID} = 1M \\times 5 = 5M\n\\end{gathered}",
 };
 
-export const PRIZE_ESCROW_100_COMPOUND_RETURN: Parameter = {
-  value: 207.89281794113688,
-  unit: "USD",
-  displayName: "$100 Prize Escrow Compound Return",
-  description: "Value of $100 escrowed prize contribution after accumulation period at escrow yield rate, returned if funding threshold is not met",
-  sourceType: "calculated",
-  confidence: "high",
-  formula: "100 × (1 + PRIZE_ESCROW_YIELD_RATE) ^ PRIZE_ESCROW_ACCUMULATION_YEARS",
-  latex: "\\begin{gathered}\nV_{escrow,100} \\\\\n= 100 \\times (1 + r_{escrow})^{T_{escrow}} \\\\\n= 100 \\times (1 + 5\\%)^{15} \\\\\n= \\$208\n\\end{gathered}",
-};
-
-export const PRIZE_ESCROW_100_RETURN_MULTIPLE: Parameter = {
-  value: 2.0789281794113688,
+export const PRIZE_POOL_15YR_MULTIPLE: Parameter = {
+  value: 11.063984983606389,
   unit: "x",
-  displayName: "Prize Escrow Return Multiple",
-  description: "Return multiple on escrowed prize contribution after accumulation period (how many times your money you get back)",
+  displayName: "PRIZE Pool 15-Year Multiple",
+  description: "Canonical 15-year compound multiple used for PRIZE pool growth over the PRIZE pool resolution horizon.",
   sourceType: "calculated",
   confidence: "high",
-  formula: "(1 + PRIZE_ESCROW_YIELD_RATE) ^ PRIZE_ESCROW_ACCUMULATION_YEARS",
-  latex: "\\begin{gathered}\nk_{escrow} \\\\\n= (1 + r_{escrow})^{T_{escrow}} \\\\\n= (1 + 5\\%)^{15} \\\\\n= 2.08\\times\n\\end{gathered}",
+  formula: "(1 + PRIZE_POOL_ANNUAL_RETURN) ^ PRIZE_POOL_RESOLUTION_YEARS",
+  latex: "M_{pool} = (1 + r_{pool})^{T_{pool}}",
 };
 
-export const PRIZE_POOL_FV_ANNUITY_FACTOR: Parameter = {
-  value: 21.578563588227375,
-  unit: "ratio",
-  displayName: "Prize Pool FV Annuity Factor",
-  description: "Future-value annuity factor for prize pool accumulation at escrow yield over accumulation period",
+export const PRIZE_POOL_ANNUAL_RETURN: Parameter = {
+  value: 0.17380000000000004,
+  unit: "percent",
+  displayName: "PRIZE Pool Annual Return",
+  description: "Canonical annual return used for PRIZE pool growth. Venture gross return + scale compression + crowd allocation alpha + home bias elimination. This is the structural pool return before contingent macro feedback loops.",
   sourceType: "calculated",
   confidence: "high",
-  formula: "((1 + PRIZE_ESCROW_YIELD_RATE)^PRIZE_ESCROW_ACCUMULATION_YEARS - 1) / PRIZE_ESCROW_YIELD_RATE",
-  latex: "\\begin{gathered}\nFV_{annuity} \\\\\n= \\frac{(1 + r_{escrow})^{T_{escrow}} - 1}{r_{escrow}}\n\\end{gathered}",
+  formula: "VENTURE_GROSS_RETURN + SCALE_COMPRESSION_FACTOR + WISHOCRATIC_CROWD_ALPHA + HOME_BIAS_ALPHA",
+  latex: "\\begin{gathered}\nr_{pool} \\\\\n= r_{VC,gross} + \\Delta r_{scale} + \\alpha_{crowd} \\\\\n+ \\alpha_{home}\n\\end{gathered}",
 };
 
-export const PRIZE_POOL_PROJECTED_SIZE: Parameter = {
-  value: 20100431982433.8,
+export const PRIZE_POOL_POTENTIAL_MAX_SIZE: Parameter = {
+  value: 774478948852447.2,
   unit: "USD",
-  displayName: "Prize Pool Projected Size",
-  description: "Projected prize pool size based on PRIZE share of global savings and compound growth over the accumulation period",
+  displayName: "PRIZE Pool Potential Max Size",
+  description: "Potential maximum terminal PRIZE pool size if the global retirement asset base compounds through the wishocratic fund over the resolution horizon.",
   sourceType: "calculated",
   confidence: "high",
-  formula: "GLOBAL_ANNUAL_SAVINGS × PRIZE_SAVINGS_SHARE × PRIZE_POOL_FV_ANNUITY_FACTOR",
-  latex: "Pool = S_{annual} \\times s_{prize} \\times FV_{annuity}",
-};
-
-export const PRIZE_POOL_TARGET_ANNUAL_DEPOSITS: Parameter = {
-  value: 4680571048533.676,
-  unit: "USD/year",
-  displayName: "Prize Pool Required Annual Deposits",
-  description: "Annual deposits required for prize pool to reach the dysfunction tax target ($101T) over the accumulation period",
-  sourceType: "calculated",
-  confidence: "high",
-  formula: "POLITICAL_DYSFUNCTION_GLOBAL_OPPORTUNITY_COST_TOTAL / PRIZE_POOL_FV_ANNUITY_FACTOR",
-  latex: "D_{annual} = \\frac{O_{total}}{FV_{annuity}}",
+  formula: "GLOBAL_RETIREMENT_ASSETS × PRIZE_POOL_15YR_MULTIPLE",
+  latex: "Pool_{max} = Assets_{retire} \\times M_{pool}",
 };
 
 export const PRIZE_POOL_TARGET_PCT_GDP: Parameter = {
-  value: 0.04070061781333631,
+  value: 0.07938015740861407,
   unit: "percent",
-  displayName: "Prize Pool Target as % of Global GDP",
-  description: "Required annual deposits as share of global GDP to reach dysfunction tax target",
+  displayName: "PRIZE Pool Target as % of Global GDP",
+  description: "Required initial principal as a share of global GDP to reach one year of the dysfunction-tax target by the resolution date.",
   sourceType: "calculated",
   confidence: "high",
-  formula: "PRIZE_POOL_TARGET_ANNUAL_DEPOSITS / GLOBAL_GDP_2025",
-  latex: "\\begin{gathered}\nd_{GDP} = \\frac{D_{annual}}{GDP_{global}} = \\frac{\\$4.68T}{\\$115T} = 4.07\\%\n\\\\[0.5em]\n\\text{where } D_{annual} = \\frac{O_{total}}{FV_{annuity}}\n\\\\[0.5em]\n\\text{where } O_{total} = O_{health} + O_{science} + O_{lead} + O_{migration} = \\$34T + \\$4T + \\$6T + \\$57T = \\$101T\n\\\\[0.5em]\n\\text{where } FV_{annuity} = \\frac{(1 + r_{escrow})^{T_{escrow}} - 1}{r_{escrow}}\n\\end{gathered}",
+  formula: "PRIZE_POOL_TARGET_REQUIRED_PRINCIPAL / GLOBAL_GDP_2025",
+  latex: "\\begin{gathered}\nd_{GDP} = \\frac{P_{required}}{GDP_{global}} = \\frac{\\$9.13T}{\\$115T} = 7.94\\%\n\\\\[0.5em]\n\\text{where } P_{required} = \\frac{O_{total}}{M_{pool}}\n\\\\[0.5em]\n\\text{where } O_{total} = O_{health} + O_{science} + O_{lead} + O_{migration} = \\$34T + \\$4T + \\$6T + \\$57T = \\$101T\n\\\\[0.5em]\n\\text{where } M_{pool} = (1 + r_{pool})^{T_{pool}}\n\\\\[0.5em]\n\\text{where } r_{pool} = r_{VC,gross} + \\Delta r_{scale} + \\alpha_{crowd} + \\alpha_{home}\n\\\\[0.5em]\n\\text{where } \\alpha_{crowd} = S_{alloc} \\times (Acc_{crowd} - Acc_{expert}) = 8\\% \\times (91\\% - 65\\%) = 2.08\\%\n\\end{gathered}",
 };
 
-export const PRIZE_POOL_TARGET_PCT_SAVINGS: Parameter = {
-  value: 0.15074302893828262,
+export const PRIZE_POOL_TARGET_PCT_RETIREMENT_ASSETS: Parameter = {
+  value: 0.13041025859986596,
   unit: "percent",
-  displayName: "Prize Pool Target as % of Global Savings",
-  description: "Required annual deposits as share of global savings to reach dysfunction tax target",
+  displayName: "PRIZE Pool Target as % of Retirement Assets",
+  description: "Required initial principal as a share of global retirement assets to reach one year of the dysfunction-tax target by the resolution date.",
   sourceType: "calculated",
   confidence: "high",
-  formula: "PRIZE_POOL_TARGET_ANNUAL_DEPOSITS / GLOBAL_ANNUAL_SAVINGS",
-  latex: "\\begin{gathered}\nd_{savings} = \\frac{D_{annual}}{S_{annual}} = \\frac{\\$4.68T}{\\$31.1T} = 15.1\\%\n\\\\[0.5em]\n\\text{where } D_{annual} = \\frac{O_{total}}{FV_{annuity}}\n\\\\[0.5em]\n\\text{where } O_{total} = O_{health} + O_{science} + O_{lead} + O_{migration} = \\$34T + \\$4T + \\$6T + \\$57T = \\$101T\n\\\\[0.5em]\n\\text{where } FV_{annuity} = \\frac{(1 + r_{escrow})^{T_{escrow}} - 1}{r_{escrow}}\n\\\\[0.5em]\n\\text{where } S_{annual} = s_{global} \\times GDP_{global} = 27\\% \\times \\$115T = \\$31.1T\n\\end{gathered}",
+  formula: "PRIZE_POOL_TARGET_REQUIRED_PRINCIPAL / GLOBAL_RETIREMENT_ASSETS",
+  latex: "\\begin{gathered}\nd_{retire} = \\frac{P_{required}}{Assets_{retire}} = \\frac{\\$9.13T}{\\$70T} = 13\\%\n\\\\[0.5em]\n\\text{where } P_{required} = \\frac{O_{total}}{M_{pool}}\n\\\\[0.5em]\n\\text{where } O_{total} = O_{health} + O_{science} + O_{lead} + O_{migration} = \\$34T + \\$4T + \\$6T + \\$57T = \\$101T\n\\\\[0.5em]\n\\text{where } M_{pool} = (1 + r_{pool})^{T_{pool}}\n\\\\[0.5em]\n\\text{where } r_{pool} = r_{VC,gross} + \\Delta r_{scale} + \\alpha_{crowd} + \\alpha_{home}\n\\\\[0.5em]\n\\text{where } \\alpha_{crowd} = S_{alloc} \\times (Acc_{crowd} - Acc_{expert}) = 8\\% \\times (91\\% - 65\\%) = 2.08\\%\n\\end{gathered}",
 };
 
 export const PRIZE_POOL_TARGET_PCT_WEALTH: Parameter = {
-  value: 0.010309627860206335,
+  value: 0.02010730859469299,
   unit: "percent",
-  displayName: "Prize Pool Target as % of Household Wealth",
-  description: "Required annual deposits as share of global household wealth to reach dysfunction tax target",
+  displayName: "PRIZE Pool Target as % of Household Wealth",
+  description: "Required initial principal as a share of global household wealth to reach one year of the dysfunction-tax target by the resolution date.",
   sourceType: "calculated",
   confidence: "high",
-  formula: "PRIZE_POOL_TARGET_ANNUAL_DEPOSITS / GLOBAL_HOUSEHOLD_WEALTH_USD",
-  latex: "\\begin{gathered}\nd_{wealth} = \\frac{D_{annual}}{Wealth_{household}} = \\frac{\\$4.68T}{\\$454T} = 1.03\\%\n\\\\[0.5em]\n\\text{where } D_{annual} = \\frac{O_{total}}{FV_{annuity}}\n\\\\[0.5em]\n\\text{where } O_{total} = O_{health} + O_{science} + O_{lead} + O_{migration} = \\$34T + \\$4T + \\$6T + \\$57T = \\$101T\n\\\\[0.5em]\n\\text{where } FV_{annuity} = \\frac{(1 + r_{escrow})^{T_{escrow}} - 1}{r_{escrow}}\n\\end{gathered}",
+  formula: "PRIZE_POOL_TARGET_REQUIRED_PRINCIPAL / GLOBAL_HOUSEHOLD_WEALTH_USD",
+  latex: "\\begin{gathered}\nd_{wealth} = \\frac{P_{required}}{Wealth_{household}} = \\frac{\\$9.13T}{\\$454T} = 2.01\\%\n\\\\[0.5em]\n\\text{where } P_{required} = \\frac{O_{total}}{M_{pool}}\n\\\\[0.5em]\n\\text{where } O_{total} = O_{health} + O_{science} + O_{lead} + O_{migration} = \\$34T + \\$4T + \\$6T + \\$57T = \\$101T\n\\\\[0.5em]\n\\text{where } M_{pool} = (1 + r_{pool})^{T_{pool}}\n\\\\[0.5em]\n\\text{where } r_{pool} = r_{VC,gross} + \\Delta r_{scale} + \\alpha_{crowd} + \\alpha_{home}\n\\\\[0.5em]\n\\text{where } \\alpha_{crowd} = S_{alloc} \\times (Acc_{crowd} - Acc_{expert}) = 8\\% \\times (91\\% - 65\\%) = 2.08\\%\n\\end{gathered}",
+};
+
+export const PRIZE_POOL_TARGET_REQUIRED_PRINCIPAL: Parameter = {
+  value: 9128718101990.617,
+  unit: "USD",
+  displayName: "PRIZE Pool Target Required Principal",
+  description: "Required initial principal for the PRIZE pool to reach one year of the dysfunction-tax target by the resolution date under the canonical fund-growth model.",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "POLITICAL_DYSFUNCTION_GLOBAL_OPPORTUNITY_COST_TOTAL / PRIZE_POOL_15YR_MULTIPLE",
+  latex: "P_{required} = \\frac{O_{total}}{M_{pool}}",
 };
 
 export const RECOVERY_TRIAL_COST_REDUCTION_FACTOR: Parameter = {
@@ -5082,6 +5130,17 @@ export const VOTER_SUFFERING_HOURS_PREVENTED: Parameter = {
   latex: "\\begin{gathered}\nHours_{suffer,voter} = \\frac{Hours_{suffer,max}}{N_{voters,target}} = \\frac{1930T}{280M} = 6.9M\n\\\\[0.5em]\n\\text{where } Hours_{suffer,max} = DALYs_{max} \\times Pct_{YLD} \\times 8760 = 565B \\times 0.39 \\times 8760 = 1930T\n\\\\[0.5em]\n\\text{where } DALYs_{max} = DALYs_{global,ann} \\times Pct_{avoid,DALY} \\times T_{accel,max} = 2.88B \\times 92.6\\% \\times 212 = 565B\n\\\\[0.5em]\n\\text{where } T_{accel,max} = T_{accel} + T_{lag} = 204 + 8.2 = 212\n\\\\[0.5em]\n\\text{where } T_{accel} = T_{first,SQ} \\times \\left(1 - \\frac{1}{k_{capacity}}\\right) = 222 \\times \\left(1 - \\frac{1}{12.3}\\right) = 204\n\\\\[0.5em]\n\\text{where } T_{first,SQ} = T_{queue,SQ} \\times 0.5 = 443 \\times 0.5 = 222\n\\\\[0.5em]\n\\text{where } T_{queue,SQ} = \\frac{N_{untreated}}{Treatments_{new,ann}} = \\frac{6{,}650}{15} = 443\n\\\\[0.5em]\n\\text{where } N_{untreated} = N_{rare} \\times 0.95 = 7{,}000 \\times 0.95 = 6{,}650\n\\\\[0.5em]\n\\text{where } k_{capacity} = \\frac{N_{fundable,dFDA}}{Slots_{curr}} = \\frac{23.4M}{1.9M} = 12.3\n\\\\[0.5em]\n\\text{where } N_{fundable,dFDA} = \\frac{Subsidies_{dFDA,ann}}{Cost_{pragmatic,pt}} = \\frac{\\$21.8B}{\\$929} = 23.4M\n\\\\[0.5em]\n\\text{where } Subsidies_{dFDA,ann} = Funding_{dFDA,ann} - OPEX_{dFDA} = \\$21.8B - \\$40M = \\$21.8B\n\\\\[0.5em]\n\\text{where } OPEX_{dFDA} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \\$15M + \\$10M + \\$8M + \\$5M + \\$2M = \\$40M\n\\\\[0.5em]\n\\text{where } N_{voters,target} = Pop_{global} \\times Threshold_{activism} = 8B \\times 3.5\\% = 280M\n\\end{gathered}",
 };
 
+export const VOTE_2_CLAIMS_PAYOUT: Parameter = {
+  value: 645399.124043706,
+  unit: "USD",
+  displayName: "VOTE Payout for 2 Claims",
+  description: "Potential payout for a depositor who recruits 2 verified participants (earning 2 VOTE claims) if the PRIZE pool reaches its canonical potential max size.",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "2 × VOTE_TOKEN_POTENTIAL_VALUE",
+  latex: "\\begin{gathered}\nV_{2claims} = V_{vote} \\times 2 = \\$323K \\times 2 = \\$645K\n\\\\[0.5em]\n\\text{where } V_{vote} = \\frac{Pool_{max}}{N_{voters,expected}}\n\\\\[0.5em]\n\\text{where } Pool_{max} = Assets_{retire} \\times M_{pool}\n\\\\[0.5em]\n\\text{where } M_{pool} = (1 + r_{pool})^{T_{pool}}\n\\\\[0.5em]\n\\text{where } r_{pool} = r_{VC,gross} + \\Delta r_{scale} + \\alpha_{crowd} + \\alpha_{home}\n\\\\[0.5em]\n\\text{where } \\alpha_{crowd} = S_{alloc} \\times (Acc_{crowd} - Acc_{expert}) = 8\\% \\times (91\\% - 65\\%) = 2.08\\%\n\\\\[0.5em]\n\\text{where } N_{voters,expected} = Pop_{global} \\times R_{vote} = 8B \\times 30\\% = 2.4B\n\\end{gathered}",
+};
+
 export const VOTE_EXPECTED_PARTICIPANTS: Parameter = {
   value: 2400000000.0,
   unit: "of people",
@@ -5094,14 +5153,14 @@ export const VOTE_EXPECTED_PARTICIPANTS: Parameter = {
 };
 
 export const VOTE_TOKEN_POTENTIAL_VALUE: Parameter = {
-  value: 8375.17999268075,
+  value: 322699.562021853,
   unit: "USD",
   displayName: "VOTE Token Potential Value",
-  description: "Expected value of a single VOTE token (projected pool size ÷ expected voters). Denominator is expected participants (30% of global population), not the Chenoweth passage threshold. CI captures uncertainty in pool size and participation rate.",
+  description: "Potential value of a single VOTE claim if the PRIZE pool reaches its canonical potential max size. Denominator is expected participants (30% of global population), not the Chenoweth passage threshold.",
   sourceType: "calculated",
   confidence: "high",
-  formula: "PRIZE_POOL_PROJECTED_SIZE / VOTE_EXPECTED_PARTICIPANTS",
-  latex: "V_{vote} = \\frac{Pool_{proj}}{N_{voters,expected}}",
+  formula: "PRIZE_POOL_POTENTIAL_MAX_SIZE / VOTE_EXPECTED_PARTICIPANTS",
+  latex: "V_{vote} = \\frac{Pool_{max}}{N_{voters,expected}}",
 };
 
 export const WAR_COSTS_CUMULATIVE_20YR_CURRENT_TRAJECTORY: Parameter = {
@@ -5135,6 +5194,17 @@ export const WILLING_TRIAL_PARTICIPANTS_GLOBAL: Parameter = {
   confidence: "medium",
   formula: "CURRENT_DISEASE_PATIENTS_GLOBAL × PATIENT_WILLINGNESS_TRIAL_PARTICIPATION_PCT",
   latex: "\\begin{gathered}\nN_{willing} \\\\\n= N_{patients} \\times Pct_{willing} \\\\\n= 2.4B \\times 44.8\\% \\\\\n= 1.08B\n\\end{gathered}",
+};
+
+export const WISHOCRATIC_CROWD_ALPHA: Parameter = {
+  value: 0.020800000000000003,
+  unit: "percent",
+  displayName: "Wishocratic Crowd Allocation Alpha",
+  description: "Allocation alpha from wishocratic crowd decision-making. Crowds pick correctly 91% vs experts at 65% (Surowiecki). Applied to the return spread between best/worst sectors. This is the floor: politicians (the real 'experts') are worse than 65% because they are being paid by one of the answer choices.",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "(CROWD_DECISION_ACCURACY - EXPERT_DECISION_ACCURACY) × ALLOCATION_DECISION_SPREAD",
+  latex: "\\begin{gathered}\n\\alpha_{crowd} \\\\\n= S_{alloc} \\times (Acc_{crowd} - Acc_{expert}) \\\\\n= 8\\% \\times (91\\% - 65\\%) \\\\\n= 2.08\\%\n\\end{gathered}",
 };
 
 export const WISHONIA_DISEASE_CURE_FRACTION_15YR: Parameter = {
@@ -5347,6 +5417,16 @@ export const ADAPTABLE_TRIAL_PATIENTS: Parameter = {
   sourceType: "definition",
   sourceRef: "pragmatic-trials-cost-advantage",
   confidence: "high",
+};
+
+export const ALLOCATION_DECISION_SPREAD: Parameter = {
+  value: 0.08,
+  unit: "percent",
+  displayName: "Allocation Decision Return Spread",
+  description: "Return spread between the best and worst major asset-class sectors (biotech vs. coal, growth vs. value, emerging vs. declining). The accuracy advantage of crowds over experts is multiplied by this spread to estimate the allocation alpha from wishocratic decision-making.",
+  sourceType: "definition",
+  confidence: "high",
+  confidenceInterval: [0.05, 0.12],
 };
 
 export const ANNUAL_WORKING_HOURS: Parameter = {
@@ -6203,33 +6283,13 @@ export const PRE_1962_VALIDATION_YEARS: Parameter = {
   formula: "1960 - 1883",
 };
 
-export const PRIZE_ESCROW_ACCUMULATION_YEARS: Parameter = {
+export const PRIZE_POOL_RESOLUTION_YEARS: Parameter = {
   value: 15.0,
   unit: "years",
-  displayName: "Prize Escrow Accumulation Period",
-  description: "Assumed accumulation period for escrowed prize contributions before threshold determination",
+  displayName: "PRIZE Pool Resolution Horizon",
+  description: "Resolution horizon for the PRIZE pool before the success/failure branch is determined",
   sourceType: "definition",
   confidence: "high",
-};
-
-export const PRIZE_ESCROW_YIELD_RATE: Parameter = {
-  value: 0.05,
-  unit: "percent",
-  displayName: "Prize Escrow Annual Yield Rate",
-  description: "Annual yield rate on escrowed prize contributions via stablecoin lending/staking (cycle-weighted average across Aave, Compound, MakerDAO DSR, and locked staking platforms, 2020-2026)",
-  sourceType: "definition",
-  confidence: "high",
-  confidenceInterval: [0.03, 0.08],
-};
-
-export const PRIZE_SAVINGS_SHARE: Parameter = {
-  value: 0.03,
-  unit: "percent",
-  displayName: "PRIZE Share of Global Savings",
-  description: "Share of global savings that flows into PRIZE tokens. Point estimate matches the deposit rate needed to hit the dysfunction tax target (~3%). Lower bound reflects early-adopter phase; upper bound reflects PRIZE tokens becoming a dominant savings vehicle (comparable to index fund adoption rates).",
-  sourceType: "definition",
-  confidence: "high",
-  confidenceInterval: [0.001, 0.5],
 };
 
 export const QALYS_PER_COVID_DEATH_AVERTED: Parameter = {
@@ -6261,6 +6321,16 @@ export const SAFE_COMPOUNDS_COUNT: Parameter = {
   sourceType: "definition",
   confidence: "high",
   confidenceInterval: [7000.0, 12000.0],
+};
+
+export const SCALE_COMPRESSION_FACTOR: Parameter = {
+  value: -0.025,
+  unit: "percent",
+  displayName: "Scale Compression Factor",
+  description: "Diminishing-returns drag as the venture market expands ~15x (current global VC ~$300B/yr; wishocratic fund deploys ~$4.7T/yr). More capital chasing deals compresses returns. Partially offset by market expansion (every viable idea gets funded, oligopolies face real competition). Point estimate is moderate; CI spans optimistic to pessimistic.",
+  sourceType: "definition",
+  confidence: "high",
+  confidenceInterval: [-0.05, -0.01],
 };
 
 export const SECONDS_PER_MINUTE: Parameter = {
@@ -6497,7 +6567,9 @@ export const parameters = {
   CHILDHOOD_VACCINATION_ANNUAL_BENEFIT,
   CHILDHOOD_VACCINATION_ROI,
   CHRONIC_DISEASE_DISABILITY_WEIGHT,
+  CONVENTIONAL_RETIREMENT_RETURN,
   CPI_MULTIPLIER_1980_TO_2024,
+  CROWD_DECISION_ACCURACY,
   CURRENT_ACTIVE_TRIALS,
   CURRENT_CLINICAL_TRIAL_PARTICIPATION_RATE,
   CURRENT_DISEASE_PATIENTS_GLOBAL,
@@ -6518,6 +6590,7 @@ export const parameters = {
   ECONOMIC_MULTIPLIER_INFRASTRUCTURE_INVESTMENT,
   ECONOMIC_MULTIPLIER_MILITARY_SPENDING,
   EFFICACY_LAG_YEARS,
+  EXPERT_DECISION_ACCURACY,
   FDA_APPROVED_PRODUCTS_COUNT,
   FDA_APPROVED_UNIQUE_ACTIVE_INGREDIENTS,
   FDA_GRAS_SUBSTANCES_COUNT,
@@ -6569,9 +6642,11 @@ export const parameters = {
   GLOBAL_POPULATION_2040_PROJECTED,
   GLOBAL_POPULATION_2045_PROJECTED,
   GLOBAL_POPULATION_ACTIVISM_THRESHOLD_PCT,
+  GLOBAL_RETIREMENT_ASSETS,
   GLOBAL_SAVINGS_RATE_PCT,
   GLOBAL_SYMPTOMATIC_DISEASE_TREATMENT_ANNUAL,
   GLOBAL_YLD_PROPORTION_OF_DALYS,
+  HOME_BIAS_ALPHA,
   HUMAN_GENOME_PROJECT_TOTAL_ECONOMIC_IMPACT,
   HUMAN_INTERACTOME_TARGETED_PCT,
   ICD_10_TOTAL_CODES,
@@ -6676,6 +6751,7 @@ export const parameters = {
   US_VOTE_DECISIVE_PROBABILITY,
   VALLEY_OF_DEATH_ATTRITION_PCT,
   VALUE_OF_STATISTICAL_LIFE,
+  VENTURE_GROSS_RETURN,
   VITAMIN_A_COST_PER_DALY,
   WATER_FLUORIDATION_ANNUAL_BENEFIT,
   WATER_FLUORIDATION_ROI,
@@ -6852,14 +6928,13 @@ export const parameters = {
   POLITICAL_DYSFUNCTION_TAX_PER_PERSON_ANNUAL,
   POST_WW2_MILITARY_CUT_PCT,
   PRAGMATIC_TRIAL_COST_PER_QALY,
-  PRIZE_ESCROW_100_COMPOUND_RETURN,
-  PRIZE_ESCROW_100_RETURN_MULTIPLE,
-  PRIZE_POOL_FV_ANNUITY_FACTOR,
-  PRIZE_POOL_PROJECTED_SIZE,
-  PRIZE_POOL_TARGET_ANNUAL_DEPOSITS,
+  PRIZE_POOL_15YR_MULTIPLE,
+  PRIZE_POOL_ANNUAL_RETURN,
+  PRIZE_POOL_POTENTIAL_MAX_SIZE,
   PRIZE_POOL_TARGET_PCT_GDP,
-  PRIZE_POOL_TARGET_PCT_SAVINGS,
+  PRIZE_POOL_TARGET_PCT_RETIREMENT_ASSETS,
   PRIZE_POOL_TARGET_PCT_WEALTH,
+  PRIZE_POOL_TARGET_REQUIRED_PRINCIPAL,
   RECOVERY_TRIAL_COST_REDUCTION_FACTOR,
   RECOVERY_TRIAL_TOTAL_QALYS_GENERATED,
   SHARING_BREAKEVEN_ONE_IN_TREATY,
@@ -6940,11 +7015,13 @@ export const parameters = {
   VICTORY_BOND_ANNUAL_RETURN_PCT,
   VOTER_LIVES_SAVED,
   VOTER_SUFFERING_HOURS_PREVENTED,
+  VOTE_2_CLAIMS_PAYOUT,
   VOTE_EXPECTED_PARTICIPANTS,
   VOTE_TOKEN_POTENTIAL_VALUE,
   WAR_COSTS_CUMULATIVE_20YR_CURRENT_TRAJECTORY,
   WAR_COSTS_SAVED_PEACE_TRAJECTORY_20YR,
   WILLING_TRIAL_PARTICIPANTS_GLOBAL,
+  WISHOCRATIC_CROWD_ALPHA,
   WISHONIA_DISEASE_CURE_FRACTION_15YR,
   WISHONIA_DISEASE_CURE_FRACTION_20YR_FULL,
   WISHONIA_HALE_GAIN_YEAR_15,
@@ -6964,6 +7041,7 @@ export const parameters = {
   WISHONIA_TRAJECTORY_LIFETIME_INCOME_MULTIPLIER,
   WISHONIA_TRAJECTORY_VS_TREATY_TRAJECTORY_GDP_MULTIPLIER_YEAR_20,
   ADAPTABLE_TRIAL_PATIENTS,
+  ALLOCATION_DECISION_SPREAD,
   ANNUAL_WORKING_HOURS,
   APPROVED_DRUG_DISEASE_PAIRINGS,
   AVG_LIFE_EXTENSION_PER_BENEFICIARY,
@@ -7053,12 +7131,11 @@ export const parameters = {
   PEACE_DIVIDEND_DIRECT_FISCAL_SAVINGS,
   PHARMA_PHASE_2_3_COST_BARRIER,
   PRE_1962_VALIDATION_YEARS,
-  PRIZE_ESCROW_ACCUMULATION_YEARS,
-  PRIZE_ESCROW_YIELD_RATE,
-  PRIZE_SAVINGS_SHARE,
+  PRIZE_POOL_RESOLUTION_YEARS,
   QALYS_PER_COVID_DEATH_AVERTED,
   RD_SPILLOVER_MULTIPLIER,
   SAFE_COMPOUNDS_COUNT,
+  SCALE_COMPRESSION_FACTOR,
   SECONDS_PER_MINUTE,
   SECONDS_PER_YEAR,
   SHARING_TIME_MINUTES,
@@ -8643,6 +8720,20 @@ export const citations: Record<string, Citation> = {
         URL: "https://www.gao.gov/products/gao-24-106144",
         note: "GAO: Sugar Program | Heritage: US Sugar Program | AEI: \\$4B Sugar Subsidies",
   },
+  "surowiecki-2004": {
+        id: "surowiecki-2004",
+        type: "book",
+        title: "The Wisdom of Crowds",
+        author: [
+          {
+            literal: "James Surowiecki"
+          },
+        ],
+        issued: { 'date-parts': [[2004]] },
+        publisher: "Surowiecki",
+        URL: "https://archive.org/details/wisdomofcrowds0000suro",
+        note: "Surowiecki, J. (2004). The Wisdom of Crowds: Why the Many Are Smarter Than the Few. Doubleday. | Wikipedia | Amazon",
+  },
   "swiss-military-budget-0-7-pct-gdp": {
         id: "swiss-military-budget-0-7-pct-gdp",
         type: "article-journal",
@@ -9009,11 +9100,11 @@ export const citations: Record<string, Citation> = {
 
 /** Summary statistics */
 export const PARAMETER_STATS = {
-  total: 601,
-  external: 198,
-  calculated: 282,
+  total: 608,
+  external: 204,
+  calculated: 283,
   definitions: 121,
-  citations: 141,
+  citations: 142,
 } as const;
 
 // ============================================================================

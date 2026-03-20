@@ -40,13 +40,13 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 This appendix documents all 333 parameters used in the analysis, organized by type:
 
-- External sources (peer-reviewed): 125
-- Calculated values: 158
-- Core definitions: 50
+- External sources (peer-reviewed): 127
+- Calculated values: 157
+- Core definitions: 49
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (158 parameters) • [External Data Sources](#sec-external) (125 parameters) • [Core Definitions](#sec-definitions) (50 parameters)
+[Calculated Values](#sec-calculated) (157 parameters) • [External Data Sources](#sec-external) (127 parameters) • [Core Definitions](#sec-definitions) (49 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -5289,44 +5289,6 @@ $$
 
 :::
 
-### Prize Escrow Return Multiple: 2.08x {#sec-prize_escrow_100_return_multiple}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Return multiple on escrowed prize contribution after accumulation period (how many times your money you get back)
-
-**Inputs**:
-
-- [Prize Escrow Annual Yield Rate](#sec-prize_escrow_yield_rate): 5% (95% CI: 3% - 8%)
-- [Prize Escrow Accumulation Period](#sec-prize_escrow_accumulation_years): 15 years
-
-$$
-\begin{gathered}
-k_{escrow} \\
-= (1 + r_{escrow})^{T_{escrow}} \\
-= (1 + 5\%)^{15} \\
-= 2.08\times
-\end{gathered}
-$$
-
-*✓ High confidence*
-
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-prize_escrow_100_return_multiple.qmd >}}
-
-{{< include ../figures/sensitivity-table-prize_escrow_100_return_multiple.qmd >}}
-
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-prize_escrow_100_return_multiple.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-prize_escrow_100_return_multiple.qmd >}}
-
-:::
-
 ### RECOVERY Trial Cost Reduction Factor: 82x {#sec-recovery_trial_cost_reduction_factor}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -10467,6 +10429,22 @@ Disability weight for untreated chronic conditions (WHO Global Burden of Disease
 
 :::
 
+### Crowd Decision Accuracy (Millionaire): 91% {#sec-crowd_decision_accuracy}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Crowd accuracy on Who Wants to Be a Millionaire ask-the-audience lifeline. Studio audience picked the correct answer 91% of the time (Surowiecki 2004). Used as lower bound for wishocratic allocation accuracy.
+
+**Source**: [@surowiecki-2004]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*✓ High confidence*
+
+:::
+
 ### Current Clinical Trial Participation Rate: 0.06% {#sec-current_clinical_trial_participation_rate}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -10690,6 +10668,22 @@ Regulatory delay for efficacy testing (Phase II/III) post-safety verification. B
 {{< include ../figures/distribution-efficacy_lag_years.qmd >}}
 
 *~ Medium confidence • 📊 Peer-reviewed • Updated 2021*
+
+:::
+
+### Expert Decision Accuracy (Millionaire): 65% {#sec-expert_decision_accuracy}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Expert accuracy on Who Wants to Be a Millionaire phone-a-friend lifeline. Credentialed expert picked the correct answer 65% of the time (Surowiecki 2004). Used as baseline for conventional fund manager / committee allocation.
+
+**Source**: [@surowiecki-2004]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*✓ High confidence*
 
 :::
 
@@ -13511,37 +13505,15 @@ Standard time horizon for NPV analysis
 
 :::
 
-### Prize Escrow Accumulation Period: 15 years {#sec-prize_escrow_accumulation_years}
+### PRIZE Pool Resolution Horizon: 15 years {#sec-prize_pool_resolution_years}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Assumed accumulation period for escrowed prize contributions before threshold determination
+Resolution horizon for the PRIZE pool before the success/failure branch is determined
 
 #### Uncertainty Range
 
 **Technical**: Distribution: Fixed
-
-*Core definition*
-
-:::
-
-### Prize Escrow Annual Yield Rate: 5% {#sec-prize_escrow_yield_rate}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Annual yield rate on escrowed prize contributions via stablecoin lending/staking (cycle-weighted average across Aave, Compound, MakerDAO DSR, and locked staking platforms, 2020-2026)
-
-#### Uncertainty Range
-
-**Technical**: 95% CI: [3%, 8%] • Distribution: Normal
-
-**What this means**: There's significant uncertainty here. The true value likely falls between 3% and 8% (±50%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
-
-*The normal distribution means values cluster around the center with equal chances of being higher or lower.*
-
-#### Input Distribution
-
-{{< include ../figures/distribution-prize_escrow_yield_rate.qmd >}}
 
 *Core definition*
 

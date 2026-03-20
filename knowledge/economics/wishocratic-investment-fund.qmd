@@ -1,0 +1,144 @@
+---
+title: "The Wishocratic Investment Fund"
+subtitle: "What happens when billions of brains allocate trillions of dollars"
+description: "The prize pool is the world's largest, most efficient investment fund. Depositors wishocratically allocate via pairwise sliders. The same pool compounds, then routes to depositors on failure or VOTE claimants on success. The sclerotic oligopolies die. Dynamic new companies replace them. The fund IS the economy's capital allocator."
+published: true
+tags:
+  - economics
+  - investment
+  - wishocracy
+  - fund
+  - venture
+  - allocation
+---
+{{< include ../includes/setup-parameters.qmd >}}
+
+## The Thesis
+
+The prize pool is not modeled as passive escrow. It is the world's largest, most efficient investment fund.
+
+Depositors [wishocratically](../solution/wishocracy.qmd) allocate capital via pairwise sliders. The same mechanism that lets crowds outperform experts at picking trivia answers lets them outperform fund managers at picking investments. The accreditation wall comes down. {{< var global_retirement_assets >}} in retirement assets stops propping up sclerotic oligopolies and starts funding dynamic new companies. The fund IS the economy's capital allocator, and the economy gets better because the allocator is better.
+
+This chapter is the canonical pool-growth model used by the prize math.
+
+## Why the Baseline Is Venture, Not Public Equity
+
+Ninety-nine percent of humans are legally locked out of the best-performing asset class. Venture capital and private equity produce {{< var venture_gross_return >}} gross annual returns [@cambridge-pe-vc-benchmark-2024]. Your retirement fund produces {{< var conventional_retirement_return >}} after fees. The difference is not skill. It is a door marked "accredited investors only" that keeps {{< var global_retirement_assets >}} trapped in index funds that track yesterday's winners.
+
+The wishocratic fund removes the accreditation wall. A pooled vehicle is, by definition, an accredited investor. A $100 depositor gets the same allocation as a pension fund. Reg CF ($5M/yr), Reg A+ Tier 2 ($75M/yr), and the fund-as-institutional-investor pathway make this legal today.
+
+At {{< var global_retirement_assets >}} in global retirement assets, the fund invests across the entire venture and private equity sector. The baseline is venture gross return ({{< var venture_gross_return >}}) because that is what capital earns in high-growth companies when you remove the fees.
+
+Two things that sound like separate alpha sources are already IN this baseline:
+
+- **Fee elimination.** Venture gross return is before 2-and-20 fees. The wishocratic fund has zero management fees (the allocation mechanism is the crowd, not a GP charging 2% for the privilege of losing to an index). No separate alpha needed.
+- **Lockup premium.** Venture and PE are illiquid assets. The 15-year prize accumulation period is a natural lockup. The illiquidity premium is already priced into the {{< var venture_gross_return >}} gross return. No separate alpha needed.
+
+## Scale: What Happens When You 15x the Venture Market
+
+Current global VC deployment is roughly $300 billion per year. If a meaningful share of {{< var global_retirement_assets >}} flows through the wishocratic fund, deployment rises to roughly $4.7 trillion per year. That is a 15x expansion of the venture market.
+
+Diminishing returns are real. More capital chasing deals compresses returns: {{< var scale_compression_factor >}} in the model.
+
+But the market EXPANDS. Every viable business idea gets funded. The old economy (oligopolies surviving on regulatory moats, defense contractors billing $400 for a hammer, pharmaceutical companies spending more on lobbying than on R&D) faces real competition for the first time. The 15x expansion does not chase the same number of deals. It creates a world where every garage inventor, every clinical researcher with a promising compound, every infrastructure project that pencils out actually gets capital. The venture market is not a fixed pie. It is a pie factory.
+
+High-growth startups create up to half of all new jobs [@kauffman-high-growth-startups]. Right now those startups compete for $300 billion. Give them $4.7 trillion and find out what happens to job creation, innovation, and the companies that were surviving on lobbying rather than products.
+
+## The {{< var crowd_decision_accuracy >}} vs {{< var expert_decision_accuracy >}} Advantage
+
+Your species already knows that crowds beat experts. The *Millionaire* data ({{< var crowd_decision_accuracy >}} crowd accuracy vs. {{< var expert_decision_accuracy >}} for phone-a-friend experts [@surowiecki-2004]) has been replicated across prediction markets, forecasting tournaments, and every situation where the expert has any incentive to shade the truth. The investment industry is entirely composed of incentive-shading.
+
+Applied to investment allocation: the crowd picks the better sector (biotech vs. coal, growth vs. value, emerging vs. declining) {{< var crowd_decision_accuracy >}} of the time. Conventional fund managers, committees, and pension boards pick it {{< var expert_decision_accuracy >}} of the time. The return spread between sectors is {{< var allocation_decision_spread >}}. The alpha:
+
+{{< var wishocratic_crowd_alpha_latex >}}
+
+That is {{< var wishocratic_crowd_alpha >}} in annual alpha from better allocation alone.
+
+Three features of wishocratic allocation make this floor rather than ceiling:
+
+- **Random pairs prevent gaming.** No single ballot to saturate with ads. Each voter sees random pairwise comparisons. The only way to "advertise" is to make your company genuinely better than whatever it is randomly compared against.
+- **Skip what you don't understand.** Voters who know biotech vote on biotech. Voters who know infrastructure vote on infrastructure. The steering wheel, not the engine.
+- **Politicians (the real "experts") are worse than {{< var expert_decision_accuracy >}}.** Phone-a-friend experts are at least trying to get the right answer. Your appropriations committee is being paid by one of the answer choices. The {{< var expert_decision_accuracy >}} baseline is generous.
+
+The S&P SPIVA scorecard confirms: 88% of actively managed large-cap funds underperformed the S&P 500 over 15 years [@spiva2023]. The professionals are losing to a dartboard. The crowd does better than the dartboard.
+
+## Home Bias: 70+ Countries Each Betting on Themselves
+
+National pension systems overweight domestic assets. Japanese pensions overweight Japanese stocks. American 401(k)s overweight American stocks. Nigerian pensions overweight Nigerian bonds. Each country is betting that its own economy will outperform the global average, which is arithmetically impossible for all of them simultaneously.
+
+The cost: {{< var home_bias_alpha >}} in annual return drag from missed global diversification.
+
+Wishocratic allocation is inherently global. A Nigerian depositor and a Norwegian depositor see the same pairwise comparisons. Capital flows to wherever the crowd thinks it will do the most good, regardless of national borders. The home bias drag disappears.
+
+## Structural Return (Before the World Gets Better)
+
+Before any feedback loops, before the treaty passes, before a single disease is cured, the fund's structural return is:
+
+| Component | Value |
+|---|---|
+| Venture gross return (baseline) | {{< var venture_gross_return >}} |
+| Scale compression (15x market expansion) | {{< var scale_compression_factor >}} |
+| Crowd allocation alpha ({{< var crowd_decision_accuracy >}} vs {{< var expert_decision_accuracy >}}) | +{{< var wishocratic_crowd_alpha >}} |
+| Home bias elimination (global allocation) | +{{< var home_bias_alpha >}} |
+| **Structural annual return** | **{{< var prize_pool_annual_return >}}** |
+
+Compare to conventional retirement: {{< var conventional_retirement_return >}} after fees. The structural advantage is not a feedback loop or a hope. It is arithmetic from removing fees, removing the accreditation wall, and letting crowds allocate.
+
+## Why the Real Return Is Higher
+
+The {{< var prize_pool_annual_return >}} structural return is what the fund earns from architecture alone. The real return is probably higher, because the fund makes the world measurably better and that improvement feeds back into portfolio performance. The treaty redirects military spending to research, which grows GDP (peace dividend). Cured diseases produce healthier workers, which grows GDP (health dividend). The [destructive economy](gdp-trajectories.qmd) [@gdp-trajectories-paper-2025] shrinks as institutions strengthen. Depositors rationally divest from military contractors (funding the opposition to your own prize is a terrible investment strategy). More participants means deeper markets and better crowd wisdom. And the fund's investments directly cause the outcomes that make the prize pay out: it is the engine, not the scoreboard.
+
+These effects are real, directional, and mutually reinforcing. The model omits them to keep the claim conservative and auditable. The structural return alone is sufficient to make the case.
+
+## Expected Return and 15-Year Multiple
+
+| Metric | Value |
+|---|---|
+| **Expected annual return** | **{{< var prize_pool_annual_return >}}** |
+| **15-year compound multiple** | **{{< var prize_pool_15yr_multiple >}}** |
+
+$100 deposited today becomes $100 times {{< var prize_pool_15yr_multiple >}} over {{< var prize_pool_resolution_years_nounit >}} years at the current modeled pool growth rate.
+
+## Opportunity Cost Is Negative
+
+Conventional retirement earns {{< var conventional_retirement_return >}} after fees. The wishocratic fund models {{< var prize_pool_annual_return >}}.
+
+At the pool level, this is not modeled as a donation. It is modeled as capital compounding under a higher-return allocation rule than a conventional portfolio. Participant-level payout still depends on the branch: depositors recover pro rata from the same realized pool on failure, while VOTE claimants share that pool on success.
+
+The conventional portfolio:
+
+- Charges 1-2% in fees (advisory + fund expenses)
+- Locks you out of venture and PE (the best-performing asset class)
+- Allocates via committees being paid by the answer choices
+- Overweights your home country
+- Does not improve as the world improves (your 60/40 portfolio does not get better when diseases get cured)
+
+The wishocratic fund:
+
+- Charges zero fees (the crowd is the allocator)
+- Invests across the full venture/PE spectrum
+- Allocates via {{< var crowd_decision_accuracy >}}-accurate crowd wisdom
+- Is inherently global
+- Gets better as it makes the world better
+
+The opportunity cost of not participating is the difference between {{< var conventional_retirement_return >}} and {{< var prize_pool_annual_return >}}, compounded over however many years you plan to keep earning money. That is not a small number.
+
+## Venture Democratization
+
+The legal pathway exists today. A pooled vehicle is an accredited investor. The fund structure makes every $100 depositor a participant in the same asset class that was previously reserved for people with $1 million in liquid assets.
+
+Three regulatory pathways:
+
+1. **Regulation Crowdfunding (Reg CF):** Up to $5M per year in offerings to unaccredited investors.
+2. **Regulation A+ Tier 2:** Up to $75M per year with SEC qualification, available to all investors.
+3. **Fund-as-institutional-investor:** The pooled fund itself qualifies as an accredited/institutional investor, accessing deals on behalf of all depositors.
+
+The accreditation wall was built to "protect" small investors from risky investments. It protected them so well that they earned {{< var conventional_retirement_return >}} while accredited investors earned {{< var venture_gross_return >}}. The wishocratic fund does not fight the wall. It walks through the door that the wall left open for pooled vehicles.
+
+## The Self-Fulfilling Property
+
+The fund does not bet on whether targets get hit. It funds hitting them.
+
+A conventional investment fund analyzes whether a company will succeed and bets accordingly. The wishocratic fund allocates capital to companies that cure diseases, build infrastructure, and raise incomes, which ARE the prize targets. If the fund allocates well, the targets get hit. If the targets get hit, the same realized pool routes to VOTE claimants. If the targets do not get hit, depositors divide that same realized pool pro rata.
+
+This is not circular. It is a positive feedback loop with a clear entry point: deposit, allocate wisely, the world improves, you get paid. The circularity objection assumes the fund is passive. The fund is the largest active capital allocator in human history, pointed at two numbers that everyone agrees on.

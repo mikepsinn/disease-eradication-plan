@@ -151,7 +151,7 @@ jobs:
 
           NETLIFY_SITE_ID: 8cb62a4c-0a10-4a92-a9ab-088c5b2cf094
 
-        timeout-minutes: 1
+        timeout-minutes: 5
 
 
 
@@ -290,7 +290,7 @@ jobs:
 
           NETLIFY_SITE_ID: 7daf95c9-506f-4cb9-99e3-2f0f9477f816
 
-        timeout-minutes: 1
+        timeout-minutes: 5
 
 
 
@@ -429,7 +429,7 @@ jobs:
 
           NETLIFY_SITE_ID: a314a33e-3155-4067-8624-706266899419
 
-        timeout-minutes: 1
+        timeout-minutes: 5
 
 
 
@@ -568,7 +568,7 @@ jobs:
 
           NETLIFY_SITE_ID: 01e9af64-b6d0-48ee-8c3d-43994745ac3f
 
-        timeout-minutes: 1
+        timeout-minutes: 5
 
 
 
@@ -715,7 +715,7 @@ jobs:
 
           NETLIFY_SITE_ID: d739329f-a0cb-44b9-91a1-9921345a75c2
 
-        timeout-minutes: 1
+        timeout-minutes: 5
 
 
 
@@ -854,7 +854,7 @@ jobs:
 
           NETLIFY_SITE_ID: 4b864c23-3f9e-4a83-a6dc-9a2f7690eb80
 
-        timeout-minutes: 1
+        timeout-minutes: 5
 
 
 
@@ -1113,7 +1113,7 @@ jobs:
 
           NETLIFY_SITE_ID: 7459777b-36c9-45ef-9307-f47434d0acc2
 
-        timeout-minutes: 1
+        timeout-minutes: 5
 
 
 
@@ -1252,7 +1252,7 @@ jobs:
 
           NETLIFY_SITE_ID: 8f7611db-1075-48a2-abd8-7f77f55538f9
 
-        timeout-minutes: 1
+        timeout-minutes: 5
 
 
 
@@ -1391,7 +1391,7 @@ jobs:
 
           NETLIFY_SITE_ID: ef37ca63-13e5-4403-bf47-173763af79ab
 
-        timeout-minutes: 1
+        timeout-minutes: 5
 
 
 
@@ -1538,7 +1538,7 @@ jobs:
 
           NETLIFY_SITE_ID: 4e36b0d6-9b80-49e2-bf16-eb4d2f79f062
 
-        timeout-minutes: 1
+        timeout-minutes: 5
 
 
 
@@ -1805,7 +1805,7 @@ jobs:
 
           NETLIFY_SITE_ID: 123f44a0-d5b6-4ff3-9375-1f7e47fca053
 
-        timeout-minutes: 1
+        timeout-minutes: 5
 
 
 
@@ -1944,7 +1944,7 @@ jobs:
 
           NETLIFY_SITE_ID: 8b9558d9-6a2b-4581-bde7-11d79933d105
 
-        timeout-minutes: 1
+        timeout-minutes: 5
 
 
 
@@ -2083,7 +2083,7 @@ jobs:
 
           NETLIFY_SITE_ID: c6e535bc-4503-4db8-833a-c1b93f5e0f10
 
-        timeout-minutes: 1
+        timeout-minutes: 5
 
 
 
@@ -2222,7 +2222,7 @@ jobs:
 
           NETLIFY_SITE_ID: 1c74b376-7837-436e-b57b-8579b7a1939e
 
-        timeout-minutes: 1
+        timeout-minutes: 5
 
 
 
@@ -2361,7 +2361,7 @@ jobs:
 
           NETLIFY_SITE_ID: f0cfd162-dc07-474f-9b19-367ce1c1616f
 
-        timeout-minutes: 1
+        timeout-minutes: 5
 
 
 
@@ -2500,7 +2500,7 @@ jobs:
 
           NETLIFY_SITE_ID: 9a8ec013-54cd-4b7a-9364-fa13dc46bd92
 
-        timeout-minutes: 1
+        timeout-minutes: 5
 
 
 
@@ -2639,7 +2639,7 @@ jobs:
 
           NETLIFY_SITE_ID: 6d3175fc-5866-4d09-985d-aebe008a4966
 
-        timeout-minutes: 1
+        timeout-minutes: 5
 
 
 

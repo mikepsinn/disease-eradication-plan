@@ -1,0 +1,109 @@
+```{python}
+#| echo: false
+
+import matplotlib.pyplot as plt
+import numpy as np
+from pathlib import Path
+
+from dih_models.plotting.chart_style import (
+    setup_chart_style, add_watermark, clean_spines,
+    COLOR_BLACK, COLOR_WHITE, add_png_metadata, get_figure_output_path,
+    get_tick_formatter
+)
+from dih_models.parameters import format_parameter_value
+
+setup_chart_style()
+
+# Display name for chart title
+
+display_name = "PRIZE Pool Target Required Principal"
+
+# Baseline and units
+
+baseline = 9128718101990.617
+
+# Tornado data from sensitivity analysis
+
+drivers = ['VENTURE_GROSS_RETURN', 'POLITICAL_DYSFUNCTION_GLOBAL_MIGRATION_OPPORTUNITY_COST', 'POLITICAL_DYSFUNCTION_GLOBAL_HEALTH_OPPORTUNITY_COST', 'SCALE_COMPRESSION_FACTOR', 'ALLOCATION_DECISION_SPREAD', 'HOME_BIAS_ALPHA', 'POLITICAL_DYSFUNCTION_GLOBAL_SCIENCE_OPPORTUNITY_COST', 'POLITICAL_DYSFUNCTION_GLOBAL_LEAD_OPPORTUNITY_COST']
+driver_labels = ['Venture Capital Gross Return', 'Global Migration Opportunity Cost', 'Global Health Opportunity Cost', 'Scale Compression Factor', 'Allocation Decision Return Spread', 'Home Bias Return Drag', 'Global Science Opportunity Cost', 'Global Lead Poisoning Cost']
+impacts_low = [6227157454744.441, 0.0, -1265366865622.462, 3479536507142.338, 960165637991.9863, 603645590663.8223, -180766695088.92383, -180766695088.92383]
+impacts_high = [-4245966391016.8594, 10213318272524.156, 4157633987045.2305, -1583193707014.4707, -1131378792011.2979, -778915535260.919, 542300085266.76953, 180766695088.92188]
+
+# Convert deltas to absolute values (baseline + delta)
+
+values_low = [baseline + delta for delta in impacts_low]
+values_high = [baseline + delta for delta in impacts_high]
+
+# Create tornado chart (horizontal bars showing swing range)
+# Cap dimensions to avoid LaTeX "Dimension too large" errors in PDF output
+# 8x10 inches max keeps figures compact and PDF-compatible
+
+fig, ax = plt.subplots(figsize=(8, min(10, max(5, len(drivers) * 0.6))))
+
+y_pos = np.arange(len(drivers))
+
+# Plot low impact (left side)
+
+for i, (low, high) in enumerate(zip(values_low, values_high)):
+    left = min(low, high)
+    width_low = baseline - left if left < baseline else 0
+    width_high = max(low, high) - baseline if max(low, high) > baseline else 0
+
+    # White bar for range below baseline
+
+    if width_low > 0:
+        ax.barh(i, width_low, left=left,
+                color=COLOR_WHITE, edgecolor=COLOR_BLACK, linewidth=2)
+
+    # Black bar for range above baseline
+
+    if width_high > 0:
+        ax.barh(i, width_high, left=baseline,
+                color=COLOR_BLACK, edgecolor=COLOR_BLACK, linewidth=2)
+
+# Format axis
+
+ax.set_yticks(y_pos)
+# Simplified labels (just parameter names)
+
+ax.set_yticklabels(driver_labels, fontsize=11)
+ax.set_title(f'Sensitivity Analysis: {display_name}', fontsize=16, weight='bold', pad=20)
+
+# X-axis label with units
+
+units_label = "USD"
+if units_label:
+    ax.set_xlabel(f'{display_name} ({units_label})', fontsize=12)
+else:
+    ax.set_xlabel(f'{display_name}', fontsize=12)
+
+# Format x-axis tick labels with K/M/B/T notation
+
+ax.xaxis.set_major_formatter(get_tick_formatter(unit=units_label))
+
+# Add vertical line at baseline
+
+ax.axvline(baseline, color=COLOR_BLACK, linewidth=1, linestyle='--', alpha=0.5)
+
+# Clean spines
+
+clean_spines(ax)
+
+# Add watermark
+
+add_watermark(fig)
+
+# Save PNG to knowledge/figures/ regardless of where Quarto renders from
+# Use 96 DPI for web-optimized output (reduced from 150 DPI to minimize file size)
+
+output_path = get_figure_output_path('tornado-prize_pool_target_required_principal.png')
+plt.savefig(output_path, dpi=96, bbox_inches=None, facecolor=COLOR_WHITE)
+
+add_png_metadata(
+    output_path,
+    title=f'Sensitivity: {display_name}',
+    description=f'Tornado diagram showing which input parameters have the largest impact on {display_name}'
+)
+
+plt.show()
+```
