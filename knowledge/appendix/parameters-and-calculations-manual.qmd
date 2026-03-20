@@ -38,15 +38,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 493 parameters used in the analysis, organized by type:
+This appendix documents all 497 parameters used in the analysis, organized by type:
 
-- External sources (peer-reviewed): 166
-- Calculated values: 230
+- External sources (peer-reviewed): 168
+- Calculated values: 232
 - Core definitions: 97
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (230 parameters) • [External Data Sources](#sec-external) (166 parameters) • [Core Definitions](#sec-definitions) (97 parameters)
+[Calculated Values](#sec-calculated) (232 parameters) • [External Data Sources](#sec-external) (168 parameters) • [Core Definitions](#sec-definitions) (97 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -516,6 +516,38 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-contribution_ev_per_pct_point_wishonia_blend.qmd >}}
+
+:::
+
+### Lives Saved per Percentage Point: 107 million lives {#sec-contribution_lives_saved_per_pct_point}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Lives saved per percentage point of implementation probability shift. One percent of total lives saved from eliminating trial capacity bottleneck and efficacy lag.
+
+**Inputs**:
+
+- [Total Lives Saved from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput](#sec-dfda_trial_capacity_plus_efficacy_lag_lives_saved) 🔢: 10.7 billion deaths
+
+$$
+Lives_{pp} = Lives_{max} \times 0.01
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-contribution_lives_saved_per_pct_point.qmd >}}
+
+{{< include ../figures/sensitivity-table-contribution_lives_saved_per_pct_point.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-contribution_lives_saved_per_pct_point.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-contribution_lives_saved_per_pct_point.qmd >}}
 
 :::
 
@@ -5629,6 +5661,38 @@ Cost_{destruct} \\
 \end{gathered}
 $$
 *✓ High confidence*
+
+:::
+
+### Global Deaths per Minute from Disease: 104 deaths/minute {#sec-global_disease_deaths_per_minute}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Global deaths per minute from all disease and aging
+
+**Inputs**:
+
+- [Global Daily Deaths from Disease and Aging](#sec-global_disease_deaths_daily) 📊: 150 thousand deaths/day (SE: ±7.5 thousand deaths/day)
+
+$$
+\frac{Deaths_{disease,daily}}{1440}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-global_disease_deaths_per_minute.qmd >}}
+
+{{< include ../figures/sensitivity-table-global_disease_deaths_per_minute.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-global_disease_deaths_per_minute.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-global_disease_deaths_per_minute.qmd >}}
 
 :::
 
@@ -16524,6 +16588,18 @@ Percentage of human interactome (protein-protein interactions) targeted by drugs
 
 :::
 
+### ICD-10 Total Codes: 14 thousand codes {#sec-icd_10_total_codes}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Total ICD-10 diagnostic codes for human diseases and conditions
+
+**Source**: [@icd-10-code-count]
+
+*✓ High confidence*
+
+:::
+
 ### Maximum Annual Lobbyist Salary Range: $2M {#sec-lobbyist_salary_max}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -17311,6 +17387,22 @@ Switzerland's defense spending as percentage of GDP (0.7%)
 Switzerland GDP per capita
 
 **Source**: [@swiss-vs-us-gdp-per-capita]
+
+*✓ High confidence*
+
+:::
+
+### Switzerland Life Expectancy: 84 years {#sec-switzerland_life_expectancy}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Switzerland life expectancy at birth. 6.5 years LONGER than US (84.0 vs 77.5) despite lower government spending as % of GDP.
+
+**Source**: [@who-life-expectancy]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
 
 *✓ High confidence*
 

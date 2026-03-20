@@ -41,6 +41,7 @@ from dih_models.paper_bibliography_generator import (
     _extract_chapters_from_config,
 )
 from dih_models.reference_parser import parse_references_bib
+from dih_models.variable_naming import variable_name_to_parameter_name
 
 
 def get_all_required_parameters(
@@ -86,15 +87,9 @@ def get_all_required_parameters(
 
     # Process each used variable
     for var_name in used_variables:
-        # Convert lowercase variable to UPPERCASE parameter name
-        param_name = var_name.upper()
-
-        # Handle special suffixes (_cite, _latex, etc.)
-        # These refer to the base parameter
-        for suffix in ('_CITE', '_LATEX', '_SHORT', '_LONG'):
-            if param_name.endswith(suffix):
-                param_name = param_name[:-len(suffix)]
-                break
+        # Normalize Quarto variable names (including generated variants like
+        # _latex/_cite/_nounit) back to the base UPPERCASE parameter name.
+        param_name = variable_name_to_parameter_name(var_name)
 
         if param_name in parameters:
             add_with_dependencies(param_name, set())

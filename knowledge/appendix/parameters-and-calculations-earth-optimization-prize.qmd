@@ -38,15 +38,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 151 parameters used in the analysis, organized by type:
+This appendix documents all 154 parameters used in the analysis, organized by type:
 
-- External sources (peer-reviewed): 46
-- Calculated values: 79
+- External sources (peer-reviewed): 47
+- Calculated values: 81
 - Core definitions: 26
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (79 parameters) • [External Data Sources](#sec-external) (46 parameters) • [Core Definitions](#sec-definitions) (26 parameters)
+[Calculated Values](#sec-calculated) (81 parameters) • [External Data Sources](#sec-external) (47 parameters) • [Core Definitions](#sec-definitions) (26 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -210,6 +210,38 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-contribution_ev_per_pct_point_wishonia_blend.qmd >}}
+
+:::
+
+### Lives Saved per Percentage Point: 107 million lives {#sec-contribution_lives_saved_per_pct_point}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Lives saved per percentage point of implementation probability shift. One percent of total lives saved from eliminating trial capacity bottleneck and efficacy lag.
+
+**Inputs**:
+
+- [Total Lives Saved from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput](#sec-dfda_trial_capacity_plus_efficacy_lag_lives_saved) 🔢: 10.7 billion deaths
+
+$$
+Lives_{pp} = Lives_{max} \times 0.01
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-contribution_lives_saved_per_pct_point.qmd >}}
+
+{{< include ../figures/sensitivity-table-contribution_lives_saved_per_pct_point.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-contribution_lives_saved_per_pct_point.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-contribution_lives_saved_per_pct_point.qmd >}}
 
 :::
 
@@ -779,6 +811,120 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-dfda_trial_capacity_plus_efficacy_lag_dalys.qmd >}}
+
+:::
+
+### Total Lives Saved from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput: 10.7 billion deaths {#sec-dfda_trial_capacity_plus_efficacy_lag_lives_saved}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Total eventually avoidable deaths from the combined dFDA timeline shift. Represents deaths prevented when cures arrive earlier due to both increased trial capacity and eliminated efficacy lag.
+
+**Inputs**:
+
+- [Global Daily Deaths from Disease and Aging](#sec-global_disease_deaths_daily) 📊: 150 thousand deaths/day (SE: ±7.5 thousand deaths/day)
+- [dFDA Average Total Timeline Shift](#sec-dfda_trial_capacity_plus_efficacy_lag_years) 🔢: 212 years
+
+$$
+\begin{gathered}
+Lives_{max} \\
+= Deaths_{disease,daily} \times T_{accel,max} \times 338 \\
+= 150{,}000 \times 212 \times 338 \\
+= 10.7B
+\end{gathered}
+$$
+where:
+$$
+T_{accel,max} = T_{accel} + T_{lag} = 204 + 8.2 = 212
+$$
+where:
+$$
+\begin{gathered}
+T_{accel} \\
+= T_{first,SQ} \times \left(1 - \frac{1}{k_{capacity}}\right) \\
+= 222 \times \left(1 - \frac{1}{12.3}\right) \\
+= 204
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{first,SQ} \\
+= T_{queue,SQ} \times 0.5 \\
+= 443 \times 0.5 \\
+= 222
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{queue,SQ} \\
+= \frac{N_{untreated}}{Treatments_{new,ann}} \\
+= \frac{6{,}650}{15} \\
+= 443
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{untreated} \\
+= N_{rare} \times 0.95 \\
+= 7{,}000 \times 0.95 \\
+= 6{,}650
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+k_{capacity} \\
+= \frac{N_{fundable,dFDA}}{Slots_{curr}} \\
+= \frac{23.4M}{1.9M} \\
+= 12.3
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{fundable,dFDA} \\
+= \frac{Subsidies_{dFDA,ann}}{Cost_{pragmatic,pt}} \\
+= \frac{\$21.8B}{\$929} \\
+= 23.4M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Subsidies_{dFDA,ann} \\
+= Funding_{dFDA,ann} - OPEX_{dFDA} \\
+= \$21.8B - \$40M \\
+= \$21.8B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+OPEX_{dFDA} \\
+= Cost_{platform} + Cost_{staff} + Cost_{infra} \\
++ Cost_{regulatory} + Cost_{community} \\
+= \$15M + \$10M + \$8M + \$5M + \$2M \\
+= \$40M
+\end{gathered}
+$$
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-dfda_trial_capacity_plus_efficacy_lag_lives_saved.qmd >}}
+
+{{< include ../figures/sensitivity-table-dfda_trial_capacity_plus_efficacy_lag_lives_saved.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-dfda_trial_capacity_plus_efficacy_lag_lives_saved.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_trial_capacity_plus_efficacy_lag_lives_saved.qmd >}}
 
 :::
 
@@ -4427,6 +4573,26 @@ Projected global cybercrime costs in 2025. Includes data theft, productivity los
 **Technical**: Distribution: Fixed
 
 *✓ High confidence*
+
+:::
+
+### Global Daily Deaths from Disease and Aging: 150 thousand deaths/day {#sec-global_disease_deaths_daily}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Total global deaths per day from all disease and aging (WHO Global Burden of Disease 2024)
+
+**Source**: [@who-global-health-estimates-2024]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Normal (SE: 7.5 thousand deaths/day)
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_disease_deaths_daily.qmd >}}
+
+*✓ High confidence • 📊 Peer-reviewed*
 
 :::
 

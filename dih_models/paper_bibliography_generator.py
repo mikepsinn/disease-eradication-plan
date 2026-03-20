@@ -33,6 +33,10 @@ from typing import Set, Dict, List, Optional, Tuple, Any
 import yaml
 
 from dih_models.yaml_utils import yaml_safe_load, load_quarto_config
+from dih_models.variable_naming import (
+    get_auto_included_companion_suffixes,
+    strip_generated_variable_suffix,
+)
 
 # Set UTF-8 encoding for stdout on Windows (reconfigure exists on TextIOWrapper in 3.7+)
 if sys.platform == 'win32' and hasattr(sys.stdout, 'reconfigure'):
@@ -248,14 +252,15 @@ def generate_filtered_variables_yml(
     for name in variable_names:
         if name in all_variables:
             filtered[name] = all_variables[name]
-            # Also include the _cite variant if it exists
-            cite_name = f"{name}_cite"
-            if cite_name in all_variables:
-                filtered[cite_name] = all_variables[cite_name]
-            # Also include the _latex variant if it exists
-            latex_name = f"{name}_latex"
-            if latex_name in all_variables:
-                filtered[latex_name] = all_variables[latex_name]
+
+            # Base variables automatically bring along companion exports like
+            # _cite and _latex. Generated variants (for example _nounit) do not.
+            base_name = strip_generated_variable_suffix(name)
+            if name == base_name:
+                for suffix in get_auto_included_companion_suffixes():
+                    companion_name = f"{base_name}{suffix}"
+                    if companion_name in all_variables:
+                        filtered[companion_name] = all_variables[companion_name]
 
     # Write filtered variables
     # Use the same format as the source file to preserve LaTeX equation formatting

@@ -35,6 +35,11 @@ from dih_models.latex_mobile_wrap import wrap_latex_for_mobile
 from dih_models.quarto_formatting import generate_html_with_tooltip
 from dih_models.reference_parser import sanitize_bibtex_key
 from dih_models.formatting import format_parameter_value
+from dih_models.variable_naming import (
+    CITE_VARIABLE_SUFFIX,
+    LATEX_VARIABLE_SUFFIX,
+    NOUNIT_VARIABLE_SUFFIX,
+)
 
 
 def latex_to_readable_text(latex: str) -> str:
@@ -313,7 +318,7 @@ def generate_variables_yml(
             else:
                 nounit_value = value
             nounit_html = generate_html_with_tooltip(param_name, nounit_value, comment, include_citation=include_inline_citation, include_unit=False)
-            variables[f"{var_name}_nounit"] = nounit_html
+            variables[f"{var_name}{NOUNIT_VARIABLE_SUFFIX}"] = nounit_html
 
         # Export citation key separately for external sources (if mode enabled)
         if citation_mode in ("separate", "both"):
@@ -322,7 +327,7 @@ def generate_variables_yml(
                 if source_type_str == "external" and value.source_ref:
                     # Sanitize citation key for BibTeX compatibility
                     sanitized_ref = sanitize_bibtex_key(value.source_ref)
-                    variables[f"{var_name}_cite"] = f"@{sanitized_ref}"
+                    variables[f"{var_name}{CITE_VARIABLE_SUFFIX}"] = f"@{sanitized_ref}"
                     citation_count += 1
 
         # Export LaTeX equation: prefer hardcoded (hand-crafted with good labels),
@@ -337,7 +342,7 @@ def generate_variables_yml(
         if hardcoded_latex:
             # Use hardcoded (preferred - hand-crafted with semantic labels)
             # TODO: Consider expanding hardcoded too by appending derivations of calculated inputs
-            latex_var_name = f"{var_name}_latex"
+            latex_var_name = f"{var_name}{LATEX_VARIABLE_SUFFIX}"
             # Apply mobile-friendly wrapping if enabled
             if wrap_latex_width > 0:
                 hardcoded_latex = wrap_latex_for_mobile(hardcoded_latex, max_width=wrap_latex_width)
@@ -345,7 +350,7 @@ def generate_variables_yml(
             variables[latex_var_name] = wrap_latex_with_accessibility(hardcoded_latex, param_name)
         elif expanded_latex:
             # Use fully expanded auto-generated equations showing complete derivation chain
-            latex_var_name = f"{var_name}_latex"
+            latex_var_name = f"{var_name}{LATEX_VARIABLE_SUFFIX}"
 
             if LATEX_BLOCK_SEP in expanded_latex:
                 # Multi-block: split into separate $$ equations for PDF page-breaking.
@@ -368,9 +373,9 @@ def generate_variables_yml(
                 variables[latex_var_name] = wrap_latex_with_accessibility(expanded_latex, param_name)
 
     # Count exports by type BEFORE adding metadata variables
-    latex_count = sum(1 for k in variables.keys() if k.endswith("_latex"))
-    cite_count = sum(1 for k in variables.keys() if k.endswith("_cite"))
-    nounit_count = sum(1 for k in variables.keys() if k.endswith("_nounit"))
+    latex_count = sum(1 for k in variables.keys() if k.endswith(LATEX_VARIABLE_SUFFIX))
+    cite_count = sum(1 for k in variables.keys() if k.endswith(CITE_VARIABLE_SUFFIX))
+    nounit_count = sum(1 for k in variables.keys() if k.endswith(NOUNIT_VARIABLE_SUFFIX))
     param_count = len(variables) - latex_count - cite_count - nounit_count
 
     # Add metadata variables for use in QMD files
@@ -422,12 +427,12 @@ def generate_variables_yml(
     logger.debug(f"  {{{{< var {list(variables.keys())[0]} >}}}}")
     if latex_count > 0:
         # Find first latex equation
-        latex_var = next((k for k in variables.keys() if k.endswith("_latex")), None)
+        latex_var = next((k for k in variables.keys() if k.endswith(LATEX_VARIABLE_SUFFIX)), None)
         if latex_var:
             logger.debug(f"  {{{{< var {latex_var} >}}}}  (equation)")
     if cite_count > 0:
         # Find first parameter with citation
-        cite_var = next((k for k in variables.keys() if k.endswith("_cite")), None)
+        cite_var = next((k for k in variables.keys() if k.endswith(CITE_VARIABLE_SUFFIX)), None)
         if cite_var:
             base_var = cite_var[:-5]  # Remove "_cite"
             logger.debug(f"  {{{{< var {base_var} >}}}} {{{{< var {cite_var} >}}}}")

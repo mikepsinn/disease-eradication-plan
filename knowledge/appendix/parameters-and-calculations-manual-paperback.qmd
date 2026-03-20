@@ -38,15 +38,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 357 parameters used in the analysis, organized by type:
+This appendix documents all 362 parameters used in the analysis, organized by type:
 
-- External sources (peer-reviewed): 132
-- Calculated values: 170
-- Core definitions: 55
+- External sources (peer-reviewed): 135
+- Calculated values: 171
+- Core definitions: 56
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (170 parameters) • [External Data Sources](#sec-external) (132 parameters) • [Core Definitions](#sec-definitions) (55 parameters)
+[Calculated Values](#sec-calculated) (171 parameters) • [External Data Sources](#sec-external) (135 parameters) • [Core Definitions](#sec-definitions) (56 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -4506,6 +4506,38 @@ Cost_{destruct} \\
 \end{gathered}
 $$
 *✓ High confidence*
+
+:::
+
+### Global Deaths per Minute from Disease: 104 deaths/minute {#sec-global_disease_deaths_per_minute}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Global deaths per minute from all disease and aging
+
+**Inputs**:
+
+- [Global Daily Deaths from Disease and Aging](#sec-global_disease_deaths_daily) 📊: 150 thousand deaths/day (SE: ±7.5 thousand deaths/day)
+
+$$
+\frac{Deaths_{disease,daily}}{1440}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-global_disease_deaths_per_minute.qmd >}}
+
+{{< include ../figures/sensitivity-table-global_disease_deaths_per_minute.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-global_disease_deaths_per_minute.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-global_disease_deaths_per_minute.qmd >}}
 
 :::
 
@@ -10966,6 +10998,30 @@ Global population with chronic diseases
 
 :::
 
+### Average Annual New Drug Approvals Globally: 50 drugs/year {#sec-current_drug_approvals_per_year}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Average annual new drug approvals globally
+
+**Source**: [@global-new-drug-approvals-50-annually]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [45 drugs/year, 60 drugs/year] • Distribution: Lognormal
+
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between 45 drugs/year and 60 drugs/year (±15%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-current_drug_approvals_per_year.qmd >}}
+
+*✓ High confidence*
+
+:::
+
 ### Current Global Clinical Trials per Year: 3.3 thousand trials/year {#sec-current_trials_per_year}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -12168,6 +12224,18 @@ Percentage of human interactome (protein-protein interactions) targeted by drugs
 
 :::
 
+### ICD-10 Total Codes: 14 thousand codes {#sec-icd_10_total_codes}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Total ICD-10 diagnostic codes for human diseases and conditions
+
+**Source**: [@icd-10-code-count]
+
+*✓ High confidence*
+
+:::
+
 ### Maximum Annual Lobbyist Salary Range: $2M {#sec-lobbyist_salary_max}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -12793,6 +12861,22 @@ Switzerland's defense spending as percentage of GDP (0.7%)
 Switzerland GDP per capita
 
 **Source**: [@swiss-vs-us-gdp-per-capita]
+
+*✓ High confidence*
+
+:::
+
+### Switzerland Life Expectancy: 84 years {#sec-switzerland_life_expectancy}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Switzerland life expectancy at birth. 6.5 years LONGER than US (84.0 vs 77.5) despite lower government spending as % of GDP.
+
+**Source**: [@who-life-expectancy]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
 
 *✓ High confidence*
 
@@ -14407,6 +14491,20 @@ Consolidated count of trial-relevant diseases worth targeting (after grouping IC
 #### Input Distribution
 
 {{< include ../figures/distribution-trial_relevant_diseases_count.qmd >}}
+
+*Core definition*
+
+:::
+
+### US Congress Members: 535 members {#sec-us_congress_member_count}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Total members of US Congress (100 senators + 435 representatives)
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
 
 *Core definition*
 
