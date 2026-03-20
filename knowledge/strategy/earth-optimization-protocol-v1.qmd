@@ -1,9 +1,9 @@
 ---
 title: Earth Optimization Protocol v1
-subtitle: The current least-terrible instruction manual for humans trying to win the Earth Optimization Prize
-description: Humans are the contestants in the Earth Optimization Prize. This paper documents one replaceable instruction manual for helping humanity raise healthy life years and median income within 15 years. Improve it or replace it with a better manual.
+subtitle: The current open-source instruction manual for playing the Earth Optimization Game
+description: Humans are the contestants in the Earth Optimization Prize. This paper documents the current open-source instruction manual for helping humanity raise healthy life years and median income within 15 years. Fork it and improve it to help humanity win faster.
 abstract: |
-  Humans are the contestants in the Earth Optimization Prize. The Earth Optimization Protocol v1 is the current least-terrible instruction manual we know for helping humanity raise healthy life years and median income within 15 years. It combines eleven mechanisms into a self-reinforcing loop: a 1% military-to-medical treaty provides {{< var treaty_annual_funding >}}/year in funding; pragmatic clinical trials executed through a decentralized FDA protocol reduce trial costs by {{< var dfda_trial_cost_reduction_factor >}} and compress the treatment discovery queue from {{< var status_quo_queue_clearance_years >}} to {{< var dfda_queue_clearance_years >}}; Incentive Alignment Bonds fund the lobbying campaign and pay investors {{< var victory_bond_annual_return_pct >}} annual returns; wishocratic pairwise comparison allocates the {{< var dih_treasury_medical_research_pct >}} research treasury; and an evidence machine (Optimocracy) tells governments which policies actually work. Each component feeds the next. More cures generate popular support, more bondholder income generates political pressure, and more treaty funding generates campaign support for politicians who voted yes. The ratchet only moves in one direction. This paper documents the complete system: what each component does, how they connect, what numbers they claim, and where we think we are wrong. It exists to be improved or replaced by a better instruction manual.
+  Humans are the contestants in the Earth Optimization Prize. The Earth Optimization Protocol v1 is the current open-source instruction manual we know for helping humanity raise healthy life years and median income within 15 years. It combines eleven mechanisms into a self-reinforcing loop: a 1% military-to-medical treaty provides {{< var treaty_annual_funding >}}/year in funding; pragmatic clinical trials executed through a decentralized FDA protocol reduce trial costs by {{< var dfda_trial_cost_reduction_factor >}} and compress the treatment discovery queue from {{< var status_quo_queue_clearance_years >}} to {{< var dfda_queue_clearance_years >}}; Incentive Alignment Bonds fund the lobbying campaign and pay investors {{< var victory_bond_annual_return_pct >}} annual returns; wishocratic pairwise comparison allocates the {{< var dih_treasury_medical_research_pct >}} research treasury; and an evidence machine (Optimocracy) tells governments which policies actually work. Each component feeds the next. More cures generate popular support, more bondholder income generates political pressure, and more treaty funding generates campaign support for politicians who voted yes. The ratchet only moves in one direction. This paper documents the complete system: what each component does, how they connect, what numbers they claim, and where we think we are wrong. It exists to be forked and improved until humanity has something better to use.
 published: true
 tags:
   - strategy
@@ -31,7 +31,7 @@ We think this plan is terrible. We also think it is better than what your specie
 
 There is also a clock. Your [destructive economy](../economics/gdp-trajectories.qmd) [@gdp-trajectories-paper-2025] (military spending beyond deterrence plus cybercrime) is {{< var global_destructive_economy_pct_gdp >}} of GDP and growing faster than the productive economy. The Soviet Union collapsed at 15%. At current growth rates, yours hits 25% in {{< var destructive_economy_years_to_25pct_gdp >}} and 50% in {{< var destructive_economy_years_to_50pct_gdp >}}. There is a crossover point where the rational choice for any individual, company, or nation flips from "build things" to "steal things." You have a name for places where this already happened. You call them "failed states." There is no Colombia to flee to when the global economy is the failed state.
 
-The [Earth Optimization Prize](earth-optimization-prize.qmd) [@earth-optimization-prize-paper-2025] is not this protocol and this protocol is not the contestant. Humans are the contestants. This paper documents the current least-terrible instruction manual they could use: fork this repository, fix anything idiotic, or replace the whole manual with something that works better on the two terminal metrics. Every component is documented with what it does, what numbers it claims, and what an improved manual still has to solve. Fork it. Improve it. Replace parts of it or all of it. We will be genuinely relieved.
+The [Earth Optimization Prize](earth-optimization-prize.qmd) [@earth-optimization-prize-paper-2025] is not this protocol and this protocol is not the contestant. Humans are the contestants. This paper documents the current open-source instruction manual they could use: fork this repository, fix anything idiotic, and improve the manual until it works better on the two terminal metrics. Every component is documented with what it does, what numbers it claims, and what an improved manual still has to solve. Fork it. Improve it. Replace parts that are wrong. We will be genuinely relieved.
 
 ## The Three-Sentence Version
 
@@ -229,7 +229,7 @@ A transaction tax (automatic, collected by smart contract) provides the second s
 
 Together, three pieces of software (the monetary algorithm targeting 0% inflation, the transaction tax contract, and [Wishocracy](../solution/wishocracy.qmd)) render redundant: the Federal Reserve, the IRS, income tax, the congressional budget process, every welfare program, grant committees, the lobbying industry, and the financial sector.
 
-This is v1's most honest gap. The system that funds wars without democratic consent, steals 2% of purchasing power per year by design, and channels genius toward weapons instead of medicine is not addressed until Phase 2. A v2 that solves this earlier, without breaking the Phase 1 sequencing, would be strictly better.
+This is the current manual's most honest gap. The system that funds wars without democratic consent, steals 2% of purchasing power per year by design, and channels genius toward weapons instead of medicine is not addressed until Phase 2. A revision that solves this earlier, without breaking the Phase 1 sequencing, would be strictly better.
 
 ::: {.callout-note}
 ## Fork Marker
@@ -269,7 +269,7 @@ The treaty money splits [80/10/10](../appendix/incentive-alignment-bonds-paper.q
 
 You cannot skip steps. All timelines below are order-of-magnitude estimates, not promises.
 
-**Phase 1: The [Planetary Constitutional Convention](planetary-constitutional-convention.qmd) [@planetary-constitutional-convention-paper-2025] (weeks to months).** Run the constitutional convention. Teams fork v1, fix it, or replace it. Expert panel filters for [constitutional compliance](planetary-constitutional-convention.qmd#constitutional-constraints). Adversarial review catches what the panel misses. [Wishocracy](../solution/wishocracy.qmd) ranks the survivors via pairwise comparison. The ratified version becomes the Earth Optimization Protocol v2. PRIZE token sales begin during this phase, funding the prize pool regardless of which plan is ratified. This is the cheapest stage and it stress-tests the plan before committing real resources.
+**Phase 1: The [Planetary Constitutional Convention](planetary-constitutional-convention.qmd) [@planetary-constitutional-convention-paper-2025] (weeks to months).** Run the constitutional convention. Teams fork the current manual, fix it, and improve the weak parts. Expert panel filters for [constitutional compliance](planetary-constitutional-convention.qmd#constitutional-constraints). Adversarial review catches what the panel misses. [Wishocracy](../solution/wishocracy.qmd) ranks the survivors via pairwise comparison when needed. The ratified revision becomes the current manual. PRIZE token sales begin during this phase, funding the prize pool regardless of which revision is ratified. This is the cheapest stage and it stress-tests the manual before committing real resources.
 
 **Phase 2: The [referendum](global-referendum.qmd) (weeks to months).** Launch the [PRIZE token](earth-optimization-prize.qmd) sale and referendum platform simultaneously. Each participant votes on the [1% Treaty](../solution/1-percent-treaty.qmd) (the headcount that creates political pressure) and sets a [wishocratic slider](../solution/wishocracy.qmd) for their preferred military-to-health allocation (the data that tells you what people actually want). Every recruiter who brings a verified participant earns VOTE tokens. The institutional financing pitch is three-lane: underwrite activation first, seed the PRIZE pool second, and invite much larger capital once the network is visibly real. The operational question is not whether the network can reach some arbitrary macro benchmark. It is whether activation capital can make participation self-propagating before the later pool and capital-allocation thesis take over.
 
@@ -305,13 +305,13 @@ Full economic modeling: [GDP Trajectories](../economics/gdp-trajectories.qmd). F
 
 Your policy papers never have a section called "Where We Think We Are Wrong." This one does.
 
-These are the failure modes we consider most likely, ordered by severity. If you are building v2, start here.
+These are the failure modes we consider most likely, ordered by severity. If you are improving the manual, start here.
 
 ### 1. The First Billion
 
 Everything depends on raising {{< var treaty_campaign_total_cost >}} in initial IAB capital. If no billionaire buys in, the cascade never starts. The [chain reaction model](../appendix/treaty-feasibility.qmd#sec-chain-reaction-model) says that even with {{< var chain_dismiss_probability >}} dismissal, approximately {{< var chain_expected_engaged_implementers_nounit >}} of {{< var chain_implementer_count_nounit >}} billionaires and heads of state engage within {{< var chain_horizon_years_nounit >}} years. The math is reassuring. The math has not met your billionaires. This is the single highest-risk node in the system.
 
-**How to beat this:** PRIZE tokens keep philanthropists and pessimists in the same pool: failure leaves depositors with a pro-rata claim on the realized pool, while success routes the same pool to VOTE claimants. IAB investors take real risk (money funds the lobbying campaign), but the revenue share on success ({{< var victory_bond_annual_return_pct >}} annually) makes the expected value positive even at low success probabilities. The [decision-theoretic case](../appendix/treaty-feasibility.qmd) shows investing is the dominant strategy even without a cascade. What neither proves is that real billionaires evaluate payoff matrices. A pilot at $10M that demonstrates the loop before asking for {{< var treaty_campaign_total_cost >}} would reduce this from a modeling question to an empirical one.
+**How to improve this part:** PRIZE tokens keep philanthropists and pessimists in the same pool: failure leaves depositors with a pro-rata claim on the realized pool, while success routes the same pool to VOTE point-holders. IAB investors take real risk (money funds the lobbying campaign), but the revenue share on success ({{< var victory_bond_annual_return_pct >}} annually) makes the expected value positive even at low success probabilities. The [decision-theoretic case](../appendix/treaty-feasibility.qmd) shows investing is the dominant strategy even without a cascade. What neither proves is that real billionaires evaluate payoff matrices. A pilot at $10M that demonstrates the loop before asking for {{< var treaty_campaign_total_cost >}} would reduce this from a modeling question to an empirical one.
 
 ### 2. The 20% Overhead Question
 
@@ -347,20 +347,20 @@ This is not a whitepaper. The core infrastructure is built and tested:
 
 Total: 2,600+ tests across 13 packages. TypeScript strict mode. Zod validation throughout. Every algorithm backed by a published paper with exact formulas and worked examples.
 
-When you fork v1, you are forking working code, not a PDF. The [repository](https://github.com/mikepsinn/disease-eradication-plan) contains every calculation, every parameter, and every assumption. The [Optomitron repository](https://github.com/mikepsinn/optomitron) contains every algorithm.
+When you fork the current manual, you are forking working code, not a PDF. The [repository](https://github.com/mikepsinn/disease-eradication-plan) contains every calculation, every parameter, and every assumption. The [Optomitron repository](https://github.com/mikepsinn/optomitron) contains every algorithm.
 
 ## How To Improve This Manual
 
-The Earth Optimization Protocol v1 is the current instruction manual for the [Earth Optimization Prize](earth-optimization-prize.qmd). If you think it is wrong, improve the manual:
+The Earth Optimization Protocol v1 is the current instruction manual for the [Earth Optimization Prize](earth-optimization-prize.qmd). If you think it is wrong, fork it and improve the manual:
 
 1. **Fork.** Clone [the repository](https://github.com/mikepsinn/disease-eradication-plan). Every component, every calculation, every assumption is public.
 2. **Improve any row** in the Minimum Acceptable Governance table (see the [prize paper](earth-optimization-prize.qmd)) with something strictly better on the two terminal metrics (median healthy life years and median real after-tax income).
-3. **Or replace the whole system** with an integrated alternative that dominates v1 function by function. You cannot skip inconvenient pieces; every required function must still be covered or replaced.
+3. **Or replace the wrong parts** with an integrated alternative that improves the current manual function by function. You cannot skip inconvenient pieces; every required function must still be covered or replaced.
 4. **Prove it.** The credit mechanism is VOTE tokens: transferable, on-chain proof of how many verified participants you recruited into the wishocratic allocation or treaty referendum. You need numbers, not arguments.
 5. **Use the better manual.** Bondholders receive their revenue share for as long as the treaty generates funding. VOTE token holders receive their share of the PRIZE pool when both global targets are met at year 15 (HALE {{< var wishonia_projected_hale_year_15 >}}, median income {{< var wishonia_trajectory_avg_income_year_15 >}}).
 
 The disqualification rule: if your proposal requires any participant to become less selfish, you have described a pleasant world rather than a mechanism for reaching it. The math must work when humans are greedy, impatient, and exactly as self-interested as they are right now.
 
-We wrote v1 because humans need a starting instruction manual. There are 8 billion of you and AIs that are almost certainly smarter than its authors. Finding something better should not be difficult.
+We wrote v1 because humans need a starting instruction manual. There are 8 billion of you and AIs that are almost certainly smarter than its authors. Improving it should not be difficult.
 
 We expect parts of v1 to be improved or replaced. We look forward to that.

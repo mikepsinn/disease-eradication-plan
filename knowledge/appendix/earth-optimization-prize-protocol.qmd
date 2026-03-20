@@ -188,7 +188,7 @@ The prize mechanism uses two token types:
 - **VOTE tokens** represent verified support for the outcome. They determine claim eligibility when the treasury releases.
 - **PRIZE tokens** represent deposits into the prize pool. They are deposit claims on the same treasury that stays with depositors on failure and routes to VOTE holders on success.
 
-These are protocol primitives. Other instruments (bonds, revenue-share contracts, campaign financing vehicles) are tools that contestants or supporters might use to cause implementation. They are outside the scope of this protocol.
+These are protocol primitives. Other instruments (bonds, revenue-share contracts, campaign financing vehicles) are tools that participants, implementers, or supporting institutions might use to cause implementation. They are outside the scope of this protocol.
 
 ### VOTE Tokens
 

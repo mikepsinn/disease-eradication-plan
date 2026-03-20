@@ -1,9 +1,9 @@
 ---
 title: "The Planetary Constitutional Convention"
-subtitle: "Stress-test, improve, or replace the current instruction manual. The ratified manual becomes v2."
-description: "The Planetary Constitutional Convention is a deliberative process to stress-test and improve the current Earth Optimization instruction manual. Revisions must cover ten required governance functions, pass eleven constitutional constraints, and survive public adversarial review. The current manual is Earth Optimization Protocol v1."
+subtitle: "Stress-test and improve the current instruction manual until humanity has something less terrible to use"
+description: "The Planetary Constitutional Convention is a deliberative process to stress-test and improve the current Earth Optimization instruction manual. Revisions must cover ten required governance functions, pass eleven constitutional constraints, and survive public adversarial review. The ratified revision becomes the current manual."
 abstract: |
-  The Planetary Constitutional Convention is the deliberative process that precedes implementation of the [Earth Optimization Prize](earth-optimization-prize.qmd) [@earth-optimization-prize-paper-2025]. Before anyone recruits a single referendum voter or sells a single bond, there is a prior question: is the current [Earth Optimization Protocol v1](https://manual.warondisease.org) instruction manual actually the one humanity should use? We think it is terrible. We said so in the title. The honest first step is to improve the manual until it is less terrible. The protocol lives on GitHub. Anyone can fork it. The adversarial review process is a podcast series where domain experts critique the manual and state what changes would be required for them to endorse it, plus published critiques and pull requests. The ratified version becomes the Earth Optimization Protocol v2, and v2 is the manual the referendum, the bonds, and the lobbying campaign execute. This runs before everything else because committing billions to an unstress-tested manual is how your species normally operates, and that is not a compliment.
+  The Planetary Constitutional Convention is the deliberative process that precedes implementation of the [Earth Optimization Prize](earth-optimization-prize.qmd) [@earth-optimization-prize-paper-2025]. Before anyone recruits a single referendum voter or sells a single bond, there is a prior question: is the current [Earth Optimization Protocol v1](https://manual.warondisease.org) instruction manual actually the one humanity should use? We think it is terrible. We said so in the title. The honest first step is to improve the manual until it is less terrible. The protocol lives on GitHub. Anyone can fork it. The adversarial review process is a podcast series where domain experts critique the manual and state what changes would be required for them to endorse it, plus published critiques and pull requests. The ratified revision becomes the current manual the referendum, the bonds, and the lobbying campaign execute. This runs before everything else because committing billions to an unstress-tested manual is how your species normally operates, and that is not a compliment.
 published: true
 tags:
   - strategy
@@ -15,9 +15,9 @@ tags:
 
 The [Earth Optimization Protocol v1](https://manual.warondisease.org) is the current instruction manual for a complete governance reform package. We think it is terrible. We said so in the title.
 
-This constitutional convention exists to produce something less terrible. Fork v1, fix it, or replace it entirely. The ratified version becomes v2, and v2 is the instruction manual the [Earth Optimization Prize](earth-optimization-prize.qmd) [@earth-optimization-prize-paper-2025] follows.
+This constitutional convention exists to produce something less terrible. Fork the current manual, fix it, and improve it continuously. The ratified revision becomes the current manual the [Earth Optimization Prize](earth-optimization-prize.qmd) [@earth-optimization-prize-paper-2025] follows.
 
-The protocol lives on [GitHub](https://github.com/mikepsinn/disease-eradication-plan). Anyone can fork it. The adversarial review process is a podcast series where domain experts critique the manual and state what changes would be required for them to endorse it. Each episode produces publishable content and a concrete list of required changes tracked as issues against v1. Pull requests are how changes get ratified. The constitutional constraints below are the filter; the formal ranking infrastructure activates later only if multiple serious revised manuals emerge.
+The protocol lives on [GitHub](https://github.com/mikepsinn/disease-eradication-plan). Anyone can fork it. The adversarial review process is a podcast series where domain experts critique the manual and state what changes would be required for them to endorse it. Each episode produces publishable content and a concrete list of required changes tracked as issues against the current manual. Pull requests are how improvements get proposed and ratified. The constitutional constraints below are the filter; formal ranking only matters if multiple serious revised manuals emerge at the same time.
 
 ::: {.callout-important}
 ## Disqualification Rule
@@ -27,7 +27,7 @@ If your proposal requires politicians, bureaucrats, investors, regulators, voter
 
 ## The Current Manual
 
-What follows is our homework. The thing to beat is the **integrated set of required functions** implied by the companion papers.
+What follows is our homework. The thing to improve is the **integrated set of required functions** implied by the companion papers.
 
 | Required function | Default implementation in the [Earth Optimization Protocol v1](https://manual.warondisease.org) | What an improved manual still has to solve |
 |:---|:---|:---|
@@ -78,11 +78,11 @@ These are constitutional constraints, not preferences. A submission that fails a
 
 **Public adversarial review.** Domain experts critique the protocol in podcast conversations and state what changes they would require to endorse it. Published critiques, red-team memos, and GitHub issues track every objection. This is peer review, except it happens in public, produces listenable content, and generates a concrete punch list of required changes rather than a rejection letter.
 
-**GitHub forks and pull requests.** Anyone can fork v1 and submit changes. Pull requests are how improvements get proposed, debated, and ratified. The version history is the audit trail.
+**GitHub forks and pull requests.** Anyone can fork the current manual and submit changes. Pull requests are how improvements get proposed, debated, and ratified. The version history is the audit trail.
 
 **Wishocratic ranking (when needed).** If multiple serious competing forks emerge, [Wishocracy](../solution/wishocracy.qmd) activates: citizens compare two plans at a time ("Which of these two would you rather live under?"), about 20 comparisons, 5 minutes. The crowd does not need to understand mechanism design. The crowd needs to understand "which of these two futures sounds less terrible?" Humans are surprisingly good at that question and surprisingly bad at everything else. This infrastructure is not needed until the scaling problem actually exists.
 
-The ratified version becomes the Earth Optimization Protocol v2. If no proposal surpasses v1, v1 is ratified by default, which means we were right that it is terrible but wrong that anyone could do better, and that is a more depressing outcome than we are prepared to contemplate.
+The ratified revision becomes the current Earth Optimization manual. If no revision improves the current manual, the current manual remains in force by default, which means we were right that it is terrible but wrong that nobody could improve it, and that is a more depressing outcome than we are prepared to contemplate.
 
 The minimum bar for scoring. Any proposal that cannot beat the risk-adjusted treaty benchmark on cost per DALY does not get scored:
 
@@ -92,11 +92,11 @@ The minimum bar for scoring. Any proposal that cannot beat the risk-adjusted tre
 | [1% Treaty](../solution/1-percent-treaty.qmd) (conditional, if adopted) | {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}} |
 | [1% Treaty](../solution/1-percent-treaty.qmd) (risk-adjusted, {{< var political_success_probability >}} success) | {{< var treaty_expected_cost_per_daly >}} |
 
-## What v1 Claims (and What You Need to Beat)
+## What the Current Manual Claims (and Where To Improve It)
 
-The prize asks one question: *who can cause verified implementation of a complete package that dominates on welfare per dollar?* We wrote v1 because conventions need a starting draft. We expect to be replaced. Here is what v1 claims, paper by paper, and the specific benchmarks you need to beat:
+The prize asks one question: *who can cause verified implementation of a complete package that dominates on welfare per dollar?* We wrote the current manual because conventions need a starting draft. We expect it to be improved. Here is what the current manual claims, paper by paper, and the specific benchmarks any revision still has to clear:
 
-| Paper | What the prize uses it for | Key benchmark to beat |
+| Paper | What the prize uses it for | Key benchmark any improved manual still has to clear |
 |:---|:---|:---|
 | **The [1% Treaty](../solution/1-percent-treaty.qmd)** [@value-captured-by-1pct-treaty] | First large transfer from low-value military spending to high-value medical discovery | {{< var treaty_annual_funding >}}/year; {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}}/DALY conditional; {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved_nounit >}} deaths averted |
 | **Ubiquitous Pragmatic Trial Impact Analysis** [@dfda-impact-paper-2025] | ROI case for medical evidence generation as destination for redirected capital | {{< var dfda_trial_capacity_multiplier >}} capacity increase; queue from {{< var status_quo_queue_clearance_years_nounit >}} to {{< var dfda_queue_clearance_years_nounit >}} years; {{< var dfda_direct_funding_cost_per_daly >}}/DALY |
