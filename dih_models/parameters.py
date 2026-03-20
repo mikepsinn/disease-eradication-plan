@@ -427,29 +427,6 @@ _ratio_growth = _destructive_growth - 0.025  # net growth of ratio
 _years_to_25pct = _math.log(0.25 / 0.115) / _math.log(1 + _ratio_growth)
 _years_to_50pct = _math.log(0.50 / 0.115) / _math.log(1 + _ratio_growth)
 
-DESTRUCTIVE_ECONOMY_PCT_GDP_YEAR_15 = Parameter(
-    float(GLOBAL_DESTRUCTIVE_ECONOMY_PCT_GDP) * ((1 + _ratio_growth) ** 15),
-    source_type="calculated",
-    description="Projected destructive economy share of GDP in year 15 if current relative growth rates "
-                "continue. This extends the current military-plus-cybercrime trend against baseline GDP growth.",
-    display_name="Destructive Economy as % of GDP in Year 15",
-    unit="percent",
-    formula="GLOBAL_DESTRUCTIVE_ECONOMY_PCT_GDP × (1 + DESTRUCTIVE_GROWTH - GDP_BASELINE_GROWTH_RATE)^15",
-    latex=r"r_{destruct:GDP,15} = r_{destruct:GDP} \cdot (1 + g_{destruct} - g_{GDP})^{15}",
-    inputs=["GLOBAL_DESTRUCTIVE_ECONOMY_PCT_GDP", "GLOBAL_CYBERCRIME_CAGR",
-            "GLOBAL_MILITARY_SPENDING_REAL_CAGR_10YR", "GDP_BASELINE_GROWTH_RATE",
-            "GLOBAL_MILITARY_SPENDING_ANNUAL_2024", "GLOBAL_DESTRUCTIVE_ECONOMY_ANNUAL_2025",
-            "GLOBAL_CYBERCRIME_COST_ANNUAL_2025"],
-    compute=lambda ctx: ctx["GLOBAL_DESTRUCTIVE_ECONOMY_PCT_GDP"] * (
-        1 + (
-            (ctx["GLOBAL_MILITARY_SPENDING_ANNUAL_2024"] / ctx["GLOBAL_DESTRUCTIVE_ECONOMY_ANNUAL_2025"]) * ctx["GLOBAL_MILITARY_SPENDING_REAL_CAGR_10YR"]
-            + (ctx["GLOBAL_CYBERCRIME_COST_ANNUAL_2025"] / ctx["GLOBAL_DESTRUCTIVE_ECONOMY_ANNUAL_2025"]) * ctx["GLOBAL_CYBERCRIME_CAGR"]
-        ) - ctx["GDP_BASELINE_GROWTH_RATE"]
-    ) ** 15,
-    keywords=["destructive", "economy", "GDP", "year 15", "projection", "collapse"],
-    latex_symbol=r"r_{destruct:GDP,15}",
-)
-
 DESTRUCTIVE_ECONOMY_YEARS_TO_25PCT_GDP = Parameter(
     round(_years_to_25pct),
     source_type="calculated",

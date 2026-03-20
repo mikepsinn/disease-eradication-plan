@@ -114,6 +114,27 @@ The [1% Treaty](../solution/1-percent-treaty.qmd) [@1-pct-treaty-impact-paper-20
 
 Once someone makes a PRIZE deposit or earns a VOTE claim, they discover the component reforms through the recruitment and registration process. The treaty. The trial cost data. The allocation evidence. The prize is the funnel into everything else. It converts "this sounds too complicated" into "I put in $1 and either diseases get cured or I still have a claim on the pool, so why not." The complex reforms ride behind the simple instrument.
 
+## The Exponential Math
+
+On Wishonia, if one person tells two people and each of them tells two people, the math handles the rest. The point is not that everyone becomes a recruiter. The point is that small repeated actions can compound into politically legible scale much faster than most readers intuit.
+
+| Round | Cumulative people | What that looks like |
+|:---|:---|:---|
+| 0 | 1 | You |
+| 10 | 1,024 | A large lecture hall |
+| 15 | 32,768 | A small town |
+| 20 | 1,048,576 | A city |
+| 25 | 33,554,432 | A country |
+| 28 | 268,435,456 | Hundreds of millions; globally visible |
+| 32 | 4,294,967,296 | Roughly the modeled global coordination target |
+| 33 | 8,589,934,592 | Everyone on Earth |
+
+32 rounds. Not 32 years. 32 rounds. If each round takes a week, that is eight months. If each round takes a month, that is two years and eight months. The important point is not the payout headline. It is that the scoreboard can move from one person to politically legible world scale on ordinary human timescales rather than civilizational ones.
+
+The modeled end-state coordination target is {{< var global_coordination_target_supporters_nounit >}} people, or {{< var global_coordination_target_pct >}} of humanity. That is the canonical public headcount target for the prize. VOTE points make coalition-building worth doing. The scoreboard makes that coalition legible. At scale, treaty passage is expected well before the pool matures.
+
+For institutions, the first decision is not whether to move a massive share of global capital immediately. It is whether to underwrite three distinct jobs: make mass participation credible, seed the PRIZE pool enough that long-dated upside feels real, and then scale the capital base once the network is legible. A foundation consortium is the expected first mover. One extraordinary institution could still do the whole thing.
+
 ## Why A Rational Person Should Care
 
 | Future | What it means for you |
@@ -183,27 +204,6 @@ Delay is not neutral. Each person can only be recruited once, and every month sp
 
 The selfish case for the prize is bigger than either instrument. It is the size of the future they are trying to buy.
 
-## The Exponential Math
-
-On Wishonia, if one person tells two people and each of them tells two people, the math handles the rest. The point is not that everyone becomes a recruiter. The point is that small repeated actions can compound into politically legible scale much faster than most readers intuit.
-
-| Round | Cumulative people | What that looks like |
-|:---|:---|:---|
-| 0 | 1 | You |
-| 10 | 1,024 | A large lecture hall |
-| 15 | 32,768 | A small town |
-| 20 | 1,048,576 | A city |
-| 25 | 33,554,432 | A country |
-| 28 | 268,435,456 | Hundreds of millions; globally visible |
-| 32 | 4,294,967,296 | Roughly the modeled global coordination target |
-| 33 | 8,589,934,592 | Everyone on Earth |
-
-32 rounds. Not 32 years. 32 rounds. If each round takes a week, that is eight months. If each round takes a month, that is two years and eight months. The important point is not the payout headline. It is that the scoreboard can move from one person to politically legible world scale on ordinary human timescales rather than civilizational ones.
-
-The modeled end-state coordination target is {{< var global_coordination_target_supporters_nounit >}} people, or {{< var global_coordination_target_pct >}} of humanity. That is the canonical public headcount target for the prize. VOTE points make coalition-building worth doing. The scoreboard makes that coalition legible. At scale, treaty passage is expected well before the pool matures.
-
-For institutions, the first decision is not whether to move a massive share of global capital immediately. It is whether to underwrite three distinct jobs: make mass participation credible, seed the PRIZE pool enough that long-dated upside feels real, and then scale the capital base once the network is legible. A foundation consortium is the expected first mover. One extraordinary institution could still do the whole thing.
-
 ## What To Do Right Now
 
 1. **Deposit $1.** PRIZE deposit. One pool, one resolution date, pro-rata failure claim.
@@ -220,23 +220,6 @@ For institutions, the first decision is not whether to move a massive share of g
 The first milestones: initiating host announced, rules published, expert panel formed, first bounty pool funded, first scoreboard live, first credible submissions received. Then 1,024 verified participants, then 32,768, then a visibly serious pool. Once the mechanism clears those milestones, the question stops being "is this real?" and becomes "how fast is it compounding?"
 
 That is the ordinary-participant ask: three actions, under two minutes. If the prize fails, your deposit still has a pro-rata claim on the realized pool. If the prize succeeds, your PRIZE deposit helped push the world onto a far better branch. The mechanism is open, the scoreboard is public, and the first step is deliberately small. Whether it matters depends on how quickly enough people decide the arithmetic is worth acting on.
-
-## FAQ for Skeptics
-
-| Objection | Answer |
-|:---|:---|
-| "This will never work" | The ceiling cost of passage is {{< var treaty_campaign_total_cost >}} for the US, {{< var global_political_reform_investment >}} globally. ROI exceeds {{< var treaty_roi_existing_drugs_only >}} [@cost-of-change-paper-2025]. "Political impossibility" is a capital allocation problem, not a physics problem. |
-| "Does this require trusting one institution?" | No. A credible host can initiate the network, but it should not be the root of trust. The rules, contracts, interfaces, and measurement layers should remain open, forkable, and replaceable so another host can continue the process if the first one fails. |
-| "Does hosting mean endorsing the current manual?" | No. A host institution can endorse the convention, the metric standard, and the red-team process without declaring the current draft correct. Stage 1 exists to improve the manual if a better version exists. |
-| "Someone will game the metrics" | Adversarial challenge bonds: anyone who catches gaming posts a bond, presents evidence, claws back the payout. |
-| "I'd lose my $1" | On failure, depositors divide the realized pool pro rata. On success, the deposit funds the pool by design. The selfish case is that the rest of your life got much larger than the dollar you put in. |
-| "Can I sell my claim?" | Not inside the protocol. PRIZE stays with the depositor's verified account until resolution. VOTE stays with the verified recruiter who earned it. Private contracts can exist outside the protocol, like assigning future royalties, but the protocol does not broker or enforce them. |
-| "Why can't PRIZE be withdrawn early?" | Because a redeem-anytime exit right would let depositors drain the pool as success became more likely. The prize only works if the capital remains committed until the measurement date. |
-| "What if I die or lose access?" | Claims belong to a verified account, not a fragile device. The system needs account recovery, beneficiary designation, and lawful successor control so a 15-year claim does not disappear because you lost your phone or your heirs need to prove who they are. |
-| "Nobody else will participate" | That IS the problem the prize exists to solve. Your deposit is the proof that someone does. The scoreboard makes everyone else's participation visible. |
-| "I don't understand the mechanism" | You do not need to. Deposit $1, answer 2 questions, recruit 2 people. |
-| "Why can't VOTE points be traded?" | Tradability would buy liquidity but invert the signal: outsiders could buy coalition credit without doing coalition work. The public signal this design relies on is simpler: verified participant count, referendum growth, and a visible pool of committed capital. |
-| "Won't someone game the metrics?" | Mortality is binary and hard to fake across millions of people. Median income requires improving the middle of the distribution, not just the top. And the adversarial challenge window means anyone who catches gaming can post a bond, present evidence, and claw back the payout. |
 
 ## How It Starts
 
@@ -262,20 +245,7 @@ Everything the prize exists to produce is either healthy life years or income. P
 
 **Why better ideas win, not extract.** If a superior revision appears, VOTE point-holders shift recruitment toward it because doing so maximizes their own payout. The biggest reward is outcome perpetuity: a continuing share that only flows while results keep being produced. The protocol itself is replaceable: a strictly better selection mechanism replaces the current one under the same replacement rule. The two numbers do not change. Everything building toward them is improvable plumbing.
 
-## Why Public Choice Theory Approves
-
-Public choice theory says governments are run by humans who care about reelection, career advancement, and reputation. This is not a design flaw. It is a design constraint. The prize works with it, because no one has to become good:
-
-- **Depositors** commit capital because they retain a failure-branch claim on the same pool and buy a better future on success.
-- **Recruiters** recruit because every verified participant earns them a VOTE point.
-- **Entrepreneurs** compete for a giant implementation franchise.
-- **Politicians** notice a growing scoreboard of verified voters who care about two numbers.
-- **Researchers and auditors** compete for the authority to validate what works.
-- **Citizens** get simpler choices and more visible returns from participation.
-
-Every participant is doing exactly what they would do anyway, except pointed at diseases instead of each other.
-
-## The Numbers
+## The Numbers (Institutional Detail)
 
 **What is the first institutional number?** The canonical activation threshold is the capital required to make {{< var global_coordination_target_pct >}} participation credible through direct referral incentives, verification, payment rails, and global launch operations:
 
@@ -319,6 +289,36 @@ So the institutional stack is: first make mass participation credible ({{< var g
 **Why more pools make everyone richer.** The protocol does not need a single pool. It needs a single *metric standard*. Any pool that measures the same two terminal outcomes (median HALY, median income) and uses proof-of-personhood for deduplication automatically joins the reward network. A verified person claims proportionally from every participating pool, regardless of which one recorded their vote. Japan launches a pool, the EU launches a pool, the Gates Foundation launches a pool. The combined reward grows with each new entrant. A "competing" pool is actually a deposit. Spending money to "attack" the network is indistinguishable from donating to it. Think of email: you can run your own server; all servers interoperate; running your own extends the network rather than fragmenting it.
 
 **What the protocol must solve.** Six capabilities: (1) identity layer (one person, one vote, cross-pool), (2) pool registry, (3) cross-pool claim settlement, (4) scoreboard aggregation, (5) terminal metric oracle, (6) claim mechanics. The companion [protocol specification](../appendix/earth-optimization-prize-protocol.qmd) [@earth-optimization-protocol-2025] specifies how.
+
+## Why Public Choice Theory Approves
+
+Public choice theory says governments are run by humans who care about reelection, career advancement, and reputation. This is not a design flaw. It is a design constraint. The prize works with it, because no one has to become good:
+
+- **Depositors** commit capital because they retain a failure-branch claim on the same pool and buy a better future on success.
+- **Recruiters** recruit because every verified participant earns them a VOTE point.
+- **Entrepreneurs** compete for a giant implementation franchise.
+- **Politicians** notice a growing scoreboard of verified voters who care about two numbers.
+- **Researchers and auditors** compete for the authority to validate what works.
+- **Citizens** get simpler choices and more visible returns from participation.
+
+Every participant is doing exactly what they would do anyway, except pointed at diseases instead of each other.
+
+## FAQ for Skeptics
+
+| Objection | Answer |
+|:---|:---|
+| "This will never work" | The ceiling cost of passage is {{< var treaty_campaign_total_cost >}} for the US, {{< var global_political_reform_investment >}} globally. ROI exceeds {{< var treaty_roi_existing_drugs_only >}} [@cost-of-change-paper-2025]. "Political impossibility" is a capital allocation problem, not a physics problem. |
+| "Does this require trusting one institution?" | No. A credible host can initiate the network, but it should not be the root of trust. The rules, contracts, interfaces, and measurement layers should remain open, forkable, and replaceable so another host can continue the process if the first one fails. |
+| "Does hosting mean endorsing the current manual?" | No. A host institution can endorse the convention, the metric standard, and the red-team process without declaring the current draft correct. Stage 1 exists to improve the manual if a better version exists. |
+| "Someone will game the metrics" | Adversarial challenge bonds: anyone who catches gaming posts a bond, presents evidence, claws back the payout. |
+| "I'd lose my $1" | On failure, depositors divide the realized pool pro rata. On success, the deposit funds the pool by design. The selfish case is that the rest of your life got much larger than the dollar you put in. |
+| "Can I sell my claim?" | Not inside the protocol. PRIZE stays with the depositor's verified account until resolution. VOTE stays with the verified recruiter who earned it. Private contracts can exist outside the protocol, like assigning future royalties, but the protocol does not broker or enforce them. |
+| "Why can't PRIZE be withdrawn early?" | Because a redeem-anytime exit right would let depositors drain the pool as success became more likely. The prize only works if the capital remains committed until the measurement date. |
+| "What if I die or lose access?" | Claims belong to a verified account, not a fragile device. The system needs account recovery, beneficiary designation, and lawful successor control so a 15-year claim does not disappear because you lost your phone or your heirs need to prove who they are. |
+| "Nobody else will participate" | That IS the problem the prize exists to solve. Your deposit is the proof that someone does. The scoreboard makes everyone else's participation visible. |
+| "I don't understand the mechanism" | You do not need to. Deposit $1, answer 2 questions, recruit 2 people. |
+| "Why can't VOTE points be traded?" | Tradability would buy liquidity but invert the signal: outsiders could buy coalition credit without doing coalition work. The public signal this design relies on is simpler: verified participant count, referendum growth, and a visible pool of committed capital. |
+| "Won't someone game the metrics?" | Mortality is binary and hard to fake across millions of people. Median income requires improving the middle of the distribution, not just the top. And the adversarial challenge window means anyone who catches gaming can post a bond, present evidence, and claw back the payout. |
 
 ## What the Current Manual Covers (and Where It Needs Improvement)
 

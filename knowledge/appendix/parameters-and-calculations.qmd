@@ -38,15 +38,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 613 parameters used in the analysis, organized by type:
+This appendix documents all 612 parameters used in the analysis, organized by type:
 
 - External sources (peer-reviewed): 204
-- Calculated values: 285
+- Calculated values: 284
 - Core definitions: 124
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (285 parameters) • [External Data Sources](#sec-external) (204 parameters) • [Core Definitions](#sec-definitions) (124 parameters)
+[Calculated Values](#sec-calculated) (284 parameters) • [External Data Sources](#sec-external) (204 parameters) • [Core Definitions](#sec-definitions) (124 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -1140,41 +1140,6 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-current_trajectory_gdp_year_20.qmd >}}
-
-:::
-
-### Destructive Economy as % of GDP in Year 15: 48.8% {#sec-destructive_economy_pct_gdp_year_15}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Projected destructive economy share of GDP in year 15 if current relative growth rates continue. This extends the current military-plus-cybercrime trend against baseline GDP growth.
-
-**Inputs**:
-
-- [Destructive Economy as % of GDP](#sec-global_destructive_economy_pct_gdp) 🔢: 11.5%
-- [Cybercrime Cost CAGR](#sec-global_cybercrime_cagr) 📊: 15%
-- [Military Spending Real CAGR (10-Year)](#sec-global_military_spending_real_cagr_10yr) 📊: 3.4%
-- [Baseline Global GDP Growth Rate](#sec-gdp_baseline_growth_rate): 2.5%
-- [Global Military Spending in 2024](#sec-global_military_spending_annual_2024) 📊: $2.72T
-- [Global Destructive Economy (2025)](#sec-global_destructive_economy_annual_2025) 🔢: $13.2T
-- [Global Cybercrime Costs (2025)](#sec-global_cybercrime_cost_annual_2025) 📊: $10.5T
-
-$$
-\begin{gathered}
-r_{destruct:GDP,15} \\
-= r_{destruct:GDP} \cdot (1 + g_{destruct} - g_{GDP})^{15}
-\end{gathered}
-$$
-
-*✓ High confidence*
-
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-destructive_economy_pct_gdp_year_15.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-destructive_economy_pct_gdp_year_15.qmd >}}
 
 :::
 

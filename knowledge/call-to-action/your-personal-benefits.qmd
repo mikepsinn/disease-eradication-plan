@@ -26,7 +26,7 @@ That default is not "you." It is the fastest way to make the math legible before
 
 | Future | What the model says |
 |---|---|
-| **Failed-State Trajectory** | The average person ends up with roughly {{< var current_trajectory_cumulative_lifetime_income >}} in cumulative lifetime income while the destructive economy rises from {{< var global_destructive_economy_pct_gdp >}} of GDP now to {{< var destructive_economy_pct_gdp_year_15 >}} by year 15. |
+| **Failed-State Trajectory** | The average person ends up with roughly {{< var current_trajectory_cumulative_lifetime_income >}} in cumulative lifetime income while the destructive economy rises from {{< var global_destructive_economy_pct_gdp >}} of GDP now, reaches 25% in {{< var destructive_economy_years_to_25pct_gdp >}}, and hits 50% in {{< var destructive_economy_years_to_50pct_gdp >}}. |
 | **Minimum Sustainable Trajectory (1% Treaty)** | Adds {{< var treaty_trajectory_lifetime_income_gain_per_capita >}} in lifetime income, {{< var treaty_hale_gain_year_15 >}} in healthy life by year 15, and {{< var treaty_personal_upside_blend >}} in blended upside. |
 | **[Wishonian](../futures/wishonia.qmd) [Optimal Governance Trajectory](../economics/gdp-trajectories.qmd)** | Adds {{< var wishonia_trajectory_lifetime_income_gain_per_capita >}} in lifetime income, {{< var wishonia_hale_gain_year_15 >}} in healthy life by year 15, and {{< var wishonia_personal_upside_blend >}} in blended upside. |
 | **Collapse Tail** | The repo's year-20 EV framing still assigns {{< var moronia_trajectory_probability_year_20 >}} to Moronia. The destructive economy reaches 25% of GDP in {{< var destructive_economy_years_to_25pct_gdp >}} and 50% in {{< var destructive_economy_years_to_50pct_gdp >}} if the loop is not broken. |
@@ -199,7 +199,6 @@ That default is not "you." It is the fastest way to make the math legible before
   <span id="pbc-src-treaty-health" class="visually-hidden">{{< var treaty_hale_value_per_capita >}}</span>
   <span id="pbc-src-wish-health" class="visually-hidden">{{< var wishonia_hale_value_per_capita >}}</span>
   <span id="pbc-src-destruct-now" class="visually-hidden">{{< var global_destructive_economy_pct_gdp >}}</span>
-  <span id="pbc-src-destruct-15" class="visually-hidden">{{< var destructive_economy_pct_gdp_year_15 >}}</span>
   <span id="pbc-src-destruct-25" class="visually-hidden">{{< var destructive_economy_years_to_25pct_gdp >}}</span>
   <span id="pbc-src-destruct-50" class="visually-hidden">{{< var destructive_economy_years_to_50pct_gdp >}}</span>
   <span id="pbc-src-moronia" class="visually-hidden">{{< var moronia_trajectory_probability_year_20 >}}</span>
@@ -421,7 +420,6 @@ That default is not "you." It is the fastest way to make the math legible before
   const treatyHealth = parseMetric('pbc-src-treaty-health', { fallback: 982500 });
   const wishHealth = parseMetric('pbc-src-wish-health', { fallback: 2355000 });
   const destructNow = parseMetric('pbc-src-destruct-now', { fallback: 0.115, allowPercent: true });
-  const destruct15 = parseMetric('pbc-src-destruct-15', { fallback: 0.49, allowPercent: true });
   const destruct25 = parseMetric('pbc-src-destruct-25', { fallback: 8, allowPercent: true });
   const destruct50 = parseMetric('pbc-src-destruct-50', { fallback: 15, allowPercent: true });
   const moronia = parseMetric('pbc-src-moronia', { fallback: 0.10, allowPercent: true });
@@ -518,7 +516,7 @@ That default is not "you." It is the fastest way to make the math legible before
 
     setOutput(
       'pbc-summary',
-      `At age ${age}, with ${formatCurrency(income)} annual income and ${formatCurrency(savings)} available savings, the ${scenario.label} implies ${formatCurrency(personalBlend.central)} in blended upside for you personally. A ${formatCurrency(contribution)} contribution is ${formatPercent(savingsShare)} of your available savings. If you believe that contribution raises success probability by ${formatPctPoints(probabilityPoints)}, its blended expected value is ${formatCurrency(evBlend.central)}. Meanwhile, the downside of not breaking the current loop is a destructive economy that rises from ${formatPercent(destructNow.central)} of GDP now to ${formatPercent(destruct15.central)} by year 15, reaches 25% in about ${destruct25.central} years, reaches 50% in about ${destruct50.central} years, and still carries a ${formatPercent(moronia.central)} Moronia collapse-tail probability in the repo's year-20 framing.`
+      `At age ${age}, with ${formatCurrency(income)} annual income and ${formatCurrency(savings)} available savings, the ${scenario.label} implies ${formatCurrency(personalBlend.central)} in blended upside for you personally. A ${formatCurrency(contribution)} contribution is ${formatPercent(savingsShare)} of your available savings. If you believe that contribution raises success probability by ${formatPctPoints(probabilityPoints)}, its blended expected value is ${formatCurrency(evBlend.central)}. Meanwhile, the downside of not breaking the current loop is a destructive economy already at ${formatPercent(destructNow.central)} of GDP, reaching 25% in about ${destruct25.central} years, reaching 50% in about ${destruct50.central} years, and still carrying a ${formatPercent(moronia.central)} Moronia collapse-tail probability in the repo's year-20 framing.`
     );
   }
 

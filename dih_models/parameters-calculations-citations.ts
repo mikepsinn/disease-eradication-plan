@@ -2602,17 +2602,6 @@ export const CURRENT_TRAJECTORY_GDP_YEAR_20: Parameter = {
   latex: "GDP_{base,20} = GDP_0(1+g_{base})^{20}",
 };
 
-export const DESTRUCTIVE_ECONOMY_PCT_GDP_YEAR_15: Parameter = {
-  value: 0.4876756453847113,
-  unit: "percent",
-  displayName: "Destructive Economy as % of GDP in Year 15",
-  description: "Projected destructive economy share of GDP in year 15 if current relative growth rates continue. This extends the current military-plus-cybercrime trend against baseline GDP growth.",
-  sourceType: "calculated",
-  confidence: "high",
-  formula: "GLOBAL_DESTRUCTIVE_ECONOMY_PCT_GDP × (1 + DESTRUCTIVE_GROWTH - GDP_BASELINE_GROWTH_RATE)^15",
-  latex: "\\begin{gathered}\nr_{destruct:GDP,15} \\\\\n= r_{destruct:GDP} \\cdot (1 + g_{destruct} - g_{GDP})^{15}\n\\end{gathered}",
-};
-
 export const DESTRUCTIVE_ECONOMY_YEARS_TO_25PCT_GDP: Parameter = {
   value: 8.0,
   unit: "years",
@@ -6841,7 +6830,6 @@ export const parameters = {
   CURRENT_TRAJECTORY_CUMULATIVE_LIFETIME_INCOME,
   CURRENT_TRAJECTORY_GDP_YEAR_15,
   CURRENT_TRAJECTORY_GDP_YEAR_20,
-  DESTRUCTIVE_ECONOMY_PCT_GDP_YEAR_15,
   DESTRUCTIVE_ECONOMY_YEARS_TO_25PCT_GDP,
   DESTRUCTIVE_ECONOMY_YEARS_TO_50PCT_GDP,
   DFDA_ANNUAL_OPEX,
@@ -9159,9 +9147,9 @@ export const citations: Record<string, Citation> = {
 
 /** Summary statistics */
 export const PARAMETER_STATS = {
-  total: 613,
+  total: 612,
   external: 204,
-  calculated: 285,
+  calculated: 284,
   definitions: 124,
   citations: 142,
 } as const;
