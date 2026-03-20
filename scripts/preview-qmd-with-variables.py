@@ -31,6 +31,11 @@ if str(_project_root) not in sys.path:
 from dih_models.variable_replacement import load_variables, replace_variables
 
 
+def strip_confidence_intervals(text: str) -> str:
+    """Strip '(95% CI: ...)' from resolved variable text to match rendered HTML."""
+    return re.sub(r'\s*\(95% CI:\s*[^)]+\)', '', text)
+
+
 def find_hardcoded_numbers(content: str) -> List[Tuple[int, str, str, str]]:
     """
     Find lines with hardcoded numbers that might need to be variables.
@@ -94,6 +99,8 @@ def main():
                         help='Path to variables YAML file')
     parser.add_argument('--numbers-only', action='store_true',
                         help='Only show potential hardcoded numbers, not full preview')
+    parser.add_argument('--show-ci', action='store_true',
+                        help='Show confidence intervals (stripped by default to match rendered HTML)')
     parser.add_argument('--line-range', type=str,
                         help='Only show lines in range, e.g., "100-200"')
 
@@ -147,6 +154,10 @@ def main():
                     print(f"  ... and {len(by_type[num_type]) - 50} more")
 
         return
+
+    # Strip CIs from variable values unless --show-ci is set
+    if not args.show_ci:
+        variables = {k: strip_confidence_intervals(v) for k, v in variables.items()}
 
     # Replace variables
     preview = replace_variables(content, variables)
