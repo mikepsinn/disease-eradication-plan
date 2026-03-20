@@ -24,13 +24,13 @@ youtube-thumbnail: /assets/podcast/least-bad-idea-prize-paper-youtube.jpg
 3. **How PRIZE works.** Depositors fund one pool until year {{< var prize_pool_resolution_years_nounit >}}. Targets missed: depositors divide the realized pool pro rata.
 4. **How VOTE works.** Recruit one verified referendum participant, earn one point. On success, the pool routes to VOTE point-holders.
 5. **What institutions are being asked to do.** Underwrite activation, seed the PRIZE pool enough that success-side upside feels real, and host the first public scoreboard. The first institutional ask is {{< var global_coordination_activation_budget >}}.
-6. **Why it matters.** Status quo is not stable. The [destructive economy](../economics/gdp-trajectories.qmd) [@gdp-trajectories-paper-2025] reaches {{< var destructive_economy_pct_gdp_year_15 >}} of GDP by year {{< var prize_pool_resolution_years_nounit >}} if current trends continue.
+6. **Why it matters.** Status quo is not stable. The [destructive economy](../economics/gdp-trajectories.qmd) [@gdp-trajectories-paper-2025] reaches parity with the productive economy in {{< var destructive_economy_years_to_50pct_gdp >}} if current trends continue.
 
 ## The Problem Statement
 
 - Humanity spends {{< var military_to_government_clinical_trials_spending_ratio >}} times more on weapons than on testing which medicines work.
-- The [destructive economy](../economics/gdp-trajectories.qmd) [@gdp-trajectories-paper-2025] is already {{< var global_destructive_economy_pct_gdp >}} of GDP, reaches 25% in {{< var destructive_economy_years_to_25pct_gdp >}}, and reaches {{< var destructive_economy_pct_gdp_year_15 >}} by year {{< var prize_pool_resolution_years_nounit >}}.
-- The year-15 status quo path is global median income of {{< var current_trajectory_avg_income_year_15 >}}. The modeled optimal-governance target is {{< var wishonia_trajectory_avg_income_year_15 >}}, with GDP at roughly {{< var wishonia_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}} the status quo trajectory. The gap is that large because the destructive economy compounds: on the status quo path it reaches roughly {{< var destructive_economy_pct_gdp_year_15 >}} of GDP by year 15, dragging median income down while the optimal path redirects that waste into productive compounding (cheaper trials, better allocation, reduced conflict overhead). The difference is not optimism vs. realism; it is compounding waste vs. compounding investment over 15 years.
+- The [destructive economy](../economics/gdp-trajectories.qmd) [@gdp-trajectories-paper-2025] is already {{< var global_destructive_economy_pct_gdp >}} of GDP, reaches 25% in {{< var destructive_economy_years_to_25pct_gdp >}}, and reaches 50% in {{< var destructive_economy_years_to_50pct_gdp >}}.
+- The year-15 status quo path is global median income of {{< var current_trajectory_avg_income_year_15 >}}. The modeled optimal-governance target is {{< var wishonia_trajectory_avg_income_year_15 >}}, with GDP at roughly {{< var wishonia_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}} the status quo trajectory. The gap is that large because the destructive economy compounds: on the status quo path it keeps racing toward parity with the productive economy, dragging median income down while the optimal path redirects that waste into productive compounding (cheaper trials, better allocation, reduced conflict overhead). The difference is not optimism vs. realism; it is compounding waste vs. compounding investment over 15 years.
 - The minimum serious first test is the [1% Treaty](../solution/1-percent-treaty.qmd) [@1-pct-treaty-impact-paper-2025]: are humans willing to redirect even 1% from weapons to medicine?
 
 ## How It Works (The 90-Second Version)
@@ -114,20 +114,14 @@ The [1% Treaty](../solution/1-percent-treaty.qmd) [@1-pct-treaty-impact-paper-20
 
 Once someone makes a PRIZE deposit or earns a VOTE claim, they discover the component reforms through the recruitment and registration process. The treaty. The trial cost data. The allocation evidence. The prize is the funnel into everything else. It converts "this sounds too complicated" into "I put in $1 and either diseases get cured or I still have a claim on the pool, so why not." The complex reforms ride behind the simple instrument.
 
-## Design Choices and Objections
-
-**Why VOTE is not publicly tradable inside the protocol.** VOTE behaves like game points. Institutionally, those points are success-side claims on the pool. Tradability would buy liquidity and price discovery. It would also invert the PRIZE signal, weaken early recruitment incentives, and let outsiders buy coalition credit without doing coalition work. The public signal this design relies on is simpler: verified participant count, referendum growth, and a visible pool of committed capital.
-
-**Why the metrics are hard to fake.** The obvious Goodhart objection is that median metrics can be gamed. If the sickest die faster, median health rises. But mortality is binary and hard to fake across millions of people. Median income requires improving the middle of the distribution, not just the top. And the adversarial challenge window means anyone who catches gaming can post a bond, present evidence, and claw back the payout.
-
 ## Why A Rational Person Should Care
 
 | Future | What it means for you |
 |:---|:---|
-| **Status quo** | {{< var current_trajectory_cumulative_lifetime_income >}} cumulative lifetime income; destructive economy rises toward {{< var destructive_economy_pct_gdp_year_15 >}} of GDP by year 15. |
+| **Status quo** | {{< var current_trajectory_cumulative_lifetime_income >}} cumulative lifetime income; destructive economy reaches 25% of GDP in {{< var destructive_economy_years_to_25pct_gdp >}} and 50% in {{< var destructive_economy_years_to_50pct_gdp >}}. |
 | **1% Treaty** | +{{< var treaty_trajectory_lifetime_income_gain_per_capita >}} lifetime income, +{{< var treaty_hale_gain_year_15_nounit >}} healthy years. |
 | **Wishonia** | +{{< var wishonia_trajectory_lifetime_income_gain_per_capita >}} lifetime income, +{{< var wishonia_hale_gain_year_15_nounit >}} healthy years. |
-| **Collapse tail** | {{< var moronia_trajectory_probability_year_20 >}} probability; destructive economy at 50% of GDP in {{< var destructive_economy_years_to_50pct_gdp >}}. |
+| **Collapse tail** | {{< var moronia_trajectory_probability_year_20 >}} probability; destructive economy reaches parity with the productive economy in {{< var destructive_economy_years_to_50pct_gdp >}}. |
 
 That spread is absurdly large and most humans still treat "do nothing" as if it were safe. For the average human on Earth today, the model already implies {{< var global_avg_income_2025 >}} annual income, {{< var global_avg_remaining_years >}} remaining life, and roughly {{< var global_annual_savings_per_capita >}} in annual savings capacity. If you want your own numbers, use the [personal benefits calculator](../call-to-action/your-personal-benefits.qmd).
 
@@ -189,10 +183,6 @@ Delay is not neutral. Each person can only be recruited once, and every month sp
 
 The selfish case for the prize is bigger than either instrument. It is the size of the future they are trying to buy.
 
-## Help Improve the Manual
-
-If you think the [current Earth Optimization manual](https://manual.warondisease.org) is wrong or incomplete, fork it and improve it through the [Planetary Constitutional Convention](planetary-constitutional-convention.qmd) [@planetary-constitutional-convention-paper-2025]. The point is not to submit a rival artifact. The point is to help humanity win faster.
-
 ## The Exponential Math
 
 On Wishonia, if one person tells two people and each of them tells two people, the math handles the rest. The point is not that everyone becomes a recruiter. The point is that small repeated actions can compound into politically legible scale much faster than most readers intuit.
@@ -245,6 +235,8 @@ That is the ordinary-participant ask: three actions, under two minutes. If the p
 | "What if I die or lose access?" | Claims belong to a verified account, not a fragile device. The system needs account recovery, beneficiary designation, and lawful successor control so a 15-year claim does not disappear because you lost your phone or your heirs need to prove who they are. |
 | "Nobody else will participate" | That IS the problem the prize exists to solve. Your deposit is the proof that someone does. The scoreboard makes everyone else's participation visible. |
 | "I don't understand the mechanism" | You do not need to. Deposit $1, answer 2 questions, recruit 2 people. |
+| "Why can't VOTE points be traded?" | Tradability would buy liquidity but invert the signal: outsiders could buy coalition credit without doing coalition work. The public signal this design relies on is simpler: verified participant count, referendum growth, and a visible pool of committed capital. |
+| "Won't someone game the metrics?" | Mortality is binary and hard to fake across millions of people. Median income requires improving the middle of the distribution, not just the top. And the adversarial challenge window means anyone who catches gaming can post a bond, present evidence, and claw back the payout. |
 
 ## How It Starts
 
@@ -331,6 +323,10 @@ So the institutional stack is: first make mass participation credible ({{< var g
 ## What the Current Manual Covers (and Where It Needs Improvement)
 
 The full table of what the [current Earth Optimization manual](https://manual.warondisease.org) covers, paper by paper, and the minimum functions any serious implementation manual still has to solve, is in the [Planetary Constitutional Convention](planetary-constitutional-convention.qmd) [@planetary-constitutional-convention-paper-2025]. The prize asks one question: *which implementation manual can actually cause the verified improvements?* We wrote the current manual as a starting instruction manual, not a sacred blueprint. If any part of it is wrong, improve the manual or replace that part with something better. We expect that to happen.
+
+## Help Improve the Manual
+
+If you think the [current Earth Optimization manual](https://manual.warondisease.org) is wrong or incomplete, fork it and improve it through the [Planetary Constitutional Convention](planetary-constitutional-convention.qmd) [@planetary-constitutional-convention-paper-2025]. The point is not to submit a rival artifact. The point is to help humanity win faster.
 
 ## Why This Works or Gets Replaced
 
