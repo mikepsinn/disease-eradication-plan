@@ -40,14 +40,14 @@ This chapter explains why, and then explains how.
 
 Your deposit is locked. Not a savings account. It stays in your account until the {{< var prize_pool_resolution_years_nounit >}} years are up. Targets missed: you divide the realized pool pro rata. Targets met: the pool goes to VOTE point-holders, not back to you. See the [prize protocol](../appendix/earth-optimization-prize-protocol.qmd) [@earth-optimization-prize-protocol-paper-2025] for the full specification.
 
-**Here's how VOTE points work.** You recruit one verified referendum participant into the first [1% Treaty](../solution/1-percent-treaty.qmd) [@1-pct-treaty-impact-paper-2025] vote, you earn one point. Points stay with the account that earned them - not tradable, so coalition credit stays with recruiters, not speculators. Registration asks two questions: (1) yes or no on the 1% Treaty (the smallest serious test of whether humans will redirect even 1% from weapons to medicine), and (2) how much military vs. clinical trials, with [Optimitron](../solution/optimocracy.qmd) [@optimocracy-paper-2025] evidence. Fits on a phone. Under a minute.
+**Here's how VOTE points work.** You recruit one verified referendum participant into the first [1% Treaty](../solution/1-percent-treaty.qmd) [@1-pct-treaty-impact-paper-2025] vote, you earn one point. Points stay with whoever earned them. Not tradable. You cannot buy your way to credit for recruiting people you did not recruit (your species calls this "integrity," which I understand is rare enough to require explanation). Registration asks two questions: (1) yes or no on the 1% Treaty (the smallest serious test of whether humans will redirect even 1% from weapons to medicine), and (2) how much military vs. clinical trials, with [Optimitron](../solution/optimocracy.qmd) [@optimocracy-paper-2025] evidence. Fits on a phone. Under a minute.
 
 | Year-15 objective | Current baseline | Year-15 target |
 |:---|:---|:---|
 | **Global HALE** | {{< var global_hale_current >}} | {{< var treaty_projected_hale_year_15 >}} (+{{< var treaty_hale_gain_year_15_nounit >}} healthy years) |
 | **Global median income** | {{< var current_trajectory_avg_income_year_15 >}} (status quo at year 15) | {{< var treaty_trajectory_avg_income_year_15 >}} ({{< var treaty_trajectory_lifetime_income_multiplier >}} current lifetime earnings; see [GDP Trajectories](../economics/gdp-trajectories.qmd)) |
 
-Your public signal is the **Scoreboard**, updated in real time: global median HALE, global median income, number of votes, percent support for the 1% Treaty, current wishocratic allocation between military and clinical trials, and size of the PRIZE pool. Polls are ignorable. Petitions are ignorable. A large verified Scoreboard is harder to dismiss.
+Your public signal is the **Scoreboard**: how long people live, how much they earn, how many voted, how they voted, and how large the pile of money is. Updated in real time. Polls are ignorable. Petitions are ignorable. A Scoreboard with hundreds of millions of verified names on it is harder to pretend does not exist.
 
 ## Contributor Outcomes
 
@@ -98,14 +98,14 @@ Everything below this line is for readers who want to understand why before they
 - Your governments are a [misaligned superintelligence](../economics/central-banks.qmd) whose stated objective function is to make you [2% poorer each year](../economics/central-banks.qmd#goal-2-stable-prices-take-2-per-year) and keep you [too busy working to notice](../economics/central-banks.qmd#goal-1-maximum-employment-keep-everyone-busy). Since 1913, they have [printed so much money](../economics/central-banks.qmd) that they've devalued your paycheck by 96%, in order to spend {{< var cumulative_military_spending_fed_era >}} killing {{< var money_printer_war_deaths_nounit >}} people in unpopular wars without asking your permission to have them [@sipri-milex-2024; @crs-war-costs-2010]. The global annual murder budget is {{< var global_military_spending_annual_2024 >}}, which is {{< var military_to_government_clinical_trials_spending_ratio >}} times what governments spend [testing which medicines work](../appendix/global-government-medical-research-spending.qmd).
 - The [destructive economy](../economics/gdp-trajectories.qmd) [@gdp-trajectories-paper-2025] is already {{< var global_destructive_economy_pct_gdp >}} of GDP, reaches 25% in {{< var destructive_economy_years_to_25pct_gdp >}}, and hits 50% in {{< var destructive_economy_years_to_50pct_gdp >}}, where whatever gets created gets looted.
 - In 15 years, the status quo path gives you {{< var current_trajectory_avg_income_year_15 >}} median income. A world that stops wasting money on destruction gives you {{< var wishonia_trajectory_avg_income_year_15 >}} ({{< var wishonia_trajectory_lifetime_income_multiplier >}} current lifetime earnings). The gap is that large because waste compounds too: the destructive economy eats {{< var global_destructive_economy_pct_gdp >}} of GDP now and keeps growing toward 50%, where half of everything created gets looted. Redirect the waste into medicine and R&D instead, and 15 years of compound interest does the rest (see [Political Dysfunction Tax](../appendix/political-dysfunction-tax.qmd) [@political-dysfunction-tax-paper-2025] for the full waste ledger).
-- What that 1% buys: the [1% Treaty](../solution/1-percent-treaty.qmd) redirects {{< var treaty_annual_funding >}}/year from military budgets to pragmatic clinical trials. That single reallocation expands trial capacity {{< var dfda_trial_capacity_multiplier >}}, accelerates the drug-disease search space from {{< var status_quo_queue_clearance_years >}} to {{< var dfda_queue_clearance_years >}}, and averts {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved_nounit >}} deaths (cumulative, over {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} of accelerated trial capacity) at {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}} per DALY ({{< var treaty_vs_bed_nets_multiplier >}} more cost-effective than anti-malaria bed nets). The {{< var treaty_campaign_total_cost >}} is the campaign cost to adopt the treaty; the trials themselves are funded by the redirected military spending, so the direct cost is negative (trials funded *and* 1% fewer bombs) [@1-pct-treaty-impact-paper-2025].
+- What that 1% buys: the [1% Treaty](../solution/1-percent-treaty.qmd) redirects {{< var treaty_annual_funding >}}/year from military budgets to pragmatic clinical trials. That single reallocation expands trial capacity {{< var dfda_trial_capacity_multiplier >}}, clears the queue of untested treatments from {{< var status_quo_queue_clearance_years >}} to {{< var dfda_queue_clearance_years >}} (your grandchildren's grandchildren were going to wait; now your children do not have to), and averts {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved_nounit >}} deaths (cumulative, over {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} of accelerated trial capacity) at {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}} per DALY ({{< var treaty_vs_bed_nets_multiplier >}} more cost-effective than anti-malaria bed nets). The {{< var treaty_campaign_total_cost >}} is the campaign cost to adopt the treaty; the trials themselves are funded by the redirected military spending, so the direct cost is negative (trials funded *and* 1% fewer bombs) [@1-pct-treaty-impact-paper-2025].
 - The minimum serious first test is that treaty: are humans willing to redirect even 1% from weapons to medicine?
 
 ## Why Your Species Needs This Game
 
 Your species has never built a system that measures the two things everyone agrees on (healthy life years and income), publishes the score, and pays whoever moves it. You argue about drug policy without tracking whether fewer people die. You argue about military spending without tracking whether it makes you safer. You argue about healthcare without tracking whether anyone gets healthier. The Game does not resolve these arguments. It makes them irrelevant. Two numbers. Did they move? Pay whoever moved them.
 
-That missing Scoreboard is underneath five specific problems the Game solves at once:
+Your species has five reasons for continuing to die, and they are all the same reason (you cannot see each other):
 
 1. **Nobody knows.** Most people have never heard that clinical trials cost {{< var dfda_pragmatic_trial_cost_per_patient >}} per patient or that 1% of the murder budget would fund all of them.
 2. **Everyone thinks they're alone.** Nearly every human would prefer less war and disease. Nobody knows that nearly every other human agrees. So nobody acts.
@@ -147,7 +147,7 @@ The Game does not ask anyone to believe this manual is correct. It asks them to 
 
 No committee decides which reforms to fund. A researcher who discovers a cheaper trial design profits. A lobbyist who passes legislation profits. A nonprofit that recruits a million voters profits. {{< var global_coordination_target_supporters_nounit >}} people, each trying to get paid, all pointed at the same two numbers. Your entire species searching for whatever works, instead of arguing about what to search for.
 
-Your species has tried alternatives. "We'll buy it if you build it" (Advance Market Commitments [@kremer2020]) works for vaccines, not systemic reform. Challenge prizes pay the first team across the finish line, then stop. Government procurement funds whatever the person in charge thinks will work, which is the current system, and it is being captured by the people it is supposed to regulate. Prediction markets tell you what will win but do not make it happen. The Game pays for outcomes, publishes the score, and lets anyone challenge the results. Capturing it requires beating every challenger on verified metrics at the same time. Not capture-proof. Capture-expensive.
+Your species has tried alternatives. "We'll buy it if you build it" works for vaccines, not civilizations [@kremer2020]. Challenge prizes pay the winner, then stop paying (the disease does not stop). Government procurement funds whatever the person in charge likes, which is the current system (it is going well). Prediction markets tell you what will win but do not cause it to happen, which is like a weather forecast that cannot rain. The Game pays for outcomes, publishes the score, and lets anyone challenge the results. Capturing it requires beating every challenger on verified metrics at the same time. Not capture-proof. Capture-expensive.
 
 ### 5. Complex Reforms Have No Entry Point
 
@@ -180,7 +180,7 @@ On Wishonia, if one person tells two people and each of them tells two people, t
 | 32 | 4,294,967,296 | Roughly the modeled global coordination target |
 | 33 | 8,589,934,592 | Everyone on Earth |
 
-32 rounds. Not 32 years. 32 rounds. If each round takes a week, that is eight months. If each round takes a month, under three years. One person to world scale in months, not centuries.
+32 rounds. Not 32 years. 32 rounds. If each round takes a week, that is eight months. If each round takes a month, under three years. One person to world scale in months, not centuries. Your species spent longer than that arguing about whether Pluto is a planet.
 
 "No product in history has achieved 32 rounds of doubling." Correct. The table is the mathematical ceiling, not the operational model. The operational model (see [Treaty Feasibility](../appendix/treaty-feasibility.qmd)) assumes each person only convinces {{< var chain_effective_r >}} others (not 2), with overlap and dropout. And the actual coordination target is not 8 billion. The Chenoweth threshold ({{< var global_population_activism_threshold_pct >}}) means you need {{< var treaty_campaign_voting_bloc_target_nounit >}} verified participants, not the full planet [@3-5-rule]. That is round 28, not round 33.
 
@@ -197,7 +197,7 @@ The target is {{< var global_coordination_target_supporters_nounit >}} people. {
 | **Optimal governance** | +{{< var wishonia_trajectory_lifetime_income_gain_per_capita >}} lifetime income ({{< var wishonia_trajectory_lifetime_income_multiplier >}}), +{{< var wishonia_hale_gain_year_15_nounit >}} healthy years. |
 | **Collapse tail** | Half the economy is looted in {{< var destructive_economy_years_to_50pct_gdp >}}. Already at {{< var global_destructive_economy_pct_gdp >}} of GDP and accelerating. |
 
-That spread is absurdly large and most humans still treat "do nothing" as if it were safe. The average human earns {{< var global_avg_income_2025 >}}/year, has {{< var global_avg_remaining_years >}} left to live, and can save about {{< var global_annual_savings_per_capita >}}/year. If you want your own numbers, use the [personal benefits calculator](../call-to-action/your-personal-benefits.qmd).
+That spread is the difference between a civilization and a collapse, and most humans still treat "do nothing" as if it were the safe option. On Wishonia, "do nothing" is what we call the thing that killed you. The average human earns {{< var global_avg_income_2025 >}}/year, has {{< var global_avg_remaining_years >}} left to live, and can save about {{< var global_annual_savings_per_capita >}}/year. If you want your own numbers, use the [personal benefits calculator](../call-to-action/your-personal-benefits.qmd).
 
 Those are not projections about charity. They are projections about your money, your health, and whether your civilization collapses. Anything that makes this even slightly more likely to happen is worth real money to you:
 
@@ -252,13 +252,13 @@ Everything below this point (the lobbying, the treaty campaigns, the clinical tr
 2. **The referendum opens.** Every depositor learns what the Game is for. The [referendum](global-referendum.qmd) launches: voters set their preferred military-to-health allocation, and every recruiter who brings a verified participant earns VOTE points. The referendum grows because recruitment is rewarded. You keep recruiting.
 3. **The Scoreboard climbs.** Votes, treaty support, allocation results, prize pool size, and the two numbers. Each new cohort of participants makes the next cohort easier to convince.
 4. **The lobbying campaign starts itself.** Millions of people whose payout depends on treaty passage attract lobbyists, entrepreneurs, and institutions because the pool makes showing up profitable. The [implementation financing](earth-optimization-protocol-v1.qmd) [@earth-optimization-protocol-2025] converts the Scoreboard into political pressure.
-5. **Implementation.** Budget authority shifts real resources. Implementers compete to supply the cheapest verified pieces. Again: not your job. Your job was step 1.
+5. **Implementation.** Governments move the money. People compete to cure diseases cheaply. Again: not your job. Your job was step 1.
 
 Each stage builds the audience for the next. Nobody coordinates this centrally. The incentives coordinate it. For the institutional deployment plan and activation budget, see [Why Your Institution Should Be The Initiating Node](initiating-node-memo.qmd).
 
 ## How the Game Moves Money {#how-money-moves-full-mechanism}
 
-Everything the Game exists to produce is either healthy life years or income. Paying separately for moving budgets around or enrolling people in trials is paying for plumbing that may or may not deliver water. Pay for water.
+Everything the Game exists to produce is either healthy life years or income. Paying for moving budgets around or enrolling people in trials is paying for plumbing that may or may not deliver water. Your species has a long history of buying plumbing. Pay for water.
 
 **Your PRIZE pool trigger.** At year {{< var prize_pool_resolution_years_nounit >}}: targets met, the pool distributes to VOTE point-holders; targets missed, depositors divide it pro rata.
 
@@ -304,7 +304,7 @@ At that headcount, {{< var global_coordination_target_supporters_nounit >}} peop
 |:---|:---|:---|
 | **Effort** | Hours in line, research candidates | 30 seconds on a phone |
 | **Financial reward** | $0 | {{< var vote_token_potential_value >}} modeled success payout |
-| **Your vote matters** | ~1 in 30 million chance of changing the outcome in a typical US national election [@gelman2012] | Direct payout proportional to contribution |
+| **Your vote matters** | ~1 in 30 million chance of mattering [@gelman2012] | Direct payout proportional to contribution |
 | **Outcome fidelity** | Politician may ignore you after winning | Funds flow to verified implementation |
 
 Your species turns out at 50-65% for elections despite getting paid nothing. This referendum pays you if it works, credits you for who you recruited, and publishes the score.
