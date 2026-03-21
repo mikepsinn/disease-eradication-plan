@@ -16,7 +16,7 @@ from dih_models.yaml_utils import yaml_safe_load, load_quarto_config
 import re
 import subprocess
 from pathlib import Path
-from typing import Dict, List, Optional, Any
+from typing import Dict, List, Optional, Any, Iterable
 from datetime import datetime, timezone
 
 from dih_models.variable_replacement import load_variables
@@ -168,6 +168,7 @@ class SearchIndexGenerator:
 
     # Configs to skip (test configs, base config that gets overwritten)
     SKIP_CONFIGS = {'_quarto.yml', '_quarto-test.yml'}
+    GIT_LOG_ARG_CHARS_LIMIT = 24000
 
     def __init__(self, project_root: Path, variables: Optional[Dict[str, str]] = None):
         self.project_root = project_root
@@ -203,39 +204,99 @@ class SearchIndexGenerator:
 
         return self._git_available
 
+    def _normalize_rel_key(self, source_path: Path) -> str:
+        """Normalize a path to the relative key format used by git cache lookups."""
+        try:
+            rel_path = source_path.relative_to(self.project_root)
+        except ValueError:
+            rel_path = source_path
+        return str(rel_path).replace('\\', '/')
+
+    def _resolve_actual_source_path(self, qmd_path: Path, config_name: str) -> Path:
+        """Resolve the real source path used for indexing and lastmod lookup."""
+        config = self.quarto_configs.get(config_name)
+        if qmd_path.name == 'index.qmd' and config and config.get('index_source'):
+            source_path = self.project_root / config['index_source']
+            if source_path.exists():
+                return source_path
+        return qmd_path
+
+    def _iter_git_log_batches(self, rel_keys: Iterable[str]) -> Iterable[List[str]]:
+        """Yield path batches small enough for Windows command-line limits."""
+        batch: List[str] = []
+        batch_chars = 0
+
+        for rel_key in rel_keys:
+            rel_key_chars = len(rel_key) + 1
+            if batch and batch_chars + rel_key_chars > self.GIT_LOG_ARG_CHARS_LIMIT:
+                yield batch
+                batch = []
+                batch_chars = 0
+
+            batch.append(rel_key)
+            batch_chars += rel_key_chars
+
+        if batch:
+            yield batch
+
+    def _prefetch_git_lastmods(self, source_paths: Iterable[Path]) -> None:
+        """Batch-populate git lastmod dates for a set of files."""
+        if not self._ensure_git_available():
+            return
+
+        rel_keys = []
+        for source_path in source_paths:
+            rel_key = self._normalize_rel_key(source_path)
+            if rel_key not in self._git_lastmod_cache:
+                rel_keys.append(rel_key)
+
+        if not rel_keys:
+            return
+
+        unique_rel_keys = list(dict.fromkeys(rel_keys))
+        for batch in self._iter_git_log_batches(unique_rel_keys):
+            batch_set = set(batch)
+            try:
+                result = subprocess.run(
+                    ["git", "-C", str(self.project_root), "log", "--format=%ct", "--name-only", "--", *batch],
+                    capture_output=True,
+                    text=True,
+                    check=False,
+                )
+            except Exception:
+                result = None
+
+            if result and result.returncode == 0:
+                current_lastmod: Optional[str] = None
+                resolved_count = 0
+
+                for raw_line in result.stdout.splitlines():
+                    line = raw_line.strip()
+                    if not line:
+                        continue
+                    if line.isdigit():
+                        current_lastmod = datetime.fromtimestamp(int(line), tz=timezone.utc).strftime('%Y-%m-%d')
+                        continue
+
+                    rel_key = line.replace('\\', '/')
+                    if current_lastmod and rel_key in batch_set and rel_key not in self._git_lastmod_cache:
+                        self._git_lastmod_cache[rel_key] = current_lastmod
+                        resolved_count += 1
+                        if resolved_count == len(batch_set):
+                            break
+
+            for rel_key in batch:
+                self._git_lastmod_cache.setdefault(rel_key, None)
+
     def _get_git_lastmod(self, source_path: Path) -> Optional[str]:
         """Return YYYY-MM-DD from last git commit touching the file."""
         if not self._ensure_git_available():
             return None
 
-        try:
-            rel_path = source_path.relative_to(self.project_root)
-        except ValueError:
-            rel_path = source_path
-
-        rel_key = str(rel_path).replace('\\', '/')
-        if rel_key in self._git_lastmod_cache:
-            return self._git_lastmod_cache[rel_key]
-
-        try:
-            result = subprocess.run(
-                ["git", "-C", str(self.project_root), "log", "-1", "--format=%ct", "--", rel_key],
-                capture_output=True,
-                text=True,
-                check=False,
-            )
-            if result.returncode == 0:
-                ts_text = result.stdout.strip()
-                if ts_text:
-                    ts = int(ts_text)
-                    git_lastmod = datetime.fromtimestamp(ts, tz=timezone.utc).strftime('%Y-%m-%d')
-                    self._git_lastmod_cache[rel_key] = git_lastmod
-                    return git_lastmod
-        except Exception:
-            pass
-
-        self._git_lastmod_cache[rel_key] = None
-        return None
+        rel_key = self._normalize_rel_key(source_path)
+        if rel_key not in self._git_lastmod_cache:
+            self._prefetch_git_lastmods([source_path])
+        return self._git_lastmod_cache.get(rel_key)
 
     def _get_lastmod_date(self, source_path: Path) -> Optional[str]:
         """Prefer git commit date; fall back to filesystem modified date."""
@@ -452,16 +513,10 @@ class SearchIndexGenerator:
     def parse_qmd_file(self, qmd_path: Path, config_name: str) -> Optional[SearchIndexEntry]:
         """Parse a single QMD file and create search index entry."""
         try:
-            # For index.qmd, use index-source if defined in config
-            # This is because index.qmd gets overwritten by the render script with content
-            # from the actual source file specified in dih-render.index-source
-            config = self.quarto_configs.get(config_name)
-            actual_source_path = qmd_path
-
-            if qmd_path.name == 'index.qmd' and config and config.get('index_source'):
-                source_path = self.project_root / config['index_source']
-                if source_path.exists():
-                    actual_source_path = source_path
+            actual_source_path = self._resolve_actual_source_path(qmd_path, config_name)
+            if actual_source_path != qmd_path:
+                config = self.quarto_configs.get(config_name)
+                if config and config.get('index_source'):
                     logger.debug("Using index-source: %s", config['index_source'])
 
             with open(actual_source_path, 'r', encoding='utf-8') as f:
@@ -552,6 +607,10 @@ class SearchIndexGenerator:
             self._index_cache[config_name] = []
             return []
 
+        self._prefetch_git_lastmods(
+            self._resolve_actual_source_path(qmd_path, config_name) for qmd_path in qmd_files
+        )
+
         entries = []
         for qmd_path in qmd_files:
             entry = self.parse_qmd_file(qmd_path, config_name)
@@ -587,6 +646,12 @@ class SearchIndexGenerator:
         logger.debug("=" * 60)
 
         output_files = {}
+        all_source_paths = []
+
+        for config_name in self.quarto_configs.keys():
+            for qmd_path in self.get_qmd_files_for_config(config_name):
+                all_source_paths.append(self._resolve_actual_source_path(qmd_path, config_name))
+        self._prefetch_git_lastmods(all_source_paths)
 
         for config_name in self.quarto_configs.keys():
             entries = self.generate_index_for_config(config_name)

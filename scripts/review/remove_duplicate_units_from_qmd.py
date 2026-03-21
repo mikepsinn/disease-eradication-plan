@@ -27,6 +27,9 @@ sys.path.insert(0, str(project_root))
 
 from dih_models import parameters
 
+_VAR_REFERENCE_PATTERN = re.compile(r"\{\{<\s*var\s+([a-zA-Z0-9_]+)\s*>\}\}", re.IGNORECASE)
+_DUPLICATE_UNIT_REPLACEMENT = r"\1"
+
 
 def extract_units_from_parameters() -> Dict[str, str]:
     """Extract unit text for each parameter from parameters.py."""
@@ -99,6 +102,25 @@ def create_pattern(var_name: str, unit: str) -> re.Pattern:
     return re.compile(f"({var_pattern})\\s+({unit_pattern})\\b", re.IGNORECASE)
 
 
+def build_replacement_rules(unit_mappings: Dict[str, str]) -> Dict[str, list[re.Pattern]]:
+    """Precompile duplicate-unit patterns once per variable."""
+    replacement_rules: Dict[str, list[re.Pattern]] = {}
+
+    for var_name, unit in unit_mappings.items():
+        patterns = [create_pattern(var_name, unit)]
+
+        if unit == "trials/year":
+            patterns.append(create_pattern(var_name, "trials per year"))
+
+        if unit == "years":
+            var_pat = r"\{\{< var " + re.escape(var_name) + r" >\}\}"
+            patterns.append(re.compile(f"({var_pat})-years?\\b", re.IGNORECASE))
+
+        replacement_rules[var_name] = patterns
+
+    return replacement_rules
+
+
 def find_and_replace_duplicates(
     qmd_files: list[Path],
     unit_mappings: Dict[str, str],
@@ -111,40 +133,26 @@ def find_and_replace_duplicates(
     """
     files_modified = 0
     total_replacements = 0
+    replacement_rules = build_replacement_rules(unit_mappings)
 
     for file_path in qmd_files:
         try:
             content = file_path.read_text(encoding="utf-8")
+            if "{{< var " not in content:
+                continue
+
             original_content = content
             file_replacements = 0
+            present_vars = {
+                var_name.lower()
+                for var_name in _VAR_REFERENCE_PATTERN.findall(content)
+                if var_name.lower() in replacement_rules
+            }
 
-            # Apply replacements for all variables
-            for var_name, unit in unit_mappings.items():
-                pattern = create_pattern(var_name, unit)
-                matches = list(pattern.finditer(content))
-
-                if matches:
-                    # Replace with just the variable reference (group 1)
-                    content = pattern.sub(r"\1", content)
-                    file_replacements += len(matches)
-
-                # For trials/year variables, also match "trials per year"
-                if unit == "trials/year":
-                    alt_pattern = create_pattern(var_name, "trials per year")
-                    matches = list(alt_pattern.finditer(content))
-                    if matches:
-                        content = alt_pattern.sub(r"\1", content)
-                        file_replacements += len(matches)
-
-                # For years variables, also match -year compound adjective
-                # e.g., {{< var efficacy_lag_years >}}-year -> renders as "8.2 years-year"
-                if unit == "years":
-                    var_pat = r"\{\{< var " + re.escape(var_name) + r" >\}\}"
-                    year_pat = re.compile(f"({var_pat})-years?\\b", re.IGNORECASE)
-                    matches = list(year_pat.finditer(content))
-                    if matches:
-                        content = year_pat.sub(r"\1", content)
-                        file_replacements += len(matches)
+            for var_name in present_vars:
+                for pattern in replacement_rules[var_name]:
+                    content, replacements = pattern.subn(_DUPLICATE_UNIT_REPLACEMENT, content)
+                    file_replacements += replacements
 
             if content != original_content:
                 files_modified += 1
