@@ -38,15 +38,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 493 parameters used in the analysis, organized by type:
+This appendix documents all 494 parameters used in the analysis, organized by type:
 
 - External sources (peer-reviewed): 168
-- Calculated values: 229
+- Calculated values: 230
 - Core definitions: 96
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (229 parameters) • [External Data Sources](#sec-external) (168 parameters) • [Core Definitions](#sec-definitions) (96 parameters)
+[Calculated Values](#sec-calculated) (230 parameters) • [External Data Sources](#sec-external) (168 parameters) • [Core Definitions](#sec-definitions) (96 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -6244,6 +6244,44 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-medical_research_pct_of_disease_burden.qmd >}}
+
+:::
+
+### Ratio of Military to Clinical Trials Spending: 45.3:1 {#sec-military_to_clinical_trials_spending_ratio}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Ratio of global military spending to all clinical trials spending (government + industry + nonprofit)
+
+**Inputs**:
+
+- [Global Military Spending in 2024](#sec-global_military_spending_annual_2024) 📊: $2.72T
+- [Annual Global Spending on Clinical Trials](#sec-global_clinical_trials_spending_annual) 📊: $60B (95% CI: $50B - $75B)
+
+$$
+\begin{gathered}
+Ratio_{mil:trials} \\
+= \frac{Spending_{mil}}{Spending_{trials}} \\
+= \frac{\$2.72T}{\$60B} \\
+= 45.3
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-military_to_clinical_trials_spending_ratio.qmd >}}
+
+{{< include ../figures/sensitivity-table-military_to_clinical_trials_spending_ratio.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-military_to_clinical_trials_spending_ratio.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-military_to_clinical_trials_spending_ratio.qmd >}}
 
 :::
 
