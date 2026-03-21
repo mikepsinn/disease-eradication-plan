@@ -613,7 +613,7 @@ This is why aliens don't visit.
 
 [![The Earth Optimization Prize](https://manual.warondisease.org/assets/og/least-bad-idea-prize-og-1200x630.jpg)](https://manual.warondisease.org/knowledge/strategy/earth-optimization-prize.html)
 
-> The Earth Optimization Prize is an open-source coordination game: deposit into a shared pool, recruit verified participants into a global referendum, and help raise global healthy life years and median income within 15 years. On failure, depositors divide the realized pool pro rata. On success, the pool routes to VOTE point-holders (recruiters) instead. The objectives are global HALE of 79 years and global median income of $504K. The first institutional ask is $30B.
+> The Earth Optimization Prize is an open-source coordination game: deposit into a shared pool, recruit verified participants into a global referendum, and help raise global healthy life years and median income within 15 years. On failure, depositors divide the realized pool pro rata. On success, the pool routes to VOTE point-holders (recruiters) instead. The objectives are global HALE of 79 years and global median income of $504K.
 
 ### [The Optimal Budget Generator: A Causal Inference Protocol for Maximizing Median Health and Wealth Through Public Goods Funding](https://manual.warondisease.org/knowledge/appendix/optimal-budget-generator-spec.html)
 

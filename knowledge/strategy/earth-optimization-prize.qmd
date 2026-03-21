@@ -3,7 +3,8 @@ title: "The Earth Optimization Prize"
 subtitle: "An open-source coordination game for raising global median income and healthy life years within 15 years"
 description: "The prize works like an Earth Optimization Game: bring verified people into the first 1% Treaty referendum, earn VOTE points, and help build the coalition. On failure, depositors split the realized pool. On success, VOTE point-holders share it. The current protocol is the open-source instruction manual for how to play."
 abstract: |
-  The Earth Optimization Prize is an open-source coordination game: deposit into a shared pool, recruit verified participants into a global referendum, and help raise global healthy life years and median income within {{< var prize_pool_resolution_years_nounit >}} years. On failure, depositors divide the realized pool pro rata. On success, the pool routes to VOTE point-holders (recruiters) instead. The objectives are global HALE of {{< var wishonia_projected_hale_year_15 >}} and global median income of {{< var wishonia_trajectory_avg_income_year_15 >}}. published: true
+  The Earth Optimization Prize is an open-source coordination game: deposit into a shared pool, recruit verified participants into a global referendum, and help raise global healthy life years and median income within {{< var prize_pool_resolution_years_nounit >}} years. On failure, depositors divide the realized pool pro rata. On success, the pool routes to VOTE point-holders (recruiters) instead. The objectives are global HALE of {{< var wishonia_projected_hale_year_15 >}} and global median income of {{< var wishonia_trajectory_avg_income_year_15 >}}. 
+published: true
 tags:
   - strategy
   - mechanism-design
@@ -22,7 +23,7 @@ youtube-thumbnail: /assets/podcast/least-bad-idea-prize-paper-youtube.jpg
 2. **What success means.** At year {{< var prize_pool_resolution_years_nounit >}}, success means global HALE (healthy life expectancy) reaches {{< var wishonia_projected_hale_year_15 >}} and global median income reaches {{< var wishonia_trajectory_avg_income_year_15 >}} (modeled ceiling, not forecast; see [GDP Trajectories](../economics/gdp-trajectories.qmd) [@gdp-trajectories-paper-2025] for the compounding model).
 3. **How PRIZE works.** Depositors fund one pool until year {{< var prize_pool_resolution_years_nounit >}}. Targets missed: depositors divide the realized pool pro rata.
 4. **How VOTE works.** Recruit one verified referendum participant, earn one point. On success, the pool routes to VOTE point-holders.
-5. **How it gets started.** A host launches the [Planetary Constitutional Convention](planetary-constitutional-convention.qmd), PRIZE deposits begin, the Scoreboard goes live, and recruitment compounds from there. (For the institutional deployment plan, see [Why Your Institution Should Be The Initiating Node](initiating-node-brief.qmd).)
+5. **How it gets started.** A host launches the [Planetary Constitutional Convention](planetary-constitutional-convention.qmd), PRIZE deposits begin, the Scoreboard goes live, and recruitment compounds from there. (For the institutional deployment plan, see [Why Your Institution Should Be The Initiating Node](initiating-node-memo.qmd).)
 6. **Why it matters.** Status quo is not stable. Governance dysfunction already costs {{< var political_dysfunction_tax_per_person_annual >}} per person per year in suppressed growth and misallocated resources ([Political Dysfunction Tax](../appendix/political-dysfunction-tax.qmd) [@political-dysfunction-tax-paper-2025]). The [destructive economy](../economics/gdp-trajectories.qmd) [@gdp-trajectories-paper-2025] reaches the 50% Terminal Parasitic Load Threshold (the point where half the economy is destructive and stealing beats creating) in {{< var destructive_economy_years_to_50pct_gdp >}} if current trends continue.
 
 ## The Problem Statement
@@ -104,7 +105,7 @@ But Olson's problem is downstream of awareness and pluralistic ignorance. The pu
 
 ### 4. Nobody Knows Which Solutions to Implement
 
-The prize does not prescribe a solution. It pays for outcomes: median healthy life years and median real after-tax income. Anyone, anywhere, using any legal method, who causes either number to rise gets paid proportionally. This is an Earth Optimization Game. The [current Earth Optimization manual](https://manual.warondisease.org) is the current open-source instruction manual, not the goal and not a sacred blueprint. It exists because humans need a starting manual for how to play. The prize exists to fund whichever implementation manual works better in practice. There are {{< var global_population_2024_nounit >}} of you and AIs that are almost certainly smarter than its authors. If a better design exists, the prize will find it.
+The prize does not prescribe a solution. It pays for outcomes: median healthy life years and median real after-tax income. Anyone, anywhere, using any legal method, who causes either number to rise gets paid proportionally. This is an Earth Optimization Game.
 
 This makes the search decentralized. No committee decides which reforms to fund. Millions of financially motivated participants search for, advocate, and implement whatever moves the two numbers. A researcher who discovers a cheaper trial design profits. A lobbyist who passes legislation profits. A nonprofit that recruits a million referendum voters profits. The mechanism is agnostic about how. It engineers the incentives so that the collective intelligence of your entire species is pointed at two measurements instead of scattered across a thousand arguments about which measurement matters.
 
@@ -217,21 +218,21 @@ The selfish case for the prize is bigger than either instrument. It is the size 
 ### If You Have Reach
 
 - **Funders:** pick one lane this week and publish the commitment so other participants can coordinate around it.
-- **Researchers / builders:** publish one fork, attack, or replacement component this week rather than waiting for perfect certainty.
+- **Researchers / builders:** build something this week rather than waiting for perfect certainty.
 - **Media:** publish one briefing or story that treats the Scoreboard and futures table as live public infrastructure, not a curiosity.
-- **Institutions:** see the [90-day pilot proposal](../grant-proposal/earth-optimization-prize-90-day-pilot.qmd) and [initiating node brief](initiating-node-brief.qmd).
+- **Institutions:** see the [90-day pilot proposal](../grant-proposal/earth-optimization-prize-90-day-pilot.qmd) and [initiating node brief](initiating-node-memo.qmd).
 
 That is the ordinary-participant ask: three actions, under two minutes. If the prize fails, your deposit still has a pro-rata claim on the realized pool. If the prize succeeds, your PRIZE deposit helped push the world onto a far better branch. The mechanism is open, the Scoreboard is public, and the first step is deliberately small. Whether it matters depends on how quickly enough people decide the arithmetic is worth acting on.
 
 ## How the Game Spreads
 
-1. **The manual gets stress-tested.** The [Planetary Constitutional Convention](planetary-constitutional-convention.qmd) [@planetary-constitutional-convention-paper-2025] opens. Teams fork the [current manual](https://manual.warondisease.org), improve it, replace the wrong parts. PRIZE deposits can begin during this stage.
+1. **The [Planetary Constitutional Convention](planetary-constitutional-convention.qmd) [@planetary-constitutional-convention-paper-2025].** The manual gets stress-tested. PRIZE deposits can begin during this stage.
 2. **Deposits and the referendum.** Every depositor learns what the prize is for. The [referendum](global-referendum.qmd) launches: voters set their preferred military-to-health allocation, and every recruiter who brings a verified participant earns VOTE points. The referendum grows because recruitment is rewarded.
 3. **The Scoreboard climbs.** Votes, treaty support, allocation results, prize pool size, and the two outcome metrics. Each new cohort of participants makes the next cohort easier to convince.
 4. **The lobbying campaign.** Millions of voters, a serious pool, a visible coalition. The [implementation financing](earth-optimization-protocol-v1.qmd) [@earth-optimization-protocol-2025] converts the Scoreboard into political pressure.
 5. **Implementation.** Budget authority shifts real resources. Implementers compete to supply the cheapest verified pieces.
 
-Each stage builds the audience for the next. Nobody has to coordinate this centrally. The incentives coordinate it. For the institutional deployment plan and activation budget, see [Why Your Institution Should Be The Initiating Node](initiating-node-brief.qmd).
+Each stage builds the audience for the next. Nobody has to coordinate this centrally. The incentives coordinate it. For the institutional deployment plan and activation budget, see [Why Your Institution Should Be The Initiating Node](initiating-node-memo.qmd).
 
 ## How the Prize Moves Money {#how-money-moves-full-mechanism}
 
@@ -239,11 +240,25 @@ Everything the prize exists to produce is either healthy life years or income. P
 
 **The PRIZE pool trigger.** At year {{< var prize_pool_resolution_years_nounit >}}: targets met, the pool distributes to VOTE point-holders; targets missed, depositors divide it pro rata.
 
-**Why better ideas win, not extract.** If a superior revision appears, VOTE point-holders shift recruitment toward it because doing so maximizes their own payout. The biggest reward is outcome perpetuity: a continuing share that only flows while results keep being produced. The protocol itself is replaceable: a strictly better selection mechanism replaces the current one under the same replacement rule. The two numbers do not change. Everything building toward them is improvable plumbing.
+**Why better ideas win.** The prize pays for outcomes, not methods. If someone finds a cheaper way to move the two numbers, VOTE point-holders shift recruitment toward it because doing so maximizes their own payout. The two numbers do not change. Everything building toward them is improvable plumbing.
 
 ## The Numbers
 
-**How large is the pool?** The pool starts at whatever gets deposited and compounds through the [wishocratic fund](../economics/wishocratic-investment-fund.qmd) at {{< var prize_pool_annual_return >}} annually. The potential ceiling is {{< var prize_pool_potential_max_size >}} if global retirement capital eventually joins (see [Wishocratic Investment Fund](../economics/wishocratic-investment-fund.qmd) for the derivation). For activation budgets and pool seed benchmarks, see [Why Your Institution Should Be The Initiating Node](initiating-node-brief.qmd).
+**What does it cost to get the game to scale?** The activation budget is the capital required to make {{< var global_coordination_target_pct >}} participation credible through direct referral incentives, verification, and global launch operations:
+
+{{< var global_coordination_activation_budget_latex >}}
+
+The planning midpoint is {{< var global_coordination_activation_budget >}}: a blended reward of {{< var global_coordination_activation_reward_per_verified_participant >}} per verified participant, plus {{< var global_coordination_verification_and_payment_cost_per_participant >}} in verification and payment operations, plus {{< var global_coordination_platform_and_operations_cost >}} in fixed platform and launch costs.
+
+**How large is the pool?** The pool starts at whatever gets deposited and compounds through the [wishocratic fund](../economics/wishocratic-investment-fund.qmd) at {{< var prize_pool_annual_return >}} annually. The potential ceiling is the global retirement asset base ({{< var global_retirement_assets >}}), which would compound to:
+
+{{< var prize_pool_potential_max_size_latex >}}
+
+A separate benchmark: how much pool capital would make two VOTE points look retirement-equivalent on success for a representative saver?
+
+{{< var prize_pool_retirement_equivalent_principal_latex >}}
+
+That benchmark is {{< var prize_pool_retirement_equivalent_principal >}}. It is the pool size where the game's upside becomes personally obvious, not the minimum to get started.
 
 **What does a VOTE point pay?** The modeled coordination target is {{< var global_coordination_target_pct >}} of humanity:
 
@@ -289,7 +304,7 @@ The politician line is the one that requires explanation, because "politicians n
 |:---|:---|
 | "This will never work" | The treaty campaign costs {{< var treaty_campaign_total_cost >}}, with a societal benefit-cost ratio exceeding {{< var treaty_roi_existing_drugs_only >}} [@cost-of-change-paper-2025]. Even the ceiling cost of fixing *everything* (matching all opposition spending across all policy domains globally) is {{< var global_political_reform_investment >}}, which a coalition of 3-5 decabillionaires could fund while keeping the vast majority of their wealth [@cost-of-change-paper-2025]. "Political impossibility" is a capital allocation problem, not a physics problem. |
 | "Does this require trusting one institution?" | No. A credible host can initiate the network, but it should not be the root of trust. The rules, contracts, interfaces, and measurement layers should remain open, forkable, and replaceable so another host can continue the process if the first one fails. |
-| "Does hosting mean endorsing the current manual?" | No. A host institution can endorse the convention, the metric standard, and the red-team process without declaring the current draft correct. Stage 1 exists to improve the manual if a better version exists. |
+| "Does hosting mean endorsing the current manual?" | No. The host endorses the process, not the draft. See [Planetary Constitutional Convention](planetary-constitutional-convention.qmd). |
 | "I'd lose my $1" | On failure, depositors divide the realized pool pro rata. On success, the deposit funds the pool by design. The selfish case is that the rest of your life got much larger than the dollar you put in. |
 | "Can I sell my claim?" | Not inside the protocol. PRIZE stays with the depositor's verified account until resolution. VOTE stays with the verified recruiter who earned it. Private contracts can exist outside the protocol, like assigning future royalties, but the protocol does not broker or enforce them. |
 | "Why can't PRIZE be withdrawn early?" | Because a redeem-anytime exit right would let depositors drain the pool as success became more likely. The prize only works if the capital remains committed until the measurement date. |
@@ -299,25 +314,4 @@ The politician line is the one that requires explanation, because "politicians n
 | "Why can't VOTE points be traded?" | Tradability would buy liquidity but invert the signal: outsiders could buy coalition credit without doing coalition work. The public signal this design relies on is simpler: verified participant count, referendum growth, and a visible pool of committed capital. |
 | "Won't someone game the metrics?" | Mortality is binary and hard to fake across millions of people. Median income requires improving the middle of the distribution, not just the top. And the adversarial challenge window means anyone who catches gaming can post a bond, present evidence, and claw back the payout. |
 
-## What the Current Manual Covers (and Where It Needs Improvement)
-
-The full table of what the [current Earth Optimization manual](https://manual.warondisease.org) covers, paper by paper, and the minimum functions any serious implementation manual still has to solve, is in the [Planetary Constitutional Convention](planetary-constitutional-convention.qmd) [@planetary-constitutional-convention-paper-2025]. The prize asks one question: *which implementation manual can actually cause the verified improvements?* We wrote the current manual as a starting instruction manual, not a sacred blueprint. If any part of it is wrong, improve the manual or replace that part with something better. We expect that to happen.
-
-## Help Improve the Manual
-
-If you think the [current Earth Optimization manual](https://manual.warondisease.org) is wrong or incomplete, fork it and improve it through the [Planetary Constitutional Convention](planetary-constitutional-convention.qmd) [@planetary-constitutional-convention-paper-2025]. The point is not to submit a rival artifact. The point is to help humanity win faster.
-
-## Why This Works or Gets Replaced
-
-There are only two stable outcomes:
-
-1. **The current instruction manual is mostly right but incomplete.** Then whoever augments it with the missing functions and causes implementation receives the prize. The result is a revised manual that becomes the new current manual.
-2. **A strict improvement exists.** Then whoever builds and implements that improvement receives the prize instead, provided it dominates the Minimum Acceptable Governance function by function rather than skipping inconvenient pieces.
-
-Those are the only serious possibilities. The unserious possibility is the one humans choose by default: endless argument with no implementation market. Either way, the prize converges on a better instruction manual and causes its implementation. People are dying at {{< var global_disease_deaths_daily_nounit >}} per day while your species argues about mechanism design. Please improve the manual as quickly as possible.
-
-> Reward whoever causes the most people to stop dying and start earning more, using any legal method, or replace the current best attempt with a better one.
-
-One institution may initiate the network. No institution should be able to stop it.
-
-The mechanism does not need participants to be wise. It needs them to be self-interested, impatient, and capable of reading a scoreboard. The remaining variable is how long this takes to become obvious enough to act on.
+The mechanism does not need participants to be wise. It needs them to be self-interested, impatient, and capable of reading a scoreboard. The whole thing is [open source](https://github.com/wishonia/earth-optimization-instructions).
