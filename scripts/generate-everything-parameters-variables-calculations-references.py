@@ -140,6 +140,7 @@ from dih_models.papers_qmd_generator import generate_papers_qmd
 from dih_models.website_rss_generator import generate_rss_feed
 from dih_models.footer_generator import generate_footer_html
 from dih_models.links_generator import generate_links_qmd
+from dih_models.subdomain_redirects_generator import generate_subdomain_redirects_js
 from dih_models.readme_generator import generate_readme
 from generate_redirects import generate_redirects
 from dih_models.quarto_references_generator import update_references_from_quarto
@@ -1297,6 +1298,10 @@ def main():
     # Generate shared footer HTML with links to all papers
     logger.debug("[*] Generating footer HTML...")
     footer_html_path = generate_footer_html(project_root)
+
+    # Generate shared subdomain redirect JavaScript
+    logger.debug("[*] Generating subdomain redirect JS...")
+    subdomain_redirects_path = generate_subdomain_redirects_js(project_root)
 
     # Generate knowledge/links.qmd (Linktree-style page) from YAML config
     logger.debug("[*] Generating knowledge/links.qmd...")

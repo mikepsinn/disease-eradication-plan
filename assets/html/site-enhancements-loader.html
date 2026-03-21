@@ -14,7 +14,7 @@
     document.head.appendChild(link);
 
     // Load scripts (audio-worklet-processor.js is loaded at runtime by AudioWorklet, not here)
-    var scripts = ['assets/js/gemini-live-client.js', 'assets/js/audio-utils.js', 'assets/js/site-enhancements.js', 'assets/js/promotion-bar.js', 'assets/js/chat-widget.js'];
+    var scripts = ['assets/js/generated-subdomain-redirects.js', 'assets/js/gemini-live-client.js', 'assets/js/audio-utils.js', 'assets/js/site-enhancements.js', 'assets/js/promotion-bar.js', 'assets/js/chat-widget.js'];
     for (var i = 0; i < scripts.length; i++) {
       var s = document.createElement('script');
       s.src = offset + scripts[i];
