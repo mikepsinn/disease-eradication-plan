@@ -38,15 +38,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 494 parameters used in the analysis, organized by type:
+This appendix documents all 497 parameters used in the analysis, organized by type:
 
 - External sources (peer-reviewed): 168
-- Calculated values: 230
+- Calculated values: 233
 - Core definitions: 96
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (230 parameters) • [External Data Sources](#sec-external) (168 parameters) • [Core Definitions](#sec-definitions) (96 parameters)
+[Calculated Values](#sec-calculated) (233 parameters) • [External Data Sources](#sec-external) (168 parameters) • [Core Definitions](#sec-definitions) (96 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -10252,6 +10252,39 @@ $$
 
 :::
 
+### Treaty Projected HALE at Year 15: 69.8 years {#sec-treaty_projected_hale_year_15}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Projected global HALE at year 15 under Treaty Trajectory. Current HALE plus the treaty-driven improvement from closing the disease gap.
+
+**Inputs**:
+
+- [Global Healthy Life Expectancy (HALE)](#sec-global_hale_current) 📊: 63.3 years (SE: ±1.5 years)
+- [Treaty HALE Gain at Year 15](#sec-treaty_hale_gain_year_15) 🔢: 6.55 years
+
+$$
+HALE_{treaty,15} = HALE_0 + \Delta HALE_{treaty,15}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-treaty_projected_hale_year_15.qmd >}}
+
+{{< include ../figures/sensitivity-table-treaty_projected_hale_year_15.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-treaty_projected_hale_year_15.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-treaty_projected_hale_year_15.qmd >}}
+
+:::
+
 ### Treaty ROI - Historical Rate (Existing Drugs): 259k:1 {#sec-treaty_roi_existing_drugs_only}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -10465,6 +10498,39 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-treaty_roi_trial_capacity_plus_efficacy_lag.qmd >}}
+
+:::
+
+### Treaty Trajectory Average Income at Year 15: $149K {#sec-treaty_trajectory_avg_income_year_15}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Average income (GDP per capita) at year 15 under the Treaty Trajectory.
+
+**Inputs**:
+
+- [Treaty Trajectory GDP at Year 15](#sec-treaty_trajectory_gdp_year_15) 🔢: $1.33 quadrillion
+- [Global Population 2040 (Projected)](#sec-global_population_2040_projected) 📊: 8.9 billion of people
+
+$$
+\bar{y}_{treaty,15} = \frac{GDP_{treaty,15}}{Pop_{2040}}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-treaty_trajectory_avg_income_year_15.qmd >}}
+
+{{< include ../figures/sensitivity-table-treaty_trajectory_avg_income_year_15.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-treaty_trajectory_avg_income_year_15.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-treaty_trajectory_avg_income_year_15.qmd >}}
 
 :::
 
@@ -10705,6 +10771,47 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_20.qmd >}}
+
+:::
+
+### Treaty Trajectory GDP at Year 15: $1.33 quadrillion {#sec-treaty_trajectory_gdp_year_15}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Projected global GDP at year 15 under the Treaty Trajectory: military-to-science reallocation plus disease-burden recovery only. 3-year ramp at 50% intensity + 12 years full implementation. Excludes non-health dysfunction-capital reallocation.
+
+**Inputs**:
+
+- [Global GDP (2025)](#sec-global_gdp_2025) 📊: $115T
+- [Baseline Global GDP Growth Rate](#sec-gdp_baseline_growth_rate): 2.5%
+- [Wishonia Military Reallocation Physical Max Share](#sec-wishonia_military_reallocation_physical_max_share) 🔢: 87.6%
+- [GDP Growth Boost at 30% Military Reallocation](#sec-military_redirect_gdp_boost_at_30pct): 5.5% (95% CI: 3.5% - 7.5%)
+- [R&D Spillover Multiplier](#sec-rd_spillover_multiplier): 2x (95% CI: 1.5x - 2.5x)
+- [Wishonia Disease Cure Fraction (15yr, Full Implementation)](#sec-wishonia_disease_cure_fraction_15yr) 🔢: 100%
+- [Disease Burden as % of GDP](#sec-disease_burden_gdp_drag_pct) 📊: 13%
+
+$$
+\begin{gathered}
+GDP_{treaty,15} \\
+= GDP_0(1+g_{treaty,ramp})^3(1+g_{treaty,full})^{12}
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-treaty_trajectory_gdp_year_15.qmd >}}
+
+{{< include ../figures/sensitivity-table-treaty_trajectory_gdp_year_15.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-treaty_trajectory_gdp_year_15.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-treaty_trajectory_gdp_year_15.qmd >}}
 
 :::
 
