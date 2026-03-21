@@ -25,8 +25,9 @@ Usage:
 
 import re
 import sys
+import json
 from pathlib import Path
-from typing import Any, Dict, Set
+from typing import Any, Dict, Optional, Set, Tuple
 
 try:
     import bibtexparser
@@ -40,6 +41,76 @@ except ImportError:
 _URL_PATTERN = re.compile(r'https?://[^\s<>\"\'\)]+[^\s<>\"\'\)\.,]')
 _BIBTEX_KEY_NONALNUM = re.compile(r'[^a-zA-Z0-9\-_]')
 _BIBTEX_KEY_MULTI_HYPHEN = re.compile(r'-+')
+_REFERENCE_CACHE_VERSION = 1
+_PARSED_REFERENCES_CACHE: Dict[Tuple[str, int, int], Dict[str, Dict[str, Any]]] = {}
+
+
+def _get_bib_signature(bib_path: Path) -> Tuple[str, int, int]:
+    """Return a cheap file signature for cache validation."""
+    stat = bib_path.stat()
+    return str(bib_path.resolve()), stat.st_size, stat.st_mtime_ns
+
+
+def _get_cache_path(bib_path: Path) -> Path:
+    """Store parsed-reference cache alongside Python bytecode artifacts."""
+    cache_dir = Path(__file__).resolve().parent / "__pycache__"
+    cache_dir.mkdir(parents=True, exist_ok=True)
+    return cache_dir / f"{bib_path.stem}-parsed-references.json"
+
+
+def _load_cached_references(bib_path: Path) -> Optional[Dict[str, Dict[str, Any]]]:
+    """Load cached parsed references when the BibTeX file is unchanged."""
+    signature = _get_bib_signature(bib_path)
+    if signature in _PARSED_REFERENCES_CACHE:
+        return _PARSED_REFERENCES_CACHE[signature]
+
+    cache_path = _get_cache_path(bib_path)
+    if not cache_path.exists():
+        return None
+
+    try:
+        with open(cache_path, encoding="utf-8") as f:
+            payload = json.load(f)
+    except Exception:
+        return None
+
+    expected_path, expected_size, expected_mtime_ns = signature
+    if (
+        payload.get("cache_version") != _REFERENCE_CACHE_VERSION
+        or payload.get("bib_path") != expected_path
+        or payload.get("size") != expected_size
+        or payload.get("mtime_ns") != expected_mtime_ns
+    ):
+        return None
+
+    references = payload.get("references")
+    if not isinstance(references, dict):
+        return None
+
+    _PARSED_REFERENCES_CACHE[signature] = references
+    return references
+
+
+def _write_cached_references(bib_path: Path, references: Dict[str, Dict[str, Any]]) -> None:
+    """Persist parsed references for future runs."""
+    cache_path = _get_cache_path(bib_path)
+    bib_path_str, size, mtime_ns = _get_bib_signature(bib_path)
+    payload = {
+        "cache_version": _REFERENCE_CACHE_VERSION,
+        "bib_path": bib_path_str,
+        "size": size,
+        "mtime_ns": mtime_ns,
+        "references": references,
+    }
+
+    try:
+        with open(cache_path, "w", encoding="utf-8") as f:
+            json.dump(payload, f, ensure_ascii=False)
+    except Exception:
+        # Cache failures must never break generation.
+        return
+
+    _PARSED_REFERENCES_CACHE[(bib_path_str, size, mtime_ns)] = references
 
 
 def parse_references_bib(bib_path: Path) -> Dict[str, Dict[str, Any]]:
@@ -65,6 +136,11 @@ def parse_references_bib(bib_path: Path) -> Dict[str, Dict[str, Any]]:
     if not bib_path.exists():
         print(f"[WARN] BibTeX file not found: {bib_path}", file=sys.stderr)
         return {}
+
+    bib_path = bib_path.resolve()
+    cached_references = _load_cached_references(bib_path)
+    if cached_references is not None:
+        return cached_references
 
     if not HAS_BIBTEXPARSER:
         print("[ERROR] bibtexparser not installed. Run: pip install bibtexparser", file=sys.stderr)
@@ -130,6 +206,7 @@ def parse_references_bib(bib_path: Path) -> Dict[str, Dict[str, Any]]:
 
         references[entry_key] = ref_data
 
+    _write_cached_references(bib_path, references)
     return references
 
 
