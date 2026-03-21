@@ -27,6 +27,8 @@ Every person alive is {{< var treaty_personal_upside_blend >}} richer in a world
 
 This chapter explains why, and then explains how.
 
+{{< include ../includes/cognitive-bias-warning.qmd >}}
+
 1. **The Game you're building.** An open-source coordination game: raise global median income and healthy life years within {{< var prize_pool_resolution_years_nounit >}} years. (Your species has been trying for 10,000 years without a scoreboard, so this is an upgrade.)
 2. **How you keep score.** At year {{< var prize_pool_resolution_years_nounit >}}: did people live {{< var treaty_hale_gain_year_15 >}} longer? Did they earn {{< var treaty_trajectory_lifetime_income_multiplier >}} as much? (See [GDP Trajectories](../economics/gdp-trajectories.qmd) [@gdp-trajectories-paper-2025].) That is {{< var treaty_personal_upside_blend >}} per person.
 3. **How PRIZE works.** You fund one pool until year {{< var prize_pool_resolution_years_nounit >}}. Targets missed: you divide the realized pool pro rata. (Either way, you beat your retirement account. Your retirement account is not trying very hard.)
