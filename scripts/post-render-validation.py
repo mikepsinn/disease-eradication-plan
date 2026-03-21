@@ -183,6 +183,30 @@ def find_html_files(output_dir):
     return html_files
 
 
+def _windows_long_path(path):
+    """Add the Win32 long-path prefix so os.path/open can see >260-char paths."""
+    path_str = os.fspath(path)
+    if os.name != "nt" or path_str.startswith("\\\\?\\"):
+        return path_str
+
+    abs_path = os.path.abspath(path_str)
+    if abs_path.startswith("\\\\"):
+        return "\\\\?\\UNC\\" + abs_path.lstrip("\\")
+    return "\\\\?\\" + abs_path
+
+
+def path_exists(path):
+    return os.path.exists(_windows_long_path(path))
+
+
+def path_is_dir(path):
+    return os.path.isdir(_windows_long_path(path))
+
+
+def open_path(path, *args, **kwargs):
+    return open(_windows_long_path(path), *args, **kwargs)
+
+
 def check_unrendered_inline_python(content, file_path):
     """Check for literal `{python} ...` expressions in HTML output"""
     errors = []
@@ -383,13 +407,13 @@ def check_broken_internal_links(content, file_path, output_dir):
 
             # Check if file exists
             # First check if it's a direct file path
-            if target_path.exists():
+            if path_exists(target_path):
                 # Path exists, check if it's a directory
-                if target_path.is_dir():
+                if path_is_dir(target_path):
                     # Directory link - check for index.html (only for href, not img src)
                     if attr_type == 'href':
                         index_path = target_path / "index.html"
-                        if not index_path.exists():
+                        if not path_exists(index_path):
                             context = f"Broken link to directory (no index.html): `{href_value}` -> {target_path} (context: ...{line[max(0, match.start()-50):min(len(line), match.end()+50)]}...)"
                             errors.append(ValidationError(file_path, i, "BROKEN_LINK", context))
                 # If it's a file, it exists - no error
@@ -404,7 +428,7 @@ def check_broken_internal_links(content, file_path, output_dir):
                 # Check if it's a file without extension and .html version exists (only for href)
                 if attr_type == 'href':
                     html_path = target_path.with_suffix('.html')
-                    if html_path.exists():
+                    if path_exists(html_path):
                         # The .html version exists, so the link should work
                         continue
 
@@ -565,7 +589,7 @@ def check_quarto_config_resources(output_dir):
     project_root = output_dir.parent.parent if "/_" in str(output_dir) or "\\_" in str(output_dir) else output_dir.parent
     quarto_config = project_root / "_quarto.yml"
 
-    if not quarto_config.exists():
+    if not path_exists(quarto_config):
         # No _quarto.yml found, skip this check
         return errors
 
@@ -589,7 +613,7 @@ def check_quarto_config_resources(output_dir):
                     # Remove leading slash for local files
                     pdf_file = value.lstrip('/')
                     pdf_path = output_dir / pdf_file
-                    if not pdf_path.exists():
+                    if not path_exists(pdf_path):
                         context = f"PDF linked in config not found: {value} (checked: {pdf_path})"
                         errors.append(ValidationError(quarto_config, 0, "MISSING_PDF_LINK", context))
                 else:
@@ -609,7 +633,7 @@ def check_quarto_config_resources(output_dir):
 def validate_file(file_path, output_dir):
     """Run all validation checks on a single HTML file"""
     try:
-        with open(file_path, encoding="utf-8") as f:
+        with open_path(file_path, encoding="utf-8") as f:
             content = f.read()
     except Exception as e:
         return [ValidationError(file_path, 0, "READ_ERROR", f"Failed to read file: {e}")]
@@ -634,7 +658,7 @@ def write_job_summary(errors_by_type: dict, output_dir: Path):
     total_errors = sum(len(errors) for errors in errors_by_type.values())
 
     try:
-        with open(GITHUB_STEP_SUMMARY, "a", encoding="utf-8") as f:
+        with open_path(GITHUB_STEP_SUMMARY, "a", encoding="utf-8") as f:
             f.write("\n## :x: Post-Render Validation Failed\n\n")
             f.write(f"**{total_errors} validation error(s) found**\n\n")
 
@@ -710,7 +734,7 @@ def write_json_output(errors: list, output_path: str) -> None:
     }
 
     try:
-        with open(output_path, "w", encoding="utf-8") as f:
+        with open_path(output_path, "w", encoding="utf-8") as f:
             json.dump(output, f, indent=2, ensure_ascii=False)
         print(f"\n[JSON OUTPUT] Written to: {output_path}")
     except Exception as e:
@@ -727,7 +751,7 @@ def main():
     args = parser.parse_args()
 
     output_dir = Path(args.output_dir).resolve()
-    if not output_dir.exists():
+    if not path_exists(output_dir):
         print(f"[ERROR] Output directory not found: {output_dir}")
         return 1
 
@@ -760,7 +784,7 @@ def main():
         # Write success to job summary
         if IN_GITHUB_ACTIONS and GITHUB_STEP_SUMMARY:
             try:
-                with open(GITHUB_STEP_SUMMARY, "a", encoding="utf-8") as f:
+                with open_path(GITHUB_STEP_SUMMARY, "a", encoding="utf-8") as f:
                     f.write("\n## :white_check_mark: Post-Render Validation Passed\n\n")
                     f.write(f"Validated {len(html_files)} HTML files with no errors.\n")
             except Exception:
