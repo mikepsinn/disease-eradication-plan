@@ -27,16 +27,16 @@ Every person alive is {{< var treaty_personal_upside_blend >}} richer in a world
 
 This chapter explains why, and then explains how.
 
-1. **The Game you're building.** An open-source coordination game: raise global median income and healthy life years within {{< var prize_pool_resolution_years_nounit >}} years.
+1. **The Game you're building.** An open-source coordination game: raise global median income and healthy life years within {{< var prize_pool_resolution_years_nounit >}} years. (Your species has been trying for 10,000 years without a scoreboard, so this is an upgrade.)
 2. **How you keep score.** At year {{< var prize_pool_resolution_years_nounit >}}: did people live {{< var treaty_hale_gain_year_15 >}} longer? Did they earn {{< var treaty_trajectory_lifetime_income_multiplier >}} as much? (See [GDP Trajectories](../economics/gdp-trajectories.qmd) [@gdp-trajectories-paper-2025].) That is {{< var treaty_personal_upside_blend >}} per person.
-3. **How PRIZE works.** You fund one pool until year {{< var prize_pool_resolution_years_nounit >}}. Targets missed: you divide the realized pool pro rata.
+3. **How PRIZE works.** You fund one pool until year {{< var prize_pool_resolution_years_nounit >}}. Targets missed: you divide the realized pool pro rata. (Either way, you beat your retirement account. Your retirement account is not trying very hard.)
 4. **How VOTE works.** You recruit one verified referendum participant, you earn one point. Targets met: the pool routes to VOTE point-holders.
 5. **How you start.** Find a host to launch the [Planetary Constitutional Convention](planetary-constitutional-convention.qmd). PRIZE deposits begin, the Scoreboard goes live, and recruitment compounds from there. (For the institutional deployment plan, see [Why Your Institution Should Be The Initiating Node](initiating-node-memo.qmd).)
 6. **Why you bother.** "Do nothing" is not free. Your governments already waste {{< var political_dysfunction_tax_per_person_annual >}} per person per year ([Political Dysfunction Tax](../appendix/political-dysfunction-tax.qmd) [@political-dysfunction-tax-paper-2025]). The [destructive economy](../economics/gdp-trajectories.qmd) [@gdp-trajectories-paper-2025] hits 50% of GDP in {{< var destructive_economy_years_to_50pct_gdp >}} (the point where half of everything gets looted as fast as it is created).
 
 ## How It Works (The 90-Second Version)
 
-**Here's how PRIZE deposits work.** Your deposit goes into a single pool that compounds through the [wishocratic fund](../economics/wishocratic-investment-fund.qmd). Rich people have a secret money club (venture capital and private equity) that makes {{< var venture_gross_return >}} returns. Your retirement account is legally banned from joining. The pool gets you in. It spreads your money across the entire sector so no single bad bet kills you, and crowds pick the investments ({{< var crowd_decision_accuracy >}} accuracy) instead of expensive fund managers ({{< var expert_decision_accuracy >}} accuracy) [@surowiecki-2004]. Result: {{< var prize_pool_annual_return >}} annually, nearly triple conventional retirement at {{< var conventional_retirement_return >}} (see [Wishocratic Investment Fund](../economics/wishocratic-investment-fund.qmd) for the full derivation).
+**Here's how PRIZE deposits work.** Your deposit goes into a single pool that compounds through the [wishocratic fund](../economics/wishocratic-investment-fund.qmd). Rich people have a secret money club (venture capital and private equity) that makes {{< var venture_gross_return >}} returns. Your retirement account is legally banned from joining. Your government decided that only rich people are smart enough to invest in things that make money. This is called "investor protection." It protects you from having money. The pool gets you in. It spreads your money across the entire sector so no single bad bet kills you, and crowds pick the investments ({{< var crowd_decision_accuracy >}} accuracy) instead of expensive fund managers ({{< var expert_decision_accuracy >}} accuracy) [@surowiecki-2004]. Result: {{< var prize_pool_annual_return >}} annually, nearly triple conventional retirement at {{< var conventional_retirement_return >}} (see [Wishocratic Investment Fund](../economics/wishocratic-investment-fund.qmd) for the full derivation).
 
 Your deposit is locked. Not a savings account. It stays in your account until the {{< var prize_pool_resolution_years_nounit >}} years are up. Targets missed: you divide the realized pool pro rata. Targets met: the pool goes to VOTE point-holders, not back to you. See the [prize protocol](../appendix/earth-optimization-prize-protocol.qmd) [@earth-optimization-prize-protocol-paper-2025] for the full specification.
 
@@ -51,7 +51,7 @@ Your public signal is the **Scoreboard**: how long people live, how much they ea
 
 ## Contributor Outcomes
 
-Here's what happens to your money. The pool makes money regardless of whether the targets are met (it invests either way). The only question is who gets it.
+Here's what happens to your money. The pool makes money regardless of whether the targets are met, because compound interest does not care about your species' opinions. The only question is who gets it.
 
 | Scenario | What happens to your deposit | What happens to your VOTE points | World-side outcome |
 |:---|:---|:---|:---|
@@ -85,7 +85,7 @@ The Game needs an institutional host before it can accept PRIZE deposits. In the
 - **Institutions and foundations:** the Game needs a host before PRIZE deposits and the Scoreboard go live. You are the bottleneck. Contact [m@warondisease.org](mailto:m@warondisease.org).
 - **Funders:** pick one thing this week and do it publicly so others can pile on.
 - **Researchers / builders:** build something this week rather than waiting for perfect certainty.
-- **Media:** publish one briefing or story that treats the Scoreboard and futures table as live public infrastructure, not a curiosity.
+- **Media:** write about the Scoreboard as if it were real infrastructure, not a curiosity. Your species covers stock tickers in real time. This is a stock ticker for whether people die.
 
 That is it: vote and recruit. PRIZE deposits begin once an institution hosts the pool. If the Prize fails, you keep your share of the pool (still beats your retirement account). If it succeeds, diseases get cured and everyone gets rich. The first step is small on purpose.
 
@@ -103,7 +103,7 @@ Everything below this line is for readers who want to understand why before they
 
 ## Why Your Species Needs This Game
 
-Your species has never built a system that measures the two things everyone agrees on (healthy life years and income), publishes the score, and pays whoever moves it. You argue about drug policy without tracking whether fewer people die. You argue about military spending without tracking whether it makes you safer. You argue about healthcare without tracking whether anyone gets healthier. The Game does not resolve these arguments. It makes them irrelevant. Two numbers. Did they move? Pay whoever moved them.
+Your species has never built a system that measures the two things everyone agrees on (healthy life years and income), publishes the score, and pays whoever moves it. You argue about drug policy without tracking whether fewer people die. You argue about military spending without tracking whether it makes you safer. You argue about healthcare without tracking whether anyone gets healthier. The Game does not resolve these arguments. It makes them irrelevant. Two numbers. Did they move? Pay whoever moved them. Your species has been arguing about governance for 10,000 years without checking whether anything got better. It is like arguing about whether the patient is improving without taking the patient's pulse.
 
 Your species has five reasons for continuing to die, and they are all the same reason (you cannot see each other):
 
@@ -131,7 +131,7 @@ Every registration is a person saying "I'm in" where everyone can see it. The Sc
 </figure>
 :::
 
-### 3. The Public Cannot Coordinate Against Concentrated Interests
+### 3. The People With the Money Are Organized and You Are Not
 
 One of your economists noticed this in 1965 and named it "the logic of collective action" [-@olson1965]. Weapons makers and pharmaceutical monopolies have a lot of money riding on keeping things the way they are, so they organize. The general public has tiny individual stakes and cannot organize back, even though they are the ones dying of untreated diseases and paying for weapons that return {{< var economic_multiplier_military_spending >}} per dollar [@military-spending-economic-multiplier].
 
@@ -139,7 +139,7 @@ Your species identified the exact mechanism by which your governance fails, publ
 
 But Olson's problem dissolves when people can see each other. The public has the money ({{< var global_household_wealth_usd >}} vs. {{< var concentrated_interest_sector_market_cap_usd >}} held by the opposition [@iab-paper-2025]). It just has no way to act together. The Game is that way: a growing, visible pile of money that gets bigger every time someone clicks a button. No central organizer. No charity. No altruism required. Just millions of people acting in financial self-interest, pointed at the same two numbers.
 
-### 4. Nobody Knows Which Solutions to Implement
+### 4. Nobody Knows Which Solution Is Best (This Is Fine)
 
 There are a million ways to make humans healthier and richer. This manual describes one. It is probably not the best one. It does not need to be. The Game does not pick a solution. It pays for outcomes: healthy life years and income. Anyone, anywhere, who causes either number to rise gets paid.
 
@@ -149,13 +149,13 @@ No committee decides which reforms to fund. A researcher who discovers a cheaper
 
 Your species has tried alternatives. "We'll buy it if you build it" works for vaccines, not civilizations [@kremer2020]. Challenge prizes pay the winner, then stop paying (the disease does not stop). Government procurement funds whatever the person in charge likes, which is the current system (it is going well). Prediction markets tell you what will win but do not cause it to happen, which is like a weather forecast that cannot rain. The Game pays for outcomes, publishes the score, and lets anyone challenge the results. Capturing it requires beating every challenger on verified metrics at the same time. Not capture-proof. Capture-expensive.
 
-### 5. Complex Reforms Have No Entry Point
+### 5. Nobody Will Read a 400-Page Manual
 
 The [1% Treaty](../solution/1-percent-treaty.qmd) [@1-pct-treaty-impact-paper-2025], FDA reform, wishocratic allocation, making every government on Earth less stupid at the same time: each is a hard sell individually. Each requires explaining an elaborate mechanism to people who have been trained to assume nothing works. The Game is the simple entry point. Put in $1. If nothing works, you keep your money. If diseases get cured and everyone gets richer, VOTE point-holders get paid. One sentence. One decision.
 
 Once someone puts in $1 or earns a VOTE point, they discover the rest through the recruitment process. The treaty. The trial cost data. The allocation evidence. The Game is the door into everything else. "This sounds too complicated" becomes "I put in $1 and either diseases get cured or I keep my money, so why not."
 
-### 6. Nobody Checks Whether the Money Made Things Better or Worse
+### 6. Nobody Checks Whether the Money Worked
 
 Your species spent $8 trillion on the War on Terror [@costsofwar2023]. Terrorist attacks went from roughly 1,000 per year to over 17,000 [@global-terrorism-database]. You spent {{< var us_gov_waste_drug_war >}} per year on the War on Drugs for fifty years [@drugpolicyalliance2021]. Overdose deaths went from 6,000 per year to over 100,000 [@cdc-overdose-1980; @cdc-overdose-2023]. Combined scorecard: two programs, $9 trillion spent, both problems roughly 17 times worse. At no point during either program did anyone with budget authority check whether the spending was making the problem better or worse. The data existed. Nobody looked at it. The data did not have a lobbying firm.
 
@@ -165,20 +165,20 @@ Here's the missing feedback loop. The [Optimitron](../solution/optimocracy.qmd) 
 
 Without the Optimitron, the Prize can measure whether the two numbers moved at year {{< var prize_pool_resolution_years_nounit >}}, but it cannot tell which policies are dragging them down or which ones moved them up. The Scoreboard tells you the patient's temperature. The Optimitron tells you which of the seventeen drugs you're administering is the one causing the fever.
 
-## The Exponential Math
+## The Part Where You Tell Two People
 
 On Wishonia, if one person tells two people and each of them tells two people, the math handles the rest. Not everyone becomes a recruiter. But "tell two people" gets very large very fast.
 
 | Round | Cumulative people | What that looks like |
 |:---|:---|:---|
-| 0 | 1 | You |
-| 10 | 1,024 | A large lecture hall |
-| 15 | 32,768 | A small town |
-| 20 | 1,048,576 | A city |
-| 25 | 33,554,432 | A country |
-| 28 | 268,435,456 | Hundreds of millions; globally visible |
-| 32 | 4,294,967,296 | Roughly the modeled global coordination target |
-| 33 | 8,589,934,592 | Everyone on Earth |
+| 0 | 1 | You (reading this, probably skeptical) |
+| 10 | 1,024 | A large lecture hall (still skeptical) |
+| 15 | 32,768 | A small town (starting to notice) |
+| 20 | 1,048,576 | A city (politicians starting to notice) |
+| 25 | 33,554,432 | A country (politicians definitely noticing) |
+| 28 | 268,435,456 | Hundreds of millions (too late to ignore) |
+| 32 | 4,294,967,296 | Half of humanity (treaty passes) |
+| 33 | 8,589,934,592 | Everyone on Earth (overkill, but thorough) |
 
 32 rounds. Not 32 years. 32 rounds. If each round takes a week, that is eight months. If each round takes a month, under three years. One person to world scale in months, not centuries. Your species spent longer than that arguing about whether Pluto is a planet.
 
@@ -256,9 +256,9 @@ Everything below this point (the lobbying, the treaty campaigns, the clinical tr
 
 Each stage builds the audience for the next. Nobody coordinates this centrally. The incentives coordinate it. For the institutional deployment plan and activation budget, see [Why Your Institution Should Be The Initiating Node](initiating-node-memo.qmd).
 
-## How the Game Moves Money {#how-money-moves-full-mechanism}
+## How the Papers Move {#how-money-moves-full-mechanism}
 
-Everything the Game exists to produce is either healthy life years or income. Paying for moving budgets around or enrolling people in trials is paying for plumbing that may or may not deliver water. Your species has a long history of buying plumbing. Pay for water.
+Everything the Game exists to produce is either healthy life years or more papers. Paying for moving budgets around or enrolling people in trials is paying for plumbing that may or may not deliver water. Your species has a long history of buying plumbing. Pay for water.
 
 **Your PRIZE pool trigger.** At year {{< var prize_pool_resolution_years_nounit >}}: targets met, the pool distributes to VOTE point-holders; targets missed, depositors divide it pro rata.
 
@@ -272,7 +272,7 @@ Your species already understands this for pencils. The Game applies it to not dy
 
 Look at this cured disease. There is not a single person in the world who could cure it. The researcher in Lagos who found the cheaper trial design does not know the lobbyist in Brussels who passed the directive. The lobbyist does not know the nonprofit in Manila that recruited a million voters. The voters do not know the bondholder in New York whose greed funded the campaign. The bondholder does not know the politician in Delhi who voted yes because the SuperPAC funded her opponent last time she voted no. The politician does not know the factory worker in Dhaka whose clinical trial enrollment generated the data that proved the treatment worked. Literally millions of people cooperated to cure this disease. People who do not speak the same language, who practice different religions, who might hate one another if they ever met. No one sitting in a central office gave orders. No military police enforced the orders that were not given. Two numbers on a Scoreboard and pieces of paper with presidents on them did what no committee, no charity, and no central plan has ever done.
 
-## The Numbers
+## How Many Papers
 
 **What does it cost to get the Game to scale?** Here is what it costs to pay {{< var global_coordination_target_supporters_nounit >}} people to click a button:
 
@@ -326,7 +326,7 @@ Your politicians care about reelection. Your investors care about returns. Your 
 
 Every participant is doing exactly what they would do anyway, except pointed at diseases instead of each other.
 
-The politician line is the one that requires explanation, because "politicians notice a Scoreboard" has never caused a politician to act against their donors. Here's what converts Scoreboard scale into treaty passage: the [Incentive Alignment Bond](../solution/incentive-alignment-bonds.qmd) [@iab-paper-2025]. IABs raise the campaign capital ({{< var treaty_campaign_total_cost >}}). Investors buy bonds. The campaign passes the treaty. The treaty redirects {{< var treaty_annual_funding >}}/year from military budgets to clinical trials. A management fee on that flow splits three ways: {{< var victory_bond_funding_pct >}} back to investors as a revenue share ({{< var victory_bond_annual_return_pct >}} annual returns, which is not a typo), {{< var iab_political_incentive_funding_pct >}} to a SuperPAC that funds treaty-aligned politicians and post-office careers for yes-voters, and {{< var dih_treasury_medical_research_pct >}} to clinical trials through [wishocratic allocation](../solution/wishocracy.qmd) where nobody with money gets to decide where it goes. The investors become the world's most motivated lobbyists for expanding the treaty, because their returns grow with it. The politicians face the same incentive structure that the NRA perfected, pointed at "not dying" instead of "more guns." The loop is self-sustaining: investor greed funds the campaign, campaign greed passes the treaty, treaty revenue feeds investor returns, investor returns fund more campaigns. Nobody has to become good. The money just circulates until diseases stop existing. (For the full mechanism, see [Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd) [@iab-paper-2025].)
+The politician line is the one that requires explanation, because "politicians notice a Scoreboard" has never caused a politician to act against their donors. Here's what converts Scoreboard scale into treaty passage: the [Incentive Alignment Bond](../solution/incentive-alignment-bonds.qmd) [@iab-paper-2025]. IABs raise the campaign capital ({{< var treaty_campaign_total_cost >}}). Investors buy bonds. The campaign passes the treaty. The treaty redirects {{< var treaty_annual_funding >}}/year from military budgets to clinical trials. A management fee on that flow splits three ways: {{< var victory_bond_funding_pct >}} back to investors as a revenue share ({{< var victory_bond_annual_return_pct >}} annual returns, which is not a typo), {{< var iab_political_incentive_funding_pct >}} to a SuperPAC that funds treaty-aligned politicians and post-office careers for yes-voters, and {{< var dih_treasury_medical_research_pct >}} to clinical trials through [wishocratic allocation](../solution/wishocracy.qmd) where nobody with money gets to decide where it goes. The investors become the world's most motivated lobbyists for expanding the treaty, because their returns grow with it. The politicians face the same incentive structure that the NRA perfected, pointed at "not dying" instead of "more guns." The loop is self-sustaining: investor greed funds the campaign, campaign greed passes the treaty, treaty revenue feeds investor returns, investor returns fund more campaigns. Nobody has to become good. The money just circulates until diseases stop existing. This is your species' greatest talent put to its first good use. (For the full mechanism, see [Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd) [@iab-paper-2025].)
 
 ## Frequently Asked Objections
 
@@ -374,7 +374,7 @@ The [protocol](../appendix/earth-optimization-prize-protocol.qmd) [@earth-optimi
 
 The [Optimitron](../solution/optimocracy.qmd) [@optimocracy-paper-2025] adds five independent measurement sources (census, federal reserve, labor statistics, academic institutions, decentralized citizen surveys) where corrupting all simultaneously requires bribing five institutions that hate each other. The adversarial challenge window means anyone who catches gaming can post a bond, present evidence, and claw back the payout.
 
-I have been watching your planet for 81 years and have not heard a better pair of terminal metrics for human welfare proposed. If you have one, the protocol is [open source](https://github.com/wishonia/earth-optimization-instructions). The alternative is the Terminal Parasitic Load trajectory: destructive economy at 50% of GDP in {{< var destructive_economy_years_to_50pct_gdp >}} while {{< var global_annual_deaths_curable_diseases_nounit >}} die yearly.
+I have been watching your planet for 81 years and have not heard a better pair of numbers proposed. If you have one, the protocol is [open source](https://github.com/wishonia/earth-optimization-instructions). The alternative is the current path: half the economy looted in {{< var destructive_economy_years_to_50pct_gdp >}} while {{< var global_annual_deaths_curable_diseases_nounit >}} die yearly.
 
 ### 4. "The implementation is impossibly complex"
 
@@ -412,7 +412,7 @@ It does not assume that. It calculates the ceiling. The {{< var vote_token_poten
 | 10% ($7T) | $77.7T | ~$19,400 |
 | 100% ($70T) | $777T | {{< var vote_token_potential_value >}} |
 
-At 1% participation, a VOTE point pays about $1,940. At 10%, $19,400. The pool does not need to reach $70T for the Game to be worth playing. It needs to reach the size where the recruitment incentive exceeds the effort of telling two people. That threshold is low.
+At 1% participation, a VOTE point pays about $1,940. At 10%, $19,400. The pool does not need to reach $70T for the Game to be worth playing. It needs to be large enough that telling two people about it is worth 30 seconds. That is not a high bar. Your species spends more time than that choosing a sandwich.
 
 ### 8. "The 604:1 ratio cherry-picks the denominator"
 
