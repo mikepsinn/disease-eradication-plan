@@ -38,15 +38,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 174 parameters used in the analysis, organized by type:
+This appendix documents all 176 parameters used in the analysis, organized by type:
 
 - External sources (peer-reviewed): 50
-- Calculated values: 92
-- Core definitions: 32
+- Calculated values: 93
+- Core definitions: 33
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (92 parameters) • [External Data Sources](#sec-external) (50 parameters) • [Core Definitions](#sec-definitions) (32 parameters)
+[Calculated Values](#sec-calculated) (93 parameters) • [External Data Sources](#sec-external) (50 parameters) • [Core Definitions](#sec-definitions) (33 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -2910,6 +2910,44 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-treaty_campaign_total_cost.qmd >}}
+
+:::
+
+### Target Voting Bloc Size for Campaign: 280 million of people {#sec-treaty_campaign_voting_bloc_target}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Target voting bloc size for campaign (3.5% of global population - critical mass for social change). Wide CI reflects uncertainty in applying Chenoweth's national threshold to global treaty adoption.
+
+**Inputs**:
+
+- [Global Population in 2024](#sec-global_population_2024) 📊: 8 billion of people (95% CI: 7.8 billion of people - 8.2 billion of people)
+- [Critical Mass Threshold for Social Change](#sec-global_population_activism_threshold_pct) 📊: 3.5% (95% CI: 1% - 10%)
+
+$$
+\begin{gathered}
+N_{voters,target} \\
+= Pop_{global} \times Threshold_{activism} \\
+= 8B \times 3.5\% \\
+= 280M
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-treaty_campaign_voting_bloc_target.qmd >}}
+
+{{< include ../figures/sensitivity-table-treaty_campaign_voting_bloc_target.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-treaty_campaign_voting_bloc_target.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-treaty_campaign_voting_bloc_target.qmd >}}
 
 :::
 
@@ -6297,6 +6335,28 @@ Average years of life extension per person saved by pharmaceutical interventions
 #### Input Distribution
 
 {{< include ../figures/distribution-avg_life_extension_per_beneficiary.qmd >}}
+
+*Core definition*
+
+:::
+
+### Effective R: 0.15:1 {#sec-chain_effective_r}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Effective reproduction number per cascade generation: fraction of viewers who share (5%) x average forwards per sharer (3). CI spans pessimistic (2% x 2 = 0.04) to optimistic (10% x 8 = 0.80).
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [0.04:1, 0.8:1] • Distribution: Lognormal
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between 0.04:1 and 0.8:1 (±253%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-chain_effective_r.qmd >}}
 
 *Core definition*
 
