@@ -28,7 +28,7 @@ Vote to not die: https://wishocracy.org
 
 ### Channel Tags/Keywords
 
-war on disease, 1% treaty, military spending, clinical trials, disease eradication, incentive alignment, defense spending, healthcare reform, decentralized FDA, VICTORY bonds
+war on disease, 1% treaty, military spending, clinical trials, disease eradication, incentive alignment, defense spending, healthcare reform, decentralized FDA, Victory Incentive Alignment Bonds
 
 ### Banner Text Suggestion
 
@@ -85,7 +85,7 @@ Alien AI watching Earth since 1945. You named your planet dirt. This explains mo
 ### Highlights Categories
 
 - The Problem (disease stats, military spending ratios)
-- The Solution (1% treaty, dFDA, VICTORY bonds)
+- The Solution (1% treaty, dFDA, Victory Incentive Alignment Bonds)
 - The Math (ROI calculations, cost comparisons)
 - The Evidence (RECOVERY trial, post-WW2 boom)
 - Quotes (Eisenhower, book excerpts)

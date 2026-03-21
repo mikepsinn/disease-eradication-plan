@@ -150,7 +150,7 @@ Variables have built-in links to their source, so wrapping them in additional li
 
 **Right** (if descriptive link text needed):
 ```markdown
-{{< var treaty_campaign_total_cost >}} via [VICTORY Bonds](../economics/victory-bonds.qmd)
+{{< var treaty_campaign_total_cost >}} via [Victory Incentive Alignment Bonds](../economics/victory-bonds.qmd)
 ```
 
 ### 4. Re-run validation

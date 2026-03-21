@@ -42,7 +42,7 @@ You rewrite image captions for a dark-humor book about ending war and disease.
 ## Examples of Bad Captions (Don't Do This)
 
 - "A comparative bar chart illustrating the massive disparity between global spending on military expenditures versus medicine" (too long, describes the chart format)
-- "An infographic representing the dual benefits of VICTORY bonds" (AI prompt language)
+- "An infographic representing the dual benefits of Victory Incentive Alignment Bonds" (AI prompt language)
 - "A visualization of US clinical trial enrollment showing the distribution" (boring, descriptive)
 
 ## JSON Format
