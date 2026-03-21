@@ -19,8 +19,14 @@ youtube-thumbnail: /assets/podcast/least-bad-idea-prize-paper-youtube.jpg
 
 ## Executive Summary
 
+There is a {{< var wishonia_personal_upside_blend >}} check on the sidewalk in front of every person on Earth. Nobody is bending down, because nobody else is bending down.
+
+The checks are real, but they have a co-signing requirement. Yours does not clear until {{< var global_coordination_target_supporters_nounit >}} other people also bend down. Not because physics demands it. Because the check is a treaty, and treaties require signatories. The entire game is: bend down, then tell two friends to bend down. 32 rounds of that and every check clears. The obstacle is not complexity, cost, or politics. It is the belief that nobody else will bend down, held simultaneously by {{< var global_population_2024_nounit >}} people who would all very much like {{< var wishonia_personal_upside_blend >}}.
+
+This chapter is the instruction manual for how to pick up the check.
+
 1. **What the prize is.** The Earth Optimization Prize is an open-source coordination game: help humanity raise global median income and healthy life years within {{< var prize_pool_resolution_years_nounit >}} years.
-2. **What success means.** At year {{< var prize_pool_resolution_years_nounit >}}, success means global HALE (healthy life expectancy) reaches {{< var wishonia_projected_hale_year_15 >}} and global median income reaches {{< var wishonia_trajectory_avg_income_year_15 >}} (modeled ceiling, not forecast; see [GDP Trajectories](../economics/gdp-trajectories.qmd) [@gdp-trajectories-paper-2025] for the compounding model).
+2. **What success means.** At year {{< var prize_pool_resolution_years_nounit >}}, success means global HALE (healthy life expectancy) reaches {{< var wishonia_projected_hale_year_15 >}} and global median income reaches {{< var wishonia_trajectory_avg_income_year_15 >}} (modeled ceiling, not forecast; see [GDP Trajectories](../economics/gdp-trajectories.qmd) [@gdp-trajectories-paper-2025] for the compounding model). That is {{< var wishonia_personal_upside_blend >}} in cumulative lifetime income and health value for every person alive today.
 3. **How PRIZE works.** Depositors fund one pool until year {{< var prize_pool_resolution_years_nounit >}}. Targets missed: depositors divide the realized pool pro rata.
 4. **How VOTE works.** Recruit one verified referendum participant, earn one point. On success, the pool routes to VOTE point-holders.
 5. **How it gets started.** A host launches the [Planetary Constitutional Convention](planetary-constitutional-convention.qmd), PRIZE deposits begin, the Scoreboard goes live, and recruitment compounds from there. (For the institutional deployment plan, see [Why Your Institution Should Be The Initiating Node](initiating-node-memo.qmd).)
