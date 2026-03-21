@@ -38,15 +38,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 167 parameters used in the analysis, organized by type:
+This appendix documents all 169 parameters used in the analysis, organized by type:
 
-- External sources (peer-reviewed): 49
-- Calculated values: 88
+- External sources (peer-reviewed): 50
+- Calculated values: 89
 - Core definitions: 30
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (88 parameters) • [External Data Sources](#sec-external) (49 parameters) • [Core Definitions](#sec-definitions) (30 parameters)
+[Calculated Values](#sec-calculated) (89 parameters) • [External Data Sources](#sec-external) (50 parameters) • [Core Definitions](#sec-definitions) (30 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -1934,6 +1934,38 @@ Cost_{destruct} \\
 \end{gathered}
 $$
 *✓ High confidence*
+
+:::
+
+### Global Deaths per Minute from Disease: 104 deaths/minute {#sec-global_disease_deaths_per_minute}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Global deaths per minute from all disease and aging
+
+**Inputs**:
+
+- [Global Daily Deaths from Disease and Aging](#sec-global_disease_deaths_daily) 📊: 150 thousand deaths/day (SE: ±7.5 thousand deaths/day)
+
+$$
+\frac{Deaths_{disease,daily}}{1440}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-global_disease_deaths_per_minute.qmd >}}
+
+{{< include ../figures/sensitivity-table-global_disease_deaths_per_minute.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-global_disease_deaths_per_minute.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-global_disease_deaths_per_minute.qmd >}}
 
 :::
 
@@ -5136,6 +5168,26 @@ Global annual DALY burden from all diseases and injuries (WHO/IHME Global Burden
 {{< include ../figures/distribution-global_annual_daly_burden.qmd >}}
 
 *✓ High confidence • 📊 Peer-reviewed*
+
+:::
+
+### Annual Deaths from All Diseases and Aging Globally: 55 million deaths/year {#sec-global_annual_deaths_curable_diseases}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual deaths from all diseases and aging globally
+
+**Source**: [@who-global-health-estimates-2024]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Normal (SE: 5 million deaths/year)
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_annual_deaths_curable_diseases.qmd >}}
+
+*✓ High confidence*
 
 :::
 
