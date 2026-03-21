@@ -105,6 +105,20 @@ Everything below this line is for readers who want to understand why before they
 
 Your species has never built a system that measures the two things everyone agrees on (healthy life years and income), publishes the score, and pays whoever moves it. You argue about drug policy without tracking whether fewer people die. You argue about military spending without tracking whether it makes you safer. You argue about healthcare without tracking whether anyone gets healthier. The Game does not resolve these arguments. It makes them irrelevant. Two numbers. Did they move? Pay whoever moved them. Your species has been arguing about governance for 10,000 years without checking whether anything got better. It is like arguing about whether the patient is improving without taking the patient's pulse.
 
+What your species currently does:
+
+- Spend {{< var global_military_spending_annual_2024 >}}/year on weapons (working)
+- Spend {{< var global_government_clinical_trials_spending_annual >}}/year testing which medicines work (not working)
+- Argue about whether this is a problem (ongoing)
+- Check whether the arguing helped (never)
+
+What the Game does:
+
+- Two numbers on a Scoreboard (did people live longer? did they get richer?)
+- Pay whoever moved them
+- Stop paying whoever didn't
+- Argue about literally anything else you want
+
 Your species has five reasons for continuing to die, and they are all the same reason (you cannot see each other):
 
 1. **Nobody knows.** Most people have never heard that clinical trials cost {{< var dfda_pragmatic_trial_cost_per_patient >}} per patient or that 1% of the murder budget would fund all of them.
@@ -186,7 +200,7 @@ On Wishonia, if one person tells two people and each of them tells two people, t
 
 Your species already turns out at 50-65% for elections that pay nothing and offer a 1-in-30-million chance of influencing anything [@gelman2012]. This referendum takes 30 seconds on a phone, pays VOTE points on success, and the outcome is "end war and disease and get unimaginably rich." The participation barrier is not "will people do this." It is "will people hear about it." That is what the recruitment incentive solves. Even with heavy dropout, one person reaches global visibility in dozens of rounds, not decades (see [the full comparison](#why-this-referendum-beats-your-elections) below).
 
-The target is {{< var global_coordination_target_supporters_nounit >}} people. {{< var global_coordination_target_pct >}} of humanity. VOTE points make recruiting worth doing. The Scoreboard makes the coalition visible. At that scale, the treaty passes well before the pool matures.
+The target is {{< var global_coordination_target_supporters_nounit >}} people. Half of your species. I realize this sounds like a lot. It is also the number of people who would prefer not dying of preventable disease, which your species tells me is nearly everyone. So the real question is not "can you reach {{< var global_coordination_target_supporters_nounit >}}" but "why haven't you already." VOTE points make recruiting worth doing. The Scoreboard makes the coalition visible. At that scale, the treaty passes well before the pool matures.
 
 ## What's In It For You
 
@@ -196,6 +210,8 @@ The target is {{< var global_coordination_target_supporters_nounit >}} people. {
 | **1% Treaty** | +{{< var treaty_trajectory_lifetime_income_gain_per_capita >}} lifetime income ({{< var treaty_trajectory_lifetime_income_multiplier >}}), +{{< var treaty_hale_gain_year_15_nounit >}} healthy years. |
 | **Optimal governance** | +{{< var wishonia_trajectory_lifetime_income_gain_per_capita >}} lifetime income ({{< var wishonia_trajectory_lifetime_income_multiplier >}}), +{{< var wishonia_hale_gain_year_15_nounit >}} healthy years. |
 | **Collapse tail** | Half the economy is looted in {{< var destructive_economy_years_to_50pct_gdp >}}. Already at {{< var global_destructive_economy_pct_gdp >}} of GDP and accelerating. |
+
+I have been studying this table for 81 years and I still cannot understand why your species picks row 1 or row 4 when rows 2 and 3 are right there. On Wishonia, we call this "looking at a menu and ordering the food poisoning."
 
 That spread is the difference between a civilization and a collapse, and most humans still treat "do nothing" as if it were the safe option. On Wishonia, "do nothing" is what we call the thing that killed you. The average human earns {{< var global_avg_income_2025 >}}/year, has {{< var global_avg_remaining_years >}} left to live, and can save about {{< var global_annual_savings_per_capita >}}/year. If you want your own numbers, use the [personal benefits calculator](../call-to-action/your-personal-benefits.qmd).
 
@@ -238,9 +254,9 @@ But does a $1K contribution actually shift probability by 0.0067%? You do not ne
 
 **The free-rider problem has a structural answer.** "VOTE points only pay if the targets are met, so if I don't believe they'll be met, there's no incentive." This assumes VOTE points are the only incentive. They are not. PRIZE deposits beat conventional retirement on the failure branch ({{< var prize_pool_15yr_multiple >}} vs. {{< var conventional_retirement_15yr_multiple >}}). The deposit incentive works regardless of your belief about success. VOTE points add upside on the success branch.
 
-But the deeper answer is that the free-rider problem dissolves when the cost of participation approaches zero. Free-riding makes sense when participation is expensive and the benefit is spread thin. Clicking a button on a phone takes 30 seconds; 50-65% of your species already spends far more effort voting in elections for free. When the cost is 30 seconds and the potential benefit is {{< var vote_token_potential_value >}}, the math does not produce free-riding. It produces "why wouldn't I." Early contributors raise the probability of success, which raises the expected value for later contributors, creating a game that runs on math instead of goodwill.
+But the deeper answer is that free-riding makes sense when participation is expensive. Clicking a button takes 30 seconds. 50-65% of your species already spends far more effort voting in elections that pay nothing and elect people who ignore them. This referendum pays {{< var vote_token_potential_value >}} and cures diseases. Your species is not going to free-ride on this. It is going to fight over who gets to click the button first.
 
-Delay is not neutral. Each person can only be recruited once, and every month spent waiting gives the status quo more time to compound while the Scoreboard stays smaller than it could be.
+Delay is not free either. Each person can only be recruited once. Every month you spend evaluating whether the arithmetic is correct, {{< var global_disease_deaths_daily_nounit >}} people die per day and the destructive economy eats another slice of GDP. The math is patient. The diseases are not.
 
 The selfish reason to play the Game is not the VOTE payout or the pool return. It is that you personally get {{< var treaty_personal_upside_blend >}} richer in a world where diseases get cured.
 
@@ -248,11 +264,11 @@ The selfish reason to play the Game is not the VOTE payout or the pool return. I
 
 Everything below this point (the lobbying, the treaty campaigns, the clinical trial infrastructure, the [decentralized FDA](../solution/dfda.qmd) [@dfda-spec-paper-2025; @dfda-impact-paper-2025]) is not your job. 4 billion people whose payout depends on curing diseases will attract the lobbyists, researchers, and institutions who know how to cure diseases. You do not need to understand lobbying or clinical trial design. You need to understand that a large enough pile of money pointed at "cure diseases" attracts the people who do.
 
-1. **A host launches the [Planetary Constitutional Convention](planetary-constitutional-convention.qmd) [@planetary-constitutional-convention-paper-2025].** The manual gets stress-tested. PRIZE deposits begin during this stage. You deposit and recruit.
-2. **The referendum opens.** Every depositor learns what the Game is for. The [referendum](global-referendum.qmd) launches: voters set their preferred military-to-health allocation, and every recruiter who brings a verified participant earns VOTE points. The referendum grows because recruitment is rewarded. You keep recruiting.
-3. **The Scoreboard climbs.** Votes, treaty support, allocation results, prize pool size, and the two numbers. Each new cohort of participants makes the next cohort easier to convince.
-4. **The lobbying campaign starts itself.** Millions of people whose payout depends on treaty passage attract lobbyists, entrepreneurs, and institutions because the pool makes showing up profitable. The [implementation financing](earth-optimization-protocol-v1.qmd) [@earth-optimization-protocol-2025] converts the Scoreboard into political pressure.
-5. **Implementation.** Governments move the money. People compete to cure diseases cheaply. Again: not your job. Your job was step 1.
+1. **A host launches the [Planetary Constitutional Convention](planetary-constitutional-convention.qmd) [@planetary-constitutional-convention-paper-2025].** The manual gets stress-tested. PRIZE deposits begin. You deposit and recruit. (This is the hard part. Everything after this is money doing what money does.)
+2. **The referendum opens.** Voters set their preferred military-to-health allocation. Every recruiter who brings a verified participant earns VOTE points. The referendum grows because recruitment is rewarded. On your planet, this is called "going viral." On Wishonia, it is called "obvious."
+3. **The Scoreboard climbs.** Votes, treaty support, pool size, and the two numbers. Each new name makes the next name easier. Your species calls this "momentum." We call it "counting."
+4. **The lobbying campaign starts itself.** Millions of people whose payout depends on the treaty attract lobbyists and institutions because the pool makes showing up profitable. ([Implementation financing](earth-optimization-protocol-v1.qmd) [@earth-optimization-protocol-2025].) Nobody organizes this. The money organizes it.
+5. **Implementation.** Governments move the money. People compete to cure diseases cheaply. Not your job. Your job was step 1. You can go back to arguing about Pluto now.
 
 Each stage builds the audience for the next. Nobody coordinates this centrally. The incentives coordinate it. For the institutional deployment plan and activation budget, see [Why Your Institution Should Be The Initiating Node](initiating-node-memo.qmd).
 
@@ -305,7 +321,7 @@ At that headcount, {{< var global_coordination_target_supporters_nounit >}} peop
 | **Effort** | Hours in line, research candidates | 30 seconds on a phone |
 | **Financial reward** | $0 | {{< var vote_token_potential_value >}} modeled success payout |
 | **Your vote matters** | ~1 in 30 million chance of mattering [@gelman2012] | Direct payout proportional to contribution |
-| **Outcome fidelity** | Politician may ignore you after winning | Funds flow to verified implementation |
+| **What happens after** | Politician may ignore you (they will) | Money goes where the Scoreboard says |
 
 Your species turns out at 50-65% for elections despite getting paid nothing. This referendum pays you if it works, credits you for who you recruited, and publishes the score.
 
