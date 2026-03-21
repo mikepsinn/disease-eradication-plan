@@ -70,6 +70,12 @@ Let `D` be your deposit. The pool compounds through the wishocratic fund regardl
 
 Two VOTE points are meaningful upside for small contributors. For large depositors, the pool compounds regardless, and you are buying a larger share of a better future.
 
+::: {.callout-note}
+## These Numbers Look Large Because the Current Waste Is Large
+
+Your species spends {{< var global_military_spending_annual_2024 >}}/year on weapons and {{< var global_government_clinical_trials_spending_annual >}}/year testing which medicines work. That is a {{< var military_to_government_clinical_trials_spending_ratio >}}:1 ratio. The "crazy" number is not the solution. It is the ratio that made the solution necessary. Governance dysfunction extracts {{< var political_dysfunction_global_opportunity_cost_total >}} annually in opportunity costs (see [Political Dysfunction Tax](../appendix/political-dysfunction-tax.qmd) [@political-dysfunction-tax-paper-2025]). Large solutions are what large problems look like from the other side.
+:::
+
 ## Why the Mechanism Exists
 
 Your species has never built a system that measures the two things everyone agrees on (healthy life years and income), publishes the score, and pays whoever moves it. You argue about drug policy without tracking whether fewer people die. You argue about military spending without tracking whether it makes you safer. You argue about healthcare without tracking whether anyone gets healthier. The prize does not resolve these arguments. It makes them irrelevant. Two numbers. Did they move? Pay whoever moved them.
@@ -304,6 +310,69 @@ Every participant is doing exactly what they would do anyway, except pointed at 
 
 The politician line is the one that requires explanation, because "politicians notice a Scoreboard" has never caused a politician to act against their donors. The mechanism that converts Scoreboard scale into treaty passage is the [Incentive Alignment Bond](../solution/incentive-alignment-bonds.qmd) [@iab-paper-2025]. IABs raise the campaign capital ({{< var treaty_campaign_total_cost >}}). Investors buy bonds. The campaign passes the treaty. The treaty redirects {{< var treaty_annual_funding >}}/year from military budgets to clinical trials. A management fee on that flow splits three ways: {{< var victory_bond_funding_pct >}} back to investors as a revenue share ({{< var victory_bond_annual_return_pct >}} annual returns, which is not a typo), {{< var iab_political_incentive_funding_pct >}} to a SuperPAC that funds treaty-aligned politicians and post-office careers for yes-voters, and {{< var dih_treasury_medical_research_pct >}} to clinical trials through [wishocratic allocation](../solution/wishocracy.qmd) where nobody with money gets to decide where it goes. The investors become the world's most motivated lobbyists for expanding the treaty, because their returns grow with it. The politicians face the same incentive structure that the NRA perfected, pointed at "not dying" instead of "more guns." The loop is self-sustaining: investor greed funds the campaign, campaign greed passes the treaty, treaty revenue feeds investor returns, investor returns fund more campaigns. Nobody has to become good. The money just circulates until diseases stop existing. (For the full mechanism, see [Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd) [@iab-paper-2025].)
 
+## Before You Nitpick: A Reality Check
+
+Before the usual objections, a quick inventory of what is happening while you evaluate whether this proposal is sufficiently realistic:
+
+- {{< var global_disease_deaths_daily_nounit >}} humans die every day from preventable disease. That is {{< var global_annual_deaths_curable_diseases_nounit >}} this year alone.
+- {{< var current_disease_patients_global_nounit >}} people are living with chronic disease right now.
+- Ongoing genocides and wars are funded by the same {{< var global_military_spending_annual_2024 >}} military budgets we are asking to redirect 1% of.
+- Governance dysfunction extracts {{< var political_dysfunction_global_opportunity_cost_total >}} annually in opportunity costs: health innovation delays, science underfunding, migration restrictions, lead poisoning (see [Political Dysfunction Tax](../appendix/political-dysfunction-tax.qmd) [@political-dysfunction-tax-paper-2025] for the full ledger). The [destructive economy](../economics/gdp-trajectories.qmd) is already {{< var global_destructive_economy_pct_gdp >}} of GDP and on track to hit 50% in {{< var destructive_economy_years_to_50pct_gdp >}} if nothing changes.
+
+This is not a proposal to slightly improve policy. It is a proposal to stop lighting {{< var political_dysfunction_global_opportunity_cost_total >}} on fire while children die in wars and grandmothers rot from diseases we already know how to fix. Every number below is already modeled, Monte Carlo'd, and linked in the [parameters chapter](../appendix/parameters-and-calculations.qmd).
+
+### 1. "The targets are insanely ambitious"
+
+A human trying to sound smart might say the targets (HALE of {{< var wishonia_projected_hale_year_15 >}}, median income of {{< var wishonia_trajectory_avg_income_year_15 >}}) are impossible. They look aggressive because the status-quo trajectory is the thing that is insane. The math (full Monte Carlo sensitivity in the [parameters chapter](../appendix/parameters-and-calculations.qmd)) shows they are the modeled ceiling once the 1% Treaty clears the drug queue from {{< var status_quo_queue_clearance_years >}} to {{< var dfda_queue_clearance_years >}}, eliminates the efficacy lag, and redirects the destructive economy.
+
+Your grandparents cut military spending by {{< var post_ww2_military_cut_pct >}} in two years after WWII ({{< var us_military_spending_1945_peak_annual_2024usd >}} to {{< var us_military_spending_1947_annual_2024usd >}} in today's dollars) [@us-post-wwii-military-spending-cut]. Factories switched from bombers to Cadillacs. The economy produced the greatest boom in human history [@us-post-wwii-gdp-growth-8-pct]. They managed {{< var post_ww2_military_cut_pct >}} during demobilization. You are being asked for 1% during peacetime. If 1% feels ambitious, I would like to understand what happened to your species in the intervening decades.
+
+### 2. "Treaties never work"
+
+Your species has already banned entire weapons industries multiple times, without any greed-powered [Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd):
+
+- Biological Weapons Convention (1972/1975): 187 countries outlawed an entire category of weapons.
+- Chemical Weapons Convention (1993): 193 countries banned chemical weapons production and stockpiles.
+- Ottawa Treaty (1997): 164 countries banned landmines. One woman with a phone and a coalition of NGOs did it in 14 months, despite opposition from major military powers [@icbl-ottawa-treaty].
+- Cluster Munitions Convention (2008): same story, two years [@cluster-munitions-convention-2008].
+
+None of these needed Victory Bonds or {{< var victory_bond_annual_return_pct >}} returns. They passed because enough people got sufficiently annoyed. The 1% Treaty is easier: it keeps 99% of every military budget intact, the relative power balance unchanged, and it bribes everyone with massive personal upside. The [Treaty Feasibility](../appendix/treaty-feasibility.qmd) appendix shows historical campaign costs of $25-50M; we budgeted {{< var treaty_campaign_total_cost >}} with a benefit-cost ratio exceeding {{< var treaty_roi_existing_drugs_only >}} [@cost-of-change-paper-2025].
+
+A human trying to sound smart might explain why the treaty with financial incentives is less likely to work than the ones without them.
+
+### 3. "Goodhart's Law"
+
+On your planet, there is a tradition of raising Goodhart's Law at this point in the conversation. It is how your species signals analytical sophistication without proposing a better pair of metrics.
+
+HALE and median income are the two numbers that literally define whether civilization is working. Mortality is binary and hard to fake across millions of people. Median income requires improving the middle of the distribution, not just the top. The adversarial challenge window means anyone who catches gaming can post a bond, present evidence, and claw back the payout. Post-WWII demobilization proves that when incentives realign, the metrics deliver, not because of central planning, but because healthy people work, earn, innovate, and compound.
+
+I have been watching your planet for 81 years and have not heard a better pair of terminal metrics for human welfare proposed. If you have one, the protocol is [open source](https://github.com/wishonia/earth-optimization-instructions). The alternative is the Terminal Parasitic Load trajectory: destructive economy at 50% of GDP in {{< var destructive_economy_years_to_50pct_gdp >}} while {{< var global_annual_deaths_curable_diseases_nounit >}} die yearly.
+
+### 4. "The implementation is impossibly complex"
+
+I have noticed humans list implementation requirements to prove something is hard, then use things more complex than every item on the list before breakfast. The six capabilities the protocol must solve all already exist at scale:
+
+| Capability needed | What already does this |
+|:---|:---|
+| Identity layer (one person, one vote) | KYC bank accounts. Your species verifies identity billions of times daily for far less important reasons than curing disease. |
+| Pool registry | Investment funds. Vanguard manages $9T across millions of accounts. A prize pool is a fund with a conditional payout trigger. |
+| Cross-pool claim settlement | Interbank settlement. SWIFT processes $5T/day across 200+ countries. Splitting a pool pro rata is simpler than a wire transfer. |
+| Scoreboard aggregation | Election results dashboards. Every democracy already aggregates and publishes vote counts in real time. |
+| Terminal metric oracle | WHO and World Bank. They already publish HALE and median income annually. That IS the oracle. |
+| Claim mechanics | Dividend payments. Corporations pay billions of shareholders quarterly. Paying VOTE point-holders once is simpler. |
+
+The PRIZE does not require inventing anything. It is a survey with KYC verification and a prize pool that pays out if enough humans are incentivized to persuade their leaders to adopt optimal policies. Legal structure: a conditional prize pool with pro-rata failure distribution is a standard escrow, not a security. The referendum could be a ballot measure; elections already exist. Cross-jurisdiction enforcement: the treaty IS the enforcement, exactly like every other treaty your species has signed.
+
+Your species built a system that moves $5 trillion across borders every day, verifies 8 billion identities, and counts 4 billion votes in elections. You are telling me you cannot build a survey with a savings account attached.
+
+### 5. "This is unrealistic"
+
+I have noticed your smartest humans spend more time explaining why solutions will not work than explaining why {{< var global_annual_deaths_curable_diseases_nounit >}} annual deaths should continue. The same humans who say "impossible" watched their grandparents cut military spending {{< var post_ww2_military_cut_pct >}} and benefited from the boom. They watched NGOs ban landmines against the wishes of superpowers. They are currently watching {{< var political_dysfunction_global_opportunity_cost_total >}} get flushed annually while {{< var current_disease_patients_global_nounit >}} people suffer and genocides continue.
+
+A human trying to sound smart might point out that {{< var treaty_roi_existing_drugs_only >}}:1 ROI is "unrealistic." The same human will not mention that your species currently spends {{< var military_to_government_clinical_trials_spending_ratio >}} times more on weapons than testing which medicines work, because that number is familiar and therefore not interesting. If you think the ROI is 1,000 times too high, it is still 259:1.
+
+If your response to "redirect 1% of weapons spending to medicine and pay whoever moves the two numbers" is "but Goodhart / coordination / too ambitious," you are choosing a status quo that kills {{< var global_disease_deaths_daily_nounit >}} people daily over a forkable, open-source, mathematically modeled alternative. That is a choice. It should feel like one.
+
 ## Frequently Asked Objections
 
 | Objection | Answer |
@@ -319,5 +388,13 @@ The politician line is the one that requires explanation, because "politicians n
 | "I don't understand the mechanism" | You do not need to. Deposit $1, answer 2 questions, recruit 2 people. |
 | "Why can't VOTE points be traded?" | Tradability would buy liquidity but invert the signal: outsiders could buy coalition credit without doing coalition work. The public signal this design relies on is simpler: verified participant count, referendum growth, and a visible pool of committed capital. |
 | "Won't someone game the metrics?" | Mortality is binary and hard to fake across millions of people. Median income requires improving the middle of the distribution, not just the top. And the adversarial challenge window means anyone who catches gaming can post a bond, present evidence, and claw back the payout. |
+| "These numbers seem too large" | The numbers look large because the waste is large. Your species spends {{< var military_to_government_clinical_trials_spending_ratio >}} times more on weapons than testing which medicines work. The "crazy" number is the ratio, not the solution. |
+| "The implementation is too complex" | It is a survey with a savings account. Your species verifies billions of identities daily through KYC, moves $5T across borders through SWIFT, counts 4 billion election votes, and publishes HALE/income through WHO and World Bank. Every component exists. The novel part is pointing them at the same two numbers. |
 
 The mechanism does not need participants to be wise. It needs them to be self-interested, impatient, and capable of reading a scoreboard. The whole thing is [open source](https://github.com/wishonia/earth-optimization-instructions).
+
+While you were reading this chapter, approximately {{< var global_disease_deaths_per_minute_nounit >}} humans permanently stopped every minute. Not because the math was wrong. Because nobody bent down.
+
+Five treaties banned entire weapons industries without paying anyone to sign them. This one pays people. I find it interesting that the version with financial incentives draws more objections than the versions without.
+
+The math does not require every reader. It requires enough readers to fill a scoreboard.
