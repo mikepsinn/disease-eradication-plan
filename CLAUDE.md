@@ -69,7 +69,7 @@ Check existing: `grep "keyword" _variables.yml`. Never duplicate. Generate: `npm
 | Treaty durability | Billionaire bondholders have pre-existing influence + motive to keep/expand | "if the treaty holds" without explaining why it will |
 | Cross-chapter | Each chapter gets its own joke version | Same joke verbatim in 2+ chapters |
 | Bond terms | Securities, revenue share, perpetual bonds | Utility tokens, DAO governance |
-| Naming | "your decentralized FDA" (lowercase, with "your") | "dFDA", "Decentralized FDA" (acronyms, proper nouns) |
+| Ownership | Reader builds everything: "your Scoreboard," "here's how you launch" | "Join us," "our platform," "we're building" |
 | Jargon | Alien voice: "you give them money, they stop dying" | "leverage", "synergy", "stakeholder", "operationalize" |
 
 ## Quick Commands

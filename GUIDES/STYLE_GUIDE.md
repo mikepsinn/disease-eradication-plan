@@ -162,45 +162,19 @@ Build from reasonable to insane:
 -   **Impact:** Does it make someone laugh AND think?
 -   **Exasperation:** Does it have weary parent energy without being preachy?
 
-## Naming: Concepts, Not Products
+## The Reader Owns Everything
 
-We're describing frameworks and concepts, not pitching branded products. Use common nouns, not proper nouns.
+This is a DIY guide. The reader is the one building, funding, and running every mechanism in the book. Write accordingly.
 
-### The Rule
+- **Frame everything as the reader's project.** "Your Scoreboard," "your PRIZE pool," "here's how you set up the referendum." The reader is not a customer, donor, or audience. They are the builder.
+- **Proper nouns for game mechanics are fine.** PRIZE, VOTE, Scoreboard, Optimitron, the 1% Treaty - these name specific instruments the reader needs to distinguish. Use them.
+- **Never pitch.** "Join us," "our platform," "we're building" - all banned. The reader is building. You are explaining how.
 
-**Write "your decentralized FDA"** (lowercase, with "your") as the default. This is a DIY guide; the reader is building this.
-
-| ❌ Never use | ✅ Use instead |
-|--------------|----------------|
-| dFDA | your decentralized FDA |
-| Decentralized FDA (capitalized proper noun) | your decentralized FDA |
-| The Decentralized Institutes of Health | your decentralized institutes of health |
-| Join the DIH | here's how you build your decentralized institutes of health |
-| Our dFDA platform | your decentralized FDA |
-
-### When to use "your"
-
-Use "your" in instructional/empowering contexts (most of the book):
-- "Your decentralized FDA connects patients to trials"
-- "Your 1% Treaty Fund holds the funds"
-- "Here's how your decentralized FDA works"
-
-### When to stay neutral
-
-Drop "your" in definitions and technical analysis:
-- **Definitions/glossary:** "A decentralized FDA is a system for..."
-- **Technical/economic analysis:** "A decentralized FDA achieves 82x cost reduction..."
-- **Comparisons:** "A decentralized FDA vs the current FDA..."
-
-### Variants
-
-"Your decentralized FDA" is the default. In technical contexts, "framework" or "protocol" are both fine depending on what fits:
-- "a decentralized clinical trial framework" (describing the system design)
-- "a decentralized trial protocol" (describing the methodology)
-
-### The test
-
-Read it aloud. Does it sound like a startup pitch deck or a Wikipedia article about a concept? Aim for Wikipedia.
+| ❌ Pitching | ✅ Instructing |
+|-------------|---------------|
+| Join the decentralized FDA | Here's how you build your decentralized FDA |
+| Our platform connects patients to trials | Your decentralized FDA connects patients to trials |
+| We're launching the Scoreboard | Here's how you launch the Scoreboard |
 
 ## Remember: Conciseness Above All
 
