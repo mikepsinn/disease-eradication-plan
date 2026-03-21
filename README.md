@@ -613,7 +613,7 @@ This is why aliens don't visit.
 
 [![The Earth Optimization Prize](https://manual.warondisease.org/assets/og/least-bad-idea-prize-og-1200x630.jpg)](https://manual.warondisease.org/knowledge/strategy/earth-optimization-prize.html)
 
-> The Earth Optimization Prize pays whoever moves two numbers: global median healthy life years (target: 69.8 years) and global median income (target: $149K) within 15 years. Depositors fund one pool that compounds through the wishocratic fund. Recruiters earn VOTE points by bringing verified participants into the first 1% Treaty referendum. At resolution, the pool routes to VOTE point-holders on success or divides among depositors pro rata on failure.
+> Humanity spends 604x more on wars than testing which medicines work. The Earth Optimization Prize pays whoever fixes that. Two target numbers: healthy life years and median income. Hit them in 15 years and the pool goes to the people who recruited voters for the 1% Treaty. Miss them and depositors split the pool pro rata (still beats a retirement account). The mechanism: deposit, recruit, and let compound interest do the rest.
 
 ### [The Optimal Budget Generator: A Causal Inference Protocol for Maximizing Median Health and Wealth Through Public Goods Funding](https://manual.warondisease.org/knowledge/appendix/optimal-budget-generator-spec.html)
 

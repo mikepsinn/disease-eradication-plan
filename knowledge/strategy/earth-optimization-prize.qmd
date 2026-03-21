@@ -1,6 +1,6 @@
 ---
 title: "The Earth Optimization Prize"
-subtitle: "A bet that humanity can do 1% less war and 1% more medicine"
+subtitle: "A game where every player wins. The prize is less war, cured diseases, and more money."
 description: "Put money in a pool. Recruit people to vote on the 1% Treaty. If humanity gets healthier and richer within {{< var prize_pool_resolution_years_nounit >}} years, VOTE point-holders split the pool. If not, depositors get their money back (at {{< var prize_pool_15yr_multiple >}} what they put in)."
 abstract: |
   Humanity spends {{< var military_to_government_clinical_trials_spending_ratio >}}x more on wars than testing which medicines work. The Earth Optimization Prize pays whoever fixes that. Two target numbers: healthy life years and median income. Hit them in {{< var prize_pool_resolution_years_nounit >}} years and the pool goes to the people who recruited voters for the 1% Treaty. Miss them and depositors split the pool pro rata (still beats a retirement account). The mechanism: deposit, recruit, and let compound interest do the rest.
@@ -21,7 +21,7 @@ youtube-thumbnail: /assets/podcast/least-bad-idea-prize-paper-youtube.jpg
 
 Every day, {{< var global_disease_deaths_daily_nounit >}} people die from diseases humanity spends {{< var military_to_government_clinical_trials_spending_ratio >}} times more on wars, genocides, and blowing people up than researching. Your governments burn {{< var political_dysfunction_global_opportunity_cost_total >}} a year on [political dysfunction](../appendix/political-dysfunction-tax.qmd) [@political-dysfunction-tax-paper-2025]. This proposal: do 1% less of that. Redirect 1% of military spending to clinical trials. Everything below is the mechanism for making it happen and the math on what changes if it does.
 
-The Earth Optimization Game is a positive-sum game. No player loses by participating. The only losing move is not playing. The upside/downside ratio of playing is {{< var sharing_upside_downside_ratio_treaty >}}.
+Nobody loses by playing. The only losing move is not playing. The upside/downside ratio is {{< var sharing_upside_downside_ratio_treaty >}}.
 
 Every person alive is {{< var treaty_personal_upside_blend >}} richer in a world that stops wasting {{< var political_dysfunction_global_opportunity_cost_total >}}/year on [political dysfunction](../appendix/political-dysfunction-tax.qmd). Getting there requires some people to put money in a pool and everyone else to click a button on a website. The upside is {{< var treaty_personal_upside_blend >}}. The downside is {{< var sharing_opportunity_cost >}} of your time. {{< var global_disease_deaths_daily_nounit >}} people die every day while your species sits out a Game it cannot lose.
 
@@ -36,7 +36,7 @@ This chapter explains why, and then explains how.
 
 ## How It Works (The 90-Second Version)
 
-**Here's how PRIZE deposits work.** Your deposit goes into a single pool that compounds through the [wishocratic fund](../economics/wishocratic-investment-fund.qmd). Because the pool qualifies as an accredited investor, your $1 buys access to the same venture and private equity asset class ({{< var venture_gross_return >}} gross returns) that your retirement account is legally locked out of. The pool diversifies across the entire VC/PE sector, erasing individual-fund risk. Crowd allocation ({{< var crowd_decision_accuracy >}} accuracy vs. {{< var expert_decision_accuracy >}} for expert fund managers [@surowiecki-2004]) replaces fee-charging committees. Global diversification eliminates home-country bias. Result: {{< var prize_pool_annual_return >}} annually, nearly triple conventional retirement at {{< var conventional_retirement_return >}} (see [Wishocratic Investment Fund](../economics/wishocratic-investment-fund.qmd) for the full derivation).
+**Here's how PRIZE deposits work.** Your deposit goes into a single pool that compounds through the [wishocratic fund](../economics/wishocratic-investment-fund.qmd). Rich people have a secret money club (venture capital and private equity) that makes {{< var venture_gross_return >}} returns. Your retirement account is legally banned from joining. The pool gets you in. It spreads your money across the entire sector so no single bad bet kills you, and crowds pick the investments ({{< var crowd_decision_accuracy >}} accuracy) instead of expensive fund managers ({{< var expert_decision_accuracy >}} accuracy) [@surowiecki-2004]. Result: {{< var prize_pool_annual_return >}} annually, nearly triple conventional retirement at {{< var conventional_retirement_return >}} (see [Wishocratic Investment Fund](../economics/wishocratic-investment-fund.qmd) for the full derivation).
 
 Your deposit is locked. Not a savings account. It stays in your verified account until resolution. Targets missed: you divide the realized pool pro rata. Targets met: the pool goes to VOTE point-holders, not back to you. See the [prize protocol](../appendix/earth-optimization-prize-protocol.qmd) [@earth-optimization-prize-protocol-paper-2025] for the full specification.
 
@@ -51,7 +51,7 @@ Your public signal is the **Scoreboard**, updated in real time: global median HA
 
 ## Contributor Outcomes
 
-Here's what happens to your money. The pool compounds through the wishocratic fund regardless of whether the year-15 targets are met (it invests productively either way). The only question is who gets the realized pool at resolution.
+Here's what happens to your money. The pool makes money regardless of whether the targets are met (it invests either way). The only question is who gets it.
 
 | Scenario | What happens to your deposit | What happens to your VOTE points | World-side outcome |
 |:---|:---|:---|:---|
@@ -69,7 +69,7 @@ Two VOTE points turn a small deposit into a large payout. Large depositors beat 
 ::: {.callout-note}
 ## These Numbers Look Large Because the Current Waste Is Large
 
-Your species spends {{< var global_military_spending_annual_2024 >}}/year on weapons and {{< var global_government_clinical_trials_spending_annual >}}/year testing which medicines work. That is a {{< var military_to_government_clinical_trials_spending_ratio >}}:1 ratio. The "crazy" number is not the solution. It is the ratio that made the solution necessary. Governance dysfunction extracts {{< var political_dysfunction_global_opportunity_cost_total >}} annually in opportunity costs (see [Political Dysfunction Tax](../appendix/political-dysfunction-tax.qmd) [@political-dysfunction-tax-paper-2025]). Large solutions are what large problems look like from the other side.
+Your species spends {{< var global_military_spending_annual_2024 >}}/year on weapons and {{< var global_government_clinical_trials_spending_annual >}}/year testing which medicines work. That is a {{< var military_to_government_clinical_trials_spending_ratio >}}:1 ratio. The "crazy" number is not the solution. It is the ratio that made the solution necessary. Your governments burn {{< var political_dysfunction_global_opportunity_cost_total >}} every year on dysfunction (see [Political Dysfunction Tax](../appendix/political-dysfunction-tax.qmd) [@political-dysfunction-tax-paper-2025]). Large solutions are what large problems look like from the other side.
 :::
 
 ## What To Do Right Now
@@ -101,7 +101,7 @@ Everything below this line is for readers who want to understand why before they
 - What that 1% buys: the [1% Treaty](../solution/1-percent-treaty.qmd) redirects {{< var treaty_annual_funding >}}/year from military budgets to pragmatic clinical trials. That single reallocation expands trial capacity {{< var dfda_trial_capacity_multiplier >}}, accelerates the drug-disease search space from {{< var status_quo_queue_clearance_years >}} to {{< var dfda_queue_clearance_years >}}, and averts {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved_nounit >}} deaths (cumulative, over {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} of accelerated trial capacity) at {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}} per DALY ({{< var treaty_vs_bed_nets_multiplier >}} more cost-effective than anti-malaria bed nets). The {{< var treaty_campaign_total_cost >}} is the campaign cost to adopt the treaty; the trials themselves are funded by the redirected military spending, so the direct cost is negative (trials funded *and* 1% fewer bombs) [@1-pct-treaty-impact-paper-2025].
 - The minimum serious first test is that treaty: are humans willing to redirect even 1% from weapons to medicine?
 
-## Why You Need This Mechanism
+## Why Your Species Needs This Game
 
 Your species has never built a system that measures the two things everyone agrees on (healthy life years and income), publishes the score, and pays whoever moves it. You argue about drug policy without tracking whether fewer people die. You argue about military spending without tracking whether it makes you safer. You argue about healthcare without tracking whether anyone gets healthier. The Game does not resolve these arguments. It makes them irrelevant. Two numbers. Did they move? Pay whoever moved them.
 
@@ -115,15 +115,15 @@ That missing Scoreboard is underneath five specific problems the Game solves at 
 
 ### 1. Nobody Knows Solutions Exist
 
-Most humans have never heard that pragmatic clinical trials (streamlined trials run inside routine care) cost {{< var dfda_pragmatic_trial_cost_per_patient >}} per patient (vs. {{< var traditional_phase3_cost_per_patient >}} traditional) [@dfda-impact-paper-2025]. That redirecting 1% of military spending to medical research yields a societal benefit-cost ratio of {{< var treaty_roi_existing_drugs_only >}} (QALY-valued benefit per dollar of campaign cost) [@1-pct-treaty-impact-paper-2025]. That {{< var existing_drugs_efficacy_lag_deaths_total_nounit >}} people have already died (since 1962) waiting for drugs that were proven to work but stuck in regulatory queues [@invisible-graveyard-paper-2025]. That the total cost of buying passage of any policy through legal democratic channels in the United States is {{< var treaty_campaign_total_cost >}}, with a benefit-cost ratio exceeding {{< var treaty_roi_existing_drugs_only >}} [@cost-of-change-paper-2025].
+Most humans have never heard that pragmatic clinical trials (streamlined trials run inside routine care) cost {{< var dfda_pragmatic_trial_cost_per_patient >}} per patient (vs. {{< var traditional_phase3_cost_per_patient >}} traditional) [@dfda-impact-paper-2025]. That redirecting 1% of the murder budget to medical research gets back {{< var treaty_roi_existing_drugs_only >}} times what the campaign costs, in lives saved and health gained [@1-pct-treaty-impact-paper-2025]. That {{< var existing_drugs_efficacy_lag_deaths_total_nounit >}} people have already died (since 1962) waiting for drugs that were proven to work but stuck in regulatory queues [@invisible-graveyard-paper-2025]. That you can buy passage of any policy through legal democratic channels.
 
-Your VOTE points make millions of people willing to have a conversation they would otherwise avoid. Each recruitment forces the recruit through evidence (cost per life saved for military spending vs. clinical trials, the efficacy lag death toll, the economic returns). The registration process is the education. The recruitment reward is what makes the education propagate.
+VOTE points pay people to have a conversation they would otherwise avoid. To recruit someone, you show them the numbers: what military spending costs per life saved vs. clinical trials, how many people died waiting for drugs that already worked, what the economic returns look like. The registration process is the education. The recruitment reward is what makes the education spread.
 
 ### 2. Everyone Who Knows Assumes They Are Alone
 
 Your economists call it pluralistic ignorance. Nearly every human would prefer a world without war and treatable disease and an extra {{< var treaty_trajectory_lifetime_income_gain_per_capita >}} [@gdp-trajectories-paper-2025]. If every human realized that nearly every other human wants the same thing, it would be done tomorrow. Instead, everyone assumes "this will never happen" because they assume nobody else would agree to it. This is the dumbest reason a civilization has ever continued dying.
 
-Every verified registration is a publicly verifiable signal. The Scoreboard aggregates across all participating pools in real time. As the number climbs from thousands to millions to hundreds of millions, the belief that "nobody would ever agree to this" becomes empirically falsifiable. You can see that they already did. The [referendum](global-referendum.qmd) does not create demand for not dying. The demand is there. The Scoreboard makes it impossible to pretend it is not.
+Every registration is a person saying "I'm in" where everyone can see it. The Scoreboard counts them all in real time. As the number climbs from thousands to millions to hundreds of millions, "nobody would ever agree to this" stops being an opinion and starts being wrong. You can see that they already did. The [referendum](global-referendum.qmd) does not create demand for not dying. The demand is there. The Scoreboard makes it impossible to pretend it is not.
 
 ::: {.content-visible when-format="html"}
 <figure>
@@ -148,13 +148,13 @@ The Game does not ask anyone to believe this manual is correct. It asks them to 
 
 No committee decides which reforms to fund. A researcher who discovers a cheaper trial design profits. A lobbyist who passes legislation profits. A nonprofit that recruits a million voters profits. {{< var global_coordination_target_supporters_nounit >}} people, each trying to get paid, all pointed at the same two numbers. Your entire species searching for whatever works, instead of arguing about what to search for.
 
-Your species has tried the obvious alternatives. Advance Market Commitments [@kremer2020] say "we will buy the thing if you build it," which works when the thing is a vaccine but not when the thing is systemic reform. Challenge prizes give a fixed payout to the first team across the finish line, then stop paying. Direct government procurement funds whatever the procurer thinks will work, which is the current system, and it is producing capture. Prediction markets tell you what will win but do not cause implementation. Systems where the biggest wallets set the agenda suffer the same capture problem. The Game, with published scoring, adversarial challenges, and automatic replacement, is the one structure where capturing it requires beating every challenger on verified metrics simultaneously. That is not capture-proof. But it is capture-expensive.
+Your species has tried alternatives. "We'll buy it if you build it" (Advance Market Commitments [@kremer2020]) works for vaccines, not systemic reform. Challenge prizes pay the first team across the finish line, then stop. Government procurement funds whatever the person in charge thinks will work, which is the current system, and it is being captured by the people it is supposed to regulate. Prediction markets tell you what will win but do not make it happen. The Game pays for outcomes, publishes the score, and lets anyone challenge the results. Capturing it requires beating every challenger on verified metrics at the same time. Not capture-proof. Capture-expensive.
 
 ### 5. Complex Reforms Have No Entry Point
 
-The [1% Treaty](../solution/1-percent-treaty.qmd) [@1-pct-treaty-impact-paper-2025], FDA reform, wishocratic allocation, cross-jurisdictional policy optimization: each is a hard sell individually. Each requires explaining an elaborate mechanism to people who have been trained to assume nothing works. The Game is the simple entry point. Deposit $1, keep a failure-branch claim on the same pool if nothing works, and help route it to VOTE point-holders if the world actually improves. One sentence. One decision.
+The [1% Treaty](../solution/1-percent-treaty.qmd) [@1-pct-treaty-impact-paper-2025], FDA reform, wishocratic allocation, making every government on Earth less stupid at the same time: each is a hard sell individually. Each requires explaining an elaborate mechanism to people who have been trained to assume nothing works. The Game is the simple entry point. Put in $1. If nothing works, you keep your money. If the world gets better, VOTE point-holders get paid. One sentence. One decision.
 
-Once someone makes a PRIZE deposit or earns a VOTE claim, they discover the component reforms through the recruitment and registration process. The treaty. The trial cost data. The allocation evidence. The Game is the door into everything else. It converts "this sounds too complicated" into "I put in $1 and either the research gets funded or I still have a claim on the pool, so why not." The complex reforms ride behind the simple instrument.
+Once someone puts in $1 or earns a VOTE point, they discover the rest through the recruitment process. The treaty. The trial cost data. The allocation evidence. The Game is the door into everything else. "This sounds too complicated" becomes "I put in $1 and either diseases get cured or I keep my money, so why not."
 
 ### 6. Nobody Checks Whether the Money Made Things Better or Worse
 
@@ -162,13 +162,13 @@ Your species spent $8 trillion on the War on Terror [@costsofwar2023]. Terrorist
 
 This is not incompetence. It is architecture. Each program created a permanent bureaucracy whose continued funding requires the problem to continue existing (see [Path A: Moronia](../futures/moronia.qmd) for the full anatomy of these loops). The DEA needs drug crime. Counter-terrorism needs terrorists. Private prisons have contracts requiring 90% bed occupancy, which means crime dropping is a budget problem. When a policy makes its target problem worse, the responsible agency's budget grows, because a growing problem justifies a growing response. By this logic, the most successful fire department is one that starts fires.
 
-Here's the missing feedback loop. The [Optimitron](../solution/optimocracy.qmd) [@optimocracy-paper-2025] tracks the two terminal numbers (median healthy life years and median real income), publishes them on the Scoreboard, and the [IAB-funded campaign](../solution/incentive-alignment-bonds.qmd) [@iab-paper-2025] defunds politicians who ignore them. A policy that spends a trillion dollars and makes the problem 17 times worse shows up as a line going the wrong direction on a public dashboard. The politician who voted for it gets an alignment score. The score is public. Their opponent gets funded. The mechanism does not require anyone to become smarter or more ethical. It requires a Scoreboard that nobody can turn off.
+Here's the missing feedback loop. The [Optimitron](../solution/optimocracy.qmd) [@optimocracy-paper-2025] tracks the two numbers (how long people live, how much they earn), publishes them on the Scoreboard, and the [IAB-funded campaign](../solution/incentive-alignment-bonds.qmd) [@iab-paper-2025] defunds politicians who ignore them. A policy that spends a trillion dollars and makes the problem 17 times worse shows up as a line going the wrong direction on a public dashboard. The politician who voted for it gets an alignment score. The score is public. Their opponent gets funded. The mechanism does not require anyone to become smarter or more ethical. It requires a Scoreboard that nobody can turn off.
 
-Without the Optimitron, the Prize can measure whether the terminal numbers moved at year {{< var prize_pool_resolution_years_nounit >}}, but it cannot identify which policies are actively dragging them down or which interventions moved them up. The Scoreboard tells you the patient's temperature. The Optimitron tells you which of the seventeen drugs you're administering is the one causing the fever.
+Without the Optimitron, the Prize can measure whether the two numbers moved at year {{< var prize_pool_resolution_years_nounit >}}, but it cannot tell which policies are dragging them down or which ones moved them up. The Scoreboard tells you the patient's temperature. The Optimitron tells you which of the seventeen drugs you're administering is the one causing the fever.
 
 ## The Exponential Math
 
-On Wishonia, if one person tells two people and each of them tells two people, the math handles the rest. The point is not that everyone becomes a recruiter. The point is that small repeated actions can compound to a scale too large to ignore much faster than most readers intuit.
+On Wishonia, if one person tells two people and each of them tells two people, the math handles the rest. Not everyone becomes a recruiter. But "tell two people" gets very large very fast.
 
 | Round | Cumulative people | What that looks like |
 |:---|:---|:---|
@@ -181,24 +181,24 @@ On Wishonia, if one person tells two people and each of them tells two people, t
 | 32 | 4,294,967,296 | Roughly the modeled global coordination target |
 | 33 | 8,589,934,592 | Everyone on Earth |
 
-32 rounds. Not 32 years. 32 rounds. If each round takes a week, that is eight months. If each round takes a month, that is two years and eight months. The important point is not the payout headline. It is that the Scoreboard can move from one person to world scale on ordinary human timescales rather than civilizational ones.
+32 rounds. Not 32 years. 32 rounds. If each round takes a week, that is eight months. If each round takes a month, under three years. One person to world scale in months, not centuries.
 
 "No product in history has achieved 32 rounds of doubling." Correct. The table is the mathematical ceiling, not the operational model. The operational model (see [Treaty Feasibility](../appendix/treaty-feasibility.qmd)) uses R0={{< var chain_effective_r >}} with orbit overlap and realistic attrition. And the actual coordination target is not 8 billion. The Chenoweth threshold ({{< var global_population_activism_threshold_pct >}}) means you need {{< var treaty_campaign_voting_bloc_target_nounit >}} verified participants, not the full planet [@3-5-rule]. That is round 28, not round 33.
 
 Your species already turns out at 50-65% for elections that pay nothing and offer a 1-in-30-million chance of influencing anything [@gelman2012]. This referendum takes 30 seconds on a phone, pays VOTE points on success, and the outcome is "end war and disease and get unimaginably rich." The participation barrier is not "will people do this." It is "will people hear about it." That is what the recruitment incentive solves. Even with heavy dropout, the distance from one person to a globally visible scale is measured in dozens of rounds, not decades (see [the full comparison](#why-this-referendum-beats-your-elections) below).
 
-The modeled end-state coordination target is {{< var global_coordination_target_supporters_nounit >}} people, or {{< var global_coordination_target_pct >}} of humanity. That is the canonical public headcount target for the Game. VOTE points make coalition-building worth doing. The Scoreboard makes that coalition visible. At scale, treaty passage is expected well before the pool matures.
+The target is {{< var global_coordination_target_supporters_nounit >}} people. {{< var global_coordination_target_pct >}} of humanity. VOTE points make recruiting worth doing. The Scoreboard makes the coalition visible. At that scale, the treaty passes well before the pool matures.
 
-## Why A Rational Person Should Care
+## What's In It For You
 
 | Future | What it means for you |
 |:---|:---|
-| **Status quo** | {{< var current_trajectory_cumulative_lifetime_income >}} cumulative lifetime income [@gdp-trajectories-paper-2025]; Terminal Parasitic Load Threshold in {{< var destructive_economy_years_to_50pct_gdp >}}. |
+| **Status quo** | {{< var current_trajectory_cumulative_lifetime_income >}} lifetime income [@gdp-trajectories-paper-2025]. Half the economy is looted in {{< var destructive_economy_years_to_50pct_gdp >}}. |
 | **1% Treaty** | +{{< var treaty_trajectory_lifetime_income_gain_per_capita >}} lifetime income ({{< var treaty_trajectory_lifetime_income_multiplier >}}), +{{< var treaty_hale_gain_year_15_nounit >}} healthy years. |
 | **Optimal governance** | +{{< var wishonia_trajectory_lifetime_income_gain_per_capita >}} lifetime income ({{< var wishonia_trajectory_lifetime_income_multiplier >}}), +{{< var wishonia_hale_gain_year_15_nounit >}} healthy years. |
-| **Collapse tail** | Terminal Parasitic Load Threshold in {{< var destructive_economy_years_to_50pct_gdp >}}; destructive economy already {{< var global_destructive_economy_pct_gdp >}} of GDP and accelerating. |
+| **Collapse tail** | Half the economy is looted in {{< var destructive_economy_years_to_50pct_gdp >}}. Already at {{< var global_destructive_economy_pct_gdp >}} of GDP and accelerating. |
 
-That spread is absurdly large and most humans still treat "do nothing" as if it were safe. For the average human on Earth today, the model already implies {{< var global_avg_income_2025 >}} annual income, {{< var global_avg_remaining_years >}} remaining life, and roughly {{< var global_annual_savings_per_capita >}} in annual savings capacity. If you want your own numbers, use the [personal benefits calculator](../call-to-action/your-personal-benefits.qmd).
+That spread is absurdly large and most humans still treat "do nothing" as if it were safe. The average human earns {{< var global_avg_income_2025 >}}/year, has {{< var global_avg_remaining_years >}} left to live, and can save about {{< var global_annual_savings_per_capita >}}/year. If you want your own numbers, use the [personal benefits calculator](../call-to-action/your-personal-benefits.qmd).
 
 Those are not projections about charity. They are projections about your money, your health, and whether your civilization collapses. Anything that makes this even slightly more likely to happen is worth real money to you:
 
@@ -210,21 +210,21 @@ Those are not projections about charity. They are projections about your money, 
 
 | Channel | What it is | Current modeled range |
 |---|---|---|
-| You get richer | Per-capita income gain from better resource allocation | {{< var treaty_trajectory_lifetime_income_gain_per_capita >}} (Treaty) to {{< var wishonia_trajectory_lifetime_income_gain_per_capita >}} (Wishonia) [@gdp-trajectories-paper-2025] |
-| You get healthier | Value of additional healthy years by year 15 | {{< var treaty_hale_value_per_capita >}} (Treaty) to {{< var wishonia_hale_value_per_capita >}} (Wishonia) |
-| Auxiliary direct upside | VOTE claim payout for verified recruitment | {{< var vote_token_potential_value >}} modeled VOTE payout |
-| You lose less | Less exposure to compounding dysfunction tax and collapse | {{< var political_dysfunction_tax_per_person_annual >}}/year ongoing (opportunity cost, not cash; see [Political Dysfunction Tax](../appendix/political-dysfunction-tax.qmd)); Terminal Parasitic Load Threshold in {{< var destructive_economy_years_to_50pct_gdp >}} on the status quo path |
-| People stop dying | Lives saved and suffering prevented per probability point you shift | {{< var contribution_dalys_per_pct_point_nounit >}} DALYs / {{< var contribution_lives_saved_per_pct_point_nounit >}} lives / {{< var contribution_suffering_hours_per_pct_point_nounit >}} suffering hours per percentage point (derived from [DFDA impact model](../appendix/dfda-impact-paper.qmd)) |
+| You get richer | You earn more because less money is wasted | {{< var treaty_trajectory_lifetime_income_gain_per_capita >}} (Treaty) to {{< var wishonia_trajectory_lifetime_income_gain_per_capita >}} (Wishonia) [@gdp-trajectories-paper-2025] |
+| You get healthier | You live longer because diseases get cured | {{< var treaty_hale_value_per_capita >}} (Treaty) to {{< var wishonia_hale_value_per_capita >}} (Wishonia) |
+| You get paid | VOTE payout for recruiting people | {{< var vote_token_potential_value >}} per VOTE point |
+| You stop losing money | Your governments stop burning {{< var political_dysfunction_tax_per_person_annual >}}/year of your money on dysfunction | {{< var political_dysfunction_tax_per_person_annual >}}/year (see [Political Dysfunction Tax](../appendix/political-dysfunction-tax.qmd)); half the economy looted in {{< var destructive_economy_years_to_50pct_gdp >}} on the current path |
+| People stop dying | Fewer dead humans per percentage point you shift | {{< var contribution_dalys_per_pct_point_nounit >}} DALYs / {{< var contribution_lives_saved_per_pct_point_nounit >}} lives / {{< var contribution_suffering_hours_per_pct_point_nounit >}} suffering hours per percentage point ([DFDA impact model](../appendix/dfda-impact-paper.qmd)) |
 
-**The cost of not acting is not zero.** Political dysfunction already costs {{< var political_dysfunction_tax_per_person_annual >}} per person per year in opportunity cost (see [Political Dysfunction Tax](../appendix/political-dysfunction-tax.qmd) [@political-dysfunction-tax-paper-2025] for the methodology). "Do nothing" is not a neutral baseline. It is a bet that the trends in the Problem Statement reverse without intervention.
+**"Do nothing" is not free.** Your governments already waste {{< var political_dysfunction_tax_per_person_annual >}} per person per year ([Political Dysfunction Tax](../appendix/political-dysfunction-tax.qmd) [@political-dysfunction-tax-paper-2025]). Sitting this out is a bet that everything in the Problem Statement fixes itself. Look at the Problem Statement and decide how confident you are.
 
 ::: {.callout-tip}
-## This Is a Favorable Bet, Not a Donation
+## This Is a Better Deal Than Any Political Donation in History
 
-Your PRIZE deposit is the conditional commitment. Your money stays with you on failure and routes to VOTE point-holders on success (see the [Contributor Outcomes](#contributor-outcomes) table for the full branch math). The pool compounds at {{< var prize_pool_annual_return >}} annually regardless of which branch triggers, reaching {{< var prize_pool_15yr_multiple >}} over {{< var prize_pool_resolution_years_nounit >}} years before routing. That is unusually favorable compared with ordinary political donations.
+Your money stays with you if this fails and goes to VOTE point-holders if it succeeds (see [Contributor Outcomes](#contributor-outcomes)). Either way, it grows at {{< var prize_pool_annual_return >}} annually, reaching {{< var prize_pool_15yr_multiple >}} over {{< var prize_pool_resolution_years_nounit >}} years. Name a political donation that does that.
 :::
 
-The break-even probability shift for any given contribution is small because the per-capita stakes are large:
+You do not need to tip the scale by yourself. The stakes are so large that even a tiny nudge is worth real money:
 
 | Your unreimbursed contribution | Break-even probability shift (Treaty floor) | Break-even probability shift (Wishonia) |
 |---|---|---|
@@ -267,7 +267,7 @@ Everything the Game exists to produce is either healthy life years or income. Pa
 
 ## The Numbers
 
-**What does it cost to get the Game to scale?** Here's the activation budget - the capital you need to make {{< var global_coordination_target_pct >}} participation credible through direct referral incentives, verification, and global launch operations:
+**What does it cost to get the Game to scale?** Here is what it costs to pay {{< var global_coordination_target_supporters_nounit >}} people to click a button:
 
 {{< var global_coordination_activation_budget_latex >}}
 
@@ -277,11 +277,11 @@ The planning midpoint is {{< var global_coordination_activation_budget >}}: a bl
 
 {{< var prize_pool_potential_max_size_latex >}}
 
-A separate benchmark: how much pool capital would make two VOTE points look retirement-equivalent on success for a representative saver?
+How big does the pool need to be before two VOTE points are worth more than a retirement account?
 
 {{< var prize_pool_retirement_equivalent_principal_latex >}}
 
-That benchmark is {{< var prize_pool_retirement_equivalent_principal >}}. It is the pool size where the Game's upside becomes personally obvious, not the minimum to get started.
+{{< var prize_pool_retirement_equivalent_principal >}}. That is when it becomes personally obvious, not the minimum to get started.
 
 **What does a VOTE point pay?** The modeled coordination target is {{< var global_coordination_target_pct >}} of humanity:
 
@@ -302,20 +302,20 @@ At that headcount, {{< var global_coordination_target_supporters_nounit >}} peop
 
 Your species turns out at 50-65% for elections despite getting paid nothing. This referendum adds a contingent payout, direct attribution, and a public Scoreboard.
 
-**Why more pools make everyone richer.** Your protocol does not need a single pool. It needs a single *metric standard*. Any pool that measures the same two terminal outcomes (median HALY, median income) and uses proof-of-personhood for deduplication automatically joins the reward network. A verified person claims proportionally from every participating pool, regardless of which one recorded their vote. Japan launches a pool, the EU launches a pool, the Gates Foundation launches a pool. The combined reward grows with each new entrant. A "competing" pool is actually a deposit. Spending money to "attack" the network is indistinguishable from donating to it. Think of email: you can run your own server; all servers interoperate; running your own extends the network rather than fragmenting it.
+**Why more pools make everyone richer.** Your protocol does not need a single pool. It needs a single *metric standard*. Any pool that measures the same two outcomes (healthy life years, median income) and checks that each person is real automatically joins the reward network. A verified person claims proportionally from every participating pool, regardless of which one recorded their vote. Japan launches a pool, the EU launches a pool, the Gates Foundation launches a pool. The combined reward grows with each new entrant. A "competing" pool is actually a deposit. Spending money to "attack" the network is indistinguishable from donating to it. Think of email: you can run your own server; all servers interoperate; running your own extends the network rather than fragmenting it.
 
-**What your protocol must solve.** Six capabilities: (1) identity layer (one person, one vote, cross-pool), (2) pool registry, (3) cross-pool claim settlement, (4) Scoreboard aggregation, (5) terminal metric oracle, (6) claim mechanics. The [protocol specification](../appendix/earth-optimization-prize-protocol.qmd) [@earth-optimization-protocol-2025] has the details.
+**What your protocol must solve.** Six things: (1) verify each person is real and only counts once, (2) register pools, (3) split payouts across pools, (4) add up the Scoreboard, (5) measure the two numbers, (6) pay people. The [protocol specification](../appendix/earth-optimization-prize-protocol.qmd) [@earth-optimization-protocol-2025] has the details.
 
-## Why Public Choice Theory Approves
+## Why Everyone's Greed Points the Same Direction
 
-Public choice theory says governments are run by humans who care about reelection, career advancement, and reputation. This is not a design flaw. It is a design constraint. Here's how you work with it instead of against it:
+Your politicians care about reelection. Your investors care about returns. Your citizens care about not dying. This is not a design flaw. It is a design constraint. Here is how you work with it instead of against it:
 
-- **Depositors** commit capital because they retain a failure-branch claim on the same pool and buy a better future on success.
-- **Recruiters** recruit because every verified participant earns them a VOTE point.
-- **Entrepreneurs** compete for a giant implementation franchise.
+- **Depositors** put money in because they get it back (at {{< var prize_pool_15yr_multiple >}}) if this fails, and buy a world with fewer dead people if it succeeds.
+- **Recruiters** recruit because every person they bring in earns them a VOTE point.
+- **Entrepreneurs** compete for a giant implementation contract.
 - **Politicians** get funded for voting yes and watch their opponents get funded if they vote no (details below).
-- **Researchers and auditors** compete for the authority to validate what works.
-- **Citizens** get simpler choices and more visible returns from participation.
+- **Researchers** compete to prove what works.
+- **Citizens** get a 30-second vote that might pay {{< var vote_token_potential_value >}}.
 
 Every participant is doing exactly what they would do anyway, except pointed at diseases instead of each other.
 
@@ -328,7 +328,7 @@ Before the usual objections, a quick inventory of what is happening while you ev
 - {{< var global_disease_deaths_daily_nounit >}} humans die every single day from preventable disease ({{< var global_annual_deaths_curable_diseases_nounit >}} this year alone, fifty 9/11s every single day, one Holocaust every 40 days).
 - {{< var current_disease_patients_global_nounit >}} people live with chronic disease right now.
 - Ongoing genocides and wars are funded by the same {{< var global_military_spending_annual_2024 >}} military budgets we are asking to redirect 1% of.
-- Governance dysfunction extracts {{< var political_dysfunction_global_opportunity_cost_total >}} annually in opportunity costs: health innovation delays, science underfunding, migration restrictions, lead poisoning (see [Political Dysfunction Tax](../appendix/political-dysfunction-tax.qmd) [@political-dysfunction-tax-paper-2025] for the full ledger). The [destructive economy](../economics/gdp-trajectories.qmd) is already {{< var global_destructive_economy_pct_gdp >}} of GDP and on track to hit 50% in {{< var destructive_economy_years_to_50pct_gdp >}} if nothing changes.
+- Your governments burn {{< var political_dysfunction_global_opportunity_cost_total >}} every year on dysfunction: health innovation delays, science underfunding, migration restrictions, lead poisoning (see [Political Dysfunction Tax](../appendix/political-dysfunction-tax.qmd) [@political-dysfunction-tax-paper-2025] for the full ledger). The [destructive economy](../economics/gdp-trajectories.qmd) is already {{< var global_destructive_economy_pct_gdp >}} of GDP and on track to hit 50% in {{< var destructive_economy_years_to_50pct_gdp >}} if nothing changes.
 
 This is not a plan to slightly improve policy. These are instructions for how to stop lighting {{< var political_dysfunction_global_opportunity_cost_total >}} on fire while children die in wars and grandmothers rot from diseases we already know how to fix. Every number below is already modeled, Monte Carlo'd, and linked in the [parameters chapter](../appendix/parameters-and-calculations.qmd).
 
@@ -379,10 +379,10 @@ I have noticed humans list implementation requirements to prove something is har
 | Pool registry | Investment funds. Vanguard manages $9T across millions of accounts. A prize pool is a fund with a conditional payout trigger. |
 | Cross-pool claim settlement | Interbank settlement. SWIFT processes $5T/day across 200+ countries. Splitting a pool pro rata is simpler than a wire transfer. |
 | Scoreboard aggregation | Election results dashboards. Every democracy already aggregates and publishes vote counts in real time. |
-| Terminal metric oracle | WHO and World Bank. They already publish HALE and median income annually. That IS the oracle. |
+| Measure the two numbers | WHO and World Bank. They already publish HALE and median income annually. That IS the measurement. |
 | Claim mechanics | Dividend payments. Corporations pay billions of shareholders quarterly. Paying VOTE point-holders once is simpler. |
 
-The Game does not require inventing anything. It is a survey with KYC verification and a prize pool that pays out if enough humans are incentivized to persuade their leaders to adopt optimal policies. Legal structure: a conditional prize pool with pro-rata failure distribution is a standard escrow, not a security. The referendum could be a ballot measure; elections already exist. Cross-jurisdiction enforcement: the treaty IS the enforcement, exactly like every other treaty your species has signed.
+The Game does not require inventing anything. It is a survey where you prove you are a real person, and a savings account that pays out if enough people convince their governments to stop wasting money. Legally, it is an escrow account with a payout trigger, not a security. The referendum could be a ballot measure; elections already exist. Enforcement: the treaty IS the enforcement, exactly like every other treaty your species has signed.
 
 Your species built a system that moves $5 trillion across borders every day, verifies 8 billion identities, and counts 4 billion votes in elections. You are telling me you cannot build a survey with a savings account attached.
 
