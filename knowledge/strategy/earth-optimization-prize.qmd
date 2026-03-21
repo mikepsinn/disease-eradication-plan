@@ -1,7 +1,7 @@
 ---
 title: "The Earth Optimization Prize"
 subtitle: "An open-source coordination game for raising global median income and healthy life years within 15 years"
-description: "The prize works like an Earth Optimization Game: bring verified people into the first 1% Treaty referendum, earn VOTE points, and help build the coalition. On failure, depositors split the realized pool. On success, VOTE point-holders share it. The current protocol is the open-source instruction manual for how to play."
+description: "The prize works like an Earth Optimization Game: bring verified people into the first 1% Treaty referendum, earn VOTE points, and help build the coalition that raises global HALE to {{< var wishonia_projected_hale_year_15 >}} and median income to {{< var wishonia_trajectory_avg_income_year_15 >}} within {{< var prize_pool_resolution_years_nounit >}} years. On failure, depositors split the realized pool. On success, VOTE point-holders share it."
 abstract: |
   The Earth Optimization Prize is an open-source coordination game: deposit into a shared pool, recruit verified participants into a global referendum, and help raise global healthy life years and median income within {{< var prize_pool_resolution_years_nounit >}} years. On failure, depositors divide the realized pool pro rata. On success, the pool routes to VOTE point-holders (recruiters) instead. The objectives are global HALE of {{< var wishonia_projected_hale_year_15 >}} and global median income of {{< var wishonia_trajectory_avg_income_year_15 >}}. 
 published: true

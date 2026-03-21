@@ -58,7 +58,7 @@ That's it. Five millennia of civilization, and this is your entire toolkit. On W
 
 Here is where it gets uncomfortable.
 
-Take your {{< var safe_compounds_count >}} safe compounds. Multiply by {{< var trial_relevant_diseases_count >}} diseases. This gives you the total number of things you *could* test tomorrow morning if you weren't busy filling out forms about whether you're allowed to test them.
+Take your {{< var safe_compounds_count >}} safe compounds. Multiply by {{< var trial_relevant_diseases_count >}}. This gives you the total number of things you *could* test tomorrow morning if you weren't busy filling out forms about whether you're allowed to test them.
 
 **{{< var safe_compounds_count >}} x {{< var trial_relevant_diseases_count >}} = {{< var drug_disease_combinations_possible >}} possible drug-disease combinations.**
 
