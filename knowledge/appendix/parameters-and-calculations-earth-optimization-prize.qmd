@@ -38,15 +38,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 169 parameters used in the analysis, organized by type:
+This appendix documents all 174 parameters used in the analysis, organized by type:
 
 - External sources (peer-reviewed): 50
-- Calculated values: 89
-- Core definitions: 30
+- Calculated values: 92
+- Core definitions: 32
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (89 parameters) • [External Data Sources](#sec-external) (50 parameters) • [Core Definitions](#sec-definitions) (30 parameters)
+[Calculated Values](#sec-calculated) (92 parameters) • [External Data Sources](#sec-external) (50 parameters) • [Core Definitions](#sec-definitions) (32 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -1705,6 +1705,52 @@ $$
 
 :::
 
+### Global Average Hourly Income: $7.19 {#sec-global_avg_hourly_income}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Global average hourly income derived from GDP per capita. Uses average (not median), which overestimates the cost of sharing, making the payoff ratio conservative.
+
+**Inputs**:
+
+- [Global Average Income (2025 Baseline)](#sec-global_avg_income_2025) 🔢: $14.4K
+- [Annual Working Hours](#sec-annual_working_hours): 2 thousand hours/year
+
+$$
+\begin{gathered}
+\bar{w}_{hour} \\
+= \frac{\bar{y}_{0}}{H_{work}} \\
+= \frac{\$14.4K}{2{,}000} \\
+= \$7.19
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+\bar{y}_{0} \\
+= \frac{GDP_{global}}{Pop_{global}} \\
+= \frac{\$115T}{8B} \\
+= \$14.4K
+\end{gathered}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-global_avg_hourly_income.qmd >}}
+
+{{< include ../figures/sensitivity-table-global_avg_hourly_income.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-global_avg_hourly_income.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-global_avg_hourly_income.qmd >}}
+
+:::
+
 ### Global Average Income (2025 Baseline): $14.4K {#sec-global_avg_income_2025}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -2449,6 +2495,253 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-retirement_equivalent_claim_value_target.qmd >}}
+
+:::
+
+### Sharing Opportunity Cost: $0.06 {#sec-sharing_opportunity_cost}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Dollar cost of 30 seconds at global average hourly income. The maximum downside of forwarding the message if the plan is impossible.
+
+**Inputs**:
+
+- [Sharing Time](#sec-sharing_time_minutes): 0.5 minutes
+- [Global Average Hourly Income](#sec-global_avg_hourly_income) 🔢: $7.19
+
+$$
+\begin{gathered}
+C_{share} \\
+= t_{share} \times \bar{w}_{hour} \times 0.0167 \\
+= 0.5 \times \$7.19 \times 0.0167 \\
+= \$0.0599
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+\bar{w}_{hour} \\
+= \frac{\bar{y}_{0}}{H_{work}} \\
+= \frac{\$14.4K}{2{,}000} \\
+= \$7.19
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+\bar{y}_{0} \\
+= \frac{GDP_{global}}{Pop_{global}} \\
+= \frac{\$115T}{8B} \\
+= \$14.4K
+\end{gathered}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-sharing_opportunity_cost.qmd >}}
+
+{{< include ../figures/sensitivity-table-sharing_opportunity_cost.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-sharing_opportunity_cost.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-sharing_opportunity_cost.qmd >}}
+
+:::
+
+### Sharing Upside/Downside Ratio: 245.6Mx {#sec-sharing_upside_downside_ratio_treaty}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Raw ratio of upside (lifetime income gain if plan works) to downside (cost of sharing if plan is impossible). Not expected value; see SHARING_BREAKEVEN_PROBABILITY_TREATY for the probability threshold that makes forwarding rational.
+
+**Inputs**:
+
+- [Treaty Trajectory Lifetime Income Gain (Per Capita)](#sec-treaty_trajectory_lifetime_income_gain_per_capita) 🔢: $14.7M
+- [Sharing Opportunity Cost](#sec-sharing_opportunity_cost) 🔢: $0.06
+
+$$
+\begin{gathered}
+k_{upside:downside} \\
+= \frac{\Delta Y_{lifetime,treaty}}{C_{share}} \\
+= \frac{\$14.7M}{\$0.0599} \\
+= 246M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+\Delta Y_{lifetime,treaty} \\
+= Y_{cum,treaty} - Y_{cum,earth} \\
+= \$16.1M - \$1.34M \\
+= \$14.7M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Y_{cum,treaty} \\
+= \bar{y}_0 \cdot \frac{(1+g_{pc})((1+g_{pc})^{20}-1)}{g_{pc}} \\
++ \bar{y}_{treaty,20} \cdot \frac{(1+g_{base})((1+g_{base})^{T_{remaining}-20}-1)}{g_{base}}
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+\bar{y}_{0} \\
+= \frac{GDP_{global}}{Pop_{global}} \\
+= \frac{\$115T}{8B} \\
+= \$14.4K
+\end{gathered}
+$$
+where:
+$$
+\bar{y}_{treaty,20} = \frac{GDP_{treaty,20}}{Pop_{2045}}
+$$
+where:
+$$
+\begin{gathered}
+GDP_{treaty,20} \\
+= GDP_0(1+g_{treaty,ramp})^3(1+g_{treaty,full})^{17}
+\end{gathered}
+$$
+where:
+$$
+s_{mil,max} = Cut_{WW2} = 87.6\% = 87.6\%
+$$
+where:
+$$
+\begin{gathered}
+Cut_{WW2} \\
+= 1 - \frac{Spending_{US,1947}}{Spending_{US,1945}} \\
+= 1 - \frac{\$176B}{\$1.42T} \\
+= 87.6\%
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+f_{cure,20,wish} \\
+= \min\left(1,\frac{Treatments_{new,ann}\cdot k_{capacity,wish}\cdot 20}{D_{untreated}}\right)
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+k_{capacity} \\
+= \frac{N_{fundable,dFDA}}{Slots_{curr}} \\
+= \frac{23.4M}{1.9M} \\
+= 12.3
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{fundable,dFDA} \\
+= \frac{Subsidies_{dFDA,ann}}{Cost_{pragmatic,pt}} \\
+= \frac{\$21.8B}{\$929} \\
+= 23.4M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Subsidies_{dFDA,ann} \\
+= Funding_{dFDA,ann} - OPEX_{dFDA} \\
+= \$21.8B - \$40M \\
+= \$21.8B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+OPEX_{dFDA} \\
+= Cost_{platform} + Cost_{staff} + Cost_{infra} \\
++ Cost_{regulatory} + Cost_{community} \\
+= \$15M + \$10M + \$8M + \$5M + \$2M \\
+= \$40M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+k_{capacity,max} \\
+= \frac{N_{willing}}{Slots_{curr}} \\
+= \frac{1.08B}{1.9M} \\
+= 566
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{willing} \\
+= N_{patients} \times Pct_{willing} \\
+= 2.4B \times 44.8\% \\
+= 1.08B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{untreated} \\
+= N_{rare} \times 0.95 \\
+= 7{,}000 \times 0.95 \\
+= 6{,}650
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{remaining} \\
+= LE_{global} - Age_{median} \\
+= 79 - 30.5 \\
+= 48.5
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Y_{cum,earth} \\
+= \bar{y}_0 \cdot \frac{(1+g_{base})((1+g_{base})^{T_{remaining}}-1)}{g_{base}}
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+C_{share} \\
+= t_{share} \times \bar{w}_{hour} \times 0.0167 \\
+= 0.5 \times \$7.19 \times 0.0167 \\
+= \$0.0599
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+\bar{w}_{hour} \\
+= \frac{\bar{y}_{0}}{H_{work}} \\
+= \frac{\$14.4K}{2{,}000} \\
+= \$7.19
+\end{gathered}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-sharing_upside_downside_ratio_treaty.qmd >}}
+
+{{< include ../figures/sensitivity-table-sharing_upside_downside_ratio_treaty.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-sharing_upside_downside_ratio_treaty.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-sharing_upside_downside_ratio_treaty.qmd >}}
 
 :::
 
@@ -5973,6 +6266,20 @@ Return spread between the best and worst major asset-class sectors (biotech vs. 
 
 :::
 
+### Annual Working Hours: 2 thousand hours/year {#sec-annual_working_hours}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Standard annual working hours globally. Approximately 40 hours/week x 50 weeks. ILO estimates range from 1,800-2,200 across countries; 2,000 is conventional.
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*Core definition*
+
+:::
+
 ### Average Life Extension per Beneficiary: 12 years {#sec-avg_life_extension_per_beneficiary}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -6384,6 +6691,20 @@ Diminishing-returns drag as the venture market expands ~15x (current global VC ~
 #### Input Distribution
 
 {{< include ../figures/distribution-scale_compression_factor.qmd >}}
+
+*Core definition*
+
+:::
+
+### Sharing Time: 0.5 minutes {#sec-sharing_time_minutes}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Time to copy, paste, and send the recruitment message. 30 seconds.
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
 
 *Core definition*
 
