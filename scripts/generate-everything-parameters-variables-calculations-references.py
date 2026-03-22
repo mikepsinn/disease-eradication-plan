@@ -675,6 +675,19 @@ def main():
     ts_output = project_root / "dih_models" / "parameters-calculations-citations.ts"
     generate_typescript_parameters(parameters, ts_output, include_metadata=True, references_path=bib_path, params_file=parameters_path, citation_data=citation_data)
 
+    # Copy TypeScript parameters file to consuming repos
+    import shutil
+    ts_copy_targets = [
+        Path(r"E:\code\obsidian\websites\dih-earth\lib\parameters-calculations-citations.ts"),
+        Path(r"E:\code\obsidian\websites\optomitron\packages\web\src\lib\parameters-calculations-citations.ts"),
+    ]
+    for target in ts_copy_targets:
+        if target.parent.exists():
+            shutil.copy2(ts_output, target)
+            logger.debug(f"[OK] Copied TS parameters to {target}")
+        else:
+            logger.debug(f"[SKIP] Target directory does not exist: {target.parent}")
+
     # Generate TypeScript survey file (if survey exists)
     logger.debug("[*] Generating TypeScript survey file...")
     survey_json = project_root / "_analysis" / "economist-survey.json"

@@ -5,6 +5,7 @@ project:
   resources:
     - knowledge/data/
     - assets/
+    - talk.html
     - _redirects
     - robots.txt
     - llms.txt
@@ -48,6 +49,8 @@ book:
     right:
       - text: "VOTE"
         href: https://WarOnDisease.org
+      - text: "TALK"
+        href: talk.html
       - text: "SUPPORT"
         href: https://github.com/sponsors/wishonia
       - text: "GET THE MANUAL"

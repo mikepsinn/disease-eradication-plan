@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" class="wishonia-chat-route">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="quarto:offset" content="">
+  <meta
+    name="description"
+    content="Full-screen talk with the manual, for people who have outgrown the tiny popover."
+  >
+  <title>Talk to Wishonia</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/book-favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/book-favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/book-apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap"
+    rel="stylesheet"
+  >
+  <link rel="stylesheet" href="/assets/css/chat-widget.css">
+  <link rel="stylesheet" href="/assets/css/chat-page.css">
+</head>
+<body>
+  <div class="wishonia-chat-page">
+    <aside class="wishonia-chat-sidebar" id="wishonia-chat-sidebar">
+      <div class="wishonia-chat-sidebar-header">
+        <p class="wishonia-chat-sidebar-kicker">Direct Alien Commentary</p>
+        <h1>Talk to Wishonia</h1>
+        <p>
+          Same talk brain as the floating widget. Larger containment chamber.
+        </p>
+      </div>
+
+      <div class="wishonia-chat-sidebar-note">
+        This page keeps separate talks in this browser, so you can stop forcing
+        complex plans through a tiny corner bubble like a raccoon using an ATM.
+      </div>
+
+      <button class="wishonia-chat-new" id="wishonia-chat-new" type="button">
+        Start a new talk
+      </button>
+
+      <div class="wishonia-chat-list" id="wishonia-chat-list"></div>
+
+      <div class="wishonia-chat-sidebar-footer">
+        Ask about the manual, the 1% treaty, wishocracy, incentive alignment
+        bonds, or why your species keeps spending civilization-scale money on
+        the wrong things.
+        <p><a href="/index.html">Return to the manual</a></p>
+      </div>
+    </aside>
+
+    <div class="wishonia-chat-overlay" id="wishonia-chat-overlay"></div>
+
+    <section class="wishonia-chat-main" id="wishonia-chat-main">
+      <button
+        class="wishonia-chat-sidebar-toggle"
+        id="wishonia-chat-sidebar-toggle"
+        type="button"
+        aria-label="Toggle talk history"
+      >
+        &#9776;
+      </button>
+
+      <div class="wishonia-chat-loading" id="wishonia-chat-loading">
+        <div class="wishonia-chat-loading-card">
+          <p>Initializing full-size commentary</p>
+          <h2>Loading Wishonia</h2>
+          <span>
+            Preparing the same widget you already have, just without the
+            clown-car dimensions.
+          </span>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script src="/assets/js/gemini-live-client.js" defer></script>
+  <script src="/assets/js/audio-utils.js" defer></script>
+  <script src="/assets/js/chat-widget.js" defer></script>
+  <script src="/assets/js/chat-page.js" defer></script>
+</body>
+</html>

@@ -1,7 +1,7 @@
 /**
- * Chat Widget - Ask Wishonia
+ * Talk Widget - Ask Wishonia
  *
- * Client-side chat UI with:
+ * Client-side talk UI with:
  *   - RAG from Quarto's search.json (TF-IDF scoring)
  *   - Streaming text responses via /api/chat
  *   - Voice input (Web Speech API)
@@ -38,9 +38,9 @@
   var searchLoading = false;
   var audioCache = {};
   var messages = [];
-  var voiceMode = false; // voice chat loop: listen -> submit -> TTS -> listen
+  var voiceMode = false; // voice mode loop: listen -> submit -> TTS -> listen
 
-  // Gemini Live voice chat state
+  // Gemini Live voice mode state
   var liveVoiceMode = false;
   var liveClient = null;    // GeminiLiveClient instance
   var audioCapture = null;  // AudioCapture instance
@@ -529,8 +529,8 @@
   function createFAB() {
     fab = document.createElement("button");
     fab.className = "chat-fab";
-    fab.setAttribute("aria-label", "Chat with Wishonia");
-    fab.setAttribute("title", "Ask Wishonia about the book");
+    fab.setAttribute("aria-label", "Talk with Wishonia");
+    fab.setAttribute("title", "Talk to Wishonia about the book");
     // Chat bubble SVG icon
     fab.innerHTML =
       '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>';
@@ -543,17 +543,17 @@
     panel.className = "chat-panel";
     panel.innerHTML =
       '<div class="chat-header">' +
-      '  <span class="chat-header-title">Ask Wishonia</span>' +
+      '  <span class="chat-header-title">Talk to Wishonia</span>' +
       '  <div class="chat-header-actions">' +
-      '    <button class="chat-newchat-btn" aria-label="New chat" title="New chat">&#x2795;</button>' +
-      '    <button class="chat-fullscreen-btn" aria-label="Fullscreen" title="Toggle fullscreen">&#x26F6;</button>' +
-      '    <button class="chat-close-btn" aria-label="Close chat">&times;</button>' +
+      '    <button class="chat-newchat-btn" aria-label="New talk" title="New talk">&#x2795;</button>' +
+      '    <button class="chat-fullscreen-btn" aria-label="Open full talk" title="Open full talk">&#x26F6;</button>' +
+      '    <button class="chat-close-btn" aria-label="Close talk">&times;</button>' +
       '  </div>' +
       "</div>" +
       '<div class="chat-messages"></div>' +
       '<div class="chat-input-area">' +
-      '  <button class="chat-voicechat-btn" aria-label="Voice chat" style="display:none" title="Voice chat mode">&#x1F399;</button>' +
-      '  <textarea class="chat-input" rows="1" placeholder="Ask about the book..."></textarea>' +
+      '  <button class="chat-voicechat-btn" aria-label="Voice mode" style="display:none" title="Voice mode">&#x1F399;</button>' +
+      '  <textarea class="chat-input" rows="1" placeholder="Talk about the book..."></textarea>' +
       '  <button class="chat-mic-btn" aria-label="Voice input" style="display:none" title="Speak your question">&#x1F3A4;</button>' +
       '  <button class="chat-stop-btn" aria-label="Stop generating" title="Stop generating">&#x25A0;</button>' +
       '  <button class="chat-send-btn" aria-label="Send message">&#x27A4;</button>' +
@@ -615,12 +615,12 @@
       micBtn.addEventListener("click", startVoiceInput);
     }
 
-    // Show voice chat button if AudioWorklet + getUserMedia supported (Gemini Live)
+    // Show voice button if AudioWorklet + getUserMedia supported (Gemini Live)
     if (window.AudioContext && window.AudioWorkletNode && navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
       voiceChatBtn.style.display = "flex";
       voiceChatBtn.addEventListener("click", toggleLiveVoiceChat);
     } else if (window.SpeechRecognition || window.webkitSpeechRecognition) {
-      // Fallback: old sequential voice loop for browsers without AudioWorklet
+      // Fallback: sequential voice loop for browsers without AudioWorklet
       voiceChatBtn.style.display = "flex";
       voiceChatBtn.addEventListener("click", toggleVoiceChat);
     }
@@ -676,7 +676,7 @@
     if (voiceMode) {
       voiceMode = false;
       voiceChatBtn.classList.remove("voice-active", "recording");
-      voiceChatBtn.title = "Voice chat mode";
+      voiceChatBtn.title = "Voice mode";
       if (recognition) {
         recognition.stop();
         recognition = null;
@@ -687,7 +687,12 @@
   }
 
   function toggleFullscreen() {
-    panel.classList.toggle("chat-fullscreen");
+    var offset =
+      document
+        .querySelector('meta[name="quarto:offset"]')
+        ?.getAttribute("content") || "";
+    if (offset && offset.charAt(offset.length - 1) !== "/") offset += "/";
+    window.location.href = offset + "talk.html";
   }
 
   // ========================================
@@ -1184,7 +1189,7 @@
     sendBtn.disabled = false;
     showStreamingUI(false);
 
-    // Voice chat mode: auto-play TTS, then listen again
+  // Voice mode: auto-play TTS, then listen again
     if (voiceMode) {
       playTTS(fullText, ttsBtn, function () {
         if (voiceMode) startVoiceListening();
@@ -1219,7 +1224,7 @@
         removeThinkingIndicator(thinking);
 
         if (!response.ok) {
-          throw new Error("Chat request failed: " + response.status);
+          throw new Error("Talk request failed: " + response.status);
         }
 
         // Create empty bubble for streaming
@@ -1341,7 +1346,7 @@
   }
 
   // ========================================
-  // VOICE CHAT MODE
+  // VOICE MODE
   // ========================================
 
   function toggleVoiceChat() {
@@ -1349,13 +1354,13 @@
 
     if (voiceMode) {
       voiceChatBtn.classList.add("voice-active");
-      voiceChatBtn.title = "Stop voice chat";
+      voiceChatBtn.title = "Stop voice mode";
       // Start listening immediately
       startVoiceListening();
     } else {
       voiceChatBtn.classList.remove("voice-active");
       voiceChatBtn.classList.remove("recording");
-      voiceChatBtn.title = "Voice chat mode";
+      voiceChatBtn.title = "Voice mode";
       if (recognition) {
         recognition.stop();
         recognition = null;
@@ -1363,7 +1368,7 @@
     }
   }
 
-  // Voice chat: listen, auto-submit, TTS will auto-play via sendChatRequest callback
+  // Voice mode: listen, auto-submit, TTS will auto-play via sendChatRequest callback
   var listeningIndicator = null;
 
   function startVoiceListening() {
@@ -1491,7 +1496,7 @@
   }
 
   // ========================================
-  // GEMINI LIVE VOICE CHAT
+  // GEMINI LIVE VOICE MODE
   // ========================================
 
   // ========================================
@@ -1621,8 +1626,8 @@
     } catch (err) {
       if (connectingEl.parentNode) connectingEl.remove();
       voiceChatBtn.classList.remove("voice-active");
-      voiceChatBtn.title = "Voice chat mode";
-      appendMessage("assistant", "Voice chat unavailable. " + err.message);
+      voiceChatBtn.title = "Voice mode";
+      appendMessage("assistant", "Voice mode unavailable. " + err.message);
       return;
     }
 
@@ -1636,7 +1641,7 @@
     } catch (err) {
       if (connectingEl.parentNode) connectingEl.remove();
       voiceChatBtn.classList.remove("voice-active");
-      voiceChatBtn.title = "Voice chat mode";
+      voiceChatBtn.title = "Voice mode";
       appendMessage("assistant", "Could not initialize audio. " + err.message);
       return;
     }
@@ -1766,7 +1771,7 @@
     } catch (err) {
       if (connectingEl.parentNode) connectingEl.remove();
       voiceChatBtn.classList.remove("voice-active");
-      voiceChatBtn.title = "Voice chat mode";
+      voiceChatBtn.title = "Voice mode";
       audioPlayback.destroy();
       audioPlayback = null;
       liveClient = null;
@@ -1797,7 +1802,7 @@
       audioPlayback.destroy();
       audioPlayback = null;
       voiceChatBtn.classList.remove("voice-active");
-      voiceChatBtn.title = "Voice chat mode";
+      voiceChatBtn.title = "Voice mode";
       appendMessage("assistant", "Microphone access denied.");
       return;
     }
@@ -1806,7 +1811,7 @@
     if (connectingEl.parentNode) connectingEl.remove();
     liveVoiceMode = true;
     liveVoiceTranscript = "";
-    voiceChatBtn.title = "Stop voice chat";
+    voiceChatBtn.title = "Stop voice mode";
     showVoiceState("listening");
     startLocalTranscription();
   }
@@ -2052,7 +2057,7 @@
     }
 
     voiceChatBtn.classList.remove("voice-active", "recording");
-    voiceChatBtn.title = "Voice chat mode";
+    voiceChatBtn.title = "Voice mode";
     liveVoiceTranscript = "";
     liveVoiceThinking = "";
     liveVoiceSpoken = "";
