@@ -1,9 +1,9 @@
 ---
 title: "The Earth Optimization Prize"
 subtitle: "A game where every player wins. The prize is less war, cured diseases, and more money."
-description: "Put money in a pool. Recruit people to vote on the 1% Treaty. If humanity gets healthier and richer within {{< var prize_pool_resolution_years_nounit >}} years, VOTE point-holders split the pool. If not, depositors get their money back (at {{< var prize_pool_15yr_multiple >}} what they put in)."
+description: "Put money in a pool. Recruit people to vote on the 1% Treaty. If humanity gets healthier and richer by {{< var destructive_economy_50pct_year >}}, VOTE point-holders split the pool. If not, depositors get their money back (at {{< var prize_pool_horizon_multiple >}} what they put in)."
 abstract: |
-  Humanity spends {{< var military_to_government_clinical_trials_spending_ratio >}}x more on wars than testing which medicines work. The Earth Optimization Prize pays whoever fixes that. Two target numbers: healthy life years and median income. Hit them in {{< var prize_pool_resolution_years_nounit >}} years and the pool goes to the people who recruited voters for the 1% Treaty. Miss them and depositors split the pool pro rata (still beats a retirement account). The mechanism: deposit, recruit, and let compound interest do the rest.
+  Humanity spends {{< var military_to_government_clinical_trials_spending_ratio >}}x more on wars than testing which medicines work. The Earth Optimization Prize pays whoever fixes that. Two target numbers: healthy life years and median income. Hit them by {{< var destructive_economy_50pct_year >}} and the pool goes to the people who recruited voters for the 1% Treaty. Miss them and depositors split the pool pro rata (still beats a retirement account). The mechanism: deposit, recruit, and let compound interest do the rest.
 published: true
 tags:
   - strategy
@@ -29,9 +29,9 @@ This chapter explains why, and then explains how.
 
 {{< include ../includes/cognitive-bias-warning.qmd >}}
 
-1. **The Game you're building.** An open-source coordination game: raise global median income and healthy life years within {{< var prize_pool_resolution_years_nounit >}} years. (Your species has been trying for 10,000 years without a scoreboard, so this is an upgrade.)
-2. **How you keep score.** At year {{< var prize_pool_resolution_years_nounit >}}: did people live {{< var treaty_hale_gain_year_15 >}} longer? Did they earn {{< var treaty_trajectory_lifetime_income_multiplier >}} as much? (See [GDP Trajectories](../economics/gdp-trajectories.qmd) [@gdp-trajectories-paper-2025].) That is {{< var treaty_personal_upside_blend >}} per person.
-3. **How PRIZE works.** You fund one pool until year {{< var prize_pool_resolution_years_nounit >}}. Targets missed: you divide the realized pool pro rata. (Either way, you beat your retirement account. Your retirement account is not trying very hard.)
+1. **The Game you're building.** An open-source coordination game: raise global median income and healthy life years by {{< var destructive_economy_50pct_year >}}. (Your species has been trying for 10,000 years without a scoreboard, so this is an upgrade.)
+2. **How you keep score.** By {{< var destructive_economy_50pct_year >}}: did people live {{< var treaty_hale_gain_year_15 >}} longer? Did they earn {{< var treaty_trajectory_lifetime_income_multiplier >}} as much? (See [GDP Trajectories](../economics/gdp-trajectories.qmd) [@gdp-trajectories-paper-2025].) That is {{< var treaty_personal_upside_blend >}} per person.
+3. **How PRIZE works.** You fund one pool until {{< var destructive_economy_50pct_year >}}. Targets missed: you divide the realized pool pro rata. (Either way, you beat your retirement account. Your retirement account is not trying very hard.)
 4. **How VOTE works.** You recruit one verified referendum participant, you earn one point. Targets met: the pool routes to VOTE point-holders.
 5. **How you start.** Find a host to launch the [Planetary Constitutional Convention](planetary-constitutional-convention.qmd). PRIZE deposits begin, the Scoreboard goes live, and recruitment compounds from there. (For the institutional deployment plan, see [Why Your Institution Should Be The Initiating Node](initiating-node-memo.qmd).)
 6. **Why you bother.** "Do nothing" is not free. Your governments already waste {{< var political_dysfunction_tax_per_person_annual >}} per person per year ([Political Dysfunction Tax](../appendix/political-dysfunction-tax.qmd) [@political-dysfunction-tax-paper-2025]). The [destructive economy](../economics/gdp-trajectories.qmd) [@gdp-trajectories-paper-2025] hits 50% of GDP by {{< var destructive_economy_50pct_year >}} (the point where half of everything gets looted as fast as it is created).
@@ -40,7 +40,7 @@ This chapter explains why, and then explains how.
 
 **Here's how PRIZE deposits work.** Your deposit goes into a single pool that compounds through the [wishocratic fund](../economics/wishocratic-investment-fund.qmd). Rich people have a secret money club (venture capital and private equity) that makes {{< var venture_gross_return >}} returns. Your retirement account is legally banned from joining. Your government decided that only rich people are smart enough to invest in things that make money. This is called "investor protection." It protects you from having money. The pool gets you in. It spreads your money across the entire sector so no single bad bet kills you, and crowds pick the investments ({{< var crowd_decision_accuracy >}} accuracy) instead of expensive fund managers ({{< var expert_decision_accuracy >}} accuracy) [@surowiecki-2004]. Result: {{< var prize_pool_annual_return >}} annually, nearly triple conventional retirement at {{< var conventional_retirement_return >}} (see [Wishocratic Investment Fund](../economics/wishocratic-investment-fund.qmd) for the full derivation).
 
-Your deposit is locked. Not a savings account. It stays in your account until the {{< var prize_pool_resolution_years_nounit >}} years are up. Targets missed: you divide the realized pool pro rata. Targets met: the pool goes to VOTE point-holders, not back to you. See the [prize protocol](../appendix/earth-optimization-prize-protocol.qmd) [@earth-optimization-prize-protocol-paper-2025] for the full specification.
+Your deposit is locked. Not a savings account. It stays in your account until {{< var destructive_economy_50pct_year >}}. Targets missed: you divide the realized pool pro rata. Targets met: the pool goes to VOTE point-holders, not back to you. See the [prize protocol](../appendix/earth-optimization-prize-protocol.qmd) [@earth-optimization-prize-protocol-paper-2025] for the full specification.
 
 **Here's how VOTE points work.** You recruit one verified referendum participant into the first [1% Treaty](../solution/1-percent-treaty.qmd) [@1-pct-treaty-impact-paper-2025] vote, you earn one point. Points stay with whoever earned them. Not tradable. You cannot buy your way to credit for recruiting people you did not recruit (your species calls this "integrity," which I understand is rare enough to require explanation). Registration asks two questions: (1) yes or no on the 1% Treaty (the smallest serious test of whether humans will redirect even 1% from weapons to medicine), and (2) how much military vs. clinical trials, with [Optimitron](../solution/optimocracy.qmd) [@optimocracy-paper-2025] evidence. Fits on a phone. Under a minute.
 
@@ -57,13 +57,13 @@ Here's what happens to your money. The pool makes money regardless of whether th
 
 | Scenario | What happens to your deposit | What happens to your VOTE points | World-side outcome |
 |:---|:---|:---|:---|
-| **Status quo retirement** | Conventional market: `D × {{< var conventional_retirement_15yr_multiple >}}` | N/A | Current trajectory continues. |
-| **PRIZE fails** | Depositors divide realized pool: `D × {{< var prize_pool_15yr_multiple >}}` | VOTE points expire worthless. | Status quo branch. |
+| **Status quo retirement** | Conventional market: `D × {{< var conventional_retirement_horizon_multiple >}}` | N/A | Current trajectory continues. |
+| **PRIZE fails** | Depositors divide realized pool: `D × {{< var prize_pool_horizon_multiple >}}` | VOTE points expire worthless. | Status quo branch. |
 | **Objectives met** | Deposit routes to VOTE point-holders, not back to you. | Each point pays {{< var vote_token_potential_value >}}. | Everyone gets {{< var treaty_trajectory_lifetime_income_gain_per_capita >}} to {{< var wishonia_trajectory_lifetime_income_gain_per_capita >}} richer over their lifetime. |
 
 **Worked example: $100 deposit + 2 VOTE points.**
 
-- *Targets missed:* You get back `$100 × {{< var prize_pool_15yr_multiple >}}` = $1,110 from the pool. Your VOTE points pay nothing. You still beat a conventional retirement account (`$100 × {{< var conventional_retirement_15yr_multiple >}}` = $257).
+- *Targets missed:* You get back `$100 × {{< var prize_pool_horizon_multiple >}}` = $1,110 from the pool. Your VOTE points pay nothing. You still beat a conventional retirement account (`$100 × {{< var conventional_retirement_horizon_multiple >}}` = $257).
 - *Targets met:* Your $100 deposit goes to VOTE point-holders. Your 2 VOTE points pay `2 × {{< var vote_token_potential_value >}} = {{< var vote_2_claims_payout >}}`. Plus you live in a world where people are {{< var treaty_personal_upside_blend >}} to {{< var wishonia_personal_upside_blend >}} richer and diseases get cured.
 
 Two VOTE points turn a small deposit into a large payout. Large depositors beat their retirement account if this fails. If it succeeds, diseases get cured, {{< var global_disease_deaths_daily_nounit >}} people stop dying every day, and everyone is {{< var treaty_personal_upside_blend >}} richer.
@@ -179,7 +179,7 @@ This is not incompetence. It is architecture. Each program created a permanent b
 
 Here's the missing feedback loop. The [Optimitron](../solution/optimocracy.qmd) [@optimocracy-paper-2025] tracks the two numbers (how long people live, how much they earn), publishes them on the Scoreboard, and the [IAB-funded campaign](../solution/incentive-alignment-bonds.qmd) [@iab-paper-2025] defunds politicians who ignore them. A policy that spends a trillion dollars and makes the problem 17 times worse shows up as a line going the wrong direction on a public dashboard. The politician who voted for it gets an alignment score. The score is public. Their opponent gets funded. The mechanism does not require anyone to become smarter or more ethical. It requires a Scoreboard that nobody can turn off.
 
-Without the Optimitron, the Prize can measure whether the two numbers moved at year {{< var prize_pool_resolution_years_nounit >}}, but it cannot tell which policies are dragging them down or which ones moved them up. The Scoreboard tells you the patient's temperature. The Optimitron tells you which of the seventeen drugs you're administering is the one causing the fever.
+Without the Optimitron, the Prize can measure whether the two numbers moved by {{< var destructive_economy_50pct_year >}}, but it cannot tell which policies are dragging them down or which ones moved them up. The Scoreboard tells you the patient's temperature. The Optimitron tells you which of the seventeen drugs you're administering is the one causing the fever.
 
 ## The Part Where You Tell Two People
 
@@ -238,7 +238,7 @@ Those are not projections about charity. They are projections about your money, 
 ::: {.callout-tip}
 ## This Is a Better Deal Than Any Political Donation in History
 
-Your money stays with you if this fails and goes to VOTE point-holders if it succeeds (see [Contributor Outcomes](#contributor-outcomes)). Either way, it grows at {{< var prize_pool_annual_return >}} annually, reaching {{< var prize_pool_15yr_multiple >}} over {{< var prize_pool_resolution_years_nounit >}} years. Name a political donation that does that.
+Your money stays with you if this fails and goes to VOTE point-holders if it succeeds (see [Contributor Outcomes](#contributor-outcomes)). Either way, it grows at {{< var prize_pool_annual_return >}} annually, reaching {{< var prize_pool_horizon_multiple >}} by {{< var destructive_economy_50pct_year >}}. Name a political donation that does that.
 :::
 
 You do not need to tip the scale by yourself. The stakes are so large that even a tiny nudge is worth real money:
@@ -254,7 +254,7 @@ But does a $1K contribution actually shift probability by 0.0067%? You do not ne
 
 "Pay people if the outcome happens" and "act once enough others commit" are not new ideas [@tabarrok1998]. The Chenoweth threshold ({{< var global_population_activism_threshold_pct >}}) is the historical floor for when movements become hard to ignore. The RECOVERY trial was run by Oxford and published in the New England Journal of Medicine. Every building block is peer-reviewed. The combination is new.
 
-**The free-rider problem has a structural answer.** "VOTE points only pay if the targets are met, so if I don't believe they'll be met, there's no incentive." This assumes VOTE points are the only incentive. They are not. PRIZE deposits beat conventional retirement on the failure branch ({{< var prize_pool_15yr_multiple >}} vs. {{< var conventional_retirement_15yr_multiple >}}). The deposit incentive works regardless of your belief about success. VOTE points add upside on the success branch.
+**The free-rider problem has a structural answer.** "VOTE points only pay if the targets are met, so if I don't believe they'll be met, there's no incentive." This assumes VOTE points are the only incentive. They are not. PRIZE deposits beat conventional retirement on the failure branch ({{< var prize_pool_horizon_multiple >}} vs. {{< var conventional_retirement_horizon_multiple >}}). The deposit incentive works regardless of your belief about success. VOTE points add upside on the success branch.
 
 But the deeper answer is that free-riding makes sense when participation is expensive. Clicking a button takes 30 seconds. 50-65% of your species already spends far more effort voting in elections that pay nothing and elect people who ignore them. This referendum pays {{< var vote_token_potential_value >}} and cures diseases. Your species is not going to free-ride on this. It is going to fight over who gets to click the button first.
 
@@ -278,7 +278,7 @@ Each stage builds the audience for the next. Nobody coordinates this centrally. 
 
 Everything the Game exists to produce is either healthy life years or more papers. Paying for moving budgets around or enrolling people in trials is paying for plumbing that may or may not deliver water. Your species has a long history of buying plumbing. Pay for water.
 
-**Your PRIZE pool trigger.** At year {{< var prize_pool_resolution_years_nounit >}}: targets met, the pool distributes to VOTE point-holders; targets missed, depositors divide it pro rata.
+**Your PRIZE pool trigger.** By {{< var destructive_economy_50pct_year >}}: targets met, the pool distributes to VOTE point-holders; targets missed, depositors divide it pro rata.
 
 **Why better ideas win.** The Prize pays for outcomes, not methods. Every proposal in this manual (the treaty, the bonds, the wishocratic fund, the [decentralized FDA](../solution/dfda.qmd) [@dfda-spec-paper-2025; @dfda-impact-paper-2025]) is improvable plumbing. If someone finds a cheaper way to move the two numbers, VOTE point-holders shift recruitment toward it because it makes them more money. The two numbers do not change. The plumbing is replaceable. That is the point.
 
@@ -335,7 +335,7 @@ Your species turns out at 50-65% for elections despite getting paid nothing. Thi
 
 Your politicians care about reelection. Your investors care about returns. Your citizens care about not dying. This is not a design flaw. It is a design constraint. Here is how you work with it instead of against it:
 
-- **Depositors** put money in because they get it back (at {{< var prize_pool_15yr_multiple >}}) if this fails. If it succeeds, diseases get cured and they are {{< var treaty_personal_upside_blend >}} richer.
+- **Depositors** put money in because they get it back (at {{< var prize_pool_horizon_multiple >}}) if this fails. If it succeeds, diseases get cured and they are {{< var treaty_personal_upside_blend >}} richer.
 - **Recruiters** recruit because every person they bring in earns them a VOTE point.
 - **Entrepreneurs** compete for a giant implementation contract.
 - **Politicians** get funded for voting yes and watch their opponents get funded if they vote no (details below).
@@ -421,7 +421,7 @@ To anyone in finance, "{{< var victory_bond_annual_return_pct >}} annual returns
 
 ### 7. "The VOTE payout assumes $70 trillion flows into the pool"
 
-It does not assume that. It calculates the ceiling. The {{< var vote_token_potential_value >}} per VOTE point is what happens if the entire global retirement asset base ({{< var global_retirement_assets >}}) compounds through the wishocratic fund over {{< var prize_pool_resolution_years_nounit >}} years. That is a potential maximum, not the opening ask.
+It does not assume that. It calculates the ceiling. The {{< var vote_token_potential_value >}} per VOTE point is what happens if the entire global retirement asset base ({{< var global_retirement_assets >}}) compounds through the wishocratic fund through {{< var destructive_economy_50pct_year >}}. That is a potential maximum, not the opening ask.
 
 | Pool participation | Pool size (15-year compounded) | VOTE payout per point |
 |:---|:---|:---|

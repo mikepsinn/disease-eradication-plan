@@ -38,15 +38,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 361 parameters used in the analysis, organized by type:
+This appendix documents all 360 parameters used in the analysis, organized by type:
 
 - External sources (peer-reviewed): 135
 - Calculated values: 170
-- Core definitions: 56
+- Core definitions: 55
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (170 parameters) • [External Data Sources](#sec-external) (135 parameters) • [Core Definitions](#sec-definitions) (56 parameters)
+[Calculated Values](#sec-calculated) (170 parameters) • [External Data Sources](#sec-external) (135 parameters) • [Core Definitions](#sec-definitions) (55 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -320,36 +320,37 @@ Unique pairwise drug combinations from known safe compounds (n choose 2)
 
 :::
 
-### Conventional Retirement 15-Year Multiple: 2.57x {#sec-conventional_retirement_15yr_multiple}
+### Conventional Retirement Horizon Multiple: 2.57x {#sec-conventional_retirement_horizon_multiple}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-15-year compound multiple for conventional retirement investing over the PRIZE pool resolution horizon.
+Compound multiple for conventional retirement investing over the PRIZE pool resolution horizon (tied to the destructive economy 50% threshold year).
 
 **Inputs**:
 
 - [Conventional Retirement Return (After Fees)](#sec-conventional_retirement_return) 📊: 6.5% (95% CI: 5% - 8%)
-- [PRIZE Pool Resolution Horizon](#sec-prize_pool_resolution_years): 15 years
+- [Year Destructive Economy Reaches 50% of GDP](#sec-destructive_economy_50pct_year) 🔢: 2040
+- [Destructive Economy Base Year](#sec-destructive_economy_base_year): 2025
 
 $$
-M_{retire} = (1 + r_{retire})^{T_{pool}}
+M_{retire} = (1 + r_{retire})^{Y_{50\%} - Y_0}
 $$
 
 *✓ High confidence*
 
 #### Sensitivity Analysis
 
-{{< include ../figures/tornado-conventional_retirement_15yr_multiple.qmd >}}
+{{< include ../figures/tornado-conventional_retirement_horizon_multiple.qmd >}}
 
-{{< include ../figures/sensitivity-table-conventional_retirement_15yr_multiple.qmd >}}
+{{< include ../figures/sensitivity-table-conventional_retirement_horizon_multiple.qmd >}}
 
 #### Monte Carlo Distribution
 
-{{< include ../figures/mc-distribution-conventional_retirement_15yr_multiple.qmd >}}
+{{< include ../figures/mc-distribution-conventional_retirement_horizon_multiple.qmd >}}
 
 #### Exceedance Probability
 
-{{< include ../figures/exceedance-conventional_retirement_15yr_multiple.qmd >}}
+{{< include ../figures/exceedance-conventional_retirement_horizon_multiple.qmd >}}
 
 :::
 
@@ -5405,39 +5406,6 @@ $$
 
 :::
 
-### PRIZE Pool 15-Year Multiple: 11.1x {#sec-prize_pool_15yr_multiple}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Canonical 15-year compound multiple used for PRIZE pool growth over the PRIZE pool resolution horizon.
-
-**Inputs**:
-
-- [PRIZE Pool Annual Return](#sec-prize_pool_annual_return) 🔢: 17.4%
-- [PRIZE Pool Resolution Horizon](#sec-prize_pool_resolution_years): 15 years
-
-$$
-M_{pool} = (1 + r_{pool})^{T_{pool}}
-$$
-
-*✓ High confidence*
-
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-prize_pool_15yr_multiple.qmd >}}
-
-{{< include ../figures/sensitivity-table-prize_pool_15yr_multiple.qmd >}}
-
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-prize_pool_15yr_multiple.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-prize_pool_15yr_multiple.qmd >}}
-
-:::
-
 ### PRIZE Pool Annual Return: 17.4% {#sec-prize_pool_annual_return}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -5477,6 +5445,40 @@ $$
 
 :::
 
+### PRIZE Pool Horizon Multiple: 11.1x {#sec-prize_pool_horizon_multiple}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Compound multiple for PRIZE pool growth over the resolution horizon (tied to the destructive economy 50% threshold year).
+
+**Inputs**:
+
+- [PRIZE Pool Annual Return](#sec-prize_pool_annual_return) 🔢: 17.4%
+- [Year Destructive Economy Reaches 50% of GDP](#sec-destructive_economy_50pct_year) 🔢: 2040
+- [Destructive Economy Base Year](#sec-destructive_economy_base_year): 2025
+
+$$
+M_{pool} = (1 + r_{pool})^{Y_{50\%} - Y_0}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-prize_pool_horizon_multiple.qmd >}}
+
+{{< include ../figures/sensitivity-table-prize_pool_horizon_multiple.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-prize_pool_horizon_multiple.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-prize_pool_horizon_multiple.qmd >}}
+
+:::
+
 ### PRIZE Pool Potential Max Size: $774T {#sec-prize_pool_potential_max_size}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -5486,7 +5488,7 @@ Potential maximum terminal PRIZE pool size if the global retirement asset base c
 **Inputs**:
 
 - [Global Retirement Assets](#sec-global_retirement_assets) 📊: $70T
-- [PRIZE Pool 15-Year Multiple](#sec-prize_pool_15yr_multiple) 🔢: 11.1x
+- [PRIZE Pool Horizon Multiple](#sec-prize_pool_horizon_multiple) 🔢: 11.1x
 
 $$
 Pool_{max} = Assets_{retire} \times M_{pool}
@@ -5520,7 +5522,7 @@ Secondary PRIZE seed benchmark: initial principal required so that the pool can 
 
 - [Global Coordination Target Supporters](#sec-global_coordination_target_supporters) 🔢: 4 billion of people
 - [Retirement-Equivalent Claim Value Target](#sec-retirement_equivalent_claim_value_target) 🔢: $4.99K
-- [PRIZE Pool 15-Year Multiple](#sec-prize_pool_15yr_multiple) 🔢: 11.1x
+- [PRIZE Pool Horizon Multiple](#sec-prize_pool_horizon_multiple) 🔢: 11.1x
 
 $$
 \begin{gathered}
@@ -5596,7 +5598,7 @@ Target success-side payout for two referred votes: what one representative annua
 **Inputs**:
 
 - [Global Annual Savings Per Capita](#sec-global_annual_savings_per_capita) 🔢: $3.88K
-- [Conventional Retirement 15-Year Multiple](#sec-conventional_retirement_15yr_multiple) 🔢: 2.57x
+- [Conventional Retirement Horizon Multiple](#sec-conventional_retirement_horizon_multiple) 🔢: 2.57x
 
 $$
 V_{2claims,target} = S_{annual,pc} \times M_{retire}
@@ -14130,20 +14132,6 @@ Standard discount rate for NPV analysis (3% annual, social discount rate)
 ::: {.callout-note collapse="true" title="📊 Details"}
 
 Standard time horizon for NPV analysis
-
-#### Uncertainty Range
-
-**Technical**: Distribution: Fixed
-
-*Core definition*
-
-:::
-
-### PRIZE Pool Resolution Horizon: 15 years {#sec-prize_pool_resolution_years}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Resolution horizon for the PRIZE pool before the success/failure branch is determined
 
 #### Uncertainty Range
 

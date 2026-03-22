@@ -2491,15 +2491,15 @@ export const CONTRIBUTION_SUFFERING_HOURS_PER_PCT_POINT: Parameter = {
   latex: "Hours_{pp} = Hours_{suffer,max} \\times 0.01",
 };
 
-export const CONVENTIONAL_RETIREMENT_15YR_MULTIPLE: Parameter = {
+export const CONVENTIONAL_RETIREMENT_HORIZON_MULTIPLE: Parameter = {
   value: 2.5718410065633592,
   unit: "x",
-  displayName: "Conventional Retirement 15-Year Multiple",
-  description: "15-year compound multiple for conventional retirement investing over the PRIZE pool resolution horizon.",
+  displayName: "Conventional Retirement Horizon Multiple",
+  description: "Compound multiple for conventional retirement investing over the PRIZE pool resolution horizon (tied to the destructive economy 50% threshold year).",
   sourceType: "calculated",
   confidence: "high",
-  formula: "(1 + CONVENTIONAL_RETIREMENT_RETURN) ^ PRIZE_POOL_RESOLUTION_YEARS",
-  latex: "M_{retire} = (1 + r_{retire})^{T_{pool}}",
+  formula: "(1 + CONVENTIONAL_RETIREMENT_RETURN) ^ (DESTRUCTIVE_ECONOMY_50PCT_YEAR - DESTRUCTIVE_ECONOMY_BASE_YEAR)",
+  latex: "M_{retire} = (1 + r_{retire})^{Y_{50\\%} - Y_0}",
 };
 
 export const CURRENT_COMBINATION_EXPLORATION_YEARS: Parameter = {
@@ -4180,17 +4180,6 @@ export const PRAGMATIC_TRIAL_COST_PER_QALY: Parameter = {
   latex: "\\begin{gathered}\nCost_{pragmatic,QALY} = \\frac{Cost_{RECOVERY}}{QALY_{RECOVERY}} = \\frac{\\$20M}{5M} = \\$4\n\\\\[0.5em]\n\\text{where } QALY_{RECOVERY} = Lives_{RECOVERY} \\times QALY_{COVID} = 1M \\times 5 = 5M\n\\end{gathered}",
 };
 
-export const PRIZE_POOL_15YR_MULTIPLE: Parameter = {
-  value: 11.063984983606389,
-  unit: "x",
-  displayName: "PRIZE Pool 15-Year Multiple",
-  description: "Canonical 15-year compound multiple used for PRIZE pool growth over the PRIZE pool resolution horizon.",
-  sourceType: "calculated",
-  confidence: "high",
-  formula: "(1 + PRIZE_POOL_ANNUAL_RETURN) ^ PRIZE_POOL_RESOLUTION_YEARS",
-  latex: "M_{pool} = (1 + r_{pool})^{T_{pool}}",
-};
-
 export const PRIZE_POOL_ANNUAL_RETURN: Parameter = {
   value: 0.17380000000000004,
   unit: "percent",
@@ -4202,6 +4191,17 @@ export const PRIZE_POOL_ANNUAL_RETURN: Parameter = {
   latex: "\\begin{gathered}\nr_{pool} \\\\\n= r_{VC,gross} + \\Delta r_{scale} + \\alpha_{crowd} \\\\\n+ \\alpha_{home}\n\\end{gathered}",
 };
 
+export const PRIZE_POOL_HORIZON_MULTIPLE: Parameter = {
+  value: 11.063984983606389,
+  unit: "x",
+  displayName: "PRIZE Pool Horizon Multiple",
+  description: "Compound multiple for PRIZE pool growth over the resolution horizon (tied to the destructive economy 50% threshold year).",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "(1 + PRIZE_POOL_ANNUAL_RETURN) ^ (DESTRUCTIVE_ECONOMY_50PCT_YEAR - DESTRUCTIVE_ECONOMY_BASE_YEAR)",
+  latex: "M_{pool} = (1 + r_{pool})^{Y_{50\\%} - Y_0}",
+};
+
 export const PRIZE_POOL_POTENTIAL_MAX_SIZE: Parameter = {
   value: 774478948852447.2,
   unit: "USD",
@@ -4209,7 +4209,7 @@ export const PRIZE_POOL_POTENTIAL_MAX_SIZE: Parameter = {
   description: "Potential maximum terminal PRIZE pool size if the global retirement asset base compounds through the wishocratic fund over the resolution horizon.",
   sourceType: "calculated",
   confidence: "high",
-  formula: "GLOBAL_RETIREMENT_ASSETS × PRIZE_POOL_15YR_MULTIPLE",
+  formula: "GLOBAL_RETIREMENT_ASSETS × PRIZE_POOL_HORIZON_MULTIPLE",
   latex: "Pool_{max} = Assets_{retire} \\times M_{pool}",
 };
 
@@ -4220,7 +4220,7 @@ export const PRIZE_POOL_RETIREMENT_EQUIVALENT_PRINCIPAL: Parameter = {
   description: "Secondary PRIZE seed benchmark: initial principal required so that the pool can make two referred votes retirement-equivalent on success at the modeled global coordination target. This is a stronger-incentive visible-pool benchmark, not the minimum capital required to make 50% participation credible.",
   sourceType: "calculated",
   confidence: "high",
-  formula: "GLOBAL_COORDINATION_TARGET_SUPPORTERS × RETIREMENT_EQUIVALENT_CLAIM_VALUE_TARGET / PRIZE_POOL_15YR_MULTIPLE",
+  formula: "GLOBAL_COORDINATION_TARGET_SUPPORTERS × RETIREMENT_EQUIVALENT_CLAIM_VALUE_TARGET / PRIZE_POOL_HORIZON_MULTIPLE",
   latex: "\\begin{gathered}\nP_{retire-eq} \\\\\n= \\frac{N_{coord} \\times V_{claim,target}}{M_{pool}}\n\\end{gathered}",
 };
 
@@ -4254,7 +4254,7 @@ export const RETIREMENT_EQUIVALENT_2_CLAIMS_TARGET_PAYOUT: Parameter = {
   description: "Target success-side payout for two referred votes: what one representative annual savings contribution would become in a conventional retirement account by PRIZE resolution.",
   sourceType: "calculated",
   confidence: "high",
-  formula: "GLOBAL_ANNUAL_SAVINGS_PER_CAPITA × CONVENTIONAL_RETIREMENT_15YR_MULTIPLE",
+  formula: "GLOBAL_ANNUAL_SAVINGS_PER_CAPITA × CONVENTIONAL_RETIREMENT_HORIZON_MULTIPLE",
   latex: "V_{2claims,target} = S_{annual,pc} \\times M_{retire}",
 };
 
@@ -5138,7 +5138,7 @@ export const VOTE_2_CLAIMS_PAYOUT: Parameter = {
   sourceType: "calculated",
   confidence: "high",
   formula: "2 × VOTE_TOKEN_POTENTIAL_VALUE",
-  latex: "\\begin{gathered}\nV_{2claims} = V_{vote} \\times 2 = \\$194K \\times 2 = \\$387K\n\\\\[0.5em]\n\\text{where } V_{vote} = \\frac{Pool_{max}}{N_{coord}}\n\\\\[0.5em]\n\\text{where } Pool_{max} = Assets_{retire} \\times M_{pool}\n\\\\[0.5em]\n\\text{where } M_{pool} = (1 + r_{pool})^{T_{pool}}\n\\\\[0.5em]\n\\text{where } r_{pool} = r_{VC,gross} + \\Delta r_{scale} + \\alpha_{crowd} + \\alpha_{home}\n\\\\[0.5em]\n\\text{where } \\alpha_{crowd} = S_{alloc} \\times (Acc_{crowd} - Acc_{expert}) = 8\\% \\times (91\\% - 65\\%) = 2.08\\%\n\\\\[0.5em]\n\\text{where } N_{coord} = N_{global} \\times R_{coord}\n\\end{gathered}",
+  latex: "\\begin{gathered}\nV_{2claims} = V_{vote} \\times 2 = \\$194K \\times 2 = \\$387K\n\\\\[0.5em]\n\\text{where } V_{vote} = \\frac{Pool_{max}}{N_{coord}}\n\\\\[0.5em]\n\\text{where } Pool_{max} = Assets_{retire} \\times M_{pool}\n\\\\[0.5em]\n\\text{where } M_{pool} = (1 + r_{pool})^{Y_{50\\%} - Y_0}\n\\\\[0.5em]\n\\text{where } r_{pool} = r_{VC,gross} + \\Delta r_{scale} + \\alpha_{crowd} + \\alpha_{home}\n\\\\[0.5em]\n\\text{where } \\alpha_{crowd} = S_{alloc} \\times (Acc_{crowd} - Acc_{expert}) = 8\\% \\times (91\\% - 65\\%) = 2.08\\%\n\\\\[0.5em]\n\\text{where } Y_{50\\%} = Y_0 + \\frac{\\ln(0.50 / r_{destruct:GDP})}{\\ln(1 + g_{destruct} - g_{GDP})}\n\\\\[0.5em]\n\\text{where } r_{destruct:GDP} = \\frac{Cost_{destruct}}{GDP_{global}} = \\frac{\\$13.2T}{\\$115T} = 11.5\\%\n\\\\[0.5em]\n\\text{where } Cost_{destruct} = Spending_{mil} + Cost_{cyber} = \\$2.72T + \\$10.5T = \\$13.2T\n\\\\[0.5em]\n\\text{where } N_{coord} = N_{global} \\times R_{coord}\n\\end{gathered}",
 };
 
 export const VOTE_TOKEN_POTENTIAL_VALUE: Parameter = {
@@ -6323,15 +6323,6 @@ export const PRE_1962_VALIDATION_YEARS: Parameter = {
   formula: "1960 - 1883",
 };
 
-export const PRIZE_POOL_RESOLUTION_YEARS: Parameter = {
-  value: 15.0,
-  unit: "years",
-  displayName: "PRIZE Pool Resolution Horizon",
-  description: "Resolution horizon for the PRIZE pool before the success/failure branch is determined",
-  sourceType: "definition",
-  confidence: "high",
-};
-
 export const QALYS_PER_COVID_DEATH_AVERTED: Parameter = {
   value: 5.0,
   unit: "QALYs/death",
@@ -6797,7 +6788,7 @@ export const parameters = {
   CONTRIBUTION_EV_PER_PCT_POINT_WISHONIA_BLEND,
   CONTRIBUTION_LIVES_SAVED_PER_PCT_POINT,
   CONTRIBUTION_SUFFERING_HOURS_PER_PCT_POINT,
-  CONVENTIONAL_RETIREMENT_15YR_MULTIPLE,
+  CONVENTIONAL_RETIREMENT_HORIZON_MULTIPLE,
   CURRENT_COMBINATION_EXPLORATION_YEARS,
   CURRENT_KNOWN_SAFE_EXPLORATION_YEARS,
   CURRENT_PATIENT_PARTICIPATION_RATE,
@@ -6949,8 +6940,8 @@ export const parameters = {
   POLITICAL_DYSFUNCTION_TAX_PER_PERSON_ANNUAL,
   POST_WW2_MILITARY_CUT_PCT,
   PRAGMATIC_TRIAL_COST_PER_QALY,
-  PRIZE_POOL_15YR_MULTIPLE,
   PRIZE_POOL_ANNUAL_RETURN,
+  PRIZE_POOL_HORIZON_MULTIPLE,
   PRIZE_POOL_POTENTIAL_MAX_SIZE,
   PRIZE_POOL_RETIREMENT_EQUIVALENT_PRINCIPAL,
   RECOVERY_TRIAL_COST_REDUCTION_FACTOR,
@@ -7155,7 +7146,6 @@ export const parameters = {
   PEACE_DIVIDEND_DIRECT_FISCAL_SAVINGS,
   PHARMA_PHASE_2_3_COST_BARRIER,
   PRE_1962_VALIDATION_YEARS,
-  PRIZE_POOL_RESOLUTION_YEARS,
   QALYS_PER_COVID_DEATH_AVERTED,
   RD_SPILLOVER_MULTIPLIER,
   SAFE_COMPOUNDS_COUNT,
@@ -9122,10 +9112,10 @@ export const citations: Record<string, Citation> = {
 
 /** Summary statistics */
 export const PARAMETER_STATS = {
-  total: 610,
+  total: 609,
   external: 204,
   calculated: 282,
-  definitions: 124,
+  definitions: 123,
   citations: 142,
 } as const;
 

@@ -5666,17 +5666,9 @@ IAB_VS_DEFENSE_LOBBY_RATIO_AT_1PCT = Parameter(
     latex_symbol=r"k_{IAB:defense}",
 )
 
-# ── PRIZE Pool Resolution Horizon ────────────────────────────────────────────
-PRIZE_POOL_RESOLUTION_YEARS = Parameter(
-    15,
-    source_type="definition",
-    description="Resolution horizon for the PRIZE pool before the success/failure branch is determined",
-    display_name="PRIZE Pool Resolution Horizon",
-    unit="years",
-    keywords=["prize", "resolution", "horizon", "years", "threshold"],
-    distribution="fixed",
-    latex_symbol=r"T_{pool}",
-)
+# PRIZE pool resolution horizon is tied to the destructive economy 50% threshold year
+# (DESTRUCTIVE_ECONOMY_50PCT_YEAR). The pool resolves at the collapse deadline.
+# Duration for compounding: _years_to_50pct (private var, currently 15 years).
 
 # ── Global Capital Context ───────────────────────────────────────────────────
 
@@ -7806,17 +7798,18 @@ CONVENTIONAL_RETIREMENT_RETURN = Parameter(
     latex_symbol=r"r_{retire}",
 )
 
-CONVENTIONAL_RETIREMENT_15YR_MULTIPLE = Parameter(
-    (1 + float(CONVENTIONAL_RETIREMENT_RETURN)) ** float(PRIZE_POOL_RESOLUTION_YEARS),
+CONVENTIONAL_RETIREMENT_HORIZON_MULTIPLE = Parameter(
+    (1 + float(CONVENTIONAL_RETIREMENT_RETURN)) ** round(_years_to_50pct),
     source_type="calculated",
-    description="15-year compound multiple for conventional retirement investing over the PRIZE pool resolution horizon.",
-    display_name="Conventional Retirement 15-Year Multiple",
+    description="Compound multiple for conventional retirement investing over the PRIZE pool resolution horizon "
+                "(tied to the destructive economy 50% threshold year).",
+    display_name="Conventional Retirement Horizon Multiple",
     unit="x",
-    formula="(1 + CONVENTIONAL_RETIREMENT_RETURN) ^ PRIZE_POOL_RESOLUTION_YEARS",
-    latex=r"M_{retire} = (1 + r_{retire})^{T_{pool}}",
-    inputs=["CONVENTIONAL_RETIREMENT_RETURN", "PRIZE_POOL_RESOLUTION_YEARS"],
-    compute=lambda ctx: (1 + ctx["CONVENTIONAL_RETIREMENT_RETURN"]) ** float(ctx["PRIZE_POOL_RESOLUTION_YEARS"]),
-    keywords=["retirement", "conventional", "multiple", "15 year", "compound"],
+    formula="(1 + CONVENTIONAL_RETIREMENT_RETURN) ^ (DESTRUCTIVE_ECONOMY_50PCT_YEAR - DESTRUCTIVE_ECONOMY_BASE_YEAR)",
+    latex=r"M_{retire} = (1 + r_{retire})^{Y_{50\%} - Y_0}",
+    inputs=["CONVENTIONAL_RETIREMENT_RETURN", "DESTRUCTIVE_ECONOMY_50PCT_YEAR", "DESTRUCTIVE_ECONOMY_BASE_YEAR"],
+    compute=lambda ctx: (1 + ctx["CONVENTIONAL_RETIREMENT_RETURN"]) ** (ctx["DESTRUCTIVE_ECONOMY_50PCT_YEAR"] - ctx["DESTRUCTIVE_ECONOMY_BASE_YEAR"]),
+    keywords=["retirement", "conventional", "multiple", "horizon", "compound"],
     latex_symbol=r"M_{retire}",
 )
 
@@ -7857,31 +7850,32 @@ PRIZE_POOL_ANNUAL_RETURN = Parameter(
     latex_symbol=r"r_{pool}",
 )
 
-PRIZE_POOL_15YR_MULTIPLE = Parameter(
-    (1 + float(PRIZE_POOL_ANNUAL_RETURN)) ** float(PRIZE_POOL_RESOLUTION_YEARS),
+PRIZE_POOL_HORIZON_MULTIPLE = Parameter(
+    (1 + float(PRIZE_POOL_ANNUAL_RETURN)) ** round(_years_to_50pct),
     source_type="calculated",
-    description="Canonical 15-year compound multiple used for PRIZE pool growth over the PRIZE pool resolution horizon.",
-    display_name="PRIZE Pool 15-Year Multiple",
+    description="Compound multiple for PRIZE pool growth over the resolution horizon "
+                "(tied to the destructive economy 50% threshold year).",
+    display_name="PRIZE Pool Horizon Multiple",
     unit="x",
-    formula="(1 + PRIZE_POOL_ANNUAL_RETURN) ^ PRIZE_POOL_RESOLUTION_YEARS",
-    latex=r"M_{pool} = (1 + r_{pool})^{T_{pool}}",
-    inputs=["PRIZE_POOL_ANNUAL_RETURN", "PRIZE_POOL_RESOLUTION_YEARS"],
-    compute=lambda ctx: (1 + ctx["PRIZE_POOL_ANNUAL_RETURN"]) ** float(ctx["PRIZE_POOL_RESOLUTION_YEARS"]),
-    keywords=["prize", "pool", "multiple", "15 year", "compound", "fund"],
+    formula="(1 + PRIZE_POOL_ANNUAL_RETURN) ^ (DESTRUCTIVE_ECONOMY_50PCT_YEAR - DESTRUCTIVE_ECONOMY_BASE_YEAR)",
+    latex=r"M_{pool} = (1 + r_{pool})^{Y_{50\%} - Y_0}",
+    inputs=["PRIZE_POOL_ANNUAL_RETURN", "DESTRUCTIVE_ECONOMY_50PCT_YEAR", "DESTRUCTIVE_ECONOMY_BASE_YEAR"],
+    compute=lambda ctx: (1 + ctx["PRIZE_POOL_ANNUAL_RETURN"]) ** (ctx["DESTRUCTIVE_ECONOMY_50PCT_YEAR"] - ctx["DESTRUCTIVE_ECONOMY_BASE_YEAR"]),
+    keywords=["prize", "pool", "multiple", "horizon", "compound", "fund"],
     latex_symbol=r"M_{pool}",
 )
 
 PRIZE_POOL_POTENTIAL_MAX_SIZE = Parameter(
-    float(GLOBAL_RETIREMENT_ASSETS) * float(PRIZE_POOL_15YR_MULTIPLE),
+    float(GLOBAL_RETIREMENT_ASSETS) * float(PRIZE_POOL_HORIZON_MULTIPLE),
     source_type="calculated",
     description="Potential maximum terminal PRIZE pool size if the global retirement asset base "
                 "compounds through the wishocratic fund over the resolution horizon.",
     display_name="PRIZE Pool Potential Max Size",
     unit="USD",
-    formula="GLOBAL_RETIREMENT_ASSETS × PRIZE_POOL_15YR_MULTIPLE",
+    formula="GLOBAL_RETIREMENT_ASSETS × PRIZE_POOL_HORIZON_MULTIPLE",
     latex=r"Pool_{max} = Assets_{retire} \times M_{pool}",
-    inputs=["GLOBAL_RETIREMENT_ASSETS", "PRIZE_POOL_15YR_MULTIPLE"],
-    compute=lambda ctx: ctx["GLOBAL_RETIREMENT_ASSETS"] * ctx["PRIZE_POOL_15YR_MULTIPLE"],
+    inputs=["GLOBAL_RETIREMENT_ASSETS", "PRIZE_POOL_HORIZON_MULTIPLE"],
+    compute=lambda ctx: ctx["GLOBAL_RETIREMENT_ASSETS"] * ctx["PRIZE_POOL_HORIZON_MULTIPLE"],
     keywords=["prize", "pool", "potential", "max", "size", "retirement", "assets"],
     latex_symbol=r"Pool_{max}",
 )
@@ -7997,16 +7991,16 @@ GLOBAL_COORDINATION_ACTIVATION_BUDGET = Parameter(
 )
 
 RETIREMENT_EQUIVALENT_2_CLAIMS_TARGET_PAYOUT = Parameter(
-    float(GLOBAL_ANNUAL_SAVINGS_PER_CAPITA) * float(CONVENTIONAL_RETIREMENT_15YR_MULTIPLE),
+    float(GLOBAL_ANNUAL_SAVINGS_PER_CAPITA) * float(CONVENTIONAL_RETIREMENT_HORIZON_MULTIPLE),
     source_type="calculated",
     description="Target success-side payout for two referred votes: what one representative annual savings contribution "
                 "would become in a conventional retirement account by PRIZE resolution.",
     display_name="Retirement-Equivalent 2-Claims Target Payout",
     unit="USD",
-    formula="GLOBAL_ANNUAL_SAVINGS_PER_CAPITA × CONVENTIONAL_RETIREMENT_15YR_MULTIPLE",
+    formula="GLOBAL_ANNUAL_SAVINGS_PER_CAPITA × CONVENTIONAL_RETIREMENT_HORIZON_MULTIPLE",
     latex=r"V_{2claims,target} = S_{annual,pc} \times M_{retire}",
-    inputs=["GLOBAL_ANNUAL_SAVINGS_PER_CAPITA", "CONVENTIONAL_RETIREMENT_15YR_MULTIPLE"],
-    compute=lambda ctx: ctx["GLOBAL_ANNUAL_SAVINGS_PER_CAPITA"] * ctx["CONVENTIONAL_RETIREMENT_15YR_MULTIPLE"],
+    inputs=["GLOBAL_ANNUAL_SAVINGS_PER_CAPITA", "CONVENTIONAL_RETIREMENT_HORIZON_MULTIPLE"],
+    compute=lambda ctx: ctx["GLOBAL_ANNUAL_SAVINGS_PER_CAPITA"] * ctx["CONVENTIONAL_RETIREMENT_HORIZON_MULTIPLE"],
     keywords=["retirement", "equivalent", "2 claims", "payout", "annual savings", "target"],
     latex_symbol=r"V_{2claims,target}",
 )
@@ -8027,17 +8021,17 @@ RETIREMENT_EQUIVALENT_CLAIM_VALUE_TARGET = Parameter(
 )
 
 PRIZE_POOL_RETIREMENT_EQUIVALENT_PRINCIPAL = Parameter(
-    float(GLOBAL_COORDINATION_TARGET_SUPPORTERS) * float(RETIREMENT_EQUIVALENT_CLAIM_VALUE_TARGET) / float(PRIZE_POOL_15YR_MULTIPLE),
+    float(GLOBAL_COORDINATION_TARGET_SUPPORTERS) * float(RETIREMENT_EQUIVALENT_CLAIM_VALUE_TARGET) / float(PRIZE_POOL_HORIZON_MULTIPLE),
     source_type="calculated",
     description="Secondary PRIZE seed benchmark: initial principal required so that the pool can make two referred votes "
                 "retirement-equivalent on success at the modeled global coordination target. This is a stronger-incentive "
                 "visible-pool benchmark, not the minimum capital required to make 50% participation credible.",
     display_name="PRIZE Pool Retirement-Equivalent Principal",
     unit="USD",
-    formula="GLOBAL_COORDINATION_TARGET_SUPPORTERS × RETIREMENT_EQUIVALENT_CLAIM_VALUE_TARGET / PRIZE_POOL_15YR_MULTIPLE",
+    formula="GLOBAL_COORDINATION_TARGET_SUPPORTERS × RETIREMENT_EQUIVALENT_CLAIM_VALUE_TARGET / PRIZE_POOL_HORIZON_MULTIPLE",
     latex=r"P_{retire-eq} = \frac{N_{coord} \times V_{claim,target}}{M_{pool}}",
-    inputs=["GLOBAL_COORDINATION_TARGET_SUPPORTERS", "RETIREMENT_EQUIVALENT_CLAIM_VALUE_TARGET", "PRIZE_POOL_15YR_MULTIPLE"],
-    compute=lambda ctx: ctx["GLOBAL_COORDINATION_TARGET_SUPPORTERS"] * ctx["RETIREMENT_EQUIVALENT_CLAIM_VALUE_TARGET"] / ctx["PRIZE_POOL_15YR_MULTIPLE"],
+    inputs=["GLOBAL_COORDINATION_TARGET_SUPPORTERS", "RETIREMENT_EQUIVALENT_CLAIM_VALUE_TARGET", "PRIZE_POOL_HORIZON_MULTIPLE"],
+    compute=lambda ctx: ctx["GLOBAL_COORDINATION_TARGET_SUPPORTERS"] * ctx["RETIREMENT_EQUIVALENT_CLAIM_VALUE_TARGET"] / ctx["PRIZE_POOL_HORIZON_MULTIPLE"],
     keywords=["prize", "pool", "retirement equivalent", "principal", "seed", "benchmark", "deposit"],
     latex_symbol=r"P_{retire-eq}",
 )

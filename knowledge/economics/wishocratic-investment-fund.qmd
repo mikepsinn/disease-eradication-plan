@@ -1,7 +1,7 @@
 ---
 title: "The Wishocratic Investment Fund"
 subtitle: "A scale engine for trying to win the Earth Optimization Prize"
-description: "This paper explains how the shared PRIZE pool could compound while humanity tries to raise healthy life years and median income within {{< var prize_pool_resolution_years_nounit >}} years. It is a scale-capital thesis, not the first institutional ask."
+description: "This paper explains how the shared PRIZE pool could compound while humanity tries to raise healthy life years and median income by {{< var destructive_economy_50pct_year >}}. It is a scale-capital thesis, not the first institutional ask."
 published: true
 tags:
   - economics
@@ -101,9 +101,9 @@ These effects are real, directional, and mutually reinforcing. The model omits t
 | Metric | Value |
 |---|---|
 | **Expected annual return** | **{{< var prize_pool_annual_return >}}** |
-| **15-year compound multiple** | **{{< var prize_pool_15yr_multiple >}}** |
+| **15-year compound multiple** | **{{< var prize_pool_horizon_multiple >}}** |
 
-$100 deposited today becomes $100 times {{< var prize_pool_15yr_multiple >}} over {{< var prize_pool_resolution_years_nounit >}} years at the current modeled pool growth rate.
+$100 deposited today becomes $100 times {{< var prize_pool_horizon_multiple >}} through {{< var destructive_economy_50pct_year >}} at the current modeled pool growth rate.
 
 ## Opportunity Cost Is Negative
 

@@ -1,7 +1,7 @@
 ---
 title: Earth Optimization Protocol v1
 subtitle: The current open-source instruction manual for playing the Earth Optimization Game
-description: Humans are the contestants in the Earth Optimization Prize. This paper documents the current open-source instruction manual for helping humanity raise healthy life years and median income within {{< var prize_pool_resolution_years_nounit >}} years. Fork it and improve it to help humanity win faster.
+description: Humans are the contestants in the Earth Optimization Prize. This paper documents the current open-source instruction manual for helping humanity raise healthy life years and median income by {{< var destructive_economy_50pct_year >}}. Fork it and improve it to help humanity win faster.
 abstract: |
   Humans are the contestants in the Earth Optimization Prize. The Earth Optimization Protocol v1 is the current open-source instruction manual we know for helping humanity raise healthy life years and median income within 15 years. It combines eleven mechanisms into a self-reinforcing loop: a 1% military-to-medical treaty provides {{< var treaty_annual_funding >}}/year in funding; pragmatic clinical trials executed through a decentralized FDA protocol reduce trial costs by {{< var dfda_trial_cost_reduction_factor >}} and compress the treatment discovery queue from {{< var status_quo_queue_clearance_years >}} to {{< var dfda_queue_clearance_years >}}; Incentive Alignment Bonds fund the lobbying campaign and pay investors {{< var victory_bond_annual_return_pct >}} annual returns; wishocratic pairwise comparison allocates the {{< var dih_treasury_medical_research_pct >}} research treasury; and an evidence machine (Optimocracy) tells governments which policies actually work. Each component feeds the next. More cures generate popular support, more bondholder income generates political pressure, and more treaty funding generates campaign support for politicians who voted yes. The ratchet only moves in one direction. This paper documents the complete system: what each component does, how they connect, what numbers they claim, and where we think we are wrong. It exists to be forked and improved until humanity has something better to use.
 published: true
@@ -295,7 +295,7 @@ The economic case, compressed:
 | ROI | {{< var treaty_roi_trial_capacity_plus_efficacy_lag >}} to 1 |
 | Cost per DALY | {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}} (bed nets: {{< var bed_nets_cost_per_daly >}}) |
 | Investor returns | {{< var victory_bond_annual_return_pct >}} annually (perpetual revenue share) |
-| PRIZE token failure branch | Depositors divide the realized pool pro rata at year {{< var prize_pool_resolution_years >}} (PRIZE stays in the pool; IABs are spent on the lobbying campaign) |
+| PRIZE token failure branch | Depositors divide the realized pool pro rata in {{< var destructive_economy_50pct_year >}} (PRIZE stays in the pool; IABs are spent on the lobbying campaign) |
 | Lifetime income gain | {{< var treaty_trajectory_lifetime_income_gain_per_capita >}} per person |
 | GDP multiplier (year 20) | {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_20 >}} (treaty-only) to {{< var wishonia_trajectory_gdp_vs_current_trajectory_multiplier_year_20 >}} (full optimization) |
 
