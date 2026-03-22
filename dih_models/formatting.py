@@ -197,6 +197,10 @@ def format_parameter_value(param: Union[float, int, str, "Parameter"], unit: str
             multiplier_formatted = clean_number(f"{value:.3g}")
         return f"{multiplier_formatted}x"
 
+    elif unit_check == "year" and 1900 <= value <= 2200:
+        # Calendar years: display as plain integer, no auto-scaling
+        return f"{int(value)}"
+
     else:
         # Standard number formatting with auto-scaling
         # Handle pre-scaled inputs

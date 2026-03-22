@@ -2602,26 +2602,37 @@ export const CURRENT_TRAJECTORY_GDP_YEAR_20: Parameter = {
   latex: "GDP_{base,20} = GDP_0(1+g_{base})^{20}",
 };
 
-export const DESTRUCTIVE_ECONOMY_YEARS_TO_25PCT_GDP: Parameter = {
-  value: 8.0,
-  unit: "years",
-  displayName: "Years Until Destructive Economy Reaches 25% of GDP",
-  description: "Years until the destructive economy (military + cybercrime) reaches 25% of GDP at current growth rates. Historical precedent suggests societies become unstable when extraction rates exceed 20-30% of economic output.",
+export const DESTRUCTIVE_ECONOMY_25PCT_YEAR: Parameter = {
+  value: 2033.0,
+  unit: "year",
+  displayName: "Year Destructive Economy Reaches 25% of GDP",
+  description: "Calendar year when the destructive economy (military + cybercrime) reaches 25% of GDP at current growth rates. Historical precedent suggests societies become unstable when extraction rates exceed 20-30% of economic output.",
   sourceType: "calculated",
   confidence: "high",
-  formula: "ln(0.25 / DESTRUCTIVE_PCT_GDP) / ln(1 + DESTRUCTIVE_GROWTH - GDP_GROWTH)",
-  latex: "\\begin{gathered}\nn_{25\\%} \\\\\n= \\frac{\\ln(0.25 / r_{destruct:GDP})}{\\ln(1 + g_{destruct} - g_{GDP})}\n\\end{gathered}",
+  formula: "DESTRUCTIVE_ECONOMY_BASE_YEAR + ln(0.25 / DESTRUCTIVE_PCT_GDP) / ln(1 + DESTRUCTIVE_GROWTH - GDP_GROWTH)",
+  latex: "\\begin{gathered}\nY_{25\\%} \\\\\n= Y_0 \\\\\n+ \\frac{\\ln(0.25 / r_{destruct:GDP})}{\\ln(1 + g_{destruct} - g_{GDP})}\n\\end{gathered}",
 };
 
-export const DESTRUCTIVE_ECONOMY_YEARS_TO_50PCT_GDP: Parameter = {
-  value: 15.0,
-  unit: "years",
-  displayName: "Years Until Destructive Economy Reaches 50% of GDP",
-  description: "Years until the destructive economy (military + cybercrime) reaches 50% of GDP at current growth rates. At that point, half of all economic activity is destructive, so stealing starts to beat creating for individuals, firms, and states because whatever gets created gets looted fast enough to kill productive investment.",
+export const DESTRUCTIVE_ECONOMY_35PCT_YEAR: Parameter = {
+  value: 2037.0,
+  unit: "year",
+  displayName: "Year Destructive Economy Reaches 35% of GDP (Terminal Parasitic Load)",
+  description: "Calendar year when the destructive economy (military + cybercrime) reaches 35% of GDP at current growth rates. Historical evidence from the Soviet Union, Yugoslavia, Argentina, and Zimbabwe shows that total extractive burdens of 35-45% consistently trigger self-reinforcing death spirals. This is the empirically-derived terminal parasitic load threshold.",
   sourceType: "calculated",
   confidence: "high",
-  formula: "ln(0.50 / DESTRUCTIVE_PCT_GDP) / ln(1 + DESTRUCTIVE_GROWTH - GDP_GROWTH)",
-  latex: "\\begin{gathered}\nn_{50\\%} \\\\\n= \\frac{\\ln(0.50 / r_{destruct:GDP})}{\\ln(1 + g_{destruct} - g_{GDP})}\n\\end{gathered}",
+  formula: "DESTRUCTIVE_ECONOMY_BASE_YEAR + ln(0.35 / DESTRUCTIVE_PCT_GDP) / ln(1 + DESTRUCTIVE_GROWTH - GDP_GROWTH)",
+  latex: "\\begin{gathered}\nY_{35\\%} \\\\\n= Y_0 \\\\\n+ \\frac{\\ln(0.35 / r_{destruct:GDP})}{\\ln(1 + g_{destruct} - g_{GDP})}\n\\end{gathered}",
+};
+
+export const DESTRUCTIVE_ECONOMY_50PCT_YEAR: Parameter = {
+  value: 2040.0,
+  unit: "year",
+  displayName: "Year Destructive Economy Reaches 50% of GDP",
+  description: "Calendar year when the destructive economy (military + cybercrime) reaches 50% of GDP at current growth rates. At that point, half of all economic activity is destructive, so stealing starts to beat creating for individuals, firms, and states because whatever gets created gets looted fast enough to kill productive investment.",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "DESTRUCTIVE_ECONOMY_BASE_YEAR + ln(0.50 / DESTRUCTIVE_PCT_GDP) / ln(1 + DESTRUCTIVE_GROWTH - GDP_GROWTH)",
+  latex: "\\begin{gathered}\nY_{50\\%} \\\\\n= Y_0 \\\\\n+ \\frac{\\ln(0.50 / r_{destruct:GDP})}{\\ln(1 + g_{destruct} - g_{GDP})}\n\\end{gathered}",
 };
 
 export const DFDA_ANNUAL_OPEX: Parameter = {
@@ -5849,6 +5860,15 @@ export const DEFENSE_SECTOR_RETENTION_PCT: Parameter = {
   confidence: "high",
 };
 
+export const DESTRUCTIVE_ECONOMY_BASE_YEAR: Parameter = {
+  value: 2025.0,
+  unit: "year",
+  displayName: "Destructive Economy Base Year",
+  description: "Base year for destructive economy projections. All threshold timelines are measured from this year.",
+  sourceType: "definition",
+  confidence: "high",
+};
+
 export const DFDA_ANNUAL_TRIAL_FUNDING: Parameter = {
   value: 21800000000.0,
   unit: "USD/year",
@@ -6787,8 +6807,9 @@ export const parameters = {
   CURRENT_TRAJECTORY_CUMULATIVE_LIFETIME_INCOME,
   CURRENT_TRAJECTORY_GDP_YEAR_15,
   CURRENT_TRAJECTORY_GDP_YEAR_20,
-  DESTRUCTIVE_ECONOMY_YEARS_TO_25PCT_GDP,
-  DESTRUCTIVE_ECONOMY_YEARS_TO_50PCT_GDP,
+  DESTRUCTIVE_ECONOMY_25PCT_YEAR,
+  DESTRUCTIVE_ECONOMY_35PCT_YEAR,
+  DESTRUCTIVE_ECONOMY_50PCT_YEAR,
   DFDA_ANNUAL_OPEX,
   DFDA_BENEFIT_RD_ONLY_ANNUAL,
   DFDA_COMBINED_TREATMENT_SPEEDUP_MULTIPLIER,
@@ -7085,6 +7106,7 @@ export const parameters = {
   DAYS_PER_YEAR,
   DCT_PLATFORM_FUNDING_MEDIUM,
   DEFENSE_SECTOR_RETENTION_PCT,
+  DESTRUCTIVE_ECONOMY_BASE_YEAR,
   DFDA_ANNUAL_TRIAL_FUNDING,
   DFDA_NPV_ADOPTION_RAMP_YEARS,
   DFDA_NPV_ANNUAL_OPEX,
@@ -9100,10 +9122,10 @@ export const citations: Record<string, Citation> = {
 
 /** Summary statistics */
 export const PARAMETER_STATS = {
-  total: 608,
+  total: 610,
   external: 204,
-  calculated: 281,
-  definitions: 123,
+  calculated: 282,
+  definitions: 124,
   citations: 142,
 } as const;
 

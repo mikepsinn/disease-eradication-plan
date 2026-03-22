@@ -420,56 +420,87 @@ _mil_share = 2_720_000_000_000 / (2_720_000_000_000 + 10_500_000_000_000)
 _cyber_share = 10_500_000_000_000 / (2_720_000_000_000 + 10_500_000_000_000)
 _destructive_growth = _mil_share * 0.034 + _cyber_share * 0.15  # ~12.6% weighted
 
+DESTRUCTIVE_ECONOMY_BASE_YEAR = Parameter(
+    2025,
+    source_type="definition",
+    distribution="fixed",
+    description="Base year for destructive economy projections. All threshold timelines are measured from this year.",
+    display_name="Destructive Economy Base Year",
+    unit="year",
+    keywords=["destructive", "economy", "base year"],
+    latex_symbol=r"Y_0",
+)
+
 # Year when destructive economy reaches 25% of GDP (historical instability threshold)
 # Solve: 0.115 * (1 + g_destruct - g_gdp)^n = 0.25
 # n = ln(0.25/0.115) / ln(1 + 0.126 - 0.025)
 _ratio_growth = _destructive_growth - 0.025  # net growth of ratio
 _years_to_25pct = _math.log(0.25 / 0.115) / _math.log(1 + _ratio_growth)
+_years_to_35pct = _math.log(0.35 / 0.115) / _math.log(1 + _ratio_growth)
 _years_to_50pct = _math.log(0.50 / 0.115) / _math.log(1 + _ratio_growth)
 
-DESTRUCTIVE_ECONOMY_YEARS_TO_25PCT_GDP = Parameter(
-    round(_years_to_25pct),
-    source_type="calculated",
-    description="Years until the destructive economy (military + cybercrime) reaches 25% of GDP "
-                "at current growth rates. Historical precedent suggests societies become unstable "
-                "when extraction rates exceed 20-30% of economic output.",
-    display_name="Years Until Destructive Economy Reaches 25% of GDP",
-    unit="years",
-    formula="ln(0.25 / DESTRUCTIVE_PCT_GDP) / ln(1 + DESTRUCTIVE_GROWTH - GDP_GROWTH)",
-    latex=r"n_{25\%} = \frac{\ln(0.25 / r_{destruct:GDP})}{\ln(1 + g_{destruct} - g_{GDP})}",
-    keywords=["destructive", "economy", "timeline", "threshold", "instability"],
-    inputs=["GLOBAL_DESTRUCTIVE_ECONOMY_PCT_GDP", "GLOBAL_CYBERCRIME_CAGR", "GLOBAL_MILITARY_SPENDING_REAL_CAGR_10YR", "GDP_BASELINE_GROWTH_RATE", "GLOBAL_MILITARY_SPENDING_ANNUAL_2024", "GLOBAL_DESTRUCTIVE_ECONOMY_ANNUAL_2025", "GLOBAL_CYBERCRIME_COST_ANNUAL_2025"],
-    compute=lambda ctx: round(
-        _math.log(0.25 / (ctx["GLOBAL_DESTRUCTIVE_ECONOMY_PCT_GDP"]))
+# Calendar years when destructive economy thresholds are reached
+_destruct_inputs = ["DESTRUCTIVE_ECONOMY_BASE_YEAR", "GLOBAL_DESTRUCTIVE_ECONOMY_PCT_GDP", "GLOBAL_CYBERCRIME_CAGR", "GLOBAL_MILITARY_SPENDING_REAL_CAGR_10YR", "GDP_BASELINE_GROWTH_RATE", "GLOBAL_MILITARY_SPENDING_ANNUAL_2024", "GLOBAL_DESTRUCTIVE_ECONOMY_ANNUAL_2025", "GLOBAL_CYBERCRIME_COST_ANNUAL_2025"]
+
+def _destruct_year_compute(threshold):
+    """Return a compute lambda for the calendar year when destructive economy reaches threshold."""
+    return lambda ctx: ctx["DESTRUCTIVE_ECONOMY_BASE_YEAR"] + round(
+        _math.log(threshold / ctx["GLOBAL_DESTRUCTIVE_ECONOMY_PCT_GDP"])
         / _math.log(1 + (
             (ctx["GLOBAL_MILITARY_SPENDING_ANNUAL_2024"] / ctx["GLOBAL_DESTRUCTIVE_ECONOMY_ANNUAL_2025"]) * ctx["GLOBAL_MILITARY_SPENDING_REAL_CAGR_10YR"]
             + (ctx["GLOBAL_CYBERCRIME_COST_ANNUAL_2025"] / ctx["GLOBAL_DESTRUCTIVE_ECONOMY_ANNUAL_2025"]) * ctx["GLOBAL_CYBERCRIME_CAGR"]
         ) - ctx["GDP_BASELINE_GROWTH_RATE"])
-    ),
-    latex_symbol=r"n_{25\%}",
+    )
+
+DESTRUCTIVE_ECONOMY_25PCT_YEAR = Parameter(
+    2025 + round(_years_to_25pct),
+    source_type="calculated",
+    description="Calendar year when the destructive economy (military + cybercrime) reaches 25% of GDP "
+                "at current growth rates. Historical precedent suggests societies become unstable "
+                "when extraction rates exceed 20-30% of economic output.",
+    display_name="Year Destructive Economy Reaches 25% of GDP",
+    unit="year",
+    formula="DESTRUCTIVE_ECONOMY_BASE_YEAR + ln(0.25 / DESTRUCTIVE_PCT_GDP) / ln(1 + DESTRUCTIVE_GROWTH - GDP_GROWTH)",
+    latex=r"Y_{25\%} = Y_0 + \frac{\ln(0.25 / r_{destruct:GDP})}{\ln(1 + g_{destruct} - g_{GDP})}",
+    keywords=["destructive", "economy", "timeline", "year", "25%", "instability"],
+    inputs=_destruct_inputs,
+    compute=_destruct_year_compute(0.25),
+    latex_symbol=r"Y_{25\%}",
 )
 
-DESTRUCTIVE_ECONOMY_YEARS_TO_50PCT_GDP = Parameter(
-    round(_years_to_50pct),
+DESTRUCTIVE_ECONOMY_35PCT_YEAR = Parameter(
+    2025 + round(_years_to_35pct),
     source_type="calculated",
-    description="Years until the destructive economy (military + cybercrime) reaches 50% of GDP "
+    description="Calendar year when the destructive economy (military + cybercrime) reaches 35% of GDP "
+                "at current growth rates. Historical evidence from the Soviet Union, Yugoslavia, "
+                "Argentina, and Zimbabwe shows that total extractive burdens of 35-45% consistently "
+                "trigger self-reinforcing death spirals. This is the empirically-derived terminal "
+                "parasitic load threshold.",
+    display_name="Year Destructive Economy Reaches 35% of GDP (Terminal Parasitic Load)",
+    unit="year",
+    formula="DESTRUCTIVE_ECONOMY_BASE_YEAR + ln(0.35 / DESTRUCTIVE_PCT_GDP) / ln(1 + DESTRUCTIVE_GROWTH - GDP_GROWTH)",
+    latex=r"Y_{35\%} = Y_0 + \frac{\ln(0.35 / r_{destruct:GDP})}{\ln(1 + g_{destruct} - g_{GDP})}",
+    keywords=["destructive", "economy", "timeline", "year", "35%", "terminal parasitic load", "collapse"],
+    inputs=_destruct_inputs,
+    compute=_destruct_year_compute(0.35),
+    latex_symbol=r"Y_{35\%}",
+)
+
+DESTRUCTIVE_ECONOMY_50PCT_YEAR = Parameter(
+    2025 + round(_years_to_50pct),
+    source_type="calculated",
+    description="Calendar year when the destructive economy (military + cybercrime) reaches 50% of GDP "
                 "at current growth rates. At that point, half of all economic activity is "
                 "destructive, so stealing starts to beat creating for individuals, firms, and "
                 "states because whatever gets created gets looted fast enough to kill productive investment.",
-    display_name="Years Until Destructive Economy Reaches 50% of GDP",
-    unit="years",
-    formula="ln(0.50 / DESTRUCTIVE_PCT_GDP) / ln(1 + DESTRUCTIVE_GROWTH - GDP_GROWTH)",
-    latex=r"n_{50\%} = \frac{\ln(0.50 / r_{destruct:GDP})}{\ln(1 + g_{destruct} - g_{GDP})}",
-    keywords=["destructive", "economy", "timeline", "threshold", "crossover"],
-    inputs=["GLOBAL_DESTRUCTIVE_ECONOMY_PCT_GDP", "GLOBAL_CYBERCRIME_CAGR", "GLOBAL_MILITARY_SPENDING_REAL_CAGR_10YR", "GDP_BASELINE_GROWTH_RATE", "GLOBAL_MILITARY_SPENDING_ANNUAL_2024", "GLOBAL_DESTRUCTIVE_ECONOMY_ANNUAL_2025", "GLOBAL_CYBERCRIME_COST_ANNUAL_2025"],
-    compute=lambda ctx: round(
-        _math.log(0.50 / (ctx["GLOBAL_DESTRUCTIVE_ECONOMY_PCT_GDP"]))
-        / _math.log(1 + (
-            (ctx["GLOBAL_MILITARY_SPENDING_ANNUAL_2024"] / ctx["GLOBAL_DESTRUCTIVE_ECONOMY_ANNUAL_2025"]) * ctx["GLOBAL_MILITARY_SPENDING_REAL_CAGR_10YR"]
-            + (ctx["GLOBAL_CYBERCRIME_COST_ANNUAL_2025"] / ctx["GLOBAL_DESTRUCTIVE_ECONOMY_ANNUAL_2025"]) * ctx["GLOBAL_CYBERCRIME_CAGR"]
-        ) - ctx["GDP_BASELINE_GROWTH_RATE"])
-    ),
-    latex_symbol=r"n_{50\%}",
+    display_name="Year Destructive Economy Reaches 50% of GDP",
+    unit="year",
+    formula="DESTRUCTIVE_ECONOMY_BASE_YEAR + ln(0.50 / DESTRUCTIVE_PCT_GDP) / ln(1 + DESTRUCTIVE_GROWTH - GDP_GROWTH)",
+    latex=r"Y_{50\%} = Y_0 + \frac{\ln(0.50 / r_{destruct:GDP})}{\ln(1 + g_{destruct} - g_{GDP})}",
+    keywords=["destructive", "economy", "timeline", "year", "50%", "crossover"],
+    inputs=_destruct_inputs,
+    compute=_destruct_year_compute(0.50),
+    latex_symbol=r"Y_{50\%}",
 )
 
 # Value of Statistical Life (VSL)

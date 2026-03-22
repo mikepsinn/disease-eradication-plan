@@ -38,15 +38,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 359 parameters used in the analysis, organized by type:
+This appendix documents all 361 parameters used in the analysis, organized by type:
 
 - External sources (peer-reviewed): 135
-- Calculated values: 169
-- Core definitions: 55
+- Calculated values: 170
+- Core definitions: 56
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (169 parameters) • [External Data Sources](#sec-external) (135 parameters) • [Core Definitions](#sec-definitions) (55 parameters)
+[Calculated Values](#sec-calculated) (170 parameters) • [External Data Sources](#sec-external) (135 parameters) • [Core Definitions](#sec-definitions) (56 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -584,14 +584,15 @@ $$
 
 :::
 
-### Years Until Destructive Economy Reaches 25% of GDP: 8 years {#sec-destructive_economy_years_to_25pct_gdp}
+### Year Destructive Economy Reaches 25% of GDP: 2033 {#sec-destructive_economy_25pct_year}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Years until the destructive economy (military + cybercrime) reaches 25% of GDP at current growth rates. Historical precedent suggests societies become unstable when extraction rates exceed 20-30% of economic output.
+Calendar year when the destructive economy (military + cybercrime) reaches 25% of GDP at current growth rates. Historical precedent suggests societies become unstable when extraction rates exceed 20-30% of economic output.
 
 **Inputs**:
 
+- [Destructive Economy Base Year](#sec-destructive_economy_base_year): 2025
 - [Destructive Economy as % of GDP](#sec-global_destructive_economy_pct_gdp) 🔢: 11.5%
 - [Cybercrime Cost CAGR](#sec-global_cybercrime_cagr) 📊: 15%
 - [Military Spending Real CAGR (10-Year)](#sec-global_military_spending_real_cagr_10yr) 📊: 3.4%
@@ -602,8 +603,9 @@ Years until the destructive economy (military + cybercrime) reaches 25% of GDP a
 
 $$
 \begin{gathered}
-n_{25\%} \\
-= \frac{\ln(0.25 / r_{destruct:GDP})}{\ln(1 + g_{destruct} - g_{GDP})}
+Y_{25\%} \\
+= Y_0 \\
++ \frac{\ln(0.25 / r_{destruct:GDP})}{\ln(1 + g_{destruct} - g_{GDP})}
 \end{gathered}
 $$
 
@@ -611,14 +613,15 @@ $$
 
 :::
 
-### Years Until Destructive Economy Reaches 50% of GDP: 15 years {#sec-destructive_economy_years_to_50pct_gdp}
+### Year Destructive Economy Reaches 35% of GDP (Terminal Parasitic Load): 2037 {#sec-destructive_economy_35pct_year}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Years until the destructive economy (military + cybercrime) reaches 50% of GDP at current growth rates. At that point, half of all economic activity is destructive, so stealing starts to beat creating for individuals, firms, and states because whatever gets created gets looted fast enough to kill productive investment.
+Calendar year when the destructive economy (military + cybercrime) reaches 35% of GDP at current growth rates. Historical evidence from the Soviet Union, Yugoslavia, Argentina, and Zimbabwe shows that total extractive burdens of 35-45% consistently trigger self-reinforcing death spirals. This is the empirically-derived terminal parasitic load threshold.
 
 **Inputs**:
 
+- [Destructive Economy Base Year](#sec-destructive_economy_base_year): 2025
 - [Destructive Economy as % of GDP](#sec-global_destructive_economy_pct_gdp) 🔢: 11.5%
 - [Cybercrime Cost CAGR](#sec-global_cybercrime_cagr) 📊: 15%
 - [Military Spending Real CAGR (10-Year)](#sec-global_military_spending_real_cagr_10yr) 📊: 3.4%
@@ -629,8 +632,38 @@ Years until the destructive economy (military + cybercrime) reaches 50% of GDP a
 
 $$
 \begin{gathered}
-n_{50\%} \\
-= \frac{\ln(0.50 / r_{destruct:GDP})}{\ln(1 + g_{destruct} - g_{GDP})}
+Y_{35\%} \\
+= Y_0 \\
++ \frac{\ln(0.35 / r_{destruct:GDP})}{\ln(1 + g_{destruct} - g_{GDP})}
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+:::
+
+### Year Destructive Economy Reaches 50% of GDP: 2040 {#sec-destructive_economy_50pct_year}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Calendar year when the destructive economy (military + cybercrime) reaches 50% of GDP at current growth rates. At that point, half of all economic activity is destructive, so stealing starts to beat creating for individuals, firms, and states because whatever gets created gets looted fast enough to kill productive investment.
+
+**Inputs**:
+
+- [Destructive Economy Base Year](#sec-destructive_economy_base_year): 2025
+- [Destructive Economy as % of GDP](#sec-global_destructive_economy_pct_gdp) 🔢: 11.5%
+- [Cybercrime Cost CAGR](#sec-global_cybercrime_cagr) 📊: 15%
+- [Military Spending Real CAGR (10-Year)](#sec-global_military_spending_real_cagr_10yr) 📊: 3.4%
+- [Baseline Global GDP Growth Rate](#sec-gdp_baseline_growth_rate): 2.5%
+- [Global Military Spending in 2024](#sec-global_military_spending_annual_2024) 📊: $2.72T
+- [Global Destructive Economy (2025)](#sec-global_destructive_economy_annual_2025) 🔢: $13.2T
+- [Global Cybercrime Costs (2025)](#sec-global_cybercrime_cost_annual_2025) 📊: $10.5T
+
+$$
+\begin{gathered}
+Y_{50\%} \\
+= Y_0 \\
++ \frac{\ln(0.50 / r_{destruct:GDP})}{\ln(1 + g_{destruct} - g_{GDP})}
 \end{gathered}
 $$
 
@@ -13607,6 +13640,20 @@ Cumulative global military spending since 1913 (Fed era) in constant 2024 dollar
 ::: {.callout-note collapse="true" title="📊 Details"}
 
 Percentage of budget defense sector keeps under 1% treaty
+
+*Core definition*
+
+:::
+
+### Destructive Economy Base Year: 2025 {#sec-destructive_economy_base_year}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Base year for destructive economy projections. All threshold timelines are measured from this year.
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
 
 *Core definition*
 

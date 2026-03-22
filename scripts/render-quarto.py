@@ -329,6 +329,72 @@ def _extract_files_from_config(config: dict) -> Set[str]:
     return files
 
 
+QMD_INCLUDE_PATTERN = re.compile(r"\{\{<\s*include\s+([^\s>]+\.qmd)\s*>\}\}")
+
+
+def _resolve_project_relative_qmd_path(file_path: str, referenced_path: str) -> str:
+    """Resolve a QMD path relative to another QMD file into project-relative form."""
+    path_part = referenced_path.split("#", 1)[0].replace("\\", "/")
+
+    if path_part.startswith("/"):
+        return os.path.normpath(path_part[1:]).replace("\\", "/")
+
+    file_dir = Path(file_path).parent
+    return os.path.normpath(os.path.join(str(file_dir), path_part)).replace("\\", "/")
+
+
+def _expand_qmd_files_with_includes(
+    build_temp: Path,
+    files_to_process: List[str],
+    verbose: bool = True
+) -> List[str]:
+    """
+    Expand a QMD file list to include recursively referenced include partials.
+
+    Standalone paper configs only list top-level chapters. Quarto still renders
+    any `{{< include ...qmd >}}` partials those chapters pull in, so link
+    rewriting needs to process those include files too.
+    """
+    ordered_files: List[str] = []
+    queued = [path.replace("\\", "/") for path in files_to_process]
+    seen: Set[str] = set()
+    included_files = 0
+
+    while queued:
+        file_path = queued.pop(0)
+        if file_path in seen:
+            continue
+
+        seen.add(file_path)
+        ordered_files.append(file_path)
+
+        qmd_file = build_temp / file_path
+        if not qmd_file.exists() or qmd_file.suffix.lower() != ".qmd":
+            continue
+
+        try:
+            content = qmd_file.read_text(encoding="utf-8")
+        except OSError:
+            continue
+
+        for include_path in QMD_INCLUDE_PATTERN.findall(content):
+            resolved = _resolve_project_relative_qmd_path(file_path, include_path)
+            if resolved in seen:
+                continue
+
+            include_file = build_temp / resolved
+            if not include_file.exists() or include_file.suffix.lower() != ".qmd":
+                continue
+
+            queued.append(resolved)
+            included_files += 1
+
+    if verbose and included_files > 0:
+        print(f"[*] Expanded QMD rewrite set with {included_files} included partial(s)", flush=True)
+
+    return ordered_files
+
+
 def _build_paper_url_mapping(project_root: Path) -> Dict[str, str]:
     """
     Build mapping from standalone paper QMD paths to their deployed HTTPS URLs.
@@ -1137,6 +1203,11 @@ def prepare_build_temp(config_name: str, verbose: bool = True) -> Optional[Path]
     paper_files_to_process = list(current_files)
     if (build_temp / "index.qmd").exists():
         paper_files_to_process.append("index.qmd")
+    paper_files_to_process = _expand_qmd_files_with_includes(
+        build_temp=build_temp,
+        files_to_process=paper_files_to_process,
+        verbose=verbose
+    )
 
     if verbose:
         print(f"[*] Rewriting links to standalone papers with HTTPS URLs...", flush=True)
@@ -1158,7 +1229,11 @@ def prepare_build_temp(config_name: str, verbose: bool = True) -> Optional[Path]
     index_source = metadata.get("index_source")
     if index_source:
         # Only process chapter files, not index.qmd itself
-        index_source_files = list(current_files)
+        index_source_files = _expand_qmd_files_with_includes(
+            build_temp=build_temp,
+            files_to_process=list(current_files),
+            verbose=False
+        )
         if verbose:
             print(f"[*] Rewriting links to index-source ({index_source}) -> /index.qmd...", flush=True)
         index_links = _rewrite_index_source_links(
@@ -1200,6 +1275,11 @@ def prepare_build_temp(config_name: str, verbose: bool = True) -> Optional[Path]
     files_to_process = list(source_files)
     if (build_temp / "index.qmd").exists():
         files_to_process.append("index.qmd")
+    files_to_process = _expand_qmd_files_with_includes(
+        build_temp=build_temp,
+        files_to_process=files_to_process,
+        verbose=verbose
+    )
 
     for file_path_str in files_to_process:
         qmd_file = build_temp / file_path_str
@@ -1220,15 +1300,16 @@ def prepare_build_temp(config_name: str, verbose: bool = True) -> Optional[Path]
                 return match.group(0)
 
             path_normalized = path.replace("\\", "/")
+            path_part = path_normalized.split("#", 1)[0]
 
             # Resolve relative path
-            if path_normalized.startswith("/"):
-                candidates = [os.path.normpath(path_normalized[1:]).replace("\\", "/")]
+            if path_part.startswith("/"):
+                candidates = [os.path.normpath(path_part[1:]).replace("\\", "/")]
             else:
                 file_dir = qmd_file.relative_to(build_temp).parent
                 candidates = [
-                    os.path.normpath(os.path.join(str(file_dir), path_normalized)).replace("\\", "/"),
-                    os.path.normpath(path_normalized).replace("\\", "/"),
+                    os.path.normpath(os.path.join(str(file_dir), path_part)).replace("\\", "/"),
+                    os.path.normpath(path_part).replace("\\", "/"),
                 ]
 
             resolved = candidates[0]
@@ -1239,9 +1320,8 @@ def prepare_build_temp(config_name: str, verbose: bool = True) -> Optional[Path]
 
             # Handle anchors
             anchor = ""
-            if "#" in resolved:
-                resolved, anchor = resolved.split("#", 1)
-                anchor = f"#{anchor}"
+            if "#" in path:
+                anchor = "#" + path.split("#", 1)[1]
 
             # Rewrite if in target but not in source
             if resolved in target_files and resolved not in source_files:

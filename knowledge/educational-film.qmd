@@ -116,7 +116,7 @@ Your destructive economy is {{< var global_destructive_economy_pct_gdp >}} of GD
 **Animation:** The factory shrinks. The thieves multiply. The scale tips. The factory workers look at each other and start putting on thief masks.
 :::
 
-The Soviet Union collapsed at 15%. You hit 25% in {{< var destructive_economy_years_to_25pct_gdp >}}. They had a plan. It was a terrible plan, but they had one.
+The Soviet Union collapsed at 15%. You hit 25% by {{< var destructive_economy_25pct_year >}}. They had a plan. It was a terrible plan, but they had one.
 
 :::{.scene-direction}
 **Keyframe:** A road stretching to the horizon with percentage mile markers. At 15%, a wrecked car with a hammer-and-sickle flag smolders in a ditch, a crumpled roadmap flying from the wreckage. Further ahead at 25%, a brick wall. A tiny Earth-mobile races toward it. No map. No brakes. Display text: "15%" on the first mile marker, "25%" on the second mile marker, "COLLAPSE" on the brick wall.
