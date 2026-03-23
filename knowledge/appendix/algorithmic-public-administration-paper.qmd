@@ -1,9 +1,9 @@
 ---
 title: "Algorithmic Public Administration"
 subtitle: "A Protocol for Replacing Government Intermediaries with Deterministic Functions"
-description: "A protocol combining five primitives (transparent ledger, preference aggregation, evidence engine, identity verification, automated monetary policy) to replace mechanical government agency functions, eliminating {{< var us_gov_waste_pct_gdp >}} of GDP in intermediation costs while preserving democratic control."
+description: "A protocol combining five primitives (transparent ledger, preference aggregation, evidence engine, identity verification, automated monetary policy) to replace mechanical government functions, recover visible citizen dividends, and remove {{< var us_gov_waste_pct_gdp >}} of GDP in governance drag while preserving democratic control."
 abstract: |
-  Government agencies are multi-layered principal-agent chains optimized for process compliance rather than citizen outcomes. In the United States alone, administrative intermediation costs {{< var us_gov_waste_total >}} per year, or {{< var us_gov_waste_pct_gdp >}} of GDP [@us-efficiency-audit-paper-2025]. We describe an integrated protocol combining five primitives (transparent ledger, preference aggregation, evidence engine, identity verification, and automated monetary policy) that replaces specific mechanical functions currently performed by the Federal Reserve, Internal Revenue Service, Social Security Administration, Government Accountability Office, Congressional Budget Office, Office of Management and Budget, Federal Election Commission, and Census Bureau. The protocol preserves democratic control: citizens still decide resource allocation through pairwise preference comparison (Wishocracy [@wishocracy-paper-2025]). The algorithm executes those decisions without extracting value at each administrative layer. We estimate aggregate savings and describe a phased implementation pathway compatible with the 1% Treaty [@1-pct-treaty-impact-paper-2025] funding mechanism.
+  Government agencies are multi-layered principal-agent chains optimized for process compliance rather than citizen outcomes. In the United States alone, intermediated governance destroys or diverts {{< var us_gov_waste_total >}} per year, or {{< var us_gov_waste_pct_gdp >}} of GDP [@us-efficiency-audit-paper-2025]. We describe an integrated protocol combining five primitives (transparent ledger, preference aggregation, evidence engine, identity verification, and automated monetary policy) that replaces specific mechanical functions currently performed by the Federal Reserve, Internal Revenue Service, Social Security Administration, Government Accountability Office, Congressional Budget Office, Office of Management and Budget, Federal Election Commission, and Census Bureau. The protocol preserves democratic control: citizens still decide resource allocation through pairwise preference comparison (Wishocracy [@wishocracy-paper-2025]). The algorithm executes those decisions without extracting value at each administrative layer. We distinguish fiscal cash the protocol can route directly into UBI from broader societal gains that arrive as lower prices and higher wages, and we describe a phased implementation pathway compatible with the 1% Treaty [@1-pct-treaty-impact-paper-2025] funding mechanism.
 published: true
 tags:
   - algorithmic-governance
@@ -50,9 +50,9 @@ aliases:
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 
-Administrative overhead of the United States federal government: {{< var us_gov_waste_total >}} per year. People employed to execute functions that are algorithmic in nature: millions. Time since the technology to replace them became available: 17 years. Number of agencies replaced: zero. This is a technical specification for the obvious.
+Intermediation cost of governance in the United States: {{< var us_gov_waste_total >}} per year. People employed to execute functions that are algorithmic in nature: millions. Time since the technology to replace them became available: 17 years. Number of agencies replaced: zero. This is a technical specification for the obvious.
 
-## 1. Introduction
+## Introduction
 
 A citizen who wants cancer research funded must persuade a representative, who must negotiate with other representatives, who must instruct an agency head, who must direct a bureaucracy, who must process applications, who must distribute funds. Six intermediaries between "I want this" and "this happens." Each layer extracts value (salaries, overhead, compliance costs) and introduces preference distortion (lobbying, logrolling, regulatory capture). The aggregate cost of this intermediation in the United States alone is {{< var us_gov_waste_total >}} per year [@us-efficiency-audit-paper-2025], or {{< var us_gov_waste_pct_gdp >}} of GDP.
 
@@ -62,22 +62,22 @@ This paper describes a protocol that replaces specific mechanical agency functio
 
 We do not propose replacing government. We propose replacing the intermediaries between citizens and governance outcomes. Democracy is a decision-making system, not an employment program. The functions that require human judgment (enforcement, diplomacy, adjudication) remain human. The functions that are algorithmic in nature become actual algorithms. This is the same category of innovation as the dishwasher. The dishwasher replaced dishwashing, not cooking. Nobody argued that dishes required human judgment. Nobody wrote an op-ed titled "In Defense of Dirty Dishes." The objections to algorithmic governance are identical to the objections people would have raised about dishwashers if dishwashers also eliminated the jobs of people who write regulations about dishwashing.
 
-## 2. The Cost of Intermediation
+## The Cost of Intermediation
 
 The United States Efficiency Audit [@us-efficiency-audit-paper-2025] identifies four categories of governance waste:
 
-1. **Direct spending waste**: {{< var us_gov_waste_category_1_direct_spending >}}/year in military overspend beyond deterrence requirements, corporate welfare, agricultural subsidies paid to not produce food, and drug war enforcement
+1. **Direct spending waste**: {{< var us_gov_waste_category_1_direct_spending >}}/year in military overspend beyond deterrence requirements, corporate welfare, agricultural subsidies paid to not produce food, fossil fuel subsidies, and drug war enforcement
 2. **Compliance burden**: {{< var us_gov_waste_category_2_compliance >}}/year in tax compliance costs ({{< var us_gov_waste_tax_compliance >}}) and regulatory red tape ({{< var us_gov_waste_regulatory_red_tape >}})
-3. **Policy-induced GDP loss**: {{< var us_gov_waste_category_3_gdp_loss >}}/year from housing supply restrictions ({{< var us_gov_waste_housing_zoning >}}), tariffs ({{< var us_gov_waste_tariffs >}}), and fossil fuel subsidies ({{< var us_gov_waste_fossil_fuel_subsidies >}})
-4. **System inefficiency**: {{< var us_gov_waste_category_4_system >}}/year in healthcare administrative overhead ({{< var us_gov_waste_healthcare_inefficiency >}})
+3. **Policy-induced GDP loss**: {{< var us_gov_waste_category_3_gdp_loss >}}/year from housing supply restrictions ({{< var us_gov_waste_housing_zoning >}}) and tariffs ({{< var us_gov_waste_tariffs >}})
+4. **System inefficiency**: {{< var us_gov_waste_category_4_system >}}/year in healthcare system waste ({{< var us_gov_waste_healthcare_inefficiency >}})
 
-Total: {{< var us_gov_waste_total >}}/year. The Political Dysfunction Tax [@political-dysfunction-tax-paper-2025] extends this analysis globally, estimating {{< var political_dysfunction_global_opportunity_cost_total >}}/year in opportunity costs from suboptimal governance worldwide.
+Total: {{< var us_gov_waste_total >}}/year. The Political Dysfunction Tax [@political-dysfunction-tax-paper-2025] extends this analysis globally, estimating {{< var political_dysfunction_global_opportunity_cost_total >}}/year in opportunity costs from suboptimal governance worldwide. Two adjacent gains sit outside that $4.9T audit arithmetic and are treated separately in this paper: roughly ~$500B/year in recovered tax gap and roughly ~$1.1T/year in excess financial intermediation rent, with ~$2.3T/year as the gross bank-tollbooth ceiling.
 
-That is {{< var us_gov_waste_total >}} divided by 330 million Americans: roughly $14,800 per person per year, or $59,000 for a family of four. Not all of this is a direct payment. Roughly $10,000 per family is direct (taxes wasted on admin overhead and compliance). Another $5,000-8,000 is indirect (higher prices from corporate welfare and subsidies passed through to consumers). The rest (~$35,000-40,000) is opportunity cost: wages that would be higher, GDP that would exist, and economic growth that is being suppressed by policies no citizen would voluntarily fund. The direct cost alone exceeds what most families pay in income tax. The total cost, direct plus indirect plus opportunity, is the price of intermediation. Most families do not know they are paying it. It does not appear on any form.
+At 335 million people, the conservative quantified stack in this paper is roughly **$19,800 per person per year**, or about **$79,000 for a family of four**. About **$4,900 per person** can be routed directly into visible UBI under the protocol's default rule. Another **~$14,900 per person** arrives as lower prices, lower fees, less compliance labor, and higher wages. Using the full $2.3T finance ceiling instead of the $1.1T excess estimate raises the total to roughly **$23,400 per person**. The point is not that every dollar becomes a Treasury transfer. The point is that every dollar stops being siphoned off by intermediaries.
 
 Every category traces to the same root cause: intermediaries whose incentives diverge from the citizens they serve. The IRS is expensive because the tax code is complex. The tax code is complex because legislators sell exemptions to donors. Donors buy exemptions because the return on investment is extraordinary. The exemptions require interpretation, which requires accountants, which creates a compliance industry, which lobbies for more complexity, which produces more exemptions to sell. This is not dysfunction. This is the system performing as designed. Each participant is acting rationally within a structure that produces irrational outcomes. The protocol described in this paper removes the structure.
 
-## 3. System Architecture
+## System Architecture
 
 The protocol combines five primitives into an integrated governance stack:
 
@@ -93,13 +93,13 @@ The protocol combines five primitives into an integrated governance stack:
 
 These five primitives are interdependent. The ledger enables accountability without auditors. Wishocracy enables allocation without appropriators. The evidence engine enables informed preferences without policy analysts. Identity enables distribution without means-testing. Monetary policy enables stable prices without central bankers. Remove any primitive and the system degrades.
 
-## 4. Monetary Policy and Revenue
+## Monetary Policy and Revenue
 
-### 4.1 The Problem
+### The Problem
 
 The full case against discretionary monetary policy fills [its own chapter](../economics/central-banks.qmd). The short version: twelve unelected people sit around a table and decide how much your money is worth. The dollar has lost 96% of its purchasing power since they started. New money enters the economy at the top (banks, government contractors) and reaches citizens last, after each intermediary has captured value. This is the Cantillon effect. It is not a bug. It is the system. The mechanism has funded {{< var money_printer_war_deaths >}} in war casualties without requiring democratic consent for any of them. The technology to replace the table has existed since 2009. Your species is using it to trade pictures of monkeys.
 
-### 4.2 The FairTax, Implemented Algorithmically
+### The FairTax, Implemented Algorithmically
 
 The tax and monetary architecture is not novel. It is the FairTax (a consumption tax replacing all income taxes, with a universal prebate) implemented at the protocol level with three modifications: (1) collection happens automatically at settlement, (2) the displayed rate is set by an algorithm instead of Congress, and (3) the prebate is a daily UBI deposit instead of a monthly check.
 
@@ -109,13 +109,15 @@ The system has two moving parts:
 
 Behind that one visible rate are two destinations. The **fiscal component** funds the government's wishocratically-determined budget. The **stabilization component** does not fund spending; when activated, it is burned or parked in a non-spendable reserve until the purchasing-power basket returns to target. This is the minimum machinery required to avoid a conceptual error: the same tax dollar cannot both finance expenditure and disappear from circulation.
 
+Once every citizen and business can hold verified settlement wallets directly on the protocol, banks cease to be necessary as deposit warehouses, payment rail operators, and first receivers of new money. What survives is lending. Underwriting default risk, duration risk, and project selection remain real work. Mortgages, business loans, and venture finance still exist, but they are funded by competitive credit pools layered on top of the protocol rather than by institutions that also control custody and payments.
+
 **The UBI deposit** replaces means-tested cash welfare with a daily payment to every verified citizen. UBI has three funding streams, each from a different source:
 
-1. *Structural dividend* (Section 11): budgetary savings from eliminating administrative intermediaries. This is money that was being spent on agencies and is now available.
+1. *Structural dividend*: all fiscal cash the protocol directly captures by default: eliminated agency operating costs, reclaimed direct spending waste, and recovered tax gap. This is visible money, deposited to citizens first rather than buried in a lower rate or a larger bureaucracy.
 2. *Productivity dividend* (this section): new currency minted by the algorithm to prevent deflation as the economy grows. This is the Cantillon pipeline, redirected from banks to citizens.
-3. *Democratic supplement* (Section 6): whatever share of the broader discretionary budget citizens choose to direct to cash transfers versus other public goods.
+3. *Democratic supplement*: whatever additional share of the ordinary discretionary budget citizens explicitly choose to direct to cash transfers versus other public goods.
 
-The citizen sees one deposit, but the sources are distinct: structural savings, monetary issuance, and democratic choice.
+The citizen sees one deposit, but the sources are distinct: captured fiscal cash, monetary issuance, and democratic choice.
 
 These are the monetary control levers:
 
@@ -130,9 +132,9 @@ The combination of a fiscal rate, a temporary sterilization rate, and a producti
 2. *Debt neutrality.* Deflation makes existing debts more expensive in real terms. Every mortgage, student loan, and business loan costs more when prices fall. The 0% target is neutral: it neither inflates away debts (theft from savers) nor deflates them larger (punishment for borrowers).
 3. *The real complaint is distribution, not deflation.* The [central-banks chapter](../economics/central-banks.qmd) argues against the Federal Reserve. The core objection is not "deflation should be allowed." It is "new money should not go to banks first." The protocol fixes the distribution. New money is still created (to prevent deflation), but it enters at the bottom (UBI to every citizen) instead of the top (Cantillon pipeline to banks). The same productivity gains reach the same citizens. The check just arrives as cash instead of as imperceptibly cheaper groceries.
 
-This is a pragmatic choice, not a theoretical one. An economically purer design would allow natural deflation and skip the monetary UBI entirely. The structural dividend (Section 11.4) would still exist. But the productivity dividend distributed as cash is the single most powerful adoption incentive the protocol has. Theoretical purity that never gets adopted helps nobody.
+This is a pragmatic choice, not a theoretical one. An economically purer design would allow natural deflation and skip the monetary UBI entirely. The structural dividend would still exist. But the productivity dividend distributed as cash is the single most powerful adoption incentive the protocol has. Theoretical purity that never gets adopted helps nobody.
 
-### 4.3 Where the Inflation Money Goes
+### Where the Inflation Money Goes
 
 Under the current system, the Federal Reserve creates new money and routes it through banks. The banks lend it, spend it, or invest it before prices adjust. By the time rising prices reach your grocery store, the purchasing power has already been captured by whoever touched the new money first. This is not a side effect. It is the product. The Fed expanded its balance sheet by roughly $4.8 trillion in 2020-2022 alone. The top 1% gained approximately $4 trillion in net worth over the same period. The mechanism is the Cantillon effect described in [the central-banks chapter](../economics/central-banks.qmd), and it has been operating for over a century.
 
@@ -140,7 +142,7 @@ Under the protocol, when new money must be created to keep the basket stable as 
 
 This is not a new discretionary privilege layered on top of the old system. It is the monetary function the Federal Reserve already performs, reassigned from banks to citizens. The claim is not that every future issuance episode will match some past Fed episode dollar-for-dollar. The claim is that whenever money creation occurs, the Cantillon advantage disappears.
 
-### 4.4 Why Not CPI
+### Why Not CPI
 
 The algorithm targets 0% change in a purchasing-power basket. The measurement matters. If the price index is wrong, the algorithm stabilizes the wrong thing.
 
@@ -157,7 +159,7 @@ The protocol uses a different metric: **a rule-bound purchasing-power basket der
 
 The price index is anchored to essential goods: energy, food, housing, healthcare, and a precious metals component (gold and silver) that provides a manipulation-resistant floor. Basket weights are derived from observed spending patterns, locked for a governance interval, and updated only on a public schedule rather than continuously chasing substitution patterns. The entire calculation is public and auditable on the ledger. Anyone can verify it. Nobody can adjust it.
 
-### 4.5 Why No Gold Standard
+### Why No Gold Standard
 
 The [central-banks chapter](../economics/central-banks.qmd) demonstrates that gold-anchored systems produced broad-based prosperity (Bretton Woods, the classical gold standard) while fiat systems produced wage stagnation and wealth concentration. A reasonable person might conclude: go back to gold.
 
@@ -169,29 +171,30 @@ The protocol achieves the gold standard's benefit (constraining money creation) 
 
 The "backing" is not a metal. It is a guarantee: this currency will buy the same basket of goods tomorrow as it does today. That is a stronger guarantee than "this currency can be exchanged for a specific weight of a metal whose own value fluctuates based on jewelry demand and mining output."
 
-### 4.6 What This Replaces
+### What This Replaces
 
 | Current System | Replacement | Mechanism |
 |---|---|---|
 | Federal Reserve (12 FOMC members, ~24,000 staff, ~$6.8B/year) | Deterministic algorithm | 0% inflation target; cannot be lobbied |
 | 2% annual inflation (96% cumulative loss since 1913) | 0% target | Stable purchasing power |
 | Cantillon effect (proximity to printer = wealth) | Equal-entry money creation | New money enters at the bottom |
+| Commercial banks as money utilities | Protocol wallets + competitive credit funds | Custody and settlement become protocol functions; lending remains a risk-priced service |
 | Income/payroll/capital gains taxes + IRS | Algorithmic final-consumption settlement tax | Collected automatically at settlement |
 | Congressional tax rate debates | Automated fiscal + stabilization adjustment | Budget funding separated from monetary control |
 
-## 5. The Tax System It Replaces
+## The Tax System It Replaces
 
-Section 4 describes the protocol's final-consumption settlement tax. This section describes what it replaces, and why the replacement is overdue.
+The previous section describes the protocol's final-consumption settlement tax. This section describes what it replaces, and why the replacement is overdue.
 
 In 1913, the federal income tax fit in 27 pages. Today, the federal tax system (the Internal Revenue Code plus Treasury regulations, rulings, and case law) fills approximately 74,000 pages of the CCH Standard Federal Tax Reporter. Each page beyond the original 27 represents a successful lobbying effort: an exemption, a deduction, a credit purchased by an industry that benefits from it. The tax code is not a revenue collection mechanism. It is a geological record of every deal ever struck between a legislator and a donor, compressed into sedimentary layers of subsection and cross-reference.
 
 Americans spend 6.1 billion hours per year on tax compliance. To put that in a unit humans can feel: the Apollo program employed 400,000 people at its peak. Americans dedicate the equivalent labor of 15 Apollo-scale workforces every year to tax paperwork. You could staff fifteen moon landings annually with the human effort currently dedicated to interpreting a document whose primary function is to be uninterpretable.
 
-The IRS employs over 100,000 people (up from ~79,000 in 2021) and costs {{< var us_gov_waste_tax_compliance >}} per year {{< var us_gov_waste_tax_compliance_cite >}} in direct compliance burden. Regulatory compliance adds another {{< var us_gov_waste_regulatory_red_tape >}} per year {{< var us_gov_waste_regulatory_red_tape_cite >}}.
+The IRS employs over 100,000 people (up from ~79,000 in 2021). The agency's own operating budget is about $14 billion, while the tax system built around it imposes {{< var us_gov_waste_tax_compliance >}} per year {{< var us_gov_waste_tax_compliance_cite >}} in direct compliance burden on the rest of society. Regulatory compliance adds another {{< var us_gov_waste_regulatory_red_tape >}} per year {{< var us_gov_waste_regulatory_red_tape_cite >}}.
 
 The compliance industry (tax preparers, accountants, software companies) has a structural interest in complexity. Intuit, the maker of TurboTax, has spent millions lobbying against IRS proposals to offer free, pre-filled tax returns. The IRS could pre-fill most returns using data it already has (employers report wages; banks report interest; brokerages report gains). It does not, partly because the compliance industry lobbies against it. You are paying to solve a problem that the people you are paying have a financial interest in not solving. On Wishonia, we have a word for this. The word is "protection racket." Yours is the same word. You just don't use it when the racketeer files a 10-K.
 
-### 5.1 What This Replaces
+### What This Replaces
 
 | Current System | Replacement | Savings |
 |---|---|---|
@@ -202,9 +205,9 @@ The compliance industry (tax preparers, accountants, software companies) has a s
 
 The 27-page tax code of 1913 could have been a function. The 74,000-page version is a jobs program for people who interpret the function. The protocol returns to the function.
 
-## 6. Allocation
+## Allocation
 
-### 6.1 The Problem
+### The Problem
 
 The United States federal budget is approximately $6.8 trillion, allocated by 535 members of Congress through committee negotiations, floor votes, conference reports, and approximately {{< var us_total_lobbying_annual >}} per year in lobbying. The CBO (275 analysts) scores proposed legislation over weeks or months. The OMB (~530 staff, $143M/year) prepares the President's budget request. By the time the budget is enacted (if it is enacted; your government has shut down over 20 times since 1976 because 535 people could not agree on how to spend money), the document reflects donor preferences filtered through electoral incentives filtered through committee seniority filtered through floor amendments filtered through conference negotiations. At no point in this process does any citizen directly express a preference about how their money is spent.
 
@@ -212,7 +215,7 @@ You pick one human to represent your preferences on thousands of issues. This is
 
 Representatives are elected on bundled platforms (immigration + healthcare + defense + education), making issue-level preference expression impossible. A voter who wants more cancer research and less military spending cannot express this. They get a package deal, designed by consultants, funded by donors, and tested on focus groups. The package is optimized for electability, not representativeness. Resource allocation reflects the preferences of the people who funded the campaign, not the people who voted in it. This is the principal-agent problem operating at the scale of a $6.8 trillion budget, with a {{< var us_total_lobbying_annual >}}/year lobbying industry whispering in the agent's ear [@wishocracy-paper-2025].
 
-### 6.2 The Protocol
+### The Protocol
 
 Wishocratic preference aggregation replaces the appropriations process and, when needed, the committee bottleneck in rulemaking.
 
@@ -224,7 +227,7 @@ Budget weights update continuously. There is no annual budget cycle, no continui
 
 Some problems are budgetary and some are legal. If the question is how much to spend, Wishocracy allocates the money. If the question is whether a tariff, subsidy, or zoning restriction should exist, the same evidence interface presents a direct citizen rule vote instead of routing the decision through committees and donors.
 
-### 6.3 What This Replaces
+### What This Replaces
 
 | Current System | Replacement | Mechanism |
 |---|---|---|
@@ -236,9 +239,9 @@ Some problems are budgetary and some are legal. If the question is how much to s
 
 Your government has shut down 20+ times because humans could not agree on a spreadsheet. The algorithm does not shut down. It has no opinion about the spreadsheet. It just fills it in.
 
-## 7. Distribution
+## Distribution
 
-### 7.1 The Problem
+### The Problem
 
 The United States spends over $1.1 trillion per year on means-tested welfare programs across 89 federal programs. Of that, roughly $100 billion goes to administration: determining who qualifies, processing applications, verifying eligibility, preventing fraud. The defining feature of this system is not the benefits. It is the gate.
 
@@ -248,15 +251,15 @@ The cruelty is structural. The people who need help most (the disabled, the elde
 
 On Wishonia, we had a similar system once. We noticed that the gate cost more than what was behind it and removed the gate. This was not considered a radical policy innovation. It was considered arithmetic.
 
-### 7.2 The Protocol
+### The Protocol
 
 Universal Basic Income, deposited daily to every verified citizen via smart contract.
 
-The UBI has three funding layers. The **structural dividend** is protocol savings from eliminating intermediaries (Section 11.4). The **productivity dividend** is the monetary distribution described in Section 4. The **democratic supplement** is whatever share of the broader discretionary budget citizens allocate to direct cash transfers through wishocratic preference (Section 6). This section is about the distribution mechanism: one account, one formula, one daily deposit.
+The UBI has three funding layers. The **structural dividend** is the fiscal cash the protocol directly captures by default: eliminated agency operating costs, reclaimed direct spending waste, and recovered tax gap. The **productivity dividend** is the monetary distribution described above. The **democratic supplement** is whatever additional share of the ordinary discretionary budget citizens allocate to direct cash transfers through wishocratic preference. This section is about the distribution mechanism: one account, one formula, one daily deposit.
 
 No application. No eligibility determination. No means test. No caseworker. No waiting period. The ledger verifies citizenship (identity layer), calculates the per-citizen amount (total UBI pool / citizen count), and distributes. Every day. To everyone.
 
-### 7.3 What This Replaces
+### What This Replaces
 
 | Current System | Replacement | Mechanism |
 |---|---|---|
@@ -267,9 +270,9 @@ No application. No eligibility determination. No means test. No caseworker. No w
 
 The system currently spends more deciding who deserves help than it would cost to help everyone. The protocol helps everyone. The savings come from firing the decision.
 
-## 8. Accountability
+## Accountability
 
-### 8.1 The Problem
+### The Problem
 
 The Government Accountability Office employs approximately 3,600 staff, spends $812 million per year, and produces reports that arrive months or years after the spending they examine. This is because government financial systems are opaque by design. Tracking money through agencies, contractors, and subcontractors requires human investigators who request documents, interview officials, and reconstruct transaction histories from filing cabinets and incompatible databases.
 
@@ -277,13 +280,13 @@ The results are instructive. The Department of Defense has failed its financial 
 
 The Freedom of Information Act is the mechanism by which citizens can see how their money is spent. The average FOIA response time is measured in months; complex requests take years. Some agencies have backlogs exceeding 10,000 requests. The system designed to provide transparency has a waiting list. On Wishonia, we find the concept of a "transparency waiting list" remarkable. It is like a "visibility queue" at a window factory. The window exists. You are not allowed to look through it yet. Please take a number.
 
-### 8.2 The Protocol
+### The Protocol
 
 When every government transaction is on a public ledger, auditing is not a function. It is a property.
 
 Every unit spent by any governance function is visible to every citizen in real time. There is no document to request. There is no official to interview. The ledger is the audit. Anyone can verify any public expenditure, trace any allocation from wishocratic preference to final disbursement, and confirm that the protocol executed as specified.
 
-### 8.3 What This Replaces
+### What This Replaces
 
 | Current System | Replacement | Savings |
 |---|---|---|
@@ -293,9 +296,9 @@ Every unit spent by any governance function is visible to every citizen in real 
 
 The Pentagon has failed its audit seven years running. A public ledger cannot fail an audit. It is the audit. The distinction is architectural, not aspirational.
 
-## 9. Political Incentives
+## Political Incentives
 
-### 9.1 The Problem
+### The Problem
 
 Politicians are funded by donors whose interests diverge from citizens'. This is not a theory. It is a business model with documented returns.
 
@@ -303,13 +306,13 @@ Politicians are funded by donors whose interests diverge from citizens'. This is
 
 The revolving door completes the circuit. Roughly half of departing members of Congress become lobbyists, monetizing the relationships and access they accumulated in office. The career path is: get elected, learn who controls the money, leave office, sell that knowledge to the people who control the money. The regulator becomes the regulated's employee. This is not corruption in the legal sense. It is the system working as designed, which is worse, because corruption can be prosecuted and systems cannot.
 
-### 9.2 The Protocol
+### The Protocol
 
 The Citizen Alignment Score [@wishocracy-paper-2025] measures how closely each politician's voting record aligns with their constituents' wishocratic preferences. Campaign funding flows proportionally to alignment: politicians who represent what citizens want receive more electoral resources than politicians who represent what donors want.
 
 The Incentive Alignment Bonds [@iab-paper-2025] fund this mechanism. Bond investors earn returns proportional to treaty expansion and health outcomes; a portion of those returns flows to political incentives that reward alignment.
 
-### 9.3 What This Replaces
+### What This Replaces
 
 | Current System | Replacement | Mechanism |
 |---|---|---|
@@ -319,21 +322,21 @@ The Incentive Alignment Bonds [@iab-paper-2025] fund this mechanism. Bond invest
 
 The lobbying industry's return on investment is extraordinary because the intermediary it purchases is cheap. Remove the intermediary and the investment has no target. You cannot bribe an algorithm. You can try, but the algorithm does not have a post-office career to protect.
 
-## 10. Identity and Census
+## Identity and Census
 
-### 10.1 The Problem
+### The Problem
 
 The United States Census Bureau spent $14.2 billion on the 2020 census. It counted everyone once. The count took months to process. By publication, it was already out of date. The next count is in 2030.
 
 Every American carries a GPS-enabled device that reports its location continuously to at least three private corporations. Your phone company knows where you are right now. Your search engine knows where you were yesterday. Your social media platform can estimate where you will be tomorrow. The government, which ostensibly needs to know where people are, spends $14.2 billion to find out approximately the same information, once per decade, less accurately, and several months late. On Wishonia, this would be performance art. On Earth, it is the Census Bureau.
 
-### 10.2 The Protocol
+### The Protocol
 
 Continuous, sybil-resistant citizen verification through the identity layer. Every verified citizen has exactly one identity on the ledger within the jurisdiction in which they vote and receive distributions. The total count is a view function that returns in milliseconds, updated in real time.
 
 The same identity layer prevents double-counting (census), double-spending (monetary system), and double-voting (wishocratic allocation). One primitive serves three functions.
 
-### 10.3 What This Replaces
+### What This Replaces
 
 | Current System | Replacement | Savings |
 |---|---|---|
@@ -341,29 +344,34 @@ The same identity layer prevents double-counting (census), double-spending (mone
 | Voter registration (separate bureaucracy) | Merged into identity layer | Administrative cost eliminated |
 | Benefits eligibility verification (per-program) | Unified in identity layer | Redundant systems eliminated |
 
-## 11. Where the Money Goes
+## Where the Money Goes
 
 A reasonable person might ask: if the protocol saves trillions, where is that money currently going? The answer requires distinguishing several categories of loss, because they are different in kind and the savings work differently for each.
 
-### 11.1 Administrative Overhead (the agency costs)
+### Agency Operating Overhead
 
-This is the direct cost of running intermediary agencies. It is real but comparatively small:
+This is the direct public cost of running intermediary agencies. It is real, it is recoverable, and it is smaller than the value currently diverted by captured policy:
 
 | Agency/System | Annual Admin Cost | Replacement |
 |---|---|---|
 | Federal Reserve | ~$6.8B operational | Deterministic monetary algorithm |
 | IRS (agency operations) | ~$14B | Protocol-level settlement tax |
-| Private tax compliance (accountants, TurboTax, etc.) | $200B+ | Ceases to exist |
 | SSA + welfare administration (not benefits) | ~$100B across 89 programs | UBI smart contract |
 | GAO + IG offices | ~$1B+ | Transparent ledger |
 | CBO | ~$60M | Optimocracy engine |
 | OMB | ~$143M | Wishocratic eigenvector |
 | Census Bureau | ~$1.4B/year amortized | Identity layer |
-| **Total administrative overhead** | **~$320B/year** | |
+| **Total public operating overhead** | **~$123B/year** | |
 
-Note what is *not* in this table: the $1 trillion in welfare benefits. UBI replaces the *distribution mechanism*, not the benefits themselves. People still receive money; they receive it through an algorithm instead of through 89 separate bureaucracies. Healthcare works the same way: every citizen gets a health credit (funded from the wishocratic discretionary budget), spendable at any provider. No insurance intermediary standing between you and your doctor, extracting 20% for the function of denying claims. You see the price. You choose the provider. The provider that keeps you healthiest for the least money wins. The ~$100 billion in administrative savings comes from eliminating the gate, not from eliminating what was behind it.
+Private compliance burn is larger but different in kind. Americans and firms spend {{< var us_gov_waste_tax_compliance >}} per year on tax compliance and {{< var us_gov_waste_regulatory_red_tape >}} per year on regulatory red tape. That value returns to households and firms as time back, fees not paid, and lower operating costs. It is real social gain, but it is not a Treasury pool and therefore is not counted in the routable UBI total.
 
-### 11.2 Lobbying-Purchased Policy Waste
+Note what is *not* in this table: the $1 trillion in welfare benefits. UBI replaces the *distribution mechanism*, not the transfer itself. People still receive money; they receive it through an algorithm instead of through 89 separate bureaucracies. Healthcare works similarly. Every citizen gets a health credit funded from the ordinary wishocratic budget, but the broader {{< var us_gov_waste_healthcare_inefficiency >}} healthcare waste estimated in the US Efficiency Audit is treated below as lower system cost, not as a fiscal windfall that can simply be deposited as cash.
+
+**The bank tollbooth.** The US Efficiency Audit totals used in this paper count government waste. They do not include the private tollbooth created by the same monetary architecture. Finance and insurance captured 8% of US GDP in Q3 2025, about $2.3 trillion/year [@fred-finance-insurance-gdp-2026]. In the early 1970s the sector was about 4% of GDP [@fred-finance-insurance-gdp-2026; @philippon-reshef-finance-wages-2012]. The cleanest excess estimate is therefore the post-1971 doubling itself: roughly 4% of GDP, or about $1.1 trillion/year, before counting bailout tails, Cantillon gains, and politically protected spreads. That direction matches the micro evidence: Philippon and Reshef find that 30-50% of the finance wage premium is pure rent rather than payment for real complexity [@philippon-reshef-finance-wages-2012]. The full $2.3 trillion/year is the gross ceiling if deposits, payments, settlement, custody, and much of the current money-moving stack migrate to the protocol.
+
+Not every institution currently called a bank disappears. Credit analysis, bankruptcy workouts, and duration matching remain real work. But those functions do not require banks to sit between every citizen and their money. The protocol removes banks as utilities and leaves only competitive lending businesses.
+
+### Lobbying-Purchased Policy Waste
 
 The larger savings come not from eliminating agencies but from eliminating the policies those agencies were lobbied into maintaining. These policies persist because an intermediary (a politician, a regulator, a committee chair) was purchased, and the purchaser has a financial interest in the policy's continuation:
 
@@ -373,11 +381,11 @@ The larger savings come not from eliminating agencies but from eliminating the p
 - **Drug war**: {{< var us_gov_waste_drug_war >}}/year {{< var us_gov_waste_drug_war_cite >}} (evidence engine shows negative ROI; citizens reallocate)
 - **Military overspend**: {{< var us_gov_waste_military_overspend >}}/year {{< var us_gov_waste_military_overspend_cite >}} (citizens allocate defense, not offense)
 
-This money is not "wasted" in the sense of vanishing. It goes to defense contractors, agricultural corporations, fossil fuel companies, and the prison-industrial complex. It is extracted from taxpayers and delivered to industries whose lobbying purchased the delivery. Remove the intermediary and the purchase has no seller. The money either stops being collected (tax cuts) or gets reallocated by citizens through wishocratic preference (public goods).
+This money is not "wasted" in the sense of vanishing. It goes to defense contractors, agricultural corporations, fossil fuel companies, and the prison-industrial complex. It is extracted from taxpayers and delivered to industries whose lobbying purchased the delivery. Remove the intermediary and the purchase has no seller. Under the protocol's default fiscal rule, cash that is directly recaptured does not disappear into a lower nominal tax rate or get quietly reabsorbed by agencies. It is swept into the structural dividend and deposited equally as UBI. Visible cash is the default because visible cash is politically durable.
 
 - **Tax evasion recovery**: The net tax gap is ~$600B/year. The protocol closes most of it through three reinforcing mechanisms. First, underreporting of on-ledger final consumption becomes far harder because settlement and tax collection occur in the same transaction. Second, the incentive to evade collapses: a low single-digit or low-double-digit settlement tax is far less worth evading than a 52% marginal rate (income + payroll combined). Third, UBI is conditional on verified on-ledger identity. Going off-ledger to avoid a small tax means forfeiting a daily cash deposit that often exceeds what you would save. Off-ledger activity (cash labor, barter, foreign settlement) will not disappear entirely, but the incentive structure shrinks it to a fraction of the current gap. Conservative estimate: ~$500B/year recovered.
 
-### 11.3 Structural GDP Recovery
+### Structural GDP Recovery
 
 Some waste is not money spent badly but economic activity prevented entirely. The US Efficiency Audit [@us-efficiency-audit-paper-2025] estimates {{< var us_gov_waste_category_3_gdp_loss >}}/year in policy-induced GDP loss recoverable at OECD-median performance:
 
@@ -386,42 +394,42 @@ Some waste is not money spent badly but economic activity prevented entirely. Th
 
 No citizen, given the choice and the evidence, allocates funding to "make housing illegal where I need it." But budget automation alone does not repeal law. The protocol handles that explicitly. When evidence shows that a rule destroys purchasing power or median income, citizens in the relevant jurisdiction vote on the rule directly; where the higher jurisdiction cannot directly repeal a lower-jurisdiction rule, funding flows are conditioned on compliance instead of pretending away federalism. Remove the intermediary from rulemaking as well as budgeting, and the suppressed economic activity resumes. This is not money freed up from a budget. It is economic growth that was being prevented and is no longer.
 
-### 11.4 Where the Savings Flow
+### Where the Savings Flow
 
-The protocol does not create a pile of money to be distributed. Different categories of waste resolve differently:
+The accounting rule is simple. If the protocol directly captures the cash, it becomes UBI by default. If the protocol removes a cost without routing the money through the Treasury, the gain shows up as lower prices, lower fees, less compliance labor, or higher wages. Mixing those categories is how governance papers become sloppy.
 
-- **Administrative overhead (~$320B/year)**: Genuine budgetary savings from eliminating agency operations and compliance bureaucracy. This is money that was being spent on intermediaries and is now available.
-- **Tax evasion recovery (~$500B/year)**: Revenue the current system cannot collect. The transparent ledger and incentive structure (low rate + UBI conditional on identity) recover most of the gap.
-- **Lobbying-purchased waste (~$1-2T/year)**: Money that was being extracted from taxpayers and delivered to specific industries. When the intermediary disappears, the extraction stops. This manifests as lower taxes (the settlement tax rate can be lower because less revenue is wasted) and reallocation to higher-value uses through the existing discretionary budget.
-- **GDP recovery (~$1.5T/year)**: Not money freed from a budget. Economic growth that resumes when growth-suppressing policies end. Manifests as higher incomes, more jobs, and a larger tax base.
+| Bucket | Annual value | Per capita | How citizens receive it |
+|---|---|---|---|
+| Agency operating overhead eliminated | ~$123B/year | ~$370/person | Structural dividend (cash UBI) |
+| Direct spending waste reclaimed | {{< var us_gov_waste_category_1_direct_spending >}}/year | ~$3,000/person | Structural dividend (cash UBI) |
+| Tax gap recovery | ~$500B/year | ~$1,500/person | Structural dividend (cash UBI) |
+| **Total protocol-routable UBI floor** | **~$1.63T/year** | **~$4,900/person** | **Deposited daily as equal cash** |
+| Compliance burden removed | {{< var us_gov_waste_category_2_compliance >}}/year | ~$3,400/person | Time back, lower private costs, lower prices |
+| Healthcare system waste removed | {{< var us_gov_waste_category_4_system >}}/year | ~$3,600/person | Lower healthcare prices, premiums, and tax pressure |
+| GDP suppression reversed | {{< var us_gov_waste_category_3_gdp_loss >}}/year | ~$4,700/person | Higher wages, more jobs, larger output |
+| Financial intermediation rent removed (defensible excess estimate) | ~$1.1T/year | ~$3,300/person | Lower fees and spreads, lower bailout risk, labor released from arbitrage |
+| **Total non-UBI societal gain** | **~$4.99T/year** | **~$14,900/person** | **Cheaper life rather than a Treasury transfer** |
+| **Combined conservative quantified total** | **~$6.62T/year** | **~$19,800/person** | **Cash plus lower costs** |
 
-The directly allocable savings (administrative overhead + tax evasion recovery) total approximately $820B/year. The primary destination is UBI: deposited daily to every verified citizen. No application. No means test. No intermediary. At $820B divided by 330 million Americans, that is approximately $2,500 per person per year, or $10,000 for a family of four, from this stream alone (before the productivity dividend and democratic supplement described in Sections 4 and 6).
+Using the full $2.3T/year finance capture instead of the $1.1T excess estimate raises the combined quantified total to roughly ~$7.82T/year, or about ~$23,400 per person. That is a ceiling, not the central claim.
+
+The paper therefore makes two distinct promises. First, the protocol can plausibly deliver a visible structural dividend of roughly **$4,900 per person per year** before counting any productivity dividend or optional democratic supplement. Second, it can remove an additional **~$14,900 per person per year** in diffuse societal extraction that people experience as cheaper life rather than as a government transfer.
 
 The adoption mechanism (how the protocol passes despite intermediary resistance) is funded through Incentive Alignment Bonds [@iab-paper-2025], which align investor, politician, and citizen incentives. The financial architecture of adoption, including the bond structure, revenue splits, and political incentive mechanics, is specified in that paper. This paper describes what the protocol does. The IAB paper describes how it gets adopted.
 
-Wishocracy governs the broader discretionary budget (the existing $6.8T in federal spending), not the protocol savings. The protocol savings flow to citizens. The discretionary budget is where citizens express preferences on cancer research vs. infrastructure vs. education vs. defense, while citizen rule votes govern legal changes that are not reducible to budget lines.
+Wishocracy governs the ordinary discretionary budget (the existing $6.8T in federal spending), not the protocol-captured savings stream. The protocol-captured savings flow to citizens by default as UBI. The ordinary budget is where citizens express preferences on cancer research vs. infrastructure vs. education vs. defense, while citizen rule votes govern legal changes that are not reducible to budget lines.
 
-The total is not double-counted. Administrative overhead, lobbying-purchased policy waste, GDP suppression, and uncollected revenue are four distinct categories of loss identified by the US Efficiency Audit [@us-efficiency-audit-paper-2025]. They sum to {{< var us_gov_waste_total >}}/year. The protocol addresses each through a different mechanism.
+The total is not double-counted. The US Efficiency Audit [@us-efficiency-audit-paper-2025] contributes four categories to the $4.9T base arithmetic: direct spending waste, compliance burden, policy-induced GDP loss, and system inefficiency. This paper then treats agency operating overhead, tax-gap recovery, and financial intermediation rent as adjacent categories outside that $4.9T base so that public waste, private toll extraction, and newly recoverable revenue are not blurred together.
 
-### 11.5 What the Savings Buy
+### What the Dividend Looks Like
 
-Abstract trillions are difficult to feel. Here is what the allocable savings alone (~$320B in admin overhead + ~$500B in recovered tax revenue) could fund:
+Abstract trillions are difficult to feel. A structural dividend of **~$1.63T/year** is not. That is roughly **$4,900 per person per year**, about **$400/month per citizen**, or roughly **$19,500 per year for a family of four**, before the productivity dividend and before any optional democratic supplement. Deposited daily, it is an always-visible reminder that the money used to go to intermediaries and now goes to citizens.
 
-| Problem | Estimated Annual Cost to Solve | Fraction of Allocable Savings |
-|---|---|---|
-| End global hunger | $30-45B/year (UN estimate) | ~4-5% |
-| Eliminate malaria | $6-10B/year (WHO estimate) | ~1% |
-| Universal clean water and sanitation | $28B/year (World Bank estimate) | ~3% |
-| Fund every government clinical trial on Earth for a year | {{< var global_government_clinical_trials_spending_annual >}} | < 1% |
-| **All of the above, simultaneously** | **~$75-90B/year** | **~8-10%** |
-
-You could end hunger, eliminate malaria, provide clean water to every human, and fund every clinical trial on the planet, simultaneously, for roughly 10% of the allocable savings.
-
-The protocol savings stream alone delivers approximately **$2,500 per person per year**, or roughly **$10,000 for a family of four** (before the adoption mechanism's share described in the IAB paper [@iab-paper-2025]). The productivity dividend (Section 4) adds more, depending on economic growth. That is cash, deposited daily, with no application, no means test, and no bureaucrat. It is funded by savings from eliminating intermediaries and by redirecting the Cantillon pipeline from banks to citizens. The remaining savings from lobbying-purchased waste and growth-suppressing policies manifest as lower prices, higher wages, and better services. Everything gets cheaper. And every morning there is money in your account that was not there before.
+The rest of the gain is not imaginary or secondary. It simply arrives in a different form. The conservative non-UBI stack, roughly **$14,900 per person per year**, shows up as cheaper housing, cheaper healthcare, lower bank spreads, lower transaction fees, less filing labor, and higher wages from output that is no longer being suppressed. The protocol therefore improves household balance sheets from both sides: more cash in and less extraction out.
 
 The current system cannot do this. Not because the money does not exist, but because the intermediaries who control it have no incentive to allocate it this way. The lobbying industry does not represent hungry children. Malaria does not have a Super PAC. Clean water does not make campaign contributions. The allocation reflects who has access to the intermediary, not who has the greatest need. Remove the intermediary, and the math changes. Not because citizens are saints. Because citizens, unlike intermediaries, are also the beneficiaries.
 
-## 12. Implementation Pathway
+## Implementation Pathway
 
 The protocol cannot be deployed simultaneously. Each primitive has prerequisites, and trust must be earned, not assumed.
 
@@ -437,15 +445,15 @@ The protocol cannot be deployed simultaneously. Each primitive has prerequisites
 
 Each phase generates evidence for the next. If wishocratic allocation of treaty funds produces better outcomes than committee allocation (Phase 1), the case for expanding to domestic budgets strengthens. If the transparent ledger eliminates corruption in treaty spending (Phase 2), the case for extending it to all government spending strengthens. The protocol earns trust by performing, not by promising.
 
-### 12.1 Political Economy of Adoption
+### Political Economy of Adoption
 
 The protocol proposes to eliminate intermediaries. The intermediaries will not vote for their own elimination. This is not a flaw in the analysis. It is the central political problem, and ignoring it would make the paper useless.
 
 The adoption pathway does not run through policymakers. It runs through citizens, who then apply pressure that policymakers cannot resist. The mechanism is the same one that passes the 1% Treaty [@1-pct-treaty-impact-paper-2025], funded through Incentive Alignment Bonds [@iab-paper-2025] that align investor, politician, and citizen incentives through self-interest rather than altruism. The full financial architecture of adoption is specified in the IAB paper.
 
-The citizen pitch is one sentence: "Your family loses $59,000 per year to intermediation costs. This protocol gives you $10,000 of that back as cash, every morning, and the rest shows up as lower prices and better services. Politicians oppose it because they are the intermediaries."
+The citizen pitch is one sentence: "Your family loses roughly $79,000 per year to intermediation and financial tolls on the conservative numbers. This protocol gives you about $19,500 of that back as visible cash and the rest as lower prices, lower fees, and higher wages. Politicians oppose it because they are the intermediaries."
 
-That last sentence is the key. It reframes every objection as self-interested confirmation of the thesis. A politician who argues against the protocol is arguing for the system that costs each family $59,000. The argument against adoption is the argument for adoption.
+That last sentence is the key. It reframes every objection as self-interested confirmation of the thesis. A politician who argues against the protocol is arguing for the system that costs each family roughly $79,000 on the conservative numbers. The argument against adoption is the argument for adoption.
 
 Three incentive layers make adoption self-reinforcing:
 
@@ -457,7 +465,7 @@ Three incentive layers make adoption self-reinforcing:
 
 The result is a system where every participant acts selfishly and the aggregate outcome is the protocol's adoption. This is not idealism. It is mechanism design. The same species that invented lobbying can be out-lobbied.
 
-## 13. Objections
+## Objections
 
 ### "You can't replace human judgment with algorithms"
 
@@ -477,15 +485,15 @@ The dishwasher replaced dishwashing. The ATM replaced the bank teller line. The 
 
 The status quo is chaotic. Your government shuts down when 535 people cannot agree on a spreadsheet. Your tax system requires 6.1 billion hours of annual compliance labor. Your welfare system makes people wait months for benefits they need immediately. Your accountability system takes 18 months to audit spending that happened in real time. The protocol described in this paper is not a leap from order to chaos. It is a leap from expensive chaos to cheaper order.
 
-The phased implementation (Section 12) ensures that each component demonstrates value before the next is deployed. Phase 1 allocates treaty funds only. If it fails, the cost is 1% of military spending, which is less than most militaries lose to procurement waste annually. If it succeeds, Phase 2 extends the model. At no point is the existing system retired before the replacement has proven itself.
+The phased implementation ensures that each component demonstrates value before the next is deployed. Phase 1 allocates treaty funds only. If it fails, the cost is 1% of military spending, which is less than most militaries lose to procurement waste annually. If it succeeds, Phase 2 extends the model. At no point is the existing system retired before the replacement has proven itself.
 
 ### "What about privacy?"
 
 Government spending should be public by default. It is your money. The current system inverts this: your personal data is harvested and sold by private companies, while government spending is hidden behind FOIA requests that take months to years. The protocol reverses the asymmetry. Government transactions are public. Private consumer settlements reveal only the minimum fields needed for tax collection and macro accounting: amount, standardized category, jurisdiction, and time bucket. Identities, counterparties, and item-level receipts remain private and are validated with zero-knowledge proofs. You can see where every tax dollar goes. Nobody can see what you bought for lunch. This is the correct configuration. Yours is backwards.
 
-## 14. Limitations
+## Limitations
 
-### 14.1 What Cannot Be Replaced
+### What Cannot Be Replaced
 
 The protocol replaces mechanical functions. It does not replace:
 
@@ -496,7 +504,7 @@ The protocol replaces mechanical functions. It does not replace:
 
 We do not claim this protocol solves governance. We claim it solves the spreadsheet. The spreadsheet is the part you are paying {{< var us_gov_waste_total >}} per year for.
 
-### 14.2 Failure Modes
+### Failure Modes
 
 **Algorithmic capture.** If the algorithm's parameters can be influenced by concentrated interests, the intermediary problem returns in different form. Mitigation: minimize the number of tunable knobs. Tax base, wallet classes, basket definition, update schedule, and vote thresholds are public constitutional parameters; changes require supermajority wishocratic approval, and the evidence engine independently verifies outcomes.
 
@@ -512,19 +520,19 @@ Average federal employee total compensation (salary plus benefits) is approximat
 
 > **~$15-18 billion.** One year of full pay for every displaced worker.
 
-Annual savings from the protocol: {{< var us_gov_waste_total >}}.
+Annual conservative quantified gain from the protocol: roughly **~$6.62T/year**, of which **~$1.63T/year** is directly routable cash and the rest arrives as lower prices, lower fees, and higher output.
 
-The transition cost is less than 0.4% of the annual savings. You could pay every displaced worker for *ten years* of full salary and still capture over 96% of the annual waste reduction. The transition fund could also include retraining programs, early retirement packages for workers near retirement age, and priority placement in the human-judgment roles that remain (enforcement, oversight, adjudication). The total transition package, even if made extravagantly generous, would be a rounding error on the savings.
+The transition cost is roughly **1% of the direct cash floor** and less than **0.3% of the full conservative quantified gain**. You could pay every displaced worker for *ten years* of full salary and still retain the overwhelming majority of the annual benefit. The transition fund could also include retraining programs, early retirement packages for workers near retirement age, and priority placement in the human-judgment roles that remain (enforcement, oversight, adjudication). The total transition package, even if made extravagantly generous, would be a rounding error on the savings.
 
-The political barrier is real: the people whose jobs are replaced by the protocol are the same people currently responsible for approving the protocol. This is not a novel problem (the horse industry opposed the automobile, the telegram industry opposed the telephone, bookkeepers opposed the spreadsheet). In each case, the transition cost was real and the displaced workers deserved support. In no case was the correct response "keep the horses." The protocol's phased implementation (Section 12) means displacement is gradual, not overnight, and the savings fund the transition before full deployment.
+The political barrier is real: the people whose jobs are replaced by the protocol are the same people currently responsible for approving the protocol. This is not a novel problem (the horse industry opposed the automobile, the telegram industry opposed the telephone, bookkeepers opposed the spreadsheet). In each case, the transition cost was real and the displaced workers deserved support. In no case was the correct response "keep the horses." The protocol's phased implementation means displacement is gradual, not overnight, and the savings fund the transition before full deployment.
 
-### 14.3 What We Do Not Know
+### What We Do Not Know
 
 The protocol assumes that citizen preferences, informed by evidence, produce better resource allocation than expert committees captured by donors. The empirical evidence (participatory budgeting, Switzerland's direct democracy, Estonia's digital governance) is suggestive but not at the scale proposed here. The phased implementation is designed to generate this evidence incrementally, at bounded cost, before full deployment.
 
-## 15. Conclusion
+## Conclusion
 
-Government is expensive because it is intermediated. Every layer between citizen preference and public outcome extracts value and introduces distortion. The total cost in the United States alone, {{< var us_gov_waste_total >}} per year, exceeds the GDP of every country on Earth except the United States and China.
+Government is expensive because it is intermediated. Every layer between citizen preference and public outcome extracts value and introduces distortion. The US Efficiency Audit alone identifies {{< var us_gov_waste_total >}} per year in governance drag. Once recovered tax gap and excess financial intermediation rent are included, the conservative quantified stack in this paper rises to roughly **~$6.62T/year**.
 
 This protocol does not replace governance. It replaces the mechanical functions that governance currently delegates to humans at extraordinary cost: calculating taxes, distributing benefits, allocating budgets, auditing expenditures, counting citizens, and managing the money supply. These functions are algorithmic in nature. Making them actual algorithms eliminates the intermediary cost while preserving (and expanding) democratic control over what those algorithms do.
 
