@@ -259,9 +259,39 @@ The UBI has three funding layers. The **structural dividend** is the fiscal cash
 
 No application. No eligibility determination. No means test. No caseworker. No waiting period. The ledger verifies citizenship (identity layer), calculates the per-citizen amount (total UBI pool / citizen count), and distributes. Every day. To everyone.
 
-Maximum workable UBI does not mean pretending one flat check can replace civilization. It means cashing out everything that is fundamentally a transfer and making the residual exception layer brutally rule-bound. Catastrophic health risk remains pooled through a universal catastrophic voucher or publicly financed catastrophic plan. Child education remains a per-child voucher or credit rather than adult cash. Everything else that is basically a transfer becomes cash.
+Maximum workable UBI does not mean pretending one flat check can replace civilization. It means cashing out everything that is fundamentally a transfer and making the residual exception layer brutally rule-bound. Catastrophic health risk remains pooled through a protocol-defined catastrophic insurance layer rather than a caseworker gate or a blank-check entitlement. Child education remains a per-child voucher or credit rather than adult cash. Everything else that is basically a transfer becomes cash.
 
 The federal layer should therefore do only four things in distribution: guarantee the universal cash floor, guarantee catastrophic portability, finance child-linked base funding, and move money. States and localities should handle most service delivery: schools, land use, provider markets, supplementary services, and local top-ups. Incapacity cases are handled through explicit representative-payee or guardianship rules, not by recreating a giant means-tested bureaucracy. That is the maximum-cash design that still respects risk pooling, children, and federalism.
+
+### The Objective Function
+
+If this system is serious, it should be designed against the real utility functions of the actors inside it, not against an imaginary benevolent state. The terminal objective is the same one used in [Optimocracy](../solution/optimocracy.qmd): maximize **real after-tax median income** and **median healthy life years**. Those are the scoreboard metrics. Everything else here is mechanism design in service of those two numbers.
+
+At the protocol-design level, the target can be written as:
+
+$$
+\max_R \left[\Delta \widetilde{Y}^{after-tax}_{median}(R) + \theta \, \Delta \widetilde{HLY}_{median}(R)\right] - \lambda A(R)
+$$
+
+where \(\widetilde{Y}^{after-tax}_{median}\) is real after-tax median income, \(\widetilde{HLY}_{median}\) is median healthy life years, and \(A(R)\) is the arbitrage value the rule set itself creates for gaming, lobbying, overbilling, denial, or misreporting. Median rather than average is the point: the protocol is trying to make the person in the middle richer and less dead, not make national aggregates prettier while rents concentrate at the top.
+
+Operationally, that decomposes into ex-ante citizen welfare subject to hard budget and incentive constraints:
+
+$$
+\max_R \sum_i \mathbb{E}\left[u(c_i) + \alpha h_i + \beta s_i - \delta d_i\right] - \lambda A(R)
+$$
+
+where \(c_i\) is disposable consumption, \(h_i\) is health and human-capital outcome, \(s_i\) is insurance against ruin, \(d_i\) is delay and compliance burden, and \(A(R)\) is the same arbitrage term above. In plain English: maximize median after-tax income and median healthy life years by increasing cash, reducing ruin risk, and minimizing the profit available from manipulating the system.
+
+- **Citizens** maximize consumption, security, and autonomy. Therefore ordinary redistribution should arrive as unconditional cash. People spend their own money with better local information than a bureaucracy ever has.
+- **Patients** respond to marginal price on routine care but cannot rationally self-insure million-dollar tail risk. Therefore routine care should run through a personal health wallet with rollover, while catastrophe should be pooled.
+- **Providers** maximize reimbursement, not abstract national welfare. Therefore catastrophic coverage should pay published reference or bundled prices, not whatever invoice a hospital emits.
+- **Insurers and third-party administrators** maximize spread by selecting risks, narrowing networks, and denying claims. Therefore they may administer claims or offer supplemental coverage, but they should not control core eligibility, underwriting, or the catastrophic frontier.
+- **Politicians** maximize reelection, donations, and patronage. Therefore recaptured cash should sweep automatically into the structural dividend instead of waiting for annual appropriation horse-trading.
+- **Bureaucracies** maximize budget, headcount, and discretionary turf. Therefore formulas should replace eligibility judgment wherever objective data exist.
+- **States and localities** maximize local voter satisfaction and tax-base protection. Therefore they should control delivery and top-ups, while the federal layer finances a portable floor so jurisdictions cannot dump expensive residents.
+
+Once the utility functions are stated honestly, the design rules become obvious. Give decision rights to the actor with the best local information only when that actor also bears the marginal cost. Citizens decide ordinary consumption from cash. Patients decide routine care from rolling health balances. Providers do not decide the public price of catastrophe. Insurers do not decide who is insurable. Politicians do not get to convert the dividend back into patronage. The point of the protocol is not to assume virtue. It is to leave every actor with less profitable ways to cheat.
 
 The exception rule is ex-ante insurance, not ex-post rescue theater. A category belongs in the public catastrophic layer only if citizens, before knowing who will get sick, would rationally choose to pool that risk rather than take the same dollars as equal cash. Operationally, that means five constraints:
 
@@ -273,13 +303,17 @@ The exception rule is ex-ante insurance, not ex-post rescue theater. A category 
 
 One practical implementation is to publish a constitutional catastrophic budget, pay only reference prices, and require every covered intervention to clear a maximum cost-effectiveness threshold benchmarked to {{< var medical_qaly_threshold >}} per QALY unless citizens explicitly vote to fund a different threshold. The public question is therefore never "is this person suffering?" Suffering is everywhere. The question is "does this class of risk beat cash at the margin?" If a proposed intervention fails the catastrophic frontier, public reimbursement is zero. A one-patient trillion-dollar rescue does not become socially optimal just because it is heartbreaking.
 
+Patient cost-sharing should follow the same logic. The place for skin in the game is routine spending, not catastrophe. Preventive care should be zero-price. Ordinary, non-catastrophic care can be paid first from a small personal health wallet funded by an automatic carve-out from UBI or by explicit state/local top-ups. Unused balances roll forward, so economizing benefits the patient directly instead of vanishing into an insurer's margin. Once a covered episode crosses the catastrophic threshold, the protocol insurance layer pays the reference price and patient cost-sharing falls to zero or a token amount. If a patient chooses a provider charging above the published reference price, the patient pays the difference from ordinary cash.
+
+This matters because most healthcare gaming is provider-side, not patient-side. Upcoding, unbundling, fake complexity, network games, and price opacity are not fixed by scaring patients away from the emergency room. The anti-abuse stack should therefore be reference pricing, bundled payments, transparent outcomes, and anomaly detection first, with modest routine cost-sharing only as a secondary discipline mechanism.
+
 ### What This Replaces
 
 | Current System | Replacement | Mechanism |
 |---|---|---|
 | SSA (benefit calculation + distribution) | Single smart contract function | `distribute(total / citizenCount)` |
 | Cash welfare (SNAP, TANF, SSI) | Universal cash deposit | No eligibility bureaucracy |
-| Medicaid eligibility determination | Universal catastrophic health voucher / catastrophic public plan | Identity verifies citizenship; federal floor covers catastrophic risk |
+| Medicaid eligibility determination | Protocol catastrophic insurance layer + personal health wallet | Identity verifies citizenship; catastrophic frontier governs pooled coverage |
 | K-12 funding bureaucracy | Per-child education voucher or credit with local top-ups | Money follows the child; states/localities handle delivery |
 | Poverty determination bureaucracy | Eliminated | The protocol does not determine desert; it distributes |
 | Caseworker-based exception pleading | Published catastrophic frontier + representative-payee rules | The protocol does not fund sympathy contests |
