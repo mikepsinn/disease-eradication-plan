@@ -81,15 +81,15 @@ Every category traces to the same root cause: intermediaries whose incentives di
 
 The protocol combines five primitives into an integrated governance stack:
 
-1. **Transparent ledger.** Every government transaction recorded on a shared, publicly auditable ledger. Eliminates ex-post auditing (GAO) and opacity-dependent corruption.
+1. **Transparent ledger.** Every government transaction recorded on a shared, publicly auditable ledger. Private settlements record only the minimal fields needed for tax collection and macro measurement, with identities and item-level details proved privately. Eliminates ex-post auditing (GAO) and opacity-dependent corruption.
 
-2. **Preference aggregation (Wishocracy).** Citizens express resource allocation preferences through ~20 pairwise comparisons. The RAPPA algorithm [@wishocracy-paper-2025] produces budget weights via eigenvector decomposition. Eliminates congressional appropriations, OMB, and grant committees.
+2. **Preference aggregation (Wishocracy).** Verified citizens in the relevant jurisdiction express resource allocation preferences through ~20 pairwise comparisons. The RAPPA algorithm [@wishocracy-paper-2025] produces budget weights via eigenvector decomposition and, when legal change is required, direct rule mandates. Eliminates congressional appropriations, OMB, and much committee bargaining.
 
 3. **Evidence engine (Optimocracy).** Cross-jurisdictional causal inference [@optimocracy-paper-2025] compares policy outcomes across thousands of jurisdictions and identifies which policies improve terminal metrics (median income, healthy life years). Eliminates the CBO's scoring function.
 
 4. **Identity layer.** Continuous, sybil-resistant citizen verification. Every verified citizen receives equal allocation weight and equal UBI distribution. Eliminates the decennial census and means-testing bureaucracy.
 
-5. **Automated monetary policy.** Fixed algorithmic rule targeting 0% change in median purchasing power. New money creation equals productivity growth. The productivity dividend is allocated via Wishocracy. Eliminates the Federal Reserve's discretionary monetary policy.
+5. **Automated monetary policy.** Fixed algorithmic rule targeting 0% change in a rule-bound purchasing-power basket. A final-consumption settlement tax funds the budget, a separate stabilization component is burned or parked in reserve as needed, and new money creation equals productivity growth. The productivity dividend is distributed equally via UBI. Eliminates the Federal Reserve's discretionary monetary policy.
 
 These five primitives are interdependent. The ledger enables accountability without auditors. Wishocracy enables allocation without appropriators. The evidence engine enables informed preferences without policy analysts. Identity enables distribution without means-testing. Monetary policy enables stable prices without central bankers. Remove any primitive and the system degrades.
 
@@ -101,26 +101,28 @@ The full case against discretionary monetary policy fills [its own chapter](../e
 
 ### 4.2 The FairTax, Implemented Algorithmically
 
-The tax and monetary architecture is not novel. It is the FairTax (a consumption tax replacing all income taxes, with a universal prebate) implemented at the protocol level with two modifications: (1) the rate is set by an algorithm instead of Congress, and (2) the prebate is a daily UBI deposit instead of a monthly check.
+The tax and monetary architecture is not novel. It is the FairTax (a consumption tax replacing all income taxes, with a universal prebate) implemented at the protocol level with three modifications: (1) collection happens automatically at settlement, (2) the displayed rate is set by an algorithm instead of Congress, and (3) the prebate is a daily UBI deposit instead of a monthly check.
 
 The system has two moving parts:
 
-**The transaction tax** replaces all income, payroll, capital gains, corporate, and estate taxes with a single flat percentage collected automatically on every economic transaction. No filing. No code. No IRS. The rate is not fixed by legislation. It is set algorithmically to meet two constraints: (a) fund the government's wishocratically-determined budget, and (b) maintain 0% change in median purchasing power.
+**The settlement tax** replaces all income, payroll, capital gains, corporate, and estate taxes with a single flat percentage collected automatically at final-consumption settlement. Consumer purchases are taxed. Transfers between registered business accounts, capital formation, and pure balance-sheet reallocations are zero-rated automatically by wallet type, so the tax does not pyramid through supply chains. No filing. No deductions. No code. No IRS. The consumer sees one number at checkout.
+
+Behind that one visible rate are two destinations. The **fiscal component** funds the government's wishocratically-determined budget. The **stabilization component** does not fund spending; when activated, it is burned or parked in a non-spendable reserve until the purchasing-power basket returns to target. This is the minimum machinery required to avoid a conceptual error: the same tax dollar cannot both finance expenditure and disappear from circulation.
 
 **The UBI deposit** replaces means-tested cash welfare with a daily payment to every verified citizen. UBI has three funding streams, each from a different source:
 
-1. *Protocol savings* (Section 11): budgetary savings from eliminating administrative intermediaries. This is money that was being spent on agencies and is now available.
+1. *Structural dividend* (Section 11): budgetary savings from eliminating administrative intermediaries. This is money that was being spent on agencies and is now available.
 2. *Productivity dividend* (this section): new currency minted by the algorithm to prevent deflation as the economy grows. This is the Cantillon pipeline, redirected from banks to citizens.
-3. *Wishocratic allocation* (Section 6): whatever share of the broader discretionary budget citizens choose to direct to cash transfers versus other public goods.
+3. *Democratic supplement* (Section 6): whatever share of the broader discretionary budget citizens choose to direct to cash transfers versus other public goods.
 
-Stream 1 is structural (exists because intermediaries were removed). Stream 2 is monetary (exists because the economy grows). Stream 3 is democratic (exists because citizens prefer it). All three deposit daily to the same account. The citizen sees one number.
+The citizen sees one deposit, but the sources are distinct: structural savings, monetary issuance, and democratic choice.
 
-These two mechanisms are the inflation control levers:
+These are the monetary control levers:
 
-- **Prices rising (inflation):** The algorithm increases the transaction tax rate, pulling money out of circulation faster. This contracts the effective money supply. UBI continues, but each transaction costs slightly more, dampening demand until prices stabilize.
-- **Prices falling (deflation from productivity growth):** The algorithm decreases the transaction tax rate, leaving more money in circulation. If prices continue falling (because the economy is growing faster than the tax can accommodate), the algorithm mints new currency and distributes it via UBI. This is the productivity dividend: new money that represents real economic growth, entering at the bottom instead of the top.
+- **Prices rising (inflation):** The algorithm increases the stabilization component of the settlement tax. Those receipts are not spent back into the economy. They are retired or sequestered until the price basket returns to target. The fiscal component changes only as needed to fund the budget.
+- **Prices falling (deflation from productivity growth):** The algorithm reduces the stabilization component toward zero. If prices continue falling because output is growing faster than money velocity, the algorithm mints new currency and distributes it via the productivity dividend. This is new money representing real economic growth, entering at the bottom instead of the top.
 
-The combination of these two levers, adjusted continuously by the algorithm monitoring a median price basket, maintains stable purchasing power without human discretion.
+The combination of a fiscal rate, a temporary sterilization rate, and a productivity dividend maintains stable purchasing power without human discretion.
 
 **Why 0% and not deflation.** A growing economy with a fixed money supply produces natural deflation: more goods, same money, falling prices. The [central-banks chapter](../economics/central-banks.qmd) documents that the longest sustained deflation in American history (1870-1896) coincided with explosive economic growth. Natural deflation works. But the protocol targets 0% inflation instead, for three reasons:
 
@@ -128,19 +130,19 @@ The combination of these two levers, adjusted continuously by the algorithm moni
 2. *Debt neutrality.* Deflation makes existing debts more expensive in real terms. Every mortgage, student loan, and business loan costs more when prices fall. The 0% target is neutral: it neither inflates away debts (theft from savers) nor deflates them larger (punishment for borrowers).
 3. *The real complaint is distribution, not deflation.* The [central-banks chapter](../economics/central-banks.qmd) argues against the Federal Reserve. The core objection is not "deflation should be allowed." It is "new money should not go to banks first." The protocol fixes the distribution. New money is still created (to prevent deflation), but it enters at the bottom (UBI to every citizen) instead of the top (Cantillon pipeline to banks). The same productivity gains reach the same citizens. The check just arrives as cash instead of as imperceptibly cheaper groceries.
 
-This is a pragmatic choice, not a theoretical one. An economically purer design would allow natural deflation and skip the monetary UBI entirely. The protocol savings UBI (Section 11.4) would still exist. But the productivity dividend distributed as cash is the single most powerful adoption incentive the protocol has. Theoretical purity that never gets adopted helps nobody.
+This is a pragmatic choice, not a theoretical one. An economically purer design would allow natural deflation and skip the monetary UBI entirely. The structural dividend (Section 11.4) would still exist. But the productivity dividend distributed as cash is the single most powerful adoption incentive the protocol has. Theoretical purity that never gets adopted helps nobody.
 
 ### 4.3 Where the Inflation Money Goes
 
 Under the current system, the Federal Reserve creates new money and routes it through banks. The banks lend it, spend it, or invest it before prices adjust. By the time rising prices reach your grocery store, the purchasing power has already been captured by whoever touched the new money first. This is not a side effect. It is the product. The Fed expanded its balance sheet by roughly $4.8 trillion in 2020-2022 alone. The top 1% gained approximately $4 trillion in net worth over the same period. The mechanism is the Cantillon effect described in [the central-banks chapter](../economics/central-banks.qmd), and it has been operating for over a century.
 
-Under the protocol, the money that was being created at the top and trickling down (slowly, with extraction at every layer) is instead created at the bottom and distributed equally. The productivity dividend (new currency minted to keep prices stable as the economy grows) goes directly to every citizen as UBI. The same money. The same amount. It just enters the economy through 330 million accounts simultaneously instead of through twelve people in a room.
+Under the protocol, when new money must be created to keep the basket stable as output grows, it is created at the bottom and distributed equally. The productivity dividend goes directly to every verified citizen in the jurisdiction as UBI. The monetary function is the same. The first receiver changes.
 
-This is not a new tax. It is not a new spending program. It is the same money creation that already happens, redirected from the Cantillon pipeline to the citizen pipeline. The Federal Reserve already prints the money. The protocol just changes who gets it first: everyone, simultaneously, instead of banks.
+This is not a new discretionary privilege layered on top of the old system. It is the monetary function the Federal Reserve already performs, reassigned from banks to citizens. The claim is not that every future issuance episode will match some past Fed episode dollar-for-dollar. The claim is that whenever money creation occurs, the Cantillon advantage disappears.
 
 ### 4.4 Why Not CPI
 
-The algorithm targets 0% change in median purchasing power. The measurement matters. If the price index is wrong, the algorithm stabilizes the wrong thing.
+The algorithm targets 0% change in a purchasing-power basket. The measurement matters. If the price index is wrong, the algorithm stabilizes the wrong thing.
 
 The Consumer Price Index (CPI), compiled by the Bureau of Labor Statistics, has well-documented biases that systematically understate inflation:
 
@@ -151,9 +153,9 @@ The Consumer Price Index (CPI), compiled by the Bureau of Labor Statistics, has 
 
 The institution compiling CPI is the same government that benefits from reported inflation being low (lower Social Security COLA adjustments, lower inflation-indexed bond payouts, lower TIPS returns). On Wishonia, we do not let the defendant grade their own exam.
 
-The protocol uses a different metric: **the median transaction price of actual goods on the ledger**. Every transaction is recorded. The algorithm does not survey a sample of prices. It observes all of them. There is no substitution bias because the algorithm tracks what people actually buy, not what the government assumes they switch to. There is no hedonic adjustment because the algorithm measures the price paid, not a quality-adjusted theoretical price. There is no owner's equivalent rent because the algorithm sees actual rent payments and actual mortgage payments on the ledger.
+The protocol uses a different metric: **a rule-bound purchasing-power basket derived from actual settlement data on the ledger**. The algorithm does not rely on surveys or hedonic imputations. It observes actual cleared prices. For private transactions, the ledger exposes only the fields needed for macro measurement and tax collection: amount, standardized category, jurisdiction, and time bucket. Identities, counterparties, and item-level receipts remain private and are validated with zero-knowledge proofs. There is no owner's-equivalent-rent fiction because the system uses actual rents and observed housing transaction data.
 
-The price index is a commodity-weighted basket anchored to real goods: energy, food, housing, healthcare, and a precious metals component (gold and silver) that provides a manipulation-resistant floor. The basket weights are derived from actual spending patterns observed on the ledger, not from a government survey. The weights update continuously as spending patterns change. The entire calculation is public and auditable on the ledger. Anyone can verify it. Nobody can adjust it.
+The price index is anchored to essential goods: energy, food, housing, healthcare, and a precious metals component (gold and silver) that provides a manipulation-resistant floor. Basket weights are derived from observed spending patterns, locked for a governance interval, and updated only on a public schedule rather than continuously chasing substitution patterns. The entire calculation is public and auditable on the ledger. Anyone can verify it. Nobody can adjust it.
 
 ### 4.5 Why No Gold Standard
 
@@ -163,7 +165,7 @@ The protocol achieves the gold standard's benefit (constraining money creation) 
 
 1. **It can accommodate growth.** Under a gold standard, a growing economy produces deflation (more goods, same gold supply), which passively rewards existing holders. The algorithm creates exactly enough new currency to keep prices stable, distributing the growth dividend to citizens instead of to vaults.
 2. **It cannot be suspended.** Every gold standard in history was abandoned when a government needed to fund a war. The algorithm runs on a distributed ledger that no single government controls. Suspending it requires a majority of nodes, not a Sunday evening press conference.
-3. **It is auditable in real time.** The total money supply, every transaction, and the algorithm's adjustments are visible on the public ledger. Gold reserves required trusting that the metal was actually in the vault. (It frequently was not. See: Nixon, 1971.)
+3. **It is auditable in real time.** The total money supply, public spending flows, and the macro fields used by the monetary rule are visible on the ledger. Gold reserves required trusting that the metal was actually in the vault. (It frequently was not. See: Nixon, 1971.)
 
 The "backing" is not a metal. It is a guarantee: this currency will buy the same basket of goods tomorrow as it does today. That is a stronger guarantee than "this currency can be exchanged for a specific weight of a metal whose own value fluctuates based on jewelry demand and mining output."
 
@@ -174,12 +176,12 @@ The "backing" is not a metal. It is a guarantee: this currency will buy the same
 | Federal Reserve (12 FOMC members, ~24,000 staff, ~$6.8B/year) | Deterministic algorithm | 0% inflation target; cannot be lobbied |
 | 2% annual inflation (96% cumulative loss since 1913) | 0% target | Stable purchasing power |
 | Cantillon effect (proximity to printer = wealth) | Equal-entry money creation | New money enters at the bottom |
-| Income/payroll/capital gains taxes + IRS | Algorithmic transaction tax | Rate set by algorithm, not Congress |
-| Congressional tax rate debates | Automated rate adjustment | Targets revenue + 0% inflation simultaneously |
+| Income/payroll/capital gains taxes + IRS | Algorithmic final-consumption settlement tax | Collected automatically at settlement |
+| Congressional tax rate debates | Automated fiscal + stabilization adjustment | Budget funding separated from monetary control |
 
 ## 5. The Tax System It Replaces
 
-Section 4 describes the protocol's transaction tax. This section describes what it replaces, and why the replacement is overdue.
+Section 4 describes the protocol's final-consumption settlement tax. This section describes what it replaces, and why the replacement is overdue.
 
 In 1913, the federal income tax fit in 27 pages. Today, the federal tax system (the Internal Revenue Code plus Treasury regulations, rulings, and case law) fills approximately 74,000 pages of the CCH Standard Federal Tax Reporter. Each page beyond the original 27 represents a successful lobbying effort: an exemption, a deduction, a credit purchased by an industry that benefits from it. The tax code is not a revenue collection mechanism. It is a geological record of every deal ever struck between a legislator and a donor, compressed into sedimentary layers of subsection and cross-reference.
 
@@ -196,7 +198,7 @@ The compliance industry (tax preparers, accountants, software companies) has a s
 | IRS (~100,000 employees) | Protocol-level function | {{< var us_gov_waste_tax_compliance >}}/year direct |
 | 74,000-page tax code | One rate, applied uniformly | 6.1B hours/year compliance eliminated |
 | Tax compliance industry | Ceases to exist | $200B+/year in private compliance costs |
-| Tax evasion (~$600B/year net gap) | Low-rate transaction tax + UBI conditional on on-ledger identity | ~$500B+/year recovered |
+| Tax evasion (~$600B/year net gap) | Low-rate settlement tax + UBI conditional on on-ledger identity | ~$500B+/year recovered |
 
 The 27-page tax code of 1913 could have been a function. The 74,000-page version is a jobs program for people who interpret the function. The protocol returns to the function.
 
@@ -212,19 +214,21 @@ Representatives are elected on bundled platforms (immigration + healthcare + def
 
 ### 6.2 The Protocol
 
-Wishocratic preference aggregation replaces the appropriations process.
+Wishocratic preference aggregation replaces the appropriations process and, when needed, the committee bottleneck in rulemaking.
 
-Each citizen performs ~20 pairwise comparisons: "Would you prefer $100 toward medical research or $100 toward military spending?" The slider allows continuous allocation (85/15, 60/40), not binary choice. The RAPPA algorithm aggregates preferences into budget weights using eigenvector decomposition, the same mathematics that powers Google's PageRank.
+Each verified citizen in the relevant jurisdiction performs ~20 pairwise comparisons: "Would you prefer $100 toward medical research or $100 toward military spending?" The slider allows continuous allocation (85/15, 60/40), not binary choice. The RAPPA algorithm aggregates preferences into budget weights using eigenvector decomposition, the same mathematics that powers Google's PageRank.
 
 The Optimocracy evidence engine [@optimocracy-paper-2025] informs these comparisons. Before allocating, citizens see what actually works: "Investing $1 in cancer research produces $X in economic value over 10 years." Preferences expressed with access to evidence differ systematically from preferences expressed without it. That is the point.
 
 Budget weights update continuously. There is no annual budget cycle, no continuing resolution, no government shutdown. The algorithm does not need to agree with itself. It just does the math.
 
+Some problems are budgetary and some are legal. If the question is how much to spend, Wishocracy allocates the money. If the question is whether a tariff, subsidy, or zoning restriction should exist, the same evidence interface presents a direct citizen rule vote instead of routing the decision through committees and donors.
+
 ### 6.3 What This Replaces
 
 | Current System | Replacement | Mechanism |
 |---|---|---|
-| Congressional appropriations (535 members) | 8 billion citizens, direct allocation | RAPPA eigenvector |
+| Congressional appropriations (535 members) | Verified citizens in the relevant jurisdiction, direct allocation | RAPPA eigenvector |
 | OMB (~530 staff, $143M/year) | Wishocratic budget weights | Automated |
 | CBO (275 analysts, months per score) | Optimocracy engine | Real-time empirical scoring |
 | Grant committees | Wishocratic allocation weighted by DALYs | Disease burden determines funding |
@@ -248,7 +252,7 @@ On Wishonia, we had a similar system once. We noticed that the gate cost more th
 
 Universal Basic Income, deposited daily to every verified citizen via smart contract.
 
-The UBI has two funding sources. First, the protocol savings from eliminating intermediaries (Section 11.4), distributed directly to citizens. Second, whatever share of the broader discretionary budget citizens allocate to direct cash transfers through wishocratic preference (Section 6). The first stream is structural (it exists because intermediaries were removed). The second depends on citizen preferences informed by the evidence engine.
+The UBI has three funding layers. The **structural dividend** is protocol savings from eliminating intermediaries (Section 11.4). The **productivity dividend** is the monetary distribution described in Section 4. The **democratic supplement** is whatever share of the broader discretionary budget citizens allocate to direct cash transfers through wishocratic preference (Section 6). This section is about the distribution mechanism: one account, one formula, one daily deposit.
 
 No application. No eligibility determination. No means test. No caseworker. No waiting period. The ledger verifies citizenship (identity layer), calculates the per-citizen amount (total UBI pool / citizen count), and distributes. Every day. To everyone.
 
@@ -275,9 +279,9 @@ The Freedom of Information Act is the mechanism by which citizens can see how th
 
 ### 8.2 The Protocol
 
-When every transaction is on a public ledger, auditing is not a function. It is a property.
+When every government transaction is on a public ledger, auditing is not a function. It is a property.
 
-Every unit spent by any governance function is visible to every citizen in real time. There is no document to request. There is no official to interview. The ledger is the audit. Anyone can verify any transaction, trace any allocation from wishocratic preference to final expenditure, and confirm that the protocol executed as specified.
+Every unit spent by any governance function is visible to every citizen in real time. There is no document to request. There is no official to interview. The ledger is the audit. Anyone can verify any public expenditure, trace any allocation from wishocratic preference to final disbursement, and confirm that the protocol executed as specified.
 
 ### 8.3 What This Replaces
 
@@ -325,7 +329,7 @@ Every American carries a GPS-enabled device that reports its location continuous
 
 ### 10.2 The Protocol
 
-Continuous, sybil-resistant citizen verification through the identity layer. Every verified citizen has exactly one identity on the ledger. The total count is a view function that returns in milliseconds, updated in real time.
+Continuous, sybil-resistant citizen verification through the identity layer. Every verified citizen has exactly one identity on the ledger within the jurisdiction in which they vote and receive distributions. The total count is a view function that returns in milliseconds, updated in real time.
 
 The same identity layer prevents double-counting (census), double-spending (monetary system), and double-voting (wishocratic allocation). One primitive serves three functions.
 
@@ -339,7 +343,7 @@ The same identity layer prevents double-counting (census), double-spending (mone
 
 ## 11. Where the Money Goes
 
-A reasonable person might ask: if the protocol saves trillions, where is that money currently going? The answer requires distinguishing three categories of waste, because they are different in kind and the savings work differently for each.
+A reasonable person might ask: if the protocol saves trillions, where is that money currently going? The answer requires distinguishing several categories of loss, because they are different in kind and the savings work differently for each.
 
 ### 11.1 Administrative Overhead (the agency costs)
 
@@ -348,7 +352,7 @@ This is the direct cost of running intermediary agencies. It is real but compara
 | Agency/System | Annual Admin Cost | Replacement |
 |---|---|---|
 | Federal Reserve | ~$6.8B operational | Deterministic monetary algorithm |
-| IRS (agency operations) | ~$14B | Protocol-level transaction tax |
+| IRS (agency operations) | ~$14B | Protocol-level settlement tax |
 | Private tax compliance (accountants, TurboTax, etc.) | $200B+ | Ceases to exist |
 | SSA + welfare administration (not benefits) | ~$100B across 89 programs | UBI smart contract |
 | GAO + IG offices | ~$1B+ | Transparent ledger |
@@ -371,7 +375,7 @@ The larger savings come not from eliminating agencies but from eliminating the p
 
 This money is not "wasted" in the sense of vanishing. It goes to defense contractors, agricultural corporations, fossil fuel companies, and the prison-industrial complex. It is extracted from taxpayers and delivered to industries whose lobbying purchased the delivery. Remove the intermediary and the purchase has no seller. The money either stops being collected (tax cuts) or gets reallocated by citizens through wishocratic preference (public goods).
 
-- **Tax evasion recovery**: The net tax gap is ~$600B/year. The protocol closes most of it through two mechanisms that reinforce each other. First, the transparent ledger makes underreporting of on-ledger income (77% of the current gap) impossible. Second, the incentive to evade collapses: a flat transaction tax at 5-10% is far less worth evading than a 52% marginal rate (income + payroll combined). You do not risk prison to save 7%. Third, UBI is conditional on verified on-ledger identity. Going off-ledger to avoid a small tax means forfeiting a daily cash deposit that exceeds what you would save. The rational choice flips: staying on-ledger pays better than evading. Off-ledger activity (cash labor, barter, foreign settlement) will not disappear entirely, but the incentive structure shrinks it to a fraction of the current gap. Conservative estimate: ~$500B/year recovered.
+- **Tax evasion recovery**: The net tax gap is ~$600B/year. The protocol closes most of it through three reinforcing mechanisms. First, underreporting of on-ledger final consumption becomes far harder because settlement and tax collection occur in the same transaction. Second, the incentive to evade collapses: a low single-digit or low-double-digit settlement tax is far less worth evading than a 52% marginal rate (income + payroll combined). Third, UBI is conditional on verified on-ledger identity. Going off-ledger to avoid a small tax means forfeiting a daily cash deposit that often exceeds what you would save. Off-ledger activity (cash labor, barter, foreign settlement) will not disappear entirely, but the incentive structure shrinks it to a fraction of the current gap. Conservative estimate: ~$500B/year recovered.
 
 ### 11.3 Structural GDP Recovery
 
@@ -380,7 +384,7 @@ Some waste is not money spent badly but economic activity prevented entirely. Th
 - Housing supply restrictions cost {{< var us_gov_waste_housing_zoning >}}/year {{< var us_gov_waste_housing_zoning_cite >}}, because your government made it illegal to build housing where people need it so existing homeowners could watch their property values rise while their children moved back in
 - Tariffs cost {{< var us_gov_waste_tariffs >}}/year {{< var us_gov_waste_tariffs_cite >}} (citizens taxing themselves for buying things)
 
-No citizen, given the choice and the evidence, allocates funding to "make housing illegal where I need it." These policies exist because the intermediary who maintains them is not the person they harm. When citizens allocate directly, policies that reduce GDP lose funding, and the suppressed economic activity resumes. This is not money freed up from a budget. It is economic growth that was being prevented and is no longer.
+No citizen, given the choice and the evidence, allocates funding to "make housing illegal where I need it." But budget automation alone does not repeal law. The protocol handles that explicitly. When evidence shows that a rule destroys purchasing power or median income, citizens in the relevant jurisdiction vote on the rule directly; where the higher jurisdiction cannot directly repeal a lower-jurisdiction rule, funding flows are conditioned on compliance instead of pretending away federalism. Remove the intermediary from rulemaking as well as budgeting, and the suppressed economic activity resumes. This is not money freed up from a budget. It is economic growth that was being prevented and is no longer.
 
 ### 11.4 Where the Savings Flow
 
@@ -388,14 +392,14 @@ The protocol does not create a pile of money to be distributed. Different catego
 
 - **Administrative overhead (~$320B/year)**: Genuine budgetary savings from eliminating agency operations and compliance bureaucracy. This is money that was being spent on intermediaries and is now available.
 - **Tax evasion recovery (~$500B/year)**: Revenue the current system cannot collect. The transparent ledger and incentive structure (low rate + UBI conditional on identity) recover most of the gap.
-- **Lobbying-purchased waste (~$1-2T/year)**: Money that was being extracted from taxpayers and delivered to specific industries. When the intermediary disappears, the extraction stops. This manifests as lower taxes (the transaction tax rate can be lower because less revenue is wasted) and reallocation to higher-value uses through the existing discretionary budget.
+- **Lobbying-purchased waste (~$1-2T/year)**: Money that was being extracted from taxpayers and delivered to specific industries. When the intermediary disappears, the extraction stops. This manifests as lower taxes (the settlement tax rate can be lower because less revenue is wasted) and reallocation to higher-value uses through the existing discretionary budget.
 - **GDP recovery (~$1.5T/year)**: Not money freed from a budget. Economic growth that resumes when growth-suppressing policies end. Manifests as higher incomes, more jobs, and a larger tax base.
 
-The directly allocable savings (administrative overhead + tax evasion recovery) total approximately $820B/year. The primary destination is UBI: deposited daily to every verified citizen. No application. No means test. No intermediary. At $820B divided by 330 million Americans, that is approximately $2,500 per person per year, or $10,000 for a family of four, from this stream alone (before the productivity dividend and wishocratic allocation streams described in Section 4).
+The directly allocable savings (administrative overhead + tax evasion recovery) total approximately $820B/year. The primary destination is UBI: deposited daily to every verified citizen. No application. No means test. No intermediary. At $820B divided by 330 million Americans, that is approximately $2,500 per person per year, or $10,000 for a family of four, from this stream alone (before the productivity dividend and democratic supplement described in Sections 4 and 6).
 
 The adoption mechanism (how the protocol passes despite intermediary resistance) is funded through Incentive Alignment Bonds [@iab-paper-2025], which align investor, politician, and citizen incentives. The financial architecture of adoption, including the bond structure, revenue splits, and political incentive mechanics, is specified in that paper. This paper describes what the protocol does. The IAB paper describes how it gets adopted.
 
-Wishocracy governs the broader discretionary budget (the existing $6.8T in federal spending), not the protocol savings. The protocol savings flow to citizens. The discretionary budget is where citizens express preferences on cancer research vs. infrastructure vs. education vs. defense.
+Wishocracy governs the broader discretionary budget (the existing $6.8T in federal spending), not the protocol savings. The protocol savings flow to citizens. The discretionary budget is where citizens express preferences on cancer research vs. infrastructure vs. education vs. defense, while citizen rule votes govern legal changes that are not reducible to budget lines.
 
 The total is not double-counted. Administrative overhead, lobbying-purchased policy waste, GDP suppression, and uncollected revenue are four distinct categories of loss identified by the US Efficiency Audit [@us-efficiency-audit-paper-2025]. They sum to {{< var us_gov_waste_total >}}/year. The protocol addresses each through a different mechanism.
 
@@ -477,7 +481,7 @@ The phased implementation (Section 12) ensures that each component demonstrates 
 
 ### "What about privacy?"
 
-Government spending should be public by default. It is your money. The current system inverts this: your personal data is harvested and sold by private companies, while government spending is hidden behind FOIA requests that take months to years. The protocol reverses the asymmetry. Government transactions are public (the ledger is open). Personal transactions use zero-knowledge proofs (the protocol verifies that a transaction is valid without revealing its contents). You can see where every tax dollar goes. Nobody can see what you bought for lunch. This is the correct configuration. Yours is backwards.
+Government spending should be public by default. It is your money. The current system inverts this: your personal data is harvested and sold by private companies, while government spending is hidden behind FOIA requests that take months to years. The protocol reverses the asymmetry. Government transactions are public. Private consumer settlements reveal only the minimum fields needed for tax collection and macro accounting: amount, standardized category, jurisdiction, and time bucket. Identities, counterparties, and item-level receipts remain private and are validated with zero-knowledge proofs. You can see where every tax dollar goes. Nobody can see what you bought for lunch. This is the correct configuration. Yours is backwards.
 
 ## 14. Limitations
 
@@ -494,7 +498,7 @@ We do not claim this protocol solves governance. We claim it solves the spreadsh
 
 ### 14.2 Failure Modes
 
-**Algorithmic capture.** If the algorithm's parameters can be influenced by concentrated interests, the intermediary problem returns in different form. Mitigation: all parameters are public, all changes require supermajority wishocratic approval, and the evidence engine independently verifies outcomes.
+**Algorithmic capture.** If the algorithm's parameters can be influenced by concentrated interests, the intermediary problem returns in different form. Mitigation: minimize the number of tunable knobs. Tax base, wallet classes, basket definition, update schedule, and vote thresholds are public constitutional parameters; changes require supermajority wishocratic approval, and the evidence engine independently verifies outcomes.
 
 **Identity attacks.** If sybil-resistance fails, the entire system (UBI, voting weight, census) is compromised. This is the single highest-risk component.
 
