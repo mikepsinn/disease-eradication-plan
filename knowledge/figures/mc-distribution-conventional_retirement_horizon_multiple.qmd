@@ -1,6 +1,6 @@
 ```{python}
 #| echo: false
-#| fig-cap: "Monte Carlo Distribution: Conventional Retirement 15-Year Multiple (10,000 simulations)"
+#| fig-cap: "Monte Carlo Distribution: Conventional Retirement Horizon Multiple (10,000 simulations)"
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -23,7 +23,7 @@ std = 0.266871197158854
 p5 = 2.144867844917442
 p50 = 2.5681931583560607
 p95 = 3.066863226999378
-display_name = "Conventional Retirement 15-Year Multiple"
+display_name = "Conventional Retirement Horizon Multiple"
 units = "x"
 
 # Create figure with two subplots
@@ -101,7 +101,7 @@ add_watermark(fig)
 
 # Save PNG to knowledge/figures/ regardless of where Quarto renders from
 
-output_path = get_figure_output_path('mc-distribution-conventional_retirement_15yr_multiple.png')
+output_path = get_figure_output_path('mc-distribution-conventional_retirement_horizon_multiple.png')
 plt.savefig(output_path, dpi=96, bbox_inches=None, facecolor=COLOR_WHITE)
 
 add_png_metadata(
@@ -113,7 +113,7 @@ add_png_metadata(
 plt.show()
 ```
 
-**Simulation Results Summary: Conventional Retirement 15-Year Multiple**
+**Simulation Results Summary: Conventional Retirement Horizon Multiple**
 
 | Statistic | Value |
 |:----------|------:|
@@ -123,4 +123,4 @@ plt.show()
 | Standard Deviation | 0.267x |
 | 90% Range (5th-95th percentile) | [2.14x, 3.07x] |
 
-*The histogram shows the distribution of Conventional Retirement 15-Year Multiple across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*
+*The histogram shows the distribution of Conventional Retirement Horizon Multiple across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

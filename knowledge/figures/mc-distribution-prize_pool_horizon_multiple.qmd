@@ -1,6 +1,6 @@
 ```{python}
 #| echo: false
-#| fig-cap: "Monte Carlo Distribution: PRIZE Pool 15-Year Multiple (10,000 simulations)"
+#| fig-cap: "Monte Carlo Distribution: PRIZE Pool Horizon Multiple (10,000 simulations)"
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -23,7 +23,7 @@ std = 6.131498699239578
 p5 = 4.502299038547792
 p50 = 10.988145489478065
 p95 = 24.944377932861254
-display_name = "PRIZE Pool 15-Year Multiple"
+display_name = "PRIZE Pool Horizon Multiple"
 units = "x"
 
 # Create figure with two subplots
@@ -101,7 +101,7 @@ add_watermark(fig)
 
 # Save PNG to knowledge/figures/ regardless of where Quarto renders from
 
-output_path = get_figure_output_path('mc-distribution-prize_pool_15yr_multiple.png')
+output_path = get_figure_output_path('mc-distribution-prize_pool_horizon_multiple.png')
 plt.savefig(output_path, dpi=96, bbox_inches=None, facecolor=COLOR_WHITE)
 
 add_png_metadata(
@@ -113,7 +113,7 @@ add_png_metadata(
 plt.show()
 ```
 
-**Simulation Results Summary: PRIZE Pool 15-Year Multiple**
+**Simulation Results Summary: PRIZE Pool Horizon Multiple**
 
 | Statistic | Value |
 |:----------|------:|
@@ -123,4 +123,4 @@ plt.show()
 | Standard Deviation | 6.13x |
 | 90% Range (5th-95th percentile) | [4.5x, 24.9x] |
 
-*The histogram shows the distribution of PRIZE Pool 15-Year Multiple across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*
+*The histogram shows the distribution of PRIZE Pool Horizon Multiple across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*
