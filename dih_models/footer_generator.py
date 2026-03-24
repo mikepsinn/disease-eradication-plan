@@ -61,7 +61,7 @@ def generate_footer_html(project_root: Path) -> Path:
     <a href="https://mikesinn.com" style="color: #8b7355;">Mike P. Sinn</a> |
     <a href="https://creativecommons.org/licenses/by-nc/4.0/" style="color: #8b7355;">CC BY-NC 4.0</a> |
     <a href="https://manual.WarOnDisease.org/knowledge/about.html" style="color: #8b7355;">About &amp; Follow</a> |
-    <a href="https://github.com/wishonia/earth-optimization-instructions" style="color: #8b7355;">&#128194; Source Code &amp; Data</a>
+    <a href="https://github.com/wishonia/earth-optimization-protocol" style="color: #8b7355;">&#128194; Source Code &amp; Data</a>
   </p>
 {cta_html}
 </div>

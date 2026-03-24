@@ -333,7 +333,7 @@ python scripts/publish-zenodo.py --list
 - Author: Mike P. Sinn, Institute for Accelerated Medicine
 - ORCID: [0009-0006-0212-1094](https://orcid.org/0009-0006-0212-1094)
 - Contact: mike@warondisease.org
-- GitHub: https://github.com/wishonia/earth-optimization-instructions
+- GitHub: https://github.com/wishonia/earth-optimization-protocol
 
 ---
 

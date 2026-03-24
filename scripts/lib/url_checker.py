@@ -61,7 +61,7 @@ class URLChecker:
         self,
         cache_ttl_hours: float = 24.0,
         timeout_seconds: float = 10.0,
-        user_agent: str = "PDF-Validator/1.0 (+https://github.com/wishonia/earth-optimization-instructions)",
+        user_agent: str = "PDF-Validator/1.0 (+https://github.com/wishonia/earth-optimization-protocol)",
         cache_file: Optional[Path] = None,
     ):
         """

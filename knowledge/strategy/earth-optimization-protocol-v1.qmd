@@ -347,13 +347,13 @@ This is not a whitepaper. The core infrastructure is built and tested:
 
 Total: 2,600+ tests across 13 packages. TypeScript strict mode. Zod validation throughout. Every algorithm backed by a published paper with exact formulas and worked examples.
 
-When you fork the current manual, you are forking working code, not a PDF. The [repository](https://github.com/wishonia/earth-optimization-instructions) contains every calculation, every parameter, and every assumption. The [Optomitron repository](https://github.com/mikepsinn/optomitron) contains every algorithm.
+When you fork the current manual, you are forking working code, not a PDF. The [repository](https://github.com/wishonia/earth-optimization-protocol) contains every calculation, every parameter, and every assumption. The [Optomitron repository](https://github.com/mikepsinn/optomitron) contains every algorithm.
 
 ## How To Improve This Manual
 
 The Earth Optimization Protocol v1 is the current instruction manual for the [Earth Optimization Prize](earth-optimization-prize.qmd). If you think it is wrong, fork it and improve the manual:
 
-1. **Fork.** Clone [the repository](https://github.com/wishonia/earth-optimization-instructions). Every component, every calculation, every assumption is public.
+1. **Fork.** Clone [the repository](https://github.com/wishonia/earth-optimization-protocol). Every component, every calculation, every assumption is public.
 2. **Improve any row** in the Minimum Acceptable Governance table (see the [prize paper](earth-optimization-prize.qmd)) with something strictly better on the two terminal metrics (median healthy life years and median real after-tax income).
 3. **Or replace the wrong parts** with an integrated alternative that improves the current manual function by function. You cannot skip inconvenient pieces; every required function must still be covered or replaced.
 4. **Prove it.** The credit mechanism is VOTE points: verified recruitment credit on the scoreboard and, formally, success-side claims on the PRIZE pool. You need numbers, not arguments.

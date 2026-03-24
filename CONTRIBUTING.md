@@ -74,7 +74,7 @@ If you publish research, papers, or other work derived from the models or data i
 
 ```
 "Disease Eradication Plan," maintained by Mike P. Sinn and open-source contributors.
-https://github.com/wishonia/earth-optimization-instructions
+https://github.com/wishonia/earth-optimization-protocol
 ```
 
 **Book citation (if you're referencing the book's arguments):**
