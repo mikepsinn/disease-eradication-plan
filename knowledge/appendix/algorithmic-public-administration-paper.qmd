@@ -56,7 +56,7 @@ Intermediation cost of governance in the United States: {{< var us_gov_waste_tot
 
 A citizen who wants cancer research funded must persuade a representative, who must negotiate with other representatives, who must instruct an agency head, who must direct a bureaucracy, who must process applications, who must distribute funds. Six intermediaries between "I want this" and "this happens." Each layer extracts value (salaries, overhead, compliance costs) and introduces preference distortion (lobbying, logrolling, regulatory capture). The aggregate cost of this intermediation in the United States alone is {{< var us_gov_waste_total >}} per year [@us-efficiency-audit-paper-2025], or {{< var us_gov_waste_pct_gdp >}} of GDP.
 
-Most of what these intermediaries do is mechanical. Tax calculation, benefit distribution, budget allocation, auditing, census enumeration: these are algorithms being executed by humans. Humans are slower, more expensive, and more susceptible to capture than actual algorithms.
+Most of what these intermediaries do is mechanical. Tax calculation, benefit distribution, budget allocation, auditing, census enumeration: these are algorithms being executed by humans. Humans are slower, more expensive, and more susceptible to capture than actual algorithms. They also require lunch breaks, health insurance, and the occasional bribery budget.
 
 This paper describes a protocol that replaces specific mechanical agency functions with deterministic code while preserving democratic control over what those functions do. Citizens still decide how resources are allocated, through pairwise preference aggregation (Wishocracy [@wishocracy-paper-2025]). The protocol executes their decisions without extracting value at each administrative layer.
 
@@ -91,7 +91,7 @@ The protocol has five parts:
 
 5. **Automated monetary policy.** Fixed algorithmic rule targeting 0% change in a rule-bound purchasing-power basket. A final-consumption settlement tax funds the budget, a separate stabilization component is burned or parked in reserve as needed, and new money creation equals productivity growth. The productivity dividend is distributed equally via UBI. Eliminates the Federal Reserve's discretionary monetary policy.
 
-These five primitives are interdependent. The ledger enables accountability without auditors. Wishocracy enables allocation without appropriators. The evidence engine enables informed preferences without policy analysts. Identity enables distribution without means-testing. Monetary policy enables stable prices without central bankers. Remove any primitive and the system degrades.
+These five primitives are interdependent. On Wishonia, we call this a system. On Earth, you call it five separate agencies with five separate budgets, five separate directors, and five separate lobbying targets. The ledger enables accountability without auditors. Wishocracy enables allocation without appropriators. The evidence engine enables informed preferences without policy analysts. Identity enables distribution without means-testing. Monetary policy enables stable prices without central bankers. Remove any primitive and the system degrades.
 
 ## Monetary Policy and Revenue
 
@@ -136,7 +136,7 @@ This is a pragmatic choice, not a theoretical one. An economically purer design 
 
 ### Where the Inflation Money Goes
 
-Under the current system, the Federal Reserve creates new money and routes it through banks. The banks lend it, spend it, or invest it before prices adjust. By the time rising prices reach your grocery store, the purchasing power has already been captured by whoever touched the new money first. This is not a side effect. It is the product. The Fed expanded its balance sheet by roughly $4.8 trillion in 2020-2022 alone. The top 1% gained approximately $4 trillion in net worth over the same period. The mechanism is the Cantillon effect described in [the central-banks chapter](../economics/central-banks.qmd), and it has been operating for over a century.
+Under the current system, the Federal Reserve creates new money and routes it through banks. The banks lend it, spend it, or invest it before prices adjust. By the time rising prices reach your grocery store, the purchasing power has already been captured by whoever touched the new money first. This is not a side effect. It is the product. The Fed expanded its balance sheet by roughly $4.8 trillion in 2020-2022 alone. The top 1% gained approximately $4 trillion in net worth over the same period. This is considered a coincidence by people who benefit from it being considered a coincidence. The mechanism is the Cantillon effect described in [the central-banks chapter](../economics/central-banks.qmd), and it has been operating for over a century.
 
 Under the protocol, when new money must be created to keep the basket stable as output grows, it is created at the bottom and distributed equally. The productivity dividend goes directly to every verified citizen in the jurisdiction as UBI. The monetary function is the same. The first receiver changes.
 
@@ -203,7 +203,7 @@ The compliance industry (tax preparers, accountants, software companies) has a s
 | Tax compliance industry | Ceases to exist | $200B+/year in private compliance costs |
 | Tax evasion (~$600B/year net gap) | Low-rate settlement tax + UBI conditional on on-ledger identity | ~$500B+/year recovered |
 
-The 27-page tax code of 1913 could have been a function. The 74,000-page version is a jobs program for people who interpret the function. The protocol returns to the function.
+The 27-page tax code of 1913 could have been a function. The 74,000-page version is a jobs program for people who interpret the function. The 74,000 intervening pages are the longest suicide note a tax system ever wrote. The protocol returns to the function.
 
 ## Allocation
 
@@ -243,7 +243,7 @@ Your government has shut down 20+ times because humans could not agree on a spre
 
 ### The Problem
 
-The United States spends over $1.1 trillion per year on means-tested welfare programs across 89 federal programs. Of that, roughly $100 billion goes to administration: determining who qualifies, processing applications, verifying eligibility, preventing fraud. The defining feature of this system is not the benefits. It is the gate.
+The United States spends over $1.1 trillion per year on means-tested welfare programs across 89 federal programs. Of that, roughly $100 billion goes to administration: determining who qualifies, processing applications, verifying eligibility, preventing fraud. The defining feature of this system is not the benefits. It is the gate. The United States has built a system whose primary purpose is to determine whether you deserve help, and whose primary effect is to ensure you don't get it in time.
 
 The administrative cost per dollar distributed varies by program, but the pattern is consistent: a significant fraction of every welfare dollar goes not to the poor person but to the bureaucracy deciding whether they are poor enough. SNAP (food stamps) spends roughly 6-7% on administration. Medicaid spends approximately 5%. Housing assistance programs spend roughly 8% on administrative fees. These percentages sound small until you multiply them by hundreds of billions. The United States employs hundreds of thousands of people whose primary function is gatekeeping access to funds that, in many cases, cost less than the gate.
 
@@ -259,7 +259,7 @@ The UBI has three funding layers. The **structural dividend** is the fiscal cash
 
 No application. No eligibility determination. No means test. No caseworker. No waiting period. The ledger verifies citizenship (identity layer), calculates the per-citizen amount (total UBI pool / citizen count), and distributes. Every day. To everyone.
 
-Maximum workable UBI does not mean pretending one flat check can replace civilization. It means cashing out everything that is fundamentally a transfer and making the residual exception layer brutally rule-bound. Catastrophic health risk remains pooled through a protocol-defined catastrophic insurance layer rather than a caseworker gate or a blank-check entitlement. Child education remains a per-child voucher or credit rather than adult cash. Everything else that is basically a transfer becomes cash.
+Maximum workable UBI does not mean pretending one flat check can replace civilization. It means cashing out everything that is fundamentally a transfer and making the residual exception layer brutally rule-bound. Catastrophic health risk remains pooled through a protocol-defined catastrophic insurance layer rather than a caseworker gate or a blank-check entitlement. Child education remains a per-child voucher or credit rather than adult cash. Everything else that is basically a transfer becomes cash. On Wishonia, this took us about a week to figure out. It took your species 89 federal programs.
 
 The federal layer should therefore do only four things in distribution: guarantee the universal cash floor, guarantee catastrophic portability, finance child-linked base funding, and move money. States and localities should handle most service delivery: schools, land use, provider markets, supplementary services, and local top-ups. Incapacity cases are handled through explicit representative-payee or guardianship rules, not by recreating a giant means-tested bureaucracy. That is the maximum-cash design that still respects risk pooling, children, and federalism.
 
@@ -426,7 +426,7 @@ Not every institution currently called a bank disappears. Credit analysis, bankr
 The larger savings come not from eliminating agencies but from eliminating the policies those agencies were lobbied into maintaining. These policies persist because an intermediary (a politician, a regulator, a committee chair) was purchased, and the purchaser has a financial interest in the policy's continuation:
 
 - **Corporate welfare**: {{< var us_gov_waste_corporate_welfare >}}/year {{< var us_gov_waste_corporate_welfare_cite >}} (no intermediary to lobby)
-- **Agricultural subsidies**: {{< var us_gov_waste_agricultural_subsidies >}}/year {{< var us_gov_waste_agricultural_subsidies_cite >}} (citizens do not voluntarily fund payments to not grow food when shown the evidence)
+- **Agricultural subsidies**: {{< var us_gov_waste_agricultural_subsidies >}}/year {{< var us_gov_waste_agricultural_subsidies_cite >}} (no informed citizen voluntarily pays a farmer to not grow food)
 - **Fossil fuel subsidies**: {{< var us_gov_waste_fossil_fuel_subsidies >}}/year {{< var us_gov_waste_fossil_fuel_subsidies_cite >}} (citizens do not voluntarily subsidize the industry causing the problem they want solved)
 - **Drug war**: {{< var us_gov_waste_drug_war >}}/year {{< var us_gov_waste_drug_war_cite >}} (evidence engine shows negative ROI; citizens reallocate)
 - **Military overspend**: {{< var us_gov_waste_military_overspend >}}/year {{< var us_gov_waste_military_overspend_cite >}} (citizens allocate defense, not offense)
@@ -485,7 +485,7 @@ The total is not double-counted. The US Efficiency Audit [@us-efficiency-audit-p
 
 Abstract trillions are difficult to feel. A structural dividend of **~$1.63T/year** is not. That is roughly **$4,900 per person per year**, about **$400/month per citizen**, or roughly **$19,500 per year for a family of four**, before the productivity dividend and before any optional democratic supplement. Deposited daily, it is an always-visible reminder that the money used to go to intermediaries and now goes to citizens.
 
-The rest of the gain is not imaginary or secondary. It simply arrives in a different form. The conservative non-UBI stack, roughly **$14,900 per person per year**, shows up as cheaper housing, cheaper healthcare, lower bank spreads, lower transaction fees, less filing labor, and higher wages from output that is no longer being suppressed. The protocol therefore improves household balance sheets from both sides: more cash in and less extraction out.
+The rest of the gain is not imaginary or secondary. It simply arrives in a different form. The conservative non-UBI stack, roughly **$14,900 per person per year**, shows up as cheaper housing, cheaper healthcare, lower bank spreads, lower transaction fees, less filing labor, and higher wages from output that is no longer being suppressed. The protocol therefore improves household finances from both sides: more money in, less money stolen.
 
 The current system cannot do this. Not because the money does not exist, but because the intermediaries who control it have no incentive to allocate it this way. The lobbying industry does not represent hungry children. Malaria does not have a Super PAC. Clean water does not make campaign contributions. The allocation reflects who has access to the intermediary, not who has the greatest need. Remove the intermediary, and the math changes. Not because citizens are saints. Because citizens, unlike intermediaries, are also the beneficiaries.
 
@@ -499,7 +499,7 @@ The protocol cannot be deployed simultaneously. Each primitive has prerequisites
 
 **Phase 2: Transparency layer (Years 1-3).** Treaty funds flow through a public ledger. Every allocation from wishocratic preference to final expenditure is visible. This demonstrates the accountability model at limited scale before extending it.
 
-**Phase 3: Identity and distribution (Years 3-7).** The identity layer and UBI distribution require the largest infrastructure investment. India enrolled 1.4 billion people in Aadhaar. Estonia runs an entire government digitally. The engineering works at national scale. Global scale requires coordination between national systems, not invention of new technology. Multiple approaches (biometric, social graph, zero-knowledge proof) are in production today.
+**Phase 3: Identity and distribution (Years 3-7).** The identity layer and UBI distribution require the largest infrastructure investment. India enrolled 1.4 billion people in Aadhaar using a camera, a fingerprint scanner, and the radical assumption that the government should know who lives there. Estonia runs an entire government digitally. The engineering works at national scale. Global scale requires coordination between national systems, not invention of new technology. Multiple approaches (biometric, social graph, zero-knowledge proof) are in production today.
 
 **Phase 4: Revenue and monetary policy (Years 7-15).** Replacing the tax system and monetary policy requires the most political capital and the highest confidence in the protocol's reliability. Deployed last, after Phases 0-3 have demonstrated the model at increasing scale.
 
@@ -568,13 +568,13 @@ We do not claim this protocol solves governance. We claim it solves the spreadsh
 
 **Algorithmic capture.** If the algorithm's parameters can be influenced by concentrated interests, the intermediary problem returns in different form. Mitigation: minimize the number of tunable knobs. Tax base, wallet classes, basket definition, update schedule, and vote thresholds are public constitutional parameters; changes require supermajority wishocratic approval, and the evidence engine independently verifies outcomes.
 
-**Identity attacks.** If sybil-resistance fails, the entire system (UBI, voting weight, census) is compromised. This is the single highest-risk component.
+**Identity attacks.** If sybil-resistance fails, the entire system (UBI, voting weight, census) is compromised. This is the single highest-risk component, and also the one your species is worst at. You still cannot agree on what counts as an ID.
 
 **Goodhart's Law.** Optimizing for measurable metrics (median income, HALE) may degrade unmeasured outcomes. Mitigation: the evidence engine continuously expands its measurement set, and citizens can wishocratically fund measurement of outcomes they care about.
 
 **Transition disruption.** The protocol displaces workers. This deserves honest arithmetic, not hand-waving.
 
-The targeted agencies employ approximately 195,000 permanent staff (IRS ~100,000; SSA ~60,000; Federal Reserve ~24,000; Census Bureau ~4,000; GAO ~3,600; CBO, OMB, FEC ~1,100). Not all roles are mechanical; enforcement, IT transition, judgment-based functions, and oversight of the new systems remain human. Approximately 60-70% of roles in targeted agencies perform the deterministic functions the protocol replaces. That is roughly 115,000-135,000 displaced workers.
+The targeted agencies employ approximately 195,000 permanent staff (IRS ~100,000; SSA ~60,000; Federal Reserve ~24,000; Census Bureau ~4,000; GAO ~3,600; CBO, OMB, FEC ~1,100). Not all roles are mechanical; enforcement, IT transition, judgment-based functions, and oversight of the new systems remain human. Approximately 60-70% of roles in targeted agencies perform the deterministic functions the protocol replaces. That is roughly 115,000-135,000 displaced workers. For context, more Americans lost their jobs to the spreadsheet than would lose their jobs to this protocol. The spreadsheet did not offer a transition fund. The protocol does.
 
 Average federal employee total compensation (salary plus benefits) is approximately $130,000 per year. The cost of paying every displaced worker their full compensation for one year while they retrain or find new employment:
 
@@ -592,7 +592,7 @@ The protocol assumes that citizen preferences, informed by evidence, produce bet
 
 ## Conclusion
 
-Government is expensive because it is intermediated. Every layer between citizen preference and public outcome extracts value and introduces distortion. The US Efficiency Audit alone identifies {{< var us_gov_waste_total >}} per year in governance drag. Once recovered tax gap and excess financial intermediation rent are included, the conservative quantified stack in this paper rises to roughly **~$6.62T/year**.
+Government is expensive because it is intermediated. Every layer between citizen preference and public outcome extracts value and introduces distortion. The US Efficiency Audit alone identifies {{< var us_gov_waste_total >}} per year in intermediation waste. Once recovered tax gap and excess financial intermediation rent are included, the conservative quantified stack in this paper rises to roughly **~$6.62T/year**.
 
 This protocol does not replace governance. It replaces the mechanical functions that governance currently delegates to humans at extraordinary cost: calculating taxes, distributing benefits, allocating budgets, auditing expenditures, counting citizens, and managing the money supply. These functions are algorithmic in nature. Making them actual algorithms eliminates the intermediary cost while preserving (and expanding) democratic control over what those algorithms do.
 
