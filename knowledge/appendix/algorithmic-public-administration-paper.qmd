@@ -1,9 +1,9 @@
 ---
 title: "Algorithmic Public Administration"
 subtitle: "A Protocol for Replacing Government Intermediaries with Deterministic Functions"
-description: "A protocol combining five primitives (transparent ledger, preference aggregation, evidence engine, identity verification, automated monetary policy) to replace mechanical government functions, recover visible citizen dividends, and remove {{< var us_gov_waste_pct_gdp >}} of GDP in governance drag while preserving democratic control."
+description: "A protocol combining five primitives (transparent ledger, preference aggregation, evidence engine, identity verification, automated monetary policy) to replace mechanical government functions, recover visible citizen dividends, and stop wasting {{< var us_gov_waste_pct_gdp >}} of GDP on humans doing robot work, while preserving democratic control."
 abstract: |
-  Government agencies are multi-layered principal-agent chains optimized for process compliance rather than citizen outcomes. In the United States alone, intermediated governance destroys or diverts {{< var us_gov_waste_total >}} per year, or {{< var us_gov_waste_pct_gdp >}} of GDP [@us-efficiency-audit-paper-2025]. We describe an integrated protocol combining five primitives (transparent ledger, preference aggregation, evidence engine, identity verification, and automated monetary policy) that replaces specific mechanical functions currently performed by the Federal Reserve, Internal Revenue Service, Social Security Administration, Government Accountability Office, Congressional Budget Office, Office of Management and Budget, Federal Election Commission, and Census Bureau. The protocol preserves democratic control: citizens still decide resource allocation through pairwise preference comparison (Wishocracy [@wishocracy-paper-2025]). The algorithm executes those decisions without extracting value at each administrative layer. We distinguish fiscal cash the protocol can route directly into UBI from broader societal gains that arrive as lower prices and higher wages, and we describe a phased implementation pathway compatible with the 1% Treaty [@1-pct-treaty-impact-paper-2025] funding mechanism.
+  Government agencies are chains of humans passing paper to other humans, each checking whether the previous human filled out the right form rather than whether anyone got helped. In the United States alone, this intermediation destroys or diverts {{< var us_gov_waste_total >}} per year, or {{< var us_gov_waste_pct_gdp >}} of GDP [@us-efficiency-audit-paper-2025]. We describe a protocol combining five primitives (transparent ledger, preference aggregation, evidence engine, identity verification, and automated monetary policy) that replaces specific mechanical functions currently performed by the Federal Reserve, Internal Revenue Service, Social Security Administration, Government Accountability Office, Congressional Budget Office, Office of Management and Budget, Federal Election Commission, and Census Bureau. The protocol preserves democratic control: citizens still decide resource allocation through pairwise preference comparison (Wishocracy [@wishocracy-paper-2025]). The algorithm executes those decisions without extracting value at each administrative layer. We distinguish fiscal cash the protocol can route directly into UBI from broader societal gains that arrive as lower prices and higher wages, and we describe a phased implementation pathway compatible with the 1% Treaty [@1-pct-treaty-impact-paper-2025] funding mechanism.
 published: true
 tags:
   - algorithmic-governance
@@ -79,13 +79,13 @@ Every category traces to the same root cause: intermediaries whose incentives di
 
 ## System Architecture
 
-The protocol combines five primitives into an integrated governance stack:
+The protocol has five parts:
 
 1. **Transparent ledger.** Every government transaction recorded on a shared, publicly auditable ledger. Private settlements record only the minimal fields needed for tax collection and macro measurement, with identities and item-level details proved privately. Eliminates ex-post auditing (GAO) and opacity-dependent corruption.
 
 2. **Preference aggregation (Wishocracy).** Verified citizens in the relevant jurisdiction express resource allocation preferences through ~20 pairwise comparisons. The RAPPA algorithm [@wishocracy-paper-2025] produces budget weights via eigenvector decomposition and, when legal change is required, direct rule mandates. Eliminates congressional appropriations, OMB, and much committee bargaining.
 
-3. **Evidence engine (Optimocracy).** Cross-jurisdictional causal inference [@optimocracy-paper-2025] compares policy outcomes across thousands of jurisdictions and identifies which policies improve terminal metrics (median income, healthy life years). Eliminates the CBO's scoring function.
+3. **Evidence engine (Optimocracy).** Cross-jurisdictional causal inference [@optimocracy-paper-2025] compares policy outcomes across thousands of jurisdictions and identifies which policies actually make people richer and less dead (median income, healthy life years). Eliminates the CBO's scoring function.
 
 4. **Identity layer.** Continuous, sybil-resistant citizen verification. Every verified citizen receives equal allocation weight and equal UBI distribution. Eliminates the decennial census and means-testing bureaucracy.
 
@@ -113,7 +113,7 @@ Once every citizen and business can hold verified settlement wallets directly on
 
 **The UBI deposit** replaces means-tested cash welfare with a daily payment to every verified citizen. UBI has three funding streams, each from a different source:
 
-1. *Structural dividend*: all fiscal cash the protocol directly captures or consolidates by default: eliminated agency operating costs, reclaimed direct spending waste, recovered tax gap, and the transfer-like portion of the welfare state rewritten from category-specific entitlements into equal cash. In long-run steady state, retirement cash support can be folded into the same base as legacy promises roll off. What remains outside the universal cash stream is not an open-ended sympathy bureaucracy but a narrow catastrophic frontier: pooled catastrophic risk, child-linked funding, and incapacity management for citizens who literally cannot manage cash on their own behalf.
+1. *Structural dividend*: all fiscal cash the protocol directly captures or consolidates by default: eliminated agency operating costs, reclaimed direct spending waste, recovered tax gap, and the transfer-like portion of the welfare state rewritten from category-specific entitlements into equal cash. In long-run steady state, retirement cash support can be folded into the same base as legacy promises roll off. What remains outside the universal cash stream is not an open-ended sympathy bureaucracy but a narrow catastrophic frontier (the short list of disasters too expensive for any one person to handle alone): pooled catastrophic risk, child-linked funding, and incapacity management for citizens who literally cannot manage cash on their own behalf.
 2. *Productivity dividend* (this section): new currency minted by the algorithm to prevent deflation as the economy grows. This is the Cantillon pipeline, redirected from banks to citizens.
 3. *Democratic supplement*: whatever additional share of the ordinary discretionary budget citizens explicitly choose to direct to cash transfers versus other public goods.
 
@@ -151,7 +151,7 @@ The Consumer Price Index (CPI), compiled by the Bureau of Labor Statistics, has 
 - **Substitution bias.** When steak gets expensive, the BLS assumes you switch to chicken. "Inflation" stays low because the basket changed, not because prices did. You ate worse. The index says you are fine.
 - **Hedonic adjustment.** Your laptop costs the same as last year but has a faster processor. The BLS counts this as a price decrease. You paid the same amount. The index says you paid less.
 - **Owner's equivalent rent.** Instead of measuring what housing actually costs, the BLS asks homeowners what they think their house would rent for. Housing prices doubled in many markets between 2020 and 2024. CPI barely noticed.
-- **Geometric weighting.** A technical adjustment that systematically lowers the measured rate by assuming consumers continuously optimize away from price increases. This is a math trick that makes inflation smaller on paper.
+- **Geometric weighting.** A technical adjustment that systematically lowers the measured rate by assuming you keep switching to whatever is cheapest. This is a math trick that makes inflation smaller on paper.
 
 The institution compiling CPI is the same government that benefits from reported inflation being low (lower Social Security COLA adjustments, lower inflation-indexed bond payouts, lower TIPS returns). On Wishonia, we do not let the defendant grade their own exam.
 
@@ -213,7 +213,7 @@ The United States federal budget is approximately $6.8 trillion, allocated by 53
 
 You pick one human to represent your preferences on thousands of issues. This is like choosing a chef who will eat for you for four years. You wanted the salad. He ordered the war. You can pick a different chef in November, but only from a menu of two, and both chefs are being paid by the steak lobby.
 
-Representatives are elected on bundled platforms (immigration + healthcare + defense + education), making issue-level preference expression impossible. A voter who wants more cancer research and less military spending cannot express this. They get a package deal, designed by consultants, funded by donors, and tested on focus groups. The package is optimized for electability, not representativeness. Resource allocation reflects the preferences of the people who funded the campaign, not the people who voted in it. This is the principal-agent problem operating at the scale of a $6.8 trillion budget, with a {{< var us_total_lobbying_annual >}}/year lobbying industry whispering in the agent's ear [@wishocracy-paper-2025].
+Representatives are elected on bundled platforms (immigration + healthcare + defense + education), making issue-level preference expression impossible. A voter who wants more cancer research and less military spending cannot express this. They get a package deal, designed by consultants, funded by donors, and tested on focus groups. The package is designed to win elections, not to represent you. Resource allocation reflects the preferences of the people who funded the campaign, not the people who voted in it. This is the principal-agent problem operating at the scale of a $6.8 trillion budget, with a {{< var us_total_lobbying_annual >}}/year lobbying industry whispering in the agent's ear [@wishocracy-paper-2025].
 
 ### The Protocol
 
@@ -265,7 +265,7 @@ The federal layer should therefore do only four things in distribution: guarante
 
 ### The Objective Function
 
-If this system is serious, it should be designed against the real utility functions of the actors inside it, not against an imaginary benevolent state. The terminal objective is the same one used in [Optimocracy](../solution/optimocracy.qmd): maximize **real after-tax median income** and **median healthy life years**. Those are the scoreboard metrics. Everything else here is mechanism design in service of those two numbers.
+If this system is serious, it should be designed for how people actually behave, not how you wish they would. The terminal objective is the same one used in [Optimocracy](../solution/optimocracy.qmd): maximize **real after-tax median income** and **median healthy life years**. Those are the scoreboard metrics. Everything else here is mechanism design in service of those two numbers.
 
 At the protocol-design level, the target can be written as:
 
@@ -275,7 +275,7 @@ $$
 
 where \(\widetilde{Y}^{after-tax}_{median}\) is real after-tax median income, \(\widetilde{HLY}_{median}\) is median healthy life years, and \(A(R)\) is the arbitrage value the rule set itself creates for gaming, lobbying, overbilling, denial, or misreporting. Median rather than average is the point: the protocol is trying to make the person in the middle richer and less dead, not make national aggregates prettier while rents concentrate at the top.
 
-Operationally, that decomposes into ex-ante citizen welfare subject to hard budget and incentive constraints:
+In practice, that means maximizing what citizens actually get, given two constraints: money is finite, and people will game whatever you build:
 
 $$
 \max_R \sum_i \mathbb{E}\left[u(c_i) + \alpha h_i + \beta s_i - \delta d_i\right] - \lambda A(R)
@@ -293,7 +293,7 @@ where \(c_i\) is disposable consumption, \(h_i\) is health and human-capital out
 
 Once the utility functions are stated honestly, the design rules become obvious. Give decision rights to the actor with the best local information only when that actor also bears the marginal cost. Citizens decide ordinary consumption from cash. Patients decide routine care from rolling health balances. Providers do not decide the public price of catastrophe. Insurers do not decide who is insurable. Politicians do not get to convert the dividend back into patronage. The point of the protocol is not to assume virtue. It is to leave every actor with less profitable ways to cheat.
 
-The exception rule is ex-ante insurance, not ex-post rescue theater. A category belongs in the public catastrophic layer only if citizens, before knowing who will get sick, would rationally choose to pool that risk rather than take the same dollars as equal cash. Operationally, that means five constraints:
+The exception rule is ex-ante insurance, not ex-post rescue theater. A category belongs in the public catastrophic layer only if citizens, before knowing who will get sick, would rationally choose to pool that risk rather than take the same dollars as equal cash. In practice, that means five constraints:
 
 - **Catastrophic**: the loss is too large for ordinary households to self-insure.
 - **Objective**: the trigger is hard to fake.
@@ -305,7 +305,7 @@ One practical implementation is to publish a constitutional catastrophic budget,
 
 Patient cost-sharing should follow the same logic. The place for skin in the game is routine spending, not catastrophe. Preventive care should be zero-price. Ordinary, non-catastrophic care can be paid first from a small personal health wallet funded by an automatic carve-out from UBI or by explicit state/local top-ups. Unused balances roll forward, so economizing benefits the patient directly instead of vanishing into an insurer's margin. Once a covered episode crosses the catastrophic threshold, the protocol insurance layer pays the reference price and patient cost-sharing falls to zero or a token amount. If a patient chooses a provider charging above the published reference price, the patient pays the difference from ordinary cash.
 
-This matters because most healthcare gaming is provider-side, not patient-side. Upcoding, unbundling, fake complexity, network games, and price opacity are not fixed by scaring patients away from the emergency room. The anti-abuse stack should therefore be reference pricing, bundled payments, transparent outcomes, and anomaly detection first, with modest routine cost-sharing only as a secondary discipline mechanism.
+This matters because most healthcare gaming is provider-side, not patient-side. Upcoding (billing for a disease you don't have), unbundling (splitting one procedure into five invoices), fake complexity (making simple things look difficult so they cost more), network games (shuffling patients between networks to avoid caps), and price opacity (hiding prices so you can't shop) are not fixed by scaring patients away from the emergency room. The anti-abuse stack should therefore be reference pricing, bundled payments, transparent outcomes, and anomaly detection first, with modest routine cost-sharing only as a secondary discipline mechanism.
 
 ### What This Replaces
 
@@ -352,7 +352,7 @@ The Pentagon has failed its audit seven years running. A public ledger cannot fa
 
 Politicians are funded by donors whose interests diverge from citizens'. This is not a theory. It is a business model with documented returns.
 
-{{< var us_gov_waste_corporate_welfare >}} per year {{< var us_gov_waste_corporate_welfare_cite >}} in corporate welfare is the direct return on {{< var us_total_lobbying_annual >}} per year in lobbying investment. Studies of specific lobbying campaigns have found returns exceeding 22,000%: the American Jobs Creation Act of 2004 provided $62.5 billion in tax breaks to 93 corporations that spent $282.7 million lobbying for it, a return of $220 for every $1 spent. The alignment between donor preferences and policy outcomes is well-documented; the alignment between citizen preferences and policy outcomes is not [@political-dysfunction-tax-paper-2025].
+{{< var us_gov_waste_corporate_welfare >}} per year {{< var us_gov_waste_corporate_welfare_cite >}} in corporate welfare is the direct return on {{< var us_total_lobbying_annual >}} per year in lobbying investment. Studies of specific lobbying campaigns have found returns exceeding 22,000%: the American Jobs Creation Act of 2004 provided $62.5 billion in tax breaks to 93 corporations that spent $282.7 million lobbying for it, a return of $220 for every $1 spent. What donors want, they get. What citizens want, they don't [@political-dysfunction-tax-paper-2025].
 
 The revolving door completes the circuit. Roughly half of departing members of Congress become lobbyists, monetizing the relationships and access they accumulated in office. The career path is: get elected, learn who controls the money, leave office, sell that knowledge to the people who control the money. The regulator becomes the regulated's employee. This is not corruption in the legal sense. It is the system working as designed, which is worse, because corruption can be prosecuted and systems cannot.
 
@@ -366,7 +366,7 @@ The Incentive Alignment Bonds [@iab-paper-2025] fund this mechanism. Bond invest
 
 | Current System | Replacement | Mechanism |
 |---|---|---|
-| FEC (regulator of donor-driven system) | System needs no regulation when intermediaries are gone | Structural elimination |
+| FEC (regulator of donor-driven system) | Nothing to regulate when there's nobody to bribe | Structural elimination |
 | Campaign finance ($15.9B in 2024 federal elections) | Alignment-proportional funding | Citizens fund representation, not donors |
 | Lobbying industry ({{< var us_total_lobbying_annual >}}/year) | No intermediary to lobby | Function ceases to exist |
 
@@ -503,7 +503,7 @@ The protocol cannot be deployed simultaneously. Each primitive has prerequisites
 
 **Phase 4: Revenue and monetary policy (Years 7-15).** Replacing the tax system and monetary policy requires the most political capital and the highest confidence in the protocol's reliability. Deployed last, after Phases 0-3 have demonstrated the model at increasing scale.
 
-Each phase generates evidence for the next. If wishocratic allocation of treaty funds produces better outcomes than committee allocation (Phase 1), the case for expanding to domestic budgets strengthens. If the transparent ledger eliminates corruption in treaty spending (Phase 2), the case for extending it to all government spending strengthens. The protocol earns trust by performing, not by promising.
+Each phase is a test. If citizens allocate treaty funds better than committees do (Phase 1), the argument for letting them allocate domestic budgets gets harder to ignore. If the transparent ledger eliminates corruption in treaty spending (Phase 2), the argument for extending it to all government spending gets harder to ignore. The protocol earns trust by performing, not by promising.
 
 ### Political Economy of Adoption
 
@@ -523,7 +523,7 @@ Three incentive layers make adoption self-reinforcing:
 
 3. **Politicians** want funding. The Citizen Alignment Score [@wishocracy-paper-2025] and IAB-funded political incentives make supporting the protocol more financially rewarding than opposing it. Politicians follow the money. They always do. The protocol redirects where the money points.
 
-The result is a system where every participant acts selfishly and the aggregate outcome is the protocol's adoption. This is not idealism. It is mechanism design. The same species that invented lobbying can be out-lobbied.
+The result is a system where every participant acts selfishly and the protocol gets adopted anyway. This is not idealism. It is the same trick your species already uses for everything else. You call it "the market." The same species that invented lobbying can be out-lobbied.
 
 ## Objections
 
@@ -588,7 +588,7 @@ The political barrier is real: the people whose jobs are replaced by the protoco
 
 ### What We Do Not Know
 
-The protocol assumes that citizen preferences, informed by evidence, produce better resource allocation than expert committees captured by donors. The empirical evidence (participatory budgeting, Switzerland's direct democracy, Estonia's digital governance) is suggestive but not at the scale proposed here. The phased implementation is designed to generate this evidence incrementally, at bounded cost, before full deployment.
+The protocol assumes that citizen preferences, informed by evidence, produce better resource allocation than expert committees captured by donors. The evidence so far (participatory budgeting, Switzerland's direct democracy, Estonia's digital governance) is encouraging but has not been tested at this scale. The phased implementation is designed to generate this evidence incrementally, at bounded cost, before full deployment.
 
 ## Conclusion
 
