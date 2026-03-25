@@ -32,6 +32,39 @@ This project consists of multiple interconnected research papers on health econo
 - [United States Efficiency Audit](https://manual.warondisease.org/knowledge/appendix/us-efficiency-audit.html): Systems audit estimating an annual U.S. efficiency gap of $4.9T, with $2.45T recoverable at OECD-median performance across direct spending waste, compliance burden, policy-induced GDP loss, and system inefficiency.
 - [Wishocracy: Solving the Democratic Principal-Agent Problem Through Pairwise Preference Aggregation](https://manual.warondisease.org/knowledge/appendix/wishocracy-paper.html): Representative democracy suffers from an inescapable principal-agent problem where elected officials' incentives diverge from citizen welfare. Wishocracy introduces RAPPA (Randomized Aggregated Pairwise Preference Allocation), which aggregates citizen preferences through cognitively tractable pairwise comparisons and creates accountability via Citizen Alignment Scores that channel electoral resources toward politicians who actually represent what citizens want.
 
+## Data Indexes & API
+
+Machine-readable data for building tools, agents, or integrations with this project.
+
+### Search Index (Chat RAG)
+- URL: https://manual.warondisease.org/assets/json/search-index.json
+- Format: JSON array of 76 chapter entries with full text, section headings, parameter metadata (formulas, sources, LaTeX), and figure references
+- Use: Full-text search, retrieval-augmented generation, fact-checking
+
+### Image Index
+- URL: https://manual.warondisease.org/assets/image-index.json
+- Format: JSON with 2,757 images including dimensions, types (chart/infographic/cover/icon), keywords, descriptions
+- Use: Finding relevant figures, charts, and infographics by topic
+
+### Sites Metadata
+- URL: https://manual.warondisease.org/assets/json/sites-metadata.json
+- Format: JSON manifest of 19 publications with titles, abstracts, DOIs, PDF URLs, page counts, keywords, publishing status
+- Use: Discovering and citing papers, building publication dashboards
+
+### Chat API
+- URL: https://transmit.warondisease.org/api/chat
+- Method: POST {question, context, history}
+- Response: Streaming text (Wishonia persona, grounded in book content)
+- Use: Ask questions about the 1% Treaty, disease eradication economics, or any topic in the manual
+
+### Text-to-Speech API
+- URL: https://transmit.warondisease.org/api/tts
+- Method: POST {text}
+- Response: audio/wav (Kore voice)
+
+### Documentation
+- Full API and schema docs: https://manual.warondisease.org/knowledge/appendix/api-and-data.html
+
 ## Author
 
 Mike P. Sinn

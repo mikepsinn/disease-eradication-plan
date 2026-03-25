@@ -1,0 +1,181 @@
+---
+title: API & Data Indexes
+description: Machine-readable data indexes and APIs for building tools, agents, or integrations with the Disease Eradication Plan.
+published: true
+---
+
+This page documents the data indexes and APIs available for programmatic access to the book's content, parameters, images, and chat functionality.
+
+## Search Index
+
+**URL:** `/assets/json/search-index.json`
+
+Full-text search index generated from all 76 chapters in the manual. Used by the chat widget for retrieval-augmented generation (RAG). Each entry includes resolved parameter values, section headings, and structured metadata for every referenced calculation.
+
+**Entry schema:**
+
+```json
+{
+  "path": "knowledge/solution/1-percent-treaty.qmd",
+  "url": "/solution/1-percent-treaty.html",
+  "title": "A 1% Treaty",
+  "description": "Each nation redirects 1% of military spending...",
+  "tags": ["1-percent-treaty", "military-spending"],
+  "sections": ["The Treaty", "Funding", "Why It Works"],
+  "published": true,
+  "lastmod": "2026-03-20",
+  "text": "Full chapter text with variables resolved to display values...",
+  "parameters": {
+    "treaty_annual_funding": {
+      "display": "$27.2B",
+      "href": "/knowledge/appendix/parameters-and-calculations.html#sec-treaty_annual_funding",
+      "formula": "MILITARY_SPENDING * 1%",
+      "source_ref": "",
+      "source_type": "calculated",
+      "confidence": "high",
+      "unit": "USD/year",
+      "latex": "$$\\begin{gathered}Funding_{treaty} = Spending_{mil} \\times 1\\% = \\$27.2B\\end{gathered}$$"
+    }
+  },
+  "figures": [
+    {
+      "path": "assets/images/1-percent-treaty/treaty-flow-diagram.jpg",
+      "caption": "How the 1% Treaty funds flow from military budgets to clinical trials"
+    }
+  ]
+}
+```
+
+**Parameter metadata fields:**
+
+| Field | Description |
+|-------|-------------|
+| `display` | Rendered value (e.g. "$27.2B") |
+| `href` | Link to calculation details page |
+| `formula` | Human-readable formula |
+| `source_ref` | BibTeX citation key for external sources |
+| `source_type` | `external` (cited data), `calculated` (derived), or `definition` (assumption) |
+| `confidence` | `high`, `medium`, or `low` |
+| `unit` | Parameter unit (USD, rate, multiplier, etc.) |
+| `latex` | Full LaTeX equation with intermediate steps |
+
+## Image Index
+
+**URL:** `/assets/image-index.json`
+
+Catalog of 2,757 images with dimensions, semantic types, keywords, and descriptions. Used by the chat widget to show relevant figures alongside responses.
+
+**Entry schema:**
+
+```json
+{
+  "path": "assets/images/1-percent-treaty/treaty-flow-diagram.jpg",
+  "filename": "treaty-flow-diagram.jpg",
+  "extension": "jpg",
+  "sizeBytes": 187508,
+  "size": "183.1 KB",
+  "width": 1248,
+  "height": 832,
+  "format": "jpeg",
+  "aspectRatio": "3:2",
+  "modified": "2026-03-16T01:52:55.946Z",
+  "imageType": "infographic",
+  "style": "bw-academic",
+  "title": "Treaty Fund Flow",
+  "description": "How military budget redirections flow through the DIH",
+  "keywords": ["treaty", "funding", "flow", "military", "clinical trials"]
+}
+```
+
+**Image types:** `cover`, `icon`, `og`, `chart`, `infographic`, `slide`, `other`
+
+## Sites Metadata
+
+**URL:** `/assets/json/sites-metadata.json`
+
+Publication manifest for all 19 research papers and sites in the project. Includes abstracts, DOIs, PDF download URLs, page counts, and publishing status across platforms.
+
+**Top-level schema:**
+
+```json
+{
+  "totalSites": 19,
+  "totalPages": 145,
+  "sites": [
+    {
+      "id": "1-pct-treaty-impact",
+      "title": "The 1% Treaty: Harnessing Greed to Eradicate Disease",
+      "siteUrl": "https://manual.warondisease.org/knowledge/economics/1-pct-treaty-impact.html",
+      "pdfUrl": "https://...",
+      "doi": "10.5281/zenodo.14827947",
+      "abstract": "...",
+      "keywords": ["war-on-disease", "1-percent-treaty", "clinical-trials"],
+      "pageCount": 42,
+      "publishing": { "...platform status..." }
+    }
+  ]
+}
+```
+
+## Chat API
+
+**Base URL:** `https://transmit.warondisease.org`
+
+### POST /api/chat
+
+Streaming chat endpoint. Responds as Wishonia (an alien observer teaching humans about the plan).
+
+**Request:**
+
+```json
+{
+  "question": "How does the 1% treaty work?",
+  "context": "Optional RAG context from search index",
+  "history": [
+    {"role": "user", "content": "Previous question"},
+    {"role": "assistant", "content": "Previous answer"}
+  ]
+}
+```
+
+**Response:** Streaming `text/plain` (chunks arrive as they're generated).
+
+For best results, include RAG context from the search index. The chat widget does this automatically using client-side TF-IDF scoring.
+
+### POST /api/tts
+
+Text-to-speech using Gemini TTS with the Kore voice.
+
+**Request:**
+
+```json
+{
+  "text": "Text to convert to speech"
+}
+```
+
+**Response:** `audio/wav`
+
+### GET /api/voice-token
+
+Returns credentials for the Gemini Live API WebSocket connection (bidirectional voice chat).
+
+**Response:**
+
+```json
+{
+  "key": "API key for WebSocket connection"
+}
+```
+
+## Generating the Indexes
+
+All indexes are generated by `npm run generate:everything` (or the underlying Python pipeline). They can also be generated individually:
+
+```bash
+# Generate search index only
+python -c "from dih_models.search_index_generator import generate_search_indexes; from pathlib import Path; generate_search_indexes(Path('.'))"
+
+# Generate image index only
+npx tsx scripts/images/generate-image-index.ts
+```
