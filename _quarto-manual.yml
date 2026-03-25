@@ -21,7 +21,7 @@ dih-render:
   netlify-site-id: "4e36b0d6-9b80-49e2-bf16-eb4d2f79f062"
   netlify-cname: "manual-warondisease-org.netlify.app"
   # Strip "(95% CI: ...)" from variable display values for general-audience reading
-  show-confidence-intervals: false
+  show-confidence-intervals: true
   # parameter-link-format defaults to html (links work in HTML, stripped by Lua filter for EPUB/PDF)
   # Image generation prompts (used by scripts/images/generate-project-branding-images.ts)
   favicon-prompt: "A white SKULL with a prohibition sign (red circle with diagonal line) through it and black outlines"
@@ -440,7 +440,7 @@ format:
       - text: |
           <script src="/assets/js/generated-subdomain-redirects.js"></script>
           <!-- Feature flags for site-enhancements.js -->
-          <meta name="dih-disable-features" content="cite,ci-toggle">
+          <meta name="dih-disable-features" content="cite,chat">
           <meta name="dih-hide-index-title" content="true">
           <!-- RSS feed discovery -->
           <link rel="alternate" type="application/rss+xml" title="How to End War and Disease" href="/assets/feed.xml">

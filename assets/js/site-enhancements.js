@@ -199,8 +199,9 @@
     toggle.innerHTML = '<span class="toggle-icon">📊</span><span class="toggle-text">Show CI</span>';
     toggle.title = 'Toggle visibility of 95% confidence intervals';
 
-    var isHidden = localStorage.getItem(STORAGE_KEY) === 'true';
-    if (isHidden) {
+    // Default to hidden; only show if user has explicitly toggled them on
+    var isShown = localStorage.getItem(STORAGE_KEY) === 'false';
+    if (!isShown) {
       document.body.classList.add('hide-uncertainty');
       toggle.classList.add('ci-hidden');
       toggle.querySelector('.toggle-text').textContent = 'Show CI';
