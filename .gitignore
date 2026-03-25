@@ -151,19 +151,8 @@ README.html
 
 
 
-# Audiobook build artifacts (regenerate with: npm run audiobook:generate:all)
-# Keep: prepared text, subtitles, manifest, RSS feed
-# Ignore: audio files (WAV/MP3/M4B), alignment data, cache sidecars
-assets/audiobook/**/chapters/
-assets/audiobook/**/alignment/
-assets/audiobook/**/narration-txt-chunks/
-assets/audiobook/**/*.texthash
-assets/audiobook/**/.prepared_hash
-assets/audiobook/**/*.source_hash
-assets/audiobook/**/*.mp3
-assets/audiobook/**/*.m4b
-assets/audiobook/**/mp3/
-assets/audiobook/**/mp3-raw/
+# Audiobook build artifacts (regenerate with: npm run audiobook:generate:all, synced to R2)
+assets/audiobook/
 
 /.luarc.json
 /tools/
@@ -172,3 +161,4 @@ assets/kpf
 assets/docx
 *.mp4
 .locks/
+.vercel
