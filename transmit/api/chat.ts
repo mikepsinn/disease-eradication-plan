@@ -1,5 +1,5 @@
 /**
- * Vercel Serverless Function: /api/chat
+ * Vercel Edge Function: /api/chat
  *
  * Streaming chat endpoint using Gemini Flash + Wishonia persona.
  * Client sends { question, context, history } and receives a text stream.
@@ -9,7 +9,7 @@ import { streamText } from "ai";
 import { google } from "@ai-sdk/google";
 import { WISHONIA_SYSTEM_PROMPT } from "../lib/wishonia-chat";
 
-export const config = { maxDuration: 60 };
+export const config = { runtime: "edge" };
 
 export default async function handler(req: Request) {
   if (req.method === "OPTIONS") {
@@ -30,7 +30,10 @@ export default async function handler(req: Request) {
   const { question, context, history } = await req.json();
 
   if (!question) {
-    return Response.json({ error: "question is required" }, { status: 400 });
+    return new Response(JSON.stringify({ error: "question is required" }), {
+      status: 400,
+      headers: { "Content-Type": "application/json" },
+    });
   }
 
   const systemPrompt = WISHONIA_SYSTEM_PROMPT.replace(
