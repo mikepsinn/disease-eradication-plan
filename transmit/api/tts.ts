@@ -1,43 +1,55 @@
 /**
- * Vercel Serverless Function: /api/tts
+ * Vercel Edge Function: /api/tts
  *
  * Text-to-speech using Gemini TTS with Kore voice.
  * Client sends { text } and receives audio/wav.
  * Restricted to warondisease.org origins.
  */
 
-import type { VercelRequest, VercelResponse } from "@vercel/node";
 import { generateSpeech } from "../lib/gemini-tts";
-import { isAllowedOrigin } from "../lib/cors";
+import { corsHeaders, checkOrigin } from "../lib/cors";
 
-export default async function handler(req: VercelRequest, res: VercelResponse) {
-  const origin = req.headers.origin as string | undefined;
-  const allowed = isAllowedOrigin(origin || null)
-    ? origin!
-    : "https://manual.warondisease.org";
+export const config = { runtime: "edge" };
 
-  res.setHeader("Access-Control-Allow-Origin", allowed);
-  res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
-  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
-  res.setHeader("Vary", "Origin");
+export default async function handler(req: Request) {
+  const origin = req.headers.get("origin");
+  const cors = corsHeaders(origin);
 
-  if (req.method === "OPTIONS") return res.status(204).end();
-
-  if (origin && !isAllowedOrigin(origin)) {
-    return res.status(403).send("Forbidden");
+  if (req.method === "OPTIONS") {
+    return new Response(null, { status: 204, headers: cors });
   }
 
-  if (req.method !== "POST") return res.status(405).send("Method not allowed");
+  const blocked = checkOrigin(req);
+  if (blocked) return blocked;
 
-  const { text } = req.body;
-  if (!text) return res.status(400).json({ error: "text is required" });
+  if (req.method !== "POST") {
+    return new Response("Method not allowed", { status: 405, headers: cors });
+  }
+
+  const { text } = await req.json();
+
+  if (!text) {
+    return new Response(JSON.stringify({ error: "text is required" }), {
+      status: 400,
+      headers: { ...cors, "Content-Type": "application/json" },
+    });
+  }
 
   const apiKey = process.env.GOOGLE_GENERATIVE_AI_API_KEY;
-  if (!apiKey) return res.status(503).json({ error: "TTS service not configured" });
+  if (!apiKey) {
+    return new Response(JSON.stringify({ error: "TTS service not configured" }), {
+      status: 503,
+      headers: { ...cors, "Content-Type": "application/json" },
+    });
+  }
 
   const wavBytes = await generateSpeech(text, apiKey);
 
-  res.setHeader("Content-Type", "audio/wav");
-  res.setHeader("Cache-Control", "public, max-age=86400");
-  res.send(Buffer.from(wavBytes));
+  return new Response(wavBytes as unknown as BodyInit, {
+    headers: {
+      ...cors,
+      "Content-Type": "audio/wav",
+      "Cache-Control": "public, max-age=86400",
+    },
+  });
 }

@@ -3,29 +3,28 @@
  *
  * Streaming chat endpoint using Gemini Flash + Wishonia persona.
  * Client sends { question, context, history } and receives a text stream.
- * Restricted to warondisease.org origins.
+ * Open to all origins (embeddable widget support).
  */
 
 import { streamText } from "ai";
 import { google } from "@ai-sdk/google";
 import { WISHONIA_SYSTEM_PROMPT } from "../lib/wishonia-chat";
-import { corsHeaders, checkOrigin } from "../lib/cors";
 
 export const config = { runtime: "edge" };
 
-export default async function handler(req: Request) {
-  const origin = req.headers.get("origin");
-  const cors = corsHeaders(origin);
+const OPEN_CORS = {
+  "Access-Control-Allow-Origin": "*",
+  "Access-Control-Allow-Methods": "POST, OPTIONS",
+  "Access-Control-Allow-Headers": "Content-Type",
+};
 
+export default async function handler(req: Request) {
   if (req.method === "OPTIONS") {
-    return new Response(null, { status: 204, headers: cors });
+    return new Response(null, { status: 204, headers: OPEN_CORS });
   }
 
-  const blocked = checkOrigin(req);
-  if (blocked) return blocked;
-
   if (req.method !== "POST") {
-    return new Response("Method not allowed", { status: 405, headers: cors });
+    return new Response("Method not allowed", { status: 405, headers: OPEN_CORS });
   }
 
   const { question, context, history } = await req.json();
@@ -33,7 +32,7 @@ export default async function handler(req: Request) {
   if (!question) {
     return new Response(JSON.stringify({ error: "question is required" }), {
       status: 400,
-      headers: { ...cors, "Content-Type": "application/json" },
+      headers: { ...OPEN_CORS, "Content-Type": "application/json" },
     });
   }
 

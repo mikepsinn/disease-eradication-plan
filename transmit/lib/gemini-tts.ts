@@ -112,9 +112,12 @@ export async function generateSpeech(
     throw new Error("No audio data received from Gemini TTS");
   }
 
-  const audioData = new Uint8Array(
-    Buffer.from(part.inlineData.data, "base64")
-  );
+  // Decode base64 without Buffer (works in both Node.js and Edge runtime)
+  const binary = atob(part.inlineData.data);
+  const audioData = new Uint8Array(binary.length);
+  for (let i = 0; i < binary.length; i++) {
+    audioData[i] = binary.charCodeAt(i);
+  }
   const mimeType = part.inlineData.mimeType || "audio/L16;rate=24000";
 
   return convertToWav(audioData, mimeType);
