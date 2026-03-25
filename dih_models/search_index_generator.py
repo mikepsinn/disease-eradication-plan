@@ -58,7 +58,9 @@ class SearchIndexEntry:
         sections: Optional[List[str]] = None,
         published: bool = True,
         lastmod: Optional[str] = None,
-        text: Optional[str] = None
+        text: Optional[str] = None,
+        parameters: Optional[Dict[str, Any]] = None,
+        figures: Optional[List[Dict[str, str]]] = None,
     ):
         self.path = path
         self.url = url
@@ -70,6 +72,8 @@ class SearchIndexEntry:
         self.published = published
         self.lastmod = lastmod
         self.text = text
+        self.parameters = parameters or {}
+        self.figures = figures or []
 
     def to_dict(self) -> Dict[str, Any]:
         """Convert to dictionary for JSON serialization."""
@@ -86,6 +90,10 @@ class SearchIndexEntry:
         }
         if self.text:
             result["text"] = self.text
+        if self.parameters:
+            result["parameters"] = self.parameters
+        if self.figures:
+            result["figures"] = self.figures
         return result
 
 
@@ -127,11 +135,24 @@ class QMDParser:
         return sections
 
     @staticmethod
-    def extract_body_text(content: str, max_chars: int = 5000) -> str:
+    def extract_figures(content: str) -> List[Dict[str, str]]:
+        """Extract image references ![caption](path) before they get stripped."""
+        figures = []
+        for m in re.finditer(r'!\[([^\]]*)\]\(([^)]+)\)', content):
+            caption, path = m.group(1), m.group(2)
+            # Skip tiny icons, og images
+            if any(skip in path.lower() for skip in ('icon', '-og-', 'og-image', 'favicon')):
+                continue
+            figures.append({'path': path.lstrip('/'), 'caption': caption})
+        return figures
+
+    @staticmethod
+    def extract_body_text(content: str) -> str:
         """Extract plain body text from QMD content for search indexing.
 
         Strips frontmatter, Quarto shortcodes, callouts, includes, HTML tags,
-        markdown formatting, and normalizes whitespace. Truncates to max_chars.
+        markdown formatting, and normalizes whitespace. No truncation — the
+        chat RAG needs full chapter text for accurate retrieval.
         """
         # Remove frontmatter
         text = _FRONTMATTER_PATTERN.sub('', content, count=1)
@@ -153,13 +174,18 @@ class QMDParser:
         text = re.sub(r'!\[[^\]]*\]\([^\)]*\)', '', text)
         # Remove citation references [@key]
         text = re.sub(r'\[@[^\]]+\]', '', text)
+        # Remove $$ display math blocks
+        text = re.sub(r'\$\$.*?\$\$', '', text, flags=re.DOTALL)
+        # Remove inline $..$ math but NOT dollar amounts like $27.2B
+        # LaTeX inline math: $x + y$ (letters/operators inside)
+        # Dollar amounts: $27.2B, $500, $2.72T (digit after $)
+        text = re.sub(r'\$(?!\d)[^$]+\$', '', text)
+        # Remove {.class} annotations
+        text = re.sub(r'\{[.#][^}]+\}', '', text)
         # Normalize whitespace
         text = _MULTIPLE_SPACES_PATTERN.sub(' ', text)
         text = _MULTIPLE_NEWLINES_PATTERN.sub('\n\n', text)
         text = text.strip()
-        # Truncate
-        if len(text) > max_chars:
-            text = text[:max_chars] + '...'
         return text
 
 
@@ -179,6 +205,12 @@ class SearchIndexGenerator:
             self.variables = load_variables(variables_path) if variables_path.exists() else {}
         else:
             self.variables = variables
+        # Also load raw YAML values (with HTML) for parameter metadata extraction
+        variables_path = project_root / '_variables.yml'
+        if variables_path.exists():
+            self._raw_variables = yaml.safe_load(variables_path.read_text(encoding='utf-8')) or {}
+        else:
+            self._raw_variables = {}
         self.quarto_configs = self._discover_quarto_configs()
         # Cache for generated index entries (avoids re-parsing QMD files)
         self._index_cache: Dict[str, List[SearchIndexEntry]] = {}
@@ -463,6 +495,81 @@ class SearchIndexGenerator:
 
         return f"/{url_path}"
 
+    def _extract_parameter_metadata(self, content: str) -> Dict[str, Dict[str, Any]]:
+        """Extract structured metadata from parameter HTML for all {{< var >}} refs in content.
+
+        Parses the <a> or <span> HTML in variable values to extract:
+        - display: rendered display text (e.g. "$27.2B")
+        - href: link to parameters page with calculation details
+        - formula: calculation formula if present
+        - source_ref: BibTeX citation key
+        - source_type: "external", "calculated", or "definition"
+        - confidence: "high", "medium", "low"
+        - unit: parameter unit
+        - latex: full LaTeX equation from _latex variant if available
+        """
+        params: Dict[str, Dict[str, Any]] = {}
+
+        for match in _QUARTO_VAR_PATTERN.finditer(content):
+            var_name = match.group(1)
+            if var_name in params:
+                continue
+            # Skip _latex, _nounit, _cite variants
+            if var_name.endswith(('_latex', '_nounit', '_cite')):
+                continue
+
+            html_val = self._raw_variables.get(var_name)
+            if not html_val:
+                continue
+
+            meta: Dict[str, Any] = {}
+
+            # Extract display text from <a ...>text</a> or <span ...>text</span>
+            display_match = re.search(r'>([^<]+)</(?:a|span)>', html_val)
+            if display_match:
+                display = display_match.group(1).strip()
+                # Strip CI from display: "$500 (95% CI: $400-$2.5K)" -> "$500"
+                display = re.sub(r'\s*\(95% CI:[^)]+\)', '', display)
+                meta['display'] = display
+            else:
+                meta['display'] = re.sub(r'<[^>]+>', '', html_val).strip()
+
+            # Extract href
+            href_match = re.search(r'href="([^"]+)"', html_val)
+            if href_match:
+                meta['href'] = href_match.group(1)
+
+            # Extract data attributes
+            for attr in ('source-ref', 'source-type', 'confidence'):
+                attr_match = re.search(rf'data-{attr}="([^"]*)"', html_val)
+                if attr_match and attr_match.group(1):
+                    meta[attr.replace('-', '_')] = attr_match.group(1)
+
+            # Extract formula and unit from title attribute
+            title_match = re.search(r'title="([^"]*)"', html_val)
+            if title_match:
+                title_text = title_match.group(1)
+                formula_match = re.search(r'Formula:\s*([^|]+)', title_text)
+                if formula_match:
+                    meta['formula'] = formula_match.group(1).strip()
+                unit_match = re.search(r'Unit:\s*([^|]+)', title_text)
+                if unit_match:
+                    meta['unit'] = unit_match.group(1).strip()
+
+            # Include _latex equation if available
+            latex_key = var_name + '_latex'
+            if latex_key in self._raw_variables:
+                latex_val = self._raw_variables[latex_key]
+                # Strip HTML wrapping if any
+                latex_clean = re.sub(r'<[^>]+>', '', latex_val).strip()
+                if latex_clean:
+                    meta['latex'] = latex_clean
+
+            if meta.get('display'):
+                params[var_name] = meta
+
+        return params
+
     def _replace_variables_strict(self, text: str, source_path: Path) -> str:
         """Replace Quarto variables, raising error if any are missing.
 
@@ -565,11 +672,26 @@ class SearchIndexGenerator:
             except ValueError:
                 rel_path = str(qmd_path)
 
+            # Extract parameter metadata BEFORE variable replacement strips the HTML
+            parameters = self._extract_parameter_metadata(content)
+
+            # Extract figures BEFORE image markdown gets stripped
+            figures = self.parser.extract_figures(content)
+
             # Extract body text for full-text search / RAG
             # Replace variables first (before stripping markdown), then extract plain text
-            content_with_vars = _QUARTO_VAR_PATTERN.sub(
-                lambda m: self.variables.get(m.group(1), m.group(0)), content
-            )
+            # For variable replacement, strip parameter HTML to plain display text
+            def _var_to_display(m):
+                var_name = m.group(1)
+                html_val = self.variables.get(var_name, m.group(0))
+                # Extract display text from <a>text</a> or <span>text</span>
+                display_match = re.search(r'>([^<]+)</(?:a|span)>', html_val)
+                if display_match:
+                    display = display_match.group(1).strip()
+                    return re.sub(r'\s*\(95% CI:[^)]+\)', '', display)
+                return re.sub(r'<[^>]+>', '', html_val).strip()
+
+            content_with_vars = _QUARTO_VAR_PATTERN.sub(_var_to_display, content)
             body_text = self.parser.extract_body_text(content_with_vars)
 
             return SearchIndexEntry(
@@ -582,7 +704,9 @@ class SearchIndexGenerator:
                 sections=sections,
                 published=published,
                 lastmod=lastmod,
-                text=body_text
+                text=body_text,
+                parameters=parameters,
+                figures=figures,
             )
 
         except Exception as e:
@@ -621,54 +745,45 @@ class SearchIndexGenerator:
         self._index_cache[config_name] = entries
         return entries
 
-    def write_index_json(self, config_name: str, entries: List[SearchIndexEntry]) -> Path:
-        """Write search index to JSON file."""
-        config = self.quarto_configs[config_name]
-        output_dir = self.project_root / config['output_dir']
-        output_dir.mkdir(parents=True, exist_ok=True)
+    # Canonical search index path for the chat widget RAG system.
+    # Generated from _quarto-manual.yml (the comprehensive config with all chapters).
+    CANONICAL_INDEX_PATH = "assets/json/search-index.json"
 
-        output_file = output_dir / 'search-index.json'
+    def generate_chat_index(self) -> Path:
+        """Generate the canonical search index for the chat widget RAG system.
 
-        # Convert entries to dictionaries
+        Builds from the 'manual' config (_quarto-manual.yml) which contains all
+        chapters. Writes to assets/json/search-index.json. Quarto generates its
+        own search.json during render; this index is specifically for the chat RAG.
+
+        Returns:
+            Path to the generated search-index.json
+        """
+        config_name = 'manual'
+        if config_name not in self.quarto_configs:
+            raise ValueError(f"Config '{config_name}' not found. Available: {list(self.quarto_configs.keys())}")
+
+        # Prefetch git dates for all manual files
+        qmd_files = self.get_qmd_files_for_config(config_name)
+        self._prefetch_git_lastmods(
+            self._resolve_actual_source_path(qmd_path, config_name) for qmd_path in qmd_files
+        )
+
+        entries = self.generate_index_for_config(config_name)
+
+        output_path = self.project_root / self.CANONICAL_INDEX_PATH
+        output_path.parent.mkdir(parents=True, exist_ok=True)
         data = [entry.to_dict() for entry in entries]
-
-        # Write JSON
-        with open(output_file, 'w', encoding='utf-8') as f:
+        with open(output_path, 'w', encoding='utf-8') as f:
             json.dump(data, f, indent=2, ensure_ascii=False)
 
-        logger.debug("Wrote search index to %s", output_file.relative_to(self.project_root))
-        return output_file
-
-    def generate_all_indexes(self) -> Dict[str, Path]:
-        """Generate search indexes for all Quarto configs."""
-        logger.debug("=" * 60)
-        logger.debug("GENERATING SEARCH INDEXES")
-        logger.debug("=" * 60)
-
-        output_files = {}
-        all_source_paths = []
-
-        for config_name in self.quarto_configs.keys():
-            for qmd_path in self.get_qmd_files_for_config(config_name):
-                all_source_paths.append(self._resolve_actual_source_path(qmd_path, config_name))
-        self._prefetch_git_lastmods(all_source_paths)
-
-        for config_name in self.quarto_configs.keys():
-            entries = self.generate_index_for_config(config_name)
-            if entries:
-                output_file = self.write_index_json(config_name, entries)
-                output_files[config_name] = output_file
-
-        logger.debug("=" * 60)
-        logger.debug("Generated %d search indexes", len(output_files))
-        logger.debug("=" * 60)
-
-        return output_files
+        logger.debug("Wrote chat search index: %s (%d entries)", self.CANONICAL_INDEX_PATH, len(data))
+        return output_path
 
 
-def generate_search_indexes(project_root: Path, variables: Optional[Dict[str, str]] = None) -> Dict[str, Path]:
+def generate_search_indexes(project_root: Path, variables: Optional[Dict[str, str]] = None) -> Path:
     """
-    Main entry point for search index generation.
+    Generate the chat search index from _quarto-manual.yml.
 
     Args:
         project_root: Path to project root directory
@@ -676,10 +791,10 @@ def generate_search_indexes(project_root: Path, variables: Optional[Dict[str, st
                    loads from _variables.yml in project_root.
 
     Returns:
-        Dict mapping config names to output file paths
+        Path to the generated assets/json/search-index.json
     """
     generator = SearchIndexGenerator(project_root, variables)
-    return generator.generate_all_indexes()
+    return generator.generate_chat_index()
 
 
 if __name__ == "__main__":

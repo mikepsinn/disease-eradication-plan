@@ -4,7 +4,7 @@
 
 Quarto book: "How to End War and Disease" - getting nations to sign a 1% treaty redirecting military spending to clinical trials.
 
-**Navigation:** `todo.md` (priorities), `OUTLINE.md` (structure), `index.qmd` (intro), `_book.yml` (config), `package.json` (scripts)
+**Navigation:** `todo.md` (priorities), `_quarto-manual.yml` (structure), `index-manual.qmd` (intro auto copied to index.qmd on build), `package.json` (scripts)
 
 **Run TypeScript with `tsx`**, not ts-node. Batch changes: `npx tsx scripts/review/apply-instruction-all-files.ts "instruction"`
 
@@ -78,9 +78,7 @@ Check existing: `grep "keyword" _variables.yml`. Never duplicate. Generate: `npm
 |------|---------|
 | Regenerate everything | `npm run generate:everything` |
 | Validate before render | `npm run validate:pre-render` |
-| Review checks | `npx tsx scripts/review/run-checks.ts file.qmd --checks fact,link,structure` |
 | Find param usages | `npx tsx scripts/parameter-audit.ts PARAM_NAME` |
 | Unused params | `npm run param:unused` |
-| Outline | `python scripts/generate-outline.py` |
 
-Available checks: `fact`, `link`, `figure`, `structure`, `param`, `latex`, `format`, `nonprofit`
+

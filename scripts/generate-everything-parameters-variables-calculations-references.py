@@ -1247,32 +1247,12 @@ def main():
         logger.debug("[*] Normalizing novel concept links/citations in manual QMD files...")
         normalize_manual_concept_links(project_root, config_name="manual")
 
-    # Generate search indexes for all Quarto configs
+    # Generate chat search index from _quarto-manual.yml
     # Keep generator instance to reuse in generate_sites_metadata (avoids re-parsing configs)
     from dih_models.search_index_generator import SearchIndexGenerator
     _search_generator = SearchIndexGenerator(project_root)
-    _search_generator.generate_all_indexes()
+    _search_generator.generate_chat_index()
 
-    # Generate outline from updated headings (optional - OK to fail)
-    logger.debug("[*] Regenerating outline from chapter headings...")
-    generate_outline_script = project_root / "scripts" / "generate-outline.py"
-    if generate_outline_script.exists():
-        try:
-            result = subprocess.run(
-                [sys.executable, str(generate_outline_script)],
-                cwd=str(project_root),
-                capture_output=True,
-                text=True,
-                encoding='utf-8'
-            )
-            if result.returncode == 0:
-                logger.debug("[OK] Outline regenerated")
-            else:
-                logger.warning(f"[WARN] Outline generation had issues: {result.stderr}")
-        except Exception as e:
-            logger.warning(f"[WARN] Could not regenerate outline: {e}")
-    else:
-        logger.warning(f"[WARN] Outline script not found: {generate_outline_script}")
 
     # Regenerate GitHub Actions workflow from Quarto configs (optional - CI catches issues)
     try:

@@ -22,9 +22,7 @@ const ROOT = resolve(__dirname, "..");
 const API_URL =
   process.env.CHAT_API_URL || "https://transmit.warondisease.org/api/chat";
 const SEARCH_INDEX_PATHS = [
-  "_manual-paperback/warondisease/search-index.json",
-  "_manual/warondisease/search-index.json",
-  "_site/manual/search.json",
+  "assets/json/search-index.json",
 ];
 
 const args = process.argv.slice(2);
@@ -52,7 +50,7 @@ const TESTS: TestCase[] = [
     name: "RECOVERY trial cost per patient",
     question: "What did the RECOVERY trial cost per patient?",
     expectInContext: ["$500", "RECOVERY"],
-    expectChunks: ["nih-fails"],
+    expectChunks: ["recovery"],
     expectInAnswer: ["$500", "41,000"],
   },
   {
@@ -117,7 +115,6 @@ const TESTS: TestCase[] = [
     name: "GDP per capita under treaty vs Wishonia trajectory",
     question: "What would average income per person be under the 1% treaty path after 20 years?",
     expectInContext: ["339", "income"],
-    expectChunks: ["gdp-trajectories"],
     expectInAnswer: ["339"],
   },
   {

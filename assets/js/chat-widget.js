@@ -91,7 +91,11 @@
         ?.getAttribute("content") || "";
     if (offset && offset.charAt(offset.length - 1) !== "/") offset += "/";
 
-    var urls = [offset + "search-index.json", offset + "search.json"];
+    var urls = [
+      offset + "assets/json/search-index.json",
+      offset + "search-index.json",
+      offset + "search.json"
+    ];
     tryFetch(urls, 0);
   }
 
