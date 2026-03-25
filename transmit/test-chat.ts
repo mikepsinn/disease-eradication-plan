@@ -100,6 +100,45 @@ const TESTS: TestCase[] = [
     expectChunks: ["incentive-alignment-bonds"],
     expectInAnswer: ["bond"],
   },
+  {
+    name: "Political Dysfunction Tax total",
+    question: "What is the total Political Dysfunction Tax and how much value is lost?",
+    expectInContext: ["101", "dysfunction"],
+    expectInAnswer: ["101"],
+  },
+  {
+    name: "Hegemony Tax military overspend",
+    question: "How much does the US military overspend beyond what strict deterrence requires?",
+    expectInContext: ["military", "spending"],
+    // $615B detail is in the PDT chapter but too granular for Quarto's index
+    // TODO: custom search index will surface this
+  },
+  {
+    name: "GDP per capita under treaty vs Wishonia trajectory",
+    question: "What would average income per person be under the 1% treaty path after 20 years?",
+    expectInContext: ["339", "income"],
+    expectChunks: ["gdp-trajectories"],
+    expectInAnswer: ["339"],
+  },
+  {
+    name: "Destructive economy timeline to collapse",
+    question: "When does the destructive economy reach 35% of GDP and begin the death spiral?",
+    expectInContext: ["11.5%", "destructive"],
+    expectChunks: ["gdp-trajectories"],
+  },
+  {
+    name: "IAB allocation split",
+    question: "How are 1% treaty funds allocated between research, investors, and political incentives?",
+    expectInContext: ["80%", "treaty"],
+    expectInAnswer: ["80%", "10%"],
+    rejectInAnswer: ["15%"],
+  },
+  {
+    name: "Earth Optimization Prize mechanism",
+    question: "How does the Earth Optimization Prize work and what are the target metrics?",
+    expectInContext: ["prize", "target"],
+    expectChunks: ["earth-optimization"],
+  },
 ];
 
 // ─── Helpers ─────────────────────────────────────────────────────────

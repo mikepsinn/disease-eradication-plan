@@ -29,6 +29,13 @@
   }
 
   // ========================================
+  // API BASE (set via <meta name="dih-api-base" content="https://transmit.warondisease.org">)
+  // ========================================
+
+  var apiBaseMeta = document.querySelector('meta[name="dih-api-base"]');
+  var API_BASE = apiBaseMeta ? apiBaseMeta.content.replace(/\/$/, '') : '';
+
+  // ========================================
   // STATE
   // ========================================
 
@@ -1229,7 +1236,7 @@
     // Abort controller for stop button
     abortController = new AbortController();
 
-    fetch("/api/chat", {
+    fetch(API_BASE + "/api/chat", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -1488,7 +1495,7 @@
     msgContainer.appendChild(waveform);
     scrollToBottom();
 
-    fetch("/api/tts", {
+    fetch(API_BASE + "/api/tts", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ text: text }),
@@ -1638,7 +1645,7 @@
     // Fetch API key for voice connection
     var voiceCredentials;
     try {
-      voiceCredentials = await fetch("/api/voice-token").then(function (r) {
+      voiceCredentials = await fetch(API_BASE + "/api/voice-token").then(function (r) {
         if (!r.ok) throw new Error("Token request failed: " + r.status);
         return r.json();
       });
