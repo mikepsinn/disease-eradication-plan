@@ -67,18 +67,11 @@ export default async (req: Request) => {
     messages,
   });
 
-  // Stream plain text back to the client
-  const encoder = new TextEncoder();
-  const stream = new ReadableStream({
-    async start(controller) {
-      for await (const chunk of result.textStream) {
-        controller.enqueue(encoder.encode(chunk));
-      }
-      controller.close();
-    },
-  });
+  // Use the AI SDK's built-in streaming response (works with Netlify's proxy)
+  const response = result.toTextStreamResponse();
 
-  return new Response(stream, {
+  // Re-wrap with CORS headers
+  return new Response(response.body, {
     headers: {
       ...CORS_HEADERS,
       "Content-Type": "text/plain; charset=utf-8",
