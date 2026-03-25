@@ -101,16 +101,13 @@ jobs:
 
       - name: "Deploy Build How to End War and Disease to Netlify"
         if: ${{ (github.event_name == 'push' && github.ref == 'refs/heads/develop') || (github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/develop') }}
-        uses: nwtgck/actions-netlify@v3.0
-        with:
-          publish-dir: '_build_temp/manual/_manual/warondisease'
-          functions-dir: 'netlify/functions'
-          production-deploy: true
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          deploy-message: "Deploy manual from ${{ github.ref_name }}"
-          enable-pull-request-comment: true
-          enable-commit-comment: true
-          overwrites-pull-request-comment: true
+        run: |
+          npm install -g netlify-cli
+          netlify deploy \
+            --dir='_build_temp/manual/_manual/warondisease' \
+            --functions='netlify/functions' \
+            --prod \
+            --message="Deploy manual from ${{ github.ref_name }}"
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: 4e36b0d6-9b80-49e2-bf16-eb4d2f79f062
