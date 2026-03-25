@@ -2,7 +2,7 @@
  * Talk Widget - Ask Wishonia
  *
  * Client-side talk UI with:
- *   - RAG from Quarto's search.json (TF-IDF scoring)
+ *   - RAG from search-index.json (TF-IDF scoring)
  *   - Streaming text responses via /api/chat
  *   - Voice input (Web Speech API)
  *   - Voice output (Gemini TTS via /api/tts)
