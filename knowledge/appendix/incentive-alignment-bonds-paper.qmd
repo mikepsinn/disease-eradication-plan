@@ -6,12 +6,14 @@ abstract: |
   benefit-cost ratios exceeding 100:1 (vaccines, e-governance) receive single-digit billions while programs
   with negative net returns (military beyond deterrence, fossil fuel subsidies) receive hundreds of billions.
   This paper introduces Incentive Alignment Bonds (IABs), financial instruments that realign politician
-  incentives with net societal value optimization. IABs create a capital pool that rewards politicians
+  incentives with net societal value optimization. IABs create a capital pool funded by treaty inflows
+  (80% to pragmatic clinical trials, {{< var victory_bond_funding_pct >}} to investor returns,
+  {{< var iab_political_incentive_funding_pct >}} to political incentives) that rewards politicians
   (via campaign support and post-office career opportunities) for funding high-NSV programs over low-NSV
   alternatives. The mechanism requires no legislative change: existing PAC infrastructure, impact bonds,
   and prediction markets can deploy it today. Analysis of a proposed 1% Treaty redirecting
-  {{< var treaty_annual_funding >}}/year from military spending to medical research shows expected returns
-  exceeding 100:1 for early investors. The 90:1 capital asymmetry ({{< var global_household_wealth_usd >}}
+  {{< var treaty_annual_funding >}}/year from military spending to medical research shows a conditional
+  {{< var victory_bond_annual_return_pct >}} annual return for bondholders while the treaty remains in force. The 90:1 capital asymmetry ({{< var global_household_wealth_usd >}}
   in household wealth vs. {{< var concentrated_interest_sector_market_cap_usd >}} for concentrated
   interests) means diffuse beneficiaries can outspend incumbent lobbies once coordination problems are
   solved. IABs solve that coordination problem by turning political change into an investable asset class.

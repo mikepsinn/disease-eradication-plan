@@ -200,7 +200,7 @@ Select "Enter the details myself", then fill:
 
 [![Incentive Alignment Bonds: Making Public Goods Financially and Politically Profitable](https://manual.warondisease.org/assets/og/iab-og-1200x630.jpg)](https://manual.warondisease.org/knowledge/appendix/incentive-alignment-bonds-paper.html)
 
-> Government spending correlates with lobbying intensity, not marginal societal value. Programs with benefit-cost ratios exceeding 100:1 (vaccines, e-governance) receive single-digit billions while programs with negative net returns (military beyond deterrence, fossil fuel subsidies) receive hundreds of billions. This paper introduces Incentive Alignment Bonds (IABs), financial instruments that realign politician incentives with net societal value optimization. IABs create a capital pool that rewards politicians (via campaign support and post-office career opportunities) for funding high-NSV programs over low-NSV alternatives. The mechanism requires no legislative change: existing PAC infrastructure, impact bonds, and prediction markets can deploy it today. Analysis of a proposed 1% Treaty redirecting $27.2B/year from military spending to medical research shows expected returns exceeding 100:1 for early investors. The 90:1 capital asymmetry ($454T in household wealth vs. $5T for concentrated interests) means diffuse beneficiaries can outspend incumbent lobbies once coordination problems are solved. IABs solve that coordination problem by turning political change into an investable asset class. A dominant assurance contract mechanism solves the bootstrap coordination problem: investor participation is the strictly dominant strategy regardless of beliefs about other investors' behavior, closing the end-to-end incentive chain from citizen coordination through treaty passage. At system scale, the Optimal Governance Trajectory reaches 56.7x the Earth baseline after 20 years, raises average income to $1.16M versus $20.5K on the status-quo path, reaches $10.7 quadrillion in total output, and recovers roughly $101T/year in suppressed value ([The Political Dysfunction Tax](https://political-dysfunction-tax.warondisease.org)).
+> Government spending correlates with lobbying intensity, not marginal societal value. Programs with benefit-cost ratios exceeding 100:1 (vaccines, e-governance) receive single-digit billions while programs with negative net returns (military beyond deterrence, fossil fuel subsidies) receive hundreds of billions. This paper introduces Incentive Alignment Bonds (IABs), financial instruments that realign politician incentives with net societal value optimization. IABs create a capital pool funded by treaty inflows (80% to pragmatic clinical trials, 10% to investor returns, 10% to political incentives) that rewards politicians (via campaign support and post-office career opportunities) for funding high-NSV programs over low-NSV alternatives. The mechanism requires no legislative change: existing PAC infrastructure, impact bonds, and prediction markets can deploy it today. Analysis of a proposed 1% Treaty redirecting $27.2B/year from military spending to medical research shows a conditional 272% annual return for bondholders while the treaty remains in force. The 90:1 capital asymmetry ($454T in household wealth vs. $5T for concentrated interests) means diffuse beneficiaries can outspend incumbent lobbies once coordination problems are solved. IABs solve that coordination problem by turning political change into an investable asset class. A dominant assurance contract mechanism solves the bootstrap coordination problem: investor participation is the strictly dominant strategy regardless of beliefs about other investors' behavior, closing the end-to-end incentive chain from citizen coordination through treaty passage. At system scale, the Optimal Governance Trajectory reaches 56.7x the Earth baseline after 20 years, raises average income to $1.16M versus $20.5K on the status-quo path, reaches $10.7 quadrillion in total output, and recovers roughly $101T/year in suppressed value ([The Political Dysfunction Tax](https://political-dysfunction-tax.warondisease.org)).
 
 
 <!--
@@ -209,7 +209,7 @@ Select "Enter the details myself", then fill:
 TITLE: Incentive Alignment Bonds: Making Public Goods Financially and Politically Profitable
 
 ABSTRACT:
-Government spending correlates with lobbying intensity, not marginal societal value. Programs with benefit-cost ratios exceeding 100:1 (vaccines, e-governance) receive single-digit billions while programs with negative net returns (military beyond deterrence, fossil fuel subsidies) receive hundreds of billions. This paper introduces Incentive Alignment Bonds (IABs), financial instruments that realign politician incentives with net societal value optimization. IABs create a capital pool that rewards politicians (via campaign support and post-office career opportunities) for funding high-NSV programs over low-NSV alternatives. The mechanism requires no legislative change: existing PAC infrastructure, impact bonds, and prediction markets can deploy it today. Analysis of a proposed 1% Treaty redirecting $27.2B/year from military spending to medical research shows expected returns exceeding 100:1 for early investors. The 90:1 capital asymmetry ($454T in household wealth vs. $5T for concentrated interests) means diffuse beneficiaries can outspend incumbent lobbies once coordination problems are solved. IABs solve that coordination problem by turning political change into an investable asset class. A dominant assurance contract mechanism solves the bootstrap coordination problem: investor participation is the strictly dominant strategy regardless of beliefs about other investors' behavior, closing the end-to-end incentive chain from citizen coordination through treaty passage. At system scale, the Optimal Governance Trajectory reaches 56.7x the Earth baseline after 20 years, raises average income to $1.16M versus $20.5K on the status-quo path, reaches $10.7 quadrillion in total output, and recovers roughly $101T/year in suppressed value ([The Political Dysfunction Tax](https://political-dysfunction-tax.warondisease.org)).
+Government spending correlates with lobbying intensity, not marginal societal value. Programs with benefit-cost ratios exceeding 100:1 (vaccines, e-governance) receive single-digit billions while programs with negative net returns (military beyond deterrence, fossil fuel subsidies) receive hundreds of billions. This paper introduces Incentive Alignment Bonds (IABs), financial instruments that realign politician incentives with net societal value optimization. IABs create a capital pool funded by treaty inflows (80% to pragmatic clinical trials, 10% to investor returns, 10% to political incentives) that rewards politicians (via campaign support and post-office career opportunities) for funding high-NSV programs over low-NSV alternatives. The mechanism requires no legislative change: existing PAC infrastructure, impact bonds, and prediction markets can deploy it today. Analysis of a proposed 1% Treaty redirecting $27.2B/year from military spending to medical research shows a conditional 272% annual return for bondholders while the treaty remains in force. The 90:1 capital asymmetry ($454T in household wealth vs. $5T for concentrated interests) means diffuse beneficiaries can outspend incumbent lobbies once coordination problems are solved. IABs solve that coordination problem by turning political change into an investable asset class. A dominant assurance contract mechanism solves the bootstrap coordination problem: investor participation is the strictly dominant strategy regardless of beliefs about other investors' behavior, closing the end-to-end incentive chain from citizen coordination through treaty passage. At system scale, the Optimal Governance Trajectory reaches 56.7x the Earth baseline after 20 years, raises average income to $1.16M versus $20.5K on the status-quo path, reaches $10.7 quadrillion in total output, and recovers roughly $101T/year in suppressed value ([The Political Dysfunction Tax](https://political-dysfunction-tax.warondisease.org)).
 
 AUTHOR: Mike P. Sinn
 EMAIL: m@warondisease.org
@@ -496,6 +496,60 @@ Select "Enter the details myself", then fill:
   Publication Date: 2025
   DOI: 10.5281/zenodo.18356215
   URL: https://manual.warondisease.org/knowledge/appendix/cost-of-change-analysis.html
+  (Leave Journal, Volume, Issue, Pages blank for working papers)
+
+-->
+
+### [Algorithmic Public Administration: A Protocol for Replacing Government Intermediaries with Deterministic Functions](https://manual.warondisease.org/knowledge/appendix/algorithmic-public-administration.html)
+
+> A protocol combining five primitives (transparent ledger, preference aggregation, evidence engine, identity verification, automated monetary policy) to replace mechanical government agency functions, eliminating administrative intermediation costs while preserving democratic control.
+
+
+<!--
+=== SUBMISSION INFO: Algorithmic Public Administration: A Protocol for Replacing Government Intermediaries with Deterministic Functions ===
+
+TITLE: Algorithmic Public Administration: A Protocol for Replacing Government Intermediaries with Deterministic Functions
+
+ABSTRACT:
+A protocol combining five primitives (transparent ledger, preference aggregation, evidence engine, identity verification, automated monetary policy) to replace mechanical government agency functions, eliminating administrative intermediation costs while preserving democratic control.
+
+AUTHOR: Mike P. Sinn
+EMAIL: m@warondisease.org
+AFFILIATION: Institute for Accelerated Medicine
+ORCID: 0009-0006-0212-1094
+
+KEYWORDS: Algorithmic Governance, Public Administration, Mechanism Design, Government Efficiency, Monetary Policy, Direct Democracy, Universal Basic Income, Preference Aggregation, Transparent Ledger, Smart Contracts
+
+SUBJECT AREAS: Algorithmic Governance, Public Administration, Mechanism Design, Monetary Policy, Government Efficiency
+CATEGORY: Academic Paper, Public Policy, Economics, Systems Engineering
+GENRE: Public Administration, Mechanism Design, Government Efficiency, Systems Engineering
+
+PDF: https://manual.warondisease.org/knowledge/appendix/algorithmic-public-administration.html/algorithmic-public-administration.pdf
+LICENSE: CC BY-NC 4.0
+COPYRIGHT YEAR: 2025
+
+=== PLATFORM STATUS ===
+WEBSITE: pending | https://manual.warondisease.org/knowledge/appendix/algorithmic-public-administration.html
+SSRN: pending
+ARXIV: pending | category: econ.GN
+
+=== JOURNAL TARGETS ===
+Journal of Institutional Economics (Tier 2): target
+Public Choice (Tier 2): target
+
+SUGGESTED CITATION: Mike P. Sinn (2025). Algorithmic Public Administration: A Protocol for Replacing Government Intermediaries with Deterministic Functions. Working Draft. Available at https://manual.warondisease.org/knowledge/appendix/algorithmic-public-administration.html
+
+=== STATEMENTS (for journal submissions) ===
+COI: The author declares no competing interests. The author does prefer systems where paying millions of humans to execute deterministic functions is recognized as an expensive way to avoid writing the code.
+FUNDING: This research received no government funding. Given the findings, this is perhaps unsurprising.
+ETHICS: This research did not involve human subjects. The administrative intermediation it proposes replacing does, however, employ several million of them.
+DATA: All data and code used in this analysis are publicly available at https://github.com/wishonia/earth-optimization-protocol
+
+=== SSRN "Publication Details" BOX ===
+Select "Enter the details myself", then fill:
+  Publisher: Institute for Accelerated Medicine
+  Publication Date: 2025
+  URL: https://manual.warondisease.org/knowledge/appendix/algorithmic-public-administration.html
   (Leave Journal, Volume, Issue, Pages blank for working papers)
 
 -->
