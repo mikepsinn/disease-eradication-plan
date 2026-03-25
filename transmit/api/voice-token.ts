@@ -1,8 +1,10 @@
 /**
- * Vercel Serverless Function: /api/voice-token
+ * Vercel Edge Function: /api/voice-token
  *
  * Returns credentials for the Gemini Live API WebSocket connection.
  */
+
+export const config = { runtime: "edge" };
 
 export default async function handler(req: Request) {
   if (req.method === "OPTIONS") {
@@ -18,7 +20,10 @@ export default async function handler(req: Request) {
 
   const apiKey = process.env.GOOGLE_GENERATIVE_AI_API_KEY;
   if (!apiKey) {
-    return Response.json({ error: "Voice service not configured" }, { status: 503 });
+    return new Response(JSON.stringify({ error: "Voice service not configured" }), {
+      status: 503,
+      headers: { "Content-Type": "application/json" },
+    });
   }
 
   return new Response(JSON.stringify({ key: apiKey }), {

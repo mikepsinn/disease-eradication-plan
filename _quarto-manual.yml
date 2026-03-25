@@ -441,6 +441,8 @@ format:
           <script src="/assets/js/generated-subdomain-redirects.js"></script>
           <!-- Feature flags for site-enhancements.js -->
           <meta name="dih-disable-features" content="cite">
+          <!-- Chat API served from Vercel (transmit.warondisease.org) -->
+          <meta name="dih-api-base" content="https://transmit.warondisease.org">
           <meta name="dih-hide-index-title" content="true">
           <!-- RSS feed discovery -->
           <link rel="alternate" type="application/rss+xml" title="How to End War and Disease" href="/assets/feed.xml">
