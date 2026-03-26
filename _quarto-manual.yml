@@ -5,7 +5,6 @@ project:
   resources:
     - knowledge/data/
     - assets/
-    - talk.html
     - _redirects
     - robots.txt
     - llms.txt
@@ -50,7 +49,7 @@ book:
       - text: "VOTE"
         href: https://WarOnDisease.org
       - text: "TALK"
-        href: talk.html
+        href: https://transmit.warondisease.org
       - text: "SUPPORT"
         href: https://github.com/sponsors/wishonia
       - text: "GET THE MANUAL"
@@ -441,9 +440,10 @@ format:
       - text: |
           <script src="/assets/js/generated-subdomain-redirects.js"></script>
           <!-- Feature flags for site-enhancements.js -->
-          <meta name="dih-disable-features" content="cite">
-          <!-- Chat API served from Vercel (transmit.warondisease.org) -->
-          <meta name="dih-api-base" content="https://transmit.warondisease.org">
+          <meta name="dih-disable-features" content="cite,chat">
+          <!-- Chat FAB links to transmit.warondisease.org -->
+          <style>.chat-fab{position:fixed;bottom:24px;right:24px;width:56px;height:56px;border-radius:50%;background:var(--bs-primary,#2a6b4f);color:#fff;border:none;cursor:pointer;z-index:9998;box-shadow:0 4px 12px rgba(0,0,0,.25);display:flex;align-items:center;justify-content:center;transition:transform .2s,box-shadow .2s;text-decoration:none}.chat-fab:hover{transform:scale(1.08);box-shadow:0 6px 20px rgba(0,0,0,.35)}</style>
+          <a href="https://transmit.warondisease.org" class="chat-fab" aria-label="Talk with Wishonia" title="Talk to Wishonia"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg></a>
           <meta name="dih-hide-index-title" content="true">
           <!-- RSS feed discovery -->
           <link rel="alternate" type="application/rss+xml" title="How to End War and Disease" href="/assets/feed.xml">

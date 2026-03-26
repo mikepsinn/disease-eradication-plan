@@ -1,20 +1,13 @@
 <!-- Site Enhancements Loader -->
-<!-- Loads site-enhancements.js, promotion-bar.js, and chat-widget.js with correct path offset -->
+<!-- Loads site-enhancements.js and promotion-bar.js with correct path offset -->
+<!-- Chat widget lives at transmit.warondisease.org (not loaded here) -->
 <!-- To disable promotion bar on a page: <meta name="wod-promo-hide" content="true"> -->
-<!-- To disable chat widget on a page: <meta name="dih-disable-features" content="chat"> -->
 <script>
   (function() {
     var offset = document.querySelector('meta[name="quarto:offset"]')?.getAttribute('content') || '';
     if (offset && offset.charAt(offset.length - 1) !== '/') offset += '/';
 
-    // Load chat widget CSS
-    var link = document.createElement('link');
-    link.rel = 'stylesheet';
-    link.href = offset + 'assets/css/chat-widget.css';
-    document.head.appendChild(link);
-
-    // Load scripts (audio-worklet-processor.js is loaded at runtime by AudioWorklet, not here)
-    var scripts = ['assets/js/generated-subdomain-redirects.js', 'assets/js/gemini-live-client.js', 'assets/js/audio-utils.js', 'assets/js/site-enhancements.js', 'assets/js/promotion-bar.js', 'assets/js/chat-widget.js'];
+    var scripts = ['assets/js/generated-subdomain-redirects.js', 'assets/js/site-enhancements.js', 'assets/js/promotion-bar.js'];
     for (var i = 0; i < scripts.length; i++) {
       var s = document.createElement('script');
       s.src = offset + scripts[i];
