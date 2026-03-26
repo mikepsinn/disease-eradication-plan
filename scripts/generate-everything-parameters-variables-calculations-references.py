@@ -679,7 +679,7 @@ def main():
     import shutil
     ts_copy_targets = [
         Path(r"E:\code\obsidian\websites\dih-earth\lib\parameters-calculations-citations.ts"),
-        Path(r"E:\code\obsidian\websites\optomitron\packages\web\src\lib\parameters-calculations-citations.ts"),
+        Path(r"E:\code\optimitron\packages\data\src\parameters\parameters-calculations-citations.ts"),
     ]
     for target in ts_copy_targets:
         if target.parent.exists():
