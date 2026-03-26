@@ -65,7 +65,7 @@ lint-errors.txt
 /.quarto/
 **/*.quarto_ipynb
 site_libs/
-index.html
+/index.html
 brain/figures/**/*.html
 
 # Ignore stray HTML and _files directories from `quarto preview`
