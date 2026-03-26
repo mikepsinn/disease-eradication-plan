@@ -127,15 +127,69 @@
     }
   };
 
-  // ─── Alien Girl Character (Wishonia) ───────────────────────────────
+  // ─── Alien Girl Character (Wishonia) - Sprite-based ─────────────────
 
   var alienCharacter = {
     name: 'alien',
     css: '\
-      .alien-char { position: relative; width: 120px; height: 140px; }\
-      /* --- Antennae --- */\
-      .alien .antennae {\
-        position: absolute; top: 0; left: 50%; width: 40px; margin-left: -20px; height: 30px; z-index: 5;\
+      .alien-char { position: relative; width: 100px; height: 125px; }\
+      .alien-head-group {\
+        position: relative; width: 100px; height: 125px;\
+        animation: alien-bob 7s ease-in-out alternate infinite;\
+      }\
+      .alien-head-group img {\
+        position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain;\
+      }\
+      /* Default: only idle visible */\
+      .alien-head-group .h-idle    { opacity: 1; }\
+      .alien-head-group .h-blink   { opacity: 0; }\
+      .alien-head-group .h-speak   { opacity: 0; }\
+      .alien-head-group .h-listen  { opacity: 0; }\
+      /* Blink cycle */\
+      @keyframes alien-do-blink { 0%,96% { opacity: 0; } 97%,99% { opacity: 1; } 100% { opacity: 0; } }\
+      @keyframes alien-hide-for-blink { 0%,96% { opacity: 1; } 97%,99% { opacity: 0; } 100% { opacity: 1; } }\
+      .alien-head-group .h-blink { animation: alien-do-blink 6s linear infinite; }\
+      .alien:not(.char_speaking):not(.char_listening) .alien-head-group .h-idle {\
+        animation: alien-hide-for-blink 6s linear infinite;\
+      }\
+      /* Speaking state */\
+      .alien.char_speaking .alien-head-group .h-idle  { animation: none; opacity: 0; }\
+      .alien.char_speaking .alien-head-group .h-blink { animation: none; opacity: 0; }\
+      .alien.char_speaking .alien-head-group .h-speak { opacity: 1; }\
+      /* Listening state */\
+      .alien.char_listening .alien-head-group .h-idle  { animation: none; opacity: 0; }\
+      .alien.char_listening .alien-head-group .h-blink { animation: none; opacity: 0; }\
+      .alien.char_listening .alien-head-group .h-listen { opacity: 1; }\
+      @keyframes alien-bob {\
+        0%   { transform: rotate(-2deg) translateY(0); }\
+        40%  { transform: rotate(-2deg) translateY(0); }\
+        60%  { transform: rotate(2deg) translateY(-2px); }\
+        100% { transform: rotate(2deg) translateY(-2px); }\
+      }\
+      @media (max-width: 800px) {\
+        .alien-char { width: 70px; height: 88px; }\
+        .alien-head-group { width: 70px; height: 88px; }\
+      }\
+    ',
+    svgFilters: '',
+    buildDOM: function (wrapper) {
+      wrapper.classList.add('alien-char');
+      var base = '/assets/sprites/alien/';
+      wrapper.innerHTML = '\
+        <div class="alien" data-char-el>\
+          <div class="alien-head-group">\
+            <img class="h-idle" src="' + base + 'head-idle.png" alt="">\
+            <img class="h-blink" src="' + base + 'head-blink.png" alt="">\
+            <img class="h-speak" src="' + base + 'head-speaking.png" alt="">\
+            <img class="h-listen" src="' + base + 'head-listening.png" alt="">\
+          </div>\
+        </div>';
+    }
+  };
+
+  // Old CSS alien code was here - replaced by sprite version above
+  // Keeping this comment as a marker; the old code block below was removed
+  var _CLEANUP = '\
       }\
       .alien .antenna {\
         position: absolute; bottom: 0; width: 3px; height: 24px;\
