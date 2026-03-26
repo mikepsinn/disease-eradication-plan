@@ -1456,6 +1456,19 @@ def render_quarto(
             print("[WARNING] Jupyter kernel setup failed, continuing anyway...")
         gh_group_end()
 
+        # 1.5. Regenerate all derived files (variables, search index, etc.)
+        gh_group_start("SETUP: GENERATE EVERYTHING")
+        gen_script = project_root / "scripts" / "generate-everything-parameters-variables-calculations-references.py"
+        gen_result = subprocess.run(
+            [sys.executable, "-u", str(gen_script)],
+            cwd=str(project_root),
+        )
+        if gen_result.returncode != 0:
+            print("[ERROR] generate-everything failed, aborting render", file=sys.stderr)
+            gh_group_end()
+            return gen_result.returncode
+        gh_group_end()
+
         # 2. Run pre-validation
         gh_group_start("VALIDATION: PRE-RENDER")
         validation_exit = run_pre_validation()

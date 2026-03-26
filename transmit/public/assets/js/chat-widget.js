@@ -95,20 +95,7 @@
         ?.getAttribute("content") || "";
     if (offset && offset.charAt(offset.length - 1) !== "/") offset += "/";
 
-    var urls = [
-      offset + "assets/json/search-index.json",
-      offset + "search-index.json",
-      offset + "search.json"
-    ];
-    tryFetch(urls, 0);
-  }
-
-  function tryFetch(urls, i) {
-    if (i >= urls.length) {
-      searchLoading = false;
-      return;
-    }
-    fetch(urls[i])
+    fetch(offset + "assets/json/search-index.json")
       .then(function (r) {
         if (!r.ok) throw new Error(r.status);
         return r.json();
@@ -118,7 +105,7 @@
         searchLoading = false;
       })
       .catch(function () {
-        tryFetch(urls, i + 1);
+        searchLoading = false;
       });
   }
 
