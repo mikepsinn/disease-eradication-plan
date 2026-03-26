@@ -818,3 +818,107 @@
     right: 16px;
   }
 }
+
+/* ================================================
+   Visual Supplement Cards
+   ================================================ */
+
+.chat-visual-card {
+  margin-top: 10px;
+  padding: 12px 14px;
+  background: var(--bs-body-bg, #fff);
+  border: 1px solid var(--bs-border-color, #dee2e6);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  animation: chatSlideIn 0.3s ease-out;
+}
+
+.chat-key-figure {
+  text-align: center;
+  padding: 12px 8px;
+}
+
+.chat-key-figure-value {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--bs-primary, #2a6b4f);
+  line-height: 1.2;
+}
+
+.chat-key-figure-label {
+  font-size: 13px;
+  color: var(--bs-secondary-color, #6c757d);
+  margin-top: 4px;
+}
+
+.chat-key-figure-context {
+  font-size: 12px;
+  color: var(--bs-secondary-color, #888);
+  margin-top: 6px;
+  font-style: italic;
+}
+
+.chat-visual-chart {
+  position: relative;
+  width: 100%;
+  max-height: 220px;
+}
+
+.chat-visual-chart canvas {
+  max-height: 220px;
+}
+
+.chat-visual-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+
+.chat-visual-table th {
+  background: var(--bs-tertiary-bg, #f0f0f0);
+  font-weight: 600;
+  text-align: left;
+  padding: 6px 10px;
+  border-bottom: 2px solid var(--bs-border-color, #dee2e6);
+}
+
+.chat-visual-table td {
+  padding: 5px 10px;
+  border-bottom: 1px solid var(--bs-border-color, #dee2e6);
+}
+
+.chat-visual-table tr:last-child td {
+  border-bottom: none;
+}
+
+.chat-visual-mermaid {
+  overflow-x: auto;
+  text-align: center;
+}
+
+.chat-visual-mermaid svg {
+  max-width: 100%;
+  height: auto;
+}
+
+.chat-visual-latex {
+  text-align: center;
+  padding: 8px 0;
+  overflow-x: auto;
+}
+
+.chat-visual-loading {
+  height: 60px;
+  border-radius: 12px;
+  background: linear-gradient(90deg, var(--bs-tertiary-bg, #f0f0f0) 25%, var(--bs-secondary-bg, #e0e0e0) 50%, var(--bs-tertiary-bg, #f0f0f0) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  margin-top: 10px;
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}

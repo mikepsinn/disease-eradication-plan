@@ -634,6 +634,11 @@ class SearchIndexGenerator:
             if not frontmatter:
                 frontmatter = {}
 
+            # Skip pages that opt out of search indexing
+            if frontmatter.get('search') is False:
+                logger.debug("Skipping %s: search: false in frontmatter", qmd_path.name)
+                return None
+
             # Get title and apply variable replacement (strict mode - crash on missing)
             title = frontmatter.get('title', qmd_path.stem.replace('-', ' ').title())
             title = self._replace_variables_strict(title, qmd_path)

@@ -61,6 +61,10 @@
   var imageIndexLoading = false;
   var katexLoaded = false;
   var katexLoading = false;
+  var chartJsLoaded = false;
+  var chartJsLoading = false;
+  var mermaidLoaded = false;
+  var mermaidLoading = false;
   var abortController = null;
   var userScrolledUp = false;
 
@@ -199,6 +203,45 @@
     });
 
     return bestScore >= 4 ? best : null;
+  }
+
+  function findTopImageCandidates(query, ragResults, count) {
+    if (!imageIndex || imageIndex.length === 0) return [];
+
+    var queryTokens = tokenize(query);
+    if (queryTokens.length === 0) return [];
+
+    var ragSlugs = (ragResults || [])
+      .map(function (r) {
+        return (r.url || "")
+          .replace(/\.html.*$/, "")
+          .replace(/^.*\//, "");
+      })
+      .filter(Boolean);
+
+    var scored = [];
+    imageIndex.forEach(function (img) {
+      var score = 0;
+      var path = (img.path || "").toLowerCase();
+
+      ragSlugs.forEach(function (slug) {
+        if (path.indexOf(slug.toLowerCase()) !== -1) score += 5;
+      });
+
+      queryTokens.forEach(function (qt) {
+        if (img._keywords.indexOf(qt) !== -1) score += 2;
+      });
+
+      var type = (img.imageType || "").toLowerCase();
+      if (type === "infographic" || type === "chart") score += 1;
+
+      if (score >= 2) {
+        scored.push({ path: img.path, title: img.title || "", description: img.description || "", score: score });
+      }
+    });
+
+    scored.sort(function (a, b) { return b.score - a.score; });
+    return scored.slice(0, count || 3);
   }
 
   // ========================================
@@ -912,6 +955,248 @@
     }
   }
 
+  // ========================================
+  // CDN lazy-loaders for Chart.js and Mermaid
+  // ========================================
+
+  function loadChartJs(callback) {
+    if (chartJsLoaded) {
+      if (callback) callback();
+      return;
+    }
+    if (chartJsLoading) return;
+    chartJsLoading = true;
+
+    var script = document.createElement("script");
+    script.src = "https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js";
+    script.onload = function () {
+      chartJsLoaded = true;
+      chartJsLoading = false;
+      if (callback) callback();
+    };
+    script.onerror = function () {
+      chartJsLoading = false;
+    };
+    document.head.appendChild(script);
+  }
+
+  function loadMermaid(callback) {
+    if (mermaidLoaded) {
+      if (callback) callback();
+      return;
+    }
+    if (mermaidLoading) return;
+    mermaidLoading = true;
+
+    var script = document.createElement("script");
+    script.src = "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js";
+    script.onload = function () {
+      mermaidLoaded = true;
+      mermaidLoading = false;
+      window.mermaid.initialize({ startOnLoad: false, theme: "default" });
+      if (callback) callback();
+    };
+    script.onerror = function () {
+      mermaidLoading = false;
+    };
+    document.head.appendChild(script);
+  }
+
+  // ========================================
+  // Visual Supplements (parallel request)
+  // ========================================
+
+  function fetchVisuals(question, context, imageOptions) {
+    return fetch(API_BASE + "/api/visuals", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        question: question,
+        context: context,
+        imageOptions: imageOptions || [],
+      }),
+    })
+      .then(function (response) {
+        if (!response.ok) return null;
+        return response.json();
+      })
+      .catch(function () {
+        return null;
+      });
+  }
+
+  function escapeHtml(text) {
+    return (text || "")
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;");
+  }
+
+  function renderVisualCard(visuals) {
+    if (!visuals) return null;
+
+    var hasContent =
+      visuals.keyFigure ||
+      visuals.latex ||
+      visuals.chartConfig ||
+      visuals.table ||
+      visuals.mermaid ||
+      (visuals.sourceLinks && visuals.sourceLinks.length > 0) ||
+      visuals.image;
+
+    if (!hasContent) return null;
+
+    var card = document.createElement("div");
+    card.className = "chat-visual-card";
+
+    // Key Figure
+    if (visuals.keyFigure) {
+      var fig = document.createElement("div");
+      fig.className = "chat-key-figure";
+      fig.innerHTML =
+        '<div class="chat-key-figure-value">' + escapeHtml(visuals.keyFigure.value) + "</div>" +
+        '<div class="chat-key-figure-label">' + escapeHtml(visuals.keyFigure.label) + "</div>" +
+        (visuals.keyFigure.context
+          ? '<div class="chat-key-figure-context">' + escapeHtml(visuals.keyFigure.context) + "</div>"
+          : "");
+      card.appendChild(fig);
+    }
+
+    // LaTeX
+    if (visuals.latex) {
+      var latexEl = document.createElement("div");
+      latexEl.className = "chat-visual-latex";
+      latexEl.innerHTML = renderLatex(visuals.latex, true);
+      card.appendChild(latexEl);
+      if (latexEl.querySelector(".chat-latex-pending")) {
+        loadKatex();
+      }
+    }
+
+    // Chart
+    if (visuals.chartConfig) {
+      var chartContainer = document.createElement("div");
+      chartContainer.className = "chat-visual-chart";
+      var canvas = document.createElement("canvas");
+      chartContainer.appendChild(canvas);
+      card.appendChild(chartContainer);
+
+      var chartCfg = visuals.chartConfig;
+      loadChartJs(function () {
+        if (typeof Chart !== "undefined") {
+          new Chart(canvas, {
+            type: chartCfg.type,
+            data: chartCfg.data,
+            options: Object.assign(
+              {
+                responsive: true,
+                maintainAspectRatio: true,
+                plugins: { legend: { labels: { font: { size: 11 } } } },
+              },
+              chartCfg.options || {}
+            ),
+          });
+        }
+      });
+    }
+
+    // Table
+    if (visuals.table && visuals.table.headers && visuals.table.rows) {
+      var table = document.createElement("table");
+      table.className = "chat-visual-table";
+      var thead = document.createElement("thead");
+      var headerRow = document.createElement("tr");
+      visuals.table.headers.forEach(function (h) {
+        var th = document.createElement("th");
+        th.textContent = h;
+        headerRow.appendChild(th);
+      });
+      thead.appendChild(headerRow);
+      table.appendChild(thead);
+
+      var tbody = document.createElement("tbody");
+      visuals.table.rows.forEach(function (row) {
+        var tr = document.createElement("tr");
+        row.forEach(function (cell) {
+          var td = document.createElement("td");
+          td.textContent = cell;
+          tr.appendChild(td);
+        });
+        tbody.appendChild(tr);
+      });
+      table.appendChild(tbody);
+      card.appendChild(table);
+    }
+
+    // Mermaid
+    if (visuals.mermaid) {
+      var mermaidContainer = document.createElement("div");
+      mermaidContainer.className = "chat-visual-mermaid";
+      var mermaidSrc = visuals.mermaid;
+      mermaidContainer.textContent = mermaidSrc;
+      card.appendChild(mermaidContainer);
+
+      var mermaidId = "mermaid-" + Date.now();
+      loadMermaid(function () {
+        if (window.mermaid) {
+          window.mermaid.render(mermaidId, mermaidSrc).then(function (result) {
+            mermaidContainer.innerHTML = result.svg;
+          }).catch(function () {
+            // Leave text source as fallback
+          });
+        }
+      });
+    }
+
+    // Source Links
+    if (visuals.sourceLinks && visuals.sourceLinks.length > 0) {
+      var sourcesDiv = document.createElement("div");
+      sourcesDiv.className = "chat-sources";
+      visuals.sourceLinks.forEach(function (link) {
+        var a = document.createElement("a");
+        a.className = "chat-source-pill";
+        a.href = link.url;
+        a.target = "_blank";
+        a.rel = "noopener";
+        a.textContent = link.title;
+        sourcesDiv.appendChild(a);
+      });
+      card.appendChild(sourcesDiv);
+    }
+
+    // Image
+    if (visuals.image) {
+      var imgContainer = document.createElement("div");
+      imgContainer.className = "chat-image-container";
+      var img = document.createElement("img");
+      img.className = "chat-image-thumb";
+      img.src = "/" + visuals.image;
+      img.alt = "";
+      img.loading = "lazy";
+      img.addEventListener("click", function () {
+        showLightbox("/" + visuals.image, "");
+      });
+      imgContainer.appendChild(img);
+      card.appendChild(imgContainer);
+    }
+
+    return card;
+  }
+
+  function showVisualLoading(bubble) {
+    var shimmer = document.createElement("div");
+    shimmer.className = "chat-visual-loading";
+    shimmer.setAttribute("data-visual-loading", "true");
+    bubble.appendChild(shimmer);
+    return shimmer;
+  }
+
+  function removeVisualLoading(bubble) {
+    var shimmer = bubble.querySelector("[data-visual-loading]");
+    if (shimmer && shimmer.parentNode) shimmer.remove();
+  }
+
   // Extract source links from model output + RAG results, return HTML pills
   function extractSourceLinks(fullText, ragResults) {
     var links = [];
@@ -1141,7 +1426,11 @@
       return { role: m.role, content: m.content };
     });
 
-    sendChatRequest(text, context, history);
+    // Fire visuals request in parallel (non-blocking)
+    var imageOptions = findTopImageCandidates(text, lastSearchResults, 3);
+    var visualsPromise = fetchVisuals(text, context, imageOptions);
+
+    sendChatRequest(text, context, history, visualsPromise);
   }
 
   function showStreamingUI(on) {
