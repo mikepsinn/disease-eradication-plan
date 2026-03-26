@@ -560,10 +560,14 @@
     createFAB();
     createPanel();
 
-    // Restore previous messages
+    // Restore previous messages (including visual cards if saved)
     if (messages.length > 0) {
       messages.forEach(function (m) {
-        appendMessage(m.role, m.content, true);
+        var bubble = appendMessage(m.role, m.content, true);
+        if (m.visuals && bubble) {
+          var card = renderVisualCard(m.visuals);
+          if (card) bubble.appendChild(card);
+        }
       });
     }
   }
@@ -1553,6 +1557,12 @@
           removeVisualLoading(responseBubble);
           responseBubble.appendChild(card);
           scrollToBottom();
+          // Persist visuals alongside the message for restore on refresh
+          var lastMsg = messages[messages.length - 1];
+          if (lastMsg && lastMsg.role === "assistant") {
+            lastMsg.visuals = visuals;
+            sessionStorage.setItem("wishonia-chat", JSON.stringify(messages));
+          }
         }
       });
     }
@@ -2297,6 +2307,12 @@
         if (card) {
           visualsBubble.appendChild(card);
           scrollToBottom();
+          // Persist visuals alongside the message for restore on refresh
+          var lastMsg = messages[messages.length - 1];
+          if (lastMsg && lastMsg.role === "assistant") {
+            lastMsg.visuals = visuals;
+            sessionStorage.setItem("wishonia-chat", JSON.stringify(messages));
+          }
         }
       });
       liveVoiceVisualsPromise = null;
