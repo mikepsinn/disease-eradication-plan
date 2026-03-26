@@ -1898,10 +1898,11 @@
     };
 
     localRecognition.onerror = function (e) {
-      if (e.error === "no-speech" || e.error === "aborted") {
-        if (liveVoiceMode) {
-          setTimeout(startLocalTranscription, 200);
-        }
+      // Don't restart here - onend always fires after onerror and handles restart.
+      // Restarting in both onerror AND onend creates orphaned instances that
+      // overwrite each other, breaking recognition after the first exchange.
+      if (e.error !== "no-speech" && e.error !== "aborted") {
+        console.warn("Local recognition error:", e.error);
       }
     };
 
@@ -2077,11 +2078,12 @@
           liveVoiceSpoken = "";
         }
         showVoiceState("listening");
-        // Resume local recognition after interruption
+        // Resume local recognition after interruption.
+        // Delay gives browser time to fully release the old SpeechRecognition session.
         localRecognitionPaused = false;
         if (liveVoiceMode) {
           stopLocalTranscription();
-          startLocalTranscription();
+          setTimeout(startLocalTranscription, 300);
         }
       },
       onTurnComplete: function () {
@@ -2092,11 +2094,12 @@
           liveVoiceSpoken = "";
         }
         showVoiceState("listening");
-        // Resume local recognition after Gemini finishes speaking
+        // Resume local recognition after Gemini finishes speaking.
+        // Delay gives browser time to fully release the old SpeechRecognition session.
         localRecognitionPaused = false;
         if (liveVoiceMode) {
           stopLocalTranscription();
-          startLocalTranscription();
+          setTimeout(startLocalTranscription, 300);
         }
       },
       onError: function () {

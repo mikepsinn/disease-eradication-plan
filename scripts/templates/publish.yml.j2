@@ -106,6 +106,7 @@ jobs:
           netlify deploy \
             --dir='{{ job.build_dir }}' \
             --prod \
+            --no-build \
             --message="Deploy {{ job.config_name }} from {% raw %}${{ github.ref_name }}{% endraw %}"
         env:
           NETLIFY_AUTH_TOKEN: {% raw %}${{ secrets.NETLIFY_AUTH_TOKEN }}{% endraw %}

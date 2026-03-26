@@ -106,6 +106,7 @@ jobs:
           netlify deploy \
             --dir='_build_temp/manual/_manual/warondisease' \
             --prod \
+            --no-build \
             --message="Deploy manual from ${{ github.ref_name }}"
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
