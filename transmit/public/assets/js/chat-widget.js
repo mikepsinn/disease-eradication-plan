@@ -34,6 +34,7 @@
 
   var apiBaseMeta = document.querySelector('meta[name="dih-api-base"]');
   var API_BASE = apiBaseMeta ? apiBaseMeta.content.replace(/\/$/, '') : '';
+  var MANUAL_BASE = "https://manual.warondisease.org";
 
   // ========================================
   // STATE
@@ -584,7 +585,7 @@
     panel.className = "chat-panel";
     panel.innerHTML =
       '<div class="chat-header">' +
-      '  <span class="chat-header-title">Talk to Wishonia</span>' +
+      '  <span class="chat-header-title">Argue with Wishonia</span>' +
       '  <div class="chat-header-actions">' +
       '    <button class="chat-newchat-btn" aria-label="New talk" title="New talk">&#x2795;</button>' +
       '    <button class="chat-fullscreen-btn" aria-label="Open full talk" title="Open full talk">&#x26F6;</button>' +
@@ -1158,11 +1159,11 @@
       imgContainer.className = "chat-image-container";
       var img = document.createElement("img");
       img.className = "chat-image-thumb";
-      img.src = "/" + visuals.image;
+      img.src = MANUAL_BASE + "/" + visuals.image;
       img.alt = "";
       img.loading = "lazy";
       img.addEventListener("click", function () {
-        showLightbox("/" + visuals.image, "");
+        showLightbox(MANUAL_BASE + "/" + visuals.image, "");
       });
       imgContainer.appendChild(img);
       card.appendChild(imgContainer);
@@ -1461,11 +1462,11 @@
       imgEl.className = "chat-image-container";
       var imgTag = document.createElement("img");
       imgTag.className = "chat-image-thumb";
-      imgTag.src = "/" + relevantImg.path;
+      imgTag.src = MANUAL_BASE + "/" + relevantImg.path;
       imgTag.alt = relevantImg.title || "";
       imgTag.loading = "lazy";
       imgTag.addEventListener("click", function () {
-        showLightbox("/" + relevantImg.path, relevantImg.title || "");
+        showLightbox(MANUAL_BASE + "/" + relevantImg.path, relevantImg.title || "");
       });
       imgEl.appendChild(imgTag);
       bubble.appendChild(imgEl);
@@ -2210,11 +2211,11 @@
         imgEl.className = "chat-image-container";
         var imgTag = document.createElement("img");
         imgTag.className = "chat-image-thumb";
-        imgTag.src = "/" + relevantImg.path;
+        imgTag.src = MANUAL_BASE + "/" + relevantImg.path;
         imgTag.alt = relevantImg.title || "";
         imgTag.loading = "lazy";
         imgTag.addEventListener("click", function () {
-          showLightbox("/" + relevantImg.path, relevantImg.title || "");
+          showLightbox(MANUAL_BASE + "/" + relevantImg.path, relevantImg.title || "");
         });
         imgEl.appendChild(imgTag);
         bubble.appendChild(imgEl);

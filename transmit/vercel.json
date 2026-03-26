@@ -18,7 +18,7 @@
     }
   ],
   "rewrites": [
-    { "source": "/assets/json/search-index.json", "destination": "https://manual.warondisease.org/assets/json/search-index.json" },
+    { "source": "/assets/json/:path*", "destination": "https://manual.warondisease.org/assets/json/:path*" },
     { "source": "/assets/image-index.json", "destination": "https://manual.warondisease.org/assets/image-index.json" }
   ]
 }

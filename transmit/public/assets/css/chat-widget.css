@@ -81,6 +81,8 @@
 }
 
 .chat-header-title {
+  flex: 1;
+  text-align: center;
   font-size: 15px;
   font-weight: 600;
   letter-spacing: 0.02em;
@@ -148,6 +150,18 @@
   background: var(--bs-tertiary-bg, #f0f0f0);
   color: var(--bs-body-color, #212529);
   border-bottom-left-radius: 4px;
+  border: 1px solid var(--bs-border-color, #dee2e6);
+  position: relative;
+  margin-left: 28px;
+}
+
+.chat-msg-assistant::before {
+  content: "\1F47E";
+  position: absolute;
+  left: -28px;
+  top: 6px;
+  font-size: 18px;
+  line-height: 1;
 }
 
 /* Voice button on assistant messages */
