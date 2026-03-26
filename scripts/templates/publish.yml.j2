@@ -105,7 +105,6 @@ jobs:
           npm install -g netlify-cli
           netlify deploy \
             --dir='{{ job.build_dir }}' \
-            --functions='netlify/functions' \
             --prod \
             --message="Deploy {{ job.config_name }} from {% raw %}${{ github.ref_name }}{% endraw %}"
         env:

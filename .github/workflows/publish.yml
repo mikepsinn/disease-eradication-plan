@@ -105,7 +105,6 @@ jobs:
           npm install -g netlify-cli
           netlify deploy \
             --dir='_build_temp/manual/_manual/warondisease' \
-            --functions='netlify/functions' \
             --prod \
             --message="Deploy manual from ${{ github.ref_name }}"
         env:
