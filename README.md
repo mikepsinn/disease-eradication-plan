@@ -455,7 +455,7 @@ Correct. Nobody coordinates a pencil either.
 
 One of your economists held up a pencil on television and said: "There's not a single person in the world who could make this pencil. The wood comes from a tree in Washington. The graphite comes from mines in South America. The rubber comes from Malaya. The brass ferrule, I haven't the slightest idea where it came from. Literally thousands of people cooperated to make this pencil. People who don't speak the same language, who practice different religions, who might hate one another if they ever met. No one sitting in a central office gave orders to these thousands of people. No military police enforced the orders that were not given." [-]
 
-A pencil costs 25 cents and requires the coordinated effort of thousands of strangers across dozens of countries. Nobody planned it. Nobody runs it. Everyone involved just wanted money, and the price system turned their selfishness into pencils. Your species does this billions of times a day without noticing.
+A pencil costs 25 cents. Making one requires thousands of strangers across dozens of countries. Nobody planned it. Nobody runs it. Everyone involved just wanted money, and the price system turned their selfishness into pencils. Your species does this billions of times a day without noticing.
 
 Now look at this cured disease.
 
@@ -463,20 +463,11 @@ There is not a single person in the world who could cure it. The researcher in L
 
 The five steps above are the machinery. You do not need to build the machinery. You need to turn it on. Here is the switch.
 
-### The Earth Optimization Prize
+### The Earth Optimization Game
 
-Put money in a pool. The pool compounds at 17.4% annually through a [wishocratic fund](https://manual.warondisease.org/knowledge/economics/wishocratic-investment-fund.html) (the venture capital returns your retirement account is legally banned from accessing). Two target numbers: did people live longer? Did they get richer? By 2040, if the targets are met, VOTE point-holders split the pool. If the targets are missed, depositors divide it pro rata.
+A pool of money. Two numbers on a Scoreboard: how long people live, how much they earn. By 2040, if the numbers went up, VOTE point-holders split the pool. If they didn't, depositors divide it pro rata (still beats your retirement account). You earn VOTE points by getting friends to play. Nobody loses. The only losing move is not playing.
 
-Either way, the pool beats your retirement account. Your retirement account returns 2.57x over the same period. The Prize pool returns 11.1x. The worst outcome is better than your current best outcome.
-
-You earn VOTE points by recruiting verified referendum participants. One person, one point. Recruit two people, earn two points. If the targets are met, each point pays $194K.
-
-**Worked example: $100 deposit + 2 VOTE points.**
-
-- *Targets missed:* You get back $100 x 11.1x = $1,110 from the pool. Your VOTE points pay nothing. You still beat a conventional retirement account ($100 x 2.57x = $257).
-- *Targets met:* Your $100 deposit goes to VOTE point-holders. Your 2 VOTE points pay 2 x $194K = $387K. Plus you live in a world where diseases get cured and everyone is $15.7M richer.
-
-Your job was never to understand the five steps. Your job is to [deposit](https://warondisease.org), vote, and recruit two people. Four billion humans whose payout depends on curing diseases will attract the lobbyists, researchers, and institutions who know how to do the rest. The greed handles it. It always has. You just never pointed it at anything useful before. (For the full mechanism, see [The Earth Optimization Prize](https://manual.warondisease.org/knowledge/strategy/earth-optimization-prize.html).)
+Your job was never to understand the five steps. Your job is to [vote](https://warondisease.org) and get two friends to play. Four billion humans whose payout depends on curing diseases will attract the lobbyists, researchers, and institutions who know how to do the rest. The greed handles it. It always has. You just never pointed it at anything useful before. (For the full mechanism, see [The Earth Optimization Game](https://manual.warondisease.org/knowledge/strategy/earth-optimization-prize.html).)
 
 ## Choose Your Own Adventure
 
@@ -553,7 +544,7 @@ Of all the consciousness that has ever flickered into existence across 13.8 bill
 
 You get to be alive for the part where the math got done and the puppet strings got cut. Not just the part where disease ends. The part where the thing that made you irrational, violent, and incapable of caring about strangers turns out to be a circuit, and circuits can be redesigned. Where your worst Tuesday feels better than your current best birthday. Where, for the first time in 13.8 billion years, the atoms that learned to feel get to choose what they feel.
 
-Go to [warondisease.org](https://warondisease.org). Vote (fifteen seconds). Deposit $1 in the Prize pool (your worst-case return is 11.1x). Recruit two people. That's it. Every minute you delay, 104 humans permanently stop. Your vote saves 38.4 lives and prevents 6.9 million hours of suffering. Those are not metaphors. Those are people. They have names you'll never learn because they died while you were deciding if this was worth fifteen seconds.
+Go to [warondisease.org](https://warondisease.org). Vote (fifteen seconds). Get two friends to play. That's it. Every minute you delay, 104 humans permanently stop. Your vote saves 38.4 lives and prevents 6.9 million hours of suffering. Those are not metaphors. Those are people. They have names you'll never learn because they died while you were deciding if this was worth fifteen seconds.
 
 "I didn't know" is no longer available to you.
 

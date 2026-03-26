@@ -21,6 +21,8 @@ import { searchContent, type SearchEntry } from "./lib/search";
 const ROOT = resolve(__dirname, "..");
 const API_URL =
   process.env.CHAT_API_URL || "https://transmit.warondisease.org/api/chat";
+const VISUALS_API_URL =
+  process.env.VISUALS_API_URL || "https://transmit.warondisease.org/api/visuals";
 const SEARCH_INDEX_PATHS = [
   "assets/json/search-index.json",
 ];
@@ -136,6 +138,13 @@ const TESTS: TestCase[] = [
     expectInContext: ["prize", "target"],
     expectChunks: ["earth-optimization"],
   },
+  {
+    name: "Treaty lives saved (colloquial phrasing)",
+    question: "hey how so how many lives would the 1% treaty save",
+    expectInContext: ["lives", "treaty"],
+    expectChunks: ["1-pct-treaty-impact"],
+    expectInAnswer: ["billion"],
+  },
 ];
 
 // ─── Helpers ─────────────────────────────────────────────────────────
@@ -180,6 +189,20 @@ async function queryAPI(
     text += decoder.decode(value, { stream: true });
   }
   return text;
+}
+
+async function queryVisualsAPI(
+  question: string,
+  context: string,
+  imageOptions: { path: string; title: string; description: string }[] = []
+): Promise<Record<string, unknown> | null> {
+  const res = await fetch(VISUALS_API_URL, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ question, context, imageOptions }),
+  });
+  if (!res.ok) throw new Error(`Visuals API ${res.status}: ${await res.text()}`);
+  return res.json();
 }
 
 // ─── Test runner ─────────────────────────────────────────────────────
@@ -284,6 +307,51 @@ async function main() {
           );
         }
       }
+    }
+  }
+
+  // ─── Visuals API test ──────────────────────────────────────────────
+  if (!ragOnly) {
+    console.log(`\n--- Visuals API: treaty lives saved ---`);
+    const visualsQuestion = "hey how so how many lives would the 1% treaty save";
+    const { context: vCtx } = searchContent(index, visualsQuestion);
+
+    try {
+      const visuals = await queryVisualsAPI(visualsQuestion, vCtx);
+      check(`visuals API returned JSON`, visuals !== null);
+
+      if (visuals) {
+        const fields = ["keyFigure", "latex", "chartConfig", "table", "mermaid", "sourceLinks", "image"];
+        const populated = fields.filter((f) => visuals[f] !== null && visuals[f] !== undefined);
+        console.log(`  Populated fields: ${populated.join(", ") || "(none)"}`);
+
+        check(
+          `at least one visual field populated`,
+          populated.length > 0,
+          `all fields were null`
+        );
+
+        // keyFigure should be present for a "how many" question
+        if (visuals.keyFigure && typeof visuals.keyFigure === "object") {
+          const kf = visuals.keyFigure as { value: string; label: string };
+          console.log(`  Key figure: ${kf.value} -- ${kf.label}`);
+          check(`keyFigure has value`, !!kf.value);
+          check(`keyFigure has label`, !!kf.label);
+        }
+
+        // sourceLinks should reference treaty impact page
+        if (Array.isArray(visuals.sourceLinks) && visuals.sourceLinks.length > 0) {
+          const links = visuals.sourceLinks as { title: string; url: string }[];
+          console.log(`  Source links: ${links.map((l) => l.url).join(", ")}`);
+          check(
+            `sourceLinks present`,
+            links.length > 0 && links.length <= 3,
+            `got ${links.length} links`
+          );
+        }
+      }
+    } catch (err: any) {
+      check(`visuals API call succeeded`, false, err.message);
     }
   }
 
