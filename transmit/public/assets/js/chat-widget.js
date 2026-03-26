@@ -802,8 +802,11 @@
       return ph(renderLatex(tex.trim(), true));
     });
 
-    // 4. Extract inline LaTeX ($...$) - require letter or backslash after $ to avoid matching $500
-    text = text.replace(/\$([a-zA-Z\\][^$]*?)\$/g, function (_, tex) {
+    // 4. Extract inline LaTeX ($...$) - require backslash command or multi-letter math identifiers
+    // Skip dollar amounts ($500, $83.3T) and short text fragments
+    text = text.replace(/\$([^$]+?)\$/g, function (match, tex) {
+      // Must contain a backslash command (e.g. \frac, \times) or be a known LaTeX pattern
+      if (!/\\[a-zA-Z]/.test(tex)) return match;
       return ph(renderLatex(tex, false));
     });
 
@@ -880,6 +883,7 @@
       try {
         return katex.renderToString(tex, {
           displayMode: display,
+          strict: false,
           throwOnError: false,
         });
       } catch (_) {}
@@ -933,6 +937,7 @@
         el.innerHTML = katex.renderToString(tex, {
           displayMode: display,
           throwOnError: false,
+          strict: false,
         });
         el.classList.remove("chat-latex-pending");
       } catch (_) {}
@@ -1015,6 +1020,7 @@
   // ========================================
 
   function fetchVisuals(question, context, imageOptions) {
+    console.log("[VISUALS] fetching for:", question.substring(0, 50));
     return fetch(API_BASE + "/api/visuals", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -1025,10 +1031,21 @@
       }),
     })
       .then(function (response) {
+        console.log("[VISUALS] response status:", response.status);
         if (!response.ok) return null;
         return response.json();
       })
-      .catch(function () {
+      .then(function (data) {
+        if (data) {
+          var fields = Object.keys(data).filter(function (k) { return data[k] !== null; });
+          console.log("[VISUALS] populated fields:", fields.join(", ") || "(none)");
+        } else {
+          console.log("[VISUALS] null response");
+        }
+        return data;
+      })
+      .catch(function (err) {
+        console.error("[VISUALS] error:", err);
         return null;
       });
   }
@@ -1443,11 +1460,24 @@
       return { role: m.role, content: m.content };
     });
 
-    // Fire visuals request in parallel (non-blocking)
+    // Fire visuals request in parallel -- renders its own card independently of text stream
     var imageOptions = findTopImageCandidates(text, lastSearchResults, 3);
-    var visualsPromise = fetchVisuals(text, context, imageOptions);
+    fetchVisuals(text, context, imageOptions).then(function (visuals) {
+      if (!visuals) return;
+      var card = renderVisualCard(visuals);
+      if (!card) return;
+      console.log("[VISUALS] rendering independent card");
+      msgContainer.appendChild(card);
+      scrollToBottom();
+      // Persist with latest assistant message
+      var lastMsg = messages[messages.length - 1];
+      if (lastMsg && lastMsg.role === "assistant") {
+        lastMsg.visuals = visuals;
+        sessionStorage.setItem("wishonia-chat", JSON.stringify(messages));
+      }
+    });
 
-    sendChatRequest(text, context, history, visualsPromise);
+    sendChatRequest(text, context, history);
   }
 
   function showStreamingUI(on) {
@@ -1466,8 +1496,7 @@
     messages[messages.length - 1].content = fullText;
     sessionStorage.setItem("wishonia-chat", JSON.stringify(messages));
 
-    // Safety: remove visual loading after 5s if visuals API didn't respond
-    setTimeout(function () { removeVisualLoading(bubble); }, 5000);
+
 
     // Strip "Read more:" lines for display (source pills replace them)
     var displayText = fullText.replace(/\n*Read more:[\s\S]*$/, "").trim();
@@ -1532,7 +1561,7 @@
     }
   }
 
-  function sendChatRequest(question, context, history, visualsPromise) {
+  function sendChatRequest(question, context, history) {
     isStreaming = true;
     sendBtn.disabled = true;
     showStreamingUI(true);
@@ -1544,29 +1573,6 @@
 
     // Abort controller for stop button
     abortController = new AbortController();
-
-    // Track the bubble for visual card attachment
-    var responseBubble = null;
-
-    // Handle visuals promise (fire-and-forget; never blocks main response)
-    if (visualsPromise) {
-      visualsPromise.then(function (visuals) {
-        if (!visuals) return;
-        var card = renderVisualCard(visuals);
-        if (!card) return;
-        if (responseBubble) {
-          removeVisualLoading(responseBubble);
-          responseBubble.appendChild(card);
-          scrollToBottom();
-          // Persist visuals alongside the message for restore on refresh
-          var lastMsg = messages[messages.length - 1];
-          if (lastMsg && lastMsg.role === "assistant") {
-            lastMsg.visuals = visuals;
-            sessionStorage.setItem("wishonia-chat", JSON.stringify(messages));
-          }
-        }
-      });
-    }
 
     fetch(API_BASE + "/api/chat", {
       method: "POST",
@@ -1594,14 +1600,6 @@
         msgContainer.appendChild(bubble);
         messages.push({ role: "assistant", content: "" });
         scrollToBottom(true);
-
-        // Expose bubble for visual card attachment
-        responseBubble = bubble;
-
-        // Show visual loading shimmer
-        if (visualsPromise) {
-          showVisualLoading(bubble);
-        }
 
         var fullText = "";
         var reader = response.body.getReader();
@@ -1942,9 +1940,22 @@
                 : "\u26A0\uFE0F No RAG context sent (search index: " + (searchIndex ? searchIndex.length + " entries)" : "not loaded)");
               msgContainer.appendChild(ragStatus);
 
-              // Fire parallel visuals request
+              // Fire parallel visuals request -- render immediately when ready
               var voiceImageOptions = findTopImageCandidates(transcript, lastSearchResults, 3);
-              liveVoiceVisualsPromise = fetchVisuals(transcript, ragContext, voiceImageOptions);
+              fetchVisuals(transcript, ragContext, voiceImageOptions).then(function (visuals) {
+                if (!visuals) return;
+                var card = renderVisualCard(visuals);
+                if (!card) return;
+                console.log("[VISUALS] rendering voice visual card immediately");
+                msgContainer.appendChild(card);
+                scrollToBottom();
+                // Persist with latest assistant message
+                var lastMsg = messages[messages.length - 1];
+                if (lastMsg && lastMsg.role === "assistant") {
+                  lastMsg.visuals = visuals;
+                  sessionStorage.setItem("wishonia-chat", JSON.stringify(messages));
+                }
+              });
             }
             scrollToBottom();
           }, 1500);
@@ -2318,28 +2329,6 @@
       actions.appendChild(ttsBtn);
       actions.appendChild(createCopyButton(fullText));
       bubble.appendChild(actions);
-    }
-
-    // Attach visual card from parallel visuals request
-    if (liveVoiceVisualsPromise) {
-      var visualsBubble = bubble;
-      showVisualLoading(visualsBubble);
-      liveVoiceVisualsPromise.then(function (visuals) {
-        removeVisualLoading(visualsBubble);
-        if (!visuals) return;
-        var card = renderVisualCard(visuals);
-        if (card) {
-          visualsBubble.appendChild(card);
-          scrollToBottom();
-          // Persist visuals alongside the message for restore on refresh
-          var lastMsg = messages[messages.length - 1];
-          if (lastMsg && lastMsg.role === "assistant") {
-            lastMsg.visuals = visuals;
-            sessionStorage.setItem("wishonia-chat", JSON.stringify(messages));
-          }
-        }
-      });
-      liveVoiceVisualsPromise = null;
     }
 
     scrollToBottom();

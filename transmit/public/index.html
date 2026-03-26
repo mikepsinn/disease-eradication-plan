@@ -224,96 +224,7 @@
     }
     .chat-scroll-bottom:hover { background: rgba(209,0,177,0.2) !important; }
 
-    /* === Robot === */
-    .robot-container {
-      position: absolute; z-index: 20; cursor: pointer;
-      right: 20px; width: 100px; height: 110px;
-    }
-    .robot .head {
-      position: absolute; width: 80px; left: 12px; height: 60px;
-      border-radius: 490px 550px 550px 550px; overflow: hidden;
-      background: #ccc linear-gradient(to right, #b7a9a9 0%, #c1b1b1 40%, #c1b5b5 60%, #ab9c9c 100%);
-      transform-origin: 50% 100%;
-      animation: bob 8000ms ease-in-out alternate infinite -1000ms;
-      border: 2px solid #000;
-    }
-    .robot .eyes {
-      position: absolute; top: calc(50% - 7px); right: 16px; left: 16px; height: 14px;
-      animation: blink 10000ms linear forwards infinite;
-    }
-    .robot .eyeball {
-      position: absolute; width: 14px; height: 14px;
-      background: radial-gradient(ellipse, #dffdfe 0%, #11c1f3 50%, #387ef5 60%) no-repeat center;
-      background-size: 100%; border-radius: 100%; border: 2px solid #000;
-    }
-    .robot .eyeball_left { left: 0; }
-    .robot .eyeball_right { right: 0; }
-    .robot .mouth {
-      position: absolute; bottom: 10px; left: 30px; width: 20px; height: 4px;
-      background-color: #000; overflow: hidden; border-radius: 4px;
-      transition: height 100ms cubic-bezier(0.455,0.03,0.515,0.955);
-    }
-    .robot .mouth-container { position: absolute; inset: 0; }
-    .robot .mouth-container-line {
-      position: absolute; top: 30%; height: 0; background-color: limegreen; width: 100%; margin-top: -1px;
-    }
-    .robot.robot_speaking .mouth { height: 12px; }
-    .robot.robot_speaking .mouth-container { animation: speakingAnim 0.3s infinite; }
-    .robot.robot_speaking .mouth-container-line { height: 3px; }
-    .robot.robot_listening .mouth { height: 6px; }
-    .robot.robot_listening .mouth-container { animation: listeningAnim 0.5s infinite; }
-    .robot.robot_listening .mouth-container-line { height: 2px; }
-    .robot .neck {
-      position: absolute; bottom: 28px; left: calc(50% - 3px); width: 3px; height: 30px;
-      border-radius: 10px; border: 2px solid #000;
-      background: repeating-linear-gradient(180deg, rgba(0,0,0,0.2), rgba(0,0,0,0.2) 7%, #646464 10%), linear-gradient(to right, #ccc 0%, #e6e6e6 40%, #e6e6e6 60%, #ccc 100%);
-    }
-    .robot .torso {
-      position: absolute; bottom: 0; left: calc(50% - 12px); width: 24px; height: 36px;
-      border: 2px solid #000;
-      background: linear-gradient(to right, #b7afaf 0%, #b7b0b0 40%, #afa6a6 60%, #b9b0b0 100%);
-    }
-    .robot .arms { position: absolute; bottom: 0; left: 30px; right: 30px; height: 30px; }
-    .robot .arm {
-      position: absolute; border: 2px solid #000; top: 0; width: 7px; height: 30px;
-      border-radius: 7px 7px 0 0;
-      background: repeating-linear-gradient(180deg, rgba(0,0,0,0.2), rgba(0,0,0,0.2) 7%, #646464 10%), linear-gradient(to right, #ccc 0%, #e6e6e6 40%, #e6e6e6 60%, #ccc 100%);
-    }
-    .robot .arm_left { left: 0; }
-    .robot .arm_right { right: 0; }
-    @keyframes bob {
-      0%  { transform: rotate(-3deg); }
-      40% { transform: rotate(-3deg); animation-timing-function: cubic-bezier(1,0,0,1); }
-      60% { transform: rotate(3deg); }
-      100%{ transform: rotate(3deg); }
-    }
-    @keyframes blink {
-      50% { transform: scale(1,1); }
-      51% { transform: scale(1,0.1); }
-      52% { transform: scale(1,1); }
-    }
-    @keyframes speakingAnim {
-      0%   { filter: url("#speaking-0"); }
-      25%  { filter: url("#speaking-1"); }
-      50%  { filter: url("#speaking-2"); }
-      75%  { filter: url("#speaking-3"); }
-      100% { filter: url("#speaking-4"); }
-    }
-    @keyframes listeningAnim {
-      0%   { filter: url("#listening-0"); }
-      25%  { filter: url("#listening-1"); }
-      50%  { filter: url("#listening-2"); }
-      75%  { filter: url("#listening-3"); }
-      100% { filter: url("#listening-4"); }
-    }
-    @media (max-width: 800px) {
-      .robot-container { right: 10px !important; width: 70px; height: 55px; }
-      .robot .head { width: 56px; left: 8px; height: 42px; }
-      .robot .eyes { top: calc(50% - 5px); right: 12px; left: 12px; height: 10px; }
-      .robot .eyeball { width: 10px; height: 10px; }
-      .robot .mouth { bottom: 7px; left: 20px; width: 16px; height: 3px; }
-      .robot .neck, .robot .torso, .robot .arms { display: none; }
-    }
+    /* Characters injected by characters.js */
   </style>
 </head>
 <body>
@@ -334,32 +245,10 @@
     <button class="sidebar-toggle" id="sidebar-toggle" title="Toggle sidebar">&#9776;</button>
     <div class="bg-grid"></div>
 
-    <!-- Robot peeking over the input bar -->
-    <div class="robot-container" id="robot-trigger">
-      <div class="robot" id="robot-el">
-        <div class="neck"></div>
-        <div class="arms"><div class="arm arm_left"></div><div class="arm arm_right"></div></div>
-        <div class="torso"></div>
-        <div class="head">
-          <div class="eyes"><div class="eyeball eyeball_left"></div><div class="eyeball eyeball_right"></div></div>
-          <div class="mouth"><div class="mouth-container"><div class="mouth-container-line"></div></div></div>
-        </div>
-      </div>
-      <svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="display:none"><defs>
-        <filter id="speaking-0"><feTurbulence baseFrequency="0.02" numOctaves="3" result="noise" seed="0"/><feDisplacementMap in="SourceGraphic" in2="noise" scale="12"/></filter>
-        <filter id="speaking-1"><feTurbulence baseFrequency="0.02" numOctaves="3" result="noise" seed="30"/><feDisplacementMap in="SourceGraphic" in2="noise" scale="13"/></filter>
-        <filter id="speaking-2"><feTurbulence baseFrequency="0.02" numOctaves="3" result="noise" seed="2"/><feDisplacementMap in="SourceGraphic" in2="noise" scale="12"/></filter>
-        <filter id="speaking-3"><feTurbulence baseFrequency="0.02" numOctaves="3" result="noise" seed="30"/><feDisplacementMap in="SourceGraphic" in2="noise" scale="13"/></filter>
-        <filter id="speaking-4"><feTurbulence baseFrequency="0.1" numOctaves="3" result="noise" seed="4"/><feDisplacementMap in="SourceGraphic" in2="noise" scale="11"/></filter>
-        <filter id="listening-0"><feTurbulence baseFrequency="0.02" numOctaves="3" result="noise" seed="0"/><feDisplacementMap in="SourceGraphic" in2="noise" scale="2"/></filter>
-        <filter id="listening-1"><feTurbulence baseFrequency="0.02" numOctaves="3" result="noise" seed="30"/><feDisplacementMap in="SourceGraphic" in2="noise" scale="3"/></filter>
-        <filter id="listening-2"><feTurbulence baseFrequency="0.02" numOctaves="3" result="noise" seed="2"/><feDisplacementMap in="SourceGraphic" in2="noise" scale="2"/></filter>
-        <filter id="listening-3"><feTurbulence baseFrequency="0.02" numOctaves="3" result="noise" seed="30"/><feDisplacementMap in="SourceGraphic" in2="noise" scale="3"/></filter>
-        <filter id="listening-4"><feTurbulence baseFrequency="0.1" numOctaves="3" result="noise" seed="4"/><feDisplacementMap in="SourceGraphic" in2="noise" scale="1"/></filter>
-      </defs></svg>
-    </div>
+    <!-- Characters injected by characters.js -->
   </div>
 
+  <script src="/assets/js/characters.js" defer></script>
   <script src="/assets/js/gemini-live-client.js" defer></script>
   <script src="/assets/js/audio-utils.js" defer></script>
   <script src="/assets/js/chat-widget.js" defer></script>
@@ -525,35 +414,11 @@
         var chatPanel = document.querySelector('.chat-panel');
         var mainArea = document.getElementById('main-area');
         if (chatPanel && mainArea) mainArea.appendChild(chatPanel);
-        positionRobot();
+        if (window.positionCharacters) window.positionCharacters();
       }, 150);
 
       // Periodic sync to localStorage
       setInterval(saveCurrent, 3000);
-
-      // --- Robot ---
-      var robotEl = document.getElementById('robot-el');
-      var robotContainer = document.getElementById('robot-trigger');
-
-      function positionRobot() {
-        var inputArea = document.querySelector('.chat-input-area');
-        if (!inputArea || !robotContainer) return;
-        var rect = inputArea.getBoundingClientRect();
-        robotContainer.style.bottom = (window.innerHeight - rect.top) + 'px';
-      }
-      window.addEventListener('resize', positionRobot);
-
-      robotContainer.addEventListener('click', function () {
-        var vcBtn = document.querySelector('.chat-voicechat-btn');
-        if (vcBtn && vcBtn.style.display !== 'none') vcBtn.click();
-      });
-
-      window.setRobotState = function (state) {
-        if (!robotEl) return;
-        robotEl.classList.remove('robot_speaking', 'robot_listening');
-        if (state === 'speaking') robotEl.classList.add('robot_speaking');
-        else if (state === 'listening') robotEl.classList.add('robot_listening');
-      };
     });
   })();
   </script>
