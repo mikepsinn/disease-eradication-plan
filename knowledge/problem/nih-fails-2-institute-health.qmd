@@ -1,6 +1,6 @@
 ---
 title: NIH Fails to Institute Health
-description: A root cause failure analysis to show why the world's largest medical research institution only allocates 3.3% of its budget to testing which of the thousands of known-safe treatments actually work in humans. Oxford tested COVID treatments for $500 per patient and saved a million lives in 100 days. The NIH spent $1.6 billion and completed zero trials in four years. 
+description: A root cause failure analysis to show why the world's largest medical research institution only allocates 3.3% of its budget to testing which of the thousands of known-safe treatments actually work in humans. Oxford tested COVID treatments for $500 per patient and saved a million lives in 100 days. The NIH spent $1.6 billion and completed zero trials in four years.
 published: true
 tags:
   - problem
@@ -19,7 +19,6 @@ feed-date: '2026-03-07'
 youtube-thumbnail: /assets/podcast/nih-fails-2-institute-health-youtube.jpg
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
-
 
 ## A Tale of Two Trials
 
@@ -92,6 +91,7 @@ A JAMA study [@nih-phased-trial-spending-2010-2019] broke down $247.3 billion in
   - **CTSA infrastructure program:** ~$1B/year in trial infrastructure, coordination, and training [@nih-ctsa]
   - **Observational studies:** Population health data collection (e.g., large-scale observational cohorts [@nih-all-of-us-inefficiency]: $2.16B). Valuable for identifying patterns, but observation without intervention doesn't cure anyone.
   - **Other applied research:** Drug characterization, health services research, epidemiology
+
 - **3.3% - Phased clinical trials** ($8.1B): The only category that directly tests whether treatments work in humans (Phases 1-3)
   - Phase 1: $1.5B (18.5% of clinical trial budget)
   - Phase 2: $3.5B (43.2%)

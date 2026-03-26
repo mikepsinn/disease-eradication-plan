@@ -1,18 +1,12 @@
 ---
-title: "How to End War and Disease"
-subtitle: "A 3-Minute Educational Film"
-description: "1950s educational film-style animated explainer of the 1% treaty proposal."
+title: How to End War and Disease
+subtitle: A 3-Minute Educational Film
+description: 1950s educational film-style animated explainer of the 1% treaty proposal.
 toc: false
 number-sections: false
-# Video generation metadata (read by scripts/generate_video_from_qmd.py)
 video:
-  visual-style: >-
-    1950s Atomic Age educational film, UPA style. Flat geometric shapes,
-    thick black outlines, halftone textures. Mustard, olive, burnt orange,
-    dusty blue. Stiff poses, minimal shading.
-  negative-prompt: >-
-    photography, 3D, CGI, Disney, Pixar, smooth shading, soft gradients,
-    glossy, pastel colors, anime, rounded cute shapes
+  visual-style: 1950s Atomic Age educational film, UPA style. Flat geometric shapes, thick black outlines, halftone textures. Mustard, olive, burnt orange, dusty blue. Stiff poses, minimal shading.
+  negative-prompt: photography, 3D, CGI, Disney, Pixar, smooth shading, soft gradients, glossy, pastel colors, anime, rounded cute shapes
 ---
 
 <style>
@@ -36,8 +30,6 @@ video:
 **Tone:** Wishonia/Philomena Cunk deadpan. Genuine alien confusion at human behavior.\
 **Duration:** ~3.5 minutes\
 **Visual style:** 1950s educational film cartoon ("Duck and Cover" meets Wishonia)
-
----
 
 ## Scene 1: The Most Important Person {.scene}
 
@@ -168,7 +160,6 @@ And nobody has to become a better person. Defense contractors keep their budget.
 **Keyframe:** A 1950s pie chart showing the money split. A huge 80% slice pours out medicine bottles. A 10% slice rains coins onto delighted investors in monocles. In the remaining 10% slice, a tiny politician is being picked up by an arcade crane claw. The crane operator looks bored. Display text: "{{< var dih_treasury_medical_research_pct >}}" on the large slice, "{{< var victory_bond_funding_pct >}}" on the investor slice, "{{< var iab_political_incentive_funding_pct >}}" on the politician slice.
 **Animation:** Medicine bottles pour. Coins rain. The crane drops the politician into a "YES" box. He looks confused but cooperative.
 :::
-
 
 :::{.scene-keyframe}
 ![](../assets/images/educational-film/04-03.jpg)
@@ -321,7 +312,6 @@ Every minute you don't act, {{< var global_disease_deaths_per_minute_nounit >}} 
 **Keyframe:** A giant wall clock where the minute hand is a grim reaper's scythe. The reaper is the hour hand, sweating, consulting a clipboard so long it drags across the floor. Each tick, a person silhouette vanishes. He looks exhausted and apologetic. Do not include any text (clock should have standard numerals only).
 **Animation:** The scythe ticks. People vanish. The reaper checks his clipboard, sighs, can't keep up.
 :::
-
 
 :::{.scene-keyframe}
 ![](../assets/images/educational-film/08-04.jpg)

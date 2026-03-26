@@ -1,7 +1,7 @@
 ---
-title: "The Earth Optimization Prize"
-subtitle: "A game where every player wins. The prize is less war, cured diseases, and more money."
-description: "Put money in a pool. Recruit people to vote on the 1% Treaty. If humanity gets healthier and richer by {{< var destructive_economy_50pct_year >}}, VOTE point-holders split the pool. If not, depositors get their money back (at {{< var prize_pool_horizon_multiple >}} what they put in)."
+title: The Earth Optimization Prize
+subtitle: A game where every player wins. The prize is less war, cured diseases, and more money.
+description: Put money in a pool. Recruit people to vote on the 1% Treaty. If humanity gets healthier and richer by {{< var destructive_economy_50pct_year >}}, VOTE point-holders split the pool. If not, depositors get their money back (at {{< var prize_pool_horizon_multiple >}} what they put in).
 abstract: |
   Humanity spends {{< var military_to_government_clinical_trials_spending_ratio >}}x more on wars than testing which medicines work. The Earth Optimization Prize pays whoever fixes that. Two target numbers: healthy life years and median income. Hit them by {{< var destructive_economy_50pct_year >}} and the pool goes to the people who recruited voters for the 1% Treaty. Miss them and depositors split the pool pro rata (still beats a retirement account). The mechanism: deposit, recruit, and let compound interest do the rest.
 published: true
@@ -92,8 +92,6 @@ The Game needs an institutional host before it can accept PRIZE deposits. In the
 That is it: vote and recruit. PRIZE deposits begin once an institution hosts the pool. If the Prize fails, you keep your share of the pool (still beats your retirement account). If it succeeds, diseases get cured and everyone gets rich. The first step is small on purpose.
 
 Everything below this line is for readers who want to understand why before they act.
-
----
 
 ## The Problem Statement
 

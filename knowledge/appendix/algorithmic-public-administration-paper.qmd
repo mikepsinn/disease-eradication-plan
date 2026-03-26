@@ -1,7 +1,7 @@
 ---
-title: "Algorithmic Public Administration"
-subtitle: "A Protocol for Replacing Government Intermediaries with Deterministic Functions"
-description: "A protocol combining five primitives (transparent ledger, preference aggregation, evidence engine, identity verification, automated monetary policy) to replace mechanical government functions, recover visible citizen dividends, and stop wasting {{< var us_gov_waste_pct_gdp >}} of GDP on humans doing robot work, while preserving democratic control."
+title: Algorithmic Public Administration
+subtitle: A Protocol for Replacing Government Intermediaries with Deterministic Functions
+description: A protocol combining five primitives (transparent ledger, preference aggregation, evidence engine, identity verification, automated monetary policy) to replace mechanical government functions, recover visible citizen dividends, and stop wasting {{< var us_gov_waste_pct_gdp >}} of GDP on humans doing robot work, while preserving democratic control.
 abstract: |
   Government agencies are chains of humans passing paper to other humans, each checking whether the previous human filled out the right form rather than whether anyone got helped. In the United States alone, this intermediation destroys or diverts {{< var us_gov_waste_total >}} per year, or {{< var us_gov_waste_pct_gdp >}} of GDP [@us-efficiency-audit-paper-2025]. We describe a protocol combining five primitives (transparent ledger, preference aggregation, evidence engine, identity verification, and automated monetary policy) that replaces specific mechanical functions currently performed by the Federal Reserve, Internal Revenue Service, Social Security Administration, Government Accountability Office, Congressional Budget Office, Office of Management and Budget, Federal Election Commission, and Census Bureau. The protocol preserves democratic control: citizens still decide resource allocation through pairwise preference comparison (Wishocracy [@wishocracy-paper-2025]). The algorithm executes those decisions without extracting value at each administrative layer. We distinguish fiscal cash the protocol can route directly into UBI from broader societal gains that arrive as lower prices and higher wages, and we describe a phased implementation pathway compatible with the 1% Treaty [@1-pct-treaty-impact-paper-2025] funding mechanism.
 published: true
@@ -11,7 +11,6 @@ tags:
   - mechanism-design
   - government-efficiency
   - monetary-policy
-
 author:
   - name: Mike P. Sinn
     affiliation:
@@ -21,7 +20,6 @@ author:
       - writing – original draft
     email: mike@warondisease.org
     corresponding: true
-
 keywords:
   - algorithmic-governance
   - public-administration
@@ -31,7 +29,6 @@ keywords:
   - monetary-policy
   - universal-basic-income
   - preference-aggregation
-
 jel:
   - H11
   - H50
@@ -39,11 +36,9 @@ jel:
   - D61
   - E52
   - O38
-
 image: /assets/og-images/knowledge/appendix/algorithmic-public-administration-og.jpg
 podcast-image: /assets/podcast/algorithmic-public-administration-podcast.jpg
 youtube-thumbnail: /assets/podcast/algorithmic-public-administration-youtube.jpg
-
 aliases:
   - /algorithmic-governance.html
   - /algorithmic-public-administration.html
