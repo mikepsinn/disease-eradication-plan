@@ -1449,6 +1449,9 @@
     messages[messages.length - 1].content = fullText;
     sessionStorage.setItem("wishonia-chat", JSON.stringify(messages));
 
+    // Safety: remove visual loading after 5s if visuals API didn't respond
+    setTimeout(function () { removeVisualLoading(bubble); }, 5000);
+
     // Strip "Read more:" lines for display (source pills replace them)
     var displayText = fullText.replace(/\n*Read more:[\s\S]*$/, "").trim();
 
@@ -1512,7 +1515,7 @@
     }
   }
 
-  function sendChatRequest(question, context, history) {
+  function sendChatRequest(question, context, history, visualsPromise) {
     isStreaming = true;
     sendBtn.disabled = true;
     showStreamingUI(true);
@@ -1524,6 +1527,23 @@
 
     // Abort controller for stop button
     abortController = new AbortController();
+
+    // Track the bubble for visual card attachment
+    var responseBubble = null;
+
+    // Handle visuals promise (fire-and-forget; never blocks main response)
+    if (visualsPromise) {
+      visualsPromise.then(function (visuals) {
+        if (!visuals) return;
+        var card = renderVisualCard(visuals);
+        if (!card) return;
+        if (responseBubble) {
+          removeVisualLoading(responseBubble);
+          responseBubble.appendChild(card);
+          scrollToBottom();
+        }
+      });
+    }
 
     fetch(API_BASE + "/api/chat", {
       method: "POST",
@@ -1551,6 +1571,14 @@
         msgContainer.appendChild(bubble);
         messages.push({ role: "assistant", content: "" });
         scrollToBottom(true);
+
+        // Expose bubble for visual card attachment
+        responseBubble = bubble;
+
+        // Show visual loading shimmer
+        if (visualsPromise) {
+          showVisualLoading(bubble);
+        }
 
         var fullText = "";
         var reader = response.body.getReader();
@@ -1853,6 +1881,10 @@
             }
             liveClient.sendText(combined);
 
+            // Fire parallel visuals request for voice mode
+            var voiceImageOptions = findTopImageCandidates(transcript, lastSearchResults, 3);
+            liveVoiceVisualsPromise = fetchVisuals(transcript, ragContext, voiceImageOptions);
+
             // Show RAG context in UI
             if (ragContext) {
               var ragBubble = document.createElement("div");
@@ -2143,6 +2175,7 @@
   var liveVoiceSpoken = "";
   var liveVoiceQuestion = ""; // last user question for image search
   var liveVoiceBubble = null; // streaming bubble for voice responses
+  var liveVoiceVisualsPromise = null; // parallel visuals request for voice mode
   var localRecognitionPaused = false; // suppress auto-restart while Gemini speaks
   var aiSpeaking = false; // true while AI is responding, enables audio-to-Gemini for interrupt detection
   var voiceStateEl = null;
@@ -2236,6 +2269,22 @@
       actions.appendChild(ttsBtn);
       actions.appendChild(createCopyButton(fullText));
       bubble.appendChild(actions);
+    }
+
+    // Attach visual card from parallel visuals request
+    if (liveVoiceVisualsPromise) {
+      var visualsBubble = bubble;
+      showVisualLoading(visualsBubble);
+      liveVoiceVisualsPromise.then(function (visuals) {
+        removeVisualLoading(visualsBubble);
+        if (!visuals) return;
+        var card = renderVisualCard(visuals);
+        if (card) {
+          visualsBubble.appendChild(card);
+          scrollToBottom();
+        }
+      });
+      liveVoiceVisualsPromise = null;
     }
 
     scrollToBottom();
