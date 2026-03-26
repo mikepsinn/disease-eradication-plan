@@ -1679,6 +1679,8 @@
       voice: "Kore",
       onInputTranscript: function (transcript) {
         if (!transcript || !transcript.trim()) return;
+        // Ignore echo transcripts while AI is speaking (residual audio leaking past echo cancellation)
+        if (aiSpeaking) return;
         // Skip if local SpeechRecognition is handling user speech + RAG
         if (localRecognition) return;
         appendMessage("user", transcript.trim());
@@ -1724,6 +1726,7 @@
       onModelTurnStarted: function () {
         // Keep showing thinking indicator - switch to "speaking" on first audio chunk
         // Pause local recognition while Gemini speaks to prevent echo transcription
+        aiSpeaking = true;
         localRecognitionPaused = true;
         if (localRecognition) {
           try { localRecognition.stop(); } catch (_) {}
@@ -1758,6 +1761,7 @@
         scrollToBottom();
       },
       onInterrupted: function () {
+        aiSpeaking = false;
         audioPlayback.interrupt();
         if (liveVoiceThinking || liveVoiceSpoken) {
           appendVoiceMessage(liveVoiceThinking, liveVoiceSpoken);
@@ -1773,6 +1777,7 @@
         }
       },
       onTurnComplete: function () {
+        aiSpeaking = false;
         if (liveVoiceThinking || liveVoiceSpoken) {
           appendVoiceMessage(liveVoiceThinking, liveVoiceSpoken);
           liveVoiceThinking = "";
@@ -1812,7 +1817,9 @@
     var hasLocalSR = !!(window.SpeechRecognition || window.webkitSpeechRecognition);
     audioCapture = new AudioCapture(
       function (b64chunk) {
-        if (liveClient && !hasLocalSR) liveClient.sendAudio(b64chunk);
+        if (!liveClient) return;
+        // Send audio when: (a) no local SR (fallback), or (b) AI is speaking (for interrupt detection via server VAD)
+        if (!hasLocalSR || aiSpeaking) liveClient.sendAudio(b64chunk);
       },
       function (volume) {
         updateVolumeVisualizer(volume);
@@ -1848,6 +1855,7 @@
   var liveVoiceQuestion = ""; // last user question for image search
   var liveVoiceBubble = null; // streaming bubble for voice responses
   var localRecognitionPaused = false; // suppress auto-restart while Gemini speaks
+  var aiSpeaking = false; // true while AI is responding, enables audio-to-Gemini for interrupt detection
   var voiceStateEl = null;
 
   function appendVoiceMessage(thinking, spoken) {
@@ -2062,6 +2070,7 @@
 
   function stopLiveVoice() {
     liveVoiceMode = false;
+    aiSpeaking = false;
     stopLocalTranscription();
 
     if (audioCapture) {
