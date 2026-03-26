@@ -2,6 +2,7 @@
 title: Earth Optimization Prize 90-Day Pilot
 subtitle: A Bounded Institutional Launch Package For The First Public Contest, Scoreboard, And Red-Team Cycle
 description: "A sponsor-facing 90-day pilot proposal for institutions considering whether to host the first Earth Optimization Prize launch without becoming the mechanism's root of trust."
+search: false
 ---
 
 {{< include ../includes/setup-parameters.qmd >}}

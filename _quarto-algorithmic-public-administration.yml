@@ -132,7 +132,7 @@ metadata:
 
   # Open Graph metadata (enables per-page custom OG images)
   open-graph: true
-  # image: ""  # TODO: Generate OG image
+  image: ""  # No OG image generated yet
 
   # Publication tracking
   publishing:
