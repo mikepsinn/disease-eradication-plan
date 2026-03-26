@@ -92,15 +92,18 @@
 
     fetch("/assets/json/search-index.json")
       .then(function (r) {
-        if (!r.ok) throw new Error(r.status);
+        if (!r.ok) throw new Error("HTTP " + r.status);
+        var ct = r.headers.get("content-type") || "";
+        if (ct.indexOf("json") === -1) throw new Error("Expected JSON, got " + ct + " (proxy misconfigured?)");
         return r.json();
       })
       .then(function (data) {
         searchIndex = Array.isArray(data) ? data : data.entries || [];
         searchLoading = false;
+        console.log("[VOICE-RAG] Search index loaded:", searchIndex.length, "entries");
       })
       .catch(function (err) {
-        console.error("[VOICE-RAG] Failed to load search index:", err);
+        console.error("[VOICE-RAG] Failed to load search index:", err.message);
         searchLoading = false;
       });
   }
@@ -2114,7 +2117,7 @@
           msgContainer.appendChild(liveVoiceBubble);
         }
         var textEl = liveVoiceBubble.querySelector(".chat-msg-text");
-        if (textEl) textEl.textContent = liveVoiceSpoken;
+        if (textEl) textEl.innerHTML = renderMarkdown(liveVoiceSpoken);
         scrollToBottom();
       },
       onInterrupted: function () {
