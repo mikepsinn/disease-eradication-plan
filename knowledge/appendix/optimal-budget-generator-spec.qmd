@@ -54,7 +54,7 @@ format:
   html:
     toc: true
     toc-depth: 4
-    number-sections: true
+    number-sections: false
     code-fold: true
   pdf:
     documentclass: article

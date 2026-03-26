@@ -53,7 +53,7 @@ format:
   html:
     toc: true
     toc-depth: 3
-    number-sections: true
+    number-sections: false
   pdf:
     documentclass: article
     geometry: margin=1in
