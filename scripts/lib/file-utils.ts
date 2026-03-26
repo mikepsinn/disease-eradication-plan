@@ -1286,6 +1286,10 @@ export function cleanContentForImagePrompt(content: string): string {
     })
     // Strip Quarto cross-references: @fig-name, @tbl-name, @sec-name, @eq-name
     .replace(/@(fig|tbl|sec|eq|lst|thm)-[\w-]+/g, '')
+    // Strip <style>...</style> blocks entirely (CSS is not meaningful text)
+    .replace(/<style[\s>][\s\S]*?<\/style>/gi, '')
+    // Strip <script>...</script> blocks entirely (JS is not meaningful text)
+    .replace(/<script[\s>][\s\S]*?<\/script>/gi, '')
     // Strip HTML comments
     .replace(/<!--[\s\S]*?-->/g, '')
     // Strip HTML tags, keep content
@@ -1342,36 +1346,40 @@ export function cleanContentForLLM(content: string): string {
   // Matches: ![alt text](url) or ![alt text]
   cleaned = cleaned.replace(/!\[([^\]]*)\](?:\([^)]*\))?/g, '');
 
-  // 5. Strip HTML tags and comments (keep the text inside tags)
+  // 5. Strip <style> and <script> blocks entirely (content is CSS/JS, not meaningful text)
+  cleaned = cleaned.replace(/<style[\s>][\s\S]*?<\/style>/gi, '');
+  cleaned = cleaned.replace(/<script[\s>][\s\S]*?<\/script>/gi, '');
+
+  // 6. Strip remaining HTML tags and comments (keep the text inside tags)
   cleaned = cleaned.replace(/<!--[\s\S]*?-->/g, ''); // Remove comments first
   cleaned = cleaned.replace(/<[^>]+>/g, '');
 
-  // 6. Simplify markdown links: [text](url) -> text
+  // 7. Simplify markdown links: [text](url) -> text
   // Keep the linked text as it's often meaningful content
   cleaned = cleaned.replace(/\[([^\]]+)\]\([^)]+\)/g, '$1');
 
-  // 7. Remove citation syntax: [@citation] -> citation
+  // 8. Remove citation syntax: [@citation] -> citation
   cleaned = cleaned.replace(/\[@([^\]]+)\]/g, '$1');
 
-  // 8. Remove sentences mentioning "chapter" or "chapters" (navigation references)
+  // 9. Remove sentences mentioning "chapter" or "chapters" (navigation references)
   cleaned = cleaned.replace(/[^.!?]*\bchapters?\b[^.!?]*[.!?]\s*/gi, '');
 
-  // 9. Remove list items with "Chapter X:" references (after links are simplified)
+  // 10. Remove list items with "Chapter X:" references (after links are simplified)
   cleaned = cleaned.replace(/^[-*]\s+Chapter \d+:[^\n]*/gm, '');
 
-  // 10. Remove "See also:", "Read more:", etc. patterns (navigation helpers)
+  // 11. Remove "See also:", "Read more:", etc. patterns (navigation helpers)
   cleaned = cleaned.replace(/^[-*]?\s*(See also|Read more|For more details|Learn more|Further reading):[^\n]*/gmi, '');
 
-  // 11. Remove table of contents patterns (links to anchors on same page)
+  // 12. Remove table of contents patterns (links to anchors on same page)
   cleaned = cleaned.replace(/^[-*]\s*\[.*?\]\(#.*?\).*$/gm, '');
 
-  // 12. Strip confidence intervals: (95% CI: X-Y)
+  // 13. Strip confidence intervals: (95% CI: X-Y)
   cleaned = cleaned.replace(/\s*\(95% CI:[^)]*\)/g, '');
 
-  // 13. Remove excessive blank lines (more than 2 consecutive newlines)
+  // 14. Remove excessive blank lines (more than 2 consecutive newlines)
   cleaned = cleaned.replace(/\n{3,}/g, '\n\n');
 
-  // 14. Trim whitespace
+  // 15. Trim whitespace
   cleaned = cleaned.trim();
 
   return cleaned;

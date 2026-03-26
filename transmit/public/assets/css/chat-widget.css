@@ -910,11 +910,18 @@
 .chat-visual-mermaid {
   overflow-x: auto;
   text-align: center;
+  background: #0a0a1a;
+  border: 2px solid #33ff33;
+  border-radius: 4px;
+  padding: 12px 8px;
+  box-shadow: 0 0 8px rgba(51, 255, 51, 0.2), inset 0 0 20px rgba(0, 0, 0, 0.5);
+  image-rendering: pixelated;
 }
 
 .chat-visual-mermaid svg {
   max-width: 100%;
   height: auto;
+  filter: drop-shadow(0 0 2px rgba(51, 255, 51, 0.4));
 }
 
 .chat-visual-latex {

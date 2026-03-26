@@ -981,7 +981,31 @@
     script.onload = function () {
       mermaidLoaded = true;
       mermaidLoading = false;
-      window.mermaid.initialize({ startOnLoad: false, theme: "default" });
+      window.mermaid.initialize({
+        startOnLoad: false,
+        theme: "base",
+        themeVariables: {
+          primaryColor: "#2a4a2a",
+          primaryTextColor: "#33ff33",
+          primaryBorderColor: "#33ff33",
+          secondaryColor: "#1a1a2e",
+          secondaryTextColor: "#00ccff",
+          secondaryBorderColor: "#00ccff",
+          tertiaryColor: "#3a1a3a",
+          tertiaryTextColor: "#ff66ff",
+          tertiaryBorderColor: "#ff66ff",
+          lineColor: "#33ff33",
+          textColor: "#33ff33",
+          mainBkg: "#0a0a1a",
+          nodeBorder: "#33ff33",
+          clusterBkg: "#1a1a2e",
+          titleColor: "#00ccff",
+          edgeLabelBackground: "#0a0a1a",
+          nodeTextColor: "#33ff33",
+          fontFamily: "monospace",
+          fontSize: "13px",
+        },
+      });
       if (callback) callback();
     };
     script.onerror = function () {
