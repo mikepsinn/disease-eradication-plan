@@ -841,13 +841,14 @@
 .chat-visual-card {
   margin-top: 10px;
   padding: 12px 14px;
-  background: var(--bs-body-bg, #fff);
-  border: 1px solid var(--bs-border-color, #dee2e6);
+  background: #0d0d1a;
+  border: 1px solid rgba(54, 226, 248, 0.15);
   border-radius: 12px;
   display: flex;
   flex-direction: column;
   gap: 12px;
   animation: chatSlideIn 0.3s ease-out;
+  color: #ececec;
 }
 
 .chat-key-figure {
@@ -858,19 +859,19 @@
 .chat-key-figure-value {
   font-size: 28px;
   font-weight: 700;
-  color: var(--bs-primary, #2a6b4f);
+  color: #36e2f8;
   line-height: 1.2;
 }
 
 .chat-key-figure-label {
   font-size: 13px;
-  color: var(--bs-secondary-color, #6c757d);
+  color: #C6CBF5;
   margin-top: 4px;
 }
 
 .chat-key-figure-context {
   font-size: 12px;
-  color: var(--bs-secondary-color, #888);
+  color: #999;
   margin-top: 6px;
   font-style: italic;
 }
@@ -879,6 +880,9 @@
   position: relative;
   width: 100%;
   max-height: 220px;
+  background: #0d0d1a;
+  border-radius: 8px;
+  padding: 8px;
 }
 
 .chat-visual-chart canvas {
@@ -889,19 +893,22 @@
   width: 100%;
   border-collapse: collapse;
   font-size: 12px;
+  color: #ececec;
 }
 
 .chat-visual-table th {
-  background: var(--bs-tertiary-bg, #f0f0f0);
+  background: rgba(209, 0, 177, 0.15);
+  color: #C6CBF5;
   font-weight: 600;
   text-align: left;
   padding: 6px 10px;
-  border-bottom: 2px solid var(--bs-border-color, #dee2e6);
+  border-bottom: 2px solid rgba(54, 226, 248, 0.2);
 }
 
 .chat-visual-table td {
   padding: 5px 10px;
-  border-bottom: 1px solid var(--bs-border-color, #dee2e6);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  color: #ccc;
 }
 
 .chat-visual-table tr:last-child td {

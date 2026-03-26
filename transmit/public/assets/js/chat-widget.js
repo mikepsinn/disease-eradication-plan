@@ -1108,7 +1108,16 @@
               {
                 responsive: true,
                 maintainAspectRatio: true,
-                plugins: { legend: { labels: { font: { size: 11 } } } },
+                color: "#ececec",
+                plugins: {
+                  legend: {
+                    labels: { font: { size: 11 }, color: "#C6CBF5" },
+                  },
+                },
+                scales: chartCfg.type === "pie" || chartCfg.type === "doughnut" ? {} : {
+                  x: { ticks: { color: "#999" }, grid: { color: "rgba(255,255,255,0.06)" } },
+                  y: { ticks: { color: "#999" }, grid: { color: "rgba(255,255,255,0.06)" } },
+                },
               },
               chartCfg.options || {}
             ),

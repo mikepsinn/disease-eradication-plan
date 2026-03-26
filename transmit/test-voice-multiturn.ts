@@ -23,8 +23,8 @@ const TURN_TIMEOUT_MS = 30_000;
 const ROOT = resolve(__dirname, "..");
 
 const QUESTIONS = [
-  "How much does the world spend on military annually?",
-  "How many people die from disease every day?",
+  { q: "What is the 1% treaty?", expectInTranscript: ["1%", "treaty"] },
+  { q: "How many people die from disease every day?", expectInTranscript: ["150"] },
 ];
 
 // ─── Helpers ─────────────────────────────────────────────────────────
