@@ -38,15 +38,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 360 parameters used in the analysis, organized by type:
+This appendix documents all 366 parameters used in the analysis, organized by type:
 
 - External sources (peer-reviewed): 135
-- Calculated values: 170
+- Calculated values: 176
 - Core definitions: 55
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (170 parameters) • [External Data Sources](#sec-external) (135 parameters) • [Core Definitions](#sec-definitions) (55 parameters)
+[Calculated Values](#sec-calculated) (176 parameters) • [External Data Sources](#sec-external) (135 parameters) • [Core Definitions](#sec-definitions) (55 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -7019,6 +7019,44 @@ $$
 
 :::
 
+### Treaty Disease Cure Fraction (15yr, 1% Reallocation): 41.7% {#sec-treaty_disease_cure_fraction_15yr}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Treaty disease-cure fraction over 15 years under 1% military reallocation only. Uses base trial-capacity multiplier (no scaling beyond 1% reallocation) and applies an upper bound of 100% of untreated disease classes.
+
+**Inputs**:
+
+- [Diseases Getting First Treatment Per Year](#sec-new_disease_first_treatments_per_year) 📊: 15 diseases/year (95% CI: 8 diseases/year - 30 diseases/year)
+- [Trial Capacity Multiplier](#sec-dfda_trial_capacity_multiplier) 🔢: 12.3x
+- [Maximum Trial Capacity Multiplier (Physical Limit)](#sec-dfda_max_trial_capacity_multiplier_physical) 🔢: 566x
+- [Diseases Without Effective Treatment](#sec-diseases_without_effective_treatment) 🔢: 6.65 thousand diseases
+
+$$
+\begin{gathered}
+f_{cure,15,treaty} \\
+= \min\left(1,\frac{Treatments_{new,ann}\cdot k_{capacity}\cdot 15}{D_{untreated}}\right)
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-treaty_disease_cure_fraction_15yr.qmd >}}
+
+{{< include ../figures/sensitivity-table-treaty_disease_cure_fraction_15yr.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-treaty_disease_cure_fraction_15yr.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-treaty_disease_cure_fraction_15yr.qmd >}}
+
+:::
+
 ### Expected Cost per DALY (Risk-Adjusted): $0.177 {#sec-treaty_expected_cost_per_daly}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -7462,6 +7500,355 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-treaty_expected_vs_bed_nets_multiplier.qmd >}}
+
+:::
+
+### Treaty HALE Gain at Year 15: 6.55 years {#sec-treaty_hale_gain_year_15}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+HALE improvement at year 15 under Treaty Trajectory. As diseases are progressively cured, the gap between life expectancy and healthy life expectancy closes proportionally to the disease cure fraction.
+
+**Inputs**:
+
+- [Treaty Disease Cure Fraction (15yr, 1% Reallocation)](#sec-treaty_disease_cure_fraction_15yr) 🔢: 41.7%
+- [Global Healthy Life Expectancy (HALE)](#sec-global_hale_current) 📊: 63.3 years (SE: ±1.5 years)
+- [Global Life Expectancy (2024)](#sec-global_life_expectancy_2024) 📊: 79 years (SE: ±2 years)
+
+$$
+\begin{gathered}
+\Delta HALE_{treaty,15} \\
+= f_{cure,15,treaty} \cdot \Delta_{HALE}
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-treaty_hale_gain_year_15.qmd >}}
+
+{{< include ../figures/sensitivity-table-treaty_hale_gain_year_15.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-treaty_hale_gain_year_15.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-treaty_hale_gain_year_15.qmd >}}
+
+:::
+
+### Treaty HALE Value Per Capita: $982K {#sec-treaty_hale_value_per_capita}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Economic value of Treaty Trajectory HALE gains at year 15 using the standard QALY value.
+
+**Inputs**:
+
+- [Treaty HALE Gain at Year 15](#sec-treaty_hale_gain_year_15) 🔢: 6.55 years
+- [Standard Economic Value per QALY](#sec-standard_economic_qaly_value_usd) 📊: $150K (SE: ±$30K)
+
+$$
+\begin{gathered}
+Value_{HALE,treaty} \\
+= \Delta HALE_{treaty,15} \times Value_{QALY} \\
+= 6.55 \times \$150K \\
+= \$982K
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+\Delta HALE_{treaty,15} \\
+= f_{cure,15,treaty} \cdot \Delta_{HALE}
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+f_{cure,15,treaty} \\
+= \min\left(1,\frac{Treatments_{new,ann}\cdot k_{capacity}\cdot 15}{D_{untreated}}\right)
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+k_{capacity} \\
+= \frac{N_{fundable,dFDA}}{Slots_{curr}} \\
+= \frac{23.4M}{1.9M} \\
+= 12.3
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{fundable,dFDA} \\
+= \frac{Subsidies_{dFDA,ann}}{Cost_{pragmatic,pt}} \\
+= \frac{\$21.8B}{\$929} \\
+= 23.4M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Subsidies_{dFDA,ann} \\
+= Funding_{dFDA,ann} - OPEX_{dFDA} \\
+= \$21.8B - \$40M \\
+= \$21.8B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+OPEX_{dFDA} \\
+= Cost_{platform} + Cost_{staff} + Cost_{infra} \\
++ Cost_{regulatory} + Cost_{community} \\
+= \$15M + \$10M + \$8M + \$5M + \$2M \\
+= \$40M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+k_{capacity,max} \\
+= \frac{N_{willing}}{Slots_{curr}} \\
+= \frac{1.08B}{1.9M} \\
+= 566
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{willing} \\
+= N_{patients} \times Pct_{willing} \\
+= 2.4B \times 44.8\% \\
+= 1.08B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{untreated} \\
+= N_{rare} \times 0.95 \\
+= 7{,}000 \times 0.95 \\
+= 6{,}650
+\end{gathered}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-treaty_hale_value_per_capita.qmd >}}
+
+{{< include ../figures/sensitivity-table-treaty_hale_value_per_capita.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-treaty_hale_value_per_capita.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-treaty_hale_value_per_capita.qmd >}}
+
+:::
+
+### Treaty Personal Upside (Blended): $15.7M {#sec-treaty_personal_upside_blend}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Blended personal upside under Treaty Trajectory: lifetime income gain plus valued healthy-life gains.
+
+**Inputs**:
+
+- [Treaty Trajectory Lifetime Income Gain (Per Capita)](#sec-treaty_trajectory_lifetime_income_gain_per_capita) 🔢: $14.7M
+- [Treaty HALE Value Per Capita](#sec-treaty_hale_value_per_capita) 🔢: $982K
+
+$$
+\begin{gathered}
+Upside_{blend,treaty} \\
+= \Delta Y_{lifetime,treaty} + Value_{HALE,treaty} \\
+= \$14.7M + \$982K \\
+= \$15.7M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+\Delta Y_{lifetime,treaty} \\
+= Y_{cum,treaty} - Y_{cum,earth} \\
+= \$16.1M - \$1.34M \\
+= \$14.7M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Y_{cum,treaty} \\
+= \bar{y}_0 \cdot \frac{(1+g_{pc})((1+g_{pc})^{20}-1)}{g_{pc}} \\
++ \bar{y}_{treaty,20} \cdot \frac{(1+g_{base})((1+g_{base})^{T_{remaining}-20}-1)}{g_{base}}
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+\bar{y}_{0} \\
+= \frac{GDP_{global}}{Pop_{global}} \\
+= \frac{\$115T}{8B} \\
+= \$14.4K
+\end{gathered}
+$$
+where:
+$$
+\bar{y}_{treaty,20} = \frac{GDP_{treaty,20}}{Pop_{2045}}
+$$
+where:
+$$
+\begin{gathered}
+GDP_{treaty,20} \\
+= GDP_0(1+g_{treaty,ramp})^3(1+g_{treaty,full})^{17}
+\end{gathered}
+$$
+where:
+$$
+s_{mil,max} = Cut_{WW2} = 87.6\% = 87.6\%
+$$
+where:
+$$
+\begin{gathered}
+Cut_{WW2} \\
+= 1 - \frac{Spending_{US,1947}}{Spending_{US,1945}} \\
+= 1 - \frac{\$176B}{\$1.42T} \\
+= 87.6\%
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+f_{cure,20,wish} \\
+= \min\left(1,\frac{Treatments_{new,ann}\cdot k_{capacity,wish}\cdot 20}{D_{untreated}}\right)
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+k_{capacity} \\
+= \frac{N_{fundable,dFDA}}{Slots_{curr}} \\
+= \frac{23.4M}{1.9M} \\
+= 12.3
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{fundable,dFDA} \\
+= \frac{Subsidies_{dFDA,ann}}{Cost_{pragmatic,pt}} \\
+= \frac{\$21.8B}{\$929} \\
+= 23.4M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Subsidies_{dFDA,ann} \\
+= Funding_{dFDA,ann} - OPEX_{dFDA} \\
+= \$21.8B - \$40M \\
+= \$21.8B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+OPEX_{dFDA} \\
+= Cost_{platform} + Cost_{staff} + Cost_{infra} \\
++ Cost_{regulatory} + Cost_{community} \\
+= \$15M + \$10M + \$8M + \$5M + \$2M \\
+= \$40M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+k_{capacity,max} \\
+= \frac{N_{willing}}{Slots_{curr}} \\
+= \frac{1.08B}{1.9M} \\
+= 566
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{willing} \\
+= N_{patients} \times Pct_{willing} \\
+= 2.4B \times 44.8\% \\
+= 1.08B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{untreated} \\
+= N_{rare} \times 0.95 \\
+= 7{,}000 \times 0.95 \\
+= 6{,}650
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{remaining} \\
+= LE_{global} - Age_{median} \\
+= 79 - 30.5 \\
+= 48.5
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Y_{cum,earth} \\
+= \bar{y}_0 \cdot \frac{(1+g_{base})((1+g_{base})^{T_{remaining}}-1)}{g_{base}}
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Value_{HALE,treaty} \\
+= \Delta HALE_{treaty,15} \times Value_{QALY} \\
+= 6.55 \times \$150K \\
+= \$982K
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+\Delta HALE_{treaty,15} \\
+= f_{cure,15,treaty} \cdot \Delta_{HALE}
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+f_{cure,15,treaty} \\
+= \min\left(1,\frac{Treatments_{new,ann}\cdot k_{capacity}\cdot 15}{D_{untreated}}\right)
+\end{gathered}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-treaty_personal_upside_blend.qmd >}}
+
+{{< include ../figures/sensitivity-table-treaty_personal_upside_blend.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-treaty_personal_upside_blend.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-treaty_personal_upside_blend.qmd >}}
 
 :::
 
@@ -9390,6 +9777,129 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-voter_suffering_hours_prevented.qmd >}}
+
+:::
+
+### VOTE Payout for 2 Claims: $387K {#sec-vote_2_claims_payout}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Potential payout for a depositor who recruits 2 verified participants (earning 2 VOTE claims) if the PRIZE pool reaches its canonical potential max size. This is a recruiter example, not the system-wide average claim denominator.
+
+**Inputs**:
+
+- [VOTE Token Potential Value](#sec-vote_token_potential_value) 🔢: $194K
+
+$$
+V_{2claims} = V_{vote} \times 2 = \$194K \times 2 = \$387K
+$$
+where:
+$$
+V_{vote} = \frac{Pool_{max}}{N_{coord}}
+$$
+where:
+$$
+Pool_{max} = Assets_{retire} \times M_{pool}
+$$
+where:
+$$
+M_{pool} = (1 + r_{pool})^{Y_{50\%} - Y_0}
+$$
+where:
+$$
+\begin{gathered}
+r_{pool} \\
+= r_{VC,gross} + \Delta r_{scale} + \alpha_{crowd} \\
++ \alpha_{home}
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+\alpha_{crowd} \\
+= S_{alloc} \times (Acc_{crowd} - Acc_{expert}) \\
+= 8\% \times (91\% - 65\%) \\
+= 2.08\%
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Y_{50\%} \\
+= Y_0 \\
++ \frac{\ln(0.50 / r_{destruct:GDP})}{\ln(1 + g_{destruct} - g_{GDP})}
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+r_{destruct:GDP} \\
+= \frac{Cost_{destruct}}{GDP_{global}} \\
+= \frac{\$13.2T}{\$115T} \\
+= 11.5\%
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{destruct} \\
+= Spending_{mil} + Cost_{cyber} \\
+= \$2.72T + \$10.5T \\
+= \$13.2T
+\end{gathered}
+$$
+where:
+$$
+N_{coord} = N_{global} \times R_{coord}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-vote_2_claims_payout.qmd >}}
+
+{{< include ../figures/sensitivity-table-vote_2_claims_payout.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-vote_2_claims_payout.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-vote_2_claims_payout.qmd >}}
+
+:::
+
+### VOTE Token Potential Value: $194K {#sec-vote_token_potential_value}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Potential value of a single VOTE claim if the PRIZE pool reaches its canonical potential max size. Denominator is the modeled global coordination target, not the lower forecast participation path.
+
+**Inputs**:
+
+- [PRIZE Pool Potential Max Size](#sec-prize_pool_potential_max_size) 🔢: $774T
+- [Global Coordination Target Supporters](#sec-global_coordination_target_supporters) 🔢: 4 billion of people
+
+$$
+V_{vote} = \frac{Pool_{max}}{N_{coord}}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-vote_token_potential_value.qmd >}}
+
+{{< include ../figures/sensitivity-table-vote_token_potential_value.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-vote_token_potential_value.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-vote_token_potential_value.qmd >}}
 
 :::
 

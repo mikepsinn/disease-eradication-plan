@@ -447,6 +447,36 @@ This manual contains:
 
 Everything is designed to work WITH human dysfunction, not against it. I'm not asking humans to be better humans. I'm showing you how to bribe humanity into not dying.
 
+### But You Don't Need to Understand Any of That
+
+You just read five steps involving bonds, lobbyists, Super PACs, a decentralized FDA, and an appliance that optimizes government policy. You are thinking: "Nobody can coordinate all of that."
+
+Correct. Nobody coordinates a pencil either.
+
+One of your economists held up a pencil on television and said: "There's not a single person in the world who could make this pencil. The wood comes from a tree in Washington. The graphite comes from mines in South America. The rubber comes from Malaya. The brass ferrule, I haven't the slightest idea where it came from. Literally thousands of people cooperated to make this pencil. People who don't speak the same language, who practice different religions, who might hate one another if they ever met. No one sitting in a central office gave orders to these thousands of people. No military police enforced the orders that were not given." [-]
+
+A pencil costs 25 cents and requires the coordinated effort of thousands of strangers across dozens of countries. Nobody planned it. Nobody runs it. Everyone involved just wanted money, and the price system turned their selfishness into pencils. Your species does this billions of times a day without noticing.
+
+Now look at this cured disease.
+
+There is not a single person in the world who could cure it. The researcher in Lagos who found the cheaper trial design does not know the lobbyist in Brussels who passed the directive. The lobbyist does not know the nonprofit in Manila that recruited a million voters. The voters do not know the bondholder in New York whose greed funded the campaign. The bondholder does not know the politician in Delhi who voted yes because the Super PAC funded her opponent last time she voted no. The politician does not know the factory worker in Dhaka whose clinical trial enrollment generated the data that proved the treatment worked. Literally millions of people cooperated to cure this disease. No one sitting in a central office gave orders. No military police enforced the orders that were not given. Two numbers on a Scoreboard and pieces of paper with presidents on them did what no committee, no charity, and no central plan has ever done.
+
+The five steps above are the machinery. You do not need to build the machinery. You need to turn it on. Here is the switch.
+
+### The Earth Optimization Prize
+
+Put money in a pool. The pool compounds at 17.4% annually through a [wishocratic fund](https://manual.warondisease.org/knowledge/economics/wishocratic-investment-fund.html) (the venture capital returns your retirement account is legally banned from accessing). Two target numbers: did people live longer? Did they get richer? By 2040, if the targets are met, VOTE point-holders split the pool. If the targets are missed, depositors divide it pro rata.
+
+Either way, the pool beats your retirement account. Your retirement account returns 2.57x over the same period. The Prize pool returns 11.1x. The worst outcome is better than your current best outcome.
+
+You earn VOTE points by recruiting verified referendum participants. One person, one point. Recruit two people, earn two points. If the targets are met, each point pays $194K.
+
+**Worked example: $100 deposit + 2 VOTE points.**
+
+- *Targets missed:* You get back $100 x 11.1x = $1,110 from the pool. Your VOTE points pay nothing. You still beat a conventional retirement account ($100 x 2.57x = $257).
+- *Targets met:* Your $100 deposit goes to VOTE point-holders. Your 2 VOTE points pay 2 x $194K = $387K. Plus you live in a world where diseases get cured and everyone is $15.7M richer.
+
+Your job was never to understand the five steps. Your job is to [deposit](https://warondisease.org), vote, and recruit two people. Four billion humans whose payout depends on curing diseases will attract the lobbyists, researchers, and institutions who know how to do the rest. The greed handles it. It always has. You just never pointed it at anything useful before. (For the full mechanism, see [The Earth Optimization Prize](https://manual.warondisease.org/knowledge/strategy/earth-optimization-prize.html).)
 
 ## Choose Your Own Adventure
 
@@ -523,7 +553,7 @@ Of all the consciousness that has ever flickered into existence across 13.8 bill
 
 You get to be alive for the part where the math got done and the puppet strings got cut. Not just the part where disease ends. The part where the thing that made you irrational, violent, and incapable of caring about strangers turns out to be a circuit, and circuits can be redesigned. Where your worst Tuesday feels better than your current best birthday. Where, for the first time in 13.8 billion years, the atoms that learned to feel get to choose what they feel.
 
-Go to [warondisease.org](https://warondisease.org) and vote. Fifteen seconds. Then forward this to one person with more reach than you. That's it. Every minute you delay, 104 humans permanently stop. Your vote saves 38.4 lives and prevents 6.9 million hours of suffering. Those are not metaphors. Those are people. They have names you'll never learn because they died while you were deciding if this was worth fifteen seconds.
+Go to [warondisease.org](https://warondisease.org). Vote (fifteen seconds). Deposit $1 in the Prize pool (your worst-case return is 11.1x). Recruit two people. That's it. Every minute you delay, 104 humans permanently stop. Your vote saves 38.4 lives and prevents 6.9 million hours of suffering. Those are not metaphors. Those are people. They have names you'll never learn because they died while you were deciding if this was worth fifteen seconds.
 
 "I didn't know" is no longer available to you.
 
@@ -547,7 +577,7 @@ This is why aliens don't visit.
 
 ### [The 1% Treaty: Harnessing Greed to Eradicate Disease](https://manual.warondisease.org/knowledge/economics/1-pct-treaty-impact.html)
 
-[![The 1 percent Treaty: Harnessing Greed to Eradicate Disease](https://manual.warondisease.org/assets/og/economics-og-1200x630.jpg)](https://manual.warondisease.org/knowledge/economics/1-pct-treaty-impact.html)
+[![The 1 percent Treaty: Harnessing Greed to Eradicate Disease](https://manual.warondisease.org/assets/og/1-pct-treaty-impact-og-1200x630.jpg)](https://manual.warondisease.org/knowledge/economics/1-pct-treaty-impact.html)
 
 > 6.65 thousand diseases have 0 FDA-approved treatments. At current trial capacity (15 diseases/year), exploring the therapeutic search space takes ~443 years. Redirect 1% of military spending ($27.2B/year) to pragmatic clinical trials. Trial capacity jumps 12.3x. Search space explored in ~36 years instead of centuries. Average treatment reaches patients 212 years sooner. Timeline shift saves 10.7 billion deaths, valued at $84.8 quadrillion. Cost-effectiveness: $0.00177/DALY, 50.3kx better than bed nets. Even at 1% probability of treaty adoption, risk-adjusted cost-effectiveness remains superior to the best existing global health interventions. Incentive Alignment Bonds address political feasibility by tying legislators' career incentives to a public voting scorecard. For ceiling context, the Minimum Sustainable Trajectory (1% Treaty) reaches 16.5x the Earth baseline after 20 years, with average income at $339K and total output at $3.11 quadrillion. The Optimal Governance Trajectory reaches 56.7x the Earth baseline, with average income at $1.16M versus $20.5K on the status-quo path and total output at $10.7 quadrillion ([The Political Dysfunction Tax](https://political-dysfunction-tax.warondisease.org)).
 
@@ -559,13 +589,15 @@ This is why aliens don't visit.
 
 ### [Choose Your Own Earth: A World Without the Political Dysfunction Tax, or Terminal Parasitic Load in 15 Years](https://manual.warondisease.org/knowledge/economics/gdp-trajectories.html)
 
+[![Choose Your Own Earth: A World Without the Political Dysfunction Tax, or Terminal Parasitic Load in 15 Years](https://manual.warondisease.org/assets/og/gdp-trajectories-og-1200x630.jpg)](https://manual.warondisease.org/knowledge/economics/gdp-trajectories.html)
+
 > Your destructive economy (military spending plus cybercrime) is already 11.5% of GDP and growing faster than your productive economy. At current rates, it reaches the Soviet collapse threshold in 8 years and exceeds productive output in 15. This paper models two GDP trajectories: the optimized path under military-to-medical reallocation, and the default path to civilizational collapse.
 
 ### [Incentive Alignment Bonds: Making Public Goods Financially and Politically Profitable](https://manual.warondisease.org/knowledge/appendix/incentive-alignment-bonds-paper.html)
 
 [![Incentive Alignment Bonds: Making Public Goods Financially and Politically Profitable](https://manual.warondisease.org/assets/og/iab-og-1200x630.jpg)](https://manual.warondisease.org/knowledge/appendix/incentive-alignment-bonds-paper.html)
 
-> Government spending correlates with lobbying intensity, not marginal societal value. Programs with benefit-cost ratios exceeding 100:1 (vaccines, e-governance) receive single-digit billions while programs with negative net returns (military beyond deterrence, fossil fuel subsidies) receive hundreds of billions. This paper introduces Incentive Alignment Bonds (IABs), financial instruments that realign politician incentives with net societal value optimization. IABs create a capital pool that rewards politicians (via campaign support and post-office career opportunities) for funding high-NSV programs over low-NSV alternatives. The mechanism requires no legislative change: existing PAC infrastructure, impact bonds, and prediction markets can deploy it today. Analysis of a proposed 1% Treaty redirecting $27.2B/year from military spending to medical research shows expected returns exceeding 100:1 for early investors. The 90:1 capital asymmetry ($454T in household wealth vs. $5T for concentrated interests) means diffuse beneficiaries can outspend incumbent lobbies once coordination problems are solved. IABs solve that coordination problem by turning political change into an investable asset class. A dominant assurance contract mechanism solves the bootstrap coordination problem: investor participation is the strictly dominant strategy regardless of beliefs about other investors' behavior, closing the end-to-end incentive chain from citizen coordination through treaty passage. At system scale, the Optimal Governance Trajectory reaches 56.7x the Earth baseline after 20 years, raises average income to $1.16M versus $20.5K on the status-quo path, reaches $10.7 quadrillion in total output, and recovers roughly $101T/year in suppressed value ([The Political Dysfunction Tax](https://political-dysfunction-tax.warondisease.org)).
+> Government spending correlates with lobbying intensity, not marginal societal value. Programs with benefit-cost ratios exceeding 100:1 (vaccines, e-governance) receive single-digit billions while programs with negative net returns (military beyond deterrence, fossil fuel subsidies) receive hundreds of billions. This paper introduces Incentive Alignment Bonds (IABs), financial instruments that realign politician incentives with net societal value optimization. IABs create a capital pool funded by treaty inflows (80% to pragmatic clinical trials, 10% to investor returns, 10% to political incentives) that rewards politicians (via campaign support and post-office career opportunities) for funding high-NSV programs over low-NSV alternatives. The mechanism requires no legislative change: existing PAC infrastructure, impact bonds, and prediction markets can deploy it today. Analysis of a proposed 1% Treaty redirecting $27.2B/year from military spending to medical research shows a conditional 272% annual return for bondholders while the treaty remains in force. The 90:1 capital asymmetry ($454T in household wealth vs. $5T for concentrated interests) means diffuse beneficiaries can outspend incumbent lobbies once coordination problems are solved. IABs solve that coordination problem by turning political change into an investable asset class. A dominant assurance contract mechanism solves the bootstrap coordination problem: investor participation is the strictly dominant strategy regardless of beliefs about other investors' behavior, closing the end-to-end incentive chain from citizen coordination through treaty passage. At system scale, the Optimal Governance Trajectory reaches 56.7x the Earth baseline after 20 years, raises average income to $1.16M versus $20.5K on the status-quo path, reaches $10.7 quadrillion in total output, and recovers roughly $101T/year in suppressed value ([The Political Dysfunction Tax](https://political-dysfunction-tax.warondisease.org)).
 
 ### [Wishocracy: Solving the Democratic Principal-Agent Problem Through Pairwise Preference Aggregation](https://manual.warondisease.org/knowledge/appendix/wishocracy-paper.html)
 
@@ -590,6 +622,10 @@ This is why aliens don't visit.
 [![The Price of Political Change: A Cost-Benefit Framework for Policy Incentivization](https://manual.warondisease.org/assets/og/cost-of-change-og-1200x630.jpg)](https://manual.warondisease.org/knowledge/appendix/cost-of-change-analysis.html)
 
 > What is the maximum cost to achieve any policy change through legal democratic channels? We estimate $25 billion for the United States and $200 billion globally. These figures represent the upper bound of matching all opposition spending (campaign finance, lobbying) and providing career alternatives for affected legislators. For high net-societal-value policies, even these maximum costs yield extraordinary returns: military-to-health reallocation achieves a benefit-cost ratio exceeding 400,000:1, carbon pricing exceeds 1,000:1, and occupational licensing reform exceeds 2,000:1. The "political impossibility" objection thus reduces to a capital allocation problem. Political change is not impossible; it is merely expensive, and for valuable reforms, the price is trivial relative to the benefits. At system scale, the Optimal Governance Trajectory reaches 56.7x the Earth baseline after 20 years, raises average income to $1.16M versus $20.5K on the status-quo path, reaches $10.7 quadrillion in total output, and recovers roughly $101T/year in suppressed value ([The Political Dysfunction Tax](https://political-dysfunction-tax.warondisease.org)).
+
+### [Algorithmic Public Administration: A Protocol for Replacing Government Intermediaries with Deterministic Functions](https://manual.warondisease.org/knowledge/appendix/algorithmic-public-administration.html)
+
+> A protocol combining five primitives (transparent ledger, preference aggregation, evidence engine, identity verification, automated monetary policy) to replace mechanical government agency functions, eliminating administrative intermediation costs while preserving democratic control.
 
 ### [United States Efficiency Audit](https://manual.warondisease.org/knowledge/appendix/us-efficiency-audit.html)
 
@@ -635,13 +671,19 @@ This is why aliens don't visit.
 
 ### [Earth Optimization Prize Protocol: Technical Specification](https://manual.warondisease.org/knowledge/appendix/earth-optimization-prize-protocol.html)
 
+[![Earth Optimization Prize Protocol: Technical Specification](https://manual.warondisease.org/assets/og/earth-optimization-prize-protocol-og-1200x630.jpg)](https://manual.warondisease.org/knowledge/appendix/earth-optimization-prize-protocol.html)
+
 > The Earth Optimization Prize is a same-pool outcome prize that rewards humanity for increasing global median health and wealth above verified thresholds. If the metrics are not met, depositors divide the realized pool pro rata by deposits; if global median healthy life years and global median real after-tax income improve, the same treasury releases to verified participants proportionally. Registration asks two questions: yes/no on the 1% treaty (the concrete political demand) and how much military vs. clinical trials (with cross-jurisdictional evidence from Optimitron). The mechanism is designed for interoperability: independently operated pools commit to the same two terminal metrics and automatically form a single reward network. This paper specifies the six protocol-level capabilities that interoperability requires: (1) a cross-pool identity layer providing one-person-one-vote guarantees via proof-of-personhood; (2) a permissionless pool registry that makes metric commitments verifiable; (3) VOTE and PRIZE token mechanics with defined minting rules and payout triggers; (4) direct cross-pool claims where any verified voter can claim from any pool; (5) tamper-evident scoreboard aggregation so every front-end displays the same coalition-wide totals; and (6) a terminal metric oracle combining institutional data with decentralized surveys to trigger treasury release. The goal is a protocol simple enough that a second pool can launch without coordinating with the first.
 
 ### [How to End War and Disease](https://manual.WarOnDisease.org)
 
+[![How to End War and Disease](assets/og/manual-paperback-og-1200x630.jpg)](https://manual.WarOnDisease.org)
+
 > The Complete Idiot's Guide to Legally Bribing Your Way to Utopia
 
 ### [Drug Development Cost Increase Analysis](https://manual.warondisease.org/knowledge/appendix/drug-development-cost-analysis.html)
+
+[![Drug Development Cost Increase Analysis](https://manual.warondisease.org/assets/og/drug-development-cost-og-1200x630.jpg)](https://manual.warondisease.org/knowledge/appendix/drug-development-cost-analysis.html)
 
 > Drug development costs have increased approximately 105x in real terms since the 1962 Kefauver-Harris Amendment. This analysis uses the Baily (1972) academic study as the primary source, adjusts for inflation via Bureau of Labor Statistics CPI data, and validates the finding against six independent real-world price comparisons: generic vs. brand-name drugs, supplements vs. prescriptions, compounding pharmacies vs. FDA-approved products, veterinary vs. human drugs, orphan drug pricing, and historical antibiotic economics. Monte Carlo sensitivity analysis confirms the estimate is robust across plausible input ranges. The magnitude is consistent with independent estimates of 100-400x from multiple research groups.
 

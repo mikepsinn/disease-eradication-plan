@@ -3,6 +3,7 @@
 // Do not edit manually - regenerate with generate-everything script
 (function () {
   var redirects = {
+  "apa.warondisease.org": "https://manual.warondisease.org/knowledge/appendix/algorithmic-public-administration.html",
   "drug-cost.warondisease.org": "https://manual.warondisease.org/knowledge/appendix/drug-development-cost-analysis.html",
   "futures.warondisease.org": "https://manual.warondisease.org/knowledge/economics/gdp-trajectories.html",
   "iab.warondisease.org": "https://manual.warondisease.org/knowledge/appendix/incentive-alignment-bonds-paper.html",
