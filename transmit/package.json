@@ -2,7 +2,7 @@
   "name": "transmit-warondisease",
   "private": true,
   "scripts": {
-    "dev": "vercel dev"
+    "dev": "tsx dev-server.ts"
   },
   "dependencies": {
     "@ai-sdk/google": "^1.2.0",
