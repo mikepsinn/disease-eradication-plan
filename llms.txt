@@ -13,6 +13,7 @@ This project consists of multiple interconnected research papers on health econo
 ## Research Papers
 
 - [The 1% Treaty: Harnessing Greed to Eradicate Disease](https://manual.warondisease.org/knowledge/economics/1-pct-treaty-impact.html): 6.65 thousand diseases have zero FDA-approved treatments; at current trial capacity, exploring them takes ~443 years. Redirecting 1% of military spending scales capacity 12.3x, cutting the timeline to ~36 years and preventing 10.7 billion deaths. At $0.00177/DALY, 50.3kx more cost-effective than the best existing interventions. Incentive Alignment Bonds make adoption politically viable.
+- [Algorithmic Public Administration: A Protocol for Replacing Government Intermediaries with Deterministic Functions](https://manual.warondisease.org/knowledge/appendix/algorithmic-public-administration.html): A protocol combining five primitives (transparent ledger, preference aggregation, evidence engine, identity verification, automated monetary policy) to replace mechanical government agency functions, eliminating administrative intermediation costs while preserving democratic control.
 - [The Price of Political Change: A Cost-Benefit Framework for Policy Incentivization](https://manual.warondisease.org/knowledge/appendix/cost-of-change-analysis.html): What's the maximum cost to achieve any policy change through legal democratic channels? $25B for the US, $200B globally. For high-value reforms like military-to-health reallocation, this yields ROI exceeding 400,000:1.
 - [Ubiquitous Pragmatic Trial Impact Analysis: How to Prevent a Year of Death and Suffering for 84 Cents](https://manual.warondisease.org/knowledge/appendix/dfda-impact-paper.html): Only 15 diseases/year get their first treatment each year. With 6.65 thousand diseases lacking effective treatments, the backlog would take 443 years to clear. Integrating pragmatic trials into standard healthcare increases trial capacity 12.3x, cutting that timeline from 443 years to 36 years. The average untreated disease gets a treatment 212 years earlier, saving 10.7 billion deaths at $0.842 per year of healthy life saved.
 - [The Continuous Evidence Generation Protocol: Two-Stage Validation (RWE → Pragmatic Trials)](https://manual.warondisease.org/knowledge/appendix/dfda-spec-paper.html): We present the Predictor Impact Score (PIS), a novel composite metric operationalizing Bradford Hill causality criteria for automated signal detection from aggregated N-of-1 observational studies. Combined with pragmatic trial confirmation (based on evidence from 108+ embedded trials), this two-stage framework would generate validated outcome labels at 44.1x lower cost than traditional Phase III trials. This enables continuous, population-scale pharmacovigilance and precision dosing recommendations.
@@ -31,39 +32,6 @@ This project consists of multiple interconnected research papers on health econo
 - [Right to Trial & FDA Upgrade Act](https://manual.warondisease.org/knowledge/appendix/right-to-trial-fda-upgrade-act.html): Act to modernize medical research and treatment access through an open-source FDA.gov v2, giving patients the right to participate in trials.
 - [United States Efficiency Audit](https://manual.warondisease.org/knowledge/appendix/us-efficiency-audit.html): Systems audit estimating an annual U.S. efficiency gap of $4.9T, with $2.45T recoverable at OECD-median performance across direct spending waste, compliance burden, policy-induced GDP loss, and system inefficiency.
 - [Wishocracy: Solving the Democratic Principal-Agent Problem Through Pairwise Preference Aggregation](https://manual.warondisease.org/knowledge/appendix/wishocracy-paper.html): Representative democracy suffers from an inescapable principal-agent problem where elected officials' incentives diverge from citizen welfare. Wishocracy introduces RAPPA (Randomized Aggregated Pairwise Preference Allocation), which aggregates citizen preferences through cognitively tractable pairwise comparisons and creates accountability via Citizen Alignment Scores that channel electoral resources toward politicians who actually represent what citizens want.
-
-## Data Indexes & API
-
-Machine-readable data for building tools, agents, or integrations with this project.
-
-### Search Index (Chat RAG)
-- URL: https://manual.warondisease.org/assets/json/search-index.json
-- Format: JSON array of 76 chapter entries with full text, section headings, parameter metadata (formulas, sources, LaTeX), and figure references
-- Use: Full-text search, retrieval-augmented generation, fact-checking
-
-### Image Index
-- URL: https://manual.warondisease.org/assets/image-index.json
-- Format: JSON with 2,757 images including dimensions, types (chart/infographic/cover/icon), keywords, descriptions
-- Use: Finding relevant figures, charts, and infographics by topic
-
-### Sites Metadata
-- URL: https://manual.warondisease.org/assets/json/sites-metadata.json
-- Format: JSON manifest of 19 publications with titles, abstracts, DOIs, PDF URLs, page counts, keywords, publishing status
-- Use: Discovering and citing papers, building publication dashboards
-
-### Chat API
-- URL: https://transmit.warondisease.org/api/chat
-- Method: POST {question, context, history}
-- Response: Streaming text (Wishonia persona, grounded in book content)
-- Use: Ask questions about the 1% Treaty, disease eradication economics, or any topic in the manual
-
-### Text-to-Speech API
-- URL: https://transmit.warondisease.org/api/tts
-- Method: POST {text}
-- Response: audio/wav (Kore voice)
-
-### Documentation
-- Full API and schema docs: https://manual.warondisease.org/knowledge/appendix/api-and-data.html
 
 ## Author
 

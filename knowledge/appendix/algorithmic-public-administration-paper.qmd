@@ -58,20 +58,20 @@ A citizen who wants cancer research funded must persuade a representative, who m
 
 Most of what these intermediaries do is mechanical. Tax calculation, benefit distribution, budget allocation, auditing, census enumeration: these are algorithms being executed by humans. Humans are slower, more expensive, and more susceptible to capture than actual algorithms. They also require lunch breaks, health insurance, and the occasional bribery budget.
 
-This paper describes a protocol that replaces specific mechanical agency functions with deterministic code while preserving democratic control over what those functions do. Citizens still decide how resources are allocated, through pairwise preference aggregation (Wishocracy [@wishocracy-paper-2025]). The protocol executes their decisions without extracting value at each administrative layer.
+This paper describes a protocol that replaces specific mechanical agency functions with deterministic code while preserving democratic control over what those functions do. Citizens still decide how resources are allocated, through pairwise preference aggregation ([Wishocracy](../solution/wishocracy.qmd) [@wishocracy-paper-2025]). The protocol executes their decisions without extracting value at each administrative layer.
 
 We do not propose replacing government. We propose replacing the intermediaries between citizens and governance outcomes. Democracy is a decision-making system, not an employment program. The functions that require human judgment (enforcement, diplomacy, adjudication) remain human. The functions that are algorithmic in nature become actual algorithms. This is the same category of innovation as the dishwasher. The dishwasher replaced dishwashing, not cooking. Nobody argued that dishes required human judgment. Nobody wrote an op-ed titled "In Defense of Dirty Dishes." The objections to algorithmic governance are identical to the objections people would have raised about dishwashers if dishwashers also eliminated the jobs of people who write regulations about dishwashing.
 
 ## The Cost of Intermediation
 
-The United States Efficiency Audit [@us-efficiency-audit-paper-2025] identifies four categories of governance waste:
+The [United States Efficiency Audit](https://manual.warondisease.org/knowledge/appendix/us-efficiency-audit.html) [@us-efficiency-audit-paper-2025] identifies four categories of governance waste:
 
 1. **Direct spending waste**: {{< var us_gov_waste_category_1_direct_spending >}}/year in military overspend beyond deterrence requirements, corporate welfare, agricultural subsidies paid to not produce food, fossil fuel subsidies, and drug war enforcement
 2. **Compliance burden**: {{< var us_gov_waste_category_2_compliance >}}/year in tax compliance costs ({{< var us_gov_waste_tax_compliance >}}) and regulatory red tape ({{< var us_gov_waste_regulatory_red_tape >}})
 3. **Policy-induced GDP loss**: {{< var us_gov_waste_category_3_gdp_loss >}}/year from housing supply restrictions ({{< var us_gov_waste_housing_zoning >}}) and tariffs ({{< var us_gov_waste_tariffs >}})
 4. **System inefficiency**: {{< var us_gov_waste_category_4_system >}}/year in healthcare system waste ({{< var us_gov_waste_healthcare_inefficiency >}})
 
-Total: {{< var us_gov_waste_total >}}/year. The Political Dysfunction Tax [@political-dysfunction-tax-paper-2025] extends this analysis globally, estimating {{< var political_dysfunction_global_opportunity_cost_total >}}/year in opportunity costs from suboptimal governance worldwide. Two adjacent gains sit outside that $4.9T audit arithmetic and are treated separately in this paper: roughly ~$500B/year in recovered tax gap and roughly ~$1.1T/year in excess financial intermediation rent, with ~$2.3T/year as the gross bank-tollbooth ceiling.
+Total: {{< var us_gov_waste_total >}}/year. The [Political Dysfunction Tax](../problem/unrepresentative-democracy.qmd) [@political-dysfunction-tax-paper-2025] extends this analysis globally, estimating {{< var political_dysfunction_global_opportunity_cost_total >}}/year in opportunity costs from suboptimal governance worldwide. Two adjacent gains sit outside that $4.9T audit arithmetic and are treated separately in this paper: roughly ~$500B/year in recovered tax gap and roughly ~$1.1T/year in excess financial intermediation rent, with ~$2.3T/year as the gross bank-tollbooth ceiling.
 
 At 335 million people, the conservative quantified stack in this paper is roughly **$19,800 per person per year**, or about **$79,000 for a family of four**. About **$4,900 per person** can be routed directly into visible UBI under the protocol's default rule. Another **~$14,900 per person** arrives as lower prices, lower fees, less compliance labor, and higher wages. Using the full $2.3T finance ceiling instead of the $1.1T excess estimate raises the total to roughly **$23,400 per person**. The point is not that every dollar becomes a Treasury transfer. The point is that every dollar stops being siphoned off by intermediaries.
 
@@ -85,7 +85,7 @@ The protocol has five parts:
 
 2. **Preference aggregation (Wishocracy).** Verified citizens in the relevant jurisdiction express resource allocation preferences through ~20 pairwise comparisons. The RAPPA algorithm [@wishocracy-paper-2025] produces budget weights via eigenvector decomposition and, when legal change is required, direct rule mandates. Eliminates congressional appropriations, OMB, and much committee bargaining.
 
-3. **Evidence engine (Optimocracy).** Cross-jurisdictional causal inference [@optimocracy-paper-2025] compares policy outcomes across thousands of jurisdictions and identifies which policies actually make people richer and less dead (median income, healthy life years). Eliminates the CBO's scoring function.
+3. **Evidence engine ([Optimocracy](https://manual.warondisease.org/knowledge/appendix/optimocracy-paper.html)).** Cross-jurisdictional causal inference [@optimocracy-paper-2025] compares policy outcomes across thousands of jurisdictions and identifies which policies actually make people richer and less dead (median income, healthy life years). Eliminates the CBO's scoring function.
 
 4. **Identity layer.** Continuous, sybil-resistant citizen verification. Every verified citizen receives equal allocation weight and equal UBI distribution. Eliminates the decennial census and means-testing bureaucracy.
 
@@ -360,7 +360,7 @@ The revolving door completes the circuit. Roughly half of departing members of C
 
 The Citizen Alignment Score [@wishocracy-paper-2025] measures how closely each politician's voting record aligns with their constituents' wishocratic preferences. Campaign funding flows proportionally to alignment: politicians who represent what citizens want receive more electoral resources than politicians who represent what donors want.
 
-The Incentive Alignment Bonds [@iab-paper-2025] fund this mechanism. Bond investors earn returns proportional to treaty expansion and health outcomes; a portion of those returns flows to political incentives that reward alignment.
+The [Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd) [@iab-paper-2025] fund this mechanism. Bond investors earn returns proportional to treaty expansion and health outcomes; a portion of those returns flows to political incentives that reward alignment.
 
 ### What This Replaces
 
@@ -493,9 +493,9 @@ The current system cannot do this. Not because the money does not exist, but bec
 
 The protocol cannot be deployed simultaneously. Each primitive has prerequisites, and trust must be earned, not assumed.
 
-**Phase 0: Evidence layer (deploy now).** The Optimocracy engine [@optimocracy-paper-2025] and Optimal Budget Generator [@obg-paper-2025] require no legislative change. They compare existing policy outcomes across jurisdictions and publish findings. This is research, not governance. Deployment: immediate.
+**Phase 0: Evidence layer (deploy now).** The Optimocracy engine [@optimocracy-paper-2025] and [Optimal Budget Generator](https://manual.warondisease.org/knowledge/appendix/optimal-budget-generator-spec.html) [@obg-paper-2025] require no legislative change. They compare existing policy outcomes across jurisdictions and publish findings. This is research, not governance. Deployment: immediate.
 
-**Phase 1: Preference aggregation (deploy with treaty).** The 1% Treaty [@1-pct-treaty-impact-paper-2025] creates the first pool of wishocratically allocated funds. Citizens allocate {{< var treaty_annual_funding >}}/year via pairwise comparison. One funding stream, one mechanism, outcomes measured by the evidence layer. Deployment: concurrent with treaty ratification.
+**Phase 1: Preference aggregation (deploy with treaty).** The [1% Treaty](../solution/1-percent-treaty.qmd) [@1-pct-treaty-impact-paper-2025] creates the first pool of wishocratically allocated funds. Citizens allocate {{< var treaty_annual_funding >}}/year via pairwise comparison. One funding stream, one mechanism, outcomes measured by the evidence layer. Deployment: concurrent with treaty ratification.
 
 **Phase 2: Transparency layer (Years 1-3).** Treaty funds flow through a public ledger. Every allocation from wishocratic preference to final expenditure is visible. This demonstrates the accountability model at limited scale before extending it.
 
