@@ -90,13 +90,7 @@
     if (searchIndex || searchLoading) return;
     searchLoading = true;
 
-    var offset =
-      document
-        .querySelector('meta[name="quarto:offset"]')
-        ?.getAttribute("content") || "";
-    if (offset && offset.charAt(offset.length - 1) !== "/") offset += "/";
-
-    fetch(offset + "assets/json/search-index.json")
+    fetch("/assets/json/search-index.json")
       .then(function (r) {
         if (!r.ok) throw new Error(r.status);
         return r.json();
@@ -105,7 +99,8 @@
         searchIndex = Array.isArray(data) ? data : data.entries || [];
         searchLoading = false;
       })
-      .catch(function () {
+      .catch(function (err) {
+        console.error("[VOICE-RAG] Failed to load search index:", err);
         searchLoading = false;
       });
   }
@@ -118,13 +113,7 @@
     if (imageIndex || imageIndexLoading) return;
     imageIndexLoading = true;
 
-    var offset =
-      document
-        .querySelector('meta[name="quarto:offset"]')
-        ?.getAttribute("content") || "";
-    if (offset && offset.charAt(offset.length - 1) !== "/") offset += "/";
-
-    fetch(offset + "assets/image-index.json")
+    fetch("/assets/image-index.json")
       .then(function (r) {
         if (!r.ok) throw new Error(r.status);
         return r.json();
@@ -1879,7 +1868,8 @@
 
   function startLocalTranscription() {
     var SR = window.SpeechRecognition || window.webkitSpeechRecognition;
-    if (!SR) return;
+    if (!SR) { console.log("[VOICE-RAG] No SpeechRecognition API"); return; }
+    console.log("[VOICE-RAG] startLocalTranscription called");
 
     localRecognition = new SR();
     localRecognition.lang = "en-US";
@@ -1892,6 +1882,7 @@
           var transcript = event.results[i][0].transcript.trim();
           if (!transcript) continue;
 
+          console.log("[VOICE-RAG] localRecognition.onresult fired, transcript:", transcript);
           appendMessage("user", transcript);
           liveVoiceQuestion = transcript;
           liveVoiceSpoken = "";
@@ -1902,6 +1893,8 @@
           // RAG: search book index and inject as a combined text message
           // This interrupts any audio-based response Gemini started without context
           var ragContext = searchContent(transcript, 5, 2000);
+          console.log("[VOICE-RAG] searchContent returned:", ragContext ? ragContext.length + " chars" : "EMPTY");
+          console.log("[VOICE-RAG] searchIndex loaded:", searchIndex ? searchIndex.length + " entries" : "NULL");
           if (liveClient && liveClient.isConnected()) {
             var combined = "The user just asked: \"" + transcript + "\"\n\n";
             if (ragContext) {
@@ -1910,7 +1903,17 @@
             } else {
               combined += "Answer the user's question.";
             }
+            console.log("[VOICE-RAG] sendText length:", combined.length, "chars");
             liveClient.sendText(combined);
+
+            // Show RAG status indicator below user message
+            var ragStatus = document.createElement("div");
+            ragStatus.className = "chat-msg chat-msg-assistant";
+            ragStatus.style.cssText = "font-size:11px;opacity:0.6;padding:4px 10px;max-width:100%;";
+            ragStatus.textContent = ragContext
+              ? "\uD83D\uDCDA Sent " + ragContext.length + " chars of RAG context to Gemini Live"
+              : "\u26A0\uFE0F No RAG context sent (search index: " + (searchIndex ? searchIndex.length + " entries)" : "not loaded)");
+            msgContainer.appendChild(ragStatus);
 
             // Fire parallel visuals request for voice mode
             var voiceImageOptions = findTopImageCandidates(transcript, lastSearchResults, 3);
@@ -1942,15 +1945,14 @@
     };
 
     localRecognition.onerror = function (e) {
-      // Don't restart here - onend always fires after onerror and handles restart.
-      // Restarting in both onerror AND onend creates orphaned instances that
-      // overwrite each other, breaking recognition after the first exchange.
+      console.log("[VOICE-RAG] onerror:", e.error, "paused:", localRecognitionPaused);
       if (e.error !== "no-speech" && e.error !== "aborted") {
         console.warn("Local recognition error:", e.error);
       }
     };
 
     localRecognition.onend = function () {
+      console.log("[VOICE-RAG] onend, paused:", localRecognitionPaused, "voiceMode:", liveVoiceMode);
       localRecognition = null;
       // Don't restart if paused (Gemini is speaking) or voice mode ended
       if (localRecognitionPaused || !liveVoiceMode) return;
@@ -2032,10 +2034,12 @@
       voice: "Kore",
       onInputTranscript: function (transcript) {
         if (!transcript || !transcript.trim()) return;
+        console.log("[VOICE-RAG] onInputTranscript:", transcript.trim(), "aiSpeaking:", aiSpeaking, "localRecognition:", !!localRecognition);
         // Ignore echo transcripts while AI is speaking (residual audio leaking past echo cancellation)
         if (aiSpeaking) return;
         // Skip if local SpeechRecognition is handling user speech + RAG
         if (localRecognition) return;
+        console.log("[VOICE-RAG] onInputTranscript handling (localSR not active)");
         appendMessage("user", transcript.trim());
         liveVoiceQuestion = transcript.trim();
         liveVoiceSpoken = "";

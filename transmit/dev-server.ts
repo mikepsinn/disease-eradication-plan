@@ -41,6 +41,20 @@ async function loadHandler(name: string) {
 const server = createServer(async (req, res) => {
   const url = new URL(req.url || "/", `http://localhost:${PORT}`);
 
+  // Proxy JSON assets to manual.warondisease.org (mirrors Vercel rewrites)
+  if (url.pathname === "/assets/image-index.json" || url.pathname.startsWith("/assets/json/")) {
+    try {
+      const upstream = await fetch("https://manual.warondisease.org" + url.pathname);
+      res.writeHead(upstream.status, { "Content-Type": "application/json" });
+      const body = await upstream.arrayBuffer();
+      res.end(Buffer.from(body));
+    } catch {
+      res.writeHead(502);
+      res.end("Proxy error");
+    }
+    return;
+  }
+
   // API routes: convert Node req to Web Request, call handler, pipe back
   if (url.pathname.startsWith("/api/")) {
     const route = url.pathname.replace("/api/", "").replace(/\/$/, "");

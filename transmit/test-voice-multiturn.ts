@@ -240,65 +240,52 @@ async function main() {
   await waitForSetup(ws);
   check("Setup complete", true);
 
-  // Turn 1
-  console.log(`\n--- Turn 1: "${QUESTIONS[0]}" ---`);
-  const { context: ctx1 } = searchContent(index, QUESTIONS[0]);
-  const combined1 =
-    'The user asked: "' +
-    QUESTIONS[0] +
-    '"\n\nReference material:\n' +
-    ctx1 +
-    "\n\nAnswer briefly.";
-  sendText(ws, combined1);
+  for (let i = 0; i < QUESTIONS.length; i++) {
+    const { q, expectInTranscript } = QUESTIONS[i];
+    const turnNum = i + 1;
+    console.log(`\n--- Turn ${turnNum}: "${q}" ---`);
 
-  let turn1: TurnResult;
-  try {
-    turn1 = await waitForTurn(ws);
-    check("Turn 1 got response", true);
-    console.log(`  Audio chunks: ${turn1.audioChunks}`);
-    console.log(`  Output transcript: ${turn1.outputTranscript.length} chars`);
-    console.log(`  Input transcript: ${turn1.inputTranscript.length} chars`);
-    check("Turn 1 has audio", turn1.audioChunks > 0, `got ${turn1.audioChunks} chunks`);
-    check("Turn 1 has output transcript", turn1.outputTranscript.length > 0, "empty transcript");
-    if (turn1.outputTranscript) {
-      console.log(
-        `  Transcript: "${turn1.outputTranscript.substring(0, 200)}"`
-      );
+    // Build RAG-enriched message (same as localRecognition.onresult in chat-widget.js)
+    const { context } = searchContent(index, q);
+    let combined = 'The user just asked: "' + q + '"\n\n';
+    if (context) {
+      combined += "Reference material:\n" + context + "\n\n";
+      combined += "Answer the user's question using the reference material above.";
+    } else {
+      combined += "Answer the user's question.";
     }
-  } catch (err: any) {
-    check("Turn 1 got response", false, err.message);
-    ws.close();
-    printSummary();
-    return;
-  }
+    check(`Turn ${turnNum} RAG context found`, context.length > 100, `only ${context.length} chars`);
+    sendText(ws, combined);
 
-  // Turn 2 - the critical test: does the second question get a response?
-  console.log(`\n--- Turn 2: "${QUESTIONS[1]}" ---`);
-  const { context: ctx2 } = searchContent(index, QUESTIONS[1]);
-  const combined2 =
-    'The user asked: "' +
-    QUESTIONS[1] +
-    '"\n\nReference material:\n' +
-    ctx2 +
-    "\n\nAnswer briefly.";
-  sendText(ws, combined2);
+    try {
+      const turn = await waitForTurn(ws);
+      check(`Turn ${turnNum} got response`, true);
+      console.log(`  Audio chunks: ${turn.audioChunks}`);
+      console.log(`  Output transcript: ${turn.outputTranscript.length} chars`);
+      check(`Turn ${turnNum} has audio`, turn.audioChunks > 0, `got ${turn.audioChunks} chunks`);
+      check(`Turn ${turnNum} has output transcript`, turn.outputTranscript.length > 0, "empty transcript");
 
-  let turn2: TurnResult;
-  try {
-    turn2 = await waitForTurn(ws);
-    check("Turn 2 got response", true);
-    console.log(`  Audio chunks: ${turn2.audioChunks}`);
-    console.log(`  Output transcript: ${turn2.outputTranscript.length} chars`);
-    console.log(`  Input transcript: ${turn2.inputTranscript.length} chars`);
-    check("Turn 2 has audio", turn2.audioChunks > 0, `got ${turn2.audioChunks} chunks`);
-    check("Turn 2 has output transcript", turn2.outputTranscript.length > 0, "empty transcript");
-    if (turn2.outputTranscript) {
-      console.log(
-        `  Transcript: "${turn2.outputTranscript.substring(0, 200)}"`
-      );
+      if (turn.outputTranscript) {
+        console.log(`  Transcript: "${turn.outputTranscript.substring(0, 200)}"`);
+        const lower = turn.outputTranscript.toLowerCase();
+        for (const expected of expectInTranscript) {
+          check(
+            `Turn ${turnNum} transcript contains "${expected}"`,
+            lower.includes(expected.toLowerCase()),
+            "not found in transcript"
+          );
+        }
+        // Verify it didn't say "I don't know" or "no record"
+        check(
+          `Turn ${turnNum} used RAG context (no "no record/don't know")`,
+          !lower.includes("no record") && !lower.includes("don't know") && !lower.includes("do not know"),
+          "model ignored RAG context"
+        );
+      }
+    } catch (err: any) {
+      check(`Turn ${turnNum} got response`, false, err.message);
+      if (i === 0) { ws.close(); printSummary(); return; }
     }
-  } catch (err: any) {
-    check("Turn 2 got response", false, err.message);
   }
 
   // Verify WebSocket stayed open
