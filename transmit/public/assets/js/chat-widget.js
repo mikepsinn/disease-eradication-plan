@@ -1882,67 +1882,72 @@
     localRecognition.onresult = function (event) {
       for (var i = event.resultIndex; i < event.results.length; i++) {
         if (event.results[i].isFinal) {
-          var transcript = event.results[i][0].transcript.trim();
-          if (!transcript) continue;
+          var chunk = event.results[i][0].transcript.trim();
+          if (!chunk) continue;
 
-          console.log("[VOICE-RAG] localRecognition.onresult fired, transcript:", transcript);
-          appendMessage("user", transcript);
-          liveVoiceQuestion = transcript;
-          liveVoiceSpoken = "";
-          liveVoiceThinking = "";
-          liveVoiceBubble = null;
-          showVoiceState("thinking");
+          // Accumulate chunks (Chrome can split utterances across recognition restarts)
+          liveVoiceAccumulator += (liveVoiceAccumulator ? " " : "") + chunk;
+          console.log("[VOICE-RAG] chunk:", chunk, "| accumulated:", liveVoiceAccumulator);
 
-          // RAG: search book index and inject as a combined text message
-          // This interrupts any audio-based response Gemini started without context
-          var ragContext = searchContent(transcript, 5, 2000);
-          console.log("[VOICE-RAG] searchContent returned:", ragContext ? ragContext.length + " chars" : "EMPTY");
-          console.log("[VOICE-RAG] searchIndex loaded:", searchIndex ? searchIndex.length + " entries" : "NULL");
-          if (liveClient && liveClient.isConnected()) {
-            var combined = "The user just asked: \"" + transcript + "\"\n\n";
-            if (ragContext) {
-              combined += "Reference material:\n" + ragContext + "\n\n";
-              combined += "Answer the user's question using the reference material above.";
-            } else {
-              combined += "Answer the user's question.";
-            }
-            console.log("[VOICE-RAG] sendText length:", combined.length, "chars");
-            liveClient.sendText(combined);
-
-            // Show RAG status indicator below user message
-            var ragStatus = document.createElement("div");
-            ragStatus.className = "chat-msg chat-msg-assistant";
-            ragStatus.style.cssText = "font-size:11px;opacity:0.6;padding:4px 10px;max-width:100%;";
-            ragStatus.textContent = ragContext
-              ? "\uD83D\uDCDA Sent " + ragContext.length + " chars of RAG context to Gemini Live"
-              : "\u26A0\uFE0F No RAG context sent (search index: " + (searchIndex ? searchIndex.length + " entries)" : "not loaded)");
-            msgContainer.appendChild(ragStatus);
-
-            // Fire parallel visuals request for voice mode
-            var voiceImageOptions = findTopImageCandidates(transcript, lastSearchResults, 3);
-            liveVoiceVisualsPromise = fetchVisuals(transcript, ragContext, voiceImageOptions);
-
-            // Show RAG context in UI
-            if (ragContext) {
-              var ragBubble = document.createElement("div");
-              ragBubble.className = "chat-msg chat-msg-assistant";
-              var ragCard = document.createElement("div");
-              ragCard.className = "chat-voice-card";
-              var ragDetails = document.createElement("details");
-              ragDetails.className = "chat-thinking";
-              var ragSummary = document.createElement("summary");
-              ragSummary.textContent = "\uD83D\uDCDA RAG context for: " + transcript.substring(0, 50);
-              ragDetails.appendChild(ragSummary);
-              var ragPre = document.createElement("pre");
-              ragPre.className = "chat-thinking-text";
-              ragPre.textContent = ragContext;
-              ragDetails.appendChild(ragPre);
-              ragCard.appendChild(ragDetails);
-              ragBubble.appendChild(ragCard);
-              msgContainer.appendChild(ragBubble);
-              scrollToBottom();
-            }
+          // Update or create user bubble immediately (shows what we're hearing)
+          if (!liveVoiceUserBubble) {
+            var welcome = msgContainer.querySelector(".chat-welcome");
+            if (welcome) welcome.remove();
+            liveVoiceUserBubble = document.createElement("div");
+            liveVoiceUserBubble.className = "chat-msg chat-msg-user";
+            msgContainer.appendChild(liveVoiceUserBubble);
           }
+          liveVoiceUserBubble.textContent = liveVoiceAccumulator;
+          scrollToBottom();
+
+          // Debounce: wait 1.5s of silence before sending to Gemini with RAG
+          if (liveVoiceDebounceTimer) clearTimeout(liveVoiceDebounceTimer);
+          liveVoiceDebounceTimer = setTimeout(function () {
+            liveVoiceDebounceTimer = null;
+            var transcript = liveVoiceAccumulator;
+            liveVoiceAccumulator = "";
+            liveVoiceUserBubble = null;
+
+            console.log("[VOICE-RAG] debounce fired, sending:", transcript);
+            liveVoiceQuestion = transcript;
+            liveVoiceSpoken = "";
+            liveVoiceThinking = "";
+            liveVoiceBubble = null;
+            showVoiceState("thinking");
+
+            // Save to messages array
+            messages.push({ role: "user", content: transcript });
+            sessionStorage.setItem("wishonia-chat", JSON.stringify(messages));
+
+            // RAG: search book index and inject as a combined text message
+            var ragContext = searchContent(transcript, 5, 2000);
+            console.log("[VOICE-RAG] searchContent:", ragContext ? ragContext.length + " chars" : "EMPTY", "index:", searchIndex ? searchIndex.length : "NULL");
+            if (liveClient && liveClient.isConnected()) {
+              var combined = "The user just asked: \"" + transcript + "\"\n\n";
+              if (ragContext) {
+                combined += "Reference material:\n" + ragContext + "\n\n";
+                combined += "Answer the user's question using the reference material above.";
+              } else {
+                combined += "Answer the user's question.";
+              }
+              console.log("[VOICE-RAG] sendText:", combined.length, "chars");
+              liveClient.sendText(combined);
+
+              // Show RAG status indicator
+              var ragStatus = document.createElement("div");
+              ragStatus.className = "chat-msg chat-msg-assistant";
+              ragStatus.style.cssText = "font-size:11px;opacity:0.6;padding:4px 10px;max-width:100%;";
+              ragStatus.textContent = ragContext
+                ? "\uD83D\uDCDA Sent " + ragContext.length + " chars of RAG context to Gemini Live"
+                : "\u26A0\uFE0F No RAG context sent (search index: " + (searchIndex ? searchIndex.length + " entries)" : "not loaded)");
+              msgContainer.appendChild(ragStatus);
+
+              // Fire parallel visuals request
+              var voiceImageOptions = findTopImageCandidates(transcript, lastSearchResults, 3);
+              liveVoiceVisualsPromise = fetchVisuals(transcript, ragContext, voiceImageOptions);
+            }
+            scrollToBottom();
+          }, 1500);
         }
       }
     };
@@ -2217,6 +2222,9 @@
   var liveVoiceQuestion = ""; // last user question for image search
   var liveVoiceBubble = null; // streaming bubble for voice responses
   var liveVoiceVisualsPromise = null; // parallel visuals request for voice mode
+  var liveVoiceAccumulator = ""; // accumulates transcript chunks across recognition restarts
+  var liveVoiceDebounceTimer = null; // debounce timer before sending accumulated transcript
+  var liveVoiceUserBubble = null; // user message bubble updated as chunks arrive
   var localRecognitionPaused = false; // suppress auto-restart while Gemini speaks
   var aiSpeaking = false; // true while AI is responding, enables audio-to-Gemini for interrupt detection
   var voiceStateEl = null;
@@ -2483,6 +2491,9 @@
     liveVoiceSpoken = "";
     liveVoiceQuestion = "";
     liveVoiceBubble = null;
+    liveVoiceAccumulator = "";
+    liveVoiceUserBubble = null;
+    if (liveVoiceDebounceTimer) { clearTimeout(liveVoiceDebounceTimer); liveVoiceDebounceTimer = null; }
     localRecognitionPaused = false;
 
     // Reset robot animation if present
