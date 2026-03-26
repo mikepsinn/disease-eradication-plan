@@ -115,7 +115,7 @@
     .chat-header {
       background: rgba(20,10,30,0.95) !important;
       padding: 10px 20px !important; border-bottom: 1px solid rgba(54,226,248,0.15);
-      flex-shrink: 0 !important;
+      flex-shrink: 0 !important; position: relative;
     }
     .chat-header-title {
       font-family: 'Orbitron', sans-serif !important; font-size: 13px !important;
@@ -123,7 +123,11 @@
       background: linear-gradient(90deg, #C6CBF5, #d100b1);
       background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;
     }
-    .chat-newchat-btn, .chat-fullscreen-btn, .chat-close-btn { display: none !important; }
+    .chat-fullscreen-btn, .chat-close-btn { display: none !important; }
+    .chat-newchat-btn {
+      display: flex !important; position: absolute; right: 16px; top: 50%;
+      transform: translateY(-50%); font-size: 16px; opacity: 0.7;
+    }
     .chat-messages {
       flex: 1 1 0 !important; min-height: 0 !important;
       overflow-y: auto !important; background: transparent !important;
