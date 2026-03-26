@@ -137,23 +137,42 @@ function waitForTurn(ws: WebSocket): Promise<TurnResult> {
       TURN_TIMEOUT_MS
     );
 
+    let turnDone = false;
+
     const handler = (data: WebSocket.Data) => {
       const msg = JSON.parse(data.toString());
 
+      // Log non-audio messages for debugging
+      const keys = Object.keys(msg);
+      const hasAudio = msg.serverContent?.modelTurn?.parts?.some((p: any) => p.inlineData);
+      if (!hasAudio) {
+        console.log(`    [MSG] keys=${keys.join(",")}`);
+        if (msg.serverContent) {
+          const scKeys = Object.keys(msg.serverContent);
+          console.log(`           serverContent keys=${scKeys.join(",")}`);
+          if (msg.serverContent.outputTranscription) {
+            console.log(`           outputTranscription=${JSON.stringify(msg.serverContent.outputTranscription)}`);
+          }
+        }
+        if (msg.outputTranscription) {
+          console.log(`           top-level outputTranscription=${JSON.stringify(msg.outputTranscription)}`);
+        }
+      }
+
       // Input transcript (at top level or in serverContent)
-      if (msg.inputTranscript) {
-        result.inputTranscript += msg.inputTranscript;
+      if (msg.inputTranscription && msg.inputTranscription.text) {
+        result.inputTranscript += msg.inputTranscription.text;
       }
 
       const sc = msg.serverContent;
       if (!sc) return;
 
-      if (sc.inputTranscript) {
-        result.inputTranscript += sc.inputTranscript;
+      if (sc.inputTranscription && sc.inputTranscription.text) {
+        result.inputTranscript += sc.inputTranscription.text;
       }
 
-      if (sc.outputTranscript) {
-        result.outputTranscript += sc.outputTranscript;
+      if (sc.outputTranscription && sc.outputTranscription.text) {
+        result.outputTranscript += sc.outputTranscription.text;
       }
 
       if (sc.interrupted) {
@@ -173,9 +192,13 @@ function waitForTurn(ws: WebSocket): Promise<TurnResult> {
       }
 
       if (sc.turnComplete) {
-        clearTimeout(timeout);
-        ws.off("message", handler);
-        resolve(result);
+        turnDone = true;
+        // Wait 2s after turnComplete for trailing outputTranscript messages
+        setTimeout(() => {
+          clearTimeout(timeout);
+          ws.off("message", handler);
+          resolve(result);
+        }, 2000);
       }
     };
 
@@ -232,14 +255,14 @@ async function main() {
   try {
     turn1 = await waitForTurn(ws);
     check("Turn 1 got response", true);
-    check(
-      "Turn 1 has audio or transcript",
-      turn1.audioChunks > 0 || turn1.outputTranscript.length > 0,
-      `audio=${turn1.audioChunks}, transcript=${turn1.outputTranscript.length} chars`
-    );
+    console.log(`  Audio chunks: ${turn1.audioChunks}`);
+    console.log(`  Output transcript: ${turn1.outputTranscript.length} chars`);
+    console.log(`  Input transcript: ${turn1.inputTranscript.length} chars`);
+    check("Turn 1 has audio", turn1.audioChunks > 0, `got ${turn1.audioChunks} chunks`);
+    check("Turn 1 has output transcript", turn1.outputTranscript.length > 0, "empty transcript");
     if (turn1.outputTranscript) {
       console.log(
-        `  Transcript: "${turn1.outputTranscript.substring(0, 100)}..."`
+        `  Transcript: "${turn1.outputTranscript.substring(0, 200)}"`
       );
     }
   } catch (err: any) {
@@ -264,14 +287,14 @@ async function main() {
   try {
     turn2 = await waitForTurn(ws);
     check("Turn 2 got response", true);
-    check(
-      "Turn 2 has audio or transcript",
-      turn2.audioChunks > 0 || turn2.outputTranscript.length > 0,
-      `audio=${turn2.audioChunks}, transcript=${turn2.outputTranscript.length} chars`
-    );
+    console.log(`  Audio chunks: ${turn2.audioChunks}`);
+    console.log(`  Output transcript: ${turn2.outputTranscript.length} chars`);
+    console.log(`  Input transcript: ${turn2.inputTranscript.length} chars`);
+    check("Turn 2 has audio", turn2.audioChunks > 0, `got ${turn2.audioChunks} chunks`);
+    check("Turn 2 has output transcript", turn2.outputTranscript.length > 0, "empty transcript");
     if (turn2.outputTranscript) {
       console.log(
-        `  Transcript: "${turn2.outputTranscript.substring(0, 100)}..."`
+        `  Transcript: "${turn2.outputTranscript.substring(0, 200)}"`
       );
     }
   } catch (err: any) {

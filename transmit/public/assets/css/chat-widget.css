@@ -157,7 +157,7 @@
 }
 
 .chat-msg-assistant::before {
-  content: "\1F47E";
+  content: "\1F47D";
   position: absolute;
   left: -28px;
   top: 6px;

@@ -148,21 +148,23 @@ var GeminiLiveClient = (function () {
 
     var sc = msg.serverContent;
     if (!sc) {
-      // Check for input transcript at top level
-      if (msg.inputTranscript) {
-        if (this.onInputTranscript) this.onInputTranscript(msg.inputTranscript);
+      // Check for input transcription at top level
+      if (msg.inputTranscription && msg.inputTranscription.text) {
+        if (this.onInputTranscript) this.onInputTranscript(msg.inputTranscription.text);
       }
       return;
     }
 
     // Input transcript (what Gemini thinks the user said)
-    if (sc.inputTranscript) {
-      if (this.onInputTranscript) this.onInputTranscript(sc.inputTranscript);
+    // API sends: serverContent.inputTranscription.text
+    if (sc.inputTranscription && sc.inputTranscription.text) {
+      if (this.onInputTranscript) this.onInputTranscript(sc.inputTranscription.text);
     }
 
     // Output transcript (text of what Gemini spoke)
-    if (sc.outputTranscript) {
-      if (this.onOutputTranscript) this.onOutputTranscript(sc.outputTranscript);
+    // API sends: serverContent.outputTranscription.text
+    if (sc.outputTranscription && sc.outputTranscription.text) {
+      if (this.onOutputTranscript) this.onOutputTranscript(sc.outputTranscription.text);
     }
 
     // Interruption
