@@ -17,7 +17,7 @@
     .body-card img { width: 100px; height: 130px; object-fit: contain; }
     .combo-card { background: #1a1a1a; border: 1px solid #444; border-radius: 6px; padding: 6px; text-align: center; }
     .combo-card .assembly { position: relative; width: 160px; margin: 0 auto; }
-    .combo-card .assembly .layer-head { display: block; width: 65%; margin: 0 auto; position: relative; z-index: 2; }
+    .combo-card .assembly .layer-head { display: block; width: 95%; margin: 0 auto; position: relative; z-index: 2; }
     .combo-card .assembly .layer-body { display: block; width: 100%; margin-top: -12px; position: relative; z-index: 1; }
     .combo-card .label { margin-top: 4px; color: #d4a05b; font-size: 10px; }
   </style>
@@ -40,7 +40,7 @@
   <div style="display:flex; gap:20px; align-items:flex-start; margin-bottom:20px;">
     <div>
       <div id="speech-character" style="position:relative; width:200px;">
-        <img id="speech-head" style="display:block; width:65%; margin:0 auto; position:relative; z-index:2;" src="">
+        <img id="speech-head" style="display:block; width:95%; margin:0 auto; position:relative; z-index:2;" src="">
         <img id="speech-body" style="display:block; width:100%; margin-top:-12px; position:relative; z-index:1;" src="">
       </div>
     </div>
@@ -90,7 +90,7 @@
       'thinking-oh', 'thinking-closed', 'thinking-small',
       'sideeye-closed',
       'lookright-smile', 'lookright-closed', 'lookright-open', 'lookright-oh',
-      'excited-open', 'excited-ee', 'excited-oh',
+      'excited-open', 'excited-ee', 'excited-oh', 'excited-closed',
       'neutral-ee', 'neutral-frown',
       'happy-closed', 'happy-small',
       'surprised-ee',
@@ -150,7 +150,7 @@
     var EXPRESSION_MOUTHS = {
       'neutral': ['smile', 'open', 'oh', 'ee', 'closed', 'small', 'frown'],
       'happy':   ['smile', 'open', 'oh', 'ee', 'closed', 'small'],
-      'excited': ['open', 'ee', 'oh', 'ee'],  // use 'ee' as idle/default
+      'excited': ['open', 'ee', 'oh', 'closed'],
       'sad':     ['closed', 'frown', 'oh', 'small'],
       'annoyed': ['closed', 'frown', 'small'],
       'skeptical': ['smile', 'closed'],
