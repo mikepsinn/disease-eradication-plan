@@ -16,18 +16,18 @@ setup_chart_style()
 
 # Display name for chart title
 
-display_name = "VOTE Token Potential Value"
+display_name = "VOTE Point Value"
 
 # Baseline and units
 
-baseline = 193619.7372131118
+baseline = 8436.288549999872
 
 # Tornado data from sensitivity analysis
 
-drivers = ['VENTURE_GROSS_RETURN', 'SCALE_COMPRESSION_FACTOR', 'ALLOCATION_DECISION_SPREAD', 'HOME_BIAS_ALPHA', 'GLOBAL_POPULATION_2024']
-driver_labels = ['Venture Capital Gross Return', 'Scale Compression Factor', 'Allocation Decision Return Spread', 'Home Bias Return Drag', 'Global Population in 2024']
-impacts_low = [-78517.21548000374, -53433.79912778092, -18426.916525196168, -12009.179303728364, 4964.608646490058]
-impacts_high = [168368.76939631216, 40625.08229563059, 27391.268008895044, 18061.91464327011, -4722.4326149539265]
+drivers = ['PRIZE_POOL_PARTICIPATION_RATE', 'VENTURE_GROSS_RETURN', 'SCALE_COMPRESSION_FACTOR', 'ALLOCATION_DECISION_SPREAD', 'HOME_BIAS_ALPHA', 'GLOBAL_POPULATION_2024']
+driver_labels = ['PRIZE Pool Participation Rate', 'Venture Capital Gross Return', 'Scale Compression Factor', 'Allocation Decision Return Spread', 'Home Bias Return Drag', 'Global Population in 2024']
+impacts_low = [-7592.659694999885, -3421.107245914449, -2328.18696199617, -802.8870771692627, -523.2570982338802, 216.31509102563723]
+impacts_high = [75926.59694999886, 7336.0678094107425, 1770.0928714524762, 1193.476677530427, 786.983423742482, -205.76313536585076]
 
 # Convert deltas to absolute values (baseline + delta)
 
@@ -96,7 +96,7 @@ add_watermark(fig)
 # Save PNG to knowledge/figures/ regardless of where Quarto renders from
 # Use 96 DPI for web-optimized output (reduced from 150 DPI to minimize file size)
 
-output_path = get_figure_output_path('tornado-vote_token_potential_value.png')
+output_path = get_figure_output_path('tornado-vote_token_value.png')
 plt.savefig(output_path, dpi=96, bbox_inches=None, facecolor=COLOR_WHITE)
 
 add_png_metadata(

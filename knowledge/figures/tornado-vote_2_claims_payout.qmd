@@ -20,14 +20,14 @@ display_name = "VOTE Payout for 2 Claims"
 
 # Baseline and units
 
-baseline = 387239.4744262236
+baseline = 16872.577099999744
 
 # Tornado data from sensitivity analysis
 
-drivers = ['VENTURE_GROSS_RETURN', 'SCALE_COMPRESSION_FACTOR', 'ALLOCATION_DECISION_SPREAD', 'HOME_BIAS_ALPHA', 'GLOBAL_POPULATION_2024']
-driver_labels = ['Venture Capital Gross Return', 'Scale Compression Factor', 'Allocation Decision Return Spread', 'Home Bias Return Drag', 'Global Population in 2024']
-impacts_low = [-157034.43096000748, -106867.59825556184, -36853.833050392335, -24018.35860745673, 9929.217292980116]
-impacts_high = [336737.5387926243, 81250.16459126119, 54782.53601779009, 36123.82928654022, -9444.865229907853]
+drivers = ['PRIZE_POOL_PARTICIPATION_RATE', 'VENTURE_GROSS_RETURN', 'SCALE_COMPRESSION_FACTOR', 'ALLOCATION_DECISION_SPREAD', 'HOME_BIAS_ALPHA', 'GLOBAL_POPULATION_2024']
+driver_labels = ['PRIZE Pool Participation Rate', 'Venture Capital Gross Return', 'Scale Compression Factor', 'Allocation Decision Return Spread', 'Home Bias Return Drag', 'Global Population in 2024']
+impacts_low = [-15185.31938999977, -6842.214491828898, -4656.37392399234, -1605.7741543385255, -1046.5141964677605, 432.63018205127446]
+impacts_high = [151853.1938999977, 14672.135618821485, 3540.1857429049523, 2386.953355060854, 1573.966847484964, -411.5262707317015]
 
 # Convert deltas to absolute values (baseline + delta)
 

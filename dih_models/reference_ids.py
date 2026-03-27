@@ -89,6 +89,7 @@ class ReferenceID(str, Enum):
     BARRO2011 = "barro2011"
     BARTA2024 = "barta2024"
     BATINI2021 = "batini2021"
+    BCG_GLOBAL_WEALTH_2025 = "bcg-global-wealth-2025"
     BECKER1983 = "becker1983"
     BETA_BLOCKER_DRUG_LAG_DEATHS = "beta-blocker-drug-lag-deaths"
     BHUTTA2014 = "bhutta2014"

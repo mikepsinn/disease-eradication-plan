@@ -38,15 +38,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 360 parameters used in the analysis, organized by type:
+This appendix documents all 358 parameters used in the analysis, organized by type:
 
-- External sources (peer-reviewed): 135
-- Calculated values: 170
+- External sources (peer-reviewed): 134
+- Calculated values: 169
 - Core definitions: 55
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (170 parameters) • [External Data Sources](#sec-external) (135 parameters) • [Core Definitions](#sec-definitions) (55 parameters)
+[Calculated Values](#sec-calculated) (169 parameters) • [External Data Sources](#sec-external) (134 parameters) • [Core Definitions](#sec-definitions) (55 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -5476,39 +5476,6 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-prize_pool_horizon_multiple.qmd >}}
-
-:::
-
-### PRIZE Pool Potential Max Size: $774T {#sec-prize_pool_potential_max_size}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Potential maximum terminal PRIZE pool size if the global retirement asset base compounds through the wishocratic fund over the resolution horizon.
-
-**Inputs**:
-
-- [Global Retirement Assets](#sec-global_retirement_assets) 📊: $70T
-- [PRIZE Pool Horizon Multiple](#sec-prize_pool_horizon_multiple) 🔢: 11.1x
-
-$$
-Pool_{max} = Assets_{retire} \times M_{pool}
-$$
-
-*✓ High confidence*
-
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-prize_pool_potential_max_size.qmd >}}
-
-{{< include ../figures/sensitivity-table-prize_pool_potential_max_size.qmd >}}
-
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-prize_pool_potential_max_size.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-prize_pool_potential_max_size.qmd >}}
 
 :::
 
@@ -11996,20 +11963,6 @@ Critical mass threshold for social change (3.5% rule). Chenoweth studied nationa
 #### Input Distribution
 
 {{< include ../figures/distribution-global_population_activism_threshold_pct.qmd >}}
-
-*✓ High confidence*
-
-:::
-
-### Global Retirement Assets: $70T {#sec-global_retirement_assets}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Total global pension and retirement assets (OECD 2024). This is the capital pool that the wishocratic fund competes with and could partially absorb.
-
-#### Uncertainty Range
-
-**Technical**: Distribution: Fixed
 
 *✓ High confidence*
 

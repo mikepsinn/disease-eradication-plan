@@ -135,7 +135,7 @@ The right institutional framing is three lanes, not one giant capital ask:
 |:---|:---|:---|
 | Activation underwriting | Referral rewards, verification, payment rails, platform ops, launch infrastructure | {{< var global_coordination_activation_budget >}} |
 | PRIZE pool seeding | Long-dated success-side upside that makes the scoreboard feel rich and real | {{< var prize_pool_retirement_equivalent_principal >}} |
-| Later scale capital | The much larger capital migration if the network becomes politically and operationally real | {{< var prize_pool_potential_max_size >}} ceiling |
+| Later scale capital | The much larger capital migration if the network becomes politically and operationally real | {{< var prize_pool_size >}} (at {{< var prize_pool_participation_rate >}} participation) |
 
 The expected first mover is a foundation consortium that can underwrite the stack together while still routing each lane through the committee or vehicle that fits it. One extraordinary institution could still do everything.
 

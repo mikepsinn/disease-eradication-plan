@@ -7865,19 +7865,46 @@ PRIZE_POOL_HORIZON_MULTIPLE = Parameter(
     latex_symbol=r"M_{pool}",
 )
 
-PRIZE_POOL_POTENTIAL_MAX_SIZE = Parameter(
-    float(GLOBAL_RETIREMENT_ASSETS) * float(PRIZE_POOL_HORIZON_MULTIPLE),
-    source_type="calculated",
-    description="Potential maximum terminal PRIZE pool size if the global retirement asset base "
-                "compounds through the wishocratic fund over the resolution horizon.",
-    display_name="PRIZE Pool Potential Max Size",
+GLOBAL_INVESTABLE_ASSETS = Parameter(
+    305_000_000_000_000,
+    source_type="external",
+    description="Total global financial wealth (2024): equities, bonds, cash/deposits, and "
+                "investment funds. Excludes real estate and physical assets. This is the "
+                "addressable capital pool for PRIZE deposits.",
+    display_name="Global Investable Financial Assets",
     unit="USD",
-    formula="GLOBAL_RETIREMENT_ASSETS × PRIZE_POOL_HORIZON_MULTIPLE",
-    latex=r"Pool_{max} = Assets_{retire} \times M_{pool}",
-    inputs=["GLOBAL_RETIREMENT_ASSETS", "PRIZE_POOL_HORIZON_MULTIPLE"],
-    compute=lambda ctx: ctx["GLOBAL_RETIREMENT_ASSETS"] * ctx["PRIZE_POOL_HORIZON_MULTIPLE"],
-    keywords=["prize", "pool", "potential", "max", "size", "retirement", "assets"],
-    latex_symbol=r"Pool_{max}",
+    distribution="fixed",
+    keywords=["investable", "financial", "assets", "global", "wealth", "305 trillion", "BCG"],
+    latex_symbol=r"Assets_{invest}",
+)
+
+PRIZE_POOL_PARTICIPATION_RATE = Parameter(
+    0.01,
+    source_type="definition",
+    description="Fraction of global investable financial assets that flow into the PRIZE pool. "
+                "1% central estimate parallels the 1% Treaty ask: 1% of your weapons money, "
+                "1% of your savings.",
+    display_name="PRIZE Pool Participation Rate",
+    unit="percent",
+    distribution="lognormal",
+    confidence_interval=(0.001, 0.10),
+    keywords=["participation", "rate", "prize", "pool", "deposit", "fraction", "1 percent"],
+    latex_symbol=r"R_{pool}",
+)
+
+PRIZE_POOL_SIZE = Parameter(
+    float(GLOBAL_INVESTABLE_ASSETS) * float(PRIZE_POOL_PARTICIPATION_RATE) * float(PRIZE_POOL_HORIZON_MULTIPLE),
+    source_type="calculated",
+    description="Terminal PRIZE pool size: global investable assets × participation rate × "
+                "compound multiple over the resolution horizon.",
+    display_name="PRIZE Pool Size",
+    unit="USD",
+    formula="GLOBAL_INVESTABLE_ASSETS × PRIZE_POOL_PARTICIPATION_RATE × PRIZE_POOL_HORIZON_MULTIPLE",
+    latex=r"Pool = Assets_{invest} \times R_{pool} \times M_{pool}",
+    inputs=["GLOBAL_INVESTABLE_ASSETS", "PRIZE_POOL_PARTICIPATION_RATE", "PRIZE_POOL_HORIZON_MULTIPLE"],
+    compute=lambda ctx: ctx["GLOBAL_INVESTABLE_ASSETS"] * ctx["PRIZE_POOL_PARTICIPATION_RATE"] * ctx["PRIZE_POOL_HORIZON_MULTIPLE"],
+    keywords=["prize", "pool", "size", "investable", "assets", "participation"],
+    latex_symbol=r"Pool",
 )
 
 GLOBAL_COORDINATION_TARGET_PCT = Parameter(
@@ -8036,33 +8063,33 @@ PRIZE_POOL_RETIREMENT_EQUIVALENT_PRINCIPAL = Parameter(
     latex_symbol=r"P_{retire-eq}",
 )
 
-# VOTE token value (potential max pool ÷ coordination-target supporters)
-VOTE_TOKEN_POTENTIAL_VALUE = Parameter(
-    float(PRIZE_POOL_POTENTIAL_MAX_SIZE) / float(GLOBAL_COORDINATION_TARGET_SUPPORTERS),
+# VOTE token value (pool size ÷ coordination-target supporters)
+VOTE_TOKEN_VALUE = Parameter(
+    float(PRIZE_POOL_SIZE) / float(GLOBAL_COORDINATION_TARGET_SUPPORTERS),
     source_type="calculated",
-    description="Potential value of a single VOTE claim if the PRIZE pool reaches its canonical "
-                "potential max size. Denominator is the modeled global coordination target, not the lower forecast participation path.",
-    display_name="VOTE Token Potential Value",
+    description="Value of a single VOTE claim based on the modeled PRIZE pool size "
+                "(investable assets × participation rate × horizon multiple). "
+                "CI range reflects participation uncertainty (0.1%-10%).",
+    display_name="VOTE Point Value",
     unit="USD",
-    formula="PRIZE_POOL_POTENTIAL_MAX_SIZE / GLOBAL_COORDINATION_TARGET_SUPPORTERS",
-    latex=r"V_{vote} = \frac{Pool_{max}}{N_{coord}}",
-    inputs=["PRIZE_POOL_POTENTIAL_MAX_SIZE", "GLOBAL_COORDINATION_TARGET_SUPPORTERS"],
-    compute=lambda ctx: ctx["PRIZE_POOL_POTENTIAL_MAX_SIZE"] / ctx["GLOBAL_COORDINATION_TARGET_SUPPORTERS"],
+    formula="PRIZE_POOL_SIZE / GLOBAL_COORDINATION_TARGET_SUPPORTERS",
+    latex=r"V_{vote} = \frac{Pool}{N_{coord}}",
+    inputs=["PRIZE_POOL_SIZE", "GLOBAL_COORDINATION_TARGET_SUPPORTERS"],
+    compute=lambda ctx: ctx["PRIZE_POOL_SIZE"] / ctx["GLOBAL_COORDINATION_TARGET_SUPPORTERS"],
     keywords=["vote", "token", "value", "prize", "pool", "incentive", "recruitment"],
     latex_symbol=r"V_{vote}",
 )
 
 VOTE_2_CLAIMS_PAYOUT = Parameter(
-    2 * float(PRIZE_POOL_POTENTIAL_MAX_SIZE) / float(GLOBAL_COORDINATION_TARGET_SUPPORTERS),
+    2 * float(PRIZE_POOL_SIZE) / float(GLOBAL_COORDINATION_TARGET_SUPPORTERS),
     source_type="calculated",
-    description="Potential payout for a depositor who recruits 2 verified participants "
-                "(earning 2 VOTE claims) if the PRIZE pool reaches its canonical potential max size. "
-                "This is a recruiter example, not the system-wide average claim denominator.",
+    description="Payout for a depositor who recruits 2 verified participants "
+                "(earning 2 VOTE claims). CI range reflects participation uncertainty.",
     display_name="VOTE Payout for 2 Claims",
     unit="USD",
-    formula="2 × VOTE_TOKEN_POTENTIAL_VALUE",
-    inputs=["VOTE_TOKEN_POTENTIAL_VALUE"],
-    compute=lambda ctx: 2 * ctx["VOTE_TOKEN_POTENTIAL_VALUE"],
+    formula="2 × VOTE_TOKEN_VALUE",
+    inputs=["VOTE_TOKEN_VALUE"],
+    compute=lambda ctx: 2 * ctx["VOTE_TOKEN_VALUE"],
     keywords=["vote", "2 claims", "payout", "recruit", "two", "deposit"],
     latex_symbol=r"V_{2claims}",
 )

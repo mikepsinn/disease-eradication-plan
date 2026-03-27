@@ -38,15 +38,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 609 parameters used in the analysis, organized by type:
+This appendix documents all 611 parameters used in the analysis, organized by type:
 
-- External sources (peer-reviewed): 204
+- External sources (peer-reviewed): 205
 - Calculated values: 282
-- Core definitions: 123
+- Core definitions: 124
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (282 parameters) • [External Data Sources](#sec-external) (204 parameters) • [Core Definitions](#sec-definitions) (123 parameters)
+[Calculated Values](#sec-calculated) (282 parameters) • [External Data Sources](#sec-external) (205 parameters) • [Core Definitions](#sec-definitions) (124 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -9674,39 +9674,6 @@ $$
 
 :::
 
-### PRIZE Pool Potential Max Size: $774T {#sec-prize_pool_potential_max_size}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Potential maximum terminal PRIZE pool size if the global retirement asset base compounds through the wishocratic fund over the resolution horizon.
-
-**Inputs**:
-
-- [Global Retirement Assets](#sec-global_retirement_assets) 📊: $70T
-- [PRIZE Pool Horizon Multiple](#sec-prize_pool_horizon_multiple) 🔢: 11.1x
-
-$$
-Pool_{max} = Assets_{retire} \times M_{pool}
-$$
-
-*✓ High confidence*
-
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-prize_pool_potential_max_size.qmd >}}
-
-{{< include ../figures/sensitivity-table-prize_pool_potential_max_size.qmd >}}
-
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-prize_pool_potential_max_size.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-prize_pool_potential_max_size.qmd >}}
-
-:::
-
 ### PRIZE Pool Retirement-Equivalent Principal: $1.8T {#sec-prize_pool_retirement_equivalent_principal}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -9741,6 +9708,40 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-prize_pool_retirement_equivalent_principal.qmd >}}
+
+:::
+
+### PRIZE Pool Size: $33.7T {#sec-prize_pool_size}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Terminal PRIZE pool size: global investable assets × participation rate × compound multiple over the resolution horizon.
+
+**Inputs**:
+
+- [Global Investable Financial Assets](#sec-global_investable_assets) 📊: $305T
+- [PRIZE Pool Participation Rate](#sec-prize_pool_participation_rate): 1% (95% CI: 0.1% - 10%)
+- [PRIZE Pool Horizon Multiple](#sec-prize_pool_horizon_multiple) 🔢: 11.1x
+
+$$
+Pool = Assets_{invest} \times R_{pool} \times M_{pool}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-prize_pool_size.qmd >}}
+
+{{< include ../figures/sensitivity-table-prize_pool_size.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-prize_pool_size.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-prize_pool_size.qmd >}}
 
 :::
 
@@ -15772,26 +15773,26 @@ $$
 
 :::
 
-### VOTE Payout for 2 Claims: $387K {#sec-vote_2_claims_payout}
+### VOTE Payout for 2 Claims: $16.9K {#sec-vote_2_claims_payout}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Potential payout for a depositor who recruits 2 verified participants (earning 2 VOTE claims) if the PRIZE pool reaches its canonical potential max size. This is a recruiter example, not the system-wide average claim denominator.
+Payout for a depositor who recruits 2 verified participants (earning 2 VOTE claims). CI range reflects participation uncertainty.
 
 **Inputs**:
 
-- [VOTE Token Potential Value](#sec-vote_token_potential_value) 🔢: $194K
+- [VOTE Point Value](#sec-vote_token_value) 🔢: $8.44K
 
 $$
-V_{2claims} = V_{vote} \times 2 = \$194K \times 2 = \$387K
+V_{2claims} = V_{vote} \times 2 = \$8.44K \times 2 = \$16.9K
 $$
 where:
 $$
-V_{vote} = \frac{Pool_{max}}{N_{coord}}
+V_{vote} = \frac{Pool}{N_{coord}}
 $$
 where:
 $$
-Pool_{max} = Assets_{retire} \times M_{pool}
+Pool = Assets_{invest} \times R_{pool} \times M_{pool}
 $$
 where:
 $$
@@ -15862,36 +15863,36 @@ $$
 
 :::
 
-### VOTE Token Potential Value: $194K {#sec-vote_token_potential_value}
+### VOTE Point Value: $8.44K {#sec-vote_token_value}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Potential value of a single VOTE claim if the PRIZE pool reaches its canonical potential max size. Denominator is the modeled global coordination target, not the lower forecast participation path.
+Value of a single VOTE claim based on the modeled PRIZE pool size (investable assets × participation rate × horizon multiple). CI range reflects participation uncertainty (0.1%-10%).
 
 **Inputs**:
 
-- [PRIZE Pool Potential Max Size](#sec-prize_pool_potential_max_size) 🔢: $774T
+- [PRIZE Pool Size](#sec-prize_pool_size) 🔢: $33.7T
 - [Global Coordination Target Supporters](#sec-global_coordination_target_supporters) 🔢: 4 billion of people
 
 $$
-V_{vote} = \frac{Pool_{max}}{N_{coord}}
+V_{vote} = \frac{Pool}{N_{coord}}
 $$
 
 *✓ High confidence*
 
 #### Sensitivity Analysis
 
-{{< include ../figures/tornado-vote_token_potential_value.qmd >}}
+{{< include ../figures/tornado-vote_token_value.qmd >}}
 
-{{< include ../figures/sensitivity-table-vote_token_potential_value.qmd >}}
+{{< include ../figures/sensitivity-table-vote_token_value.qmd >}}
 
 #### Monte Carlo Distribution
 
-{{< include ../figures/mc-distribution-vote_token_potential_value.qmd >}}
+{{< include ../figures/mc-distribution-vote_token_value.qmd >}}
 
 #### Exceedance Probability
 
-{{< include ../figures/exceedance-vote_token_potential_value.qmd >}}
+{{< include ../figures/exceedance-vote_token_value.qmd >}}
 
 :::
 
@@ -19149,6 +19150,20 @@ Global healthy life expectancy at birth (HALE) from WHO Global Health Observator
 Total global household wealth (2022/2023 estimate)
 
 **Source**: [@cs-global-wealth-report-2023]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*✓ High confidence*
+
+:::
+
+### Global Investable Financial Assets: $305T {#sec-global_investable_assets}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Total global financial wealth (2024): equities, bonds, cash/deposits, and investment funds. Excludes real estate and physical assets. This is the addressable capital pool for PRIZE deposits.
 
 #### Uncertainty Range
 
@@ -23243,6 +23258,28 @@ Average Phase 2/3 efficacy testing cost per drug that pharma must fund (~60% of 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
 Years of empirical validation for physician-led pragmatic trials (1883-1960)
+
+*Core definition*
+
+:::
+
+### PRIZE Pool Participation Rate: 1% {#sec-prize_pool_participation_rate}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Fraction of global investable financial assets that flow into the PRIZE pool. 1% central estimate parallels the 1% Treaty ask: 1% of your weapons money, 1% of your savings.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [0.1%, 10%] • Distribution: Lognormal
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between 0.1% and 10% (±495%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-prize_pool_participation_rate.qmd >}}
 
 *Core definition*
 

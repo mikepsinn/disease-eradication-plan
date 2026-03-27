@@ -16,18 +16,18 @@ setup_chart_style()
 
 # Display name for chart title
 
-display_name = "PRIZE Pool Potential Max Size"
+display_name = "PRIZE Pool Size"
 
 # Baseline and units
 
-baseline = 774478948852447.2
+baseline = 33745154199999.484
 
 # Tornado data from sensitivity analysis
 
-drivers = ['VENTURE_GROSS_RETURN', 'SCALE_COMPRESSION_FACTOR', 'ALLOCATION_DECISION_SPREAD', 'HOME_BIAS_ALPHA']
-driver_labels = ['Venture Capital Gross Return', 'Scale Compression Factor', 'Allocation Decision Return Spread', 'Home Bias Return Drag']
-impacts_low = [-314068861920015.0, -213735196511123.75, -73707666100784.75, -48036717214913.5]
-impacts_high = [673475077585248.5, 162500329182522.38, 109565072035580.12, 72247658573080.38]
+drivers = ['PRIZE_POOL_PARTICIPATION_RATE', 'VENTURE_GROSS_RETURN', 'SCALE_COMPRESSION_FACTOR', 'ALLOCATION_DECISION_SPREAD', 'HOME_BIAS_ALPHA']
+driver_labels = ['PRIZE Pool Participation Rate', 'Venture Capital Gross Return', 'Scale Compression Factor', 'Allocation Decision Return Spread', 'Home Bias Return Drag']
+impacts_low = [-30370638779999.535, -13684428983657.793, -9312747847984.676, -3211548308677.047, -2093028392935.5156]
+impacts_high = [303706387799995.4, 29344271237642.977, 7080371485809.906, 4773906710121.711, 3147933694969.9297]
 
 # Convert deltas to absolute values (baseline + delta)
 
@@ -96,7 +96,7 @@ add_watermark(fig)
 # Save PNG to knowledge/figures/ regardless of where Quarto renders from
 # Use 96 DPI for web-optimized output (reduced from 150 DPI to minimize file size)
 
-output_path = get_figure_output_path('tornado-prize_pool_potential_max_size.png')
+output_path = get_figure_output_path('tornado-prize_pool_size.png')
 plt.savefig(output_path, dpi=96, bbox_inches=None, facecolor=COLOR_WHITE)
 
 add_png_metadata(
