@@ -38,15 +38,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 358 parameters used in the analysis, organized by type:
+This appendix documents all 361 parameters used in the analysis, organized by type:
 
-- External sources (peer-reviewed): 134
-- Calculated values: 169
-- Core definitions: 55
+- External sources (peer-reviewed): 135
+- Calculated values: 170
+- Core definitions: 56
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (169 parameters) • [External Data Sources](#sec-external) (134 parameters) • [Core Definitions](#sec-definitions) (55 parameters)
+[Calculated Values](#sec-calculated) (170 parameters) • [External Data Sources](#sec-external) (135 parameters) • [Core Definitions](#sec-definitions) (56 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -5513,6 +5513,40 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-prize_pool_retirement_equivalent_principal.qmd >}}
+
+:::
+
+### PRIZE Pool Size: $33.7T {#sec-prize_pool_size}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Terminal PRIZE pool size: global investable assets × participation rate × compound multiple over the resolution horizon.
+
+**Inputs**:
+
+- [Global Investable Financial Assets](#sec-global_investable_assets) 📊: $305T
+- [PRIZE Pool Participation Rate](#sec-prize_pool_participation_rate): 1% (95% CI: 0.1% - 10%)
+- [PRIZE Pool Horizon Multiple](#sec-prize_pool_horizon_multiple) 🔢: 11.1x
+
+$$
+Pool = Assets_{invest} \times R_{pool} \times M_{pool}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-prize_pool_size.qmd >}}
+
+{{< include ../figures/sensitivity-table-prize_pool_size.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-prize_pool_size.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-prize_pool_size.qmd >}}
 
 :::
 
@@ -11796,6 +11830,20 @@ Total global household wealth (2022/2023 estimate)
 
 :::
 
+### Global Investable Financial Assets: $305T {#sec-global_investable_assets}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Total global financial wealth (2024): equities, bonds, cash/deposits, and investment funds. Excludes real estate and physical assets. This is the addressable capital pool for PRIZE deposits.
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*✓ High confidence*
+
+:::
+
 ### Global Life Expectancy (2024): 79 years {#sec-global_life_expectancy_2024}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -14089,6 +14137,28 @@ Standard time horizon for NPV analysis
 #### Uncertainty Range
 
 **Technical**: Distribution: Fixed
+
+*Core definition*
+
+:::
+
+### PRIZE Pool Participation Rate: 1% {#sec-prize_pool_participation_rate}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Fraction of global investable financial assets that flow into the PRIZE pool. 1% central estimate parallels the 1% Treaty ask: 1% of your weapons money, 1% of your savings.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [0.1%, 10%] • Distribution: Lognormal
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between 0.1% and 10% (±495%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-prize_pool_participation_rate.qmd >}}
 
 *Core definition*
 

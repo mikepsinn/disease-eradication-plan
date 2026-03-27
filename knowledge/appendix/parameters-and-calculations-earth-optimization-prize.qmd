@@ -38,15 +38,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 185 parameters used in the analysis, organized by type:
+This appendix documents all 184 parameters used in the analysis, organized by type:
 
-- External sources (peer-reviewed): 52
+- External sources (peer-reviewed): 51
 - Calculated values: 99
 - Core definitions: 34
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (99 parameters) • [External Data Sources](#sec-external) (52 parameters) • [Core Definitions](#sec-definitions) (34 parameters)
+[Calculated Values](#sec-calculated) (99 parameters) • [External Data Sources](#sec-external) (51 parameters) • [Core Definitions](#sec-definitions) (34 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -6336,20 +6336,6 @@ Critical mass threshold for social change (3.5% rule). Chenoweth studied nationa
 #### Input Distribution
 
 {{< include ../figures/distribution-global_population_activism_threshold_pct.qmd >}}
-
-*✓ High confidence*
-
-:::
-
-### Global Retirement Assets: $70T {#sec-global_retirement_assets}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Total global pension and retirement assets (OECD 2024). This is the capital pool that the wishocratic fund competes with and could partially absorb.
-
-#### Uncertainty Range
-
-**Technical**: Distribution: Fixed
 
 *✓ High confidence*
 
