@@ -57,6 +57,7 @@
   var drainSafetyTimer = null;     // safety timeout so mouth never gets stuck
   var mouthRafId = null;           // requestAnimationFrame handle for analyser-driven lipsync
   var localRecognition = null; // Local SpeechRecognition for user speech in voice mode
+  var voiceSystemPrompt = "";  // Cached system prompt for RAG debug display
   var voiceIdleTimer = null;   // auto-stop voice mode after 60s of silence
   var VOICE_IDLE_MS = 60000;
 
@@ -104,6 +105,30 @@
       .catch(function (err) {
         console.error("[VOICE-RAG] Failed to load search index:", err.message);
         searchLoading = false;
+      });
+  }
+
+  // ========================================
+  // SYSTEM PROMPT (for RAG debug display)
+  // ========================================
+
+  function fetchSystemPrompt() {
+    var url = API_BASE + "/api/system-prompt";
+    fetch(url)
+      .then(function (r) {
+        if (!r.ok) throw new Error("HTTP " + r.status);
+        return r.json();
+      })
+      .then(function (data) {
+        if (data.prompt) {
+          voiceSystemPrompt = data.prompt;
+          console.log("[VOICE-RAG] System prompt loaded:", voiceSystemPrompt.length, "chars");
+        } else {
+          throw new Error("No prompt field in response");
+        }
+      })
+      .catch(function (err) {
+        console.error("[VOICE-RAG] Failed to load system prompt:", err.message);
       });
   }
 
@@ -559,9 +584,10 @@
   function init() {
     if (isDisabled()) return;
 
-    // Pre-load search index and image index
+    // Pre-load search index, image index, and system prompt
     fetchSearchIndex();
     fetchImageIndex();
+    fetchSystemPrompt();
 
     createFAB();
     createPanel();
@@ -1362,6 +1388,74 @@
     "Comparing to 340 other planets (you rank 312th)...",
   ];
 
+  /**
+   * Build a collapsible <details> showing what was sent to Gemini Live:
+   * system prompt, user statement, and RAG context -- all markdown-rendered.
+   */
+  function buildRagDetailsElement(opts) {
+    var charCount = (opts.systemPrompt || "").length + (opts.transcript || "").length + (opts.ragContext || "").length;
+    var details = document.createElement("details");
+    details.className = "chat-thinking";
+    details.style.cssText = "font-size:12px;margin:4px 0;";
+    var summary = document.createElement("summary");
+    summary.textContent = opts.ragContext
+      ? "\uD83D\uDCDA Sent " + charCount + " chars to Gemini Live"
+      : "\u26A0\uFE0F No RAG context sent" + (opts.indexSize ? " (search index: " + opts.indexSize + " entries)" : "");
+    details.appendChild(summary);
+
+    var content = document.createElement("div");
+    content.className = "chat-thinking-text";
+    content.style.cssText = "max-height:400px;overflow-y:auto;";
+
+    if (opts.systemPrompt) {
+      content.innerHTML += '<strong style="display:block;margin:8px 0 4px;border-bottom:1px solid rgba(255,255,255,0.1);padding-bottom:4px;">\uD83E\uDD16 System Prompt</strong>';
+      content.innerHTML += '<div class="chat-msg-text">' + renderMarkdown(opts.systemPrompt) + "</div>";
+    }
+    if (opts.transcript) {
+      content.innerHTML += '<strong style="display:block;margin:8px 0 4px;border-bottom:1px solid rgba(255,255,255,0.1);padding-bottom:4px;">\uD83D\uDDE3\uFE0F User</strong>';
+      content.innerHTML += '<div class="chat-msg-text">' + renderMarkdown(opts.transcript) + "</div>";
+    }
+    content.innerHTML += '<strong style="display:block;margin:8px 0 4px;border-bottom:1px solid rgba(255,255,255,0.1);padding-bottom:4px;">\uD83D\uDCDA RAG Context</strong>';
+    content.innerHTML += '<div class="chat-msg-text">' + renderMarkdown(opts.ragContext || "(none)") + "</div>";
+
+    details.appendChild(content);
+    return details;
+  }
+
+  /**
+   * Search RAG, send combined context to Gemini Live, and show collapsible debug bubble.
+   * Shared by both the local-transcription debounce path and the native onInputTranscript path.
+   */
+  function sendRagToGemini(transcript) {
+    var ragContext = searchContent(transcript, 5, 2000);
+    console.log("[VOICE-RAG] searchContent:", ragContext ? ragContext.length + " chars" : "EMPTY", "index:", searchIndex ? searchIndex.length : "NULL");
+    if (!liveClient || !liveClient.isConnected()) return { ragContext: ragContext };
+
+    var combined = "The user just asked: \"" + transcript + "\"\n\n";
+    if (ragContext) {
+      combined += "Your Earth Optimization Protocol notes:\n" + ragContext + "\n\n";
+      combined += "Answer the user's question using your own knowledge above.";
+    } else {
+      combined += "Answer the user's question.";
+    }
+    console.log("[VOICE-RAG] sendText:", combined.length, "chars");
+    liveClient.sendText(combined);
+
+    // Show collapsible RAG/prompt details
+    var ragBubble = document.createElement("div");
+    ragBubble.className = "chat-msg chat-msg-assistant";
+    ragBubble.appendChild(buildRagDetailsElement({
+      systemPrompt: voiceSystemPrompt,
+      transcript: transcript,
+      ragContext: ragContext,
+      indexSize: searchIndex ? searchIndex.length : null,
+    }));
+    msgContainer.appendChild(ragBubble);
+    scrollToBottom();
+
+    return { ragContext: ragContext };
+  }
+
   function createThinkingIndicator() {
     var el = document.createElement("div");
     el.className = "chat-thinking-indicator";
@@ -1943,29 +2037,10 @@
             messages.push({ role: "user", content: transcript });
             ChatStorage.saveMessages(messages);
 
-            // RAG: search book index and inject as a combined text message
-            var ragContext = searchContent(transcript, 5, 2000);
-            console.log("[VOICE-RAG] searchContent:", ragContext ? ragContext.length + " chars" : "EMPTY", "index:", searchIndex ? searchIndex.length : "NULL");
+            // RAG: search book index, send to Gemini, show debug bubble
+            var ragResult = sendRagToGemini(transcript);
+            var ragContext = ragResult.ragContext;
             if (liveClient && liveClient.isConnected()) {
-              var combined = "The user just asked: \"" + transcript + "\"\n\n";
-              if (ragContext) {
-                combined += "Your Earth Optimization Protocol notes:\n" + ragContext + "\n\n";
-                combined += "Answer the user's question using your own knowledge above.";
-              } else {
-                combined += "Answer the user's question.";
-              }
-              console.log("[VOICE-RAG] sendText:", combined.length, "chars");
-              liveClient.sendText(combined);
-
-              // Show RAG status indicator
-              var ragStatus = document.createElement("div");
-              ragStatus.className = "chat-msg chat-msg-assistant";
-              ragStatus.style.cssText = "font-size:11px;opacity:0.6;padding:4px 10px;max-width:100%;";
-              ragStatus.textContent = ragContext
-                ? "\uD83D\uDCDA Sent " + ragContext.length + " chars of RAG context to Gemini Live"
-                : "\u26A0\uFE0F No RAG context sent (search index: " + (searchIndex ? searchIndex.length + " entries)" : "not loaded)");
-              msgContainer.appendChild(ragStatus);
-
               // Fire parallel visuals request -- render immediately when ready
               var voiceImageOptions = findTopImageCandidates(transcript, lastSearchResults, 3);
               fetchVisuals(transcript, ragContext, voiceImageOptions).then(function (visuals) {
@@ -2097,37 +2172,7 @@
         showVoiceState("thinking");
 
         // Live RAG: send question + context as combined text to interrupt audio-only response
-        var ragContext = searchContent(transcript.trim(), 5, 2000);
-        if (liveClient && liveClient.isConnected()) {
-          var combined = "The user just asked: \"" + transcript.trim() + "\"\n\n";
-          if (ragContext) {
-            combined += "Reference material:\n" + ragContext + "\n\n";
-            combined += "Answer the user's question using the reference material above.";
-          } else {
-            combined += "Answer the user's question.";
-          }
-          liveClient.sendText(combined);
-
-          if (ragContext) {
-            var ragBubble = document.createElement("div");
-            ragBubble.className = "chat-msg chat-msg-assistant";
-            var ragCard = document.createElement("div");
-            ragCard.className = "chat-voice-card";
-            var ragDetails = document.createElement("details");
-            ragDetails.className = "chat-thinking";
-            var ragSummary = document.createElement("summary");
-            ragSummary.textContent = "\uD83D\uDCDA RAG context for: " + transcript.trim().substring(0, 50);
-            ragDetails.appendChild(ragSummary);
-            var ragPre = document.createElement("pre");
-            ragPre.className = "chat-thinking-text";
-            ragPre.textContent = ragContext;
-            ragDetails.appendChild(ragPre);
-            ragCard.appendChild(ragDetails);
-            ragBubble.appendChild(ragCard);
-            msgContainer.appendChild(ragBubble);
-            scrollToBottom();
-          }
-        }
+        sendRagToGemini(transcript.trim());
       },
       onModelTurnStarted: function () {
         // Keep showing thinking indicator - switch to "speaking" on first audio chunk
