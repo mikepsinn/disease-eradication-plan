@@ -57,6 +57,8 @@
   var drainSafetyTimer = null;     // safety timeout so mouth never gets stuck
   var mouthRafId = null;           // requestAnimationFrame handle for analyser-driven lipsync
   var localRecognition = null; // Local SpeechRecognition for user speech in voice mode
+  var voiceIdleTimer = null;   // auto-stop voice mode after 60s of silence
+  var VOICE_IDLE_MS = 60000;
 
   // Rich content state
   var lastSearchResults = [];
@@ -564,10 +566,14 @@
     createFAB();
     createPanel();
 
-    // Restore previous messages (including visual cards if saved)
+    // Restore previous messages with all enrichments
     if (messages.length > 0) {
       messages.forEach(function (m) {
-        appendMessage(m.role, m.content, true);
+        var bubble = appendMessage(m.role, m.content, true);
+        if (bubble && m.role === "assistant") {
+          if (m.sourceLinks) renderSourcePills(bubble, m.sourceLinks);
+          if (m.relevantImage) renderRelevantImage(bubble, m.relevantImage.path, m.relevantImage.title);
+        }
         if (m.visuals) {
           var card = renderVisualCard(m.visuals);
           if (card) msgContainer.appendChild(card);
@@ -1246,16 +1252,15 @@
   }
 
   // Extract source links from model output + RAG results, return HTML pills
-  function extractSourceLinks(fullText, ragResults) {
+  // Extract source link data (serialisable array of {title, url})
+  function extractSourceLinksData(fullText, ragResults) {
     var links = [];
     var seen = {};
     var BASE_URL = "https://manual.warondisease.org/knowledge";
 
     function normalizeSourceUrl(rawUrl) {
       var u = rawUrl;
-      // Strip .html extension
       u = u.replace(/\.html$/, "");
-      // Prefix relative URLs
       if (u.charAt(0) === "/" || (u.indexOf("http") !== 0 && u.indexOf(".") !== -1)) {
         u = BASE_URL + (u.charAt(0) === "/" ? "" : "/") + u;
       }
@@ -1283,8 +1288,12 @@
       }
     });
 
-    if (links.length === 0) return "";
+    return links;
+  }
 
+  // Render source pills into a parent element
+  function renderSourcePills(parent, links) {
+    if (!links || links.length === 0) return;
     var html = '<div class="chat-sources">';
     links.forEach(function (link) {
       html +=
@@ -1295,7 +1304,25 @@
         "</a>";
     });
     html += "</div>";
-    return html;
+    var el = document.createElement("div");
+    el.innerHTML = html;
+    parent.appendChild(el.firstChild);
+  }
+
+  // Render a relevant image thumbnail into a parent element
+  function renderRelevantImage(parent, path, title) {
+    var imgEl = document.createElement("div");
+    imgEl.className = "chat-image-container";
+    var imgTag = document.createElement("img");
+    imgTag.className = "chat-image-thumb";
+    imgTag.src = MANUAL_BASE + "/" + path;
+    imgTag.alt = title;
+    imgTag.loading = "lazy";
+    imgTag.addEventListener("click", function () {
+      showLightbox(MANUAL_BASE + "/" + path, title);
+    });
+    imgEl.appendChild(imgTag);
+    parent.appendChild(imgEl);
   }
 
   // Lightbox overlay for images
@@ -1503,11 +1530,9 @@
   }
 
   function finalizeResponse(bubble, fullText, question) {
-    // Update stored message
-    messages[messages.length - 1].content = fullText;
-    ChatStorage.saveMessages(messages);
-
-
+    // Update stored message with all enrichments
+    var lastMsg = messages[messages.length - 1];
+    lastMsg.content = fullText;
 
     // Strip "Read more:" lines for display (source pills replace them)
     var displayText = fullText.replace(/\n*Read more:[\s\S]*$/, "").trim();
@@ -1516,30 +1541,21 @@
     var textEl = bubble.querySelector(".chat-msg-text");
     if (textEl) textEl.innerHTML = renderMarkdown(displayText);
 
-    // Source pills
-    var sourcesHtml = extractSourceLinks(fullText, lastSearchResults);
-    if (sourcesHtml) {
-      var sourcesEl = document.createElement("div");
-      sourcesEl.innerHTML = sourcesHtml;
-      bubble.appendChild(sourcesEl.firstChild);
+    // Source pills — extract and persist
+    var sourceLinksData = extractSourceLinksData(fullText, lastSearchResults);
+    if (sourceLinksData.length > 0) {
+      lastMsg.sourceLinks = sourceLinksData;
+      renderSourcePills(bubble, sourceLinksData);
     }
 
-    // Relevant image
+    // Relevant image — find and persist
     var relevantImg = findRelevantImage(question, lastSearchResults);
     if (relevantImg) {
-      var imgEl = document.createElement("div");
-      imgEl.className = "chat-image-container";
-      var imgTag = document.createElement("img");
-      imgTag.className = "chat-image-thumb";
-      imgTag.src = MANUAL_BASE + "/" + relevantImg.path;
-      imgTag.alt = relevantImg.title || "";
-      imgTag.loading = "lazy";
-      imgTag.addEventListener("click", function () {
-        showLightbox(MANUAL_BASE + "/" + relevantImg.path, relevantImg.title || "");
-      });
-      imgEl.appendChild(imgTag);
-      bubble.appendChild(imgEl);
+      lastMsg.relevantImage = { path: relevantImg.path, title: relevantImg.title || "" };
+      renderRelevantImage(bubble, relevantImg.path, relevantImg.title || "");
     }
+
+    ChatStorage.saveMessages(messages);
 
     // Lazy-load KaTeX if LaTeX was detected
     if (bubble.querySelector(".chat-latex-pending")) {
@@ -1862,6 +1878,20 @@
   // LOCAL SPEECH TRANSCRIPTION (user bubbles + RAG in voice mode)
   // ========================================
 
+  function resetVoiceIdleTimer() {
+    if (voiceIdleTimer) clearTimeout(voiceIdleTimer);
+    voiceIdleTimer = setTimeout(function () {
+      if (liveVoiceMode && !aiSpeaking) {
+        console.log("[VOICE] idle timeout — stopping voice mode");
+        stopLiveVoice();
+      }
+    }, VOICE_IDLE_MS);
+  }
+
+  function clearVoiceIdleTimer() {
+    if (voiceIdleTimer) { clearTimeout(voiceIdleTimer); voiceIdleTimer = null; }
+  }
+
   function startLocalTranscription() {
     var SR = window.SpeechRecognition || window.webkitSpeechRecognition;
     if (!SR) { console.log("[VOICE-RAG] No SpeechRecognition API"); return; }
@@ -1879,6 +1909,7 @@
           if (!chunk) continue;
 
           // Accumulate chunks (Chrome can split utterances across recognition restarts)
+          resetVoiceIdleTimer();
           liveVoiceAccumulator += (liveVoiceAccumulator ? " " : "") + chunk;
           console.log("[VOICE-RAG] chunk:", chunk, "| accumulated:", liveVoiceAccumulator);
 
@@ -1970,6 +2001,7 @@
 
     try {
       localRecognition.start();
+      resetVoiceIdleTimer();
     } catch (_) {
       localRecognition = null;
     }
@@ -2100,6 +2132,7 @@
       onModelTurnStarted: function () {
         // Keep showing thinking indicator - switch to "speaking" on first audio chunk
         // Pause local recognition while Gemini speaks to prevent echo transcription
+        clearVoiceIdleTimer();
         aiSpeaking = true;
         localRecognitionPaused = true;
         if (localRecognition) {
@@ -2288,6 +2321,10 @@
 
     var fullText = (spoken || "").trim();
 
+    // Track enrichments for saving
+    var voiceSourceLinks = [];
+    var voiceRelevantImg = null;
+
     if (fullText) {
       // Strip "Read more:" for display
       var displayText = fullText.replace(/\n*Read more:[\s\S]*$/, "").trim();
@@ -2297,28 +2334,16 @@
       bubble.appendChild(textDiv);
 
       // Source pills
-      var sourcesHtml = extractSourceLinks(fullText, lastSearchResults);
-      if (sourcesHtml) {
-        var sourcesEl = document.createElement("div");
-        sourcesEl.innerHTML = sourcesHtml;
-        bubble.appendChild(sourcesEl.firstChild);
+      voiceSourceLinks = extractSourceLinksData(fullText, lastSearchResults);
+      if (voiceSourceLinks.length > 0) {
+        renderSourcePills(bubble, voiceSourceLinks);
       }
 
       // Relevant image
       var relevantImg = findRelevantImage(liveVoiceQuestion, lastSearchResults);
       if (relevantImg) {
-        var imgEl = document.createElement("div");
-        imgEl.className = "chat-image-container";
-        var imgTag = document.createElement("img");
-        imgTag.className = "chat-image-thumb";
-        imgTag.src = MANUAL_BASE + "/" + relevantImg.path;
-        imgTag.alt = relevantImg.title || "";
-        imgTag.loading = "lazy";
-        imgTag.addEventListener("click", function () {
-          showLightbox(MANUAL_BASE + "/" + relevantImg.path, relevantImg.title || "");
-        });
-        imgEl.appendChild(imgTag);
-        bubble.appendChild(imgEl);
+        voiceRelevantImg = { path: relevantImg.path, title: relevantImg.title || "" };
+        renderRelevantImage(bubble, relevantImg.path, relevantImg.title || "");
       }
 
       // LaTeX
@@ -2371,6 +2396,8 @@
       if (prev && prev.role === "assistant" && prev.visuals) {
         newMsg.visuals = prev.visuals;
       }
+      if (voiceSourceLinks.length > 0) newMsg.sourceLinks = voiceSourceLinks;
+      if (voiceRelevantImg) newMsg.relevantImage = voiceRelevantImg;
       messages.push(newMsg);
       ChatStorage.saveMessages(messages);
     }
@@ -2487,6 +2514,7 @@
   }
 
   function stopLiveVoice() {
+    clearVoiceIdleTimer();
     liveVoiceMode = false;
     aiSpeaking = false;
     pendingTurnComplete = false;
