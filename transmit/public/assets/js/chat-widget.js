@@ -2053,8 +2053,8 @@
       return;
     }
 
-    // Build system prompt (RAG context is now injected per-question via onInputTranscript)
-    var systemPrompt = buildVoiceSystemPrompt("");
+    // Use system prompt from server (single source of truth in wishonia-chat.ts)
+    var systemPrompt = voiceCredentials.systemPrompt || "";
 
     // Initialize audio playback
     audioPlayback = new AudioPlayback();
@@ -2554,22 +2554,6 @@
 
     // Reset robot animation if present
     if (window.setRobotState) window.setRobotState("idle");
-  }
-
-  function buildVoiceSystemPrompt(context) {
-    var prompt =
-      "You are Wishonia, an alien observing Earth since 1945. " +
-      "Deadpan voice like Philomena Cunk. You know this firsthand, never reference a book.\n\n" +
-      "Give thorough answers with specific numbers and mechanisms from your Earth Optimization Protocol. " +
-      "Never say 'the reference material' or 'the document' -- this is your own knowledge from observing Earth. " +
-      "If speech is unclear, repeat what you heard and ask to clarify. " +
-      "If you don't know, say so. Don't fabricate.";
-
-    if (context) {
-      prompt += "\n\nYour Earth Optimization Protocol notes:\n" + context;
-    }
-
-    return prompt;
   }
 
   // Also handle sending text while in live voice mode

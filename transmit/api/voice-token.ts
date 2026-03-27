@@ -7,6 +7,7 @@
  */
 
 import { corsHeaders, checkOrigin } from "../lib/cors";
+import { WISHONIA_VOICE_PROMPT } from "../lib/wishonia-chat";
 
 export const config = { runtime: "edge" };
 
@@ -57,7 +58,7 @@ export default async function handler(req: Request) {
 
   const data = await response.json();
 
-  return new Response(JSON.stringify({ token: data.name }), {
+  return new Response(JSON.stringify({ token: data.name, systemPrompt: WISHONIA_VOICE_PROMPT }), {
     headers: {
       ...cors,
       "Content-Type": "application/json",
