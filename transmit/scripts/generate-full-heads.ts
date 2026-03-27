@@ -101,6 +101,7 @@ const HEADS: HeadCombo[] = [
   { name: 'excited-open', instruction: `${BASE_INSTRUCTION} Eyes: ${EYES.excited}. Mouth: ${MOUTHS.open}.` },
   { name: 'excited-ee', instruction: `${BASE_INSTRUCTION} Eyes: ${EYES.excited}. Mouth: ${MOUTHS.ee}.` },
   { name: 'excited-oh', instruction: `${BASE_INSTRUCTION} Eyes: ${EYES.excited}. Mouth: ${MOUTHS.oh}.` },
+  { name: 'excited-closed', instruction: `${BASE_INSTRUCTION} Eyes: ${EYES.excited}. Mouth: ${MOUTHS.closed}.` },
   // Extra speech combos (for smooth talk animation cycling)
   { name: 'neutral-ee', instruction: `${BASE_INSTRUCTION} Eyes: ${EYES.neutral}. Mouth: ${MOUTHS.ee}.` },
   { name: 'neutral-frown', instruction: `${BASE_INSTRUCTION} Eyes: ${EYES.neutral}. Mouth: ${MOUTHS.frown}.` },
