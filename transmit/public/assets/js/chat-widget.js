@@ -373,6 +373,29 @@
     "their",
   ]);
 
+  // Correct common STT misrecognitions of domain-specific terms
+  var TRANSCRIPT_CORRECTIONS = [
+    [/\b(optometran|optimetron|optimitran|opt a metron|opt i metron|optimatron)\b/gi, "Optimitron"],
+    [/\b(op democracy|optimo cracy|opt democracy|opt a mocracy|optim ocracy)\b/gi, "Optimocracy"],
+    [/\b(wish own ya|wishon ya|wish on ya|we shown ya|wish own ia|wisha nia)\b/gi, "Wishonia"],
+    [/\b(wish ocracy|wish ah cracy|wisho cracy)\b/gi, "Wishocracy"],
+    [/\b(d f d a|d\.f\.d\.a\.?)\b/gi, "DFDA"],
+    [/\b(i a b|i\.a\.b\.?)\b/gi, "IAB"],
+    [/\b(o b g|o\.b\.g\.?)\b/gi, "OBG"],
+    [/\b(o p g|o\.p\.g\.?)\b/gi, "OPG"],
+    [/\b(dolly|daily)(?=\s+adjusted|\s+life|\s+year)/gi, "DALY"],
+    [/\b(collie|quality)(?=[\s-]+adjusted\s+life)/gi, "QALY"],
+    [/\bone percent treaty\b/gi, "1% Treaty"],
+  ];
+
+  function correctTranscript(text) {
+    var corrected = text;
+    for (var i = 0; i < TRANSCRIPT_CORRECTIONS.length; i++) {
+      corrected = corrected.replace(TRANSCRIPT_CORRECTIONS[i][0], TRANSCRIPT_CORRECTIONS[i][1]);
+    }
+    return corrected;
+  }
+
   function tokenize(text) {
     return (text || "")
       .toLowerCase()
@@ -472,6 +495,10 @@
     spend: ["spending", "budget", "military", "allocation"],
     invest: ["investor", "investment", "bond", "return", "profit"],
     save: ["prevent", "avert", "death", "daly", "lives"],
+    optimitron: ["policy", "generator", "budget", "optimal"],
+    optimocracy: ["governance", "optimitron", "policy"],
+    wishocracy: ["allocation", "funding", "voting", "rappa"],
+    dfda: ["fda", "decentralized", "regulatory", "trial"],
   };
 
   function expandQueryTokens(tokens) {
@@ -495,6 +522,7 @@
     maxChars = maxChars || 6000;
     if (!searchIndex || searchIndex.length === 0) return "";
 
+    query = correctTranscript(query);
     var queryTokens = tokenize(query);
     if (queryTokens.length === 0) return "";
 
@@ -1794,7 +1822,7 @@
     recognition.interimResults = false;
 
     recognition.onresult = function (event) {
-      var transcript = event.results[0][0].transcript;
+      var transcript = correctTranscript(event.results[0][0].transcript);
       recognition = null;
       voiceChatBtn.classList.remove("recording");
       onResult(transcript);
@@ -1999,7 +2027,7 @@
     localRecognition.onresult = function (event) {
       for (var i = event.resultIndex; i < event.results.length; i++) {
         if (event.results[i].isFinal) {
-          var chunk = event.results[i][0].transcript.trim();
+          var chunk = correctTranscript(event.results[i][0].transcript.trim());
           if (!chunk) continue;
 
           // Accumulate chunks (Chrome can split utterances across recognition restarts)
@@ -2158,14 +2186,15 @@
       voice: "Kore",
       onInputTranscript: function (transcript) {
         if (!transcript || !transcript.trim()) return;
-        console.log("[VOICE-RAG] onInputTranscript:", transcript.trim(), "aiSpeaking:", aiSpeaking, "localRecognition:", !!localRecognition);
+        transcript = correctTranscript(transcript.trim());
+        console.log("[VOICE-RAG] onInputTranscript:", transcript, "aiSpeaking:", aiSpeaking, "localRecognition:", !!localRecognition);
         // Ignore echo transcripts while AI is speaking (residual audio leaking past echo cancellation)
         if (aiSpeaking) return;
         // Skip if local SpeechRecognition is handling user speech + RAG
         if (localRecognition) return;
         console.log("[VOICE-RAG] onInputTranscript handling (localSR not active)");
-        appendMessage("user", transcript.trim());
-        liveVoiceQuestion = transcript.trim();
+        appendMessage("user", transcript);
+        liveVoiceQuestion = transcript;
         liveVoiceSpoken = "";
         liveVoiceThinking = "";
         liveVoiceBubble = null;

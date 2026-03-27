@@ -30,6 +30,32 @@ const STOP_WORDS = new Set([
   "his", "she", "him", "they",
 ]);
 
+/**
+ * Correct common STT misrecognitions of domain-specific terms.
+ * Applied before tokenization so RAG search finds the right content.
+ */
+const TRANSCRIPT_CORRECTIONS: Array<[RegExp, string]> = [
+  [/\b(optometran|optimetron|optimitran|opt a metron|opt i metron|optimatron)\b/gi, "Optimitron"],
+  [/\b(op democracy|optimo cracy|opt democracy|opt a mocracy|optim ocracy)\b/gi, "Optimocracy"],
+  [/\b(wish own ya|wishon ya|wish on ya|we shown ya|wish own ia|wisha nia)\b/gi, "Wishonia"],
+  [/\b(wish ocracy|wish ah cracy|wisho cracy)\b/gi, "Wishocracy"],
+  [/\b(d f d a|d\.f\.d\.a\.?)\b/gi, "DFDA"],
+  [/\b(i a b|i\.a\.b\.?)\b/gi, "IAB"],
+  [/\b(o b g|o\.b\.g\.?)\b/gi, "OBG"],
+  [/\b(o p g|o\.p\.g\.?)\b/gi, "OPG"],
+  [/\b(dolly|daily)(?=\s+adjusted|\s+life|\s+year)/gi, "DALY"],
+  [/\b(collie|quality)(?=[\s-]+adjusted\s+life)/gi, "QALY"],
+  [/\bone percent treaty\b/gi, "1% Treaty"],
+];
+
+export function correctTranscript(text: string): string {
+  let corrected = text;
+  for (const [pattern, replacement] of TRANSCRIPT_CORRECTIONS) {
+    corrected = corrected.replace(pattern, replacement);
+  }
+  return corrected;
+}
+
 export function tokenize(text: string): string[] {
   return (text || "")
     .toLowerCase()
@@ -65,6 +91,10 @@ const QUERY_EXPANSIONS: Record<string, string[]> = {
   spend: ["spending", "budget", "military", "allocation"],
   invest: ["investor", "investment", "bond", "return", "profit"],
   save: ["prevent", "avert", "death", "daly", "lives"],
+  optimitron: ["policy", "generator", "budget", "optimal"],
+  optimocracy: ["governance", "optimitron", "policy"],
+  wishocracy: ["allocation", "funding", "voting", "rappa"],
+  dfda: ["fda", "decentralized", "regulatory", "trial"],
 };
 
 function expandQueryTokens(
@@ -155,6 +185,7 @@ export function searchContent(
   if (!index || index.length === 0)
     return { context: "", results: [] };
 
+  query = correctTranscript(query);
   const queryTokens = tokenize(query);
   if (queryTokens.length === 0) return { context: "", results: [] };
 
