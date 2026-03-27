@@ -54,6 +54,12 @@ export interface Parameter {
   peerReviewed?: boolean;
   /** Whether this is a conservative estimate */
   conservative?: boolean;
+  /** Parameter key name (e.g., GLOBAL_DISEASE_DEATHS_ANNUAL) */
+  parameterName?: string;
+  /** URL to full calculation methodology on the calculations page */
+  calculationsUrl?: string;
+  /** Direct URL to external data source (flattened from citation) */
+  sourceUrl?: string;
 }
 
 // ============================================================================
@@ -62,53 +68,68 @@ export interface Parameter {
 
 export const ADAPTABLE_TRIAL_COST_PER_PATIENT: Parameter = {
   value: 929.0,
+  parameterName: "ADAPTABLE_TRIAL_COST_PER_PATIENT",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-adaptable_trial_cost_per_patient",
   unit: "USD/patient",
   displayName: "ADAPTABLE Trial Cost per Patient",
   description: "Cost per patient in ADAPTABLE trial ($14M PCORI grant / 15,076 patients). Note: This is the direct grant cost; true cost including in-kind may be 10-40% higher.",
   sourceType: "external",
   sourceRef: "pragmatic-trials-cost-advantage",
+  sourceUrl: "https://commonfund.nih.gov/hcscollaboratory",
   confidence: "medium",
   confidenceInterval: [929.0, 1400.0],
 };
 
 export const ADAPTABLE_TRIAL_TOTAL_COST: Parameter = {
   value: 14000000.0,
+  parameterName: "ADAPTABLE_TRIAL_TOTAL_COST",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-adaptable_trial_total_cost",
   unit: "USD",
   displayName: "ADAPTABLE Trial Total Cost",
   description: "PCORI grant for ADAPTABLE trial (2016-2019). Note: Direct funding only; total costs including site overhead and in-kind contributions from health systems may be higher.",
   sourceType: "external",
   sourceRef: "pragmatic-trials-cost-advantage",
+  sourceUrl: "https://commonfund.nih.gov/hcscollaboratory",
   confidence: "medium",
   confidenceInterval: [14000000.0, 20000000.0],
 };
 
 export const ANTIDEPRESSANT_TRIAL_EXCLUSION_RATE: Parameter = {
   value: 0.861,
+  parameterName: "ANTIDEPRESSANT_TRIAL_EXCLUSION_RATE",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-antidepressant_trial_exclusion_rate",
   unit: "percentage",
   displayName: "Antidepressant Trial Exclusion Rate",
   description: "Mean exclusion rate in antidepressant trials (86.1% of real-world patients excluded)",
   sourceType: "external",
   sourceRef: "antidepressant-trial-exclusion-rates",
+  sourceUrl: "https://pubmed.ncbi.nlm.nih.gov/26276679/",
   confidence: "high",
 };
 
 export const AVERAGE_MARKET_RETURN_PCT: Parameter = {
   value: 0.1,
+  parameterName: "AVERAGE_MARKET_RETURN_PCT",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-average_market_return_pct",
   unit: "rate",
   displayName: "Average Annual Stock Market Return",
   description: "Average annual stock market return (10%)",
   sourceType: "external",
   sourceRef: "warren-buffett-career-average-return-20-pct",
+  sourceUrl: "https://www.cnbc.com/2025/05/05/warren-buffetts-return-tally-after-60-years-5502284percent.html",
   confidence: "high",
 };
 
 export const BASELINE_LIVES_SAVED_ANNUAL: Parameter = {
   value: 12.0,
+  parameterName: "BASELINE_LIVES_SAVED_ANNUAL",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-baseline_lives_saved_annual",
   unit: "deaths/year",
   displayName: "Baseline Annual Lives Saved by Pharmaceuticals",
   description: "Baseline annual lives saved by pharmaceuticals (conservative aggregate)",
   sourceType: "external",
   sourceRef: "who-global-health-estimates-2024",
+  sourceUrl: "https://www.who.int/data/gho/data/themes/mortality-and-global-health-estimates",
   confidence: "medium",
   peerReviewed: true,
   conservative: true,
@@ -116,11 +137,14 @@ export const BASELINE_LIVES_SAVED_ANNUAL: Parameter = {
 
 export const BED_NETS_COST_PER_DALY: Parameter = {
   value: 89.0,
+  parameterName: "BED_NETS_COST_PER_DALY",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-bed_nets_cost_per_daly",
   unit: "USD/DALY",
   displayName: "Bed Nets Cost per DALY",
   description: "GiveWell cost per DALY for insecticide-treated bed nets (midpoint estimate, range $78-100). DALYs (Disability-Adjusted Life Years) measure disease burden by combining years of life lost and years lived with disability. Bed nets prevent malaria deaths and are considered a gold standard benchmark for cost-effective global health interventions - if an intervention costs less per DALY than bed nets, it's exceptionally cost-effective. GiveWell synthesizes peer-reviewed academic research with transparent, rigorous methodology and extensive external expert review.",
   sourceType: "external",
   sourceRef: "givewell-cost-per-life-saved",
+  sourceUrl: "https://www.givewell.org/charities/top-charities",
   confidence: "high",
   confidenceInterval: [78.0, 100.0],
   peerReviewed: true,
@@ -128,82 +152,106 @@ export const BED_NETS_COST_PER_DALY: Parameter = {
 
 export const CAREGIVER_ANNUAL_VALUE_TOTAL: Parameter = {
   value: 600000000000.0,
+  parameterName: "CAREGIVER_ANNUAL_VALUE_TOTAL",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-caregiver_annual_value_total",
   unit: "USD/year",
   displayName: "Total Annual Value of Unpaid Caregiving in US",
   description: "Total annual value of unpaid caregiving in US",
   sourceType: "external",
   sourceRef: "unpaid-caregiver-hours-economic-value",
+  sourceUrl: "https://www.aarp.org/caregiving/financial-legal/info-2023/unpaid-caregivers-provide-billions-in-care.html",
   confidence: "high",
 };
 
 export const CAREGIVER_COUNT_US: Parameter = {
   value: 38000000.0,
+  parameterName: "CAREGIVER_COUNT_US",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-caregiver_count_us",
   unit: "people",
   displayName: "Number of Unpaid Caregivers in US",
   description: "Number of unpaid caregivers in US",
   sourceType: "external",
   sourceRef: "unpaid-caregiver-hours-economic-value",
+  sourceUrl: "https://www.aarp.org/caregiving/financial-legal/info-2023/unpaid-caregivers-provide-billions-in-care.html",
   confidence: "high",
 };
 
 export const CAREGIVER_HOURS_PER_MONTH: Parameter = {
   value: 20.0,
+  parameterName: "CAREGIVER_HOURS_PER_MONTH",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-caregiver_hours_per_month",
   unit: "hours/month",
   displayName: "Average Monthly Hours of Unpaid Family Caregiving in US",
   description: "Average monthly hours of unpaid family caregiving in US",
   sourceType: "external",
   sourceRef: "unpaid-caregiver-hours-economic-value",
+  sourceUrl: "https://www.aarp.org/caregiving/financial-legal/info-2023/unpaid-caregivers-provide-billions-in-care.html",
   confidence: "high",
 };
 
 export const CAREGIVER_VALUE_PER_HOUR_SIMPLE: Parameter = {
   value: 25.0,
+  parameterName: "CAREGIVER_VALUE_PER_HOUR_SIMPLE",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-caregiver_value_per_hour_simple",
   unit: "USD/hour",
   displayName: "Estimated Replacement Cost per Hour of Caregiving",
   description: "Estimated replacement cost per hour of caregiving",
   sourceType: "external",
   sourceRef: "unpaid-caregiver-hours-economic-value",
+  sourceUrl: "https://www.aarp.org/caregiving/financial-legal/info-2023/unpaid-caregivers-provide-billions-in-care.html",
   confidence: "high",
 };
 
 export const CHAIN_GLOBAL_BILLIONAIRE_COUNT: Parameter = {
   value: 2781.0,
+  parameterName: "CHAIN_GLOBAL_BILLIONAIRE_COUNT",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-chain_global_billionaire_count",
   unit: "people",
   displayName: "Global Billionaire Count",
   description: "Number of billionaires globally (Forbes 2024 count)",
   sourceType: "external",
   sourceRef: "forbes-billionaires-2024",
+  sourceUrl: "https://www.forbes.com/billionaires/",
   confidence: "high",
 };
 
 export const CHILDHOOD_VACCINATION_ANNUAL_BENEFIT: Parameter = {
   value: 15000000000.0,
+  parameterName: "CHILDHOOD_VACCINATION_ANNUAL_BENEFIT",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-childhood_vaccination_annual_benefit",
   unit: "USD/year",
   displayName: "Estimated Annual Global Economic Benefit from Childhood Vaccination Programs",
   description: "Estimated annual global economic benefit from childhood vaccination programs (measles, polio, etc.)",
   sourceType: "external",
   sourceRef: "childhood-vaccination-economic-benefits",
+  sourceUrl: "https://www.cdc.gov/mmwr/volumes/73/wr/mm7331a2.htm",
   confidence: "high",
   stdError: 4500000000.0,
 };
 
 export const CHILDHOOD_VACCINATION_ROI: Parameter = {
   value: 13.0,
+  parameterName: "CHILDHOOD_VACCINATION_ROI",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-childhood_vaccination_roi",
   unit: "ratio",
   displayName: "Return on Investment from Childhood Vaccination Programs",
   description: "Return on investment from childhood vaccination programs",
   sourceType: "external",
   sourceRef: "childhood-vaccination-roi",
+  sourceUrl: "https://www.cdc.gov/mmwr/preview/mmwrhtml/mm6316a4.htm",
   confidence: "high",
 };
 
 export const CHRONIC_DISEASE_DISABILITY_WEIGHT: Parameter = {
   value: 0.35,
+  parameterName: "CHRONIC_DISEASE_DISABILITY_WEIGHT",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-chronic_disease_disability_weight",
   unit: "weight",
   displayName: "Disability Weight for Untreated Chronic Conditions",
   description: "Disability weight for untreated chronic conditions (WHO Global Burden of Disease)",
   sourceType: "external",
   sourceRef: "who-global-health-estimates-2024",
+  sourceUrl: "https://www.who.int/data/gho/data/themes/mortality-and-global-health-estimates",
   confidence: "medium",
   stdError: 0.07,
   peerReviewed: true,
@@ -211,6 +259,8 @@ export const CHRONIC_DISEASE_DISABILITY_WEIGHT: Parameter = {
 
 export const CONVENTIONAL_RETIREMENT_RETURN: Parameter = {
   value: 0.065,
+  parameterName: "CONVENTIONAL_RETIREMENT_RETURN",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-conventional_retirement_return",
   unit: "percent",
   displayName: "Conventional Retirement Return (After Fees)",
   description: "Average retail after-fee return on conventional retirement portfolios (60/40 stock/bond mix, ~1% advisory fees, ~0.4% fund fees). Used as the opportunity cost comparison: depositors are LOSING money by NOT participating in the wishocratic fund.",
@@ -221,106 +271,136 @@ export const CONVENTIONAL_RETIREMENT_RETURN: Parameter = {
 
 export const CPI_MULTIPLIER_1980_TO_2024: Parameter = {
   value: 3.8,
+  parameterName: "CPI_MULTIPLIER_1980_TO_2024",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-cpi_multiplier_1980_to_2024",
   unit: "ratio",
   displayName: "CPI Multiplier: 1980 to 2024",
   description: "CPI inflation multiplier from 1980 to 2024 (280.48% cumulative inflation)",
   sourceType: "external",
   sourceRef: "bls-cpi-inflation-calculator",
+  sourceUrl: "https://www.bls.gov/data/inflation_calculator.htm",
   confidence: "high",
   confidenceInterval: [3.75, 3.85],
 };
 
 export const CROWD_DECISION_ACCURACY: Parameter = {
   value: 0.91,
+  parameterName: "CROWD_DECISION_ACCURACY",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-crowd_decision_accuracy",
   unit: "percent",
   displayName: "Crowd Decision Accuracy (Millionaire)",
   description: "Crowd accuracy on Who Wants to Be a Millionaire ask-the-audience lifeline. Studio audience picked the correct answer 91% of the time (Surowiecki 2004). Used as lower bound for wishocratic allocation accuracy.",
   sourceType: "external",
   sourceRef: "surowiecki-2004",
+  sourceUrl: "https://archive.org/details/wisdomofcrowds0000suro",
   confidence: "high",
 };
 
 export const CURRENT_ACTIVE_TRIALS: Parameter = {
   value: 10000.0,
+  parameterName: "CURRENT_ACTIVE_TRIALS",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-current_active_trials",
   unit: "trials",
   displayName: "Current Active Trials at Any Given Time",
   description: "Current active trials at any given time (3-5 year duration)",
   sourceType: "external",
   sourceRef: "clinicaltrials-gov-enrollment-data-2025",
+  sourceUrl: "https://clinicaltrials.gov/data-api/api",
   confidence: "high",
 };
 
 export const CURRENT_CLINICAL_TRIAL_PARTICIPATION_RATE: Parameter = {
   value: 0.0006,
+  parameterName: "CURRENT_CLINICAL_TRIAL_PARTICIPATION_RATE",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-current_clinical_trial_participation_rate",
   unit: "rate",
   displayName: "Current Clinical Trial Participation Rate",
   description: "Current clinical trial participation rate (0.06% of population)",
   sourceType: "external",
   sourceRef: "clinical-trial-patient-participation-rate",
+  sourceUrl: "https://www.fightcancer.org/policy-resources/barriers-patient-enrollment-therapeutic-clinical-trials-cancer",
   confidence: "high",
 };
 
 export const CURRENT_DISEASE_PATIENTS_GLOBAL: Parameter = {
   value: 2400000000.0,
+  parameterName: "CURRENT_DISEASE_PATIENTS_GLOBAL",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-current_disease_patients_global",
   unit: "people",
   displayName: "Global Population with Chronic Diseases",
   description: "Global population with chronic diseases",
   sourceType: "external",
   sourceRef: "disease-prevalence-2-billion",
+  sourceUrl: "https://www.sciencedaily.com/releases/2015/06/150608081753.htm",
   confidence: "high",
   confidenceInterval: [2000000000.0, 2800000000.0],
 };
 
 export const CURRENT_DRUG_APPROVALS_PER_YEAR: Parameter = {
   value: 50.0,
+  parameterName: "CURRENT_DRUG_APPROVALS_PER_YEAR",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-current_drug_approvals_per_year",
   unit: "drugs/year",
   displayName: "Average Annual New Drug Approvals Globally",
   description: "Average annual new drug approvals globally",
   sourceType: "external",
   sourceRef: "global-new-drug-approvals-50-annually",
+  sourceUrl: "https://cen.acs.org/pharmaceuticals/50-new-drugs-received-FDA/103/i2",
   confidence: "high",
   confidenceInterval: [45.0, 60.0],
 };
 
 export const CURRENT_TRIALS_PER_YEAR: Parameter = {
   value: 3300.0,
+  parameterName: "CURRENT_TRIALS_PER_YEAR",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-current_trials_per_year",
   unit: "trials/year",
   displayName: "Current Global Clinical Trials per Year",
   description: "Current global clinical trials per year",
   sourceType: "external",
   sourceRef: "global-clinical-trials-market-2024",
+  sourceUrl: "https://www.globenewswire.com/news-release/2024/04/19/2866012/0/en/Global-Clinical-Trials-Market-Research-Report-2024-An-83-16-Billion-Market-by-2030-AI-Machine-Learning-and-Blockchain-will-Transform-the-Clinical-Trials-Landscape.html",
   confidence: "high",
   confidenceInterval: [2640.0, 3960.0],
 };
 
 export const CURRENT_TRIAL_ABANDONMENT_RATE: Parameter = {
   value: 0.4,
+  parameterName: "CURRENT_TRIAL_ABANDONMENT_RATE",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-current_trial_abandonment_rate",
   unit: "rate",
   displayName: "Current Trial Abandonment Rate",
   description: "Current trial abandonment rate (40% never complete)",
   sourceType: "external",
   sourceRef: "clinical-trial-abandonment-rate",
+  sourceUrl: "https://pmc.ncbi.nlm.nih.gov/articles/PMC4444136/",
   confidence: "high",
 };
 
 export const CURRENT_TRIAL_SLOTS_AVAILABLE: Parameter = {
   value: 1900000.0,
+  parameterName: "CURRENT_TRIAL_SLOTS_AVAILABLE",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-current_trial_slots_available",
   unit: "patients/year",
   displayName: "Annual Global Clinical Trial Participants",
   description: "Annual global clinical trial participants (IQVIA 2022: 1.9M post-COVID normalization)",
   sourceType: "external",
   sourceRef: "global-trial-participant-capacity",
+  sourceUrl: "https://gmdpacademy.org/news/iqvia-report-clinical-trial-subjects-number-drops-due-to-decline-in-covid-19-enrollment/",
   confidence: "high",
   confidenceInterval: [1500000.0, 2300000.0],
 };
 
 export const DEFENSE_LOBBYING_ANNUAL: Parameter = {
   value: 127000000.0,
+  parameterName: "DEFENSE_LOBBYING_ANNUAL",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-defense_lobbying_annual",
   unit: "USD/year",
   displayName: "Annual Defense Industry Lobbying Spending",
   description: "Annual defense industry lobbying spending",
   sourceType: "external",
   sourceRef: "lobbying-spend-defense",
+  sourceUrl: "https://www.opensecrets.org/industries/lobbying?ind=D",
   confidence: "high",
   confidenceInterval: [100000000.0, 160000000.0],
   peerReviewed: true,
@@ -328,27 +408,35 @@ export const DEFENSE_LOBBYING_ANNUAL: Parameter = {
 
 export const DEWORMING_COST_PER_DALY: Parameter = {
   value: 55.0,
+  parameterName: "DEWORMING_COST_PER_DALY",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-deworming_cost_per_daly",
   unit: "USD/DALY",
   displayName: "Deworming Cost per DALY",
   description: "Cost per DALY for deworming programs (range $28-82, midpoint estimate). GiveWell notes this 2011 estimate is outdated and their current methodology focuses on long-term income effects rather than short-term health DALYs.",
   sourceType: "external",
   sourceRef: "deworming-cost-per-daly",
+  sourceUrl: "https://www.givewell.org/international/technical/programs/deworming/cost-effectiveness",
   confidence: "low",
 };
 
 export const DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT: Parameter = {
   value: 929.0,
+  parameterName: "DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-dfda_pragmatic_trial_cost_per_patient",
   unit: "USD/patient",
   displayName: "dFDA Pragmatic Trial Cost per Patient",
   description: "dFDA pragmatic trial cost per patient. Uses ADAPTABLE trial ($929) as DELIBERATELY CONSERVATIVE central estimate. Ramsberg & Platt (2018) reviewed 108 embedded pragmatic trials; 64 with cost data had median of only $97/patient - our estimate may overstate costs by 10x. Confidence interval spans meta-analysis median to complex chronic disease trials.",
   sourceType: "external",
   sourceRef: "pragmatic-trials-cost-advantage",
+  sourceUrl: "https://commonfund.nih.gov/hcscollaboratory",
   confidence: "medium",
   confidenceInterval: [97.0, 3000.0],
 };
 
 export const DISEASE_BURDEN_GDP_DRAG_PCT: Parameter = {
   value: 0.13,
+  parameterName: "DISEASE_BURDEN_GDP_DRAG_PCT",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-disease_burden_gdp_drag_pct",
   unit: "percent",
   displayName: "Disease Burden as % of GDP",
   description: "Fraction of GDP currently lost to disease (productivity losses + medical costs diverted from productive use). $5T productivity loss + $9.9T direct medical costs = $14.9T on $115T GDP = ~13%. As diseases are progressively cured, this drag is recovered as GDP growth. This is the missing factor that makes the treaty trajectory look like a singularity rather than a modest improvement.",
@@ -359,32 +447,41 @@ export const DISEASE_BURDEN_GDP_DRAG_PCT: Parameter = {
 
 export const DOT_VALUE_OF_STATISTICAL_LIFE: Parameter = {
   value: 13700000.0,
+  parameterName: "DOT_VALUE_OF_STATISTICAL_LIFE",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-dot_value_of_statistical_life",
   unit: "USD",
   displayName: "DOT VSL",
   description: "DOT Value of Statistical Life (2024). Used by federal agencies to evaluate safety regulations and quantify the economic value of mortality risk reductions.",
   sourceType: "external",
   sourceRef: "dot-vsl-2024",
+  sourceUrl: "https://www.transportation.gov/office-policy/transportation-policy/revised-departmental-guidance-on-valuation-of-a-statistical-life-in-economic-analysis",
   confidence: "high",
 };
 
 export const DRUG_DEVELOPMENT_COST_1980S: Parameter = {
   value: 194000000.0,
+  parameterName: "DRUG_DEVELOPMENT_COST_1980S",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-drug_development_cost_1980s",
   unit: "USD",
   displayName: "Drug Development Cost (1980s)",
   description: "Drug development cost in 1980s (compounded to approval, 1990 dollars)",
   sourceType: "external",
   sourceRef: "pre-1962-drug-costs-timeline",
+  sourceUrl: "https://thinkbynumbers.org/health/how-many-net-lives-does-the-fda-save/",
   confidence: "high",
   confidenceInterval: [145500000.0, 242500000.0],
 };
 
 export const DRUG_DISCOVERY_TO_APPROVAL_YEARS: Parameter = {
   value: 14.0,
+  parameterName: "DRUG_DISCOVERY_TO_APPROVAL_YEARS",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-drug_discovery_to_approval_years",
   unit: "years",
   displayName: "Drug Discovery to Approval Timeline",
   description: "Full drug development timeline from discovery to FDA approval. Typical range is 12-15 years based on BIO 2021 and PMC meta-analyses. Breakdown: preclinical 4-6 years + clinical 10.5 years. Using 14 years as central estimate.",
   sourceType: "external",
   sourceRef: "bio-clinical-development-2021",
+  sourceUrl: "https://go.bio.org/rs/490-EHZ-999/images/ClinicalDevelopmentSuccessRates2011_2020.pdf",
   confidence: "high",
   confidenceInterval: [12.0, 17.0],
   stdError: 1.5,
@@ -392,63 +489,81 @@ export const DRUG_DISCOVERY_TO_APPROVAL_YEARS: Parameter = {
 
 export const DRUG_REPURPOSING_SUCCESS_RATE: Parameter = {
   value: 0.3,
+  parameterName: "DRUG_REPURPOSING_SUCCESS_RATE",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-drug_repurposing_success_rate",
   unit: "percentage",
   displayName: "Drug Repurposing Success Rate",
   description: "Percentage of drugs that gain at least one new indication after initial approval",
   sourceType: "external",
   sourceRef: "drug-repurposing-rate",
+  sourceUrl: "https://www.nature.com/articles/s41591-024-03233-x",
   confidence: "high",
 };
 
 export const ECONOMIC_MULTIPLIER_EDUCATION_INVESTMENT: Parameter = {
   value: 2.1,
+  parameterName: "ECONOMIC_MULTIPLIER_EDUCATION_INVESTMENT",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-economic_multiplier_education_investment",
   unit: "x",
   displayName: "Economic Multiplier for Education Investment",
   description: "Economic multiplier for education investment (2.1x ROI)",
   sourceType: "external",
   sourceRef: "education-investment-economic-multiplier",
+  sourceUrl: "https://www.epi.org/publication/bp348-public-investments-outside-core-infrastructure/",
   confidence: "high",
 };
 
 export const ECONOMIC_MULTIPLIER_HEALTHCARE_INVESTMENT: Parameter = {
   value: 4.3,
+  parameterName: "ECONOMIC_MULTIPLIER_HEALTHCARE_INVESTMENT",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-economic_multiplier_healthcare_investment",
   unit: "x",
   displayName: "Economic Multiplier for Healthcare Investment",
   description: "Economic multiplier for healthcare investment (4.3x ROI). Literature range 3.0-6.0×.",
   sourceType: "external",
   sourceRef: "healthcare-investment-economic-multiplier",
+  sourceUrl: "https://pmc.ncbi.nlm.nih.gov/articles/PMC5954824/",
   confidence: "high",
   confidenceInterval: [3.0, 6.0],
 };
 
 export const ECONOMIC_MULTIPLIER_INFRASTRUCTURE_INVESTMENT: Parameter = {
   value: 1.6,
+  parameterName: "ECONOMIC_MULTIPLIER_INFRASTRUCTURE_INVESTMENT",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-economic_multiplier_infrastructure_investment",
   unit: "x",
   displayName: "Economic Multiplier for Infrastructure Investment",
   description: "Economic multiplier for infrastructure investment (1.6x ROI)",
   sourceType: "external",
   sourceRef: "infrastructure-investment-economic-multiplier",
+  sourceUrl: "https://blogs.worldbank.org/en/ppps/effectiveness-infrastructure-investment-fiscal-stimulus-what-weve-learned",
   confidence: "high",
 };
 
 export const ECONOMIC_MULTIPLIER_MILITARY_SPENDING: Parameter = {
   value: 0.6,
+  parameterName: "ECONOMIC_MULTIPLIER_MILITARY_SPENDING",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-economic_multiplier_military_spending",
   unit: "x",
   displayName: "Economic Multiplier for Military Spending",
   description: "Economic multiplier for military spending (0.6x ROI). Literature range 0.4-1.0×.",
   sourceType: "external",
   sourceRef: "military-spending-economic-multiplier",
+  sourceUrl: "https://www.mercatus.org/research/research-papers/defense-spending-and-economy",
   confidence: "high",
   confidenceInterval: [0.4, 0.9],
 };
 
 export const EFFICACY_LAG_YEARS: Parameter = {
   value: 8.2,
+  parameterName: "EFFICACY_LAG_YEARS",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-efficacy_lag_years",
   unit: "years",
   displayName: "Regulatory Delay for Efficacy Testing Post-Safety Verification",
   description: "Regulatory delay for efficacy testing (Phase II/III) post-safety verification. Based on BIO 2021 industry survey. Note: This is for drugs that COMPLETE the pipeline - survivor bias means actual delay for any given disease may be longer if candidates fail and must restart.",
   sourceType: "external",
   sourceRef: "bio-clinical-development-2021",
+  sourceUrl: "https://go.bio.org/rs/490-EHZ-999/images/ClinicalDevelopmentSuccessRates2011_2020.pdf",
   confidence: "medium",
   formula: "TOTAL_TIME_TO_MARKET - PHASE_1_DURATION",
   stdError: 2.0,
@@ -457,53 +572,68 @@ export const EFFICACY_LAG_YEARS: Parameter = {
 
 export const EXPERT_DECISION_ACCURACY: Parameter = {
   value: 0.65,
+  parameterName: "EXPERT_DECISION_ACCURACY",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-expert_decision_accuracy",
   unit: "percent",
   displayName: "Expert Decision Accuracy (Millionaire)",
   description: "Expert accuracy on Who Wants to Be a Millionaire phone-a-friend lifeline. Credentialed expert picked the correct answer 65% of the time (Surowiecki 2004). Used as baseline for conventional fund manager / committee allocation.",
   sourceType: "external",
   sourceRef: "surowiecki-2004",
+  sourceUrl: "https://archive.org/details/wisdomofcrowds0000suro",
   confidence: "high",
 };
 
 export const FDA_APPROVED_PRODUCTS_COUNT: Parameter = {
   value: 20000.0,
+  parameterName: "FDA_APPROVED_PRODUCTS_COUNT",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-fda_approved_products_count",
   unit: "products",
   displayName: "FDA-Approved Drug Products",
   description: "Total FDA-approved drug products in the U.S.",
   sourceType: "external",
   sourceRef: "fda-approved-products-20k",
+  sourceUrl: "https://www.fda.gov/media/143704/download",
   confidence: "high",
 };
 
 export const FDA_APPROVED_UNIQUE_ACTIVE_INGREDIENTS: Parameter = {
   value: 1650.0,
+  parameterName: "FDA_APPROVED_UNIQUE_ACTIVE_INGREDIENTS",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-fda_approved_unique_active_ingredients",
   unit: "compounds",
   displayName: "FDA-Approved Unique Active Ingredients",
   description: "Unique active pharmaceutical ingredients in FDA-approved products (midpoint of 1,300-2,000 range)",
   sourceType: "external",
   sourceRef: "fda-approved-products-20k",
+  sourceUrl: "https://www.fda.gov/media/143704/download",
   confidence: "high",
   confidenceInterval: [1300.0, 2000.0],
 };
 
 export const FDA_GRAS_SUBSTANCES_COUNT: Parameter = {
   value: 635.0,
+  parameterName: "FDA_GRAS_SUBSTANCES_COUNT",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-fda_gras_substances_count",
   unit: "substances",
   displayName: "FDA GRAS Substances",
   description: "FDA Generally Recognized as Safe (GRAS) substances (midpoint of 570-700 range)",
   sourceType: "external",
   sourceRef: "fda-gras-list-count",
+  sourceUrl: "https://www.fda.gov/food/generally-recognized-safe-gras/gras-notice-inventory",
   confidence: "high",
   confidenceInterval: [570.0, 700.0],
 };
 
 export const FDA_PHASE_1_TO_APPROVAL_YEARS: Parameter = {
   value: 10.5,
+  parameterName: "FDA_PHASE_1_TO_APPROVAL_YEARS",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-fda_phase_1_to_approval_years",
   unit: "years",
   displayName: "FDA Phase 1 to Approval Timeline",
   description: "FDA timeline from Phase 1 start to approval. Derived from BIO 2021 industry survey: Phase 1 (2.3 years) + efficacy lag (8.2 years) = 10.5 years. Consistent with PMC meta-analysis finding 9.1 years median (95% CI: 8.2-10.0).",
   sourceType: "external",
   sourceRef: "bio-clinical-development-2021",
+  sourceUrl: "https://go.bio.org/rs/490-EHZ-999/images/ClinicalDevelopmentSuccessRates2011_2020.pdf",
   confidence: "high",
   confidenceInterval: [6.0, 12.0],
   stdError: 2.0,
@@ -511,74 +641,95 @@ export const FDA_PHASE_1_TO_APPROVAL_YEARS: Parameter = {
 
 export const GIVEWELL_COST_PER_LIFE_AVG: Parameter = {
   value: 4500.0,
+  parameterName: "GIVEWELL_COST_PER_LIFE_AVG",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-givewell_cost_per_life_avg",
   unit: "USD/life",
   displayName: "Givewell Average Cost per Life Saved Across Top Charities",
   description: "GiveWell average cost per life saved across top charities",
   sourceType: "external",
   sourceRef: "givewell-cost-per-life-saved",
+  sourceUrl: "https://www.givewell.org/charities/top-charities",
   confidence: "high",
 };
 
 export const GIVEWELL_COST_PER_LIFE_MAX: Parameter = {
   value: 5500.0,
+  parameterName: "GIVEWELL_COST_PER_LIFE_MAX",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-givewell_cost_per_life_max",
   unit: "USD/life",
   displayName: "Givewell Cost per Life Saved (Maximum)",
   description: "GiveWell cost per life saved (Against Malaria Foundation)",
   sourceType: "external",
   sourceRef: "givewell-cost-per-life-saved",
+  sourceUrl: "https://www.givewell.org/charities/top-charities",
   confidence: "high",
 };
 
 export const GIVEWELL_COST_PER_LIFE_MIN: Parameter = {
   value: 3500.0,
+  parameterName: "GIVEWELL_COST_PER_LIFE_MIN",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-givewell_cost_per_life_min",
   unit: "USD/life",
   displayName: "Givewell Cost per Life Saved (Minimum)",
   description: "GiveWell cost per life saved (Helen Keller International)",
   sourceType: "external",
   sourceRef: "givewell-cost-per-life-saved",
+  sourceUrl: "https://www.givewell.org/charities/top-charities",
   confidence: "high",
 };
 
 export const GLOBAL_ANNUAL_CONFLICT_DEATHS_ACTIVE_COMBAT: Parameter = {
   value: 233600.0,
+  parameterName: "GLOBAL_ANNUAL_CONFLICT_DEATHS_ACTIVE_COMBAT",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-global_annual_conflict_deaths_active_combat",
   unit: "deaths/year",
   displayName: "Annual Deaths from Active Combat Worldwide",
   description: "Annual deaths from active combat worldwide",
   sourceType: "external",
   sourceRef: "acled-active-combat-deaths",
+  sourceUrl: "https://acleddata.com/2024/12/12/data-shows-global-conflict-surged-in-2024-the-washington-post/",
   confidence: "high",
   confidenceInterval: [180000.0, 300000.0],
 };
 
 export const GLOBAL_ANNUAL_CONFLICT_DEATHS_STATE_VIOLENCE: Parameter = {
   value: 2700.0,
+  parameterName: "GLOBAL_ANNUAL_CONFLICT_DEATHS_STATE_VIOLENCE",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-global_annual_conflict_deaths_state_violence",
   unit: "deaths/year",
   displayName: "Annual Deaths from State Violence",
   description: "Annual deaths from state violence",
   sourceType: "external",
   sourceRef: "ucdp-state-violence-deaths",
+  sourceUrl: "https://ucdp.uu.se/",
   confidence: "high",
   confidenceInterval: [1500.0, 5000.0],
 };
 
 export const GLOBAL_ANNUAL_CONFLICT_DEATHS_TERROR_ATTACKS: Parameter = {
   value: 8300.0,
+  parameterName: "GLOBAL_ANNUAL_CONFLICT_DEATHS_TERROR_ATTACKS",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-global_annual_conflict_deaths_terror_attacks",
   unit: "deaths/year",
   displayName: "Annual Deaths from Terror Attacks Globally",
   description: "Annual deaths from terror attacks globally",
   sourceType: "external",
   sourceRef: "gtd-terror-attack-deaths",
+  sourceUrl: "https://ourworldindata.org/terrorism",
   confidence: "high",
   confidenceInterval: [6000.0, 12000.0],
 };
 
 export const GLOBAL_ANNUAL_DALY_BURDEN: Parameter = {
   value: 2880000000.0,
+  parameterName: "GLOBAL_ANNUAL_DALY_BURDEN",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-global_annual_daly_burden",
   unit: "DALYs/year",
   displayName: "Global Annual DALY Burden",
   description: "Global annual DALY burden from all diseases and injuries (WHO/IHME Global Burden of Disease 2021). Includes both YLL (years of life lost) and YLD (years lived with disability) from all causes.",
   sourceType: "external",
   sourceRef: "ihme-gbd-2021",
+  sourceUrl: "https://vizhub.healthdata.org/gbd-results/",
   confidence: "high",
   stdError: 150000000.0,
   peerReviewed: true,
@@ -586,220 +737,280 @@ export const GLOBAL_ANNUAL_DALY_BURDEN: Parameter = {
 
 export const GLOBAL_ANNUAL_DEATHS_CURABLE_DISEASES: Parameter = {
   value: 55000000.0,
+  parameterName: "GLOBAL_ANNUAL_DEATHS_CURABLE_DISEASES",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-global_annual_deaths_curable_diseases",
   unit: "deaths/year",
   displayName: "Annual Deaths from All Diseases and Aging Globally",
   description: "Annual deaths from all diseases and aging globally",
   sourceType: "external",
   sourceRef: "who-global-health-estimates-2024",
+  sourceUrl: "https://www.who.int/data/gho/data/themes/mortality-and-global-health-estimates",
   confidence: "high",
   stdError: 5000000.0,
 };
 
 export const GLOBAL_ANNUAL_ENVIRONMENTAL_DAMAGE_CONFLICT: Parameter = {
   value: 100000000000.0,
+  parameterName: "GLOBAL_ANNUAL_ENVIRONMENTAL_DAMAGE_CONFLICT",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-global_annual_environmental_damage_conflict",
   unit: "USD",
   displayName: "Annual Environmental Damage and Restoration Costs from Conflict",
   description: "Annual environmental damage and restoration costs from conflict",
   sourceType: "external",
   sourceRef: "environmental-cost-of-war",
+  sourceUrl: "https://watson.brown.edu/costsofwar/costs/social/environment",
   confidence: "high",
   confidenceInterval: [70000000000.0, 140000000000.0],
 };
 
 export const GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_COMMUNICATIONS_CONFLICT: Parameter = {
   value: 298100000000.0,
+  parameterName: "GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_COMMUNICATIONS_CONFLICT",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-global_annual_infrastructure_damage_communications_conflict",
   unit: "USD",
   displayName: "Annual Infrastructure Damage to Communications from Conflict",
   description: "Annual infrastructure damage to communications from conflict",
   sourceType: "external",
   sourceRef: "environmental-cost-of-war",
+  sourceUrl: "https://watson.brown.edu/costsofwar/costs/social/environment",
   confidence: "high",
   confidenceInterval: [209000000000.0, 418000000000.0],
 };
 
 export const GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_EDUCATION_CONFLICT: Parameter = {
   value: 234500000000.0,
+  parameterName: "GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_EDUCATION_CONFLICT",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-global_annual_infrastructure_damage_education_conflict",
   unit: "USD",
   displayName: "Annual Infrastructure Damage to Education Facilities from Conflict",
   description: "Annual infrastructure damage to education facilities from conflict",
   sourceType: "external",
   sourceRef: "environmental-cost-of-war",
+  sourceUrl: "https://watson.brown.edu/costsofwar/costs/social/environment",
   confidence: "high",
   confidenceInterval: [164000000000.0, 328000000000.0],
 };
 
 export const GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_ENERGY_CONFLICT: Parameter = {
   value: 421700000000.0,
+  parameterName: "GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_ENERGY_CONFLICT",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-global_annual_infrastructure_damage_energy_conflict",
   unit: "USD",
   displayName: "Annual Infrastructure Damage to Energy Systems from Conflict",
   description: "Annual infrastructure damage to energy systems from conflict",
   sourceType: "external",
   sourceRef: "environmental-cost-of-war",
+  sourceUrl: "https://watson.brown.edu/costsofwar/costs/social/environment",
   confidence: "high",
   confidenceInterval: [295000000000.0, 590000000000.0],
 };
 
 export const GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_HEALTHCARE_CONFLICT: Parameter = {
   value: 165600000000.0,
+  parameterName: "GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_HEALTHCARE_CONFLICT",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-global_annual_infrastructure_damage_healthcare_conflict",
   unit: "USD",
   displayName: "Annual Infrastructure Damage to Healthcare Facilities from Conflict",
   description: "Annual infrastructure damage to healthcare facilities from conflict",
   sourceType: "external",
   sourceRef: "environmental-cost-of-war",
+  sourceUrl: "https://watson.brown.edu/costsofwar/costs/social/environment",
   confidence: "high",
   confidenceInterval: [116000000000.0, 232000000000.0],
 };
 
 export const GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_TRANSPORTATION_CONFLICT: Parameter = {
   value: 487300000000.0,
+  parameterName: "GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_TRANSPORTATION_CONFLICT",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-global_annual_infrastructure_damage_transportation_conflict",
   unit: "USD",
   displayName: "Annual Infrastructure Damage to Transportation from Conflict",
   description: "Annual infrastructure damage to transportation from conflict",
   sourceType: "external",
   sourceRef: "environmental-cost-of-war",
+  sourceUrl: "https://watson.brown.edu/costsofwar/costs/social/environment",
   confidence: "high",
   confidenceInterval: [340000000000.0, 680000000000.0],
 };
 
 export const GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_WATER_CONFLICT: Parameter = {
   value: 267800000000.0,
+  parameterName: "GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_WATER_CONFLICT",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-global_annual_infrastructure_damage_water_conflict",
   unit: "USD",
   displayName: "Annual Infrastructure Damage to Water Systems from Conflict",
   description: "Annual infrastructure damage to water systems from conflict",
   sourceType: "external",
   sourceRef: "environmental-cost-of-war",
+  sourceUrl: "https://watson.brown.edu/costsofwar/costs/social/environment",
   confidence: "high",
   confidenceInterval: [187000000000.0, 375000000000.0],
 };
 
 export const GLOBAL_ANNUAL_LIVES_SAVED_BY_MED_RESEARCH: Parameter = {
   value: 4200000.0,
+  parameterName: "GLOBAL_ANNUAL_LIVES_SAVED_BY_MED_RESEARCH",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-global_annual_lives_saved_by_med_research",
   unit: "lives/year",
   displayName: "Annual Lives Saved by Medical Research Globally",
   description: "Annual lives saved by medical research globally",
   sourceType: "external",
   sourceRef: "medical-research-lives-saved-annually",
+  sourceUrl: "https://www.sciencedaily.com/releases/2020/06/200617194510.htm",
   confidence: "high",
   confidenceInterval: [3000000.0, 6000000.0],
 };
 
 export const GLOBAL_ANNUAL_LOST_ECONOMIC_GROWTH_MILITARY_SPENDING: Parameter = {
   value: 2718000000000.0,
+  parameterName: "GLOBAL_ANNUAL_LOST_ECONOMIC_GROWTH_MILITARY_SPENDING",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-global_annual_lost_economic_growth_military_spending",
   unit: "USD",
   displayName: "Annual Lost Economic Growth from Military Spending Opportunity Cost",
   description: "Annual foregone economic output from military spending vs productive alternatives. This estimate implicitly captures fiscal multiplier differences (military ~0.6x vs healthcare ~4.3x GDP multiplier). Do not add separate GDP multiplier adjustment to avoid double-counting.",
   sourceType: "external",
   sourceRef: "disparity-ratio-weapons-vs-cures",
+  sourceUrl: "https://www.sipri.org/commentary/blog/2016/opportunity-cost-world-military-spending",
   confidence: "high",
   confidenceInterval: [1900000000000.0, 3800000000000.0],
 };
 
 export const GLOBAL_ANNUAL_LOST_HUMAN_CAPITAL_CONFLICT: Parameter = {
   value: 300000000000.0,
+  parameterName: "GLOBAL_ANNUAL_LOST_HUMAN_CAPITAL_CONFLICT",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-global_annual_lost_human_capital_conflict",
   unit: "USD",
   displayName: "Annual Lost Productivity from Conflict Casualties",
   description: "Annual lost productivity from conflict casualties",
   sourceType: "external",
   sourceRef: "lost-human-capital-war-cost",
+  sourceUrl: "https://thinkbynumbers.org/military/war/the-economic-case-for-peace-a-comprehensive-financial-analysis/",
   confidence: "high",
   confidenceInterval: [210000000000.0, 420000000000.0],
 };
 
 export const GLOBAL_ANNUAL_PSYCHOLOGICAL_IMPACT_COSTS_CONFLICT: Parameter = {
   value: 232000000000.0,
+  parameterName: "GLOBAL_ANNUAL_PSYCHOLOGICAL_IMPACT_COSTS_CONFLICT",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-global_annual_psychological_impact_costs_conflict",
   unit: "USD",
   displayName: "Annual PTSD and Mental Health Costs from Conflict",
   description: "Annual PTSD and mental health costs from conflict",
   sourceType: "external",
   sourceRef: "psychological-impact-war-cost",
+  sourceUrl: "https://pubmed.ncbi.nlm.nih.gov/35485933/",
   confidence: "high",
   confidenceInterval: [162000000000.0, 325000000000.0],
 };
 
 export const GLOBAL_ANNUAL_REFUGEE_SUPPORT_COSTS: Parameter = {
   value: 150000000000.0,
+  parameterName: "GLOBAL_ANNUAL_REFUGEE_SUPPORT_COSTS",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-global_annual_refugee_support_costs",
   unit: "USD",
   displayName: "Annual Refugee Support Costs",
   description: "Annual refugee support costs (108.4M refugees × $1,384/year)",
   sourceType: "external",
   sourceRef: "unhcr-refugee-support-cost",
+  sourceUrl: "https://www.cgdev.org/blog/costs-hosting-refugees-oecd-countries-and-why-uk-outlier",
   confidence: "high",
   confidenceInterval: [105000000000.0, 210000000000.0],
 };
 
 export const GLOBAL_ANNUAL_TRADE_DISRUPTION_CURRENCY_CONFLICT: Parameter = {
   value: 57400000000.0,
+  parameterName: "GLOBAL_ANNUAL_TRADE_DISRUPTION_CURRENCY_CONFLICT",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-global_annual_trade_disruption_currency_conflict",
   unit: "USD",
   displayName: "Annual Trade Disruption Costs from Currency Instability",
   description: "Annual trade disruption costs from currency instability",
   sourceType: "external",
   sourceRef: "world-bank-trade-disruption-conflict",
+  sourceUrl: "https://www.worldbank.org/en/topic/trade/publication/trading-away-from-conflict",
   confidence: "high",
   confidenceInterval: [40000000000.0, 80000000000.0],
 };
 
 export const GLOBAL_ANNUAL_TRADE_DISRUPTION_ENERGY_PRICE_CONFLICT: Parameter = {
   value: 124700000000.0,
+  parameterName: "GLOBAL_ANNUAL_TRADE_DISRUPTION_ENERGY_PRICE_CONFLICT",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-global_annual_trade_disruption_energy_price_conflict",
   unit: "USD",
   displayName: "Annual Trade Disruption Costs from Energy Price Volatility",
   description: "Annual trade disruption costs from energy price volatility",
   sourceType: "external",
   sourceRef: "world-bank-trade-disruption-conflict",
+  sourceUrl: "https://www.worldbank.org/en/topic/trade/publication/trading-away-from-conflict",
   confidence: "high",
   confidenceInterval: [87000000000.0, 175000000000.0],
 };
 
 export const GLOBAL_ANNUAL_TRADE_DISRUPTION_SHIPPING_CONFLICT: Parameter = {
   value: 247100000000.0,
+  parameterName: "GLOBAL_ANNUAL_TRADE_DISRUPTION_SHIPPING_CONFLICT",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-global_annual_trade_disruption_shipping_conflict",
   unit: "USD",
   displayName: "Annual Trade Disruption Costs from Shipping Disruptions",
   description: "Annual trade disruption costs from shipping disruptions",
   sourceType: "external",
   sourceRef: "world-bank-trade-disruption-conflict",
+  sourceUrl: "https://www.worldbank.org/en/topic/trade/publication/trading-away-from-conflict",
   confidence: "high",
   confidenceInterval: [173000000000.0, 346000000000.0],
 };
 
 export const GLOBAL_ANNUAL_TRADE_DISRUPTION_SUPPLY_CHAIN_CONFLICT: Parameter = {
   value: 186800000000.0,
+  parameterName: "GLOBAL_ANNUAL_TRADE_DISRUPTION_SUPPLY_CHAIN_CONFLICT",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-global_annual_trade_disruption_supply_chain_conflict",
   unit: "USD",
   displayName: "Annual Trade Disruption Costs from Supply Chain Disruptions",
   description: "Annual trade disruption costs from supply chain disruptions",
   sourceType: "external",
   sourceRef: "world-bank-trade-disruption-conflict",
+  sourceUrl: "https://www.worldbank.org/en/topic/trade/publication/trading-away-from-conflict",
   confidence: "high",
   confidenceInterval: [131000000000.0, 262000000000.0],
 };
 
 export const GLOBAL_ANNUAL_VETERAN_HEALTHCARE_COSTS: Parameter = {
   value: 200100000000.0,
+  parameterName: "GLOBAL_ANNUAL_VETERAN_HEALTHCARE_COSTS",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-global_annual_veteran_healthcare_costs",
   unit: "USD",
   displayName: "Annual Veteran Healthcare Costs",
   description: "Annual veteran healthcare costs (20-year projected)",
   sourceType: "external",
   sourceRef: "veteran-healthcare-cost-projections",
+  sourceUrl: "https://department.va.gov/wp-content/uploads/2025/06/2026-Budget-in-Brief.pdf",
   confidence: "high",
   confidenceInterval: [140000000000.0, 280000000000.0],
 };
 
 export const GLOBAL_CHRONIC_THERAPY_DAYS_ANNUAL: Parameter = {
   value: 1280000000000.0,
+  parameterName: "GLOBAL_CHRONIC_THERAPY_DAYS_ANNUAL",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-global_chronic_therapy_days_annual",
   unit: "days",
   displayName: "Annual Days of Chronic Disease Therapy",
   description: "Annual days of therapy for chronic conditions globally (diabetes, CVD, respiratory, cancer). IQVIA reports 1.8 trillion total days of therapy in 2019, with 71% for chronic conditions.",
   sourceType: "external",
   sourceRef: "iqvia-global-medicines-2024",
+  sourceUrl: "https://www.iqvia.com/insights/the-iqvia-institute/reports-and-publications/reports/the-global-use-of-medicines-2024-outlook-to-2028",
   confidence: "medium",
   confidenceInterval: [1000000000000.0, 1500000000000.0],
 };
 
 export const GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL: Parameter = {
   value: 60000000000.0,
+  parameterName: "GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-global_clinical_trials_spending_annual",
   unit: "USD",
   displayName: "Annual Global Spending on Clinical Trials",
   description: "Annual global spending on clinical trials (Industry: $45-60B + Government: $3-6B + Nonprofits: $2-5B). Conservative estimate using 15-20% of $300B total pharma R&D, not inflated market size projections.",
   sourceType: "external",
   sourceRef: "industry-clinical-trial-spending-estimate",
+  sourceUrl: "https://cost-of-change.warondisease.org",
   confidence: "high",
   confidenceInterval: [50000000000.0, 75000000000.0],
   stdError: 10000000000.0,
@@ -807,31 +1018,40 @@ export const GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL: Parameter = {
 
 export const GLOBAL_CYBERCRIME_CAGR: Parameter = {
   value: 0.15,
+  parameterName: "GLOBAL_CYBERCRIME_CAGR",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-global_cybercrime_cagr",
   unit: "percent",
   displayName: "Cybercrime Cost CAGR",
   description: "Compound annual growth rate of global cybercrime costs. Cybersecurity Ventures: $3T (2015) -> $6T (2021) -> $10.5T (2025). AI-enhanced attacks are accelerating this trend.",
   sourceType: "external",
   sourceRef: "cybercrime-economy-10-5t",
+  sourceUrl: "https://cybersecurityventures.com/hackerpocalypse-cybercrime-report-2016/",
   confidence: "high",
 };
 
 export const GLOBAL_CYBERCRIME_COST_ANNUAL_2025: Parameter = {
   value: 10500000000000.0,
+  parameterName: "GLOBAL_CYBERCRIME_COST_ANNUAL_2025",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-global_cybercrime_cost_annual_2025",
   unit: "USD",
   displayName: "Global Cybercrime Costs (2025)",
   description: "Projected global cybercrime costs in 2025. Includes data theft, productivity loss, IP theft, fraud. More profitable than global trade of all major illegal drugs combined. If measured as a country, would be the 3rd largest economy after US and China.",
   sourceType: "external",
   sourceRef: "cybercrime-economy-10-5t",
+  sourceUrl: "https://cybersecurityventures.com/hackerpocalypse-cybercrime-report-2016/",
   confidence: "high",
 };
 
 export const GLOBAL_DISEASE_DEATHS_DAILY: Parameter = {
   value: 150000.0,
+  parameterName: "GLOBAL_DISEASE_DEATHS_DAILY",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-global_disease_deaths_daily",
   unit: "deaths/day",
   displayName: "Global Daily Deaths from Disease and Aging",
   description: "Total global deaths per day from all disease and aging (WHO Global Burden of Disease 2024)",
   sourceType: "external",
   sourceRef: "who-global-health-estimates-2024",
+  sourceUrl: "https://www.who.int/data/gho/data/themes/mortality-and-global-health-estimates",
   confidence: "high",
   stdError: 7500.0,
   peerReviewed: true,
@@ -839,6 +1059,8 @@ export const GLOBAL_DISEASE_DEATHS_DAILY: Parameter = {
 
 export const GLOBAL_DISEASE_DIRECT_MEDICAL_COST_ANNUAL: Parameter = {
   value: 9900000000000.0,
+  parameterName: "GLOBAL_DISEASE_DIRECT_MEDICAL_COST_ANNUAL",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-global_disease_direct_medical_cost_annual",
   unit: "USD/year",
   displayName: "Global Annual Direct Medical Costs of Disease",
   description: "Direct medical costs of disease globally (treatment, hospitalization, medication). Standalone market-cost metric; not included in DALY-based welfare burden to avoid double-counting.",
@@ -850,6 +1072,8 @@ export const GLOBAL_DISEASE_DIRECT_MEDICAL_COST_ANNUAL: Parameter = {
 
 export const GLOBAL_DISEASE_PRODUCTIVITY_LOSS_ANNUAL: Parameter = {
   value: 5000000000000.0,
+  parameterName: "GLOBAL_DISEASE_PRODUCTIVITY_LOSS_ANNUAL",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-global_disease_productivity_loss_annual",
   unit: "USD/year",
   displayName: "Global Annual Productivity Loss from Disease",
   description: "Annual productivity loss from disease globally (absenteeism, reduced output). Standalone market-cost metric; not included in DALY-based welfare burden to avoid double-counting.",
@@ -861,21 +1085,27 @@ export const GLOBAL_DISEASE_PRODUCTIVITY_LOSS_ANNUAL: Parameter = {
 
 export const GLOBAL_GDP_2025: Parameter = {
   value: 115000000000000.0,
+  parameterName: "GLOBAL_GDP_2025",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-global_gdp_2025",
   unit: "USD",
   displayName: "Global GDP (2025)",
   description: "Global nominal GDP (2025 estimate). From Political Dysfunction Tax paper citing StatisticsTimes/IMF World Economic Outlook. Used for calculating global opportunity costs as percentage of world economic output. Note: Latest IMF data shows $117T.",
   sourceType: "external",
   sourceRef: "political-dysfunction-tax-paper-2025",
+  sourceUrl: "https://manual.warondisease.org/knowledge/appendix/political-dysfunction-tax.html",
   confidence: "high",
 };
 
 export const GLOBAL_GOVERNMENT_CLINICAL_TRIALS_SPENDING_ANNUAL: Parameter = {
   value: 4500000000.0,
+  parameterName: "GLOBAL_GOVERNMENT_CLINICAL_TRIALS_SPENDING_ANNUAL",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-global_government_clinical_trials_spending_annual",
   unit: "USD",
   displayName: "Annual Global Government Spending on Clinical Trials",
   description: "Annual global government spending on interventional clinical trials (~5-10% of total)",
   sourceType: "external",
   sourceRef: "global-government-clinical-trial-spending-estimate",
+  sourceUrl: "https://www.appliedclinicaltrialsonline.com/view/sizing-clinical-research-market",
   confidence: "high",
   confidenceInterval: [3000000000.0, 6000000000.0],
   stdError: 1000000000.0,
@@ -883,11 +1113,14 @@ export const GLOBAL_GOVERNMENT_CLINICAL_TRIALS_SPENDING_ANNUAL: Parameter = {
 
 export const GLOBAL_HALE_CURRENT: Parameter = {
   value: 63.3,
+  parameterName: "GLOBAL_HALE_CURRENT",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-global_hale_current",
   unit: "years",
   displayName: "Global Healthy Life Expectancy (HALE)",
   description: "Global healthy life expectancy at birth (HALE) from WHO Global Health Observatory, 2019 data (most recent available). HALE measures years lived in full health, adjusting for years lived with disability or disease.",
   sourceType: "external",
   sourceRef: "who-global-health-estimates-2024",
+  sourceUrl: "https://www.who.int/data/gho/data/themes/mortality-and-global-health-estimates",
   confidence: "high",
   stdError: 1.5,
   peerReviewed: true,
@@ -895,21 +1128,27 @@ export const GLOBAL_HALE_CURRENT: Parameter = {
 
 export const GLOBAL_HOUSEHOLD_WEALTH_USD: Parameter = {
   value: 454000000000000.0,
+  parameterName: "GLOBAL_HOUSEHOLD_WEALTH_USD",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-global_household_wealth_usd",
   unit: "USD",
   displayName: "Global Household Wealth",
   description: "Total global household wealth (2022/2023 estimate)",
   sourceType: "external",
   sourceRef: "cs-global-wealth-report-2023",
+  sourceUrl: "https://www.ubs.com/global/en/family-office-uhnw/reports/global-wealth-report-2023.html",
   confidence: "high",
 };
 
 export const GLOBAL_LIFE_EXPECTANCY_2024: Parameter = {
   value: 79.0,
+  parameterName: "GLOBAL_LIFE_EXPECTANCY_2024",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-global_life_expectancy_2024",
   unit: "years",
   displayName: "Global Life Expectancy (2024)",
   description: "Global life expectancy (2024)",
   sourceType: "external",
   sourceRef: "who-global-health-estimates-2024",
+  sourceUrl: "https://www.who.int/data/gho/data/themes/mortality-and-global-health-estimates",
   confidence: "high",
   stdError: 2.0,
   peerReviewed: true,
@@ -917,47 +1156,61 @@ export const GLOBAL_LIFE_EXPECTANCY_2024: Parameter = {
 
 export const GLOBAL_MEDIAN_AGE_2024: Parameter = {
   value: 30.5,
+  parameterName: "GLOBAL_MEDIAN_AGE_2024",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-global_median_age_2024",
   unit: "years",
   displayName: "Global Median Age (2024)",
   description: "Global median age in 2024 from UN World Population Prospects 2024 revision.",
   sourceType: "external",
   sourceRef: "global-median-age-un-wpp-2024",
+  sourceUrl: "https://population.un.org/wpp",
   confidence: "high",
 };
 
 export const GLOBAL_MED_RESEARCH_SPENDING: Parameter = {
   value: 67500000000.0,
+  parameterName: "GLOBAL_MED_RESEARCH_SPENDING",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-global_med_research_spending",
   unit: "USD",
   displayName: "Global Government Medical Research Spending",
   description: "Global government medical research spending",
   sourceType: "external",
   sourceRef: "global-gov-med-research-spending",
+  sourceUrl: "https://www.nih.gov/about-nih/what-we-do/budget",
   confidence: "high",
   confidenceInterval: [54000000000.0, 81000000000.0],
 };
 
 export const GLOBAL_MILITARY_SPENDING_ANNUAL_2024: Parameter = {
   value: 2720000000000.0,
+  parameterName: "GLOBAL_MILITARY_SPENDING_ANNUAL_2024",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-global_military_spending_annual_2024",
   unit: "USD",
   displayName: "Global Military Spending in 2024",
   description: "Global military spending in 2024",
   sourceType: "external",
   sourceRef: "global-military-spending",
+  sourceUrl: "https://www.sipri.org/publications/2025/sipri-fact-sheets/trends-world-military-expenditure-2024",
   confidence: "high",
 };
 
 export const GLOBAL_MILITARY_SPENDING_REAL_CAGR_10YR: Parameter = {
   value: 0.034,
+  parameterName: "GLOBAL_MILITARY_SPENDING_REAL_CAGR_10YR",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-global_military_spending_real_cagr_10yr",
   unit: "percent",
   displayName: "Military Spending Real CAGR (10-Year)",
   description: "Real compound annual growth rate of global military spending over the last decade (2014-2024). SIPRI reports 10 consecutive annual increases, with 2024 up 9.4% in real terms. The 10-year CAGR is approximately 3.4% real.",
   sourceType: "external",
   sourceRef: "sipri-milex-2024",
+  sourceUrl: "https://www.sipri.org/publications/2025/sipri-fact-sheets/trends-world-military-expenditure-2024",
   confidence: "high",
 };
 
 export const GLOBAL_NONPROFIT_CLINICAL_TRIALS_SPENDING_ANNUAL: Parameter = {
   value: 3500000000.0,
+  parameterName: "GLOBAL_NONPROFIT_CLINICAL_TRIALS_SPENDING_ANNUAL",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-global_nonprofit_clinical_trials_spending_annual",
   unit: "USD",
   displayName: "Annual Global Nonprofit Spending on Clinical Trials",
   description: "Annual global nonprofit spending on clinical trials (foundations, disease advocacy groups)",
@@ -969,6 +1222,8 @@ export const GLOBAL_NONPROFIT_CLINICAL_TRIALS_SPENDING_ANNUAL: Parameter = {
 
 export const GLOBAL_PHARMA_RD_SPENDING_ANNUAL: Parameter = {
   value: 300000000000.0,
+  parameterName: "GLOBAL_PHARMA_RD_SPENDING_ANNUAL",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-global_pharma_rd_spending_annual",
   unit: "USD",
   displayName: "Annual Global Pharmaceutical R&D Spending",
   description: "Total global pharmaceutical R&D spending ($300B annually, clinical trials represent 15-20% of this total)",
@@ -979,48 +1234,62 @@ export const GLOBAL_PHARMA_RD_SPENDING_ANNUAL: Parameter = {
 
 export const GLOBAL_POPULATION_2024: Parameter = {
   value: 8000000000.0,
+  parameterName: "GLOBAL_POPULATION_2024",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-global_population_2024",
   unit: "of people",
   displayName: "Global Population in 2024",
   description: "Global population in 2024",
   sourceType: "external",
   sourceRef: "global-population-8-billion",
+  sourceUrl: "https://www.un.org/en/desa/world-population-reach-8-billion-15-november-2022",
   confidence: "high",
   confidenceInterval: [7800000000.0, 8200000000.0],
 };
 
 export const GLOBAL_POPULATION_2040_PROJECTED: Parameter = {
   value: 8900000000.0,
+  parameterName: "GLOBAL_POPULATION_2040_PROJECTED",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-global_population_2040_projected",
   unit: "of people",
   displayName: "Global Population 2040 (Projected)",
   description: "UN World Population Prospects 2022 median projection for 2040. Interpolated midpoint between ~8.1B (2025) and 9.2B (2045).",
   sourceType: "external",
   sourceRef: "global-population-8-billion",
+  sourceUrl: "https://www.un.org/en/desa/world-population-reach-8-billion-15-november-2022",
   confidence: "high",
 };
 
 export const GLOBAL_POPULATION_2045_PROJECTED: Parameter = {
   value: 9200000000.0,
+  parameterName: "GLOBAL_POPULATION_2045_PROJECTED",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-global_population_2045_projected",
   unit: "of people",
   displayName: "Global Population 2045 (Projected)",
   description: "UN World Population Prospects 2022 median projection for 2045.",
   sourceType: "external",
   sourceRef: "global-population-8-billion",
+  sourceUrl: "https://www.un.org/en/desa/world-population-reach-8-billion-15-november-2022",
   confidence: "high",
 };
 
 export const GLOBAL_POPULATION_ACTIVISM_THRESHOLD_PCT: Parameter = {
   value: 0.035,
+  parameterName: "GLOBAL_POPULATION_ACTIVISM_THRESHOLD_PCT",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-global_population_activism_threshold_pct",
   unit: "percent",
   displayName: "Critical Mass Threshold for Social Change",
   description: "Critical mass threshold for social change (3.5% rule). Chenoweth studied national regime changes; applying to a global treaty adds uncertainty. Lower bound: some movements succeeded at ~1%. Upper bound: entrenched defense-industry opposition and weaker signal from digital signatures vs sustained protest may require up to 10%.",
   sourceType: "external",
   sourceRef: "3-5-rule",
+  sourceUrl: "https://www.hks.harvard.edu/centers/carr/publications/35-rule-how-small-minority-can-change-world",
   confidence: "high",
   confidenceInterval: [0.01, 0.1],
 };
 
 export const GLOBAL_RETIREMENT_ASSETS: Parameter = {
   value: 70000000000000.0,
+  parameterName: "GLOBAL_RETIREMENT_ASSETS",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-global_retirement_assets",
   unit: "USD",
   displayName: "Global Retirement Assets",
   description: "Total global pension and retirement assets (OECD 2024). This is the capital pool that the wishocratic fund competes with and could partially absorb.",
@@ -1030,17 +1299,22 @@ export const GLOBAL_RETIREMENT_ASSETS: Parameter = {
 
 export const GLOBAL_SAVINGS_RATE_PCT: Parameter = {
   value: 0.27,
+  parameterName: "GLOBAL_SAVINGS_RATE_PCT",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-global_savings_rate_pct",
   unit: "percent",
   displayName: "Global Gross Savings Rate",
   description: "Global gross savings as share of GDP (World Bank, ~27% average 2023-2024)",
   sourceType: "external",
   sourceRef: "world-bank-gross-savings-2023",
+  sourceUrl: "https://data.worldbank.org/indicator/NY.GNS.ICTR.ZS?locations=1W",
   confidence: "high",
   confidenceInterval: [0.24, 0.3],
 };
 
 export const GLOBAL_SYMPTOMATIC_DISEASE_TREATMENT_ANNUAL: Parameter = {
   value: 8200000000000.0,
+  parameterName: "GLOBAL_SYMPTOMATIC_DISEASE_TREATMENT_ANNUAL",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-global_symptomatic_disease_treatment_annual",
   unit: "USD/year",
   displayName: "Annual Global Spending on Symptomatic Disease Treatment",
   description: "Annual global spending on symptomatic disease treatment",
@@ -1052,11 +1326,14 @@ export const GLOBAL_SYMPTOMATIC_DISEASE_TREATMENT_ANNUAL: Parameter = {
 
 export const GLOBAL_YLD_PROPORTION_OF_DALYS: Parameter = {
   value: 0.39,
+  parameterName: "GLOBAL_YLD_PROPORTION_OF_DALYS",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-global_yld_proportion_of_dalys",
   unit: "proportion",
   displayName: "YLD Proportion of Total DALYs",
   description: "Proportion of global DALYs that are YLD (years lived with disability) vs YLL (years of life lost). From GBD 2021: 1.13B YLD out of 2.88B total DALYs = 39%.",
   sourceType: "external",
   sourceRef: "ihme-gbd-2021",
+  sourceUrl: "https://vizhub.healthdata.org/gbd-results/",
   confidence: "high",
   stdError: 0.03,
   peerReviewed: true,
@@ -1064,6 +1341,8 @@ export const GLOBAL_YLD_PROPORTION_OF_DALYS: Parameter = {
 
 export const HOME_BIAS_ALPHA: Parameter = {
   value: 0.008,
+  parameterName: "HOME_BIAS_ALPHA",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-home_bias_alpha",
   unit: "percent",
   displayName: "Home Bias Return Drag",
   description: "Return drag from home bias in fragmented national pension systems. 70+ countries each overweight domestic assets, missing global diversification. IMF and Vanguard studies estimate 0.3-1.5% annual return cost. Wishocratic allocation is inherently global, eliminating this drag.",
@@ -1074,166 +1353,214 @@ export const HOME_BIAS_ALPHA: Parameter = {
 
 export const HUMAN_GENOME_PROJECT_TOTAL_ECONOMIC_IMPACT: Parameter = {
   value: 1000000000000.0,
+  parameterName: "HUMAN_GENOME_PROJECT_TOTAL_ECONOMIC_IMPACT",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-human_genome_project_total_economic_impact",
   unit: "USD",
   displayName: "Estimated Total Economic Impact of Human Genome Project",
   description: "Estimated total economic impact of Human Genome Project",
   sourceType: "external",
   sourceRef: "human-genome-and-genetic-editing",
+  sourceUrl: "https://www.genome.gov/11006929/2003-release-international-consortium-completes-hgp",
   confidence: "high",
 };
 
 export const HUMAN_INTERACTOME_TARGETED_PCT: Parameter = {
   value: 0.12,
+  parameterName: "HUMAN_INTERACTOME_TARGETED_PCT",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-human_interactome_targeted_pct",
   unit: "percentage",
   displayName: "Human Interactome Targeted by Drugs",
   description: "Percentage of human interactome (protein-protein interactions) targeted by drugs",
   sourceType: "external",
   sourceRef: "clinical-trials-puzzle-interactome",
+  sourceUrl: "https://pmc.ncbi.nlm.nih.gov/articles/PMC10749231/",
   confidence: "high",
 };
 
 export const ICD_10_TOTAL_CODES: Parameter = {
   value: 14000.0,
+  parameterName: "ICD_10_TOTAL_CODES",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-icd_10_total_codes",
   unit: "codes",
   displayName: "ICD-10 Total Codes",
   description: "Total ICD-10 diagnostic codes for human diseases and conditions",
   sourceType: "external",
   sourceRef: "icd-10-code-count",
+  sourceUrl: "https://icd.who.int/browse10/2019/en",
   confidence: "high",
 };
 
 export const LIFE_EXTENSION_YEARS: Parameter = {
   value: 20.0,
+  parameterName: "LIFE_EXTENSION_YEARS",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-life_extension_years",
   unit: "years",
   displayName: "Life Extension from Treaty Research Acceleration",
   description: "Expected years of life extension from 1% treaty research acceleration (25x trial capacity). Bounds: 0 (complete failure) to ~150 (accident-limited lifespan minus current). Lognormal distribution allows for breakthrough scenarios.",
   sourceType: "external",
   sourceRef: "longevity-escape-velocity",
+  sourceUrl: "https://en.wikipedia.org/wiki/Longevity_escape_velocity",
   confidence: "low",
   confidenceInterval: [5.0, 100.0],
 };
 
 export const LOBBYIST_SALARY_MAX: Parameter = {
   value: 2000000.0,
+  parameterName: "LOBBYIST_SALARY_MAX",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-lobbyist_salary_max",
   unit: "USD",
   displayName: "Maximum Annual Lobbyist Salary Range",
   description: "Maximum annual lobbyist salary range",
   sourceType: "external",
   sourceRef: "lobbyist-statistics-dc",
+  sourceUrl: "https://en.wikipedia.org/wiki/Lobbying_in_the_United_States",
   confidence: "high",
 };
 
 export const LOBBYIST_SALARY_MIN_K: Parameter = {
   value: 500000.0,
+  parameterName: "LOBBYIST_SALARY_MIN_K",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-lobbyist_salary_min_k",
   unit: "USD",
   displayName: "Minimum Annual Lobbyist Salary Range",
   description: "Minimum annual lobbyist salary range",
   sourceType: "external",
   sourceRef: "lobbyist-statistics-dc",
+  sourceUrl: "https://en.wikipedia.org/wiki/Lobbying_in_the_United_States",
   confidence: "high",
 };
 
 export const MEASLES_VACCINATION_ROI: Parameter = {
   value: 14.0,
+  parameterName: "MEASLES_VACCINATION_ROI",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-measles_vaccination_roi",
   unit: "ratio",
   displayName: "Return on Investment from Measles Vaccination Programs",
   description: "Return on investment from measles (MMR) vaccination programs",
   sourceType: "external",
   sourceRef: "measles-vaccination-roi",
+  sourceUrl: "https://www.mdpi.com/2076-393X/12/11/1210",
   confidence: "high",
 };
 
 export const MEDICAL_QALY_THRESHOLD: Parameter = {
   value: 100000.0,
+  parameterName: "MEDICAL_QALY_THRESHOLD",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-medical_qaly_threshold",
   unit: "USD/QALY",
   displayName: "Medical QALY Threshold",
   description: "Medical cost-effectiveness QALY threshold. Standard threshold for evaluating whether health interventions are cost-effective. Interventions below $100K/QALY are generally considered cost-effective.",
   sourceType: "external",
   sourceRef: "qaly-threshold-history",
+  sourceUrl: "https://ecocostsvalue.com/EVR/img/references%20others/Gosse%202008%20QALY%20threshold%20financial.pdf",
   confidence: "high",
 };
 
 export const MENTAL_HEALTH_PRODUCTIVITY_LOSS_PER_CAPITA: Parameter = {
   value: 2000.0,
+  parameterName: "MENTAL_HEALTH_PRODUCTIVITY_LOSS_PER_CAPITA",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-mental_health_productivity_loss_per_capita",
   unit: "USD/year",
   displayName: "Annual Productivity Loss per Capita from Mental Health Issues",
   description: "Annual productivity loss per capita from mental health issues (beyond treatment costs)",
   sourceType: "external",
   sourceRef: "mental-health-burden",
+  sourceUrl: "https://www.who.int/news/item/28-09-2001-the-world-health-report-2001-mental-disorders-affect-one-in-four-people",
   confidence: "high",
 };
 
 export const NATO_DEFENSE_SPENDING_ANNUAL: Parameter = {
   value: 1506000000000.0,
+  parameterName: "NATO_DEFENSE_SPENDING_ANNUAL",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-nato_defense_spending_annual",
   unit: "USD",
   displayName: "NATO Defense Spending (2024)",
   description: "Total NATO member defense spending in 2024. Source: SIPRI.",
   sourceType: "external",
   sourceRef: "sipri2024",
+  sourceUrl: "https://www.sipri.org/publications/2024/sipri-fact-sheets/trends-world-military-expenditure-2023",
   confidence: "high",
 };
 
 export const NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR: Parameter = {
   value: 15.0,
+  parameterName: "NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-new_disease_first_treatments_per_year",
   unit: "diseases/year",
   displayName: "Diseases Getting First Treatment Per Year",
   description: "Number of diseases that receive their FIRST effective treatment each year under current system. ~9 rare diseases/year (based on 40 years of ODA: 350 with treatment ÷ 40 years), plus ~5-10 common diseases. Note: FDA approves ~50 drugs/year, but most are for diseases that already have treatments.",
   sourceType: "external",
   sourceRef: "diseases-getting-first-treatment-annually",
+  sourceUrl: "https://ojrd.biomedcentral.com/articles/10.1186/s13023-024-03398-1",
   confidence: "low",
   confidenceInterval: [8.0, 30.0],
 };
 
 export const NIH_ANNUAL_BUDGET: Parameter = {
   value: 47000000000.0,
+  parameterName: "NIH_ANNUAL_BUDGET",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-nih_annual_budget",
   unit: "USD",
   displayName: "NIH Annual Budget",
   description: "NIH annual budget (FY2024/2025)",
   sourceType: "external",
   sourceRef: "nih-budget-fy2025",
+  sourceUrl: "https://www.nih.gov/about-nih/organization/budget",
   confidence: "high",
   confidenceInterval: [45000000000.0, 50000000000.0],
 };
 
 export const NIH_CLINICAL_TRIALS_SPENDING_PCT: Parameter = {
   value: 0.033,
+  parameterName: "NIH_CLINICAL_TRIALS_SPENDING_PCT",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-nih_clinical_trials_spending_pct",
   unit: "percentage",
   displayName: "NIH Clinical Trials Spending Percentage",
   description: "Percentage of NIH budget spent on clinical trials (3.3%)",
   sourceType: "external",
   sourceRef: "nih-clinical-trials-spending-pct-3-3",
+  sourceUrl: "https://pmc.ncbi.nlm.nih.gov/articles/PMC10349341/",
   confidence: "high",
   confidenceInterval: [0.02, 0.05],
 };
 
 export const NIH_STANDARD_RESEARCH_COST_PER_QALY: Parameter = {
   value: 50000.0,
+  parameterName: "NIH_STANDARD_RESEARCH_COST_PER_QALY",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-nih_standard_research_cost_per_qaly",
   unit: "USD/QALY",
   displayName: "NIH Standard Research Cost per QALY",
   description: "Typical cost per QALY for standard NIH-funded medical research portfolio. Reflects the inefficiency of traditional RCTs and basic research-heavy allocation. See confidence_interval for range; ICER uses higher thresholds for value-based pricing.",
   sourceType: "external",
   sourceRef: "standard-medical-research-roi",
+  sourceUrl: "https://pmc.ncbi.nlm.nih.gov/articles/PMC10114019/",
   confidence: "medium",
   confidenceInterval: [20000.0, 100000.0],
 };
 
 export const OXFORD_RECOVERY_TRIAL_DURATION_MONTHS: Parameter = {
   value: 3.0,
+  parameterName: "OXFORD_RECOVERY_TRIAL_DURATION_MONTHS",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-oxford_recovery_trial_duration_months",
   unit: "months",
   displayName: "Oxford RECOVERY Trial Duration",
   description: "Oxford RECOVERY trial duration (found life-saving treatment in 3 months)",
   sourceType: "external",
   sourceRef: "recovery-trial-82x-cost-reduction",
+  sourceUrl: "https://manhattan.institute/article/slow-costly-clinical-trials-drag-down-biomedical-breakthroughs",
   confidence: "high",
 };
 
 export const PATIENT_WILLINGNESS_TRIAL_PARTICIPATION_PCT: Parameter = {
   value: 0.448,
+  parameterName: "PATIENT_WILLINGNESS_TRIAL_PARTICIPATION_PCT",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-patient_willingness_trial_participation_pct",
   unit: "percentage",
   displayName: "Patient Willingness to Participate in Clinical Trials",
   description: "Patient willingness to participate in drug trials (44.8% in surveys, 88% when actually approached)",
   sourceType: "external",
   sourceRef: "patient-willingness-clinical-trials",
+  sourceUrl: "https://trialsjournal.biomedcentral.com/articles/10.1186/s13063-015-1105-3",
   confidence: "medium",
   confidenceInterval: [0.4, 0.5],
   stdError: 0.025,
@@ -1241,6 +1568,8 @@ export const PATIENT_WILLINGNESS_TRIAL_PARTICIPATION_PCT: Parameter = {
 
 export const PHARMA_DRUG_DEVELOPMENT_COST_CURRENT: Parameter = {
   value: 2600000000.0,
+  parameterName: "PHARMA_DRUG_DEVELOPMENT_COST_CURRENT",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-pharma_drug_development_cost_current",
   unit: "USD",
   displayName: "Pharma Drug Development Cost (Current System)",
   description: "Average cost to develop one drug in current system",
@@ -1254,119 +1583,152 @@ export const PHARMA_DRUG_DEVELOPMENT_COST_CURRENT: Parameter = {
 
 export const PHARMA_DRUG_REVENUE_AVERAGE_CURRENT: Parameter = {
   value: 6700000000.0,
+  parameterName: "PHARMA_DRUG_REVENUE_AVERAGE_CURRENT",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-pharma_drug_revenue_average_current",
   unit: "USD",
   displayName: "Pharma Average Drug Revenue (Current System)",
   description: "Median lifetime revenue per successful drug (study of 361 FDA-approved drugs 1995-2014, median follow-up 13.2 years)",
   sourceType: "external",
   sourceRef: "pharma-drug-revenue-average",
+  sourceUrl: "https://www.sciencedirect.com/science/article/pii/S1098301524027542",
   confidence: "high",
   peerReviewed: true,
 };
 
 export const PHARMA_LIFE_YEARS_SAVED_ANNUAL: Parameter = {
   value: 148700000.0,
+  parameterName: "PHARMA_LIFE_YEARS_SAVED_ANNUAL",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-pharma_life_years_saved_annual",
   unit: "life-years",
   displayName: "Annual Life-Years Saved by Pharmaceuticals",
   description: "Annual life-years saved by pharmaceutical innovations globally. Lichtenberg (2019, NBER WP 25483) found that drugs launched after 1981 saved 148.7M life-years in 2013 across 22 countries using 3-way fixed-effects regression (disease-country-year). 95% CI [79.4M, 239.8M] propagated from Table 2 regression standard errors (β₀₋₁₁=-0.031±0.008, β₁₂₊=-0.057±0.013).",
   sourceType: "external",
   sourceRef: "lichtenberg-life-years-saved-2019",
+  sourceUrl: "https://www.nber.org/papers/w25483",
   confidence: "medium",
   confidenceInterval: [79400000.0, 239800000.0],
 };
 
 export const PHARMA_ROI_CURRENT_SYSTEM_PCT: Parameter = {
   value: 0.012,
+  parameterName: "PHARMA_ROI_CURRENT_SYSTEM_PCT",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-pharma_roi_current_system_pct",
   unit: "percentage",
   displayName: "Pharma ROI (Current System)",
   description: "ROI for pharma R&D (2022 historic low from Deloitte study of top 20 pharma companies, down from 6.8% in 2021, recovered to 5.9% in 2024)",
   sourceType: "external",
   sourceRef: "pharma-roi-current",
+  sourceUrl: "https://www.deloitte.com/ch/en/Industries/life-sciences-health-care/research/measuring-return-from-pharmaceutical-innovation.html",
   confidence: "high",
   peerReviewed: true,
 };
 
 export const PHARMA_SUCCESS_RATE_CURRENT_PCT: Parameter = {
   value: 0.1,
+  parameterName: "PHARMA_SUCCESS_RATE_CURRENT_PCT",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-pharma_success_rate_current_pct",
   unit: "percentage",
   displayName: "Pharma Drug Success Rate (Current System)",
   description: "Percentage of drugs that reach market in current system",
   sourceType: "external",
   sourceRef: "drug-trial-success-rate-12-pct",
+  sourceUrl: "https://www.nature.com/articles/nrd.2016.136",
   confidence: "high",
   peerReviewed: true,
 };
 
 export const PHASE_1_PASSED_COMPOUNDS_GLOBAL: Parameter = {
   value: 7500.0,
+  parameterName: "PHASE_1_PASSED_COMPOUNDS_GLOBAL",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-phase_1_passed_compounds_global",
   unit: "compounds",
   displayName: "Phase I-Passed Compounds Globally",
   description: "Investigational compounds that have passed Phase I globally (midpoint of 5,000-10,000 range)",
   sourceType: "external",
   sourceRef: "bio-clinical-development-2021",
+  sourceUrl: "https://go.bio.org/rs/490-EHZ-999/images/ClinicalDevelopmentSuccessRates2011_2020.pdf",
   confidence: "high",
   confidenceInterval: [5000.0, 10000.0],
 };
 
 export const PHASE_1_SAFETY_DURATION_YEARS: Parameter = {
   value: 2.3,
+  parameterName: "PHASE_1_SAFETY_DURATION_YEARS",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-phase_1_safety_duration_years",
   unit: "years",
   displayName: "Phase I Safety Trial Duration",
   description: "Phase I safety trial duration",
   sourceType: "external",
   sourceRef: "bio-clinical-development-2021",
+  sourceUrl: "https://go.bio.org/rs/490-EHZ-999/images/ClinicalDevelopmentSuccessRates2011_2020.pdf",
   confidence: "high",
   peerReviewed: true,
 };
 
 export const PHASE_2_3_CLINICAL_TRIAL_COST_PCT: Parameter = {
   value: 0.69,
+  parameterName: "PHASE_2_3_CLINICAL_TRIAL_COST_PCT",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-phase_2_3_clinical_trial_cost_pct",
   unit: "percentage",
   displayName: "Phase 2/3 Share of Clinical Trial Costs",
   description: "Percentage of total clinical trial spending on Phase 2/3 efficacy testing (Phase 2: 24% + Phase 3: 45%)",
   sourceType: "external",
   sourceRef: "global-clinical-trials-market-2024",
+  sourceUrl: "https://www.globenewswire.com/news-release/2024/04/19/2866012/0/en/Global-Clinical-Trials-Market-Research-Report-2024-An-83-16-Billion-Market-by-2030-AI-Machine-Learning-and-Blockchain-will-Transform-the-Clinical-Trials-Landscape.html",
   confidence: "high",
   stdError: 0.05,
 };
 
 export const PHASE_3_TRIAL_COST_MIN: Parameter = {
   value: 20000000.0,
+  parameterName: "PHASE_3_TRIAL_COST_MIN",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-phase_3_trial_cost_min",
   unit: "USD/trial",
   displayName: "Phase 3 Trial Total Cost (Minimum)",
   description: "Phase 3 trial total cost (minimum)",
   sourceType: "external",
   sourceRef: "phase-3-cost-per-trial-range",
+  sourceUrl: "https://www.sofpromed.com/how-much-does-a-clinical-trial-cost",
   confidence: "high",
 };
 
 export const PMC_PRAGMATIC_TRIAL_MEDIAN_COST_PER_PATIENT: Parameter = {
   value: 97.0,
+  parameterName: "PMC_PRAGMATIC_TRIAL_MEDIAN_COST_PER_PATIENT",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-pmc_pragmatic_trial_median_cost_per_patient",
   unit: "USD/patient",
   displayName: "Pragmatic Trial Median Cost per Patient (PMC Review)",
   description: "Median cost per patient in embedded pragmatic clinical trials (Ramsberg & Platt 2018: 108 trials reviewed, 64 with cost data). IQR: $19-$478 (2015 USD).",
   sourceType: "external",
   sourceRef: "pmc-pragmatic-trial-cost",
+  sourceUrl: "https://pmc.ncbi.nlm.nih.gov/articles/PMC6508852/",
   confidence: "high",
   confidenceInterval: [19.0, 478.0],
 };
 
 export const POLIO_VACCINATION_ROI: Parameter = {
   value: 39.0,
+  parameterName: "POLIO_VACCINATION_ROI",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-polio_vaccination_roi",
   unit: "ratio",
   displayName: "Return on Investment from Sustaining Polio Vaccination Assets and Integrating into Expanded Immunization Programs",
   description: "Return on investment from sustaining polio vaccination assets and integrating into expanded immunization programs",
   sourceType: "external",
   sourceRef: "polio-vaccination-roi",
+  sourceUrl: "https://www.who.int/news-room/feature-stories/detail/sustaining-polio-investments-offers-a-high-return",
   confidence: "high",
 };
 
 export const POLITICAL_DYSFUNCTION_GLOBAL_FOSSIL_FUEL_SUBSIDIES: Parameter = {
   value: 1300000000000.0,
+  parameterName: "POLITICAL_DYSFUNCTION_GLOBAL_FOSSIL_FUEL_SUBSIDIES",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-political_dysfunction_global_fossil_fuel_subsidies",
   unit: "USD",
   displayName: "Global Fossil Fuel Subsidies",
   description: "Global explicit fossil fuel subsidies (governments undercharging for energy supply costs). IMF 2022 estimate. These subsidies actively encourage consumption of negative-externality goods, working against climate goals. Note: IMF implicit subsidies (externalities) are much larger (~$7T).",
   sourceType: "external",
   sourceRef: "political-dysfunction-tax-paper-2025",
+  sourceUrl: "https://manual.warondisease.org/knowledge/appendix/political-dysfunction-tax.html",
   confidence: "high",
   confidenceInterval: [1100000000000.0, 1500000000000.0],
   stdError: 100000000000.0,
@@ -1374,11 +1736,14 @@ export const POLITICAL_DYSFUNCTION_GLOBAL_FOSSIL_FUEL_SUBSIDIES: Parameter = {
 
 export const POLITICAL_DYSFUNCTION_GLOBAL_HEALTH_OPPORTUNITY_COST: Parameter = {
   value: 34000000000000.0,
+  parameterName: "POLITICAL_DYSFUNCTION_GLOBAL_HEALTH_OPPORTUNITY_COST",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-political_dysfunction_global_health_opportunity_cost",
   unit: "USD",
   displayName: "Global Health Opportunity Cost",
   description: "Annual opportunity cost of slow-motion regulatory environment for health innovation. Murphy-Topel (2006) valued cancer cure at $50T (inflation-adjusted ~$100T in 2025). Longevity dividend of 1 extra year = $38T globally. PCTs could accelerate cures by 10+ years; NPV of 10-year delay at 3% discount = ~$25T. Conservative estimate: $34T annually in lives lost and healthspan denied.",
   sourceType: "external",
   sourceRef: "political-dysfunction-tax-paper-2025",
+  sourceUrl: "https://manual.warondisease.org/knowledge/appendix/political-dysfunction-tax.html",
   confidence: "low",
   confidenceInterval: [20000000000000.0, 80000000000000.0],
   stdError: 15000000000000.0,
@@ -1386,11 +1751,14 @@ export const POLITICAL_DYSFUNCTION_GLOBAL_HEALTH_OPPORTUNITY_COST: Parameter = {
 
 export const POLITICAL_DYSFUNCTION_GLOBAL_LEAD_OPPORTUNITY_COST: Parameter = {
   value: 6000000000000.0,
+  parameterName: "POLITICAL_DYSFUNCTION_GLOBAL_LEAD_OPPORTUNITY_COST",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-political_dysfunction_global_lead_opportunity_cost",
   unit: "USD",
   displayName: "Global Lead Poisoning Cost",
   description: "Global cost of lead exposure: World Bank/Lancet estimate. 765 million IQ points lost annually, 5.5 million premature CVD deaths. Cost to eliminate lead from paint, spices, batteries is trivial compared to damage. This is an arbitrage opportunity of immense scale that governance has failed to execute.",
   sourceType: "external",
   sourceRef: "political-dysfunction-tax-paper-2025",
+  sourceUrl: "https://manual.warondisease.org/knowledge/appendix/political-dysfunction-tax.html",
   confidence: "high",
   confidenceInterval: [4000000000000.0, 8000000000000.0],
   stdError: 1000000000000.0,
@@ -1398,11 +1766,14 @@ export const POLITICAL_DYSFUNCTION_GLOBAL_LEAD_OPPORTUNITY_COST: Parameter = {
 
 export const POLITICAL_DYSFUNCTION_GLOBAL_MIGRATION_OPPORTUNITY_COST: Parameter = {
   value: 57000000000000.0,
+  parameterName: "POLITICAL_DYSFUNCTION_GLOBAL_MIGRATION_OPPORTUNITY_COST",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-political_dysfunction_global_migration_opportunity_cost",
   unit: "USD",
   displayName: "Global Migration Opportunity Cost",
   description: "Unrealized output from migration restrictions. Clemens (2011) calculated eliminating labor mobility barriers could increase global GDP by 50-150%. At $115T global GDP, lower bound = $57T; upper bound = $170T. Even 5% workforce mobility would generate trillions, exceeding all foreign aid ever given. This is the largest single distortion in the global economy.",
   sourceType: "external",
   sourceRef: "political-dysfunction-tax-paper-2025",
+  sourceUrl: "https://manual.warondisease.org/knowledge/appendix/political-dysfunction-tax.html",
   confidence: "low",
   confidenceInterval: [57000000000000.0, 170000000000000.0],
   stdError: 30000000000000.0,
@@ -1410,11 +1781,14 @@ export const POLITICAL_DYSFUNCTION_GLOBAL_MIGRATION_OPPORTUNITY_COST: Parameter 
 
 export const POLITICAL_DYSFUNCTION_GLOBAL_SCIENCE_OPPORTUNITY_COST: Parameter = {
   value: 4000000000000.0,
+  parameterName: "POLITICAL_DYSFUNCTION_GLOBAL_SCIENCE_OPPORTUNITY_COST",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-political_dysfunction_global_science_opportunity_cost",
   unit: "USD",
   displayName: "Global Science Opportunity Cost",
   description: "Annual opportunity cost from underfunding high-ROI science (fusion, AI safety). Human Genome Project: $3.8B cost, $796B-1T impact (141:1 ROI). Fusion DEMO plant: $5-10B could solve energy/climate permanently. AI safety: <5% of capabilities spending despite existential stakes. Reallocating $200B from military waste at 20x multiplier = $4T foregone growth.",
   sourceType: "external",
   sourceRef: "political-dysfunction-tax-paper-2025",
+  sourceUrl: "https://manual.warondisease.org/knowledge/appendix/political-dysfunction-tax.html",
   confidence: "low",
   confidenceInterval: [2000000000000.0, 10000000000000.0],
   stdError: 2000000000000.0,
@@ -1422,11 +1796,14 @@ export const POLITICAL_DYSFUNCTION_GLOBAL_SCIENCE_OPPORTUNITY_COST: Parameter = 
 
 export const POLITICAL_SUCCESS_PROBABILITY: Parameter = {
   value: 0.01,
+  parameterName: "POLITICAL_SUCCESS_PROBABILITY",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-political_success_probability",
   unit: "rate",
   displayName: "Political Success Probability",
   description: "Estimated probability of treaty ratification and sustained implementation. Central estimate 1% is conservative. This assumes 99% chance of failure. ",
   sourceType: "external",
   sourceRef: "icbl-ottawa-treaty",
+  sourceUrl: "https://www.icrc.org/en/doc/resources/documents/article/other/57jpjn.htm",
   confidence: "low",
   confidenceInterval: [0.001, 0.1],
   stdError: 0.02,
@@ -1434,32 +1811,41 @@ export const POLITICAL_SUCCESS_PROBABILITY: Parameter = {
 
 export const POLITICIAN_POST_OFFICE_CAREER_VALUE: Parameter = {
   value: 10000000.0,
+  parameterName: "POLITICIAN_POST_OFFICE_CAREER_VALUE",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-politician_post_office_career_value",
   unit: "USD",
   displayName: "Post-Office Career Value (per politician)",
   description: "Net present value of post-office career premium for average congressperson (10 years x $1M/year premium). Based on documented cases: Gephardt $7M/year, Daschle $2M+/year.",
   sourceType: "external",
   sourceRef: "opensecrets-revolving-door",
+  sourceUrl: "https://www.opensecrets.org/revolving-door",
   confidence: "medium",
   confidenceInterval: [5000000.0, 20000000.0],
 };
 
 export const POST_1962_DRUG_APPROVAL_REDUCTION_PCT: Parameter = {
   value: 0.7,
+  parameterName: "POST_1962_DRUG_APPROVAL_REDUCTION_PCT",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-post_1962_drug_approval_reduction_pct",
   unit: "percentage",
   displayName: "Post-1962 Drug Approval Reduction",
   description: "Reduction in new drug approvals after 1962 Kefauver-Harris Amendment (70% drop from 43→17 drugs/year)",
   sourceType: "external",
   sourceRef: "post-1962-drug-approval-drop",
+  sourceUrl: "https://pmc.ncbi.nlm.nih.gov/articles/PMC7245331/",
   confidence: "high",
 };
 
 export const PRE_1962_DRUG_DEVELOPMENT_COST_1980_USD: Parameter = {
   value: 6500000.0,
+  parameterName: "PRE_1962_DRUG_DEVELOPMENT_COST_1980_USD",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-pre_1962_drug_development_cost_1980_usd",
   unit: "USD_1980",
   displayName: "Pre-1962 Drug Development Cost (1980 Dollars)",
   description: "Average drug development cost before 1962 FDA efficacy regulations, adjusted to 1980 dollars (Baily 1972)",
   sourceType: "external",
   sourceRef: "pre-1962-drug-costs-baily-1972",
+  sourceUrl: "https://samizdathealth.org/wp-content/uploads/2020/12/hlthaff.1.2.6.pdf",
   confidence: "high",
   confidenceInterval: [5200000.0, 7800000.0],
   peerReviewed: true,
@@ -1467,11 +1853,14 @@ export const PRE_1962_DRUG_DEVELOPMENT_COST_1980_USD: Parameter = {
 
 export const PRE_1962_DRUG_DEVELOPMENT_COST_2024_USD: Parameter = {
   value: 24700000.0,
+  parameterName: "PRE_1962_DRUG_DEVELOPMENT_COST_2024_USD",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-pre_1962_drug_development_cost_2024_usd",
   unit: "USD",
   displayName: "Pre-1962 Drug Development Cost (2024 Dollars)",
   description: "Pre-1962 drug development cost adjusted to 2024 dollars ($6.5M × 3.80 = $24.7M, CPI-adjusted from Baily 1972)",
   sourceType: "external",
   sourceRef: "pre-1962-drug-costs-baily-1972",
+  sourceUrl: "https://samizdathealth.org/wp-content/uploads/2020/12/hlthaff.1.2.6.pdf",
   confidence: "high",
   confidenceInterval: [19500000.0, 30000000.0],
   peerReviewed: true,
@@ -1479,65 +1868,83 @@ export const PRE_1962_DRUG_DEVELOPMENT_COST_2024_USD: Parameter = {
 
 export const PRE_1962_PHYSICIAN_COUNT: Parameter = {
   value: 144000.0,
+  parameterName: "PRE_1962_PHYSICIAN_COUNT",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-pre_1962_physician_count",
   unit: "physicians",
   displayName: "Pre-1962 Physician Count (Unverified)",
   description: "Estimated physicians conducting real-world efficacy trials pre-1962 (unverified estimate)",
   sourceType: "external",
   sourceRef: "pre-1962-physician-trials",
+  sourceUrl: "https://thinkbynumbers.org/health/how-many-net-lives-does-the-fda-save/",
   confidence: "low",
 };
 
 export const RARE_DISEASES_COUNT_GLOBAL: Parameter = {
   value: 7000.0,
+  parameterName: "RARE_DISEASES_COUNT_GLOBAL",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-rare_diseases_count_global",
   unit: "diseases",
   displayName: "Total Number of Rare Diseases Globally",
   description: "Total number of rare diseases globally",
   sourceType: "external",
   sourceRef: "95-pct-diseases-no-treatment",
+  sourceUrl: "https://www.gao.gov/products/gao-25-106774",
   confidence: "high",
   confidenceInterval: [6000.0, 10000.0],
 };
 
 export const RECOVERY_TRIAL_COST_PER_PATIENT: Parameter = {
   value: 500.0,
+  parameterName: "RECOVERY_TRIAL_COST_PER_PATIENT",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-recovery_trial_cost_per_patient",
   unit: "USD/patient",
   displayName: "Recovery Trial Cost per Patient",
   description: "RECOVERY trial cost per patient. Note: RECOVERY was an outlier - hospital-based during COVID emergency, minimal extra procedures, existing NHS infrastructure, streamlined consent. Replicating this globally will be harder.",
   sourceType: "external",
   sourceRef: "recovery-cost-500",
+  sourceUrl: "https://manhattan.institute/article/slow-costly-clinical-trials-drag-down-biomedical-breakthroughs",
   confidence: "high",
   confidenceInterval: [400.0, 2500.0],
 };
 
 export const RECOVERY_TRIAL_GLOBAL_LIVES_SAVED: Parameter = {
   value: 1000000.0,
+  parameterName: "RECOVERY_TRIAL_GLOBAL_LIVES_SAVED",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-recovery_trial_global_lives_saved",
   unit: "lives",
   displayName: "RECOVERY Trial Global Lives Saved",
   description: "Estimated lives saved globally by RECOVERY trial's dexamethasone discovery. NHS England estimate (March 2021). Based on Águas et al. Nature Communications 2021 methodology applying RECOVERY trial mortality reductions (36% ventilated, 18% oxygen) to global COVID hospitalizations. Wide uncertainty range reflects extrapolation assumptions.",
   sourceType: "external",
   sourceRef: "recovery-trial-1m-lives-saved",
+  sourceUrl: "https://www.england.nhs.uk/2021/03/covid-treatment-developed-in-the-nhs-saves-a-million-lives/",
   confidence: "medium",
   confidenceInterval: [500000.0, 2000000.0],
 };
 
 export const RECOVERY_TRIAL_TOTAL_COST: Parameter = {
   value: 20000000.0,
+  parameterName: "RECOVERY_TRIAL_TOTAL_COST",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-recovery_trial_total_cost",
   unit: "USD",
   displayName: "RECOVERY Trial Total Cost",
   description: "Total cost of UK RECOVERY trial. Enrolled tens of thousands of patients across multiple treatment arms. Discovered dexamethasone reduces COVID mortality by ~1/3 in severe cases.",
   sourceType: "external",
   sourceRef: "recovery-trial-82x-cost-reduction",
+  sourceUrl: "https://manhattan.institute/article/slow-costly-clinical-trials-drag-down-biomedical-breakthroughs",
   confidence: "high",
   confidenceInterval: [15000000.0, 25000000.0],
 };
 
 export const REGULATORY_DELAY_MEAN_AGE_OF_DEATH: Parameter = {
   value: 62.0,
+  parameterName: "REGULATORY_DELAY_MEAN_AGE_OF_DEATH",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-regulatory_delay_mean_age_of_death",
   unit: "years",
   displayName: "Mean Age of Preventable Death from Post-Safety Efficacy Delay",
   description: "Mean age of preventable death from post-safety efficacy testing regulatory delay (Phase 2-4)",
   sourceType: "external",
   sourceRef: "who-global-health-estimates-2024",
+  sourceUrl: "https://www.who.int/data/gho/data/themes/mortality-and-global-health-estimates",
   confidence: "medium",
   stdError: 3.0,
   peerReviewed: true,
@@ -1545,11 +1952,14 @@ export const REGULATORY_DELAY_MEAN_AGE_OF_DEATH: Parameter = {
 
 export const REGULATORY_DELAY_SUFFERING_PERIOD_YEARS: Parameter = {
   value: 6.0,
+  parameterName: "REGULATORY_DELAY_SUFFERING_PERIOD_YEARS",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-regulatory_delay_suffering_period_years",
   unit: "years",
   displayName: "Pre-Death Suffering Period During Post-Safety Efficacy Delay",
   description: "Pre-death suffering period during post-safety efficacy testing delay (average years lived with untreated condition while awaiting Phase 2-4 completion)",
   sourceType: "external",
   sourceRef: "who-global-health-estimates-2024",
+  sourceUrl: "https://www.who.int/data/gho/data/themes/mortality-and-global-health-estimates",
   confidence: "medium",
   confidenceInterval: [4.0, 9.0],
   peerReviewed: true,
@@ -1557,239 +1967,308 @@ export const REGULATORY_DELAY_SUFFERING_PERIOD_YEARS: Parameter = {
 
 export const SEPT_11_DEATHS: Parameter = {
   value: 2977.0,
+  parameterName: "SEPT_11_DEATHS",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-sept_11_deaths",
   unit: "people",
   displayName: "September 11 Deaths",
   description: "Total deaths in the September 11, 2001 attacks. 2,977 victims (excluding 19 hijackers). Used as a reference point for scale comparisons.",
   sourceType: "external",
   sourceRef: "september-11-memorial",
+  sourceUrl: "https://www.911memorial.org/911-faqs",
   confidence: "high",
 };
 
 export const SINGAPORE_GDP_PER_CAPITA_PPP: Parameter = {
   value: 105000.0,
+  parameterName: "SINGAPORE_GDP_PER_CAPITA_PPP",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-singapore_gdp_per_capita_ppp",
   unit: "USD",
   displayName: "Singapore GDP per Capita (PPP)",
   description: "Singapore GDP per capita (PPP-adjusted). Among highest in world, demonstrating that lean government can coexist with prosperity.",
   sourceType: "external",
   sourceRef: "worldbank-singapore-gdp",
+  sourceUrl: "https://data.worldbank.org/country/singapore",
   confidence: "high",
 };
 
 export const SINGAPORE_GOVT_SPENDING_PCT_GDP: Parameter = {
   value: 15.0,
+  parameterName: "SINGAPORE_GOVT_SPENDING_PCT_GDP",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-singapore_govt_spending_pct_gdp",
   unit: "percent",
   displayName: "Singapore Govt Spending (% GDP)",
   description: "Singapore government spending as percentage of GDP. Less than HALF the US rate (15% vs 38%) yet achieves excellent outcomes through efficiency.",
   sourceType: "external",
   sourceRef: "imf-singapore-spending",
+  sourceUrl: "https://www.imf.org/en/Countries/SGP",
   confidence: "high",
 };
 
 export const SINGAPORE_LIFE_EXPECTANCY: Parameter = {
   value: 84.1,
+  parameterName: "SINGAPORE_LIFE_EXPECTANCY",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-singapore_life_expectancy",
   unit: "years",
   displayName: "Singapore Life Expectancy",
   description: "Singapore life expectancy at birth. 6.6 years LONGER than US (84.1 vs 77.5) despite government spending at less than half the rate.",
   sourceType: "external",
   sourceRef: "who-life-expectancy",
+  sourceUrl: "https://www.who.int/data/gho/data/themes/mortality-and-global-health-estimates/ghe-life-expectancy-and-healthy-life-expectancy",
   confidence: "high",
 };
 
 export const SMALLPOX_ERADICATION_ROI: Parameter = {
   value: 280.0,
+  parameterName: "SMALLPOX_ERADICATION_ROI",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-smallpox_eradication_roi",
   unit: "ratio",
   displayName: "Return on Investment from Smallpox Eradication Campaign",
   description: "Return on investment from smallpox eradication campaign",
   sourceType: "external",
   sourceRef: "smallpox-eradication-roi",
+  sourceUrl: "https://www.csis.org/analysis/smallpox-eradication-model-global-cooperation",
   confidence: "high",
 };
 
 export const SMALLPOX_ERADICATION_TOTAL_BENEFIT: Parameter = {
   value: 1420000000.0,
+  parameterName: "SMALLPOX_ERADICATION_TOTAL_BENEFIT",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-smallpox_eradication_total_benefit",
   unit: "USD",
   displayName: "Total Economic Benefit from Smallpox Eradication Campaign",
   description: "Total economic benefit from smallpox eradication campaign",
   sourceType: "external",
   sourceRef: "smallpox-eradication-roi",
+  sourceUrl: "https://www.csis.org/analysis/smallpox-eradication-model-global-cooperation",
   confidence: "high",
 };
 
 export const SMOKING_CESSATION_ANNUAL_BENEFIT: Parameter = {
   value: 12000000000.0,
+  parameterName: "SMOKING_CESSATION_ANNUAL_BENEFIT",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-smoking_cessation_annual_benefit",
   unit: "USD/year",
   displayName: "Estimated Annual Global Economic Benefit from Smoking Cessation Programs",
   description: "Estimated annual global economic benefit from smoking cessation programs",
   sourceType: "external",
   sourceRef: "life-expectancy-gains-smoking-reduction",
+  sourceUrl: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1447499/",
   confidence: "high",
 };
 
 export const STANDARD_ECONOMIC_QALY_VALUE_USD: Parameter = {
   value: 150000.0,
+  parameterName: "STANDARD_ECONOMIC_QALY_VALUE_USD",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-standard_economic_qaly_value_usd",
   unit: "USD/QALY",
   displayName: "Standard Economic Value per QALY",
   description: "Standard economic value per QALY",
   sourceType: "external",
   sourceRef: "qaly-value",
+  sourceUrl: "https://icer.org/wp-content/uploads/2024/02/Reference-Case-4.3.25.pdf",
   confidence: "high",
   stdError: 30000.0,
 };
 
 export const STANDARD_QALYS_PER_LIFE_SAVED: Parameter = {
   value: 35.0,
+  parameterName: "STANDARD_QALYS_PER_LIFE_SAVED",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-standard_qalys_per_life_saved",
   unit: "QALYs/life",
   displayName: "Standard QALYs per Life Saved",
   description: "Standard QALYs per life saved (WHO life tables)",
   sourceType: "external",
   sourceRef: "qaly-value",
+  sourceUrl: "https://icer.org/wp-content/uploads/2024/02/Reference-Case-4.3.25.pdf",
   confidence: "high",
   stdError: 7.0,
 };
 
 export const SUGAR_SUBSIDY_COST_PER_PERSON_ANNUAL: Parameter = {
   value: 10.0,
+  parameterName: "SUGAR_SUBSIDY_COST_PER_PERSON_ANNUAL",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-sugar_subsidy_cost_per_person_annual",
   unit: "USD/person/year",
   displayName: "Annual Cost of Sugar Subsidies per Person",
   description: "Annual cost of sugar subsidies per person",
   sourceType: "external",
   sourceRef: "sugar-subsidies-cost",
+  sourceUrl: "https://www.gao.gov/products/gao-24-106144",
   confidence: "high",
 };
 
 export const SWITZERLAND_DEFENSE_SPENDING_PCT: Parameter = {
   value: 0.007,
+  parameterName: "SWITZERLAND_DEFENSE_SPENDING_PCT",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-switzerland_defense_spending_pct",
   unit: "rate",
   displayName: "Switzerland's Defense Spending as Percentage of GDP",
   description: "Switzerland's defense spending as percentage of GDP (0.7%)",
   sourceType: "external",
   sourceRef: "swiss-military-budget-0-7-pct-gdp",
+  sourceUrl: "https://data.worldbank.org/indicator/MS.MIL.XPND.GD.ZS?locations=CH",
   confidence: "high",
 };
 
 export const SWITZERLAND_GDP_PER_CAPITA_K: Parameter = {
   value: 93000.0,
+  parameterName: "SWITZERLAND_GDP_PER_CAPITA_K",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-switzerland_gdp_per_capita_k",
   unit: "USD",
   displayName: "Switzerland GDP per Capita",
   description: "Switzerland GDP per capita",
   sourceType: "external",
   sourceRef: "swiss-vs-us-gdp-per-capita",
+  sourceUrl: "https://data.worldbank.org/indicator/NY.GDP.PCAP.CD?locations=CH",
   confidence: "high",
 };
 
 export const SWITZERLAND_GOVT_SPENDING_PCT_GDP: Parameter = {
   value: 35.0,
+  parameterName: "SWITZERLAND_GOVT_SPENDING_PCT_GDP",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-switzerland_govt_spending_pct_gdp",
   unit: "percent",
   displayName: "Switzerland Govt Spending (% GDP)",
   description: "Switzerland government spending as percentage of GDP. 3 percentage points LOWER than US (35% vs 38%) yet achieves dramatically better outcomes.",
   sourceType: "external",
   sourceRef: "oecd-govt-spending",
+  sourceUrl: "https://data.oecd.org/gga/general-government-spending.htm",
   confidence: "high",
 };
 
 export const SWITZERLAND_LIFE_EXPECTANCY: Parameter = {
   value: 84.0,
+  parameterName: "SWITZERLAND_LIFE_EXPECTANCY",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-switzerland_life_expectancy",
   unit: "years",
   displayName: "Switzerland Life Expectancy",
   description: "Switzerland life expectancy at birth. 6.5 years LONGER than US (84.0 vs 77.5) despite lower government spending as % of GDP.",
   sourceType: "external",
   sourceRef: "who-life-expectancy",
+  sourceUrl: "https://www.who.int/data/gho/data/themes/mortality-and-global-health-estimates/ghe-life-expectancy-and-healthy-life-expectancy",
   confidence: "high",
 };
 
 export const SWITZERLAND_MEDIAN_INCOME_PPP: Parameter = {
   value: 65000.0,
+  parameterName: "SWITZERLAND_MEDIAN_INCOME_PPP",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-switzerland_median_income_ppp",
   unit: "USD",
   displayName: "Switzerland Median Income (PPP)",
   description: "Switzerland median household income (PPP-adjusted). Higher than US when adjusted for cost of healthcare and other expenses.",
   sourceType: "external",
   sourceRef: "oecd-median-income",
+  sourceUrl: "https://data.oecd.org/hha/household-disposable-income.htm",
   confidence: "medium",
 };
 
 export const TERRORISM_DEATHS_911: Parameter = {
   value: 2996.0,
+  parameterName: "TERRORISM_DEATHS_911",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-terrorism_deaths_911",
   unit: "deaths",
   displayName: "Deaths from 9/11 Terrorist Attacks",
   description: "Deaths from 9/11 terrorist attacks",
   sourceType: "external",
   sourceRef: "chance-of-dying-from-terrorism-1-in-30m",
+  sourceUrl: "https://www.cato.org/policy-analysis/terrorism-immigration-risk-analysis",
   confidence: "high",
 };
 
 export const THALIDOMIDE_CASES_WORLDWIDE: Parameter = {
   value: 15000.0,
+  parameterName: "THALIDOMIDE_CASES_WORLDWIDE",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-thalidomide_cases_worldwide",
   unit: "cases",
   displayName: "Thalidomide Cases Worldwide",
   description: "Total thalidomide birth defect cases worldwide (1957-1962)",
   sourceType: "external",
   sourceRef: "thalidomide-scandal",
+  sourceUrl: "https://en.wikipedia.org/wiki/Thalidomide_scandal",
   confidence: "medium",
   confidenceInterval: [10000.0, 20000.0],
 };
 
 export const THALIDOMIDE_DISABILITY_WEIGHT: Parameter = {
   value: 0.4,
+  parameterName: "THALIDOMIDE_DISABILITY_WEIGHT",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-thalidomide_disability_weight",
   unit: "ratio",
   displayName: "Thalidomide Disability Weight",
   description: "Disability weight for thalidomide survivors (limb deformities, organ damage)",
   sourceType: "external",
   sourceRef: "thalidomide-survivors-health",
+  sourceUrl: "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0210222",
   confidence: "medium",
   confidenceInterval: [0.32, 0.48],
 };
 
 export const THALIDOMIDE_MORTALITY_RATE: Parameter = {
   value: 0.4,
+  parameterName: "THALIDOMIDE_MORTALITY_RATE",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-thalidomide_mortality_rate",
   unit: "percentage",
   displayName: "Thalidomide Mortality Rate",
   description: "Mortality rate for thalidomide-affected infants (died within first year)",
   sourceType: "external",
   sourceRef: "thalidomide-scandal",
+  sourceUrl: "https://en.wikipedia.org/wiki/Thalidomide_scandal",
   confidence: "high",
   confidenceInterval: [0.35, 0.45],
 };
 
 export const THALIDOMIDE_SURVIVOR_LIFESPAN: Parameter = {
   value: 60.0,
+  parameterName: "THALIDOMIDE_SURVIVOR_LIFESPAN",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-thalidomide_survivor_lifespan",
   unit: "years",
   displayName: "Thalidomide Survivor Lifespan",
   description: "Average lifespan for thalidomide survivors",
   sourceType: "external",
   sourceRef: "thalidomide-survivors-health",
+  sourceUrl: "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0210222",
   confidence: "medium",
   confidenceInterval: [50.0, 70.0],
 };
 
 export const THALIDOMIDE_US_POPULATION_SHARE_1960: Parameter = {
   value: 0.06,
+  parameterName: "THALIDOMIDE_US_POPULATION_SHARE_1960",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-thalidomide_us_population_share_1960",
   unit: "percentage",
   displayName: "US Population Share 1960",
   description: "US share of world population in 1960",
   sourceType: "external",
   sourceRef: "us-census-world-population-1960",
+  sourceUrl: "https://www.census.gov/data/tables/time-series/demo/international-programs/historical-est-worldpop.html",
   confidence: "high",
   confidenceInterval: [0.055, 0.065],
 };
 
 export const TRADITIONAL_PHASE3_COST_PER_PATIENT: Parameter = {
   value: 41000.0,
+  parameterName: "TRADITIONAL_PHASE3_COST_PER_PATIENT",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-traditional_phase3_cost_per_patient",
   unit: "USD/patient",
   displayName: "Phase 3 Cost per Patient",
   description: "Phase 3 cost per patient (median from FDA study)",
   sourceType: "external",
   sourceRef: "trial-costs-fda-study",
+  sourceUrl: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6248200/",
   confidence: "high",
   confidenceInterval: [20000.0, 120000.0],
 };
 
 export const TREATMENT_DISABILITY_REDUCTION: Parameter = {
   value: 0.25,
+  parameterName: "TREATMENT_DISABILITY_REDUCTION",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-treatment_disability_reduction",
   unit: "weight",
   displayName: "Treatment Disability Reduction",
   description: "Average disability weight reduction from pharmaceutical treatment. Untreated chronic disease averages 0.35 disability weight, treated disease averages 0.10, difference is 0.25.",
   sourceType: "external",
   sourceRef: "gbd-disability-weights",
+  sourceUrl: "https://ghdx.healthdata.org/record/ihme-data/gbd-2019-disability-weights",
   confidence: "medium",
   confidenceInterval: [0.15, 0.35],
   peerReviewed: true,
@@ -1797,11 +2276,14 @@ export const TREATMENT_DISABILITY_REDUCTION: Parameter = {
 
 export const US_ALZHEIMERS_ANNUAL_COST: Parameter = {
   value: 355000000000.0,
+  parameterName: "US_ALZHEIMERS_ANNUAL_COST",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-us_alzheimers_annual_cost",
   unit: "USD",
   displayName: "US Alzheimer's Annual Cost",
   description: "Annual US cost of Alzheimer's disease (direct and indirect)",
   sourceType: "external",
   sourceRef: "disease-cost-alzheimers-1300b",
+  sourceUrl: "https://www.who.int/news-room/fact-sheets/detail/dementia",
   confidence: "high",
   confidenceInterval: [302000000000.0, 408000000000.0],
   peerReviewed: true,
@@ -1809,11 +2291,14 @@ export const US_ALZHEIMERS_ANNUAL_COST: Parameter = {
 
 export const US_CANCER_ANNUAL_COST: Parameter = {
   value: 208000000000.0,
+  parameterName: "US_CANCER_ANNUAL_COST",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-us_cancer_annual_cost",
   unit: "USD",
   displayName: "US Cancer Annual Cost",
   description: "Annual US cost of cancer (direct and indirect)",
   sourceType: "external",
   sourceRef: "disease-cost-cancer-1800b",
+  sourceUrl: "https://jamanetwork.com/journals/jamaoncology/fullarticle/2801798",
   confidence: "high",
   confidenceInterval: [177000000000.0, 239000000000.0],
   peerReviewed: true,
@@ -1821,22 +2306,28 @@ export const US_CANCER_ANNUAL_COST: Parameter = {
 
 export const US_CHRONIC_DISEASE_SPENDING_ANNUAL: Parameter = {
   value: 4100000000000.0,
+  parameterName: "US_CHRONIC_DISEASE_SPENDING_ANNUAL",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-us_chronic_disease_spending_annual",
   unit: "USD/year",
   displayName: "US Annual Chronic Disease Spending",
   description: "US annual chronic disease spending",
   sourceType: "external",
   sourceRef: "us-chronic-disease-spending",
+  sourceUrl: "https://www.cdc.gov/chronic-disease/data-research/facts-stats/index.html",
   confidence: "high",
   confidenceInterval: [3300000000000.0, 5000000000000.0],
 };
 
 export const US_DIABETES_ANNUAL_COST: Parameter = {
   value: 327000000000.0,
+  parameterName: "US_DIABETES_ANNUAL_COST",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-us_diabetes_annual_cost",
   unit: "USD",
   displayName: "US Diabetes Annual Cost",
   description: "Annual US cost of diabetes (direct and indirect)",
   sourceType: "external",
   sourceRef: "disease-cost-diabetes-1500b",
+  sourceUrl: "https://diabetesjournals.org/care/article/41/5/963/36522/Global-Economic-Burden-of-Diabetes-in-Adults",
   confidence: "high",
   confidenceInterval: [278000000000.0, 376000000000.0],
   peerReviewed: true,
@@ -1844,51 +2335,66 @@ export const US_DIABETES_ANNUAL_COST: Parameter = {
 
 export const US_FEDERAL_SPENDING_2024: Parameter = {
   value: 6800000000000.0,
+  parameterName: "US_FEDERAL_SPENDING_2024",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-us_federal_spending_2024",
   unit: "USD",
   displayName: "US Federal Spending (FY2024)",
   description: "US federal government spending in FY2024. CBO reports outlays of $6.8T (23.9% of GDP). Includes mandatory spending, discretionary spending, and net interest ($888B).",
   sourceType: "external",
   sourceRef: "cbo-long-term-budget-2024",
+  sourceUrl: "https://www.cbo.gov/publication/60039",
   confidence: "high",
 };
 
 export const US_FED_DISCRETIONARY_SPENDING_2024: Parameter = {
   value: 1700000000000.0,
+  parameterName: "US_FED_DISCRETIONARY_SPENDING_2024",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-us_fed_discretionary_spending_2024",
   unit: "USD",
   displayName: "US Federal Discretionary Spending (FY2024)",
   description: "US federal discretionary spending in FY2024. Approximately $886B defense + ~$814B non-defense discretionary = ~$1.7T. Used as denominator for discretionary efficiency rating (Cat 1 waste items are discretionary/fungible).",
   sourceType: "external",
   sourceRef: "cbo-long-term-budget-2024",
+  sourceUrl: "https://www.cbo.gov/publication/60039",
   confidence: "high",
 };
 
 export const US_GDP_2024: Parameter = {
   value: 28780000000000.0,
+  parameterName: "US_GDP_2024",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-us_gdp_2024",
   unit: "USD",
   displayName: "US GDP (2024)",
   description: "US GDP in 2024 dollars for calculating policy costs as percentage of GDP.",
   sourceType: "external",
   sourceRef: "worldbank-gdp",
+  sourceUrl: "https://data.worldbank.org/indicator/NY.GDP.MKTP.CD?locations=US",
   confidence: "high",
 };
 
 export const US_GOVT_SPENDING_PCT_GDP: Parameter = {
   value: 38.0,
+  parameterName: "US_GOVT_SPENDING_PCT_GDP",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-us_govt_spending_pct_gdp",
   unit: "percent",
   displayName: "US Govt Spending (% GDP)",
   description: "US total government spending as percentage of GDP (federal + state + local). OECD average is ~40%, but US gets worse outcomes for similar spending.",
   sourceType: "external",
   sourceRef: "oecd-govt-spending",
+  sourceUrl: "https://data.oecd.org/gga/general-government-spending.htm",
   confidence: "high",
 };
 
 export const US_GOV_WASTE_AGRICULTURAL_SUBSIDIES: Parameter = {
   value: 75000000000.0,
+  parameterName: "US_GOV_WASTE_AGRICULTURAL_SUBSIDIES",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-us_gov_waste_agricultural_subsidies",
   unit: "USD",
   displayName: "Agricultural Subsidies Deadweight Loss",
   description: "Deadweight loss from US agricultural subsidies. Direct subsidies ~$30B/yr but create larger distortions: overproduction, environmental damage, benefits concentrated in large farms (top 10% receive 78% of subsidies). Total welfare loss ~$75B. Textbook example of capture; very high economist consensus. [CATEGORY 1: Direct Spending]",
   sourceType: "external",
   sourceRef: "ewg-farm-subsidies",
+  sourceUrl: "https://farm.ewg.org/",
   confidence: "high",
   confidenceInterval: [50000000000.0, 120000000000.0],
   stdError: 25000000000.0,
@@ -1896,11 +2402,14 @@ export const US_GOV_WASTE_AGRICULTURAL_SUBSIDIES: Parameter = {
 
 export const US_GOV_WASTE_CORPORATE_WELFARE: Parameter = {
   value: 181000000000.0,
+  parameterName: "US_GOV_WASTE_CORPORATE_WELFARE",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-us_gov_waste_corporate_welfare",
   unit: "USD",
   displayName: "Corporate Welfare Waste",
   description: "Direct US federal corporate welfare: subsidies to agriculture ($16.4B), green energy tax credits, semiconductor aid, aviation support. Agricultural subsidies are highly regressive (top 10% receive 63%). Cato Institute forensic tally. [CATEGORY 1: Direct Spending]",
   sourceType: "external",
   sourceRef: "political-dysfunction-tax-paper-2025",
+  sourceUrl: "https://manual.warondisease.org/knowledge/appendix/political-dysfunction-tax.html",
   confidence: "high",
   confidenceInterval: [150000000000.0, 220000000000.0],
   stdError: 20000000000.0,
@@ -1908,11 +2417,14 @@ export const US_GOV_WASTE_CORPORATE_WELFARE: Parameter = {
 
 export const US_GOV_WASTE_DRUG_WAR: Parameter = {
   value: 90000000000.0,
+  parameterName: "US_GOV_WASTE_DRUG_WAR",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-us_gov_waste_drug_war",
   unit: "USD",
   displayName: "Drug War Cost",
   description: "Annual cost of drug war: ~$41B federal drug control budget, ~$10B state/local enforcement, ~$40B incarceration and lost productivity. After 50+ years and $1T+ spent, drug use is higher than ever. [CATEGORY 1: Direct Spending]",
   sourceType: "external",
   sourceRef: "drugpolicyalliance2021",
+  sourceUrl: "https://drugpolicy.org/drug-war-stats/",
   confidence: "medium",
   confidenceInterval: [60000000000.0, 150000000000.0],
   stdError: 30000000000.0,
@@ -1920,11 +2432,14 @@ export const US_GOV_WASTE_DRUG_WAR: Parameter = {
 
 export const US_GOV_WASTE_FOSSIL_FUEL_SUBSIDIES: Parameter = {
   value: 50000000000.0,
+  parameterName: "US_GOV_WASTE_FOSSIL_FUEL_SUBSIDIES",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-us_gov_waste_fossil_fuel_subsidies",
   unit: "USD",
   displayName: "Fossil Fuel Subsidies (Explicit)",
   description: "US explicit fossil fuel subsidies (direct payments, tax breaks). IMF estimates US total subsidies at $649B but ~92% is implicit (externalities). This figure includes only explicit subsidies (~$50B) for defensibility. [CATEGORY 1: Direct Spending]",
   sourceType: "external",
   sourceRef: "imf-fossilfuel2023",
+  sourceUrl: "https://www.imf.org/en/Blogs/Articles/2023/08/24/fossil-fuel-subsidies-surged-to-record-7-trillion",
   confidence: "medium",
   confidenceInterval: [30000000000.0, 80000000000.0],
   stdError: 15000000000.0,
@@ -1932,11 +2447,14 @@ export const US_GOV_WASTE_FOSSIL_FUEL_SUBSIDIES: Parameter = {
 
 export const US_GOV_WASTE_HEALTHCARE_INEFFICIENCY: Parameter = {
   value: 1200000000000.0,
+  parameterName: "US_GOV_WASTE_HEALTHCARE_INEFFICIENCY",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-us_gov_waste_healthcare_inefficiency",
   unit: "USD",
   displayName: "Healthcare System Inefficiency",
   description: "US healthcare spending inefficiency. US spends ~$4.5T/yr (18% GDP) vs 9-11% in comparable OECD countries with similar/better outcomes. Papanicolas et al. (2018 JAMA) and multiple studies document $1-1.5T in excess spending from administrative complexity, high prices, and poor care coordination. Very high economist consensus. [CATEGORY 4: System Inefficiency]",
   sourceType: "external",
   sourceRef: "papanicolas2018",
+  sourceUrl: "https://jamanetwork.com/journals/jama/article-abstract/2674671",
   confidence: "high",
   confidenceInterval: [1000000000000.0, 1500000000000.0],
   stdError: 150000000000.0,
@@ -1944,11 +2462,14 @@ export const US_GOV_WASTE_HEALTHCARE_INEFFICIENCY: Parameter = {
 
 export const US_GOV_WASTE_HOUSING_ZONING: Parameter = {
   value: 1400000000000.0,
+  parameterName: "US_GOV_WASTE_HOUSING_ZONING",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-us_gov_waste_housing_zoning",
   unit: "USD",
   displayName: "Housing/Zoning Restrictions Cost",
   description: "GDP loss from housing/zoning restrictions. Original Hsieh-Moretti (2019 AEJ:Macro) estimate of 36% GDP growth reduction was substantially revised by Greaney (2023). Current $1.4T represents a moderate estimate; revised lower bound implies ~$500B. [CATEGORY 3: GDP Loss]",
   sourceType: "external",
   sourceRef: "hsieh-moretti2019",
+  sourceUrl: "https://www.aeaweb.org/articles?id=10.1257/mac.20170388",
   confidence: "medium",
   confidenceInterval: [500000000000.0, 2000000000000.0],
   stdError: 300000000000.0,
@@ -1956,11 +2477,14 @@ export const US_GOV_WASTE_HOUSING_ZONING: Parameter = {
 
 export const US_GOV_WASTE_MILITARY_OVERSPEND: Parameter = {
   value: 615000000000.0,
+  parameterName: "US_GOV_WASTE_MILITARY_OVERSPEND",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-us_gov_waste_military_overspend",
   unit: "USD",
   displayName: "Military Overspend",
   description: "US military spending above 'Strict Deterrence' baseline. Current budget ~$900B supports global power projection (750+ bases). Strict Deterrence (nuclear triad $95B, Coast Guard $14B, National Guard $33B, Missile Defense $28B, Cyber $15B, defensive Navy/Air Force $100B) = ~$285B. Delta: $900B - $285B = $615B 'Hegemony Tax'. [CATEGORY 1: Direct Spending]",
   sourceType: "external",
   sourceRef: "political-dysfunction-tax-paper-2025",
+  sourceUrl: "https://manual.warondisease.org/knowledge/appendix/political-dysfunction-tax.html",
   confidence: "medium",
   confidenceInterval: [500000000000.0, 750000000000.0],
   stdError: 75000000000.0,
@@ -1968,11 +2492,14 @@ export const US_GOV_WASTE_MILITARY_OVERSPEND: Parameter = {
 
 export const US_GOV_WASTE_REGULATORY_RED_TAPE: Parameter = {
   value: 580000000000.0,
+  parameterName: "US_GOV_WASTE_REGULATORY_RED_TAPE",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-us_gov_waste_regulatory_red_tape",
   unit: "USD",
   displayName: "Regulatory Red Tape Waste",
   description: "Deadweight loss from US regulatory red tape (procedural friction without safety benefits). Competitive Enterprise Institute estimates total regulatory burden at $2.15T; European studies find red tape costs 0.1-4% of GDP. Conservative estimate: ~2% of US GDP = $580B. [CATEGORY 2: Compliance Burden]",
   sourceType: "external",
   sourceRef: "political-dysfunction-tax-paper-2025",
+  sourceUrl: "https://manual.warondisease.org/knowledge/appendix/political-dysfunction-tax.html",
   confidence: "medium",
   confidenceInterval: [290000000000.0, 1000000000000.0],
   stdError: 200000000000.0,
@@ -1980,11 +2507,14 @@ export const US_GOV_WASTE_REGULATORY_RED_TAPE: Parameter = {
 
 export const US_GOV_WASTE_TARIFFS: Parameter = {
   value: 160000000000.0,
+  parameterName: "US_GOV_WASTE_TARIFFS",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-us_gov_waste_tariffs",
   unit: "USD",
   displayName: "Tariff Cost (GDP Loss)",
   description: "Annual GDP reduction from US tariffs and retaliation. Yale Budget Lab estimates 0.6% smaller GDP in long run, equivalent to $160B annually. Trade barriers reduce efficiency and raise consumer prices. [CATEGORY 3: GDP Loss]",
   sourceType: "external",
   sourceRef: "yalebudgetlab2025",
+  sourceUrl: "https://budgetlab.yale.edu/research/where-we-stand-fiscal-economic-and-distributional-effects-all-us-tariffs-enacted-2025-through-april",
   confidence: "medium",
   confidenceInterval: [90000000000.0, 250000000000.0],
   stdError: 50000000000.0,
@@ -1992,11 +2522,14 @@ export const US_GOV_WASTE_TARIFFS: Parameter = {
 
 export const US_GOV_WASTE_TAX_COMPLIANCE: Parameter = {
   value: 546000000000.0,
+  parameterName: "US_GOV_WASTE_TAX_COMPLIANCE",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-us_gov_waste_tax_compliance",
   unit: "USD",
   displayName: "Tax Compliance Waste",
   description: "Annual cost of US tax code compliance: 7.9 billion hours of lost productivity ($413B) plus $133B in out-of-pocket costs. Equals nearly 2% of GDP. Could be largely eliminated with simplified tax code or return-free filing. [CATEGORY 2: Compliance Burden]",
   sourceType: "external",
   sourceRef: "taxfoundation2024-compliance",
+  sourceUrl: "https://taxfoundation.org/data/all/federal/irs-tax-compliance-costs/",
   confidence: "high",
   confidenceInterval: [450000000000.0, 650000000000.0],
   stdError: 50000000000.0,
@@ -2004,11 +2537,14 @@ export const US_GOV_WASTE_TAX_COMPLIANCE: Parameter = {
 
 export const US_HEART_DISEASE_ANNUAL_COST: Parameter = {
   value: 363000000000.0,
+  parameterName: "US_HEART_DISEASE_ANNUAL_COST",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-us_heart_disease_annual_cost",
   unit: "USD",
   displayName: "US Heart Disease Annual Cost",
   description: "Annual US cost of heart disease and stroke (direct and indirect)",
   sourceType: "external",
   sourceRef: "disease-cost-heart-disease-2100b",
+  sourceUrl: "https://www.internationaljournalofcardiology.com/article/S0167-5273(13)02238-9/abstract",
   confidence: "high",
   confidenceInterval: [309000000000.0, 417000000000.0],
   peerReviewed: true,
@@ -2016,11 +2552,14 @@ export const US_HEART_DISEASE_ANNUAL_COST: Parameter = {
 
 export const US_LIFE_EXPECTANCY_1880: Parameter = {
   value: 39.41,
+  parameterName: "US_LIFE_EXPECTANCY_1880",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-us_life_expectancy_1880",
   unit: "years",
   displayName: "US Life Expectancy (1880)",
   description: "US life expectancy in 1880 (closest available data point to 1883).",
   sourceType: "external",
   sourceRef: "life-expectancy-increase-pre-1962",
+  sourceUrl: "https://manual.warondisease.org/knowledge/data/us-life-expectancy-fda-budget-1543-2019.csv",
   confidence: "high",
   confidenceInterval: [38.9, 39.9],
   peerReviewed: true,
@@ -2028,11 +2567,14 @@ export const US_LIFE_EXPECTANCY_1880: Parameter = {
 
 export const US_LIFE_EXPECTANCY_1962: Parameter = {
   value: 70.064,
+  parameterName: "US_LIFE_EXPECTANCY_1962",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-us_life_expectancy_1962",
   unit: "years",
   displayName: "US Life Expectancy (1962)",
   description: "US life expectancy in 1962 (year of Kefauver-Harris Amendments).",
   sourceType: "external",
   sourceRef: "life-expectancy-increase-pre-1962",
+  sourceUrl: "https://manual.warondisease.org/knowledge/data/us-life-expectancy-fda-budget-1543-2019.csv",
   confidence: "high",
   confidenceInterval: [69.8, 70.3],
   peerReviewed: true,
@@ -2040,11 +2582,14 @@ export const US_LIFE_EXPECTANCY_1962: Parameter = {
 
 export const US_LIFE_EXPECTANCY_2019: Parameter = {
   value: 78.862,
+  parameterName: "US_LIFE_EXPECTANCY_2019",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-us_life_expectancy_2019",
   unit: "years",
   displayName: "US Life Expectancy (2019)",
   description: "US life expectancy in 2019 (latest available data).",
   sourceType: "external",
   sourceRef: "post-1962-life-expectancy-slowdown",
+  sourceUrl: "https://manual.warondisease.org/knowledge/data/us-life-expectancy-fda-budget-1543-2019.csv",
   confidence: "high",
   confidenceInterval: [78.6, 79.1],
   peerReviewed: true,
@@ -2052,156 +2597,201 @@ export const US_LIFE_EXPECTANCY_2019: Parameter = {
 
 export const US_LIFE_EXPECTANCY_2023: Parameter = {
   value: 77.5,
+  parameterName: "US_LIFE_EXPECTANCY_2023",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-us_life_expectancy_2023",
   unit: "years",
   displayName: "US Life Expectancy",
   description: "US life expectancy at birth (2023). Lowest among high-income OECD countries despite highest healthcare spending.",
   sourceType: "external",
   sourceRef: "cdc-life-expectancy",
+  sourceUrl: "https://www.cdc.gov/nchs/fastats/life-expectancy.htm",
   confidence: "high",
 };
 
 export const US_MEDIAN_HOUSEHOLD_INCOME_2023: Parameter = {
   value: 80610.0,
+  parameterName: "US_MEDIAN_HOUSEHOLD_INCOME_2023",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-us_median_household_income_2023",
   unit: "USD",
   displayName: "US Median Household Income",
   description: "US median household income (2023). High in absolute terms but adjusted for healthcare costs and inequality, purchasing power is lower than peers.",
   sourceType: "external",
   sourceRef: "census-income-2023",
+  sourceUrl: "https://www.census.gov/library/publications/2024/demo/p60-282.html",
   confidence: "high",
 };
 
 export const US_MENTAL_HEALTH_COST_ANNUAL: Parameter = {
   value: 350000000000.0,
+  parameterName: "US_MENTAL_HEALTH_COST_ANNUAL",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-us_mental_health_cost_annual",
   unit: "USD/year",
   displayName: "US Mental Health Costs",
   description: "US mental health costs (treatment + productivity loss)",
   sourceType: "external",
   sourceRef: "mental-health-burden",
+  sourceUrl: "https://www.who.int/news/item/28-09-2001-the-world-health-report-2001-mental-disorders-affect-one-in-four-people",
   confidence: "high",
   confidenceInterval: [260000000000.0, 450000000000.0],
 };
 
 export const US_MILITARY_SPENDING_1939_ANNUAL_2024USD: Parameter = {
   value: 29000000000.0,
+  parameterName: "US_MILITARY_SPENDING_1939_ANNUAL_2024USD",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-us_military_spending_1939_annual_2024usd",
   unit: "USD",
   displayName: "US Military Spending in 1939 (Constant 2024 Dollars)",
   description: "US military spending in 1939 (pre-WW2 baseline) in constant 2024 dollars",
   sourceType: "external",
   sourceRef: "us-military-spending-historical-constant-dollars",
+  sourceUrl: "https://www.davemanuel.com/us-defense-spending-history-military-budget-data.php",
   confidence: "high",
 };
 
 export const US_MILITARY_SPENDING_1945_PEAK_ANNUAL_2024USD: Parameter = {
   value: 1420000000000.0,
+  parameterName: "US_MILITARY_SPENDING_1945_PEAK_ANNUAL_2024USD",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-us_military_spending_1945_peak_annual_2024usd",
   unit: "USD",
   displayName: "US Military Spending at WW2 Peak (Constant 2024 Dollars)",
   description: "US military spending at WW2 peak (1945) in constant 2024 dollars",
   sourceType: "external",
   sourceRef: "us-military-spending-historical-constant-dollars",
+  sourceUrl: "https://www.davemanuel.com/us-defense-spending-history-military-budget-data.php",
   confidence: "high",
 };
 
 export const US_MILITARY_SPENDING_1947_ANNUAL_2024USD: Parameter = {
   value: 176000000000.0,
+  parameterName: "US_MILITARY_SPENDING_1947_ANNUAL_2024USD",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-us_military_spending_1947_annual_2024usd",
   unit: "USD",
   displayName: "US Military Spending in 1947 (Constant 2024 Dollars)",
   description: "US military spending in 1947 (post-WW2 trough, 2 years after peak) in constant 2024 dollars",
   sourceType: "external",
   sourceRef: "us-military-spending-historical-constant-dollars",
+  sourceUrl: "https://www.davemanuel.com/us-defense-spending-history-military-budget-data.php",
   confidence: "high",
 };
 
 export const US_MILITARY_SPENDING_2024_ANNUAL: Parameter = {
   value: 886000000000.0,
+  parameterName: "US_MILITARY_SPENDING_2024_ANNUAL",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-us_military_spending_2024_annual",
   unit: "USD",
   displayName: "US Military Spending in 2024",
   description: "US military spending in 2024 in constant dollars",
   sourceType: "external",
   sourceRef: "us-military-spending-historical-constant-dollars",
+  sourceUrl: "https://www.davemanuel.com/us-defense-spending-history-military-budget-data.php",
   confidence: "high",
 };
 
 export const US_MILITARY_SPENDING_PCT_GDP: Parameter = {
   value: 0.035,
+  parameterName: "US_MILITARY_SPENDING_PCT_GDP",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-us_military_spending_pct_gdp",
   unit: "rate",
   displayName: "US Military Spending as Percentage of GDP",
   description: "US military spending as percentage of GDP (2024)",
   sourceType: "external",
   sourceRef: "us-military-budget-3-5-pct-gdp",
+  sourceUrl: "https://www.statista.com/statistics/262742/countries-with-the-highest-military-spending/",
   confidence: "high",
 };
 
 export const US_POPULATION_2024: Parameter = {
   value: 335000000.0,
+  parameterName: "US_POPULATION_2024",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-us_population_2024",
   unit: "people",
   displayName: "US Population in 2024",
   description: "US population in 2024",
   sourceType: "external",
   sourceRef: "us-voter-population",
+  sourceUrl: "https://www.census.gov/newsroom/press-releases/2025/2024-presidential-election-voting-registration-tables.html",
   confidence: "high",
   confidenceInterval: [330000000.0, 340000000.0],
 };
 
 export const US_SENATORS_FOR_TREATY: Parameter = {
   value: 67.0,
+  parameterName: "US_SENATORS_FOR_TREATY",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-us_senators_for_treaty",
   unit: "senators",
   displayName: "Senators for Treaty Ratification",
   description: "Senators needed for treaty ratification (2/3 majority per Article II, Section 2)",
   sourceType: "external",
   sourceRef: "us-senate-treaties",
+  sourceUrl: "https://www.senate.gov/about/powers-procedures/treaties.htm",
   confidence: "high",
 };
 
 export const US_TOTAL_FEDERAL_CAMPAIGN_SPENDING_2024: Parameter = {
   value: 20000000000.0,
+  parameterName: "US_TOTAL_FEDERAL_CAMPAIGN_SPENDING_2024",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-us_total_federal_campaign_spending_2024",
   unit: "USD",
   displayName: "US Federal Campaign Spending (2024)",
   description: "Total US federal election spending in 2024 cycle including presidential, congressional, party committees, and PACs. Source: FEC Statistical Summary 2024.",
   sourceType: "external",
   sourceRef: "fec-2024-summary",
+  sourceUrl: "https://www.fec.gov/updates/statistical-summary-of-24-month-campaign-activity-of-the-2023-2024-election-cycle/",
   confidence: "high",
   confidenceInterval: [18000000000.0, 22000000000.0],
 };
 
 export const US_TOTAL_LOBBYING_ANNUAL: Parameter = {
   value: 4400000000.0,
+  parameterName: "US_TOTAL_LOBBYING_ANNUAL",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-us_total_lobbying_annual",
   unit: "USD",
   displayName: "US Total Lobbying (2024)",
   description: "Total US federal lobbying expenditure in 2024 (record year). Source: OpenSecrets.",
   sourceType: "external",
   sourceRef: "opensecrets-lobbying-2024",
+  sourceUrl: "https://www.opensecrets.org/news/2025/02/federal-lobbying-set-new-record-in-2024/",
   confidence: "high",
   confidenceInterval: [3740000000.0, 5060000000.0],
 };
 
 export const US_VOTE_DECISIVE_PROBABILITY: Parameter = {
   value: 1.6666666666666667e-08,
+  parameterName: "US_VOTE_DECISIVE_PROBABILITY",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-us_vote_decisive_probability",
   unit: "probability",
   displayName: "Probability of Decisive Vote (US)",
   description: "Probability of a single vote being decisive in a US presidential election. Gelman, Silver, and Edlin (2012) estimate roughly 1 in 60 million on average, varying by state from 1 in 10 million (swing states) to 1 in 1 billion (safe states).",
   sourceType: "external",
   sourceRef: "odds-of-decisive-vote",
+  sourceUrl: "https://sites.stat.columbia.edu/gelman/research/published/probdecisive2.pdf",
   confidence: "high",
 };
 
 export const VALLEY_OF_DEATH_ATTRITION_PCT: Parameter = {
   value: 0.4,
+  parameterName: "VALLEY_OF_DEATH_ATTRITION_PCT",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-valley_of_death_attrition_pct",
   unit: "percentage",
   displayName: "Valley of Death Attrition Rate",
   description: "Percentage of promising Phase 1-passed compounds abandoned primarily due to Phase 2/3 cost barriers (not scientific failure). Conservative estimate: many rare disease, natural compound, and low-margin drugs never tested.",
   sourceType: "external",
   sourceRef: "valley-of-death-attrition",
+  sourceUrl: "https://pmc.ncbi.nlm.nih.gov/articles/PMC3324971/",
   confidence: "medium",
   confidenceInterval: [0.25, 0.55],
 };
 
 export const VALUE_OF_STATISTICAL_LIFE: Parameter = {
   value: 10000000.0,
+  parameterName: "VALUE_OF_STATISTICAL_LIFE",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-value_of_statistical_life",
   unit: "USD",
   displayName: "Value of Statistical Life",
   description: "Value of Statistical Life (conservative estimate)",
   sourceType: "external",
   sourceRef: "dot-vsl-13-6m",
+  sourceUrl: "https://www.transportation.gov/office-policy/transportation-policy/revised-departmental-guidance-on-valuation-of-a-statistical-life-in-economic-analysis",
   confidence: "high",
   confidenceInterval: [5000000.0, 15000000.0],
   stdError: 3000000.0,
@@ -2209,6 +2799,8 @@ export const VALUE_OF_STATISTICAL_LIFE: Parameter = {
 
 export const VENTURE_GROSS_RETURN: Parameter = {
   value: 0.17,
+  parameterName: "VENTURE_GROSS_RETURN",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-venture_gross_return",
   unit: "percent",
   displayName: "Venture Capital Gross Return",
   description: "Venture capital / private equity gross return (before 2-and-20 fees). Cambridge Associates US VC index 25-year pooled gross IRR. The wishocratic fund charges zero fees, so gross return is the correct baseline. Lockup premium is already embedded: VC/PE IS illiquid.",
@@ -2219,51 +2811,66 @@ export const VENTURE_GROSS_RETURN: Parameter = {
 
 export const VITAMIN_A_COST_PER_DALY: Parameter = {
   value: 37.0,
+  parameterName: "VITAMIN_A_COST_PER_DALY",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-vitamin_a_cost_per_daly",
   unit: "USD/DALY",
   displayName: "Vitamin A Supplementation Cost per DALY",
   description: "Cost per DALY for vitamin A supplementation programs (India: $23-50; Africa: $40-255; wide variation by region and baseline VAD prevalence). Using India midpoint as conservative estimate.",
   sourceType: "external",
   sourceRef: "vitamin-a-cost-per-daly",
+  sourceUrl: "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0012046",
   confidence: "medium",
 };
 
 export const WATER_FLUORIDATION_ANNUAL_BENEFIT: Parameter = {
   value: 800000000.0,
+  parameterName: "WATER_FLUORIDATION_ANNUAL_BENEFIT",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-water_fluoridation_annual_benefit",
   unit: "USD/year",
   displayName: "Estimated Annual Global Economic Benefit from Water Fluoridation Programs",
   description: "Estimated annual global economic benefit from water fluoridation programs",
   sourceType: "external",
   sourceRef: "clean-water-sanitation-roi",
+  sourceUrl: "https://news.un.org/en/story/2014/11/484032",
   confidence: "high",
 };
 
 export const WATER_FLUORIDATION_ROI: Parameter = {
   value: 23.0,
+  parameterName: "WATER_FLUORIDATION_ROI",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-water_fluoridation_roi",
   unit: "ratio",
   displayName: "Return on Investment from Water Fluoridation Programs",
   description: "Return on investment from water fluoridation programs",
   sourceType: "external",
   sourceRef: "clean-water-sanitation-roi",
+  sourceUrl: "https://news.un.org/en/story/2014/11/484032",
   confidence: "high",
 };
 
 export const WHO_QALY_THRESHOLD_COST_EFFECTIVE: Parameter = {
   value: 50000.0,
+  parameterName: "WHO_QALY_THRESHOLD_COST_EFFECTIVE",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-who_qaly_threshold_cost_effective",
   unit: "USD/QALY",
   displayName: "Cost-Effectiveness Threshold ($50,000/QALY)",
   description: "Cost-effectiveness threshold widely used in US health economics ($50,000/QALY, from 1980s dialysis costs)",
   sourceType: "external",
   sourceRef: "who-cost-effectiveness-threshold",
+  sourceUrl: "https://pmc.ncbi.nlm.nih.gov/articles/PMC5193154/",
   confidence: "high",
 };
 
 export const WORKFORCE_WITH_PRODUCTIVITY_LOSS: Parameter = {
   value: 0.28,
+  parameterName: "WORKFORCE_WITH_PRODUCTIVITY_LOSS",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-workforce_with_productivity_loss",
   unit: "rate",
   displayName: "Percentage of Workforce Experiencing Productivity Loss from Chronic Illness",
   description: "Percentage of workforce experiencing productivity loss from chronic illness (28%)",
   sourceType: "external",
   sourceRef: "chronic-illness-workforce-productivity-loss",
+  sourceUrl: "https://www.ibiweb.org/resources/chronic-conditions-in-the-us-workforce-prevalence-trends-and-productivity-impacts",
   confidence: "high",
 };
 
@@ -2273,6 +2880,8 @@ export const WORKFORCE_WITH_PRODUCTIVITY_LOSS: Parameter = {
 
 export const ADDITIONAL_DRUGS_FROM_COST_ELIMINATION: Parameter = {
   value: 20.0,
+  parameterName: "ADDITIONAL_DRUGS_FROM_COST_ELIMINATION",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-additional_drugs_from_cost_elimination",
   unit: "drugs/year",
   displayName: "Additional Drug Approvals from Cost Elimination",
   description: "Additional drug approvals per year when Phase 2/3 cost barrier eliminated. Assumes valley-of-death compounds (abandoned due to cost) would have similar success rate to funded compounds.",
@@ -2284,6 +2893,8 @@ export const ADDITIONAL_DRUGS_FROM_COST_ELIMINATION: Parameter = {
 
 export const CELL_THERAPY_DISEASE_COMBINATIONS: Parameter = {
   value: 500000.0,
+  parameterName: "CELL_THERAPY_DISEASE_COMBINATIONS",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-cell_therapy_disease_combinations",
   unit: "combinations",
   displayName: "Cell Therapy Combinations",
   description: "Cell therapy approach-disease combinations",
@@ -2295,6 +2906,8 @@ export const CELL_THERAPY_DISEASE_COMBINATIONS: Parameter = {
 
 export const CHAIN_ENGAGE_PROBABILITY: Parameter = {
   value: 0.09999999999999998,
+  parameterName: "CHAIN_ENGAGE_PROBABILITY",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-chain_engage_probability",
   unit: "rate",
   displayName: "Engagement Rate",
   description: "Probability someone engages with the idea (1 - dismissal rate)",
@@ -2306,6 +2919,8 @@ export const CHAIN_ENGAGE_PROBABILITY: Parameter = {
 
 export const CHAIN_EXPECTED_ENGAGED_IMPLEMENTERS: Parameter = {
   value: 3.478910443764937,
+  parameterName: "CHAIN_EXPECTED_ENGAGED_IMPLEMENTERS",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-chain_expected_engaged_implementers",
   unit: "people",
   displayName: "Expected Engaged Implementers",
   description: "Expected number of implementers who engage (orbit reached x engagement rate x implementer count)",
@@ -2317,6 +2932,8 @@ export const CHAIN_EXPECTED_ENGAGED_IMPLEMENTERS: Parameter = {
 
 export const CHAIN_IMPLEMENTER_COUNT: Parameter = {
   value: 2976.0,
+  parameterName: "CHAIN_IMPLEMENTER_COUNT",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-chain_implementer_count",
   unit: "people",
   displayName: "Potential Implementers",
   description: "Total potential implementers (billionaires + world leaders)",
@@ -2328,6 +2945,8 @@ export const CHAIN_IMPLEMENTER_COUNT: Parameter = {
 
 export const CHAIN_P_AT_LEAST_ONE_ENGAGES: Parameter = {
   value: 0.9692217015578317,
+  parameterName: "CHAIN_P_AT_LEAST_ONE_ENGAGES",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-chain_p_at_least_one_engages",
   unit: "percent",
   displayName: "P(At Least One Engages)",
   description: "Probability at least one implementer engages (information diffusion only; dominant strategy proof handles action)",
@@ -2339,6 +2958,8 @@ export const CHAIN_P_AT_LEAST_ONE_ENGAGES: Parameter = {
 
 export const CHAIN_P_ENCOUNTER_DIRECT_10YR: Parameter = {
   value: 0.011689887243833796,
+  parameterName: "CHAIN_P_ENCOUNTER_DIRECT_10YR",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-chain_p_encounter_direct_10yr",
   unit: "rate",
   displayName: "Implementer Orbit Reach Probability",
   description: "Probability a given implementer's information orbit is reached by the content cascade",
@@ -2350,6 +2971,8 @@ export const CHAIN_P_ENCOUNTER_DIRECT_10YR: Parameter = {
 
 export const CHAIN_P_NO_IMPLEMENTER_ENGAGES: Parameter = {
   value: 0.030778298442168252,
+  parameterName: "CHAIN_P_NO_IMPLEMENTER_ENGAGES",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-chain_p_no_implementer_engages",
   unit: "rate",
   displayName: "P(No Implementer Engages)",
   description: "Probability that NO implementer engages (all orbits missed or all dismiss)",
@@ -2361,11 +2984,14 @@ export const CHAIN_P_NO_IMPLEMENTER_ENGAGES: Parameter = {
 
 export const CHRONIC_DISEASE_TREATED_PATIENTS_ANNUAL: Parameter = {
   value: 981917808.2191781,
+  parameterName: "CHRONIC_DISEASE_TREATED_PATIENTS_ANNUAL",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-chronic_disease_treated_patients_annual",
   unit: "people",
   displayName: "Annual Chronic Disease Patients Treated",
   description: "Estimated unique patients receiving chronic disease treatment annually. Derived from IQVIA days of therapy (1.28T) divided by 365 days divided by 2.5 average medications per patient times 70% post-1962 drugs.",
   sourceType: "calculated",
   sourceRef: "iqvia-global-medicines-2024",
+  sourceUrl: "https://www.iqvia.com/insights/the-iqvia-institute/reports-and-publications/reports/the-global-use-of-medicines-2024-outlook-to-2028",
   confidence: "low",
   formula: "GLOBAL_CHRONIC_THERAPY_DAYS ÷ 365 ÷ 2.5 × 0.70",
   latex: "\\begin{gathered}\nN_{treated} \\\\\n= DOT_{chronic} \\times 0.000767 \\\\\n= 1.28T \\times 0.000767 \\\\\n= 982M\n\\end{gathered}",
@@ -2373,6 +2999,8 @@ export const CHRONIC_DISEASE_TREATED_PATIENTS_ANNUAL: Parameter = {
 
 export const CLINICAL_TRIAL_COST_PER_APPROVED_DRUG: Parameter = {
   value: 1200000000.0,
+  parameterName: "CLINICAL_TRIAL_COST_PER_APPROVED_DRUG",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-clinical_trial_cost_per_approved_drug",
   unit: "USD",
   displayName: "Clinical Trial Cost Per Approved Drug",
   description: "Annual clinical trial spending per approved drug (trials only, excluding other R&D costs like discovery, preclinical, manufacturing)",
@@ -2384,6 +3012,8 @@ export const CLINICAL_TRIAL_COST_PER_APPROVED_DRUG: Parameter = {
 
 export const CLINICAL_TRIAL_COST_PER_PARTICIPANT_ANNUAL: Parameter = {
   value: 31578.947368421053,
+  parameterName: "CLINICAL_TRIAL_COST_PER_PARTICIPANT_ANNUAL",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-clinical_trial_cost_per_participant_annual",
   unit: "USD",
   displayName: "Annual Cost Per Clinical Trial Participant",
   description: "Average annual cost per clinical trial participant (total spending ÷ participants)",
@@ -2395,6 +3025,8 @@ export const CLINICAL_TRIAL_COST_PER_PARTICIPANT_ANNUAL: Parameter = {
 
 export const COMBINATION_THERAPY_DISEASE_SPACE: Parameter = {
   value: 45120250000.0,
+  parameterName: "COMBINATION_THERAPY_DISEASE_SPACE",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-combination_therapy_disease_space",
   unit: "combinations",
   displayName: "Combination Therapy Space",
   description: "Total combination therapy space (pairwise drug combinations × diseases). Standard in oncology, HIV, cardiology.",
@@ -2406,6 +3038,8 @@ export const COMBINATION_THERAPY_DISEASE_SPACE: Parameter = {
 
 export const COMBINATION_THERAPY_PAIRS: Parameter = {
   value: 45120250.0,
+  parameterName: "COMBINATION_THERAPY_PAIRS",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-combination_therapy_pairs",
   unit: "combinations",
   displayName: "Pairwise Drug Combinations",
   description: "Unique pairwise drug combinations from known safe compounds (n choose 2)",
@@ -2416,6 +3050,8 @@ export const COMBINATION_THERAPY_PAIRS: Parameter = {
 
 export const CONTRIBUTION_DALYS_PER_PCT_POINT: Parameter = {
   value: 5652436733.509989,
+  parameterName: "CONTRIBUTION_DALYS_PER_PCT_POINT",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-contribution_dalys_per_pct_point",
   unit: "DALYs",
   displayName: "DALYs Averted per Percentage Point",
   description: "DALYs averted per percentage point of implementation probability shift. One percent of total DALYs from eliminating trial capacity bottleneck and efficacy lag.",
@@ -2427,6 +3063,8 @@ export const CONTRIBUTION_DALYS_PER_PCT_POINT: Parameter = {
 
 export const CONTRIBUTION_EV_PER_PCT_POINT_TREATY: Parameter = {
   value: 147126.35771127904,
+  parameterName: "CONTRIBUTION_EV_PER_PCT_POINT_TREATY",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-contribution_ev_per_pct_point_treaty",
   unit: "USD",
   displayName: "Contribution EV per Percentage Point (Treaty)",
   description: "Personal expected value per percentage point of implementation probability shift under Treaty Trajectory. One percent of the per-capita lifetime income gain.",
@@ -2438,6 +3076,8 @@ export const CONTRIBUTION_EV_PER_PCT_POINT_TREATY: Parameter = {
 
 export const CONTRIBUTION_EV_PER_PCT_POINT_TREATY_BLEND: Parameter = {
   value: 156949.2947490749,
+  parameterName: "CONTRIBUTION_EV_PER_PCT_POINT_TREATY_BLEND",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-contribution_ev_per_pct_point_treaty_blend",
   unit: "USD",
   displayName: "Contribution EV per Percentage Point (Treaty, Blended)",
   description: "Blended personal expected value per percentage point of implementation probability shift under Treaty Trajectory.",
@@ -2449,6 +3089,8 @@ export const CONTRIBUTION_EV_PER_PCT_POINT_TREATY_BLEND: Parameter = {
 
 export const CONTRIBUTION_EV_PER_PCT_POINT_WISHONIA: Parameter = {
   value: 519483.9283706183,
+  parameterName: "CONTRIBUTION_EV_PER_PCT_POINT_WISHONIA",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-contribution_ev_per_pct_point_wishonia",
   unit: "USD",
   displayName: "Contribution EV per Percentage Point (Wishonia)",
   description: "Personal expected value per percentage point of implementation probability shift under Wishonia Trajectory. One percent of the per-capita lifetime income gain.",
@@ -2460,6 +3102,8 @@ export const CONTRIBUTION_EV_PER_PCT_POINT_WISHONIA: Parameter = {
 
 export const CONTRIBUTION_EV_PER_PCT_POINT_WISHONIA_BLEND: Parameter = {
   value: 543033.9283706183,
+  parameterName: "CONTRIBUTION_EV_PER_PCT_POINT_WISHONIA_BLEND",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-contribution_ev_per_pct_point_wishonia_blend",
   unit: "USD",
   displayName: "Contribution EV per Percentage Point (Wishonia, Blended)",
   description: "Blended personal expected value per percentage point of implementation probability shift under Wishonia Trajectory.",
@@ -2471,6 +3115,8 @@ export const CONTRIBUTION_EV_PER_PCT_POINT_WISHONIA_BLEND: Parameter = {
 
 export const CONTRIBUTION_LIVES_SAVED_PER_PCT_POINT: Parameter = {
   value: 107455177.4859972,
+  parameterName: "CONTRIBUTION_LIVES_SAVED_PER_PCT_POINT",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-contribution_lives_saved_per_pct_point",
   unit: "lives",
   displayName: "Lives Saved per Percentage Point",
   description: "Lives saved per percentage point of implementation probability shift. One percent of total lives saved from eliminating trial capacity bottleneck and efficacy lag.",
@@ -2482,6 +3128,8 @@ export const CONTRIBUTION_LIVES_SAVED_PER_PCT_POINT: Parameter = {
 
 export const CONTRIBUTION_SUFFERING_HOURS_PER_PCT_POINT: Parameter = {
   value: 19310984856363.527,
+  parameterName: "CONTRIBUTION_SUFFERING_HOURS_PER_PCT_POINT",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-contribution_suffering_hours_per_pct_point",
   unit: "hours",
   displayName: "Suffering Hours Prevented per Percentage Point",
   description: "Suffering hours prevented per percentage point of implementation probability shift. One percent of total suffering hours from eliminating trial capacity bottleneck and efficacy lag.",
@@ -2493,6 +3141,8 @@ export const CONTRIBUTION_SUFFERING_HOURS_PER_PCT_POINT: Parameter = {
 
 export const CONVENTIONAL_RETIREMENT_HORIZON_MULTIPLE: Parameter = {
   value: 2.5718410065633592,
+  parameterName: "CONVENTIONAL_RETIREMENT_HORIZON_MULTIPLE",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-conventional_retirement_horizon_multiple",
   unit: "x",
   displayName: "Conventional Retirement Horizon Multiple",
   description: "Compound multiple for conventional retirement investing over the PRIZE pool resolution horizon (tied to the destructive economy 50% threshold year).",
@@ -2504,6 +3154,8 @@ export const CONVENTIONAL_RETIREMENT_HORIZON_MULTIPLE: Parameter = {
 
 export const CURRENT_COMBINATION_EXPLORATION_YEARS: Parameter = {
   value: 13672803.030303031,
+  parameterName: "CURRENT_COMBINATION_EXPLORATION_YEARS",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-current_combination_exploration_years",
   unit: "years",
   displayName: "Combination Therapy Exploration Time (Current)",
   description: "Years to test all pairwise drug combinations at current trial capacity. Combination therapy is standard in oncology, HIV, cardiology.",
@@ -2515,6 +3167,8 @@ export const CURRENT_COMBINATION_EXPLORATION_YEARS: Parameter = {
 
 export const CURRENT_KNOWN_SAFE_EXPLORATION_YEARS: Parameter = {
   value: 2878.787878787879,
+  parameterName: "CURRENT_KNOWN_SAFE_EXPLORATION_YEARS",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-current_known_safe_exploration_years",
   unit: "years",
   displayName: "Known Safe Exploration Time (Current)",
   description: "Years to test all known safe drug-disease combinations at current global trial capacity",
@@ -2526,11 +3180,14 @@ export const CURRENT_KNOWN_SAFE_EXPLORATION_YEARS: Parameter = {
 
 export const CURRENT_PATIENT_PARTICIPATION_RATE: Parameter = {
   value: 0.0007916666666666666,
+  parameterName: "CURRENT_PATIENT_PARTICIPATION_RATE",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-current_patient_participation_rate",
   unit: "rate",
   displayName: "Current Patient Participation Rate in Clinical Trials",
   description: "Current patient participation rate in clinical trials (0.08% = 1.9M participants / 2.4B disease patients)",
   sourceType: "calculated",
   sourceRef: "clinical-trial-patient-participation-rate",
+  sourceUrl: "https://www.fightcancer.org/policy-resources/barriers-patient-enrollment-therapeutic-clinical-trials-cancer",
   confidence: "high",
   formula: "CURRENT_TRIAL_SLOTS / DISEASE_PATIENTS",
   latex: "\\begin{gathered}\nRate_{part} \\\\\n= \\frac{Slots_{curr}}{N_{patients}} \\\\\n= \\frac{1.9M}{2.4B} \\\\\n= 0.0792\\%\n\\end{gathered}",
@@ -2538,6 +3195,8 @@ export const CURRENT_PATIENT_PARTICIPATION_RATE: Parameter = {
 
 export const CURRENT_TOTAL_EXPLORATION_YEARS: Parameter = {
   value: 15606.060606060606,
+  parameterName: "CURRENT_TOTAL_EXPLORATION_YEARS",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-current_total_exploration_years",
   unit: "years",
   displayName: "Total Exploration Time (Current)",
   description: "Years to test all therapeutic combinations (known safe + emerging modalities) at current capacity",
@@ -2549,6 +3208,8 @@ export const CURRENT_TOTAL_EXPLORATION_YEARS: Parameter = {
 
 export const CURRENT_TRAJECTORY_AVG_INCOME_YEAR_15: Parameter = {
   value: 18713.96507272838,
+  parameterName: "CURRENT_TRAJECTORY_AVG_INCOME_YEAR_15",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-current_trajectory_avg_income_year_15",
   unit: "USD",
   displayName: "Current Trajectory Average Income at Year 15",
   description: "Average income (GDP per capita) at year 15 under current trajectory.",
@@ -2560,6 +3221,8 @@ export const CURRENT_TRAJECTORY_AVG_INCOME_YEAR_15: Parameter = {
 
 export const CURRENT_TRAJECTORY_AVG_INCOME_YEAR_20: Parameter = {
   value: 20482.705503629928,
+  parameterName: "CURRENT_TRAJECTORY_AVG_INCOME_YEAR_20",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-current_trajectory_avg_income_year_20",
   unit: "USD",
   displayName: "Current Trajectory Average Income at Year 20",
   description: "Average income (GDP per capita) at year 20 under current trajectory trajectory.",
@@ -2571,6 +3234,8 @@ export const CURRENT_TRAJECTORY_AVG_INCOME_YEAR_20: Parameter = {
 
 export const CURRENT_TRAJECTORY_CUMULATIVE_LIFETIME_INCOME: Parameter = {
   value: 1338759.1598336913,
+  parameterName: "CURRENT_TRAJECTORY_CUMULATIVE_LIFETIME_INCOME",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-current_trajectory_cumulative_lifetime_income",
   unit: "USD",
   displayName: "Current Trajectory Cumulative Lifetime Income (Per Capita)",
   description: "Cumulative per-capita income over an average remaining lifespan under current trajectory baseline trajectory. Uses 2.5% baseline growth for all years.",
@@ -2582,6 +3247,8 @@ export const CURRENT_TRAJECTORY_CUMULATIVE_LIFETIME_INCOME: Parameter = {
 
 export const CURRENT_TRAJECTORY_GDP_YEAR_15: Parameter = {
   value: 166554289147282.6,
+  parameterName: "CURRENT_TRAJECTORY_GDP_YEAR_15",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-current_trajectory_gdp_year_15",
   unit: "USD",
   displayName: "Current Trajectory GDP at Year 15",
   description: "Global GDP at year 15 under status-quo current trajectory growth.",
@@ -2593,6 +3260,8 @@ export const CURRENT_TRAJECTORY_GDP_YEAR_15: Parameter = {
 
 export const CURRENT_TRAJECTORY_GDP_YEAR_20: Parameter = {
   value: 188440890633395.34,
+  parameterName: "CURRENT_TRAJECTORY_GDP_YEAR_20",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-current_trajectory_gdp_year_20",
   unit: "USD",
   displayName: "Current Trajectory GDP at Year 20",
   description: "Global GDP at year 20 under status-quo current trajectory growth.",
@@ -2604,6 +3273,8 @@ export const CURRENT_TRAJECTORY_GDP_YEAR_20: Parameter = {
 
 export const DESTRUCTIVE_ECONOMY_25PCT_YEAR: Parameter = {
   value: 2033.0,
+  parameterName: "DESTRUCTIVE_ECONOMY_25PCT_YEAR",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-destructive_economy_25pct_year",
   unit: "year",
   displayName: "Year Destructive Economy Reaches 25% of GDP",
   description: "Calendar year when the destructive economy (military + cybercrime) reaches 25% of GDP at current growth rates. Historical precedent suggests societies become unstable when extraction rates exceed 20-30% of economic output.",
@@ -2615,6 +3286,8 @@ export const DESTRUCTIVE_ECONOMY_25PCT_YEAR: Parameter = {
 
 export const DESTRUCTIVE_ECONOMY_35PCT_YEAR: Parameter = {
   value: 2037.0,
+  parameterName: "DESTRUCTIVE_ECONOMY_35PCT_YEAR",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-destructive_economy_35pct_year",
   unit: "year",
   displayName: "Year Destructive Economy Reaches 35% of GDP (Terminal Parasitic Load)",
   description: "Calendar year when the destructive economy (military + cybercrime) reaches 35% of GDP at current growth rates. Historical evidence from the Soviet Union, Yugoslavia, Argentina, and Zimbabwe shows that total extractive burdens of 35-45% consistently trigger self-reinforcing death spirals. This is the empirically-derived terminal parasitic load threshold.",
@@ -2626,6 +3299,8 @@ export const DESTRUCTIVE_ECONOMY_35PCT_YEAR: Parameter = {
 
 export const DESTRUCTIVE_ECONOMY_50PCT_YEAR: Parameter = {
   value: 2040.0,
+  parameterName: "DESTRUCTIVE_ECONOMY_50PCT_YEAR",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-destructive_economy_50pct_year",
   unit: "year",
   displayName: "Year Destructive Economy Reaches 50% of GDP",
   description: "Calendar year when the destructive economy (military + cybercrime) reaches 50% of GDP at current growth rates. At that point, half of all economic activity is destructive, so stealing starts to beat creating for individuals, firms, and states because whatever gets created gets looted fast enough to kill productive investment.",
@@ -2637,6 +3312,8 @@ export const DESTRUCTIVE_ECONOMY_50PCT_YEAR: Parameter = {
 
 export const DFDA_ANNUAL_OPEX: Parameter = {
   value: 40000000.0,
+  parameterName: "DFDA_ANNUAL_OPEX",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-dfda_annual_opex",
   unit: "USD/year",
   displayName: "Total Annual Decentralized Framework for Drug Assessment Operational Costs",
   description: "Total annual Decentralized Framework for Drug Assessment operational costs (sum of all components: platform + staff + infra + regulatory + community)",
@@ -2648,6 +3325,8 @@ export const DFDA_ANNUAL_OPEX: Parameter = {
 
 export const DFDA_BENEFIT_RD_ONLY_ANNUAL: Parameter = {
   value: 58640487804.878044,
+  parameterName: "DFDA_BENEFIT_RD_ONLY_ANNUAL",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-dfda_benefit_rd_only_annual",
   unit: "USD/year",
   displayName: "Decentralized Framework for Drug Assessment Annual Benefit: R&D Savings",
   description: "Annual Decentralized Framework for Drug Assessment benefit from R&D savings (trial cost reduction, secondary component)",
@@ -2659,6 +3338,8 @@ export const DFDA_BENEFIT_RD_ONLY_ANNUAL: Parameter = {
 
 export const DFDA_COMBINED_TREATMENT_SPEEDUP_MULTIPLIER: Parameter = {
   value: 17.259078805733385,
+  parameterName: "DFDA_COMBINED_TREATMENT_SPEEDUP_MULTIPLIER",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-dfda_combined_treatment_speedup_multiplier",
   unit: "multiplier",
   displayName: "dFDA Combined Treatment Discovery Speedup Multiplier",
   description: "Combined speedup factor for treatment discovery from dFDA. Trial capacity multiplier times valley of death rescue multiplier. Diseases that would take T years to get first treatment now take T/speedup years.",
@@ -2670,6 +3351,8 @@ export const DFDA_COMBINED_TREATMENT_SPEEDUP_MULTIPLIER: Parameter = {
 
 export const DFDA_DIRECT_FUNDING_COST_PER_DALY: Parameter = {
   value: 0.8415122325165139,
+  parameterName: "DFDA_DIRECT_FUNDING_COST_PER_DALY",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-dfda_direct_funding_cost_per_daly",
   unit: "USD/DALY",
   displayName: "dFDA Direct Funding Cost per DALY",
   description: "Cost per DALY at direct funding level for the therapeutic space exploration period. Still highly cost-effective vs bed nets.",
@@ -2681,6 +3364,8 @@ export const DFDA_DIRECT_FUNDING_COST_PER_DALY: Parameter = {
 
 export const DFDA_DIRECT_FUNDING_QUEUE_CLEARANCE_NPV: Parameter = {
   value: 475659465477.4342,
+  parameterName: "DFDA_DIRECT_FUNDING_QUEUE_CLEARANCE_NPV",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-dfda_direct_funding_queue_clearance_npv",
   unit: "USD",
   displayName: "dFDA Direct Funding NPV (Exploration Period)",
   description: "NPV of annual direct funding for the therapeutic space exploration period. Funding period equals exploration time (queue clearance years at given capacity multiplier). After exploration completes, the full timeline shift benefit is realized.",
@@ -2692,6 +3377,8 @@ export const DFDA_DIRECT_FUNDING_QUEUE_CLEARANCE_NPV: Parameter = {
 
 export const DFDA_DIRECT_FUNDING_ROI_TRIAL_CAPACITY_PLUS_EFFICACY_LAG: Parameter = {
   value: 178250.5282798208,
+  parameterName: "DFDA_DIRECT_FUNDING_ROI_TRIAL_CAPACITY_PLUS_EFFICACY_LAG",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-dfda_direct_funding_roi_trial_capacity_plus_efficacy_lag",
   unit: "ratio",
   displayName: "Direct Funding ROI - Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Increased Trial Throughput",
   description: "ROI from directly funding pragmatic clinical trials over the therapeutic space exploration period.",
@@ -2703,6 +3390,8 @@ export const DFDA_DIRECT_FUNDING_ROI_TRIAL_CAPACITY_PLUS_EFFICACY_LAG: Parameter
 
 export const DFDA_DIRECT_FUNDING_VS_BED_NETS_MULTIPLIER: Parameter = {
   value: 105.76198011269368,
+  parameterName: "DFDA_DIRECT_FUNDING_VS_BED_NETS_MULTIPLIER",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-dfda_direct_funding_vs_bed_nets_multiplier",
   unit: "x",
   displayName: "Direct Funding Cost-Effectiveness vs Bed Nets",
   description: "How many times more cost-effective direct funding of medical research is vs bed nets.",
@@ -2714,6 +3403,8 @@ export const DFDA_DIRECT_FUNDING_VS_BED_NETS_MULTIPLIER: Parameter = {
 
 export const DFDA_EFFICACY_LAG_ELIMINATION_DALYS: Parameter = {
   value: 7942783571.3,
+  parameterName: "DFDA_EFFICACY_LAG_ELIMINATION_DALYS",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-dfda_efficacy_lag_elimination_dalys",
   unit: "DALYs",
   displayName: "Total DALYs Lost from Disease Eradication Delay",
   description: "Total Disability-Adjusted Life Years lost from disease eradication delay (PRIMARY estimate)",
@@ -2725,6 +3416,8 @@ export const DFDA_EFFICACY_LAG_ELIMINATION_DALYS: Parameter = {
 
 export const DFDA_EFFICACY_LAG_ELIMINATION_DEATHS_AVERTED: Parameter = {
   value: 415852543.0,
+  parameterName: "DFDA_EFFICACY_LAG_ELIMINATION_DEATHS_AVERTED",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-dfda_efficacy_lag_elimination_deaths_averted",
   unit: "deaths",
   displayName: "Total Deaths from Disease Eradication Delay",
   description: "Total eventually avoidable deaths from delaying disease eradication by 8.2 years (PRIMARY estimate, conservative). Excludes fundamentally unavoidable deaths (primarily accidents ~7.9%).",
@@ -2736,6 +3429,8 @@ export const DFDA_EFFICACY_LAG_ELIMINATION_DEATHS_AVERTED: Parameter = {
 
 export const DFDA_EFFICACY_LAG_ELIMINATION_ECONOMIC_VALUE: Parameter = {
   value: 1191417535695000.0,
+  parameterName: "DFDA_EFFICACY_LAG_ELIMINATION_ECONOMIC_VALUE",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-dfda_efficacy_lag_elimination_economic_value",
   unit: "USD",
   displayName: "Total Economic Loss from Disease Eradication Delay",
   description: "Total economic loss from delaying disease eradication by 8.2 years (PRIMARY estimate, 2024 USD). Values global DALYs at standardized US/International normative rate ($150k) rather than local ability-to-pay, representing the full human capital loss.",
@@ -2747,6 +3442,8 @@ export const DFDA_EFFICACY_LAG_ELIMINATION_ECONOMIC_VALUE: Parameter = {
 
 export const DFDA_EFFICACY_LAG_ELIMINATION_YLD: Parameter = {
   value: 873290340.3,
+  parameterName: "DFDA_EFFICACY_LAG_ELIMINATION_YLD",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-dfda_efficacy_lag_elimination_yld",
   unit: "years",
   displayName: "Years Lived with Disability During Disease Eradication Delay",
   description: "Years Lived with Disability during disease eradication delay (PRIMARY estimate)",
@@ -2758,6 +3455,8 @@ export const DFDA_EFFICACY_LAG_ELIMINATION_YLD: Parameter = {
 
 export const DFDA_EFFICACY_LAG_ELIMINATION_YLL: Parameter = {
   value: 7069493231.0,
+  parameterName: "DFDA_EFFICACY_LAG_ELIMINATION_YLL",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-dfda_efficacy_lag_elimination_yll",
   unit: "years",
   displayName: "Years of Life Lost from Disease Eradication Delay",
   description: "Years of Life Lost from disease eradication delay deaths (PRIMARY estimate)",
@@ -2769,6 +3468,8 @@ export const DFDA_EFFICACY_LAG_ELIMINATION_YLL: Parameter = {
 
 export const DFDA_FIRST_TREATMENTS_PER_YEAR: Parameter = {
   value: 184.91870149000056,
+  parameterName: "DFDA_FIRST_TREATMENTS_PER_YEAR",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-dfda_first_treatments_per_year",
   unit: "diseases/year",
   displayName: "dFDA New Treatments Per Year",
   description: "Diseases per year receiving their first effective treatment with dFDA. Scales proportionally with trial capacity multiplier.",
@@ -2780,6 +3481,8 @@ export const DFDA_FIRST_TREATMENTS_PER_YEAR: Parameter = {
 
 export const DFDA_KNOWN_SAFE_EXPLORATION_YEARS: Parameter = {
   value: 233.51785316399287,
+  parameterName: "DFDA_KNOWN_SAFE_EXPLORATION_YEARS",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-dfda_known_safe_exploration_years",
   unit: "years",
   displayName: "Known Safe Exploration Time (dFDA)",
   description: "Years to test all known safe drug-disease combinations with dFDA trial capacity",
@@ -2791,6 +3494,8 @@ export const DFDA_KNOWN_SAFE_EXPLORATION_YEARS: Parameter = {
 
 export const DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL: Parameter = {
   value: 565.8947368421053,
+  parameterName: "DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-dfda_max_trial_capacity_multiplier_physical",
   unit: "x",
   displayName: "Maximum Trial Capacity Multiplier (Physical Limit)",
   description: "Physical upper bound on trial-capacity multiplier from participant availability. Even with unlimited funding, annual trial enrollment cannot exceed willing participant pool.",
@@ -2802,6 +3507,8 @@ export const DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL: Parameter = {
 
 export const DFDA_NET_SAVINGS_RD_ONLY_ANNUAL: Parameter = {
   value: 58600487804.878044,
+  parameterName: "DFDA_NET_SAVINGS_RD_ONLY_ANNUAL",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-dfda_net_savings_rd_only_annual",
   unit: "USD/year",
   displayName: "Decentralized Framework for Drug Assessment Annual Net Savings (R&D Only)",
   description: "Annual net savings from R&D cost reduction only (gross savings minus operational costs, excludes regulatory delay value)",
@@ -2813,6 +3520,8 @@ export const DFDA_NET_SAVINGS_RD_ONLY_ANNUAL: Parameter = {
 
 export const DFDA_NPV_ANNUAL_OPEX_TOTAL: Parameter = {
   value: 40050000.0,
+  parameterName: "DFDA_NPV_ANNUAL_OPEX_TOTAL",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-dfda_npv_annual_opex_total",
   unit: "USD/year",
   displayName: "Decentralized Framework for Drug Assessment Total NPV Annual OPEX",
   description: "Total NPV annual opex (Decentralized Framework for Drug Assessment core + DIH initiatives)",
@@ -2824,6 +3533,8 @@ export const DFDA_NPV_ANNUAL_OPEX_TOTAL: Parameter = {
 
 export const DFDA_NPV_BENEFIT_RD_ONLY: Parameter = {
   value: 389352903335.6751,
+  parameterName: "DFDA_NPV_BENEFIT_RD_ONLY",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-dfda_npv_benefit_rd_only",
   unit: "USD",
   displayName: "NPV of Decentralized Framework for Drug Assessment Benefits (R&D Only, 10-Year Discounted)",
   description: "NPV of Decentralized Framework for Drug Assessment R&D savings only with 5-year adoption ramp (10-year horizon, most conservative financial estimate)",
@@ -2835,6 +3546,8 @@ export const DFDA_NPV_BENEFIT_RD_ONLY: Parameter = {
 
 export const DFDA_NPV_NET_BENEFIT_RD_ONLY: Parameter = {
   value: 388741518712.06226,
+  parameterName: "DFDA_NPV_NET_BENEFIT_RD_ONLY",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-dfda_npv_net_benefit_rd_only",
   unit: "USD",
   displayName: "NPV Net Benefit (R&D Only)",
   description: "NPV net benefit using R&D savings only (benefits minus costs)",
@@ -2846,6 +3559,8 @@ export const DFDA_NPV_NET_BENEFIT_RD_ONLY: Parameter = {
 
 export const DFDA_NPV_PV_ANNUAL_OPEX: Parameter = {
   value: 341634623.61287224,
+  parameterName: "DFDA_NPV_PV_ANNUAL_OPEX",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-dfda_npv_pv_annual_opex",
   unit: "USD",
   displayName: "Decentralized Framework for Drug Assessment Present Value of Annual OPEX Over 10 Years",
   description: "Present value of annual opex over 10 years (NPV formula)",
@@ -2857,6 +3572,8 @@ export const DFDA_NPV_PV_ANNUAL_OPEX: Parameter = {
 
 export const DFDA_NPV_TOTAL_COST: Parameter = {
   value: 611384623.6128722,
+  parameterName: "DFDA_NPV_TOTAL_COST",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-dfda_npv_total_cost",
   unit: "USD",
   displayName: "Decentralized Framework for Drug Assessment Total NPV Cost",
   description: "Total NPV cost (upfront + PV of annual opex)",
@@ -2868,6 +3585,8 @@ export const DFDA_NPV_TOTAL_COST: Parameter = {
 
 export const DFDA_NPV_UPFRONT_COST_TOTAL: Parameter = {
   value: 269750000.0,
+  parameterName: "DFDA_NPV_UPFRONT_COST_TOTAL",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-dfda_npv_upfront_cost_total",
   unit: "USD",
   displayName: "Decentralized Framework for Drug Assessment Total NPV Upfront Costs",
   description: "Total NPV upfront costs (Decentralized Framework for Drug Assessment core + DIH initiatives)",
@@ -2879,6 +3598,8 @@ export const DFDA_NPV_UPFRONT_COST_TOTAL: Parameter = {
 
 export const DFDA_OPEX_PCT_OF_TREATY_FUNDING: Parameter = {
   value: 0.0014705882352941176,
+  parameterName: "DFDA_OPEX_PCT_OF_TREATY_FUNDING",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-dfda_opex_pct_of_treaty_funding",
   unit: "rate",
   displayName: "Decentralized Framework for Drug Assessment Overhead Percentage of Treaty Funding",
   description: "Percentage of treaty funding allocated to Decentralized Framework for Drug Assessment framework overhead",
@@ -2890,6 +3611,8 @@ export const DFDA_OPEX_PCT_OF_TREATY_FUNDING: Parameter = {
 
 export const DFDA_PATIENTS_FUNDABLE_ANNUALLY: Parameter = {
   value: 23423035.52206674,
+  parameterName: "DFDA_PATIENTS_FUNDABLE_ANNUALLY",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-dfda_patients_fundable_annually",
   unit: "patients/year",
   displayName: "dFDA Patients Fundable Annually",
   description: "Number of patients fundable annually from dFDA funding at pragmatic trial cost. Source-agnostic counterpart of DIH_PATIENTS_FUNDABLE_ANNUALLY.",
@@ -2901,6 +3624,8 @@ export const DFDA_PATIENTS_FUNDABLE_ANNUALLY: Parameter = {
 
 export const DFDA_QUEUE_CLEARANCE_YEARS: Parameter = {
   value: 35.9617493872549,
+  parameterName: "DFDA_QUEUE_CLEARANCE_YEARS",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-dfda_queue_clearance_years",
   unit: "years",
   displayName: "dFDA Therapeutic Space Exploration Time",
   description: "Years to explore the entire therapeutic search space with dFDA implementation. At increased discovery rate, finding first treatments for all currently untreatable diseases takes ~36 years instead of ~443.",
@@ -2912,6 +3637,8 @@ export const DFDA_QUEUE_CLEARANCE_YEARS: Parameter = {
 
 export const DFDA_RD_SAVINGS_DAILY: Parameter = {
   value: 160658870.698296,
+  parameterName: "DFDA_RD_SAVINGS_DAILY",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-dfda_rd_savings_daily",
   unit: "USD/day",
   displayName: "Daily R&D Savings from Trial Cost Reduction",
   description: "Daily R&D savings from trial cost reduction (opportunity cost of delay)",
@@ -2923,6 +3650,8 @@ export const DFDA_RD_SAVINGS_DAILY: Parameter = {
 
 export const DFDA_ROI_RD_ONLY: Parameter = {
   value: 636.8379057930197,
+  parameterName: "DFDA_ROI_RD_ONLY",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-dfda_roi_rd_only",
   unit: "ratio",
   displayName: "ROI from Decentralized Framework for Drug Assessment R&D Savings Only",
   description: "ROI from Decentralized Framework for Drug Assessment R&D savings only (10-year NPV, most conservative estimate)",
@@ -2934,6 +3663,8 @@ export const DFDA_ROI_RD_ONLY: Parameter = {
 
 export const DFDA_STORAGE_COST_TOTAL_PER_PATIENT_ANNUAL: Parameter = {
   value: 8.64,
+  parameterName: "DFDA_STORAGE_COST_TOTAL_PER_PATIENT_ANNUAL",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-dfda_storage_cost_total_per_patient_annual",
   unit: "USD/patient/year",
   displayName: "Total Infrastructure Cost per Patient (Annual)",
   description: "Total infrastructure cost per patient per year. Monthly cost × 12.",
@@ -2945,6 +3676,8 @@ export const DFDA_STORAGE_COST_TOTAL_PER_PATIENT_ANNUAL: Parameter = {
 
 export const DFDA_STORAGE_COST_TOTAL_PER_PATIENT_MONTHLY: Parameter = {
   value: 0.72,
+  parameterName: "DFDA_STORAGE_COST_TOTAL_PER_PATIENT_MONTHLY",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-dfda_storage_cost_total_per_patient_monthly",
   unit: "USD/patient/month",
   displayName: "Total Infrastructure Cost per Patient (Monthly)",
   description: "Total infrastructure cost per patient per month. Sum of storage, compute, database, and backup costs.",
@@ -2956,6 +3689,8 @@ export const DFDA_STORAGE_COST_TOTAL_PER_PATIENT_MONTHLY: Parameter = {
 
 export const DFDA_TOTAL_EXPLORATION_YEARS: Parameter = {
   value: 1265.9125724153298,
+  parameterName: "DFDA_TOTAL_EXPLORATION_YEARS",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-dfda_total_exploration_years",
   unit: "years",
   displayName: "Total Exploration Time (dFDA)",
   description: "Years to test all therapeutic combinations (known safe + emerging modalities) with dFDA capacity",
@@ -2967,6 +3702,8 @@ export const DFDA_TOTAL_EXPLORATION_YEARS: Parameter = {
 
 export const DFDA_TRIALS_PER_YEAR_CAPACITY: Parameter = {
   value: 40682.114327800125,
+  parameterName: "DFDA_TRIALS_PER_YEAR_CAPACITY",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-dfda_trials_per_year_capacity",
   unit: "trials/year",
   displayName: "Decentralized Framework for Drug Assessment Maximum Trials per Year",
   description: "Maximum trials per year possible with trial capacity multiplier",
@@ -2978,6 +3715,8 @@ export const DFDA_TRIALS_PER_YEAR_CAPACITY: Parameter = {
 
 export const DFDA_TRIAL_CAPACITY_DALYS_AVERTED: Parameter = {
   value: 543368690237.1337,
+  parameterName: "DFDA_TRIAL_CAPACITY_DALYS_AVERTED",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-dfda_trial_capacity_dalys_averted",
   unit: "DALYs",
   displayName: "DALYs Averted from Trial Capacity Increase",
   description: "Total DALYs averted from trial capacity increase alone. Calculated as annual global DALY burden × eventually avoidable percentage × treatment acceleration years. Includes both fatal and non-fatal diseases.",
@@ -2989,6 +3728,8 @@ export const DFDA_TRIAL_CAPACITY_DALYS_AVERTED: Parameter = {
 
 export const DFDA_TRIAL_CAPACITY_ECONOMIC_VALUE: Parameter = {
   value: 8.150530353557006e+16,
+  parameterName: "DFDA_TRIAL_CAPACITY_ECONOMIC_VALUE",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-dfda_trial_capacity_economic_value",
   unit: "USD",
   displayName: "Economic Value from Trial Capacity Increase",
   description: "Total economic value from trial capacity increase alone. DALYs valued at standard economic rate.",
@@ -3000,6 +3741,8 @@ export const DFDA_TRIAL_CAPACITY_ECONOMIC_VALUE: Parameter = {
 
 export const DFDA_TRIAL_CAPACITY_LIVES_SAVED: Parameter = {
   value: 10329665205.028845,
+  parameterName: "DFDA_TRIAL_CAPACITY_LIVES_SAVED",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-dfda_trial_capacity_lives_saved",
   unit: "deaths",
   displayName: "Lives Saved from Trial Capacity Increase",
   description: "Total eventually avoidable deaths from trial capacity increase alone. Represents first treatments arriving earlier due to faster therapeutic space exploration from increased trial capacity.",
@@ -3011,6 +3754,8 @@ export const DFDA_TRIAL_CAPACITY_LIVES_SAVED: Parameter = {
 
 export const DFDA_TRIAL_CAPACITY_MULTIPLIER: Parameter = {
   value: 12.327913432666705,
+  parameterName: "DFDA_TRIAL_CAPACITY_MULTIPLIER",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-dfda_trial_capacity_multiplier",
   unit: "x",
   displayName: "Trial Capacity Multiplier",
   description: "Trial capacity multiplier from dFDA funding capacity vs. current global trial participation",
@@ -3022,6 +3767,8 @@ export const DFDA_TRIAL_CAPACITY_MULTIPLIER: Parameter = {
 
 export const DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS: Parameter = {
   value: 565243673350.9989,
+  parameterName: "DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-dfda_trial_capacity_plus_efficacy_lag_dalys",
   unit: "DALYs",
   displayName: "Total DALYs from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput",
   description: "Total DALYs averted from the combined dFDA timeline shift. Calculated as annual global DALY burden × eventually avoidable percentage × timeline shift years. Includes both fatal and non-fatal diseases (WHO GBD methodology).",
@@ -3033,6 +3780,8 @@ export const DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS: Parameter = {
 
 export const DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_ECONOMIC_VALUE: Parameter = {
   value: 8.478655100264984e+16,
+  parameterName: "DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_ECONOMIC_VALUE",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-dfda_trial_capacity_plus_efficacy_lag_economic_value",
   unit: "USD",
   displayName: "Total Economic Benefit from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput",
   description: "Total economic value from the combined dFDA timeline shift. DALYs valued at standard economic rate.",
@@ -3044,6 +3793,8 @@ export const DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_ECONOMIC_VALUE: Parameter = {
 
 export const DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_LIVES_SAVED: Parameter = {
   value: 10745517748.59972,
+  parameterName: "DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_LIVES_SAVED",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-dfda_trial_capacity_plus_efficacy_lag_lives_saved",
   unit: "deaths",
   displayName: "Total Lives Saved from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput",
   description: "Total eventually avoidable deaths from the combined dFDA timeline shift. Represents deaths prevented when cures arrive earlier due to both increased trial capacity and eliminated efficacy lag.",
@@ -3055,6 +3806,8 @@ export const DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_LIVES_SAVED: Parameter = {
 
 export const DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_SUFFERING_HOURS: Parameter = {
   value: 1931098485636352.8,
+  parameterName: "DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_SUFFERING_HOURS",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-dfda_trial_capacity_plus_efficacy_lag_suffering_hours",
   unit: "hours",
   displayName: "Suffering Hours Eliminated from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput",
   description: "Hours of suffering eliminated from the combined dFDA timeline shift. Calculated from YLD component of DALYs (39% of total DALYs × hours per year). One-time benefit, not annual recurring.",
@@ -3066,6 +3819,8 @@ export const DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_SUFFERING_HOURS: Parameter = 
 
 export const DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_YEARS: Parameter = {
   value: 211.8857919730392,
+  parameterName: "DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_YEARS",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-dfda_trial_capacity_plus_efficacy_lag_years",
   unit: "years",
   displayName: "dFDA Average Total Timeline Shift",
   description: "Average years earlier patients receive treatments due to dFDA. Combines treatment timeline acceleration from increased trial capacity with efficacy lag elimination for treatments already discovered.",
@@ -3077,6 +3832,8 @@ export const DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_YEARS: Parameter = {
 
 export const DFDA_TRIAL_CAPACITY_TREATMENT_ACCELERATION_YEARS: Parameter = {
   value: 203.68579197303922,
+  parameterName: "DFDA_TRIAL_CAPACITY_TREATMENT_ACCELERATION_YEARS",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-dfda_trial_capacity_treatment_acceleration_years",
   unit: "years",
   displayName: "dFDA Treatment Timeline Acceleration",
   description: "Years earlier the average first treatment arrives due to dFDA's trial capacity increase. Calculated as the status quo timeline reduced by the inverse of the capacity multiplier. Uses only trial capacity multiplier (not combined with valley of death rescue) because additional candidates don't directly speed therapeutic space exploration.",
@@ -3088,6 +3845,8 @@ export const DFDA_TRIAL_CAPACITY_TREATMENT_ACCELERATION_YEARS: Parameter = {
 
 export const DFDA_TRIAL_COST_REDUCTION_FACTOR: Parameter = {
   value: 44.13347685683531,
+  parameterName: "DFDA_TRIAL_COST_REDUCTION_FACTOR",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-dfda_trial_cost_reduction_factor",
   unit: "multiplier",
   displayName: "dFDA Trial Cost Reduction Factor",
   description: "Cost reduction factor projected for dFDA pragmatic trials (traditional Phase 3 cost / dFDA pragmatic cost per patient)",
@@ -3099,6 +3858,8 @@ export const DFDA_TRIAL_COST_REDUCTION_FACTOR: Parameter = {
 
 export const DFDA_TRIAL_COST_REDUCTION_PCT: Parameter = {
   value: 0.9773414634146341,
+  parameterName: "DFDA_TRIAL_COST_REDUCTION_PCT",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-dfda_trial_cost_reduction_pct",
   unit: "percentage",
   displayName: "dFDA Trial Cost Reduction Percentage",
   description: "Trial cost reduction percentage: 1 - (dFDA pragmatic cost / traditional Phase 3 cost)",
@@ -3110,6 +3871,8 @@ export const DFDA_TRIAL_COST_REDUCTION_PCT: Parameter = {
 
 export const DFDA_TRIAL_SUBSIDIES_ANNUAL: Parameter = {
   value: 21760000000.0,
+  parameterName: "DFDA_TRIAL_SUBSIDIES_ANNUAL",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-dfda_trial_subsidies_annual",
   unit: "USD/year",
   displayName: "dFDA Annual Trial Subsidies",
   description: "Annual clinical trial patient subsidies from dFDA funding (total funding minus operational costs)",
@@ -3121,6 +3884,8 @@ export const DFDA_TRIAL_SUBSIDIES_ANNUAL: Parameter = {
 
 export const DFDA_VALLEY_OF_DEATH_RESCUE_MULTIPLIER: Parameter = {
   value: 1.4,
+  parameterName: "DFDA_VALLEY_OF_DEATH_RESCUE_MULTIPLIER",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-dfda_valley_of_death_rescue_multiplier",
   unit: "multiplier",
   displayName: "dFDA Valley of Death Rescue Multiplier",
   description: "Factor increase in drugs entering development when dFDA eliminates Phase 2/3 cost barrier. Valley-of-death attrition (40%) becomes new drugs, so 1 + 0.40 = 1.4× more drugs.",
@@ -3132,6 +3897,8 @@ export const DFDA_VALLEY_OF_DEATH_RESCUE_MULTIPLIER: Parameter = {
 
 export const DIH_PATIENTS_FUNDABLE_ANNUALLY: Parameter = {
   value: 23379978.471474703,
+  parameterName: "DIH_PATIENTS_FUNDABLE_ANNUALLY",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-dih_patients_fundable_annually",
   unit: "patients/year",
   displayName: "Patients Fundable Annually",
   description: "Number of patients fundable annually at dFDA pragmatic trial cost. Based on empirical pragmatic trial costs (RECOVERY to PCORnet range).",
@@ -3143,6 +3910,8 @@ export const DIH_PATIENTS_FUNDABLE_ANNUALLY: Parameter = {
 
 export const DIH_TREASURY_MEDICAL_RESEARCH_PCT: Parameter = {
   value: 0.8,
+  parameterName: "DIH_TREASURY_MEDICAL_RESEARCH_PCT",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-dih_treasury_medical_research_pct",
   unit: "rate",
   displayName: "Medical Research Percentage of Treaty Funding",
   description: "Percentage of treaty funding allocated to medical research (after bond payouts and IAB incentives)",
@@ -3154,6 +3923,8 @@ export const DIH_TREASURY_MEDICAL_RESEARCH_PCT: Parameter = {
 
 export const DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL: Parameter = {
   value: 21760000000.0,
+  parameterName: "DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-dih_treasury_to_medical_research_annual",
   unit: "USD/year",
   displayName: "Annual Funding for Pragmatic Clinical Trials",
   description: "Annual funding for pragmatic clinical trials (treaty funding minus VICTORY Incentive Alignment Bond payouts and IAB political incentive mechanism)",
@@ -3165,6 +3936,8 @@ export const DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL: Parameter = {
 
 export const DIH_TREASURY_TRIAL_SUBSIDIES_ANNUAL: Parameter = {
   value: 21720000000.0,
+  parameterName: "DIH_TREASURY_TRIAL_SUBSIDIES_ANNUAL",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-dih_treasury_trial_subsidies_annual",
   unit: "USD/year",
   displayName: "Annual Clinical Trial Patient Subsidies",
   description: "Annual clinical trial patient subsidies (all medical research funds after Decentralized Framework for Drug Assessment operations)",
@@ -3176,6 +3949,8 @@ export const DIH_TREASURY_TRIAL_SUBSIDIES_ANNUAL: Parameter = {
 
 export const DIH_TREASURY_TRIAL_SUBSIDIES_PCT: Parameter = {
   value: 0.7985294117647059,
+  parameterName: "DIH_TREASURY_TRIAL_SUBSIDIES_PCT",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-dih_treasury_trial_subsidies_pct",
   unit: "rate",
   displayName: "Patient Trial Subsidies Percentage of Treaty Funding",
   description: "Percentage of treaty funding going directly to patient trial subsidies",
@@ -3187,11 +3962,14 @@ export const DIH_TREASURY_TRIAL_SUBSIDIES_PCT: Parameter = {
 
 export const DISEASES_WITHOUT_EFFECTIVE_TREATMENT: Parameter = {
   value: 6650.0,
+  parameterName: "DISEASES_WITHOUT_EFFECTIVE_TREATMENT",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-diseases_without_effective_treatment",
   unit: "diseases",
   displayName: "Diseases Without Effective Treatment",
   description: "Number of diseases without effective treatment. 95% of 7,000 rare diseases lack FDA-approved treatment (per Orphanet 2024). This represents the therapeutic search space that remains unexplored.",
   sourceType: "calculated",
   sourceRef: "rare-disease-only-5pct-have-treatment",
+  sourceUrl: "https://ojrd.biomedcentral.com/articles/10.1186/s13023-024-03398-1",
   confidence: "medium",
   formula: "RARE_DISEASES_COUNT_GLOBAL × 0.95",
   latex: "\\begin{gathered}\nN_{untreated} \\\\\n= N_{rare} \\times 0.95 \\\\\n= 7{,}000 \\times 0.95 \\\\\n= 6{,}650\n\\end{gathered}",
@@ -3199,6 +3977,8 @@ export const DISEASES_WITHOUT_EFFECTIVE_TREATMENT: Parameter = {
 
 export const DISEASE_VS_TERRORISM_DEATHS_RATIO: Parameter = {
   value: 18357.81041388518,
+  parameterName: "DISEASE_VS_TERRORISM_DEATHS_RATIO",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-disease_vs_terrorism_deaths_ratio",
   unit: "ratio",
   displayName: "Ratio of Annual Disease Deaths to 9/11 Terrorism Deaths",
   description: "Ratio of annual disease deaths to 9/11 terrorism deaths",
@@ -3210,6 +3990,8 @@ export const DISEASE_VS_TERRORISM_DEATHS_RATIO: Parameter = {
 
 export const DISEASE_VS_WAR_DEATHS_RATIO: Parameter = {
   value: 224.8569092395748,
+  parameterName: "DISEASE_VS_WAR_DEATHS_RATIO",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-disease_vs_war_deaths_ratio",
   unit: "ratio",
   displayName: "Ratio of Annual Disease Deaths to War Deaths",
   description: "Ratio of annual disease deaths to war deaths",
@@ -3221,6 +4003,8 @@ export const DISEASE_VS_WAR_DEATHS_RATIO: Parameter = {
 
 export const DIVIDEND_COVERAGE_FACTOR: Parameter = {
   value: 680.0,
+  parameterName: "DIVIDEND_COVERAGE_FACTOR",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-dividend_coverage_factor",
   unit: "ratio",
   displayName: "Coverage Factor of Treaty Funding vs Decentralized Framework for Drug Assessment OPEX",
   description: "Coverage factor of treaty funding vs Decentralized Framework for Drug Assessment opex (sustainability margin)",
@@ -3232,11 +4016,14 @@ export const DIVIDEND_COVERAGE_FACTOR: Parameter = {
 
 export const DRUGS_APPROVED_SINCE_1962: Parameter = {
   value: 3100.0,
+  parameterName: "DRUGS_APPROVED_SINCE_1962",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-drugs_approved_since_1962",
   unit: "drugs",
   displayName: "Total Drugs Approved Since 1962",
   description: "Estimated total drugs approved globally since 1962 (62 years × average approval rate). Conservative: uses current rate, actual historical rate was lower in 1960s-80s.",
   sourceType: "calculated",
   sourceRef: "global-new-drug-approvals-50-annually",
+  sourceUrl: "https://cen.acs.org/pharmaceuticals/50-new-drugs-received-FDA/103/i2",
   confidence: "medium",
   formula: "APPROVALS_PER_YEAR × 62",
   latex: "\\begin{gathered}\nN_{drugs,62} \\\\\n= Drugs_{ann,curr} \\times 62 \\\\\n= 50 \\times 62 \\\\\n= 3{,}100\n\\end{gathered}",
@@ -3244,11 +4031,14 @@ export const DRUGS_APPROVED_SINCE_1962: Parameter = {
 
 export const DRUG_COST_INCREASE_1980S_TO_CURRENT_MULTIPLIER: Parameter = {
   value: 13.402061855670103,
+  parameterName: "DRUG_COST_INCREASE_1980S_TO_CURRENT_MULTIPLIER",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-drug_cost_increase_1980s_to_current_multiplier",
   unit: "x",
   displayName: "Drug Cost Increase: 1980s to Current",
   description: "Drug development cost increase from 1980s to current",
   sourceType: "calculated",
   sourceRef: "pre-1962-drug-costs-timeline",
+  sourceUrl: "https://thinkbynumbers.org/health/how-many-net-lives-does-the-fda-save/",
   confidence: "high",
   formula: "PHARMA_DRUG_DEVELOPMENT_COST_CURRENT ÷ DRUG_DEVELOPMENT_COST_1980S",
   latex: "\\begin{gathered}\nk_{cost,80s} \\\\\n= \\frac{Cost_{dev,curr}}{Cost_{dev,80s}} \\\\\n= \\frac{\\$2.6B}{\\$194M} \\\\\n= 13.4\n\\end{gathered}",
@@ -3256,11 +4046,14 @@ export const DRUG_COST_INCREASE_1980S_TO_CURRENT_MULTIPLIER: Parameter = {
 
 export const DRUG_COST_INCREASE_PRE1962_TO_CURRENT_MULTIPLIER: Parameter = {
   value: 105.26315789473684,
+  parameterName: "DRUG_COST_INCREASE_PRE1962_TO_CURRENT_MULTIPLIER",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-drug_cost_increase_pre1962_to_current_multiplier",
   unit: "x",
   displayName: "Drug Cost Increase: Pre-1962 to Current",
   description: "Drug development cost increase from pre-1962 to current",
   sourceType: "calculated",
   sourceRef: "pre-1962-drug-costs-baily-1972",
+  sourceUrl: "https://samizdathealth.org/wp-content/uploads/2020/12/hlthaff.1.2.6.pdf",
   confidence: "high",
   formula: "PHARMA_DRUG_DEVELOPMENT_COST_CURRENT ÷ PRE_1962_DRUG_DEVELOPMENT_COST_2024_USD",
   latex: "\\begin{gathered}\nk_{cost,pre62} \\\\\n= \\frac{Cost_{dev,curr}}{Cost_{pre62,24}} \\\\\n= \\frac{\\$2.6B}{\\$24.7M} \\\\\n= 105\n\\end{gathered}",
@@ -3268,6 +4061,8 @@ export const DRUG_COST_INCREASE_PRE1962_TO_CURRENT_MULTIPLIER: Parameter = {
 
 export const DRUG_DISEASE_COMBINATIONS_POSSIBLE: Parameter = {
   value: 9500000.0,
+  parameterName: "DRUG_DISEASE_COMBINATIONS_POSSIBLE",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-drug_disease_combinations_possible",
   unit: "combinations",
   displayName: "Possible Drug-Disease Combinations",
   description: "Total possible drug-disease combinations using existing safe compounds",
@@ -3279,6 +4074,8 @@ export const DRUG_DISEASE_COMBINATIONS_POSSIBLE: Parameter = {
 
 export const EFFICACY_LAG_CUMULATIVE_EXCESS_COST: Parameter = {
   value: 4836000000000.0,
+  parameterName: "EFFICACY_LAG_CUMULATIVE_EXCESS_COST",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-efficacy_lag_cumulative_excess_cost",
   unit: "USD",
   displayName: "Cumulative Efficacy Testing Cost (1962-2024)",
   description: "Cumulative Phase 2/3 efficacy testing cost since 1962. Uses direct Phase 2/3 cost per drug - this is a LOWER BOUND because it excludes opportunity cost of delays, compounds abandoned due to cost barrier, and regulatory overhead.",
@@ -3290,6 +4087,8 @@ export const EFFICACY_LAG_CUMULATIVE_EXCESS_COST: Parameter = {
 
 export const EFFICACY_LAG_DEATHS_911_EQUIVALENTS: Parameter = {
   value: 34132.236031799344,
+  parameterName: "EFFICACY_LAG_DEATHS_911_EQUIVALENTS",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-efficacy_lag_deaths_911_equivalents",
   unit: "9/11s",
   displayName: "Efficacy Lag Deaths (9/11 Equivalents)",
   description: "Total deaths from efficacy lag expressed in 9/11 equivalents. Makes the mortality cost viscerally understandable: how many September 11ths worth of deaths did the 1962 efficacy requirements cause?",
@@ -3301,6 +4100,8 @@ export const EFFICACY_LAG_DEATHS_911_EQUIVALENTS: Parameter = {
 
 export const EFFICACY_LAG_TREATMENT_DELAY_YLD_ANNUAL: Parameter = {
   value: 2012931506.849315,
+  parameterName: "EFFICACY_LAG_TREATMENT_DELAY_YLD_ANNUAL",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-efficacy_lag_treatment_delay_yld_annual",
   unit: "DALYs",
   displayName: "Treatment Delay YLD - Annual",
   description: "Annual YLD from treatment delay: patients receiving chronic disease treatment would have collectively avoided this disability if treatments were available 8.2 years earlier. Represents morbidity burden for treatment beneficiaries (distinct from mortality burden).",
@@ -3312,6 +4113,8 @@ export const EFFICACY_LAG_TREATMENT_DELAY_YLD_ANNUAL: Parameter = {
 
 export const EMERGING_MODALITY_COMBINATIONS: Parameter = {
   value: 42000000.0,
+  parameterName: "EMERGING_MODALITY_COMBINATIONS",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-emerging_modality_combinations",
   unit: "combinations",
   displayName: "Emerging Modality Combinations",
   description: "Total emerging modality combinations (gene therapy + mRNA + epigenetics + cell therapy)",
@@ -3323,6 +4126,8 @@ export const EMERGING_MODALITY_COMBINATIONS: Parameter = {
 
 export const EPIGENETIC_DISEASE_COMBINATIONS: Parameter = {
   value: 1500000.0,
+  parameterName: "EPIGENETIC_DISEASE_COMBINATIONS",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-epigenetic_disease_combinations",
   unit: "combinations",
   displayName: "Epigenetic Therapy Combinations",
   description: "Epigenetic reprogramming target-disease combinations",
@@ -3334,6 +4139,8 @@ export const EPIGENETIC_DISEASE_COMBINATIONS: Parameter = {
 
 export const EXISTING_DRUGS_EFFICACY_LAG_DEATHS_TOTAL: Parameter = {
   value: 101611666.66666666,
+  parameterName: "EXISTING_DRUGS_EFFICACY_LAG_DEATHS_TOTAL",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-existing_drugs_efficacy_lag_deaths_total",
   unit: "deaths",
   displayName: "Total Deaths from Historical Progress Delays",
   description: "Total deaths from delaying existing drugs over 8.2-year efficacy lag. One-time impact of eliminating Phase 2-4 testing delay for drugs already approved 1962-2024. Based on Lichtenberg (2019) estimate of 12M lives saved annually × 8.2 years efficacy lag. Excludes innovation acceleration effects.",
@@ -3345,6 +4152,8 @@ export const EXISTING_DRUGS_EFFICACY_LAG_DEATHS_TOTAL: Parameter = {
 
 export const EXISTING_DRUGS_EFFICACY_LAG_ECONOMIC_LOSS: Parameter = {
   value: 259109750000000.0,
+  parameterName: "EXISTING_DRUGS_EFFICACY_LAG_ECONOMIC_LOSS",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-existing_drugs_efficacy_lag_economic_loss",
   unit: "USD",
   displayName: "Total Economic Loss from Historical Progress Delays",
   description: "Total economic loss from delaying existing drugs over 8.2-year efficacy lag. One-time benefit of eliminating Phase 2-4 delay. Excludes innovation acceleration effects.",
@@ -3356,6 +4165,8 @@ export const EXISTING_DRUGS_EFFICACY_LAG_ECONOMIC_LOSS: Parameter = {
 
 export const EXPLORATION_RATIO: Parameter = {
   value: 0.0034210526315789475,
+  parameterName: "EXPLORATION_RATIO",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-exploration_ratio",
   unit: "percentage",
   displayName: "Therapeutic Frontier Exploration Ratio",
   description: "Fraction of possible drug-disease space actually tested (<1%)",
@@ -3367,11 +4178,14 @@ export const EXPLORATION_RATIO: Parameter = {
 
 export const FDA_TO_OXFORD_RECOVERY_TRIAL_TIME_MULTIPLIER: Parameter = {
   value: 32.8,
+  parameterName: "FDA_TO_OXFORD_RECOVERY_TRIAL_TIME_MULTIPLIER",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-fda_to_oxford_recovery_trial_time_multiplier",
   unit: "multiplier",
   displayName: "FDA Efficacy Testing to Oxford RECOVERY Trial Time Multiplier",
   description: "Efficacy testing time vs Oxford RECOVERY trial (8.2 years ÷ 3 months = 32.8x slower). Compares efficacy lag only (post-safety Phase II/III) since RECOVERY was an efficacy trial.",
   sourceType: "calculated",
   sourceRef: "recovery-trial-82x-cost-reduction",
+  sourceUrl: "https://manhattan.institute/article/slow-costly-clinical-trials-drag-down-biomedical-breakthroughs",
   confidence: "high",
   formula: "EFFICACY_LAG_YEARS × MONTHS_PER_YEAR ÷ OXFORD_RECOVERY_TRIAL_DURATION_MONTHS",
   latex: "\\begin{gathered}\n\\text{Multiplier}_{RD} = \\frac{Y_{efficacy} \\times 12}{M_{RECOVERY}} \\\\[0.5em]\n= \\frac{8.2 \\times 12}{3} = 32.8\n\\end{gathered}",
@@ -3379,6 +4193,8 @@ export const FDA_TO_OXFORD_RECOVERY_TRIAL_TIME_MULTIPLIER: Parameter = {
 
 export const GENE_THERAPY_DISEASE_COMBINATIONS: Parameter = {
   value: 20000000.0,
+  parameterName: "GENE_THERAPY_DISEASE_COMBINATIONS",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-gene_therapy_disease_combinations",
   unit: "combinations",
   displayName: "Gene Therapy Combinations",
   description: "Gene therapy target-disease combinations (CRISPR, base editing, viral vectors)",
@@ -3390,6 +4206,8 @@ export const GENE_THERAPY_DISEASE_COMBINATIONS: Parameter = {
 
 export const GLOBAL_ANNUAL_CONFLICT_DEATHS_TOTAL: Parameter = {
   value: 244600.0,
+  parameterName: "GLOBAL_ANNUAL_CONFLICT_DEATHS_TOTAL",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-global_annual_conflict_deaths_total",
   unit: "deaths/year",
   displayName: "Total Annual Conflict Deaths Globally",
   description: "Total annual conflict deaths globally (sum of combat, terror, state violence)",
@@ -3401,6 +4219,8 @@ export const GLOBAL_ANNUAL_CONFLICT_DEATHS_TOTAL: Parameter = {
 
 export const GLOBAL_ANNUAL_DIRECT_INDIRECT_WAR_COST: Parameter = {
   value: 11357100000000.0,
+  parameterName: "GLOBAL_ANNUAL_DIRECT_INDIRECT_WAR_COST",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-global_annual_direct_indirect_war_cost",
   unit: "USD/year",
   displayName: "Total Annual Cost of War Worldwide",
   description: "Total annual cost of war worldwide (direct + indirect costs)",
@@ -3412,6 +4232,8 @@ export const GLOBAL_ANNUAL_DIRECT_INDIRECT_WAR_COST: Parameter = {
 
 export const GLOBAL_ANNUAL_HUMAN_COST_ACTIVE_COMBAT: Parameter = {
   value: 2336000000000.0,
+  parameterName: "GLOBAL_ANNUAL_HUMAN_COST_ACTIVE_COMBAT",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-global_annual_human_cost_active_combat",
   unit: "USD/year",
   displayName: "Annual Cost of Combat Deaths",
   description: "Annual cost of combat deaths (deaths × VSL)",
@@ -3423,6 +4245,8 @@ export const GLOBAL_ANNUAL_HUMAN_COST_ACTIVE_COMBAT: Parameter = {
 
 export const GLOBAL_ANNUAL_HUMAN_COST_STATE_VIOLENCE: Parameter = {
   value: 27000000000.0,
+  parameterName: "GLOBAL_ANNUAL_HUMAN_COST_STATE_VIOLENCE",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-global_annual_human_cost_state_violence",
   unit: "USD/year",
   displayName: "Annual Cost of State Violence Deaths",
   description: "Annual cost of state violence deaths (deaths × VSL)",
@@ -3434,6 +4258,8 @@ export const GLOBAL_ANNUAL_HUMAN_COST_STATE_VIOLENCE: Parameter = {
 
 export const GLOBAL_ANNUAL_HUMAN_COST_TERROR_ATTACKS: Parameter = {
   value: 83000000000.0,
+  parameterName: "GLOBAL_ANNUAL_HUMAN_COST_TERROR_ATTACKS",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-global_annual_human_cost_terror_attacks",
   unit: "USD/year",
   displayName: "Annual Cost of Terror Deaths",
   description: "Annual cost of terror deaths (deaths × VSL)",
@@ -3445,6 +4271,8 @@ export const GLOBAL_ANNUAL_HUMAN_COST_TERROR_ATTACKS: Parameter = {
 
 export const GLOBAL_ANNUAL_HUMAN_LIFE_LOSSES_CONFLICT: Parameter = {
   value: 2446000000000.0,
+  parameterName: "GLOBAL_ANNUAL_HUMAN_LIFE_LOSSES_CONFLICT",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-global_annual_human_life_losses_conflict",
   unit: "USD/year",
   displayName: "Total Annual Human Life Losses from Conflict",
   description: "Total annual human life losses from conflict (sum of combat, terror, state violence)",
@@ -3456,6 +4284,8 @@ export const GLOBAL_ANNUAL_HUMAN_LIFE_LOSSES_CONFLICT: Parameter = {
 
 export const GLOBAL_ANNUAL_INFRASTRUCTURE_DESTRUCTION_CONFLICT: Parameter = {
   value: 1875000000000.0,
+  parameterName: "GLOBAL_ANNUAL_INFRASTRUCTURE_DESTRUCTION_CONFLICT",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-global_annual_infrastructure_destruction_conflict",
   unit: "USD/year",
   displayName: "Total Annual Infrastructure Destruction",
   description: "Total annual infrastructure destruction (sum of transportation, energy, communications, water, education, healthcare)",
@@ -3467,6 +4297,8 @@ export const GLOBAL_ANNUAL_INFRASTRUCTURE_DESTRUCTION_CONFLICT: Parameter = {
 
 export const GLOBAL_ANNUAL_SAVINGS: Parameter = {
   value: 31050000000000.004,
+  parameterName: "GLOBAL_ANNUAL_SAVINGS",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-global_annual_savings",
   unit: "USD",
   displayName: "Global Annual Savings",
   description: "Global annual savings in USD (savings rate × GDP)",
@@ -3478,6 +4310,8 @@ export const GLOBAL_ANNUAL_SAVINGS: Parameter = {
 
 export const GLOBAL_ANNUAL_SAVINGS_PER_CAPITA: Parameter = {
   value: 3881.2500000000005,
+  parameterName: "GLOBAL_ANNUAL_SAVINGS_PER_CAPITA",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-global_annual_savings_per_capita",
   unit: "USD/person/year",
   displayName: "Global Annual Savings Per Capita",
   description: "Global annual savings divided by global population. Useful as a rough average-person default for prize-contribution sizing.",
@@ -3489,6 +4323,8 @@ export const GLOBAL_ANNUAL_SAVINGS_PER_CAPITA: Parameter = {
 
 export const GLOBAL_ANNUAL_TRADE_DISRUPTION_CONFLICT: Parameter = {
   value: 616000000000.0,
+  parameterName: "GLOBAL_ANNUAL_TRADE_DISRUPTION_CONFLICT",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-global_annual_trade_disruption_conflict",
   unit: "USD/year",
   displayName: "Total Annual Trade Disruption",
   description: "Total annual trade disruption (sum of shipping, supply chain, energy prices, currency instability)",
@@ -3500,6 +4336,8 @@ export const GLOBAL_ANNUAL_TRADE_DISRUPTION_CONFLICT: Parameter = {
 
 export const GLOBAL_ANNUAL_WAR_DIRECT_COSTS_TOTAL: Parameter = {
   value: 7657000000000.0,
+  parameterName: "GLOBAL_ANNUAL_WAR_DIRECT_COSTS_TOTAL",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-global_annual_war_direct_costs_total",
   unit: "USD/year",
   displayName: "Total Annual Direct War Costs",
   description: "Total annual direct war costs (military spending + infrastructure + human life + trade disruption)",
@@ -3511,6 +4349,8 @@ export const GLOBAL_ANNUAL_WAR_DIRECT_COSTS_TOTAL: Parameter = {
 
 export const GLOBAL_ANNUAL_WAR_INDIRECT_COSTS_TOTAL: Parameter = {
   value: 3700100000000.0,
+  parameterName: "GLOBAL_ANNUAL_WAR_INDIRECT_COSTS_TOTAL",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-global_annual_war_indirect_costs_total",
   unit: "USD/year",
   displayName: "Total Annual Indirect War Costs",
   description: "Total annual indirect war costs (opportunity cost + veterans + refugees + environment + mental health + lost productivity)",
@@ -3522,6 +4362,8 @@ export const GLOBAL_ANNUAL_WAR_INDIRECT_COSTS_TOTAL: Parameter = {
 
 export const GLOBAL_AVG_HOURLY_INCOME: Parameter = {
   value: 7.1875,
+  parameterName: "GLOBAL_AVG_HOURLY_INCOME",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-global_avg_hourly_income",
   unit: "USD/hour",
   displayName: "Global Average Hourly Income",
   description: "Global average hourly income derived from GDP per capita. Uses average (not median), which overestimates the cost of sharing, making the payoff ratio conservative.",
@@ -3533,6 +4375,8 @@ export const GLOBAL_AVG_HOURLY_INCOME: Parameter = {
 
 export const GLOBAL_AVG_INCOME_2025: Parameter = {
   value: 14375.0,
+  parameterName: "GLOBAL_AVG_INCOME_2025",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-global_avg_income_2025",
   unit: "USD",
   displayName: "Global Average Income (2025 Baseline)",
   description: "Global average income (GDP per capita) in 2025 baseline.",
@@ -3544,6 +4388,8 @@ export const GLOBAL_AVG_INCOME_2025: Parameter = {
 
 export const GLOBAL_AVG_REMAINING_YEARS: Parameter = {
   value: 48.5,
+  parameterName: "GLOBAL_AVG_REMAINING_YEARS",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-global_avg_remaining_years",
   unit: "years",
   displayName: "Average Remaining Years (Median Person)",
   description: "Average remaining lifespan for the median-age person. Conservative: uses life expectancy at birth minus median age, which underestimates remaining years because survivors to age 30 have higher conditional life expectancy.",
@@ -3555,6 +4401,8 @@ export const GLOBAL_AVG_REMAINING_YEARS: Parameter = {
 
 export const GLOBAL_COORDINATION_ACTIVATION_BUDGET: Parameter = {
   value: 30000000000.0,
+  parameterName: "GLOBAL_COORDINATION_ACTIVATION_BUDGET",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-global_coordination_activation_budget",
   unit: "USD",
   displayName: "Global Coordination Activation Budget",
   description: "Canonical institutional activation threshold: capital required to make 50% participation credible through direct referral incentives, verification, payment rails, and global launch operations. This is the main institutional ask, not the PRIZE pool seed benchmark.",
@@ -3566,6 +4414,8 @@ export const GLOBAL_COORDINATION_ACTIVATION_BUDGET: Parameter = {
 
 export const GLOBAL_COORDINATION_ACTIVATION_COST_PER_PARTICIPANT: Parameter = {
   value: 6.5,
+  parameterName: "GLOBAL_COORDINATION_ACTIVATION_COST_PER_PARTICIPANT",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-global_coordination_activation_cost_per_participant",
   unit: "USD",
   displayName: "Activation Cost per Participant",
   description: "Blended variable activation cost per successful verified participant: direct incentive plus verification and payment operations.",
@@ -3577,6 +4427,8 @@ export const GLOBAL_COORDINATION_ACTIVATION_COST_PER_PARTICIPANT: Parameter = {
 
 export const GLOBAL_COORDINATION_TARGET_SUPPORTERS: Parameter = {
   value: 4000000000.0,
+  parameterName: "GLOBAL_COORDINATION_TARGET_SUPPORTERS",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-global_coordination_target_supporters",
   unit: "of people",
   displayName: "Global Coordination Target Supporters",
   description: "Number of people implied by the modeled end-state global coordination target (global population × 50%).",
@@ -3588,6 +4440,8 @@ export const GLOBAL_COORDINATION_TARGET_SUPPORTERS: Parameter = {
 
 export const GLOBAL_COST_PER_LIFE_SAVED_MED_RESEARCH_ANNUAL: Parameter = {
   value: 16071.42857142857,
+  parameterName: "GLOBAL_COST_PER_LIFE_SAVED_MED_RESEARCH_ANNUAL",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-global_cost_per_life_saved_med_research_annual",
   unit: "USD/life",
   displayName: "Cost per Life Saved by Medical Research",
   description: "Cost per life saved by medical research",
@@ -3599,6 +4453,8 @@ export const GLOBAL_COST_PER_LIFE_SAVED_MED_RESEARCH_ANNUAL: Parameter = {
 
 export const GLOBAL_DESTRUCTIVE_ECONOMY_ANNUAL_2025: Parameter = {
   value: 13220000000000.0,
+  parameterName: "GLOBAL_DESTRUCTIVE_ECONOMY_ANNUAL_2025",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-global_destructive_economy_annual_2025",
   unit: "USD",
   displayName: "Global Destructive Economy (2025)",
   description: "Combined annual cost of military spending and cybercrime. The 'destructive economy' that competes with the productive economy.",
@@ -3610,6 +4466,8 @@ export const GLOBAL_DESTRUCTIVE_ECONOMY_ANNUAL_2025: Parameter = {
 
 export const GLOBAL_DESTRUCTIVE_ECONOMY_PCT_GDP: Parameter = {
   value: 0.11495652173913043,
+  parameterName: "GLOBAL_DESTRUCTIVE_ECONOMY_PCT_GDP",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-global_destructive_economy_pct_gdp",
   unit: "percent",
   displayName: "Destructive Economy as % of GDP",
   description: "Destructive economy (military + cybercrime) as percentage of global GDP.",
@@ -3621,6 +4479,8 @@ export const GLOBAL_DESTRUCTIVE_ECONOMY_PCT_GDP: Parameter = {
 
 export const GLOBAL_DISEASE_DEATHS_PER_MINUTE: Parameter = {
   value: 104.16666666666667,
+  parameterName: "GLOBAL_DISEASE_DEATHS_PER_MINUTE",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-global_disease_deaths_per_minute",
   unit: "deaths/minute",
   displayName: "Global Deaths per Minute from Disease",
   description: "Global deaths per minute from all disease and aging",
@@ -3631,6 +4491,8 @@ export const GLOBAL_DISEASE_DEATHS_PER_MINUTE: Parameter = {
 
 export const GLOBAL_DISEASE_ECONOMIC_BURDEN_ANNUAL: Parameter = {
   value: 400152130131680.9,
+  parameterName: "GLOBAL_DISEASE_ECONOMIC_BURDEN_ANNUAL",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-global_disease_economic_burden_annual",
   unit: "USD/year",
   displayName: "Annual Welfare Cost of Avoidable Disease",
   description: "Annual welfare cost of avoidable disease globally. Calculated as global DALY burden × eventually avoidable percentage × standard QALY value ($150K). Uses consistent QALY valuation matching all other health impact calculations. Medical costs and productivity losses are NOT added separately to avoid double-counting (QALY valuation already captures these welfare components).",
@@ -3642,6 +4504,8 @@ export const GLOBAL_DISEASE_ECONOMIC_BURDEN_ANNUAL: Parameter = {
 
 export const GLOBAL_HALE_GAP: Parameter = {
   value: 15.700000000000003,
+  parameterName: "GLOBAL_HALE_GAP",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-global_hale_gap",
   unit: "years",
   displayName: "Life Expectancy to HALE Gap",
   description: "Gap between life expectancy and healthy life expectancy. Represents years lived with disability or disease that could be recovered by curing diseases.",
@@ -3653,6 +4517,8 @@ export const GLOBAL_HALE_GAP: Parameter = {
 
 export const GLOBAL_INDUSTRY_CLINICAL_TRIALS_SPENDING_ANNUAL: Parameter = {
   value: 55500000000.0,
+  parameterName: "GLOBAL_INDUSTRY_CLINICAL_TRIALS_SPENDING_ANNUAL",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-global_industry_clinical_trials_spending_annual",
   unit: "USD",
   displayName: "Annual Global Industry Spending on Clinical Trials",
   description: "Annual global industry spending on clinical trials (Total - Government)",
@@ -3664,6 +4530,8 @@ export const GLOBAL_INDUSTRY_CLINICAL_TRIALS_SPENDING_ANNUAL: Parameter = {
 
 export const GLOBAL_MILITARY_SPENDING_PER_CAPITA_ANNUAL: Parameter = {
   value: 340.0,
+  parameterName: "GLOBAL_MILITARY_SPENDING_PER_CAPITA_ANNUAL",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-global_military_spending_per_capita_annual",
   unit: "USD/person/year",
   displayName: "Per Capita Military Spending Globally",
   description: "Per capita military spending globally",
@@ -3675,6 +4543,8 @@ export const GLOBAL_MILITARY_SPENDING_PER_CAPITA_ANNUAL: Parameter = {
 
 export const GLOBAL_MILITARY_SPENDING_POST_TREATY_ANNUAL_2024: Parameter = {
   value: 2692800000000.0,
+  parameterName: "GLOBAL_MILITARY_SPENDING_POST_TREATY_ANNUAL_2024",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-global_military_spending_post_treaty_annual_2024",
   unit: "USD/year",
   displayName: "Global Military Spending After 1% Treaty Reduction",
   description: "Global military spending after 1% treaty reduction",
@@ -3686,6 +4556,8 @@ export const GLOBAL_MILITARY_SPENDING_POST_TREATY_ANNUAL_2024: Parameter = {
 
 export const GLOBAL_POLITICAL_REFORM_INVESTMENT: Parameter = {
   value: 127550000000.0,
+  parameterName: "GLOBAL_POLITICAL_REFORM_INVESTMENT",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-global_political_reform_investment",
   unit: "USD",
   displayName: "Global Political Reform Investment",
   description: "Estimated global advocacy investment for policy reform. Calculated as US costs × global ratio (based on discretionary spending). Upper bound representing full democratic engagement at scale.",
@@ -3697,6 +4569,8 @@ export const GLOBAL_POLITICAL_REFORM_INVESTMENT: Parameter = {
 
 export const GLOBAL_TOTAL_HEALTH_AND_WAR_COST_ANNUAL: Parameter = {
   value: 411509230131680.9,
+  parameterName: "GLOBAL_TOTAL_HEALTH_AND_WAR_COST_ANNUAL",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-global_total_health_and_war_cost_annual",
   unit: "USD/year",
   displayName: "Total Annual Cost of War and Disease",
   description: "Total annual welfare cost of war and disease. Disease burden uses DALY-based welfare valuation; war costs use direct + indirect economic costs. Symptomatic treatment costs NOT added separately (already captured in QALY valuation).",
@@ -3708,6 +4582,8 @@ export const GLOBAL_TOTAL_HEALTH_AND_WAR_COST_ANNUAL: Parameter = {
 
 export const HEALTHCARE_VS_MILITARY_MULTIPLIER_RATIO: Parameter = {
   value: 7.166666666666667,
+  parameterName: "HEALTHCARE_VS_MILITARY_MULTIPLIER_RATIO",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-healthcare_vs_military_multiplier_ratio",
   unit: "x",
   displayName: "Healthcare vs Military Multiplier Ratio",
   description: "Ratio of healthcare to military fiscal multipliers. Healthcare investment generates 7× more economic activity per dollar than military spending.",
@@ -3719,11 +4595,14 @@ export const HEALTHCARE_VS_MILITARY_MULTIPLIER_RATIO: Parameter = {
 
 export const IAB_MECHANISM_BENEFIT_COST_RATIO: Parameter = {
   value: 229.61531707317073,
+  parameterName: "IAB_MECHANISM_BENEFIT_COST_RATIO",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-iab_mechanism_benefit_cost_ratio",
   unit: "ratio",
   displayName: "IAB Mechanism Benefit-Cost Ratio",
   description: "Benefit-Cost Ratio of the IAB mechanism itself",
   sourceType: "calculated",
   sourceRef: "https://iab.warondisease.org##welfare-analysis",
+  sourceUrl: "https://iab.warondisease.org##welfare-analysis",
   confidence: "high",
   formula: "TREATY_PEACE_PLUS_RD_BENEFITS ÷ IAB_MECHANISM_COST",
   latex: "\\begin{gathered}\nBCR_{IAB} = \\frac{Benefit_{peace+RD}}{Cost_{IAB,ann}} = \\frac{\\$172B}{\\$750M} = 230\n\\\\[0.5em]\n\\text{where } Benefit_{peace+RD} = Benefit_{peace,soc} + Benefit_{RD,ann} = \\$114B + \\$58.6B = \\$172B\n\\\\[0.5em]\n\\text{where } Benefit_{peace,soc} = Cost_{war,total} \\times Reduce_{treaty} = \\$11.4T \\times 1\\% = \\$114B\n\\\\[0.5em]\n\\text{where } Cost_{war,total} = Cost_{war,direct} + Cost_{war,indirect} = \\$7.66T + \\$3.7T = \\$11.4T\n\\\\[0.5em]\n\\text{where } Cost_{war,direct} = Loss_{life,conflict} + Damage_{infra,total} + Disruption_{trade} + Spending_{mil} = \\$2.45T + \\$1.88T + \\$616B + \\$2.72T = \\$7.66T\n\\\\[0.5em]\n\\text{where } Loss_{life,conflict} = Cost_{combat,human} + Cost_{state,human} + Cost_{terror,human} = \\$2.34T + \\$27B + \\$83B = \\$2.45T\n\\\\[0.5em]\n\\text{where } Cost_{combat,human} = Deaths_{combat} \\times VSL = 234{,}000 \\times \\$10M = \\$2.34T\n\\\\[0.5em]\n\\text{where } Cost_{state,human} = Deaths_{state} \\times VSL = 2{,}700 \\times \\$10M = \\$27B\n\\\\[0.5em]\n\\text{where } Cost_{terror,human} = Deaths_{terror} \\times VSL = 8{,}300 \\times \\$10M = \\$83B\n\\\\[0.5em]\n\\text{where } Damage_{infra,total} = Damage_{comms} + Damage_{edu} + Damage_{energy} + Damage_{health} + Damage_{transport} + Damage_{water} = \\$298B + \\$234B + \\$422B + \\$166B + \\$487B + \\$268B = \\$1.88T\n\\\\[0.5em]\n\\text{where } Disruption_{trade} = Disruption_{currency} + Disruption_{energy} + Disruption_{shipping} + Disruption_{supply} = \\$57.4B + \\$125B + \\$247B + \\$187B = \\$616B\n\\\\[0.5em]\n\\text{where } Cost_{war,indirect} = Damage_{env} + Loss_{growth,mil} + Loss_{capital,conflict} + Cost_{psych} + Cost_{refugee} + Cost_{vet} = \\$100B + \\$2.72T + \\$300B + \\$232B + \\$150B + \\$200B = \\$3.7T\n\\\\[0.5em]\n\\text{where } Benefit_{RD,ann} = Spending_{trials} \\times Reduce_{pct} = \\$60B \\times 97.7\\% = \\$58.6B\n\\\\[0.5em]\n\\text{where } Reduce_{pct} = 1 - \\frac{Cost_{pragmatic,pt}}{Cost_{P3,pt}} = 1 - \\frac{\\$929}{\\$41K} = 97.7\\%\n\\end{gathered}",
@@ -3731,6 +4610,8 @@ export const IAB_MECHANISM_BENEFIT_COST_RATIO: Parameter = {
 
 export const IAB_POLITICAL_INCENTIVE_FUNDING_ANNUAL: Parameter = {
   value: 2720000000.0,
+  parameterName: "IAB_POLITICAL_INCENTIVE_FUNDING_ANNUAL",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-iab_political_incentive_funding_annual",
   unit: "USD/year",
   displayName: "Annual IAB Political Incentive Funding",
   description: "Annual funding for IAB political incentive mechanism (independent expenditures supporting high-scoring politicians, post-office fellowship endowments, Public Good Score infrastructure)",
@@ -3742,6 +4623,8 @@ export const IAB_POLITICAL_INCENTIVE_FUNDING_ANNUAL: Parameter = {
 
 export const IAB_VS_DEFENSE_LOBBY_RATIO_AT_1PCT: Parameter = {
   value: 21.41732283464567,
+  parameterName: "IAB_VS_DEFENSE_LOBBY_RATIO_AT_1PCT",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-iab_vs_defense_lobby_ratio_at_1pct",
   unit: "x",
   displayName: "IAB vs Defense Lobbying Ratio at 1% Treaty",
   description: "Ratio of IAB political incentive funding to defense industry lobbying at 1% treaty level. At just 1%, the health lobby already outguns the defense lobby by this factor.",
@@ -3753,11 +4636,14 @@ export const IAB_VS_DEFENSE_LOBBY_RATIO_AT_1PCT: Parameter = {
 
 export const INDUSTRY_VS_GOVERNMENT_CLINICAL_TRIALS_SPENDING_RATIO: Parameter = {
   value: 12.333333333333334,
+  parameterName: "INDUSTRY_VS_GOVERNMENT_CLINICAL_TRIALS_SPENDING_RATIO",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-industry_vs_government_clinical_trials_spending_ratio",
   unit: "ratio",
   displayName: "Ratio of Industry to Government Clinical Trials Spending",
   description: "Ratio of Industry to Government spending on clinical trials (approx 90/10 split)",
   sourceType: "calculated",
   sourceRef: "industry-vs-government-trial-spending-split",
+  sourceUrl: "https://www.appliedclinicaltrialsonline.com/view/sizing-clinical-research-market",
   confidence: "high",
   formula: "(TOTAL - GOVT) / GOVT",
   latex: "\\begin{gathered}\nRatio_{ind:gov} \\\\\n= \\frac{Spending_{trials}}{Spending_{trials,gov}} - 1 \\\\\n= \\frac{\\$60B}{\\$4.5B} - 1 \\\\\n= 12.3\n\\end{gathered}",
@@ -3765,11 +4651,14 @@ export const INDUSTRY_VS_GOVERNMENT_CLINICAL_TRIALS_SPENDING_RATIO: Parameter = 
 
 export const LIFE_EXPECTANCY_GAIN_1883_1962_YEARS_PER_DECADE: Parameter = {
   value: 0.0,
+  parameterName: "LIFE_EXPECTANCY_GAIN_1883_1962_YEARS_PER_DECADE",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-life_expectancy_gain_1883_1962_years_per_decade",
   unit: "years/decade",
   displayName: "Life Expectancy Gain Rate (1883-1962)",
   description: "US life expectancy linear gain rate 1883-1962 (pre-Kefauver-Harris).",
   sourceType: "calculated",
   sourceRef: "life-expectancy-increase-pre-1962",
+  sourceUrl: "https://manual.warondisease.org/knowledge/data/us-life-expectancy-fda-budget-1543-2019.csv",
   confidence: "high",
   formula: "(life_exp_1962 - life_exp_1880) / 7.9 decades",
   latex: "\\begin{gathered}\n\\Delta LE_{pre62} \\\\\n= \\frac{LE_{US,1962} - LE_{US,1880}}{7.69} \\\\\n= \\frac{70.1 - 39.4}{7.69} \\\\\n= 0\n\\end{gathered}",
@@ -3778,11 +4667,14 @@ export const LIFE_EXPECTANCY_GAIN_1883_1962_YEARS_PER_DECADE: Parameter = {
 
 export const LIFE_EXPECTANCY_GAIN_1962_2019_YEARS_PER_DECADE: Parameter = {
   value: 0.0,
+  parameterName: "LIFE_EXPECTANCY_GAIN_1962_2019_YEARS_PER_DECADE",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-life_expectancy_gain_1962_2019_years_per_decade",
   unit: "years/decade",
   displayName: "Life Expectancy Gain Rate (1962-2019)",
   description: "US life expectancy linear gain rate 1962-2019 (post-Kefauver-Harris).",
   sourceType: "calculated",
   sourceRef: "post-1962-life-expectancy-slowdown",
+  sourceUrl: "https://manual.warondisease.org/knowledge/data/us-life-expectancy-fda-budget-1543-2019.csv",
   confidence: "high",
   formula: "(life_exp_2019 - life_exp_1962) / 5.7 decades",
   latex: "\\begin{gathered}\n\\Delta LE_{post62} \\\\\n= \\frac{LE_{US,2019} - LE_{US,1962}}{5.56} \\\\\n= \\frac{78.9 - 70.1}{5.56} \\\\\n= 0\n\\end{gathered}",
@@ -3791,6 +4683,8 @@ export const LIFE_EXPECTANCY_GAIN_1962_2019_YEARS_PER_DECADE: Parameter = {
 
 export const MEDICAL_RESEARCH_PCT_OF_DISEASE_BURDEN: Parameter = {
   value: 0.00016403034259620457,
+  parameterName: "MEDICAL_RESEARCH_PCT_OF_DISEASE_BURDEN",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-medical_research_pct_of_disease_burden",
   unit: "rate",
   displayName: "Medical Research Spending as Percentage of Total Disease Burden",
   description: "Medical research spending as percentage of total disease burden",
@@ -3802,6 +4696,8 @@ export const MEDICAL_RESEARCH_PCT_OF_DISEASE_BURDEN: Parameter = {
 
 export const MILITARY_TO_CLINICAL_TRIALS_SPENDING_RATIO: Parameter = {
   value: 45.333333333333336,
+  parameterName: "MILITARY_TO_CLINICAL_TRIALS_SPENDING_RATIO",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-military_to_clinical_trials_spending_ratio",
   unit: "ratio",
   displayName: "Ratio of Military to Clinical Trials Spending",
   description: "Ratio of global military spending to all clinical trials spending (government + industry + nonprofit)",
@@ -3813,6 +4709,8 @@ export const MILITARY_TO_CLINICAL_TRIALS_SPENDING_RATIO: Parameter = {
 
 export const MILITARY_TO_GOVERNMENT_CLINICAL_TRIALS_SPENDING_RATIO: Parameter = {
   value: 604.4444444444445,
+  parameterName: "MILITARY_TO_GOVERNMENT_CLINICAL_TRIALS_SPENDING_RATIO",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-military_to_government_clinical_trials_spending_ratio",
   unit: "ratio",
   displayName: "Ratio of Military to Government Clinical Trials Spending",
   description: "Ratio of global military spending to government clinical trials spending",
@@ -3824,6 +4722,8 @@ export const MILITARY_TO_GOVERNMENT_CLINICAL_TRIALS_SPENDING_RATIO: Parameter = 
 
 export const MILITARY_VS_MEDICAL_RESEARCH_RATIO: Parameter = {
   value: 40.2962962962963,
+  parameterName: "MILITARY_VS_MEDICAL_RESEARCH_RATIO",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-military_vs_medical_research_ratio",
   unit: "ratio",
   displayName: "Ratio of Military Spending to Medical Research Spending",
   description: "Ratio of military spending to medical research spending",
@@ -3835,6 +4735,8 @@ export const MILITARY_VS_MEDICAL_RESEARCH_RATIO: Parameter = {
 
 export const MISALLOCATION_FACTOR_DEATH_VS_SAVING: Parameter = {
   value: 2889.0596892886347,
+  parameterName: "MISALLOCATION_FACTOR_DEATH_VS_SAVING",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-misallocation_factor_death_vs_saving",
   unit: "x",
   displayName: "Misallocation Factor: Cost to Kill vs Cost to Save",
   description: "Misallocation factor: cost to kill vs cost to save",
@@ -3846,6 +4748,8 @@ export const MISALLOCATION_FACTOR_DEATH_VS_SAVING: Parameter = {
 
 export const MRNA_THERAPEUTIC_COMBINATIONS: Parameter = {
   value: 20000000.0,
+  parameterName: "MRNA_THERAPEUTIC_COMBINATIONS",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-mrna_therapeutic_combinations",
   unit: "combinations",
   displayName: "mRNA Therapeutic Combinations",
   description: "mRNA therapeutic combinations (protein replacement, vaccines, enzyme delivery)",
@@ -3857,6 +4761,8 @@ export const MRNA_THERAPEUTIC_COMBINATIONS: Parameter = {
 
 export const NIH_TRADITIONAL_TRIAL_MAX_EFFICIENCY_PCT: Parameter = {
   value: 0.022658536585365853,
+  parameterName: "NIH_TRADITIONAL_TRIAL_MAX_EFFICIENCY_PCT",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-nih_traditional_trial_max_efficiency_pct",
   unit: "percent",
   displayName: "NIH Traditional Trial Maximum Efficiency vs Pragmatic (%)",
   description: "Maximum efficiency of NIH traditional Phase 3 trials relative to pragmatic trials, expressed as a percentage. Calculated as pragmatic cost / traditional cost. This is a CEILING on NIH trial efficiency because: (1) only 3.3% of NIH budget goes to clinical trials at all, and (2) the other 96.7% funds basic research with far lower marginal value when thousands of safe compounds already await testing.",
@@ -3868,6 +4774,8 @@ export const NIH_TRADITIONAL_TRIAL_MAX_EFFICIENCY_PCT: Parameter = {
 
 export const PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT: Parameter = {
   value: 113571000000.0,
+  parameterName: "PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-peace_dividend_annual_societal_benefit",
   unit: "USD/year",
   displayName: "Annual Peace Dividend from 1% Reduction in Total War Costs",
   description: "Annual peace dividend from 1% reduction in total war costs (theoretical maximum at ε=1.0)",
@@ -3879,6 +4787,8 @@ export const PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT: Parameter = {
 
 export const PEACE_DIVIDEND_CONFLICT_REDUCTION: Parameter = {
   value: 86371000000.0,
+  parameterName: "PEACE_DIVIDEND_CONFLICT_REDUCTION",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-peace_dividend_conflict_reduction",
   unit: "USD/year",
   displayName: "Conflict Reduction Benefits from 1% Less Military Spending",
   description: "Conflict reduction benefits from 1% less military spending (lower confidence - assumes proportional relationship)",
@@ -3891,6 +4801,8 @@ export const PEACE_DIVIDEND_CONFLICT_REDUCTION: Parameter = {
 
 export const PEACE_DIVIDEND_DIRECT_COSTS: Parameter = {
   value: 76570000000.0,
+  parameterName: "PEACE_DIVIDEND_DIRECT_COSTS",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-peace_dividend_direct_costs",
   unit: "USD/year",
   displayName: "Annual Savings from 1% Reduction in Direct War Costs",
   description: "Annual savings from 1% reduction in direct war costs",
@@ -3902,6 +4814,8 @@ export const PEACE_DIVIDEND_DIRECT_COSTS: Parameter = {
 
 export const PEACE_DIVIDEND_ENVIRONMENTAL: Parameter = {
   value: 1000000000.0,
+  parameterName: "PEACE_DIVIDEND_ENVIRONMENTAL",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-peace_dividend_environmental",
   unit: "USD/year",
   displayName: "Annual Savings from 1% Reduction in Environmental Damage",
   description: "Annual savings from 1% reduction in environmental damage",
@@ -3913,6 +4827,8 @@ export const PEACE_DIVIDEND_ENVIRONMENTAL: Parameter = {
 
 export const PEACE_DIVIDEND_HUMAN_CASUALTIES: Parameter = {
   value: 24460000000.0,
+  parameterName: "PEACE_DIVIDEND_HUMAN_CASUALTIES",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-peace_dividend_human_casualties",
   unit: "USD/year",
   displayName: "Annual Savings from 1% Reduction in Human Casualties",
   description: "Annual savings from 1% reduction in human casualties",
@@ -3924,6 +4840,8 @@ export const PEACE_DIVIDEND_HUMAN_CASUALTIES: Parameter = {
 
 export const PEACE_DIVIDEND_INDIRECT_COSTS: Parameter = {
   value: 37001000000.0,
+  parameterName: "PEACE_DIVIDEND_INDIRECT_COSTS",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-peace_dividend_indirect_costs",
   unit: "USD/year",
   displayName: "Annual Savings from 1% Reduction in Indirect War Costs",
   description: "Annual savings from 1% reduction in indirect war costs",
@@ -3935,6 +4853,8 @@ export const PEACE_DIVIDEND_INDIRECT_COSTS: Parameter = {
 
 export const PEACE_DIVIDEND_INFRASTRUCTURE: Parameter = {
   value: 18750000000.0,
+  parameterName: "PEACE_DIVIDEND_INFRASTRUCTURE",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-peace_dividend_infrastructure",
   unit: "USD/year",
   displayName: "Annual Savings from 1% Reduction in Infrastructure Destruction",
   description: "Annual savings from 1% reduction in infrastructure destruction",
@@ -3946,6 +4866,8 @@ export const PEACE_DIVIDEND_INFRASTRUCTURE: Parameter = {
 
 export const PEACE_DIVIDEND_LOST_ECONOMIC_GROWTH: Parameter = {
   value: 27180000000.0,
+  parameterName: "PEACE_DIVIDEND_LOST_ECONOMIC_GROWTH",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-peace_dividend_lost_economic_growth",
   unit: "USD/year",
   displayName: "Annual Savings from 1% Reduction in Lost Economic Growth",
   description: "Annual savings from 1% reduction in lost economic growth",
@@ -3957,6 +4879,8 @@ export const PEACE_DIVIDEND_LOST_ECONOMIC_GROWTH: Parameter = {
 
 export const PEACE_DIVIDEND_LOST_HUMAN_CAPITAL: Parameter = {
   value: 3000000000.0,
+  parameterName: "PEACE_DIVIDEND_LOST_HUMAN_CAPITAL",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-peace_dividend_lost_human_capital",
   unit: "USD/year",
   displayName: "Annual Savings from 1% Reduction in Lost Human Capital",
   description: "Annual savings from 1% reduction in lost human capital",
@@ -3968,6 +4892,8 @@ export const PEACE_DIVIDEND_LOST_HUMAN_CAPITAL: Parameter = {
 
 export const PEACE_DIVIDEND_PTSD: Parameter = {
   value: 2320000000.0,
+  parameterName: "PEACE_DIVIDEND_PTSD",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-peace_dividend_ptsd",
   unit: "USD/year",
   displayName: "Annual Savings from 1% Reduction in PTSD and Mental Health Costs",
   description: "Annual savings from 1% reduction in PTSD and mental health costs",
@@ -3979,6 +4905,8 @@ export const PEACE_DIVIDEND_PTSD: Parameter = {
 
 export const PEACE_DIVIDEND_REFUGEE_SUPPORT: Parameter = {
   value: 1500000000.0,
+  parameterName: "PEACE_DIVIDEND_REFUGEE_SUPPORT",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-peace_dividend_refugee_support",
   unit: "USD/year",
   displayName: "Annual Savings from 1% Reduction in Refugee Support Costs",
   description: "Annual savings from 1% reduction in refugee support costs",
@@ -3990,6 +4918,8 @@ export const PEACE_DIVIDEND_REFUGEE_SUPPORT: Parameter = {
 
 export const PEACE_DIVIDEND_TRADE_DISRUPTION: Parameter = {
   value: 6160000000.0,
+  parameterName: "PEACE_DIVIDEND_TRADE_DISRUPTION",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-peace_dividend_trade_disruption",
   unit: "USD/year",
   displayName: "Annual Savings from 1% Reduction in Trade Disruption",
   description: "Annual savings from 1% reduction in trade disruption",
@@ -4001,6 +4931,8 @@ export const PEACE_DIVIDEND_TRADE_DISRUPTION: Parameter = {
 
 export const PEACE_DIVIDEND_VETERAN_HEALTHCARE: Parameter = {
   value: 2001000000.0,
+  parameterName: "PEACE_DIVIDEND_VETERAN_HEALTHCARE",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-peace_dividend_veteran_healthcare",
   unit: "USD/year",
   displayName: "Annual Savings from 1% Reduction in Veteran Healthcare Costs",
   description: "Annual savings from 1% reduction in veteran healthcare costs",
@@ -4012,6 +4944,8 @@ export const PEACE_DIVIDEND_VETERAN_HEALTHCARE: Parameter = {
 
 export const PEACE_TRAJECTORY_TOTAL_DIFFERENTIAL_20YR: Parameter = {
   value: 16329436000000.002,
+  parameterName: "PEACE_TRAJECTORY_TOTAL_DIFFERENTIAL_20YR",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-peace_trajectory_total_differential_20yr",
   unit: "USD",
   displayName: "Peace Trajectory Total Differential (20yr)",
   description: "Total 20-year value of the peace trajectory: research funding redirected to medicine plus war externality costs avoided. The full differential between the IAB trajectory and the current trajectory. Does not include existential risk reduction.",
@@ -4023,6 +4957,8 @@ export const PEACE_TRAJECTORY_TOTAL_DIFFERENTIAL_20YR: Parameter = {
 
 export const PERSONAL_LIFETIME_WEALTH: Parameter = {
   value: 3000000.0,
+  parameterName: "PERSONAL_LIFETIME_WEALTH",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-personal_lifetime_wealth",
   unit: "USD",
   displayName: "Personal Lifetime Wealth (QALY-Based)",
   description: "Personal lifetime wealth from life extension valued at standard QALY rate. Simple formula: years of life gained × economic value per healthy year. Uncertainty in LIFE_EXTENSION_YEARS (5-100 year range, median 20) propagates through Monte Carlo.",
@@ -4034,6 +4970,8 @@ export const PERSONAL_LIFETIME_WEALTH: Parameter = {
 
 export const PER_CAPITA_CHRONIC_DISEASE_COST: Parameter = {
   value: 12238.805970149253,
+  parameterName: "PER_CAPITA_CHRONIC_DISEASE_COST",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-per_capita_chronic_disease_cost",
   unit: "USD/person/year",
   displayName: "US Per Capita Chronic Disease Cost",
   description: "US per capita chronic disease cost",
@@ -4045,6 +4983,8 @@ export const PER_CAPITA_CHRONIC_DISEASE_COST: Parameter = {
 
 export const PER_CAPITA_MENTAL_HEALTH_COST: Parameter = {
   value: 1044.7761194029852,
+  parameterName: "PER_CAPITA_MENTAL_HEALTH_COST",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-per_capita_mental_health_cost",
   unit: "USD/person/year",
   displayName: "US Per Capita Mental Health Cost",
   description: "US per capita mental health cost",
@@ -4056,11 +4996,14 @@ export const PER_CAPITA_MENTAL_HEALTH_COST: Parameter = {
 
 export const PHARMA_LIVES_SAVED_ANNUAL: Parameter = {
   value: 12391666.666666666,
+  parameterName: "PHARMA_LIVES_SAVED_ANNUAL",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-pharma_lives_saved_annual",
   unit: "deaths",
   displayName: "Annual Lives Saved by Pharmaceuticals",
   description: "Annual lives saved by pharmaceutical interventions globally. Derived from Lichtenberg (2019) finding of 148.7M life-years saved, divided by assumed 12-year average life extension per beneficiary. Note: Life-years is the primary metric; lives is an approximation for intuitive communication.",
   sourceType: "calculated",
   sourceRef: "lichtenberg-life-years-saved-2019",
+  sourceUrl: "https://www.nber.org/papers/w25483",
   confidence: "low",
   formula: "PHARMA_LIFE_YEARS_SAVED_ANNUAL ÷ AVG_LIFE_EXTENSION_PER_BENEFICIARY",
   latex: "\\begin{gathered}\nLives_{saved,annual} \\\\\n= \\frac{LY_{saved,annual}}{T_{ext}} \\\\\n= \\frac{149M}{12} \\\\\n= 12.4M\n\\end{gathered}",
@@ -4068,11 +5011,14 @@ export const PHARMA_LIVES_SAVED_ANNUAL: Parameter = {
 
 export const POLITICAL_DYSFUNCTION_GLOBAL_EFFICIENCY_SCORE: Parameter = {
   value: 0.5185960162628752,
+  parameterName: "POLITICAL_DYSFUNCTION_GLOBAL_EFFICIENCY_SCORE",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-political_dysfunction_global_efficiency_score",
   unit: "percent",
   displayName: "Global Governance Efficiency Score",
   description: "Global Governance Efficiency Score from Political Dysfunction Tax paper. E = Adjusted W_real / W_max, where W_real = GDP - waste, W_max = W_real + opportunity cost. Paper calculates 30-52% efficiency (using $110.9T adjusted / $211.9T maximum). This means civilization operates at roughly half its technological potential.",
   sourceType: "calculated",
   sourceRef: "political-dysfunction-tax-paper-2025",
+  sourceUrl: "https://manual.warondisease.org/knowledge/appendix/political-dysfunction-tax.html",
   confidence: "low",
   formula: "POLITICAL_DYSFUNCTION_GLOBAL_REALIZED_WELFARE_ADJUSTED / POLITICAL_DYSFUNCTION_GLOBAL_THEORETICAL_MAX_WELFARE",
   latex: "\\begin{gathered}\nE \\\\\n= \\frac{W_{real}}{W_{max}} \\\\\n= \\frac{GDP - W_{waste}}{GDP - W_{waste} + O_{total}}\n\\end{gathered}",
@@ -4080,11 +5026,14 @@ export const POLITICAL_DYSFUNCTION_GLOBAL_EFFICIENCY_SCORE: Parameter = {
 
 export const POLITICAL_DYSFUNCTION_GLOBAL_OPPORTUNITY_COST_PCT_GDP: Parameter = {
   value: 0.8782608695652174,
+  parameterName: "POLITICAL_DYSFUNCTION_GLOBAL_OPPORTUNITY_COST_PCT_GDP",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-political_dysfunction_global_opportunity_cost_pct_gdp",
   unit: "percent",
   displayName: "Global Opportunity Cost as % of GDP",
   description: "Global opportunity cost as percentage of global GDP. $101T / $115T = ~88% of current GDP in unrealized potential. This represents the 'buried multipliers' of the global economy.",
   sourceType: "calculated",
   sourceRef: "political-dysfunction-tax-paper-2025",
+  sourceUrl: "https://manual.warondisease.org/knowledge/appendix/political-dysfunction-tax.html",
   confidence: "low",
   formula: "POLITICAL_DYSFUNCTION_GLOBAL_OPPORTUNITY_COST_TOTAL / GLOBAL_GDP_2025",
   latex: "\\begin{gathered}\nO_{\\%GDP} = \\frac{O_{total}}{GDP_{global}} = \\frac{\\$101T}{\\$115T} = 87.8\\%\n\\\\[0.5em]\n\\text{where } O_{total} = O_{health} + O_{science} + O_{lead} + O_{migration} = \\$34T + \\$4T + \\$6T + \\$57T = \\$101T\n\\end{gathered}",
@@ -4092,11 +5041,14 @@ export const POLITICAL_DYSFUNCTION_GLOBAL_OPPORTUNITY_COST_PCT_GDP: Parameter = 
 
 export const POLITICAL_DYSFUNCTION_GLOBAL_OPPORTUNITY_COST_TOTAL: Parameter = {
   value: 101000000000000.0,
+  parameterName: "POLITICAL_DYSFUNCTION_GLOBAL_OPPORTUNITY_COST_TOTAL",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-political_dysfunction_global_opportunity_cost_total",
   unit: "USD",
   displayName: "Global Opportunity Cost Total",
   description: "Total global opportunity cost from governance failures: health innovation delays ($34T), underfunded science ($4T), lead poisoning ($6T), migration restrictions ($57T). Sum: $101T annually in unrealized potential.",
   sourceType: "calculated",
   sourceRef: "political-dysfunction-tax-paper-2025",
+  sourceUrl: "https://manual.warondisease.org/knowledge/appendix/political-dysfunction-tax.html",
   confidence: "low",
   formula: "HEALTH + SCIENCE + LEAD + MIGRATION",
   latex: "\\begin{gathered}\nO_{total} \\\\\n= O_{health} + O_{science} + O_{lead} + O_{migration} \\\\\n= \\$34T + \\$4T + \\$6T + \\$57T \\\\\n= \\$101T\n\\end{gathered}",
@@ -4104,6 +5056,8 @@ export const POLITICAL_DYSFUNCTION_GLOBAL_OPPORTUNITY_COST_TOTAL: Parameter = {
 
 export const POLITICAL_DYSFUNCTION_GLOBAL_REALIZED_WELFARE_ADJUSTED: Parameter = {
   value: 108803000000000.0,
+  parameterName: "POLITICAL_DYSFUNCTION_GLOBAL_REALIZED_WELFARE_ADJUSTED",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-political_dysfunction_global_realized_welfare_adjusted",
   unit: "USD",
   displayName: "Adjusted Realized Welfare",
   description: "Adjusted realized welfare after subtracting measured governance waste from global GDP.",
@@ -4115,6 +5069,8 @@ export const POLITICAL_DYSFUNCTION_GLOBAL_REALIZED_WELFARE_ADJUSTED: Parameter =
 
 export const POLITICAL_DYSFUNCTION_GLOBAL_THEORETICAL_MAX_WELFARE: Parameter = {
   value: 209803000000000.0,
+  parameterName: "POLITICAL_DYSFUNCTION_GLOBAL_THEORETICAL_MAX_WELFARE",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-political_dysfunction_global_theoretical_max_welfare",
   unit: "USD",
   displayName: "Theoretical Maximum Welfare (Conservative)",
   description: "Conservative theoretical maximum welfare under opportunity-cost recapture assumptions.",
@@ -4126,6 +5082,8 @@ export const POLITICAL_DYSFUNCTION_GLOBAL_THEORETICAL_MAX_WELFARE: Parameter = {
 
 export const POLITICAL_DYSFUNCTION_GLOBAL_WASTE_TOTAL: Parameter = {
   value: 6197000000000.0,
+  parameterName: "POLITICAL_DYSFUNCTION_GLOBAL_WASTE_TOTAL",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-political_dysfunction_global_waste_total",
   unit: "USD",
   displayName: "Global Waste Total (Efficiency Accounting)",
   description: "Global waste deduction used in Political Dysfunction Tax efficiency accounting. Combines US governance waste estimate with global explicit fossil-fuel subsidies.",
@@ -4137,6 +5095,8 @@ export const POLITICAL_DYSFUNCTION_GLOBAL_WASTE_TOTAL: Parameter = {
 
 export const POLITICAL_DYSFUNCTION_TAX_PER_HOUSEHOLD_OF_FOUR_ANNUAL: Parameter = {
   value: 50500.0,
+  parameterName: "POLITICAL_DYSFUNCTION_TAX_PER_HOUSEHOLD_OF_FOUR_ANNUAL",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-political_dysfunction_tax_per_household_of_four_annual",
   unit: "USD/year",
   displayName: "Political Dysfunction Tax per Household of Four (Annual)",
   description: "Annual household burden for a 4-person household implied by global Political Dysfunction Tax.",
@@ -4148,6 +5108,8 @@ export const POLITICAL_DYSFUNCTION_TAX_PER_HOUSEHOLD_OF_FOUR_ANNUAL: Parameter =
 
 export const POLITICAL_DYSFUNCTION_TAX_PER_PERSON_ANNUAL: Parameter = {
   value: 12625.0,
+  parameterName: "POLITICAL_DYSFUNCTION_TAX_PER_PERSON_ANNUAL",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-political_dysfunction_tax_per_person_annual",
   unit: "USD/year",
   displayName: "Political Dysfunction Tax per Person (Annual)",
   description: "Annual per-person burden implied by global Political Dysfunction Tax opportunity costs.",
@@ -4159,6 +5121,8 @@ export const POLITICAL_DYSFUNCTION_TAX_PER_PERSON_ANNUAL: Parameter = {
 
 export const POST_WW2_MILITARY_CUT_PCT: Parameter = {
   value: 0.876056338028169,
+  parameterName: "POST_WW2_MILITARY_CUT_PCT",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-post_ww2_military_cut_pct",
   unit: "percent",
   displayName: "Percentage Military Spending Cut After WW2",
   description: "Percentage US military spending cut after WW2 (1945-1947, inflation-adjusted: $1,420B to $176B in constant 2024 dollars)",
@@ -4170,11 +5134,14 @@ export const POST_WW2_MILITARY_CUT_PCT: Parameter = {
 
 export const PRAGMATIC_TRIAL_COST_PER_QALY: Parameter = {
   value: 4.0,
+  parameterName: "PRAGMATIC_TRIAL_COST_PER_QALY",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-pragmatic_trial_cost_per_qaly",
   unit: "USD/QALY",
   displayName: "Pragmatic Trial Cost per QALY (RECOVERY)",
   description: "Cost per QALY for pragmatic platform trials, calculated from RECOVERY trial data. Uses global impact methodology: trial cost divided by total QALYs from downstream adoption. This measures research efficiency (discovery value), not clinical intervention ICER.",
   sourceType: "calculated",
   sourceRef: "recovery-trial-82x-cost-reduction",
+  sourceUrl: "https://manhattan.institute/article/slow-costly-clinical-trials-drag-down-biomedical-breakthroughs",
   confidence: "medium",
   formula: "TRIAL_COST ÷ TOTAL_QALYS_GENERATED",
   latex: "\\begin{gathered}\nCost_{pragmatic,QALY} = \\frac{Cost_{RECOVERY}}{QALY_{RECOVERY}} = \\frac{\\$20M}{5M} = \\$4\n\\\\[0.5em]\n\\text{where } QALY_{RECOVERY} = Lives_{RECOVERY} \\times QALY_{COVID} = 1M \\times 5 = 5M\n\\end{gathered}",
@@ -4182,6 +5149,8 @@ export const PRAGMATIC_TRIAL_COST_PER_QALY: Parameter = {
 
 export const PRIZE_POOL_ANNUAL_RETURN: Parameter = {
   value: 0.17380000000000004,
+  parameterName: "PRIZE_POOL_ANNUAL_RETURN",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-prize_pool_annual_return",
   unit: "percent",
   displayName: "PRIZE Pool Annual Return",
   description: "Canonical annual return used for PRIZE pool growth. Venture gross return + scale compression + crowd allocation alpha + home bias elimination. This is the structural pool return before contingent macro feedback loops.",
@@ -4193,6 +5162,8 @@ export const PRIZE_POOL_ANNUAL_RETURN: Parameter = {
 
 export const PRIZE_POOL_HORIZON_MULTIPLE: Parameter = {
   value: 11.063984983606389,
+  parameterName: "PRIZE_POOL_HORIZON_MULTIPLE",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-prize_pool_horizon_multiple",
   unit: "x",
   displayName: "PRIZE Pool Horizon Multiple",
   description: "Compound multiple for PRIZE pool growth over the resolution horizon (tied to the destructive economy 50% threshold year).",
@@ -4204,6 +5175,8 @@ export const PRIZE_POOL_HORIZON_MULTIPLE: Parameter = {
 
 export const PRIZE_POOL_POTENTIAL_MAX_SIZE: Parameter = {
   value: 774478948852447.2,
+  parameterName: "PRIZE_POOL_POTENTIAL_MAX_SIZE",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-prize_pool_potential_max_size",
   unit: "USD",
   displayName: "PRIZE Pool Potential Max Size",
   description: "Potential maximum terminal PRIZE pool size if the global retirement asset base compounds through the wishocratic fund over the resolution horizon.",
@@ -4215,6 +5188,8 @@ export const PRIZE_POOL_POTENTIAL_MAX_SIZE: Parameter = {
 
 export const PRIZE_POOL_RETIREMENT_EQUIVALENT_PRINCIPAL: Parameter = {
   value: 1804405541315.2495,
+  parameterName: "PRIZE_POOL_RETIREMENT_EQUIVALENT_PRINCIPAL",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-prize_pool_retirement_equivalent_principal",
   unit: "USD",
   displayName: "PRIZE Pool Retirement-Equivalent Principal",
   description: "Secondary PRIZE seed benchmark: initial principal required so that the pool can make two referred votes retirement-equivalent on success at the modeled global coordination target. This is a stronger-incentive visible-pool benchmark, not the minimum capital required to make 50% participation credible.",
@@ -4226,11 +5201,14 @@ export const PRIZE_POOL_RETIREMENT_EQUIVALENT_PRINCIPAL: Parameter = {
 
 export const RECOVERY_TRIAL_COST_REDUCTION_FACTOR: Parameter = {
   value: 82.0,
+  parameterName: "RECOVERY_TRIAL_COST_REDUCTION_FACTOR",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-recovery_trial_cost_reduction_factor",
   unit: "multiplier",
   displayName: "RECOVERY Trial Cost Reduction Factor",
   description: "Cost reduction factor demonstrated by RECOVERY trial (traditional Phase 3 cost / RECOVERY cost per patient)",
   sourceType: "calculated",
   sourceRef: "recovery-trial-82x-cost-reduction",
+  sourceUrl: "https://manhattan.institute/article/slow-costly-clinical-trials-drag-down-biomedical-breakthroughs",
   confidence: "high",
   formula: "TRADITIONAL_PHASE3_COST / RECOVERY_COST",
   latex: "\\begin{gathered}\nk_{RECOVERY} \\\\\n= \\frac{Cost_{P3,pt}}{Cost_{RECOVERY,pt}} \\\\\n= \\frac{\\$41K}{\\$500} \\\\\n= 82\n\\end{gathered}",
@@ -4238,6 +5216,8 @@ export const RECOVERY_TRIAL_COST_REDUCTION_FACTOR: Parameter = {
 
 export const RECOVERY_TRIAL_TOTAL_QALYS_GENERATED: Parameter = {
   value: 5000000.0,
+  parameterName: "RECOVERY_TRIAL_TOTAL_QALYS_GENERATED",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-recovery_trial_total_qalys_generated",
   unit: "QALYs",
   displayName: "RECOVERY Trial Total QALYs Generated",
   description: "Total QALYs generated by RECOVERY trial's discoveries (lives saved × QALYs per life). Uses global impact methodology: counts all downstream health gains from the discovery.",
@@ -4249,6 +5229,8 @@ export const RECOVERY_TRIAL_TOTAL_QALYS_GENERATED: Parameter = {
 
 export const RETIREMENT_EQUIVALENT_2_CLAIMS_TARGET_PAYOUT: Parameter = {
   value: 9981.95790672404,
+  parameterName: "RETIREMENT_EQUIVALENT_2_CLAIMS_TARGET_PAYOUT",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-retirement_equivalent_2_claims_target_payout",
   unit: "USD",
   displayName: "Retirement-Equivalent 2-Claims Target Payout",
   description: "Target success-side payout for two referred votes: what one representative annual savings contribution would become in a conventional retirement account by PRIZE resolution.",
@@ -4260,6 +5242,8 @@ export const RETIREMENT_EQUIVALENT_2_CLAIMS_TARGET_PAYOUT: Parameter = {
 
 export const RETIREMENT_EQUIVALENT_CLAIM_VALUE_TARGET: Parameter = {
   value: 4990.97895336202,
+  parameterName: "RETIREMENT_EQUIVALENT_CLAIM_VALUE_TARGET",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-retirement_equivalent_claim_value_target",
   unit: "USD",
   displayName: "Retirement-Equivalent Claim Value Target",
   description: "Target value of one referred-voter claim when two claims are meant to match the conventional-retirement future value of one representative annual savings contribution.",
@@ -4271,6 +5255,8 @@ export const RETIREMENT_EQUIVALENT_CLAIM_VALUE_TARGET: Parameter = {
 
 export const SHARING_BREAKEVEN_ONE_IN_TREATY: Parameter = {
   value: 245637049.39622235,
+  parameterName: "SHARING_BREAKEVEN_ONE_IN_TREATY",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-sharing_breakeven_one_in_treaty",
   unit: "ratio",
   displayName: "Sharing Breakeven (1 in N)",
   description: "Breakeven probability expressed as '1 in N'. Forwarding has positive expected value if you believe there is at least a 1-in-N chance the plan works. For context, lightning strike odds are ~1 in 1.2 million.",
@@ -4282,6 +5268,8 @@ export const SHARING_BREAKEVEN_ONE_IN_TREATY: Parameter = {
 
 export const SHARING_BREAKEVEN_PROBABILITY_TREATY: Parameter = {
   value: 4.071047109782531e-09,
+  parameterName: "SHARING_BREAKEVEN_PROBABILITY_TREATY",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-sharing_breakeven_probability_treaty",
   unit: "probability",
   displayName: "Sharing Breakeven Probability",
   description: "Minimum probability that the plan works for forwarding to have positive expected value. EV > 0 when P(works) > cost_of_sharing / gain_if_works. Below this probability, not forwarding is rational. Above it, forwarding dominates. For context, the odds of being struck by lightning are ~1 in 1.2 million.",
@@ -4293,6 +5281,8 @@ export const SHARING_BREAKEVEN_PROBABILITY_TREATY: Parameter = {
 
 export const SHARING_OPPORTUNITY_COST: Parameter = {
   value: 0.059895833333333336,
+  parameterName: "SHARING_OPPORTUNITY_COST",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-sharing_opportunity_cost",
   unit: "USD",
   displayName: "Sharing Opportunity Cost",
   description: "Dollar cost of 30 seconds at global average hourly income. The maximum downside of forwarding the message if the plan is impossible.",
@@ -4304,6 +5294,8 @@ export const SHARING_OPPORTUNITY_COST: Parameter = {
 
 export const SHARING_UPSIDE_DOWNSIDE_RATIO_TREATY: Parameter = {
   value: 245637049.39622235,
+  parameterName: "SHARING_UPSIDE_DOWNSIDE_RATIO_TREATY",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-sharing_upside_downside_ratio_treaty",
   unit: "x",
   displayName: "Sharing Upside/Downside Ratio",
   description: "Raw ratio of upside (lifetime income gain if plan works) to downside (cost of sharing if plan is impossible). Not expected value; see SHARING_BREAKEVEN_PROBABILITY_TREATY for the probability threshold that makes forwarding rational.",
@@ -4315,6 +5307,8 @@ export const SHARING_UPSIDE_DOWNSIDE_RATIO_TREATY: Parameter = {
 
 export const STATUS_QUO_AVG_YEARS_TO_FIRST_TREATMENT: Parameter = {
   value: 221.66666666666666,
+  parameterName: "STATUS_QUO_AVG_YEARS_TO_FIRST_TREATMENT",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-status_quo_avg_years_to_first_treatment",
   unit: "years",
   displayName: "Status Quo Average Years to First Treatment",
   description: "Average years until first treatment discovered for a typical disease under current system. At current discovery rates, the average disease waits half the total exploration time (~443/2 = ~222 years).",
@@ -4327,6 +5321,8 @@ export const STATUS_QUO_AVG_YEARS_TO_FIRST_TREATMENT: Parameter = {
 
 export const STATUS_QUO_QUEUE_CLEARANCE_YEARS: Parameter = {
   value: 443.3333333333333,
+  parameterName: "STATUS_QUO_QUEUE_CLEARANCE_YEARS",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-status_quo_queue_clearance_years",
   unit: "years",
   displayName: "Status Quo Therapeutic Space Exploration Time",
   description: "Years to explore the entire therapeutic search space under current system. At current discovery rate of ~15 diseases/year getting first treatments, finding treatments for all ~6,650 untreated diseases would take ~443 years.",
@@ -4339,6 +5335,8 @@ export const STATUS_QUO_QUEUE_CLEARANCE_YEARS: Parameter = {
 
 export const THALIDOMIDE_DALYS_PER_EVENT: Parameter = {
   value: 41760.0,
+  parameterName: "THALIDOMIDE_DALYS_PER_EVENT",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-thalidomide_dalys_per_event",
   unit: "DALYs",
   displayName: "Thalidomide DALYs Per Event",
   description: "Total DALYs per US-scale thalidomide event (YLL + YLD)",
@@ -4350,6 +5348,8 @@ export const THALIDOMIDE_DALYS_PER_EVENT: Parameter = {
 
 export const THALIDOMIDE_DEATHS_PER_EVENT: Parameter = {
   value: 360.0,
+  parameterName: "THALIDOMIDE_DEATHS_PER_EVENT",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-thalidomide_deaths_per_event",
   unit: "deaths",
   displayName: "Thalidomide Deaths Per Event",
   description: "Deaths per US-scale thalidomide event",
@@ -4361,6 +5361,8 @@ export const THALIDOMIDE_DEATHS_PER_EVENT: Parameter = {
 
 export const THALIDOMIDE_SURVIVORS_PER_EVENT: Parameter = {
   value: 540.0,
+  parameterName: "THALIDOMIDE_SURVIVORS_PER_EVENT",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-thalidomide_survivors_per_event",
   unit: "cases",
   displayName: "Thalidomide Survivors Per Event",
   description: "Survivors per US-scale thalidomide event",
@@ -4372,6 +5374,8 @@ export const THALIDOMIDE_SURVIVORS_PER_EVENT: Parameter = {
 
 export const THALIDOMIDE_US_CASES_PREVENTED: Parameter = {
   value: 900.0,
+  parameterName: "THALIDOMIDE_US_CASES_PREVENTED",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-thalidomide_us_cases_prevented",
   unit: "cases",
   displayName: "Thalidomide US Cases Prevented",
   description: "Estimated US thalidomide cases prevented by FDA rejection",
@@ -4383,6 +5387,8 @@ export const THALIDOMIDE_US_CASES_PREVENTED: Parameter = {
 
 export const THALIDOMIDE_YLD_PER_EVENT: Parameter = {
   value: 12960.0,
+  parameterName: "THALIDOMIDE_YLD_PER_EVENT",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-thalidomide_yld_per_event",
   unit: "years",
   displayName: "Thalidomide YLD Per Event",
   description: "Years Lived with Disability per thalidomide event",
@@ -4394,6 +5400,8 @@ export const THALIDOMIDE_YLD_PER_EVENT: Parameter = {
 
 export const THALIDOMIDE_YLL_PER_EVENT: Parameter = {
   value: 28800.0,
+  parameterName: "THALIDOMIDE_YLL_PER_EVENT",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-thalidomide_yll_per_event",
   unit: "years",
   displayName: "Thalidomide YLL Per Event",
   description: "Years of Life Lost per thalidomide event (infant deaths)",
@@ -4405,6 +5413,8 @@ export const THALIDOMIDE_YLL_PER_EVENT: Parameter = {
 
 export const TOTAL_RESEARCH_FUNDING_WITH_TREATY: Parameter = {
   value: 94700000000.0,
+  parameterName: "TOTAL_RESEARCH_FUNDING_WITH_TREATY",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-total_research_funding_with_treaty",
   unit: "USD",
   displayName: "Total Global Research Funding (Baseline + 1% treaty Funding)",
   description: "Total global research funding (baseline + 1% treaty funding)",
@@ -4416,6 +5426,8 @@ export const TOTAL_RESEARCH_FUNDING_WITH_TREATY: Parameter = {
 
 export const TOTAL_TESTABLE_THERAPEUTIC_COMBINATIONS: Parameter = {
   value: 51500000.0,
+  parameterName: "TOTAL_TESTABLE_THERAPEUTIC_COMBINATIONS",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-total_testable_therapeutic_combinations",
   unit: "combinations",
   displayName: "Total Testable Therapeutic Space",
   description: "Total testable therapeutic combinations (known safe compounds + emerging modalities)",
@@ -4427,6 +5439,8 @@ export const TOTAL_TESTABLE_THERAPEUTIC_COMBINATIONS: Parameter = {
 
 export const TREATY_ANNUAL_FUNDING: Parameter = {
   value: 27200000000.0,
+  parameterName: "TREATY_ANNUAL_FUNDING",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-treaty_annual_funding",
   unit: "USD/year",
   displayName: "Annual Funding from 1% of Global Military Spending Redirected to DIH",
   description: "Annual funding from 1% of global military spending redirected to DIH",
@@ -4438,6 +5452,8 @@ export const TREATY_ANNUAL_FUNDING: Parameter = {
 
 export const TREATY_BENEFIT_MULTIPLIER_VS_VACCINES: Parameter = {
   value: 11.480765853658538,
+  parameterName: "TREATY_BENEFIT_MULTIPLIER_VS_VACCINES",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-treaty_benefit_multiplier_vs_vaccines",
   unit: "x",
   displayName: "Treaty System Benefit Multiplier vs Childhood Vaccination Programs",
   description: "Treaty system benefit multiplier vs childhood vaccination programs",
@@ -4449,6 +5465,8 @@ export const TREATY_BENEFIT_MULTIPLIER_VS_VACCINES: Parameter = {
 
 export const TREATY_CAMPAIGN_ANNUAL_COST_AMORTIZED: Parameter = {
   value: 250000000.0,
+  parameterName: "TREATY_CAMPAIGN_ANNUAL_COST_AMORTIZED",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-treaty_campaign_annual_cost_amortized",
   unit: "USD/year",
   displayName: "Amortized Annual Treaty Campaign Cost",
   description: "Amortized annual campaign cost (total cost ÷ campaign duration)",
@@ -4460,6 +5478,8 @@ export const TREATY_CAMPAIGN_ANNUAL_COST_AMORTIZED: Parameter = {
 
 export const TREATY_CAMPAIGN_TOTAL_COST: Parameter = {
   value: 1000000000.0,
+  parameterName: "TREATY_CAMPAIGN_TOTAL_COST",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-treaty_campaign_total_cost",
   unit: "USD",
   displayName: "Total 1% Treaty Campaign Cost",
   description: "Total treaty campaign cost (100% VICTORY Incentive Alignment Bonds)",
@@ -4471,6 +5491,8 @@ export const TREATY_CAMPAIGN_TOTAL_COST: Parameter = {
 
 export const TREATY_CAMPAIGN_VOTING_BLOC_TARGET: Parameter = {
   value: 280000000.0,
+  parameterName: "TREATY_CAMPAIGN_VOTING_BLOC_TARGET",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-treaty_campaign_voting_bloc_target",
   unit: "of people",
   displayName: "Target Voting Bloc Size for Campaign",
   description: "Target voting bloc size for campaign (3.5% of global population - critical mass for social change). Wide CI reflects uncertainty in applying Chenoweth's national threshold to global treaty adoption.",
@@ -4482,6 +5504,8 @@ export const TREATY_CAMPAIGN_VOTING_BLOC_TARGET: Parameter = {
 
 export const TREATY_COST_PER_DALY_TRIAL_CAPACITY_PLUS_EFFICACY_LAG: Parameter = {
   value: 0.001769148505584477,
+  parameterName: "TREATY_COST_PER_DALY_TRIAL_CAPACITY_PLUS_EFFICACY_LAG",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-treaty_cost_per_daly_trial_capacity_plus_efficacy_lag",
   unit: "USD/DALY",
   displayName: "Cost per DALY Averted (Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Increased Trial Throughput)",
   description: "Cost per DALY averted from elimination of efficacy lag plus earlier treatment discovery from increased trial throughput. Only counts campaign cost; ignores economic benefits from funding and R&D savings.",
@@ -4493,6 +5517,8 @@ export const TREATY_COST_PER_DALY_TRIAL_CAPACITY_PLUS_EFFICACY_LAG: Parameter = 
 
 export const TREATY_CUMULATIVE_20YR_WITH_RATCHET: Parameter = {
   value: 3155200000000.0005,
+  parameterName: "TREATY_CUMULATIVE_20YR_WITH_RATCHET",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-treaty_cumulative_20yr_with_ratchet",
   unit: "USD",
   displayName: "Cumulative Treaty Funding over 20 Years with IAB Ratchet Expansion",
   description: "Cumulative treaty funding over 20 years with IAB ratchet expansion following roadmap timeline. Expansion driven by bondholder lobbying incentives (10% of treaty inflows).",
@@ -4504,6 +5530,8 @@ export const TREATY_CUMULATIVE_20YR_WITH_RATCHET: Parameter = {
 
 export const TREATY_DISEASE_CURE_FRACTION_15YR: Parameter = {
   value: 0.4171098529849636,
+  parameterName: "TREATY_DISEASE_CURE_FRACTION_15YR",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-treaty_disease_cure_fraction_15yr",
   unit: "rate",
   displayName: "Treaty Disease Cure Fraction (15yr, 1% Reallocation)",
   description: "Treaty disease-cure fraction over 15 years under 1% military reallocation only. Uses base trial-capacity multiplier (no scaling beyond 1% reallocation) and applies an upper bound of 100% of untreated disease classes.",
@@ -4515,6 +5543,8 @@ export const TREATY_DISEASE_CURE_FRACTION_15YR: Parameter = {
 
 export const TREATY_EXPECTED_COST_PER_DALY: Parameter = {
   value: 0.1769148505584477,
+  parameterName: "TREATY_EXPECTED_COST_PER_DALY",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-treaty_expected_cost_per_daly",
   unit: "USD/DALY",
   displayName: "Expected Cost per DALY (Risk-Adjusted)",
   description: "Expected cost per DALY accounting for political success probability uncertainty. Monte Carlo samples from beta(0.1%, 10%) distribution. At the conservative 1% estimate, this is still more cost-effective than bed nets ($89.0/DALY).",
@@ -4526,6 +5556,8 @@ export const TREATY_EXPECTED_COST_PER_DALY: Parameter = {
 
 export const TREATY_EXPECTED_ROI_TRIAL_CAPACITY_PLUS_EFFICACY_LAG: Parameter = {
   value: 847865.5100264985,
+  parameterName: "TREATY_EXPECTED_ROI_TRIAL_CAPACITY_PLUS_EFFICACY_LAG",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-treaty_expected_roi_trial_capacity_plus_efficacy_lag",
   unit: "ratio",
   displayName: "Expected Treaty ROI (Risk-Adjusted)",
   description: "Expected ROI for 1% treaty accounting for political success probability uncertainty. Monte Carlo samples POLITICAL_SUCCESS_PROBABILITY from beta(0.1%, 10%) distribution to generate full expected value distribution. Central value uses 1% probability.",
@@ -4538,6 +5570,8 @@ export const TREATY_EXPECTED_ROI_TRIAL_CAPACITY_PLUS_EFFICACY_LAG: Parameter = {
 
 export const TREATY_EXPECTED_VS_BED_NETS_MULTIPLIER: Parameter = {
   value: 503.06686928238906,
+  parameterName: "TREATY_EXPECTED_VS_BED_NETS_MULTIPLIER",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-treaty_expected_vs_bed_nets_multiplier",
   unit: "x",
   displayName: "Expected Cost-Effectiveness vs Bed Nets Multiplier",
   description: "Expected value multiplier vs bed nets (accounts for political uncertainty at 1% success rate)",
@@ -4549,6 +5583,8 @@ export const TREATY_EXPECTED_VS_BED_NETS_MULTIPLIER: Parameter = {
 
 export const TREATY_HALE_GAIN_YEAR_15: Parameter = {
   value: 6.54862469186393,
+  parameterName: "TREATY_HALE_GAIN_YEAR_15",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-treaty_hale_gain_year_15",
   unit: "years",
   displayName: "Treaty HALE Gain at Year 15",
   description: "HALE improvement at year 15 under Treaty Trajectory. As diseases are progressively cured, the gap between life expectancy and healthy life expectancy closes proportionally to the disease cure fraction.",
@@ -4560,6 +5596,8 @@ export const TREATY_HALE_GAIN_YEAR_15: Parameter = {
 
 export const TREATY_HALE_VALUE_PER_CAPITA: Parameter = {
   value: 982293.7037795895,
+  parameterName: "TREATY_HALE_VALUE_PER_CAPITA",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-treaty_hale_value_per_capita",
   unit: "USD/person",
   displayName: "Treaty HALE Value Per Capita",
   description: "Economic value of Treaty Trajectory HALE gains at year 15 using the standard QALY value.",
@@ -4571,6 +5609,8 @@ export const TREATY_HALE_VALUE_PER_CAPITA: Parameter = {
 
 export const TREATY_LIVES_SAVED_ANNUAL_GLOBAL: Parameter = {
   value: 2446.0,
+  parameterName: "TREATY_LIVES_SAVED_ANNUAL_GLOBAL",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-treaty_lives_saved_annual_global",
   unit: "lives/year",
   displayName: "Annual Lives Saved from 1% Reduction in Conflict Deaths",
   description: "Annual lives saved from 1% reduction in conflict deaths",
@@ -4582,6 +5622,8 @@ export const TREATY_LIVES_SAVED_ANNUAL_GLOBAL: Parameter = {
 
 export const TREATY_PEACE_PLUS_RD_ANNUAL_BENEFITS: Parameter = {
   value: 172211487804.87805,
+  parameterName: "TREATY_PEACE_PLUS_RD_ANNUAL_BENEFITS",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-treaty_peace_plus_rd_annual_benefits",
   unit: "USD/year",
   displayName: "1% treaty Basic Annual Benefits (Peace + R&D Savings)",
   description: "Basic annual benefits: peace dividend + Decentralized Framework for Drug Assessment R&D savings only (2 of 8 benefit categories, excludes regulatory delay value)",
@@ -4593,6 +5635,8 @@ export const TREATY_PEACE_PLUS_RD_ANNUAL_BENEFITS: Parameter = {
 
 export const TREATY_PERSONAL_UPSIDE_BLEND: Parameter = {
   value: 15694929.474907491,
+  parameterName: "TREATY_PERSONAL_UPSIDE_BLEND",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-treaty_personal_upside_blend",
   unit: "USD/person",
   displayName: "Treaty Personal Upside (Blended)",
   description: "Blended personal upside under Treaty Trajectory: lifetime income gain plus valued healthy-life gains.",
@@ -4604,6 +5648,8 @@ export const TREATY_PERSONAL_UPSIDE_BLEND: Parameter = {
 
 export const TREATY_PROJECTED_HALE_YEAR_15: Parameter = {
   value: 69.84862469186393,
+  parameterName: "TREATY_PROJECTED_HALE_YEAR_15",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-treaty_projected_hale_year_15",
   unit: "years",
   displayName: "Treaty Projected HALE at Year 15",
   description: "Projected global HALE at year 15 under Treaty Trajectory. Current HALE plus the treaty-driven improvement from closing the disease gap.",
@@ -4615,6 +5661,8 @@ export const TREATY_PROJECTED_HALE_YEAR_15: Parameter = {
 
 export const TREATY_QALYS_GAINED_ANNUAL_GLOBAL: Parameter = {
   value: 85610.0,
+  parameterName: "TREATY_QALYS_GAINED_ANNUAL_GLOBAL",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-treaty_qalys_gained_annual_global",
   unit: "QALYs/year",
   displayName: "Annual QALYs Gained from Peace Dividend",
   description: "Annual QALYs gained from peace dividend (lives saved × QALYs/life)",
@@ -4626,6 +5674,8 @@ export const TREATY_QALYS_GAINED_ANNUAL_GLOBAL: Parameter = {
 
 export const TREATY_RATCHET_MULTIPLIER_20YR: Parameter = {
   value: 5.800000000000001,
+  parameterName: "TREATY_RATCHET_MULTIPLIER_20YR",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-treaty_ratchet_multiplier_20yr",
   unit: "x",
   displayName: "Treaty Ratchet Funding Multiplier (20yr)",
   description: "How many times more cumulative funding flows with IAB ratchet vs stagnation over 20 years.",
@@ -4637,6 +5687,8 @@ export const TREATY_RATCHET_MULTIPLIER_20YR: Parameter = {
 
 export const TREATY_RATCHET_PREMIUM_20YR: Parameter = {
   value: 2611200000000.0005,
+  parameterName: "TREATY_RATCHET_PREMIUM_20YR",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-treaty_ratchet_premium_20yr",
   unit: "USD",
   displayName: "Treaty Ratchet Premium over 20 Years",
   description: "Additional cumulative funding from IAB ratchet expansion vs stagnation over 20 years. The value of the IAB mechanism: this much more funding flows to medical research because bondholder incentives drive treaty expansion.",
@@ -4648,6 +5700,8 @@ export const TREATY_RATCHET_PREMIUM_20YR: Parameter = {
 
 export const TREATY_ROI_EXISTING_DRUGS_ONLY: Parameter = {
   value: 259109.75,
+  parameterName: "TREATY_ROI_EXISTING_DRUGS_ONLY",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-treaty_roi_existing_drugs_only",
   unit: "ratio",
   displayName: "Treaty ROI - Historical Rate (Existing Drugs)",
   description: "Treaty ROI based on historical rate of drug development (existing drugs only). Total one-time benefit from avoiding regulatory delay for drugs already in development divided by campaign cost. Excludes future innovation effects.",
@@ -4659,6 +5713,8 @@ export const TREATY_ROI_EXISTING_DRUGS_ONLY: Parameter = {
 
 export const TREATY_ROI_TRIAL_CAPACITY_PLUS_EFFICACY_LAG: Parameter = {
   value: 84786551.00264984,
+  parameterName: "TREATY_ROI_TRIAL_CAPACITY_PLUS_EFFICACY_LAG",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-treaty_roi_trial_capacity_plus_efficacy_lag",
   unit: "ratio",
   displayName: "Treaty ROI - Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Increased Trial Throughput",
   description: "Treaty ROI from elimination of efficacy lag plus earlier treatment discovery from increased trial throughput. Total one-time benefit divided by campaign cost. This is the primary ROI estimate for total health benefits.",
@@ -4670,6 +5726,8 @@ export const TREATY_ROI_TRIAL_CAPACITY_PLUS_EFFICACY_LAG: Parameter = {
 
 export const TREATY_TOTAL_ANNUAL_COSTS: Parameter = {
   value: 290000000.0,
+  parameterName: "TREATY_TOTAL_ANNUAL_COSTS",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-treaty_total_annual_costs",
   unit: "USD/year",
   displayName: "Total Annual Treaty System Costs",
   description: "Total annual system costs (campaign + Decentralized Framework for Drug Assessment operations)",
@@ -4681,6 +5739,8 @@ export const TREATY_TOTAL_ANNUAL_COSTS: Parameter = {
 
 export const TREATY_TRAJECTORY_AVG_INCOME_YEAR_15: Parameter = {
   value: 149452.79694361,
+  parameterName: "TREATY_TRAJECTORY_AVG_INCOME_YEAR_15",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-treaty_trajectory_avg_income_year_15",
   unit: "USD",
   displayName: "Treaty Trajectory Average Income at Year 15",
   description: "Average income (GDP per capita) at year 15 under the Treaty Trajectory.",
@@ -4692,6 +5752,8 @@ export const TREATY_TRAJECTORY_AVG_INCOME_YEAR_15: Parameter = {
 
 export const TREATY_TRAJECTORY_AVG_INCOME_YEAR_20: Parameter = {
   value: 338569.0191556,
+  parameterName: "TREATY_TRAJECTORY_AVG_INCOME_YEAR_20",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-treaty_trajectory_avg_income_year_20",
   unit: "USD",
   displayName: "Treaty Trajectory Average Income at Year 20",
   description: "Average income (GDP per capita) at year 20 under the Treaty Trajectory.",
@@ -4703,6 +5765,8 @@ export const TREATY_TRAJECTORY_AVG_INCOME_YEAR_20: Parameter = {
 
 export const TREATY_TRAJECTORY_CAGR_YEAR_20: Parameter = {
   value: 0.17933411068717886,
+  parameterName: "TREATY_TRAJECTORY_CAGR_YEAR_20",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-treaty_trajectory_cagr_year_20",
   unit: "rate",
   displayName: "Treaty Trajectory CAGR (20 Years)",
   description: "Compound annual growth rate implied by Treaty Trajectory GDP trajectory over 20 years.",
@@ -4714,6 +5778,8 @@ export const TREATY_TRAJECTORY_CAGR_YEAR_20: Parameter = {
 
 export const TREATY_TRAJECTORY_CUMULATIVE_LIFETIME_INCOME: Parameter = {
   value: 16051394.930961594,
+  parameterName: "TREATY_TRAJECTORY_CUMULATIVE_LIFETIME_INCOME",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-treaty_trajectory_cumulative_lifetime_income",
   unit: "USD",
   displayName: "Treaty Trajectory Cumulative Lifetime Income (Per Capita)",
   description: "Cumulative per-capita income over an average remaining lifespan under Treaty Trajectory. Uses implied per-capita CAGR for years 1-20 (derived from known year-0 and year-20 per-capita incomes), then baseline growth from the year-20 level. Conservative: assumes no further treaty acceleration beyond year 20.",
@@ -4725,6 +5791,8 @@ export const TREATY_TRAJECTORY_CUMULATIVE_LIFETIME_INCOME: Parameter = {
 
 export const TREATY_TRAJECTORY_GDP_VS_CURRENT_TRAJECTORY_MULTIPLIER_YEAR_15: Parameter = {
   value: 7.986164148687315,
+  parameterName: "TREATY_TRAJECTORY_GDP_VS_CURRENT_TRAJECTORY_MULTIPLIER_YEAR_15",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_15",
   unit: "x",
   displayName: "Treaty Trajectory vs Current Trajectory GDP Multiplier (Year 15)",
   description: "Treaty Trajectory GDP at year 15 as a multiple of current trajectory GDP at year 15.",
@@ -4736,6 +5804,8 @@ export const TREATY_TRAJECTORY_GDP_VS_CURRENT_TRAJECTORY_MULTIPLIER_YEAR_15: Par
 
 export const TREATY_TRAJECTORY_GDP_VS_CURRENT_TRAJECTORY_MULTIPLIER_YEAR_20: Parameter = {
   value: 16.529506763430206,
+  parameterName: "TREATY_TRAJECTORY_GDP_VS_CURRENT_TRAJECTORY_MULTIPLIER_YEAR_20",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_20",
   unit: "x",
   displayName: "Treaty Trajectory vs Current Trajectory GDP Multiplier (Year 20)",
   description: "Treaty Trajectory GDP at year 20 as a multiple of current trajectory GDP at year 20.",
@@ -4747,6 +5817,8 @@ export const TREATY_TRAJECTORY_GDP_VS_CURRENT_TRAJECTORY_MULTIPLIER_YEAR_20: Par
 
 export const TREATY_TRAJECTORY_GDP_YEAR_15: Parameter = {
   value: 1330129892798129.0,
+  parameterName: "TREATY_TRAJECTORY_GDP_YEAR_15",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-treaty_trajectory_gdp_year_15",
   unit: "USD",
   displayName: "Treaty Trajectory GDP at Year 15",
   description: "Projected global GDP at year 15 under the Treaty Trajectory: military-to-science reallocation plus disease-burden recovery only. 3-year ramp at 50% intensity + 12 years full implementation. Excludes non-health dysfunction-capital reallocation.",
@@ -4758,6 +5830,8 @@ export const TREATY_TRAJECTORY_GDP_YEAR_15: Parameter = {
 
 export const TREATY_TRAJECTORY_GDP_YEAR_20: Parameter = {
   value: 3114834976231520.0,
+  parameterName: "TREATY_TRAJECTORY_GDP_YEAR_20",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-treaty_trajectory_gdp_year_20",
   unit: "USD",
   displayName: "Treaty Trajectory GDP at Year 20",
   description: "Projected global GDP at year 20 under the Treaty Trajectory: military-to-science reallocation plus disease-burden recovery only. Excludes non-health dysfunction-capital reallocation to isolate the lower-political-baggage channel.",
@@ -4769,6 +5843,8 @@ export const TREATY_TRAJECTORY_GDP_YEAR_20: Parameter = {
 
 export const TREATY_TRAJECTORY_LIFETIME_INCOME_GAIN_PER_CAPITA: Parameter = {
   value: 14712635.771127902,
+  parameterName: "TREATY_TRAJECTORY_LIFETIME_INCOME_GAIN_PER_CAPITA",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-treaty_trajectory_lifetime_income_gain_per_capita",
   unit: "USD",
   displayName: "Treaty Trajectory Lifetime Income Gain (Per Capita)",
   description: "Lifetime per-capita income gain from Treaty Trajectory vs current trajectory. Cumulative treaty income minus cumulative earth income over average remaining lifespan. Uses global averages; individual gain scales with starting income.",
@@ -4780,6 +5856,8 @@ export const TREATY_TRAJECTORY_LIFETIME_INCOME_GAIN_PER_CAPITA: Parameter = {
 
 export const TREATY_TRAJECTORY_LIFETIME_INCOME_MULTIPLIER: Parameter = {
   value: 11.98975544858688,
+  parameterName: "TREATY_TRAJECTORY_LIFETIME_INCOME_MULTIPLIER",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-treaty_trajectory_lifetime_income_multiplier",
   unit: "x",
   displayName: "Treaty Trajectory Lifetime Income Multiplier",
   description: "Ratio of cumulative lifetime income under Treaty Trajectory vs current trajectory. Income-agnostic: applies as a multiplier to any individual's lifetime earnings.",
@@ -4791,6 +5869,8 @@ export const TREATY_TRAJECTORY_LIFETIME_INCOME_MULTIPLIER: Parameter = {
 
 export const TREATY_VS_BED_NETS_MULTIPLIER: Parameter = {
   value: 50306.6869282389,
+  parameterName: "TREATY_VS_BED_NETS_MULTIPLIER",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-treaty_vs_bed_nets_multiplier",
   unit: "x",
   displayName: "Cost-Effectiveness vs Bed Nets Multiplier",
   description: "How many times more cost-effective than bed nets (using bed net cost per DALY midpoint estimate)",
@@ -4802,6 +5882,8 @@ export const TREATY_VS_BED_NETS_MULTIPLIER: Parameter = {
 
 export const TREATY_VS_DIRECT_FUNDING_LEVERAGE: Parameter = {
   value: 475.6594654774342,
+  parameterName: "TREATY_VS_DIRECT_FUNDING_LEVERAGE",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-treaty_vs_direct_funding_leverage",
   unit: "x",
   displayName: "Treaty Campaign Leverage vs Direct Funding",
   description: "How many times more cost-effective the treaty campaign is vs direct funding. Treaty campaign unlocks government funding at scale, avoiding need for philanthropists/NIH to directly commit equivalent amounts. Both approaches achieve same DALY timeline shift benefit. Treaty spreads cost across governments while building sustainable public funding infrastructure.",
@@ -4813,6 +5895,8 @@ export const TREATY_VS_DIRECT_FUNDING_LEVERAGE: Parameter = {
 
 export const TRIAL_CAPACITY_CUMULATIVE_YEARS_20YR: Parameter = {
   value: 246.5582686533341,
+  parameterName: "TRIAL_CAPACITY_CUMULATIVE_YEARS_20YR",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-trial_capacity_cumulative_years_20yr",
   unit: "years",
   displayName: "Cumulative Trial Capacity Years Over 20 Years",
   description: "Cumulative trial-capacity-equivalent years over 20-year period",
@@ -4824,6 +5908,8 @@ export const TRIAL_CAPACITY_CUMULATIVE_YEARS_20YR: Parameter = {
 
 export const TYPE_II_ERROR_COST_RATIO: Parameter = {
   value: 3067.7541293180693,
+  parameterName: "TYPE_II_ERROR_COST_RATIO",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-type_ii_error_cost_ratio",
   unit: "ratio",
   displayName: "Ratio of Type II Error Cost to Type I Error Benefit",
   description: "Ratio of Type II error cost to Type I error benefit (harm from delay vs. harm prevented)",
@@ -4835,6 +5921,8 @@ export const TYPE_II_ERROR_COST_RATIO: Parameter = {
 
 export const TYPE_I_ERROR_BENEFIT_DALYS: Parameter = {
   value: 2589120.0,
+  parameterName: "TYPE_I_ERROR_BENEFIT_DALYS",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-type_i_error_benefit_dalys",
   unit: "DALYs",
   displayName: "Maximum DALYs Saved by FDA Preventing Unsafe Drugs (1962-2024)",
   description: "Maximum DALYs saved by FDA preventing unsafe drugs over 62-year period 1962-2024 (extreme overestimate: one Thalidomide-scale event per year)",
@@ -4846,6 +5934,8 @@ export const TYPE_I_ERROR_BENEFIT_DALYS: Parameter = {
 
 export const UNEXPLORED_RATIO: Parameter = {
   value: 0.996578947368421,
+  parameterName: "UNEXPLORED_RATIO",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-unexplored_ratio",
   unit: "percentage",
   displayName: "Unexplored Therapeutic Frontier",
   description: "Fraction of possible drug-disease space that remains unexplored (>99%)",
@@ -4857,6 +5947,8 @@ export const UNEXPLORED_RATIO: Parameter = {
 
 export const US_CONGRESS_FULL_ADVOCACY_COST: Parameter = {
   value: 5350000000.0,
+  parameterName: "US_CONGRESS_FULL_ADVOCACY_COST",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-us_congress_full_advocacy_cost",
   unit: "USD",
   displayName: "US Congress Full Advocacy Cost",
   description: "Upper-bound advocacy cost to match career incentives for all 535 members of Congress",
@@ -4868,6 +5960,8 @@ export const US_CONGRESS_FULL_ADVOCACY_COST: Parameter = {
 
 export const US_FEDERAL_SPENDING_PER_CAPITA: Parameter = {
   value: 20298.507462686568,
+  parameterName: "US_FEDERAL_SPENDING_PER_CAPITA",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-us_federal_spending_per_capita",
   unit: "USD/person",
   displayName: "US Federal Spending per Capita",
   description: "US federal spending per capita. $6.8T total federal spending divided by 335M population.",
@@ -4879,6 +5973,8 @@ export const US_FEDERAL_SPENDING_PER_CAPITA: Parameter = {
 
 export const US_FED_DISCRETIONARY_EFFICIENCY: Parameter = {
   value: 0.4052941176470588,
+  parameterName: "US_FED_DISCRETIONARY_EFFICIENCY",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-us_fed_discretionary_efficiency",
   unit: "percent",
   displayName: "US Discretionary Efficiency",
   description: "US federal discretionary spending efficiency. What fraction of discretionary spending avoids direct waste (Cat 1 only: military overspend, corporate welfare, drug war, fossil/ag subsidies). ~41%. Some Cat 1 items (farm subsidies, tax expenditures) are technically mandatory/off-budget but are fungible policy choices.",
@@ -4890,6 +5986,8 @@ export const US_FED_DISCRETIONARY_EFFICIENCY: Parameter = {
 
 export const US_FED_DISCRETIONARY_WASTE_PCT: Parameter = {
   value: 0.5947058823529412,
+  parameterName: "US_FED_DISCRETIONARY_WASTE_PCT",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-us_fed_discretionary_waste_pct",
   unit: "percent",
   displayName: "Discretionary Waste (%)",
   description: "Category 1 direct spending waste as percentage of federal discretionary spending. ~$1.01T Cat 1 waste / $1.7T discretionary = ~59%. Uses discretionary spending as denominator because Cat 1 items (military overspend, corporate welfare, drug war, fossil/ag subsidies) are fungible policy choices within discretionary budget.",
@@ -4901,6 +5999,8 @@ export const US_FED_DISCRETIONARY_WASTE_PCT: Parameter = {
 
 export const US_GOVERNANCE_EFFICIENCY_GDP: Parameter = {
   value: 0.8298471160528145,
+  parameterName: "US_GOVERNANCE_EFFICIENCY_GDP",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-us_governance_efficiency_gdp",
   unit: "percent",
   displayName: "US Governance Efficiency (GDP)",
   description: "Total US governance efficiency: all 4 waste categories as share of GDP. 1 - ($4.9T / $28.78T) = ~83%. This broader metric captures direct spending waste, compliance burden, policy-induced GDP loss, and system inefficiency relative to total economic output.",
@@ -4912,6 +6012,8 @@ export const US_GOVERNANCE_EFFICIENCY_GDP: Parameter = {
 
 export const US_GOV_WASTE_CATEGORY_1_DIRECT_SPENDING: Parameter = {
   value: 1011000000000.0,
+  parameterName: "US_GOV_WASTE_CATEGORY_1_DIRECT_SPENDING",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-us_gov_waste_category_1_direct_spending",
   unit: "USD",
   displayName: "Category 1: Direct Spending Waste",
   description: "Category 1: Direct Federal Spending Waste. Actual federal budget allocations that could be redirected. Includes military overspend ($615B), corporate welfare ($181B), drug war ($90B), fossil fuel subsidies ($50B), and agricultural subsidies ($75B). Total: ~$1.01T annually. Solution: Budget reallocation.",
@@ -4923,6 +6025,8 @@ export const US_GOV_WASTE_CATEGORY_1_DIRECT_SPENDING: Parameter = {
 
 export const US_GOV_WASTE_CATEGORY_2_COMPLIANCE: Parameter = {
   value: 1126000000000.0,
+  parameterName: "US_GOV_WASTE_CATEGORY_2_COMPLIANCE",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-us_gov_waste_category_2_compliance",
   unit: "USD",
   displayName: "Category 2: Compliance Burden",
   description: "Category 2: Compliance Burden on Private Sector. Private sector resources consumed by government-imposed compliance requirements. Includes tax compliance ($546B) and regulatory red tape ($580B). Total: ~$1.13T annually. Solution: Simplification (tax code reform, regulatory streamlining).",
@@ -4934,6 +6038,8 @@ export const US_GOV_WASTE_CATEGORY_2_COMPLIANCE: Parameter = {
 
 export const US_GOV_WASTE_CATEGORY_3_GDP_LOSS: Parameter = {
   value: 1560000000000.0,
+  parameterName: "US_GOV_WASTE_CATEGORY_3_GDP_LOSS",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-us_gov_waste_category_3_gdp_loss",
   unit: "USD",
   displayName: "Category 3: GDP Loss",
   description: "Category 3: Policy-Induced GDP Loss. Economic output foregone due to policy constraints on markets. Includes housing/zoning restrictions ($1.4T) and tariffs ($160B). Total: ~$1.56T annually. Solution: Policy reform (zoning liberalization, trade policy).",
@@ -4945,6 +6051,8 @@ export const US_GOV_WASTE_CATEGORY_3_GDP_LOSS: Parameter = {
 
 export const US_GOV_WASTE_CATEGORY_4_SYSTEM: Parameter = {
   value: 1200000000000.0,
+  parameterName: "US_GOV_WASTE_CATEGORY_4_SYSTEM",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-us_gov_waste_category_4_system",
   unit: "USD",
   displayName: "Category 4: System Inefficiency",
   description: "Category 4: Total System Inefficiency. Fundamental system design failures requiring structural redesign. Currently only healthcare system inefficiency ($1.2T). Solution: System redesign using competitive market models (Singapore's catastrophic coverage + HSAs, Switzerland's regulated competition).",
@@ -4956,6 +6064,8 @@ export const US_GOV_WASTE_CATEGORY_4_SYSTEM: Parameter = {
 
 export const US_GOV_WASTE_PCT_GDP: Parameter = {
   value: 0.17015288394718556,
+  parameterName: "US_GOV_WASTE_PCT_GDP",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-us_gov_waste_pct_gdp",
   unit: "percent",
   displayName: "US Waste (% GDP)",
   description: "US government waste as percentage of GDP. ~$4.90T waste / $28.78T GDP = ~17%. This represents the 'dysfunction tax' that American citizens effectively pay through inefficient governance.",
@@ -4967,6 +6077,8 @@ export const US_GOV_WASTE_PCT_GDP: Parameter = {
 
 export const US_GOV_WASTE_QALY_EQUIVALENTS: Parameter = {
   value: 48970000.0,
+  parameterName: "US_GOV_WASTE_QALY_EQUIVALENTS",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-us_gov_waste_qaly_equivalents",
   unit: "QALYs",
   displayName: "US Waste (QALY Equivalents)",
   description: "US government waste expressed as QALY equivalents. This is an economic equivalent, NOT epidemiological health outcomes. Dividing by QALY threshold yields a measure of foregone welfare.",
@@ -4978,6 +6090,8 @@ export const US_GOV_WASTE_QALY_EQUIVALENTS: Parameter = {
 
 export const US_GOV_WASTE_RAW_TOTAL: Parameter = {
   value: 4897000000000.0,
+  parameterName: "US_GOV_WASTE_RAW_TOTAL",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-us_gov_waste_raw_total",
   unit: "USD",
   displayName: "US Gov Waste (Raw Total)",
   description: "Raw sum of US government waste components before overlap discount: healthcare ($1.2T) + housing ($1.4T) + military ($615B) + regulatory ($580B) + tax ($546B) + corporate ($181B) + tariffs ($160B) + drug war ($90B) + fossil fuel ($50B) + agriculture ($75B) = ~$4.9T raw.",
@@ -4989,6 +6103,8 @@ export const US_GOV_WASTE_RAW_TOTAL: Parameter = {
 
 export const US_GOV_WASTE_RECOVERABLE: Parameter = {
   value: 2448500000000.0,
+  parameterName: "US_GOV_WASTE_RECOVERABLE",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-us_gov_waste_recoverable",
   unit: "USD",
   displayName: "Recoverable Capital",
   description: "Recoverable capital if US improved to OECD median efficiency. Current US efficiency ~38-48%; OECD median ~75-85%. Closing to ~80% would recover approximately half the gap.",
@@ -5000,6 +6116,8 @@ export const US_GOV_WASTE_RECOVERABLE: Parameter = {
 
 export const US_GOV_WASTE_TOTAL: Parameter = {
   value: 4897000000000.0,
+  parameterName: "US_GOV_WASTE_TOTAL",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-us_gov_waste_total",
   unit: "USD",
   displayName: "US Government Waste (Total)",
   description: "Total annual US government waste (additive sum of components). Consolidates healthcare ($1.2T), housing ($1.4T), military ($615B), regulatory ($580B), tax ($546B), corporate ($181B), tariffs ($160B), drug war ($90B), fossil fuel ($50B), agriculture ($75B). Categories treated as additive; any overlap offset by excluded categories (state/local inefficiency, implicit subsidies, behavioral effects). ~$4.9T annually.",
@@ -5011,6 +6129,8 @@ export const US_GOV_WASTE_TOTAL: Parameter = {
 
 export const US_GOV_WASTE_VSL_EQUIVALENTS: Parameter = {
   value: 357445.25547445257,
+  parameterName: "US_GOV_WASTE_VSL_EQUIVALENTS",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-us_gov_waste_vsl_equivalents",
   unit: "people",
   displayName: "US Waste (VSL Equivalents)",
   description: "US government waste expressed as VSL equivalents. This is an economic equivalent, NOT literal deaths. Dividing the efficiency gap by VSL yields a measure of foregone welfare.",
@@ -5022,6 +6142,8 @@ export const US_GOV_WASTE_VSL_EQUIVALENTS: Parameter = {
 
 export const US_GOV_WASTE_VS_TREATY_MULTIPLIER: Parameter = {
   value: 180.03676470588235,
+  parameterName: "US_GOV_WASTE_VS_TREATY_MULTIPLIER",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-us_gov_waste_vs_treaty_multiplier",
   unit: "ratio",
   displayName: "Efficiency Gap / Treaty Funding",
   description: "How many times the US government efficiency gap could fund the 1% Treaty. The efficiency gap represents capital that could fund transformative health research many times over.",
@@ -5033,6 +6155,8 @@ export const US_GOV_WASTE_VS_TREATY_MULTIPLIER: Parameter = {
 
 export const US_MAJOR_DISEASES_TOTAL_ANNUAL_COST: Parameter = {
   value: 1253000000000.0,
+  parameterName: "US_MAJOR_DISEASES_TOTAL_ANNUAL_COST",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-us_major_diseases_total_annual_cost",
   unit: "USD",
   displayName: "US Major Diseases Total Annual Cost",
   description: "Total annual US cost of major diseases (diabetes, Alzheimer's, heart disease, cancer)",
@@ -5044,6 +6168,8 @@ export const US_MAJOR_DISEASES_TOTAL_ANNUAL_COST: Parameter = {
 
 export const US_MILITARY_SPENDING_CURRENT_VS_PREWAR_MULTIPLIER: Parameter = {
   value: 30.551724137931036,
+  parameterName: "US_MILITARY_SPENDING_CURRENT_VS_PREWAR_MULTIPLIER",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-us_military_spending_current_vs_prewar_multiplier",
   unit: "x",
   displayName: "Current US Military Spending vs Pre-WW2 Baseline (Multiplier)",
   description: "Ratio of current US military spending to pre-WW2 baseline in constant dollars ($886B / $29B)",
@@ -5055,6 +6181,8 @@ export const US_MILITARY_SPENDING_CURRENT_VS_PREWAR_MULTIPLIER: Parameter = {
 
 export const US_POLITICAL_REFORM_INVESTMENT_TOTAL: Parameter = {
   value: 25510000000.0,
+  parameterName: "US_POLITICAL_REFORM_INVESTMENT_TOTAL",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-us_political_reform_investment_total",
   unit: "USD",
   displayName: "US Political Reform Investment (Total)",
   description: "Total upper-bound investment for US political reform: (campaign spending + 2 years lobbying) × effort multiplier + Congress career advocacy. Represents cost to achieve democratic parity with incumbent interests.",
@@ -5066,6 +6194,8 @@ export const US_POLITICAL_REFORM_INVESTMENT_TOTAL: Parameter = {
 
 export const US_SENATE_TREATY_ADVOCACY_COST: Parameter = {
   value: 670000000.0,
+  parameterName: "US_SENATE_TREATY_ADVOCACY_COST",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-us_senate_treaty_advocacy_cost",
   unit: "USD",
   displayName: "US Senate Treaty Advocacy Cost",
   description: "Upper-bound advocacy cost to match career incentives for 67 senators (treaty ratification threshold)",
@@ -5077,6 +6207,8 @@ export const US_SENATE_TREATY_ADVOCACY_COST: Parameter = {
 
 export const US_VOTE_EXPECTED_VALUE: Parameter = {
   value: 0.0003383084577114428,
+  parameterName: "US_VOTE_EXPECTED_VALUE",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-us_vote_expected_value",
   unit: "USD",
   displayName: "Expected Value of a Vote (US)",
   description: "Expected monetary value of a single vote in a US presidential election. Calculated as the probability of being decisive (1 in 60M) times federal spending per capita (~$20,300). Represents the expected influence over government resource allocation from casting one vote.",
@@ -5088,6 +6220,8 @@ export const US_VOTE_EXPECTED_VALUE: Parameter = {
 
 export const VICTORY_BOND_ANNUAL_PAYOUT: Parameter = {
   value: 2720000000.0,
+  parameterName: "VICTORY_BOND_ANNUAL_PAYOUT",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-victory_bond_annual_payout",
   unit: "USD/year",
   displayName: "Annual VICTORY Incentive Alignment Bond Payout",
   description: "Annual VICTORY Incentive Alignment Bond payout (treaty funding × bond percentage)",
@@ -5099,6 +6233,8 @@ export const VICTORY_BOND_ANNUAL_PAYOUT: Parameter = {
 
 export const VICTORY_BOND_ANNUAL_RETURN_PCT: Parameter = {
   value: 2.72,
+  parameterName: "VICTORY_BOND_ANNUAL_RETURN_PCT",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-victory_bond_annual_return_pct",
   unit: "rate",
   displayName: "Annual Return Percentage for VICTORY Incentive Alignment Bondholders",
   description: "Annual return percentage for VICTORY Incentive Alignment Bondholders",
@@ -5110,6 +6246,8 @@ export const VICTORY_BOND_ANNUAL_RETURN_PCT: Parameter = {
 
 export const VOTER_LIVES_SAVED: Parameter = {
   value: 38.376849102141854,
+  parameterName: "VOTER_LIVES_SAVED",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-voter_lives_saved",
   unit: "lives",
   displayName: "Lives Saved per Voter",
   description: "Lives saved attributable to each voter if the treaty passes (total lives saved ÷ 3.5% voting bloc target)",
@@ -5121,6 +6259,8 @@ export const VOTER_LIVES_SAVED: Parameter = {
 
 export const VOTER_SUFFERING_HOURS_PREVENTED: Parameter = {
   value: 6896780.305844117,
+  parameterName: "VOTER_SUFFERING_HOURS_PREVENTED",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-voter_suffering_hours_prevented",
   unit: "hours",
   displayName: "Suffering Hours Prevented per Voter",
   description: "Hours of suffering prevented attributable to each voter if the treaty passes (total suffering hours ÷ 3.5% voting bloc target)",
@@ -5132,6 +6272,8 @@ export const VOTER_SUFFERING_HOURS_PREVENTED: Parameter = {
 
 export const VOTE_2_CLAIMS_PAYOUT: Parameter = {
   value: 387239.4744262236,
+  parameterName: "VOTE_2_CLAIMS_PAYOUT",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-vote_2_claims_payout",
   unit: "USD",
   displayName: "VOTE Payout for 2 Claims",
   description: "Potential payout for a depositor who recruits 2 verified participants (earning 2 VOTE claims) if the PRIZE pool reaches its canonical potential max size. This is a recruiter example, not the system-wide average claim denominator.",
@@ -5143,6 +6285,8 @@ export const VOTE_2_CLAIMS_PAYOUT: Parameter = {
 
 export const VOTE_TOKEN_POTENTIAL_VALUE: Parameter = {
   value: 193619.7372131118,
+  parameterName: "VOTE_TOKEN_POTENTIAL_VALUE",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-vote_token_potential_value",
   unit: "USD",
   displayName: "VOTE Token Potential Value",
   description: "Potential value of a single VOTE claim if the PRIZE pool reaches its canonical potential max size. Denominator is the modeled global coordination target, not the lower forecast participation path.",
@@ -5154,6 +6298,8 @@ export const VOTE_TOKEN_POTENTIAL_VALUE: Parameter = {
 
 export const WAR_COSTS_CUMULATIVE_20YR_CURRENT_TRAJECTORY: Parameter = {
   value: 227142000000000.0,
+  parameterName: "WAR_COSTS_CUMULATIVE_20YR_CURRENT_TRAJECTORY",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-war_costs_cumulative_20yr_current_trajectory",
   unit: "USD",
   displayName: "Cumulative War Costs over 20 Years (Current Trajectory)",
   description: "Cumulative global war costs over 20 years if current spending levels continue. The price tag of the status quo trajectory.",
@@ -5165,6 +6311,8 @@ export const WAR_COSTS_CUMULATIVE_20YR_CURRENT_TRAJECTORY: Parameter = {
 
 export const WAR_COSTS_SAVED_PEACE_TRAJECTORY_20YR: Parameter = {
   value: 13174236000000.002,
+  parameterName: "WAR_COSTS_SAVED_PEACE_TRAJECTORY_20YR",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-war_costs_saved_peace_trajectory_20yr",
   unit: "USD",
   displayName: "War Costs Saved via Peace Trajectory (20yr)",
   description: "Cumulative war costs saved over 20 years as treaty expands via IAB ratchet. Assumes war costs decline proportionally to spending cuts (e=1.0). Conservative: Pape research suggests e>1.0 due to terrorism feedback loops.",
@@ -5176,6 +6324,8 @@ export const WAR_COSTS_SAVED_PEACE_TRAJECTORY_20YR: Parameter = {
 
 export const WILLING_TRIAL_PARTICIPANTS_GLOBAL: Parameter = {
   value: 1075200000.0,
+  parameterName: "WILLING_TRIAL_PARTICIPANTS_GLOBAL",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-willing_trial_participants_global",
   unit: "people",
   displayName: "Global Patients Willing to Participate in Clinical Trials",
   description: "Global chronic disease patients willing to participate in trials (2.4B × 44.8%)",
@@ -5187,6 +6337,8 @@ export const WILLING_TRIAL_PARTICIPANTS_GLOBAL: Parameter = {
 
 export const WISHOCRATIC_CROWD_ALPHA: Parameter = {
   value: 0.020800000000000003,
+  parameterName: "WISHOCRATIC_CROWD_ALPHA",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-wishocratic_crowd_alpha",
   unit: "percent",
   displayName: "Wishocratic Crowd Allocation Alpha",
   description: "Allocation alpha from wishocratic crowd decision-making. Crowds pick correctly 91% vs experts at 65% (Surowiecki). Applied to the return spread between best/worst sectors. This is the floor: politicians (the real 'experts') are worse than 65% because they are being paid by one of the answer choices.",
@@ -5198,6 +6350,8 @@ export const WISHOCRATIC_CROWD_ALPHA: Parameter = {
 
 export const WISHONIA_DISEASE_CURE_FRACTION_15YR: Parameter = {
   value: 1.0,
+  parameterName: "WISHONIA_DISEASE_CURE_FRACTION_15YR",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-wishonia_disease_cure_fraction_15yr",
   unit: "rate",
   displayName: "Wishonia Disease Cure Fraction (15yr, Full Implementation)",
   description: "Wishonia disease-cure fraction over 15 years under full implementation. Uses full trial-capacity scaling and applies an upper bound of 100% of untreated disease classes.",
@@ -5209,6 +6363,8 @@ export const WISHONIA_DISEASE_CURE_FRACTION_15YR: Parameter = {
 
 export const WISHONIA_DISEASE_CURE_FRACTION_20YR_FULL: Parameter = {
   value: 1.0,
+  parameterName: "WISHONIA_DISEASE_CURE_FRACTION_20YR_FULL",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-wishonia_disease_cure_fraction_20yr_full",
   unit: "rate",
   displayName: "Wishonia Disease Cure Fraction (20yr, Full Implementation)",
   description: "Wishonia disease-cure fraction over 20 years under full implementation. Uses full trial-capacity scaling and applies an upper bound of 100% of untreated disease classes.",
@@ -5220,6 +6376,8 @@ export const WISHONIA_DISEASE_CURE_FRACTION_20YR_FULL: Parameter = {
 
 export const WISHONIA_HALE_GAIN_YEAR_15: Parameter = {
   value: 15.700000000000003,
+  parameterName: "WISHONIA_HALE_GAIN_YEAR_15",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-wishonia_hale_gain_year_15",
   unit: "years",
   displayName: "Wishonia HALE Gain at Year 15",
   description: "HALE improvement at year 15 under Wishonia Trajectory. Full implementation cures a larger fraction of diseases, closing more of the HALE gap.",
@@ -5231,6 +6389,8 @@ export const WISHONIA_HALE_GAIN_YEAR_15: Parameter = {
 
 export const WISHONIA_HALE_VALUE_PER_CAPITA: Parameter = {
   value: 2355000.0000000005,
+  parameterName: "WISHONIA_HALE_VALUE_PER_CAPITA",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-wishonia_hale_value_per_capita",
   unit: "USD/person",
   displayName: "Wishonia HALE Value Per Capita",
   description: "Economic value of Wishonia Trajectory HALE gains at year 15 using the standard QALY value.",
@@ -5242,6 +6402,8 @@ export const WISHONIA_HALE_VALUE_PER_CAPITA: Parameter = {
 
 export const WISHONIA_MILITARY_REALLOCATION_PHYSICAL_MAX_SHARE: Parameter = {
   value: 0.876056338028169,
+  parameterName: "WISHONIA_MILITARY_REALLOCATION_PHYSICAL_MAX_SHARE",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-wishonia_military_reallocation_physical_max_share",
   unit: "rate",
   displayName: "Wishonia Military Reallocation Physical Max Share",
   description: "Maximum physically demonstrated military reallocation share, anchored to post-WW2 US demobilization.",
@@ -5253,6 +6415,8 @@ export const WISHONIA_MILITARY_REALLOCATION_PHYSICAL_MAX_SHARE: Parameter = {
 
 export const WISHONIA_PERSONAL_UPSIDE_BLEND: Parameter = {
   value: 54303392.83706183,
+  parameterName: "WISHONIA_PERSONAL_UPSIDE_BLEND",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-wishonia_personal_upside_blend",
   unit: "USD/person",
   displayName: "Wishonia Personal Upside (Blended)",
   description: "Blended personal upside under Wishonia Trajectory: lifetime income gain plus valued healthy-life gains.",
@@ -5264,6 +6428,8 @@ export const WISHONIA_PERSONAL_UPSIDE_BLEND: Parameter = {
 
 export const WISHONIA_PROJECTED_HALE_YEAR_15: Parameter = {
   value: 79.0,
+  parameterName: "WISHONIA_PROJECTED_HALE_YEAR_15",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-wishonia_projected_hale_year_15",
   unit: "years",
   displayName: "Wishonia Projected HALE at Year 15",
   description: "Projected global HALE at year 15 under Wishonia Trajectory. Full implementation closes the entire disease gap, pushing HALE toward life expectancy.",
@@ -5275,6 +6441,8 @@ export const WISHONIA_PROJECTED_HALE_YEAR_15: Parameter = {
 
 export const WISHONIA_TRAJECTORY_AVG_INCOME_YEAR_15: Parameter = {
   value: 503789.8257135314,
+  parameterName: "WISHONIA_TRAJECTORY_AVG_INCOME_YEAR_15",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-wishonia_trajectory_avg_income_year_15",
   unit: "USD",
   displayName: "Wishonia Trajectory Average Income at Year 15",
   description: "Average income (GDP per capita) at year 15 under the Wishonia Trajectory.",
@@ -5286,6 +6454,8 @@ export const WISHONIA_TRAJECTORY_AVG_INCOME_YEAR_15: Parameter = {
 
 export const WISHONIA_TRAJECTORY_AVG_INCOME_YEAR_20: Parameter = {
   value: 1161818.358400575,
+  parameterName: "WISHONIA_TRAJECTORY_AVG_INCOME_YEAR_20",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-wishonia_trajectory_avg_income_year_20",
   unit: "USD",
   displayName: "Wishonia Trajectory Average Income at Year 20",
   description: "Average income (GDP per capita) at year 20 under the Wishonia Trajectory.",
@@ -5297,6 +6467,8 @@ export const WISHONIA_TRAJECTORY_AVG_INCOME_YEAR_20: Parameter = {
 
 export const WISHONIA_TRAJECTORY_CAGR_YEAR_20: Parameter = {
   value: 0.2543288493473528,
+  parameterName: "WISHONIA_TRAJECTORY_CAGR_YEAR_20",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-wishonia_trajectory_cagr_year_20",
   unit: "rate",
   displayName: "Wishonia Trajectory CAGR (20 Years)",
   description: "Compound annual growth rate implied by Wishonia Trajectory GDP trajectory over 20 years.",
@@ -5308,6 +6480,8 @@ export const WISHONIA_TRAJECTORY_CAGR_YEAR_20: Parameter = {
 
 export const WISHONIA_TRAJECTORY_CUMULATIVE_LIFETIME_INCOME: Parameter = {
   value: 53287151.99689552,
+  parameterName: "WISHONIA_TRAJECTORY_CUMULATIVE_LIFETIME_INCOME",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-wishonia_trajectory_cumulative_lifetime_income",
   unit: "USD",
   displayName: "Wishonia Trajectory Cumulative Lifetime Income (Per Capita)",
   description: "Cumulative per-capita income over an average remaining lifespan under Wishonia Trajectory. Uses implied per-capita CAGR for years 1-20, then baseline growth from the year-20 level. Conservative: assumes no further acceleration beyond year 20.",
@@ -5319,6 +6493,8 @@ export const WISHONIA_TRAJECTORY_CUMULATIVE_LIFETIME_INCOME: Parameter = {
 
 export const WISHONIA_TRAJECTORY_GDP_VS_CURRENT_TRAJECTORY_MULTIPLIER_YEAR_15: Parameter = {
   value: 26.92052826622498,
+  parameterName: "WISHONIA_TRAJECTORY_GDP_VS_CURRENT_TRAJECTORY_MULTIPLIER_YEAR_15",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-wishonia_trajectory_gdp_vs_current_trajectory_multiplier_year_15",
   unit: "x",
   displayName: "Wishonia Trajectory vs Current Trajectory GDP Multiplier (Year 15)",
   description: "Wishonia Trajectory GDP at year 15 as a multiple of current trajectory GDP at year 15.",
@@ -5330,6 +6506,8 @@ export const WISHONIA_TRAJECTORY_GDP_VS_CURRENT_TRAJECTORY_MULTIPLIER_YEAR_15: P
 
 export const WISHONIA_TRAJECTORY_GDP_VS_CURRENT_TRAJECTORY_MULTIPLIER_YEAR_20: Parameter = {
   value: 56.721918800945424,
+  parameterName: "WISHONIA_TRAJECTORY_GDP_VS_CURRENT_TRAJECTORY_MULTIPLIER_YEAR_20",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-wishonia_trajectory_gdp_vs_current_trajectory_multiplier_year_20",
   unit: "x",
   displayName: "Wishonia Trajectory vs Current Trajectory GDP Multiplier (Year 20)",
   description: "Wishonia Trajectory GDP at year 20 as a multiple of current trajectory GDP at year 20.",
@@ -5341,6 +6519,8 @@ export const WISHONIA_TRAJECTORY_GDP_VS_CURRENT_TRAJECTORY_MULTIPLIER_YEAR_20: P
 
 export const WISHONIA_TRAJECTORY_GDP_YEAR_15: Parameter = {
   value: 4483729448850429.5,
+  parameterName: "WISHONIA_TRAJECTORY_GDP_YEAR_15",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-wishonia_trajectory_gdp_year_15",
   unit: "USD",
   displayName: "Wishonia Trajectory GDP at Year 15",
   description: "Projected global GDP at year 15 under the Wishonia Trajectory. Applies all Wishonia policy channels including military reallocation, disease-burden recovery, and Political Dysfunction Tax elimination. 3-year ramp at 50% intensity + 12 years full.",
@@ -5352,6 +6532,8 @@ export const WISHONIA_TRAJECTORY_GDP_YEAR_15: Parameter = {
 
 export const WISHONIA_TRAJECTORY_GDP_YEAR_20: Parameter = {
   value: 1.0688728897285288e+16,
+  parameterName: "WISHONIA_TRAJECTORY_GDP_YEAR_20",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-wishonia_trajectory_gdp_year_20",
   unit: "USD",
   displayName: "Wishonia Trajectory GDP at Year 20",
   description: "Projected global GDP at year 20 under the Wishonia Trajectory. Model applies all Wishonia policy channels and redirects the full Political Dysfunction Tax non-health opportunity pool to highest-marginal-value uses. Health recovery is modeled separately through disease burden removal to avoid overlap. Military and non-health reallocation effects are ramped at 50% intensity for the first 3 years, then 100% for years 4-20, reflecting implementation lag. Military reallocation uses a physically demonstrated upper bound (post-WW2 demobilization) rather than an arbitrary policy cap.",
@@ -5363,6 +6545,8 @@ export const WISHONIA_TRAJECTORY_GDP_YEAR_20: Parameter = {
 
 export const WISHONIA_TRAJECTORY_LIFETIME_INCOME_GAIN_PER_CAPITA: Parameter = {
   value: 51948392.83706183,
+  parameterName: "WISHONIA_TRAJECTORY_LIFETIME_INCOME_GAIN_PER_CAPITA",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-wishonia_trajectory_lifetime_income_gain_per_capita",
   unit: "USD",
   displayName: "Wishonia Trajectory Lifetime Income Gain (Per Capita)",
   description: "Lifetime per-capita income gain from Wishonia Trajectory vs current trajectory. Cumulative Wishonia income minus cumulative current trajectory income over average remaining lifespan.",
@@ -5374,6 +6558,8 @@ export const WISHONIA_TRAJECTORY_LIFETIME_INCOME_GAIN_PER_CAPITA: Parameter = {
 
 export const WISHONIA_TRAJECTORY_LIFETIME_INCOME_MULTIPLIER: Parameter = {
   value: 39.80338928438418,
+  parameterName: "WISHONIA_TRAJECTORY_LIFETIME_INCOME_MULTIPLIER",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-wishonia_trajectory_lifetime_income_multiplier",
   unit: "x",
   displayName: "Wishonia Trajectory Lifetime Income Multiplier",
   description: "Ratio of cumulative lifetime income under Wishonia Trajectory vs current trajectory. Income-agnostic: applies as a multiplier to any individual's lifetime earnings.",
@@ -5385,6 +6571,8 @@ export const WISHONIA_TRAJECTORY_LIFETIME_INCOME_MULTIPLIER: Parameter = {
 
 export const WISHONIA_TRAJECTORY_VS_TREATY_TRAJECTORY_GDP_MULTIPLIER_YEAR_20: Parameter = {
   value: 3.4315554367560863,
+  parameterName: "WISHONIA_TRAJECTORY_VS_TREATY_TRAJECTORY_GDP_MULTIPLIER_YEAR_20",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-wishonia_trajectory_vs_treaty_trajectory_gdp_multiplier_year_20",
   unit: "x",
   displayName: "Wishonia Trajectory vs Treaty Trajectory GDP Multiplier (Year 20)",
   description: "Year-20 GDP multiplier from adding non-health dysfunction-capital reallocation on top of the Treaty Trajectory channels.",
@@ -5400,16 +6588,21 @@ export const WISHONIA_TRAJECTORY_VS_TREATY_TRAJECTORY_GDP_MULTIPLIER_YEAR_20: Pa
 
 export const ADAPTABLE_TRIAL_PATIENTS: Parameter = {
   value: 15076.0,
+  parameterName: "ADAPTABLE_TRIAL_PATIENTS",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-adaptable_trial_patients",
   unit: "patients",
   displayName: "ADAPTABLE Trial Patients Enrolled",
   description: "Patients enrolled in ADAPTABLE trial (PCORnet 2016-2019). Enrolled across 40 clinical sites. Precise count from trial completion records.",
   sourceType: "definition",
   sourceRef: "pragmatic-trials-cost-advantage",
+  sourceUrl: "https://commonfund.nih.gov/hcscollaboratory",
   confidence: "high",
 };
 
 export const ALLOCATION_DECISION_SPREAD: Parameter = {
   value: 0.08,
+  parameterName: "ALLOCATION_DECISION_SPREAD",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-allocation_decision_spread",
   unit: "percent",
   displayName: "Allocation Decision Return Spread",
   description: "Return spread between the best and worst major asset-class sectors (biotech vs. coal, growth vs. value, emerging vs. declining). The accuracy advantage of crowds over experts is multiplied by this spread to estimate the allocation alpha from wishocratic decision-making.",
@@ -5420,6 +6613,8 @@ export const ALLOCATION_DECISION_SPREAD: Parameter = {
 
 export const ANNUAL_WORKING_HOURS: Parameter = {
   value: 2000.0,
+  parameterName: "ANNUAL_WORKING_HOURS",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-annual_working_hours",
   unit: "hours/year",
   displayName: "Annual Working Hours",
   description: "Standard annual working hours globally. Approximately 40 hours/week x 50 weeks. ILO estimates range from 1,800-2,200 across countries; 2,000 is conventional.",
@@ -5429,6 +6624,8 @@ export const ANNUAL_WORKING_HOURS: Parameter = {
 
 export const APPROVED_DRUG_DISEASE_PAIRINGS: Parameter = {
   value: 1750.0,
+  parameterName: "APPROVED_DRUG_DISEASE_PAIRINGS",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-approved_drug_disease_pairings",
   unit: "pairings",
   displayName: "Approved Drug-Disease Pairings",
   description: "Unique approved drug-disease pairings (FDA-approved uses, midpoint of 1,500-2,000 range)",
@@ -5439,17 +6636,22 @@ export const APPROVED_DRUG_DISEASE_PAIRINGS: Parameter = {
 
 export const AVG_LIFE_EXTENSION_PER_BENEFICIARY: Parameter = {
   value: 12.0,
+  parameterName: "AVG_LIFE_EXTENSION_PER_BENEFICIARY",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-avg_life_extension_per_beneficiary",
   unit: "years",
   displayName: "Average Life Extension per Beneficiary",
   description: "Average years of life extension per person saved by pharmaceutical interventions. Assumption used to convert life-years saved to approximate lives saved. Based on Lichtenberg's methodology where life-years are calculated from Years of Life Lost (YLL) reductions.",
   sourceType: "definition",
   sourceRef: "lichtenberg-life-years-saved-2019",
+  sourceUrl: "https://www.nber.org/papers/w25483",
   confidence: "low",
   confidenceInterval: [8.0, 18.0],
 };
 
 export const CAMPAIGN_CELEBRITY_ENDORSEMENT: Parameter = {
   value: 15000000.0,
+  parameterName: "CAMPAIGN_CELEBRITY_ENDORSEMENT",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-campaign_celebrity_endorsement",
   unit: "USD",
   displayName: "Celebrity and Influencer Endorsements",
   description: "Celebrity and influencer endorsements",
@@ -5460,6 +6662,8 @@ export const CAMPAIGN_CELEBRITY_ENDORSEMENT: Parameter = {
 
 export const CAMPAIGN_COMMUNITY_ORGANIZING: Parameter = {
   value: 30000000.0,
+  parameterName: "CAMPAIGN_COMMUNITY_ORGANIZING",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-campaign_community_organizing",
   unit: "USD",
   displayName: "Community Organizing and Ambassador Program Budget",
   description: "Community organizing and ambassador program budget",
@@ -5470,6 +6674,8 @@ export const CAMPAIGN_COMMUNITY_ORGANIZING: Parameter = {
 
 export const CAMPAIGN_CONTINGENCY: Parameter = {
   value: 50000000.0,
+  parameterName: "CAMPAIGN_CONTINGENCY",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-campaign_contingency",
   unit: "USD",
   displayName: "Contingency Fund for Unexpected Costs",
   description: "Contingency fund for unexpected costs",
@@ -5480,6 +6686,8 @@ export const CAMPAIGN_CONTINGENCY: Parameter = {
 
 export const CAMPAIGN_DEFENSE_CONVERSION: Parameter = {
   value: 50000000.0,
+  parameterName: "CAMPAIGN_DEFENSE_CONVERSION",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-campaign_defense_conversion",
   unit: "USD",
   displayName: "Defense Industry Conversion Program",
   description: "Defense industry conversion program",
@@ -5490,6 +6698,8 @@ export const CAMPAIGN_DEFENSE_CONVERSION: Parameter = {
 
 export const CAMPAIGN_DEFENSE_LOBBYIST_BUDGET: Parameter = {
   value: 50000000.0,
+  parameterName: "CAMPAIGN_DEFENSE_LOBBYIST_BUDGET",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-campaign_defense_lobbyist_budget",
   unit: "USD",
   displayName: "Budget for Co-Opting Defense Industry Lobbyists",
   description: "Budget for co-opting defense industry lobbyists",
@@ -5500,6 +6710,8 @@ export const CAMPAIGN_DEFENSE_LOBBYIST_BUDGET: Parameter = {
 
 export const CAMPAIGN_HEALTHCARE_ALIGNMENT: Parameter = {
   value: 35000000.0,
+  parameterName: "CAMPAIGN_HEALTHCARE_ALIGNMENT",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-campaign_healthcare_alignment",
   unit: "USD",
   displayName: "Healthcare Industry Alignment and Partnerships",
   description: "Healthcare industry alignment and partnerships",
@@ -5510,6 +6722,8 @@ export const CAMPAIGN_HEALTHCARE_ALIGNMENT: Parameter = {
 
 export const CAMPAIGN_INFRASTRUCTURE: Parameter = {
   value: 20000000.0,
+  parameterName: "CAMPAIGN_INFRASTRUCTURE",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-campaign_infrastructure",
   unit: "USD",
   displayName: "Campaign Operational Infrastructure",
   description: "Campaign operational infrastructure",
@@ -5520,6 +6734,8 @@ export const CAMPAIGN_INFRASTRUCTURE: Parameter = {
 
 export const CAMPAIGN_LEGAL_AI_BUDGET: Parameter = {
   value: 50000000.0,
+  parameterName: "CAMPAIGN_LEGAL_AI_BUDGET",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-campaign_legal_ai_budget",
   unit: "USD",
   displayName: "AI-Assisted Legal Work Budget",
   description: "AI-assisted legal work budget",
@@ -5530,6 +6746,8 @@ export const CAMPAIGN_LEGAL_AI_BUDGET: Parameter = {
 
 export const CAMPAIGN_LEGAL_DEFENSE: Parameter = {
   value: 20000000.0,
+  parameterName: "CAMPAIGN_LEGAL_DEFENSE",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-campaign_legal_defense",
   unit: "USD",
   displayName: "Legal Defense Fund",
   description: "Legal defense fund",
@@ -5540,6 +6758,8 @@ export const CAMPAIGN_LEGAL_DEFENSE: Parameter = {
 
 export const CAMPAIGN_LEGAL_WORK: Parameter = {
   value: 60000000.0,
+  parameterName: "CAMPAIGN_LEGAL_WORK",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-campaign_legal_work",
   unit: "USD",
   displayName: "Legal Drafting and Compliance Work",
   description: "Legal drafting and compliance work",
@@ -5550,6 +6770,8 @@ export const CAMPAIGN_LEGAL_WORK: Parameter = {
 
 export const CAMPAIGN_LOBBYING_EU: Parameter = {
   value: 40000000.0,
+  parameterName: "CAMPAIGN_LOBBYING_EU",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-campaign_lobbying_eu",
   unit: "USD",
   displayName: "EU Lobbying Campaign Budget",
   description: "EU lobbying campaign budget",
@@ -5560,6 +6782,8 @@ export const CAMPAIGN_LOBBYING_EU: Parameter = {
 
 export const CAMPAIGN_LOBBYING_G20_MILLIONS: Parameter = {
   value: 35000000.0,
+  parameterName: "CAMPAIGN_LOBBYING_G20_MILLIONS",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-campaign_lobbying_g20_millions",
   unit: "USD",
   displayName: "G20 Countries Lobbying Budget",
   description: "G20 countries lobbying budget",
@@ -5569,6 +6793,8 @@ export const CAMPAIGN_LOBBYING_G20_MILLIONS: Parameter = {
 
 export const CAMPAIGN_LOBBYING_US: Parameter = {
   value: 50000000.0,
+  parameterName: "CAMPAIGN_LOBBYING_US",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-campaign_lobbying_us",
   unit: "USD",
   displayName: "US Lobbying Campaign Budget",
   description: "US lobbying campaign budget",
@@ -5579,6 +6805,8 @@ export const CAMPAIGN_LOBBYING_US: Parameter = {
 
 export const CAMPAIGN_MEDIA_BUDGET_MAX: Parameter = {
   value: 1000000000.0,
+  parameterName: "CAMPAIGN_MEDIA_BUDGET_MAX",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-campaign_media_budget_max",
   unit: "USD",
   displayName: "Maximum Mass Media Campaign Budget",
   description: "Maximum mass media campaign budget",
@@ -5589,6 +6817,8 @@ export const CAMPAIGN_MEDIA_BUDGET_MAX: Parameter = {
 
 export const CAMPAIGN_MEDIA_BUDGET_MIN: Parameter = {
   value: 500000000.0,
+  parameterName: "CAMPAIGN_MEDIA_BUDGET_MIN",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-campaign_media_budget_min",
   unit: "USD",
   displayName: "Minimum Mass Media Campaign Budget",
   description: "Minimum mass media campaign budget",
@@ -5599,6 +6829,8 @@ export const CAMPAIGN_MEDIA_BUDGET_MIN: Parameter = {
 
 export const CAMPAIGN_OPPOSITION_RESEARCH: Parameter = {
   value: 25000000.0,
+  parameterName: "CAMPAIGN_OPPOSITION_RESEARCH",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-campaign_opposition_research",
   unit: "USD",
   displayName: "Opposition Research and Rapid Response",
   description: "Opposition research and rapid response",
@@ -5609,6 +6841,8 @@ export const CAMPAIGN_OPPOSITION_RESEARCH: Parameter = {
 
 export const CAMPAIGN_PHASE1_BUDGET: Parameter = {
   value: 200000000.0,
+  parameterName: "CAMPAIGN_PHASE1_BUDGET",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-campaign_phase1_budget",
   unit: "USD",
   displayName: "Phase 1 Campaign Budget",
   description: "Phase 1 campaign budget (Foundation, Year 1)",
@@ -5619,6 +6853,8 @@ export const CAMPAIGN_PHASE1_BUDGET: Parameter = {
 
 export const CAMPAIGN_PHASE2_BUDGET: Parameter = {
   value: 500000000.0,
+  parameterName: "CAMPAIGN_PHASE2_BUDGET",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-campaign_phase2_budget",
   unit: "USD",
   displayName: "Phase 2 Campaign Budget",
   description: "Phase 2 campaign budget (Scale & Momentum, Years 2-3)",
@@ -5629,6 +6865,8 @@ export const CAMPAIGN_PHASE2_BUDGET: Parameter = {
 
 export const CAMPAIGN_PILOT_PROGRAMS: Parameter = {
   value: 30000000.0,
+  parameterName: "CAMPAIGN_PILOT_PROGRAMS",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-campaign_pilot_programs",
   unit: "USD",
   displayName: "Pilot Program Testing in Small Countries",
   description: "Pilot program testing in small countries",
@@ -5639,6 +6877,8 @@ export const CAMPAIGN_PILOT_PROGRAMS: Parameter = {
 
 export const CAMPAIGN_PLATFORM_DEVELOPMENT: Parameter = {
   value: 35000000.0,
+  parameterName: "CAMPAIGN_PLATFORM_DEVELOPMENT",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-campaign_platform_development",
   unit: "USD",
   displayName: "Voting Platform and Technology Development",
   description: "Voting platform and technology development",
@@ -5649,6 +6889,8 @@ export const CAMPAIGN_PLATFORM_DEVELOPMENT: Parameter = {
 
 export const CAMPAIGN_REGULATORY_NAVIGATION: Parameter = {
   value: 20000000.0,
+  parameterName: "CAMPAIGN_REGULATORY_NAVIGATION",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-campaign_regulatory_navigation",
   unit: "USD",
   displayName: "Regulatory Compliance and Navigation",
   description: "Regulatory compliance and navigation",
@@ -5659,6 +6901,8 @@ export const CAMPAIGN_REGULATORY_NAVIGATION: Parameter = {
 
 export const CAMPAIGN_SCALING_PREP: Parameter = {
   value: 30000000.0,
+  parameterName: "CAMPAIGN_SCALING_PREP",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-campaign_scaling_prep",
   unit: "USD",
   displayName: "Scaling Preparation and Blueprints",
   description: "Scaling preparation and blueprints",
@@ -5669,6 +6913,8 @@ export const CAMPAIGN_SCALING_PREP: Parameter = {
 
 export const CAMPAIGN_STAFF_BUDGET: Parameter = {
   value: 40000000.0,
+  parameterName: "CAMPAIGN_STAFF_BUDGET",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-campaign_staff_budget",
   unit: "USD",
   displayName: "Campaign Core Team Staff Budget",
   description: "Campaign core team staff budget",
@@ -5679,6 +6925,8 @@ export const CAMPAIGN_STAFF_BUDGET: Parameter = {
 
 export const CAMPAIGN_SUPER_PAC_BUDGET: Parameter = {
   value: 30000000.0,
+  parameterName: "CAMPAIGN_SUPER_PAC_BUDGET",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-campaign_super_pac_budget",
   unit: "USD",
   displayName: "Super PAC Campaign Expenditures",
   description: "Super PAC campaign expenditures",
@@ -5689,6 +6937,8 @@ export const CAMPAIGN_SUPER_PAC_BUDGET: Parameter = {
 
 export const CAMPAIGN_TECH_PARTNERSHIPS: Parameter = {
   value: 25000000.0,
+  parameterName: "CAMPAIGN_TECH_PARTNERSHIPS",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-campaign_tech_partnerships",
   unit: "USD",
   displayName: "Tech Industry Partnerships and Infrastructure",
   description: "Tech industry partnerships and infrastructure",
@@ -5699,6 +6949,8 @@ export const CAMPAIGN_TECH_PARTNERSHIPS: Parameter = {
 
 export const CAMPAIGN_TREATY_IMPLEMENTATION: Parameter = {
   value: 40000000.0,
+  parameterName: "CAMPAIGN_TREATY_IMPLEMENTATION",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-campaign_treaty_implementation",
   unit: "USD",
   displayName: "Post-Victory Treaty Implementation Support",
   description: "Post-victory treaty implementation support",
@@ -5709,6 +6961,8 @@ export const CAMPAIGN_TREATY_IMPLEMENTATION: Parameter = {
 
 export const CAMPAIGN_VIRAL_CONTENT_BUDGET: Parameter = {
   value: 40000000.0,
+  parameterName: "CAMPAIGN_VIRAL_CONTENT_BUDGET",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-campaign_viral_content_budget",
   unit: "USD",
   displayName: "Viral Marketing Content Creation Budget",
   description: "Viral marketing content creation budget",
@@ -5719,17 +6973,22 @@ export const CAMPAIGN_VIRAL_CONTENT_BUDGET: Parameter = {
 
 export const CAREGIVER_COST_ANNUAL: Parameter = {
   value: 6000.0,
+  parameterName: "CAREGIVER_COST_ANNUAL",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-caregiver_cost_annual",
   unit: "USD/year",
   displayName: "Annual Cost of Unpaid Caregiving",
   description: "Annual cost of unpaid caregiving (replacement cost method)",
   sourceType: "definition",
   sourceRef: "unpaid-caregiver-hours-economic-value",
+  sourceUrl: "https://www.aarp.org/caregiving/financial-legal/info-2023/unpaid-caregivers-provide-billions-in-care.html",
   confidence: "high",
   formula: "HOURS_PER_MONTH × MONTHS_PER_YEAR × VALUE_PER_HOUR",
 };
 
 export const CELL_THERAPY_APPROACHES: Parameter = {
   value: 500.0,
+  parameterName: "CELL_THERAPY_APPROACHES",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-cell_therapy_approaches",
   unit: "approaches",
   displayName: "Cell Therapy Approaches",
   description: "Distinct cell therapy approaches (CAR-T variants, iPSCs, MSCs, organoids)",
@@ -5740,6 +6999,8 @@ export const CELL_THERAPY_APPROACHES: Parameter = {
 
 export const CHAIN_DISMISS_PROBABILITY: Parameter = {
   value: 0.9,
+  parameterName: "CHAIN_DISMISS_PROBABILITY",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-chain_dismiss_probability",
   unit: "rate",
   displayName: "Dismissal Rate",
   description: "Probability someone dismisses the idea without engaging (the 'institutionalization rate')",
@@ -5751,6 +7012,8 @@ export const CHAIN_DISMISS_PROBABILITY: Parameter = {
 
 export const CHAIN_EFFECTIVE_R: Parameter = {
   value: 0.15,
+  parameterName: "CHAIN_EFFECTIVE_R",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-chain_effective_r",
   unit: "ratio",
   displayName: "Effective R",
   description: "Effective reproduction number per cascade generation: fraction of viewers who share (5%) x average forwards per sharer (3). CI spans pessimistic (2% x 2 = 0.04) to optimistic (10% x 8 = 0.80).",
@@ -5761,6 +7024,8 @@ export const CHAIN_EFFECTIVE_R: Parameter = {
 
 export const CHAIN_HORIZON_YEARS: Parameter = {
   value: 3.0,
+  parameterName: "CHAIN_HORIZON_YEARS",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-chain_horizon_years",
   unit: "years",
   displayName: "Model Horizon",
   description: "Conservative upper bound for cascade propagation (social media cascades propagate in weeks; 3 years allows for slower channels and multiple cascade waves)",
@@ -5770,6 +7035,8 @@ export const CHAIN_HORIZON_YEARS: Parameter = {
 
 export const CHAIN_IMPLEMENTER_ORBIT_SIZE: Parameter = {
   value: 1000.0,
+  parameterName: "CHAIN_IMPLEMENTER_ORBIT_SIZE",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-chain_implementer_orbit_size",
   unit: "people",
   displayName: "Implementer Orbit Size",
   description: "Information-orbit size per implementer: people whose recommendation would reach them (staff, advisors, active social media feeds, professional contacts). Lower bound: Dunbar's 150; upper: corporate C-suite intake funnel.",
@@ -5781,6 +7048,8 @@ export const CHAIN_IMPLEMENTER_ORBIT_SIZE: Parameter = {
 
 export const CHAIN_INITIAL_AUDIENCE: Parameter = {
   value: 50000.0,
+  parameterName: "CHAIN_INITIAL_AUDIENCE",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-chain_initial_audience",
   unit: "people",
   displayName: "Initial Audience",
   description: "Conservative initial audience size (readers, website visitors, conference attendees)",
@@ -5792,6 +7061,8 @@ export const CHAIN_INITIAL_AUDIENCE: Parameter = {
 
 export const CHAIN_WORLD_LEADER_COUNT: Parameter = {
   value: 195.0,
+  parameterName: "CHAIN_WORLD_LEADER_COUNT",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-chain_world_leader_count",
   unit: "countries",
   displayName: "World Leader Count",
   description: "Number of sovereign heads of state/government",
@@ -5801,16 +7072,21 @@ export const CHAIN_WORLD_LEADER_COUNT: Parameter = {
 
 export const CHILDHOOD_VACCINATION_COST_PER_DALY: Parameter = {
   value: 30.0,
+  parameterName: "CHILDHOOD_VACCINATION_COST_PER_DALY",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-childhood_vaccination_cost_per_daly",
   unit: "USD/DALY",
   displayName: "Childhood Vaccination Cost per DALY (Estimated)",
   description: "Estimated cost per DALY for US childhood vaccination programs. Note: US cost-effectiveness studies primarily use cost per QALY (Quality-Adjusted Life Year) rather than cost per DALY. This estimate is derived from program costs and benefits for comparison purposes only.",
   sourceType: "definition",
   sourceRef: "childhood-vaccination-roi",
+  sourceUrl: "https://www.cdc.gov/mmwr/preview/mmwrhtml/mm6316a4.htm",
   confidence: "low",
 };
 
 export const CONCENTRATED_INTEREST_SECTOR_MARKET_CAP_USD: Parameter = {
   value: 5000000000000.0,
+  parameterName: "CONCENTRATED_INTEREST_SECTOR_MARKET_CAP_USD",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-concentrated_interest_sector_market_cap_usd",
   unit: "USD",
   displayName: "Concentrated Interest Sector Market Cap",
   description: "Estimated combined market capitalization of concentrated interest opposition (defense, fossil fuel, etc.)",
@@ -5820,30 +7096,40 @@ export const CONCENTRATED_INTEREST_SECTOR_MARKET_CAP_USD: Parameter = {
 
 export const CUMULATIVE_MILITARY_SPENDING_ALL_HISTORY: Parameter = {
   value: 180000000000000.0,
+  parameterName: "CUMULATIVE_MILITARY_SPENDING_ALL_HISTORY",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-cumulative_military_spending_all_history",
   unit: "USD",
   displayName: "Cumulative Military Spending (All History)",
   description: "Cumulative global military spending across all recorded history in constant 2024 dollars. Fed era ($170T) + 19th century ($3T) + pre-1800 GDP-share estimate ($4-20T). Range: $150-225T. 75% was spent after 1945.",
   sourceType: "definition",
   sourceRef: "sipri-milex-2024",
+  sourceUrl: "https://www.sipri.org/publications/2025/sipri-fact-sheets/trends-world-military-expenditure-2024",
   confidence: "low",
 };
 
 export const CUMULATIVE_MILITARY_SPENDING_FED_ERA: Parameter = {
   value: 170000000000000.0,
+  parameterName: "CUMULATIVE_MILITARY_SPENDING_FED_ERA",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-cumulative_military_spending_fed_era",
   unit: "USD",
   displayName: "Cumulative Military Spending (Fed Era)",
   description: "Cumulative global military spending since 1913 (Fed era) in constant 2024 dollars. Built from: SIPRI 1988-2024 ($65-72T), Cold War 1946-1987 ($50-70T reconstructed), WWI+WWII+interwar ($33T from Harrison). Range: $150-190T.",
   sourceType: "definition",
   sourceRef: "sipri-milex-2024",
+  sourceUrl: "https://www.sipri.org/publications/2025/sipri-fact-sheets/trends-world-military-expenditure-2024",
   confidence: "low",
 };
 
 export const DAYS_PER_YEAR: Parameter = {
   value: 365.0,
+  parameterName: "DAYS_PER_YEAR",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-days_per_year",
 };
 
 export const DCT_PLATFORM_FUNDING_MEDIUM: Parameter = {
   value: 500000000.0,
+  parameterName: "DCT_PLATFORM_FUNDING_MEDIUM",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-dct_platform_funding_medium",
   unit: "USD",
   displayName: "Mid-Range Funding for Commercial Dct Platform",
   description: "Mid-range funding for commercial DCT platform",
@@ -5853,6 +7139,8 @@ export const DCT_PLATFORM_FUNDING_MEDIUM: Parameter = {
 
 export const DEFENSE_SECTOR_RETENTION_PCT: Parameter = {
   value: 0.99,
+  parameterName: "DEFENSE_SECTOR_RETENTION_PCT",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-defense_sector_retention_pct",
   unit: "rate",
   displayName: "Percentage of Budget Defense Sector Keeps Under 1% treaty",
   description: "Percentage of budget defense sector keeps under 1% treaty",
@@ -5862,6 +7150,8 @@ export const DEFENSE_SECTOR_RETENTION_PCT: Parameter = {
 
 export const DESTRUCTIVE_ECONOMY_BASE_YEAR: Parameter = {
   value: 2025.0,
+  parameterName: "DESTRUCTIVE_ECONOMY_BASE_YEAR",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-destructive_economy_base_year",
   unit: "year",
   displayName: "Destructive Economy Base Year",
   description: "Base year for destructive economy projections. All threshold timelines are measured from this year.",
@@ -5871,6 +7161,8 @@ export const DESTRUCTIVE_ECONOMY_BASE_YEAR: Parameter = {
 
 export const DFDA_ANNUAL_TRIAL_FUNDING: Parameter = {
   value: 21800000000.0,
+  parameterName: "DFDA_ANNUAL_TRIAL_FUNDING",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-dfda_annual_trial_funding",
   unit: "USD/year",
   displayName: "dFDA Annual Trial Funding",
   description: "Assumed annual funding for dFDA pragmatic clinical trials (~$21.8B/year). Source-agnostic: could come from military reallocation, philanthropy, or government appropriation.",
@@ -5880,6 +7172,8 @@ export const DFDA_ANNUAL_TRIAL_FUNDING: Parameter = {
 
 export const DFDA_NPV_ADOPTION_RAMP_YEARS: Parameter = {
   value: 5.0,
+  parameterName: "DFDA_NPV_ADOPTION_RAMP_YEARS",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-dfda_npv_adoption_ramp_years",
   unit: "years",
   displayName: "Years to Reach Full Decentralized Framework for Drug Assessment Adoption",
   description: "Years to reach full Decentralized Framework for Drug Assessment adoption",
@@ -5889,6 +7183,8 @@ export const DFDA_NPV_ADOPTION_RAMP_YEARS: Parameter = {
 
 export const DFDA_NPV_ANNUAL_OPEX: Parameter = {
   value: 18950000.0,
+  parameterName: "DFDA_NPV_ANNUAL_OPEX",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-dfda_npv_annual_opex",
   unit: "USD/year",
   displayName: "Decentralized Framework for Drug Assessment Core framework Annual OPEX",
   description: "Decentralized Framework for Drug Assessment Core framework annual opex (midpoint of $11-26.5M)",
@@ -5899,6 +7195,8 @@ export const DFDA_NPV_ANNUAL_OPEX: Parameter = {
 
 export const DFDA_NPV_UPFRONT_COST: Parameter = {
   value: 40000000.0,
+  parameterName: "DFDA_NPV_UPFRONT_COST",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-dfda_npv_upfront_cost",
   unit: "USD",
   displayName: "Decentralized Framework for Drug Assessment Core framework Build Cost",
   description: "Decentralized Framework for Drug Assessment Core framework build cost",
@@ -5909,6 +7207,8 @@ export const DFDA_NPV_UPFRONT_COST: Parameter = {
 
 export const DFDA_OBSERVATIONAL_COST_PER_PATIENT: Parameter = {
   value: 0.1,
+  parameterName: "DFDA_OBSERVATIONAL_COST_PER_PATIENT",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-dfda_observational_cost_per_patient",
   unit: "USD/patient",
   displayName: "Stage 1 Observational Analysis Cost per Patient",
   description: "Order-of-magnitude estimate for Stage 1 observational signal detection (PIS calculation). Validated by FDA Sentinel benchmark (~$1/patient/year for similar drug safety analysis at 100M+ scale). True cost varies with scale and complexity; exact value less important than order-of-magnitude difference vs pragmatic trials (~$500-929/patient) and traditional Phase 3 (~$41,000/patient).",
@@ -5919,6 +7219,8 @@ export const DFDA_OBSERVATIONAL_COST_PER_PATIENT: Parameter = {
 
 export const DFDA_OPEX_COMMUNITY: Parameter = {
   value: 2000000.0,
+  parameterName: "DFDA_OPEX_COMMUNITY",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-dfda_opex_community",
   unit: "USD/year",
   displayName: "Decentralized Framework for Drug Assessment Community Support Costs",
   description: "Decentralized Framework for Drug Assessment community support costs",
@@ -5929,6 +7231,8 @@ export const DFDA_OPEX_COMMUNITY: Parameter = {
 
 export const DFDA_OPEX_INFRASTRUCTURE: Parameter = {
   value: 8000000.0,
+  parameterName: "DFDA_OPEX_INFRASTRUCTURE",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-dfda_opex_infrastructure",
   unit: "USD/year",
   displayName: "Decentralized Framework for Drug Assessment Infrastructure Costs",
   description: "Decentralized Framework for Drug Assessment infrastructure costs (cloud, security)",
@@ -5939,6 +7243,8 @@ export const DFDA_OPEX_INFRASTRUCTURE: Parameter = {
 
 export const DFDA_OPEX_PLATFORM_MAINTENANCE: Parameter = {
   value: 15000000.0,
+  parameterName: "DFDA_OPEX_PLATFORM_MAINTENANCE",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-dfda_opex_platform_maintenance",
   unit: "USD/year",
   displayName: "Decentralized Framework for Drug Assessment Maintenance Costs",
   description: "Decentralized Framework for Drug Assessment maintenance costs",
@@ -5949,6 +7255,8 @@ export const DFDA_OPEX_PLATFORM_MAINTENANCE: Parameter = {
 
 export const DFDA_OPEX_REGULATORY: Parameter = {
   value: 5000000.0,
+  parameterName: "DFDA_OPEX_REGULATORY",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-dfda_opex_regulatory",
   unit: "USD/year",
   displayName: "Decentralized Framework for Drug Assessment Regulatory Coordination Costs",
   description: "Decentralized Framework for Drug Assessment regulatory coordination costs",
@@ -5959,6 +7267,8 @@ export const DFDA_OPEX_REGULATORY: Parameter = {
 
 export const DFDA_OPEX_STAFF: Parameter = {
   value: 10000000.0,
+  parameterName: "DFDA_OPEX_STAFF",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-dfda_opex_staff",
   unit: "USD/year",
   displayName: "Decentralized Framework for Drug Assessment Staff Costs",
   description: "Decentralized Framework for Drug Assessment staff costs (minimal, AI-assisted)",
@@ -5969,6 +7279,8 @@ export const DFDA_OPEX_STAFF: Parameter = {
 
 export const DFDA_STORAGE_COST_BACKUP_PER_PATIENT_MONTHLY: Parameter = {
   value: 0.2,
+  parameterName: "DFDA_STORAGE_COST_BACKUP_PER_PATIENT_MONTHLY",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-dfda_storage_cost_backup_per_patient_monthly",
   unit: "USD/patient/month",
   displayName: "Backup/Redundancy Cost per Patient (Monthly)",
   description: "Backup and redundancy cost per patient per month. For data safety and compliance.",
@@ -5979,6 +7291,8 @@ export const DFDA_STORAGE_COST_BACKUP_PER_PATIENT_MONTHLY: Parameter = {
 
 export const DFDA_STORAGE_COST_COMPUTE_PER_PATIENT_MONTHLY: Parameter = {
   value: 0.2,
+  parameterName: "DFDA_STORAGE_COST_COMPUTE_PER_PATIENT_MONTHLY",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-dfda_storage_cost_compute_per_patient_monthly",
   unit: "USD/patient/month",
   displayName: "Compute/API Cost per Patient (Monthly)",
   description: "Compute and API cost per patient per month. For data processing, correlation analysis, and PIS calculation.",
@@ -5989,6 +7303,8 @@ export const DFDA_STORAGE_COST_COMPUTE_PER_PATIENT_MONTHLY: Parameter = {
 
 export const DFDA_STORAGE_COST_DATABASE_PER_PATIENT_MONTHLY: Parameter = {
   value: 0.3,
+  parameterName: "DFDA_STORAGE_COST_DATABASE_PER_PATIENT_MONTHLY",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-dfda_storage_cost_database_per_patient_monthly",
   unit: "USD/patient/month",
   displayName: "Database Cost per Patient (Monthly)",
   description: "Database cost per patient per month. For structured data storage and querying.",
@@ -5999,6 +7315,8 @@ export const DFDA_STORAGE_COST_DATABASE_PER_PATIENT_MONTHLY: Parameter = {
 
 export const DFDA_STORAGE_COST_RAW_PER_PATIENT_MONTHLY: Parameter = {
   value: 0.02,
+  parameterName: "DFDA_STORAGE_COST_RAW_PER_PATIENT_MONTHLY",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-dfda_storage_cost_raw_per_patient_monthly",
   unit: "USD/patient/month",
   displayName: "Raw Storage Cost per Patient (Monthly)",
   description: "Raw cloud storage cost per patient per month. Based on standard cloud storage rates for ~1GB patient data.",
@@ -6009,6 +7327,8 @@ export const DFDA_STORAGE_COST_RAW_PER_PATIENT_MONTHLY: Parameter = {
 
 export const DFDA_TARGET_COST_PER_PATIENT_USD: Parameter = {
   value: 1000.0,
+  parameterName: "DFDA_TARGET_COST_PER_PATIENT_USD",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-dfda_target_cost_per_patient_usd",
   unit: "USD/patient",
   displayName: "Decentralized Framework for Drug Assessment Target Cost per Patient in USD",
   description: "Target cost per patient in USD (same as DFDA_TARGET_COST_PER_PATIENT but in dollars)",
@@ -6018,6 +7338,8 @@ export const DFDA_TARGET_COST_PER_PATIENT_USD: Parameter = {
 
 export const DFDA_UPFRONT_BUILD: Parameter = {
   value: 40000000.0,
+  parameterName: "DFDA_UPFRONT_BUILD",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-dfda_upfront_build",
   unit: "USD",
   displayName: "Decentralized Framework for Drug Assessment One-Time Build Cost",
   description: "Decentralized Framework for Drug Assessment one-time build cost (central estimate)",
@@ -6027,6 +7349,8 @@ export const DFDA_UPFRONT_BUILD: Parameter = {
 
 export const DFDA_UPFRONT_BUILD_MAX: Parameter = {
   value: 46000000.0,
+  parameterName: "DFDA_UPFRONT_BUILD_MAX",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-dfda_upfront_build_max",
   unit: "USD",
   displayName: "Decentralized Framework for Drug Assessment One-Time Build Cost (Maximum)",
   description: "Decentralized Framework for Drug Assessment one-time build cost (high estimate)",
@@ -6036,6 +7360,8 @@ export const DFDA_UPFRONT_BUILD_MAX: Parameter = {
 
 export const DIH_NPV_ANNUAL_OPEX_INITIATIVES: Parameter = {
   value: 21100000.0,
+  parameterName: "DIH_NPV_ANNUAL_OPEX_INITIATIVES",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-dih_npv_annual_opex_initiatives",
   unit: "USD/year",
   displayName: "DIH Broader Initiatives Annual OPEX",
   description: "DIH broader initiatives annual opex (medium case)",
@@ -6046,6 +7372,8 @@ export const DIH_NPV_ANNUAL_OPEX_INITIATIVES: Parameter = {
 
 export const DIH_NPV_UPFRONT_COST_INITIATIVES: Parameter = {
   value: 229750000.0,
+  parameterName: "DIH_NPV_UPFRONT_COST_INITIATIVES",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-dih_npv_upfront_cost_initiatives",
   unit: "USD",
   displayName: "DIH Broader Initiatives Upfront Cost",
   description: "DIH broader initiatives upfront cost (medium case)",
@@ -6056,6 +7384,8 @@ export const DIH_NPV_UPFRONT_COST_INITIATIVES: Parameter = {
 
 export const DISEASE_RELATED_CAREGIVER_PCT: Parameter = {
   value: 0.4,
+  parameterName: "DISEASE_RELATED_CAREGIVER_PCT",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-disease_related_caregiver_pct",
   unit: "rate",
   displayName: "Percentage of Caregiving for Treatable Disease Conditions",
   description: "Percentage of caregiving for treatable disease conditions (vs aging, disability, children)",
@@ -6066,6 +7396,8 @@ export const DISEASE_RELATED_CAREGIVER_PCT: Parameter = {
 
 export const EPIGENETIC_TARGETS_COUNT: Parameter = {
   value: 1500.0,
+  parameterName: "EPIGENETIC_TARGETS_COUNT",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-epigenetic_targets_count",
   unit: "targets",
   displayName: "Epigenetic Drug Targets",
   description: "Druggable epigenetic targets (HDACs, DNMTs, histone modifiers, bromodomains)",
@@ -6076,6 +7408,8 @@ export const EPIGENETIC_TARGETS_COUNT: Parameter = {
 
 export const EVENTUALLY_AVOIDABLE_DALY_PCT: Parameter = {
   value: 0.9262780790085205,
+  parameterName: "EVENTUALLY_AVOIDABLE_DALY_PCT",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-eventually_avoidable_daly_pct",
   unit: "percentage",
   displayName: "Eventually Avoidable DALY Percentage",
   description: "Percentage of DALYs that are eventually avoidable with sufficient biomedical research. Uses same methodology as EVENTUALLY_AVOIDABLE_DEATH_PCT. Most non-fatal chronic conditions (arthritis, depression, chronic pain) are also addressable through research, so the percentage is similar to deaths.",
@@ -6087,6 +7421,8 @@ export const EVENTUALLY_AVOIDABLE_DALY_PCT: Parameter = {
 
 export const EVENTUALLY_AVOIDABLE_DEATH_PCT: Parameter = {
   value: 0.9262780790085205,
+  parameterName: "EVENTUALLY_AVOIDABLE_DEATH_PCT",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-eventually_avoidable_death_pct",
   unit: "percentage",
   displayName: "Eventually Avoidable Death Percentage",
   description: "Percentage of deaths that are eventually avoidable with sufficient biomedical research and technological advancement. Central estimate ~92% based on ~7.9% fundamentally unavoidable (primarily accidents). Wide uncertainty reflects debate over: (1) aging as addressable vs. fundamental, (2) asymptotic difficulty of last diseases, (3) multifactorial disease complexity.",
@@ -6098,6 +7434,8 @@ export const EVENTUALLY_AVOIDABLE_DEATH_PCT: Parameter = {
 
 export const FAMILY_OFFICE_INVESTMENT_MIN: Parameter = {
   value: 5000000.0,
+  parameterName: "FAMILY_OFFICE_INVESTMENT_MIN",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-family_office_investment_min",
   unit: "USD",
   displayName: "Minimum Investment for Family Offices",
   description: "Minimum investment for family offices",
@@ -6107,6 +7445,8 @@ export const FAMILY_OFFICE_INVESTMENT_MIN: Parameter = {
 
 export const FUNDAMENTALLY_UNAVOIDABLE_DEATH_PCT: Parameter = {
   value: 0.07372192099147949,
+  parameterName: "FUNDAMENTALLY_UNAVOIDABLE_DEATH_PCT",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-fundamentally_unavoidable_death_pct",
   unit: "percentage",
   displayName: "Fundamentally Unavoidable Death Percentage",
   description: "Percentage of deaths that are fundamentally unavoidable even with perfect biotechnology (primarily accidents). Calculated as Σ(disease_burden × (1 - max_cure_potential)) across all disease categories.",
@@ -6117,6 +7457,8 @@ export const FUNDAMENTALLY_UNAVOIDABLE_DEATH_PCT: Parameter = {
 
 export const GDP_BASELINE_GROWTH_RATE: Parameter = {
   value: 0.025,
+  parameterName: "GDP_BASELINE_GROWTH_RATE",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-gdp_baseline_growth_rate",
   unit: "rate",
   displayName: "Baseline Global GDP Growth Rate",
   description: "Status-quo baseline annual global GDP growth rate.",
@@ -6126,6 +7468,8 @@ export const GDP_BASELINE_GROWTH_RATE: Parameter = {
 
 export const GLOBAL_COORDINATION_ACTIVATION_REWARD_PER_VERIFIED_PARTICIPANT: Parameter = {
   value: 5.0,
+  parameterName: "GLOBAL_COORDINATION_ACTIVATION_REWARD_PER_VERIFIED_PARTICIPANT",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-global_coordination_activation_reward_per_verified_participant",
   unit: "USD",
   displayName: "Activation Reward per Verified Participant",
   description: "Planning midpoint for the direct cash incentive required to make a successful verified recruit materially worth sharing at global scale. Intended as a research-backed blended reward across referrer and recruit, not as the long-dated PRIZE claim value.",
@@ -6137,6 +7481,8 @@ export const GLOBAL_COORDINATION_ACTIVATION_REWARD_PER_VERIFIED_PARTICIPANT: Par
 
 export const GLOBAL_COORDINATION_PLATFORM_AND_OPERATIONS_COST: Parameter = {
   value: 4000000000.0,
+  parameterName: "GLOBAL_COORDINATION_PLATFORM_AND_OPERATIONS_COST",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-global_coordination_platform_and_operations_cost",
   unit: "USD",
   displayName: "Global Coordination Platform and Operations Cost",
   description: "Fixed cost to run a global activation campaign toward 50% participation: platform buildout, localization, customer support, compliance, payout operations, fraud response, and regional launch infrastructure.",
@@ -6148,6 +7494,8 @@ export const GLOBAL_COORDINATION_PLATFORM_AND_OPERATIONS_COST: Parameter = {
 
 export const GLOBAL_COORDINATION_TARGET_PCT: Parameter = {
   value: 0.5,
+  parameterName: "GLOBAL_COORDINATION_TARGET_PCT",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-global_coordination_target_pct",
   unit: "percent",
   displayName: "Global Coordination Target",
   description: "Modeled end-state global coordination target: half of humanity visibly supports the prize network, used in prose as roughly 90% of likely voters globally.",
@@ -6157,6 +7505,8 @@ export const GLOBAL_COORDINATION_TARGET_PCT: Parameter = {
 
 export const GLOBAL_COORDINATION_VERIFICATION_AND_PAYMENT_COST_PER_PARTICIPANT: Parameter = {
   value: 1.5,
+  parameterName: "GLOBAL_COORDINATION_VERIFICATION_AND_PAYMENT_COST_PER_PARTICIPANT",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-global_coordination_verification_and_payment_cost_per_participant",
   unit: "USD",
   displayName: "Verification and Payment Cost per Participant",
   description: "Planning midpoint for non-reward variable cost per successful verified participant: identity verification, payment rails, fraud checks, support, and completion friction.",
@@ -6168,6 +7518,8 @@ export const GLOBAL_COORDINATION_VERIFICATION_AND_PAYMENT_COST_PER_PARTICIPANT: 
 
 export const GLOBAL_TO_US_POLITICAL_COST_RATIO: Parameter = {
   value: 5.0,
+  parameterName: "GLOBAL_TO_US_POLITICAL_COST_RATIO",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-global_to_us_political_cost_ratio",
   unit: "ratio",
   displayName: "Global-to-US Political Cost Ratio",
   description: "Ratio of global to US political reform costs. Based on discretionary spending ratio (~9x) discounted by ~50% for less transparent/expensive non-US political systems. Range 3-8 reflects uncertainty about non-US political dynamics and hidden influence channels.",
@@ -6178,14 +7530,20 @@ export const GLOBAL_TO_US_POLITICAL_COST_RATIO: Parameter = {
 
 export const HOURS_PER_DAY: Parameter = {
   value: 24.0,
+  parameterName: "HOURS_PER_DAY",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-hours_per_day",
 };
 
 export const HOURS_PER_YEAR: Parameter = {
   value: 8760.0,
+  parameterName: "HOURS_PER_YEAR",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-hours_per_year",
 };
 
 export const HUMAN_PROTEIN_CODING_GENES: Parameter = {
   value: 20000.0,
+  parameterName: "HUMAN_PROTEIN_CODING_GENES",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-human_protein_coding_genes",
   unit: "genes",
   displayName: "Human Protein-Coding Genes",
   description: "Human protein-coding genes targetable by gene therapy, mRNA, or biologics (Human Genome Project consensus)",
@@ -6196,17 +7554,22 @@ export const HUMAN_PROTEIN_CODING_GENES: Parameter = {
 
 export const IAB_MECHANISM_ANNUAL_COST: Parameter = {
   value: 750000000.0,
+  parameterName: "IAB_MECHANISM_ANNUAL_COST",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-iab_mechanism_annual_cost",
   unit: "USD/year",
   displayName: "IAB Mechanism Annual Cost (High Estimate)",
   description: "Estimated annual cost of the IAB mechanism (high-end estimate including regulatory defense)",
   sourceType: "definition",
   sourceRef: "https://iab.warondisease.org#welfare-analysis",
+  sourceUrl: "https://iab.warondisease.org#welfare-analysis",
   confidence: "high",
   confidenceInterval: [160000000.0, 750000000.0],
 };
 
 export const IAB_POLITICAL_INCENTIVE_FUNDING_PCT: Parameter = {
   value: 0.1,
+  parameterName: "IAB_POLITICAL_INCENTIVE_FUNDING_PCT",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-iab_political_incentive_funding_pct",
   unit: "rate",
   displayName: "IAB Political Incentive Funding Percentage",
   description: "Percentage of treaty funding allocated to Incentive Alignment Bond mechanism for political incentives (independent expenditures/PACs, post-office fellowships, Public Good Score infrastructure)",
@@ -6216,6 +7579,8 @@ export const IAB_POLITICAL_INCENTIVE_FUNDING_PCT: Parameter = {
 
 export const INSTITUTIONAL_INVESTOR_MIN: Parameter = {
   value: 10000000.0,
+  parameterName: "INSTITUTIONAL_INVESTOR_MIN",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-institutional_investor_min",
   unit: "USD",
   displayName: "Minimum Investment for Institutional Investors",
   description: "Minimum investment for institutional investors",
@@ -6225,6 +7590,8 @@ export const INSTITUTIONAL_INVESTOR_MIN: Parameter = {
 
 export const LOBBYIST_BOND_INVESTMENT_MAX: Parameter = {
   value: 20000000.0,
+  parameterName: "LOBBYIST_BOND_INVESTMENT_MAX",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-lobbyist_bond_investment_max",
   unit: "USD",
   displayName: "Maximum Bond Investment for Lobbyist Incentives",
   description: "Maximum bond investment for lobbyist incentives",
@@ -6234,6 +7601,8 @@ export const LOBBYIST_BOND_INVESTMENT_MAX: Parameter = {
 
 export const MILITARY_REDIRECT_GDP_BOOST_AT_30PCT: Parameter = {
   value: 0.055,
+  parameterName: "MILITARY_REDIRECT_GDP_BOOST_AT_30PCT",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-military_redirect_gdp_boost_at_30pct",
   unit: "rate",
   displayName: "GDP Growth Boost at 30% Military Reallocation",
   description: "Historical calibration target: 30% military reallocation maps to ~5.5 percentage points annual GDP growth boost.",
@@ -6245,24 +7614,33 @@ export const MILITARY_REDIRECT_GDP_BOOST_AT_30PCT: Parameter = {
 
 export const MINUTES_PER_HOUR: Parameter = {
   value: 60.0,
+  parameterName: "MINUTES_PER_HOUR",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-minutes_per_hour",
 };
 
 export const MONEY_PRINTER_WAR_DEATHS: Parameter = {
   value: 97000000.0,
+  parameterName: "MONEY_PRINTER_WAR_DEATHS",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-money_printer_war_deaths",
   unit: "deaths",
   displayName: "Money-Printer War Deaths",
   description: "Cumulative deaths from 6 wars funded by money printing: Napoleonic (5M), Civil War (750K), WWI (20M), WWII (60M), Korea (3M), Vietnam (3M), post-9/11 (4.5M). Mid-range estimates; conservative total exceeds 110M.",
   sourceType: "definition",
   sourceRef: "crs-war-costs-2010",
+  sourceUrl: "https://sgp.fas.org/crs/natsec/RS22926.pdf",
   confidence: "medium",
 };
 
 export const MONTHS_PER_YEAR: Parameter = {
   value: 12.0,
+  parameterName: "MONTHS_PER_YEAR",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-months_per_year",
 };
 
 export const NPV_DISCOUNT_RATE_STANDARD: Parameter = {
   value: 0.03,
+  parameterName: "NPV_DISCOUNT_RATE_STANDARD",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-npv_discount_rate_standard",
   unit: "rate",
   displayName: "Standard Discount Rate for NPV Analysis",
   description: "Standard discount rate for NPV analysis (3% annual, social discount rate)",
@@ -6272,6 +7650,8 @@ export const NPV_DISCOUNT_RATE_STANDARD: Parameter = {
 
 export const NPV_TIME_HORIZON_YEARS: Parameter = {
   value: 10.0,
+  parameterName: "NPV_TIME_HORIZON_YEARS",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-npv_time_horizon_years",
   unit: "years",
   displayName: "Standard Time Horizon for NPV Analysis",
   description: "Standard time horizon for NPV analysis",
@@ -6281,6 +7661,8 @@ export const NPV_TIME_HORIZON_YEARS: Parameter = {
 
 export const PEACE_DIVIDEND_CONFLICT_ELASTICITY: Parameter = {
   value: 1.0,
+  parameterName: "PEACE_DIVIDEND_CONFLICT_ELASTICITY",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-peace_dividend_conflict_elasticity",
   unit: "ratio",
   displayName: "Peace Dividend Conflict Elasticity",
   description: "Conflict reduction elasticity: how much conflict costs decrease per 1% military spending cut. ε=0: no effect (spending cuts don't reduce conflict). ε=0.5: moderate linkage (conservative). ε=1.0: proportional (baseline assumption). ε>1.0: shared enemy amplification (redirecting to disease creates unity).",
@@ -6292,17 +7674,22 @@ export const PEACE_DIVIDEND_CONFLICT_ELASTICITY: Parameter = {
 
 export const PEACE_DIVIDEND_DIRECT_FISCAL_SAVINGS: Parameter = {
   value: 27200000000.0,
+  parameterName: "PEACE_DIVIDEND_DIRECT_FISCAL_SAVINGS",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-peace_dividend_direct_fiscal_savings",
   unit: "USD/year",
   displayName: "Direct Fiscal Savings from 1% Military Spending Reduction",
   description: "Direct fiscal savings from 1% military spending reduction (high confidence)",
   sourceType: "definition",
   sourceRef: "sipri2024",
+  sourceUrl: "https://www.sipri.org/publications/2024/sipri-fact-sheets/trends-world-military-expenditure-2023",
   confidence: "high",
   formula: "TREATY_ANNUAL_FUNDING",
 };
 
 export const PHARMA_PHASE_2_3_COST_BARRIER: Parameter = {
   value: 1560000000.0,
+  parameterName: "PHARMA_PHASE_2_3_COST_BARRIER",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-pharma_phase_2_3_cost_barrier",
   unit: "USD",
   displayName: "Pharma Phase 2/3 Cost Barrier Per Drug",
   description: "Average Phase 2/3 efficacy testing cost per drug that pharma must fund (~60% of total drug development cost)",
@@ -6314,17 +7701,22 @@ export const PHARMA_PHASE_2_3_COST_BARRIER: Parameter = {
 
 export const PRE_1962_VALIDATION_YEARS: Parameter = {
   value: 77.0,
+  parameterName: "PRE_1962_VALIDATION_YEARS",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-pre_1962_validation_years",
   unit: "years",
   displayName: "Pre-1962 Validation Years",
   description: "Years of empirical validation for physician-led pragmatic trials (1883-1960)",
   sourceType: "definition",
   sourceRef: "life-expectancy-increase-pre-1962",
+  sourceUrl: "https://manual.warondisease.org/knowledge/data/us-life-expectancy-fda-budget-1543-2019.csv",
   confidence: "high",
   formula: "1960 - 1883",
 };
 
 export const QALYS_PER_COVID_DEATH_AVERTED: Parameter = {
   value: 5.0,
+  parameterName: "QALYS_PER_COVID_DEATH_AVERTED",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-qalys_per_covid_death_averted",
   unit: "QALYs/death",
   displayName: "QALYs per COVID Death Averted",
   description: "Average QALYs gained per COVID death averted. Conservative estimate reflecting older age distribution of COVID mortality. See confidence_interval for range.",
@@ -6335,6 +7727,8 @@ export const QALYS_PER_COVID_DEATH_AVERTED: Parameter = {
 
 export const RD_SPILLOVER_MULTIPLIER: Parameter = {
   value: 2.0,
+  parameterName: "RD_SPILLOVER_MULTIPLIER",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-rd_spillover_multiplier",
   unit: "x",
   displayName: "R&D Spillover Multiplier",
   description: "R&D spillover multiplier: each $1 in directed medical research produces $2 in adjacent sector GDP growth (biotech, AI, computing, materials science, manufacturing). Conservative estimate; military R&D spillover produced the internet, GPS, jet engines. Medical R&D spillover already produced CRISPR, mRNA platforms, AI protein folding.",
@@ -6346,6 +7740,8 @@ export const RD_SPILLOVER_MULTIPLIER: Parameter = {
 
 export const SAFE_COMPOUNDS_COUNT: Parameter = {
   value: 9500.0,
+  parameterName: "SAFE_COMPOUNDS_COUNT",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-safe_compounds_count",
   unit: "compounds",
   displayName: "Safe Compounds Available for Testing",
   description: "Total safe compounds available for repurposing (FDA-approved + GRAS substances, midpoint of 7,000-12,000 range)",
@@ -6356,6 +7752,8 @@ export const SAFE_COMPOUNDS_COUNT: Parameter = {
 
 export const SCALE_COMPRESSION_FACTOR: Parameter = {
   value: -0.025,
+  parameterName: "SCALE_COMPRESSION_FACTOR",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-scale_compression_factor",
   unit: "percent",
   displayName: "Scale Compression Factor",
   description: "Diminishing-returns drag as the venture market expands ~15x (current global VC ~$300B/yr; wishocratic fund deploys ~$4.7T/yr). More capital chasing deals compresses returns. Partially offset by market expansion (every viable idea gets funded, oligopolies face real competition). Point estimate is moderate; CI spans optimistic to pessimistic.",
@@ -6366,14 +7764,20 @@ export const SCALE_COMPRESSION_FACTOR: Parameter = {
 
 export const SECONDS_PER_MINUTE: Parameter = {
   value: 60.0,
+  parameterName: "SECONDS_PER_MINUTE",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-seconds_per_minute",
 };
 
 export const SECONDS_PER_YEAR: Parameter = {
   value: 31536000.0,
+  parameterName: "SECONDS_PER_YEAR",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-seconds_per_year",
 };
 
 export const SHARING_TIME_MINUTES: Parameter = {
   value: 0.5,
+  parameterName: "SHARING_TIME_MINUTES",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-sharing_time_minutes",
   unit: "minutes",
   displayName: "Sharing Time",
   description: "Time to copy, paste, and send the recruitment message. 30 seconds.",
@@ -6383,6 +7787,8 @@ export const SHARING_TIME_MINUTES: Parameter = {
 
 export const TESTED_RELATIONSHIPS_ESTIMATE: Parameter = {
   value: 32500.0,
+  parameterName: "TESTED_RELATIONSHIPS_ESTIMATE",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-tested_relationships_estimate",
   unit: "relationships",
   displayName: "Tested Drug-Disease Relationships",
   description: "Estimated drug-disease relationships actually tested (approved uses + repurposed + failed trials, midpoint of 15,000-50,000 range)",
@@ -6393,6 +7799,8 @@ export const TESTED_RELATIONSHIPS_ESTIMATE: Parameter = {
 
 export const TREATY_CAMPAIGN_BUDGET_LOBBYING: Parameter = {
   value: 650000000.0,
+  parameterName: "TREATY_CAMPAIGN_BUDGET_LOBBYING",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-treaty_campaign_budget_lobbying",
   unit: "USD",
   displayName: "Political Lobbying Campaign: Direct Lobbying, Super Pacs, Opposition Research, Staff, Legal/Compliance",
   description: "Political lobbying campaign: direct lobbying (US/EU/G20), Super PACs, opposition research, staff, legal/compliance. Budget exceeds combined pharma ($300M/year) and military-industrial complex ($150M/year) lobbying to ensure competitive positioning. Referendum relies on grassroots mobilization and earned media, while lobbying requires matching or exceeding opposition spending for political viability.",
@@ -6403,6 +7811,8 @@ export const TREATY_CAMPAIGN_BUDGET_LOBBYING: Parameter = {
 
 export const TREATY_CAMPAIGN_BUDGET_RESERVE: Parameter = {
   value: 100000000.0,
+  parameterName: "TREATY_CAMPAIGN_BUDGET_RESERVE",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-treaty_campaign_budget_reserve",
   unit: "USD",
   displayName: "Reserve Fund / Contingency Buffer",
   description: "Reserve fund / contingency buffer (10% of total campaign cost). Using industry standard 10% for complex campaigns with potential for unforeseen legal challenges, opposition response, or regulatory delays. Conservative lower bound of $20M (2%) reflects transparent budget allocation and predictable referendum/lobbying costs.",
@@ -6413,6 +7823,8 @@ export const TREATY_CAMPAIGN_BUDGET_RESERVE: Parameter = {
 
 export const TREATY_CAMPAIGN_DURATION_YEARS: Parameter = {
   value: 4.0,
+  parameterName: "TREATY_CAMPAIGN_DURATION_YEARS",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-treaty_campaign_duration_years",
   unit: "years",
   displayName: "Treaty Campaign Duration",
   description: "Treaty campaign duration (3-5 year range, using midpoint)",
@@ -6423,6 +7835,8 @@ export const TREATY_CAMPAIGN_DURATION_YEARS: Parameter = {
 
 export const TREATY_CAMPAIGN_VIRAL_REFERENDUM_BASE_CASE: Parameter = {
   value: 250000000.0,
+  parameterName: "TREATY_CAMPAIGN_VIRAL_REFERENDUM_BASE_CASE",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-treaty_campaign_viral_referendum_base_case",
   unit: "USD",
   displayName: "Viral Referendum Budget",
   description: "Viral referendum budget for 280M verified votes (base: $250M realistic with $0.50/vote avg, range: $150M optimistic $0.20/vote to $410M worst-case $1.05/vote). Components: platform ($35M), verification infrastructure (280M × friction × $0.18-0.20), tiered referral payments (varies by virality and marginal cost curve per diffusion theory), marketing seed ($5-15M). Based on PayPal referral economics ($18-36 inflation-adjusted) and biometric verification pricing ($0.15-0.25 at 300M+ scale).",
@@ -6434,6 +7848,8 @@ export const TREATY_CAMPAIGN_VIRAL_REFERENDUM_BASE_CASE: Parameter = {
 
 export const TREATY_REDIRECTED_SPENDING_INFINITE_ROI: Parameter = {
   value: 0.0,
+  parameterName: "TREATY_REDIRECTED_SPENDING_INFINITE_ROI",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-treaty_redirected_spending_infinite_roi",
   unit: "ratio",
   displayName: "Infinite ROI from Redirected Spending",
   description: "ROI when redirecting existing spending (no new costs = infinite return)",
@@ -6445,6 +7861,8 @@ export const TREATY_REDIRECTED_SPENDING_INFINITE_ROI: Parameter = {
 
 export const TREATY_REDUCTION_PCT: Parameter = {
   value: 0.01,
+  parameterName: "TREATY_REDUCTION_PCT",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-treaty_reduction_pct",
   unit: "rate",
   displayName: "1% Reduction in Military Spending/War Costs from Treaty",
   description: "1% reduction in military spending/war costs from treaty",
@@ -6454,6 +7872,8 @@ export const TREATY_REDUCTION_PCT: Parameter = {
 
 export const TRIAL_RELEVANT_DISEASES_COUNT: Parameter = {
   value: 1000.0,
+  parameterName: "TRIAL_RELEVANT_DISEASES_COUNT",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-trial_relevant_diseases_count",
   unit: "diseases",
   displayName: "Trial-Relevant Diseases",
   description: "Consolidated count of trial-relevant diseases worth targeting (after grouping ICD-10 codes)",
@@ -6464,6 +7884,8 @@ export const TRIAL_RELEVANT_DISEASES_COUNT: Parameter = {
 
 export const US_CONGRESS_MEMBER_COUNT: Parameter = {
   value: 535.0,
+  parameterName: "US_CONGRESS_MEMBER_COUNT",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-us_congress_member_count",
   unit: "members",
   displayName: "US Congress Members",
   description: "Total members of US Congress (100 senators + 435 representatives)",
@@ -6473,17 +7895,22 @@ export const US_CONGRESS_MEMBER_COUNT: Parameter = {
 
 export const US_DYSFUNCTION_PREMIUM_VS_SWITZERLAND: Parameter = {
   value: 3.0,
+  parameterName: "US_DYSFUNCTION_PREMIUM_VS_SWITZERLAND",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-us_dysfunction_premium_vs_switzerland",
   unit: "percent",
   displayName: "US Dysfunction Premium vs Switzerland",
   description: "US 'dysfunction premium' vs Switzerland: US spends 3% more of GDP yet achieves 6.5 fewer years of life expectancy. This premium represents pure waste from governance inefficiency. Calculated as: 38% (US) - 35% (CH).",
   sourceType: "definition",
   sourceRef: "oecd-govt-spending",
+  sourceUrl: "https://data.oecd.org/gga/general-government-spending.htm",
   confidence: "high",
   formula: "US_GOVT_SPENDING_PCT_GDP - SWITZERLAND_GOVT_SPENDING_PCT_GDP",
 };
 
 export const US_GOV_WASTE_OVERLAP_DISCOUNT: Parameter = {
   value: 1.0,
+  parameterName: "US_GOV_WASTE_OVERLAP_DISCOUNT",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-us_gov_waste_overlap_discount",
   unit: "ratio",
   displayName: "Overlap Discount Factor",
   description: "Overlap discount factor between US government waste categories. Set to 1.0 (no discount). Categories are treated as additive, recognizing that any overlap is offset by excluded categories (state/local inefficiency, implicit subsidies, behavioral effects).",
@@ -6493,6 +7920,8 @@ export const US_GOV_WASTE_OVERLAP_DISCOUNT: Parameter = {
 
 export const US_POLITICAL_EFFORT_MULTIPLIER: Parameter = {
   value: 0.7,
+  parameterName: "US_POLITICAL_EFFORT_MULTIPLIER",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-us_political_effort_multiplier",
   unit: "multiplier",
   displayName: "Political Effort Multiplier (US)",
   description: "Fraction of campaign + lobbying spending needed to achieve policy reform. Accounts for efficiency gains from coordination, message clarity, and public interest alignment. Range 0.4-1.2 reflects uncertainty about political dynamics.",
@@ -6503,39 +7932,50 @@ export const US_POLITICAL_EFFORT_MULTIPLIER: Parameter = {
 
 export const US_VS_SINGAPORE_SPENDING_GAP: Parameter = {
   value: 23.0,
+  parameterName: "US_VS_SINGAPORE_SPENDING_GAP",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-us_vs_singapore_spending_gap",
   unit: "percent",
   displayName: "US-Singapore Spending Gap",
   description: "Government spending gap: US spends 23 percentage points MORE of GDP than Singapore yet achieves 6.6 fewer years of life expectancy.",
   sourceType: "definition",
   sourceRef: "oecd-govt-spending",
+  sourceUrl: "https://data.oecd.org/gga/general-government-spending.htm",
   confidence: "high",
   formula: "US_SPENDING - SINGAPORE_SPENDING = 38% - 15%",
 };
 
 export const US_VS_SWITZERLAND_LIFE_EXPECTANCY_GAP: Parameter = {
   value: 6.5,
+  parameterName: "US_VS_SWITZERLAND_LIFE_EXPECTANCY_GAP",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-us_vs_switzerland_life_expectancy_gap",
   unit: "years",
   displayName: "Switzerland-US Life Expectancy Gap",
   description: "Life expectancy gap: Switzerland vs US. Switzerland achieves 6.5 extra years of life while spending 3% LESS of GDP on government.",
   sourceType: "definition",
   sourceRef: "who-life-expectancy",
+  sourceUrl: "https://www.who.int/data/gho/data/themes/mortality-and-global-health-estimates/ghe-life-expectancy-and-healthy-life-expectancy",
   confidence: "high",
   formula: "SWITZERLAND_LE - US_LE = 84.0 - 77.5",
 };
 
 export const US_VS_SWITZERLAND_SPENDING_GAP: Parameter = {
   value: 3.0,
+  parameterName: "US_VS_SWITZERLAND_SPENDING_GAP",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-us_vs_switzerland_spending_gap",
   unit: "percent",
   displayName: "US-Switzerland Spending Gap",
   description: "Government spending gap: US spends 3 percentage points MORE of GDP than Switzerland yet achieves worse outcomes.",
   sourceType: "definition",
   sourceRef: "oecd-govt-spending",
+  sourceUrl: "https://data.oecd.org/gga/general-government-spending.htm",
   confidence: "high",
   formula: "US_SPENDING - SWITZERLAND_SPENDING = 38% - 35%",
 };
 
 export const VICTORY_BOND_FUNDING_PCT: Parameter = {
   value: 0.1,
+  parameterName: "VICTORY_BOND_FUNDING_PCT",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-victory_bond_funding_pct",
   unit: "rate",
   displayName: "Percentage of Captured Dividend Funding VICTORY Incentive Alignment Bonds",
   description: "Percentage of captured dividend funding VICTORY Incentive Alignment Bonds (10%)",
@@ -6545,18 +7985,26 @@ export const VICTORY_BOND_FUNDING_PCT: Parameter = {
 
 export const _CASCADE_GENERATIONS: Parameter = {
   value: 3.0,
+  parameterName: "_CASCADE_GENERATIONS",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-_cascade_generations",
 };
 
 export const _R0: Parameter = {
   value: 0.15,
+  parameterName: "_R0",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-_r0",
 };
 
 export const _SOCIAL_NETWORK_POP: Parameter = {
   value: 5000000000.0,
+  parameterName: "_SOCIAL_NETWORK_POP",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-_social_network_pop",
 };
 
 export const _US_BASE_POLITICAL_SPENDING: Parameter = {
   value: 28800000000.0,
+  parameterName: "_US_BASE_POLITICAL_SPENDING",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-_us_base_political_spending",
 };
 
 // ============================================================================

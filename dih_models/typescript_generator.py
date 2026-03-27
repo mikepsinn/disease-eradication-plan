@@ -326,6 +326,12 @@ def generate_typescript_parameters(
         content.append("  peerReviewed?: boolean;")
         content.append("  /** Whether this is a conservative estimate */")
         content.append("  conservative?: boolean;")
+        content.append("  /** Parameter key name (e.g., GLOBAL_DISEASE_DEATHS_ANNUAL) */")
+        content.append("  parameterName?: string;")
+        content.append("  /** URL to full calculation methodology on the calculations page */")
+        content.append("  calculationsUrl?: string;")
+        content.append("  /** Direct URL to external data source (flattened from citation) */")
+        content.append("  sourceUrl?: string;")
         content.append("}")
         content.append("")
     else:
@@ -680,6 +686,8 @@ def generate_typescript_survey(
     content.append("  formula?: string;")
     content.append("  latex?: string;")
     content.append("  sourceRef?: string;")
+    content.append("  sourceUrl?: string;")
+    content.append("  calculationsUrl?: string;")
     content.append("  citation?: Citation;")
     content.append("  questions: SurveyQuestion[];")
     content.append("}")
@@ -757,6 +765,11 @@ def generate_typescript_survey(
         if param.get('latex'):
             content.append(f"      latex: {_format_typescript_value(param['latex'])},")
 
+        # Calculations URL (always present)
+        param_name_lower = param['parameter_name'].lower()
+        calc_url = f"https://manual.WarOnDisease.org/calculations.html#sec-{param_name_lower}"
+        content.append(f"      calculationsUrl: {_format_typescript_value(calc_url)},")
+
         if param.get('source_ref'):
             # Convert internal QMD paths to full URLs
             source_ref_url = _convert_source_ref_to_url(param['source_ref'])
@@ -777,6 +790,15 @@ def generate_typescript_survey(
             if citation.get('url'):
                 content.append(f"        url: {_format_typescript_value(citation['url'])},")
             content.append("      },")
+            # Flatten citation URL as sourceUrl
+            if citation.get('url'):
+                content.append(f"      sourceUrl: {_format_typescript_value(citation['url'])},")
+
+        # If sourceRef is a URL and no citation URL was emitted, use it as sourceUrl
+        if not citation or not citation.get('url'):
+            source_ref_val = param.get('source_ref', '')
+            if source_ref_val and (source_ref_val.startswith('http://') or source_ref_val.startswith('https://')):
+                content.append(f"      sourceUrl: {_format_typescript_value(source_ref_val)},")
 
         # Questions
         content.append("      questions: [")
@@ -921,6 +943,11 @@ def _generate_parameter_constant(
     value = float(value_obj) if hasattr(value_obj, '__float__') else value_obj
     lines.append(f"  value: {_format_typescript_value(value)},")
 
+    # Parameter name and calculations URL (always emitted)
+    lines.append(f"  parameterName: {_format_typescript_value(param_name)},")
+    calculations_url = f"https://manual.WarOnDisease.org/calculations.html#sec-{param_name.lower()}"
+    lines.append(f"  calculationsUrl: {_format_typescript_value(calculations_url)},")
+
     # Unit
     unit = getattr(value_obj, "unit", None)
     if unit:
@@ -969,12 +996,21 @@ def _generate_parameter_constant(
             else:
                 original_ref = str(original_ref) if original_ref else None
 
+            source_url_emitted = False
             if citation_data and original_ref and '/' not in original_ref and '.qmd' not in original_ref:
                 ref_data = citation_data.get(original_ref)
                 if ref_data:
                     csl_json = _convert_to_csl_json(original_ref, ref_data)
                     if csl_json:
                         citation = csl_json
+                        # Flatten citation URL onto the parameter
+                        if csl_json.get('URL'):
+                            lines.append(f"  sourceUrl: {_format_typescript_value(csl_json['URL'])},")
+                            source_url_emitted = True
+
+            # If sourceRef is already a URL and we haven't emitted sourceUrl yet
+            if not source_url_emitted and (source_ref.startswith('http://') or source_ref.startswith('https://')):
+                lines.append(f"  sourceUrl: {_format_typescript_value(source_ref)},")
 
         # Confidence
         confidence = getattr(value_obj, "confidence", None)
