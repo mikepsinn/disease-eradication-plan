@@ -249,8 +249,8 @@ async function main() {
     const { context } = searchContent(index, q);
     let combined = 'The user just asked: "' + q + '"\n\n';
     if (context) {
-      combined += "Reference material:\n" + context + "\n\n";
-      combined += "Answer the user's question using the reference material above.";
+      combined += "Your Earth Optimization Protocol notes:\n" + context + "\n\n";
+      combined += "Answer the user's question using your own knowledge above.";
     } else {
       combined += "Answer the user's question.";
     }

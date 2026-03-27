@@ -127,7 +127,7 @@
     }
   };
 
-  // ─── Alien Girl Character (Wishonia) - Sprite-based ─────────────────
+  // ─── Alien Girl Character (Wishonia) - Sprite-based ────────────────
 
   var alienCharacter = {
     name: 'alien',
@@ -140,23 +140,19 @@
       .alien-head-group img {\
         position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain;\
       }\
-      /* Default: only idle visible */\
       .alien-head-group .h-idle    { opacity: 1; }\
       .alien-head-group .h-blink   { opacity: 0; }\
       .alien-head-group .h-speak   { opacity: 0; }\
       .alien-head-group .h-listen  { opacity: 0; }\
-      /* Blink cycle */\
       @keyframes alien-do-blink { 0%,96% { opacity: 0; } 97%,99% { opacity: 1; } 100% { opacity: 0; } }\
-      @keyframes alien-hide-for-blink { 0%,96% { opacity: 1; } 97%,99% { opacity: 0; } 100% { opacity: 1; } }\
+      @keyframes alien-hide-blink { 0%,96% { opacity: 1; } 97%,99% { opacity: 0; } 100% { opacity: 1; } }\
       .alien-head-group .h-blink { animation: alien-do-blink 6s linear infinite; }\
       .alien:not(.char_speaking):not(.char_listening) .alien-head-group .h-idle {\
-        animation: alien-hide-for-blink 6s linear infinite;\
+        animation: alien-hide-blink 6s linear infinite;\
       }\
-      /* Speaking state */\
       .alien.char_speaking .alien-head-group .h-idle  { animation: none; opacity: 0; }\
       .alien.char_speaking .alien-head-group .h-blink { animation: none; opacity: 0; }\
       .alien.char_speaking .alien-head-group .h-speak { opacity: 1; }\
-      /* Listening state */\
       .alien.char_listening .alien-head-group .h-idle  { animation: none; opacity: 0; }\
       .alien.char_listening .alien-head-group .h-blink { animation: none; opacity: 0; }\
       .alien.char_listening .alien-head-group .h-listen { opacity: 1; }\
@@ -187,225 +183,8 @@
     }
   };
 
-  // Old CSS alien code was here - replaced by sprite version above
-  // Keeping this comment as a marker; the old code block below was removed
-  var _CLEANUP = '\
-      }\
-      .alien .antenna {\
-        position: absolute; bottom: 0; width: 3px; height: 24px;\
-        background: linear-gradient(to top, #3a5a6a, #5a8a9a);\
-        border-radius: 3px;\
-      }\
-      .alien .antenna::after {\
-        content: ""; position: absolute; top: -9px; left: -4px;\
-        width: 11px; height: 11px; border-radius: 50%;\
-        background: radial-gradient(circle at 35% 35%, #a0e8ff, #5bb8d4 50%, #3a8aa0);\
-        box-shadow: 0 0 8px rgba(90,184,212,0.6), 0 0 16px rgba(90,184,212,0.3);\
-        animation: alien-glow 2s ease-in-out infinite alternate;\
-      }\
-      .alien .antenna_left { left: 4px; transform: rotate(-12deg); transform-origin: bottom center; animation: alien-sway-left 3s ease-in-out infinite alternate; }\
-      .alien .antenna_right { right: 4px; transform: rotate(12deg); transform-origin: bottom center; animation: alien-sway-right 3s ease-in-out infinite alternate; }\
-      /* --- Head (blue skin) --- */\
-      .alien .head {\
-        position: absolute; top: 18px; left: 10px; width: 100px; height: 96px;\
-        border-radius: 50% 50% 46% 46%;\
-        background: linear-gradient(135deg, #7fbdcc 0%, #6ba3b8 30%, #5b93a8 70%, #4e8298 100%);\
-        transform-origin: 50% 100%;\
-        animation: alien-bob 7000ms ease-in-out alternate infinite -500ms;\
-        overflow: visible;\
-      }\
-      /* --- Hair: black 60s bob --- */\
-      .alien .hair {\
-        position: absolute; top: -6px; left: -6px; right: -6px; height: 42px;\
-        background: #1a1a1a;\
-        border-radius: 54px 54px 3px 3px;\
-        z-index: 1;\
-      }\
-      .alien .hair::before {\
-        content: ""; position: absolute; bottom: -14px; left: 1px;\
-        width: 18px; height: 18px;\
-        background: #1a1a1a;\
-        border-radius: 0 0 0 12px;\
-      }\
-      .alien .hair::after {\
-        content: ""; position: absolute; bottom: -14px; right: 1px;\
-        width: 18px; height: 18px;\
-        background: #1a1a1a;\
-        border-radius: 0 0 12px 0;\
-      }\
-      /* Straight-across bangs */\
-      .alien .fringe {\
-        position: absolute; top: 10px; left: 8px; right: 8px; height: 8px;\
-        background: #1a1a1a;\
-        border-radius: 0 0 1px 1px;\
-        z-index: 3;\
-      }\
-      .alien .face { position: absolute; inset: 0; z-index: 2; }\
-      /* --- Eyebrows --- */\
-      .alien .eyebrows {\
-        position: absolute; top: 26px; left: 18px; right: 18px; height: 6px; z-index: 5;\
-      }\
-      .alien .eyebrow {\
-        position: absolute; width: 22px; height: 3px;\
-        border-top: 2.5px solid #1a2a30;\
-        border-radius: 40% 40% 0 0;\
-      }\
-      .alien .eyebrow_left { left: 2px; transform: rotate(-5deg); }\
-      .alien .eyebrow_right { right: 2px; transform: rotate(5deg); }\
-      /* --- Eyes (big, almond-shaped, white sclera) --- */\
-      .alien .eyes {\
-        position: absolute; top: 36px; left: 14px; right: 14px; height: 24px;\
-        animation: alien-blink 8000ms linear forwards infinite;\
-        z-index: 4;\
-      }\
-      .alien .eyeball {\
-        position: absolute; width: 28px; height: 22px;\
-        background: #fff;\
-        border-radius: 50% 50% 50% 50% / 55% 55% 45% 45%;\
-        border: 2px solid #2a4a55;\
-        overflow: hidden;\
-      }\
-      /* Iris */\
-      .alien .eyeball::after {\
-        content: ""; position: absolute; top: 3px; left: 8px;\
-        width: 13px; height: 14px; border-radius: 50%;\
-        background: radial-gradient(circle at 45% 40%, #2a5060 0%, #1a3a4a 70%, #0e2530 100%);\
-      }\
-      /* Highlight/catchlight */\
-      .alien .eyeball::before {\
-        content: ""; position: absolute; top: 5px; left: 12px;\
-        width: 4px; height: 4px; border-radius: 50%;\
-        background: rgba(255,255,255,0.9); z-index: 1;\
-      }\
-      .alien .eyeball_left { left: 0; }\
-      .alien .eyeball_right { right: 0; }\
-      /* --- Smile mouth --- */\
-      .alien .mouth {\
-        position: absolute; bottom: 16px; left: 50%; margin-left: -12px; width: 24px; height: 6px;\
-        background-color: #2a4a55; overflow: hidden;\
-        border-radius: 0 0 12px 12px;\
-        transition: height 100ms cubic-bezier(0.455,0.03,0.515,0.955);\
-        z-index: 4;\
-      }\
-      .alien .mouth-container { position: absolute; inset: 0; }\
-      .alien .mouth-container-line {\
-        position: absolute; top: 30%; height: 0; background-color: #5bb8d4; width: 100%; margin-top: -1px;\
-      }\
-      .alien.char_speaking .mouth { height: 12px; border-radius: 4px 4px 12px 12px; }\
-      .alien.char_speaking .mouth-container { animation: alien-speakingAnim 0.3s infinite; }\
-      .alien.char_speaking .mouth-container-line { height: 3px; }\
-      .alien.char_listening .mouth { height: 8px; }\
-      .alien.char_listening .mouth-container { animation: alien-listeningAnim 0.5s infinite; }\
-      .alien.char_listening .mouth-container-line { height: 2px; }\
-      /* --- Cheeks --- */\
-      .alien .cheeks {\
-        position: absolute; bottom: 22px; left: 12px; right: 12px; height: 12px;\
-        z-index: 3; pointer-events: none;\
-      }\
-      .alien .cheek {\
-        position: absolute; width: 16px; height: 10px; border-radius: 50%;\
-        background: rgba(100,180,200,0.25);\
-      }\
-      .alien .cheek_left { left: 0; }\
-      .alien .cheek_right { right: 0; }\
-      /* --- Animations --- */\
-      @keyframes alien-bob {\
-        0%  { transform: rotate(-2deg) translateY(0); }\
-        40% { transform: rotate(-2deg) translateY(0); animation-timing-function: cubic-bezier(1,0,0,1); }\
-        60% { transform: rotate(2deg) translateY(-2px); }\
-        100%{ transform: rotate(2deg) translateY(-2px); }\
-      }\
-      @keyframes alien-blink {\
-        48% { transform: scale(1,1); }\
-        49% { transform: scale(1,0.05); }\
-        50% { transform: scale(1,1); }\
-      }\
-      @keyframes alien-sway-left {\
-        0%   { transform: rotate(-12deg); }\
-        100% { transform: rotate(-7deg); }\
-      }\
-      @keyframes alien-sway-right {\
-        0%   { transform: rotate(12deg); }\
-        100% { transform: rotate(7deg); }\
-      }\
-      @keyframes alien-glow {\
-        0%   { box-shadow: 0 0 6px rgba(90,184,212,0.4), 0 0 12px rgba(90,184,212,0.2); }\
-        100% { box-shadow: 0 0 12px rgba(90,184,212,0.8), 0 0 24px rgba(90,184,212,0.4); }\
-      }\
-      @keyframes alien-speakingAnim {\
-        0%   { filter: url("#alien-speaking-0"); }\
-        25%  { filter: url("#alien-speaking-1"); }\
-        50%  { filter: url("#alien-speaking-2"); }\
-        75%  { filter: url("#alien-speaking-3"); }\
-        100% { filter: url("#alien-speaking-4"); }\
-      }\
-      @keyframes alien-listeningAnim {\
-        0%   { filter: url("#alien-listening-0"); }\
-        25%  { filter: url("#alien-listening-1"); }\
-        50%  { filter: url("#alien-listening-2"); }\
-        75%  { filter: url("#alien-listening-3"); }\
-        100% { filter: url("#alien-listening-4"); }\
-      }\
-      @media (max-width: 800px) {\
-        .alien-char { width: 80px; height: 85px; }\
-        .alien .head { width: 68px; left: 6px; height: 64px; top: 14px; }\
-        .alien .hair { top: -4px; left: -4px; right: -4px; height: 28px; }\
-        .alien .hair::before, .alien .hair::after { bottom: -10px; width: 14px; height: 14px; }\
-        .alien .fringe { top: 7px; left: 6px; right: 6px; height: 6px; }\
-        .alien .eyebrows { top: 18px; left: 12px; right: 12px; }\
-        .alien .eyebrow { width: 16px; }\
-        .alien .eyes { top: 24px; left: 10px; right: 10px; height: 16px; }\
-        .alien .eyeball { width: 20px; height: 16px; }\
-        .alien .eyeball::after { top: 2px; left: 5px; width: 10px; height: 10px; }\
-        .alien .eyeball::before { top: 3px; left: 8px; width: 3px; height: 3px; }\
-        .alien .mouth { bottom: 10px; width: 18px; margin-left: -9px; height: 4px; }\
-        .alien .cheeks { bottom: 14px; }\
-        .alien .cheek { width: 12px; height: 7px; }\
-        .alien .antennae { height: 20px; width: 30px; margin-left: -15px; }\
-        .alien .antenna { height: 16px; }\
-        .alien .antenna::after { width: 8px; height: 8px; top: -6px; left: -3px; }\
-      }\
-    ',
-    svgFilters: '\
-      <filter id="alien-speaking-0"><feTurbulence baseFrequency="0.02" numOctaves="3" result="noise" seed="0"/><feDisplacementMap in="SourceGraphic" in2="noise" scale="10"/></filter>\
-      <filter id="alien-speaking-1"><feTurbulence baseFrequency="0.02" numOctaves="3" result="noise" seed="30"/><feDisplacementMap in="SourceGraphic" in2="noise" scale="11"/></filter>\
-      <filter id="alien-speaking-2"><feTurbulence baseFrequency="0.02" numOctaves="3" result="noise" seed="2"/><feDisplacementMap in="SourceGraphic" in2="noise" scale="10"/></filter>\
-      <filter id="alien-speaking-3"><feTurbulence baseFrequency="0.02" numOctaves="3" result="noise" seed="30"/><feDisplacementMap in="SourceGraphic" in2="noise" scale="11"/></filter>\
-      <filter id="alien-speaking-4"><feTurbulence baseFrequency="0.1" numOctaves="3" result="noise" seed="4"/><feDisplacementMap in="SourceGraphic" in2="noise" scale="9"/></filter>\
-      <filter id="alien-listening-0"><feTurbulence baseFrequency="0.02" numOctaves="3" result="noise" seed="0"/><feDisplacementMap in="SourceGraphic" in2="noise" scale="2"/></filter>\
-      <filter id="alien-listening-1"><feTurbulence baseFrequency="0.02" numOctaves="3" result="noise" seed="30"/><feDisplacementMap in="SourceGraphic" in2="noise" scale="3"/></filter>\
-      <filter id="alien-listening-2"><feTurbulence baseFrequency="0.02" numOctaves="3" result="noise" seed="2"/><feDisplacementMap in="SourceGraphic" in2="noise" scale="2"/></filter>\
-      <filter id="alien-listening-3"><feTurbulence baseFrequency="0.02" numOctaves="3" result="noise" seed="30"/><feDisplacementMap in="SourceGraphic" in2="noise" scale="3"/></filter>\
-      <filter id="alien-listening-4"><feTurbulence baseFrequency="0.1" numOctaves="3" result="noise" seed="4"/><feDisplacementMap in="SourceGraphic" in2="noise" scale="1"/></filter>\
-    ',
-    buildDOM: function (wrapper) {
-      wrapper.classList.add('alien-char');
-      wrapper.innerHTML = '\
-        <div class="alien" data-char-el>\
-          <div class="antennae">\
-            <div class="antenna antenna_left"></div>\
-            <div class="antenna antenna_right"></div>\
-          </div>\
-          <div class="head">\
-            <div class="hair"></div>\
-            <div class="fringe"></div>\
-            <div class="face">\
-              <div class="eyebrows"><div class="eyebrow eyebrow_left"></div><div class="eyebrow eyebrow_right"></div></div>\
-              <div class="eyes">\
-                <div class="eyeball eyeball_left"></div>\
-                <div class="eyeball eyeball_right"></div>\
-              </div>\
-              <div class="cheeks"><div class="cheek cheek_left"></div><div class="cheek cheek_right"></div></div>\
-              <div class="mouth"><div class="mouth-container"><div class="mouth-container-line"></div></div></div>\
-            </div>\
-          </div>\
-        </div>';
-    }
-  };
-
   // ─── Character System ──────────────────────────────────────────────
 
-  /** Container CSS */
   var containerCSS = '\
     .characters-container {\
       position: absolute; z-index: 20; cursor: pointer;\
@@ -423,6 +202,7 @@
   }
 
   function injectSVGFilters(filtersMarkup) {
+    if (!filtersMarkup) return;
     var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
     svg.setAttribute('style', 'display:none');
     svg.innerHTML = '<defs>' + filtersMarkup + '</defs>';
@@ -464,7 +244,6 @@
     var mainArea = document.getElementById('main-area');
     if (!mainArea) return;
 
-    // Create container
     var container = document.createElement('div');
     container.className = 'characters-container';
     container.id = 'characters-container';
@@ -476,20 +255,15 @@
     createCharacter(alienCharacter, container);
     createCharacter(robotCharacter, container);
 
-    // Position above input bar
     positionCharacters(container);
     window.addEventListener('resize', function () { positionCharacters(container); });
 
-    // Click to trigger voice chat
     container.addEventListener('click', function () {
       var vcBtn = document.querySelector('.chat-voicechat-btn');
       if (vcBtn && vcBtn.style.display !== 'none') vcBtn.click();
     });
 
-    // Expose global state setter (backward compat with chat-widget.js)
     window.setRobotState = setAllCharacterStates;
-
-    // Expose for external positioning calls
     window.positionCharacters = function () { positionCharacters(container); };
   }
 
