@@ -53,6 +53,9 @@
   var liveClient = null;    // GeminiLiveClient instance
   var audioCapture = null;  // AudioCapture instance
   var audioPlayback = null; // AudioPlayback instance
+  var pendingTurnComplete = false; // true while waiting for audio to drain after turnComplete
+  var drainSafetyTimer = null;     // safety timeout so mouth never gets stuck
+  var mouthRafId = null;           // requestAnimationFrame handle for analyser-driven lipsync
   var localRecognition = null; // Local SpeechRecognition for user speech in voice mode
 
   // Rich content state
@@ -69,18 +72,12 @@
   var abortController = null;
   var userScrolledUp = false;
 
-  // Restore from sessionStorage (filter out placeholder entries)
-  var saved = sessionStorage.getItem("wishonia-chat");
-  if (saved) {
-    try {
-      messages = JSON.parse(saved).filter(function (m) {
-        return m.content && m.content !== "[voice response]";
-      });
-    } catch (_) {}
-  }
+  // Restore persisted state
+  messages = ChatStorage.loadMessages();
+  ragCache = ChatStorage.loadRagCache();
 
   // DOM refs
-  var fab, panel, msgContainer, input, sendBtn, micBtn, voiceChatBtn;
+  var fab, panel, msgContainer, input, sendBtn, voiceChatBtn;
 
   // ========================================
   // RAG - Search Index
@@ -114,8 +111,23 @@
 
   function fetchImageIndex() {
     if (imageIndex || imageIndexLoading) return;
-    imageIndexLoading = true;
 
+    // Try cached index first
+    var cached = ChatStorage.loadImageIndex();
+    if (cached && cached.length > 0) {
+      imageIndex = cached;
+      imageIndex.forEach(function (img) {
+        if (!img._keywords) {
+          img._keywords = tokenize(
+            (img.keywords || []).join(" ") + " " +
+            (img.title || "") + " " + (img.description || "")
+          );
+        }
+      });
+      return;
+    }
+
+    imageIndexLoading = true;
     fetch("/assets/image-index.json")
       .then(function (r) {
         if (!r.ok) throw new Error(r.status);
@@ -123,7 +135,6 @@
       })
       .then(function (data) {
         var images = data.images || [];
-        // Include all image types except icons and og images (too small/generic)
         imageIndex = images.filter(function (img) {
           var type = (img.imageType || "").toLowerCase();
           return type !== "icon" && type !== "og" && (img.width || 0) >= 400;
@@ -137,6 +148,7 @@
               (img.description || "")
           );
         });
+        ChatStorage.saveImageIndex(imageIndex);
         imageIndexLoading = false;
       })
       .catch(function () {
@@ -555,10 +567,10 @@
     // Restore previous messages (including visual cards if saved)
     if (messages.length > 0) {
       messages.forEach(function (m) {
-        var bubble = appendMessage(m.role, m.content, true);
-        if (m.visuals && bubble) {
+        appendMessage(m.role, m.content, true);
+        if (m.visuals) {
           var card = renderVisualCard(m.visuals);
-          if (card) bubble.appendChild(card);
+          if (card) msgContainer.appendChild(card);
         }
       });
     }
@@ -590,10 +602,9 @@
       "</div>" +
       '<div class="chat-messages"></div>' +
       '<div class="chat-input-area">' +
-      '  <button class="chat-voicechat-btn" aria-label="Voice mode" style="display:none" title="Voice mode">&#x1F399;</button>' +
       '  <textarea class="chat-input" rows="1" placeholder="Talk about the book..."></textarea>' +
-      '  <button class="chat-mic-btn" aria-label="Voice input" style="display:none" title="Speak your question">&#x1F3A4;</button>' +
       '  <button class="chat-stop-btn" aria-label="Stop generating" title="Stop generating">&#x25A0;</button>' +
+      '  <button class="chat-voicechat-btn" aria-label="Voice mode" style="display:none" title="Voice mode">&#x1F3A4;</button>' +
       '  <button class="chat-send-btn" aria-label="Send message">&#x27A4;</button>' +
       "</div>";
 
@@ -602,7 +613,6 @@
     msgContainer = panel.querySelector(".chat-messages");
     input = panel.querySelector(".chat-input");
     sendBtn = panel.querySelector(".chat-send-btn");
-    micBtn = panel.querySelector(".chat-mic-btn");
     var closeBtn = panel.querySelector(".chat-close-btn");
     var newChatBtn = panel.querySelector(".chat-newchat-btn");
     var fullscreenBtn = panel.querySelector(".chat-fullscreen-btn");
@@ -646,12 +656,7 @@
       scrollBtn.style.display = userScrolledUp ? "flex" : "none";
     });
 
-    // Show mic button if Speech Recognition is available
     voiceChatBtn = panel.querySelector(".chat-voicechat-btn");
-    if (window.SpeechRecognition || window.webkitSpeechRecognition) {
-      micBtn.style.display = "flex";
-      micBtn.addEventListener("click", startVoiceInput);
-    }
 
     // Show voice button if AudioWorklet + getUserMedia supported (Gemini Live)
     if (window.AudioContext && window.AudioWorkletNode && navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
@@ -714,7 +719,7 @@
 
   function startNewChat() {
     messages = [];
-    sessionStorage.removeItem("wishonia-chat");
+    ChatStorage.clearAll();
     audioCache = {};
     ragCache = {};
     lastSearchResults = [];
@@ -902,11 +907,13 @@
     );
   }
 
+  var katexCallbacks = [];
   function loadKatex(callback) {
     if (katexLoaded) {
       if (callback) callback();
       return;
     }
+    if (callback) katexCallbacks.push(callback);
     if (katexLoading) return;
     katexLoading = true;
 
@@ -921,7 +928,8 @@
       katexLoaded = true;
       katexLoading = false;
       renderPendingLatex();
-      if (callback) callback();
+      var cbs = katexCallbacks.splice(0);
+      for (var i = 0; i < cbs.length; i++) cbs[i]();
     };
     document.head.appendChild(script);
   }
@@ -948,11 +956,13 @@
   // CDN lazy-loaders for Chart.js and Mermaid
   // ========================================
 
+  var chartJsCallbacks = [];
   function loadChartJs(callback) {
     if (chartJsLoaded) {
       if (callback) callback();
       return;
     }
+    if (callback) chartJsCallbacks.push(callback);
     if (chartJsLoading) return;
     chartJsLoading = true;
 
@@ -961,7 +971,8 @@
     script.onload = function () {
       chartJsLoaded = true;
       chartJsLoading = false;
-      if (callback) callback();
+      var cbs = chartJsCallbacks.splice(0);
+      for (var i = 0; i < cbs.length; i++) cbs[i]();
     };
     script.onerror = function () {
       chartJsLoading = false;
@@ -969,11 +980,13 @@
     document.head.appendChild(script);
   }
 
+  var mermaidCallbacks = [];
   function loadMermaid(callback) {
     if (mermaidLoaded) {
       if (callback) callback();
       return;
     }
+    if (callback) mermaidCallbacks.push(callback);
     if (mermaidLoading) return;
     mermaidLoading = true;
 
@@ -1007,7 +1020,8 @@
           fontSize: "13px",
         },
       });
-      if (callback) callback();
+      var cbs = mermaidCallbacks.splice(0);
+      for (var i = 0; i < cbs.length; i++) cbs[i]();
     };
     script.onerror = function () {
       mermaidLoading = false;
@@ -1427,7 +1441,7 @@
 
     if (!skipSave) {
       messages.push({ role: role, content: content });
-      sessionStorage.setItem("wishonia-chat", JSON.stringify(messages));
+      ChatStorage.saveMessages(messages);
     }
 
     return bubble;
@@ -1452,7 +1466,9 @@
       ragCache[cacheKey] = {
         context: context,
         results: lastSearchResults.slice(),
+        ts: Date.now(),
       };
+      ChatStorage.saveRagCache(ragCache);
     }
 
     // Build history (exclude last user message, we send it as question)
@@ -1469,12 +1485,7 @@
       console.log("[VISUALS] rendering independent card");
       msgContainer.appendChild(card);
       scrollToBottom();
-      // Persist with latest assistant message
-      var lastMsg = messages[messages.length - 1];
-      if (lastMsg && lastMsg.role === "assistant") {
-        lastMsg.visuals = visuals;
-        sessionStorage.setItem("wishonia-chat", JSON.stringify(messages));
-      }
+      ChatStorage.attachVisuals(messages, visuals);
     });
 
     sendChatRequest(text, context, history);
@@ -1494,7 +1505,7 @@
   function finalizeResponse(bubble, fullText, question) {
     // Update stored message
     messages[messages.length - 1].content = fullText;
-    sessionStorage.setItem("wishonia-chat", JSON.stringify(messages));
+    ChatStorage.saveMessages(messages);
 
 
 
@@ -1661,19 +1672,6 @@
   var recognition = null;
 
   // Mic button: transcribe into input field (no auto-submit)
-  function startVoiceInput() {
-    if (recognition) {
-      recognition.stop();
-      recognition = null;
-      micBtn.classList.remove("recording");
-      return;
-    }
-    startListening(function (transcript) {
-      input.value = transcript;
-    });
-    micBtn.classList.add("recording");
-  }
-
   // Core listening function, calls onResult(transcript) when done
   function startListening(onResult) {
     var SpeechRecognition =
@@ -1688,14 +1686,12 @@
     recognition.onresult = function (event) {
       var transcript = event.results[0][0].transcript;
       recognition = null;
-      micBtn.classList.remove("recording");
       voiceChatBtn.classList.remove("recording");
       onResult(transcript);
     };
 
     recognition.onerror = function () {
       recognition = null;
-      micBtn.classList.remove("recording");
       voiceChatBtn.classList.remove("recording");
       if (listeningIndicator && listeningIndicator.parentNode) listeningIndicator.remove();
       listeningIndicator = null;
@@ -1703,7 +1699,6 @@
 
     recognition.onend = function () {
       recognition = null;
-      micBtn.classList.remove("recording");
     };
 
     recognition.start();
@@ -1776,7 +1771,7 @@
     var el = document.createElement("div");
     el.className = "chat-listening-indicator";
     el.innerHTML =
-      '<div class="chat-listening-ring">&#x1F399;</div>' +
+      '<div class="chat-listening-ring">&#x1F3A4;</div>' +
       "<span>Listening...</span>";
     return el;
   }
@@ -1915,7 +1910,7 @@
 
             // Save to messages array
             messages.push({ role: "user", content: transcript });
-            sessionStorage.setItem("wishonia-chat", JSON.stringify(messages));
+            ChatStorage.saveMessages(messages);
 
             // RAG: search book index and inject as a combined text message
             var ragContext = searchContent(transcript, 5, 2000);
@@ -1949,12 +1944,7 @@
                 console.log("[VISUALS] rendering voice visual card immediately");
                 msgContainer.appendChild(card);
                 scrollToBottom();
-                // Persist with latest assistant message
-                var lastMsg = messages[messages.length - 1];
-                if (lastMsg && lastMsg.role === "assistant") {
-                  lastMsg.visuals = visuals;
-                  sessionStorage.setItem("wishonia-chat", JSON.stringify(messages));
-                }
+                ChatStorage.attachVisuals(messages, visuals);
               });
             }
             scrollToBottom();
@@ -2011,7 +2001,7 @@
     var connectingEl = document.createElement("div");
     connectingEl.className = "chat-listening-indicator";
     connectingEl.innerHTML =
-      '<div class="chat-listening-ring">&#x1F399;</div>' +
+      '<div class="chat-listening-ring">&#x1F3A4;</div>' +
       "<span>Connecting...</span>";
     msgContainer.appendChild(connectingEl);
     msgContainer.scrollTop = msgContainer.scrollHeight;
@@ -2045,6 +2035,14 @@
       appendMessage("assistant", "Could not initialize audio. " + err.message);
       return;
     }
+
+    // When the AudioWorklet finishes playing all buffered audio, finalize the turn
+    audioPlayback.onDrained = function () {
+      if (!pendingTurnComplete) return;
+      pendingTurnComplete = false;
+      if (drainSafetyTimer) { clearTimeout(drainSafetyTimer); drainSafetyTimer = null; }
+      finalizeTurnComplete();
+    };
 
     // Connect to Gemini Live
     liveClient = new GeminiLiveClient({
@@ -2114,6 +2112,8 @@
           showVoiceState("speaking");
         }
         audioPlayback.play(b64);
+        // Start analyser-driven lipsync loop on first chunk
+        if (!mouthRafId && window.wishoniaAnimator) startMouthLoop();
       },
       onText: function (text) {
         // Chain-of-thought text from native audio model
@@ -2137,16 +2137,19 @@
         scrollToBottom();
       },
       onInterrupted: function () {
+        // Cancel any pending drain-wait from a prior turnComplete
+        pendingTurnComplete = false;
+        if (drainSafetyTimer) { clearTimeout(drainSafetyTimer); drainSafetyTimer = null; }
+        stopMouthLoop();
         aiSpeaking = false;
         audioPlayback.interrupt();
+        if (window.wishoniaAnimator) window.wishoniaAnimator.stopSpeaking();
         if (liveVoiceThinking || liveVoiceSpoken) {
           appendVoiceMessage(liveVoiceThinking, liveVoiceSpoken);
           liveVoiceThinking = "";
           liveVoiceSpoken = "";
         }
         showVoiceState("listening");
-        // Resume local recognition after interruption.
-        // Delay gives browser time to fully release the old SpeechRecognition session.
         localRecognitionPaused = false;
         if (liveVoiceMode) {
           stopLocalTranscription();
@@ -2154,20 +2157,15 @@
         }
       },
       onTurnComplete: function () {
-        aiSpeaking = false;
-        if (liveVoiceThinking || liveVoiceSpoken) {
-          appendVoiceMessage(liveVoiceThinking, liveVoiceSpoken);
-          liveVoiceThinking = "";
-          liveVoiceSpoken = "";
-        }
-        showVoiceState("listening");
-        // Resume local recognition after Gemini finishes speaking.
-        // Delay gives browser time to fully release the old SpeechRecognition session.
-        localRecognitionPaused = false;
-        if (liveVoiceMode) {
-          stopLocalTranscription();
-          setTimeout(startLocalTranscription, 300);
-        }
+        // Defer mouth/state cleanup until the AudioWorklet drains its buffer,
+        // so the mouth keeps moving while buffered audio is still playing.
+        pendingTurnComplete = true;
+        drainSafetyTimer = setTimeout(function () {
+          if (!pendingTurnComplete) return;
+          pendingTurnComplete = false;
+          drainSafetyTimer = null;
+          finalizeTurnComplete();
+        }, 2000);
       },
       onError: function () {
         stopLiveVoice();
@@ -2239,6 +2237,39 @@
   var localRecognitionPaused = false; // suppress auto-restart while Gemini speaks
   var aiSpeaking = false; // true while AI is responding, enables audio-to-Gemini for interrupt detection
   var voiceStateEl = null;
+
+  // Drive mouth animation from actual speaker output via AnalyserNode
+  function startMouthLoop() {
+    if (mouthRafId) return;
+    function tick() {
+      if (!audioPlayback) { mouthRafId = null; return; }
+      var amp = audioPlayback.getAmplitude();
+      window.wishoniaAnimator.setMouthFromAmplitude(amp);
+      mouthRafId = requestAnimationFrame(tick);
+    }
+    mouthRafId = requestAnimationFrame(tick);
+  }
+
+  function stopMouthLoop() {
+    if (mouthRafId) { cancelAnimationFrame(mouthRafId); mouthRafId = null; }
+  }
+
+  function finalizeTurnComplete() {
+    stopMouthLoop();
+    aiSpeaking = false;
+    if (window.wishoniaAnimator) window.wishoniaAnimator.stopSpeaking();
+    if (liveVoiceThinking || liveVoiceSpoken) {
+      appendVoiceMessage(liveVoiceThinking, liveVoiceSpoken);
+      liveVoiceThinking = "";
+      liveVoiceSpoken = "";
+    }
+    showVoiceState("listening");
+    localRecognitionPaused = false;
+    if (liveVoiceMode) {
+      stopLocalTranscription();
+      setTimeout(startLocalTranscription, 300);
+    }
+  }
 
   function appendVoiceMessage(thinking, spoken) {
     // Use the streaming bubble if it exists, otherwise create one
@@ -2333,10 +2364,15 @@
 
     scrollToBottom();
 
-    // Save to session
+    // Save to session, carrying forward any visuals attached by the async callback
     if (fullText) {
-      messages.push({ role: "assistant", content: fullText });
-      sessionStorage.setItem("wishonia-chat", JSON.stringify(messages));
+      var newMsg = { role: "assistant", content: fullText };
+      var prev = messages[messages.length - 1];
+      if (prev && prev.role === "assistant" && prev.visuals) {
+        newMsg.visuals = prev.visuals;
+      }
+      messages.push(newMsg);
+      ChatStorage.saveMessages(messages);
     }
   }
 
@@ -2453,6 +2489,9 @@
   function stopLiveVoice() {
     liveVoiceMode = false;
     aiSpeaking = false;
+    pendingTurnComplete = false;
+    if (drainSafetyTimer) { clearTimeout(drainSafetyTimer); drainSafetyTimer = null; }
+    stopMouthLoop();
     stopLocalTranscription();
 
     if (audioCapture) {
@@ -2530,7 +2569,7 @@
       messages = (msgs || []).filter(function (m) {
         return m.content && m.content !== "[voice response]";
       });
-      sessionStorage.setItem("wishonia-chat", JSON.stringify(messages));
+      ChatStorage.saveMessages(messages);
       if (msgContainer) {
         msgContainer.innerHTML = "";
         if (messages.length > 0) {

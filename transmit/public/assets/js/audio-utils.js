@@ -150,8 +150,11 @@ var AudioPlayback = (function () {
   function AudioPlayback() {
     this.audioCtx = null;
     this.workletNode = null;
+    this.analyser = null;
+    this._analyserBuf = null;
     this._ready = false;
     this._initPromise = null;
+    this.onDrained = null;
   }
 
   AudioPlayback.prototype.init = async function () {
@@ -168,7 +171,14 @@ var AudioPlayback = (function () {
 
       await self.audioCtx.audioWorklet.addModule(workletUrl);
       self.workletNode = new AudioWorkletNode(self.audioCtx, "playback-processor");
-      self.workletNode.connect(self.audioCtx.destination);
+      self.workletNode.port.onmessage = function (e) {
+        if (e.data.cmd === "drained" && self.onDrained) self.onDrained();
+      };
+      self.analyser = self.audioCtx.createAnalyser();
+      self.analyser.fftSize = 256;
+      self._analyserBuf = new Uint8Array(self.analyser.fftSize);
+      self.workletNode.connect(self.analyser);
+      self.analyser.connect(self.audioCtx.destination);
       self._ready = true;
     })();
 
@@ -215,10 +225,29 @@ var AudioPlayback = (function () {
     }
   };
 
+  /**
+   * Read current output amplitude (0-1) from the AnalyserNode.
+   */
+  AudioPlayback.prototype.getAmplitude = function () {
+    if (!this.analyser || !this._analyserBuf) return 0;
+    this.analyser.getByteTimeDomainData(this._analyserBuf);
+    var sum = 0;
+    for (var i = 0; i < this._analyserBuf.length; i++) {
+      var v = (this._analyserBuf[i] - 128) / 128;
+      sum += v * v;
+    }
+    return Math.sqrt(sum / this._analyserBuf.length);
+  };
+
   AudioPlayback.prototype.destroy = function () {
     if (this.workletNode) {
       this.workletNode.disconnect();
       this.workletNode = null;
+    }
+    if (this.analyser) {
+      this.analyser.disconnect();
+      this.analyser = null;
+      this._analyserBuf = null;
     }
     if (this.audioCtx) {
       this.audioCtx.close();

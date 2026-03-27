@@ -35,6 +35,7 @@ class PlaybackProcessor extends AudioWorkletProcessor {
     this.buffers = [];
     this.currentBuffer = null;
     this.currentOffset = 0;
+    this.wasPlaying = false;
 
     this.port.onmessage = function (e) {
       if (e.data.cmd === "clear") {
@@ -59,6 +60,10 @@ class PlaybackProcessor extends AudioWorkletProcessor {
     while (written < out.length) {
       if (!this.currentBuffer) {
         if (this.buffers.length === 0) {
+          if (this.wasPlaying) {
+            this.wasPlaying = false;
+            this.port.postMessage({ cmd: "drained" });
+          }
           // Silence for remaining samples
           for (var i = written; i < out.length; i++) out[i] = 0;
           return true;
@@ -71,6 +76,7 @@ class PlaybackProcessor extends AudioWorkletProcessor {
       var needed = out.length - written;
       var toCopy = remaining < needed ? remaining : needed;
 
+      this.wasPlaying = true;
       for (var j = 0; j < toCopy; j++) {
         out[written + j] = this.currentBuffer[this.currentOffset + j];
       }
