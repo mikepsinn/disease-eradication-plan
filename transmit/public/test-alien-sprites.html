@@ -3,119 +3,313 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Alien Sprite Test</title>
+  <title>Wishonia Sprite Gallery</title>
   <style>
-    body { background: #0d0d0d; display: flex; align-items: center; justify-content: center; height: 100vh; margin: 0; gap: 80px; flex-direction: column; }
-    .label { color: #888; font-family: sans-serif; font-size: 13px; text-align: center; margin-top: 8px; }
-    .stages { display: flex; gap: 80px; align-items: flex-end; }
-
-    .alien-sprite {
-      position: relative;
-      width: 150px;
-      height: 330px;
-    }
-    .alien-sprite .head-group {
-      position: relative;
-      width: 150px;
-      height: 188px;
-      animation: bob 7s ease-in-out alternate infinite;
-    }
-    .alien-sprite .head-group img {
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-    }
-    .alien-sprite .body-img {
-      position: absolute;
-      bottom: 0; left: 50%;
-      transform: translateX(-50%);
-      width: 140px;
-      height: 160px;
-      object-fit: contain;
-    }
-    /* All variants stacked, only active one visible */
-    .alien-sprite .head-group .head-idle    { opacity: 1; }
-    .alien-sprite .head-group .head-blink   { opacity: 0; }
-    .alien-sprite .head-group .head-speaking { opacity: 0; }
-    .alien-sprite .head-group .head-listening { opacity: 0; }
-
-    /* Blink: briefly show blink frame */
-    @keyframes do-blink {
-      0%, 96%  { opacity: 0; }
-      97%, 99% { opacity: 1; }
-      100%     { opacity: 0; }
-    }
-    .alien-sprite .head-group .head-blink { animation: do-blink 6s linear infinite; }
-    @keyframes hide-for-blink {
-      0%, 96%  { opacity: 1; }
-      97%, 99% { opacity: 0; }
-      100%     { opacity: 1; }
-    }
-
-    /* Speaking state */
-    .alien-sprite.speaking .head-group .head-idle { animation: none; opacity: 0; }
-    .alien-sprite.speaking .head-group .head-blink { animation: none; opacity: 0; }
-    .alien-sprite.speaking .head-group .head-speaking { opacity: 1; }
-
-    /* Listening state */
-    .alien-sprite.listening .head-group .head-idle { animation: none; opacity: 0; }
-    .alien-sprite.listening .head-group .head-blink { animation: none; opacity: 0; }
-    .alien-sprite.listening .head-group .head-listening { opacity: 1; }
-
-    /* Idle blink */
-    .alien-sprite:not(.speaking):not(.listening) .head-group .head-idle {
-      animation: hide-for-blink 6s linear infinite;
-    }
-
-    @keyframes bob {
-      0%   { transform: rotate(-2deg) translateY(0); }
-      40%  { transform: rotate(-2deg) translateY(0); }
-      60%  { transform: rotate(2deg) translateY(-3px); }
-      100% { transform: rotate(2deg) translateY(-3px); }
-    }
+    body { background: #0d0d0d; color: #aaa; font-family: sans-serif; margin: 20px; font-size: 11px; }
+    h1 { color: #5bb8d4; font-size: 18px; margin-bottom: 5px; }
+    h2 { color: #888; font-size: 14px; margin: 20px 0 8px; border-bottom: 1px solid #333; padding-bottom: 4px; }
+    .row { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 10px; }
+    .sprite-card { background: #1a1a1a; border: 1px solid #333; border-radius: 6px; padding: 6px; text-align: center; }
+    .sprite-card img { display: block; margin: 0 auto; background: #111; border-radius: 4px; }
+    .sprite-card .name { margin-top: 4px; color: #5bb8d4; font-size: 10px; word-break: break-all; }
+    .head-card img { width: 120px; height: 67px; object-fit: contain; }
+    .mouth-card img { width: 60px; height: 40px; object-fit: contain; }
+    .body-card img { width: 100px; height: 130px; object-fit: contain; }
+    .combo-card { background: #1a1a1a; border: 1px solid #444; border-radius: 6px; padding: 6px; text-align: center; }
+    .combo-card .assembly { position: relative; width: 160px; margin: 0 auto; }
+    .combo-card .assembly .layer-head { display: block; width: 65%; margin: 0 auto; position: relative; z-index: 2; }
+    .combo-card .assembly .layer-body { display: block; width: 100%; margin-top: -12px; position: relative; z-index: 1; }
+    .combo-card .label { margin-top: 4px; color: #d4a05b; font-size: 10px; }
   </style>
 </head>
 <body>
-  <h2 style="color:#666; font-family:sans-serif; font-size:14px;">Alien Head Sprites</h2>
-  <div class="stages">
+  <h1>Wishonia Sprite Gallery</h1>
+  <p>43 heads + 15 bodies = 645 possible combinations</p>
+
+  <h2>Full Heads — 43 expression+mouth combos</h2>
+  <div class="row" id="heads"></div>
+
+  <!-- mouths removed - using full heads instead -->
+
+  <h2>Body Poses — 16 gestures</h2>
+  <div class="row" id="bodies"></div>
+
+  <!-- legacy removed -->
+
+  <h2>Speech Animation Demo</h2>
+  <div style="display:flex; gap:20px; align-items:flex-start; margin-bottom:20px;">
     <div>
-      <div class="alien-sprite">
-        <div class="head-group">
-          <img class="head-idle" src="/assets/sprites/alien/head-idle.png">
-          <img class="head-blink" src="/assets/sprites/alien/head-blink.png" onerror="this.style.display='none'">
-          <img class="head-speaking" src="/assets/sprites/alien/head-speaking.png">
-          <img class="head-listening" src="/assets/sprites/alien/head-listening.png" onerror="this.style.display='none'">
-        </div>
-        <img class="body-img" src="/assets/sprites/alien/body.png" onerror="this.style.display='none'">
+      <div id="speech-character" style="position:relative; width:200px;">
+        <img id="speech-head" style="display:block; width:65%; margin:0 auto; position:relative; z-index:2;" src="">
+        <img id="speech-body" style="display:block; width:100%; margin-top:-12px; position:relative; z-index:1;" src="">
       </div>
-      <div class="label">Idle (blinks)</div>
     </div>
-    <div>
-      <div class="alien-sprite speaking">
-        <div class="head-group">
-          <img class="head-idle" src="/assets/sprites/alien/head-idle.png">
-          <img class="head-blink" src="/assets/sprites/alien/head-blink.png" onerror="this.style.display='none'">
-          <img class="head-speaking" src="/assets/sprites/alien/head-speaking.png">
-          <img class="head-listening" src="/assets/sprites/alien/head-listening.png" onerror="this.style.display='none'">
-        </div>
-        <img class="body-img" src="/assets/sprites/alien/body.png" onerror="this.style.display='none'">
+    <div style="flex:1; max-width:500px;">
+      <textarea id="speech-text" rows="3" style="width:100%; background:#1a1a1a; color:#ccc; border:1px solid #444; border-radius:4px; padding:8px; font-size:13px; resize:vertical;">I've been watching your planet since 1945. Your species spends 604 times more on weapons than testing which medicines work. I would like to help you stop doing that.</textarea>
+      <div style="margin-top:8px; display:flex; gap:8px; align-items:center;">
+        <button id="speak-btn" onclick="startSpeaking()" style="background:#5bb8d4; color:#000; border:none; border-radius:4px; padding:8px 16px; cursor:pointer; font-weight:bold;">Speak</button>
+        <button onclick="stopSpeaking()" style="background:#444; color:#ccc; border:none; border-radius:4px; padding:8px 12px; cursor:pointer;">Stop</button>
+        <select id="expression-select" style="background:#1a1a1a; color:#ccc; border:1px solid #444; border-radius:4px; padding:6px;">
+          <option value="neutral">Neutral</option>
+          <option value="happy" selected>Happy</option>
+          <option value="excited">Excited</option>
+          <option value="sad">Sad</option>
+          <option value="annoyed">Annoyed</option>
+          <option value="skeptical">Skeptical</option>
+        </select>
+        <select id="body-select" style="background:#1a1a1a; color:#ccc; border:1px solid #444; border-radius:4px; padding:6px;">
+          <option value="body-idle">Idle</option>
+          <option value="body-presenting" selected>Presenting</option>
+          <option value="body-open-palms">Open palms</option>
+          <option value="body-point-right">Pointing</option>
+          <option value="body-shrug">Shrug</option>
+          <option value="body-fist">Fist</option>
+        </select>
       </div>
-      <div class="label">Speaking</div>
-    </div>
-    <div>
-      <div class="alien-sprite listening">
-        <div class="head-group">
-          <img class="head-idle" src="/assets/sprites/alien/head-idle.png">
-          <img class="head-blink" src="/assets/sprites/alien/head-blink.png" onerror="this.style.display='none'">
-          <img class="head-speaking" src="/assets/sprites/alien/head-speaking.png">
-          <img class="head-listening" src="/assets/sprites/alien/head-listening.png" onerror="this.style.display='none'">
-        </div>
-        <img class="body-img" src="/assets/sprites/alien/body.png" onerror="this.style.display='none'">
-      </div>
-      <div class="label">Listening</div>
+      <div id="speech-status" style="margin-top:8px; color:#666; font-size:11px;">Ready. Click Speak to demo lip sync.</div>
+      <div id="current-viseme" style="margin-top:4px; color:#5bb8d4; font-size:12px; font-family:monospace;"></div>
     </div>
   </div>
+
+  <h2>Example Head + Body Combos</h2>
+  <div class="row" id="combos"></div>
+
+  <script>
+    var BASE = '/assets/sprites/alien/';
+
+    var heads = [
+      'neutral-smile', 'neutral-open', 'neutral-oh', 'neutral-closed', 'neutral-small',
+      'happy-smile', 'happy-open', 'happy-oh', 'happy-ee',
+      'blink-smile',
+      'surprised-open', 'surprised-oh',
+      'eyeroll-closed', 'eyeroll-frown',
+      'skeptical-smile', 'skeptical-closed',
+      'annoyed-closed', 'annoyed-frown',
+      'smirk-smile', 'smirk-ee',
+      'sad-closed', 'sad-frown',
+      'thinking-oh', 'thinking-closed', 'thinking-small',
+      'sideeye-closed',
+      'lookright-smile', 'lookright-closed', 'lookright-open', 'lookright-oh',
+      'excited-open', 'excited-ee', 'excited-oh',
+      'neutral-ee', 'neutral-frown',
+      'happy-closed', 'happy-small',
+      'surprised-ee',
+      'eyeroll-smile',
+      'annoyed-small',
+      'sad-oh', 'sad-small',
+      'smirk-closed',
+    ];
+    var mouths = [];
+    var bodies = [
+      'body-idle', 'body-listening',
+      'body-open-palms', 'body-point-right', 'body-wide-gesture', 'body-counting',
+      'body-fist', 'body-palms-down', 'body-presenting',
+      'body-hand-chest', 'body-shrug', 'body-hands-hips', 'body-arms-crossed',
+      'body-thinking', 'body-excited'
+    ];
+    var legacy = [];
+
+    function makeCard(name, cls) {
+      return '<div class="sprite-card ' + cls + '"><img src="' + BASE + name + '.png" onerror="this.style.opacity=0.2"><div class="name">' + name.replace('head-base-','').replace('body-','').replace('mouth-','').replace('head-','') + '</div></div>';
+    }
+
+    document.getElementById('heads').innerHTML = heads.map(function(n) { return makeCard(n, 'head-card'); }).join('');
+    document.getElementById('bodies').innerHTML = bodies.map(function(n) { return makeCard(n, 'body-card'); }).join('');
+
+    // Example combos
+    var combos = [
+      { head: 'neutral-smile', body: 'body-idle', label: 'Idle default' },
+      { head: 'happy-ee', body: 'body-presenting', label: 'Presenting' },
+      { head: 'surprised-oh', body: 'body-wide-gesture', label: 'Mind blown!' },
+      { head: 'eyeroll-closed', body: 'body-arms-crossed', label: 'Unimpressed' },
+      { head: 'skeptical-smile', body: 'body-hands-hips', label: 'Really?' },
+      { head: 'annoyed-frown', body: 'body-shrug', label: 'Fed up' },
+      { head: 'excited-ee', body: 'body-excited', label: 'EUREKA!' },
+      { head: 'sad-frown', body: 'body-hand-chest', label: 'Heartfelt' },
+      { head: 'thinking-oh', body: 'body-thinking', label: 'Pondering' },
+      { head: 'smirk-ee', body: 'body-point-right', label: 'Check the data' },
+      { head: 'neutral-open', body: 'body-fist', label: 'We must act!' },
+      { head: 'sideeye-closed', body: 'body-listening', label: 'Suspicious' },
+    ];
+
+    // ─── Speech Animation Engine ─────────────────────────────────────
+
+    // Map characters to viseme mouth shapes
+    var CHAR_TO_VISEME = {
+      'a': 'open', 'e': 'ee', 'i': 'ee', 'o': 'oh', 'u': 'oh',
+      'b': 'closed', 'm': 'closed', 'p': 'closed',
+      'f': 'closed', 'v': 'closed',
+      's': 'ee', 'z': 'ee', 'c': 'ee',
+      't': 'small', 'd': 'small', 'n': 'small', 'l': 'small', 'r': 'small',
+      'g': 'small', 'k': 'small', 'j': 'small',
+      'w': 'oh', 'y': 'ee', 'h': 'small', 'q': 'oh', 'x': 'ee',
+      ' ': 'closed', ',': 'closed', '.': 'closed', '!': 'closed', '?': 'closed',
+    };
+
+    // Which mouth shapes exist for each expression
+    var EXPRESSION_MOUTHS = {
+      'neutral': ['smile', 'open', 'oh', 'ee', 'closed', 'small', 'frown'],
+      'happy':   ['smile', 'open', 'oh', 'ee', 'closed', 'small'],
+      'excited': ['open', 'ee', 'oh', 'ee'],  // use 'ee' as idle/default
+      'sad':     ['closed', 'frown', 'oh', 'small'],
+      'annoyed': ['closed', 'frown', 'small'],
+      'skeptical': ['smile', 'closed'],
+    };
+
+    // Fallback if an expression doesn't have a specific mouth
+    function getHeadForViseme(expression, viseme) {
+      var available = EXPRESSION_MOUTHS[expression] || EXPRESSION_MOUTHS['neutral'];
+      var mouth = available.indexOf(viseme) >= 0 ? viseme : 'closed';
+      return expression + '-' + mouth;
+    }
+
+    // Convert text to a sequence of {viseme, duration} frames
+    function textToVisemeSequence(text, totalDurationMs) {
+      var chars = text.toLowerCase().split('');
+      var frames = [];
+      var msPerChar = totalDurationMs / chars.length;
+
+      for (var i = 0; i < chars.length; i++) {
+        var ch = chars[i];
+        var viseme = CHAR_TO_VISEME[ch] || 'small';
+
+        // Merge consecutive same visemes
+        if (frames.length > 0 && frames[frames.length - 1].viseme === viseme) {
+          frames[frames.length - 1].duration += msPerChar;
+        } else {
+          frames.push({ viseme: viseme, duration: msPerChar });
+        }
+      }
+
+      // Minimum frame duration of 80ms for readability
+      return frames.map(function(f) {
+        return { viseme: f.viseme, duration: Math.max(80, f.duration) };
+      });
+    }
+
+    var speechHead = document.getElementById('speech-head');
+    var speechBody = document.getElementById('speech-body');
+    var speechStatus = document.getElementById('speech-status');
+    var currentVisemeEl = document.getElementById('current-viseme');
+    var animationTimer = null;
+    var blinkTimer = null;
+    var currentUtterance = null;
+
+    function setHead(name) {
+      speechHead.src = BASE + name + '.png';
+      currentVisemeEl.textContent = name;
+    }
+
+    function setBody(name) {
+      speechBody.src = BASE + name + '.png';
+    }
+
+    // Blink periodically when idle
+    function startBlinking() {
+      stopBlinking();
+      var expression = document.getElementById('expression-select').value;
+      blinkTimer = setInterval(function() {
+        setHead('blink-smile');
+        setTimeout(function() {
+          setHead(expression + '-smile');
+        }, 150);
+      }, 4000 + Math.random() * 3000);
+    }
+
+    function stopBlinking() {
+      if (blinkTimer) { clearInterval(blinkTimer); blinkTimer = null; }
+    }
+
+    function setIdle() {
+      var expression = document.getElementById('expression-select').value;
+      var body = document.getElementById('body-select').value;
+      var available = EXPRESSION_MOUTHS[expression] || ['smile'];
+      var idleMouth = available.indexOf('smile') >= 0 ? 'smile' : (available.indexOf('closed') >= 0 ? 'closed' : available[0]);
+      setHead(expression + '-' + idleMouth);
+      setBody(body);
+      startBlinking();
+    }
+
+    // Animate through viseme sequence
+    function animateVisemes(frames, expression) {
+      var index = 0;
+
+      function nextFrame() {
+        if (index >= frames.length) {
+          setIdle();
+          speechStatus.textContent = 'Done speaking.';
+          return;
+        }
+
+        var frame = frames[index];
+        var headName = getHeadForViseme(expression, frame.viseme);
+        setHead(headName);
+        index++;
+
+        animationTimer = setTimeout(nextFrame, frame.duration);
+      }
+
+      nextFrame();
+    }
+
+    function startSpeaking() {
+      stopSpeaking();
+
+      var text = document.getElementById('speech-text').value;
+      var expression = document.getElementById('expression-select').value;
+      var body = document.getElementById('body-select').value;
+
+      if (!text.trim()) return;
+
+      setBody(body);
+      stopBlinking();
+      speechStatus.textContent = 'Speaking...';
+
+      // Use Web Speech API
+      var utterance = new SpeechSynthesisUtterance(text);
+      utterance.rate = 0.9;
+      utterance.pitch = 1.2;
+      currentUtterance = utterance;
+
+      // Estimate duration: ~80ms per character at normal rate
+      var estimatedMs = text.length * 75;
+
+      // Generate viseme sequence from text
+      var frames = textToVisemeSequence(text, estimatedMs);
+
+      // Start animation and speech together
+      animateVisemes(frames, expression);
+      speechSynthesis.speak(utterance);
+
+      utterance.onend = function() {
+        if (animationTimer) { clearTimeout(animationTimer); animationTimer = null; }
+        setIdle();
+        speechStatus.textContent = 'Done speaking.';
+      };
+    }
+
+    function stopSpeaking() {
+      speechSynthesis.cancel();
+      if (animationTimer) { clearTimeout(animationTimer); animationTimer = null; }
+      setIdle();
+      speechStatus.textContent = 'Stopped.';
+    }
+
+    // Initialize idle state
+    setIdle();
+
+    // Update idle when selects change
+    document.getElementById('expression-select').onchange = setIdle;
+    document.getElementById('body-select').onchange = setIdle;
+
+    // ─── Gallery rendering ─────────────────────────────────────────
+
+    document.getElementById('combos').innerHTML = combos.map(function(c) {
+      return '<div class="combo-card"><div class="assembly">' +
+        '<img class="layer-head" src="' + BASE + c.head + '.png">' +
+        '<img class="layer-body" src="' + BASE + c.body + '.png">' +
+        '</div><div class="label">' + c.label + '</div></div>';
+    }).join('');
+  </script>
 </body>
 </html>
