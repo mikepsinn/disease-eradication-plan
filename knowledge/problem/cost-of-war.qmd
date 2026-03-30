@@ -341,3 +341,43 @@ When you look at the secondary effects, the costs compound like interest at a ba
 - Millions get PTSD (they can't work and need therapy for decades).
 - The lucky ones just die.
 - The unlucky ones live with the memory of having been unlucky.
+
+## The Other Receipt: When Governments Kill Their Own People
+
+Everything above only counts what governments spend killing *other* countries' people. It does not include returns on domestic investment.
+
+Political scientist R.J. Rummel spent his career counting what he called "democide": the murder of unarmed civilians by their own governments. Not soldiers. Not enemy combatants. Civilians. The people governments are supposed to protect. His final estimate: {{< var democide_total_20th_century >}} people murdered by governments in the 20th century alone [@rummel-death-by-government]. That excludes all battle deaths in wars. This is just the bonus killing.
+
+To be clear: that is more than every war death in the same century combined.
+
+Here is the itemized receipt, sorted by body count:
+
+| Regime | Period | Estimated Deaths | What Happened |
+|--------|--------|-----------------|---------------|
+| China (Mao Zedong) | 1949-1976 | 45-78 million | Great Leap Forward famine (policy-induced), Cultural Revolution, land reform campaigns |
+| Soviet Union (Stalin era) | 1924-1953 | 20+ million | Gulag system, Ukrainian famine (Holodomor), Great Purge, forced collectivization |
+| Nazi Germany | 1933-1945 | 21 million | Holocaust (6M Jews), plus Slavs, Roma, disabled, POWs, political prisoners |
+| Imperial Japan | 1937-1945 | 6 million | Nanjing massacre, forced labor, biological experiments, civilian massacres across Asia |
+| Cambodia (Khmer Rouge) | 1975-1979 | 2 million | "Year Zero" forced agrarian revolution; ~25% of population killed in 4 years |
+| Ottoman Empire | 1915-1923 | 1.5-2 million | Armenian Genocide, Assyrian and Greek genocides |
+| Pakistan (Bangladesh) | 1971 | 1-3 million | Bangladesh Liberation War atrocities |
+| Ethiopia (Mengistu) | 1977-1991 | 1-2 million | Red Terror, forced resettlement, engineered famine |
+| Indonesia | 1965-1966 | 500,000-1 million | Anti-communist purge |
+| Rwanda | 1994 | 800,000-1 million | Tutsi genocide; 100 days, mostly machetes |
+| North Korea | 1948-present | 1-3.5 million | Political prison camps, forced starvation, purges |
+| Iraq (Saddam Hussein) | 1979-2003 | 250,000-500,000 | Anfal campaign, Marsh Arab destruction, political killings |
+| Yugoslavia (Milosevic) | 1991-1999 | 130,000-200,000 | Srebrenica massacre, ethnic cleansing campaigns |
+
+This table only includes the largest cases. Rummel's full dataset documents over 200 regimes [@rummel-statistics-of-democide]. The complete list is longer than this chapter.
+
+Since 2000, the accounting continues: Darfur (~300,000 killed between 2003 and 2008) [@darfur-genocide-death-toll], Syria (306,887 civilians killed in the first decade of conflict, with government forces responsible for roughly 91% of civilian casualties) [@syria-civilian-deaths-government], Myanmar's Rohingya (~24,000 killed by state forces since 2017) [@rohingya-deaths-estimate], and others. No Rummel-style global update exists for the 21st century, but the running total since 1913 conservatively exceeds 263 million.^[Post-Rummel table entries (North Korea post-1987, Iraq, Yugoslavia) draw on Human Rights Watch, UN tribunal findings, and country-specific academic estimates rather than Rummel's dataset, which ended circa 1987.]
+
+A few observations from an outside perspective:
+
+- Communist regimes account for the largest share: 100-148+ million, depending on how you count famine deaths caused by policy. Communism did not just fail as economics. It failed as not-murder.
+- These are *estimates*. Governments that murder their own citizens tend not to keep meticulous records. In many cases, the records were destroyed by the same people who created the bodies. The true number is almost certainly higher.
+- Every regime on this list had an army. The army was frequently the instrument of democide. You are asking these institutions to redirect 1% of their budget. One percent. From the machinery they have historically used to murder {{< var democide_total_20th_century >}} of their own unarmed citizens.
+
+The governments you are trying to negotiate with have, on average, killed more of their own people than foreign enemies have. The call is coming from inside the house. It has always been coming from inside the house.
+
+This is not an argument against government. It is an argument for better incentive structures. The [1% treaty](../solution/1-percent-treaty.qmd) [@1-pct-treaty-impact-paper-2025] does not ask governments to be moral. It asks them to be slightly less expensive at killing. The difference between a government that spends 100% of its military budget on potential murder and one that spends 99% is {{< var treaty_annual_funding >}} per year redirected to not-murder. That is the entire ask.

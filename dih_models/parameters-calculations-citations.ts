@@ -406,6 +406,20 @@ export const DEFENSE_LOBBYING_ANNUAL: Parameter = {
   peerReviewed: true,
 };
 
+export const DEMOCIDE_TOTAL_20TH_CENTURY: Parameter = {
+  value: 262000000.0,
+  parameterName: "DEMOCIDE_TOTAL_20TH_CENTURY",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-democide_total_20th_century",
+  unit: "deaths",
+  displayName: "20th-Century Government Democide Total",
+  description: "Total people murdered by governments worldwide, 1900-1999 (Rummel's democide estimate)",
+  sourceType: "external",
+  sourceRef: "rummel-death-by-government",
+  sourceUrl: "https://www.hawaii.edu/powerkills/NOTE1.HTM",
+  confidence: "high",
+  confidenceInterval: [200000000.0, 272000000.0],
+};
+
 export const DEWORMING_COST_PER_DALY: Parameter = {
   value: 55.0,
   parameterName: "DEWORMING_COST_PER_DALY",
@@ -8060,6 +8074,7 @@ export const parameters = {
   CURRENT_TRIAL_ABANDONMENT_RATE,
   CURRENT_TRIAL_SLOTS_AVAILABLE,
   DEFENSE_LOBBYING_ANNUAL,
+  DEMOCIDE_TOTAL_20TH_CENTURY,
   DEWORMING_COST_PER_DALY,
   DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT,
   DISEASE_BURDEN_GDP_DRAG_PCT,
@@ -10117,6 +10132,20 @@ export const citations: Record<string, Citation> = {
         URL: "https://manhattan.institute/article/slow-costly-clinical-trials-drag-down-biomedical-breakthroughs",
         note: "Manhattan Institute: Slow Costly Trials | PMC: Establishing RECOVERY at Scale",
   },
+  "rummel-death-by-government": {
+        id: "rummel-death-by-government",
+        type: "book",
+        title: "Death by Government: Genocide and Mass Murder Since 1900",
+        author: [
+          {
+            family: "Rummel",
+            given: "R. J."
+          },
+        ],
+        issued: { 'date-parts': [[1994]] },
+        publisher: "Transaction Publishers",
+        URL: "https://www.hawaii.edu/powerkills/NOTE1.HTM",
+  },
   "september-11-memorial": {
         id: "september-11-memorial",
         type: "webpage",
@@ -10585,11 +10614,11 @@ export const citations: Record<string, Citation> = {
 
 /** Summary statistics */
 export const PARAMETER_STATS = {
-  total: 611,
-  external: 205,
+  total: 612,
+  external: 206,
   calculated: 282,
   definitions: 124,
-  citations: 142,
+  citations: 143,
 } as const;
 
 // ============================================================================

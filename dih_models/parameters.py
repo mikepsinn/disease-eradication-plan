@@ -560,6 +560,21 @@ GLOBAL_ANNUAL_CONFLICT_DEATHS_STATE_VIOLENCE = Parameter(
     latex_symbol=r"Deaths_{state}",  # LaTeX symbol for equations
 )  # Uppsala Conflict Data Program
 
+# Historical democide (government murder of unarmed civilians, 1900-1999)
+# Source: R.J. Rummel, "Death by Government" (1994) and "Statistics of Democide" (1998)
+DEMOCIDE_TOTAL_20TH_CENTURY = Parameter(
+    262_000_000,
+    source_ref=ReferenceID.RUMMEL_DEATH_BY_GOVERNMENT,
+    source_type="external",
+    description="Total people murdered by governments worldwide, 1900-1999 (Rummel's democide estimate)",
+    display_name="20th-Century Government Democide Total",
+    unit="deaths",
+    keywords=["democide", "genocide", "government", "murder", "rummel", "20th century", "262 million"],
+    distribution="uniform",
+    confidence_interval=(200_000_000, 272_000_000),  # Rummel's range: 200M-272M+
+    latex_symbol=r"D_{democide,20C}",
+)
+
 # Total conflict deaths (calculated from breakdown)
 GLOBAL_ANNUAL_CONFLICT_DEATHS_TOTAL = Parameter(
     GLOBAL_ANNUAL_CONFLICT_DEATHS_ACTIVE_COMBAT

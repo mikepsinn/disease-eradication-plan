@@ -38,15 +38,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 611 parameters used in the analysis, organized by type:
+This appendix documents all 612 parameters used in the analysis, organized by type:
 
-- External sources (peer-reviewed): 205
+- External sources (peer-reviewed): 206
 - Calculated values: 282
 - Core definitions: 124
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (282 parameters) • [External Data Sources](#sec-external) (205 parameters) • [Core Definitions](#sec-definitions) (124 parameters)
+[Calculated Values](#sec-calculated) (282 parameters) • [External Data Sources](#sec-external) (206 parameters) • [Core Definitions](#sec-definitions) (124 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -18058,6 +18058,30 @@ Annual defense industry lobbying spending
 {{< include ../figures/distribution-defense_lobbying_annual.qmd >}}
 
 *✓ High confidence • 📊 Peer-reviewed • Updated 2024*
+
+:::
+
+### 20th-Century Government Democide Total: 262 million deaths {#sec-democide_total_20th_century}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Total people murdered by governments worldwide, 1900-1999 (Rummel's democide estimate)
+
+**Source**: [@rummel-death-by-government]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [200 million deaths, 272 million deaths] • Distribution: Uniform
+
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between 200 million deaths and 272 million deaths (±14%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The uniform distribution means any value in the range is equally likely.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-democide_total_20th_century.qmd >}}
+
+*✓ High confidence*
 
 :::
 
