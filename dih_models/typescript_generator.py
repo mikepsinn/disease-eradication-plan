@@ -28,6 +28,14 @@ from dih_models.reference_parser import parse_references_bib
 from dih_models.latex_generation import generate_auto_latex, generate_expanded_latex, collapse_latex_blocks
 from dih_models.latex_mobile_wrap import wrap_latex_for_mobile
 
+# Pattern for {{< var variable_name >}} in QMD files
+_VAR_PATTERN = re.compile(r'\{\{<\s*var\s+([a-zA-Z0-9_]+)\s*>\}\}')
+
+# Known variable suffixes that map back to the base parameter
+_VAR_SUFFIXES = ('_latex', '_cite', '_nounit')
+
+BASE_URL = 'https://manual.WarOnDisease.org'
+
 logger = logging.getLogger("dih.typescript")
 
 
@@ -232,13 +240,132 @@ def _format_csl_json_typescript(csl: Dict[str, Any]) -> list:
     return lines
 
 
+def _normalize_var_to_param(var_name: str) -> str:
+    """Normalize a variable name (lowercase, possibly suffixed) to its UPPERCASE parameter name."""
+    name = var_name.lower()
+    for suffix in _VAR_SUFFIXES:
+        if name.endswith(suffix):
+            name = name[:-len(suffix)]
+            break
+    return name.upper()
+
+
+def build_chapter_mapping(
+    project_root: Path,
+    param_names: set[str],
+) -> Dict[str, Dict[str, str]]:
+    """
+    Scan QMD files for {{< var ... >}} references and map each parameter
+    to its primary manual page (the chapter with the most references).
+
+    Returns:
+        Dict mapping PARAM_NAME -> {"url": str, "title": str}
+    """
+    from dih_models.yaml_utils import load_quarto_config
+
+    # 1. Parse _quarto-manual.yml for chapter list with titles and parts
+    config_path = project_root / '_quarto-manual.yml'
+    if not config_path.exists():
+        logger.warning("_quarto-manual.yml not found at %s", config_path)
+        return {}
+
+    config = load_quarto_config(config_path)
+    book_chapters = (config.get('book') or {}).get('chapters', [])
+
+    # Build chapter info: qmd_path -> {url, title}
+    chapter_info: Dict[str, Dict[str, str]] = {}
+
+    def _extract_chapters(items, part: str = ''):
+        for item in items:
+            if isinstance(item, str):
+                if item.endswith('.qmd') or item.endswith('.md'):
+                    chapter_info[item] = {
+                        'url': f"{BASE_URL}/{item.replace('.qmd', '.html').replace('.md', '.html')}",
+                        'title': _get_title_from_qmd(project_root / item),
+                    }
+            elif isinstance(item, dict):
+                if 'part' in item:
+                    for key in ('chapters', 'contents'):
+                        if key in item:
+                            _extract_chapters(item[key], item['part'])
+                elif 'href' in item:
+                    href = item['href']
+                    if href.endswith('.qmd') or href.endswith('.md'):
+                        chapter_info[href] = {
+                            'url': f"{BASE_URL}/{href.replace('.qmd', '.html').replace('.md', '.html')}",
+                            'title': item.get('text') or _get_title_from_qmd(project_root / href),
+                        }
+                elif 'section' in item and 'contents' in item:
+                    _extract_chapters(item['contents'], part)
+
+    _extract_chapters(book_chapters)
+
+    # 2. Scan QMD files for variable references
+    # usage_counts: param_name -> {qmd_path -> count}
+    usage_counts: Dict[str, Dict[str, int]] = {name: {} for name in param_names}
+
+    exclude_files = {
+        '_variables.yml', 'parameters-calculations-citations.ts',
+        'parameters-and-calculations.qmd', 'parameters-and-calculations-manual.qmd',
+    }
+    exclude_prefixes = ('distribution-', 'mc-distribution-', 'tornado-', 'exceedance-', 'sensitivity-table-')
+
+    for qmd_path_str, _info in chapter_info.items():
+        filename = Path(qmd_path_str).name
+        if filename in exclude_files or any(filename.startswith(p) for p in exclude_prefixes):
+            continue
+        full_path = project_root / qmd_path_str
+        if not full_path.exists():
+            continue
+        try:
+            content = full_path.read_text(encoding='utf-8')
+        except Exception:
+            continue
+        for match in _VAR_PATTERN.finditer(content):
+            param_name = _normalize_var_to_param(match.group(1))
+            if param_name in usage_counts:
+                file_counts = usage_counts[param_name]
+                file_counts[qmd_path_str] = file_counts.get(qmd_path_str, 0) + 1
+
+    # 3. Build mapping: each param -> its top-1 page
+    mapping: Dict[str, Dict[str, str]] = {}
+    for param_name, file_counts in usage_counts.items():
+        if not file_counts:
+            continue
+        # Pick the chapter with the highest usage count
+        best_path = max(file_counts, key=file_counts.get)  # type: ignore[arg-type]
+        info = chapter_info.get(best_path, {})
+        if info:
+            mapping[param_name] = {'url': info['url'], 'title': info['title']}
+
+    logger.debug("Built chapter mapping: %d of %d parameters have a manual page", len(mapping), len(param_names))
+    return mapping
+
+
+def _get_title_from_qmd(path: Path) -> str:
+    """Extract title from QMD frontmatter, or fall back to filename."""
+    if not path.exists():
+        return path.stem.replace('-', ' ').replace('_', ' ').title()
+    try:
+        content = path.read_text(encoding='utf-8')
+        fm_match = re.match(r'^---\s*\n([\s\S]*?)\n---', content)
+        if fm_match:
+            title_match = re.search(r'^title:\s*["\']?(.+?)["\']?\s*$', fm_match.group(1), re.MULTILINE)
+            if title_match:
+                return title_match.group(1)
+    except Exception:
+        pass
+    return path.stem.replace('-', ' ').replace('_', ' ').title()
+
+
 def generate_typescript_parameters(
     parameters: Dict[str, Dict[str, Any]],
     output_path: Path,
     include_metadata: bool = True,
     references_path: Optional[Path] = None,
     params_file: Optional[Path] = None,
-    citation_data: Optional[Dict[str, Dict[str, Any]]] = None
+    citation_data: Optional[Dict[str, Dict[str, Any]]] = None,
+    project_root: Optional[Path] = None,
 ):
     """
     Generate TypeScript file with parameters for Next.js applications.
@@ -264,6 +391,13 @@ def generate_typescript_parameters(
         citation_data = {}
         if references_path and references_path.exists():
             citation_data = parse_references_bib(references_path)
+
+    # Build chapter mapping (parameter -> primary manual page)
+    chapter_mapping: Dict[str, Any] = {}
+    if project_root:
+        param_names = {name for name in parameters}
+        chapter_mapping = build_chapter_mapping(project_root, param_names)
+
     content = []
 
     # Header
@@ -332,6 +466,10 @@ def generate_typescript_parameters(
         content.append("  calculationsUrl?: string;")
         content.append("  /** Direct URL to external data source (flattened from citation) */")
         content.append("  sourceUrl?: string;")
+        content.append("  /** URL to the primary manual page where this parameter is discussed */")
+        content.append("  manualPageUrl?: string;")
+        content.append("  /** Title of the primary manual page */")
+        content.append("  manualPageTitle?: string;")
         content.append("}")
         content.append("")
     else:
@@ -375,7 +513,7 @@ def generate_typescript_parameters(
         for param_name, param_data in external_params:
             value_obj = param_data["value"]
             param_lines, citation = _generate_parameter_constant(
-                param_name, value_obj, include_metadata, citation_data, parameters, params_file
+                param_name, value_obj, include_metadata, citation_data, parameters, params_file, chapter_mapping
             )
             content.extend(param_lines)
             if citation:
@@ -392,7 +530,7 @@ def generate_typescript_parameters(
         for param_name, param_data in calculated_params:
             value_obj = param_data["value"]
             param_lines, citation = _generate_parameter_constant(
-                param_name, value_obj, include_metadata, citation_data, parameters, params_file
+                param_name, value_obj, include_metadata, citation_data, parameters, params_file, chapter_mapping
             )
             content.extend(param_lines)
             if citation:
@@ -409,7 +547,7 @@ def generate_typescript_parameters(
         for param_name, param_data in definition_params:
             value_obj = param_data["value"]
             param_lines, citation = _generate_parameter_constant(
-                param_name, value_obj, include_metadata, citation_data, parameters, params_file
+                param_name, value_obj, include_metadata, citation_data, parameters, params_file, chapter_mapping
             )
             content.extend(param_lines)
             if citation:
@@ -914,7 +1052,8 @@ def _generate_parameter_constant(
     include_metadata: bool,
     citation_data: Optional[Dict[str, Any]] = None,
     parameters: Optional[Dict[str, Dict[str, Any]]] = None,
-    params_file: Optional[Path] = None
+    params_file: Optional[Path] = None,
+    chapter_mapping: Optional[Dict[str, Any]] = None,
 ) -> tuple[list, Optional[Dict[str, Any]]]:
     """
     Generate TypeScript constant declaration for a parameter.
@@ -1061,6 +1200,13 @@ def _generate_parameter_constant(
         conservative = getattr(value_obj, "conservative", None)
         if conservative:
             lines.append(f"  conservative: {_format_typescript_value(conservative)},")
+
+    # Primary manual page where this parameter is discussed (highest usage)
+    if chapter_mapping and param_name in chapter_mapping:
+        page = chapter_mapping[param_name]
+        lines.append(f"  manualPageUrl: {_format_typescript_value(page['url'])},")
+        lines.append(f"  manualPageTitle: {_format_typescript_value(page['title'])},")
+
 
     lines.append("};")
 

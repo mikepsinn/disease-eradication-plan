@@ -671,9 +671,10 @@ def main():
     logger.debug("[OK] Using references.bib as single source of truth for citations")
 
     # Generate TypeScript parameters file for Next.js/React apps
+    # (includes chapter mapping - scans QMD files for variable usage internally)
     logger.debug("[*] Generating TypeScript parameters file...")
     ts_output = project_root / "dih_models" / "parameters-calculations-citations.ts"
-    generate_typescript_parameters(parameters, ts_output, include_metadata=True, references_path=bib_path, params_file=parameters_path, citation_data=citation_data)
+    generate_typescript_parameters(parameters, ts_output, include_metadata=True, references_path=bib_path, params_file=parameters_path, citation_data=citation_data, project_root=project_root)
 
     # Copy TypeScript parameters file to consuming repos
     import shutil
