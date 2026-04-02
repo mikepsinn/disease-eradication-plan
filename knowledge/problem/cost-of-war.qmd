@@ -135,18 +135,18 @@ When humans fight, they break things. Big things. Expensive things. Things they 
 
 | Infrastructure Type | Damage (Billions) | War Zone Markup | How This Was Calculated |
 |-------------------|------------------------|----------------------|-------------------|
-| Transportation Networks | \$487.3 [@reconstruction-costs-active-conflicts] | 1.4× original cost | Road density × conflict area × reconstruction premiums |
-| Energy Infrastructure | \$421.7 [@reconstruction-costs-active-conflicts] | 2.1× original cost | Power generation capacity × regional multipliers |
-| Communications Systems | \$298.1 [@reconstruction-costs-active-conflicts] | 1.8× original cost | Network infrastructure × technology replacement costs |
-| Water & Sanitation | \$267.8 [@reconstruction-costs-active-conflicts] | 1.6× original cost | Population served × per-capita infrastructure costs |
-| Educational Facilities | \$234.5 [@reconstruction-costs-active-conflicts] | 1.3× original cost | Student capacity × modern construction standards |
-| Healthcare Systems | \$165.6 [@reconstruction-costs-active-conflicts] | 1.9× original cost | Bed capacity × medical equipment replacement |
+| Roads and bridges | \$487.3 [@reconstruction-costs-active-conflicts] | 1.4× original cost | You blew up the road. Now the road costs more. |
+| Power plants and grids | \$421.7 [@reconstruction-costs-active-conflicts] | 2.1× original cost | Electricity is harder to restore than to destroy (as a general rule). |
+| Phone and internet | \$298.1 [@reconstruction-costs-active-conflicts] | 1.8× original cost | Hard to coordinate reconstruction without communications. Ironic. |
+| Water and sewage | \$267.8 [@reconstruction-costs-active-conflicts] | 1.6× original cost | People need water. Bombs do not care. |
+| Schools | \$234.5 [@reconstruction-costs-active-conflicts] | 1.3× original cost | The children who would have attended are also gone. |
+| Hospitals | \$165.6 [@reconstruction-costs-active-conflicts] | 1.9× original cost | The building you need to fix war injuries. Destroyed by the war. |
 
 #### Total Infrastructure Damage: {{< var global_annual_infrastructure_destruction_conflict >}}
 
 Replacing a bridge in a war zone costs 1.3-2.1x more than building one in peace, with additional conflict zone premiums of 1.2-1.8x. You pay extra because the construction workers keep getting shot at. This is what economists call a "conflict premium" and what normal people call "insane."
 
-## Economic Disruption: The Ripple Effect
+## Economic Disruption: The Souffl&eacute; Problem
 
 Wars stop trade. Global commerce is a fragile thing, like a very large souffl&eacute; that you keep dropping bombs on. Every supply chain is a chain, and chains break at the weakest link. You keep bombing the weakest link.
 
@@ -154,10 +154,10 @@ Wars stop trade. Global commerce is a fragile thing, like a very large souffl&ea
 
 | What Stopped Working | Annual Loss (Billions) | Why | How Long |
 |-------------------|----------------------|-------------------|----------------|
-| Shipping Route Blockages | \$247.1 [@world-bank-trade-disruption-conflict] | Maritime traffic × route closure days × cargo value | 3.2 years avg |
-| Supply Chain Interruptions | \$186.8 [@world-bank-trade-disruption-conflict] | Manufacturing output × input delays × multiplier effects | 2.8 years avg |
-| Energy Price Volatility | \$124.7 [@world-bank-trade-disruption-conflict] | Consumption × price differential × demand elasticity | 1.9 years avg |
-| Currency Instability | \$57.4 [@world-bank-trade-disruption-conflict] | Trade volume × exchange rate volatility × hedging costs | 4.1 years avg |
+| Ships cannot ship | \$247.1 [@world-bank-trade-disruption-conflict] | The ocean has bombs in it | 3.2 years avg |
+| Factories cannot factory | \$186.8 [@world-bank-trade-disruption-conflict] | The parts come from the place you bombed | 2.8 years avg |
+| Energy prices go insane | \$124.7 [@world-bank-trade-disruption-conflict] | Oil comes from places with wars (coincidence) | 1.9 years avg |
+| Money stops meaning things | \$57.4 [@world-bank-trade-disruption-conflict] | Currency traders panic (this is their job) | 4.1 years avg |
 
 #### Total Trade Disruption: {{< var global_annual_trade_disruption_conflict >}} annually
 
@@ -244,10 +244,10 @@ Wars poison the planet. Explosions, it turns out, are not good for the environme
 
 | Environmental Impact | Damage Value | Restoration Cost | Time to Recovery |
 |--------------------|-------------|------------------|------------------|
-| Soil Contamination | \$34.7B [@environmental-cost-of-war] | \$69.4B [@environmental-cost-of-war] | 15-30 years |
-| Water Source Pollution | \$28.3B [@environmental-cost-of-war] | \$56.6B [@environmental-cost-of-war] | 8-25 years |
-| Air Quality Degradation | \$21.9B [@environmental-cost-of-war] | \$43.8B [@environmental-cost-of-war] | 2-8 years |
-| Biodiversity Loss | \$15.1B [@environmental-cost-of-war] | Irreplaceable | Forever |
+| You poisoned the dirt | \$34.7B [@environmental-cost-of-war] | \$69.4B [@environmental-cost-of-war] | 15-30 years |
+| You poisoned the water | \$28.3B [@environmental-cost-of-war] | \$56.6B [@environmental-cost-of-war] | 8-25 years |
+| You poisoned the air | \$21.9B [@environmental-cost-of-war] | \$43.8B [@environmental-cost-of-war] | 2-8 years |
+| You killed the animals | \$15.1B [@environmental-cost-of-war] | Irreplaceable | Forever |
 
 **Total Environmental Damage: {{< var global_annual_environmental_damage_conflict >}} annually**
 
@@ -271,7 +271,7 @@ Here is how you start to fix this. Take 1% of the money you plan to spend on kil
 
 Here is the grand total. You may want to sit down. Actually, you are probably already sitting. You may want to lie down. Perhaps permanently.
 
-### Comprehensive Cost Analysis (2024)
+### The Full Receipt (2024)
 
 #### What You Spent on Purpose
 
