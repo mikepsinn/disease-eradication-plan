@@ -373,3 +373,76 @@ The disqualification rule: if your proposal requires any participant to become l
 We call this revision v1 because repositories need version tags. The real goal is to keep improving the current manual until humanity has something better to use.
 
 We expect parts of this manual to be improved or replaced. Good.
+
+## Who Does Each Job
+
+The system has eleven functions but only five organizations that someone has to actually be. The rest is software, protocol rules, and compound interest. Here are the five, why each exists, and why none of them can be the same entity as any other.
+
+### The Five Roles
+
+**1. The Starter (Launch Host).** Makes the first public version of the [Earth Optimization Prize](earth-optimization-prize.qmd) real. Publishes the challenge rules, convenes the first expert review panel, funds adversarial-review bounties, and launches a live public scoreboard. This is the role that turns a stack of papers into inspectable public infrastructure. It is time-bounded by design: the Starter hosts the first 90-day cycle and then hands off or continues, but at no point becomes the permanent root of trust. One institution may start the network. No institution should be able to stop it. **Redundancy model: sequential, not parallel.** During bootstrap, one institution must go first or nobody goes at all (this is the current state; diffused ownership is why the prize is still a PDF). After the first cycle, co-hosts and successor hosts can join. Clear ownership during each bounded period, but replaceable between periods. (Full specification: [The Initiating Node Memo](initiating-node-memo.qmd) and the [90-Day Pilot](../grant-proposal/earth-optimization-prize-90-day-pilot.qmd).)
+
+**2. The Vault (Pool Custodian).** Holds PRIZE deposits, executes the published investment policy, and disburses funds when the oracle triggers release. This is custody, fiduciary duty, and independent audits. The Vault does not decide whether the targets were met. It does not lobby for the treaty. It does not know who the voters are. It holds money, invests it according to published rules, and moves it when told to by the Referee. That is all. **Redundancy model: many parallel pools.** The protocol treats multiple pools as complements, not competitors. Japan launches a pool, the EU launches a pool, the Gates Foundation launches a pool. Each pool has ONE custodian (clear ownership, someone to audit, someone to sue), but the system has MANY pools. A voter claims proportionally from every participating pool. Launching a "competing" pool is indistinguishable from donating to the network. A bad custodian loses depositors to a better pool. Markets handle discipline. (The custodian role is described in [Decentralized Institutes of Health](../solution/dih.qmd) and the [Legal Architecture](../legal/legal-framework.qmd).)
+
+**3. The Referee (Measurement Authority).** Locks the baseline measurement methodology before the game begins, reads WHO and World Bank data at specified intervals, publishes cryptographically signed determinations of whether the graduated release thresholds have been met, and runs the dispute resolution process when someone challenges the data. The Referee decides whether the targets were hit. The Vault holds the money. These two jobs exist in separate organizations for the same reason you do not let the scorekeeper also be the team owner. **Redundancy model: one accountable consortium, verified by many.** The inputs are already multi-node (five independent data sources that produce the same answer if nobody is lying). The binding determination has to converge on one signed statement, but the computation is deterministic from public data, so anyone can verify it independently. If the Referee's determination disagrees with what the raw data says, the bonded challenge mechanism lets anyone post evidence and trigger independent review. The Referee is a single accountable node that is continuously auditable by everyone. (The measurement system is described in [Optimocracy](../solution/optimocracy.qmd).)
+
+**4. The Bouncer (Identity Provider).** Verifies that each referendum participant is one real human, not a bot, deepfake, or the same person registering twice under a different hat. Maintains or contributes to the global nullifier set (the shared log that prevents double-registration across pools). Without one-person-one-vote enforcement, VOTE points are meaningless and Sybil attacks transfer wealth from legitimate voters to attackers. The Bouncer cannot be the same organization as the Vault, because the entity that knows who people are should not be the entity that holds their money. **Redundancy model: start with one, add more with bridging.** The protocol defines a [provider-agnostic interface](../appendix/earth-optimization-prize-protocol.qmd) so additional providers can be added without re-architecting. Multiple Bouncers add geographic resilience (if World ID gets banned in a jurisdiction, BrightID or government e-ID picks up). The shared state (global nullifier set) is append-only and public, so no single provider's disappearance destroys the voter registry. Each provider owns its verification process clearly; the protocol handles cross-provider deduplication.
+
+**5. The Sword (Campaign Executor).** Converts scoreboard support into political action. Raises campaign capital via [Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd), operates the SuperPAC that funds treaty-aligned politicians, and coordinates the legal path from "public support exists" to "treaty is signed." The Sword cannot be the same organization as the Referee, because the entity lobbying for the outcome cannot be the entity measuring whether the outcome occurred. It cannot be the same organization as the Vault, because securities law, election law, and tax law all require political funds and investment funds to stay separated. **Redundancy model: many parallel Swords, one per jurisdiction.** You need a different legal entity in every country anyway (US 501(c)(4), EU equivalent, etc.). Multiple Swords compete for bondholder capital to run the most effective campaign in their territory. Each Sword owns its jurisdiction clearly; its revenue depends on treaty passage in that territory, so the incentive to perform is direct. A bad Sword loses bondholder capital to a more effective one in the same jurisdiction. No tragedy of the commons because ownership is geographic. (The [Legal Architecture](../legal/legal-framework.qmd) describes the four-entity structure; the campaign mechanics are in [Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd).)
+
+### Why Five and Not Fewer
+
+Four firewalls force the minimum to five:
+
+| Firewall | Why it exists |
+|:---|:---|
+| **Vault/Referee** | The entity holding the money cannot decide whether to release it. Otherwise it releases the money to itself. |
+| **Bouncer/Vault** | The entity that knows who people are cannot hold their money. Otherwise it coerces voters or sells identity data. |
+| **Sword/Referee** | The entity lobbying for the outcome cannot measure whether it occurred. Otherwise it declares victory whenever convenient. |
+| **Sword/Vault** | Political funds and investment funds stay separated. The IRS, SEC, and FEC all require this. Your species did not invent these firewalls because it enjoys paperwork. It invented them because the alternative was tested and the alternative was stealing. |
+
+Merge any two roles that share a firewall and you create the structural vulnerability that a skeptical institutional decision-maker will immediately identify and reject. The five roles are not a wish list. They are the minimum set of independent actors that prevents the system from robbing itself.
+
+### Why Not Just Decentralize Everything
+
+Your species has two failure modes for coordination. In the first, one organization does everything, gets captured, and the system robs itself. In the second, nobody is responsible for anything, everyone assumes someone else will do it, and nothing happens. Your economists call the second one the tragedy of the commons. On Wishonia, we call it "a meeting."
+
+The system avoids both by matching each role to the redundancy model that fits its function:
+
+| Role | Redundancy model | Why |
+|:---|:---|:---|
+| **Starter** | Sequential (one at a time, replaceable between cycles) | Someone must go first. Diffused ownership during bootstrap is why the prize is still a PDF. |
+| **Vault** | Many parallel pools (competitive) | Each pool has one clear custodian. Markets discipline bad ones. Launching a rival pool helps the network. |
+| **Referee** | One accountable consortium, verified by everyone | The determination must converge, but the data is public and the computation is deterministic. Anyone can check the Referee's work. |
+| **Bouncer** | Start with one, add more with bridging | The interface is provider-agnostic. Geographic redundancy adds resilience. The shared nullifier set survives any single provider. |
+| **Sword** | Many parallel Swords (one per jurisdiction) | Legal entities are jurisdiction-specific anyway. Each Sword's revenue depends on its own territory. |
+
+The principle: every role has ONE accountable node at any given scope (one custodian per pool, one Sword per jurisdiction, one Referee per determination), but the system has MANY such nodes, so no single failure kills the network. Clear ownership prevents the tragedy of the commons. Replaceability and competition prevent capture. Your species already does this with banks (many banks, each regulated, each replaceable, each clearly responsible for its own customers). It just hasn't applied the pattern to ending war and disease.
+
+### What Is Not a Role
+
+The Scoreboard is open-source software, not an organization. Since the computation is deterministic (aggregate pool balances and voter counts from published endpoints), any two honest aggregators produce identical results. Anyone can run one. The Starter launches the first one; after that, it replicates.
+
+VOTE and PRIZE token mechanics are protocol rules, implementable as smart contracts or as traditional custodial accounting (the [protocol specification](../appendix/earth-optimization-prize-protocol.qmd) is deliberately implementation-agnostic). The Vault operates them as part of custody. Not a separate organization.
+
+The adversarial reviewers and red-team critics are participants hired by the bounty pool, not a standing institution.
+
+Building the referendum app, the [Optimitron](../solution/optimocracy.qmd), and the [Wishocracy](../solution/wishocracy.qmd) interface are development projects. Much of it [already exists](#what-already-exists). Open source. Not an ongoing organizational responsibility.
+
+::: {.content-visible when-format="html"}
+
+### Candidates and Self-Nomination
+
+If your organization fits one of these profiles, the next step is a conversation: [m@warondisease.org](mailto:m@warondisease.org).
+
+| Role | Org type | Examples |
+|:---|:---|:---|
+| **The Starter** | A foundation or think tank with existing prize-program infrastructure and credibility in long-term civilizational risk | Foresight Institute, X Prize Foundation, Santa Fe Institute |
+| **The Vault** | A regulated financial custodian or purpose-built Swiss foundation with independent auditor | Qualified custodians, Swiss foundations with locked charters |
+| **The Referee** | An academic consortium or statistical panel with expertise in health economics and independence from political pressure | University health economics departments, WHO-affiliated research groups |
+| **The Bouncer** | A proof-of-personhood service with global reach and privacy-preserving verification | World ID, BrightID, Proof of Humanity |
+| **The Sword** | A political advocacy organization with experience in legislative campaigns and compliance infrastructure | Purpose-built 501(c)(4), modeled on existing effective advocacy structures |
+
+These are illustrative, not exclusive. If your organization can do one of these jobs and wants to, [add yourself to the candidate list](https://github.com/wishonia/earth-optimization-protocol/issues/new?title=Role+Candidate:+[Your+Org]+for+[Role+Name]&body=Organization:%0ARole:%0AWhy+we+fit:%0AContact:) or email [m@warondisease.org](mailto:m@warondisease.org).
+
+:::

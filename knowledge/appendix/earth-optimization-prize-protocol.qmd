@@ -138,6 +138,14 @@ The global nullifier set is the critical shared state. It must be append-only, p
 
 **Coercion.** An employer or government forces citizens to register and surrender their VOTE tokens. Mitigation: coercion to vote a particular way is already illegal in every democracy. The registration headcount matters more than which way any individual votes; the exposure to evidence during registration is what shifts preferences. Transferable tokens incentivize voluntary recruitment, which is the primary bottleneck (pluralistic ignorance).
 
+### Governance of the Identity Layer
+
+The identity provider (the Bouncer, in the [system roles](../strategy/earth-optimization-protocol-v1.qmd#who-does-each-job)) is not a neutral utility. Whoever controls proof-of-personhood controls who gets to vote and who gets paid. Two governance requirements follow:
+
+**Provider selection.** The initial provider is chosen by the [Launch Host](../strategy/initiating-node-memo.qmd) during the first 90-day cycle, subject to review panel approval. Adding or removing providers after launch requires a bonded proposal (to prevent frivolous churn) and majority approval from existing verified voters. This prevents the Launch Host from unilaterally switching to a captured provider after the game has started.
+
+**Provider compromise.** If a provider is compromised (Sybil attack detected, provider ceases operations, or privacy breach), the protocol suspends attestations from that provider, freezes affected VOTE tokens pending re-verification, and opens a migration window for affected voters to re-verify through an alternative provider. The global nullifier set remains intact; only the attestation linkage changes. This is the digital equivalent of reissuing passports after a printing press is stolen, except faster and without the queue at the post office.
+
 ## Pool Registry
 
 ### Problem
@@ -211,6 +219,18 @@ These are protocol primitives. Other instruments (bonds, revenue-share contracts
 **On success.** When the terminal metric oracle triggers treasury release, PRIZE token deposits are distributed to VOTE point-holders. Each verified voter can claim an equal share from each pool (see §5). PRIZE tokens are burned. The depositor's principal is gone; it has been redistributed to the people who caused the outcome.
 
 **Recruiter attribution.** Individual pools may offer recruitment bonuses (e.g., a share of the pool's own allocation to voters who bring in new registrants). This is a pool-level marketing decision, not a protocol requirement. The protocol tracks only the one-person-one-vote base layer.
+
+### Inheritance and Estate Transfer
+
+A 15-year lock-up means depositors will die during the accumulation period. The protocol must handle this without creating ghost claims or orphaned funds.
+
+**PRIZE tokens (deposits).** PRIZE tokens are transferable assets. A depositor may designate a beneficiary address or account at the time of deposit (or update it at any time before death). On the depositor's death, PRIZE tokens transfer to the designated beneficiary, who inherits the same claim: pro-rata share of the realized pool on failure, or nothing on success (the deposit routes to VOTE point-holders). If no beneficiary is designated, the pool's custodian follows the applicable jurisdiction's intestacy rules, the same way a brokerage account does. The pool operator must support beneficiary designation as a core feature, not an afterthought.
+
+**VOTE tokens (recruitment credit).** VOTE tokens expire on liveness re-verification failure (12 months). A dead voter's VOTE token is burned when their identity attestation expires and is not renewed. VOTE tokens are not inheritable as claims, because the claim depends on continued proof-of-personhood (the whole point is that each claim represents one verified living human). However, VOTE tokens are transferable before death, so a voter who knows they are dying can sell or transfer their VOTE token while still alive, and the recipient holds it until their own liveness re-verification is due.
+
+**Unclaimed funds.** If a depositor dies without a designated beneficiary and the pool operator cannot identify an heir within a jurisdiction-specified period (typically 3-5 years), the unclaimed PRIZE tokens remain in the pool. On the failure branch, unclaimed deposits increase the pro-rata share for all other depositors. On the success branch, the deposits route to VOTE point-holders like all other deposits. The protocol does not create a separate "unclaimed" category; unclaimed deposits simply stay in the pool and follow the same rules as all other deposits.
+
+**Tax treatment.** Estate tax treatment of PRIZE tokens varies by jurisdiction. The protocol cannot standardize tax law. Pool operators should publish guidance for their jurisdiction and advise depositors to consult estate planning professionals. For most jurisdictions, PRIZE tokens will be treated as a financial asset included in the decedent's estate at fair market value (secondary market price or pro-rata pool share, whichever is determinable).
 
 ## Cross-Pool Claims
 

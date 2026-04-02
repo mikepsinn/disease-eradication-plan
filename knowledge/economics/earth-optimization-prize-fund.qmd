@@ -145,6 +145,26 @@ Three regulatory pathways:
 
 The accreditation wall was built to "protect" small investors from risky investments. It protected them so well that they earned {{< var conventional_retirement_return >}} while accredited investors earned {{< var venture_gross_return >}}. The Prize Fund does not fight the wall. It walks through the door that the wall left open for pooled vehicles.
 
+## Why PRIZE Is Not a Retirement Account (and What Is)
+
+This chapter compares the Prize Fund's returns to conventional retirement. That comparison is honest on the failure branch: depositors get their pro-rata share of the realized pool, which models at {{< var prize_pool_horizon_multiple >}} vs. {{< var conventional_retirement_horizon_multiple >}} for conventional retirement. On the failure branch, PRIZE deposits outperform your 401(k).
+
+The success branch is a different story. On success, the depositor's money goes to VOTE point-holders. The depositor gets nothing back from the pool (they live in a world where diseases are cured and they are {{< var treaty_personal_upside_blend >}} richer, but their specific deposit is gone). A retirement plan administrator has fiduciary obligations under ERISA (your species' law requiring that people managing your retirement money act in your interest, not theirs, which is apparently unusual enough to require legislation). A fiduciary cannot put client money into a vehicle where the best-case outcome means the money goes to someone else. This is not a technicality. It is the structural reason PRIZE deposits cannot be a 401(k) allocation option in their current form.
+
+Three instruments serve three audiences:
+
+| Instrument | What happens on success | What happens on failure | Retirement-compatible? | Who it's for |
+|:---|:---|:---|:---|:---|
+| **PRIZE deposit** | Pool goes to VOTE holders (your deposit is gone) | Pro-rata share of realized pool ({{< var prize_pool_horizon_multiple >}}) | No (success branch violates fiduciary duty) | Depositors who understand the conditional structure and want the coordination upside |
+| **[IAB](../solution/incentive-alignment-bonds.qmd)** | {{< var victory_bond_annual_return_pct >}} perpetual revenue share | Money was spent on the campaign (principal at risk) | Yes (standard securities, Reg D/CF/A+) | Investors who want returns tied to treaty passage |
+| **Conventional retirement** | {{< var conventional_retirement_horizon_multiple >}} after 15 years | Same (market risk only) | Yes (that's what it is) | People who want predictable market exposure |
+
+**The retirement-compatible instrument is the IAB, not PRIZE.** [Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd) are straightforward revenue-share securities. An investor buys a bond, the money funds the campaign, and if the treaty passes, the investor receives a perpetual revenue share from treaty funding flows. This is a standard security with a clear risk/return profile. It can be offered under Reg D (accredited investors), Reg CF ($5M/year to anyone), or Reg A+ ($75M/year with SEC qualification). A 401(k) plan administrator can evaluate it like any other fixed-income-adjacent security.
+
+PRIZE deposits are a coordination mechanism. IABs are an investment. The Prize Fund chapter compares PRIZE returns to retirement because the comparison illustrates that even the failure branch outperforms conventional retirement. But the comparison should not imply that PRIZE is a retirement substitute. It is a conditional bet on civilization, with a very attractive consolation prize.
+
+If your retirement fund wants exposure to the treaty succeeding, IABs are the instrument. If you personally want to put skin in the game and earn VOTE points by recruiting, PRIZE is the instrument. Both exist because they serve different functions for different audiences.
+
 ## The Self-Fulfilling Property
 
 The fund does not bet on whether targets get hit. It funds hitting them.

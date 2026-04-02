@@ -130,4 +130,35 @@ And here's why the whole thing ratchets. Each treaty expansion creates more IAB 
 
 Now that you know how the Optimitron works (congratulations, on Wishonia this is taught to children), the next chapter shows you how [8 billion people allocate the research funds](wishocracy.qmd).
 
+## The Referee: Who Measures Whether It Worked
+
+Everything above describes how the Evidence Machine works. This section describes who runs it, because "an algorithm that nobody can corrupt" still requires someone to plug it in.
+
+The Measurement Authority (the Referee) is the organization (or consortium) that locks the baseline measurement methodology before the [Earth Optimization Prize](../strategy/earth-optimization-prize.qmd) begins, reads institutional data at specified intervals, publishes binding determinations of whether the graduated release thresholds have been met, and runs the dispute resolution process when someone challenges the numbers.
+
+**What the Referee does:**
+
+1. Locks the baseline methodology at game start (prevents retroactive methodology changes from triggering false release).
+2. Reads WHO Health-Adjusted Life Expectancy and World Bank median income data annually.
+3. Cross-checks institutional data against the five independent sources described above (Census Bureau, Federal Reserve, BLS, academic institutions, decentralized citizen surveys).
+4. Publishes cryptographically signed determinations of whether graduated release thresholds have been met (10% at +0.5 HALY, 25% at +1.0 HALY, 50% at +2.0 HALY, 100% at +5.0 HALY, with equivalent income thresholds).
+5. Accepts bonded challenges (anyone who catches gaming can post a bond, present evidence, and trigger independent review).
+6. Routes disputes to an academic panel for adjudication.
+
+**What the Referee does not do:**
+
+- Hold the money. That is the [Vault's](dih.qmd) job.
+- Lobby for the treaty. That is the [Sword's](../legal/legal-framework.qmd) job.
+- Verify voter identity. That is the [Bouncer's](../appendix/earth-optimization-prize-protocol.qmd) job.
+
+**Why it cannot be the Vault:** The entity that decides whether to release the money cannot be the entity holding the money. Your species learned this lesson approximately 4,000 years ago and has been re-learning it every century since.
+
+**Why it cannot be the Sword:** The entity lobbying for the outcome cannot measure whether the outcome occurred. A campaign executor that also runs the measurement system has every incentive to declare victory regardless of whether anyone actually got healthier or richer. This is the current system, where governments measure their own performance and announce that they are doing an excellent job, which your species calls "self-assessment" and I call "letting the student grade the exam."
+
+**What kind of organization fits:** An academic consortium, a statistical panel, or a group of independent research institutions. The ideal Referee is boring, methodologically rigid, and has no financial interest in either branch of the prize payout. University health economics departments, WHO-affiliated statistical groups, or a purpose-built consortium of institutions that already measure these numbers (and have reputations staked on measuring them correctly) are the natural candidates.
+
+**Redundancy:** The inputs are already multi-node: five independent data sources (Census Bureau, Federal Reserve, BLS, University of Michigan, Tax Foundation) plus decentralized citizen surveys. Any two honest analysts reading the same sources get the same answer; the computation is deterministic. What needs to converge is the binding determination ("yes, the thresholds were met, release the money"). One accountable consortium publishes that determination. Everyone else can verify it independently from the same public data. If the Referee's number disagrees with what the raw sources say, the bonded challenge mechanism lets anyone post evidence and trigger independent review. This is not "trust the Referee." It is "the Referee is the one entity whose determination is binding, and everyone on Earth can check its homework." One accountable node, continuously auditable by many. Clear ownership prevents the tragedy of the commons (someone must sign the determination). Universal verifiability prevents capture (anyone can catch a lie).
+
+**Succession:** The methodology is published and locked. If the Referee disappears, a replacement panel can pick up the locked methodology and continue measuring. The data sources (WHO, World Bank, national statistical agencies) exist independently of whoever reads them.
+
 For the full technical specification, formal models, and threat analysis, see the [Optimocracy academic paper](../appendix/optimocracy-paper.qmd) [@optimocracy-paper-2025]. For the gory details on how the recommendation engine decides you're spending too much on corn and too little on not dying: [Optimal Budget Generator](https://obg.warondisease.org) [@obg-paper-2025] and [Optimal Policy Generator](https://opg.warondisease.org) [@opg-paper-2025].

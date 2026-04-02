@@ -129,6 +129,38 @@ Follow every rule so perfectly that nobody martyrs the boring. Boring is your be
 
 If the courts fail anyway, you have international arbitration, regulatory capture (former SEC commissioners are surprisingly affordable, like vintage furniture), and {{< var treaty_campaign_voting_bloc_target_nounit >}} referendum participants who make politicians reconsider their entire careers.
 
+## The Sword in Practice: What the Campaign Executor Actually Does
+
+Everything above describes the legal containers. This section describes what the Campaign Executor (the Sword, in the [system roles](../strategy/earth-optimization-protocol-v1.qmd#who-does-each-job)) actually does with those containers day to day.
+
+The Sword converts scoreboard support into political action. When the [referendum](../strategy/global-referendum.qmd) reaches critical mass and the [Scoreboard](../strategy/earth-optimization-prize.qmd) shows hundreds of millions of verified names, someone has to turn that number into treaty signatures. That someone is the Sword.
+
+**What the Sword does:**
+
+1. Raises campaign capital via [Incentive Alignment Bond](../solution/incentive-alignment-bonds.qmd) sales ({{< var treaty_campaign_total_cost >}} target).
+2. Operates the SuperPAC that funds treaty-aligned politicians and defunds those who vote against.
+3. Publishes Public Good Scores based on politician voting records (alignment with evidence-based recommendations from the [Optimitron](../solution/optimocracy.qmd)).
+4. Coordinates the legal path from "public support exists" to "treaty is signed" across multiple jurisdictions.
+5. Administers post-office career guarantees for politicians who champion the treaty (the carrot that complements the SuperPAC stick).
+
+**What the Sword does not do:**
+
+- Hold PRIZE deposits or treaty funds. That is the [Vault's](../solution/dih.qmd) job.
+- Measure whether the targets were met. That is the [Referee's](../solution/optimocracy.qmd) job.
+- Decide which diseases to fund or which trials to run. That is [Wishocracy's](../solution/wishocracy.qmd) job.
+
+**Why it cannot be the Referee:** The entity lobbying for the outcome cannot measure whether the outcome occurred. This is the most obvious conflict of interest in the system and the one your species would notice first. On your planet, the equivalent would be letting the defense contractor grade the weapons test. You already do this, actually, which is why your weapons cost 10 times what they should and work half as well as advertised, but that is a different chapter.
+
+**Why it cannot be the Vault:** The IRS requires charitable funds and political funds to stay separated. The SEC requires investment funds and political funds to stay separated. The FEC requires foreign funds and domestic political funds to stay separated. Three regulatory agencies, three firewalls, zero overlap. Your species built these walls because every time it didn't, the money ended up in the wrong place and someone went to prison. The walls are annoying but they work.
+
+**How it interfaces with the Scoreboard:** The Sword's operational tempo is driven by the Scoreboard numbers. Below 10 million verified names: quiet preparation, legal infrastructure, initial bond sales. Between 10 million and 100 million: targeted lobbying in swing jurisdictions. Above 100 million: full-scale political campaign in every major democracy. Above the Chenoweth threshold ({{< var global_population_activism_threshold_pct >}} of humanity, roughly {{< var treaty_campaign_voting_bloc_target_nounit >}} people): treaty becomes politically unavoidable. The Sword scales its spending to match the Scoreboard, not the other way around.
+
+**Redundancy:** The Sword is naturally multi-node because campaign law is jurisdictional. You need a different legal entity in every country: a US 501(c)(4), an EU-equivalent advocacy organization, separate entities in every major democracy. Multiple Swords compete for bondholder capital to run the most effective campaign in their territory. Each Sword owns its jurisdiction clearly; its revenue depends on treaty passage in that territory, so the incentive to perform is direct and the ownership is unambiguous. A bad Sword loses bondholder capital to a more effective one in the same jurisdiction, the way a bad advertising agency loses clients. No tragedy of the commons because nobody is responsible for "the whole world." Everyone is responsible for their own country.
+
+**Succession:** If a Sword disappears, a replacement political advocacy organization in that jurisdiction can pick up the bond proceeds, the voter data (public on the Scoreboard), and the politician scoring methodology (published). The legal entities are separate from the people running them. The 501(c)(4) charter survives its founders, which is why your species uses 501(c)(4)s for things it wants to outlast any individual's attention span.
+
+**What kind of organization fits:** A purpose-built 501(c)(4) social welfare organization paired with a for-profit Victory Corporation, modeled on the ACLU, NRA, or Planned Parenthood structure. These organizations have been running the same legal playbook for decades. The only difference is the target: diseases instead of guns, reproductive rights, or civil liberties.
+
 ---
 
 This entire strategy uses the exact same legal structures that currently enable tax avoidance, dark money, and corporate welfare. The tools of corruption, repurposed for medicine. The loopholes meant for billionaires will fund medicine for billions.

@@ -205,4 +205,35 @@ Receive funds. Allocate research via patient subsidies. Govern infrastructure vi
 
 On Wishonia, we built this 4,297 years ago. We've been disease-free for 4,296. That first year was, admittedly, a bit rough. But you have the benefit of our mistakes, which we're sharing because sharing mistakes freely is the first rule of the protocol, and also because we have 4,296 years of evidence that it works, which is more evidence than your species has for anything except gravity and the observation that meetings could have been emails.
 
+## The Vault: Who Holds the Money
+
+Everything above describes what the [Decentralized Institutes of Health](../solution/dih.qmd) does with money. This section describes who holds it and why that question matters more than it sounds.
+
+The Pool Custodian (the Vault) is the organization with legal custody of PRIZE deposits and treaty funds. It receives deposits, invests them according to a published allocation policy, tracks the realized pool value, and disburses funds when triggered by the Measurement Authority (the Referee). On the failure branch, depositors get their pro-rata share of the realized pool. On the success branch, the pool routes to VOTE point-holders. The Vault executes both.
+
+**What the Vault does:**
+
+1. Holds PRIZE deposits in escrow during the lock-up period.
+2. Invests according to the published allocation policy (transparent, auditable).
+3. Publishes daily balance attestations so anyone can verify the pool size.
+4. Executes failure-branch disbursement (pro-rata to depositors) or success-branch disbursement (to VOTE point-holders) when the Referee triggers release.
+5. Maintains fiduciary duty and submits to independent audits.
+
+**What the Vault does not do:**
+
+- Decide whether the targets were met. That is the [Referee's](optimocracy.qmd) job.
+- Know who the voters are. That is the [Bouncer's](../appendix/earth-optimization-prize-protocol.qmd) job.
+- Lobby for the treaty. That is the [Sword's](../legal/legal-framework.qmd) job.
+- Set the investment policy unilaterally. The policy is published and governed by protocol rules.
+
+**Why it cannot be the Referee:** The entity holding the money cannot be the entity deciding whether to release it. This is the most basic conflict-of-interest constraint in the design. A custodian who also measures the outcome has a financial incentive to declare whatever result benefits the custodian, which is the current system you are trying to replace.
+
+**Why it cannot be the Sword:** Securities law, election law, and tax law all require political funds and investment funds to stay separated. The [Legal Architecture](../legal/legal-framework.qmd) chapter explains the four-entity firewall structure. Charitable funds never touch political operations (the IRS is watching). Political funds never touch bond proceeds (the SEC is watching).
+
+**What kind of organization fits:** A regulated financial custodian, a qualified crypto custodian, or a purpose-built Swiss foundation with an independent auditor and a locked charter. The [Legal Architecture](../legal/legal-framework.qmd) describes Entity #4 (the DIH Foundation, based in Switzerland) as the parent organization for exactly this reason: Switzerland has avoided war for 175 years by holding everyone's money, and a Swiss foundation charter can be permanently locked to a single mission.
+
+**Redundancy:** The protocol supports many parallel pools, each with its own custodian. Japan launches a pool, the EU launches a pool, a foundation launches a pool. Each pool has ONE custodian (clear ownership, someone to audit, someone to sue if funds go missing). But the system has MANY pools, so no single custodian's failure kills the network. A voter claims proportionally from every participating pool. Launching a "competing" pool is indistinguishable from donating to the network. A bad custodian loses depositors to a better pool the way a bad bank loses customers to a better bank. Markets handle discipline; nobody needs to feel like the sole owner of global finance.
+
+**Succession:** If a Vault disappears, its pool's assets transfer to a replacement custodian or are distributed to depositors. The other pools continue operating. No single Vault is a permanent dependency.
+
 That's the theory. The rest of this manual explains how you actually build it.
