@@ -38,37 +38,72 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 68 parameters used in the analysis, organized by type:
+This appendix documents all 115 parameters used in the analysis, organized by type:
 
-- External sources (peer-reviewed): 24
-- Calculated values: 33
-- Core definitions: 11
+- External sources (peer-reviewed): 48
+- Calculated values: 53
+- Core definitions: 14
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (33 parameters) • [External Data Sources](#sec-external) (24 parameters) • [Core Definitions](#sec-definitions) (11 parameters)
+[Calculated Values](#sec-calculated) (53 parameters) • [External Data Sources](#sec-external) (48 parameters) • [Core Definitions](#sec-definitions) (14 parameters)
 
 
 ## Calculated Values {#sec-calculated}
 
 Parameters derived from mathematical formulas and economic models.
 
-### Current Trajectory Cumulative Lifetime Income (Per Capita): $1.34M {#sec-current_trajectory_cumulative_lifetime_income}
+### Current Trajectory Average Income at Year 20: $20.5K {#sec-current_trajectory_avg_income_year_20}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Cumulative per-capita income over an average remaining lifespan under current trajectory baseline trajectory. Uses 2.5% baseline growth for all years.
+Average income (GDP per capita) at year 20 under current trajectory trajectory.
+
+**Inputs**:
+
+- [Current Trajectory GDP at Year 20](#sec-current_trajectory_gdp_year_20) 🔢: $188T
+- [Global Population 2045 (Projected)](#sec-global_population_2045_projected) 📊: 9.2 billion of people
+
+$$
+\begin{gathered}
+\bar{y}_{base,20} \\
+= \frac{GDP_{base,20}}{Pop_{2045}} \\
+= \frac{\$188T}{9.2B} \\
+= \$20.5K
+\end{gathered}
+$$
+where:
+$$
+GDP_{base,20} = GDP_0(1+g_{base})^{20}
+$$
+*✓ High confidence*
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-current_trajectory_avg_income_year_20.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-current_trajectory_avg_income_year_20.qmd >}}
+
+:::
+
+### Current Trajectory Cumulative Lifetime Income (Per Capita): $1.1M {#sec-current_trajectory_cumulative_lifetime_income}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Cumulative per-capita income over an average remaining lifespan under current trajectory baseline trajectory. Uses the implied per-capita baseline CAGR from 2025 to 2045.
 
 **Inputs**:
 
 - [Global Average Income (2025 Baseline)](#sec-global_avg_income_2025) 🔢: $14.4K
-- [Baseline Global GDP Growth Rate](#sec-gdp_baseline_growth_rate): 2.5%
+- [Current Trajectory Average Income at Year 20](#sec-current_trajectory_avg_income_year_20) 🔢: $20.5K
 - [Average Remaining Years (Median Person)](#sec-global_avg_remaining_years) 🔢: 48.5 years
 
 $$
 \begin{gathered}
 Y_{cum,earth} \\
-= \bar{y}_0 \cdot \frac{(1+g_{base})((1+g_{base})^{T_{remaining}}-1)}{g_{base}}
+= \bar{y}_0 \cdot \frac{(1+g_{pc,base})((1+g_{pc,base})^{T_{remaining}}-1)}{g_{pc,base}}
 \end{gathered}
 $$
 
@@ -87,6 +122,33 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-current_trajectory_cumulative_lifetime_income.qmd >}}
+
+:::
+
+### Current Trajectory GDP at Year 20: $188T {#sec-current_trajectory_gdp_year_20}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Global GDP at year 20 under status-quo current trajectory growth.
+
+**Inputs**:
+
+- [Global GDP (2025)](#sec-global_gdp_2025) 📊: $115T
+- [Baseline Global GDP Growth Rate](#sec-gdp_baseline_growth_rate): 2.5%
+
+$$
+GDP_{base,20} = GDP_0(1+g_{base})^{20}
+$$
+
+*✓ High confidence*
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-current_trajectory_gdp_year_20.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-current_trajectory_gdp_year_20.qmd >}}
 
 :::
 
@@ -472,6 +534,627 @@ $$
 
 :::
 
+### Total Deaths from Historical Progress Delays: 102 million deaths {#sec-existing_drugs_efficacy_lag_deaths_total}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Total deaths from delaying existing drugs over 8.2-year efficacy lag. One-time impact of eliminating Phase 2-4 testing delay for drugs already approved 1962-2024. Based on Lichtenberg (2019) estimate of 12M lives saved annually × 8.2 years efficacy lag. Excludes innovation acceleration effects.
+
+**Inputs**:
+
+- [Annual Lives Saved by Pharmaceuticals](#sec-pharma_lives_saved_annual) 🔢: 12.4 million deaths
+- [Regulatory Delay for Efficacy Testing Post-Safety Verification](#sec-efficacy_lag_years) 📊: 8.2 years (SE: ±2 years)
+
+$$
+\begin{gathered}
+Deaths_{lag,total} \\
+= Lives_{saved,annual} \times T_{lag} \\
+= 12.4M \times 8.2 \\
+= 102M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Lives_{saved,annual} \\
+= \frac{LY_{saved,annual}}{T_{ext}} \\
+= \frac{149M}{12} \\
+= 12.4M
+\end{gathered}
+$$
+*~ Medium confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-existing_drugs_efficacy_lag_deaths_total.qmd >}}
+
+{{< include ../figures/sensitivity-table-existing_drugs_efficacy_lag_deaths_total.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-existing_drugs_efficacy_lag_deaths_total.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-existing_drugs_efficacy_lag_deaths_total.qmd >}}
+
+:::
+
+### Total Economic Loss from Historical Progress Delays: $259T {#sec-existing_drugs_efficacy_lag_economic_loss}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Total economic loss from delaying existing drugs over 8.2-year efficacy lag. One-time benefit of eliminating Phase 2-4 delay. Excludes innovation acceleration effects.
+
+**Inputs**:
+
+- [Global Life Expectancy (2024)](#sec-global_life_expectancy_2024) 📊: 79 years (SE: ±2 years)
+- [Total Deaths from Historical Progress Delays](#sec-existing_drugs_efficacy_lag_deaths_total) 🔢: 102 million deaths
+- [Mean Age of Preventable Death from Post-Safety Efficacy Delay](#sec-regulatory_delay_mean_age_of_death) 📊: 62 years (SE: ±3 years)
+- [Standard Economic Value per QALY](#sec-standard_economic_qaly_value_usd) 📊: $150K (SE: ±$30K)
+
+$$
+\begin{gathered}
+Loss_{lag} \\
+= Deaths_{lag,total} \times (LE_{global} - Age_{death,delay}) \times Value_{QALY} \\
+= 102M \times (79 - 62) \times \$150K \\
+= \$259T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Deaths_{lag,total} \\
+= Lives_{saved,annual} \times T_{lag} \\
+= 12.4M \times 8.2 \\
+= 102M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Lives_{saved,annual} \\
+= \frac{LY_{saved,annual}}{T_{ext}} \\
+= \frac{149M}{12} \\
+= 12.4M
+\end{gathered}
+$$
+*~ Medium confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-existing_drugs_efficacy_lag_economic_loss.qmd >}}
+
+{{< include ../figures/sensitivity-table-existing_drugs_efficacy_lag_economic_loss.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-existing_drugs_efficacy_lag_economic_loss.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-existing_drugs_efficacy_lag_economic_loss.qmd >}}
+
+:::
+
+### Total Annual Cost of War Worldwide: $11.4T {#sec-global_annual_direct_indirect_war_cost}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Total annual cost of war worldwide (direct + indirect costs)
+
+**Inputs**:
+
+- [Total Annual Direct War Costs](#sec-global_annual_war_direct_costs_total) 🔢: $7.66T
+- [Total Annual Indirect War Costs](#sec-global_annual_war_indirect_costs_total) 🔢: $3.7T
+
+$$
+\begin{gathered}
+Cost_{war,total} \\
+= Cost_{war,direct} + Cost_{war,indirect} \\
+= \$7.66T + \$3.7T \\
+= \$11.4T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,direct} \\
+= Loss_{life,conflict} + Damage_{infra,total} \\
++ Disruption_{trade} + Spending_{mil} \\
+= \$2.45T + \$1.88T + \$616B + \$2.72T \\
+= \$7.66T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Loss_{life,conflict} \\
+= Cost_{combat,human} + Cost_{state,human} \\
++ Cost_{terror,human} \\
+= \$2.34T + \$27B + \$83B \\
+= \$2.45T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{combat,human} \\
+= Deaths_{combat} \times VSL \\
+= 234{,}000 \times \$10M \\
+= \$2.34T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{state,human} \\
+= Deaths_{state} \times VSL \\
+= 2{,}700 \times \$10M \\
+= \$27B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{terror,human} \\
+= Deaths_{terror} \times VSL \\
+= 8{,}300 \times \$10M \\
+= \$83B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Damage_{infra,total} \\
+= Damage_{comms} + Damage_{edu} + Damage_{energy} \\
++ Damage_{health} + Damage_{transport} + Damage_{water} \\
+= \$298B + \$234B + \$422B + \$166B + \$487B + \$268B \\
+= \$1.88T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Disruption_{trade} \\
+= Disruption_{currency} + Disruption_{energy} \\
++ Disruption_{shipping} + Disruption_{supply} \\
+= \$57.4B + \$125B + \$247B + \$187B \\
+= \$616B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,indirect} \\
+= Damage_{env} + Loss_{growth,mil} + Loss_{capital,conflict} \\
++ Cost_{psych} + Cost_{refugee} + Cost_{vet} \\
+= \$100B + \$2.72T + \$300B + \$232B + \$150B + \$200B \\
+= \$3.7T
+\end{gathered}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-global_annual_direct_indirect_war_cost.qmd >}}
+
+{{< include ../figures/sensitivity-table-global_annual_direct_indirect_war_cost.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-global_annual_direct_indirect_war_cost.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-global_annual_direct_indirect_war_cost.qmd >}}
+
+:::
+
+### Annual Cost of Combat Deaths: $2.34T {#sec-global_annual_human_cost_active_combat}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual cost of combat deaths (deaths × VSL)
+
+**Inputs**:
+
+- [Annual Deaths from Active Combat Worldwide](#sec-global_annual_conflict_deaths_active_combat) 📊: 234 thousand deaths/year (95% CI: 180 thousand deaths/year - 300 thousand deaths/year)
+- [Value of Statistical Life](#sec-value_of_statistical_life) 📊: $10M (95% CI: $5M - $15M)
+
+$$
+\begin{gathered}
+Cost_{combat,human} \\
+= Deaths_{combat} \times VSL \\
+= 234{,}000 \times \$10M \\
+= \$2.34T
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-global_annual_human_cost_active_combat.qmd >}}
+
+{{< include ../figures/sensitivity-table-global_annual_human_cost_active_combat.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-global_annual_human_cost_active_combat.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-global_annual_human_cost_active_combat.qmd >}}
+
+:::
+
+### Annual Cost of State Violence Deaths: $27B {#sec-global_annual_human_cost_state_violence}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual cost of state violence deaths (deaths × VSL)
+
+**Inputs**:
+
+- [Annual Deaths from State Violence](#sec-global_annual_conflict_deaths_state_violence) 📊: 2.7 thousand deaths/year (95% CI: 1.5 thousand deaths/year - 5 thousand deaths/year)
+- [Value of Statistical Life](#sec-value_of_statistical_life) 📊: $10M (95% CI: $5M - $15M)
+
+$$
+\begin{gathered}
+Cost_{state,human} \\
+= Deaths_{state} \times VSL \\
+= 2{,}700 \times \$10M \\
+= \$27B
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-global_annual_human_cost_state_violence.qmd >}}
+
+{{< include ../figures/sensitivity-table-global_annual_human_cost_state_violence.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-global_annual_human_cost_state_violence.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-global_annual_human_cost_state_violence.qmd >}}
+
+:::
+
+### Annual Cost of Terror Deaths: $83B {#sec-global_annual_human_cost_terror_attacks}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual cost of terror deaths (deaths × VSL)
+
+**Inputs**:
+
+- [Annual Deaths from Terror Attacks Globally](#sec-global_annual_conflict_deaths_terror_attacks) 📊: 8.3 thousand deaths/year (95% CI: 6 thousand deaths/year - 12 thousand deaths/year)
+- [Value of Statistical Life](#sec-value_of_statistical_life) 📊: $10M (95% CI: $5M - $15M)
+
+$$
+\begin{gathered}
+Cost_{terror,human} \\
+= Deaths_{terror} \times VSL \\
+= 8{,}300 \times \$10M \\
+= \$83B
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-global_annual_human_cost_terror_attacks.qmd >}}
+
+{{< include ../figures/sensitivity-table-global_annual_human_cost_terror_attacks.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-global_annual_human_cost_terror_attacks.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-global_annual_human_cost_terror_attacks.qmd >}}
+
+:::
+
+### Total Annual Human Life Losses from Conflict: $2.45T {#sec-global_annual_human_life_losses_conflict}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Total annual human life losses from conflict (sum of combat, terror, state violence)
+
+**Inputs**:
+
+- [Annual Cost of Combat Deaths](#sec-global_annual_human_cost_active_combat) 🔢: $2.34T
+- [Annual Cost of State Violence Deaths](#sec-global_annual_human_cost_state_violence) 🔢: $27B
+- [Annual Cost of Terror Deaths](#sec-global_annual_human_cost_terror_attacks) 🔢: $83B
+
+$$
+\begin{gathered}
+Loss_{life,conflict} \\
+= Cost_{combat,human} + Cost_{state,human} \\
++ Cost_{terror,human} \\
+= \$2.34T + \$27B + \$83B \\
+= \$2.45T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{combat,human} \\
+= Deaths_{combat} \times VSL \\
+= 234{,}000 \times \$10M \\
+= \$2.34T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{state,human} \\
+= Deaths_{state} \times VSL \\
+= 2{,}700 \times \$10M \\
+= \$27B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{terror,human} \\
+= Deaths_{terror} \times VSL \\
+= 8{,}300 \times \$10M \\
+= \$83B
+\end{gathered}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-global_annual_human_life_losses_conflict.qmd >}}
+
+{{< include ../figures/sensitivity-table-global_annual_human_life_losses_conflict.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-global_annual_human_life_losses_conflict.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-global_annual_human_life_losses_conflict.qmd >}}
+
+:::
+
+### Total Annual Infrastructure Destruction: $1.88T {#sec-global_annual_infrastructure_destruction_conflict}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Total annual infrastructure destruction (sum of transportation, energy, communications, water, education, healthcare)
+
+**Inputs**:
+
+- [Annual Infrastructure Damage to Communications from Conflict](#sec-global_annual_infrastructure_damage_communications_conflict) 📊: $298B (95% CI: $209B - $418B)
+- [Annual Infrastructure Damage to Education Facilities from Conflict](#sec-global_annual_infrastructure_damage_education_conflict) 📊: $234B (95% CI: $164B - $328B)
+- [Annual Infrastructure Damage to Energy Systems from Conflict](#sec-global_annual_infrastructure_damage_energy_conflict) 📊: $422B (95% CI: $295B - $590B)
+- [Annual Infrastructure Damage to Healthcare Facilities from Conflict](#sec-global_annual_infrastructure_damage_healthcare_conflict) 📊: $166B (95% CI: $116B - $232B)
+- [Annual Infrastructure Damage to Transportation from Conflict](#sec-global_annual_infrastructure_damage_transportation_conflict) 📊: $487B (95% CI: $340B - $680B)
+- [Annual Infrastructure Damage to Water Systems from Conflict](#sec-global_annual_infrastructure_damage_water_conflict) 📊: $268B (95% CI: $187B - $375B)
+
+$$
+\begin{gathered}
+Damage_{infra,total} \\
+= Damage_{comms} + Damage_{edu} + Damage_{energy} \\
++ Damage_{health} + Damage_{transport} + Damage_{water} \\
+= \$298B + \$234B + \$422B + \$166B + \$487B + \$268B \\
+= \$1.88T
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-global_annual_infrastructure_destruction_conflict.qmd >}}
+
+{{< include ../figures/sensitivity-table-global_annual_infrastructure_destruction_conflict.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-global_annual_infrastructure_destruction_conflict.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-global_annual_infrastructure_destruction_conflict.qmd >}}
+
+:::
+
+### Total Annual Trade Disruption: $616B {#sec-global_annual_trade_disruption_conflict}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Total annual trade disruption (sum of shipping, supply chain, energy prices, currency instability)
+
+**Inputs**:
+
+- [Annual Trade Disruption Costs from Currency Instability](#sec-global_annual_trade_disruption_currency_conflict) 📊: $57.4B (95% CI: $40B - $80B)
+- [Annual Trade Disruption Costs from Energy Price Volatility](#sec-global_annual_trade_disruption_energy_price_conflict) 📊: $125B (95% CI: $87B - $175B)
+- [Annual Trade Disruption Costs from Shipping Disruptions](#sec-global_annual_trade_disruption_shipping_conflict) 📊: $247B (95% CI: $173B - $346B)
+- [Annual Trade Disruption Costs from Supply Chain Disruptions](#sec-global_annual_trade_disruption_supply_chain_conflict) 📊: $187B (95% CI: $131B - $262B)
+
+$$
+\begin{gathered}
+Disruption_{trade} \\
+= Disruption_{currency} + Disruption_{energy} \\
++ Disruption_{shipping} + Disruption_{supply} \\
+= \$57.4B + \$125B + \$247B + \$187B \\
+= \$616B
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-global_annual_trade_disruption_conflict.qmd >}}
+
+{{< include ../figures/sensitivity-table-global_annual_trade_disruption_conflict.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-global_annual_trade_disruption_conflict.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-global_annual_trade_disruption_conflict.qmd >}}
+
+:::
+
+### Total Annual Direct War Costs: $7.66T {#sec-global_annual_war_direct_costs_total}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Total annual direct war costs (military spending + infrastructure + human life + trade disruption)
+
+**Inputs**:
+
+- [Total Annual Human Life Losses from Conflict](#sec-global_annual_human_life_losses_conflict) 🔢: $2.45T
+- [Total Annual Infrastructure Destruction](#sec-global_annual_infrastructure_destruction_conflict) 🔢: $1.88T
+- [Total Annual Trade Disruption](#sec-global_annual_trade_disruption_conflict) 🔢: $616B
+- [Global Military Spending in 2024](#sec-global_military_spending_annual_2024) 📊: $2.72T
+
+$$
+\begin{gathered}
+Cost_{war,direct} \\
+= Loss_{life,conflict} + Damage_{infra,total} \\
++ Disruption_{trade} + Spending_{mil} \\
+= \$2.45T + \$1.88T + \$616B + \$2.72T \\
+= \$7.66T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Loss_{life,conflict} \\
+= Cost_{combat,human} + Cost_{state,human} \\
++ Cost_{terror,human} \\
+= \$2.34T + \$27B + \$83B \\
+= \$2.45T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{combat,human} \\
+= Deaths_{combat} \times VSL \\
+= 234{,}000 \times \$10M \\
+= \$2.34T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{state,human} \\
+= Deaths_{state} \times VSL \\
+= 2{,}700 \times \$10M \\
+= \$27B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{terror,human} \\
+= Deaths_{terror} \times VSL \\
+= 8{,}300 \times \$10M \\
+= \$83B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Damage_{infra,total} \\
+= Damage_{comms} + Damage_{edu} + Damage_{energy} \\
++ Damage_{health} + Damage_{transport} + Damage_{water} \\
+= \$298B + \$234B + \$422B + \$166B + \$487B + \$268B \\
+= \$1.88T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Disruption_{trade} \\
+= Disruption_{currency} + Disruption_{energy} \\
++ Disruption_{shipping} + Disruption_{supply} \\
+= \$57.4B + \$125B + \$247B + \$187B \\
+= \$616B
+\end{gathered}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-global_annual_war_direct_costs_total.qmd >}}
+
+{{< include ../figures/sensitivity-table-global_annual_war_direct_costs_total.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-global_annual_war_direct_costs_total.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-global_annual_war_direct_costs_total.qmd >}}
+
+:::
+
+### Total Annual Indirect War Costs: $3.7T {#sec-global_annual_war_indirect_costs_total}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Total annual indirect war costs (opportunity cost + veterans + refugees + environment + mental health + lost productivity)
+
+**Inputs**:
+
+- [Annual Environmental Damage and Restoration Costs from Conflict](#sec-global_annual_environmental_damage_conflict) 📊: $100B (95% CI: $70B - $140B)
+- [Annual Lost Economic Growth from Military Spending Opportunity Cost](#sec-global_annual_lost_economic_growth_military_spending) 📊: $2.72T (95% CI: $1.9T - $3.8T)
+- [Annual Lost Productivity from Conflict Casualties](#sec-global_annual_lost_human_capital_conflict) 📊: $300B (95% CI: $210B - $420B)
+- [Annual PTSD and Mental Health Costs from Conflict](#sec-global_annual_psychological_impact_costs_conflict) 📊: $232B (95% CI: $162B - $325B)
+- [Annual Refugee Support Costs](#sec-global_annual_refugee_support_costs) 📊: $150B (95% CI: $105B - $210B)
+- [Annual Veteran Healthcare Costs](#sec-global_annual_veteran_healthcare_costs) 📊: $200B (95% CI: $140B - $280B)
+
+$$
+\begin{gathered}
+Cost_{war,indirect} \\
+= Damage_{env} + Loss_{growth,mil} + Loss_{capital,conflict} \\
++ Cost_{psych} + Cost_{refugee} + Cost_{vet} \\
+= \$100B + \$2.72T + \$300B + \$232B + \$150B + \$200B \\
+= \$3.7T
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-global_annual_war_indirect_costs_total.qmd >}}
+
+{{< include ../figures/sensitivity-table-global_annual_war_indirect_costs_total.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-global_annual_war_indirect_costs_total.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-global_annual_war_indirect_costs_total.qmd >}}
+
+:::
+
 ### Global Average Income (2025 Baseline): $14.4K {#sec-global_avg_income_2025}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -604,6 +1287,169 @@ $$
 
 :::
 
+### Annual Peace Dividend from 1% Reduction in Total War Costs: $114B {#sec-peace_dividend_annual_societal_benefit}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual peace dividend from 1% reduction in total war costs (theoretical maximum at ε=1.0)
+
+**Inputs**:
+
+- [Total Annual Cost of War Worldwide](#sec-global_annual_direct_indirect_war_cost) 🔢: $11.4T
+- [1% Reduction in Military Spending/War Costs from Treaty](#sec-treaty_reduction_pct): 1%
+
+$$
+\begin{gathered}
+Benefit_{peace,soc} \\
+= Cost_{war,total} \times Reduce_{treaty} \\
+= \$11.4T \times 1\% \\
+= \$114B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,total} \\
+= Cost_{war,direct} + Cost_{war,indirect} \\
+= \$7.66T + \$3.7T \\
+= \$11.4T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,direct} \\
+= Loss_{life,conflict} + Damage_{infra,total} \\
++ Disruption_{trade} + Spending_{mil} \\
+= \$2.45T + \$1.88T + \$616B + \$2.72T \\
+= \$7.66T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Loss_{life,conflict} \\
+= Cost_{combat,human} + Cost_{state,human} \\
++ Cost_{terror,human} \\
+= \$2.34T + \$27B + \$83B \\
+= \$2.45T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{combat,human} \\
+= Deaths_{combat} \times VSL \\
+= 234{,}000 \times \$10M \\
+= \$2.34T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{state,human} \\
+= Deaths_{state} \times VSL \\
+= 2{,}700 \times \$10M \\
+= \$27B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{terror,human} \\
+= Deaths_{terror} \times VSL \\
+= 8{,}300 \times \$10M \\
+= \$83B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Damage_{infra,total} \\
+= Damage_{comms} + Damage_{edu} + Damage_{energy} \\
++ Damage_{health} + Damage_{transport} + Damage_{water} \\
+= \$298B + \$234B + \$422B + \$166B + \$487B + \$268B \\
+= \$1.88T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Disruption_{trade} \\
+= Disruption_{currency} + Disruption_{energy} \\
++ Disruption_{shipping} + Disruption_{supply} \\
+= \$57.4B + \$125B + \$247B + \$187B \\
+= \$616B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,indirect} \\
+= Damage_{env} + Loss_{growth,mil} + Loss_{capital,conflict} \\
++ Cost_{psych} + Cost_{refugee} + Cost_{vet} \\
+= \$100B + \$2.72T + \$300B + \$232B + \$150B + \$200B \\
+= \$3.7T
+\end{gathered}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-peace_dividend_annual_societal_benefit.qmd >}}
+
+{{< include ../figures/sensitivity-table-peace_dividend_annual_societal_benefit.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-peace_dividend_annual_societal_benefit.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-peace_dividend_annual_societal_benefit.qmd >}}
+
+:::
+
+### Annual Lives Saved by Pharmaceuticals: 12.4 million deaths {#sec-pharma_lives_saved_annual}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual lives saved by pharmaceutical interventions globally. Derived from Lichtenberg (2019) finding of 148.7M life-years saved, divided by assumed 12-year average life extension per beneficiary. Note: Life-years is the primary metric; lives is an approximation for intuitive communication.
+
+**Inputs**:
+
+- [Annual Life-Years Saved by Pharmaceuticals](#sec-pharma_life_years_saved_annual) 📊: 149 million life-years (95% CI: 79.4 million life-years - 240 million life-years)
+- [Average Life Extension per Beneficiary](#sec-avg_life_extension_per_beneficiary): 12 years (95% CI: 8 years - 18 years)
+
+$$
+\begin{gathered}
+Lives_{saved,annual} \\
+= \frac{LY_{saved,annual}}{T_{ext}} \\
+= \frac{149M}{12} \\
+= 12.4M
+\end{gathered}
+$$
+
+**Methodology**: [@lichtenberg-life-years-saved-2019]
+
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-pharma_lives_saved_annual.qmd >}}
+
+{{< include ../figures/sensitivity-table-pharma_lives_saved_annual.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-pharma_lives_saved_annual.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-pharma_lives_saved_annual.qmd >}}
+
+:::
+
 ### Global Opportunity Cost Total: $101T {#sec-political_dysfunction_global_opportunity_cost_total}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -694,7 +1540,186 @@ $$
 
 :::
 
-### Treaty Trajectory Average Income at Year 20: $339K {#sec-treaty_trajectory_avg_income_year_20}
+### Treaty Cybercrime Recovery GDP Growth Bonus (Year 20): 0.53% {#sec-treaty_cybercrime_recovery_gdp_growth_bonus_year_20}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual GDP growth bonus by year 20 from reducing cybercrime drag as the treaty weakens the destructive economy feedback loop.
+
+**Inputs**:
+
+- [Global Cybercrime Costs (2025)](#sec-global_cybercrime_cost_annual_2025) 📊: $10.5T
+- [Global GDP (2025)](#sec-global_gdp_2025) 📊: $115T
+- [Treaty Effective Reallocation Share (Year 20)](#sec-treaty_effective_reallocation_share_year_20): 5.8%
+- [Peace Dividend Conflict Elasticity](#sec-peace_dividend_conflict_elasticity): 1:1 (95% CI: 0.25:1 - 1.5:1)
+
+$$
+\begin{gathered}
+g_{cyber,treaty,20} \\
+= \left(\frac{Cost_{cyber,2025}}{GDP_0}\right)\cdot\bar{s}_{treaty,20}\cdot\varepsilon_{conflict}
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-treaty_cybercrime_recovery_gdp_growth_bonus_year_20.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-treaty_cybercrime_recovery_gdp_growth_bonus_year_20.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-treaty_cybercrime_recovery_gdp_growth_bonus_year_20.qmd >}}
+
+:::
+
+### Treaty Disease Cure Fraction (20yr, Take-Hold Path): 100% {#sec-treaty_disease_cure_fraction_20yr}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Treaty disease-cure fraction over 20 years under the optimistic treaty take-hold path. The initial 1% treaty expands to 2%, then 5%, then 10%, and cumulative trial throughput is capped by the physical participant ceiling.
+
+**Inputs**:
+
+- [Diseases Getting First Treatment Per Year](#sec-new_disease_first_treatments_per_year) 📊: 15 diseases/year (95% CI: 8 diseases/year - 30 diseases/year)
+- [Trial Capacity Multiplier](#sec-dfda_trial_capacity_multiplier) 🔢: 12.3x
+- [Maximum Trial Capacity Multiplier (Physical Limit)](#sec-dfda_max_trial_capacity_multiplier_physical) 🔢: 566x
+- [Diseases Without Effective Treatment](#sec-diseases_without_effective_treatment) 🔢: 6.65 thousand diseases
+
+$$
+\begin{gathered}
+f_{cure,20,treaty} \\
+= \min\left(1,\frac{Treatments_{new,ann}\cdot \sum_y k_{capacity,y}}{D_{untreated}}\right)
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-treaty_disease_cure_fraction_20yr.qmd >}}
+
+:::
+
+### Treaty Health Recovery GDP Growth Bonus (Year 20): 6.28% {#sec-treaty_health_recovery_gdp_growth_bonus_year_20}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annualized GDP growth bonus by year 20 from lower disease burden plus eliminating existing-drug efficacy lag under the treaty path.
+
+**Inputs**:
+
+- [Treaty Disease Cure Fraction (20yr, Take-Hold Path)](#sec-treaty_disease_cure_fraction_20yr) 🔢: 100%
+- [Disease Burden as % of GDP](#sec-disease_burden_gdp_drag_pct) 📊: 13%
+- [Total Economic Loss from Historical Progress Delays](#sec-existing_drugs_efficacy_lag_economic_loss) 🔢: $259T
+- [Global GDP (2025)](#sec-global_gdp_2025) 📊: $115T
+
+$$
+\begin{gathered}
+g_{health,treaty,20} \\
+= \left(1 + f_{cure,20,treaty}\cdot d_{disease} \\
++ \frac{Loss_{lag,existing}}{GDP_0}\right)^{1/20}-1
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-treaty_health_recovery_gdp_growth_bonus_year_20.qmd >}}
+
+{{< include ../figures/sensitivity-table-treaty_health_recovery_gdp_growth_bonus_year_20.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-treaty_health_recovery_gdp_growth_bonus_year_20.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-treaty_health_recovery_gdp_growth_bonus_year_20.qmd >}}
+
+:::
+
+### Treaty Peace Recovery GDP Growth Bonus (Year 20): 0.573% {#sec-treaty_peace_recovery_gdp_growth_bonus_year_20}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual GDP growth bonus by year 20 from explicit avoided war-cost drag under the treaty take-hold path.
+
+**Inputs**:
+
+- [Annual Peace Dividend from 1% Reduction in Total War Costs](#sec-peace_dividend_annual_societal_benefit) 🔢: $114B
+- [Global GDP (2025)](#sec-global_gdp_2025) 📊: $115T
+- [Treaty Effective Reallocation Share (Year 20)](#sec-treaty_effective_reallocation_share_year_20): 5.8%
+- [1% Reduction in Military Spending/War Costs from Treaty](#sec-treaty_reduction_pct): 1%
+- [Peace Dividend Conflict Elasticity](#sec-peace_dividend_conflict_elasticity): 1:1 (95% CI: 0.25:1 - 1.5:1)
+
+$$
+\begin{gathered}
+g_{peace,treaty,20} \\
+= \left(\frac{Benefit_{peace,soc}}{GDP_0}\right)\cdot\left(\frac{\bar{s}_{treaty,20}}{Reduce_{treaty}}\right)\cdot\varepsilon_{conflict}
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-treaty_peace_recovery_gdp_growth_bonus_year_20.qmd >}}
+
+{{< include ../figures/sensitivity-table-treaty_peace_recovery_gdp_growth_bonus_year_20.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-treaty_peace_recovery_gdp_growth_bonus_year_20.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-treaty_peace_recovery_gdp_growth_bonus_year_20.qmd >}}
+
+:::
+
+### Treaty Redirect GDP Growth Bonus (Year 20): 1.06% {#sec-treaty_redirect_gdp_growth_bonus_year_20}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual GDP growth bonus by year 20 from redirecting military spending to medical research under the treaty take-hold path, including R&D spillovers.
+
+**Inputs**:
+
+- [Treaty Effective Reallocation Share (Year 20)](#sec-treaty_effective_reallocation_share_year_20): 5.8%
+- [GDP Growth Boost at 30% Military Reallocation](#sec-military_redirect_gdp_boost_at_30pct): 5.5% (95% CI: 3.5% - 7.5%)
+- [R&D Spillover Multiplier](#sec-rd_spillover_multiplier): 2x (95% CI: 1.5x - 2.5x)
+
+$$
+\begin{gathered}
+g_{redirect,treaty,20} \\
+= \bar{s}_{treaty,20}\cdot\left(\frac{\Delta g_{30\%}}{0.30}\right)\cdot\left(\frac{m_{spillover}}{2.0}\right)
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-treaty_redirect_gdp_growth_bonus_year_20.qmd >}}
+
+{{< include ../figures/sensitivity-table-treaty_redirect_gdp_growth_bonus_year_20.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-treaty_redirect_gdp_growth_bonus_year_20.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-treaty_redirect_gdp_growth_bonus_year_20.qmd >}}
+
+:::
+
+### Treaty Trajectory Average Income at Year 20: $99.9K {#sec-treaty_trajectory_avg_income_year_20}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -702,7 +1727,7 @@ Average income (GDP per capita) at year 20 under the Treaty Trajectory.
 
 **Inputs**:
 
-- [Treaty Trajectory GDP at Year 20](#sec-treaty_trajectory_gdp_year_20) 🔢: $3.11 quadrillion
+- [Treaty Trajectory GDP at Year 20](#sec-treaty_trajectory_gdp_year_20) 🔢: $919T
 - [Global Population 2045 (Projected)](#sec-global_population_2045_projected) 📊: 9.2 billion of people
 
 $$
@@ -727,7 +1752,7 @@ $$
 
 :::
 
-### Treaty Trajectory CAGR (20 Years): 17.9% {#sec-treaty_trajectory_cagr_year_20}
+### Treaty Trajectory CAGR (20 Years): 10.9% {#sec-treaty_trajectory_cagr_year_20}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -735,7 +1760,7 @@ Compound annual growth rate implied by Treaty Trajectory GDP trajectory over 20 
 
 **Inputs**:
 
-- [Treaty Trajectory GDP at Year 20](#sec-treaty_trajectory_gdp_year_20) 🔢: $3.11 quadrillion
+- [Treaty Trajectory GDP at Year 20](#sec-treaty_trajectory_gdp_year_20) 🔢: $919T
 - [Global GDP (2025)](#sec-global_gdp_2025) 📊: $115T
 
 $$
@@ -763,24 +1788,24 @@ $$
 
 :::
 
-### Treaty Trajectory Cumulative Lifetime Income (Per Capita): $16.1M {#sec-treaty_trajectory_cumulative_lifetime_income}
+### Treaty Trajectory Cumulative Lifetime Income (Per Capita): $4.58M {#sec-treaty_trajectory_cumulative_lifetime_income}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Cumulative per-capita income over an average remaining lifespan under Treaty Trajectory. Uses implied per-capita CAGR for years 1-20 (derived from known year-0 and year-20 per-capita incomes), then baseline growth from the year-20 level. Conservative: assumes no further treaty acceleration beyond year 20.
+Cumulative per-capita income over an average remaining lifespan under Treaty Trajectory. Uses implied per-capita CAGR for years 1-20 (derived from known year-0 and year-20 per-capita incomes), then current-trajectory per-capita growth from the year-20 level. Conservative: assumes no further treaty acceleration beyond year 20.
 
 **Inputs**:
 
 - [Global Average Income (2025 Baseline)](#sec-global_avg_income_2025) 🔢: $14.4K
-- [Treaty Trajectory Average Income at Year 20](#sec-treaty_trajectory_avg_income_year_20) 🔢: $339K
-- [Baseline Global GDP Growth Rate](#sec-gdp_baseline_growth_rate): 2.5%
+- [Treaty Trajectory Average Income at Year 20](#sec-treaty_trajectory_avg_income_year_20) 🔢: $99.9K
+- [Current Trajectory Average Income at Year 20](#sec-current_trajectory_avg_income_year_20) 🔢: $20.5K
 - [Average Remaining Years (Median Person)](#sec-global_avg_remaining_years) 🔢: 48.5 years
 
 $$
 \begin{gathered}
 Y_{cum,treaty} \\
-= \bar{y}_0 \cdot \frac{(1+g_{pc})((1+g_{pc})^{20}-1)}{g_{pc}} \\
-+ \bar{y}_{treaty,20} \cdot \frac{(1+g_{base})((1+g_{base})^{T_{remaining}-20}-1)}{g_{base}}
+= \bar{y}_0 \cdot \frac{(1+g_{pc,treaty})((1+g_{pc,treaty})^{20}-1)}{g_{pc,treaty}} \\
++ \bar{y}_{treaty,20} \cdot \frac{(1+g_{pc,base})((1+g_{pc,base})^{T_{remaining}-20}-1)}{g_{pc,base}}
 \end{gathered}
 $$
 
@@ -802,26 +1827,26 @@ $$
 
 :::
 
-### Treaty Trajectory GDP at Year 20: $3.11 quadrillion {#sec-treaty_trajectory_gdp_year_20}
+### Treaty Trajectory GDP at Year 20: $919T {#sec-treaty_trajectory_gdp_year_20}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Projected global GDP at year 20 under the Treaty Trajectory: military-to-science reallocation plus disease-burden recovery only. Excludes non-health dysfunction-capital reallocation to isolate the lower-political-baggage channel.
+Projected global GDP at year 20 under the optimistic treaty take-hold path. Compounds baseline growth plus explicit military redirect spillovers, peace dividend recovery, cybercrime drag recovery, and health recovery from disease cures and faster deployment.
 
 **Inputs**:
 
 - [Global GDP (2025)](#sec-global_gdp_2025) 📊: $115T
 - [Baseline Global GDP Growth Rate](#sec-gdp_baseline_growth_rate): 2.5%
-- [Wishonia Military Reallocation Physical Max Share](#sec-wishonia_military_reallocation_physical_max_share) 🔢: 87.6%
-- [GDP Growth Boost at 30% Military Reallocation](#sec-military_redirect_gdp_boost_at_30pct): 5.5% (95% CI: 3.5% - 7.5%)
-- [R&D Spillover Multiplier](#sec-rd_spillover_multiplier): 2x (95% CI: 1.5x - 2.5x)
-- [Wishonia Disease Cure Fraction (20yr, Full Implementation)](#sec-wishonia_disease_cure_fraction_20yr_full) 🔢: 100%
-- [Disease Burden as % of GDP](#sec-disease_burden_gdp_drag_pct) 📊: 13%
+- [Treaty Redirect GDP Growth Bonus (Year 20)](#sec-treaty_redirect_gdp_growth_bonus_year_20) 🔢: 1.06%
+- [Treaty Peace Recovery GDP Growth Bonus (Year 20)](#sec-treaty_peace_recovery_gdp_growth_bonus_year_20) 🔢: 0.573%
+- [Treaty Cybercrime Recovery GDP Growth Bonus (Year 20)](#sec-treaty_cybercrime_recovery_gdp_growth_bonus_year_20) 🔢: 0.53%
+- [Treaty Health Recovery GDP Growth Bonus (Year 20)](#sec-treaty_health_recovery_gdp_growth_bonus_year_20) 🔢: 6.28%
 
 $$
 \begin{gathered}
 GDP_{treaty,20} \\
-= GDP_0(1+g_{treaty,ramp})^3(1+g_{treaty,full})^{17}
+= GDP_0(1 + g_{base} + g_{redirect} + g_{peace} + g_{cyber} \\
++ g_{health})^{20}
 \end{gathered}
 $$
 
@@ -843,7 +1868,7 @@ $$
 
 :::
 
-### Treaty Trajectory Lifetime Income Gain (Per Capita): $14.7M {#sec-treaty_trajectory_lifetime_income_gain_per_capita}
+### Treaty Trajectory Lifetime Income Gain (Per Capita): $3.48M {#sec-treaty_trajectory_lifetime_income_gain_per_capita}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -851,23 +1876,23 @@ Lifetime per-capita income gain from Treaty Trajectory vs current trajectory. Cu
 
 **Inputs**:
 
-- [Treaty Trajectory Cumulative Lifetime Income (Per Capita)](#sec-treaty_trajectory_cumulative_lifetime_income) 🔢: $16.1M
-- [Current Trajectory Cumulative Lifetime Income (Per Capita)](#sec-current_trajectory_cumulative_lifetime_income) 🔢: $1.34M
+- [Treaty Trajectory Cumulative Lifetime Income (Per Capita)](#sec-treaty_trajectory_cumulative_lifetime_income) 🔢: $4.58M
+- [Current Trajectory Cumulative Lifetime Income (Per Capita)](#sec-current_trajectory_cumulative_lifetime_income) 🔢: $1.1M
 
 $$
 \begin{gathered}
 \Delta Y_{lifetime,treaty} \\
 = Y_{cum,treaty} - Y_{cum,earth} \\
-= \$16.1M - \$1.34M \\
-= \$14.7M
+= \$4.58M - \$1.1M \\
+= \$3.48M
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
 Y_{cum,treaty} \\
-= \bar{y}_0 \cdot \frac{(1+g_{pc})((1+g_{pc})^{20}-1)}{g_{pc}} \\
-+ \bar{y}_{treaty,20} \cdot \frac{(1+g_{base})((1+g_{base})^{T_{remaining}-20}-1)}{g_{base}}
+= \bar{y}_0 \cdot \frac{(1+g_{pc,treaty})((1+g_{pc,treaty})^{20}-1)}{g_{pc,treaty}} \\
++ \bar{y}_{treaty,20} \cdot \frac{(1+g_{pc,base})((1+g_{pc,base})^{T_{remaining}-20}-1)}{g_{pc,base}}
 \end{gathered}
 $$
 where:
@@ -887,27 +1912,139 @@ where:
 $$
 \begin{gathered}
 GDP_{treaty,20} \\
-= GDP_0(1+g_{treaty,ramp})^3(1+g_{treaty,full})^{17}
-\end{gathered}
-$$
-where:
-$$
-s_{mil,max} = Cut_{WW2} = 87.6\% = 87.6\%
-$$
-where:
-$$
-\begin{gathered}
-Cut_{WW2} \\
-= 1 - \frac{Spending_{US,1947}}{Spending_{US,1945}} \\
-= 1 - \frac{\$176B}{\$1.42T} \\
-= 87.6\%
+= GDP_0(1 + g_{base} + g_{redirect} + g_{peace} + g_{cyber} \\
++ g_{health})^{20}
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
-f_{cure,20,wish} \\
-= \min\left(1,\frac{Treatments_{new,ann}\cdot k_{capacity,wish}\cdot 20}{D_{untreated}}\right)
+g_{redirect,treaty,20} \\
+= \bar{s}_{treaty,20}\cdot\left(\frac{\Delta g_{30\%}}{0.30}\right)\cdot\left(\frac{m_{spillover}}{2.0}\right)
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+g_{peace,treaty,20} \\
+= \left(\frac{Benefit_{peace,soc}}{GDP_0}\right)\cdot\left(\frac{\bar{s}_{treaty,20}}{Reduce_{treaty}}\right)\cdot\varepsilon_{conflict}
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Benefit_{peace,soc} \\
+= Cost_{war,total} \times Reduce_{treaty} \\
+= \$11.4T \times 1\% \\
+= \$114B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,total} \\
+= Cost_{war,direct} + Cost_{war,indirect} \\
+= \$7.66T + \$3.7T \\
+= \$11.4T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,direct} \\
+= Loss_{life,conflict} + Damage_{infra,total} \\
++ Disruption_{trade} + Spending_{mil} \\
+= \$2.45T + \$1.88T + \$616B + \$2.72T \\
+= \$7.66T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Loss_{life,conflict} \\
+= Cost_{combat,human} + Cost_{state,human} \\
++ Cost_{terror,human} \\
+= \$2.34T + \$27B + \$83B \\
+= \$2.45T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{combat,human} \\
+= Deaths_{combat} \times VSL \\
+= 234{,}000 \times \$10M \\
+= \$2.34T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{state,human} \\
+= Deaths_{state} \times VSL \\
+= 2{,}700 \times \$10M \\
+= \$27B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{terror,human} \\
+= Deaths_{terror} \times VSL \\
+= 8{,}300 \times \$10M \\
+= \$83B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Damage_{infra,total} \\
+= Damage_{comms} + Damage_{edu} + Damage_{energy} \\
++ Damage_{health} + Damage_{transport} + Damage_{water} \\
+= \$298B + \$234B + \$422B + \$166B + \$487B + \$268B \\
+= \$1.88T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Disruption_{trade} \\
+= Disruption_{currency} + Disruption_{energy} \\
++ Disruption_{shipping} + Disruption_{supply} \\
+= \$57.4B + \$125B + \$247B + \$187B \\
+= \$616B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,indirect} \\
+= Damage_{env} + Loss_{growth,mil} + Loss_{capital,conflict} \\
++ Cost_{psych} + Cost_{refugee} + Cost_{vet} \\
+= \$100B + \$2.72T + \$300B + \$232B + \$150B + \$200B \\
+= \$3.7T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+g_{cyber,treaty,20} \\
+= \left(\frac{Cost_{cyber,2025}}{GDP_0}\right)\cdot\bar{s}_{treaty,20}\cdot\varepsilon_{conflict}
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+g_{health,treaty,20} \\
+= \left(1 + f_{cure,20,treaty}\cdot d_{disease} \\
++ \frac{Loss_{lag,existing}}{GDP_0}\right)^{1/20}-1
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+f_{cure,20,treaty} \\
+= \min\left(1,\frac{Treatments_{new,ann}\cdot \sum_y k_{capacity,y}}{D_{untreated}}\right)
 \end{gathered}
 $$
 where:
@@ -977,6 +2114,46 @@ $$
 where:
 $$
 \begin{gathered}
+Loss_{lag} \\
+= Deaths_{lag,total} \times (LE_{global} - Age_{death,delay}) \times Value_{QALY} \\
+= 102M \times (79 - 62) \times \$150K \\
+= \$259T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Deaths_{lag,total} \\
+= Lives_{saved,annual} \times T_{lag} \\
+= 12.4M \times 8.2 \\
+= 102M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Lives_{saved,annual} \\
+= \frac{LY_{saved,annual}}{T_{ext}} \\
+= \frac{149M}{12} \\
+= 12.4M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+\bar{y}_{base,20} \\
+= \frac{GDP_{base,20}}{Pop_{2045}} \\
+= \frac{\$188T}{9.2B} \\
+= \$20.5K
+\end{gathered}
+$$
+where:
+$$
+GDP_{base,20} = GDP_0(1+g_{base})^{20}
+$$
+where:
+$$
+\begin{gathered}
 T_{remaining} \\
 = LE_{global} - Age_{median} \\
 = 79 - 30.5 \\
@@ -987,7 +2164,7 @@ where:
 $$
 \begin{gathered}
 Y_{cum,earth} \\
-= \bar{y}_0 \cdot \frac{(1+g_{base})((1+g_{base})^{T_{remaining}}-1)}{g_{base}}
+= \bar{y}_0 \cdot \frac{(1+g_{pc,base})((1+g_{pc,base})^{T_{remaining}}-1)}{g_{pc,base}}
 \end{gathered}
 $$
 *✓ High confidence*
@@ -1008,7 +2185,7 @@ $$
 
 :::
 
-### Treaty Trajectory Lifetime Income Multiplier: 12x {#sec-treaty_trajectory_lifetime_income_multiplier}
+### Treaty Trajectory Lifetime Income Multiplier: 4.17x {#sec-treaty_trajectory_lifetime_income_multiplier}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -1016,23 +2193,23 @@ Ratio of cumulative lifetime income under Treaty Trajectory vs current trajector
 
 **Inputs**:
 
-- [Treaty Trajectory Cumulative Lifetime Income (Per Capita)](#sec-treaty_trajectory_cumulative_lifetime_income) 🔢: $16.1M
-- [Current Trajectory Cumulative Lifetime Income (Per Capita)](#sec-current_trajectory_cumulative_lifetime_income) 🔢: $1.34M
+- [Treaty Trajectory Cumulative Lifetime Income (Per Capita)](#sec-treaty_trajectory_cumulative_lifetime_income) 🔢: $4.58M
+- [Current Trajectory Cumulative Lifetime Income (Per Capita)](#sec-current_trajectory_cumulative_lifetime_income) 🔢: $1.1M
 
 $$
 \begin{gathered}
 k_{lifetime,treaty:earth} \\
 = \frac{Y_{cum,treaty}}{Y_{cum,earth}} \\
-= \frac{\$16.1M}{\$1.34M} \\
-= 12
+= \frac{\$4.58M}{\$1.1M} \\
+= 4.17
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
 Y_{cum,treaty} \\
-= \bar{y}_0 \cdot \frac{(1+g_{pc})((1+g_{pc})^{20}-1)}{g_{pc}} \\
-+ \bar{y}_{treaty,20} \cdot \frac{(1+g_{base})((1+g_{base})^{T_{remaining}-20}-1)}{g_{base}}
+= \bar{y}_0 \cdot \frac{(1+g_{pc,treaty})((1+g_{pc,treaty})^{20}-1)}{g_{pc,treaty}} \\
++ \bar{y}_{treaty,20} \cdot \frac{(1+g_{pc,base})((1+g_{pc,base})^{T_{remaining}-20}-1)}{g_{pc,base}}
 \end{gathered}
 $$
 where:
@@ -1052,27 +2229,139 @@ where:
 $$
 \begin{gathered}
 GDP_{treaty,20} \\
-= GDP_0(1+g_{treaty,ramp})^3(1+g_{treaty,full})^{17}
-\end{gathered}
-$$
-where:
-$$
-s_{mil,max} = Cut_{WW2} = 87.6\% = 87.6\%
-$$
-where:
-$$
-\begin{gathered}
-Cut_{WW2} \\
-= 1 - \frac{Spending_{US,1947}}{Spending_{US,1945}} \\
-= 1 - \frac{\$176B}{\$1.42T} \\
-= 87.6\%
+= GDP_0(1 + g_{base} + g_{redirect} + g_{peace} + g_{cyber} \\
++ g_{health})^{20}
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
-f_{cure,20,wish} \\
-= \min\left(1,\frac{Treatments_{new,ann}\cdot k_{capacity,wish}\cdot 20}{D_{untreated}}\right)
+g_{redirect,treaty,20} \\
+= \bar{s}_{treaty,20}\cdot\left(\frac{\Delta g_{30\%}}{0.30}\right)\cdot\left(\frac{m_{spillover}}{2.0}\right)
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+g_{peace,treaty,20} \\
+= \left(\frac{Benefit_{peace,soc}}{GDP_0}\right)\cdot\left(\frac{\bar{s}_{treaty,20}}{Reduce_{treaty}}\right)\cdot\varepsilon_{conflict}
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Benefit_{peace,soc} \\
+= Cost_{war,total} \times Reduce_{treaty} \\
+= \$11.4T \times 1\% \\
+= \$114B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,total} \\
+= Cost_{war,direct} + Cost_{war,indirect} \\
+= \$7.66T + \$3.7T \\
+= \$11.4T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,direct} \\
+= Loss_{life,conflict} + Damage_{infra,total} \\
++ Disruption_{trade} + Spending_{mil} \\
+= \$2.45T + \$1.88T + \$616B + \$2.72T \\
+= \$7.66T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Loss_{life,conflict} \\
+= Cost_{combat,human} + Cost_{state,human} \\
++ Cost_{terror,human} \\
+= \$2.34T + \$27B + \$83B \\
+= \$2.45T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{combat,human} \\
+= Deaths_{combat} \times VSL \\
+= 234{,}000 \times \$10M \\
+= \$2.34T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{state,human} \\
+= Deaths_{state} \times VSL \\
+= 2{,}700 \times \$10M \\
+= \$27B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{terror,human} \\
+= Deaths_{terror} \times VSL \\
+= 8{,}300 \times \$10M \\
+= \$83B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Damage_{infra,total} \\
+= Damage_{comms} + Damage_{edu} + Damage_{energy} \\
++ Damage_{health} + Damage_{transport} + Damage_{water} \\
+= \$298B + \$234B + \$422B + \$166B + \$487B + \$268B \\
+= \$1.88T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Disruption_{trade} \\
+= Disruption_{currency} + Disruption_{energy} \\
++ Disruption_{shipping} + Disruption_{supply} \\
+= \$57.4B + \$125B + \$247B + \$187B \\
+= \$616B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,indirect} \\
+= Damage_{env} + Loss_{growth,mil} + Loss_{capital,conflict} \\
++ Cost_{psych} + Cost_{refugee} + Cost_{vet} \\
+= \$100B + \$2.72T + \$300B + \$232B + \$150B + \$200B \\
+= \$3.7T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+g_{cyber,treaty,20} \\
+= \left(\frac{Cost_{cyber,2025}}{GDP_0}\right)\cdot\bar{s}_{treaty,20}\cdot\varepsilon_{conflict}
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+g_{health,treaty,20} \\
+= \left(1 + f_{cure,20,treaty}\cdot d_{disease} \\
++ \frac{Loss_{lag,existing}}{GDP_0}\right)^{1/20}-1
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+f_{cure,20,treaty} \\
+= \min\left(1,\frac{Treatments_{new,ann}\cdot \sum_y k_{capacity,y}}{D_{untreated}}\right)
 \end{gathered}
 $$
 where:
@@ -1142,6 +2431,46 @@ $$
 where:
 $$
 \begin{gathered}
+Loss_{lag} \\
+= Deaths_{lag,total} \times (LE_{global} - Age_{death,delay}) \times Value_{QALY} \\
+= 102M \times (79 - 62) \times \$150K \\
+= \$259T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Deaths_{lag,total} \\
+= Lives_{saved,annual} \times T_{lag} \\
+= 12.4M \times 8.2 \\
+= 102M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Lives_{saved,annual} \\
+= \frac{LY_{saved,annual}}{T_{ext}} \\
+= \frac{149M}{12} \\
+= 12.4M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+\bar{y}_{base,20} \\
+= \frac{GDP_{base,20}}{Pop_{2045}} \\
+= \frac{\$188T}{9.2B} \\
+= \$20.5K
+\end{gathered}
+$$
+where:
+$$
+GDP_{base,20} = GDP_0(1+g_{base})^{20}
+$$
+where:
+$$
+\begin{gathered}
 T_{remaining} \\
 = LE_{global} - Age_{median} \\
 = 79 - 30.5 \\
@@ -1152,7 +2481,7 @@ where:
 $$
 \begin{gathered}
 Y_{cum,earth} \\
-= \bar{y}_0 \cdot \frac{(1+g_{base})((1+g_{base})^{T_{remaining}}-1)}{g_{base}}
+= \bar{y}_0 \cdot \frac{(1+g_{pc,base})((1+g_{pc,base})^{T_{remaining}}-1)}{g_{pc,base}}
 \end{gathered}
 $$
 *✓ High confidence*
@@ -1331,24 +2660,24 @@ $$
 
 :::
 
-### Wishonia Trajectory Cumulative Lifetime Income (Per Capita): $53.3M {#sec-wishonia_trajectory_cumulative_lifetime_income}
+### Wishonia Trajectory Cumulative Lifetime Income (Per Capita): $48.3M {#sec-wishonia_trajectory_cumulative_lifetime_income}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Cumulative per-capita income over an average remaining lifespan under Wishonia Trajectory. Uses implied per-capita CAGR for years 1-20, then baseline growth from the year-20 level. Conservative: assumes no further acceleration beyond year 20.
+Cumulative per-capita income over an average remaining lifespan under Wishonia Trajectory. Uses implied per-capita CAGR for years 1-20, then current-trajectory per-capita growth from the year-20 level. Conservative: assumes no further acceleration beyond year 20.
 
 **Inputs**:
 
 - [Global Average Income (2025 Baseline)](#sec-global_avg_income_2025) 🔢: $14.4K
 - [Wishonia Trajectory Average Income at Year 20](#sec-wishonia_trajectory_avg_income_year_20) 🔢: $1.16M
-- [Baseline Global GDP Growth Rate](#sec-gdp_baseline_growth_rate): 2.5%
+- [Current Trajectory Average Income at Year 20](#sec-current_trajectory_avg_income_year_20) 🔢: $20.5K
 - [Average Remaining Years (Median Person)](#sec-global_avg_remaining_years) 🔢: 48.5 years
 
 $$
 \begin{gathered}
 Y_{cum,wish} \\
 = \bar{y}_0 \cdot \frac{(1+g_{pc,wish})((1+g_{pc,wish})^{20}-1)}{g_{pc,wish}} \\
-+ \bar{y}_{wish,20} \cdot \frac{(1+g_{base})((1+g_{base})^{T_{remaining}-20}-1)}{g_{base}}
++ \bar{y}_{wish,20} \cdot \frac{(1+g_{pc,base})((1+g_{pc,base})^{T_{remaining}-20}-1)}{g_{pc,base}}
 \end{gathered}
 $$
 
@@ -1413,7 +2742,7 @@ $$
 
 :::
 
-### Wishonia Trajectory Lifetime Income Gain (Per Capita): $51.9M {#sec-wishonia_trajectory_lifetime_income_gain_per_capita}
+### Wishonia Trajectory Lifetime Income Gain (Per Capita): $47.2M {#sec-wishonia_trajectory_lifetime_income_gain_per_capita}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -1421,15 +2750,15 @@ Lifetime per-capita income gain from Wishonia Trajectory vs current trajectory. 
 
 **Inputs**:
 
-- [Wishonia Trajectory Cumulative Lifetime Income (Per Capita)](#sec-wishonia_trajectory_cumulative_lifetime_income) 🔢: $53.3M
-- [Current Trajectory Cumulative Lifetime Income (Per Capita)](#sec-current_trajectory_cumulative_lifetime_income) 🔢: $1.34M
+- [Wishonia Trajectory Cumulative Lifetime Income (Per Capita)](#sec-wishonia_trajectory_cumulative_lifetime_income) 🔢: $48.3M
+- [Current Trajectory Cumulative Lifetime Income (Per Capita)](#sec-current_trajectory_cumulative_lifetime_income) 🔢: $1.1M
 
 $$
 \begin{gathered}
 \Delta Y_{lifetime,wish} \\
 = Y_{cum,wish} - Y_{cum,earth} \\
-= \$53.3M - \$1.34M \\
-= \$51.9M
+= \$48.3M - \$1.1M \\
+= \$47.2M
 \end{gathered}
 $$
 where:
@@ -1437,7 +2766,7 @@ $$
 \begin{gathered}
 Y_{cum,wish} \\
 = \bar{y}_0 \cdot \frac{(1+g_{pc,wish})((1+g_{pc,wish})^{20}-1)}{g_{pc,wish}} \\
-+ \bar{y}_{wish,20} \cdot \frac{(1+g_{base})((1+g_{base})^{T_{remaining}-20}-1)}{g_{base}}
++ \bar{y}_{wish,20} \cdot \frac{(1+g_{pc,base})((1+g_{pc,base})^{T_{remaining}-20}-1)}{g_{pc,base}}
 \end{gathered}
 $$
 where:
@@ -1544,6 +2873,19 @@ $$
 where:
 $$
 \begin{gathered}
+\bar{y}_{base,20} \\
+= \frac{GDP_{base,20}}{Pop_{2045}} \\
+= \frac{\$188T}{9.2B} \\
+= \$20.5K
+\end{gathered}
+$$
+where:
+$$
+GDP_{base,20} = GDP_0(1+g_{base})^{20}
+$$
+where:
+$$
+\begin{gathered}
 T_{remaining} \\
 = LE_{global} - Age_{median} \\
 = 79 - 30.5 \\
@@ -1554,7 +2896,7 @@ where:
 $$
 \begin{gathered}
 Y_{cum,earth} \\
-= \bar{y}_0 \cdot \frac{(1+g_{base})((1+g_{base})^{T_{remaining}}-1)}{g_{base}}
+= \bar{y}_0 \cdot \frac{(1+g_{pc,base})((1+g_{pc,base})^{T_{remaining}}-1)}{g_{pc,base}}
 \end{gathered}
 $$
 *✓ High confidence*
@@ -1575,7 +2917,7 @@ $$
 
 :::
 
-### Wishonia Trajectory Lifetime Income Multiplier: 39.8x {#sec-wishonia_trajectory_lifetime_income_multiplier}
+### Wishonia Trajectory Lifetime Income Multiplier: 44x {#sec-wishonia_trajectory_lifetime_income_multiplier}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -1583,15 +2925,15 @@ Ratio of cumulative lifetime income under Wishonia Trajectory vs current traject
 
 **Inputs**:
 
-- [Wishonia Trajectory Cumulative Lifetime Income (Per Capita)](#sec-wishonia_trajectory_cumulative_lifetime_income) 🔢: $53.3M
-- [Current Trajectory Cumulative Lifetime Income (Per Capita)](#sec-current_trajectory_cumulative_lifetime_income) 🔢: $1.34M
+- [Wishonia Trajectory Cumulative Lifetime Income (Per Capita)](#sec-wishonia_trajectory_cumulative_lifetime_income) 🔢: $48.3M
+- [Current Trajectory Cumulative Lifetime Income (Per Capita)](#sec-current_trajectory_cumulative_lifetime_income) 🔢: $1.1M
 
 $$
 \begin{gathered}
 k_{lifetime,wish:earth} \\
 = \frac{Y_{cum,wish}}{Y_{cum,earth}} \\
-= \frac{\$53.3M}{\$1.34M} \\
-= 39.8
+= \frac{\$48.3M}{\$1.1M} \\
+= 44
 \end{gathered}
 $$
 where:
@@ -1599,7 +2941,7 @@ $$
 \begin{gathered}
 Y_{cum,wish} \\
 = \bar{y}_0 \cdot \frac{(1+g_{pc,wish})((1+g_{pc,wish})^{20}-1)}{g_{pc,wish}} \\
-+ \bar{y}_{wish,20} \cdot \frac{(1+g_{base})((1+g_{base})^{T_{remaining}-20}-1)}{g_{base}}
++ \bar{y}_{wish,20} \cdot \frac{(1+g_{pc,base})((1+g_{pc,base})^{T_{remaining}-20}-1)}{g_{pc,base}}
 \end{gathered}
 $$
 where:
@@ -1706,6 +3048,19 @@ $$
 where:
 $$
 \begin{gathered}
+\bar{y}_{base,20} \\
+= \frac{GDP_{base,20}}{Pop_{2045}} \\
+= \frac{\$188T}{9.2B} \\
+= \$20.5K
+\end{gathered}
+$$
+where:
+$$
+GDP_{base,20} = GDP_0(1+g_{base})^{20}
+$$
+where:
+$$
+\begin{gathered}
 T_{remaining} \\
 = LE_{global} - Age_{median} \\
 = 79 - 30.5 \\
@@ -1716,7 +3071,7 @@ where:
 $$
 \begin{gathered}
 Y_{cum,earth} \\
-= \bar{y}_0 \cdot \frac{(1+g_{base})((1+g_{base})^{T_{remaining}}-1)}{g_{base}}
+= \bar{y}_0 \cdot \frac{(1+g_{pc,base})((1+g_{pc,base})^{T_{remaining}}-1)}{g_{pc,base}}
 \end{gathered}
 $$
 *✓ High confidence*
@@ -1737,7 +3092,7 @@ $$
 
 :::
 
-### Wishonia Trajectory vs Treaty Trajectory GDP Multiplier (Year 20): 3.43x {#sec-wishonia_trajectory_vs_treaty_trajectory_gdp_multiplier_year_20}
+### Wishonia Trajectory vs Treaty Trajectory GDP Multiplier (Year 20): 11.6x {#sec-wishonia_trajectory_vs_treaty_trajectory_gdp_multiplier_year_20}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -1746,14 +3101,14 @@ Year-20 GDP multiplier from adding non-health dysfunction-capital reallocation o
 **Inputs**:
 
 - [Wishonia Trajectory GDP at Year 20](#sec-wishonia_trajectory_gdp_year_20) 🔢: $10.7 quadrillion
-- [Treaty Trajectory GDP at Year 20](#sec-treaty_trajectory_gdp_year_20) 🔢: $3.11 quadrillion
+- [Treaty Trajectory GDP at Year 20](#sec-treaty_trajectory_gdp_year_20) 🔢: $919T
 
 $$
 \begin{gathered}
 k_{wish,full:core,20} \\
 = \frac{GDP_{wish,20}}{GDP_{treaty,20}} \\
-= \frac{\$10700T}{\$3110T} \\
-= 3.43
+= \frac{\$10700T}{\$919T} \\
+= 11.6
 \end{gathered}
 $$
 where:
@@ -1848,7 +3203,166 @@ where:
 $$
 \begin{gathered}
 GDP_{treaty,20} \\
-= GDP_0(1+g_{treaty,ramp})^3(1+g_{treaty,full})^{17}
+= GDP_0(1 + g_{base} + g_{redirect} + g_{peace} + g_{cyber} \\
++ g_{health})^{20}
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+g_{redirect,treaty,20} \\
+= \bar{s}_{treaty,20}\cdot\left(\frac{\Delta g_{30\%}}{0.30}\right)\cdot\left(\frac{m_{spillover}}{2.0}\right)
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+g_{peace,treaty,20} \\
+= \left(\frac{Benefit_{peace,soc}}{GDP_0}\right)\cdot\left(\frac{\bar{s}_{treaty,20}}{Reduce_{treaty}}\right)\cdot\varepsilon_{conflict}
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Benefit_{peace,soc} \\
+= Cost_{war,total} \times Reduce_{treaty} \\
+= \$11.4T \times 1\% \\
+= \$114B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,total} \\
+= Cost_{war,direct} + Cost_{war,indirect} \\
+= \$7.66T + \$3.7T \\
+= \$11.4T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,direct} \\
+= Loss_{life,conflict} + Damage_{infra,total} \\
++ Disruption_{trade} + Spending_{mil} \\
+= \$2.45T + \$1.88T + \$616B + \$2.72T \\
+= \$7.66T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Loss_{life,conflict} \\
+= Cost_{combat,human} + Cost_{state,human} \\
++ Cost_{terror,human} \\
+= \$2.34T + \$27B + \$83B \\
+= \$2.45T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{combat,human} \\
+= Deaths_{combat} \times VSL \\
+= 234{,}000 \times \$10M \\
+= \$2.34T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{state,human} \\
+= Deaths_{state} \times VSL \\
+= 2{,}700 \times \$10M \\
+= \$27B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{terror,human} \\
+= Deaths_{terror} \times VSL \\
+= 8{,}300 \times \$10M \\
+= \$83B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Damage_{infra,total} \\
+= Damage_{comms} + Damage_{edu} + Damage_{energy} \\
++ Damage_{health} + Damage_{transport} + Damage_{water} \\
+= \$298B + \$234B + \$422B + \$166B + \$487B + \$268B \\
+= \$1.88T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Disruption_{trade} \\
+= Disruption_{currency} + Disruption_{energy} \\
++ Disruption_{shipping} + Disruption_{supply} \\
+= \$57.4B + \$125B + \$247B + \$187B \\
+= \$616B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,indirect} \\
+= Damage_{env} + Loss_{growth,mil} + Loss_{capital,conflict} \\
++ Cost_{psych} + Cost_{refugee} + Cost_{vet} \\
+= \$100B + \$2.72T + \$300B + \$232B + \$150B + \$200B \\
+= \$3.7T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+g_{cyber,treaty,20} \\
+= \left(\frac{Cost_{cyber,2025}}{GDP_0}\right)\cdot\bar{s}_{treaty,20}\cdot\varepsilon_{conflict}
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+g_{health,treaty,20} \\
+= \left(1 + f_{cure,20,treaty}\cdot d_{disease} \\
++ \frac{Loss_{lag,existing}}{GDP_0}\right)^{1/20}-1
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+f_{cure,20,treaty} \\
+= \min\left(1,\frac{Treatments_{new,ann}\cdot \sum_y k_{capacity,y}}{D_{untreated}}\right)
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Loss_{lag} \\
+= Deaths_{lag,total} \times (LE_{global} - Age_{death,delay}) \times Value_{QALY} \\
+= 102M \times (79 - 62) \times \$150K \\
+= \$259T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Deaths_{lag,total} \\
+= Lives_{saved,annual} \times T_{lag} \\
+= 12.4M \times 8.2 \\
+= 102M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Lives_{saved,annual} \\
+= \frac{LY_{saved,annual}}{T_{ext}} \\
+= \frac{149M}{12} \\
+= 12.4M
 \end{gathered}
 $$
 *✓ High confidence*
@@ -2004,6 +3518,482 @@ Economic multiplier for military spending (0.6x ROI). Literature range 0.4-1.0×
 #### Input Distribution
 
 {{< include ../figures/distribution-economic_multiplier_military_spending.qmd >}}
+
+*✓ High confidence*
+
+:::
+
+### Regulatory Delay for Efficacy Testing Post-Safety Verification: 8.2 years {#sec-efficacy_lag_years}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Regulatory delay for efficacy testing (Phase II/III) post-safety verification. Based on BIO 2021 industry survey. Note: This is for drugs that COMPLETE the pipeline - survivor bias means actual delay for any given disease may be longer if candidates fail and must restart.
+
+**Source**: [@bio-clinical-development-2021]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Normal (SE: 2 years)
+
+#### Input Distribution
+
+{{< include ../figures/distribution-efficacy_lag_years.qmd >}}
+
+*~ Medium confidence • 📊 Peer-reviewed • Updated 2021*
+
+:::
+
+### Annual Deaths from Active Combat Worldwide: 234 thousand deaths/year {#sec-global_annual_conflict_deaths_active_combat}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual deaths from active combat worldwide
+
+**Source**: [@acled-active-combat-deaths]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [180 thousand deaths/year, 300 thousand deaths/year] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here. The true value likely falls between 180 thousand deaths/year and 300 thousand deaths/year (±26%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_annual_conflict_deaths_active_combat.qmd >}}
+
+*✓ High confidence*
+
+:::
+
+### Annual Deaths from State Violence: 2.7 thousand deaths/year {#sec-global_annual_conflict_deaths_state_violence}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual deaths from state violence
+
+**Source**: [@ucdp-state-violence-deaths]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [1.5 thousand deaths/year, 5 thousand deaths/year] • Distribution: Lognormal
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between 1.5 thousand deaths/year and 5 thousand deaths/year (±65%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_annual_conflict_deaths_state_violence.qmd >}}
+
+*✓ High confidence*
+
+:::
+
+### Annual Deaths from Terror Attacks Globally: 8.3 thousand deaths/year {#sec-global_annual_conflict_deaths_terror_attacks}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual deaths from terror attacks globally
+
+**Source**: [@gtd-terror-attack-deaths]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [6 thousand deaths/year, 12 thousand deaths/year] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here. The true value likely falls between 6 thousand deaths/year and 12 thousand deaths/year (±36%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_annual_conflict_deaths_terror_attacks.qmd >}}
+
+*✓ High confidence*
+
+:::
+
+### Annual Environmental Damage and Restoration Costs from Conflict: $100B {#sec-global_annual_environmental_damage_conflict}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual environmental damage and restoration costs from conflict
+
+**Source**: [@environmental-cost-of-war]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$70B, $140B] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $70B and $140B (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_annual_environmental_damage_conflict.qmd >}}
+
+*✓ High confidence*
+
+:::
+
+### Annual Infrastructure Damage to Communications from Conflict: $298B {#sec-global_annual_infrastructure_damage_communications_conflict}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual infrastructure damage to communications from conflict
+
+**Source**: [@environmental-cost-of-war]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$209B, $418B] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $209B and $418B (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_annual_infrastructure_damage_communications_conflict.qmd >}}
+
+*✓ High confidence*
+
+:::
+
+### Annual Infrastructure Damage to Education Facilities from Conflict: $234B {#sec-global_annual_infrastructure_damage_education_conflict}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual infrastructure damage to education facilities from conflict
+
+**Source**: [@environmental-cost-of-war]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$164B, $328B] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $164B and $328B (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_annual_infrastructure_damage_education_conflict.qmd >}}
+
+*✓ High confidence*
+
+:::
+
+### Annual Infrastructure Damage to Energy Systems from Conflict: $422B {#sec-global_annual_infrastructure_damage_energy_conflict}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual infrastructure damage to energy systems from conflict
+
+**Source**: [@environmental-cost-of-war]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$295B, $590B] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $295B and $590B (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_annual_infrastructure_damage_energy_conflict.qmd >}}
+
+*✓ High confidence*
+
+:::
+
+### Annual Infrastructure Damage to Healthcare Facilities from Conflict: $166B {#sec-global_annual_infrastructure_damage_healthcare_conflict}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual infrastructure damage to healthcare facilities from conflict
+
+**Source**: [@environmental-cost-of-war]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$116B, $232B] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $116B and $232B (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_annual_infrastructure_damage_healthcare_conflict.qmd >}}
+
+*✓ High confidence*
+
+:::
+
+### Annual Infrastructure Damage to Transportation from Conflict: $487B {#sec-global_annual_infrastructure_damage_transportation_conflict}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual infrastructure damage to transportation from conflict
+
+**Source**: [@environmental-cost-of-war]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$340B, $680B] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $340B and $680B (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_annual_infrastructure_damage_transportation_conflict.qmd >}}
+
+*✓ High confidence*
+
+:::
+
+### Annual Infrastructure Damage to Water Systems from Conflict: $268B {#sec-global_annual_infrastructure_damage_water_conflict}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual infrastructure damage to water systems from conflict
+
+**Source**: [@environmental-cost-of-war]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$187B, $375B] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $187B and $375B (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_annual_infrastructure_damage_water_conflict.qmd >}}
+
+*✓ High confidence*
+
+:::
+
+### Annual Lost Economic Growth from Military Spending Opportunity Cost: $2.72T {#sec-global_annual_lost_economic_growth_military_spending}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual foregone economic output from military spending vs productive alternatives. This estimate implicitly captures fiscal multiplier differences (military ~0.6x vs healthcare ~4.3x GDP multiplier). Do not add separate GDP multiplier adjustment to avoid double-counting.
+
+**Source**: [@disparity-ratio-weapons-vs-cures]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$1.9T, $3.8T] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $1.9T and $3.8T (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_annual_lost_economic_growth_military_spending.qmd >}}
+
+*✓ High confidence*
+
+:::
+
+### Annual Lost Productivity from Conflict Casualties: $300B {#sec-global_annual_lost_human_capital_conflict}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual lost productivity from conflict casualties
+
+**Source**: [@lost-human-capital-war-cost]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$210B, $420B] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $210B and $420B (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_annual_lost_human_capital_conflict.qmd >}}
+
+*✓ High confidence*
+
+:::
+
+### Annual PTSD and Mental Health Costs from Conflict: $232B {#sec-global_annual_psychological_impact_costs_conflict}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual PTSD and mental health costs from conflict
+
+**Source**: [@psychological-impact-war-cost]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$162B, $325B] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $162B and $325B (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_annual_psychological_impact_costs_conflict.qmd >}}
+
+*✓ High confidence*
+
+:::
+
+### Annual Refugee Support Costs: $150B {#sec-global_annual_refugee_support_costs}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual refugee support costs (108.4M refugees × $1,384/year)
+
+**Source**: [@unhcr-refugee-support-cost]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$105B, $210B] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $105B and $210B (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_annual_refugee_support_costs.qmd >}}
+
+*✓ High confidence*
+
+:::
+
+### Annual Trade Disruption Costs from Currency Instability: $57.4B {#sec-global_annual_trade_disruption_currency_conflict}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual trade disruption costs from currency instability
+
+**Source**: [@world-bank-trade-disruption-conflict]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$40B, $80B] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $40B and $80B (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_annual_trade_disruption_currency_conflict.qmd >}}
+
+*✓ High confidence*
+
+:::
+
+### Annual Trade Disruption Costs from Energy Price Volatility: $125B {#sec-global_annual_trade_disruption_energy_price_conflict}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual trade disruption costs from energy price volatility
+
+**Source**: [@world-bank-trade-disruption-conflict]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$87B, $175B] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $87B and $175B (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_annual_trade_disruption_energy_price_conflict.qmd >}}
+
+*✓ High confidence*
+
+:::
+
+### Annual Trade Disruption Costs from Shipping Disruptions: $247B {#sec-global_annual_trade_disruption_shipping_conflict}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual trade disruption costs from shipping disruptions
+
+**Source**: [@world-bank-trade-disruption-conflict]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$173B, $346B] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $173B and $346B (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_annual_trade_disruption_shipping_conflict.qmd >}}
+
+*✓ High confidence*
+
+:::
+
+### Annual Trade Disruption Costs from Supply Chain Disruptions: $187B {#sec-global_annual_trade_disruption_supply_chain_conflict}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual trade disruption costs from supply chain disruptions
+
+**Source**: [@world-bank-trade-disruption-conflict]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$131B, $262B] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $131B and $262B (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_annual_trade_disruption_supply_chain_conflict.qmd >}}
+
+*✓ High confidence*
+
+:::
+
+### Annual Veteran Healthcare Costs: $200B {#sec-global_annual_veteran_healthcare_costs}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual veteran healthcare costs (20-year projected)
+
+**Source**: [@veteran-healthcare-cost-projections]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$140B, $280B] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $140B and $280B (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_annual_veteran_healthcare_costs.qmd >}}
 
 *✓ High confidence*
 
@@ -2213,6 +4203,30 @@ Patient willingness to participate in drug trials (44.8% in surveys, 88% when ac
 
 :::
 
+### Annual Life-Years Saved by Pharmaceuticals: 149 million life-years {#sec-pharma_life_years_saved_annual}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual life-years saved by pharmaceutical innovations globally. Lichtenberg (2019, NBER WP 25483) found that drugs launched after 1981 saved 148.7M life-years in 2013 across 22 countries using 3-way fixed-effects regression (disease-country-year). 95% CI [79.4M, 239.8M] propagated from Table 2 regression standard errors (β₀₋₁₁=-0.031±0.008, β₁₂₊=-0.057±0.013).
+
+**Source**: [@lichtenberg-life-years-saved-2019]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [79.4 million life-years, 240 million life-years] • Distribution: Lognormal
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between 79.4 million life-years and 240 million life-years (±54%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-pharma_life_years_saved_annual.qmd >}}
+
+*~ Medium confidence*
+
+:::
+
 ### Global Health Opportunity Cost: $34T {#sec-political_dysfunction_global_health_opportunity_cost}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -2333,6 +4347,46 @@ Total number of rare diseases globally
 
 :::
 
+### Mean Age of Preventable Death from Post-Safety Efficacy Delay: 62 years {#sec-regulatory_delay_mean_age_of_death}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Mean age of preventable death from post-safety efficacy testing regulatory delay (Phase 2-4)
+
+**Source**: [@who-global-health-estimates-2024]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Normal (SE: 3 years)
+
+#### Input Distribution
+
+{{< include ../figures/distribution-regulatory_delay_mean_age_of_death.qmd >}}
+
+*~ Medium confidence • 📊 Peer-reviewed*
+
+:::
+
+### Standard Economic Value per QALY: $150K {#sec-standard_economic_qaly_value_usd}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Standard economic value per QALY
+
+**Source**: [@qaly-value]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Normal (SE: $30K)
+
+#### Input Distribution
+
+{{< include ../figures/distribution-standard_economic_qaly_value_usd.qmd >}}
+
+*✓ High confidence*
+
+:::
+
 ### US Military Spending at WW2 Peak (Constant 2024 Dollars): $1.42T {#sec-us_military_spending_1945_peak_annual_2024usd}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -2365,9 +4419,55 @@ US military spending in 1947 (post-WW2 trough, 2 years after peak) in constant 2
 
 :::
 
+### Value of Statistical Life: $10M {#sec-value_of_statistical_life}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Value of Statistical Life (conservative estimate)
+
+**Source**: [@dot-vsl-13-6m]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$5M, $15M] • Distribution: Gamma (SE: $3M)
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $5M and $15M (±50%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The gamma distribution means values follow a specific statistical pattern.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-value_of_statistical_life.qmd >}}
+
+*✓ High confidence*
+
+:::
+
 ## Core Definitions {#sec-definitions}
 
 Fundamental parameters and constants used throughout the analysis.
+
+### Average Life Extension per Beneficiary: 12 years {#sec-avg_life_extension_per_beneficiary}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Average years of life extension per person saved by pharmaceutical interventions. Assumption used to convert life-years saved to approximate lives saved. Based on Lichtenberg's methodology where life-years are calculated from Years of Life Lost (YLL) reductions.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [8 years, 18 years] • Distribution: Triangular
+
+**What this means**: There's significant uncertainty here. The true value likely falls between 8 years and 18 years (±42%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The triangular distribution means values cluster around a most-likely point but can range higher or lower.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-avg_life_extension_per_beneficiary.qmd >}}
+
+*Core definition*
+
+:::
 
 ### Destructive Economy Base Year: 2025 {#sec-destructive_economy_base_year}
 
@@ -2543,6 +4643,28 @@ Historical calibration target: 30% military reallocation maps to ~5.5 percentage
 
 :::
 
+### Peace Dividend Conflict Elasticity: 1:1 {#sec-peace_dividend_conflict_elasticity}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Conflict reduction elasticity: how much conflict costs decrease per 1% military spending cut. ε=0: no effect (spending cuts don't reduce conflict). ε=0.5: moderate linkage (conservative). ε=1.0: proportional (baseline assumption). ε>1.0: shared enemy amplification (redirecting to disease creates unity).
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [0.25:1, 1.5:1] • Distribution: Beta
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between 0.25:1 and 1.5:1 (±62%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The beta distribution means values are bounded and can skew toward one end.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-peace_dividend_conflict_elasticity.qmd >}}
+
+*Core definition*
+
+:::
+
 ### R&D Spillover Multiplier: 2x {#sec-rd_spillover_multiplier}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -2560,6 +4682,20 @@ R&D spillover multiplier: each $1 in directed medical research produces $2 in ad
 #### Input Distribution
 
 {{< include ../figures/distribution-rd_spillover_multiplier.qmd >}}
+
+*Core definition*
+
+:::
+
+### Treaty Effective Reallocation Share (Year 20): 5.8% {#sec-treaty_effective_reallocation_share_year_20}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Average military-to-medicine reallocation share over 20 years under the optimistic treaty take-hold path (1% for 3 years, 2% for 4 years, 5% for 5 years, 10% for 8 years).
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
 
 *Core definition*
 

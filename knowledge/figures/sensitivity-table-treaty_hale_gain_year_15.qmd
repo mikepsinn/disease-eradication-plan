@@ -4,8 +4,8 @@ Regression-based sensitivity showing which inputs explain the most variance in t
 
 | Input Parameter | Sensitivity Coefficient | Interpretation |
 |:----------------|------------------------:|:---------------|
-| Treaty Disease Cure Fraction (15yr, 1% Reallocation) (rate) | 1.0193 | Strong driver |
-| Global Life Expectancy (2024) (years) | 0.2147 | Weak driver |
-| Global Healthy Life Expectancy (HALE) (years) | -0.1942 | Weak driver |
+| Global Life Expectancy (2024) (years) | 2.1727 | Strong driver |
+| Global Healthy Life Expectancy (HALE) (years) | -1.5719 | Strong driver |
+| Treaty Disease Cure Fraction (15yr, Take-Hold Path) (rate) | 1.1780 | Strong driver |
 
 *Interpretation*: Standardized coefficients show the change in output (in SD units) per 1 SD change in input. Values near ±1 indicate strong influence; values exceeding ±1 may occur with correlated inputs.

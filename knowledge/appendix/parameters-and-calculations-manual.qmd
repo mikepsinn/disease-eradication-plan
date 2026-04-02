@@ -38,15 +38,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 514 parameters used in the analysis, organized by type:
+This appendix documents all 526 parameters used in the analysis, organized by type:
 
 - External sources (peer-reviewed): 171
-- Calculated values: 241
-- Core definitions: 102
+- Calculated values: 250
+- Core definitions: 105
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (241 parameters) • [External Data Sources](#sec-external) (171 parameters) • [Core Definitions](#sec-definitions) (102 parameters)
+[Calculated Values](#sec-calculated) (250 parameters) • [External Data Sources](#sec-external) (171 parameters) • [Core Definitions](#sec-definitions) (105 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -391,7 +391,7 @@ $$
 
 :::
 
-### Contribution EV per Percentage Point (Treaty): $147K {#sec-contribution_ev_per_pct_point_treaty}
+### Contribution EV per Percentage Point (Treaty): $34.8K {#sec-contribution_ev_per_pct_point_treaty}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -399,7 +399,7 @@ Personal expected value per percentage point of implementation probability shift
 
 **Inputs**:
 
-- [Treaty Trajectory Lifetime Income Gain (Per Capita)](#sec-treaty_trajectory_lifetime_income_gain_per_capita) 🔢: $14.7M
+- [Treaty Trajectory Lifetime Income Gain (Per Capita)](#sec-treaty_trajectory_lifetime_income_gain_per_capita) 🔢: $3.48M
 
 $$
 EV_{pp,treaty} = \Delta Y_{lifetime,treaty} \times 0.01
@@ -423,7 +423,7 @@ $$
 
 :::
 
-### Contribution EV per Percentage Point (Treaty, Blended): $157K {#sec-contribution_ev_per_pct_point_treaty_blend}
+### Contribution EV per Percentage Point (Treaty, Blended): $58.4K {#sec-contribution_ev_per_pct_point_treaty_blend}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -431,7 +431,7 @@ Blended personal expected value per percentage point of implementation probabili
 
 **Inputs**:
 
-- [Treaty Personal Upside (Blended)](#sec-treaty_personal_upside_blend) 🔢: $15.7M
+- [Treaty Personal Upside (Blended)](#sec-treaty_personal_upside_blend) 🔢: $5.84M
 
 $$
 EV_{pp,treaty,blend} = Upside_{blend,treaty} \times 0.01
@@ -455,7 +455,7 @@ $$
 
 :::
 
-### Contribution EV per Percentage Point (Wishonia): $519K {#sec-contribution_ev_per_pct_point_wishonia}
+### Contribution EV per Percentage Point (Wishonia): $472K {#sec-contribution_ev_per_pct_point_wishonia}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -463,7 +463,7 @@ Personal expected value per percentage point of implementation probability shift
 
 **Inputs**:
 
-- [Wishonia Trajectory Lifetime Income Gain (Per Capita)](#sec-wishonia_trajectory_lifetime_income_gain_per_capita) 🔢: $51.9M
+- [Wishonia Trajectory Lifetime Income Gain (Per Capita)](#sec-wishonia_trajectory_lifetime_income_gain_per_capita) 🔢: $47.2M
 
 $$
 EV_{pp,wish} = \Delta Y_{lifetime,wish} \times 0.01
@@ -487,7 +487,7 @@ $$
 
 :::
 
-### Contribution EV per Percentage Point (Wishonia, Blended): $543K {#sec-contribution_ev_per_pct_point_wishonia_blend}
+### Contribution EV per Percentage Point (Wishonia, Blended): $496K {#sec-contribution_ev_per_pct_point_wishonia_blend}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -495,7 +495,7 @@ Blended personal expected value per percentage point of implementation probabili
 
 **Inputs**:
 
-- [Wishonia Personal Upside (Blended)](#sec-wishonia_personal_upside_blend) 🔢: $54.3M
+- [Wishonia Personal Upside (Blended)](#sec-wishonia_personal_upside_blend) 🔢: $49.6M
 
 $$
 EV_{pp,wish,blend} = Upside_{blend,wish} \times 0.01
@@ -811,22 +811,22 @@ $$
 
 :::
 
-### Current Trajectory Cumulative Lifetime Income (Per Capita): $1.34M {#sec-current_trajectory_cumulative_lifetime_income}
+### Current Trajectory Cumulative Lifetime Income (Per Capita): $1.1M {#sec-current_trajectory_cumulative_lifetime_income}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Cumulative per-capita income over an average remaining lifespan under current trajectory baseline trajectory. Uses 2.5% baseline growth for all years.
+Cumulative per-capita income over an average remaining lifespan under current trajectory baseline trajectory. Uses the implied per-capita baseline CAGR from 2025 to 2045.
 
 **Inputs**:
 
 - [Global Average Income (2025 Baseline)](#sec-global_avg_income_2025) 🔢: $14.4K
-- [Baseline Global GDP Growth Rate](#sec-gdp_baseline_growth_rate): 2.5%
+- [Current Trajectory Average Income at Year 20](#sec-current_trajectory_avg_income_year_20) 🔢: $20.5K
 - [Average Remaining Years (Median Person)](#sec-global_avg_remaining_years) 🔢: 48.5 years
 
 $$
 \begin{gathered}
 Y_{cum,earth} \\
-= \bar{y}_0 \cdot \frac{(1+g_{base})((1+g_{base})^{T_{remaining}}-1)}{g_{base}}
+= \bar{y}_0 \cdot \frac{(1+g_{pc,base})((1+g_{pc,base})^{T_{remaining}}-1)}{g_{pc,base}}
 \end{gathered}
 $$
 
@@ -7781,7 +7781,7 @@ $$
 
 :::
 
-### Sharing Breakeven (1 in N): 246M:1 {#sec-sharing_breakeven_one_in_treaty}
+### Sharing Breakeven (1 in N): 58.1M:1 {#sec-sharing_breakeven_one_in_treaty}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -7789,17 +7789,17 @@ Breakeven probability expressed as '1 in N'. Forwarding has positive expected va
 
 **Inputs**:
 
-- [Sharing Breakeven Probability](#sec-sharing_breakeven_probability_treaty) 🔢: 4.07e-09 probability
+- [Sharing Breakeven Probability](#sec-sharing_breakeven_probability_treaty) 🔢: 1.72e-08 probability
 
 $$
-N_{breakeven} = P_{breakeven} = 0 = 246M
+N_{breakeven} = P_{breakeven} = 0 = 58.1M
 $$
 where:
 $$
 \begin{gathered}
 P_{breakeven} \\
 = \frac{C_{share}}{\Delta Y_{lifetime,treaty}} \\
-= \frac{\$0.0599}{\$14.7M} \\
+= \frac{\$0.0599}{\$3.48M} \\
 = 0
 \end{gathered}
 $$
@@ -7835,16 +7835,16 @@ $$
 \begin{gathered}
 \Delta Y_{lifetime,treaty} \\
 = Y_{cum,treaty} - Y_{cum,earth} \\
-= \$16.1M - \$1.34M \\
-= \$14.7M
+= \$4.58M - \$1.1M \\
+= \$3.48M
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
 Y_{cum,treaty} \\
-= \bar{y}_0 \cdot \frac{(1+g_{pc})((1+g_{pc})^{20}-1)}{g_{pc}} \\
-+ \bar{y}_{treaty,20} \cdot \frac{(1+g_{base})((1+g_{base})^{T_{remaining}-20}-1)}{g_{base}}
+= \bar{y}_0 \cdot \frac{(1+g_{pc,treaty})((1+g_{pc,treaty})^{20}-1)}{g_{pc,treaty}} \\
++ \bar{y}_{treaty,20} \cdot \frac{(1+g_{pc,base})((1+g_{pc,base})^{T_{remaining}-20}-1)}{g_{pc,base}}
 \end{gathered}
 $$
 where:
@@ -7855,27 +7855,112 @@ where:
 $$
 \begin{gathered}
 GDP_{treaty,20} \\
-= GDP_0(1+g_{treaty,ramp})^3(1+g_{treaty,full})^{17}
-\end{gathered}
-$$
-where:
-$$
-s_{mil,max} = Cut_{WW2} = 87.6\% = 87.6\%
-$$
-where:
-$$
-\begin{gathered}
-Cut_{WW2} \\
-= 1 - \frac{Spending_{US,1947}}{Spending_{US,1945}} \\
-= 1 - \frac{\$176B}{\$1.42T} \\
-= 87.6\%
+= GDP_0(1 + g_{base} + g_{redirect} + g_{peace} + g_{cyber} \\
++ g_{health})^{20}
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
-f_{cure,20,wish} \\
-= \min\left(1,\frac{Treatments_{new,ann}\cdot k_{capacity,wish}\cdot 20}{D_{untreated}}\right)
+g_{redirect,treaty,20} \\
+= \bar{s}_{treaty,20}\cdot\left(\frac{\Delta g_{30\%}}{0.30}\right)\cdot\left(\frac{m_{spillover}}{2.0}\right)
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+g_{peace,treaty,20} \\
+= \left(\frac{Benefit_{peace,soc}}{GDP_0}\right)\cdot\left(\frac{\bar{s}_{treaty,20}}{Reduce_{treaty}}\right)\cdot\varepsilon_{conflict}
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Benefit_{peace,soc} \\
+= Cost_{war,total} \times Reduce_{treaty} \\
+= \$11.4T \times 1\% \\
+= \$114B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,total} \\
+= Cost_{war,direct} + Cost_{war,indirect} \\
+= \$7.66T + \$3.7T \\
+= \$11.4T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,direct} \\
+= Loss_{life,conflict} + Damage_{infra,total} \\
++ Disruption_{trade} + Spending_{mil} \\
+= \$2.45T + \$1.88T + \$616B + \$2.72T \\
+= \$7.66T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Loss_{life,conflict} \\
+= Cost_{combat,human} + Cost_{state,human} \\
++ Cost_{terror,human} \\
+= \$2.34T + \$27B + \$83B \\
+= \$2.45T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Damage_{infra,total} \\
+= Damage_{comms} + Damage_{edu} + Damage_{energy} \\
++ Damage_{health} + Damage_{transport} + Damage_{water} \\
+= \$298B + \$234B + \$422B + \$166B + \$487B + \$268B \\
+= \$1.88T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Disruption_{trade} \\
+= Disruption_{currency} + Disruption_{energy} \\
++ Disruption_{shipping} + Disruption_{supply} \\
+= \$57.4B + \$125B + \$247B + \$187B \\
+= \$616B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,indirect} \\
+= Damage_{env} + Loss_{growth,mil} + Loss_{capital,conflict} \\
++ Cost_{psych} + Cost_{refugee} + Cost_{vet} \\
+= \$100B + \$2.72T + \$300B + \$232B + \$150B + \$200B \\
+= \$3.7T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+g_{cyber,treaty,20} \\
+= \left(\frac{Cost_{cyber,2025}}{GDP_0}\right)\cdot\bar{s}_{treaty,20}\cdot\varepsilon_{conflict}
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+g_{health,treaty,20} \\
+= \left(1 + f_{cure,20,treaty}\cdot d_{disease} \\
++ \frac{Loss_{lag,existing}}{GDP_0}\right)^{1/20}-1
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+f_{cure,20,treaty} \\
+= \min\left(1,\frac{Treatments_{new,ann}\cdot \sum_y k_{capacity,y}}{D_{untreated}}\right)
 \end{gathered}
 $$
 where:
@@ -7908,16 +7993,6 @@ $$
 where:
 $$
 \begin{gathered}
-OPEX_{dFDA} \\
-= Cost_{platform} + Cost_{staff} + Cost_{infra} \\
-+ Cost_{regulatory} + Cost_{community} \\
-= \$15M + \$10M + \$8M + \$5M + \$2M \\
-= \$40M
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
 k_{capacity,max} \\
 = \frac{N_{willing}}{Slots_{curr}} \\
 = \frac{1.08B}{1.9M} \\
@@ -7945,6 +8020,46 @@ $$
 where:
 $$
 \begin{gathered}
+Loss_{lag} \\
+= Deaths_{lag,total} \times (LE_{global} - Age_{death,delay}) \times Value_{QALY} \\
+= 102M \times (79 - 62) \times \$150K \\
+= \$259T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Deaths_{lag,total} \\
+= Lives_{saved,annual} \times T_{lag} \\
+= 12.4M \times 8.2 \\
+= 102M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Lives_{saved,annual} \\
+= \frac{LY_{saved,annual}}{T_{ext}} \\
+= \frac{149M}{12} \\
+= 12.4M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+\bar{y}_{base,20} \\
+= \frac{GDP_{base,20}}{Pop_{2045}} \\
+= \frac{\$188T}{9.2B} \\
+= \$20.5K
+\end{gathered}
+$$
+where:
+$$
+GDP_{base,20} = GDP_0(1+g_{base})^{20}
+$$
+where:
+$$
+\begin{gathered}
 T_{remaining} \\
 = LE_{global} - Age_{median} \\
 = 79 - 30.5 \\
@@ -7955,7 +8070,7 @@ where:
 $$
 \begin{gathered}
 Y_{cum,earth} \\
-= \bar{y}_0 \cdot \frac{(1+g_{base})((1+g_{base})^{T_{remaining}}-1)}{g_{base}}
+= \bar{y}_0 \cdot \frac{(1+g_{pc,base})((1+g_{pc,base})^{T_{remaining}}-1)}{g_{pc,base}}
 \end{gathered}
 $$
 *✓ High confidence*
@@ -7976,7 +8091,7 @@ $$
 
 :::
 
-### Sharing Breakeven Probability: 4.07e-09 probability {#sec-sharing_breakeven_probability_treaty}
+### Sharing Breakeven Probability: 1.72e-08 probability {#sec-sharing_breakeven_probability_treaty}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -7985,13 +8100,13 @@ Minimum probability that the plan works for forwarding to have positive expected
 **Inputs**:
 
 - [Sharing Opportunity Cost](#sec-sharing_opportunity_cost) 🔢: $0.06
-- [Treaty Trajectory Lifetime Income Gain (Per Capita)](#sec-treaty_trajectory_lifetime_income_gain_per_capita) 🔢: $14.7M
+- [Treaty Trajectory Lifetime Income Gain (Per Capita)](#sec-treaty_trajectory_lifetime_income_gain_per_capita) 🔢: $3.48M
 
 $$
 \begin{gathered}
 P_{breakeven} \\
 = \frac{C_{share}}{\Delta Y_{lifetime,treaty}} \\
-= \frac{\$0.0599}{\$14.7M} \\
+= \frac{\$0.0599}{\$3.48M} \\
 = 0
 \end{gathered}
 $$
@@ -8027,16 +8142,16 @@ $$
 \begin{gathered}
 \Delta Y_{lifetime,treaty} \\
 = Y_{cum,treaty} - Y_{cum,earth} \\
-= \$16.1M - \$1.34M \\
-= \$14.7M
+= \$4.58M - \$1.1M \\
+= \$3.48M
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
 Y_{cum,treaty} \\
-= \bar{y}_0 \cdot \frac{(1+g_{pc})((1+g_{pc})^{20}-1)}{g_{pc}} \\
-+ \bar{y}_{treaty,20} \cdot \frac{(1+g_{base})((1+g_{base})^{T_{remaining}-20}-1)}{g_{base}}
+= \bar{y}_0 \cdot \frac{(1+g_{pc,treaty})((1+g_{pc,treaty})^{20}-1)}{g_{pc,treaty}} \\
++ \bar{y}_{treaty,20} \cdot \frac{(1+g_{pc,base})((1+g_{pc,base})^{T_{remaining}-20}-1)}{g_{pc,base}}
 \end{gathered}
 $$
 where:
@@ -8047,27 +8162,139 @@ where:
 $$
 \begin{gathered}
 GDP_{treaty,20} \\
-= GDP_0(1+g_{treaty,ramp})^3(1+g_{treaty,full})^{17}
-\end{gathered}
-$$
-where:
-$$
-s_{mil,max} = Cut_{WW2} = 87.6\% = 87.6\%
-$$
-where:
-$$
-\begin{gathered}
-Cut_{WW2} \\
-= 1 - \frac{Spending_{US,1947}}{Spending_{US,1945}} \\
-= 1 - \frac{\$176B}{\$1.42T} \\
-= 87.6\%
+= GDP_0(1 + g_{base} + g_{redirect} + g_{peace} + g_{cyber} \\
++ g_{health})^{20}
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
-f_{cure,20,wish} \\
-= \min\left(1,\frac{Treatments_{new,ann}\cdot k_{capacity,wish}\cdot 20}{D_{untreated}}\right)
+g_{redirect,treaty,20} \\
+= \bar{s}_{treaty,20}\cdot\left(\frac{\Delta g_{30\%}}{0.30}\right)\cdot\left(\frac{m_{spillover}}{2.0}\right)
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+g_{peace,treaty,20} \\
+= \left(\frac{Benefit_{peace,soc}}{GDP_0}\right)\cdot\left(\frac{\bar{s}_{treaty,20}}{Reduce_{treaty}}\right)\cdot\varepsilon_{conflict}
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Benefit_{peace,soc} \\
+= Cost_{war,total} \times Reduce_{treaty} \\
+= \$11.4T \times 1\% \\
+= \$114B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,total} \\
+= Cost_{war,direct} + Cost_{war,indirect} \\
+= \$7.66T + \$3.7T \\
+= \$11.4T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,direct} \\
+= Loss_{life,conflict} + Damage_{infra,total} \\
++ Disruption_{trade} + Spending_{mil} \\
+= \$2.45T + \$1.88T + \$616B + \$2.72T \\
+= \$7.66T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Loss_{life,conflict} \\
+= Cost_{combat,human} + Cost_{state,human} \\
++ Cost_{terror,human} \\
+= \$2.34T + \$27B + \$83B \\
+= \$2.45T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{combat,human} \\
+= Deaths_{combat} \times VSL \\
+= 234{,}000 \times \$10M \\
+= \$2.34T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{state,human} \\
+= Deaths_{state} \times VSL \\
+= 2{,}700 \times \$10M \\
+= \$27B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{terror,human} \\
+= Deaths_{terror} \times VSL \\
+= 8{,}300 \times \$10M \\
+= \$83B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Damage_{infra,total} \\
+= Damage_{comms} + Damage_{edu} + Damage_{energy} \\
++ Damage_{health} + Damage_{transport} + Damage_{water} \\
+= \$298B + \$234B + \$422B + \$166B + \$487B + \$268B \\
+= \$1.88T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Disruption_{trade} \\
+= Disruption_{currency} + Disruption_{energy} \\
++ Disruption_{shipping} + Disruption_{supply} \\
+= \$57.4B + \$125B + \$247B + \$187B \\
+= \$616B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,indirect} \\
+= Damage_{env} + Loss_{growth,mil} + Loss_{capital,conflict} \\
++ Cost_{psych} + Cost_{refugee} + Cost_{vet} \\
+= \$100B + \$2.72T + \$300B + \$232B + \$150B + \$200B \\
+= \$3.7T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+g_{cyber,treaty,20} \\
+= \left(\frac{Cost_{cyber,2025}}{GDP_0}\right)\cdot\bar{s}_{treaty,20}\cdot\varepsilon_{conflict}
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+g_{health,treaty,20} \\
+= \left(1 + f_{cure,20,treaty}\cdot d_{disease} \\
++ \frac{Loss_{lag,existing}}{GDP_0}\right)^{1/20}-1
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+f_{cure,20,treaty} \\
+= \min\left(1,\frac{Treatments_{new,ann}\cdot \sum_y k_{capacity,y}}{D_{untreated}}\right)
 \end{gathered}
 $$
 where:
@@ -8137,6 +8364,46 @@ $$
 where:
 $$
 \begin{gathered}
+Loss_{lag} \\
+= Deaths_{lag,total} \times (LE_{global} - Age_{death,delay}) \times Value_{QALY} \\
+= 102M \times (79 - 62) \times \$150K \\
+= \$259T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Deaths_{lag,total} \\
+= Lives_{saved,annual} \times T_{lag} \\
+= 12.4M \times 8.2 \\
+= 102M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Lives_{saved,annual} \\
+= \frac{LY_{saved,annual}}{T_{ext}} \\
+= \frac{149M}{12} \\
+= 12.4M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+\bar{y}_{base,20} \\
+= \frac{GDP_{base,20}}{Pop_{2045}} \\
+= \frac{\$188T}{9.2B} \\
+= \$20.5K
+\end{gathered}
+$$
+where:
+$$
+GDP_{base,20} = GDP_0(1+g_{base})^{20}
+$$
+where:
+$$
+\begin{gathered}
 T_{remaining} \\
 = LE_{global} - Age_{median} \\
 = 79 - 30.5 \\
@@ -8147,7 +8414,7 @@ where:
 $$
 \begin{gathered}
 Y_{cum,earth} \\
-= \bar{y}_0 \cdot \frac{(1+g_{base})((1+g_{base})^{T_{remaining}}-1)}{g_{base}}
+= \bar{y}_0 \cdot \frac{(1+g_{pc,base})((1+g_{pc,base})^{T_{remaining}}-1)}{g_{pc,base}}
 \end{gathered}
 $$
 *✓ High confidence*
@@ -8223,7 +8490,7 @@ $$
 
 :::
 
-### Sharing Upside/Downside Ratio: 245.6Mx {#sec-sharing_upside_downside_ratio_treaty}
+### Sharing Upside/Downside Ratio: 58.1Mx {#sec-sharing_upside_downside_ratio_treaty}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -8231,15 +8498,15 @@ Raw ratio of upside (lifetime income gain if plan works) to downside (cost of sh
 
 **Inputs**:
 
-- [Treaty Trajectory Lifetime Income Gain (Per Capita)](#sec-treaty_trajectory_lifetime_income_gain_per_capita) 🔢: $14.7M
+- [Treaty Trajectory Lifetime Income Gain (Per Capita)](#sec-treaty_trajectory_lifetime_income_gain_per_capita) 🔢: $3.48M
 - [Sharing Opportunity Cost](#sec-sharing_opportunity_cost) 🔢: $0.06
 
 $$
 \begin{gathered}
 k_{upside:downside} \\
 = \frac{\Delta Y_{lifetime,treaty}}{C_{share}} \\
-= \frac{\$14.7M}{\$0.0599} \\
-= 246M
+= \frac{\$3.48M}{\$0.0599} \\
+= 58.1M
 \end{gathered}
 $$
 where:
@@ -8247,16 +8514,16 @@ $$
 \begin{gathered}
 \Delta Y_{lifetime,treaty} \\
 = Y_{cum,treaty} - Y_{cum,earth} \\
-= \$16.1M - \$1.34M \\
-= \$14.7M
+= \$4.58M - \$1.1M \\
+= \$3.48M
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
 Y_{cum,treaty} \\
-= \bar{y}_0 \cdot \frac{(1+g_{pc})((1+g_{pc})^{20}-1)}{g_{pc}} \\
-+ \bar{y}_{treaty,20} \cdot \frac{(1+g_{base})((1+g_{base})^{T_{remaining}-20}-1)}{g_{base}}
+= \bar{y}_0 \cdot \frac{(1+g_{pc,treaty})((1+g_{pc,treaty})^{20}-1)}{g_{pc,treaty}} \\
++ \bar{y}_{treaty,20} \cdot \frac{(1+g_{pc,base})((1+g_{pc,base})^{T_{remaining}-20}-1)}{g_{pc,base}}
 \end{gathered}
 $$
 where:
@@ -8276,27 +8543,139 @@ where:
 $$
 \begin{gathered}
 GDP_{treaty,20} \\
-= GDP_0(1+g_{treaty,ramp})^3(1+g_{treaty,full})^{17}
-\end{gathered}
-$$
-where:
-$$
-s_{mil,max} = Cut_{WW2} = 87.6\% = 87.6\%
-$$
-where:
-$$
-\begin{gathered}
-Cut_{WW2} \\
-= 1 - \frac{Spending_{US,1947}}{Spending_{US,1945}} \\
-= 1 - \frac{\$176B}{\$1.42T} \\
-= 87.6\%
+= GDP_0(1 + g_{base} + g_{redirect} + g_{peace} + g_{cyber} \\
++ g_{health})^{20}
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
-f_{cure,20,wish} \\
-= \min\left(1,\frac{Treatments_{new,ann}\cdot k_{capacity,wish}\cdot 20}{D_{untreated}}\right)
+g_{redirect,treaty,20} \\
+= \bar{s}_{treaty,20}\cdot\left(\frac{\Delta g_{30\%}}{0.30}\right)\cdot\left(\frac{m_{spillover}}{2.0}\right)
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+g_{peace,treaty,20} \\
+= \left(\frac{Benefit_{peace,soc}}{GDP_0}\right)\cdot\left(\frac{\bar{s}_{treaty,20}}{Reduce_{treaty}}\right)\cdot\varepsilon_{conflict}
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Benefit_{peace,soc} \\
+= Cost_{war,total} \times Reduce_{treaty} \\
+= \$11.4T \times 1\% \\
+= \$114B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,total} \\
+= Cost_{war,direct} + Cost_{war,indirect} \\
+= \$7.66T + \$3.7T \\
+= \$11.4T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,direct} \\
+= Loss_{life,conflict} + Damage_{infra,total} \\
++ Disruption_{trade} + Spending_{mil} \\
+= \$2.45T + \$1.88T + \$616B + \$2.72T \\
+= \$7.66T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Loss_{life,conflict} \\
+= Cost_{combat,human} + Cost_{state,human} \\
++ Cost_{terror,human} \\
+= \$2.34T + \$27B + \$83B \\
+= \$2.45T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{combat,human} \\
+= Deaths_{combat} \times VSL \\
+= 234{,}000 \times \$10M \\
+= \$2.34T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{state,human} \\
+= Deaths_{state} \times VSL \\
+= 2{,}700 \times \$10M \\
+= \$27B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{terror,human} \\
+= Deaths_{terror} \times VSL \\
+= 8{,}300 \times \$10M \\
+= \$83B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Damage_{infra,total} \\
+= Damage_{comms} + Damage_{edu} + Damage_{energy} \\
++ Damage_{health} + Damage_{transport} + Damage_{water} \\
+= \$298B + \$234B + \$422B + \$166B + \$487B + \$268B \\
+= \$1.88T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Disruption_{trade} \\
+= Disruption_{currency} + Disruption_{energy} \\
++ Disruption_{shipping} + Disruption_{supply} \\
+= \$57.4B + \$125B + \$247B + \$187B \\
+= \$616B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,indirect} \\
+= Damage_{env} + Loss_{growth,mil} + Loss_{capital,conflict} \\
++ Cost_{psych} + Cost_{refugee} + Cost_{vet} \\
+= \$100B + \$2.72T + \$300B + \$232B + \$150B + \$200B \\
+= \$3.7T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+g_{cyber,treaty,20} \\
+= \left(\frac{Cost_{cyber,2025}}{GDP_0}\right)\cdot\bar{s}_{treaty,20}\cdot\varepsilon_{conflict}
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+g_{health,treaty,20} \\
+= \left(1 + f_{cure,20,treaty}\cdot d_{disease} \\
++ \frac{Loss_{lag,existing}}{GDP_0}\right)^{1/20}-1
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+f_{cure,20,treaty} \\
+= \min\left(1,\frac{Treatments_{new,ann}\cdot \sum_y k_{capacity,y}}{D_{untreated}}\right)
 \end{gathered}
 $$
 where:
@@ -8366,6 +8745,46 @@ $$
 where:
 $$
 \begin{gathered}
+Loss_{lag} \\
+= Deaths_{lag,total} \times (LE_{global} - Age_{death,delay}) \times Value_{QALY} \\
+= 102M \times (79 - 62) \times \$150K \\
+= \$259T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Deaths_{lag,total} \\
+= Lives_{saved,annual} \times T_{lag} \\
+= 12.4M \times 8.2 \\
+= 102M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Lives_{saved,annual} \\
+= \frac{LY_{saved,annual}}{T_{ext}} \\
+= \frac{149M}{12} \\
+= 12.4M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+\bar{y}_{base,20} \\
+= \frac{GDP_{base,20}}{Pop_{2045}} \\
+= \frac{\$188T}{9.2B} \\
+= \$20.5K
+\end{gathered}
+$$
+where:
+$$
+GDP_{base,20} = GDP_0(1+g_{base})^{20}
+$$
+where:
+$$
+\begin{gathered}
 T_{remaining} \\
 = LE_{global} - Age_{median} \\
 = 79 - 30.5 \\
@@ -8376,7 +8795,7 @@ where:
 $$
 \begin{gathered}
 Y_{cum,earth} \\
-= \bar{y}_0 \cdot \frac{(1+g_{base})((1+g_{base})^{T_{remaining}}-1)}{g_{base}}
+= \bar{y}_0 \cdot \frac{(1+g_{pc,base})((1+g_{pc,base})^{T_{remaining}}-1)}{g_{pc,base}}
 \end{gathered}
 $$
 where:
@@ -9305,11 +9724,75 @@ $$
 
 :::
 
-### Treaty Disease Cure Fraction (15yr, 1% Reallocation): 41.7% {#sec-treaty_disease_cure_fraction_15yr}
+### Treaty Cybercrime Recovery GDP Growth Bonus (Year 15): 0.402% {#sec-treaty_cybercrime_recovery_gdp_growth_bonus_year_15}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Treaty disease-cure fraction over 15 years under 1% military reallocation only. Uses base trial-capacity multiplier (no scaling beyond 1% reallocation) and applies an upper bound of 100% of untreated disease classes.
+Annual GDP growth bonus by year 15 from reducing cybercrime drag as the treaty weakens the destructive economy feedback loop.
+
+**Inputs**:
+
+- [Global Cybercrime Costs (2025)](#sec-global_cybercrime_cost_annual_2025) 📊: $10.5T
+- [Global GDP (2025)](#sec-global_gdp_2025) 📊: $115T
+- [Treaty Effective Reallocation Share (Year 15)](#sec-treaty_effective_reallocation_share_year_15): 4.4%
+- [Peace Dividend Conflict Elasticity](#sec-peace_dividend_conflict_elasticity): 1:1 (95% CI: 0.25:1 - 1.5:1)
+
+$$
+\begin{gathered}
+g_{cyber,treaty,15} \\
+= \left(\frac{Cost_{cyber,2025}}{GDP_0}\right)\cdot\bar{s}_{treaty,15}\cdot\varepsilon_{conflict}
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-treaty_cybercrime_recovery_gdp_growth_bonus_year_15.qmd >}}
+
+:::
+
+### Treaty Cybercrime Recovery GDP Growth Bonus (Year 20): 0.53% {#sec-treaty_cybercrime_recovery_gdp_growth_bonus_year_20}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual GDP growth bonus by year 20 from reducing cybercrime drag as the treaty weakens the destructive economy feedback loop.
+
+**Inputs**:
+
+- [Global Cybercrime Costs (2025)](#sec-global_cybercrime_cost_annual_2025) 📊: $10.5T
+- [Global GDP (2025)](#sec-global_gdp_2025) 📊: $115T
+- [Treaty Effective Reallocation Share (Year 20)](#sec-treaty_effective_reallocation_share_year_20): 5.8%
+- [Peace Dividend Conflict Elasticity](#sec-peace_dividend_conflict_elasticity): 1:1 (95% CI: 0.25:1 - 1.5:1)
+
+$$
+\begin{gathered}
+g_{cyber,treaty,20} \\
+= \left(\frac{Cost_{cyber,2025}}{GDP_0}\right)\cdot\bar{s}_{treaty,20}\cdot\varepsilon_{conflict}
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-treaty_cybercrime_recovery_gdp_growth_bonus_year_20.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-treaty_cybercrime_recovery_gdp_growth_bonus_year_20.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-treaty_cybercrime_recovery_gdp_growth_bonus_year_20.qmd >}}
+
+:::
+
+### Treaty Disease Cure Fraction (15yr, Take-Hold Path): 100% {#sec-treaty_disease_cure_fraction_15yr}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Treaty disease-cure fraction over 15 years under the optimistic treaty take-hold path. The initial 1% treaty expands to 2%, then 5%, then 10%, and cumulative trial throughput is capped by the physical participant ceiling.
 
 **Inputs**:
 
@@ -9321,7 +9804,7 @@ Treaty disease-cure fraction over 15 years under 1% military reallocation only. 
 $$
 \begin{gathered}
 f_{cure,15,treaty} \\
-= \min\left(1,\frac{Treatments_{new,ann}\cdot k_{capacity}\cdot 15}{D_{untreated}}\right)
+= \min\left(1,\frac{Treatments_{new,ann}\cdot \sum_y k_{capacity,y}}{D_{untreated}}\right)
 \end{gathered}
 $$
 
@@ -9340,6 +9823,34 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-treaty_disease_cure_fraction_15yr.qmd >}}
+
+:::
+
+### Treaty Disease Cure Fraction (20yr, Take-Hold Path): 100% {#sec-treaty_disease_cure_fraction_20yr}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Treaty disease-cure fraction over 20 years under the optimistic treaty take-hold path. The initial 1% treaty expands to 2%, then 5%, then 10%, and cumulative trial throughput is capped by the physical participant ceiling.
+
+**Inputs**:
+
+- [Diseases Getting First Treatment Per Year](#sec-new_disease_first_treatments_per_year) 📊: 15 diseases/year (95% CI: 8 diseases/year - 30 diseases/year)
+- [Trial Capacity Multiplier](#sec-dfda_trial_capacity_multiplier) 🔢: 12.3x
+- [Maximum Trial Capacity Multiplier (Physical Limit)](#sec-dfda_max_trial_capacity_multiplier_physical) 🔢: 566x
+- [Diseases Without Effective Treatment](#sec-diseases_without_effective_treatment) 🔢: 6.65 thousand diseases
+
+$$
+\begin{gathered}
+f_{cure,20,treaty} \\
+= \min\left(1,\frac{Treatments_{new,ann}\cdot \sum_y k_{capacity,y}}{D_{untreated}}\right)
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-treaty_disease_cure_fraction_20yr.qmd >}}
 
 :::
 
@@ -9789,7 +10300,7 @@ $$
 
 :::
 
-### Treaty HALE Gain at Year 15: 6.55 years {#sec-treaty_hale_gain_year_15}
+### Treaty HALE Gain at Year 15: 15.7 years {#sec-treaty_hale_gain_year_15}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -9797,7 +10308,7 @@ HALE improvement at year 15 under Treaty Trajectory. As diseases are progressive
 
 **Inputs**:
 
-- [Treaty Disease Cure Fraction (15yr, 1% Reallocation)](#sec-treaty_disease_cure_fraction_15yr) 🔢: 41.7%
+- [Treaty Disease Cure Fraction (15yr, Take-Hold Path)](#sec-treaty_disease_cure_fraction_15yr) 🔢: 100%
 - [Global Healthy Life Expectancy (HALE)](#sec-global_hale_current) 📊: 63.3 years (SE: ±1.5 years)
 - [Global Life Expectancy (2024)](#sec-global_life_expectancy_2024) 📊: 79 years (SE: ±2 years)
 
@@ -9826,7 +10337,7 @@ $$
 
 :::
 
-### Treaty HALE Value Per Capita: $982K {#sec-treaty_hale_value_per_capita}
+### Treaty HALE Value Per Capita: $2.36M {#sec-treaty_hale_value_per_capita}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -9834,15 +10345,15 @@ Economic value of Treaty Trajectory HALE gains at year 15 using the standard QAL
 
 **Inputs**:
 
-- [Treaty HALE Gain at Year 15](#sec-treaty_hale_gain_year_15) 🔢: 6.55 years
+- [Treaty HALE Gain at Year 15](#sec-treaty_hale_gain_year_15) 🔢: 15.7 years
 - [Standard Economic Value per QALY](#sec-standard_economic_qaly_value_usd) 📊: $150K (SE: ±$30K)
 
 $$
 \begin{gathered}
 Value_{HALE,treaty} \\
 = \Delta HALE_{treaty,15} \times Value_{QALY} \\
-= 6.55 \times \$150K \\
-= \$982K
+= 15.7 \times \$150K \\
+= \$2.36M
 \end{gathered}
 $$
 where:
@@ -9856,7 +10367,7 @@ where:
 $$
 \begin{gathered}
 f_{cure,15,treaty} \\
-= \min\left(1,\frac{Treatments_{new,ann}\cdot k_{capacity}\cdot 15}{D_{untreated}}\right)
+= \min\left(1,\frac{Treatments_{new,ann}\cdot \sum_y k_{capacity,y}}{D_{untreated}}\right)
 \end{gathered}
 $$
 where:
@@ -9938,6 +10449,84 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-treaty_hale_value_per_capita.qmd >}}
+
+:::
+
+### Treaty Health Recovery GDP Growth Bonus (Year 15): 8.46% {#sec-treaty_health_recovery_gdp_growth_bonus_year_15}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annualized GDP growth bonus by year 15 from lower disease burden plus eliminating existing-drug efficacy lag under the treaty path.
+
+**Inputs**:
+
+- [Treaty Disease Cure Fraction (15yr, Take-Hold Path)](#sec-treaty_disease_cure_fraction_15yr) 🔢: 100%
+- [Disease Burden as % of GDP](#sec-disease_burden_gdp_drag_pct) 📊: 13%
+- [Total Economic Loss from Historical Progress Delays](#sec-existing_drugs_efficacy_lag_economic_loss) 🔢: $259T
+- [Global GDP (2025)](#sec-global_gdp_2025) 📊: $115T
+
+$$
+\begin{gathered}
+g_{health,treaty,15} \\
+= \left(1 + f_{cure,15,treaty}\cdot d_{disease} \\
++ \frac{Loss_{lag,existing}}{GDP_0}\right)^{1/15}-1
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-treaty_health_recovery_gdp_growth_bonus_year_15.qmd >}}
+
+{{< include ../figures/sensitivity-table-treaty_health_recovery_gdp_growth_bonus_year_15.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-treaty_health_recovery_gdp_growth_bonus_year_15.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-treaty_health_recovery_gdp_growth_bonus_year_15.qmd >}}
+
+:::
+
+### Treaty Health Recovery GDP Growth Bonus (Year 20): 6.28% {#sec-treaty_health_recovery_gdp_growth_bonus_year_20}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annualized GDP growth bonus by year 20 from lower disease burden plus eliminating existing-drug efficacy lag under the treaty path.
+
+**Inputs**:
+
+- [Treaty Disease Cure Fraction (20yr, Take-Hold Path)](#sec-treaty_disease_cure_fraction_20yr) 🔢: 100%
+- [Disease Burden as % of GDP](#sec-disease_burden_gdp_drag_pct) 📊: 13%
+- [Total Economic Loss from Historical Progress Delays](#sec-existing_drugs_efficacy_lag_economic_loss) 🔢: $259T
+- [Global GDP (2025)](#sec-global_gdp_2025) 📊: $115T
+
+$$
+\begin{gathered}
+g_{health,treaty,20} \\
+= \left(1 + f_{cure,20,treaty}\cdot d_{disease} \\
++ \frac{Loss_{lag,existing}}{GDP_0}\right)^{1/20}-1
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-treaty_health_recovery_gdp_growth_bonus_year_20.qmd >}}
+
+{{< include ../figures/sensitivity-table-treaty_health_recovery_gdp_growth_bonus_year_20.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-treaty_health_recovery_gdp_growth_bonus_year_20.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-treaty_health_recovery_gdp_growth_bonus_year_20.qmd >}}
 
 :::
 
@@ -10091,7 +10680,85 @@ $$
 
 :::
 
-### Treaty Personal Upside (Blended): $15.7M {#sec-treaty_personal_upside_blend}
+### Treaty Peace Recovery GDP Growth Bonus (Year 15): 0.435% {#sec-treaty_peace_recovery_gdp_growth_bonus_year_15}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual GDP growth bonus by year 15 from explicit avoided war-cost drag under the treaty take-hold path.
+
+**Inputs**:
+
+- [Annual Peace Dividend from 1% Reduction in Total War Costs](#sec-peace_dividend_annual_societal_benefit) 🔢: $114B
+- [Global GDP (2025)](#sec-global_gdp_2025) 📊: $115T
+- [Treaty Effective Reallocation Share (Year 15)](#sec-treaty_effective_reallocation_share_year_15): 4.4%
+- [1% Reduction in Military Spending/War Costs from Treaty](#sec-treaty_reduction_pct): 1%
+- [Peace Dividend Conflict Elasticity](#sec-peace_dividend_conflict_elasticity): 1:1 (95% CI: 0.25:1 - 1.5:1)
+
+$$
+\begin{gathered}
+g_{peace,treaty,15} \\
+= \left(\frac{Benefit_{peace,soc}}{GDP_0}\right)\cdot\left(\frac{\bar{s}_{treaty,15}}{Reduce_{treaty}}\right)\cdot\varepsilon_{conflict}
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-treaty_peace_recovery_gdp_growth_bonus_year_15.qmd >}}
+
+{{< include ../figures/sensitivity-table-treaty_peace_recovery_gdp_growth_bonus_year_15.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-treaty_peace_recovery_gdp_growth_bonus_year_15.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-treaty_peace_recovery_gdp_growth_bonus_year_15.qmd >}}
+
+:::
+
+### Treaty Peace Recovery GDP Growth Bonus (Year 20): 0.573% {#sec-treaty_peace_recovery_gdp_growth_bonus_year_20}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual GDP growth bonus by year 20 from explicit avoided war-cost drag under the treaty take-hold path.
+
+**Inputs**:
+
+- [Annual Peace Dividend from 1% Reduction in Total War Costs](#sec-peace_dividend_annual_societal_benefit) 🔢: $114B
+- [Global GDP (2025)](#sec-global_gdp_2025) 📊: $115T
+- [Treaty Effective Reallocation Share (Year 20)](#sec-treaty_effective_reallocation_share_year_20): 5.8%
+- [1% Reduction in Military Spending/War Costs from Treaty](#sec-treaty_reduction_pct): 1%
+- [Peace Dividend Conflict Elasticity](#sec-peace_dividend_conflict_elasticity): 1:1 (95% CI: 0.25:1 - 1.5:1)
+
+$$
+\begin{gathered}
+g_{peace,treaty,20} \\
+= \left(\frac{Benefit_{peace,soc}}{GDP_0}\right)\cdot\left(\frac{\bar{s}_{treaty,20}}{Reduce_{treaty}}\right)\cdot\varepsilon_{conflict}
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-treaty_peace_recovery_gdp_growth_bonus_year_20.qmd >}}
+
+{{< include ../figures/sensitivity-table-treaty_peace_recovery_gdp_growth_bonus_year_20.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-treaty_peace_recovery_gdp_growth_bonus_year_20.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-treaty_peace_recovery_gdp_growth_bonus_year_20.qmd >}}
+
+:::
+
+### Treaty Personal Upside (Blended): $5.84M {#sec-treaty_personal_upside_blend}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -10099,15 +10766,15 @@ Blended personal upside under Treaty Trajectory: lifetime income gain plus value
 
 **Inputs**:
 
-- [Treaty Trajectory Lifetime Income Gain (Per Capita)](#sec-treaty_trajectory_lifetime_income_gain_per_capita) 🔢: $14.7M
-- [Treaty HALE Value Per Capita](#sec-treaty_hale_value_per_capita) 🔢: $982K
+- [Treaty Trajectory Lifetime Income Gain (Per Capita)](#sec-treaty_trajectory_lifetime_income_gain_per_capita) 🔢: $3.48M
+- [Treaty HALE Value Per Capita](#sec-treaty_hale_value_per_capita) 🔢: $2.36M
 
 $$
 \begin{gathered}
 Upside_{blend,treaty} \\
 = \Delta Y_{lifetime,treaty} + Value_{HALE,treaty} \\
-= \$14.7M + \$982K \\
-= \$15.7M
+= \$3.48M + \$2.36M \\
+= \$5.84M
 \end{gathered}
 $$
 where:
@@ -10115,16 +10782,16 @@ $$
 \begin{gathered}
 \Delta Y_{lifetime,treaty} \\
 = Y_{cum,treaty} - Y_{cum,earth} \\
-= \$16.1M - \$1.34M \\
-= \$14.7M
+= \$4.58M - \$1.1M \\
+= \$3.48M
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
 Y_{cum,treaty} \\
-= \bar{y}_0 \cdot \frac{(1+g_{pc})((1+g_{pc})^{20}-1)}{g_{pc}} \\
-+ \bar{y}_{treaty,20} \cdot \frac{(1+g_{base})((1+g_{base})^{T_{remaining}-20}-1)}{g_{base}}
+= \bar{y}_0 \cdot \frac{(1+g_{pc,treaty})((1+g_{pc,treaty})^{20}-1)}{g_{pc,treaty}} \\
++ \bar{y}_{treaty,20} \cdot \frac{(1+g_{pc,base})((1+g_{pc,base})^{T_{remaining}-20}-1)}{g_{pc,base}}
 \end{gathered}
 $$
 where:
@@ -10144,27 +10811,139 @@ where:
 $$
 \begin{gathered}
 GDP_{treaty,20} \\
-= GDP_0(1+g_{treaty,ramp})^3(1+g_{treaty,full})^{17}
-\end{gathered}
-$$
-where:
-$$
-s_{mil,max} = Cut_{WW2} = 87.6\% = 87.6\%
-$$
-where:
-$$
-\begin{gathered}
-Cut_{WW2} \\
-= 1 - \frac{Spending_{US,1947}}{Spending_{US,1945}} \\
-= 1 - \frac{\$176B}{\$1.42T} \\
-= 87.6\%
+= GDP_0(1 + g_{base} + g_{redirect} + g_{peace} + g_{cyber} \\
++ g_{health})^{20}
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
-f_{cure,20,wish} \\
-= \min\left(1,\frac{Treatments_{new,ann}\cdot k_{capacity,wish}\cdot 20}{D_{untreated}}\right)
+g_{redirect,treaty,20} \\
+= \bar{s}_{treaty,20}\cdot\left(\frac{\Delta g_{30\%}}{0.30}\right)\cdot\left(\frac{m_{spillover}}{2.0}\right)
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+g_{peace,treaty,20} \\
+= \left(\frac{Benefit_{peace,soc}}{GDP_0}\right)\cdot\left(\frac{\bar{s}_{treaty,20}}{Reduce_{treaty}}\right)\cdot\varepsilon_{conflict}
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Benefit_{peace,soc} \\
+= Cost_{war,total} \times Reduce_{treaty} \\
+= \$11.4T \times 1\% \\
+= \$114B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,total} \\
+= Cost_{war,direct} + Cost_{war,indirect} \\
+= \$7.66T + \$3.7T \\
+= \$11.4T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,direct} \\
+= Loss_{life,conflict} + Damage_{infra,total} \\
++ Disruption_{trade} + Spending_{mil} \\
+= \$2.45T + \$1.88T + \$616B + \$2.72T \\
+= \$7.66T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Loss_{life,conflict} \\
+= Cost_{combat,human} + Cost_{state,human} \\
++ Cost_{terror,human} \\
+= \$2.34T + \$27B + \$83B \\
+= \$2.45T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{combat,human} \\
+= Deaths_{combat} \times VSL \\
+= 234{,}000 \times \$10M \\
+= \$2.34T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{state,human} \\
+= Deaths_{state} \times VSL \\
+= 2{,}700 \times \$10M \\
+= \$27B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{terror,human} \\
+= Deaths_{terror} \times VSL \\
+= 8{,}300 \times \$10M \\
+= \$83B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Damage_{infra,total} \\
+= Damage_{comms} + Damage_{edu} + Damage_{energy} \\
++ Damage_{health} + Damage_{transport} + Damage_{water} \\
+= \$298B + \$234B + \$422B + \$166B + \$487B + \$268B \\
+= \$1.88T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Disruption_{trade} \\
+= Disruption_{currency} + Disruption_{energy} \\
++ Disruption_{shipping} + Disruption_{supply} \\
+= \$57.4B + \$125B + \$247B + \$187B \\
+= \$616B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,indirect} \\
+= Damage_{env} + Loss_{growth,mil} + Loss_{capital,conflict} \\
++ Cost_{psych} + Cost_{refugee} + Cost_{vet} \\
+= \$100B + \$2.72T + \$300B + \$232B + \$150B + \$200B \\
+= \$3.7T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+g_{cyber,treaty,20} \\
+= \left(\frac{Cost_{cyber,2025}}{GDP_0}\right)\cdot\bar{s}_{treaty,20}\cdot\varepsilon_{conflict}
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+g_{health,treaty,20} \\
+= \left(1 + f_{cure,20,treaty}\cdot d_{disease} \\
++ \frac{Loss_{lag,existing}}{GDP_0}\right)^{1/20}-1
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+f_{cure,20,treaty} \\
+= \min\left(1,\frac{Treatments_{new,ann}\cdot \sum_y k_{capacity,y}}{D_{untreated}}\right)
 \end{gathered}
 $$
 where:
@@ -10234,6 +11013,46 @@ $$
 where:
 $$
 \begin{gathered}
+Loss_{lag} \\
+= Deaths_{lag,total} \times (LE_{global} - Age_{death,delay}) \times Value_{QALY} \\
+= 102M \times (79 - 62) \times \$150K \\
+= \$259T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Deaths_{lag,total} \\
+= Lives_{saved,annual} \times T_{lag} \\
+= 12.4M \times 8.2 \\
+= 102M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Lives_{saved,annual} \\
+= \frac{LY_{saved,annual}}{T_{ext}} \\
+= \frac{149M}{12} \\
+= 12.4M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+\bar{y}_{base,20} \\
+= \frac{GDP_{base,20}}{Pop_{2045}} \\
+= \frac{\$188T}{9.2B} \\
+= \$20.5K
+\end{gathered}
+$$
+where:
+$$
+GDP_{base,20} = GDP_0(1+g_{base})^{20}
+$$
+where:
+$$
+\begin{gathered}
 T_{remaining} \\
 = LE_{global} - Age_{median} \\
 = 79 - 30.5 \\
@@ -10244,7 +11063,7 @@ where:
 $$
 \begin{gathered}
 Y_{cum,earth} \\
-= \bar{y}_0 \cdot \frac{(1+g_{base})((1+g_{base})^{T_{remaining}}-1)}{g_{base}}
+= \bar{y}_0 \cdot \frac{(1+g_{pc,base})((1+g_{pc,base})^{T_{remaining}}-1)}{g_{pc,base}}
 \end{gathered}
 $$
 where:
@@ -10252,8 +11071,8 @@ $$
 \begin{gathered}
 Value_{HALE,treaty} \\
 = \Delta HALE_{treaty,15} \times Value_{QALY} \\
-= 6.55 \times \$150K \\
-= \$982K
+= 15.7 \times \$150K \\
+= \$2.36M
 \end{gathered}
 $$
 where:
@@ -10267,7 +11086,7 @@ where:
 $$
 \begin{gathered}
 f_{cure,15,treaty} \\
-= \min\left(1,\frac{Treatments_{new,ann}\cdot k_{capacity}\cdot 15}{D_{untreated}}\right)
+= \min\left(1,\frac{Treatments_{new,ann}\cdot \sum_y k_{capacity,y}}{D_{untreated}}\right)
 \end{gathered}
 $$
 *✓ High confidence*
@@ -10288,7 +11107,7 @@ $$
 
 :::
 
-### Treaty Projected HALE at Year 15: 69.8 years {#sec-treaty_projected_hale_year_15}
+### Treaty Projected HALE at Year 15: 79 years {#sec-treaty_projected_hale_year_15}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -10297,7 +11116,7 @@ Projected global HALE at year 15 under Treaty Trajectory. Current HALE plus the 
 **Inputs**:
 
 - [Global Healthy Life Expectancy (HALE)](#sec-global_hale_current) 📊: 63.3 years (SE: ±1.5 years)
-- [Treaty HALE Gain at Year 15](#sec-treaty_hale_gain_year_15) 🔢: 6.55 years
+- [Treaty HALE Gain at Year 15](#sec-treaty_hale_gain_year_15) 🔢: 15.7 years
 
 $$
 HALE_{treaty,15} = HALE_0 + \Delta HALE_{treaty,15}
@@ -10318,6 +11137,80 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-treaty_projected_hale_year_15.qmd >}}
+
+:::
+
+### Treaty Redirect GDP Growth Bonus (Year 15): 0.807% {#sec-treaty_redirect_gdp_growth_bonus_year_15}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual GDP growth bonus by year 15 from redirecting military spending to medical research under the treaty take-hold path, including R&D spillovers.
+
+**Inputs**:
+
+- [Treaty Effective Reallocation Share (Year 15)](#sec-treaty_effective_reallocation_share_year_15): 4.4%
+- [GDP Growth Boost at 30% Military Reallocation](#sec-military_redirect_gdp_boost_at_30pct): 5.5% (95% CI: 3.5% - 7.5%)
+- [R&D Spillover Multiplier](#sec-rd_spillover_multiplier): 2x (95% CI: 1.5x - 2.5x)
+
+$$
+\begin{gathered}
+g_{redirect,treaty,15} \\
+= \bar{s}_{treaty,15}\cdot\left(\frac{\Delta g_{30\%}}{0.30}\right)\cdot\left(\frac{m_{spillover}}{2.0}\right)
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-treaty_redirect_gdp_growth_bonus_year_15.qmd >}}
+
+{{< include ../figures/sensitivity-table-treaty_redirect_gdp_growth_bonus_year_15.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-treaty_redirect_gdp_growth_bonus_year_15.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-treaty_redirect_gdp_growth_bonus_year_15.qmd >}}
+
+:::
+
+### Treaty Redirect GDP Growth Bonus (Year 20): 1.06% {#sec-treaty_redirect_gdp_growth_bonus_year_20}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual GDP growth bonus by year 20 from redirecting military spending to medical research under the treaty take-hold path, including R&D spillovers.
+
+**Inputs**:
+
+- [Treaty Effective Reallocation Share (Year 20)](#sec-treaty_effective_reallocation_share_year_20): 5.8%
+- [GDP Growth Boost at 30% Military Reallocation](#sec-military_redirect_gdp_boost_at_30pct): 5.5% (95% CI: 3.5% - 7.5%)
+- [R&D Spillover Multiplier](#sec-rd_spillover_multiplier): 2x (95% CI: 1.5x - 2.5x)
+
+$$
+\begin{gathered}
+g_{redirect,treaty,20} \\
+= \bar{s}_{treaty,20}\cdot\left(\frac{\Delta g_{30\%}}{0.30}\right)\cdot\left(\frac{m_{spillover}}{2.0}\right)
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-treaty_redirect_gdp_growth_bonus_year_20.qmd >}}
+
+{{< include ../figures/sensitivity-table-treaty_redirect_gdp_growth_bonus_year_20.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-treaty_redirect_gdp_growth_bonus_year_20.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-treaty_redirect_gdp_growth_bonus_year_20.qmd >}}
 
 :::
 
@@ -10537,7 +11430,7 @@ $$
 
 :::
 
-### Treaty Trajectory Average Income at Year 15: $149K {#sec-treaty_trajectory_avg_income_year_15}
+### Treaty Trajectory Average Income at Year 15: $76.7K {#sec-treaty_trajectory_avg_income_year_15}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -10545,7 +11438,7 @@ Average income (GDP per capita) at year 15 under the Treaty Trajectory.
 
 **Inputs**:
 
-- [Treaty Trajectory GDP at Year 15](#sec-treaty_trajectory_gdp_year_15) 🔢: $1.33 quadrillion
+- [Treaty Trajectory GDP at Year 15](#sec-treaty_trajectory_gdp_year_15) 🔢: $683T
 - [Global Population 2040 (Projected)](#sec-global_population_2040_projected) 📊: 8.9 billion of people
 
 $$
@@ -10570,7 +11463,7 @@ $$
 
 :::
 
-### Treaty Trajectory Average Income at Year 20: $339K {#sec-treaty_trajectory_avg_income_year_20}
+### Treaty Trajectory Average Income at Year 20: $99.9K {#sec-treaty_trajectory_avg_income_year_20}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -10578,7 +11471,7 @@ Average income (GDP per capita) at year 20 under the Treaty Trajectory.
 
 **Inputs**:
 
-- [Treaty Trajectory GDP at Year 20](#sec-treaty_trajectory_gdp_year_20) 🔢: $3.11 quadrillion
+- [Treaty Trajectory GDP at Year 20](#sec-treaty_trajectory_gdp_year_20) 🔢: $919T
 - [Global Population 2045 (Projected)](#sec-global_population_2045_projected) 📊: 9.2 billion of people
 
 $$
@@ -10603,7 +11496,7 @@ $$
 
 :::
 
-### Treaty Trajectory CAGR (20 Years): 17.9% {#sec-treaty_trajectory_cagr_year_20}
+### Treaty Trajectory CAGR (20 Years): 10.9% {#sec-treaty_trajectory_cagr_year_20}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -10611,7 +11504,7 @@ Compound annual growth rate implied by Treaty Trajectory GDP trajectory over 20 
 
 **Inputs**:
 
-- [Treaty Trajectory GDP at Year 20](#sec-treaty_trajectory_gdp_year_20) 🔢: $3.11 quadrillion
+- [Treaty Trajectory GDP at Year 20](#sec-treaty_trajectory_gdp_year_20) 🔢: $919T
 - [Global GDP (2025)](#sec-global_gdp_2025) 📊: $115T
 
 $$
@@ -10639,24 +11532,24 @@ $$
 
 :::
 
-### Treaty Trajectory Cumulative Lifetime Income (Per Capita): $16.1M {#sec-treaty_trajectory_cumulative_lifetime_income}
+### Treaty Trajectory Cumulative Lifetime Income (Per Capita): $4.58M {#sec-treaty_trajectory_cumulative_lifetime_income}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Cumulative per-capita income over an average remaining lifespan under Treaty Trajectory. Uses implied per-capita CAGR for years 1-20 (derived from known year-0 and year-20 per-capita incomes), then baseline growth from the year-20 level. Conservative: assumes no further treaty acceleration beyond year 20.
+Cumulative per-capita income over an average remaining lifespan under Treaty Trajectory. Uses implied per-capita CAGR for years 1-20 (derived from known year-0 and year-20 per-capita incomes), then current-trajectory per-capita growth from the year-20 level. Conservative: assumes no further treaty acceleration beyond year 20.
 
 **Inputs**:
 
 - [Global Average Income (2025 Baseline)](#sec-global_avg_income_2025) 🔢: $14.4K
-- [Treaty Trajectory Average Income at Year 20](#sec-treaty_trajectory_avg_income_year_20) 🔢: $339K
-- [Baseline Global GDP Growth Rate](#sec-gdp_baseline_growth_rate): 2.5%
+- [Treaty Trajectory Average Income at Year 20](#sec-treaty_trajectory_avg_income_year_20) 🔢: $99.9K
+- [Current Trajectory Average Income at Year 20](#sec-current_trajectory_avg_income_year_20) 🔢: $20.5K
 - [Average Remaining Years (Median Person)](#sec-global_avg_remaining_years) 🔢: 48.5 years
 
 $$
 \begin{gathered}
 Y_{cum,treaty} \\
-= \bar{y}_0 \cdot \frac{(1+g_{pc})((1+g_{pc})^{20}-1)}{g_{pc}} \\
-+ \bar{y}_{treaty,20} \cdot \frac{(1+g_{base})((1+g_{base})^{T_{remaining}-20}-1)}{g_{base}}
+= \bar{y}_0 \cdot \frac{(1+g_{pc,treaty})((1+g_{pc,treaty})^{20}-1)}{g_{pc,treaty}} \\
++ \bar{y}_{treaty,20} \cdot \frac{(1+g_{pc,base})((1+g_{pc,base})^{T_{remaining}-20}-1)}{g_{pc,base}}
 \end{gathered}
 $$
 
@@ -10678,7 +11571,7 @@ $$
 
 :::
 
-### Treaty Trajectory vs Current Trajectory GDP Multiplier (Year 20): 16.5x {#sec-treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_20}
+### Treaty Trajectory vs Current Trajectory GDP Multiplier (Year 20): 4.88x {#sec-treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_20}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -10686,42 +11579,154 @@ Treaty Trajectory GDP at year 20 as a multiple of current trajectory GDP at year
 
 **Inputs**:
 
-- [Treaty Trajectory GDP at Year 20](#sec-treaty_trajectory_gdp_year_20) 🔢: $3.11 quadrillion
+- [Treaty Trajectory GDP at Year 20](#sec-treaty_trajectory_gdp_year_20) 🔢: $919T
 - [Current Trajectory GDP at Year 20](#sec-current_trajectory_gdp_year_20) 🔢: $188T
 
 $$
 \begin{gathered}
 k_{treaty:base,20} \\
 = \frac{GDP_{treaty,20}}{GDP_{base,20}} \\
-= \frac{\$3110T}{\$188T} \\
-= 16.5
+= \frac{\$919T}{\$188T} \\
+= 4.88
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
 GDP_{treaty,20} \\
-= GDP_0(1+g_{treaty,ramp})^3(1+g_{treaty,full})^{17}
-\end{gathered}
-$$
-where:
-$$
-s_{mil,max} = Cut_{WW2} = 87.6\% = 87.6\%
-$$
-where:
-$$
-\begin{gathered}
-Cut_{WW2} \\
-= 1 - \frac{Spending_{US,1947}}{Spending_{US,1945}} \\
-= 1 - \frac{\$176B}{\$1.42T} \\
-= 87.6\%
+= GDP_0(1 + g_{base} + g_{redirect} + g_{peace} + g_{cyber} \\
++ g_{health})^{20}
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
-f_{cure,20,wish} \\
-= \min\left(1,\frac{Treatments_{new,ann}\cdot k_{capacity,wish}\cdot 20}{D_{untreated}}\right)
+g_{redirect,treaty,20} \\
+= \bar{s}_{treaty,20}\cdot\left(\frac{\Delta g_{30\%}}{0.30}\right)\cdot\left(\frac{m_{spillover}}{2.0}\right)
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+g_{peace,treaty,20} \\
+= \left(\frac{Benefit_{peace,soc}}{GDP_0}\right)\cdot\left(\frac{\bar{s}_{treaty,20}}{Reduce_{treaty}}\right)\cdot\varepsilon_{conflict}
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Benefit_{peace,soc} \\
+= Cost_{war,total} \times Reduce_{treaty} \\
+= \$11.4T \times 1\% \\
+= \$114B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,total} \\
+= Cost_{war,direct} + Cost_{war,indirect} \\
+= \$7.66T + \$3.7T \\
+= \$11.4T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,direct} \\
+= Loss_{life,conflict} + Damage_{infra,total} \\
++ Disruption_{trade} + Spending_{mil} \\
+= \$2.45T + \$1.88T + \$616B + \$2.72T \\
+= \$7.66T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Loss_{life,conflict} \\
+= Cost_{combat,human} + Cost_{state,human} \\
++ Cost_{terror,human} \\
+= \$2.34T + \$27B + \$83B \\
+= \$2.45T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{combat,human} \\
+= Deaths_{combat} \times VSL \\
+= 234{,}000 \times \$10M \\
+= \$2.34T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{state,human} \\
+= Deaths_{state} \times VSL \\
+= 2{,}700 \times \$10M \\
+= \$27B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{terror,human} \\
+= Deaths_{terror} \times VSL \\
+= 8{,}300 \times \$10M \\
+= \$83B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Damage_{infra,total} \\
+= Damage_{comms} + Damage_{edu} + Damage_{energy} \\
++ Damage_{health} + Damage_{transport} + Damage_{water} \\
+= \$298B + \$234B + \$422B + \$166B + \$487B + \$268B \\
+= \$1.88T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Disruption_{trade} \\
+= Disruption_{currency} + Disruption_{energy} \\
++ Disruption_{shipping} + Disruption_{supply} \\
+= \$57.4B + \$125B + \$247B + \$187B \\
+= \$616B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,indirect} \\
+= Damage_{env} + Loss_{growth,mil} + Loss_{capital,conflict} \\
++ Cost_{psych} + Cost_{refugee} + Cost_{vet} \\
+= \$100B + \$2.72T + \$300B + \$232B + \$150B + \$200B \\
+= \$3.7T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+g_{cyber,treaty,20} \\
+= \left(\frac{Cost_{cyber,2025}}{GDP_0}\right)\cdot\bar{s}_{treaty,20}\cdot\varepsilon_{conflict}
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+g_{health,treaty,20} \\
+= \left(1 + f_{cure,20,treaty}\cdot d_{disease} \\
++ \frac{Loss_{lag,existing}}{GDP_0}\right)^{1/20}-1
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+f_{cure,20,treaty} \\
+= \min\left(1,\frac{Treatments_{new,ann}\cdot \sum_y k_{capacity,y}}{D_{untreated}}\right)
 \end{gathered}
 $$
 where:
@@ -10786,6 +11791,33 @@ N_{untreated} \\
 = N_{rare} \times 0.95 \\
 = 7{,}000 \times 0.95 \\
 = 6{,}650
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Loss_{lag} \\
+= Deaths_{lag,total} \times (LE_{global} - Age_{death,delay}) \times Value_{QALY} \\
+= 102M \times (79 - 62) \times \$150K \\
+= \$259T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Deaths_{lag,total} \\
+= Lives_{saved,annual} \times T_{lag} \\
+= 12.4M \times 8.2 \\
+= 102M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Lives_{saved,annual} \\
+= \frac{LY_{saved,annual}}{T_{ext}} \\
+= \frac{149M}{12} \\
+= 12.4M
 \end{gathered}
 $$
 where:
@@ -10810,26 +11842,26 @@ $$
 
 :::
 
-### Treaty Trajectory GDP at Year 15: $1.33 quadrillion {#sec-treaty_trajectory_gdp_year_15}
+### Treaty Trajectory GDP at Year 15: $683T {#sec-treaty_trajectory_gdp_year_15}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Projected global GDP at year 15 under the Treaty Trajectory: military-to-science reallocation plus disease-burden recovery only. 3-year ramp at 50% intensity + 12 years full implementation. Excludes non-health dysfunction-capital reallocation.
+Projected global GDP at year 15 under the optimistic treaty take-hold path. Compounds baseline growth plus explicit military redirect spillovers, peace dividend recovery, cybercrime drag recovery, and health recovery from disease cures and faster deployment.
 
 **Inputs**:
 
 - [Global GDP (2025)](#sec-global_gdp_2025) 📊: $115T
 - [Baseline Global GDP Growth Rate](#sec-gdp_baseline_growth_rate): 2.5%
-- [Wishonia Military Reallocation Physical Max Share](#sec-wishonia_military_reallocation_physical_max_share) 🔢: 87.6%
-- [GDP Growth Boost at 30% Military Reallocation](#sec-military_redirect_gdp_boost_at_30pct): 5.5% (95% CI: 3.5% - 7.5%)
-- [R&D Spillover Multiplier](#sec-rd_spillover_multiplier): 2x (95% CI: 1.5x - 2.5x)
-- [Wishonia Disease Cure Fraction (15yr, Full Implementation)](#sec-wishonia_disease_cure_fraction_15yr) 🔢: 100%
-- [Disease Burden as % of GDP](#sec-disease_burden_gdp_drag_pct) 📊: 13%
+- [Treaty Redirect GDP Growth Bonus (Year 15)](#sec-treaty_redirect_gdp_growth_bonus_year_15) 🔢: 0.807%
+- [Treaty Peace Recovery GDP Growth Bonus (Year 15)](#sec-treaty_peace_recovery_gdp_growth_bonus_year_15) 🔢: 0.435%
+- [Treaty Cybercrime Recovery GDP Growth Bonus (Year 15)](#sec-treaty_cybercrime_recovery_gdp_growth_bonus_year_15) 🔢: 0.402%
+- [Treaty Health Recovery GDP Growth Bonus (Year 15)](#sec-treaty_health_recovery_gdp_growth_bonus_year_15) 🔢: 8.46%
 
 $$
 \begin{gathered}
 GDP_{treaty,15} \\
-= GDP_0(1+g_{treaty,ramp})^3(1+g_{treaty,full})^{12}
+= GDP_0(1 + g_{base} + g_{redirect} + g_{peace} + g_{cyber} \\
++ g_{health})^{15}
 \end{gathered}
 $$
 
@@ -10851,26 +11883,26 @@ $$
 
 :::
 
-### Treaty Trajectory GDP at Year 20: $3.11 quadrillion {#sec-treaty_trajectory_gdp_year_20}
+### Treaty Trajectory GDP at Year 20: $919T {#sec-treaty_trajectory_gdp_year_20}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Projected global GDP at year 20 under the Treaty Trajectory: military-to-science reallocation plus disease-burden recovery only. Excludes non-health dysfunction-capital reallocation to isolate the lower-political-baggage channel.
+Projected global GDP at year 20 under the optimistic treaty take-hold path. Compounds baseline growth plus explicit military redirect spillovers, peace dividend recovery, cybercrime drag recovery, and health recovery from disease cures and faster deployment.
 
 **Inputs**:
 
 - [Global GDP (2025)](#sec-global_gdp_2025) 📊: $115T
 - [Baseline Global GDP Growth Rate](#sec-gdp_baseline_growth_rate): 2.5%
-- [Wishonia Military Reallocation Physical Max Share](#sec-wishonia_military_reallocation_physical_max_share) 🔢: 87.6%
-- [GDP Growth Boost at 30% Military Reallocation](#sec-military_redirect_gdp_boost_at_30pct): 5.5% (95% CI: 3.5% - 7.5%)
-- [R&D Spillover Multiplier](#sec-rd_spillover_multiplier): 2x (95% CI: 1.5x - 2.5x)
-- [Wishonia Disease Cure Fraction (20yr, Full Implementation)](#sec-wishonia_disease_cure_fraction_20yr_full) 🔢: 100%
-- [Disease Burden as % of GDP](#sec-disease_burden_gdp_drag_pct) 📊: 13%
+- [Treaty Redirect GDP Growth Bonus (Year 20)](#sec-treaty_redirect_gdp_growth_bonus_year_20) 🔢: 1.06%
+- [Treaty Peace Recovery GDP Growth Bonus (Year 20)](#sec-treaty_peace_recovery_gdp_growth_bonus_year_20) 🔢: 0.573%
+- [Treaty Cybercrime Recovery GDP Growth Bonus (Year 20)](#sec-treaty_cybercrime_recovery_gdp_growth_bonus_year_20) 🔢: 0.53%
+- [Treaty Health Recovery GDP Growth Bonus (Year 20)](#sec-treaty_health_recovery_gdp_growth_bonus_year_20) 🔢: 6.28%
 
 $$
 \begin{gathered}
 GDP_{treaty,20} \\
-= GDP_0(1+g_{treaty,ramp})^3(1+g_{treaty,full})^{17}
+= GDP_0(1 + g_{base} + g_{redirect} + g_{peace} + g_{cyber} \\
++ g_{health})^{20}
 \end{gathered}
 $$
 
@@ -10892,7 +11924,7 @@ $$
 
 :::
 
-### Treaty Trajectory Lifetime Income Gain (Per Capita): $14.7M {#sec-treaty_trajectory_lifetime_income_gain_per_capita}
+### Treaty Trajectory Lifetime Income Gain (Per Capita): $3.48M {#sec-treaty_trajectory_lifetime_income_gain_per_capita}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -10900,23 +11932,23 @@ Lifetime per-capita income gain from Treaty Trajectory vs current trajectory. Cu
 
 **Inputs**:
 
-- [Treaty Trajectory Cumulative Lifetime Income (Per Capita)](#sec-treaty_trajectory_cumulative_lifetime_income) 🔢: $16.1M
-- [Current Trajectory Cumulative Lifetime Income (Per Capita)](#sec-current_trajectory_cumulative_lifetime_income) 🔢: $1.34M
+- [Treaty Trajectory Cumulative Lifetime Income (Per Capita)](#sec-treaty_trajectory_cumulative_lifetime_income) 🔢: $4.58M
+- [Current Trajectory Cumulative Lifetime Income (Per Capita)](#sec-current_trajectory_cumulative_lifetime_income) 🔢: $1.1M
 
 $$
 \begin{gathered}
 \Delta Y_{lifetime,treaty} \\
 = Y_{cum,treaty} - Y_{cum,earth} \\
-= \$16.1M - \$1.34M \\
-= \$14.7M
+= \$4.58M - \$1.1M \\
+= \$3.48M
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
 Y_{cum,treaty} \\
-= \bar{y}_0 \cdot \frac{(1+g_{pc})((1+g_{pc})^{20}-1)}{g_{pc}} \\
-+ \bar{y}_{treaty,20} \cdot \frac{(1+g_{base})((1+g_{base})^{T_{remaining}-20}-1)}{g_{base}}
+= \bar{y}_0 \cdot \frac{(1+g_{pc,treaty})((1+g_{pc,treaty})^{20}-1)}{g_{pc,treaty}} \\
++ \bar{y}_{treaty,20} \cdot \frac{(1+g_{pc,base})((1+g_{pc,base})^{T_{remaining}-20}-1)}{g_{pc,base}}
 \end{gathered}
 $$
 where:
@@ -10936,27 +11968,139 @@ where:
 $$
 \begin{gathered}
 GDP_{treaty,20} \\
-= GDP_0(1+g_{treaty,ramp})^3(1+g_{treaty,full})^{17}
-\end{gathered}
-$$
-where:
-$$
-s_{mil,max} = Cut_{WW2} = 87.6\% = 87.6\%
-$$
-where:
-$$
-\begin{gathered}
-Cut_{WW2} \\
-= 1 - \frac{Spending_{US,1947}}{Spending_{US,1945}} \\
-= 1 - \frac{\$176B}{\$1.42T} \\
-= 87.6\%
+= GDP_0(1 + g_{base} + g_{redirect} + g_{peace} + g_{cyber} \\
++ g_{health})^{20}
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
-f_{cure,20,wish} \\
-= \min\left(1,\frac{Treatments_{new,ann}\cdot k_{capacity,wish}\cdot 20}{D_{untreated}}\right)
+g_{redirect,treaty,20} \\
+= \bar{s}_{treaty,20}\cdot\left(\frac{\Delta g_{30\%}}{0.30}\right)\cdot\left(\frac{m_{spillover}}{2.0}\right)
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+g_{peace,treaty,20} \\
+= \left(\frac{Benefit_{peace,soc}}{GDP_0}\right)\cdot\left(\frac{\bar{s}_{treaty,20}}{Reduce_{treaty}}\right)\cdot\varepsilon_{conflict}
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Benefit_{peace,soc} \\
+= Cost_{war,total} \times Reduce_{treaty} \\
+= \$11.4T \times 1\% \\
+= \$114B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,total} \\
+= Cost_{war,direct} + Cost_{war,indirect} \\
+= \$7.66T + \$3.7T \\
+= \$11.4T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,direct} \\
+= Loss_{life,conflict} + Damage_{infra,total} \\
++ Disruption_{trade} + Spending_{mil} \\
+= \$2.45T + \$1.88T + \$616B + \$2.72T \\
+= \$7.66T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Loss_{life,conflict} \\
+= Cost_{combat,human} + Cost_{state,human} \\
++ Cost_{terror,human} \\
+= \$2.34T + \$27B + \$83B \\
+= \$2.45T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{combat,human} \\
+= Deaths_{combat} \times VSL \\
+= 234{,}000 \times \$10M \\
+= \$2.34T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{state,human} \\
+= Deaths_{state} \times VSL \\
+= 2{,}700 \times \$10M \\
+= \$27B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{terror,human} \\
+= Deaths_{terror} \times VSL \\
+= 8{,}300 \times \$10M \\
+= \$83B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Damage_{infra,total} \\
+= Damage_{comms} + Damage_{edu} + Damage_{energy} \\
++ Damage_{health} + Damage_{transport} + Damage_{water} \\
+= \$298B + \$234B + \$422B + \$166B + \$487B + \$268B \\
+= \$1.88T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Disruption_{trade} \\
+= Disruption_{currency} + Disruption_{energy} \\
++ Disruption_{shipping} + Disruption_{supply} \\
+= \$57.4B + \$125B + \$247B + \$187B \\
+= \$616B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,indirect} \\
+= Damage_{env} + Loss_{growth,mil} + Loss_{capital,conflict} \\
++ Cost_{psych} + Cost_{refugee} + Cost_{vet} \\
+= \$100B + \$2.72T + \$300B + \$232B + \$150B + \$200B \\
+= \$3.7T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+g_{cyber,treaty,20} \\
+= \left(\frac{Cost_{cyber,2025}}{GDP_0}\right)\cdot\bar{s}_{treaty,20}\cdot\varepsilon_{conflict}
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+g_{health,treaty,20} \\
+= \left(1 + f_{cure,20,treaty}\cdot d_{disease} \\
++ \frac{Loss_{lag,existing}}{GDP_0}\right)^{1/20}-1
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+f_{cure,20,treaty} \\
+= \min\left(1,\frac{Treatments_{new,ann}\cdot \sum_y k_{capacity,y}}{D_{untreated}}\right)
 \end{gathered}
 $$
 where:
@@ -11026,6 +12170,46 @@ $$
 where:
 $$
 \begin{gathered}
+Loss_{lag} \\
+= Deaths_{lag,total} \times (LE_{global} - Age_{death,delay}) \times Value_{QALY} \\
+= 102M \times (79 - 62) \times \$150K \\
+= \$259T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Deaths_{lag,total} \\
+= Lives_{saved,annual} \times T_{lag} \\
+= 12.4M \times 8.2 \\
+= 102M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Lives_{saved,annual} \\
+= \frac{LY_{saved,annual}}{T_{ext}} \\
+= \frac{149M}{12} \\
+= 12.4M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+\bar{y}_{base,20} \\
+= \frac{GDP_{base,20}}{Pop_{2045}} \\
+= \frac{\$188T}{9.2B} \\
+= \$20.5K
+\end{gathered}
+$$
+where:
+$$
+GDP_{base,20} = GDP_0(1+g_{base})^{20}
+$$
+where:
+$$
+\begin{gathered}
 T_{remaining} \\
 = LE_{global} - Age_{median} \\
 = 79 - 30.5 \\
@@ -11036,7 +12220,7 @@ where:
 $$
 \begin{gathered}
 Y_{cum,earth} \\
-= \bar{y}_0 \cdot \frac{(1+g_{base})((1+g_{base})^{T_{remaining}}-1)}{g_{base}}
+= \bar{y}_0 \cdot \frac{(1+g_{pc,base})((1+g_{pc,base})^{T_{remaining}}-1)}{g_{pc,base}}
 \end{gathered}
 $$
 *✓ High confidence*
@@ -11057,7 +12241,7 @@ $$
 
 :::
 
-### Treaty Trajectory Lifetime Income Multiplier: 12x {#sec-treaty_trajectory_lifetime_income_multiplier}
+### Treaty Trajectory Lifetime Income Multiplier: 4.17x {#sec-treaty_trajectory_lifetime_income_multiplier}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -11065,23 +12249,23 @@ Ratio of cumulative lifetime income under Treaty Trajectory vs current trajector
 
 **Inputs**:
 
-- [Treaty Trajectory Cumulative Lifetime Income (Per Capita)](#sec-treaty_trajectory_cumulative_lifetime_income) 🔢: $16.1M
-- [Current Trajectory Cumulative Lifetime Income (Per Capita)](#sec-current_trajectory_cumulative_lifetime_income) 🔢: $1.34M
+- [Treaty Trajectory Cumulative Lifetime Income (Per Capita)](#sec-treaty_trajectory_cumulative_lifetime_income) 🔢: $4.58M
+- [Current Trajectory Cumulative Lifetime Income (Per Capita)](#sec-current_trajectory_cumulative_lifetime_income) 🔢: $1.1M
 
 $$
 \begin{gathered}
 k_{lifetime,treaty:earth} \\
 = \frac{Y_{cum,treaty}}{Y_{cum,earth}} \\
-= \frac{\$16.1M}{\$1.34M} \\
-= 12
+= \frac{\$4.58M}{\$1.1M} \\
+= 4.17
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
 Y_{cum,treaty} \\
-= \bar{y}_0 \cdot \frac{(1+g_{pc})((1+g_{pc})^{20}-1)}{g_{pc}} \\
-+ \bar{y}_{treaty,20} \cdot \frac{(1+g_{base})((1+g_{base})^{T_{remaining}-20}-1)}{g_{base}}
+= \bar{y}_0 \cdot \frac{(1+g_{pc,treaty})((1+g_{pc,treaty})^{20}-1)}{g_{pc,treaty}} \\
++ \bar{y}_{treaty,20} \cdot \frac{(1+g_{pc,base})((1+g_{pc,base})^{T_{remaining}-20}-1)}{g_{pc,base}}
 \end{gathered}
 $$
 where:
@@ -11101,27 +12285,139 @@ where:
 $$
 \begin{gathered}
 GDP_{treaty,20} \\
-= GDP_0(1+g_{treaty,ramp})^3(1+g_{treaty,full})^{17}
-\end{gathered}
-$$
-where:
-$$
-s_{mil,max} = Cut_{WW2} = 87.6\% = 87.6\%
-$$
-where:
-$$
-\begin{gathered}
-Cut_{WW2} \\
-= 1 - \frac{Spending_{US,1947}}{Spending_{US,1945}} \\
-= 1 - \frac{\$176B}{\$1.42T} \\
-= 87.6\%
+= GDP_0(1 + g_{base} + g_{redirect} + g_{peace} + g_{cyber} \\
++ g_{health})^{20}
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
-f_{cure,20,wish} \\
-= \min\left(1,\frac{Treatments_{new,ann}\cdot k_{capacity,wish}\cdot 20}{D_{untreated}}\right)
+g_{redirect,treaty,20} \\
+= \bar{s}_{treaty,20}\cdot\left(\frac{\Delta g_{30\%}}{0.30}\right)\cdot\left(\frac{m_{spillover}}{2.0}\right)
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+g_{peace,treaty,20} \\
+= \left(\frac{Benefit_{peace,soc}}{GDP_0}\right)\cdot\left(\frac{\bar{s}_{treaty,20}}{Reduce_{treaty}}\right)\cdot\varepsilon_{conflict}
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Benefit_{peace,soc} \\
+= Cost_{war,total} \times Reduce_{treaty} \\
+= \$11.4T \times 1\% \\
+= \$114B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,total} \\
+= Cost_{war,direct} + Cost_{war,indirect} \\
+= \$7.66T + \$3.7T \\
+= \$11.4T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,direct} \\
+= Loss_{life,conflict} + Damage_{infra,total} \\
++ Disruption_{trade} + Spending_{mil} \\
+= \$2.45T + \$1.88T + \$616B + \$2.72T \\
+= \$7.66T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Loss_{life,conflict} \\
+= Cost_{combat,human} + Cost_{state,human} \\
++ Cost_{terror,human} \\
+= \$2.34T + \$27B + \$83B \\
+= \$2.45T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{combat,human} \\
+= Deaths_{combat} \times VSL \\
+= 234{,}000 \times \$10M \\
+= \$2.34T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{state,human} \\
+= Deaths_{state} \times VSL \\
+= 2{,}700 \times \$10M \\
+= \$27B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{terror,human} \\
+= Deaths_{terror} \times VSL \\
+= 8{,}300 \times \$10M \\
+= \$83B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Damage_{infra,total} \\
+= Damage_{comms} + Damage_{edu} + Damage_{energy} \\
++ Damage_{health} + Damage_{transport} + Damage_{water} \\
+= \$298B + \$234B + \$422B + \$166B + \$487B + \$268B \\
+= \$1.88T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Disruption_{trade} \\
+= Disruption_{currency} + Disruption_{energy} \\
++ Disruption_{shipping} + Disruption_{supply} \\
+= \$57.4B + \$125B + \$247B + \$187B \\
+= \$616B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,indirect} \\
+= Damage_{env} + Loss_{growth,mil} + Loss_{capital,conflict} \\
++ Cost_{psych} + Cost_{refugee} + Cost_{vet} \\
+= \$100B + \$2.72T + \$300B + \$232B + \$150B + \$200B \\
+= \$3.7T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+g_{cyber,treaty,20} \\
+= \left(\frac{Cost_{cyber,2025}}{GDP_0}\right)\cdot\bar{s}_{treaty,20}\cdot\varepsilon_{conflict}
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+g_{health,treaty,20} \\
+= \left(1 + f_{cure,20,treaty}\cdot d_{disease} \\
++ \frac{Loss_{lag,existing}}{GDP_0}\right)^{1/20}-1
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+f_{cure,20,treaty} \\
+= \min\left(1,\frac{Treatments_{new,ann}\cdot \sum_y k_{capacity,y}}{D_{untreated}}\right)
 \end{gathered}
 $$
 where:
@@ -11191,6 +12487,46 @@ $$
 where:
 $$
 \begin{gathered}
+Loss_{lag} \\
+= Deaths_{lag,total} \times (LE_{global} - Age_{death,delay}) \times Value_{QALY} \\
+= 102M \times (79 - 62) \times \$150K \\
+= \$259T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Deaths_{lag,total} \\
+= Lives_{saved,annual} \times T_{lag} \\
+= 12.4M \times 8.2 \\
+= 102M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Lives_{saved,annual} \\
+= \frac{LY_{saved,annual}}{T_{ext}} \\
+= \frac{149M}{12} \\
+= 12.4M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+\bar{y}_{base,20} \\
+= \frac{GDP_{base,20}}{Pop_{2045}} \\
+= \frac{\$188T}{9.2B} \\
+= \$20.5K
+\end{gathered}
+$$
+where:
+$$
+GDP_{base,20} = GDP_0(1+g_{base})^{20}
+$$
+where:
+$$
+\begin{gathered}
 T_{remaining} \\
 = LE_{global} - Age_{median} \\
 = 79 - 30.5 \\
@@ -11201,7 +12537,7 @@ where:
 $$
 \begin{gathered}
 Y_{cum,earth} \\
-= \bar{y}_0 \cdot \frac{(1+g_{base})((1+g_{base})^{T_{remaining}}-1)}{g_{base}}
+= \bar{y}_0 \cdot \frac{(1+g_{pc,base})((1+g_{pc,base})^{T_{remaining}}-1)}{g_{pc,base}}
 \end{gathered}
 $$
 *✓ High confidence*
@@ -14104,7 +15440,7 @@ $$
 
 :::
 
-### Wishonia Personal Upside (Blended): $54.3M {#sec-wishonia_personal_upside_blend}
+### Wishonia Personal Upside (Blended): $49.6M {#sec-wishonia_personal_upside_blend}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -14112,15 +15448,15 @@ Blended personal upside under Wishonia Trajectory: lifetime income gain plus val
 
 **Inputs**:
 
-- [Wishonia Trajectory Lifetime Income Gain (Per Capita)](#sec-wishonia_trajectory_lifetime_income_gain_per_capita) 🔢: $51.9M
+- [Wishonia Trajectory Lifetime Income Gain (Per Capita)](#sec-wishonia_trajectory_lifetime_income_gain_per_capita) 🔢: $47.2M
 - [Wishonia HALE Value Per Capita](#sec-wishonia_hale_value_per_capita) 🔢: $2.36M
 
 $$
 \begin{gathered}
 Upside_{blend,wish} \\
 = \Delta Y_{lifetime,wish} + Value_{HALE,wish} \\
-= \$51.9M + \$2.36M \\
-= \$54.3M
+= \$47.2M + \$2.36M \\
+= \$49.6M
 \end{gathered}
 $$
 where:
@@ -14128,8 +15464,8 @@ $$
 \begin{gathered}
 \Delta Y_{lifetime,wish} \\
 = Y_{cum,wish} - Y_{cum,earth} \\
-= \$53.3M - \$1.34M \\
-= \$51.9M
+= \$48.3M - \$1.1M \\
+= \$47.2M
 \end{gathered}
 $$
 where:
@@ -14137,7 +15473,7 @@ $$
 \begin{gathered}
 Y_{cum,wish} \\
 = \bar{y}_0 \cdot \frac{(1+g_{pc,wish})((1+g_{pc,wish})^{20}-1)}{g_{pc,wish}} \\
-+ \bar{y}_{wish,20} \cdot \frac{(1+g_{base})((1+g_{base})^{T_{remaining}-20}-1)}{g_{base}}
++ \bar{y}_{wish,20} \cdot \frac{(1+g_{pc,base})((1+g_{pc,base})^{T_{remaining}-20}-1)}{g_{pc,base}}
 \end{gathered}
 $$
 where:
@@ -14244,6 +15580,19 @@ $$
 where:
 $$
 \begin{gathered}
+\bar{y}_{base,20} \\
+= \frac{GDP_{base,20}}{Pop_{2045}} \\
+= \frac{\$188T}{9.2B} \\
+= \$20.5K
+\end{gathered}
+$$
+where:
+$$
+GDP_{base,20} = GDP_0(1+g_{base})^{20}
+$$
+where:
+$$
+\begin{gathered}
 T_{remaining} \\
 = LE_{global} - Age_{median} \\
 = 79 - 30.5 \\
@@ -14254,7 +15603,7 @@ where:
 $$
 \begin{gathered}
 Y_{cum,earth} \\
-= \bar{y}_0 \cdot \frac{(1+g_{base})((1+g_{base})^{T_{remaining}}-1)}{g_{base}}
+= \bar{y}_0 \cdot \frac{(1+g_{pc,base})((1+g_{pc,base})^{T_{remaining}}-1)}{g_{pc,base}}
 \end{gathered}
 $$
 where:
@@ -14430,24 +15779,24 @@ $$
 
 :::
 
-### Wishonia Trajectory Cumulative Lifetime Income (Per Capita): $53.3M {#sec-wishonia_trajectory_cumulative_lifetime_income}
+### Wishonia Trajectory Cumulative Lifetime Income (Per Capita): $48.3M {#sec-wishonia_trajectory_cumulative_lifetime_income}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Cumulative per-capita income over an average remaining lifespan under Wishonia Trajectory. Uses implied per-capita CAGR for years 1-20, then baseline growth from the year-20 level. Conservative: assumes no further acceleration beyond year 20.
+Cumulative per-capita income over an average remaining lifespan under Wishonia Trajectory. Uses implied per-capita CAGR for years 1-20, then current-trajectory per-capita growth from the year-20 level. Conservative: assumes no further acceleration beyond year 20.
 
 **Inputs**:
 
 - [Global Average Income (2025 Baseline)](#sec-global_avg_income_2025) 🔢: $14.4K
 - [Wishonia Trajectory Average Income at Year 20](#sec-wishonia_trajectory_avg_income_year_20) 🔢: $1.16M
-- [Baseline Global GDP Growth Rate](#sec-gdp_baseline_growth_rate): 2.5%
+- [Current Trajectory Average Income at Year 20](#sec-current_trajectory_avg_income_year_20) 🔢: $20.5K
 - [Average Remaining Years (Median Person)](#sec-global_avg_remaining_years) 🔢: 48.5 years
 
 $$
 \begin{gathered}
 Y_{cum,wish} \\
 = \bar{y}_0 \cdot \frac{(1+g_{pc,wish})((1+g_{pc,wish})^{20}-1)}{g_{pc,wish}} \\
-+ \bar{y}_{wish,20} \cdot \frac{(1+g_{base})((1+g_{base})^{T_{remaining}-20}-1)}{g_{base}}
++ \bar{y}_{wish,20} \cdot \frac{(1+g_{pc,base})((1+g_{pc,base})^{T_{remaining}-20}-1)}{g_{pc,base}}
 \end{gathered}
 $$
 
@@ -14813,7 +16162,7 @@ $$
 
 :::
 
-### Wishonia Trajectory Lifetime Income Gain (Per Capita): $51.9M {#sec-wishonia_trajectory_lifetime_income_gain_per_capita}
+### Wishonia Trajectory Lifetime Income Gain (Per Capita): $47.2M {#sec-wishonia_trajectory_lifetime_income_gain_per_capita}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -14821,15 +16170,15 @@ Lifetime per-capita income gain from Wishonia Trajectory vs current trajectory. 
 
 **Inputs**:
 
-- [Wishonia Trajectory Cumulative Lifetime Income (Per Capita)](#sec-wishonia_trajectory_cumulative_lifetime_income) 🔢: $53.3M
-- [Current Trajectory Cumulative Lifetime Income (Per Capita)](#sec-current_trajectory_cumulative_lifetime_income) 🔢: $1.34M
+- [Wishonia Trajectory Cumulative Lifetime Income (Per Capita)](#sec-wishonia_trajectory_cumulative_lifetime_income) 🔢: $48.3M
+- [Current Trajectory Cumulative Lifetime Income (Per Capita)](#sec-current_trajectory_cumulative_lifetime_income) 🔢: $1.1M
 
 $$
 \begin{gathered}
 \Delta Y_{lifetime,wish} \\
 = Y_{cum,wish} - Y_{cum,earth} \\
-= \$53.3M - \$1.34M \\
-= \$51.9M
+= \$48.3M - \$1.1M \\
+= \$47.2M
 \end{gathered}
 $$
 where:
@@ -14837,7 +16186,7 @@ $$
 \begin{gathered}
 Y_{cum,wish} \\
 = \bar{y}_0 \cdot \frac{(1+g_{pc,wish})((1+g_{pc,wish})^{20}-1)}{g_{pc,wish}} \\
-+ \bar{y}_{wish,20} \cdot \frac{(1+g_{base})((1+g_{base})^{T_{remaining}-20}-1)}{g_{base}}
++ \bar{y}_{wish,20} \cdot \frac{(1+g_{pc,base})((1+g_{pc,base})^{T_{remaining}-20}-1)}{g_{pc,base}}
 \end{gathered}
 $$
 where:
@@ -14944,6 +16293,19 @@ $$
 where:
 $$
 \begin{gathered}
+\bar{y}_{base,20} \\
+= \frac{GDP_{base,20}}{Pop_{2045}} \\
+= \frac{\$188T}{9.2B} \\
+= \$20.5K
+\end{gathered}
+$$
+where:
+$$
+GDP_{base,20} = GDP_0(1+g_{base})^{20}
+$$
+where:
+$$
+\begin{gathered}
 T_{remaining} \\
 = LE_{global} - Age_{median} \\
 = 79 - 30.5 \\
@@ -14954,7 +16316,7 @@ where:
 $$
 \begin{gathered}
 Y_{cum,earth} \\
-= \bar{y}_0 \cdot \frac{(1+g_{base})((1+g_{base})^{T_{remaining}}-1)}{g_{base}}
+= \bar{y}_0 \cdot \frac{(1+g_{pc,base})((1+g_{pc,base})^{T_{remaining}}-1)}{g_{pc,base}}
 \end{gathered}
 $$
 *✓ High confidence*
@@ -14975,7 +16337,7 @@ $$
 
 :::
 
-### Wishonia Trajectory Lifetime Income Multiplier: 39.8x {#sec-wishonia_trajectory_lifetime_income_multiplier}
+### Wishonia Trajectory Lifetime Income Multiplier: 44x {#sec-wishonia_trajectory_lifetime_income_multiplier}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -14983,15 +16345,15 @@ Ratio of cumulative lifetime income under Wishonia Trajectory vs current traject
 
 **Inputs**:
 
-- [Wishonia Trajectory Cumulative Lifetime Income (Per Capita)](#sec-wishonia_trajectory_cumulative_lifetime_income) 🔢: $53.3M
-- [Current Trajectory Cumulative Lifetime Income (Per Capita)](#sec-current_trajectory_cumulative_lifetime_income) 🔢: $1.34M
+- [Wishonia Trajectory Cumulative Lifetime Income (Per Capita)](#sec-wishonia_trajectory_cumulative_lifetime_income) 🔢: $48.3M
+- [Current Trajectory Cumulative Lifetime Income (Per Capita)](#sec-current_trajectory_cumulative_lifetime_income) 🔢: $1.1M
 
 $$
 \begin{gathered}
 k_{lifetime,wish:earth} \\
 = \frac{Y_{cum,wish}}{Y_{cum,earth}} \\
-= \frac{\$53.3M}{\$1.34M} \\
-= 39.8
+= \frac{\$48.3M}{\$1.1M} \\
+= 44
 \end{gathered}
 $$
 where:
@@ -14999,7 +16361,7 @@ $$
 \begin{gathered}
 Y_{cum,wish} \\
 = \bar{y}_0 \cdot \frac{(1+g_{pc,wish})((1+g_{pc,wish})^{20}-1)}{g_{pc,wish}} \\
-+ \bar{y}_{wish,20} \cdot \frac{(1+g_{base})((1+g_{base})^{T_{remaining}-20}-1)}{g_{base}}
++ \bar{y}_{wish,20} \cdot \frac{(1+g_{pc,base})((1+g_{pc,base})^{T_{remaining}-20}-1)}{g_{pc,base}}
 \end{gathered}
 $$
 where:
@@ -15106,6 +16468,19 @@ $$
 where:
 $$
 \begin{gathered}
+\bar{y}_{base,20} \\
+= \frac{GDP_{base,20}}{Pop_{2045}} \\
+= \frac{\$188T}{9.2B} \\
+= \$20.5K
+\end{gathered}
+$$
+where:
+$$
+GDP_{base,20} = GDP_0(1+g_{base})^{20}
+$$
+where:
+$$
+\begin{gathered}
 T_{remaining} \\
 = LE_{global} - Age_{median} \\
 = 79 - 30.5 \\
@@ -15116,7 +16491,7 @@ where:
 $$
 \begin{gathered}
 Y_{cum,earth} \\
-= \bar{y}_0 \cdot \frac{(1+g_{base})((1+g_{base})^{T_{remaining}}-1)}{g_{base}}
+= \bar{y}_0 \cdot \frac{(1+g_{pc,base})((1+g_{pc,base})^{T_{remaining}}-1)}{g_{pc,base}}
 \end{gathered}
 $$
 *✓ High confidence*
@@ -15137,7 +16512,7 @@ $$
 
 :::
 
-### Wishonia Trajectory vs Treaty Trajectory GDP Multiplier (Year 20): 3.43x {#sec-wishonia_trajectory_vs_treaty_trajectory_gdp_multiplier_year_20}
+### Wishonia Trajectory vs Treaty Trajectory GDP Multiplier (Year 20): 11.6x {#sec-wishonia_trajectory_vs_treaty_trajectory_gdp_multiplier_year_20}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -15146,14 +16521,14 @@ Year-20 GDP multiplier from adding non-health dysfunction-capital reallocation o
 **Inputs**:
 
 - [Wishonia Trajectory GDP at Year 20](#sec-wishonia_trajectory_gdp_year_20) 🔢: $10.7 quadrillion
-- [Treaty Trajectory GDP at Year 20](#sec-treaty_trajectory_gdp_year_20) 🔢: $3.11 quadrillion
+- [Treaty Trajectory GDP at Year 20](#sec-treaty_trajectory_gdp_year_20) 🔢: $919T
 
 $$
 \begin{gathered}
 k_{wish,full:core,20} \\
 = \frac{GDP_{wish,20}}{GDP_{treaty,20}} \\
-= \frac{\$10700T}{\$3110T} \\
-= 3.43
+= \frac{\$10700T}{\$919T} \\
+= 11.6
 \end{gathered}
 $$
 where:
@@ -15248,7 +16623,166 @@ where:
 $$
 \begin{gathered}
 GDP_{treaty,20} \\
-= GDP_0(1+g_{treaty,ramp})^3(1+g_{treaty,full})^{17}
+= GDP_0(1 + g_{base} + g_{redirect} + g_{peace} + g_{cyber} \\
++ g_{health})^{20}
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+g_{redirect,treaty,20} \\
+= \bar{s}_{treaty,20}\cdot\left(\frac{\Delta g_{30\%}}{0.30}\right)\cdot\left(\frac{m_{spillover}}{2.0}\right)
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+g_{peace,treaty,20} \\
+= \left(\frac{Benefit_{peace,soc}}{GDP_0}\right)\cdot\left(\frac{\bar{s}_{treaty,20}}{Reduce_{treaty}}\right)\cdot\varepsilon_{conflict}
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Benefit_{peace,soc} \\
+= Cost_{war,total} \times Reduce_{treaty} \\
+= \$11.4T \times 1\% \\
+= \$114B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,total} \\
+= Cost_{war,direct} + Cost_{war,indirect} \\
+= \$7.66T + \$3.7T \\
+= \$11.4T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,direct} \\
+= Loss_{life,conflict} + Damage_{infra,total} \\
++ Disruption_{trade} + Spending_{mil} \\
+= \$2.45T + \$1.88T + \$616B + \$2.72T \\
+= \$7.66T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Loss_{life,conflict} \\
+= Cost_{combat,human} + Cost_{state,human} \\
++ Cost_{terror,human} \\
+= \$2.34T + \$27B + \$83B \\
+= \$2.45T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{combat,human} \\
+= Deaths_{combat} \times VSL \\
+= 234{,}000 \times \$10M \\
+= \$2.34T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{state,human} \\
+= Deaths_{state} \times VSL \\
+= 2{,}700 \times \$10M \\
+= \$27B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{terror,human} \\
+= Deaths_{terror} \times VSL \\
+= 8{,}300 \times \$10M \\
+= \$83B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Damage_{infra,total} \\
+= Damage_{comms} + Damage_{edu} + Damage_{energy} \\
++ Damage_{health} + Damage_{transport} + Damage_{water} \\
+= \$298B + \$234B + \$422B + \$166B + \$487B + \$268B \\
+= \$1.88T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Disruption_{trade} \\
+= Disruption_{currency} + Disruption_{energy} \\
++ Disruption_{shipping} + Disruption_{supply} \\
+= \$57.4B + \$125B + \$247B + \$187B \\
+= \$616B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,indirect} \\
+= Damage_{env} + Loss_{growth,mil} + Loss_{capital,conflict} \\
++ Cost_{psych} + Cost_{refugee} + Cost_{vet} \\
+= \$100B + \$2.72T + \$300B + \$232B + \$150B + \$200B \\
+= \$3.7T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+g_{cyber,treaty,20} \\
+= \left(\frac{Cost_{cyber,2025}}{GDP_0}\right)\cdot\bar{s}_{treaty,20}\cdot\varepsilon_{conflict}
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+g_{health,treaty,20} \\
+= \left(1 + f_{cure,20,treaty}\cdot d_{disease} \\
++ \frac{Loss_{lag,existing}}{GDP_0}\right)^{1/20}-1
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+f_{cure,20,treaty} \\
+= \min\left(1,\frac{Treatments_{new,ann}\cdot \sum_y k_{capacity,y}}{D_{untreated}}\right)
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Loss_{lag} \\
+= Deaths_{lag,total} \times (LE_{global} - Age_{death,delay}) \times Value_{QALY} \\
+= 102M \times (79 - 62) \times \$150K \\
+= \$259T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Deaths_{lag,total} \\
+= Lives_{saved,annual} \times T_{lag} \\
+= 12.4M \times 8.2 \\
+= 102M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Lives_{saved,annual} \\
+= \frac{LY_{saved,annual}}{T_{ext}} \\
+= \frac{149M}{12} \\
+= 12.4M
 \end{gathered}
 $$
 *✓ High confidence*
@@ -20053,6 +21587,28 @@ Standard time horizon for NPV analysis
 
 :::
 
+### Peace Dividend Conflict Elasticity: 1:1 {#sec-peace_dividend_conflict_elasticity}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Conflict reduction elasticity: how much conflict costs decrease per 1% military spending cut. ε=0: no effect (spending cuts don't reduce conflict). ε=0.5: moderate linkage (conservative). ε=1.0: proportional (baseline assumption). ε>1.0: shared enemy amplification (redirecting to disease creates unity).
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [0.25:1, 1.5:1] • Distribution: Beta
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between 0.25:1 and 1.5:1 (±62%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The beta distribution means values are bounded and can skew toward one end.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-peace_dividend_conflict_elasticity.qmd >}}
+
+*Core definition*
+
+:::
+
 ### Direct Fiscal Savings from 1% Military Spending Reduction: $27.2B {#sec-peace_dividend_direct_fiscal_savings}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -20318,6 +21874,34 @@ Viral referendum budget for 280M verified votes (base: $250M realistic with $0.5
 #### Input Distribution
 
 {{< include ../figures/distribution-treaty_campaign_viral_referendum_base_case.qmd >}}
+
+*Core definition*
+
+:::
+
+### Treaty Effective Reallocation Share (Year 15): 4.4% {#sec-treaty_effective_reallocation_share_year_15}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Average military-to-medicine reallocation share over 15 years under the optimistic treaty take-hold path (1% for 3 years, 2% for 4 years, 5% for 5 years, 10% for 3 years).
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*Core definition*
+
+:::
+
+### Treaty Effective Reallocation Share (Year 20): 5.8% {#sec-treaty_effective_reallocation_share_year_20}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Average military-to-medicine reallocation share over 20 years under the optimistic treaty take-hold path (1% for 3 years, 2% for 4 years, 5% for 5 years, 10% for 8 years).
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
 
 *Core definition*
 

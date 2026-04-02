@@ -20,14 +20,14 @@ display_name = "Treaty Projected HALE at Year 15"
 
 # Baseline and units
 
-baseline = 69.84862469186393
+baseline = 79.0
 
 # Tornado data from sensitivity analysis
 
-drivers = ['DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT', 'NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR', 'RARE_DISEASES_COUNT_GLOBAL', 'CURRENT_TRIAL_SLOTS_AVAILABLE', 'GLOBAL_HALE_CURRENT', 'GLOBAL_LIFE_EXPECTANCY_2024', 'DFDA_OPEX_PLATFORM_MAINTENANCE', 'DFDA_OPEX_STAFF', 'DFDA_OPEX_INFRASTRUCTURE', 'DFDA_OPEX_REGULATORY', 'DFDA_OPEX_COMMUNITY', 'CURRENT_DISEASE_PATIENTS_GLOBAL', 'PATIENT_WILLINGNESS_TRIAL_PARTICIPATION_PCT']
-driver_labels = ['dFDA Pragmatic Trial Cost per Patient', 'Diseases Getting First Treatment Per Year', 'Total Number of Rare Diseases Globally', 'Annual Global Clinical Trial Participants', 'Global Healthy Life Expectancy (HALE)', 'Global Life Expectancy (2024)', 'Decentralized Framework for Drug Assessment Maintenance Costs', 'Decentralized Framework for Drug Assessment Staff Costs', 'Decentralized Framework for Drug Assessment Infrastructure Costs', 'Decentralized Framework for Drug Assessment Regulatory Coordination Costs', 'Decentralized Framework for Drug Assessment Community Support Costs', 'Global Population with Chronic Diseases', 'Patient Willingness to Participate in Clinical Trials']
-impacts_low = [9.151375308136068, -3.056024856203166, 1.0914374486439868, 1.7462999178303846, -0.8743352205225534, -0.8342197059699288, 0.0015047391295581747, 0.0009028434777320626, 0.0009028434777320626, 0.000601895651826112, 0.0003009478259059506, 0.0, 0.0]
-impacts_high = [-4.520733912283404, 6.548624691863921, -1.9645874075591792, -1.1388912507589453, 0.8743352205225534, 0.8342197059699288, -0.0021066347813984976, -0.0015047391295723855, -0.001203791303652224, -0.0009028434777462735, -0.00030094782592016145, 0.0, 0.0]
+drivers = ['DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT', 'GLOBAL_LIFE_EXPECTANCY_2024', 'NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR', 'CURRENT_DISEASE_PATIENTS_GLOBAL', 'CURRENT_TRIAL_SLOTS_AVAILABLE', 'DFDA_OPEX_COMMUNITY', 'DFDA_OPEX_INFRASTRUCTURE', 'DFDA_OPEX_PLATFORM_MAINTENANCE', 'DFDA_OPEX_REGULATORY', 'DFDA_OPEX_STAFF', 'GLOBAL_HALE_CURRENT', 'PATIENT_WILLINGNESS_TRIAL_PARTICIPATION_PCT', 'RARE_DISEASES_COUNT_GLOBAL']
+driver_labels = ['dFDA Pragmatic Trial Cost per Patient', 'Global Life Expectancy (2024)', 'Diseases Getting First Treatment Per Year', 'Global Population with Chronic Diseases', 'Annual Global Clinical Trial Participants', 'Decentralized Framework for Drug Assessment Community Support Costs', 'Decentralized Framework for Drug Assessment Infrastructure Costs', 'Decentralized Framework for Drug Assessment Maintenance Costs', 'Decentralized Framework for Drug Assessment Regulatory Coordination Costs', 'Decentralized Framework for Drug Assessment Staff Costs', 'Global Healthy Life Expectancy (HALE)', 'Patient Willingness to Participate in Clinical Trials', 'Total Number of Rare Diseases Globally']
+impacts_low = [0.0, -2.0, -0.33256072309264084, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+impacts_high = [-6.777280569845672, 2.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
 
 # Convert deltas to absolute values (baseline + delta)
 

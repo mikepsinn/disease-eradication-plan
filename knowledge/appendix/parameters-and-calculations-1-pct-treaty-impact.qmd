@@ -38,15 +38,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 238 parameters used in the analysis, organized by type:
+This appendix documents all 251 parameters used in the analysis, organized by type:
 
-- External sources (peer-reviewed): 94
-- Calculated values: 111
-- Core definitions: 33
+- External sources (peer-reviewed): 96
+- Calculated values: 119
+- Core definitions: 36
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (111 parameters) • [External Data Sources](#sec-external) (94 parameters) • [Core Definitions](#sec-definitions) (33 parameters)
+[Calculated Values](#sec-calculated) (119 parameters) • [External Data Sources](#sec-external) (96 parameters) • [Core Definitions](#sec-definitions) (36 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -3257,6 +3257,109 @@ $$
 
 :::
 
+### Total Deaths from Historical Progress Delays: 102 million deaths {#sec-existing_drugs_efficacy_lag_deaths_total}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Total deaths from delaying existing drugs over 8.2-year efficacy lag. One-time impact of eliminating Phase 2-4 testing delay for drugs already approved 1962-2024. Based on Lichtenberg (2019) estimate of 12M lives saved annually × 8.2 years efficacy lag. Excludes innovation acceleration effects.
+
+**Inputs**:
+
+- [Annual Lives Saved by Pharmaceuticals](#sec-pharma_lives_saved_annual) 🔢: 12.4 million deaths
+- [Regulatory Delay for Efficacy Testing Post-Safety Verification](#sec-efficacy_lag_years) 📊: 8.2 years (SE: ±2 years)
+
+$$
+\begin{gathered}
+Deaths_{lag,total} \\
+= Lives_{saved,annual} \times T_{lag} \\
+= 12.4M \times 8.2 \\
+= 102M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Lives_{saved,annual} \\
+= \frac{LY_{saved,annual}}{T_{ext}} \\
+= \frac{149M}{12} \\
+= 12.4M
+\end{gathered}
+$$
+*~ Medium confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-existing_drugs_efficacy_lag_deaths_total.qmd >}}
+
+{{< include ../figures/sensitivity-table-existing_drugs_efficacy_lag_deaths_total.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-existing_drugs_efficacy_lag_deaths_total.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-existing_drugs_efficacy_lag_deaths_total.qmd >}}
+
+:::
+
+### Total Economic Loss from Historical Progress Delays: $259T {#sec-existing_drugs_efficacy_lag_economic_loss}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Total economic loss from delaying existing drugs over 8.2-year efficacy lag. One-time benefit of eliminating Phase 2-4 delay. Excludes innovation acceleration effects.
+
+**Inputs**:
+
+- [Global Life Expectancy (2024)](#sec-global_life_expectancy_2024) 📊: 79 years (SE: ±2 years)
+- [Total Deaths from Historical Progress Delays](#sec-existing_drugs_efficacy_lag_deaths_total) 🔢: 102 million deaths
+- [Mean Age of Preventable Death from Post-Safety Efficacy Delay](#sec-regulatory_delay_mean_age_of_death) 📊: 62 years (SE: ±3 years)
+- [Standard Economic Value per QALY](#sec-standard_economic_qaly_value_usd) 📊: $150K (SE: ±$30K)
+
+$$
+\begin{gathered}
+Loss_{lag} \\
+= Deaths_{lag,total} \times (LE_{global} - Age_{death,delay}) \times Value_{QALY} \\
+= 102M \times (79 - 62) \times \$150K \\
+= \$259T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Deaths_{lag,total} \\
+= Lives_{saved,annual} \times T_{lag} \\
+= 12.4M \times 8.2 \\
+= 102M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Lives_{saved,annual} \\
+= \frac{LY_{saved,annual}}{T_{ext}} \\
+= \frac{149M}{12} \\
+= 12.4M
+\end{gathered}
+$$
+*~ Medium confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-existing_drugs_efficacy_lag_economic_loss.qmd >}}
+
+{{< include ../figures/sensitivity-table-existing_drugs_efficacy_lag_economic_loss.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-existing_drugs_efficacy_lag_economic_loss.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-existing_drugs_efficacy_lag_economic_loss.qmd >}}
+
+:::
+
 ### Therapeutic Frontier Exploration Ratio: 0.342% {#sec-exploration_ratio}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -4546,6 +4649,46 @@ $$
 
 :::
 
+### Annual Lives Saved by Pharmaceuticals: 12.4 million deaths {#sec-pharma_lives_saved_annual}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual lives saved by pharmaceutical interventions globally. Derived from Lichtenberg (2019) finding of 148.7M life-years saved, divided by assumed 12-year average life extension per beneficiary. Note: Life-years is the primary metric; lives is an approximation for intuitive communication.
+
+**Inputs**:
+
+- [Annual Life-Years Saved by Pharmaceuticals](#sec-pharma_life_years_saved_annual) 📊: 149 million life-years (95% CI: 79.4 million life-years - 240 million life-years)
+- [Average Life Extension per Beneficiary](#sec-avg_life_extension_per_beneficiary): 12 years (95% CI: 8 years - 18 years)
+
+$$
+\begin{gathered}
+Lives_{saved,annual} \\
+= \frac{LY_{saved,annual}}{T_{ext}} \\
+= \frac{149M}{12} \\
+= 12.4M
+\end{gathered}
+$$
+
+**Methodology**: [@lichtenberg-life-years-saved-2019]
+
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-pharma_lives_saved_annual.qmd >}}
+
+{{< include ../figures/sensitivity-table-pharma_lives_saved_annual.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-pharma_lives_saved_annual.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-pharma_lives_saved_annual.qmd >}}
+
+:::
+
 ### Percentage Military Spending Cut After WW2: 87.6% {#sec-post_ww2_military_cut_pct}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -5516,6 +5659,70 @@ $$
 
 :::
 
+### Treaty Cybercrime Recovery GDP Growth Bonus (Year 20): 0.53% {#sec-treaty_cybercrime_recovery_gdp_growth_bonus_year_20}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual GDP growth bonus by year 20 from reducing cybercrime drag as the treaty weakens the destructive economy feedback loop.
+
+**Inputs**:
+
+- [Global Cybercrime Costs (2025)](#sec-global_cybercrime_cost_annual_2025) 📊: $10.5T
+- [Global GDP (2025)](#sec-global_gdp_2025) 📊: $115T
+- [Treaty Effective Reallocation Share (Year 20)](#sec-treaty_effective_reallocation_share_year_20): 5.8%
+- [Peace Dividend Conflict Elasticity](#sec-peace_dividend_conflict_elasticity): 1:1 (95% CI: 0.25:1 - 1.5:1)
+
+$$
+\begin{gathered}
+g_{cyber,treaty,20} \\
+= \left(\frac{Cost_{cyber,2025}}{GDP_0}\right)\cdot\bar{s}_{treaty,20}\cdot\varepsilon_{conflict}
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-treaty_cybercrime_recovery_gdp_growth_bonus_year_20.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-treaty_cybercrime_recovery_gdp_growth_bonus_year_20.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-treaty_cybercrime_recovery_gdp_growth_bonus_year_20.qmd >}}
+
+:::
+
+### Treaty Disease Cure Fraction (20yr, Take-Hold Path): 100% {#sec-treaty_disease_cure_fraction_20yr}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Treaty disease-cure fraction over 20 years under the optimistic treaty take-hold path. The initial 1% treaty expands to 2%, then 5%, then 10%, and cumulative trial throughput is capped by the physical participant ceiling.
+
+**Inputs**:
+
+- [Diseases Getting First Treatment Per Year](#sec-new_disease_first_treatments_per_year) 📊: 15 diseases/year (95% CI: 8 diseases/year - 30 diseases/year)
+- [Trial Capacity Multiplier](#sec-dfda_trial_capacity_multiplier) 🔢: 12.3x
+- [Maximum Trial Capacity Multiplier (Physical Limit)](#sec-dfda_max_trial_capacity_multiplier_physical) 🔢: 566x
+- [Diseases Without Effective Treatment](#sec-diseases_without_effective_treatment) 🔢: 6.65 thousand diseases
+
+$$
+\begin{gathered}
+f_{cure,20,treaty} \\
+= \min\left(1,\frac{Treatments_{new,ann}\cdot \sum_y k_{capacity,y}}{D_{untreated}}\right)
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-treaty_disease_cure_fraction_20yr.qmd >}}
+
+:::
+
 ### Expected Cost per DALY (Risk-Adjusted): $0.177 {#sec-treaty_expected_cost_per_daly}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -5962,6 +6169,45 @@ $$
 
 :::
 
+### Treaty Health Recovery GDP Growth Bonus (Year 20): 6.28% {#sec-treaty_health_recovery_gdp_growth_bonus_year_20}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annualized GDP growth bonus by year 20 from lower disease burden plus eliminating existing-drug efficacy lag under the treaty path.
+
+**Inputs**:
+
+- [Treaty Disease Cure Fraction (20yr, Take-Hold Path)](#sec-treaty_disease_cure_fraction_20yr) 🔢: 100%
+- [Disease Burden as % of GDP](#sec-disease_burden_gdp_drag_pct) 📊: 13%
+- [Total Economic Loss from Historical Progress Delays](#sec-existing_drugs_efficacy_lag_economic_loss) 🔢: $259T
+- [Global GDP (2025)](#sec-global_gdp_2025) 📊: $115T
+
+$$
+\begin{gathered}
+g_{health,treaty,20} \\
+= \left(1 + f_{cure,20,treaty}\cdot d_{disease} \\
++ \frac{Loss_{lag,existing}}{GDP_0}\right)^{1/20}-1
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-treaty_health_recovery_gdp_growth_bonus_year_20.qmd >}}
+
+{{< include ../figures/sensitivity-table-treaty_health_recovery_gdp_growth_bonus_year_20.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-treaty_health_recovery_gdp_growth_bonus_year_20.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-treaty_health_recovery_gdp_growth_bonus_year_20.qmd >}}
+
+:::
+
 ### 1% treaty Basic Annual Benefits (Peace + R&D Savings): $172B {#sec-treaty_peace_plus_rd_annual_benefits}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -6112,6 +6358,82 @@ $$
 
 :::
 
+### Treaty Peace Recovery GDP Growth Bonus (Year 20): 0.573% {#sec-treaty_peace_recovery_gdp_growth_bonus_year_20}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual GDP growth bonus by year 20 from explicit avoided war-cost drag under the treaty take-hold path.
+
+**Inputs**:
+
+- [Annual Peace Dividend from 1% Reduction in Total War Costs](#sec-peace_dividend_annual_societal_benefit) 🔢: $114B
+- [Global GDP (2025)](#sec-global_gdp_2025) 📊: $115T
+- [Treaty Effective Reallocation Share (Year 20)](#sec-treaty_effective_reallocation_share_year_20): 5.8%
+- [1% Reduction in Military Spending/War Costs from Treaty](#sec-treaty_reduction_pct): 1%
+- [Peace Dividend Conflict Elasticity](#sec-peace_dividend_conflict_elasticity): 1:1 (95% CI: 0.25:1 - 1.5:1)
+
+$$
+\begin{gathered}
+g_{peace,treaty,20} \\
+= \left(\frac{Benefit_{peace,soc}}{GDP_0}\right)\cdot\left(\frac{\bar{s}_{treaty,20}}{Reduce_{treaty}}\right)\cdot\varepsilon_{conflict}
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-treaty_peace_recovery_gdp_growth_bonus_year_20.qmd >}}
+
+{{< include ../figures/sensitivity-table-treaty_peace_recovery_gdp_growth_bonus_year_20.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-treaty_peace_recovery_gdp_growth_bonus_year_20.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-treaty_peace_recovery_gdp_growth_bonus_year_20.qmd >}}
+
+:::
+
+### Treaty Redirect GDP Growth Bonus (Year 20): 1.06% {#sec-treaty_redirect_gdp_growth_bonus_year_20}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual GDP growth bonus by year 20 from redirecting military spending to medical research under the treaty take-hold path, including R&D spillovers.
+
+**Inputs**:
+
+- [Treaty Effective Reallocation Share (Year 20)](#sec-treaty_effective_reallocation_share_year_20): 5.8%
+- [GDP Growth Boost at 30% Military Reallocation](#sec-military_redirect_gdp_boost_at_30pct): 5.5% (95% CI: 3.5% - 7.5%)
+- [R&D Spillover Multiplier](#sec-rd_spillover_multiplier): 2x (95% CI: 1.5x - 2.5x)
+
+$$
+\begin{gathered}
+g_{redirect,treaty,20} \\
+= \bar{s}_{treaty,20}\cdot\left(\frac{\Delta g_{30\%}}{0.30}\right)\cdot\left(\frac{m_{spillover}}{2.0}\right)
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-treaty_redirect_gdp_growth_bonus_year_20.qmd >}}
+
+{{< include ../figures/sensitivity-table-treaty_redirect_gdp_growth_bonus_year_20.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-treaty_redirect_gdp_growth_bonus_year_20.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-treaty_redirect_gdp_growth_bonus_year_20.qmd >}}
+
+:::
+
 ### Treaty ROI - Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Increased Trial Throughput: 84.8M:1 {#sec-treaty_roi_trial_capacity_plus_efficacy_lag}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -6254,7 +6576,7 @@ $$
 
 :::
 
-### Treaty Trajectory Average Income at Year 20: $339K {#sec-treaty_trajectory_avg_income_year_20}
+### Treaty Trajectory Average Income at Year 20: $99.9K {#sec-treaty_trajectory_avg_income_year_20}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -6262,7 +6584,7 @@ Average income (GDP per capita) at year 20 under the Treaty Trajectory.
 
 **Inputs**:
 
-- [Treaty Trajectory GDP at Year 20](#sec-treaty_trajectory_gdp_year_20) 🔢: $3.11 quadrillion
+- [Treaty Trajectory GDP at Year 20](#sec-treaty_trajectory_gdp_year_20) 🔢: $919T
 - [Global Population 2045 (Projected)](#sec-global_population_2045_projected) 📊: 9.2 billion of people
 
 $$
@@ -6287,7 +6609,7 @@ $$
 
 :::
 
-### Treaty Trajectory vs Current Trajectory GDP Multiplier (Year 20): 16.5x {#sec-treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_20}
+### Treaty Trajectory vs Current Trajectory GDP Multiplier (Year 20): 4.88x {#sec-treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_20}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -6295,42 +6617,154 @@ Treaty Trajectory GDP at year 20 as a multiple of current trajectory GDP at year
 
 **Inputs**:
 
-- [Treaty Trajectory GDP at Year 20](#sec-treaty_trajectory_gdp_year_20) 🔢: $3.11 quadrillion
+- [Treaty Trajectory GDP at Year 20](#sec-treaty_trajectory_gdp_year_20) 🔢: $919T
 - [Current Trajectory GDP at Year 20](#sec-current_trajectory_gdp_year_20) 🔢: $188T
 
 $$
 \begin{gathered}
 k_{treaty:base,20} \\
 = \frac{GDP_{treaty,20}}{GDP_{base,20}} \\
-= \frac{\$3110T}{\$188T} \\
-= 16.5
+= \frac{\$919T}{\$188T} \\
+= 4.88
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
 GDP_{treaty,20} \\
-= GDP_0(1+g_{treaty,ramp})^3(1+g_{treaty,full})^{17}
-\end{gathered}
-$$
-where:
-$$
-s_{mil,max} = Cut_{WW2} = 87.6\% = 87.6\%
-$$
-where:
-$$
-\begin{gathered}
-Cut_{WW2} \\
-= 1 - \frac{Spending_{US,1947}}{Spending_{US,1945}} \\
-= 1 - \frac{\$176B}{\$1.42T} \\
-= 87.6\%
+= GDP_0(1 + g_{base} + g_{redirect} + g_{peace} + g_{cyber} \\
++ g_{health})^{20}
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
-f_{cure,20,wish} \\
-= \min\left(1,\frac{Treatments_{new,ann}\cdot k_{capacity,wish}\cdot 20}{D_{untreated}}\right)
+g_{redirect,treaty,20} \\
+= \bar{s}_{treaty,20}\cdot\left(\frac{\Delta g_{30\%}}{0.30}\right)\cdot\left(\frac{m_{spillover}}{2.0}\right)
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+g_{peace,treaty,20} \\
+= \left(\frac{Benefit_{peace,soc}}{GDP_0}\right)\cdot\left(\frac{\bar{s}_{treaty,20}}{Reduce_{treaty}}\right)\cdot\varepsilon_{conflict}
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Benefit_{peace,soc} \\
+= Cost_{war,total} \times Reduce_{treaty} \\
+= \$11.4T \times 1\% \\
+= \$114B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,total} \\
+= Cost_{war,direct} + Cost_{war,indirect} \\
+= \$7.66T + \$3.7T \\
+= \$11.4T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,direct} \\
+= Loss_{life,conflict} + Damage_{infra,total} \\
++ Disruption_{trade} + Spending_{mil} \\
+= \$2.45T + \$1.88T + \$616B + \$2.72T \\
+= \$7.66T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Loss_{life,conflict} \\
+= Cost_{combat,human} + Cost_{state,human} \\
++ Cost_{terror,human} \\
+= \$2.34T + \$27B + \$83B \\
+= \$2.45T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{combat,human} \\
+= Deaths_{combat} \times VSL \\
+= 234{,}000 \times \$10M \\
+= \$2.34T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{state,human} \\
+= Deaths_{state} \times VSL \\
+= 2{,}700 \times \$10M \\
+= \$27B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{terror,human} \\
+= Deaths_{terror} \times VSL \\
+= 8{,}300 \times \$10M \\
+= \$83B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Damage_{infra,total} \\
+= Damage_{comms} + Damage_{edu} + Damage_{energy} \\
++ Damage_{health} + Damage_{transport} + Damage_{water} \\
+= \$298B + \$234B + \$422B + \$166B + \$487B + \$268B \\
+= \$1.88T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Disruption_{trade} \\
+= Disruption_{currency} + Disruption_{energy} \\
++ Disruption_{shipping} + Disruption_{supply} \\
+= \$57.4B + \$125B + \$247B + \$187B \\
+= \$616B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,indirect} \\
+= Damage_{env} + Loss_{growth,mil} + Loss_{capital,conflict} \\
++ Cost_{psych} + Cost_{refugee} + Cost_{vet} \\
+= \$100B + \$2.72T + \$300B + \$232B + \$150B + \$200B \\
+= \$3.7T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+g_{cyber,treaty,20} \\
+= \left(\frac{Cost_{cyber,2025}}{GDP_0}\right)\cdot\bar{s}_{treaty,20}\cdot\varepsilon_{conflict}
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+g_{health,treaty,20} \\
+= \left(1 + f_{cure,20,treaty}\cdot d_{disease} \\
++ \frac{Loss_{lag,existing}}{GDP_0}\right)^{1/20}-1
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+f_{cure,20,treaty} \\
+= \min\left(1,\frac{Treatments_{new,ann}\cdot \sum_y k_{capacity,y}}{D_{untreated}}\right)
 \end{gathered}
 $$
 where:
@@ -6399,6 +6833,33 @@ N_{untreated} \\
 $$
 where:
 $$
+\begin{gathered}
+Loss_{lag} \\
+= Deaths_{lag,total} \times (LE_{global} - Age_{death,delay}) \times Value_{QALY} \\
+= 102M \times (79 - 62) \times \$150K \\
+= \$259T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Deaths_{lag,total} \\
+= Lives_{saved,annual} \times T_{lag} \\
+= 12.4M \times 8.2 \\
+= 102M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Lives_{saved,annual} \\
+= \frac{LY_{saved,annual}}{T_{ext}} \\
+= \frac{149M}{12} \\
+= 12.4M
+\end{gathered}
+$$
+where:
+$$
 GDP_{base,20} = GDP_0(1+g_{base})^{20}
 $$
 *✓ High confidence*
@@ -6419,26 +6880,26 @@ $$
 
 :::
 
-### Treaty Trajectory GDP at Year 20: $3.11 quadrillion {#sec-treaty_trajectory_gdp_year_20}
+### Treaty Trajectory GDP at Year 20: $919T {#sec-treaty_trajectory_gdp_year_20}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Projected global GDP at year 20 under the Treaty Trajectory: military-to-science reallocation plus disease-burden recovery only. Excludes non-health dysfunction-capital reallocation to isolate the lower-political-baggage channel.
+Projected global GDP at year 20 under the optimistic treaty take-hold path. Compounds baseline growth plus explicit military redirect spillovers, peace dividend recovery, cybercrime drag recovery, and health recovery from disease cures and faster deployment.
 
 **Inputs**:
 
 - [Global GDP (2025)](#sec-global_gdp_2025) 📊: $115T
 - [Baseline Global GDP Growth Rate](#sec-gdp_baseline_growth_rate): 2.5%
-- [Wishonia Military Reallocation Physical Max Share](#sec-wishonia_military_reallocation_physical_max_share) 🔢: 87.6%
-- [GDP Growth Boost at 30% Military Reallocation](#sec-military_redirect_gdp_boost_at_30pct): 5.5% (95% CI: 3.5% - 7.5%)
-- [R&D Spillover Multiplier](#sec-rd_spillover_multiplier): 2x (95% CI: 1.5x - 2.5x)
-- [Wishonia Disease Cure Fraction (20yr, Full Implementation)](#sec-wishonia_disease_cure_fraction_20yr_full) 🔢: 100%
-- [Disease Burden as % of GDP](#sec-disease_burden_gdp_drag_pct) 📊: 13%
+- [Treaty Redirect GDP Growth Bonus (Year 20)](#sec-treaty_redirect_gdp_growth_bonus_year_20) 🔢: 1.06%
+- [Treaty Peace Recovery GDP Growth Bonus (Year 20)](#sec-treaty_peace_recovery_gdp_growth_bonus_year_20) 🔢: 0.573%
+- [Treaty Cybercrime Recovery GDP Growth Bonus (Year 20)](#sec-treaty_cybercrime_recovery_gdp_growth_bonus_year_20) 🔢: 0.53%
+- [Treaty Health Recovery GDP Growth Bonus (Year 20)](#sec-treaty_health_recovery_gdp_growth_bonus_year_20) 🔢: 6.28%
 
 $$
 \begin{gathered}
 GDP_{treaty,20} \\
-= GDP_0(1+g_{treaty,ramp})^3(1+g_{treaty,full})^{17}
+= GDP_0(1 + g_{base} + g_{redirect} + g_{peace} + g_{cyber} \\
++ g_{health})^{20}
 \end{gathered}
 $$
 
@@ -8503,6 +8964,22 @@ Annual global spending on clinical trials (Industry: $45-60B + Government: $3-6B
 
 :::
 
+### Global Cybercrime Costs (2025): $10.5T {#sec-global_cybercrime_cost_annual_2025}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Projected global cybercrime costs in 2025. Includes data theft, productivity loss, IP theft, fraud. More profitable than global trade of all major illegal drugs combined. If measured as a country, would be the 3rd largest economy after US and China.
+
+**Source**: [@cybercrime-economy-10-5t]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*✓ High confidence*
+
+:::
+
 ### Global Daily Deaths from Disease and Aging: 150 thousand deaths/day {#sec-global_disease_deaths_daily}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -8836,6 +9313,30 @@ Average cost to develop one drug in current system
 {{< include ../figures/distribution-pharma_drug_development_cost_current.qmd >}}
 
 *✓ High confidence • 📊 Peer-reviewed*
+
+:::
+
+### Annual Life-Years Saved by Pharmaceuticals: 149 million life-years {#sec-pharma_life_years_saved_annual}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual life-years saved by pharmaceutical innovations globally. Lichtenberg (2019, NBER WP 25483) found that drugs launched after 1981 saved 148.7M life-years in 2013 across 22 countries using 3-way fixed-effects regression (disease-country-year). 95% CI [79.4M, 239.8M] propagated from Table 2 regression standard errors (β₀₋₁₁=-0.031±0.008, β₁₂₊=-0.057±0.013).
+
+**Source**: [@lichtenberg-life-years-saved-2019]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [79.4 million life-years, 240 million life-years] • Distribution: Lognormal
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between 79.4 million life-years and 240 million life-years (±54%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-pharma_life_years_saved_annual.qmd >}}
+
+*~ Medium confidence*
 
 :::
 
@@ -9469,6 +9970,28 @@ Patients enrolled in ADAPTABLE trial (PCORnet 2016-2019). Enrolled across 40 cli
 
 :::
 
+### Average Life Extension per Beneficiary: 12 years {#sec-avg_life_extension_per_beneficiary}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Average years of life extension per person saved by pharmaceutical interventions. Assumption used to convert life-years saved to approximate lives saved. Based on Lichtenberg's methodology where life-years are calculated from Years of Life Lost (YLL) reductions.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [8 years, 18 years] • Distribution: Triangular
+
+**What this means**: There's significant uncertainty here. The true value likely falls between 8 years and 18 years (±42%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The triangular distribution means values cluster around a most-likely point but can range higher or lower.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-avg_life_extension_per_beneficiary.qmd >}}
+
+*Core definition*
+
+:::
+
 ### Percentage of Budget Defense Sector Keeps Under 1% treaty: 99% {#sec-defense_sector_retention_pct}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -9833,6 +10356,28 @@ Standard time horizon for NPV analysis
 
 :::
 
+### Peace Dividend Conflict Elasticity: 1:1 {#sec-peace_dividend_conflict_elasticity}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Conflict reduction elasticity: how much conflict costs decrease per 1% military spending cut. ε=0: no effect (spending cuts don't reduce conflict). ε=0.5: moderate linkage (conservative). ε=1.0: proportional (baseline assumption). ε>1.0: shared enemy amplification (redirecting to disease creates unity).
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [0.25:1, 1.5:1] • Distribution: Beta
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between 0.25:1 and 1.5:1 (±62%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The beta distribution means values are bounded and can skew toward one end.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-peace_dividend_conflict_elasticity.qmd >}}
+
+*Core definition*
+
+:::
+
 ### Direct Fiscal Savings from 1% Military Spending Reduction: $27.2B {#sec-peace_dividend_direct_fiscal_savings}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -10000,6 +10545,20 @@ Viral referendum budget for 280M verified votes (base: $250M realistic with $0.5
 #### Input Distribution
 
 {{< include ../figures/distribution-treaty_campaign_viral_referendum_base_case.qmd >}}
+
+*Core definition*
+
+:::
+
+### Treaty Effective Reallocation Share (Year 20): 5.8% {#sec-treaty_effective_reallocation_share_year_20}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Average military-to-medicine reallocation share over 20 years under the optimistic treaty take-hold path (1% for 3 years, 2% for 4 years, 5% for 5 years, 10% for 8 years).
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
 
 *Core definition*
 

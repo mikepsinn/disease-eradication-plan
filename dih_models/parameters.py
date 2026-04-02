@@ -6010,38 +6010,6 @@ TREATY_CUMULATIVE_20YR_WITH_RATCHET = Parameter(
     latex_symbol=r"Fund_{20yr,ratchet}",
 )
 
-# Ratchet premium: additional cumulative funding from IAB expansion mechanism (20 years)
-TREATY_RATCHET_PREMIUM_20YR = Parameter(
-    TREATY_CUMULATIVE_20YR_WITH_RATCHET - (TREATY_ANNUAL_FUNDING * 20),
-    source_type="calculated",
-    description="Additional cumulative funding from IAB ratchet expansion vs stagnation over 20 years. "
-                "The value of the IAB mechanism: this much more funding flows to medical research "
-                "because bondholder incentives drive treaty expansion.",
-    display_name="Treaty Ratchet Premium over 20 Years",
-    unit="USD",
-    formula="TREATY_CUMULATIVE_20YR_WITH_RATCHET - (TREATY_ANNUAL_FUNDING × 20)",
-    latex=r"\Delta Fund_{ratchet,20}=Fund_{20yr,ratchet}-20\cdot Funding_{treaty,ann}",
-    keywords=["ratchet", "premium", "expansion", "difference", "iab", "expected value", "20 year"],
-    inputs=["TREATY_CUMULATIVE_20YR_WITH_RATCHET", "TREATY_ANNUAL_FUNDING"],
-    compute=lambda ctx: ctx["TREATY_CUMULATIVE_20YR_WITH_RATCHET"] - (ctx["TREATY_ANNUAL_FUNDING"] * 20),
-    latex_symbol=r"\Delta Fund_{ratchet}",
-)
-
-# Ratchet expansion multiplier: how many times more funding with ratchet vs without (20 years)
-TREATY_RATCHET_MULTIPLIER_20YR = Parameter(
-    TREATY_CUMULATIVE_20YR_WITH_RATCHET / (TREATY_ANNUAL_FUNDING * 20),
-    source_type="calculated",
-    description="How many times more cumulative funding flows with IAB ratchet vs stagnation over 20 years.",
-    display_name="Treaty Ratchet Funding Multiplier (20yr)",
-    unit="x",
-    formula="TREATY_CUMULATIVE_20YR_WITH_RATCHET / (TREATY_ANNUAL_FUNDING × 20)",
-    latex=r"k_{ratchet,20}=\frac{Fund_{20yr,ratchet}}{20\cdot Funding_{treaty,ann}}",
-    keywords=["ratchet", "multiplier", "expansion", "iab", "20 year"],
-    inputs=["TREATY_CUMULATIVE_20YR_WITH_RATCHET", "TREATY_ANNUAL_FUNDING"],
-    compute=lambda ctx: ctx["TREATY_CUMULATIVE_20YR_WITH_RATCHET"] / (ctx["TREATY_ANNUAL_FUNDING"] * 20),
-    latex_symbol=r"k_{ratchet}",
-)
-
 # War costs on current trajectory (20 years at current levels)
 WAR_COSTS_CUMULATIVE_20YR_CURRENT_TRAJECTORY = Parameter(
     GLOBAL_ANNUAL_DIRECT_INDIRECT_WAR_COST * 20,
@@ -8715,6 +8683,164 @@ WISHONIA_MILITARY_REALLOCATION_PHYSICAL_MAX_SHARE = Parameter(
     latex_symbol=r"s_{mil,max}",
 )
 
+TREATY_EFFECTIVE_REALLOCATION_SHARE_YEAR_15 = Parameter(
+    (0.01 * 3 + 0.02 * 4 + 0.05 * 5 + 0.10 * 3) / 15,
+    source_type="definition",
+    distribution="fixed",
+    description="Average military-to-medicine reallocation share over 15 years under the optimistic treaty take-hold path "
+                "(1% for 3 years, 2% for 4 years, 5% for 5 years, 10% for 3 years).",
+    display_name="Treaty Effective Reallocation Share (Year 15)",
+    unit="rate",
+    formula="(0.01×3 + 0.02×4 + 0.05×5 + 0.10×3) / 15",
+    keywords=["treaty", "reallocation", "share", "15 year", "optimistic"],
+    latex_symbol=r"\bar{s}_{treaty,15}",
+)
+
+TREATY_EFFECTIVE_REALLOCATION_SHARE_YEAR_20 = Parameter(
+    (0.01 * 3 + 0.02 * 4 + 0.05 * 5 + 0.10 * 8) / 20,
+    source_type="definition",
+    distribution="fixed",
+    description="Average military-to-medicine reallocation share over 20 years under the optimistic treaty take-hold path "
+                "(1% for 3 years, 2% for 4 years, 5% for 5 years, 10% for 8 years).",
+    display_name="Treaty Effective Reallocation Share (Year 20)",
+    unit="rate",
+    formula="(0.01×3 + 0.02×4 + 0.05×5 + 0.10×8) / 20",
+    keywords=["treaty", "reallocation", "share", "20 year", "optimistic"],
+    latex_symbol=r"\bar{s}_{treaty,20}",
+)
+
+TREATY_DISEASE_CURE_FRACTION_20YR = Parameter(
+    min(
+        1.0,
+        NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR
+        * (
+            3 * min(DFDA_TRIAL_CAPACITY_MULTIPLIER * (0.01 / 0.01), DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL)
+            + 4 * min(DFDA_TRIAL_CAPACITY_MULTIPLIER * (0.02 / 0.01), DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL)
+            + 5 * min(DFDA_TRIAL_CAPACITY_MULTIPLIER * (0.05 / 0.01), DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL)
+            + 8 * min(DFDA_TRIAL_CAPACITY_MULTIPLIER * (0.10 / 0.01), DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL)
+        )
+        / DISEASES_WITHOUT_EFFECTIVE_TREATMENT,
+    ),
+    source_type="calculated",
+    description="Treaty disease-cure fraction over 20 years under the optimistic treaty take-hold path. "
+                "The initial 1% treaty expands to 2%, then 5%, then 10%, and cumulative trial throughput "
+                "is capped by the physical participant ceiling.",
+    display_name="Treaty Disease Cure Fraction (20yr, Take-Hold Path)",
+    unit="rate",
+    formula="min(1.0, NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR × (3×min(DFDA_TRIAL_CAPACITY_MULTIPLIER×1, DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL) + 4×min(DFDA_TRIAL_CAPACITY_MULTIPLIER×2, DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL) + 5×min(DFDA_TRIAL_CAPACITY_MULTIPLIER×5, DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL) + 8×min(DFDA_TRIAL_CAPACITY_MULTIPLIER×10, DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL)) ÷ DISEASES_WITHOUT_EFFECTIVE_TREATMENT)",
+    latex=r"f_{cure,20,treaty}=\min\left(1,\frac{Treatments_{new,ann}\cdot \sum_y k_{capacity,y}}{D_{untreated}}\right)",
+    inputs=[
+        "NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR",
+        "DFDA_TRIAL_CAPACITY_MULTIPLIER",
+        "DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL",
+        "DISEASES_WITHOUT_EFFECTIVE_TREATMENT",
+    ],
+    compute=lambda ctx: min(
+        1.0,
+        ctx["NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR"]
+        * (
+            3 * min(ctx["DFDA_TRIAL_CAPACITY_MULTIPLIER"] * (0.01 / 0.01), ctx["DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL"])
+            + 4 * min(ctx["DFDA_TRIAL_CAPACITY_MULTIPLIER"] * (0.02 / 0.01), ctx["DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL"])
+            + 5 * min(ctx["DFDA_TRIAL_CAPACITY_MULTIPLIER"] * (0.05 / 0.01), ctx["DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL"])
+            + 8 * min(ctx["DFDA_TRIAL_CAPACITY_MULTIPLIER"] * (0.10 / 0.01), ctx["DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL"])
+        )
+        / ctx["DISEASES_WITHOUT_EFFECTIVE_TREATMENT"],
+    ),
+    keywords=["treaty", "disease", "cure fraction", "20 year", "optimistic", "ratchet"],
+    latex_symbol=r"f_{cure,20,treaty}",
+)
+
+TREATY_REDIRECT_GDP_GROWTH_BONUS_YEAR_20 = Parameter(
+    TREATY_EFFECTIVE_REALLOCATION_SHARE_YEAR_20 * ((MILITARY_REDIRECT_GDP_BOOST_AT_30PCT / 0.30) * (RD_SPILLOVER_MULTIPLIER / 2.0)),
+    source_type="calculated",
+    description="Annual GDP growth bonus by year 20 from redirecting military spending to medical research under the treaty take-hold path, "
+                "including R&D spillovers.",
+    display_name="Treaty Redirect GDP Growth Bonus (Year 20)",
+    unit="rate",
+    formula="TREATY_EFFECTIVE_REALLOCATION_SHARE_YEAR_20 × ((MILITARY_REDIRECT_GDP_BOOST_AT_30PCT ÷ 0.30) × (RD_SPILLOVER_MULTIPLIER ÷ 2.0))",
+    latex=r"g_{redirect,treaty,20}=\bar{s}_{treaty,20}\cdot\left(\frac{\Delta g_{30\%}}{0.30}\right)\cdot\left(\frac{m_{spillover}}{2.0}\right)",
+    inputs=["TREATY_EFFECTIVE_REALLOCATION_SHARE_YEAR_20", "MILITARY_REDIRECT_GDP_BOOST_AT_30PCT", "RD_SPILLOVER_MULTIPLIER"],
+    compute=lambda ctx: ctx["TREATY_EFFECTIVE_REALLOCATION_SHARE_YEAR_20"] * ((ctx["MILITARY_REDIRECT_GDP_BOOST_AT_30PCT"] / 0.30) * (ctx["RD_SPILLOVER_MULTIPLIER"] / 2.0)),
+    keywords=["treaty", "GDP", "growth", "redirect", "R&D", "spillover", "20 year"],
+    latex_symbol=r"g_{redirect,treaty,20}",
+)
+
+TREATY_PEACE_RECOVERY_GDP_GROWTH_BONUS_YEAR_20 = Parameter(
+    (PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT / GLOBAL_GDP_2025)
+    * (TREATY_EFFECTIVE_REALLOCATION_SHARE_YEAR_20 / TREATY_REDUCTION_PCT)
+    * PEACE_DIVIDEND_CONFLICT_ELASTICITY,
+    source_type="calculated",
+    description="Annual GDP growth bonus by year 20 from explicit avoided war-cost drag under the treaty take-hold path.",
+    display_name="Treaty Peace Recovery GDP Growth Bonus (Year 20)",
+    unit="rate",
+    formula="(PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT ÷ GLOBAL_GDP_2025) × (TREATY_EFFECTIVE_REALLOCATION_SHARE_YEAR_20 ÷ TREATY_REDUCTION_PCT) × PEACE_DIVIDEND_CONFLICT_ELASTICITY",
+    latex=r"g_{peace,treaty,20}=\left(\frac{Benefit_{peace,soc}}{GDP_0}\right)\cdot\left(\frac{\bar{s}_{treaty,20}}{Reduce_{treaty}}\right)\cdot\varepsilon_{conflict}",
+    inputs=[
+        "PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT",
+        "GLOBAL_GDP_2025",
+        "TREATY_EFFECTIVE_REALLOCATION_SHARE_YEAR_20",
+        "TREATY_REDUCTION_PCT",
+        "PEACE_DIVIDEND_CONFLICT_ELASTICITY",
+    ],
+    compute=lambda ctx: (
+        (ctx["PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT"] / ctx["GLOBAL_GDP_2025"])
+        * (ctx["TREATY_EFFECTIVE_REALLOCATION_SHARE_YEAR_20"] / ctx["TREATY_REDUCTION_PCT"])
+        * ctx["PEACE_DIVIDEND_CONFLICT_ELASTICITY"]
+    ),
+    keywords=["treaty", "GDP", "growth", "peace dividend", "war costs", "20 year"],
+    latex_symbol=r"g_{peace,treaty,20}",
+)
+
+TREATY_CYBERCRIME_RECOVERY_GDP_GROWTH_BONUS_YEAR_20 = Parameter(
+    (GLOBAL_CYBERCRIME_COST_ANNUAL_2025 / GLOBAL_GDP_2025)
+    * TREATY_EFFECTIVE_REALLOCATION_SHARE_YEAR_20
+    * PEACE_DIVIDEND_CONFLICT_ELASTICITY,
+    source_type="calculated",
+    description="Annual GDP growth bonus by year 20 from reducing cybercrime drag as the treaty weakens the destructive economy feedback loop.",
+    display_name="Treaty Cybercrime Recovery GDP Growth Bonus (Year 20)",
+    unit="rate",
+    formula="(GLOBAL_CYBERCRIME_COST_ANNUAL_2025 ÷ GLOBAL_GDP_2025) × TREATY_EFFECTIVE_REALLOCATION_SHARE_YEAR_20 × PEACE_DIVIDEND_CONFLICT_ELASTICITY",
+    latex=r"g_{cyber,treaty,20}=\left(\frac{Cost_{cyber,2025}}{GDP_0}\right)\cdot\bar{s}_{treaty,20}\cdot\varepsilon_{conflict}",
+    inputs=[
+        "GLOBAL_CYBERCRIME_COST_ANNUAL_2025",
+        "GLOBAL_GDP_2025",
+        "TREATY_EFFECTIVE_REALLOCATION_SHARE_YEAR_20",
+        "PEACE_DIVIDEND_CONFLICT_ELASTICITY",
+    ],
+    compute=lambda ctx: (
+        (ctx["GLOBAL_CYBERCRIME_COST_ANNUAL_2025"] / ctx["GLOBAL_GDP_2025"])
+        * ctx["TREATY_EFFECTIVE_REALLOCATION_SHARE_YEAR_20"]
+        * ctx["PEACE_DIVIDEND_CONFLICT_ELASTICITY"]
+    ),
+    keywords=["treaty", "GDP", "growth", "cybercrime", "destructive economy", "20 year"],
+    latex_symbol=r"g_{cyber,treaty,20}",
+)
+
+TREATY_HEALTH_RECOVERY_GDP_GROWTH_BONUS_YEAR_20 = Parameter(
+    ((1 + TREATY_DISEASE_CURE_FRACTION_20YR * DISEASE_BURDEN_GDP_DRAG_PCT + (EXISTING_DRUGS_EFFICACY_LAG_ECONOMIC_LOSS / GLOBAL_GDP_2025)) ** (1 / 20)) - 1,
+    source_type="calculated",
+    description="Annualized GDP growth bonus by year 20 from lower disease burden plus eliminating existing-drug efficacy lag under the treaty path.",
+    display_name="Treaty Health Recovery GDP Growth Bonus (Year 20)",
+    unit="rate",
+    formula="((1 + TREATY_DISEASE_CURE_FRACTION_20YR × DISEASE_BURDEN_GDP_DRAG_PCT + (EXISTING_DRUGS_EFFICACY_LAG_ECONOMIC_LOSS ÷ GLOBAL_GDP_2025))^(1/20)) - 1",
+    latex=r"g_{health,treaty,20}=\left(1+f_{cure,20,treaty}\cdot d_{disease}+\frac{Loss_{lag,existing}}{GDP_0}\right)^{1/20}-1",
+    inputs=[
+        "TREATY_DISEASE_CURE_FRACTION_20YR",
+        "DISEASE_BURDEN_GDP_DRAG_PCT",
+        "EXISTING_DRUGS_EFFICACY_LAG_ECONOMIC_LOSS",
+        "GLOBAL_GDP_2025",
+    ],
+    compute=lambda ctx: (
+        (
+            1
+            + ctx["TREATY_DISEASE_CURE_FRACTION_20YR"] * ctx["DISEASE_BURDEN_GDP_DRAG_PCT"]
+            + (ctx["EXISTING_DRUGS_EFFICACY_LAG_ECONOMIC_LOSS"] / ctx["GLOBAL_GDP_2025"])
+        ) ** (1 / 20)
+    ) - 1,
+    keywords=["treaty", "GDP", "growth", "health", "disease burden", "efficacy lag", "20 year"],
+    latex_symbol=r"g_{health,treaty,20}",
+)
+
 WISHONIA_DISEASE_CURE_FRACTION_20YR_FULL = Parameter(
     min(
         1.0,
@@ -8786,61 +8912,40 @@ CURRENT_TRAJECTORY_AVG_INCOME_YEAR_20 = Parameter(
 TREATY_TRAJECTORY_GDP_YEAR_20 = Parameter(
     GLOBAL_GDP_2025
     * (
-        (
-            1
-            + GDP_BASELINE_GROWTH_RATE
-            + (0.5 * WISHONIA_MILITARY_REALLOCATION_PHYSICAL_MAX_SHARE)
-            * ((MILITARY_REDIRECT_GDP_BOOST_AT_30PCT / 0.30) * (RD_SPILLOVER_MULTIPLIER / 2.0))
-            + ((1 + WISHONIA_DISEASE_CURE_FRACTION_20YR_FULL * DISEASE_BURDEN_GDP_DRAG_PCT) ** (1 / 20) - 1)
-        ) ** 3
-    )
-    * (
-        (
-            1
-            + GDP_BASELINE_GROWTH_RATE
-            + WISHONIA_MILITARY_REALLOCATION_PHYSICAL_MAX_SHARE
-            * ((MILITARY_REDIRECT_GDP_BOOST_AT_30PCT / 0.30) * (RD_SPILLOVER_MULTIPLIER / 2.0))
-            + ((1 + WISHONIA_DISEASE_CURE_FRACTION_20YR_FULL * DISEASE_BURDEN_GDP_DRAG_PCT) ** (1 / 20) - 1)
-        ) ** 17
-    ),
+        1
+        + GDP_BASELINE_GROWTH_RATE
+        + TREATY_REDIRECT_GDP_GROWTH_BONUS_YEAR_20
+        + TREATY_PEACE_RECOVERY_GDP_GROWTH_BONUS_YEAR_20
+        + TREATY_CYBERCRIME_RECOVERY_GDP_GROWTH_BONUS_YEAR_20
+        + TREATY_HEALTH_RECOVERY_GDP_GROWTH_BONUS_YEAR_20
+    ) ** 20,
     source_type="calculated",
-    description="Projected global GDP at year 20 under the Treaty Trajectory: military-to-science reallocation "
-                "plus disease-burden recovery only. Excludes non-health dysfunction-capital reallocation "
-                "to isolate the lower-political-baggage channel.",
+    description="Projected global GDP at year 20 under the optimistic treaty take-hold path. "
+                "Compounds baseline growth plus explicit military redirect spillovers, peace dividend recovery, "
+                "cybercrime drag recovery, and health recovery from disease cures and faster deployment.",
     display_name="Treaty Trajectory GDP at Year 20",
     unit="USD",
-    formula="GLOBAL_GDP_2025 × (1 + g_treaty_ramp)^3 × (1 + g_treaty_full)^17, where g_treaty includes baseline growth + military reallocation + disease-burden recovery only",
-    latex=r"GDP_{treaty,20}=GDP_0(1+g_{treaty,ramp})^3(1+g_{treaty,full})^{17}",
-    keywords=["GDP", "wishonia", "core", "projection", "treaty"],
+    formula="GLOBAL_GDP_2025 × (1 + GDP_BASELINE_GROWTH_RATE + TREATY_REDIRECT_GDP_GROWTH_BONUS_YEAR_20 + TREATY_PEACE_RECOVERY_GDP_GROWTH_BONUS_YEAR_20 + TREATY_CYBERCRIME_RECOVERY_GDP_GROWTH_BONUS_YEAR_20 + TREATY_HEALTH_RECOVERY_GDP_GROWTH_BONUS_YEAR_20)^20",
+    latex=r"GDP_{treaty,20}=GDP_0(1+g_{base}+g_{redirect}+g_{peace}+g_{cyber}+g_{health})^{20}",
+    keywords=["GDP", "treaty", "projection", "20 years", "optimistic"],
     inputs=[
         "GLOBAL_GDP_2025",
         "GDP_BASELINE_GROWTH_RATE",
-        "WISHONIA_MILITARY_REALLOCATION_PHYSICAL_MAX_SHARE",
-        "MILITARY_REDIRECT_GDP_BOOST_AT_30PCT",
-        "RD_SPILLOVER_MULTIPLIER",
-        "WISHONIA_DISEASE_CURE_FRACTION_20YR_FULL",
-        "DISEASE_BURDEN_GDP_DRAG_PCT",
+        "TREATY_REDIRECT_GDP_GROWTH_BONUS_YEAR_20",
+        "TREATY_PEACE_RECOVERY_GDP_GROWTH_BONUS_YEAR_20",
+        "TREATY_CYBERCRIME_RECOVERY_GDP_GROWTH_BONUS_YEAR_20",
+        "TREATY_HEALTH_RECOVERY_GDP_GROWTH_BONUS_YEAR_20",
     ],
     compute=lambda ctx: (
         ctx["GLOBAL_GDP_2025"]
         * (
-            (
-                1
-                + ctx["GDP_BASELINE_GROWTH_RATE"]
-                + (0.5 * ctx["WISHONIA_MILITARY_REALLOCATION_PHYSICAL_MAX_SHARE"])
-                * ((ctx["MILITARY_REDIRECT_GDP_BOOST_AT_30PCT"] / 0.30) * (ctx["RD_SPILLOVER_MULTIPLIER"] / 2.0))
-                + ((1 + ctx["WISHONIA_DISEASE_CURE_FRACTION_20YR_FULL"] * ctx["DISEASE_BURDEN_GDP_DRAG_PCT"]) ** (1 / 20) - 1)
-            ) ** 3
-        )
-        * (
-            (
-                1
-                + ctx["GDP_BASELINE_GROWTH_RATE"]
-                + ctx["WISHONIA_MILITARY_REALLOCATION_PHYSICAL_MAX_SHARE"]
-                * ((ctx["MILITARY_REDIRECT_GDP_BOOST_AT_30PCT"] / 0.30) * (ctx["RD_SPILLOVER_MULTIPLIER"] / 2.0))
-                + ((1 + ctx["WISHONIA_DISEASE_CURE_FRACTION_20YR_FULL"] * ctx["DISEASE_BURDEN_GDP_DRAG_PCT"]) ** (1 / 20) - 1)
-            ) ** 17
-        )
+            1
+            + ctx["GDP_BASELINE_GROWTH_RATE"]
+            + ctx["TREATY_REDIRECT_GDP_GROWTH_BONUS_YEAR_20"]
+            + ctx["TREATY_PEACE_RECOVERY_GDP_GROWTH_BONUS_YEAR_20"]
+            + ctx["TREATY_CYBERCRIME_RECOVERY_GDP_GROWTH_BONUS_YEAR_20"]
+            + ctx["TREATY_HEALTH_RECOVERY_GDP_GROWTH_BONUS_YEAR_20"]
+        ) ** 20
     ),
     latex_symbol=r"GDP_{treaty,20}",
 )
@@ -9103,21 +9208,22 @@ TREATY_DISEASE_CURE_FRACTION_15YR = Parameter(
     min(
         1.0,
         NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR
-        * min(
-            DFDA_TRIAL_CAPACITY_MULTIPLIER * (0.01 / 0.01),
-            DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL,
+        * (
+            3 * min(DFDA_TRIAL_CAPACITY_MULTIPLIER * (0.01 / 0.01), DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL)
+            + 4 * min(DFDA_TRIAL_CAPACITY_MULTIPLIER * (0.02 / 0.01), DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL)
+            + 5 * min(DFDA_TRIAL_CAPACITY_MULTIPLIER * (0.05 / 0.01), DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL)
+            + 3 * min(DFDA_TRIAL_CAPACITY_MULTIPLIER * (0.10 / 0.01), DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL)
         )
-        * 15
         / DISEASES_WITHOUT_EFFECTIVE_TREATMENT,
     ),
     source_type="calculated",
-    description="Treaty disease-cure fraction over 15 years under 1% military reallocation only. "
-                "Uses base trial-capacity multiplier (no scaling beyond 1% reallocation) and applies "
-                "an upper bound of 100% of untreated disease classes.",
-    display_name="Treaty Disease Cure Fraction (15yr, 1% Reallocation)",
+    description="Treaty disease-cure fraction over 15 years under the optimistic treaty take-hold path. "
+                "The initial 1% treaty expands to 2%, then 5%, then 10%, and cumulative trial throughput "
+                "is capped by the physical participant ceiling.",
+    display_name="Treaty Disease Cure Fraction (15yr, Take-Hold Path)",
     unit="rate",
-    formula="min(1.0, NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR * min(DFDA_TRIAL_CAPACITY_MULTIPLIER, DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL) * 15 / DISEASES_WITHOUT_EFFECTIVE_TREATMENT)",
-    latex=r"f_{cure,15,treaty}=\min\left(1,\frac{Treatments_{new,ann}\cdot k_{capacity}\cdot 15}{D_{untreated}}\right)",
+    formula="min(1.0, NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR × (3×min(DFDA_TRIAL_CAPACITY_MULTIPLIER×1, DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL) + 4×min(DFDA_TRIAL_CAPACITY_MULTIPLIER×2, DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL) + 5×min(DFDA_TRIAL_CAPACITY_MULTIPLIER×5, DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL) + 3×min(DFDA_TRIAL_CAPACITY_MULTIPLIER×10, DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL)) ÷ DISEASES_WITHOUT_EFFECTIVE_TREATMENT)",
+    latex=r"f_{cure,15,treaty}=\min\left(1,\frac{Treatments_{new,ann}\cdot \sum_y k_{capacity,y}}{D_{untreated}}\right)",
     inputs=[
         "NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR",
         "DFDA_TRIAL_CAPACITY_MULTIPLIER",
@@ -9127,15 +9233,107 @@ TREATY_DISEASE_CURE_FRACTION_15YR = Parameter(
     compute=lambda ctx: min(
         1.0,
         ctx["NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR"]
-        * min(
-            ctx["DFDA_TRIAL_CAPACITY_MULTIPLIER"],
-            ctx["DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL"],
+        * (
+            3 * min(ctx["DFDA_TRIAL_CAPACITY_MULTIPLIER"] * (0.01 / 0.01), ctx["DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL"])
+            + 4 * min(ctx["DFDA_TRIAL_CAPACITY_MULTIPLIER"] * (0.02 / 0.01), ctx["DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL"])
+            + 5 * min(ctx["DFDA_TRIAL_CAPACITY_MULTIPLIER"] * (0.05 / 0.01), ctx["DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL"])
+            + 3 * min(ctx["DFDA_TRIAL_CAPACITY_MULTIPLIER"] * (0.10 / 0.01), ctx["DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL"])
         )
-        * 15
         / ctx["DISEASES_WITHOUT_EFFECTIVE_TREATMENT"],
     ),
-    keywords=["treaty", "disease", "cure fraction", "15 year", "1% reallocation"],
+    keywords=["treaty", "disease", "cure fraction", "15 year", "optimistic", "ratchet"],
     latex_symbol=r"f_{cure,15,treaty}",
+)
+
+TREATY_REDIRECT_GDP_GROWTH_BONUS_YEAR_15 = Parameter(
+    TREATY_EFFECTIVE_REALLOCATION_SHARE_YEAR_15 * ((MILITARY_REDIRECT_GDP_BOOST_AT_30PCT / 0.30) * (RD_SPILLOVER_MULTIPLIER / 2.0)),
+    source_type="calculated",
+    description="Annual GDP growth bonus by year 15 from redirecting military spending to medical research under the treaty take-hold path, "
+                "including R&D spillovers.",
+    display_name="Treaty Redirect GDP Growth Bonus (Year 15)",
+    unit="rate",
+    formula="TREATY_EFFECTIVE_REALLOCATION_SHARE_YEAR_15 × ((MILITARY_REDIRECT_GDP_BOOST_AT_30PCT ÷ 0.30) × (RD_SPILLOVER_MULTIPLIER ÷ 2.0))",
+    latex=r"g_{redirect,treaty,15}=\bar{s}_{treaty,15}\cdot\left(\frac{\Delta g_{30\%}}{0.30}\right)\cdot\left(\frac{m_{spillover}}{2.0}\right)",
+    inputs=["TREATY_EFFECTIVE_REALLOCATION_SHARE_YEAR_15", "MILITARY_REDIRECT_GDP_BOOST_AT_30PCT", "RD_SPILLOVER_MULTIPLIER"],
+    compute=lambda ctx: ctx["TREATY_EFFECTIVE_REALLOCATION_SHARE_YEAR_15"] * ((ctx["MILITARY_REDIRECT_GDP_BOOST_AT_30PCT"] / 0.30) * (ctx["RD_SPILLOVER_MULTIPLIER"] / 2.0)),
+    keywords=["treaty", "GDP", "growth", "redirect", "R&D", "spillover", "15 year"],
+    latex_symbol=r"g_{redirect,treaty,15}",
+)
+
+TREATY_PEACE_RECOVERY_GDP_GROWTH_BONUS_YEAR_15 = Parameter(
+    (PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT / GLOBAL_GDP_2025)
+    * (TREATY_EFFECTIVE_REALLOCATION_SHARE_YEAR_15 / TREATY_REDUCTION_PCT)
+    * PEACE_DIVIDEND_CONFLICT_ELASTICITY,
+    source_type="calculated",
+    description="Annual GDP growth bonus by year 15 from explicit avoided war-cost drag under the treaty take-hold path.",
+    display_name="Treaty Peace Recovery GDP Growth Bonus (Year 15)",
+    unit="rate",
+    formula="(PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT ÷ GLOBAL_GDP_2025) × (TREATY_EFFECTIVE_REALLOCATION_SHARE_YEAR_15 ÷ TREATY_REDUCTION_PCT) × PEACE_DIVIDEND_CONFLICT_ELASTICITY",
+    latex=r"g_{peace,treaty,15}=\left(\frac{Benefit_{peace,soc}}{GDP_0}\right)\cdot\left(\frac{\bar{s}_{treaty,15}}{Reduce_{treaty}}\right)\cdot\varepsilon_{conflict}",
+    inputs=[
+        "PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT",
+        "GLOBAL_GDP_2025",
+        "TREATY_EFFECTIVE_REALLOCATION_SHARE_YEAR_15",
+        "TREATY_REDUCTION_PCT",
+        "PEACE_DIVIDEND_CONFLICT_ELASTICITY",
+    ],
+    compute=lambda ctx: (
+        (ctx["PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT"] / ctx["GLOBAL_GDP_2025"])
+        * (ctx["TREATY_EFFECTIVE_REALLOCATION_SHARE_YEAR_15"] / ctx["TREATY_REDUCTION_PCT"])
+        * ctx["PEACE_DIVIDEND_CONFLICT_ELASTICITY"]
+    ),
+    keywords=["treaty", "GDP", "growth", "peace dividend", "war costs", "15 year"],
+    latex_symbol=r"g_{peace,treaty,15}",
+)
+
+TREATY_CYBERCRIME_RECOVERY_GDP_GROWTH_BONUS_YEAR_15 = Parameter(
+    (GLOBAL_CYBERCRIME_COST_ANNUAL_2025 / GLOBAL_GDP_2025)
+    * TREATY_EFFECTIVE_REALLOCATION_SHARE_YEAR_15
+    * PEACE_DIVIDEND_CONFLICT_ELASTICITY,
+    source_type="calculated",
+    description="Annual GDP growth bonus by year 15 from reducing cybercrime drag as the treaty weakens the destructive economy feedback loop.",
+    display_name="Treaty Cybercrime Recovery GDP Growth Bonus (Year 15)",
+    unit="rate",
+    formula="(GLOBAL_CYBERCRIME_COST_ANNUAL_2025 ÷ GLOBAL_GDP_2025) × TREATY_EFFECTIVE_REALLOCATION_SHARE_YEAR_15 × PEACE_DIVIDEND_CONFLICT_ELASTICITY",
+    latex=r"g_{cyber,treaty,15}=\left(\frac{Cost_{cyber,2025}}{GDP_0}\right)\cdot\bar{s}_{treaty,15}\cdot\varepsilon_{conflict}",
+    inputs=[
+        "GLOBAL_CYBERCRIME_COST_ANNUAL_2025",
+        "GLOBAL_GDP_2025",
+        "TREATY_EFFECTIVE_REALLOCATION_SHARE_YEAR_15",
+        "PEACE_DIVIDEND_CONFLICT_ELASTICITY",
+    ],
+    compute=lambda ctx: (
+        (ctx["GLOBAL_CYBERCRIME_COST_ANNUAL_2025"] / ctx["GLOBAL_GDP_2025"])
+        * ctx["TREATY_EFFECTIVE_REALLOCATION_SHARE_YEAR_15"]
+        * ctx["PEACE_DIVIDEND_CONFLICT_ELASTICITY"]
+    ),
+    keywords=["treaty", "GDP", "growth", "cybercrime", "destructive economy", "15 year"],
+    latex_symbol=r"g_{cyber,treaty,15}",
+)
+
+TREATY_HEALTH_RECOVERY_GDP_GROWTH_BONUS_YEAR_15 = Parameter(
+    ((1 + TREATY_DISEASE_CURE_FRACTION_15YR * DISEASE_BURDEN_GDP_DRAG_PCT + (EXISTING_DRUGS_EFFICACY_LAG_ECONOMIC_LOSS / GLOBAL_GDP_2025)) ** (1 / 15)) - 1,
+    source_type="calculated",
+    description="Annualized GDP growth bonus by year 15 from lower disease burden plus eliminating existing-drug efficacy lag under the treaty path.",
+    display_name="Treaty Health Recovery GDP Growth Bonus (Year 15)",
+    unit="rate",
+    formula="((1 + TREATY_DISEASE_CURE_FRACTION_15YR × DISEASE_BURDEN_GDP_DRAG_PCT + (EXISTING_DRUGS_EFFICACY_LAG_ECONOMIC_LOSS ÷ GLOBAL_GDP_2025))^(1/15)) - 1",
+    latex=r"g_{health,treaty,15}=\left(1+f_{cure,15,treaty}\cdot d_{disease}+\frac{Loss_{lag,existing}}{GDP_0}\right)^{1/15}-1",
+    inputs=[
+        "TREATY_DISEASE_CURE_FRACTION_15YR",
+        "DISEASE_BURDEN_GDP_DRAG_PCT",
+        "EXISTING_DRUGS_EFFICACY_LAG_ECONOMIC_LOSS",
+        "GLOBAL_GDP_2025",
+    ],
+    compute=lambda ctx: (
+        (
+            1
+            + ctx["TREATY_DISEASE_CURE_FRACTION_15YR"] * ctx["DISEASE_BURDEN_GDP_DRAG_PCT"]
+            + (ctx["EXISTING_DRUGS_EFFICACY_LAG_ECONOMIC_LOSS"] / ctx["GLOBAL_GDP_2025"])
+        ) ** (1 / 15)
+    ) - 1,
+    keywords=["treaty", "GDP", "growth", "health", "disease burden", "efficacy lag", "15 year"],
+    latex_symbol=r"g_{health,treaty,15}",
 )
 
 WISHONIA_DISEASE_CURE_FRACTION_15YR = Parameter(
@@ -9195,61 +9393,40 @@ CURRENT_TRAJECTORY_GDP_YEAR_15 = Parameter(
 TREATY_TRAJECTORY_GDP_YEAR_15 = Parameter(
     GLOBAL_GDP_2025
     * (
-        (
-            1
-            + GDP_BASELINE_GROWTH_RATE
-            + (0.5 * WISHONIA_MILITARY_REALLOCATION_PHYSICAL_MAX_SHARE)
-            * ((MILITARY_REDIRECT_GDP_BOOST_AT_30PCT / 0.30) * (RD_SPILLOVER_MULTIPLIER / 2.0))
-            + ((1 + WISHONIA_DISEASE_CURE_FRACTION_15YR * DISEASE_BURDEN_GDP_DRAG_PCT) ** (1 / 15) - 1)
-        ) ** 3
-    )
-    * (
-        (
-            1
-            + GDP_BASELINE_GROWTH_RATE
-            + WISHONIA_MILITARY_REALLOCATION_PHYSICAL_MAX_SHARE
-            * ((MILITARY_REDIRECT_GDP_BOOST_AT_30PCT / 0.30) * (RD_SPILLOVER_MULTIPLIER / 2.0))
-            + ((1 + WISHONIA_DISEASE_CURE_FRACTION_15YR * DISEASE_BURDEN_GDP_DRAG_PCT) ** (1 / 15) - 1)
-        ) ** 12
-    ),
+        1
+        + GDP_BASELINE_GROWTH_RATE
+        + TREATY_REDIRECT_GDP_GROWTH_BONUS_YEAR_15
+        + TREATY_PEACE_RECOVERY_GDP_GROWTH_BONUS_YEAR_15
+        + TREATY_CYBERCRIME_RECOVERY_GDP_GROWTH_BONUS_YEAR_15
+        + TREATY_HEALTH_RECOVERY_GDP_GROWTH_BONUS_YEAR_15
+    ) ** 15,
     source_type="calculated",
-    description="Projected global GDP at year 15 under the Treaty Trajectory: military-to-science reallocation "
-                "plus disease-burden recovery only. 3-year ramp at 50% intensity + 12 years full implementation. "
-                "Excludes non-health dysfunction-capital reallocation.",
+    description="Projected global GDP at year 15 under the optimistic treaty take-hold path. "
+                "Compounds baseline growth plus explicit military redirect spillovers, peace dividend recovery, "
+                "cybercrime drag recovery, and health recovery from disease cures and faster deployment.",
     display_name="Treaty Trajectory GDP at Year 15",
     unit="USD",
-    formula="GLOBAL_GDP_2025 * (1 + g_treaty_ramp)^3 * (1 + g_treaty_full)^12, where g_treaty includes baseline growth + military reallocation + disease-burden recovery only",
-    latex=r"GDP_{treaty,15}=GDP_0(1+g_{treaty,ramp})^3(1+g_{treaty,full})^{12}",
-    keywords=["GDP", "treaty", "projection", "year 15"],
+    formula="GLOBAL_GDP_2025 × (1 + GDP_BASELINE_GROWTH_RATE + TREATY_REDIRECT_GDP_GROWTH_BONUS_YEAR_15 + TREATY_PEACE_RECOVERY_GDP_GROWTH_BONUS_YEAR_15 + TREATY_CYBERCRIME_RECOVERY_GDP_GROWTH_BONUS_YEAR_15 + TREATY_HEALTH_RECOVERY_GDP_GROWTH_BONUS_YEAR_15)^15",
+    latex=r"GDP_{treaty,15}=GDP_0(1+g_{base}+g_{redirect}+g_{peace}+g_{cyber}+g_{health})^{15}",
+    keywords=["GDP", "treaty", "projection", "15 years", "optimistic"],
     inputs=[
         "GLOBAL_GDP_2025",
         "GDP_BASELINE_GROWTH_RATE",
-        "WISHONIA_MILITARY_REALLOCATION_PHYSICAL_MAX_SHARE",
-        "MILITARY_REDIRECT_GDP_BOOST_AT_30PCT",
-        "RD_SPILLOVER_MULTIPLIER",
-        "WISHONIA_DISEASE_CURE_FRACTION_15YR",
-        "DISEASE_BURDEN_GDP_DRAG_PCT",
+        "TREATY_REDIRECT_GDP_GROWTH_BONUS_YEAR_15",
+        "TREATY_PEACE_RECOVERY_GDP_GROWTH_BONUS_YEAR_15",
+        "TREATY_CYBERCRIME_RECOVERY_GDP_GROWTH_BONUS_YEAR_15",
+        "TREATY_HEALTH_RECOVERY_GDP_GROWTH_BONUS_YEAR_15",
     ],
     compute=lambda ctx: (
         ctx["GLOBAL_GDP_2025"]
         * (
-            (
-                1
-                + ctx["GDP_BASELINE_GROWTH_RATE"]
-                + (0.5 * ctx["WISHONIA_MILITARY_REALLOCATION_PHYSICAL_MAX_SHARE"])
-                * ((ctx["MILITARY_REDIRECT_GDP_BOOST_AT_30PCT"] / 0.30) * (ctx["RD_SPILLOVER_MULTIPLIER"] / 2.0))
-                + ((1 + ctx["WISHONIA_DISEASE_CURE_FRACTION_15YR"] * ctx["DISEASE_BURDEN_GDP_DRAG_PCT"]) ** (1 / 15) - 1)
-            ) ** 3
-        )
-        * (
-            (
-                1
-                + ctx["GDP_BASELINE_GROWTH_RATE"]
-                + ctx["WISHONIA_MILITARY_REALLOCATION_PHYSICAL_MAX_SHARE"]
-                * ((ctx["MILITARY_REDIRECT_GDP_BOOST_AT_30PCT"] / 0.30) * (ctx["RD_SPILLOVER_MULTIPLIER"] / 2.0))
-                + ((1 + ctx["WISHONIA_DISEASE_CURE_FRACTION_15YR"] * ctx["DISEASE_BURDEN_GDP_DRAG_PCT"]) ** (1 / 15) - 1)
-            ) ** 12
-        )
+            1
+            + ctx["GDP_BASELINE_GROWTH_RATE"]
+            + ctx["TREATY_REDIRECT_GDP_GROWTH_BONUS_YEAR_15"]
+            + ctx["TREATY_PEACE_RECOVERY_GDP_GROWTH_BONUS_YEAR_15"]
+            + ctx["TREATY_CYBERCRIME_RECOVERY_GDP_GROWTH_BONUS_YEAR_15"]
+            + ctx["TREATY_HEALTH_RECOVERY_GDP_GROWTH_BONUS_YEAR_15"]
+        ) ** 15
     ),
     latex_symbol=r"GDP_{treaty,15}",
 )
@@ -9621,6 +9798,9 @@ GLOBAL_AVG_REMAINING_YEARS = Parameter(
 _remaining_years_0 = int(float(GLOBAL_AVG_REMAINING_YEARS))
 _phase1_years_0 = min(20, _remaining_years_0)
 _phase2_years_0 = _remaining_years_0 - 20
+_current_pc_growth_0 = (
+    float(CURRENT_TRAJECTORY_AVG_INCOME_YEAR_20) / float(GLOBAL_AVG_INCOME_2025)
+) ** (1 / 20) - 1
 _treaty_pc_growth_0 = (
     float(TREATY_TRAJECTORY_AVG_INCOME_YEAR_20) / float(GLOBAL_AVG_INCOME_2025)
 ) ** (1 / 20) - 1
@@ -9631,22 +9811,40 @@ _wishonia_pc_growth_0 = (
 
 CURRENT_TRAJECTORY_CUMULATIVE_LIFETIME_INCOME = Parameter(
     float(GLOBAL_AVG_INCOME_2025)
-    * (1 + float(GDP_BASELINE_GROWTH_RATE))
-    * (((1 + float(GDP_BASELINE_GROWTH_RATE)) ** _remaining_years_0) - 1)
-    / float(GDP_BASELINE_GROWTH_RATE),
+    * (1 + _current_pc_growth_0)
+    * (((1 + _current_pc_growth_0) ** _remaining_years_0) - 1)
+    / _current_pc_growth_0,
     source_type="calculated",
     description="Cumulative per-capita income over an average remaining lifespan under current trajectory "
-                "baseline trajectory. Uses 2.5% baseline growth for all years.",
+                "baseline trajectory. Uses the implied per-capita baseline CAGR from 2025 to 2045.",
     display_name="Current Trajectory Cumulative Lifetime Income (Per Capita)",
     unit="USD",
-    formula="GLOBAL_AVG_INCOME_2025 * (1+g) * ((1+g)^T - 1) / g, where g = per-capita baseline growth",
-    latex=r"Y_{cum,earth} = \bar{y}_0 \cdot \frac{(1+g_{base})((1+g_{base})^{T_{remaining}}-1)}{g_{base}}",
-    inputs=["GLOBAL_AVG_INCOME_2025", "GDP_BASELINE_GROWTH_RATE", "GLOBAL_AVG_REMAINING_YEARS"],
+    formula="GLOBAL_AVG_INCOME_2025 * (1+g_pc,base) * ((1+g_pc,base)^T - 1) / g_pc,base, where g_pc,base is implied by CURRENT_TRAJECTORY_AVG_INCOME_YEAR_20",
+    latex=r"Y_{cum,earth} = \bar{y}_0 \cdot \frac{(1+g_{pc,base})((1+g_{pc,base})^{T_{remaining}}-1)}{g_{pc,base}}",
+    inputs=["GLOBAL_AVG_INCOME_2025", "CURRENT_TRAJECTORY_AVG_INCOME_YEAR_20", "GLOBAL_AVG_REMAINING_YEARS"],
     compute=lambda ctx: (
         ctx["GLOBAL_AVG_INCOME_2025"]
-        * (1 + ctx["GDP_BASELINE_GROWTH_RATE"])
-        * (((1 + ctx["GDP_BASELINE_GROWTH_RATE"]) ** int(ctx["GLOBAL_AVG_REMAINING_YEARS"])) - 1)
-        / ctx["GDP_BASELINE_GROWTH_RATE"]
+        * (
+            1
+            + (
+                (ctx["CURRENT_TRAJECTORY_AVG_INCOME_YEAR_20"] / ctx["GLOBAL_AVG_INCOME_2025"]) ** (1 / 20)
+                - 1
+            )
+        )
+        * (
+            (
+                1
+                + (
+                    (ctx["CURRENT_TRAJECTORY_AVG_INCOME_YEAR_20"] / ctx["GLOBAL_AVG_INCOME_2025"]) ** (1 / 20)
+                    - 1
+                )
+            ) ** int(ctx["GLOBAL_AVG_REMAINING_YEARS"])
+            - 1
+        )
+        / (
+            (ctx["CURRENT_TRAJECTORY_AVG_INCOME_YEAR_20"] / ctx["GLOBAL_AVG_INCOME_2025"]) ** (1 / 20)
+            - 1
+        )
     ),
     latex_symbol=r"Y_{cum,earth}",
 )
@@ -9660,22 +9858,22 @@ TREATY_TRAJECTORY_CUMULATIVE_LIFETIME_INCOME = Parameter(
     )
     + (
         float(TREATY_TRAJECTORY_AVG_INCOME_YEAR_20)
-        * (1 + float(GDP_BASELINE_GROWTH_RATE))
-        * (((1 + float(GDP_BASELINE_GROWTH_RATE)) ** _phase2_years_0) - 1)
-        / float(GDP_BASELINE_GROWTH_RATE)
+        * (1 + _current_pc_growth_0)
+        * (((1 + _current_pc_growth_0) ** _phase2_years_0) - 1)
+        / _current_pc_growth_0
         if _phase2_years_0 > 0
         else 0
     ),
     source_type="calculated",
     description="Cumulative per-capita income over an average remaining lifespan under Treaty Trajectory. "
                 "Uses implied per-capita CAGR for years 1-20 (derived from known year-0 and year-20 "
-                "per-capita incomes), then baseline growth from the year-20 level. Conservative: "
-                "assumes no further treaty acceleration beyond year 20.",
+                "per-capita incomes), then current-trajectory per-capita growth from the year-20 level. "
+                "Conservative: assumes no further treaty acceleration beyond year 20.",
     display_name="Treaty Trajectory Cumulative Lifetime Income (Per Capita)",
     unit="USD",
-    formula="Phase 1: y0*(1+g_pc)*((1+g_pc)^20-1)/g_pc + Phase 2: y20*(1+g_base)*((1+g_base)^(T-20)-1)/g_base",
-    latex=r"Y_{cum,treaty} = \bar{y}_0 \cdot \frac{(1+g_{pc})((1+g_{pc})^{20}-1)}{g_{pc}} + \bar{y}_{treaty,20} \cdot \frac{(1+g_{base})((1+g_{base})^{T_{remaining}-20}-1)}{g_{base}}",
-    inputs=["GLOBAL_AVG_INCOME_2025", "TREATY_TRAJECTORY_AVG_INCOME_YEAR_20", "GDP_BASELINE_GROWTH_RATE",
+    formula="Phase 1: y0*(1+g_pc,treaty)*((1+g_pc,treaty)^20-1)/g_pc,treaty + Phase 2: y20*(1+g_pc,base)*((1+g_pc,base)^(T-20)-1)/g_pc,base",
+    latex=r"Y_{cum,treaty} = \bar{y}_0 \cdot \frac{(1+g_{pc,treaty})((1+g_{pc,treaty})^{20}-1)}{g_{pc,treaty}} + \bar{y}_{treaty,20} \cdot \frac{(1+g_{pc,base})((1+g_{pc,base})^{T_{remaining}-20}-1)}{g_{pc,base}}",
+    inputs=["GLOBAL_AVG_INCOME_2025", "TREATY_TRAJECTORY_AVG_INCOME_YEAR_20", "CURRENT_TRAJECTORY_AVG_INCOME_YEAR_20",
             "GLOBAL_AVG_REMAINING_YEARS"],
     compute=lambda ctx: (
         (
@@ -9700,9 +9898,27 @@ TREATY_TRAJECTORY_CUMULATIVE_LIFETIME_INCOME = Parameter(
         )
         + (
             ctx["TREATY_TRAJECTORY_AVG_INCOME_YEAR_20"]
-            * (1 + ctx["GDP_BASELINE_GROWTH_RATE"])
-            * (((1 + ctx["GDP_BASELINE_GROWTH_RATE"]) ** (int(ctx["GLOBAL_AVG_REMAINING_YEARS"]) - 20)) - 1)
-            / ctx["GDP_BASELINE_GROWTH_RATE"]
+            * (
+                1
+                + (
+                    (ctx["CURRENT_TRAJECTORY_AVG_INCOME_YEAR_20"] / ctx["GLOBAL_AVG_INCOME_2025"]) ** (1 / 20)
+                    - 1
+                )
+            )
+            * (
+                (
+                    1
+                    + (
+                        (ctx["CURRENT_TRAJECTORY_AVG_INCOME_YEAR_20"] / ctx["GLOBAL_AVG_INCOME_2025"]) ** (1 / 20)
+                        - 1
+                    )
+                ) ** (int(ctx["GLOBAL_AVG_REMAINING_YEARS"]) - 20)
+                - 1
+            )
+            / (
+                (ctx["CURRENT_TRAJECTORY_AVG_INCOME_YEAR_20"] / ctx["GLOBAL_AVG_INCOME_2025"]) ** (1 / 20)
+                - 1
+            )
             if int(ctx["GLOBAL_AVG_REMAINING_YEARS"]) > 20
             else 0
         )
@@ -9746,21 +9962,21 @@ WISHONIA_TRAJECTORY_CUMULATIVE_LIFETIME_INCOME = Parameter(
     )
     + (
         float(WISHONIA_TRAJECTORY_AVG_INCOME_YEAR_20)
-        * (1 + float(GDP_BASELINE_GROWTH_RATE))
-        * (((1 + float(GDP_BASELINE_GROWTH_RATE)) ** _phase2_years_0) - 1)
-        / float(GDP_BASELINE_GROWTH_RATE)
+        * (1 + _current_pc_growth_0)
+        * (((1 + _current_pc_growth_0) ** _phase2_years_0) - 1)
+        / _current_pc_growth_0
         if _phase2_years_0 > 0
         else 0
     ),
     source_type="calculated",
     description="Cumulative per-capita income over an average remaining lifespan under Wishonia Trajectory. "
-                "Uses implied per-capita CAGR for years 1-20, then baseline growth from the year-20 level. "
-                "Conservative: assumes no further acceleration beyond year 20.",
+                "Uses implied per-capita CAGR for years 1-20, then current-trajectory per-capita growth "
+                "from the year-20 level. Conservative: assumes no further acceleration beyond year 20.",
     display_name="Wishonia Trajectory Cumulative Lifetime Income (Per Capita)",
     unit="USD",
-    formula="Phase 1: y0*(1+g_pc)*((1+g_pc)^20-1)/g_pc + Phase 2: y20*(1+g_base)*((1+g_base)^(T-20)-1)/g_base",
-    latex=r"Y_{cum,wish} = \bar{y}_0 \cdot \frac{(1+g_{pc,wish})((1+g_{pc,wish})^{20}-1)}{g_{pc,wish}} + \bar{y}_{wish,20} \cdot \frac{(1+g_{base})((1+g_{base})^{T_{remaining}-20}-1)}{g_{base}}",
-    inputs=["GLOBAL_AVG_INCOME_2025", "WISHONIA_TRAJECTORY_AVG_INCOME_YEAR_20", "GDP_BASELINE_GROWTH_RATE",
+    formula="Phase 1: y0*(1+g_pc,wish)*((1+g_pc,wish)^20-1)/g_pc,wish + Phase 2: y20*(1+g_pc,base)*((1+g_pc,base)^(T-20)-1)/g_pc,base",
+    latex=r"Y_{cum,wish} = \bar{y}_0 \cdot \frac{(1+g_{pc,wish})((1+g_{pc,wish})^{20}-1)}{g_{pc,wish}} + \bar{y}_{wish,20} \cdot \frac{(1+g_{pc,base})((1+g_{pc,base})^{T_{remaining}-20}-1)}{g_{pc,base}}",
+    inputs=["GLOBAL_AVG_INCOME_2025", "WISHONIA_TRAJECTORY_AVG_INCOME_YEAR_20", "CURRENT_TRAJECTORY_AVG_INCOME_YEAR_20",
             "GLOBAL_AVG_REMAINING_YEARS"],
     compute=lambda ctx: (
         (
@@ -9785,9 +10001,27 @@ WISHONIA_TRAJECTORY_CUMULATIVE_LIFETIME_INCOME = Parameter(
         )
         + (
             ctx["WISHONIA_TRAJECTORY_AVG_INCOME_YEAR_20"]
-            * (1 + ctx["GDP_BASELINE_GROWTH_RATE"])
-            * (((1 + ctx["GDP_BASELINE_GROWTH_RATE"]) ** (int(ctx["GLOBAL_AVG_REMAINING_YEARS"]) - 20)) - 1)
-            / ctx["GDP_BASELINE_GROWTH_RATE"]
+            * (
+                1
+                + (
+                    (ctx["CURRENT_TRAJECTORY_AVG_INCOME_YEAR_20"] / ctx["GLOBAL_AVG_INCOME_2025"]) ** (1 / 20)
+                    - 1
+                )
+            )
+            * (
+                (
+                    1
+                    + (
+                        (ctx["CURRENT_TRAJECTORY_AVG_INCOME_YEAR_20"] / ctx["GLOBAL_AVG_INCOME_2025"]) ** (1 / 20)
+                        - 1
+                    )
+                ) ** (int(ctx["GLOBAL_AVG_REMAINING_YEARS"]) - 20)
+                - 1
+            )
+            / (
+                (ctx["CURRENT_TRAJECTORY_AVG_INCOME_YEAR_20"] / ctx["GLOBAL_AVG_INCOME_2025"]) ** (1 / 20)
+                - 1
+            )
             if int(ctx["GLOBAL_AVG_REMAINING_YEARS"]) > 20
             else 0
         )
