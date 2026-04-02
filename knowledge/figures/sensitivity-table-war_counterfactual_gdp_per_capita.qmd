@@ -1,0 +1,10 @@
+**Sensitivity Indices for GDP per Capita in Peace Timeline**
+
+Regression-based sensitivity showing which inputs explain the most variance in the output.
+
+| Input Parameter | Sensitivity Coefficient | Interpretation |
+|:----------------|------------------------:|:---------------|
+| Global Average Income (2025 Baseline) (USD) | 1.5858 | Strong driver |
+| Global GDP per Capita in 1900 (USD/person) | 0.5943 | Strong driver |
+
+*Interpretation*: Standardized coefficients show the change in output (in SD units) per 1 SD change in input. Values near ±1 indicate strong influence; values exceeding ±1 may occur with correlated inputs.

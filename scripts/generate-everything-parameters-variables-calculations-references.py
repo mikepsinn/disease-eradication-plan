@@ -97,6 +97,22 @@ def _unlink_with_retry(path: Path, retries: int = 8, initial_delay_seconds: floa
                 continue
             raise
 
+
+def _unlink_best_effort(path: Path) -> None:
+    """Try to delete a non-critical generated file without long retry sleeps."""
+    try:
+        path.unlink()
+    except FileNotFoundError:
+        return
+    except PermissionError:
+        logger.debug(f"[SKIP] Could not delete locked file: {path}")
+    except OSError as e:
+        winerror = getattr(e, "winerror", None)
+        if winerror in (32, 33, 1224):
+            logger.debug(f"[SKIP] Could not delete locked file: {path}")
+            return
+        raise
+
 from lib.workflow_generator import regenerate_workflow  # noqa: E402
 from dih_models.quarto_config_sync import sync_shared_config_settings  # noqa: E402
 
@@ -670,11 +686,16 @@ def main():
     # Per-paper filtered bibliographies are no longer generated - all papers use references.bib
     logger.debug("[OK] Using references.bib as single source of truth for citations")
 
+    # Build chapter mapping once (scans QMD files for variable usage)
+    # Shared by TypeScript generator and parameters-and-calculations QMD generator
+    from dih_models.typescript_generator import build_chapter_mapping
+    logger.debug("[*] Building parameter-to-chapter mapping...")
+    chapter_mapping = build_chapter_mapping(project_root, set(parameters.keys()))
+
     # Generate TypeScript parameters file for Next.js/React apps
-    # (includes chapter mapping - scans QMD files for variable usage internally)
     logger.debug("[*] Generating TypeScript parameters file...")
     ts_output = project_root / "dih_models" / "parameters-calculations-citations.ts"
-    generate_typescript_parameters(parameters, ts_output, include_metadata=True, references_path=bib_path, params_file=parameters_path, citation_data=citation_data, project_root=project_root)
+    generate_typescript_parameters(parameters, ts_output, include_metadata=True, references_path=bib_path, params_file=parameters_path, citation_data=citation_data, chapter_mapping=chapter_mapping)
 
     # Copy TypeScript parameters file to consuming repos
     import shutil
@@ -826,7 +847,7 @@ def main():
         if stale_dist_qmd:
             logger.debug(f"[*] Cleaning {len(stale_dist_qmd)} existing distribution QMD files...")
             for f in stale_dist_qmd:
-                _unlink_with_retry(f)
+                _unlink_best_effort(f)
 
         input_dist_count = 0
         input_dist_errors = []
@@ -854,7 +875,7 @@ def main():
         if orphaned_dist_pngs:
             logger.debug(f"[*] Cleaning {len(orphaned_dist_pngs)} orphaned distribution PNG files...")
             for f in orphaned_dist_pngs:
-                _unlink_with_retry(f)
+                _unlink_best_effort(f)
 
         logger.debug(f"[OK] Generated {input_dist_count} input distribution charts in knowledge/figures/")
         for err in input_dist_errors:
@@ -885,7 +906,7 @@ def main():
             if stale_qmd_files:
                 logger.debug(f"[*] Cleaning {len(stale_qmd_files)} existing QMD files...")
                 for f in stale_qmd_files:
-                    _unlink_with_retry(f)
+                    _unlink_best_effort(f)
 
             # Track generated QMD files for orphan PNG cleanup later
             generated_outcome_qmds = set()
@@ -1191,7 +1212,7 @@ def main():
             if orphaned_pngs:
                 logger.debug(f"[*] Cleaning {len(orphaned_pngs)} orphaned PNG files...")
                 for f in orphaned_pngs:
-                    _unlink_with_retry(f)
+                    _unlink_best_effort(f)
 
             # Print summary of generated files
             logger.info(f"[OK] Generated {tornado_count} tornado, {sensitivity_count} sensitivity, {mc_dist_count} MC distribution, {exceedance_count} exceedance charts")
@@ -1218,7 +1239,7 @@ def main():
     logger.debug("[*] Generating parameters-and-calculations.qmd...")
     qmd_output = project_root / "knowledge" / "appendix" / "parameters-and-calculations.qmd"
     # citation_data already parsed at script start - reuse it here
-    generate_parameters_and_calculations_qmd(parameters, qmd_output, available_refs=available_refs, params_file=parameters_path, citation_data=citation_data)
+    generate_parameters_and_calculations_qmd(parameters, qmd_output, available_refs=available_refs, params_file=parameters_path, citation_data=citation_data, chapter_mapping=chapter_mapping)
 
     # Generate filtered parameters-and-calculations files for all Quarto configs
     # Each config (book, manual, papers) gets only the parameters it uses (plus transitive dependencies)

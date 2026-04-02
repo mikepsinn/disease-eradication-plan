@@ -16,6 +16,26 @@ from typing import Any, Dict, Optional
 logger = logging.getLogger("dih.environment")
 
 
+def _get_fast_platform_info() -> Dict[str, str]:
+    """Return platform details without expensive Windows platform probes."""
+    if sys.platform == "win32":
+        return {
+            "platform": "Windows",
+            "machine": (
+                os.environ.get("PROCESSOR_ARCHITECTURE")
+                or os.environ.get("PROCESSOR_ARCHITEW6432")
+                or "unknown"
+            ),
+            "processor": os.environ.get("PROCESSOR_IDENTIFIER", "unknown"),
+        }
+
+    return {
+        "platform": platform.platform(),
+        "machine": platform.machine(),
+        "processor": platform.processor(),
+    }
+
+
 def log_environment_info(include_mc_info: bool = True) -> Dict[str, Any]:
     """
     Log detailed environment information and return it as a dict.
@@ -45,9 +65,11 @@ def log_environment_info(include_mc_info: bool = True) -> Dict[str, Any]:
     logger.debug(f"Python impl:         {info['python_implementation']}")
 
     # Platform info
-    info["platform"] = platform.platform()
-    info["machine"] = platform.machine()
-    info["processor"] = platform.processor()
+    # Avoid expensive/hanging platform probes on Windows child processes.
+    platform_info = _get_fast_platform_info()
+    info["platform"] = platform_info["platform"]
+    info["machine"] = platform_info["machine"]
+    info["processor"] = platform_info["processor"]
     logger.debug(f"Platform:            {info['platform']}")
     logger.debug(f"Machine:             {info['machine']}")
     logger.debug(f"Processor:           {info['processor']}")

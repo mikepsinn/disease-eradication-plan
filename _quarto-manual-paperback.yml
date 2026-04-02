@@ -58,7 +58,7 @@ book:
     - part: "Failure Analysis"
       chapters:
         # CUT: problem.qmd - overview chapter that previews all sub-chapters; redundant in sequential reading
-        # CUT: cost-of-war.qmd - key stats already in peace-dividend.qmd (itemized table, multipliers) and 1-percent-treaty.qmd; "war is expensive" is not a non-obvious argument
+        - knowledge/problem/cost-of-war.qmd  # Restored: now contains original calculations (23.2x counterfactual, $1.48Q total, 8-channel compound model, brain drain, QALY valuation) published as "The Organized Violence Tax"
         # CUT: cost-of-disease.qmd - "disease kills people" is not news; $397T DALY argument moved to health-dividend.qmd
         - knowledge/problem/genetic-slavery.qmd
         - knowledge/problem/fda-is-unsafe-and-ineffective.qmd

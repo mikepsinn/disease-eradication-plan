@@ -2616,6 +2616,280 @@ STANDARD_ECONOMIC_QALY_VALUE_USD = Parameter(
     latex_symbol=r"Value_{QALY}",  # LaTeX symbol for equations
 )  # Standard economic value per QALY
 
+# --- Cumulative war death toll and QALY valuation (cost-of-war chapter) ---
+
+# Total war + democide deaths since 1900
+# Source: Leitenberg 2006 (CISSM) ~231M; Matthew White (necrometrics) ~123-203M; Hobsbawm ~187M
+WAR_DEATHS_SINCE_1900 = Parameter(
+    310_000_000,
+    source_ref="leitenberg-deaths-wars-2006",
+    source_type="definition",
+    confidence="low",
+    description="Total deaths from wars, conflicts, genocides, and policy-induced famines since 1900. "
+                "Built from non-overlapping categories: Rummel democide 264M (incl 21st century) + "
+                "battle deaths 39M + collateral civilian deaths 30M - overlap adjustment 25M = 308M, "
+                "rounded to 310M. Range: White low 200M to Rummel-high-plus-military 340M.",
+    display_name="Total War and Conflict Deaths Since 1900",
+    unit="deaths",
+    distribution="uniform",
+    confidence_interval=(200_000_000, 340_000_000),
+    keywords=["war", "deaths", "cumulative", "20th century", "total", "since 1900"],
+    latex_symbol=r"Deaths_{war,1900}",
+)
+
+# Average years of life lost per war death
+# Soldiers average ~23 (Vietnam data); civilians skew older; weighted average ~28
+# Mid-20th-century global life expectancy ~55; 55 - 28 = 27 years lost per death
+WAR_AVG_YEARS_LIFE_LOST_PER_DEATH = Parameter(
+    27,
+    source_ref="necrometrics-20th-century",
+    source_type="definition",
+    confidence="low",
+    description="Average years of life lost per war/conflict death. Based on avg age at death ~28 "
+                "(soldiers ~23, civilians older) vs mid-century life expectancy ~55.",
+    display_name="Average Years of Life Lost per War Death",
+    unit="years",
+    distribution="uniform",
+    confidence_interval=(20, 35),
+    keywords=["war", "life years", "lost", "average", "QALY"],
+    latex_symbol=r"YLL_{war}",
+)
+
+# Total life-years lost to war since 1900
+WAR_LIFE_YEARS_LOST_SINCE_1900 = Parameter(
+    WAR_DEATHS_SINCE_1900 * WAR_AVG_YEARS_LIFE_LOST_PER_DEATH,
+    source_type="calculated",
+    description="Total life-years stolen by war since 1900 (deaths x avg years lost per death)",
+    display_name="Total Life-Years Lost to War Since 1900",
+    unit="life-years",
+    formula="WAR_DEATHS_SINCE_1900 × WAR_AVG_YEARS_LIFE_LOST_PER_DEATH",
+    inputs=["WAR_DEATHS_SINCE_1900", "WAR_AVG_YEARS_LIFE_LOST_PER_DEATH"],
+    compute=lambda ctx: ctx["WAR_DEATHS_SINCE_1900"] * ctx["WAR_AVG_YEARS_LIFE_LOST_PER_DEATH"],
+    keywords=["war", "life years", "lost", "cumulative", "QALY", "since 1900"],
+    latex_symbol=r"YLL_{war,total}",
+)
+
+# QALY-based economic value of life-years lost to war since 1900
+WAR_QALY_VALUE_LOST_SINCE_1900 = Parameter(
+    WAR_LIFE_YEARS_LOST_SINCE_1900 * STANDARD_ECONOMIC_QALY_VALUE_USD,
+    source_type="calculated",
+    description="Economic value of life-years destroyed by war since 1900, at $150K/QALY",
+    display_name="QALY Value of Life Lost to War Since 1900",
+    unit="USD",
+    formula="WAR_LIFE_YEARS_LOST_SINCE_1900 × STANDARD_ECONOMIC_QALY_VALUE_USD",
+    inputs=["WAR_LIFE_YEARS_LOST_SINCE_1900", "STANDARD_ECONOMIC_QALY_VALUE_USD"],
+    compute=lambda ctx: ctx["WAR_LIFE_YEARS_LOST_SINCE_1900"] * ctx["STANDARD_ECONOMIC_QALY_VALUE_USD"],
+    keywords=["war", "QALY", "value", "economic", "life years", "cumulative", "since 1900"],
+    latex_symbol=r"V_{war,QALY}",
+)
+
+# --- Moved here from later in file so war counterfactual params can reference them ---
+
+# Global GDP (2025) - needed for global opportunity cost calculations
+GLOBAL_GDP_2025 = Parameter(
+    115_000_000_000_000,  # $115 trillion (2025 estimate from Political Dysfunction Tax paper)
+    source_ref=ReferenceID.POLITICAL_DYSFUNCTION_TAX_PAPER_2025,
+    source_type="external",
+    confidence="high",
+    distribution="fixed",  # Official aggregate estimate
+    description="Global nominal GDP (2025 estimate). From Political Dysfunction Tax paper citing "
+                "StatisticsTimes/IMF World Economic Outlook. Used for calculating global opportunity costs "
+                "as percentage of world economic output. Note: Latest IMF data shows $117T.",
+    display_name="Global GDP (2025)",
+    unit="USD",
+    keywords=["GDP", "global", "world", "economy", "2025"],
+    latex_symbol=r"GDP_{global}",
+)
+
+# Population
+GLOBAL_POPULATION_2024 = Parameter(
+    8_000_000_000,
+    source_ref=ReferenceID.GLOBAL_POPULATION_8_BILLION,
+    source_type="external",
+    description="Global population in 2024",
+    display_name="Global Population in 2024",
+    unit="of people",
+    confidence_interval=(7_800_000_000, 8_200_000_000),  # ±2% census estimate uncertainty
+    distribution="lognormal",
+    keywords=["2024", "8.0b", "people", "worldwide", "citizens", "individuals", "inhabitants"],
+    latex_symbol=r"Pop_{global}",  # LaTeX symbol for equations
+)  # UN World Population Prospects 2022
+
+GLOBAL_AVG_INCOME_2025 = Parameter(
+    GLOBAL_GDP_2025 / GLOBAL_POPULATION_2024,
+    source_type="calculated",
+    description="Global average income (GDP per capita) in 2025 baseline.",
+    display_name="Global Average Income (2025 Baseline)",
+    unit="USD",
+    formula="GLOBAL_GDP_2025 ÷ GLOBAL_POPULATION_2024",
+    keywords=["income", "per capita", "baseline", "2025", "global"],
+    inputs=["GLOBAL_GDP_2025", "GLOBAL_POPULATION_2024"],
+    compute=lambda ctx: ctx["GLOBAL_GDP_2025"] / ctx["GLOBAL_POPULATION_2024"],
+    latex_symbol=r"\bar{y}_{0}",
+)
+
+# Cumulative property/infrastructure destruction from wars since 1900
+WAR_PROPERTY_DESTRUCTION_SINCE_1900 = Parameter(
+    45_000_000_000_000,
+    source_ref="harrison-economics-wwii",
+    source_type="definition",
+    confidence="low",
+    description="Cumulative property and infrastructure destruction from major wars since 1900 (2024 USD). "
+                "WWI ~$5T, WWII ~$23T, Korea ~$0.5T, Vietnam ~$1T, post-9/11 ~$8T, other ~$7.5T.",
+    display_name="Cumulative Property Destruction from War Since 1900",
+    unit="USD",
+    distribution="uniform",
+    confidence_interval=(30_000_000_000_000, 60_000_000_000_000),
+    keywords=["war", "property", "destruction", "infrastructure", "cumulative", "since 1900"],
+    latex_symbol=r"D_{property}",
+)
+
+# Cumulative environmental destruction from wars since 1900
+WAR_ENVIRONMENTAL_DESTRUCTION_SINCE_1900 = Parameter(
+    5_000_000_000_000,
+    source_ref="brown-costs-of-war-environmental",
+    source_type="definition",
+    confidence="low",
+    description="Cumulative environmental destruction from wars since 1900 (2024 USD). "
+                "Nuclear testing, Agent Orange, Gulf War oil fires, DU contamination, "
+                "Zone Rouge, military CO2 emissions, land mines.",
+    display_name="Cumulative Environmental Destruction from War Since 1900",
+    unit="USD",
+    distribution="lognormal",
+    confidence_interval=(2_000_000_000_000, 10_000_000_000_000),
+    keywords=["war", "environmental", "destruction", "contamination", "cumulative", "since 1900"],
+    latex_symbol=r"D_{env}",
+)
+
+# Global GDP per capita in 1900 (2024 dollars, Maddison Project)
+GLOBAL_GDP_PER_CAPITA_1900 = Parameter(
+    3_150,
+    source_ref="maddison-project-2020",
+    source_type="external",
+    confidence="medium",
+    description="Global GDP per capita in 1900 in constant 2024 USD. Maddison Project: ~$1,260 "
+                "in 1990 international dollars, adjusted to 2024 USD (~2.5x).",
+    display_name="Global GDP per Capita in 1900",
+    unit="USD/person",
+    distribution="normal",
+    std_error=500,
+    keywords=["GDP", "per capita", "1900", "historical", "baseline", "Maddison"],
+    latex_symbol=r"GDP_{pc,1900}",
+)
+
+# Compound opportunity cost of war: stacked growth boost from 8 non-overlapping channels
+# Ch1: productive reallocation (budget redirect + innovation merged, 0.8-1.5pp)
+# Ch2: preserved capital stock (0.2-0.4pp)
+# Ch3: population (310M lives + descendants, 0.2-0.4pp)
+# Ch4: no trade/refugee drag (0.1-0.3pp)
+# Ch5: no environmental damage (0.1-0.2pp)
+# Ch6: no Cold War economic isolation (0.1-0.3pp)
+# Ch7: institutional quality / no authoritarianism (0.1-0.3pp)
+# Ch8: international scientific collaboration (0.05-0.15pp)
+WAR_COUNTERFACTUAL_ANNUAL_GROWTH_BOOST = Parameter(
+    0.026,
+    source_ref="costa-rica-peace-dividend",
+    source_type="definition",
+    confidence="low",
+    description="Stacked annual growth boost from 8 non-overlapping war channels. "
+                "Ch1: productive reallocation 0.8-1.5pp (budget + innovation merged). "
+                "Ch2: preserved capital 0.2-0.4pp. Ch3: population 0.2-0.4pp. "
+                "Ch4: no trade drag 0.1-0.3pp. Ch5: no environmental damage 0.1-0.2pp. "
+                "Ch6: no Cold War isolation 0.1-0.3pp. Ch7: better institutions 0.1-0.3pp. "
+                "Ch8: open scientific collaboration 0.05-0.15pp. "
+                "Low 1.65pp, mid 2.6pp, high 3.55pp.",
+    display_name="Peace Growth Boost (8 Channels, Overlap-Corrected)",
+    unit="percentage points",
+    distribution="uniform",
+    confidence_interval=(0.0165, 0.0355),
+    keywords=["war", "growth", "compound", "opportunity cost", "GDP", "penalty"],
+    latex_symbol=r"g_{war,penalty}",
+)
+
+# Counterfactual GDP per capita if no wars since 1900
+WAR_COUNTERFACTUAL_GDP_PER_CAPITA = Parameter(
+    GLOBAL_GDP_PER_CAPITA_1900 * (1 + (GLOBAL_AVG_INCOME_2025 / GLOBAL_GDP_PER_CAPITA_1900) ** (1/124) - 1 + WAR_COUNTERFACTUAL_ANNUAL_GROWTH_BOOST) ** 124,
+    source_type="calculated",
+    confidence="low",
+    description="Counterfactual global GDP per capita if all wars abolished since 1900. "
+                "Actual is $14,375. Mid-range counterfactual: $333,636 (23.2x richer). "
+                "8 non-overlapping channels at +2.6pp.",
+    display_name="GDP per Capita in Peace Timeline",
+    unit="USD/person",
+    formula="GLOBAL_GDP_PER_CAPITA_1900 × (1 + ACTUAL_CAGR + WAR_COUNTERFACTUAL_ANNUAL_GROWTH_BOOST)^124",
+    latex=r"""\begin{aligned}
+GDP_{pc,peace} &= GDP_{pc,1900} \times \left(1 + \left(\frac{\bar{y}_{0}}{GDP_{pc,1900}}\right)^{1/124} - 1 + g_{war,penalty}\right)^{124} \\
+&= \$3.15K \times \left(1 + \left(\frac{\$14.4K}{\$3.15K}\right)^{1/124} - 1 + 2.6\%\right)^{124} \\
+&= \$334K
+\end{aligned}""",
+    inputs=["GLOBAL_GDP_PER_CAPITA_1900", "WAR_COUNTERFACTUAL_ANNUAL_GROWTH_BOOST", "GLOBAL_AVG_INCOME_2025"],
+    compute=lambda ctx: ctx["GLOBAL_GDP_PER_CAPITA_1900"] * (1 + (ctx["GLOBAL_AVG_INCOME_2025"] / ctx["GLOBAL_GDP_PER_CAPITA_1900"]) ** (1/124) - 1 + ctx["WAR_COUNTERFACTUAL_ANNUAL_GROWTH_BOOST"]) ** 124,
+    keywords=["war", "counterfactual", "GDP", "per capita", "opportunity cost"],
+    latex_symbol=r"GDP_{pc,peace}",
+)
+
+# Lost GDP per capita (counterfactual minus actual)
+WAR_COUNTERFACTUAL_LOST_GDP_PER_CAPITA = Parameter(
+    WAR_COUNTERFACTUAL_GDP_PER_CAPITA - GLOBAL_AVG_INCOME_2025,
+    source_type="calculated",
+    description="Annual GDP per capita lost due to compound war effects since 1900",
+    display_name="Annual Lost GDP per Capita from War",
+    unit="USD/person/year",
+    formula="WAR_COUNTERFACTUAL_GDP_PER_CAPITA - GLOBAL_AVG_INCOME_2025",
+    inputs=["WAR_COUNTERFACTUAL_GDP_PER_CAPITA", "GLOBAL_AVG_INCOME_2025"],
+    compute=lambda ctx: ctx["WAR_COUNTERFACTUAL_GDP_PER_CAPITA"] - ctx["GLOBAL_AVG_INCOME_2025"],
+    keywords=["war", "lost", "GDP", "per capita", "opportunity cost"],
+    latex_symbol=r"GDP_{pc,lost}",
+)
+
+# Total annual lost GDP (lost per capita × world population)
+WAR_COUNTERFACTUAL_LOST_GDP_GLOBAL = Parameter(
+    WAR_COUNTERFACTUAL_LOST_GDP_PER_CAPITA * GLOBAL_POPULATION_2024,
+    source_type="calculated",
+    confidence="low",
+    description="Total annual global GDP lost to compound war effects since 1900. "
+                "Lost GDP per capita × 8 billion people.",
+    display_name="Annual Lost GDP Global from War",
+    unit="USD/year",
+    formula="WAR_COUNTERFACTUAL_LOST_GDP_PER_CAPITA × GLOBAL_POPULATION_2024",
+    inputs=["WAR_COUNTERFACTUAL_LOST_GDP_PER_CAPITA", "GLOBAL_POPULATION_2024"],
+    compute=lambda ctx: ctx["WAR_COUNTERFACTUAL_LOST_GDP_PER_CAPITA"] * ctx["GLOBAL_POPULATION_2024"],
+    keywords=["war", "lost", "GDP", "total", "compound", "opportunity cost", "annual"],
+    latex_symbol=r"GDP_{lost,total}",
+)
+
+# The headline number: how many times richer every person would be without war
+WAR_COUNTERFACTUAL_INCOME_MULTIPLE = Parameter(
+    WAR_COUNTERFACTUAL_GDP_PER_CAPITA / GLOBAL_AVG_INCOME_2025,
+    source_type="calculated",
+    confidence="low",
+    description="How many times richer the average person would be if wars had been abolished in 1900. "
+                "Counterfactual GDP per capita / actual GDP per capita.",
+    display_name="Peace Income Multiple (How Much Richer Without War)",
+    unit="x",
+    formula="WAR_COUNTERFACTUAL_GDP_PER_CAPITA / GLOBAL_AVG_INCOME_2025",
+    inputs=["WAR_COUNTERFACTUAL_GDP_PER_CAPITA", "GLOBAL_AVG_INCOME_2025"],
+    compute=lambda ctx: ctx["WAR_COUNTERFACTUAL_GDP_PER_CAPITA"] / ctx["GLOBAL_AVG_INCOME_2025"],
+    keywords=["war", "income", "multiple", "richer", "counterfactual", "compound"],
+    latex_symbol=r"M_{war,income}",
+)
+
+# Historical sunk cost total (one-time, not ongoing)
+WAR_TOTAL_COST_SINCE_1900 = Parameter(
+    CUMULATIVE_MILITARY_SPENDING_FED_ERA + WAR_PROPERTY_DESTRUCTION_SINCE_1900 + WAR_ENVIRONMENTAL_DESTRUCTION_SINCE_1900 + WAR_QALY_VALUE_LOST_SINCE_1900,
+    source_type="calculated",
+    confidence="low",
+    description="Total historical sunk cost of war since 1900: military spending ($170T) + "
+                "property destruction ($45T) + environmental ($5T) + QALY value of lives ($810T).",
+    display_name="Total Historical Cost of War Since 1900",
+    unit="USD",
+    formula="CUMULATIVE_MILITARY_SPENDING_FED_ERA + WAR_PROPERTY_DESTRUCTION_SINCE_1900 + WAR_ENVIRONMENTAL_DESTRUCTION_SINCE_1900 + WAR_QALY_VALUE_LOST_SINCE_1900",
+    inputs=["CUMULATIVE_MILITARY_SPENDING_FED_ERA", "WAR_PROPERTY_DESTRUCTION_SINCE_1900", "WAR_ENVIRONMENTAL_DESTRUCTION_SINCE_1900", "WAR_QALY_VALUE_LOST_SINCE_1900"],
+    compute=lambda ctx: ctx["CUMULATIVE_MILITARY_SPENDING_FED_ERA"] + ctx["WAR_PROPERTY_DESTRUCTION_SINCE_1900"] + ctx["WAR_ENVIRONMENTAL_DESTRUCTION_SINCE_1900"] + ctx["WAR_QALY_VALUE_LOST_SINCE_1900"],
+    keywords=["war", "total", "historical", "cost", "cumulative", "quadrillion"],
+    latex_symbol=r"C_{war,hist}",
+)
+
 WHO_QALY_THRESHOLD_COST_EFFECTIVE = Parameter(
     50000,
     source_ref=ReferenceID.WHO_COST_EFFECTIVENESS_THRESHOLD,
@@ -4317,21 +4591,7 @@ POLITICAL_SUCCESS_PROBABILITY = Parameter(
 #   Part 2: Opportunity Ledger (unrealized potential) - global
 #   Derived: Percentages and totals with correct GDP bases
 
-# Global GDP (2025) - needed for global opportunity cost calculations
-GLOBAL_GDP_2025 = Parameter(
-    115_000_000_000_000,  # $115 trillion (2025 estimate from Political Dysfunction Tax paper)
-    source_ref=ReferenceID.POLITICAL_DYSFUNCTION_TAX_PAPER_2025,
-    source_type="external",
-    confidence="high",
-    distribution="fixed",  # Official aggregate estimate
-    description="Global nominal GDP (2025 estimate). From Political Dysfunction Tax paper citing "
-                "StatisticsTimes/IMF World Economic Outlook. Used for calculating global opportunity costs "
-                "as percentage of world economic output. Note: Latest IMF data shows $117T.",
-    display_name="Global GDP (2025)",
-    unit="USD",
-    keywords=["GDP", "global", "world", "economy", "2025"],
-    latex_symbol=r"GDP_{global}",
-)
+# (GLOBAL_GDP_2025 moved earlier in file for war counterfactual params)
 
 # US GDP (2024) - needed for US waste percentage calculations
 US_GDP_2024 = Parameter(
@@ -6567,19 +6827,7 @@ PMC_PRAGMATIC_TRIAL_MEDIAN_COST_PER_PATIENT = Parameter(
     latex_symbol=r"Cost_{pragmatic,median}",  # LaTeX symbol for equations
 )
 
-# Population
-GLOBAL_POPULATION_2024 = Parameter(
-    8_000_000_000,
-    source_ref=ReferenceID.GLOBAL_POPULATION_8_BILLION,
-    source_type="external",
-    description="Global population in 2024",
-    display_name="Global Population in 2024",
-    unit="of people",
-    confidence_interval=(7_800_000_000, 8_200_000_000),  # ±2% census estimate uncertainty
-    distribution="lognormal",
-    keywords=["2024", "8.0b", "people", "worldwide", "citizens", "individuals", "inhabitants"],
-    latex_symbol=r"Pop_{global}",  # LaTeX symbol for equations
-)  # UN World Population Prospects 2022
+# (GLOBAL_POPULATION_2024 moved earlier in file for war counterfactual params)
 
 GLOBAL_ANNUAL_SAVINGS_PER_CAPITA = Parameter(
     GLOBAL_ANNUAL_SAVINGS / GLOBAL_POPULATION_2024,
@@ -7687,7 +7935,7 @@ VOTER_SUFFERING_HOURS_PREVENTED = Parameter(
     hide_ci=True,  # Same wide CI as VOTER_LIVES_SAVED; point estimate only in CTA copy
 )
 
-# ── Wishocratic Investment Fund ──────────────────────────────────────────────
+# ── Earth Optimization Prize Fund ────────────────────────────────────────────
 # Models the prize pool as an actively allocated investment fund rather than
 # passive escrow. Baseline = venture gross return (fee-free, illiquid),
 # adjusted for scale compression, crowd allocation alpha, and home-bias
@@ -7700,7 +7948,7 @@ VENTURE_GROSS_RETURN = Parameter(
     source_type="external",
     description="Venture capital / private equity gross return (before 2-and-20 fees). "
                 "Cambridge Associates US VC index 25-year pooled gross IRR. "
-                "The wishocratic fund charges zero fees, so gross return is the correct baseline. "
+                "The Prize Fund charges zero fees, so gross return is the correct baseline. "
                 "Lockup premium is already embedded: VC/PE IS illiquid.",
     display_name="Venture Capital Gross Return",
     unit="percent",
@@ -7714,7 +7962,7 @@ SCALE_COMPRESSION_FACTOR = Parameter(
     -0.025,
     source_type="definition",
     description="Diminishing-returns drag as the venture market expands ~15x "
-                "(current global VC ~$300B/yr; wishocratic fund deploys ~$4.7T/yr). "
+                "(current global VC ~$300B/yr; Prize Fund deploys ~$4.7T/yr). "
                 "More capital chasing deals compresses returns. Partially offset by "
                 "market expansion (every viable idea gets funded, oligopolies face "
                 "real competition). Point estimate is moderate; CI spans optimistic "
@@ -7789,7 +8037,7 @@ GLOBAL_RETIREMENT_ASSETS = Parameter(
     70_000_000_000_000,
     source_type="external",
     description="Total global pension and retirement assets (OECD 2024). "
-                "This is the capital pool that the wishocratic fund competes with "
+                "This is the capital pool that the Prize Fund competes with "
                 "and could partially absorb.",
     display_name="Global Retirement Assets",
     unit="USD",
@@ -7804,7 +8052,7 @@ CONVENTIONAL_RETIREMENT_RETURN = Parameter(
     description="Average retail after-fee return on conventional retirement portfolios "
                 "(60/40 stock/bond mix, ~1% advisory fees, ~0.4% fund fees). "
                 "Used as the opportunity cost comparison: depositors are LOSING money "
-                "by NOT participating in the wishocratic fund.",
+                "by NOT participating in the Prize Fund.",
     display_name="Conventional Retirement Return (After Fees)",
     unit="percent",
     confidence_interval=(0.05, 0.08),
@@ -9333,18 +9581,7 @@ WISHONIA_PROJECTED_HALE_YEAR_15 = Parameter(
     latex_symbol=r"HALE_{wish,15}",
 )
 
-GLOBAL_AVG_INCOME_2025 = Parameter(
-    GLOBAL_GDP_2025 / GLOBAL_POPULATION_2024,
-    source_type="calculated",
-    description="Global average income (GDP per capita) in 2025 baseline.",
-    display_name="Global Average Income (2025 Baseline)",
-    unit="USD",
-    formula="GLOBAL_GDP_2025 ÷ GLOBAL_POPULATION_2024",
-    keywords=["income", "per capita", "baseline", "2025", "global"],
-    inputs=["GLOBAL_GDP_2025", "GLOBAL_POPULATION_2024"],
-    compute=lambda ctx: ctx["GLOBAL_GDP_2025"] / ctx["GLOBAL_POPULATION_2024"],
-    latex_symbol=r"\bar{y}_{0}",
-)
+# (GLOBAL_AVG_INCOME_2025 moved earlier in file for war counterfactual params)
 
 # ---
 # LIFETIME INCOME COMPARISON (Treaty Trajectory vs Current Trajectory)

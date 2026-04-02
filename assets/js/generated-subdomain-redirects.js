@@ -13,6 +13,7 @@
   "obg.warondisease.org": "https://manual.warondisease.org/knowledge/appendix/optimal-budget-generator-spec.html",
   "opg.warondisease.org": "https://manual.warondisease.org/knowledge/appendix/optimal-policy-generator-spec.html",
   "optimocracy.warondisease.org": "https://manual.warondisease.org/knowledge/appendix/optimocracy-paper.html",
+  "organized-violence-tax.warondisease.org": "https://manual.warondisease.org/knowledge/problem/cost-of-war.html",
   "papers.warondisease.org": "https://manual.warondisease.org/knowledge/papers.html",
   "political-dysfunction-tax.warondisease.org": "https://manual.warondisease.org/knowledge/appendix/political-dysfunction-tax.html",
   "prize-protocol.warondisease.org": "https://manual.warondisease.org/knowledge/appendix/earth-optimization-prize-protocol.html",

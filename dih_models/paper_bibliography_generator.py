@@ -62,9 +62,14 @@ _variables_yml_cache: Dict[str, dict] = {}
 _bib_entries_cache: Dict[str, list] = {}
 
 
+def _cache_key_for_path(path: Path) -> str:
+    """Return a normalized absolute path string without resolving symlinks."""
+    return str(path.absolute())
+
+
 def _read_file_cached(file_path: Path) -> str:
     """Read a file with content caching. Returns empty string if file doesn't exist."""
-    key = str(file_path)
+    key = _cache_key_for_path(file_path)
     if key not in _file_content_cache:
         if not file_path.exists():
             _file_content_cache[key] = ""
@@ -76,7 +81,7 @@ def _read_file_cached(file_path: Path) -> str:
 
 def _load_variables_yml_cached(path: Path) -> dict:
     """Load and cache a YAML variables file (e.g., _variables.yml)."""
-    key = str(path.resolve())
+    key = _cache_key_for_path(path)
     if key not in _variables_yml_cache:
         if not path.exists():
             _variables_yml_cache[key] = {}
@@ -89,9 +94,9 @@ def _load_variables_yml_cached(path: Path) -> dict:
 
 def _parse_bib_entries_cached(bib_path: Path) -> list:
     """Parse BibTeX entries with caching. Returns list of (entry_text, entry_key) tuples."""
-    cache_key = str(bib_path.resolve())
+    cache_key = _cache_key_for_path(bib_path)
     if cache_key not in _bib_entries_cache:
-        content = _read_file_cached(bib_path.resolve())
+        content = _read_file_cached(Path(cache_key))
         if not content:
             _bib_entries_cache[cache_key] = []
         else:
@@ -136,7 +141,7 @@ def extract_variables_from_qmd(qmd_path: Path, project_root: Optional[Path] = No
     Returns:
         Set of variable names used in the file
     """
-    cache_key = str(qmd_path.resolve())
+    cache_key = _cache_key_for_path(qmd_path)
     if cache_key in _extract_vars_cache:
         return _extract_vars_cache[cache_key].copy()
 
@@ -149,7 +154,7 @@ def extract_variables_from_qmd(qmd_path: Path, project_root: Optional[Path] = No
 
     def process_file(file_path: Path):
         """Recursively process a file and its includes."""
-        resolved = str(file_path)
+        resolved = _cache_key_for_path(file_path)
         if resolved in processed_files:
             return
         processed_files.add(resolved)
@@ -175,9 +180,9 @@ def extract_variables_from_qmd(qmd_path: Path, project_root: Optional[Path] = No
             else:
                 include_path = file_path.parent / include_path_str
 
-            process_file(include_path.resolve())
+            process_file(include_path.absolute())
 
-    process_file(qmd_path.resolve())
+    process_file(qmd_path.absolute())
     _extract_vars_cache[cache_key] = variables
     return variables
 
@@ -289,7 +294,7 @@ def extract_citations_from_qmd(qmd_path: Path, project_root: Optional[Path] = No
     Returns:
         Set of citation keys (without @ prefix)
     """
-    cache_key = str(qmd_path.resolve())
+    cache_key = _cache_key_for_path(qmd_path)
     if cache_key in _extract_cites_cache:
         return _extract_cites_cache[cache_key].copy()
 
@@ -312,7 +317,7 @@ def extract_citations_from_qmd(qmd_path: Path, project_root: Optional[Path] = No
 
     def process_file(file_path: Path):
         """Recursively process a file and its includes."""
-        resolved = str(file_path)
+        resolved = _cache_key_for_path(file_path)
         if resolved in processed_files:
             return
         processed_files.add(resolved)
@@ -345,9 +350,9 @@ def extract_citations_from_qmd(qmd_path: Path, project_root: Optional[Path] = No
             else:
                 include_path = file_path.parent / include_path_str
 
-            process_file(include_path.resolve())
+            process_file(include_path.absolute())
 
-    process_file(qmd_path.resolve())
+    process_file(qmd_path.absolute())
     _extract_cites_cache[cache_key] = citations
     return citations
 

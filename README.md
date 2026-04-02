@@ -189,9 +189,11 @@ Humans spend **$2.72T** every year on stuff designed specifically to make humans
 - Space Force (to fight the zero aliens attacking you)
 - And some kind of earthquake machine (probably)
 
-Since 1913, you've spent $170T on this. That's 38,000 years of clinical trials. You bought the other thing
+Since 1913, your governments have printed $170T out of nothing and spent these nothing-papers on murdering 310 million humans and destroying many valuable things those humans spent their entire lives building. Consequently your paycheck now buys 97% less due to the aforementioned destruction.  $170T is equal to 38,000 years of government clinical trial spending. You bought the other thing.
 
-Government spending on clinical trials: **604 times less** than military spending. Your chance of dying from terrorism: 1 in 30 million. Your chance of dying from disease: 100%.
+Through compounding effects, you would be 23.2x richer and significantly less diseased today if someone had aligned your governments properly in 1900. The average person would earn $334K per year instead of $14.4K.
+
+Today, government spending on clinical trials: **604 times less** than military spending. Your chance of dying from terrorism: 1 in 30 million. Your chance of dying from disease: 100%.
 
 If cancer had oil reserves, you would have cured it by 2003. Instead, you spent the repair money on murder tubes that cost more than countries and submarines that hide underwater, as if that's somehow useful when you live on land.
 
@@ -224,6 +226,8 @@ Your National Institutes of Health, the agency nominally responsible for finding
 Then there's a 8.2 years delay between proving a drug is safe and letting dying humans take it. The drug passed the safety test. Everyone agrees it won't kill you. But you still can't have it because a committee needs to spend 8.2 years making sure it works well enough. You'd volunteer for the trials that would answer that question faster, but so would 1.08 billion people other patients, and the current system has 1.9 million slots. That's a participation rate of 0.06%. It's like a lifeguard who confirms the life preserver floats, then locks it in a cabinet for years to study its buoyancy profile while a billion people drown in line for the two available life jackets.
 
 Your regulatory system can make two mistakes: approve a bad drug (Type I error), or block a good drug (Type II error). Your FDA is terrified of the first mistake and completely ignores the second. I [calculated the ratio](https://manual.warondisease.org/knowledge/appendix/invisible-graveyard.html): for every 1 person protected from a dangerous drug, 3.07k people die waiting for a safe one that's locked in the approval cabinet. Even if you assume a Thalidomide-scale catastrophe happens during post-phase 1 efficacy testing every single year (even though it wouldn't because Phase I safety testing actually caught it anyway), the deaths from just the efficacy delay still outnumber the deaths from bad drugs by 3.07k to 1. Your safety system's main product is dead patients.
+
+Think about someone you love who is suffering right now. The treatment that would help them exists as an untested compound on a shelf, because the money bought a missile instead. That missile incinerated a child who would have grown up to discover the cure. You lose the treatment. You lose the scientist. You get the tax bill. You get to pay for her murder. One percent fixes this. One vote starts it.
 
 ---
 
@@ -607,6 +611,12 @@ This is why aliens don't visit.
 [![The Invisible Graveyard: Quantifying the Mortality Cost of FDA Efficacy Lag](https://manual.warondisease.org/assets/og/invisible-graveyard-og-1200x630.jpg)](https://manual.warondisease.org/knowledge/appendix/invisible-graveyard.html)
 
 > This study quantifies the cumulative mortality and morbidity costs associated with the Unitary Pre-Market Approval (UPMA) model mandated by the 1962 Kefauver-Harris Amendments. By enforcing efficacy testing prior to market entry, the current regulatory framework imposes an average "Efficacy Lag" of 8.2 years post-safety verification. Using data from the Tufts Center for the Study of Drug Development (CSDD) and the WHO Global Burden of Disease (GBD) database, we estimate two distinct mortality costs: (1) Historical mortality (1962-2024): approximately 102 million deaths died waiting for approved drugs during their approval delays, representing a lower bound excluding drugs never developed due to cost barriers; (2) Future timeline shift: an additional 416 million deaths will eventually die because the disease eradication timeline has been pushed back by 8.2 years. Combined, these represent 7.94 billion Disability-Adjusted Life Years when adjusted for morbidity, with a cumulative economic deadweight loss of approximately $1.19 quadrillion (2024 USD), reflecting 7.94 billion DALYs valued at the standard WHO cost-effectiveness threshold of $150K/DALY. The societal cost of Type II Regulatory Errors (delayed access to effective therapies) exceeds the averted cost of Type I Regulatory Errors (market access for ineffective therapies) by a factor of 3.07k.
+
+### [The Organized Violence Tax](https://manual.warondisease.org/knowledge/problem/cost-of-war.html)
+
+[![The Organized Violence Tax](https://manual.warondisease.org/assets/og/organized-violence-tax-og-1200x630.jpg)](https://manual.warondisease.org/knowledge/problem/cost-of-war.html)
+
+> Quantifying the compound cost of war since 1900: 310 million dead, $1.48 quadrillion in historical costs, and a 23x income multiple lost to eight compounding channels of destruction.
 
 ### [The Price of Political Change: A Cost-Benefit Framework for Policy Incentivization](https://manual.warondisease.org/knowledge/appendix/cost-of-change-analysis.html)
 

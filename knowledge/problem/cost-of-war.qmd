@@ -328,6 +328,119 @@ To put $180 trillion in perspective: one year of modern military spending ($2.7 
 
 The full receipt, and the money printer that funded most of it, is in [Your Money Comes From a Building](../economics/central-banks.qmd).
 
+### The Cumulative Damage Report: Everything You Broke Since 1900
+
+The annual bill is $11.4 trillion. But you have been doing this for over a century. The cumulative property and infrastructure destruction from major conflicts since 1900, in constant 2024 dollars:
+
+| Conflict | Period | Property Destruction (2024 USD) | What Was Destroyed |
+|----------|--------|--------------------------------|-------------------|
+| World War I | 1914-1918 | ~$5 trillion | Northern France, Belgium, Eastern Europe; 10.9% of combined US/UK/France GDP consumed [@harrison-economics-wwii] |
+| World War II | 1939-1945 | ~$23 trillion | 70% of European industrial infrastructure; 1,710 Soviet cities; 30% of Poland's buildings [@harrison-economics-wwii] |
+| Korean War | 1950-1953 | ~$500 billion | 85% of North Korean buildings destroyed; most of Seoul |
+| Vietnam War | 1955-1975 | ~$1 trillion | 10 million hectares of forest defoliated; transportation network leveled |
+| Post-9/11 Wars | 2001-present | ~$8 trillion | Iraq, Afghanistan, Syria, Libya infrastructure [@costsofwar2023] |
+| Other conflicts | 1900-present | ~$5-10 trillion | China civil war, Iran-Iraq, Congo, Yugoslavia, Ethiopia, Ukraine |
+
+**Cumulative property destruction: roughly {{< var war_property_destruction_since_1900 >}}.** Enough to rebuild every school, hospital, and road on the planet. Twice.
+
+Add another **{{< var war_environmental_destruction_since_1900 >}} in cumulative environmental destruction**: nuclear test sites that will be radioactive for millennia, 80 million land mines still in the ground, Agent Orange contamination across 4.8 million acres of Vietnam (cleanup cost so far: $390 million, with decades to go), the Zone Rouge in France still too poisoned to inhabit a century after WWI, Gulf War oil fires that burned 600 wells for ten months, depleted uranium contamination across Iraq and the Balkans, and 1.3 billion tonnes of military CO2 emissions from US operations alone between 2001 and 2018 [@brown-costs-of-war-environmental]. You poisoned the house, then moved to another room and poisoned that one too.
+
+### The Brain Drain: Professionals Killed Since 1900
+
+Approximately {{< var war_deaths_since_1900 >}} people have been killed by wars, genocides, and policy-induced famines since 1900.^[Built from non-overlapping categories: Rummel's democide estimate of 264M (government murder of civilians, 1900-present, which explicitly excludes battle deaths [@rummel-death-by-government]) + 39M military battle deaths + 30M collateral civilian war deaths [@necrometrics-20th-century; @leitenberg-deaths-wars-2006] - ~25M overlap adjustment (some civilian massacres counted by both Rummel and war casualty tallies) = ~310M. Range: 200M (White's narrow definition) to 340M (Rummel high + all military).] That is a number. Here is what is inside the number.
+
+Scientists and engineers make up about 5% of the modern labor force [@nsf-se-workforce-2018]. In the early-to-mid 20th century, the share was lower (roughly 0.1% scientists, 0.2% engineers, 0.3% physicians, 0.4% nurses, 1% teachers). Apply those workforce percentages to {{< var war_deaths_since_1900_nounit >}} dead:
+
+| Profession | Workforce Share | Estimated Killed | What They Would Have Done |
+|-----------|----------------|-----------------|--------------------------|
+| Scientists and researchers | ~0.1% | ~310,000 | Discovered things |
+| Physicians | ~0.3% | ~930,000 | Kept people alive |
+| Engineers | ~0.2% | ~620,000 | Built things that work |
+| Nurses and midwives | ~0.4% | ~1,240,000 | Delivered care (and babies) |
+| Teachers and professors | ~1.0% | ~3,100,000 | Trained all of the above |
+| Skilled tradespeople | ~3.0% | ~9,300,000 | Rebuilt what bombs destroyed |
+| **Total professional class** | **~5%** | **~15,500,000** | **Made civilization function** |
+
+These are *conservative* estimates because they assume professionals died at the same rate as the general population. They did not. Educated people were *disproportionately* targeted. The Khmer Rouge executed anyone wearing glasses. The Nazis murdered a third of the world's Jewish population, which included a wildly disproportionate share of Europe's physicists, physicians, and mathematicians. Stalin's purges targeted engineers and academics. Mao's Cultural Revolution sent professors to labor camps. Iraq lost thousands of scientists and doctors after 2003. Every authoritarian regime in history has discovered the same insight: educated people ask inconvenient questions. The solution, apparently, is murder.
+
+Three hundred thousand scientists. Nine hundred thousand doctors. How many cures died with them? How many diseases would already be eradicated if those 310,000 researchers had lived to finish their work? You cannot calculate a counterfactual. But you can note that Alexander Fleming discovered penicillin because he happened to survive World War I. One scientist, one accidental discovery, one billion lives saved. You killed 310,000 others who never got the chance.
+
+### The Stolen Years: What the Dead Were Worth
+
+The {{< var war_deaths_since_1900_nounit >}} dead were not just names on memorials. They were years of life, unlived. Each death stole an average of {{< var war_avg_years_life_lost_per_death_nounit >}} years of remaining life (soldiers averaged 23 years old at death; civilian casualties skewed older; weighted average age at death roughly 28, against a mid-century life expectancy of 55).
+
+{{< var war_life_years_lost_since_1900_latex >}}
+
+{{< var war_life_years_lost_since_1900 >}}. To visualize that: if you gave every stolen year its own second on a clock, the clock would run for 171 years.
+
+What are those years worth? The standard economic value of a quality-adjusted life year (QALY) is {{< var standard_economic_qaly_value_usd >}} [@hhs-vsl-2024]. Multiply:
+
+{{< var war_qaly_value_lost_since_1900_latex >}}
+
+**{{< var war_qaly_value_lost_since_1900 >}}.**
+
+You spent {{< var cumulative_military_spending_fed_era >}} on military. The lives you destroyed were worth {{< var war_qaly_value_lost_since_1900 >}}. You spent $1 on killing and destroyed over $7 in human value. This is the actual return on investment for organized violence: **negative 739%.**
+
+No other investment in human history has a worse ROI. Not tulip bulbs. Not Enron. Not the man who traded Bitcoin for pizza. War is the worst trade your species has ever made, and you keep making it, every year, on purpose, with a bigger budget.
+
+### The Compound Interest of Stupidity
+
+The numbers above are bad. But they are not the worst number. The worst number is the one you never see: the wealth you would have if you had spent the war money on literally anything productive. This is the compound opportunity cost, and it is the largest number in this chapter.
+
+Most estimates of war's opportunity cost just count the budget: "$2.7 trillion a year redirected." That captures one channel. But a world without war since 1900 is not a world that merely moved money around. It is a world where eight compounding channels of growth were never interrupted:
+
+| Channel | What compounds | Growth boost | Evidence |
+|---------|---------------|-------------|---------|
+| 1. Productive reallocation | 3-5% of GDP redirected + resulting R&D/innovation multiplier | +0.8-1.5pp | Costa Rica abolished its army in 1949; per capita GDP growth increased 0.51-0.82pp from budget alone [@costa-rica-peace-dividend]; R&D multiplier roughly doubles the effect |
+| 2. Preserved capital stock | {{< var war_property_destruction_since_1900 >}} in cities, factories, roads not destroyed | +0.2-0.4pp | Intact capital produces returns every year; each 1pp of military/GDP reduces growth ~1.1pp [@military-spending-growth-impact] |
+| 3. {{< var war_deaths_since_1900_nounit >}} lives + descendants | Larger workforce, more consumers, more taxpayers | +0.2-0.4pp | 310M killed at avg age 28; their unborn children and grandchildren add 500M-1B to 2024 population |
+| 4. No trade/refugee drag | $616B/yr in trade flows, 108M refugees productive | +0.1-0.3pp | Trade disruption and brain drain compound across decades |
+| 5. No environmental damage | Productive farmland, clean water, no remediation | +0.1-0.2pp | Contaminated land produces nothing for 15-30 years |
+| 6. No Cold War economic isolation | Full global trade integration 30 years earlier | +0.1-0.3pp | Cold War split world economy into two blocs for 45 years; China's 1978 opening added ~1pp to global growth; without the Cold War, this integration happens in the 1950s |
+| 7. Better institutions | No war-installed authoritarian regimes | +0.1-0.3pp | Wars empower dictators (Stalin, Mao, military juntas); without wars, more democracies, better property rights, less corruption; Acemoglu/Robinson: inclusive institutions drive growth |
+| 8. Open scientific collaboration | No security clearances, export controls, or Iron Curtains | +0.05-0.15pp | Cold War fragmented science into national silos; collaboration networks scale quadratically (Metcalfe's Law); open science advances faster than siloed science |
+| **Stacked total** | **All channels compounding together** | **+1.65 to 3.55pp** | |
+
+Note: "redirected spending" and "faster innovation" are merged into Channel 1 to avoid double-counting (redirecting military spending to R&D *is* the innovation boost). Channels 6-8 are genuinely independent: they concern *how the world is organized* (open vs. closed, democratic vs. authoritarian, collaborative vs. siloed), not just how much money is spent.
+
+These channels do not merely add. They multiply. More scientists (Channel 1) freely collaborating across borders (Channel 8) in democratic institutions (Channel 7) with open global trade (Channel 6) working with preserved capital (Channel 2) in a larger population (Channel 3) on undamaged trade routes (Channel 4) and clean land (Channel 5) produces combinatorial growth, not linear growth.
+
+Now compound it. Global GDP per capita in 1900 was approximately {{< var global_gdp_per_capita_1900 >}} (2024 dollars, Maddison Project data). Today, it is {{< var global_avg_income_2025 >}}. That is a compound annual growth rate of 1.23% over 124 years. Stack the channels:
+
+| Scenario | Growth Boost | New Growth Rate | GDP per Capita 2024 | Multiple | Extra per Person |
+|----------|-------------|----------------|--------------------|---------|-----------------|
+| Budget only (Costa Rica) | +1.0pp | 2.23%/year | $48,637 | 3.4x richer | +$34,262/year |
+| All channels, low | +1.65pp | 2.88%/year | $106,730 | 7.4x richer | +$92,355/year |
+| All channels, mid | +2.6pp | 3.83%/year | {{< var war_counterfactual_gdp_per_capita >}} | {{< var war_counterfactual_income_multiple >}} richer | +{{< var war_counterfactual_lost_gdp_per_capita >}}/year |
+| All channels, high | +3.55pp | 4.78%/year | $1,032,170 | 71.8x richer | +$1,017,795/year |
+
+Read the mid-range row again. **The average person on Earth would earn {{< var war_counterfactual_gdp_per_capita >}} per year.** The global average would exceed current US GDP per capita by 4x. The average person in sub-Saharan Africa, who currently earns $1,800/year, would instead earn roughly $42,000. Not from charity. Not from redistribution. From compound growth that was never allowed to happen because you spent the seed money on bullets.
+
+Sanity check: is 3.83% growth plausible? Japan sustained 7-9% growth for two decades after its military was dismantled. South Korea sustained 5-7% during its peaceful industrialization. Germany's Wirtschaftswunder averaged 8% through the 1950s. These countries achieved explosive growth *despite* starting from rubble. A world that never created the rubble in the first place, sustaining a modest 3.83% average over 124 years, is entirely conservative.
+
+At the mid-range, the lost GDP is {{< var war_counterfactual_lost_gdp_per_capita >}} per person per year times 8 billion people: **{{< var war_counterfactual_lost_gdp_global >}} in annual global output that does not exist.** Every year. Growing. You are not just poorer by the cost of the bombs. You are poorer by the compound interest on every dollar the bombs prevented from being earned, invested, and reinvested for 124 years.
+
+You discovered compound interest. Then you applied it to destruction instead of investment. Albert Einstein (who survived the wars that killed 200,000 of his fellow scientists) supposedly called compound interest the eighth wonder of the world. You turned it into the eighth plague.
+
+### The Grand Total: Everything War Has Cost Since 1900
+
+| Category | Estimate (2024 USD) | Method |
+|----------|-------------------|--------|
+| Cumulative military spending | {{< var cumulative_military_spending_fed_era >}} | SIPRI + historical reconstruction |
+| Property and infrastructure destruction | {{< var war_property_destruction_since_1900 >}} | Sum of major conflict estimates |
+| Environmental destruction and contamination | {{< var war_environmental_destruction_since_1900 >}} | Annual estimates x century + catastrophic events |
+| QALY value of lives lost | {{< var war_qaly_value_lost_since_1900 >}} | {{< var war_deaths_since_1900_nounit >}} deaths x {{< var war_avg_years_life_lost_per_death_nounit >}} years x {{< var standard_economic_qaly_value_usd >}}/QALY |
+| Compound opportunity cost (lost annual GDP) | {{< var war_counterfactual_lost_gdp_global >}}/year | 6 channels stacked, 124 years compounded |
+| **Historical sunk cost** | **{{< var war_total_cost_since_1900 >}}** | Military + destruction + lives |
+| **Ongoing annual loss** | **{{< var war_counterfactual_lost_gdp_global >}}/year** | Compound growth penalty |
+| **Per capita impact** | **{{< var war_counterfactual_income_multiple >}} richer** | Every person, everywhere |
+
+The historical tab is {{< var war_total_cost_since_1900 >}}. One quadrillion dollars, already spent, already lost. But the compound opportunity cost dwarfs even that: {{< var war_counterfactual_lost_gdp_global >}} in lost annual output, every year, growing. The sunk cost is a receipt. The compound cost is a wound that never stops bleeding.
+
+The headline number: **the average person on Earth would be {{< var war_counterfactual_income_multiple >}} richer.** The average human would earn {{< var war_counterfactual_gdp_per_capita >}} per year instead of {{< var global_avg_income_2025 >}}. At current population, that is {{< var war_counterfactual_lost_gdp_global >}} in annual output that does not exist. You are not living in a world that had wars. You are living in a world that is {{< var war_counterfactual_income_multiple >}} poorer than it should be.
+
+You built a cemetery instead.
+
 ### Hidden Costs of War
 
 ![War destroys the hospital. Then there's no hospital to treat the war wounds. Then people die of preventable diseases. Then the economy collapses. Then you have another war. It's very efficient.](/assets/images/cost-of-war/cost-of-war-section-hidden-costs-of-war-bw-academic.jpg)

@@ -1,0 +1,1896 @@
+---
+title: "Methodology, Parameters, and Calculations"
+description: "Parameter definitions, formulas, uncertainty ranges, and data sources."
+feed-date: false
+keywords:
+  - health economics methodology
+  - clinical trial cost analysis
+  - medical research ROI
+  - cost-benefit analysis healthcare
+  - sensitivity analysis
+  - Monte Carlo simulation
+  - DALY calculation
+  - pragmatic clinical trials
+aliases:
+  - /calculations.html
+  - /methodology.html
+  - /knowledge/appendix/parameters-and-calculations
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    number-sections: false
+    code-fold: true
+podcast-image: /assets/podcast/parameters-and-calculations-podcast.jpg
+youtube-thumbnail: /assets/podcast/parameters-and-calculations-youtube.jpg
+---
+
+::: {.content-visible when-format="epub"}
+Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo distributions are available at [https://manual.warondisease.org/knowledge/problem/cost-of-war.html/knowledge/appendix/parameters-and-calculations.html](https://manual.warondisease.org/knowledge/problem/cost-of-war.html/knowledge/appendix/parameters-and-calculations.html).
+:::
+
+::: {.content-visible when-format="docx"}
+Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo distributions are available at [https://manual.warondisease.org/knowledge/problem/cost-of-war.html/knowledge/appendix/parameters-and-calculations.html](https://manual.warondisease.org/knowledge/problem/cost-of-war.html/knowledge/appendix/parameters-and-calculations.html).
+:::
+
+::::: {.content-visible unless-format="epub"}
+:::: {.content-visible unless-format="docx"}
+
+## Overview {#sec-parameters-and-calculations}
+
+This appendix documents all 58 parameters used in the analysis, organized by type:
+
+- External sources (peer-reviewed): 32
+- Calculated values: 19
+- Core definitions: 7
+
+### Quick Navigation
+
+[Calculated Values](#sec-calculated) (19 parameters) • [External Data Sources](#sec-external) (32 parameters) • [Core Definitions](#sec-definitions) (7 parameters)
+
+
+## Calculated Values {#sec-calculated}
+
+Parameters derived from mathematical formulas and economic models.
+
+### Total Annual Conflict Deaths Globally: 245 thousand deaths/year {#sec-global_annual_conflict_deaths_total}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Total annual conflict deaths globally (sum of combat, terror, state violence)
+
+**Inputs**:
+
+- [Annual Deaths from Active Combat Worldwide](#sec-global_annual_conflict_deaths_active_combat) 📊: 234 thousand deaths/year (95% CI: 180 thousand deaths/year - 300 thousand deaths/year)
+- [Annual Deaths from State Violence](#sec-global_annual_conflict_deaths_state_violence) 📊: 2.7 thousand deaths/year (95% CI: 1.5 thousand deaths/year - 5 thousand deaths/year)
+- [Annual Deaths from Terror Attacks Globally](#sec-global_annual_conflict_deaths_terror_attacks) 📊: 8.3 thousand deaths/year (95% CI: 6 thousand deaths/year - 12 thousand deaths/year)
+
+$$
+\begin{gathered}
+Deaths_{conflict} \\
+= Deaths_{combat} + Deaths_{state} + Deaths_{terror} \\
+= 234{,}000 + 2{,}700 + 8{,}300 \\
+= 245{,}000
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-global_annual_conflict_deaths_total.qmd >}}
+
+{{< include ../figures/sensitivity-table-global_annual_conflict_deaths_total.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-global_annual_conflict_deaths_total.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-global_annual_conflict_deaths_total.qmd >}}
+
+:::
+
+### Total Annual Cost of War Worldwide: $11.4T {#sec-global_annual_direct_indirect_war_cost}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Total annual cost of war worldwide (direct + indirect costs)
+
+**Inputs**:
+
+- [Total Annual Direct War Costs](#sec-global_annual_war_direct_costs_total) 🔢: $7.66T
+- [Total Annual Indirect War Costs](#sec-global_annual_war_indirect_costs_total) 🔢: $3.7T
+
+$$
+\begin{gathered}
+Cost_{war,total} \\
+= Cost_{war,direct} + Cost_{war,indirect} \\
+= \$7.66T + \$3.7T \\
+= \$11.4T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,direct} \\
+= Loss_{life,conflict} + Damage_{infra,total} \\
++ Disruption_{trade} + Spending_{mil} \\
+= \$2.45T + \$1.88T + \$616B + \$2.72T \\
+= \$7.66T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Loss_{life,conflict} \\
+= Cost_{combat,human} + Cost_{state,human} \\
++ Cost_{terror,human} \\
+= \$2.34T + \$27B + \$83B \\
+= \$2.45T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{combat,human} \\
+= Deaths_{combat} \times VSL \\
+= 234{,}000 \times \$10M \\
+= \$2.34T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{state,human} \\
+= Deaths_{state} \times VSL \\
+= 2{,}700 \times \$10M \\
+= \$27B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{terror,human} \\
+= Deaths_{terror} \times VSL \\
+= 8{,}300 \times \$10M \\
+= \$83B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Damage_{infra,total} \\
+= Damage_{comms} + Damage_{edu} + Damage_{energy} \\
++ Damage_{health} + Damage_{transport} + Damage_{water} \\
+= \$298B + \$234B + \$422B + \$166B + \$487B + \$268B \\
+= \$1.88T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Disruption_{trade} \\
+= Disruption_{currency} + Disruption_{energy} \\
++ Disruption_{shipping} + Disruption_{supply} \\
+= \$57.4B + \$125B + \$247B + \$187B \\
+= \$616B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,indirect} \\
+= Damage_{env} + Loss_{growth,mil} + Loss_{capital,conflict} \\
++ Cost_{psych} + Cost_{refugee} + Cost_{vet} \\
+= \$100B + \$2.72T + \$300B + \$232B + \$150B + \$200B \\
+= \$3.7T
+\end{gathered}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-global_annual_direct_indirect_war_cost.qmd >}}
+
+{{< include ../figures/sensitivity-table-global_annual_direct_indirect_war_cost.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-global_annual_direct_indirect_war_cost.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-global_annual_direct_indirect_war_cost.qmd >}}
+
+:::
+
+### Annual Cost of Combat Deaths: $2.34T {#sec-global_annual_human_cost_active_combat}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual cost of combat deaths (deaths × VSL)
+
+**Inputs**:
+
+- [Annual Deaths from Active Combat Worldwide](#sec-global_annual_conflict_deaths_active_combat) 📊: 234 thousand deaths/year (95% CI: 180 thousand deaths/year - 300 thousand deaths/year)
+- [Value of Statistical Life](#sec-value_of_statistical_life) 📊: $10M (95% CI: $5M - $15M)
+
+$$
+\begin{gathered}
+Cost_{combat,human} \\
+= Deaths_{combat} \times VSL \\
+= 234{,}000 \times \$10M \\
+= \$2.34T
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-global_annual_human_cost_active_combat.qmd >}}
+
+{{< include ../figures/sensitivity-table-global_annual_human_cost_active_combat.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-global_annual_human_cost_active_combat.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-global_annual_human_cost_active_combat.qmd >}}
+
+:::
+
+### Annual Cost of State Violence Deaths: $27B {#sec-global_annual_human_cost_state_violence}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual cost of state violence deaths (deaths × VSL)
+
+**Inputs**:
+
+- [Annual Deaths from State Violence](#sec-global_annual_conflict_deaths_state_violence) 📊: 2.7 thousand deaths/year (95% CI: 1.5 thousand deaths/year - 5 thousand deaths/year)
+- [Value of Statistical Life](#sec-value_of_statistical_life) 📊: $10M (95% CI: $5M - $15M)
+
+$$
+\begin{gathered}
+Cost_{state,human} \\
+= Deaths_{state} \times VSL \\
+= 2{,}700 \times \$10M \\
+= \$27B
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-global_annual_human_cost_state_violence.qmd >}}
+
+{{< include ../figures/sensitivity-table-global_annual_human_cost_state_violence.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-global_annual_human_cost_state_violence.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-global_annual_human_cost_state_violence.qmd >}}
+
+:::
+
+### Annual Cost of Terror Deaths: $83B {#sec-global_annual_human_cost_terror_attacks}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual cost of terror deaths (deaths × VSL)
+
+**Inputs**:
+
+- [Annual Deaths from Terror Attacks Globally](#sec-global_annual_conflict_deaths_terror_attacks) 📊: 8.3 thousand deaths/year (95% CI: 6 thousand deaths/year - 12 thousand deaths/year)
+- [Value of Statistical Life](#sec-value_of_statistical_life) 📊: $10M (95% CI: $5M - $15M)
+
+$$
+\begin{gathered}
+Cost_{terror,human} \\
+= Deaths_{terror} \times VSL \\
+= 8{,}300 \times \$10M \\
+= \$83B
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-global_annual_human_cost_terror_attacks.qmd >}}
+
+{{< include ../figures/sensitivity-table-global_annual_human_cost_terror_attacks.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-global_annual_human_cost_terror_attacks.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-global_annual_human_cost_terror_attacks.qmd >}}
+
+:::
+
+### Total Annual Human Life Losses from Conflict: $2.45T {#sec-global_annual_human_life_losses_conflict}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Total annual human life losses from conflict (sum of combat, terror, state violence)
+
+**Inputs**:
+
+- [Annual Cost of Combat Deaths](#sec-global_annual_human_cost_active_combat) 🔢: $2.34T
+- [Annual Cost of State Violence Deaths](#sec-global_annual_human_cost_state_violence) 🔢: $27B
+- [Annual Cost of Terror Deaths](#sec-global_annual_human_cost_terror_attacks) 🔢: $83B
+
+$$
+\begin{gathered}
+Loss_{life,conflict} \\
+= Cost_{combat,human} + Cost_{state,human} \\
++ Cost_{terror,human} \\
+= \$2.34T + \$27B + \$83B \\
+= \$2.45T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{combat,human} \\
+= Deaths_{combat} \times VSL \\
+= 234{,}000 \times \$10M \\
+= \$2.34T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{state,human} \\
+= Deaths_{state} \times VSL \\
+= 2{,}700 \times \$10M \\
+= \$27B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{terror,human} \\
+= Deaths_{terror} \times VSL \\
+= 8{,}300 \times \$10M \\
+= \$83B
+\end{gathered}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-global_annual_human_life_losses_conflict.qmd >}}
+
+{{< include ../figures/sensitivity-table-global_annual_human_life_losses_conflict.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-global_annual_human_life_losses_conflict.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-global_annual_human_life_losses_conflict.qmd >}}
+
+:::
+
+### Total Annual Infrastructure Destruction: $1.88T {#sec-global_annual_infrastructure_destruction_conflict}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Total annual infrastructure destruction (sum of transportation, energy, communications, water, education, healthcare)
+
+**Inputs**:
+
+- [Annual Infrastructure Damage to Communications from Conflict](#sec-global_annual_infrastructure_damage_communications_conflict) 📊: $298B (95% CI: $209B - $418B)
+- [Annual Infrastructure Damage to Education Facilities from Conflict](#sec-global_annual_infrastructure_damage_education_conflict) 📊: $234B (95% CI: $164B - $328B)
+- [Annual Infrastructure Damage to Energy Systems from Conflict](#sec-global_annual_infrastructure_damage_energy_conflict) 📊: $422B (95% CI: $295B - $590B)
+- [Annual Infrastructure Damage to Healthcare Facilities from Conflict](#sec-global_annual_infrastructure_damage_healthcare_conflict) 📊: $166B (95% CI: $116B - $232B)
+- [Annual Infrastructure Damage to Transportation from Conflict](#sec-global_annual_infrastructure_damage_transportation_conflict) 📊: $487B (95% CI: $340B - $680B)
+- [Annual Infrastructure Damage to Water Systems from Conflict](#sec-global_annual_infrastructure_damage_water_conflict) 📊: $268B (95% CI: $187B - $375B)
+
+$$
+\begin{gathered}
+Damage_{infra,total} \\
+= Damage_{comms} + Damage_{edu} + Damage_{energy} \\
++ Damage_{health} + Damage_{transport} + Damage_{water} \\
+= \$298B + \$234B + \$422B + \$166B + \$487B + \$268B \\
+= \$1.88T
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-global_annual_infrastructure_destruction_conflict.qmd >}}
+
+{{< include ../figures/sensitivity-table-global_annual_infrastructure_destruction_conflict.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-global_annual_infrastructure_destruction_conflict.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-global_annual_infrastructure_destruction_conflict.qmd >}}
+
+:::
+
+### Total Annual Trade Disruption: $616B {#sec-global_annual_trade_disruption_conflict}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Total annual trade disruption (sum of shipping, supply chain, energy prices, currency instability)
+
+**Inputs**:
+
+- [Annual Trade Disruption Costs from Currency Instability](#sec-global_annual_trade_disruption_currency_conflict) 📊: $57.4B (95% CI: $40B - $80B)
+- [Annual Trade Disruption Costs from Energy Price Volatility](#sec-global_annual_trade_disruption_energy_price_conflict) 📊: $125B (95% CI: $87B - $175B)
+- [Annual Trade Disruption Costs from Shipping Disruptions](#sec-global_annual_trade_disruption_shipping_conflict) 📊: $247B (95% CI: $173B - $346B)
+- [Annual Trade Disruption Costs from Supply Chain Disruptions](#sec-global_annual_trade_disruption_supply_chain_conflict) 📊: $187B (95% CI: $131B - $262B)
+
+$$
+\begin{gathered}
+Disruption_{trade} \\
+= Disruption_{currency} + Disruption_{energy} \\
++ Disruption_{shipping} + Disruption_{supply} \\
+= \$57.4B + \$125B + \$247B + \$187B \\
+= \$616B
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-global_annual_trade_disruption_conflict.qmd >}}
+
+{{< include ../figures/sensitivity-table-global_annual_trade_disruption_conflict.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-global_annual_trade_disruption_conflict.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-global_annual_trade_disruption_conflict.qmd >}}
+
+:::
+
+### Total Annual Direct War Costs: $7.66T {#sec-global_annual_war_direct_costs_total}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Total annual direct war costs (military spending + infrastructure + human life + trade disruption)
+
+**Inputs**:
+
+- [Total Annual Human Life Losses from Conflict](#sec-global_annual_human_life_losses_conflict) 🔢: $2.45T
+- [Total Annual Infrastructure Destruction](#sec-global_annual_infrastructure_destruction_conflict) 🔢: $1.88T
+- [Total Annual Trade Disruption](#sec-global_annual_trade_disruption_conflict) 🔢: $616B
+- [Global Military Spending in 2024](#sec-global_military_spending_annual_2024) 📊: $2.72T
+
+$$
+\begin{gathered}
+Cost_{war,direct} \\
+= Loss_{life,conflict} + Damage_{infra,total} \\
++ Disruption_{trade} + Spending_{mil} \\
+= \$2.45T + \$1.88T + \$616B + \$2.72T \\
+= \$7.66T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Loss_{life,conflict} \\
+= Cost_{combat,human} + Cost_{state,human} \\
++ Cost_{terror,human} \\
+= \$2.34T + \$27B + \$83B \\
+= \$2.45T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{combat,human} \\
+= Deaths_{combat} \times VSL \\
+= 234{,}000 \times \$10M \\
+= \$2.34T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{state,human} \\
+= Deaths_{state} \times VSL \\
+= 2{,}700 \times \$10M \\
+= \$27B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{terror,human} \\
+= Deaths_{terror} \times VSL \\
+= 8{,}300 \times \$10M \\
+= \$83B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Damage_{infra,total} \\
+= Damage_{comms} + Damage_{edu} + Damage_{energy} \\
++ Damage_{health} + Damage_{transport} + Damage_{water} \\
+= \$298B + \$234B + \$422B + \$166B + \$487B + \$268B \\
+= \$1.88T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Disruption_{trade} \\
+= Disruption_{currency} + Disruption_{energy} \\
++ Disruption_{shipping} + Disruption_{supply} \\
+= \$57.4B + \$125B + \$247B + \$187B \\
+= \$616B
+\end{gathered}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-global_annual_war_direct_costs_total.qmd >}}
+
+{{< include ../figures/sensitivity-table-global_annual_war_direct_costs_total.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-global_annual_war_direct_costs_total.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-global_annual_war_direct_costs_total.qmd >}}
+
+:::
+
+### Total Annual Indirect War Costs: $3.7T {#sec-global_annual_war_indirect_costs_total}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Total annual indirect war costs (opportunity cost + veterans + refugees + environment + mental health + lost productivity)
+
+**Inputs**:
+
+- [Annual Environmental Damage and Restoration Costs from Conflict](#sec-global_annual_environmental_damage_conflict) 📊: $100B (95% CI: $70B - $140B)
+- [Annual Lost Economic Growth from Military Spending Opportunity Cost](#sec-global_annual_lost_economic_growth_military_spending) 📊: $2.72T (95% CI: $1.9T - $3.8T)
+- [Annual Lost Productivity from Conflict Casualties](#sec-global_annual_lost_human_capital_conflict) 📊: $300B (95% CI: $210B - $420B)
+- [Annual PTSD and Mental Health Costs from Conflict](#sec-global_annual_psychological_impact_costs_conflict) 📊: $232B (95% CI: $162B - $325B)
+- [Annual Refugee Support Costs](#sec-global_annual_refugee_support_costs) 📊: $150B (95% CI: $105B - $210B)
+- [Annual Veteran Healthcare Costs](#sec-global_annual_veteran_healthcare_costs) 📊: $200B (95% CI: $140B - $280B)
+
+$$
+\begin{gathered}
+Cost_{war,indirect} \\
+= Damage_{env} + Loss_{growth,mil} + Loss_{capital,conflict} \\
++ Cost_{psych} + Cost_{refugee} + Cost_{vet} \\
+= \$100B + \$2.72T + \$300B + \$232B + \$150B + \$200B \\
+= \$3.7T
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-global_annual_war_indirect_costs_total.qmd >}}
+
+{{< include ../figures/sensitivity-table-global_annual_war_indirect_costs_total.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-global_annual_war_indirect_costs_total.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-global_annual_war_indirect_costs_total.qmd >}}
+
+:::
+
+### Global Average Income (2025 Baseline): $14.4K {#sec-global_avg_income_2025}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Global average income (GDP per capita) in 2025 baseline.
+
+**Inputs**:
+
+- [Global GDP (2025)](#sec-global_gdp_2025) 📊: $115T
+- [Global Population in 2024](#sec-global_population_2024) 📊: 8 billion of people (95% CI: 7.8 billion of people - 8.2 billion of people)
+
+$$
+\begin{gathered}
+\bar{y}_{0} \\
+= \frac{GDP_{global}}{Pop_{global}} \\
+= \frac{\$115T}{8B} \\
+= \$14.4K
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-global_avg_income_2025.qmd >}}
+
+{{< include ../figures/sensitivity-table-global_avg_income_2025.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-global_avg_income_2025.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-global_avg_income_2025.qmd >}}
+
+:::
+
+### Annual Funding from 1% of Global Military Spending Redirected to DIH: $27.2B {#sec-treaty_annual_funding}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual funding from 1% of global military spending redirected to DIH
+
+**Inputs**:
+
+- [Global Military Spending in 2024](#sec-global_military_spending_annual_2024) 📊: $2.72T
+- [1% Reduction in Military Spending/War Costs from Treaty](#sec-treaty_reduction_pct): 1%
+
+$$
+\begin{gathered}
+Funding_{treaty} \\
+= Spending_{mil} \times Reduce_{treaty} \\
+= \$2.72T \times 1\% \\
+= \$27.2B
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+:::
+
+### GDP per Capita in Peace Timeline: $334K {#sec-war_counterfactual_gdp_per_capita}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Counterfactual global GDP per capita if all wars abolished since 1900. Actual is $14,375. Mid-range counterfactual: $333,636 (23.2x richer). 8 non-overlapping channels at +2.6pp.
+
+**Inputs**:
+
+- [Global GDP per Capita in 1900](#sec-global_gdp_per_capita_1900) 📊: $3.15K (SE: ±$500)
+- [Peace Growth Boost (8 Channels, Overlap-Corrected)](#sec-war_counterfactual_annual_growth_boost): 2.6% (95% CI: 1.65% - 3.55%)
+- [Global Average Income (2025 Baseline)](#sec-global_avg_income_2025) 🔢: $14.4K
+
+$$
+\begin{gathered}
+GDP_{pc,peace} \\
+= GDP_{pc,1900} \times \left(1 \\
++ \left(\frac{\bar{y}_{0}}{GDP_{pc,1900}}\right)^{1/124} - 1 \\
++ g_{war,penalty}\right)^{124} \\[0.5em]
+= \$3.15K \times \left(1 + \left(\frac{\$14.4K}{\$3.15K}\right)^{1/124} - 1 + 2.6\%\right)^{124} \\[0.5em]
+= \$334K
+\end{gathered}
+$$
+
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-war_counterfactual_gdp_per_capita.qmd >}}
+
+{{< include ../figures/sensitivity-table-war_counterfactual_gdp_per_capita.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-war_counterfactual_gdp_per_capita.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-war_counterfactual_gdp_per_capita.qmd >}}
+
+:::
+
+### Peace Income Multiple (How Much Richer Without War): 23.2x {#sec-war_counterfactual_income_multiple}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+How many times richer the average person would be if wars had been abolished in 1900. Counterfactual GDP per capita / actual GDP per capita.
+
+**Inputs**:
+
+- [GDP per Capita in Peace Timeline](#sec-war_counterfactual_gdp_per_capita) 🔢: $334K
+- [Global Average Income (2025 Baseline)](#sec-global_avg_income_2025) 🔢: $14.4K
+
+$$
+\begin{gathered}
+M_{war,income} \\
+= \frac{GDP_{pc,peace}}{\bar{y}_{0}} \\
+= \frac{\$334K}{\$14.4K} \\
+= 23.2
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+GDP_{pc,peace} \\
+= GDP_{pc,1900} \times \left(1 \\
++ \left(\frac{\bar{y}_{0}}{GDP_{pc,1900}}\right)^{1/124} - 1 \\
++ g_{war,penalty}\right)^{124} \\[0.5em]
+= \$3.15K \times \left(1 + \left(\frac{\$14.4K}{\$3.15K}\right)^{1/124} - 1 + 2.6\%\right)^{124} \\[0.5em]
+= \$334K
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+\bar{y}_{0} \\
+= \frac{GDP_{global}}{Pop_{global}} \\
+= \frac{\$115T}{8B} \\
+= \$14.4K
+\end{gathered}
+$$
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-war_counterfactual_income_multiple.qmd >}}
+
+{{< include ../figures/sensitivity-table-war_counterfactual_income_multiple.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-war_counterfactual_income_multiple.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-war_counterfactual_income_multiple.qmd >}}
+
+:::
+
+### Annual Lost GDP Global from War: $2.55 quadrillion {#sec-war_counterfactual_lost_gdp_global}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Total annual global GDP lost to compound war effects since 1900. Lost GDP per capita × 8 billion people.
+
+**Inputs**:
+
+- [Annual Lost GDP per Capita from War](#sec-war_counterfactual_lost_gdp_per_capita) 🔢: $319K
+- [Global Population in 2024](#sec-global_population_2024) 📊: 8 billion of people (95% CI: 7.8 billion of people - 8.2 billion of people)
+
+$$
+\begin{gathered}
+GDP_{lost,total} \\
+= GDP_{pc,lost} \times Pop_{global} \\
+= \$319K \times 8B \\
+= \$2550T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+GDP_{pc,lost} \\
+= GDP_{pc,peace} - \bar{y}_{0} \\
+= \$334K - \$14.4K \\
+= \$319K
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+GDP_{pc,peace} \\
+= GDP_{pc,1900} \times \left(1 \\
++ \left(\frac{\bar{y}_{0}}{GDP_{pc,1900}}\right)^{1/124} - 1 \\
++ g_{war,penalty}\right)^{124} \\[0.5em]
+= \$3.15K \times \left(1 + \left(\frac{\$14.4K}{\$3.15K}\right)^{1/124} - 1 + 2.6\%\right)^{124} \\[0.5em]
+= \$334K
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+\bar{y}_{0} \\
+= \frac{GDP_{global}}{Pop_{global}} \\
+= \frac{\$115T}{8B} \\
+= \$14.4K
+\end{gathered}
+$$
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-war_counterfactual_lost_gdp_global.qmd >}}
+
+{{< include ../figures/sensitivity-table-war_counterfactual_lost_gdp_global.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-war_counterfactual_lost_gdp_global.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-war_counterfactual_lost_gdp_global.qmd >}}
+
+:::
+
+### Annual Lost GDP per Capita from War: $319K {#sec-war_counterfactual_lost_gdp_per_capita}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual GDP per capita lost due to compound war effects since 1900
+
+**Inputs**:
+
+- [GDP per Capita in Peace Timeline](#sec-war_counterfactual_gdp_per_capita) 🔢: $334K
+- [Global Average Income (2025 Baseline)](#sec-global_avg_income_2025) 🔢: $14.4K
+
+$$
+\begin{gathered}
+GDP_{pc,lost} \\
+= GDP_{pc,peace} - \bar{y}_{0} \\
+= \$334K - \$14.4K \\
+= \$319K
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+GDP_{pc,peace} \\
+= GDP_{pc,1900} \times \left(1 \\
++ \left(\frac{\bar{y}_{0}}{GDP_{pc,1900}}\right)^{1/124} - 1 \\
++ g_{war,penalty}\right)^{124} \\[0.5em]
+= \$3.15K \times \left(1 + \left(\frac{\$14.4K}{\$3.15K}\right)^{1/124} - 1 + 2.6\%\right)^{124} \\[0.5em]
+= \$334K
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+\bar{y}_{0} \\
+= \frac{GDP_{global}}{Pop_{global}} \\
+= \frac{\$115T}{8B} \\
+= \$14.4K
+\end{gathered}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-war_counterfactual_lost_gdp_per_capita.qmd >}}
+
+{{< include ../figures/sensitivity-table-war_counterfactual_lost_gdp_per_capita.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-war_counterfactual_lost_gdp_per_capita.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-war_counterfactual_lost_gdp_per_capita.qmd >}}
+
+:::
+
+### Total Life-Years Lost to War Since 1900: 8.37 billion life-years {#sec-war_life_years_lost_since_1900}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Total life-years stolen by war since 1900 (deaths x avg years lost per death)
+
+**Inputs**:
+
+- [Total War and Conflict Deaths Since 1900](#sec-war_deaths_since_1900): 310 million deaths (95% CI: 200 million deaths - 340 million deaths)
+- [Average Years of Life Lost per War Death](#sec-war_avg_years_life_lost_per_death): 27 years (95% CI: 20 years - 35 years)
+
+$$
+\begin{gathered}
+YLL_{war,total} \\
+= Deaths_{war,1900} \times YLL_{war} \\
+= 310M \times 27 \\
+= 8.37B
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-war_life_years_lost_since_1900.qmd >}}
+
+:::
+
+### QALY Value of Life Lost to War Since 1900: $1.26 quadrillion {#sec-war_qaly_value_lost_since_1900}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Economic value of life-years destroyed by war since 1900, at $150K/QALY
+
+**Inputs**:
+
+- [Total Life-Years Lost to War Since 1900](#sec-war_life_years_lost_since_1900) 🔢: 8.37 billion life-years
+- [Standard Economic Value per QALY](#sec-standard_economic_qaly_value_usd) 📊: $150K (SE: ±$30K)
+
+$$
+\begin{gathered}
+V_{war,QALY} \\
+= YLL_{war,total} \times Value_{QALY} \\
+= 8.37B \times \$150K \\
+= \$1260T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+YLL_{war,total} \\
+= Deaths_{war,1900} \times YLL_{war} \\
+= 310M \times 27 \\
+= 8.37B
+\end{gathered}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-war_qaly_value_lost_since_1900.qmd >}}
+
+{{< include ../figures/sensitivity-table-war_qaly_value_lost_since_1900.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-war_qaly_value_lost_since_1900.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-war_qaly_value_lost_since_1900.qmd >}}
+
+:::
+
+### Total Historical Cost of War Since 1900: $1.48 quadrillion {#sec-war_total_cost_since_1900}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Total historical sunk cost of war since 1900: military spending ($170T) + property destruction ($45T) + environmental ($5T) + QALY value of lives ($810T).
+
+**Inputs**:
+
+- [Cumulative Military Spending (Fed Era)](#sec-cumulative_military_spending_fed_era): $170T
+- [Cumulative Property Destruction from War Since 1900](#sec-war_property_destruction_since_1900): $45T (95% CI: $30T - $60T)
+- [Cumulative Environmental Destruction from War Since 1900](#sec-war_environmental_destruction_since_1900): $5T (95% CI: $2T - $10T)
+- [QALY Value of Life Lost to War Since 1900](#sec-war_qaly_value_lost_since_1900) 🔢: $1.26 quadrillion
+
+$$
+\begin{gathered}
+C_{war,hist} \\
+= Spending_{mil,cum,fed} + D_{property} + D_{env} \\
++ V_{war,QALY} \\
+= \$170T + \$45T + \$5T + \$1260T \\
+= \$1480T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+V_{war,QALY} \\
+= YLL_{war,total} \times Value_{QALY} \\
+= 8.37B \times \$150K \\
+= \$1260T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+YLL_{war,total} \\
+= Deaths_{war,1900} \times YLL_{war} \\
+= 310M \times 27 \\
+= 8.37B
+\end{gathered}
+$$
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-war_total_cost_since_1900.qmd >}}
+
+{{< include ../figures/sensitivity-table-war_total_cost_since_1900.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-war_total_cost_since_1900.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-war_total_cost_since_1900.qmd >}}
+
+:::
+
+## External Data Sources {#sec-external}
+
+Parameters sourced from peer-reviewed publications, institutional databases, and authoritative reports.
+
+### 20th-Century Government Democide Total: 262 million deaths {#sec-democide_total_20th_century}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Total people murdered by governments worldwide, 1900-1999 (Rummel's democide estimate)
+
+**Source**: [@rummel-death-by-government]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [200 million deaths, 272 million deaths] • Distribution: Uniform
+
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between 200 million deaths and 272 million deaths (±14%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The uniform distribution means any value in the range is equally likely.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-democide_total_20th_century.qmd >}}
+
+*✓ High confidence*
+
+:::
+
+### Economic Multiplier for Education Investment: 2.1x {#sec-economic_multiplier_education_investment}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Economic multiplier for education investment (2.1x ROI)
+
+**Source**: [@education-investment-economic-multiplier]
+
+*✓ High confidence*
+
+:::
+
+### Economic Multiplier for Healthcare Investment: 4.3x {#sec-economic_multiplier_healthcare_investment}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Economic multiplier for healthcare investment (4.3x ROI). Literature range 3.0-6.0×.
+
+**Source**: [@healthcare-investment-economic-multiplier]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [3x, 6x] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here. The true value likely falls between 3x and 6x (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-economic_multiplier_healthcare_investment.qmd >}}
+
+*✓ High confidence*
+
+:::
+
+### Economic Multiplier for Infrastructure Investment: 1.6x {#sec-economic_multiplier_infrastructure_investment}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Economic multiplier for infrastructure investment (1.6x ROI)
+
+**Source**: [@infrastructure-investment-economic-multiplier]
+
+*✓ High confidence*
+
+:::
+
+### Economic Multiplier for Military Spending: 0.6x {#sec-economic_multiplier_military_spending}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Economic multiplier for military spending (0.6x ROI). Literature range 0.4-1.0×.
+
+**Source**: [@military-spending-economic-multiplier]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [0.4x, 0.9x] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here. The true value likely falls between 0.4x and 0.9x (±42%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-economic_multiplier_military_spending.qmd >}}
+
+*✓ High confidence*
+
+:::
+
+### Annual Deaths from Active Combat Worldwide: 234 thousand deaths/year {#sec-global_annual_conflict_deaths_active_combat}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual deaths from active combat worldwide
+
+**Source**: [@acled-active-combat-deaths]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [180 thousand deaths/year, 300 thousand deaths/year] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here. The true value likely falls between 180 thousand deaths/year and 300 thousand deaths/year (±26%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_annual_conflict_deaths_active_combat.qmd >}}
+
+*✓ High confidence*
+
+:::
+
+### Annual Deaths from State Violence: 2.7 thousand deaths/year {#sec-global_annual_conflict_deaths_state_violence}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual deaths from state violence
+
+**Source**: [@ucdp-state-violence-deaths]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [1.5 thousand deaths/year, 5 thousand deaths/year] • Distribution: Lognormal
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between 1.5 thousand deaths/year and 5 thousand deaths/year (±65%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_annual_conflict_deaths_state_violence.qmd >}}
+
+*✓ High confidence*
+
+:::
+
+### Annual Deaths from Terror Attacks Globally: 8.3 thousand deaths/year {#sec-global_annual_conflict_deaths_terror_attacks}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual deaths from terror attacks globally
+
+**Source**: [@gtd-terror-attack-deaths]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [6 thousand deaths/year, 12 thousand deaths/year] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here. The true value likely falls between 6 thousand deaths/year and 12 thousand deaths/year (±36%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_annual_conflict_deaths_terror_attacks.qmd >}}
+
+*✓ High confidence*
+
+:::
+
+### Annual Environmental Damage and Restoration Costs from Conflict: $100B {#sec-global_annual_environmental_damage_conflict}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual environmental damage and restoration costs from conflict
+
+**Source**: [@environmental-cost-of-war]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$70B, $140B] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $70B and $140B (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_annual_environmental_damage_conflict.qmd >}}
+
+*✓ High confidence*
+
+:::
+
+### Annual Infrastructure Damage to Communications from Conflict: $298B {#sec-global_annual_infrastructure_damage_communications_conflict}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual infrastructure damage to communications from conflict
+
+**Source**: [@environmental-cost-of-war]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$209B, $418B] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $209B and $418B (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_annual_infrastructure_damage_communications_conflict.qmd >}}
+
+*✓ High confidence*
+
+:::
+
+### Annual Infrastructure Damage to Education Facilities from Conflict: $234B {#sec-global_annual_infrastructure_damage_education_conflict}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual infrastructure damage to education facilities from conflict
+
+**Source**: [@environmental-cost-of-war]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$164B, $328B] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $164B and $328B (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_annual_infrastructure_damage_education_conflict.qmd >}}
+
+*✓ High confidence*
+
+:::
+
+### Annual Infrastructure Damage to Energy Systems from Conflict: $422B {#sec-global_annual_infrastructure_damage_energy_conflict}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual infrastructure damage to energy systems from conflict
+
+**Source**: [@environmental-cost-of-war]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$295B, $590B] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $295B and $590B (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_annual_infrastructure_damage_energy_conflict.qmd >}}
+
+*✓ High confidence*
+
+:::
+
+### Annual Infrastructure Damage to Healthcare Facilities from Conflict: $166B {#sec-global_annual_infrastructure_damage_healthcare_conflict}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual infrastructure damage to healthcare facilities from conflict
+
+**Source**: [@environmental-cost-of-war]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$116B, $232B] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $116B and $232B (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_annual_infrastructure_damage_healthcare_conflict.qmd >}}
+
+*✓ High confidence*
+
+:::
+
+### Annual Infrastructure Damage to Transportation from Conflict: $487B {#sec-global_annual_infrastructure_damage_transportation_conflict}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual infrastructure damage to transportation from conflict
+
+**Source**: [@environmental-cost-of-war]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$340B, $680B] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $340B and $680B (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_annual_infrastructure_damage_transportation_conflict.qmd >}}
+
+*✓ High confidence*
+
+:::
+
+### Annual Infrastructure Damage to Water Systems from Conflict: $268B {#sec-global_annual_infrastructure_damage_water_conflict}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual infrastructure damage to water systems from conflict
+
+**Source**: [@environmental-cost-of-war]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$187B, $375B] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $187B and $375B (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_annual_infrastructure_damage_water_conflict.qmd >}}
+
+*✓ High confidence*
+
+:::
+
+### Annual Lost Economic Growth from Military Spending Opportunity Cost: $2.72T {#sec-global_annual_lost_economic_growth_military_spending}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual foregone economic output from military spending vs productive alternatives. This estimate implicitly captures fiscal multiplier differences (military ~0.6x vs healthcare ~4.3x GDP multiplier). Do not add separate GDP multiplier adjustment to avoid double-counting.
+
+**Source**: [@disparity-ratio-weapons-vs-cures]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$1.9T, $3.8T] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $1.9T and $3.8T (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_annual_lost_economic_growth_military_spending.qmd >}}
+
+*✓ High confidence*
+
+:::
+
+### Annual Lost Productivity from Conflict Casualties: $300B {#sec-global_annual_lost_human_capital_conflict}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual lost productivity from conflict casualties
+
+**Source**: [@lost-human-capital-war-cost]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$210B, $420B] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $210B and $420B (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_annual_lost_human_capital_conflict.qmd >}}
+
+*✓ High confidence*
+
+:::
+
+### Annual PTSD and Mental Health Costs from Conflict: $232B {#sec-global_annual_psychological_impact_costs_conflict}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual PTSD and mental health costs from conflict
+
+**Source**: [@psychological-impact-war-cost]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$162B, $325B] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $162B and $325B (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_annual_psychological_impact_costs_conflict.qmd >}}
+
+*✓ High confidence*
+
+:::
+
+### Annual Refugee Support Costs: $150B {#sec-global_annual_refugee_support_costs}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual refugee support costs (108.4M refugees × $1,384/year)
+
+**Source**: [@unhcr-refugee-support-cost]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$105B, $210B] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $105B and $210B (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_annual_refugee_support_costs.qmd >}}
+
+*✓ High confidence*
+
+:::
+
+### Annual Trade Disruption Costs from Currency Instability: $57.4B {#sec-global_annual_trade_disruption_currency_conflict}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual trade disruption costs from currency instability
+
+**Source**: [@world-bank-trade-disruption-conflict]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$40B, $80B] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $40B and $80B (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_annual_trade_disruption_currency_conflict.qmd >}}
+
+*✓ High confidence*
+
+:::
+
+### Annual Trade Disruption Costs from Energy Price Volatility: $125B {#sec-global_annual_trade_disruption_energy_price_conflict}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual trade disruption costs from energy price volatility
+
+**Source**: [@world-bank-trade-disruption-conflict]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$87B, $175B] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $87B and $175B (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_annual_trade_disruption_energy_price_conflict.qmd >}}
+
+*✓ High confidence*
+
+:::
+
+### Annual Trade Disruption Costs from Shipping Disruptions: $247B {#sec-global_annual_trade_disruption_shipping_conflict}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual trade disruption costs from shipping disruptions
+
+**Source**: [@world-bank-trade-disruption-conflict]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$173B, $346B] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $173B and $346B (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_annual_trade_disruption_shipping_conflict.qmd >}}
+
+*✓ High confidence*
+
+:::
+
+### Annual Trade Disruption Costs from Supply Chain Disruptions: $187B {#sec-global_annual_trade_disruption_supply_chain_conflict}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual trade disruption costs from supply chain disruptions
+
+**Source**: [@world-bank-trade-disruption-conflict]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$131B, $262B] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $131B and $262B (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_annual_trade_disruption_supply_chain_conflict.qmd >}}
+
+*✓ High confidence*
+
+:::
+
+### Annual Veteran Healthcare Costs: $200B {#sec-global_annual_veteran_healthcare_costs}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual veteran healthcare costs (20-year projected)
+
+**Source**: [@veteran-healthcare-cost-projections]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$140B, $280B] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $140B and $280B (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_annual_veteran_healthcare_costs.qmd >}}
+
+*✓ High confidence*
+
+:::
+
+### Global GDP (2025): $115T {#sec-global_gdp_2025}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Global nominal GDP (2025 estimate). From Political Dysfunction Tax paper citing StatisticsTimes/IMF World Economic Outlook. Used for calculating global opportunity costs as percentage of world economic output. Note: Latest IMF data shows $117T.
+
+**Source**: [@political-dysfunction-tax-paper-2025]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*✓ High confidence*
+
+:::
+
+### Global GDP per Capita in 1900: $3.15K {#sec-global_gdp_per_capita_1900}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Global GDP per capita in 1900 in constant 2024 USD. Maddison Project: ~$1,260 in 1990 international dollars, adjusted to 2024 USD (~2.5x).
+
+**Source**: [@maddison-project-2020]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Normal (SE: $500)
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_gdp_per_capita_1900.qmd >}}
+
+*~ Medium confidence*
+
+:::
+
+### Annual Global Government Spending on Clinical Trials: $4.5B {#sec-global_government_clinical_trials_spending_annual}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual global government spending on interventional clinical trials (~5-10% of total)
+
+**Source**: [@global-government-clinical-trial-spending-estimate]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$3B, $6B] • Distribution: Lognormal (SE: $1B)
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $3B and $6B (±33%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_government_clinical_trials_spending_annual.qmd >}}
+
+*✓ High confidence*
+
+:::
+
+### Global Government Medical Research Spending: $67.5B {#sec-global_med_research_spending}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Global government medical research spending
+
+**Source**: [@global-gov-med-research-spending]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$54B, $81B] • Distribution: Lognormal
+
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between $54B and $81B (±20%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_med_research_spending.qmd >}}
+
+*✓ High confidence*
+
+:::
+
+### Global Military Spending in 2024: $2.72T {#sec-global_military_spending_annual_2024}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Global military spending in 2024
+
+**Source**: [@global-military-spending]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*✓ High confidence*
+
+:::
+
+### Global Population in 2024: 8 billion of people {#sec-global_population_2024}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Global population in 2024
+
+**Source**: [@global-population-8-billion]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [7.8 billion of people, 8.2 billion of people] • Distribution: Lognormal
+
+**What this means**: We're quite confident in this estimate. The true value likely falls between 7.8 billion of people and 8.2 billion of people (±2%). This represents a narrow range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_population_2024.qmd >}}
+
+*✓ High confidence*
+
+:::
+
+### Standard Economic Value per QALY: $150K {#sec-standard_economic_qaly_value_usd}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Standard economic value per QALY
+
+**Source**: [@qaly-value]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Normal (SE: $30K)
+
+#### Input Distribution
+
+{{< include ../figures/distribution-standard_economic_qaly_value_usd.qmd >}}
+
+*✓ High confidence*
+
+:::
+
+### Value of Statistical Life: $10M {#sec-value_of_statistical_life}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Value of Statistical Life (conservative estimate)
+
+**Source**: [@dot-vsl-13-6m]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$5M, $15M] • Distribution: Gamma (SE: $3M)
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $5M and $15M (±50%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The gamma distribution means values follow a specific statistical pattern.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-value_of_statistical_life.qmd >}}
+
+*✓ High confidence*
+
+:::
+
+## Core Definitions {#sec-definitions}
+
+Fundamental parameters and constants used throughout the analysis.
+
+### Cumulative Military Spending (Fed Era): $170T {#sec-cumulative_military_spending_fed_era}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Cumulative global military spending since 1913 (Fed era) in constant 2024 dollars. Built from: SIPRI 1988-2024 ($65-72T), Cold War 1946-1987 ($50-70T reconstructed), WWI+WWII+interwar ($33T from Harrison). Range: $150-190T.
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*Core definition*
+
+:::
+
+### 1% Reduction in Military Spending/War Costs from Treaty: 1% {#sec-treaty_reduction_pct}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+1% reduction in military spending/war costs from treaty
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*Core definition*
+
+:::
+
+### Average Years of Life Lost per War Death: 27 years {#sec-war_avg_years_life_lost_per_death}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Average years of life lost per war/conflict death. Based on avg age at death ~28 (soldiers ~23, civilians older) vs mid-century life expectancy ~55.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [20 years, 35 years] • Distribution: Uniform
+
+**What this means**: There's significant uncertainty here. The true value likely falls between 20 years and 35 years (±28%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The uniform distribution means any value in the range is equally likely.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-war_avg_years_life_lost_per_death.qmd >}}
+
+*Core definition*
+
+:::
+
+### Peace Growth Boost (8 Channels, Overlap-Corrected): 2.6% {#sec-war_counterfactual_annual_growth_boost}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Stacked annual growth boost from 8 non-overlapping war channels. Ch1: productive reallocation 0.8-1.5pp (budget + innovation merged). Ch2: preserved capital 0.2-0.4pp. Ch3: population 0.2-0.4pp. Ch4: no trade drag 0.1-0.3pp. Ch5: no environmental damage 0.1-0.2pp. Ch6: no Cold War isolation 0.1-0.3pp. Ch7: better institutions 0.1-0.3pp. Ch8: open scientific collaboration 0.05-0.15pp. Low 1.65pp, mid 2.6pp, high 3.55pp.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [1.65%, 3.55%] • Distribution: Uniform
+
+**What this means**: There's significant uncertainty here. The true value likely falls between 1.65% and 3.55% (±37%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The uniform distribution means any value in the range is equally likely.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-war_counterfactual_annual_growth_boost.qmd >}}
+
+*Core definition*
+
+:::
+
+### Total War and Conflict Deaths Since 1900: 310 million deaths {#sec-war_deaths_since_1900}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Total deaths from wars, conflicts, genocides, and policy-induced famines since 1900. Built from non-overlapping categories: Rummel democide 264M (incl 21st century) + battle deaths 39M + collateral civilian deaths 30M - overlap adjustment 25M = 308M, rounded to 310M. Range: White low 200M to Rummel-high-plus-military 340M.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [200 million deaths, 340 million deaths] • Distribution: Uniform
+
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between 200 million deaths and 340 million deaths (±23%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The uniform distribution means any value in the range is equally likely.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-war_deaths_since_1900.qmd >}}
+
+*Core definition*
+
+:::
+
+### Cumulative Environmental Destruction from War Since 1900: $5T {#sec-war_environmental_destruction_since_1900}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Cumulative environmental destruction from wars since 1900 (2024 USD). Nuclear testing, Agent Orange, Gulf War oil fires, DU contamination, Zone Rouge, military CO2 emissions, land mines.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$2T, $10T] • Distribution: Lognormal
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between $2T and $10T (±80%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-war_environmental_destruction_since_1900.qmd >}}
+
+*Core definition*
+
+:::
+
+### Cumulative Property Destruction from War Since 1900: $45T {#sec-war_property_destruction_since_1900}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Cumulative property and infrastructure destruction from major wars since 1900 (2024 USD). WWI ~$5T, WWII ~$23T, Korea ~$0.5T, Vietnam ~$1T, post-9/11 ~$8T, other ~$7.5T.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$30T, $60T] • Distribution: Uniform
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $30T and $60T (±33%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The uniform distribution means any value in the range is equally likely.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-war_property_destruction_since_1900.qmd >}}
+
+*Core definition*
+
+:::
+
+
+::::
+:::::

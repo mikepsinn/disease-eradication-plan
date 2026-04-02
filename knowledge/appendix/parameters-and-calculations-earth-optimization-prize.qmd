@@ -38,15 +38,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 184 parameters used in the analysis, organized by type:
+This appendix documents all 188 parameters used in the analysis, organized by type:
 
-- External sources (peer-reviewed): 51
-- Calculated values: 99
-- Core definitions: 34
+- External sources (peer-reviewed): 52
+- Calculated values: 101
+- Core definitions: 35
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (99 parameters) • [External Data Sources](#sec-external) (51 parameters) • [Core Definitions](#sec-definitions) (34 parameters)
+[Calculated Values](#sec-calculated) (101 parameters) • [External Data Sources](#sec-external) (52 parameters) • [Core Definitions](#sec-definitions) (35 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -4569,6 +4569,104 @@ $$
 
 :::
 
+### GDP per Capita in Peace Timeline: $334K {#sec-war_counterfactual_gdp_per_capita}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Counterfactual global GDP per capita if all wars abolished since 1900. Actual is $14,375. Mid-range counterfactual: $333,636 (23.2x richer). 8 non-overlapping channels at +2.6pp.
+
+**Inputs**:
+
+- [Global GDP per Capita in 1900](#sec-global_gdp_per_capita_1900) 📊: $3.15K (SE: ±$500)
+- [Peace Growth Boost (8 Channels, Overlap-Corrected)](#sec-war_counterfactual_annual_growth_boost): 2.6% (95% CI: 1.65% - 3.55%)
+- [Global Average Income (2025 Baseline)](#sec-global_avg_income_2025) 🔢: $14.4K
+
+$$
+\begin{gathered}
+GDP_{pc,peace} \\
+= GDP_{pc,1900} \times \left(1 \\
++ \left(\frac{\bar{y}_{0}}{GDP_{pc,1900}}\right)^{1/124} - 1 \\
++ g_{war,penalty}\right)^{124} \\[0.5em]
+= \$3.15K \times \left(1 + \left(\frac{\$14.4K}{\$3.15K}\right)^{1/124} - 1 + 2.6\%\right)^{124} \\[0.5em]
+= \$334K
+\end{gathered}
+$$
+
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-war_counterfactual_gdp_per_capita.qmd >}}
+
+{{< include ../figures/sensitivity-table-war_counterfactual_gdp_per_capita.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-war_counterfactual_gdp_per_capita.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-war_counterfactual_gdp_per_capita.qmd >}}
+
+:::
+
+### Peace Income Multiple (How Much Richer Without War): 23.2x {#sec-war_counterfactual_income_multiple}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+How many times richer the average person would be if wars had been abolished in 1900. Counterfactual GDP per capita / actual GDP per capita.
+
+**Inputs**:
+
+- [GDP per Capita in Peace Timeline](#sec-war_counterfactual_gdp_per_capita) 🔢: $334K
+- [Global Average Income (2025 Baseline)](#sec-global_avg_income_2025) 🔢: $14.4K
+
+$$
+\begin{gathered}
+M_{war,income} \\
+= \frac{GDP_{pc,peace}}{\bar{y}_{0}} \\
+= \frac{\$334K}{\$14.4K} \\
+= 23.2
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+GDP_{pc,peace} \\
+= GDP_{pc,1900} \times \left(1 \\
++ \left(\frac{\bar{y}_{0}}{GDP_{pc,1900}}\right)^{1/124} - 1 \\
++ g_{war,penalty}\right)^{124} \\[0.5em]
+= \$3.15K \times \left(1 + \left(\frac{\$14.4K}{\$3.15K}\right)^{1/124} - 1 + 2.6\%\right)^{124} \\[0.5em]
+= \$334K
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+\bar{y}_{0} \\
+= \frac{GDP_{global}}{Pop_{global}} \\
+= \frac{\$115T}{8B} \\
+= \$14.4K
+\end{gathered}
+$$
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-war_counterfactual_income_multiple.qmd >}}
+
+{{< include ../figures/sensitivity-table-war_counterfactual_income_multiple.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-war_counterfactual_income_multiple.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-war_counterfactual_income_multiple.qmd >}}
+
+:::
+
 ### Global Patients Willing to Participate in Clinical Trials: 1.08 billion people {#sec-willing_trial_participants_global}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -5781,7 +5879,7 @@ GiveWell cost per DALY for insecticide-treated bed nets (midpoint estimate, rang
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Average retail after-fee return on conventional retirement portfolios (60/40 stock/bond mix, ~1% advisory fees, ~0.4% fund fees). Used as the opportunity cost comparison: depositors are LOSING money by NOT participating in the wishocratic fund.
+Average retail after-fee return on conventional retirement portfolios (60/40 stock/bond mix, ~1% advisory fees, ~0.4% fund fees). Used as the opportunity cost comparison: depositors are LOSING money by NOT participating in the Prize Fund.
 
 #### Uncertainty Range
 
@@ -6116,6 +6214,26 @@ Global nominal GDP (2025 estimate). From Political Dysfunction Tax paper citing 
 **Technical**: Distribution: Fixed
 
 *✓ High confidence*
+
+:::
+
+### Global GDP per Capita in 1900: $3.15K {#sec-global_gdp_per_capita_1900}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Global GDP per capita in 1900 in constant 2024 USD. Maddison Project: ~$1,260 in 1990 international dollars, adjusted to 2024 USD (~2.5x).
+
+**Source**: [@maddison-project-2020]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Normal (SE: $500)
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_gdp_per_capita_1900.qmd >}}
+
+*~ Medium confidence*
 
 :::
 
@@ -6789,7 +6907,7 @@ Total US federal lobbying expenditure in 2024 (record year). Source: OpenSecrets
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Venture capital / private equity gross return (before 2-and-20 fees). Cambridge Associates US VC index 25-year pooled gross IRR. The wishocratic fund charges zero fees, so gross return is the correct baseline. Lockup premium is already embedded: VC/PE IS illiquid.
+Venture capital / private equity gross return (before 2-and-20 fees). Cambridge Associates US VC index 25-year pooled gross IRR. The Prize Fund charges zero fees, so gross return is the correct baseline. Lockup premium is already embedded: VC/PE IS illiquid.
 
 #### Uncertainty Range
 
@@ -7289,7 +7407,7 @@ R&D spillover multiplier: each $1 in directed medical research produces $2 in ad
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Diminishing-returns drag as the venture market expands ~15x (current global VC ~$300B/yr; wishocratic fund deploys ~$4.7T/yr). More capital chasing deals compresses returns. Partially offset by market expansion (every viable idea gets funded, oligopolies face real competition). Point estimate is moderate; CI spans optimistic to pessimistic.
+Diminishing-returns drag as the venture market expands ~15x (current global VC ~$300B/yr; Prize Fund deploys ~$4.7T/yr). More capital chasing deals compresses returns. Partially offset by market expansion (every viable idea gets funded, oligopolies face real competition). Point estimate is moderate; CI spans optimistic to pessimistic.
 
 #### Uncertainty Range
 
@@ -7444,6 +7562,28 @@ Percentage of captured dividend funding VICTORY Incentive Alignment Bonds (10%)
 #### Uncertainty Range
 
 **Technical**: Distribution: Fixed
+
+*Core definition*
+
+:::
+
+### Peace Growth Boost (8 Channels, Overlap-Corrected): 2.6% {#sec-war_counterfactual_annual_growth_boost}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Stacked annual growth boost from 8 non-overlapping war channels. Ch1: productive reallocation 0.8-1.5pp (budget + innovation merged). Ch2: preserved capital 0.2-0.4pp. Ch3: population 0.2-0.4pp. Ch4: no trade drag 0.1-0.3pp. Ch5: no environmental damage 0.1-0.2pp. Ch6: no Cold War isolation 0.1-0.3pp. Ch7: better institutions 0.1-0.3pp. Ch8: open scientific collaboration 0.05-0.15pp. Low 1.65pp, mid 2.6pp, high 3.55pp.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [1.65%, 3.55%] • Distribution: Uniform
+
+**What this means**: There's significant uncertainty here. The true value likely falls between 1.65% and 3.55% (±37%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The uniform distribution means any value in the range is equally likely.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-war_counterfactual_annual_growth_boost.qmd >}}
 
 *Core definition*
 

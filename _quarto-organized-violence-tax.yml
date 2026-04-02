@@ -1,0 +1,230 @@
+project:
+  type: website
+  output-dir: _site/organized-violence-tax
+  execute-dir: project
+  resources:
+    - knowledge/data/
+    - assets/
+    - _redirects
+    - robots.txt
+    - llms.txt
+  render:
+    # Paper is copied to index.qmd by render script
+    - index.qmd
+    - knowledge/appendix/parameters-and-calculations.qmd
+
+# Custom fields for render-quarto.py
+dih-render:
+  emoji: "💣"
+  index-source: knowledge/problem/cost-of-war.qmd
+  redirect-from: https://organized-violence-tax.warondisease.org
+  fallback-404-redirect-domain: https://manual.WarOnDisease.org
+  netlify-site-id: ""
+  netlify-cname: ""
+  show-confidence-intervals: true
+  concept-terms:
+    - term: "Organized Violence Tax"
+      manual-target: knowledge/problem/cost-of-war.qmd
+  favicon-prompt: "Organized violence tax"
+
+profiles:
+  default:
+    dotenv:
+      allowEmptyValues: true
+
+author:
+  - name: Mike P. Sinn
+    email: m@warondisease.org
+    orcid: 0009-0006-0212-1094
+    affiliations:
+      - name: "Institute for Accelerated Medicine"
+        url: https://acceleratedmedicine.org
+
+website:
+  title: "The Organized Violence Tax"
+  description: 'Quantifying the compound cost of war since 1900: 310 million dead, $1.48 quadrillion in historical costs, and a 23x income multiple lost to eight compounding channels of destruction.'
+  site-url: https://manual.warondisease.org/knowledge/problem/cost-of-war.html
+  favicon: assets/icons/organized-violence-tax-favicon.png
+  page-navigation: true
+  page-footer:
+    left: "© 2025 [Institute for Accelerated Medicine](https://acceleratedmedicine.org) | [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)"
+    center: "[PDF](/organized-violence-tax.pdf) | [All Papers](https://manual.warondisease.org/knowledge/papers.html)"
+    right: "[VOTE](https://WarOnDisease.org)"
+  navbar:
+    right:
+      - text: "VOTE"
+        href: https://WarOnDisease.org
+
+execute:
+  fig-path: "knowledge/figures/"
+  cache: false
+  freeze: auto
+  daemon: 300
+  daemon-restart: false
+  env:
+    PYTHONPATH: "."
+
+metadata:
+  importance: 91
+  creator: "Mike P. Sinn"
+  orcid: "0009-0006-0212-1094"
+  primary-author: "Mike P. Sinn"
+  byline: "Mike P. Sinn"
+  human-author: "Mike P. Sinn"
+  author-email: "mike@warondisease.org"
+  author-url: "https://mikesinn.com"
+  author-website: "https://mikesinn.com"
+  contact: "mike@warondisease.org"
+  language: "en-US"
+  subject: "Peace Economics, Conflict Studies, Welfare Economics, Counterfactual Analysis"
+  category: "Academic Paper, Peace Economics, Conflict Studies, Public Policy"
+  coi-statement: "The author declares no competing interests. The author does have a vested interest in being 23x richer, but shares this interest with most of the species."
+  data-availability: "All data and code used in this analysis are publicly available at https://github.com/wishonia/earth-optimization-protocol"
+  ethics-statement: "This research did not involve human subjects. The organized violence it quantifies, however, involved 310 million of them."
+  funding: "This research received no funding. At $1.48 quadrillion in cumulative war costs, the author considers this thematically appropriate."
+  github-profile: "https://github.com/mikepsinn"
+  linkedin: "https://www.linkedin.com/in/mikesinn"
+  orcid-url: "https://orcid.org/0009-0006-0212-1094"
+  google-scholar: "https://scholar.google.com/citations?user=RjDd_qcAAAAJ"
+  keywords:
+    - organized-violence
+    - war-costs
+    - peace-economics
+    - counterfactual-gdp
+    - compound-growth
+    - qaly-valuation
+    - opportunity-cost
+    - military-spending
+    - democide
+    - brain-drain
+  version: "1.0"
+  edition: "Working Draft"
+  copyright: "© 2025 Mike P. Sinn"
+  copyright-year: "2025"
+  license: "CC BY-NC 4.0"
+  license-url: "https://creativecommons.org/licenses/by-nc/4.0/"
+  rights: "Creative Commons Attribution-NonCommercial 4.0 International License"
+  publisher: "Institute for Accelerated Medicine"
+  publisher-url: "https://acceleratedmedicine.org"
+  publisher-name: "Mike P. Sinn"
+  publisher-email: "mike@warondisease.org"
+  repo-url: "https://github.com/wishonia/earth-optimization-protocol"
+  issue-url: "https://github.com/wishonia/earth-optimization-protocol/issues"
+  source-url: "https://github.com/wishonia/earth-optimization-protocol"
+  geographic-coverage: "Global"
+  audience: "Researchers, Policy Makers, Economists, Peace Studies Scholars"
+  format: "Working Paper"
+  type: "Academic"
+  genre: "Peace Economics, Conflict Studies, Welfare Economics"
+  medium: "Digital"
+  twitter-site: "https://x.com/warondisease"
+  twitter-creator: "https://x.com/warondisease"
+  og-site-name: "Organized Violence Tax"
+
+  # Identifiers (to be added after Zenodo upload)
+  # doi: ""
+
+  open-graph: true
+  image: "https://manual.warondisease.org/assets/og/organized-violence-tax-og-1200x630.jpg"
+
+  # Publication tracking
+  publishing:
+    own-site:
+      url: "https://manual.warondisease.org/knowledge/problem/cost-of-war.html"
+      status: pending
+    preprints:
+      - platform: zenodo
+        status: pending
+        url: ""
+      - platform: ssrn
+        status: pending
+        url: ""
+      - platform: arxiv
+        status: pending
+        category: econ.GN
+    journals:
+      - name: "Journal of Peace Research"
+        tier: 1
+        status: target
+        url: ""
+      - name: "Defence and Peace Economics"
+        tier: 2
+        status: target
+        url: ""
+
+# Remove "Appendix" prefix
+language:
+  crossref-apx-prefix: ""
+  section-title-appendices: ""
+
+# Bibliography: Single source of truth for all citations
+bibliography: references.bib
+csl: nature-annotated.csl
+
+jupyter: dih-project-kernel
+
+format:
+  html:
+    lightbox: auto
+    theme:
+      - cosmo
+    mermaid:
+      theme: neutral
+    echo: false
+    number-sections: true
+    toc: true
+    toc-depth: 3
+    grid:
+      body-width: 800px
+      sidebar-width: 0px
+      margin-width: 250px
+      gutter-width: 1.5rem
+    css:
+      - styles.css
+      - economics-overrides.css
+    include-before-body:
+      - file: assets/html/page-loader.html
+    include-after-body:
+      - file: assets/html/site-enhancements-loader.html
+    include-in-footer:
+      - file: assets/html/generated-footer.html
+    include-in-header:
+      - text: |
+          <!-- Icons (project-specific) -->
+          <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/organized-violence-tax-favicon-32x32.png">
+          <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/organized-violence-tax-favicon-16x16.png">
+          <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/organized-violence-tax-apple-touch-icon.png">
+          <link rel="icon" type="image/png" sizes="192x192" href="/assets/icons/organized-violence-tax-android-chrome-192x192.png">
+          <link rel="icon" type="image/png" sizes="512x512" href="/assets/icons/organized-violence-tax-android-chrome-512x512.png">
+      - file: assets/html/google-analytics.html
+      - file: assets/html/hypothesis.html
+      - file: assets/html/fonts-preload.html
+    citation-hover: true
+    code-fold: true
+    link-citations: true
+    smooth-scroll: true
+    code-tools: false
+    filters: [assets/filters/live-version-note.lua]
+  pdf:
+    output-file: "organized-violence-tax.pdf"
+    documentclass: article
+    institute: "Institute for Accelerated Medicine"
+    echo: false
+    toc: true
+    toc-depth: 3
+    number-sections: true
+    colorlinks: true
+    link-citations: true
+    include-in-header:
+      - callout-bw.tex
+      - institute-header.tex
+      - text: |
+          \paperurl{https://manual.warondisease.org/knowledge/problem/cost-of-war.html}
+    geometry:
+      - top=1in
+      - bottom=1in
+      - left=1in
+      - right=1in
+    fontsize: 11pt
+    date: ""
+    filters: [assets/filters/live-version-note.lua]

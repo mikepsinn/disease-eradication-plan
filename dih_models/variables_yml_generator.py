@@ -334,10 +334,12 @@ def generate_variables_yml(
         # fall back to auto-generated EXPANDED equations for params without hardcoded latex
         # Expanded equations show the full derivation chain for maximum transparency
         hardcoded_latex = getattr(value, "latex", None)
-        
-        # Use expanded (recursive) LaTeX for auto-generated equations
-        # This shows the complete derivation chain for AI verification and due diligence
-        expanded_latex = generate_expanded_latex(param_name, value, parameters, params_file=params_file)
+        expanded_latex = None
+        if not hardcoded_latex:
+            # Use expanded (recursive) LaTeX for auto-generated equations only when no
+            # handwritten equation exists. This avoids redundant work for parameters that
+            # already provide curated LaTeX.
+            expanded_latex = generate_expanded_latex(param_name, value, parameters, params_file=params_file)
 
         if hardcoded_latex:
             # Use hardcoded (preferred - hand-crafted with semantic labels)

@@ -285,12 +285,12 @@ export const CONVENTIONAL_RETIREMENT_RETURN: Parameter = {
   calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-conventional_retirement_return",
   unit: "percent",
   displayName: "Conventional Retirement Return (After Fees)",
-  description: "Average retail after-fee return on conventional retirement portfolios (60/40 stock/bond mix, ~1% advisory fees, ~0.4% fund fees). Used as the opportunity cost comparison: depositors are LOSING money by NOT participating in the wishocratic fund.",
+  description: "Average retail after-fee return on conventional retirement portfolios (60/40 stock/bond mix, ~1% advisory fees, ~0.4% fund fees). Used as the opportunity cost comparison: depositors are LOSING money by NOT participating in the Prize Fund.",
   sourceType: "external",
   confidence: "high",
   confidenceInterval: [0.05, 0.08],
-  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/economics/wishocratic-investment-fund.html",
-  manualPageTitle: "The Wishocratic Investment Fund",
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/economics/earth-optimization-prize-fund.html",
+  manualPageTitle: "The Earth Optimization Prize Fund",
 };
 
 export const CPI_MULTIPLIER_1980_TO_2024: Parameter = {
@@ -1226,6 +1226,22 @@ export const GLOBAL_GDP_2025: Parameter = {
   manualPageTitle: "The Political Dysfunction Tax",
 };
 
+export const GLOBAL_GDP_PER_CAPITA_1900: Parameter = {
+  value: 3150.0,
+  parameterName: "GLOBAL_GDP_PER_CAPITA_1900",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-global_gdp_per_capita_1900",
+  unit: "USD/person",
+  displayName: "Global GDP per Capita in 1900",
+  description: "Global GDP per capita in 1900 in constant 2024 USD. Maddison Project: ~$1,260 in 1990 international dollars, adjusted to 2024 USD (~2.5x).",
+  sourceType: "external",
+  sourceRef: "maddison-project-2020",
+  sourceUrl: "https://www.rug.nl/ggdc/historicaldevelopment/maddison/releases/maddison-project-database-2020",
+  confidence: "medium",
+  stdError: 500.0,
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/problem/cost-of-war.html",
+  manualPageTitle: "The Cost of War",
+};
+
 export const GLOBAL_GOVERNMENT_CLINICAL_TRIALS_SPENDING_ANNUAL: Parameter = {
   value: 4500000000.0,
   parameterName: "GLOBAL_GOVERNMENT_CLINICAL_TRIALS_SPENDING_ANNUAL",
@@ -1457,11 +1473,11 @@ export const GLOBAL_RETIREMENT_ASSETS: Parameter = {
   calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-global_retirement_assets",
   unit: "USD",
   displayName: "Global Retirement Assets",
-  description: "Total global pension and retirement assets (OECD 2024). This is the capital pool that the wishocratic fund competes with and could partially absorb.",
+  description: "Total global pension and retirement assets (OECD 2024). This is the capital pool that the Prize Fund competes with and could partially absorb.",
   sourceType: "external",
   confidence: "high",
-  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/economics/wishocratic-investment-fund.html",
-  manualPageTitle: "The Wishocratic Investment Fund",
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/economics/earth-optimization-prize-fund.html",
+  manualPageTitle: "The Earth Optimization Prize Fund",
 };
 
 export const GLOBAL_SAVINGS_RATE_PCT: Parameter = {
@@ -1518,8 +1534,8 @@ export const HOME_BIAS_ALPHA: Parameter = {
   sourceType: "external",
   confidence: "high",
   confidenceInterval: [0.003, 0.015],
-  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/economics/wishocratic-investment-fund.html",
-  manualPageTitle: "The Wishocratic Investment Fund",
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/economics/earth-optimization-prize-fund.html",
+  manualPageTitle: "The Earth Optimization Prize Fund",
 };
 
 export const HUMAN_GENOME_PROJECT_TOTAL_ECONOMIC_IMPACT: Parameter = {
@@ -3108,12 +3124,12 @@ export const VENTURE_GROSS_RETURN: Parameter = {
   calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-venture_gross_return",
   unit: "percent",
   displayName: "Venture Capital Gross Return",
-  description: "Venture capital / private equity gross return (before 2-and-20 fees). Cambridge Associates US VC index 25-year pooled gross IRR. The wishocratic fund charges zero fees, so gross return is the correct baseline. Lockup premium is already embedded: VC/PE IS illiquid.",
+  description: "Venture capital / private equity gross return (before 2-and-20 fees). Cambridge Associates US VC index 25-year pooled gross IRR. The Prize Fund charges zero fees, so gross return is the correct baseline. Lockup premium is already embedded: VC/PE IS illiquid.",
   sourceType: "external",
   confidence: "high",
   confidenceInterval: [0.13, 0.22],
-  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/economics/wishocratic-investment-fund.html",
-  manualPageTitle: "The Wishocratic Investment Fund",
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/economics/earth-optimization-prize-fund.html",
+  manualPageTitle: "The Earth Optimization Prize Fund",
 };
 
 export const VITAMIN_A_COST_PER_DALY: Parameter = {
@@ -5715,8 +5731,8 @@ export const PRIZE_POOL_ANNUAL_RETURN: Parameter = {
   confidence: "high",
   formula: "VENTURE_GROSS_RETURN + SCALE_COMPRESSION_FACTOR + WISHOCRATIC_CROWD_ALPHA + HOME_BIAS_ALPHA",
   latex: "\\begin{gathered}\nr_{pool} \\\\\n= r_{VC,gross} + \\Delta r_{scale} + \\alpha_{crowd} \\\\\n+ \\alpha_{home}\n\\end{gathered}",
-  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/economics/wishocratic-investment-fund.html",
-  manualPageTitle: "The Wishocratic Investment Fund",
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/economics/earth-optimization-prize-fund.html",
+  manualPageTitle: "The Earth Optimization Prize Fund",
 };
 
 export const PRIZE_POOL_HORIZON_MULTIPLE: Parameter = {
@@ -5805,8 +5821,8 @@ export const RETIREMENT_EQUIVALENT_2_CLAIMS_TARGET_PAYOUT: Parameter = {
   confidence: "high",
   formula: "GLOBAL_ANNUAL_SAVINGS_PER_CAPITA × CONVENTIONAL_RETIREMENT_HORIZON_MULTIPLE",
   latex: "V_{2claims,target} = S_{annual,pc} \\times M_{retire}",
-  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/economics/wishocratic-investment-fund.html",
-  manualPageTitle: "The Wishocratic Investment Fund",
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/economics/earth-optimization-prize-fund.html",
+  manualPageTitle: "The Earth Optimization Prize Fund",
 };
 
 export const RETIREMENT_EQUIVALENT_CLAIM_VALUE_TARGET: Parameter = {
@@ -7009,6 +7025,111 @@ export const WAR_COSTS_SAVED_PEACE_TRAJECTORY_20YR: Parameter = {
   manualPageTitle: "Peace Dividend",
 };
 
+export const WAR_COUNTERFACTUAL_GDP_PER_CAPITA: Parameter = {
+  value: 333635.72273938934,
+  parameterName: "WAR_COUNTERFACTUAL_GDP_PER_CAPITA",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-war_counterfactual_gdp_per_capita",
+  unit: "USD/person",
+  displayName: "GDP per Capita in Peace Timeline",
+  description: "Counterfactual global GDP per capita if all wars abolished since 1900. Actual is $14,375. Mid-range counterfactual: $333,636 (23.2x richer). 8 non-overlapping channels at +2.6pp.",
+  sourceType: "calculated",
+  confidence: "low",
+  formula: "GLOBAL_GDP_PER_CAPITA_1900 × (1 + ACTUAL_CAGR + WAR_COUNTERFACTUAL_ANNUAL_GROWTH_BOOST)^124",
+  latex: "\\begin{gathered}\nGDP_{pc,peace} \\\\\n= GDP_{pc,1900} \\times \\left(1 \\\\\n+ \\left(\\frac{\\bar{y}_{0}}{GDP_{pc,1900}}\\right)^{1/124} - 1 \\\\\n+ g_{war,penalty}\\right)^{124} \\\\[0.5em]\n= \\$3.15K \\times \\left(1 + \\left(\\frac{\\$14.4K}{\\$3.15K}\\right)^{1/124} - 1 + 2.6\\%\\right)^{124} \\\\[0.5em]\n= \\$334K\n\\end{gathered}",
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/problem/cost-of-war.html",
+  manualPageTitle: "The Cost of War",
+};
+
+export const WAR_COUNTERFACTUAL_INCOME_MULTIPLE: Parameter = {
+  value: 23.209441581870564,
+  parameterName: "WAR_COUNTERFACTUAL_INCOME_MULTIPLE",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-war_counterfactual_income_multiple",
+  unit: "x",
+  displayName: "Peace Income Multiple (How Much Richer Without War)",
+  description: "How many times richer the average person would be if wars had been abolished in 1900. Counterfactual GDP per capita / actual GDP per capita.",
+  sourceType: "calculated",
+  confidence: "low",
+  formula: "WAR_COUNTERFACTUAL_GDP_PER_CAPITA / GLOBAL_AVG_INCOME_2025",
+  latex: "\\begin{gathered}\nM_{war,income} = \\frac{GDP_{pc,peace}}{\\bar{y}_{0}} = \\frac{\\$334K}{\\$14.4K} = 23.2\n\\\\[0.5em]\n\\text{where } \\begin{gathered}\nGDP_{pc,peace} \\\\\n= GDP_{pc,1900} \\times \\left(1 \\\\\n+ \\left(\\frac{\\bar{y}_{0}}{GDP_{pc,1900}}\\right)^{1/124} - 1 \\\\\n+ g_{war,penalty}\\right)^{124} \\\\[0.5em]\n= \\$3.15K \\times \\left(1 + \\left(\\frac{\\$14.4K}{\\$3.15K}\\right)^{1/124} - 1 + 2.6\\%\\right)^{124} \\\\[0.5em]\n= \\$334K\n\\end{gathered}\n\\\\[0.5em]\n\\text{where } \\bar{y}_{0} = \\frac{GDP_{global}}{Pop_{global}} = \\frac{\\$115T}{8B} = \\$14.4K\n\\end{gathered}",
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/problem/cost-of-war.html",
+  manualPageTitle: "The Cost of War",
+};
+
+export const WAR_COUNTERFACTUAL_LOST_GDP_GLOBAL: Parameter = {
+  value: 2554085781915114.5,
+  parameterName: "WAR_COUNTERFACTUAL_LOST_GDP_GLOBAL",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-war_counterfactual_lost_gdp_global",
+  unit: "USD/year",
+  displayName: "Annual Lost GDP Global from War",
+  description: "Total annual global GDP lost to compound war effects since 1900. Lost GDP per capita × 8 billion people.",
+  sourceType: "calculated",
+  confidence: "low",
+  formula: "WAR_COUNTERFACTUAL_LOST_GDP_PER_CAPITA × GLOBAL_POPULATION_2024",
+  latex: "\\begin{gathered}\nGDP_{lost,total} = GDP_{pc,lost} \\times Pop_{global} = \\$319K \\times 8B = \\$2550T\n\\\\[0.5em]\n\\text{where } GDP_{pc,lost} = GDP_{pc,peace} - \\bar{y}_{0} = \\$334K - \\$14.4K = \\$319K\n\\\\[0.5em]\n\\text{where } \\begin{gathered}\nGDP_{pc,peace} \\\\\n= GDP_{pc,1900} \\times \\left(1 \\\\\n+ \\left(\\frac{\\bar{y}_{0}}{GDP_{pc,1900}}\\right)^{1/124} - 1 \\\\\n+ g_{war,penalty}\\right)^{124} \\\\[0.5em]\n= \\$3.15K \\times \\left(1 + \\left(\\frac{\\$14.4K}{\\$3.15K}\\right)^{1/124} - 1 + 2.6\\%\\right)^{124} \\\\[0.5em]\n= \\$334K\n\\end{gathered}\n\\\\[0.5em]\n\\text{where } \\bar{y}_{0} = \\frac{GDP_{global}}{Pop_{global}} = \\frac{\\$115T}{8B} = \\$14.4K\n\\end{gathered}",
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/problem/cost-of-war.html",
+  manualPageTitle: "The Cost of War",
+};
+
+export const WAR_COUNTERFACTUAL_LOST_GDP_PER_CAPITA: Parameter = {
+  value: 319260.72273938934,
+  parameterName: "WAR_COUNTERFACTUAL_LOST_GDP_PER_CAPITA",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-war_counterfactual_lost_gdp_per_capita",
+  unit: "USD/person/year",
+  displayName: "Annual Lost GDP per Capita from War",
+  description: "Annual GDP per capita lost due to compound war effects since 1900",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "WAR_COUNTERFACTUAL_GDP_PER_CAPITA - GLOBAL_AVG_INCOME_2025",
+  latex: "\\begin{gathered}\nGDP_{pc,lost} = GDP_{pc,peace} - \\bar{y}_{0} = \\$334K - \\$14.4K = \\$319K\n\\\\[0.5em]\n\\text{where } \\begin{gathered}\nGDP_{pc,peace} \\\\\n= GDP_{pc,1900} \\times \\left(1 \\\\\n+ \\left(\\frac{\\bar{y}_{0}}{GDP_{pc,1900}}\\right)^{1/124} - 1 \\\\\n+ g_{war,penalty}\\right)^{124} \\\\[0.5em]\n= \\$3.15K \\times \\left(1 + \\left(\\frac{\\$14.4K}{\\$3.15K}\\right)^{1/124} - 1 + 2.6\\%\\right)^{124} \\\\[0.5em]\n= \\$334K\n\\end{gathered}\n\\\\[0.5em]\n\\text{where } \\bar{y}_{0} = \\frac{GDP_{global}}{Pop_{global}} = \\frac{\\$115T}{8B} = \\$14.4K\n\\end{gathered}",
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/problem/cost-of-war.html",
+  manualPageTitle: "The Cost of War",
+};
+
+export const WAR_LIFE_YEARS_LOST_SINCE_1900: Parameter = {
+  value: 8370000000.0,
+  parameterName: "WAR_LIFE_YEARS_LOST_SINCE_1900",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-war_life_years_lost_since_1900",
+  unit: "life-years",
+  displayName: "Total Life-Years Lost to War Since 1900",
+  description: "Total life-years stolen by war since 1900 (deaths x avg years lost per death)",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "WAR_DEATHS_SINCE_1900 × WAR_AVG_YEARS_LIFE_LOST_PER_DEATH",
+  latex: "\\begin{gathered}\nYLL_{war,total} \\\\\n= Deaths_{war,1900} \\times YLL_{war} \\\\\n= 310M \\times 27 \\\\\n= 8.37B\n\\end{gathered}",
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/problem/cost-of-war.html",
+  manualPageTitle: "The Cost of War",
+};
+
+export const WAR_QALY_VALUE_LOST_SINCE_1900: Parameter = {
+  value: 1255500000000000.0,
+  parameterName: "WAR_QALY_VALUE_LOST_SINCE_1900",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-war_qaly_value_lost_since_1900",
+  unit: "USD",
+  displayName: "QALY Value of Life Lost to War Since 1900",
+  description: "Economic value of life-years destroyed by war since 1900, at $150K/QALY",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "WAR_LIFE_YEARS_LOST_SINCE_1900 × STANDARD_ECONOMIC_QALY_VALUE_USD",
+  latex: "\\begin{gathered}\nV_{war,QALY} = YLL_{war,total} \\times Value_{QALY} = 8.37B \\times \\$150K = \\$1260T\n\\\\[0.5em]\n\\text{where } YLL_{war,total} = Deaths_{war,1900} \\times YLL_{war} = 310M \\times 27 = 8.37B\n\\end{gathered}",
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/problem/cost-of-war.html",
+  manualPageTitle: "The Cost of War",
+};
+
+export const WAR_TOTAL_COST_SINCE_1900: Parameter = {
+  value: 1475500000000000.0,
+  parameterName: "WAR_TOTAL_COST_SINCE_1900",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-war_total_cost_since_1900",
+  unit: "USD",
+  displayName: "Total Historical Cost of War Since 1900",
+  description: "Total historical sunk cost of war since 1900: military spending ($170T) + property destruction ($45T) + environmental ($5T) + QALY value of lives ($810T).",
+  sourceType: "calculated",
+  confidence: "low",
+  formula: "CUMULATIVE_MILITARY_SPENDING_FED_ERA + WAR_PROPERTY_DESTRUCTION_SINCE_1900 + WAR_ENVIRONMENTAL_DESTRUCTION_SINCE_1900 + WAR_QALY_VALUE_LOST_SINCE_1900",
+  latex: "\\begin{gathered}\nC_{war,hist} = Spending_{mil,cum,fed} + D_{property} + D_{env} + V_{war,QALY} = \\$170T + \\$45T + \\$5T + \\$1260T = \\$1480T\n\\\\[0.5em]\n\\text{where } V_{war,QALY} = YLL_{war,total} \\times Value_{QALY} = 8.37B \\times \\$150K = \\$1260T\n\\\\[0.5em]\n\\text{where } YLL_{war,total} = Deaths_{war,1900} \\times YLL_{war} = 310M \\times 27 = 8.37B\n\\end{gathered}",
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/problem/cost-of-war.html",
+  manualPageTitle: "The Cost of War",
+};
+
 export const WILLING_TRIAL_PARTICIPANTS_GLOBAL: Parameter = {
   value: 1075200000.0,
   parameterName: "WILLING_TRIAL_PARTICIPANTS_GLOBAL",
@@ -7033,8 +7154,8 @@ export const WISHOCRATIC_CROWD_ALPHA: Parameter = {
   confidence: "high",
   formula: "(CROWD_DECISION_ACCURACY - EXPERT_DECISION_ACCURACY) × ALLOCATION_DECISION_SPREAD",
   latex: "\\begin{gathered}\n\\alpha_{crowd} \\\\\n= S_{alloc} \\times (Acc_{crowd} - Acc_{expert}) \\\\\n= 8\\% \\times (91\\% - 65\\%) \\\\\n= 2.08\\%\n\\end{gathered}",
-  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/economics/wishocratic-investment-fund.html",
-  manualPageTitle: "The Wishocratic Investment Fund",
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/economics/earth-optimization-prize-fund.html",
+  manualPageTitle: "The Earth Optimization Prize Fund",
 };
 
 export const WISHONIA_DISEASE_CURE_FRACTION_15YR: Parameter = {
@@ -7330,8 +7451,8 @@ export const ALLOCATION_DECISION_SPREAD: Parameter = {
   sourceType: "definition",
   confidence: "high",
   confidenceInterval: [0.05, 0.12],
-  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/economics/wishocratic-investment-fund.html",
-  manualPageTitle: "The Wishocratic Investment Fund",
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/economics/earth-optimization-prize-fund.html",
+  manualPageTitle: "The Earth Optimization Prize Fund",
 };
 
 export const ANNUAL_WORKING_HOURS: Parameter = {
@@ -8625,12 +8746,12 @@ export const SCALE_COMPRESSION_FACTOR: Parameter = {
   calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-scale_compression_factor",
   unit: "percent",
   displayName: "Scale Compression Factor",
-  description: "Diminishing-returns drag as the venture market expands ~15x (current global VC ~$300B/yr; wishocratic fund deploys ~$4.7T/yr). More capital chasing deals compresses returns. Partially offset by market expansion (every viable idea gets funded, oligopolies face real competition). Point estimate is moderate; CI spans optimistic to pessimistic.",
+  description: "Diminishing-returns drag as the venture market expands ~15x (current global VC ~$300B/yr; Prize Fund deploys ~$4.7T/yr). More capital chasing deals compresses returns. Partially offset by market expansion (every viable idea gets funded, oligopolies face real competition). Point estimate is moderate; CI spans optimistic to pessimistic.",
   sourceType: "definition",
   confidence: "high",
   confidenceInterval: [-0.05, -0.01],
-  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/economics/wishocratic-investment-fund.html",
-  manualPageTitle: "The Wishocratic Investment Fund",
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/economics/earth-optimization-prize-fund.html",
+  manualPageTitle: "The Earth Optimization Prize Fund",
 };
 
 export const SECONDS_PER_MINUTE: Parameter = {
@@ -8874,6 +8995,84 @@ export const VICTORY_BOND_FUNDING_PCT: Parameter = {
   manualPageTitle: "Earth Optimization Protocol v1",
 };
 
+export const WAR_AVG_YEARS_LIFE_LOST_PER_DEATH: Parameter = {
+  value: 27.0,
+  parameterName: "WAR_AVG_YEARS_LIFE_LOST_PER_DEATH",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-war_avg_years_life_lost_per_death",
+  unit: "years",
+  displayName: "Average Years of Life Lost per War Death",
+  description: "Average years of life lost per war/conflict death. Based on avg age at death ~28 (soldiers ~23, civilians older) vs mid-century life expectancy ~55.",
+  sourceType: "definition",
+  sourceRef: "necrometrics-20th-century",
+  sourceUrl: "https://necrometrics.com/all20c.htm",
+  confidence: "low",
+  confidenceInterval: [20.0, 35.0],
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/problem/cost-of-war.html",
+  manualPageTitle: "The Cost of War",
+};
+
+export const WAR_COUNTERFACTUAL_ANNUAL_GROWTH_BOOST: Parameter = {
+  value: 0.026,
+  parameterName: "WAR_COUNTERFACTUAL_ANNUAL_GROWTH_BOOST",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-war_counterfactual_annual_growth_boost",
+  unit: "percentage points",
+  displayName: "Peace Growth Boost (8 Channels, Overlap-Corrected)",
+  description: "Stacked annual growth boost from 8 non-overlapping war channels. Ch1: productive reallocation 0.8-1.5pp (budget + innovation merged). Ch2: preserved capital 0.2-0.4pp. Ch3: population 0.2-0.4pp. Ch4: no trade drag 0.1-0.3pp. Ch5: no environmental damage 0.1-0.2pp. Ch6: no Cold War isolation 0.1-0.3pp. Ch7: better institutions 0.1-0.3pp. Ch8: open scientific collaboration 0.05-0.15pp. Low 1.65pp, mid 2.6pp, high 3.55pp.",
+  sourceType: "definition",
+  sourceRef: "costa-rica-peace-dividend",
+  sourceUrl: "https://www.tandfonline.com/doi/full/10.1080/00220388.2024.2445533",
+  confidence: "low",
+  confidenceInterval: [0.0165, 0.0355],
+};
+
+export const WAR_DEATHS_SINCE_1900: Parameter = {
+  value: 310000000.0,
+  parameterName: "WAR_DEATHS_SINCE_1900",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-war_deaths_since_1900",
+  unit: "deaths",
+  displayName: "Total War and Conflict Deaths Since 1900",
+  description: "Total deaths from wars, conflicts, genocides, and policy-induced famines since 1900. Built from non-overlapping categories: Rummel democide 264M (incl 21st century) + battle deaths 39M + collateral civilian deaths 30M - overlap adjustment 25M = 308M, rounded to 310M. Range: White low 200M to Rummel-high-plus-military 340M.",
+  sourceType: "definition",
+  sourceRef: "leitenberg-deaths-wars-2006",
+  sourceUrl: "https://www.clingendael.org/sites/default/files/pdfs/20060800_cdsp_occ_leitenberg.pdf",
+  confidence: "low",
+  confidenceInterval: [200000000.0, 340000000.0],
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/problem/cost-of-war.html",
+  manualPageTitle: "The Cost of War",
+};
+
+export const WAR_ENVIRONMENTAL_DESTRUCTION_SINCE_1900: Parameter = {
+  value: 5000000000000.0,
+  parameterName: "WAR_ENVIRONMENTAL_DESTRUCTION_SINCE_1900",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-war_environmental_destruction_since_1900",
+  unit: "USD",
+  displayName: "Cumulative Environmental Destruction from War Since 1900",
+  description: "Cumulative environmental destruction from wars since 1900 (2024 USD). Nuclear testing, Agent Orange, Gulf War oil fires, DU contamination, Zone Rouge, military CO2 emissions, land mines.",
+  sourceType: "definition",
+  sourceRef: "brown-costs-of-war-environmental",
+  sourceUrl: "https://costsofwar.watson.brown.edu/costs/environmental",
+  confidence: "low",
+  confidenceInterval: [2000000000000.0, 10000000000000.0],
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/problem/cost-of-war.html",
+  manualPageTitle: "The Cost of War",
+};
+
+export const WAR_PROPERTY_DESTRUCTION_SINCE_1900: Parameter = {
+  value: 45000000000000.0,
+  parameterName: "WAR_PROPERTY_DESTRUCTION_SINCE_1900",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-war_property_destruction_since_1900",
+  unit: "USD",
+  displayName: "Cumulative Property Destruction from War Since 1900",
+  description: "Cumulative property and infrastructure destruction from major wars since 1900 (2024 USD). WWI ~$5T, WWII ~$23T, Korea ~$0.5T, Vietnam ~$1T, post-9/11 ~$8T, other ~$7.5T.",
+  sourceType: "definition",
+  sourceRef: "harrison-economics-wwii",
+  sourceUrl: "https://www.cambridge.org/core/books/economics-of-world-war-ii/043CE9F3DC5036A731E5555C4A84E424",
+  confidence: "low",
+  confidenceInterval: [30000000000000.0, 60000000000000.0],
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/problem/cost-of-war.html",
+  manualPageTitle: "The Cost of War",
+};
+
 export const _CASCADE_GENERATIONS: Parameter = {
   value: 3.0,
   parameterName: "_CASCADE_GENERATIONS",
@@ -8979,6 +9178,7 @@ export const parameters = {
   GLOBAL_DISEASE_DIRECT_MEDICAL_COST_ANNUAL,
   GLOBAL_DISEASE_PRODUCTIVITY_LOSS_ANNUAL,
   GLOBAL_GDP_2025,
+  GLOBAL_GDP_PER_CAPITA_1900,
   GLOBAL_GOVERNMENT_CLINICAL_TRIALS_SPENDING_ANNUAL,
   GLOBAL_HALE_CURRENT,
   GLOBAL_HOUSEHOLD_WEALTH_USD,
@@ -9371,6 +9571,13 @@ export const parameters = {
   VOTE_TOKEN_VALUE,
   WAR_COSTS_CUMULATIVE_20YR_CURRENT_TRAJECTORY,
   WAR_COSTS_SAVED_PEACE_TRAJECTORY_20YR,
+  WAR_COUNTERFACTUAL_GDP_PER_CAPITA,
+  WAR_COUNTERFACTUAL_INCOME_MULTIPLE,
+  WAR_COUNTERFACTUAL_LOST_GDP_GLOBAL,
+  WAR_COUNTERFACTUAL_LOST_GDP_PER_CAPITA,
+  WAR_LIFE_YEARS_LOST_SINCE_1900,
+  WAR_QALY_VALUE_LOST_SINCE_1900,
+  WAR_TOTAL_COST_SINCE_1900,
   WILLING_TRIAL_PARTICIPANTS_GLOBAL,
   WISHOCRATIC_CROWD_ALPHA,
   WISHONIA_DISEASE_CURE_FRACTION_15YR,
@@ -9511,6 +9718,11 @@ export const parameters = {
   US_VS_SWITZERLAND_LIFE_EXPECTANCY_GAP,
   US_VS_SWITZERLAND_SPENDING_GAP,
   VICTORY_BOND_FUNDING_PCT,
+  WAR_AVG_YEARS_LIFE_LOST_PER_DEATH,
+  WAR_COUNTERFACTUAL_ANNUAL_GROWTH_BOOST,
+  WAR_DEATHS_SINCE_1900,
+  WAR_ENVIRONMENTAL_DESTRUCTION_SINCE_1900,
+  WAR_PROPERTY_DESTRUCTION_SINCE_1900,
   _CASCADE_GENERATIONS,
   _R0,
   _SOCIAL_NETWORK_POP,
@@ -9612,6 +9824,19 @@ export const citations: Record<string, Citation> = {
         issued: { 'date-parts': [[2024]] },
         URL: "https://www.bls.gov/data/inflation_calculator.htm",
         note: "U.S. Bureau of Labor Statistics, 2024, CPI Inflation Calculator",
+  },
+  "brown-costs-of-war-environmental": {
+        id: "brown-costs-of-war-environmental",
+        type: "webpage",
+        title: "Environmental Costs of War",
+        author: [
+          {
+            family: "Watson Institute",
+            given: "Brown University"
+          },
+        ],
+        issued: { 'date-parts': [[2023]] },
+        URL: "https://costsofwar.watson.brown.edu/costs/environmental",
   },
   "cbo-long-term-budget-2024": {
         id: "cbo-long-term-budget-2024",
@@ -9776,6 +10001,20 @@ export const citations: Record<string, Citation> = {
         'container-title': "Direct analysis via ClinicalTrials.gov API v2",
         URL: "https://clinicaltrials.gov/data-api/api",
         note: "Direct analysis via ClinicalTrials.gov API v2",
+  },
+  "costa-rica-peace-dividend": {
+        id: "costa-rica-peace-dividend",
+        type: "article-journal",
+        title: "A Farewell to Arms: The Peace Dividend of Costa Rica's Army Abolition",
+        author: [
+          {
+            family: "Barrios",
+            given: "Dagoberto and Sanz-Gracia, Fernando"
+          },
+        ],
+        issued: { 'date-parts': [[2024]] },
+        'container-title': "Journal of Development Studies",
+        URL: "https://www.tandfonline.com/doi/full/10.1080/00220388.2024.2445533",
   },
   "crs-war-costs-2010": {
         id: "crs-war-costs-2010",
@@ -10273,6 +10512,21 @@ export const citations: Record<string, Citation> = {
         URL: "https://ourworldindata.org/terrorism",
         note: "Our World in Data: Terrorism | Global Terrorism Index 2024 | START Global Terrorism Database | Our World in Data: Terrorism Deaths",
   },
+  "harrison-economics-wwii": {
+        id: "harrison-economics-wwii",
+        type: "book",
+        title: "The Economics of World War II: Six Great Powers in International Comparison",
+        author: [
+          {
+            family: "Harrison",
+            given: "Mark"
+          },
+        ],
+        issued: { 'date-parts': [[2000]] },
+        publisher: "Cambridge University Press",
+        URL: "https://www.cambridge.org/core/books/economics-of-world-war-ii/043CE9F3DC5036A731E5555C4A84E424",
+        note: "Comprehensive economic analysis of six major belligerents (US, UK, Germany, USSR, Japan, Italy). Combined military spending across all belligerents approximately \\$1,301 billion in wartime dollars. Peak military burdens: Japan 76% of GDP, Germany 70%, USSR 61%, UK 53%, US 40%.",
+  },
   "healthcare-investment-economic-multiplier": {
         id: "healthcare-investment-economic-multiplier",
         type: "article-journal",
@@ -10437,6 +10691,20 @@ export const citations: Record<string, Citation> = {
         'container-title': "IQVIA Institute Report",
         URL: "https://www.iqvia.com/insights/the-iqvia-institute/reports-and-publications/reports/the-global-use-of-medicines-2024-outlook-to-2028",
   },
+  "leitenberg-deaths-wars-2006": {
+        id: "leitenberg-deaths-wars-2006",
+        type: "report",
+        title: "Deaths in Wars and Conflicts in the 20th Century",
+        author: [
+          {
+            family: "Leitenberg",
+            given: "Milton"
+          },
+        ],
+        issued: { 'date-parts': [[2006]] },
+        publisher: "Center for International and Security Studies at Maryland (CISSM)",
+        URL: "https://www.clingendael.org/sites/default/files/pdfs/20060800_cdsp_occ_leitenberg.pdf",
+  },
   "lichtenberg-life-years-saved-2019": {
         id: "lichtenberg-life-years-saved-2019",
         type: "article-journal",
@@ -10532,6 +10800,19 @@ export const citations: Record<string, Citation> = {
         URL: "https://thinkbynumbers.org/military/war/the-economic-case-for-peace-a-comprehensive-financial-analysis/",
         note: "Think by Numbers: War Costs \\$74,259/Lifetime | WEF: War Violence Costs \\$5/Day | PubMed: Economic Value DALYs Violence",
   },
+  "maddison-project-2020": {
+        id: "maddison-project-2020",
+        type: "webpage",
+        title: "Maddison Project Database 2020",
+        author: [
+          {
+            family: "Bolt",
+            given: "Jutta and van Zanden, Jan Luiten"
+          },
+        ],
+        issued: { 'date-parts': [[2020]] },
+        URL: "https://www.rug.nl/ggdc/historicaldevelopment/maddison/releases/maddison-project-database-2020",
+  },
   "measles-vaccination-roi": {
         id: "measles-vaccination-roi",
         type: "article-journal",
@@ -10586,6 +10867,19 @@ export const citations: Record<string, Citation> = {
         'container-title': "Mercatus: Defense Spending and Economy",
         URL: "https://www.mercatus.org/research/research-papers/defense-spending-and-economy",
         note: "Mercatus: Defense Spending and Economy | CEPR: WWII Spending Multipliers | RAND: Defense Spending Economic Growth",
+  },
+  "necrometrics-20th-century": {
+        id: "necrometrics-20th-century",
+        type: "webpage",
+        title: "Estimated Totals for the Entire 20th Century",
+        author: [
+          {
+            family: "White",
+            given: "Matthew"
+          },
+        ],
+        issued: { 'date-parts': [[2011]] },
+        URL: "https://necrometrics.com/all20c.htm",
   },
   "nih-budget-fy2025": {
         id: "nih-budget-fy2025",
@@ -11468,11 +11762,11 @@ export const citations: Record<string, Citation> = {
 
 /** Summary statistics */
 export const PARAMETER_STATS = {
-  total: 612,
-  external: 206,
-  calculated: 282,
-  definitions: 124,
-  citations: 143,
+  total: 625,
+  external: 207,
+  calculated: 289,
+  definitions: 129,
+  citations: 149,
 } as const;
 
 // ============================================================================

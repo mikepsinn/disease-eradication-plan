@@ -28,9 +28,15 @@ Usage:
         print(f"Suspicious calculated params: {suspicious}")
 """
 
+import inspect
 import re
 from pathlib import Path
 from typing import Any, Dict
+
+
+def _extract_ctx_refs(source: str) -> set[str]:
+    """Extract ctx["PARAM"]-style parameter references from source text."""
+    return set(re.findall(r'\w+\["([A-Z][A-Z0-9_]+)"\]', source))
 
 
 def validate_references(parameters: Dict[str, Dict[str, Any]], available_refs: set) -> tuple[list, list]:
@@ -257,8 +263,15 @@ def validate_compute_inputs_match(parameters: Dict[str, Dict[str, Any]], params_
 
         param_def = content[start:end]
 
-        # Find all WORD["UPPER_SNAKE"] references in the compute lambda
-        ctx_refs = set(re.findall(r'\w+\["([A-Z][A-Z0-9_]+)"\]', param_def))
+        # Find all WORD["UPPER_SNAKE"] references in the compute implementation.
+        # inspect.getsource() handles helper-returned lambdas and named compute functions;
+        # the parameter-definition scan remains as a fallback for inline lambdas/comments.
+        ctx_refs = _extract_ctx_refs(param_def)
+        try:
+            compute_source = inspect.getsource(value.compute)
+        except (OSError, TypeError):
+            compute_source = ""
+        ctx_refs.update(_extract_ctx_refs(compute_source))
 
         # Skip params with inputs-verified suppression comment
         if '# inputs-verified' in param_def:

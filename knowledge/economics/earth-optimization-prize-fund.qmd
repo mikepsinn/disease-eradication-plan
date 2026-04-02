@@ -1,5 +1,5 @@
 ---
-title: The Wishocratic Investment Fund
+title: The Earth Optimization Prize Fund
 subtitle: A scale engine for trying to win the Earth Optimization Prize
 description: This paper explains how the shared PRIZE pool could compound while humanity tries to raise healthy life years and median income by {{< var destructive_economy_50pct_year >}}. It is a scale-capital thesis, not the first institutional ask.
 published: true
@@ -12,6 +12,8 @@ tags:
   - allocation
 podcast-image: /assets/podcast/wishocratic-investment-fund-podcast.jpg
 youtube-thumbnail: /assets/podcast/wishocratic-investment-fund-youtube.jpg
+aliases:
+  - /knowledge/economics/wishocratic-investment-fund.html
 ---
 {{< include ../includes/setup-parameters.qmd >}}
 
@@ -31,18 +33,18 @@ But it is not the first institutional check the papers should ask for. The first
 
 Ninety-nine percent of humans are legally locked out of the best-performing asset class. Venture capital and private equity produce {{< var venture_gross_return >}} gross annual returns [@cambridge-pe-vc-benchmark-2024]. Your retirement fund produces {{< var conventional_retirement_return >}} after fees. The difference is not skill. It is a door marked "accredited investors only" that keeps {{< var global_retirement_assets >}} trapped in index funds that track yesterday's winners.
 
-The wishocratic fund removes the accreditation wall. A pooled vehicle is, by definition, an accredited investor. A $100 depositor gets the same allocation as a pension fund. Reg CF ($5M/yr), Reg A+ Tier 2 ($75M/yr), and the fund-as-institutional-investor pathway make this legal today.
+The Prize Fund removes the accreditation wall. A pooled vehicle is, by definition, an accredited investor. A $100 depositor gets the same allocation as a pension fund. Reg CF ($5M/yr), Reg A+ Tier 2 ($75M/yr), and the fund-as-institutional-investor pathway make this legal today.
 
 At {{< var global_retirement_assets >}} in global retirement assets, the fund invests across the entire venture and private equity sector. The baseline is venture gross return ({{< var venture_gross_return >}}) because that is what capital earns in high-growth companies when you remove the fees.
 
 Two things that sound like separate alpha sources are already IN this baseline:
 
-- **Fee elimination.** Venture gross return is before 2-and-20 fees. The wishocratic fund has zero management fees (the allocation mechanism is the crowd, not a GP charging 2% for the privilege of losing to an index). No separate alpha needed.
+- **Fee elimination.** Venture gross return is before 2-and-20 fees. The Prize Fund has zero management fees (the allocation mechanism is the crowd, not a GP charging 2% for the privilege of losing to an index). No separate alpha needed.
 - **Lockup premium.** Venture and PE are illiquid assets. The 15-year prize accumulation period is a natural lockup. The illiquidity premium is already priced into the {{< var venture_gross_return >}} gross return. No separate alpha needed.
 
 ## Scale: What Happens When You 15x the Venture Market
 
-Current global VC deployment is roughly $300 billion per year. If a meaningful share of {{< var global_retirement_assets >}} flows through the wishocratic fund, deployment rises to roughly $4.7 trillion per year. That is a 15x expansion of the venture market.
+Current global VC deployment is roughly $300 billion per year. If a meaningful share of {{< var global_retirement_assets >}} flows through the Prize Fund, deployment rises to roughly $4.7 trillion per year. That is a 15x expansion of the venture market.
 
 That is the end-state scale vision, not the opening ask to a board. The opening ask is to underwrite activation and seed credibility. The scale-capital case matters once the network is visibly real enough that pensions, endowments, foundations, and family offices can justify reallocating serious capital into it.
 
@@ -109,7 +111,7 @@ $100 deposited today becomes $100 times {{< var prize_pool_horizon_multiple >}} 
 
 ## Opportunity Cost Is Negative
 
-Conventional retirement earns {{< var conventional_retirement_return >}} after fees. The wishocratic fund models {{< var prize_pool_annual_return >}}.
+Conventional retirement earns {{< var conventional_retirement_return >}} after fees. The Prize Fund models {{< var prize_pool_annual_return >}}.
 
 At the pool level, this is not modeled as a donation. It is modeled as capital compounding under a higher-return allocation rule than a conventional portfolio. Participant-level payout still depends on the branch: depositors recover pro rata from the same realized pool on failure, while VOTE point-holders share that pool on success.
 
@@ -121,7 +123,7 @@ The conventional portfolio:
 - Overweights your home country
 - Does not improve as the world improves (your 60/40 portfolio does not get better when diseases get cured)
 
-The wishocratic fund:
+The Prize Fund:
 
 - Charges zero fees (the crowd is the allocator)
 - Invests across the full venture/PE spectrum
@@ -141,13 +143,13 @@ Three regulatory pathways:
 2. **Regulation A+ Tier 2:** Up to $75M per year with SEC qualification, available to all investors.
 3. **Fund-as-institutional-investor:** The pooled fund itself qualifies as an accredited/institutional investor, accessing deals on behalf of all depositors.
 
-The accreditation wall was built to "protect" small investors from risky investments. It protected them so well that they earned {{< var conventional_retirement_return >}} while accredited investors earned {{< var venture_gross_return >}}. The wishocratic fund does not fight the wall. It walks through the door that the wall left open for pooled vehicles.
+The accreditation wall was built to "protect" small investors from risky investments. It protected them so well that they earned {{< var conventional_retirement_return >}} while accredited investors earned {{< var venture_gross_return >}}. The Prize Fund does not fight the wall. It walks through the door that the wall left open for pooled vehicles.
 
 ## The Self-Fulfilling Property
 
 The fund does not bet on whether targets get hit. It funds hitting them.
 
-A conventional investment fund analyzes whether a company will succeed and bets accordingly. The wishocratic fund allocates capital to companies that cure diseases, build infrastructure, and raise incomes, which ARE the prize targets. If the fund allocates well, the targets get hit. If the targets get hit, the same realized pool routes to VOTE point-holders. If the targets do not get hit, depositors divide that same realized pool pro rata.
+A conventional investment fund analyzes whether a company will succeed and bets accordingly. The Prize Fund allocates capital to companies that cure diseases, build infrastructure, and raise incomes, which ARE the prize targets. If the fund allocates well, the targets get hit. If the targets get hit, the same realized pool routes to VOTE point-holders. If the targets do not get hit, depositors divide that same realized pool pro rata.
 
 In the canonical prize framing, the first institutional question is whether {{< var global_coordination_activation_budget >}} can make mass participation credible. The secondary visible-pool question is whether {{< var prize_pool_retirement_equivalent_principal >}} can make two referred votes worth {{< var retirement_equivalent_2_claims_target_payout >}} on success for a representative saver.
 

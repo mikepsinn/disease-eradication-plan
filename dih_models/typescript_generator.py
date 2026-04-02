@@ -253,17 +253,17 @@ def _normalize_var_to_param(var_name: str) -> str:
 def build_chapter_mapping(
     project_root: Path,
     param_names: set[str],
-) -> Dict[str, Dict[str, str]]:
+) -> Dict[str, list]:
     """
     Scan QMD files for {{< var ... >}} references and map each parameter
-    to its primary manual page (the chapter with the most references).
+    to the manual pages where it appears, sorted by usage count descending.
 
     Returns:
-        Dict mapping PARAM_NAME -> {"url": str, "title": str}
+        Dict mapping PARAM_NAME -> [{"url": str, "title": str, "qmd_path": str, "count": int}, ...]
     """
     from dih_models.yaml_utils import load_quarto_config
 
-    # 1. Parse _quarto-manual.yml for chapter list with titles and parts
+    # 1. Parse _quarto-manual.yml for chapter list with titles
     config_path = project_root / '_quarto-manual.yml'
     if not config_path.exists():
         logger.warning("_quarto-manual.yml not found at %s", config_path)
@@ -327,18 +327,25 @@ def build_chapter_mapping(
                 file_counts = usage_counts[param_name]
                 file_counts[qmd_path_str] = file_counts.get(qmd_path_str, 0) + 1
 
-    # 3. Build mapping: each param -> its top-1 page
-    mapping: Dict[str, Dict[str, str]] = {}
+    # 3. Build mapping: each param -> all pages sorted by count desc
+    mapping: Dict[str, list] = {}
     for param_name, file_counts in usage_counts.items():
         if not file_counts:
             continue
-        # Pick the chapter with the highest usage count
-        best_path = max(file_counts, key=file_counts.get)  # type: ignore[arg-type]
-        info = chapter_info.get(best_path, {})
-        if info:
-            mapping[param_name] = {'url': info['url'], 'title': info['title']}
+        pages = []
+        for qmd_path_str, count in sorted(file_counts.items(), key=lambda x: x[1], reverse=True):
+            info = chapter_info.get(qmd_path_str)
+            if info:
+                pages.append({
+                    'url': info['url'],
+                    'title': info['title'],
+                    'qmd_path': qmd_path_str,
+                    'count': count,
+                })
+        if pages:
+            mapping[param_name] = pages
 
-    logger.debug("Built chapter mapping: %d of %d parameters have a manual page", len(mapping), len(param_names))
+    logger.debug("Built chapter mapping: %d of %d parameters have manual pages", len(mapping), len(param_names))
     return mapping
 
 
@@ -365,7 +372,7 @@ def generate_typescript_parameters(
     references_path: Optional[Path] = None,
     params_file: Optional[Path] = None,
     citation_data: Optional[Dict[str, Dict[str, Any]]] = None,
-    project_root: Optional[Path] = None,
+    chapter_mapping: Optional[Dict[str, list]] = None,
 ):
     """
     Generate TypeScript file with parameters for Next.js applications.
@@ -392,11 +399,8 @@ def generate_typescript_parameters(
         if references_path and references_path.exists():
             citation_data = parse_references_bib(references_path)
 
-    # Build chapter mapping (parameter -> primary manual page)
-    chapter_mapping: Dict[str, Any] = {}
-    if project_root:
-        param_names = {name for name in parameters}
-        chapter_mapping = build_chapter_mapping(project_root, param_names)
+    if chapter_mapping is None:
+        chapter_mapping = {}
 
     content = []
 
@@ -1203,9 +1207,10 @@ def _generate_parameter_constant(
 
     # Primary manual page where this parameter is discussed (highest usage)
     if chapter_mapping and param_name in chapter_mapping:
-        page = chapter_mapping[param_name]
-        lines.append(f"  manualPageUrl: {_format_typescript_value(page['url'])},")
-        lines.append(f"  manualPageTitle: {_format_typescript_value(page['title'])},")
+        pages = chapter_mapping[param_name]
+        if pages:
+            lines.append(f"  manualPageUrl: {_format_typescript_value(pages[0]['url'])},")
+            lines.append(f"  manualPageTitle: {_format_typescript_value(pages[0]['title'])},")
 
 
     lines.append("};")

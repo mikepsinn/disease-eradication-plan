@@ -24,6 +24,7 @@ Usage:
     )
 """
 
+import re
 from pathlib import Path
 from typing import Any, Dict
 
@@ -31,6 +32,34 @@ from dih_models.formatting import format_parameter_value
 from dih_models.latex_generation import generate_auto_latex, generate_expanded_latex, smart_title_case, LATEX_BLOCK_SEP
 from dih_models.latex_mobile_wrap import wrap_latex_for_mobile
 from dih_models.quarto_formatting import convert_qmd_to_html, generate_uncertainty_section
+
+
+def _generate_used_in_links(param_name: str, chapter_mapping: Dict[str, list] | None, output_path: Path) -> list[str]:
+    """Generate 'Used in:' links for a parameter's collapsed details section."""
+    if not chapter_mapping or param_name not in chapter_mapping:
+        return []
+    pages = chapter_mapping[param_name]
+    if not pages:
+        return []
+    lines = []
+    lines.append("**Used in:**")
+    lines.append("")
+    for page in pages:
+        # Convert absolute URL to relative path from knowledge/appendix/
+        qmd_path = page.get('qmd_path', '')
+        if qmd_path.startswith('knowledge/'):
+            rel = '../' + qmd_path[len('knowledge/'):].replace('.qmd', '.html').replace('.md', '.html')
+        elif qmd_path:
+            rel = '../../' + qmd_path.replace('.qmd', '.html').replace('.md', '.html')
+        else:
+            rel = page['url']
+        # Strip {{< var ... >}} shortcodes from link text - variables don't render inside markdown links
+        clean_title = re.sub(r'\{\{<\s*var\s+\S+?\s*>\}\}', '', page['title']).strip()
+        # Clean up artifacts: double spaces, leading/trailing punctuation from removed vars
+        clean_title = re.sub(r'  +', ' ', clean_title)
+        lines.append(f"- [{clean_title}]({rel})")
+    lines.append("")
+    return lines
 from dih_models.reference_parser import parse_references_bib
 
 
@@ -81,6 +110,7 @@ def generate_parameters_and_calculations_qmd(
     params_file: Path | None = None,
     citation_data: Dict[str, Dict[str, Any]] | None = None,
     site_url: str | None = None,
+    chapter_mapping: Dict[str, list] | None = None,
 ):
     """
     Generate comprehensive parameters-and-calculations.qmd appendix.
@@ -431,6 +461,9 @@ def generate_parameters_and_calculations_qmd(
                 content.append(f"{{{{< include ../figures/exceedance-{param_name.lower()}.qmd >}}}}")
                 content.append("")
 
+            # Chapter links
+            content.extend(_generate_used_in_links(param_name, chapter_mapping, output_path))
+
             # End collapsible section
             content.append(":::")
             content.append("")
@@ -534,6 +567,9 @@ def generate_parameters_and_calculations_qmd(
                 content.append("*" + " • ".join(metadata) + "*")
                 content.append("")
 
+            # Chapter links
+            content.extend(_generate_used_in_links(param_name, chapter_mapping, output_path))
+
             # End collapsible section
             content.append(":::")
             content.append("")
@@ -587,6 +623,9 @@ def generate_parameters_and_calculations_qmd(
 
             content.append("*Core definition*")
             content.append("")
+
+            # Chapter links
+            content.extend(_generate_used_in_links(param_name, chapter_mapping, output_path))
 
             # End collapsible section
             content.append(":::")
