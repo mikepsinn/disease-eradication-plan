@@ -17,7 +17,7 @@ youtube-thumbnail: /assets/podcast/least-bad-idea-prize-paper-youtube.jpg
 ---
 {{< include ../includes/setup-parameters.qmd >}}
 
-## Executive Summary
+## For People Too Busy to End War and Disease (But Willing to Skim)
 
 Every day, {{< var global_disease_deaths_daily_nounit >}} people die from diseases humanity spends {{< var military_to_government_clinical_trials_spending_ratio >}} times more on wars, genocides, and blowing people up than researching. Your governments burn {{< var political_dysfunction_global_opportunity_cost_total >}} a year on [political dysfunction](../appendix/political-dysfunction-tax.qmd) [@political-dysfunction-tax-paper-2025]. This proposal: do 1% less of that. Redirect 1% of military spending to clinical trials. Everything below is the mechanism for making it happen and the math on what changes if it does.
 
