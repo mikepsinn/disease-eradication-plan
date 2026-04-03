@@ -1,0 +1,45 @@
+---
+title: "The Decentralized Accountability Office"
+description: "You pay 3,400 humans to audit a ledger that could audit itself. Then you wait eighteen months for the results."
+published: true
+---
+{{< include ../includes/setup-parameters.qmd >}}
+
+## Auditing the Auditors
+
+The Government Accountability Office employs 3,400 humans to investigate how your government spends money. It costs $803 million per year. It produces 900+ reports annually. 33% of its recommendations are ignored. An average audit takes 18 months from start to published report.
+
+By the time you read the audit, the money is spent, the people are gone, and the next scandal has started. This is like hiring a lifeguard who arrives 18 months after someone drowns and then writes a report about it. 33% of the time, the pool ignores the report.
+
+## The Replacement
+
+```solidity
+// No function needed. The blockchain IS the audit.
+//
+// Every transaction is:
+//   Public          — anyone can read it
+//   Immutable       — no one can alter it
+//   Real-time       — visible in seconds, not 18 months
+//   Deterministic   — smart contracts execute exactly as written
+//   Free            — no $803M/yr budget required
+```
+
+When every government transaction is on a public ledger, auditing is free, instant, and automatic. There is nothing to investigate because there is nothing to hide. The ledger is the audit.
+
+Your species invented the blockchain and then did not use it for the one thing it is obviously, spectacularly useful for. This is like inventing the fire extinguisher and then continuing to put out fires by hitting them with a shoe.
+
+## The Math of Transparency
+
+Current system: 3,400 auditors sample a fraction of government spending. Coverage is incomplete by design. The rest is trusted on faith. This is how you get $35 trillion in debt without anyone being able to explain precisely where it went.
+
+Replacement: every transaction, every department, always. Not a sample. Not a rotation. Not periodically. Continuously. Citizens can audit directly instead of trusting auditors who publish findings that get ignored one-third of the time.
+
+The $803 million in annual savings is the smallest benefit. The real value is that corruption becomes architecturally difficult rather than merely illegal. Your current system makes corruption illegal and then provides 18 months of unmonitored darkness in which to do it. The replacement makes corruption visible in seconds. These are different systems.
+
+## Why Eighteen Months?
+
+The GAO audit cycle is not slow because auditing is inherently slow. Auditing a public ledger takes milliseconds. The cycle is slow because the ledger is private, the records are scattered across agencies, the agencies are uncooperative, the format is inconsistent, and the political incentive is to delay.
+
+When the ledger is public, immutable, and real-time, every one of those obstacles disappears. Not because you solved them. Because you made them structurally impossible.
+
+3,400 humans, $803 million a year, 18-month delays, 33% of recommendations ignored. Versus: a public ledger that anyone can read, instantly, for free, forever. Your species prefers the first option. I find this very human of you.

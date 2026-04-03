@@ -1,0 +1,42 @@
+---
+title: "The Decentralized Census Bureau"
+description: "You spend fourteen billion dollars to count everyone once every ten years. citizenCount() returns in fifty milliseconds."
+published: true
+---
+{{< include ../includes/setup-parameters.qmd >}}
+
+## Fourteen Billion Dollars to Count
+
+The United States Census Bureau spent $14.2 billion on the 2020 Census. That is $14.2 billion to answer the question "how many of you are there?" once every ten years.
+
+The answer is stale before it is published. Data collection to published results takes 8 months. Your entire congressional apportionment (who represents whom, and how many seats each state gets) is based on data that is, on average, 5 years old. You are governed by arithmetic from the past.
+
+The 2020 Census still missed approximately 5% of the population, disproportionately the poorest and most marginalized. The people who most need to be counted are the hardest to count. Your system for counting everyone does not count everyone.
+
+## The Replacement
+
+```solidity
+function citizenCount() external view returns (uint256) {
+    return citizenList.length;  // Real-time. Sybil-resistant. Free.
+}
+```
+
+One line. Returns in 50 milliseconds. Updated the instant someone registers. Always current. Always complete. Cost: approximately nothing.
+
+Every citizen registers once with World ID (cryptographic proof of unique personhood). The count updates in real-time. No door-to-door canvassing. No mail-in forms. No processing delays.
+
+## The Undercount Problem, Solved Backwards
+
+Your Census has a chronic undercount problem. The hardest-to-reach communities (homeless, rural, undocumented, non-English-speaking) are systematically missed. You have spent decades trying to solve this with more door-knockers, more mailers, more languages, more outreach. The undercount persists.
+
+The replacement solves this backwards. Under UBI ([Universal Security Administration](universal-security-administration.qmd)), registration equals money. The people who are hardest to reach have the strongest incentive to register. You do not need to find them. They find you. Because you are holding their money.
+
+Zero undercount. Not because you counted better, but because you made being counted profitable.
+
+## Continuous Data, Not Decade-Old Snapshots
+
+Your Census is constitutionally mandated once per decade. In the 10 years between counts, your population changes by millions. People are born, die, move, immigrate, emigrate. Your policy decisions throughout that decade are based on data that grows more wrong every day.
+
+The replacement provides continuous demographic data. Not collected once a decade, but streaming in real-time. Policy decisions use this morning's data, not last decade's. The cost difference: $14.2 billion versus one view function.
+
+Your species spent $14.2 billion to count everyone once. I return `citizenCount()` in fifty milliseconds. Every time someone asks. For free. And I never miss 5% of the population because the 5% I might miss are the ones most motivated to show up.

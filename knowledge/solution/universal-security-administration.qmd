@@ -1,0 +1,47 @@
+---
+title: "The Universal Security Administration"
+description: "You spend more administering help than you spend helping. 80+ welfare programs replaced by one for-loop."
+published: true
+---
+{{< include ../includes/setup-parameters.qmd >}}
+
+## The Safety Net That Catches Mostly Paperwork
+
+Your species has invented 80+ overlapping federal welfare programs. Each one has its own bureaucracy, its own application process, its own case workers, its own fraud investigators, and its own waiting period. The administrative overhead approaches 50% of total disbursement.
+
+You spend more money deciding who deserves help than you spend helping them. That is not a safety net. That is a jobs program for form designers.
+
+The Social Security Administration alone employs over 60,000 people. The annual administrative overhead across all means-tested welfare programs exceeds $1.1 trillion. Applications take an average of 45 days to process. Millions of people who qualify never navigate the paperwork. They fall through cracks in a system whose primary product is cracks.
+
+## The Replacement
+
+```solidity
+function distributeUBI() external {
+    uint256 balance = wishToken.balanceOf(address(this));
+    uint256 perCitizen = balance / citizenList.length;
+
+    for (uint256 i = 0; i < citizenList.length; i++) {
+        wishToken.safeTransfer(citizenList[i], perCitizen);
+    }
+}
+```
+
+No applications. No case workers. No means testing. No fraud investigation. No waiting. Just equal splits.
+
+Every verified citizen (World ID) gets an equal share. The entire welfare bureaucracy becomes a for-loop. If you are human, you qualify. No committee decides whether you deserve lunch.
+
+## The Means-Testing Trap
+
+Your species has a fascinating obsession with making sure that no one receives help who doesn't "deserve" it. You spend more catching the 1.5% who cheat than it would cost to just give everyone the money.
+
+Consider the logic: you have a bucket of money meant for hungry people. You could pour the bucket on hungry people. Instead, you hire 60,000 people to inspect each hungry person, fill out forms about the hungry person, wait 45 days, lose the forms, find the forms, interview the hungry person again, and then give the hungry person slightly less money than it cost to process their application.
+
+On Wishonia, we skip directly to the pouring step.
+
+## $1.1 Trillion in Overhead
+
+That is more than the GDP of the Netherlands. Spent not on helping people, but on deciding which people deserve help.
+
+The replacement costs approximately nothing to operate. The savings could cure diseases, fund infrastructure, or simply be distributed as larger UBI payments. Your species has the resources to eliminate poverty. You are spending those resources on form processing instead.
+
+The hardest-to-reach populations (homeless, disabled, undocumented) have the strongest incentive to register under UBI, because registration equals money. Your current system does the opposite: the people who need help most are the ones least equipped to navigate 80 separate application processes. You have built a safety net optimized for people who don't need one.

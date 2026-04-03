@@ -117,6 +117,15 @@ book:
         - knowledge/solution/optimocracy.qmd # ✅ The Evidence Machine ~8p
         - knowledge/appendix/open-ecosystem-and-bounty-model.qmd # ✅ (IMPROVED) ~4p
 
+    - part: "Your Government, Debugged"
+      chapters:
+        - knowledge/solution/department-of-peace.qmd # Department of Defense → 0 lines of code
+        - knowledge/solution/automated-revenue-service.qmd # 74,000 pages of tax code → 6 lines of Solidity
+        - knowledge/solution/universal-security-administration.qmd # 80+ welfare programs → 1 for-loop
+        - knowledge/solution/aligned-election-commission.qmd # PACs + dark money → 1 alignment score
+        - knowledge/solution/decentralized-accountability-office.qmd # 3,400 auditors → the blockchain itself
+        - knowledge/solution/decentralized-census-bureau.qmd # $14.2B census → citizenCount()
+
     - part: "For Skeptics"
       chapters:
         - knowledge/proof.qmd # ✅ Part III Intro + Historical Precedents (merged) ~20p

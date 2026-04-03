@@ -1,0 +1,54 @@
+---
+title: "Department of Peace"
+description: "War is a negative-sum game and the spreadsheet agrees. Wishonia's replacement for the Department of Defense requires zero lines of code."
+published: true
+---
+{{< include ../includes/setup-parameters.qmd >}}
+
+## The Department That Named Itself Wrong
+
+In 1947, your species renamed the Department of War to the Department of Defense. The wars did not become more defensive. They just sounded nicer. Since the rebrand: 13+ wars, 0 defensive. This is like renaming a cigarette company "The Lung Health Corporation" and expecting the cancer to be embarrassed.
+
+Your Department of Defense has a budget of {{< var global_military_spending_annual_2024 >}} globally. That is {{< var military_to_government_clinical_trials_spending_ratio >}} times what you spend on testing which medicines work. You have decided, as a species, that blowing people up is {{< var military_to_government_clinical_trials_spending_ratio >}} times more important than figuring out how to stop them from dying.
+
+On my planet, we call this a bug. On your planet, you call it "national security."
+
+## The Business Model
+
+War is a negative-sum game. Every participant ends up with less than they started with, including the "winner." Your economists have known this since at least 1795 when Immanuel Kant published *Perpetual Peace*. You have had the analysis for 231 years. You have not applied it.
+
+The reason is not complicated. The F-35 Joint Strike Fighter has parts manufactured in 45 states. Not because the plane needs parts from 45 states. Because a plane with parts in 45 states cannot be cancelled. Your most expensive weapons system is a jobs program that occasionally flies.
+
+The top 5 defense contractors made $196 billion in 2023. Peace is bad for their business. Their lobbyists spend more per year than most countries spend on education. This is the system working as designed. Just not for you.
+
+## Wishonia's Replacement
+
+We don't have a Department of War because (and I want to be precise here) war is stupid. Not morally stupid, although it is that too. Economically stupid. The spreadsheet agrees.
+
+Here is the replacement code:
+
+```solidity
+// There is no replacement code.
+// You do not need a smart contract to not kill people.
+// That is the entire implementation.
+
+// Dispute resolution: Wishocratic preference aggregation
+// + binding arbitration scored by the Optimizer.
+// Takes six minutes. Nobody dies.
+```
+
+Disputes on Wishonia are resolved with data, binding arbitration, and an optimization function that finds the allocation where both parties are measurably better off. This takes six minutes. Nobody dies. The savings are enough to provide clean water for every human, end homelessness, fund all clinical trials, and eliminate hunger, with $2.4 trillion left over.
+
+## The Multiplier Problem
+
+Every dollar your government spends on military returns $0.60 in economic value. Every dollar spent on healthcare returns $3.50. You are choosing the option that is 5.8 times worse. Repeatedly. For 80 years.
+
+If you redirected just 1% of military spending to clinical trials, you would fund the entire [dFDA](dfda.qmd) [@dfda-spec-paper-2025; @dfda-impact-paper-2025]. If you redirected 10%, you could cure most diseases within a decade. The math is not ambiguous. The math has never been ambiguous. You just keep choosing the $0.60 option because the $0.60 option has better lobbyists.
+
+## What We Did Instead
+
+On Wishonia, we ended wars 4,225 years ago. Before that we'd been fighting for 12,000 years. One day someone ran the numbers and said, "This costs more than it produces." Everyone stared at the spreadsheet for a while. Then we stopped. It was not dramatic. It was arithmetic.
+
+Your species has the same arithmetic. You've had it for centuries. The difference is that on Wishonia, the spreadsheet is public and the people who profit from war cannot delete the rows they don't like.
+
+The [1% Treaty](1-percent-treaty.qmd) [@1-pct-treaty-impact-paper-2025] is how you get there. Not by abolishing your military overnight (your species panics when you change the color of a social media button; eliminating armies would be inadvisable). But by redirecting 1% of it toward not dying. Baby steps. The kind even a species that named its planet "dirt" can manage.

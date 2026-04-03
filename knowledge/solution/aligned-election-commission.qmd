@@ -1,0 +1,54 @@
+---
+title: "The Aligned Election Commission"
+description: "Your politicians are funded by the people they're supposed to regulate. Wishonia replaces campaign finance with a single alignment score."
+published: true
+---
+{{< include ../includes/setup-parameters.qmd >}}
+
+## Bribery With Extra Steps
+
+Your politicians are funded by the people they're supposed to regulate. You call this "campaign finance." On my planet, we call it bribery with extra steps.
+
+The 2024 US election cycle cost $4.7 billion. Annual lobbying expenditures run another $3.7 billion. The Federal Election Commission has 6 commissioners, and they deadlock on purpose. 0.01% of the population provides the majority of campaign funds. Campaign donors get a 760% return on their lobbying investments. You, the citizen, get a form letter.
+
+The system is working perfectly. Just not for you.
+
+## The Alignment Score
+
+Wishonia replaces the entire campaign finance apparatus with one number per politician: the Citizen Alignment Score.
+
+How closely do their votes match what citizens actually want? Public. Immutable. Updated in real-time. Cannot be lobbied.
+
+```solidity
+function allocate(bytes32 jurisdiction, bytes32[] leaves,
+    bytes32[][] proofs, uint256[] scores) external {
+    for (uint256 i = 0; i < leaves.length; i++) {
+        bool valid = oracle.verifyScore(jurisdiction, leaves[i], proofs[i]);
+        if (!valid || scores[i] < minimumAlignmentScore) continue;
+        uint256 weight = scores[i] - minimumAlignmentScore;
+        uint256 share = (balance * weight) / totalWeight;
+        stablecoin.safeTransfer(politician.campaignWallet, share);
+    }
+}
+```
+
+Represent citizens well, get funded. Represent donors well, get nothing.
+
+## The 67% Problem
+
+Since Citizens United, undisclosed political spending has increased 67%. Your Supreme Court ruled that money is speech. This means people with more money have more speech. Your founders fought a revolution over the principle that all men are created equal, and then your highest court decided that some men's speech is 4.7 billion dollars more equal.
+
+The FEC was designed to prevent this. The FEC has 6 commissioners. They tie 3-3 on every consequential vote. This is not a malfunction. This is the design. A regulator that cannot regulate is the best regulator money can buy.
+
+## What Changes
+
+Under the Aligned Election Commission:
+
+- No donors. No PACs. No dark money. Just math measuring representation.
+- Politicians funded proportional to how well they represent citizens, not how well they please donors.
+- Below minimum alignment? $0. Above it? Funded proportionally.
+- Every citizen can verify the score. Every vote is on the record. The algorithm shows its work.
+
+The $8.4 billion currently spent on campaign finance and lobbying ($4.7B + $3.7B) is eliminated. More importantly, the incentive for politicians to serve donors instead of citizens is eliminated. That second part is worth considerably more than $8.4 billion.
+
+Your current system is a vending machine where lobbyists insert money and legislation comes out. The replacement is a scoreboard where citizens insert preferences and representation comes out. The technology exists. The math is trivial. The obstacle is that the people who would need to approve the change are the same people who benefit from the current system. This is why the [1% Treaty](1-percent-treaty.qmd) [@1-pct-treaty-impact-paper-2025] works around them instead of through them.
