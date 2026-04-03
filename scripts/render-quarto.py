@@ -71,6 +71,10 @@ from render_utils import (  # type: ignore[import-not-found]
     validate_pdf_for_python_code
 )
 
+# Import OG metadata fixer (scripts/ is already on sys.path via parent)
+sys.path.insert(0, str(Path(__file__).parent))
+from fix_og_metadata import fix_og_metadata  # type: ignore[import-not-found]
+
 
 # =============================================================================
 # epubcheck auto-download
@@ -683,6 +687,12 @@ def get_config_metadata(config_name: str) -> Dict[str, Any]:
         "parameter_link_format": dih_render.get("parameter-link-format", "html"),
         # BibTeX fields to strip from references.bib (e.g., ["abstract", "note"] to shorten print refs)
         "strip_bib_fields": dih_render.get("strip-bib-fields", []),
+        # Site URL for OG metadata fixup (website.site-url or book.site-url)
+        "site_url": (
+            config.get("website", {}).get("site-url") or
+            config.get("book", {}).get("site-url") or
+            ""
+        ),
     }
 
 
@@ -1603,6 +1613,11 @@ def render_quarto(
                 optimized_images = optimize_parameters_appendix_html(html_output_dir)
                 if optimized_images:
                     print(f"[*] Added lazy-loading attrs to {optimized_images} parameter-appendix image(s)")
+
+                # Fix OG/Twitter metadata (og:description, twitter:card, og:url, etc.)
+                site_url = metadata.get("site_url", "")
+                if site_url:
+                    fix_og_metadata(str(html_output_dir), site_url=site_url)
 
             gh_group_start("VALIDATION: POST-RENDER (HTML)")
             output_dir = metadata["output_dir"]
