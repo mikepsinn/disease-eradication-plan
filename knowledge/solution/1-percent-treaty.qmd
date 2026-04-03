@@ -165,7 +165,7 @@ The {{< var dih_treasury_medical_research_pct >}} for clinical trials is untouch
 
 ### Year One Projected Outcomes
 
-Only {{< var current_trial_slots_available_nounit >}} participate in drug trials annually out of {{< var current_disease_patients_global >}} with chronic disease. With a 1% Treaty + a [decentralized FDA](dfda.qmd):
+Only {{< var current_trial_slots_available_nounit >}} participate in drug trials annually out of {{< var current_disease_patients_global >}} with chronic disease. With a 1% Treaty + a [decentralized FDA](dfda.qmd) [@dfda-spec-paper-2025; @dfda-impact-paper-2025]:
 
 | | Current | With Treaty |
 |:---|:---|:---|

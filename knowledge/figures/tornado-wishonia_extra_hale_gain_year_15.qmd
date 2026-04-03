@@ -16,18 +16,18 @@ setup_chart_style()
 
 # Display name for chart title
 
-display_name = "Treaty Projected HALE at Year 15"
+display_name = "Wishonia Extra HALE Gain at Year 15"
 
 # Baseline and units
 
-baseline = 85.0
+baseline = 11.099999999999994
 
 # Tornado data from sensitivity analysis
 
-drivers = ['LIFE_EXTENSION_YEARS', 'DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT', 'GLOBAL_LIFE_EXPECTANCY_2024', 'NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR', 'CURRENT_DISEASE_PATIENTS_GLOBAL', 'CURRENT_TRIAL_SLOTS_AVAILABLE', 'DFDA_OPEX_COMMUNITY', 'DFDA_OPEX_INFRASTRUCTURE', 'DFDA_OPEX_PLATFORM_MAINTENANCE', 'DFDA_OPEX_REGULATORY', 'DFDA_OPEX_STAFF', 'GLOBAL_HALE_CURRENT', 'PATIENT_WILLINGNESS_TRIAL_PARTICIPATION_PCT', 'RARE_DISEASES_COUNT_GLOBAL']
-driver_labels = ['Life Extension from Treaty Research Acceleration', 'dFDA Pragmatic Trial Cost per Patient', 'Global Life Expectancy (2024)', 'Diseases Getting First Treatment Per Year', 'Global Population with Chronic Diseases', 'Annual Global Clinical Trial Participants', 'Decentralized Framework for Drug Assessment Community Support Costs', 'Decentralized Framework for Drug Assessment Infrastructure Costs', 'Decentralized Framework for Drug Assessment Maintenance Costs', 'Decentralized Framework for Drug Assessment Regulatory Coordination Costs', 'Decentralized Framework for Drug Assessment Staff Costs', 'Global Healthy Life Expectancy (HALE)', 'Patient Willingness to Participate in Clinical Trials', 'Total Number of Rare Diseases Globally']
-impacts_low = [-4.5, 0.0, -2.0, -0.4596539930643502, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-impacts_high = [24.0, -9.367324099722993, 2.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+drivers = ['LIFE_EXTENSION_YEARS', 'GLOBAL_LIFE_EXPECTANCY_2024', 'CURRENT_DISEASE_PATIENTS_GLOBAL', 'CURRENT_TRIAL_SLOTS_AVAILABLE', 'DFDA_OPEX_COMMUNITY', 'DFDA_OPEX_INFRASTRUCTURE', 'DFDA_OPEX_PLATFORM_MAINTENANCE', 'DFDA_OPEX_REGULATORY', 'DFDA_OPEX_STAFF', 'DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT', 'NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR', 'PATIENT_WILLINGNESS_TRIAL_PARTICIPATION_PCT', 'RARE_DISEASES_COUNT_GLOBAL']
+driver_labels = ['Life Extension from Treaty Research Acceleration', 'Global Life Expectancy (2024)', 'Global Population with Chronic Diseases', 'Annual Global Clinical Trial Participants', 'Decentralized Framework for Drug Assessment Community Support Costs', 'Decentralized Framework for Drug Assessment Infrastructure Costs', 'Decentralized Framework for Drug Assessment Maintenance Costs', 'Decentralized Framework for Drug Assessment Regulatory Coordination Costs', 'Decentralized Framework for Drug Assessment Staff Costs', 'dFDA Pragmatic Trial Cost per Patient', 'Diseases Getting First Treatment Per Year', 'Patient Willingness to Participate in Clinical Trials', 'Total Number of Rare Diseases Globally']
+impacts_low = [-4.5, 2.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+impacts_high = [24.0, -2.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
 
 # Convert deltas to absolute values (baseline + delta)
 
@@ -96,7 +96,7 @@ add_watermark(fig)
 # Save PNG to knowledge/figures/ regardless of where Quarto renders from
 # Use 96 DPI for web-optimized output (reduced from 150 DPI to minimize file size)
 
-output_path = get_figure_output_path('tornado-treaty_projected_hale_year_15.png')
+output_path = get_figure_output_path('tornado-wishonia_extra_hale_gain_year_15.png')
 plt.savefig(output_path, dpi=96, bbox_inches=None, facecolor=COLOR_WHITE)
 
 add_png_metadata(

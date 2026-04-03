@@ -1580,7 +1580,7 @@ $$
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Treaty disease-cure fraction over 20 years under the optimistic treaty take-hold path. The initial 1% treaty expands to 2%, then 5%, then 10%, and cumulative trial throughput is capped by the physical participant ceiling.
+Treaty disease-cure fraction over 20 years under the optimistic treaty take-hold path. The initial 1% treaty expands to 2%, then 5%, then 10%, with trial-throughput scaling linearly with treaty funding until it hits the physical participant ceiling. Cumulative throughput is capped by the physical participant ceiling.
 
 **Inputs**:
 
@@ -1592,7 +1592,7 @@ Treaty disease-cure fraction over 20 years under the optimistic treaty take-hold
 $$
 \begin{gathered}
 f_{cure,20,treaty} \\
-= \min\left(1,\frac{Treatments_{new,ann}\cdot \sum_y k_{capacity,y}}{D_{untreated}}\right)
+= \min\left(1,\frac{Treatments_{new,ann}\cdot \sum_y \min\left(k_{capacity}\cdot s_y/0.01,k_{physical}\right)}{D_{untreated}}\right)
 \end{gathered}
 $$
 
@@ -2044,7 +2044,7 @@ where:
 $$
 \begin{gathered}
 f_{cure,20,treaty} \\
-= \min\left(1,\frac{Treatments_{new,ann}\cdot \sum_y k_{capacity,y}}{D_{untreated}}\right)
+= \min\left(1,\frac{Treatments_{new,ann}\cdot \sum_y \min\left(k_{capacity}\cdot s_y/0.01,k_{physical}\right)}{D_{untreated}}\right)
 \end{gathered}
 $$
 where:
@@ -2361,7 +2361,7 @@ where:
 $$
 \begin{gathered}
 f_{cure,20,treaty} \\
-= \min\left(1,\frac{Treatments_{new,ann}\cdot \sum_y k_{capacity,y}}{D_{untreated}}\right)
+= \min\left(1,\frac{Treatments_{new,ann}\cdot \sum_y \min\left(k_{capacity}\cdot s_y/0.01,k_{physical}\right)}{D_{untreated}}\right)
 \end{gathered}
 $$
 where:
@@ -3335,7 +3335,7 @@ where:
 $$
 \begin{gathered}
 f_{cure,20,treaty} \\
-= \min\left(1,\frac{Treatments_{new,ann}\cdot \sum_y k_{capacity,y}}{D_{untreated}}\right)
+= \min\left(1,\frac{Treatments_{new,ann}\cdot \sum_y \min\left(k_{capacity}\cdot s_y/0.01,k_{physical}\right)}{D_{untreated}}\right)
 \end{gathered}
 $$
 where:

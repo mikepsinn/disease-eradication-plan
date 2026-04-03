@@ -4,7 +4,8 @@ Regression-based sensitivity showing which inputs explain the most variance in t
 
 | Input Parameter | Sensitivity Coefficient | Interpretation |
 |:----------------|------------------------:|:---------------|
-| Global Life Expectancy (2024) (years) | 4.0111 | Strong driver |
-| Global Healthy Life Expectancy (HALE) (years) | -3.0122 | Strong driver |
+| Wishonia Extra HALE Gain at Year 15 (years) | 0.9332 | Strong driver |
+| Global Life Expectancy (2024) (years) | 0.3782 | Moderate driver |
+| Global Healthy Life Expectancy (HALE) (years) | -0.2840 | Weak driver |
 
 *Interpretation*: Standardized coefficients show the change in output (in SD units) per 1 SD change in input. Values near ±1 indicate strong influence; values exceeding ±1 may occur with correlated inputs.

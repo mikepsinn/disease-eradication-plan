@@ -38,15 +38,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 634 parameters used in the analysis, organized by type:
+This appendix documents all 638 parameters used in the analysis, organized by type:
 
 - External sources (peer-reviewed): 207
-- Calculated values: 296
-- Core definitions: 131
+- Calculated values: 299
+- Core definitions: 132
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (296 parameters) • [External Data Sources](#sec-external) (207 parameters) • [Core Definitions](#sec-definitions) (131 parameters)
+[Calculated Values](#sec-calculated) (299 parameters) • [External Data Sources](#sec-external) (207 parameters) • [Core Definitions](#sec-definitions) (132 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -88,6 +88,40 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-additional_drugs_from_cost_elimination.qmd >}}
+
+:::
+
+### Best-Practice Life Expectancy Gain: 5.1 years {#sec-best_practice_life_expectancy_gain}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Gap between current global life expectancy and the best life expectancy achieved by a major country today. Used as a non-arbitrary governance/public-health uplift benchmark rather than capping Wishonia at today's global average.
+
+**Inputs**:
+
+- [Switzerland Life Expectancy](#sec-switzerland_life_expectancy) 📊: 84 years
+- [Singapore Life Expectancy](#sec-singapore_life_expectancy) 📊: 84.1 years
+- [Global Life Expectancy (2024)](#sec-global_life_expectancy_2024) 📊: 79 years (SE: ±2 years)
+
+$$
+\Delta LE_{best}=\max(LE_{CH}, LE_{SG})-LE_{global}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-best_practice_life_expectancy_gain.qmd >}}
+
+{{< include ../figures/sensitivity-table-best_practice_life_expectancy_gain.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-best_practice_life_expectancy_gain.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-best_practice_life_expectancy_gain.qmd >}}
 
 :::
 
@@ -601,7 +635,7 @@ $$
 
 :::
 
-### Contribution EV per Percentage Point (Treaty, Blended): $58.4K {#sec-contribution_ev_per_pct_point_treaty_blend}
+### Contribution EV per Percentage Point (Treaty, Blended): $67.4K {#sec-contribution_ev_per_pct_point_treaty_blend}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -609,7 +643,7 @@ Blended personal expected value per percentage point of implementation probabili
 
 **Inputs**:
 
-- [Treaty Personal Upside (Blended)](#sec-treaty_personal_upside_blend) 🔢: $5.84M
+- [Treaty Personal Upside (Blended)](#sec-treaty_personal_upside_blend) 🔢: $6.74M
 
 $$
 EV_{pp,treaty,blend} = Upside_{blend,treaty} \times 0.01
@@ -673,7 +707,7 @@ $$
 
 :::
 
-### Contribution EV per Percentage Point (Wishonia, Blended): $496K {#sec-contribution_ev_per_pct_point_wishonia_blend}
+### Contribution EV per Percentage Point (Wishonia, Blended): $512K {#sec-contribution_ev_per_pct_point_wishonia_blend}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -681,7 +715,7 @@ Blended personal expected value per percentage point of implementation probabili
 
 **Inputs**:
 
-- [Wishonia Personal Upside (Blended)](#sec-wishonia_personal_upside_blend) 🔢: $49.6M
+- [Wishonia Personal Upside (Blended)](#sec-wishonia_personal_upside_blend) 🔢: $51.2M
 
 $$
 EV_{pp,wish,blend} = Upside_{blend,wish} \times 0.01
@@ -10849,7 +10883,7 @@ where:
 $$
 \begin{gathered}
 f_{cure,20,treaty} \\
-= \min\left(1,\frac{Treatments_{new,ann}\cdot \sum_y k_{capacity,y}}{D_{untreated}}\right)
+= \min\left(1,\frac{Treatments_{new,ann}\cdot \sum_y \min\left(k_{capacity}\cdot s_y/0.01,k_{physical}\right)}{D_{untreated}}\right)
 \end{gathered}
 $$
 where:
@@ -11187,7 +11221,7 @@ where:
 $$
 \begin{gathered}
 f_{cure,20,treaty} \\
-= \min\left(1,\frac{Treatments_{new,ann}\cdot \sum_y k_{capacity,y}}{D_{untreated}}\right)
+= \min\left(1,\frac{Treatments_{new,ann}\cdot \sum_y \min\left(k_{capacity}\cdot s_y/0.01,k_{physical}\right)}{D_{untreated}}\right)
 \end{gathered}
 $$
 where:
@@ -11573,7 +11607,7 @@ where:
 $$
 \begin{gathered}
 f_{cure,20,treaty} \\
-= \min\left(1,\frac{Treatments_{new,ann}\cdot \sum_y k_{capacity,y}}{D_{untreated}}\right)
+= \min\left(1,\frac{Treatments_{new,ann}\cdot \sum_y \min\left(k_{capacity}\cdot s_y/0.01,k_{physical}\right)}{D_{untreated}}\right)
 \end{gathered}
 $$
 where:
@@ -12915,7 +12949,7 @@ $$
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Treaty disease-cure fraction over 15 years under the optimistic treaty take-hold path. The initial 1% treaty expands to 2%, then 5%, then 10%, and cumulative trial throughput is capped by the physical participant ceiling.
+Treaty disease-cure fraction over 15 years under the optimistic treaty take-hold path. The initial 1% treaty expands to 2%, then 5%, then 10%, with trial-throughput scaling linearly with treaty funding until it hits the physical participant ceiling. Cumulative throughput is capped by the physical participant ceiling.
 
 **Inputs**:
 
@@ -12927,7 +12961,7 @@ Treaty disease-cure fraction over 15 years under the optimistic treaty take-hold
 $$
 \begin{gathered}
 f_{cure,15,treaty} \\
-= \min\left(1,\frac{Treatments_{new,ann}\cdot \sum_y k_{capacity,y}}{D_{untreated}}\right)
+= \min\left(1,\frac{Treatments_{new,ann}\cdot \sum_y \min\left(k_{capacity}\cdot s_y/0.01,k_{physical}\right)}{D_{untreated}}\right)
 \end{gathered}
 $$
 
@@ -12953,7 +12987,7 @@ $$
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Treaty disease-cure fraction over 20 years under the optimistic treaty take-hold path. The initial 1% treaty expands to 2%, then 5%, then 10%, and cumulative trial throughput is capped by the physical participant ceiling.
+Treaty disease-cure fraction over 20 years under the optimistic treaty take-hold path. The initial 1% treaty expands to 2%, then 5%, then 10%, with trial-throughput scaling linearly with treaty funding until it hits the physical participant ceiling. Cumulative throughput is capped by the physical participant ceiling.
 
 **Inputs**:
 
@@ -12965,7 +12999,7 @@ Treaty disease-cure fraction over 20 years under the optimistic treaty take-hold
 $$
 \begin{gathered}
 f_{cure,20,treaty} \\
-= \min\left(1,\frac{Treatments_{new,ann}\cdot \sum_y k_{capacity,y}}{D_{untreated}}\right)
+= \min\left(1,\frac{Treatments_{new,ann}\cdot \sum_y \min\left(k_{capacity}\cdot s_y/0.01,k_{physical}\right)}{D_{untreated}}\right)
 \end{gathered}
 $$
 
@@ -13439,22 +13473,24 @@ $$
 
 :::
 
-### Treaty HALE Gain at Year 15: 15.7 years {#sec-treaty_hale_gain_year_15}
+### Treaty HALE Gain at Year 15: 21.7 years {#sec-treaty_hale_gain_year_15}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-HALE improvement at year 15 under Treaty Trajectory. As diseases are progressively cured, the gap between life expectancy and healthy life expectancy closes proportionally to the disease cure fraction.
+HALE improvement at year 15 under Treaty Trajectory. It includes both closing the current HALE gap from disease/disability and a conservative partial realization of longer-run longevity gains.
 
 **Inputs**:
 
 - [Treaty Disease Cure Fraction (15yr, Take-Hold Path)](#sec-treaty_disease_cure_fraction_15yr) 🔢: 100%
 - [Global Healthy Life Expectancy (HALE)](#sec-global_hale_current) 📊: 63.3 years (SE: ±1.5 years)
 - [Global Life Expectancy (2024)](#sec-global_life_expectancy_2024) 📊: 79 years (SE: ±2 years)
+- [Treaty Longevity HALE Gain at Year 15](#sec-treaty_longevity_hale_gain_year_15) 🔢: 6 years
 
 $$
 \begin{gathered}
 \Delta HALE_{treaty,15} \\
-= f_{cure,15,treaty} \cdot \Delta_{HALE}
+= f_{cure,15,treaty}\cdot\Delta_{HALE} \\
++ \Delta HALE_{treaty,longevity,15}
 \end{gathered}
 $$
 
@@ -13483,7 +13519,7 @@ $$
 
 :::
 
-### Treaty HALE Value Per Capita: $2.36M {#sec-treaty_hale_value_per_capita}
+### Treaty HALE Value Per Capita: $3.26M {#sec-treaty_hale_value_per_capita}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -13491,29 +13527,30 @@ Economic value of Treaty Trajectory HALE gains at year 15 using the standard QAL
 
 **Inputs**:
 
-- [Treaty HALE Gain at Year 15](#sec-treaty_hale_gain_year_15) 🔢: 15.7 years
+- [Treaty HALE Gain at Year 15](#sec-treaty_hale_gain_year_15) 🔢: 21.7 years
 - [Standard Economic Value per QALY](#sec-standard_economic_qaly_value_usd) 📊: $150K (SE: ±$30K)
 
 $$
 \begin{gathered}
 Value_{HALE,treaty} \\
 = \Delta HALE_{treaty,15} \times Value_{QALY} \\
-= 15.7 \times \$150K \\
-= \$2.36M
+= 21.7 \times \$150K \\
+= \$3.26M
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
 \Delta HALE_{treaty,15} \\
-= f_{cure,15,treaty} \cdot \Delta_{HALE}
+= f_{cure,15,treaty}\cdot\Delta_{HALE} \\
++ \Delta HALE_{treaty,longevity,15}
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
 f_{cure,15,treaty} \\
-= \min\left(1,\frac{Treatments_{new,ann}\cdot \sum_y k_{capacity,y}}{D_{untreated}}\right)
+= \min\left(1,\frac{Treatments_{new,ann}\cdot \sum_y \min\left(k_{capacity}\cdot s_y/0.01,k_{physical}\right)}{D_{untreated}}\right)
 \end{gathered}
 $$
 where:
@@ -13578,6 +13615,13 @@ N_{untreated} \\
 = N_{rare} \times 0.95 \\
 = 7{,}000 \times 0.95 \\
 = 6{,}650
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+\Delta HALE_{treaty,longevity,15} \\
+= T_{extend}\cdot\rho_{HALE,15}\cdot f_{cure,15,treaty}
 \end{gathered}
 $$
 *✓ High confidence*
@@ -13724,6 +13768,43 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-treaty_lives_saved_annual_global.qmd >}}
+
+:::
+
+### Treaty Longevity HALE Gain at Year 15: 6 years {#sec-treaty_longevity_hale_gain_year_15}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Additional healthy years at year 15 from partial realization of longer-run treaty longevity gains. This removes the implicit cap at today's life expectancy while keeping year-15 realization conservative.
+
+**Inputs**:
+
+- [Life Extension from Treaty Research Acceleration](#sec-life_extension_years) 📊: 20 years (95% CI: 5 years - 100 years)
+- [HALE Longevity Realization Share (Year 15)](#sec-hale_longevity_realization_share_year_15): 30%
+- [Treaty Disease Cure Fraction (15yr, Take-Hold Path)](#sec-treaty_disease_cure_fraction_15yr) 🔢: 100%
+
+$$
+\begin{gathered}
+\Delta HALE_{treaty,longevity,15} \\
+= T_{extend}\cdot\rho_{HALE,15}\cdot f_{cure,15,treaty}
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-treaty_longevity_hale_gain_year_15.qmd >}}
+
+{{< include ../figures/sensitivity-table-treaty_longevity_hale_gain_year_15.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-treaty_longevity_hale_gain_year_15.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-treaty_longevity_hale_gain_year_15.qmd >}}
 
 :::
 
@@ -13960,7 +14041,7 @@ $$
 
 :::
 
-### Treaty Personal Upside (Blended): $5.84M {#sec-treaty_personal_upside_blend}
+### Treaty Personal Upside (Blended): $6.74M {#sec-treaty_personal_upside_blend}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -13969,14 +14050,14 @@ Blended personal upside under Treaty Trajectory: lifetime income gain plus value
 **Inputs**:
 
 - [Treaty Trajectory Lifetime Income Gain (Per Capita)](#sec-treaty_trajectory_lifetime_income_gain_per_capita) 🔢: $3.48M
-- [Treaty HALE Value Per Capita](#sec-treaty_hale_value_per_capita) 🔢: $2.36M
+- [Treaty HALE Value Per Capita](#sec-treaty_hale_value_per_capita) 🔢: $3.26M
 
 $$
 \begin{gathered}
 Upside_{blend,treaty} \\
 = \Delta Y_{lifetime,treaty} + Value_{HALE,treaty} \\
-= \$3.48M + \$2.36M \\
-= \$5.84M
+= \$3.48M + \$3.26M \\
+= \$6.74M
 \end{gathered}
 $$
 where:
@@ -14145,7 +14226,7 @@ where:
 $$
 \begin{gathered}
 f_{cure,20,treaty} \\
-= \min\left(1,\frac{Treatments_{new,ann}\cdot \sum_y k_{capacity,y}}{D_{untreated}}\right)
+= \min\left(1,\frac{Treatments_{new,ann}\cdot \sum_y \min\left(k_{capacity}\cdot s_y/0.01,k_{physical}\right)}{D_{untreated}}\right)
 \end{gathered}
 $$
 where:
@@ -14273,22 +14354,30 @@ $$
 \begin{gathered}
 Value_{HALE,treaty} \\
 = \Delta HALE_{treaty,15} \times Value_{QALY} \\
-= 15.7 \times \$150K \\
-= \$2.36M
+= 21.7 \times \$150K \\
+= \$3.26M
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
 \Delta HALE_{treaty,15} \\
-= f_{cure,15,treaty} \cdot \Delta_{HALE}
+= f_{cure,15,treaty}\cdot\Delta_{HALE} \\
++ \Delta HALE_{treaty,longevity,15}
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
 f_{cure,15,treaty} \\
-= \min\left(1,\frac{Treatments_{new,ann}\cdot \sum_y k_{capacity,y}}{D_{untreated}}\right)
+= \min\left(1,\frac{Treatments_{new,ann}\cdot \sum_y \min\left(k_{capacity}\cdot s_y/0.01,k_{physical}\right)}{D_{untreated}}\right)
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+\Delta HALE_{treaty,longevity,15} \\
+= T_{extend}\cdot\rho_{HALE,15}\cdot f_{cure,15,treaty}
 \end{gathered}
 $$
 *✓ High confidence*
@@ -14315,7 +14404,7 @@ $$
 
 :::
 
-### Treaty Projected HALE at Year 15: 79 years {#sec-treaty_projected_hale_year_15}
+### Treaty Projected HALE at Year 15: 85 years {#sec-treaty_projected_hale_year_15}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -14324,7 +14413,7 @@ Projected global HALE at year 15 under Treaty Trajectory. Current HALE plus the 
 **Inputs**:
 
 - [Global Healthy Life Expectancy (HALE)](#sec-global_hale_current) 📊: 63.3 years (SE: ±1.5 years)
-- [Treaty HALE Gain at Year 15](#sec-treaty_hale_gain_year_15) 🔢: 15.7 years
+- [Treaty HALE Gain at Year 15](#sec-treaty_hale_gain_year_15) 🔢: 21.7 years
 
 $$
 HALE_{treaty,15} = HALE_0 + \Delta HALE_{treaty,15}
@@ -15090,7 +15179,7 @@ where:
 $$
 \begin{gathered}
 f_{cure,15,treaty} \\
-= \min\left(1,\frac{Treatments_{new,ann}\cdot \sum_y k_{capacity,y}}{D_{untreated}}\right)
+= \min\left(1,\frac{Treatments_{new,ann}\cdot \sum_y \min\left(k_{capacity}\cdot s_y/0.01,k_{physical}\right)}{D_{untreated}}\right)
 \end{gathered}
 $$
 where:
@@ -15361,7 +15450,7 @@ where:
 $$
 \begin{gathered}
 f_{cure,20,treaty} \\
-= \min\left(1,\frac{Treatments_{new,ann}\cdot \sum_y k_{capacity,y}}{D_{untreated}}\right)
+= \min\left(1,\frac{Treatments_{new,ann}\cdot \sum_y \min\left(k_{capacity}\cdot s_y/0.01,k_{physical}\right)}{D_{untreated}}\right)
 \end{gathered}
 $$
 where:
@@ -15752,7 +15841,7 @@ where:
 $$
 \begin{gathered}
 f_{cure,20,treaty} \\
-= \min\left(1,\frac{Treatments_{new,ann}\cdot \sum_y k_{capacity,y}}{D_{untreated}}\right)
+= \min\left(1,\frac{Treatments_{new,ann}\cdot \sum_y \min\left(k_{capacity}\cdot s_y/0.01,k_{physical}\right)}{D_{untreated}}\right)
 \end{gathered}
 $$
 where:
@@ -15898,8 +15987,12 @@ $$
 - [Your Personal Benefits](../call-to-action/your-personal-benefits.html)
 - [The Initiating Node Memo](../strategy/initiating-node-memo.html)
 - [Earth Optimization Protocol v1](../strategy/earth-optimization-protocol-v1.html)
+- [Peace Dividend](../economics/peace-dividend.html)
+- [Frequently Asked Objections](../appendix/faq.html)
 - [Earth Optimization Prize 90-Day Pilot](../grant-proposal/earth-optimization-prize-90-day-pilot.html)
+- [Conclusion](../appendix/conclusion.html)
 - [Please Select an Earth: A) Everyone Gets Rich B) Somalia, but Everywhere](../economics/gdp-trajectories.html)
+- [Health Dividend](../economics/health-dividend.html)
 
 :::
 
@@ -16079,7 +16172,7 @@ where:
 $$
 \begin{gathered}
 f_{cure,20,treaty} \\
-= \min\left(1,\frac{Treatments_{new,ann}\cdot \sum_y k_{capacity,y}}{D_{untreated}}\right)
+= \min\left(1,\frac{Treatments_{new,ann}\cdot \sum_y \min\left(k_{capacity}\cdot s_y/0.01,k_{physical}\right)}{D_{untreated}}\right)
 \end{gathered}
 $$
 where:
@@ -16222,7 +16315,9 @@ $$
 
 - [Recruitment & Propaganda Plan](../appendix/recruitment-and-propaganda-plan.html)
 - [The Earth Optimization Prize](../strategy/earth-optimization-prize.html)
+- [Peace Dividend](../economics/peace-dividend.html)
 - [Please Select an Earth: A) Everyone Gets Rich B) Somalia, but Everywhere](../economics/gdp-trajectories.html)
+- [Health Dividend](../economics/health-dividend.html)
 
 :::
 
@@ -19257,20 +19352,64 @@ $$
 
 :::
 
-### Wishonia HALE Gain at Year 15: 15.7 years {#sec-wishonia_hale_gain_year_15}
+### Wishonia Extra HALE Gain at Year 15: 11.1 years {#sec-wishonia_extra_hale_gain_year_15}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-HALE improvement at year 15 under Wishonia Trajectory. Full implementation cures a larger fraction of diseases, closing more of the HALE gap.
+Additional healthy years at year 15 from optimal-governance public-health improvements plus partial realization of longer-run longevity gains. This removes the implicit cap at today's life expectancy and lets Wishonia exceed it for non-arbitrary reasons.
+
+**Inputs**:
+
+- [Wishonia Disease Cure Fraction (15yr, Full Implementation)](#sec-wishonia_disease_cure_fraction_15yr) 🔢: 100%
+- [Best-Practice Life Expectancy Gain](#sec-best_practice_life_expectancy_gain) 🔢: 5.1 years
+- [Life Extension from Treaty Research Acceleration](#sec-life_extension_years) 📊: 20 years (95% CI: 5 years - 100 years)
+- [HALE Longevity Realization Share (Year 15)](#sec-hale_longevity_realization_share_year_15): 30%
+
+$$
+\begin{gathered}
+\Delta HALE_{wish,extra,15} \\
+= f_{cure,15,wish}\cdot\left(\Delta LE_{best} \\
++ T_{extend}\cdot\rho_{HALE,15}\right)
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-wishonia_extra_hale_gain_year_15.qmd >}}
+
+{{< include ../figures/sensitivity-table-wishonia_extra_hale_gain_year_15.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-wishonia_extra_hale_gain_year_15.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-wishonia_extra_hale_gain_year_15.qmd >}}
+
+:::
+
+### Wishonia HALE Gain at Year 15: 26.8 years {#sec-wishonia_hale_gain_year_15}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+HALE improvement at year 15 under Wishonia Trajectory. It includes closing the current HALE gap, reaching today's best-practice life expectancy through optimal governance/public health, and a conservative partial realization of longer-run longevity gains.
 
 **Inputs**:
 
 - [Wishonia Disease Cure Fraction (15yr, Full Implementation)](#sec-wishonia_disease_cure_fraction_15yr) 🔢: 100%
 - [Global Healthy Life Expectancy (HALE)](#sec-global_hale_current) 📊: 63.3 years (SE: ±1.5 years)
 - [Global Life Expectancy (2024)](#sec-global_life_expectancy_2024) 📊: 79 years (SE: ±2 years)
+- [Wishonia Extra HALE Gain at Year 15](#sec-wishonia_extra_hale_gain_year_15) 🔢: 11.1 years
 
 $$
-\Delta HALE_{wish,15} = f_{cure,15,wish} \cdot \Delta_{HALE}
+\begin{gathered}
+\Delta HALE_{wish,15} \\
+= f_{cure,15,wish}\cdot\Delta_{HALE} \\
++ \Delta HALE_{wish,extra,15}
+\end{gathered}
 $$
 
 *✓ High confidence*
@@ -19298,7 +19437,7 @@ $$
 
 :::
 
-### Wishonia HALE Value Per Capita: $2.36M {#sec-wishonia_hale_value_per_capita}
+### Wishonia HALE Value Per Capita: $4.02M {#sec-wishonia_hale_value_per_capita}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -19306,20 +19445,24 @@ Economic value of Wishonia Trajectory HALE gains at year 15 using the standard Q
 
 **Inputs**:
 
-- [Wishonia HALE Gain at Year 15](#sec-wishonia_hale_gain_year_15) 🔢: 15.7 years
+- [Wishonia HALE Gain at Year 15](#sec-wishonia_hale_gain_year_15) 🔢: 26.8 years
 - [Standard Economic Value per QALY](#sec-standard_economic_qaly_value_usd) 📊: $150K (SE: ±$30K)
 
 $$
 \begin{gathered}
 Value_{HALE,wish} \\
 = \Delta HALE_{wish,15} \times Value_{QALY} \\
-= 15.7 \times \$150K \\
-= \$2.36M
+= 26.8 \times \$150K \\
+= \$4.02M
 \end{gathered}
 $$
 where:
 $$
-\Delta HALE_{wish,15} = f_{cure,15,wish} \cdot \Delta_{HALE}
+\begin{gathered}
+\Delta HALE_{wish,15} \\
+= f_{cure,15,wish}\cdot\Delta_{HALE} \\
++ \Delta HALE_{wish,extra,15}
+\end{gathered}
 $$
 where:
 $$
@@ -19405,6 +19548,18 @@ N_{untreated} \\
 = 6{,}650
 \end{gathered}
 $$
+where:
+$$
+\begin{gathered}
+\Delta HALE_{wish,extra,15} \\
+= f_{cure,15,wish}\cdot\left(\Delta LE_{best} \\
++ T_{extend}\cdot\rho_{HALE,15}\right)
+\end{gathered}
+$$
+where:
+$$
+\Delta LE_{best}=\max(LE_{CH}, LE_{SG})-LE_{global}
+$$
 *✓ High confidence*
 
 #### Sensitivity Analysis
@@ -19458,7 +19613,7 @@ $$
 
 :::
 
-### Wishonia Personal Upside (Blended): $49.6M {#sec-wishonia_personal_upside_blend}
+### Wishonia Personal Upside (Blended): $51.2M {#sec-wishonia_personal_upside_blend}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -19467,14 +19622,14 @@ Blended personal upside under Wishonia Trajectory: lifetime income gain plus val
 **Inputs**:
 
 - [Wishonia Trajectory Lifetime Income Gain (Per Capita)](#sec-wishonia_trajectory_lifetime_income_gain_per_capita) 🔢: $47.2M
-- [Wishonia HALE Value Per Capita](#sec-wishonia_hale_value_per_capita) 🔢: $2.36M
+- [Wishonia HALE Value Per Capita](#sec-wishonia_hale_value_per_capita) 🔢: $4.02M
 
 $$
 \begin{gathered}
 Upside_{blend,wish} \\
 = \Delta Y_{lifetime,wish} + Value_{HALE,wish} \\
-= \$47.2M + \$2.36M \\
-= \$49.6M
+= \$47.2M + \$4.02M \\
+= \$51.2M
 \end{gathered}
 $$
 where:
@@ -19629,13 +19784,17 @@ $$
 \begin{gathered}
 Value_{HALE,wish} \\
 = \Delta HALE_{wish,15} \times Value_{QALY} \\
-= 15.7 \times \$150K \\
-= \$2.36M
+= 26.8 \times \$150K \\
+= \$4.02M
 \end{gathered}
 $$
 where:
 $$
-\Delta HALE_{wish,15} = f_{cure,15,wish} \cdot \Delta_{HALE}
+\begin{gathered}
+\Delta HALE_{wish,15} \\
+= f_{cure,15,wish}\cdot\Delta_{HALE} \\
++ \Delta HALE_{wish,extra,15}
+\end{gathered}
 $$
 where:
 $$
@@ -19643,6 +19802,18 @@ $$
 f_{cure,15,wish} \\
 = \min\left(1,\frac{Treatments_{new,ann}\cdot k_{capacity,wish}\cdot 15}{D_{untreated}}\right)
 \end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+\Delta HALE_{wish,extra,15} \\
+= f_{cure,15,wish}\cdot\left(\Delta LE_{best} \\
++ T_{extend}\cdot\rho_{HALE,15}\right)
+\end{gathered}
+$$
+where:
+$$
+\Delta LE_{best}=\max(LE_{CH}, LE_{SG})-LE_{global}
 $$
 *✓ High confidence*
 
@@ -19667,7 +19838,7 @@ $$
 
 :::
 
-### Wishonia Projected HALE at Year 15: 79 years {#sec-wishonia_projected_hale_year_15}
+### Wishonia Projected HALE at Year 15: 90.1 years {#sec-wishonia_projected_hale_year_15}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -19676,7 +19847,7 @@ Projected global HALE at year 15 under Wishonia Trajectory. Full implementation 
 **Inputs**:
 
 - [Global Healthy Life Expectancy (HALE)](#sec-global_hale_current) 📊: 63.3 years (SE: ±1.5 years)
-- [Wishonia HALE Gain at Year 15](#sec-wishonia_hale_gain_year_15) 🔢: 15.7 years
+- [Wishonia HALE Gain at Year 15](#sec-wishonia_hale_gain_year_15) 🔢: 26.8 years
 
 $$
 HALE_{wish,15} = HALE_0 + \Delta HALE_{wish,15}
@@ -20864,7 +21035,7 @@ where:
 $$
 \begin{gathered}
 f_{cure,20,treaty} \\
-= \min\left(1,\frac{Treatments_{new,ann}\cdot \sum_y k_{capacity,y}}{D_{untreated}}\right)
+= \min\left(1,\frac{Treatments_{new,ann}\cdot \sum_y \min\left(k_{capacity}\cdot s_y/0.01,k_{physical}\right)}{D_{untreated}}\right)
 \end{gathered}
 $$
 where:
@@ -21562,9 +21733,9 @@ dFDA pragmatic trial cost per patient. Uses ADAPTABLE trial ($929) as DELIBERATE
 - [The Continuous Evidence Generation Protocol: Two-Stage Validation (RWE → Pragmatic Trials)](../appendix/dfda-spec-paper.html)
 - [A Decentralized FDA](../solution/dfda.html)
 - [Earth Optimization Protocol v1](../strategy/earth-optimization-protocol-v1.html)
+- [A 1% Treaty](../solution/1-percent-treaty.html)
 - [The Earth Optimization Prize](../strategy/earth-optimization-prize.html)
 - [Optimization Summary](../solution.html)
-- [A 1% Treaty](../solution/1-percent-treaty.html)
 - [Aligning Incentives](../solution/aligning-incentives.html)
 - [The Proof: Overview](../proof.html)
 - [Frequently Asked Objections](../appendix/faq.html)
@@ -24750,11 +24921,11 @@ Phase 3 cost per patient (median from FDA study)
 - [The Optimal Budget Generator: A Causal Inference Protocol for Maximizing Median Health and Wealth Through Public Goods Funding](../appendix/optimal-budget-generator-spec.html)
 - [NIH Fails to Institute Health](../problem/nih-fails-2-institute-health.html)
 - [The Untapped Therapeutic Frontier](../problem/untapped-therapeutic-frontier.html)
+- [A 1% Treaty](../solution/1-percent-treaty.html)
 - [Aligning Incentives](../solution/aligning-incentives.html)
 - [The Continuous Evidence Generation Protocol: Two-Stage Validation (RWE → Pragmatic Trials)](../appendix/dfda-spec-paper.html)
 - [Your FDA Is Unsafe and Ineffective](../problem/fda-is-unsafe-and-ineffective.html)
 - [Optimization Summary](../solution.html)
-- [A 1% Treaty](../solution/1-percent-treaty.html)
 - [The Proof: Overview](../proof.html)
 - [Frequently Asked Objections](../appendix/faq.html)
 - [Health Dividend](../economics/health-dividend.html)
@@ -27493,6 +27664,20 @@ Ratio of global to US political reform costs. Based on discretionary spending ra
 #### Input Distribution
 
 {{< include ../figures/distribution-global_to_us_political_cost_ratio.qmd >}}
+
+*Core definition*
+
+:::
+
+### HALE Longevity Realization Share (Year 15): 30% {#sec-hale_longevity_realization_share_year_15}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Share of longer-run life-extension gains that have plausibly materialized into healthy years by year 15. Calibrated to the repo's conservative disease-eradication helper, which implies that only a minority of eventual longevity gains are realized within the first 15 years even under rapid research acceleration.
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
 
 *Core definition*
 

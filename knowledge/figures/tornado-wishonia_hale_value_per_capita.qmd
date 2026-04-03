@@ -20,14 +20,14 @@ display_name = "Wishonia HALE Value Per Capita"
 
 # Baseline and units
 
-baseline = 2355000.0000000005
+baseline = 4019999.9999999995
 
 # Tornado data from sensitivity analysis
 
-drivers = ['STANDARD_ECONOMIC_QALY_VALUE_USD', 'GLOBAL_LIFE_EXPECTANCY_2024', 'GLOBAL_HALE_CURRENT', 'CURRENT_DISEASE_PATIENTS_GLOBAL', 'CURRENT_TRIAL_SLOTS_AVAILABLE', 'DFDA_OPEX_COMMUNITY', 'DFDA_OPEX_INFRASTRUCTURE', 'DFDA_OPEX_PLATFORM_MAINTENANCE', 'DFDA_OPEX_REGULATORY', 'DFDA_OPEX_STAFF', 'DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT', 'NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR', 'PATIENT_WILLINGNESS_TRIAL_PARTICIPATION_PCT', 'RARE_DISEASES_COUNT_GLOBAL']
-driver_labels = ['Standard Economic Value per QALY', 'Global Life Expectancy (2024)', 'Global Healthy Life Expectancy (HALE)', 'Global Population with Chronic Diseases', 'Annual Global Clinical Trial Participants', 'Decentralized Framework for Drug Assessment Community Support Costs', 'Decentralized Framework for Drug Assessment Infrastructure Costs', 'Decentralized Framework for Drug Assessment Maintenance Costs', 'Decentralized Framework for Drug Assessment Regulatory Coordination Costs', 'Decentralized Framework for Drug Assessment Staff Costs', 'dFDA Pragmatic Trial Cost per Patient', 'Diseases Getting First Treatment Per Year', 'Patient Willingness to Participate in Clinical Trials', 'Total Number of Rare Diseases Globally']
-impacts_low = [-471000.00000000023, -300000.0, 225000.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-impacts_high = [471000.0, 300000.0, -225000.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+drivers = ['LIFE_EXTENSION_YEARS', 'STANDARD_ECONOMIC_QALY_VALUE_USD', 'GLOBAL_HALE_CURRENT', 'CURRENT_DISEASE_PATIENTS_GLOBAL', 'CURRENT_TRIAL_SLOTS_AVAILABLE', 'DFDA_OPEX_COMMUNITY', 'DFDA_OPEX_INFRASTRUCTURE', 'DFDA_OPEX_PLATFORM_MAINTENANCE', 'DFDA_OPEX_REGULATORY', 'DFDA_OPEX_STAFF', 'DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT', 'GLOBAL_LIFE_EXPECTANCY_2024', 'NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR', 'PATIENT_WILLINGNESS_TRIAL_PARTICIPATION_PCT', 'RARE_DISEASES_COUNT_GLOBAL']
+driver_labels = ['Life Extension from Treaty Research Acceleration', 'Standard Economic Value per QALY', 'Global Healthy Life Expectancy (HALE)', 'Global Population with Chronic Diseases', 'Annual Global Clinical Trial Participants', 'Decentralized Framework for Drug Assessment Community Support Costs', 'Decentralized Framework for Drug Assessment Infrastructure Costs', 'Decentralized Framework for Drug Assessment Maintenance Costs', 'Decentralized Framework for Drug Assessment Regulatory Coordination Costs', 'Decentralized Framework for Drug Assessment Staff Costs', 'dFDA Pragmatic Trial Cost per Patient', 'Global Life Expectancy (2024)', 'Diseases Getting First Treatment Per Year', 'Patient Willingness to Participate in Clinical Trials', 'Total Number of Rare Diseases Globally']
+impacts_low = [-675000.0, -804000.0, 225000.00000000047, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+impacts_high = [3600000.0000000005, 803999.9999999995, -225000.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
 
 # Convert deltas to absolute values (baseline + delta)
 

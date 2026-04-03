@@ -8723,12 +8723,13 @@ TREATY_DISEASE_CURE_FRACTION_20YR = Parameter(
     ),
     source_type="calculated",
     description="Treaty disease-cure fraction over 20 years under the optimistic treaty take-hold path. "
-                "The initial 1% treaty expands to 2%, then 5%, then 10%, and cumulative trial throughput "
-                "is capped by the physical participant ceiling.",
+                "The initial 1% treaty expands to 2%, then 5%, then 10%, with trial-throughput scaling linearly "
+                "with treaty funding until it hits the physical participant ceiling. "
+                "Cumulative throughput is capped by the physical participant ceiling.",
     display_name="Treaty Disease Cure Fraction (20yr, Take-Hold Path)",
     unit="rate",
     formula="min(1.0, NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR × (3×min(DFDA_TRIAL_CAPACITY_MULTIPLIER×1, DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL) + 4×min(DFDA_TRIAL_CAPACITY_MULTIPLIER×2, DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL) + 5×min(DFDA_TRIAL_CAPACITY_MULTIPLIER×5, DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL) + 8×min(DFDA_TRIAL_CAPACITY_MULTIPLIER×10, DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL)) ÷ DISEASES_WITHOUT_EFFECTIVE_TREATMENT)",
-    latex=r"f_{cure,20,treaty}=\min\left(1,\frac{Treatments_{new,ann}\cdot \sum_y k_{capacity,y}}{D_{untreated}}\right)",
+    latex=r"f_{cure,20,treaty}=\min\left(1,\frac{Treatments_{new,ann}\cdot \sum_y \min\left(k_{capacity}\cdot s_y/0.01,k_{physical}\right)}{D_{untreated}}\right)",
     inputs=[
         "NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR",
         "DFDA_TRIAL_CAPACITY_MULTIPLIER",
@@ -9218,12 +9219,13 @@ TREATY_DISEASE_CURE_FRACTION_15YR = Parameter(
     ),
     source_type="calculated",
     description="Treaty disease-cure fraction over 15 years under the optimistic treaty take-hold path. "
-                "The initial 1% treaty expands to 2%, then 5%, then 10%, and cumulative trial throughput "
-                "is capped by the physical participant ceiling.",
+                "The initial 1% treaty expands to 2%, then 5%, then 10%, with trial-throughput scaling linearly "
+                "with treaty funding until it hits the physical participant ceiling. "
+                "Cumulative throughput is capped by the physical participant ceiling.",
     display_name="Treaty Disease Cure Fraction (15yr, Take-Hold Path)",
     unit="rate",
     formula="min(1.0, NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR × (3×min(DFDA_TRIAL_CAPACITY_MULTIPLIER×1, DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL) + 4×min(DFDA_TRIAL_CAPACITY_MULTIPLIER×2, DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL) + 5×min(DFDA_TRIAL_CAPACITY_MULTIPLIER×5, DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL) + 3×min(DFDA_TRIAL_CAPACITY_MULTIPLIER×10, DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL)) ÷ DISEASES_WITHOUT_EFFECTIVE_TREATMENT)",
-    latex=r"f_{cure,15,treaty}=\min\left(1,\frac{Treatments_{new,ann}\cdot \sum_y k_{capacity,y}}{D_{untreated}}\right)",
+    latex=r"f_{cure,15,treaty}=\min\left(1,\frac{Treatments_{new,ann}\cdot \sum_y \min\left(k_{capacity}\cdot s_y/0.01,k_{physical}\right)}{D_{untreated}}\right)",
     inputs=[
         "NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR",
         "DFDA_TRIAL_CAPACITY_MULTIPLIER",
@@ -9671,33 +9673,106 @@ GLOBAL_HALE_GAP = Parameter(
     latex_symbol=r"\Delta_{HALE}",
 )
 
-TREATY_HALE_GAIN_YEAR_15 = Parameter(
-    TREATY_DISEASE_CURE_FRACTION_15YR * (float(GLOBAL_LIFE_EXPECTANCY_2024) - 63.3),
+HALE_LONGEVITY_REALIZATION_SHARE_YEAR_15 = Parameter(
+    0.30,
+    source_type="definition",
+    distribution="fixed",
+    description="Share of longer-run life-extension gains that have plausibly materialized into healthy years by year 15. "
+                "Calibrated to the repo's conservative disease-eradication helper, which implies that only a minority "
+                "of eventual longevity gains are realized within the first 15 years even under rapid research acceleration.",
+    display_name="HALE Longevity Realization Share (Year 15)",
+    unit="rate",
+    formula="0.30",
+    keywords=["HALE", "longevity", "realization", "15 year", "health span"],
+    latex_symbol=r"\rho_{HALE,15}",
+)
+
+BEST_PRACTICE_LIFE_EXPECTANCY_GAIN = Parameter(
+    max(float(SWITZERLAND_LIFE_EXPECTANCY), float(SINGAPORE_LIFE_EXPECTANCY)) - float(GLOBAL_LIFE_EXPECTANCY_2024),
     source_type="calculated",
-    description="HALE improvement at year 15 under Treaty Trajectory. As diseases are progressively cured, "
-                "the gap between life expectancy and healthy life expectancy closes proportionally to the "
-                "disease cure fraction.",
+    description="Gap between current global life expectancy and the best life expectancy achieved by a major country today. "
+                "Used as a non-arbitrary governance/public-health uplift benchmark rather than capping Wishonia at today's global average.",
+    display_name="Best-Practice Life Expectancy Gain",
+    unit="years",
+    formula="max(SWITZERLAND_LIFE_EXPECTANCY, SINGAPORE_LIFE_EXPECTANCY) - GLOBAL_LIFE_EXPECTANCY_2024",
+    latex=r"\Delta LE_{best}=\max(LE_{CH}, LE_{SG})-LE_{global}",
+    inputs=["SWITZERLAND_LIFE_EXPECTANCY", "SINGAPORE_LIFE_EXPECTANCY", "GLOBAL_LIFE_EXPECTANCY_2024"],
+    compute=lambda ctx: max(ctx["SWITZERLAND_LIFE_EXPECTANCY"], ctx["SINGAPORE_LIFE_EXPECTANCY"]) - ctx["GLOBAL_LIFE_EXPECTANCY_2024"],
+    keywords=["life expectancy", "best practice", "governance", "benchmark", "health"],
+    latex_symbol=r"\Delta LE_{best}",
+)
+
+TREATY_LONGEVITY_HALE_GAIN_YEAR_15 = Parameter(
+    LIFE_EXTENSION_YEARS * HALE_LONGEVITY_REALIZATION_SHARE_YEAR_15 * TREATY_DISEASE_CURE_FRACTION_15YR,
+    source_type="calculated",
+    description="Additional healthy years at year 15 from partial realization of longer-run treaty longevity gains. "
+                "This removes the implicit cap at today's life expectancy while keeping year-15 realization conservative.",
+    display_name="Treaty Longevity HALE Gain at Year 15",
+    unit="years",
+    formula="LIFE_EXTENSION_YEARS × HALE_LONGEVITY_REALIZATION_SHARE_YEAR_15 × TREATY_DISEASE_CURE_FRACTION_15YR",
+    latex=r"\Delta HALE_{treaty,longevity,15}=T_{extend}\cdot\rho_{HALE,15}\cdot f_{cure,15,treaty}",
+    inputs=["LIFE_EXTENSION_YEARS", "HALE_LONGEVITY_REALIZATION_SHARE_YEAR_15", "TREATY_DISEASE_CURE_FRACTION_15YR"],
+    compute=lambda ctx: ctx["LIFE_EXTENSION_YEARS"] * ctx["HALE_LONGEVITY_REALIZATION_SHARE_YEAR_15"] * ctx["TREATY_DISEASE_CURE_FRACTION_15YR"],
+    keywords=["HALE", "treaty", "longevity", "healthy years", "year 15"],
+    latex_symbol=r"\Delta HALE_{treaty,longevity,15}",
+)
+
+WISHONIA_EXTRA_HALE_GAIN_YEAR_15 = Parameter(
+    WISHONIA_DISEASE_CURE_FRACTION_15YR * (BEST_PRACTICE_LIFE_EXPECTANCY_GAIN + LIFE_EXTENSION_YEARS * HALE_LONGEVITY_REALIZATION_SHARE_YEAR_15),
+    source_type="calculated",
+    description="Additional healthy years at year 15 from optimal-governance public-health improvements plus partial realization "
+                "of longer-run longevity gains. This removes the implicit cap at today's life expectancy and lets Wishonia exceed it for non-arbitrary reasons.",
+    display_name="Wishonia Extra HALE Gain at Year 15",
+    unit="years",
+    formula="WISHONIA_DISEASE_CURE_FRACTION_15YR × (BEST_PRACTICE_LIFE_EXPECTANCY_GAIN + LIFE_EXTENSION_YEARS × HALE_LONGEVITY_REALIZATION_SHARE_YEAR_15)",
+    latex=r"\Delta HALE_{wish,extra,15}=f_{cure,15,wish}\cdot\left(\Delta LE_{best}+T_{extend}\cdot\rho_{HALE,15}\right)",
+    inputs=[
+        "WISHONIA_DISEASE_CURE_FRACTION_15YR",
+        "BEST_PRACTICE_LIFE_EXPECTANCY_GAIN",
+        "LIFE_EXTENSION_YEARS",
+        "HALE_LONGEVITY_REALIZATION_SHARE_YEAR_15",
+    ],
+    compute=lambda ctx: ctx["WISHONIA_DISEASE_CURE_FRACTION_15YR"] * (
+        ctx["BEST_PRACTICE_LIFE_EXPECTANCY_GAIN"]
+        + ctx["LIFE_EXTENSION_YEARS"] * ctx["HALE_LONGEVITY_REALIZATION_SHARE_YEAR_15"]
+    ),
+    keywords=["HALE", "wishonia", "governance", "longevity", "healthy years", "year 15"],
+    latex_symbol=r"\Delta HALE_{wish,extra,15}",
+)
+
+TREATY_HALE_GAIN_YEAR_15 = Parameter(
+    TREATY_DISEASE_CURE_FRACTION_15YR * (float(GLOBAL_LIFE_EXPECTANCY_2024) - 63.3) + float(TREATY_LONGEVITY_HALE_GAIN_YEAR_15),
+    source_type="calculated",
+    description="HALE improvement at year 15 under Treaty Trajectory. It includes both closing the current "
+                "HALE gap from disease/disability and a conservative partial realization of longer-run longevity gains.",
     display_name="Treaty HALE Gain at Year 15",
     unit="years",
-    formula="TREATY_DISEASE_CURE_FRACTION_15YR * GLOBAL_HALE_GAP",
-    latex=r"\Delta HALE_{treaty,15} = f_{cure,15,treaty} \cdot \Delta_{HALE}",
-    inputs=["TREATY_DISEASE_CURE_FRACTION_15YR", "GLOBAL_HALE_CURRENT", "GLOBAL_LIFE_EXPECTANCY_2024"],
-    compute=lambda ctx: ctx["TREATY_DISEASE_CURE_FRACTION_15YR"] * (ctx["GLOBAL_LIFE_EXPECTANCY_2024"] - ctx["GLOBAL_HALE_CURRENT"]),
+    formula="TREATY_DISEASE_CURE_FRACTION_15YR × GLOBAL_HALE_GAP + TREATY_LONGEVITY_HALE_GAIN_YEAR_15",
+    latex=r"\Delta HALE_{treaty,15} = f_{cure,15,treaty}\cdot\Delta_{HALE}+\Delta HALE_{treaty,longevity,15}",
+    inputs=["TREATY_DISEASE_CURE_FRACTION_15YR", "GLOBAL_HALE_CURRENT", "GLOBAL_LIFE_EXPECTANCY_2024", "TREATY_LONGEVITY_HALE_GAIN_YEAR_15"],
+    compute=lambda ctx: (
+        ctx["TREATY_DISEASE_CURE_FRACTION_15YR"] * (ctx["GLOBAL_LIFE_EXPECTANCY_2024"] - ctx["GLOBAL_HALE_CURRENT"])
+        + ctx["TREATY_LONGEVITY_HALE_GAIN_YEAR_15"]
+    ),
     keywords=["HALE", "gain", "treaty", "year 15", "healthy years"],
     latex_symbol=r"\Delta HALE_{treaty,15}",
 )
 
 WISHONIA_HALE_GAIN_YEAR_15 = Parameter(
-    WISHONIA_DISEASE_CURE_FRACTION_15YR * (float(GLOBAL_LIFE_EXPECTANCY_2024) - 63.3),
+    WISHONIA_DISEASE_CURE_FRACTION_15YR * (float(GLOBAL_LIFE_EXPECTANCY_2024) - 63.3) + float(WISHONIA_EXTRA_HALE_GAIN_YEAR_15),
     source_type="calculated",
-    description="HALE improvement at year 15 under Wishonia Trajectory. Full implementation cures a larger "
-                "fraction of diseases, closing more of the HALE gap.",
+    description="HALE improvement at year 15 under Wishonia Trajectory. It includes closing the current "
+                "HALE gap, reaching today's best-practice life expectancy through optimal governance/public health, "
+                "and a conservative partial realization of longer-run longevity gains.",
     display_name="Wishonia HALE Gain at Year 15",
     unit="years",
-    formula="WISHONIA_DISEASE_CURE_FRACTION_15YR * GLOBAL_HALE_GAP",
-    latex=r"\Delta HALE_{wish,15} = f_{cure,15,wish} \cdot \Delta_{HALE}",
-    inputs=["WISHONIA_DISEASE_CURE_FRACTION_15YR", "GLOBAL_HALE_CURRENT", "GLOBAL_LIFE_EXPECTANCY_2024"],
-    compute=lambda ctx: ctx["WISHONIA_DISEASE_CURE_FRACTION_15YR"] * (ctx["GLOBAL_LIFE_EXPECTANCY_2024"] - ctx["GLOBAL_HALE_CURRENT"]),
+    formula="WISHONIA_DISEASE_CURE_FRACTION_15YR × GLOBAL_HALE_GAP + WISHONIA_EXTRA_HALE_GAIN_YEAR_15",
+    latex=r"\Delta HALE_{wish,15} = f_{cure,15,wish}\cdot\Delta_{HALE}+\Delta HALE_{wish,extra,15}",
+    inputs=["WISHONIA_DISEASE_CURE_FRACTION_15YR", "GLOBAL_HALE_CURRENT", "GLOBAL_LIFE_EXPECTANCY_2024", "WISHONIA_EXTRA_HALE_GAIN_YEAR_15"],
+    compute=lambda ctx: (
+        ctx["WISHONIA_DISEASE_CURE_FRACTION_15YR"] * (ctx["GLOBAL_LIFE_EXPECTANCY_2024"] - ctx["GLOBAL_HALE_CURRENT"])
+        + ctx["WISHONIA_EXTRA_HALE_GAIN_YEAR_15"]
+    ),
     keywords=["HALE", "gain", "wishonia", "year 15", "healthy years"],
     latex_symbol=r"\Delta HALE_{wish,15}",
 )
@@ -9729,7 +9804,7 @@ WISHONIA_HALE_VALUE_PER_CAPITA = Parameter(
 )
 
 TREATY_PROJECTED_HALE_YEAR_15 = Parameter(
-    63.3 + float(TREATY_DISEASE_CURE_FRACTION_15YR) * (float(GLOBAL_LIFE_EXPECTANCY_2024) - 63.3),
+    float(GLOBAL_HALE_CURRENT) + float(TREATY_HALE_GAIN_YEAR_15),
     source_type="calculated",
     description="Projected global HALE at year 15 under Treaty Trajectory. "
                 "Current HALE plus the treaty-driven improvement from closing the disease gap.",
@@ -9744,7 +9819,7 @@ TREATY_PROJECTED_HALE_YEAR_15 = Parameter(
 )
 
 WISHONIA_PROJECTED_HALE_YEAR_15 = Parameter(
-    63.3 + float(WISHONIA_DISEASE_CURE_FRACTION_15YR) * (float(GLOBAL_LIFE_EXPECTANCY_2024) - 63.3),
+    float(GLOBAL_HALE_CURRENT) + float(WISHONIA_HALE_GAIN_YEAR_15),
     source_type="calculated",
     description="Projected global HALE at year 15 under Wishonia Trajectory. "
                 "Full implementation closes the entire disease gap, pushing HALE toward life expectancy.",
@@ -10668,335 +10743,6 @@ PERSONAL_LIFETIME_WEALTH = Parameter(
     latex_symbol=r"Wealth_{lifetime}",
     latex=r"Wealth_{lifetime} = T_{extend} \times Value_{QALY}",
 )
-
-
-# Years of life lost per death by category
-# Source: Cancer YLL studies, cardiovascular burden research
-YEARS_LOST_PER_DEATH = {
-    "cardiovascular": 12.0,  # Similar to cancer
-    "cancer": 13.5,  # Average 14.9 women, 12.7 men
-    "respiratory": 8.0,  # Older age deaths
-    "neurodegenerative": 6.0,  # Very old age deaths
-    "metabolic": 10.0,  # Middle age deaths
-    "infectious": 15.0,  # Can affect all ages
-    "accidents": 35.0,  # Often young people
-    "aging_related": 3.0,  # Very old age, natural limits
-    "other": 10.0,  # Mixed
-}
-
-
-def calculate_cumulative_research_years(treaty_pct: float, years_elapsed: float) -> float:
-    """
-    Calculate cumulative research equivalent years from 115x acceleration
-
-    With 115x research acceleration:
-    - Year 1: 115 research-years
-    - Year 5: 575 cumulative research-years
-    - Year 10: 1,150 cumulative research-years
-    - Year 20: 2,300 cumulative research-years
-
-    For comparison:
-    - Total medical progress 1900-2024: 124 years → +32 years life expectancy
-    - 2,300 years = 18.5x the entire modern medical revolution
-
-    Args:
-        treaty_pct: Fraction of military spending redirected
-        years_elapsed: Years since treaty signed
-
-    Returns:
-        Cumulative research-equivalent years
-    """
-    multiplier = calculate_trial_capacity_multiplier(treaty_pct)
-    return multiplier * years_elapsed
-
-
-def calculate_disease_eradication_rate(category: str, cumulative_research_years: float, conservative: bool = False) -> float:
-    """
-    Calculate what percentage of a disease category can be cured/prevented
-    given cumulative research acceleration
-
-    Model:
-    - Start with current cure rate
-    - Add research progress toward maximum potential
-    - Progress follows logarithmic curve (diminishing returns)
-    - Conservative mode assumes slower progress
-
-    Args:
-        category: Disease category name
-        cumulative_research_years: Total research-years accumulated
-        conservative: If True, assume 50% of calculated progress
-
-    Returns:
-        Total cure/prevention rate (0-1)
-    """
-    current_rate = CURRENT_CURE_RATE[category]
-    max_potential = RESEARCH_ACCELERATION_POTENTIAL[category]
-
-    # Room for improvement
-    room_for_improvement = max_potential - current_rate
-
-    # Logarithmic progress curve (diminishing returns)
-    # Fast progress initially, then slows as we approach limits
-    #
-    # Calibrated based on historical precedent:
-    # - 124 years (1900-2024) → 32 years life extension
-    # - But with 115x acceleration, progress is faster
-    #
-    # Progress scaling:
-    # -   500 research-years → 35% of potential
-    # - 1,000 research-years → 50% of potential
-    # - 2,300 research-years → 70% of potential (20-year scenario)
-    # - 5,000 research-years → 85% of potential
-    # - 10,000 research-years → 95% of potential
-    #
-    # Formula: logarithmic with slower saturation
-    progress_factor = min(0.95, 0.25 + 0.25 * ((cumulative_research_years / 1000) ** 0.6))
-
-    if conservative:
-        progress_factor *= 0.5  # Conservative: half the progress
-
-    # New cure rate
-    improvement = room_for_improvement * progress_factor
-    return min(max_potential, current_rate + improvement)
-
-
-def calculate_life_extension_from_eradication(treaty_pct: float, years_elapsed: float, conservative: bool = False) -> dict[str, Any]:
-    """
-    Calculate life extension from systematic disease eradication
-
-    This properly accounts for:
-    - 115x cumulative research acceleration
-    - Disease-by-disease eradication rates
-    - Years of life lost per disease category
-    - Diminishing returns as diseases are eradicated
-
-    Args:
-        treaty_pct: Fraction of military spending redirected
-        years_elapsed: Years since treaty signed
-        conservative: If True, assume 50% slower progress
-
-    Returns:
-        dict with life extension details and total years gained
-    """
-    cumulative_research = calculate_cumulative_research_years(treaty_pct, years_elapsed)
-
-    total_life_extension = 0.0
-    disease_details = {}
-
-    for category in DISEASE_BURDEN.keys():
-        # Current baseline deaths from this category
-        burden_pct = DISEASE_BURDEN[category]
-        years_lost_per_death = YEARS_LOST_PER_DEATH[category]
-
-        # Current cure rate
-        current_cure_rate = CURRENT_CURE_RATE[category]
-
-        # New cure rate with research acceleration
-        new_cure_rate = calculate_disease_eradication_rate(category, cumulative_research, conservative)
-
-        # Improvement in cure rate
-        cure_rate_improvement = new_cure_rate - current_cure_rate
-
-        # Life extension from this category
-        # If we cure X% more of a disease that causes Y% of deaths
-        # and each death loses Z years, we gain: X * Y * Z years
-        category_life_extension = cure_rate_improvement * burden_pct * years_lost_per_death
-
-        total_life_extension += category_life_extension
-
-        disease_details[category] = {
-            "burden_pct": burden_pct,
-            "current_cure_rate": current_cure_rate,
-            "new_cure_rate": new_cure_rate,
-            "improvement": cure_rate_improvement,
-            "years_lost_per_death": years_lost_per_death,
-            "life_extension_contribution": category_life_extension,
-        }
-
-    # AGING REVERSAL BONUS - Approaching Accident-Limited Lifespan
-    #
-    # If we can regenerate organs and reprogram DNA/epigenetics, there's NO biological
-    # reason for aging-related death. Life expectancy becomes limited primarily by accidents.
-    #
-    # Current accident death rate: 62.3 per 100,000 = 0.0623% per year
-    # If accidents are ONLY mortality → expected lifespan ≈ 1,600 years
-    #
-    # But realistically:
-    # - Some accidents can be prevented (AI vehicles, safety systems)
-    # - Some can't (rare disasters, violence)
-    # - Practical limit accounting for accidents: ~150-200 years
-    #
-    # This is ADDITIONAL to disease-specific improvements above
-    #
-    # Scaling toward accident-limited lifespan:
-    # -   500 research-years → +15 years (80→95)
-    # - 1,000 research-years → +35 years (80→115)
-    # - 2,300 research-years → +65 years (80→145) [20-year scenario]
-    # - 4,600 research-years → +95 years (80→175) [40-year scenario]
-    # - 10,000 research-years → +120 years (80→200) [approaching accident-limited]
-    #
-    # Formula: logarithmic scaling with asymptote at accident-limited lifespan (~150 years gain)
-    aging_reversal_bonus = min(150, 12.0 * ((cumulative_research / 100) ** 0.56))
-
-    if conservative:
-        aging_reversal_bonus *= 0.3  # Conservative: only 30% of aging reversal potential
-
-    # Total life extension = disease cures + aging reversal
-    total_life_extension += aging_reversal_bonus
-
-    return {
-        "total_life_extension": total_life_extension,
-        "disease_life_extension": total_life_extension - aging_reversal_bonus,
-        "aging_reversal_bonus": aging_reversal_bonus,
-        "cumulative_research_years": cumulative_research,
-        "years_elapsed": years_elapsed,
-        "disease_details": disease_details,
-        "model_type": "disease_eradication",
-        "conservative": conservative,
-    }
-
-
-def calculate_personal_lifetime_wealth_disease_eradication(
-    treaty_pct: float = TREATY_REDUCTION_PCT,
-    current_age: int = 30,
-    baseline_life_expectancy: int = 80,
-    annual_income: float = 50000,
-    discount_rate: float = 0.03,
-    years_elapsed: float = 5,
-    conservative: bool = False,
-) -> dict[str, Any]:
-    """
-    Personal lifetime wealth model using disease eradication approach
-
-    This model properly accounts for:
-    - 115x cumulative research acceleration (not one-time antibiotic comparison)
-    - Disease-by-disease systematic eradication
-    - Real CDC burden data
-    - Realistic cure rate improvements by category
-    - Diminishing returns as we approach biological limits
-
-    Scenarios:
-    - 5 years elapsed: Low-hanging fruit (infections, some cancers)
-    - 10 years elapsed: Major categories tackled (cardio, metabolic)
-    - 20 years elapsed: Aging partially reversed, most diseases eradicated
-    - 40 years elapsed: Approaching biological limits
-
-    Args:
-        treaty_pct: Fraction of military spending redirected
-        current_age: Person's current age
-        baseline_life_expectancy: Current life expectancy
-        annual_income: Person's annual income
-        discount_rate: Discount rate for NPV calculations
-        years_elapsed: Years since treaty signed (5/10/20/40)
-        conservative: If True, assume 50% slower progress
-
-    Returns:
-        dict with total lifetime benefit and detailed breakdown
-    """
-    # Calculate life extension from disease eradication
-    eradication_result = calculate_life_extension_from_eradication(treaty_pct, years_elapsed, conservative)
-    life_extension_years = eradication_result["total_life_extension"]
-
-    # Medical progress multiplier for other calculations
-    progress_multiplier = calculate_trial_capacity_multiplier(treaty_pct)
-
-    # Peace dividend (same as other models)
-    peace_dividend_per_capita_annual = PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT / GLOBAL_POPULATION_2024
-    years_remaining = baseline_life_expectancy - current_age
-    total_years = years_remaining + life_extension_years
-
-    # GDP boost for compounding calculations
-    gdp_boost = calculate_gdp_growth_boost(treaty_pct)
-
-    # Healthcare savings (disease eradication approach)
-    # As diseases are eradicated, healthcare costs drop
-    # Average reduction proportional to cure rate improvement across all categories
-    avg_cure_improvement = sum(
-        detail["improvement"] * detail["burden_pct"] for detail in eradication_result["disease_details"].values()
-    )
-    healthcare_reduction_pct = avg_cure_improvement * 0.8  # 80% of cure improvement translates to cost reduction
-    US_CHRONIC_COST_PER_CAPITA = 3.7e12 / US_POPULATION_2024  # $11,045/person/year
-    healthcare_savings_annual = US_CHRONIC_COST_PER_CAPITA * healthcare_reduction_pct
-
-    # Productivity gains (same as conservative baseline model)
-    productivity_gains_annual = calculate_productivity_loss_conservative_baseline(treaty_pct, annual_income)
-
-    # Caregiver savings (same as conservative baseline model)
-    caregiver_savings_annual = calculate_caregiver_savings_conservative_baseline(treaty_pct)
-
-    # Component totals using compound_sum
-    peace_dividend_total = compound_sum(peace_dividend_per_capita_annual, total_years, gdp_boost, discount_rate)
-    healthcare_savings_total = compound_sum(healthcare_savings_annual, total_years, gdp_boost, discount_rate)
-    productivity_gains_total = compound_sum(productivity_gains_annual, total_years, gdp_boost, discount_rate)
-    caregiver_savings_total = compound_sum(caregiver_savings_annual, total_years, gdp_boost, discount_rate)
-
-    # GDP boost benefit
-    # Calculate the ADDITIONAL benefit from GDP boost (treaty growth vs baseline growth)
-    # FIXED: Only calculate boost for years_remaining to avoid double-counting extended years
-    # (Extended years are fully captured in the extended_earnings component)
-    baseline_growth = 0.025  # Baseline economic growth without treaty
-
-    # Calculate incremental benefit from faster growth over baseline lifespan only
-    gdp_boost_benefit = 0
-    for t in range(1, int(years_remaining) + 1):
-        # Incremental value from faster growth
-        baseline_value = annual_income * ((1 + baseline_growth) ** t)
-        treaty_value = annual_income * ((1 + gdp_boost) ** t)
-        incremental_value = treaty_value - baseline_value
-        gdp_boost_benefit += incremental_value / ((1 + discount_rate) ** t)
-
-    # Extended earnings from life extension
-    extended_earnings = 0
-    if life_extension_years > 0:
-        working_years_extended = max(0, min(life_extension_years, 70 - baseline_life_expectancy))
-        retirement_years_extended = life_extension_years - working_years_extended
-
-        for t in range(int(years_remaining), int(years_remaining + working_years_extended)):
-            future_income = annual_income * ((1 + gdp_boost) ** t)
-            extended_earnings += future_income / ((1 + discount_rate) ** t)
-
-        if retirement_years_extended > 0:
-            final_working_income = annual_income * ((1 + gdp_boost) ** (years_remaining + working_years_extended))
-            retirement_income = final_working_income * 0.60  # 60% retirement income
-            for t in range(int(years_remaining + working_years_extended), int(total_years)):
-                extended_earnings += retirement_income / ((1 + discount_rate) ** t)
-
-    # Total benefit
-    total_benefit = (
-        peace_dividend_total
-        + healthcare_savings_total
-        + productivity_gains_total
-        + caregiver_savings_total
-        + gdp_boost_benefit
-        + extended_earnings
-    )
-
-    return {
-        "total_lifetime_benefit": total_benefit,
-        "annual_breakdown": {
-            "peace_dividend": peace_dividend_per_capita_annual,
-            "healthcare_savings": healthcare_savings_annual,
-            "productivity_gains": productivity_gains_annual,
-            "caregiver_savings": caregiver_savings_annual,
-        },
-        "npv_breakdown": {
-            "peace_dividend_total": peace_dividend_total,
-            "healthcare_savings_total": healthcare_savings_total,
-            "productivity_gains_total": productivity_gains_total,
-            "caregiver_savings_total": caregiver_savings_total,
-            "gdp_boost_benefit": gdp_boost_benefit,
-            "extended_earnings": extended_earnings,
-        },
-        "life_extension_years": life_extension_years,
-        "new_life_expectancy": baseline_life_expectancy + life_extension_years,
-        "cumulative_research_years": eradication_result["cumulative_research_years"],
-        "gdp_growth_boost": gdp_boost - 0.025,
-        "medical_progress_multiplier": progress_multiplier,
-        "eradication_details": eradication_result["disease_details"],
-        "model_type": "disease_eradication",
-        "years_elapsed": years_elapsed,
-        "conservative": conservative,
-    }
 
 
 # ==============================================================================

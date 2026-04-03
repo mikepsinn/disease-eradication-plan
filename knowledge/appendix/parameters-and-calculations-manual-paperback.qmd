@@ -38,20 +38,54 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 389 parameters used in the analysis, organized by type:
+This appendix documents all 394 parameters used in the analysis, organized by type:
 
-- External sources (peer-reviewed): 140
-- Calculated values: 185
-- Core definitions: 64
+- External sources (peer-reviewed): 142
+- Calculated values: 187
+- Core definitions: 65
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (185 parameters) • [External Data Sources](#sec-external) (140 parameters) • [Core Definitions](#sec-definitions) (64 parameters)
+[Calculated Values](#sec-calculated) (187 parameters) • [External Data Sources](#sec-external) (142 parameters) • [Core Definitions](#sec-definitions) (65 parameters)
 
 
 ## Calculated Values {#sec-calculated}
 
 Parameters derived from mathematical formulas and economic models.
+
+### Best-Practice Life Expectancy Gain: 5.1 years {#sec-best_practice_life_expectancy_gain}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Gap between current global life expectancy and the best life expectancy achieved by a major country today. Used as a non-arbitrary governance/public-health uplift benchmark rather than capping Wishonia at today's global average.
+
+**Inputs**:
+
+- [Switzerland Life Expectancy](#sec-switzerland_life_expectancy) 📊: 84 years
+- [Singapore Life Expectancy](#sec-singapore_life_expectancy) 📊: 84.1 years
+- [Global Life Expectancy (2024)](#sec-global_life_expectancy_2024) 📊: 79 years (SE: ±2 years)
+
+$$
+\Delta LE_{best}=\max(LE_{CH}, LE_{SG})-LE_{global}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-best_practice_life_expectancy_gain.qmd >}}
+
+{{< include ../figures/sensitivity-table-best_practice_life_expectancy_gain.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-best_practice_life_expectancy_gain.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-best_practice_life_expectancy_gain.qmd >}}
+
+:::
 
 ### Engagement Rate: 10% {#sec-chain_engage_probability}
 
@@ -5977,7 +6011,7 @@ where:
 $$
 \begin{gathered}
 f_{cure,20,treaty} \\
-= \min\left(1,\frac{Treatments_{new,ann}\cdot \sum_y k_{capacity,y}}{D_{untreated}}\right)
+= \min\left(1,\frac{Treatments_{new,ann}\cdot \sum_y \min\left(k_{capacity}\cdot s_y/0.01,k_{physical}\right)}{D_{untreated}}\right)
 \end{gathered}
 $$
 where:
@@ -6311,7 +6345,7 @@ where:
 $$
 \begin{gathered}
 f_{cure,20,treaty} \\
-= \min\left(1,\frac{Treatments_{new,ann}\cdot \sum_y k_{capacity,y}}{D_{untreated}}\right)
+= \min\left(1,\frac{Treatments_{new,ann}\cdot \sum_y \min\left(k_{capacity}\cdot s_y/0.01,k_{physical}\right)}{D_{untreated}}\right)
 \end{gathered}
 $$
 where:
@@ -6692,7 +6726,7 @@ where:
 $$
 \begin{gathered}
 f_{cure,20,treaty} \\
-= \min\left(1,\frac{Treatments_{new,ann}\cdot \sum_y k_{capacity,y}}{D_{untreated}}\right)
+= \min\left(1,\frac{Treatments_{new,ann}\cdot \sum_y \min\left(k_{capacity}\cdot s_y/0.01,k_{physical}\right)}{D_{untreated}}\right)
 \end{gathered}
 $$
 where:
@@ -7622,7 +7656,7 @@ $$
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Treaty disease-cure fraction over 20 years under the optimistic treaty take-hold path. The initial 1% treaty expands to 2%, then 5%, then 10%, and cumulative trial throughput is capped by the physical participant ceiling.
+Treaty disease-cure fraction over 20 years under the optimistic treaty take-hold path. The initial 1% treaty expands to 2%, then 5%, then 10%, with trial-throughput scaling linearly with treaty funding until it hits the physical participant ceiling. Cumulative throughput is capped by the physical participant ceiling.
 
 **Inputs**:
 
@@ -7634,7 +7668,7 @@ Treaty disease-cure fraction over 20 years under the optimistic treaty take-hold
 $$
 \begin{gathered}
 f_{cure,20,treaty} \\
-= \min\left(1,\frac{Treatments_{new,ann}\cdot \sum_y k_{capacity,y}}{D_{untreated}}\right)
+= \min\left(1,\frac{Treatments_{new,ann}\cdot \sum_y \min\left(k_{capacity}\cdot s_y/0.01,k_{physical}\right)}{D_{untreated}}\right)
 \end{gathered}
 $$
 
@@ -8612,7 +8646,7 @@ where:
 $$
 \begin{gathered}
 f_{cure,20,treaty} \\
-= \min\left(1,\frac{Treatments_{new,ann}\cdot \sum_y k_{capacity,y}}{D_{untreated}}\right)
+= \min\left(1,\frac{Treatments_{new,ann}\cdot \sum_y \min\left(k_{capacity}\cdot s_y/0.01,k_{physical}\right)}{D_{untreated}}\right)
 \end{gathered}
 $$
 where:
@@ -8945,7 +8979,7 @@ where:
 $$
 \begin{gathered}
 f_{cure,20,treaty} \\
-= \min\left(1,\frac{Treatments_{new,ann}\cdot \sum_y k_{capacity,y}}{D_{untreated}}\right)
+= \min\left(1,\frac{Treatments_{new,ann}\cdot \sum_y \min\left(k_{capacity}\cdot s_y/0.01,k_{physical}\right)}{D_{untreated}}\right)
 \end{gathered}
 $$
 where:
@@ -9262,7 +9296,7 @@ where:
 $$
 \begin{gathered}
 f_{cure,20,treaty} \\
-= \min\left(1,\frac{Treatments_{new,ann}\cdot \sum_y k_{capacity,y}}{D_{untreated}}\right)
+= \min\left(1,\frac{Treatments_{new,ann}\cdot \sum_y \min\left(k_{capacity}\cdot s_y/0.01,k_{physical}\right)}{D_{untreated}}\right)
 \end{gathered}
 $$
 where:
@@ -11302,20 +11336,64 @@ $$
 
 :::
 
-### Wishonia HALE Gain at Year 15: 15.7 years {#sec-wishonia_hale_gain_year_15}
+### Wishonia Extra HALE Gain at Year 15: 11.1 years {#sec-wishonia_extra_hale_gain_year_15}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-HALE improvement at year 15 under Wishonia Trajectory. Full implementation cures a larger fraction of diseases, closing more of the HALE gap.
+Additional healthy years at year 15 from optimal-governance public-health improvements plus partial realization of longer-run longevity gains. This removes the implicit cap at today's life expectancy and lets Wishonia exceed it for non-arbitrary reasons.
+
+**Inputs**:
+
+- [Wishonia Disease Cure Fraction (15yr, Full Implementation)](#sec-wishonia_disease_cure_fraction_15yr) 🔢: 100%
+- [Best-Practice Life Expectancy Gain](#sec-best_practice_life_expectancy_gain) 🔢: 5.1 years
+- [Life Extension from Treaty Research Acceleration](#sec-life_extension_years) 📊: 20 years (95% CI: 5 years - 100 years)
+- [HALE Longevity Realization Share (Year 15)](#sec-hale_longevity_realization_share_year_15): 30%
+
+$$
+\begin{gathered}
+\Delta HALE_{wish,extra,15} \\
+= f_{cure,15,wish}\cdot\left(\Delta LE_{best} \\
++ T_{extend}\cdot\rho_{HALE,15}\right)
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-wishonia_extra_hale_gain_year_15.qmd >}}
+
+{{< include ../figures/sensitivity-table-wishonia_extra_hale_gain_year_15.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-wishonia_extra_hale_gain_year_15.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-wishonia_extra_hale_gain_year_15.qmd >}}
+
+:::
+
+### Wishonia HALE Gain at Year 15: 26.8 years {#sec-wishonia_hale_gain_year_15}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+HALE improvement at year 15 under Wishonia Trajectory. It includes closing the current HALE gap, reaching today's best-practice life expectancy through optimal governance/public health, and a conservative partial realization of longer-run longevity gains.
 
 **Inputs**:
 
 - [Wishonia Disease Cure Fraction (15yr, Full Implementation)](#sec-wishonia_disease_cure_fraction_15yr) 🔢: 100%
 - [Global Healthy Life Expectancy (HALE)](#sec-global_hale_current) 📊: 63.3 years (SE: ±1.5 years)
 - [Global Life Expectancy (2024)](#sec-global_life_expectancy_2024) 📊: 79 years (SE: ±2 years)
+- [Wishonia Extra HALE Gain at Year 15](#sec-wishonia_extra_hale_gain_year_15) 🔢: 11.1 years
 
 $$
-\Delta HALE_{wish,15} = f_{cure,15,wish} \cdot \Delta_{HALE}
+\begin{gathered}
+\Delta HALE_{wish,15} \\
+= f_{cure,15,wish}\cdot\Delta_{HALE} \\
++ \Delta HALE_{wish,extra,15}
+\end{gathered}
 $$
 
 *✓ High confidence*
@@ -11362,7 +11440,7 @@ $$
 
 :::
 
-### Wishonia Projected HALE at Year 15: 79 years {#sec-wishonia_projected_hale_year_15}
+### Wishonia Projected HALE at Year 15: 90.1 years {#sec-wishonia_projected_hale_year_15}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -11371,7 +11449,7 @@ Projected global HALE at year 15 under Wishonia Trajectory. Full implementation 
 **Inputs**:
 
 - [Global Healthy Life Expectancy (HALE)](#sec-global_hale_current) 📊: 63.3 years (SE: ±1.5 years)
-- [Wishonia HALE Gain at Year 15](#sec-wishonia_hale_gain_year_15) 🔢: 15.7 years
+- [Wishonia HALE Gain at Year 15](#sec-wishonia_hale_gain_year_15) 🔢: 26.8 years
 
 $$
 HALE_{wish,15} = HALE_0 + \Delta HALE_{wish,15}
@@ -12344,7 +12422,7 @@ where:
 $$
 \begin{gathered}
 f_{cure,20,treaty} \\
-= \min\left(1,\frac{Treatments_{new,ann}\cdot \sum_y k_{capacity,y}}{D_{untreated}}\right)
+= \min\left(1,\frac{Treatments_{new,ann}\cdot \sum_y \min\left(k_{capacity}\cdot s_y/0.01,k_{physical}\right)}{D_{untreated}}\right)
 \end{gathered}
 $$
 where:
@@ -13896,6 +13974,30 @@ Total ICD-10 diagnostic codes for human diseases and conditions
 
 :::
 
+### Life Extension from Treaty Research Acceleration: 20 years {#sec-life_extension_years}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Expected years of life extension from 1% treaty research acceleration (25x trial capacity). Bounds: 0 (complete failure) to ~150 (accident-limited lifespan minus current). Lognormal distribution allows for breakthrough scenarios.
+
+**Source**: [@longevity-escape-velocity]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [5 years, 100 years] • Distribution: Lognormal
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between 5 years and 100 years (±238%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-life_extension_years.qmd >}}
+
+*? Low confidence*
+
+:::
+
 ### Maximum Annual Lobbyist Salary Range: $2M {#sec-lobbyist_salary_max}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -14479,6 +14581,22 @@ Pre-death suffering period during post-safety efficacy testing delay (average ye
 {{< include ../figures/distribution-regulatory_delay_suffering_period_years.qmd >}}
 
 *~ Medium confidence • 📊 Peer-reviewed*
+
+:::
+
+### Singapore Life Expectancy: 84.1 years {#sec-singapore_life_expectancy}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Singapore life expectancy at birth. 6.6 years LONGER than US (84.1 vs 77.5) despite government spending at less than half the rate.
+
+**Source**: [@who-life-expectancy]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*✓ High confidence*
 
 :::
 
@@ -15875,6 +15993,20 @@ Planning midpoint for non-reward variable cost per successful verified participa
 #### Input Distribution
 
 {{< include ../figures/distribution-global_coordination_verification_and_payment_cost_per_participant.qmd >}}
+
+*Core definition*
+
+:::
+
+### HALE Longevity Realization Share (Year 15): 30% {#sec-hale_longevity_realization_share_year_15}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Share of longer-run life-extension gains that have plausibly materialized into healthy years by year 15. Calibrated to the repo's conservative disease-eradication helper, which implies that only a minority of eventual longevity gains are realized within the first 15 years even under rapid research acceleration.
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
 
 *Core definition*
 

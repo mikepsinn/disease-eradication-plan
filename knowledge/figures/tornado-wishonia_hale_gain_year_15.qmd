@@ -20,14 +20,14 @@ display_name = "Wishonia HALE Gain at Year 15"
 
 # Baseline and units
 
-baseline = 15.700000000000003
+baseline = 26.799999999999997
 
 # Tornado data from sensitivity analysis
 
-drivers = ['GLOBAL_LIFE_EXPECTANCY_2024', 'GLOBAL_HALE_CURRENT', 'CURRENT_DISEASE_PATIENTS_GLOBAL', 'CURRENT_TRIAL_SLOTS_AVAILABLE', 'DFDA_OPEX_COMMUNITY', 'DFDA_OPEX_INFRASTRUCTURE', 'DFDA_OPEX_PLATFORM_MAINTENANCE', 'DFDA_OPEX_REGULATORY', 'DFDA_OPEX_STAFF', 'DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT', 'NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR', 'PATIENT_WILLINGNESS_TRIAL_PARTICIPATION_PCT', 'RARE_DISEASES_COUNT_GLOBAL']
-driver_labels = ['Global Life Expectancy (2024)', 'Global Healthy Life Expectancy (HALE)', 'Global Population with Chronic Diseases', 'Annual Global Clinical Trial Participants', 'Decentralized Framework for Drug Assessment Community Support Costs', 'Decentralized Framework for Drug Assessment Infrastructure Costs', 'Decentralized Framework for Drug Assessment Maintenance Costs', 'Decentralized Framework for Drug Assessment Regulatory Coordination Costs', 'Decentralized Framework for Drug Assessment Staff Costs', 'dFDA Pragmatic Trial Cost per Patient', 'Diseases Getting First Treatment Per Year', 'Patient Willingness to Participate in Clinical Trials', 'Total Number of Rare Diseases Globally']
-impacts_low = [-2.0, 1.5, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-impacts_high = [2.0, -1.5, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+drivers = ['LIFE_EXTENSION_YEARS', 'GLOBAL_HALE_CURRENT', 'CURRENT_DISEASE_PATIENTS_GLOBAL', 'CURRENT_TRIAL_SLOTS_AVAILABLE', 'DFDA_OPEX_COMMUNITY', 'DFDA_OPEX_INFRASTRUCTURE', 'DFDA_OPEX_PLATFORM_MAINTENANCE', 'DFDA_OPEX_REGULATORY', 'DFDA_OPEX_STAFF', 'DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT', 'GLOBAL_LIFE_EXPECTANCY_2024', 'NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR', 'PATIENT_WILLINGNESS_TRIAL_PARTICIPATION_PCT', 'RARE_DISEASES_COUNT_GLOBAL']
+driver_labels = ['Life Extension from Treaty Research Acceleration', 'Global Healthy Life Expectancy (HALE)', 'Global Population with Chronic Diseases', 'Annual Global Clinical Trial Participants', 'Decentralized Framework for Drug Assessment Community Support Costs', 'Decentralized Framework for Drug Assessment Infrastructure Costs', 'Decentralized Framework for Drug Assessment Maintenance Costs', 'Decentralized Framework for Drug Assessment Regulatory Coordination Costs', 'Decentralized Framework for Drug Assessment Staff Costs', 'dFDA Pragmatic Trial Cost per Patient', 'Global Life Expectancy (2024)', 'Diseases Getting First Treatment Per Year', 'Patient Willingness to Participate in Clinical Trials', 'Total Number of Rare Diseases Globally']
+impacts_low = [-4.5, 1.5, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+impacts_high = [24.0, -1.5, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
 
 # Convert deltas to absolute values (baseline + delta)
 
