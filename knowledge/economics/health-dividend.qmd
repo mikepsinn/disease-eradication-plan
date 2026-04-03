@@ -76,6 +76,6 @@ The total campaign investment: {{< var treaty_campaign_total_cost >}}. Even the 
 
 Every day without this system costs **{{< var dfda_rd_savings_daily >}}** in wasted trial spending alone. The regulatory lag is not a safety feature. It is a waiting room where people die. You just gave it a nicer name.
 
-For you personally: if diseases get cured even a few years earlier, the average human gains roughly 50,000 extra hours of life. You spent 17 minutes reading this chapter. That is a 176,000x return on your time. Your best investment ever was reading. I realize the irony, given that most of you stopped reading 12 paragraphs ago.
+For you personally: if diseases get cured even a few years earlier, the average human gains roughly 50,000 extra hours of life and {{< var treaty_trajectory_lifetime_income_gain_per_capita >}} in additional lifetime income (the treaty path multiplies cumulative earnings by {{< var treaty_trajectory_lifetime_income_multiplier >}}). You spent 17 minutes reading this chapter. That is a 176,000x return on your time and a per-minute income gain that makes your day job look decorative. Your best investment ever was reading. I realize the irony, given that most of you stopped reading 12 paragraphs ago.
 
 See [impact.warondisease.org](https://impact.warondisease.org) for derivations, Monte Carlo simulations, and the comparative cost-effectiveness table.
