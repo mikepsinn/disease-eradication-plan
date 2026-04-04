@@ -908,20 +908,20 @@
 }
 
 .chat-key-figure-value {
-  font-size: 28px;
+  font-size: 32px;
   font-weight: 700;
   color: #36e2f8;
   line-height: 1.2;
 }
 
 .chat-key-figure-label {
-  font-size: 13px;
+  font-size: 16px;
   color: #C6CBF5;
   margin-top: 4px;
 }
 
 .chat-key-figure-context {
-  font-size: 12px;
+  font-size: 15px;
   color: #999;
   margin-top: 6px;
   font-style: italic;
@@ -943,7 +943,7 @@
 .chat-visual-table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 12px;
+  font-size: 15px;
   color: #ececec;
 }
 
@@ -952,7 +952,7 @@
   color: #C6CBF5;
   font-weight: 600;
   text-align: left;
-  padding: 6px 10px;
+  padding: 8px 12px;
   border-bottom: 2px solid rgba(54, 226, 248, 0.2);
 }
 

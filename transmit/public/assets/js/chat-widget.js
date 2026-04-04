@@ -670,6 +670,7 @@
       '<div class="chat-header">' +
       '  <span class="chat-header-title">Argue with Wishonia</span>' +
       '  <div class="chat-header-actions">' +
+      '    <button class="chat-share-btn" aria-label="Share chat" title="Share chat">&#x1F517;</button>' +
       '    <button class="chat-newchat-btn" aria-label="New talk" title="New talk">&#x2795;</button>' +
       '    <button class="chat-fullscreen-btn" aria-label="Open full talk" title="Open full talk">&#x26F6;</button>' +
       '    <button class="chat-close-btn" aria-label="Close talk">&times;</button>' +
@@ -691,12 +692,14 @@
     var closeBtn = panel.querySelector(".chat-close-btn");
     var newChatBtn = panel.querySelector(".chat-newchat-btn");
     var fullscreenBtn = panel.querySelector(".chat-fullscreen-btn");
+    var shareBtn = panel.querySelector(".chat-share-btn");
 
     var stopBtn = panel.querySelector(".chat-stop-btn");
 
     closeBtn.addEventListener("click", togglePanel);
     newChatBtn.addEventListener("click", startNewChat);
     fullscreenBtn.addEventListener("click", toggleFullscreen);
+    shareBtn.addEventListener("click", shareChat);
     sendBtn.addEventListener("click", handleSend);
     stopBtn.addEventListener("click", abortStreaming);
     input.addEventListener("keydown", function (e) {
@@ -762,6 +765,9 @@
     if (messages.length === 0) {
       showWelcome();
     }
+
+    // Check if this is a shared chat URL
+    checkSharedChatUrl();
   }
 
   var HINT_QUESTIONS = [
@@ -817,6 +823,75 @@
     }
     msgContainer.innerHTML = "";
     showWelcome();
+  }
+
+  function shareChat() {
+    if (messages.length === 0) return;
+    var shareBtn = panel.querySelector(".chat-share-btn");
+    var origText = shareBtn.textContent;
+    shareBtn.textContent = "\u23F3";
+    shareBtn.disabled = true;
+
+    fetch(API_BASE + "/api/share", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ messages: messages }),
+    })
+      .then(function (r) {
+        if (!r.ok) throw new Error("Share failed: " + r.status);
+        return r.json();
+      })
+      .then(function (data) {
+        navigator.clipboard.writeText(data.shareUrl).then(function () {
+          shareBtn.textContent = "\u2713";
+          setTimeout(function () { shareBtn.textContent = origText; }, 2000);
+        });
+      })
+      .catch(function (err) {
+        console.error("[SHARE]", err);
+        shareBtn.textContent = origText;
+      })
+      .finally(function () {
+        shareBtn.disabled = false;
+      });
+  }
+
+  // Load a shared chat from /c/:id URL
+  function checkSharedChatUrl() {
+    var match = window.location.pathname.match(/^\/c\/([A-Za-z0-9_-]+)$/);
+    if (!match) return;
+    var shareId = match[1];
+
+    fetch(API_BASE + "/api/share?id=" + encodeURIComponent(shareId))
+      .then(function (r) {
+        if (!r.ok) throw new Error("Not found");
+        return r.json();
+      })
+      .then(function (data) {
+        if (!data.messages || data.messages.length === 0) return;
+        messages = [];
+        msgContainer.innerHTML = "";
+        var welcome = msgContainer.querySelector(".chat-welcome");
+        if (welcome) welcome.remove();
+
+        // Render shared header
+        var header = document.createElement("div");
+        header.className = "chat-shared-header";
+        header.innerHTML = '<span>Shared chat</span>';
+        msgContainer.appendChild(header);
+
+        data.messages.forEach(function (m) {
+          appendMessage(m.role, m.content, true);
+          if (m.visuals) {
+            var card = renderVisualCard(m.visuals);
+            if (card) msgContainer.appendChild(card);
+          }
+        });
+        scrollToBottom();
+      })
+      .catch(function (err) {
+        console.error("[SHARE] Failed to load shared chat:", err);
+      });
   }
 
   function toggleFullscreen() {
