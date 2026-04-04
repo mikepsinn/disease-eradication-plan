@@ -12,7 +12,7 @@ import { google } from "@ai-sdk/google";
 import { VISUALS_SYSTEM_PROMPT, visualsSchema } from "../lib/visuals-prompt";
 import { initSentry, Sentry } from "../lib/sentry";
 
-export const config = { runtime: "edge" };
+export const maxDuration = 300;
 
 const OPEN_CORS = {
   "Access-Control-Allow-Origin": "*",

@@ -9,7 +9,7 @@
 import { generateSpeech } from "../lib/gemini-tts";
 import { corsHeaders, checkOrigin } from "../lib/cors";
 
-export const config = { runtime: "edge" };
+export const maxDuration = 300;
 
 export default async function handler(req: Request) {
   const origin = req.headers.get("origin");

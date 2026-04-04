@@ -3,12 +3,12 @@
  * Client sends { question, context, history } and receives a text stream.
  */
 
-import { generateText } from "ai";
+import { streamText } from "ai";
 import { google } from "@ai-sdk/google";
 import { WISHONIA_SYSTEM_PROMPT } from "../lib/wishonia-chat";
 import { initSentry, Sentry } from "../lib/sentry";
 
-export const config = { runtime: "edge" };
+export const maxDuration = 300;
 
 const OPEN_CORS = {
   "Access-Control-Allow-Origin": "*",
@@ -56,7 +56,7 @@ export default async function handler(req: Request) {
       { role: "user" as const, content: question },
     ];
 
-    const result = await generateText({
+    const result = streamText({
       model: google("gemini-3-flash-preview", {
         safetySettings: [
           { category: "HARM_CATEGORY_HARASSMENT", threshold: "BLOCK_NONE" },
@@ -67,14 +67,15 @@ export default async function handler(req: Request) {
       }),
       system: systemPrompt,
       messages,
+      onFinish({ text, usage }) {
+        const elapsed = Date.now() - t0;
+        console.log(`[chat] done in ${elapsed}ms | ${text.length} chars | tokens: ${JSON.stringify(usage)}`);
+      },
     });
 
-    const elapsed = Date.now() - t0;
-    console.log(`[chat] done in ${elapsed}ms | ${result.text.length} chars | tokens: ${JSON.stringify(result.usage)}`);
-
-    return new Response(result.text, {
-      headers: { ...OPEN_CORS, "Content-Type": "text/plain; charset=utf-8" },
-    });
+    const response = result.toTextStreamResponse();
+    console.log(`[chat] stream started in ${Date.now() - t0}ms`);
+    return response;
   } catch (err) {
     Sentry.captureException(err);
     console.error(`[chat] error after ${Date.now() - t0}ms:`, err);

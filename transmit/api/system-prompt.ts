@@ -7,7 +7,7 @@
 
 import { WISHONIA_VOICE_PROMPT } from "../lib/wishonia-chat";
 
-export const config = { runtime: "edge" };
+export const maxDuration = 300;
 
 const OPEN_CORS = {
   "Access-Control-Allow-Origin": "*",
