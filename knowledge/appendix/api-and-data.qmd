@@ -190,11 +190,11 @@ Your visitors can ask about the treaty, the economics, the governance model, or 
 
 ### Why Organizations Should Embed This
 
-The [Earth Optimization Prize](/knowledge/strategy/earth-optimization-prize.html) [@earth-optimization-prize-paper-2025] is an open coordination game with two targets by 2040: add 6.55 healthy years to the global average (63.3 to 69.8) and raise median income 12x ($18.7K to $149K). Every person who learns about the 1% Treaty and registers a vote earns you a VOTE point. Targets met, the prize pool goes to VOTE point-holders. Targets missed, depositors still beat their retirement accounts.
+The [Earth Optimization Prize](/knowledge/strategy/earth-optimization-prize.html) [@earth-optimization-prize-paper-2025] has two targets by {{< var destructive_economy_50pct_year >}}: global HALE reaching {{< var treaty_projected_hale_year_15 >}} and median income reaching {{< var treaty_trajectory_avg_income_year_15 >}}. Every person who learns about the 1% Treaty and registers a vote earns you a VOTE point. Targets met, the prize pool goes to VOTE point-holders. Targets missed, depositors still beat their retirement accounts.
 
-Embedding Wishonia is how you play. Every visitor who asks a question and decides to support the treaty is a point. The widget does the teaching for you, grounded in the math, with source citations. You just paste three lines of HTML.
+Embedding Wishonia is how you play. Every visitor who asks a question and decides to support the treaty is a point. The widget does the teaching. You paste three lines of HTML.
 
-The upside per person is $15.7M in a world that stops wasting $101T/year on political dysfunction. The downside is three lines of HTML.
+The upside per person is {{< var treaty_personal_upside_blend >}} in a world that stops wasting {{< var political_dysfunction_global_opportunity_cost_total >}}/year on political dysfunction. The downside is three lines of HTML.
 
 ### Or Just Link to It
 

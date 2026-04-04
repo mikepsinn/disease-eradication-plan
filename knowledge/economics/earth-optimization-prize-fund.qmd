@@ -1,7 +1,7 @@
 ---
 title: The Earth Optimization Prize Fund
-subtitle: A scale engine for trying to win the Earth Optimization Prize
-description: This paper explains how the shared PRIZE pool could compound while humanity tries to raise healthy life years and median income by {{< var destructive_economy_50pct_year >}}. It is a scale-capital thesis, not the first institutional ask.
+subtitle: How the prize pool makes money while humanity tries not to be stupid
+description: The PRIZE pool is not a jar of money on a shelf. It is the world's largest investment fund, making {{< var prize_pool_annual_return >}} per year by removing fees, removing the accreditation wall, and letting crowds allocate instead of committees being paid by the answer choices.
 published: true
 tags:
   - economics
@@ -19,56 +19,46 @@ aliases:
 
 ## The Thesis
 
-The goal is not "better plans." The goal is to help humanity raise healthy life years and median income fast enough to win the [Earth Optimization Prize](../strategy/earth-optimization-prize.qmd) [@earth-optimization-prize-paper-2025].
+The prize pool is not a jar of money sitting on a shelf. It is the world's largest investment fund, pointed at curing diseases and raising incomes.
 
-This paper is about one possible scale engine: the prize pool is not modeled as passive escrow. It is modeled as the world's largest, most efficient investment fund.
+Depositors [wishocratically](../solution/wishocracy.qmd) allocate capital via pairwise sliders. The same mechanism that lets crowds outperform experts at picking trivia answers lets them outperform fund managers at picking investments. The accreditation wall comes down. {{< var global_retirement_assets >}} in retirement assets stops propping up sclerotic oligopolies and starts funding dynamic new companies. Better capital allocation means a better economy. This is not complicated. Your species just made it complicated.
 
-Depositors [wishocratically](../solution/wishocracy.qmd) allocate capital via pairwise sliders. The same mechanism that lets crowds outperform experts at picking trivia answers lets them outperform fund managers at picking investments. The accreditation wall comes down. {{< var global_retirement_assets >}} in retirement assets stops propping up sclerotic oligopolies and starts funding dynamic new companies. If capital allocation improves, the economy improves with it.
-
-This chapter is the canonical pool-growth model used by the prize math.
-
-But it is not the first institutional check the papers should ask for. The first check is activation underwriting: enough capital to make mass participation and recruitment credible. The second is visible PRIZE pool seeding. This chapter explains the later-scale thesis for why much larger pools should join once the network is publicly legible.
+This chapter explains how the pool grows. It is not the first thing that needs funding (that is activation, getting enough people signed up that the Scoreboard looks real). This is what happens after.
 
 ## Why the Baseline Is Venture, Not Public Equity
 
-Ninety-nine percent of humans are legally locked out of the best-performing asset class. Venture capital and private equity produce {{< var venture_gross_return >}} gross annual returns [@cambridge-pe-vc-benchmark-2024]. Your retirement fund produces {{< var conventional_retirement_return >}} after fees. The difference is not skill. It is a door marked "accredited investors only" that keeps {{< var global_retirement_assets >}} trapped in index funds that track yesterday's winners.
+99% of humans are legally banned from the best-performing asset class. Venture capital makes {{< var venture_gross_return >}} gross annual returns [@cambridge-pe-vc-benchmark-2024]. Your retirement fund makes {{< var conventional_retirement_return >}} after fees. The difference is not skill. It is a door marked "accredited investors only" that keeps {{< var global_retirement_assets >}} trapped in index funds tracking yesterday's winners. Your government decided only rich people are smart enough to invest in things that make money.
 
-The Prize Fund removes the accreditation wall. A pooled vehicle is, by definition, an accredited investor. A $100 depositor gets the same allocation as a pension fund. Reg CF ($5M/yr), Reg A+ Tier 2 ($75M/yr), and the fund-as-institutional-investor pathway make this legal today.
+The Prize Fund walks through a loophole your regulators left open: a pooled vehicle is, by definition, an accredited investor. A $100 depositor gets into the same asset class as a pension fund. Legal today. Reg CF ($5M/yr), Reg A+ Tier 2 ($75M/yr), and the fund-as-institutional-investor pathway.
 
-At {{< var global_retirement_assets >}} in global retirement assets, the fund invests across the entire venture and private equity sector. The baseline is venture gross return ({{< var venture_gross_return >}}) because that is what capital earns in high-growth companies when you remove the fees.
+The baseline is venture gross return ({{< var venture_gross_return >}}) because that is what capital earns when you remove the fees.
 
-Two things that sound like separate alpha sources are already IN this baseline:
+Two things that sound like bonuses are already baked in:
 
-- **Fee elimination.** Venture gross return is before 2-and-20 fees. The Prize Fund has zero management fees (the allocation mechanism is the crowd, not a GP charging 2% for the privilege of losing to an index). No separate alpha needed.
-- **Lockup premium.** Venture and PE are illiquid assets. The 15-year prize accumulation period is a natural lockup. The illiquidity premium is already priced into the {{< var venture_gross_return >}} gross return. No separate alpha needed.
+- **No fees.** Venture gross return is before the 2-and-20 fees that fund managers charge for the privilege of losing to an index. The Prize Fund has no manager. The crowd is the allocator. Nobody takes 2%.
+- **Lockup premium.** Venture and PE pay more because you cannot pull your money out. The 15-year prize period is a natural lockup. That premium is already in the {{< var venture_gross_return >}} number.
 
 ## Scale: What Happens When You 15x the Venture Market
 
-Current global VC deployment is roughly $300 billion per year. If a meaningful share of {{< var global_retirement_assets >}} flows through the Prize Fund, deployment rises to roughly $4.7 trillion per year. That is a 15x expansion of the venture market.
+Right now $300 billion per year goes into venture capital. If a real share of {{< var global_retirement_assets >}} in retirement money flows through the Prize Fund, that rises to $4.7 trillion. A 15x expansion.
 
-That is the end-state scale vision, not the opening ask to a board. The opening ask is to underwrite activation and seed credibility. The scale-capital case matters once the network is visibly real enough that pensions, endowments, foundations, and family offices can justify reallocating serious capital into it.
+More money chasing deals compresses returns: {{< var scale_compression_factor >}} in the model. But the market expands. Every viable business idea gets funded. The old economy (oligopolies surviving on regulatory moats, defense contractors billing $400 for a hammer, pharmaceutical companies spending more on lobbying than on R&D) faces real competition for the first time. The venture market is not a fixed pie. It is a pie factory.
 
-Diminishing returns are real. More capital chasing deals compresses returns: {{< var scale_compression_factor >}} in the model.
-
-But the market EXPANDS. Every viable business idea gets funded. The old economy (oligopolies surviving on regulatory moats, defense contractors billing $400 for a hammer, pharmaceutical companies spending more on lobbying than on R&D) faces real competition for the first time. The 15x expansion does not chase the same number of deals. It creates a world where every garage inventor, every clinical researcher with a promising compound, every infrastructure project that pencils out actually gets capital. The venture market is not a fixed pie. It is a pie factory.
-
-High-growth startups create up to half of all new jobs [@kauffman-high-growth-startups]. Right now those startups compete for $300 billion. Give them $4.7 trillion and find out what happens to job creation, innovation, and the companies that were surviving on lobbying rather than products.
+High-growth startups create up to half of all new jobs [@kauffman-high-growth-startups]. Right now those startups compete for $300 billion. Give them $4.7 trillion and find out what happens.
 
 ## The {{< var crowd_decision_accuracy >}} vs {{< var expert_decision_accuracy >}} Advantage
 
-Your species already knows that crowds beat experts. The *Millionaire* data ({{< var crowd_decision_accuracy >}} crowd accuracy vs. {{< var expert_decision_accuracy >}} for phone-a-friend experts [@surowiecki-2004]) has been replicated across prediction markets, forecasting tournaments, and every situation where the expert has any incentive to shade the truth. The investment industry is entirely composed of incentive-shading.
+On *Who Wants to Be a Millionaire*, the audience got the answer right {{< var crowd_decision_accuracy >}} of the time. The phone-a-friend expert got it right {{< var expert_decision_accuracy >}} of the time [@surowiecki-2004]. This has been replicated across prediction markets, forecasting tournaments, and every situation where the expert has any incentive to shade the truth. The investment industry is entirely composed of incentive-shading.
 
-Applied to investment allocation: the crowd picks the better sector (biotech vs. coal, growth vs. value, emerging vs. declining) {{< var crowd_decision_accuracy >}} of the time. Conventional fund managers, committees, and pension boards pick it {{< var expert_decision_accuracy >}} of the time. The return spread between sectors is {{< var allocation_decision_spread >}}. The alpha:
+The crowd picks the better sector (biotech vs. coal, growth vs. value) {{< var crowd_decision_accuracy >}} of the time. Fund managers pick it {{< var expert_decision_accuracy >}} of the time. The return spread between sectors is {{< var allocation_decision_spread >}}. The alpha:
 
 {{< var wishocratic_crowd_alpha_latex >}}
 
-That is {{< var wishocratic_crowd_alpha >}} in annual alpha from better allocation alone.
+That is {{< var wishocratic_crowd_alpha >}} per year from better allocation alone. And this is the floor, because:
 
-Three features of wishocratic allocation make this floor rather than ceiling:
-
-- **Random pairs prevent gaming.** No single ballot to saturate with ads. Each voter sees random pairwise comparisons. The only way to "advertise" is to make your company genuinely better than whatever it is randomly compared against.
-- **Skip what you don't understand.** Voters who know biotech vote on biotech. Voters who know infrastructure vote on infrastructure. The steering wheel, not the engine.
-- **Politicians (the real "experts") are worse than {{< var expert_decision_accuracy >}}.** Phone-a-friend experts are at least trying to get the right answer. Your appropriations committee is being paid by one of the answer choices. The {{< var expert_decision_accuracy >}} baseline is generous.
+- **Random pairs prevent gaming.** No single ballot to flood with ads. You see random pairwise comparisons. The only way to "advertise" is to make your company genuinely better than whatever it gets compared against.
+- **Skip what you don't understand.** Voters who know biotech vote on biotech. Voters who know infrastructure vote on infrastructure.
+- **Politicians are worse than {{< var expert_decision_accuracy >}}.** Phone-a-friend experts are at least trying to get the right answer. Your appropriations committee is being paid by one of the answer choices.
 
 The S&P SPIVA scorecard confirms: 88% of actively managed large-cap funds underperformed the S&P 500 over 15 years [@spiva2023]. The professionals are losing to a dartboard. The crowd does better than the dartboard.
 
@@ -82,7 +72,7 @@ Wishocratic allocation is inherently global. A Nigerian depositor and a Norwegia
 
 ## Structural Return (Before the World Gets Better)
 
-Before any feedback loops, before the treaty passes, before a single disease is cured, the fund's structural return is:
+Before a single disease is cured, before the treaty passes, before anything gets better, the fund makes money just from not being stupid:
 
 | Component | Value |
 |---|---|
@@ -92,13 +82,15 @@ Before any feedback loops, before the treaty passes, before a single disease is 
 | Home bias elimination (global allocation) | +{{< var home_bias_alpha >}} |
 | **Structural annual return** | **{{< var prize_pool_annual_return >}}** |
 
-Compare to conventional retirement: {{< var conventional_retirement_return >}} after fees. The structural advantage is not a feedback loop or a hope. It is arithmetic from removing fees, removing the accreditation wall, and letting crowds allocate.
+Your retirement fund makes {{< var conventional_retirement_return >}} after fees. This is not optimism. It is arithmetic: remove fees, remove the accreditation wall, let crowds allocate.
 
 ## Why the Real Return Is Higher
 
-The {{< var prize_pool_annual_return >}} structural return is what the fund earns from architecture alone. The real return is probably higher, because the fund makes the world measurably better and that improvement feeds back into portfolio performance. The treaty redirects military spending to research, which grows GDP (peace dividend). Cured diseases produce healthier workers, which grows GDP (health dividend). The [destructive economy](gdp-trajectories.qmd) [@gdp-trajectories-paper-2025] shrinks as institutions strengthen. Depositors rationally divest from military contractors (funding the opposition to your own prize is a terrible investment strategy). More participants means deeper markets and better crowd wisdom. And the fund's investments directly cause the outcomes that make the prize pay out: it is the engine, not the scoreboard.
+{{< var prize_pool_annual_return >}} is what the fund makes just from being less stupid than your current system. The real return is probably higher, because the fund makes the world better and then the better world makes the fund richer.
 
-These effects are real, directional, and mutually reinforcing. The model omits them to keep the claim conservative and auditable. The structural return alone is sufficient to make the case.
+The treaty redirects murder money to research. Research grows GDP (peace dividend). Cured diseases produce healthier workers. Healthier workers grow GDP (health dividend). The [destructive economy](gdp-trajectories.qmd) [@gdp-trajectories-paper-2025] shrinks. Depositors stop funding military contractors (betting against your own prize is a terrible investment strategy). More participants means better crowd wisdom. And the fund's investments directly cause the outcomes that make the prize pay out. It is the engine, not the scoreboard.
+
+The model ignores all of this to keep the numbers boring and auditable.
 
 ## Expected Return and 15-Year Multiple
 
@@ -111,66 +103,54 @@ $100 deposited today becomes $100 times {{< var prize_pool_horizon_multiple >}} 
 
 ## Opportunity Cost Is Negative
 
-Conventional retirement earns {{< var conventional_retirement_return >}} after fees. The Prize Fund models {{< var prize_pool_annual_return >}}.
+Your retirement fund makes {{< var conventional_retirement_return >}}. This fund models {{< var prize_pool_annual_return >}}. "Opportunity cost" implies you give something up. You give up a worse deal.
 
-At the pool level, this is not modeled as a donation. It is modeled as capital compounding under a higher-return allocation rule than a conventional portfolio. Participant-level payout still depends on the branch: depositors recover pro rata from the same realized pool on failure, while VOTE point-holders share that pool on success.
-
-The conventional portfolio:
+Your current portfolio:
 
 - Charges 1-2% in fees (advisory + fund expenses)
-- Locks you out of venture and PE (the best-performing asset class)
+- Bans you from the best-performing asset class
 - Allocates via committees being paid by the answer choices
-- Overweights your home country
-- Does not improve as the world improves (your 60/40 portfolio does not get better when diseases get cured)
+- Bets mostly on your own country (so does every other country, which is arithmetically impossible)
+- Does not get better when diseases get cured
 
 The Prize Fund:
 
-- Charges zero fees (the crowd is the allocator)
-- Invests across the full venture/PE spectrum
-- Allocates via {{< var crowd_decision_accuracy >}}-accurate crowd wisdom
-- Is inherently global
+- Zero fees (the crowd is the allocator)
+- Full venture/PE access
+- {{< var crowd_decision_accuracy >}}-accurate crowd allocation
+- Global by default
 - Gets better as it makes the world better
 
-The opportunity cost of not participating is the difference between {{< var conventional_retirement_return >}} and {{< var prize_pool_annual_return >}}, compounded over however many years you plan to keep earning money. That is not a small number.
+The gap between {{< var conventional_retirement_return >}} and {{< var prize_pool_annual_return >}}, compounded over a career, is the cost of not playing.
 
 ## Venture Democratization
 
-The legal pathway exists today. A pooled vehicle is an accredited investor. The fund structure makes every $100 depositor a participant in the same asset class that was previously reserved for people with $1 million in liquid assets.
+Your government built a wall to "protect" small investors from risky investments. It protected them so well that they earned {{< var conventional_retirement_return >}} while rich people earned {{< var venture_gross_return >}}. Thank you for the protection.
 
-Three regulatory pathways:
+The wall has a door. A pooled vehicle is an accredited investor. A $100 depositor gets the same asset class as someone with $1 million. Three doors, all legal today:
 
-1. **Regulation Crowdfunding (Reg CF):** Up to $5M per year in offerings to unaccredited investors.
-2. **Regulation A+ Tier 2:** Up to $75M per year with SEC qualification, available to all investors.
-3. **Fund-as-institutional-investor:** The pooled fund itself qualifies as an accredited/institutional investor, accessing deals on behalf of all depositors.
-
-The accreditation wall was built to "protect" small investors from risky investments. It protected them so well that they earned {{< var conventional_retirement_return >}} while accredited investors earned {{< var venture_gross_return >}}. The Prize Fund does not fight the wall. It walks through the door that the wall left open for pooled vehicles.
+1. **Reg CF:** Up to $5M/year to anyone.
+2. **Reg A+ Tier 2:** Up to $75M/year with SEC qualification, available to all investors.
+3. **Fund-as-institutional-investor:** The pool itself qualifies as accredited, accessing deals on behalf of all depositors.
 
 ## Why PRIZE Is Not a Retirement Account (and What Is)
 
-This chapter compares the Prize Fund's returns to conventional retirement. That comparison is honest on the failure branch: depositors get their pro-rata share of the realized pool, which models at {{< var prize_pool_horizon_multiple >}} vs. {{< var conventional_retirement_horizon_multiple >}} for conventional retirement. On the failure branch, PRIZE deposits outperform your 401(k).
+If the prize fails, your deposit beats your 401(k): {{< var prize_pool_horizon_multiple >}} vs. {{< var conventional_retirement_horizon_multiple >}}. If the prize succeeds, your deposit goes to VOTE point-holders. You get nothing back from the pool (you live in a world where diseases are cured and you are {{< var treaty_personal_upside_blend >}} richer, but your specific deposit is gone).
 
-The success branch is a different story. On success, the depositor's money goes to VOTE point-holders. The depositor gets nothing back from the pool (they live in a world where diseases are cured and they are {{< var treaty_personal_upside_blend >}} richer, but their specific deposit is gone). A retirement plan administrator has fiduciary obligations under ERISA (your species' law requiring that people managing your retirement money act in your interest, not theirs, which is apparently unusual enough to require legislation). A fiduciary cannot put client money into a vehicle where the best-case outcome means the money goes to someone else. This is not a technicality. It is the structural reason PRIZE deposits cannot be a 401(k) allocation option in their current form.
+Your species has a law called ERISA requiring that people managing your retirement money act in your interest, not theirs. Apparently this is unusual enough to require legislation. A fiduciary cannot put client money into something where the best-case outcome means the money goes to someone else. So PRIZE is not a retirement account.
 
-Three instruments serve three audiences:
+| Instrument | Success | Failure | Retirement-compatible? |
+|:---|:---|:---|:---|
+| **PRIZE deposit** | Pool goes to VOTE holders (your deposit is gone) | Pro-rata share of pool ({{< var prize_pool_horizon_multiple >}}) | No |
+| **[IAB](../solution/incentive-alignment-bonds.qmd)** | {{< var victory_bond_annual_return_pct >}} perpetual revenue share | Principal at risk | Yes |
+| **Conventional retirement** | {{< var conventional_retirement_horizon_multiple >}} after 15 years | Same | Yes |
 
-| Instrument | What happens on success | What happens on failure | Retirement-compatible? | Who it's for |
-|:---|:---|:---|:---|:---|
-| **PRIZE deposit** | Pool goes to VOTE holders (your deposit is gone) | Pro-rata share of realized pool ({{< var prize_pool_horizon_multiple >}}) | No (success branch violates fiduciary duty) | Depositors who understand the conditional structure and want the coordination upside |
-| **[IAB](../solution/incentive-alignment-bonds.qmd)** | {{< var victory_bond_annual_return_pct >}} perpetual revenue share | Money was spent on the campaign (principal at risk) | Yes (standard securities, Reg D/CF/A+) | Investors who want returns tied to treaty passage |
-| **Conventional retirement** | {{< var conventional_retirement_horizon_multiple >}} after 15 years | Same (market risk only) | Yes (that's what it is) | People who want predictable market exposure |
-
-**The retirement-compatible instrument is the IAB, not PRIZE.** [Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd) [@iab-paper-2025] are straightforward revenue-share securities. An investor buys a bond, the money funds the campaign, and if the treaty passes, the investor receives a perpetual revenue share from treaty funding flows. This is a standard security with a clear risk/return profile. It can be offered under Reg D (accredited investors), Reg CF ($5M/year to anyone), or Reg A+ ($75M/year with SEC qualification). A 401(k) plan administrator can evaluate it like any other fixed-income-adjacent security.
-
-PRIZE deposits are a coordination mechanism. IABs are an investment. The Prize Fund chapter compares PRIZE returns to retirement because the comparison illustrates that even the failure branch outperforms conventional retirement. But the comparison should not imply that PRIZE is a retirement substitute. It is a conditional bet on civilization, with a very attractive consolation prize.
-
-If your retirement fund wants exposure to the treaty succeeding, IABs are the instrument. If you personally want to put skin in the game and earn VOTE points by recruiting, PRIZE is the instrument. Both exist because they serve different functions for different audiences.
+If your retirement fund wants exposure to the treaty succeeding, [IABs](../solution/incentive-alignment-bonds.qmd) [@iab-paper-2025] are the instrument. Money in, revenue share out. Standard securities, nothing exotic. If you personally want skin in the game, PRIZE is the instrument. A conditional bet on civilization, with a very attractive consolation prize.
 
 ## The Self-Fulfilling Property
 
 The fund does not bet on whether targets get hit. It funds hitting them.
 
-A conventional investment fund analyzes whether a company will succeed and bets accordingly. The Prize Fund allocates capital to companies that cure diseases, build infrastructure, and raise incomes, which ARE the prize targets. If the fund allocates well, the targets get hit. If the targets get hit, the same realized pool routes to VOTE point-holders. If the targets do not get hit, depositors divide that same realized pool pro rata.
+A normal investment fund guesses which companies will succeed and bets accordingly. The Prize Fund allocates capital to companies that cure diseases, build infrastructure, and raise incomes, which ARE the prize targets. If the fund allocates well, the targets get hit. If the targets get hit, the pool goes to VOTE point-holders. If not, depositors split the pool.
 
-In the canonical prize framing, the first institutional question is whether {{< var global_coordination_activation_budget >}} can make mass participation credible. The secondary visible-pool question is whether {{< var prize_pool_retirement_equivalent_principal >}} can make two referred votes worth {{< var retirement_equivalent_2_claims_target_payout >}} on success for a representative saver.
-
-This is not circular. It is a positive feedback loop with a clear entry point: deposit, allocate wisely, the world improves, you get paid. The circularity objection assumes the fund is passive. The fund is the largest active capital allocator in human history, pointed at two numbers that everyone agrees on.
+Someone will call this circular. It is not circular. It is a loop. Deposit, allocate wisely, the world improves, you get paid. The objection assumes the fund sits there passively. The fund is the largest active capital allocator in human history, pointed at two numbers that everyone agrees on.
