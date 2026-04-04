@@ -1,16 +1,13 @@
 /**
- * Vercel Edge Function: /api/chat
- *
  * Streaming chat endpoint using Gemini Flash + Wishonia persona.
  * Client sends { question, context, history } and receives a text stream.
- * Open to all origins (embeddable widget support).
  */
 
 import { streamText } from "ai";
 import { google } from "@ai-sdk/google";
 import { WISHONIA_SYSTEM_PROMPT } from "../lib/wishonia-chat";
 
-export const config = { runtime: "edge" };
+export const maxDuration = 300;
 
 const OPEN_CORS = {
   "Access-Control-Allow-Origin": "*",
@@ -27,6 +24,7 @@ export default async function handler(req: Request) {
     return new Response("Method not allowed", { status: 405, headers: OPEN_CORS });
   }
 
+  const t0 = Date.now();
   const { question, context, history } = await req.json();
 
   if (!question) {
@@ -40,6 +38,10 @@ export default async function handler(req: Request) {
     "{context}",
     context || "No specific book context available for this question."
   );
+
+  const contextLen = (context || "").length;
+  const historyLen = (history || []).length;
+  console.log(`[chat] question="${question.substring(0, 80)}" context=${contextLen} chars, history=${historyLen} msgs`);
 
   const messages = [
     ...(history || []).map((m: { role: string; content: string }) => ({
@@ -60,7 +62,13 @@ export default async function handler(req: Request) {
     }),
     system: systemPrompt,
     messages,
+    onFinish({ text, usage }) {
+      const elapsed = Date.now() - t0;
+      console.log(`[chat] done in ${elapsed}ms | ${text.length} chars | tokens: ${JSON.stringify(usage)}`);
+    },
   });
 
-  return result.toTextStreamResponse();
+  const response = result.toTextStreamResponse();
+  console.log(`[chat] stream started in ${Date.now() - t0}ms`);
+  return response;
 }

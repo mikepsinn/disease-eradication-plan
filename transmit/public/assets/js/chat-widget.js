@@ -1632,7 +1632,13 @@
       var card = renderVisualCard(visuals);
       if (!card) return;
       console.log("[VISUALS] rendering independent card");
-      msgContainer.appendChild(card);
+      // Insert before thinking indicator so the loader stays at the bottom
+      var thinkingEl = msgContainer.querySelector(".chat-thinking-indicator");
+      if (thinkingEl) {
+        msgContainer.insertBefore(card, thinkingEl);
+      } else {
+        msgContainer.appendChild(card);
+      }
       scrollToBottom();
       ChatStorage.attachVisuals(messages, visuals);
     });
@@ -2076,7 +2082,13 @@
                 var card = renderVisualCard(visuals);
                 if (!card) return;
                 console.log("[VISUALS] rendering voice visual card immediately");
-                msgContainer.appendChild(card);
+                // Insert before thinking indicator so the loader stays at the bottom
+                var thinkingEl = msgContainer.querySelector(".chat-thinking-indicator");
+                if (thinkingEl) {
+                  msgContainer.insertBefore(card, thinkingEl);
+                } else {
+                  msgContainer.appendChild(card);
+                }
                 scrollToBottom();
                 ChatStorage.attachVisuals(messages, visuals);
               });

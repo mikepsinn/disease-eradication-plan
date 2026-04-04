@@ -11,7 +11,7 @@ import { generateObject } from "ai";
 import { google } from "@ai-sdk/google";
 import { VISUALS_SYSTEM_PROMPT, visualsSchema } from "../lib/visuals-prompt";
 
-export const config = { runtime: "edge" };
+export const maxDuration = 300;
 
 const OPEN_CORS = {
   "Access-Control-Allow-Origin": "*",
@@ -31,6 +31,7 @@ export default async function handler(req: Request) {
     });
   }
 
+  const t0 = Date.now();
   const { question, context, imageOptions } = await req.json();
 
   if (!question) {
@@ -39,6 +40,8 @@ export default async function handler(req: Request) {
       headers: { ...OPEN_CORS, "Content-Type": "application/json" },
     });
   }
+
+  console.log(`[visuals] question="${question.substring(0, 80)}" context=${(context || "").length} chars`);
 
   const systemPrompt = VISUALS_SYSTEM_PROMPT.replace(
     "{context}",
@@ -79,11 +82,14 @@ export default async function handler(req: Request) {
       prompt: userMessage,
     });
 
-    return new Response(JSON.stringify(result.object), {
+    const body = JSON.stringify(result.object);
+    console.log(`[visuals] done in ${Date.now() - t0}ms | ${body.length} chars | usage: ${JSON.stringify(result.usage)}`);
+    return new Response(body, {
       headers: { ...OPEN_CORS, "Content-Type": "application/json" },
     });
   } catch (err: unknown) {
     const message = err instanceof Error ? err.message : "Unknown error";
+    console.log(`[visuals] error in ${Date.now() - t0}ms: ${message}`);
     return new Response(JSON.stringify({ error: message }), {
       status: 500,
       headers: { ...OPEN_CORS, "Content-Type": "application/json" },
