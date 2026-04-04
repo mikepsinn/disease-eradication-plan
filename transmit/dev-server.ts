@@ -10,8 +10,12 @@
 
 import { createServer } from "http";
 import { readFileSync, existsSync, statSync } from "fs";
-import { resolve, join, extname } from "path";
+import { resolve, join, extname, dirname } from "path";
+import { fileURLToPath } from "url";
 import { config } from "dotenv";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 // Load .env from repo root
 config({ path: resolve(__dirname, "..", ".env") });
@@ -35,7 +39,9 @@ const MIME: Record<string, string> = {
 // Lazy-import API handlers
 async function loadHandler(name: string) {
   const mod = await import(`./api/${name}`);
-  return mod.default;
+  const exp = mod.default;
+  // Support both `export default fn` and `export default { fetch: fn }`
+  return typeof exp === "function" ? exp : exp.fetch;
 }
 
 const server = createServer(async (req, res) => {

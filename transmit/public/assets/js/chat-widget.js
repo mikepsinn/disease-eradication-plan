@@ -35,6 +35,8 @@
   var apiBaseMeta = document.querySelector('meta[name="dih-api-base"]');
   var API_BASE = apiBaseMeta ? apiBaseMeta.content.replace(/\/$/, '') : '';
   var MANUAL_BASE = "https://manual.warondisease.org";
+  var PHOTOSWIPE_CSS_HREF = "/assets/vendor/photoswipe/photoswipe.css";
+  var PHOTOSWIPE_MODULE_HREF = "/assets/vendor/photoswipe/photoswipe.esm.min.js";
 
   function isLocalhostDebugUi() {
     var hostname = (window.location && window.location.hostname || "").toLowerCase();
@@ -42,6 +44,11 @@
   }
 
   var SHOW_VOICE_RAG_DEBUG = isLocalhostDebugUi();
+  var photoSwipeModulePromise = null;
+  var photoSwipeCssLoaded = false;
+  var lightboxImageSizeCache = {};
+  var LIGHTBOX_ZOOM_STEP_FACTOR = 1.35;
+  var LIGHTBOX_ZOOM_EPSILON = 0.01;
 
   // ========================================
   // STATE
@@ -622,6 +629,7 @@
     // Pre-load search index and image index. System prompt is only needed for localhost RAG debug UI.
     fetchSearchIndex();
     fetchImageIndex();
+    ensurePhotoSwipeCss();
     if (SHOW_VOICE_RAG_DEBUG) fetchSystemPrompt();
 
     createFAB();
@@ -1295,7 +1303,7 @@
         img.alt = "";
         img.loading = "lazy";
         img.addEventListener("click", function () {
-          showLightbox(MANUAL_BASE + "/" + path, "");
+          showLightbox(MANUAL_BASE + "/" + path, "", img);
         });
         imgContainer.appendChild(img);
       });
@@ -1386,14 +1394,71 @@
     imgTag.alt = title;
     imgTag.loading = "lazy";
     imgTag.addEventListener("click", function () {
-      showLightbox(MANUAL_BASE + "/" + path, title);
+      showLightbox(MANUAL_BASE + "/" + path, title, imgTag);
     });
     imgEl.appendChild(imgTag);
     parent.appendChild(imgEl);
   }
 
-  // Lightbox overlay for images
-  function showLightbox(src, alt) {
+  function ensurePhotoSwipeCss() {
+    if (photoSwipeCssLoaded) return;
+    if (document.querySelector('link[data-photoswipe-css="true"]')) {
+      photoSwipeCssLoaded = true;
+      return;
+    }
+    var link = document.createElement("link");
+    link.rel = "stylesheet";
+    link.href = PHOTOSWIPE_CSS_HREF;
+    link.setAttribute("data-photoswipe-css", "true");
+    document.head.appendChild(link);
+    photoSwipeCssLoaded = true;
+  }
+
+  function loadPhotoSwipeModule() {
+    ensurePhotoSwipeCss();
+    if (!photoSwipeModulePromise) {
+      photoSwipeModulePromise = import(PHOTOSWIPE_MODULE_HREF);
+    }
+    return photoSwipeModulePromise;
+  }
+
+  function getLightboxImageSize(src, thumbEl) {
+    var cached = lightboxImageSizeCache[src];
+    if (cached) return Promise.resolve(cached);
+
+    if (thumbEl && thumbEl.naturalWidth && thumbEl.naturalHeight) {
+      cached = { width: thumbEl.naturalWidth, height: thumbEl.naturalHeight };
+      lightboxImageSizeCache[src] = cached;
+      return Promise.resolve(cached);
+    }
+
+    return new Promise(function (resolve) {
+      var probe = new Image();
+      var settled = false;
+
+      function finish(width, height) {
+        if (settled) return;
+        settled = true;
+        var size = { width: width || 1600, height: height || 1200 };
+        lightboxImageSizeCache[src] = size;
+        resolve(size);
+      }
+
+      probe.onload = function () {
+        finish(probe.naturalWidth, probe.naturalHeight);
+      };
+      probe.onerror = function () {
+        finish(1600, 1200);
+      };
+      probe.src = src;
+
+      if (probe.complete && probe.naturalWidth) {
+        finish(probe.naturalWidth, probe.naturalHeight);
+      }
+    });
+  }
+
+  function showFallbackLightbox(src, alt) {
     var overlay = document.createElement("div");
     overlay.className = "chat-lightbox";
     overlay.innerHTML =
@@ -1406,6 +1471,132 @@
       overlay.remove();
     });
     document.body.appendChild(overlay);
+  }
+
+  function clampLightboxZoom(value, min, max) {
+    return Math.max(min, Math.min(max, value));
+  }
+
+  function getLightboxZoomTarget(pswp, direction) {
+    var currSlide = pswp && pswp.currSlide;
+    if (!currSlide || !currSlide.isZoomable()) return null;
+
+    var minZoom = currSlide.zoomLevels.initial;
+    var maxZoom = currSlide.zoomLevels.max;
+    var currentZoom = currSlide.currZoomLevel;
+    var targetZoom = direction > 0
+      ? currentZoom * LIGHTBOX_ZOOM_STEP_FACTOR
+      : currentZoom / LIGHTBOX_ZOOM_STEP_FACTOR;
+
+    targetZoom = clampLightboxZoom(targetZoom, minZoom, maxZoom);
+
+    if (direction > 0 && targetZoom > maxZoom - LIGHTBOX_ZOOM_EPSILON) {
+      targetZoom = maxZoom;
+    }
+    if (direction < 0 && targetZoom < minZoom + LIGHTBOX_ZOOM_EPSILON) {
+      targetZoom = minZoom;
+    }
+
+    return targetZoom;
+  }
+
+  function registerIncrementalZoomControls(pswp) {
+    function createZoomButton(direction) {
+      var isZoomIn = direction > 0;
+      var buttonName = isZoomIn ? "zoomIn" : "zoomOut";
+
+      pswp.ui.registerElement({
+        name: buttonName,
+        title: isZoomIn ? "Zoom in" : "Zoom out",
+        ariaLabel: isZoomIn ? "Zoom in" : "Zoom out",
+        order: isZoomIn ? 9 : 8,
+        isButton: true,
+        html: {
+          isCustomSVG: true,
+          size: 32,
+          inner: isZoomIn
+            ? '<path d="M8 15h16v2H8z"/><path d="M15 8h2v16h-2z"/>'
+            : '<path d="M8 15h16v2H8z"/>'
+        },
+        onInit: function (element, photoSwipe) {
+          function updateState() {
+            var currSlide = photoSwipe && photoSwipe.currSlide;
+            var isDisabled = true;
+
+            if (currSlide && currSlide.isZoomable()) {
+              var minZoom = currSlide.zoomLevels.initial;
+              var maxZoom = currSlide.zoomLevels.max;
+              var currentZoom = currSlide.currZoomLevel;
+              isDisabled = isZoomIn
+                ? currentZoom >= maxZoom - LIGHTBOX_ZOOM_EPSILON
+                : currentZoom <= minZoom + LIGHTBOX_ZOOM_EPSILON;
+            }
+
+            element.disabled = isDisabled;
+          }
+
+          photoSwipe.on("zoomPanUpdate", updateState);
+          photoSwipe.on("change", updateState);
+          photoSwipe.on("openingAnimationEnd", updateState);
+          updateState();
+        },
+        onClick: function (_event, _element, photoSwipe) {
+          var targetZoom = getLightboxZoomTarget(photoSwipe, direction);
+          if (!targetZoom) return;
+          photoSwipe.zoomTo(
+            targetZoom,
+            photoSwipe.getViewportCenterPoint(),
+            photoSwipe.options.zoomAnimationDuration
+          );
+        },
+      });
+    }
+
+    createZoomButton(-1);
+    createZoomButton(1);
+  }
+
+  // PhotoSwipe lightbox for zoomable chat images, with a simple fallback overlay if loading fails.
+  async function showLightbox(src, alt, thumbEl) {
+    try {
+      var loaded = await Promise.all([loadPhotoSwipeModule(), getLightboxImageSize(src, thumbEl)]);
+      var photoSwipeModule = loaded[0];
+      var size = loaded[1];
+      var PhotoSwipe = photoSwipeModule && photoSwipeModule.default ? photoSwipeModule.default : photoSwipeModule;
+
+      var pswp = new PhotoSwipe({
+        dataSource: [{
+          src: src,
+          width: size.width,
+          height: size.height,
+          alt: alt || "",
+        }],
+        index: 0,
+        bgOpacity: 0.94,
+        showHideAnimationType: "fade",
+        wheelToZoom: true,
+        zoom: false,
+        counter: false,
+        arrowPrev: false,
+        arrowNext: false,
+        secondaryZoomLevel: 2.5,
+        maxZoomLevel: 4,
+        closeTitle: "Close image",
+        imageClickAction: false,
+        doubleTapAction: false,
+        paddingFn: function (viewportSize) {
+          var pad = viewportSize.x < 768 ? 16 : 32;
+          return { top: pad, bottom: pad, left: pad, right: pad };
+        },
+      });
+      pswp.on("uiRegister", function () {
+        registerIncrementalZoomControls(pswp);
+      });
+      pswp.init();
+    } catch (err) {
+      console.error("[LIGHTBOX] PhotoSwipe failed to open:", err);
+      showFallbackLightbox(src, alt);
+    }
   }
 
   // Smart scroll: only auto-scroll if user hasn't scrolled up
@@ -1937,6 +2128,9 @@
 
   // Track currently playing audio so we can stop it
   var currentAudio = null;
+  var ttsLiveClient = null;  // Gemini Live client for TTS streaming
+  var ttsPlayback = null;    // AudioPlayback for TTS streaming
+  var ttsMouthRafId = null;  // mouth animation for TTS
 
   function stopCurrentAudio() {
     if (currentAudio) {
@@ -1944,12 +2138,42 @@
       currentAudio.currentTime = 0;
       currentAudio = null;
     }
+    if (ttsLiveClient) {
+      ttsLiveClient.disconnect();
+      ttsLiveClient = null;
+    }
+    if (ttsPlayback) {
+      ttsPlayback.interrupt();
+      ttsPlayback.destroy();
+      ttsPlayback = null;
+    }
+    if (ttsMouthRafId) {
+      cancelAnimationFrame(ttsMouthRafId);
+      ttsMouthRafId = null;
+    }
+    if (window.wishoniaAnimator) window.wishoniaAnimator.stopSpeaking();
+  }
+
+  function startTtsMouthLoop() {
+    if (ttsMouthRafId) return;
+    function tick() {
+      if (!ttsPlayback) { ttsMouthRafId = null; return; }
+      var amp = ttsPlayback.getAmplitude();
+      if (window.wishoniaAnimator) window.wishoniaAnimator.setMouthFromAmplitude(amp);
+      ttsMouthRafId = requestAnimationFrame(tick);
+    }
+    ttsMouthRafId = requestAnimationFrame(tick);
+  }
+
+  function stopTtsMouthLoop() {
+    if (ttsMouthRafId) { cancelAnimationFrame(ttsMouthRafId); ttsMouthRafId = null; }
+    if (window.wishoniaAnimator) window.wishoniaAnimator.stopSpeaking();
   }
 
   // onEnded callback is used by voice chat mode to chain: TTS done -> listen again
   function playTTS(text, btn, onEnded) {
     // If already playing, stop it (toggle behavior)
-    if (currentAudio && !currentAudio.paused) {
+    if (ttsLiveClient || (currentAudio && !currentAudio.paused)) {
       stopCurrentAudio();
       if (btn) {
         btn.textContent = "\u{1F50A}";
@@ -1958,59 +2182,75 @@
       return;
     }
 
-    function playAudioUrl(audioUrl) {
-      stopCurrentAudio();
-      var audio = new Audio(audioUrl);
-      currentAudio = audio;
-      audio.addEventListener("ended", function () {
-        currentAudio = null;
-        if (btn) btn.textContent = "\u{1F50A}";
-        if (onEnded) onEnded();
-      });
-      if (btn) btn.textContent = "\u23F9";
-      audio.play();
-    }
-
-    // Check cache
-    if (audioCache[text]) {
-      playAudioUrl(audioCache[text]);
-      return;
-    }
-
     if (btn) {
       btn.classList.add("loading");
       btn.textContent = "\u23F3";
     }
 
-    // Show waveform animation in the chat
-    var waveform = createWaveformIndicator("Generating voice...");
-    msgContainer.appendChild(waveform);
-    scrollToBottom();
+    // Stream TTS via Gemini Live for instant playback + mouth animation
+    (async function () {
+      try {
+        // Get ephemeral token
+        var creds = await fetch(API_BASE + "/api/voice-token").then(function (r) {
+          if (!r.ok) throw new Error("Token failed: " + r.status);
+          return r.json();
+        });
 
-    fetch(API_BASE + "/api/tts", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ text: text }),
-    })
-      .then(function (response) {
-        if (!response.ok) throw new Error("TTS failed");
-        return response.blob();
-      })
-      .then(function (blob) {
-        if (waveform.parentNode) waveform.remove();
-        var url = URL.createObjectURL(blob);
-        audioCache[text] = url;
-        if (btn) btn.classList.remove("loading");
-        playAudioUrl(url);
-      })
-      .catch(function () {
-        if (waveform.parentNode) waveform.remove();
+        // Init audio playback
+        ttsPlayback = new AudioPlayback();
+        await ttsPlayback.init();
+
+        // Clean up when audio finishes draining
+        ttsPlayback.onDrained = function () {
+          stopTtsMouthLoop();
+          if (btn) {
+            btn.textContent = "\u{1F50A}";
+            btn.classList.remove("loading");
+          }
+          if (ttsLiveClient) { ttsLiveClient.disconnect(); ttsLiveClient = null; }
+          if (ttsPlayback) { ttsPlayback.destroy(); ttsPlayback = null; }
+          if (onEnded) onEnded();
+        };
+
+        // Connect Gemini Live (audio-only, no mic)
+        ttsLiveClient = new GeminiLiveClient({
+          apiKey: creds.token,
+          systemInstruction: "You are a text-to-speech reader. Read the user's text aloud EXACTLY as written. Do not respond, comment, add anything, or change any words. Just read it verbatim in a patient, warm voice. Slightly quick pace.",
+          voice: "Kore",
+          onAudio: function (b64) {
+            ttsPlayback.play(b64);
+            if (!ttsMouthRafId && window.wishoniaAnimator) startTtsMouthLoop();
+          },
+          onTurnComplete: function () {
+            // Audio may still be buffered in the worklet; onDrained handles cleanup
+          },
+          onError: function () {
+            stopCurrentAudio();
+            if (btn) {
+              btn.textContent = "\u{1F50A}";
+              btn.classList.remove("loading");
+            }
+            if (onEnded) onEnded();
+          },
+        });
+
+        await ttsLiveClient.connect();
+
+        if (btn) btn.textContent = "\u23F9";
+
+        // Send text to speak
+        ttsLiveClient.sendText(text);
+
+      } catch (err) {
+        console.error("[TTS] live streaming failed:", err);
+        stopCurrentAudio();
         if (btn) {
           btn.textContent = "\u{1F50A}";
           btn.classList.remove("loading");
         }
         if (onEnded) onEnded();
-      });
+      }
+    })();
   }
 
   // ========================================

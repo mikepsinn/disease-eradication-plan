@@ -19,7 +19,7 @@ Rules:
 - table: Use for structured multi-row comparisons (e.g., cost breakdowns, mechanism comparisons). Keep it compact: 2-5 rows, 2-4 columns.
 - mermaid: Use for process flows, decision trees, or system architecture diagrams. Use flowchart TD or LR syntax. Keep it under 15 nodes.
 - sourceLinks: Extract from the reference material. Only include 1-3 links that are directly relevant. Use the Source: lines from the context. URLs should be relative paths starting with /.
-- images: Pick 1-3 image paths from the provided candidates. Only include images that genuinely illustrate the answer. Return the exact path strings. Prefer fewer, more relevant images over many loosely related ones.
+- images: Pick 1-3 image paths from the provided candidates. Only include images that genuinely illustrate the answer. Return the exact path strings.
 
 CRITICAL: Most questions need at most 1-2 visual elements. Many need zero. A keyFigure alone is often enough. Never generate all fields at once.
 

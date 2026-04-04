@@ -458,7 +458,58 @@
   opacity: 0.85;
 }
 
-/* Lightbox overlay */
+/* PhotoSwipe theme */
+.pswp {
+  --pswp-bg: #07060d;
+  --pswp-icon-color: #c6cbf5;
+  --pswp-icon-color-secondary: #d100b1;
+  --pswp-icon-stroke-color: rgba(54, 226, 248, 0.95);
+  --pswp-preloader-color: rgba(54, 226, 248, 0.25);
+  --pswp-preloader-color-secondary: #c6cbf5;
+}
+
+.pswp__top-bar {
+  align-items: center;
+  gap: 8px;
+  padding: 0 12px;
+}
+
+.pswp__top-bar .pswp__button {
+  width: 46px;
+  height: 46px;
+  margin: 0;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.82);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(10px);
+  opacity: 1;
+}
+
+.pswp__top-bar .pswp__button:hover,
+.pswp__top-bar .pswp__button:active,
+.pswp__top-bar .pswp__button:focus {
+  background: rgba(0, 0, 0, 0.92);
+  border-color: rgba(54, 226, 248, 0.5);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.42);
+}
+
+.pswp__top-bar .pswp__button:disabled {
+  background: rgba(0, 0, 0, 0.68);
+  border-color: rgba(255, 255, 255, 0.08);
+  opacity: 0.5;
+}
+
+.pswp__top-bar .pswp__button .pswp__icn {
+  top: 7px;
+  left: 7px;
+}
+
+.pswp__button--close {
+  margin-right: 0;
+}
+
+/* Fallback lightbox overlay */
 .chat-lightbox {
   position: fixed;
   inset: 0;
