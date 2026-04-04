@@ -36,6 +36,13 @@
   var API_BASE = apiBaseMeta ? apiBaseMeta.content.replace(/\/$/, '') : '';
   var MANUAL_BASE = "https://manual.warondisease.org";
 
+  function isLocalhostDebugUi() {
+    var hostname = (window.location && window.location.hostname || "").toLowerCase();
+    return hostname === "localhost" || hostname === "127.0.0.1" || hostname === "[::1]" || /(^|\.)localhost$/.test(hostname);
+  }
+
+  var SHOW_VOICE_RAG_DEBUG = isLocalhostDebugUi();
+
   // ========================================
   // STATE
   // ========================================
@@ -612,10 +619,10 @@
   function init() {
     if (isDisabled()) return;
 
-    // Pre-load search index, image index, and system prompt
+    // Pre-load search index and image index. System prompt is only needed for localhost RAG debug UI.
     fetchSearchIndex();
     fetchImageIndex();
-    fetchSystemPrompt();
+    if (SHOW_VOICE_RAG_DEBUG) fetchSystemPrompt();
 
     createFAB();
     createPanel();
@@ -1469,17 +1476,19 @@
     console.log("[VOICE-RAG] sendText:", combined.length, "chars");
     liveClient.sendText(combined);
 
-    // Show collapsible RAG/prompt details
-    var ragBubble = document.createElement("div");
-    ragBubble.className = "chat-msg chat-msg-assistant";
-    ragBubble.appendChild(buildRagDetailsElement({
-      systemPrompt: voiceSystemPrompt,
-      transcript: transcript,
-      ragContext: ragContext,
-      indexSize: searchIndex ? searchIndex.length : null,
-    }));
-    msgContainer.appendChild(ragBubble);
-    scrollToBottom();
+    if (SHOW_VOICE_RAG_DEBUG) {
+      // Show collapsible RAG/prompt details in localhost only.
+      var ragBubble = document.createElement("div");
+      ragBubble.className = "chat-msg chat-msg-assistant";
+      ragBubble.appendChild(buildRagDetailsElement({
+        systemPrompt: voiceSystemPrompt,
+        transcript: transcript,
+        ragContext: ragContext,
+        indexSize: searchIndex ? searchIndex.length : null,
+      }));
+      msgContainer.appendChild(ragBubble);
+      scrollToBottom();
+    }
 
     return { ragContext: ragContext };
   }
