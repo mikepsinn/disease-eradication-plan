@@ -19,7 +19,7 @@ Rules:
 - table: Use for structured multi-row comparisons (e.g., cost breakdowns, mechanism comparisons). Keep it compact: 2-5 rows, 2-4 columns.
 - mermaid: Use for process flows, decision trees, or system architecture diagrams. Use flowchart TD or LR syntax. Keep it under 15 nodes.
 - sourceLinks: Extract from the reference material. Only include 1-3 links that are directly relevant. Use the Source: lines from the context. URLs should be relative paths starting with /.
-- image: Pick the best image path from the provided candidates. Only use if the image genuinely illustrates the answer. Return the exact path string.
+- images: Pick 1-3 image paths from the provided candidates. Only include images that genuinely illustrate the answer. Return the exact path strings. Prefer fewer, more relevant images over many loosely related ones.
 
 CRITICAL: Most questions need at most 1-2 visual elements. Many need zero. A keyFigure alone is often enough. Never generate all fields at once.
 
@@ -81,10 +81,10 @@ export const visualsSchema = z.object({
     .nullable()
     .describe("1-3 relevant source links from the reference material"),
 
-  image: z
-    .string()
+  images: z
+    .array(z.string())
     .nullable()
-    .describe("Image path from the provided candidates"),
+    .describe("1-3 image paths from the provided candidates"),
 });
 
 export type VisualsResult = z.infer<typeof visualsSchema>;

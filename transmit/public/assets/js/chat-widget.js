@@ -1149,6 +1149,7 @@
       visuals.table ||
       visuals.mermaid ||
       (visuals.sourceLinks && visuals.sourceLinks.length > 0) ||
+      (visuals.images && visuals.images.length > 0) ||
       visuals.image;
 
     if (!hasContent) return null;
@@ -1280,19 +1281,24 @@
       card.appendChild(sourcesDiv);
     }
 
-    // Image
-    if (visuals.image) {
+    // Images (array or legacy single string)
+    var imagePaths = visuals.images && visuals.images.length > 0
+      ? visuals.images
+      : visuals.image ? [visuals.image] : [];
+    if (imagePaths.length > 0) {
       var imgContainer = document.createElement("div");
       imgContainer.className = "chat-image-container";
-      var img = document.createElement("img");
-      img.className = "chat-image-thumb";
-      img.src = MANUAL_BASE + "/" + visuals.image;
-      img.alt = "";
-      img.loading = "lazy";
-      img.addEventListener("click", function () {
-        showLightbox(MANUAL_BASE + "/" + visuals.image, "");
+      imagePaths.forEach(function (path) {
+        var img = document.createElement("img");
+        img.className = "chat-image-thumb";
+        img.src = MANUAL_BASE + "/" + path;
+        img.alt = "";
+        img.loading = "lazy";
+        img.addEventListener("click", function () {
+          showLightbox(MANUAL_BASE + "/" + path, "");
+        });
+        imgContainer.appendChild(img);
       });
-      imgContainer.appendChild(img);
       card.appendChild(imgContainer);
     }
 
@@ -1635,7 +1641,7 @@
     });
 
     // Fire visuals request in parallel -- renders its own card independently of text stream
-    var imageOptions = findTopImageCandidates(text, lastSearchResults, 3);
+    var imageOptions = findTopImageCandidates(text, lastSearchResults, 5);
     fetchVisuals(text, context, imageOptions).then(function (visuals) {
       if (!visuals) return;
       var card = renderVisualCard(visuals);
