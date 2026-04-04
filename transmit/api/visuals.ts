@@ -10,6 +10,7 @@
 import { generateObject } from "ai";
 import { google } from "@ai-sdk/google";
 import { VISUALS_SYSTEM_PROMPT, visualsSchema } from "../lib/visuals-prompt";
+import { initSentry, Sentry } from "../lib/sentry";
 
 export const config = { runtime: "edge" };
 
@@ -20,6 +21,8 @@ const OPEN_CORS = {
 };
 
 export default async function handler(req: Request) {
+  initSentry();
+
   if (req.method === "OPTIONS") {
     return new Response(null, { status: 204, headers: OPEN_CORS });
   }
@@ -88,6 +91,7 @@ export default async function handler(req: Request) {
       headers: { ...OPEN_CORS, "Content-Type": "application/json" },
     });
   } catch (err: unknown) {
+    Sentry.captureException(err);
     const message = err instanceof Error ? err.message : "Unknown error";
     console.log(`[visuals] error in ${Date.now() - t0}ms: ${message}`);
     return new Response(JSON.stringify({ error: message }), {
