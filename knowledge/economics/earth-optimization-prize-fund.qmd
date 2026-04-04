@@ -2,6 +2,12 @@
 title: The Earth Optimization Prize Fund
 subtitle: How the prize pool makes money while humanity tries not to be stupid
 description: The PRIZE pool is not a jar of money on a shelf. It is the world's largest investment fund, making {{< var prize_pool_annual_return >}} per year by removing fees, removing the accreditation wall, and letting crowds allocate instead of committees being paid by the answer choices.
+abstract: |
+  99% of humans are legally banned from the best-performing asset class. Venture capital makes {{< var venture_gross_return >}} per year. Your retirement fund makes {{< var conventional_retirement_return >}} after fees. The difference is not skill. It is a door marked "accredited investors only." The Prize Fund walks through a loophole: a pooled vehicle is an accredited investor. A $100 depositor gets into the same club as a pension fund.
+
+  Depositors allocate capital via wishocratic pairwise sliders. On *Who Wants to Be a Millionaire*, the audience got the answer right {{< var crowd_decision_accuracy >}} of the time; the phone-a-friend expert got it right {{< var expert_decision_accuracy >}} [@surowiecki-2004]. The investment industry is entirely composed of phone-a-friend experts, except they are being paid by one of the answer choices. The structural return (before the world gets better): {{< var prize_pool_annual_return >}} per year. $100 becomes $100 times {{< var prize_pool_horizon_multiple >}} by {{< var destructive_economy_50pct_year >}}. Your retirement account turns that same $100 into $100 times {{< var conventional_retirement_horizon_multiple >}}.
+
+  The fund does not bet on whether the targets get hit. It funds hitting them. The investments cure diseases, build infrastructure, and raise incomes, which ARE the prize targets. If the fund allocates well, the targets get hit. If the targets get hit, the pool goes to VOTE point-holders. If not, depositors split the pool (still beats your 401(k)). It is a loop, not a circle.
 published: true
 tags:
   - economics
@@ -154,3 +160,5 @@ The fund does not bet on whether targets get hit. It funds hitting them.
 A normal investment fund guesses which companies will succeed and bets accordingly. The Prize Fund allocates capital to companies that cure diseases, build infrastructure, and raise incomes, which ARE the prize targets. If the fund allocates well, the targets get hit. If the targets get hit, the pool goes to VOTE point-holders. If not, depositors split the pool.
 
 Someone will call this circular. It is not circular. It is a loop. Deposit, allocate wisely, the world improves, you get paid. The objection assumes the fund sits there passively. The fund is the largest active capital allocator in human history, pointed at two numbers that everyone agrees on.
+
+The first question is whether {{< var global_coordination_activation_budget >}} can make mass participation credible. The second is whether {{< var prize_pool_retirement_equivalent_principal >}} in the pool can make two referred votes worth {{< var retirement_equivalent_2_claims_target_payout >}} on success for a representative saver.
