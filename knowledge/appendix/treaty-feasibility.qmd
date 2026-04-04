@@ -85,7 +85,7 @@ You aren't buying a treaty. You're buying the machinery that makes the treaty ve
 
 This section documents the rationale for the **{{< var political_success_probability >}} central estimate** (and a 25% optimistic scenario ceiling). The model assumes failure is the base case. It's still a good bet. On Wishonia, we would not invest in something where failure is the base case. On Earth, this is called "venture capital" and your richest humans do it professionally.
 
-Even at {{< var political_success_probability >}} probability of success, this intervention's expected cost per DALY ({{< var treaty_expected_cost_per_daly >}}) is still **{{< var treaty_expected_vs_bed_nets_multiplier >}} more cost-effective** than malaria bed nets ({{< var bed_nets_cost_per_daly >}}/DALY). Bed nets are the gold standard of global health interventions. This beats the gold standard while assuming it will almost certainly fail. The math doesn't care about your pessimism.
+Even at {{< var political_success_probability >}} probability of success, this intervention's expected cost per DALY ({{< var treaty_expected_cost_per_daly >}}) is still **{{< var treaty_expected_vs_bed_nets_multiplier >}} more cost-effective** than malaria bed nets ({{< var bed_nets_cost_per_daly >}}/DALY). Bed nets are the gold standard of global health interventions. This beats the gold standard while assuming it will almost certainly fail. Your pessimism is not the variable you think it is.
 
 ::: {.callout-note collapse="true" title="Full confidence intervals"}
 | Metric | Point Estimate | 95% CI |
