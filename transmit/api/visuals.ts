@@ -11,7 +11,7 @@ import { generateObject } from "ai";
 import { google } from "@ai-sdk/google";
 import { VISUALS_SYSTEM_PROMPT, visualsSchema } from "../lib/visuals-prompt";
 
-export const maxDuration = 300;
+export const config = { runtime: "edge" };
 
 const OPEN_CORS = {
   "Access-Control-Allow-Origin": "*",

@@ -7,7 +7,7 @@ import { streamText } from "ai";
 import { google } from "@ai-sdk/google";
 import { WISHONIA_SYSTEM_PROMPT } from "../lib/wishonia-chat";
 
-export const maxDuration = 300;
+export const config = { runtime: "edge" };
 
 const OPEN_CORS = {
   "Access-Control-Allow-Origin": "*",

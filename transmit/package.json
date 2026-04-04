@@ -1,7 +1,6 @@
 {
   "name": "transmit-warondisease",
   "private": true,
-  "type": "module",
   "scripts": {
     "dev": "tsx dev-server.ts"
   },
