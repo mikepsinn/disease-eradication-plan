@@ -827,33 +827,66 @@
 
   function shareChat() {
     if (messages.length === 0) return;
-    var shareBtn = panel.querySelector(".chat-share-btn");
-    var origText = shareBtn.textContent;
-    shareBtn.textContent = "\u23F3";
-    shareBtn.disabled = true;
 
-    fetch(API_BASE + "/api/share", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ messages: messages }),
-    })
-      .then(function (r) {
-        if (!r.ok) throw new Error("Share failed: " + r.status);
-        return r.json();
+    // Show confirmation dialog
+    var overlay = document.createElement("div");
+    overlay.className = "chat-share-overlay";
+    var dialog = document.createElement("div");
+    dialog.className = "chat-share-dialog";
+    dialog.innerHTML =
+      '<div class="chat-share-dialog-title">Share this chat?</div>' +
+      '<p>All messages in this chat will be <strong>publicly visible</strong> to anyone with the link. This cannot be undone.</p>' +
+      '<label class="chat-share-confirm-label">' +
+      '  <input type="checkbox" class="chat-share-confirm-check"> I understand this chat will be public and permanent' +
+      '</label>' +
+      '<div class="chat-share-dialog-actions">' +
+      '  <button class="chat-share-cancel-btn">Cancel</button>' +
+      '  <button class="chat-share-go-btn" disabled>Share & Copy Link</button>' +
+      '</div>';
+    overlay.appendChild(dialog);
+    panel.appendChild(overlay);
+
+    var checkbox = dialog.querySelector(".chat-share-confirm-check");
+    var goBtn = dialog.querySelector(".chat-share-go-btn");
+    var cancelBtn = dialog.querySelector(".chat-share-cancel-btn");
+
+    checkbox.addEventListener("change", function () {
+      goBtn.disabled = !checkbox.checked;
+    });
+
+    cancelBtn.addEventListener("click", function () {
+      overlay.remove();
+    });
+
+    overlay.addEventListener("click", function (e) {
+      if (e.target === overlay) overlay.remove();
+    });
+
+    goBtn.addEventListener("click", function () {
+      goBtn.disabled = true;
+      goBtn.textContent = "Sharing...";
+
+      fetch(API_BASE + "/api/share", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ messages: messages }),
       })
-      .then(function (data) {
-        navigator.clipboard.writeText(data.shareUrl).then(function () {
-          shareBtn.textContent = "\u2713";
-          setTimeout(function () { shareBtn.textContent = origText; }, 2000);
+        .then(function (r) {
+          if (!r.ok) throw new Error("Share failed: " + r.status);
+          return r.json();
+        })
+        .then(function (data) {
+          navigator.clipboard.writeText(data.shareUrl).then(function () {
+            goBtn.textContent = "Link copied!";
+            setTimeout(function () { overlay.remove(); }, 1500);
+          });
+        })
+        .catch(function (err) {
+          console.error("[SHARE]", err);
+          goBtn.textContent = "Failed";
+          setTimeout(function () { overlay.remove(); }, 1500);
         });
-      })
-      .catch(function (err) {
-        console.error("[SHARE]", err);
-        shareBtn.textContent = origText;
-      })
-      .finally(function () {
-        shareBtn.disabled = false;
-      });
+    });
   }
 
   // Load a shared chat from /c/:id URL
