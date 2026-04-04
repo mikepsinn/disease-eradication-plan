@@ -15,7 +15,7 @@ const OPEN_CORS = {
   "Access-Control-Allow-Headers": "Content-Type",
 };
 
-export default function handler(req: Request) {
+function handler(req: Request) {
   if (req.method === "OPTIONS") {
     return new Response(null, { status: 204, headers: OPEN_CORS });
   }
@@ -35,3 +35,5 @@ export default function handler(req: Request) {
     },
   });
 }
+
+export default { fetch: handler };

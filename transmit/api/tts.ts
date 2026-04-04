@@ -11,7 +11,7 @@ import { corsHeaders, checkOrigin } from "../lib/cors.js";
 
 export const maxDuration = 300;
 
-export default async function handler(req: Request) {
+async function handler(req: Request) {
   const origin = req.headers.get("origin");
   const cors = corsHeaders(origin);
 
@@ -53,3 +53,5 @@ export default async function handler(req: Request) {
     },
   });
 }
+
+export default { fetch: handler };

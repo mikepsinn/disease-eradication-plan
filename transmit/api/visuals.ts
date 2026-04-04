@@ -20,7 +20,7 @@ const OPEN_CORS = {
   "Access-Control-Allow-Headers": "Content-Type",
 };
 
-export default async function handler(req: Request) {
+async function handler(req: Request) {
   initSentry();
 
   if (req.method === "OPTIONS") {
@@ -100,3 +100,5 @@ export default async function handler(req: Request) {
     });
   }
 }
+
+export default { fetch: handler };
