@@ -6,8 +6,8 @@
  * expires in minutes. Restricted to warondisease.org origins.
  */
 
-import { corsHeaders, checkOrigin } from "../lib/cors";
-import { WISHONIA_VOICE_PROMPT } from "../lib/wishonia-chat";
+import { corsHeaders, checkOrigin } from "../lib/cors.js";
+import { WISHONIA_VOICE_PROMPT } from "../lib/wishonia-chat.js";
 
 export const maxDuration = 300;
 

@@ -9,8 +9,8 @@
 
 import { generateObject } from "ai";
 import { google } from "@ai-sdk/google";
-import { VISUALS_SYSTEM_PROMPT, visualsSchema } from "../lib/visuals-prompt";
-import { initSentry, Sentry } from "../lib/sentry";
+import { VISUALS_SYSTEM_PROMPT, visualsSchema } from "../lib/visuals-prompt.js";
+import { initSentry, Sentry } from "../lib/sentry.js";
 
 export const maxDuration = 300;
 

@@ -6,8 +6,8 @@
  * Restricted to warondisease.org origins.
  */
 
-import { generateSpeech } from "../lib/gemini-tts";
-import { corsHeaders, checkOrigin } from "../lib/cors";
+import { generateSpeech } from "../lib/gemini-tts.js";
+import { corsHeaders, checkOrigin } from "../lib/cors.js";
 
 export const maxDuration = 300;
 

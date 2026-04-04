@@ -5,7 +5,7 @@
  * Open CORS so the embeddable widget can fetch it from any origin.
  */
 
-import { WISHONIA_VOICE_PROMPT } from "../lib/wishonia-chat";
+import { WISHONIA_VOICE_PROMPT } from "../lib/wishonia-chat.js";
 
 export const maxDuration = 300;
 

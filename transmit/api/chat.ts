@@ -5,8 +5,8 @@
 
 import { streamText } from "ai";
 import { google } from "@ai-sdk/google";
-import { WISHONIA_SYSTEM_PROMPT } from "../lib/wishonia-chat";
-import { initSentry, Sentry } from "../lib/sentry";
+import { WISHONIA_SYSTEM_PROMPT } from "../lib/wishonia-chat.js";
+import { initSentry, Sentry } from "../lib/sentry.js";
 
 export const maxDuration = 300;
 
