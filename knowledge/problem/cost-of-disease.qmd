@@ -12,6 +12,10 @@ image: /assets/og-images/knowledge/problem/cost-of-disease-og-retro-academic.jpg
 podcast-image: /assets/podcast/cost-of-disease-podcast.jpg
 feed-date: '2026-03-18'
 youtube-thumbnail: /assets/podcast/cost-of-disease-youtube.jpg
+scores:
+  quality: 8
+  value: 9
+  timeliness: 9
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 

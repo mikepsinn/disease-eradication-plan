@@ -13,6 +13,10 @@ image: /assets/og-images/knowledge/problem/fda-is-unsafe-and-ineffective-og-retr
 podcast-image: /assets/podcast/fda-is-unsafe-and-ineffective-podcast.jpg
 feed-date: '2026-03-05'
 youtube-thumbnail: /assets/podcast/fda-is-unsafe-and-ineffective-youtube.jpg
+scores:
+  quality: 9
+  value: 9
+  timeliness: 9
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 For every 1 unit of harm prevented by efficacy delays, the system creates {{< var type_ii_error_cost_ratio >}} units of harm through denied access. Operational safety ratio: {{< var type_ii_error_cost_ratio >}}-to-1 against the patient.

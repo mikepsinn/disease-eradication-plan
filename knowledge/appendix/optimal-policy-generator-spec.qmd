@@ -67,6 +67,10 @@ format:
 image: /assets/og-images/knowledge/appendix/optimal-policy-generator-spec-og-bw-academic.jpg
 podcast-image: /assets/podcast/optimal-policy-generator-spec-podcast.jpg
 youtube-thumbnail: /assets/podcast/optimal-policy-generator-spec-youtube.jpg
+scores:
+  quality: 7
+  value: 7
+  timeliness: 7
 ---
 
 {{< include ../includes/setup-parameters.qmd >}}

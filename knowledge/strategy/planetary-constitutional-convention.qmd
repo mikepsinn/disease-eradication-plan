@@ -12,6 +12,10 @@ tags:
   - governance
 podcast-image: /assets/podcast/planetary-constitutional-convention-podcast.jpg
 youtube-thumbnail: /assets/podcast/planetary-constitutional-convention-youtube.jpg
+scores:
+  quality: 7
+  value: 7
+  timeliness: 7
 ---
 {{< include ../includes/setup-parameters.qmd >}}
 

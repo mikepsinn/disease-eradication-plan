@@ -2,6 +2,10 @@
 title: "The Decentralized Census Bureau"
 description: "You spend fourteen billion dollars to count everyone once every ten years. citizenCount() returns in fifty milliseconds."
 published: true
+scores:
+  quality: 4
+  value: 4
+  timeliness: 5
 ---
 {{< include ../includes/setup-parameters.qmd >}}
 

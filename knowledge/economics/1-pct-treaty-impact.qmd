@@ -56,6 +56,10 @@ aliases:
   - /knowledge/economics/economics.html
 podcast-image: /assets/podcast/1-pct-treaty-impact-podcast.jpg
 youtube-thumbnail: /assets/podcast/1-pct-treaty-impact-youtube.jpg
+scores:
+  quality: 9
+  value: 10
+  timeliness: 9
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 

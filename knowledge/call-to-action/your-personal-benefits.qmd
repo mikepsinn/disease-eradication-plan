@@ -4,6 +4,10 @@ description: The personal upside of moving from the Failed-State Trajectory to t
 image: /assets/og-images/knowledge/call-to-action/your-personal-benefits-og-retro-academic.jpg
 podcast-image: /assets/podcast/your-personal-benefits-podcast.jpg
 youtube-thumbnail: /assets/podcast/your-personal-benefits-youtube.jpg
+scores:
+  quality: 6
+  value: 7
+  timeliness: 7
 ---
 {{< include ../includes/setup-parameters.qmd >}}
 

@@ -5,6 +5,10 @@ image: /assets/og-images/knowledge/appendix/faq-og-retro-academic.jpg
 podcast-image: /assets/podcast/faq-podcast.jpg
 feed-date: '2026-03-30'
 youtube-thumbnail: /assets/podcast/faq-youtube.jpg
+scores:
+  quality: 8
+  value: 7
+  timeliness: 8
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 

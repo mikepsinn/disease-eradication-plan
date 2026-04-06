@@ -12,6 +12,10 @@ tags:
 image: /assets/images/optimocracy-paper/optimocracy-paper-section-the-mechanism-bw-academic.jpg
 podcast-image: /assets/podcast/optimocracy-podcast.jpg
 youtube-thumbnail: /assets/podcast/optimocracy-youtube.jpg
+scores:
+  quality: 7
+  value: 8
+  timeliness: 8
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 

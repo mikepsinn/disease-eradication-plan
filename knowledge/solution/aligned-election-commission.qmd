@@ -2,6 +2,10 @@
 title: "The Aligned Election Commission"
 description: "Your politicians are funded by the people they're supposed to regulate. Wishonia replaces campaign finance with a single alignment score."
 published: true
+scores:
+  quality: 6
+  value: 6
+  timeliness: 7
 ---
 {{< include ../includes/setup-parameters.qmd >}}
 

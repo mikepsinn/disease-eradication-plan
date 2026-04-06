@@ -5,6 +5,10 @@ jupyter: dih-project-kernel
 image: /assets/og-images/knowledge/appendix/drug-development-cost-analysis-og-retro-academic.jpg
 podcast-image: /assets/podcast/drug-development-cost-analysis-podcast.jpg
 youtube-thumbnail: /assets/podcast/drug-development-cost-analysis-youtube.jpg
+scores:
+  quality: 8
+  value: 7
+  timeliness: 7
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 ## The Short Version

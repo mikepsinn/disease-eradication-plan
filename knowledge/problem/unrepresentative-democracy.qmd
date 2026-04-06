@@ -13,6 +13,10 @@ image: /assets/og-images/knowledge/problem/unrepresentative-democracy-og-retro-a
 podcast-image: /assets/podcast/unrepresentative-democracy-podcast.jpg
 feed-date: '2026-03-09'
 youtube-thumbnail: /assets/podcast/unrepresentative-democracy-youtube.jpg
+scores:
+  quality: 7
+  value: 7
+  timeliness: 7
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 Correlation between public opinion and policy outcomes: 0%.

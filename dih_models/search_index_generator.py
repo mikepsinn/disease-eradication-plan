@@ -61,6 +61,8 @@ class SearchIndexEntry:
         text: Optional[str] = None,
         parameters: Optional[Dict[str, Any]] = None,
         figures: Optional[List[Dict[str, str]]] = None,
+        syndicate: bool = True,
+        scores: Optional[Dict[str, int]] = None,
     ):
         self.path = path
         self.url = url
@@ -74,6 +76,8 @@ class SearchIndexEntry:
         self.text = text
         self.parameters = parameters or {}
         self.figures = figures or []
+        self.syndicate = syndicate
+        self.scores = scores
 
     def to_dict(self) -> Dict[str, Any]:
         """Convert to dictionary for JSON serialization."""
@@ -86,8 +90,11 @@ class SearchIndexEntry:
             "image": self.image,
             "sections": self.sections,
             "published": self.published,
-            "lastmod": self.lastmod
+            "lastmod": self.lastmod,
+            "syndicate": self.syndicate,
         }
+        if self.scores:
+            result["scores"] = self.scores
         if self.text:
             result["text"] = self.text
         if self.parameters:
@@ -664,6 +671,16 @@ class SearchIndexGenerator:
             # Get published status
             published = frontmatter.get('published', True)
 
+            # Get syndication flag (exclude utility pages from external feeds)
+            syndicate = frontmatter.get('syndicate', True)
+
+            # Get content scores (quality, value, timeliness — each 1-10)
+            scores = frontmatter.get('scores')
+            if isinstance(scores, dict):
+                scores = {k: int(v) for k, v in scores.items() if v is not None}
+            else:
+                scores = None
+
             # Get last modified date from the actual content source file.
             # Prefer git commit date for stable lastmod values across rebuilds/checkouts.
             lastmod = self._get_lastmod_date(actual_source_path)
@@ -712,6 +729,8 @@ class SearchIndexGenerator:
                 text=body_text,
                 parameters=parameters,
                 figures=figures,
+                syndicate=syndicate,
+                scores=scores,
             )
 
         except Exception as e:

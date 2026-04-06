@@ -13,6 +13,10 @@ image: /assets/og-images/knowledge/strategy/nonprofit-coalition-strategy-og-retr
 podcast-image: /assets/podcast/nonprofit-coalition-strategy-podcast.jpg
 feed-date: '2026-03-31'
 youtube-thumbnail: /assets/podcast/nonprofit-coalition-strategy-youtube.jpg
+scores:
+  quality: 7
+  value: 7
+  timeliness: 7
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 Your nonprofit sector is a bit like thousands of starving dogs fighting over a single bowl of food while an entire banquet sits untouched behind them. The dogs are very focused on the bowl. They've developed sophisticated bowl-fighting strategies. Some dogs have hired consultants to optimize their bowl access. None of them have turned around.

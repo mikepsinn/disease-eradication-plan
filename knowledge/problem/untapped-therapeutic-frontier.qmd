@@ -13,6 +13,10 @@ image: /assets/og-images/knowledge/problem/untapped-therapeutic-frontier-og-retr
 podcast-image: /assets/podcast/untapped-therapeutic-frontier-podcast.jpg
 feed-date: '2026-03-19'
 youtube-thumbnail: /assets/podcast/untapped-therapeutic-frontier-youtube.jpg
+scores:
+  quality: 8
+  value: 8
+  timeliness: 8
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 

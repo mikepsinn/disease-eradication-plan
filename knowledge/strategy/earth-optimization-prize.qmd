@@ -14,6 +14,10 @@ tags:
   - implementation
 podcast-image: /assets/podcast/least-bad-idea-prize-paper-podcast.jpg
 youtube-thumbnail: /assets/podcast/least-bad-idea-prize-paper-youtube.jpg
+scores:
+  quality: 7
+  value: 8
+  timeliness: 8
 ---
 {{< include ../includes/setup-parameters.qmd >}}
 

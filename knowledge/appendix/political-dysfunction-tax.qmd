@@ -44,6 +44,10 @@ jel:
 image: /assets/og-images/knowledge/appendix/political-dysfunction-tax-og-retro-academic.jpg
 podcast-image: /assets/podcast/political-dysfunction-tax-podcast.jpg
 youtube-thumbnail: /assets/podcast/political-dysfunction-tax-youtube.jpg
+scores:
+  quality: 8
+  value: 8
+  timeliness: 8
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 

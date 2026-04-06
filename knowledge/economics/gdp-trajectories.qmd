@@ -14,6 +14,10 @@ tags:
   - military-spending
 podcast-image: /assets/podcast/gdp-trajectories-podcast.jpg
 youtube-thumbnail: /assets/podcast/gdp-trajectories-youtube.jpg
+scores:
+  quality: 8
+  value: 8
+  timeliness: 9
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 Your civilization hits 25% of GDP by {{< var destructive_economy_25pct_year >}} and 50% by {{< var destructive_economy_50pct_year >}}, at which point the destructive economy has consumed half of everything. But the historical evidence says civilizations do not make it to 50%. Every economy that has collapsed, from the Soviet Union to Venezuela to Zimbabwe, crossed the point of no return between 35% and 45% total extraction. By 50%, the patient is already a skeleton. The death spiral begins earlier.

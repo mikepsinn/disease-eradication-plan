@@ -18,6 +18,10 @@ aliases:
 podcast-image: /assets/podcast/incentive-alignment-bonds-podcast.jpg
 feed-date: '2026-03-25'
 youtube-thumbnail: /assets/podcast/incentive-alignment-bonds-youtube.jpg
+scores:
+  quality: 8
+  value: 9
+  timeliness: 9
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 > **Related:** [Aligning Incentives](aligning-incentives.qmd) | [Academic Paper](../appendix/incentive-alignment-bonds-paper.qmd)

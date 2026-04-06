@@ -17,6 +17,10 @@ aliases:
 podcast-image: /assets/podcast/nih-fails-2-institute-health-podcast.jpg
 feed-date: '2026-03-07'
 youtube-thumbnail: /assets/podcast/nih-fails-2-institute-health-youtube.jpg
+scores:
+  quality: 9
+  value: 10
+  timeliness: 9
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 

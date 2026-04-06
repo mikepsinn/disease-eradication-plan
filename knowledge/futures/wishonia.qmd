@@ -13,6 +13,10 @@ image: /assets/og-images/knowledge/futures/wishonia-og-retro-academic.jpg
 podcast-image: /assets/podcast/wishonia-podcast.jpg
 feed-date: '2026-03-11'
 youtube-thumbnail: /assets/podcast/wishonia-youtube.jpg
+scores:
+  quality: 8
+  value: 8
+  timeliness: 8
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 

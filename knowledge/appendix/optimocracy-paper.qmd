@@ -54,6 +54,10 @@ format:
 image: /assets/og-images/knowledge/appendix/optimocracy-paper-og-retro-academic.jpg
 podcast-image: /assets/podcast/optimocracy-paper-podcast.jpg
 youtube-thumbnail: /assets/podcast/optimocracy-paper-youtube.jpg
+scores:
+  quality: 8
+  value: 8
+  timeliness: 8
 ---
 
 {{< include ../includes/setup-parameters.qmd >}}

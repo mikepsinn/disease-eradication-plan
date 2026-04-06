@@ -4,6 +4,7 @@ published: true
 podcast: false
 podcast-image: /assets/podcast/conclusion-podcast.jpg
 youtube-thumbnail: /assets/podcast/conclusion-youtube.jpg
+syndicate: false
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 

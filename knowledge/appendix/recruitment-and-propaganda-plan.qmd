@@ -12,6 +12,10 @@ image: /assets/og-images/knowledge/appendix/recruitment-and-propaganda-plan-og-r
 podcast-image: /assets/podcast/recruitment-and-propaganda-plan-podcast.jpg
 feed-date: '2026-04-04'
 youtube-thumbnail: /assets/podcast/recruitment-and-propaganda-plan-youtube.jpg
+scores:
+  quality: 6
+  value: 5
+  timeliness: 5
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 *Phase 0: Collecting Humans Before You Have Anything to Offer Them*

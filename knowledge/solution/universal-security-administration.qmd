@@ -2,6 +2,10 @@
 title: "The Universal Security Administration"
 description: "You spend more administering help than you spend helping. 80+ welfare programs replaced by one for-loop."
 published: true
+scores:
+  quality: 5
+  value: 6
+  timeliness: 6
 ---
 {{< include ../includes/setup-parameters.qmd >}}
 

@@ -9,6 +9,10 @@ image: /assets/og-images/knowledge/solution/aligning-incentives-og-retro-academi
 podcast-image: /assets/podcast/aligning-incentives-podcast.jpg
 feed-date: '2026-03-16'
 youtube-thumbnail: /assets/podcast/aligning-incentives-youtube.jpg
+scores:
+  quality: 8
+  value: 9
+  timeliness: 9
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 

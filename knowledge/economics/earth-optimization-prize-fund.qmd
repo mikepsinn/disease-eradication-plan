@@ -20,6 +20,10 @@ podcast-image: /assets/podcast/wishocratic-investment-fund-podcast.jpg
 youtube-thumbnail: /assets/podcast/wishocratic-investment-fund-youtube.jpg
 aliases:
   - /knowledge/economics/wishocratic-investment-fund.html
+scores:
+  quality: 7
+  value: 7
+  timeliness: 7
 ---
 {{< include ../includes/setup-parameters.qmd >}}
 

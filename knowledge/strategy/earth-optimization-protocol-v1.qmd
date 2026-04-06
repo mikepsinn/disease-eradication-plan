@@ -16,6 +16,10 @@ aliases:
   - /knowledge/strategy/earth-optimization-plan-v1.html
 podcast-image: /assets/podcast/earth-optimization-protocol-v1-podcast.jpg
 youtube-thumbnail: /assets/podcast/earth-optimization-protocol-v1-youtube.jpg
+scores:
+  quality: 8
+  value: 8
+  timeliness: 8
 ---
 {{< include ../includes/setup-parameters.qmd >}}
 

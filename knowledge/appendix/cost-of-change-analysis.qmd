@@ -54,6 +54,10 @@ format:
 image: /assets/og-images/knowledge/appendix/cost-of-change-analysis-og-retro-academic.jpg
 podcast-image: /assets/podcast/cost-of-change-analysis-podcast.jpg
 youtube-thumbnail: /assets/podcast/cost-of-change-analysis-youtube.jpg
+scores:
+  quality: 8
+  value: 8
+  timeliness: 8
 ---
 
 {{< include ../includes/setup-parameters.qmd >}}

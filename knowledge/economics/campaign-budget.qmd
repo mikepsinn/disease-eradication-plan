@@ -4,6 +4,10 @@ image: /assets/og-images/knowledge/economics/campaign-budget-og-retro-academic.j
 podcast-image: /assets/podcast/campaign-budget-podcast.jpg
 feed-date: '2026-04-05'
 youtube-thumbnail: /assets/podcast/campaign-budget-youtube.jpg
+scores:
+  quality: 6
+  value: 6
+  timeliness: 7
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 > **Related:** [Financial Plan Overview](financial-plan.qmd) | [VICTORY Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd) [@iab-paper-2025]

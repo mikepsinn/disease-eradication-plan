@@ -63,6 +63,10 @@ format:
 image: /assets/og-images/knowledge/appendix/optimal-budget-generator-spec-og-bw-academic.jpg
 podcast-image: /assets/podcast/optimal-budget-generator-spec-podcast.jpg
 youtube-thumbnail: /assets/podcast/optimal-budget-generator-spec-youtube.jpg
+scores:
+  quality: 7
+  value: 7
+  timeliness: 7
 ---
 
 {{< include ../includes/setup-parameters.qmd >}}

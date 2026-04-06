@@ -43,6 +43,10 @@ format:
     fontsize: 11pt
 podcast-image: /assets/podcast/earth-optimization-prize-protocol-podcast.jpg
 youtube-thumbnail: /assets/podcast/earth-optimization-prize-protocol-youtube.jpg
+scores:
+  quality: 6
+  value: 5
+  timeliness: 6
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 

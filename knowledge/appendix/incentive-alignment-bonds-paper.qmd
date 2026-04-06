@@ -63,6 +63,10 @@ format:
 image: /assets/og-images/knowledge/appendix/incentive-alignment-bonds-paper-og-retro-academic.jpg
 podcast-image: /assets/podcast/incentive-alignment-bonds-paper-podcast.jpg
 youtube-thumbnail: /assets/podcast/incentive-alignment-bonds-paper-youtube.jpg
+scores:
+  quality: 9
+  value: 9
+  timeliness: 9
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 

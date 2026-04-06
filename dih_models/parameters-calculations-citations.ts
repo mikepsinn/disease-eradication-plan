@@ -8441,8 +8441,8 @@ export const CUMULATIVE_MILITARY_SPENDING_FED_ERA: Parameter = {
   sourceRef: "sipri-milex-2024",
   sourceUrl: "https://www.sipri.org/publications/2025/sipri-fact-sheets/trends-world-military-expenditure-2024",
   confidence: "low",
-  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/economics/central-banks.html",
-  manualPageTitle: "Money Comes From a Building and They Use It to Kill People",
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/problem/cost-of-war.html",
+  manualPageTitle: "The Cost of War",
 };
 
 export const DAYS_PER_YEAR: Parameter = {

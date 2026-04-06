@@ -20,6 +20,10 @@ image: /assets/og-images/knowledge/proof-og-bw-academic.jpg
 podcast-image: /assets/podcast/proof-podcast.jpg
 feed-date: '2026-03-23'
 youtube-thumbnail: /assets/podcast/proof-youtube.jpg
+scores:
+  quality: 8
+  value: 8
+  timeliness: 8
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 This isn't a theoretical plan. It's a greatest hits album of things that already worked.

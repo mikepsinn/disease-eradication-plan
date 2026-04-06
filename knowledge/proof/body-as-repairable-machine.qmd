@@ -14,6 +14,10 @@ image: /assets/og-images/knowledge/proof/body-as-repairable-machine-og-retro-aca
 podcast-image: /assets/podcast/body-as-repairable-machine-podcast.jpg
 feed-date: '2026-03-12'
 youtube-thumbnail: /assets/podcast/body-as-repairable-machine-youtube.jpg
+scores:
+  quality: 8
+  value: 8
+  timeliness: 9
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 Your body is a machine. Not "like" a machine. A machine. Blueprint: DNA. Moving parts: organs. Fuel: whatever you ate for lunch (usually something beige). Owner's manual: your genome, which you only discovered 20 years ago, in a drawer you hadn't opened for 200,000 years. Before that you were just shaking it and hoping. This is called "medicine."

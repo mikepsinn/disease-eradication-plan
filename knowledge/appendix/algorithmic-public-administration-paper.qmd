@@ -42,6 +42,10 @@ youtube-thumbnail: /assets/podcast/algorithmic-public-administration-paper-youtu
 aliases:
   - /algorithmic-governance.html
   - /algorithmic-public-administration.html
+scores:
+  quality: 7
+  value: 7
+  timeliness: 7
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 

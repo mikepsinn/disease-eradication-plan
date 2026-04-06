@@ -14,6 +14,10 @@ image: /assets/og-images/knowledge/problem/genetic-slavery-og-retro-academic.jpg
 podcast-image: /assets/podcast/genetic-slavery-podcast.jpg
 feed-date: '2026-03-03'
 youtube-thumbnail: /assets/podcast/genetic-slavery-youtube.jpg
+scores:
+  quality: 7
+  value: 7
+  timeliness: 8
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 
