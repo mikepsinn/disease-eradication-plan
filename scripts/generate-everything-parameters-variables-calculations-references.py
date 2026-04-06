@@ -692,23 +692,9 @@ def main():
     logger.debug("[*] Building parameter-to-chapter mapping...")
     chapter_mapping = build_chapter_mapping(project_root, set(parameters.keys()))
 
-    # Generate TypeScript parameters file for Next.js/React apps
-    logger.debug("[*] Generating TypeScript parameters file...")
+    # NOTE: TypeScript generation moved to AFTER Monte Carlo simulation
+    # so we can embed confidence intervals from samples.json
     ts_output = project_root / "dih_models" / "parameters-calculations-citations.ts"
-    generate_typescript_parameters(parameters, ts_output, include_metadata=True, references_path=bib_path, params_file=parameters_path, citation_data=citation_data, chapter_mapping=chapter_mapping)
-
-    # Copy TypeScript parameters file to consuming repos
-    import shutil
-    ts_copy_targets = [
-        Path(r"E:\code\obsidian\websites\dih-earth\lib\parameters-calculations-citations.ts"),
-        Path(r"E:\code\optimitron\packages\data\src\parameters\parameters-calculations-citations.ts"),
-    ]
-    for target in ts_copy_targets:
-        if target.parent.exists():
-            shutil.copy2(ts_output, target)
-            logger.debug(f"[OK] Copied TS parameters to {target}")
-        else:
-            logger.debug(f"[SKIP] Target directory does not exist: {target.parent}")
 
     # Generate TypeScript survey file (if survey exists)
     logger.debug("[*] Generating TypeScript survey file...")
@@ -818,7 +804,24 @@ def main():
         clear_formula_fallback_log()  # Clear before generation
         output_path = project_root / "_variables.yml"
         generate_variables_yml(parameters, output_path, citation_mode=citation_mode, params_file=parameters_path, samples_json_path=samples_json_path)
-        
+
+        # Generate TypeScript parameters file (after Monte Carlo so CIs are available)
+        logger.debug("[*] Generating TypeScript parameters file with Monte Carlo CIs...")
+        generate_typescript_parameters(parameters, ts_output, include_metadata=True, references_path=bib_path, params_file=parameters_path, citation_data=citation_data, chapter_mapping=chapter_mapping, samples_json_path=samples_json_path)
+
+        # Copy TypeScript parameters file to consuming repos
+        import shutil
+        ts_copy_targets = [
+            Path(r"E:\code\obsidian\websites\dih-earth\lib\parameters-calculations-citations.ts"),
+            Path(r"E:\code\optimitron\packages\data\src\parameters\parameters-calculations-citations.ts"),
+        ]
+        for copy_dest in ts_copy_targets:
+            if copy_dest.parent.exists():
+                shutil.copy2(ts_output, copy_dest)
+                logger.debug(f"[OK] Copied TS parameters to {copy_dest}")
+            else:
+                logger.debug(f"[SKIP] Target directory does not exist: {copy_dest.parent}")
+
         # Write formula fallback log if any parameters used it
         formula_fallbacks = get_formula_fallback_log()
         if formula_fallbacks:
@@ -1233,6 +1236,23 @@ def main():
         logger.debug(f"[*] Generating _variables.yml (citation mode: {citation_mode})...")
         output_path = project_root / "_variables.yml"
         generate_variables_yml(parameters, output_path, citation_mode=citation_mode, params_file=parameters_path)
+
+        # Generate TypeScript parameters file (no MC data available)
+        logger.debug("[*] Generating TypeScript parameters file (without Monte Carlo CIs)...")
+        generate_typescript_parameters(parameters, ts_output, include_metadata=True, references_path=bib_path, params_file=parameters_path, citation_data=citation_data, chapter_mapping=chapter_mapping)
+
+        # Copy TypeScript parameters file to consuming repos
+        import shutil
+        ts_copy_targets = [
+            Path(r"E:\code\obsidian\websites\dih-earth\lib\parameters-calculations-citations.ts"),
+            Path(r"E:\code\optimitron\packages\data\src\parameters\parameters-calculations-citations.ts"),
+        ]
+        for copy_dest in ts_copy_targets:
+            if copy_dest.parent.exists():
+                shutil.copy2(ts_output, copy_dest)
+                logger.debug(f"[OK] Copied TS parameters to {copy_dest}")
+            else:
+                logger.debug(f"[SKIP] Target directory does not exist: {copy_dest.parent}")
 
     # Generate parameters-and-calculations.qmd AFTER uncertainty charts are created
     # so the file existence checks work correctly

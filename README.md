@@ -512,13 +512,13 @@ You are a selfish animal governed by incentives. This is not an insult. It's the
 3. The voters want free healthcare (they're very sick)
 4. The explosion manufacturers want money (they don't care where it comes from)
 
-I ran the numbers on your species' habit of ignoring good ideas. The [institutionalization rate](#what-to-do-when-they-try-to-institutionalize-you) is 90%. Nine out of ten humans will dismiss this as crazy. The math doesn't care.
+I ran the numbers on your species' habit of ignoring good ideas. The [institutionalization rate](#what-to-do-when-they-try-to-institutionalize-you) is 90%. Nine out of ten humans will dismiss this as crazy. That is fine.
 
 There are 2.78 thousand billionaires on your planet and 195 heads of state. The [chain reaction model](https://manual.warondisease.org/knowledge/appendix/treaty-feasibility.html#sec-chain-reaction-model) shows that even with 90% dismissal, approximately 3.48 of them will engage with this idea within 3 years. Not because they're brave. Because there are 2.98 thousand of them, and the math doesn't need all of them. It needs one.
 
 And here is the part that should bother you: the [incentive structure](https://manual.warondisease.org/knowledge/appendix/treaty-feasibility.html#sec-dominant-strategy-proof) makes acting the selfish move. If others act too, you get rich together. If nobody else acts, you still own a piece of the only serious attempt to fix the problem. Either way, you win. The only way to reject this is to identify [which assumption breaks](https://manual.warondisease.org/knowledge/appendix/treaty-feasibility.html#what-would-have-to-be-wrong), and you are welcome to try.
 
-Count what you didn't object to. Improvement is physically possible (you said so at the top). The benefits compound (healthier workers produce more, which funds more cures, which you just read). Politicians respond to money (that's the Super PAC). Rich people prefer not dying (that's the bonds). And the only bottleneck is getting this argument in front of one self-interested billionaire with a checkbook. Five premises. You let every one of them pass unchallenged, because each one is individually obvious. The conclusion is not a hope. It's a proof.
+Count what you didn't object to. Improvement is physically possible (you said so at the top). The benefits compound (healthier workers produce more, which funds more cures, which you just read). Politicians respond to money (that's the Super PAC). Rich people prefer not dying (that's the bonds). And the only bottleneck is getting this argument in front of one self-interested billionaire with a checkbook. Five premises. You let every one of them pass unchallenged, because each one is individually obvious. The conclusion is just what happens when you add them up.
 
 That's the [Logical Inevitability Theorem](https://manual.warondisease.org/knowledge/appendix/recruitment-and-propaganda-plan.html#logical-inevitability-theorem) with numbers attached. Try rejecting any one of those five premises out loud and see how it sounds.
 

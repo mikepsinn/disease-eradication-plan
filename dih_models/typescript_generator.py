@@ -373,6 +373,7 @@ def generate_typescript_parameters(
     params_file: Optional[Path] = None,
     citation_data: Optional[Dict[str, Dict[str, Any]]] = None,
     chapter_mapping: Optional[Dict[str, list]] = None,
+    samples_json_path: Optional[Path] = None,
 ):
     """
     Generate TypeScript file with parameters for Next.js applications.
@@ -401,6 +402,13 @@ def generate_typescript_parameters(
 
     if chapter_mapping is None:
         chapter_mapping = {}
+
+    # Load Monte Carlo uncertainty data for CI fallback
+    import json
+    uncertainty_data = {}
+    if samples_json_path and samples_json_path.exists():
+        with open(samples_json_path, "r", encoding="utf-8") as f:
+            uncertainty_data = json.load(f)
 
     content = []
 
@@ -517,7 +525,7 @@ def generate_typescript_parameters(
         for param_name, param_data in external_params:
             value_obj = param_data["value"]
             param_lines, citation = _generate_parameter_constant(
-                param_name, value_obj, include_metadata, citation_data, parameters, params_file, chapter_mapping
+                param_name, value_obj, include_metadata, citation_data, parameters, params_file, chapter_mapping, uncertainty_data
             )
             content.extend(param_lines)
             if citation:
@@ -534,7 +542,7 @@ def generate_typescript_parameters(
         for param_name, param_data in calculated_params:
             value_obj = param_data["value"]
             param_lines, citation = _generate_parameter_constant(
-                param_name, value_obj, include_metadata, citation_data, parameters, params_file, chapter_mapping
+                param_name, value_obj, include_metadata, citation_data, parameters, params_file, chapter_mapping, uncertainty_data
             )
             content.extend(param_lines)
             if citation:
@@ -551,7 +559,7 @@ def generate_typescript_parameters(
         for param_name, param_data in definition_params:
             value_obj = param_data["value"]
             param_lines, citation = _generate_parameter_constant(
-                param_name, value_obj, include_metadata, citation_data, parameters, params_file, chapter_mapping
+                param_name, value_obj, include_metadata, citation_data, parameters, params_file, chapter_mapping, uncertainty_data
             )
             content.extend(param_lines)
             if citation:
@@ -1058,6 +1066,7 @@ def _generate_parameter_constant(
     parameters: Optional[Dict[str, Dict[str, Any]]] = None,
     params_file: Optional[Path] = None,
     chapter_mapping: Optional[Dict[str, Any]] = None,
+    uncertainty_data: Optional[Dict[str, Any]] = None,
 ) -> tuple[list, Optional[Dict[str, Any]]]:
     """
     Generate TypeScript constant declaration for a parameter.
@@ -1184,11 +1193,27 @@ def _generate_parameter_constant(
             lines.append(f"  latex: {_format_typescript_value(latex)},")
 
         # Confidence interval
+        # Priority: 1) Explicit confidence_interval on parameter, 2) Monte Carlo derived CI from samples.json
+        ci_emitted = False
         if hasattr(value_obj, "confidence_interval") and value_obj.confidence_interval:
             low, high = value_obj.confidence_interval
             low_val = float(low) if hasattr(low, '__float__') else low
             high_val = float(high) if hasattr(high, '__float__') else high
             lines.append(f"  confidenceInterval: [{_format_typescript_value(low_val)}, {_format_typescript_value(high_val)}],")
+            ci_emitted = True
+
+        if not ci_emitted and uncertainty_data and param_name in uncertainty_data:
+            unc = uncertainty_data[param_name]
+            p5, p50, p95 = unc.get("p5"), unc.get("p50"), unc.get("p95")
+            if p5 is not None and p95 is not None and p50 is not None:
+                # Only emit if there's meaningful uncertainty (variance > 0.1% of median)
+                has_meaningful = False
+                if p50 != 0:
+                    has_meaningful = abs(p95 - p5) / abs(p50) > 0.001
+                else:
+                    has_meaningful = abs(p95 - p5) > 0
+                if has_meaningful:
+                    lines.append(f"  confidenceInterval: [{_format_typescript_value(p5)}, {_format_typescript_value(p95)}],")
 
         # Standard error
         if hasattr(value_obj, "std_error") and value_obj.std_error:
