@@ -126,7 +126,6 @@ from dih_models.chart_generators import (
     generate_cdf_chart_qmd,
 )
 from dih_models.latex_generation import (
-    generate_auto_latex,
     format_latex_value,
     create_latex_variable_name,
     get_formula_fallback_log,

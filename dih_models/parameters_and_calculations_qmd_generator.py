@@ -29,7 +29,7 @@ from pathlib import Path
 from typing import Any, Dict
 
 from dih_models.formatting import format_parameter_value
-from dih_models.latex_generation import generate_auto_latex, generate_expanded_latex, smart_title_case, LATEX_BLOCK_SEP
+from dih_models.latex_generation import generate_expanded_latex, smart_title_case, LATEX_BLOCK_SEP
 from dih_models.latex_mobile_wrap import wrap_latex_for_mobile
 from dih_models.quarto_formatting import convert_qmd_to_html, generate_uncertainty_section
 

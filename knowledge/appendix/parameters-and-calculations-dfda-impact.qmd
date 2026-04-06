@@ -72,7 +72,10 @@ Space_{combo} \\
 = 45.1B
 \end{gathered}
 $$
-
+where:
+$$
+N_{combo} = \frac{N_{safe} \cdot (N_{safe} - 1)}{2}
+$$
 *✓ High confidence*
 
 #### Sensitivity Analysis
@@ -91,7 +94,9 @@ Unique pairwise drug combinations from known safe compounds (n choose 2)
 
 - [Safe Compounds Available for Testing](#sec-safe_compounds_count): 9.5 thousand compounds (95% CI: 7 thousand compounds - 12 thousand compounds)
 
-*Formula*: `SAFE_COMPOUNDS × (SAFE_COMPOUNDS - 1) ÷ 2`
+$$
+N_{combo} = \frac{N_{safe} \cdot (N_{safe} - 1)}{2}
+$$
 
 *✓ High confidence*
 
@@ -128,6 +133,10 @@ Space_{combo} \\
 = 45.1M \times 1{,}000 \\
 = 45.1B
 \end{gathered}
+$$
+where:
+$$
+N_{combo} = \frac{N_{safe} \cdot (N_{safe} - 1)}{2}
 $$
 *✓ High confidence*
 
@@ -302,7 +311,12 @@ Cost_{direct,DALY} \\
 $$
 where:
 $$
-NPV_{direct} = Funding_{ann} \times \frac{1 - (1+r)^{-T}}{r}
+\begin{gathered}
+NPV_{direct} \\
+= \frac{T_{queue,dFDA}}{Funding_{dFDA,ann} \times r_{discount}} \\
+= \frac{36}{\$21.8B \times 3\%} \\
+= \$476B
+\end{gathered}
 $$
 where:
 $$
@@ -430,9 +444,77 @@ NPV of annual direct funding for the therapeutic space exploration period. Fundi
 - [dFDA Therapeutic Space Exploration Time](#sec-dfda_queue_clearance_years) 🔢: 36 years
 
 $$
-NPV_{direct} = Funding_{ann} \times \frac{1 - (1+r)^{-T}}{r}
+\begin{gathered}
+NPV_{direct} \\
+= \frac{T_{queue,dFDA}}{Funding_{dFDA,ann} \times r_{discount}} \\
+= \frac{36}{\$21.8B \times 3\%} \\
+= \$476B
+\end{gathered}
 $$
-
+where:
+$$
+\begin{gathered}
+T_{queue,dFDA} \\
+= \frac{T_{queue,SQ}}{k_{capacity}} \\
+= \frac{443}{12.3} \\
+= 36
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{queue,SQ} \\
+= \frac{N_{untreated}}{Treatments_{new,ann}} \\
+= \frac{6{,}650}{15} \\
+= 443
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{untreated} \\
+= N_{rare} \times 0.95 \\
+= 7{,}000 \times 0.95 \\
+= 6{,}650
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+k_{capacity} \\
+= \frac{N_{fundable,dFDA}}{Slots_{curr}} \\
+= \frac{23.4M}{1.9M} \\
+= 12.3
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{fundable,dFDA} \\
+= \frac{Subsidies_{dFDA,ann}}{Cost_{pragmatic,pt}} \\
+= \frac{\$21.8B}{\$929} \\
+= 23.4M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Subsidies_{dFDA,ann} \\
+= Funding_{dFDA,ann} - OPEX_{dFDA} \\
+= \$21.8B - \$40M \\
+= \$21.8B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+OPEX_{dFDA} \\
+= Cost_{platform} + Cost_{staff} + Cost_{infra} \\
++ Cost_{regulatory} + Cost_{community} \\
+= \$15M + \$10M + \$8M + \$5M + \$2M \\
+= \$40M
+\end{gathered}
+$$
 *✓ High confidence*
 
 #### Sensitivity Analysis
@@ -567,7 +649,12 @@ OPEX_{dFDA} \\
 $$
 where:
 $$
-NPV_{direct} = Funding_{ann} \times \frac{1 - (1+r)^{-T}}{r}
+\begin{gathered}
+NPV_{direct} \\
+= \frac{T_{queue,dFDA}}{Funding_{dFDA,ann} \times r_{discount}} \\
+= \frac{36}{\$21.8B \times 3\%} \\
+= \$476B
+\end{gathered}
 $$
 where:
 $$
@@ -1046,7 +1133,7 @@ NPV of Decentralized Framework for Drug Assessment R&D savings only with 5-year 
 $$
 \begin{gathered}
 NPV_{RD} \\
-= \sum_{t=1}^{10} \frac{Savings_{RD,ann} \times \frac{\min(t,5)}{5}}{(1+r)^t}
+= \sum_{t=1}^{10} \frac{Savings_{RD,ann} \cdot \frac{\min(t,5)}{5}}{(1+r)^t}
 \end{gathered}
 $$
 
@@ -1091,7 +1178,7 @@ where:
 $$
 \begin{gathered}
 NPV_{RD} \\
-= \sum_{t=1}^{10} \frac{Savings_{RD,ann} \times \frac{\min(t,5)}{5}}{(1+r)^t}
+= \sum_{t=1}^{10} \frac{Savings_{RD,ann} \cdot \frac{\min(t,5)}{5}}{(1+r)^t}
 \end{gathered}
 $$
 where:
@@ -1142,7 +1229,12 @@ Cost_{dFDA,total} \\
 $$
 where:
 $$
-PV_{OPEX} = OPEX_{ann} \times \frac{1 - (1+r)^{-T}}{r}
+\begin{gathered}
+PV_{OPEX} \\
+= \frac{T_{horizon}}{OPEX_{total} \times r_{discount}} \\
+= \frac{10}{\$40M \times 3\%} \\
+= \$342M
+\end{gathered}
 $$
 where:
 $$
@@ -1193,9 +1285,22 @@ Present value of annual opex over 10 years (NPV formula)
 - [Standard Time Horizon for NPV Analysis](#sec-npv_time_horizon_years): 10 years
 
 $$
-PV_{OPEX} = OPEX_{ann} \times \frac{1 - (1+r)^{-T}}{r}
+\begin{gathered}
+PV_{OPEX} \\
+= \frac{T_{horizon}}{OPEX_{total} \times r_{discount}} \\
+= \frac{10}{\$40M \times 3\%} \\
+= \$342M
+\end{gathered}
 $$
-
+where:
+$$
+\begin{gathered}
+OPEX_{total} \\
+= OPEX_{ann} + OPEX_{DIH,ann} \\
+= \$18.9M + \$21.1M \\
+= \$40M
+\end{gathered}
+$$
 *✓ High confidence*
 
 #### Sensitivity Analysis
@@ -1235,7 +1340,12 @@ Cost_{dFDA,total} \\
 $$
 where:
 $$
-PV_{OPEX} = OPEX_{ann} \times \frac{1 - (1+r)^{-T}}{r}
+\begin{gathered}
+PV_{OPEX} \\
+= \frac{T_{horizon}}{OPEX_{total} \times r_{discount}} \\
+= \frac{10}{\$40M \times 3\%} \\
+= \$342M
+\end{gathered}
 $$
 where:
 $$
@@ -1482,7 +1592,7 @@ where:
 $$
 \begin{gathered}
 NPV_{RD} \\
-= \sum_{t=1}^{10} \frac{Savings_{RD,ann} \times \frac{\min(t,5)}{5}}{(1+r)^t}
+= \sum_{t=1}^{10} \frac{Savings_{RD,ann} \cdot \frac{\min(t,5)}{5}}{(1+r)^t}
 \end{gathered}
 $$
 where:
@@ -1533,7 +1643,12 @@ Cost_{dFDA,total} \\
 $$
 where:
 $$
-PV_{OPEX} = OPEX_{ann} \times \frac{1 - (1+r)^{-T}}{r}
+\begin{gathered}
+PV_{OPEX} \\
+= \frac{T_{horizon}}{OPEX_{total} \times r_{discount}} \\
+= \frac{10}{\$40M \times 3\%} \\
+= \$342M
+\end{gathered}
 $$
 where:
 $$

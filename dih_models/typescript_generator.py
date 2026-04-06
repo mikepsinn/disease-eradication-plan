@@ -25,7 +25,7 @@ import re
 import shutil
 
 from dih_models.reference_parser import parse_references_bib
-from dih_models.latex_generation import generate_auto_latex, generate_expanded_latex, collapse_latex_blocks
+from dih_models.latex_generation import generate_expanded_latex, collapse_latex_blocks
 from dih_models.latex_mobile_wrap import wrap_latex_for_mobile
 
 # Pattern for {{< var variable_name >}} in QMD files
@@ -1178,13 +1178,7 @@ def _generate_parameter_constant(
         # Expanded equations show the complete derivation chain for AI verification
         latex = getattr(value_obj, "latex", None)
         if not latex and parameters and params_file:
-            # Auto-generate EXPANDED LaTeX if not explicitly provided
-            # This shows the complete derivation chain for maximum transparency
-            try:
-                latex = generate_expanded_latex(param_name, value_obj, parameters, params_file)
-            except Exception:
-                # Silently skip if auto-generation fails
-                pass
+            latex = generate_expanded_latex(param_name, value_obj, parameters, params_file)
         if latex:
             # Collapse multi-block back to single expression for web display
             latex = collapse_latex_blocks(latex)

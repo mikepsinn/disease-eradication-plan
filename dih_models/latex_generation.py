@@ -595,16 +595,207 @@ def extract_lambda_body_from_file(param_name: str, params_file: Path) -> str | N
 
 
 def lambda_to_sympy_latex(lambda_body: str, var_names: list[str]) -> str | None:
-    """
-    Convert a Python lambda body to LaTeX using sympy.
-
-    NOTE: This often produces unreadable output for complex formulas with
-    variable names. Only use when the result is simpler than inference-based
-    approach. For complex formulas, prefer hardcoded latex fields.
-    """
-    # For now, skip sympy entirely - the output is worse than inference
-    # Complex formulas should use handwritten latex fields
+    """Legacy stub - kept for backward compatibility. Use formula_to_latex instead."""
     return None
+
+
+def formula_to_latex(formula: str, parameters: dict, lhs: str) -> str | None:
+    """Convert a formula string to LaTeX by substituting param names with latex_symbols.
+
+    Uses placeholder tokens to protect latex_symbols from being mangled by
+    subsequent math-syntax transformations (^, /, *, etc.).
+    """
+    import re as _re
+
+    if not formula:
+        return None
+
+    # Skip formulas that are purely prose descriptions
+    if any(phrase in formula.lower() for phrase in ['phase 1:', 'phase 2:', 'for t=']):
+        return None
+
+    # Strip trailing prose after comma+space+"where" (keep the math part)
+    if ', where ' in formula:
+        formula = formula[:formula.index(', where ')]
+
+    # Strip trailing prose after semicolons
+    if '; ' in formula:
+        formula = formula[:formula.index('; ')]
+
+    s = formula
+
+    # Step 0: Replace param names with numbered placeholders, store latex_symbols for later
+    placeholders = {}  # <<N>> -> latex_symbol
+    param_names = []
+    for name_key, meta in parameters.items():
+        val = meta['value'] if isinstance(meta, dict) else meta
+        sym = getattr(val, 'latex_symbol', None)
+        if sym:
+            param_names.append((name_key, sym))
+    param_names.sort(key=lambda x: len(x[0]), reverse=True)
+
+    counter = 0
+    for name_key, sym in param_names:
+        if name_key in s:
+            placeholder = f'\x00{counter}\x00'
+            placeholders[placeholder] = sym
+            s = s.replace(name_key, placeholder)
+            counter += 1
+
+    # Normalize multiplication/division operators
+    s = s.replace('\u00d7', '*')  # ×
+    s = s.replace('\u00f7', '/')  # ÷
+    s = s.replace(' x ', '*')     # informal "x" multiplication
+
+    # Step 1: Functions (min, max, ln) - convert BEFORE other transforms
+    # so parentheses inside are handled correctly
+    def _convert_functions(s):
+        result = []
+        i = 0
+        while i < len(s):
+            matched = False
+            for func in ['min', 'max', 'ln']:
+                if s[i:i + len(func) + 1] == func + '(' and (i == 0 or not s[i - 1].isalpha()):
+                    depth = 0
+                    j = i + len(func)
+                    while j < len(s):
+                        if s[j] == '(':
+                            depth += 1
+                        elif s[j] == ')':
+                            depth -= 1
+                            if depth == 0:
+                                break
+                        j += 1
+                    inner = s[i + len(func) + 1:j]
+                    result.append(f'\\{func}\\left({inner}\\right)')
+                    i = j + 1
+                    matched = True
+                    break
+            if not matched:
+                result.append(s[i])
+                i += 1
+        return ''.join(result)
+
+    s = _convert_functions(s)
+
+    # Step 2: Convert ^(expr) -> ^{expr} BEFORE touching / so exponent internals are protected
+    s = _re.sub(r'\^\s*\(', '^(', s)  # normalize "^ (" to "^("
+
+    def _convert_carets(s):
+        result = []
+        i = 0
+        while i < len(s):
+            if s[i] == '^' and i + 1 < len(s) and s[i + 1] == '(':
+                depth = 0
+                j = i + 1
+                while j < len(s):
+                    if s[j] == '(':
+                        depth += 1
+                    elif s[j] == ')':
+                        depth -= 1
+                        if depth == 0:
+                            break
+                    j += 1
+                exponent = s[i + 2:j]
+                result.append('^{')
+                result.append(exponent)
+                result.append('}')
+                i = j + 1
+            elif s[i] == '^' and i + 1 < len(s) and (s[i + 1].isdigit() or s[i + 1] == '-'):
+                j = i + 1
+                if s[j] == '-':
+                    j += 1
+                while j < len(s) and (s[j].isdigit() or s[j] == '.'):
+                    j += 1
+                result.append('^{')
+                result.append(s[i + 1:j])
+                result.append('}')
+                i = j
+            else:
+                result.append(s[i])
+                i += 1
+        return ''.join(result)
+
+    s = _convert_carets(s)
+
+    # Step 3: Convert * to \times (but not inside ^{} or function args)
+    s = s.replace('*', r' \times ')
+
+    # Step 4: Convert / to \frac{}{}
+    def _convert_divs(s):
+        r"""Convert A / B to \\frac{A}{B}.
+
+        Handles: (expr)/(expr), \\func\\left(...)\\right) / same, token/token.
+        """
+        def _replace_paren_frac(m):
+            return f'\\frac{{{m.group(1)}}}{{{m.group(2)}}}'
+
+        # \left(...\right) / \left(...\right)
+        prev = None
+        while prev != s:
+            prev = s
+            s = _re.sub(r'\\left\(([^()]*)\\\right\)\s*/\s*\\left\(([^()]*)\\\right\)', _replace_paren_frac, s)
+            s = _re.sub(r'\(([^()]*)\)\s*/\s*\(([^()]*)\)', _replace_paren_frac, s)
+
+        # \func\left(...\right) / \func\left(...\right)  (e.g. \ln\left(A\right) / \ln\left(B\right))
+        func_token = r'\\[a-z]+\\left\([^()]*\\right\)'
+        s = _re.sub(
+            f'({func_token})\\s*/\\s*({func_token})',
+            lambda m: f'\\frac{{{m.group(1)}}}{{{m.group(2)}}}',
+            s
+        )
+
+        # placeholder / placeholder or number/number
+        token = r'(?:\x00\d+\x00|[\d.]+[BMKTbmkt]?)'
+        s = _re.sub(
+            f'({token})\\s*/\\s*({token})',
+            lambda m: f'\\frac{{{m.group(1)}}}{{{m.group(2)}}}',
+            s
+        )
+        return s
+
+    s = _convert_divs(s)
+
+    # Step 5: Convert remaining bare uppercase abbreviations to \text{}
+    s = _re.sub(r'\b([A-Z][A-Z_]{2,})\b', lambda m: r'\text{' + m.group(1).replace('_', r'\_') + '}', s)
+
+    # Step 6: Substitute placeholders back to latex_symbols
+    for placeholder, sym in placeholders.items():
+        s = s.replace(placeholder, sym)
+
+    # Step 7: Wrap parens containing \frac with \left( \right) for proper sizing
+    # Use balanced-brace matching since frac contents can contain nested {}
+    def _add_left_right(s):
+        result = []
+        i = 0
+        while i < len(s):
+            if s[i] == '(' and s[i+1:i+6] == r'\frac':
+                # Find matching close paren
+                depth = 0
+                j = i
+                while j < len(s):
+                    if s[j] == '(':
+                        depth += 1
+                    elif s[j] == ')':
+                        depth -= 1
+                        if depth == 0:
+                            break
+                    j += 1
+                inner = s[i+1:j]
+                result.append(r'\left(')
+                result.append(inner)
+                result.append(r'\right)')
+                i = j + 1
+            else:
+                result.append(s[i])
+                i += 1
+        return ''.join(result)
+    s = _add_left_right(s)
+
+    # Clean up whitespace
+    s = _re.sub(r'\s+', ' ', s).strip()
+
+    return f"{lhs} = {s}"
 
 
 def round_to_n_sigfigs(value: float, n: int = 3) -> str:
@@ -1271,14 +1462,13 @@ def generate_auto_latex(
     else:
         lhs_short = create_latex_variable_name(param_name, result_display)
 
-    # For complex operations, try sympy-based conversion first
-    if operation == 'complex' and params_file and params_file.exists():
-        lambda_body = extract_lambda_body_from_file(param_name, params_file)
-        if lambda_body:
-            sympy_latex = lambda_to_sympy_latex(lambda_body, inputs)
-            if sympy_latex:
-                # Sympy gives us the formula structure, add = result
-                return f"{lhs_short} = {sympy_latex} = {result_formatted}"
+    # For complex operations, convert formula string to LaTeX
+    if operation == 'complex':
+        formula = getattr(param_value, 'formula', '') or ''
+        if formula and parameters:
+            formula_latex = formula_to_latex(formula, parameters, lhs_short)
+            if formula_latex:
+                return formula_latex
 
     # Build equation based on inferred operation type
     # Format: LHS = Symbolic formula = Numeric values = Result

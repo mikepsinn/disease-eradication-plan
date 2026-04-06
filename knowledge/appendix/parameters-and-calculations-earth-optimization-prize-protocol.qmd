@@ -65,9 +65,17 @@ Average income (GDP per capita) at year 15 under current trajectory.
 - [Global Population 2040 (Projected)](#sec-global_population_2040_projected) 📊: 8.9 billion of people
 
 $$
-\bar{y}_{base,15} = \frac{GDP_{base,15}}{Pop_{2040}}
+\begin{gathered}
+\bar{y}_{base,15} \\
+= \frac{GDP_{base,15}}{Pop_{2040}} \\
+= \frac{\$167T}{8.9B} \\
+= \$18.7K
+\end{gathered}
 $$
-
+where:
+$$
+GDP_{base,15} = GDP_{global} \times (1 + g_{base})^{15}
+$$
 *✓ High confidence*
 
 #### Monte Carlo Distribution
@@ -101,7 +109,7 @@ $$
 $$
 where:
 $$
-GDP_{base,20} = GDP_0(1+g_{base})^{20}
+GDP_{base,20} = GDP_{global} \times (1 + g_{base})^{20}
 $$
 *✓ High confidence*
 
@@ -164,7 +172,7 @@ Global GDP at year 15 under status-quo current trajectory growth.
 - [Baseline Global GDP Growth Rate](#sec-gdp_baseline_growth_rate): 2.5%
 
 $$
-GDP_{base,15} = GDP_0(1+g_{base})^{15}
+GDP_{base,15} = GDP_{global} \times (1 + g_{base})^{15}
 $$
 
 *✓ High confidence*
@@ -191,7 +199,7 @@ Global GDP at year 20 under status-quo current trajectory growth.
 - [Baseline Global GDP Growth Rate](#sec-gdp_baseline_growth_rate): 2.5%
 
 $$
-GDP_{base,20} = GDP_0(1+g_{base})^{20}
+GDP_{base,20} = GDP_{global} \times (1 + g_{base})^{20}
 $$
 
 *✓ High confidence*
@@ -227,10 +235,27 @@ $$
 \begin{gathered}
 Y_{50\%} \\
 = Y_0 \\
-+ \frac{\ln(0.50 / r_{destruct:GDP})}{\ln(1 + g_{destruct} - g_{GDP})}
++ \frac{\ln\left(0.50 / \text{DESTRUCTIVE\_PCT\_GDP}\right)}{\ln\left(1 + \text{DESTRUCTIVE\_GROWTH} - \text{GDP\_GROWTH}\right)}
 \end{gathered}
 $$
-
+where:
+$$
+\begin{gathered}
+r_{destruct:GDP} \\
+= \frac{Cost_{destruct}}{GDP_{global}} \\
+= \frac{\$13.2T}{\$115T} \\
+= 11.5\%
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{destruct} \\
+= Spending_{mil} + Cost_{cyber} \\
+= \$2.72T + \$10.5T \\
+= \$13.2T
+\end{gathered}
+$$
 *✓ High confidence*
 
 :::
@@ -1462,7 +1487,7 @@ Annual GDP growth bonus by year 15 from reducing cybercrime drag as the treaty w
 $$
 \begin{gathered}
 g_{cyber,treaty,15} \\
-= \left(\frac{Cost_{cyber,2025}}{GDP_0}\right)\cdot\bar{s}_{treaty,15}\cdot\varepsilon_{conflict}
+= \left(\frac{Cost_{cyber}}{GDP_{global}}\right) \times \bar{s}_{treaty,15} \times \varepsilon_{conflict}
 \end{gathered}
 $$
 
@@ -1490,7 +1515,7 @@ Annual GDP growth bonus by year 20 from reducing cybercrime drag as the treaty w
 $$
 \begin{gathered}
 g_{cyber,treaty,20} \\
-= \left(\frac{Cost_{cyber,2025}}{GDP_0}\right)\cdot\bar{s}_{treaty,20}\cdot\varepsilon_{conflict}
+= \left(\frac{Cost_{cyber}}{GDP_{global}}\right) \times \bar{s}_{treaty,20} \times \varepsilon_{conflict}
 \end{gathered}
 $$
 
@@ -1526,10 +1551,76 @@ Treaty disease-cure fraction over 15 years under the optimistic treaty take-hold
 $$
 \begin{gathered}
 f_{cure,15,treaty} \\
-= \min\left(1,\frac{Treatments_{new,ann}\cdot \sum_y \min\left(k_{capacity}\cdot s_y/0.01,k_{physical}\right)}{D_{untreated}}\right)
+= \min\left(1.0, Treatments_{new,ann} \times (3 \times min(k_{capacity} \times 1, k_{capacity,max}) \\
++ 4 \times min(k_{capacity} \times 2, k_{capacity,max}) \\
++ 5 \times min(k_{capacity} \times 5, k_{capacity,max}) \\
++ 3 \times min(k_{capacity} \times 10, k_{capacity,max})) / N_{untreated}\right)
 \end{gathered}
 $$
-
+where:
+$$
+\begin{gathered}
+k_{capacity} \\
+= \frac{N_{fundable,dFDA}}{Slots_{curr}} \\
+= \frac{23.4M}{1.9M} \\
+= 12.3
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{fundable,dFDA} \\
+= \frac{Subsidies_{dFDA,ann}}{Cost_{pragmatic,pt}} \\
+= \frac{\$21.8B}{\$929} \\
+= 23.4M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Subsidies_{dFDA,ann} \\
+= Funding_{dFDA,ann} - OPEX_{dFDA} \\
+= \$21.8B - \$40M \\
+= \$21.8B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+OPEX_{dFDA} \\
+= Cost_{platform} + Cost_{staff} + Cost_{infra} \\
++ Cost_{regulatory} + Cost_{community} \\
+= \$15M + \$10M + \$8M + \$5M + \$2M \\
+= \$40M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+k_{capacity,max} \\
+= \frac{N_{willing}}{Slots_{curr}} \\
+= \frac{1.08B}{1.9M} \\
+= 566
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{willing} \\
+= N_{patients} \times Pct_{willing} \\
+= 2.4B \times 44.8\% \\
+= 1.08B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{untreated} \\
+= N_{rare} \times 0.95 \\
+= 7{,}000 \times 0.95 \\
+= 6{,}650
+\end{gathered}
+$$
 *✓ High confidence*
 
 #### Sensitivity Analysis
@@ -1564,10 +1655,76 @@ Treaty disease-cure fraction over 20 years under the optimistic treaty take-hold
 $$
 \begin{gathered}
 f_{cure,20,treaty} \\
-= \min\left(1,\frac{Treatments_{new,ann}\cdot \sum_y \min\left(k_{capacity}\cdot s_y/0.01,k_{physical}\right)}{D_{untreated}}\right)
+= \min\left(1.0, Treatments_{new,ann} \times (3 \times min(k_{capacity} \times 1, k_{capacity,max}) \\
++ 4 \times min(k_{capacity} \times 2, k_{capacity,max}) \\
++ 5 \times min(k_{capacity} \times 5, k_{capacity,max}) \\
++ 8 \times min(k_{capacity} \times 10, k_{capacity,max})) / N_{untreated}\right)
 \end{gathered}
 $$
-
+where:
+$$
+\begin{gathered}
+k_{capacity} \\
+= \frac{N_{fundable,dFDA}}{Slots_{curr}} \\
+= \frac{23.4M}{1.9M} \\
+= 12.3
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{fundable,dFDA} \\
+= \frac{Subsidies_{dFDA,ann}}{Cost_{pragmatic,pt}} \\
+= \frac{\$21.8B}{\$929} \\
+= 23.4M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Subsidies_{dFDA,ann} \\
+= Funding_{dFDA,ann} - OPEX_{dFDA} \\
+= \$21.8B - \$40M \\
+= \$21.8B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+OPEX_{dFDA} \\
+= Cost_{platform} + Cost_{staff} + Cost_{infra} \\
++ Cost_{regulatory} + Cost_{community} \\
+= \$15M + \$10M + \$8M + \$5M + \$2M \\
+= \$40M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+k_{capacity,max} \\
+= \frac{N_{willing}}{Slots_{curr}} \\
+= \frac{1.08B}{1.9M} \\
+= 566
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{willing} \\
+= N_{patients} \times Pct_{willing} \\
+= 2.4B \times 44.8\% \\
+= 1.08B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{untreated} \\
+= N_{rare} \times 0.95 \\
+= 7{,}000 \times 0.95 \\
+= 6{,}650
+\end{gathered}
+$$
 *✓ High confidence*
 
 #### Sensitivity Analysis
@@ -1592,11 +1749,93 @@ HALE improvement at year 15 under Treaty Trajectory. It includes both closing th
 $$
 \begin{gathered}
 \Delta HALE_{treaty,15} \\
-= f_{cure,15,treaty}\cdot\Delta_{HALE} \\
+= f_{cure,15,treaty} \times \text{GLOBAL\_HALE\_GAP} \\
 + \Delta HALE_{treaty,longevity,15}
 \end{gathered}
 $$
-
+where:
+$$
+\begin{gathered}
+f_{cure,15,treaty} \\
+= \min\left(1.0, Treatments_{new,ann} \times (3 \times min(k_{capacity} \times 1, k_{capacity,max}) \\
++ 4 \times min(k_{capacity} \times 2, k_{capacity,max}) \\
++ 5 \times min(k_{capacity} \times 5, k_{capacity,max}) \\
++ 3 \times min(k_{capacity} \times 10, k_{capacity,max})) / N_{untreated}\right)
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+k_{capacity} \\
+= \frac{N_{fundable,dFDA}}{Slots_{curr}} \\
+= \frac{23.4M}{1.9M} \\
+= 12.3
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{fundable,dFDA} \\
+= \frac{Subsidies_{dFDA,ann}}{Cost_{pragmatic,pt}} \\
+= \frac{\$21.8B}{\$929} \\
+= 23.4M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Subsidies_{dFDA,ann} \\
+= Funding_{dFDA,ann} - OPEX_{dFDA} \\
+= \$21.8B - \$40M \\
+= \$21.8B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+OPEX_{dFDA} \\
+= Cost_{platform} + Cost_{staff} + Cost_{infra} \\
++ Cost_{regulatory} + Cost_{community} \\
+= \$15M + \$10M + \$8M + \$5M + \$2M \\
+= \$40M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+k_{capacity,max} \\
+= \frac{N_{willing}}{Slots_{curr}} \\
+= \frac{1.08B}{1.9M} \\
+= 566
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{willing} \\
+= N_{patients} \times Pct_{willing} \\
+= 2.4B \times 44.8\% \\
+= 1.08B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{untreated} \\
+= N_{rare} \times 0.95 \\
+= 7{,}000 \times 0.95 \\
+= 6{,}650
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+\Delta HALE_{treaty,longevity,15} \\
+= T_{extend} \times \rho_{HALE,15} \times f_{cure,15,treaty} \\
+= 20 \times 30\% \times 100\% \\
+= 6
+\end{gathered}
+$$
 *✓ High confidence*
 
 #### Sensitivity Analysis
@@ -1631,11 +1870,111 @@ Annualized GDP growth bonus by year 15 from lower disease burden plus eliminatin
 $$
 \begin{gathered}
 g_{health,treaty,15} \\
-= \left(1 + f_{cure,15,treaty}\cdot d_{disease} \\
-+ \frac{Loss_{lag,existing}}{GDP_0}\right)^{1/15}-1
+= ((1 + f_{cure,15,treaty} \times d_{disease} \\
++ \left(\frac{Loss_{lag}}{GDP_{global}}\right))^{\frac{1}{15}}) - 1
 \end{gathered}
 $$
-
+where:
+$$
+\begin{gathered}
+f_{cure,15,treaty} \\
+= \min\left(1.0, Treatments_{new,ann} \times (3 \times min(k_{capacity} \times 1, k_{capacity,max}) \\
++ 4 \times min(k_{capacity} \times 2, k_{capacity,max}) \\
++ 5 \times min(k_{capacity} \times 5, k_{capacity,max}) \\
++ 3 \times min(k_{capacity} \times 10, k_{capacity,max})) / N_{untreated}\right)
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+k_{capacity} \\
+= \frac{N_{fundable,dFDA}}{Slots_{curr}} \\
+= \frac{23.4M}{1.9M} \\
+= 12.3
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{fundable,dFDA} \\
+= \frac{Subsidies_{dFDA,ann}}{Cost_{pragmatic,pt}} \\
+= \frac{\$21.8B}{\$929} \\
+= 23.4M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Subsidies_{dFDA,ann} \\
+= Funding_{dFDA,ann} - OPEX_{dFDA} \\
+= \$21.8B - \$40M \\
+= \$21.8B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+OPEX_{dFDA} \\
+= Cost_{platform} + Cost_{staff} + Cost_{infra} \\
++ Cost_{regulatory} + Cost_{community} \\
+= \$15M + \$10M + \$8M + \$5M + \$2M \\
+= \$40M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+k_{capacity,max} \\
+= \frac{N_{willing}}{Slots_{curr}} \\
+= \frac{1.08B}{1.9M} \\
+= 566
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{willing} \\
+= N_{patients} \times Pct_{willing} \\
+= 2.4B \times 44.8\% \\
+= 1.08B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{untreated} \\
+= N_{rare} \times 0.95 \\
+= 7{,}000 \times 0.95 \\
+= 6{,}650
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Loss_{lag} \\
+= Deaths_{lag,total} \times (LE_{global} - Age_{death,delay}) \times Value_{QALY} \\
+= 102M \times (79 - 62) \times \$150K \\
+= \$259T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Deaths_{lag,total} \\
+= Lives_{saved,annual} \times T_{lag} \\
+= 12.4M \times 8.2 \\
+= 102M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Lives_{saved,annual} \\
+= \frac{LY_{saved,annual}}{T_{ext}} \\
+= \frac{149M}{12} \\
+= 12.4M
+\end{gathered}
+$$
 *✓ High confidence*
 
 #### Sensitivity Analysis
@@ -1670,11 +2009,111 @@ Annualized GDP growth bonus by year 20 from lower disease burden plus eliminatin
 $$
 \begin{gathered}
 g_{health,treaty,20} \\
-= \left(1 + f_{cure,20,treaty}\cdot d_{disease} \\
-+ \frac{Loss_{lag,existing}}{GDP_0}\right)^{1/20}-1
+= ((1 + f_{cure,20,treaty} \times d_{disease} \\
++ \left(\frac{Loss_{lag}}{GDP_{global}}\right))^{\frac{1}{20}}) - 1
 \end{gathered}
 $$
-
+where:
+$$
+\begin{gathered}
+f_{cure,20,treaty} \\
+= \min\left(1.0, Treatments_{new,ann} \times (3 \times min(k_{capacity} \times 1, k_{capacity,max}) \\
++ 4 \times min(k_{capacity} \times 2, k_{capacity,max}) \\
++ 5 \times min(k_{capacity} \times 5, k_{capacity,max}) \\
++ 8 \times min(k_{capacity} \times 10, k_{capacity,max})) / N_{untreated}\right)
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+k_{capacity} \\
+= \frac{N_{fundable,dFDA}}{Slots_{curr}} \\
+= \frac{23.4M}{1.9M} \\
+= 12.3
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{fundable,dFDA} \\
+= \frac{Subsidies_{dFDA,ann}}{Cost_{pragmatic,pt}} \\
+= \frac{\$21.8B}{\$929} \\
+= 23.4M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Subsidies_{dFDA,ann} \\
+= Funding_{dFDA,ann} - OPEX_{dFDA} \\
+= \$21.8B - \$40M \\
+= \$21.8B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+OPEX_{dFDA} \\
+= Cost_{platform} + Cost_{staff} + Cost_{infra} \\
++ Cost_{regulatory} + Cost_{community} \\
+= \$15M + \$10M + \$8M + \$5M + \$2M \\
+= \$40M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+k_{capacity,max} \\
+= \frac{N_{willing}}{Slots_{curr}} \\
+= \frac{1.08B}{1.9M} \\
+= 566
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{willing} \\
+= N_{patients} \times Pct_{willing} \\
+= 2.4B \times 44.8\% \\
+= 1.08B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{untreated} \\
+= N_{rare} \times 0.95 \\
+= 7{,}000 \times 0.95 \\
+= 6{,}650
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Loss_{lag} \\
+= Deaths_{lag,total} \times (LE_{global} - Age_{death,delay}) \times Value_{QALY} \\
+= 102M \times (79 - 62) \times \$150K \\
+= \$259T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Deaths_{lag,total} \\
+= Lives_{saved,annual} \times T_{lag} \\
+= 12.4M \times 8.2 \\
+= 102M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Lives_{saved,annual} \\
+= \frac{LY_{saved,annual}}{T_{ext}} \\
+= \frac{149M}{12} \\
+= 12.4M
+\end{gathered}
+$$
 *✓ High confidence*
 
 #### Sensitivity Analysis
@@ -1708,10 +2147,85 @@ Additional healthy years at year 15 from partial realization of longer-run treat
 $$
 \begin{gathered}
 \Delta HALE_{treaty,longevity,15} \\
-= T_{extend}\cdot\rho_{HALE,15}\cdot f_{cure,15,treaty}
+= T_{extend} \times \rho_{HALE,15} \times f_{cure,15,treaty} \\
+= 20 \times 30\% \times 100\% \\
+= 6
 \end{gathered}
 $$
-
+where:
+$$
+\begin{gathered}
+f_{cure,15,treaty} \\
+= \min\left(1.0, Treatments_{new,ann} \times (3 \times min(k_{capacity} \times 1, k_{capacity,max}) \\
++ 4 \times min(k_{capacity} \times 2, k_{capacity,max}) \\
++ 5 \times min(k_{capacity} \times 5, k_{capacity,max}) \\
++ 3 \times min(k_{capacity} \times 10, k_{capacity,max})) / N_{untreated}\right)
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+k_{capacity} \\
+= \frac{N_{fundable,dFDA}}{Slots_{curr}} \\
+= \frac{23.4M}{1.9M} \\
+= 12.3
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{fundable,dFDA} \\
+= \frac{Subsidies_{dFDA,ann}}{Cost_{pragmatic,pt}} \\
+= \frac{\$21.8B}{\$929} \\
+= 23.4M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Subsidies_{dFDA,ann} \\
+= Funding_{dFDA,ann} - OPEX_{dFDA} \\
+= \$21.8B - \$40M \\
+= \$21.8B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+OPEX_{dFDA} \\
+= Cost_{platform} + Cost_{staff} + Cost_{infra} \\
++ Cost_{regulatory} + Cost_{community} \\
+= \$15M + \$10M + \$8M + \$5M + \$2M \\
+= \$40M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+k_{capacity,max} \\
+= \frac{N_{willing}}{Slots_{curr}} \\
+= \frac{1.08B}{1.9M} \\
+= 566
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{willing} \\
+= N_{patients} \times Pct_{willing} \\
+= 2.4B \times 44.8\% \\
+= 1.08B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{untreated} \\
+= N_{rare} \times 0.95 \\
+= 7{,}000 \times 0.95 \\
+= 6{,}650
+\end{gathered}
+$$
 *✓ High confidence*
 
 #### Sensitivity Analysis
@@ -1747,10 +2261,104 @@ Annual GDP growth bonus by year 15 from explicit avoided war-cost drag under the
 $$
 \begin{gathered}
 g_{peace,treaty,15} \\
-= \left(\frac{Benefit_{peace,soc}}{GDP_0}\right)\cdot\left(\frac{\bar{s}_{treaty,15}}{Reduce_{treaty}}\right)\cdot\varepsilon_{conflict}
+= \left(\frac{Benefit_{peace,soc}}{GDP_{global}}\right) \times \left(\frac{\bar{s}_{treaty,15}}{Reduce_{treaty}}\right) \times \varepsilon_{conflict}
 \end{gathered}
 $$
-
+where:
+$$
+\begin{gathered}
+Benefit_{peace,soc} \\
+= Cost_{war,total} \times Reduce_{treaty} \\
+= \$11.4T \times 1\% \\
+= \$114B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,total} \\
+= Cost_{war,direct} + Cost_{war,indirect} \\
+= \$7.66T + \$3.7T \\
+= \$11.4T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,direct} \\
+= Loss_{life,conflict} + Damage_{infra,total} \\
++ Disruption_{trade} + Spending_{mil} \\
+= \$2.45T + \$1.88T + \$616B + \$2.72T \\
+= \$7.66T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Loss_{life,conflict} \\
+= Cost_{combat,human} + Cost_{state,human} \\
++ Cost_{terror,human} \\
+= \$2.34T + \$27B + \$83B \\
+= \$2.45T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{combat,human} \\
+= Deaths_{combat} \times VSL \\
+= 234{,}000 \times \$10M \\
+= \$2.34T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{state,human} \\
+= Deaths_{state} \times VSL \\
+= 2{,}700 \times \$10M \\
+= \$27B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{terror,human} \\
+= Deaths_{terror} \times VSL \\
+= 8{,}300 \times \$10M \\
+= \$83B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Damage_{infra,total} \\
+= Damage_{comms} + Damage_{edu} + Damage_{energy} \\
++ Damage_{health} + Damage_{transport} + Damage_{water} \\
+= \$298B + \$234B + \$422B + \$166B + \$487B + \$268B \\
+= \$1.88T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Disruption_{trade} \\
+= Disruption_{currency} + Disruption_{energy} \\
++ Disruption_{shipping} + Disruption_{supply} \\
+= \$57.4B + \$125B + \$247B + \$187B \\
+= \$616B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,indirect} \\
+= Damage_{env} + Loss_{growth,mil} + Loss_{capital,conflict} \\
++ Cost_{psych} + Cost_{refugee} + Cost_{vet} \\
+= \$100B + \$2.72T + \$300B + \$232B + \$150B + \$200B \\
+= \$3.7T
+\end{gathered}
+$$
 *✓ High confidence*
 
 #### Sensitivity Analysis
@@ -1786,10 +2394,104 @@ Annual GDP growth bonus by year 20 from explicit avoided war-cost drag under the
 $$
 \begin{gathered}
 g_{peace,treaty,20} \\
-= \left(\frac{Benefit_{peace,soc}}{GDP_0}\right)\cdot\left(\frac{\bar{s}_{treaty,20}}{Reduce_{treaty}}\right)\cdot\varepsilon_{conflict}
+= \left(\frac{Benefit_{peace,soc}}{GDP_{global}}\right) \times \left(\frac{\bar{s}_{treaty,20}}{Reduce_{treaty}}\right) \times \varepsilon_{conflict}
 \end{gathered}
 $$
-
+where:
+$$
+\begin{gathered}
+Benefit_{peace,soc} \\
+= Cost_{war,total} \times Reduce_{treaty} \\
+= \$11.4T \times 1\% \\
+= \$114B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,total} \\
+= Cost_{war,direct} + Cost_{war,indirect} \\
+= \$7.66T + \$3.7T \\
+= \$11.4T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,direct} \\
+= Loss_{life,conflict} + Damage_{infra,total} \\
++ Disruption_{trade} + Spending_{mil} \\
+= \$2.45T + \$1.88T + \$616B + \$2.72T \\
+= \$7.66T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Loss_{life,conflict} \\
+= Cost_{combat,human} + Cost_{state,human} \\
++ Cost_{terror,human} \\
+= \$2.34T + \$27B + \$83B \\
+= \$2.45T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{combat,human} \\
+= Deaths_{combat} \times VSL \\
+= 234{,}000 \times \$10M \\
+= \$2.34T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{state,human} \\
+= Deaths_{state} \times VSL \\
+= 2{,}700 \times \$10M \\
+= \$27B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{terror,human} \\
+= Deaths_{terror} \times VSL \\
+= 8{,}300 \times \$10M \\
+= \$83B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Damage_{infra,total} \\
+= Damage_{comms} + Damage_{edu} + Damage_{energy} \\
++ Damage_{health} + Damage_{transport} + Damage_{water} \\
+= \$298B + \$234B + \$422B + \$166B + \$487B + \$268B \\
+= \$1.88T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Disruption_{trade} \\
+= Disruption_{currency} + Disruption_{energy} \\
++ Disruption_{shipping} + Disruption_{supply} \\
+= \$57.4B + \$125B + \$247B + \$187B \\
+= \$616B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,indirect} \\
+= Damage_{env} + Loss_{growth,mil} + Loss_{capital,conflict} \\
++ Cost_{psych} + Cost_{refugee} + Cost_{vet} \\
+= \$100B + \$2.72T + \$300B + \$232B + \$150B + \$200B \\
+= \$3.7T
+\end{gathered}
+$$
 *✓ High confidence*
 
 #### Sensitivity Analysis
@@ -1820,9 +2522,104 @@ Projected global HALE at year 15 under Treaty Trajectory. Current HALE plus the 
 - [Treaty HALE Gain at Year 15](#sec-treaty_hale_gain_year_15) 🔢: 21.7 years
 
 $$
-HALE_{treaty,15} = HALE_0 + \Delta HALE_{treaty,15}
+\begin{gathered}
+HALE_{treaty,15} \\
+= HALE_{0} + \Delta HALE_{treaty,15} \\
+= 63.3 + 21.7 \\
+= 85
+\end{gathered}
 $$
-
+where:
+$$
+\begin{gathered}
+\Delta HALE_{treaty,15} \\
+= f_{cure,15,treaty} \times \text{GLOBAL\_HALE\_GAP} \\
++ \Delta HALE_{treaty,longevity,15}
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+f_{cure,15,treaty} \\
+= \min\left(1.0, Treatments_{new,ann} \times (3 \times min(k_{capacity} \times 1, k_{capacity,max}) \\
++ 4 \times min(k_{capacity} \times 2, k_{capacity,max}) \\
++ 5 \times min(k_{capacity} \times 5, k_{capacity,max}) \\
++ 3 \times min(k_{capacity} \times 10, k_{capacity,max})) / N_{untreated}\right)
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+k_{capacity} \\
+= \frac{N_{fundable,dFDA}}{Slots_{curr}} \\
+= \frac{23.4M}{1.9M} \\
+= 12.3
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{fundable,dFDA} \\
+= \frac{Subsidies_{dFDA,ann}}{Cost_{pragmatic,pt}} \\
+= \frac{\$21.8B}{\$929} \\
+= 23.4M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Subsidies_{dFDA,ann} \\
+= Funding_{dFDA,ann} - OPEX_{dFDA} \\
+= \$21.8B - \$40M \\
+= \$21.8B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+OPEX_{dFDA} \\
+= Cost_{platform} + Cost_{staff} + Cost_{infra} \\
++ Cost_{regulatory} + Cost_{community} \\
+= \$15M + \$10M + \$8M + \$5M + \$2M \\
+= \$40M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+k_{capacity,max} \\
+= \frac{N_{willing}}{Slots_{curr}} \\
+= \frac{1.08B}{1.9M} \\
+= 566
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{willing} \\
+= N_{patients} \times Pct_{willing} \\
+= 2.4B \times 44.8\% \\
+= 1.08B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{untreated} \\
+= N_{rare} \times 0.95 \\
+= 7{,}000 \times 0.95 \\
+= 6{,}650
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+\Delta HALE_{treaty,longevity,15} \\
+= T_{extend} \times \rho_{HALE,15} \times f_{cure,15,treaty} \\
+= 20 \times 30\% \times 100\% \\
+= 6
+\end{gathered}
+$$
 *✓ High confidence*
 
 #### Sensitivity Analysis
@@ -1856,7 +2653,9 @@ Annual GDP growth bonus by year 15 from redirecting military spending to medical
 $$
 \begin{gathered}
 g_{redirect,treaty,15} \\
-= \bar{s}_{treaty,15}\cdot\left(\frac{\Delta g_{30\%}}{0.30}\right)\cdot\left(\frac{m_{spillover}}{2.0}\right)
+= \bar{s}_{treaty,15} \times \Delta g_{30\%} \times m_{spillover} \times 1.67 \\
+= 4.4\% \times 5.5\% \times 2 \times 1.67 \\
+= 0.807\%
 \end{gathered}
 $$
 
@@ -1893,7 +2692,9 @@ Annual GDP growth bonus by year 20 from redirecting military spending to medical
 $$
 \begin{gathered}
 g_{redirect,treaty,20} \\
-= \bar{s}_{treaty,20}\cdot\left(\frac{\Delta g_{30\%}}{0.30}\right)\cdot\left(\frac{m_{spillover}}{2.0}\right)
+= \bar{s}_{treaty,20} \times \Delta g_{30\%} \times m_{spillover} \times 1.67 \\
+= 5.8\% \times 5.5\% \times 2 \times 1.67 \\
+= 1.06\%
 \end{gathered}
 $$
 
@@ -1927,9 +2728,249 @@ Average income (GDP per capita) at year 15 under the Treaty Trajectory.
 - [Global Population 2040 (Projected)](#sec-global_population_2040_projected) 📊: 8.9 billion of people
 
 $$
-\bar{y}_{treaty,15} = \frac{GDP_{treaty,15}}{Pop_{2040}}
+\begin{gathered}
+\bar{y}_{treaty,15} \\
+= \frac{GDP_{treaty,15}}{Pop_{2040}} \\
+= \frac{\$683T}{8.9B} \\
+= \$76.7K
+\end{gathered}
 $$
-
+where:
+$$
+\begin{gathered}
+GDP_{treaty,15} \\
+= GDP_{global} \times (1 + g_{base} + g_{redirect,treaty,15} \\
++ g_{peace,treaty,15} + g_{cyber,treaty,15} \\
++ g_{health,treaty,15})^{15}
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+g_{redirect,treaty,15} \\
+= \bar{s}_{treaty,15} \times \Delta g_{30\%} \times m_{spillover} \times 1.67 \\
+= 4.4\% \times 5.5\% \times 2 \times 1.67 \\
+= 0.807\%
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+g_{peace,treaty,15} \\
+= \left(\frac{Benefit_{peace,soc}}{GDP_{global}}\right) \times \left(\frac{\bar{s}_{treaty,15}}{Reduce_{treaty}}\right) \times \varepsilon_{conflict}
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Benefit_{peace,soc} \\
+= Cost_{war,total} \times Reduce_{treaty} \\
+= \$11.4T \times 1\% \\
+= \$114B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,total} \\
+= Cost_{war,direct} + Cost_{war,indirect} \\
+= \$7.66T + \$3.7T \\
+= \$11.4T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,direct} \\
+= Loss_{life,conflict} + Damage_{infra,total} \\
++ Disruption_{trade} + Spending_{mil} \\
+= \$2.45T + \$1.88T + \$616B + \$2.72T \\
+= \$7.66T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Loss_{life,conflict} \\
+= Cost_{combat,human} + Cost_{state,human} \\
++ Cost_{terror,human} \\
+= \$2.34T + \$27B + \$83B \\
+= \$2.45T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{combat,human} \\
+= Deaths_{combat} \times VSL \\
+= 234{,}000 \times \$10M \\
+= \$2.34T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{state,human} \\
+= Deaths_{state} \times VSL \\
+= 2{,}700 \times \$10M \\
+= \$27B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{terror,human} \\
+= Deaths_{terror} \times VSL \\
+= 8{,}300 \times \$10M \\
+= \$83B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Damage_{infra,total} \\
+= Damage_{comms} + Damage_{edu} + Damage_{energy} \\
++ Damage_{health} + Damage_{transport} + Damage_{water} \\
+= \$298B + \$234B + \$422B + \$166B + \$487B + \$268B \\
+= \$1.88T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Disruption_{trade} \\
+= Disruption_{currency} + Disruption_{energy} \\
++ Disruption_{shipping} + Disruption_{supply} \\
+= \$57.4B + \$125B + \$247B + \$187B \\
+= \$616B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,indirect} \\
+= Damage_{env} + Loss_{growth,mil} + Loss_{capital,conflict} \\
++ Cost_{psych} + Cost_{refugee} + Cost_{vet} \\
+= \$100B + \$2.72T + \$300B + \$232B + \$150B + \$200B \\
+= \$3.7T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+g_{cyber,treaty,15} \\
+= \left(\frac{Cost_{cyber}}{GDP_{global}}\right) \times \bar{s}_{treaty,15} \times \varepsilon_{conflict}
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+g_{health,treaty,15} \\
+= ((1 + f_{cure,15,treaty} \times d_{disease} \\
++ \left(\frac{Loss_{lag}}{GDP_{global}}\right))^{\frac{1}{15}}) - 1
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+f_{cure,15,treaty} \\
+= \min\left(1.0, Treatments_{new,ann} \times (3 \times min(k_{capacity} \times 1, k_{capacity,max}) \\
++ 4 \times min(k_{capacity} \times 2, k_{capacity,max}) \\
++ 5 \times min(k_{capacity} \times 5, k_{capacity,max}) \\
++ 3 \times min(k_{capacity} \times 10, k_{capacity,max})) / N_{untreated}\right)
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+k_{capacity} \\
+= \frac{N_{fundable,dFDA}}{Slots_{curr}} \\
+= \frac{23.4M}{1.9M} \\
+= 12.3
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{fundable,dFDA} \\
+= \frac{Subsidies_{dFDA,ann}}{Cost_{pragmatic,pt}} \\
+= \frac{\$21.8B}{\$929} \\
+= 23.4M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Subsidies_{dFDA,ann} \\
+= Funding_{dFDA,ann} - OPEX_{dFDA} \\
+= \$21.8B - \$40M \\
+= \$21.8B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+OPEX_{dFDA} \\
+= Cost_{platform} + Cost_{staff} + Cost_{infra} \\
++ Cost_{regulatory} + Cost_{community} \\
+= \$15M + \$10M + \$8M + \$5M + \$2M \\
+= \$40M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+k_{capacity,max} \\
+= \frac{N_{willing}}{Slots_{curr}} \\
+= \frac{1.08B}{1.9M} \\
+= 566
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{willing} \\
+= N_{patients} \times Pct_{willing} \\
+= 2.4B \times 44.8\% \\
+= 1.08B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{untreated} \\
+= N_{rare} \times 0.95 \\
+= 7{,}000 \times 0.95 \\
+= 6{,}650
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Loss_{lag} \\
+= Deaths_{lag,total} \times (LE_{global} - Age_{death,delay}) \times Value_{QALY} \\
+= 102M \times (79 - 62) \times \$150K \\
+= \$259T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Deaths_{lag,total} \\
+= Lives_{saved,annual} \times T_{lag} \\
+= 12.4M \times 8.2 \\
+= 102M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Lives_{saved,annual} \\
+= \frac{LY_{saved,annual}}{T_{ext}} \\
+= \frac{149M}{12} \\
+= 12.4M
+\end{gathered}
+$$
 *✓ High confidence*
 
 #### Sensitivity Analysis
@@ -1960,208 +3001,36 @@ Average income (GDP per capita) at year 20 under the Treaty Trajectory.
 - [Global Population 2045 (Projected)](#sec-global_population_2045_projected) 📊: 9.2 billion of people
 
 $$
-\bar{y}_{treaty,20} = \frac{GDP_{treaty,20}}{Pop_{2045}}
-$$
-
-*✓ High confidence*
-
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-treaty_trajectory_avg_income_year_20.qmd >}}
-
-{{< include ../figures/sensitivity-table-treaty_trajectory_avg_income_year_20.qmd >}}
-
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-treaty_trajectory_avg_income_year_20.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-treaty_trajectory_avg_income_year_20.qmd >}}
-
-:::
-
-### Treaty Trajectory Cumulative Lifetime Income (Per Capita): $4.58M {#sec-treaty_trajectory_cumulative_lifetime_income}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Cumulative per-capita income over an average remaining lifespan under Treaty Trajectory. Uses implied per-capita CAGR for years 1-20 (derived from known year-0 and year-20 per-capita incomes), then current-trajectory per-capita growth from the year-20 level. Conservative: assumes no further treaty acceleration beyond year 20.
-
-**Inputs**:
-
-- [Global Average Income (2025 Baseline)](#sec-global_avg_income_2025) 🔢: $14.4K
-- [Treaty Trajectory Average Income at Year 20](#sec-treaty_trajectory_avg_income_year_20) 🔢: $99.9K
-- [Current Trajectory Average Income at Year 20](#sec-current_trajectory_avg_income_year_20) 🔢: $20.5K
-- [Average Remaining Years (Median Person)](#sec-global_avg_remaining_years) 🔢: 48.5 years
-
-$$
 \begin{gathered}
-Y_{cum,treaty} \\
-= \bar{y}_0 \cdot \frac{(1+g_{pc,treaty})((1+g_{pc,treaty})^{20}-1)}{g_{pc,treaty}} \\
-+ \bar{y}_{treaty,20} \cdot \frac{(1+g_{pc,base})((1+g_{pc,base})^{T_{remaining}-20}-1)}{g_{pc,base}}
+\bar{y}_{treaty,20} \\
+= \frac{GDP_{treaty,20}}{Pop_{2045}} \\
+= \frac{\$919T}{9.2B} \\
+= \$99.9K
 \end{gathered}
-$$
-
-*✓ High confidence*
-
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-treaty_trajectory_cumulative_lifetime_income.qmd >}}
-
-{{< include ../figures/sensitivity-table-treaty_trajectory_cumulative_lifetime_income.qmd >}}
-
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-treaty_trajectory_cumulative_lifetime_income.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-treaty_trajectory_cumulative_lifetime_income.qmd >}}
-
-:::
-
-### Treaty Trajectory GDP at Year 15: $683T {#sec-treaty_trajectory_gdp_year_15}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Projected global GDP at year 15 under the optimistic treaty take-hold path. Compounds baseline growth plus explicit military redirect spillovers, peace dividend recovery, cybercrime drag recovery, and health recovery from disease cures and faster deployment.
-
-**Inputs**:
-
-- [Global GDP (2025)](#sec-global_gdp_2025) 📊: $115T
-- [Baseline Global GDP Growth Rate](#sec-gdp_baseline_growth_rate): 2.5%
-- [Treaty Redirect GDP Growth Bonus (Year 15)](#sec-treaty_redirect_gdp_growth_bonus_year_15) 🔢: 0.807%
-- [Treaty Peace Recovery GDP Growth Bonus (Year 15)](#sec-treaty_peace_recovery_gdp_growth_bonus_year_15) 🔢: 0.435%
-- [Treaty Cybercrime Recovery GDP Growth Bonus (Year 15)](#sec-treaty_cybercrime_recovery_gdp_growth_bonus_year_15) 🔢: 0.402%
-- [Treaty Health Recovery GDP Growth Bonus (Year 15)](#sec-treaty_health_recovery_gdp_growth_bonus_year_15) 🔢: 8.46%
-
-$$
-\begin{gathered}
-GDP_{treaty,15} \\
-= GDP_0(1 + g_{base} + g_{redirect} + g_{peace} + g_{cyber} \\
-+ g_{health})^{15}
-\end{gathered}
-$$
-
-*✓ High confidence*
-
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-treaty_trajectory_gdp_year_15.qmd >}}
-
-{{< include ../figures/sensitivity-table-treaty_trajectory_gdp_year_15.qmd >}}
-
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-treaty_trajectory_gdp_year_15.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-treaty_trajectory_gdp_year_15.qmd >}}
-
-:::
-
-### Treaty Trajectory GDP at Year 20: $919T {#sec-treaty_trajectory_gdp_year_20}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Projected global GDP at year 20 under the optimistic treaty take-hold path. Compounds baseline growth plus explicit military redirect spillovers, peace dividend recovery, cybercrime drag recovery, and health recovery from disease cures and faster deployment.
-
-**Inputs**:
-
-- [Global GDP (2025)](#sec-global_gdp_2025) 📊: $115T
-- [Baseline Global GDP Growth Rate](#sec-gdp_baseline_growth_rate): 2.5%
-- [Treaty Redirect GDP Growth Bonus (Year 20)](#sec-treaty_redirect_gdp_growth_bonus_year_20) 🔢: 1.06%
-- [Treaty Peace Recovery GDP Growth Bonus (Year 20)](#sec-treaty_peace_recovery_gdp_growth_bonus_year_20) 🔢: 0.573%
-- [Treaty Cybercrime Recovery GDP Growth Bonus (Year 20)](#sec-treaty_cybercrime_recovery_gdp_growth_bonus_year_20) 🔢: 0.53%
-- [Treaty Health Recovery GDP Growth Bonus (Year 20)](#sec-treaty_health_recovery_gdp_growth_bonus_year_20) 🔢: 6.28%
-
-$$
-\begin{gathered}
-GDP_{treaty,20} \\
-= GDP_0(1 + g_{base} + g_{redirect} + g_{peace} + g_{cyber} \\
-+ g_{health})^{20}
-\end{gathered}
-$$
-
-*✓ High confidence*
-
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-treaty_trajectory_gdp_year_20.qmd >}}
-
-{{< include ../figures/sensitivity-table-treaty_trajectory_gdp_year_20.qmd >}}
-
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-treaty_trajectory_gdp_year_20.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-treaty_trajectory_gdp_year_20.qmd >}}
-
-:::
-
-### Treaty Trajectory Lifetime Income Multiplier: 4.17x {#sec-treaty_trajectory_lifetime_income_multiplier}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Ratio of cumulative lifetime income under Treaty Trajectory vs current trajectory. Income-agnostic: applies as a multiplier to any individual's lifetime earnings.
-
-**Inputs**:
-
-- [Treaty Trajectory Cumulative Lifetime Income (Per Capita)](#sec-treaty_trajectory_cumulative_lifetime_income) 🔢: $4.58M
-- [Current Trajectory Cumulative Lifetime Income (Per Capita)](#sec-current_trajectory_cumulative_lifetime_income) 🔢: $1.1M
-
-$$
-\begin{gathered}
-k_{lifetime,treaty:earth} \\
-= \frac{Y_{cum,treaty}}{Y_{cum,earth}} \\
-= \frac{\$4.58M}{\$1.1M} \\
-= 4.17
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Y_{cum,treaty} \\
-= \bar{y}_0 \cdot \frac{(1+g_{pc,treaty})((1+g_{pc,treaty})^{20}-1)}{g_{pc,treaty}} \\
-+ \bar{y}_{treaty,20} \cdot \frac{(1+g_{pc,base})((1+g_{pc,base})^{T_{remaining}-20}-1)}{g_{pc,base}}
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-\bar{y}_{0} \\
-= \frac{GDP_{global}}{Pop_{global}} \\
-= \frac{\$115T}{8B} \\
-= \$14.4K
-\end{gathered}
-$$
-where:
-$$
-\bar{y}_{treaty,20} = \frac{GDP_{treaty,20}}{Pop_{2045}}
 $$
 where:
 $$
 \begin{gathered}
 GDP_{treaty,20} \\
-= GDP_0(1 + g_{base} + g_{redirect} + g_{peace} + g_{cyber} \\
-+ g_{health})^{20}
+= GDP_{global} \times (1 + g_{base} + g_{redirect,treaty,20} \\
++ g_{peace,treaty,20} + g_{cyber,treaty,20} \\
++ g_{health,treaty,20})^{20}
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
 g_{redirect,treaty,20} \\
-= \bar{s}_{treaty,20}\cdot\left(\frac{\Delta g_{30\%}}{0.30}\right)\cdot\left(\frac{m_{spillover}}{2.0}\right)
+= \bar{s}_{treaty,20} \times \Delta g_{30\%} \times m_{spillover} \times 1.67 \\
+= 5.8\% \times 5.5\% \times 2 \times 1.67 \\
+= 1.06\%
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
 g_{peace,treaty,20} \\
-= \left(\frac{Benefit_{peace,soc}}{GDP_0}\right)\cdot\left(\frac{\bar{s}_{treaty,20}}{Reduce_{treaty}}\right)\cdot\varepsilon_{conflict}
+= \left(\frac{Benefit_{peace,soc}}{GDP_{global}}\right) \times \left(\frac{\bar{s}_{treaty,20}}{Reduce_{treaty}}\right) \times \varepsilon_{conflict}
 \end{gathered}
 $$
 where:
@@ -2263,22 +3132,899 @@ where:
 $$
 \begin{gathered}
 g_{cyber,treaty,20} \\
-= \left(\frac{Cost_{cyber,2025}}{GDP_0}\right)\cdot\bar{s}_{treaty,20}\cdot\varepsilon_{conflict}
+= \left(\frac{Cost_{cyber}}{GDP_{global}}\right) \times \bar{s}_{treaty,20} \times \varepsilon_{conflict}
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
 g_{health,treaty,20} \\
-= \left(1 + f_{cure,20,treaty}\cdot d_{disease} \\
-+ \frac{Loss_{lag,existing}}{GDP_0}\right)^{1/20}-1
+= ((1 + f_{cure,20,treaty} \times d_{disease} \\
++ \left(\frac{Loss_{lag}}{GDP_{global}}\right))^{\frac{1}{20}}) - 1
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
 f_{cure,20,treaty} \\
-= \min\left(1,\frac{Treatments_{new,ann}\cdot \sum_y \min\left(k_{capacity}\cdot s_y/0.01,k_{physical}\right)}{D_{untreated}}\right)
+= \min\left(1.0, Treatments_{new,ann} \times (3 \times min(k_{capacity} \times 1, k_{capacity,max}) \\
++ 4 \times min(k_{capacity} \times 2, k_{capacity,max}) \\
++ 5 \times min(k_{capacity} \times 5, k_{capacity,max}) \\
++ 8 \times min(k_{capacity} \times 10, k_{capacity,max})) / N_{untreated}\right)
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+k_{capacity} \\
+= \frac{N_{fundable,dFDA}}{Slots_{curr}} \\
+= \frac{23.4M}{1.9M} \\
+= 12.3
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{fundable,dFDA} \\
+= \frac{Subsidies_{dFDA,ann}}{Cost_{pragmatic,pt}} \\
+= \frac{\$21.8B}{\$929} \\
+= 23.4M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Subsidies_{dFDA,ann} \\
+= Funding_{dFDA,ann} - OPEX_{dFDA} \\
+= \$21.8B - \$40M \\
+= \$21.8B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+OPEX_{dFDA} \\
+= Cost_{platform} + Cost_{staff} + Cost_{infra} \\
++ Cost_{regulatory} + Cost_{community} \\
+= \$15M + \$10M + \$8M + \$5M + \$2M \\
+= \$40M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+k_{capacity,max} \\
+= \frac{N_{willing}}{Slots_{curr}} \\
+= \frac{1.08B}{1.9M} \\
+= 566
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{willing} \\
+= N_{patients} \times Pct_{willing} \\
+= 2.4B \times 44.8\% \\
+= 1.08B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{untreated} \\
+= N_{rare} \times 0.95 \\
+= 7{,}000 \times 0.95 \\
+= 6{,}650
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Loss_{lag} \\
+= Deaths_{lag,total} \times (LE_{global} - Age_{death,delay}) \times Value_{QALY} \\
+= 102M \times (79 - 62) \times \$150K \\
+= \$259T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Deaths_{lag,total} \\
+= Lives_{saved,annual} \times T_{lag} \\
+= 12.4M \times 8.2 \\
+= 102M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Lives_{saved,annual} \\
+= \frac{LY_{saved,annual}}{T_{ext}} \\
+= \frac{149M}{12} \\
+= 12.4M
+\end{gathered}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-treaty_trajectory_avg_income_year_20.qmd >}}
+
+{{< include ../figures/sensitivity-table-treaty_trajectory_avg_income_year_20.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-treaty_trajectory_avg_income_year_20.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-treaty_trajectory_avg_income_year_20.qmd >}}
+
+:::
+
+### Treaty Trajectory Cumulative Lifetime Income (Per Capita): $4.58M {#sec-treaty_trajectory_cumulative_lifetime_income}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Cumulative per-capita income over an average remaining lifespan under Treaty Trajectory. Uses implied per-capita CAGR for years 1-20 (derived from known year-0 and year-20 per-capita incomes), then current-trajectory per-capita growth from the year-20 level. Conservative: assumes no further treaty acceleration beyond year 20.
+
+**Inputs**:
+
+- [Global Average Income (2025 Baseline)](#sec-global_avg_income_2025) 🔢: $14.4K
+- [Treaty Trajectory Average Income at Year 20](#sec-treaty_trajectory_avg_income_year_20) 🔢: $99.9K
+- [Current Trajectory Average Income at Year 20](#sec-current_trajectory_avg_income_year_20) 🔢: $20.5K
+- [Average Remaining Years (Median Person)](#sec-global_avg_remaining_years) 🔢: 48.5 years
+
+$$
+\begin{gathered}
+Y_{cum,treaty} \\
+= \bar{y}_0 \cdot \frac{(1+g_{pc,treaty})((1+g_{pc,treaty})^{20}-1)}{g_{pc,treaty}} \\
++ \bar{y}_{treaty,20} \cdot \frac{(1+g_{pc,base})((1+g_{pc,base})^{T_{remaining}-20}-1)}{g_{pc,base}}
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-treaty_trajectory_cumulative_lifetime_income.qmd >}}
+
+{{< include ../figures/sensitivity-table-treaty_trajectory_cumulative_lifetime_income.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-treaty_trajectory_cumulative_lifetime_income.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-treaty_trajectory_cumulative_lifetime_income.qmd >}}
+
+:::
+
+### Treaty Trajectory GDP at Year 15: $683T {#sec-treaty_trajectory_gdp_year_15}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Projected global GDP at year 15 under the optimistic treaty take-hold path. Compounds baseline growth plus explicit military redirect spillovers, peace dividend recovery, cybercrime drag recovery, and health recovery from disease cures and faster deployment.
+
+**Inputs**:
+
+- [Global GDP (2025)](#sec-global_gdp_2025) 📊: $115T
+- [Baseline Global GDP Growth Rate](#sec-gdp_baseline_growth_rate): 2.5%
+- [Treaty Redirect GDP Growth Bonus (Year 15)](#sec-treaty_redirect_gdp_growth_bonus_year_15) 🔢: 0.807%
+- [Treaty Peace Recovery GDP Growth Bonus (Year 15)](#sec-treaty_peace_recovery_gdp_growth_bonus_year_15) 🔢: 0.435%
+- [Treaty Cybercrime Recovery GDP Growth Bonus (Year 15)](#sec-treaty_cybercrime_recovery_gdp_growth_bonus_year_15) 🔢: 0.402%
+- [Treaty Health Recovery GDP Growth Bonus (Year 15)](#sec-treaty_health_recovery_gdp_growth_bonus_year_15) 🔢: 8.46%
+
+$$
+\begin{gathered}
+GDP_{treaty,15} \\
+= GDP_{global} \times (1 + g_{base} + g_{redirect,treaty,15} \\
++ g_{peace,treaty,15} + g_{cyber,treaty,15} \\
++ g_{health,treaty,15})^{15}
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+g_{redirect,treaty,15} \\
+= \bar{s}_{treaty,15} \times \Delta g_{30\%} \times m_{spillover} \times 1.67 \\
+= 4.4\% \times 5.5\% \times 2 \times 1.67 \\
+= 0.807\%
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+g_{peace,treaty,15} \\
+= \left(\frac{Benefit_{peace,soc}}{GDP_{global}}\right) \times \left(\frac{\bar{s}_{treaty,15}}{Reduce_{treaty}}\right) \times \varepsilon_{conflict}
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Benefit_{peace,soc} \\
+= Cost_{war,total} \times Reduce_{treaty} \\
+= \$11.4T \times 1\% \\
+= \$114B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,total} \\
+= Cost_{war,direct} + Cost_{war,indirect} \\
+= \$7.66T + \$3.7T \\
+= \$11.4T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,direct} \\
+= Loss_{life,conflict} + Damage_{infra,total} \\
++ Disruption_{trade} + Spending_{mil} \\
+= \$2.45T + \$1.88T + \$616B + \$2.72T \\
+= \$7.66T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Loss_{life,conflict} \\
+= Cost_{combat,human} + Cost_{state,human} \\
++ Cost_{terror,human} \\
+= \$2.34T + \$27B + \$83B \\
+= \$2.45T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{combat,human} \\
+= Deaths_{combat} \times VSL \\
+= 234{,}000 \times \$10M \\
+= \$2.34T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{state,human} \\
+= Deaths_{state} \times VSL \\
+= 2{,}700 \times \$10M \\
+= \$27B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{terror,human} \\
+= Deaths_{terror} \times VSL \\
+= 8{,}300 \times \$10M \\
+= \$83B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Damage_{infra,total} \\
+= Damage_{comms} + Damage_{edu} + Damage_{energy} \\
++ Damage_{health} + Damage_{transport} + Damage_{water} \\
+= \$298B + \$234B + \$422B + \$166B + \$487B + \$268B \\
+= \$1.88T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Disruption_{trade} \\
+= Disruption_{currency} + Disruption_{energy} \\
++ Disruption_{shipping} + Disruption_{supply} \\
+= \$57.4B + \$125B + \$247B + \$187B \\
+= \$616B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,indirect} \\
+= Damage_{env} + Loss_{growth,mil} + Loss_{capital,conflict} \\
++ Cost_{psych} + Cost_{refugee} + Cost_{vet} \\
+= \$100B + \$2.72T + \$300B + \$232B + \$150B + \$200B \\
+= \$3.7T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+g_{cyber,treaty,15} \\
+= \left(\frac{Cost_{cyber}}{GDP_{global}}\right) \times \bar{s}_{treaty,15} \times \varepsilon_{conflict}
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+g_{health,treaty,15} \\
+= ((1 + f_{cure,15,treaty} \times d_{disease} \\
++ \left(\frac{Loss_{lag}}{GDP_{global}}\right))^{\frac{1}{15}}) - 1
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+f_{cure,15,treaty} \\
+= \min\left(1.0, Treatments_{new,ann} \times (3 \times min(k_{capacity} \times 1, k_{capacity,max}) \\
++ 4 \times min(k_{capacity} \times 2, k_{capacity,max}) \\
++ 5 \times min(k_{capacity} \times 5, k_{capacity,max}) \\
++ 3 \times min(k_{capacity} \times 10, k_{capacity,max})) / N_{untreated}\right)
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+k_{capacity} \\
+= \frac{N_{fundable,dFDA}}{Slots_{curr}} \\
+= \frac{23.4M}{1.9M} \\
+= 12.3
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{fundable,dFDA} \\
+= \frac{Subsidies_{dFDA,ann}}{Cost_{pragmatic,pt}} \\
+= \frac{\$21.8B}{\$929} \\
+= 23.4M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Subsidies_{dFDA,ann} \\
+= Funding_{dFDA,ann} - OPEX_{dFDA} \\
+= \$21.8B - \$40M \\
+= \$21.8B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+OPEX_{dFDA} \\
+= Cost_{platform} + Cost_{staff} + Cost_{infra} \\
++ Cost_{regulatory} + Cost_{community} \\
+= \$15M + \$10M + \$8M + \$5M + \$2M \\
+= \$40M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+k_{capacity,max} \\
+= \frac{N_{willing}}{Slots_{curr}} \\
+= \frac{1.08B}{1.9M} \\
+= 566
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{willing} \\
+= N_{patients} \times Pct_{willing} \\
+= 2.4B \times 44.8\% \\
+= 1.08B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{untreated} \\
+= N_{rare} \times 0.95 \\
+= 7{,}000 \times 0.95 \\
+= 6{,}650
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Loss_{lag} \\
+= Deaths_{lag,total} \times (LE_{global} - Age_{death,delay}) \times Value_{QALY} \\
+= 102M \times (79 - 62) \times \$150K \\
+= \$259T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Deaths_{lag,total} \\
+= Lives_{saved,annual} \times T_{lag} \\
+= 12.4M \times 8.2 \\
+= 102M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Lives_{saved,annual} \\
+= \frac{LY_{saved,annual}}{T_{ext}} \\
+= \frac{149M}{12} \\
+= 12.4M
+\end{gathered}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-treaty_trajectory_gdp_year_15.qmd >}}
+
+{{< include ../figures/sensitivity-table-treaty_trajectory_gdp_year_15.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-treaty_trajectory_gdp_year_15.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-treaty_trajectory_gdp_year_15.qmd >}}
+
+:::
+
+### Treaty Trajectory GDP at Year 20: $919T {#sec-treaty_trajectory_gdp_year_20}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Projected global GDP at year 20 under the optimistic treaty take-hold path. Compounds baseline growth plus explicit military redirect spillovers, peace dividend recovery, cybercrime drag recovery, and health recovery from disease cures and faster deployment.
+
+**Inputs**:
+
+- [Global GDP (2025)](#sec-global_gdp_2025) 📊: $115T
+- [Baseline Global GDP Growth Rate](#sec-gdp_baseline_growth_rate): 2.5%
+- [Treaty Redirect GDP Growth Bonus (Year 20)](#sec-treaty_redirect_gdp_growth_bonus_year_20) 🔢: 1.06%
+- [Treaty Peace Recovery GDP Growth Bonus (Year 20)](#sec-treaty_peace_recovery_gdp_growth_bonus_year_20) 🔢: 0.573%
+- [Treaty Cybercrime Recovery GDP Growth Bonus (Year 20)](#sec-treaty_cybercrime_recovery_gdp_growth_bonus_year_20) 🔢: 0.53%
+- [Treaty Health Recovery GDP Growth Bonus (Year 20)](#sec-treaty_health_recovery_gdp_growth_bonus_year_20) 🔢: 6.28%
+
+$$
+\begin{gathered}
+GDP_{treaty,20} \\
+= GDP_{global} \times (1 + g_{base} + g_{redirect,treaty,20} \\
++ g_{peace,treaty,20} + g_{cyber,treaty,20} \\
++ g_{health,treaty,20})^{20}
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+g_{redirect,treaty,20} \\
+= \bar{s}_{treaty,20} \times \Delta g_{30\%} \times m_{spillover} \times 1.67 \\
+= 5.8\% \times 5.5\% \times 2 \times 1.67 \\
+= 1.06\%
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+g_{peace,treaty,20} \\
+= \left(\frac{Benefit_{peace,soc}}{GDP_{global}}\right) \times \left(\frac{\bar{s}_{treaty,20}}{Reduce_{treaty}}\right) \times \varepsilon_{conflict}
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Benefit_{peace,soc} \\
+= Cost_{war,total} \times Reduce_{treaty} \\
+= \$11.4T \times 1\% \\
+= \$114B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,total} \\
+= Cost_{war,direct} + Cost_{war,indirect} \\
+= \$7.66T + \$3.7T \\
+= \$11.4T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,direct} \\
+= Loss_{life,conflict} + Damage_{infra,total} \\
++ Disruption_{trade} + Spending_{mil} \\
+= \$2.45T + \$1.88T + \$616B + \$2.72T \\
+= \$7.66T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Loss_{life,conflict} \\
+= Cost_{combat,human} + Cost_{state,human} \\
++ Cost_{terror,human} \\
+= \$2.34T + \$27B + \$83B \\
+= \$2.45T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{combat,human} \\
+= Deaths_{combat} \times VSL \\
+= 234{,}000 \times \$10M \\
+= \$2.34T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{state,human} \\
+= Deaths_{state} \times VSL \\
+= 2{,}700 \times \$10M \\
+= \$27B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{terror,human} \\
+= Deaths_{terror} \times VSL \\
+= 8{,}300 \times \$10M \\
+= \$83B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Damage_{infra,total} \\
+= Damage_{comms} + Damage_{edu} + Damage_{energy} \\
++ Damage_{health} + Damage_{transport} + Damage_{water} \\
+= \$298B + \$234B + \$422B + \$166B + \$487B + \$268B \\
+= \$1.88T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Disruption_{trade} \\
+= Disruption_{currency} + Disruption_{energy} \\
++ Disruption_{shipping} + Disruption_{supply} \\
+= \$57.4B + \$125B + \$247B + \$187B \\
+= \$616B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,indirect} \\
+= Damage_{env} + Loss_{growth,mil} + Loss_{capital,conflict} \\
++ Cost_{psych} + Cost_{refugee} + Cost_{vet} \\
+= \$100B + \$2.72T + \$300B + \$232B + \$150B + \$200B \\
+= \$3.7T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+g_{cyber,treaty,20} \\
+= \left(\frac{Cost_{cyber}}{GDP_{global}}\right) \times \bar{s}_{treaty,20} \times \varepsilon_{conflict}
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+g_{health,treaty,20} \\
+= ((1 + f_{cure,20,treaty} \times d_{disease} \\
++ \left(\frac{Loss_{lag}}{GDP_{global}}\right))^{\frac{1}{20}}) - 1
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+f_{cure,20,treaty} \\
+= \min\left(1.0, Treatments_{new,ann} \times (3 \times min(k_{capacity} \times 1, k_{capacity,max}) \\
++ 4 \times min(k_{capacity} \times 2, k_{capacity,max}) \\
++ 5 \times min(k_{capacity} \times 5, k_{capacity,max}) \\
++ 8 \times min(k_{capacity} \times 10, k_{capacity,max})) / N_{untreated}\right)
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+k_{capacity} \\
+= \frac{N_{fundable,dFDA}}{Slots_{curr}} \\
+= \frac{23.4M}{1.9M} \\
+= 12.3
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{fundable,dFDA} \\
+= \frac{Subsidies_{dFDA,ann}}{Cost_{pragmatic,pt}} \\
+= \frac{\$21.8B}{\$929} \\
+= 23.4M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Subsidies_{dFDA,ann} \\
+= Funding_{dFDA,ann} - OPEX_{dFDA} \\
+= \$21.8B - \$40M \\
+= \$21.8B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+OPEX_{dFDA} \\
+= Cost_{platform} + Cost_{staff} + Cost_{infra} \\
++ Cost_{regulatory} + Cost_{community} \\
+= \$15M + \$10M + \$8M + \$5M + \$2M \\
+= \$40M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+k_{capacity,max} \\
+= \frac{N_{willing}}{Slots_{curr}} \\
+= \frac{1.08B}{1.9M} \\
+= 566
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{willing} \\
+= N_{patients} \times Pct_{willing} \\
+= 2.4B \times 44.8\% \\
+= 1.08B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{untreated} \\
+= N_{rare} \times 0.95 \\
+= 7{,}000 \times 0.95 \\
+= 6{,}650
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Loss_{lag} \\
+= Deaths_{lag,total} \times (LE_{global} - Age_{death,delay}) \times Value_{QALY} \\
+= 102M \times (79 - 62) \times \$150K \\
+= \$259T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Deaths_{lag,total} \\
+= Lives_{saved,annual} \times T_{lag} \\
+= 12.4M \times 8.2 \\
+= 102M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Lives_{saved,annual} \\
+= \frac{LY_{saved,annual}}{T_{ext}} \\
+= \frac{149M}{12} \\
+= 12.4M
+\end{gathered}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-treaty_trajectory_gdp_year_20.qmd >}}
+
+{{< include ../figures/sensitivity-table-treaty_trajectory_gdp_year_20.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-treaty_trajectory_gdp_year_20.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-treaty_trajectory_gdp_year_20.qmd >}}
+
+:::
+
+### Treaty Trajectory Lifetime Income Multiplier: 4.17x {#sec-treaty_trajectory_lifetime_income_multiplier}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Ratio of cumulative lifetime income under Treaty Trajectory vs current trajectory. Income-agnostic: applies as a multiplier to any individual's lifetime earnings.
+
+**Inputs**:
+
+- [Treaty Trajectory Cumulative Lifetime Income (Per Capita)](#sec-treaty_trajectory_cumulative_lifetime_income) 🔢: $4.58M
+- [Current Trajectory Cumulative Lifetime Income (Per Capita)](#sec-current_trajectory_cumulative_lifetime_income) 🔢: $1.1M
+
+$$
+\begin{gathered}
+k_{lifetime,treaty:earth} \\
+= \frac{Y_{cum,treaty}}{Y_{cum,earth}} \\
+= \frac{\$4.58M}{\$1.1M} \\
+= 4.17
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Y_{cum,treaty} \\
+= \bar{y}_0 \cdot \frac{(1+g_{pc,treaty})((1+g_{pc,treaty})^{20}-1)}{g_{pc,treaty}} \\
++ \bar{y}_{treaty,20} \cdot \frac{(1+g_{pc,base})((1+g_{pc,base})^{T_{remaining}-20}-1)}{g_{pc,base}}
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+\bar{y}_{0} \\
+= \frac{GDP_{global}}{Pop_{global}} \\
+= \frac{\$115T}{8B} \\
+= \$14.4K
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+\bar{y}_{treaty,20} \\
+= \frac{GDP_{treaty,20}}{Pop_{2045}} \\
+= \frac{\$919T}{9.2B} \\
+= \$99.9K
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+GDP_{treaty,20} \\
+= GDP_{global} \times (1 + g_{base} + g_{redirect,treaty,20} \\
++ g_{peace,treaty,20} + g_{cyber,treaty,20} \\
++ g_{health,treaty,20})^{20}
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+g_{redirect,treaty,20} \\
+= \bar{s}_{treaty,20} \times \Delta g_{30\%} \times m_{spillover} \times 1.67 \\
+= 5.8\% \times 5.5\% \times 2 \times 1.67 \\
+= 1.06\%
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+g_{peace,treaty,20} \\
+= \left(\frac{Benefit_{peace,soc}}{GDP_{global}}\right) \times \left(\frac{\bar{s}_{treaty,20}}{Reduce_{treaty}}\right) \times \varepsilon_{conflict}
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Benefit_{peace,soc} \\
+= Cost_{war,total} \times Reduce_{treaty} \\
+= \$11.4T \times 1\% \\
+= \$114B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,total} \\
+= Cost_{war,direct} + Cost_{war,indirect} \\
+= \$7.66T + \$3.7T \\
+= \$11.4T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,direct} \\
+= Loss_{life,conflict} + Damage_{infra,total} \\
++ Disruption_{trade} + Spending_{mil} \\
+= \$2.45T + \$1.88T + \$616B + \$2.72T \\
+= \$7.66T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Loss_{life,conflict} \\
+= Cost_{combat,human} + Cost_{state,human} \\
++ Cost_{terror,human} \\
+= \$2.34T + \$27B + \$83B \\
+= \$2.45T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{combat,human} \\
+= Deaths_{combat} \times VSL \\
+= 234{,}000 \times \$10M \\
+= \$2.34T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{state,human} \\
+= Deaths_{state} \times VSL \\
+= 2{,}700 \times \$10M \\
+= \$27B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{terror,human} \\
+= Deaths_{terror} \times VSL \\
+= 8{,}300 \times \$10M \\
+= \$83B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Damage_{infra,total} \\
+= Damage_{comms} + Damage_{edu} + Damage_{energy} \\
++ Damage_{health} + Damage_{transport} + Damage_{water} \\
+= \$298B + \$234B + \$422B + \$166B + \$487B + \$268B \\
+= \$1.88T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Disruption_{trade} \\
+= Disruption_{currency} + Disruption_{energy} \\
++ Disruption_{shipping} + Disruption_{supply} \\
+= \$57.4B + \$125B + \$247B + \$187B \\
+= \$616B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,indirect} \\
+= Damage_{env} + Loss_{growth,mil} + Loss_{capital,conflict} \\
++ Cost_{psych} + Cost_{refugee} + Cost_{vet} \\
+= \$100B + \$2.72T + \$300B + \$232B + \$150B + \$200B \\
+= \$3.7T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+g_{cyber,treaty,20} \\
+= \left(\frac{Cost_{cyber}}{GDP_{global}}\right) \times \bar{s}_{treaty,20} \times \varepsilon_{conflict}
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+g_{health,treaty,20} \\
+= ((1 + f_{cure,20,treaty} \times d_{disease} \\
++ \left(\frac{Loss_{lag}}{GDP_{global}}\right))^{\frac{1}{20}}) - 1
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+f_{cure,20,treaty} \\
+= \min\left(1.0, Treatments_{new,ann} \times (3 \times min(k_{capacity} \times 1, k_{capacity,max}) \\
++ 4 \times min(k_{capacity} \times 2, k_{capacity,max}) \\
++ 5 \times min(k_{capacity} \times 5, k_{capacity,max}) \\
++ 8 \times min(k_{capacity} \times 10, k_{capacity,max})) / N_{untreated}\right)
 \end{gathered}
 $$
 where:
@@ -2383,7 +4129,7 @@ $$
 $$
 where:
 $$
-GDP_{base,20} = GDP_0(1+g_{base})^{20}
+GDP_{base,20} = GDP_{global} \times (1 + g_{base})^{20}
 $$
 where:
 $$

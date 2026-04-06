@@ -74,7 +74,7 @@ $$
 $$
 where:
 $$
-GDP_{base,20} = GDP_0(1+g_{base})^{20}
+GDP_{base,20} = GDP_{global} \times (1 + g_{base})^{20}
 $$
 *✓ High confidence*
 
@@ -100,7 +100,7 @@ Global GDP at year 20 under status-quo current trajectory growth.
 - [Baseline Global GDP Growth Rate](#sec-gdp_baseline_growth_rate): 2.5%
 
 $$
-GDP_{base,20} = GDP_0(1+g_{base})^{20}
+GDP_{base,20} = GDP_{global} \times (1 + g_{base})^{20}
 $$
 
 *✓ High confidence*
@@ -514,7 +514,7 @@ US federal discretionary spending efficiency. What fraction of discretionary spe
 $$
 \begin{gathered}
 E_{US,disc} \\
-= 1 - \frac{W_{cat1}}{Spending_{fed}} \\
+= 1 - \frac{W_{cat1}}{Spending_{US,disc}} \\
 = 1 - \frac{\$1.01T}{\$1.7T} \\
 = 40.5\%
 \end{gathered}
@@ -561,7 +561,7 @@ Total US governance efficiency: all 4 waste categories as share of GDP. 1 - ($4.
 $$
 \begin{gathered}
 E_{US,GDP} \\
-= 1 - \frac{W_{total,US}}{USGDP} \\
+= 1 - \frac{W_{total,US}}{GDP_{US}} \\
 = 1 - \frac{\$4.9T}{\$28.8T} \\
 = 83\%
 \end{gathered}
@@ -570,7 +570,7 @@ where:
 $$
 \begin{gathered}
 W_{total,US} \\
-= W_{raw,US} \times US \\
+= W_{raw,US} \times \delta_{overlap} \\
 = \$4.9T \times 1 \\
 = \$4.9T
 \end{gathered}
@@ -769,7 +769,7 @@ US government waste as percentage of GDP. ~$4.90T waste / $28.78T GDP = ~17%. Th
 $$
 \begin{gathered}
 W_{US,\%GDP} \\
-= \frac{W_{total,US}}{USGDP} \\
+= \frac{W_{total,US}}{GDP_{US}} \\
 = \frac{\$4.9T}{\$28.8T} \\
 = 17\%
 \end{gathered}
@@ -778,7 +778,7 @@ where:
 $$
 \begin{gathered}
 W_{total,US} \\
-= W_{raw,US} \times US \\
+= W_{raw,US} \times \delta_{overlap} \\
 = \$4.9T \times 1 \\
 = \$4.9T
 \end{gathered}
@@ -836,7 +836,7 @@ where:
 $$
 \begin{gathered}
 W_{total,US} \\
-= W_{raw,US} \times US \\
+= W_{raw,US} \times \delta_{overlap} \\
 = \$4.9T \times 1 \\
 = \$4.9T
 \end{gathered}
@@ -942,7 +942,7 @@ where:
 $$
 \begin{gathered}
 W_{total,US} \\
-= W_{raw,US} \times US \\
+= W_{raw,US} \times \delta_{overlap} \\
 = \$4.9T \times 1 \\
 = \$4.9T
 \end{gathered}
@@ -991,7 +991,7 @@ Total annual US government waste (additive sum of components). Consolidates heal
 $$
 \begin{gathered}
 W_{total,US} \\
-= W_{raw,US} \times US \\
+= W_{raw,US} \times \delta_{overlap} \\
 = \$4.9T \times 1 \\
 = \$4.9T
 \end{gathered}
@@ -1049,7 +1049,7 @@ where:
 $$
 \begin{gathered}
 W_{total,US} \\
-= W_{raw,US} \times US \\
+= W_{raw,US} \times \delta_{overlap} \\
 = \$4.9T \times 1 \\
 = \$4.9T
 \end{gathered}
@@ -1107,7 +1107,7 @@ where:
 $$
 \begin{gathered}
 W_{total,US} \\
-= W_{raw,US} \times US \\
+= W_{raw,US} \times \delta_{overlap} \\
 = \$4.9T \times 1 \\
 = \$4.9T
 \end{gathered}
@@ -1206,10 +1206,86 @@ Wishonia disease-cure fraction over 20 years under full implementation. Uses ful
 $$
 \begin{gathered}
 f_{cure,20,wish} \\
-= \min\left(1,\frac{Treatments_{new,ann}\cdot k_{capacity,wish}\cdot 20}{D_{untreated}}\right)
+= \min\left(1.0, Treatments_{new,ann} \times min(k_{capacity} \times \left(\frac{s_{mil,max}}{0.01}\right), k_{capacity,max}) \times \frac{20}{N_{untreated}}\right)
 \end{gathered}
 $$
-
+where:
+$$
+\begin{gathered}
+k_{capacity} \\
+= \frac{N_{fundable,dFDA}}{Slots_{curr}} \\
+= \frac{23.4M}{1.9M} \\
+= 12.3
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{fundable,dFDA} \\
+= \frac{Subsidies_{dFDA,ann}}{Cost_{pragmatic,pt}} \\
+= \frac{\$21.8B}{\$929} \\
+= 23.4M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Subsidies_{dFDA,ann} \\
+= Funding_{dFDA,ann} - OPEX_{dFDA} \\
+= \$21.8B - \$40M \\
+= \$21.8B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+OPEX_{dFDA} \\
+= Cost_{platform} + Cost_{staff} + Cost_{infra} \\
++ Cost_{regulatory} + Cost_{community} \\
+= \$15M + \$10M + \$8M + \$5M + \$2M \\
+= \$40M
+\end{gathered}
+$$
+where:
+$$
+s_{mil,max} = Cut_{WW2} = 87.6\% = 87.6\%
+$$
+where:
+$$
+\begin{gathered}
+Cut_{WW2} \\
+= 1 - \frac{Spending_{US,1947}}{Spending_{US,1945}} \\
+= 1 - \frac{\$176B}{\$1.42T} \\
+= 87.6\%
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+k_{capacity,max} \\
+= \frac{N_{willing}}{Slots_{curr}} \\
+= \frac{1.08B}{1.9M} \\
+= 566
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{willing} \\
+= N_{patients} \times Pct_{willing} \\
+= 2.4B \times 44.8\% \\
+= 1.08B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{untreated} \\
+= N_{rare} \times 0.95 \\
+= 7{,}000 \times 0.95 \\
+= 6{,}650
+\end{gathered}
+$$
 *✓ High confidence*
 
 :::
@@ -1252,9 +1328,101 @@ Average income (GDP per capita) at year 20 under the Wishonia Trajectory.
 - [Global Population 2045 (Projected)](#sec-global_population_2045_projected) 📊: 9.2 billion of people
 
 $$
-\bar{y}_{wish,20} = \frac{GDP_{wish,20}}{Pop_{2045}}
+\begin{gathered}
+\bar{y}_{wish,20} \\
+= \frac{GDP_{wish,20}}{Pop_{2045}} \\
+= \frac{\$10700T}{9.2B} \\
+= \$1.16M
+\end{gathered}
 $$
-
+where:
+$$
+GDP_{wish,20}=GDP_0(1+g_{ramp})^{3}(1+g_{full})^{17}
+$$
+where:
+$$
+s_{mil,max} = Cut_{WW2} = 87.6\% = 87.6\%
+$$
+where:
+$$
+\begin{gathered}
+Cut_{WW2} \\
+= 1 - \frac{Spending_{US,1947}}{Spending_{US,1945}} \\
+= 1 - \frac{\$176B}{\$1.42T} \\
+= 87.6\%
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+f_{cure,20,wish} \\
+= \min\left(1.0, Treatments_{new,ann} \times min(k_{capacity} \times \left(\frac{s_{mil,max}}{0.01}\right), k_{capacity,max}) \times \frac{20}{N_{untreated}}\right)
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+k_{capacity} \\
+= \frac{N_{fundable,dFDA}}{Slots_{curr}} \\
+= \frac{23.4M}{1.9M} \\
+= 12.3
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{fundable,dFDA} \\
+= \frac{Subsidies_{dFDA,ann}}{Cost_{pragmatic,pt}} \\
+= \frac{\$21.8B}{\$929} \\
+= 23.4M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Subsidies_{dFDA,ann} \\
+= Funding_{dFDA,ann} - OPEX_{dFDA} \\
+= \$21.8B - \$40M \\
+= \$21.8B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+OPEX_{dFDA} \\
+= Cost_{platform} + Cost_{staff} + Cost_{infra} \\
++ Cost_{regulatory} + Cost_{community} \\
+= \$15M + \$10M + \$8M + \$5M + \$2M \\
+= \$40M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+k_{capacity,max} \\
+= \frac{N_{willing}}{Slots_{curr}} \\
+= \frac{1.08B}{1.9M} \\
+= 566
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{willing} \\
+= N_{patients} \times Pct_{willing} \\
+= 2.4B \times 44.8\% \\
+= 1.08B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{untreated} \\
+= N_{rare} \times 0.95 \\
+= 7{,}000 \times 0.95 \\
+= 6{,}650
+\end{gathered}
+$$
 *✓ High confidence*
 
 #### Sensitivity Analysis
@@ -1294,7 +1462,7 @@ k_{wish:base,20} \\
 $$
 where:
 $$
-GDP_{wish,20}=GDP_0(1+g_{ramp})^3(1+g_{full})^{17}
+GDP_{wish,20}=GDP_0(1+g_{ramp})^{3}(1+g_{full})^{17}
 $$
 where:
 $$
@@ -1313,7 +1481,7 @@ where:
 $$
 \begin{gathered}
 f_{cure,20,wish} \\
-= \min\left(1,\frac{Treatments_{new,ann}\cdot k_{capacity,wish}\cdot 20}{D_{untreated}}\right)
+= \min\left(1.0, Treatments_{new,ann} \times min(k_{capacity} \times \left(\frac{s_{mil,max}}{0.01}\right), k_{capacity,max}) \times \frac{20}{N_{untreated}}\right)
 \end{gathered}
 $$
 where:
@@ -1382,7 +1550,7 @@ N_{untreated} \\
 $$
 where:
 $$
-GDP_{base,20} = GDP_0(1+g_{base})^{20}
+GDP_{base,20} = GDP_{global} \times (1 + g_{base})^{20}
 $$
 *✓ High confidence*
 
@@ -1424,7 +1592,7 @@ Projected global GDP at year 20 under the Wishonia Trajectory. Model applies all
 - [Economic Multiplier for Military Spending](#sec-economic_multiplier_military_spending) 📊: 0.6x (95% CI: 0.4x - 0.9x)
 
 $$
-GDP_{wish,20}=GDP_0(1+g_{ramp})^3(1+g_{full})^{17}
+GDP_{wish,20}=GDP_0(1+g_{ramp})^{3}(1+g_{full})^{17}
 $$
 
 *✓ High confidence*

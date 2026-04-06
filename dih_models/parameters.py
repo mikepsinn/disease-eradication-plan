@@ -461,7 +461,6 @@ DESTRUCTIVE_ECONOMY_25PCT_YEAR = Parameter(
     display_name="Year Destructive Economy Reaches 25% of GDP",
     unit="year",
     formula="DESTRUCTIVE_ECONOMY_BASE_YEAR + ln(0.25 / DESTRUCTIVE_PCT_GDP) / ln(1 + DESTRUCTIVE_GROWTH - GDP_GROWTH)",
-    latex=r"Y_{25\%} = Y_0 + \frac{\ln(0.25 / r_{destruct:GDP})}{\ln(1 + g_{destruct} - g_{GDP})}",
     keywords=["destructive", "economy", "timeline", "year", "25%", "instability"],
     inputs=_destruct_inputs,
     compute=_destruct_year_compute(0.25),
@@ -479,7 +478,6 @@ DESTRUCTIVE_ECONOMY_35PCT_YEAR = Parameter(
     display_name="Year Destructive Economy Reaches 35% of GDP (Terminal Parasitic Load)",
     unit="year",
     formula="DESTRUCTIVE_ECONOMY_BASE_YEAR + ln(0.35 / DESTRUCTIVE_PCT_GDP) / ln(1 + DESTRUCTIVE_GROWTH - GDP_GROWTH)",
-    latex=r"Y_{35\%} = Y_0 + \frac{\ln(0.35 / r_{destruct:GDP})}{\ln(1 + g_{destruct} - g_{GDP})}",
     keywords=["destructive", "economy", "timeline", "year", "35%", "terminal parasitic load", "collapse"],
     inputs=_destruct_inputs,
     compute=_destruct_year_compute(0.35),
@@ -496,7 +494,6 @@ DESTRUCTIVE_ECONOMY_50PCT_YEAR = Parameter(
     display_name="Year Destructive Economy Reaches 50% of GDP",
     unit="year",
     formula="DESTRUCTIVE_ECONOMY_BASE_YEAR + ln(0.50 / DESTRUCTIVE_PCT_GDP) / ln(1 + DESTRUCTIVE_GROWTH - GDP_GROWTH)",
-    latex=r"Y_{50\%} = Y_0 + \frac{\ln(0.50 / r_{destruct:GDP})}{\ln(1 + g_{destruct} - g_{GDP})}",
     keywords=["destructive", "economy", "timeline", "year", "50%", "crossover"],
     inputs=_destruct_inputs,
     compute=_destruct_year_compute(0.50),
@@ -2328,7 +2325,8 @@ COMBINATION_THERAPY_PAIRS = Parameter(
     description="Unique pairwise drug combinations from known safe compounds (n choose 2)",
     display_name="Pairwise Drug Combinations",
     unit="combinations",
-    formula="SAFE_COMPOUNDS × (SAFE_COMPOUNDS - 1) ÷ 2",
+    formula="SAFE_COMPOUNDS_COUNT × (SAFE_COMPOUNDS_COUNT - 1) ÷ 2",
+    latex=r"N_{combo} = \frac{N_{safe} \cdot (N_{safe} - 1)}{2}",
     keywords=["combination", "pairwise", "polypharmacy", "multi-drug", "synergy"],
     inputs=["SAFE_COMPOUNDS_COUNT"],
     compute=lambda ctx: ctx["SAFE_COMPOUNDS_COUNT"] * (ctx["SAFE_COMPOUNDS_COUNT"] - 1) / 2,
@@ -2946,10 +2944,6 @@ FDA_TO_OXFORD_RECOVERY_TRIAL_TIME_MULTIPLIER = Parameter(
     display_name="FDA Efficacy Testing to Oxford RECOVERY Trial Time Multiplier",
     unit="multiplier",
     formula="EFFICACY_LAG_YEARS × MONTHS_PER_YEAR ÷ OXFORD_RECOVERY_TRIAL_DURATION_MONTHS",
-    latex=r"""\begin{aligned}
-\text{Multiplier}_{RD} &= \frac{Y_{efficacy} \times 12}{M_{RECOVERY}} \\
-&= \frac{8.2 \times 12}{3} = 32.8
-\end{aligned}""",
     confidence="high",
     keywords=["recovery", "covid", "trial", "fda", "timeline", "comparison", "speed", "multiplier", "oxford"],
     inputs=['EFFICACY_LAG_YEARS', 'OXFORD_RECOVERY_TRIAL_DURATION_MONTHS'],
@@ -2988,10 +2982,10 @@ GLOBAL_DISEASE_DEATHS_PER_MINUTE = Parameter(
     description="Global deaths per minute from all disease and aging",
     display_name="Global Deaths per Minute from Disease",
     unit="deaths/minute",
+    formula="GLOBAL_DISEASE_DEATHS_DAILY / 1440",
     confidence="high",
     keywords=["mortality", "per minute", "disease", "aging"],
     latex_symbol=r"Deaths_{disease,min}",
-    latex=r"\frac{Deaths_{disease,daily}}{1440}",
     inputs=["GLOBAL_DISEASE_DEATHS_DAILY"],
     compute=lambda ctx: ctx["GLOBAL_DISEASE_DEATHS_DAILY"] / 1440,
 )
@@ -4445,7 +4439,6 @@ DFDA_NPV_PV_ANNUAL_OPEX = Parameter(
     * (1 - (1 + ctx["NPV_DISCOUNT_RATE_STANDARD"]) ** -ctx["NPV_TIME_HORIZON_YEARS"])
     / ctx["NPV_DISCOUNT_RATE_STANDARD"],
     latex_symbol=r"PV_{OPEX}",  # LaTeX symbol for equations
-    latex=r"PV_{OPEX} = OPEX_{ann} \times \frac{1 - (1+r)^{-T}}{r}",
 )
 DFDA_NPV_TOTAL_COST = Parameter(
     DFDA_NPV_UPFRONT_COST_TOTAL + DFDA_NPV_PV_ANNUAL_OPEX,
@@ -4475,6 +4468,7 @@ DFDA_NPV_BENEFIT_RD_ONLY = Parameter(
     display_name="NPV of Decentralized Framework for Drug Assessment Benefits (R&D Only, 10-Year Discounted)",
     unit="USD",
     formula="SUM[Savings × adoption(t) / (1+r)^t] for t=1..10",
+    latex=r"NPV_{RD} = \sum_{t=1}^{10} \frac{Savings_{RD,ann} \cdot \frac{\min(t,5)}{5}}{(1+r)^t}",
     keywords=["pragmatic trials", "real world evidence", "deployment rate", "market penetration", "participation rate", "uptake", "usage rate", "conservative"],
     inputs=['DFDA_NET_SAVINGS_RD_ONLY_ANNUAL', 'NPV_DISCOUNT_RATE_STANDARD'],
     compute=lambda ctx: sum(
@@ -4485,7 +4479,6 @@ DFDA_NPV_BENEFIT_RD_ONLY = Parameter(
     ),
     latex_symbol=r"NPV_{RD}",
     # Hand-crafted LaTeX for complex NPV formula with adoption ramp
-    latex=r"NPV_{RD} = \sum_{t=1}^{10} \frac{Savings_{RD,ann} \times \frac{\min(t,5)}{5}}{(1+r)^t}",
 )  # ~$249.3B NPV of R&D savings only (conservative financial case)
 
 DFDA_NPV_NET_BENEFIT_RD_ONLY = Parameter(
@@ -4604,6 +4597,7 @@ US_GDP_2024 = Parameter(
     display_name="US GDP (2024)",
     unit="USD",
     keywords=["GDP", "US", "economy", "2024"],
+    latex_symbol=r"GDP_{US}",
 )
 
 
@@ -4788,6 +4782,7 @@ US_FEDERAL_SPENDING_2024 = Parameter(
     display_name="US Federal Spending (FY2024)",
     unit="USD",
     keywords=["federal", "spending", "budget", "US", "FY2024"],
+    latex_symbol=r"Spending_{US,fed}",
 )
 
 # ==============================================================================
@@ -5122,6 +5117,7 @@ US_GOV_WASTE_OVERLAP_DISCOUNT = Parameter(
     display_name="Overlap Discount Factor",
     unit="ratio",
     keywords=["overlap", "discount", "double counting"],
+    latex_symbol=r"\delta_{overlap}",
 )
 
 # Raw total (before overlap discount)
@@ -5206,6 +5202,7 @@ US_FED_DISCRETIONARY_SPENDING_2024 = Parameter(
     display_name="US Federal Discretionary Spending (FY2024)",
     unit="USD",
     keywords=["federal", "discretionary", "spending", "budget", "US", "FY2024"],
+    latex_symbol=r"Spending_{US,disc}",
 )
 
 # Cat 1 direct waste as percentage of discretionary spending
@@ -5452,7 +5449,6 @@ POLITICAL_DYSFUNCTION_GLOBAL_EFFICIENCY_SCORE = Parameter(
                 "This means civilization operates at roughly half its technological potential.",
     display_name="Global Governance Efficiency Score",
     formula="POLITICAL_DYSFUNCTION_GLOBAL_REALIZED_WELFARE_ADJUSTED / POLITICAL_DYSFUNCTION_GLOBAL_THEORETICAL_MAX_WELFARE",
-    latex=r"E = \frac{W_{real}}{W_{max}} = \frac{GDP - W_{waste}}{GDP - W_{waste} + O_{total}}",
     inputs=[
         "POLITICAL_DYSFUNCTION_GLOBAL_REALIZED_WELFARE_ADJUSTED",
         "POLITICAL_DYSFUNCTION_GLOBAL_THEORETICAL_MAX_WELFARE",
@@ -5484,6 +5480,7 @@ US_GOVT_SPENDING_PCT_GDP = Parameter(
     display_name="US Govt Spending (% GDP)",
     unit="percent",
     keywords=["government", "spending", "GDP", "US"],
+    latex_symbol=r"G_{US}",
 )
 
 US_LIFE_EXPECTANCY_2023 = Parameter(
@@ -5497,6 +5494,7 @@ US_LIFE_EXPECTANCY_2023 = Parameter(
     display_name="US Life Expectancy",
     unit="years",
     keywords=["life expectancy", "US", "health", "outcomes"],
+    latex_symbol=r"LE_{US}",
 )
 
 US_MEDIAN_HOUSEHOLD_INCOME_2023 = Parameter(
@@ -5510,6 +5508,7 @@ US_MEDIAN_HOUSEHOLD_INCOME_2023 = Parameter(
     display_name="US Median Household Income",
     unit="USD",
     keywords=["income", "median", "household", "US"],
+    latex_symbol=r"\bar{y}_{US}",
 )
 
 # SWITZERLAND - Lower spending, better outcomes
@@ -5524,6 +5523,7 @@ SWITZERLAND_GOVT_SPENDING_PCT_GDP = Parameter(
     display_name="Switzerland Govt Spending (% GDP)",
     unit="percent",
     keywords=["government", "spending", "GDP", "Switzerland"],
+    latex_symbol=r"G_{CH}",
 )
 
 SWITZERLAND_LIFE_EXPECTANCY = Parameter(
@@ -5537,6 +5537,7 @@ SWITZERLAND_LIFE_EXPECTANCY = Parameter(
     display_name="Switzerland Life Expectancy",
     unit="years",
     keywords=["life expectancy", "Switzerland", "health", "outcomes"],
+    latex_symbol=r"LE_{CH}",
 )
 
 SWITZERLAND_MEDIAN_INCOME_PPP = Parameter(
@@ -5550,6 +5551,7 @@ SWITZERLAND_MEDIAN_INCOME_PPP = Parameter(
     display_name="Switzerland Median Income (PPP)",
     unit="USD",
     keywords=["income", "median", "Switzerland"],
+    latex_symbol=r"\bar{y}_{CH}",
 )
 
 # SINGAPORE - Much lower spending, excellent outcomes
@@ -5564,6 +5566,7 @@ SINGAPORE_GOVT_SPENDING_PCT_GDP = Parameter(
     display_name="Singapore Govt Spending (% GDP)",
     unit="percent",
     keywords=["government", "spending", "GDP", "Singapore"],
+    latex_symbol=r"G_{SG}",
 )
 
 SINGAPORE_LIFE_EXPECTANCY = Parameter(
@@ -5577,6 +5580,7 @@ SINGAPORE_LIFE_EXPECTANCY = Parameter(
     display_name="Singapore Life Expectancy",
     unit="years",
     keywords=["life expectancy", "Singapore", "health", "outcomes"],
+    latex_symbol=r"LE_{SG}",
 )
 
 SINGAPORE_GDP_PER_CAPITA_PPP = Parameter(
@@ -5590,6 +5594,7 @@ SINGAPORE_GDP_PER_CAPITA_PPP = Parameter(
     display_name="Singapore GDP per Capita (PPP)",
     unit="USD",
     keywords=["GDP", "per capita", "Singapore"],
+    latex_symbol=r"GDP_{pc,SG}",
 )
 
 # Comparison metrics: US vs international benchmarks
@@ -5606,6 +5611,7 @@ US_VS_SWITZERLAND_LIFE_EXPECTANCY_GAP = Parameter(
     unit="years",
     formula="SWITZERLAND_LE - US_LE = 84.0 - 77.5",
     keywords=["life expectancy", "gap", "comparison"],
+    latex_symbol=r"\Delta LE_{CH:US}",
 )
 
 US_VS_SWITZERLAND_SPENDING_GAP = Parameter(
@@ -5620,6 +5626,7 @@ US_VS_SWITZERLAND_SPENDING_GAP = Parameter(
     unit="percent",
     formula="US_SPENDING - SWITZERLAND_SPENDING = 38% - 35%",
     keywords=["spending", "gap", "comparison"],
+    latex_symbol=r"\Delta G_{US:CH}",
 )
 
 US_VS_SINGAPORE_SPENDING_GAP = Parameter(
@@ -5634,6 +5641,7 @@ US_VS_SINGAPORE_SPENDING_GAP = Parameter(
     unit="percent",
     formula="US_SPENDING - SINGAPORE_SPENDING = 38% - 15%",
     keywords=["spending", "gap", "comparison", "Singapore"],
+    latex_symbol=r"\Delta G_{US:SG}",
 )
 
 # Implied dysfunction premium: US spends more but gets worse outcomes
@@ -5787,12 +5795,12 @@ US_POLITICAL_REFORM_INVESTMENT_TOTAL = Parameter(
     display_name="US Political Reform Investment (Total)",
     unit="USD",
     formula="(CAMPAIGN + LOBBYING×2) × EFFORT_MULTIPLIER + CONGRESS_CAREER",
+    latex=r"Cost_{US,total} = (Cost_{campaign} + Cost_{lobby} \times 2) \times \mu_{effort} + Cost_{career}",
     confidence="low",
     keywords=["political reform", "advocacy", "investment", "democratic parity", "us"],
     inputs=["US_TOTAL_FEDERAL_CAMPAIGN_SPENDING_2024", "US_TOTAL_LOBBYING_ANNUAL", "US_POLITICAL_EFFORT_MULTIPLIER", "US_CONGRESS_FULL_ADVOCACY_COST"],
     compute=lambda ctx: (ctx["US_TOTAL_FEDERAL_CAMPAIGN_SPENDING_2024"] + ctx["US_TOTAL_LOBBYING_ANNUAL"] * 2) * ctx["US_POLITICAL_EFFORT_MULTIPLIER"] + ctx["US_CONGRESS_FULL_ADVOCACY_COST"],
     latex_symbol=r"Cost_{US,total}",
-    latex=r"Cost_{US,total} = (Cost_{campaign} + Cost_{lobby} \times 2) \times \mu_{effort} + Cost_{career}",
 )
 
 # Global Political Costs
@@ -7624,7 +7632,6 @@ DFDA_DIRECT_FUNDING_QUEUE_CLEARANCE_NPV = Parameter(
         * (1 - (1 + ctx["NPV_DISCOUNT_RATE_STANDARD"]) ** -ctx["DFDA_QUEUE_CLEARANCE_YEARS"])
         / ctx["NPV_DISCOUNT_RATE_STANDARD"],
     latex_symbol=r"NPV_{direct}",  # LaTeX symbol for equations
-    latex=r"NPV_{direct} = Funding_{ann} \times \frac{1 - (1+r)^{-T}}{r}",  # PV of annuity formula
 )  # ~$541.9B NPV
 
 # Cost per DALY for direct funding scenario
@@ -8037,7 +8044,6 @@ CONVENTIONAL_RETIREMENT_HORIZON_MULTIPLE = Parameter(
     display_name="Conventional Retirement Horizon Multiple",
     unit="x",
     formula="(1 + CONVENTIONAL_RETIREMENT_RETURN) ^ (DESTRUCTIVE_ECONOMY_50PCT_YEAR - DESTRUCTIVE_ECONOMY_BASE_YEAR)",
-    latex=r"M_{retire} = (1 + r_{retire})^{Y_{50\%} - Y_0}",
     inputs=["CONVENTIONAL_RETIREMENT_RETURN", "DESTRUCTIVE_ECONOMY_50PCT_YEAR", "DESTRUCTIVE_ECONOMY_BASE_YEAR"],
     compute=lambda ctx: (1 + ctx["CONVENTIONAL_RETIREMENT_RETURN"]) ** (ctx["DESTRUCTIVE_ECONOMY_50PCT_YEAR"] - ctx["DESTRUCTIVE_ECONOMY_BASE_YEAR"]),
     keywords=["retirement", "conventional", "multiple", "horizon", "compound"],
@@ -8074,7 +8080,6 @@ PRIZE_POOL_ANNUAL_RETURN = Parameter(
     display_name="PRIZE Pool Annual Return",
     unit="percent",
     formula="VENTURE_GROSS_RETURN + SCALE_COMPRESSION_FACTOR + WISHOCRATIC_CROWD_ALPHA + HOME_BIAS_ALPHA",
-    latex=r"r_{pool} = r_{VC,gross} + \Delta r_{scale} + \alpha_{crowd} + \alpha_{home}",
     inputs=["VENTURE_GROSS_RETURN", "SCALE_COMPRESSION_FACTOR", "WISHOCRATIC_CROWD_ALPHA", "HOME_BIAS_ALPHA"],
     compute=lambda ctx: ctx["VENTURE_GROSS_RETURN"] + ctx["SCALE_COMPRESSION_FACTOR"] + ctx["WISHOCRATIC_CROWD_ALPHA"] + ctx["HOME_BIAS_ALPHA"],
     keywords=["prize", "pool", "annual", "return", "structural", "fund"],
@@ -8089,7 +8094,6 @@ PRIZE_POOL_HORIZON_MULTIPLE = Parameter(
     display_name="PRIZE Pool Horizon Multiple",
     unit="x",
     formula="(1 + PRIZE_POOL_ANNUAL_RETURN) ^ (DESTRUCTIVE_ECONOMY_50PCT_YEAR - DESTRUCTIVE_ECONOMY_BASE_YEAR)",
-    latex=r"M_{pool} = (1 + r_{pool})^{Y_{50\%} - Y_0}",
     inputs=["PRIZE_POOL_ANNUAL_RETURN", "DESTRUCTIVE_ECONOMY_50PCT_YEAR", "DESTRUCTIVE_ECONOMY_BASE_YEAR"],
     compute=lambda ctx: (1 + ctx["PRIZE_POOL_ANNUAL_RETURN"]) ** (ctx["DESTRUCTIVE_ECONOMY_50PCT_YEAR"] - ctx["DESTRUCTIVE_ECONOMY_BASE_YEAR"]),
     keywords=["prize", "pool", "multiple", "horizon", "compound", "fund"],
@@ -8131,7 +8135,6 @@ PRIZE_POOL_SIZE = Parameter(
     display_name="PRIZE Pool Size",
     unit="USD",
     formula="GLOBAL_INVESTABLE_ASSETS × PRIZE_POOL_PARTICIPATION_RATE × PRIZE_POOL_HORIZON_MULTIPLE",
-    latex=r"Pool = Assets_{invest} \times R_{pool} \times M_{pool}",
     inputs=["GLOBAL_INVESTABLE_ASSETS", "PRIZE_POOL_PARTICIPATION_RATE", "PRIZE_POOL_HORIZON_MULTIPLE"],
     compute=lambda ctx: ctx["GLOBAL_INVESTABLE_ASSETS"] * ctx["PRIZE_POOL_PARTICIPATION_RATE"] * ctx["PRIZE_POOL_HORIZON_MULTIPLE"],
     keywords=["prize", "pool", "size", "investable", "assets", "participation"],
@@ -8158,7 +8161,6 @@ GLOBAL_COORDINATION_TARGET_SUPPORTERS = Parameter(
     display_name="Global Coordination Target Supporters",
     unit="of people",
     formula="GLOBAL_POPULATION_2024 × GLOBAL_COORDINATION_TARGET_PCT",
-    latex=r"N_{coord} = N_{global} \times R_{coord}",
     inputs=["GLOBAL_POPULATION_2024", "GLOBAL_COORDINATION_TARGET_PCT"],
     compute=lambda ctx: ctx["GLOBAL_POPULATION_2024"] * ctx["GLOBAL_COORDINATION_TARGET_PCT"],
     keywords=["coordination", "supporters", "global", "target", "humanity"],
@@ -8225,7 +8227,6 @@ GLOBAL_COORDINATION_ACTIVATION_COST_PER_PARTICIPANT = Parameter(
     display_name="Activation Cost per Participant",
     unit="USD",
     formula="GLOBAL_COORDINATION_ACTIVATION_REWARD_PER_VERIFIED_PARTICIPANT + GLOBAL_COORDINATION_VERIFICATION_AND_PAYMENT_COST_PER_PARTICIPANT",
-    latex=r"C_{activate,pp} = R_{activate} + C_{verify,pp}",
     inputs=["GLOBAL_COORDINATION_ACTIVATION_REWARD_PER_VERIFIED_PARTICIPANT", "GLOBAL_COORDINATION_VERIFICATION_AND_PAYMENT_COST_PER_PARTICIPANT"],
     compute=lambda ctx: ctx["GLOBAL_COORDINATION_ACTIVATION_REWARD_PER_VERIFIED_PARTICIPANT"] + ctx["GLOBAL_COORDINATION_VERIFICATION_AND_PAYMENT_COST_PER_PARTICIPANT"],
     keywords=["activation", "cost per participant", "verified participant", "coordination", "referral"],
@@ -8241,7 +8242,6 @@ GLOBAL_COORDINATION_ACTIVATION_BUDGET = Parameter(
     display_name="Global Coordination Activation Budget",
     unit="USD",
     formula="GLOBAL_COORDINATION_TARGET_SUPPORTERS × GLOBAL_COORDINATION_ACTIVATION_COST_PER_PARTICIPANT + GLOBAL_COORDINATION_PLATFORM_AND_OPERATIONS_COST",
-    latex=r"B_{activate} = N_{coord} \times C_{activate,pp} + C_{ops}",
     inputs=["GLOBAL_COORDINATION_TARGET_SUPPORTERS", "GLOBAL_COORDINATION_ACTIVATION_COST_PER_PARTICIPANT", "GLOBAL_COORDINATION_PLATFORM_AND_OPERATIONS_COST"],
     compute=lambda ctx: ctx["GLOBAL_COORDINATION_TARGET_SUPPORTERS"] * ctx["GLOBAL_COORDINATION_ACTIVATION_COST_PER_PARTICIPANT"] + ctx["GLOBAL_COORDINATION_PLATFORM_AND_OPERATIONS_COST"],
     keywords=["activation", "budget", "coordination", "institutional", "referral", "verification", "50 percent"],
@@ -8256,7 +8256,6 @@ RETIREMENT_EQUIVALENT_2_CLAIMS_TARGET_PAYOUT = Parameter(
     display_name="Retirement-Equivalent 2-Claims Target Payout",
     unit="USD",
     formula="GLOBAL_ANNUAL_SAVINGS_PER_CAPITA × CONVENTIONAL_RETIREMENT_HORIZON_MULTIPLE",
-    latex=r"V_{2claims,target} = S_{annual,pc} \times M_{retire}",
     inputs=["GLOBAL_ANNUAL_SAVINGS_PER_CAPITA", "CONVENTIONAL_RETIREMENT_HORIZON_MULTIPLE"],
     compute=lambda ctx: ctx["GLOBAL_ANNUAL_SAVINGS_PER_CAPITA"] * ctx["CONVENTIONAL_RETIREMENT_HORIZON_MULTIPLE"],
     keywords=["retirement", "equivalent", "2 claims", "payout", "annual savings", "target"],
@@ -8271,7 +8270,6 @@ RETIREMENT_EQUIVALENT_CLAIM_VALUE_TARGET = Parameter(
     display_name="Retirement-Equivalent Claim Value Target",
     unit="USD",
     formula="RETIREMENT_EQUIVALENT_2_CLAIMS_TARGET_PAYOUT / 2",
-    latex=r"V_{claim,target} = \frac{V_{2claims,target}}{2}",
     inputs=["RETIREMENT_EQUIVALENT_2_CLAIMS_TARGET_PAYOUT"],
     compute=lambda ctx: ctx["RETIREMENT_EQUIVALENT_2_CLAIMS_TARGET_PAYOUT"] / 2,
     keywords=["retirement", "equivalent", "claim", "value", "target", "referred voter"],
@@ -8287,7 +8285,6 @@ PRIZE_POOL_RETIREMENT_EQUIVALENT_PRINCIPAL = Parameter(
     display_name="PRIZE Pool Retirement-Equivalent Principal",
     unit="USD",
     formula="GLOBAL_COORDINATION_TARGET_SUPPORTERS × RETIREMENT_EQUIVALENT_CLAIM_VALUE_TARGET / PRIZE_POOL_HORIZON_MULTIPLE",
-    latex=r"P_{retire-eq} = \frac{N_{coord} \times V_{claim,target}}{M_{pool}}",
     inputs=["GLOBAL_COORDINATION_TARGET_SUPPORTERS", "RETIREMENT_EQUIVALENT_CLAIM_VALUE_TARGET", "PRIZE_POOL_HORIZON_MULTIPLE"],
     compute=lambda ctx: ctx["GLOBAL_COORDINATION_TARGET_SUPPORTERS"] * ctx["RETIREMENT_EQUIVALENT_CLAIM_VALUE_TARGET"] / ctx["PRIZE_POOL_HORIZON_MULTIPLE"],
     keywords=["prize", "pool", "retirement equivalent", "principal", "seed", "benchmark", "deposit"],
@@ -8304,7 +8301,6 @@ VOTE_TOKEN_VALUE = Parameter(
     display_name="VOTE Point Value",
     unit="USD",
     formula="PRIZE_POOL_SIZE / GLOBAL_COORDINATION_TARGET_SUPPORTERS",
-    latex=r"V_{vote} = \frac{Pool}{N_{coord}}",
     inputs=["PRIZE_POOL_SIZE", "GLOBAL_COORDINATION_TARGET_SUPPORTERS"],
     compute=lambda ctx: ctx["PRIZE_POOL_SIZE"] / ctx["GLOBAL_COORDINATION_TARGET_SUPPORTERS"],
     keywords=["vote", "token", "value", "prize", "pool", "incentive", "recruitment"],
@@ -8729,7 +8725,6 @@ TREATY_DISEASE_CURE_FRACTION_20YR = Parameter(
     display_name="Treaty Disease Cure Fraction (20yr, Take-Hold Path)",
     unit="rate",
     formula="min(1.0, NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR × (3×min(DFDA_TRIAL_CAPACITY_MULTIPLIER×1, DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL) + 4×min(DFDA_TRIAL_CAPACITY_MULTIPLIER×2, DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL) + 5×min(DFDA_TRIAL_CAPACITY_MULTIPLIER×5, DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL) + 8×min(DFDA_TRIAL_CAPACITY_MULTIPLIER×10, DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL)) ÷ DISEASES_WITHOUT_EFFECTIVE_TREATMENT)",
-    latex=r"f_{cure,20,treaty}=\min\left(1,\frac{Treatments_{new,ann}\cdot \sum_y \min\left(k_{capacity}\cdot s_y/0.01,k_{physical}\right)}{D_{untreated}}\right)",
     inputs=[
         "NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR",
         "DFDA_TRIAL_CAPACITY_MULTIPLIER",
@@ -8759,7 +8754,6 @@ TREATY_REDIRECT_GDP_GROWTH_BONUS_YEAR_20 = Parameter(
     display_name="Treaty Redirect GDP Growth Bonus (Year 20)",
     unit="rate",
     formula="TREATY_EFFECTIVE_REALLOCATION_SHARE_YEAR_20 × ((MILITARY_REDIRECT_GDP_BOOST_AT_30PCT ÷ 0.30) × (RD_SPILLOVER_MULTIPLIER ÷ 2.0))",
-    latex=r"g_{redirect,treaty,20}=\bar{s}_{treaty,20}\cdot\left(\frac{\Delta g_{30\%}}{0.30}\right)\cdot\left(\frac{m_{spillover}}{2.0}\right)",
     inputs=["TREATY_EFFECTIVE_REALLOCATION_SHARE_YEAR_20", "MILITARY_REDIRECT_GDP_BOOST_AT_30PCT", "RD_SPILLOVER_MULTIPLIER"],
     compute=lambda ctx: ctx["TREATY_EFFECTIVE_REALLOCATION_SHARE_YEAR_20"] * ((ctx["MILITARY_REDIRECT_GDP_BOOST_AT_30PCT"] / 0.30) * (ctx["RD_SPILLOVER_MULTIPLIER"] / 2.0)),
     keywords=["treaty", "GDP", "growth", "redirect", "R&D", "spillover", "20 year"],
@@ -8775,7 +8769,6 @@ TREATY_PEACE_RECOVERY_GDP_GROWTH_BONUS_YEAR_20 = Parameter(
     display_name="Treaty Peace Recovery GDP Growth Bonus (Year 20)",
     unit="rate",
     formula="(PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT ÷ GLOBAL_GDP_2025) × (TREATY_EFFECTIVE_REALLOCATION_SHARE_YEAR_20 ÷ TREATY_REDUCTION_PCT) × PEACE_DIVIDEND_CONFLICT_ELASTICITY",
-    latex=r"g_{peace,treaty,20}=\left(\frac{Benefit_{peace,soc}}{GDP_0}\right)\cdot\left(\frac{\bar{s}_{treaty,20}}{Reduce_{treaty}}\right)\cdot\varepsilon_{conflict}",
     inputs=[
         "PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT",
         "GLOBAL_GDP_2025",
@@ -8801,7 +8794,6 @@ TREATY_CYBERCRIME_RECOVERY_GDP_GROWTH_BONUS_YEAR_20 = Parameter(
     display_name="Treaty Cybercrime Recovery GDP Growth Bonus (Year 20)",
     unit="rate",
     formula="(GLOBAL_CYBERCRIME_COST_ANNUAL_2025 ÷ GLOBAL_GDP_2025) × TREATY_EFFECTIVE_REALLOCATION_SHARE_YEAR_20 × PEACE_DIVIDEND_CONFLICT_ELASTICITY",
-    latex=r"g_{cyber,treaty,20}=\left(\frac{Cost_{cyber,2025}}{GDP_0}\right)\cdot\bar{s}_{treaty,20}\cdot\varepsilon_{conflict}",
     inputs=[
         "GLOBAL_CYBERCRIME_COST_ANNUAL_2025",
         "GLOBAL_GDP_2025",
@@ -8824,7 +8816,6 @@ TREATY_HEALTH_RECOVERY_GDP_GROWTH_BONUS_YEAR_20 = Parameter(
     display_name="Treaty Health Recovery GDP Growth Bonus (Year 20)",
     unit="rate",
     formula="((1 + TREATY_DISEASE_CURE_FRACTION_20YR × DISEASE_BURDEN_GDP_DRAG_PCT + (EXISTING_DRUGS_EFFICACY_LAG_ECONOMIC_LOSS ÷ GLOBAL_GDP_2025))^(1/20)) - 1",
-    latex=r"g_{health,treaty,20}=\left(1+f_{cure,20,treaty}\cdot d_{disease}+\frac{Loss_{lag,existing}}{GDP_0}\right)^{1/20}-1",
     inputs=[
         "TREATY_DISEASE_CURE_FRACTION_20YR",
         "DISEASE_BURDEN_GDP_DRAG_PCT",
@@ -8859,7 +8850,6 @@ WISHONIA_DISEASE_CURE_FRACTION_20YR_FULL = Parameter(
     display_name="Wishonia Disease Cure Fraction (20yr, Full Implementation)",
     unit="rate",
     formula="min(1.0, NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR × min(DFDA_TRIAL_CAPACITY_MULTIPLIER × (WISHONIA_MILITARY_REALLOCATION_PHYSICAL_MAX_SHARE ÷ 0.01), DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL) × 20 ÷ DISEASES_WITHOUT_EFFECTIVE_TREATMENT)",
-    latex=r"f_{cure,20,wish}=\min\left(1,\frac{Treatments_{new,ann}\cdot k_{capacity,wish}\cdot 20}{D_{untreated}}\right)",
     inputs=[
         "NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR",
         "DFDA_TRIAL_CAPACITY_MULTIPLIER",
@@ -8889,7 +8879,6 @@ CURRENT_TRAJECTORY_GDP_YEAR_20 = Parameter(
     display_name="Current Trajectory GDP at Year 20",
     unit="USD",
     formula="GLOBAL_GDP_2025 × (1 + GDP_BASELINE_GROWTH_RATE)^20",
-    latex=r"GDP_{base,20} = GDP_0(1+g_{base})^{20}",
     keywords=["GDP", "baseline", "baseline", "year 20"],
     inputs=["GLOBAL_GDP_2025", "GDP_BASELINE_GROWTH_RATE"],
     compute=lambda ctx: ctx["GLOBAL_GDP_2025"] * ((1 + ctx["GDP_BASELINE_GROWTH_RATE"]) ** 20),
@@ -8927,7 +8916,6 @@ TREATY_TRAJECTORY_GDP_YEAR_20 = Parameter(
     display_name="Treaty Trajectory GDP at Year 20",
     unit="USD",
     formula="GLOBAL_GDP_2025 × (1 + GDP_BASELINE_GROWTH_RATE + TREATY_REDIRECT_GDP_GROWTH_BONUS_YEAR_20 + TREATY_PEACE_RECOVERY_GDP_GROWTH_BONUS_YEAR_20 + TREATY_CYBERCRIME_RECOVERY_GDP_GROWTH_BONUS_YEAR_20 + TREATY_HEALTH_RECOVERY_GDP_GROWTH_BONUS_YEAR_20)^20",
-    latex=r"GDP_{treaty,20}=GDP_0(1+g_{base}+g_{redirect}+g_{peace}+g_{cyber}+g_{health})^{20}",
     keywords=["GDP", "treaty", "projection", "20 years", "optimistic"],
     inputs=[
         "GLOBAL_GDP_2025",
@@ -8958,7 +8946,6 @@ TREATY_TRAJECTORY_CAGR_YEAR_20 = Parameter(
     display_name="Treaty Trajectory CAGR (20 Years)",
     unit="rate",
     formula="(TREATY_TRAJECTORY_GDP_YEAR_20 ÷ GLOBAL_GDP_2025)^(1/20) - 1",
-    latex=r"g_{treaty,CAGR} = \left(\frac{GDP_{treaty,20}}{GDP_0}\right)^{1/20} - 1",
     keywords=["CAGR", "GDP", "wishonia", "core", "20 years"],
     inputs=["TREATY_TRAJECTORY_GDP_YEAR_20", "GLOBAL_GDP_2025"],
     compute=lambda ctx: (ctx["TREATY_TRAJECTORY_GDP_YEAR_20"] / ctx["GLOBAL_GDP_2025"]) ** (1 / 20) - 1,
@@ -8985,7 +8972,6 @@ TREATY_TRAJECTORY_AVG_INCOME_YEAR_20 = Parameter(
     display_name="Treaty Trajectory Average Income at Year 20",
     unit="USD",
     formula="TREATY_TRAJECTORY_GDP_YEAR_20 / GLOBAL_POPULATION_2045_PROJECTED",
-    latex=r"\bar{y}_{treaty,20} = \frac{GDP_{treaty,20}}{Pop_{2045}}",
     keywords=["income", "per capita", "wishonia", "core", "year 20", "average"],
     inputs=["TREATY_TRAJECTORY_GDP_YEAR_20", "GLOBAL_POPULATION_2045_PROJECTED"],
     compute=lambda ctx: ctx["TREATY_TRAJECTORY_GDP_YEAR_20"] / ctx["GLOBAL_POPULATION_2045_PROJECTED"],
@@ -9056,7 +9042,7 @@ WISHONIA_TRAJECTORY_GDP_YEAR_20 = Parameter(
     display_name="Wishonia Trajectory GDP at Year 20",
     unit="USD",
     formula="GLOBAL_GDP_2025 × (1 + g_ramp)^3 × (1 + g_full)^17, where years 1-3 use 50% of military and non-health reallocation intensity, and years 4-20 use 100%; both include disease-burden recovery",
-    latex=r"GDP_{wish,20}=GDP_0(1+g_{ramp})^3(1+g_{full})^{17}",
+    latex=r"GDP_{wish,20}=GDP_0(1+g_{ramp})^{3}(1+g_{full})^{17}",
     keywords=["GDP", "wishonia", "projection", "treaty"],
     inputs=[
         "GLOBAL_GDP_2025",
@@ -9136,7 +9122,6 @@ WISHONIA_TRAJECTORY_CAGR_YEAR_20 = Parameter(
     display_name="Wishonia Trajectory CAGR (20 Years)",
     unit="rate",
     formula="(WISHONIA_TRAJECTORY_GDP_YEAR_20 ÷ GLOBAL_GDP_2025)^(1/20) - 1",
-    latex=r"g_{wish,CAGR} = \left(\frac{GDP_{wish,20}}{GDP_0}\right)^{1/20} - 1",
     keywords=["CAGR", "GDP", "wishonia", "20 years"],
     inputs=["WISHONIA_TRAJECTORY_GDP_YEAR_20", "GLOBAL_GDP_2025"],
     compute=lambda ctx: (ctx["WISHONIA_TRAJECTORY_GDP_YEAR_20"] / ctx["GLOBAL_GDP_2025"]) ** (1 / 20) - 1,
@@ -9163,7 +9148,6 @@ WISHONIA_TRAJECTORY_AVG_INCOME_YEAR_20 = Parameter(
     display_name="Wishonia Trajectory Average Income at Year 20",
     unit="USD",
     formula="WISHONIA_TRAJECTORY_GDP_YEAR_20 / GLOBAL_POPULATION_2045_PROJECTED",
-    latex=r"\bar{y}_{wish,20} = \frac{GDP_{wish,20}}{Pop_{2045}}",
     keywords=["income", "per capita", "wishonia", "year 20", "average"],
     inputs=["WISHONIA_TRAJECTORY_GDP_YEAR_20", "GLOBAL_POPULATION_2045_PROJECTED"],
     compute=lambda ctx: ctx["WISHONIA_TRAJECTORY_GDP_YEAR_20"] / ctx["GLOBAL_POPULATION_2045_PROJECTED"],
@@ -9225,7 +9209,6 @@ TREATY_DISEASE_CURE_FRACTION_15YR = Parameter(
     display_name="Treaty Disease Cure Fraction (15yr, Take-Hold Path)",
     unit="rate",
     formula="min(1.0, NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR × (3×min(DFDA_TRIAL_CAPACITY_MULTIPLIER×1, DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL) + 4×min(DFDA_TRIAL_CAPACITY_MULTIPLIER×2, DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL) + 5×min(DFDA_TRIAL_CAPACITY_MULTIPLIER×5, DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL) + 3×min(DFDA_TRIAL_CAPACITY_MULTIPLIER×10, DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL)) ÷ DISEASES_WITHOUT_EFFECTIVE_TREATMENT)",
-    latex=r"f_{cure,15,treaty}=\min\left(1,\frac{Treatments_{new,ann}\cdot \sum_y \min\left(k_{capacity}\cdot s_y/0.01,k_{physical}\right)}{D_{untreated}}\right)",
     inputs=[
         "NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR",
         "DFDA_TRIAL_CAPACITY_MULTIPLIER",
@@ -9255,7 +9238,6 @@ TREATY_REDIRECT_GDP_GROWTH_BONUS_YEAR_15 = Parameter(
     display_name="Treaty Redirect GDP Growth Bonus (Year 15)",
     unit="rate",
     formula="TREATY_EFFECTIVE_REALLOCATION_SHARE_YEAR_15 × ((MILITARY_REDIRECT_GDP_BOOST_AT_30PCT ÷ 0.30) × (RD_SPILLOVER_MULTIPLIER ÷ 2.0))",
-    latex=r"g_{redirect,treaty,15}=\bar{s}_{treaty,15}\cdot\left(\frac{\Delta g_{30\%}}{0.30}\right)\cdot\left(\frac{m_{spillover}}{2.0}\right)",
     inputs=["TREATY_EFFECTIVE_REALLOCATION_SHARE_YEAR_15", "MILITARY_REDIRECT_GDP_BOOST_AT_30PCT", "RD_SPILLOVER_MULTIPLIER"],
     compute=lambda ctx: ctx["TREATY_EFFECTIVE_REALLOCATION_SHARE_YEAR_15"] * ((ctx["MILITARY_REDIRECT_GDP_BOOST_AT_30PCT"] / 0.30) * (ctx["RD_SPILLOVER_MULTIPLIER"] / 2.0)),
     keywords=["treaty", "GDP", "growth", "redirect", "R&D", "spillover", "15 year"],
@@ -9271,7 +9253,6 @@ TREATY_PEACE_RECOVERY_GDP_GROWTH_BONUS_YEAR_15 = Parameter(
     display_name="Treaty Peace Recovery GDP Growth Bonus (Year 15)",
     unit="rate",
     formula="(PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT ÷ GLOBAL_GDP_2025) × (TREATY_EFFECTIVE_REALLOCATION_SHARE_YEAR_15 ÷ TREATY_REDUCTION_PCT) × PEACE_DIVIDEND_CONFLICT_ELASTICITY",
-    latex=r"g_{peace,treaty,15}=\left(\frac{Benefit_{peace,soc}}{GDP_0}\right)\cdot\left(\frac{\bar{s}_{treaty,15}}{Reduce_{treaty}}\right)\cdot\varepsilon_{conflict}",
     inputs=[
         "PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT",
         "GLOBAL_GDP_2025",
@@ -9297,7 +9278,6 @@ TREATY_CYBERCRIME_RECOVERY_GDP_GROWTH_BONUS_YEAR_15 = Parameter(
     display_name="Treaty Cybercrime Recovery GDP Growth Bonus (Year 15)",
     unit="rate",
     formula="(GLOBAL_CYBERCRIME_COST_ANNUAL_2025 ÷ GLOBAL_GDP_2025) × TREATY_EFFECTIVE_REALLOCATION_SHARE_YEAR_15 × PEACE_DIVIDEND_CONFLICT_ELASTICITY",
-    latex=r"g_{cyber,treaty,15}=\left(\frac{Cost_{cyber,2025}}{GDP_0}\right)\cdot\bar{s}_{treaty,15}\cdot\varepsilon_{conflict}",
     inputs=[
         "GLOBAL_CYBERCRIME_COST_ANNUAL_2025",
         "GLOBAL_GDP_2025",
@@ -9320,7 +9300,6 @@ TREATY_HEALTH_RECOVERY_GDP_GROWTH_BONUS_YEAR_15 = Parameter(
     display_name="Treaty Health Recovery GDP Growth Bonus (Year 15)",
     unit="rate",
     formula="((1 + TREATY_DISEASE_CURE_FRACTION_15YR × DISEASE_BURDEN_GDP_DRAG_PCT + (EXISTING_DRUGS_EFFICACY_LAG_ECONOMIC_LOSS ÷ GLOBAL_GDP_2025))^(1/15)) - 1",
-    latex=r"g_{health,treaty,15}=\left(1+f_{cure,15,treaty}\cdot d_{disease}+\frac{Loss_{lag,existing}}{GDP_0}\right)^{1/15}-1",
     inputs=[
         "TREATY_DISEASE_CURE_FRACTION_15YR",
         "DISEASE_BURDEN_GDP_DRAG_PCT",
@@ -9355,7 +9334,6 @@ WISHONIA_DISEASE_CURE_FRACTION_15YR = Parameter(
     display_name="Wishonia Disease Cure Fraction (15yr, Full Implementation)",
     unit="rate",
     formula="min(1.0, NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR * min(DFDA_TRIAL_CAPACITY_MULTIPLIER * (WISHONIA_MILITARY_REALLOCATION_PHYSICAL_MAX_SHARE / 0.01), DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL) * 15 / DISEASES_WITHOUT_EFFECTIVE_TREATMENT)",
-    latex=r"f_{cure,15,wish}=\min\left(1,\frac{Treatments_{new,ann}\cdot k_{capacity,wish}\cdot 15}{D_{untreated}}\right)",
     inputs=[
         "NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR",
         "DFDA_TRIAL_CAPACITY_MULTIPLIER",
@@ -9385,7 +9363,6 @@ CURRENT_TRAJECTORY_GDP_YEAR_15 = Parameter(
     display_name="Current Trajectory GDP at Year 15",
     unit="USD",
     formula="GLOBAL_GDP_2025 * (1 + GDP_BASELINE_GROWTH_RATE)^15",
-    latex=r"GDP_{base,15} = GDP_0(1+g_{base})^{15}",
     keywords=["GDP", "baseline", "year 15"],
     inputs=["GLOBAL_GDP_2025", "GDP_BASELINE_GROWTH_RATE"],
     compute=lambda ctx: ctx["GLOBAL_GDP_2025"] * ((1 + ctx["GDP_BASELINE_GROWTH_RATE"]) ** 15),
@@ -9409,7 +9386,6 @@ TREATY_TRAJECTORY_GDP_YEAR_15 = Parameter(
     display_name="Treaty Trajectory GDP at Year 15",
     unit="USD",
     formula="GLOBAL_GDP_2025 × (1 + GDP_BASELINE_GROWTH_RATE + TREATY_REDIRECT_GDP_GROWTH_BONUS_YEAR_15 + TREATY_PEACE_RECOVERY_GDP_GROWTH_BONUS_YEAR_15 + TREATY_CYBERCRIME_RECOVERY_GDP_GROWTH_BONUS_YEAR_15 + TREATY_HEALTH_RECOVERY_GDP_GROWTH_BONUS_YEAR_15)^15",
-    latex=r"GDP_{treaty,15}=GDP_0(1+g_{base}+g_{redirect}+g_{peace}+g_{cyber}+g_{health})^{15}",
     keywords=["GDP", "treaty", "projection", "15 years", "optimistic"],
     inputs=[
         "GLOBAL_GDP_2025",
@@ -9493,7 +9469,7 @@ WISHONIA_TRAJECTORY_GDP_YEAR_15 = Parameter(
     display_name="Wishonia Trajectory GDP at Year 15",
     unit="USD",
     formula="GLOBAL_GDP_2025 * (1 + g_ramp)^3 * (1 + g_full)^12, where years 1-3 use 50% of military and non-health reallocation intensity, and years 4-15 use 100%; both include disease-burden recovery",
-    latex=r"GDP_{wish,15}=GDP_0(1+g_{ramp})^3(1+g_{full})^{12}",
+    latex=r"GDP_{wish,15}=GDP_0(1+g_{ramp})^{3}(1+g_{full})^{12}",
     keywords=["GDP", "wishonia", "projection", "year 15"],
     inputs=[
         "GLOBAL_GDP_2025",
@@ -9573,7 +9549,6 @@ CURRENT_TRAJECTORY_AVG_INCOME_YEAR_15 = Parameter(
     display_name="Current Trajectory Average Income at Year 15",
     unit="USD",
     formula="CURRENT_TRAJECTORY_GDP_YEAR_15 / GLOBAL_POPULATION_2040_PROJECTED",
-    latex=r"\bar{y}_{base,15} = \frac{GDP_{base,15}}{Pop_{2040}}",
     keywords=["income", "per capita", "baseline", "year 15", "average"],
     inputs=["CURRENT_TRAJECTORY_GDP_YEAR_15", "GLOBAL_POPULATION_2040_PROJECTED"],
     compute=lambda ctx: ctx["CURRENT_TRAJECTORY_GDP_YEAR_15"] / ctx["GLOBAL_POPULATION_2040_PROJECTED"],
@@ -9587,7 +9562,6 @@ TREATY_TRAJECTORY_AVG_INCOME_YEAR_15 = Parameter(
     display_name="Treaty Trajectory Average Income at Year 15",
     unit="USD",
     formula="TREATY_TRAJECTORY_GDP_YEAR_15 / GLOBAL_POPULATION_2040_PROJECTED",
-    latex=r"\bar{y}_{treaty,15} = \frac{GDP_{treaty,15}}{Pop_{2040}}",
     keywords=["income", "per capita", "treaty", "year 15", "average"],
     inputs=["TREATY_TRAJECTORY_GDP_YEAR_15", "GLOBAL_POPULATION_2040_PROJECTED"],
     compute=lambda ctx: ctx["TREATY_TRAJECTORY_GDP_YEAR_15"] / ctx["GLOBAL_POPULATION_2040_PROJECTED"],
@@ -9601,7 +9575,6 @@ WISHONIA_TRAJECTORY_AVG_INCOME_YEAR_15 = Parameter(
     display_name="Wishonia Trajectory Average Income at Year 15",
     unit="USD",
     formula="WISHONIA_TRAJECTORY_GDP_YEAR_15 / GLOBAL_POPULATION_2040_PROJECTED",
-    latex=r"\bar{y}_{wish,15} = \frac{GDP_{wish,15}}{Pop_{2040}}",
     keywords=["income", "per capita", "wishonia", "year 15", "average"],
     inputs=["WISHONIA_TRAJECTORY_GDP_YEAR_15", "GLOBAL_POPULATION_2040_PROJECTED"],
     compute=lambda ctx: ctx["WISHONIA_TRAJECTORY_GDP_YEAR_15"] / ctx["GLOBAL_POPULATION_2040_PROJECTED"],
@@ -9695,7 +9668,6 @@ BEST_PRACTICE_LIFE_EXPECTANCY_GAIN = Parameter(
     display_name="Best-Practice Life Expectancy Gain",
     unit="years",
     formula="max(SWITZERLAND_LIFE_EXPECTANCY, SINGAPORE_LIFE_EXPECTANCY) - GLOBAL_LIFE_EXPECTANCY_2024",
-    latex=r"\Delta LE_{best}=\max(LE_{CH}, LE_{SG})-LE_{global}",
     inputs=["SWITZERLAND_LIFE_EXPECTANCY", "SINGAPORE_LIFE_EXPECTANCY", "GLOBAL_LIFE_EXPECTANCY_2024"],
     compute=lambda ctx: max(ctx["SWITZERLAND_LIFE_EXPECTANCY"], ctx["SINGAPORE_LIFE_EXPECTANCY"]) - ctx["GLOBAL_LIFE_EXPECTANCY_2024"],
     keywords=["life expectancy", "best practice", "governance", "benchmark", "health"],
@@ -9710,7 +9682,6 @@ TREATY_LONGEVITY_HALE_GAIN_YEAR_15 = Parameter(
     display_name="Treaty Longevity HALE Gain at Year 15",
     unit="years",
     formula="LIFE_EXTENSION_YEARS × HALE_LONGEVITY_REALIZATION_SHARE_YEAR_15 × TREATY_DISEASE_CURE_FRACTION_15YR",
-    latex=r"\Delta HALE_{treaty,longevity,15}=T_{extend}\cdot\rho_{HALE,15}\cdot f_{cure,15,treaty}",
     inputs=["LIFE_EXTENSION_YEARS", "HALE_LONGEVITY_REALIZATION_SHARE_YEAR_15", "TREATY_DISEASE_CURE_FRACTION_15YR"],
     compute=lambda ctx: ctx["LIFE_EXTENSION_YEARS"] * ctx["HALE_LONGEVITY_REALIZATION_SHARE_YEAR_15"] * ctx["TREATY_DISEASE_CURE_FRACTION_15YR"],
     keywords=["HALE", "treaty", "longevity", "healthy years", "year 15"],
@@ -9725,7 +9696,6 @@ WISHONIA_EXTRA_HALE_GAIN_YEAR_15 = Parameter(
     display_name="Wishonia Extra HALE Gain at Year 15",
     unit="years",
     formula="WISHONIA_DISEASE_CURE_FRACTION_15YR × (BEST_PRACTICE_LIFE_EXPECTANCY_GAIN + LIFE_EXTENSION_YEARS × HALE_LONGEVITY_REALIZATION_SHARE_YEAR_15)",
-    latex=r"\Delta HALE_{wish,extra,15}=f_{cure,15,wish}\cdot\left(\Delta LE_{best}+T_{extend}\cdot\rho_{HALE,15}\right)",
     inputs=[
         "WISHONIA_DISEASE_CURE_FRACTION_15YR",
         "BEST_PRACTICE_LIFE_EXPECTANCY_GAIN",
@@ -9748,7 +9718,6 @@ TREATY_HALE_GAIN_YEAR_15 = Parameter(
     display_name="Treaty HALE Gain at Year 15",
     unit="years",
     formula="TREATY_DISEASE_CURE_FRACTION_15YR × GLOBAL_HALE_GAP + TREATY_LONGEVITY_HALE_GAIN_YEAR_15",
-    latex=r"\Delta HALE_{treaty,15} = f_{cure,15,treaty}\cdot\Delta_{HALE}+\Delta HALE_{treaty,longevity,15}",
     inputs=["TREATY_DISEASE_CURE_FRACTION_15YR", "GLOBAL_HALE_CURRENT", "GLOBAL_LIFE_EXPECTANCY_2024", "TREATY_LONGEVITY_HALE_GAIN_YEAR_15"],
     compute=lambda ctx: (
         ctx["TREATY_DISEASE_CURE_FRACTION_15YR"] * (ctx["GLOBAL_LIFE_EXPECTANCY_2024"] - ctx["GLOBAL_HALE_CURRENT"])
@@ -9767,7 +9736,6 @@ WISHONIA_HALE_GAIN_YEAR_15 = Parameter(
     display_name="Wishonia HALE Gain at Year 15",
     unit="years",
     formula="WISHONIA_DISEASE_CURE_FRACTION_15YR × GLOBAL_HALE_GAP + WISHONIA_EXTRA_HALE_GAIN_YEAR_15",
-    latex=r"\Delta HALE_{wish,15} = f_{cure,15,wish}\cdot\Delta_{HALE}+\Delta HALE_{wish,extra,15}",
     inputs=["WISHONIA_DISEASE_CURE_FRACTION_15YR", "GLOBAL_HALE_CURRENT", "GLOBAL_LIFE_EXPECTANCY_2024", "WISHONIA_EXTRA_HALE_GAIN_YEAR_15"],
     compute=lambda ctx: (
         ctx["WISHONIA_DISEASE_CURE_FRACTION_15YR"] * (ctx["GLOBAL_LIFE_EXPECTANCY_2024"] - ctx["GLOBAL_HALE_CURRENT"])
@@ -9811,7 +9779,6 @@ TREATY_PROJECTED_HALE_YEAR_15 = Parameter(
     display_name="Treaty Projected HALE at Year 15",
     unit="years",
     formula="GLOBAL_HALE_CURRENT + TREATY_HALE_GAIN_YEAR_15",
-    latex=r"HALE_{treaty,15} = HALE_0 + \Delta HALE_{treaty,15}",
     inputs=["GLOBAL_HALE_CURRENT", "TREATY_HALE_GAIN_YEAR_15"],
     compute=lambda ctx: ctx["GLOBAL_HALE_CURRENT"] + ctx["TREATY_HALE_GAIN_YEAR_15"],
     keywords=["HALE", "projected", "treaty", "year 15", "healthy life expectancy"],
@@ -9826,7 +9793,6 @@ WISHONIA_PROJECTED_HALE_YEAR_15 = Parameter(
     display_name="Wishonia Projected HALE at Year 15",
     unit="years",
     formula="GLOBAL_HALE_CURRENT + WISHONIA_HALE_GAIN_YEAR_15",
-    latex=r"HALE_{wish,15} = HALE_0 + \Delta HALE_{wish,15}",
     inputs=["GLOBAL_HALE_CURRENT", "WISHONIA_HALE_GAIN_YEAR_15"],
     compute=lambda ctx: ctx["GLOBAL_HALE_CURRENT"] + ctx["WISHONIA_HALE_GAIN_YEAR_15"],
     keywords=["HALE", "projected", "wishonia", "year 15", "healthy life expectancy"],
@@ -10741,7 +10707,6 @@ PERSONAL_LIFETIME_WEALTH = Parameter(
     inputs=["LIFE_EXTENSION_YEARS", "STANDARD_ECONOMIC_QALY_VALUE_USD"],
     compute=lambda ctx: ctx["LIFE_EXTENSION_YEARS"] * ctx["STANDARD_ECONOMIC_QALY_VALUE_USD"],
     latex_symbol=r"Wealth_{lifetime}",
-    latex=r"Wealth_{lifetime} = T_{extend} \times Value_{QALY}",
 )
 
 
@@ -11256,7 +11221,6 @@ CONTRIBUTION_EV_PER_PCT_POINT_TREATY = Parameter(
     formula="TREATY_TRAJECTORY_LIFETIME_INCOME_GAIN_PER_CAPITA × 0.01",
     inputs=["TREATY_TRAJECTORY_LIFETIME_INCOME_GAIN_PER_CAPITA"],
     compute=lambda ctx: ctx["TREATY_TRAJECTORY_LIFETIME_INCOME_GAIN_PER_CAPITA"] * 0.01,
-    latex=r"EV_{pp,treaty} = \Delta Y_{lifetime,treaty} \times 0.01",
     latex_symbol=r"EV_{pp,treaty}",
 )
 
@@ -11270,7 +11234,6 @@ CONTRIBUTION_EV_PER_PCT_POINT_WISHONIA = Parameter(
     formula="WISHONIA_TRAJECTORY_LIFETIME_INCOME_GAIN_PER_CAPITA × 0.01",
     inputs=["WISHONIA_TRAJECTORY_LIFETIME_INCOME_GAIN_PER_CAPITA"],
     compute=lambda ctx: ctx["WISHONIA_TRAJECTORY_LIFETIME_INCOME_GAIN_PER_CAPITA"] * 0.01,
-    latex=r"EV_{pp,wish} = \Delta Y_{lifetime,wish} \times 0.01",
     latex_symbol=r"EV_{pp,wish}",
 )
 
@@ -11283,7 +11246,6 @@ CONTRIBUTION_EV_PER_PCT_POINT_TREATY_BLEND = Parameter(
     formula="TREATY_PERSONAL_UPSIDE_BLEND × 0.01",
     inputs=["TREATY_PERSONAL_UPSIDE_BLEND"],
     compute=lambda ctx: ctx["TREATY_PERSONAL_UPSIDE_BLEND"] * 0.01,
-    latex=r"EV_{pp,treaty,blend} = Upside_{blend,treaty} \times 0.01",
     latex_symbol=r"EV_{pp,treaty,blend}",
 )
 
@@ -11296,7 +11258,6 @@ CONTRIBUTION_EV_PER_PCT_POINT_WISHONIA_BLEND = Parameter(
     formula="WISHONIA_PERSONAL_UPSIDE_BLEND × 0.01",
     inputs=["WISHONIA_PERSONAL_UPSIDE_BLEND"],
     compute=lambda ctx: ctx["WISHONIA_PERSONAL_UPSIDE_BLEND"] * 0.01,
-    latex=r"EV_{pp,wish,blend} = Upside_{blend,wish} \times 0.01",
     latex_symbol=r"EV_{pp,wish,blend}",
 )
 
@@ -11310,7 +11271,6 @@ CONTRIBUTION_DALYS_PER_PCT_POINT = Parameter(
     formula="DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS × 0.01",
     inputs=["DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS"],
     compute=lambda ctx: ctx["DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS"] * 0.01,
-    latex=r"DALYs_{pp} = DALYs_{max} \times 0.01",
     latex_symbol=r"DALYs_{pp}",
 )
 
@@ -11324,7 +11284,6 @@ CONTRIBUTION_LIVES_SAVED_PER_PCT_POINT = Parameter(
     formula="DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_LIVES_SAVED × 0.01",
     inputs=["DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_LIVES_SAVED"],
     compute=lambda ctx: ctx["DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_LIVES_SAVED"] * 0.01,
-    latex=r"Lives_{pp} = Lives_{max} \times 0.01",
     latex_symbol=r"Lives_{pp}",
 )
 
@@ -11338,6 +11297,5 @@ CONTRIBUTION_SUFFERING_HOURS_PER_PCT_POINT = Parameter(
     formula="DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_SUFFERING_HOURS × 0.01",
     inputs=["DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_SUFFERING_HOURS"],
     compute=lambda ctx: ctx["DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_SUFFERING_HOURS"] * 0.01,
-    latex=r"Hours_{pp} = Hours_{suffer,max} \times 0.01",
     latex_symbol=r"Hours_{pp}",
 )
