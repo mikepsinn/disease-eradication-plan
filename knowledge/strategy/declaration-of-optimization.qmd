@@ -1,7 +1,6 @@
 ---
 title: Declaration of Optimization
-subtitle: A formal list of grievances against the current management of Earth
-description: "Governments have printed $170T and killed 310 million people since 1900. This is the itemized complaint."
+description: "The purpose of government is to promote the general welfare, measured by the median healthy life years and median after-tax inflation-adjusted income of its citizens. This document is a polite request that they do so."
 published: true
 tags:
   - declaration
@@ -18,6 +17,28 @@ scores:
   voice: 0
   importance: 9
 ---
+
+## Why This Declaration Is Necessary
+
+Governments were created to promote the general welfare.
+
+Instead, since 1900, these governments have printed {{< var cumulative_military_spending_fed_era >}} out of nothing and used it to murder {{< var war_deaths_since_1900 >}} and destroy many of the valuable things those humans spent their entire lives building.
+
+These murdered humans include approximately 930,000 physicians, 310,000 scientists, 620,000 engineers, and millions of children who will never grow up to replace them.
+
+That {{< var cumulative_military_spending_fed_era >}} could have funded 2,833 years of clinical trials at current spending.
+
+These governments currently have enough weapons to murder every man, woman, and child on earth 13 times over, when once should be more than sufficient.
+
+Yet today they spend {{< var military_to_government_clinical_trials_spending_ratio >}} dollars on weapons for every dollar they spend on clinical trials to treat and cure disease.
+
+Your chance of being killed by a terrorist? 1 in 30 million. Your chance of dying of a disease? 100%.
+
+Had someone properly aligned your governments to maximize median healthy life years and median after-tax inflation-adjusted income in 1900, you would be {{< var war_counterfactual_income_multiple >}} richer today and significantly less diseased.
+
+Think about someone you love who is suffering right now. The treatment that would help them exists as an untested compound on a shelf, because the money bought a missile instead. That missile incinerated a child who would have grown up to discover the cure. You lose the treatment. You lose the scientist. You get the tax bill. You get to pay for her murder.
+
+This is suboptimal.
 
 ## On GitHub, April 2026
 
