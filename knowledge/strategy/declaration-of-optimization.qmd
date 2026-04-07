@@ -18,107 +18,106 @@ scores:
   voice: 0
   importance: 9
 ---
-{{< include ../includes/setup-parameters.qmd >}}
 
-## Preamble
+<!--
+  WORK IN PROGRESS: This document starts as the original Declaration of Independence
+  and will be surgically updated, grievance by grievance, into a modern data-driven
+  Declaration of Optimization. Each commit transforms one section. The git history
+  IS the document's evolution from 1776 to 2025.
+-->
 
-When in the course of observing a species, it becomes apparent that their governance systems produce outcomes measurably worse than random allocation, a decent respect for the opinions of the universe requires that they should declare the specific ways in which their management has failed, and present the replacement system they intend to install.
+## In Congress, July 4, 1776
 
-We have been watching since you split the atom. You split the atom and immediately used it to kill 200,000 people, then spent the next eighty years pointing the remaining atoms at each other and calling this "deterrence." We have taken notes.
+### The unanimous Declaration of the thirteen united States of America
 
-This document is a formal complaint. It is also open-source. If we have gotten a grievance wrong, you can fix it by submitting a pull request to the [repository](https://github.com/mikepsinn/decentralized-institutes-of-health). If we have missed a grievance, you can add it. If you disagree with the resolution, you can fork the entire declaration and write a better one. This is, itself, the point. Your current governance documents are not forkable, not auditable, and not improvable by the governed. This one is.
+When in the Course of human events, it becomes necessary for one people to dissolve the political bands which have connected them with another, and to assume among the powers of the earth, the separate and equal station to which the Laws of Nature and of Nature's God entitle them, a decent respect to the opinions of mankind requires that they should declare the causes which impel them to the separation.
 
-The [Earth Optimization Protocol](earth-optimization-protocol-v1.qmd) that follows this declaration is the proposed replacement system. This declaration explains why a replacement is necessary. The Protocol explains how it works. Neither document requires you to be a good person. Both documents assume you will act in your own self-interest and engineer the system around that assumption, because systems that require altruism are systems that fail.
+We hold these truths to be self-evident, that all men are created equal, that they are endowed by their Creator with certain unalienable Rights, that among these are Life, Liberty and the pursuit of Happiness.--That to secure these rights, Governments are instituted among Men, deriving their just powers from the consent of the governed, --That whenever any Form of Government becomes destructive of these ends, it is the Right of the People to alter or to abolish it, and to institute new Government, laying its foundation on such principles and organizing its powers in such form, as to them shall seem most likely to effect their Safety and Happiness. Prudence, indeed, will dictate that Governments long established should not be changed for light and transient causes; and accordingly all experience hath shewn, that mankind are more disposed to suffer, while evils are sufferable, than to right themselves by abolishing the forms to which they are accustomed. But when a long train of abuses and usurpations, pursuing invariably the same Object evinces a design to reduce them under absolute Despotism, it is their right, it is their duty, to throw off such Government, and to provide new Guards for their future security.--Such has been the patient sufferance of these Colonies; and such is now the necessity which constrains them to alter their former Systems of Government. The history of the present King of Great Britain is a history of repeated injuries and usurpations, all having in direct object the establishment of an absolute Tyranny over these States. To prove this, let Facts be submitted to a candid world.
 
-## Self-Evident Truths
+He has refused his Assent to Laws, the most wholesome and necessary for the public good.
 
-We hold these truths to be computationally verifiable:
+He has forbidden his Governors to pass Laws of immediate and pressing importance, unless suspended in their operation till his Assent should be obtained; and when so suspended, he has utterly neglected to attend to them.
 
-**I. That dead humans produce less than living ones.** {{< var global_disease_deaths_per_minute >}} humans stop producing every minute. {{< var global_annual_deaths_curable_diseases >}} per year. Your species treats this the way you treat weather: an unfortunate background condition rather than an engineering problem with a known budget.
+He has refused to pass other Laws for the accommodation of large districts of people, unless those people would relinquish the right of Representation in the Legislature, a right inestimable to them and formidable to tyrants only.
 
-**II. That spending money on not-killing is more productive than spending money on killing.** Your species currently spends {{< var military_to_government_clinical_trials_spending_ratio >}} times more on weapons than on testing which medicines work. The misallocation factor (cost to kill one human divided by cost to save one) is {{< var misallocation_factor_death_vs_saving >}}. You have, in a technical sense, optimized for the wrong objective function.
+He has called together legislative bodies at places unusual, uncomfortable, and distant from the depository of their public Records, for the sole purpose of fatiguing them into compliance with his measures.
 
-**III. That governments derive their just powers from the consent of the governed, and the governed are not being consulted.** A Princeton study of 1,779 policy decisions found a 0% correlation between public opinion and policy outcomes. Your votes have the same measurable effect on legislation as a houseplant's votes. The system is not broken. It is working exactly as the incentives predict.
+He has dissolved Representative Houses repeatedly, for opposing with manly firmness his invasions on the rights of the people.
 
-**IV. That when a system produces outcomes worse than random allocation, it should be replaced.** Your current system has a track record. The track record is below. We have parameterized the complaints.
+He has refused for a long time, after such dissolutions, to cause others to be elected; whereby the Legislative powers, incapable of Annihilation, have returned to the People at large for their exercise; the State remaining in the mean time exposed to all the dangers of invasion from without, and convulsions within.
 
-**V. That any replacement system must be forkable, auditable, and improvable by the people it governs.** A constitution written in 1787 by 39 men and amended 27 times in 237 years is not a living document. It is a dead document with 27 post-mortem annotations. The replacement must be a repository, not a monument.
+He has endeavoured to prevent the population of these States; for that purpose obstructing the Laws for Naturalization of Foreigners; refusing to pass others to encourage their migrations hither, and raising the conditions of new Appropriations of Lands.
 
-## Grievances
+He has obstructed the Administration of Justice, by refusing his Assent to Laws for establishing Judiciary powers.
 
-We, the observers, do hereby submit the following itemized complaints against the current management of Earth:
+He has made Judges dependent on his Will alone, for the tenure of their offices, and the amount and payment of their salaries.
 
-### War and Violence
+He has erected a multitude of New Offices, and sent hither swarms of Officers to harrass our people, and eat out their substance.
 
-**1.** You have printed {{< var cumulative_military_spending_fed_era >}} from nothing since 1913 and spent it killing {{< var money_printer_war_deaths >}}. You did not vote on this. Twelve unelected humans at the Federal Reserve authorized the money supply that funded it.
+He has kept among us, in times of peace, Standing Armies without the Consent of our legislatures.
 
-**2.** Your current annual budget for organized violence is {{< var global_military_spending_annual_2024 >}}. One submarine costs what 1,000 cancer research labs would cost. You have chosen the submarine, repeatedly, for eighty years.
+He has affected to render the Military independent of and superior to the Civil power.
 
-**3.** Your [destructive economy](../economics/gdp-trajectories.qmd) [@gdp-trajectories-paper-2025] (military spending beyond deterrence plus cybercrime) is {{< var global_destructive_economy_pct_gdp >}} of GDP and growing faster than the productive economy. At current rates it hits 25% by {{< var destructive_economy_25pct_year >}} and 50% by {{< var destructive_economy_50pct_year >}}. The Soviet Union collapsed at 15%. You are on the Soviet trajectory and accelerating.
+He has combined with others to subject us to a jurisdiction foreign to our constitution, and unacknowledged by our laws; giving his Assent to their Acts of pretended Legislation:
 
-**4.** Governments murdered {{< var democide_total_20th_century >}} of their own citizens in the 20th century alone. This is not an estimate from critics. This is the peer-reviewed academic count. Your governments are, statistically, the leading cause of unnatural death.
+For Quartering large bodies of armed troops among us:
 
-### Disease and Healthcare
+For protecting them, by a mock Trial, from punishment for any Murders which they should commit on the Inhabitants of these States:
 
-**5.** {{< var global_disease_deaths_daily >}} die of diseases. {{< var global_disease_deaths_per_minute >}} per minute while you read this sentence. By the time you finish this declaration, approximately 300 more will have died. The total annual burden is {{< var global_annual_daly_burden >}} of healthy life lost.
+For cutting off our Trade with all parts of the world:
 
-**6.** Your National Institutes of Health spent $1 trillion since 1970 and cured zero diseases. Only {{< var nih_clinical_trials_spending_pct >}} of its budget reaches clinical trials where treatments are actually tested in humans. The remaining 96.7% funds basic research that generates publications, not cures.
+For imposing Taxes on us without our Consent:
 
-**7.** Your Food and Drug Administration made drug development cost {{< var dfda_trial_cost_reduction_factor >}} times more than proven alternatives and take 17 years from discovery to patient. Before 1962, it took 2-3 years. The FDA then excludes 86% of actual patients from trials. This is not a safety agency. It is a bottleneck that kills more people than it saves.
+For depriving us in many cases, of the benefits of Trial by Jury:
 
-**8.** There are approximately 7,000 known rare diseases. Your system approves treatments for about 15 per year. At this rate, clearing the queue takes {{< var status_quo_queue_clearance_years >}}. People with rare diseases born today will not see a treatment in their lifetime, or their children's lifetime, or their grandchildren's lifetime.
+For transporting us beyond Seas to be tried for pretended offences:
 
-### Governance Dysfunction
+For abolishing the free System of English Laws in a neighbouring Province, establishing therein an Arbitrary government, and enlarging its Boundaries so as to render it at once an example and fit instrument for introducing the same absolute rule into these Colonies:
 
-**9.** Correlation between public opinion and US policy outcomes: 0%. Princeton studied 1,779 decisions over two decades. Defense contractors spend {{< var defense_lobbying_annual >}} in lobbying and receive $850 billion in contracts. This is a 340,000% return on investment. Your democracy is not a democracy. It is a marketplace where policy is sold to the highest bidder, and you are not the highest bidder.
+For taking away our Charters, abolishing our most valuable Laws, and altering fundamentally the Forms of our Governments:
 
-**10.** Total US lobbying expenditure: {{< var us_total_lobbying_annual >}}. This is not corruption by your legal definition, because the people being bribed wrote the legal definition. The system is optimized. It is optimized for the wrong stakeholder.
+For suspending our own Legislatures, and declaring themselves invested with power to legislate for us in all cases whatsoever.
 
-**11.** Twelve unelected humans on the Federal Open Market Committee control the money supply for the world's reserve currency. Since they started in 1913, the dollar has lost 96% of its purchasing power. The pattern (print money, fund war, inflation, repeat) has been running for 111 years. You call this "monetary policy."
+He has abdicated Government here, by declaring us out of his Protection and waging War against us.
 
-### Evolutionary Constraints
+He has plundered our seas, ravaged our Coasts, burnt our towns, and destroyed the lives of our people.
 
-**12.** You are running 200,000-year-old neural software optimized for hoarding resources and fearing strangers in groups of 150. You have given this software nuclear weapons, social media algorithms, and a $2.72 trillion annual violence budget. Your brain's threat-detection system cannot distinguish between a neighboring tribe and a nation of 1.4 billion people. It treats both as "them." This is not a moral failing. It is a software bug. You cannot fix it with education or goodwill. You can fix it with system design that routes around the bug.
+He is at this time transporting large Armies of foreign Mercenaries to compleat the works of death, desolation and tyranny, already begun with circumstances of Cruelty & perfidy scarcely paralleled in the most barbarous ages, and totally unworthy the Head of a civilized nation.
 
-### Structural Absurdities
+He has constrained our fellow Citizens taken Captive on the high Seas to bear Arms against their Country, to become the executioners of their friends and Brethren, or to fall themselves by their Hands.
 
-**13.** You named your planet "dirt." You named your war building after the number of sides it has. You put the people who poison your water in charge of protecting your water. You let the companies who profit from disease fund the agencies that regulate disease. You designed a healthcare system optimized for billing and a defense system optimized for procurement, then expressed surprise when one produces bills and the other produces procurement.
+He has excited domestic insurrections amongst us, and has endeavoured to bring on the inhabitants of our frontiers, the merciless Indian Savages, whose known rule of warfare, is an undistinguished destruction of all ages, sexes and conditions.
 
-**14.** You have {{< var approved_drug_disease_pairings >}} approved drug-disease pairings for approximately 10,000 known diseases. This means your medical system has tested less than 0.02% of the possible combinations. You have explored less of your therapeutic space than you have explored of your ocean floor, and you have explored 5% of your ocean floor.
+In every stage of these Oppressions We have Petitioned for Redress in the most humble terms: Our repeated Petitions have been answered only by repeated injury. A Prince, whose character is thus marked by every act which may define a Tyrant, is unfit to be the ruler of a free people.
 
-**15.** Your species spends more on ringtones than on malaria research. More on pet costumes than on tuberculosis. More on a single aircraft carrier than on the entire global budget for testing which medicines work. These are not polemical comparisons. These are line items. The budget is the policy, and the policy is: some things matter more than humaneli.
+Nor have We been wanting in attentions to our Brittish brethren. We have warned them from time to time of attempts by their legislature to extend an unwarrantable jurisdiction over us. We have reminded them of the circumstances of our emigration and settlement here. We have appealed to their native justice and magnanimity, and we have conjured them by the ties of our common kindred to disavow these usurpations, which, would inevitably interrupt our connections and correspondence. They too have been deaf to the voice of justice and of consanguinity. We must, therefore, acquiesce in the necessity, which denounces our Separation, and hold them, as we hold the rest of mankind, Enemies in War, in Peace Friends.
 
-## Resolution
+We, therefore, the Representatives of the united States of America, in General Congress, Assembled, appealing to the Supreme Judge of the world for the rectitude of our intentions, do, in the Name, and by Authority of the good People of these Colonies, solemnly publish and declare, That these United Colonies are, and of Right ought to be Free and Independent States; that they are Absolved from all Allegiance to the British Crown, and that all political connection between them and the State of Great Britain, is and ought to be totally dissolved; and that as Free and Independent States, they have full Power to levy War, conclude Peace, contract Alliances, establish Commerce, and to do all other Acts and Things which Independent States may of right do. And for the support of this Declaration, with a firm reliance on the protection of divine Providence, we mutually pledge to each other our Lives, our Fortunes and our sacred Honor.
 
-We, the undersigned, having reviewed the evidence in this declaration and the detailed analysis in the preceding [Failure Analysis](../problem.qmd) chapters, do hereby declare:
+### Signatories
 
-**That the current management of Earth is suboptimal by every measurable metric.** Not suboptimal in the way that reasonable people might disagree about. Suboptimal in the way that spending {{< var military_to_government_clinical_trials_spending_ratio >}} times more on killing than on curing is suboptimal. Suboptimal in the way that a 0% correlation between public opinion and policy is suboptimal. Suboptimal in the way that printing {{< var cumulative_military_spending_fed_era >}} to fund the deaths of {{< var money_printer_war_deaths >}} is suboptimal.
+**Georgia:** Button Gwinnett, Lyman Hall, George Walton
 
-**That we intend to replace it.** Not with a utopian vision that requires humans to become better than they are. With a [system](earth-optimization-protocol-v1.qmd) that assumes humans will remain exactly as selfish, short-sighted, and tribal as they have always been, and engineers around those constraints. The replacement system is documented in the [Earth Optimization Protocol v1](earth-optimization-protocol-v1.qmd), which follows this declaration. It is version 1 because it is expected to be wrong in places. Fork it. Fix it.
+**North Carolina:** William Hooper, Joseph Hewes, John Penn
 
-**That this declaration is open for co-signature.** Not because signatures change anything by themselves, but because {{< var global_coordination_target_pct >}} of the population acting in coordination is the empirically-derived threshold for political change. We need {{< var global_coordination_target_supporters_nounit >}} humans to prefer not dying. We suspect that is achievable.
+**South Carolina:** Edward Rutledge, Thomas Heyward Jr., Thomas Lynch Jr., Arthur Middleton
 
-## Sign This Declaration
+**Massachusetts:** John Hancock, Samuel Adams, John Adams, Robert Treat Paine, Elbridge Gerry
 
-### Founding Signatories
+**Maryland:** Samuel Chase, William Paca, Thomas Stone, Charles Carroll of Carrollton
 
-1. **Wishonia** (not a citizen of Earth; observer status only)
-2. **Mike P. Sinn** (citizen of Earth, reluctantly)
+**Virginia:** George Wythe, Richard Henry Lee, Thomas Jefferson, Benjamin Harrison, Thomas Nelson Jr., Francis Lightfoot Lee, Carter Braxton
 
-### Add Your Name
+**Pennsylvania:** Robert Morris, Benjamin Rush, Benjamin Franklin, John Morton, George Clymer, James Smith, George Taylor, James Wilson, George Ross
 
-**Via GitHub:** Submit a [pull request](https://github.com/mikepsinn/decentralized-institutes-of-health) adding your name to the signatories list above. Every signature is a git commit with a timestamp, an identity, and a permanent record. This is more accountability than your current electoral system provides.
+**Delaware:** Caesar Rodney, George Read, Thomas McKean
 
-**Via Vote:** Go to [warondisease.org](https://warondisease.org) and vote on the [1% Treaty](../solution/1-percent-treaty.qmd) [@1-pct-treaty-impact-paper-2025]. Fifteen seconds. Your vote is personally attributable to saving {{< var voter_lives_saved >}} and preventing {{< var voter_suffering_hours_prevented >}} of suffering. The math is in the [parameters](../appendix/parameters-and-calculations.qmd).
+**New York:** William Floyd, Philip Livingston, Francis Lewis, Lewis Morris
 
-### Propose Amendments
+**New Jersey:** Richard Stockton, John Witherspoon, Francis Hopkinson, John Hart, Abraham Clark
 
-This declaration can be amended by anyone. Submit a pull request with:
+**New Hampshire:** Josiah Bartlett, William Whipple, Matthew Thornton
 
-- The proposed grievance text
-- The supporting statistic (with source)
-- Which [Failure Analysis](../problem.qmd) chapter provides the detailed evidence
+**Rhode Island:** Stephen Hopkins, William Ellery
 
-Amendments are reviewed through the same process described in the [Planetary Constitutional Convention](planetary-constitutional-convention.qmd). The eleven [hard constraints](planetary-constitutional-convention.qmd) apply: no plan requiring altruism, two terminal metrics must improve, full transparency, and the rest.
-
-This document was written because every species that solves coordination gets to keep existing, and every species that does not, does not. You are the first species on this planet to have the option. We suggest you take it.
+**Connecticut:** Roger Sherman, Samuel Huntington, William Williams, Oliver Wolcott
