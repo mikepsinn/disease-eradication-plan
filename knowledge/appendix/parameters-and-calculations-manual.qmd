@@ -38,15 +38,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 535 parameters used in the analysis, organized by type:
+This appendix documents all 537 parameters used in the analysis, organized by type:
 
 - External sources (peer-reviewed): 174
 - Calculated values: 255
-- Core definitions: 106
+- Core definitions: 108
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (255 parameters) • [External Data Sources](#sec-external) (174 parameters) • [Core Definitions](#sec-definitions) (106 parameters)
+[Calculated Values](#sec-calculated) (255 parameters) • [External Data Sources](#sec-external) (174 parameters) • [Core Definitions](#sec-definitions) (108 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -1936,6 +1936,44 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-conventional_retirement_horizon_multiple.qmd >}}
+
+:::
+
+### Military Spending in Government Clinical Trial Years: 37.8 thousand years {#sec-cumulative_military_in_govt_trial_years}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Cumulative military spending since 1913 expressed in equivalent years of government clinical trial spending ($170T / $4.5B per year)
+
+**Inputs**:
+
+- [Cumulative Military Spending (Fed Era)](#sec-cumulative_military_spending_fed_era): $170T
+- [Annual Global Government Spending on Clinical Trials](#sec-global_government_clinical_trials_spending_annual) 📊: $4.5B (95% CI: $3B - $6B)
+
+$$
+\begin{gathered}
+Years_{mil \to trials,gov} \\
+= \frac{Spending_{mil,cum,fed}}{Spending_{trials,gov}} \\
+= \frac{\$170T}{\$4.5B} \\
+= 37{,}800
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-cumulative_military_in_govt_trial_years.qmd >}}
+
+{{< include ../figures/sensitivity-table-cumulative_military_in_govt_trial_years.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-cumulative_military_in_govt_trial_years.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-cumulative_military_in_govt_trial_years.qmd >}}
 
 :::
 
@@ -6959,44 +6997,6 @@ $$
 
 :::
 
-### Cost per Life Saved by Medical Research: $16.1K {#sec-global_cost_per_life_saved_med_research_annual}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Cost per life saved by medical research
-
-**Inputs**:
-
-- [Annual Lives Saved by Medical Research Globally](#sec-global_annual_lives_saved_by_med_research) 📊: 4.2 million lives/year (95% CI: 3 million lives/year - 6 million lives/year)
-- [Global Government Medical Research Spending](#sec-global_med_research_spending) 📊: $67.5B (95% CI: $54B - $81B)
-
-$$
-\begin{gathered}
-Cost_{life,RD} \\
-= \frac{Spending_{RD}}{Lives_{RD,ann}} \\
-= \frac{\$67.5B}{4.2M} \\
-= \$16.1K
-\end{gathered}
-$$
-
-*✓ High confidence*
-
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-global_cost_per_life_saved_med_research_annual.qmd >}}
-
-{{< include ../figures/sensitivity-table-global_cost_per_life_saved_med_research_annual.qmd >}}
-
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-global_cost_per_life_saved_med_research_annual.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-global_cost_per_life_saved_med_research_annual.qmd >}}
-
-:::
-
 ### Global Destructive Economy (2025): $13.2T {#sec-global_destructive_economy_annual_2025}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -7915,148 +7915,6 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-military_to_government_clinical_trials_spending_ratio.qmd >}}
-
-:::
-
-### Misallocation Factor: Cost to Kill vs Cost to Save: 2.9kx {#sec-misallocation_factor_death_vs_saving}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Misallocation factor: cost to kill vs cost to save
-
-**Inputs**:
-
-- [Total Annual Conflict Deaths Globally](#sec-global_annual_conflict_deaths_total) 🔢: 245 thousand deaths/year
-- [Total Annual Cost of War Worldwide](#sec-global_annual_direct_indirect_war_cost) 🔢: $11.4T
-- [Cost per Life Saved by Medical Research](#sec-global_cost_per_life_saved_med_research_annual) 🔢: $16.1K
-
-$$
-\begin{gathered}
-k_{misalloc} \\
-= \frac{Cost_{war,total}}{Deaths_{conflict} \times Cost_{life,RD}} \\
-= \frac{\$11.4T}{245{,}000 \times \$16.1K} \\
-= 2{,}890
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Deaths_{conflict} \\
-= Deaths_{combat} + Deaths_{state} + Deaths_{terror} \\
-= 234{,}000 + 2{,}700 + 8{,}300 \\
-= 245{,}000
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Cost_{war,total} \\
-= Cost_{war,direct} + Cost_{war,indirect} \\
-= \$7.66T + \$3.7T \\
-= \$11.4T
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Cost_{war,direct} \\
-= Loss_{life,conflict} + Damage_{infra,total} \\
-+ Disruption_{trade} + Spending_{mil} \\
-= \$2.45T + \$1.88T + \$616B + \$2.72T \\
-= \$7.66T
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Loss_{life,conflict} \\
-= Cost_{combat,human} + Cost_{state,human} \\
-+ Cost_{terror,human} \\
-= \$2.34T + \$27B + \$83B \\
-= \$2.45T
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Cost_{combat,human} \\
-= Deaths_{combat} \times VSL \\
-= 234{,}000 \times \$10M \\
-= \$2.34T
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Cost_{state,human} \\
-= Deaths_{state} \times VSL \\
-= 2{,}700 \times \$10M \\
-= \$27B
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Cost_{terror,human} \\
-= Deaths_{terror} \times VSL \\
-= 8{,}300 \times \$10M \\
-= \$83B
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Damage_{infra,total} \\
-= Damage_{comms} + Damage_{edu} + Damage_{energy} \\
-+ Damage_{health} + Damage_{transport} + Damage_{water} \\
-= \$298B + \$234B + \$422B + \$166B + \$487B + \$268B \\
-= \$1.88T
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Disruption_{trade} \\
-= Disruption_{currency} + Disruption_{energy} \\
-+ Disruption_{shipping} + Disruption_{supply} \\
-= \$57.4B + \$125B + \$247B + \$187B \\
-= \$616B
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Cost_{war,indirect} \\
-= Damage_{env} + Loss_{growth,mil} + Loss_{capital,conflict} \\
-+ Cost_{psych} + Cost_{refugee} + Cost_{vet} \\
-= \$100B + \$2.72T + \$300B + \$232B + \$150B + \$200B \\
-= \$3.7T
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Cost_{life,RD} \\
-= \frac{Spending_{RD}}{Lives_{RD,ann}} \\
-= \frac{\$67.5B}{4.2M} \\
-= \$16.1K
-\end{gathered}
-$$
-*✓ High confidence*
-
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-misallocation_factor_death_vs_saving.qmd >}}
-
-{{< include ../figures/sensitivity-table-misallocation_factor_death_vs_saving.qmd >}}
-
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-misallocation_factor_death_vs_saving.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-misallocation_factor_death_vs_saving.qmd >}}
 
 :::
 
@@ -18778,6 +18636,34 @@ $$
 
 :::
 
+### Children Killed in Wars Since 1900: 102 million deaths {#sec-war_children_killed_since_1900}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Estimated children under 18 killed in wars, conflicts, genocides, and policy-induced famines since 1900
+
+**Inputs**:
+
+- [Total War and Conflict Deaths Since 1900](#sec-war_deaths_since_1900): 310 million deaths (95% CI: 200 million deaths - 340 million deaths)
+- [Child Share of War Deaths Since 1900](#sec-war_child_death_pct): 33% (95% CI: 25% - 40%)
+
+$$
+\begin{gathered}
+Deaths_{war,child} \\
+= Deaths_{war,1900} \times Pct_{war,child} \\
+= 310M \times 33\% \\
+= 102M
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-war_children_killed_since_1900.qmd >}}
+
+:::
+
 ### Cumulative War Costs over 20 Years (Current Trajectory): $227T {#sec-war_costs_cumulative_20yr_current_trajectory}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -21927,6 +21813,22 @@ PCORI grant for ADAPTABLE trial (2016-2019). Note: Direct funding only; total co
 
 :::
 
+### Annual Terrorism Death Risk (1 in X): 30 million people {#sec-annual_terrorism_death_risk_denominator}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual probability of being killed by terrorism expressed as '1 in X'. An American's annual odds of dying in a terrorist attack are approximately 1 in 30 million.
+
+**Source**: [@chance-of-dying-from-terrorism-1-in-30m]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*✓ High confidence*
+
+:::
+
 ### Antidepressant Trial Exclusion Rate: 86.1% {#sec-antidepressant_trial_exclusion_rate}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -22900,30 +22802,6 @@ Annual infrastructure damage to water systems from conflict
 #### Input Distribution
 
 {{< include ../figures/distribution-global_annual_infrastructure_damage_water_conflict.qmd >}}
-
-*✓ High confidence*
-
-:::
-
-### Annual Lives Saved by Medical Research Globally: 4.2 million lives/year {#sec-global_annual_lives_saved_by_med_research}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Annual lives saved by medical research globally
-
-**Source**: [@medical-research-lives-saved-annually]
-
-#### Uncertainty Range
-
-**Technical**: 95% CI: [3 million lives/year, 6 million lives/year] • Distribution: Lognormal
-
-**What this means**: There's significant uncertainty here. The true value likely falls between 3 million lives/year and 6 million lives/year (±36%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
-
-*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
-
-#### Input Distribution
-
-{{< include ../figures/distribution-global_annual_lives_saved_by_med_research.qmd >}}
 
 *✓ High confidence*
 
@@ -26737,6 +26615,20 @@ Standard time horizon for NPV analysis
 
 :::
 
+### Nuclear Overkill Factor: 20x {#sec-nuclear_overkill_factor}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+How many times the global nuclear arsenal can kill Earth's entire population. Based on total potential deaths from existing arsenals (~158.4B) divided by global population (~8B). See nuclear-weapon-cost-and-casualties appendix.
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*Core definition*
+
+:::
+
 ### Peace Dividend Conflict Elasticity: 1:1 {#sec-peace_dividend_conflict_elasticity}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -27202,6 +27094,28 @@ Average years of life lost per war/conflict death. Based on avg age at death ~28
 #### Input Distribution
 
 {{< include ../figures/distribution-war_avg_years_life_lost_per_death.qmd >}}
+
+*Core definition*
+
+:::
+
+### Child Share of War Deaths Since 1900: 33% {#sec-war_child_death_pct}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Estimated share of war deaths since 1900 that were children under 18. Constructed from category-weighted estimates: combat ~3%, civilian ~35%, genocide ~33%, famine ~60%. Conservative aggregate ~33%. Sources: de Waal 2017 (famine child mortality), APA 2001 (civilian child share).
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [25%, 40%] • Distribution: Uniform
+
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between 25% and 40% (±23%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The uniform distribution means any value in the range is equally likely.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-war_child_death_pct.qmd >}}
 
 *Core definition*
 

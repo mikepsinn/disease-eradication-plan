@@ -2681,6 +2681,88 @@ WAR_QALY_VALUE_LOST_SINCE_1900 = Parameter(
     latex_symbol=r"V_{war,QALY}",
 )
 
+# Children killed in wars since 1900
+# ~33% of total: children are majority of famine deaths (de Waal 2017: under-5 = 50-67%),
+# ~50% of civilian casualties (APA 2001), but small share of combatants.
+# Conservative one-in-three estimate across combat, civilian, genocide, and famine categories.
+WAR_CHILD_DEATH_PCT = Parameter(
+    0.33,
+    source_ref=ReferenceID.DE_WAAL_FAMINE_CHILD_MORTALITY_2018,
+    source_type="definition",
+    confidence="low",
+    description="Estimated share of war deaths since 1900 that were children under 18. "
+                "Constructed from category-weighted estimates: combat ~3%, civilian ~35%, "
+                "genocide ~33%, famine ~60%. Conservative aggregate ~33%. "
+                "Sources: de Waal 2017 (famine child mortality), APA 2001 (civilian child share).",
+    display_name="Child Share of War Deaths Since 1900",
+    unit="rate",
+    distribution="uniform",
+    confidence_interval=(0.25, 0.40),
+    keywords=["children", "war", "deaths", "percentage", "child casualties"],
+    latex_symbol=r"Pct_{war,child}",
+)
+
+WAR_CHILDREN_KILLED_SINCE_1900 = Parameter(
+    WAR_DEATHS_SINCE_1900 * WAR_CHILD_DEATH_PCT,
+    source_type=SourceType.CALCULATED,
+    description="Estimated children under 18 killed in wars, conflicts, genocides, and "
+                "policy-induced famines since 1900",
+    display_name="Children Killed in Wars Since 1900",
+    unit="deaths",
+    formula="WAR_DEATHS_SINCE_1900 × WAR_CHILD_DEATH_PCT",
+    inputs=["WAR_DEATHS_SINCE_1900", "WAR_CHILD_DEATH_PCT"],
+    compute=lambda ctx: ctx["WAR_DEATHS_SINCE_1900"] * ctx["WAR_CHILD_DEATH_PCT"],
+    keywords=["children", "war", "deaths", "killed", "since 1900"],
+    latex_symbol=r"Deaths_{war,child}",
+)
+
+# Nuclear overkill capacity
+# From nuclear-weapon-cost-and-casualties.qmd: 158.4 billion potential deaths / 8 billion = 20x
+NUCLEAR_OVERKILL_FACTOR = Parameter(
+    20,
+    source_ref=ReferenceID.NUCLEAR_EXTINCTION,
+    source_type="definition",
+    confidence="medium",
+    description="How many times the global nuclear arsenal can kill Earth's entire population. "
+                "Based on total potential deaths from existing arsenals (~158.4B) divided by "
+                "global population (~8B). See nuclear-weapon-cost-and-casualties appendix.",
+    display_name="Nuclear Overkill Factor",
+    unit="x",
+    distribution="fixed",
+    keywords=["nuclear", "overkill", "arsenal", "extinction", "weapons", "redundancy"],
+    latex_symbol=r"Overkill_{nuke}",
+)
+
+# Annual terrorism death risk
+ANNUAL_TERRORISM_DEATH_RISK_DENOMINATOR = Parameter(
+    30_000_000,
+    source_ref=ReferenceID.CHANCE_OF_DYING_FROM_TERRORISM_1_IN_30M,
+    source_type="external",
+    confidence="high",
+    description="Annual probability of being killed by terrorism expressed as '1 in X'. "
+                "An American's annual odds of dying in a terrorist attack are approximately 1 in 30 million.",
+    display_name="Annual Terrorism Death Risk (1 in X)",
+    unit="people",
+    distribution="fixed",
+    keywords=["terrorism", "risk", "odds", "probability", "annual", "chance", "1 in 30 million"],
+    latex_symbol=r"Risk_{terror,denom}",
+)
+
+# Cumulative military spending expressed in years of government clinical trial spending
+CUMULATIVE_MILITARY_IN_GOVT_TRIAL_YEARS = Parameter(
+    CUMULATIVE_MILITARY_SPENDING_FED_ERA / GLOBAL_GOVERNMENT_CLINICAL_TRIALS_SPENDING_ANNUAL,
+    source_type=SourceType.CALCULATED,
+    description="Cumulative military spending since 1913 expressed in equivalent years of "
+                "government clinical trial spending ($170T / $4.5B per year)",
+    display_name="Military Spending in Government Clinical Trial Years",
+    unit="years",
+    formula="CUMULATIVE_MILITARY_SPENDING_FED_ERA / GLOBAL_GOVERNMENT_CLINICAL_TRIALS_SPENDING_ANNUAL",
+    inputs=["CUMULATIVE_MILITARY_SPENDING_FED_ERA", "GLOBAL_GOVERNMENT_CLINICAL_TRIALS_SPENDING_ANNUAL"],
+    compute=lambda ctx: ctx["CUMULATIVE_MILITARY_SPENDING_FED_ERA"] / ctx["GLOBAL_GOVERNMENT_CLINICAL_TRIALS_SPENDING_ANNUAL"],
+    keywords=["military", "clinical trials", "equivalent", "years", "government", "spending"],
+    latex_symbol=r"Years_{mil \to trials,gov}",
+)
+
 # --- Moved here from later in file so war counterfactual params can reference them ---
 
 # Global GDP (2025) - needed for global opportunity cost calculations

@@ -38,15 +38,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 394 parameters used in the analysis, organized by type:
+This appendix documents all 396 parameters used in the analysis, organized by type:
 
 - External sources (peer-reviewed): 142
-- Calculated values: 187
-- Core definitions: 65
+- Calculated values: 188
+- Core definitions: 66
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (187 parameters) • [External Data Sources](#sec-external) (142 parameters) • [Core Definitions](#sec-definitions) (65 parameters)
+[Calculated Values](#sec-calculated) (188 parameters) • [External Data Sources](#sec-external) (142 parameters) • [Core Definitions](#sec-definitions) (66 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -12222,6 +12222,34 @@ $$
 
 :::
 
+### Children Killed in Wars Since 1900: 102 million deaths {#sec-war_children_killed_since_1900}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Estimated children under 18 killed in wars, conflicts, genocides, and policy-induced famines since 1900
+
+**Inputs**:
+
+- [Total War and Conflict Deaths Since 1900](#sec-war_deaths_since_1900): 310 million deaths (95% CI: 200 million deaths - 340 million deaths)
+- [Child Share of War Deaths Since 1900](#sec-war_child_death_pct): 33% (95% CI: 25% - 40%)
+
+$$
+\begin{gathered}
+Deaths_{war,child} \\
+= Deaths_{war,1900} \times Pct_{war,child} \\
+= 310M \times 33\% \\
+= 102M
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-war_children_killed_since_1900.qmd >}}
+
+:::
+
 ### Cumulative War Costs over 20 Years (Current Trajectory): $227T {#sec-war_costs_cumulative_20yr_current_trajectory}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -18827,6 +18855,28 @@ Average years of life lost per war/conflict death. Based on avg age at death ~28
 #### Input Distribution
 
 {{< include ../figures/distribution-war_avg_years_life_lost_per_death.qmd >}}
+
+*Core definition*
+
+:::
+
+### Child Share of War Deaths Since 1900: 33% {#sec-war_child_death_pct}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Estimated share of war deaths since 1900 that were children under 18. Constructed from category-weighted estimates: combat ~3%, civilian ~35%, genocide ~33%, famine ~60%. Conservative aggregate ~33%. Sources: de Waal 2017 (famine child mortality), APA 2001 (civilian child share).
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [25%, 40%] • Distribution: Uniform
+
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between 25% and 40% (±23%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The uniform distribution means any value in the range is equally likely.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-war_child_death_pct.qmd >}}
 
 *Core definition*
 

@@ -324,6 +324,25 @@ These are *conservative* estimates because they assume professionals died at the
 
 Three hundred thousand scientists. Nine hundred thousand doctors. How many cures died with them? How many diseases would already be eradicated if those 310,000 researchers had lived to finish their work? You cannot calculate a counterfactual. But you can note that Alexander Fleming discovered penicillin because he happened to survive World War I. One scientist, one accidental discovery, one billion lives saved. You killed 310,000 others who never got the chance.
 
+### The Children
+
+Of the {{< var war_deaths_since_1900 >}} since 1900, approximately {{< var war_child_death_pct >}} were children under 18: roughly {{< var war_children_killed_since_1900 >}}.
+
+{{< var war_children_killed_since_1900_latex >}}
+
+That percentage is not uniform across categories. It varies by how you kill people:
+
+| Category | Estimated Deaths | Child Share | Why |
+|----------|-----------------|-------------|-----|
+| Combat | ~37M | ~3% | Armies recruit adults (mostly) |
+| Civilian direct killing | ~55M | ~35% | Children are where the bombs land |
+| Genocide and democide | ~100M | ~33% | Entire populations targeted, children proportional to demographics |
+| Policy-induced famine | ~118M | ~60% | Children under 5 are the majority of famine deaths [@de-waal-famine-child-mortality-2018] |
+
+Children under five alone constitute 50-67% of all famine deaths [@de-waal-famine-child-mortality-2018]. The Great Leap Forward, the Holodomor, the Bengal famine: in each case, the smallest bodies failed first. Add children aged 5-17, and famine alone accounts for roughly 70 million dead children. Nearly 90% of war deaths in the 21st century have been civilians, a significant number of whom were children [@sever-wars-children-2022].
+
+These {{< var war_children_killed_since_1900_nounit >}} children will not grow up to be the 310,000 scientists and 930,000 physicians listed in the table above. They will not grow up at all.
+
 ### The Stolen Years: What the Dead Were Worth
 
 The {{< var war_deaths_since_1900_nounit >}} dead were not just names on memorials. They were years of life, unlived. Each death stole an average of {{< var war_avg_years_life_lost_per_death_nounit >}} years of remaining life (soldiers averaged 23 years old at death; civilian casualties skewed older; weighted average age at death roughly 28, against a mid-century life expectancy of 55).

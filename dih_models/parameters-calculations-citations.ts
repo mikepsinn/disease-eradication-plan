@@ -102,6 +102,21 @@ export const ADAPTABLE_TRIAL_TOTAL_COST: Parameter = {
   manualPageTitle: "The 1% Treaty: Harnessing Greed to Eradicate Disease",
 };
 
+export const ANNUAL_TERRORISM_DEATH_RISK_DENOMINATOR: Parameter = {
+  value: 30000000.0,
+  parameterName: "ANNUAL_TERRORISM_DEATH_RISK_DENOMINATOR",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-annual_terrorism_death_risk_denominator",
+  unit: "people",
+  displayName: "Annual Terrorism Death Risk (1 in X)",
+  description: "Annual probability of being killed by terrorism expressed as '1 in X'. An American's annual odds of dying in a terrorist attack are approximately 1 in 30 million.",
+  sourceType: "external",
+  sourceRef: "chance-of-dying-from-terrorism-1-in-30m",
+  sourceUrl: "https://www.cato.org/policy-analysis/terrorism-immigration-risk-analysis",
+  confidence: "high",
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/strategy/declaration-of-optimization.html",
+  manualPageTitle: "Declaration of Optimization",
+};
+
 export const ANTIDEPRESSANT_TRIAL_EXCLUSION_RATE: Parameter = {
   value: 0.861,
   parameterName: "ANTIDEPRESSANT_TRIAL_EXCLUSION_RATE",
@@ -3555,6 +3570,22 @@ export const CONVENTIONAL_RETIREMENT_HORIZON_MULTIPLE: Parameter = {
   manualPageTitle: "The Earth Optimization Prize Fund",
 };
 
+export const CUMULATIVE_MILITARY_IN_GOVT_TRIAL_YEARS: Parameter = {
+  value: 37777.77777777778,
+  parameterName: "CUMULATIVE_MILITARY_IN_GOVT_TRIAL_YEARS",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-cumulative_military_in_govt_trial_years",
+  unit: "years",
+  displayName: "Military Spending in Government Clinical Trial Years",
+  description: "Cumulative military spending since 1913 expressed in equivalent years of government clinical trial spending ($170T / $4.5B per year)",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "CUMULATIVE_MILITARY_SPENDING_FED_ERA / GLOBAL_GOVERNMENT_CLINICAL_TRIALS_SPENDING_ANNUAL",
+  latex: "\\begin{gathered}\nYears_{mil \\to trials,gov} \\\\\n= \\frac{Spending_{mil,cum,fed}}{Spending_{trials,gov}} \\\\\n= \\frac{\\$170T}{\\$4.5B} \\\\\n= 37{,}800\n\\end{gathered}",
+  confidenceInterval: [28333.333333333332, 55889.07556635113],
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/strategy/declaration-of-optimization.html",
+  manualPageTitle: "Declaration of Optimization",
+};
+
 export const CURRENT_COMBINATION_EXPLORATION_YEARS: Parameter = {
   value: 13672803.030303031,
   parameterName: "CURRENT_COMBINATION_EXPLORATION_YEARS",
@@ -5137,8 +5168,8 @@ export const GLOBAL_DISEASE_DEATHS_PER_MINUTE: Parameter = {
   formula: "GLOBAL_DISEASE_DEATHS_DAILY / 1440",
   latex: "\\begin{gathered}\nDeaths_{disease,min} \\\\\n= Deaths_{disease,daily} \\times 0.000694 \\\\\n= 150{,}000 \\times 0.000694 \\\\\n= 104\n\\end{gathered}",
   confidenceInterval: [95.44742975347027, 112.72260414210108],
-  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/strategy/declaration-of-optimization.html",
-  manualPageTitle: "Declaration of Optimization",
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/strategy/earth-optimization-prize.html",
+  manualPageTitle: "The Earth Optimization Prize",
 };
 
 export const GLOBAL_DISEASE_ECONOMIC_BURDEN_ANNUAL: Parameter = {
@@ -5435,8 +5466,6 @@ export const MISALLOCATION_FACTOR_DEATH_VS_SAVING: Parameter = {
   formula: "COST_PER_DEATH ÷ COST_PER_LIFE_SAVED",
   latex: "\\begin{gathered}\nk_{misalloc} = \\frac{Cost_{war,total}}{Deaths_{conflict} \\times Cost_{life,RD}} = \\frac{\\$11.4T}{245{,}000 \\times \\$16.1K} = 2{,}890\n\\\\[0.5em]\n\\text{where } Deaths_{conflict} = Deaths_{combat} + Deaths_{state} + Deaths_{terror} = 234{,}000 + 2{,}700 + 8{,}300 = 245{,}000\n\\\\[0.5em]\n\\text{where } Cost_{war,total} = Cost_{war,direct} + Cost_{war,indirect} = \\$7.66T + \\$3.7T = \\$11.4T\n\\\\[0.5em]\n\\text{where } Cost_{war,direct} = Loss_{life,conflict} + Damage_{infra,total} + Disruption_{trade} + Spending_{mil} = \\$2.45T + \\$1.88T + \\$616B + \\$2.72T = \\$7.66T\n\\\\[0.5em]\n\\text{where } Loss_{life,conflict} = Cost_{combat,human} + Cost_{state,human} + Cost_{terror,human} = \\$2.34T + \\$27B + \\$83B = \\$2.45T\n\\\\[0.5em]\n\\text{where } Cost_{combat,human} = Deaths_{combat} \\times VSL = 234{,}000 \\times \\$10M = \\$2.34T\n\\\\[0.5em]\n\\text{where } Cost_{state,human} = Deaths_{state} \\times VSL = 2{,}700 \\times \\$10M = \\$27B\n\\\\[0.5em]\n\\text{where } Cost_{terror,human} = Deaths_{terror} \\times VSL = 8{,}300 \\times \\$10M = \\$83B\n\\\\[0.5em]\n\\text{where } Damage_{infra,total} = Damage_{comms} + Damage_{edu} + Damage_{energy} + Damage_{health} + Damage_{transport} + Damage_{water} = \\$298B + \\$234B + \\$422B + \\$166B + \\$487B + \\$268B = \\$1.88T\n\\\\[0.5em]\n\\text{where } Disruption_{trade} = Disruption_{currency} + Disruption_{energy} + Disruption_{shipping} + Disruption_{supply} = \\$57.4B + \\$125B + \\$247B + \\$187B = \\$616B\n\\\\[0.5em]\n\\text{where } Cost_{war,indirect} = Damage_{env} + Loss_{growth,mil} + Loss_{capital,conflict} + Cost_{psych} + Cost_{refugee} + Cost_{vet} = \\$100B + \\$2.72T + \\$300B + \\$232B + \\$150B + \\$200B = \\$3.7T\n\\\\[0.5em]\n\\text{where } Cost_{life,RD} = \\frac{Spending_{RD}}{Lives_{RD,ann}} = \\frac{\\$67.5B}{4.2M} = \\$16.1K\n\\end{gathered}",
   confidenceInterval: [2483.0304081542563, 3321.5699678139463],
-  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/strategy/declaration-of-optimization.html",
-  manualPageTitle: "Declaration of Optimization",
 };
 
 export const MRNA_THERAPEUTIC_COMBINATIONS: Parameter = {
@@ -7313,8 +7342,8 @@ export const VOTER_LIVES_SAVED: Parameter = {
   formula: "DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_LIVES_SAVED ÷ TREATY_CAMPAIGN_VOTING_BLOC_TARGET",
   latex: "\\begin{gathered}\nLives_{voter} = \\frac{Lives_{max}}{N_{voters,target}} = \\frac{10.7B}{280M} = 38.4\n\\\\[0.5em]\n\\text{where } Lives_{max} = Deaths_{disease,daily} \\times T_{accel,max} \\times 338 = 150{,}000 \\times 212 \\times 338 = 10.7B\n\\\\[0.5em]\n\\text{where } T_{accel,max} = T_{accel} + T_{lag} = 204 + 8.2 = 212\n\\\\[0.5em]\n\\text{where } T_{accel} = T_{first,SQ} \\times \\left(1 - \\frac{1}{k_{capacity}}\\right) = 222 \\times \\left(1 - \\frac{1}{12.3}\\right) = 204\n\\\\[0.5em]\n\\text{where } T_{first,SQ} = T_{queue,SQ} \\times 0.5 = 443 \\times 0.5 = 222\n\\\\[0.5em]\n\\text{where } T_{queue,SQ} = \\frac{N_{untreated}}{Treatments_{new,ann}} = \\frac{6{,}650}{15} = 443\n\\\\[0.5em]\n\\text{where } N_{untreated} = N_{rare} \\times 0.95 = 7{,}000 \\times 0.95 = 6{,}650\n\\\\[0.5em]\n\\text{where } k_{capacity} = \\frac{N_{fundable,dFDA}}{Slots_{curr}} = \\frac{23.4M}{1.9M} = 12.3\n\\\\[0.5em]\n\\text{where } N_{fundable,dFDA} = \\frac{Subsidies_{dFDA,ann}}{Cost_{pragmatic,pt}} = \\frac{\\$21.8B}{\\$929} = 23.4M\n\\\\[0.5em]\n\\text{where } Subsidies_{dFDA,ann} = Funding_{dFDA,ann} - OPEX_{dFDA} = \\$21.8B - \\$40M = \\$21.8B\n\\\\[0.5em]\n\\text{where } OPEX_{dFDA} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \\$15M + \\$10M + \\$8M + \\$5M + \\$2M = \\$40M\n\\\\[0.5em]\n\\text{where } N_{voters,target} = Pop_{global} \\times Threshold_{activism} = 8B \\times 3.5\\% = 280M\n\\end{gathered}",
   confidenceInterval: [11.58178061150307, 195.44109724189255],
-  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/strategy/declaration-of-optimization.html",
-  manualPageTitle: "Declaration of Optimization",
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/conclusion.html",
+  manualPageTitle: "Conclusion",
 };
 
 export const VOTER_SUFFERING_HOURS_PREVENTED: Parameter = {
@@ -7329,8 +7358,8 @@ export const VOTER_SUFFERING_HOURS_PREVENTED: Parameter = {
   formula: "DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_SUFFERING_HOURS ÷ TREATY_CAMPAIGN_VOTING_BLOC_TARGET",
   latex: "\\begin{gathered}\nHours_{suffer,voter} = \\frac{Hours_{suffer,max}}{N_{voters,target}} = \\frac{1930T}{280M} = 6.9M\n\\\\[0.5em]\n\\text{where } Hours_{suffer,max} = DALYs_{max} \\times Pct_{YLD} \\times 8760 = 565B \\times 0.39 \\times 8760 = 1930T\n\\\\[0.5em]\n\\text{where } DALYs_{max} = DALYs_{global,ann} \\times Pct_{avoid,DALY} \\times T_{accel,max} = 2.88B \\times 92.6\\% \\times 212 = 565B\n\\\\[0.5em]\n\\text{where } T_{accel,max} = T_{accel} + T_{lag} = 204 + 8.2 = 212\n\\\\[0.5em]\n\\text{where } T_{accel} = T_{first,SQ} \\times \\left(1 - \\frac{1}{k_{capacity}}\\right) = 222 \\times \\left(1 - \\frac{1}{12.3}\\right) = 204\n\\\\[0.5em]\n\\text{where } T_{first,SQ} = T_{queue,SQ} \\times 0.5 = 443 \\times 0.5 = 222\n\\\\[0.5em]\n\\text{where } T_{queue,SQ} = \\frac{N_{untreated}}{Treatments_{new,ann}} = \\frac{6{,}650}{15} = 443\n\\\\[0.5em]\n\\text{where } N_{untreated} = N_{rare} \\times 0.95 = 7{,}000 \\times 0.95 = 6{,}650\n\\\\[0.5em]\n\\text{where } k_{capacity} = \\frac{N_{fundable,dFDA}}{Slots_{curr}} = \\frac{23.4M}{1.9M} = 12.3\n\\\\[0.5em]\n\\text{where } N_{fundable,dFDA} = \\frac{Subsidies_{dFDA,ann}}{Cost_{pragmatic,pt}} = \\frac{\\$21.8B}{\\$929} = 23.4M\n\\\\[0.5em]\n\\text{where } Subsidies_{dFDA,ann} = Funding_{dFDA,ann} - OPEX_{dFDA} = \\$21.8B - \\$40M = \\$21.8B\n\\\\[0.5em]\n\\text{where } OPEX_{dFDA} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \\$15M + \\$10M + \\$8M + \\$5M + \\$2M = \\$40M\n\\\\[0.5em]\n\\text{where } N_{voters,target} = Pop_{global} \\times Threshold_{activism} = 8B \\times 3.5\\% = 280M\n\\end{gathered}",
   confidenceInterval: [2229776.9469145937, 29662948.8293267],
-  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/strategy/declaration-of-optimization.html",
-  manualPageTitle: "Declaration of Optimization",
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/conclusion.html",
+  manualPageTitle: "Conclusion",
 };
 
 export const VOTE_2_CLAIMS_PAYOUT: Parameter = {
@@ -7363,6 +7392,21 @@ export const VOTE_TOKEN_VALUE: Parameter = {
   confidenceInterval: [350.73792202014016, 69943.71300389578],
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/strategy/earth-optimization-prize.html",
   manualPageTitle: "The Earth Optimization Prize",
+};
+
+export const WAR_CHILDREN_KILLED_SINCE_1900: Parameter = {
+  value: 102300000.0,
+  parameterName: "WAR_CHILDREN_KILLED_SINCE_1900",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-war_children_killed_since_1900",
+  unit: "deaths",
+  displayName: "Children Killed in Wars Since 1900",
+  description: "Estimated children under 18 killed in wars, conflicts, genocides, and policy-induced famines since 1900",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "WAR_DEATHS_SINCE_1900 × WAR_CHILD_DEATH_PCT",
+  latex: "\\begin{gathered}\nDeaths_{war,child} \\\\\n= Deaths_{war,1900} \\times Pct_{war,child} \\\\\n= 310M \\times 33\\% \\\\\n= 102M\n\\end{gathered}",
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/problem/cost-of-war.html",
+  manualPageTitle: "The Cost of War",
 };
 
 export const WAR_COSTS_CUMULATIVE_20YR_CURRENT_TRAJECTORY: Parameter = {
@@ -9046,6 +9090,20 @@ export const NPV_TIME_HORIZON_YEARS: Parameter = {
   manualPageTitle: "The 1% Treaty: Harnessing Greed to Eradicate Disease",
 };
 
+export const NUCLEAR_OVERKILL_FACTOR: Parameter = {
+  value: 20.0,
+  parameterName: "NUCLEAR_OVERKILL_FACTOR",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-nuclear_overkill_factor",
+  unit: "x",
+  displayName: "Nuclear Overkill Factor",
+  description: "How many times the global nuclear arsenal can kill Earth's entire population. Based on total potential deaths from existing arsenals (~158.4B) divided by global population (~8B). See nuclear-weapon-cost-and-casualties appendix.",
+  sourceType: "definition",
+  sourceRef: "nuclear-extinction",
+  confidence: "medium",
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/strategy/declaration-of-optimization.html",
+  manualPageTitle: "Declaration of Optimization",
+};
+
 export const PEACE_DIVIDEND_CONFLICT_ELASTICITY: Parameter = {
   value: 1.0,
   parameterName: "PEACE_DIVIDEND_CONFLICT_ELASTICITY",
@@ -9457,6 +9515,22 @@ export const WAR_AVG_YEARS_LIFE_LOST_PER_DEATH: Parameter = {
   manualPageTitle: "The Cost of War",
 };
 
+export const WAR_CHILD_DEATH_PCT: Parameter = {
+  value: 0.33,
+  parameterName: "WAR_CHILD_DEATH_PCT",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-war_child_death_pct",
+  unit: "rate",
+  displayName: "Child Share of War Deaths Since 1900",
+  description: "Estimated share of war deaths since 1900 that were children under 18. Constructed from category-weighted estimates: combat ~3%, civilian ~35%, genocide ~33%, famine ~60%. Conservative aggregate ~33%. Sources: de Waal 2017 (famine child mortality), APA 2001 (civilian child share).",
+  sourceType: "definition",
+  sourceRef: "de-waal-famine-child-mortality-2018",
+  sourceUrl: "https://doi.org/10.1016/j.polgeo.2017.09.004",
+  confidence: "low",
+  confidenceInterval: [0.25, 0.4],
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/problem/cost-of-war.html",
+  manualPageTitle: "The Cost of War",
+};
+
 export const WAR_COUNTERFACTUAL_ANNUAL_GROWTH_BOOST: Parameter = {
   value: 0.026,
   parameterName: "WAR_COUNTERFACTUAL_ANNUAL_GROWTH_BOOST",
@@ -9550,6 +9624,7 @@ export const _US_BASE_POLITICAL_SPENDING: Parameter = {
 export const parameters = {
   ADAPTABLE_TRIAL_COST_PER_PATIENT,
   ADAPTABLE_TRIAL_TOTAL_COST,
+  ANNUAL_TERRORISM_DEATH_RISK_DENOMINATOR,
   ANTIDEPRESSANT_TRIAL_EXCLUSION_RATE,
   AVERAGE_MARKET_RETURN_PCT,
   BASELINE_LIVES_SAVED_ANNUAL,
@@ -9777,6 +9852,7 @@ export const parameters = {
   CONTRIBUTION_LIVES_SAVED_PER_PCT_POINT,
   CONTRIBUTION_SUFFERING_HOURS_PER_PCT_POINT,
   CONVENTIONAL_RETIREMENT_HORIZON_MULTIPLE,
+  CUMULATIVE_MILITARY_IN_GOVT_TRIAL_YEARS,
   CURRENT_COMBINATION_EXPLORATION_YEARS,
   CURRENT_KNOWN_SAFE_EXPLORATION_YEARS,
   CURRENT_PATIENT_PARTICIPATION_RATE,
@@ -10024,6 +10100,7 @@ export const parameters = {
   VOTER_SUFFERING_HOURS_PREVENTED,
   VOTE_2_CLAIMS_PAYOUT,
   VOTE_TOKEN_VALUE,
+  WAR_CHILDREN_KILLED_SINCE_1900,
   WAR_COSTS_CUMULATIVE_20YR_CURRENT_TRAJECTORY,
   WAR_COSTS_SAVED_PEACE_TRAJECTORY_20YR,
   WAR_COUNTERFACTUAL_GDP_PER_CAPITA,
@@ -10147,6 +10224,7 @@ export const parameters = {
   MONTHS_PER_YEAR,
   NPV_DISCOUNT_RATE_STANDARD,
   NPV_TIME_HORIZON_YEARS,
+  NUCLEAR_OVERKILL_FACTOR,
   PEACE_DIVIDEND_CONFLICT_ELASTICITY,
   PEACE_DIVIDEND_DIRECT_FISCAL_SAVINGS,
   PHARMA_PHASE_2_3_COST_BARRIER,
@@ -10178,6 +10256,7 @@ export const parameters = {
   US_VS_SWITZERLAND_SPENDING_GAP,
   VICTORY_BOND_FUNDING_PCT,
   WAR_AVG_YEARS_LIFE_LOST_PER_DEATH,
+  WAR_CHILD_DEATH_PCT,
   WAR_COUNTERFACTUAL_ANNUAL_GROWTH_BOOST,
   WAR_DEATHS_SINCE_1900,
   WAR_ENVIRONMENTAL_DESTRUCTION_SINCE_1900,
@@ -10517,6 +10596,20 @@ export const citations: Record<string, Citation> = {
         'container-title': "Cybersecurity Ventures: \\$10.5T Cybercrime",
         URL: "https://cybersecurityventures.com/hackerpocalypse-cybercrime-report-2016/",
         note: "Cybersecurity Ventures: \\$10.5T Cybercrime | Boise State: Cybercrime Costs",
+  },
+  "de-waal-famine-child-mortality-2018": {
+        id: "de-waal-famine-child-mortality-2018",
+        type: "article-journal",
+        title: "The End of Famine? Prospects for the Elimination of Mass Starvation by Political Action",
+        author: [
+          {
+            family: "de Waal",
+            given: "Alex"
+          },
+        ],
+        issued: { 'date-parts': [[2018]] },
+        'container-title': "Political Geography",
+        URL: "https://doi.org/10.1016/j.polgeo.2017.09.004",
   },
   "deworming-cost-per-daly": {
         id: "deworming-cost-per-daly",
@@ -11379,6 +11472,17 @@ export const citations: Record<string, Citation> = {
         ],
         note: "Estimated from major foundation budgets and activities",
   },
+  "nuclear-extinction": {
+        id: "nuclear-extinction",
+        type: "webpage",
+        title: "Nuclear Extinction Events (Estimated 10-100 winter scenarios)",
+        author: [
+          {
+            literal: "Based on FAS arsenal data and climate models"
+          },
+        ],
+        note: "Based on FAS arsenal data and climate models",
+  },
   "odds-of-decisive-vote": {
         id: "odds-of-decisive-vote",
         type: "article-journal",
@@ -12221,11 +12325,11 @@ export const citations: Record<string, Citation> = {
 
 /** Summary statistics */
 export const PARAMETER_STATS = {
-  total: 638,
-  external: 207,
-  calculated: 299,
-  definitions: 132,
-  citations: 149,
+  total: 643,
+  external: 208,
+  calculated: 301,
+  definitions: 134,
+  citations: 151,
 } as const;
 
 // ============================================================================

@@ -24,15 +24,15 @@ Governments were created to promote the general welfare.
 
 Instead, since 1900, these governments have printed {{< var cumulative_military_spending_fed_era >}} out of nothing and used it to murder {{< var war_deaths_since_1900 >}} and destroy many of the valuable things those humans spent their entire lives building.
 
-These murdered humans include approximately 930,000 physicians, 310,000 scientists, 620,000 engineers, and millions of children who will never grow up to replace them.
+These murdered humans include approximately 930,000 physicians, 310,000 scientists, 620,000 engineers, and {{< var war_children_killed_since_1900 >}} who will never grow up to replace them.
 
-That {{< var cumulative_military_spending_fed_era >}} could have funded 2,833 years of clinical trials at current spending.
+That {{< var cumulative_military_spending_fed_era >}} could have funded {{< var cumulative_military_in_govt_trial_years >}} of clinical trials at current government spending.
 
-These governments currently have enough weapons to murder every man, woman, and child on earth 13 times over, when once should be more than sufficient.
+These governments currently have enough weapons to murder every man, woman, and child on earth {{< var nuclear_overkill_factor >}} over, when once should be more than sufficient.
 
-Yet today they spend {{< var military_to_government_clinical_trials_spending_ratio >}} dollars on weapons for every dollar they spend on clinical trials to treat and cure disease.
+Yet despite this clearly adequate apocalypse capacity, they still spend {{< var military_to_government_clinical_trials_spending_ratio >}} dollars on weapons for every dollar they spend on clinical trials to treat and cure disease.
 
-Your chance of being killed by a terrorist? 1 in 30 million. Your chance of dying of a disease? 100%.
+Your chance of being killed by a terrorist? 1 in {{< var annual_terrorism_death_risk_denominator_nounit >}}. Your chance of dying of a disease? 100%.
 
 Had someone properly aligned your governments to maximize median healthy life years and median after-tax inflation-adjusted income in 1900, you would be {{< var war_counterfactual_income_multiple >}} richer today and significantly less diseased.
 

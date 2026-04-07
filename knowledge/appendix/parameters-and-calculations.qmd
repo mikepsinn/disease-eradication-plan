@@ -38,15 +38,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 638 parameters used in the analysis, organized by type:
+This appendix documents all 643 parameters used in the analysis, organized by type:
 
-- External sources (peer-reviewed): 207
-- Calculated values: 299
-- Core definitions: 132
+- External sources (peer-reviewed): 208
+- Calculated values: 301
+- Core definitions: 134
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (299 parameters) • [External Data Sources](#sec-external) (207 parameters) • [Core Definitions](#sec-definitions) (132 parameters)
+[Calculated Values](#sec-calculated) (301 parameters) • [External Data Sources](#sec-external) (208 parameters) • [Core Definitions](#sec-definitions) (134 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -2142,6 +2142,48 @@ $$
 
 :::
 
+### Military Spending in Government Clinical Trial Years: 37.8 thousand years {#sec-cumulative_military_in_govt_trial_years}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Cumulative military spending since 1913 expressed in equivalent years of government clinical trial spending ($170T / $4.5B per year)
+
+**Inputs**:
+
+- [Cumulative Military Spending (Fed Era)](#sec-cumulative_military_spending_fed_era): $170T
+- [Annual Global Government Spending on Clinical Trials](#sec-global_government_clinical_trials_spending_annual) 📊: $4.5B (95% CI: $3B - $6B)
+
+$$
+\begin{gathered}
+Years_{mil \to trials,gov} \\
+= \frac{Spending_{mil,cum,fed}}{Spending_{trials,gov}} \\
+= \frac{\$170T}{\$4.5B} \\
+= 37{,}800
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-cumulative_military_in_govt_trial_years.qmd >}}
+
+{{< include ../figures/sensitivity-table-cumulative_military_in_govt_trial_years.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-cumulative_military_in_govt_trial_years.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-cumulative_military_in_govt_trial_years.qmd >}}
+
+**Used in:**
+
+- [Declaration of Optimization](../strategy/declaration-of-optimization.html)
+
+:::
+
 ### Combination Therapy Exploration Time (Current): 13.7 million years {#sec-current_combination_exploration_years}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -2635,7 +2677,6 @@ $$
 - [Treaty Feasibility & Cost Analysis](../appendix/treaty-feasibility.html)
 - [The Initiating Node Memo](../strategy/initiating-node-memo.html)
 - [Earth Optimization Prize 90-Day Pilot](../grant-proposal/earth-optimization-prize-90-day-pilot.html)
-- [Declaration of Optimization](../strategy/declaration-of-optimization.html)
 - [Earth Optimization Protocol v1](../strategy/earth-optimization-protocol-v1.html)
 - [The Earth Optimization Prize](../strategy/earth-optimization-prize.html)
 
@@ -7571,6 +7612,7 @@ $$
 
 - [The Invisible Graveyard: Quantifying the Mortality Cost of FDA Efficacy Lag](../appendix/invisible-graveyard.html)
 - [The Continuous Evidence Generation Protocol: Two-Stage Validation (RWE → Pragmatic Trials)](../appendix/dfda-spec-paper.html)
+- [Declaration of Optimization](../strategy/declaration-of-optimization.html)
 - [The Planetary Constitutional Convention](../strategy/planetary-constitutional-convention.html)
 - [The Earth Optimization Prize](../strategy/earth-optimization-prize.html)
 
@@ -8547,6 +8589,7 @@ $$
 - [The Cost of War](../problem/cost-of-war.html)
 - [Your Personal Benefits](../call-to-action/your-personal-benefits.html)
 - [The Earth Optimization Prize](../strategy/earth-optimization-prize.html)
+- [Declaration of Optimization](../strategy/declaration-of-optimization.html)
 
 :::
 
@@ -8735,7 +8778,6 @@ $$
 - [Global Referendum Strategy](../strategy/global-referendum.html)
 - [The Earth Optimization Prize](../strategy/earth-optimization-prize.html)
 - [Earth Optimization Protocol v1](../strategy/earth-optimization-protocol-v1.html)
-- [Declaration of Optimization](../strategy/declaration-of-optimization.html)
 
 :::
 
@@ -8887,7 +8929,6 @@ $$
 
 **Used in:**
 
-- [Declaration of Optimization](../strategy/declaration-of-optimization.html)
 - [The Earth Optimization Prize](../strategy/earth-optimization-prize.html)
 - [About This Manual](../appendix/back-cover.html)
 
@@ -10117,10 +10158,6 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-misallocation_factor_death_vs_saving.qmd >}}
-
-**Used in:**
-
-- [Declaration of Optimization](../strategy/declaration-of-optimization.html)
 
 :::
 
@@ -20780,6 +20817,7 @@ $$
 - [The 1% Treaty: Harnessing Greed to Eradicate Disease](../economics/1-pct-treaty-impact.html)
 - [Ubiquitous Pragmatic Trial Impact Analysis: How to Prevent a Year of Death and Suffering for 84 Cents](../appendix/dfda-impact-paper.html)
 - [Frequently Asked Objections](../appendix/faq.html)
+- [Declaration of Optimization](../strategy/declaration-of-optimization.html)
 - [Earth Optimization Protocol v1](../strategy/earth-optimization-protocol-v1.html)
 
 :::
@@ -22229,7 +22267,6 @@ $$
 
 **Used in:**
 
-- [Declaration of Optimization](../strategy/declaration-of-optimization.html)
 - [Conclusion](../appendix/conclusion.html)
 - [About This Manual](../appendix/back-cover.html)
 
@@ -22376,7 +22413,6 @@ $$
 
 **Used in:**
 
-- [Declaration of Optimization](../strategy/declaration-of-optimization.html)
 - [Conclusion](../appendix/conclusion.html)
 - [About This Manual](../appendix/back-cover.html)
 
@@ -22598,6 +22634,39 @@ $$
 **Used in:**
 
 - [The Earth Optimization Prize](../strategy/earth-optimization-prize.html)
+
+:::
+
+### Children Killed in Wars Since 1900: 102 million deaths {#sec-war_children_killed_since_1900}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Estimated children under 18 killed in wars, conflicts, genocides, and policy-induced famines since 1900
+
+**Inputs**:
+
+- [Total War and Conflict Deaths Since 1900](#sec-war_deaths_since_1900): 310 million deaths (95% CI: 200 million deaths - 340 million deaths)
+- [Child Share of War Deaths Since 1900](#sec-war_child_death_pct): 33% (95% CI: 25% - 40%)
+
+$$
+\begin{gathered}
+Deaths_{war,child} \\
+= Deaths_{war,1900} \times Pct_{war,child} \\
+= 310M \times 33\% \\
+= 102M
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-war_children_killed_since_1900.qmd >}}
+
+**Used in:**
+
+- [The Cost of War](../problem/cost-of-war.html)
+- [Declaration of Optimization](../strategy/declaration-of-optimization.html)
 
 :::
 
@@ -22895,6 +22964,7 @@ $$
 **Used in:**
 
 - [The Cost of War](../problem/cost-of-war.html)
+- [Declaration of Optimization](../strategy/declaration-of-optimization.html)
 - [The Earth Optimization Prize](../strategy/earth-optimization-prize.html)
 
 :::
@@ -22957,6 +23027,7 @@ $$
 **Used in:**
 
 - [The Cost of War](../problem/cost-of-war.html)
+- [Declaration of Optimization](../strategy/declaration-of-optimization.html)
 - [The Earth Optimization Prize](../strategy/earth-optimization-prize.html)
 
 :::
@@ -23121,6 +23192,7 @@ $$
 **Used in:**
 
 - [The Cost of War](../problem/cost-of-war.html)
+- [Declaration of Optimization](../strategy/declaration-of-optimization.html)
 
 :::
 
@@ -25922,6 +25994,26 @@ PCORI grant for ADAPTABLE trial (2016-2019). Note: Direct funding only; total co
 
 :::
 
+### Annual Terrorism Death Risk (1 in X): 30 million people {#sec-annual_terrorism_death_risk_denominator}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual probability of being killed by terrorism expressed as '1 in X'. An American's annual odds of dying in a terrorist attack are approximately 1 in 30 million.
+
+**Source**: [@chance-of-dying-from-terrorism-1-in-30m]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*✓ High confidence*
+
+**Used in:**
+
+- [Declaration of Optimization](../strategy/declaration-of-optimization.html)
+
+:::
+
 ### Antidepressant Trial Exclusion Rate: 86.1% {#sec-antidepressant_trial_exclusion_rate}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -26425,7 +26517,6 @@ Annual defense industry lobbying spending
 - [Wishocracy](../solution/wishocracy.html)
 - [Aligning Incentives](../solution/aligning-incentives.html)
 - [Incentive Alignment Bonds](../solution/incentive-alignment-bonds.html)
-- [Declaration of Optimization](../strategy/declaration-of-optimization.html)
 - [Peace Dividend](../economics/peace-dividend.html)
 
 :::
@@ -26455,7 +26546,6 @@ Total people murdered by governments worldwide, 1900-1999 (Rummel's democide est
 **Used in:**
 
 - [The Cost of War](../problem/cost-of-war.html)
-- [Declaration of Optimization](../strategy/declaration-of-optimization.html)
 
 :::
 
@@ -27064,7 +27154,6 @@ Annual deaths from all diseases and aging globally
 - [Optimocracy: The Evidence Machine](../solution/optimocracy.html)
 - [The Cautionary Tale of Moronia](../futures/moronia.html)
 - [Frequently Asked Objections](../appendix/faq.html)
-- [Declaration of Optimization](../strategy/declaration-of-optimization.html)
 - [The 1% Treaty: Harnessing Greed to Eradicate Disease](../economics/1-pct-treaty-impact.html)
 - [Incentive Alignment Bonds: Making Public Goods Financially and Politically Profitable](../appendix/incentive-alignment-bonds-paper.html)
 - [The Continuous Evidence Generation Protocol: Two-Stage Validation (RWE → Pragmatic Trials)](../appendix/dfda-spec-paper.html)
@@ -32398,7 +32487,6 @@ Modeled end-state global coordination target: half of humanity visibly supports 
 **Used in:**
 
 - [Global Referendum Strategy](../strategy/global-referendum.html)
-- [Declaration of Optimization](../strategy/declaration-of-optimization.html)
 - [Earth Optimization Protocol v1](../strategy/earth-optimization-protocol-v1.html)
 - [The Earth Optimization Prize](../strategy/earth-optimization-prize.html)
 
@@ -32630,7 +32718,6 @@ Cumulative deaths from 6 wars funded by money printing: Napoleonic (5M), Civil W
 
 - [Money Comes From a Building and They Use It to Kill People](../economics/central-banks.html)
 - [The Cost of War](../problem/cost-of-war.html)
-- [Declaration of Optimization](../strategy/declaration-of-optimization.html)
 - [The Earth Optimization Prize](../strategy/earth-optimization-prize.html)
 - [Algorithmic Public Administration](../appendix/algorithmic-public-administration-paper.html)
 
@@ -32679,6 +32766,24 @@ Standard time horizon for NPV analysis
 **Used in:**
 
 - [The 1% Treaty: Harnessing Greed to Eradicate Disease](../economics/1-pct-treaty-impact.html)
+
+:::
+
+### Nuclear Overkill Factor: 20x {#sec-nuclear_overkill_factor}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+How many times the global nuclear arsenal can kill Earth's entire population. Based on total potential deaths from existing arsenals (~158.4B) divided by global population (~8B). See nuclear-weapon-cost-and-casualties appendix.
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*Core definition*
+
+**Used in:**
+
+- [Declaration of Optimization](../strategy/declaration-of-optimization.html)
 
 :::
 
@@ -33315,6 +33420,32 @@ Average years of life lost per war/conflict death. Based on avg age at death ~28
 
 :::
 
+### Child Share of War Deaths Since 1900: 33% {#sec-war_child_death_pct}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Estimated share of war deaths since 1900 that were children under 18. Constructed from category-weighted estimates: combat ~3%, civilian ~35%, genocide ~33%, famine ~60%. Conservative aggregate ~33%. Sources: de Waal 2017 (famine child mortality), APA 2001 (civilian child share).
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [25%, 40%] • Distribution: Uniform
+
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between 25% and 40% (±23%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The uniform distribution means any value in the range is equally likely.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-war_child_death_pct.qmd >}}
+
+*Core definition*
+
+**Used in:**
+
+- [The Cost of War](../problem/cost-of-war.html)
+
+:::
+
 ### Peace Growth Boost (8 Channels, Overlap-Corrected): 2.6% {#sec-war_counterfactual_annual_growth_boost}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -33360,6 +33491,7 @@ Total deaths from wars, conflicts, genocides, and policy-induced famines since 1
 **Used in:**
 
 - [The Cost of War](../problem/cost-of-war.html)
+- [Declaration of Optimization](../strategy/declaration-of-optimization.html)
 
 :::
 
