@@ -36,14 +36,6 @@ We hold these truths to be self-evident, that all humans are created equal, that
 
 They have refused their Assent to Laws, the most wholesome and necessary for the public good; the correlation between public opinion and policy outcomes, measured across 1,779 policy decisions, is zero percent.
 
-They have forbidden their Governors to pass Laws of immediate and pressing importance, unless suspended in their operation till their Assent should be obtained; and when so suspended, they have utterly neglected to attend to them.
-
-They have refused to pass other Laws for the accommodation of large districts of people, unless those people would relinquish the right of Representation in the Legislature, a right inestimable to them and formidable to tyrants only.
-
-They have dissolved Representative Houses repeatedly, for opposing with manly firmness their invasions on the rights of the people; and have refused for a long time, after such dissolutions, to cause others to be elected.
-
-They have obstructed the Administration of Justice, by refusing their Assent to Laws for establishing Judiciary powers.
-
 They have made Judges dependent on their Will alone, for the tenure of their offices, and the amount and payment of their salaries.
 
 They have erected a multitude of New Offices, and sent hither swarms of Officers to harrass our people, and eat out their substance.
@@ -52,15 +44,11 @@ They have kept among us, in times of peace, Standing Armies without the Consent 
 
 They have affected to render the Military independent of and superior to the Civil power.
 
-They have combined with others to subject us to a jurisdiction foreign to our constitution, and unacknowledged by our laws; giving their Assent to Acts of pretended Legislation:
-
 For protecting them, by a mock Trial, from punishment for any Murders which they should commit on the Inhabitants of this planet:
 
 For cutting off our Trade with all parts of the world:
 
 For imposing Taxes on us without our Consent, including the debasement of our currency by unelected officials whose money creation functions as a tax the governed never voted for:
-
-For depriving us in many cases, of the benefits of Trial by Jury:
 
 For transporting us beyond Seas to be tried for pretended offences:
 
@@ -68,13 +56,9 @@ For taking away our Charters, abolishing our most valuable Laws, and altering fu
 
 For suspending our own Legislatures, and declaring themselves invested with power to legislate for us in all cases whatsoever.
 
-They have abdicated Government here, by declaring us out of their Protection and waging War against us.
-
 They have plundered our seas, ravaged our coasts, burnt our towns, and destroyed the lives of our people: {{< var war_deaths_since_1900 >}} since 1900, {{< var war_life_years_lost_since_1900 >}} of human life stolen, {{< var cumulative_military_spending_fed_era >}} in treasure spent on the enterprise, among them approximately 930,000 physicians, 310,000 scientists, 620,000 engineers, and millions of children who will never grow up to replace them.
 
 They have constrained our fellow Citizens to bear Arms against their Country, to become the executioners of their friends and Brethren, or to fall themselves by their Hands.
-
-They have excited domestic insurrections amongst us, and have endeavoured to set the inhabitants of every nation against one another.
 
 They have legalized the purchase of legislation at a current annual price of {{< var us_total_lobbying_annual >}}, the legal definition of corruption having been written by the beneficiaries of said corruption.
 
@@ -98,7 +82,7 @@ They have permitted {{< var global_disease_deaths_daily >}} to die of diseases w
 
 They have operated a National Institutes of Health that has spent one trillion dollars since 1970 and cured zero diseases, directing only {{< var nih_clinical_trials_spending_pct >}} of its budget to the clinical trials where treatments are tested in humans.
 
-They have erected a Food and Drug Administration whose regulations increased drug development costs by a factor of {{< var dfda_trial_cost_reduction_factor >}} and timelines to seventeen years, while its safety system produces {{< var type_ii_error_cost_ratio >}} deaths from delayed treatments for every one death it prevents.
+They have erected a Food and Drug Administration whose regulations increased drug development costs by a factor of {{< var dfda_trial_cost_reduction_factor >}} and timelines to seventeen years, producing {{< var type_ii_error_cost_ratio >}} deaths from delayed treatments for every one death it prevents, the cumulative toll of the efficacy delay since 1962 being approximately {{< var existing_drugs_efficacy_lag_deaths_total >}}.
 
 They have left approximately seven thousand known rare diseases in a treatment queue that, at the current rate of fifteen approvals per year, requires {{< var status_quo_queue_clearance_years >}} to clear.
 
