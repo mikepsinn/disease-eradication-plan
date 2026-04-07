@@ -11,9 +11,12 @@ image: /assets/og-images/knowledge/appendix/global-government-medical-research-s
 podcast-image: /assets/podcast/global-government-medical-research-spending-podcast.jpg
 youtube-thumbnail: /assets/podcast/global-government-medical-research-spending-youtube.jpg
 scores:
-  quality: 7
-  value: 8
+  quality: 6
+  value: 7
   timeliness: 7
+  standalone: 8
+  voice: 7
+  importance: 6
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 Here is the complete accounting of humanity's commitment to curing disease. Spoiler: It's largely an accounting trick.

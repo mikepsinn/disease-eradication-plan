@@ -14,9 +14,12 @@ podcast-image: /assets/podcast/wishonia-podcast.jpg
 feed-date: '2026-03-11'
 youtube-thumbnail: /assets/podcast/wishonia-youtube.jpg
 scores:
-  quality: 8
-  value: 8
-  timeliness: 8
+  quality: 7
+  value: 7
+  timeliness: 7
+  standalone: 5
+  voice: 9
+  importance: 7
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 

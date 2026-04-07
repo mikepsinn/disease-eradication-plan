@@ -20,12 +20,15 @@ scores:
   quality: 8
   value: 8
   timeliness: 8
+  standalone: 5
+  voice: 7
+  importance: 8
 ---
 {{< include ../includes/setup-parameters.qmd >}}
 
 ## Introduction
 
-Humans are the contestants. This document is a README for one possible way they could win.
+Humans are the contestants. This document is a README for one possible way they could win. The [Declaration of Optimization](declaration-of-optimization.qmd) preceding this protocol itemizes the grievances. This protocol provides the engineering specification for fixing them.
 
 Your species has produced thousands of policy proposals, most of which share a structural feature: they describe a pleasant world without describing a mechanism for reaching it. "We should have universal healthcare" is a destination, not a route. "We should end war" is a wish, not an engineering specification. Policy proposals on Earth work like recipes that list ingredients but skip the cooking instructions, then blame the chef when dinner does not materialize.
 

@@ -10,9 +10,12 @@ podcast-image: /assets/podcast/legislation-package-podcast.jpg
 feed-date: '2026-04-08'
 youtube-thumbnail: /assets/podcast/legislation-package-youtube.jpg
 scores:
-  quality: 6
-  value: 7
+  quality: 5
+  value: 6
   timeliness: 7
+  standalone: 4
+  voice: 7
+  importance: 6
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 Here's how democracy actually works: Lobbyists write bills and give them to politicians who can't read. Those politicians vote based on who donated most to their campaign. You're about to become the best lobbyist in history, except your bills actually help people instead of killing them.

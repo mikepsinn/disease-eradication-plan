@@ -21,9 +21,12 @@ youtube-thumbnail: /assets/podcast/wishocratic-investment-fund-youtube.jpg
 aliases:
   - /knowledge/economics/wishocratic-investment-fund.html
 scores:
-  quality: 7
-  value: 7
-  timeliness: 7
+  quality: 5
+  value: 5
+  timeliness: 6
+  standalone: 5
+  voice: 6
+  importance: 6
 ---
 {{< include ../includes/setup-parameters.qmd >}}
 

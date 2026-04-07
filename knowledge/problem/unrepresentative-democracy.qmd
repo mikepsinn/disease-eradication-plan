@@ -17,6 +17,9 @@ scores:
   quality: 7
   value: 7
   timeliness: 7
+  standalone: 7
+  voice: 8
+  importance: 6
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 Correlation between public opinion and policy outcomes: 0%.

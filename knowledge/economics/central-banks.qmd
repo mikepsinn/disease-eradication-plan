@@ -13,9 +13,12 @@ podcast-image: /assets/podcast/central-banks-podcast.jpg
 feed-date: '2026-03-08'
 youtube-thumbnail: /assets/podcast/central-banks-youtube.jpg
 scores:
-  quality: 9
-  value: 8
-  timeliness: 9
+  quality: 8
+  value: 9
+  timeliness: 8
+  standalone: 10
+  voice: 10
+  importance: 7
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 Dollar purchasing power retained since 1913: 4%. Unpopular wars funded without democratic consent: all of them. This is a systems analysis.

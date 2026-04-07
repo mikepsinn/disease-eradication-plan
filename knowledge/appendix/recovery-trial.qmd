@@ -13,9 +13,12 @@ podcast-image: /assets/podcast/recovery-trial-podcast.jpg
 feed-date: '2026-03-20'
 youtube-thumbnail: /assets/podcast/recovery-trial-youtube.jpg
 scores:
-  quality: 8
+  quality: 7
   value: 8
   timeliness: 8
+  standalone: 8
+  voice: 7
+  importance: 6
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 The Oxford RECOVERY trial isn't theory. It's proof.

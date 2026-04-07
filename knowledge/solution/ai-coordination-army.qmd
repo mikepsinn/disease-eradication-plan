@@ -9,6 +9,9 @@ scores:
   quality: 7
   value: 7
   timeliness: 8
+  standalone: 4
+  voice: 7
+  importance: 5
 ---
 
 You've got mission control, a network of [Decentralized Institutes of Health](dih.qmd) ([DIH](dih.qmd)), and a targeting system ([Wishocracy](wishocracy.qmd) [@wishocracy-paper-2025]). Now you need an army of AI agents to do the work. Humans are sleeping, arguing on Twitter, or attending conferences that accomplish nothing.

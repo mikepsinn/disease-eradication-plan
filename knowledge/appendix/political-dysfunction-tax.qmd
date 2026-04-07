@@ -45,9 +45,12 @@ image: /assets/og-images/knowledge/appendix/political-dysfunction-tax-og-retro-a
 podcast-image: /assets/podcast/political-dysfunction-tax-podcast.jpg
 youtube-thumbnail: /assets/podcast/political-dysfunction-tax-youtube.jpg
 scores:
-  quality: 8
-  value: 8
+  quality: 7
+  value: 7
   timeliness: 8
+  standalone: 7
+  voice: 4
+  importance: 7
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 

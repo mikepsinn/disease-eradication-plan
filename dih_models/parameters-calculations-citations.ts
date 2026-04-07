@@ -5137,8 +5137,8 @@ export const GLOBAL_DISEASE_DEATHS_PER_MINUTE: Parameter = {
   formula: "GLOBAL_DISEASE_DEATHS_DAILY / 1440",
   latex: "\\begin{gathered}\nDeaths_{disease,min} \\\\\n= Deaths_{disease,daily} \\times 0.000694 \\\\\n= 150{,}000 \\times 0.000694 \\\\\n= 104\n\\end{gathered}",
   confidenceInterval: [95.44742975347027, 112.72260414210108],
-  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/strategy/earth-optimization-prize.html",
-  manualPageTitle: "The Earth Optimization Prize",
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/strategy/declaration-of-optimization.html",
+  manualPageTitle: "Declaration of Optimization",
 };
 
 export const GLOBAL_DISEASE_ECONOMIC_BURDEN_ANNUAL: Parameter = {
@@ -5435,6 +5435,8 @@ export const MISALLOCATION_FACTOR_DEATH_VS_SAVING: Parameter = {
   formula: "COST_PER_DEATH ÷ COST_PER_LIFE_SAVED",
   latex: "\\begin{gathered}\nk_{misalloc} = \\frac{Cost_{war,total}}{Deaths_{conflict} \\times Cost_{life,RD}} = \\frac{\\$11.4T}{245{,}000 \\times \\$16.1K} = 2{,}890\n\\\\[0.5em]\n\\text{where } Deaths_{conflict} = Deaths_{combat} + Deaths_{state} + Deaths_{terror} = 234{,}000 + 2{,}700 + 8{,}300 = 245{,}000\n\\\\[0.5em]\n\\text{where } Cost_{war,total} = Cost_{war,direct} + Cost_{war,indirect} = \\$7.66T + \\$3.7T = \\$11.4T\n\\\\[0.5em]\n\\text{where } Cost_{war,direct} = Loss_{life,conflict} + Damage_{infra,total} + Disruption_{trade} + Spending_{mil} = \\$2.45T + \\$1.88T + \\$616B + \\$2.72T = \\$7.66T\n\\\\[0.5em]\n\\text{where } Loss_{life,conflict} = Cost_{combat,human} + Cost_{state,human} + Cost_{terror,human} = \\$2.34T + \\$27B + \\$83B = \\$2.45T\n\\\\[0.5em]\n\\text{where } Cost_{combat,human} = Deaths_{combat} \\times VSL = 234{,}000 \\times \\$10M = \\$2.34T\n\\\\[0.5em]\n\\text{where } Cost_{state,human} = Deaths_{state} \\times VSL = 2{,}700 \\times \\$10M = \\$27B\n\\\\[0.5em]\n\\text{where } Cost_{terror,human} = Deaths_{terror} \\times VSL = 8{,}300 \\times \\$10M = \\$83B\n\\\\[0.5em]\n\\text{where } Damage_{infra,total} = Damage_{comms} + Damage_{edu} + Damage_{energy} + Damage_{health} + Damage_{transport} + Damage_{water} = \\$298B + \\$234B + \\$422B + \\$166B + \\$487B + \\$268B = \\$1.88T\n\\\\[0.5em]\n\\text{where } Disruption_{trade} = Disruption_{currency} + Disruption_{energy} + Disruption_{shipping} + Disruption_{supply} = \\$57.4B + \\$125B + \\$247B + \\$187B = \\$616B\n\\\\[0.5em]\n\\text{where } Cost_{war,indirect} = Damage_{env} + Loss_{growth,mil} + Loss_{capital,conflict} + Cost_{psych} + Cost_{refugee} + Cost_{vet} = \\$100B + \\$2.72T + \\$300B + \\$232B + \\$150B + \\$200B = \\$3.7T\n\\\\[0.5em]\n\\text{where } Cost_{life,RD} = \\frac{Spending_{RD}}{Lives_{RD,ann}} = \\frac{\\$67.5B}{4.2M} = \\$16.1K\n\\end{gathered}",
   confidenceInterval: [2483.0304081542563, 3321.5699678139463],
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/strategy/declaration-of-optimization.html",
+  manualPageTitle: "Declaration of Optimization",
 };
 
 export const MRNA_THERAPEUTIC_COMBINATIONS: Parameter = {
@@ -7311,8 +7313,8 @@ export const VOTER_LIVES_SAVED: Parameter = {
   formula: "DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_LIVES_SAVED ÷ TREATY_CAMPAIGN_VOTING_BLOC_TARGET",
   latex: "\\begin{gathered}\nLives_{voter} = \\frac{Lives_{max}}{N_{voters,target}} = \\frac{10.7B}{280M} = 38.4\n\\\\[0.5em]\n\\text{where } Lives_{max} = Deaths_{disease,daily} \\times T_{accel,max} \\times 338 = 150{,}000 \\times 212 \\times 338 = 10.7B\n\\\\[0.5em]\n\\text{where } T_{accel,max} = T_{accel} + T_{lag} = 204 + 8.2 = 212\n\\\\[0.5em]\n\\text{where } T_{accel} = T_{first,SQ} \\times \\left(1 - \\frac{1}{k_{capacity}}\\right) = 222 \\times \\left(1 - \\frac{1}{12.3}\\right) = 204\n\\\\[0.5em]\n\\text{where } T_{first,SQ} = T_{queue,SQ} \\times 0.5 = 443 \\times 0.5 = 222\n\\\\[0.5em]\n\\text{where } T_{queue,SQ} = \\frac{N_{untreated}}{Treatments_{new,ann}} = \\frac{6{,}650}{15} = 443\n\\\\[0.5em]\n\\text{where } N_{untreated} = N_{rare} \\times 0.95 = 7{,}000 \\times 0.95 = 6{,}650\n\\\\[0.5em]\n\\text{where } k_{capacity} = \\frac{N_{fundable,dFDA}}{Slots_{curr}} = \\frac{23.4M}{1.9M} = 12.3\n\\\\[0.5em]\n\\text{where } N_{fundable,dFDA} = \\frac{Subsidies_{dFDA,ann}}{Cost_{pragmatic,pt}} = \\frac{\\$21.8B}{\\$929} = 23.4M\n\\\\[0.5em]\n\\text{where } Subsidies_{dFDA,ann} = Funding_{dFDA,ann} - OPEX_{dFDA} = \\$21.8B - \\$40M = \\$21.8B\n\\\\[0.5em]\n\\text{where } OPEX_{dFDA} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \\$15M + \\$10M + \\$8M + \\$5M + \\$2M = \\$40M\n\\\\[0.5em]\n\\text{where } N_{voters,target} = Pop_{global} \\times Threshold_{activism} = 8B \\times 3.5\\% = 280M\n\\end{gathered}",
   confidenceInterval: [11.58178061150307, 195.44109724189255],
-  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/conclusion.html",
-  manualPageTitle: "Conclusion",
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/strategy/declaration-of-optimization.html",
+  manualPageTitle: "Declaration of Optimization",
 };
 
 export const VOTER_SUFFERING_HOURS_PREVENTED: Parameter = {
@@ -7327,8 +7329,8 @@ export const VOTER_SUFFERING_HOURS_PREVENTED: Parameter = {
   formula: "DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_SUFFERING_HOURS ÷ TREATY_CAMPAIGN_VOTING_BLOC_TARGET",
   latex: "\\begin{gathered}\nHours_{suffer,voter} = \\frac{Hours_{suffer,max}}{N_{voters,target}} = \\frac{1930T}{280M} = 6.9M\n\\\\[0.5em]\n\\text{where } Hours_{suffer,max} = DALYs_{max} \\times Pct_{YLD} \\times 8760 = 565B \\times 0.39 \\times 8760 = 1930T\n\\\\[0.5em]\n\\text{where } DALYs_{max} = DALYs_{global,ann} \\times Pct_{avoid,DALY} \\times T_{accel,max} = 2.88B \\times 92.6\\% \\times 212 = 565B\n\\\\[0.5em]\n\\text{where } T_{accel,max} = T_{accel} + T_{lag} = 204 + 8.2 = 212\n\\\\[0.5em]\n\\text{where } T_{accel} = T_{first,SQ} \\times \\left(1 - \\frac{1}{k_{capacity}}\\right) = 222 \\times \\left(1 - \\frac{1}{12.3}\\right) = 204\n\\\\[0.5em]\n\\text{where } T_{first,SQ} = T_{queue,SQ} \\times 0.5 = 443 \\times 0.5 = 222\n\\\\[0.5em]\n\\text{where } T_{queue,SQ} = \\frac{N_{untreated}}{Treatments_{new,ann}} = \\frac{6{,}650}{15} = 443\n\\\\[0.5em]\n\\text{where } N_{untreated} = N_{rare} \\times 0.95 = 7{,}000 \\times 0.95 = 6{,}650\n\\\\[0.5em]\n\\text{where } k_{capacity} = \\frac{N_{fundable,dFDA}}{Slots_{curr}} = \\frac{23.4M}{1.9M} = 12.3\n\\\\[0.5em]\n\\text{where } N_{fundable,dFDA} = \\frac{Subsidies_{dFDA,ann}}{Cost_{pragmatic,pt}} = \\frac{\\$21.8B}{\\$929} = 23.4M\n\\\\[0.5em]\n\\text{where } Subsidies_{dFDA,ann} = Funding_{dFDA,ann} - OPEX_{dFDA} = \\$21.8B - \\$40M = \\$21.8B\n\\\\[0.5em]\n\\text{where } OPEX_{dFDA} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \\$15M + \\$10M + \\$8M + \\$5M + \\$2M = \\$40M\n\\\\[0.5em]\n\\text{where } N_{voters,target} = Pop_{global} \\times Threshold_{activism} = 8B \\times 3.5\\% = 280M\n\\end{gathered}",
   confidenceInterval: [2229776.9469145937, 29662948.8293267],
-  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/conclusion.html",
-  manualPageTitle: "Conclusion",
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/strategy/declaration-of-optimization.html",
+  manualPageTitle: "Declaration of Optimization",
 };
 
 export const VOTE_2_CLAIMS_PAYOUT: Parameter = {

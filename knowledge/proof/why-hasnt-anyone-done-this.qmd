@@ -15,6 +15,9 @@ scores:
   quality: 8
   value: 8
   timeliness: 8
+  standalone: 3
+  voice: 7
+  importance: 7
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 You've seen the numbers. Each component works. The precedents are real. The math checks out. So your next thought, if you're paying attention, is: "If this is so obvious, why hasn't someone smarter done it already?"

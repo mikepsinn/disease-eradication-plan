@@ -16,6 +16,9 @@ scores:
   quality: 8
   value: 9
   timeliness: 9
+  standalone: 6
+  voice: 8
+  importance: 9
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 I have been watching your species fight disease for 80 years, and I want to describe what I see, because I think if you saw it from the outside you would be embarrassed.

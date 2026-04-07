@@ -19,6 +19,9 @@ scores:
   quality: 7
   value: 7
   timeliness: 7
+  standalone: 6
+  voice: 9
+  importance: 8
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 Politicians can ignore protests. They can ignore polls. They can ignore reality for surprisingly long periods (see: climate change, 1970-present).

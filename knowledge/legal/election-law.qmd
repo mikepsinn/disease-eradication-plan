@@ -10,9 +10,12 @@ podcast-image: /assets/podcast/election-law-podcast.jpg
 feed-date: '2026-04-07'
 youtube-thumbnail: /assets/podcast/election-law-youtube.jpg
 scores:
-  quality: 5
-  value: 6
+  quality: 4
+  value: 5
   timeliness: 6
+  standalone: 5
+  voice: 6
+  importance: 5
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 It's perfectly legal to buy politicians. You just have to use the right forms. The Supreme Court decided that money equals speech (Citizens United, 2010). That means billionaires speak louder than you.

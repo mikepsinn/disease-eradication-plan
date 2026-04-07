@@ -13,9 +13,12 @@ podcast-image: /assets/podcast/investor-risk-analysis-podcast.jpg
 feed-date: '2026-04-10'
 youtube-thumbnail: /assets/podcast/investor-risk-analysis-youtube.jpg
 scores:
-  quality: 7
-  value: 6
+  quality: 5
+  value: 5
   timeliness: 7
+  standalone: 3
+  voice: 7
+  importance: 5
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 Your investors will ask: "Is this riskier than a normal startup investment?" The answer is no. The risk isn't greater; it's fundamentally _different_. And different, here, means better.

@@ -16,6 +16,9 @@ scores:
   quality: 8
   value: 8
   timeliness: 8
+  standalone: 7
+  voice: 9
+  importance: 8
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 "Getting 195 countries to agree costs billions and takes forever."

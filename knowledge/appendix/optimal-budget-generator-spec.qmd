@@ -65,8 +65,11 @@ podcast-image: /assets/podcast/optimal-budget-generator-spec-podcast.jpg
 youtube-thumbnail: /assets/podcast/optimal-budget-generator-spec-youtube.jpg
 scores:
   quality: 7
-  value: 7
+  value: 6
   timeliness: 7
+  standalone: 4
+  voice: 4
+  importance: 8
 ---
 
 {{< include ../includes/setup-parameters.qmd >}}

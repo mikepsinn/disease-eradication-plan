@@ -3,9 +3,12 @@ title: "Department of Peace"
 description: "War is a negative-sum game and the spreadsheet agrees. Wishonia's replacement for the Department of Defense requires zero lines of code."
 published: true
 scores:
-  quality: 6
-  value: 6
+  quality: 5
+  value: 5
   timeliness: 7
+  standalone: 6
+  voice: 7
+  importance: 5
 ---
 {{< include ../includes/setup-parameters.qmd >}}
 

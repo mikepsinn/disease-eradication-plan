@@ -5,9 +5,12 @@ description: Reusable outreach email templates for institutions considering whet
 podcast-image: /assets/podcast/institution-outreach-email-podcast.jpg
 youtube-thumbnail: /assets/podcast/institution-outreach-email-youtube.jpg
 scores:
-  quality: 4
-  value: 3
+  quality: 3
+  value: 2
   timeliness: 5
+  standalone: 2
+  voice: 2
+  importance: 2
 ---
 
 {{< include ../includes/setup-parameters.qmd >}}

@@ -13,9 +13,12 @@ podcast-image: /assets/podcast/health-dividend-podcast.jpg
 feed-date: '2026-03-28'
 youtube-thumbnail: /assets/podcast/health-dividend-youtube.jpg
 scores:
-  quality: 9
-  value: 9
-  timeliness: 9
+  quality: 8
+  value: 8
+  timeliness: 8
+  standalone: 5
+  voice: 9
+  importance: 7
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 That was the [peace dividend](peace-dividend.qmd): the money you get from buying 1% fewer explosions. Now here is the health dividend: what happens when you spend it on medicine instead.

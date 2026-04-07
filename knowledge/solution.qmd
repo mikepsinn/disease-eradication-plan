@@ -15,9 +15,12 @@ podcast-image: /assets/podcast/solution-podcast.jpg
 feed-date: '2026-03-24'
 youtube-thumbnail: /assets/podcast/solution-youtube.jpg
 scores:
-  quality: 8
-  value: 9
+  quality: 7
+  value: 8
   timeliness: 9
+  standalone: 3
+  voice: 9
+  importance: 7
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 Now you understand the problem: everyone is dying while you build missiles. Time to learn how to fix it.

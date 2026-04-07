@@ -18,6 +18,9 @@ scores:
   quality: 7
   value: 7
   timeliness: 8
+  standalone: 7
+  voice: 6
+  importance: 6
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 

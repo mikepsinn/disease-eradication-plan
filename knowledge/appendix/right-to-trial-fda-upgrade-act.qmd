@@ -18,7 +18,10 @@ youtube-thumbnail: /assets/podcast/right-to-trial-fda-upgrade-act-youtube.jpg
 scores:
   quality: 7
   value: 8
-  timeliness: 8
+  timeliness: 9
+  standalone: 7
+  voice: 4
+  importance: 7
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 **Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled,**

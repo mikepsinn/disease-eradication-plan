@@ -5,9 +5,12 @@ description: A sponsor-facing memo for institutions considering whether to host 
 podcast-image: /assets/podcast/initiating-node-memo-podcast.jpg
 youtube-thumbnail: /assets/podcast/initiating-node-memo-youtube.jpg
 scores:
-  quality: 6
-  value: 6
+  quality: 5
+  value: 5
   timeliness: 6
+  standalone: 3
+  voice: 3
+  importance: 4
 ---
 
 {{< include ../includes/setup-parameters.qmd >}}

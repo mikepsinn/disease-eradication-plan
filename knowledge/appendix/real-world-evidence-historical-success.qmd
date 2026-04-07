@@ -15,9 +15,12 @@ podcast-image: /assets/podcast/real-world-evidence-historical-success-podcast.jp
 feed-date: '2026-03-21'
 youtube-thumbnail: /assets/podcast/real-world-evidence-historical-success-youtube.jpg
 scores:
-  quality: 7
-  value: 8
+  quality: 6
+  value: 7
   timeliness: 7
+  standalone: 7
+  voice: 6
+  importance: 6
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 ## Historical Evidence: Why Real-World Evidence Works Better

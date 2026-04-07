@@ -17,6 +17,9 @@ scores:
   quality: 9
   value: 9
   timeliness: 9
+  standalone: 9
+  voice: 9
+  importance: 8
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 For every 1 unit of harm prevented by efficacy delays, the system creates {{< var type_ii_error_cost_ratio >}} units of harm through denied access. Operational safety ratio: {{< var type_ii_error_cost_ratio >}}-to-1 against the patient.

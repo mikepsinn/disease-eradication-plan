@@ -44,8 +44,11 @@ aliases:
   - /algorithmic-public-administration.html
 scores:
   quality: 7
-  value: 7
+  value: 6
   timeliness: 7
+  standalone: 4
+  voice: 7
+  importance: 7
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 

@@ -17,6 +17,9 @@ scores:
   quality: 7
   value: 7
   timeliness: 7
+  standalone: 7
+  voice: 8
+  importance: 7
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 Your nonprofit sector is a bit like thousands of starving dogs fighting over a single bowl of food while an entire banquet sits untouched behind them. The dogs are very focused on the bowl. They've developed sophisticated bowl-fighting strategies. Some dogs have hired consultants to optimize their bowl access. None of them have turned around.

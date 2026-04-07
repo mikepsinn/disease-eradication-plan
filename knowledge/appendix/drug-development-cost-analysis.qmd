@@ -6,9 +6,12 @@ image: /assets/og-images/knowledge/appendix/drug-development-cost-analysis-og-re
 podcast-image: /assets/podcast/drug-development-cost-analysis-podcast.jpg
 youtube-thumbnail: /assets/podcast/drug-development-cost-analysis-youtube.jpg
 scores:
-  quality: 8
+  quality: 7
   value: 7
   timeliness: 7
+  standalone: 8
+  voice: 5
+  importance: 6
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 ## The Short Version

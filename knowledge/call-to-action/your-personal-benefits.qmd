@@ -5,9 +5,12 @@ image: /assets/og-images/knowledge/call-to-action/your-personal-benefits-og-retr
 podcast-image: /assets/podcast/your-personal-benefits-podcast.jpg
 youtube-thumbnail: /assets/podcast/your-personal-benefits-youtube.jpg
 scores:
-  quality: 6
-  value: 7
-  timeliness: 7
+  quality: 4
+  value: 5
+  timeliness: 6
+  standalone: 3
+  voice: 4
+  importance: 6
 ---
 {{< include ../includes/setup-parameters.qmd >}}
 

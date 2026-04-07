@@ -38,15 +38,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 532 parameters used in the analysis, organized by type:
+This appendix documents all 535 parameters used in the analysis, organized by type:
 
-- External sources (peer-reviewed): 173
-- Calculated values: 253
+- External sources (peer-reviewed): 174
+- Calculated values: 255
 - Core definitions: 106
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (253 parameters) • [External Data Sources](#sec-external) (173 parameters) • [Core Definitions](#sec-definitions) (106 parameters)
+[Calculated Values](#sec-calculated) (255 parameters) • [External Data Sources](#sec-external) (174 parameters) • [Core Definitions](#sec-definitions) (106 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -6959,6 +6959,44 @@ $$
 
 :::
 
+### Cost per Life Saved by Medical Research: $16.1K {#sec-global_cost_per_life_saved_med_research_annual}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Cost per life saved by medical research
+
+**Inputs**:
+
+- [Annual Lives Saved by Medical Research Globally](#sec-global_annual_lives_saved_by_med_research) 📊: 4.2 million lives/year (95% CI: 3 million lives/year - 6 million lives/year)
+- [Global Government Medical Research Spending](#sec-global_med_research_spending) 📊: $67.5B (95% CI: $54B - $81B)
+
+$$
+\begin{gathered}
+Cost_{life,RD} \\
+= \frac{Spending_{RD}}{Lives_{RD,ann}} \\
+= \frac{\$67.5B}{4.2M} \\
+= \$16.1K
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-global_cost_per_life_saved_med_research_annual.qmd >}}
+
+{{< include ../figures/sensitivity-table-global_cost_per_life_saved_med_research_annual.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-global_cost_per_life_saved_med_research_annual.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-global_cost_per_life_saved_med_research_annual.qmd >}}
+
+:::
+
 ### Global Destructive Economy (2025): $13.2T {#sec-global_destructive_economy_annual_2025}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -7877,6 +7915,148 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-military_to_government_clinical_trials_spending_ratio.qmd >}}
+
+:::
+
+### Misallocation Factor: Cost to Kill vs Cost to Save: 2.9kx {#sec-misallocation_factor_death_vs_saving}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Misallocation factor: cost to kill vs cost to save
+
+**Inputs**:
+
+- [Total Annual Conflict Deaths Globally](#sec-global_annual_conflict_deaths_total) 🔢: 245 thousand deaths/year
+- [Total Annual Cost of War Worldwide](#sec-global_annual_direct_indirect_war_cost) 🔢: $11.4T
+- [Cost per Life Saved by Medical Research](#sec-global_cost_per_life_saved_med_research_annual) 🔢: $16.1K
+
+$$
+\begin{gathered}
+k_{misalloc} \\
+= \frac{Cost_{war,total}}{Deaths_{conflict} \times Cost_{life,RD}} \\
+= \frac{\$11.4T}{245{,}000 \times \$16.1K} \\
+= 2{,}890
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Deaths_{conflict} \\
+= Deaths_{combat} + Deaths_{state} + Deaths_{terror} \\
+= 234{,}000 + 2{,}700 + 8{,}300 \\
+= 245{,}000
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,total} \\
+= Cost_{war,direct} + Cost_{war,indirect} \\
+= \$7.66T + \$3.7T \\
+= \$11.4T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,direct} \\
+= Loss_{life,conflict} + Damage_{infra,total} \\
++ Disruption_{trade} + Spending_{mil} \\
+= \$2.45T + \$1.88T + \$616B + \$2.72T \\
+= \$7.66T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Loss_{life,conflict} \\
+= Cost_{combat,human} + Cost_{state,human} \\
++ Cost_{terror,human} \\
+= \$2.34T + \$27B + \$83B \\
+= \$2.45T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{combat,human} \\
+= Deaths_{combat} \times VSL \\
+= 234{,}000 \times \$10M \\
+= \$2.34T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{state,human} \\
+= Deaths_{state} \times VSL \\
+= 2{,}700 \times \$10M \\
+= \$27B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{terror,human} \\
+= Deaths_{terror} \times VSL \\
+= 8{,}300 \times \$10M \\
+= \$83B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Damage_{infra,total} \\
+= Damage_{comms} + Damage_{edu} + Damage_{energy} \\
++ Damage_{health} + Damage_{transport} + Damage_{water} \\
+= \$298B + \$234B + \$422B + \$166B + \$487B + \$268B \\
+= \$1.88T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Disruption_{trade} \\
+= Disruption_{currency} + Disruption_{energy} \\
++ Disruption_{shipping} + Disruption_{supply} \\
+= \$57.4B + \$125B + \$247B + \$187B \\
+= \$616B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,indirect} \\
+= Damage_{env} + Loss_{growth,mil} + Loss_{capital,conflict} \\
++ Cost_{psych} + Cost_{refugee} + Cost_{vet} \\
+= \$100B + \$2.72T + \$300B + \$232B + \$150B + \$200B \\
+= \$3.7T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{life,RD} \\
+= \frac{Spending_{RD}}{Lives_{RD,ann}} \\
+= \frac{\$67.5B}{4.2M} \\
+= \$16.1K
+\end{gathered}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-misallocation_factor_death_vs_saving.qmd >}}
+
+{{< include ../figures/sensitivity-table-misallocation_factor_death_vs_saving.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-misallocation_factor_death_vs_saving.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-misallocation_factor_death_vs_saving.qmd >}}
 
 :::
 
@@ -22720,6 +22900,30 @@ Annual infrastructure damage to water systems from conflict
 #### Input Distribution
 
 {{< include ../figures/distribution-global_annual_infrastructure_damage_water_conflict.qmd >}}
+
+*✓ High confidence*
+
+:::
+
+### Annual Lives Saved by Medical Research Globally: 4.2 million lives/year {#sec-global_annual_lives_saved_by_med_research}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual lives saved by medical research globally
+
+**Source**: [@medical-research-lives-saved-annually]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [3 million lives/year, 6 million lives/year] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here. The true value likely falls between 3 million lives/year and 6 million lives/year (±36%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_annual_lives_saved_by_med_research.qmd >}}
 
 *✓ High confidence*
 

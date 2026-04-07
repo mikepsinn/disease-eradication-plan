@@ -12,7 +12,6 @@ format:
     toc: true
 podcast-image: /assets/podcast/papers-podcast.jpg
 youtube-thumbnail: /assets/podcast/papers-youtube.jpg
-syndicate: false
 ---
 
 This page provides an index of all academic papers, working drafts, and publications
@@ -738,7 +737,7 @@ Select "Enter the details myself", then fill:
 
 [![The Optimal Policy Generator: A Causal Inference Protocol for Maximizing Median Health and Wealth Through Public Policy](https://manual.warondisease.org/assets/og/opg-og-1200x630.jpg)](https://manual.warondisease.org/knowledge/appendix/optimal-policy-generator-spec.html)
 
-> Centuries of public policy variation across thousands of jurisdictions (countries, states, cities) constitute a massive natural experiment. The data to identify which policies maximize welfare exists but has not been systematically harvested. The Optimal Policy Generator (OPG) applies causal inference methods (synthetic control, difference-in-differences, regression discontinuity) and Bradford Hill criteria to this cross-jurisdictional data, measuring policy impact on two welfare metrics: real after-tax median income growth and median healthy life years. For any jurisdiction, OPG produces four categories of public policy recommendations: ENACT (evidence-supported policies the jurisdiction lacks), REPLACE (policies set at suboptimal levels), REPEAL (policies with net welfare harm), and MAINTAIN (policies aligned with evidence). Each recommendation includes expected effects on both metrics, confidence grades, and blocking factors including freedom and autonomy constraints. The framework is agnostic to which party enacted each policy, evaluating only whether it improved outcomes. Projected welfare gains for typical US states: 5-15% of GDP. At system scale, the Optimal Governance Trajectory reaches 56.7x the Earth baseline after 20 years, raises average income to $1.16M versus $20.5K on the status-quo path, reaches $10.7 quadrillion in total output, and recovers roughly $101T/year in suppressed value ([The Political Dysfunction Tax](https://political-dysfunction-tax.warondisease.org)).
+> The Optimal Policy Generator (OPG) produces systematic public policy recommendations for jurisdictions at any level (country, state, city), generating prioritized enact/replace/repeal/maintain recommendations to maximize real after-tax median income growth and median healthy life years, based on quasi-experimental evidence from centuries of policy variation data.
 
 
 <!--
@@ -747,7 +746,7 @@ Select "Enter the details myself", then fill:
 TITLE: The Optimal Policy Generator: A Causal Inference Protocol for Maximizing Median Health and Wealth Through Public Policy
 
 ABSTRACT:
-Centuries of public policy variation across thousands of jurisdictions (countries, states, cities) constitute a massive natural experiment. The data to identify which policies maximize welfare exists but has not been systematically harvested. The Optimal Policy Generator (OPG) applies causal inference methods (synthetic control, difference-in-differences, regression discontinuity) and Bradford Hill criteria to this cross-jurisdictional data, measuring policy impact on two welfare metrics: real after-tax median income growth and median healthy life years. For any jurisdiction, OPG produces four categories of public policy recommendations: ENACT (evidence-supported policies the jurisdiction lacks), REPLACE (policies set at suboptimal levels), REPEAL (policies with net welfare harm), and MAINTAIN (policies aligned with evidence). Each recommendation includes expected effects on both metrics, confidence grades, and blocking factors including freedom and autonomy constraints. The framework is agnostic to which party enacted each policy, evaluating only whether it improved outcomes. Projected welfare gains for typical US states: 5-15% of GDP. At system scale, the Optimal Governance Trajectory reaches 56.7x the Earth baseline after 20 years, raises average income to $1.16M versus $20.5K on the status-quo path, reaches $10.7 quadrillion in total output, and recovers roughly $101T/year in suppressed value ([The Political Dysfunction Tax](https://political-dysfunction-tax.warondisease.org)).
+The Optimal Policy Generator (OPG) produces systematic public policy recommendations for jurisdictions at any level (country, state, city), generating prioritized enact/replace/repeal/maintain recommendations to maximize real after-tax median income growth and median healthy life years, based on quasi-experimental evidence from centuries of policy variation data.
 
 AUTHOR: Mike P. Sinn
 EMAIL: m@warondisease.org
@@ -755,8 +754,6 @@ AFFILIATION: Institute for Accelerated Medicine
 ORCID: 0009-0006-0212-1094
 
 KEYWORDS: Policy Evaluation, Causal Inference, Quasi Experimental Methods, Synthetic Control, Difference in Differences, Bradford Hill Criteria, Evidence Based Policy, Policy Recommendations, Jurisdiction Analysis, Policy Impact Score
-
-JEL CODES: H10, D72, C54, I18, D61
 
 SUBJECT AREAS: Policy Evaluation, Causal Inference, Quasi-Experimental Methods, Evidence-Based Policy, Jurisdiction Analysis
 CATEGORY: Academic Paper, Public Policy, Political Science

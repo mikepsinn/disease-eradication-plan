@@ -20,7 +20,10 @@ youtube-thumbnail: /assets/podcast/nih-fails-2-institute-health-youtube.jpg
 scores:
   quality: 9
   value: 10
-  timeliness: 9
+  timeliness: 10
+  standalone: 9
+  voice: 9
+  importance: 8
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 

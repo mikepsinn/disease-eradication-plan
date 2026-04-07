@@ -39,9 +39,12 @@ image: /assets/og-images/knowledge/appendix/dfda-impact-paper-og-retro-academic.
 podcast-image: /assets/podcast/dfda-impact-paper-podcast.jpg
 youtube-thumbnail: /assets/podcast/dfda-impact-paper-youtube.jpg
 scores:
-  quality: 9
-  value: 9
-  timeliness: 9
+  quality: 8
+  value: 8
+  timeliness: 8
+  standalone: 7
+  voice: 5
+  importance: 8
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 ## Executive Summary

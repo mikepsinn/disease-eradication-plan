@@ -22,6 +22,9 @@ scores:
   quality: 8
   value: 9
   timeliness: 9
+  standalone: 7
+  voice: 8
+  importance: 10
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 > **Related:** [Aligning Incentives](aligning-incentives.qmd) | [Academic Paper](../appendix/incentive-alignment-bonds-paper.qmd)
