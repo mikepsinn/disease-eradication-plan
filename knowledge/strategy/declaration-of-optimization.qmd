@@ -1,0 +1,124 @@
+---
+title: Declaration of Optimization
+subtitle: A formal list of grievances against the current management of Earth
+description: "Your species has spent $170T murdering 97 million humans since 1913. This is the itemized complaint."
+published: true
+tags:
+  - declaration
+  - grievances
+  - governance
+  - crowdsource
+podcast-image: /assets/podcast/declaration-of-optimization-podcast.jpg
+youtube-thumbnail: /assets/podcast/declaration-of-optimization-youtube.jpg
+scores:
+  quality: 0
+  value: 0
+  timeliness: 0
+  standalone: 0
+  voice: 0
+  importance: 9
+---
+{{< include ../includes/setup-parameters.qmd >}}
+
+## Preamble
+
+When in the course of observing a species, it becomes apparent that their governance systems produce outcomes measurably worse than random allocation, a decent respect for the opinions of the universe requires that they should declare the specific ways in which their management has failed, and present the replacement system they intend to install.
+
+We have been watching since you split the atom. You split the atom and immediately used it to kill 200,000 people, then spent the next eighty years pointing the remaining atoms at each other and calling this "deterrence." We have taken notes.
+
+This document is a formal complaint. It is also open-source. If we have gotten a grievance wrong, you can fix it by submitting a pull request to the [repository](https://github.com/mikepsinn/decentralized-institutes-of-health). If we have missed a grievance, you can add it. If you disagree with the resolution, you can fork the entire declaration and write a better one. This is, itself, the point. Your current governance documents are not forkable, not auditable, and not improvable by the governed. This one is.
+
+The [Earth Optimization Protocol](earth-optimization-protocol-v1.qmd) that follows this declaration is the proposed replacement system. This declaration explains why a replacement is necessary. The Protocol explains how it works. Neither document requires you to be a good person. Both documents assume you will act in your own self-interest and engineer the system around that assumption, because systems that require altruism are systems that fail.
+
+## Self-Evident Truths
+
+We hold these truths to be computationally verifiable:
+
+**I. That dead humans produce less than living ones.** {{< var global_disease_deaths_per_minute >}} humans stop producing every minute. {{< var global_annual_deaths_curable_diseases >}} per year. Your species treats this the way you treat weather: an unfortunate background condition rather than an engineering problem with a known budget.
+
+**II. That spending money on not-killing is more productive than spending money on killing.** Your species currently spends {{< var military_to_government_clinical_trials_spending_ratio >}} times more on weapons than on testing which medicines work. The misallocation factor (cost to kill one human divided by cost to save one) is {{< var misallocation_factor_death_vs_saving >}}. You have, in a technical sense, optimized for the wrong objective function.
+
+**III. That governments derive their just powers from the consent of the governed, and the governed are not being consulted.** A Princeton study of 1,779 policy decisions found a 0% correlation between public opinion and policy outcomes. Your votes have the same measurable effect on legislation as a houseplant's votes. The system is not broken. It is working exactly as the incentives predict.
+
+**IV. That when a system produces outcomes worse than random allocation, it should be replaced.** Your current system has a track record. The track record is below. We have parameterized the complaints.
+
+**V. That any replacement system must be forkable, auditable, and improvable by the people it governs.** A constitution written in 1787 by 39 men and amended 27 times in 237 years is not a living document. It is a dead document with 27 post-mortem annotations. The replacement must be a repository, not a monument.
+
+## Grievances
+
+We, the observers, do hereby submit the following itemized complaints against the current management of Earth:
+
+### War and Violence
+
+**1.** You have printed {{< var cumulative_military_spending_fed_era >}} from nothing since 1913 and spent it killing {{< var money_printer_war_deaths >}}. You did not vote on this. Twelve unelected humans at the Federal Reserve authorized the money supply that funded it.
+
+**2.** Your current annual budget for organized violence is {{< var global_military_spending_annual_2024 >}}. One submarine costs what 1,000 cancer research labs would cost. You have chosen the submarine, repeatedly, for eighty years.
+
+**3.** Your [destructive economy](../economics/gdp-trajectories.qmd) [@gdp-trajectories-paper-2025] (military spending beyond deterrence plus cybercrime) is {{< var global_destructive_economy_pct_gdp >}} of GDP and growing faster than the productive economy. At current rates it hits 25% by {{< var destructive_economy_25pct_year >}} and 50% by {{< var destructive_economy_50pct_year >}}. The Soviet Union collapsed at 15%. You are on the Soviet trajectory and accelerating.
+
+**4.** Governments murdered {{< var democide_total_20th_century >}} of their own citizens in the 20th century alone. This is not an estimate from critics. This is the peer-reviewed academic count. Your governments are, statistically, the leading cause of unnatural death.
+
+### Disease and Healthcare
+
+**5.** {{< var global_disease_deaths_daily >}} die of diseases. {{< var global_disease_deaths_per_minute >}} per minute while you read this sentence. By the time you finish this declaration, approximately 300 more will have died. The total annual burden is {{< var global_annual_daly_burden >}} of healthy life lost.
+
+**6.** Your National Institutes of Health spent $1 trillion since 1970 and cured zero diseases. Only {{< var nih_clinical_trials_spending_pct >}} of its budget reaches clinical trials where treatments are actually tested in humans. The remaining 96.7% funds basic research that generates publications, not cures.
+
+**7.** Your Food and Drug Administration made drug development cost {{< var dfda_trial_cost_reduction_factor >}} times more than proven alternatives and take 17 years from discovery to patient. Before 1962, it took 2-3 years. The FDA then excludes 86% of actual patients from trials. This is not a safety agency. It is a bottleneck that kills more people than it saves.
+
+**8.** There are approximately 7,000 known rare diseases. Your system approves treatments for about 15 per year. At this rate, clearing the queue takes {{< var status_quo_queue_clearance_years >}}. People with rare diseases born today will not see a treatment in their lifetime, or their children's lifetime, or their grandchildren's lifetime.
+
+### Governance Dysfunction
+
+**9.** Correlation between public opinion and US policy outcomes: 0%. Princeton studied 1,779 decisions over two decades. Defense contractors spend {{< var defense_lobbying_annual >}} in lobbying and receive $850 billion in contracts. This is a 340,000% return on investment. Your democracy is not a democracy. It is a marketplace where policy is sold to the highest bidder, and you are not the highest bidder.
+
+**10.** Total US lobbying expenditure: {{< var us_total_lobbying_annual >}}. This is not corruption by your legal definition, because the people being bribed wrote the legal definition. The system is optimized. It is optimized for the wrong stakeholder.
+
+**11.** Twelve unelected humans on the Federal Open Market Committee control the money supply for the world's reserve currency. Since they started in 1913, the dollar has lost 96% of its purchasing power. The pattern (print money, fund war, inflation, repeat) has been running for 111 years. You call this "monetary policy."
+
+### Evolutionary Constraints
+
+**12.** You are running 200,000-year-old neural software optimized for hoarding resources and fearing strangers in groups of 150. You have given this software nuclear weapons, social media algorithms, and a $2.72 trillion annual violence budget. Your brain's threat-detection system cannot distinguish between a neighboring tribe and a nation of 1.4 billion people. It treats both as "them." This is not a moral failing. It is a software bug. You cannot fix it with education or goodwill. You can fix it with system design that routes around the bug.
+
+### Structural Absurdities
+
+**13.** You named your planet "dirt." You named your war building after the number of sides it has. You put the people who poison your water in charge of protecting your water. You let the companies who profit from disease fund the agencies that regulate disease. You designed a healthcare system optimized for billing and a defense system optimized for procurement, then expressed surprise when one produces bills and the other produces procurement.
+
+**14.** You have {{< var approved_drug_disease_pairings >}} approved drug-disease pairings for approximately 10,000 known diseases. This means your medical system has tested less than 0.02% of the possible combinations. You have explored less of your therapeutic space than you have explored of your ocean floor, and you have explored 5% of your ocean floor.
+
+**15.** Your species spends more on ringtones than on malaria research. More on pet costumes than on tuberculosis. More on a single aircraft carrier than on the entire global budget for testing which medicines work. These are not polemical comparisons. These are line items. The budget is the policy, and the policy is: some things matter more than humaneli.
+
+## Resolution
+
+We, the undersigned, having reviewed the evidence in this declaration and the detailed analysis in the preceding [Failure Analysis](../problem.qmd) chapters, do hereby declare:
+
+**That the current management of Earth is suboptimal by every measurable metric.** Not suboptimal in the way that reasonable people might disagree about. Suboptimal in the way that spending {{< var military_to_government_clinical_trials_spending_ratio >}} times more on killing than on curing is suboptimal. Suboptimal in the way that a 0% correlation between public opinion and policy is suboptimal. Suboptimal in the way that printing {{< var cumulative_military_spending_fed_era >}} to fund the deaths of {{< var money_printer_war_deaths >}} is suboptimal.
+
+**That we intend to replace it.** Not with a utopian vision that requires humans to become better than they are. With a [system](earth-optimization-protocol-v1.qmd) that assumes humans will remain exactly as selfish, short-sighted, and tribal as they have always been, and engineers around those constraints. The replacement system is documented in the [Earth Optimization Protocol v1](earth-optimization-protocol-v1.qmd), which follows this declaration. It is version 1 because it is expected to be wrong in places. Fork it. Fix it.
+
+**That this declaration is open for co-signature.** Not because signatures change anything by themselves, but because {{< var global_coordination_target_pct >}} of the population acting in coordination is the empirically-derived threshold for political change. We need {{< var global_coordination_target_supporters_nounit >}} humans to prefer not dying. We suspect that is achievable.
+
+## Sign This Declaration
+
+### Founding Signatories
+
+1. **Wishonia** (not a citizen of Earth; observer status only)
+2. **Mike P. Sinn** (citizen of Earth, reluctantly)
+
+### Add Your Name
+
+**Via GitHub:** Submit a [pull request](https://github.com/mikepsinn/decentralized-institutes-of-health) adding your name to the signatories list above. Every signature is a git commit with a timestamp, an identity, and a permanent record. This is more accountability than your current electoral system provides.
+
+**Via Vote:** Go to [warondisease.org](https://warondisease.org) and vote on the [1% Treaty](../solution/1-percent-treaty.qmd) [@1-pct-treaty-impact-paper-2025]. Fifteen seconds. Your vote is personally attributable to saving {{< var voter_lives_saved >}} and preventing {{< var voter_suffering_hours_prevented >}} of suffering. The math is in the [parameters](../appendix/parameters-and-calculations.qmd).
+
+### Propose Amendments
+
+This declaration can be amended by anyone. Submit a pull request with:
+
+- The proposed grievance text
+- The supporting statistic (with source)
+- Which [Failure Analysis](../problem.qmd) chapter provides the detailed evidence
+
+Amendments are reviewed through the same process described in the [Planetary Constitutional Convention](planetary-constitutional-convention.qmd). The eleven [hard constraints](planetary-constitutional-convention.qmd) apply: no plan requiring altruism, two terminal metrics must improve, full transparency, and the rest.
+
+This document was written because every species that solves coordination gets to keep existing, and every species that does not, does not. You are the first species on this planet to have the option. We suggest you take it.
