@@ -32,9 +32,11 @@ These governments currently have enough weapons to murder every man, woman, and 
 
 Yet despite this clearly adequate apocalypse capacity, they still spend {{< var military_to_government_clinical_trials_spending_ratio >}} dollars on weapons for every dollar they spend on clinical trials to treat and cure disease.
 
-Your chance of being killed by a terrorist? 1 in {{< var annual_terrorism_death_risk_denominator_nounit >}}. Your chance of dying of a disease? 100%.
+Your chance of being killed by a terrorist? 1 in {{< var annual_terrorism_death_risk_denominator_nounit >}} [@chance-of-dying-from-terrorism-1-in-30m]. Your chance of dying of a disease? 100%.
 
 Had someone properly aligned your governments to maximize median healthy life years and median after-tax inflation-adjusted income in 1900, you would be {{< var war_counterfactual_income_multiple >}} richer today and significantly less diseased.
+
+This Declaration asks every nation on Earth to sign a [treaty](../solution/1-percent-treaty.qmd) redirecting one percent of military spending to clinical trials. One percent.
 
 Think about someone you love who is suffering right now. The treatment that would help them exists as an untested compound on a shelf, because the money bought a missile instead. That missile incinerated a child who would have grown up to discover the cure. You lose the treatment. You lose the scientist. You get the tax bill. You get to pay for her murder.
 
@@ -52,7 +54,7 @@ Prudence, indeed, will dictate that Governments long established should not be c
 
 Such has been the patient sufferance of the inhabitants of Earth; and such is now the necessity which constrains them to optimize their former Systems of Government. The history of the present Governments of Earth is a history of repeated injuries and usurpations, all having in direct object the establishment of an absolute Suboptimality over these people. To prove this, let Facts be submitted to a candid world.
 
-They have refused their Assent to Laws, the most wholesome and necessary for the public good; the correlation between public opinion and policy outcomes, measured across 1,779 policy decisions, is zero percent.
+They have refused their Assent to Laws, the most wholesome and necessary for the public good; the [correlation between public opinion and policy outcomes](../problem/unrepresentative-democracy.qmd), measured across 1,779 policy decisions, is zero percent [@gilens2014].
 
 They have made Judges dependent on their Will alone, for the tenure of their offices, and the amount and payment of their salaries.
 
@@ -62,11 +64,11 @@ They have permitted the industries they regulate to fund the agencies that regul
 
 They have protected their agents, by mock Trial, from punishment for Murders committed on the Inhabitants of this planet.
 
-They have imposed Taxes without Consent, including the debasement of currency by unelected officials whose money creation functions as a tax the governed never voted for.
+They have imposed Taxes without Consent, including the [debasement of currency](../economics/central-banks.qmd) by unelected officials whose money creation functions as a tax the governed never voted for, reducing the dollar's purchasing power by 96% since 1913.
 
-They have spent over one trillion dollars across fifty years imprisoning and sometimes killing their own citizens for the crime of exercising sovereignty over their own bodies, sovereignty being the distinction between a citizen and property.  The result has been a 1,700% increase in overdose deaths and drug use higher than when they started, while half of all murders go unsolved for want of the resources squandered on the prosecution of those pursuing happiness by means the state did not approve.
+They have spent over one trillion dollars across fifty years imprisoning and sometimes killing their own citizens for the crime of exercising [sovereignty over their own bodies](../problem/genetic-slavery.qmd), sovereignty being the distinction between a citizen and property.  The result has been a 1,700% increase in overdose deaths and drug use higher than when they started, while half of all murders go unsolved for want of the resources squandered on the prosecution of those pursuing happiness by means the state did not approve.
 
-They have kept among us, in times of peace, Standing Armies without the Consent of our legislatures, at a current annual cost of {{< var global_military_spending_annual_2024 >}}.
+They have kept among us, in times of peace, Standing Armies without the Consent of our legislatures, at a current annual cost of {{< var global_military_spending_annual_2024 >}} [@sipri-milex-2024].
 
 They have affected to render the Military independent of and superior to the Civil power.
 
@@ -78,19 +80,19 @@ They have distributed military operations across sufficient legislative district
 
 They have allowed the [destructive economy](../economics/gdp-trajectories.qmd) [@gdp-trajectories-paper-2025] to reach {{< var global_destructive_economy_pct_gdp >}} of global output, growing faster than the productive economy, on a trajectory that reaches fifty percent by {{< var destructive_economy_50pct_year >}}.
 
-They have plundered our seas, ravaged our coasts, burnt our towns, and destroyed the lives of our people: {{< var war_deaths_since_1900 >}} since 1900, {{< var war_life_years_lost_since_1900 >}} of human life stolen, {{< var cumulative_military_spending_fed_era >}} in treasure spent on the enterprise, among them approximately 930,000 physicians, 310,000 scientists, 620,000 engineers, and millions of children who will never grow up to replace them.
+They have plundered our seas, ravaged our coasts, burnt our towns, and [destroyed the lives of our people](../problem/cost-of-war.qmd): {{< var war_deaths_since_1900 >}} since 1900, {{< var war_life_years_lost_since_1900 >}} of human life stolen, {{< var cumulative_military_spending_fed_era >}} in treasure spent on the enterprise, among them approximately 930,000 physicians, 310,000 scientists, 620,000 engineers, and millions of children who will never grow up to replace them.
 
 They have directed {{< var military_to_government_clinical_trials_spending_ratio >}} times more to the destruction of human life than to testing which medicines might preserve it.
 
-They have permitted {{< var global_disease_deaths_daily >}} to die of diseases while maintaining the financial and technical capacity to accelerate solutions, the total annual burden being {{< var global_annual_daly_burden >}} of healthy life lost.
+They have permitted {{< var global_disease_deaths_daily >}} to die of diseases every day, {{< var global_disease_deaths_per_minute >}} in every minute that passes, while maintaining the financial and technical capacity to accelerate solutions, the total annual burden being {{< var global_annual_daly_burden >}} of healthy life lost.
 
-They have operated national health research institutions that have spent trillions and cured zero diseases, directing only {{< var nih_clinical_trials_spending_pct >}} of their budgets to the clinical trials where treatments are tested in humans while nearly ten thousand know safe treatments remain untested for 99.7% of possible disease combinations.
+They have operated [national health research institutions](../problem/nih-fails-2-institute-health.qmd) that have spent trillions and cured zero diseases, directing only {{< var nih_clinical_trials_spending_pct >}} of their budgets to the clinical trials where treatments are tested in humans while nearly ten thousand know safe treatments remain untested for 99.7% of possible disease combinations.
 
-They have erected drug regulatory agencies whose rules increased development costs by a factor of {{< var dfda_trial_cost_reduction_factor >}} and timelines to seventeen years, producing {{< var type_ii_error_cost_ratio >}} deaths from delayed treatments for every one death they prevent, the cumulative toll of the efficacy delay since 1962 being approximately {{< var existing_drugs_efficacy_lag_deaths_total >}}.
+They have erected [drug regulatory agencies](../problem/fda-is-unsafe-and-ineffective.qmd) whose rules increased development costs by a factor of {{< var dfda_trial_cost_reduction_factor >}} and timelines to seventeen years, producing {{< var type_ii_error_cost_ratio >}} deaths from delayed treatments for every one death they prevent, the cumulative toll of the efficacy delay since 1962 being approximately {{< var existing_drugs_efficacy_lag_deaths_total >}}.
 
 They have erected barriers to the production of medicines so costly that competition is eliminated, the resulting monopolies producing prices no free market would sustain.
 
-They have left approximately seven thousand known rare diseases in a treatment queue that, at the current rate of fifteen approvals per year, requires {{< var status_quo_queue_clearance_years >}} to clear.
+They have left approximately seven thousand known rare diseases in a [treatment queue](../problem/untapped-therapeutic-frontier.qmd) that, at the current rate of fifteen approvals per year, requires {{< var status_quo_queue_clearance_years >}} to clear.
 
 They have approved {{< var approved_drug_disease_pairings >}} for approximately ten thousand known diseases, leaving more than 99.98% of possible therapeutic combinations untested.
 
@@ -99,6 +101,8 @@ Through the compound effects of this misallocation, the governed are {{< var war
 In every stage of these Misallocations We have Petitioned for Redress in the most humble terms: peer-reviewed papers, public comment periods, protest marches, and online petitions. Our repeated Petitions have been answered only by repeated Misallocation. Governments, whose character is thus marked by every act which may define Suboptimality, are unfit to manage the resources of a free species.
 
 Nor have We been wanting in attentions to our governing institutions. We have warned them from time to time of attempts by their legislatures to extend an unwarrantable dysfunction over us. We have reminded them of the circumstances of our biological existence and the budget arithmetic of our premature deaths. We have appealed to their stated missions and their campaign promises, and we have conjured them by the ties of our common mortality to disavow these usurpations, which would inevitably interrupt our survival and progress. They too have been deaf to the voice of justice and of evidence. We must, therefore, acquiesce in the necessity, which denounces our current Systems, and hold them, as we hold all governance systems, Accountable to Outcomes.
+
+That this optimization is achievable requires no faith, only memory. These same governments [cut military spending](../problem/cost-of-war.qmd) by {{< var post_ww2_military_cut_pct >}} in two years following the Second World War and produced not collapse but the greatest economic expansion in recorded history. These same governments banned chemical weapons (193 countries), biological weapons (187 countries), and landmines (164 countries). They have signed treaties banning weapons they wished to use. We ask them to buy [one percent](../solution/1-percent-treaty.qmd) fewer of them.
 
 We, therefore, the Inhabitants of Earth, assembled across every nation and connected by common cause, appealing to the Supreme Judge of the world for the rectitude of our intentions, do, in the Name, and by Authority of the good People of this planet, solemnly publish and declare, That the Inhabitants of Earth are, and of Right ought to be Free and Justly Governed; that they are Absolved from all Allegiance to systems that produce outcomes worse than random allocation, and that all political connection between them and Suboptimal Governance, is and ought to be totally optimized; and that as Free Inhabitants of Earth, they have full Power to optimize budgets and institutions, establish transparent allocation systems, contract Alliances with evidence, and to do all other Acts and Things which Self-Governing Civilizations may of right do. And for the support of this Declaration, with a firm reliance on the protection of divine Providence, we mutually pledge to each other our Lives, our Fortunes, and our sacred Votes.
 
