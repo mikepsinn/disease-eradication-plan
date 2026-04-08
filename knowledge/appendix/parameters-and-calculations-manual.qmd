@@ -38,15 +38,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 540 parameters used in the analysis, organized by type:
+This appendix documents all 544 parameters used in the analysis, organized by type:
 
-- External sources (peer-reviewed): 175
-- Calculated values: 257
+- External sources (peer-reviewed): 176
+- Calculated values: 260
 - Core definitions: 108
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (257 parameters) • [External Data Sources](#sec-external) (175 parameters) • [Core Definitions](#sec-definitions) (108 parameters)
+[Calculated Values](#sec-calculated) (260 parameters) • [External Data Sources](#sec-external) (176 parameters) • [Core Definitions](#sec-definitions) (108 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -2002,6 +2002,30 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-conventional_retirement_horizon_multiple.qmd >}}
+
+:::
+
+### Cost of Extinction (Minimum Viable Apocalypse): $136B {#sec-cost_of_extinction}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+The minimum military spending required to achieve assured destruction of civilization (Minimum Viable Apocalypse). Calculated as total military spending divided by the nuclear overkill factor. Everything above this amount is the Extinction Surplus.
+
+**Inputs**:
+
+- [Global Military Spending in 2024](#sec-global_military_spending_annual_2024) 📊: $2.72T
+- [Nuclear Overkill Factor](#sec-nuclear_overkill_factor): 20x
+
+$$
+\begin{gathered}
+C_{extinction} \\
+= \frac{Spending_{mil}}{Overkill_{nuke}} \\
+= \frac{\$2.72T}{20} \\
+= \$136B
+\end{gathered}
+$$
+
+*~ Medium confidence*
 
 :::
 
@@ -6144,6 +6168,79 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-exploration_ratio.qmd >}}
+
+:::
+
+### Extinction Surplus: $2.58T {#sec-extinction_surplus}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Military spending beyond the Cost of Extinction. The amount governments spend above what is needed to destroy civilization once. This is the budget that buys redundant apocalypses.
+
+**Inputs**:
+
+- [Global Military Spending in 2024](#sec-global_military_spending_annual_2024) 📊: $2.72T
+- [Cost of Extinction (Minimum Viable Apocalypse)](#sec-cost_of_extinction) 🔢: $136B
+
+$$
+\begin{gathered}
+S_{extinction} \\
+= Spending_{mil} - C_{extinction} \\
+= \$2.72T - \$136B \\
+= \$2.58T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+C_{extinction} \\
+= \frac{Spending_{mil}}{Overkill_{nuke}} \\
+= \frac{\$2.72T}{20} \\
+= \$136B
+\end{gathered}
+$$
+*~ Medium confidence*
+
+:::
+
+### Extinction Surplus as Percentage of Military Budget: 95% {#sec-extinction_surplus_pct}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Percentage of global military spending that is Extinction Surplus, i.e., spending beyond what is needed to destroy civilization once.
+
+**Inputs**:
+
+- [Extinction Surplus](#sec-extinction_surplus) 🔢: $2.58T
+- [Global Military Spending in 2024](#sec-global_military_spending_annual_2024) 📊: $2.72T
+
+$$
+\begin{gathered}
+S_{extinction,\%} \\
+= \frac{S_{extinction}}{Spending_{mil}} \\
+= \frac{\$2.58T}{\$2.72T} \\
+= 95\%
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+S_{extinction} \\
+= Spending_{mil} - C_{extinction} \\
+= \$2.72T - \$136B \\
+= \$2.58T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+C_{extinction} \\
+= \frac{Spending_{mil}}{Overkill_{nuke}} \\
+= \frac{\$2.72T}{20} \\
+= \$136B
+\end{gathered}
+$$
+*~ Medium confidence*
 
 :::
 
@@ -22010,6 +22107,22 @@ GiveWell cost per DALY for insecticide-treated bed nets (midpoint estimate, rang
 {{< include ../figures/distribution-bed_nets_cost_per_daly.qmd >}}
 
 *✓ High confidence • 📊 Peer-reviewed*
+
+:::
+
+### Bullets Fired per Kill (Iraq/Afghanistan): 250 thousand rounds {#sec-bullets_fired_per_kill_iraq_afghanistan}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Rounds of small-arms ammunition fired per insurgent killed in Iraq and Afghanistan. Based on GAO figures: ~6 billion rounds expended 2002-2005. Calculated by military researcher John Pike of GlobalSecurity.org.
+
+**Source**: [@nato-556-rounds-per-kill]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*~ Medium confidence*
 
 :::
 

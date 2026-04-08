@@ -190,6 +190,8 @@ export const BULLETS_FIRED_PER_KILL_IRAQ_AFGHANISTAN: Parameter = {
   sourceRef: "nato-556-rounds-per-kill",
   sourceUrl: "https://jonathanturley.org/2011/01/10/gao-u-s-has-fired-250000-rounds-for-every-insurgent-killed/",
   confidence: "medium",
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/extinction-surplus.html",
+  manualPageTitle: "The Extinction Surplus",
 };
 
 export const BULLET_COST_556_NATO: Parameter = {
@@ -204,6 +206,8 @@ export const BULLET_COST_556_NATO: Parameter = {
   sourceUrl: "https://www.bulkcheapammo.com/rifle-ammo/556-ammo",
   confidence: "medium",
   confidenceInterval: [0.25, 0.6],
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/extinction-surplus.html",
+  manualPageTitle: "The Extinction Surplus",
 };
 
 export const CAREGIVER_ANNUAL_VALUE_TOTAL: Parameter = {
@@ -3303,8 +3307,8 @@ export const BULLETS_PER_PERSON_ANNUAL: Parameter = {
   formula: "GLOBAL_BULLETS_PURCHASABLE_ANNUAL / GLOBAL_POPULATION_2024",
   latex: "\\begin{gathered}\nn_{bullets/person} = \\frac{N_{bullets,yr}}{Pop_{global}} = \\frac{6.8T}{8B} = 850\n\\\\[0.5em]\n\\text{where } N_{bullets,yr} = \\frac{Spending_{mil}}{c_{bullet}} = \\frac{\\$2.72T}{\\$0.4} = 6.8T\n\\end{gathered}",
   confidenceInterval: [583.3925241980181, 1273.6806203353235],
-  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/problem/cost-of-war.html",
-  manualPageTitle: "The Cost of War",
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/extinction-surplus.html",
+  manualPageTitle: "The Extinction Surplus",
 };
 
 export const CELL_THERAPY_DISEASE_COMBINATIONS: Parameter = {
@@ -3627,6 +3631,8 @@ export const COST_OF_EXTINCTION: Parameter = {
   confidence: "medium",
   formula: "GLOBAL_MILITARY_SPENDING_ANNUAL_2024 / NUCLEAR_OVERKILL_FACTOR",
   latex: "\\begin{gathered}\nC_{extinction} \\\\\n= \\frac{Spending_{mil}}{Overkill_{nuke}} \\\\\n= \\frac{\\$2.72T}{20} \\\\\n= \\$136B\n\\end{gathered}",
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/extinction-surplus.html",
+  manualPageTitle: "The Extinction Surplus",
 };
 
 export const CUMULATIVE_MILITARY_IN_GOVT_TRIAL_YEARS: Parameter = {
@@ -4869,6 +4875,8 @@ export const EXTINCTION_SURPLUS: Parameter = {
   confidence: "medium",
   formula: "GLOBAL_MILITARY_SPENDING_ANNUAL_2024 - COST_OF_EXTINCTION",
   latex: "\\begin{gathered}\nS_{extinction} = Spending_{mil} - C_{extinction} = \\$2.72T - \\$136B = \\$2.58T\n\\\\[0.5em]\n\\text{where } C_{extinction} = \\frac{Spending_{mil}}{Overkill_{nuke}} = \\frac{\\$2.72T}{20} = \\$136B\n\\end{gathered}",
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/extinction-surplus.html",
+  manualPageTitle: "The Extinction Surplus",
 };
 
 export const EXTINCTION_SURPLUS_PCT: Parameter = {
@@ -4882,6 +4890,8 @@ export const EXTINCTION_SURPLUS_PCT: Parameter = {
   confidence: "medium",
   formula: "EXTINCTION_SURPLUS / GLOBAL_MILITARY_SPENDING_ANNUAL_2024",
   latex: "\\begin{gathered}\nS_{extinction,\\%} = \\frac{S_{extinction}}{Spending_{mil}} = \\frac{\\$2.58T}{\\$2.72T} = 95\\%\n\\\\[0.5em]\n\\text{where } S_{extinction} = Spending_{mil} - C_{extinction} = \\$2.72T - \\$136B = \\$2.58T\n\\\\[0.5em]\n\\text{where } C_{extinction} = \\frac{Spending_{mil}}{Overkill_{nuke}} = \\frac{\\$2.72T}{20} = \\$136B\n\\end{gathered}",
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/extinction-surplus.html",
+  manualPageTitle: "The Extinction Surplus",
 };
 
 export const FDA_TO_OXFORD_RECOVERY_TRIAL_TIME_MULTIPLIER: Parameter = {
@@ -9208,8 +9218,8 @@ export const NUCLEAR_OVERKILL_FACTOR: Parameter = {
   sourceType: "definition",
   sourceRef: "nuclear-extinction",
   confidence: "medium",
-  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/solution/1-percent-treaty.html",
-  manualPageTitle: "A 1% Treaty",
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/extinction-surplus.html",
+  manualPageTitle: "The Extinction Surplus",
 };
 
 export const PEACE_DIVIDEND_CONFLICT_ELASTICITY: Parameter = {

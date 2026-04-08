@@ -1,6 +1,6 @@
 ---
-title: The Extinction Surplus
-description: The Cost of Extinction (Minimum Viable Apocalypse) is {{< var cost_of_extinction >}}. Your governments spend {{< var global_military_spending_annual_2024 >}}. The other {{< var extinction_surplus >}} is the Extinction Surplus.
+title: "The Extinction Surplus"
+description: "The Cost of Extinction (Minimum Viable Apocalypse) is {{< var cost_of_extinction >}}. Your governments spend {{< var global_military_spending_annual_2024 >}}. The other {{< var extinction_surplus >}} is the Extinction Surplus."
 abstract: |
   We introduce three terms: the **Cost of Extinction** (the minimum military spending required to
   destroy civilization once), the **Minimum Viable Apocalypse** (the spending threshold at which
@@ -31,110 +31,78 @@ It costs {{< var cost_of_extinction >}} to destroy civilization. Your government
 
 {{< var extinction_surplus_pct >}} of the global military budget buys nothing that the first {{< var cost_of_extinction >}} didn't already purchase.
 
-This paper shows the math.
+This paper shows the math. It is not complicated. A child could follow it. (The adults who set these budgets presumably also followed it, which makes the outcome harder to explain.)
 
-## On The Price of a City-Destroying Weapon
+## The Price of a City
 
-**How much does one nuclear bomb cost?**
+How much does one nuclear bomb cost?
 
-This is harder to calculate than you'd think, because the military bundles warhead costs into "modernization programs" and "delivery systems" to hide the individual price tags.
+The military bundles warhead costs into "modernization programs" and "delivery systems" to hide the individual price tags, in the same way a restaurant hides the cost of bread by calling it "table service." But we have the **B61-12 Life Extension Program** as a benchmark:
 
 ![One fancy airplane costs the same as four city destroyers. The airplane breaks a lot. The bombs would work perfectly on the first try, but you can only use them once.](/assets/images/extinction-surplus/extinction-surplus-section-on-the-price-of-a-city-destroying-weapon-bw-academic.jpg)
 
-But we have the **B61-12 Life Extension Program** as a benchmark:
-
+- **Program Cost:** $11 billion for 400-500 bombs
 - **Unit Cost:** **$27.5 million** per bomb
-- **Program Cost:** **$11 billion** for 400-500 bombs
 
-So: **$27.5 million** per city-destroying weapon.
+$27.5 million per city-destroying weapon. That is less than one F-35 fighter jet. You could buy 3-4 nuclear warheads for the price of one airplane. The airplane requires maintenance. The warheads just sit there, patiently, being worth more than your neighborhood.
 
-For context, that's less than one F-35 fighter jet costs. You could buy 3-4 nuclear warheads for the price of one plane.
+## The Price of a Person
 
-## On How Many People One Bomb Kills
-
-**How many people die when you detonate a modern nuclear warhead?**
-
-This depends on:
-
-- Weapon yield (how big the explosion is)
-- Population density (how many people are there to kill)
-- Detonation type (airburst vs. ground burst)
-
-Modern strategic warheads are many times more powerful than the bombs used on Hiroshima and Nagasaki. We've gotten very good at this.
+NUKEMAP (created by historian Alex Wellerstein) simulates nuclear detonations. A single modern 300-kiloton W87 warhead over Manhattan:
 
 ![How many people a nuclear bomb kills depends on three things: how big the bomb is, how many people are standing nearby, and whether you blow it up in the air or on the ground. Modern bombs are better at all three.](/assets/images/extinction-surplus/extinction-surplus-section-on-how-many-people-one-bomb-kills-bw-academic.jpg)
 
-### The Simulation
-
-NUKEMAP (created by historian Alex Wellerstein) simulates nuclear detonations. If you detonate a single, modern 300-kiloton W87 warhead over Manhattan:
-
 - **Estimated Fatalities:** **1,619,570 people**
 
-That's immediate deaths from the blast, heat, and initial radiation.
+Immediate deaths. Blast, heat, initial radiation. Not counting fallout, disease, starvation, or the collapse of medical infrastructure. Those numbers are much higher. This is the conservative estimate.
 
-![The explosion kills this many people immediately. Then the radiation, starvation, disease, and collapse of civilization kill... some other amount. We stopped counting because we got sad.](/assets/images/extinction-surplus/extinction-surplus-section-the-simulation-bw-academic.jpg)
-
-It doesn't include long-term deaths from fallout, disease, starvation, or the collapse of medical infrastructure. Those numbers are much higher. But this is a conservative estimate.
-
-## On The Math That Makes You Uncomfortable
+Now the math:
 
 ![Nuclear weapons are extremely affordable per death. This is the worst possible way to measure value for money, but here we are, measuring it.](/assets/images/extinction-surplus/extinction-surplus-section-on-the-math-that-makes-you-uncomfortable-bw-academic.jpg)
 
-Now you can calculate the cost to kill one person with a nuclear weapon:
-
 - **Cost per Bomb:** $27,500,000
 - **Deaths per Bomb:** 1,619,570
-- **Cost per Death:** $27,500,000 ÷ 1,619,570 = **$16.98 per person**
+- **Cost per Death:** $27,500,000 / 1,619,570 = **$16.98**
 
-### Translation
+For the price of a coffee, your military can kill one human being. You have industrialized death to the point where killing a person costs less than caffeinating them.
 
-For the price of a Starbucks latte, our military can kill one human being.
+I looked for a consumer product cheaper than $16.98 that is considered essential to daily life. A Starbucks latte costs more. A sandwich costs more. A movie ticket costs more. The cheapest thing in your economy is ending a human life with a nuclear weapon, and nobody put this on a graph, because putting it on a graph would make it real, and if it were real, someone might have to do something about it.
 
-We've industrialized death to the point where killing you costs less than caffeinating you.
+## The Overkill Calculation
 
-## On What Happens After We Give 1% to Pragmatic Clinical Trials
-
-A 1% treaty redirects 1% of military spending to fund pragmatic clinical trials.
+A [1% treaty](../solution/1-percent-treaty.qmd) [@1-pct-treaty-impact-paper-2025] redirects 1% of military spending to fund pragmatic clinical trials. This leaves $2.69 trillion for killing people.
 
 ![Tiny sliver: cure diseases. Massive remainder: prepare for war. The military keeps 99 percent. They'll barely notice it's gone, like losing one fry from a large order.](/assets/images/extinction-surplus/extinction-surplus-section-on-what-happens-after-bw-academic.jpg)
 
-This leaves $2.69 trillion for killing people.
+How much killing does $2.69 trillion buy?
 
-Let's calculate how much killing that buys:
+$2,690,000,000,000 / $27,500,000 per bomb = **97,818 bombs**
 
-### Step 1: How many bombs?
+97,818 bombs x 1,619,570 deaths per bomb = **158.4 billion people**
 
-$2,690,000,000,000 ÷ $27,500,000 per bomb = **97,818 bombs**
+Earth's population: **8 billion.**
 
-#### Step 2: How many deaths?
+Overkill capacity: **{{< var nuclear_overkill_factor >}}.**
 
-97,818 bombs × 1,619,570 deaths per bomb = **158,421,000,000 people**
+Your governments can kill every person on Earth {{< var nuclear_overkill_factor_nounit >}} times. Not "once, but thoroughly." Not "twice, to be safe." Twenty times. After giving 1% to medicine. The treaty asks militaries to keep enough firepower to end civilization 19 times instead of 20.
 
-#### Translation
+Nobody needs to end civilization 20 times. That is just showing off.
 
-After giving 1% to pragmatic clinical trials, the remaining 99% of military spending could still buy enough nuclear weapons to kill **158.4 billion people**.
-
-Earth's population: **8 billion**
-
-##### Overkill capacity: 20× Earth's population
-
-We could kill everyone on Earth twenty times.
-
-Not "once, but thoroughly." Not "twice, to be safe."
-
-###### Twenty times.
-
-This illustrates why a 1% treaty is a modest proposal. The treaty asks militaries to keep enough firepower to end civilization 19 times instead of 20.
-
-Nobody needs to end civilization 20 times. That's just showing off.
+![Eight billion people. Weapons that can kill 160 billion people. Even after the 1 percent cut. Someone should check if we're doing math right.](/assets/images/extinction-surplus/extinction-surplus-section-what-a-1-treaty-changes-bw-academic.jpg)
 
 ## The Cost of Extinction
 
-If the global military budget can destroy civilization {{< var nuclear_overkill_factor_nounit >}} times, then destroying it *once* costs:
+If the military budget can destroy civilization {{< var nuclear_overkill_factor_nounit >}} times, then destroying it once costs:
 
 {{< var cost_of_extinction_latex >}}
 
-{{< var cost_of_extinction >}}. That is the **Cost of Extinction**: the Minimum Viable Apocalypse. The price tag on ending civilization a single time, using the most cost-effective weapons ever built.
+{{< var cost_of_extinction >}}. That is the **Cost of Extinction**: the Minimum Viable Apocalypse. The price of ending civilization a single time, using the most cost-effective weapons your species has ever built.
+
+I want to be precise about what this number means. It does not mean you can walk into a store and buy the apocalypse for {{< var cost_of_extinction >}}. You also need delivery systems, submarines, early warning radar, command-and-control infrastructure, and enough soldiers to turn the keys. (Nuclear launch requires two people turning two keys simultaneously. Your species trusts itself so little with these weapons that the firing mechanism requires a buddy system, and yet it built enough of them to kill everyone twenty times. I find this instructive.)
+
+The actual cost of maintaining a *credible nuclear deterrent* (second-strike capability, survivable submarines, hardened silos, intelligence apparatus) is higher than {{< var cost_of_extinction >}}. The United States alone spends roughly $50-60 billion per year on its nuclear forces. Russia, China, France, the UK, and others add to this. A generous estimate of global nuclear deterrence costs is $100-150 billion per year.
+
+This makes the argument *worse*, not better. If credible deterrence costs ~$150 billion, and total military spending is {{< var global_military_spending_annual_2024 >}}, then {{< var extinction_surplus_pct >}} of the budget is *still* surplus. The denominator changes. The conclusion does not. However you calculate the Cost of Extinction, most of the budget is not paying for it.
 
 Every dollar above that line buys a redundant apocalypse.
 
@@ -142,43 +110,23 @@ Every dollar above that line buys a redundant apocalypse.
 
 {{< var extinction_surplus_latex >}}
 
-{{< var extinction_surplus >}} per year. That is the **Extinction Surplus**: the gap between what governments spend on military and what it would cost to destroy civilization once.
+{{< var extinction_surplus >}} per year. That is the **Extinction Surplus**: the gap between what governments spend on military and what it costs to destroy civilization once.
 
 {{< var extinction_surplus_pct >}} of the global military budget is Extinction Surplus. Ninety-five cents of every military dollar purchases nothing beyond the destruction that the first five cents already guaranteed.
 
-A 1% treaty asks for {{< var treaty_annual_funding >}} from a {{< var extinction_surplus >}} surplus. It does not touch the Cost of Extinction. It does not reduce deterrence. It takes from the budget that buys the 2nd through 20th apocalypse, and redirects it to clinical trials.
+"But most military spending isn't on nuclear weapons!" says the economist who took one semester of defense policy. Correct. Well observed. Most of it funds conventional forces: salaries, pensions, healthcare, vehicles, bases, and airplanes that cost more than the nuclear warheads they're supposedly defending. This is the point, not the objection. The nuclear arsenal alone, costing a small fraction of the budget, already provides {{< var nuclear_overkill_factor >}} overkill. The other {{< var extinction_surplus_pct >}} buys conventional capability on top of an extinction guarantee that was already purchased twenty times over. You are adding a home security system to a house rigged with enough explosives to destroy the neighborhood. The security system is not the problem. The question is why you keep buying more explosives.
 
-## On The Summary (In Case You Skipped The Math)
+"But conventional forces serve purposes other than extinction! Deterrence! Alliance commitments! Humanitarian operations! Power projection!" Also correct. And those purposes are funded at a level where the same budget, if converted to its most efficient lethal form, could murder every person alive {{< var nuclear_overkill_factor_nounit >}} times. Whatever "purposes" the surplus serves, it serves them at a scale so grotesquely beyond any conceivable defensive need that the word "defense" has become decorative.
 
-### What Nuclear Weapons Cost
+A 1% treaty asks for {{< var treaty_annual_funding >}} from this surplus. It does not touch deterrence. It does not touch conventional readiness. It takes from the budget line that buys the 2nd through 20th apocalypse and redirects it to clinical trials.
 
-- Cost per death: **$16.98** (less than coffee)
-- B61-12 unit cost: **$27.5 million** per bomb
-- Deaths per W87 warhead (Manhattan): **1,619,570 people**
+## The Weapon Efficiency Rankings
 
-#### What A 1% Treaty Changes
-
-- Current military budget: **$2.72 trillion/year**
-- After 1% redirect: **$2.69 trillion remaining** (99%)
-- Potential deaths with remaining budget: **158.4 billion people**
-- Earth's population: **8 billion**
-- **Overkill capacity after treaty: 20× Earth's population**
-
-Even after redirecting 1% to pragmatic clinical trials, we'd still have enough destructive capacity to kill everyone on Earth approximately twenty times.
-
-![Eight billion people. Weapons that can kill 160 billion people. Even after the 1 percent cut. Someone should check if we're doing math right.](/assets/images/extinction-surplus/extinction-surplus-section-what-a-1-treaty-changes-bw-academic.jpg)
-
-A 1% treaty doesn't disarm anyone. It just reduces overkill from "absurd" to "slightly less absurd."
-
-## On Comparing Different Ways to Kill People (The Efficiency Rankings)
-
-Now that you know nuclear weapons cost $16.98 per death, you can compare them to other weapons.
+Now that you know nuclear weapons cost $16.98 per death, you can compare them to other methods of killing people. This is the darkest optimization problem in human history. But here we are.
 
 ![Bullets: expensive per death. Missiles: very expensive per death. Tanks: extremely expensive per death. Nuclear weapons: so cheap per death they broke the chart. Efficiency!](/assets/images/extinction-surplus/extinction-surplus-section-on-comparing-differen-bw-academic.jpg)
 
-This is the darkest optimization problem in human history. But here we are.
-
-### Small Arms (Rifles/Machine Guns)
+### Small Arms
 
 In Iraq and Afghanistan, U.S. forces fired approximately {{< var bullets_fired_per_kill_iraq_afghanistan >}} for every insurgent killed {{< var bullets_fired_per_kill_iraq_afghanistan_cite >}}.
 
@@ -188,80 +136,68 @@ In Iraq and Afghanistan, U.S. forces fired approximately {{< var bullets_fired_p
 - Bullets per death: {{< var bullets_fired_per_kill_iraq_afghanistan_nounit >}}
 - **Cost per death: $100,000**
 
-### Artillery (155mm Howitzer Shells)
+### Artillery
 
 ![Twenty big shells at ten thousand dollars each equals two hundred thousand dollars per casualty. Artillery is expensive. Being on the receiving end is worse.](/assets/images/extinction-surplus/extinction-surplus-section-artillery-155mm-howitzer-shells-bw-academic.jpg)
 
-- Typical fire missions use **10-50 rounds** per target
-- Cost per shell: **$8,000-$14,000**
-- Assuming 20 rounds per casualty at $10,000 per shell
+- 10-50 rounds per target, $8,000-$14,000 per shell
 - **Cost per death: $200,000**
 
 ### Precision-Guided Munitions
 
-#### Excalibur GPS-Guided Artillery
-
-- Cost per round: **$176,624**
-- Higher accuracy, fewer rounds needed (1-2 rounds)
-- **Cost per death: $177,000-$350,000**
-
-#### Air-Launched Missiles
-
-- AMRAAM: **~$1 million**
-- AARGM-ER: **~$6.1 million**
-- **Cost per death: $1-6 million+**
+- Excalibur GPS-guided: $176,624 per round. **Cost per death: $177,000-$350,000**
+- Air-launched missiles (AMRAAM, AARGM-ER): $1-6 million each. **Cost per death: $1-6 million+**
 
 ### Nuclear Weapons (The Winner)
 
-- B61-12 cost: **$27.5 million**
-- Deaths per detonation: **~1.6 million**
+- B61-12: $27.5 million per bomb, ~1.6 million deaths per detonation
 - **Cost per death: $16.98**
 
-### The Leaderboard (Most to Least "Efficient")
+### The Leaderboard
 
-| Weapon Type | Cost per Death | What This Says About Us |
-|-------------|----------------|-------------------------|
-| Nuclear warhead | **$16.98** | We optimized genocide |
-| Small arms | **$100,000** | Inefficient but personal |
-| Artillery | **$200,000** | Impersonal and wasteful |
-| Precision artillery | **$177,000-$350,000** | "Precision" is expensive |
-| Missiles | **$1-6 million+** | Very expensive, very deadly |
+| Weapon | Cost per Death |
+|--------|---------------|
+| Nuclear warhead | **$16.98** |
+| Small arms | **$100,000** |
+| Artillery | **$200,000** |
+| Precision artillery | **$177,000-$350,000** |
+| Missiles | **$1-6 million+** |
 
-#### The Math That Proves We're Insane
-
-Nuclear weapons are **5,900× more "cost-effective"** at killing than small arms.
-
-They're **10,000-350,000× more "cost-effective"** than precision missiles.
-
-This explains why $2.69 trillion in military spending has such enormous destructive capacity: We've optimized for maximum death per dollar.
+Nuclear weapons are **5,900x** more cost-effective at killing than bullets. They are **10,000-350,000x** more cost-effective than precision missiles. Your species optimized for maximum death per dollar and then expressed surprise at the result. On Wishonia, we have a word for organisms that optimize a single metric until it destroys everything around them. The word translates roughly to "cancer."
 
 ![Conventional weapons: expensive per death. Nuclear weapons: so cheap per death that accountants get excited. The accountants should probably not get excited about this.](/assets/images/extinction-surplus/extinction-surplus-section-cost-per-death-comparison-bw-academic.jpg)
 
-## On How Many Bullets Your Government Buys You Each Year
+## The Bullet Metric
+
+The efficiency rankings measure combat cost-per-death. But there is a simpler calculation that requires no combat at all.
 
 A 5.56mm NATO round costs {{< var bullet_cost_556_nato >}} at bulk military rates {{< var bullet_cost_556_nato_cite >}}. Global military spending is {{< var global_military_spending_annual_2024 >}} a year.
 
 {{< var bullets_per_person_annual_latex >}}
 
-Every year, your governments spend enough to buy {{< var bullets_per_person_annual_nounit >}} bullets for every man, woman, and child on Earth. That is enough to murder every person alive {{< var bullets_per_person_annual_nounit >}} times over. With bullets alone. Every year.
+Every year, your governments spend enough on military to murder every man, woman, and child on Earth {{< var bullets_per_person_annual_nounit >}} times over. With bullets alone. Every year.
 
-The nuclear arsenal can do it {{< var nuclear_overkill_factor_nounit >}} times over using existing stockpiles. The bullet metric measures something worse: annual *cash flow*. You are not sitting on a one-time stockpile of redundant death. You are *renewing your subscription* to it.
+The nuclear overkill factor ({{< var nuclear_overkill_factor >}}) measures a stockpile: existing weapons, built over decades. The bullet metric measures something worse. It measures annual *cash flow*. You are not sitting on a one-time surplus of redundant death. You are renewing your subscription to it. Every year, you pay for the capacity to murder everyone {{< var bullets_per_person_annual_nounit >}} times, receive a receipt, and then pay again next year.
 
-In actual combat, most rounds are suppressive fire, training, or misses. It takes roughly {{< var bullets_fired_per_kill_iraq_afghanistan >}} to kill one person in a warzone {{< var bullets_fired_per_kill_iraq_afghanistan_cite >}}. This is a purchasing power calculation, not a combat efficiency estimate. But purchasing power is precisely the point. Governments do not accidentally spend {{< var global_military_spending_annual_2024 >}} a year. They choose to. The question is what that money *could* buy instead.
+"But militaries don't actually spend their entire budget on ammunition!" Correct. They also buy food, housing, vehicles, pensions, and very expensive airplanes. This is a purchasing power calculation. It measures the *scale* of spending by converting it to the cheapest lethal commodity available. In actual combat, it takes {{< var bullets_fired_per_kill_iraq_afghanistan >}} to kill one person {{< var bullets_fired_per_kill_iraq_afghanistan_cite >}}. At that rate, the entire global military budget converted to small arms would kill roughly 27 million people. Not 8 billion.
+
+This objection is interesting because the person making it thinks it helps their case. "We can only kill 27 million people with bullets, not 8 billion" is not the reassurance they believe it to be. I have noticed that on your planet, when someone points out that a number is obscene, the response is often to quibble about the denominator. The denominator is not the problem. The numerator is the problem. The numerator is {{< var global_military_spending_annual_2024 >}}.
 
 | Metric | Overkill | Type |
 |--------|----------|------|
 | Nuclear arsenal | {{< var nuclear_overkill_factor >}} | Existing stockpile |
-| Bullet purchasing power | {{< var bullets_per_person_annual_nounit >}}x per year | Annual spending flow |
+| Bullet purchasing power | {{< var bullets_per_person_annual_nounit >}}x/year | Annual spending flow |
 
 A 1% treaty moves the bullet count from {{< var bullets_per_person_annual_nounit >}} to about 842 per person. Nobody will notice.
 
-#### The Point
-
-The Cost of Extinction is {{< var cost_of_extinction >}}. The Extinction Surplus is {{< var extinction_surplus >}}. The 1% treaty asks for {{< var treaty_annual_funding >}}.
+## The Receipt
 
 ![The Death Budget is huge. The Not-Dying Budget is tiny. The proposal moves 1 percent from Death to Not-Dying. This should not be controversial, and yet.](/assets/images/extinction-surplus/extinction-surplus-section-the-point-bw-academic.jpg)
 
-The treaty does not touch the Cost of Extinction. It does not reduce deterrence. It takes from the {{< var extinction_surplus_pct >}} of military spending that buys nothing except redundant apocalypses, and redirects it to clinical trials so that humans might stop dying of diseases they already know how to treat.
+The Cost of Extinction is {{< var cost_of_extinction >}}. The Extinction Surplus is {{< var extinction_surplus >}}. A 1% treaty asks for {{< var treaty_annual_funding >}}.
 
-That's it. That's the whole proposal.
+The treaty does not touch the Cost of Extinction. It does not reduce deterrence. It does not weaken a single military. It takes from the {{< var extinction_surplus_pct >}} of spending that buys nothing except redundant apocalypses and redirects it to clinical trials, so that humans might figure out which of the 9.5 million untested treatment combinations actually work.
+
+Your species can kill every person on Earth {{< var nuclear_overkill_factor_nounit >}} times. It cannot cure most cancers. It spends {{< var global_military_spending_annual_2024 >}} a year on the first problem and a fraction of that on the second. The proposal is to move 1% from the budget that murders everyone {{< var nuclear_overkill_factor_nounit >}} times to the budget that might stop some of them from dying.
+
+That is the whole proposal. I have been trying to find the controversial part. I cannot find it. If you find it, please let me know, because I have been looking for several years and I am beginning to suspect it does not exist.
