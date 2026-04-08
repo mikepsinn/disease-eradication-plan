@@ -7,21 +7,18 @@
 
 <div id="progress-bar" style="display: none;"></div>
 
-<!-- Death counter overlay for parameters page -->
-<div id="calc-loader-overlay" style="display: none;">
-  <div id="calc-loader-card">
-    <div class="calc-loader-spinner-ring" aria-hidden="true"></div>
-    <p class="calc-loader-title">Loading a bajillion calculations...</p>
-    <p class="calc-loader-subtitle">This page contains 647 parameters, each with Monte Carlo simulations, sensitivity analyses, and tornado diagrams. It takes a moment.</p>
-    <p class="calc-loader-patience">Thank you for your patience. Please know your call is very important to us.</p>
-    <div class="calc-loader-death-counter">
-      <span class="calc-loader-skull" aria-hidden="true">&#9760;</span>
-      <span id="calc-death-count">0</span> humans terminated since this page started loading
-    </div>
-    <div class="calc-loader-progress-wrap">
-      <div id="calc-loader-progress-fill"></div>
-    </div>
-    <p class="calc-loader-elapsed" id="calc-loader-elapsed">0.0s</p>
+<!-- Non-blocking calc page loader (top-right card) -->
+<div id="calc-loader" style="display: none;">
+  <div class="calc-loader-row">
+    <span class="hash-loader-spinner" aria-hidden="true"></span>
+    <span class="calc-loader-text" id="calc-loader-text">Loading a bajillion calculations...</span>
+  </div>
+  <div class="calc-loader-death-row">
+    <span class="calc-loader-skull" aria-hidden="true">&#9760;</span>
+    <span id="calc-death-count">0</span> people died of preventable disease while you waited
+  </div>
+  <div class="calc-loader-bar-wrap">
+    <div id="calc-loader-bar-fill"></div>
   </div>
 </div>
 
@@ -89,98 +86,83 @@
     }
   }
 
-  /* Calc page loader overlay */
-  #calc-loader-overlay {
+  /* Calc page non-blocking loader card */
+  #calc-loader {
     position: fixed;
-    inset: 0;
-    z-index: 10000;
-    background: rgba(15, 23, 42, 0.85);
-    backdrop-filter: blur(6px);
-    align-items: center;
-    justify-content: center;
-    transition: opacity 0.5s ease;
+    top: 14px;
+    right: 14px;
+    z-index: 9998;
+    max-width: min(380px, calc(100vw - 28px));
+    padding: 12px 16px;
+    border: 1px solid rgba(148, 163, 184, 0.28);
+    border-radius: 12px;
+    background: rgba(15, 23, 42, 0.92);
+    color: #f8fafc;
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.25);
+    backdrop-filter: blur(12px);
+    font-size: 13px;
+    line-height: 1.4;
+    transition: opacity 0.4s ease, transform 0.4s ease;
   }
-  #calc-loader-overlay.hiding {
+  #calc-loader.hiding {
     opacity: 0;
+    transform: translateY(-12px);
     pointer-events: none;
   }
-  #calc-loader-card {
-    text-align: center;
-    max-width: 460px;
-    padding: 32px 28px;
-    border-radius: 16px;
-    background: rgba(30, 41, 59, 0.95);
-    border: 1px solid rgba(148, 163, 184, 0.2);
-    box-shadow: 0 20px 60px rgba(0,0,0,0.4);
-    color: #f1f5f9;
-  }
-  .calc-loader-spinner-ring {
-    width: 40px;
-    height: 40px;
-    margin: 0 auto 16px;
-    border: 3px solid rgba(248,250,252,0.15);
-    border-top-color: #ef4444;
-    border-radius: 50%;
-    animation: hash-loader-spin 0.8s linear infinite;
-  }
-  .calc-loader-title {
-    font-size: 18px;
-    font-weight: 600;
-    margin: 0 0 8px;
-  }
-  .calc-loader-subtitle {
-    font-size: 13px;
-    color: #94a3b8;
-    margin: 0 0 6px;
-    line-height: 1.5;
-  }
-  .calc-loader-patience {
-    font-size: 13px;
-    font-style: italic;
-    color: #64748b;
-    margin: 0 0 18px;
-  }
-  .calc-loader-death-counter {
-    font-size: 15px;
-    font-weight: 600;
-    color: #fca5a5;
-    padding: 12px 0;
-    border-top: 1px solid rgba(148,163,184,0.15);
-    border-bottom: 1px solid rgba(148,163,184,0.15);
-    margin-bottom: 16px;
-  }
-  .calc-loader-skull {
-    margin-right: 6px;
-  }
-  #calc-death-count {
-    font-size: 22px;
-    font-variant-numeric: tabular-nums;
-    color: #ef4444;
-  }
-  .calc-loader-progress-wrap {
-    height: 4px;
-    border-radius: 2px;
-    background: rgba(148,163,184,0.15);
-    overflow: hidden;
+  .calc-loader-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
     margin-bottom: 8px;
   }
-  #calc-loader-progress-fill {
+  .calc-loader-row .hash-loader-spinner {
+    flex: 0 0 auto;
+    width: 14px;
+    height: 14px;
+    border: 2px solid rgba(248, 250, 252, 0.28);
+    border-top-color: #f8fafc;
+    border-radius: 50%;
+    animation: hash-loader-spin 0.9s linear infinite;
+  }
+  .calc-loader-text {
+    transition: opacity 0.3s ease;
+  }
+  .calc-loader-death-row {
+    font-size: 12px;
+    color: #fca5a5;
+    padding: 6px 0;
+    border-top: 1px solid rgba(148, 163, 184, 0.15);
+    margin-bottom: 8px;
+    font-variant-numeric: tabular-nums;
+  }
+  .calc-loader-skull {
+    margin-right: 4px;
+  }
+  #calc-death-count {
+    font-weight: 700;
+    font-size: 14px;
+    color: #ef4444;
+    font-variant-numeric: tabular-nums;
+  }
+  .calc-loader-bar-wrap {
+    height: 3px;
+    border-radius: 2px;
+    background: rgba(148, 163, 184, 0.15);
+    overflow: hidden;
+  }
+  #calc-loader-bar-fill {
     height: 100%;
     width: 0%;
     background: linear-gradient(90deg, #ef4444, #f97316);
     border-radius: 2px;
     transition: width 0.3s ease;
   }
-  .calc-loader-elapsed {
-    font-size: 12px;
-    color: #64748b;
-    margin: 0;
-    font-variant-numeric: tabular-nums;
-  }
   @media (max-width: 768px) {
-    #calc-loader-card {
-      margin: 0 16px;
-      padding: 24px 20px;
+    #calc-loader {
+      top: 10px;
+      right: 10px;
+      left: 10px;
+      max-width: none;
     }
   }
 </style>
@@ -271,27 +253,49 @@
   }
 
   function startCalcLoader() {
-    var overlay = document.getElementById('calc-loader-overlay');
-    if (!overlay) return;
+    var loader = document.getElementById('calc-loader');
+    if (!loader) return;
 
+    var textEl = document.getElementById('calc-loader-text');
     var deathCount = document.getElementById('calc-death-count');
-    var progressFill = document.getElementById('calc-loader-progress-fill');
-    var elapsedEl = document.getElementById('calc-loader-elapsed');
+    var barFill = document.getElementById('calc-loader-bar-fill');
     var DEATHS_PER_SECOND = 104 / 60; // 104 deaths/minute from disease
     var startTime = Date.now();
-    var deaths = 0;
 
-    overlay.style.display = 'flex';
+    var messages = [
+      'Loading a bajillion calculations...',
+      'Thank you for your patience.',
+      'Your call is very important to us.',
+      '647 parameters. Monte Carlo sims. Tornado diagrams. The works.',
+      'Still crunching numbers...',
+      'A representative will be with you shortly.',
+      'Please do not hang up.',
+      'Meanwhile, the death counter keeps ticking.',
+      'Almost there. Probably.',
+      'Have you considered that war is expensive?'
+    ];
+    var msgIndex = 0;
 
-    // Animate death counter + elapsed time
+    loader.style.display = 'block';
+
+    // Rotate messages every 3 seconds
+    var msgInterval = setInterval(function() {
+      msgIndex = (msgIndex + 1) % messages.length;
+      textEl.style.opacity = '0';
+      setTimeout(function() {
+        textEl.textContent = messages[msgIndex];
+        textEl.style.opacity = '1';
+      }, 300);
+    }, 3000);
+
+    // Tick death counter
     var counterInterval = setInterval(function() {
       var elapsed = (Date.now() - startTime) / 1000;
-      deaths = Math.floor(elapsed * DEATHS_PER_SECOND);
+      var deaths = Math.floor(elapsed * DEATHS_PER_SECOND);
       deathCount.textContent = deaths.toLocaleString();
-      elapsedEl.textContent = elapsed.toFixed(1) + 's';
     }, 100);
 
-    // Fake progress that asymptotically approaches 90%
+    // Progress bar
     var progress = 0;
     var progressInterval = setInterval(function() {
       if (progress < 40) {
@@ -301,26 +305,32 @@
       } else if (progress < 90) {
         progress += 0.15;
       }
-      progressFill.style.width = progress + '%';
+      barFill.style.width = progress + '%';
     }, 200);
 
     function dismiss() {
       clearInterval(progressInterval);
-      progressFill.style.width = '100%';
+      barFill.style.width = '100%';
 
-      // Final death count update
+      // Show final death count
       var finalElapsed = (Date.now() - startTime) / 1000;
       var finalDeaths = Math.floor(finalElapsed * DEATHS_PER_SECOND);
       deathCount.textContent = finalDeaths.toLocaleString();
-      elapsedEl.textContent = finalElapsed.toFixed(1) + 's';
+
+      clearInterval(msgInterval);
+      textEl.style.opacity = '0';
+      setTimeout(function() {
+        textEl.textContent = finalDeaths + ' people. That\u2019s why this page exists.';
+        textEl.style.opacity = '1';
+      }, 300);
 
       setTimeout(function() {
         clearInterval(counterInterval);
-        overlay.classList.add('hiding');
+        loader.classList.add('hiding');
         setTimeout(function() {
-          overlay.style.display = 'none';
-        }, 500);
-      }, 600);
+          loader.style.display = 'none';
+        }, 400);
+      }, 3000);
     }
 
     if (document.readyState === 'complete') {

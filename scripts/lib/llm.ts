@@ -139,7 +139,7 @@ function checkContextLength(promptTokens: number, modelId: string): void {
 /**
  * Log request details with cost estimate
  */
-function logRequest(modelId: string, promptTokens: number): void {
+function logRequest(modelId: string, promptTokens: number): number {
   const config = MODEL_CONFIGS[modelId];
   const contextPercent = config ? ((promptTokens / config.contextLength) * 100).toFixed(1) : 'N/A';
 
@@ -147,20 +147,22 @@ function logRequest(modelId: string, promptTokens: number): void {
   console.log(`🤖 LLM Request: ${modelId}`);
   console.log(`📝 Input tokens: ${promptTokens.toLocaleString()} (${contextPercent}% of context)`);
   console.log('⏳ Waiting for response...');
+  return Date.now();
 }
 
 /**
  * Log response details with cost estimate
  */
-function logResponse(modelId: string, inputTokens: number, outputTokens: number, actualUsage?: { inputTokens: number; outputTokens: number }): void {
+function logResponse(modelId: string, inputTokens: number, outputTokens: number, actualUsage?: { inputTokens: number; outputTokens: number }, startTime?: number): void {
   // Use actual usage if provided by API, otherwise use estimates
   const finalInputTokens = actualUsage?.inputTokens ?? inputTokens;
   const finalOutputTokens = actualUsage?.outputTokens ?? outputTokens;
 
   const totalTokens = finalInputTokens + finalOutputTokens;
   const cost = calculateCost(finalInputTokens, finalOutputTokens, modelId);
+  const elapsed = startTime ? ((Date.now() - startTime) / 1000).toFixed(1) : '?';
 
-  console.log(`✅ Response received`);
+  console.log(`✅ Response received in ${elapsed}s`);
   console.log(`📊 Output tokens: ${finalOutputTokens.toLocaleString()}`);
   console.log(`📈 Total tokens: ${totalTokens.toLocaleString()}`);
   console.log(`💰 Estimated cost: $${cost.toFixed(6)} USD`);
@@ -170,7 +172,7 @@ function logResponse(modelId: string, inputTokens: number, outputTokens: number,
 export async function generateGeminiProContent(prompt: string): Promise<string> {
   const inputTokens = estimateTokenCount(prompt);
   checkContextLength(inputTokens, GEMINI_PRO_MODEL_ID);
-  logRequest(GEMINI_PRO_MODEL_ID, inputTokens);
+  const startTime = logRequest(GEMINI_PRO_MODEL_ID, inputTokens);
 
   const result = await genAI.models.generateContent({
     model: GEMINI_PRO_MODEL_ID,
@@ -187,14 +189,14 @@ export async function generateGeminiProContent(prompt: string): Promise<string> 
     outputTokens: geminiResult.usageMetadata.candidatesTokenCount || outputTokens,
   } : undefined;
 
-  logResponse(GEMINI_PRO_MODEL_ID, inputTokens, outputTokens, actualUsage);
+  logResponse(GEMINI_PRO_MODEL_ID, inputTokens, outputTokens, actualUsage, startTime);
   return responseText;
 }
 
 export async function generateGeminiFlashContent(prompt: string): Promise<string> {
   const inputTokens = estimateTokenCount(prompt);
   checkContextLength(inputTokens, GEMINI_FLASH_MODEL_ID);
-  logRequest(GEMINI_FLASH_MODEL_ID, inputTokens);
+  const startTime = logRequest(GEMINI_FLASH_MODEL_ID, inputTokens);
 
   const result = await genAI.models.generateContent({
     model: GEMINI_FLASH_MODEL_ID,
@@ -211,14 +213,14 @@ export async function generateGeminiFlashContent(prompt: string): Promise<string
     outputTokens: geminiResult.usageMetadata.candidatesTokenCount || outputTokens,
   } : undefined;
 
-  logResponse(GEMINI_FLASH_MODEL_ID, inputTokens, outputTokens, actualUsage);
+  logResponse(GEMINI_FLASH_MODEL_ID, inputTokens, outputTokens, actualUsage, startTime);
   return responseText;
 }
 
 export async function generateClaudeOpus41Content(prompt: string): Promise<string> {
   const inputTokens = estimateTokenCount(prompt);
   checkContextLength(inputTokens, CLAUDE_OPUS_4_1_MODEL_ID);
-  logRequest(CLAUDE_OPUS_4_1_MODEL_ID, inputTokens);
+  const startTime = logRequest(CLAUDE_OPUS_4_1_MODEL_ID, inputTokens);
 
   const msg = await anthropic.messages.create({
     model: CLAUDE_OPUS_4_1_MODEL_ID,
@@ -239,14 +241,14 @@ export async function generateClaudeOpus41Content(prompt: string): Promise<strin
     outputTokens: msg.usage.output_tokens,
   };
 
-  logResponse(CLAUDE_OPUS_4_1_MODEL_ID, inputTokens, estimateTokenCount(responseText), actualUsage);
+  logResponse(CLAUDE_OPUS_4_1_MODEL_ID, inputTokens, estimateTokenCount(responseText), actualUsage, startTime);
   return responseText;
 }
 
 export async function generateClaudeSonnet45Content(prompt: string): Promise<string> {
   const inputTokens = estimateTokenCount(prompt);
   checkContextLength(inputTokens, CLAUDE_SONNET_4_5_MODEL_ID);
-  logRequest(CLAUDE_SONNET_4_5_MODEL_ID, inputTokens);
+  const startTime = logRequest(CLAUDE_SONNET_4_5_MODEL_ID, inputTokens);
 
   const msg = await anthropic.messages.create({
     model: CLAUDE_SONNET_4_5_MODEL_ID,
@@ -267,7 +269,7 @@ export async function generateClaudeSonnet45Content(prompt: string): Promise<str
     outputTokens: msg.usage.output_tokens,
   };
 
-  logResponse(CLAUDE_SONNET_4_5_MODEL_ID, inputTokens, estimateTokenCount(responseText), actualUsage);
+  logResponse(CLAUDE_SONNET_4_5_MODEL_ID, inputTokens, estimateTokenCount(responseText), actualUsage, startTime);
   return responseText;
 }
 
@@ -318,7 +320,7 @@ export async function generateGeminiVisionContent(
   const inputTokens = promptTokens + imageTokenEstimate;
 
   checkContextLength(inputTokens, GEMINI_FLASH_MODEL_ID);
-  logRequest(GEMINI_FLASH_MODEL_ID, inputTokens);
+  const startTime = logRequest(GEMINI_FLASH_MODEL_ID, inputTokens);
 
   const result = await genAI.models.generateContent({
     model: GEMINI_FLASH_MODEL_ID,
@@ -347,7 +349,7 @@ export async function generateGeminiVisionContent(
     outputTokens: geminiResult.usageMetadata.candidatesTokenCount || outputTokens,
   } : undefined;
 
-  logResponse(GEMINI_FLASH_MODEL_ID, inputTokens, outputTokens, actualUsage);
+  logResponse(GEMINI_FLASH_MODEL_ID, inputTokens, outputTokens, actualUsage, startTime);
   return responseText;
 }
 

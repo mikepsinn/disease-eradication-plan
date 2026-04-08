@@ -2733,54 +2733,116 @@ NUCLEAR_OVERKILL_FACTOR = Parameter(
     latex_symbol=r"Overkill_{nuke}",
 )
 
-# Cost of Extinction and Extinction Surplus
-# The minimum spending required to destroy civilization once, and everything above it
-COST_OF_EXTINCTION = Parameter(
-    GLOBAL_MILITARY_SPENDING_ANNUAL_2024 / NUCLEAR_OVERKILL_FACTOR,
-    source_type=SourceType.CALCULATED,
-    confidence="medium",
-    description="The minimum military spending required to achieve assured destruction of "
-                "civilization (Minimum Viable Apocalypse). Calculated as total military "
-                "spending divided by the nuclear overkill factor. Everything above this "
-                "amount is the Extinction Surplus.",
-    display_name="Cost of Extinction (Minimum Viable Apocalypse)",
+# Global nuclear weapons spending and apocalypse metrics
+GLOBAL_NUCLEAR_WEAPONS_SPENDING = Parameter(
+    92_000_000_000,
+    source_ref=ReferenceID.GLOBAL_NUCLEAR_WEAPON_MAINTENANCE_100B,
+    source_type="external",
+    confidence="high",
+    description="Annual global spending on nuclear weapons across all nine nuclear-armed "
+                "states. US: $51.5B, China: $11.8B, UK: $8.1B, Russia: $8.3B, France: $6.8B, "
+                "India: ~$2.7B, Israel: ~$1.2B, Pakistan: ~$1.1B, North Korea: ~$0.7B.",
+    display_name="Global Nuclear Weapons Spending",
     unit="USD",
-    formula="GLOBAL_MILITARY_SPENDING_ANNUAL_2024 / NUCLEAR_OVERKILL_FACTOR",
-    inputs=["GLOBAL_MILITARY_SPENDING_ANNUAL_2024", "NUCLEAR_OVERKILL_FACTOR"],
-    compute=lambda ctx: ctx["GLOBAL_MILITARY_SPENDING_ANNUAL_2024"] / ctx["NUCLEAR_OVERKILL_FACTOR"],
-    keywords=["extinction", "cost", "minimum", "apocalypse", "deterrence", "baseline"],
-    latex_symbol=r"C_{extinction}",
+    distribution="fixed",
+    keywords=["nuclear", "spending", "weapons", "arsenal", "annual", "ICAN"],
+    latex_symbol=r"S_{nuke}",
 )
 
-EXTINCTION_SURPLUS = Parameter(
-    GLOBAL_MILITARY_SPENDING_ANNUAL_2024 - COST_OF_EXTINCTION,
-    source_type=SourceType.CALCULATED,
+NUCLEAR_WINTER_WARHEAD_THRESHOLD = Parameter(
+    4_400,
+    source_ref=ReferenceID.NUKE_WINTER_150TG,
+    source_type="external",
     confidence="medium",
-    description="Military spending beyond the Cost of Extinction. The amount governments "
-                "spend above what is needed to destroy civilization once. This is the budget "
-                "that buys redundant apocalypses.",
-    display_name="Extinction Surplus",
-    unit="USD",
-    formula="GLOBAL_MILITARY_SPENDING_ANNUAL_2024 - COST_OF_EXTINCTION",
-    inputs=["GLOBAL_MILITARY_SPENDING_ANNUAL_2024", "COST_OF_EXTINCTION"],
-    compute=lambda ctx: ctx["GLOBAL_MILITARY_SPENDING_ANNUAL_2024"] - ctx["COST_OF_EXTINCTION"],
-    keywords=["extinction", "surplus", "waste", "overkill", "redundant", "excess"],
-    latex_symbol=r"S_{extinction}",
+    description="Approximate number of warheads needed to trigger nuclear winter (150 Tg "
+                "soot), killing ~5 billion people from agricultural collapse. Based on Xia "
+                "et al. 2022, Nature Food, modeling a US-Russia exchange.",
+    display_name="Nuclear Winter Warhead Threshold",
+    unit="warheads",
+    distribution="uniform",
+    confidence_interval=(3_000, 6_000),
+    keywords=["nuclear", "winter", "warheads", "threshold", "soot", "famine"],
+    latex_symbol=r"W_{winter}",
 )
 
-EXTINCTION_SURPLUS_PCT = Parameter(
-    (GLOBAL_MILITARY_SPENDING_ANNUAL_2024 - COST_OF_EXTINCTION) / GLOBAL_MILITARY_SPENDING_ANNUAL_2024,
+GLOBAL_WARHEAD_COUNT = Parameter(
+    12_241,
+    source_ref=ReferenceID.WORLD_WARHEADS,
+    source_type="external",
+    confidence="high",
+    description="Total global nuclear warhead inventory across nine nuclear-armed states. "
+                "Includes deployed, reserve, and retired warheads awaiting dismantlement.",
+    display_name="Global Nuclear Warhead Count",
+    unit="warheads",
+    distribution="fixed",
+    keywords=["nuclear", "warheads", "arsenal", "global", "inventory", "FAS"],
+    latex_symbol=r"W_{global}",
+)
+
+NUCLEAR_WINTER_OVERKILL_FACTOR = Parameter(
+    12_241 / 4_400,
     source_type=SourceType.CALCULATED,
     confidence="medium",
-    description="Percentage of global military spending that is Extinction Surplus, "
-                "i.e., spending beyond what is needed to destroy civilization once.",
-    display_name="Extinction Surplus as Percentage of Military Budget",
-    unit="percent",
-    formula="EXTINCTION_SURPLUS / GLOBAL_MILITARY_SPENDING_ANNUAL_2024",
-    inputs=["EXTINCTION_SURPLUS", "GLOBAL_MILITARY_SPENDING_ANNUAL_2024"],
-    compute=lambda ctx: ctx["EXTINCTION_SURPLUS"] / ctx["GLOBAL_MILITARY_SPENDING_ANNUAL_2024"],
-    keywords=["extinction", "surplus", "percentage", "waste", "fraction"],
-    latex_symbol=r"S_{extinction,\%}",
+    description="How many times the global nuclear arsenal exceeds the threshold for "
+                "nuclear winter (~4,400 warheads for 150 Tg soot). The arsenal-based "
+                "overkill factor for the actual extinction mechanism.",
+    display_name="Nuclear Winter Overkill Factor",
+    unit="x",
+    formula="GLOBAL_WARHEAD_COUNT / NUCLEAR_WINTER_WARHEAD_THRESHOLD",
+    inputs=["GLOBAL_WARHEAD_COUNT", "NUCLEAR_WINTER_WARHEAD_THRESHOLD"],
+    compute=lambda ctx: ctx["GLOBAL_WARHEAD_COUNT"] / ctx["NUCLEAR_WINTER_WARHEAD_THRESHOLD"],
+    keywords=["nuclear", "winter", "overkill", "arsenal", "warheads"],
+    latex_symbol=r"Overkill_{winter}",
+)
+
+# Price of Apocalypse and Apocalypse Markup
+# The cost of triggering one nuclear winter, and the markup above it
+PRICE_OF_APOCALYPSE = Parameter(
+    92_000_000_000 / (12_241 / 4_400),
+    source_type=SourceType.CALCULATED,
+    confidence="medium",
+    description="The Price of Apocalypse: the annual cost of maintaining enough nuclear "
+                "warheads to trigger nuclear winter once (~4,400 warheads, killing ~5 billion "
+                "from agricultural collapse). Calculated as global nuclear spending divided "
+                "by the nuclear winter overkill factor.",
+    display_name="Price of Apocalypse (Minimum Viable Apocalypse)",
+    unit="USD",
+    formula="GLOBAL_NUCLEAR_WEAPONS_SPENDING / NUCLEAR_WINTER_OVERKILL_FACTOR",
+    inputs=["GLOBAL_NUCLEAR_WEAPONS_SPENDING", "NUCLEAR_WINTER_OVERKILL_FACTOR"],
+    compute=lambda ctx: ctx["GLOBAL_NUCLEAR_WEAPONS_SPENDING"] / ctx["NUCLEAR_WINTER_OVERKILL_FACTOR"],
+    keywords=["apocalypse", "price", "minimum", "nuclear", "winter", "cost"],
+    latex_symbol=r"P_{apocalypse}",
+)
+
+APOCALYPSE_MARKUP = Parameter(
+    GLOBAL_MILITARY_SPENDING_ANNUAL_2024 - (92_000_000_000 / (12_241 / 4_400)),
+    source_type=SourceType.CALCULATED,
+    confidence="medium",
+    description="The Apocalypse Markup: total military spending beyond the Price of "
+                "Apocalypse. The amount governments spend above what is needed to trigger "
+                "nuclear winter and end civilization once.",
+    display_name="Apocalypse Markup",
+    unit="USD",
+    formula="GLOBAL_MILITARY_SPENDING_ANNUAL_2024 - PRICE_OF_APOCALYPSE",
+    inputs=["GLOBAL_MILITARY_SPENDING_ANNUAL_2024", "PRICE_OF_APOCALYPSE"],
+    compute=lambda ctx: ctx["GLOBAL_MILITARY_SPENDING_ANNUAL_2024"] - ctx["PRICE_OF_APOCALYPSE"],
+    keywords=["apocalypse", "markup", "waste", "overkill", "redundant", "excess"],
+    latex_symbol=r"M_{apocalypse}",
+)
+
+APOCALYPSE_MARKUP_MULTIPLIER = Parameter(
+    GLOBAL_MILITARY_SPENDING_ANNUAL_2024 / (92_000_000_000 / (12_241 / 4_400)),
+    source_type=SourceType.CALCULATED,
+    confidence="medium",
+    description="How many times total military spending exceeds the Price of Apocalypse. "
+                "The markup multiplier on the cost of ending civilization.",
+    display_name="Apocalypse Markup Multiplier",
+    unit="x",
+    formula="GLOBAL_MILITARY_SPENDING_ANNUAL_2024 / PRICE_OF_APOCALYPSE",
+    inputs=["GLOBAL_MILITARY_SPENDING_ANNUAL_2024", "PRICE_OF_APOCALYPSE"],
+    compute=lambda ctx: ctx["GLOBAL_MILITARY_SPENDING_ANNUAL_2024"] / ctx["PRICE_OF_APOCALYPSE"],
+    keywords=["apocalypse", "markup", "multiplier", "ratio"],
+    latex_symbol=r"M_{apocalypse,x}",
 )
 
 # Bullet purchasing power (complements nuclear overkill with a more visceral metric)

@@ -560,7 +560,7 @@ Select "Enter the details myself", then fill:
 
 ### [Algorithmic Public Administration: A Protocol for Replacing Government Intermediaries with Deterministic Functions](https://manual.warondisease.org/knowledge/appendix/algorithmic-public-administration.html)
 
-> A protocol combining five primitives (transparent ledger, preference aggregation, evidence engine, identity verification, automated monetary policy) to replace mechanical government agency functions, eliminating administrative intermediation costs while preserving democratic control.
+> Government agencies are chains of humans passing paper to other humans, each checking whether the previous human filled out the right form rather than whether anyone got helped. In the United States alone, this intermediation destroys or diverts $4.9T per year, or 17% of GDP [@us-efficiency-audit-paper-2025]. We describe a protocol combining five primitives (transparent ledger, preference aggregation, evidence engine, identity verification, and automated monetary policy) that replaces specific mechanical functions currently performed by the Federal Reserve, Internal Revenue Service, Social Security Administration, Government Accountability Office, Congressional Budget Office, Office of Management and Budget, Federal Election Commission, and Census Bureau. The protocol preserves democratic control: citizens still decide resource allocation through pairwise preference comparison (Wishocracy [@wishocracy-paper-2025]). The algorithm executes those decisions without extracting value at each administrative layer. We distinguish fiscal cash the protocol can route directly into UBI from broader societal gains that arrive as lower prices and higher wages, and we describe a phased implementation pathway compatible with the 1% Treaty [@1-pct-treaty-impact-paper-2025] funding mechanism.
 
 
 <!--
@@ -569,7 +569,7 @@ Select "Enter the details myself", then fill:
 TITLE: Algorithmic Public Administration: A Protocol for Replacing Government Intermediaries with Deterministic Functions
 
 ABSTRACT:
-A protocol combining five primitives (transparent ledger, preference aggregation, evidence engine, identity verification, automated monetary policy) to replace mechanical government agency functions, eliminating administrative intermediation costs while preserving democratic control.
+Government agencies are chains of humans passing paper to other humans, each checking whether the previous human filled out the right form rather than whether anyone got helped. In the United States alone, this intermediation destroys or diverts $4.9T per year, or 17% of GDP [@us-efficiency-audit-paper-2025]. We describe a protocol combining five primitives (transparent ledger, preference aggregation, evidence engine, identity verification, and automated monetary policy) that replaces specific mechanical functions currently performed by the Federal Reserve, Internal Revenue Service, Social Security Administration, Government Accountability Office, Congressional Budget Office, Office of Management and Budget, Federal Election Commission, and Census Bureau. The protocol preserves democratic control: citizens still decide resource allocation through pairwise preference comparison (Wishocracy [@wishocracy-paper-2025]). The algorithm executes those decisions without extracting value at each administrative layer. We distinguish fiscal cash the protocol can route directly into UBI from broader societal gains that arrive as lower prices and higher wages, and we describe a phased implementation pathway compatible with the 1% Treaty [@1-pct-treaty-impact-paper-2025] funding mechanism.
 
 AUTHOR: Mike P. Sinn
 EMAIL: m@warondisease.org
@@ -577,6 +577,8 @@ AFFILIATION: Institute for Accelerated Medicine
 ORCID: 0009-0006-0212-1094
 
 KEYWORDS: Algorithmic Governance, Public Administration, Mechanism Design, Government Efficiency, Monetary Policy, Direct Democracy, Universal Basic Income, Preference Aggregation, Transparent Ledger, Smart Contracts
+
+JEL CODES: H11, H50, D72, D61, E52, O38
 
 SUBJECT AREAS: Algorithmic Governance, Public Administration, Mechanism Design, Monetary Policy, Government Efficiency
 CATEGORY: Academic Paper, Public Policy, Economics, Systems Engineering

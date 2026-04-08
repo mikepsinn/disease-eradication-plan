@@ -1,7 +1,7 @@
 ---
 title: 'Earth Optimization Protocol: Technical Specification'
 subtitle: Identity, Pooling, Settlement, and Oracle Design for Interoperable Outcome Prizes
-description: "Technical specification for interoperable outcome prize pools using one shared pool model. Two targets by 2040: global HALE and median income matching the 1% Treaty projections. Covers cross-pool proof-of-personhood, a permissionless pool registry, VOTE and PRIZE token mechanics, direct cross-pool claims, tamper-evident scoreboard aggregation, and a terminal metric oracle."
+description: 'Technical specification for interoperable outcome prize pools using one shared pool model. Two targets by 2040: global HALE and median income matching the 1% Treaty projections. Covers cross-pool proof-of-personhood, a permissionless pool registry, VOTE and PRIZE token mechanics, direct cross-pool claims, tamper-evident scoreboard aggregation, and a terminal metric oracle.'
 abstract: |
   The Earth Optimization Prize [@earth-optimization-prize-paper-2025] is a pool of money. Two numbers on a Scoreboard: how long people live, how much they earn. By {{< var destructive_economy_50pct_year >}}, if global HALE reaches {{< var treaty_projected_hale_year_15 >}} and median income reaches {{< var treaty_trajectory_avg_income_year_15 >}}, VOTE point-holders split the pool. If not, depositors divide the pool pro rata (still beats a retirement account). Registration asks two questions: yes or no on the 1% Treaty, and how much military vs. clinical trials (with Optimitron evidence so the voter sees what each dollar actually buys). Anyone can start a second pool. It joins the network automatically, because all pools measure the same two numbers.
 
@@ -50,8 +50,12 @@ scores:
   standalone: 3
   voice: 3
   importance: 5
+image: /assets/og-images/knowledge/appendix/earth-optimization-prize-protocol-og-bw-academic.jpg
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
+
+![Technical specification for interoperable outcome prize pools using one shared pool model. Two targets by 2040: global HALE and median income matching the 1% Treaty projections. Covers cross-pool proof-of-personhood, a permissionless pool registry, VOTE and PRIZE token mechanics, direct cross-pool claims, tamper-evident scoreboard aggregation, and a terminal metric oracle.](/assets/infographics/knowledge/appendix/earth-optimization-prize-protocol-infographic-bw-academic.jpg)
+
 
 ## Introduction
 

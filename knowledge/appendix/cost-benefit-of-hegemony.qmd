@@ -22,6 +22,14 @@ tags:
   - deterrence
   - blowback
   - trade-protection
+image: /assets/og-images/knowledge/appendix/cost-benefit-of-hegemony-og-retro-academic.jpg
+scores:
+  quality: 8
+  value: 9
+  timeliness: 10
+  standalone: 9
+  voice: 9
+  importance: 9
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 The United States spends $886 billion per year on military. The only benefit anyone has managed to quantify is $20-200 billion per year in dollar reserve currency privilege. The net is **-$674 billion to -$1.38 trillion per year**. This paper shows the math.
@@ -159,9 +167,9 @@ A [1% treaty](../solution/1-percent-treaty.qmd) [@1-pct-treaty-impact-paper-2025
 
 The net return on hegemony is -$674 billion to -$1.38 trillion per year. The 1% treaty costs {{< var treaty_annual_funding >}}. If you are looking for the controversial part of this proposal, it is not in the math.
 
-## Appendix: A Formal Welfare Model
+## Appendix: A Structured Welfare Model
 
-The back-of-envelope calculation above uses two numbers (benefit, cost) and subtracts. An economist would want more structure. Here is the same argument as a component-based welfare model with uncertainty propagation.
+The back-of-envelope calculation above uses two numbers (benefit, cost) and subtracts. An economist would want more structure. Here is the same argument decomposed into components with explicit ranges on every assumption.
 
 ### Setup
 
@@ -248,7 +256,7 @@ $$
 \Delta W = 340B - 1{,}049B \approx -709B/\text{year}
 $$
 
-Running 100,000 Monte Carlo simulations with triangular distributions on all parameters:
+Propagating the triangular distributions on all parameters through the model:
 
 | Statistic | Value |
 |-----------|-------|

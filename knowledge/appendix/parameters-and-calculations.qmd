@@ -38,15 +38,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 650 parameters used in the analysis, organized by type:
+This appendix documents all 654 parameters used in the analysis, organized by type:
 
-- External sources (peer-reviewed): 210
-- Calculated values: 306
+- External sources (peer-reviewed): 213
+- Calculated values: 307
 - Core definitions: 134
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (306 parameters) • [External Data Sources](#sec-external) (210 parameters) • [Core Definitions](#sec-definitions) (134 parameters)
+[Calculated Values](#sec-calculated) (307 parameters) • [External Data Sources](#sec-external) (213 parameters) • [Core Definitions](#sec-definitions) (134 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -88,6 +88,124 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-additional_drugs_from_cost_elimination.qmd >}}
+
+:::
+
+### Apocalypse Markup: $2.69T {#sec-apocalypse_markup}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+The Apocalypse Markup: total military spending beyond the Price of Apocalypse. The amount governments spend above what is needed to trigger nuclear winter and end civilization once.
+
+**Inputs**:
+
+- [Global Military Spending in 2024](#sec-global_military_spending_annual_2024) 📊: $2.72T
+- [Price of Apocalypse (Minimum Viable Apocalypse)](#sec-price_of_apocalypse) 🔢: $33.1B
+
+$$
+\begin{gathered}
+M_{apocalypse} \\
+= Spending_{mil} - P_{apocalypse} \\
+= \$2.72T - \$33.1B \\
+= \$2.69T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+P_{apocalypse} \\
+= \frac{S_{nuke}}{Overkill_{winter}} \\
+= \frac{\$92B}{2.78} \\
+= \$33.1B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Overkill_{winter} \\
+= \frac{W_{global}}{W_{winter}} \\
+= \frac{12{,}200}{4{,}400} \\
+= 2.78
+\end{gathered}
+$$
+*~ Medium confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-apocalypse_markup.qmd >}}
+
+{{< include ../figures/sensitivity-table-apocalypse_markup.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-apocalypse_markup.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-apocalypse_markup.qmd >}}
+
+**Used in:**
+
+- [The Apocalypse Markup](../appendix/extinction-surplus.html)
+
+:::
+
+### Apocalypse Markup Multiplier: 82.3x {#sec-apocalypse_markup_multiplier}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+How many times total military spending exceeds the Price of Apocalypse. The markup multiplier on the cost of ending civilization.
+
+**Inputs**:
+
+- [Global Military Spending in 2024](#sec-global_military_spending_annual_2024) 📊: $2.72T
+- [Price of Apocalypse (Minimum Viable Apocalypse)](#sec-price_of_apocalypse) 🔢: $33.1B
+
+$$
+\begin{gathered}
+M_{apocalypse,x} \\
+= \frac{Spending_{mil}}{P_{apocalypse}} \\
+= \frac{\$2.72T}{\$33.1B} \\
+= 82.3
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+P_{apocalypse} \\
+= \frac{S_{nuke}}{Overkill_{winter}} \\
+= \frac{\$92B}{2.78} \\
+= \$33.1B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Overkill_{winter} \\
+= \frac{W_{global}}{W_{winter}} \\
+= \frac{12{,}200}{4{,}400} \\
+= 2.78
+\end{gathered}
+$$
+*~ Medium confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-apocalypse_markup_multiplier.qmd >}}
+
+{{< include ../figures/sensitivity-table-apocalypse_markup_multiplier.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-apocalypse_markup_multiplier.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-apocalypse_markup_multiplier.qmd >}}
+
+**Used in:**
+
+- [The Apocalypse Markup](../appendix/extinction-surplus.html)
 
 :::
 
@@ -174,7 +292,7 @@ $$
 
 **Used in:**
 
-- [The Extinction Surplus](../appendix/extinction-surplus.html)
+- [The Apocalypse Markup](../appendix/extinction-surplus.html)
 - [The Cost of War](../problem/cost-of-war.html)
 - [A 1% Treaty](../solution/1-percent-treaty.html)
 
@@ -2221,34 +2339,6 @@ $$
 
 - [The Earth Optimization Prize Fund](../economics/earth-optimization-prize-fund.html)
 - [The Earth Optimization Prize](../strategy/earth-optimization-prize.html)
-
-:::
-
-### Cost of Extinction (Minimum Viable Apocalypse): $136B {#sec-cost_of_extinction}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-The minimum military spending required to achieve assured destruction of civilization (Minimum Viable Apocalypse). Calculated as total military spending divided by the nuclear overkill factor. Everything above this amount is the Extinction Surplus.
-
-**Inputs**:
-
-- [Global Military Spending in 2024](#sec-global_military_spending_annual_2024) 📊: $2.72T
-- [Nuclear Overkill Factor](#sec-nuclear_overkill_factor): 20x
-
-$$
-\begin{gathered}
-C_{extinction} \\
-= \frac{Spending_{mil}}{Overkill_{nuke}} \\
-= \frac{\$2.72T}{20} \\
-= \$136B
-\end{gathered}
-$$
-
-*~ Medium confidence*
-
-**Used in:**
-
-- [The Extinction Surplus](../appendix/extinction-surplus.html)
 
 :::
 
@@ -7868,87 +7958,6 @@ $$
 
 :::
 
-### Extinction Surplus: $2.58T {#sec-extinction_surplus}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Military spending beyond the Cost of Extinction. The amount governments spend above what is needed to destroy civilization once. This is the budget that buys redundant apocalypses.
-
-**Inputs**:
-
-- [Global Military Spending in 2024](#sec-global_military_spending_annual_2024) 📊: $2.72T
-- [Cost of Extinction (Minimum Viable Apocalypse)](#sec-cost_of_extinction) 🔢: $136B
-
-$$
-\begin{gathered}
-S_{extinction} \\
-= Spending_{mil} - C_{extinction} \\
-= \$2.72T - \$136B \\
-= \$2.58T
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-C_{extinction} \\
-= \frac{Spending_{mil}}{Overkill_{nuke}} \\
-= \frac{\$2.72T}{20} \\
-= \$136B
-\end{gathered}
-$$
-*~ Medium confidence*
-
-**Used in:**
-
-- [The Extinction Surplus](../appendix/extinction-surplus.html)
-
-:::
-
-### Extinction Surplus as Percentage of Military Budget: 95% {#sec-extinction_surplus_pct}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Percentage of global military spending that is Extinction Surplus, i.e., spending beyond what is needed to destroy civilization once.
-
-**Inputs**:
-
-- [Extinction Surplus](#sec-extinction_surplus) 🔢: $2.58T
-- [Global Military Spending in 2024](#sec-global_military_spending_annual_2024) 📊: $2.72T
-
-$$
-\begin{gathered}
-S_{extinction,\%} \\
-= \frac{S_{extinction}}{Spending_{mil}} \\
-= \frac{\$2.58T}{\$2.72T} \\
-= 95\%
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-S_{extinction} \\
-= Spending_{mil} - C_{extinction} \\
-= \$2.72T - \$136B \\
-= \$2.58T
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-C_{extinction} \\
-= \frac{Spending_{mil}}{Overkill_{nuke}} \\
-= \frac{\$2.72T}{20} \\
-= \$136B
-\end{gathered}
-$$
-*~ Medium confidence*
-
-**Used in:**
-
-- [The Extinction Surplus](../appendix/extinction-surplus.html)
-
-:::
-
 ### FDA Efficacy Testing to Oxford RECOVERY Trial Time Multiplier: 32.8x {#sec-fda_to_oxford_recovery_trial_time_multiplier}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -10511,6 +10520,44 @@ $$
 
 :::
 
+### Nuclear Winter Overkill Factor: 2.78x {#sec-nuclear_winter_overkill_factor}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+How many times the global nuclear arsenal exceeds the threshold for nuclear winter (~4,400 warheads for 150 Tg soot). The arsenal-based overkill factor for the actual extinction mechanism.
+
+**Inputs**:
+
+- [Global Nuclear Warhead Count](#sec-global_warhead_count) 📊: 12.2 thousand warheads
+- [Nuclear Winter Warhead Threshold](#sec-nuclear_winter_warhead_threshold) 📊: 4.4 thousand warheads (95% CI: 3 thousand warheads - 6 thousand warheads)
+
+$$
+\begin{gathered}
+Overkill_{winter} \\
+= \frac{W_{global}}{W_{winter}} \\
+= \frac{12{,}200}{4{,}400} \\
+= 2.78
+\end{gathered}
+$$
+
+*~ Medium confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-nuclear_winter_overkill_factor.qmd >}}
+
+{{< include ../figures/sensitivity-table-nuclear_winter_overkill_factor.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-nuclear_winter_overkill_factor.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-nuclear_winter_overkill_factor.qmd >}}
+
+:::
+
 ### Annual Peace Dividend from 1% Reduction in Total War Costs: $114B {#sec-peace_dividend_annual_societal_benefit}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -12262,6 +12309,56 @@ $$
 
 - [The 1% Treaty: Harnessing Greed to Eradicate Disease](../economics/1-pct-treaty-impact.html)
 - [Ubiquitous Pragmatic Trial Impact Analysis: How to Prevent a Year of Death and Suffering for 84 Cents](../appendix/dfda-impact-paper.html)
+
+:::
+
+### Price of Apocalypse (Minimum Viable Apocalypse): $33.1B {#sec-price_of_apocalypse}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+The Price of Apocalypse: the annual cost of maintaining enough nuclear warheads to trigger nuclear winter once (~4,400 warheads, killing ~5 billion from agricultural collapse). Calculated as global nuclear spending divided by the nuclear winter overkill factor.
+
+**Inputs**:
+
+- [Global Nuclear Weapons Spending](#sec-global_nuclear_weapons_spending) 📊: $92B
+- [Nuclear Winter Overkill Factor](#sec-nuclear_winter_overkill_factor) 🔢: 2.78x
+
+$$
+\begin{gathered}
+P_{apocalypse} \\
+= \frac{S_{nuke}}{Overkill_{winter}} \\
+= \frac{\$92B}{2.78} \\
+= \$33.1B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Overkill_{winter} \\
+= \frac{W_{global}}{W_{winter}} \\
+= \frac{12{,}200}{4{,}400} \\
+= 2.78
+\end{gathered}
+$$
+*~ Medium confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-price_of_apocalypse.qmd >}}
+
+{{< include ../figures/sensitivity-table-price_of_apocalypse.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-price_of_apocalypse.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-price_of_apocalypse.qmd >}}
+
+**Used in:**
+
+- [The Apocalypse Markup](../appendix/extinction-surplus.html)
 
 :::
 
@@ -14617,7 +14714,7 @@ $$
 - [Why Every Nonprofit Should Support a 1% treaty](../strategy/nonprofit-coalition-strategy.html)
 - [Treaty Feasibility & Cost Analysis](../appendix/treaty-feasibility.html)
 - [Optimization Summary](../solution.html)
-- [The Extinction Surplus](../appendix/extinction-surplus.html)
+- [The Apocalypse Markup](../appendix/extinction-surplus.html)
 - [The Earth Optimization Prize](../strategy/earth-optimization-prize.html)
 - [Decentralized Institutes of Health](../solution/dih.html)
 - [Incentive Alignment Bonds](../solution/incentive-alignment-bonds.html)
@@ -26427,7 +26524,7 @@ Rounds of small-arms ammunition fired per insurgent killed in Iraq and Afghanist
 
 **Used in:**
 
-- [The Extinction Surplus](../appendix/extinction-surplus.html)
+- [The Apocalypse Markup](../appendix/extinction-surplus.html)
 
 :::
 
@@ -26455,7 +26552,7 @@ Cost per round of 5.56x45mm NATO ammunition (military bulk procurement). Based o
 
 **Used in:**
 
-- [The Extinction Surplus](../appendix/extinction-surplus.html)
+- [The Apocalypse Markup](../appendix/extinction-surplus.html)
 
 :::
 
@@ -28375,9 +28472,9 @@ Global military spending in 2024
 **Used in:**
 
 - [The 1% Treaty: Harnessing Greed to Eradicate Disease](../economics/1-pct-treaty-impact.html)
+- [The Apocalypse Markup](../appendix/extinction-surplus.html)
 - [The Cost of War](../problem/cost-of-war.html)
 - [Incentive Alignment Bonds: Making Public Goods Financially and Politically Profitable](../appendix/incentive-alignment-bonds-paper.html)
-- [The Extinction Surplus](../appendix/extinction-surplus.html)
 - [Peace Dividend](../economics/peace-dividend.html)
 - [Why Every Nonprofit Should Support a 1% treaty](../strategy/nonprofit-coalition-strategy.html)
 - [Recruitment & Propaganda Plan](../appendix/recruitment-and-propaganda-plan.html)
@@ -28438,6 +28535,22 @@ Annual global nonprofit spending on clinical trials (foundations, disease advoca
 #### Input Distribution
 
 {{< include ../figures/distribution-global_nonprofit_clinical_trials_spending_annual.qmd >}}
+
+*✓ High confidence*
+
+:::
+
+### Global Nuclear Weapons Spending: $92B {#sec-global_nuclear_weapons_spending}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual global spending on nuclear weapons across all nine nuclear-armed states. US: $51.5B, China: $11.8B, UK: $8.1B, Russia: $8.3B, France: $6.8B, India: ~$2.7B, Israel: ~$1.2B, Pakistan: ~$1.1B, North Korea: ~$0.7B.
+
+**Source**: [@global-nuclear-weapon-maintenance-100b]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
 
 *✓ High confidence*
 
@@ -28627,6 +28740,22 @@ Annual global spending on symptomatic disease treatment
 **Used in:**
 
 - [The 1% Treaty: Harnessing Greed to Eradicate Disease](../economics/1-pct-treaty-impact.html)
+
+:::
+
+### Global Nuclear Warhead Count: 12.2 thousand warheads {#sec-global_warhead_count}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Total global nuclear warhead inventory across nine nuclear-armed states. Includes deployed, reserve, and retired warheads awaiting dismantlement.
+
+**Source**: [@world-warheads]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*✓ High confidence*
 
 :::
 
@@ -28952,6 +29081,30 @@ Typical cost per QALY for standard NIH-funded medical research portfolio. Reflec
 
 - [The 1% Treaty: Harnessing Greed to Eradicate Disease](../economics/1-pct-treaty-impact.html)
 - [Ubiquitous Pragmatic Trial Impact Analysis: How to Prevent a Year of Death and Suffering for 84 Cents](../appendix/dfda-impact-paper.html)
+
+:::
+
+### Nuclear Winter Warhead Threshold: 4.4 thousand warheads {#sec-nuclear_winter_warhead_threshold}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Approximate number of warheads needed to trigger nuclear winter (150 Tg soot), killing ~5 billion people from agricultural collapse. Based on Xia et al. 2022, Nature Food, modeling a US-Russia exchange.
+
+**Source**: [@nuke-winter-150tg]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [3 thousand warheads, 6 thousand warheads] • Distribution: Uniform
+
+**What this means**: There's significant uncertainty here. The true value likely falls between 3 thousand warheads and 6 thousand warheads (±34%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The uniform distribution means any value in the range is equally likely.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-nuclear_winter_warhead_threshold.qmd >}}
+
+*~ Medium confidence*
 
 :::
 
@@ -33143,7 +33296,7 @@ How many times the global nuclear arsenal can kill Earth's entire population. Ba
 
 **Used in:**
 
-- [The Extinction Surplus](../appendix/extinction-surplus.html)
+- [The Apocalypse Markup](../appendix/extinction-surplus.html)
 - [A 1% Treaty](../solution/1-percent-treaty.html)
 - [Declaration of Optimization](../strategy/declaration-of-optimization.html)
 

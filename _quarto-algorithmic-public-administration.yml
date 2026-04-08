@@ -16,7 +16,7 @@ project:
 # Custom fields for render-quarto.py
 dih-render:
   emoji: "⚡"
-  index-source: knowledge/appendix/algorithmic-public-administration.qmd
+  index-source: knowledge/appendix/algorithmic-public-administration-paper.qmd
   redirect-from: https://apa.warondisease.org
   fallback-404-redirect-domain: https://manual.WarOnDisease.org  # Redirects here if path doesn't exist on this site
   netlify-site-id: ""  # TODO: Create Netlify site and add ID

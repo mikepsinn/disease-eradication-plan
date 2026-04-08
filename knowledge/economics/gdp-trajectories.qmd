@@ -21,8 +21,12 @@ scores:
   standalone: 7
   voice: 8
   importance: 7
+image: /assets/og-images/knowledge/economics/gdp-trajectories-og-bw-academic.jpg
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
+
+![Two GDP paths: redirect the murder budget and average income hits $99.9K, or don't and the cockroaches find this manual.](/assets/infographics/knowledge/economics/gdp-trajectories-infographic-bw-academic.jpg)
+
 Your civilization hits 25% of GDP by {{< var destructive_economy_25pct_year >}} and 50% by {{< var destructive_economy_50pct_year >}}, at which point the destructive economy has consumed half of everything. But the historical evidence says civilizations do not make it to 50%. Every economy that has collapsed, from the Soviet Union to Venezuela to Zimbabwe, crossed the point of no return between 35% and 45% total extraction. By 50%, the patient is already a skeleton. The death spiral begins earlier.
 
 This chapter models two paths: the one you're on, and the one where you redirect the murder budget. I've lived one of them. Your trend data projects the other.

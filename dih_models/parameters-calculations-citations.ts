@@ -191,7 +191,7 @@ export const BULLETS_FIRED_PER_KILL_IRAQ_AFGHANISTAN: Parameter = {
   sourceUrl: "https://jonathanturley.org/2011/01/10/gao-u-s-has-fired-250000-rounds-for-every-insurgent-killed/",
   confidence: "medium",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/extinction-surplus.html",
-  manualPageTitle: "The Extinction Surplus",
+  manualPageTitle: "The Apocalypse Markup",
 };
 
 export const BULLET_COST_556_NATO: Parameter = {
@@ -207,7 +207,7 @@ export const BULLET_COST_556_NATO: Parameter = {
   confidence: "medium",
   confidenceInterval: [0.25, 0.6],
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/extinction-surplus.html",
-  manualPageTitle: "The Extinction Surplus",
+  manualPageTitle: "The Apocalypse Markup",
 };
 
 export const CAREGIVER_ANNUAL_VALUE_TOTAL: Parameter = {
@@ -1450,6 +1450,19 @@ export const GLOBAL_NONPROFIT_CLINICAL_TRIALS_SPENDING_ANNUAL: Parameter = {
   confidenceInterval: [2000000000.0, 5000000000.0],
 };
 
+export const GLOBAL_NUCLEAR_WEAPONS_SPENDING: Parameter = {
+  value: 92000000000.0,
+  parameterName: "GLOBAL_NUCLEAR_WEAPONS_SPENDING",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-global_nuclear_weapons_spending",
+  unit: "USD",
+  displayName: "Global Nuclear Weapons Spending",
+  description: "Annual global spending on nuclear weapons across all nine nuclear-armed states. US: $51.5B, China: $11.8B, UK: $8.1B, Russia: $8.3B, France: $6.8B, India: ~$2.7B, Israel: ~$1.2B, Pakistan: ~$1.1B, North Korea: ~$0.7B.",
+  sourceType: "external",
+  sourceRef: "global-nuclear-weapon-maintenance-100b",
+  sourceUrl: "<https://www.icanw.org/global_spending_on_nuclear_weapons_topped_100_billion_in_2024>",
+  confidence: "high",
+};
+
 export const GLOBAL_PHARMA_RD_SPENDING_ANNUAL: Parameter = {
   value: 300000000000.0,
   parameterName: "GLOBAL_PHARMA_RD_SPENDING_ANNUAL",
@@ -1562,6 +1575,19 @@ export const GLOBAL_SYMPTOMATIC_DISEASE_TREATMENT_ANNUAL: Parameter = {
   confidenceInterval: [6500000000000.0, 10000000000000.0],
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/economics/1-pct-treaty-impact.html",
   manualPageTitle: "The 1% Treaty: Harnessing Greed to Eradicate Disease",
+};
+
+export const GLOBAL_WARHEAD_COUNT: Parameter = {
+  value: 12241.0,
+  parameterName: "GLOBAL_WARHEAD_COUNT",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-global_warhead_count",
+  unit: "warheads",
+  displayName: "Global Nuclear Warhead Count",
+  description: "Total global nuclear warhead inventory across nine nuclear-armed states. Includes deployed, reserve, and retired warheads awaiting dismantlement.",
+  sourceType: "external",
+  sourceRef: "world-warheads",
+  sourceUrl: "https://fas.org/issues/nuclear-weapons/status-world-nuclear-forces/",
+  confidence: "high",
 };
 
 export const GLOBAL_YLD_PROPORTION_OF_DALYS: Parameter = {
@@ -1797,6 +1823,20 @@ export const NIH_STANDARD_RESEARCH_COST_PER_QALY: Parameter = {
   confidenceInterval: [20000.0, 100000.0],
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/economics/1-pct-treaty-impact.html",
   manualPageTitle: "The 1% Treaty: Harnessing Greed to Eradicate Disease",
+};
+
+export const NUCLEAR_WINTER_WARHEAD_THRESHOLD: Parameter = {
+  value: 4400.0,
+  parameterName: "NUCLEAR_WINTER_WARHEAD_THRESHOLD",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-nuclear_winter_warhead_threshold",
+  unit: "warheads",
+  displayName: "Nuclear Winter Warhead Threshold",
+  description: "Approximate number of warheads needed to trigger nuclear winter (150 Tg soot), killing ~5 billion people from agricultural collapse. Based on Xia et al. 2022, Nature Food, modeling a US-Russia exchange.",
+  sourceType: "external",
+  sourceRef: "nuke-winter-150tg",
+  sourceUrl: "https://www.nature.com/articles/s43016-022-00573-0",
+  confidence: "medium",
+  confidenceInterval: [3000.0, 6000.0],
 };
 
 export const OXFORD_RECOVERY_TRIAL_DURATION_MONTHS: Parameter = {
@@ -3281,6 +3321,38 @@ export const ADDITIONAL_DRUGS_FROM_COST_ELIMINATION: Parameter = {
   confidenceInterval: [13.109307444269922, 27.532282157289686],
 };
 
+export const APOCALYPSE_MARKUP: Parameter = {
+  value: 2686930806306.6743,
+  parameterName: "APOCALYPSE_MARKUP",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-apocalypse_markup",
+  unit: "USD",
+  displayName: "Apocalypse Markup",
+  description: "The Apocalypse Markup: total military spending beyond the Price of Apocalypse. The amount governments spend above what is needed to trigger nuclear winter and end civilization once.",
+  sourceType: "calculated",
+  confidence: "medium",
+  formula: "GLOBAL_MILITARY_SPENDING_ANNUAL_2024 - PRICE_OF_APOCALYPSE",
+  latex: "\\begin{gathered}\nM_{apocalypse} = Spending_{mil} - P_{apocalypse} = \\$2.72T - \\$33.1B = \\$2.69T\n\\\\[0.5em]\n\\text{where } P_{apocalypse} = \\frac{S_{nuke}}{Overkill_{winter}} = \\frac{\\$92B}{2.78} = \\$33.1B\n\\\\[0.5em]\n\\text{where } Overkill_{winter} = \\frac{W_{global}}{W_{winter}} = \\frac{12{,}200}{4{,}400} = 2.78\n\\end{gathered}",
+  confidenceInterval: [2676032927061.778, 2696346369243.1226],
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/extinction-surplus.html",
+  manualPageTitle: "The Apocalypse Markup",
+};
+
+export const APOCALYPSE_MARKUP_MULTIPLIER: Parameter = {
+  value: 82.25177865612649,
+  parameterName: "APOCALYPSE_MARKUP_MULTIPLIER",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-apocalypse_markup_multiplier",
+  unit: "x",
+  displayName: "Apocalypse Markup Multiplier",
+  description: "How many times total military spending exceeds the Price of Apocalypse. The markup multiplier on the cost of ending civilization.",
+  sourceType: "calculated",
+  confidence: "medium",
+  formula: "GLOBAL_MILITARY_SPENDING_ANNUAL_2024 / PRICE_OF_APOCALYPSE",
+  latex: "\\begin{gathered}\nM_{apocalypse,x} = \\frac{Spending_{mil}}{P_{apocalypse}} = \\frac{\\$2.72T}{\\$33.1B} = 82.3\n\\\\[0.5em]\n\\text{where } P_{apocalypse} = \\frac{S_{nuke}}{Overkill_{winter}} = \\frac{\\$92B}{2.78} = \\$33.1B\n\\\\[0.5em]\n\\text{where } Overkill_{winter} = \\frac{W_{global}}{W_{winter}} = \\frac{12{,}200}{4{,}400} = 2.78\n\\end{gathered}",
+  confidenceInterval: [61.86447762529438, 114.9929170718008],
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/extinction-surplus.html",
+  manualPageTitle: "The Apocalypse Markup",
+};
+
 export const BEST_PRACTICE_LIFE_EXPECTANCY_GAIN: Parameter = {
   value: 5.099999999999994,
   parameterName: "BEST_PRACTICE_LIFE_EXPECTANCY_GAIN",
@@ -3308,7 +3380,7 @@ export const BULLETS_PER_PERSON_ANNUAL: Parameter = {
   latex: "\\begin{gathered}\nn_{bullets/person} = \\frac{N_{bullets,yr}}{Pop_{global}} = \\frac{6.8T}{8B} = 850\n\\\\[0.5em]\n\\text{where } N_{bullets,yr} = \\frac{Spending_{mil}}{c_{bullet}} = \\frac{\\$2.72T}{\\$0.4} = 6.8T\n\\end{gathered}",
   confidenceInterval: [583.3925241980181, 1273.6806203353235],
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/extinction-surplus.html",
-  manualPageTitle: "The Extinction Surplus",
+  manualPageTitle: "The Apocalypse Markup",
 };
 
 export const CELL_THERAPY_DISEASE_COMBINATIONS: Parameter = {
@@ -3618,21 +3690,6 @@ export const CONVENTIONAL_RETIREMENT_HORIZON_MULTIPLE: Parameter = {
   confidenceInterval: [2.144867844917442, 3.066863226999378],
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/economics/earth-optimization-prize-fund.html",
   manualPageTitle: "The Earth Optimization Prize Fund",
-};
-
-export const COST_OF_EXTINCTION: Parameter = {
-  value: 136000000000.0,
-  parameterName: "COST_OF_EXTINCTION",
-  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-cost_of_extinction",
-  unit: "USD",
-  displayName: "Cost of Extinction (Minimum Viable Apocalypse)",
-  description: "The minimum military spending required to achieve assured destruction of civilization (Minimum Viable Apocalypse). Calculated as total military spending divided by the nuclear overkill factor. Everything above this amount is the Extinction Surplus.",
-  sourceType: "calculated",
-  confidence: "medium",
-  formula: "GLOBAL_MILITARY_SPENDING_ANNUAL_2024 / NUCLEAR_OVERKILL_FACTOR",
-  latex: "\\begin{gathered}\nC_{extinction} \\\\\n= \\frac{Spending_{mil}}{Overkill_{nuke}} \\\\\n= \\frac{\\$2.72T}{20} \\\\\n= \\$136B\n\\end{gathered}",
-  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/extinction-surplus.html",
-  manualPageTitle: "The Extinction Surplus",
 };
 
 export const CUMULATIVE_MILITARY_IN_GOVT_TRIAL_YEARS: Parameter = {
@@ -4864,36 +4921,6 @@ export const EXPLORATION_RATIO: Parameter = {
   manualPageTitle: "The Untapped Therapeutic Frontier",
 };
 
-export const EXTINCTION_SURPLUS: Parameter = {
-  value: 2584000000000.0,
-  parameterName: "EXTINCTION_SURPLUS",
-  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-extinction_surplus",
-  unit: "USD",
-  displayName: "Extinction Surplus",
-  description: "Military spending beyond the Cost of Extinction. The amount governments spend above what is needed to destroy civilization once. This is the budget that buys redundant apocalypses.",
-  sourceType: "calculated",
-  confidence: "medium",
-  formula: "GLOBAL_MILITARY_SPENDING_ANNUAL_2024 - COST_OF_EXTINCTION",
-  latex: "\\begin{gathered}\nS_{extinction} = Spending_{mil} - C_{extinction} = \\$2.72T - \\$136B = \\$2.58T\n\\\\[0.5em]\n\\text{where } C_{extinction} = \\frac{Spending_{mil}}{Overkill_{nuke}} = \\frac{\\$2.72T}{20} = \\$136B\n\\end{gathered}",
-  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/extinction-surplus.html",
-  manualPageTitle: "The Extinction Surplus",
-};
-
-export const EXTINCTION_SURPLUS_PCT: Parameter = {
-  value: 0.95,
-  parameterName: "EXTINCTION_SURPLUS_PCT",
-  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-extinction_surplus_pct",
-  unit: "percent",
-  displayName: "Extinction Surplus as Percentage of Military Budget",
-  description: "Percentage of global military spending that is Extinction Surplus, i.e., spending beyond what is needed to destroy civilization once.",
-  sourceType: "calculated",
-  confidence: "medium",
-  formula: "EXTINCTION_SURPLUS / GLOBAL_MILITARY_SPENDING_ANNUAL_2024",
-  latex: "\\begin{gathered}\nS_{extinction,\\%} = \\frac{S_{extinction}}{Spending_{mil}} = \\frac{\\$2.58T}{\\$2.72T} = 95\\%\n\\\\[0.5em]\n\\text{where } S_{extinction} = Spending_{mil} - C_{extinction} = \\$2.72T - \\$136B = \\$2.58T\n\\\\[0.5em]\n\\text{where } C_{extinction} = \\frac{Spending_{mil}}{Overkill_{nuke}} = \\frac{\\$2.72T}{20} = \\$136B\n\\end{gathered}",
-  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/extinction-surplus.html",
-  manualPageTitle: "The Extinction Surplus",
-};
-
 export const FDA_TO_OXFORD_RECOVERY_TRIAL_TIME_MULTIPLIER: Parameter = {
   value: 32.8,
   parameterName: "FDA_TO_OXFORD_RECOVERY_TRIAL_TIME_MULTIPLIER",
@@ -5612,6 +5639,20 @@ export const NIH_TRADITIONAL_TRIAL_MAX_EFFICIENCY_PCT: Parameter = {
   manualPageTitle: "NIH Fails to Institute Health",
 };
 
+export const NUCLEAR_WINTER_OVERKILL_FACTOR: Parameter = {
+  value: 2.7820454545454547,
+  parameterName: "NUCLEAR_WINTER_OVERKILL_FACTOR",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-nuclear_winter_overkill_factor",
+  unit: "x",
+  displayName: "Nuclear Winter Overkill Factor",
+  description: "How many times the global nuclear arsenal exceeds the threshold for nuclear winter (~4,400 warheads for 150 Tg soot). The arsenal-based overkill factor for the actual extinction mechanism.",
+  sourceType: "calculated",
+  confidence: "medium",
+  formula: "GLOBAL_WARHEAD_COUNT / NUCLEAR_WINTER_WARHEAD_THRESHOLD",
+  latex: "\\begin{gathered}\nOverkill_{winter} \\\\\n= \\frac{W_{global}}{W_{winter}} \\\\\n= \\frac{12{,}200}{4{,}400} \\\\\n= 2.78\n\\end{gathered}",
+  confidenceInterval: [2.092474978502604, 3.889466312722674],
+};
+
 export const PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT: Parameter = {
   value: 113571000000.0,
   parameterName: "PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT",
@@ -6042,6 +6083,22 @@ export const PRAGMATIC_TRIAL_COST_PER_QALY: Parameter = {
   confidenceInterval: [1.7140062688280877, 10.176607937442855],
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/economics/1-pct-treaty-impact.html",
   manualPageTitle: "The 1% Treaty: Harnessing Greed to Eradicate Disease",
+};
+
+export const PRICE_OF_APOCALYPSE: Parameter = {
+  value: 33069193693.325706,
+  parameterName: "PRICE_OF_APOCALYPSE",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-price_of_apocalypse",
+  unit: "USD",
+  displayName: "Price of Apocalypse (Minimum Viable Apocalypse)",
+  description: "The Price of Apocalypse: the annual cost of maintaining enough nuclear warheads to trigger nuclear winter once (~4,400 warheads, killing ~5 billion from agricultural collapse). Calculated as global nuclear spending divided by the nuclear winter overkill factor.",
+  sourceType: "calculated",
+  confidence: "medium",
+  formula: "GLOBAL_NUCLEAR_WEAPONS_SPENDING / NUCLEAR_WINTER_OVERKILL_FACTOR",
+  latex: "\\begin{gathered}\nP_{apocalypse} = \\frac{S_{nuke}}{Overkill_{winter}} = \\frac{\\$92B}{2.78} = \\$33.1B\n\\\\[0.5em]\n\\text{where } Overkill_{winter} = \\frac{W_{global}}{W_{winter}} = \\frac{12{,}200}{4{,}400} = 2.78\n\\end{gathered}",
+  confidenceInterval: [23653630756.877037, 43967072938.2219],
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/extinction-surplus.html",
+  manualPageTitle: "The Apocalypse Markup",
 };
 
 export const PRIZE_POOL_ANNUAL_RETURN: Parameter = {
@@ -9219,7 +9276,7 @@ export const NUCLEAR_OVERKILL_FACTOR: Parameter = {
   sourceRef: "nuclear-extinction",
   confidence: "medium",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/extinction-surplus.html",
-  manualPageTitle: "The Extinction Surplus",
+  manualPageTitle: "The Apocalypse Markup",
 };
 
 export const PEACE_DIVIDEND_CONFLICT_ELASTICITY: Parameter = {
@@ -9830,6 +9887,7 @@ export const parameters = {
   GLOBAL_MILITARY_SPENDING_ANNUAL_2024,
   GLOBAL_MILITARY_SPENDING_REAL_CAGR_10YR,
   GLOBAL_NONPROFIT_CLINICAL_TRIALS_SPENDING_ANNUAL,
+  GLOBAL_NUCLEAR_WEAPONS_SPENDING,
   GLOBAL_PHARMA_RD_SPENDING_ANNUAL,
   GLOBAL_POPULATION_2024,
   GLOBAL_POPULATION_2040_PROJECTED,
@@ -9838,6 +9896,7 @@ export const parameters = {
   GLOBAL_RETIREMENT_ASSETS,
   GLOBAL_SAVINGS_RATE_PCT,
   GLOBAL_SYMPTOMATIC_DISEASE_TREATMENT_ANNUAL,
+  GLOBAL_WARHEAD_COUNT,
   GLOBAL_YLD_PROPORTION_OF_DALYS,
   HOME_BIAS_ALPHA,
   HUMAN_GENOME_PROJECT_TOTAL_ECONOMIC_IMPACT,
@@ -9854,6 +9913,7 @@ export const parameters = {
   NIH_ANNUAL_BUDGET,
   NIH_CLINICAL_TRIALS_SPENDING_PCT,
   NIH_STANDARD_RESEARCH_COST_PER_QALY,
+  NUCLEAR_WINTER_WARHEAD_THRESHOLD,
   OXFORD_RECOVERY_TRIAL_DURATION_MONTHS,
   PATIENT_WILLINGNESS_TRIAL_PARTICIPATION_PCT,
   PHARMA_DRUG_DEVELOPMENT_COST_CURRENT,
@@ -9951,6 +10011,8 @@ export const parameters = {
   WHO_QALY_THRESHOLD_COST_EFFECTIVE,
   WORKFORCE_WITH_PRODUCTIVITY_LOSS,
   ADDITIONAL_DRUGS_FROM_COST_ELIMINATION,
+  APOCALYPSE_MARKUP,
+  APOCALYPSE_MARKUP_MULTIPLIER,
   BEST_PRACTICE_LIFE_EXPECTANCY_GAIN,
   BULLETS_PER_PERSON_ANNUAL,
   CELL_THERAPY_DISEASE_COMBINATIONS,
@@ -9973,7 +10035,6 @@ export const parameters = {
   CONTRIBUTION_LIVES_SAVED_PER_PCT_POINT,
   CONTRIBUTION_SUFFERING_HOURS_PER_PCT_POINT,
   CONVENTIONAL_RETIREMENT_HORIZON_MULTIPLE,
-  COST_OF_EXTINCTION,
   CUMULATIVE_MILITARY_IN_GOVT_TRIAL_YEARS,
   CURRENT_COMBINATION_EXPLORATION_YEARS,
   CURRENT_KNOWN_SAFE_EXPLORATION_YEARS,
@@ -10053,8 +10114,6 @@ export const parameters = {
   EXISTING_DRUGS_EFFICACY_LAG_DEATHS_TOTAL,
   EXISTING_DRUGS_EFFICACY_LAG_ECONOMIC_LOSS,
   EXPLORATION_RATIO,
-  EXTINCTION_SURPLUS,
-  EXTINCTION_SURPLUS_PCT,
   FDA_TO_OXFORD_RECOVERY_TRIAL_TIME_MULTIPLIER,
   GENE_THERAPY_DISEASE_COMBINATIONS,
   GLOBAL_ANNUAL_CONFLICT_DEATHS_TOTAL,
@@ -10101,6 +10160,7 @@ export const parameters = {
   MISALLOCATION_FACTOR_DEATH_VS_SAVING,
   MRNA_THERAPEUTIC_COMBINATIONS,
   NIH_TRADITIONAL_TRIAL_MAX_EFFICIENCY_PCT,
+  NUCLEAR_WINTER_OVERKILL_FACTOR,
   PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT,
   PEACE_DIVIDEND_CONFLICT_REDUCTION,
   PEACE_DIVIDEND_DIRECT_COSTS,
@@ -10129,6 +10189,7 @@ export const parameters = {
   POLITICAL_DYSFUNCTION_TAX_PER_PERSON_ANNUAL,
   POST_WW2_MILITARY_CUT_PCT,
   PRAGMATIC_TRIAL_COST_PER_QALY,
+  PRICE_OF_APOCALYPSE,
   PRIZE_POOL_ANNUAL_RETURN,
   PRIZE_POOL_HORIZON_MULTIPLE,
   PRIZE_POOL_RETIREMENT_EQUIVALENT_PRINCIPAL,
@@ -11137,6 +11198,20 @@ export const citations: Record<string, Citation> = {
         URL: "https://cen.acs.org/pharmaceuticals/50-new-drugs-received-FDA/103/i2",
         note: "C&EN, 2025, 50 new drugs received FDA approval in 2024 | FDA, Novel Drug Approvals | Note: Average ~50 per year 2018-2024; 32 small molecules + 18 biologics in 2024",
   },
+  "global-nuclear-weapon-maintenance-100b": {
+        id: "global-nuclear-weapon-maintenance-100b",
+        type: "article-journal",
+        title: "Global nuclear weapon maintenance cost: \\$100 billion/year",
+        author: [
+          {
+            literal: "ICAN"
+          },
+        ],
+        issued: { 'date-parts': [[2024]] },
+        'container-title': "ICAN: Global Spending \\$100B 2024",
+        URL: "<https://www.icanw.org/global_spending_on_nuclear_weapons_topped_100_billion_in_2024>",
+        note: "ICAN: Global Spending \\$100B 2024 | ICAN: The Cost of Nuclear Weapons",
+  },
   "global-pharma-rd-spending-300b": {
         id: "global-pharma-rd-spending-300b",
         type: "webpage",
@@ -11634,6 +11709,21 @@ export const citations: Record<string, Citation> = {
           },
         ],
         note: "Based on FAS arsenal data and climate models",
+  },
+  "nuke-winter-150tg": {
+        id: "nuke-winter-150tg",
+        type: "article-journal",
+        title: "Nuclear Winter Famine",
+        author: [
+          {
+            family: "Xia et al.",
+            given: "Nature Food"
+          },
+        ],
+        issued: { 'date-parts': [[2022]] },
+        'container-title': "Xia et al.",
+        URL: "https://www.nature.com/articles/s43016-022-00573-0",
+        note: "Xia et al., Nature Food, 2022, Global food insecurity and famine from nuclear war soot injection",
   },
   "odds-of-decisive-vote": {
         id: "odds-of-decisive-vote",
@@ -12432,6 +12522,20 @@ export const citations: Record<string, Citation> = {
         URL: "https://www.worldbank.org/en/topic/trade/publication/trading-away-from-conflict",
         note: "World Bank, Trading Away from Conflict | NBER/World Bank, Collateral Damage: Trade Disruption | World Bank, Impacts on Global Trade of Current Trade Disputes",
   },
+  "world-warheads": {
+        id: "world-warheads",
+        type: "article-journal",
+        title: "World Nuclear Forces",
+        author: [
+          {
+            literal: "Federation of American Scientists"
+          },
+        ],
+        issued: { 'date-parts': [[2024]] },
+        'container-title': "Federation of American Scientists",
+        URL: "https://fas.org/issues/nuclear-weapons/status-world-nuclear-forces/",
+        note: "Federation of American Scientists, 2024, Status of World Nuclear Forces",
+  },
   "worldbank-gdp": {
         id: "worldbank-gdp",
         type: "article-journal",
@@ -12477,11 +12581,11 @@ export const citations: Record<string, Citation> = {
 
 /** Summary statistics */
 export const PARAMETER_STATS = {
-  total: 650,
-  external: 210,
-  calculated: 306,
+  total: 654,
+  external: 213,
+  calculated: 307,
   definitions: 134,
-  citations: 153,
+  citations: 156,
 } as const;
 
 // ============================================================================

@@ -781,6 +781,7 @@ async function generateImageForFile(
 
   // Generate OG image (optimized for social media thumbnails)
   if (!hasThisStyleOg || forceRegenerate || onlyOutdated) {
+    const ogStart = Date.now();
     console.log(`  Generating OG image...`);
     const ogPrompt = ImagePrompts.og.buildPrompt(cleanedBody, styleConfig.style);
 
@@ -796,14 +797,15 @@ async function generateImageForFile(
 
     if (ogFiles && ogFiles.length > 0) {
       ogImagePath = path.relative(process.cwd(), ogFiles[0]).replace(/\\/g, '/');
-      console.log(`  [OK] OG: ${path.basename(ogImagePath)}`);
+      console.log(`  [OK] OG: ${path.basename(ogImagePath)} (${((Date.now() - ogStart) / 1000).toFixed(1)}s)`);
     } else {
-      console.log(`  [WARN] OG image generation failed`);
+      console.log(`  [WARN] OG image generation failed (${((Date.now() - ogStart) / 1000).toFixed(1)}s)`);
     }
   }
 
   // Generate infographic (detailed, full-size)
   if (!hasThisStyleInfographic || forceRegenerate || onlyOutdated) {
+    const infStart = Date.now();
     console.log(`  Generating infographic...`);
     const infographicPrompt = ImagePrompts.infographic.buildPrompt(cleanedBody, styleConfig.style);
 
@@ -819,14 +821,15 @@ async function generateImageForFile(
 
     if (infographicFiles && infographicFiles.length > 0) {
       infographicImagePath = path.relative(process.cwd(), infographicFiles[0]).replace(/\\/g, '/');
-      console.log(`  [OK] Infographic: ${path.basename(infographicImagePath)}`);
+      console.log(`  [OK] Infographic: ${path.basename(infographicImagePath)} (${((Date.now() - infStart) / 1000).toFixed(1)}s)`);
     } else {
-      console.log(`  [WARN] Infographic generation failed`);
+      console.log(`  [WARN] Infographic generation failed (${((Date.now() - infStart) / 1000).toFixed(1)}s)`);
     }
   }
 
   // Generate slide (PowerPoint-optimized presentation)
   if (!hasThisStyleSlide || forceRegenerate || onlyOutdated) {
+    const slideStart = Date.now();
     console.log(`  Generating slide...`);
     console.log(`    Extracting key content for slide...`);
     // Use baseMetadata which has variables already replaced
@@ -845,9 +848,9 @@ async function generateImageForFile(
 
     if (slideFiles && slideFiles.length > 0) {
       slideImagePath = path.relative(process.cwd(), slideFiles[0]).replace(/\\/g, '/');
-      console.log(`  [OK] Slide: ${path.basename(slideImagePath)}`);
+      console.log(`  [OK] Slide: ${path.basename(slideImagePath)} (${((Date.now() - slideStart) / 1000).toFixed(1)}s)`);
     } else {
-      console.log(`  [WARN] Slide generation failed`);
+      console.log(`  [WARN] Slide generation failed (${((Date.now() - slideStart) / 1000).toFixed(1)}s)`);
     }
   }
 
@@ -1009,29 +1012,57 @@ async function generateBookChapterImages(
 
   let filesGenerated = 0;
   let filesFailed = 0;
+  const totalFiles = filesToProcess.length;
+  const batchStartTime = Date.now();
+
+  function printProgress(currentFile?: string): void {
+    const elapsed = ((Date.now() - batchStartTime) / 1000).toFixed(0);
+    const completed = filesGenerated + filesFailed;
+    const pct = totalFiles > 0 ? Math.round((completed / totalFiles) * 100) : 0;
+    const barLen = 30;
+    const filled = Math.round(barLen * completed / totalFiles);
+    const bar = '█'.repeat(filled) + '░'.repeat(barLen - filled);
+    const avgTime = completed > 0 ? ((Date.now() - batchStartTime) / 1000 / completed).toFixed(0) : '?';
+    const eta = completed > 0 ? (((totalFiles - completed) * (Date.now() - batchStartTime) / completed) / 1000 / 60).toFixed(1) : '?';
+    console.log(`\n[PROGRESS] ${bar} ${pct}% (${completed}/${totalFiles}) | OK:${filesGenerated} ERR:${filesFailed} | ${elapsed}s elapsed | ~${avgTime}s/file | ETA:${eta}min`);
+    if (currentFile) {
+      console.log(`[CURRENT] ${path.relative(process.cwd(), currentFile)}`);
+    }
+  }
 
   for (const { path: filePath } of filesToProcess) {
+    printProgress(filePath);
+    const fileStartTime = Date.now();
     try {
       // Use quietSkips=true since we already showed the pre-scan summary
       await generateImageForFile(filePath, forceRegenerate, includeReferenceImages, analyzeFirst, styleName, onlyOutdated, true);
+      const fileElapsed = ((Date.now() - fileStartTime) / 1000).toFixed(1);
+      console.log(`  [DONE] ${path.basename(filePath)} in ${fileElapsed}s`);
       filesGenerated++;
     } catch (error) {
+      const fileElapsed = ((Date.now() - fileStartTime) / 1000).toFixed(1);
       if (error instanceof Error && error.message === 'Image generation failed') {
+        console.log(`  [FAIL] ${path.basename(filePath)} in ${fileElapsed}s`);
         filesFailed++;
       } else {
-        console.error(`[ERROR] Failed to process ${filePath}:`, error);
+        console.error(`  [ERROR] ${path.basename(filePath)} in ${fileElapsed}s:`, error);
         filesFailed++;
       }
       // Continue with next file
     }
   }
 
+  const totalElapsed = ((Date.now() - batchStartTime) / 1000).toFixed(0);
+  const totalMin = (Number(totalElapsed) / 60).toFixed(1);
+  printProgress();
   console.log('\n' + '='.repeat(60));
   console.log('Summary:');
   console.log(`  Files to process: ${filesToProcess.length}`);
   console.log(`  Successfully generated: ${filesGenerated}`);
   console.log(`  Failed: ${filesFailed}`);
   console.log(`  Skipped (up to date): ${skippedFiles.length}`);
+  console.log(`  Total time: ${totalElapsed}s (${totalMin}min)`);
+  console.log(`  Avg time per file: ${filesGenerated > 0 ? (Number(totalElapsed) / filesGenerated).toFixed(1) : 'N/A'}s`);
   console.log('='.repeat(60) + '\n');
 }
 

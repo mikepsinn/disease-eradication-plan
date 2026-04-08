@@ -552,7 +552,9 @@ function logImageRequest(modelId: string, imageCount: number, aspectRatio: strin
   if (referenceImageCount > 0) {
     console.log(`🎨 Reference images: ${referenceImageCount}`)
   }
-  console.log(`📝 Prompt:\n${prompt}`)
+  // Truncate prompt to first 200 chars to reduce noise
+  const truncatedPrompt = prompt.length > 200 ? prompt.substring(0, 200) + '... [truncated]' : prompt
+  console.log(`📝 Prompt: ${truncatedPrompt}`)
   if (config) {
     console.log(`💵 Cost per image: $${config.costPerImage.toFixed(4)} USD`)
   }
@@ -563,11 +565,12 @@ function logImageRequest(modelId: string, imageCount: number, aspectRatio: strin
 /**
  * Log image generation response details with actual cost
  */
-function logImageResponse(modelId: string, imagesGenerated: number, totalRequested: number): void {
+function logImageResponse(modelId: string, imagesGenerated: number, totalRequested: number, elapsedMs?: number): void {
   const actualCost = calculateImageCost(imagesGenerated, modelId)
   const success = imagesGenerated === totalRequested
+  const elapsed = elapsedMs ? (elapsedMs / 1000).toFixed(1) : '?'
 
-  console.log(success ? `✅ Images generated successfully` : `⚠️  Partial generation (${imagesGenerated}/${totalRequested})`)
+  console.log(success ? `✅ Images generated successfully in ${elapsed}s` : `⚠️  Partial generation (${imagesGenerated}/${totalRequested}) in ${elapsed}s`)
   console.log(`🖼️  Images generated: ${imagesGenerated}`)
   console.log(`💰 Actual cost: $${actualCost.toFixed(4)} USD`)
   console.log('─'.repeat(80))
@@ -683,6 +686,7 @@ export async function generateImages(
 
   // Log request with cost estimate
   logImageRequest(model, count, aspectRatio, prompt, referenceImages.length)
+  const imageStartTime = Date.now()
 
   try {
     const client = getClient()
@@ -748,8 +752,8 @@ export async function generateImages(
       throw new Error('No images were generated')
     }
 
-    // Log response with actual cost
-    logImageResponse(model, images.length, count)
+    // Log response with actual cost and timing
+    logImageResponse(model, images.length, count, Date.now() - imageStartTime)
 
     return {
       images,
