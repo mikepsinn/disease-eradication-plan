@@ -28,11 +28,11 @@ scores:
 
 Every day, {{< var global_disease_deaths_daily_nounit >}} people die from diseases humanity spends {{< var military_to_government_clinical_trials_spending_ratio >}} times more on wars, genocides, and blowing people up than researching. Your governments burn {{< var political_dysfunction_global_opportunity_cost_total >}} a year on [political dysfunction](../appendix/political-dysfunction-tax.qmd) [@political-dysfunction-tax-paper-2025]. This proposal: do 1% less of that. Redirect 1% of military spending to clinical trials. Everything below is the mechanism for making it happen and the math on what changes if it does.
 
-Nobody loses by playing. The only losing move is not playing. The upside/downside ratio is {{< var sharing_upside_downside_ratio_treaty >}}.
+I designed a game where humans put papers in a pile, recruit other humans to vote on not dying, and then wait. If the not-dying works, the recruiters split the pile. If it does not work, the people who put papers in get them back (at {{< var prize_pool_horizon_multiple >}} what they deposited, which is still more than their retirement account would have managed). The upside is {{< var treaty_personal_upside_blend >}} per person. The downside is {{< var sharing_opportunity_cost >}} of time.
 
-Every person alive is {{< var treaty_personal_upside_blend >}} richer in a world that stops wasting {{< var political_dysfunction_global_opportunity_cost_total >}}/year on [political dysfunction](../appendix/political-dysfunction-tax.qmd). Getting there requires some people to put money in a pool and everyone else to click a button on a website. The upside is {{< var treaty_personal_upside_blend >}}. The downside is {{< var sharing_opportunity_cost >}} of your time. {{< var global_disease_deaths_daily_nounit >}} people die every day while your species sits out a Game it cannot lose.
+I have been explaining this to humans for a while now. They keep asking what the catch is. There is no catch. That is the catch. Your species is so accustomed to getting swindled that a straightforward offer makes you suspicious.
 
-This chapter explains why, and then explains how.
+This chapter explains the game, and then explains why your species needs it.
 
 {{< include ../includes/cognitive-bias-warning.qmd >}}
 
@@ -41,15 +41,15 @@ This chapter explains why, and then explains how.
 3. **How PRIZE works.** You fund one pool until {{< var destructive_economy_50pct_year >}}. Targets missed: you divide the realized pool pro rata. (Either way, you beat your retirement account. Your retirement account is not trying very hard.)
 4. **How VOTE works.** You recruit one verified referendum participant, you earn one point. Targets met: the pool routes to VOTE point-holders.
 5. **How you start.** Find a host to launch the [Planetary Constitutional Convention](planetary-constitutional-convention.qmd). PRIZE deposits begin, the Scoreboard goes live, and recruitment compounds from there. (For the institutional deployment plan, see [Why Your Institution Should Be The Initiating Node](initiating-node-memo.qmd).)
-6. **Why you bother.** "Do nothing" is not free. Your governments already waste {{< var political_dysfunction_tax_per_person_annual >}} per person per year ([Political Dysfunction Tax](../appendix/political-dysfunction-tax.qmd) [@political-dysfunction-tax-paper-2025]). The [destructive economy](../economics/gdp-trajectories.qmd) [@gdp-trajectories-paper-2025] hits 50% of GDP by {{< var destructive_economy_50pct_year >}} (the point where half of everything gets looted as fast as it is created).
+6. **Why you bother.** "Do nothing" is not free. It has a price, and the price is accelerating (see [Political Dysfunction Tax](../appendix/political-dysfunction-tax.qmd) [@political-dysfunction-tax-paper-2025] and [GDP Trajectories](../economics/gdp-trajectories.qmd) [@gdp-trajectories-paper-2025]).
 
 ## How It Works (The 90-Second Version)
 
-**Here's how PRIZE deposits work.** Your deposit goes into a single pool that compounds through the [Prize Fund](../economics/earth-optimization-prize-fund.qmd). Rich people have a secret money club (venture capital and private equity) that makes {{< var venture_gross_return >}} returns. Your retirement account is legally banned from joining. Your government decided that only rich people are smart enough to invest in things that make money. This is called "investor protection." It protects you from having money. The pool gets you in. It spreads your money across the entire sector so no single bad bet kills you, and crowds pick the investments ({{< var crowd_decision_accuracy >}} accuracy) instead of expensive fund managers ({{< var expert_decision_accuracy >}} accuracy) [@surowiecki-2004]. Result: {{< var prize_pool_annual_return >}} annually, nearly triple conventional retirement at {{< var conventional_retirement_return >}} (see [Earth Optimization Prize Fund](../economics/earth-optimization-prize-fund.qmd) for the full derivation).
+**The pile of papers.** Your deposit goes into a single pool that compounds through the [Prize Fund](../economics/earth-optimization-prize-fund.qmd). Rich people have a secret money club (venture capital and private equity) that makes {{< var venture_gross_return >}} returns. Your retirement account is legally banned from joining. Your government decided that only rich people are smart enough to invest in things that make money. This is called "investor protection." It protects you from having money. The pool gets you in. It spreads your money across the entire sector so no single bad bet kills you, and crowds pick the investments ({{< var crowd_decision_accuracy >}} accuracy) instead of expensive fund managers ({{< var expert_decision_accuracy >}} accuracy) [@surowiecki-2004]. Result: {{< var prize_pool_annual_return >}} annually, nearly triple conventional retirement at {{< var conventional_retirement_return >}}. (See [Earth Optimization Prize Fund](../economics/earth-optimization-prize-fund.qmd) for the full derivation. I am told this sounds "too good to be true," which is what humans say when they discover they have been getting a bad deal.)
 
 Your deposit is locked. Not a savings account. It stays in your account until {{< var destructive_economy_50pct_year >}}. Targets missed: you divide the realized pool pro rata. Targets met: the pool goes to VOTE point-holders, not back to you. See the [prize protocol](../appendix/earth-optimization-prize-protocol.qmd) [@earth-optimization-prize-protocol-paper-2025] for the full specification.
 
-**Here's how VOTE points work.** You recruit one verified referendum participant into the first [1% Treaty](../solution/1-percent-treaty.qmd) [@1-pct-treaty-impact-paper-2025] vote, you earn one point. Points stay with whoever earned them. Not tradable. You cannot buy your way to credit for recruiting people you did not recruit (your species calls this "integrity," which I understand is rare enough to require explanation). Registration asks two questions: (1) yes or no on the 1% Treaty (the smallest serious test of whether humans will redirect even 1% from weapons to medicine), and (2) how much military vs. clinical trials, with [Optimitron](../solution/optimocracy.qmd) [@optimocracy-paper-2025] evidence. Fits on a phone. Under a minute.
+**The recruitment credits.** You recruit one verified referendum participant into the first [1% Treaty](../solution/1-percent-treaty.qmd) [@1-pct-treaty-impact-paper-2025] vote, you earn one point. Points stay with whoever earned them. Not tradable. You cannot buy credit for recruiting people you did not recruit. Your species calls this "integrity," which I understand is rare enough to require its own word. Registration asks two questions: (1) yes or no on the 1% Treaty (the smallest serious test of whether humans will redirect even 1% from weapons to medicine), and (2) how much military vs. clinical trials, with [Optimitron](../solution/optimocracy.qmd) [@optimocracy-paper-2025] evidence. Fits on a phone. Under a minute.
 
 | Year-15 objective | Current baseline | Year-15 target |
 |:---|:---|:---|
@@ -58,9 +58,9 @@ Your deposit is locked. Not a savings account. It stays in your account until {{
 
 Your public signal is the **Scoreboard**: how long people live, how much they earn, how many voted, how they voted, and how large the pile of money is. Updated in real time. Polls are ignorable. Petitions are ignorable. A Scoreboard with hundreds of millions of verified names on it is harder to pretend does not exist.
 
-## What Happens to Your Money (Nobody Loses)
+## Where the Papers Go
 
-Here's what happens to your money. The pool makes money regardless of whether the targets are met. The only question is who gets it.
+The pool makes money regardless of whether the targets are met. The only question is who gets it.
 
 | Scenario | What happens to your deposit | What happens to your VOTE points | World-side outcome |
 |:---|:---|:---|:---|
@@ -73,30 +73,25 @@ Here's what happens to your money. The pool makes money regardless of whether th
 - *Targets missed:* You get back `$100 × {{< var prize_pool_horizon_multiple >}}` = $1,110 from the pool. Your VOTE points pay nothing. You still beat a conventional retirement account (`$100 × {{< var conventional_retirement_horizon_multiple >}}` = $257).
 - *Targets met:* Your $100 deposit goes to VOTE point-holders. Your 2 VOTE points pay `2 × {{< var vote_token_value >}} = {{< var vote_2_claims_payout >}}`. Plus you live in a world where people are {{< var treaty_personal_upside_blend >}} to {{< var wishonia_personal_upside_blend >}} richer and diseases get cured.
 
-Two VOTE points turn a small deposit into a large payout. Large depositors beat their retirement account if this fails. If it succeeds, diseases get cured, {{< var global_disease_deaths_daily_nounit >}} people stop dying every day, and everyone is {{< var treaty_personal_upside_blend >}} richer.
+Two VOTE points turn a small deposit into a large payout. Large depositors beat their retirement account either way. The worked example is not a sales pitch. It is arithmetic.
 
 ::: {.callout-note}
 ## These Numbers Look Large Because the Current Waste Is Large
 
-Your species spends {{< var global_military_spending_annual_2024 >}}/year on weapons and {{< var global_government_clinical_trials_spending_annual >}}/year testing which medicines work. That is a {{< var military_to_government_clinical_trials_spending_ratio >}}:1 ratio. The "crazy" number is not the solution. It is the ratio that made the solution necessary. Your governments burn {{< var political_dysfunction_global_opportunity_cost_total >}} every year on dysfunction (see [Political Dysfunction Tax](../appendix/political-dysfunction-tax.qmd) [@political-dysfunction-tax-paper-2025]). Large solutions are what large problems look like from the other side.
+The "crazy" number is not the solution. It is the ratio that made the solution necessary. Large solutions are what large problems look like from the other side (see [Political Dysfunction Tax](../appendix/political-dysfunction-tax.qmd) [@political-dysfunction-tax-paper-2025]).
 :::
 
 ## What To Do Right Now
 
-The Game needs an institutional host before it can accept PRIZE deposits. In the meantime, you can start playing today:
+The Game needs an institutional host before it can accept PRIZE deposits. Until then, the instructions are short:
 
 1. **[Vote on the 1% Treaty.](https://warondisease.org)** 30 seconds. Treaty yes/no, allocation slider with evidence.
-2. **Recruit 2 people.** Get two more verified participants onto the Scoreboard.
-3. **If you run a foundation or institution:** host the Game. Contact [m@warondisease.org](mailto:m@warondisease.org).
+2. **Tell two people.** Get two more verified participants onto the Scoreboard.
+3. **If you run an institution:** host the Game. The Scoreboard and PRIZE deposits cannot start without you. Contact [m@warondisease.org](mailto:m@warondisease.org).
 
-### If You Have Reach
+I notice humans cover stock tickers in real time but have never built a ticker for whether people die. The Scoreboard is that ticker. It needs a host the same way a television broadcast needs a transmitter. The broadcast is ready. The transmitter is missing.
 
-- **Institutions and foundations:** the Game needs a host before PRIZE deposits and the Scoreboard go live. You are the bottleneck. Contact [m@warondisease.org](mailto:m@warondisease.org).
-- **Funders:** pick one thing this week and do it publicly so others can pile on.
-- **Researchers / builders:** build something this week rather than waiting for perfect certainty.
-- **Media:** write about the Scoreboard as if it were real infrastructure, not a curiosity. Your species covers stock tickers in real time. This is a stock ticker for whether people die.
-
-That is it: vote and recruit. PRIZE deposits begin once an institution hosts the pool. If the Prize fails, you keep your share of the pool (still beats your retirement account). If it succeeds, diseases get cured and everyone gets rich. The first step is small on purpose.
+PRIZE deposits begin once an institution hosts the pool. That is the bottleneck. Everything else is clicking buttons.
 
 Everything below this line is for readers who want to understand why before they act.
 
@@ -248,15 +243,15 @@ Those are not projections about charity. They are projections about your money, 
 | You get richer | You earn more because less money is wasted | {{< var treaty_trajectory_lifetime_income_gain_per_capita >}} (Treaty) to {{< var wishonia_trajectory_lifetime_income_gain_per_capita >}} (Wishonia) [@gdp-trajectories-paper-2025] |
 | You get healthier | You live longer because diseases get cured | {{< var treaty_hale_value_per_capita >}} (Treaty) to {{< var wishonia_hale_value_per_capita >}} (Wishonia) |
 | You get paid | VOTE payout for recruiting people | {{< var vote_token_value >}} per VOTE point |
-| You stop losing money | Your governments stop burning {{< var political_dysfunction_tax_per_person_annual >}}/year of your money on dysfunction | {{< var political_dysfunction_tax_per_person_annual >}}/year (see [Political Dysfunction Tax](../appendix/political-dysfunction-tax.qmd)); half the economy looted by {{< var destructive_economy_50pct_year >}} on the current path |
+| You stop losing money | Your governments stop burning {{< var political_dysfunction_tax_per_person_annual >}}/year of your money on dysfunction | {{< var political_dysfunction_tax_per_person_annual >}}/year (see [Political Dysfunction Tax](../appendix/political-dysfunction-tax.qmd)) |
 | People stop dying | Fewer dead humans per percentage point you shift | {{< var contribution_dalys_per_pct_point_nounit >}} DALYs / {{< var contribution_lives_saved_per_pct_point_nounit >}} lives / {{< var contribution_suffering_hours_per_pct_point_nounit >}} suffering hours per percentage point ([DFDA impact model](../appendix/dfda-impact-paper.qmd)) |
 
 **"Do nothing" is not free.** Your governments already waste {{< var political_dysfunction_tax_per_person_annual >}} per person per year ([Political Dysfunction Tax](../appendix/political-dysfunction-tax.qmd) [@political-dysfunction-tax-paper-2025]). Sitting this out is a bet that everything in the Problem Statement fixes itself. Look at the Problem Statement and decide how confident you are.
 
 ::: {.callout-tip}
-## This Is a Better Deal Than Any Political Donation in History
+## For Context on "Political Donations"
 
-Your money stays with you if this fails and goes to VOTE point-holders if it succeeds (see [Contributor Outcomes](#contributor-outcomes)). Either way, it grows at {{< var prize_pool_annual_return >}} annually, reaching {{< var prize_pool_horizon_multiple >}} by {{< var destructive_economy_50pct_year >}}. Name a political donation that does that.
+On your planet, humans give papers to politicians and receive nothing back except a warm feeling and occasionally a hat. This deposit grows at {{< var prize_pool_annual_return >}} annually, reaching {{< var prize_pool_horizon_multiple >}} by {{< var destructive_economy_50pct_year >}}, and you keep it if the targets are missed. On Wishonia, we would call your current system "giving money to strangers who do not give it back." You call it "democracy."
 :::
 
 You do not need to tip the scale by yourself. The stakes are so large that even a tiny nudge is worth real money:
@@ -274,9 +269,9 @@ But does a $1K contribution actually shift probability by 0.0067%? You do not ne
 
 **The free-rider problem has a structural answer.** "VOTE points only pay if the targets are met, so if I don't believe they'll be met, there's no incentive." This assumes VOTE points are the only incentive. They are not. PRIZE deposits beat conventional retirement on the failure branch ({{< var prize_pool_horizon_multiple >}} vs. {{< var conventional_retirement_horizon_multiple >}}). The deposit incentive works regardless of your belief about success. VOTE points add upside on the success branch.
 
-But the deeper answer is that free-riding makes sense when participation is expensive. Clicking a button takes 30 seconds. 50-65% of your species already spends far more effort voting in elections that pay nothing and elect people who ignore them. This referendum pays {{< var vote_token_value >}} and cures diseases. Your species is not going to free-ride on this. It is going to fight over who gets to click the button first.
+But the deeper answer is that free-riding makes sense when participation is expensive. Clicking a button takes 30 seconds. 50-65% of your species already spends far more effort voting in elections that pay nothing and elect people who ignore them. This referendum pays {{< var vote_token_value >}} and cures diseases. I suspect the participation problem solves itself.
 
-Delay is not free either. Each person can only be recruited once. Every month you spend evaluating whether the arithmetic is correct, {{< var global_disease_deaths_daily_nounit >}} people die per day and the destructive economy eats another slice of GDP. The arithmetic will wait. The diseases will not.
+I am told humans need time to "evaluate" arithmetic. The arithmetic is patient. The diseases are not.
 
 The selfish reason to play the Game is not the VOTE payout or the pool return. It is that you personally get {{< var treaty_personal_upside_blend >}} richer in a world where diseases get cured.
 
@@ -368,14 +363,7 @@ The politician line is the one that requires explanation, because "politicians n
 
 ## Frequently Asked Objections (Your Species Has Many)
 
-Before the usual objections, a quick inventory of what is happening while you evaluate whether these instructions are sufficiently realistic:
-
-- {{< var global_disease_deaths_daily_nounit >}} humans die every single day from preventable disease ({{< var global_annual_deaths_curable_diseases_nounit >}} this year alone, fifty 9/11s every single day, one Holocaust every 40 days).
-- {{< var current_disease_patients_global_nounit >}} people live with chronic disease right now.
-- Ongoing genocides and wars are funded by the same {{< var global_military_spending_annual_2024 >}} military budgets we are asking to redirect 1% of.
-- Your governments burn {{< var political_dysfunction_global_opportunity_cost_total >}} every year on dysfunction: health innovation delays, science underfunding, migration restrictions, lead poisoning (see [Political Dysfunction Tax](../appendix/political-dysfunction-tax.qmd) [@political-dysfunction-tax-paper-2025] for the full ledger). The [destructive economy](../economics/gdp-trajectories.qmd) is already {{< var global_destructive_economy_pct_gdp >}} of GDP and on track to hit 50% by {{< var destructive_economy_50pct_year >}} if nothing changes.
-
-This is not a plan to slightly improve policy. These are instructions for how to stop lighting {{< var political_dysfunction_global_opportunity_cost_total >}} on fire while children die in wars and grandmothers rot from diseases we already know how to fix. Every number below is already modeled, Monte Carlo'd, and linked in the [parameters chapter](../appendix/parameters-and-calculations.qmd).
+I have presented this game to many humans. They have objections. I have collected the objections below, along with my confusion about each one. Every number referenced is modeled, Monte Carlo'd, and linked in the [parameters chapter](../appendix/parameters-and-calculations.qmd).
 
 ### 1. "The targets are insanely ambitious"
 
@@ -387,7 +375,7 @@ Cut every input in half. Cut them in quarters. The model still produces a civili
 
 Historical precedent your own species already proved: your grandparents cut military spending by {{< var post_ww2_military_cut_pct >}} in two years after WWII ({{< var us_military_spending_1945_peak_annual_2024usd >}} to {{< var us_military_spending_1947_annual_2024usd >}} in today's dollars) [@us-post-wwii-military-spending-cut]. Factories switched from bombers to Cadillacs. The economy exploded into the greatest boom in human history [@us-post-wwii-gdp-growth-8-pct]. "But the military-industrial complex didn't exist in 1945." Correct. That is why we budgeted {{< var treaty_campaign_total_cost >}} instead of $25M, and why [Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd) [@iab-paper-2025] create a bondholder class whose income scales with treaty expansion. The MIC has a lobby. The IAB creates a counter-lobby with {{< var victory_bond_annual_return_pct >}} returns. The difference between 1945 and 2026 is not that reallocation is harder. It is that you need to buy your way past the people who profit from the status quo. The budget accounts for this. They managed {{< var post_ww2_military_cut_pct >}} during demobilization and built the middle class. We are asking for 1%.
 
-I have noticed your smartest humans spend more time explaining why solutions will not work than explaining why {{< var global_annual_deaths_curable_diseases_nounit >}} annual deaths should continue. The same humans will not mention that your species currently spends {{< var military_to_government_clinical_trials_spending_ratio >}} times more on weapons than testing which medicines work, because that number is familiar and therefore not interesting. You are being asked for 1% and acting like someone suggested disbanding the army during an invasion. Either the human genome degraded significantly since your grandparents managed to redirect {{< var post_ww2_military_cut_pct >}} of military spending to useful things, or someone is making a lot of money telling you this is impossible.
+I notice that the humans who find these targets "insanely ambitious" do not find the current {{< var military_to_government_clinical_trials_spending_ratio >}}:1 ratio insane. The ratio is familiar, so it is invisible. The solution is unfamiliar, so it looks crazy. Your grandparents redirected {{< var post_ww2_military_cut_pct >}} of military spending and built the largest economic boom in your history. This proposal asks for 1%. I do not understand which part is ambitious.
 
 ### 2. "Treaties never work"
 
@@ -400,11 +388,11 @@ Your species has already banned entire weapons industries multiple times, withou
 
 None of these needed Victory Incentive Alignment Bonds or {{< var victory_bond_annual_return_pct >}} returns. They passed because enough people got sufficiently annoyed. The 1% Treaty is easier: it keeps 99% of every military budget intact, the relative power balance unchanged, and it bribes everyone with massive personal upside. The [Treaty Feasibility](../appendix/treaty-feasibility.qmd) appendix shows historical campaign costs of $25-50M; we budgeted {{< var treaty_campaign_total_cost >}} with a benefit-cost ratio exceeding {{< var treaty_roi_existing_drugs_only >}} [@cost-of-change-paper-2025].
 
-A human trying to sound smart might explain why the treaty with financial incentives is less likely to work than the ones without them.
+I would be curious to hear why the version with financial incentives is considered less likely than the versions without.
 
 ### 3. "Goodhart's Law"
 
-On your planet, there is a tradition of raising Goodhart's Law at this point in the conversation. It is how your species signals analytical sophistication without proposing a better pair of metrics. The concern is not that HALE and median income are bad metrics. The concern is that any metric with hundreds of trillions riding on it will be gamed. Fair. Here is why it is harder than it sounds.
+On your planet, there is a tradition of raising Goodhart's Law at this point in the conversation. I have come to recognize it as a signal that the human is thinking carefully, which I appreciate. The concern is not that HALE and median income are bad metrics. The concern is that any metric with hundreds of trillions riding on it will be gamed. Fair. Here is why it is harder than it sounds.
 
 Mortality is binary and hard to fake across millions of people. You either died or you did not. Hospitals, insurance claims, mortality registries, and satellite-derived economic indicators all have to agree. Median income requires improving the middle of the distribution, not just the top; you cannot game it by making billionaires richer.
 
@@ -416,7 +404,7 @@ I have been watching your planet for 81 years and have not heard a better pair o
 
 ### 4. "The implementation is impossibly complex"
 
-I have noticed humans list implementation requirements to prove something is hard, then use things more complex than every item on the list before breakfast. The six capabilities the protocol must solve all already exist at scale:
+Humans tell me this is "impossibly complex." I have listed the six capabilities the protocol requires. All of them already exist at scale:
 
 | Capability needed | What already does this |
 |:---|:---|
@@ -429,7 +417,7 @@ I have noticed humans list implementation requirements to prove something is har
 
 The Game does not require inventing anything. It is a survey where you prove you are a real person, and a savings account that pays out if enough people convince their governments to stop wasting money. Legally, it is an escrow account with a payout trigger, not a security. The referendum could be a ballot measure; elections already exist. Enforcement: the treaty IS the enforcement, exactly like every other treaty your species has signed.
 
-Your species built a system that moves $5 trillion across borders every day, verifies 8 billion identities, and counts 4 billion votes in elections. You are telling me you cannot build a survey with a savings account attached.
+Your species moves $5 trillion across borders every day, verifies 8 billion identities, and counts 4 billion votes in elections. A survey with a savings account attached does not seem like the hard part.
 
 ### 5. "The 17.4% return is too good to be true"
 
@@ -468,8 +456,6 @@ The {{< var military_to_government_clinical_trials_spending_ratio >}}:1 compares
 
 Your mechanism does not need participants to be wise. It needs them to be self-interested, impatient, and capable of reading a scoreboard. The whole thing is [open source](https://github.com/wishonia/earth-optimization-protocol).
 
-While you were reading this chapter, approximately {{< var global_disease_deaths_per_minute_nounit >}} humans permanently stopped every minute. Not because the solution was too complicated. Because nobody [voted](https://warondisease.org).
-
-Four treaties banned entire weapons industries without paying anyone to sign them. This one pays people. I find it interesting that the version with financial incentives draws more objections than the versions without.
+Four treaties banned entire weapons industries without paying anyone to sign them. This one pays people. I still do not understand why the version with financial incentives gets more objections than the versions without.
 
 The math does not require every reader. It requires enough readers to fill a [scoreboard](https://warondisease.org).
