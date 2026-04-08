@@ -8,7 +8,7 @@ abstract: |
   "Efficacy Lag" of {{< var efficacy_lag_years >}} post-safety verification. Using data from the
   Tufts Center for the Study of Drug Development (CSDD) and the WHO Global Burden of Disease (GBD)
   database, we estimate two distinct mortality costs: (1) Historical mortality (1962-2024):
-  approximately {{< var existing_drugs_efficacy_lag_deaths_total >}} died waiting for approved drugs
+  approximately {{< var existing_drugs_efficacy_lag_deaths_total_nounit >}} people died waiting for approved drugs
   during their approval delays, representing a lower bound excluding drugs never developed due to
   cost barriers; (2) Future timeline shift: an additional
   {{< var dfda_efficacy_lag_elimination_deaths_averted >}} will eventually die because the disease
@@ -68,7 +68,7 @@ This study quantifies the cumulative mortality and morbidity costs associated wi
 
 Using data from the Tufts Center for the Study of Drug Development (CSDD) and the WHO Global Burden of Disease (GBD) database, we estimate two distinct mortality costs:
 
-1. **Historical mortality (1962-2024):** Approximately **{{< var existing_drugs_efficacy_lag_deaths_total >}}** died waiting for approved drugs during their {{< var efficacy_lag_years >}} approval delays. This is a **lower bound** - it excludes drugs never developed due to cost barriers.
+1. **Historical mortality (1962-2024):** Approximately **{{< var existing_drugs_efficacy_lag_deaths_total_nounit >}} people** died waiting for approved drugs during their {{< var efficacy_lag_years >}} approval delays. This is a **lower bound** - it excludes drugs never developed due to cost barriers.
 
 2. **Future timeline shift (under cascade assumption):** An additional **{{< var dfda_efficacy_lag_elimination_deaths_averted >}}** will eventually die because the entire disease eradication timeline has been pushed back by {{< var efficacy_lag_years >}}. When cures finally arrive, they arrive {{< var efficacy_lag_years >}} later than they would have without efficacy requirements. During that delay, people die.
 
@@ -90,7 +90,7 @@ Valuing these lost years at a conservative global Value of a Statistical Life Ye
 
 Holocaust: 6 million dead.
 
-Efficacy lag: {{< var existing_drugs_efficacy_lag_deaths_total >}} dead. That's {{< var efficacy_lag_deaths_911_equivalents >}}, or 17 Holocausts.
+Efficacy lag: {{< var existing_drugs_efficacy_lag_deaths_total_nounit >}} dead. That's {{< var efficacy_lag_deaths_911_equivalents >}}, or 17 Holocausts.
 
 We paid {{< var efficacy_lag_cumulative_excess_cost >}} (lower bound - Phase 2/3 costs only) to cause {{< var efficacy_lag_deaths_911_equivalents >}}.
 

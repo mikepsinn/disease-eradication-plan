@@ -4,7 +4,7 @@ description: We present the Predictor Impact Score (PIS), a novel composite metr
 abstract: |
   Treatments that could save lives take an average of {{< var efficacy_lag_years >}} to complete clinical
   trials after discovery. Since 1962, these delays have contributed to an estimated
-  {{< var existing_drugs_efficacy_lag_deaths_total >}} preventable deaths. Meanwhile, only 1-10% of adverse
+  {{< var existing_drugs_efficacy_lag_deaths_total_nounit >}} preventable deaths. Meanwhile, only 1-10% of adverse
   drug events get reported to the FDA, and billions of people generate continuous health data through
   wearables and apps that remains unharvested.
 
@@ -149,7 +149,7 @@ Every year, {{< var global_annual_deaths_curable_diseases_nounit >}} people die 
 
 ![While you waited for permission to try new cancer drugs, more people died than in all of World War II. The forms were very thorough though.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-the-human-cost-of-the-current-system-bw-academic.jpg)
 
-Consider: a treatment that could save lives today takes an average of {{< var efficacy_lag_years >}} to complete Phase 2-4 clinical trials after initial discovery. During this delay, people die waiting. Since 1962, regulatory testing delays for drugs that were eventually approved have contributed to an estimated {{< var existing_drugs_efficacy_lag_deaths_total >}} preventable deaths, more than all wars and conflicts of the 20th century combined.
+Consider: a treatment that could save lives today takes an average of {{< var efficacy_lag_years >}} to complete Phase 2-4 clinical trials after initial discovery. During this delay, people die waiting. Since 1962, regulatory testing delays for drugs that were eventually approved have contributed to an estimated {{< var existing_drugs_efficacy_lag_deaths_total_nounit >}} preventable deaths, more than all wars and conflicts of the 20th century combined.
 
 This is not an argument against safety testing. It is an argument for *better* safety testing: faster, cheaper, more comprehensive, and continuously updated with real-world evidence rather than static pre-market snapshots.
 

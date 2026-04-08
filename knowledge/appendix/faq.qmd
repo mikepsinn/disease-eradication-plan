@@ -302,7 +302,7 @@ The goal is tapping the multi-trillion dollar stream of wasted government spendi
 
 All numbers are made up. Yours happen to be small. Mine happen to be large. The difference is that mine come with receipts.
 
-Start with what disease costs per year. The WHO says the world loses {{< var global_annual_daly_burden >}} annually. {{< var eventually_avoidable_daly_pct >}} are eventually avoidable with sufficient biomedical research. At {{< var standard_economic_qaly_value_usd >}}/QALY (the standard rate used by EPA, OECD, WHO, and NICE), each year of delay costs {{< var global_disease_economic_burden_annual >}}.
+Start with what disease costs per year. The WHO says the world loses {{< var global_annual_daly_burden_nounit >}} DALYs annually. {{< var eventually_avoidable_daly_pct >}} are eventually avoidable with sufficient biomedical research. At {{< var standard_economic_qaly_value_usd >}}/QALY (the standard rate used by EPA, OECD, WHO, and NICE), each year of delay costs {{< var global_disease_economic_burden_annual >}}.
 
 Multiply by how many years earlier treatments arrive (~{{< var dfda_trial_capacity_plus_efficacy_lag_years_nounit >}}):
 

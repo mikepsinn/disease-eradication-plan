@@ -53,7 +53,7 @@ But trial capacity is only half the delay. Once a drug passes safety testing, yo
 
 ## The Body Count
 
-{{< var global_disease_deaths_daily >}} die from disease every day. While you were reading the previous section, approximately 300 of them did. They are not coming back to find out how the math turned out.
+{{< var global_disease_deaths_daily_nounit >}} people die from disease every day. While you were reading the previous section, approximately 300 of them did. They are not coming back to find out how the math turned out.
 
 Not all of those deaths are currently preventable, but {{< var eventually_avoidable_death_pct >}} are *eventually* avoidable with sufficient biomedical research. "Eventually avoidable" does not mean "currently preventable." It means: given enough research, these diseases have biological solutions. The only category excluded is accidents (falling off things, being hit by things). Every disease, including aging, is a biological process, and biological processes are, in principle, fixable. This is the theoretical ceiling, not a near-term promise.
 

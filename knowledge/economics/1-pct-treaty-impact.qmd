@@ -257,7 +257,7 @@ The bottleneck isn't basic research or laboratory science. It's **clinical trial
 
 - **Symptomatic treatment**: {{< var global_symptomatic_disease_treatment_annual >}} {{< var global_symptomatic_disease_treatment_annual_cite >}}/year (managing symptoms, not fixing root causes)
 
-- **Disease burden**: {{< var global_disease_economic_burden_annual >}}/year ({{< var global_annual_daly_burden >}} avoidable DALYs at {{< var standard_economic_qaly_value_usd >}}/QALY)
+- **Disease burden**: {{< var global_disease_economic_burden_annual >}}/year ({{< var global_annual_daly_burden_nounit >}} avoidable DALYs at {{< var standard_economic_qaly_value_usd >}}/QALY)
 
 {{< var global_disease_economic_burden_annual_latex >}}
 

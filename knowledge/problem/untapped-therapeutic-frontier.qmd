@@ -73,7 +73,7 @@ This is not a hard calculation. A child could do it. Several children have. The 
 
 ### What You've Actually Tried
 
-* **Approved uses:** {{< var approved_drug_disease_pairings >}} unique approved drug-disease pairings. This is your entire medical canon. Five thousand years of civilization. Libraries of medical journals. Nobel Prizes. White coats. Stethoscopes. All of it produced this number.
+* **Approved uses:** {{< var approved_drug_disease_pairings_nounit >}} unique approved drug-disease pairings. This is your entire medical canon. Five thousand years of civilization. Libraries of medical journals. Nobel Prizes. White coats. Stethoscopes. All of it produced this number.
 * **Repurposed uses:** {{< var drug_repurposing_success_rate >}} of drugs gain at least one new indication after initial approval. The rest never get a second date.
 * **Failed trials:** Let's be generous and say you tested 10x as many things that failed. You learned nothing from most of them because your system throws away negative results like a restaurant that only writes down the recipes that taste good.
 
