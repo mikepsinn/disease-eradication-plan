@@ -193,6 +193,7 @@ book:
         - knowledge/appendix/dfda-impact-paper.qmd # Standalone paper config: _quarto-dfda-impact.yml
         - knowledge/appendix/incentive-alignment-bonds-paper.qmd # Standalone paper config: _quarto-iab.yml
         - knowledge/appendix/wishocracy-paper.qmd # Standalone paper config: _quarto-wishocracy.yml
+        - knowledge/appendix/extinction-surplus.qmd
         - knowledge/appendix/political-dysfunction-tax.qmd # Standalone paper config: _quarto-political-dysfunction-tax.yml
         - knowledge/appendix/invisible-graveyard.qmd # Standalone paper config: _quarto-invisible-graveyard.yml
         - knowledge/appendix/cost-of-change-analysis.qmd # Standalone paper config: _quarto-cost-of-change.yml

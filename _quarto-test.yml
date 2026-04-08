@@ -83,7 +83,7 @@ format:
             (function() {
               var offset = document.querySelector('meta[name="quarto:offset"]')?.getAttribute('content') || '';
               var script = document.createElement('script');
-              script.src = (offset ? offset : '') + 'assets/js/site-enhancements.js?v=5.0.0';
+              script.src = (offset ? offset : '') + 'assets/js/site-enhancements.js?v=5.1.0';
               document.body.appendChild(script);
             })();
           </script>

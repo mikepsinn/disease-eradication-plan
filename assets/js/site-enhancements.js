@@ -13,7 +13,7 @@
  *
  * Note: Page loader is handled separately in page-loader.html
  *
- * Version: 5.0.0
+ * Version: 5.1.0
  */
 
 (function() {
