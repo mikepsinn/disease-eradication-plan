@@ -1077,7 +1077,7 @@ def prepare_build_temp(config_name: str, verbose: bool = True) -> Optional[Path]
     # Large asset dirs that standalone papers never need (audiobook alone is 18 GB)
     subdir_ignore = {"__pycache__", ".git", "node_modules", ".venv",
                      "audiobook", "wavs", "kindle-diagnosis", "docx",
-                     "slides", "music-video", "og-images", "video"}
+                     "slides", "music-video", "video"}
 
     # LaTeX build artifacts that should never be copied into the build temp directory.
     # Root-level .tex files (LaTeX templates) are still copied via the required_extensions path.
