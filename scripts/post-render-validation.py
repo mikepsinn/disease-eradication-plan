@@ -321,6 +321,9 @@ def check_qmd_file_links(content, file_path):
         matches = re.finditer(pattern, line, re.IGNORECASE)
         for match in matches:
             href_value = match.group(1)
+            # Skip external URLs (e.g., GitHub edit links that legitimately contain .qmd)
+            if href_value.startswith(("http://", "https://", "//")):
+                continue
             # Get surrounding context
             start = max(0, match.start() - 50)
             end = min(len(line), match.end() + 50)
