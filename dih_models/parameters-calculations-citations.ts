@@ -873,8 +873,8 @@ export const GLOBAL_ANNUAL_DEATHS_CURABLE_DISEASES: Parameter = {
   confidence: "high",
   confidenceInterval: [46629532.56333147, 63213699.976417035],
   stdError: 5000000.0,
-  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/strategy/earth-optimization-prize.html",
-  manualPageTitle: "The Earth Optimization Prize",
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/problem/cost-of-war.html",
+  manualPageTitle: "The Cost of War",
 };
 
 export const GLOBAL_ANNUAL_ENVIRONMENTAL_DAMAGE_CONFLICT: Parameter = {
@@ -1202,8 +1202,8 @@ export const GLOBAL_DISEASE_DEATHS_DAILY: Parameter = {
   confidenceInterval: [137444.2988449972, 162320.54996462556],
   stdError: 7500.0,
   peerReviewed: true,
-  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/strategy/earth-optimization-prize.html",
-  manualPageTitle: "The Earth Optimization Prize",
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/treaty-feasibility.html",
+  manualPageTitle: "Treaty Feasibility & Cost Analysis",
 };
 
 export const GLOBAL_DISEASE_DIRECT_MEDICAL_COST_ANNUAL: Parameter = {

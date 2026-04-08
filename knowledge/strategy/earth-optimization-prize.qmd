@@ -73,7 +73,7 @@ The pool makes money regardless of whether the targets are met. The only questio
 - *Targets missed:* You get back `$100 × {{< var prize_pool_horizon_multiple >}}` = $1,110 from the pool. Your VOTE points pay nothing. You still beat a conventional retirement account (`$100 × {{< var conventional_retirement_horizon_multiple >}}` = $257).
 - *Targets met:* Your $100 deposit goes to VOTE point-holders. Your 2 VOTE points pay `2 × {{< var vote_token_value >}} = {{< var vote_2_claims_payout >}}`. Plus you live in a world where people are {{< var treaty_personal_upside_blend >}} to {{< var wishonia_personal_upside_blend >}} richer and diseases get cured.
 
-Two VOTE points turn a small deposit into a large payout. Large depositors beat their retirement account either way. The worked example is not a sales pitch. It is arithmetic.
+Two VOTE points turn a small deposit into a large payout.
 
 ::: {.callout-note}
 ## These Numbers Look Large Because the Current Waste Is Large
@@ -95,7 +95,7 @@ PRIZE deposits begin once an institution hosts the pool. That is the bottleneck.
 
 Everything below this line is for readers who want to understand why before they act.
 
-## What Your Money Is Currently Doing (You Will Not Like This)
+## What Your Money Is Currently Doing
 
 Your governments are a [misaligned superintelligence](../economics/central-banks.qmd). Their stated objective function is to make you [2% poorer each year](../economics/central-banks.qmd#goal-2-stable-prices-take-2-per-year) (they call this "stable prices") and keep you [too busy working to notice](../economics/central-banks.qmd#goal-1-maximum-employment-keep-everyone-busy) (they call this "full employment"). Since 1913, they have [printed](../economics/central-banks.qmd) {{< var cumulative_military_spending_fed_era >}} out of nothing and spent it killing {{< var money_printer_war_deaths_nounit >}} people in wars nobody voted for [@sipri-milex-2024; @crs-war-costs-2010]. Your paycheck now buys 96% less. The annual murder budget is {{< var global_military_spending_annual_2024 >}} , which is {{< var military_to_government_clinical_trials_spending_ratio >}} times what governments spend [testing which medicines work](../appendix/global-government-medical-research-spending.qmd). That ratio is not a typo. It is a civilization's priorities, expressed in arithmetic.
 
@@ -213,7 +213,7 @@ On Wishonia, if one person tells two people and each of them tells two people, t
 
 "No product in history has achieved 32 rounds of doubling." Correct. The table is the mathematical ceiling, not the operational model. The operational model (see [Treaty Feasibility](../appendix/treaty-feasibility.qmd)) assumes each person only convinces {{< var chain_effective_r >}} others (not 2), with overlap and dropout. And the actual coordination target is not 8 billion. The Chenoweth threshold ({{< var global_population_activism_threshold_pct >}}) means you need {{< var treaty_campaign_voting_bloc_target_nounit >}} verified participants, not the full planet [@3-5-rule]. That is round 28, not round 33.
 
-Your species already turns out at 50-65% for elections that pay nothing and offer a 1-in-30-million chance of influencing anything [@gelman2012]. This referendum takes 30 seconds on a phone, pays VOTE points on success, and the outcome is "end war and disease and get unimaginably rich." The participation barrier is not "will people do this." It is "will people hear about it." That is what the recruitment incentive solves. Even with heavy dropout, one person reaches global visibility in dozens of rounds, not decades (see [the full comparison](#why-this-referendum-beats-your-elections) below).
+Your species already turns out at 50-65% for elections that pay nothing and offer a 1-in-30-million chance of influencing anything [@gelman2012]. This referendum takes 30 seconds on a phone, pays VOTE points on success, and the outcome is "end war and disease and get considerably richer." The participation barrier is not "will people do this." It is "will people hear about it." That is what the recruitment incentive solves. Even with heavy dropout, one person reaches global visibility in dozens of rounds, not decades (see [the full comparison](#why-this-referendum-beats-your-elections) below).
 
 The target is {{< var global_coordination_target_supporters_nounit >}} people. Half of your species. I realize this sounds like a lot. It is also the number of people who would prefer not dying of preventable disease, which your species tells me is nearly everyone. So the real question is not "can you reach {{< var global_coordination_target_supporters_nounit >}}" but "why haven't you already." VOTE points make recruiting worth doing. The Scoreboard makes the coalition visible. At that scale, the treaty passes well before the pool matures.
 
@@ -246,7 +246,7 @@ Those are not projections about charity. They are projections about your money, 
 | You stop losing money | Your governments stop burning {{< var political_dysfunction_tax_per_person_annual >}}/year of your money on dysfunction | {{< var political_dysfunction_tax_per_person_annual >}}/year (see [Political Dysfunction Tax](../appendix/political-dysfunction-tax.qmd)) |
 | People stop dying | Fewer dead humans per percentage point you shift | {{< var contribution_dalys_per_pct_point_nounit >}} DALYs / {{< var contribution_lives_saved_per_pct_point_nounit >}} lives / {{< var contribution_suffering_hours_per_pct_point_nounit >}} suffering hours per percentage point ([DFDA impact model](../appendix/dfda-impact-paper.qmd)) |
 
-**"Do nothing" is not free.** Your governments already waste {{< var political_dysfunction_tax_per_person_annual >}} per person per year ([Political Dysfunction Tax](../appendix/political-dysfunction-tax.qmd) [@political-dysfunction-tax-paper-2025]). Sitting this out is a bet that everything in the Problem Statement fixes itself. Look at the Problem Statement and decide how confident you are.
+Your governments already waste {{< var political_dysfunction_tax_per_person_annual >}} per person per year ([Political Dysfunction Tax](../appendix/political-dysfunction-tax.qmd) [@political-dysfunction-tax-paper-2025]). Sitting this out is a bet that everything in the Problem Statement fixes itself. Look at the Problem Statement and decide how confident you are.
 
 ::: {.callout-tip}
 ## For Context on "Political Donations"
@@ -269,7 +269,7 @@ But does a $1K contribution actually shift probability by 0.0067%? You do not ne
 
 **The free-rider problem has a structural answer.** "VOTE points only pay if the targets are met, so if I don't believe they'll be met, there's no incentive." This assumes VOTE points are the only incentive. They are not. PRIZE deposits beat conventional retirement on the failure branch ({{< var prize_pool_horizon_multiple >}} vs. {{< var conventional_retirement_horizon_multiple >}}). The deposit incentive works regardless of your belief about success. VOTE points add upside on the success branch.
 
-But the deeper answer is that free-riding makes sense when participation is expensive. Clicking a button takes 30 seconds. 50-65% of your species already spends far more effort voting in elections that pay nothing and elect people who ignore them. This referendum pays {{< var vote_token_value >}} and cures diseases. I suspect the participation problem solves itself.
+But the deeper answer is that free-riding makes sense when participation is expensive. Clicking a button takes 30 seconds. This referendum pays {{< var vote_token_value >}} and cures diseases. I suspect the participation problem solves itself.
 
 I am told humans need time to "evaluate" arithmetic. The arithmetic is patient. The diseases are not.
 
@@ -375,7 +375,7 @@ Cut every input in half. Cut them in quarters. The model still produces a civili
 
 Historical precedent your own species already proved: your grandparents cut military spending by {{< var post_ww2_military_cut_pct >}} in two years after WWII ({{< var us_military_spending_1945_peak_annual_2024usd >}} to {{< var us_military_spending_1947_annual_2024usd >}} in today's dollars) [@us-post-wwii-military-spending-cut]. Factories switched from bombers to Cadillacs. The economy exploded into the greatest boom in human history [@us-post-wwii-gdp-growth-8-pct]. "But the military-industrial complex didn't exist in 1945." Correct. That is why we budgeted {{< var treaty_campaign_total_cost >}} instead of $25M, and why [Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd) [@iab-paper-2025] create a bondholder class whose income scales with treaty expansion. The MIC has a lobby. The IAB creates a counter-lobby with {{< var victory_bond_annual_return_pct >}} returns. The difference between 1945 and 2026 is not that reallocation is harder. It is that you need to buy your way past the people who profit from the status quo. The budget accounts for this. They managed {{< var post_ww2_military_cut_pct >}} during demobilization and built the middle class. We are asking for 1%.
 
-I notice that the humans who find these targets "insanely ambitious" do not find the current {{< var military_to_government_clinical_trials_spending_ratio >}}:1 ratio insane. The ratio is familiar, so it is invisible. The solution is unfamiliar, so it looks crazy. Your grandparents redirected {{< var post_ww2_military_cut_pct >}} of military spending and built the largest economic boom in your history. This proposal asks for 1%. I do not understand which part is ambitious.
+I notice that the humans who find these targets "insanely ambitious" do not find the current {{< var military_to_government_clinical_trials_spending_ratio >}}:1 ratio insane. The ratio is familiar, so it is invisible. The solution is unfamiliar, so it looks crazy. I do not understand which part is ambitious.
 
 ### 2. "Treaties never work"
 
@@ -429,7 +429,7 @@ To anyone in finance, "{{< var victory_bond_annual_return_pct >}} annual returns
 
 ### 7. "The VOTE payout is too large/too small"
 
-The modeled VOTE point value is {{< var vote_token_value >}} at {{< var prize_pool_participation_rate >}} of global investable assets ({{< var global_investable_assets >}}). That confidence interval ({{< var vote_token_value >}}) reflects the real uncertainty: how much capital flows into the pool. At 0.1% participation, a VOTE point pays hundreds of dollars. At 10%, tens of thousands. The model uses 1% as the central estimate because it parallels the treaty ask (1% of military spending) and because asking people to redirect 1% of their invested savings into a higher-returning vehicle is not a hard sell.
+The modeled VOTE point value is {{< var vote_token_value >}} at {{< var prize_pool_participation_rate >}} of global investable assets ({{< var global_investable_assets >}}). That confidence interval ({{< var vote_token_value >}}) reflects the real uncertainty: how much capital flows into the pool. At 0.1% participation, a VOTE point pays hundreds of dollars. At 10%, tens of thousands. The model uses 1% as the central estimate because it parallels the treaty ask (1% of military spending) and because asking people to redirect 1% of their invested savings into a higher-returning vehicle is not an unusual ask.
 
 The pool does not need to be large for the Game to be worth playing. It needs to be large enough that telling two people about it is worth 30 seconds. That is not a high bar. Your species spends more time than that choosing a sandwich.
 
