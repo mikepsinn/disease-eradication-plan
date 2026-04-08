@@ -90,11 +90,6 @@ youtube-thumbnail: /assets/podcast/links-youtube.jpg
   <span class="btn-sub">15 seconds. 38 lives saved.</span>
 </a>
 
-<a href="https://github.com/sponsors/wishonia" class="link-btn">
-  <i class="fa-solid fa-heart" aria-hidden="true"></i> Support the War on Disease
-  <span class="btn-sub">Fund the mission to end war and disease</span>
-</a>
-
 <h2>Skull Vibration Ports</h2>
 
 <a href="podcast.html" class="link-btn primary">
@@ -124,6 +119,13 @@ youtube-thumbnail: /assets/podcast/links-youtube.jpg
 <a href="https://manual.WarOnDisease.org" class="link-btn primary">
   <i class="fa-solid fa-book-open" aria-hidden="true"></i> Read Online
   <span class="btn-sub">Full manual, no account needed</span>
+</a>
+
+<h2>Support</h2>
+
+<a href="https://github.com/sponsors/wishonia" class="link-btn primary">
+  <i class="fa-solid fa-heart" aria-hidden="true"></i> Support the War on Disease
+  <span class="btn-sub">Fund the mission to end war and disease</span>
 </a>
 
 </div>

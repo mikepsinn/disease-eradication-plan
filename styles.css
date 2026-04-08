@@ -858,71 +858,175 @@ nav.quarto-page-breadcrumbs ol.breadcrumb li a {
 }
 
 /* ==========================================
-   CONFIDENCE INTERVAL TOGGLE BUTTON
+   UNIFIED FLOATING ACTION BUTTON (FAB)
    ========================================== */
 
-/* Floating toggle button - bottom right corner */
-#uncertainty-toggle {
+.dih-fab {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    z-index: 1000;
+    z-index: 9998;
     display: flex;
-    align-items: center;
-    gap: 6px;
-    padding: 8px 14px;
-    background-color: var(--book-bg, #ffffff);
-    border: 1px solid var(--book-border, #d4c5b9);
-    border-radius: 20px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    font-size: 0.85rem;
-    font-weight: 500;
-    color: var(--book-text, #2a2a2a);
-    transition: all 0.2s ease;
+    flex-direction: column-reverse;
+    align-items: flex-end;
+    gap: 0;
 }
 
-#uncertainty-toggle:hover {
+/* Main FAB button */
+.dih-fab-main {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    border: none;
+    background: var(--book-accent, #8b7355);
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
+    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+                box-shadow 0.2s ease,
+                background-color 0.2s ease;
+    z-index: 2;
+    position: relative;
+}
+
+.dih-fab-main:hover {
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.3);
+    transform: scale(1.05);
+}
+
+.dih-fab-main svg {
+    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dih-fab-open .dih-fab-main svg {
+    transform: rotate(45deg);
+}
+
+/* Sub-action buttons */
+.dih-fab-action {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-direction: row-reverse;
+    padding: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(20px) scale(0.5);
+    pointer-events: none;
+    transition: opacity 0.2s ease,
+                transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    margin-bottom: 8px;
+}
+
+.dih-fab-action-icon {
+    width: 42px;
+    height: 42px;
+    min-width: 42px;
+    border-radius: 50%;
+    background: var(--book-bg, #ffffff);
+    border: 1px solid var(--book-border, #d4c5b9);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--book-text, #2a2a2a);
+    transition: background-color 0.15s ease,
+                border-color 0.15s ease,
+                box-shadow 0.15s ease;
+}
+
+.dih-fab-action:hover .dih-fab-action-icon {
     background-color: var(--book-light, #f9f8f3);
     border-color: var(--book-accent, #8b7355);
     box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
 }
 
-#uncertainty-toggle:focus {
-    outline: none;
-    border-color: var(--book-accent, #8b7355);
-    box-shadow: 0 0 0 2px rgba(139, 115, 85, 0.2);
-}
-
-#uncertainty-toggle .toggle-icon {
-    font-size: 1rem;
-}
-
-#uncertainty-toggle .toggle-text {
+.dih-fab-action-label {
+    padding: 4px 10px;
+    border-radius: 6px;
+    background: var(--book-bg, #ffffff);
+    border: 1px solid var(--book-border, #d4c5b9);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--book-text, #2a2a2a);
     white-space: nowrap;
+    opacity: 0;
+    transform: translateX(8px);
+    transition: opacity 0.15s ease, transform 0.15s ease;
+    pointer-events: none;
 }
 
-/* When CI is hidden, show muted state */
-#uncertainty-toggle.ci-hidden {
-    background-color: var(--book-light, #f9f8f3);
-    color: var(--book-accent, #8b7355);
+/* Show sub-actions when FAB is open */
+.dih-fab-open .dih-fab-action {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    pointer-events: auto;
 }
 
-/* Hide toggle on print */
+/* Staggered animation for each sub-button */
+.dih-fab-open .dih-fab-action:nth-child(1) { transition-delay: 0.02s; }
+.dih-fab-open .dih-fab-action:nth-child(2) { transition-delay: 0.05s; }
+.dih-fab-open .dih-fab-action:nth-child(3) { transition-delay: 0.08s; }
+.dih-fab-open .dih-fab-action:nth-child(4) { transition-delay: 0.11s; }
+.dih-fab-open .dih-fab-action:nth-child(5) { transition-delay: 0.14s; }
+.dih-fab-open .dih-fab-action:nth-child(6) { transition-delay: 0.17s; }
+
+/* Show labels on hover */
+.dih-fab-open .dih-fab-action:hover .dih-fab-action-label {
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: auto;
+}
+
+/* Scrim/overlay behind FAB when open */
+.dih-fab-open::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.15);
+    z-index: -1;
+    animation: fab-scrim-in 0.2s ease forwards;
+}
+
+@keyframes fab-scrim-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Print: hide FAB */
 @media print {
-    #uncertainty-toggle {
+    .dih-fab {
         display: none !important;
     }
 }
 
 /* Mobile adjustments */
 @media (max-width: 767px) {
-    #uncertainty-toggle {
+    .dih-fab {
         bottom: 15px;
         right: 15px;
-        padding: 6px 12px;
-        font-size: 0.8rem;
+    }
+
+    .dih-fab-main {
+        width: 48px;
+        height: 48px;
+    }
+
+    .dih-fab-action-icon {
+        width: 38px;
+        height: 38px;
+        min-width: 38px;
+    }
+
+    .dih-fab-action-label {
+        font-size: 0.75rem;
     }
 }
 
@@ -1016,84 +1120,9 @@ html.dark-mode img {
     opacity: 0.9;
 }
 
-/* Dark mode toggle button */
-#dark-mode-toggle {
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-    z-index: 1000;
-    width: 44px;
-    height: 44px;
-    padding: 0;
-    background-color: var(--book-bg, #ffffff);
-    border: 1px solid var(--book-border, #d4c5b9);
-    border-radius: 50%;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-    font-size: 1.2rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.2s ease;
-}
+/* (Dark mode toggle now in unified FAB) */
 
-#dark-mode-toggle:hover {
-    background-color: var(--book-light, #f9f8f3);
-    border-color: var(--book-accent, #8b7355);
-    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
-    transform: scale(1.05);
-}
-
-#dark-mode-toggle:focus {
-    outline: none;
-    border-color: var(--book-accent, #8b7355);
-}
-
-/* ==========================================
-   COPY CITATION BUTTON
-   ========================================== */
-
-#copy-citation-btn {
-    position: fixed;
-    bottom: 70px;
-    right: 20px;
-    z-index: 1000;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    padding: 8px 14px;
-    background-color: var(--book-bg, #ffffff);
-    border: 1px solid var(--book-border, #d4c5b9);
-    border-radius: 20px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    font-size: 0.85rem;
-    font-weight: 500;
-    color: var(--book-text, #2a2a2a);
-    transition: all 0.2s ease;
-}
-
-#copy-citation-btn:hover {
-    background-color: var(--book-light, #f9f8f3);
-    border-color: var(--book-accent, #8b7355);
-    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
-}
-
-#copy-citation-btn:focus {
-    outline: none;
-    border-color: var(--book-accent, #8b7355);
-}
-
-#copy-citation-btn.copied {
-    background-color: #d4edda;
-    border-color: #28a745;
-    color: #155724;
-}
-
-#copy-citation-btn .btn-icon {
-    font-size: 1rem;
-}
+/* (Copy citation button now in unified FAB) */
 
 /* ==========================================
    END-OF-CHAPTER SHARE BAR
@@ -1160,96 +1189,7 @@ html.dark-mode img {
     }
 }
 
-/* ==========================================
-   BACK TO TOP BUTTON
-   ========================================== */
-
-#back-to-top {
-    position: fixed;
-    bottom: 120px;
-    right: 20px;
-    z-index: 1000;
-    width: 44px;
-    height: 44px;
-    padding: 0;
-    background-color: var(--book-bg, #ffffff);
-    border: 1px solid var(--book-border, #d4c5b9);
-    border-radius: 50%;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: var(--book-text, #2a2a2a);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.2s ease;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(10px);
-}
-
-#back-to-top.visible {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-}
-
-#back-to-top:hover {
-    background-color: var(--book-light, #f9f8f3);
-    border-color: var(--book-accent, #8b7355);
-    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
-    transform: translateY(-2px);
-}
-
-#back-to-top:focus {
-    outline: none;
-    border-color: var(--book-accent, #8b7355);
-}
-
-/* ==========================================
-   FLOATING BUTTONS - MOBILE ADJUSTMENTS
-   ========================================== */
-
-@media (max-width: 767px) {
-    #dark-mode-toggle {
-        bottom: 15px;
-        left: 15px;
-        width: 40px;
-        height: 40px;
-    }
-
-    #copy-citation-btn {
-        bottom: 60px;
-        right: 15px;
-        padding: 6px 12px;
-        font-size: 0.8rem;
-    }
-
-    #back-to-top {
-        bottom: 105px;
-        right: 15px;
-        width: 40px;
-        height: 40px;
-    }
-
-    #uncertainty-toggle {
-        bottom: 15px;
-        right: 15px;
-    }
-}
-
-/* ==========================================
-   PRINT STYLES - HIDE UI ELEMENTS
-   ========================================== */
-
-@media print {
-    #dark-mode-toggle,
-    #copy-citation-btn,
-    #back-to-top {
-        display: none !important;
-    }
-}
+/* (Back to top, floating buttons mobile adjustments, and print styles now handled by unified FAB) */
 
 .version-note {
     margin: 1rem 0 1.5rem;

@@ -148,6 +148,7 @@ def generate_links_qmd(project_root: Path) -> Path:
         ("Skull Vibration Ports", manual_links.get("listen", [])),
         ("Murdered Trees", manual_links.get("buy", [])),
         ("Glowing Rectangle", manual_links.get("read", [])),
+        ("Support", shared_links.get("support", [])),
     ]
 
     sections_html = "\n\n".join(

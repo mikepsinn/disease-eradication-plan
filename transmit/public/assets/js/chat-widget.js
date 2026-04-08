@@ -652,11 +652,23 @@
   }
 
   function createFAB() {
+    // If the unified FAB system exists, register as a sub-action
+    if (window.dihFAB && window.dihFAB.addAction) {
+      var chatBtn = window.dihFAB.addAction('chat', 'Talk with Wishonia',
+        '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>',
+        function() { togglePanel(); },
+        { order: 10 }
+      );
+      // Use the sub-button as our fab reference for open/close state styling
+      fab = chatBtn;
+      return;
+    }
+
+    // Fallback: standalone FAB if unified FAB not loaded
     fab = document.createElement("button");
     fab.className = "chat-fab";
     fab.setAttribute("aria-label", "Talk with Wishonia");
     fab.setAttribute("title", "Talk to Wishonia about the book");
-    // Chat bubble SVG icon
     fab.innerHTML =
       '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>';
     fab.addEventListener("click", togglePanel);
@@ -943,18 +955,20 @@
   function togglePanel() {
     isOpen = !isOpen;
 
+    // Determine if we're inside the unified FAB or standalone
+    var iconTarget = fab.querySelector('.dih-fab-action-icon') || fab;
+    var chatSvg = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>';
+    var closeSvg = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>';
+
     if (isOpen) {
       panel.classList.add("chat-visible");
       fab.classList.add("chat-open");
-      // X icon when open
-      fab.innerHTML =
-        '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>';
+      iconTarget.innerHTML = closeSvg;
       input.focus();
     } else {
       panel.classList.remove("chat-visible");
       fab.classList.remove("chat-open");
-      fab.innerHTML =
-        '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>';
+      iconTarget.innerHTML = chatSvg;
     }
   }
 

@@ -150,10 +150,12 @@ links:
       subtitle: "15 seconds. 38 lives saved."
       icon: "fa-solid fa-check-to-slot"
       primary: true
+  support:
     - label: "Support the War on Disease"
       url: "https://github.com/sponsors/wishonia"
       subtitle: "Fund the mission to end war and disease"
       icon: "fa-solid fa-heart"
+      primary: true
 
   # Academic statements (for journal submissions)
   funding: "No funding was received. The author notes the irony of writing extensively about optimal resource allocation while being, himself, sub-optimally resourced."

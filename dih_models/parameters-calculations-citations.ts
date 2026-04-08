@@ -5168,8 +5168,8 @@ export const GLOBAL_DISEASE_DEATHS_PER_MINUTE: Parameter = {
   formula: "GLOBAL_DISEASE_DEATHS_DAILY / 1440",
   latex: "\\begin{gathered}\nDeaths_{disease,min} \\\\\n= Deaths_{disease,daily} \\times 0.000694 \\\\\n= 150{,}000 \\times 0.000694 \\\\\n= 104\n\\end{gathered}",
   confidenceInterval: [95.44742975347027, 112.72260414210108],
-  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/strategy/earth-optimization-prize.html",
-  manualPageTitle: "The Earth Optimization Prize",
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/strategy/declaration-of-optimization.html",
+  manualPageTitle: "Declaration of Optimization",
 };
 
 export const GLOBAL_DISEASE_ECONOMIC_BURDEN_ANNUAL: Parameter = {
