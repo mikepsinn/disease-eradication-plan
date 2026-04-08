@@ -7,7 +7,17 @@
     var offset = document.querySelector('meta[name="quarto:offset"]')?.getAttribute('content') || '';
     if (offset && offset.charAt(offset.length - 1) !== '/') offset += '/';
 
-    var v = '5.1.0';
+    var v = '5.2.0';
+
+    // Cache-bust styles.css
+    var links = document.querySelectorAll('link[rel="stylesheet"]');
+    for (var i = 0; i < links.length; i++) {
+      var href = links[i].getAttribute('href') || '';
+      if (href.indexOf('styles.css') !== -1 && href.indexOf('?v=') === -1) {
+        links[i].setAttribute('href', href + '?v=' + v);
+      }
+    }
+
     var scripts = ['assets/js/generated-subdomain-redirects.js', 'assets/js/site-enhancements.js', 'assets/js/promotion-bar.js'];
     for (var i = 0; i < scripts.length; i++) {
       var s = document.createElement('script');

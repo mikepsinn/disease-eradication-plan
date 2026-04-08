@@ -13,7 +13,7 @@
  *
  * Note: Page loader is handled separately in page-loader.html
  *
- * Version: 5.1.0
+ * Version: 5.2.0
  */
 
 (function() {
@@ -179,39 +179,8 @@
   var fabContainer = null;
   var fabActions = []; // ordered list of {id, el} for sub-buttons
 
-  function injectFABStyles() {
-    if (document.getElementById('dih-fab-styles')) return;
-    var style = document.createElement('style');
-    style.id = 'dih-fab-styles';
-    style.textContent =
-      '.dih-fab{position:fixed;bottom:20px;right:20px;z-index:9998;display:flex;flex-direction:column-reverse;align-items:flex-end;gap:0}' +
-      '.dih-fab-main{width:52px;height:52px;border-radius:50%;border:none;background:var(--book-accent,#8b7355);color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 3px 12px rgba(0,0,0,.2);transition:transform .25s cubic-bezier(.4,0,.2,1),box-shadow .2s,background-color .2s;z-index:2;position:relative}' +
-      '.dih-fab-main:hover{box-shadow:0 5px 18px rgba(0,0,0,.3);transform:scale(1.05)}' +
-      '.dih-fab-main svg{transition:transform .25s cubic-bezier(.4,0,.2,1)}' +
-      '.dih-fab-open .dih-fab-main svg{transform:rotate(45deg)}' +
-      '.dih-fab-action{display:flex;align-items:center;gap:8px;flex-direction:row-reverse;padding:0;border:none;background:none;cursor:pointer;opacity:0;transform:translateY(20px) scale(.5);pointer-events:none;transition:opacity .2s,transform .25s cubic-bezier(.4,0,.2,1);margin-bottom:8px}' +
-      '.dih-fab-action-icon{width:42px;height:42px;min-width:42px;border-radius:50%;background:var(--book-bg,#fff);border:1px solid var(--book-border,#d4c5b9);box-shadow:0 2px 8px rgba(0,0,0,.1);display:flex;align-items:center;justify-content:center;color:var(--book-text,#2a2a2a);transition:background-color .15s,border-color .15s,box-shadow .15s}' +
-      '.dih-fab-action:hover .dih-fab-action-icon{background-color:var(--book-light,#f9f8f3);border-color:var(--book-accent,#8b7355);box-shadow:0 3px 12px rgba(0,0,0,.15)}' +
-      '.dih-fab-action-label{padding:4px 10px;border-radius:6px;background:var(--book-bg,#fff);border:1px solid var(--book-border,#d4c5b9);box-shadow:0 2px 6px rgba(0,0,0,.08);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:.8rem;font-weight:500;color:var(--book-text,#2a2a2a);white-space:nowrap;opacity:0;transform:translateX(8px);transition:opacity .15s,transform .15s;pointer-events:none}' +
-      '.dih-fab-open .dih-fab-action{opacity:1;transform:translateY(0) scale(1);pointer-events:auto}' +
-      '.dih-fab-open .dih-fab-action:nth-child(1){transition-delay:.02s}' +
-      '.dih-fab-open .dih-fab-action:nth-child(2){transition-delay:.05s}' +
-      '.dih-fab-open .dih-fab-action:nth-child(3){transition-delay:.08s}' +
-      '.dih-fab-open .dih-fab-action:nth-child(4){transition-delay:.11s}' +
-      '.dih-fab-open .dih-fab-action:nth-child(5){transition-delay:.14s}' +
-      '.dih-fab-open .dih-fab-action:nth-child(6){transition-delay:.17s}' +
-      '.dih-fab-open .dih-fab-action:hover .dih-fab-action-label{opacity:1;transform:translateX(0);pointer-events:auto}' +
-      '.dih-fab-open::before{content:"";position:fixed;inset:0;background:rgba(0,0,0,.15);z-index:-1;animation:fab-scrim-in .2s forwards}' +
-      '@keyframes fab-scrim-in{from{opacity:0}to{opacity:1}}' +
-      '@media print{.dih-fab{display:none!important}}' +
-      '@media(max-width:767px){.dih-fab{bottom:15px;right:15px}.dih-fab-main{width:48px;height:48px}.dih-fab-action-icon{width:38px;height:38px;min-width:38px}.dih-fab-action-label{font-size:.75rem}}';
-    document.head.appendChild(style);
-  }
-
   function createUnifiedFAB() {
     if (document.getElementById('dih-fab')) return;
-
-    injectFABStyles();
 
     fabContainer = document.createElement('div');
     fabContainer.id = 'dih-fab';
@@ -222,7 +191,7 @@
     main.type = 'button';
     main.setAttribute('aria-label', 'Toggle tools menu');
     main.title = 'Tools';
-    main.innerHTML = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>';
+    main.innerHTML = '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>';
     main.addEventListener('click', function(e) {
       e.stopPropagation();
       toggleFAB();
