@@ -714,6 +714,8 @@ class ReferenceID(str, Enum):
     NASA_ANNUAL_BUDGET = "nasa-annual-budget"
     NATIONALWW2MUSEUM_WAR_BONDS = "nationalww2museum-war-bonds"
     NATIONALWW2MUSEUM_WWII_DEATHS = "nationalww2museum-wwii-deaths"
+    NATO_556_AMMO_COST = "nato-556-ammo-cost"
+    NATO_556_ROUNDS_PER_KILL = "nato-556-rounds-per-kill"
     NATO_OM_RATIOS_GLOBAL_SPENDING = "nato-om-ratios-global-spending"
     NATURE_D41573_025_00001_5 = "nature-d41573-025-00001-5"
     NATURE2014 = "nature2014"

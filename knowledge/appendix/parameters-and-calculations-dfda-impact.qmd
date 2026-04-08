@@ -82,6 +82,16 @@ $$
 
 {{< include ../figures/tornado-combination_therapy_disease_space.qmd >}}
 
+{{< include ../figures/sensitivity-table-combination_therapy_disease_space.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-combination_therapy_disease_space.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-combination_therapy_disease_space.qmd >}}
+
 :::
 
 ### Pairwise Drug Combinations: 45.1 million combinations {#sec-combination_therapy_pairs}
@@ -103,6 +113,16 @@ $$
 #### Sensitivity Analysis
 
 {{< include ../figures/tornado-combination_therapy_pairs.qmd >}}
+
+{{< include ../figures/sensitivity-table-combination_therapy_pairs.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-combination_therapy_pairs.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-combination_therapy_pairs.qmd >}}
 
 :::
 
@@ -2659,6 +2679,16 @@ $$
 #### Sensitivity Analysis
 
 {{< include ../figures/tornado-drug_disease_combinations_possible.qmd >}}
+
+{{< include ../figures/sensitivity-table-drug_disease_combinations_possible.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-drug_disease_combinations_possible.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-drug_disease_combinations_possible.qmd >}}
 
 :::
 

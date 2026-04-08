@@ -1,0 +1,10 @@
+**Sensitivity Indices for Children Killed in Wars Since 1900**
+
+Regression-based sensitivity showing which inputs explain the most variance in the output.
+
+| Input Parameter | Sensitivity Coefficient | Interpretation |
+|:----------------|------------------------:|:---------------|
+| Total War and Conflict Deaths Since 1900 (deaths) | 1.9980 | Strong driver |
+| Child Share of War Deaths Since 1900 (rate) | -1.0000 | Strong driver |
+
+*Interpretation*: Standardized coefficients show the change in output (in SD units) per 1 SD change in input. Values near ±1 indicate strong influence; values exceeding ±1 may occur with correlated inputs.

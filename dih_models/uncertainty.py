@@ -166,6 +166,22 @@ def sample_parameter(param: Any, n: int = 10000, seed: Optional[int] = None) -> 
             s.append(_bounded(total, bounds))
         return s
 
+    if dist == getattr(DistributionType, "UNIFORM", "UNIFORM"):
+        # Uniform distribution between CI bounds (or validation bounds)
+        lo_u, hi_u = None, None
+        if ci and isinstance(ci, Sequence) and len(ci) == 2:
+            lo_u, hi_u = float(ci[0]), float(ci[1])
+        elif bounds[0] is not None and bounds[1] is not None:
+            lo_u, hi_u = float(bounds[0]), float(bounds[1])
+        if lo_u is not None and hi_u is not None and lo_u != hi_u:
+            if np is not None and rng is not None:
+                return rng.uniform(lo_u, hi_u, size=n)
+            return [random.uniform(lo_u, hi_u) for _ in range(n)]
+        # No valid bounds: return constant
+        if np is not None:
+            return np.full(n, _bounded(mean, bounds))
+        return [_bounded(mean, bounds) for _ in range(n)]
+
     if dist == getattr(DistributionType, "BETA", "BETA"):
         # Beta distribution for bounded [0,1] parameters like probabilities/rates
         # Infer alpha/beta from mean and variance (from CI or std)

@@ -310,9 +310,23 @@ def generate_variables_yml(
         # Auto-detect: compare formatted output with and without unit
         with_unit = format_parameter_value(central_value, unit, include_unit=True, ratio_suffix=False)
         without_unit = format_parameter_value(central_value, unit, include_unit=False, ratio_suffix=False)
-        if with_unit != without_unit:
-            # Unit produces visible text (e.g. "deaths", "years") - generate _nounit
-            if ci_bounds:
+        # Also detect multiplier/ratio units whose suffix (x, :1) is baked into
+        # format_parameter_value and won't differ via include_unit flag.
+        unit_lower = (unit or "").lower()
+        is_multiplier_or_ratio = unit_lower in ("x", "multiplier", "factor", "ratio")
+        if with_unit != without_unit or is_multiplier_or_ratio:
+            if is_multiplier_or_ratio:
+                # Strip trailing "x" or ":1" suffix from the formatted value
+                stripped = with_unit.rstrip("x").rstrip(":1") if with_unit.endswith("x") else with_unit
+                if with_unit.endswith(":1"):
+                    stripped = with_unit[:-2]
+                elif with_unit.endswith("x"):
+                    stripped = with_unit[:-1]
+                else:
+                    stripped = with_unit
+                # Build a simple Parameter-like object with the stripped display value
+                nounit_value = ValueWithCI(value, stripped) if ci_bounds else ValueWithCI(value, stripped)
+            elif ci_bounds:
                 nounit_display = _format_ci_display(central_value, unit, ci_bounds[0], ci_bounds[1], include_unit=False)
                 nounit_value = ValueWithCI(value, nounit_display)
             else:

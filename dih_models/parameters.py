@@ -2733,6 +2733,54 @@ NUCLEAR_OVERKILL_FACTOR = Parameter(
     latex_symbol=r"Overkill_{nuke}",
 )
 
+# Bullet purchasing power (complements nuclear overkill with a more visceral metric)
+BULLET_COST_556_NATO = Parameter(
+    0.40,
+    source_ref=ReferenceID.NATO_556_AMMO_COST,
+    source_type="external",
+    confidence="medium",
+    description="Cost per round of 5.56x45mm NATO ammunition (military bulk procurement). "
+                "Based on U.S. military procurement contracts for M855 ball ammunition. "
+                "Civilian retail floor is ~$0.37; $0.40 is a conservative midpoint.",
+    display_name="Cost per 5.56mm NATO Round (Bulk)",
+    unit="USD",
+    distribution="uniform",
+    confidence_interval=(0.25, 0.60),
+    keywords=["bullet", "ammunition", "cost", "5.56", "NATO", "small arms", "round"],
+    latex_symbol=r"c_{bullet}",
+)
+
+BULLETS_FIRED_PER_KILL_IRAQ_AFGHANISTAN = Parameter(
+    250_000,
+    source_ref=ReferenceID.NATO_556_ROUNDS_PER_KILL,
+    source_type="external",
+    confidence="medium",
+    description="Rounds of small-arms ammunition fired per insurgent killed in Iraq and "
+                "Afghanistan. Based on GAO figures: ~6 billion rounds expended 2002-2005. "
+                "Calculated by military researcher John Pike of GlobalSecurity.org.",
+    display_name="Bullets Fired per Kill (Iraq/Afghanistan)",
+    unit="rounds",
+    distribution="fixed",
+    keywords=["bullets", "rounds", "per kill", "Iraq", "Afghanistan", "combat", "ammunition"],
+    latex_symbol=r"n_{rounds/kill}",
+)
+
+GLOBAL_BULLETS_PURCHASABLE_ANNUAL = Parameter(
+    GLOBAL_MILITARY_SPENDING_ANNUAL_2024 / BULLET_COST_556_NATO,
+    source_type=SourceType.CALCULATED,
+    confidence="medium",
+    description="Number of 5.56mm NATO rounds purchasable with the entire global military "
+                "budget at bulk procurement prices. Pure purchasing power calculation, "
+                "not a combat efficiency estimate.",
+    display_name="Bullets Purchasable with Global Military Budget",
+    unit="rounds",
+    formula="GLOBAL_MILITARY_SPENDING_ANNUAL_2024 / BULLET_COST_556_NATO",
+    inputs=["GLOBAL_MILITARY_SPENDING_ANNUAL_2024", "BULLET_COST_556_NATO"],
+    compute=lambda ctx: ctx["GLOBAL_MILITARY_SPENDING_ANNUAL_2024"] / ctx["BULLET_COST_556_NATO"],
+    keywords=["bullets", "purchasing power", "military budget", "ammunition", "rounds"],
+    latex_symbol=r"N_{bullets,yr}",
+)
+
 # Annual terrorism death risk
 ANNUAL_TERRORISM_DEATH_RISK_DENOMINATOR = Parameter(
     30_000_000,
@@ -2794,6 +2842,23 @@ GLOBAL_POPULATION_2024 = Parameter(
     keywords=["2024", "8.0b", "people", "worldwide", "citizens", "individuals", "inhabitants"],
     latex_symbol=r"Pop_{global}",  # LaTeX symbol for equations
 )  # UN World Population Prospects 2022
+
+# Bullets per person (depends on GLOBAL_POPULATION_2024 above)
+BULLETS_PER_PERSON_ANNUAL = Parameter(
+    GLOBAL_BULLETS_PURCHASABLE_ANNUAL / GLOBAL_POPULATION_2024,
+    source_type=SourceType.CALCULATED,
+    confidence="medium",
+    description="Number of bullets per person on Earth that could be purchased annually "
+                "with the global military budget. A purchasing power metric illustrating "
+                "the scale of military spending.",
+    display_name="Bullets Purchasable Per Person Per Year",
+    unit="rounds/person/year",
+    formula="GLOBAL_BULLETS_PURCHASABLE_ANNUAL / GLOBAL_POPULATION_2024",
+    inputs=["GLOBAL_BULLETS_PURCHASABLE_ANNUAL", "GLOBAL_POPULATION_2024"],
+    compute=lambda ctx: ctx["GLOBAL_BULLETS_PURCHASABLE_ANNUAL"] / ctx["GLOBAL_POPULATION_2024"],
+    keywords=["bullets", "per person", "per capita", "overkill", "purchasing power"],
+    latex_symbol=r"n_{bullets/person}",
+)
 
 GLOBAL_AVG_INCOME_2025 = Parameter(
     GLOBAL_GDP_2025 / GLOBAL_POPULATION_2024,

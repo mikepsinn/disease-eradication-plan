@@ -179,6 +179,33 @@ export const BED_NETS_COST_PER_DALY: Parameter = {
   manualPageTitle: "The 1% Treaty: Harnessing Greed to Eradicate Disease",
 };
 
+export const BULLETS_FIRED_PER_KILL_IRAQ_AFGHANISTAN: Parameter = {
+  value: 250000.0,
+  parameterName: "BULLETS_FIRED_PER_KILL_IRAQ_AFGHANISTAN",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-bullets_fired_per_kill_iraq_afghanistan",
+  unit: "rounds",
+  displayName: "Bullets Fired per Kill (Iraq/Afghanistan)",
+  description: "Rounds of small-arms ammunition fired per insurgent killed in Iraq and Afghanistan. Based on GAO figures: ~6 billion rounds expended 2002-2005. Calculated by military researcher John Pike of GlobalSecurity.org.",
+  sourceType: "external",
+  sourceRef: "nato-556-rounds-per-kill",
+  sourceUrl: "https://jonathanturley.org/2011/01/10/gao-u-s-has-fired-250000-rounds-for-every-insurgent-killed/",
+  confidence: "medium",
+};
+
+export const BULLET_COST_556_NATO: Parameter = {
+  value: 0.4,
+  parameterName: "BULLET_COST_556_NATO",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-bullet_cost_556_nato",
+  unit: "USD",
+  displayName: "Cost per 5.56mm NATO Round (Bulk)",
+  description: "Cost per round of 5.56x45mm NATO ammunition (military bulk procurement). Based on U.S. military procurement contracts for M855 ball ammunition. Civilian retail floor is ~$0.37; $0.40 is a conservative midpoint.",
+  sourceType: "external",
+  sourceRef: "nato-556-ammo-cost",
+  sourceUrl: "https://www.bulkcheapammo.com/rifle-ammo/556-ammo",
+  confidence: "medium",
+  confidenceInterval: [0.25, 0.6],
+};
+
 export const CAREGIVER_ANNUAL_VALUE_TOTAL: Parameter = {
   value: 600000000000.0,
   parameterName: "CAREGIVER_ANNUAL_VALUE_TOTAL",
@@ -3247,7 +3274,7 @@ export const ADDITIONAL_DRUGS_FROM_COST_ELIMINATION: Parameter = {
   confidence: "medium",
   formula: "CURRENT_APPROVALS × VALLEY_OF_DEATH_PCT",
   latex: "\\begin{gathered}\nDrugs_{new} \\\\\n= Drugs_{ann,curr} \\times Attrition_{valley} \\\\\n= 50 \\times 40\\% \\\\\n= 20\n\\end{gathered}",
-  confidenceInterval: [18.0, 22.609015549216362],
+  confidenceInterval: [13.109307444269922, 27.532282157289686],
 };
 
 export const BEST_PRACTICE_LIFE_EXPECTANCY_GAIN: Parameter = {
@@ -3264,6 +3291,22 @@ export const BEST_PRACTICE_LIFE_EXPECTANCY_GAIN: Parameter = {
   confidenceInterval: [1.81452000943318, 8.448186974667399],
 };
 
+export const BULLETS_PER_PERSON_ANNUAL: Parameter = {
+  value: 850.0,
+  parameterName: "BULLETS_PER_PERSON_ANNUAL",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-bullets_per_person_annual",
+  unit: "rounds/person/year",
+  displayName: "Bullets Purchasable Per Person Per Year",
+  description: "Number of bullets per person on Earth that could be purchased annually with the global military budget. A purchasing power metric illustrating the scale of military spending.",
+  sourceType: "calculated",
+  confidence: "medium",
+  formula: "GLOBAL_BULLETS_PURCHASABLE_ANNUAL / GLOBAL_POPULATION_2024",
+  latex: "\\begin{gathered}\nn_{bullets/person} = \\frac{N_{bullets,yr}}{Pop_{global}} = \\frac{6.8T}{8B} = 850\n\\\\[0.5em]\n\\text{where } N_{bullets,yr} = \\frac{Spending_{mil}}{c_{bullet}} = \\frac{\\$2.72T}{\\$0.4} = 6.8T\n\\end{gathered}",
+  confidenceInterval: [583.3925241980181, 1273.6806203353235],
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/problem/cost-of-war.html",
+  manualPageTitle: "The Cost of War",
+};
+
 export const CELL_THERAPY_DISEASE_COMBINATIONS: Parameter = {
   value: 500000.0,
   parameterName: "CELL_THERAPY_DISEASE_COMBINATIONS",
@@ -3275,6 +3318,7 @@ export const CELL_THERAPY_DISEASE_COMBINATIONS: Parameter = {
   confidence: "high",
   formula: "CELL_APPROACHES × DISEASES",
   latex: "\\begin{gathered}\nCombos_{cell} \\\\\n= N_{cell} \\times N_{diseases,trial} \\\\\n= 500 \\times 1{,}000 \\\\\n= 500{,}000\n\\end{gathered}",
+  confidenceInterval: [265999.48647766165, 914503.0646976066],
 };
 
 export const CHAIN_ENGAGE_PROBABILITY: Parameter = {
@@ -3425,6 +3469,7 @@ export const COMBINATION_THERAPY_DISEASE_SPACE: Parameter = {
   confidence: "high",
   formula: "DRUG_PAIRS × DISEASES",
   latex: "\\begin{gathered}\nSpace_{combo} = N_{combo} \\times N_{diseases,trial} = 45.1M \\times 1{,}000 = 45.1B\n\\\\[0.5em]\n\\text{where } N_{combo} = \\frac{N_{safe} \\cdot (N_{safe} - 1)}{2}\n\\end{gathered}",
+  confidenceInterval: [21510368997.20582, 81450272576.46573],
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/economics/1-pct-treaty-impact.html",
   manualPageTitle: "The 1% Treaty: Harnessing Greed to Eradicate Disease",
 };
@@ -3440,6 +3485,7 @@ export const COMBINATION_THERAPY_PAIRS: Parameter = {
   confidence: "high",
   formula: "SAFE_COMPOUNDS_COUNT × (SAFE_COMPOUNDS_COUNT - 1) ÷ 2",
   latex: "N_{combo} = \\frac{N_{safe} \\cdot (N_{safe} - 1)}{2}",
+  confidenceInterval: [26244027.23457158, 69025575.04810166],
 };
 
 export const CONTRIBUTION_DALYS_PER_PCT_POINT: Parameter = {
@@ -3597,7 +3643,7 @@ export const CURRENT_COMBINATION_EXPLORATION_YEARS: Parameter = {
   confidence: "high",
   formula: "COMBINATION_SPACE ÷ CURRENT_TRIALS_PER_YEAR",
   latex: "\\begin{gathered}\nT_{explore,combo} = \\frac{Space_{combo}}{Trials_{ann,curr}} = \\frac{45.1B}{3{,}300} = 13.7M\n\\\\[0.5em]\n\\text{where } Space_{combo} = N_{combo} \\times N_{diseases,trial} = 45.1M \\times 1{,}000 = 45.1B\n\\\\[0.5em]\n\\text{where } N_{combo} = \\frac{N_{safe} \\cdot (N_{safe} - 1)}{2}\n\\end{gathered}",
-  confidenceInterval: [11627759.477667967, 16296846.27531571],
+  confidenceInterval: [6502291.282149569, 25365767.396556832],
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/problem/untapped-therapeutic-frontier.html",
   manualPageTitle: "The Untapped Therapeutic Frontier",
 };
@@ -3613,7 +3659,7 @@ export const CURRENT_KNOWN_SAFE_EXPLORATION_YEARS: Parameter = {
   confidence: "high",
   formula: "DRUG_DISEASE_COMBINATIONS ÷ CURRENT_TRIALS_PER_YEAR",
   latex: "\\begin{gathered}\nT_{explore,safe} = \\frac{N_{combos}}{Trials_{ann,curr}} = \\frac{9.5M}{3{,}300} = 2{,}880\n\\\\[0.5em]\n\\text{where } N_{combos} = N_{safe} \\times N_{diseases,trial} = 9{,}500 \\times 1{,}000 = 9.5M\n\\end{gathered}",
-  confidenceInterval: [2448.207069726912, 3431.2761922972336],
+  confidenceInterval: [1765.458098687305, 4385.591944591702],
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/problem/untapped-therapeutic-frontier.html",
   manualPageTitle: "The Untapped Therapeutic Frontier",
 };
@@ -3647,7 +3693,7 @@ export const CURRENT_TOTAL_EXPLORATION_YEARS: Parameter = {
   confidence: "high",
   formula: "TOTAL_COMBINATIONS ÷ CURRENT_TRIALS_PER_YEAR",
   latex: "\\begin{gathered}\nT_{explore,total} = \\frac{N_{testable}}{Trials_{ann,curr}} = \\frac{51.5M}{3{,}300} = 15{,}600\n\\\\[0.5em]\n\\text{where } N_{testable} = N_{combos} + N_{emerging} = 9.5M + 42M = 51.5M\n\\\\[0.5em]\n\\text{where } N_{combos} = N_{safe} \\times N_{diseases,trial} = 9{,}500 \\times 1{,}000 = 9.5M\n\\\\[0.5em]\n\\text{where } N_{emerging} = Combos_{gene} + Combos_{mRNA} + Combos_{epi} + Combos_{cell} = 20M + 20M + 1.5M + 500{,}000 = 42M\n\\\\[0.5em]\n\\text{where } Combos_{gene} = N_{genes} \\times N_{diseases,trial} = 20{,}000 \\times 1{,}000 = 20M\n\\\\[0.5em]\n\\text{where } Combos_{mRNA} = N_{genes} \\times N_{diseases,trial} = 20{,}000 \\times 1{,}000 = 20M\n\\\\[0.5em]\n\\text{where } Combos_{epi} = N_{epi} \\times N_{diseases,trial} = 1{,}500 \\times 1{,}000 = 1.5M\n\\\\[0.5em]\n\\text{where } Combos_{cell} = N_{cell} \\times N_{diseases,trial} = 500 \\times 1{,}000 = 500{,}000\n\\end{gathered}",
-  confidenceInterval: [13271.859377993258, 18601.128831927108],
+  confidenceInterval: [11201.130622442159, 21403.744200401972],
 };
 
 export const CURRENT_TRAJECTORY_AVG_INCOME_YEAR_15: Parameter = {
@@ -3812,7 +3858,7 @@ export const DFDA_COMBINED_TREATMENT_SPEEDUP_MULTIPLIER: Parameter = {
   confidence: "medium",
   formula: "DFDA_TRIAL_CAPACITY_MULTIPLIER × DFDA_VALLEY_OF_DEATH_RESCUE_MULTIPLIER",
   latex: "\\begin{gathered}\nk_{speedup} = k_{capacity} \\times k_{rescue} = 12.3 \\times 1.4 = 17.3\n\\\\[0.5em]\n\\text{where } k_{capacity} = \\frac{N_{fundable,dFDA}}{Slots_{curr}} = \\frac{23.4M}{1.9M} = 12.3\n\\\\[0.5em]\n\\text{where } N_{fundable,dFDA} = \\frac{Subsidies_{dFDA,ann}}{Cost_{pragmatic,pt}} = \\frac{\\$21.8B}{\\$929} = 23.4M\n\\\\[0.5em]\n\\text{where } Subsidies_{dFDA,ann} = Funding_{dFDA,ann} - OPEX_{dFDA} = \\$21.8B - \\$40M = \\$21.8B\n\\\\[0.5em]\n\\text{where } OPEX_{dFDA} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \\$15M + \\$10M + \\$8M + \\$5M + \\$2M = \\$40M\n\\\\[0.5em]\n\\text{where } k_{rescue} = Attrition_{valley} + 1 = 40\\% + 1 = 1.4\n\\end{gathered}",
-  confidenceInterval: [5.877907585924774, 85.97758811739176],
+  confidenceInterval: [5.821417956409717, 86.80477120196355],
 };
 
 export const DFDA_DIRECT_FUNDING_COST_PER_DALY: Parameter = {
@@ -3984,7 +4030,7 @@ export const DFDA_KNOWN_SAFE_EXPLORATION_YEARS: Parameter = {
   confidence: "high",
   formula: "DRUG_DISEASE_COMBINATIONS ÷ DFDA_TRIALS_PER_YEAR",
   latex: "\\begin{gathered}\nT_{safe,dFDA} = \\frac{N_{combos}}{Capacity_{trials}} = \\frac{9.5M}{40{,}700} = 234\n\\\\[0.5em]\n\\text{where } N_{combos} = N_{safe} \\times N_{diseases,trial} = 9{,}500 \\times 1{,}000 = 9.5M\n\\\\[0.5em]\n\\text{where } Capacity_{trials} = Trials_{ann,curr} \\times k_{capacity} = 3{,}300 \\times 12.3 = 40{,}700\n\\\\[0.5em]\n\\text{where } k_{capacity} = \\frac{N_{fundable,dFDA}}{Slots_{curr}} = \\frac{23.4M}{1.9M} = 12.3\n\\\\[0.5em]\n\\text{where } N_{fundable,dFDA} = \\frac{Subsidies_{dFDA,ann}}{Cost_{pragmatic,pt}} = \\frac{\\$21.8B}{\\$929} = 23.4M\n\\\\[0.5em]\n\\text{where } Subsidies_{dFDA,ann} = Funding_{dFDA,ann} - OPEX_{dFDA} = \\$21.8B - \\$40M = \\$21.8B\n\\\\[0.5em]\n\\text{where } OPEX_{dFDA} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \\$15M + \\$10M + \\$8M + \\$5M + \\$2M = \\$40M\n\\end{gathered}",
-  confidenceInterval: [55.87254567874311, 583.11394807107],
+  confidenceInterval: [51.33046488814189, 606.750404837319],
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/problem/untapped-therapeutic-frontier.html",
   manualPageTitle: "The Untapped Therapeutic Frontier",
 };
@@ -4232,7 +4278,7 @@ export const DFDA_TOTAL_EXPLORATION_YEARS: Parameter = {
   confidence: "high",
   formula: "TOTAL_COMBINATIONS ÷ DFDA_TRIALS_PER_YEAR",
   latex: "\\begin{gathered}\nT_{explore,dFDA} = \\frac{N_{testable}}{Capacity_{trials}} = \\frac{51.5M}{40{,}700} = 1{,}270\n\\\\[0.5em]\n\\text{where } N_{testable} = N_{combos} + N_{emerging} = 9.5M + 42M = 51.5M\n\\\\[0.5em]\n\\text{where } N_{combos} = N_{safe} \\times N_{diseases,trial} = 9{,}500 \\times 1{,}000 = 9.5M\n\\\\[0.5em]\n\\text{where } N_{emerging} = Combos_{gene} + Combos_{mRNA} + Combos_{epi} + Combos_{cell} = 20M + 20M + 1.5M + 500{,}000 = 42M\n\\\\[0.5em]\n\\text{where } Combos_{gene} = N_{genes} \\times N_{diseases,trial} = 20{,}000 \\times 1{,}000 = 20M\n\\\\[0.5em]\n\\text{where } Combos_{mRNA} = N_{genes} \\times N_{diseases,trial} = 20{,}000 \\times 1{,}000 = 20M\n\\\\[0.5em]\n\\text{where } Combos_{epi} = N_{epi} \\times N_{diseases,trial} = 1{,}500 \\times 1{,}000 = 1.5M\n\\\\[0.5em]\n\\text{where } Combos_{cell} = N_{cell} \\times N_{diseases,trial} = 500 \\times 1{,}000 = 500{,}000\n\\\\[0.5em]\n\\text{where } Capacity_{trials} = Trials_{ann,curr} \\times k_{capacity} = 3{,}300 \\times 12.3 = 40{,}700\n\\\\[0.5em]\n\\text{where } k_{capacity} = \\frac{N_{fundable,dFDA}}{Slots_{curr}} = \\frac{23.4M}{1.9M} = 12.3\n\\\\[0.5em]\n\\text{where } N_{fundable,dFDA} = \\frac{Subsidies_{dFDA,ann}}{Cost_{pragmatic,pt}} = \\frac{\\$21.8B}{\\$929} = 23.4M\n\\\\[0.5em]\n\\text{where } Subsidies_{dFDA,ann} = Funding_{dFDA,ann} - OPEX_{dFDA} = \\$21.8B - \\$40M = \\$21.8B\n\\\\[0.5em]\n\\text{where } OPEX_{dFDA} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \\$15M + \\$10M + \\$8M + \\$5M + \\$2M = \\$40M\n\\end{gathered}",
-  confidenceInterval: [302.8880107847653, 3161.0914027010635],
+  confidenceInterval: [297.19654494410366, 3219.273868542128],
 };
 
 export const DFDA_TRIALS_PER_YEAR_CAPACITY: Parameter = {
@@ -4462,6 +4508,7 @@ export const DFDA_VALLEY_OF_DEATH_RESCUE_MULTIPLIER: Parameter = {
   confidence: "medium",
   formula: "1 + VALLEY_OF_DEATH_ATTRITION_PCT",
   latex: "k_{rescue} = Attrition_{valley} + 1 = 40\\% + 1 = 1.4",
+  confidenceInterval: [1.2647218414075347, 1.5350010215617111],
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/economics/1-pct-treaty-impact.html",
   manualPageTitle: "The 1% Treaty: Harnessing Greed to Eradicate Disease",
 };
@@ -4671,6 +4718,7 @@ export const DRUG_DISEASE_COMBINATIONS_POSSIBLE: Parameter = {
   confidence: "high",
   formula: "SAFE_COMPOUNDS × DISEASES",
   latex: "\\begin{gathered}\nN_{combos} \\\\\n= N_{safe} \\times N_{diseases,trial} \\\\\n= 9{,}500 \\times 1{,}000 \\\\\n= 9.5M\n\\end{gathered}",
+  confidenceInterval: [5938511.352283468, 13865036.095305193],
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/economics/1-pct-treaty-impact.html",
   manualPageTitle: "The 1% Treaty: Harnessing Greed to Eradicate Disease",
 };
@@ -4734,6 +4782,7 @@ export const EMERGING_MODALITY_COMBINATIONS: Parameter = {
   confidence: "high",
   formula: "GENE + MRNA + EPIGENETIC + CELL",
   latex: "\\begin{gathered}\nN_{emerging} = Combos_{gene} + Combos_{mRNA} + Combos_{epi} + Combos_{cell} = 20M + 20M + 1.5M + 500{,}000 = 42M\n\\\\[0.5em]\n\\text{where } Combos_{gene} = N_{genes} \\times N_{diseases,trial} = 20{,}000 \\times 1{,}000 = 20M\n\\\\[0.5em]\n\\text{where } Combos_{mRNA} = N_{genes} \\times N_{diseases,trial} = 20{,}000 \\times 1{,}000 = 20M\n\\\\[0.5em]\n\\text{where } Combos_{epi} = N_{epi} \\times N_{diseases,trial} = 1{,}500 \\times 1{,}000 = 1.5M\n\\\\[0.5em]\n\\text{where } Combos_{cell} = N_{cell} \\times N_{diseases,trial} = 500 \\times 1{,}000 = 500{,}000\n\\end{gathered}",
+  confidenceInterval: [32432642.738815937, 52539582.74663582],
 };
 
 export const EPIGENETIC_DISEASE_COMBINATIONS: Parameter = {
@@ -4747,6 +4796,7 @@ export const EPIGENETIC_DISEASE_COMBINATIONS: Parameter = {
   confidence: "high",
   formula: "EPIGENETIC_TARGETS × DISEASES",
   latex: "\\begin{gathered}\nCombos_{epi} \\\\\n= N_{epi} \\times N_{diseases,trial} \\\\\n= 1{,}500 \\times 1{,}000 \\\\\n= 1.5M\n\\end{gathered}",
+  confidenceInterval: [859850.6217060083, 2301006.6742281257],
 };
 
 export const EXISTING_DRUGS_EFFICACY_LAG_DEATHS_TOTAL: Parameter = {
@@ -4790,7 +4840,7 @@ export const EXPLORATION_RATIO: Parameter = {
   confidence: "high",
   formula: "TESTED / POSSIBLE",
   latex: "\\begin{gathered}\nRatio_{explore} = \\frac{N_{tested}}{N_{combos}} = \\frac{32{,}500}{9.5M} = 0.342\\%\n\\\\[0.5em]\n\\text{where } N_{combos} = N_{safe} \\times N_{diseases,trial} = 9{,}500 \\times 1{,}000 = 9.5M\n\\end{gathered}",
-  confidenceInterval: [0.0021001147282901306, 0.005138112209965529],
+  confidenceInterval: [0.0018049214015606367, 0.006265452460393697],
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/problem/untapped-therapeutic-frontier.html",
   manualPageTitle: "The Untapped Therapeutic Frontier",
 };
@@ -4824,6 +4874,7 @@ export const GENE_THERAPY_DISEASE_COMBINATIONS: Parameter = {
   confidence: "high",
   formula: "GENES × DISEASES",
   latex: "\\begin{gathered}\nCombos_{gene} \\\\\n= N_{genes} \\times N_{diseases,trial} \\\\\n= 20{,}000 \\times 1{,}000 \\\\\n= 20M\n\\end{gathered}",
+  confidenceInterval: [15653396.315316133, 24662036.503855042],
 };
 
 export const GLOBAL_ANNUAL_CONFLICT_DEATHS_TOTAL: Parameter = {
@@ -5062,6 +5113,20 @@ export const GLOBAL_AVG_REMAINING_YEARS: Parameter = {
   confidenceInterval: [45.151813025332594, 51.78547999056681],
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/call-to-action/your-personal-benefits.html",
   manualPageTitle: "Your Personal Benefits",
+};
+
+export const GLOBAL_BULLETS_PURCHASABLE_ANNUAL: Parameter = {
+  value: 6800000000000.0,
+  parameterName: "GLOBAL_BULLETS_PURCHASABLE_ANNUAL",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-global_bullets_purchasable_annual",
+  unit: "rounds",
+  displayName: "Bullets Purchasable with Global Military Budget",
+  description: "Number of 5.56mm NATO rounds purchasable with the entire global military budget at bulk procurement prices. Pure purchasing power calculation, not a combat efficiency estimate.",
+  sourceType: "calculated",
+  confidence: "medium",
+  formula: "GLOBAL_MILITARY_SPENDING_ANNUAL_2024 / BULLET_COST_556_NATO",
+  latex: "\\begin{gathered}\nN_{bullets,yr} \\\\\n= \\frac{Spending_{mil}}{c_{bullet}} \\\\\n= \\frac{\\$2.72T}{\\$0.4} \\\\\n= 6.8T\n\\end{gathered}",
+  confidenceInterval: [4669518343030.351, 10180574891899.795],
 };
 
 export const GLOBAL_COORDINATION_ACTIVATION_BUDGET: Parameter = {
@@ -5479,6 +5544,7 @@ export const MRNA_THERAPEUTIC_COMBINATIONS: Parameter = {
   confidence: "high",
   formula: "PROTEINS × DISEASES",
   latex: "\\begin{gathered}\nCombos_{mRNA} \\\\\n= N_{genes} \\times N_{diseases,trial} \\\\\n= 20{,}000 \\times 1{,}000 \\\\\n= 20M\n\\end{gathered}",
+  confidenceInterval: [15653396.315316133, 24662036.503855042],
 };
 
 export const NIH_TRADITIONAL_TRIAL_MAX_EFFICIENCY_PCT: Parameter = {
@@ -6260,6 +6326,7 @@ export const TOTAL_TESTABLE_THERAPEUTIC_COMBINATIONS: Parameter = {
   confidence: "high",
   formula: "KNOWN_SAFE + EMERGING_MODALITIES",
   latex: "\\begin{gathered}\nN_{testable} = N_{combos} + N_{emerging} = 9.5M + 42M = 51.5M\n\\\\[0.5em]\n\\text{where } N_{combos} = N_{safe} \\times N_{diseases,trial} = 9{,}500 \\times 1{,}000 = 9.5M\n\\\\[0.5em]\n\\text{where } N_{emerging} = Combos_{gene} + Combos_{mRNA} + Combos_{epi} + Combos_{cell} = 20M + 20M + 1.5M + 500{,}000 = 42M\n\\\\[0.5em]\n\\text{where } Combos_{gene} = N_{genes} \\times N_{diseases,trial} = 20{,}000 \\times 1{,}000 = 20M\n\\\\[0.5em]\n\\text{where } Combos_{mRNA} = N_{genes} \\times N_{diseases,trial} = 20{,}000 \\times 1{,}000 = 20M\n\\\\[0.5em]\n\\text{where } Combos_{epi} = N_{epi} \\times N_{diseases,trial} = 1{,}500 \\times 1{,}000 = 1.5M\n\\\\[0.5em]\n\\text{where } Combos_{cell} = N_{cell} \\times N_{diseases,trial} = 500 \\times 1{,}000 = 500{,}000\n\\end{gathered}",
+  confidenceInterval: [38371154.091099404, 66404618.841941014],
 };
 
 export const TREATY_ANNUAL_FUNDING: Parameter = {
@@ -6971,7 +7038,7 @@ export const UNEXPLORED_RATIO: Parameter = {
   confidence: "high",
   formula: "1 - EXPLORATION_RATIO",
   latex: "\\begin{gathered}\nRatio_{unexplored} = 1 - \\frac{N_{tested}}{N_{combos}} = 1 - \\frac{32{,}500}{9.5M} = 99.7\\%\n\\\\[0.5em]\n\\text{where } N_{combos} = N_{safe} \\times N_{diseases,trial} = 9{,}500 \\times 1{,}000 = 9.5M\n\\end{gathered}",
-  confidenceInterval: [0.9948618877900345, 0.9978998852717099],
+  confidenceInterval: [0.9937345475396063, 0.9981950785984394],
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/problem/nih-fails-2-institute-health.html",
   manualPageTitle: "NIH Fails to Institute Health",
 };
@@ -7405,6 +7472,7 @@ export const WAR_CHILDREN_KILLED_SINCE_1900: Parameter = {
   confidence: "high",
   formula: "WAR_DEATHS_SINCE_1900 × WAR_CHILD_DEATH_PCT",
   latex: "\\begin{gathered}\nDeaths_{war,child} \\\\\n= Deaths_{war,1900} \\times Pct_{war,child} \\\\\n= 310M \\times 33\\% \\\\\n= 102M\n\\end{gathered}",
+  confidenceInterval: [53240303.248949006, 130702857.20738803],
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/problem/cost-of-war.html",
   manualPageTitle: "The Cost of War",
 };
@@ -7452,7 +7520,7 @@ export const WAR_COUNTERFACTUAL_GDP_PER_CAPITA: Parameter = {
   confidence: "low",
   formula: "GLOBAL_GDP_PER_CAPITA_1900 × (1 + ACTUAL_CAGR + WAR_COUNTERFACTUAL_ANNUAL_GROWTH_BOOST)^124",
   latex: "\\begin{gathered}\nGDP_{pc,peace} \\\\\n= GDP_{pc,1900} \\times \\left(1 \\\\\n+ \\left(\\frac{\\bar{y}_{0}}{GDP_{pc,1900}}\\right)^{1/124} - 1 \\\\\n+ g_{war,penalty}\\right)^{124} \\\\[0.5em]\n= \\$3.15K \\times \\left(1 + \\left(\\frac{\\$14.4K}{\\$3.15K}\\right)^{1/124} - 1 + 2.6\\%\\right)^{124} \\\\[0.5em]\n= \\$334K\n\\end{gathered}",
-  confidenceInterval: [328874.4342981096, 337860.24905403925],
+  confidenceInterval: [119493.28075151701, 922648.2380751406],
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/problem/cost-of-war.html",
   manualPageTitle: "The Cost of War",
 };
@@ -7468,7 +7536,7 @@ export const WAR_COUNTERFACTUAL_INCOME_MULTIPLE: Parameter = {
   confidence: "low",
   formula: "WAR_COUNTERFACTUAL_GDP_PER_CAPITA / GLOBAL_AVG_INCOME_2025",
   latex: "\\begin{gathered}\nM_{war,income} = \\frac{GDP_{pc,peace}}{\\bar{y}_{0}} = \\frac{\\$334K}{\\$14.4K} = 23.2\n\\\\[0.5em]\n\\text{where } \\begin{gathered}\nGDP_{pc,peace} \\\\\n= GDP_{pc,1900} \\times \\left(1 \\\\\n+ \\left(\\frac{\\bar{y}_{0}}{GDP_{pc,1900}}\\right)^{1/124} - 1 \\\\\n+ g_{war,penalty}\\right)^{124} \\\\[0.5em]\n= \\$3.15K \\times \\left(1 + \\left(\\frac{\\$14.4K}{\\$3.15K}\\right)^{1/124} - 1 + 2.6\\%\\right)^{124} \\\\[0.5em]\n= \\$334K\n\\end{gathered}\n\\\\[0.5em]\n\\text{where } \\bar{y}_{0} = \\frac{GDP_{global}}{Pop_{global}} = \\frac{\\$115T}{8B} = \\$14.4K\n\\end{gathered}",
-  confidenceInterval: [23.018511490281032, 23.356846880598777],
+  confidenceInterval: [8.301080354209953, 64.19732231477359],
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/problem/cost-of-war.html",
   manualPageTitle: "The Cost of War",
 };
@@ -7484,7 +7552,7 @@ export const WAR_COUNTERFACTUAL_LOST_GDP_GLOBAL: Parameter = {
   confidence: "low",
   formula: "WAR_COUNTERFACTUAL_LOST_GDP_PER_CAPITA × GLOBAL_POPULATION_2024",
   latex: "\\begin{gathered}\nGDP_{lost,total} = GDP_{pc,lost} \\times Pop_{global} = \\$319K \\times 8B = \\$2550T\n\\\\[0.5em]\n\\text{where } GDP_{pc,lost} = GDP_{pc,peace} - \\bar{y}_{0} = \\$334K - \\$14.4K = \\$319K\n\\\\[0.5em]\n\\text{where } \\begin{gathered}\nGDP_{pc,peace} \\\\\n= GDP_{pc,1900} \\times \\left(1 \\\\\n+ \\left(\\frac{\\bar{y}_{0}}{GDP_{pc,1900}}\\right)^{1/124} - 1 \\\\\n+ g_{war,penalty}\\right)^{124} \\\\[0.5em]\n= \\$3.15K \\times \\left(1 + \\left(\\frac{\\$14.4K}{\\$3.15K}\\right)^{1/124} - 1 + 2.6\\%\\right)^{124} \\\\[0.5em]\n= \\$334K\n\\end{gathered}\n\\\\[0.5em]\n\\text{where } \\bar{y}_{0} = \\frac{GDP_{global}}{Pop_{global}} = \\frac{\\$115T}{8B} = \\$14.4K\n\\end{gathered}",
-  confidenceInterval: [2532128821382318.5, 2571037391268859.5],
+  confidenceInterval: [839624240734144.9, 7267692066198963.0],
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/problem/cost-of-war.html",
   manualPageTitle: "The Cost of War",
 };
@@ -7500,7 +7568,7 @@ export const WAR_COUNTERFACTUAL_LOST_GDP_PER_CAPITA: Parameter = {
   confidence: "high",
   formula: "WAR_COUNTERFACTUAL_GDP_PER_CAPITA - GLOBAL_AVG_INCOME_2025",
   latex: "\\begin{gathered}\nGDP_{pc,lost} = GDP_{pc,peace} - \\bar{y}_{0} = \\$334K - \\$14.4K = \\$319K\n\\\\[0.5em]\n\\text{where } \\begin{gathered}\nGDP_{pc,peace} \\\\\n= GDP_{pc,1900} \\times \\left(1 \\\\\n+ \\left(\\frac{\\bar{y}_{0}}{GDP_{pc,1900}}\\right)^{1/124} - 1 \\\\\n+ g_{war,penalty}\\right)^{124} \\\\[0.5em]\n= \\$3.15K \\times \\left(1 + \\left(\\frac{\\$14.4K}{\\$3.15K}\\right)^{1/124} - 1 + 2.6\\%\\right)^{124} \\\\[0.5em]\n= \\$334K\n\\end{gathered}\n\\\\[0.5em]\n\\text{where } \\bar{y}_{0} = \\frac{GDP_{global}}{Pop_{global}} = \\frac{\\$115T}{8B} = \\$14.4K\n\\end{gathered}",
-  confidenceInterval: [314796.09888395504, 323180.0213583615],
+  confidenceInterval: [105124.86633280502, 908295.0436255428],
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/problem/cost-of-war.html",
   manualPageTitle: "The Cost of War",
 };
@@ -7516,6 +7584,7 @@ export const WAR_LIFE_YEARS_LOST_SINCE_1900: Parameter = {
   confidence: "high",
   formula: "WAR_DEATHS_SINCE_1900 × WAR_AVG_YEARS_LIFE_LOST_PER_DEATH",
   latex: "\\begin{gathered}\nYLL_{war,total} \\\\\n= Deaths_{war,1900} \\times YLL_{war} \\\\\n= 310M \\times 27 \\\\\n= 8.37B\n\\end{gathered}",
+  confidenceInterval: [4289679361.6106534, 11405283337.094807],
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/problem/cost-of-war.html",
   manualPageTitle: "The Cost of War",
 };
@@ -7531,7 +7600,7 @@ export const WAR_QALY_VALUE_LOST_SINCE_1900: Parameter = {
   confidence: "high",
   formula: "WAR_LIFE_YEARS_LOST_SINCE_1900 × STANDARD_ECONOMIC_QALY_VALUE_USD",
   latex: "\\begin{gathered}\nV_{war,QALY} = YLL_{war,total} \\times Value_{QALY} = 8.37B \\times \\$150K = \\$1260T\n\\\\[0.5em]\n\\text{where } YLL_{war,total} = Deaths_{war,1900} \\times YLL_{war} = 310M \\times 27 = 8.37B\n\\end{gathered}",
-  confidenceInterval: [837000000000000.0, 1667992012815663.5],
+  confidenceInterval: [579174679234945.2, 1885683591692259.2],
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/problem/cost-of-war.html",
   manualPageTitle: "The Cost of War",
 };
@@ -7547,7 +7616,7 @@ export const WAR_TOTAL_COST_SINCE_1900: Parameter = {
   confidence: "low",
   formula: "CUMULATIVE_MILITARY_SPENDING_FED_ERA + WAR_PROPERTY_DESTRUCTION_SINCE_1900 + WAR_ENVIRONMENTAL_DESTRUCTION_SINCE_1900 + WAR_QALY_VALUE_LOST_SINCE_1900",
   latex: "\\begin{gathered}\nC_{war,hist} = Spending_{mil,cum,fed} + D_{property} + D_{env} + V_{war,QALY} = \\$170T + \\$45T + \\$5T + \\$1260T = \\$1480T\n\\\\[0.5em]\n\\text{where } V_{war,QALY} = YLL_{war,total} \\times Value_{QALY} = 8.37B \\times \\$150K = \\$1260T\n\\\\[0.5em]\n\\text{where } YLL_{war,total} = Deaths_{war,1900} \\times YLL_{war} = 310M \\times 27 = 8.37B\n\\end{gathered}",
-  confidenceInterval: [1054399441843235.6, 1891813944533402.2],
+  confidenceInterval: [785869556473870.0, 2117806833549536.8],
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/problem/cost-of-war.html",
   manualPageTitle: "The Cost of War",
 };
@@ -9100,8 +9169,8 @@ export const NUCLEAR_OVERKILL_FACTOR: Parameter = {
   sourceType: "definition",
   sourceRef: "nuclear-extinction",
   confidence: "medium",
-  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/strategy/declaration-of-optimization.html",
-  manualPageTitle: "Declaration of Optimization",
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/solution/1-percent-treaty.html",
+  manualPageTitle: "A 1% Treaty",
 };
 
 export const PEACE_DIVIDEND_CONFLICT_ELASTICITY: Parameter = {
@@ -9629,6 +9698,8 @@ export const parameters = {
   AVERAGE_MARKET_RETURN_PCT,
   BASELINE_LIVES_SAVED_ANNUAL,
   BED_NETS_COST_PER_DALY,
+  BULLETS_FIRED_PER_KILL_IRAQ_AFGHANISTAN,
+  BULLET_COST_556_NATO,
   CAREGIVER_ANNUAL_VALUE_TOTAL,
   CAREGIVER_COUNT_US,
   CAREGIVER_HOURS_PER_MONTH,
@@ -9832,6 +9903,7 @@ export const parameters = {
   WORKFORCE_WITH_PRODUCTIVITY_LOSS,
   ADDITIONAL_DRUGS_FROM_COST_ELIMINATION,
   BEST_PRACTICE_LIFE_EXPECTANCY_GAIN,
+  BULLETS_PER_PERSON_ANNUAL,
   CELL_THERAPY_DISEASE_COMBINATIONS,
   CHAIN_ENGAGE_PROBABILITY,
   CHAIN_EXPECTED_ENGAGED_IMPLEMENTERS,
@@ -9948,6 +10020,7 @@ export const parameters = {
   GLOBAL_AVG_HOURLY_INCOME,
   GLOBAL_AVG_INCOME_2025,
   GLOBAL_AVG_REMAINING_YEARS,
+  GLOBAL_BULLETS_PURCHASABLE_ANNUAL,
   GLOBAL_COORDINATION_ACTIVATION_BUDGET,
   GLOBAL_COORDINATION_ACTIVATION_COST_PER_PARTICIPANT,
   GLOBAL_COORDINATION_TARGET_SUPPORTERS,
@@ -11420,6 +11493,33 @@ export const citations: Record<string, Citation> = {
         URL: "https://www.mercatus.org/research/research-papers/defense-spending-and-economy",
         note: "Mercatus: Defense Spending and Economy | CEPR: WWII Spending Multipliers | RAND: Defense Spending Economic Growth",
   },
+  "nato-556-ammo-cost": {
+        id: "nato-556-ammo-cost",
+        type: "webpage",
+        title: "5.56mm NATO Ammunition Bulk Procurement Pricing",
+        author: [
+          {
+            literal: "U.S. Department of Defense"
+          },
+        ],
+        issued: { 'date-parts': [[2024]] },
+        URL: "https://www.bulkcheapammo.com/rifle-ammo/556-ammo",
+        note: "Military bulk procurement price for M855 5.56x45mm NATO ball ammunition. Civilian retail prices range \\$0.37--\\$0.60/round; military bulk contracts are typically at or below retail floor. \\$0.40/round used as conservative midpoint.",
+  },
+  "nato-556-rounds-per-kill": {
+        id: "nato-556-rounds-per-kill",
+        type: "webpage",
+        title: "U.S. Forces Fire 250,000 Rounds for Every Insurgent Killed",
+        author: [
+          {
+            family: "Pike",
+            given: "John"
+          },
+        ],
+        issued: { 'date-parts': [[2011]] },
+        URL: "https://jonathanturley.org/2011/01/10/gao-u-s-has-fired-250000-rounds-for-every-insurgent-killed/",
+        note: "Based on GAO figures showing approximately 6 billion bullets expended between 2002 and 2005 in Iraq and Afghanistan. Calculated by military researcher John Pike of GlobalSecurity.org.",
+  },
   "necrometrics-20th-century": {
         id: "necrometrics-20th-century",
         type: "webpage",
@@ -12325,11 +12425,11 @@ export const citations: Record<string, Citation> = {
 
 /** Summary statistics */
 export const PARAMETER_STATS = {
-  total: 643,
-  external: 208,
-  calculated: 301,
+  total: 647,
+  external: 210,
+  calculated: 303,
   definitions: 134,
-  citations: 151,
+  citations: 153,
 } as const;
 
 // ============================================================================

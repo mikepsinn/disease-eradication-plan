@@ -1,6 +1,6 @@
 ---
 title: A 1% Treaty
-description: You have enough nuclear weapons to kill everyone 13 times. Here's how to settle for 12.87 times and use the savings on medicine. Controversial, apparently.
+description: You have enough nuclear weapons to kill everyone 20 times. Here's how to settle for 19.8 times and use the savings on medicine. Controversial, apparently.
 published: true
 tags:
   - solution
@@ -22,7 +22,7 @@ scores:
   importance: 10
 ---
 
-Your species spends {{< var global_military_spending_annual_2024 >}} a year on military forces. If every nation reduces that by 1% at the same time, the balance of power stays identical. No country gets weaker. Nobody loses a single war they would have otherwise won. You just become slightly less capable of destroying a planet you're still living on (which should be fine, since you were already capable of destroying it 13 times over).
+Your species spends {{< var global_military_spending_annual_2024 >}} a year on military forces. That is enough to buy {{< var bullets_per_person_annual >}} for every person on Earth, every year. If every nation reduces that by 1% at the same time, the balance of power stays identical. No country gets weaker. Nobody loses a single war they would have otherwise won. You just become slightly less capable of destroying a planet you're still living on (which should be fine, since you were already capable of destroying it {{< var nuclear_overkill_factor_nounit >}} times over).
 
 That 1% is {{< var treaty_annual_funding >}} a year. For comparison, that's roughly what Americans spend on Valentine's Day. You are currently spending more on heart-shaped candy than on curing heart disease.
 
