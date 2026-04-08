@@ -1,7 +1,7 @@
 {
-  "totalImages": 3171,
-  "totalSizeBytes": 1857658205,
-  "totalSize": "1771.6 MB",
+  "totalImages": 3173,
+  "totalSizeBytes": 1858229572,
+  "totalSize": "1772.1 MB",
   "images": [
     {
       "path": "assets/audiobook/manual-paperback/video/keyframes/index-manual-scene-01-16x9.jpg",
@@ -9949,6 +9949,39 @@
       "aspectRatio": "1:1",
       "modified": "2026-01-20T11:37:18.488Z",
       "imageType": "icon"
+    },
+    {
+      "path": "assets/icons/organized-violence-tax-favicon-raw.png",
+      "filename": "organized-violence-tax-favicon-raw.png",
+      "extension": "png",
+      "sizeBytes": 133206,
+      "size": "130.1 KB",
+      "width": 1024,
+      "height": 1024,
+      "format": "png",
+      "aspectRatio": "1:1",
+      "imageType": "icon",
+      "generationPrompt": "Create an ultra-minimalist favicon icon.\n\nSTRICT COLOR RULES:\n- Background: BRIGHT MAGENTA (#FF00FF) - this will be removed to make transparent\n- Icon fill: WHITE and/or RED only\n- All shapes must have BLACK OUTLINE/STROKE around them\n\nDESIGN REQUIREMENTS:\n- EXTREMELY SIMPLE\n- Thick black outlines (minimum 8px stroke at 512px resolution)\n- Must be recognizable at 16x16 pixels\n- Think: app icon, not illustration\n\nICON CONCEPT:\nOrganized violence tax\n\nBackground MUST be pure bright magenta (#FF00FF). Icon shapes are WHITE and/or RED with BLACK OUTLINES.",
+      "metadataCreatedAt": "2026-04-08T04:51:58.752Z",
+      "title": "The Organized Violence Tax - Favicon",
+      "description": "Favicon icon for The Organized Violence Tax",
+      "keywords": [
+        "favicon",
+        "icon",
+        "organized-violence-tax",
+        "organized-violence",
+        "war-costs",
+        "peace-economics",
+        "counterfactual-gdp",
+        "compound-growth"
+      ],
+      "author": "Mike P. Sinn",
+      "copyright": "© Mike P. Sinn - WarOnDisease.org",
+      "license": "CC BY-NC 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "website": "https://WarOnDisease.org",
+      "credit": "WarOnDisease.org",
+      "imageProblemsDetected": false
     },
     {
       "path": "assets/icons/political-dysfunction-tax-android-chrome-192x192.png",
@@ -112261,6 +112294,47 @@
       "generationPrompt": "Use a black and white scientific illustration style.\n\nOptimocracy: Evidence-Based Governance Through Outcome-Bound Optimization\n\nPolitical dysfunction costs society trillions annually: $4.90T in documented US waste and $101T in global opportunity costs. Optimocracy proposes algorithmic governance: a system that analyzes historical data to recommend policies that maximize health and wealth, while using a SuperPAC to incentivize politicians to follow the evidence rather than lobbyists. This approach maintains democratic structures while making the ignorance of data politically expensive.",
       "transcript": "OPTIMOCRACY: EVIDENCE-BASED GOVERNANCE THROUGH OUTCOME-BOUND OPTIMIZATION. POLITICAL DYSFUNCTION. TRICKLE-DOWN COSTS: $4.90T US WASTE, $101T GLOBAL OPP. COSTS. HISTORICAL DATA REPOSITORY. ALGORITHMIC GOVERNANCE. HEALTH MAXIMIZATION. WEALTH MAXIMIZATION. SUPERPAC. DATA-DRIVEN POLICY. LOBBYISTS. POLITICIAN. DEMOCRATIC STRUCTURES. [Mathematical formulas in corner: d/dt, C, alpha, theta]",
       "imageProblemsDetected": false
+    },
+    {
+      "path": "assets/og/organized-violence-tax-og-1200x630.jpg",
+      "filename": "organized-violence-tax-og-1200x630.jpg",
+      "extension": "jpg",
+      "sizeBytes": 438161,
+      "size": "427.9 KB",
+      "width": 1376,
+      "height": 768,
+      "format": "jpeg",
+      "aspectRatio": "16:9",
+      "imageType": "og",
+      "generationPrompt": "Use a black and white scientific illustration style.\n\nThe Organized Violence Tax\n\nQuantifying the compound cost of war since 1900: 310 million dead, $1.48 quadrillion in historical costs, and a 23x income multiple lost to eight compounding channels of destruction.",
+      "transcript": "THE ORGANIZED VIOLENCE TAX; QUANTIFYING THE COMPOUND COST OF WAR SINCE 1900; 310 MILLION DEAD; LIVES LOST (DIRECT & INDIRECT); HUMAN CAPITAL DESTRUCTION; COMPOUND COST TOTAL; RESOURCE DEPLETION & CAPITAL DESTRUCTION; $1.48 QUADRILLION; HISTORICAL ECONOMIC COSTS (ADJUSTED); INCOME MULTIPLE LOST 23x; LOST TO EIGHT COMPOUNDING CHANNELS OF DESTRUCTION; INFRASTRUCTURE DESTRUCTION (Collapsed markets, factories, and trade routes); ECONOMIC DISRUPTION; SOCIAL FRAGMENTATION (Divided communities, refugees, and broken families); INSTITUTIONAL EROSION (Weakened governments, legal systems, and public services); KNOWLEDGE & INNOVATION LOSS (Destroyed libraries, universities, and research); ENVIRONMENTAL DEGRADATION (Polluted lands, deforestation, and scarce resources); PSYCHOLOGICAL TRAUMA & HEALTH IMPACTS (Mental health issues, disease, and disability); FUTURE GENERATION BURDEN (Chains, debt, and limited opportunities for children); FIGURE 1: THE CUMULATIVE BURDEN OF ORGANIZED VIOLENCE.",
+      "metadataCreatedAt": "2026-04-08T04:51:27.987Z",
+      "title": "The Organized Violence Tax",
+      "description": "Quantifying the compound cost of war since 1900: 310 million dead, $1.48 quadrillion in historical costs, and a 23x income multiple lost to eight compounding channels of destruction.",
+      "keywords": [
+        "organized-violence",
+        "war-costs",
+        "peace-economics",
+        "counterfactual-gdp",
+        "compound-growth",
+        "qaly-valuation",
+        "opportunity-cost",
+        "military-spending",
+        "democide",
+        "brain-drain"
+      ],
+      "author": "Mike P. Sinn",
+      "copyright": "© Mike P. Sinn - WarOnDisease.org",
+      "license": "CC BY-NC 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "website": "https://WarOnDisease.org",
+      "credit": "WarOnDisease.org",
+      "sourceUrl": "https://manual.warondisease.org/knowledge/problem/cost-of-war.html",
+      "imageProblemsDetected": true,
+      "imageProblems": [
+        "FIGURE 1:"
+      ],
+      "imageProblemsRepairPrompt": "Remove 'FIGURE 1:' from the start of the caption in the bottom right corner."
     },
     {
       "path": "assets/og/political-dysfunction-tax-og-1200x630.jpg",

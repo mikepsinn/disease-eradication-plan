@@ -666,7 +666,7 @@ This is why aliens don't visit.
 
 ### [Right to Trial & FDA Upgrade Act](https://manual.warondisease.org/knowledge/appendix/right-to-trial-fda-upgrade-act.html)
 
-[![Right to Trial and FDA Upgrade Act](https://manual.warondisease.org/assets/og-images/knowledge/appendix/right-to-trial-fda-upgrade-act-og-retro-academic.jpg)](https://manual.warondisease.org/knowledge/appendix/right-to-trial-fda-upgrade-act.html)
+[![Right to Trial and FDA Upgrade Act](https://manual.warondisease.org/assets/og/right-to-trial-og-1200x630.jpg)](https://manual.warondisease.org/knowledge/appendix/right-to-trial-fda-upgrade-act.html)
 
 > Act to modernize medical research and treatment access through an open-source FDA.gov v2, giving patients the right to participate in trials.
 
