@@ -22,9 +22,9 @@ scores:
 
 Governments were created to promote the general welfare.
 
-Instead, since 1913, these governments have [printed](../economics/central-banks.qmd) {{< var cumulative_military_spending_fed_era >}} out of nothing and used it to murder {{< var war_deaths_since_1900 >}} and destroy many of the valuable things those humans spent their entire lives building.
+Instead, since 1913, these governments have [printed](../economics/central-banks.qmd) {{< var cumulative_military_spending_fed_era >}} out of nothing and used it to murder {{< var war_deaths_since_1900_nounit >}} people and destroy many of the valuable things those humans spent their entire lives building.
 
-These murdered humans include approximately 930,000 physicians, 310,000 scientists, 620,000 engineers, and {{< var war_children_killed_since_1900 >}} who will never grow up to replace them.
+These murdered humans include approximately 930,000 physicians, 310,000 scientists, 620,000 engineers, and {{< var war_children_killed_since_1900_nounit >}} children who will never grow up to replace them.
 
 That {{< var cumulative_military_spending_fed_era >}} could have funded {{< var cumulative_military_in_govt_trial_years >}} of clinical trials at current government spending.
 
@@ -72,15 +72,15 @@ They have distributed military contracts across enough legislative districts tha
 
 They have allowed the [destructive economy](../economics/gdp-trajectories.qmd) [@gdp-trajectories-paper-2025] to reach {{< var global_destructive_economy_pct_gdp >}} of global output, growing faster than the productive economy, on a trajectory that crosses fifty percent by {{< var destructive_economy_50pct_year >}}. Past that threshold, destruction pays better than production, and civilizations that cross it do not come back.
 
-They have plundered our seas, ravaged our coasts, burnt our towns, and [destroyed the lives of our people](../problem/cost-of-war.qmd): {{< var war_deaths_since_1900 >}} since 1900, {{< var war_life_years_lost_since_1900 >}} of human life stolen, {{< var cumulative_military_spending_fed_era >}} in treasure spent on the enterprise, among them approximately 930,000 physicians, 310,000 scientists, 620,000 engineers, and millions of children who will never grow up to replace them.
+They have plundered our seas, ravaged our coasts, burnt our towns, and [destroyed the lives of our people](../problem/cost-of-war.qmd): {{< var war_deaths_since_1900_nounit >}} people since 1900, {{< var war_life_years_lost_since_1900_nounit >}} years of human life stolen, {{< var cumulative_military_spending_fed_era >}} in treasure spent on the enterprise, among them approximately 930,000 physicians, 310,000 scientists, 620,000 engineers, and millions of children who will never grow up to replace them.
 
 They have directed {{< var military_to_government_clinical_trials_spending_ratio >}} times more to the destruction of human life than to testing which medicines might preserve it.
 
-They have permitted {{< var global_disease_deaths_daily >}} to die of diseases every day, {{< var global_disease_deaths_per_minute >}} in every minute that passes, while possessing the means to accelerate solutions. The annual toll: {{< var global_annual_daly_burden >}} of healthy life, quietly deleted.
+They have permitted {{< var global_disease_deaths_daily_nounit >}} people to die of diseases every day, {{< var global_disease_deaths_per_minute_nounit >}} every minute that passes, while possessing the means to accelerate solutions. The annual toll: {{< var global_annual_daly_burden_nounit >}} DALYs of healthy life, quietly deleted.
 
 They have operated [national health research institutions](../problem/nih-fails-2-institute-health.qmd) that have spent trillions and cured zero diseases, directing only {{< var nih_clinical_trials_spending_pct >}} of their budgets to the clinical trials where treatments are actually tested in humans. Nearly ten thousand known safe compounds remain untested for 99.7% of possible disease combinations.
 
-They have erected [drug regulatory agencies](../problem/fda-is-unsafe-and-ineffective.qmd) whose rules increased development costs by a factor of {{< var dfda_trial_cost_reduction_factor >}} and timelines to seventeen years, producing {{< var type_ii_error_cost_ratio >}} deaths from delayed treatments for every one death they prevent. Since 1962, that delay has killed approximately {{< var existing_drugs_efficacy_lag_deaths_total >}}.
+They have erected [drug regulatory agencies](../problem/fda-is-unsafe-and-ineffective.qmd) whose rules increased development costs by a factor of {{< var dfda_trial_cost_reduction_factor >}} and timelines to seventeen years, producing {{< var type_ii_error_cost_ratio >}} deaths from delayed treatments for every one death they prevent. Since 1962, that delay has killed approximately {{< var existing_drugs_efficacy_lag_deaths_total_nounit >}} people.
 
 They have left approximately seven thousand known rare diseases in a [treatment queue](../problem/untapped-therapeutic-frontier.qmd) that, at the current rate of fifteen approvals per year, requires {{< var status_quo_queue_clearance_years >}} to clear.
 
