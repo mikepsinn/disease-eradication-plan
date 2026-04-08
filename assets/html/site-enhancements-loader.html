@@ -7,10 +7,11 @@
     var offset = document.querySelector('meta[name="quarto:offset"]')?.getAttribute('content') || '';
     if (offset && offset.charAt(offset.length - 1) !== '/') offset += '/';
 
+    var v = '5.0.0';
     var scripts = ['assets/js/generated-subdomain-redirects.js', 'assets/js/site-enhancements.js', 'assets/js/promotion-bar.js'];
     for (var i = 0; i < scripts.length; i++) {
       var s = document.createElement('script');
-      s.src = offset + scripts[i];
+      s.src = offset + scripts[i] + '?v=' + v;
       s.defer = true;
       document.body.appendChild(s);
     }

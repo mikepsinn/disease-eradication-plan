@@ -521,6 +521,24 @@
   }
 
   // ========================================
+  // CHAT LINK (via meta tag, no embedded widget)
+  // ========================================
+
+  function createChatLink() {
+    var meta = document.querySelector('meta[name="dih-chat-url"]');
+    if (!meta || !meta.content) return;
+    var chatUrl = meta.content;
+
+    addFABAction('chat', 'Talk with Wishonia',
+      '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>',
+      function() {
+        window.open(chatUrl, '_blank', 'noopener');
+      },
+      { order: 10 }
+    );
+  }
+
+  // ========================================
   // FEATURE FLAGS
   // ========================================
 
@@ -562,6 +580,7 @@
   function onPageReady() {
     expandHashTarget();
     createUnifiedFAB();
+    createChatLink();
     if (!isFeatureDisabled('ci-toggle')) createUncertaintyToggle();
     if (!isFeatureDisabled('cite')) createCopyCitationButton();
     if (!isFeatureDisabled('share')) createShareBar();
