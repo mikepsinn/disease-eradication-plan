@@ -16,9 +16,9 @@ scores:
   quality: 7
   value: 8
   timeliness: 8
-  standalone: 8
+  standalone: 9
   voice: 7
-  importance: 6
+  importance: 7
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 The Oxford RECOVERY trial isn't theory. It's proof.
