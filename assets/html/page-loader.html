@@ -7,6 +7,24 @@
 
 <div id="progress-bar" style="display: none;"></div>
 
+<!-- Death counter overlay for parameters page -->
+<div id="calc-loader-overlay" style="display: none;">
+  <div id="calc-loader-card">
+    <div class="calc-loader-spinner-ring" aria-hidden="true"></div>
+    <p class="calc-loader-title">Loading a bajillion calculations...</p>
+    <p class="calc-loader-subtitle">This page contains 647 parameters, each with Monte Carlo simulations, sensitivity analyses, and tornado diagrams. It takes a moment.</p>
+    <p class="calc-loader-patience">Thank you for your patience. Please know your call is very important to us.</p>
+    <div class="calc-loader-death-counter">
+      <span class="calc-loader-skull" aria-hidden="true">&#9760;</span>
+      <span id="calc-death-count">0</span> humans terminated since this page started loading
+    </div>
+    <div class="calc-loader-progress-wrap">
+      <div id="calc-loader-progress-fill"></div>
+    </div>
+    <p class="calc-loader-elapsed" id="calc-loader-elapsed">0.0s</p>
+  </div>
+</div>
+
 <style>
   @keyframes hash-loader-spin {
     to { transform: rotate(360deg); }
@@ -70,6 +88,101 @@
       padding: 9px 12px;
     }
   }
+
+  /* Calc page loader overlay */
+  #calc-loader-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    background: rgba(15, 23, 42, 0.85);
+    backdrop-filter: blur(6px);
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.5s ease;
+  }
+  #calc-loader-overlay.hiding {
+    opacity: 0;
+    pointer-events: none;
+  }
+  #calc-loader-card {
+    text-align: center;
+    max-width: 460px;
+    padding: 32px 28px;
+    border-radius: 16px;
+    background: rgba(30, 41, 59, 0.95);
+    border: 1px solid rgba(148, 163, 184, 0.2);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+    color: #f1f5f9;
+  }
+  .calc-loader-spinner-ring {
+    width: 40px;
+    height: 40px;
+    margin: 0 auto 16px;
+    border: 3px solid rgba(248,250,252,0.15);
+    border-top-color: #ef4444;
+    border-radius: 50%;
+    animation: hash-loader-spin 0.8s linear infinite;
+  }
+  .calc-loader-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0 0 8px;
+  }
+  .calc-loader-subtitle {
+    font-size: 13px;
+    color: #94a3b8;
+    margin: 0 0 6px;
+    line-height: 1.5;
+  }
+  .calc-loader-patience {
+    font-size: 13px;
+    font-style: italic;
+    color: #64748b;
+    margin: 0 0 18px;
+  }
+  .calc-loader-death-counter {
+    font-size: 15px;
+    font-weight: 600;
+    color: #fca5a5;
+    padding: 12px 0;
+    border-top: 1px solid rgba(148,163,184,0.15);
+    border-bottom: 1px solid rgba(148,163,184,0.15);
+    margin-bottom: 16px;
+  }
+  .calc-loader-skull {
+    margin-right: 6px;
+  }
+  #calc-death-count {
+    font-size: 22px;
+    font-variant-numeric: tabular-nums;
+    color: #ef4444;
+  }
+  .calc-loader-progress-wrap {
+    height: 4px;
+    border-radius: 2px;
+    background: rgba(148,163,184,0.15);
+    overflow: hidden;
+    margin-bottom: 8px;
+  }
+  #calc-loader-progress-fill {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #ef4444, #f97316);
+    border-radius: 2px;
+    transition: width 0.3s ease;
+  }
+  .calc-loader-elapsed {
+    font-size: 12px;
+    color: #64748b;
+    margin: 0;
+    font-variant-numeric: tabular-nums;
+  }
+  @media (max-width: 768px) {
+    #calc-loader-card {
+      margin: 0 16px;
+      padding: 24px 20px;
+    }
+  }
 </style>
 
 <script>
@@ -80,6 +193,10 @@
   var hasHashTarget = !!(window.location.hash && window.location.hash.length > 1);
 
   startProgressBar();
+
+  if (isParametersPage) {
+    startCalcLoader();
+  }
 
   if (isParametersPage && hasHashTarget) {
     startHashHint();
@@ -150,6 +267,66 @@
       document.addEventListener('DOMContentLoaded', finish, { once: true });
     } else {
       finish();
+    }
+  }
+
+  function startCalcLoader() {
+    var overlay = document.getElementById('calc-loader-overlay');
+    if (!overlay) return;
+
+    var deathCount = document.getElementById('calc-death-count');
+    var progressFill = document.getElementById('calc-loader-progress-fill');
+    var elapsedEl = document.getElementById('calc-loader-elapsed');
+    var DEATHS_PER_SECOND = 104 / 60; // 104 deaths/minute from disease
+    var startTime = Date.now();
+    var deaths = 0;
+
+    overlay.style.display = 'flex';
+
+    // Animate death counter + elapsed time
+    var counterInterval = setInterval(function() {
+      var elapsed = (Date.now() - startTime) / 1000;
+      deaths = Math.floor(elapsed * DEATHS_PER_SECOND);
+      deathCount.textContent = deaths.toLocaleString();
+      elapsedEl.textContent = elapsed.toFixed(1) + 's';
+    }, 100);
+
+    // Fake progress that asymptotically approaches 90%
+    var progress = 0;
+    var progressInterval = setInterval(function() {
+      if (progress < 40) {
+        progress += 2;
+      } else if (progress < 70) {
+        progress += 0.8;
+      } else if (progress < 90) {
+        progress += 0.15;
+      }
+      progressFill.style.width = progress + '%';
+    }, 200);
+
+    function dismiss() {
+      clearInterval(progressInterval);
+      progressFill.style.width = '100%';
+
+      // Final death count update
+      var finalElapsed = (Date.now() - startTime) / 1000;
+      var finalDeaths = Math.floor(finalElapsed * DEATHS_PER_SECOND);
+      deathCount.textContent = finalDeaths.toLocaleString();
+      elapsedEl.textContent = finalElapsed.toFixed(1) + 's';
+
+      setTimeout(function() {
+        clearInterval(counterInterval);
+        overlay.classList.add('hiding');
+        setTimeout(function() {
+          overlay.style.display = 'none';
+        }, 500);
+      }, 600);
+    }
+
+    if (document.readyState === 'complete') {
+      dismiss();
+    } else {
+      window.addEventListener('load', dismiss, { once: true });
     }
   }
 })();

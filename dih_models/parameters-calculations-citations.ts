@@ -3616,6 +3616,19 @@ export const CONVENTIONAL_RETIREMENT_HORIZON_MULTIPLE: Parameter = {
   manualPageTitle: "The Earth Optimization Prize Fund",
 };
 
+export const COST_OF_EXTINCTION: Parameter = {
+  value: 136000000000.0,
+  parameterName: "COST_OF_EXTINCTION",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-cost_of_extinction",
+  unit: "USD",
+  displayName: "Cost of Extinction (Minimum Viable Apocalypse)",
+  description: "The minimum military spending required to achieve assured destruction of civilization (Minimum Viable Apocalypse). Calculated as total military spending divided by the nuclear overkill factor. Everything above this amount is the Extinction Surplus.",
+  sourceType: "calculated",
+  confidence: "medium",
+  formula: "GLOBAL_MILITARY_SPENDING_ANNUAL_2024 / NUCLEAR_OVERKILL_FACTOR",
+  latex: "\\begin{gathered}\nC_{extinction} \\\\\n= \\frac{Spending_{mil}}{Overkill_{nuke}} \\\\\n= \\frac{\\$2.72T}{20} \\\\\n= \\$136B\n\\end{gathered}",
+};
+
 export const CUMULATIVE_MILITARY_IN_GOVT_TRIAL_YEARS: Parameter = {
   value: 37777.77777777778,
   parameterName: "CUMULATIVE_MILITARY_IN_GOVT_TRIAL_YEARS",
@@ -4843,6 +4856,32 @@ export const EXPLORATION_RATIO: Parameter = {
   confidenceInterval: [0.0018049214015606367, 0.006265452460393697],
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/problem/untapped-therapeutic-frontier.html",
   manualPageTitle: "The Untapped Therapeutic Frontier",
+};
+
+export const EXTINCTION_SURPLUS: Parameter = {
+  value: 2584000000000.0,
+  parameterName: "EXTINCTION_SURPLUS",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-extinction_surplus",
+  unit: "USD",
+  displayName: "Extinction Surplus",
+  description: "Military spending beyond the Cost of Extinction. The amount governments spend above what is needed to destroy civilization once. This is the budget that buys redundant apocalypses.",
+  sourceType: "calculated",
+  confidence: "medium",
+  formula: "GLOBAL_MILITARY_SPENDING_ANNUAL_2024 - COST_OF_EXTINCTION",
+  latex: "\\begin{gathered}\nS_{extinction} = Spending_{mil} - C_{extinction} = \\$2.72T - \\$136B = \\$2.58T\n\\\\[0.5em]\n\\text{where } C_{extinction} = \\frac{Spending_{mil}}{Overkill_{nuke}} = \\frac{\\$2.72T}{20} = \\$136B\n\\end{gathered}",
+};
+
+export const EXTINCTION_SURPLUS_PCT: Parameter = {
+  value: 0.95,
+  parameterName: "EXTINCTION_SURPLUS_PCT",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-extinction_surplus_pct",
+  unit: "percent",
+  displayName: "Extinction Surplus as Percentage of Military Budget",
+  description: "Percentage of global military spending that is Extinction Surplus, i.e., spending beyond what is needed to destroy civilization once.",
+  sourceType: "calculated",
+  confidence: "medium",
+  formula: "EXTINCTION_SURPLUS / GLOBAL_MILITARY_SPENDING_ANNUAL_2024",
+  latex: "\\begin{gathered}\nS_{extinction,\\%} = \\frac{S_{extinction}}{Spending_{mil}} = \\frac{\\$2.58T}{\\$2.72T} = 95\\%\n\\\\[0.5em]\n\\text{where } S_{extinction} = Spending_{mil} - C_{extinction} = \\$2.72T - \\$136B = \\$2.58T\n\\\\[0.5em]\n\\text{where } C_{extinction} = \\frac{Spending_{mil}}{Overkill_{nuke}} = \\frac{\\$2.72T}{20} = \\$136B\n\\end{gathered}",
 };
 
 export const FDA_TO_OXFORD_RECOVERY_TRIAL_TIME_MULTIPLIER: Parameter = {
@@ -9924,6 +9963,7 @@ export const parameters = {
   CONTRIBUTION_LIVES_SAVED_PER_PCT_POINT,
   CONTRIBUTION_SUFFERING_HOURS_PER_PCT_POINT,
   CONVENTIONAL_RETIREMENT_HORIZON_MULTIPLE,
+  COST_OF_EXTINCTION,
   CUMULATIVE_MILITARY_IN_GOVT_TRIAL_YEARS,
   CURRENT_COMBINATION_EXPLORATION_YEARS,
   CURRENT_KNOWN_SAFE_EXPLORATION_YEARS,
@@ -10003,6 +10043,8 @@ export const parameters = {
   EXISTING_DRUGS_EFFICACY_LAG_DEATHS_TOTAL,
   EXISTING_DRUGS_EFFICACY_LAG_ECONOMIC_LOSS,
   EXPLORATION_RATIO,
+  EXTINCTION_SURPLUS,
+  EXTINCTION_SURPLUS_PCT,
   FDA_TO_OXFORD_RECOVERY_TRIAL_TIME_MULTIPLIER,
   GENE_THERAPY_DISEASE_COMBINATIONS,
   GLOBAL_ANNUAL_CONFLICT_DEATHS_TOTAL,
@@ -12425,9 +12467,9 @@ export const citations: Record<string, Citation> = {
 
 /** Summary statistics */
 export const PARAMETER_STATS = {
-  total: 647,
+  total: 650,
   external: 210,
-  calculated: 303,
+  calculated: 306,
   definitions: 134,
   citations: 153,
 } as const;

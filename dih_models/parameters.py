@@ -2733,6 +2733,56 @@ NUCLEAR_OVERKILL_FACTOR = Parameter(
     latex_symbol=r"Overkill_{nuke}",
 )
 
+# Cost of Extinction and Extinction Surplus
+# The minimum spending required to destroy civilization once, and everything above it
+COST_OF_EXTINCTION = Parameter(
+    GLOBAL_MILITARY_SPENDING_ANNUAL_2024 / NUCLEAR_OVERKILL_FACTOR,
+    source_type=SourceType.CALCULATED,
+    confidence="medium",
+    description="The minimum military spending required to achieve assured destruction of "
+                "civilization (Minimum Viable Apocalypse). Calculated as total military "
+                "spending divided by the nuclear overkill factor. Everything above this "
+                "amount is the Extinction Surplus.",
+    display_name="Cost of Extinction (Minimum Viable Apocalypse)",
+    unit="USD",
+    formula="GLOBAL_MILITARY_SPENDING_ANNUAL_2024 / NUCLEAR_OVERKILL_FACTOR",
+    inputs=["GLOBAL_MILITARY_SPENDING_ANNUAL_2024", "NUCLEAR_OVERKILL_FACTOR"],
+    compute=lambda ctx: ctx["GLOBAL_MILITARY_SPENDING_ANNUAL_2024"] / ctx["NUCLEAR_OVERKILL_FACTOR"],
+    keywords=["extinction", "cost", "minimum", "apocalypse", "deterrence", "baseline"],
+    latex_symbol=r"C_{extinction}",
+)
+
+EXTINCTION_SURPLUS = Parameter(
+    GLOBAL_MILITARY_SPENDING_ANNUAL_2024 - COST_OF_EXTINCTION,
+    source_type=SourceType.CALCULATED,
+    confidence="medium",
+    description="Military spending beyond the Cost of Extinction. The amount governments "
+                "spend above what is needed to destroy civilization once. This is the budget "
+                "that buys redundant apocalypses.",
+    display_name="Extinction Surplus",
+    unit="USD",
+    formula="GLOBAL_MILITARY_SPENDING_ANNUAL_2024 - COST_OF_EXTINCTION",
+    inputs=["GLOBAL_MILITARY_SPENDING_ANNUAL_2024", "COST_OF_EXTINCTION"],
+    compute=lambda ctx: ctx["GLOBAL_MILITARY_SPENDING_ANNUAL_2024"] - ctx["COST_OF_EXTINCTION"],
+    keywords=["extinction", "surplus", "waste", "overkill", "redundant", "excess"],
+    latex_symbol=r"S_{extinction}",
+)
+
+EXTINCTION_SURPLUS_PCT = Parameter(
+    (GLOBAL_MILITARY_SPENDING_ANNUAL_2024 - COST_OF_EXTINCTION) / GLOBAL_MILITARY_SPENDING_ANNUAL_2024,
+    source_type=SourceType.CALCULATED,
+    confidence="medium",
+    description="Percentage of global military spending that is Extinction Surplus, "
+                "i.e., spending beyond what is needed to destroy civilization once.",
+    display_name="Extinction Surplus as Percentage of Military Budget",
+    unit="percent",
+    formula="EXTINCTION_SURPLUS / GLOBAL_MILITARY_SPENDING_ANNUAL_2024",
+    inputs=["EXTINCTION_SURPLUS", "GLOBAL_MILITARY_SPENDING_ANNUAL_2024"],
+    compute=lambda ctx: ctx["EXTINCTION_SURPLUS"] / ctx["GLOBAL_MILITARY_SPENDING_ANNUAL_2024"],
+    keywords=["extinction", "surplus", "percentage", "waste", "fraction"],
+    latex_symbol=r"S_{extinction,\%}",
+)
+
 # Bullet purchasing power (complements nuclear overkill with a more visceral metric)
 BULLET_COST_556_NATO = Parameter(
     0.40,
