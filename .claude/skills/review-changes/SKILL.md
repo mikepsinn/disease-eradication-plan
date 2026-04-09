@@ -43,7 +43,7 @@ Group every changed file into one of these categories:
 | Python scripts | `scripts/**/*.py` |
 | TypeScript scripts | `scripts/**/*.ts` |
 | Generated figures | `knowledge/figures/*.qmd` |
-| Generated analysis | `_analysis/*`, `dih_models/parameters-calculations-citations.ts`, `dih_models/reference_ids.py` |
+| Generated analysis | `_analysis/*`, `assets/js/parameters-calculations-citations.ts`, `dih_models/reference_ids.py` |
 | Assets | `assets/**/*` |
 | Other | Everything else |
 

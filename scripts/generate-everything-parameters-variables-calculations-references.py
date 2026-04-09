@@ -457,6 +457,73 @@ def generate_parameter_summary(parameters: Dict[str, Dict[str, Any]], output_pat
 from dih_models.environment_logger import log_environment_info, log_mc_fingerprint, enforce_reproducible_environment
 
 
+def publish_public_parameters_exports(
+    project_root: Path,
+    parameters: Dict[str, Dict[str, Any]],
+    chapter_mapping: Dict[str, list],
+    shareable_snippets: Dict[str, Dict[str, str]],
+    citation_data: Dict[str, Dict[str, Any]],
+) -> None:
+    """
+    Publish parameters.json to public static assets for language-agnostic
+    HTTP consumers. The TS file is already written directly to assets/js/
+    by generate_typescript_parameters(), so only the JSON twin is emitted here.
+
+      /assets/json/parameters.json  (parameters, shareableSnippets, citations)
+
+    See knowledge/appendix/api-and-data.qmd for schema.
+    """
+    import json
+
+    # Build JSON payload
+    json_params: Dict[str, Any] = {}
+    for name in sorted(parameters.keys()):
+        meta = parameters[name]
+        value_obj = meta.get("value")
+        if value_obj is None:
+            continue
+        try:
+            formatted = format_parameter_value(value_obj)
+        except Exception:
+            formatted = None
+        source_type_attr = getattr(value_obj, "source_type", None)
+        source_type_str = (
+            source_type_attr.value
+            if hasattr(source_type_attr, "value")
+            else (str(source_type_attr) if source_type_attr is not None else None)
+        )
+        entry: Dict[str, Any] = {
+            "value": float(value_obj) if hasattr(value_obj, "__float__") else None,
+            "formatted": formatted,
+            "unit": getattr(value_obj, "unit", None) or None,
+            "description": getattr(value_obj, "description", None) or None,
+            "sourceType": source_type_str,
+            "sourceRef": getattr(value_obj, "source_ref", None) or None,
+            "confidence": getattr(value_obj, "confidence", None) or None,
+            "formula": getattr(value_obj, "formula", None) or None,
+        }
+        ci = getattr(value_obj, "confidence_interval", None)
+        if ci:
+            entry["confidenceInterval"] = [float(ci[0]), float(ci[1])]
+        pages = chapter_mapping.get(name) or []
+        if pages:
+            entry["chapterUrl"] = pages[0]["url"]
+        json_params[name] = entry
+
+    payload = {
+        "sourceFile": "dih_models/parameters.py",
+        "parameters": json_params,
+        "shareableSnippets": shareable_snippets,
+        "citations": citation_data,
+    }
+
+    json_output = project_root / "assets" / "json" / "parameters.json"
+    json_output.parent.mkdir(parents=True, exist_ok=True)
+    with open(json_output, "w", encoding="utf-8", newline="\n") as f:
+        json.dump(payload, f, indent=2, ensure_ascii=False, default=str, sort_keys=False)
+    logger.debug(f"[OK] Published {len(json_params)} parameters to {json_output}")
+
+
 def main():
     # Set up logging early (check for -v/--verbose before full arg parsing)
     verbose = "-v" in sys.argv or "--verbose" in sys.argv
@@ -687,13 +754,20 @@ def main():
 
     # Build chapter mapping once (scans QMD files for variable usage)
     # Shared by TypeScript generator and parameters-and-calculations QMD generator
-    from dih_models.typescript_generator import build_chapter_mapping
+    from dih_models.typescript_generator import build_chapter_mapping, extract_shareable_snippets
     logger.debug("[*] Building parameter-to-chapter mapping...")
     chapter_mapping = build_chapter_mapping(project_root, set(parameters.keys()))
 
+    # Extract shareable markdown snippets for embedding in external sites
+    logger.debug("[*] Extracting shareable snippets...")
+    shareable_snippets = extract_shareable_snippets(project_root, chapter_mapping, parameters)
+
     # NOTE: TypeScript generation moved to AFTER Monte Carlo simulation
     # so we can embed confidence intervals from samples.json
-    ts_output = project_root / "dih_models" / "parameters-calculations-citations.ts"
+    # TS file lives in assets/ so Quarto serves it as a static asset at
+    # /assets/js/parameters-calculations-citations.ts. Consumer repos copy
+    # from this location (see ts_copy_targets below).
+    ts_output = project_root / "assets" / "js" / "parameters-calculations-citations.ts"
 
     # Generate TypeScript survey file (if survey exists)
     logger.debug("[*] Generating TypeScript survey file...")
@@ -806,7 +880,7 @@ def main():
 
         # Generate TypeScript parameters file (after Monte Carlo so CIs are available)
         logger.debug("[*] Generating TypeScript parameters file with Monte Carlo CIs...")
-        generate_typescript_parameters(parameters, ts_output, include_metadata=True, references_path=bib_path, params_file=parameters_path, citation_data=citation_data, chapter_mapping=chapter_mapping, samples_json_path=samples_json_path)
+        generate_typescript_parameters(parameters, ts_output, include_metadata=True, references_path=bib_path, params_file=parameters_path, citation_data=citation_data, chapter_mapping=chapter_mapping, samples_json_path=samples_json_path, snippets=shareable_snippets)
 
         # Copy TypeScript parameters file to consuming repos
         import shutil
@@ -820,6 +894,11 @@ def main():
                 logger.debug(f"[OK] Copied TS parameters to {copy_dest}")
             else:
                 logger.debug(f"[SKIP] Target directory does not exist: {copy_dest.parent}")
+
+        # Publish parameters.json alongside the TS file for language-agnostic consumers
+        publish_public_parameters_exports(
+            project_root, parameters, chapter_mapping, shareable_snippets, citation_data
+        )
 
         # Write formula fallback log if any parameters used it
         formula_fallbacks = get_formula_fallback_log()
@@ -1238,7 +1317,7 @@ def main():
 
         # Generate TypeScript parameters file (no MC data available)
         logger.debug("[*] Generating TypeScript parameters file (without Monte Carlo CIs)...")
-        generate_typescript_parameters(parameters, ts_output, include_metadata=True, references_path=bib_path, params_file=parameters_path, citation_data=citation_data, chapter_mapping=chapter_mapping)
+        generate_typescript_parameters(parameters, ts_output, include_metadata=True, references_path=bib_path, params_file=parameters_path, citation_data=citation_data, chapter_mapping=chapter_mapping, snippets=shareable_snippets)
 
         # Copy TypeScript parameters file to consuming repos
         import shutil
@@ -1252,6 +1331,11 @@ def main():
                 logger.debug(f"[OK] Copied TS parameters to {copy_dest}")
             else:
                 logger.debug(f"[SKIP] Target directory does not exist: {copy_dest.parent}")
+
+        # Publish parameters.json alongside the TS file for language-agnostic consumers
+        publish_public_parameters_exports(
+            project_root, parameters, chapter_mapping, shareable_snippets, citation_data
+        )
 
     # Generate parameters-and-calculations.qmd AFTER uncertainty charts are created
     # so the file existence checks work correctly

@@ -654,7 +654,7 @@
   function createFAB() {
     // If the unified FAB system exists, register as a sub-action
     if (window.dihFAB && window.dihFAB.addAction) {
-      var chatBtn = window.dihFAB.addAction('chat', 'Talk with Wishonia',
+      var chatBtn = window.dihFAB.addAction('chat', 'Argue with Wishonia',
         '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>',
         function() { togglePanel(); },
         { order: 10 }
@@ -667,8 +667,8 @@
     // Fallback: standalone FAB if unified FAB not loaded
     fab = document.createElement("button");
     fab.className = "chat-fab";
-    fab.setAttribute("aria-label", "Talk with Wishonia");
-    fab.setAttribute("title", "Talk to Wishonia about the book");
+    fab.setAttribute("aria-label", "Argue with Wishonia");
+    fab.setAttribute("title", "Argue with Wishonia about the book");
     fab.innerHTML =
       '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>';
     fab.addEventListener("click", togglePanel);

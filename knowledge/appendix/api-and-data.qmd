@@ -12,6 +12,113 @@ image: /assets/og-images/knowledge/appendix/api-and-data-og-bw-academic.jpg
 
 This page documents the data indexes and APIs available for programmatic access to the book's content, parameters, images, and chat functionality.
 
+## Parameters & Shareable Snippets
+
+Every numeric value in this book lives in a single Python file and is auto-generated into two public artifacts on each build. Use these if you want the live numbers, the citations behind them, or ready-to-embed prose for the most important sections of the book.
+
+### JSON (language-agnostic)
+
+**URL:** `/assets/json/parameters.json`
+
+{{< var treaty_annual_funding >}}, {{< var military_to_government_clinical_trials_spending_ratio >}}, {{< var global_disease_deaths_daily >}}, and every other numeric value used in the book, in one file. Each parameter includes its raw value, formatted display string, unit, description, source, confidence, confidence interval, and a link to the chapter where it appears most.
+
+**Top-level schema:**
+
+```json
+{
+  "sourceFile": "dih_models/parameters.py",
+  "parameters": {
+    "TREATY_ANNUAL_FUNDING": {
+      "value": 27180000000,
+      "formatted": "$27.2B",
+      "unit": "USD/year",
+      "description": "Annual funding from 1% of global military spending",
+      "sourceType": "calculated",
+      "sourceRef": "",
+      "confidence": "high",
+      "formula": "GLOBAL_MILITARY_SPENDING * 0.01",
+      "confidenceInterval": [25100000000, 29300000000],
+      "chapterUrl": "https://manual.warondisease.org/knowledge/solution/1-percent-treaty.html"
+    }
+  },
+  "shareableSnippets": {
+    "whyOptimizationIsNecessary": {
+      "markdown": "Governments were created to promote the general welfare...",
+      "sourceFile": "knowledge/strategy/declaration-of-optimization.qmd",
+      "updatedAt": "2026-04-09"
+    },
+    "declarationOfOptimization": { "markdown": "...", "sourceFile": "...", "updatedAt": "..." }
+  },
+  "citations": {
+    "sipri-milex-2024": { "type": "report", "title": "SIPRI Military Expenditure Database 2024", "..." }
+  }
+}
+```
+
+**Parameter fields:**
+
+| Field | Description |
+|-------|-------------|
+| `value` | Raw numeric value (float) |
+| `formatted` | Display string with auto-scaled units (e.g. "$27.2B", "150K deaths") |
+| `unit` | Canonical unit (USD, years, deaths, ratio, etc.) |
+| `description` | Human-readable explanation |
+| `sourceType` | `external` (cited data), `calculated` (formula-derived), or `definition` (policy assumption) |
+| `sourceRef` | BibTeX citation key for external sources |
+| `confidence` | `high`, `medium`, `low`, or `estimated` |
+| `formula` | Formula string for calculated parameters |
+| `confidenceInterval` | `[lower, upper]` for statistical parameters |
+| `chapterUrl` | URL of the manual chapter where this parameter appears most often |
+
+### TypeScript (with types)
+
+**URL:** `/assets/js/parameters-calculations-citations.ts`
+
+Same data as the JSON file plus full TypeScript interfaces (`Parameter`, `Citation`, `ShareableSnippet`, `SourceType`, `Confidence`), typed exports, and helper unions (`ParameterName`, `ShareableSnippetKey`). Import it directly into any Next.js, Remix, or SvelteKit project:
+
+```ts
+import {
+  parameters,
+  citations,
+  shareableSnippets,
+  type ParameterName,
+} from './parameters-calculations-citations';
+
+// Get a formatted display value
+const funding = parameters.TREATY_ANNUAL_FUNDING.formatted; // "$27.2B"
+
+// Render a pre-built prose snippet in a React Markdown component
+import ReactMarkdown from 'react-markdown';
+<ReactMarkdown>{shareableSnippets.declarationOfOptimization.markdown}</ReactMarkdown>
+```
+
+### Shareable Snippets
+
+The `shareableSnippets` block contains ready-to-embed markdown for the most important sections of the book. Variable references are pre-resolved to their current values and wrapped as markdown links pointing to the manual chapter where each parameter appears most. Citations are stripped (readers click through for sources), and all relative paths are absolutized. Drop the markdown directly into any markdown renderer.
+
+**Currently available snippets:**
+
+| Key | Source | Description |
+|-----|--------|-------------|
+| `whyOptimizationIsNecessary` | [declaration-of-optimization.qmd](../strategy/declaration-of-optimization.qmd) | The opening pitch of the Declaration. Best for blog posts, social embeds, and op-ed framing. |
+| `declarationOfOptimization` | [declaration-of-optimization.qmd](../strategy/declaration-of-optimization.qmd) | The full formal declaration (Jefferson-style grievances and resolution). Best for signature pages and long-form reprints. |
+
+All data is regenerated from `dih_models/parameters.py` on every deploy. If a parameter changes here, it changes everywhere the TS or JSON is consumed on next fetch.
+
+### Versioning & Stability
+
+**There is no stable API version.** Both files always reflect the current `HEAD` of the `develop` branch and update on every deploy. Parameter names, units, and values can change between versions when sources update or someone notices a naming-convention violation.
+
+If your application cannot tolerate breaking changes, **pin a specific commit**:
+
+```
+https://raw.githubusercontent.com/wishonia/earth-optimization-protocol/COMMIT_SHA/assets/json/parameters.json
+```
+
+Replace `COMMIT_SHA` with any full or short commit hash from the repository. The entire git history is your version archive, giving infinite granularity with no infrastructure needed. For the absolute safest path, **download the file once and commit it to your own repo**, then update deliberately when you review what changed.
+
+TypeScript consumers get an additional safety net: if a parameter is renamed or removed, `parameters.RENAMED_NAME` becomes a compile error at build time, not a runtime bug. JSON consumers do not get this and should defensively check for the presence of fields they depend on.
+
 ## Search Index
 
 **URL:** `/assets/json/search-index.json`

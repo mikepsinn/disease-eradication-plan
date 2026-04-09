@@ -14,7 +14,7 @@ Usage:
     from pathlib import Path
 
     # Generate TypeScript file
-    output_path = Path("dih_models/parameters-calculations-citations.ts")
+    output_path = Path("assets/js/parameters-calculations-citations.ts")
     generate_typescript_parameters(parameters, output_path, references_path=Path("references.bib"))
 """
 
@@ -365,6 +365,158 @@ def _get_title_from_qmd(path: Path) -> str:
     return path.stem.replace('-', ' ').replace('_', ' ').title()
 
 
+def _snippet_name_to_js_key(name: str) -> str:
+    """Convert a snippet name like 'why-optimization-is-necessary' to a camelCase JS key."""
+    parts = re.split(r'[-_]', name)
+    if not parts:
+        return name
+    head = parts[0]
+    tail = ''.join(p.capitalize() for p in parts[1:])
+    return head + tail
+
+
+def _js_string_literal(s: str) -> str:
+    """Render a Python string as a JavaScript double-quoted string literal."""
+    escaped = (
+        s.replace('\\', '\\\\')
+         .replace('"', '\\"')
+         .replace('\n', '\\n')
+         .replace('\r', '')
+         .replace('\t', '\\t')
+    )
+    return f'"{escaped}"'
+
+
+_SNIPPET_BLOCK_PATTERN = re.compile(
+    r'<!--\s*snippet:([a-zA-Z0-9_-]+)\s*-->(.*?)<!--\s*/snippet:\1\s*-->',
+    re.DOTALL,
+)
+_SNIPPET_MARKER_PATTERN = re.compile(r'<!--\s*/?snippet:[a-zA-Z0-9_-]+\s*-->')
+_CITATION_PATTERN = re.compile(r' ?\[@[a-zA-Z0-9_:./-]+(?:\s*;\s*@[a-zA-Z0-9_:./-]+)*\]')
+_REL_IMG_PATTERN = re.compile(r'!\[([^\]]*)\]\((/[^)]+)\)')
+_REL_QMD_LINK_PATTERN = re.compile(r'\[([^\]]+)\]\((?!https?:|/|#)([^)]+?\.qmd)\)')
+_FRONTMATTER_PATTERN = re.compile(r'^---\s*\n.*?\n---\s*\n', re.DOTALL)
+
+# Default source files to scan for shareable snippets.
+# Extend this list to expose more embeddable prose to external sites.
+_DEFAULT_SNIPPET_SOURCES = (
+    'knowledge/strategy/declaration-of-optimization.qmd',
+)
+
+
+def extract_shareable_snippets(
+    project_root: Path,
+    chapter_mapping: Dict[str, list],
+    parameters: Dict[str, Dict[str, Any]],
+    source_files: Optional[list] = None,
+) -> Dict[str, Dict[str, str]]:
+    """
+    Extract shareable markdown snippets from qmd files for embedding in external sites.
+
+    Scans source files for <!-- snippet:NAME --> ... <!-- /snippet:NAME --> blocks.
+    Within each block:
+      - Replaces {{< var PARAM >}} with [value](chapter_url) markdown links
+        pointing to the manual chapter where the parameter appears most often
+      - Strips [@citation-key] references (readers follow chapter links for sources)
+      - Absolutizes relative image paths and ../*.qmd links to {BASE_URL}/*.html
+      - Removes any nested snippet markers and extra blank lines
+
+    Returns:
+        Dict mapping snippet_name -> {markdown, sourceFile, updatedAt}
+    """
+    from dih_models.formatting import format_parameter_value
+    from datetime import datetime, timezone
+
+    sources = list(source_files) if source_files is not None else list(_DEFAULT_SNIPPET_SOURCES)
+    today = datetime.now(timezone.utc).strftime('%Y-%m-%d')
+    result: Dict[str, Dict[str, str]] = {}
+
+    for src in sources:
+        full_path = project_root / src
+        if not full_path.exists():
+            logger.warning("Snippet source not found: %s", src)
+            continue
+
+        content = full_path.read_text(encoding='utf-8')
+        content = _FRONTMATTER_PATTERN.sub('', content, count=1)
+        src_dir = Path(src).parent.as_posix()
+
+        def _resolve_rel(rel_path: str) -> str:
+            # Resolve ../foo/bar.qmd relative to the source file's directory
+            parts: list[str] = [p for p in src_dir.split('/') if p and p != '.']
+            for seg in rel_path.split('/'):
+                if seg in ('', '.'):
+                    continue
+                if seg == '..':
+                    if parts:
+                        parts.pop()
+                else:
+                    parts.append(seg)
+            return '/'.join(parts)
+
+        def _replace_var(match: 're.Match[str]') -> str:
+            raw_name = match.group(1)
+            lowered = raw_name.lower()
+            # Skip suffixes we can't render as prose values
+            if lowered.endswith('_latex') or lowered.endswith('_cite'):
+                logger.warning("Snippet in %s uses unsupported var suffix: %s", src, raw_name)
+                return match.group(0)
+            include_unit = not lowered.endswith('_nounit')
+            param_name = _normalize_var_to_param(raw_name)
+            param_data = parameters.get(param_name)
+            if not param_data or 'value' not in param_data:
+                logger.warning("Snippet in %s references unknown param: %s", src, param_name)
+                return match.group(0)
+            value_obj = param_data['value']
+            try:
+                value_str = format_parameter_value(value_obj, include_unit=include_unit)
+            except Exception as e:
+                logger.warning("Snippet in %s failed to format %s: %s", src, param_name, e)
+                return match.group(0)
+            pages = chapter_mapping.get(param_name) or []
+            if pages:
+                return f"[{value_str}]({pages[0]['url']})"
+            return value_str
+
+        def _absolutize_image(match: 're.Match[str]') -> str:
+            alt, path = match.group(1), match.group(2)
+            return f'![{alt}]({BASE_URL}{path})'
+
+        def _absolutize_qmd_link(match: 're.Match[str]') -> str:
+            label, rel = match.group(1), match.group(2)
+            resolved = _resolve_rel(rel).replace('.qmd', '.html')
+            return f'[{label}]({BASE_URL}/{resolved})'
+
+        for block in _SNIPPET_BLOCK_PATTERN.finditer(content):
+            name = block.group(1)
+            body = block.group(2).strip('\n')
+            # Strip any nested snippet markers (e.g. 'intro' markers inside 'full')
+            body = _SNIPPET_MARKER_PATTERN.sub('', body)
+            # Strip citations
+            body = _CITATION_PATTERN.sub('', body)
+            # Replace parameter vars with linked values
+            body = _VAR_PATTERN.sub(_replace_var, body)
+            # Absolutize relative asset and chapter links
+            body = _REL_IMG_PATTERN.sub(_absolutize_image, body)
+            body = _REL_QMD_LINK_PATTERN.sub(_absolutize_qmd_link, body)
+            # Collapse runs of blank lines created by marker/citation removal
+            body = re.sub(r'\n{3,}', '\n\n', body).strip() + '\n'
+
+            # Normalize the snippet name to camelCase so TS and JSON consumers
+            # see the same key. Source-of-truth markers in the qmd can use any
+            # style (dashes, underscores) for readability.
+            key = _snippet_name_to_js_key(name)
+            result[key] = {
+                'markdown': body,
+                'sourceFile': src,
+                'updatedAt': today,
+                'originalName': name,
+            }
+
+    logger.debug("Extracted %d shareable snippets", len(result))
+    return result
+
+
 def generate_typescript_parameters(
     parameters: Dict[str, Dict[str, Any]],
     output_path: Path,
@@ -374,6 +526,7 @@ def generate_typescript_parameters(
     citation_data: Optional[Dict[str, Dict[str, Any]]] = None,
     chapter_mapping: Optional[Dict[str, list]] = None,
     samples_json_path: Optional[Path] = None,
+    snippets: Optional[Dict[str, Dict[str, str]]] = None,
 ):
     """
     Generate TypeScript file with parameters for Next.js applications.
@@ -393,6 +546,7 @@ def generate_typescript_parameters(
         references_path: Path to references.bib for citation data (optional, ignored if citation_data provided)
         params_file: Path to parameters.py for auto-generating LaTeX (optional)
         citation_data: Pre-parsed citation data from parse_references_bib() (optional, for performance)
+        snippets: Optional shareable markdown snippets from extract_shareable_snippets()
     """
     # Use pre-parsed citation data if provided, otherwise parse from file
     if citation_data is None:
@@ -585,6 +739,44 @@ def generate_typescript_parameters(
     content.append("/** Union type of all parameter names */")
     content.append("export type ParameterName = keyof typeof parameters;")
     content.append("")
+
+    # Generate shareable snippets block (for embedding in external sites)
+    if snippets:
+        content.append("// ============================================================================")
+        content.append("// Shareable Snippets")
+        content.append("// ============================================================================")
+        content.append("")
+        content.append("/**")
+        content.append(" * Markdown snippets extracted from book qmd files for embedding in external sites.")
+        content.append(" * Variable references are pre-resolved to linked values pointing to the relevant")
+        content.append(" * manual chapter. Citations and relative paths have been absolutized or removed.")
+        content.append(" */")
+        content.append("export interface ShareableSnippet {")
+        content.append("  markdown: string;")
+        content.append("  sourceFile: string;")
+        content.append("  updatedAt: string;")
+        content.append("  originalName: string;")
+        content.append("}")
+        content.append("")
+        content.append("export const shareableSnippets = {")
+        snippet_items = sorted(snippets.items())
+        for i, (key, data) in enumerate(snippet_items):
+            md_literal = _js_string_literal(data.get('markdown', ''))
+            src_literal = _js_string_literal(data.get('sourceFile', ''))
+            updated_literal = _js_string_literal(data.get('updatedAt', ''))
+            orig_literal = _js_string_literal(data.get('originalName', key))
+            comma = "," if i < len(snippet_items) - 1 else ""
+            content.append(f"  {key}: {{")
+            content.append(f"    markdown: {md_literal},")
+            content.append(f"    sourceFile: {src_literal},")
+            content.append(f"    updatedAt: {updated_literal},")
+            content.append(f"    originalName: {orig_literal},")
+            content.append(f"  }}{comma}")
+        content.append("} as const satisfies Record<string, ShareableSnippet>;")
+        content.append("")
+        content.append("/** Union type of all shareable snippet keys */")
+        content.append("export type ShareableSnippetKey = keyof typeof shareableSnippets;")
+        content.append("")
 
     # Generate citations lookup object (CSL JSON format)
     if all_citations and include_metadata:
