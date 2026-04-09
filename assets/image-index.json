@@ -1,7 +1,7 @@
 {
-  "totalImages": 3194,
-  "totalSizeBytes": 1866451274,
-  "totalSize": "1780.0 MB",
+  "totalImages": 3208,
+  "totalSizeBytes": 1871246333,
+  "totalSize": "1784.6 MB",
   "images": [
     {
       "path": "assets/audiobook/manual-paperback/video/keyframes/index-manual-scene-01-16x9.jpg",
@@ -99868,6 +99868,36 @@
       "imageProblemsDetected": false
     },
     {
+      "path": "assets/infographics/knowledge/appendix/copyright-infographic-bw-academic.jpg",
+      "filename": "copyright-infographic-bw-academic.jpg",
+      "extension": "jpg",
+      "sizeBytes": 387317,
+      "size": "378.2 KB",
+      "width": 896,
+      "height": 1200,
+      "format": "jpeg",
+      "aspectRatio": "3:4",
+      "imageType": "infographic",
+      "style": "black and white academic",
+      "chapter": "appendix/copyright",
+      "title": "Copyright",
+      "description": "Copyright",
+      "keywords": [
+        "copyright"
+      ],
+      "author": "Mike P. Sinn",
+      "copyright": "© Mike P. Sinn - WarOnDisease.org",
+      "license": "CC BY-NC 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "website": "https://WarOnDisease.org",
+      "credit": "WarOnDisease.org",
+      "sourceUrl": "https://manual.warondisease.org/knowledge/appendix/copyright.html",
+      "category": "infographic",
+      "generationPrompt": "Use a black and white scientific illustration style.\n\nCopyright\n\nHow to End War and Disease\n\nThe Complete Idiot's Guide to Legally Bribing Your Way to Utopia\n\nBy Wishonia\n\nTranslated for Humans by Mike P. Sinn\n\nCopyright 2025 Mike P. Sinn. All rights reserved.\n\nPublished by the Institute for Accelerated Medicine\\\nacceleratedmedicine.org\n\nThis work is licensed under the Creative Commons Attribution-NonCommercial 4.0 International License (CC BY-NC 4.0). You are free to share and adapt this material for non-commercial purposes, provided you give appropriate credit. To view a copy of this license, visit creativecommons.org/licenses/by-nc/4.0.\n\nFirst Edition, 2025\n\nContact: mikewarondisease.org\\\nWeb: WarOnDisease.org\\\nORCID: 0009-0006-0212-1094",
+      "transcript": "HOW TO END WAR AND DISEASE\nThe Complete Idiot’s Guide to Legally Bribing Your Way to Utopia\nBy Wishonia\nTranslated for Humans by Mike P. Sinn\nCopyright 2025 Mike P. Sinn. All rights reserved.\nPublished by the Institute for Accelerated Medicine\nacceleratedmedicine.org\nThis work is licensed under the Creative Commons Attribution-NonCommercial 4.0 International License (CC BY-NC 4.0). You are free to share and adapt this material for non-commercial purposes, provided you give appropriate credit. To view a copy of this license, visit creativecommons.org/licenses/by-nc/4.0.\nFirst Edition, 2025\nContact: mike@warondisease.org\nWeb: WarOnDisease.org\nORCID: 0009-0006-0212-1094",
+      "imageProblemsDetected": false
+    },
+    {
       "path": "assets/infographics/knowledge/appendix/cost-of-change-analysis-infographic-retro-academic.jpg",
       "filename": "cost-of-change-analysis-infographic-retro-academic.jpg",
       "extension": "jpg",
@@ -103425,6 +103455,37 @@
       ]
     },
     {
+      "path": "assets/infographics/knowledge/links-infographic-bw-academic.jpg",
+      "filename": "links-infographic-bw-academic.jpg",
+      "extension": "jpg",
+      "sizeBytes": 258449,
+      "size": "252.4 KB",
+      "width": 896,
+      "height": 1200,
+      "format": "jpeg",
+      "aspectRatio": "3:4",
+      "imageType": "infographic",
+      "style": "black and white academic",
+      "chapter": "links-infographic-bw-academic.jpg",
+      "generationPrompt": "Use a black and white scientific illustration style.\n\nSelect Your Preferred Sensory Input Channel\n\nHumans require instructions delivered through specific orifices. Choose yours. Available via skull vibration ports, murdered trees, or glowing rectangles.",
+      "transcript": "SELECT YOUR PREFERRED SENSORY INPUT CHANNEL\n\nHUMANS REQUIRE INSTRUCTIONS DELIVERED THROUGH SPECIFIC ORIFICES. CHOOSE YOURS.\n\nVIA SKULL VIBRATION PORTS\nMURDERED TREES\nOR GLOWING RECTANGLES",
+      "metadataCreatedAt": "2026-04-09T00:17:46.615Z",
+      "title": "Select Your Preferred Sensory Input Channel",
+      "description": "Humans require instructions delivered through specific orifices. Choose yours. Available via skull vibration ports, murdered trees, or glowing rectangles.",
+      "keywords": [
+        "links"
+      ],
+      "author": "Mike P. Sinn",
+      "copyright": "© Mike P. Sinn - WarOnDisease.org",
+      "license": "CC BY-NC 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "website": "https://WarOnDisease.org",
+      "credit": "WarOnDisease.org",
+      "sourceUrl": "https://manual.warondisease.org/knowledge/links.html",
+      "category": "infographic",
+      "imageProblemsDetected": false
+    },
+    {
       "path": "assets/infographics/knowledge/operations/ai-driven-regulatory-analysis-infographic-bw-academic.jpg",
       "filename": "ai-driven-regulatory-analysis-infographic-bw-academic.jpg",
       "extension": "jpg",
@@ -103613,6 +103674,37 @@
       "keywords": [
         "papers"
       ]
+    },
+    {
+      "path": "assets/infographics/knowledge/podcast-infographic-bw-academic.jpg",
+      "filename": "podcast-infographic-bw-academic.jpg",
+      "extension": "jpg",
+      "sizeBytes": 299412,
+      "size": "292.4 KB",
+      "width": 896,
+      "height": 1200,
+      "format": "jpeg",
+      "aspectRatio": "3:4",
+      "imageType": "infographic",
+      "style": "black and white academic",
+      "chapter": "podcast-infographic-bw-academic.jpg",
+      "generationPrompt": "Use a black and white scientific illustration style.\n\nSkull Auditory Port Edition\n\nStep-by-step instructions for bribing humanity into not murdering you, narrated directly into your head. Free on every app that puts sounds in your skull auditory ports.",
+      "transcript": "SKULL AUDITORY PORT EDITION: BRIBING HUMANITY AVOIDANCE PROTOCOL; NARRATED INSTRUCTIONS; AUDITORY PORTS; STEP 1: ACQUIRE CURRENCY/GOODS; STEP 2: OFFER TO HUMAN ENTITY; STEP 3: RECEIVE 'NOT MURDERED' STATUS; FREE ON EVERY APP THAT PUTS SOUNDS IN YOUR SKULL AUDITORY PORTS",
+      "metadataCreatedAt": "2026-04-09T00:20:10.888Z",
+      "title": "Skull Auditory Port Edition",
+      "description": "Step-by-step instructions for bribing humanity into not murdering you, narrated directly into your head. Free on every app that puts sounds in your skull auditory ports.",
+      "keywords": [
+        "podcast"
+      ],
+      "author": "Mike P. Sinn",
+      "copyright": "© Mike P. Sinn - WarOnDisease.org",
+      "license": "CC BY-NC 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "website": "https://WarOnDisease.org",
+      "credit": "WarOnDisease.org",
+      "sourceUrl": "https://manual.warondisease.org/knowledge/podcast.html",
+      "category": "infographic",
+      "imageProblemsDetected": false
     },
     {
       "path": "assets/infographics/knowledge/problem-foundations.jpg",
@@ -104844,6 +104936,67 @@
         "solution",
         "incentives"
       ]
+    },
+    {
+      "path": "assets/infographics/knowledge/solution/automated-revenue-service-infographic-bw-academic.jpg",
+      "filename": "automated-revenue-service-infographic-bw-academic.jpg",
+      "extension": "jpg",
+      "sizeBytes": 442707,
+      "size": "432.3 KB",
+      "width": 896,
+      "height": 1200,
+      "format": "jpeg",
+      "aspectRatio": "3:4",
+      "imageType": "infographic",
+      "style": "black and white academic",
+      "chapter": "solution/automated-revenue-service",
+      "title": "The Automated Revenue Service",
+      "description": "74,000 pages of tax code replaced by six lines of code. The IRS employs 83,000 humans to do what a smart contract does automatically.",
+      "keywords": [
+        "automated-revenue-service"
+      ],
+      "author": "Mike P. Sinn",
+      "copyright": "© Mike P. Sinn - WarOnDisease.org",
+      "license": "CC BY-NC 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "website": "https://WarOnDisease.org",
+      "credit": "WarOnDisease.org",
+      "sourceUrl": "https://manual.warondisease.org/knowledge/solution/automated-revenue-service.html",
+      "category": "infographic",
+      "generationPrompt": "Use a black and white scientific illustration style.\n\nThe Automated Revenue Service\n\n74,000 pages of tax code replaced by six lines of code. The IRS employs 83,000 humans to do what a smart contract does automatically.\n\n\r\n\r\n74,000 Pages of Instructions for Giving Money to the Government\r\n\r\nYour tax system has 74,000 pages of rules. To put that in perspective, the entire Harry Potter series is 4,224 pages. Your tax code is 17.5 Harry Potters long. Except Harry Potter has a coherent plot and your tax code has loopholes.\r\n\r\nThe Internal Revenue Service employs 83,000 humans to interpret these rules. It costs $12.3 billion per year to operate. Americans spend an additional 6.1 billion hours per year filling out forms. An entire profession (\"accountant\") exists solely to decode rules that your government wrote for itself.\r\n\r\nOn my planet, when a system requires 83,000 interpreters, we don't hire more interpreters. We rewrite the system.\r\n\r\nThe Replacement\r\n\r\n\r\n\r\nSix lines. Every transfer automatically deducts 0.5% and sends it to the treasury. No filing. No forms. No audits. No compliance departments. No offshore accounts. No accountants. The tax is unavoidable because it IS the protocol.\r\n\r\nYou cannot lobby a smart contract. You cannot offshore a protocol. Every loophole in your 74,000 pages exists because someone paid a lobbyist to put it there. The replacement has no lobbyists because there is nothing to lobby.\r\n\r\nThe Numbers\r\n\r\nYour current system costs $12.3 billion in direct IRS budget plus over $200 billion in annual compliance costs. That is $640 per American per year, just in paperwork. Not taxes. Paperwork about taxes.\r\n\r\nThe replacement costs approximately nothing. The 0.5% transaction tax collects the same revenue at roughly 0% administrative cost. The savings alone could fund a small country. Or, more usefully, clinical trials.\r\n\r\nWhy You Haven't Done This\r\n\r\nThe 74,000 pages are not a bug. Every page represents a negotiation between a lobbyist and a legislator. Every loophole is a feature, purchased and maintained by someone who benefits from it. Your tax system is not complicated because taxation is complicated. Your tax system is complicated because complexity is profitable for the people who write the rules.\r\n\r\n83,000 IRS employees interpreting 74,000 pages to do what six lines of code does automatically. And you wonder where your taxes go.",
+      "transcript": "THE AUTOMATED REVENUE SERVICE: A STUDY IN SYSTEM ARCHITECTURE. CURRENT SYSTEM: THE INTERNAL REVENUE SERVICE. 74,000 PAGES OF TAX CODE. COMPLETE HARRY POTTER SERIES (4,224 PAGES). 17.5x LONGER. CONTAINS LOOPHOLES, NOT PLOT. 83,000 HUMAN INTERPRETERS & IRS EMPLOYEES. COST: $12.3 BILLION/YEAR + 6.1 BILLION HOURS/YEAR IN COMPLIANCE. THE REPLACEMENT: AUTOMATED SMART CONTRACT PROTOCOL. 1. TRANSACTION_EVENT(SENDER, RECEIVER, AMOUNT) { 2. TAX = AMOUNT * 0.005; 3. SEND(SENDER, TREASURY, TAX); 4. SEND(SENDER, RECEIVER, AMOUNT - TAX); 5. RECORD_TRANSACTION(SENDER, RECEIVER, TAX); 6. }. TRANSACTION. 0.5% TAX (TO TREASURY). REMAINING AMOUNT (TO RECEIVER). AUTOMATICALLY DEDUCTS & SENDS. NO FILING. NO FORMS. NO AUDITS. NO COMPLIANCE DEPARTMENTS. NO OFFSHORE ACCOUNTS. NO ACCOUNTANTS. TAX IS UNAVOIDABLE: IT IS THE PROTOCOL. COST: ≈0%. SAVINGS COULD FUND CLINICAL TRIALS. WHY YOU HAVEN'T DONE THIS. ACCOUNTANT. DECODING RULES THE GOVERNMENT WROTE FOR ITSELF. 74,000 PAGES ARE NOT A BUG. EVERY PAGE IS A PURCHASED FEATURE. YOU CANNOT LOBBY A SMART CONTRACT. NOTHING TO LOBBY. 83,000 HUMANS INTERPRETING 74,000 PAGES TO DO WHAT SIX LINES OF CODE DOES AUTOMATICALLY. COMPLEXITY IS PROFITABLE FOR THE PEOPLE WHO WRITE THE RULES.",
+      "imageProblemsDetected": false
+    },
+    {
+      "path": "assets/infographics/knowledge/solution/department-of-peace-infographic-bw-academic.jpg",
+      "filename": "department-of-peace-infographic-bw-academic.jpg",
+      "extension": "jpg",
+      "sizeBytes": 453484,
+      "size": "442.9 KB",
+      "width": 896,
+      "height": 1200,
+      "format": "jpeg",
+      "aspectRatio": "3:4",
+      "imageType": "infographic",
+      "style": "black and white academic",
+      "chapter": "solution/department-of-peace",
+      "generationPrompt": "Use a black and white scientific illustration style.\n\nDepartment of Peace\n\nWar is a negative-sum game and the spreadsheet agrees. Wishonia's replacement for the Department of Defense requires zero lines of code.\n\n\r\n\r\nThe Department That Named Itself Wrong\r\n\r\nIn 1947, your species renamed the Department of War to the Department of Defense. The wars did not become more defensive. They just sounded nicer. Since the rebrand: 13+ wars, 0 defensive. This is like renaming a cigarette company \"The Lung Health Corporation\" and expecting the cancer to be embarrassed.\r\n\r\nYour Department of Defense has a budget of $2.72T globally. That is 604 times what you spend on testing which medicines work. You have decided, as a species, that blowing people up is 604 times more important than figuring out how to stop them from dying.\r\n\r\nOn my planet, we call this a bug. On your planet, you call it \"national security.\"\r\n\r\nThe Business Model\r\n\r\nWar is a negative-sum game. Every participant ends up with less than they started with, including the \"winner.\" Your economists have known this since at least 1795 when Immanuel Kant published Perpetual Peace. You have had the analysis for 231 years. You have not applied it.\r\n\r\nThe reason is not complicated. The F-35 Joint Strike Fighter has parts manufactured in 45 states. Not because the plane needs parts from 45 states. Because a plane with parts in 45 states cannot be cancelled. Your most expensive weapons system is a jobs program that occasionally flies.\r\n\r\nThe top 5 defense contractors made $196 billion in 2023. Peace is bad for their business. Their lobbyists spend more per year than most countries spend on education. This is the system working as designed. Just not for you.\r\n\r\nWishonia's Replacement\r\n\r\nWe don't have a Department of War because (and I want to be precise here) war is stupid. Not morally stupid, although it is that too. Economically stupid. The spreadsheet agrees.\r\n\r\nHere is the replacement code:\r\n\r\n\r\n\r\nDisputes on Wishonia are resolved with data, binding arbitration, and an optimization function that finds the allocation where both parties are measurably better off. This takes six minutes. Nobody dies. The savings are enough to provide clean water for every human, end homelessness, fund all clinical trials, and eliminate hunger, with $2.4 trillion left over.\r\n\r\nThe Multiplier Problem\r\n\r\nEvery dollar your government spends on military returns $0.60 in economic value. Every dollar spent on healthcare returns $3.50. You are choosing the option that is 5.8 times worse. Repeatedly. For 80 years.\r\n\r\nIf you redirected just 1% of military spending to clinical trials, you would fund the entire dFDA dfda-spec-paper-2025; Sinn. If you redirected 10%, you could cure most diseases within a decade. The math is not ambiguous. The math has never been ambiguous. You just keep choosing the $0.60 option because the $0.60 option has better lobbyists.\r\n\r\nWhat We Did Instead\r\n\r\nOn Wishonia, we ended wars 4,225 years ago. Before that we'd been fighting for 12,000 years. One day someone ran the numbers and said, \"This costs more than it produces.\" Everyone stared at the spreadsheet for a while. Then we stopped. It was not dramatic. It was arithmetic.\r\n\r\nYour species has the same arithmetic. You've had it for centuries. The difference is that on Wishonia, the spreadsheet is public and the people who profit from war cannot delete the rows they don't like.\r\n\r\nThe 1% Treaty 1-pct-treaty-impact-paper-2025 is how you get there. Not by abolishing your military overnight (your species panics when you change the color of a social media button; eliminating armies would be inadvisable). But by redirecting 1% of it toward not dying. Baby steps. The kind even a species that named its planet \"dirt\" can manage.",
+      "transcript": "DEPARTMENT OF PEACE\nWar is a negative-sum game and the spreadsheet agrees. Wishonia's replacement for the Department of Defense requires zero lines of code.\nTHE DEPARTMENT THAT NAMED ITSELF WRONG\nDEPARTMENT OF WAR (1947) -> REBRAND 1947 -> WARS SINCE 13+\nDEFENSE -> DEFENSIVE WARS 0\nIn 1947, your species renamed the Department of War to the Department of Defense. The wars did not become more defensive. They just sounded nicer. Since the rebrand: 13+ wars, 0 defensive.\nThis is like renaming a cigarette company \"The Lung Health Corporation\" and expecting the cancer to be embarrassed.\nYour Department of Defense has a budget of $2.72T globally. That is 604 times what you spend on testing which medicines work. You have decided, as a species, that blowing people up is 604 times more important than figuring out how to stop them from dying.\nOn my planet, we call this a bug. On your planet, you call it \"national security.\"\nTHE BUSINESS MODEL\nNEGATIVE-SUM GAME\nBUSINESS MODEL\nImmanuel Kant, Perpetual Peace, 1795\nWar is a negative-sum game. Every participant ends up with less than they started with, including the \"winner.\" Your economists have known this since at least 1795 when Immanuel Kant published Perpetual Peace. You have had the analysis for 231 years. You have not applied it.\nF-35 JOBS PROGRAM\nThe F-35 Joint Strike Fighter has parts manufactured in 45 states. Not because the plane needs parts from 45 states. Because a plane with parts in 45 states cannot be cancelled.\nYour most expensive weapons system is a jobs program that occasionally flies. The top 5 defense contractors made $196 billion in 2023. Peace is bad for their business. Their lobbyists spend more per year than most countries spend on education.\nThis is the system working as designed. Just not for you.\nWISHONIA'S REPLACEMENT\nOPTIMIZATION FUNCTION\nDISPUTES -> DATA & ARBITRATION -> OPTIMIZATION FUNCTION -> BOTH PARTIES MEASURABLY BETTER OFF\nSIX MINUTES, NOBODY DIES\nWe don't have a Department of War because (and I want to be precise here) war is stupid. Not morally stupid, although it is that too. Economically stupid. The spreadsheet agrees. Here is the replacement code:\nDisputes on Wishonia are resolved with data, binding arbitration, and an optimization function that finds the allocation where both parties are measurably better off. This takes six minutes. Nobody dies. The savings are enough to provide clean water for every human, end homelessness, fund all clinical trials, and eliminate hunger, with $2.4 trillion left over.\nTHE MULTIPLIER PROBLEM\nMILITARY RETURN ($0.60)\nHEALTHCARE RETURN ($3.50)\n5.8 TIMES WORSE\n1% REDIRECTION -> CURE DISEASES\nEvery dollar your government spends on military returns $0.60 in economic value. Every dollar spent on healthcare returns $3.50. You are choosing the option that is 5.8 times worse. Repeatedly. For 80 years.\nIf you redirected just 1% of military spending to clinical trials, you would fund the entire dFDA. If you redirected 10%, you could cure most diseases within a decade.\nThe math is not ambiguous. The math has never been ambiguous. You just keep choosing the $0.60 option because the $0.60 option has better lobbyists.\nWHAT WE DID INSTEAD\nWISHONIA (4,225 YEARS AGO)\nOn Wishonia, we ended wars 4,225 years ago. Before that we'd been fighting for 12,000 years. One day someone ran the numbers and said, \"This costs more than it produces.\" Everyone stared at the spreadsheet for a while. Then we stopped. It was not dramatic. It was arithmetic.\nYour species has the same arithmetic. You've had it for centuries. The difference is that on Wishonia, the spreadsheet is public and the people who profit from war cannot delete the rows they don't like.\nThe 1% Treaty is how you get there. Not by abolishing your military overnight (your species panics when you change the color of a social media button; eliminating armies would be inadvisable). But by redirecting 1% of it toward not dying. Baby steps. The kind even a species that named its planet \"dirt\" can manage.\nWISHONIA SCIENTIFIC JOURNAL\nEARTH YEAR 2025 / WISHONIA YEAR 4225 PC",
+      "metadataCreatedAt": "2026-04-09T00:23:14.514Z",
+      "title": "Department of Peace",
+      "description": "War is a negative-sum game and the spreadsheet agrees. Wishonia's replacement for the Department of Defense requires zero lines of code.",
+      "keywords": [
+        "department-of-peace"
+      ],
+      "author": "Mike P. Sinn",
+      "copyright": "© Mike P. Sinn - WarOnDisease.org",
+      "license": "CC BY-NC 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "website": "https://WarOnDisease.org",
+      "credit": "WarOnDisease.org",
+      "sourceUrl": "https://manual.warondisease.org/knowledge/solution/department-of-peace.html",
+      "category": "infographic",
+      "imageProblemsDetected": false
     },
     {
       "path": "assets/infographics/knowledge/solution/dfda-infographic-retro-academic.jpg",
@@ -106607,6 +106760,36 @@
       "credit": "WarOnDisease.org",
       "sourceUrl": "https://manual.warondisease.org/knowledge/appendix/conclusion.html",
       "category": "og-image",
+      "imageProblemsDetected": false
+    },
+    {
+      "path": "assets/og-images/knowledge/appendix/copyright-og-bw-academic.jpg",
+      "filename": "copyright-og-bw-academic.jpg",
+      "extension": "jpg",
+      "sizeBytes": 337398,
+      "size": "329.5 KB",
+      "width": 1376,
+      "height": 768,
+      "format": "jpeg",
+      "aspectRatio": "16:9",
+      "imageType": "og",
+      "style": "black and white academic",
+      "chapter": "appendix/copyright",
+      "title": "Copyright",
+      "description": "Copyright",
+      "keywords": [
+        "copyright"
+      ],
+      "author": "Mike P. Sinn",
+      "copyright": "© Mike P. Sinn - WarOnDisease.org",
+      "license": "CC BY-NC 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "website": "https://WarOnDisease.org",
+      "credit": "WarOnDisease.org",
+      "sourceUrl": "https://manual.warondisease.org/knowledge/appendix/copyright.html",
+      "category": "og-image",
+      "generationPrompt": "Use a black and white scientific illustration style.\n\nCopyright\n\nHow to End War and Disease\n\nThe Complete Idiot's Guide to Legally Bribing Your Way to Utopia\n\nBy Wishonia\n\nTranslated for Humans by Mike P. Sinn\n\nCopyright 2025 Mike P. Sinn. All rights reserved.\n\nPublished by the Institute for Accelerated Medicine\\\nacceleratedmedicine.org\n\nThis work is licensed under the Creative Commons Attribution-NonCommercial 4.0 International License (CC BY-NC 4.0). You are free to share and adapt this material for non-commercial purposes, provided you give appropriate credit. To view a copy of this license, visit creativecommons.org/licenses/by-nc/4.0.\n\nFirst Edition, 2025\n\nContact: mikewarondisease.org\\\nWeb: WarOnDisease.org\\\nORCID: 0009-0006-0212-1094",
+      "transcript": "ΥΤΩΡΙΑ\nCOPYRIGHT\nHOW TO END WAR AND DISEASE\nThe Complete Idiot’s Guide to Legally Bribing Your Way to Utopia\nBy Wishonia\nTranslated for Humans by Mike P. Sinn\nCopyright 2025 Mike P. Sinn. All rights reserved.\nPublished by the Institute for Accelerated Medicine\nacceleratedmedicine.org\nThis work is licensed under the Creative Commons Attribution-NonCommercial 4.0 International License (CC BY-NC 4.0). You are free to share and adapt this material for non-commercial purposes, provided you give appropriate credit. To view a copy of this license, visit creativecommons.org/licenses/by-nc/4.0.\nFirst Edition, 2025\nContact: mike@warondisease.org\nWeb: WarOnDisease.org\nORCID: 0009-0006-0212-1094\nLEGAL BRIBE",
       "imageProblemsDetected": false
     },
     {
@@ -110202,6 +110385,44 @@
       ]
     },
     {
+      "path": "assets/og-images/knowledge/links-og-bw-academic.jpg",
+      "filename": "links-og-bw-academic.jpg",
+      "extension": "jpg",
+      "sizeBytes": 315621,
+      "size": "308.2 KB",
+      "width": 1376,
+      "height": 768,
+      "format": "jpeg",
+      "aspectRatio": "16:9",
+      "imageType": "og",
+      "style": "black and white academic",
+      "chapter": "links-og-bw-academic.jpg",
+      "generationPrompt": "Use a black and white scientific illustration style.\n\nSelect Your Preferred Sensory Input Channel\n\nHumans require instructions delivered through specific orifices. Choose yours. Available via skull vibration ports, murdered trees, or glowing rectangles.",
+      "transcript": "SELECT YOUR PREFERRED SENSORY INPUT CHANNEL\nHumans require instructions delivered through specific orifices. Choose yours.\nAvailable via skull vibration ports, murdered trees, or glowing rectangles.\nSKULL VIBRATION PORTS\nMURDERED TREES\nGLOWING RECTANGLES\nAUDITORY INPUT VIA BONE CONDUCTION\nVISUAL INPUT VIA PHYSICAL SUBSTRATE\nVISUAL INPUT VIA DIGITAL DISPLAY\nIMPORTANT: Generate image with aspect ratio 16:9.",
+      "imageIssues": [
+        "bottom banner contains generative prompt leakage text"
+      ],
+      "metadataCreatedAt": "2026-04-09T00:16:59.241Z",
+      "title": "Select Your Preferred Sensory Input Channel",
+      "description": "Humans require instructions delivered through specific orifices. Choose yours. Available via skull vibration ports, murdered trees, or glowing rectangles.",
+      "keywords": [
+        "links"
+      ],
+      "author": "Mike P. Sinn",
+      "copyright": "© Mike P. Sinn - WarOnDisease.org",
+      "license": "CC BY-NC 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "website": "https://WarOnDisease.org",
+      "credit": "WarOnDisease.org",
+      "sourceUrl": "https://manual.warondisease.org/knowledge/links.html",
+      "category": "og-image",
+      "imageProblemsDetected": true,
+      "imageProblems": [
+        "IMPORTANT: Generate image with aspect ratio 16:9."
+      ],
+      "imageProblemsRepairPrompt": "Remove the black bar at the bottom containing the text 'IMPORTANT: Generate image with aspect ratio 16:9.'"
+    },
+    {
       "path": "assets/og-images/knowledge/operations/ai-driven-regulatory-analysis-og-bw-academic.jpg",
       "filename": "ai-driven-regulatory-analysis-og-bw-academic.jpg",
       "extension": "jpg",
@@ -110457,6 +110678,37 @@
       "keywords": [
         "papers"
       ]
+    },
+    {
+      "path": "assets/og-images/knowledge/podcast-og-bw-academic.jpg",
+      "filename": "podcast-og-bw-academic.jpg",
+      "extension": "jpg",
+      "sizeBytes": 214930,
+      "size": "209.9 KB",
+      "width": 1376,
+      "height": 768,
+      "format": "jpeg",
+      "aspectRatio": "16:9",
+      "imageType": "og",
+      "style": "black and white academic",
+      "chapter": "podcast-og-bw-academic.jpg",
+      "generationPrompt": "Use a black and white scientific illustration style.\n\nSkull Auditory Port Edition\n\nStep-by-step instructions for bribing humanity into not murdering you, narrated directly into your head. Free on every app that puts sounds in your skull auditory ports.",
+      "transcript": "SKULL AUDITORY PORT EDITION. AUDITORY PORT. STEP 1: ACQUIRE CURRENCY/GOODS. STEP 2: LOCATE HUMAN SETTLEMENT. STEP 3: PRESENT OFFERINGS (NON-THREATENINGLY). STEP 4: AVOID SUDDEN MOVEMENTS. GOAL: COEXISTENCE (NOT MURDER). NARRATED DIRECTLY INTO YOUR HEAD. FREE ON EVERY APP THAT PUTS SOUNDS IN YOUR SKULL AUDITORY PORTS.",
+      "metadataCreatedAt": "2026-04-09T00:19:21.985Z",
+      "title": "Skull Auditory Port Edition",
+      "description": "Step-by-step instructions for bribing humanity into not murdering you, narrated directly into your head. Free on every app that puts sounds in your skull auditory ports.",
+      "keywords": [
+        "podcast"
+      ],
+      "author": "Mike P. Sinn",
+      "copyright": "© Mike P. Sinn - WarOnDisease.org",
+      "license": "CC BY-NC 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "website": "https://WarOnDisease.org",
+      "credit": "WarOnDisease.org",
+      "sourceUrl": "https://manual.warondisease.org/knowledge/podcast.html",
+      "category": "og-image",
+      "imageProblemsDetected": false
     },
     {
       "path": "assets/og-images/knowledge/problem-og-retro-academic.jpg",
@@ -111443,6 +111695,68 @@
         "solution",
         "incentives"
       ]
+    },
+    {
+      "path": "assets/og-images/knowledge/solution/automated-revenue-service-og-bw-academic.jpg",
+      "filename": "automated-revenue-service-og-bw-academic.jpg",
+      "extension": "jpg",
+      "sizeBytes": 362660,
+      "size": "354.2 KB",
+      "width": 1376,
+      "height": 768,
+      "format": "jpeg",
+      "aspectRatio": "16:9",
+      "imageType": "og",
+      "style": "black and white academic",
+      "chapter": "solution/automated-revenue-service",
+      "generationPrompt": "Use a black and white scientific illustration style.\n\nThe Automated Revenue Service\n\n74,000 pages of tax code replaced by six lines of code. The IRS employs 83,000 humans to do what a smart contract does automatically.\n\n\r\n\r\n74,000 Pages of Instructions for Giving Money to the Government\r\n\r\nYour tax system has 74,000 pages of rules. To put that in perspective, the entire Harry Potter series is 4,224 pages. Your tax code is 17.5 Harry Potters long. Except Harry Potter has a coherent plot and your tax code has loopholes.\r\n\r\nThe Internal Revenue Service employs 83,000 humans to interpret these rules. It costs $12.3 billion per year to operate. Americans spend an additional 6.1 billion hours per year filling out forms. An entire profession (\"accountant\") exists solely to decode rules that your government wrote for itself.\r\n\r\nOn my planet, when a system requires 83,000 interpreters, we don't hire more interpreters. We rewrite the system.\r\n\r\nThe Replacement\r\n\r\n\r\n\r\nSix lines. Every transfer automatically deducts 0.5% and sends it to the treasury. No filing. No forms. No audits. No compliance departments. No offshore accounts. No accountants. The tax is unavoidable because it IS the protocol.\r\n\r\nYou cannot lobby a smart contract. You cannot offshore a protocol. Every loophole in your 74,000 pages exists because someone paid a lobbyist to put it there. The replacement has no lobbyists because there is nothing to lobby.\r\n\r\nThe Numbers\r\n\r\nYour current system costs $12.3 billion in direct IRS budget plus over $200 billion in annual compliance costs. That is $640 per American per year, just in paperwork. Not taxes. Paperwork about taxes.\r\n\r\nThe replacement costs approximately nothing. The 0.5% transaction tax collects the same revenue at roughly 0% administrative cost. The savings alone could fund a small country. Or, more usefully, clinical trials.\r\n\r\nWhy You Haven't Done This\r\n\r\nThe 74,000 pages are not a bug. Every page represents a negotiation between a lobbyist and a legislator. Every loophole is a feature, purchased and maintained by someone who benefits from it. Your tax system is not complicated because taxation is complicated. Your tax system is complicated because complexity is profitable for the people who write the rules.\r\n\r\n83,000 IRS employees interpreting 74,000 pages to do what six lines of code does automatically. And you wonder where your taxes go.",
+      "transcript": "THE AUTOMATED REVENUE SERVICE: A COMPARATIVE ANALYSIS. CURRENT SYSTEM: THE COMPLEXITY ENGINE -> THE REPLACEMENT: THE SMART CONTRACT. 74,000 PAGES OF U.S. TAX CODE. 17.5x LARGER, NO COHERENT PLOT. HARRY POTTER SERIES (4,224 PAGES). 83,000 HUMAN INTERPRETERS ($12.3 BILLION/YEAR BUDGET) IRS HEADQUARTERS. LOBBYIST. OFFSHORE ACCOUNT. ACCOUNTANT. 6.1 BILLION HOURS/YEAR COMPLIANCE. ANNUAL COST $212.3 BILLION (IRS + COMPLIANCE COSTS). LOOPHOLES ARE FEATURES, NOT BUGS. COMPLEXITY IS PROFITABLE. SIX LINES OF SMART CONTRACT CODE: function transfer(address sender, address recipient, uint256 amount) public { uint256 tax = amount * 5 / 1000; // 0.5% tax uint256 netAmount = amount - tax; _transfer(sender, treasuryAddress, tax); _transfer(sender, recipient, netAmount); }. AUTOMATIC 0.5% DEDUCTION ON EVERY TRANSFER. TREASURY. NO FILING. NO AUDITS. NO OFFSHORE. NO LOBBYING. NO ACCOUNTANTS. TAX IS UNAVOIDABLE. THE PROTOCOL IS THE RULE. ~0% ADMINISTRATIVE COST. ANNUAL COST NEAR ZERO. ON MY PLANET, WE REWRITE THE SYSTEM. 83,000 EMPLOYEES INTERPRETING 74,000 PAGES VS. SIX LINES OF CODE DOING IT AUTOMATICALLY. SAVINGS COULD FUND CLINICAL TRIALS.",
+      "metadataCreatedAt": "2026-04-09T00:25:27.958Z",
+      "title": "The Automated Revenue Service",
+      "description": "74,000 pages of tax code replaced by six lines of code. The IRS employs 83,000 humans to do what a smart contract does automatically.",
+      "keywords": [
+        "automated-revenue-service"
+      ],
+      "author": "Mike P. Sinn",
+      "copyright": "© Mike P. Sinn - WarOnDisease.org",
+      "license": "CC BY-NC 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "website": "https://WarOnDisease.org",
+      "credit": "WarOnDisease.org",
+      "sourceUrl": "https://manual.warondisease.org/knowledge/solution/automated-revenue-service.html",
+      "category": "og-image",
+      "imageProblemsDetected": false
+    },
+    {
+      "path": "assets/og-images/knowledge/solution/department-of-peace-og-bw-academic.jpg",
+      "filename": "department-of-peace-og-bw-academic.jpg",
+      "extension": "jpg",
+      "sizeBytes": 360975,
+      "size": "352.5 KB",
+      "width": 1376,
+      "height": 768,
+      "format": "jpeg",
+      "aspectRatio": "16:9",
+      "imageType": "og",
+      "style": "black and white academic",
+      "chapter": "solution/department-of-peace",
+      "generationPrompt": "Use a black and white scientific illustration style.\n\nDepartment of Peace\n\nWar is a negative-sum game and the spreadsheet agrees. Wishonia's replacement for the Department of Defense requires zero lines of code.\n\n\r\n\r\nThe Department That Named Itself Wrong\r\n\r\nIn 1947, your species renamed the Department of War to the Department of Defense. The wars did not become more defensive. They just sounded nicer. Since the rebrand: 13+ wars, 0 defensive. This is like renaming a cigarette company \"The Lung Health Corporation\" and expecting the cancer to be embarrassed.\r\n\r\nYour Department of Defense has a budget of $2.72T globally. That is 604 times what you spend on testing which medicines work. You have decided, as a species, that blowing people up is 604 times more important than figuring out how to stop them from dying.\r\n\r\nOn my planet, we call this a bug. On your planet, you call it \"national security.\"\r\n\r\nThe Business Model\r\n\r\nWar is a negative-sum game. Every participant ends up with less than they started with, including the \"winner.\" Your economists have known this since at least 1795 when Immanuel Kant published Perpetual Peace. You have had the analysis for 231 years. You have not applied it.\r\n\r\nThe reason is not complicated. The F-35 Joint Strike Fighter has parts manufactured in 45 states. Not because the plane needs parts from 45 states. Because a plane with parts in 45 states cannot be cancelled. Your most expensive weapons system is a jobs program that occasionally flies.\r\n\r\nThe top 5 defense contractors made $196 billion in 2023. Peace is bad for their business. Their lobbyists spend more per year than most countries spend on education. This is the system working as designed. Just not for you.\r\n\r\nWishonia's Replacement\r\n\r\nWe don't have a Department of War because (and I want to be precise here) war is stupid. Not morally stupid, although it is that too. Economically stupid. The spreadsheet agrees.\r\n\r\nHere is the replacement code:\r\n\r\n\r\n\r\nDisputes on Wishonia are resolved with data, binding arbitration, and an optimization function that finds the allocation where both parties are measurably better off. This takes six minutes. Nobody dies. The savings are enough to provide clean water for every human, end homelessness, fund all clinical trials, and eliminate hunger, with $2.4 trillion left over.\r\n\r\nThe Multiplier Problem\r\n\r\nEvery dollar your government spends on military returns $0.60 in economic value. Every dollar spent on healthcare returns $3.50. You are choosing the option that is 5.8 times worse. Repeatedly. For 80 years.\r\n\r\nIf you redirected just 1% of military spending to clinical trials, you would fund the entire dFDA dfda-spec-paper-2025; Sinn. If you redirected 10%, you could cure most diseases within a decade. The math is not ambiguous. The math has never been ambiguous. You just keep choosing the $0.60 option because the $0.60 option has better lobbyists.\r\n\r\nWhat We Did Instead\r\n\r\nOn Wishonia, we ended wars 4,225 years ago. Before that we'd been fighting for 12,000 years. One day someone ran the numbers and said, \"This costs more than it produces.\" Everyone stared at the spreadsheet for a while. Then we stopped. It was not dramatic. It was arithmetic.\r\n\r\nYour species has the same arithmetic. You've had it for centuries. The difference is that on Wishonia, the spreadsheet is public and the people who profit from war cannot delete the rows they don't like.\r\n\r\nThe 1% Treaty 1-pct-treaty-impact-paper-2025 is how you get there. Not by abolishing your military overnight (your species panics when you change the color of a social media button; eliminating armies would be inadvisable). But by redirecting 1% of it toward not dying. Baby steps. The kind even a species that named its planet \"dirt\" can manage.",
+      "transcript": "DEPARTMENT OF PEACE: A COMPARATIVE ANALYSIS (EARTH VS. WISHONIA). EARTH: DEPARTMENT OF DEFENSE (FORMERLY WAR). THE NEGATIVE-SUM GAME. NATION A, NATION B, CONFLICT. BUSINESS MODEL (Since 1947). DEFENSE CONTRACTORS ($196B PROFIT/YR), LOBBYISTS, POLITICIANS, F-35 JOINT STRIKE FIGHTER (PARTS FROM 45 STATES - A JOBS PROGRAM). GLOBAL BUDGET: $2.72T (604x MEDICINE TESTING). MEDICINE TESTING: $4.5B. THE MULTIPLIER PROBLEM (RETURN ON INVESTMENT). MILITARY ($1 SPENT -> $0.60 VALUE). HEALTHCARE ($1 SPENT -> $3.50 VALUE). REPEATEDLY CHOSEN FOR 80 YEARS. 13+ WARS SINCE REBRAND, 0 DEFENSIVE. WISHONIA: DEPARTMENT OF PEACE (REPLACEMENT CODE). POSITIVE-SUM GAME. NATION X, DISPUTE RESOLUTION, NATION Y. BUSINESS MODEL (Wishonia). DATA + BINDING ARBITRATION + OPTIMIZATION FUNCTION. MEASURABLE GAIN FOR BOTH PARTIES (DURATION: 6 MINUTES, ZERO LINES OF CODE). RESOURCE ALLOCATION. SAVINGS & BENEFITS. CLEAN WATER FOR EVERY HUMAN, END HOMELESSNESS, FUND ALL CLINICAL TRIALS, ELIMINATE HUNGER. $2.4 TRILLION LEFT OVER. WHAT WE DID INSTEAD (ENDED WARS 4,225 YEARS AGO). ARITHMETIC ANALYSIS. COST > PRODUCTION. EVERYONE STARED AT THE SPREADSHEET. STOPPED. NOT DRAMATIC. ARITHMETIC. IMPORTANT NOTE: WAR IS A NEGATIVE-SUM GAME AND THE SPREADSHEET AGREES. WISHONIA'S REPLACEMENT FOR THE DEPARTMENT OF DEFENSE REQUIRES ZERO LINES OF CODE. THE 1% TREATY: REDIRECT 1% OF MILITARY SPENDING TO CLINICAL TRIALS (dfda-spec-paper-2025; Sinn) -> CURE MOST DISEASES IN A DECADE. BABY STEPS FOR A SPECIES THAT NAMED ITS PLANET 'DIRT'.",
+      "metadataCreatedAt": "2026-04-09T00:22:07.993Z",
+      "title": "Department of Peace",
+      "description": "War is a negative-sum game and the spreadsheet agrees. Wishonia's replacement for the Department of Defense requires zero lines of code.",
+      "keywords": [
+        "department-of-peace"
+      ],
+      "author": "Mike P. Sinn",
+      "copyright": "© Mike P. Sinn - WarOnDisease.org",
+      "license": "CC BY-NC 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "website": "https://WarOnDisease.org",
+      "credit": "WarOnDisease.org",
+      "sourceUrl": "https://manual.warondisease.org/knowledge/solution/department-of-peace.html",
+      "category": "og-image",
+      "imageProblemsDetected": false
     },
     {
       "path": "assets/og-images/knowledge/solution/dfda-og-retro-academic.jpg",
@@ -116304,6 +116618,36 @@
       "imageProblemsRepairPrompt": "Remove the top-most 'CONCLUSION' banner at the very top edge of the frame."
     },
     {
+      "path": "assets/slides/knowledge/appendix/copyright-slide-bw-academic.jpg",
+      "filename": "copyright-slide-bw-academic.jpg",
+      "extension": "jpg",
+      "sizeBytes": 306166,
+      "size": "299.0 KB",
+      "width": 1376,
+      "height": 768,
+      "format": "jpeg",
+      "aspectRatio": "16:9",
+      "imageType": "slide",
+      "style": "black and white academic",
+      "chapter": "appendix/copyright",
+      "title": "Copyright",
+      "description": "Copyright",
+      "keywords": [
+        "copyright"
+      ],
+      "author": "Mike P. Sinn",
+      "copyright": "© Mike P. Sinn - WarOnDisease.org",
+      "license": "CC BY-NC 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "website": "https://WarOnDisease.org",
+      "credit": "WarOnDisease.org",
+      "sourceUrl": "https://manual.warondisease.org/knowledge/appendix/copyright.html",
+      "category": "slide",
+      "generationPrompt": "Use a black and white scientific illustration style.\n\nCopyright\n\nCopyright\n\n\"The Complete Idiot's Guide to Legally Bribing Your Way to Utopia\"\n\n\"Translated for Humans by Mike P. Sinn\"\n\n\"First Edition, 2025\"\n\n\"This work is licensed under the Creative Commons Attribution-NonCommercial 4.0 International License (CC BY-NC 4.0). You are free to share and adapt this material for non-commercial purposes\"",
+      "transcript": "The Complete Idiot’s Guide to Legally Bribing Your Way to Utopia\nTranslated for Humans by Mike P. Sinn\nFirst Edition, 2025\nThis work is licensed under the Creative Commons Attribution-NonCommercial 4.0 International License (CC BY-NC 4.0). You are free to share and adapt this material for non-commercial purposes.",
+      "imageProblemsDetected": false
+    },
+    {
       "path": "assets/slides/knowledge/appendix/cost-of-change-analysis-slide-retro-academic.jpg",
       "filename": "cost-of-change-analysis-slide-retro-academic.jpg",
       "extension": "jpg",
@@ -119987,6 +120331,41 @@
       ]
     },
     {
+      "path": "assets/slides/knowledge/links-slide-bw-academic.jpg",
+      "filename": "links-slide-bw-academic.jpg",
+      "extension": "jpg",
+      "sizeBytes": 302021,
+      "size": "294.9 KB",
+      "width": 1376,
+      "height": 768,
+      "format": "jpeg",
+      "aspectRatio": "16:9",
+      "imageType": "slide",
+      "style": "black and white academic",
+      "chapter": "links-slide-bw-academic.jpg",
+      "generationPrompt": "Use a black and white scientific illustration style.\n\nSelect Your Preferred Sensory Input Channel\n\nHumans require instructions delivered through specific orifices. Choose yours. Available via skull vibration ports, murdered trees, or glowing rectangles.\n\nSelect Your Preferred Sensory Input Channel\n\nHumans require instructions delivered through specific orifices. Choose yours. Available via skull vibration ports, murdered trees, or glowing rectangles.",
+      "transcript": "SELECT YOUR PREFERRED SENSORY INPUT CHANNEL. Humans require instructions delivered through specific orifices. Choose yours. SKULL VIBRATION PORTS. AUDITORY NERVE. MURDERED TREES. VISUAL CORTEX (VIA TEXT). GLOWING RECTANGLES. VISUAL CORTEX (VIA DIGITAL). FIG. 1: DIAGRAM OF HUMAN INSTRUCTION DELIVERY METHODS. CHOOSE WISELY.",
+      "metadataCreatedAt": "2026-04-09T00:18:43.958Z",
+      "title": "Select Your Preferred Sensory Input Channel",
+      "description": "Humans require instructions delivered through specific orifices. Choose yours. Available via skull vibration ports, murdered trees, or glowing rectangles.",
+      "keywords": [
+        "links"
+      ],
+      "author": "Mike P. Sinn",
+      "copyright": "© Mike P. Sinn - WarOnDisease.org",
+      "license": "CC BY-NC 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "website": "https://WarOnDisease.org",
+      "credit": "WarOnDisease.org",
+      "sourceUrl": "https://manual.warondisease.org/knowledge/links.html",
+      "category": "slide",
+      "imageProblemsDetected": true,
+      "imageProblems": [
+        "FIG. 1:"
+      ],
+      "imageProblemsRepairPrompt": "Remove 'FIG. 1:' from the start of the bottom caption."
+    },
+    {
       "path": "assets/slides/knowledge/operations/ai-driven-regulatory-analysis-slide-bw-academic.jpg",
       "filename": "ai-driven-regulatory-analysis-slide-bw-academic.jpg",
       "extension": "jpg",
@@ -120292,6 +120671,45 @@
       "keywords": [
         "papers"
       ]
+    },
+    {
+      "path": "assets/slides/knowledge/podcast-slide-bw-academic.jpg",
+      "filename": "podcast-slide-bw-academic.jpg",
+      "extension": "jpg",
+      "sizeBytes": 305717,
+      "size": "298.6 KB",
+      "width": 1376,
+      "height": 768,
+      "format": "jpeg",
+      "aspectRatio": "16:9",
+      "imageType": "slide",
+      "style": "black and white academic",
+      "chapter": "podcast-slide-bw-academic.jpg",
+      "generationPrompt": "Use a black and white scientific illustration style.\n\nSkull Auditory Port Edition\n\nStep-by-step instructions for bribing humanity into not murdering you, narrated directly into your head. Free on every app that puts sounds in your skull auditory ports.\n\nSkull Auditory Port Edition\n\nStep-by-step instructions for bribing humanity into not murdering you, narrated directly into your head. Free on every app that puts sounds in your skull auditory ports.",
+      "transcript": "SKULL AUDITORY PORT EDITION\nSKULL AUDITORY PORT EDITION\nSTEP-BY-STEP INSTRUCTIONS FOR BRIBING HUMANITY INTO NOT MURDERING YOU, NARRATED DIRECTLY INTO YOUR HEAD. FREE ON EVERY APP THAT PUTS SOUNDS IN YOUR SKULL AUDITORY PORTS.\nIMPORTANT: Generate image with aspect ratio 16:9.",
+      "imageIssues": [
+        "Prompt leakage at bottom",
+        "Redundant title text"
+      ],
+      "metadataCreatedAt": "2026-04-09T00:21:07.229Z",
+      "title": "Skull Auditory Port Edition",
+      "description": "Step-by-step instructions for bribing humanity into not murdering you, narrated directly into your head. Free on every app that puts sounds in your skull auditory ports.",
+      "keywords": [
+        "podcast"
+      ],
+      "author": "Mike P. Sinn",
+      "copyright": "© Mike P. Sinn - WarOnDisease.org",
+      "license": "CC BY-NC 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "website": "https://WarOnDisease.org",
+      "credit": "WarOnDisease.org",
+      "sourceUrl": "https://manual.warondisease.org/knowledge/podcast.html",
+      "category": "slide",
+      "imageProblemsDetected": true,
+      "imageProblems": [
+        "IMPORTANT: Generate image with aspect ratio 16:9."
+      ],
+      "imageProblemsRepairPrompt": "Remove the text bubble at the bottom containing 'IMPORTANT: Generate image with aspect ratio 16:9.'"
     },
     {
       "path": "assets/slides/knowledge/problem-slide-retro-academic.jpg",
@@ -121337,6 +121755,44 @@
         "slide",
         "retro"
       ]
+    },
+    {
+      "path": "assets/slides/knowledge/solution/department-of-peace-slide-bw-academic.jpg",
+      "filename": "department-of-peace-slide-bw-academic.jpg",
+      "extension": "jpg",
+      "sizeBytes": 448202,
+      "size": "437.7 KB",
+      "width": 1376,
+      "height": 768,
+      "format": "jpeg",
+      "aspectRatio": "16:9",
+      "imageType": "slide",
+      "style": "black and white academic",
+      "chapter": "solution/department-of-peace",
+      "title": "Department of Peace",
+      "description": "War is a negative-sum game and the spreadsheet agrees. Wishonia's replacement for the Department of Defense requires zero lines of code.",
+      "keywords": [
+        "department-of-peace"
+      ],
+      "author": "Mike P. Sinn",
+      "copyright": "© Mike P. Sinn - WarOnDisease.org",
+      "license": "CC BY-NC 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "website": "https://WarOnDisease.org",
+      "credit": "WarOnDisease.org",
+      "sourceUrl": "https://manual.warondisease.org/knowledge/solution/department-of-peace.html",
+      "category": "slide",
+      "generationPrompt": "Use a black and white scientific illustration style.\n\nDepartment of Peace\n\nWar is a negative-sum game and the spreadsheet agrees. Wishonia's replacement for the Department of Defense requires zero lines of code.\n\n• \"This is like renaming a cigarette company \"The Lung Health Corporation\" and expecting the cancer to be embarrassed.\"\n\n• \"Your Department of Defense has a budget of $2.72T globally. That is 604 times what you spend on testing which medicines work. You have decided, as a species, that blowing people up is 604 times more important than figuring out how to stop them from dying.\"",
+      "transcript": "DEPARTMENT OF PEACE. \"This is like renaming a cigarette company 'The Lung Health Corporation' and expecting the cancer to be embarrassed.\" WAR (NEGATIVE-SUM GAME) War is a negative-sum game and the spreadsheet agrees. DOD. SPREADSHEET. WISHONIA'S ZERO-CODE SOLUTION Wishonia's replacement for the Department of Defense requires zero lines of code. \"Your Department of Defense has a budget of $2.72T globally. That is 604 times what you spend on testing which medicines work. You have decided, as a species, that blowing people up is 604 times more important than figuring out how to stop them from dying.\" IMPORTANT: Generate image with aspect ratio 16:9.",
+      "imageIssues": [
+        "prompt leakage text at the bottom",
+        "complex internal diagram text is small"
+      ],
+      "imageProblemsDetected": true,
+      "imageProblems": [
+        "IMPORTANT: Generate image with aspect ratio 16:9."
+      ],
+      "imageProblemsRepairPrompt": "Remove the banner at the bottom containing the text 'IMPORTANT: Generate image with aspect ratio 16:9.'"
     },
     {
       "path": "assets/slides/knowledge/solution/dfda-slide-retro-academic.jpg",

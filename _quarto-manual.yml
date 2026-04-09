@@ -434,8 +434,10 @@ format:
   html:
     lightbox: auto
     theme:
-      - cosmo
-      #- neobrutalist.scss
+      light:
+        - cosmo
+      dark:
+        - darkly
     # Alternative themes: lux, flatly, sandstone, minty
     mermaid:
       theme: neutral  # Uses grayscale/minimal colors for black and white diagrams
