@@ -38,15 +38,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 65 parameters used in the analysis, organized by type:
+This appendix documents all 68 parameters used in the analysis, organized by type:
 
-- External sources (peer-reviewed): 34
-- Calculated values: 22
+- External sources (peer-reviewed): 36
+- Calculated values: 23
 - Core definitions: 9
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (22 parameters) • [External Data Sources](#sec-external) (34 parameters) • [Core Definitions](#sec-definitions) (9 parameters)
+[Calculated Values](#sec-calculated) (23 parameters) • [External Data Sources](#sec-external) (36 parameters) • [Core Definitions](#sec-definitions) (9 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -753,6 +753,38 @@ Funding_{treaty} \\
 $$
 
 *✓ High confidence*
+
+:::
+
+### Current US Military Spending vs Pre-WW2 Baseline (Multiplier): 30.6x {#sec-us_military_spending_current_vs_prewar_multiplier}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Ratio of current US military spending to pre-WW2 baseline in constant dollars ($886B / $29B)
+
+**Inputs**:
+
+- [US Military Spending in 2024](#sec-us_military_spending_2024_annual) 📊: $886B
+- [US Military Spending in 1939 (Constant 2024 Dollars)](#sec-us_military_spending_1939_annual_2024usd) 📊: $29B
+
+$$
+\begin{gathered}
+Ratio_{US,2024:1939} \\
+= \frac{Spending_{US,2024}}{Spending_{US,1939}} \\
+= \frac{\$886B}{\$29B} \\
+= 30.6
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-us_military_spending_current_vs_prewar_multiplier.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-us_military_spending_current_vs_prewar_multiplier.qmd >}}
 
 :::
 
@@ -1896,6 +1928,38 @@ Standard economic value per QALY
 #### Input Distribution
 
 {{< include ../figures/distribution-standard_economic_qaly_value_usd.qmd >}}
+
+*✓ High confidence*
+
+:::
+
+### US Military Spending in 1939 (Constant 2024 Dollars): $29B {#sec-us_military_spending_1939_annual_2024usd}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+US military spending in 1939 (pre-WW2 baseline) in constant 2024 dollars
+
+**Source**: [@us-military-spending-historical-constant-dollars]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*✓ High confidence*
+
+:::
+
+### US Military Spending in 2024: $886B {#sec-us_military_spending_2024_annual}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+US military spending in 2024 in constant dollars
+
+**Source**: [@us-military-spending-historical-constant-dollars]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
 
 *✓ High confidence*
 
