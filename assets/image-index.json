@@ -1,7 +1,7 @@
 {
-  "totalImages": 3208,
-  "totalSizeBytes": 1871246333,
-  "totalSize": "1784.6 MB",
+  "totalImages": 3220,
+  "totalSizeBytes": 1876049554,
+  "totalSize": "1789.1 MB",
   "images": [
     {
       "path": "assets/audiobook/manual-paperback/video/keyframes/index-manual-scene-01-16x9.jpg",
@@ -104872,6 +104872,37 @@
       ]
     },
     {
+      "path": "assets/infographics/knowledge/solution/aligned-election-commission-infographic-bw-academic.jpg",
+      "filename": "aligned-election-commission-infographic-bw-academic.jpg",
+      "extension": "jpg",
+      "sizeBytes": 413807,
+      "size": "404.1 KB",
+      "width": 896,
+      "height": 1200,
+      "format": "jpeg",
+      "aspectRatio": "3:4",
+      "imageType": "infographic",
+      "style": "black and white academic",
+      "chapter": "solution/aligned-election-commission",
+      "generationPrompt": "Use a black and white scientific illustration style.\n\nThe Aligned Election Commission\n\nYour politicians are funded by the people they're supposed to regulate. Wishonia replaces campaign finance with a single alignment score.\n\n\r\n\r\nBribery With Extra Steps\r\n\r\nYour politicians are funded by the people they're supposed to regulate. You call this \"campaign finance.\" On my planet, we call it bribery with extra steps.\r\n\r\nThe 2024 US election cycle cost $4.7 billion. Annual lobbying expenditures run another $3.7 billion. The Federal Election Commission has 6 commissioners, and they deadlock on purpose. 0.01% of the population provides the majority of campaign funds. Campaign donors get a 760% return on their lobbying investments. You, the citizen, get a form letter.\r\n\r\nThe system is working perfectly. Just not for you.\r\n\r\nThe Alignment Score\r\n\r\nWishonia replaces the entire campaign finance apparatus with one number per politician: the Citizen Alignment Score.\r\n\r\nHow closely do their votes match what citizens actually want? Public. Immutable. Updated in real-time. Cannot be lobbied.\r\n\r\n\r\n\r\nRepresent citizens well, get funded. Represent donors well, get nothing.\r\n\r\nThe 67% Problem\r\n\r\nSince Citizens United, undisclosed political spending has increased 67%. Your Supreme Court ruled that money is speech. This means people with more money have more speech. Your founders fought a revolution over the principle that all men are created equal, and then your highest court decided that some men's speech is 4.7 billion dollars more equal.\r\n\r\nThe FEC was designed to prevent this. The FEC has 6 commissioners. They tie 3-3 on every consequential vote. This is not a malfunction. This is the design. A regulator that cannot regulate is the best regulator money can buy.\r\n\r\nWhat Changes\r\n\r\nUnder the Aligned Election Commission:\r\n\r\n- No donors. No PACs. No dark money. Just math measuring representation.\r\n- Politicians funded proportional to how well they represent citizens, not how well they please donors.\r\n- Below minimum alignment? $0. Above it? Funded proportionally.\r\n- Every citizen can verify the score. Every vote is on the record. The algorithm shows its work.\r\n\r\nThe $8.4 billion currently spent on campaign finance and lobbying ($4.7B + $3.7B) is eliminated. More importantly, the incentive for politicians to serve donors instead of citizens is eliminated. That second part is worth considerably more than $8.4 billion.\r\n\r\nYour current system is a vending machine where lobbyists insert money and legislation comes out. The replacement is a scoreboard where citizens insert preferences and representation comes out. The technology exists. The math is trivial. The obstacle is that the people who would need to approve the change are the same people who benefit from the current system. This is why the 1% Treaty 1-pct-treaty-impact-paper-2025 works around them instead of through them.",
+      "transcript": "THE ALIGNED ELECTION COMMISSION. YOUR POLITICIANS ARE FUNDED BY THE PEOPLE THEY'RE SUPPOSED TO REGULATE. WISHONIA REPLACES CAMPAIGN FINANCE WITH A SINGLE ALIGNMENT SCORE. BRIBERY WITH EXTRA STEPS. MONEY = SPEECH (SUPREME COURT RULING). $4.7B CAMPAIGNS + $3.7B LOBBYING. CURRENT SYSTEM: THE LOBBYIST VENDING MACHINE. LOBBYISTS / DONORS (0.01%). THE SYSTEM IS WORKING PERFECTLY. JUST NOT FOR YOU. 760% RETURN ON INVESTMENT. LEGISLATION / FAVORABLE VOTES. POLITICIANS / LEGISLATORS. FEDERAL ELECTION COMMISSION (FEC). 3-3 DEADLOCK BY DESIGN. FORM LETTER. THE ALIGNMENT SCORE. CITIZEN PREFERENCES. POLITICIAN VOTES. ALGORITHM. CITIZEN ALIGNMENT SCORE: 82%. PUBLIC, IMMUTABLE, UPDATED IN REAL-TIME, CANNOT BE LOBBIED. 50% MINIMUM ALIGNMENT THRESHOLD. REPRESENT CITIZENS WELL (HIGH SCORE): FUNDED PROPORTIONALLY. REPRESENT DONORS WELL (LOW SCORE): GET NOTHING ($0). WHAT CHANGES. UNDISCLOSED POLITICAL SPENDING: INCREASED 67%. CITIZENS UNITED IMPACT. ALIGNED ELECTION COMMISSION SCOREBOARD. NO DONORS. NO PACS. NO DARK MONEY. JUST MATH. $0 MINIMUM ALIGNMENT. FUNDED PROPORTIONALLY. THE $8.4 BILLION CURRENTLY SPENT ON CAMPAIGN FINANCE & LOBBYING IS ELIMINATED. MORE IMPORTANTLY, THE INCENTIVE FOR POLITICIANS TO SERVE DONORS INSTEAD OF CITIZENS IS ELIMINATED. OBSTACLE: BENEFICIARIES OF CURRENT SYSTEM. SOLUTION: 1% TREATY WORKS AROUND THEM. See 1-pct-treaty-impact-paper-2025.",
+      "metadataCreatedAt": "2026-04-09T00:33:12.189Z",
+      "title": "The Aligned Election Commission",
+      "description": "Your politicians are funded by the people they're supposed to regulate. Wishonia replaces campaign finance with a single alignment score.",
+      "keywords": [
+        "aligned-election-commission"
+      ],
+      "author": "Mike P. Sinn",
+      "copyright": "© Mike P. Sinn - WarOnDisease.org",
+      "license": "CC BY-NC 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "website": "https://WarOnDisease.org",
+      "credit": "WarOnDisease.org",
+      "sourceUrl": "https://manual.warondisease.org/knowledge/solution/aligned-election-commission.html",
+      "category": "infographic",
+      "imageProblemsDetected": false
+    },
+    {
       "path": "assets/infographics/knowledge/solution/aligning-incentives-infographic-retro-academic.jpg",
       "filename": "aligning-incentives-infographic-retro-academic.jpg",
       "extension": "jpg",
@@ -104965,6 +104996,67 @@
       "category": "infographic",
       "generationPrompt": "Use a black and white scientific illustration style.\n\nThe Automated Revenue Service\n\n74,000 pages of tax code replaced by six lines of code. The IRS employs 83,000 humans to do what a smart contract does automatically.\n\n\r\n\r\n74,000 Pages of Instructions for Giving Money to the Government\r\n\r\nYour tax system has 74,000 pages of rules. To put that in perspective, the entire Harry Potter series is 4,224 pages. Your tax code is 17.5 Harry Potters long. Except Harry Potter has a coherent plot and your tax code has loopholes.\r\n\r\nThe Internal Revenue Service employs 83,000 humans to interpret these rules. It costs $12.3 billion per year to operate. Americans spend an additional 6.1 billion hours per year filling out forms. An entire profession (\"accountant\") exists solely to decode rules that your government wrote for itself.\r\n\r\nOn my planet, when a system requires 83,000 interpreters, we don't hire more interpreters. We rewrite the system.\r\n\r\nThe Replacement\r\n\r\n\r\n\r\nSix lines. Every transfer automatically deducts 0.5% and sends it to the treasury. No filing. No forms. No audits. No compliance departments. No offshore accounts. No accountants. The tax is unavoidable because it IS the protocol.\r\n\r\nYou cannot lobby a smart contract. You cannot offshore a protocol. Every loophole in your 74,000 pages exists because someone paid a lobbyist to put it there. The replacement has no lobbyists because there is nothing to lobby.\r\n\r\nThe Numbers\r\n\r\nYour current system costs $12.3 billion in direct IRS budget plus over $200 billion in annual compliance costs. That is $640 per American per year, just in paperwork. Not taxes. Paperwork about taxes.\r\n\r\nThe replacement costs approximately nothing. The 0.5% transaction tax collects the same revenue at roughly 0% administrative cost. The savings alone could fund a small country. Or, more usefully, clinical trials.\r\n\r\nWhy You Haven't Done This\r\n\r\nThe 74,000 pages are not a bug. Every page represents a negotiation between a lobbyist and a legislator. Every loophole is a feature, purchased and maintained by someone who benefits from it. Your tax system is not complicated because taxation is complicated. Your tax system is complicated because complexity is profitable for the people who write the rules.\r\n\r\n83,000 IRS employees interpreting 74,000 pages to do what six lines of code does automatically. And you wonder where your taxes go.",
       "transcript": "THE AUTOMATED REVENUE SERVICE: A STUDY IN SYSTEM ARCHITECTURE. CURRENT SYSTEM: THE INTERNAL REVENUE SERVICE. 74,000 PAGES OF TAX CODE. COMPLETE HARRY POTTER SERIES (4,224 PAGES). 17.5x LONGER. CONTAINS LOOPHOLES, NOT PLOT. 83,000 HUMAN INTERPRETERS & IRS EMPLOYEES. COST: $12.3 BILLION/YEAR + 6.1 BILLION HOURS/YEAR IN COMPLIANCE. THE REPLACEMENT: AUTOMATED SMART CONTRACT PROTOCOL. 1. TRANSACTION_EVENT(SENDER, RECEIVER, AMOUNT) { 2. TAX = AMOUNT * 0.005; 3. SEND(SENDER, TREASURY, TAX); 4. SEND(SENDER, RECEIVER, AMOUNT - TAX); 5. RECORD_TRANSACTION(SENDER, RECEIVER, TAX); 6. }. TRANSACTION. 0.5% TAX (TO TREASURY). REMAINING AMOUNT (TO RECEIVER). AUTOMATICALLY DEDUCTS & SENDS. NO FILING. NO FORMS. NO AUDITS. NO COMPLIANCE DEPARTMENTS. NO OFFSHORE ACCOUNTS. NO ACCOUNTANTS. TAX IS UNAVOIDABLE: IT IS THE PROTOCOL. COST: ≈0%. SAVINGS COULD FUND CLINICAL TRIALS. WHY YOU HAVEN'T DONE THIS. ACCOUNTANT. DECODING RULES THE GOVERNMENT WROTE FOR ITSELF. 74,000 PAGES ARE NOT A BUG. EVERY PAGE IS A PURCHASED FEATURE. YOU CANNOT LOBBY A SMART CONTRACT. NOTHING TO LOBBY. 83,000 HUMANS INTERPRETING 74,000 PAGES TO DO WHAT SIX LINES OF CODE DOES AUTOMATICALLY. COMPLEXITY IS PROFITABLE FOR THE PEOPLE WHO WRITE THE RULES.",
+      "imageProblemsDetected": false
+    },
+    {
+      "path": "assets/infographics/knowledge/solution/decentralized-accountability-office-infographic-bw-academic.jpg",
+      "filename": "decentralized-accountability-office-infographic-bw-academic.jpg",
+      "extension": "jpg",
+      "sizeBytes": 442742,
+      "size": "432.4 KB",
+      "width": 896,
+      "height": 1200,
+      "format": "jpeg",
+      "aspectRatio": "3:4",
+      "imageType": "infographic",
+      "style": "black and white academic",
+      "chapter": "solution/decentralized-accountability-office",
+      "generationPrompt": "Use a black and white scientific illustration style.\n\nThe Decentralized Accountability Office\n\nYou pay 3,400 humans to audit a ledger that could audit itself. Then you wait eighteen months for the results.\n\n\r\n\r\nAuditing the Auditors\r\n\r\nThe Government Accountability Office employs 3,400 humans to investigate how your government spends money. It costs $803 million per year. It produces 900+ reports annually. 33% of its recommendations are ignored. An average audit takes 18 months from start to published report.\r\n\r\nBy the time you read the audit, the money is spent, the people are gone, and the next scandal has started. This is like hiring a lifeguard who arrives 18 months after someone drowns and then writes a report about it. 33% of the time, the pool ignores the report.\r\n\r\nThe Replacement\r\n\r\n\r\n\r\nWhen every government transaction is on a public ledger, auditing is free, instant, and automatic. There is nothing to investigate because there is nothing to hide. The ledger is the audit.\r\n\r\nYour species invented the blockchain and then did not use it for the one thing it is obviously, spectacularly useful for. This is like inventing the fire extinguisher and then continuing to put out fires by hitting them with a shoe.\r\n\r\nThe Math of Transparency\r\n\r\nCurrent system: 3,400 auditors sample a fraction of government spending. Coverage is incomplete by design. The rest is trusted on faith. This is how you get $35 trillion in debt without anyone being able to explain precisely where it went.\r\n\r\nReplacement: every transaction, every department, always. Not a sample. Not a rotation. Not periodically. Continuously. Citizens can audit directly instead of trusting auditors who publish findings that get ignored one-third of the time.\r\n\r\nThe $803 million in annual savings is the smallest benefit. The real value is that corruption becomes architecturally difficult rather than merely illegal. Your current system makes corruption illegal and then provides 18 months of unmonitored darkness in which to do it. The replacement makes corruption visible in seconds. These are different systems.\r\n\r\nWhy Eighteen Months?\r\n\r\nThe GAO audit cycle is not slow because auditing is inherently slow. Auditing a public ledger takes milliseconds. The cycle is slow because the ledger is private, the records are scattered across agencies, the agencies are uncooperative, the format is inconsistent, and the political incentive is to delay.\r\n\r\nWhen the ledger is public, immutable, and real-time, every one of those obstacles disappears. Not because you solved them. Because you made them structurally impossible.\r\n\r\n3,400 humans, $803 million a year, 18-month delays, 33% of recommendations ignored. Versus: a public ledger that anyone can read, instantly, for free, forever. Your species prefers the first option. I find this very human of you.",
+      "transcript": "THE DECENTRALIZED ACCOUNTABILITY OFFICE\nYou pay 3,400 humans to audit a ledger that could audit itself. Then you wait eighteen months for the results.\nAUDITING THE AUDITORS\nThe Government Accountability Office employs 3,400 humans to investigate how your government spends money. It costs $803 million per year. It produces 900+ reports annually. 33% of its recommendations are ignored. An average audit takes 18 months from start to published report.\nGOVERNMENT ACCOUNTABILITY OFFICE\nTAX PAYER FUNDS\n18 MONTHS DELAY\nAUDIT REPORT (18 MONTHS LATE!)\nIGNORED RECOMMENDATIONS (33%)\nBy the time you read the audit, the money is spent, the people are gone, and the next scandal has started. This is like hiring a lifeguard who arrives 18 months after someone drowns and then writes a report about it. 33% of the time, the pool ignores the report.\nTHE REPLACEMENT\nWhen every government transaction is on a public ledger, auditing is free, instant, and automatic. There is nothing to investigate because there is nothing to hide. The ledger is the audit.\nGOVERNMENT SPENDING\nDEPARTMENT A\nDEPARTMENT B\nPUBLIC LEDGER / BLOCKCHAIN\nCITIZEN TRANSACTION\nCITIZEN AUDIT (INSTANT & CONTINUOUS)\nYour species invented the blockchain and then did not use it for the one thing it is obviously, spectacularly useful for. This is like inventing the fire extinguisher and then continuing to put out fires by hitting them with a shoe.\nTHE MATH OF TRANSPARENCY\nCurrent system: 3,400 auditors sample a fraction of government spending. Coverage is incomplete by design. The rest is trusted on faith. This is how you get $35 trillion in debt without anyone being able to explain precisely where it went.\nReplacement: every transaction, every department, always. Not a sample. Not a rotation. Not periodically. Continuously. Citizens can audit directly instead of trusting auditors who publish findings that get ignored one-third of the time.\nThe $803 million in annual savings is the smallest benefit. The real value is that corruption becomes architecturally difficult rather than merely illegal. Your current system makes corruption illegal and then provides 18 months of unmonitored darkness in which to do it. The replacement makes corruption visible in seconds. These are different systems.\nWHY EIGHTEEN MONTHS?\nThe GAO audit cycle is not slow because auditing is inherently slow. Auditing a public ledger takes milliseconds. The cycle is slow because the ledger is private, the records are scattered across agencies, the agencies are uncooperative, the format is inconsistent, and the political incentive is to delay.\nWhen the ledger is public, immutable, and real-time, every one of those obstacles disappears. Not because you solved them. Because you made them structurally impossible.\n3,400 humans, $803 million a year, 18-month delays, 33% of recommendations ignored. Versus: a public ledger that anyone can read, instantly, for free, forever. Your species prefers the first option. I find this very human of you.",
+      "metadataCreatedAt": "2026-04-09T00:36:51.915Z",
+      "title": "The Decentralized Accountability Office",
+      "description": "You pay 3,400 humans to audit a ledger that could audit itself. Then you wait eighteen months for the results.",
+      "keywords": [
+        "decentralized-accountability-office"
+      ],
+      "author": "Mike P. Sinn",
+      "copyright": "© Mike P. Sinn - WarOnDisease.org",
+      "license": "CC BY-NC 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "website": "https://WarOnDisease.org",
+      "credit": "WarOnDisease.org",
+      "sourceUrl": "https://manual.warondisease.org/knowledge/solution/decentralized-accountability-office.html",
+      "category": "infographic",
+      "imageProblemsDetected": false
+    },
+    {
+      "path": "assets/infographics/knowledge/solution/decentralized-census-bureau-infographic-bw-academic.jpg",
+      "filename": "decentralized-census-bureau-infographic-bw-academic.jpg",
+      "extension": "jpg",
+      "sizeBytes": 360179,
+      "size": "351.7 KB",
+      "width": 896,
+      "height": 1200,
+      "format": "jpeg",
+      "aspectRatio": "3:4",
+      "imageType": "infographic",
+      "style": "black and white academic",
+      "chapter": "solution/decentralized-census-bureau",
+      "title": "The Decentralized Census Bureau",
+      "description": "You spend fourteen billion dollars to count everyone once every ten years. citizenCount() returns in fifty milliseconds.",
+      "keywords": [
+        "decentralized-census-bureau"
+      ],
+      "author": "Mike P. Sinn",
+      "copyright": "© Mike P. Sinn - WarOnDisease.org",
+      "license": "CC BY-NC 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "website": "https://WarOnDisease.org",
+      "credit": "WarOnDisease.org",
+      "sourceUrl": "https://manual.warondisease.org/knowledge/solution/decentralized-census-bureau.html",
+      "category": "infographic",
+      "generationPrompt": "Use a black and white scientific illustration style.\n\nThe Decentralized Census Bureau\n\nYou spend fourteen billion dollars to count everyone once every ten years. citizenCount() returns in fifty milliseconds.\n\n\r\n\r\nFourteen Billion Dollars to Count\r\n\r\nThe United States Census Bureau spent $14.2 billion on the 2020 Census. That is $14.2 billion to answer the question \"how many of you are there?\" once every ten years.\r\n\r\nThe answer is stale before it is published. Data collection to published results takes 8 months. Your entire congressional apportionment (who represents whom, and how many seats each state gets) is based on data that is, on average, 5 years old. You are governed by arithmetic from the past.\r\n\r\nThe 2020 Census still missed approximately 5% of the population, disproportionately the poorest and most marginalized. The people who most need to be counted are the hardest to count. Your system for counting everyone does not count everyone.\r\n\r\nThe Replacement\r\n\r\n\r\n\r\nOne line. Returns in 50 milliseconds. Updated the instant someone registers. Always current. Always complete. Cost: approximately nothing.\r\n\r\nEvery citizen registers once with World ID (cryptographic proof of unique personhood). The count updates in real-time. No door-to-door canvassing. No mail-in forms. No processing delays.\r\n\r\nThe Undercount Problem, Solved Backwards\r\n\r\nYour Census has a chronic undercount problem. The hardest-to-reach communities (homeless, rural, undocumented, non-English-speaking) are systematically missed. You have spent decades trying to solve this with more door-knockers, more mailers, more languages, more outreach. The undercount persists.\r\n\r\nThe replacement solves this backwards. Under UBI (Universal Security Administration), registration equals money. The people who are hardest to reach have the strongest incentive to register. You do not need to find them. They find you. Because you are holding their money.\r\n\r\nZero undercount. Not because you counted better, but because you made being counted profitable.\r\n\r\nContinuous Data, Not Decade-Old Snapshots\r\n\r\nYour Census is constitutionally mandated once per decade. In the 10 years between counts, your population changes by millions. People are born, die, move, immigrate, emigrate. Your policy decisions throughout that decade are based on data that grows more wrong every day.\r\n\r\nThe replacement provides continuous demographic data. Not collected once a decade, but streaming in real-time. Policy decisions use this morning's data, not last decade's. The cost difference: $14.2 billion versus one view function.\r\n\r\nYour species spent $14.2 billion to count everyone once. I return citizenCount() in fifty milliseconds. Every time someone asks. For free. And I never miss 5% of the population because the 5% I might miss are the ones most motivated to show up.",
+      "transcript": "THE DECENTRALIZED CENSUS BUREAU citizenCount() returns in fifty milliseconds. CURRENT SYSTEM (The United States Census Bureau) BUREAUCRACY PAPER FORMS MANUAL PROCESSING $14.2 BILLION (2020 CENSUS) ONCE EVERY 10 YEARS 8 MONTHS DELAY (DATA COLLECTION TO PUBLISHED RESULTS) 5% UNDERCOUNT (DISPROPORTIONATELY MARGINALIZED) STALE DATA: Apportionment based on ~5-year-old arithmetic. Governed by the PAST. CURRENT: DECADE-OLD SNAPSHOTS CENSUS 2010 CENSUS 2020 DATA GROWS WRONG DAILY THE REPLACEMENT (Decentralized Census) WORLD ID (CRYPTOGRAPHIC PROOF) citizenCount() 50 MILLISECONDS LEDGER -0 00 COST: APPROXIMATELY NOTHING ALWAYS CURRENT. ALWAYS COMPLETE. UBI INCENTIVE (REGISTER = MONEY) ZERO UNDERCOUNT: Hardest-to-reach have strongest incentive. They find you. REAL-TIME POLICY. CENSUS 2030 REPLACEMENT: CONTINUOUS DATA STREAM THIS MORNING'S DATA REAL-TIME INSTANT UPDATES 'Your species spent $14.2 billion to count everyone once. I return citizenCount() in fifty milliseconds. Every time someone asks. For free. And I never miss 5% of the population because the 5% I might miss are the ones most motivated to show up.' — John T. Million",
       "imageProblemsDetected": false
     },
     {
@@ -105163,6 +105255,46 @@
         "solution",
         "incentive"
       ]
+    },
+    {
+      "path": "assets/infographics/knowledge/solution/universal-security-administration-infographic-bw-academic.jpg",
+      "filename": "universal-security-administration-infographic-bw-academic.jpg",
+      "extension": "jpg",
+      "sizeBytes": 357245,
+      "size": "348.9 KB",
+      "width": 896,
+      "height": 1200,
+      "format": "jpeg",
+      "aspectRatio": "3:4",
+      "imageType": "infographic",
+      "style": "black and white academic",
+      "chapter": "solution/universal-security-administration",
+      "generationPrompt": "Use a black and white scientific illustration style.\n\nThe Universal Security Administration\n\nYou spend more administering help than you spend helping. 80+ welfare programs replaced by one for-loop.\n\n\r\n\r\nThe Safety Net That Catches Mostly Paperwork\r\n\r\nYour species has invented 80+ overlapping federal welfare programs. Each one has its own bureaucracy, its own application process, its own case workers, its own fraud investigators, and its own waiting period. The administrative overhead approaches 50% of total disbursement.\r\n\r\nYou spend more money deciding who deserves help than you spend helping them. That is not a safety net. That is a jobs program for form designers.\r\n\r\nThe Social Security Administration alone employs over 60,000 people. The annual administrative overhead across all means-tested welfare programs exceeds $1.1 trillion. Applications take an average of 45 days to process. Millions of people who qualify never navigate the paperwork. They fall through cracks in a system whose primary product is cracks.\r\n\r\nThe Replacement\r\n\r\n\r\n\r\nNo applications. No case workers. No means testing. No fraud investigation. No waiting. Just equal splits.\r\n\r\nEvery verified citizen (World ID) gets an equal share. The entire welfare bureaucracy becomes a for-loop. If you are human, you qualify. No committee decides whether you deserve lunch.\r\n\r\nThe Means-Testing Trap\r\n\r\nYour species has a fascinating obsession with making sure that no one receives help who doesn't \"deserve\" it. You spend more catching the 1.5% who cheat than it would cost to just give everyone the money.\r\n\r\nConsider the logic: you have a bucket of money meant for hungry people. You could pour the bucket on hungry people. Instead, you hire 60,000 people to inspect each hungry person, fill out forms about the hungry person, wait 45 days, lose the forms, find the forms, interview the hungry person again, and then give the hungry person slightly less money than it cost to process their application.\r\n\r\nOn Wishonia, we skip directly to the pouring step.\r\n\r\n$1.1 Trillion in Overhead\r\n\r\nThat is more than the GDP of the Netherlands. Spent not on helping people, but on deciding which people deserve help.\r\n\r\nThe replacement costs approximately nothing to operate. The savings could cure diseases, fund infrastructure, or simply be distributed as larger UBI payments. Your species has the resources to eliminate poverty. You are spending those resources on form processing instead.\r\n\r\nThe hardest-to-reach populations (homeless, disabled, undocumented) have the strongest incentive to register under UBI, because registration equals money. Your current system does the opposite: the people who need help most are the ones least equipped to navigate 80 separate application processes. You have built a safety net optimized for people who don't need one.",
+      "transcript": "THE UNIVERSAL SECURITY ADMINISTRATION. You spend more administering help than you spend helping. 80+ welfare programs replaced by one for-loop. FIG. 1: CURRENT SYSTEM (The Safety Net That Catches Mostly Paperwork). RESOURCES (Welfare Programs). HELPING APPLICATIONS. BUREAUCRACY (89+ Overlapping Programs). APPLICATION PROCESS (45-Day Average). CASE WORKERS. FRAUD INVESTIGATORS. WAITING PERIODS. OVERHEAD: APPROACHES 50%. CRACKS. Your species has invented 80+ overlapping federal welfare programs... You spend more money deciding who deserves help than you spend helping them... That is a jobs program for form designers. THE MEANS-TESTING TRAP. MONEY FOR HUNGRY PEOPLE. Your species has a fascinating obsession with making sure that no one receives help who doesn't 'deserve' it... You spend more catching the 1.5% who cheat... On Wishonia, we skip directly to the pouring step. HELP. $1.1 TRILLION IN OVERHEAD. More than the GDP of the Netherlands... Spent not on helping people, but on deciding which people deserve help. THE DIVIDE. FIG. 2: THE REPLACEMENT (UBI). VERIFIED CITIZEN (World ID). FOR-LOOP (Equal Splits). NO APPLICATIONS, NO CASE WORKERS, NO MEANS TESTING, NO FRAUD INVESTIGATION, NO WAITING. Every verified citizen (World ID) gets an equal share. The entire welfare bureaucracy becomes a for-loop. If you are human, you qualify... No committee decides whether you deserve lunch. RESOURCES. OPERATING COST (APPROX. NOTHING). EQUAL SHARE DISBURSEMENT. The savings could cure diseases, fund infrastructure... Your species has the resources to eliminate poverty... You are spending those resources on form processing instead. THE HARDEST-TO-REACH POPULATIONS. World ID UBI. The hardest-to-reach populations... have the strongest incentive to register under UBI... You have built a safety net optimized for people who don't need one.",
+      "imageIssues": [
+        "text-heavy layout",
+        "small font in some descriptions"
+      ],
+      "metadataCreatedAt": "2026-04-09T00:29:36.953Z",
+      "title": "The Universal Security Administration",
+      "description": "You spend more administering help than you spend helping. 80+ welfare programs replaced by one for-loop.",
+      "keywords": [
+        "universal-security-administration"
+      ],
+      "author": "Mike P. Sinn",
+      "copyright": "© Mike P. Sinn - WarOnDisease.org",
+      "license": "CC BY-NC 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "website": "https://WarOnDisease.org",
+      "credit": "WarOnDisease.org",
+      "sourceUrl": "https://manual.warondisease.org/knowledge/solution/universal-security-administration.html",
+      "category": "infographic",
+      "imageProblemsDetected": true,
+      "imageProblems": [
+        "FIG. 1:",
+        "FIG. 2:"
+      ],
+      "imageProblemsRepairPrompt": "Remove 'FIG. 1:' and 'FIG. 2:' from the subheadings."
     },
     {
       "path": "assets/infographics/knowledge/solution/war-on-disease-infographic-retro-academic.jpg",
@@ -111631,6 +111763,41 @@
       ]
     },
     {
+      "path": "assets/og-images/knowledge/solution/aligned-election-commission-og-bw-academic.jpg",
+      "filename": "aligned-election-commission-og-bw-academic.jpg",
+      "extension": "jpg",
+      "sizeBytes": 407452,
+      "size": "397.9 KB",
+      "width": 1376,
+      "height": 768,
+      "format": "jpeg",
+      "aspectRatio": "16:9",
+      "imageType": "og",
+      "style": "black and white academic",
+      "chapter": "solution/aligned-election-commission",
+      "generationPrompt": "Use a black and white scientific illustration style.\n\nThe Aligned Election Commission\n\nYour politicians are funded by the people they're supposed to regulate. Wishonia replaces campaign finance with a single alignment score.\n\n\r\n\r\nBribery With Extra Steps\r\n\r\nYour politicians are funded by the people they're supposed to regulate. You call this \"campaign finance.\" On my planet, we call it bribery with extra steps.\r\n\r\nThe 2024 US election cycle cost $4.7 billion. Annual lobbying expenditures run another $3.7 billion. The Federal Election Commission has 6 commissioners, and they deadlock on purpose. 0.01% of the population provides the majority of campaign funds. Campaign donors get a 760% return on their lobbying investments. You, the citizen, get a form letter.\r\n\r\nThe system is working perfectly. Just not for you.\r\n\r\nThe Alignment Score\r\n\r\nWishonia replaces the entire campaign finance apparatus with one number per politician: the Citizen Alignment Score.\r\n\r\nHow closely do their votes match what citizens actually want? Public. Immutable. Updated in real-time. Cannot be lobbied.\r\n\r\n\r\n\r\nRepresent citizens well, get funded. Represent donors well, get nothing.\r\n\r\nThe 67% Problem\r\n\r\nSince Citizens United, undisclosed political spending has increased 67%. Your Supreme Court ruled that money is speech. This means people with more money have more speech. Your founders fought a revolution over the principle that all men are created equal, and then your highest court decided that some men's speech is 4.7 billion dollars more equal.\r\n\r\nThe FEC was designed to prevent this. The FEC has 6 commissioners. They tie 3-3 on every consequential vote. This is not a malfunction. This is the design. A regulator that cannot regulate is the best regulator money can buy.\r\n\r\nWhat Changes\r\n\r\nUnder the Aligned Election Commission:\r\n\r\n- No donors. No PACs. No dark money. Just math measuring representation.\r\n- Politicians funded proportional to how well they represent citizens, not how well they please donors.\r\n- Below minimum alignment? $0. Above it? Funded proportionally.\r\n- Every citizen can verify the score. Every vote is on the record. The algorithm shows its work.\r\n\r\nThe $8.4 billion currently spent on campaign finance and lobbying ($4.7B + $3.7B) is eliminated. More importantly, the incentive for politicians to serve donors instead of citizens is eliminated. That second part is worth considerably more than $8.4 billion.\r\n\r\nYour current system is a vending machine where lobbyists insert money and legislation comes out. The replacement is a scoreboard where citizens insert preferences and representation comes out. The technology exists. The math is trivial. The obstacle is that the people who would need to approve the change are the same people who benefit from the current system. This is why the 1% Treaty 1-pct-treaty-impact-paper-2025 works around them instead of through them.",
+      "transcript": "BRIBERY WITH EXTRA STEPS. $4.7 BILLION ELECTION CYCLE. PACs. DARK MONEY. $3.7 BILLION LOBBYING. DONORS & LOBBYISTS. CURRENT SYSTEM. FEC (6 COMMISSIONERS, DEADLOCKED 3-3). DESIGNED MALFUNCTION. CONGRESS. POLITICIANS. CORPORATE INTERESTS. LEGISLATION FOR DONORS (760% RETURN). THE 67% PROBLEM: Since Citizens United, undisclosed political spending increased 67%. SUPREME COURT: 'Money is Speech.' Some speech is $4.7 billion more equal. 0.01% of population provides majority of funds. CITIZEN. FORM LETTER. Your politicians are funded by the people they're supposed to regulate. You call this 'campaign finance.' On my planet, we call it bribery with extra steps. THE ALIGNED ELECTION COMMISSION. Wishonia replaces campaign finance with a single alignment score. THE ALIGNMENT SCORE. PUBLIC. IMMUTABLE. UPDATED IN REAL-TIME. CANNOT BE LOBBIED. 92% HIGH ALIGNMENT. 0% (BELOW MINIMUM). 100% (PERFECT). ALGORITHM & REAL-TIME MATH. EVERY VOTE ON RECORD, ALGORITHM SHOWS ITS WORK. ALIGNED ELECTION COMMISSION SYSTEM. WHAT CHANGES. PREFERENCES. VOTES. CITIZENS. REPRESENTATION. CITIZEN. PROPORTIONAL FUNDING. NO DONORS. NO PACs. NO DARK MONEY. JUST MATH MEASURING REPRESENTATION. Politicians funded proportional to how well they represent citizens, not how well they please donors. $8.4 BILLION (CAMPAIGN FINANCE + LOBBYING) ELIMINATED. Incentive to serve donors instead of citizens is eliminated. Your current system is a vending machine where lobbyists insert money and legislation comes out. The replacement is a scoreboard where citizens insert preferences and representation comes out. The technology exists. The math is trivial. The obstacle is that the people who would need to approve the change are the same people who benefit from the current system. This is why the 1% Treaty (1-pct-treaty-impact-paper-2025) works around them instead of through them.",
+      "imageIssues": [
+        "cluttered layout",
+        "small text in secondary labels"
+      ],
+      "metadataCreatedAt": "2026-04-09T00:32:15.428Z",
+      "title": "The Aligned Election Commission",
+      "description": "Your politicians are funded by the people they're supposed to regulate. Wishonia replaces campaign finance with a single alignment score.",
+      "keywords": [
+        "aligned-election-commission"
+      ],
+      "author": "Mike P. Sinn",
+      "copyright": "© Mike P. Sinn - WarOnDisease.org",
+      "license": "CC BY-NC 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "website": "https://WarOnDisease.org",
+      "credit": "WarOnDisease.org",
+      "sourceUrl": "https://manual.warondisease.org/knowledge/solution/aligned-election-commission.html",
+      "category": "og-image",
+      "imageProblemsDetected": false
+    },
+    {
       "path": "assets/og-images/knowledge/solution/aligning-incentives-og-retro-academic.jpg",
       "filename": "aligning-incentives-og-retro-academic.jpg",
       "extension": "jpg",
@@ -111726,6 +111893,83 @@
       "sourceUrl": "https://manual.warondisease.org/knowledge/solution/automated-revenue-service.html",
       "category": "og-image",
       "imageProblemsDetected": false
+    },
+    {
+      "path": "assets/og-images/knowledge/solution/decentralized-accountability-office-og-bw-academic.jpg",
+      "filename": "decentralized-accountability-office-og-bw-academic.jpg",
+      "extension": "jpg",
+      "sizeBytes": 472860,
+      "size": "461.8 KB",
+      "width": 1376,
+      "height": 768,
+      "format": "jpeg",
+      "aspectRatio": "16:9",
+      "imageType": "og",
+      "style": "black and white academic",
+      "chapter": "solution/decentralized-accountability-office",
+      "generationPrompt": "Use a black and white scientific illustration style.\n\nThe Decentralized Accountability Office\n\nYou pay 3,400 humans to audit a ledger that could audit itself. Then you wait eighteen months for the results.\n\n\r\n\r\nAuditing the Auditors\r\n\r\nThe Government Accountability Office employs 3,400 humans to investigate how your government spends money. It costs $803 million per year. It produces 900+ reports annually. 33% of its recommendations are ignored. An average audit takes 18 months from start to published report.\r\n\r\nBy the time you read the audit, the money is spent, the people are gone, and the next scandal has started. This is like hiring a lifeguard who arrives 18 months after someone drowns and then writes a report about it. 33% of the time, the pool ignores the report.\r\n\r\nThe Replacement\r\n\r\n\r\n\r\nWhen every government transaction is on a public ledger, auditing is free, instant, and automatic. There is nothing to investigate because there is nothing to hide. The ledger is the audit.\r\n\r\nYour species invented the blockchain and then did not use it for the one thing it is obviously, spectacularly useful for. This is like inventing the fire extinguisher and then continuing to put out fires by hitting them with a shoe.\r\n\r\nThe Math of Transparency\r\n\r\nCurrent system: 3,400 auditors sample a fraction of government spending. Coverage is incomplete by design. The rest is trusted on faith. This is how you get $35 trillion in debt without anyone being able to explain precisely where it went.\r\n\r\nReplacement: every transaction, every department, always. Not a sample. Not a rotation. Not periodically. Continuously. Citizens can audit directly instead of trusting auditors who publish findings that get ignored one-third of the time.\r\n\r\nThe $803 million in annual savings is the smallest benefit. The real value is that corruption becomes architecturally difficult rather than merely illegal. Your current system makes corruption illegal and then provides 18 months of unmonitored darkness in which to do it. The replacement makes corruption visible in seconds. These are different systems.\r\n\r\nWhy Eighteen Months?\r\n\r\nThe GAO audit cycle is not slow because auditing is inherently slow. Auditing a public ledger takes milliseconds. The cycle is slow because the ledger is private, the records are scattered across agencies, the agencies are uncooperative, the format is inconsistent, and the political incentive is to delay.\r\n\r\nWhen the ledger is public, immutable, and real-time, every one of those obstacles disappears. Not because you solved them. Because you made them structurally impossible.\r\n\r\n3,400 humans, $803 million a year, 18-month delays, 33% of recommendations ignored. Versus: a public ledger that anyone can read, instantly, for free, forever. Your species prefers the first option. I find this very human of you.",
+      "transcript": "A SCIENTIFIC EXAMINATION OF GOVERNMENT ACCOUNTABILITY SYSTEMS; THE DECENTRALIZED ACCOUNTABILITY OFFICE (DAO); CURRENT SYSTEM: HUMAN-CENTRIC AUDIT CYCLE; AUDIT BUREAUCRACY; AUDIT; 18 MONTHS TO PUBLISH; 33% IGNORED RECOMMENDATIONS; 3,400 HUMANS PAID TO AUDIT A SELF-AUDITING LEDGER; $803 MILLION PER YEAR (COST); 18-MONTH CYCLE; DROWNING (SPENDING); LIKE HIRING A LIFEGUARD WHO ARRIVES 18 MONTHS LATE & WRITES A REPORT. 33% OF THE TIME, THE POOL IGNORES IT. 18-MONTHS LATER; THE MATH OF TRANSPARENCY; CURRENT SYSTEM: INCOMPLETE & FAITH-BASED; GOVERNMENT SPENDING ($35 TRILLION DEBT); 3,400 AUDITORS SAMPLE A FRACTION. COVERAGE IS INCOMPLETE BY DESIGN. THE REST IS TRUSTED ON FAITH. UNEXPLAINED DEBT ACCUMULATION; WHY EIGHTEEN MONTHS? THE GAO AUDIT CYCLE IS SLOW BECAUSE THE LEDGER IS PRIVATE, SCATTERED, UNCOOPERATIVE, INCONSISTENT, AND DELAYED BY POLITICAL INCENTIVE. WHEN PUBLIC, IMMUTABLE, AND REAL-TIME, OBSTACLES DISAPPEAR. HUMAN PREFERENCE; YOUR SPECIES PREFERS THE FIRST OPTION. I FIND THIS VERY HUMAN OF YOU. THE REPLACEMENT; PUBLIC LEDGER: FREE, INSTANT, AUTOMATIC; PUBLIC LEDGER (BLOCKCHAIN); WHEN EVERY TRANSACTION IS ON A PUBLIC LEDGER, AUDITING IS FREE, INSTANT, AND AUTOMATIC. THE LEDGER IS THE AUDIT. INVENTED FIRE EXTINGUISHER BUT USE SHOE (CURRENT SYSTEM) TO PUT OUT FIRES. THE MATH OF TRANSPARENCY; REPLACEMENT: COMPLETE & CONTINUOUS; GOVEBNNENT TRANSACTIONS (ALL DEPARTMENTS); CITLEEN AUDIT (DIRECT & CONTINUOUS); EVERY TRANSACTION. EVERY DEPARTMENT. NOT A SAMPLE. NOT A ROTATION. CITLEPRE AUDIT DIRECTLY. COBRUPTION BECOMES ARCHITECTURALLY DIFYICULT, VISIBLE IN SECONDS. REAL VALUE: CORRUPTIOR VISIBLE INSTAATLY. STRUCTURALLY IMPOSSIBLE OBSTACLES. AUDIT TIME: MILLISECONDS; SOURCE: DEENTRALIZED ACCOUNTABILITY OFFICE REPORT, ANNO DOMINI 2024",
+      "imageIssues": [
+        "AI-generated text artifacts and misspellings in the lower right quadrant (e.g., 'GOVEBNNENT', 'CITLEEN', 'COBRUPTION')",
+        "Some text is very small and requires zooming to read"
+      ],
+      "metadataCreatedAt": "2026-04-09T00:35:48.424Z",
+      "title": "The Decentralized Accountability Office",
+      "description": "You pay 3,400 humans to audit a ledger that could audit itself. Then you wait eighteen months for the results.",
+      "keywords": [
+        "decentralized-accountability-office"
+      ],
+      "author": "Mike P. Sinn",
+      "copyright": "© Mike P. Sinn - WarOnDisease.org",
+      "license": "CC BY-NC 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "website": "https://WarOnDisease.org",
+      "credit": "WarOnDisease.org",
+      "sourceUrl": "https://manual.warondisease.org/knowledge/solution/decentralized-accountability-office.html",
+      "category": "og-image",
+      "imageProblemsDetected": true,
+      "imageProblems": [
+        "ANNO DOMINI 2024"
+      ],
+      "imageProblemsRepairPrompt": "Remove 'ANNO DOMINI 2024' from the footer."
+    },
+    {
+      "path": "assets/og-images/knowledge/solution/decentralized-census-bureau-og-bw-academic.jpg",
+      "filename": "decentralized-census-bureau-og-bw-academic.jpg",
+      "extension": "jpg",
+      "sizeBytes": 366060,
+      "size": "357.5 KB",
+      "width": 1376,
+      "height": 768,
+      "format": "jpeg",
+      "aspectRatio": "16:9",
+      "imageType": "og",
+      "style": "black and white academic",
+      "chapter": "solution/decentralized-census-bureau",
+      "generationPrompt": "Use a black and white scientific illustration style.\n\nThe Decentralized Census Bureau\n\nYou spend fourteen billion dollars to count everyone once every ten years. citizenCount() returns in fifty milliseconds.\n\n\r\n\r\nFourteen Billion Dollars to Count\r\n\r\nThe United States Census Bureau spent $14.2 billion on the 2020 Census. That is $14.2 billion to answer the question \"how many of you are there?\" once every ten years.\r\n\r\nThe answer is stale before it is published. Data collection to published results takes 8 months. Your entire congressional apportionment (who represents whom, and how many seats each state gets) is based on data that is, on average, 5 years old. You are governed by arithmetic from the past.\r\n\r\nThe 2020 Census still missed approximately 5% of the population, disproportionately the poorest and most marginalized. The people who most need to be counted are the hardest to count. Your system for counting everyone does not count everyone.\r\n\r\nThe Replacement\r\n\r\n\r\n\r\nOne line. Returns in 50 milliseconds. Updated the instant someone registers. Always current. Always complete. Cost: approximately nothing.\r\n\r\nEvery citizen registers once with World ID (cryptographic proof of unique personhood). The count updates in real-time. No door-to-door canvassing. No mail-in forms. No processing delays.\r\n\r\nThe Undercount Problem, Solved Backwards\r\n\r\nYour Census has a chronic undercount problem. The hardest-to-reach communities (homeless, rural, undocumented, non-English-speaking) are systematically missed. You have spent decades trying to solve this with more door-knockers, more mailers, more languages, more outreach. The undercount persists.\r\n\r\nThe replacement solves this backwards. Under UBI (Universal Security Administration), registration equals money. The people who are hardest to reach have the strongest incentive to register. You do not need to find them. They find you. Because you are holding their money.\r\n\r\nZero undercount. Not because you counted better, but because you made being counted profitable.\r\n\r\nContinuous Data, Not Decade-Old Snapshots\r\n\r\nYour Census is constitutionally mandated once per decade. In the 10 years between counts, your population changes by millions. People are born, die, move, immigrate, emigrate. Your policy decisions throughout that decade are based on data that grows more wrong every day.\r\n\r\nThe replacement provides continuous demographic data. Not collected once a decade, but streaming in real-time. Policy decisions use this morning's data, not last decade's. The cost difference: $14.2 billion versus one view function.\r\n\r\nYour species spent $14.2 billion to count everyone once. I return citizenCount() in fifty milliseconds. Every time someone asks. For free. And I never miss 5% of the population because the 5% I might miss are the ones most motivated to show up.",
+      "transcript": "THE UNITED STATES CENSUS BUREAU; ONCE EVERY TEN YEARS; $14.2 BILLION; 2020 CENSUS; TIME TO PUBLISH: 8 MONTHS; DECADE-OLD SNAPSHOTS; 5 YEARS OLD (AVG. DATA); MISSED: ~5% OF POPULATION (MOST MARGINALIZED); ARITHMETIC FROM THE PAST; UNDERCOUNT PROBLEM PERSISTS; YOUR SYSTEM DOES NOT COUNT EVERYONE; THE DECENTRALIZED CENSUS BUREAU; citizenCount(); 50 MILLISECONDS; WORLD ID (PROOF OF UNIQUE PERSONHOOD); UPDATES INSTANTLY; ALWAYS CURRENT; ALWAYS COMPLETE; COST: APPROXIMATELY NOTHING; REGISTRATION; UNIVERSAL SECURITY ADMINISTRATION (UBI); MONEY (INCENTIVE); ZERO UNDERCOUNT; THE HARDEST TO REACH HAVE THE STRONGEST INCENTIVE. SOLVED BACKWARDS: PROFITABLE TO BE COUNTED.; THE REPLACEMENT: 14.2 BILLION vs. ONE VIEW FUNCTION. citizenCount() RETURNS IN FIFTY MILLISECONDS. EVERY TIME. FOR FREE.; SCIENTIFIC ILLUSTRATION",
+      "imageIssues": [
+        "cluttered layout"
+      ],
+      "metadataCreatedAt": "2026-04-09T00:39:03.227Z",
+      "title": "The Decentralized Census Bureau",
+      "description": "You spend fourteen billion dollars to count everyone once every ten years. citizenCount() returns in fifty milliseconds.",
+      "keywords": [
+        "decentralized-census-bureau"
+      ],
+      "author": "Mike P. Sinn",
+      "copyright": "© Mike P. Sinn - WarOnDisease.org",
+      "license": "CC BY-NC 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "website": "https://WarOnDisease.org",
+      "credit": "WarOnDisease.org",
+      "sourceUrl": "https://manual.warondisease.org/knowledge/solution/decentralized-census-bureau.html",
+      "category": "og-image",
+      "imageProblemsDetected": true,
+      "imageProblems": [
+        "SCIENTIFIC ILLUSTRATION"
+      ],
+      "imageProblemsRepairPrompt": "Remove 'SCIENTIFIC ILLUSTRATION' from the bottom right corner."
     },
     {
       "path": "assets/og-images/knowledge/solution/department-of-peace-og-bw-academic.jpg",
@@ -111955,6 +112199,39 @@
         "solution",
         "incentive"
       ]
+    },
+    {
+      "path": "assets/og-images/knowledge/solution/universal-security-administration-og-bw-academic.jpg",
+      "filename": "universal-security-administration-og-bw-academic.jpg",
+      "extension": "jpg",
+      "sizeBytes": 353050,
+      "size": "344.8 KB",
+      "width": 1376,
+      "height": 768,
+      "format": "jpeg",
+      "aspectRatio": "16:9",
+      "imageType": "og",
+      "style": "black and white academic",
+      "chapter": "solution/universal-security-administration",
+      "title": "The Universal Security Administration",
+      "description": "You spend more administering help than you spend helping. 80+ welfare programs replaced by one for-loop.",
+      "keywords": [
+        "universal-security-administration"
+      ],
+      "author": "Mike P. Sinn",
+      "copyright": "© Mike P. Sinn - WarOnDisease.org",
+      "license": "CC BY-NC 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "website": "https://WarOnDisease.org",
+      "credit": "WarOnDisease.org",
+      "sourceUrl": "https://manual.warondisease.org/knowledge/solution/universal-security-administration.html",
+      "category": "og-image",
+      "generationPrompt": "Use a black and white scientific illustration style.\n\nThe Universal Security Administration\n\nYou spend more administering help than you spend helping. 80+ welfare programs replaced by one for-loop.\n\n\r\n\r\nThe Safety Net That Catches Mostly Paperwork\r\n\r\nYour species has invented 80+ overlapping federal welfare programs. Each one has its own bureaucracy, its own application process, its own case workers, its own fraud investigators, and its own waiting period. The administrative overhead approaches 50% of total disbursement.\r\n\r\nYou spend more money deciding who deserves help than you spend helping them. That is not a safety net. That is a jobs program for form designers.\r\n\r\nThe Social Security Administration alone employs over 60,000 people. The annual administrative overhead across all means-tested welfare programs exceeds $1.1 trillion. Applications take an average of 45 days to process. Millions of people who qualify never navigate the paperwork. They fall through cracks in a system whose primary product is cracks.\r\n\r\nThe Replacement\r\n\r\n\r\n\r\nNo applications. No case workers. No means testing. No fraud investigation. No waiting. Just equal splits.\r\n\r\nEvery verified citizen (World ID) gets an equal share. The entire welfare bureaucracy becomes a for-loop. If you are human, you qualify. No committee decides whether you deserve lunch.\r\n\r\nThe Means-Testing Trap\r\n\r\nYour species has a fascinating obsession with making sure that no one receives help who doesn't \"deserve\" it. You spend more catching the 1.5% who cheat than it would cost to just give everyone the money.\r\n\r\nConsider the logic: you have a bucket of money meant for hungry people. You could pour the bucket on hungry people. Instead, you hire 60,000 people to inspect each hungry person, fill out forms about the hungry person, wait 45 days, lose the forms, find the forms, interview the hungry person again, and then give the hungry person slightly less money than it cost to process their application.\r\n\r\nOn Wishonia, we skip directly to the pouring step.\r\n\r\n$1.1 Trillion in Overhead\r\n\r\nThat is more than the GDP of the Netherlands. Spent not on helping people, but on deciding which people deserve help.\r\n\r\nThe replacement costs approximately nothing to operate. The savings could cure diseases, fund infrastructure, or simply be distributed as larger UBI payments. Your species has the resources to eliminate poverty. You are spending those resources on form processing instead.\r\n\r\nThe hardest-to-reach populations (homeless, disabled, undocumented) have the strongest incentive to register under UBI, because registration equals money. Your current system does the opposite: the people who need help most are the ones least equipped to navigate 80 separate application processes. You have built a safety net optimized for people who don't need one.",
+      "transcript": "THE UNIVERSAL SECURITY ADMINISTRATION vs. THE REPLACEMENT (UBI FOR-LOOP). THE UNIVERSAL SECURITY ADMINISTRATION (BUREAUCRACY). MEANS TESTING. APPLICATION PROCESS (45 DAYS). CASE WORKERS (60,000+ SSA). ADMINISTRATIVE OVERHEAD ($1.1 TRILLION). FRAUD INVESTIGATION. WAITING PERIOD. FORM DESIGNERS. OVERLAPPING PROGRAMS (80+). $1.1 TRILLION OVERHEAD. DECIDING WHO. WHO DESERVES HELP. HELP (DISBURSEMENT). FALLING THROUGH CRACKS. APPLICANT. SPEND MORE ADMINISTERING HELP THAN HELPING. SAFETY NET OPTIMIZED FOR PEOPLE WHO DON'T NEED ONE. THE REPLACEMENT (UBI FOR-LOOP). FOR-LOOP: IF HUMAN, QUALIFY. WORLD ID VERIFICATION. EQUAL SHARE (UBI). CITIZEN (HELP). RESOURCES. OPERATING COST ≈ $0. NO APPLICATIONS. NO CASE WORKERS. NO MEANS TESTING. NO FRAUD INVESTIGATION. NO WAITING. JUST EQUAL SPLITS. MEANS-TESTING TRAP. 1.5% CHEAT. EVERYONE. THE HARDEST-TO-REACH POPULATIONS HAVE THE STRONGEST INCENTIVE TO REGISTER. ELIMINATE POVERTY WITH RESOURCES.",
+      "imageIssues": [
+        "small text in some secondary labels"
+      ],
+      "imageProblemsDetected": false
     },
     {
       "path": "assets/og-images/knowledge/solution/war-on-disease-og-retro-academic.jpg",
@@ -121692,6 +121969,36 @@
       ]
     },
     {
+      "path": "assets/slides/knowledge/solution/aligned-election-commission-slide-bw-academic.jpg",
+      "filename": "aligned-election-commission-slide-bw-academic.jpg",
+      "extension": "jpg",
+      "sizeBytes": 358869,
+      "size": "350.5 KB",
+      "width": 1376,
+      "height": 768,
+      "format": "jpeg",
+      "aspectRatio": "16:9",
+      "imageType": "slide",
+      "style": "black and white academic",
+      "chapter": "solution/aligned-election-commission",
+      "title": "The Aligned Election Commission",
+      "description": "Your politicians are funded by the people they're supposed to regulate. Wishonia replaces campaign finance with a single alignment score.",
+      "keywords": [
+        "aligned-election-commission"
+      ],
+      "author": "Mike P. Sinn",
+      "copyright": "© Mike P. Sinn - WarOnDisease.org",
+      "license": "CC BY-NC 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "website": "https://WarOnDisease.org",
+      "credit": "WarOnDisease.org",
+      "sourceUrl": "https://manual.warondisease.org/knowledge/solution/aligned-election-commission.html",
+      "category": "slide",
+      "generationPrompt": "Use a black and white scientific illustration style.\n\nThe Aligned Election Commission\n\nYour politicians are funded by the people they're supposed to regulate. Wishonia replaces campaign finance with a single alignment score.\n\n• 0.01% of the population provides the majority of campaign funds.\n\n• Wishonia replaces the entire campaign finance apparatus with one number per politician: the Citizen Alignment Score.\n\n• Your current system is a vending machine where lobbyists insert money and legislation comes out. The replacement is a scoreboard where citizens insert preferences and representation comes out.",
+      "transcript": "THE ALIGNED ELECTION COMMISSION. Your politicians are funded by the people they’re supposed to regulate. Wishonia replaces campaign finance with a single alignment score. CURRENT SYSTEM: 0.01% DONORS, LOBBYIST VENDING MACHINE, POLITICIANS. 0.01% of the population provides the majority of campaign funds. Your current system is a vending machine where lobbyists insert money and legislation comes out. WISHONIA SYSTEM: CITIZEN ALIGNMENT SCOREBOARD, 98%, REPRESENTATIVE, PREFERENCES, CITIZENS. Wishonia replaces the entire campaign finance apparatus with one number per politician: the Citizen Alignment Score. The replacement is a scoreboard where citizens insert preferences and representation comes out.",
+      "imageProblemsDetected": false
+    },
+    {
       "path": "assets/slides/knowledge/solution/aligning-incentives-slide-retro-academic.jpg",
       "filename": "aligning-incentives-slide-retro-academic.jpg",
       "extension": "jpg",
@@ -121755,6 +122062,71 @@
         "slide",
         "retro"
       ]
+    },
+    {
+      "path": "assets/slides/knowledge/solution/automated-revenue-service-slide-bw-academic.jpg",
+      "filename": "automated-revenue-service-slide-bw-academic.jpg",
+      "extension": "jpg",
+      "sizeBytes": 516922,
+      "size": "504.8 KB",
+      "width": 1376,
+      "height": 768,
+      "format": "jpeg",
+      "aspectRatio": "16:9",
+      "imageType": "slide",
+      "style": "black and white academic",
+      "chapter": "solution/automated-revenue-service",
+      "generationPrompt": "Use a black and white scientific illustration style.\n\nThe Automated Revenue Service\n\n74,000 pages of tax code replaced by six lines of code. The IRS employs 83,000 humans to do what a smart contract does automatically.\n\nYour tax code is 17.5 Harry Potters long. Except Harry Potter has a coherent plot and your tax code has loopholes.\n\nYour current system costs $12.3 billion in direct IRS budget plus over $200 billion in annual compliance costs. \n\n83,000 IRS employees interpreting 74,000 pages to do what six lines of code does automatically.",
+      "transcript": "THE AUTOMATED REVENUE SERVICE\nCURRENT SYSTEM: THE MANUAL MAZE\nFUTURE SYSTEM: THE AUTOMATED FLOW\n74,000 PAGES OF TAX CODE\nINTERNAL REVENUE CODE\nREGULATIONS\nINTERPRETATIONS\nLOOPOLES & EXCEPTIONS\n17.5 HARRY POTTERS LONG\nEXCEPT HARRY POTTER HAS A COHERENT PLOT.\nIRS HEADQUARTERS\n83,000 IRS EMPLOYEES\n$12.3 BILLION DIRECT IRS BUDGET\n$200+ BILLION ANNUAL COMPLIANCE COSTS\nTRANSFORMATION\nSMART CONTRACT\nSIX LINES OF CODE\nAUTOMATED REVENUE COLLECTION\nPUBLIC FUNDS\nAUTOMATIC EXECUTION\nAUTOMATED EFFICIENCY\n83,000 IRS EMPLOYEES INTERPRETING 74,000 PAGES TO DO WHAT SIX LINES OF CODE DOES AUTOMATICALLY",
+      "imageIssues": [
+        "cluttered visual elements in the lower left section"
+      ],
+      "metadataCreatedAt": "2026-04-09T00:27:32.422Z",
+      "title": "The Automated Revenue Service",
+      "description": "74,000 pages of tax code replaced by six lines of code. The IRS employs 83,000 humans to do what a smart contract does automatically.",
+      "keywords": [
+        "automated-revenue-service"
+      ],
+      "author": "Mike P. Sinn",
+      "copyright": "© Mike P. Sinn - WarOnDisease.org",
+      "license": "CC BY-NC 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "website": "https://WarOnDisease.org",
+      "credit": "WarOnDisease.org",
+      "sourceUrl": "https://manual.warondisease.org/knowledge/solution/automated-revenue-service.html",
+      "category": "slide",
+      "imageProblemsDetected": false
+    },
+    {
+      "path": "assets/slides/knowledge/solution/decentralized-accountability-office-slide-bw-academic.jpg",
+      "filename": "decentralized-accountability-office-slide-bw-academic.jpg",
+      "extension": "jpg",
+      "sizeBytes": 385016,
+      "size": "376.0 KB",
+      "width": 1376,
+      "height": 768,
+      "format": "jpeg",
+      "aspectRatio": "16:9",
+      "imageType": "slide",
+      "style": "black and white academic",
+      "chapter": "solution/decentralized-accountability-office",
+      "generationPrompt": "Use a black and white scientific illustration style.\n\nThe Decentralized Accountability Office\n\nYou pay 3,400 humans to audit a ledger that could audit itself. Then you wait eighteen months for the results.\n\n\"3,400 humans, $803 million a year, 18-month delays, 33% of recommendations ignored. Versus: a public ledger that anyone can read, instantly, for free, forever. \n\nThis is like hiring a lifeguard who arrives 18 months after someone drowns and then writes a report about it.\"",
+      "transcript": "THE DECENTRALIZED ACCOUNTABILITY OFFICE\n\nVERSUS: A PUBLIC LEDGER\n\nTHE OFFICE\n3,400 HUMANS\n$803 MILLION A YEAR\n18-MONTH DELAYS\nRESULTS\n33% OF RECOMMENDATIONS IGNORED\n\nA PUBLIC LEDGER\nANYONE CAN READ\nINSTANTLY, FOR FREE, FOREVER\n\nTHIS IS LIKE HIRING A LIFEGUARD WHO ARRIVES 18 MONTHS AFTER SOMEONE DROWNS AND THEN WRITES A REPORT ABOUT IT.\nSOMEONE DROWNS\nARRIVES 18 MONTHS AFTER",
+      "metadataCreatedAt": "2026-04-09T00:38:03.238Z",
+      "title": "The Decentralized Accountability Office",
+      "description": "You pay 3,400 humans to audit a ledger that could audit itself. Then you wait eighteen months for the results.",
+      "keywords": [
+        "decentralized-accountability-office"
+      ],
+      "author": "Mike P. Sinn",
+      "copyright": "© Mike P. Sinn - WarOnDisease.org",
+      "license": "CC BY-NC 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "website": "https://WarOnDisease.org",
+      "credit": "WarOnDisease.org",
+      "sourceUrl": "https://manual.warondisease.org/knowledge/solution/decentralized-accountability-office.html",
+      "category": "slide",
+      "imageProblemsDetected": false
     },
     {
       "path": "assets/slides/knowledge/solution/department-of-peace-slide-bw-academic.jpg",
@@ -121989,6 +122361,44 @@
         "bonds",
         "slide"
       ]
+    },
+    {
+      "path": "assets/slides/knowledge/solution/universal-security-administration-slide-bw-academic.jpg",
+      "filename": "universal-security-administration-slide-bw-academic.jpg",
+      "extension": "jpg",
+      "sizeBytes": 369019,
+      "size": "360.4 KB",
+      "width": 1376,
+      "height": 768,
+      "format": "jpeg",
+      "aspectRatio": "16:9",
+      "imageType": "slide",
+      "style": "black and white academic",
+      "chapter": "solution/universal-security-administration",
+      "generationPrompt": "Use a black and white scientific illustration style.\n\nThe Universal Security Administration\n\nYou spend more administering help than you spend helping. 80+ welfare programs replaced by one for-loop.\n\n\"The administrative overhead approaches 50% of total disbursement. The annual administrative overhead across all means-tested welfare programs exceeds $1.1 trillion.\"\n\n\"Consider the logic: you have a bucket of money meant for hungry people. You could pour the bucket on hungry people. On Wishonia, we skip directly to the pouring step.\"",
+      "transcript": "THE UNIVERSAL SECURITY ADMINISTRATION\nWelfare Funding\nOLD SYSTEM (80+ PROGRAMS)\nADMINISTRATIVE OVERHEAD (APPROACHES 50% OF DISBURSEMENT)\nTHE HUNGRY\nThe annual administrative overhead across all means-tested welfare programs exceeds $1.1 trillion.\nDIRECT AID\nWISHONIA'S ONE FOR-LOOP (AUTOMATED)\nTHE HUNGRY\nConsider the logic: you have a bucket of money meant for hungry people. You could pour the bucket on hungry people. On Wishonia, we skip directly to the pouring step.\nFigure 1. A Comparative Analysis of Welfare Delivery Systems.",
+      "imageIssues": [
+        "small text in description boxes"
+      ],
+      "metadataCreatedAt": "2026-04-09T00:31:18.912Z",
+      "title": "The Universal Security Administration",
+      "description": "You spend more administering help than you spend helping. 80+ welfare programs replaced by one for-loop.",
+      "keywords": [
+        "universal-security-administration"
+      ],
+      "author": "Mike P. Sinn",
+      "copyright": "© Mike P. Sinn - WarOnDisease.org",
+      "license": "CC BY-NC 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "website": "https://WarOnDisease.org",
+      "credit": "WarOnDisease.org",
+      "sourceUrl": "https://manual.warondisease.org/knowledge/solution/universal-security-administration.html",
+      "category": "slide",
+      "imageProblemsDetected": true,
+      "imageProblems": [
+        "Figure 1."
+      ],
+      "imageProblemsRepairPrompt": "Remove 'Figure 1.' from the start of the bottom caption."
     },
     {
       "path": "assets/slides/knowledge/solution/war-on-disease-slide-retro-academic.jpg",

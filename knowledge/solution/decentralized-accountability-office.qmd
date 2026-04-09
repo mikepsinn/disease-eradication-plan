@@ -1,6 +1,6 @@
 ---
-title: "The Decentralized Accountability Office"
-description: "You pay 3,400 humans to audit a ledger that could audit itself. Then you wait eighteen months for the results."
+title: The Decentralized Accountability Office
+description: You pay 3,400 humans to audit a ledger that could audit itself. Then you wait eighteen months for the results.
 published: true
 scores:
   quality: 4
@@ -9,7 +9,10 @@ scores:
   standalone: 5
   voice: 6
   importance: 4
+image: /assets/og-images/knowledge/solution/decentralized-accountability-office-og-bw-academic.jpg
 ---
+![You pay 3,400 humans to audit a ledger that could audit itself. Then you wait eighteen months for the results.](/assets/infographics/knowledge/solution/decentralized-accountability-office-infographic-bw-academic.jpg)
+
 {{< include ../includes/setup-parameters.qmd >}}
 
 ## Auditing the Auditors

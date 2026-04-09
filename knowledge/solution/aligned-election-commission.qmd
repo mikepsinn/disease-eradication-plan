@@ -1,6 +1,6 @@
 ---
-title: "The Aligned Election Commission"
-description: "Your politicians are funded by the people they're supposed to regulate. Wishonia replaces campaign finance with a single alignment score."
+title: The Aligned Election Commission
+description: Your politicians are funded by the people they're supposed to regulate. Wishonia replaces campaign finance with a single alignment score.
 published: true
 scores:
   quality: 6
@@ -9,7 +9,10 @@ scores:
   standalone: 6
   voice: 7
   importance: 5
+image: /assets/og-images/knowledge/solution/aligned-election-commission-og-bw-academic.jpg
 ---
+![Your politicians are funded by the people they're supposed to regulate. Wishonia replaces campaign finance with a single alignment score.](/assets/infographics/knowledge/solution/aligned-election-commission-infographic-bw-academic.jpg)
+
 {{< include ../includes/setup-parameters.qmd >}}
 
 ## Bribery With Extra Steps
