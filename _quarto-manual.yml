@@ -436,8 +436,10 @@ format:
     theme:
       light:
         - cosmo
+        - book-theme.scss
       dark:
-        - darkly
+        - cosmo
+        - book-theme-dark.scss
     # Alternative themes: lux, flatly, sandstone, minty
     mermaid:
       theme: neutral  # Uses grayscale/minimal colors for black and white diagrams

@@ -12,10 +12,9 @@
     --book-light: #f9f8f3;       /* Light cream */
 }
 
-/* Base Typography - Book-like */
+/* Base Typography - Book-like
+   (background-color/color come from Bootstrap via book-theme.scss $body-bg/$body-color) */
 body {
-    background-color: var(--book-bg);
-    color: var(--book-text);
     font-family: 'EB Garamond', 'Garamond', 'Georgia', serif;
     font-size: 19px;
     line-height: 1.7;
@@ -106,7 +105,7 @@ main.content {
 
 /* Cards - Minimal and Elegant */
 .card {
-    background-color: #fff;
+    background-color: var(--book-bg);
     border: 1px solid var(--book-border);
     padding: 2rem;
     margin-bottom: 2rem;
@@ -457,7 +456,7 @@ nav a:hover,
     text-align: center;
     margin: 3rem 0;
     padding: 2rem 0;
-    background-color: #fff;
+    background-color: var(--book-bg);
     border: 1px solid var(--book-border);
     border-radius: 2px;
 }
@@ -970,17 +969,18 @@ nav.quarto-page-breadcrumbs ol.breadcrumb li a {
     opacity: 1;
     max-height: 60px;
     overflow: visible;
-    margin-top: 8px;
+    margin-bottom: 8px;
     pointer-events: auto;
 }
 
-/* Staggered animation for each sub-button */
-.dih-fab-open .dih-fab-action:nth-child(1) { transition-delay: 0.02s; }
-.dih-fab-open .dih-fab-action:nth-child(2) { transition-delay: 0.05s; }
-.dih-fab-open .dih-fab-action:nth-child(3) { transition-delay: 0.08s; }
-.dih-fab-open .dih-fab-action:nth-child(4) { transition-delay: 0.11s; }
-.dih-fab-open .dih-fab-action:nth-child(5) { transition-delay: 0.14s; }
-.dih-fab-open .dih-fab-action:nth-child(6) { transition-delay: 0.17s; }
+/* Staggered animation: actions closest to the gear animate first.
+   nth-last-child(1) is the main gear button itself, so start at (2). */
+.dih-fab-open .dih-fab-action:nth-last-child(2) { transition-delay: 0.02s; }
+.dih-fab-open .dih-fab-action:nth-last-child(3) { transition-delay: 0.05s; }
+.dih-fab-open .dih-fab-action:nth-last-child(4) { transition-delay: 0.08s; }
+.dih-fab-open .dih-fab-action:nth-last-child(5) { transition-delay: 0.11s; }
+.dih-fab-open .dih-fab-action:nth-last-child(6) { transition-delay: 0.14s; }
+.dih-fab-open .dih-fab-action:nth-last-child(7) { transition-delay: 0.17s; }
 
 /* Show labels on hover */
 .dih-fab-open .dih-fab-action:hover .dih-fab-action-label {
@@ -1069,7 +1069,55 @@ body.hide-uncertainty [data-ci-hidden] {
     margin: -0.1em -0.3em;
 }
 
-/* Dark mode handled by Quarto's built-in light/dark theme toggle */
+/* ==========================================
+   DARK MODE - inverse of the book palette
+   Activated by Quarto's theme toggle (sets body.quarto-dark).
+   Only the --book-* vars flip here; everything downstream reads through them.
+   ========================================== */
+body.quarto-dark {
+    --book-bg:      #1a1a1a;  /* Was white paper */
+    --book-text:    #e0dcd3;  /* Was soft black */
+    --book-accent:  #c9a876;  /* Was leather brown (brighter for contrast on dark) */
+    --book-border:  #3d3528;  /* Was subtle tan */
+    --book-heading: #f5f0e6;  /* Was deep charcoal */
+    --book-light:   #262626;  /* Was light cream (now an elevated dark surface) */
+
+    /* Mermaid diagram palette - dark */
+    --mermaid-bg-color:          #1a1a1a;
+    --mermaid-node-bg-color:     #262626;
+    --mermaid-edge-color:        #c9a876;
+    --mermaid-border-color:      #3d3528;
+    --mermaid-node-fg-color:     #e0dcd3;
+    --mermaid-label-color:       #e0dcd3;
+    --mermaid-alt-bg-color:      #262626;
+    --mermaid-cluster-bg-color:  #2a2520;
+
+    color-scheme: dark;
+}
+
+/* Dark-mode overrides for hardcoded palette colors that dodge the --book-* vars */
+body.quarto-dark .callout-note.callout         { border-left-color: #7a6a58; }
+body.quarto-dark .callout-note.callout .callout-title-container      { color: #b0a090; }
+body.quarto-dark .callout-important.callout    { border-left-color: #b88a5a; }
+body.quarto-dark .callout-important.callout .callout-title-container { color: #d6a878; }
+body.quarto-dark .callout-tip.callout,
+body.quarto-dark .callout.callout-style-default.callout-tip          { border-left-color: #8a7a68; }
+body.quarto-dark .callout-tip.callout .callout-title-container,
+body.quarto-dark .callout.callout-style-default.callout-tip .callout-title-container { color: #b0a090; }
+body.quarto-dark .callout-caution.callout      { border-left-color: #9a8a78; }
+body.quarto-dark .callout-caution.callout .callout-title-container   { color: #b8a890; }
+
+/* Parameter links - invert the dark-blue hover/definition colors for readability on dark bg */
+body.quarto-dark .parameter-link:hover       { color: #8ab4e8; border-bottom-color: #8ab4e8; }
+body.quarto-dark .parameter-definition      { color: #d0c8b8; }
+body.quarto-dark .parameter-definition:hover { color: #f5f0e6; border-bottom-color: #c9a876; }
+
+/* Version note - flip its hardcoded greens/creams */
+body.quarto-dark .version-note {
+    border-left-color: #8a9872;
+    background: #262623;
+    color: #c8ccb8;
+}
 
 /* ==========================================
    END-OF-CHAPTER SHARE BAR

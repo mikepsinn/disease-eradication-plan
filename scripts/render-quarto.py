@@ -1070,7 +1070,7 @@ def prepare_build_temp(config_name: str, verbose: bool = True) -> Optional[Path]
         "references",   # references*.bib
         "index",        # index*.qmd
     }
-    required_extensions = {".css", ".tex", ".csl", ".png", ".ico", ".toml"}
+    required_extensions = {".css", ".scss", ".tex", ".csl", ".png", ".ico", ".toml"}
     required_files = {"favicon.ico", "pyproject.toml", "netlify.toml", "talk.html"}
 
     # Ignore patterns for subdirectories (e.g., __pycache__ inside dih_models)

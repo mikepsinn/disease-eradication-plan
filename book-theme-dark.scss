@@ -1,0 +1,48 @@
+/*-- scss:defaults --*/
+
+// ==========================================
+// BOOK THEME - DARK MODE
+// Inverse of book-theme.scss. Layered on top of cosmo.
+//
+// PALETTE DUPLICATION WARNING:
+// The --book-* CSS vars for dark mode also live in styles.css under
+// body.quarto-dark. These values MUST stay in sync. We can't use var() here
+// because Bootstrap's cosmo does SCSS color math on $link-color / $body-bg /
+// etc. at compile time. If you change a value here, also change it in
+// styles.css (and vice versa).
+// ==========================================
+
+// Book palette - DARK (must match styles.css body.quarto-dark)
+$book-bg:      #1a1a1a;  // Was white paper
+$book-text:    #e0dcd3;  // Was soft black
+$book-accent:  #c9a876;  // Was leather brown (brighter for dark-bg contrast)
+$book-border:  #3d3528;  // Was subtle tan
+$book-heading: #f5f0e6;  // Was deep charcoal
+$book-light:   #262626;  // Was cream (now an elevated dark surface)
+
+// Bootstrap variable overrides
+$body-bg:              $book-bg;
+$body-color:           $book-text;
+$headings-color:       $book-heading;
+$link-color:           $book-accent;
+$link-hover-color:     $book-heading;
+$border-color:         $book-border;
+$code-color:           $book-heading;
+$code-bg:              $book-light;
+$pre-bg:               $book-light;
+$table-border-color:   $book-border;
+$table-hover-bg:       $book-light;
+$card-bg:              $book-light;
+$card-border-color:    $book-border;
+$navbar-dark-color:          $book-text;
+$navbar-dark-hover-color:    $book-accent;
+
+// Tell the browser this is a dark theme so form controls and scrollbars
+// adopt platform-native dark styling
+$color-mode-type: data;
+
+/*-- scss:rules --*/
+
+:root {
+  color-scheme: dark;
+}

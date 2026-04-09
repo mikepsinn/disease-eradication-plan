@@ -1,0 +1,38 @@
+/*-- scss:defaults --*/
+
+// ==========================================
+// BOOK THEME - LIGHT MODE
+// Layered on top of cosmo. Inverted counterpart: book-theme-dark.scss
+//
+// PALETTE DUPLICATION WARNING:
+// The --book-* CSS vars for light mode also live in styles.css :root.
+// These values MUST stay in sync. We can't use var() here because Bootstrap's
+// cosmo does SCSS color math (mix, lighten) on $link-color / $body-bg / etc.
+// at compile time, and var() values aren't real colors until runtime.
+// If you change a value here, also change it in styles.css (and vice versa).
+// ==========================================
+
+// Book palette - LIGHT (must match styles.css :root)
+$book-bg:      #ffffff;  // White paper
+$book-text:    #2a2a2a;  // Soft black
+$book-accent:  #8b7355;  // Leather brown
+$book-border:  #d4c5b9;  // Subtle tan
+$book-heading: #1a1a1a;  // Deep charcoal
+$book-light:   #f9f8f3;  // Light cream
+
+// Bootstrap variable overrides - drive cosmo chrome from the book palette
+$body-bg:              $book-bg;
+$body-color:           $book-text;
+$headings-color:       $book-heading;
+$link-color:           $book-accent;
+$link-hover-color:     $book-heading;
+$border-color:         $book-border;
+$code-color:           $book-heading;
+$code-bg:              $book-light;
+$pre-bg:               $book-light;
+$table-border-color:   $book-border;
+$table-hover-bg:       $book-light;
+$card-bg:              $book-bg;
+$card-border-color:    $book-border;
+$navbar-light-color:         $book-text;
+$navbar-light-hover-color:   $book-accent;
