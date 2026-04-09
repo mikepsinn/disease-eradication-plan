@@ -258,11 +258,14 @@
     var order = opts.order != null ? opts.order : 50;
     btn.setAttribute('data-fab-order', order);
 
-    // Insert in order (lower order = inserted first = closer to main button visually)
+    // Higher-order actions sit farther from the gear (visually higher in the
+    // stack); lower-order actions end up closer to it. With flex-direction:
+    // column, that means higher-order = earlier in DOM, lower-order = later
+    // (just before the main button, which is always the last child).
     var inserted = false;
     for (var i = 0; i < fabActions.length; i++) {
       var existingOrder = parseInt(fabActions[i].el.getAttribute('data-fab-order'), 10);
-      if (order < existingOrder) {
+      if (order > existingOrder) {
         fabContainer.insertBefore(btn, fabActions[i].el);
         fabActions.splice(i, 0, { id: id, el: btn });
         inserted = true;
@@ -270,7 +273,7 @@
       }
     }
     if (!inserted) {
-      // Insert before the main button (which is last child) so actions stack above
+      // Fallback: insert just before the main button — closest to the gear.
       var mainBtn = fabContainer.querySelector('.dih-fab-main');
       fabContainer.insertBefore(btn, mainBtn);
       fabActions.push({ id: id, el: btn });

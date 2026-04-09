@@ -43,6 +43,23 @@ _HTML_TAG_PATTERN = re.compile(r'<[^>]+>')
 _MULTIPLE_SPACES_PATTERN = re.compile(r'[ \t]+')
 _MULTIPLE_NEWLINES_PATTERN = re.compile(r'\n{3,}')
 
+# Frontmatter fields excluded from the full metadata dump on each entry.
+# These are Quarto rendering-config fields that have no value to external API
+# consumers of search-index.json. Everything else in the qmd frontmatter passes
+# through untouched via entry["metadata"].
+_EXCLUDED_METADATA_FIELDS = frozenset({
+    'fig-cap-location',
+    'format',
+    'jupyter',
+    'number-sections',
+    'page-layout',
+    'search',
+    'tbl-cap-location',
+    'toc',
+    'toc-depth',
+    'feed-date',
+})
+
 
 class SearchIndexEntry:
     """Represents a single entry in the search index."""
@@ -63,6 +80,7 @@ class SearchIndexEntry:
         figures: Optional[List[Dict[str, str]]] = None,
         syndicate: bool = True,
         scores: Optional[Dict[str, int]] = None,
+        metadata: Optional[Dict[str, Any]] = None,
     ):
         self.path = path
         self.url = url
@@ -78,6 +96,7 @@ class SearchIndexEntry:
         self.figures = figures or []
         self.syndicate = syndicate
         self.scores = scores
+        self.metadata = metadata or {}
 
     def to_dict(self) -> Dict[str, Any]:
         """Convert to dictionary for JSON serialization."""
@@ -95,6 +114,8 @@ class SearchIndexEntry:
         }
         if self.scores:
             result["scores"] = self.scores
+        if self.metadata:
+            result["metadata"] = self.metadata
         if self.text:
             result["text"] = self.text
         if self.parameters:
@@ -681,6 +702,14 @@ class SearchIndexGenerator:
             else:
                 scores = None
 
+            # Build full metadata dump from frontmatter for API consumers who
+            # need fields beyond the curated top-level set. Quarto rendering
+            # config is filtered out via _EXCLUDED_METADATA_FIELDS.
+            metadata = {
+                k: v for k, v in frontmatter.items()
+                if k not in _EXCLUDED_METADATA_FIELDS and v is not None
+            }
+
             # Get last modified date from the actual content source file.
             # Prefer git commit date for stable lastmod values across rebuilds/checkouts.
             lastmod = self._get_lastmod_date(actual_source_path)
@@ -705,7 +734,9 @@ class SearchIndexGenerator:
             # For variable replacement, strip parameter HTML to plain display text
             def _var_to_display(m):
                 var_name = m.group(1)
-                html_val = self.variables.get(var_name, m.group(0))
+                html_val = self.variables.get(var_name) if self.variables else None
+                if html_val is None:
+                    html_val = m.group(0)
                 # Extract display text from <a>text</a> or <span>text</span>
                 display_match = re.search(r'>([^<]+)</(?:a|span)>', html_val)
                 if display_match:
@@ -731,6 +762,7 @@ class SearchIndexGenerator:
                 figures=figures,
                 syndicate=syndicate,
                 scores=scores,
+                metadata=metadata,
             )
 
         except Exception as e:
