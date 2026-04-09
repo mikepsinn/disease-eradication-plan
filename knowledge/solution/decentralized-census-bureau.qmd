@@ -1,6 +1,6 @@
 ---
-title: "The Decentralized Census Bureau"
-description: "You spend fourteen billion dollars to count everyone once every ten years. citizenCount() returns in fifty milliseconds."
+title: The Decentralized Census Bureau
+description: You spend fourteen billion dollars to count everyone once every ten years. citizenCount() returns in fifty milliseconds.
 published: true
 scores:
   quality: 4
@@ -9,7 +9,10 @@ scores:
   standalone: 5
   voice: 4
   importance: 4
+image: /assets/og-images/knowledge/solution/decentralized-census-bureau-og-bw-academic.jpg
 ---
+![You spend fourteen billion dollars to count everyone once every ten years. citizenCount() returns in fifty milliseconds.](/assets/infographics/knowledge/solution/decentralized-census-bureau-infographic-bw-academic.jpg)
+
 {{< include ../includes/setup-parameters.qmd >}}
 
 ## Fourteen Billion Dollars to Count
