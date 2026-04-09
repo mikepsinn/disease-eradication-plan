@@ -1459,7 +1459,7 @@ export const GLOBAL_NUCLEAR_WEAPONS_SPENDING: Parameter = {
   description: "Annual global spending on nuclear weapons across all nine nuclear-armed states. US: $51.5B, China: $11.8B, UK: $8.1B, Russia: $8.3B, France: $6.8B, India: ~$2.7B, Israel: ~$1.2B, Pakistan: ~$1.1B, North Korea: ~$0.7B.",
   sourceType: "external",
   sourceRef: "global-nuclear-weapon-maintenance-100b",
-  sourceUrl: "<https://www.icanw.org/global_spending_on_nuclear_weapons_topped_100_billion_in_2024>",
+  sourceUrl: "https://www.icanw.org/global_spending_on_nuclear_weapons_topped_100_billion_in_2024",
   confidence: "high",
 };
 
