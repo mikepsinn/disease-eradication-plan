@@ -1,7 +1,7 @@
 {
-  "totalImages": 3193,
-  "totalSizeBytes": 1866045272,
-  "totalSize": "1779.6 MB",
+  "totalImages": 3194,
+  "totalSizeBytes": 1866451274,
+  "totalSize": "1780.0 MB",
   "images": [
     {
       "path": "assets/audiobook/manual-paperback/video/keyframes/index-manual-scene-01-16x9.jpg",
@@ -116267,6 +116267,41 @@
         "systems",
         "slide"
       ]
+    },
+    {
+      "path": "assets/slides/knowledge/appendix/conclusion-slide-bw-academic.jpg",
+      "filename": "conclusion-slide-bw-academic.jpg",
+      "extension": "jpg",
+      "sizeBytes": 406002,
+      "size": "396.5 KB",
+      "width": 1376,
+      "height": 768,
+      "format": "jpeg",
+      "aspectRatio": "16:9",
+      "imageType": "slide",
+      "style": "black and white academic",
+      "chapter": "appendix/conclusion",
+      "generationPrompt": "Use a black and white scientific illustration style.\n\nConclusion\n\nConclusion\n\n\"You just read several hundred pages about why 10.7 billion people will die of preventable diseases while your species spends $2.72T a year on explosives. You have now been informed of the largest uncollected refund in history. Your vote is personally to blame for saving 38.4 lives and preventing 6.9 million hours of suffering.\"",
+      "transcript": "CONCLUSION\nCONCLUSION\nGLOBAL POPULATION & PREVENTABLE DEATHS\n10.7 BILLION DEATHS\nIDEAL TRAJECTORY\nYou just read several hundred pages about why 10.7 billion people will die of preventable diseases while your species spends $2.72T a year on explosives. You have now been informed of the largest uncollected refund in history. Your vote is personally to blame for saving 38.4 lives and preventing 6.9 million hours of suffering.\nYOUR VOTE\n38.4 LIVES\n38.4\n38.4 LIVES SAVED\nPREVENTED SUFFERING: 6.9 MILLION HOURS\n$2.72T / YEAR ON EXPLOSIVES\nDESTRUCTION\nTHE LARGEST UNCOLLECTED REFUND IN HISTORY",
+      "metadataCreatedAt": "2026-04-09T00:13:12.743Z",
+      "title": "Conclusion",
+      "description": "Conclusion",
+      "keywords": [
+        "conclusion"
+      ],
+      "author": "Mike P. Sinn",
+      "copyright": "© Mike P. Sinn - WarOnDisease.org",
+      "license": "CC BY-NC 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "website": "https://WarOnDisease.org",
+      "credit": "WarOnDisease.org",
+      "sourceUrl": "https://manual.warondisease.org/knowledge/appendix/conclusion.html",
+      "category": "slide",
+      "imageProblemsDetected": true,
+      "imageProblems": [
+        "CONCLUSION (top banner)"
+      ],
+      "imageProblemsRepairPrompt": "Remove the top-most 'CONCLUSION' banner at the very top edge of the frame."
     },
     {
       "path": "assets/slides/knowledge/appendix/cost-of-change-analysis-slide-retro-academic.jpg",
