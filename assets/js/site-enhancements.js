@@ -580,7 +580,7 @@
   function onPageReady() {
     expandHashTarget();
     createUnifiedFAB();
-    createChatLink();
+    //createChatLink();
     if (!isFeatureDisabled('ci-toggle')) createUncertaintyToggle();
     if (!isFeatureDisabled('cite')) createCopyCitationButton();
     if (!isFeatureDisabled('share')) createShareBar();
