@@ -11209,7 +11209,7 @@ export const citations: Record<string, Citation> = {
         ],
         issued: { 'date-parts': [[2024]] },
         'container-title': "ICAN: Global Spending \\$100B 2024",
-        URL: "<https://www.icanw.org/global_spending_on_nuclear_weapons_topped_100_billion_in_2024>",
+        URL: "https://www.icanw.org/global_spending_on_nuclear_weapons_topped_100_billion_in_2024",
         note: "ICAN: Global Spending \\$100B 2024 | ICAN: The Cost of Nuclear Weapons",
   },
   "global-pharma-rd-spending-300b": {
