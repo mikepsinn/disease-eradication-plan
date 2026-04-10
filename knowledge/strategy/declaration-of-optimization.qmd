@@ -24,29 +24,39 @@ image: /assets/og-images/knowledge/strategy/declaration-of-optimization-og-bw-ac
 ## Why This Declaration Is Necessary
 <!-- snippet:why-optimization-is-necessary -->
 
-Governments were created to promote the general welfare.
+Governments were created to promote the general welfare (i.e. median health and wealth).
 
-Instead, since 1913, these governments have [printed](../economics/central-banks.qmd) {{< var cumulative_military_spending_fed_era >}} out of nothing and used it to murder {{< var war_deaths_since_1900_nounit >}} people and destroy many of the valuable things those humans spent their entire lives building.
+Instead, since 1913, these governments have [printed](../economics/central-banks.qmd) {{< var cumulative_military_spending_fed_era >}} and used it to murder {{< var war_deaths_since_1900_nounit >}} people and destroy many of the valuable things those humans spent their entire lives building.
 
 These murdered humans include approximately 930,000 physicians, 310,000 scientists, 620,000 engineers, and {{< var war_children_killed_since_1900_nounit >}} children who will never grow up to replace them.
 
-That {{< var cumulative_military_spending_fed_era >}} could have funded {{< var cumulative_military_in_govt_trial_years >}} of clinical trials at current government spending.  They bought the other thing.
+That {{< var cumulative_military_spending_fed_era >}} could have funded {{< var cumulative_military_in_govt_trial_years >}} of clinical trials.  They bought the other thing.
 
-Your governments force you to pay for enough weapons to kill everyone on Earth {{< var nuclear_overkill_factor_nounit >}} times. Each year, on top of the extra, they spend enough money to buy {{< var bullets_per_person_annual_nounit >}} bullets for every person alive. You only need to kill everyone once for everyone to be dead. I checked. The remaining murder capacity is sheer waste, and you are paying for them. 
+These governments have enough weapons to kill everyone on Earth {{< var nuclear_overkill_factor_nounit >}} times. Current military spending is enough money to buy {{< var bullets_per_person_annual_nounit >}} bullets for every person alive every single year. You only need to kill everyone once for everyone to be dead. The remaining murder capacity is sheer waste. 
 
-For every {{< var military_to_government_clinical_trials_spending_ratio >}} dollars of this, one dollar funds the clinical trials that might cure the disease you will actually die of.
+Seven consecutive failed audits have found that the Pentagon has "misplaced" $2.46 trillion [@pentagon-unaccounted-2-5t]. They then requested additional trillions without explanation or apology. This "misplaced" money could have funded 577 years of clinical trials at current government spending.
+
+For every {{< var military_to_government_clinical_trials_spending_ratio_nounit >}} dollars or yours they spend on the capacity for orphan manufacturing, they only spend one dollar on the clinical trials that might cure the disease you and everyone you love will eventually suffer and die from.
 
 Your chance of being killed by a terrorist? 1 in {{< var annual_terrorism_death_risk_denominator_nounit >}} [@chance-of-dying-from-terrorism-1-in-30m]. Your chance of dying of a disease? 100%.
 
-At the current discovery rate, finding treatments for all known diseases takes ~{{< var status_quo_queue_clearance_years >}}. You personally will be dead within 80 years, which I mention not to be rude but because you seem weirdly calm about this. One percent of the weapons budget compresses that wait to ~{{< var dfda_queue_clearance_years >}}. The average cure arrives {{< var dfda_trial_capacity_plus_efficacy_lag_years_nounit >}} years sooner. 
+At the current discovery rate, finding treatments for all known diseases takes ~{{< var status_quo_queue_clearance_years >}}.  One percent of the weapons budget compresses that wait to ~{{< var dfda_queue_clearance_years >}}. The average cure arrives {{< var dfda_trial_capacity_plus_efficacy_lag_years_nounit >}} years sooner. 
 
-Had someone properly aligned your governments to maximize median healthy life years and median after-tax inflation-adjusted income in 1900, the average human would earn {{< var war_counterfactual_gdp_per_capita >}} a year instead of {{< var global_avg_income_2025 >}}. They did not. So that is what you are going to do.
+This is important because you personally will be dead within 80 years. (I mention this not to be rude but because you seem weirdly calm about it.)
+
+Had someone properly aligned your governments to maximize median healthy life years and median after-tax inflation-adjusted income in 1900, the average human would earn {{< var war_counterfactual_gdp_per_capita >}} a year instead of {{< var global_avg_income_2025 >}}. 
+
+They did not. So that is what you are going to do.
 
 This Declaration asks every nation on Earth to sign a [treaty](../solution/1-percent-treaty.qmd) redirecting one percent of military spending to clinical trials. One percent.
 
-Your governments cut military spending by {{< var post_ww2_military_cut_pct >}} after World War II and produced the greatest economic expansion in recorded history. Even adjusting for inflation, they now spend {{< var us_military_spending_current_vs_prewar_multiplier_nounit >}} times more than they did immediately before winning that war. Unless the human genome has degraded significantly in the last two generations, one percent should be manageable. Your governments have already signed multiple global treaties banning entire weapons industries. This one just asks them to buy one percent fewer of them.
+Even adjusting for inflation, governments now spend {{< var us_military_spending_current_vs_prewar_multiplier_nounit >}} times more than they did immediately before winning World War II. 
 
-Seven consecutive failed audits have found that the Pentagon has "misplaced" $2.46 trillion [@pentagon-unaccounted-2-5t]. They then requested additional trillions without explanation or apology. This money could have funded 577 years of clinical trials at current government spending.
+After this war, you governments cut military spending by {{< var post_ww2_military_cut_pct >}} over two years and produced the greatest economic expansion in human history.
+
+Unless the human genome has degraded significantly in the last two generations, one percent should be manageable. 
+
+Your governments have already signed multiple global treaties banning entire weapons industries. This one just asks them to buy one percent fewer of them.
 
 Think about someone you love who is suffering right now. The treatment that would help them exists as an untested compound on a shelf, because the money bought a missile instead. That missile incinerated a child who would have grown up to discover the cure. You lose the treatment. You lose the scientist. You get the inflation. You get the tax bill. You get to pay for her murder.
 
@@ -88,17 +98,17 @@ They have plundered our seas, ravaged our coasts, burnt our towns, and [destroye
 
 They have directed {{< var military_to_government_clinical_trials_spending_ratio >}} times more to the destruction of human life than to testing which medicines might preserve it.
 
-They have permitted {{< var global_disease_deaths_daily_nounit >}} people to die of diseases every day, {{< var global_disease_deaths_per_minute_nounit >}} every minute that passes, while possessing the means to accelerate solutions. The annual toll: {{< var global_annual_daly_burden_nounit >}} DALYs of healthy life, quietly deleted.
+They have permitted {{< var global_disease_deaths_daily_nounit >}} people to die of diseases every day, {{< var global_disease_deaths_per_minute_nounit >}} every minute that passes, while possessing the means to accelerate solutions. The annual toll: {{< var global_annual_daly_burden_nounit >}} years of healthy life lost to disease and disability, quietly deleted.
 
 They have operated [national health research institutions](../problem/nih-fails-2-institute-health.qmd) that have spent trillions and cured zero diseases, directing only {{< var nih_clinical_trials_spending_pct >}} of their budgets to the clinical trials where treatments are actually tested in humans. Nearly ten thousand known safe compounds remain untested for 99.7% of possible disease combinations.
 
-They have erected [drug regulatory agencies](../problem/fda-is-unsafe-and-ineffective.qmd) whose rules increased development costs by a factor of {{< var dfda_trial_cost_reduction_factor >}} and timelines to seventeen years, producing {{< var type_ii_error_cost_ratio >}} deaths from delayed treatments for every one death they prevent. Since 1962, that delay has killed approximately {{< var existing_drugs_efficacy_lag_deaths_total_nounit >}} people.
+They have erected [drug regulatory agencies](../problem/fda-is-unsafe-and-ineffective.qmd) whose rules increased development costs by a factor of {{< var dfda_trial_cost_reduction_factor >}} and timelines to seventeen years, producing {{< var type_ii_error_cost_ratio_nounit >}} deaths from delayed treatments for every one death they prevent. Since 1962, that delay has killed approximately {{< var existing_drugs_efficacy_lag_deaths_total_nounit >}} people.
 
 They have left approximately seven thousand known rare diseases in a [treatment queue](../problem/untapped-therapeutic-frontier.qmd) that, at the current rate of fifteen approvals per year, requires {{< var status_quo_queue_clearance_years >}} to clear.
 
-They have approved {{< var approved_drug_disease_pairings >}} for approximately ten thousand known diseases, leaving more than 99.98% of possible therapeutic combinations untested.
+They have approved {{< var approved_drug_disease_pairings_nounit >}} drug-disease pairings for approximately ten thousand known diseases, leaving more than 99.98% of possible therapeutic combinations untested.
 
-Through the compound effects of this misallocation, the governed are {{< var war_counterfactual_income_multiple >}} poorer than they would otherwise be. The average human earns {{< var global_avg_income_2025 >}} per year. Without the wars alone, that figure would be {{< var war_counterfactual_gdp_per_capita >}}. On both metrics by which any government should be judged, healthy life years and median income, the present systems have failed absolutely.
+Through the compound effects of this misallocation, the governed are {{< var war_counterfactual_income_multiple_nounit >}} times poorer than they would otherwise be. The average human earns {{< var global_avg_income_2025 >}} per year. Without the wars alone, that figure would be {{< var war_counterfactual_gdp_per_capita >}}. On both metrics by which any government should be judged, healthy life years and median income, the present systems have failed absolutely.
 
 In every stage of these Misallocations We have Petitioned for Redress in the most humble terms: peer-reviewed papers, public comment periods, protest marches, and online petitions. Our repeated Petitions have been answered only by repeated Misallocation. Governments, whose character is thus marked by every act which may define Suboptimality, are unfit to manage the resources of a free species.
 
