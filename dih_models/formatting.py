@@ -152,24 +152,26 @@ def format_parameter_value(param: Union[float, int, str, "Parameter"], unit: str
         return f"{pct_formatted}%"
 
     elif is_ratio:
-        # Format as X:1 (e.g., 847,733:1 for ROI)
+        # Format ratios using full words for prose readability
         if abs(value) >= 1e6:
             scaled = value / 1e6
             if abs(scaled) >= 100:
-                ratio_formatted = f"{scaled:.0f}M"
+                ratio_formatted = f"{scaled:.0f} million"
             elif abs(scaled) >= 10:
-                ratio_formatted = clean_number(f"{scaled:.1f}M")
+                ratio_formatted = f"{clean_number(f'{scaled:.1f}')} million"
             else:
-                ratio_formatted = clean_number(f"{scaled:.2f}M")
-        elif abs(value) >= 1e3:
+                ratio_formatted = f"{clean_number(f'{scaled:.2f}')} million"
+        elif abs(value) >= 1e4:
+            # 10,000+ use "thousand" for readability
             scaled = value / 1e3
             if abs(scaled) >= 100:
-                ratio_formatted = f"{scaled:.0f}k"
+                ratio_formatted = f"{scaled:.0f} thousand"
             elif abs(scaled) >= 10:
-                ratio_formatted = clean_number(f"{scaled:.1f}k")
+                ratio_formatted = f"{clean_number(f'{scaled:.1f}')} thousand"
             else:
-                ratio_formatted = clean_number(f"{scaled:.2f}k")
+                ratio_formatted = f"{clean_number(f'{scaled:.2f}')} thousand"
         elif abs(value) >= 100:
+            # Under 10,000: use comma-formatted integers (e.g. 3,070)
             ratio_formatted = f"{value:,.0f}"
         elif abs(value) >= 10:
             ratio_formatted = clean_number(f"{value:.1f}")
