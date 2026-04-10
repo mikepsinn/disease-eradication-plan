@@ -401,6 +401,7 @@ _FRONTMATTER_PATTERN = re.compile(r'^---\s*\n.*?\n---\s*\n', re.DOTALL)
 # Extend this list to expose more embeddable prose to external sites.
 _DEFAULT_SNIPPET_SOURCES = (
     'knowledge/strategy/declaration-of-optimization.qmd',
+    'knowledge/solution/1-percent-treaty.qmd',
 )
 
 
