@@ -65,7 +65,7 @@ Think about someone you love who is suffering right now. The treatment that woul
 This is suboptimal.
 <!-- /snippet:why-optimization-is-necessary -->
 
-## On GitHub, April 2026
+## Declaration of Optimization, April 2026
 <!-- snippet:declaration_of_optimization -->
 
 ### The unanimous Declaration of the Eight Billion Inhabitants of Earth
@@ -74,7 +74,7 @@ When in the Course of human events, it becomes necessary for a people to optimiz
 
 We hold these truths to be self-evident, that all humans are created equal, that they are endowed by their Biology with certain unalienable Rights, that among these are Life, Liberty and the pursuit of Happiness.--That to secure these rights, Governments are instituted among Humans, deriving their just powers from the consent of the governed.
 
-That whenever any Form of Government becomes destructive of these ends, it is the Right of the People to optimize it, laying its foundation on such principles and organizing its powers in such form, as to them shall seem most likely to effect their Safety and Happiness, measured by the only two metrics that matter: the median number of healthy life years and the median after-tax inflation-adjusted income of its citizens.
+That whenever any Form of Government becomes destructive of these ends, it is the Right of the People to optimize it, laying its foundation on such principles and organizing its powers in such form, as to them shall seem most likely to effect their Safety and Happiness, measured by two metrics: the median number of healthy life years and the median after-tax inflation-adjusted income of its citizens.
 
 Prudence, indeed, will dictate that Governments long established should not be changed for light and transient causes; and accordingly all experience hath shewn, that mankind are more disposed to suffer, while evils are sufferable, than to right themselves by optimizing the forms to which they are accustomed.
 
@@ -84,7 +84,7 @@ The [Political Dysfunction Tax](../appendix/political-dysfunction-tax.qmd), the 
 
 Such has been the patient sufferance of the inhabitants of Earth; and such is now the necessity which constrains them to optimize their former Systems of Government. The history of the present Governments of Earth is a history of repeated injuries and misallocations, all having as their direct result the establishment of an absolute Suboptimality over these people. To prove this, let Facts be submitted to a candid world.
 
-They have refused their Assent to Laws, the most wholesome and necessary for the public good; the [correlation between public opinion and policy outcomes](../problem/unrepresentative-democracy.qmd), measured across 1,779 policy decisions, is zero percent [@gilens2014].
+They have refused their Assent to Laws, the most wholesome and necessary for the public good; the [correlation between public opinion and policy outcomes](../problem/unrepresentative-democracy.qmd), measured across 1,779 policy decisions, is effectively zero [@gilens2014].
 
 They have legalized the purchase of legislation at a current annual price of {{< var us_total_lobbying_annual >}} [@opensecrets-lobbying-2024], the legal definition of corruption having been written by the beneficiaries of said corruption.
 
@@ -102,7 +102,7 @@ They have misplaced $2.46 trillion in military funds, failed seven consecutive a
 
 They have distributed military contracts across enough legislative districts that voting to cut spending is voting to close a factory in your town [@congress-unrequested-military-spending], ensuring that the budget survives not on merit but on geography.
 
-They have allowed the [destructive economy](../economics/gdp-trajectories.qmd) [@gdp-trajectories-paper-2025] to reach {{< var global_destructive_economy_pct_gdp >}} of global output, growing faster than the productive economy, on a trajectory that crosses fifty percent by {{< var destructive_economy_50pct_year >}}. Past that threshold, destruction pays better than production, and civilizations that cross it do not come back.
+They have allowed the [destructive economy](../economics/gdp-trajectories.qmd) [@gdp-trajectories-paper-2025] to reach {{< var global_destructive_economy_pct_gdp >}} of global output, growing faster than the productive economy, on a trajectory that crosses fifty percent by {{< var destructive_economy_50pct_year >}}. Once passing this threshold, earth will become a global failed state where it becomes irrational to produce because each dollar of value created is immediately stolen. 
 
 They have plundered our seas, ravaged our coasts, burnt our towns, and [destroyed the lives of our people](../problem/cost-of-war.qmd): {{< var war_deaths_since_1900_nounit >}} people since 1900 [@lost-human-capital-war-cost], {{< var war_life_years_lost_since_1900_nounit >}} years of human life stolen, {{< var cumulative_military_spending_fed_era >}} in treasure spent on the enterprise.
 
@@ -120,7 +120,7 @@ They have left approximately seven thousand known rare diseases in a [treatment 
 
 They have approved {{< var approved_drug_disease_pairings_nounit >}} drug-disease pairings for approximately ten thousand known diseases, leaving more than 99.98% of possible therapeutic combinations untested.
 
-Through the compound effects of this misallocation, the governed are {{< var war_counterfactual_income_multiple_nounit >}} times poorer than they would otherwise be. The average human earns {{< var global_avg_income_2025 >}} per year. Without the wars alone, that figure would be {{< var war_counterfactual_gdp_per_capita >}} [@lost-human-capital-war-cost]. On both metrics by which any government should be judged, healthy life years and median income, the present systems have failed absolutely.
+Through the compound effects of this misallocation to war alone, the governed are {{< var war_counterfactual_income_multiple_nounit >}} times poorer than they would otherwise be. The average human earns {{< var global_avg_income_2025 >}} per year. Without the wars alone, that figure would be {{< var war_counterfactual_gdp_per_capita >}} [@lost-human-capital-war-cost]. On both metrics by which any government should be judged, healthy life years and median income, the present systems have failed absolutely.
 
 In every stage of these Misallocations We have Petitioned for Redress in the most humble terms: peer-reviewed papers, public comment periods, protest marches, and online petitions. Our repeated Petitions have been answered only by repeated Misallocation. Governments, whose character is thus marked by every act which may define Suboptimality, are unfit to manage the resources of a free species.
 
