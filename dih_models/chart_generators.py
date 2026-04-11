@@ -562,6 +562,10 @@ def generate_monte_carlo_distribution_chart_qmd(
     p95 = outcome_data.get("p95", baseline)
     units = outcome_data.get("units", "")
 
+    # Table values: include format-inherent suffixes (x, :1, $, %) but not verbose unit words
+    _units_lower = (units or "").lower()
+    _table_include_unit = _units_lower in ("usd", "dollar", "percentage", "x", "multiplier", "factor", "ratio")
+
     # Generate QMD with embedded Python
     qmd_content = f'''```{{python}}
 #| echo: false
@@ -682,11 +686,11 @@ plt.show()
 
 | Statistic | Value |
 |:----------|------:|
-| Baseline (deterministic) | {format_parameter_value(baseline, units, include_unit=False)} |
-| Mean (expected value) | {format_parameter_value(mean, units, include_unit=False)} |
-| Median (50th percentile) | {format_parameter_value(p50, units, include_unit=False)} |
-| Standard Deviation | {format_parameter_value(std, units, include_unit=False)} |
-| 90% Range (5th-95th percentile) | [{format_parameter_value(p5, units, include_unit=False)}, {format_parameter_value(p95, units, include_unit=False)}] |
+| Baseline (deterministic) | {format_parameter_value(baseline, units, include_unit=_table_include_unit)} |
+| Mean (expected value) | {format_parameter_value(mean, units, include_unit=_table_include_unit)} |
+| Median (50th percentile) | {format_parameter_value(p50, units, include_unit=_table_include_unit)} |
+| Standard Deviation | {format_parameter_value(std, units, include_unit=_table_include_unit)} |
+| 90% Range (5th-95th percentile) | [{format_parameter_value(p5, units, include_unit=_table_include_unit)}, {format_parameter_value(p95, units, include_unit=_table_include_unit)}] |
 
 *The histogram shows the distribution of {display_name} across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*
 '''

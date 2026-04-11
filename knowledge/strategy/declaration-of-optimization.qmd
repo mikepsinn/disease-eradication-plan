@@ -40,7 +40,7 @@ For every {{< var military_to_government_clinical_trials_spending_ratio_nounit >
 
 Your chance of being killed by a terrorist? 1 in {{< var annual_terrorism_death_risk_denominator_nounit >}} [@chance-of-dying-from-terrorism-1-in-30m]. Your chance of dying of a disease? 100%.
 
-At the current discovery rate, finding treatments for all known diseases takes ~{{< var status_quo_queue_clearance_years >}}.  One percent of the weapons budget compresses that wait to ~{{< var dfda_queue_clearance_years >}}. The average cure arrives {{< var dfda_trial_capacity_plus_efficacy_lag_years_nounit >}} years sooner. 
+At the current discovery rate, finding treatments for all known diseases takes ~{{< var status_quo_queue_clearance_years >}}. One percent of the weapons budget could increase clinical trial capacity by {{< var dfda_trial_capacity_multiplier >}} and compress that wait to ~{{< var dfda_queue_clearance_years >}}. The average cure arrives {{< var dfda_trial_capacity_plus_efficacy_lag_years_nounit >}} years sooner.
 
 This is important because you personally will be dead within 80 years. (I mention this not to be rude but because you seem weirdly calm about it.)
 
@@ -52,11 +52,11 @@ This Declaration asks every nation on Earth to sign a [treaty](../solution/1-per
 
 Even adjusting for inflation, governments now spend {{< var us_military_spending_current_vs_prewar_multiplier_nounit >}} times more than they did immediately before winning World War II. 
 
-After this war, your governments cut military spending by {{< var post_ww2_military_cut_pct >}} over two years and produced the greatest economic expansion in human history.
+After that war, governments cut military spending by {{< var post_ww2_military_cut_pct >}} and produced the greatest economic expansion in human history.
 
 Unless the human genome has degraded significantly in the last two generations, one percent should be manageable. 
 
-Your governments have already signed multiple global treaties banning entire weapons industries. This one just asks them to buy one percent fewer of them.
+These governments have already signed multiple global treaties banning entire weapons industries. This one just asks them to buy one percent fewer of them.
 
 Think about someone you love who is suffering right now. The treatment that would help them exists as an untested compound on a shelf, because the money bought a missile instead. That missile incinerated a child who would have grown up to discover the cure. You lose the treatment. You lose the scientist. You get the inflation. You get the tax bill. You get to pay for her murder.
 
@@ -104,7 +104,7 @@ They have plundered our seas, ravaged our coasts, burnt our towns, and [destroye
 
 Among them approximately 930,000 physicians, 310,000 scientists, 620,000 engineers, and millions of children who will never grow up to replace them.
 
-They have directed {{< var military_to_government_clinical_trials_spending_ratio >}} times more to the destruction of human life than to testing which medicines might preserve it.
+They have directed {{< var military_to_government_clinical_trials_spending_ratio_nounit >}} times more to the destruction of human life than to testing which medicines might preserve it.
 
 They have permitted {{< var global_disease_deaths_daily_nounit >}} people to die of diseases every day, {{< var global_disease_deaths_per_minute_nounit >}} every minute that passes, while possessing the means to accelerate solutions. The annual toll: {{< var global_annual_daly_burden_nounit >}} years of healthy life lost to disease and disability, quietly deleted.
 

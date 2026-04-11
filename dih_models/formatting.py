@@ -173,7 +173,9 @@ def format_parameter_value(param: Union[float, int, str, "Parameter"], unit: str
             ratio_formatted = clean_number(f"{value:.2f}")
         else:
             ratio_formatted = clean_number(f"{value:.3g}")
-        return f"{ratio_formatted}:1" if ratio_suffix else ratio_formatted
+        if include_unit and ratio_suffix:
+            return f"{ratio_formatted}:1"
+        return ratio_formatted
 
     elif is_multiplier:
         # Format as Xx (e.g., 22x for multipliers)
@@ -191,7 +193,9 @@ def format_parameter_value(param: Union[float, int, str, "Parameter"], unit: str
             multiplier_formatted = clean_number(f"{value:.2f}")
         else:
             multiplier_formatted = clean_number(f"{value:.3g}")
-        return f"{multiplier_formatted}x"
+        if include_unit:
+            return f"{multiplier_formatted}x"
+        return multiplier_formatted
 
     elif unit_check == "year" and 1900 <= value <= 2200:
         # Calendar years: display as plain integer, no auto-scaling
