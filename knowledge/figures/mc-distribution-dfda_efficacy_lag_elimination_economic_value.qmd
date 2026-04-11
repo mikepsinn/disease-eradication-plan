@@ -120,7 +120,7 @@ plt.show()
 | Baseline (deterministic) | $1.19 quadrillion |
 | Mean (expected value) | $1.27 quadrillion |
 | Median (50th percentile) | $1.18 quadrillion |
-| Standard Deviation | $581T |
-| 90% Range (5th-95th percentile) | [$443T, $2.41 quadrillion] |
+| Standard Deviation | $581 trillion |
+| 90% Range (5th-95th percentile) | [$443 trillion, $2.41 quadrillion] |
 
 *The histogram shows the distribution of Total Economic Loss from Disease Eradication Delay across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

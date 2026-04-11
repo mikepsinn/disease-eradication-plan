@@ -117,10 +117,10 @@ plt.show()
 
 | Statistic | Value |
 |:----------|------:|
-| Baseline (deterministic) | $319K |
-| Mean (expected value) | $392K |
-| Median (50th percentile) | $318K |
-| Standard Deviation | $256K |
-| 90% Range (5th-95th percentile) | [$105K, $908K] |
+| Baseline (deterministic) | $319,261 |
+| Mean (expected value) | $392,017 |
+| Median (50th percentile) | $318,082 |
+| Standard Deviation | $256,146 |
+| 90% Range (5th-95th percentile) | [$105,125, $908,295] |
 
 *The histogram shows the distribution of Annual Lost GDP per Capita from War across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

@@ -117,10 +117,10 @@ plt.show()
 
 | Statistic | Value |
 |:----------|------:|
-| Baseline (deterministic) | $20.3K |
-| Mean (expected value) | $20.3K |
-| Median (50th percentile) | $20.3K |
+| Baseline (deterministic) | $20,299 |
+| Mean (expected value) | $20,301 |
+| Median (50th percentile) | $20,301 |
 | Standard Deviation | $148 |
-| 90% Range (5th-95th percentile) | [$20K, $20.6K] |
+| 90% Range (5th-95th percentile) | [$20,047, $20,560] |
 
 *The histogram shows the distribution of US Federal Spending per Capita across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

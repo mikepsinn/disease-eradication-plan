@@ -117,10 +117,10 @@ plt.show()
 
 | Statistic | Value |
 |:----------|------:|
-| Baseline (deterministic) | 2.88 thousand |
-| Mean (expected value) | 2.96 thousand |
-| Median (50th percentile) | 2.89 thousand |
+| Baseline (deterministic) | 2,879 |
+| Mean (expected value) | 2,956 |
+| Median (50th percentile) | 2,885 |
 | Standard Deviation | 833 |
-| 90% Range (5th-95th percentile) | [1.77 thousand, 4.39 thousand] |
+| 90% Range (5th-95th percentile) | [1,765, 4,386] |
 
 *The histogram shows the distribution of Known Safe Exploration Time (Current) across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

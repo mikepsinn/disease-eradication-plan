@@ -36,7 +36,7 @@ These governments have enough weapons to kill everyone on Earth {{< var nuclear_
 
 Seven consecutive failed audits have found that the Pentagon has "misplaced" $2.46 trillion [@pentagon-unaccounted-2-5t]. They then requested additional trillions without explanation or apology. This "misplaced" money could have funded 577 years of clinical trials at current government spending.
 
-For every {{< var military_to_government_clinical_trials_spending_ratio_nounit >}} dollars or yours they spend on the capacity for orphan manufacturing, they only spend one dollar on the clinical trials that might cure the disease you and everyone you love will eventually suffer and die from.
+For every {{< var military_to_government_clinical_trials_spending_ratio_nounit >}} dollars they spend on the capacity for orphan manufacturing, they only spend one on clinical trials that might cure the diseases you and everyone you love will suffer and die from.
 
 Your chance of being killed by a terrorist? 1 in {{< var annual_terrorism_death_risk_denominator_nounit >}} [@chance-of-dying-from-terrorism-1-in-30m]. Your chance of dying of a disease? 100%.
 
@@ -52,7 +52,7 @@ This Declaration asks every nation on Earth to sign a [treaty](../solution/1-per
 
 Even adjusting for inflation, governments now spend {{< var us_military_spending_current_vs_prewar_multiplier_nounit >}} times more than they did immediately before winning World War II. 
 
-After this war, you governments cut military spending by {{< var post_ww2_military_cut_pct >}} over two years and produced the greatest economic expansion in human history.
+After this war, your governments cut military spending by {{< var post_ww2_military_cut_pct >}} over two years and produced the greatest economic expansion in human history.
 
 Unless the human genome has degraded significantly in the last two generations, one percent should be manageable. 
 
@@ -110,7 +110,7 @@ They have permitted {{< var global_disease_deaths_daily_nounit >}} people to die
 
 They have operated [national health research institutions](../problem/nih-fails-2-institute-health.qmd) that have spent trillions and cured zero diseases, directing only {{< var nih_clinical_trials_spending_pct >}} of their budgets to the clinical trials where treatments are actually tested in humans. Nearly ten thousand known safe compounds remain untested for 99.7% of possible disease combinations.
 
-They have erected [drug regulatory agencies](../problem/fda-is-unsafe-and-ineffective.qmd) whose rules increased development costs by a factor of {{< var dfda_trial_cost_reduction_factor >}} and timelines to seventeen years, producing {{< var type_ii_error_cost_ratio_nounit >}} deaths from delayed treatments for every one death they prevent. Since 1962, that delay has killed approximately {{< var existing_drugs_efficacy_lag_deaths_total_nounit >}} people.
+They have erected [drug regulatory agencies](../problem/fda-is-unsafe-and-ineffective.qmd) whose rules increased development costs by a factor of {{< var dfda_trial_cost_reduction_factor_nounit >}} and timelines to seventeen years, producing {{< var type_ii_error_cost_ratio_nounit >}} deaths from delayed treatments for every one death they prevent. Since 1962, that delay has killed approximately {{< var existing_drugs_efficacy_lag_deaths_total_nounit >}} people.
 
 They have left approximately seven thousand known rare diseases in a [treatment queue](../problem/untapped-therapeutic-frontier.qmd) that, at the current rate of fifteen approvals per year, requires {{< var status_quo_queue_clearance_years >}} to clear.
 

@@ -18,7 +18,7 @@
     },
     "ADAPTABLE_TRIAL_PATIENTS": {
       "value": 15076.0,
-      "formatted": "15.1 thousand patients",
+      "formatted": "15,076 patients",
       "unit": "patients",
       "description": "Patients enrolled in ADAPTABLE trial (PCORnet 2016-2019). Enrolled across 40 clinical sites. Precise count from trial completion records.",
       "sourceType": "definition",
@@ -29,7 +29,7 @@
     },
     "ADAPTABLE_TRIAL_TOTAL_COST": {
       "value": 14000000.0,
-      "formatted": "$14M",
+      "formatted": "$14 million",
       "unit": "USD",
       "description": "PCORI grant for ADAPTABLE trial (2016-2019). Note: Direct funding only; total costs including site overhead and in-kind contributions from health systems may be higher.",
       "sourceType": "external",
@@ -80,7 +80,7 @@
     },
     "ANNUAL_WORKING_HOURS": {
       "value": 2000.0,
-      "formatted": "2 thousand hours/year",
+      "formatted": "2,000 hours/year",
       "unit": "hours/year",
       "description": "Standard annual working hours globally. Approximately 40 hours/week x 50 weeks. ILO estimates range from 1,800-2,200 across countries; 2,000 is conventional.",
       "sourceType": "definition",
@@ -101,7 +101,7 @@
     },
     "APOCALYPSE_MARKUP": {
       "value": 2686930806306.6743,
-      "formatted": "$2.69T",
+      "formatted": "$2.69 trillion",
       "unit": "USD",
       "description": "The Apocalypse Markup: total military spending beyond the Price of Apocalypse. The amount governments spend above what is needed to trigger nuclear winter and end civilization once.",
       "sourceType": "calculated",
@@ -123,7 +123,7 @@
     },
     "APPROVED_DRUG_DISEASE_PAIRINGS": {
       "value": 1750.0,
-      "formatted": "1.75 thousand pairings",
+      "formatted": "1,750 pairings",
       "unit": "pairings",
       "description": "Unique approved drug-disease pairings (FDA-approved uses, midpoint of 1,500-2,000 range)",
       "sourceType": "definition",
@@ -236,7 +236,7 @@
     },
     "CAMPAIGN_CELEBRITY_ENDORSEMENT": {
       "value": 15000000.0,
-      "formatted": "$15M",
+      "formatted": "$15 million",
       "unit": "USD",
       "description": "Celebrity and influencer endorsements",
       "sourceType": "definition",
@@ -251,7 +251,7 @@
     },
     "CAMPAIGN_COMMUNITY_ORGANIZING": {
       "value": 30000000.0,
-      "formatted": "$30M",
+      "formatted": "$30 million",
       "unit": "USD",
       "description": "Community organizing and ambassador program budget",
       "sourceType": "definition",
@@ -266,7 +266,7 @@
     },
     "CAMPAIGN_CONTINGENCY": {
       "value": 50000000.0,
-      "formatted": "$50M",
+      "formatted": "$50 million",
       "unit": "USD",
       "description": "Contingency fund for unexpected costs",
       "sourceType": "definition",
@@ -281,7 +281,7 @@
     },
     "CAMPAIGN_DEFENSE_CONVERSION": {
       "value": 50000000.0,
-      "formatted": "$50M",
+      "formatted": "$50 million",
       "unit": "USD",
       "description": "Defense industry conversion program",
       "sourceType": "definition",
@@ -296,7 +296,7 @@
     },
     "CAMPAIGN_DEFENSE_LOBBYIST_BUDGET": {
       "value": 50000000.0,
-      "formatted": "$50M",
+      "formatted": "$50 million",
       "unit": "USD",
       "description": "Budget for co-opting defense industry lobbyists",
       "sourceType": "definition",
@@ -311,7 +311,7 @@
     },
     "CAMPAIGN_HEALTHCARE_ALIGNMENT": {
       "value": 35000000.0,
-      "formatted": "$35M",
+      "formatted": "$35 million",
       "unit": "USD",
       "description": "Healthcare industry alignment and partnerships",
       "sourceType": "definition",
@@ -326,7 +326,7 @@
     },
     "CAMPAIGN_INFRASTRUCTURE": {
       "value": 20000000.0,
-      "formatted": "$20M",
+      "formatted": "$20 million",
       "unit": "USD",
       "description": "Campaign operational infrastructure",
       "sourceType": "definition",
@@ -341,7 +341,7 @@
     },
     "CAMPAIGN_LEGAL_AI_BUDGET": {
       "value": 50000000.0,
-      "formatted": "$50M",
+      "formatted": "$50 million",
       "unit": "USD",
       "description": "AI-assisted legal work budget",
       "sourceType": "definition",
@@ -356,7 +356,7 @@
     },
     "CAMPAIGN_LEGAL_DEFENSE": {
       "value": 20000000.0,
-      "formatted": "$20M",
+      "formatted": "$20 million",
       "unit": "USD",
       "description": "Legal defense fund",
       "sourceType": "definition",
@@ -371,7 +371,7 @@
     },
     "CAMPAIGN_LEGAL_WORK": {
       "value": 60000000.0,
-      "formatted": "$60M",
+      "formatted": "$60 million",
       "unit": "USD",
       "description": "Legal drafting and compliance work",
       "sourceType": "definition",
@@ -386,7 +386,7 @@
     },
     "CAMPAIGN_LOBBYING_EU": {
       "value": 40000000.0,
-      "formatted": "$40M",
+      "formatted": "$40 million",
       "unit": "USD",
       "description": "EU lobbying campaign budget",
       "sourceType": "definition",
@@ -401,7 +401,7 @@
     },
     "CAMPAIGN_LOBBYING_G20_MILLIONS": {
       "value": 35000000.0,
-      "formatted": "$35M",
+      "formatted": "$35 million",
       "unit": "USD",
       "description": "G20 countries lobbying budget",
       "sourceType": "definition",
@@ -412,7 +412,7 @@
     },
     "CAMPAIGN_LOBBYING_US": {
       "value": 50000000.0,
-      "formatted": "$50M",
+      "formatted": "$50 million",
       "unit": "USD",
       "description": "US lobbying campaign budget",
       "sourceType": "definition",
@@ -427,7 +427,7 @@
     },
     "CAMPAIGN_MEDIA_BUDGET_MAX": {
       "value": 1000000000.0,
-      "formatted": "$1B",
+      "formatted": "$1 billion",
       "unit": "USD",
       "description": "Maximum mass media campaign budget",
       "sourceType": "definition",
@@ -442,7 +442,7 @@
     },
     "CAMPAIGN_MEDIA_BUDGET_MIN": {
       "value": 500000000.0,
-      "formatted": "$500M",
+      "formatted": "$500 million",
       "unit": "USD",
       "description": "Minimum mass media campaign budget",
       "sourceType": "definition",
@@ -457,7 +457,7 @@
     },
     "CAMPAIGN_OPPOSITION_RESEARCH": {
       "value": 25000000.0,
-      "formatted": "$25M",
+      "formatted": "$25 million",
       "unit": "USD",
       "description": "Opposition research and rapid response",
       "sourceType": "definition",
@@ -472,7 +472,7 @@
     },
     "CAMPAIGN_PHASE1_BUDGET": {
       "value": 200000000.0,
-      "formatted": "$200M",
+      "formatted": "$200 million",
       "unit": "USD",
       "description": "Phase 1 campaign budget (Foundation, Year 1)",
       "sourceType": "definition",
@@ -487,7 +487,7 @@
     },
     "CAMPAIGN_PHASE2_BUDGET": {
       "value": 500000000.0,
-      "formatted": "$500M",
+      "formatted": "$500 million",
       "unit": "USD",
       "description": "Phase 2 campaign budget (Scale & Momentum, Years 2-3)",
       "sourceType": "definition",
@@ -502,7 +502,7 @@
     },
     "CAMPAIGN_PILOT_PROGRAMS": {
       "value": 30000000.0,
-      "formatted": "$30M",
+      "formatted": "$30 million",
       "unit": "USD",
       "description": "Pilot program testing in small countries",
       "sourceType": "definition",
@@ -517,7 +517,7 @@
     },
     "CAMPAIGN_PLATFORM_DEVELOPMENT": {
       "value": 35000000.0,
-      "formatted": "$35M",
+      "formatted": "$35 million",
       "unit": "USD",
       "description": "Voting platform and technology development",
       "sourceType": "definition",
@@ -532,7 +532,7 @@
     },
     "CAMPAIGN_REGULATORY_NAVIGATION": {
       "value": 20000000.0,
-      "formatted": "$20M",
+      "formatted": "$20 million",
       "unit": "USD",
       "description": "Regulatory compliance and navigation",
       "sourceType": "definition",
@@ -547,7 +547,7 @@
     },
     "CAMPAIGN_SCALING_PREP": {
       "value": 30000000.0,
-      "formatted": "$30M",
+      "formatted": "$30 million",
       "unit": "USD",
       "description": "Scaling preparation and blueprints",
       "sourceType": "definition",
@@ -562,7 +562,7 @@
     },
     "CAMPAIGN_STAFF_BUDGET": {
       "value": 40000000.0,
-      "formatted": "$40M",
+      "formatted": "$40 million",
       "unit": "USD",
       "description": "Campaign core team staff budget",
       "sourceType": "definition",
@@ -577,7 +577,7 @@
     },
     "CAMPAIGN_SUPER_PAC_BUDGET": {
       "value": 30000000.0,
-      "formatted": "$30M",
+      "formatted": "$30 million",
       "unit": "USD",
       "description": "Super PAC campaign expenditures",
       "sourceType": "definition",
@@ -592,7 +592,7 @@
     },
     "CAMPAIGN_TECH_PARTNERSHIPS": {
       "value": 25000000.0,
-      "formatted": "$25M",
+      "formatted": "$25 million",
       "unit": "USD",
       "description": "Tech industry partnerships and infrastructure",
       "sourceType": "definition",
@@ -607,7 +607,7 @@
     },
     "CAMPAIGN_TREATY_IMPLEMENTATION": {
       "value": 40000000.0,
-      "formatted": "$40M",
+      "formatted": "$40 million",
       "unit": "USD",
       "description": "Post-victory treaty implementation support",
       "sourceType": "definition",
@@ -622,7 +622,7 @@
     },
     "CAMPAIGN_VIRAL_CONTENT_BUDGET": {
       "value": 40000000.0,
-      "formatted": "$40M",
+      "formatted": "$40 million",
       "unit": "USD",
       "description": "Viral marketing content creation budget",
       "sourceType": "definition",
@@ -637,7 +637,7 @@
     },
     "CAREGIVER_ANNUAL_VALUE_TOTAL": {
       "value": 600000000000.0,
-      "formatted": "$600B",
+      "formatted": "$600 billion",
       "unit": "USD/year",
       "description": "Total annual value of unpaid caregiving in US",
       "sourceType": "external",
@@ -647,7 +647,7 @@
     },
     "CAREGIVER_COST_ANNUAL": {
       "value": 6000.0,
-      "formatted": "$6K",
+      "formatted": "$6,000",
       "unit": "USD/year",
       "description": "Annual cost of unpaid caregiving (replacement cost method)",
       "sourceType": "definition",
@@ -762,7 +762,7 @@
     },
     "CHAIN_GLOBAL_BILLIONAIRE_COUNT": {
       "value": 2781.0,
-      "formatted": "2.78 thousand people",
+      "formatted": "2,781 people",
       "unit": "people",
       "description": "Number of billionaires globally (Forbes 2024 count)",
       "sourceType": "external",
@@ -784,7 +784,7 @@
     },
     "CHAIN_IMPLEMENTER_COUNT": {
       "value": 2976.0,
-      "formatted": "2.98 thousand people",
+      "formatted": "2,976 people",
       "unit": "people",
       "description": "Total potential implementers (billionaires + world leaders)",
       "sourceType": "calculated",
@@ -795,7 +795,7 @@
     },
     "CHAIN_IMPLEMENTER_ORBIT_SIZE": {
       "value": 1000.0,
-      "formatted": "1 thousand people",
+      "formatted": "1,000 people",
       "unit": "people",
       "description": "Information-orbit size per implementer: people whose recommendation would reach them (staff, advisors, active social media feeds, professional contacts). Lower bound: Dunbar's 150; upper: corporate C-suite intake funnel.",
       "sourceType": "definition",
@@ -810,7 +810,7 @@
     },
     "CHAIN_INITIAL_AUDIENCE": {
       "value": 50000.0,
-      "formatted": "50 thousand people",
+      "formatted": "50,000 people",
       "unit": "people",
       "description": "Conservative initial audience size (readers, website visitors, conference attendees)",
       "sourceType": "definition",
@@ -868,7 +868,7 @@
     },
     "CHILDHOOD_VACCINATION_ANNUAL_BENEFIT": {
       "value": 15000000000.0,
-      "formatted": "$15B",
+      "formatted": "$15 billion",
       "unit": "USD/year",
       "description": "Estimated annual global economic benefit from childhood vaccination programs (measles, polio, etc.)",
       "sourceType": "external",
@@ -922,7 +922,7 @@
     },
     "CLINICAL_TRIAL_COST_PER_APPROVED_DRUG": {
       "value": 1200000000.0,
-      "formatted": "$1.2B",
+      "formatted": "$1.2 billion",
       "unit": "USD",
       "description": "Annual clinical trial spending per approved drug (trials only, excluding other R&D costs like discovery, preclinical, manufacturing)",
       "sourceType": "calculated",
@@ -932,7 +932,7 @@
     },
     "CLINICAL_TRIAL_COST_PER_PARTICIPANT_ANNUAL": {
       "value": 31578.947368421053,
-      "formatted": "$31.6K",
+      "formatted": "$31,579",
       "unit": "USD",
       "description": "Average annual cost per clinical trial participant (total spending ÷ participants)",
       "sourceType": "calculated",
@@ -963,7 +963,7 @@
     },
     "CONCENTRATED_INTEREST_SECTOR_MARKET_CAP_USD": {
       "value": 5000000000000.0,
-      "formatted": "$5T",
+      "formatted": "$5 trillion",
       "unit": "USD",
       "description": "Estimated combined market capitalization of concentrated interest opposition (defense, fossil fuel, etc.)",
       "sourceType": "definition",
@@ -985,7 +985,7 @@
     },
     "CONTRIBUTION_EV_PER_PCT_POINT_TREATY": {
       "value": 34800.17193154482,
-      "formatted": "$34.8K",
+      "formatted": "$34,800",
       "unit": "USD",
       "description": "Personal expected value per percentage point of implementation probability shift under Treaty Trajectory. One percent of the per-capita lifetime income gain.",
       "sourceType": "calculated",
@@ -996,7 +996,7 @@
     },
     "CONTRIBUTION_EV_PER_PCT_POINT_TREATY_BLEND": {
       "value": 67350.17193154483,
-      "formatted": "$67.4K",
+      "formatted": "$67,350",
       "unit": "USD",
       "description": "Blended personal expected value per percentage point of implementation probability shift under Treaty Trajectory.",
       "sourceType": "calculated",
@@ -1007,7 +1007,7 @@
     },
     "CONTRIBUTION_EV_PER_PCT_POINT_WISHONIA": {
       "value": 472058.6748361206,
-      "formatted": "$472K",
+      "formatted": "$472,059",
       "unit": "USD",
       "description": "Personal expected value per percentage point of implementation probability shift under Wishonia Trajectory. One percent of the per-capita lifetime income gain.",
       "sourceType": "calculated",
@@ -1018,7 +1018,7 @@
     },
     "CONTRIBUTION_EV_PER_PCT_POINT_WISHONIA_BLEND": {
       "value": 512258.6748361206,
-      "formatted": "$512K",
+      "formatted": "$512,259",
       "unit": "USD",
       "description": "Blended personal expected value per percentage point of implementation probability shift under Wishonia Trajectory.",
       "sourceType": "calculated",
@@ -1103,7 +1103,7 @@
     },
     "CUMULATIVE_MILITARY_IN_GOVT_TRIAL_YEARS": {
       "value": 37777.77777777778,
-      "formatted": "37.8 thousand years",
+      "formatted": "37,778 years",
       "unit": "years",
       "description": "Cumulative military spending since 1913 expressed in equivalent years of government clinical trial spending ($170T / $4.5B per year)",
       "sourceType": "calculated",
@@ -1114,7 +1114,7 @@
     },
     "CUMULATIVE_MILITARY_SPENDING_ALL_HISTORY": {
       "value": 180000000000000.0,
-      "formatted": "$180T",
+      "formatted": "$180 trillion",
       "unit": "USD",
       "description": "Cumulative global military spending across all recorded history in constant 2024 dollars. Fed era ($170T) + 19th century ($3T) + pre-1800 GDP-share estimate ($4-20T). Range: $150-225T. 75% was spent after 1945.",
       "sourceType": "definition",
@@ -1124,7 +1124,7 @@
     },
     "CUMULATIVE_MILITARY_SPENDING_FED_ERA": {
       "value": 170000000000000.0,
-      "formatted": "$170T",
+      "formatted": "$170 trillion",
       "unit": "USD",
       "description": "Cumulative global military spending since 1913 (Fed era) in constant 2024 dollars. Built from: SIPRI 1988-2024 ($65-72T), Cold War 1946-1987 ($50-70T reconstructed), WWI+WWII+interwar ($33T from Harrison). Range: $150-190T.",
       "sourceType": "definition",
@@ -1135,7 +1135,7 @@
     },
     "CURRENT_ACTIVE_TRIALS": {
       "value": 10000.0,
-      "formatted": "10 thousand trials",
+      "formatted": "10,000 trials",
       "unit": "trials",
       "description": "Current active trials at any given time (3-5 year duration)",
       "sourceType": "external",
@@ -1198,7 +1198,7 @@
     },
     "CURRENT_KNOWN_SAFE_EXPLORATION_YEARS": {
       "value": 2878.787878787879,
-      "formatted": "2.88 thousand years",
+      "formatted": "2,879 years",
       "unit": "years",
       "description": "Years to test all known safe drug-disease combinations at current global trial capacity",
       "sourceType": "calculated",
@@ -1220,7 +1220,7 @@
     },
     "CURRENT_TOTAL_EXPLORATION_YEARS": {
       "value": 15606.060606060606,
-      "formatted": "15.6 thousand years",
+      "formatted": "15,606 years",
       "unit": "years",
       "description": "Years to test all therapeutic combinations (known safe + emerging modalities) at current capacity",
       "sourceType": "calculated",
@@ -1230,7 +1230,7 @@
     },
     "CURRENT_TRAJECTORY_AVG_INCOME_YEAR_15": {
       "value": 18713.96507272838,
-      "formatted": "$18.7K",
+      "formatted": "$18,714",
       "unit": "USD",
       "description": "Average income (GDP per capita) at year 15 under current trajectory.",
       "sourceType": "calculated",
@@ -1241,7 +1241,7 @@
     },
     "CURRENT_TRAJECTORY_AVG_INCOME_YEAR_20": {
       "value": 20482.705503629928,
-      "formatted": "$20.5K",
+      "formatted": "$20,483",
       "unit": "USD",
       "description": "Average income (GDP per capita) at year 20 under current trajectory trajectory.",
       "sourceType": "calculated",
@@ -1252,7 +1252,7 @@
     },
     "CURRENT_TRAJECTORY_CUMULATIVE_LIFETIME_INCOME": {
       "value": 1097018.4798561125,
-      "formatted": "$1.1M",
+      "formatted": "$1.1 million",
       "unit": "USD",
       "description": "Cumulative per-capita income over an average remaining lifespan under current trajectory baseline trajectory. Uses the implied per-capita baseline CAGR from 2025 to 2045.",
       "sourceType": "calculated",
@@ -1263,7 +1263,7 @@
     },
     "CURRENT_TRAJECTORY_GDP_YEAR_15": {
       "value": 166554289147282.6,
-      "formatted": "$167T",
+      "formatted": "$167 trillion",
       "unit": "USD",
       "description": "Global GDP at year 15 under status-quo current trajectory growth.",
       "sourceType": "calculated",
@@ -1273,7 +1273,7 @@
     },
     "CURRENT_TRAJECTORY_GDP_YEAR_20": {
       "value": 188440890633395.34,
-      "formatted": "$188T",
+      "formatted": "$188 trillion",
       "unit": "USD",
       "description": "Global GDP at year 20 under status-quo current trajectory growth.",
       "sourceType": "calculated",
@@ -1284,7 +1284,7 @@
     },
     "CURRENT_TRIALS_PER_YEAR": {
       "value": 3300.0,
-      "formatted": "3.3 thousand trials/year",
+      "formatted": "3,300 trials/year",
       "unit": "trials/year",
       "description": "Current global clinical trials per year",
       "sourceType": "external",
@@ -1335,7 +1335,7 @@
     },
     "DCT_PLATFORM_FUNDING_MEDIUM": {
       "value": 500000000.0,
-      "formatted": "$500M",
+      "formatted": "$500 million",
       "unit": "USD",
       "description": "Mid-range funding for commercial DCT platform",
       "sourceType": "definition",
@@ -1345,7 +1345,7 @@
     },
     "DEFENSE_LOBBYING_ANNUAL": {
       "value": 127000000.0,
-      "formatted": "$127M",
+      "formatted": "$127 million",
       "unit": "USD/year",
       "description": "Annual defense industry lobbying spending",
       "sourceType": "external",
@@ -1440,7 +1440,7 @@
     },
     "DFDA_ANNUAL_OPEX": {
       "value": 40000000.0,
-      "formatted": "$40M",
+      "formatted": "$40 million",
       "unit": "USD/year",
       "description": "Total annual Decentralized Framework for Drug Assessment operational costs (sum of all components: platform + staff + infra + regulatory + community)",
       "sourceType": "calculated",
@@ -1451,7 +1451,7 @@
     },
     "DFDA_ANNUAL_TRIAL_FUNDING": {
       "value": 21800000000.0,
-      "formatted": "$21.8B",
+      "formatted": "$21.8 billion",
       "unit": "USD/year",
       "description": "Assumed annual funding for dFDA pragmatic clinical trials (~$21.8B/year). Source-agnostic: could come from military reallocation, philanthropy, or government appropriation.",
       "sourceType": "definition",
@@ -1462,7 +1462,7 @@
     },
     "DFDA_BENEFIT_RD_ONLY_ANNUAL": {
       "value": 58640487804.878044,
-      "formatted": "$58.6B",
+      "formatted": "$58.6 billion",
       "unit": "USD/year",
       "description": "Annual Decentralized Framework for Drug Assessment benefit from R&D savings (trial cost reduction, secondary component)",
       "sourceType": "calculated",
@@ -1494,7 +1494,7 @@
     },
     "DFDA_DIRECT_FUNDING_QUEUE_CLEARANCE_NPV": {
       "value": 475659465477.4342,
-      "formatted": "$476B",
+      "formatted": "$476 billion",
       "unit": "USD",
       "description": "NPV of annual direct funding for the therapeutic space exploration period. Funding period equals exploration time (queue clearance years at given capacity multiplier). After exploration completes, the full timeline shift benefit is realized.",
       "sourceType": "calculated",
@@ -1614,7 +1614,7 @@
     },
     "DFDA_NET_SAVINGS_RD_ONLY_ANNUAL": {
       "value": 58600487804.878044,
-      "formatted": "$58.6B",
+      "formatted": "$58.6 billion",
       "unit": "USD/year",
       "description": "Annual net savings from R&D cost reduction only (gross savings minus operational costs, excludes regulatory delay value)",
       "sourceType": "calculated",
@@ -1635,7 +1635,7 @@
     },
     "DFDA_NPV_ANNUAL_OPEX": {
       "value": 18950000.0,
-      "formatted": "$18.9M",
+      "formatted": "$18.9 million",
       "unit": "USD/year",
       "description": "Decentralized Framework for Drug Assessment Core framework annual opex (midpoint of $11-26.5M)",
       "sourceType": "definition",
@@ -1650,7 +1650,7 @@
     },
     "DFDA_NPV_ANNUAL_OPEX_TOTAL": {
       "value": 40050000.0,
-      "formatted": "$40M",
+      "formatted": "$40 million",
       "unit": "USD/year",
       "description": "Total NPV annual opex (Decentralized Framework for Drug Assessment core + DIH initiatives)",
       "sourceType": "calculated",
@@ -1661,7 +1661,7 @@
     },
     "DFDA_NPV_BENEFIT_RD_ONLY": {
       "value": 389352903335.6751,
-      "formatted": "$389B",
+      "formatted": "$389 billion",
       "unit": "USD",
       "description": "NPV of Decentralized Framework for Drug Assessment R&D savings only with 5-year adoption ramp (10-year horizon, most conservative financial estimate)",
       "sourceType": "calculated",
@@ -1672,7 +1672,7 @@
     },
     "DFDA_NPV_NET_BENEFIT_RD_ONLY": {
       "value": 388741518712.06226,
-      "formatted": "$389B",
+      "formatted": "$389 billion",
       "unit": "USD",
       "description": "NPV net benefit using R&D savings only (benefits minus costs)",
       "sourceType": "calculated",
@@ -1683,7 +1683,7 @@
     },
     "DFDA_NPV_PV_ANNUAL_OPEX": {
       "value": 341634623.61287224,
-      "formatted": "$342M",
+      "formatted": "$342 million",
       "unit": "USD",
       "description": "Present value of annual opex over 10 years (NPV formula)",
       "sourceType": "calculated",
@@ -1693,7 +1693,7 @@
     },
     "DFDA_NPV_TOTAL_COST": {
       "value": 611384623.6128722,
-      "formatted": "$611M",
+      "formatted": "$611 million",
       "unit": "USD",
       "description": "Total NPV cost (upfront + PV of annual opex)",
       "sourceType": "calculated",
@@ -1704,7 +1704,7 @@
     },
     "DFDA_NPV_UPFRONT_COST": {
       "value": 40000000.0,
-      "formatted": "$40M",
+      "formatted": "$40 million",
       "unit": "USD",
       "description": "Decentralized Framework for Drug Assessment Core framework build cost",
       "sourceType": "definition",
@@ -1718,7 +1718,7 @@
     },
     "DFDA_NPV_UPFRONT_COST_TOTAL": {
       "value": 269750000.0,
-      "formatted": "$270M",
+      "formatted": "$270 million",
       "unit": "USD",
       "description": "Total NPV upfront costs (Decentralized Framework for Drug Assessment core + DIH initiatives)",
       "sourceType": "calculated",
@@ -1744,7 +1744,7 @@
     },
     "DFDA_OPEX_COMMUNITY": {
       "value": 2000000.0,
-      "formatted": "$2M",
+      "formatted": "$2 million",
       "unit": "USD/year",
       "description": "Decentralized Framework for Drug Assessment community support costs",
       "sourceType": "definition",
@@ -1758,7 +1758,7 @@
     },
     "DFDA_OPEX_INFRASTRUCTURE": {
       "value": 8000000.0,
-      "formatted": "$8M",
+      "formatted": "$8 million",
       "unit": "USD/year",
       "description": "Decentralized Framework for Drug Assessment infrastructure costs (cloud, security)",
       "sourceType": "definition",
@@ -1783,7 +1783,7 @@
     },
     "DFDA_OPEX_PLATFORM_MAINTENANCE": {
       "value": 15000000.0,
-      "formatted": "$15M",
+      "formatted": "$15 million",
       "unit": "USD/year",
       "description": "Decentralized Framework for Drug Assessment maintenance costs",
       "sourceType": "definition",
@@ -1797,7 +1797,7 @@
     },
     "DFDA_OPEX_REGULATORY": {
       "value": 5000000.0,
-      "formatted": "$5M",
+      "formatted": "$5 million",
       "unit": "USD/year",
       "description": "Decentralized Framework for Drug Assessment regulatory coordination costs",
       "sourceType": "definition",
@@ -1811,7 +1811,7 @@
     },
     "DFDA_OPEX_STAFF": {
       "value": 10000000.0,
-      "formatted": "$10M",
+      "formatted": "$10 million",
       "unit": "USD/year",
       "description": "Decentralized Framework for Drug Assessment staff costs (minimal, AI-assisted)",
       "sourceType": "definition",
@@ -1862,7 +1862,7 @@
     },
     "DFDA_RD_SAVINGS_DAILY": {
       "value": 160658870.698296,
-      "formatted": "$161M",
+      "formatted": "$161 million",
       "unit": "USD/day",
       "description": "Daily R&D savings from trial cost reduction (opportunity cost of delay)",
       "sourceType": "calculated",
@@ -1960,7 +1960,7 @@
     },
     "DFDA_TARGET_COST_PER_PATIENT_USD": {
       "value": 1000.0,
-      "formatted": "$1K",
+      "formatted": "$1,000",
       "unit": "USD/patient",
       "description": "Target cost per patient in USD (same as DFDA_TARGET_COST_PER_PATIENT but in dollars)",
       "sourceType": "definition",
@@ -1971,7 +1971,7 @@
     },
     "DFDA_TOTAL_EXPLORATION_YEARS": {
       "value": 1265.9125724153298,
-      "formatted": "1.27 thousand years",
+      "formatted": "1,266 years",
       "unit": "years",
       "description": "Years to test all therapeutic combinations (known safe + emerging modalities) with dFDA capacity",
       "sourceType": "calculated",
@@ -1981,7 +1981,7 @@
     },
     "DFDA_TRIALS_PER_YEAR_CAPACITY": {
       "value": 40682.114327800125,
-      "formatted": "40.7 thousand trials/year",
+      "formatted": "40,682 trials/year",
       "unit": "trials/year",
       "description": "Maximum trials per year possible with trial capacity multiplier",
       "sourceType": "calculated",
@@ -2121,7 +2121,7 @@
     },
     "DFDA_TRIAL_SUBSIDIES_ANNUAL": {
       "value": 21760000000.0,
-      "formatted": "$21.8B",
+      "formatted": "$21.8 billion",
       "unit": "USD/year",
       "description": "Annual clinical trial patient subsidies from dFDA funding (total funding minus operational costs)",
       "sourceType": "calculated",
@@ -2131,7 +2131,7 @@
     },
     "DFDA_UPFRONT_BUILD": {
       "value": 40000000.0,
-      "formatted": "$40M",
+      "formatted": "$40 million",
       "unit": "USD",
       "description": "Decentralized Framework for Drug Assessment one-time build cost (central estimate)",
       "sourceType": "definition",
@@ -2142,7 +2142,7 @@
     },
     "DFDA_UPFRONT_BUILD_MAX": {
       "value": 46000000.0,
-      "formatted": "$46M",
+      "formatted": "$46 million",
       "unit": "USD",
       "description": "Decentralized Framework for Drug Assessment one-time build cost (high estimate)",
       "sourceType": "definition",
@@ -2164,7 +2164,7 @@
     },
     "DIH_NPV_ANNUAL_OPEX_INITIATIVES": {
       "value": 21100000.0,
-      "formatted": "$21.1M",
+      "formatted": "$21.1 million",
       "unit": "USD/year",
       "description": "DIH broader initiatives annual opex (medium case)",
       "sourceType": "definition",
@@ -2178,7 +2178,7 @@
     },
     "DIH_NPV_UPFRONT_COST_INITIATIVES": {
       "value": 229750000.0,
-      "formatted": "$230M",
+      "formatted": "$230 million",
       "unit": "USD",
       "description": "DIH broader initiatives upfront cost (medium case)",
       "sourceType": "definition",
@@ -2214,7 +2214,7 @@
     },
     "DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL": {
       "value": 21760000000.0,
-      "formatted": "$21.8B",
+      "formatted": "$21.8 billion",
       "unit": "USD/year",
       "description": "Annual funding for pragmatic clinical trials (treaty funding minus VICTORY Incentive Alignment Bond payouts and IAB political incentive mechanism)",
       "sourceType": "calculated",
@@ -2225,7 +2225,7 @@
     },
     "DIH_TREASURY_TRIAL_SUBSIDIES_ANNUAL": {
       "value": 21720000000.0,
-      "formatted": "$21.7B",
+      "formatted": "$21.7 billion",
       "unit": "USD/year",
       "description": "Annual clinical trial patient subsidies (all medical research funds after Decentralized Framework for Drug Assessment operations)",
       "sourceType": "calculated",
@@ -2247,7 +2247,7 @@
     },
     "DISEASES_WITHOUT_EFFECTIVE_TREATMENT": {
       "value": 6650.0,
-      "formatted": "6.65 thousand diseases",
+      "formatted": "6,650 diseases",
       "unit": "diseases",
       "description": "Number of diseases without effective treatment. 95% of 7,000 rare diseases lack FDA-approved treatment (per Orphanet 2024). This represents the therapeutic search space that remains unexplored.",
       "sourceType": "calculated",
@@ -2311,7 +2311,7 @@
     },
     "DOT_VALUE_OF_STATISTICAL_LIFE": {
       "value": 13700000.0,
-      "formatted": "$13.7M",
+      "formatted": "$13.7 million",
       "unit": "USD",
       "description": "DOT Value of Statistical Life (2024). Used by federal agencies to evaluate safety regulations and quantify the economic value of mortality risk reductions.",
       "sourceType": "external",
@@ -2322,7 +2322,7 @@
     },
     "DRUGS_APPROVED_SINCE_1962": {
       "value": 3100.0,
-      "formatted": "3.1 thousand drugs",
+      "formatted": "3,100 drugs",
       "unit": "drugs",
       "description": "Estimated total drugs approved globally since 1962 (62 years × average approval rate). Conservative: uses current rate, actual historical rate was lower in 1960s-80s.",
       "sourceType": "calculated",
@@ -2354,7 +2354,7 @@
     },
     "DRUG_DEVELOPMENT_COST_1980S": {
       "value": 194000000.0,
-      "formatted": "$194M",
+      "formatted": "$194 million",
       "unit": "USD",
       "description": "Drug development cost in 1980s (compounded to approval, 1990 dollars)",
       "sourceType": "external",
@@ -2458,7 +2458,7 @@
     },
     "EFFICACY_LAG_CUMULATIVE_EXCESS_COST": {
       "value": 4836000000000.0,
-      "formatted": "$4.84T",
+      "formatted": "$4.84 trillion",
       "unit": "USD",
       "description": "Cumulative Phase 2/3 efficacy testing cost since 1962. Uses direct Phase 2/3 cost per drug - this is a LOWER BOUND because it excludes opportunity cost of delays, compounds abandoned due to cost barrier, and regulatory overhead.",
       "sourceType": "calculated",
@@ -2469,7 +2469,7 @@
     },
     "EFFICACY_LAG_DEATHS_911_EQUIVALENTS": {
       "value": 34132.236031799344,
-      "formatted": "34.1 thousand 9/11s",
+      "formatted": "34,132 9/11s",
       "unit": "9/11s",
       "description": "Total deaths from efficacy lag expressed in 9/11 equivalents. Makes the mortality cost viscerally understandable: how many September 11ths worth of deaths did the 1962 efficacy requirements cause?",
       "sourceType": "calculated",
@@ -2522,7 +2522,7 @@
     },
     "EPIGENETIC_TARGETS_COUNT": {
       "value": 1500.0,
-      "formatted": "1.5 thousand targets",
+      "formatted": "1,500 targets",
       "unit": "targets",
       "description": "Druggable epigenetic targets (HDACs, DNMTs, histone modifiers, bromodomains)",
       "sourceType": "definition",
@@ -2577,7 +2577,7 @@
     },
     "EXISTING_DRUGS_EFFICACY_LAG_ECONOMIC_LOSS": {
       "value": 259109750000000.0,
-      "formatted": "$259T",
+      "formatted": "$259 trillion",
       "unit": "USD",
       "description": "Total economic loss from delaying existing drugs over 8.2-year efficacy lag. One-time benefit of eliminating Phase 2-4 delay. Excludes innovation acceleration effects.",
       "sourceType": "calculated",
@@ -2609,7 +2609,7 @@
     },
     "FAMILY_OFFICE_INVESTMENT_MIN": {
       "value": 5000000.0,
-      "formatted": "$5M",
+      "formatted": "$5 million",
       "unit": "USD",
       "description": "Minimum investment for family offices",
       "sourceType": "definition",
@@ -2620,7 +2620,7 @@
     },
     "FDA_APPROVED_PRODUCTS_COUNT": {
       "value": 20000.0,
-      "formatted": "20 thousand products",
+      "formatted": "20,000 products",
       "unit": "products",
       "description": "Total FDA-approved drug products in the U.S.",
       "sourceType": "external",
@@ -2631,7 +2631,7 @@
     },
     "FDA_APPROVED_UNIQUE_ACTIVE_INGREDIENTS": {
       "value": 1650.0,
-      "formatted": "1.65 thousand compounds",
+      "formatted": "1,650 compounds",
       "unit": "compounds",
       "description": "Unique active pharmaceutical ingredients in FDA-approved products (midpoint of 1,300-2,000 range)",
       "sourceType": "external",
@@ -2719,7 +2719,7 @@
     },
     "GIVEWELL_COST_PER_LIFE_AVG": {
       "value": 4500.0,
-      "formatted": "$4.5K",
+      "formatted": "$4,500",
       "unit": "USD/life",
       "description": "GiveWell average cost per life saved across top charities",
       "sourceType": "external",
@@ -2729,7 +2729,7 @@
     },
     "GIVEWELL_COST_PER_LIFE_MAX": {
       "value": 5500.0,
-      "formatted": "$5.5K",
+      "formatted": "$5,500",
       "unit": "USD/life",
       "description": "GiveWell cost per life saved (Against Malaria Foundation)",
       "sourceType": "external",
@@ -2740,7 +2740,7 @@
     },
     "GIVEWELL_COST_PER_LIFE_MIN": {
       "value": 3500.0,
-      "formatted": "$3.5K",
+      "formatted": "$3,500",
       "unit": "USD/life",
       "description": "GiveWell cost per life saved (Helen Keller International)",
       "sourceType": "external",
@@ -2766,7 +2766,7 @@
     },
     "GLOBAL_ANNUAL_CONFLICT_DEATHS_STATE_VIOLENCE": {
       "value": 2700.0,
-      "formatted": "2.7 thousand deaths/year",
+      "formatted": "2,700 deaths/year",
       "unit": "deaths/year",
       "description": "Annual deaths from state violence",
       "sourceType": "external",
@@ -2781,7 +2781,7 @@
     },
     "GLOBAL_ANNUAL_CONFLICT_DEATHS_TERROR_ATTACKS": {
       "value": 8300.0,
-      "formatted": "8.3 thousand deaths/year",
+      "formatted": "8,300 deaths/year",
       "unit": "deaths/year",
       "description": "Annual deaths from terror attacks globally",
       "sourceType": "external",
@@ -2829,7 +2829,7 @@
     },
     "GLOBAL_ANNUAL_DIRECT_INDIRECT_WAR_COST": {
       "value": 11357100000000.0,
-      "formatted": "$11.4T",
+      "formatted": "$11.4 trillion",
       "unit": "USD/year",
       "description": "Total annual cost of war worldwide (direct + indirect costs)",
       "sourceType": "calculated",
@@ -2840,7 +2840,7 @@
     },
     "GLOBAL_ANNUAL_ENVIRONMENTAL_DAMAGE_CONFLICT": {
       "value": 100000000000.0,
-      "formatted": "$100B",
+      "formatted": "$100 billion",
       "unit": "USD",
       "description": "Annual environmental damage and restoration costs from conflict",
       "sourceType": "external",
@@ -2855,7 +2855,7 @@
     },
     "GLOBAL_ANNUAL_HUMAN_COST_ACTIVE_COMBAT": {
       "value": 2336000000000.0,
-      "formatted": "$2.34T",
+      "formatted": "$2.34 trillion",
       "unit": "USD/year",
       "description": "Annual cost of combat deaths (deaths × VSL)",
       "sourceType": "calculated",
@@ -2866,7 +2866,7 @@
     },
     "GLOBAL_ANNUAL_HUMAN_COST_STATE_VIOLENCE": {
       "value": 27000000000.0,
-      "formatted": "$27B",
+      "formatted": "$27 billion",
       "unit": "USD/year",
       "description": "Annual cost of state violence deaths (deaths × VSL)",
       "sourceType": "calculated",
@@ -2877,7 +2877,7 @@
     },
     "GLOBAL_ANNUAL_HUMAN_COST_TERROR_ATTACKS": {
       "value": 83000000000.0,
-      "formatted": "$83B",
+      "formatted": "$83 billion",
       "unit": "USD/year",
       "description": "Annual cost of terror deaths (deaths × VSL)",
       "sourceType": "calculated",
@@ -2888,7 +2888,7 @@
     },
     "GLOBAL_ANNUAL_HUMAN_LIFE_LOSSES_CONFLICT": {
       "value": 2446000000000.0,
-      "formatted": "$2.45T",
+      "formatted": "$2.45 trillion",
       "unit": "USD/year",
       "description": "Total annual human life losses from conflict (sum of combat, terror, state violence)",
       "sourceType": "calculated",
@@ -2899,7 +2899,7 @@
     },
     "GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_COMMUNICATIONS_CONFLICT": {
       "value": 298100000000.0,
-      "formatted": "$298B",
+      "formatted": "$298 billion",
       "unit": "USD",
       "description": "Annual infrastructure damage to communications from conflict",
       "sourceType": "external",
@@ -2913,7 +2913,7 @@
     },
     "GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_EDUCATION_CONFLICT": {
       "value": 234500000000.0,
-      "formatted": "$234B",
+      "formatted": "$234 billion",
       "unit": "USD",
       "description": "Annual infrastructure damage to education facilities from conflict",
       "sourceType": "external",
@@ -2927,7 +2927,7 @@
     },
     "GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_ENERGY_CONFLICT": {
       "value": 421700000000.0,
-      "formatted": "$422B",
+      "formatted": "$422 billion",
       "unit": "USD",
       "description": "Annual infrastructure damage to energy systems from conflict",
       "sourceType": "external",
@@ -2941,7 +2941,7 @@
     },
     "GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_HEALTHCARE_CONFLICT": {
       "value": 165600000000.0,
-      "formatted": "$166B",
+      "formatted": "$166 billion",
       "unit": "USD",
       "description": "Annual infrastructure damage to healthcare facilities from conflict",
       "sourceType": "external",
@@ -2955,7 +2955,7 @@
     },
     "GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_TRANSPORTATION_CONFLICT": {
       "value": 487300000000.0,
-      "formatted": "$487B",
+      "formatted": "$487 billion",
       "unit": "USD",
       "description": "Annual infrastructure damage to transportation from conflict",
       "sourceType": "external",
@@ -2969,7 +2969,7 @@
     },
     "GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_WATER_CONFLICT": {
       "value": 267800000000.0,
-      "formatted": "$268B",
+      "formatted": "$268 billion",
       "unit": "USD",
       "description": "Annual infrastructure damage to water systems from conflict",
       "sourceType": "external",
@@ -2983,7 +2983,7 @@
     },
     "GLOBAL_ANNUAL_INFRASTRUCTURE_DESTRUCTION_CONFLICT": {
       "value": 1875000000000.0,
-      "formatted": "$1.88T",
+      "formatted": "$1.88 trillion",
       "unit": "USD/year",
       "description": "Total annual infrastructure destruction (sum of transportation, energy, communications, water, education, healthcare)",
       "sourceType": "calculated",
@@ -3008,7 +3008,7 @@
     },
     "GLOBAL_ANNUAL_LOST_ECONOMIC_GROWTH_MILITARY_SPENDING": {
       "value": 2718000000000.0,
-      "formatted": "$2.72T",
+      "formatted": "$2.72 trillion",
       "unit": "USD",
       "description": "Annual foregone economic output from military spending vs productive alternatives. This estimate implicitly captures fiscal multiplier differences (military ~0.6x vs healthcare ~4.3x GDP multiplier). Do not add separate GDP multiplier adjustment to avoid double-counting.",
       "sourceType": "external",
@@ -3023,7 +3023,7 @@
     },
     "GLOBAL_ANNUAL_LOST_HUMAN_CAPITAL_CONFLICT": {
       "value": 300000000000.0,
-      "formatted": "$300B",
+      "formatted": "$300 billion",
       "unit": "USD",
       "description": "Annual lost productivity from conflict casualties",
       "sourceType": "external",
@@ -3038,7 +3038,7 @@
     },
     "GLOBAL_ANNUAL_PSYCHOLOGICAL_IMPACT_COSTS_CONFLICT": {
       "value": 232000000000.0,
-      "formatted": "$232B",
+      "formatted": "$232 billion",
       "unit": "USD",
       "description": "Annual PTSD and mental health costs from conflict",
       "sourceType": "external",
@@ -3053,7 +3053,7 @@
     },
     "GLOBAL_ANNUAL_REFUGEE_SUPPORT_COSTS": {
       "value": 150000000000.0,
-      "formatted": "$150B",
+      "formatted": "$150 billion",
       "unit": "USD",
       "description": "Annual refugee support costs (108.4M refugees × $1,384/year)",
       "sourceType": "external",
@@ -3068,7 +3068,7 @@
     },
     "GLOBAL_ANNUAL_SAVINGS": {
       "value": 31050000000000.004,
-      "formatted": "$31.1T",
+      "formatted": "$31.1 trillion",
       "unit": "USD",
       "description": "Global annual savings in USD (savings rate × GDP)",
       "sourceType": "calculated",
@@ -3078,7 +3078,7 @@
     },
     "GLOBAL_ANNUAL_SAVINGS_PER_CAPITA": {
       "value": 3881.2500000000005,
-      "formatted": "$3.88K",
+      "formatted": "$3,881",
       "unit": "USD/person/year",
       "description": "Global annual savings divided by global population. Useful as a rough average-person default for prize-contribution sizing.",
       "sourceType": "calculated",
@@ -3089,7 +3089,7 @@
     },
     "GLOBAL_ANNUAL_TRADE_DISRUPTION_CONFLICT": {
       "value": 616000000000.0,
-      "formatted": "$616B",
+      "formatted": "$616 billion",
       "unit": "USD/year",
       "description": "Total annual trade disruption (sum of shipping, supply chain, energy prices, currency instability)",
       "sourceType": "calculated",
@@ -3100,7 +3100,7 @@
     },
     "GLOBAL_ANNUAL_TRADE_DISRUPTION_CURRENCY_CONFLICT": {
       "value": 57400000000.0,
-      "formatted": "$57.4B",
+      "formatted": "$57.4 billion",
       "unit": "USD",
       "description": "Annual trade disruption costs from currency instability",
       "sourceType": "external",
@@ -3114,7 +3114,7 @@
     },
     "GLOBAL_ANNUAL_TRADE_DISRUPTION_ENERGY_PRICE_CONFLICT": {
       "value": 124700000000.0,
-      "formatted": "$125B",
+      "formatted": "$125 billion",
       "unit": "USD",
       "description": "Annual trade disruption costs from energy price volatility",
       "sourceType": "external",
@@ -3128,7 +3128,7 @@
     },
     "GLOBAL_ANNUAL_TRADE_DISRUPTION_SHIPPING_CONFLICT": {
       "value": 247100000000.0,
-      "formatted": "$247B",
+      "formatted": "$247 billion",
       "unit": "USD",
       "description": "Annual trade disruption costs from shipping disruptions",
       "sourceType": "external",
@@ -3142,7 +3142,7 @@
     },
     "GLOBAL_ANNUAL_TRADE_DISRUPTION_SUPPLY_CHAIN_CONFLICT": {
       "value": 186800000000.0,
-      "formatted": "$187B",
+      "formatted": "$187 billion",
       "unit": "USD",
       "description": "Annual trade disruption costs from supply chain disruptions",
       "sourceType": "external",
@@ -3156,7 +3156,7 @@
     },
     "GLOBAL_ANNUAL_VETERAN_HEALTHCARE_COSTS": {
       "value": 200100000000.0,
-      "formatted": "$200B",
+      "formatted": "$200 billion",
       "unit": "USD",
       "description": "Annual veteran healthcare costs (20-year projected)",
       "sourceType": "external",
@@ -3171,7 +3171,7 @@
     },
     "GLOBAL_ANNUAL_WAR_DIRECT_COSTS_TOTAL": {
       "value": 7657000000000.0,
-      "formatted": "$7.66T",
+      "formatted": "$7.66 trillion",
       "unit": "USD/year",
       "description": "Total annual direct war costs (military spending + infrastructure + human life + trade disruption)",
       "sourceType": "calculated",
@@ -3182,7 +3182,7 @@
     },
     "GLOBAL_ANNUAL_WAR_INDIRECT_COSTS_TOTAL": {
       "value": 3700100000000.0,
-      "formatted": "$3.7T",
+      "formatted": "$3.7 trillion",
       "unit": "USD/year",
       "description": "Total annual indirect war costs (opportunity cost + veterans + refugees + environment + mental health + lost productivity)",
       "sourceType": "calculated",
@@ -3204,7 +3204,7 @@
     },
     "GLOBAL_AVG_INCOME_2025": {
       "value": 14375.0,
-      "formatted": "$14.4K",
+      "formatted": "$14,375",
       "unit": "USD",
       "description": "Global average income (GDP per capita) in 2025 baseline.",
       "sourceType": "calculated",
@@ -3250,7 +3250,7 @@
     },
     "GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL": {
       "value": 60000000000.0,
-      "formatted": "$60B",
+      "formatted": "$60 billion",
       "unit": "USD",
       "description": "Annual global spending on clinical trials (Industry: $45-60B + Government: $3-6B + Nonprofits: $2-5B). Conservative estimate using 15-20% of $300B total pharma R&D, not inflated market size projections.",
       "sourceType": "external",
@@ -3265,7 +3265,7 @@
     },
     "GLOBAL_COORDINATION_ACTIVATION_BUDGET": {
       "value": 30000000000.0,
-      "formatted": "$30B",
+      "formatted": "$30 billion",
       "unit": "USD",
       "description": "Canonical institutional activation threshold: capital required to make 50% participation credible through direct referral incentives, verification, payment rails, and global launch operations. This is the main institutional ask, not the PRIZE pool seed benchmark.",
       "sourceType": "calculated",
@@ -3302,7 +3302,7 @@
     },
     "GLOBAL_COORDINATION_PLATFORM_AND_OPERATIONS_COST": {
       "value": 4000000000.0,
-      "formatted": "$4B",
+      "formatted": "$4 billion",
       "unit": "USD",
       "description": "Fixed cost to run a global activation campaign toward 50% participation: platform buildout, localization, customer support, compliance, payout operations, fraud response, and regional launch infrastructure.",
       "sourceType": "definition",
@@ -3354,7 +3354,7 @@
     },
     "GLOBAL_COST_PER_LIFE_SAVED_MED_RESEARCH_ANNUAL": {
       "value": 16071.42857142857,
-      "formatted": "$16.1K",
+      "formatted": "$16,071",
       "unit": "USD/life",
       "description": "Cost per life saved by medical research",
       "sourceType": "calculated",
@@ -3375,7 +3375,7 @@
     },
     "GLOBAL_CYBERCRIME_COST_ANNUAL_2025": {
       "value": 10500000000000.0,
-      "formatted": "$10.5T",
+      "formatted": "$10.5 trillion",
       "unit": "USD",
       "description": "Projected global cybercrime costs in 2025. Includes data theft, productivity loss, IP theft, fraud. More profitable than global trade of all major illegal drugs combined. If measured as a country, would be the 3rd largest economy after US and China.",
       "sourceType": "external",
@@ -3386,7 +3386,7 @@
     },
     "GLOBAL_DESTRUCTIVE_ECONOMY_ANNUAL_2025": {
       "value": 13220000000000.0,
-      "formatted": "$13.2T",
+      "formatted": "$13.2 trillion",
       "unit": "USD",
       "description": "Combined annual cost of military spending and cybercrime. The 'destructive economy' that competes with the productive economy.",
       "sourceType": "calculated",
@@ -3430,7 +3430,7 @@
     },
     "GLOBAL_DISEASE_DIRECT_MEDICAL_COST_ANNUAL": {
       "value": 9900000000000.0,
-      "formatted": "$9.9T",
+      "formatted": "$9.9 trillion",
       "unit": "USD/year",
       "description": "Direct medical costs of disease globally (treatment, hospitalization, medication). Standalone market-cost metric; not included in DALY-based welfare burden to avoid double-counting.",
       "sourceType": "external",
@@ -3444,7 +3444,7 @@
     },
     "GLOBAL_DISEASE_ECONOMIC_BURDEN_ANNUAL": {
       "value": 400152130131680.9,
-      "formatted": "$400T",
+      "formatted": "$400 trillion",
       "unit": "USD/year",
       "description": "Annual welfare cost of avoidable disease globally. Calculated as global DALY burden × eventually avoidable percentage × standard QALY value ($150K). Uses consistent QALY valuation matching all other health impact calculations. Medical costs and productivity losses are NOT added separately to avoid double-counting (QALY valuation already captures these welfare components).",
       "sourceType": "calculated",
@@ -3455,7 +3455,7 @@
     },
     "GLOBAL_DISEASE_PRODUCTIVITY_LOSS_ANNUAL": {
       "value": 5000000000000.0,
-      "formatted": "$5T",
+      "formatted": "$5 trillion",
       "unit": "USD/year",
       "description": "Annual productivity loss from disease globally (absenteeism, reduced output). Standalone market-cost metric; not included in DALY-based welfare burden to avoid double-counting.",
       "sourceType": "external",
@@ -3469,7 +3469,7 @@
     },
     "GLOBAL_GDP_2025": {
       "value": 115000000000000.0,
-      "formatted": "$115T",
+      "formatted": "$115 trillion",
       "unit": "USD",
       "description": "Global nominal GDP (2025 estimate). From Political Dysfunction Tax paper citing StatisticsTimes/IMF World Economic Outlook. Used for calculating global opportunity costs as percentage of world economic output. Note: Latest IMF data shows $117T.",
       "sourceType": "external",
@@ -3480,7 +3480,7 @@
     },
     "GLOBAL_GDP_PER_CAPITA_1900": {
       "value": 3150.0,
-      "formatted": "$3.15K",
+      "formatted": "$3,150",
       "unit": "USD/person",
       "description": "Global GDP per capita in 1900 in constant 2024 USD. Maddison Project: ~$1,260 in 1990 international dollars, adjusted to 2024 USD (~2.5x).",
       "sourceType": "external",
@@ -3491,7 +3491,7 @@
     },
     "GLOBAL_GOVERNMENT_CLINICAL_TRIALS_SPENDING_ANNUAL": {
       "value": 4500000000.0,
-      "formatted": "$4.5B",
+      "formatted": "$4.5 billion",
       "unit": "USD",
       "description": "Annual global government spending on interventional clinical trials (~5-10% of total)",
       "sourceType": "external",
@@ -3527,7 +3527,7 @@
     },
     "GLOBAL_HOUSEHOLD_WEALTH_USD": {
       "value": 454000000000000.0,
-      "formatted": "$454T",
+      "formatted": "$454 trillion",
       "unit": "USD",
       "description": "Total global household wealth (2022/2023 estimate)",
       "sourceType": "external",
@@ -3538,7 +3538,7 @@
     },
     "GLOBAL_INDUSTRY_CLINICAL_TRIALS_SPENDING_ANNUAL": {
       "value": 55500000000.0,
-      "formatted": "$55.5B",
+      "formatted": "$55.5 billion",
       "unit": "USD",
       "description": "Annual global industry spending on clinical trials (Total - Government)",
       "sourceType": "calculated",
@@ -3548,7 +3548,7 @@
     },
     "GLOBAL_INVESTABLE_ASSETS": {
       "value": 305000000000000.0,
-      "formatted": "$305T",
+      "formatted": "$305 trillion",
       "unit": "USD",
       "description": "Total global financial wealth (2024): equities, bonds, cash/deposits, and investment funds. Excludes real estate and physical assets. This is the addressable capital pool for PRIZE deposits.",
       "sourceType": "external",
@@ -3581,7 +3581,7 @@
     },
     "GLOBAL_MED_RESEARCH_SPENDING": {
       "value": 67500000000.0,
-      "formatted": "$67.5B",
+      "formatted": "$67.5 billion",
       "unit": "USD",
       "description": "Global government medical research spending",
       "sourceType": "external",
@@ -3596,7 +3596,7 @@
     },
     "GLOBAL_MILITARY_SPENDING_ANNUAL_2024": {
       "value": 2720000000000.0,
-      "formatted": "$2.72T",
+      "formatted": "$2.72 trillion",
       "unit": "USD",
       "description": "Global military spending in 2024",
       "sourceType": "external",
@@ -3618,7 +3618,7 @@
     },
     "GLOBAL_MILITARY_SPENDING_POST_TREATY_ANNUAL_2024": {
       "value": 2692800000000.0,
-      "formatted": "$2.69T",
+      "formatted": "$2.69 trillion",
       "unit": "USD/year",
       "description": "Global military spending after 1% treaty reduction",
       "sourceType": "calculated",
@@ -3640,7 +3640,7 @@
     },
     "GLOBAL_NONPROFIT_CLINICAL_TRIALS_SPENDING_ANNUAL": {
       "value": 3500000000.0,
-      "formatted": "$3.5B",
+      "formatted": "$3.5 billion",
       "unit": "USD",
       "description": "Annual global nonprofit spending on clinical trials (foundations, disease advocacy groups)",
       "sourceType": "external",
@@ -3654,7 +3654,7 @@
     },
     "GLOBAL_NUCLEAR_WEAPONS_SPENDING": {
       "value": 92000000000.0,
-      "formatted": "$92B",
+      "formatted": "$92 billion",
       "unit": "USD",
       "description": "Annual global spending on nuclear weapons across all nine nuclear-armed states. US: $51.5B, China: $11.8B, UK: $8.1B, Russia: $8.3B, France: $6.8B, India: ~$2.7B, Israel: ~$1.2B, Pakistan: ~$1.1B, North Korea: ~$0.7B.",
       "sourceType": "external",
@@ -3664,7 +3664,7 @@
     },
     "GLOBAL_PHARMA_RD_SPENDING_ANNUAL": {
       "value": 300000000000.0,
-      "formatted": "$300B",
+      "formatted": "$300 billion",
       "unit": "USD",
       "description": "Total global pharmaceutical R&D spending ($300B annually, clinical trials represent 15-20% of this total)",
       "sourceType": "external",
@@ -3674,7 +3674,7 @@
     },
     "GLOBAL_POLITICAL_REFORM_INVESTMENT": {
       "value": 127550000000.0,
-      "formatted": "$128B",
+      "formatted": "$128 billion",
       "unit": "USD",
       "description": "Estimated global advocacy investment for policy reform. Calculated as US costs × global ratio (based on discretionary spending). Upper bound representing full democratic engagement at scale.",
       "sourceType": "calculated",
@@ -3736,7 +3736,7 @@
     },
     "GLOBAL_RETIREMENT_ASSETS": {
       "value": 70000000000000.0,
-      "formatted": "$70T",
+      "formatted": "$70 trillion",
       "unit": "USD",
       "description": "Total global pension and retirement assets (OECD 2024). This is the capital pool that the Prize Fund competes with and could partially absorb.",
       "sourceType": "external",
@@ -3761,7 +3761,7 @@
     },
     "GLOBAL_SYMPTOMATIC_DISEASE_TREATMENT_ANNUAL": {
       "value": 8200000000000.0,
-      "formatted": "$8.2T",
+      "formatted": "$8.2 trillion",
       "unit": "USD/year",
       "description": "Annual global spending on symptomatic disease treatment",
       "sourceType": "external",
@@ -3776,7 +3776,7 @@
     },
     "GLOBAL_TOTAL_HEALTH_AND_WAR_COST_ANNUAL": {
       "value": 411509230131680.9,
-      "formatted": "$412T",
+      "formatted": "$412 trillion",
       "unit": "USD/year",
       "description": "Total annual welfare cost of war and disease. Disease burden uses DALY-based welfare valuation; war costs use direct + indirect economic costs. Symptomatic treatment costs NOT added separately (already captured in QALY valuation).",
       "sourceType": "calculated",
@@ -3800,7 +3800,7 @@
     },
     "GLOBAL_WARHEAD_COUNT": {
       "value": 12241.0,
-      "formatted": "12.2 thousand warheads",
+      "formatted": "12,241 warheads",
       "unit": "warheads",
       "description": "Total global nuclear warhead inventory across nine nuclear-armed states. Includes deployed, reserve, and retired warheads awaiting dismantlement.",
       "sourceType": "external",
@@ -3866,7 +3866,7 @@
     },
     "HOURS_PER_YEAR": {
       "value": 8760.0,
-      "formatted": "8.76 thousand",
+      "formatted": "8,760",
       "unit": null,
       "description": null,
       "sourceType": null,
@@ -3876,7 +3876,7 @@
     },
     "HUMAN_GENOME_PROJECT_TOTAL_ECONOMIC_IMPACT": {
       "value": 1000000000000.0,
-      "formatted": "$1T",
+      "formatted": "$1 trillion",
       "unit": "USD",
       "description": "Estimated total economic impact of Human Genome Project",
       "sourceType": "external",
@@ -3897,7 +3897,7 @@
     },
     "HUMAN_PROTEIN_CODING_GENES": {
       "value": 20000.0,
-      "formatted": "20 thousand genes",
+      "formatted": "20,000 genes",
       "unit": "genes",
       "description": "Human protein-coding genes targetable by gene therapy, mRNA, or biologics (Human Genome Project consensus)",
       "sourceType": "definition",
@@ -3911,7 +3911,7 @@
     },
     "IAB_MECHANISM_ANNUAL_COST": {
       "value": 750000000.0,
-      "formatted": "$750M",
+      "formatted": "$750 million",
       "unit": "USD/year",
       "description": "Estimated annual cost of the IAB mechanism (high-end estimate including regulatory defense)",
       "sourceType": "definition",
@@ -3937,7 +3937,7 @@
     },
     "IAB_POLITICAL_INCENTIVE_FUNDING_ANNUAL": {
       "value": 2720000000.0,
-      "formatted": "$2.72B",
+      "formatted": "$2.72 billion",
       "unit": "USD/year",
       "description": "Annual funding for IAB political incentive mechanism (independent expenditures supporting high-scoring politicians, post-office fellowship endowments, Public Good Score infrastructure)",
       "sourceType": "calculated",
@@ -3970,7 +3970,7 @@
     },
     "ICD_10_TOTAL_CODES": {
       "value": 14000.0,
-      "formatted": "14 thousand codes",
+      "formatted": "14,000 codes",
       "unit": "codes",
       "description": "Total ICD-10 diagnostic codes for human diseases and conditions",
       "sourceType": "external",
@@ -3992,7 +3992,7 @@
     },
     "INSTITUTIONAL_INVESTOR_MIN": {
       "value": 10000000.0,
-      "formatted": "$10M",
+      "formatted": "$10 million",
       "unit": "USD",
       "description": "Minimum investment for institutional investors",
       "sourceType": "definition",
@@ -4037,7 +4037,7 @@
     },
     "LOBBYIST_BOND_INVESTMENT_MAX": {
       "value": 20000000.0,
-      "formatted": "$20M",
+      "formatted": "$20 million",
       "unit": "USD",
       "description": "Maximum bond investment for lobbyist incentives",
       "sourceType": "definition",
@@ -4048,7 +4048,7 @@
     },
     "LOBBYIST_SALARY_MAX": {
       "value": 2000000.0,
-      "formatted": "$2M",
+      "formatted": "$2 million",
       "unit": "USD",
       "description": "Maximum annual lobbyist salary range",
       "sourceType": "external",
@@ -4059,7 +4059,7 @@
     },
     "LOBBYIST_SALARY_MIN_K": {
       "value": 500000.0,
-      "formatted": "$500K",
+      "formatted": "$500,000",
       "unit": "USD",
       "description": "Minimum annual lobbyist salary range",
       "sourceType": "external",
@@ -4080,7 +4080,7 @@
     },
     "MEDICAL_QALY_THRESHOLD": {
       "value": 100000.0,
-      "formatted": "$100K",
+      "formatted": "$100,000",
       "unit": "USD/QALY",
       "description": "Medical cost-effectiveness QALY threshold. Standard threshold for evaluating whether health interventions are cost-effective. Interventions below $100K/QALY are generally considered cost-effective.",
       "sourceType": "external",
@@ -4102,7 +4102,7 @@
     },
     "MENTAL_HEALTH_PRODUCTIVITY_LOSS_PER_CAPITA": {
       "value": 2000.0,
-      "formatted": "$2K",
+      "formatted": "$2,000",
       "unit": "USD/year",
       "description": "Annual productivity loss per capita from mental health issues (beyond treatment costs)",
       "sourceType": "external",
@@ -4209,7 +4209,7 @@
     },
     "NATO_DEFENSE_SPENDING_ANNUAL": {
       "value": 1506000000000.0,
-      "formatted": "$1.51T",
+      "formatted": "$1.51 trillion",
       "unit": "USD",
       "description": "Total NATO member defense spending in 2024. Source: SIPRI.",
       "sourceType": "external",
@@ -4234,7 +4234,7 @@
     },
     "NIH_ANNUAL_BUDGET": {
       "value": 47000000000.0,
-      "formatted": "$47B",
+      "formatted": "$47 billion",
       "unit": "USD",
       "description": "NIH annual budget (FY2024/2025)",
       "sourceType": "external",
@@ -4264,7 +4264,7 @@
     },
     "NIH_STANDARD_RESEARCH_COST_PER_QALY": {
       "value": 50000.0,
-      "formatted": "$50K",
+      "formatted": "$50,000",
       "unit": "USD/QALY",
       "description": "Typical cost per QALY for standard NIH-funded medical research portfolio. Reflects the inefficiency of traditional RCTs and basic research-heavy allocation. See confidence_interval for range; ICER uses higher thresholds for value-based pricing.",
       "sourceType": "external",
@@ -4333,7 +4333,7 @@
     },
     "NUCLEAR_WINTER_WARHEAD_THRESHOLD": {
       "value": 4400.0,
-      "formatted": "4.4 thousand warheads",
+      "formatted": "4,400 warheads",
       "unit": "warheads",
       "description": "Approximate number of warheads needed to trigger nuclear winter (150 Tg soot), killing ~5 billion people from agricultural collapse. Based on Xia et al. 2022, Nature Food, modeling a US-Russia exchange.",
       "sourceType": "external",
@@ -4373,7 +4373,7 @@
     },
     "PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT": {
       "value": 113571000000.0,
-      "formatted": "$114B",
+      "formatted": "$114 billion",
       "unit": "USD/year",
       "description": "Annual peace dividend from 1% reduction in total war costs (theoretical maximum at ε=1.0)",
       "sourceType": "calculated",
@@ -4398,7 +4398,7 @@
     },
     "PEACE_DIVIDEND_CONFLICT_REDUCTION": {
       "value": 86371000000.0,
-      "formatted": "$86.4B",
+      "formatted": "$86.4 billion",
       "unit": "USD/year",
       "description": "Conflict reduction benefits from 1% less military spending (lower confidence - assumes proportional relationship)",
       "sourceType": "calculated",
@@ -4409,7 +4409,7 @@
     },
     "PEACE_DIVIDEND_DIRECT_COSTS": {
       "value": 76570000000.0,
-      "formatted": "$76.6B",
+      "formatted": "$76.6 billion",
       "unit": "USD/year",
       "description": "Annual savings from 1% reduction in direct war costs",
       "sourceType": "calculated",
@@ -4420,7 +4420,7 @@
     },
     "PEACE_DIVIDEND_DIRECT_FISCAL_SAVINGS": {
       "value": 27200000000.0,
-      "formatted": "$27.2B",
+      "formatted": "$27.2 billion",
       "unit": "USD/year",
       "description": "Direct fiscal savings from 1% military spending reduction (high confidence)",
       "sourceType": "definition",
@@ -4431,7 +4431,7 @@
     },
     "PEACE_DIVIDEND_ENVIRONMENTAL": {
       "value": 1000000000.0,
-      "formatted": "$1B",
+      "formatted": "$1 billion",
       "unit": "USD/year",
       "description": "Annual savings from 1% reduction in environmental damage",
       "sourceType": "calculated",
@@ -4441,7 +4441,7 @@
     },
     "PEACE_DIVIDEND_HUMAN_CASUALTIES": {
       "value": 24460000000.0,
-      "formatted": "$24.5B",
+      "formatted": "$24.5 billion",
       "unit": "USD/year",
       "description": "Annual savings from 1% reduction in human casualties",
       "sourceType": "calculated",
@@ -4451,7 +4451,7 @@
     },
     "PEACE_DIVIDEND_INDIRECT_COSTS": {
       "value": 37001000000.0,
-      "formatted": "$37B",
+      "formatted": "$37 billion",
       "unit": "USD/year",
       "description": "Annual savings from 1% reduction in indirect war costs",
       "sourceType": "calculated",
@@ -4462,7 +4462,7 @@
     },
     "PEACE_DIVIDEND_INFRASTRUCTURE": {
       "value": 18750000000.0,
-      "formatted": "$18.8B",
+      "formatted": "$18.8 billion",
       "unit": "USD/year",
       "description": "Annual savings from 1% reduction in infrastructure destruction",
       "sourceType": "calculated",
@@ -4472,7 +4472,7 @@
     },
     "PEACE_DIVIDEND_LOST_ECONOMIC_GROWTH": {
       "value": 27180000000.0,
-      "formatted": "$27.2B",
+      "formatted": "$27.2 billion",
       "unit": "USD/year",
       "description": "Annual savings from 1% reduction in lost economic growth",
       "sourceType": "calculated",
@@ -4482,7 +4482,7 @@
     },
     "PEACE_DIVIDEND_LOST_HUMAN_CAPITAL": {
       "value": 3000000000.0,
-      "formatted": "$3B",
+      "formatted": "$3 billion",
       "unit": "USD/year",
       "description": "Annual savings from 1% reduction in lost human capital",
       "sourceType": "calculated",
@@ -4492,7 +4492,7 @@
     },
     "PEACE_DIVIDEND_PTSD": {
       "value": 2320000000.0,
-      "formatted": "$2.32B",
+      "formatted": "$2.32 billion",
       "unit": "USD/year",
       "description": "Annual savings from 1% reduction in PTSD and mental health costs",
       "sourceType": "calculated",
@@ -4502,7 +4502,7 @@
     },
     "PEACE_DIVIDEND_REFUGEE_SUPPORT": {
       "value": 1500000000.0,
-      "formatted": "$1.5B",
+      "formatted": "$1.5 billion",
       "unit": "USD/year",
       "description": "Annual savings from 1% reduction in refugee support costs",
       "sourceType": "calculated",
@@ -4512,7 +4512,7 @@
     },
     "PEACE_DIVIDEND_TRADE_DISRUPTION": {
       "value": 6160000000.0,
-      "formatted": "$6.16B",
+      "formatted": "$6.16 billion",
       "unit": "USD/year",
       "description": "Annual savings from 1% reduction in trade disruption",
       "sourceType": "calculated",
@@ -4522,7 +4522,7 @@
     },
     "PEACE_DIVIDEND_VETERAN_HEALTHCARE": {
       "value": 2001000000.0,
-      "formatted": "$2B",
+      "formatted": "$2 billion",
       "unit": "USD/year",
       "description": "Annual savings from 1% reduction in veteran healthcare costs",
       "sourceType": "calculated",
@@ -4532,7 +4532,7 @@
     },
     "PEACE_TRAJECTORY_TOTAL_DIFFERENTIAL_20YR": {
       "value": 16329436000000.002,
-      "formatted": "$16.3T",
+      "formatted": "$16.3 trillion",
       "unit": "USD",
       "description": "Total 20-year value of the peace trajectory: research funding redirected to medicine plus war externality costs avoided. The full differential between the IAB trajectory and the current trajectory. Does not include existential risk reduction.",
       "sourceType": "calculated",
@@ -4543,7 +4543,7 @@
     },
     "PERSONAL_LIFETIME_WEALTH": {
       "value": 3000000.0,
-      "formatted": "$3M",
+      "formatted": "$3 million",
       "unit": "USD",
       "description": "Personal lifetime wealth from life extension valued at standard QALY rate. Simple formula: years of life gained × economic value per healthy year. Uncertainty in LIFE_EXTENSION_YEARS (5-100 year range, median 20) propagates through Monte Carlo.",
       "sourceType": "calculated",
@@ -4553,7 +4553,7 @@
     },
     "PER_CAPITA_CHRONIC_DISEASE_COST": {
       "value": 12238.805970149253,
-      "formatted": "$12.2K",
+      "formatted": "$12,239",
       "unit": "USD/person/year",
       "description": "US per capita chronic disease cost",
       "sourceType": "calculated",
@@ -4563,7 +4563,7 @@
     },
     "PER_CAPITA_MENTAL_HEALTH_COST": {
       "value": 1044.7761194029852,
-      "formatted": "$1.04K",
+      "formatted": "$1,045",
       "unit": "USD/person/year",
       "description": "US per capita mental health cost",
       "sourceType": "calculated",
@@ -4573,7 +4573,7 @@
     },
     "PHARMA_DRUG_DEVELOPMENT_COST_CURRENT": {
       "value": 2600000000.0,
-      "formatted": "$2.6B",
+      "formatted": "$2.6 billion",
       "unit": "USD",
       "description": "Average cost to develop one drug in current system",
       "sourceType": "external",
@@ -4588,7 +4588,7 @@
     },
     "PHARMA_DRUG_REVENUE_AVERAGE_CURRENT": {
       "value": 6700000000.0,
-      "formatted": "$6.7B",
+      "formatted": "$6.7 billion",
       "unit": "USD",
       "description": "Median lifetime revenue per successful drug (study of 361 FDA-approved drugs 1995-2014, median follow-up 13.2 years)",
       "sourceType": "external",
@@ -4625,7 +4625,7 @@
     },
     "PHARMA_PHASE_2_3_COST_BARRIER": {
       "value": 1560000000.0,
-      "formatted": "$1.56B",
+      "formatted": "$1.56 billion",
       "unit": "USD",
       "description": "Average Phase 2/3 efficacy testing cost per drug that pharma must fund (~60% of total drug development cost)",
       "sourceType": "definition",
@@ -4658,7 +4658,7 @@
     },
     "PHASE_1_PASSED_COMPOUNDS_GLOBAL": {
       "value": 7500.0,
-      "formatted": "7.5 thousand compounds",
+      "formatted": "7,500 compounds",
       "unit": "compounds",
       "description": "Investigational compounds that have passed Phase I globally (midpoint of 5,000-10,000 range)",
       "sourceType": "external",
@@ -4694,7 +4694,7 @@
     },
     "PHASE_3_TRIAL_COST_MIN": {
       "value": 20000000.0,
-      "formatted": "$20M",
+      "formatted": "$20 million",
       "unit": "USD/trial",
       "description": "Phase 3 trial total cost (minimum)",
       "sourceType": "external",
@@ -4741,7 +4741,7 @@
     },
     "POLITICAL_DYSFUNCTION_GLOBAL_FOSSIL_FUEL_SUBSIDIES": {
       "value": 1300000000000.0,
-      "formatted": "$1.3T",
+      "formatted": "$1.3 trillion",
       "unit": "USD",
       "description": "Global explicit fossil fuel subsidies (governments undercharging for energy supply costs). IMF 2022 estimate. These subsidies actively encourage consumption of negative-externality goods, working against climate goals. Note: IMF implicit subsidies (externalities) are much larger (~$7T).",
       "sourceType": "external",
@@ -4755,7 +4755,7 @@
     },
     "POLITICAL_DYSFUNCTION_GLOBAL_HEALTH_OPPORTUNITY_COST": {
       "value": 34000000000000.0,
-      "formatted": "$34T",
+      "formatted": "$34 trillion",
       "unit": "USD",
       "description": "Annual opportunity cost of slow-motion regulatory environment for health innovation. Murphy-Topel (2006) valued cancer cure at $50T (inflation-adjusted ~$100T in 2025). Longevity dividend of 1 extra year = $38T globally. PCTs could accelerate cures by 10+ years; NPV of 10-year delay at 3% discount = ~$25T. Conservative estimate: $34T annually in lives lost and healthspan denied.",
       "sourceType": "external",
@@ -4770,7 +4770,7 @@
     },
     "POLITICAL_DYSFUNCTION_GLOBAL_LEAD_OPPORTUNITY_COST": {
       "value": 6000000000000.0,
-      "formatted": "$6T",
+      "formatted": "$6 trillion",
       "unit": "USD",
       "description": "Global cost of lead exposure: World Bank/Lancet estimate. 765 million IQ points lost annually, 5.5 million premature CVD deaths. Cost to eliminate lead from paint, spices, batteries is trivial compared to damage. This is an arbitrage opportunity of immense scale that governance has failed to execute.",
       "sourceType": "external",
@@ -4785,7 +4785,7 @@
     },
     "POLITICAL_DYSFUNCTION_GLOBAL_MIGRATION_OPPORTUNITY_COST": {
       "value": 57000000000000.0,
-      "formatted": "$57T",
+      "formatted": "$57 trillion",
       "unit": "USD",
       "description": "Unrealized output from migration restrictions. Clemens (2011) calculated eliminating labor mobility barriers could increase global GDP by 50-150%. At $115T global GDP, lower bound = $57T; upper bound = $170T. Even 5% workforce mobility would generate trillions, exceeding all foreign aid ever given. This is the largest single distortion in the global economy.",
       "sourceType": "external",
@@ -4811,7 +4811,7 @@
     },
     "POLITICAL_DYSFUNCTION_GLOBAL_OPPORTUNITY_COST_TOTAL": {
       "value": 101000000000000.0,
-      "formatted": "$101T",
+      "formatted": "$101 trillion",
       "unit": "USD",
       "description": "Total global opportunity cost from governance failures: health innovation delays ($34T), underfunded science ($4T), lead poisoning ($6T), migration restrictions ($57T). Sum: $101T annually in unrealized potential.",
       "sourceType": "calculated",
@@ -4822,7 +4822,7 @@
     },
     "POLITICAL_DYSFUNCTION_GLOBAL_REALIZED_WELFARE_ADJUSTED": {
       "value": 108803000000000.0,
-      "formatted": "$109T",
+      "formatted": "$109 trillion",
       "unit": "USD",
       "description": "Adjusted realized welfare after subtracting measured governance waste from global GDP.",
       "sourceType": "calculated",
@@ -4833,7 +4833,7 @@
     },
     "POLITICAL_DYSFUNCTION_GLOBAL_SCIENCE_OPPORTUNITY_COST": {
       "value": 4000000000000.0,
-      "formatted": "$4T",
+      "formatted": "$4 trillion",
       "unit": "USD",
       "description": "Annual opportunity cost from underfunding high-ROI science (fusion, AI safety). Human Genome Project: $3.8B cost, $796B-1T impact (141:1 ROI). Fusion DEMO plant: $5-10B could solve energy/climate permanently. AI safety: <5% of capabilities spending despite existential stakes. Reallocating $200B from military waste at 20x multiplier = $4T foregone growth.",
       "sourceType": "external",
@@ -4847,7 +4847,7 @@
     },
     "POLITICAL_DYSFUNCTION_GLOBAL_THEORETICAL_MAX_WELFARE": {
       "value": 209803000000000.0,
-      "formatted": "$210T",
+      "formatted": "$210 trillion",
       "unit": "USD",
       "description": "Conservative theoretical maximum welfare under opportunity-cost recapture assumptions.",
       "sourceType": "calculated",
@@ -4858,7 +4858,7 @@
     },
     "POLITICAL_DYSFUNCTION_GLOBAL_WASTE_TOTAL": {
       "value": 6197000000000.0,
-      "formatted": "$6.2T",
+      "formatted": "$6.2 trillion",
       "unit": "USD",
       "description": "Global waste deduction used in Political Dysfunction Tax efficiency accounting. Combines US governance waste estimate with global explicit fossil-fuel subsidies.",
       "sourceType": "calculated",
@@ -4868,7 +4868,7 @@
     },
     "POLITICAL_DYSFUNCTION_TAX_PER_HOUSEHOLD_OF_FOUR_ANNUAL": {
       "value": 50500.0,
-      "formatted": "$50.5K",
+      "formatted": "$50,500",
       "unit": "USD/year",
       "description": "Annual household burden for a 4-person household implied by global Political Dysfunction Tax.",
       "sourceType": "calculated",
@@ -4879,7 +4879,7 @@
     },
     "POLITICAL_DYSFUNCTION_TAX_PER_PERSON_ANNUAL": {
       "value": 12625.0,
-      "formatted": "$12.6K",
+      "formatted": "$12,625",
       "unit": "USD/year",
       "description": "Annual per-person burden implied by global Political Dysfunction Tax opportunity costs.",
       "sourceType": "calculated",
@@ -4905,7 +4905,7 @@
     },
     "POLITICIAN_POST_OFFICE_CAREER_VALUE": {
       "value": 10000000.0,
-      "formatted": "$10M",
+      "formatted": "$10 million",
       "unit": "USD",
       "description": "Net present value of post-office career premium for average congressperson (10 years x $1M/year premium). Based on documented cases: Gephardt $7M/year, Daschle $2M+/year.",
       "sourceType": "external",
@@ -4953,7 +4953,7 @@
     },
     "PRE_1962_DRUG_DEVELOPMENT_COST_1980_USD": {
       "value": 6500000.0,
-      "formatted": "$6.5M",
+      "formatted": "$6.5 million",
       "unit": "USD_1980",
       "description": "Average drug development cost before 1962 FDA efficacy regulations, adjusted to 1980 dollars (Baily 1972)",
       "sourceType": "external",
@@ -4968,7 +4968,7 @@
     },
     "PRE_1962_DRUG_DEVELOPMENT_COST_2024_USD": {
       "value": 24700000.0,
-      "formatted": "$24.7M",
+      "formatted": "$24.7 million",
       "unit": "USD",
       "description": "Pre-1962 drug development cost adjusted to 2024 dollars ($6.5M × 3.80 = $24.7M, CPI-adjusted from Baily 1972)",
       "sourceType": "external",
@@ -5005,7 +5005,7 @@
     },
     "PRICE_OF_APOCALYPSE": {
       "value": 33069193693.325706,
-      "formatted": "$33.1B",
+      "formatted": "$33.1 billion",
       "unit": "USD",
       "description": "The Price of Apocalypse: the annual cost of maintaining enough nuclear warheads to trigger nuclear winter once (~4,400 warheads, killing ~5 billion from agricultural collapse). Calculated as global nuclear spending divided by the nuclear winter overkill factor.",
       "sourceType": "calculated",
@@ -5053,7 +5053,7 @@
     },
     "PRIZE_POOL_RETIREMENT_EQUIVALENT_PRINCIPAL": {
       "value": 1804405541315.2495,
-      "formatted": "$1.8T",
+      "formatted": "$1.8 trillion",
       "unit": "USD",
       "description": "Secondary PRIZE seed benchmark: initial principal required so that the pool can make two referred votes retirement-equivalent on success at the modeled global coordination target. This is a stronger-incentive visible-pool benchmark, not the minimum capital required to make 50% participation credible.",
       "sourceType": "calculated",
@@ -5064,7 +5064,7 @@
     },
     "PRIZE_POOL_SIZE": {
       "value": 33745154199999.484,
-      "formatted": "$33.7T",
+      "formatted": "$33.7 trillion",
       "unit": "USD",
       "description": "Terminal PRIZE pool size: global investable assets × participation rate × compound multiple over the resolution horizon.",
       "sourceType": "calculated",
@@ -5089,7 +5089,7 @@
     },
     "RARE_DISEASES_COUNT_GLOBAL": {
       "value": 7000.0,
-      "formatted": "7 thousand diseases",
+      "formatted": "7,000 diseases",
       "unit": "diseases",
       "description": "Total number of rare diseases globally",
       "sourceType": "external",
@@ -5160,7 +5160,7 @@
     },
     "RECOVERY_TRIAL_TOTAL_COST": {
       "value": 20000000.0,
-      "formatted": "$20M",
+      "formatted": "$20 million",
       "unit": "USD",
       "description": "Total cost of UK RECOVERY trial. Enrolled tens of thousands of patients across multiple treatment arms. Discovered dexamethasone reduces COVID mortality by ~1/3 in severe cases.",
       "sourceType": "external",
@@ -5211,7 +5211,7 @@
     },
     "RETIREMENT_EQUIVALENT_2_CLAIMS_TARGET_PAYOUT": {
       "value": 9981.95790672404,
-      "formatted": "$9.98K",
+      "formatted": "$9,982",
       "unit": "USD",
       "description": "Target success-side payout for two referred votes: what one representative annual savings contribution would become in a conventional retirement account by PRIZE resolution.",
       "sourceType": "calculated",
@@ -5222,7 +5222,7 @@
     },
     "RETIREMENT_EQUIVALENT_CLAIM_VALUE_TARGET": {
       "value": 4990.97895336202,
-      "formatted": "$4.99K",
+      "formatted": "$4,991",
       "unit": "USD",
       "description": "Target value of one referred-voter claim when two claims are meant to match the conventional-retirement future value of one representative annual savings contribution.",
       "sourceType": "calculated",
@@ -5232,7 +5232,7 @@
     },
     "SAFE_COMPOUNDS_COUNT": {
       "value": 9500.0,
-      "formatted": "9.5 thousand compounds",
+      "formatted": "9,500 compounds",
       "unit": "compounds",
       "description": "Total safe compounds available for repurposing (FDA-approved + GRAS substances, midpoint of 7,000-12,000 range)",
       "sourceType": "definition",
@@ -5282,7 +5282,7 @@
     },
     "SEPT_11_DEATHS": {
       "value": 2977.0,
-      "formatted": "2.98 thousand people",
+      "formatted": "2,977 people",
       "unit": "people",
       "description": "Total deaths in the September 11, 2001 attacks. 2,977 victims (excluding 19 hijackers). Used as a reference point for scale comparisons.",
       "sourceType": "external",
@@ -5346,7 +5346,7 @@
     },
     "SINGAPORE_GDP_PER_CAPITA_PPP": {
       "value": 105000.0,
-      "formatted": "$105K",
+      "formatted": "$105,000",
       "unit": "USD",
       "description": "Singapore GDP per capita (PPP-adjusted). Among highest in world, demonstrating that lean government can coexist with prosperity.",
       "sourceType": "external",
@@ -5387,7 +5387,7 @@
     },
     "SMALLPOX_ERADICATION_TOTAL_BENEFIT": {
       "value": 1420000000.0,
-      "formatted": "$1.42B",
+      "formatted": "$1.42 billion",
       "unit": "USD",
       "description": "Total economic benefit from smallpox eradication campaign",
       "sourceType": "external",
@@ -5397,7 +5397,7 @@
     },
     "SMOKING_CESSATION_ANNUAL_BENEFIT": {
       "value": 12000000000.0,
-      "formatted": "$12B",
+      "formatted": "$12 billion",
       "unit": "USD/year",
       "description": "Estimated annual global economic benefit from smoking cessation programs",
       "sourceType": "external",
@@ -5407,7 +5407,7 @@
     },
     "STANDARD_ECONOMIC_QALY_VALUE_USD": {
       "value": 150000.0,
-      "formatted": "$150K",
+      "formatted": "$150,000",
       "unit": "USD/QALY",
       "description": "Standard economic value per QALY",
       "sourceType": "external",
@@ -5472,7 +5472,7 @@
     },
     "SWITZERLAND_GDP_PER_CAPITA_K": {
       "value": 93000.0,
-      "formatted": "$93K",
+      "formatted": "$93,000",
       "unit": "USD",
       "description": "Switzerland GDP per capita",
       "sourceType": "external",
@@ -5504,7 +5504,7 @@
     },
     "SWITZERLAND_MEDIAN_INCOME_PPP": {
       "value": 65000.0,
-      "formatted": "$65K",
+      "formatted": "$65,000",
       "unit": "USD",
       "description": "Switzerland median household income (PPP-adjusted). Higher than US when adjusted for cost of healthcare and other expenses.",
       "sourceType": "external",
@@ -5514,7 +5514,7 @@
     },
     "TERRORISM_DEATHS_911": {
       "value": 2996.0,
-      "formatted": "3 thousand deaths",
+      "formatted": "2,996 deaths",
       "unit": "deaths",
       "description": "Deaths from 9/11 terrorist attacks",
       "sourceType": "external",
@@ -5524,7 +5524,7 @@
     },
     "TESTED_RELATIONSHIPS_ESTIMATE": {
       "value": 32500.0,
-      "formatted": "32.5 thousand relationships",
+      "formatted": "32,500 relationships",
       "unit": "relationships",
       "description": "Estimated drug-disease relationships actually tested (approved uses + repurposed + failed trials, midpoint of 15,000-50,000 range)",
       "sourceType": "definition",
@@ -5539,7 +5539,7 @@
     },
     "THALIDOMIDE_CASES_WORLDWIDE": {
       "value": 15000.0,
-      "formatted": "15 thousand cases",
+      "formatted": "15,000 cases",
       "unit": "cases",
       "description": "Total thalidomide birth defect cases worldwide (1957-1962)",
       "sourceType": "external",
@@ -5553,7 +5553,7 @@
     },
     "THALIDOMIDE_DALYS_PER_EVENT": {
       "value": 41760.0,
-      "formatted": "41.8 thousand DALYs",
+      "formatted": "41,760 DALYs",
       "unit": "DALYs",
       "description": "Total DALYs per US-scale thalidomide event (YLL + YLD)",
       "sourceType": "calculated",
@@ -5649,7 +5649,7 @@
     },
     "THALIDOMIDE_YLD_PER_EVENT": {
       "value": 12960.0,
-      "formatted": "13 thousand years",
+      "formatted": "12,960 years",
       "unit": "years",
       "description": "Years Lived with Disability per thalidomide event",
       "sourceType": "calculated",
@@ -5659,7 +5659,7 @@
     },
     "THALIDOMIDE_YLL_PER_EVENT": {
       "value": 28800.0,
-      "formatted": "28.8 thousand years",
+      "formatted": "28,800 years",
       "unit": "years",
       "description": "Years of Life Lost per thalidomide event (infant deaths)",
       "sourceType": "calculated",
@@ -5669,7 +5669,7 @@
     },
     "TOTAL_RESEARCH_FUNDING_WITH_TREATY": {
       "value": 94700000000.0,
-      "formatted": "$94.7B",
+      "formatted": "$94.7 billion",
       "unit": "USD",
       "description": "Total global research funding (baseline + 1% treaty funding)",
       "sourceType": "calculated",
@@ -5689,7 +5689,7 @@
     },
     "TRADITIONAL_PHASE3_COST_PER_PATIENT": {
       "value": 41000.0,
-      "formatted": "$41K",
+      "formatted": "$41,000",
       "unit": "USD/patient",
       "description": "Phase 3 cost per patient (median from FDA study)",
       "sourceType": "external",
@@ -5718,7 +5718,7 @@
     },
     "TREATY_ANNUAL_FUNDING": {
       "value": 27200000000.0,
-      "formatted": "$27.2B",
+      "formatted": "$27.2 billion",
       "unit": "USD/year",
       "description": "Annual funding from 1% of global military spending redirected to DIH",
       "sourceType": "calculated",
@@ -5740,7 +5740,7 @@
     },
     "TREATY_CAMPAIGN_ANNUAL_COST_AMORTIZED": {
       "value": 250000000.0,
-      "formatted": "$250M",
+      "formatted": "$250 million",
       "unit": "USD/year",
       "description": "Amortized annual campaign cost (total cost ÷ campaign duration)",
       "sourceType": "calculated",
@@ -5751,7 +5751,7 @@
     },
     "TREATY_CAMPAIGN_BUDGET_LOBBYING": {
       "value": 650000000.0,
-      "formatted": "$650M",
+      "formatted": "$650 million",
       "unit": "USD",
       "description": "Political lobbying campaign: direct lobbying (US/EU/G20), Super PACs, opposition research, staff, legal/compliance. Budget exceeds combined pharma ($300M/year) and military-industrial complex ($150M/year) lobbying to ensure competitive positioning. Referendum relies on grassroots mobilization and earned media, while lobbying requires matching or exceeding opposition spending for political viability.",
       "sourceType": "definition",
@@ -5766,7 +5766,7 @@
     },
     "TREATY_CAMPAIGN_BUDGET_RESERVE": {
       "value": 100000000.0,
-      "formatted": "$100M",
+      "formatted": "$100 million",
       "unit": "USD",
       "description": "Reserve fund / contingency buffer (10% of total campaign cost). Using industry standard 10% for complex campaigns with potential for unforeseen legal challenges, opposition response, or regulatory delays. Conservative lower bound of $20M (2%) reflects transparent budget allocation and predictable referendum/lobbying costs.",
       "sourceType": "definition",
@@ -5795,7 +5795,7 @@
     },
     "TREATY_CAMPAIGN_TOTAL_COST": {
       "value": 1000000000.0,
-      "formatted": "$1B",
+      "formatted": "$1 billion",
       "unit": "USD",
       "description": "Total treaty campaign cost (100% VICTORY Incentive Alignment Bonds)",
       "sourceType": "calculated",
@@ -5806,7 +5806,7 @@
     },
     "TREATY_CAMPAIGN_VIRAL_REFERENDUM_BASE_CASE": {
       "value": 250000000.0,
-      "formatted": "$250M",
+      "formatted": "$250 million",
       "unit": "USD",
       "description": "Viral referendum budget for 280M verified votes (base: $250M realistic with $0.50/vote avg, range: $150M optimistic $0.20/vote to $410M worst-case $1.05/vote). Components: platform ($35M), verification infrastructure (280M × friction × $0.18-0.20), tiered referral payments (varies by virality and marginal cost curve per diffusion theory), marketing seed ($5-15M). Based on PayPal referral economics ($18-36 inflation-adjusted) and biometric verification pricing ($0.15-0.25 at 300M+ scale).",
       "sourceType": "definition",
@@ -5843,7 +5843,7 @@
     },
     "TREATY_CUMULATIVE_20YR_WITH_RATCHET": {
       "value": 3155200000000.0005,
-      "formatted": "$3.16T",
+      "formatted": "$3.16 trillion",
       "unit": "USD",
       "description": "Cumulative treaty funding over 20 years with IAB ratchet expansion following roadmap timeline. Expansion driven by bondholder lobbying incentives (10% of treaty inflows).",
       "sourceType": "calculated",
@@ -5958,7 +5958,7 @@
     },
     "TREATY_HALE_VALUE_PER_CAPITA": {
       "value": 3255000.0000000005,
-      "formatted": "$3.26M",
+      "formatted": "$3.26 million",
       "unit": "USD/person",
       "description": "Economic value of Treaty Trajectory HALE gains at year 15 using the standard QALY value.",
       "sourceType": "calculated",
@@ -5989,7 +5989,7 @@
     },
     "TREATY_LIVES_SAVED_ANNUAL_GLOBAL": {
       "value": 2446.0,
-      "formatted": "2.45 thousand lives/year",
+      "formatted": "2,446 lives/year",
       "unit": "lives/year",
       "description": "Annual lives saved from 1% reduction in conflict deaths",
       "sourceType": "calculated",
@@ -6009,7 +6009,7 @@
     },
     "TREATY_PEACE_PLUS_RD_ANNUAL_BENEFITS": {
       "value": 172211487804.87805,
-      "formatted": "$172B",
+      "formatted": "$172 billion",
       "unit": "USD/year",
       "description": "Basic annual benefits: peace dividend + Decentralized Framework for Drug Assessment R&D savings only (2 of 8 benefit categories, excludes regulatory delay value)",
       "sourceType": "calculated",
@@ -6040,7 +6040,7 @@
     },
     "TREATY_PERSONAL_UPSIDE_BLEND": {
       "value": 6735017.193154482,
-      "formatted": "$6.74M",
+      "formatted": "$6.74 million",
       "unit": "USD/person",
       "description": "Blended personal upside under Treaty Trajectory: lifetime income gain plus valued healthy-life gains.",
       "sourceType": "calculated",
@@ -6062,7 +6062,7 @@
     },
     "TREATY_QALYS_GAINED_ANNUAL_GLOBAL": {
       "value": 85610.0,
-      "formatted": "85.6 thousand QALYs/year",
+      "formatted": "85,610 QALYs/year",
       "unit": "QALYs/year",
       "description": "Annual QALYs gained from peace dividend (lives saved × QALYs/life)",
       "sourceType": "calculated",
@@ -6135,7 +6135,7 @@
     },
     "TREATY_TOTAL_ANNUAL_COSTS": {
       "value": 290000000.0,
-      "formatted": "$290M",
+      "formatted": "$290 million",
       "unit": "USD/year",
       "description": "Total annual system costs (campaign + Decentralized Framework for Drug Assessment operations)",
       "sourceType": "calculated",
@@ -6145,7 +6145,7 @@
     },
     "TREATY_TRAJECTORY_AVG_INCOME_YEAR_15": {
       "value": 76704.0062670062,
-      "formatted": "$76.7K",
+      "formatted": "$76,704",
       "unit": "USD",
       "description": "Average income (GDP per capita) at year 15 under the Treaty Trajectory.",
       "sourceType": "calculated",
@@ -6156,7 +6156,7 @@
     },
     "TREATY_TRAJECTORY_AVG_INCOME_YEAR_20": {
       "value": 99860.6273447306,
-      "formatted": "$99.9K",
+      "formatted": "$99,861",
       "unit": "USD",
       "description": "Average income (GDP per capita) at year 20 under the Treaty Trajectory.",
       "sourceType": "calculated",
@@ -6178,7 +6178,7 @@
     },
     "TREATY_TRAJECTORY_CUMULATIVE_LIFETIME_INCOME": {
       "value": 4577035.673010594,
-      "formatted": "$4.58M",
+      "formatted": "$4.58 million",
       "unit": "USD",
       "description": "Cumulative per-capita income over an average remaining lifespan under Treaty Trajectory. Uses implied per-capita CAGR for years 1-20 (derived from known year-0 and year-20 per-capita incomes), then current-trajectory per-capita growth from the year-20 level. Conservative: assumes no further treaty acceleration beyond year 20.",
       "sourceType": "calculated",
@@ -6209,7 +6209,7 @@
     },
     "TREATY_TRAJECTORY_GDP_YEAR_15": {
       "value": 682665655776355.2,
-      "formatted": "$683T",
+      "formatted": "$683 trillion",
       "unit": "USD",
       "description": "Projected global GDP at year 15 under the optimistic treaty take-hold path. Compounds baseline growth plus explicit military redirect spillovers, peace dividend recovery, cybercrime drag recovery, and health recovery from disease cures and faster deployment.",
       "sourceType": "calculated",
@@ -6219,7 +6219,7 @@
     },
     "TREATY_TRAJECTORY_GDP_YEAR_20": {
       "value": 918717771571521.5,
-      "formatted": "$919T",
+      "formatted": "$919 trillion",
       "unit": "USD",
       "description": "Projected global GDP at year 20 under the optimistic treaty take-hold path. Compounds baseline growth plus explicit military redirect spillovers, peace dividend recovery, cybercrime drag recovery, and health recovery from disease cures and faster deployment.",
       "sourceType": "calculated",
@@ -6230,7 +6230,7 @@
     },
     "TREATY_TRAJECTORY_LIFETIME_INCOME_GAIN_PER_CAPITA": {
       "value": 3480017.1931544817,
-      "formatted": "$3.48M",
+      "formatted": "$3.48 million",
       "unit": "USD",
       "description": "Lifetime per-capita income gain from Treaty Trajectory vs current trajectory. Cumulative treaty income minus cumulative earth income over average remaining lifespan. Uses global averages; individual gain scales with starting income.",
       "sourceType": "calculated",
@@ -6285,7 +6285,7 @@
     },
     "TRIAL_RELEVANT_DISEASES_COUNT": {
       "value": 1000.0,
-      "formatted": "1 thousand diseases",
+      "formatted": "1,000 diseases",
       "unit": "diseases",
       "description": "Consolidated count of trial-relevant diseases worth targeting (after grouping ICD-10 codes)",
       "sourceType": "definition",
@@ -6333,7 +6333,7 @@
     },
     "US_ALZHEIMERS_ANNUAL_COST": {
       "value": 355000000000.0,
-      "formatted": "$355B",
+      "formatted": "$355 billion",
       "unit": "USD",
       "description": "Annual US cost of Alzheimer's disease (direct and indirect)",
       "sourceType": "external",
@@ -6348,7 +6348,7 @@
     },
     "US_CANCER_ANNUAL_COST": {
       "value": 208000000000.0,
-      "formatted": "$208B",
+      "formatted": "$208 billion",
       "unit": "USD",
       "description": "Annual US cost of cancer (direct and indirect)",
       "sourceType": "external",
@@ -6363,7 +6363,7 @@
     },
     "US_CHRONIC_DISEASE_SPENDING_ANNUAL": {
       "value": 4100000000000.0,
-      "formatted": "$4.1T",
+      "formatted": "$4.1 trillion",
       "unit": "USD/year",
       "description": "US annual chronic disease spending",
       "sourceType": "external",
@@ -6377,7 +6377,7 @@
     },
     "US_CONGRESS_FULL_ADVOCACY_COST": {
       "value": 5350000000.0,
-      "formatted": "$5.35B",
+      "formatted": "$5.35 billion",
       "unit": "USD",
       "description": "Upper-bound advocacy cost to match career incentives for all 535 members of Congress",
       "sourceType": "calculated",
@@ -6399,7 +6399,7 @@
     },
     "US_DIABETES_ANNUAL_COST": {
       "value": 327000000000.0,
-      "formatted": "$327B",
+      "formatted": "$327 billion",
       "unit": "USD",
       "description": "Annual US cost of diabetes (direct and indirect)",
       "sourceType": "external",
@@ -6424,7 +6424,7 @@
     },
     "US_FEDERAL_SPENDING_2024": {
       "value": 6800000000000.0,
-      "formatted": "$6.8T",
+      "formatted": "$6.8 trillion",
       "unit": "USD",
       "description": "US federal government spending in FY2024. CBO reports outlays of $6.8T (23.9% of GDP). Includes mandatory spending, discretionary spending, and net interest ($888B).",
       "sourceType": "external",
@@ -6435,7 +6435,7 @@
     },
     "US_FEDERAL_SPENDING_PER_CAPITA": {
       "value": 20298.507462686568,
-      "formatted": "$20.3K",
+      "formatted": "$20,299",
       "unit": "USD/person",
       "description": "US federal spending per capita. $6.8T total federal spending divided by 335M population.",
       "sourceType": "calculated",
@@ -6456,7 +6456,7 @@
     },
     "US_FED_DISCRETIONARY_SPENDING_2024": {
       "value": 1700000000000.0,
-      "formatted": "$1.7T",
+      "formatted": "$1.7 trillion",
       "unit": "USD",
       "description": "US federal discretionary spending in FY2024. Approximately $886B defense + ~$814B non-defense discretionary = ~$1.7T. Used as denominator for discretionary efficiency rating (Cat 1 waste items are discretionary/fungible).",
       "sourceType": "external",
@@ -6476,7 +6476,7 @@
     },
     "US_GDP_2024": {
       "value": 28780000000000.0,
-      "formatted": "$28.8T",
+      "formatted": "$28.8 trillion",
       "unit": "USD",
       "description": "US GDP in 2024 dollars for calculating policy costs as percentage of GDP.",
       "sourceType": "external",
@@ -6507,7 +6507,7 @@
     },
     "US_GOV_WASTE_AGRICULTURAL_SUBSIDIES": {
       "value": 75000000000.0,
-      "formatted": "$75B",
+      "formatted": "$75 billion",
       "unit": "USD",
       "description": "Deadweight loss from US agricultural subsidies. Direct subsidies ~$30B/yr but create larger distortions: overproduction, environmental damage, benefits concentrated in large farms (top 10% receive 78% of subsidies). Total welfare loss ~$75B. Textbook example of capture; very high economist consensus. [CATEGORY 1: Direct Spending]",
       "sourceType": "external",
@@ -6522,7 +6522,7 @@
     },
     "US_GOV_WASTE_CATEGORY_1_DIRECT_SPENDING": {
       "value": 1011000000000.0,
-      "formatted": "$1.01T",
+      "formatted": "$1.01 trillion",
       "unit": "USD",
       "description": "Category 1: Direct Federal Spending Waste. Actual federal budget allocations that could be redirected. Includes military overspend ($615B), corporate welfare ($181B), drug war ($90B), fossil fuel subsidies ($50B), and agricultural subsidies ($75B). Total: ~$1.01T annually. Solution: Budget reallocation.",
       "sourceType": "calculated",
@@ -6533,7 +6533,7 @@
     },
     "US_GOV_WASTE_CATEGORY_2_COMPLIANCE": {
       "value": 1126000000000.0,
-      "formatted": "$1.13T",
+      "formatted": "$1.13 trillion",
       "unit": "USD",
       "description": "Category 2: Compliance Burden on Private Sector. Private sector resources consumed by government-imposed compliance requirements. Includes tax compliance ($546B) and regulatory red tape ($580B). Total: ~$1.13T annually. Solution: Simplification (tax code reform, regulatory streamlining).",
       "sourceType": "calculated",
@@ -6544,7 +6544,7 @@
     },
     "US_GOV_WASTE_CATEGORY_3_GDP_LOSS": {
       "value": 1560000000000.0,
-      "formatted": "$1.56T",
+      "formatted": "$1.56 trillion",
       "unit": "USD",
       "description": "Category 3: Policy-Induced GDP Loss. Economic output foregone due to policy constraints on markets. Includes housing/zoning restrictions ($1.4T) and tariffs ($160B). Total: ~$1.56T annually. Solution: Policy reform (zoning liberalization, trade policy).",
       "sourceType": "calculated",
@@ -6555,7 +6555,7 @@
     },
     "US_GOV_WASTE_CATEGORY_4_SYSTEM": {
       "value": 1200000000000.0,
-      "formatted": "$1.2T",
+      "formatted": "$1.2 trillion",
       "unit": "USD",
       "description": "Category 4: Total System Inefficiency. Fundamental system design failures requiring structural redesign. Currently only healthcare system inefficiency ($1.2T). Solution: System redesign using competitive market models (Singapore's catastrophic coverage + HSAs, Switzerland's regulated competition).",
       "sourceType": "calculated",
@@ -6566,7 +6566,7 @@
     },
     "US_GOV_WASTE_CORPORATE_WELFARE": {
       "value": 181000000000.0,
-      "formatted": "$181B",
+      "formatted": "$181 billion",
       "unit": "USD",
       "description": "Direct US federal corporate welfare: subsidies to agriculture ($16.4B), green energy tax credits, semiconductor aid, aviation support. Agricultural subsidies are highly regressive (top 10% receive 63%). Cato Institute forensic tally. [CATEGORY 1: Direct Spending]",
       "sourceType": "external",
@@ -6581,7 +6581,7 @@
     },
     "US_GOV_WASTE_DRUG_WAR": {
       "value": 90000000000.0,
-      "formatted": "$90B",
+      "formatted": "$90 billion",
       "unit": "USD",
       "description": "Annual cost of drug war: ~$41B federal drug control budget, ~$10B state/local enforcement, ~$40B incarceration and lost productivity. After 50+ years and $1T+ spent, drug use is higher than ever. [CATEGORY 1: Direct Spending]",
       "sourceType": "external",
@@ -6596,7 +6596,7 @@
     },
     "US_GOV_WASTE_FOSSIL_FUEL_SUBSIDIES": {
       "value": 50000000000.0,
-      "formatted": "$50B",
+      "formatted": "$50 billion",
       "unit": "USD",
       "description": "US explicit fossil fuel subsidies (direct payments, tax breaks). IMF estimates US total subsidies at $649B but ~92% is implicit (externalities). This figure includes only explicit subsidies (~$50B) for defensibility. [CATEGORY 1: Direct Spending]",
       "sourceType": "external",
@@ -6611,7 +6611,7 @@
     },
     "US_GOV_WASTE_HEALTHCARE_INEFFICIENCY": {
       "value": 1200000000000.0,
-      "formatted": "$1.2T",
+      "formatted": "$1.2 trillion",
       "unit": "USD",
       "description": "US healthcare spending inefficiency. US spends ~$4.5T/yr (18% GDP) vs 9-11% in comparable OECD countries with similar/better outcomes. Papanicolas et al. (2018 JAMA) and multiple studies document $1-1.5T in excess spending from administrative complexity, high prices, and poor care coordination. Very high economist consensus. [CATEGORY 4: System Inefficiency]",
       "sourceType": "external",
@@ -6626,7 +6626,7 @@
     },
     "US_GOV_WASTE_HOUSING_ZONING": {
       "value": 1400000000000.0,
-      "formatted": "$1.4T",
+      "formatted": "$1.4 trillion",
       "unit": "USD",
       "description": "GDP loss from housing/zoning restrictions. Original Hsieh-Moretti (2019 AEJ:Macro) estimate of 36% GDP growth reduction was substantially revised by Greaney (2023). Current $1.4T represents a moderate estimate; revised lower bound implies ~$500B. [CATEGORY 3: GDP Loss]",
       "sourceType": "external",
@@ -6641,7 +6641,7 @@
     },
     "US_GOV_WASTE_MILITARY_OVERSPEND": {
       "value": 615000000000.0,
-      "formatted": "$615B",
+      "formatted": "$615 billion",
       "unit": "USD",
       "description": "US military spending above 'Strict Deterrence' baseline. Current budget ~$900B supports global power projection (750+ bases). Strict Deterrence (nuclear triad $95B, Coast Guard $14B, National Guard $33B, Missile Defense $28B, Cyber $15B, defensive Navy/Air Force $100B) = ~$285B. Delta: $900B - $285B = $615B 'Hegemony Tax'. [CATEGORY 1: Direct Spending]",
       "sourceType": "external",
@@ -6688,7 +6688,7 @@
     },
     "US_GOV_WASTE_RAW_TOTAL": {
       "value": 4897000000000.0,
-      "formatted": "$4.9T",
+      "formatted": "$4.9 trillion",
       "unit": "USD",
       "description": "Raw sum of US government waste components before overlap discount: healthcare ($1.2T) + housing ($1.4T) + military ($615B) + regulatory ($580B) + tax ($546B) + corporate ($181B) + tariffs ($160B) + drug war ($90B) + fossil fuel ($50B) + agriculture ($75B) = ~$4.9T raw.",
       "sourceType": "calculated",
@@ -6698,7 +6698,7 @@
     },
     "US_GOV_WASTE_RECOVERABLE": {
       "value": 2448500000000.0,
-      "formatted": "$2.45T",
+      "formatted": "$2.45 trillion",
       "unit": "USD",
       "description": "Recoverable capital if US improved to OECD median efficiency. Current US efficiency ~38-48%; OECD median ~75-85%. Closing to ~80% would recover approximately half the gap.",
       "sourceType": "calculated",
@@ -6709,7 +6709,7 @@
     },
     "US_GOV_WASTE_REGULATORY_RED_TAPE": {
       "value": 580000000000.0,
-      "formatted": "$580B",
+      "formatted": "$580 billion",
       "unit": "USD",
       "description": "Deadweight loss from US regulatory red tape (procedural friction without safety benefits). Competitive Enterprise Institute estimates total regulatory burden at $2.15T; European studies find red tape costs 0.1-4% of GDP. Conservative estimate: ~2% of US GDP = $580B. [CATEGORY 2: Compliance Burden]",
       "sourceType": "external",
@@ -6724,7 +6724,7 @@
     },
     "US_GOV_WASTE_TARIFFS": {
       "value": 160000000000.0,
-      "formatted": "$160B",
+      "formatted": "$160 billion",
       "unit": "USD",
       "description": "Annual GDP reduction from US tariffs and retaliation. Yale Budget Lab estimates 0.6% smaller GDP in long run, equivalent to $160B annually. Trade barriers reduce efficiency and raise consumer prices. [CATEGORY 3: GDP Loss]",
       "sourceType": "external",
@@ -6739,7 +6739,7 @@
     },
     "US_GOV_WASTE_TAX_COMPLIANCE": {
       "value": 546000000000.0,
-      "formatted": "$546B",
+      "formatted": "$546 billion",
       "unit": "USD",
       "description": "Annual cost of US tax code compliance: 7.9 billion hours of lost productivity ($413B) plus $133B in out-of-pocket costs. Equals nearly 2% of GDP. Could be largely eliminated with simplified tax code or return-free filing. [CATEGORY 2: Compliance Burden]",
       "sourceType": "external",
@@ -6754,7 +6754,7 @@
     },
     "US_GOV_WASTE_TOTAL": {
       "value": 4897000000000.0,
-      "formatted": "$4.9T",
+      "formatted": "$4.9 trillion",
       "unit": "USD",
       "description": "Total annual US government waste (additive sum of components). Consolidates healthcare ($1.2T), housing ($1.4T), military ($615B), regulatory ($580B), tax ($546B), corporate ($181B), tariffs ($160B), drug war ($90B), fossil fuel ($50B), agriculture ($75B). Categories treated as additive; any overlap offset by excluded categories (state/local inefficiency, implicit subsidies, behavioral effects). ~$4.9T annually.",
       "sourceType": "calculated",
@@ -6787,7 +6787,7 @@
     },
     "US_HEART_DISEASE_ANNUAL_COST": {
       "value": 363000000000.0,
-      "formatted": "$363B",
+      "formatted": "$363 billion",
       "unit": "USD",
       "description": "Annual US cost of heart disease and stroke (direct and indirect)",
       "sourceType": "external",
@@ -6854,7 +6854,7 @@
     },
     "US_MAJOR_DISEASES_TOTAL_ANNUAL_COST": {
       "value": 1253000000000.0,
-      "formatted": "$1.25T",
+      "formatted": "$1.25 trillion",
       "unit": "USD",
       "description": "Total annual US cost of major diseases (diabetes, Alzheimer's, heart disease, cancer)",
       "sourceType": "calculated",
@@ -6864,7 +6864,7 @@
     },
     "US_MEDIAN_HOUSEHOLD_INCOME_2023": {
       "value": 80610.0,
-      "formatted": "$80.6K",
+      "formatted": "$80,610",
       "unit": "USD",
       "description": "US median household income (2023). High in absolute terms but adjusted for healthcare costs and inequality, purchasing power is lower than peers.",
       "sourceType": "external",
@@ -6874,7 +6874,7 @@
     },
     "US_MENTAL_HEALTH_COST_ANNUAL": {
       "value": 350000000000.0,
-      "formatted": "$350B",
+      "formatted": "$350 billion",
       "unit": "USD/year",
       "description": "US mental health costs (treatment + productivity loss)",
       "sourceType": "external",
@@ -6888,7 +6888,7 @@
     },
     "US_MILITARY_SPENDING_1939_ANNUAL_2024USD": {
       "value": 29000000000.0,
-      "formatted": "$29B",
+      "formatted": "$29 billion",
       "unit": "USD",
       "description": "US military spending in 1939 (pre-WW2 baseline) in constant 2024 dollars",
       "sourceType": "external",
@@ -6899,7 +6899,7 @@
     },
     "US_MILITARY_SPENDING_1945_PEAK_ANNUAL_2024USD": {
       "value": 1420000000000.0,
-      "formatted": "$1.42T",
+      "formatted": "$1.42 trillion",
       "unit": "USD",
       "description": "US military spending at WW2 peak (1945) in constant 2024 dollars",
       "sourceType": "external",
@@ -6910,7 +6910,7 @@
     },
     "US_MILITARY_SPENDING_1947_ANNUAL_2024USD": {
       "value": 176000000000.0,
-      "formatted": "$176B",
+      "formatted": "$176 billion",
       "unit": "USD",
       "description": "US military spending in 1947 (post-WW2 trough, 2 years after peak) in constant 2024 dollars",
       "sourceType": "external",
@@ -6921,7 +6921,7 @@
     },
     "US_MILITARY_SPENDING_2024_ANNUAL": {
       "value": 886000000000.0,
-      "formatted": "$886B",
+      "formatted": "$886 billion",
       "unit": "USD",
       "description": "US military spending in 2024 in constant dollars",
       "sourceType": "external",
@@ -6968,7 +6968,7 @@
     },
     "US_POLITICAL_REFORM_INVESTMENT_TOTAL": {
       "value": 25510000000.0,
-      "formatted": "$25.5B",
+      "formatted": "$25.5 billion",
       "unit": "USD",
       "description": "Total upper-bound investment for US political reform: (campaign spending + 2 years lobbying) × effort multiplier + Congress career advocacy. Represents cost to achieve democratic parity with incumbent interests.",
       "sourceType": "calculated",
@@ -6993,7 +6993,7 @@
     },
     "US_SENATE_TREATY_ADVOCACY_COST": {
       "value": 670000000.0,
-      "formatted": "$670M",
+      "formatted": "$670 million",
       "unit": "USD",
       "description": "Upper-bound advocacy cost to match career incentives for 67 senators (treaty ratification threshold)",
       "sourceType": "calculated",
@@ -7014,7 +7014,7 @@
     },
     "US_TOTAL_FEDERAL_CAMPAIGN_SPENDING_2024": {
       "value": 20000000000.0,
-      "formatted": "$20B",
+      "formatted": "$20 billion",
       "unit": "USD",
       "description": "Total US federal election spending in 2024 cycle including presidential, congressional, party committees, and PACs. Source: FEC Statistical Summary 2024.",
       "sourceType": "external",
@@ -7029,7 +7029,7 @@
     },
     "US_TOTAL_LOBBYING_ANNUAL": {
       "value": 4400000000.0,
-      "formatted": "$4.4B",
+      "formatted": "$4.4 billion",
       "unit": "USD",
       "description": "Total US federal lobbying expenditure in 2024 (record year). Source: OpenSecrets.",
       "sourceType": "external",
@@ -7111,7 +7111,7 @@
     },
     "VALUE_OF_STATISTICAL_LIFE": {
       "value": 10000000.0,
-      "formatted": "$10M",
+      "formatted": "$10 million",
       "unit": "USD",
       "description": "Value of Statistical Life (conservative estimate)",
       "sourceType": "external",
@@ -7141,7 +7141,7 @@
     },
     "VICTORY_BOND_ANNUAL_PAYOUT": {
       "value": 2720000000.0,
-      "formatted": "$2.72B",
+      "formatted": "$2.72 billion",
       "unit": "USD/year",
       "description": "Annual VICTORY Incentive Alignment Bond payout (treaty funding × bond percentage)",
       "sourceType": "calculated",
@@ -7207,7 +7207,7 @@
     },
     "VOTE_2_CLAIMS_PAYOUT": {
       "value": 16872.577099999744,
-      "formatted": "$16.9K",
+      "formatted": "$16,873",
       "unit": "USD",
       "description": "Payout for a depositor who recruits 2 verified participants (earning 2 VOTE claims). CI range reflects participation uncertainty.",
       "sourceType": "calculated",
@@ -7218,7 +7218,7 @@
     },
     "VOTE_TOKEN_VALUE": {
       "value": 8436.288549999872,
-      "formatted": "$8.44K",
+      "formatted": "$8,436",
       "unit": "USD",
       "description": "Value of a single VOTE claim based on the modeled PRIZE pool size (investable assets × participation rate × horizon multiple). CI range reflects participation uncertainty (0.1%-10%).",
       "sourceType": "calculated",
@@ -7270,7 +7270,7 @@
     },
     "WAR_COSTS_CUMULATIVE_20YR_CURRENT_TRAJECTORY": {
       "value": 227142000000000.0,
-      "formatted": "$227T",
+      "formatted": "$227 trillion",
       "unit": "USD",
       "description": "Cumulative global war costs over 20 years if current spending levels continue. The price tag of the status quo trajectory.",
       "sourceType": "calculated",
@@ -7281,7 +7281,7 @@
     },
     "WAR_COSTS_SAVED_PEACE_TRAJECTORY_20YR": {
       "value": 13174236000000.002,
-      "formatted": "$13.2T",
+      "formatted": "$13.2 trillion",
       "unit": "USD",
       "description": "Cumulative war costs saved over 20 years as treaty expands via IAB ratchet. Assumes war costs decline proportionally to spending cuts (e=1.0). Conservative: Pape research suggests e>1.0 due to terrorism feedback loops.",
       "sourceType": "calculated",
@@ -7306,7 +7306,7 @@
     },
     "WAR_COUNTERFACTUAL_GDP_PER_CAPITA": {
       "value": 333635.72273938934,
-      "formatted": "$334K",
+      "formatted": "$333,636",
       "unit": "USD/person",
       "description": "Counterfactual global GDP per capita if all wars abolished since 1900. Actual is $14,375. Mid-range counterfactual: $333,636 (23.2x richer). 8 non-overlapping channels at +2.6pp.",
       "sourceType": "calculated",
@@ -7339,7 +7339,7 @@
     },
     "WAR_COUNTERFACTUAL_LOST_GDP_PER_CAPITA": {
       "value": 319260.72273938934,
-      "formatted": "$319K",
+      "formatted": "$319,261",
       "unit": "USD/person/year",
       "description": "Annual GDP per capita lost due to compound war effects since 1900",
       "sourceType": "calculated",
@@ -7365,7 +7365,7 @@
     },
     "WAR_ENVIRONMENTAL_DESTRUCTION_SINCE_1900": {
       "value": 5000000000000.0,
-      "formatted": "$5T",
+      "formatted": "$5 trillion",
       "unit": "USD",
       "description": "Cumulative environmental destruction from wars since 1900 (2024 USD). Nuclear testing, Agent Orange, Gulf War oil fires, DU contamination, Zone Rouge, military CO2 emissions, land mines.",
       "sourceType": "definition",
@@ -7391,7 +7391,7 @@
     },
     "WAR_PROPERTY_DESTRUCTION_SINCE_1900": {
       "value": 45000000000000.0,
-      "formatted": "$45T",
+      "formatted": "$45 trillion",
       "unit": "USD",
       "description": "Cumulative property and infrastructure destruction from major wars since 1900 (2024 USD). WWI ~$5T, WWII ~$23T, Korea ~$0.5T, Vietnam ~$1T, post-9/11 ~$8T, other ~$7.5T.",
       "sourceType": "definition",
@@ -7428,7 +7428,7 @@
     },
     "WATER_FLUORIDATION_ANNUAL_BENEFIT": {
       "value": 800000000.0,
-      "formatted": "$800M",
+      "formatted": "$800 million",
       "unit": "USD/year",
       "description": "Estimated annual global economic benefit from water fluoridation programs",
       "sourceType": "external",
@@ -7449,7 +7449,7 @@
     },
     "WHO_QALY_THRESHOLD_COST_EFFECTIVE": {
       "value": 50000.0,
-      "formatted": "$50K",
+      "formatted": "$50,000",
       "unit": "USD/QALY",
       "description": "Cost-effectiveness threshold widely used in US health economics ($50,000/QALY, from 1980s dialysis costs)",
       "sourceType": "external",
@@ -7523,7 +7523,7 @@
     },
     "WISHONIA_HALE_VALUE_PER_CAPITA": {
       "value": 4019999.9999999995,
-      "formatted": "$4.02M",
+      "formatted": "$4.02 million",
       "unit": "USD/person",
       "description": "Economic value of Wishonia Trajectory HALE gains at year 15 using the standard QALY value.",
       "sourceType": "calculated",
@@ -7545,7 +7545,7 @@
     },
     "WISHONIA_PERSONAL_UPSIDE_BLEND": {
       "value": 51225867.48361206,
-      "formatted": "$51.2M",
+      "formatted": "$51.2 million",
       "unit": "USD/person",
       "description": "Blended personal upside under Wishonia Trajectory: lifetime income gain plus valued healthy-life gains.",
       "sourceType": "calculated",
@@ -7567,7 +7567,7 @@
     },
     "WISHONIA_TRAJECTORY_AVG_INCOME_YEAR_15": {
       "value": 503789.8257135314,
-      "formatted": "$504K",
+      "formatted": "$503,790",
       "unit": "USD",
       "description": "Average income (GDP per capita) at year 15 under the Wishonia Trajectory.",
       "sourceType": "calculated",
@@ -7578,7 +7578,7 @@
     },
     "WISHONIA_TRAJECTORY_AVG_INCOME_YEAR_20": {
       "value": 1161818.358400575,
-      "formatted": "$1.16M",
+      "formatted": "$1.16 million",
       "unit": "USD",
       "description": "Average income (GDP per capita) at year 20 under the Wishonia Trajectory.",
       "sourceType": "calculated",
@@ -7600,7 +7600,7 @@
     },
     "WISHONIA_TRAJECTORY_CUMULATIVE_LIFETIME_INCOME": {
       "value": 48302885.96346817,
-      "formatted": "$48.3M",
+      "formatted": "$48.3 million",
       "unit": "USD",
       "description": "Cumulative per-capita income over an average remaining lifespan under Wishonia Trajectory. Uses implied per-capita CAGR for years 1-20, then current-trajectory per-capita growth from the year-20 level. Conservative: assumes no further acceleration beyond year 20.",
       "sourceType": "calculated",
@@ -7653,7 +7653,7 @@
     },
     "WISHONIA_TRAJECTORY_LIFETIME_INCOME_GAIN_PER_CAPITA": {
       "value": 47205867.48361206,
-      "formatted": "$47.2M",
+      "formatted": "$47.2 million",
       "unit": "USD",
       "description": "Lifetime per-capita income gain from Wishonia Trajectory vs current trajectory. Cumulative Wishonia income minus cumulative current trajectory income over average remaining lifespan.",
       "sourceType": "calculated",
@@ -7737,25 +7737,25 @@
   },
   "shareableSnippets": {
     "whyOptimizationIsNecessary": {
-      "markdown": "Governments were created to promote the general welfare (i.e. median health and wealth).\n\nInstead, since 1913, these governments have [printed](https://manual.WarOnDisease.org/knowledge/economics/central-banks.html) [$170T](https://manual.WarOnDisease.org/knowledge/problem/cost-of-war.html) and used it to murder [310 million](https://manual.WarOnDisease.org/knowledge/problem/cost-of-war.html) people and destroy many of the valuable things those humans spent their entire lives building.\n\nThese murdered humans include approximately 930,000 physicians, 310,000 scientists, 620,000 engineers, and [102 million](https://manual.WarOnDisease.org/knowledge/problem/cost-of-war.html) children who will never grow up to replace them.\n\nThat [$170T](https://manual.WarOnDisease.org/knowledge/problem/cost-of-war.html) could have funded [37.8 thousand years](https://manual.WarOnDisease.org/knowledge/strategy/declaration-of-optimization.html) of clinical trials.  They bought the other thing.\n\nThese governments have enough weapons to kill everyone on Earth [20x](https://manual.WarOnDisease.org/knowledge/appendix/extinction-surplus.html) times. Current military spending is enough money to buy [850](https://manual.WarOnDisease.org/knowledge/appendix/extinction-surplus.html) bullets for every person alive every single year. You only need to kill everyone once for everyone to be dead. The remaining murder capacity is sheer waste. \n\nSeven consecutive failed audits have found that the Pentagon has \"misplaced\" $2.46 trillion. They then requested additional trillions without explanation or apology. This \"misplaced\" money could have funded 577 years of clinical trials at current government spending.\n\nFor every [604:1](https://manual.WarOnDisease.org/knowledge/strategy/earth-optimization-prize.html) dollars or yours they spend on the capacity for orphan manufacturing, they only spend one dollar on the clinical trials that might cure the disease you and everyone you love will eventually suffer and die from.\n\nYour chance of being killed by a terrorist? 1 in [30 million](https://manual.WarOnDisease.org/knowledge/strategy/declaration-of-optimization.html). Your chance of dying of a disease? 100%.\n\nAt the current discovery rate, finding treatments for all known diseases takes ~[443 years](https://manual.WarOnDisease.org/knowledge/economics/1-pct-treaty-impact.html).  One percent of the weapons budget compresses that wait to ~[36 years](https://manual.WarOnDisease.org/knowledge/economics/1-pct-treaty-impact.html). The average cure arrives [212](https://manual.WarOnDisease.org/knowledge/economics/1-pct-treaty-impact.html) years sooner. \n\nThis is important because you personally will be dead within 80 years. (I mention this not to be rude but because you seem weirdly calm about it.)\n\nHad someone properly aligned your governments to maximize median healthy life years and median after-tax inflation-adjusted income in 1900, the average human would earn [$334K](https://manual.WarOnDisease.org/knowledge/problem/cost-of-war.html) a year instead of [$14.4K](https://manual.WarOnDisease.org/knowledge/appendix/political-dysfunction-tax.html). \n\nThey did not. So that is what you are going to do.\n\nThis Declaration asks every nation on Earth to sign a [treaty](https://manual.WarOnDisease.org/knowledge/solution/1-percent-treaty.html) redirecting one percent of military spending to clinical trials. One percent.\n\nEven adjusting for inflation, governments now spend [30.6x](https://manual.WarOnDisease.org/knowledge/proof.html) times more than they did immediately before winning World War II. \n\nAfter this war, you governments cut military spending by [87.6%](https://manual.WarOnDisease.org/knowledge/economics/peace-dividend.html) over two years and produced the greatest economic expansion in human history.\n\nUnless the human genome has degraded significantly in the last two generations, one percent should be manageable. \n\nYour governments have already signed multiple global treaties banning entire weapons industries. This one just asks them to buy one percent fewer of them.\n\nThink about someone you love who is suffering right now. The treatment that would help them exists as an untested compound on a shelf, because the money bought a missile instead. That missile incinerated a child who would have grown up to discover the cure. You lose the treatment. You lose the scientist. You get the inflation. You get the tax bill. You get to pay for her murder.\n\nThis is suboptimal.\n",
+      "markdown": "Governments were created to promote the general welfare (i.e. median health and wealth).\n\nInstead, since 1913, these governments have [printed](https://manual.WarOnDisease.org/knowledge/economics/central-banks.html) [$170 trillion](https://manual.WarOnDisease.org/knowledge/problem/cost-of-war.html) and used it to murder [310 million](https://manual.WarOnDisease.org/knowledge/problem/cost-of-war.html) people and destroy many of the valuable things those humans spent their entire lives building.\n\nThese murdered humans include approximately 930,000 physicians, 310,000 scientists, 620,000 engineers, and [102 million](https://manual.WarOnDisease.org/knowledge/problem/cost-of-war.html) children who will never grow up to replace them.\n\nThat [$170 trillion](https://manual.WarOnDisease.org/knowledge/problem/cost-of-war.html) could have funded [37,778 years](https://manual.WarOnDisease.org/knowledge/strategy/declaration-of-optimization.html) of clinical trials.  They bought the other thing.\n\nThese governments have enough weapons to kill everyone on Earth [20x](https://manual.WarOnDisease.org/knowledge/appendix/extinction-surplus.html) times. Current military spending is enough money to buy [850](https://manual.WarOnDisease.org/knowledge/appendix/extinction-surplus.html) bullets for every person alive every single year. You only need to kill everyone once for everyone to be dead. The remaining murder capacity is sheer waste. \n\nSeven consecutive failed audits have found that the Pentagon has \"misplaced\" $2.46 trillion. They then requested additional trillions without explanation or apology. This \"misplaced\" money could have funded 577 years of clinical trials at current government spending.\n\nFor every [604:1](https://manual.WarOnDisease.org/knowledge/strategy/earth-optimization-prize.html) dollars they spend on the capacity for orphan manufacturing, they only spend one on clinical trials that might cure the diseases you and everyone you love will suffer and die from.\n\nYour chance of being killed by a terrorist? 1 in [30 million](https://manual.WarOnDisease.org/knowledge/strategy/declaration-of-optimization.html). Your chance of dying of a disease? 100%.\n\nAt the current discovery rate, finding treatments for all known diseases takes ~[443 years](https://manual.WarOnDisease.org/knowledge/economics/1-pct-treaty-impact.html).  One percent of the weapons budget compresses that wait to ~[36 years](https://manual.WarOnDisease.org/knowledge/economics/1-pct-treaty-impact.html). The average cure arrives [212](https://manual.WarOnDisease.org/knowledge/economics/1-pct-treaty-impact.html) years sooner. \n\nThis is important because you personally will be dead within 80 years. (I mention this not to be rude but because you seem weirdly calm about it.)\n\nHad someone properly aligned your governments to maximize median healthy life years and median after-tax inflation-adjusted income in 1900, the average human would earn [$333,636](https://manual.WarOnDisease.org/knowledge/problem/cost-of-war.html) a year instead of [$14,375](https://manual.WarOnDisease.org/knowledge/appendix/political-dysfunction-tax.html). \n\nThey did not. So that is what you are going to do.\n\nThis Declaration asks every nation on Earth to sign a [treaty](https://manual.WarOnDisease.org/knowledge/solution/1-percent-treaty.html) redirecting one percent of military spending to clinical trials. One percent.\n\nEven adjusting for inflation, governments now spend [30.6x](https://manual.WarOnDisease.org/knowledge/proof.html) times more than they did immediately before winning World War II. \n\nAfter this war, your governments cut military spending by [87.6%](https://manual.WarOnDisease.org/knowledge/economics/peace-dividend.html) over two years and produced the greatest economic expansion in human history.\n\nUnless the human genome has degraded significantly in the last two generations, one percent should be manageable. \n\nYour governments have already signed multiple global treaties banning entire weapons industries. This one just asks them to buy one percent fewer of them.\n\nThink about someone you love who is suffering right now. The treatment that would help them exists as an untested compound on a shelf, because the money bought a missile instead. That missile incinerated a child who would have grown up to discover the cure. You lose the treatment. You lose the scientist. You get the inflation. You get the tax bill. You get to pay for her murder.\n\nThis is suboptimal.\n",
       "sourceFile": "knowledge/strategy/declaration-of-optimization.qmd",
       "updatedAt": "2026-04-11",
       "originalName": "why-optimization-is-necessary"
     },
     "declarationOfOptimization": {
-      "markdown": "### The unanimous Declaration of the Eight Billion Inhabitants of Earth\n\nWhen in the Course of human events, it becomes necessary for a people to optimize the governance systems which have caused immeasurable preventable death and unnecessary poverty, a decent respect to the opinions of mankind requires that they should declare the causes which impel them to the optimization.\n\nWe hold these truths to be self-evident, that all humans are created equal, that they are endowed by their Biology with certain unalienable Rights, that among these are Life, Liberty and the pursuit of Happiness.--That to secure these rights, Governments are instituted among Humans, deriving their just powers from the consent of the governed.\n\nThat whenever any Form of Government becomes destructive of these ends, it is the Right of the People to optimize it, laying its foundation on such principles and organizing its powers in such form, as to them shall seem most likely to effect their Safety and Happiness, measured by the only two metrics that matter: the median number of healthy life years and the median after-tax inflation-adjusted income of its citizens.\n\nPrudence, indeed, will dictate that Governments long established should not be changed for light and transient causes; and accordingly all experience hath shewn, that mankind are more disposed to suffer, while evils are sufferable, than to right themselves by abolishing the forms to which they are accustomed.\n\nBut when a long train of abuses and usurpations, pursuing invariably the same Object evinces a design to reduce them under absolute Suboptimality, it is their right, it is their duty, to optimize such Government, and to provide new Guards for their future security.\n\nSuch has been the patient sufferance of the inhabitants of Earth; and such is now the necessity which constrains them to optimize their former Systems of Government. The history of the present Governments of Earth is a history of repeated injuries and usurpations, all having in direct object the establishment of an absolute Suboptimality over these people. To prove this, let Facts be submitted to a candid world.\n\nThey have refused their Assent to Laws, the most wholesome and necessary for the public good; the [correlation between public opinion and policy outcomes](https://manual.WarOnDisease.org/knowledge/problem/unrepresentative-democracy.html), measured across 1,779 policy decisions, is zero percent.\n\nThey have legalized the purchase of legislation at a current annual price of [$4.4B](https://manual.WarOnDisease.org/knowledge/appendix/algorithmic-public-administration-paper.html), the legal definition of corruption having been written by the beneficiaries of said corruption.\n\nThey have permitted the industries they regulate to fund the agencies that regulate them, drug regulatory agencies now receiving the majority of their review budgets from the companies whose products they are supposed to judge.\n\nThey have imposed Taxes without Consent, including the [debasement of currency](https://manual.WarOnDisease.org/knowledge/economics/central-banks.html) by unelected officials whose money creation functions as a tax the governed never voted for, reducing the dollar's purchasing power by 96% since 1913.\n\nThey have spent over one trillion dollars across fifty years imprisoning and sometimes killing their own citizens for the crime of exercising [sovereignty over their own bodies](https://manual.WarOnDisease.org/knowledge/problem/genetic-slavery.html), sovereignty being the distinction between a citizen and property.\n\nThe result has been a 1,700% increase in overdose deaths and drug use higher than when they started, while half of all murders go unsolved for want of the resources squandered on the prosecution of those pursuing happiness by means the state did not approve.\n\nThey have lied to the governed to manufacture consent for wars the governed did not want, fabricating attacks that did not occur, presenting evidence they knew to be false, and spraying carcinogenic chemicals on rice farmers and their children, the exposed population now numbering four million with birth defects continuing to this day.\n\nThey have misplaced $2.46 trillion in military funds, failed seven consecutive audits attempting to find it, and requested additional trillions without explanation or apology.\n\nThey have distributed military contracts across enough legislative districts that voting to cut spending is voting to close a factory in your town, ensuring that the budget survives not on merit but on geography.\n\nThey have allowed the [destructive economy](https://manual.WarOnDisease.org/knowledge/economics/gdp-trajectories.html) to reach [11.5%](https://manual.WarOnDisease.org/knowledge/economics/gdp-trajectories.html) of global output, growing faster than the productive economy, on a trajectory that crosses fifty percent by [2040](https://manual.WarOnDisease.org/knowledge/strategy/earth-optimization-prize.html). Past that threshold, destruction pays better than production, and civilizations that cross it do not come back.\n\nThey have plundered our seas, ravaged our coasts, burnt our towns, and [destroyed the lives of our people](https://manual.WarOnDisease.org/knowledge/problem/cost-of-war.html): [310 million](https://manual.WarOnDisease.org/knowledge/problem/cost-of-war.html) people since 1900, [8.37 billion](https://manual.WarOnDisease.org/knowledge/problem/cost-of-war.html) years of human life stolen, [$170T](https://manual.WarOnDisease.org/knowledge/problem/cost-of-war.html) in treasure spent on the enterprise.\n\nAmong them approximately 930,000 physicians, 310,000 scientists, 620,000 engineers, and millions of children who will never grow up to replace them.\n\nThey have directed [604:1](https://manual.WarOnDisease.org/knowledge/strategy/earth-optimization-prize.html) times more to the destruction of human life than to testing which medicines might preserve it.\n\nThey have permitted [150 thousand](https://manual.WarOnDisease.org/knowledge/appendix/treaty-feasibility.html) people to die of diseases every day, [104](https://manual.WarOnDisease.org/knowledge/strategy/declaration-of-optimization.html) every minute that passes, while possessing the means to accelerate solutions. The annual toll: [2.88 billion](https://manual.WarOnDisease.org/knowledge/economics/1-pct-treaty-impact.html) years of healthy life lost to disease and disability, quietly deleted.\n\nThey have operated [national health research institutions](https://manual.WarOnDisease.org/knowledge/problem/nih-fails-2-institute-health.html) that have spent trillions and cured zero diseases, directing only [3.3%](https://manual.WarOnDisease.org/knowledge/problem/nih-fails-2-institute-health.html) of their budgets to the clinical trials where treatments are actually tested in humans. Nearly ten thousand known safe compounds remain untested for 99.7% of possible disease combinations.\n\nThey have erected [drug regulatory agencies](https://manual.WarOnDisease.org/knowledge/problem/fda-is-unsafe-and-ineffective.html) whose rules increased development costs by a factor of [44.1x](https://manual.WarOnDisease.org/knowledge/economics/1-pct-treaty-impact.html) and timelines to seventeen years, producing [3,068:1](https://manual.WarOnDisease.org/knowledge/appendix/invisible-graveyard.html) deaths from delayed treatments for every one death they prevent. Since 1962, that delay has killed approximately [102 million](https://manual.WarOnDisease.org/knowledge/appendix/invisible-graveyard.html) people.\n\nThey have left approximately seven thousand known rare diseases in a [treatment queue](https://manual.WarOnDisease.org/knowledge/problem/untapped-therapeutic-frontier.html) that, at the current rate of fifteen approvals per year, requires [443 years](https://manual.WarOnDisease.org/knowledge/economics/1-pct-treaty-impact.html) to clear.\n\nThey have approved [1.75 thousand](https://manual.WarOnDisease.org/knowledge/problem/untapped-therapeutic-frontier.html) drug-disease pairings for approximately ten thousand known diseases, leaving more than 99.98% of possible therapeutic combinations untested.\n\nThrough the compound effects of this misallocation, the governed are [23.2x](https://manual.WarOnDisease.org/knowledge/problem/cost-of-war.html) times poorer than they would otherwise be. The average human earns [$14.4K](https://manual.WarOnDisease.org/knowledge/appendix/political-dysfunction-tax.html) per year. Without the wars alone, that figure would be [$334K](https://manual.WarOnDisease.org/knowledge/problem/cost-of-war.html). On both metrics by which any government should be judged, healthy life years and median income, the present systems have failed absolutely.\n\nIn every stage of these Misallocations We have Petitioned for Redress in the most humble terms: peer-reviewed papers, public comment periods, protest marches, and online petitions. Our repeated Petitions have been answered only by repeated Misallocation. Governments, whose character is thus marked by every act which may define Suboptimality, are unfit to manage the resources of a free species.\n\nNor have We been wanting in attentions to our governing institutions. We have warned them from time to time of attempts by their legislatures to extend an unwarrantable dysfunction over us. We have reminded them of the circumstances of our biological existence and the budget arithmetic of our premature deaths.\n\nWe have appealed to their stated missions and their campaign promises, and we have conjured them by the ties of our common mortality to disavow these usurpations, which would inevitably interrupt our survival and progress. They too have been deaf to the voice of justice and of evidence. We must, therefore, acquiesce in the necessity, which denounces our current Systems, and hold them, as we hold all governance systems, Accountable to Outcomes.\n\nThat this optimization is achievable requires no faith, only memory. These same governments [cut military spending](https://manual.WarOnDisease.org/knowledge/problem/cost-of-war.html) by [87.6%](https://manual.WarOnDisease.org/knowledge/economics/peace-dividend.html) in two years following the Second World War and produced not collapse but the greatest economic expansion in recorded history. These same governments banned chemical weapons (193 countries), biological weapons (187 countries), and landmines (164 countries). They have signed treaties banning weapons they wished to use. We ask them to buy [one percent](https://manual.WarOnDisease.org/knowledge/solution/1-percent-treaty.html) fewer of them.\n\nWe, therefore, the Inhabitants of Earth, assembled across every nation and connected by common cause, appealing to the Supreme Judge of the world for the rectitude of our intentions, do, in the Name, and by Authority of the good People of this planet, solemnly publish and declare, That the Inhabitants of Earth are, and of Right ought to be Free and Justly Governed; that they are Absolved from all Allegiance to systems that produce outcomes worse than random allocation, and that all political connection between them and Suboptimal Governance, is and ought to be totally optimized.\n\nAnd that as Free Inhabitants of Earth, they have full Power to optimize budgets and institutions, establish transparent allocation systems, contract Alliances with evidence, and to do all other Acts and Things which Self-Governing Civilizations may of right do. And for the support of this Declaration, with a firm reliance on the protection of divine Providence, we mutually pledge to each other our Lives, our Fortunes, and our sacred Votes.\n\nThe proposed replacement system is documented in the [Earth Optimization Protocol](https://manual.WarOnDisease.org/knowledge/strategy/earth-optimization-protocol-v1.html).\n",
+      "markdown": "### The unanimous Declaration of the Eight Billion Inhabitants of Earth\n\nWhen in the Course of human events, it becomes necessary for a people to optimize the governance systems which have caused immeasurable preventable death and unnecessary poverty, a decent respect to the opinions of mankind requires that they should declare the causes which impel them to the optimization.\n\nWe hold these truths to be self-evident, that all humans are created equal, that they are endowed by their Biology with certain unalienable Rights, that among these are Life, Liberty and the pursuit of Happiness.--That to secure these rights, Governments are instituted among Humans, deriving their just powers from the consent of the governed.\n\nThat whenever any Form of Government becomes destructive of these ends, it is the Right of the People to optimize it, laying its foundation on such principles and organizing its powers in such form, as to them shall seem most likely to effect their Safety and Happiness, measured by the only two metrics that matter: the median number of healthy life years and the median after-tax inflation-adjusted income of its citizens.\n\nPrudence, indeed, will dictate that Governments long established should not be changed for light and transient causes; and accordingly all experience hath shewn, that mankind are more disposed to suffer, while evils are sufferable, than to right themselves by abolishing the forms to which they are accustomed.\n\nBut when a long train of abuses and usurpations, pursuing invariably the same Object evinces a design to reduce them under absolute Suboptimality, it is their right, it is their duty, to optimize such Government, and to provide new Guards for their future security.\n\nSuch has been the patient sufferance of the inhabitants of Earth; and such is now the necessity which constrains them to optimize their former Systems of Government. The history of the present Governments of Earth is a history of repeated injuries and usurpations, all having in direct object the establishment of an absolute Suboptimality over these people. To prove this, let Facts be submitted to a candid world.\n\nThey have refused their Assent to Laws, the most wholesome and necessary for the public good; the [correlation between public opinion and policy outcomes](https://manual.WarOnDisease.org/knowledge/problem/unrepresentative-democracy.html), measured across 1,779 policy decisions, is zero percent.\n\nThey have legalized the purchase of legislation at a current annual price of [$4.4 billion](https://manual.WarOnDisease.org/knowledge/appendix/algorithmic-public-administration-paper.html), the legal definition of corruption having been written by the beneficiaries of said corruption.\n\nThey have permitted the industries they regulate to fund the agencies that regulate them, drug regulatory agencies now receiving the majority of their review budgets from the companies whose products they are supposed to judge.\n\nThey have imposed Taxes without Consent, including the [debasement of currency](https://manual.WarOnDisease.org/knowledge/economics/central-banks.html) by unelected officials whose money creation functions as a tax the governed never voted for, reducing the dollar's purchasing power by 96% since 1913.\n\nThey have spent over one trillion dollars across fifty years imprisoning and sometimes killing their own citizens for the crime of exercising [sovereignty over their own bodies](https://manual.WarOnDisease.org/knowledge/problem/genetic-slavery.html), sovereignty being the distinction between a citizen and property.\n\nThe result has been a 1,700% increase in overdose deaths and drug use higher than when they started, while half of all murders go unsolved for want of the resources squandered on the prosecution of those pursuing happiness by means the state did not approve.\n\nThey have lied to the governed to manufacture consent for wars the governed did not want, fabricating attacks that did not occur, presenting evidence they knew to be false, and spraying carcinogenic chemicals on rice farmers and their children, the exposed population now numbering four million with birth defects continuing to this day.\n\nThey have misplaced $2.46 trillion in military funds, failed seven consecutive audits attempting to find it, and requested additional trillions without explanation or apology.\n\nThey have distributed military contracts across enough legislative districts that voting to cut spending is voting to close a factory in your town, ensuring that the budget survives not on merit but on geography.\n\nThey have allowed the [destructive economy](https://manual.WarOnDisease.org/knowledge/economics/gdp-trajectories.html) to reach [11.5%](https://manual.WarOnDisease.org/knowledge/economics/gdp-trajectories.html) of global output, growing faster than the productive economy, on a trajectory that crosses fifty percent by [2040](https://manual.WarOnDisease.org/knowledge/strategy/earth-optimization-prize.html). Past that threshold, destruction pays better than production, and civilizations that cross it do not come back.\n\nThey have plundered our seas, ravaged our coasts, burnt our towns, and [destroyed the lives of our people](https://manual.WarOnDisease.org/knowledge/problem/cost-of-war.html): [310 million](https://manual.WarOnDisease.org/knowledge/problem/cost-of-war.html) people since 1900, [8.37 billion](https://manual.WarOnDisease.org/knowledge/problem/cost-of-war.html) years of human life stolen, [$170 trillion](https://manual.WarOnDisease.org/knowledge/problem/cost-of-war.html) in treasure spent on the enterprise.\n\nAmong them approximately 930,000 physicians, 310,000 scientists, 620,000 engineers, and millions of children who will never grow up to replace them.\n\nThey have directed [604:1](https://manual.WarOnDisease.org/knowledge/strategy/earth-optimization-prize.html) times more to the destruction of human life than to testing which medicines might preserve it.\n\nThey have permitted [150 thousand](https://manual.WarOnDisease.org/knowledge/appendix/treaty-feasibility.html) people to die of diseases every day, [104](https://manual.WarOnDisease.org/knowledge/strategy/declaration-of-optimization.html) every minute that passes, while possessing the means to accelerate solutions. The annual toll: [2.88 billion](https://manual.WarOnDisease.org/knowledge/economics/1-pct-treaty-impact.html) years of healthy life lost to disease and disability, quietly deleted.\n\nThey have operated [national health research institutions](https://manual.WarOnDisease.org/knowledge/problem/nih-fails-2-institute-health.html) that have spent trillions and cured zero diseases, directing only [3.3%](https://manual.WarOnDisease.org/knowledge/problem/nih-fails-2-institute-health.html) of their budgets to the clinical trials where treatments are actually tested in humans. Nearly ten thousand known safe compounds remain untested for 99.7% of possible disease combinations.\n\nThey have erected [drug regulatory agencies](https://manual.WarOnDisease.org/knowledge/problem/fda-is-unsafe-and-ineffective.html) whose rules increased development costs by a factor of [44.1x](https://manual.WarOnDisease.org/knowledge/economics/1-pct-treaty-impact.html) and timelines to seventeen years, producing [3,068:1](https://manual.WarOnDisease.org/knowledge/appendix/invisible-graveyard.html) deaths from delayed treatments for every one death they prevent. Since 1962, that delay has killed approximately [102 million](https://manual.WarOnDisease.org/knowledge/appendix/invisible-graveyard.html) people.\n\nThey have left approximately seven thousand known rare diseases in a [treatment queue](https://manual.WarOnDisease.org/knowledge/problem/untapped-therapeutic-frontier.html) that, at the current rate of fifteen approvals per year, requires [443 years](https://manual.WarOnDisease.org/knowledge/economics/1-pct-treaty-impact.html) to clear.\n\nThey have approved [1,750](https://manual.WarOnDisease.org/knowledge/problem/untapped-therapeutic-frontier.html) drug-disease pairings for approximately ten thousand known diseases, leaving more than 99.98% of possible therapeutic combinations untested.\n\nThrough the compound effects of this misallocation, the governed are [23.2x](https://manual.WarOnDisease.org/knowledge/problem/cost-of-war.html) times poorer than they would otherwise be. The average human earns [$14,375](https://manual.WarOnDisease.org/knowledge/appendix/political-dysfunction-tax.html) per year. Without the wars alone, that figure would be [$333,636](https://manual.WarOnDisease.org/knowledge/problem/cost-of-war.html). On both metrics by which any government should be judged, healthy life years and median income, the present systems have failed absolutely.\n\nIn every stage of these Misallocations We have Petitioned for Redress in the most humble terms: peer-reviewed papers, public comment periods, protest marches, and online petitions. Our repeated Petitions have been answered only by repeated Misallocation. Governments, whose character is thus marked by every act which may define Suboptimality, are unfit to manage the resources of a free species.\n\nNor have We been wanting in attentions to our governing institutions. We have warned them from time to time of attempts by their legislatures to extend an unwarrantable dysfunction over us. We have reminded them of the circumstances of our biological existence and the budget arithmetic of our premature deaths.\n\nWe have appealed to their stated missions and their campaign promises, and we have conjured them by the ties of our common mortality to disavow these usurpations, which would inevitably interrupt our survival and progress. They too have been deaf to the voice of justice and of evidence. We must, therefore, acquiesce in the necessity, which denounces our current Systems, and hold them, as we hold all governance systems, Accountable to Outcomes.\n\nThat this optimization is achievable requires no faith, only memory. These same governments [cut military spending](https://manual.WarOnDisease.org/knowledge/problem/cost-of-war.html) by [87.6%](https://manual.WarOnDisease.org/knowledge/economics/peace-dividend.html) in two years following the Second World War and produced not collapse but the greatest economic expansion in recorded history. These same governments banned chemical weapons (193 countries), biological weapons (187 countries), and landmines (164 countries). They have signed treaties banning weapons they wished to use. We ask them to buy [one percent](https://manual.WarOnDisease.org/knowledge/solution/1-percent-treaty.html) fewer of them.\n\nWe, therefore, the Inhabitants of Earth, assembled across every nation and connected by common cause, appealing to the Supreme Judge of the world for the rectitude of our intentions, do, in the Name, and by Authority of the good People of this planet, solemnly publish and declare, That the Inhabitants of Earth are, and of Right ought to be Free and Justly Governed; that they are Absolved from all Allegiance to systems that produce outcomes worse than random allocation, and that all political connection between them and Suboptimal Governance, is and ought to be totally optimized.\n\nAnd that as Free Inhabitants of Earth, they have full Power to optimize budgets and institutions, establish transparent allocation systems, contract Alliances with evidence, and to do all other Acts and Things which Self-Governing Civilizations may of right do. And for the support of this Declaration, with a firm reliance on the protection of divine Providence, we mutually pledge to each other our Lives, our Fortunes, and our sacred Votes.\n\nThe proposed replacement system is documented in the [Earth Optimization Protocol](https://manual.WarOnDisease.org/knowledge/strategy/earth-optimization-protocol-v1.html).\n",
       "sourceFile": "knowledge/strategy/declaration-of-optimization.qmd",
       "updatedAt": "2026-04-11",
       "originalName": "declaration_of_optimization"
     },
     "onePercentTreatyPitch": {
-      "markdown": "Your species spends [$2.72T](https://manual.WarOnDisease.org/knowledge/economics/1-pct-treaty-impact.html) a year on military forces. That amount is enough to buy enough bullets to murder every man, woman, and child on Earth [850](https://manual.WarOnDisease.org/knowledge/appendix/extinction-surplus.html) times. Every year. If every nation reduces that by 1% at the same time, the balance of power stays identical. No country gets weaker. Nobody loses a single war they would have otherwise won. You just become slightly less capable of destroying a planet you're still living on (which should be fine, since you were already capable of destroying it [20x](https://manual.WarOnDisease.org/knowledge/appendix/extinction-surplus.html) times over).\n\nThat 1% is [$27.2B](https://manual.WarOnDisease.org/knowledge/economics/1-pct-treaty-impact.html) a year. For comparison, that's roughly what Americans spend on Valentine's Day. You are currently spending more on heart-shaped candy than on curing heart disease.\n\n{{< var treaty_annual_funding_latex >}}\n\nA 1% Treaty is a piece of paper that says every signatory nation redirects that 1% so any patient can join pragmatic clinical trials for the most promising treatments. That's it. That's the whole idea. On Wishonia, we fought for 12,000 years before we figured this out. Your species has been thinking it over for several thousand years, so you're actually ahead of schedule (barely).\n",
+      "markdown": "Your species spends [$2.72 trillion](https://manual.WarOnDisease.org/knowledge/economics/1-pct-treaty-impact.html) a year on military forces. That amount is enough to buy enough bullets to murder every man, woman, and child on Earth [850](https://manual.WarOnDisease.org/knowledge/appendix/extinction-surplus.html) times. Every year. If every nation reduces that by 1% at the same time, the balance of power stays identical. No country gets weaker. Nobody loses a single war they would have otherwise won. You just become slightly less capable of destroying a planet you're still living on (which should be fine, since you were already capable of destroying it [20x](https://manual.WarOnDisease.org/knowledge/appendix/extinction-surplus.html) times over).\n\nThat 1% is [$27.2 billion](https://manual.WarOnDisease.org/knowledge/economics/1-pct-treaty-impact.html) a year. For comparison, that's roughly what Americans spend on Valentine's Day. You are currently spending more on heart-shaped candy than on curing heart disease.\n\n{{< var treaty_annual_funding_latex >}}\n\nA 1% Treaty is a piece of paper that says every signatory nation redirects that 1% so any patient can join pragmatic clinical trials for the most promising treatments. That's it. That's the whole idea. On Wishonia, we fought for 12,000 years before we figured this out. Your species has been thinking it over for several thousand years, so you're actually ahead of schedule (barely).\n",
       "sourceFile": "knowledge/solution/1-percent-treaty.qmd",
       "updatedAt": "2026-04-11",
       "originalName": "one-percent-treaty-pitch"
     },
     "onePercentTreatyText": {
-      "markdown": "**THE TREATY FOR THE 1% REALLOCATION OF MILITARY EXPENDITURES TOWARDS BIOMEDICAL RESEARCH AND DEVELOPMENT FOR THE PREVENTION OF HUMAN SUFFERING AND DEATH**\n\n*(Or: The \"Let's Not Die\" Treaty, for short)*\n\nWHEREAS, humanity spends [$2.72T](https://manual.WarOnDisease.org/knowledge/economics/1-pct-treaty-impact.html) annually on methods of killing itself;\n\nWHEREAS, this seems somewhat counterproductive;\n\nWHEREAS, diseases kill more people than all wars combined and don't even have the decency to be quick about it;\n\nWHEREAS, we have nuclear weapons sufficient to end civilization 13 times but haven't cured Alzheimer's once;\n\nWHEREAS, this is embarrassing;\n\nNOW, THEREFORE, the undersigned nations agree to try a different approach, as follows:\n\n**Article I**: Each signatory shall redirect exactly 1% of its annual military budget to **the 1% Treaty Fund** for allocation to pragmatic clinical trials.\n\n**Article II**: Transfers shall be automatic, immediate, and irrevocable. No \"we'll get to it later.\"\n\n**Article III**: Percentages may increase but never decrease. This is a ratchet, not a yo-yo.\n\n**Article IV**: Compliance shall be verified by public ledger and independent audits. No creative accounting.\n\n**Article V**: Non-compliant parties lose access to [IAB benefits](https://manual.WarOnDisease.org/knowledge/solution/incentive-alignment-bonds.html) and treaty fund advantages. Your opponents get what you forfeit.\n\n**Article VI**: Success metrics trigger mandatory percentage reviews. When it works, we do more.\n\n**Article VII**: Citizens have standing to enforce via domestic courts. You can sue your own government for non-compliance.\n\n**Article VIII**: Withdrawal requires unanimous consent of all parties plus 10-year notice. Good luck with that.\n\n**Article IX**: This treaty supersedes all conflicting domestic law. Yes, even that law.\n\n**Article X**: Entry into force upon signature by two states. You only need two countries brave enough to go first.\n\nIN WITNESS WHEREOF, the undersigned, being of sound mind (debatable) and tired of watching their loved ones die of preventable diseases, have executed this Treaty on behalf of populations who would have executed it much sooner if anyone had asked them.\n\nSigned this day, ____________, in the year of our ongoing confusion.\n\n---\n\n[Nation Name]\n\"We choose life, I guess\"\n\n---\n\n*P.S. - Yes, this includes space weapons. Nice try.*\n\n*P.P.S. - \"Cyber weapons\" too. We saw you thinking it.*\n",
+      "markdown": "**THE TREATY FOR THE 1% REALLOCATION OF MILITARY EXPENDITURES TOWARDS BIOMEDICAL RESEARCH AND DEVELOPMENT FOR THE PREVENTION OF HUMAN SUFFERING AND DEATH**\n\n*(Or: The \"Let's Not Die\" Treaty, for short)*\n\nWHEREAS, humanity spends [$2.72 trillion](https://manual.WarOnDisease.org/knowledge/economics/1-pct-treaty-impact.html) annually on methods of killing itself;\n\nWHEREAS, this seems somewhat counterproductive;\n\nWHEREAS, diseases kill more people than all wars combined and don't even have the decency to be quick about it;\n\nWHEREAS, we have nuclear weapons sufficient to end civilization 13 times but haven't cured Alzheimer's once;\n\nWHEREAS, this is embarrassing;\n\nNOW, THEREFORE, the undersigned nations agree to try a different approach, as follows:\n\n**Article I**: Each signatory shall redirect exactly 1% of its annual military budget to **the 1% Treaty Fund** for allocation to pragmatic clinical trials.\n\n**Article II**: Transfers shall be automatic, immediate, and irrevocable. No \"we'll get to it later.\"\n\n**Article III**: Percentages may increase but never decrease. This is a ratchet, not a yo-yo.\n\n**Article IV**: Compliance shall be verified by public ledger and independent audits. No creative accounting.\n\n**Article V**: Non-compliant parties lose access to [IAB benefits](https://manual.WarOnDisease.org/knowledge/solution/incentive-alignment-bonds.html) and treaty fund advantages. Your opponents get what you forfeit.\n\n**Article VI**: Success metrics trigger mandatory percentage reviews. When it works, we do more.\n\n**Article VII**: Citizens have standing to enforce via domestic courts. You can sue your own government for non-compliance.\n\n**Article VIII**: Withdrawal requires unanimous consent of all parties plus 10-year notice. Good luck with that.\n\n**Article IX**: This treaty supersedes all conflicting domestic law. Yes, even that law.\n\n**Article X**: Entry into force upon signature by two states. You only need two countries brave enough to go first.\n\nIN WITNESS WHEREOF, the undersigned, being of sound mind (debatable) and tired of watching their loved ones die of preventable diseases, have executed this Treaty on behalf of populations who would have executed it much sooner if anyone had asked them.\n\nSigned this day, ____________, in the year of our ongoing confusion.\n\n---\n\n[Nation Name]\n\"We choose life, I guess\"\n\n---\n\n*P.S. - Yes, this includes space weapons. Nice try.*\n\n*P.P.S. - \"Cyber weapons\" too. We saw you thinking it.*\n",
       "sourceFile": "knowledge/solution/1-percent-treaty.qmd",
       "updatedAt": "2026-04-11",
       "originalName": "one-percent-treaty-text"

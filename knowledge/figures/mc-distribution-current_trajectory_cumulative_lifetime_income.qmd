@@ -117,10 +117,10 @@ plt.show()
 
 | Statistic | Value |
 |:----------|------:|
-| Baseline (deterministic) | $1.1M |
-| Mean (expected value) | $1.1M |
-| Median (50th percentile) | $1.1M |
-| Standard Deviation | $74.3K |
-| 90% Range (5th-95th percentile) | [$992K, $1.21M] |
+| Baseline (deterministic) | $1.1 million |
+| Mean (expected value) | $1.1 million |
+| Median (50th percentile) | $1.1 million |
+| Standard Deviation | $74,294 |
+| 90% Range (5th-95th percentile) | [$991,645, $1.21 million] |
 
 *The histogram shows the distribution of Current Trajectory Cumulative Lifetime Income (Per Capita) across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

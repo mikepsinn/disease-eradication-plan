@@ -120,7 +120,7 @@ plt.show()
 | Baseline (deterministic) | $1.48 quadrillion |
 | Mean (expected value) | $1.35 quadrillion |
 | Median (50th percentile) | $1.29 quadrillion |
-| Standard Deviation | $415T |
-| 90% Range (5th-95th percentile) | [$786T, $2.12 quadrillion] |
+| Standard Deviation | $415 trillion |
+| 90% Range (5th-95th percentile) | [$786 trillion, $2.12 quadrillion] |
 
 *The histogram shows the distribution of Total Historical Cost of War Since 1900 across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

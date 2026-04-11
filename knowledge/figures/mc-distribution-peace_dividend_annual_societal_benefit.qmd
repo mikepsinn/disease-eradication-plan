@@ -117,10 +117,10 @@ plt.show()
 
 | Statistic | Value |
 |:----------|------:|
-| Baseline (deterministic) | $114B |
-| Mean (expected value) | $113B |
-| Median (50th percentile) | $112B |
-| Standard Deviation | $15.1B |
-| 90% Range (5th-95th percentile) | [$90.1B, $141B] |
+| Baseline (deterministic) | $114 billion |
+| Mean (expected value) | $113 billion |
+| Median (50th percentile) | $112 billion |
+| Standard Deviation | $15.1 billion |
+| 90% Range (5th-95th percentile) | [$90.1 billion, $141 billion] |
 
 *The histogram shows the distribution of Annual Peace Dividend from 1% Reduction in Total War Costs across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

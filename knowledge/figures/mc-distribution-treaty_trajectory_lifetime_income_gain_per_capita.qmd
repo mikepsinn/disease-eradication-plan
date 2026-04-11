@@ -117,10 +117,10 @@ plt.show()
 
 | Statistic | Value |
 |:----------|------:|
-| Baseline (deterministic) | $3.48M |
-| Mean (expected value) | $4.06M |
-| Median (50th percentile) | $3.35M |
-| Standard Deviation | $2.66M |
-| 90% Range (5th-95th percentile) | [$1.05M, $9.82M] |
+| Baseline (deterministic) | $3.48 million |
+| Mean (expected value) | $4.06 million |
+| Median (50th percentile) | $3.35 million |
+| Standard Deviation | $2.66 million |
+| 90% Range (5th-95th percentile) | [$1.05 million, $9.82 million] |
 
 *The histogram shows the distribution of Treaty Trajectory Lifetime Income Gain (Per Capita) across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

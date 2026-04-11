@@ -120,7 +120,7 @@ plt.show()
 | Baseline (deterministic) | 245 thousand |
 | Mean (expected value) | 244 thousand |
 | Median (50th percentile) | 242 thousand |
-| Standard Deviation | 31.5 thousand |
+| Standard Deviation | 31,503 |
 | 90% Range (5th-95th percentile) | [194 thousand, 302 thousand] |
 
 *The histogram shows the distribution of Total Annual Conflict Deaths Globally across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

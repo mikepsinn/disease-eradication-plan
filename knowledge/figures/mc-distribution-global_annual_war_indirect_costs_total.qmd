@@ -117,10 +117,10 @@ plt.show()
 
 | Statistic | Value |
 |:----------|------:|
-| Baseline (deterministic) | $3.7T |
-| Mean (expected value) | $3.69T |
-| Median (50th percentile) | $3.63T |
-| Standard Deviation | $628B |
-| 90% Range (5th-95th percentile) | [$2.71T, $4.87T] |
+| Baseline (deterministic) | $3.7 trillion |
+| Mean (expected value) | $3.69 trillion |
+| Median (50th percentile) | $3.63 trillion |
+| Standard Deviation | $628 billion |
+| 90% Range (5th-95th percentile) | [$2.71 trillion, $4.87 trillion] |
 
 *The histogram shows the distribution of Total Annual Indirect War Costs across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

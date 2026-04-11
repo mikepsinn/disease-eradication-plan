@@ -53,7 +53,7 @@ This appendix documents all 74 parameters used in the analysis, organized by typ
 
 Parameters derived from mathematical formulas and economic models.
 
-### Current Trajectory Average Income at Year 20: $20.5K {#sec-current_trajectory_avg_income_year_20}
+### Current Trajectory Average Income at Year 20: $20,483 {#sec-current_trajectory_avg_income_year_20}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -61,7 +61,7 @@ Average income (GDP per capita) at year 20 under current trajectory trajectory.
 
 **Inputs**:
 
-- [Current Trajectory GDP at Year 20](#sec-current_trajectory_gdp_year_20) 🔢: $188T
+- [Current Trajectory GDP at Year 20](#sec-current_trajectory_gdp_year_20) 🔢: $188 trillion
 - [Global Population 2045 (Projected)](#sec-global_population_2045_projected) 📊: 9.2 billion of people
 
 $$
@@ -88,7 +88,7 @@ $$
 
 :::
 
-### Current Trajectory GDP at Year 20: $188T {#sec-current_trajectory_gdp_year_20}
+### Current Trajectory GDP at Year 20: $188 trillion {#sec-current_trajectory_gdp_year_20}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -96,7 +96,7 @@ Global GDP at year 20 under status-quo current trajectory growth.
 
 **Inputs**:
 
-- [Global GDP (2025)](#sec-global_gdp_2025) 📊: $115T
+- [Global GDP (2025)](#sec-global_gdp_2025) 📊: $115 trillion
 - [Baseline Global GDP Growth Rate](#sec-gdp_baseline_growth_rate): 2.5%
 
 $$
@@ -115,7 +115,7 @@ $$
 
 :::
 
-### Total Annual Decentralized Framework for Drug Assessment Operational Costs: $40M {#sec-dfda_annual_opex}
+### Total Annual Decentralized Framework for Drug Assessment Operational Costs: $40 million {#sec-dfda_annual_opex}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -123,11 +123,11 @@ Total annual Decentralized Framework for Drug Assessment operational costs (sum 
 
 **Inputs**:
 
-- [Decentralized Framework for Drug Assessment Maintenance Costs](#sec-dfda_opex_platform_maintenance): $15M (95% CI: $10M - $22M)
-- [Decentralized Framework for Drug Assessment Staff Costs](#sec-dfda_opex_staff): $10M (95% CI: $7M - $15M)
-- [Decentralized Framework for Drug Assessment Infrastructure Costs](#sec-dfda_opex_infrastructure): $8M (95% CI: $5M - $12M)
-- [Decentralized Framework for Drug Assessment Regulatory Coordination Costs](#sec-dfda_opex_regulatory): $5M (95% CI: $3M - $8M)
-- [Decentralized Framework for Drug Assessment Community Support Costs](#sec-dfda_opex_community): $2M (95% CI: $1M - $3M)
+- [Decentralized Framework for Drug Assessment Maintenance Costs](#sec-dfda_opex_platform_maintenance): $15 million (95% CI: $10 million - $22 million)
+- [Decentralized Framework for Drug Assessment Staff Costs](#sec-dfda_opex_staff): $10 million (95% CI: $7 million - $15 million)
+- [Decentralized Framework for Drug Assessment Infrastructure Costs](#sec-dfda_opex_infrastructure): $8 million (95% CI: $5 million - $12 million)
+- [Decentralized Framework for Drug Assessment Regulatory Coordination Costs](#sec-dfda_opex_regulatory): $5 million (95% CI: $3 million - $8 million)
+- [Decentralized Framework for Drug Assessment Community Support Costs](#sec-dfda_opex_community): $2 million (95% CI: $1 million - $3 million)
 
 $$
 \begin{gathered}
@@ -211,8 +211,8 @@ Number of patients fundable annually from dFDA funding at pragmatic trial cost. 
 
 **Inputs**:
 
-- [dFDA Annual Trial Subsidies](#sec-dfda_trial_subsidies_annual) 🔢: $21.8B
-- [dFDA Pragmatic Trial Cost per Patient](#sec-dfda_pragmatic_trial_cost_per_patient) 📊: $929 (95% CI: $97 - $3K)
+- [dFDA Annual Trial Subsidies](#sec-dfda_trial_subsidies_annual) 🔢: $21.8 billion
+- [dFDA Pragmatic Trial Cost per Patient](#sec-dfda_pragmatic_trial_cost_per_patient) 📊: $929 (95% CI: $97 - $3,000)
 
 $$
 \begin{gathered}
@@ -324,7 +324,7 @@ $$
 
 :::
 
-### dFDA Annual Trial Subsidies: $21.8B {#sec-dfda_trial_subsidies_annual}
+### dFDA Annual Trial Subsidies: $21.8 billion {#sec-dfda_trial_subsidies_annual}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -332,8 +332,8 @@ Annual clinical trial patient subsidies from dFDA funding (total funding minus o
 
 **Inputs**:
 
-- [dFDA Annual Trial Funding](#sec-dfda_annual_trial_funding): $21.8B
-- [Total Annual Decentralized Framework for Drug Assessment Operational Costs](#sec-dfda_annual_opex) 🔢: $40M
+- [dFDA Annual Trial Funding](#sec-dfda_annual_trial_funding): $21.8 billion
+- [Total Annual Decentralized Framework for Drug Assessment Operational Costs](#sec-dfda_annual_opex) 🔢: $40 million
 
 $$
 \begin{gathered}
@@ -371,7 +371,7 @@ $$
 
 :::
 
-### Diseases Without Effective Treatment: 6.65 thousand diseases {#sec-diseases_without_effective_treatment}
+### Diseases Without Effective Treatment: 6,650 diseases {#sec-diseases_without_effective_treatment}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -379,7 +379,7 @@ Number of diseases without effective treatment. 95% of 7,000 rare diseases lack 
 
 **Inputs**:
 
-- [Total Number of Rare Diseases Globally](#sec-rare_diseases_count_global) 📊: 7 thousand diseases (95% CI: 6 thousand diseases - 10 thousand diseases)
+- [Total Number of Rare Diseases Globally](#sec-rare_diseases_count_global) 📊: 7,000 diseases (95% CI: 6,000 diseases - 10,000 diseases)
 
 $$
 \begin{gathered}
@@ -410,7 +410,7 @@ $$
 
 :::
 
-### Global Opportunity Cost Total: $101T {#sec-political_dysfunction_global_opportunity_cost_total}
+### Global Opportunity Cost Total: $101 trillion {#sec-political_dysfunction_global_opportunity_cost_total}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -418,10 +418,10 @@ Total global opportunity cost from governance failures: health innovation delays
 
 **Inputs**:
 
-- [Global Health Opportunity Cost](#sec-political_dysfunction_global_health_opportunity_cost) 📊: $34T (95% CI: $20T - $80T)
-- [Global Science Opportunity Cost](#sec-political_dysfunction_global_science_opportunity_cost) 📊: $4T (95% CI: $2T - $10T)
-- [Global Lead Poisoning Cost](#sec-political_dysfunction_global_lead_opportunity_cost) 📊: $6T (95% CI: $4T - $8T)
-- [Global Migration Opportunity Cost](#sec-political_dysfunction_global_migration_opportunity_cost) 📊: $57T (95% CI: $57T - $170T)
+- [Global Health Opportunity Cost](#sec-political_dysfunction_global_health_opportunity_cost) 📊: $34 trillion (95% CI: $20 trillion - $80 trillion)
+- [Global Science Opportunity Cost](#sec-political_dysfunction_global_science_opportunity_cost) 📊: $4 trillion (95% CI: $2 trillion - $10 trillion)
+- [Global Lead Poisoning Cost](#sec-political_dysfunction_global_lead_opportunity_cost) 📊: $6 trillion (95% CI: $4 trillion - $8 trillion)
+- [Global Migration Opportunity Cost](#sec-political_dysfunction_global_migration_opportunity_cost) 📊: $57 trillion (95% CI: $57 trillion - $170 trillion)
 
 $$
 \begin{gathered}
@@ -460,8 +460,8 @@ Percentage US military spending cut after WW2 (1945-1947, inflation-adjusted: $1
 
 **Inputs**:
 
-- [US Military Spending in 1947 (Constant 2024 Dollars)](#sec-us_military_spending_1947_annual_2024usd) 📊: $176B
-- [US Military Spending at WW2 Peak (Constant 2024 Dollars)](#sec-us_military_spending_1945_peak_annual_2024usd) 📊: $1.42T
+- [US Military Spending in 1947 (Constant 2024 Dollars)](#sec-us_military_spending_1947_annual_2024usd) 📊: $176 billion
+- [US Military Spending at WW2 Peak (Constant 2024 Dollars)](#sec-us_military_spending_1945_peak_annual_2024usd) 📊: $1.42 trillion
 
 $$
 \begin{gathered}
@@ -476,7 +476,7 @@ $$
 
 :::
 
-### Annual Funding from 1% of Global Military Spending Redirected to DIH: $27.2B {#sec-treaty_annual_funding}
+### Annual Funding from 1% of Global Military Spending Redirected to DIH: $27.2 billion {#sec-treaty_annual_funding}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -484,7 +484,7 @@ Annual funding from 1% of global military spending redirected to DIH
 
 **Inputs**:
 
-- [Global Military Spending in 2024](#sec-global_military_spending_annual_2024) 📊: $2.72T
+- [Global Military Spending in 2024](#sec-global_military_spending_annual_2024) 📊: $2.72 trillion
 - [1% Reduction in Military Spending/War Costs from Treaty](#sec-treaty_reduction_pct): 1%
 
 $$
@@ -508,8 +508,8 @@ US federal discretionary spending efficiency. What fraction of discretionary spe
 
 **Inputs**:
 
-- [Category 1: Direct Spending Waste](#sec-us_gov_waste_category_1_direct_spending) 🔢: $1.01T
-- [US Federal Discretionary Spending (FY2024)](#sec-us_fed_discretionary_spending_2024) 📊: $1.7T
+- [Category 1: Direct Spending Waste](#sec-us_gov_waste_category_1_direct_spending) 🔢: $1.01 trillion
+- [US Federal Discretionary Spending (FY2024)](#sec-us_fed_discretionary_spending_2024) 📊: $1.7 trillion
 
 $$
 \begin{gathered}
@@ -555,8 +555,8 @@ Total US governance efficiency: all 4 waste categories as share of GDP. 1 - ($4.
 
 **Inputs**:
 
-- [US Government Waste (Total)](#sec-us_gov_waste_total) 🔢: $4.9T
-- [US GDP (2024)](#sec-us_gdp_2024) 📊: $28.8T
+- [US Government Waste (Total)](#sec-us_gov_waste_total) 🔢: $4.9 trillion
+- [US GDP (2024)](#sec-us_gdp_2024) 📊: $28.8 trillion
 
 $$
 \begin{gathered}
@@ -605,7 +605,7 @@ $$
 
 :::
 
-### Category 1: Direct Spending Waste: $1.01T {#sec-us_gov_waste_category_1_direct_spending}
+### Category 1: Direct Spending Waste: $1.01 trillion {#sec-us_gov_waste_category_1_direct_spending}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -613,11 +613,11 @@ Category 1: Direct Federal Spending Waste. Actual federal budget allocations tha
 
 **Inputs**:
 
-- [Military Overspend](#sec-us_gov_waste_military_overspend) 📊: $615B (95% CI: $500B - $750B)
-- [Corporate Welfare Waste](#sec-us_gov_waste_corporate_welfare) 📊: $181B (95% CI: $150B - $220B)
-- [Drug War Cost](#sec-us_gov_waste_drug_war) 📊: $90B (95% CI: $60B - $150B)
-- [Fossil Fuel Subsidies (Explicit)](#sec-us_gov_waste_fossil_fuel_subsidies) 📊: $50B (95% CI: $30B - $80B)
-- [Agricultural Subsidies Deadweight Loss](#sec-us_gov_waste_agricultural_subsidies) 📊: $75B (95% CI: $50B - $120B)
+- [Military Overspend](#sec-us_gov_waste_military_overspend) 📊: $615 billion (95% CI: $500 billion - $750 billion)
+- [Corporate Welfare Waste](#sec-us_gov_waste_corporate_welfare) 📊: $181 billion (95% CI: $150 billion - $220 billion)
+- [Drug War Cost](#sec-us_gov_waste_drug_war) 📊: $90 billion (95% CI: $60 billion - $150 billion)
+- [Fossil Fuel Subsidies (Explicit)](#sec-us_gov_waste_fossil_fuel_subsidies) 📊: $50 billion (95% CI: $30 billion - $80 billion)
+- [Agricultural Subsidies Deadweight Loss](#sec-us_gov_waste_agricultural_subsidies) 📊: $75 billion (95% CI: $50 billion - $120 billion)
 
 $$
 \begin{gathered}
@@ -647,7 +647,7 @@ $$
 
 :::
 
-### Category 2: Compliance Burden: $1.13T {#sec-us_gov_waste_category_2_compliance}
+### Category 2: Compliance Burden: $1.13 trillion {#sec-us_gov_waste_category_2_compliance}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -655,8 +655,8 @@ Category 2: Compliance Burden on Private Sector. Private sector resources consum
 
 **Inputs**:
 
-- [Tax Compliance Waste](#sec-us_gov_waste_tax_compliance) 📊: $546B (95% CI: $450B - $650B)
-- [Regulatory Red Tape Waste](#sec-us_gov_waste_regulatory_red_tape) 📊: $580B (95% CI: $290B - $1T)
+- [Tax Compliance Waste](#sec-us_gov_waste_tax_compliance) 📊: $546 billion (95% CI: $450 billion - $650 billion)
+- [Regulatory Red Tape Waste](#sec-us_gov_waste_regulatory_red_tape) 📊: $580 billion (95% CI: $290 billion - $1 trillion)
 
 $$
 \begin{gathered}
@@ -685,7 +685,7 @@ $$
 
 :::
 
-### Category 3: GDP Loss: $1.56T {#sec-us_gov_waste_category_3_gdp_loss}
+### Category 3: GDP Loss: $1.56 trillion {#sec-us_gov_waste_category_3_gdp_loss}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -693,8 +693,8 @@ Category 3: Policy-Induced GDP Loss. Economic output foregone due to policy cons
 
 **Inputs**:
 
-- [Housing/Zoning Restrictions Cost](#sec-us_gov_waste_housing_zoning) 📊: $1.4T (95% CI: $500B - $2T)
-- [Tariff Cost (GDP Loss)](#sec-us_gov_waste_tariffs) 📊: $160B (95% CI: $90B - $250B)
+- [Housing/Zoning Restrictions Cost](#sec-us_gov_waste_housing_zoning) 📊: $1.4 trillion (95% CI: $500 billion - $2 trillion)
+- [Tariff Cost (GDP Loss)](#sec-us_gov_waste_tariffs) 📊: $160 billion (95% CI: $90 billion - $250 billion)
 
 $$
 \begin{gathered}
@@ -723,7 +723,7 @@ $$
 
 :::
 
-### Category 4: System Inefficiency: $1.2T {#sec-us_gov_waste_category_4_system}
+### Category 4: System Inefficiency: $1.2 trillion {#sec-us_gov_waste_category_4_system}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -731,7 +731,7 @@ Category 4: Total System Inefficiency. Fundamental system design failures requir
 
 **Inputs**:
 
-- [Healthcare System Inefficiency](#sec-us_gov_waste_healthcare_inefficiency) 📊: $1.2T (95% CI: $1T - $1.5T)
+- [Healthcare System Inefficiency](#sec-us_gov_waste_healthcare_inefficiency) 📊: $1.2 trillion (95% CI: $1 trillion - $1.5 trillion)
 
 $$
 W_{cat4} = W_{health} = \$1.2T = \$1.2T
@@ -763,8 +763,8 @@ US government waste as percentage of GDP. ~$4.90T waste / $28.78T GDP = ~17%. Th
 
 **Inputs**:
 
-- [US Government Waste (Total)](#sec-us_gov_waste_total) 🔢: $4.9T
-- [US GDP (2024)](#sec-us_gdp_2024) 📊: $28.8T
+- [US Government Waste (Total)](#sec-us_gov_waste_total) 🔢: $4.9 trillion
+- [US GDP (2024)](#sec-us_gdp_2024) 📊: $28.8 trillion
 
 $$
 \begin{gathered}
@@ -821,8 +821,8 @@ US government waste expressed as QALY equivalents. This is an economic equivalen
 
 **Inputs**:
 
-- [US Government Waste (Total)](#sec-us_gov_waste_total) 🔢: $4.9T
-- [Medical QALY Threshold](#sec-medical_qaly_threshold) 📊: $100K
+- [US Government Waste (Total)](#sec-us_gov_waste_total) 🔢: $4.9 trillion
+- [Medical QALY Threshold](#sec-medical_qaly_threshold) 📊: $100,000
 
 $$
 \begin{gathered}
@@ -871,7 +871,7 @@ $$
 
 :::
 
-### US Gov Waste (Raw Total): $4.9T {#sec-us_gov_waste_raw_total}
+### US Gov Waste (Raw Total): $4.9 trillion {#sec-us_gov_waste_raw_total}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -879,16 +879,16 @@ Raw sum of US government waste components before overlap discount: healthcare ($
 
 **Inputs**:
 
-- [Healthcare System Inefficiency](#sec-us_gov_waste_healthcare_inefficiency) 📊: $1.2T (95% CI: $1T - $1.5T)
-- [Housing/Zoning Restrictions Cost](#sec-us_gov_waste_housing_zoning) 📊: $1.4T (95% CI: $500B - $2T)
-- [Military Overspend](#sec-us_gov_waste_military_overspend) 📊: $615B (95% CI: $500B - $750B)
-- [Regulatory Red Tape Waste](#sec-us_gov_waste_regulatory_red_tape) 📊: $580B (95% CI: $290B - $1T)
-- [Tax Compliance Waste](#sec-us_gov_waste_tax_compliance) 📊: $546B (95% CI: $450B - $650B)
-- [Corporate Welfare Waste](#sec-us_gov_waste_corporate_welfare) 📊: $181B (95% CI: $150B - $220B)
-- [Tariff Cost (GDP Loss)](#sec-us_gov_waste_tariffs) 📊: $160B (95% CI: $90B - $250B)
-- [Drug War Cost](#sec-us_gov_waste_drug_war) 📊: $90B (95% CI: $60B - $150B)
-- [Fossil Fuel Subsidies (Explicit)](#sec-us_gov_waste_fossil_fuel_subsidies) 📊: $50B (95% CI: $30B - $80B)
-- [Agricultural Subsidies Deadweight Loss](#sec-us_gov_waste_agricultural_subsidies) 📊: $75B (95% CI: $50B - $120B)
+- [Healthcare System Inefficiency](#sec-us_gov_waste_healthcare_inefficiency) 📊: $1.2 trillion (95% CI: $1 trillion - $1.5 trillion)
+- [Housing/Zoning Restrictions Cost](#sec-us_gov_waste_housing_zoning) 📊: $1.4 trillion (95% CI: $500 billion - $2 trillion)
+- [Military Overspend](#sec-us_gov_waste_military_overspend) 📊: $615 billion (95% CI: $500 billion - $750 billion)
+- [Regulatory Red Tape Waste](#sec-us_gov_waste_regulatory_red_tape) 📊: $580 billion (95% CI: $290 billion - $1 trillion)
+- [Tax Compliance Waste](#sec-us_gov_waste_tax_compliance) 📊: $546 billion (95% CI: $450 billion - $650 billion)
+- [Corporate Welfare Waste](#sec-us_gov_waste_corporate_welfare) 📊: $181 billion (95% CI: $150 billion - $220 billion)
+- [Tariff Cost (GDP Loss)](#sec-us_gov_waste_tariffs) 📊: $160 billion (95% CI: $90 billion - $250 billion)
+- [Drug War Cost](#sec-us_gov_waste_drug_war) 📊: $90 billion (95% CI: $60 billion - $150 billion)
+- [Fossil Fuel Subsidies (Explicit)](#sec-us_gov_waste_fossil_fuel_subsidies) 📊: $50 billion (95% CI: $30 billion - $80 billion)
+- [Agricultural Subsidies Deadweight Loss](#sec-us_gov_waste_agricultural_subsidies) 📊: $75 billion (95% CI: $50 billion - $120 billion)
 
 $$
 \begin{gathered}
@@ -920,7 +920,7 @@ $$
 
 :::
 
-### Recoverable Capital: $2.45T {#sec-us_gov_waste_recoverable}
+### Recoverable Capital: $2.45 trillion {#sec-us_gov_waste_recoverable}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -928,7 +928,7 @@ Recoverable capital if US improved to OECD median efficiency. Current US efficie
 
 **Inputs**:
 
-- [US Government Waste (Total)](#sec-us_gov_waste_total) 🔢: $4.9T
+- [US Government Waste (Total)](#sec-us_gov_waste_total) 🔢: $4.9 trillion
 
 $$
 \begin{gathered}
@@ -977,7 +977,7 @@ $$
 
 :::
 
-### US Government Waste (Total): $4.9T {#sec-us_gov_waste_total}
+### US Government Waste (Total): $4.9 trillion {#sec-us_gov_waste_total}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -985,7 +985,7 @@ Total annual US government waste (additive sum of components). Consolidates heal
 
 **Inputs**:
 
-- [US Gov Waste (Raw Total)](#sec-us_gov_waste_raw_total) 🔢: $4.9T
+- [US Gov Waste (Raw Total)](#sec-us_gov_waste_raw_total) 🔢: $4.9 trillion
 - [Overlap Discount Factor](#sec-us_gov_waste_overlap_discount): 1:1
 
 $$
@@ -1034,8 +1034,8 @@ US government waste expressed as VSL equivalents. This is an economic equivalent
 
 **Inputs**:
 
-- [US Government Waste (Total)](#sec-us_gov_waste_total) 🔢: $4.9T
-- [DOT VSL](#sec-dot_value_of_statistical_life) 📊: $13.7M
+- [US Government Waste (Total)](#sec-us_gov_waste_total) 🔢: $4.9 trillion
+- [DOT VSL](#sec-dot_value_of_statistical_life) 📊: $13.7 million
 
 $$
 \begin{gathered}
@@ -1092,8 +1092,8 @@ How many times the US government efficiency gap could fund the 1% Treaty. The ef
 
 **Inputs**:
 
-- [US Government Waste (Total)](#sec-us_gov_waste_total) 🔢: $4.9T
-- [Annual Funding from 1% of Global Military Spending Redirected to DIH](#sec-treaty_annual_funding) 🔢: $27.2B
+- [US Government Waste (Total)](#sec-us_gov_waste_total) 🔢: $4.9 trillion
+- [Annual Funding from 1% of Global Military Spending Redirected to DIH](#sec-treaty_annual_funding) 🔢: $27.2 billion
 
 $$
 \begin{gathered}
@@ -1201,7 +1201,7 @@ Wishonia disease-cure fraction over 20 years under full implementation. Uses ful
 - [Trial Capacity Multiplier](#sec-dfda_trial_capacity_multiplier) 🔢: 12.3x
 - [Wishonia Military Reallocation Physical Max Share](#sec-wishonia_military_reallocation_physical_max_share) 🔢: 87.6%
 - [Maximum Trial Capacity Multiplier (Physical Limit)](#sec-dfda_max_trial_capacity_multiplier_physical) 🔢: 566x
-- [Diseases Without Effective Treatment](#sec-diseases_without_effective_treatment) 🔢: 6.65 thousand diseases
+- [Diseases Without Effective Treatment](#sec-diseases_without_effective_treatment) 🔢: 6,650 diseases
 
 $$
 \begin{gathered}
@@ -1316,7 +1316,7 @@ $$
 
 :::
 
-### Wishonia Trajectory Average Income at Year 20: $1.16M {#sec-wishonia_trajectory_avg_income_year_20}
+### Wishonia Trajectory Average Income at Year 20: $1.16 million {#sec-wishonia_trajectory_avg_income_year_20}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -1450,7 +1450,7 @@ Wishonia Trajectory GDP at year 20 as a multiple of current trajectory GDP at ye
 **Inputs**:
 
 - [Wishonia Trajectory GDP at Year 20](#sec-wishonia_trajectory_gdp_year_20) 🔢: $10.7 quadrillion
-- [Current Trajectory GDP at Year 20](#sec-current_trajectory_gdp_year_20) 🔢: $188T
+- [Current Trajectory GDP at Year 20](#sec-current_trajectory_gdp_year_20) 🔢: $188 trillion
 
 $$
 \begin{gathered}
@@ -1578,16 +1578,16 @@ Projected global GDP at year 20 under the Wishonia Trajectory. Model applies all
 
 **Inputs**:
 
-- [Global GDP (2025)](#sec-global_gdp_2025) 📊: $115T
+- [Global GDP (2025)](#sec-global_gdp_2025) 📊: $115 trillion
 - [Baseline Global GDP Growth Rate](#sec-gdp_baseline_growth_rate): 2.5%
 - [Wishonia Military Reallocation Physical Max Share](#sec-wishonia_military_reallocation_physical_max_share) 🔢: 87.6%
 - [GDP Growth Boost at 30% Military Reallocation](#sec-military_redirect_gdp_boost_at_30pct): 5.5% (95% CI: 3.5% - 7.5%)
 - [R&D Spillover Multiplier](#sec-rd_spillover_multiplier): 2x (95% CI: 1.5x - 2.5x)
 - [Wishonia Disease Cure Fraction (20yr, Full Implementation)](#sec-wishonia_disease_cure_fraction_20yr_full) 🔢: 100%
 - [Disease Burden as % of GDP](#sec-disease_burden_gdp_drag_pct) 📊: 13%
-- [Global Science Opportunity Cost](#sec-political_dysfunction_global_science_opportunity_cost) 📊: $4T (95% CI: $2T - $10T)
-- [Global Lead Poisoning Cost](#sec-political_dysfunction_global_lead_opportunity_cost) 📊: $6T (95% CI: $4T - $8T)
-- [Global Migration Opportunity Cost](#sec-political_dysfunction_global_migration_opportunity_cost) 📊: $57T (95% CI: $57T - $170T)
+- [Global Science Opportunity Cost](#sec-political_dysfunction_global_science_opportunity_cost) 📊: $4 trillion (95% CI: $2 trillion - $10 trillion)
+- [Global Lead Poisoning Cost](#sec-political_dysfunction_global_lead_opportunity_cost) 📊: $6 trillion (95% CI: $4 trillion - $8 trillion)
+- [Global Migration Opportunity Cost](#sec-political_dysfunction_global_migration_opportunity_cost) 📊: $57 trillion (95% CI: $57 trillion - $170 trillion)
 - [Economic Multiplier for Healthcare Investment](#sec-economic_multiplier_healthcare_investment) 📊: 4.3x (95% CI: 3x - 6x)
 - [Economic Multiplier for Military Spending](#sec-economic_multiplier_military_spending) 📊: 0.6x (95% CI: 0.4x - 0.9x)
 
@@ -1675,9 +1675,9 @@ dFDA pragmatic trial cost per patient. Uses ADAPTABLE trial ($929) as DELIBERATE
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$97, $3K] • Distribution: Lognormal
+**Technical**: 95% CI: [$97, $3,000] • Distribution: Lognormal
 
-**What this means**: This estimate is highly uncertain. The true value likely falls between $97 and $3K (±156%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: This estimate is highly uncertain. The true value likely falls between $97 and $3,000 (±156%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -1705,7 +1705,7 @@ Fraction of GDP currently lost to disease (productivity losses + medical costs d
 
 :::
 
-### DOT VSL: $13.7M {#sec-dot_value_of_statistical_life}
+### DOT VSL: $13.7 million {#sec-dot_value_of_statistical_life}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -1769,7 +1769,7 @@ Economic multiplier for military spending (0.6x ROI). Literature range 0.4-1.0×
 
 :::
 
-### Global GDP (2025): $115T {#sec-global_gdp_2025}
+### Global GDP (2025): $115 trillion {#sec-global_gdp_2025}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -1785,7 +1785,7 @@ Global nominal GDP (2025 estimate). From Political Dysfunction Tax paper citing 
 
 :::
 
-### Global Military Spending in 2024: $2.72T {#sec-global_military_spending_annual_2024}
+### Global Military Spending in 2024: $2.72 trillion {#sec-global_military_spending_annual_2024}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -1817,7 +1817,7 @@ UN World Population Prospects 2022 median projection for 2045.
 
 :::
 
-### Medical QALY Threshold: $100K {#sec-medical_qaly_threshold}
+### Medical QALY Threshold: $100,000 {#sec-medical_qaly_threshold}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -1881,7 +1881,7 @@ Patient willingness to participate in drug trials (44.8% in surveys, 88% when ac
 
 :::
 
-### Global Health Opportunity Cost: $34T {#sec-political_dysfunction_global_health_opportunity_cost}
+### Global Health Opportunity Cost: $34 trillion {#sec-political_dysfunction_global_health_opportunity_cost}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -1891,9 +1891,9 @@ Annual opportunity cost of slow-motion regulatory environment for health innovat
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$20T, $80T] • Distribution: Lognormal (SE: $15T)
+**Technical**: 95% CI: [$20 trillion, $80 trillion] • Distribution: Lognormal (SE: $15 trillion)
 
-**What this means**: This estimate is highly uncertain. The true value likely falls between $20T and $80T (±88%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: This estimate is highly uncertain. The true value likely falls between $20 trillion and $80 trillion (±88%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -1905,7 +1905,7 @@ Annual opportunity cost of slow-motion regulatory environment for health innovat
 
 :::
 
-### Global Lead Poisoning Cost: $6T {#sec-political_dysfunction_global_lead_opportunity_cost}
+### Global Lead Poisoning Cost: $6 trillion {#sec-political_dysfunction_global_lead_opportunity_cost}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -1915,9 +1915,9 @@ Global cost of lead exposure: World Bank/Lancet estimate. 765 million IQ points 
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$4T, $8T] • Distribution: Normal (SE: $1T)
+**Technical**: 95% CI: [$4 trillion, $8 trillion] • Distribution: Normal (SE: $1 trillion)
 
-**What this means**: There's significant uncertainty here. The true value likely falls between $4T and $8T (±33%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: There's significant uncertainty here. The true value likely falls between $4 trillion and $8 trillion (±33%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The normal distribution means values cluster around the center with equal chances of being higher or lower.*
 
@@ -1929,7 +1929,7 @@ Global cost of lead exposure: World Bank/Lancet estimate. 765 million IQ points 
 
 :::
 
-### Global Migration Opportunity Cost: $57T {#sec-political_dysfunction_global_migration_opportunity_cost}
+### Global Migration Opportunity Cost: $57 trillion {#sec-political_dysfunction_global_migration_opportunity_cost}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -1939,9 +1939,9 @@ Unrealized output from migration restrictions. Clemens (2011) calculated elimina
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$57T, $170T] • Distribution: Lognormal (SE: $30T)
+**Technical**: 95% CI: [$57 trillion, $170 trillion] • Distribution: Lognormal (SE: $30 trillion)
 
-**What this means**: This estimate is highly uncertain. The true value likely falls between $57T and $170T (±99%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: This estimate is highly uncertain. The true value likely falls between $57 trillion and $170 trillion (±99%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -1953,7 +1953,7 @@ Unrealized output from migration restrictions. Clemens (2011) calculated elimina
 
 :::
 
-### Global Science Opportunity Cost: $4T {#sec-political_dysfunction_global_science_opportunity_cost}
+### Global Science Opportunity Cost: $4 trillion {#sec-political_dysfunction_global_science_opportunity_cost}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -1963,9 +1963,9 @@ Annual opportunity cost from underfunding high-ROI science (fusion, AI safety). 
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$2T, $10T] • Distribution: Lognormal (SE: $2T)
+**Technical**: 95% CI: [$2 trillion, $10 trillion] • Distribution: Lognormal (SE: $2 trillion)
 
-**What this means**: This estimate is highly uncertain. The true value likely falls between $2T and $10T (±100%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: This estimate is highly uncertain. The true value likely falls between $2 trillion and $10 trillion (±100%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -1977,7 +1977,7 @@ Annual opportunity cost from underfunding high-ROI science (fusion, AI safety). 
 
 :::
 
-### Total Number of Rare Diseases Globally: 7 thousand diseases {#sec-rare_diseases_count_global}
+### Total Number of Rare Diseases Globally: 7,000 diseases {#sec-rare_diseases_count_global}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -1987,9 +1987,9 @@ Total number of rare diseases globally
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [6 thousand diseases, 10 thousand diseases] • Distribution: Normal
+**Technical**: 95% CI: [6,000 diseases, 10,000 diseases] • Distribution: Normal
 
-**What this means**: There's significant uncertainty here. The true value likely falls between 6 thousand diseases and 10 thousand diseases (±29%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: There's significant uncertainty here. The true value likely falls between 6,000 diseases and 10,000 diseases (±29%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The normal distribution means values cluster around the center with equal chances of being higher or lower.*
 
@@ -2001,7 +2001,7 @@ Total number of rare diseases globally
 
 :::
 
-### US Federal Spending (FY2024): $6.8T {#sec-us_federal_spending_2024}
+### US Federal Spending (FY2024): $6.8 trillion {#sec-us_federal_spending_2024}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -2017,7 +2017,7 @@ US federal government spending in FY2024. CBO reports outlays of $6.8T (23.9% of
 
 :::
 
-### US Federal Discretionary Spending (FY2024): $1.7T {#sec-us_fed_discretionary_spending_2024}
+### US Federal Discretionary Spending (FY2024): $1.7 trillion {#sec-us_fed_discretionary_spending_2024}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -2033,7 +2033,7 @@ US federal discretionary spending in FY2024. Approximately $886B defense + ~$814
 
 :::
 
-### US GDP (2024): $28.8T {#sec-us_gdp_2024}
+### US GDP (2024): $28.8 trillion {#sec-us_gdp_2024}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -2049,7 +2049,7 @@ US GDP in 2024 dollars for calculating policy costs as percentage of GDP.
 
 :::
 
-### Agricultural Subsidies Deadweight Loss: $75B {#sec-us_gov_waste_agricultural_subsidies}
+### Agricultural Subsidies Deadweight Loss: $75 billion {#sec-us_gov_waste_agricultural_subsidies}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -2059,9 +2059,9 @@ Deadweight loss from US agricultural subsidies. Direct subsidies ~$30B/yr but cr
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$50B, $120B] • Distribution: Lognormal (SE: $25B)
+**Technical**: 95% CI: [$50 billion, $120 billion] • Distribution: Lognormal (SE: $25 billion)
 
-**What this means**: There's significant uncertainty here. The true value likely falls between $50B and $120B (±47%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: There's significant uncertainty here. The true value likely falls between $50 billion and $120 billion (±47%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -2073,7 +2073,7 @@ Deadweight loss from US agricultural subsidies. Direct subsidies ~$30B/yr but cr
 
 :::
 
-### Corporate Welfare Waste: $181B {#sec-us_gov_waste_corporate_welfare}
+### Corporate Welfare Waste: $181 billion {#sec-us_gov_waste_corporate_welfare}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -2083,9 +2083,9 @@ Direct US federal corporate welfare: subsidies to agriculture ($16.4B), green en
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$150B, $220B] • Distribution: Normal (SE: $20B)
+**Technical**: 95% CI: [$150 billion, $220 billion] • Distribution: Normal (SE: $20 billion)
 
-**What this means**: This estimate has moderate uncertainty. The true value likely falls between $150B and $220B (±19%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between $150 billion and $220 billion (±19%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The normal distribution means values cluster around the center with equal chances of being higher or lower.*
 
@@ -2097,7 +2097,7 @@ Direct US federal corporate welfare: subsidies to agriculture ($16.4B), green en
 
 :::
 
-### Drug War Cost: $90B {#sec-us_gov_waste_drug_war}
+### Drug War Cost: $90 billion {#sec-us_gov_waste_drug_war}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -2107,9 +2107,9 @@ Annual cost of drug war: ~$41B federal drug control budget, ~$10B state/local en
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$60B, $150B] • Distribution: Lognormal (SE: $30B)
+**Technical**: 95% CI: [$60 billion, $150 billion] • Distribution: Lognormal (SE: $30 billion)
 
-**What this means**: There's significant uncertainty here. The true value likely falls between $60B and $150B (±50%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: There's significant uncertainty here. The true value likely falls between $60 billion and $150 billion (±50%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -2121,7 +2121,7 @@ Annual cost of drug war: ~$41B federal drug control budget, ~$10B state/local en
 
 :::
 
-### Fossil Fuel Subsidies (Explicit): $50B {#sec-us_gov_waste_fossil_fuel_subsidies}
+### Fossil Fuel Subsidies (Explicit): $50 billion {#sec-us_gov_waste_fossil_fuel_subsidies}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -2131,9 +2131,9 @@ US explicit fossil fuel subsidies (direct payments, tax breaks). IMF estimates U
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$30B, $80B] • Distribution: Lognormal (SE: $15B)
+**Technical**: 95% CI: [$30 billion, $80 billion] • Distribution: Lognormal (SE: $15 billion)
 
-**What this means**: There's significant uncertainty here. The true value likely falls between $30B and $80B (±50%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: There's significant uncertainty here. The true value likely falls between $30 billion and $80 billion (±50%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -2145,7 +2145,7 @@ US explicit fossil fuel subsidies (direct payments, tax breaks). IMF estimates U
 
 :::
 
-### Healthcare System Inefficiency: $1.2T {#sec-us_gov_waste_healthcare_inefficiency}
+### Healthcare System Inefficiency: $1.2 trillion {#sec-us_gov_waste_healthcare_inefficiency}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -2155,9 +2155,9 @@ US healthcare spending inefficiency. US spends ~$4.5T/yr (18% GDP) vs 9-11% in c
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$1T, $1.5T] • Distribution: Normal (SE: $150B)
+**Technical**: 95% CI: [$1 trillion, $1.5 trillion] • Distribution: Normal (SE: $150 billion)
 
-**What this means**: This estimate has moderate uncertainty. The true value likely falls between $1T and $1.5T (±21%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between $1 trillion and $1.5 trillion (±21%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The normal distribution means values cluster around the center with equal chances of being higher or lower.*
 
@@ -2169,7 +2169,7 @@ US healthcare spending inefficiency. US spends ~$4.5T/yr (18% GDP) vs 9-11% in c
 
 :::
 
-### Housing/Zoning Restrictions Cost: $1.4T {#sec-us_gov_waste_housing_zoning}
+### Housing/Zoning Restrictions Cost: $1.4 trillion {#sec-us_gov_waste_housing_zoning}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -2179,9 +2179,9 @@ GDP loss from housing/zoning restrictions. Original Hsieh-Moretti (2019 AEJ:Macr
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$500B, $2T] • Distribution: Lognormal (SE: $300B)
+**Technical**: 95% CI: [$500 billion, $2 trillion] • Distribution: Lognormal (SE: $300 billion)
 
-**What this means**: This estimate is highly uncertain. The true value likely falls between $500B and $2T (±54%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: This estimate is highly uncertain. The true value likely falls between $500 billion and $2 trillion (±54%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -2193,7 +2193,7 @@ GDP loss from housing/zoning restrictions. Original Hsieh-Moretti (2019 AEJ:Macr
 
 :::
 
-### Military Overspend: $615B {#sec-us_gov_waste_military_overspend}
+### Military Overspend: $615 billion {#sec-us_gov_waste_military_overspend}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -2203,9 +2203,9 @@ US military spending above 'Strict Deterrence' baseline. Current budget ~$900B s
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$500B, $750B] • Distribution: Normal (SE: $75B)
+**Technical**: 95% CI: [$500 billion, $750 billion] • Distribution: Normal (SE: $75 billion)
 
-**What this means**: This estimate has moderate uncertainty. The true value likely falls between $500B and $750B (±20%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between $500 billion and $750 billion (±20%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The normal distribution means values cluster around the center with equal chances of being higher or lower.*
 
@@ -2217,7 +2217,7 @@ US military spending above 'Strict Deterrence' baseline. Current budget ~$900B s
 
 :::
 
-### Regulatory Red Tape Waste: $580B {#sec-us_gov_waste_regulatory_red_tape}
+### Regulatory Red Tape Waste: $580 billion {#sec-us_gov_waste_regulatory_red_tape}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -2227,9 +2227,9 @@ Deadweight loss from US regulatory red tape (procedural friction without safety 
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$290B, $1T] • Distribution: Lognormal (SE: $200B)
+**Technical**: 95% CI: [$290 billion, $1 trillion] • Distribution: Lognormal (SE: $200 billion)
 
-**What this means**: This estimate is highly uncertain. The true value likely falls between $290B and $1T (±61%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: This estimate is highly uncertain. The true value likely falls between $290 billion and $1 trillion (±61%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -2241,7 +2241,7 @@ Deadweight loss from US regulatory red tape (procedural friction without safety 
 
 :::
 
-### Tariff Cost (GDP Loss): $160B {#sec-us_gov_waste_tariffs}
+### Tariff Cost (GDP Loss): $160 billion {#sec-us_gov_waste_tariffs}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -2251,9 +2251,9 @@ Annual GDP reduction from US tariffs and retaliation. Yale Budget Lab estimates 
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$90B, $250B] • Distribution: Normal (SE: $50B)
+**Technical**: 95% CI: [$90 billion, $250 billion] • Distribution: Normal (SE: $50 billion)
 
-**What this means**: There's significant uncertainty here. The true value likely falls between $90B and $250B (±50%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: There's significant uncertainty here. The true value likely falls between $90 billion and $250 billion (±50%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The normal distribution means values cluster around the center with equal chances of being higher or lower.*
 
@@ -2265,7 +2265,7 @@ Annual GDP reduction from US tariffs and retaliation. Yale Budget Lab estimates 
 
 :::
 
-### Tax Compliance Waste: $546B {#sec-us_gov_waste_tax_compliance}
+### Tax Compliance Waste: $546 billion {#sec-us_gov_waste_tax_compliance}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -2275,9 +2275,9 @@ Annual cost of US tax code compliance: 7.9 billion hours of lost productivity ($
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$450B, $650B] • Distribution: Normal (SE: $50B)
+**Technical**: 95% CI: [$450 billion, $650 billion] • Distribution: Normal (SE: $50 billion)
 
-**What this means**: This estimate has moderate uncertainty. The true value likely falls between $450B and $650B (±18%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between $450 billion and $650 billion (±18%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The normal distribution means values cluster around the center with equal chances of being higher or lower.*
 
@@ -2289,7 +2289,7 @@ Annual cost of US tax code compliance: 7.9 billion hours of lost productivity ($
 
 :::
 
-### US Military Spending at WW2 Peak (Constant 2024 Dollars): $1.42T {#sec-us_military_spending_1945_peak_annual_2024usd}
+### US Military Spending at WW2 Peak (Constant 2024 Dollars): $1.42 trillion {#sec-us_military_spending_1945_peak_annual_2024usd}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -2305,7 +2305,7 @@ US military spending at WW2 peak (1945) in constant 2024 dollars
 
 :::
 
-### US Military Spending in 1947 (Constant 2024 Dollars): $176B {#sec-us_military_spending_1947_annual_2024usd}
+### US Military Spending in 1947 (Constant 2024 Dollars): $176 billion {#sec-us_military_spending_1947_annual_2024usd}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -2325,7 +2325,7 @@ US military spending in 1947 (post-WW2 trough, 2 years after peak) in constant 2
 
 Fundamental parameters and constants used throughout the analysis.
 
-### dFDA Annual Trial Funding: $21.8B {#sec-dfda_annual_trial_funding}
+### dFDA Annual Trial Funding: $21.8 billion {#sec-dfda_annual_trial_funding}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -2339,7 +2339,7 @@ Assumed annual funding for dFDA pragmatic clinical trials (~$21.8B/year). Source
 
 :::
 
-### Decentralized Framework for Drug Assessment Community Support Costs: $2M {#sec-dfda_opex_community}
+### Decentralized Framework for Drug Assessment Community Support Costs: $2 million {#sec-dfda_opex_community}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -2347,9 +2347,9 @@ Decentralized Framework for Drug Assessment community support costs
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$1M, $3M] • Distribution: Lognormal
+**Technical**: 95% CI: [$1 million, $3 million] • Distribution: Lognormal
 
-**What this means**: There's significant uncertainty here. The true value likely falls between $1M and $3M (±50%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: There's significant uncertainty here. The true value likely falls between $1 million and $3 million (±50%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -2361,7 +2361,7 @@ Decentralized Framework for Drug Assessment community support costs
 
 :::
 
-### Decentralized Framework for Drug Assessment Infrastructure Costs: $8M {#sec-dfda_opex_infrastructure}
+### Decentralized Framework for Drug Assessment Infrastructure Costs: $8 million {#sec-dfda_opex_infrastructure}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -2369,9 +2369,9 @@ Decentralized Framework for Drug Assessment infrastructure costs (cloud, securit
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$5M, $12M] • Distribution: Lognormal
+**Technical**: 95% CI: [$5 million, $12 million] • Distribution: Lognormal
 
-**What this means**: There's significant uncertainty here. The true value likely falls between $5M and $12M (±44%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: There's significant uncertainty here. The true value likely falls between $5 million and $12 million (±44%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -2383,7 +2383,7 @@ Decentralized Framework for Drug Assessment infrastructure costs (cloud, securit
 
 :::
 
-### Decentralized Framework for Drug Assessment Maintenance Costs: $15M {#sec-dfda_opex_platform_maintenance}
+### Decentralized Framework for Drug Assessment Maintenance Costs: $15 million {#sec-dfda_opex_platform_maintenance}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -2391,9 +2391,9 @@ Decentralized Framework for Drug Assessment maintenance costs
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$10M, $22M] • Distribution: Lognormal
+**Technical**: 95% CI: [$10 million, $22 million] • Distribution: Lognormal
 
-**What this means**: There's significant uncertainty here. The true value likely falls between $10M and $22M (±40%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: There's significant uncertainty here. The true value likely falls between $10 million and $22 million (±40%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -2405,7 +2405,7 @@ Decentralized Framework for Drug Assessment maintenance costs
 
 :::
 
-### Decentralized Framework for Drug Assessment Regulatory Coordination Costs: $5M {#sec-dfda_opex_regulatory}
+### Decentralized Framework for Drug Assessment Regulatory Coordination Costs: $5 million {#sec-dfda_opex_regulatory}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -2413,9 +2413,9 @@ Decentralized Framework for Drug Assessment regulatory coordination costs
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$3M, $8M] • Distribution: Lognormal
+**Technical**: 95% CI: [$3 million, $8 million] • Distribution: Lognormal
 
-**What this means**: There's significant uncertainty here. The true value likely falls between $3M and $8M (±50%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: There's significant uncertainty here. The true value likely falls between $3 million and $8 million (±50%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -2427,7 +2427,7 @@ Decentralized Framework for Drug Assessment regulatory coordination costs
 
 :::
 
-### Decentralized Framework for Drug Assessment Staff Costs: $10M {#sec-dfda_opex_staff}
+### Decentralized Framework for Drug Assessment Staff Costs: $10 million {#sec-dfda_opex_staff}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -2435,9 +2435,9 @@ Decentralized Framework for Drug Assessment staff costs (minimal, AI-assisted)
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$7M, $15M] • Distribution: Lognormal
+**Technical**: 95% CI: [$7 million, $15 million] • Distribution: Lognormal
 
-**What this means**: There's significant uncertainty here. The true value likely falls between $7M and $15M (±40%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: There's significant uncertainty here. The true value likely falls between $7 million and $15 million (±40%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 

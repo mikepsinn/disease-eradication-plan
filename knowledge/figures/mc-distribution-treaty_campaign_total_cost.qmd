@@ -117,10 +117,10 @@ plt.show()
 
 | Statistic | Value |
 |:----------|------:|
-| Baseline (deterministic) | $1B |
-| Mean (expected value) | $996M |
-| Median (50th percentile) | $949M |
-| Standard Deviation | $276M |
-| 90% Range (5th-95th percentile) | [$632M, $1.51B] |
+| Baseline (deterministic) | $1 billion |
+| Mean (expected value) | $996 million |
+| Median (50th percentile) | $949 million |
+| Standard Deviation | $276 million |
+| 90% Range (5th-95th percentile) | [$632 million, $1.51 billion] |
 
 *The histogram shows the distribution of Total 1% Treaty Campaign Cost across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

@@ -117,10 +117,10 @@ plt.show()
 
 | Statistic | Value |
 |:----------|------:|
-| Baseline (deterministic) | $342M |
-| Mean (expected value) | $340M |
-| Median (50th percentile) | $333M |
-| Standard Deviation | $68.6M |
-| 90% Range (5th-95th percentile) | [$235M, $473M] |
+| Baseline (deterministic) | $342 million |
+| Mean (expected value) | $340 million |
+| Median (50th percentile) | $333 million |
+| Standard Deviation | $68.6 million |
+| 90% Range (5th-95th percentile) | [$235 million, $473 million] |
 
 *The histogram shows the distribution of Decentralized Framework for Drug Assessment Present Value of Annual OPEX Over 10 Years across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

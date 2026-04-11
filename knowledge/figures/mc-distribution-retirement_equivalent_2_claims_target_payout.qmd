@@ -117,10 +117,10 @@ plt.show()
 
 | Statistic | Value |
 |:----------|------:|
-| Baseline (deterministic) | $9.98K |
-| Mean (expected value) | $10.1K |
-| Median (50th percentile) | $9.96K |
-| Standard Deviation | $1.46K |
-| 90% Range (5th-95th percentile) | [$7.7K, $12.7K] |
+| Baseline (deterministic) | $9,982 |
+| Mean (expected value) | $10,056 |
+| Median (50th percentile) | $9,963 |
+| Standard Deviation | $1,461 |
+| 90% Range (5th-95th percentile) | [$7,698, $12,743] |
 
 *The histogram shows the distribution of Retirement-Equivalent 2-Claims Target Payout across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

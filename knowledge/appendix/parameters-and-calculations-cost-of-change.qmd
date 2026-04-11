@@ -53,7 +53,7 @@ This appendix documents all 74 parameters used in the analysis, organized by typ
 
 Parameters derived from mathematical formulas and economic models.
 
-### Current Trajectory Average Income at Year 20: $20.5K {#sec-current_trajectory_avg_income_year_20}
+### Current Trajectory Average Income at Year 20: $20,483 {#sec-current_trajectory_avg_income_year_20}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -61,7 +61,7 @@ Average income (GDP per capita) at year 20 under current trajectory trajectory.
 
 **Inputs**:
 
-- [Current Trajectory GDP at Year 20](#sec-current_trajectory_gdp_year_20) 🔢: $188T
+- [Current Trajectory GDP at Year 20](#sec-current_trajectory_gdp_year_20) 🔢: $188 trillion
 - [Global Population 2045 (Projected)](#sec-global_population_2045_projected) 📊: 9.2 billion of people
 
 $$
@@ -88,7 +88,7 @@ $$
 
 :::
 
-### Current Trajectory GDP at Year 20: $188T {#sec-current_trajectory_gdp_year_20}
+### Current Trajectory GDP at Year 20: $188 trillion {#sec-current_trajectory_gdp_year_20}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -96,7 +96,7 @@ Global GDP at year 20 under status-quo current trajectory growth.
 
 **Inputs**:
 
-- [Global GDP (2025)](#sec-global_gdp_2025) 📊: $115T
+- [Global GDP (2025)](#sec-global_gdp_2025) 📊: $115 trillion
 - [Baseline Global GDP Growth Rate](#sec-gdp_baseline_growth_rate): 2.5%
 
 $$
@@ -115,7 +115,7 @@ $$
 
 :::
 
-### Total Annual Decentralized Framework for Drug Assessment Operational Costs: $40M {#sec-dfda_annual_opex}
+### Total Annual Decentralized Framework for Drug Assessment Operational Costs: $40 million {#sec-dfda_annual_opex}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -123,11 +123,11 @@ Total annual Decentralized Framework for Drug Assessment operational costs (sum 
 
 **Inputs**:
 
-- [Decentralized Framework for Drug Assessment Maintenance Costs](#sec-dfda_opex_platform_maintenance): $15M (95% CI: $10M - $22M)
-- [Decentralized Framework for Drug Assessment Staff Costs](#sec-dfda_opex_staff): $10M (95% CI: $7M - $15M)
-- [Decentralized Framework for Drug Assessment Infrastructure Costs](#sec-dfda_opex_infrastructure): $8M (95% CI: $5M - $12M)
-- [Decentralized Framework for Drug Assessment Regulatory Coordination Costs](#sec-dfda_opex_regulatory): $5M (95% CI: $3M - $8M)
-- [Decentralized Framework for Drug Assessment Community Support Costs](#sec-dfda_opex_community): $2M (95% CI: $1M - $3M)
+- [Decentralized Framework for Drug Assessment Maintenance Costs](#sec-dfda_opex_platform_maintenance): $15 million (95% CI: $10 million - $22 million)
+- [Decentralized Framework for Drug Assessment Staff Costs](#sec-dfda_opex_staff): $10 million (95% CI: $7 million - $15 million)
+- [Decentralized Framework for Drug Assessment Infrastructure Costs](#sec-dfda_opex_infrastructure): $8 million (95% CI: $5 million - $12 million)
+- [Decentralized Framework for Drug Assessment Regulatory Coordination Costs](#sec-dfda_opex_regulatory): $5 million (95% CI: $3 million - $8 million)
+- [Decentralized Framework for Drug Assessment Community Support Costs](#sec-dfda_opex_community): $2 million (95% CI: $1 million - $3 million)
 
 $$
 \begin{gathered}
@@ -211,8 +211,8 @@ Number of patients fundable annually from dFDA funding at pragmatic trial cost. 
 
 **Inputs**:
 
-- [dFDA Annual Trial Subsidies](#sec-dfda_trial_subsidies_annual) 🔢: $21.8B
-- [dFDA Pragmatic Trial Cost per Patient](#sec-dfda_pragmatic_trial_cost_per_patient) 📊: $929 (95% CI: $97 - $3K)
+- [dFDA Annual Trial Subsidies](#sec-dfda_trial_subsidies_annual) 🔢: $21.8 billion
+- [dFDA Pragmatic Trial Cost per Patient](#sec-dfda_pragmatic_trial_cost_per_patient) 📊: $929 (95% CI: $97 - $3,000)
 
 $$
 \begin{gathered}
@@ -448,7 +448,7 @@ Total economic value from the combined dFDA timeline shift. DALYs valued at stan
 **Inputs**:
 
 - [Total DALYs from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput](#sec-dfda_trial_capacity_plus_efficacy_lag_dalys) 🔢: 565 billion DALYs
-- [Standard Economic Value per QALY](#sec-standard_economic_qaly_value_usd) 📊: $150K (SE: ±$30K)
+- [Standard Economic Value per QALY](#sec-standard_economic_qaly_value_usd) 📊: $150,000 (SE: ±$30,000)
 
 $$
 \begin{gathered}
@@ -570,7 +570,7 @@ Total eventually avoidable deaths from the combined dFDA timeline shift. Represe
 
 **Inputs**:
 
-- [Global Daily Deaths from Disease and Aging](#sec-global_disease_deaths_daily) 📊: 150 thousand deaths/day (SE: ±7.5 thousand deaths/day)
+- [Global Daily Deaths from Disease and Aging](#sec-global_disease_deaths_daily) 📊: 150 thousand deaths/day (SE: ±7,500 deaths/day)
 - [dFDA Average Total Timeline Shift](#sec-dfda_trial_capacity_plus_efficacy_lag_years) 🔢: 212 years
 
 $$
@@ -882,7 +882,7 @@ $$
 
 :::
 
-### dFDA Annual Trial Subsidies: $21.8B {#sec-dfda_trial_subsidies_annual}
+### dFDA Annual Trial Subsidies: $21.8 billion {#sec-dfda_trial_subsidies_annual}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -890,8 +890,8 @@ Annual clinical trial patient subsidies from dFDA funding (total funding minus o
 
 **Inputs**:
 
-- [dFDA Annual Trial Funding](#sec-dfda_annual_trial_funding): $21.8B
-- [Total Annual Decentralized Framework for Drug Assessment Operational Costs](#sec-dfda_annual_opex) 🔢: $40M
+- [dFDA Annual Trial Funding](#sec-dfda_annual_trial_funding): $21.8 billion
+- [Total Annual Decentralized Framework for Drug Assessment Operational Costs](#sec-dfda_annual_opex) 🔢: $40 million
 
 $$
 \begin{gathered}
@@ -929,7 +929,7 @@ $$
 
 :::
 
-### Diseases Without Effective Treatment: 6.65 thousand diseases {#sec-diseases_without_effective_treatment}
+### Diseases Without Effective Treatment: 6,650 diseases {#sec-diseases_without_effective_treatment}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -937,7 +937,7 @@ Number of diseases without effective treatment. 95% of 7,000 rare diseases lack 
 
 **Inputs**:
 
-- [Total Number of Rare Diseases Globally](#sec-rare_diseases_count_global) 📊: 7 thousand diseases (95% CI: 6 thousand diseases - 10 thousand diseases)
+- [Total Number of Rare Diseases Globally](#sec-rare_diseases_count_global) 📊: 7,000 diseases (95% CI: 6,000 diseases - 10,000 diseases)
 
 $$
 \begin{gathered}
@@ -968,7 +968,7 @@ $$
 
 :::
 
-### Global Political Reform Investment: $128B {#sec-global_political_reform_investment}
+### Global Political Reform Investment: $128 billion {#sec-global_political_reform_investment}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -976,7 +976,7 @@ Estimated global advocacy investment for policy reform. Calculated as US costs �
 
 **Inputs**:
 
-- [US Political Reform Investment (Total)](#sec-us_political_reform_investment_total) 🔢: $25.5B
+- [US Political Reform Investment (Total)](#sec-us_political_reform_investment_total) 🔢: $25.5 billion
 - [Global-to-US Political Cost Ratio](#sec-global_to_us_political_cost_ratio): 5:1 (95% CI: 3:1 - 8:1)
 
 $$
@@ -1022,7 +1022,7 @@ $$
 
 :::
 
-### Global Opportunity Cost Total: $101T {#sec-political_dysfunction_global_opportunity_cost_total}
+### Global Opportunity Cost Total: $101 trillion {#sec-political_dysfunction_global_opportunity_cost_total}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -1030,10 +1030,10 @@ Total global opportunity cost from governance failures: health innovation delays
 
 **Inputs**:
 
-- [Global Health Opportunity Cost](#sec-political_dysfunction_global_health_opportunity_cost) 📊: $34T (95% CI: $20T - $80T)
-- [Global Science Opportunity Cost](#sec-political_dysfunction_global_science_opportunity_cost) 📊: $4T (95% CI: $2T - $10T)
-- [Global Lead Poisoning Cost](#sec-political_dysfunction_global_lead_opportunity_cost) 📊: $6T (95% CI: $4T - $8T)
-- [Global Migration Opportunity Cost](#sec-political_dysfunction_global_migration_opportunity_cost) 📊: $57T (95% CI: $57T - $170T)
+- [Global Health Opportunity Cost](#sec-political_dysfunction_global_health_opportunity_cost) 📊: $34 trillion (95% CI: $20 trillion - $80 trillion)
+- [Global Science Opportunity Cost](#sec-political_dysfunction_global_science_opportunity_cost) 📊: $4 trillion (95% CI: $2 trillion - $10 trillion)
+- [Global Lead Poisoning Cost](#sec-political_dysfunction_global_lead_opportunity_cost) 📊: $6 trillion (95% CI: $4 trillion - $8 trillion)
+- [Global Migration Opportunity Cost](#sec-political_dysfunction_global_migration_opportunity_cost) 📊: $57 trillion (95% CI: $57 trillion - $170 trillion)
 
 $$
 \begin{gathered}
@@ -1072,8 +1072,8 @@ Percentage US military spending cut after WW2 (1945-1947, inflation-adjusted: $1
 
 **Inputs**:
 
-- [US Military Spending in 1947 (Constant 2024 Dollars)](#sec-us_military_spending_1947_annual_2024usd) 📊: $176B
-- [US Military Spending at WW2 Peak (Constant 2024 Dollars)](#sec-us_military_spending_1945_peak_annual_2024usd) 📊: $1.42T
+- [US Military Spending in 1947 (Constant 2024 Dollars)](#sec-us_military_spending_1947_annual_2024usd) 📊: $176 billion
+- [US Military Spending at WW2 Peak (Constant 2024 Dollars)](#sec-us_military_spending_1945_peak_annual_2024usd) 📊: $1.42 trillion
 
 $$
 \begin{gathered}
@@ -1152,7 +1152,7 @@ Years to explore the entire therapeutic search space under current system. At cu
 
 **Inputs**:
 
-- [Diseases Without Effective Treatment](#sec-diseases_without_effective_treatment) 🔢: 6.65 thousand diseases
+- [Diseases Without Effective Treatment](#sec-diseases_without_effective_treatment) 🔢: 6,650 diseases
 - [Diseases Getting First Treatment Per Year](#sec-new_disease_first_treatments_per_year) 📊: 15 diseases/year (95% CI: 8 diseases/year - 30 diseases/year)
 
 $$
@@ -1192,7 +1192,7 @@ $$
 
 :::
 
-### Annual Funding from 1% of Global Military Spending Redirected to DIH: $27.2B {#sec-treaty_annual_funding}
+### Annual Funding from 1% of Global Military Spending Redirected to DIH: $27.2 billion {#sec-treaty_annual_funding}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -1200,7 +1200,7 @@ Annual funding from 1% of global military spending redirected to DIH
 
 **Inputs**:
 
-- [Global Military Spending in 2024](#sec-global_military_spending_annual_2024) 📊: $2.72T
+- [Global Military Spending in 2024](#sec-global_military_spending_annual_2024) 📊: $2.72 trillion
 - [1% Reduction in Military Spending/War Costs from Treaty](#sec-treaty_reduction_pct): 1%
 
 $$
@@ -1216,7 +1216,7 @@ $$
 
 :::
 
-### Total 1% Treaty Campaign Cost: $1B {#sec-treaty_campaign_total_cost}
+### Total 1% Treaty Campaign Cost: $1 billion {#sec-treaty_campaign_total_cost}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -1224,9 +1224,9 @@ Total treaty campaign cost (100% VICTORY Incentive Alignment Bonds)
 
 **Inputs**:
 
-- [Viral Referendum Budget](#sec-treaty_campaign_viral_referendum_base_case): $250M (95% CI: $150M - $410M)
-- [Political Lobbying Campaign: Direct Lobbying, Super Pacs, Opposition Research, Staff, Legal/Compliance](#sec-treaty_campaign_budget_lobbying): $650M (95% CI: $325M - $1.3B)
-- [Reserve Fund / Contingency Buffer](#sec-treaty_campaign_budget_reserve): $100M (95% CI: $20M - $150M)
+- [Viral Referendum Budget](#sec-treaty_campaign_viral_referendum_base_case): $250 million (95% CI: $150 million - $410 million)
+- [Political Lobbying Campaign: Direct Lobbying, Super Pacs, Opposition Research, Staff, Legal/Compliance](#sec-treaty_campaign_budget_lobbying): $650 million (95% CI: $325 million - $1.3 billion)
+- [Reserve Fund / Contingency Buffer](#sec-treaty_campaign_budget_reserve): $100 million (95% CI: $20 million - $150 million)
 
 $$
 \begin{gathered}
@@ -1264,7 +1264,7 @@ Cost per DALY averted from elimination of efficacy lag plus earlier treatment di
 
 **Inputs**:
 
-- [Total 1% Treaty Campaign Cost](#sec-treaty_campaign_total_cost) 🔢: $1B
+- [Total 1% Treaty Campaign Cost](#sec-treaty_campaign_total_cost) 🔢: $1 billion
 - [Total DALYs from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput](#sec-dfda_trial_capacity_plus_efficacy_lag_dalys) 🔢: 565 billion DALYs
 
 $$
@@ -1398,7 +1398,7 @@ Treaty ROI from elimination of efficacy lag plus earlier treatment discovery fro
 **Inputs**:
 
 - [Total Economic Benefit from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput](#sec-dfda_trial_capacity_plus_efficacy_lag_economic_value) 🔢: $84.8 quadrillion
-- [Total 1% Treaty Campaign Cost](#sec-treaty_campaign_total_cost) 🔢: $1B
+- [Total 1% Treaty Campaign Cost](#sec-treaty_campaign_total_cost) 🔢: $1 billion
 
 $$
 \begin{gathered}
@@ -1531,7 +1531,7 @@ $$
 
 :::
 
-### US Congress Full Advocacy Cost: $5.35B {#sec-us_congress_full_advocacy_cost}
+### US Congress Full Advocacy Cost: $5.35 billion {#sec-us_congress_full_advocacy_cost}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -1540,7 +1540,7 @@ Upper-bound advocacy cost to match career incentives for all 535 members of Cong
 **Inputs**:
 
 - [US Congress Members](#sec-us_congress_member_count): 535 members
-- [Post-Office Career Value (per politician)](#sec-politician_post_office_career_value) 📊: $10M (95% CI: $5M - $20M)
+- [Post-Office Career Value (per politician)](#sec-politician_post_office_career_value) 📊: $10 million (95% CI: $5 million - $20 million)
 
 $$
 \begin{gathered}
@@ -1559,7 +1559,7 @@ $$
 
 :::
 
-### US Political Reform Investment (Total): $25.5B {#sec-us_political_reform_investment_total}
+### US Political Reform Investment (Total): $25.5 billion {#sec-us_political_reform_investment_total}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -1567,10 +1567,10 @@ Total upper-bound investment for US political reform: (campaign spending + 2 yea
 
 **Inputs**:
 
-- [US Federal Campaign Spending (2024)](#sec-us_total_federal_campaign_spending_2024) 📊: $20B (95% CI: $18B - $22B)
-- [US Total Lobbying (2024)](#sec-us_total_lobbying_annual) 📊: $4.4B (95% CI: $3.74B - $5.06B)
+- [US Federal Campaign Spending (2024)](#sec-us_total_federal_campaign_spending_2024) 📊: $20 billion (95% CI: $18 billion - $22 billion)
+- [US Total Lobbying (2024)](#sec-us_total_lobbying_annual) 📊: $4.4 billion (95% CI: $3.74 billion - $5.06 billion)
 - [Political Effort Multiplier (US)](#sec-us_political_effort_multiplier): 0.7x (95% CI: 0.4x - 1.2x)
-- [US Congress Full Advocacy Cost](#sec-us_congress_full_advocacy_cost) 🔢: $5.35B
+- [US Congress Full Advocacy Cost](#sec-us_congress_full_advocacy_cost) 🔢: $5.35 billion
 
 $$
 \begin{gathered}
@@ -1648,7 +1648,7 @@ Wishonia disease-cure fraction over 20 years under full implementation. Uses ful
 - [Trial Capacity Multiplier](#sec-dfda_trial_capacity_multiplier) 🔢: 12.3x
 - [Wishonia Military Reallocation Physical Max Share](#sec-wishonia_military_reallocation_physical_max_share) 🔢: 87.6%
 - [Maximum Trial Capacity Multiplier (Physical Limit)](#sec-dfda_max_trial_capacity_multiplier_physical) 🔢: 566x
-- [Diseases Without Effective Treatment](#sec-diseases_without_effective_treatment) 🔢: 6.65 thousand diseases
+- [Diseases Without Effective Treatment](#sec-diseases_without_effective_treatment) 🔢: 6,650 diseases
 
 $$
 \begin{gathered}
@@ -1763,7 +1763,7 @@ $$
 
 :::
 
-### Wishonia Trajectory Average Income at Year 20: $1.16M {#sec-wishonia_trajectory_avg_income_year_20}
+### Wishonia Trajectory Average Income at Year 20: $1.16 million {#sec-wishonia_trajectory_avg_income_year_20}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -1897,7 +1897,7 @@ Wishonia Trajectory GDP at year 20 as a multiple of current trajectory GDP at ye
 **Inputs**:
 
 - [Wishonia Trajectory GDP at Year 20](#sec-wishonia_trajectory_gdp_year_20) 🔢: $10.7 quadrillion
-- [Current Trajectory GDP at Year 20](#sec-current_trajectory_gdp_year_20) 🔢: $188T
+- [Current Trajectory GDP at Year 20](#sec-current_trajectory_gdp_year_20) 🔢: $188 trillion
 
 $$
 \begin{gathered}
@@ -2025,16 +2025,16 @@ Projected global GDP at year 20 under the Wishonia Trajectory. Model applies all
 
 **Inputs**:
 
-- [Global GDP (2025)](#sec-global_gdp_2025) 📊: $115T
+- [Global GDP (2025)](#sec-global_gdp_2025) 📊: $115 trillion
 - [Baseline Global GDP Growth Rate](#sec-gdp_baseline_growth_rate): 2.5%
 - [Wishonia Military Reallocation Physical Max Share](#sec-wishonia_military_reallocation_physical_max_share) 🔢: 87.6%
 - [GDP Growth Boost at 30% Military Reallocation](#sec-military_redirect_gdp_boost_at_30pct): 5.5% (95% CI: 3.5% - 7.5%)
 - [R&D Spillover Multiplier](#sec-rd_spillover_multiplier): 2x (95% CI: 1.5x - 2.5x)
 - [Wishonia Disease Cure Fraction (20yr, Full Implementation)](#sec-wishonia_disease_cure_fraction_20yr_full) 🔢: 100%
 - [Disease Burden as % of GDP](#sec-disease_burden_gdp_drag_pct) 📊: 13%
-- [Global Science Opportunity Cost](#sec-political_dysfunction_global_science_opportunity_cost) 📊: $4T (95% CI: $2T - $10T)
-- [Global Lead Poisoning Cost](#sec-political_dysfunction_global_lead_opportunity_cost) 📊: $6T (95% CI: $4T - $8T)
-- [Global Migration Opportunity Cost](#sec-political_dysfunction_global_migration_opportunity_cost) 📊: $57T (95% CI: $57T - $170T)
+- [Global Science Opportunity Cost](#sec-political_dysfunction_global_science_opportunity_cost) 📊: $4 trillion (95% CI: $2 trillion - $10 trillion)
+- [Global Lead Poisoning Cost](#sec-political_dysfunction_global_lead_opportunity_cost) 📊: $6 trillion (95% CI: $4 trillion - $8 trillion)
+- [Global Migration Opportunity Cost](#sec-political_dysfunction_global_migration_opportunity_cost) 📊: $57 trillion (95% CI: $57 trillion - $170 trillion)
 - [Economic Multiplier for Healthcare Investment](#sec-economic_multiplier_healthcare_investment) 📊: 4.3x (95% CI: 3x - 6x)
 - [Economic Multiplier for Military Spending](#sec-economic_multiplier_military_spending) 📊: 0.6x (95% CI: 0.4x - 0.9x)
 
@@ -2146,9 +2146,9 @@ dFDA pragmatic trial cost per patient. Uses ADAPTABLE trial ($929) as DELIBERATE
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$97, $3K] • Distribution: Lognormal
+**Technical**: 95% CI: [$97, $3,000] • Distribution: Lognormal
 
-**What this means**: This estimate is highly uncertain. The true value likely falls between $97 and $3K (±156%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: This estimate is highly uncertain. The true value likely falls between $97 and $3,000 (±156%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -2274,7 +2274,7 @@ Total global deaths per day from all disease and aging (WHO Global Burden of Dis
 
 #### Uncertainty Range
 
-**Technical**: Distribution: Normal (SE: 7.5 thousand deaths/day)
+**Technical**: Distribution: Normal (SE: 7,500 deaths/day)
 
 #### Input Distribution
 
@@ -2284,7 +2284,7 @@ Total global deaths per day from all disease and aging (WHO Global Burden of Dis
 
 :::
 
-### Global GDP (2025): $115T {#sec-global_gdp_2025}
+### Global GDP (2025): $115 trillion {#sec-global_gdp_2025}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -2300,7 +2300,7 @@ Global nominal GDP (2025 estimate). From Political Dysfunction Tax paper citing 
 
 :::
 
-### Global Military Spending in 2024: $2.72T {#sec-global_military_spending_annual_2024}
+### Global Military Spending in 2024: $2.72 trillion {#sec-global_military_spending_annual_2024}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -2380,7 +2380,7 @@ Patient willingness to participate in drug trials (44.8% in surveys, 88% when ac
 
 :::
 
-### Global Health Opportunity Cost: $34T {#sec-political_dysfunction_global_health_opportunity_cost}
+### Global Health Opportunity Cost: $34 trillion {#sec-political_dysfunction_global_health_opportunity_cost}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -2390,9 +2390,9 @@ Annual opportunity cost of slow-motion regulatory environment for health innovat
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$20T, $80T] • Distribution: Lognormal (SE: $15T)
+**Technical**: 95% CI: [$20 trillion, $80 trillion] • Distribution: Lognormal (SE: $15 trillion)
 
-**What this means**: This estimate is highly uncertain. The true value likely falls between $20T and $80T (±88%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: This estimate is highly uncertain. The true value likely falls between $20 trillion and $80 trillion (±88%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -2404,7 +2404,7 @@ Annual opportunity cost of slow-motion regulatory environment for health innovat
 
 :::
 
-### Global Lead Poisoning Cost: $6T {#sec-political_dysfunction_global_lead_opportunity_cost}
+### Global Lead Poisoning Cost: $6 trillion {#sec-political_dysfunction_global_lead_opportunity_cost}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -2414,9 +2414,9 @@ Global cost of lead exposure: World Bank/Lancet estimate. 765 million IQ points 
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$4T, $8T] • Distribution: Normal (SE: $1T)
+**Technical**: 95% CI: [$4 trillion, $8 trillion] • Distribution: Normal (SE: $1 trillion)
 
-**What this means**: There's significant uncertainty here. The true value likely falls between $4T and $8T (±33%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: There's significant uncertainty here. The true value likely falls between $4 trillion and $8 trillion (±33%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The normal distribution means values cluster around the center with equal chances of being higher or lower.*
 
@@ -2428,7 +2428,7 @@ Global cost of lead exposure: World Bank/Lancet estimate. 765 million IQ points 
 
 :::
 
-### Global Migration Opportunity Cost: $57T {#sec-political_dysfunction_global_migration_opportunity_cost}
+### Global Migration Opportunity Cost: $57 trillion {#sec-political_dysfunction_global_migration_opportunity_cost}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -2438,9 +2438,9 @@ Unrealized output from migration restrictions. Clemens (2011) calculated elimina
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$57T, $170T] • Distribution: Lognormal (SE: $30T)
+**Technical**: 95% CI: [$57 trillion, $170 trillion] • Distribution: Lognormal (SE: $30 trillion)
 
-**What this means**: This estimate is highly uncertain. The true value likely falls between $57T and $170T (±99%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: This estimate is highly uncertain. The true value likely falls between $57 trillion and $170 trillion (±99%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -2452,7 +2452,7 @@ Unrealized output from migration restrictions. Clemens (2011) calculated elimina
 
 :::
 
-### Global Science Opportunity Cost: $4T {#sec-political_dysfunction_global_science_opportunity_cost}
+### Global Science Opportunity Cost: $4 trillion {#sec-political_dysfunction_global_science_opportunity_cost}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -2462,9 +2462,9 @@ Annual opportunity cost from underfunding high-ROI science (fusion, AI safety). 
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$2T, $10T] • Distribution: Lognormal (SE: $2T)
+**Technical**: 95% CI: [$2 trillion, $10 trillion] • Distribution: Lognormal (SE: $2 trillion)
 
-**What this means**: This estimate is highly uncertain. The true value likely falls between $2T and $10T (±100%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: This estimate is highly uncertain. The true value likely falls between $2 trillion and $10 trillion (±100%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -2476,7 +2476,7 @@ Annual opportunity cost from underfunding high-ROI science (fusion, AI safety). 
 
 :::
 
-### Post-Office Career Value (per politician): $10M {#sec-politician_post_office_career_value}
+### Post-Office Career Value (per politician): $10 million {#sec-politician_post_office_career_value}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -2486,9 +2486,9 @@ Net present value of post-office career premium for average congressperson (10 y
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$5M, $20M]
+**Technical**: 95% CI: [$5 million, $20 million]
 
-**What this means**: This estimate is highly uncertain. The true value likely falls between $5M and $20M (±75%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: This estimate is highly uncertain. The true value likely falls between $5 million and $20 million (±75%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 #### Input Distribution
 
@@ -2498,7 +2498,7 @@ Net present value of post-office career premium for average congressperson (10 y
 
 :::
 
-### Total Number of Rare Diseases Globally: 7 thousand diseases {#sec-rare_diseases_count_global}
+### Total Number of Rare Diseases Globally: 7,000 diseases {#sec-rare_diseases_count_global}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -2508,9 +2508,9 @@ Total number of rare diseases globally
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [6 thousand diseases, 10 thousand diseases] • Distribution: Normal
+**Technical**: 95% CI: [6,000 diseases, 10,000 diseases] • Distribution: Normal
 
-**What this means**: There's significant uncertainty here. The true value likely falls between 6 thousand diseases and 10 thousand diseases (±29%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: There's significant uncertainty here. The true value likely falls between 6,000 diseases and 10,000 diseases (±29%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The normal distribution means values cluster around the center with equal chances of being higher or lower.*
 
@@ -2522,7 +2522,7 @@ Total number of rare diseases globally
 
 :::
 
-### Standard Economic Value per QALY: $150K {#sec-standard_economic_qaly_value_usd}
+### Standard Economic Value per QALY: $150,000 {#sec-standard_economic_qaly_value_usd}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -2532,7 +2532,7 @@ Standard economic value per QALY
 
 #### Uncertainty Range
 
-**Technical**: Distribution: Normal (SE: $30K)
+**Technical**: Distribution: Normal (SE: $30,000)
 
 #### Input Distribution
 
@@ -2542,7 +2542,7 @@ Standard economic value per QALY
 
 :::
 
-### US Military Spending at WW2 Peak (Constant 2024 Dollars): $1.42T {#sec-us_military_spending_1945_peak_annual_2024usd}
+### US Military Spending at WW2 Peak (Constant 2024 Dollars): $1.42 trillion {#sec-us_military_spending_1945_peak_annual_2024usd}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -2558,7 +2558,7 @@ US military spending at WW2 peak (1945) in constant 2024 dollars
 
 :::
 
-### US Military Spending in 1947 (Constant 2024 Dollars): $176B {#sec-us_military_spending_1947_annual_2024usd}
+### US Military Spending in 1947 (Constant 2024 Dollars): $176 billion {#sec-us_military_spending_1947_annual_2024usd}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -2590,7 +2590,7 @@ Senators needed for treaty ratification (2/3 majority per Article II, Section 2)
 
 :::
 
-### US Federal Campaign Spending (2024): $20B {#sec-us_total_federal_campaign_spending_2024}
+### US Federal Campaign Spending (2024): $20 billion {#sec-us_total_federal_campaign_spending_2024}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -2600,9 +2600,9 @@ Total US federal election spending in 2024 cycle including presidential, congres
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$18B, $22B]
+**Technical**: 95% CI: [$18 billion, $22 billion]
 
-**What this means**: We're quite confident in this estimate. The true value likely falls between $18B and $22B (±10%). This represents a narrow range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: We're quite confident in this estimate. The true value likely falls between $18 billion and $22 billion (±10%). This represents a narrow range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 #### Input Distribution
 
@@ -2612,7 +2612,7 @@ Total US federal election spending in 2024 cycle including presidential, congres
 
 :::
 
-### US Total Lobbying (2024): $4.4B {#sec-us_total_lobbying_annual}
+### US Total Lobbying (2024): $4.4 billion {#sec-us_total_lobbying_annual}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -2622,9 +2622,9 @@ Total US federal lobbying expenditure in 2024 (record year). Source: OpenSecrets
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$3.74B, $5.06B]
+**Technical**: 95% CI: [$3.74 billion, $5.06 billion]
 
-**What this means**: This estimate has moderate uncertainty. The true value likely falls between $3.74B and $5.06B (±15%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between $3.74 billion and $5.06 billion (±15%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 #### Input Distribution
 
@@ -2638,7 +2638,7 @@ Total US federal lobbying expenditure in 2024 (record year). Source: OpenSecrets
 
 Fundamental parameters and constants used throughout the analysis.
 
-### dFDA Annual Trial Funding: $21.8B {#sec-dfda_annual_trial_funding}
+### dFDA Annual Trial Funding: $21.8 billion {#sec-dfda_annual_trial_funding}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -2652,7 +2652,7 @@ Assumed annual funding for dFDA pragmatic clinical trials (~$21.8B/year). Source
 
 :::
 
-### Decentralized Framework for Drug Assessment Community Support Costs: $2M {#sec-dfda_opex_community}
+### Decentralized Framework for Drug Assessment Community Support Costs: $2 million {#sec-dfda_opex_community}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -2660,9 +2660,9 @@ Decentralized Framework for Drug Assessment community support costs
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$1M, $3M] • Distribution: Lognormal
+**Technical**: 95% CI: [$1 million, $3 million] • Distribution: Lognormal
 
-**What this means**: There's significant uncertainty here. The true value likely falls between $1M and $3M (±50%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: There's significant uncertainty here. The true value likely falls between $1 million and $3 million (±50%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -2674,7 +2674,7 @@ Decentralized Framework for Drug Assessment community support costs
 
 :::
 
-### Decentralized Framework for Drug Assessment Infrastructure Costs: $8M {#sec-dfda_opex_infrastructure}
+### Decentralized Framework for Drug Assessment Infrastructure Costs: $8 million {#sec-dfda_opex_infrastructure}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -2682,9 +2682,9 @@ Decentralized Framework for Drug Assessment infrastructure costs (cloud, securit
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$5M, $12M] • Distribution: Lognormal
+**Technical**: 95% CI: [$5 million, $12 million] • Distribution: Lognormal
 
-**What this means**: There's significant uncertainty here. The true value likely falls between $5M and $12M (±44%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: There's significant uncertainty here. The true value likely falls between $5 million and $12 million (±44%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -2696,7 +2696,7 @@ Decentralized Framework for Drug Assessment infrastructure costs (cloud, securit
 
 :::
 
-### Decentralized Framework for Drug Assessment Maintenance Costs: $15M {#sec-dfda_opex_platform_maintenance}
+### Decentralized Framework for Drug Assessment Maintenance Costs: $15 million {#sec-dfda_opex_platform_maintenance}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -2704,9 +2704,9 @@ Decentralized Framework for Drug Assessment maintenance costs
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$10M, $22M] • Distribution: Lognormal
+**Technical**: 95% CI: [$10 million, $22 million] • Distribution: Lognormal
 
-**What this means**: There's significant uncertainty here. The true value likely falls between $10M and $22M (±40%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: There's significant uncertainty here. The true value likely falls between $10 million and $22 million (±40%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -2718,7 +2718,7 @@ Decentralized Framework for Drug Assessment maintenance costs
 
 :::
 
-### Decentralized Framework for Drug Assessment Regulatory Coordination Costs: $5M {#sec-dfda_opex_regulatory}
+### Decentralized Framework for Drug Assessment Regulatory Coordination Costs: $5 million {#sec-dfda_opex_regulatory}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -2726,9 +2726,9 @@ Decentralized Framework for Drug Assessment regulatory coordination costs
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$3M, $8M] • Distribution: Lognormal
+**Technical**: 95% CI: [$3 million, $8 million] • Distribution: Lognormal
 
-**What this means**: There's significant uncertainty here. The true value likely falls between $3M and $8M (±50%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: There's significant uncertainty here. The true value likely falls between $3 million and $8 million (±50%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -2740,7 +2740,7 @@ Decentralized Framework for Drug Assessment regulatory coordination costs
 
 :::
 
-### Decentralized Framework for Drug Assessment Staff Costs: $10M {#sec-dfda_opex_staff}
+### Decentralized Framework for Drug Assessment Staff Costs: $10 million {#sec-dfda_opex_staff}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -2748,9 +2748,9 @@ Decentralized Framework for Drug Assessment staff costs (minimal, AI-assisted)
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$7M, $15M] • Distribution: Lognormal
+**Technical**: 95% CI: [$7 million, $15 million] • Distribution: Lognormal
 
-**What this means**: There's significant uncertainty here. The true value likely falls between $7M and $15M (±40%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: There's significant uncertainty here. The true value likely falls between $7 million and $15 million (±40%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -2864,7 +2864,7 @@ R&D spillover multiplier: each $1 in directed medical research produces $2 in ad
 
 :::
 
-### Political Lobbying Campaign: Direct Lobbying, Super Pacs, Opposition Research, Staff, Legal/Compliance: $650M {#sec-treaty_campaign_budget_lobbying}
+### Political Lobbying Campaign: Direct Lobbying, Super Pacs, Opposition Research, Staff, Legal/Compliance: $650 million {#sec-treaty_campaign_budget_lobbying}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -2872,9 +2872,9 @@ Political lobbying campaign: direct lobbying (US/EU/G20), Super PACs, opposition
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$325M, $1.3B] • Distribution: Lognormal
+**Technical**: 95% CI: [$325 million, $1.3 billion] • Distribution: Lognormal
 
-**What this means**: This estimate is highly uncertain. The true value likely falls between $325M and $1.3B (±75%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: This estimate is highly uncertain. The true value likely falls between $325 million and $1.3 billion (±75%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -2886,7 +2886,7 @@ Political lobbying campaign: direct lobbying (US/EU/G20), Super PACs, opposition
 
 :::
 
-### Reserve Fund / Contingency Buffer: $100M {#sec-treaty_campaign_budget_reserve}
+### Reserve Fund / Contingency Buffer: $100 million {#sec-treaty_campaign_budget_reserve}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -2894,9 +2894,9 @@ Reserve fund / contingency buffer (10% of total campaign cost). Using industry s
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$20M, $150M] • Distribution: Lognormal
+**Technical**: 95% CI: [$20 million, $150 million] • Distribution: Lognormal
 
-**What this means**: This estimate is highly uncertain. The true value likely falls between $20M and $150M (±65%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: This estimate is highly uncertain. The true value likely falls between $20 million and $150 million (±65%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -2908,7 +2908,7 @@ Reserve fund / contingency buffer (10% of total campaign cost). Using industry s
 
 :::
 
-### Viral Referendum Budget: $250M {#sec-treaty_campaign_viral_referendum_base_case}
+### Viral Referendum Budget: $250 million {#sec-treaty_campaign_viral_referendum_base_case}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -2916,9 +2916,9 @@ Viral referendum budget for 280M verified votes (base: $250M realistic with $0.5
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$150M, $410M]
+**Technical**: 95% CI: [$150 million, $410 million]
 
-**What this means**: This estimate is highly uncertain. The true value likely falls between $150M and $410M (±52%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: This estimate is highly uncertain. The true value likely falls between $150 million and $410 million (±52%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 #### Input Distribution
 

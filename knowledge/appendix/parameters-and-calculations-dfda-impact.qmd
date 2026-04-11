@@ -62,7 +62,7 @@ Total combination therapy space (pairwise drug combinations × diseases). Standa
 **Inputs**:
 
 - [Pairwise Drug Combinations](#sec-combination_therapy_pairs) 🔢: 45.1 million combinations
-- [Trial-Relevant Diseases](#sec-trial_relevant_diseases_count): 1 thousand diseases (95% CI: 800 diseases - 1.2 thousand diseases)
+- [Trial-Relevant Diseases](#sec-trial_relevant_diseases_count): 1,000 diseases (95% CI: 800 diseases - 1,200 diseases)
 
 $$
 \begin{gathered}
@@ -102,7 +102,7 @@ Unique pairwise drug combinations from known safe compounds (n choose 2)
 
 **Inputs**:
 
-- [Safe Compounds Available for Testing](#sec-safe_compounds_count): 9.5 thousand compounds (95% CI: 7 thousand compounds - 12 thousand compounds)
+- [Safe Compounds Available for Testing](#sec-safe_compounds_count): 9,500 compounds (95% CI: 7,000 compounds - 12,000 compounds)
 
 $$
 N_{combo} = \frac{N_{safe} \cdot (N_{safe} - 1)}{2}
@@ -135,7 +135,7 @@ Years to test all pairwise drug combinations at current trial capacity. Combinat
 **Inputs**:
 
 - [Combination Therapy Space](#sec-combination_therapy_disease_space) 🔢: 45.1 billion combinations
-- [Current Global Clinical Trials per Year](#sec-current_trials_per_year) 📊: 3.3 thousand trials/year (95% CI: 2.64 thousand trials/year - 3.96 thousand trials/year)
+- [Current Global Clinical Trials per Year](#sec-current_trials_per_year) 📊: 3,300 trials/year (95% CI: 2,640 trials/year - 3,960 trials/year)
 
 $$
 \begin{gathered}
@@ -176,7 +176,7 @@ $$
 
 :::
 
-### Known Safe Exploration Time (Current): 2.88 thousand years {#sec-current_known_safe_exploration_years}
+### Known Safe Exploration Time (Current): 2,879 years {#sec-current_known_safe_exploration_years}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -185,7 +185,7 @@ Years to test all known safe drug-disease combinations at current global trial c
 **Inputs**:
 
 - [Possible Drug-Disease Combinations](#sec-drug_disease_combinations_possible) 🔢: 9.5 million combinations
-- [Current Global Clinical Trials per Year](#sec-current_trials_per_year) 📊: 3.3 thousand trials/year (95% CI: 2.64 thousand trials/year - 3.96 thousand trials/year)
+- [Current Global Clinical Trials per Year](#sec-current_trials_per_year) 📊: 3,300 trials/year (95% CI: 2,640 trials/year - 3,960 trials/year)
 
 $$
 \begin{gathered}
@@ -222,7 +222,7 @@ $$
 
 :::
 
-### Total Annual Decentralized Framework for Drug Assessment Operational Costs: $40M {#sec-dfda_annual_opex}
+### Total Annual Decentralized Framework for Drug Assessment Operational Costs: $40 million {#sec-dfda_annual_opex}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -230,11 +230,11 @@ Total annual Decentralized Framework for Drug Assessment operational costs (sum 
 
 **Inputs**:
 
-- [Decentralized Framework for Drug Assessment Maintenance Costs](#sec-dfda_opex_platform_maintenance): $15M (95% CI: $10M - $22M)
-- [Decentralized Framework for Drug Assessment Staff Costs](#sec-dfda_opex_staff): $10M (95% CI: $7M - $15M)
-- [Decentralized Framework for Drug Assessment Infrastructure Costs](#sec-dfda_opex_infrastructure): $8M (95% CI: $5M - $12M)
-- [Decentralized Framework for Drug Assessment Regulatory Coordination Costs](#sec-dfda_opex_regulatory): $5M (95% CI: $3M - $8M)
-- [Decentralized Framework for Drug Assessment Community Support Costs](#sec-dfda_opex_community): $2M (95% CI: $1M - $3M)
+- [Decentralized Framework for Drug Assessment Maintenance Costs](#sec-dfda_opex_platform_maintenance): $15 million (95% CI: $10 million - $22 million)
+- [Decentralized Framework for Drug Assessment Staff Costs](#sec-dfda_opex_staff): $10 million (95% CI: $7 million - $15 million)
+- [Decentralized Framework for Drug Assessment Infrastructure Costs](#sec-dfda_opex_infrastructure): $8 million (95% CI: $5 million - $12 million)
+- [Decentralized Framework for Drug Assessment Regulatory Coordination Costs](#sec-dfda_opex_regulatory): $5 million (95% CI: $3 million - $8 million)
+- [Decentralized Framework for Drug Assessment Community Support Costs](#sec-dfda_opex_community): $2 million (95% CI: $1 million - $3 million)
 
 $$
 \begin{gathered}
@@ -264,7 +264,7 @@ $$
 
 :::
 
-### Decentralized Framework for Drug Assessment Annual Benefit: R&D Savings: $58.6B {#sec-dfda_benefit_rd_only_annual}
+### Decentralized Framework for Drug Assessment Annual Benefit: R&D Savings: $58.6 billion {#sec-dfda_benefit_rd_only_annual}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -272,7 +272,7 @@ Annual Decentralized Framework for Drug Assessment benefit from R&D savings (tri
 
 **Inputs**:
 
-- [Annual Global Spending on Clinical Trials](#sec-global_clinical_trials_spending_annual) 📊: $60B (95% CI: $50B - $75B)
+- [Annual Global Spending on Clinical Trials](#sec-global_clinical_trials_spending_annual) 📊: $60 billion (95% CI: $50 billion - $75 billion)
 - [dFDA Trial Cost Reduction Percentage](#sec-dfda_trial_cost_reduction_pct) 🔢: 97.7%
 
 $$
@@ -318,7 +318,7 @@ Cost per DALY at direct funding level for the therapeutic space exploration peri
 
 **Inputs**:
 
-- [dFDA Direct Funding NPV (Exploration Period)](#sec-dfda_direct_funding_queue_clearance_npv) 🔢: $476B
+- [dFDA Direct Funding NPV (Exploration Period)](#sec-dfda_direct_funding_queue_clearance_npv) 🔢: $476 billion
 - [Total DALYs from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput](#sec-dfda_trial_capacity_plus_efficacy_lag_dalys) 🔢: 565 billion DALYs
 
 $$
@@ -451,7 +451,7 @@ $$
 
 :::
 
-### dFDA Direct Funding NPV (Exploration Period): $476B {#sec-dfda_direct_funding_queue_clearance_npv}
+### dFDA Direct Funding NPV (Exploration Period): $476 billion {#sec-dfda_direct_funding_queue_clearance_npv}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -459,7 +459,7 @@ NPV of annual direct funding for the therapeutic space exploration period. Fundi
 
 **Inputs**:
 
-- [dFDA Annual Trial Funding](#sec-dfda_annual_trial_funding): $21.8B
+- [dFDA Annual Trial Funding](#sec-dfda_annual_trial_funding): $21.8 billion
 - [Standard Discount Rate for NPV Analysis](#sec-npv_discount_rate_standard): 3%
 - [dFDA Therapeutic Space Exploration Time](#sec-dfda_queue_clearance_years) 🔢: 36 years
 
@@ -562,7 +562,7 @@ ROI from directly funding pragmatic clinical trials over the therapeutic space e
 **Inputs**:
 
 - [Total Economic Benefit from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput](#sec-dfda_trial_capacity_plus_efficacy_lag_economic_value) 🔢: $84.8 quadrillion
-- [dFDA Direct Funding NPV (Exploration Period)](#sec-dfda_direct_funding_queue_clearance_npv) 🔢: $476B
+- [dFDA Direct Funding NPV (Exploration Period)](#sec-dfda_direct_funding_queue_clearance_npv) 🔢: $476 billion
 
 $$
 \begin{gathered}
@@ -771,7 +771,7 @@ Total eventually avoidable deaths from delaying disease eradication by 8.2 years
 **Inputs**:
 
 - [Regulatory Delay for Efficacy Testing Post-Safety Verification](#sec-efficacy_lag_years) 📊: 8.2 years (SE: ±2 years)
-- [Global Daily Deaths from Disease and Aging](#sec-global_disease_deaths_daily) 📊: 150 thousand deaths/day (SE: ±7.5 thousand deaths/day)
+- [Global Daily Deaths from Disease and Aging](#sec-global_disease_deaths_daily) 📊: 150 thousand deaths/day (SE: ±7,500 deaths/day)
 
 $$
 \begin{gathered}
@@ -809,7 +809,7 @@ Total economic loss from delaying disease eradication by 8.2 years (PRIMARY esti
 **Inputs**:
 
 - [Total DALYs Lost from Disease Eradication Delay](#sec-dfda_efficacy_lag_elimination_dalys) 🔢: 7.94 billion DALYs
-- [Standard Economic Value per QALY](#sec-standard_economic_qaly_value_usd) 📊: $150K (SE: ±$30K)
+- [Standard Economic Value per QALY](#sec-standard_economic_qaly_value_usd) 📊: $150,000 (SE: ±$30,000)
 
 $$
 \begin{gathered}
@@ -1036,7 +1036,7 @@ $$
 
 :::
 
-### Decentralized Framework for Drug Assessment Annual Net Savings (R&D Only): $58.6B {#sec-dfda_net_savings_rd_only_annual}
+### Decentralized Framework for Drug Assessment Annual Net Savings (R&D Only): $58.6 billion {#sec-dfda_net_savings_rd_only_annual}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -1044,8 +1044,8 @@ Annual net savings from R&D cost reduction only (gross savings minus operational
 
 **Inputs**:
 
-- [Decentralized Framework for Drug Assessment Annual Benefit: R&D Savings](#sec-dfda_benefit_rd_only_annual) 🔢: $58.6B
-- [Total Annual Decentralized Framework for Drug Assessment Operational Costs](#sec-dfda_annual_opex) 🔢: $40M
+- [Decentralized Framework for Drug Assessment Annual Benefit: R&D Savings](#sec-dfda_benefit_rd_only_annual) 🔢: $58.6 billion
+- [Total Annual Decentralized Framework for Drug Assessment Operational Costs](#sec-dfda_annual_opex) 🔢: $40 million
 
 $$
 \begin{gathered}
@@ -1101,7 +1101,7 @@ $$
 
 :::
 
-### Decentralized Framework for Drug Assessment Total NPV Annual OPEX: $40M {#sec-dfda_npv_annual_opex_total}
+### Decentralized Framework for Drug Assessment Total NPV Annual OPEX: $40 million {#sec-dfda_npv_annual_opex_total}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -1109,8 +1109,8 @@ Total NPV annual opex (Decentralized Framework for Drug Assessment core + DIH in
 
 **Inputs**:
 
-- [Decentralized Framework for Drug Assessment Core framework Annual OPEX](#sec-dfda_npv_annual_opex): $18.9M (95% CI: $11M - $26.5M)
-- [DIH Broader Initiatives Annual OPEX](#sec-dih_npv_annual_opex_initiatives): $21.1M (95% CI: $14M - $32M)
+- [Decentralized Framework for Drug Assessment Core framework Annual OPEX](#sec-dfda_npv_annual_opex): $18.9 million (95% CI: $11 million - $26.5 million)
+- [DIH Broader Initiatives Annual OPEX](#sec-dih_npv_annual_opex_initiatives): $21.1 million (95% CI: $14 million - $32 million)
 
 $$
 \begin{gathered}
@@ -1139,7 +1139,7 @@ $$
 
 :::
 
-### NPV of Decentralized Framework for Drug Assessment Benefits (R&D Only, 10-Year Discounted): $389B {#sec-dfda_npv_benefit_rd_only}
+### NPV of Decentralized Framework for Drug Assessment Benefits (R&D Only, 10-Year Discounted): $389 billion {#sec-dfda_npv_benefit_rd_only}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -1147,7 +1147,7 @@ NPV of Decentralized Framework for Drug Assessment R&D savings only with 5-year 
 
 **Inputs**:
 
-- [Decentralized Framework for Drug Assessment Annual Net Savings (R&D Only)](#sec-dfda_net_savings_rd_only_annual) 🔢: $58.6B
+- [Decentralized Framework for Drug Assessment Annual Net Savings (R&D Only)](#sec-dfda_net_savings_rd_only_annual) 🔢: $58.6 billion
 - [Standard Discount Rate for NPV Analysis](#sec-npv_discount_rate_standard): 3%
 
 $$
@@ -1175,7 +1175,7 @@ $$
 
 :::
 
-### NPV Net Benefit (R&D Only): $389B {#sec-dfda_npv_net_benefit_rd_only}
+### NPV Net Benefit (R&D Only): $389 billion {#sec-dfda_npv_net_benefit_rd_only}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -1183,8 +1183,8 @@ NPV net benefit using R&D savings only (benefits minus costs)
 
 **Inputs**:
 
-- [NPV of Decentralized Framework for Drug Assessment Benefits (R&D Only, 10-Year Discounted)](#sec-dfda_npv_benefit_rd_only) 🔢: $389B
-- [Decentralized Framework for Drug Assessment Total NPV Cost](#sec-dfda_npv_total_cost) 🔢: $611M
+- [NPV of Decentralized Framework for Drug Assessment Benefits (R&D Only, 10-Year Discounted)](#sec-dfda_npv_benefit_rd_only) 🔢: $389 billion
+- [Decentralized Framework for Drug Assessment Total NPV Cost](#sec-dfda_npv_total_cost) 🔢: $611 million
 
 $$
 \begin{gathered}
@@ -1292,7 +1292,7 @@ $$
 
 :::
 
-### Decentralized Framework for Drug Assessment Present Value of Annual OPEX Over 10 Years: $342M {#sec-dfda_npv_pv_annual_opex}
+### Decentralized Framework for Drug Assessment Present Value of Annual OPEX Over 10 Years: $342 million {#sec-dfda_npv_pv_annual_opex}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -1300,7 +1300,7 @@ Present value of annual opex over 10 years (NPV formula)
 
 **Inputs**:
 
-- [Decentralized Framework for Drug Assessment Total NPV Annual OPEX](#sec-dfda_npv_annual_opex_total) 🔢: $40M
+- [Decentralized Framework for Drug Assessment Total NPV Annual OPEX](#sec-dfda_npv_annual_opex_total) 🔢: $40 million
 - [Standard Discount Rate for NPV Analysis](#sec-npv_discount_rate_standard): 3%
 - [Standard Time Horizon for NPV Analysis](#sec-npv_time_horizon_years): 10 years
 
@@ -1339,7 +1339,7 @@ $$
 
 :::
 
-### Decentralized Framework for Drug Assessment Total NPV Cost: $611M {#sec-dfda_npv_total_cost}
+### Decentralized Framework for Drug Assessment Total NPV Cost: $611 million {#sec-dfda_npv_total_cost}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -1347,8 +1347,8 @@ Total NPV cost (upfront + PV of annual opex)
 
 **Inputs**:
 
-- [Decentralized Framework for Drug Assessment Present Value of Annual OPEX Over 10 Years](#sec-dfda_npv_pv_annual_opex) 🔢: $342M
-- [Decentralized Framework for Drug Assessment Total NPV Upfront Costs](#sec-dfda_npv_upfront_cost_total) 🔢: $270M
+- [Decentralized Framework for Drug Assessment Present Value of Annual OPEX Over 10 Years](#sec-dfda_npv_pv_annual_opex) 🔢: $342 million
+- [Decentralized Framework for Drug Assessment Total NPV Upfront Costs](#sec-dfda_npv_upfront_cost_total) 🔢: $270 million
 
 $$
 \begin{gathered}
@@ -1403,7 +1403,7 @@ $$
 
 :::
 
-### Decentralized Framework for Drug Assessment Total NPV Upfront Costs: $270M {#sec-dfda_npv_upfront_cost_total}
+### Decentralized Framework for Drug Assessment Total NPV Upfront Costs: $270 million {#sec-dfda_npv_upfront_cost_total}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -1411,8 +1411,8 @@ Total NPV upfront costs (Decentralized Framework for Drug Assessment core + DIH 
 
 **Inputs**:
 
-- [Decentralized Framework for Drug Assessment Core framework Build Cost](#sec-dfda_npv_upfront_cost): $40M (95% CI: $25M - $65M)
-- [DIH Broader Initiatives Upfront Cost](#sec-dih_npv_upfront_cost_initiatives): $230M (95% CI: $150M - $350M)
+- [Decentralized Framework for Drug Assessment Core framework Build Cost](#sec-dfda_npv_upfront_cost): $40 million (95% CI: $25 million - $65 million)
+- [DIH Broader Initiatives Upfront Cost](#sec-dih_npv_upfront_cost_initiatives): $230 million (95% CI: $150 million - $350 million)
 
 $$
 \begin{gathered}
@@ -1449,8 +1449,8 @@ Number of patients fundable annually from dFDA funding at pragmatic trial cost. 
 
 **Inputs**:
 
-- [dFDA Annual Trial Subsidies](#sec-dfda_trial_subsidies_annual) 🔢: $21.8B
-- [dFDA Pragmatic Trial Cost per Patient](#sec-dfda_pragmatic_trial_cost_per_patient) 📊: $929 (95% CI: $97 - $3K)
+- [dFDA Annual Trial Subsidies](#sec-dfda_trial_subsidies_annual) 🔢: $21.8 billion
+- [dFDA Pragmatic Trial Cost per Patient](#sec-dfda_pragmatic_trial_cost_per_patient) 📊: $929 (95% CI: $97 - $3,000)
 
 $$
 \begin{gathered}
@@ -1597,8 +1597,8 @@ ROI from Decentralized Framework for Drug Assessment R&D savings only (10-year N
 
 **Inputs**:
 
-- [NPV of Decentralized Framework for Drug Assessment Benefits (R&D Only, 10-Year Discounted)](#sec-dfda_npv_benefit_rd_only) 🔢: $389B
-- [Decentralized Framework for Drug Assessment Total NPV Cost](#sec-dfda_npv_total_cost) 🔢: $611M
+- [NPV of Decentralized Framework for Drug Assessment Benefits (R&D Only, 10-Year Discounted)](#sec-dfda_npv_benefit_rd_only) 🔢: $389 billion
+- [Decentralized Framework for Drug Assessment Total NPV Cost](#sec-dfda_npv_total_cost) 🔢: $611 million
 
 $$
 \begin{gathered}
@@ -1895,7 +1895,7 @@ Total economic value from the combined dFDA timeline shift. DALYs valued at stan
 **Inputs**:
 
 - [Total DALYs from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput](#sec-dfda_trial_capacity_plus_efficacy_lag_dalys) 🔢: 565 billion DALYs
-- [Standard Economic Value per QALY](#sec-standard_economic_qaly_value_usd) 📊: $150K (SE: ±$30K)
+- [Standard Economic Value per QALY](#sec-standard_economic_qaly_value_usd) 📊: $150,000 (SE: ±$30,000)
 
 $$
 \begin{gathered}
@@ -2017,7 +2017,7 @@ Total eventually avoidable deaths from the combined dFDA timeline shift. Represe
 
 **Inputs**:
 
-- [Global Daily Deaths from Disease and Aging](#sec-global_disease_deaths_daily) 📊: 150 thousand deaths/day (SE: ±7.5 thousand deaths/day)
+- [Global Daily Deaths from Disease and Aging](#sec-global_disease_deaths_daily) 📊: 150 thousand deaths/day (SE: ±7,500 deaths/day)
 - [dFDA Average Total Timeline Shift](#sec-dfda_trial_capacity_plus_efficacy_lag_years) 🔢: 212 years
 
 $$
@@ -2460,8 +2460,8 @@ Cost reduction factor projected for dFDA pragmatic trials (traditional Phase 3 c
 
 **Inputs**:
 
-- [Phase 3 Cost per Patient](#sec-traditional_phase3_cost_per_patient) 📊: $41K (95% CI: $20K - $120K)
-- [dFDA Pragmatic Trial Cost per Patient](#sec-dfda_pragmatic_trial_cost_per_patient) 📊: $929 (95% CI: $97 - $3K)
+- [Phase 3 Cost per Patient](#sec-traditional_phase3_cost_per_patient) 📊: $41,000 (95% CI: $20,000 - $120,000)
+- [dFDA Pragmatic Trial Cost per Patient](#sec-dfda_pragmatic_trial_cost_per_patient) 📊: $929 (95% CI: $97 - $3,000)
 
 $$
 \begin{gathered}
@@ -2498,8 +2498,8 @@ Trial cost reduction percentage: 1 - (dFDA pragmatic cost / traditional Phase 3 
 
 **Inputs**:
 
-- [dFDA Pragmatic Trial Cost per Patient](#sec-dfda_pragmatic_trial_cost_per_patient) 📊: $929 (95% CI: $97 - $3K)
-- [Phase 3 Cost per Patient](#sec-traditional_phase3_cost_per_patient) 📊: $41K (95% CI: $20K - $120K)
+- [dFDA Pragmatic Trial Cost per Patient](#sec-dfda_pragmatic_trial_cost_per_patient) 📊: $929 (95% CI: $97 - $3,000)
+- [Phase 3 Cost per Patient](#sec-traditional_phase3_cost_per_patient) 📊: $41,000 (95% CI: $20,000 - $120,000)
 
 $$
 \begin{gathered}
@@ -2528,7 +2528,7 @@ $$
 
 :::
 
-### dFDA Annual Trial Subsidies: $21.8B {#sec-dfda_trial_subsidies_annual}
+### dFDA Annual Trial Subsidies: $21.8 billion {#sec-dfda_trial_subsidies_annual}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -2536,8 +2536,8 @@ Annual clinical trial patient subsidies from dFDA funding (total funding minus o
 
 **Inputs**:
 
-- [dFDA Annual Trial Funding](#sec-dfda_annual_trial_funding): $21.8B
-- [Total Annual Decentralized Framework for Drug Assessment Operational Costs](#sec-dfda_annual_opex) 🔢: $40M
+- [dFDA Annual Trial Funding](#sec-dfda_annual_trial_funding): $21.8 billion
+- [Total Annual Decentralized Framework for Drug Assessment Operational Costs](#sec-dfda_annual_opex) 🔢: $40 million
 
 $$
 \begin{gathered}
@@ -2575,7 +2575,7 @@ $$
 
 :::
 
-### Diseases Without Effective Treatment: 6.65 thousand diseases {#sec-diseases_without_effective_treatment}
+### Diseases Without Effective Treatment: 6,650 diseases {#sec-diseases_without_effective_treatment}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -2583,7 +2583,7 @@ Number of diseases without effective treatment. 95% of 7,000 rare diseases lack 
 
 **Inputs**:
 
-- [Total Number of Rare Diseases Globally](#sec-rare_diseases_count_global) 📊: 7 thousand diseases (95% CI: 6 thousand diseases - 10 thousand diseases)
+- [Total Number of Rare Diseases Globally](#sec-rare_diseases_count_global) 📊: 7,000 diseases (95% CI: 6,000 diseases - 10,000 diseases)
 
 $$
 \begin{gathered}
@@ -2622,8 +2622,8 @@ Drug development cost increase from pre-1962 to current
 
 **Inputs**:
 
-- [Pharma Drug Development Cost (Current System)](#sec-pharma_drug_development_cost_current) 📊: $2.6B (95% CI: $1.5B - $4B)
-- [Pre-1962 Drug Development Cost (2024 Dollars)](#sec-pre_1962_drug_development_cost_2024_usd) 📊: $24.7M (95% CI: $19.5M - $30M)
+- [Pharma Drug Development Cost (Current System)](#sec-pharma_drug_development_cost_current) 📊: $2.6 billion (95% CI: $1.5 billion - $4 billion)
+- [Pre-1962 Drug Development Cost (2024 Dollars)](#sec-pre_1962_drug_development_cost_2024_usd) 📊: $24.7 million (95% CI: $19.5 million - $30 million)
 
 $$
 \begin{gathered}
@@ -2662,8 +2662,8 @@ Total possible drug-disease combinations using existing safe compounds
 
 **Inputs**:
 
-- [Safe Compounds Available for Testing](#sec-safe_compounds_count): 9.5 thousand compounds (95% CI: 7 thousand compounds - 12 thousand compounds)
-- [Trial-Relevant Diseases](#sec-trial_relevant_diseases_count): 1 thousand diseases (95% CI: 800 diseases - 1.2 thousand diseases)
+- [Safe Compounds Available for Testing](#sec-safe_compounds_count): 9,500 compounds (95% CI: 7,000 compounds - 12,000 compounds)
+- [Trial-Relevant Diseases](#sec-trial_relevant_diseases_count): 1,000 diseases (95% CI: 800 diseases - 1,200 diseases)
 
 $$
 \begin{gathered}
@@ -2700,7 +2700,7 @@ Fraction of possible drug-disease space actually tested (<1%)
 
 **Inputs**:
 
-- [Tested Drug-Disease Relationships](#sec-tested_relationships_estimate): 32.5 thousand relationships (95% CI: 15 thousand relationships - 50 thousand relationships)
+- [Tested Drug-Disease Relationships](#sec-tested_relationships_estimate): 32,500 relationships (95% CI: 15,000 relationships - 50,000 relationships)
 - [Possible Drug-Disease Combinations](#sec-drug_disease_combinations_possible) 🔢: 9.5 million combinations
 
 $$
@@ -2738,7 +2738,7 @@ $$
 
 :::
 
-### Annual Welfare Cost of Avoidable Disease: $400T {#sec-global_disease_economic_burden_annual}
+### Annual Welfare Cost of Avoidable Disease: $400 trillion {#sec-global_disease_economic_burden_annual}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -2748,7 +2748,7 @@ Annual welfare cost of avoidable disease globally. Calculated as global DALY bur
 
 - [Global Annual DALY Burden](#sec-global_annual_daly_burden) 📊: 2.88 billion DALYs/year (SE: ±150 million DALYs/year)
 - [Eventually Avoidable DALY Percentage](#sec-eventually_avoidable_daly_pct): 92.6% (95% CI: 50% - 98%)
-- [Standard Economic Value per QALY](#sec-standard_economic_qaly_value_usd) 📊: $150K (SE: ±$30K)
+- [Standard Economic Value per QALY](#sec-standard_economic_qaly_value_usd) 📊: $150,000 (SE: ±$30,000)
 
 $$
 \begin{gathered}
@@ -2785,7 +2785,7 @@ Cost per QALY for pragmatic platform trials, calculated from RECOVERY trial data
 
 **Inputs**:
 
-- [RECOVERY Trial Total Cost](#sec-recovery_trial_total_cost) 📊: $20M (95% CI: $15M - $25M)
+- [RECOVERY Trial Total Cost](#sec-recovery_trial_total_cost) 📊: $20 million (95% CI: $15 million - $25 million)
 - [RECOVERY Trial Total QALYs Generated](#sec-recovery_trial_total_qalys_generated) 🔢: 5 million QALYs
 
 $$
@@ -2927,7 +2927,7 @@ Years to explore the entire therapeutic search space under current system. At cu
 
 **Inputs**:
 
-- [Diseases Without Effective Treatment](#sec-diseases_without_effective_treatment) 🔢: 6.65 thousand diseases
+- [Diseases Without Effective Treatment](#sec-diseases_without_effective_treatment) 🔢: 6,650 diseases
 - [Diseases Getting First Treatment Per Year](#sec-new_disease_first_treatments_per_year) 📊: 15 diseases/year (95% CI: 8 diseases/year - 30 diseases/year)
 
 $$
@@ -2967,7 +2967,7 @@ $$
 
 :::
 
-### Thalidomide DALYs Per Event: 41.8 thousand DALYs {#sec-thalidomide_dalys_per_event}
+### Thalidomide DALYs Per Event: 41,760 DALYs {#sec-thalidomide_dalys_per_event}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -2975,8 +2975,8 @@ Total DALYs per US-scale thalidomide event (YLL + YLD)
 
 **Inputs**:
 
-- [Thalidomide YLD Per Event](#sec-thalidomide_yld_per_event) 🔢: 13 thousand years
-- [Thalidomide YLL Per Event](#sec-thalidomide_yll_per_event) 🔢: 28.8 thousand years
+- [Thalidomide YLD Per Event](#sec-thalidomide_yld_per_event) 🔢: 12,960 years
+- [Thalidomide YLL Per Event](#sec-thalidomide_yll_per_event) 🔢: 28,800 years
 
 $$
 \begin{gathered}
@@ -3149,7 +3149,7 @@ Estimated US thalidomide cases prevented by FDA rejection
 
 **Inputs**:
 
-- [Thalidomide Cases Worldwide](#sec-thalidomide_cases_worldwide) 📊: 15 thousand cases (95% CI: 10 thousand cases - 20 thousand cases)
+- [Thalidomide Cases Worldwide](#sec-thalidomide_cases_worldwide) 📊: 15,000 cases (95% CI: 10,000 cases - 20,000 cases)
 - [US Population Share 1960](#sec-thalidomide_us_population_share_1960) 📊: 6% (95% CI: 5.5% - 6.5%)
 
 $$
@@ -3179,7 +3179,7 @@ $$
 
 :::
 
-### Thalidomide YLD Per Event: 13 thousand years {#sec-thalidomide_yld_per_event}
+### Thalidomide YLD Per Event: 12,960 years {#sec-thalidomide_yld_per_event}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -3235,7 +3235,7 @@ $$
 
 :::
 
-### Thalidomide YLL Per Event: 28.8 thousand years {#sec-thalidomide_yll_per_event}
+### Thalidomide YLL Per Event: 28,800 years {#sec-thalidomide_yll_per_event}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -3428,7 +3428,7 @@ Maximum DALYs saved by FDA preventing unsafe drugs over 62-year period 1962-2024
 
 **Inputs**:
 
-- [Thalidomide DALYs Per Event](#sec-thalidomide_dalys_per_event) 🔢: 41.8 thousand DALYs
+- [Thalidomide DALYs Per Event](#sec-thalidomide_dalys_per_event) 🔢: 41,760 DALYs
 
 $$
 \begin{gathered}
@@ -3518,7 +3518,7 @@ Fraction of possible drug-disease space that remains unexplored (>99%)
 
 **Inputs**:
 
-- [Tested Drug-Disease Relationships](#sec-tested_relationships_estimate): 32.5 thousand relationships (95% CI: 15 thousand relationships - 50 thousand relationships)
+- [Tested Drug-Disease Relationships](#sec-tested_relationships_estimate): 32,500 relationships (95% CI: 15,000 relationships - 50,000 relationships)
 - [Possible Drug-Disease Combinations](#sec-drug_disease_combinations_possible) 🔢: 9.5 million combinations
 
 $$
@@ -3570,9 +3570,9 @@ Cost per patient in ADAPTABLE trial ($14M PCORI grant / 15,076 patients). Note: 
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$929, $1.4K] • Distribution: Lognormal
+**Technical**: 95% CI: [$929, $1,400] • Distribution: Lognormal
 
-**What this means**: There's significant uncertainty here. The true value likely falls between $929 and $1.4K (±25%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: There's significant uncertainty here. The true value likely falls between $929 and $1,400 (±25%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -3584,7 +3584,7 @@ Cost per patient in ADAPTABLE trial ($14M PCORI grant / 15,076 patients). Note: 
 
 :::
 
-### ADAPTABLE Trial Total Cost: $14M {#sec-adaptable_trial_total_cost}
+### ADAPTABLE Trial Total Cost: $14 million {#sec-adaptable_trial_total_cost}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -3594,9 +3594,9 @@ PCORI grant for ADAPTABLE trial (2016-2019). Note: Direct funding only; total co
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$14M, $20M] • Distribution: Lognormal
+**Technical**: 95% CI: [$14 million, $20 million] • Distribution: Lognormal
 
-**What this means**: This estimate has moderate uncertainty. The true value likely falls between $14M and $20M (±21%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between $14 million and $20 million (±21%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -3700,7 +3700,7 @@ Global population with chronic diseases
 
 :::
 
-### Current Global Clinical Trials per Year: 3.3 thousand trials/year {#sec-current_trials_per_year}
+### Current Global Clinical Trials per Year: 3,300 trials/year {#sec-current_trials_per_year}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -3710,9 +3710,9 @@ Current global clinical trials per year
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [2.64 thousand trials/year, 3.96 thousand trials/year] • Distribution: Lognormal
+**Technical**: 95% CI: [2,640 trials/year, 3,960 trials/year] • Distribution: Lognormal
 
-**What this means**: This estimate has moderate uncertainty. The true value likely falls between 2.64 thousand trials/year and 3.96 thousand trials/year (±20%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between 2,640 trials/year and 3,960 trials/year (±20%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -3758,9 +3758,9 @@ dFDA pragmatic trial cost per patient. Uses ADAPTABLE trial ($929) as DELIBERATE
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$97, $3K] • Distribution: Lognormal
+**Technical**: 95% CI: [$97, $3,000] • Distribution: Lognormal
 
-**What this means**: This estimate is highly uncertain. The true value likely falls between $97 and $3K (±156%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: This estimate is highly uncertain. The true value likely falls between $97 and $3,000 (±156%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -3824,7 +3824,7 @@ Global annual DALY burden from all diseases and injuries (WHO/IHME Global Burden
 
 :::
 
-### Annual Global Spending on Clinical Trials: $60B {#sec-global_clinical_trials_spending_annual}
+### Annual Global Spending on Clinical Trials: $60 billion {#sec-global_clinical_trials_spending_annual}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -3834,9 +3834,9 @@ Annual global spending on clinical trials (Industry: $45-60B + Government: $3-6B
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$50B, $75B] • Distribution: Lognormal (SE: $10B)
+**Technical**: 95% CI: [$50 billion, $75 billion] • Distribution: Lognormal (SE: $10 billion)
 
-**What this means**: This estimate has moderate uncertainty. The true value likely falls between $50B and $75B (±21%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between $50 billion and $75 billion (±21%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -3858,7 +3858,7 @@ Total global deaths per day from all disease and aging (WHO Global Burden of Dis
 
 #### Uncertainty Range
 
-**Technical**: Distribution: Normal (SE: 7.5 thousand deaths/day)
+**Technical**: Distribution: Normal (SE: 7,500 deaths/day)
 
 #### Input Distribution
 
@@ -3868,7 +3868,7 @@ Total global deaths per day from all disease and aging (WHO Global Burden of Dis
 
 :::
 
-### Global GDP (2025): $115T {#sec-global_gdp_2025}
+### Global GDP (2025): $115 trillion {#sec-global_gdp_2025}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -3904,7 +3904,7 @@ Global life expectancy (2024)
 
 :::
 
-### Global Military Spending in 2024: $2.72T {#sec-global_military_spending_annual_2024}
+### Global Military Spending in 2024: $2.72 trillion {#sec-global_military_spending_annual_2024}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -3976,7 +3976,7 @@ Number of diseases that receive their FIRST effective treatment each year under 
 
 :::
 
-### NIH Standard Research Cost per QALY: $50K {#sec-nih_standard_research_cost_per_qaly}
+### NIH Standard Research Cost per QALY: $50,000 {#sec-nih_standard_research_cost_per_qaly}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -3986,9 +3986,9 @@ Typical cost per QALY for standard NIH-funded medical research portfolio. Reflec
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$20K, $100K] • Distribution: Lognormal
+**Technical**: 95% CI: [$20,000, $100,000] • Distribution: Lognormal
 
-**What this means**: This estimate is highly uncertain. The true value likely falls between $20K and $100K (±80%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: This estimate is highly uncertain. The true value likely falls between $20,000 and $100,000 (±80%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -4000,7 +4000,7 @@ Typical cost per QALY for standard NIH-funded medical research portfolio. Reflec
 
 :::
 
-### Pharma Drug Development Cost (Current System): $2.6B {#sec-pharma_drug_development_cost_current}
+### Pharma Drug Development Cost (Current System): $2.6 billion {#sec-pharma_drug_development_cost_current}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -4010,9 +4010,9 @@ Average cost to develop one drug in current system
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$1.5B, $4B] • Distribution: Lognormal (SE: $500M)
+**Technical**: 95% CI: [$1.5 billion, $4 billion] • Distribution: Lognormal (SE: $500 million)
 
-**What this means**: There's significant uncertainty here. The true value likely falls between $1.5B and $4B (±48%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: There's significant uncertainty here. The true value likely falls between $1.5 billion and $4 billion (±48%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -4060,7 +4060,7 @@ Median cost per patient in embedded pragmatic clinical trials (Ramsberg & Platt 
 
 :::
 
-### Pre-1962 Drug Development Cost (2024 Dollars): $24.7M {#sec-pre_1962_drug_development_cost_2024_usd}
+### Pre-1962 Drug Development Cost (2024 Dollars): $24.7 million {#sec-pre_1962_drug_development_cost_2024_usd}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -4070,9 +4070,9 @@ Pre-1962 drug development cost adjusted to 2024 dollars ($6.5M × 3.80 = $24.7M,
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$19.5M, $30M] • Distribution: Lognormal
+**Technical**: 95% CI: [$19.5 million, $30 million] • Distribution: Lognormal
 
-**What this means**: This estimate has moderate uncertainty. The true value likely falls between $19.5M and $30M (±21%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between $19.5 million and $30 million (±21%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -4096,7 +4096,7 @@ Estimated physicians conducting real-world efficacy trials pre-1962 (unverified 
 
 :::
 
-### Total Number of Rare Diseases Globally: 7 thousand diseases {#sec-rare_diseases_count_global}
+### Total Number of Rare Diseases Globally: 7,000 diseases {#sec-rare_diseases_count_global}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -4106,9 +4106,9 @@ Total number of rare diseases globally
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [6 thousand diseases, 10 thousand diseases] • Distribution: Normal
+**Technical**: 95% CI: [6,000 diseases, 10,000 diseases] • Distribution: Normal
 
-**What this means**: There's significant uncertainty here. The true value likely falls between 6 thousand diseases and 10 thousand diseases (±29%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: There's significant uncertainty here. The true value likely falls between 6,000 diseases and 10,000 diseases (±29%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The normal distribution means values cluster around the center with equal chances of being higher or lower.*
 
@@ -4130,9 +4130,9 @@ RECOVERY trial cost per patient. Note: RECOVERY was an outlier - hospital-based 
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$400, $2.5K] • Distribution: Lognormal
+**Technical**: 95% CI: [$400, $2,500] • Distribution: Lognormal
 
-**What this means**: This estimate is highly uncertain. The true value likely falls between $400 and $2.5K (±210%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: This estimate is highly uncertain. The true value likely falls between $400 and $2,500 (±210%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -4168,7 +4168,7 @@ Estimated lives saved globally by RECOVERY trial's dexamethasone discovery. NHS 
 
 :::
 
-### RECOVERY Trial Total Cost: $20M {#sec-recovery_trial_total_cost}
+### RECOVERY Trial Total Cost: $20 million {#sec-recovery_trial_total_cost}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -4178,9 +4178,9 @@ Total cost of UK RECOVERY trial. Enrolled tens of thousands of patients across m
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$15M, $25M] • Distribution: Lognormal
+**Technical**: 95% CI: [$15 million, $25 million] • Distribution: Lognormal
 
-**What this means**: This estimate has moderate uncertainty. The true value likely falls between $15M and $25M (±25%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between $15 million and $25 million (±25%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -4248,7 +4248,7 @@ Return on investment from smallpox eradication campaign
 
 :::
 
-### Standard Economic Value per QALY: $150K {#sec-standard_economic_qaly_value_usd}
+### Standard Economic Value per QALY: $150,000 {#sec-standard_economic_qaly_value_usd}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -4258,7 +4258,7 @@ Standard economic value per QALY
 
 #### Uncertainty Range
 
-**Technical**: Distribution: Normal (SE: $30K)
+**Technical**: Distribution: Normal (SE: $30,000)
 
 #### Input Distribution
 
@@ -4268,7 +4268,7 @@ Standard economic value per QALY
 
 :::
 
-### Thalidomide Cases Worldwide: 15 thousand cases {#sec-thalidomide_cases_worldwide}
+### Thalidomide Cases Worldwide: 15,000 cases {#sec-thalidomide_cases_worldwide}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -4278,9 +4278,9 @@ Total thalidomide birth defect cases worldwide (1957-1962)
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [10 thousand cases, 20 thousand cases] • Distribution: Lognormal
+**Technical**: 95% CI: [10,000 cases, 20,000 cases] • Distribution: Lognormal
 
-**What this means**: There's significant uncertainty here. The true value likely falls between 10 thousand cases and 20 thousand cases (±33%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: There's significant uncertainty here. The true value likely falls between 10,000 cases and 20,000 cases (±33%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -4388,7 +4388,7 @@ US share of world population in 1960
 
 :::
 
-### Phase 3 Cost per Patient: $41K {#sec-traditional_phase3_cost_per_patient}
+### Phase 3 Cost per Patient: $41,000 {#sec-traditional_phase3_cost_per_patient}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -4398,9 +4398,9 @@ Phase 3 cost per patient (median from FDA study)
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$20K, $120K] • Distribution: Lognormal
+**Technical**: 95% CI: [$20,000, $120,000] • Distribution: Lognormal
 
-**What this means**: This estimate is highly uncertain. The true value likely falls between $20K and $120K (±122%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: This estimate is highly uncertain. The true value likely falls between $20,000 and $120,000 (±122%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -4412,7 +4412,7 @@ Phase 3 cost per patient (median from FDA study)
 
 :::
 
-### Value of Statistical Life: $10M {#sec-value_of_statistical_life}
+### Value of Statistical Life: $10 million {#sec-value_of_statistical_life}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -4422,9 +4422,9 @@ Value of Statistical Life (conservative estimate)
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$5M, $15M] • Distribution: Gamma (SE: $3M)
+**Technical**: 95% CI: [$5 million, $15 million] • Distribution: Gamma (SE: $3 million)
 
-**What this means**: There's significant uncertainty here. The true value likely falls between $5M and $15M (±50%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: There's significant uncertainty here. The true value likely falls between $5 million and $15 million (±50%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The gamma distribution means values follow a specific statistical pattern.*
 
@@ -4440,7 +4440,7 @@ Value of Statistical Life (conservative estimate)
 
 Fundamental parameters and constants used throughout the analysis.
 
-### ADAPTABLE Trial Patients Enrolled: 15.1 thousand patients {#sec-adaptable_trial_patients}
+### ADAPTABLE Trial Patients Enrolled: 15,076 patients {#sec-adaptable_trial_patients}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -4450,7 +4450,7 @@ Patients enrolled in ADAPTABLE trial (PCORnet 2016-2019). Enrolled across 40 cli
 
 :::
 
-### dFDA Annual Trial Funding: $21.8B {#sec-dfda_annual_trial_funding}
+### dFDA Annual Trial Funding: $21.8 billion {#sec-dfda_annual_trial_funding}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -4464,7 +4464,7 @@ Assumed annual funding for dFDA pragmatic clinical trials (~$21.8B/year). Source
 
 :::
 
-### Decentralized Framework for Drug Assessment Core framework Annual OPEX: $18.9M {#sec-dfda_npv_annual_opex}
+### Decentralized Framework for Drug Assessment Core framework Annual OPEX: $18.9 million {#sec-dfda_npv_annual_opex}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -4472,9 +4472,9 @@ Decentralized Framework for Drug Assessment Core framework annual opex (midpoint
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$11M, $26.5M] • Distribution: Lognormal
+**Technical**: 95% CI: [$11 million, $26.5 million] • Distribution: Lognormal
 
-**What this means**: There's significant uncertainty here. The true value likely falls between $11M and $26.5M (±41%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: There's significant uncertainty here. The true value likely falls between $11 million and $26.5 million (±41%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -4486,7 +4486,7 @@ Decentralized Framework for Drug Assessment Core framework annual opex (midpoint
 
 :::
 
-### Decentralized Framework for Drug Assessment Core framework Build Cost: $40M {#sec-dfda_npv_upfront_cost}
+### Decentralized Framework for Drug Assessment Core framework Build Cost: $40 million {#sec-dfda_npv_upfront_cost}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -4494,9 +4494,9 @@ Decentralized Framework for Drug Assessment Core framework build cost
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$25M, $65M] • Distribution: Lognormal
+**Technical**: 95% CI: [$25 million, $65 million] • Distribution: Lognormal
 
-**What this means**: There's significant uncertainty here. The true value likely falls between $25M and $65M (±50%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: There's significant uncertainty here. The true value likely falls between $25 million and $65 million (±50%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -4508,7 +4508,7 @@ Decentralized Framework for Drug Assessment Core framework build cost
 
 :::
 
-### Decentralized Framework for Drug Assessment Community Support Costs: $2M {#sec-dfda_opex_community}
+### Decentralized Framework for Drug Assessment Community Support Costs: $2 million {#sec-dfda_opex_community}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -4516,9 +4516,9 @@ Decentralized Framework for Drug Assessment community support costs
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$1M, $3M] • Distribution: Lognormal
+**Technical**: 95% CI: [$1 million, $3 million] • Distribution: Lognormal
 
-**What this means**: There's significant uncertainty here. The true value likely falls between $1M and $3M (±50%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: There's significant uncertainty here. The true value likely falls between $1 million and $3 million (±50%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -4530,7 +4530,7 @@ Decentralized Framework for Drug Assessment community support costs
 
 :::
 
-### Decentralized Framework for Drug Assessment Infrastructure Costs: $8M {#sec-dfda_opex_infrastructure}
+### Decentralized Framework for Drug Assessment Infrastructure Costs: $8 million {#sec-dfda_opex_infrastructure}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -4538,9 +4538,9 @@ Decentralized Framework for Drug Assessment infrastructure costs (cloud, securit
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$5M, $12M] • Distribution: Lognormal
+**Technical**: 95% CI: [$5 million, $12 million] • Distribution: Lognormal
 
-**What this means**: There's significant uncertainty here. The true value likely falls between $5M and $12M (±44%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: There's significant uncertainty here. The true value likely falls between $5 million and $12 million (±44%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -4552,7 +4552,7 @@ Decentralized Framework for Drug Assessment infrastructure costs (cloud, securit
 
 :::
 
-### Decentralized Framework for Drug Assessment Maintenance Costs: $15M {#sec-dfda_opex_platform_maintenance}
+### Decentralized Framework for Drug Assessment Maintenance Costs: $15 million {#sec-dfda_opex_platform_maintenance}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -4560,9 +4560,9 @@ Decentralized Framework for Drug Assessment maintenance costs
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$10M, $22M] • Distribution: Lognormal
+**Technical**: 95% CI: [$10 million, $22 million] • Distribution: Lognormal
 
-**What this means**: There's significant uncertainty here. The true value likely falls between $10M and $22M (±40%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: There's significant uncertainty here. The true value likely falls between $10 million and $22 million (±40%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -4574,7 +4574,7 @@ Decentralized Framework for Drug Assessment maintenance costs
 
 :::
 
-### Decentralized Framework for Drug Assessment Regulatory Coordination Costs: $5M {#sec-dfda_opex_regulatory}
+### Decentralized Framework for Drug Assessment Regulatory Coordination Costs: $5 million {#sec-dfda_opex_regulatory}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -4582,9 +4582,9 @@ Decentralized Framework for Drug Assessment regulatory coordination costs
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$3M, $8M] • Distribution: Lognormal
+**Technical**: 95% CI: [$3 million, $8 million] • Distribution: Lognormal
 
-**What this means**: There's significant uncertainty here. The true value likely falls between $3M and $8M (±50%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: There's significant uncertainty here. The true value likely falls between $3 million and $8 million (±50%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -4596,7 +4596,7 @@ Decentralized Framework for Drug Assessment regulatory coordination costs
 
 :::
 
-### Decentralized Framework for Drug Assessment Staff Costs: $10M {#sec-dfda_opex_staff}
+### Decentralized Framework for Drug Assessment Staff Costs: $10 million {#sec-dfda_opex_staff}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -4604,9 +4604,9 @@ Decentralized Framework for Drug Assessment staff costs (minimal, AI-assisted)
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$7M, $15M] • Distribution: Lognormal
+**Technical**: 95% CI: [$7 million, $15 million] • Distribution: Lognormal
 
-**What this means**: There's significant uncertainty here. The true value likely falls between $7M and $15M (±40%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: There's significant uncertainty here. The true value likely falls between $7 million and $15 million (±40%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -4618,7 +4618,7 @@ Decentralized Framework for Drug Assessment staff costs (minimal, AI-assisted)
 
 :::
 
-### Decentralized Framework for Drug Assessment One-Time Build Cost: $40M {#sec-dfda_upfront_build}
+### Decentralized Framework for Drug Assessment One-Time Build Cost: $40 million {#sec-dfda_upfront_build}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -4628,7 +4628,7 @@ Decentralized Framework for Drug Assessment one-time build cost (central estimat
 
 :::
 
-### Decentralized Framework for Drug Assessment One-Time Build Cost (Maximum): $46M {#sec-dfda_upfront_build_max}
+### Decentralized Framework for Drug Assessment One-Time Build Cost (Maximum): $46 million {#sec-dfda_upfront_build_max}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -4638,7 +4638,7 @@ Decentralized Framework for Drug Assessment one-time build cost (high estimate)
 
 :::
 
-### DIH Broader Initiatives Annual OPEX: $21.1M {#sec-dih_npv_annual_opex_initiatives}
+### DIH Broader Initiatives Annual OPEX: $21.1 million {#sec-dih_npv_annual_opex_initiatives}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -4646,9 +4646,9 @@ DIH broader initiatives annual opex (medium case)
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$14M, $32M] • Distribution: Lognormal
+**Technical**: 95% CI: [$14 million, $32 million] • Distribution: Lognormal
 
-**What this means**: There's significant uncertainty here. The true value likely falls between $14M and $32M (±43%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: There's significant uncertainty here. The true value likely falls between $14 million and $32 million (±43%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -4660,7 +4660,7 @@ DIH broader initiatives annual opex (medium case)
 
 :::
 
-### DIH Broader Initiatives Upfront Cost: $230M {#sec-dih_npv_upfront_cost_initiatives}
+### DIH Broader Initiatives Upfront Cost: $230 million {#sec-dih_npv_upfront_cost_initiatives}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -4668,9 +4668,9 @@ DIH broader initiatives upfront cost (medium case)
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$150M, $350M] • Distribution: Lognormal
+**Technical**: 95% CI: [$150 million, $350 million] • Distribution: Lognormal
 
-**What this means**: There's significant uncertainty here. The true value likely falls between $150M and $350M (±44%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: There's significant uncertainty here. The true value likely falls between $150 million and $350 million (±44%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -4786,7 +4786,7 @@ Average QALYs gained per COVID death averted. Conservative estimate reflecting o
 
 :::
 
-### Safe Compounds Available for Testing: 9.5 thousand compounds {#sec-safe_compounds_count}
+### Safe Compounds Available for Testing: 9,500 compounds {#sec-safe_compounds_count}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -4794,9 +4794,9 @@ Total safe compounds available for repurposing (FDA-approved + GRAS substances, 
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [7 thousand compounds, 12 thousand compounds] • Distribution: Uniform
+**Technical**: 95% CI: [7,000 compounds, 12,000 compounds] • Distribution: Uniform
 
-**What this means**: There's significant uncertainty here. The true value likely falls between 7 thousand compounds and 12 thousand compounds (±26%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: There's significant uncertainty here. The true value likely falls between 7,000 compounds and 12,000 compounds (±26%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The uniform distribution means any value in the range is equally likely.*
 
@@ -4808,7 +4808,7 @@ Total safe compounds available for repurposing (FDA-approved + GRAS substances, 
 
 :::
 
-### Tested Drug-Disease Relationships: 32.5 thousand relationships {#sec-tested_relationships_estimate}
+### Tested Drug-Disease Relationships: 32,500 relationships {#sec-tested_relationships_estimate}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -4816,9 +4816,9 @@ Estimated drug-disease relationships actually tested (approved uses + repurposed
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [15 thousand relationships, 50 thousand relationships] • Distribution: Lognormal
+**Technical**: 95% CI: [15,000 relationships, 50,000 relationships] • Distribution: Lognormal
 
-**What this means**: This estimate is highly uncertain. The true value likely falls between 15 thousand relationships and 50 thousand relationships (±54%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: This estimate is highly uncertain. The true value likely falls between 15,000 relationships and 50,000 relationships (±54%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -4830,7 +4830,7 @@ Estimated drug-disease relationships actually tested (approved uses + repurposed
 
 :::
 
-### Trial-Relevant Diseases: 1 thousand diseases {#sec-trial_relevant_diseases_count}
+### Trial-Relevant Diseases: 1,000 diseases {#sec-trial_relevant_diseases_count}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -4838,9 +4838,9 @@ Consolidated count of trial-relevant diseases worth targeting (after grouping IC
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [800 diseases, 1.2 thousand diseases] • Distribution: Uniform
+**Technical**: 95% CI: [800 diseases, 1,200 diseases] • Distribution: Uniform
 
-**What this means**: This estimate has moderate uncertainty. The true value likely falls between 800 diseases and 1.2 thousand diseases (±20%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between 800 diseases and 1,200 diseases (±20%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The uniform distribution means any value in the range is equally likely.*
 

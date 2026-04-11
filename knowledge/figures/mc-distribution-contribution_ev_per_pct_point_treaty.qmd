@@ -117,10 +117,10 @@ plt.show()
 
 | Statistic | Value |
 |:----------|------:|
-| Baseline (deterministic) | $34.8K |
-| Mean (expected value) | $40.6K |
-| Median (50th percentile) | $33.5K |
-| Standard Deviation | $26.6K |
-| 90% Range (5th-95th percentile) | [$10.5K, $98.2K] |
+| Baseline (deterministic) | $34,800 |
+| Mean (expected value) | $40,604 |
+| Median (50th percentile) | $33,472 |
+| Standard Deviation | $26,625 |
+| 90% Range (5th-95th percentile) | [$10,533, $98,220] |
 
 *The histogram shows the distribution of Contribution EV per Percentage Point (Treaty) across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

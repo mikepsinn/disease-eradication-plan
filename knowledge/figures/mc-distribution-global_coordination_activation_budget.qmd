@@ -117,10 +117,10 @@ plt.show()
 
 | Statistic | Value |
 |:----------|------:|
-| Baseline (deterministic) | $30B |
-| Mean (expected value) | $30.3B |
-| Median (50th percentile) | $29.9B |
-| Standard Deviation | $9.31B |
-| 90% Range (5th-95th percentile) | [$15.7B, $46.4B] |
+| Baseline (deterministic) | $30 billion |
+| Mean (expected value) | $30.3 billion |
+| Median (50th percentile) | $29.9 billion |
+| Standard Deviation | $9.31 billion |
+| 90% Range (5th-95th percentile) | [$15.7 billion, $46.4 billion] |
 
 *The histogram shows the distribution of Global Coordination Activation Budget across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

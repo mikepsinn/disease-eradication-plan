@@ -117,10 +117,10 @@ plt.show()
 
 | Statistic | Value |
 |:----------|------:|
-| Baseline (deterministic) | $4.02M |
-| Mean (expected value) | $4.1M |
-| Median (50th percentile) | $3.68M |
-| Standard Deviation | $1.58M |
-| 90% Range (5th-95th percentile) | [$2.47M, $7.28M] |
+| Baseline (deterministic) | $4.02 million |
+| Mean (expected value) | $4.1 million |
+| Median (50th percentile) | $3.68 million |
+| Standard Deviation | $1.58 million |
+| 90% Range (5th-95th percentile) | [$2.47 million, $7.28 million] |
 
 *The histogram shows the distribution of Wishonia HALE Value Per Capita across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

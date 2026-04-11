@@ -117,10 +117,10 @@ plt.show()
 
 | Statistic | Value |
 |:----------|------:|
-| Baseline (deterministic) | $12.6K |
-| Mean (expected value) | $14K |
-| Median (50th percentile) | $12.2K |
-| Standard Deviation | $4.36K |
-| 90% Range (5th-95th percentile) | [$10.6K, $23.4K] |
+| Baseline (deterministic) | $12,625 |
+| Mean (expected value) | $13,963 |
+| Median (50th percentile) | $12,188 |
+| Standard Deviation | $4,356 |
+| 90% Range (5th-95th percentile) | [$10,640, $23,413] |
 
 *The histogram shows the distribution of Political Dysfunction Tax per Person (Annual) across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

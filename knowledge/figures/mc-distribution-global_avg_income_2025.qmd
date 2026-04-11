@@ -117,10 +117,10 @@ plt.show()
 
 | Statistic | Value |
 |:----------|------:|
-| Baseline (deterministic) | $14.4K |
-| Mean (expected value) | $14.4K |
-| Median (50th percentile) | $14.4K |
+| Baseline (deterministic) | $14,375 |
+| Mean (expected value) | $14,379 |
+| Median (50th percentile) | $14,379 |
 | Standard Deviation | $176 |
-| 90% Range (5th-95th percentile) | [$14.1K, $14.7K] |
+| 90% Range (5th-95th percentile) | [$14,078, $14,686] |
 
 *The histogram shows the distribution of Global Average Income (2025 Baseline) across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

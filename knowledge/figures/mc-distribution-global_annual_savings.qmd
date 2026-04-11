@@ -117,10 +117,10 @@ plt.show()
 
 | Statistic | Value |
 |:----------|------:|
-| Baseline (deterministic) | $31.1T |
-| Mean (expected value) | $31T |
-| Median (50th percentile) | $31T |
-| Standard Deviation | $1.69T |
-| 90% Range (5th-95th percentile) | [$28.1T, $33.9T] |
+| Baseline (deterministic) | $31.1 trillion |
+| Mean (expected value) | $31 trillion |
+| Median (50th percentile) | $31 trillion |
+| Standard Deviation | $1.69 trillion |
+| 90% Range (5th-95th percentile) | [$28.1 trillion, $33.9 trillion] |
 
 *The histogram shows the distribution of Global Annual Savings across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

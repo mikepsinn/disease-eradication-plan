@@ -160,7 +160,7 @@ Total eventually avoidable deaths from delaying disease eradication by 8.2 years
 **Inputs**:
 
 - [Regulatory Delay for Efficacy Testing Post-Safety Verification](#sec-efficacy_lag_years) 📊: 8.2 years (SE: ±2 years)
-- [Global Daily Deaths from Disease and Aging](#sec-global_disease_deaths_daily) 📊: 150 thousand deaths/day (SE: ±7.5 thousand deaths/day)
+- [Global Daily Deaths from Disease and Aging](#sec-global_disease_deaths_daily) 📊: 150 thousand deaths/day (SE: ±7,500 deaths/day)
 
 $$
 \begin{gathered}
@@ -198,7 +198,7 @@ Total economic loss from delaying disease eradication by 8.2 years (PRIMARY esti
 **Inputs**:
 
 - [Total DALYs Lost from Disease Eradication Delay](#sec-dfda_efficacy_lag_elimination_dalys) 🔢: 7.94 billion DALYs
-- [Standard Economic Value per QALY](#sec-standard_economic_qaly_value_usd) 📊: $150K (SE: ±$30K)
+- [Standard Economic Value per QALY](#sec-standard_economic_qaly_value_usd) 📊: $150,000 (SE: ±$30,000)
 
 $$
 \begin{gathered}
@@ -359,8 +359,8 @@ Trial cost reduction percentage: 1 - (dFDA pragmatic cost / traditional Phase 3 
 
 **Inputs**:
 
-- [dFDA Pragmatic Trial Cost per Patient](#sec-dfda_pragmatic_trial_cost_per_patient) 📊: $929 (95% CI: $97 - $3K)
-- [Phase 3 Cost per Patient](#sec-traditional_phase3_cost_per_patient) 📊: $41K (95% CI: $20K - $120K)
+- [dFDA Pragmatic Trial Cost per Patient](#sec-dfda_pragmatic_trial_cost_per_patient) 📊: $929 (95% CI: $97 - $3,000)
+- [Phase 3 Cost per Patient](#sec-traditional_phase3_cost_per_patient) 📊: $41,000 (95% CI: $20,000 - $120,000)
 
 $$
 \begin{gathered}
@@ -389,7 +389,7 @@ $$
 
 :::
 
-### Diseases Without Effective Treatment: 6.65 thousand diseases {#sec-diseases_without_effective_treatment}
+### Diseases Without Effective Treatment: 6,650 diseases {#sec-diseases_without_effective_treatment}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -397,7 +397,7 @@ Number of diseases without effective treatment. 95% of 7,000 rare diseases lack 
 
 **Inputs**:
 
-- [Total Number of Rare Diseases Globally](#sec-rare_diseases_count_global) 📊: 7 thousand diseases (95% CI: 6 thousand diseases - 10 thousand diseases)
+- [Total Number of Rare Diseases Globally](#sec-rare_diseases_count_global) 📊: 7,000 diseases (95% CI: 6,000 diseases - 10,000 diseases)
 
 $$
 \begin{gathered}
@@ -428,7 +428,7 @@ $$
 
 :::
 
-### Total Drugs Approved Since 1962: 3.1 thousand drugs {#sec-drugs_approved_since_1962}
+### Total Drugs Approved Since 1962: 3,100 drugs {#sec-drugs_approved_since_1962}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -475,8 +475,8 @@ Drug development cost increase from 1980s to current
 
 **Inputs**:
 
-- [Drug Development Cost (1980s)](#sec-drug_development_cost_1980s) 📊: $194M (95% CI: $146M - $242M)
-- [Pharma Drug Development Cost (Current System)](#sec-pharma_drug_development_cost_current) 📊: $2.6B (95% CI: $1.5B - $4B)
+- [Drug Development Cost (1980s)](#sec-drug_development_cost_1980s) 📊: $194 million (95% CI: $146 million - $242 million)
+- [Pharma Drug Development Cost (Current System)](#sec-pharma_drug_development_cost_current) 📊: $2.6 billion (95% CI: $1.5 billion - $4 billion)
 
 $$
 \begin{gathered}
@@ -507,7 +507,7 @@ $$
 
 :::
 
-### Cumulative Efficacy Testing Cost (1962-2024): $4.84T {#sec-efficacy_lag_cumulative_excess_cost}
+### Cumulative Efficacy Testing Cost (1962-2024): $4.84 trillion {#sec-efficacy_lag_cumulative_excess_cost}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -515,8 +515,8 @@ Cumulative Phase 2/3 efficacy testing cost since 1962. Uses direct Phase 2/3 cos
 
 **Inputs**:
 
-- [Pharma Phase 2/3 Cost Barrier Per Drug](#sec-pharma_phase_2_3_cost_barrier): $1.56B (SE: ±$200M)
-- [Total Drugs Approved Since 1962](#sec-drugs_approved_since_1962) 🔢: 3.1 thousand drugs
+- [Pharma Phase 2/3 Cost Barrier Per Drug](#sec-pharma_phase_2_3_cost_barrier): $1.56 billion (SE: ±$200 million)
+- [Total Drugs Approved Since 1962](#sec-drugs_approved_since_1962) 🔢: 3,100 drugs
 
 $$
 \begin{gathered}
@@ -553,7 +553,7 @@ $$
 
 :::
 
-### Efficacy Lag Deaths (9/11 Equivalents): 34.1 thousand 9/11s {#sec-efficacy_lag_deaths_911_equivalents}
+### Efficacy Lag Deaths (9/11 Equivalents): 34,132 9/11s {#sec-efficacy_lag_deaths_911_equivalents}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -562,7 +562,7 @@ Total deaths from efficacy lag expressed in 9/11 equivalents. Makes the mortalit
 **Inputs**:
 
 - [Total Deaths from Historical Progress Delays](#sec-existing_drugs_efficacy_lag_deaths_total) 🔢: 102 million deaths
-- [September 11 Deaths](#sec-sept_11_deaths) 📊: 2.98 thousand people
+- [September 11 Deaths](#sec-sept_11_deaths) 📊: 2,977 people
 
 $$
 \begin{gathered}
@@ -741,7 +741,7 @@ $$
 
 :::
 
-### Thalidomide DALYs Per Event: 41.8 thousand DALYs {#sec-thalidomide_dalys_per_event}
+### Thalidomide DALYs Per Event: 41,760 DALYs {#sec-thalidomide_dalys_per_event}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -749,8 +749,8 @@ Total DALYs per US-scale thalidomide event (YLL + YLD)
 
 **Inputs**:
 
-- [Thalidomide YLD Per Event](#sec-thalidomide_yld_per_event) 🔢: 13 thousand years
-- [Thalidomide YLL Per Event](#sec-thalidomide_yll_per_event) 🔢: 28.8 thousand years
+- [Thalidomide YLD Per Event](#sec-thalidomide_yld_per_event) 🔢: 12,960 years
+- [Thalidomide YLL Per Event](#sec-thalidomide_yll_per_event) 🔢: 28,800 years
 
 $$
 \begin{gathered}
@@ -923,7 +923,7 @@ Estimated US thalidomide cases prevented by FDA rejection
 
 **Inputs**:
 
-- [Thalidomide Cases Worldwide](#sec-thalidomide_cases_worldwide) 📊: 15 thousand cases (95% CI: 10 thousand cases - 20 thousand cases)
+- [Thalidomide Cases Worldwide](#sec-thalidomide_cases_worldwide) 📊: 15,000 cases (95% CI: 10,000 cases - 20,000 cases)
 - [US Population Share 1960](#sec-thalidomide_us_population_share_1960) 📊: 6% (95% CI: 5.5% - 6.5%)
 
 $$
@@ -953,7 +953,7 @@ $$
 
 :::
 
-### Thalidomide YLD Per Event: 13 thousand years {#sec-thalidomide_yld_per_event}
+### Thalidomide YLD Per Event: 12,960 years {#sec-thalidomide_yld_per_event}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -1009,7 +1009,7 @@ $$
 
 :::
 
-### Thalidomide YLL Per Event: 28.8 thousand years {#sec-thalidomide_yll_per_event}
+### Thalidomide YLL Per Event: 28,800 years {#sec-thalidomide_yll_per_event}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -1202,7 +1202,7 @@ Maximum DALYs saved by FDA preventing unsafe drugs over 62-year period 1962-2024
 
 **Inputs**:
 
-- [Thalidomide DALYs Per Event](#sec-thalidomide_dalys_per_event) 🔢: 41.8 thousand DALYs
+- [Thalidomide DALYs Per Event](#sec-thalidomide_dalys_per_event) 🔢: 41,760 DALYs
 
 $$
 \begin{gathered}
@@ -1342,9 +1342,9 @@ dFDA pragmatic trial cost per patient. Uses ADAPTABLE trial ($929) as DELIBERATE
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$97, $3K] • Distribution: Lognormal
+**Technical**: 95% CI: [$97, $3,000] • Distribution: Lognormal
 
-**What this means**: This estimate is highly uncertain. The true value likely falls between $97 and $3K (±156%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: This estimate is highly uncertain. The true value likely falls between $97 and $3,000 (±156%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -1356,7 +1356,7 @@ dFDA pragmatic trial cost per patient. Uses ADAPTABLE trial ($929) as DELIBERATE
 
 :::
 
-### Drug Development Cost (1980s): $194M {#sec-drug_development_cost_1980s}
+### Drug Development Cost (1980s): $194 million {#sec-drug_development_cost_1980s}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -1366,9 +1366,9 @@ Drug development cost in 1980s (compounded to approval, 1990 dollars)
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$146M, $242M] • Distribution: Lognormal
+**Technical**: 95% CI: [$146 million, $242 million] • Distribution: Lognormal
 
-**What this means**: This estimate has moderate uncertainty. The true value likely falls between $146M and $242M (±25%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between $146 million and $242 million (±25%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -1458,7 +1458,7 @@ Total global deaths per day from all disease and aging (WHO Global Burden of Dis
 
 #### Uncertainty Range
 
-**Technical**: Distribution: Normal (SE: 7.5 thousand deaths/day)
+**Technical**: Distribution: Normal (SE: 7,500 deaths/day)
 
 #### Input Distribution
 
@@ -1488,7 +1488,7 @@ Global life expectancy (2024)
 
 :::
 
-### Pharma Drug Development Cost (Current System): $2.6B {#sec-pharma_drug_development_cost_current}
+### Pharma Drug Development Cost (Current System): $2.6 billion {#sec-pharma_drug_development_cost_current}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -1498,9 +1498,9 @@ Average cost to develop one drug in current system
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$1.5B, $4B] • Distribution: Lognormal (SE: $500M)
+**Technical**: 95% CI: [$1.5 billion, $4 billion] • Distribution: Lognormal (SE: $500 million)
 
-**What this means**: There's significant uncertainty here. The true value likely falls between $1.5B and $4B (±48%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: There's significant uncertainty here. The true value likely falls between $1.5 billion and $4 billion (±48%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -1584,7 +1584,7 @@ Estimated physicians conducting real-world efficacy trials pre-1962 (unverified 
 
 :::
 
-### Total Number of Rare Diseases Globally: 7 thousand diseases {#sec-rare_diseases_count_global}
+### Total Number of Rare Diseases Globally: 7,000 diseases {#sec-rare_diseases_count_global}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -1594,9 +1594,9 @@ Total number of rare diseases globally
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [6 thousand diseases, 10 thousand diseases] • Distribution: Normal
+**Technical**: 95% CI: [6,000 diseases, 10,000 diseases] • Distribution: Normal
 
-**What this means**: There's significant uncertainty here. The true value likely falls between 6 thousand diseases and 10 thousand diseases (±29%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: There's significant uncertainty here. The true value likely falls between 6,000 diseases and 10,000 diseases (±29%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The normal distribution means values cluster around the center with equal chances of being higher or lower.*
 
@@ -1652,7 +1652,7 @@ Pre-death suffering period during post-safety efficacy testing delay (average ye
 
 :::
 
-### September 11 Deaths: 2.98 thousand people {#sec-sept_11_deaths}
+### September 11 Deaths: 2,977 people {#sec-sept_11_deaths}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -1668,7 +1668,7 @@ Total deaths in the September 11, 2001 attacks. 2,977 victims (excluding 19 hija
 
 :::
 
-### Standard Economic Value per QALY: $150K {#sec-standard_economic_qaly_value_usd}
+### Standard Economic Value per QALY: $150,000 {#sec-standard_economic_qaly_value_usd}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -1678,7 +1678,7 @@ Standard economic value per QALY
 
 #### Uncertainty Range
 
-**Technical**: Distribution: Normal (SE: $30K)
+**Technical**: Distribution: Normal (SE: $30,000)
 
 #### Input Distribution
 
@@ -1688,7 +1688,7 @@ Standard economic value per QALY
 
 :::
 
-### Thalidomide Cases Worldwide: 15 thousand cases {#sec-thalidomide_cases_worldwide}
+### Thalidomide Cases Worldwide: 15,000 cases {#sec-thalidomide_cases_worldwide}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -1698,9 +1698,9 @@ Total thalidomide birth defect cases worldwide (1957-1962)
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [10 thousand cases, 20 thousand cases] • Distribution: Lognormal
+**Technical**: 95% CI: [10,000 cases, 20,000 cases] • Distribution: Lognormal
 
-**What this means**: There's significant uncertainty here. The true value likely falls between 10 thousand cases and 20 thousand cases (±33%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: There's significant uncertainty here. The true value likely falls between 10,000 cases and 20,000 cases (±33%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -1808,7 +1808,7 @@ US share of world population in 1960
 
 :::
 
-### Phase 3 Cost per Patient: $41K {#sec-traditional_phase3_cost_per_patient}
+### Phase 3 Cost per Patient: $41,000 {#sec-traditional_phase3_cost_per_patient}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -1818,9 +1818,9 @@ Phase 3 cost per patient (median from FDA study)
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$20K, $120K] • Distribution: Lognormal
+**Technical**: 95% CI: [$20,000, $120,000] • Distribution: Lognormal
 
-**What this means**: This estimate is highly uncertain. The true value likely falls between $20K and $120K (±122%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: This estimate is highly uncertain. The true value likely falls between $20,000 and $120,000 (±122%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -1928,7 +1928,7 @@ Standard discount rate for NPV analysis (3% annual, social discount rate)
 
 :::
 
-### Pharma Phase 2/3 Cost Barrier Per Drug: $1.56B {#sec-pharma_phase_2_3_cost_barrier}
+### Pharma Phase 2/3 Cost Barrier Per Drug: $1.56 billion {#sec-pharma_phase_2_3_cost_barrier}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -1936,7 +1936,7 @@ Average Phase 2/3 efficacy testing cost per drug that pharma must fund (~60% of 
 
 #### Uncertainty Range
 
-**Technical**: Distribution: Normal (SE: $200M)
+**Technical**: Distribution: Normal (SE: $200 million)
 
 #### Input Distribution
 

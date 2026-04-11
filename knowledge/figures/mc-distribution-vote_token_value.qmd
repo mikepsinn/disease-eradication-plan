@@ -117,10 +117,10 @@ plt.show()
 
 | Statistic | Value |
 |:----------|------:|
-| Baseline (deterministic) | $8.44K |
-| Mean (expected value) | $14.6K |
-| Median (50th percentile) | $3.03K |
-| Standard Deviation | $33.9K |
-| 90% Range (5th-95th percentile) | [$351, $69.9K] |
+| Baseline (deterministic) | $8,436 |
+| Mean (expected value) | $14,606 |
+| Median (50th percentile) | $3,028 |
+| Standard Deviation | $33,939 |
+| 90% Range (5th-95th percentile) | [$351, $69,944] |
 
 *The histogram shows the distribution of VOTE Point Value across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

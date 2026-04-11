@@ -120,7 +120,7 @@ plt.show()
 | Baseline (deterministic) | $1.26 quadrillion |
 | Mean (expected value) | $1.13 quadrillion |
 | Median (50th percentile) | $1.07 quadrillion |
-| Standard Deviation | $406T |
-| 90% Range (5th-95th percentile) | [$579T, $1.89 quadrillion] |
+| Standard Deviation | $406 trillion |
+| 90% Range (5th-95th percentile) | [$579 trillion, $1.89 quadrillion] |
 
 *The histogram shows the distribution of QALY Value of Life Lost to War Since 1900 across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

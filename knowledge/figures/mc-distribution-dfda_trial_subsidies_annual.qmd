@@ -117,10 +117,10 @@ plt.show()
 
 | Statistic | Value |
 |:----------|------:|
-| Baseline (deterministic) | $21.8B |
-| Mean (expected value) | $21.8B |
-| Median (50th percentile) | $21.8B |
-| Standard Deviation | $8.21M |
-| 90% Range (5th-95th percentile) | [$21.7B, $21.8B] |
+| Baseline (deterministic) | $21.8 billion |
+| Mean (expected value) | $21.8 billion |
+| Median (50th percentile) | $21.8 billion |
+| Standard Deviation | $8.21 million |
+| 90% Range (5th-95th percentile) | [$21.7 billion, $21.8 billion] |
 
 *The histogram shows the distribution of dFDA Annual Trial Subsidies across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

@@ -117,10 +117,10 @@ plt.show()
 
 | Statistic | Value |
 |:----------|------:|
-| Baseline (deterministic) | $47.2M |
-| Mean (expected value) | $82M |
-| Median (50th percentile) | $46.8M |
-| Standard Deviation | $96.5M |
-| 90% Range (5th-95th percentile) | [$13.9M, $286M] |
+| Baseline (deterministic) | $47.2 million |
+| Mean (expected value) | $82 million |
+| Median (50th percentile) | $46.8 million |
+| Standard Deviation | $96.5 million |
+| 90% Range (5th-95th percentile) | [$13.9 million, $286 million] |
 
 *The histogram shows the distribution of Wishonia Trajectory Lifetime Income Gain (Per Capita) across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

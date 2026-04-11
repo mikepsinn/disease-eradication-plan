@@ -117,10 +117,10 @@ plt.show()
 
 | Statistic | Value |
 |:----------|------:|
-| Baseline (deterministic) | $167T |
-| Mean (expected value) | $167T |
-| Median (50th percentile) | $167T |
+| Baseline (deterministic) | $167 trillion |
+| Mean (expected value) | $167 trillion |
+| Median (50th percentile) | $167 trillion |
 | Standard Deviation | $0.031 |
-| 90% Range (5th-95th percentile) | [$167T, $167T] |
+| 90% Range (5th-95th percentile) | [$167 trillion, $167 trillion] |
 
 *The histogram shows the distribution of Current Trajectory GDP at Year 15 across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

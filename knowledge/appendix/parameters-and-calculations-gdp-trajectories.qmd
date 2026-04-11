@@ -53,7 +53,7 @@ This appendix documents all 115 parameters used in the analysis, organized by ty
 
 Parameters derived from mathematical formulas and economic models.
 
-### Current Trajectory Average Income at Year 20: $20.5K {#sec-current_trajectory_avg_income_year_20}
+### Current Trajectory Average Income at Year 20: $20,483 {#sec-current_trajectory_avg_income_year_20}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -61,7 +61,7 @@ Average income (GDP per capita) at year 20 under current trajectory trajectory.
 
 **Inputs**:
 
-- [Current Trajectory GDP at Year 20](#sec-current_trajectory_gdp_year_20) 🔢: $188T
+- [Current Trajectory GDP at Year 20](#sec-current_trajectory_gdp_year_20) 🔢: $188 trillion
 - [Global Population 2045 (Projected)](#sec-global_population_2045_projected) 📊: 9.2 billion of people
 
 $$
@@ -88,7 +88,7 @@ $$
 
 :::
 
-### Current Trajectory Cumulative Lifetime Income (Per Capita): $1.1M {#sec-current_trajectory_cumulative_lifetime_income}
+### Current Trajectory Cumulative Lifetime Income (Per Capita): $1.1 million {#sec-current_trajectory_cumulative_lifetime_income}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -96,8 +96,8 @@ Cumulative per-capita income over an average remaining lifespan under current tr
 
 **Inputs**:
 
-- [Global Average Income (2025 Baseline)](#sec-global_avg_income_2025) 🔢: $14.4K
-- [Current Trajectory Average Income at Year 20](#sec-current_trajectory_avg_income_year_20) 🔢: $20.5K
+- [Global Average Income (2025 Baseline)](#sec-global_avg_income_2025) 🔢: $14,375
+- [Current Trajectory Average Income at Year 20](#sec-current_trajectory_avg_income_year_20) 🔢: $20,483
 - [Average Remaining Years (Median Person)](#sec-global_avg_remaining_years) 🔢: 48.5 years
 
 $$
@@ -125,7 +125,7 @@ $$
 
 :::
 
-### Current Trajectory GDP at Year 20: $188T {#sec-current_trajectory_gdp_year_20}
+### Current Trajectory GDP at Year 20: $188 trillion {#sec-current_trajectory_gdp_year_20}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -133,7 +133,7 @@ Global GDP at year 20 under status-quo current trajectory growth.
 
 **Inputs**:
 
-- [Global GDP (2025)](#sec-global_gdp_2025) 📊: $115T
+- [Global GDP (2025)](#sec-global_gdp_2025) 📊: $115 trillion
 - [Baseline Global GDP Growth Rate](#sec-gdp_baseline_growth_rate): 2.5%
 
 $$
@@ -165,9 +165,9 @@ Calendar year when the destructive economy (military + cybercrime) reaches 25% o
 - [Cybercrime Cost CAGR](#sec-global_cybercrime_cagr) 📊: 15%
 - [Military Spending Real CAGR (10-Year)](#sec-global_military_spending_real_cagr_10yr) 📊: 3.4%
 - [Baseline Global GDP Growth Rate](#sec-gdp_baseline_growth_rate): 2.5%
-- [Global Military Spending in 2024](#sec-global_military_spending_annual_2024) 📊: $2.72T
-- [Global Destructive Economy (2025)](#sec-global_destructive_economy_annual_2025) 🔢: $13.2T
-- [Global Cybercrime Costs (2025)](#sec-global_cybercrime_cost_annual_2025) 📊: $10.5T
+- [Global Military Spending in 2024](#sec-global_military_spending_annual_2024) 📊: $2.72 trillion
+- [Global Destructive Economy (2025)](#sec-global_destructive_economy_annual_2025) 🔢: $13.2 trillion
+- [Global Cybercrime Costs (2025)](#sec-global_cybercrime_cost_annual_2025) 📊: $10.5 trillion
 
 $$
 \begin{gathered}
@@ -211,9 +211,9 @@ Calendar year when the destructive economy (military + cybercrime) reaches 35% o
 - [Cybercrime Cost CAGR](#sec-global_cybercrime_cagr) 📊: 15%
 - [Military Spending Real CAGR (10-Year)](#sec-global_military_spending_real_cagr_10yr) 📊: 3.4%
 - [Baseline Global GDP Growth Rate](#sec-gdp_baseline_growth_rate): 2.5%
-- [Global Military Spending in 2024](#sec-global_military_spending_annual_2024) 📊: $2.72T
-- [Global Destructive Economy (2025)](#sec-global_destructive_economy_annual_2025) 🔢: $13.2T
-- [Global Cybercrime Costs (2025)](#sec-global_cybercrime_cost_annual_2025) 📊: $10.5T
+- [Global Military Spending in 2024](#sec-global_military_spending_annual_2024) 📊: $2.72 trillion
+- [Global Destructive Economy (2025)](#sec-global_destructive_economy_annual_2025) 🔢: $13.2 trillion
+- [Global Cybercrime Costs (2025)](#sec-global_cybercrime_cost_annual_2025) 📊: $10.5 trillion
 
 $$
 \begin{gathered}
@@ -257,9 +257,9 @@ Calendar year when the destructive economy (military + cybercrime) reaches 50% o
 - [Cybercrime Cost CAGR](#sec-global_cybercrime_cagr) 📊: 15%
 - [Military Spending Real CAGR (10-Year)](#sec-global_military_spending_real_cagr_10yr) 📊: 3.4%
 - [Baseline Global GDP Growth Rate](#sec-gdp_baseline_growth_rate): 2.5%
-- [Global Military Spending in 2024](#sec-global_military_spending_annual_2024) 📊: $2.72T
-- [Global Destructive Economy (2025)](#sec-global_destructive_economy_annual_2025) 🔢: $13.2T
-- [Global Cybercrime Costs (2025)](#sec-global_cybercrime_cost_annual_2025) 📊: $10.5T
+- [Global Military Spending in 2024](#sec-global_military_spending_annual_2024) 📊: $2.72 trillion
+- [Global Destructive Economy (2025)](#sec-global_destructive_economy_annual_2025) 🔢: $13.2 trillion
+- [Global Cybercrime Costs (2025)](#sec-global_cybercrime_cost_annual_2025) 📊: $10.5 trillion
 
 $$
 \begin{gathered}
@@ -290,7 +290,7 @@ $$
 
 :::
 
-### Total Annual Decentralized Framework for Drug Assessment Operational Costs: $40M {#sec-dfda_annual_opex}
+### Total Annual Decentralized Framework for Drug Assessment Operational Costs: $40 million {#sec-dfda_annual_opex}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -298,11 +298,11 @@ Total annual Decentralized Framework for Drug Assessment operational costs (sum 
 
 **Inputs**:
 
-- [Decentralized Framework for Drug Assessment Maintenance Costs](#sec-dfda_opex_platform_maintenance): $15M (95% CI: $10M - $22M)
-- [Decentralized Framework for Drug Assessment Staff Costs](#sec-dfda_opex_staff): $10M (95% CI: $7M - $15M)
-- [Decentralized Framework for Drug Assessment Infrastructure Costs](#sec-dfda_opex_infrastructure): $8M (95% CI: $5M - $12M)
-- [Decentralized Framework for Drug Assessment Regulatory Coordination Costs](#sec-dfda_opex_regulatory): $5M (95% CI: $3M - $8M)
-- [Decentralized Framework for Drug Assessment Community Support Costs](#sec-dfda_opex_community): $2M (95% CI: $1M - $3M)
+- [Decentralized Framework for Drug Assessment Maintenance Costs](#sec-dfda_opex_platform_maintenance): $15 million (95% CI: $10 million - $22 million)
+- [Decentralized Framework for Drug Assessment Staff Costs](#sec-dfda_opex_staff): $10 million (95% CI: $7 million - $15 million)
+- [Decentralized Framework for Drug Assessment Infrastructure Costs](#sec-dfda_opex_infrastructure): $8 million (95% CI: $5 million - $12 million)
+- [Decentralized Framework for Drug Assessment Regulatory Coordination Costs](#sec-dfda_opex_regulatory): $5 million (95% CI: $3 million - $8 million)
+- [Decentralized Framework for Drug Assessment Community Support Costs](#sec-dfda_opex_community): $2 million (95% CI: $1 million - $3 million)
 
 $$
 \begin{gathered}
@@ -386,8 +386,8 @@ Number of patients fundable annually from dFDA funding at pragmatic trial cost. 
 
 **Inputs**:
 
-- [dFDA Annual Trial Subsidies](#sec-dfda_trial_subsidies_annual) 🔢: $21.8B
-- [dFDA Pragmatic Trial Cost per Patient](#sec-dfda_pragmatic_trial_cost_per_patient) 📊: $929 (95% CI: $97 - $3K)
+- [dFDA Annual Trial Subsidies](#sec-dfda_trial_subsidies_annual) 🔢: $21.8 billion
+- [dFDA Pragmatic Trial Cost per Patient](#sec-dfda_pragmatic_trial_cost_per_patient) 📊: $929 (95% CI: $97 - $3,000)
 
 $$
 \begin{gathered}
@@ -499,7 +499,7 @@ $$
 
 :::
 
-### dFDA Annual Trial Subsidies: $21.8B {#sec-dfda_trial_subsidies_annual}
+### dFDA Annual Trial Subsidies: $21.8 billion {#sec-dfda_trial_subsidies_annual}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -507,8 +507,8 @@ Annual clinical trial patient subsidies from dFDA funding (total funding minus o
 
 **Inputs**:
 
-- [dFDA Annual Trial Funding](#sec-dfda_annual_trial_funding): $21.8B
-- [Total Annual Decentralized Framework for Drug Assessment Operational Costs](#sec-dfda_annual_opex) 🔢: $40M
+- [dFDA Annual Trial Funding](#sec-dfda_annual_trial_funding): $21.8 billion
+- [Total Annual Decentralized Framework for Drug Assessment Operational Costs](#sec-dfda_annual_opex) 🔢: $40 million
 
 $$
 \begin{gathered}
@@ -546,7 +546,7 @@ $$
 
 :::
 
-### Diseases Without Effective Treatment: 6.65 thousand diseases {#sec-diseases_without_effective_treatment}
+### Diseases Without Effective Treatment: 6,650 diseases {#sec-diseases_without_effective_treatment}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -554,7 +554,7 @@ Number of diseases without effective treatment. 95% of 7,000 rare diseases lack 
 
 **Inputs**:
 
-- [Total Number of Rare Diseases Globally](#sec-rare_diseases_count_global) 📊: 7 thousand diseases (95% CI: 6 thousand diseases - 10 thousand diseases)
+- [Total Number of Rare Diseases Globally](#sec-rare_diseases_count_global) 📊: 7,000 diseases (95% CI: 6,000 diseases - 10,000 diseases)
 
 $$
 \begin{gathered}
@@ -631,7 +631,7 @@ $$
 
 :::
 
-### Total Economic Loss from Historical Progress Delays: $259T {#sec-existing_drugs_efficacy_lag_economic_loss}
+### Total Economic Loss from Historical Progress Delays: $259 trillion {#sec-existing_drugs_efficacy_lag_economic_loss}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -642,7 +642,7 @@ Total economic loss from delaying existing drugs over 8.2-year efficacy lag. One
 - [Global Life Expectancy (2024)](#sec-global_life_expectancy_2024) 📊: 79 years (SE: ±2 years)
 - [Total Deaths from Historical Progress Delays](#sec-existing_drugs_efficacy_lag_deaths_total) 🔢: 102 million deaths
 - [Mean Age of Preventable Death from Post-Safety Efficacy Delay](#sec-regulatory_delay_mean_age_of_death) 📊: 62 years (SE: ±3 years)
-- [Standard Economic Value per QALY](#sec-standard_economic_qaly_value_usd) 📊: $150K (SE: ±$30K)
+- [Standard Economic Value per QALY](#sec-standard_economic_qaly_value_usd) 📊: $150,000 (SE: ±$30,000)
 
 $$
 \begin{gathered}
@@ -688,7 +688,7 @@ $$
 
 :::
 
-### Total Annual Cost of War Worldwide: $11.4T {#sec-global_annual_direct_indirect_war_cost}
+### Total Annual Cost of War Worldwide: $11.4 trillion {#sec-global_annual_direct_indirect_war_cost}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -696,8 +696,8 @@ Total annual cost of war worldwide (direct + indirect costs)
 
 **Inputs**:
 
-- [Total Annual Direct War Costs](#sec-global_annual_war_direct_costs_total) 🔢: $7.66T
-- [Total Annual Indirect War Costs](#sec-global_annual_war_indirect_costs_total) 🔢: $3.7T
+- [Total Annual Direct War Costs](#sec-global_annual_war_direct_costs_total) 🔢: $7.66 trillion
+- [Total Annual Indirect War Costs](#sec-global_annual_war_indirect_costs_total) 🔢: $3.7 trillion
 
 $$
 \begin{gathered}
@@ -802,7 +802,7 @@ $$
 
 :::
 
-### Annual Cost of Combat Deaths: $2.34T {#sec-global_annual_human_cost_active_combat}
+### Annual Cost of Combat Deaths: $2.34 trillion {#sec-global_annual_human_cost_active_combat}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -811,7 +811,7 @@ Annual cost of combat deaths (deaths × VSL)
 **Inputs**:
 
 - [Annual Deaths from Active Combat Worldwide](#sec-global_annual_conflict_deaths_active_combat) 📊: 234 thousand deaths/year (95% CI: 180 thousand deaths/year - 300 thousand deaths/year)
-- [Value of Statistical Life](#sec-value_of_statistical_life) 📊: $10M (95% CI: $5M - $15M)
+- [Value of Statistical Life](#sec-value_of_statistical_life) 📊: $10 million (95% CI: $5 million - $15 million)
 
 $$
 \begin{gathered}
@@ -840,7 +840,7 @@ $$
 
 :::
 
-### Annual Cost of State Violence Deaths: $27B {#sec-global_annual_human_cost_state_violence}
+### Annual Cost of State Violence Deaths: $27 billion {#sec-global_annual_human_cost_state_violence}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -848,8 +848,8 @@ Annual cost of state violence deaths (deaths × VSL)
 
 **Inputs**:
 
-- [Annual Deaths from State Violence](#sec-global_annual_conflict_deaths_state_violence) 📊: 2.7 thousand deaths/year (95% CI: 1.5 thousand deaths/year - 5 thousand deaths/year)
-- [Value of Statistical Life](#sec-value_of_statistical_life) 📊: $10M (95% CI: $5M - $15M)
+- [Annual Deaths from State Violence](#sec-global_annual_conflict_deaths_state_violence) 📊: 2,700 deaths/year (95% CI: 1,500 deaths/year - 5,000 deaths/year)
+- [Value of Statistical Life](#sec-value_of_statistical_life) 📊: $10 million (95% CI: $5 million - $15 million)
 
 $$
 \begin{gathered}
@@ -878,7 +878,7 @@ $$
 
 :::
 
-### Annual Cost of Terror Deaths: $83B {#sec-global_annual_human_cost_terror_attacks}
+### Annual Cost of Terror Deaths: $83 billion {#sec-global_annual_human_cost_terror_attacks}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -886,8 +886,8 @@ Annual cost of terror deaths (deaths × VSL)
 
 **Inputs**:
 
-- [Annual Deaths from Terror Attacks Globally](#sec-global_annual_conflict_deaths_terror_attacks) 📊: 8.3 thousand deaths/year (95% CI: 6 thousand deaths/year - 12 thousand deaths/year)
-- [Value of Statistical Life](#sec-value_of_statistical_life) 📊: $10M (95% CI: $5M - $15M)
+- [Annual Deaths from Terror Attacks Globally](#sec-global_annual_conflict_deaths_terror_attacks) 📊: 8,300 deaths/year (95% CI: 6,000 deaths/year - 12,000 deaths/year)
+- [Value of Statistical Life](#sec-value_of_statistical_life) 📊: $10 million (95% CI: $5 million - $15 million)
 
 $$
 \begin{gathered}
@@ -916,7 +916,7 @@ $$
 
 :::
 
-### Total Annual Human Life Losses from Conflict: $2.45T {#sec-global_annual_human_life_losses_conflict}
+### Total Annual Human Life Losses from Conflict: $2.45 trillion {#sec-global_annual_human_life_losses_conflict}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -924,9 +924,9 @@ Total annual human life losses from conflict (sum of combat, terror, state viole
 
 **Inputs**:
 
-- [Annual Cost of Combat Deaths](#sec-global_annual_human_cost_active_combat) 🔢: $2.34T
-- [Annual Cost of State Violence Deaths](#sec-global_annual_human_cost_state_violence) 🔢: $27B
-- [Annual Cost of Terror Deaths](#sec-global_annual_human_cost_terror_attacks) 🔢: $83B
+- [Annual Cost of Combat Deaths](#sec-global_annual_human_cost_active_combat) 🔢: $2.34 trillion
+- [Annual Cost of State Violence Deaths](#sec-global_annual_human_cost_state_violence) 🔢: $27 billion
+- [Annual Cost of Terror Deaths](#sec-global_annual_human_cost_terror_attacks) 🔢: $83 billion
 
 $$
 \begin{gathered}
@@ -982,7 +982,7 @@ $$
 
 :::
 
-### Total Annual Infrastructure Destruction: $1.88T {#sec-global_annual_infrastructure_destruction_conflict}
+### Total Annual Infrastructure Destruction: $1.88 trillion {#sec-global_annual_infrastructure_destruction_conflict}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -990,12 +990,12 @@ Total annual infrastructure destruction (sum of transportation, energy, communic
 
 **Inputs**:
 
-- [Annual Infrastructure Damage to Communications from Conflict](#sec-global_annual_infrastructure_damage_communications_conflict) 📊: $298B (95% CI: $209B - $418B)
-- [Annual Infrastructure Damage to Education Facilities from Conflict](#sec-global_annual_infrastructure_damage_education_conflict) 📊: $234B (95% CI: $164B - $328B)
-- [Annual Infrastructure Damage to Energy Systems from Conflict](#sec-global_annual_infrastructure_damage_energy_conflict) 📊: $422B (95% CI: $295B - $590B)
-- [Annual Infrastructure Damage to Healthcare Facilities from Conflict](#sec-global_annual_infrastructure_damage_healthcare_conflict) 📊: $166B (95% CI: $116B - $232B)
-- [Annual Infrastructure Damage to Transportation from Conflict](#sec-global_annual_infrastructure_damage_transportation_conflict) 📊: $487B (95% CI: $340B - $680B)
-- [Annual Infrastructure Damage to Water Systems from Conflict](#sec-global_annual_infrastructure_damage_water_conflict) 📊: $268B (95% CI: $187B - $375B)
+- [Annual Infrastructure Damage to Communications from Conflict](#sec-global_annual_infrastructure_damage_communications_conflict) 📊: $298 billion (95% CI: $209 billion - $418 billion)
+- [Annual Infrastructure Damage to Education Facilities from Conflict](#sec-global_annual_infrastructure_damage_education_conflict) 📊: $234 billion (95% CI: $164 billion - $328 billion)
+- [Annual Infrastructure Damage to Energy Systems from Conflict](#sec-global_annual_infrastructure_damage_energy_conflict) 📊: $422 billion (95% CI: $295 billion - $590 billion)
+- [Annual Infrastructure Damage to Healthcare Facilities from Conflict](#sec-global_annual_infrastructure_damage_healthcare_conflict) 📊: $166 billion (95% CI: $116 billion - $232 billion)
+- [Annual Infrastructure Damage to Transportation from Conflict](#sec-global_annual_infrastructure_damage_transportation_conflict) 📊: $487 billion (95% CI: $340 billion - $680 billion)
+- [Annual Infrastructure Damage to Water Systems from Conflict](#sec-global_annual_infrastructure_damage_water_conflict) 📊: $268 billion (95% CI: $187 billion - $375 billion)
 
 $$
 \begin{gathered}
@@ -1025,7 +1025,7 @@ $$
 
 :::
 
-### Total Annual Trade Disruption: $616B {#sec-global_annual_trade_disruption_conflict}
+### Total Annual Trade Disruption: $616 billion {#sec-global_annual_trade_disruption_conflict}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -1033,10 +1033,10 @@ Total annual trade disruption (sum of shipping, supply chain, energy prices, cur
 
 **Inputs**:
 
-- [Annual Trade Disruption Costs from Currency Instability](#sec-global_annual_trade_disruption_currency_conflict) 📊: $57.4B (95% CI: $40B - $80B)
-- [Annual Trade Disruption Costs from Energy Price Volatility](#sec-global_annual_trade_disruption_energy_price_conflict) 📊: $125B (95% CI: $87B - $175B)
-- [Annual Trade Disruption Costs from Shipping Disruptions](#sec-global_annual_trade_disruption_shipping_conflict) 📊: $247B (95% CI: $173B - $346B)
-- [Annual Trade Disruption Costs from Supply Chain Disruptions](#sec-global_annual_trade_disruption_supply_chain_conflict) 📊: $187B (95% CI: $131B - $262B)
+- [Annual Trade Disruption Costs from Currency Instability](#sec-global_annual_trade_disruption_currency_conflict) 📊: $57.4 billion (95% CI: $40 billion - $80 billion)
+- [Annual Trade Disruption Costs from Energy Price Volatility](#sec-global_annual_trade_disruption_energy_price_conflict) 📊: $125 billion (95% CI: $87 billion - $175 billion)
+- [Annual Trade Disruption Costs from Shipping Disruptions](#sec-global_annual_trade_disruption_shipping_conflict) 📊: $247 billion (95% CI: $173 billion - $346 billion)
+- [Annual Trade Disruption Costs from Supply Chain Disruptions](#sec-global_annual_trade_disruption_supply_chain_conflict) 📊: $187 billion (95% CI: $131 billion - $262 billion)
 
 $$
 \begin{gathered}
@@ -1066,7 +1066,7 @@ $$
 
 :::
 
-### Total Annual Direct War Costs: $7.66T {#sec-global_annual_war_direct_costs_total}
+### Total Annual Direct War Costs: $7.66 trillion {#sec-global_annual_war_direct_costs_total}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -1074,10 +1074,10 @@ Total annual direct war costs (military spending + infrastructure + human life +
 
 **Inputs**:
 
-- [Total Annual Human Life Losses from Conflict](#sec-global_annual_human_life_losses_conflict) 🔢: $2.45T
-- [Total Annual Infrastructure Destruction](#sec-global_annual_infrastructure_destruction_conflict) 🔢: $1.88T
-- [Total Annual Trade Disruption](#sec-global_annual_trade_disruption_conflict) 🔢: $616B
-- [Global Military Spending in 2024](#sec-global_military_spending_annual_2024) 📊: $2.72T
+- [Total Annual Human Life Losses from Conflict](#sec-global_annual_human_life_losses_conflict) 🔢: $2.45 trillion
+- [Total Annual Infrastructure Destruction](#sec-global_annual_infrastructure_destruction_conflict) 🔢: $1.88 trillion
+- [Total Annual Trade Disruption](#sec-global_annual_trade_disruption_conflict) 🔢: $616 billion
+- [Global Military Spending in 2024](#sec-global_military_spending_annual_2024) 📊: $2.72 trillion
 
 $$
 \begin{gathered}
@@ -1163,7 +1163,7 @@ $$
 
 :::
 
-### Total Annual Indirect War Costs: $3.7T {#sec-global_annual_war_indirect_costs_total}
+### Total Annual Indirect War Costs: $3.7 trillion {#sec-global_annual_war_indirect_costs_total}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -1171,12 +1171,12 @@ Total annual indirect war costs (opportunity cost + veterans + refugees + enviro
 
 **Inputs**:
 
-- [Annual Environmental Damage and Restoration Costs from Conflict](#sec-global_annual_environmental_damage_conflict) 📊: $100B (95% CI: $70B - $140B)
-- [Annual Lost Economic Growth from Military Spending Opportunity Cost](#sec-global_annual_lost_economic_growth_military_spending) 📊: $2.72T (95% CI: $1.9T - $3.8T)
-- [Annual Lost Productivity from Conflict Casualties](#sec-global_annual_lost_human_capital_conflict) 📊: $300B (95% CI: $210B - $420B)
-- [Annual PTSD and Mental Health Costs from Conflict](#sec-global_annual_psychological_impact_costs_conflict) 📊: $232B (95% CI: $162B - $325B)
-- [Annual Refugee Support Costs](#sec-global_annual_refugee_support_costs) 📊: $150B (95% CI: $105B - $210B)
-- [Annual Veteran Healthcare Costs](#sec-global_annual_veteran_healthcare_costs) 📊: $200B (95% CI: $140B - $280B)
+- [Annual Environmental Damage and Restoration Costs from Conflict](#sec-global_annual_environmental_damage_conflict) 📊: $100 billion (95% CI: $70 billion - $140 billion)
+- [Annual Lost Economic Growth from Military Spending Opportunity Cost](#sec-global_annual_lost_economic_growth_military_spending) 📊: $2.72 trillion (95% CI: $1.9 trillion - $3.8 trillion)
+- [Annual Lost Productivity from Conflict Casualties](#sec-global_annual_lost_human_capital_conflict) 📊: $300 billion (95% CI: $210 billion - $420 billion)
+- [Annual PTSD and Mental Health Costs from Conflict](#sec-global_annual_psychological_impact_costs_conflict) 📊: $232 billion (95% CI: $162 billion - $325 billion)
+- [Annual Refugee Support Costs](#sec-global_annual_refugee_support_costs) 📊: $150 billion (95% CI: $105 billion - $210 billion)
+- [Annual Veteran Healthcare Costs](#sec-global_annual_veteran_healthcare_costs) 📊: $200 billion (95% CI: $140 billion - $280 billion)
 
 $$
 \begin{gathered}
@@ -1206,7 +1206,7 @@ $$
 
 :::
 
-### Global Average Income (2025 Baseline): $14.4K {#sec-global_avg_income_2025}
+### Global Average Income (2025 Baseline): $14,375 {#sec-global_avg_income_2025}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -1214,7 +1214,7 @@ Global average income (GDP per capita) in 2025 baseline.
 
 **Inputs**:
 
-- [Global GDP (2025)](#sec-global_gdp_2025) 📊: $115T
+- [Global GDP (2025)](#sec-global_gdp_2025) 📊: $115 trillion
 - [Global Population in 2024](#sec-global_population_2024) 📊: 8 billion of people (95% CI: 7.8 billion of people - 8.2 billion of people)
 
 $$
@@ -1282,7 +1282,7 @@ $$
 
 :::
 
-### Global Destructive Economy (2025): $13.2T {#sec-global_destructive_economy_annual_2025}
+### Global Destructive Economy (2025): $13.2 trillion {#sec-global_destructive_economy_annual_2025}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -1290,8 +1290,8 @@ Combined annual cost of military spending and cybercrime. The 'destructive econo
 
 **Inputs**:
 
-- [Global Military Spending in 2024](#sec-global_military_spending_annual_2024) 📊: $2.72T
-- [Global Cybercrime Costs (2025)](#sec-global_cybercrime_cost_annual_2025) 📊: $10.5T
+- [Global Military Spending in 2024](#sec-global_military_spending_annual_2024) 📊: $2.72 trillion
+- [Global Cybercrime Costs (2025)](#sec-global_cybercrime_cost_annual_2025) 📊: $10.5 trillion
 
 $$
 \begin{gathered}
@@ -1314,8 +1314,8 @@ Destructive economy (military + cybercrime) as percentage of global GDP.
 
 **Inputs**:
 
-- [Global Destructive Economy (2025)](#sec-global_destructive_economy_annual_2025) 🔢: $13.2T
-- [Global GDP (2025)](#sec-global_gdp_2025) 📊: $115T
+- [Global Destructive Economy (2025)](#sec-global_destructive_economy_annual_2025) 🔢: $13.2 trillion
+- [Global GDP (2025)](#sec-global_gdp_2025) 📊: $115 trillion
 
 $$
 \begin{gathered}
@@ -1338,7 +1338,7 @@ $$
 
 :::
 
-### Annual Peace Dividend from 1% Reduction in Total War Costs: $114B {#sec-peace_dividend_annual_societal_benefit}
+### Annual Peace Dividend from 1% Reduction in Total War Costs: $114 billion {#sec-peace_dividend_annual_societal_benefit}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -1346,7 +1346,7 @@ Annual peace dividend from 1% reduction in total war costs (theoretical maximum 
 
 **Inputs**:
 
-- [Total Annual Cost of War Worldwide](#sec-global_annual_direct_indirect_war_cost) 🔢: $11.4T
+- [Total Annual Cost of War Worldwide](#sec-global_annual_direct_indirect_war_cost) 🔢: $11.4 trillion
 - [1% Reduction in Military Spending/War Costs from Treaty](#sec-treaty_reduction_pct): 1%
 
 $$
@@ -1501,7 +1501,7 @@ $$
 
 :::
 
-### Global Opportunity Cost Total: $101T {#sec-political_dysfunction_global_opportunity_cost_total}
+### Global Opportunity Cost Total: $101 trillion {#sec-political_dysfunction_global_opportunity_cost_total}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -1509,10 +1509,10 @@ Total global opportunity cost from governance failures: health innovation delays
 
 **Inputs**:
 
-- [Global Health Opportunity Cost](#sec-political_dysfunction_global_health_opportunity_cost) 📊: $34T (95% CI: $20T - $80T)
-- [Global Science Opportunity Cost](#sec-political_dysfunction_global_science_opportunity_cost) 📊: $4T (95% CI: $2T - $10T)
-- [Global Lead Poisoning Cost](#sec-political_dysfunction_global_lead_opportunity_cost) 📊: $6T (95% CI: $4T - $8T)
-- [Global Migration Opportunity Cost](#sec-political_dysfunction_global_migration_opportunity_cost) 📊: $57T (95% CI: $57T - $170T)
+- [Global Health Opportunity Cost](#sec-political_dysfunction_global_health_opportunity_cost) 📊: $34 trillion (95% CI: $20 trillion - $80 trillion)
+- [Global Science Opportunity Cost](#sec-political_dysfunction_global_science_opportunity_cost) 📊: $4 trillion (95% CI: $2 trillion - $10 trillion)
+- [Global Lead Poisoning Cost](#sec-political_dysfunction_global_lead_opportunity_cost) 📊: $6 trillion (95% CI: $4 trillion - $8 trillion)
+- [Global Migration Opportunity Cost](#sec-political_dysfunction_global_migration_opportunity_cost) 📊: $57 trillion (95% CI: $57 trillion - $170 trillion)
 
 $$
 \begin{gathered}
@@ -1551,8 +1551,8 @@ Percentage US military spending cut after WW2 (1945-1947, inflation-adjusted: $1
 
 **Inputs**:
 
-- [US Military Spending in 1947 (Constant 2024 Dollars)](#sec-us_military_spending_1947_annual_2024usd) 📊: $176B
-- [US Military Spending at WW2 Peak (Constant 2024 Dollars)](#sec-us_military_spending_1945_peak_annual_2024usd) 📊: $1.42T
+- [US Military Spending in 1947 (Constant 2024 Dollars)](#sec-us_military_spending_1947_annual_2024usd) 📊: $176 billion
+- [US Military Spending at WW2 Peak (Constant 2024 Dollars)](#sec-us_military_spending_1945_peak_annual_2024usd) 📊: $1.42 trillion
 
 $$
 \begin{gathered}
@@ -1567,7 +1567,7 @@ $$
 
 :::
 
-### Annual Funding from 1% of Global Military Spending Redirected to DIH: $27.2B {#sec-treaty_annual_funding}
+### Annual Funding from 1% of Global Military Spending Redirected to DIH: $27.2 billion {#sec-treaty_annual_funding}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -1575,7 +1575,7 @@ Annual funding from 1% of global military spending redirected to DIH
 
 **Inputs**:
 
-- [Global Military Spending in 2024](#sec-global_military_spending_annual_2024) 📊: $2.72T
+- [Global Military Spending in 2024](#sec-global_military_spending_annual_2024) 📊: $2.72 trillion
 - [1% Reduction in Military Spending/War Costs from Treaty](#sec-treaty_reduction_pct): 1%
 
 $$
@@ -1599,8 +1599,8 @@ Annual GDP growth bonus by year 20 from reducing cybercrime drag as the treaty w
 
 **Inputs**:
 
-- [Global Cybercrime Costs (2025)](#sec-global_cybercrime_cost_annual_2025) 📊: $10.5T
-- [Global GDP (2025)](#sec-global_gdp_2025) 📊: $115T
+- [Global Cybercrime Costs (2025)](#sec-global_cybercrime_cost_annual_2025) 📊: $10.5 trillion
+- [Global GDP (2025)](#sec-global_gdp_2025) 📊: $115 trillion
 - [Treaty Effective Reallocation Share (Year 20)](#sec-treaty_effective_reallocation_share_year_20): 5.8%
 - [Peace Dividend Conflict Elasticity](#sec-peace_dividend_conflict_elasticity): 1:1 (95% CI: 0.25:1 - 1.5:1)
 
@@ -1638,7 +1638,7 @@ Treaty disease-cure fraction over 20 years under the optimistic treaty take-hold
 - [Diseases Getting First Treatment Per Year](#sec-new_disease_first_treatments_per_year) 📊: 15 diseases/year (95% CI: 8 diseases/year - 30 diseases/year)
 - [Trial Capacity Multiplier](#sec-dfda_trial_capacity_multiplier) 🔢: 12.3x
 - [Maximum Trial Capacity Multiplier (Physical Limit)](#sec-dfda_max_trial_capacity_multiplier_physical) 🔢: 566x
-- [Diseases Without Effective Treatment](#sec-diseases_without_effective_treatment) 🔢: 6.65 thousand diseases
+- [Diseases Without Effective Treatment](#sec-diseases_without_effective_treatment) 🔢: 6,650 diseases
 
 $$
 \begin{gathered}
@@ -1731,8 +1731,8 @@ Annualized GDP growth bonus by year 20 from lower disease burden plus eliminatin
 
 - [Treaty Disease Cure Fraction (20yr, Take-Hold Path)](#sec-treaty_disease_cure_fraction_20yr) 🔢: 100%
 - [Disease Burden as % of GDP](#sec-disease_burden_gdp_drag_pct) 📊: 13%
-- [Total Economic Loss from Historical Progress Delays](#sec-existing_drugs_efficacy_lag_economic_loss) 🔢: $259T
-- [Global GDP (2025)](#sec-global_gdp_2025) 📊: $115T
+- [Total Economic Loss from Historical Progress Delays](#sec-existing_drugs_efficacy_lag_economic_loss) 🔢: $259 trillion
+- [Global GDP (2025)](#sec-global_gdp_2025) 📊: $115 trillion
 
 $$
 \begin{gathered}
@@ -1868,8 +1868,8 @@ Annual GDP growth bonus by year 20 from explicit avoided war-cost drag under the
 
 **Inputs**:
 
-- [Annual Peace Dividend from 1% Reduction in Total War Costs](#sec-peace_dividend_annual_societal_benefit) 🔢: $114B
-- [Global GDP (2025)](#sec-global_gdp_2025) 📊: $115T
+- [Annual Peace Dividend from 1% Reduction in Total War Costs](#sec-peace_dividend_annual_societal_benefit) 🔢: $114 billion
+- [Global GDP (2025)](#sec-global_gdp_2025) 📊: $115 trillion
 - [Treaty Effective Reallocation Share (Year 20)](#sec-treaty_effective_reallocation_share_year_20): 5.8%
 - [1% Reduction in Military Spending/War Costs from Treaty](#sec-treaty_reduction_pct): 1%
 - [Peace Dividend Conflict Elasticity](#sec-peace_dividend_conflict_elasticity): 1:1 (95% CI: 0.25:1 - 1.5:1)
@@ -2032,7 +2032,7 @@ $$
 
 :::
 
-### Treaty Trajectory Average Income at Year 20: $99.9K {#sec-treaty_trajectory_avg_income_year_20}
+### Treaty Trajectory Average Income at Year 20: $99,861 {#sec-treaty_trajectory_avg_income_year_20}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -2040,7 +2040,7 @@ Average income (GDP per capita) at year 20 under the Treaty Trajectory.
 
 **Inputs**:
 
-- [Treaty Trajectory GDP at Year 20](#sec-treaty_trajectory_gdp_year_20) 🔢: $919T
+- [Treaty Trajectory GDP at Year 20](#sec-treaty_trajectory_gdp_year_20) 🔢: $919 trillion
 - [Global Population 2045 (Projected)](#sec-global_population_2045_projected) 📊: 9.2 billion of people
 
 $$
@@ -2313,8 +2313,8 @@ Compound annual growth rate implied by Treaty Trajectory GDP trajectory over 20 
 
 **Inputs**:
 
-- [Treaty Trajectory GDP at Year 20](#sec-treaty_trajectory_gdp_year_20) 🔢: $919T
-- [Global GDP (2025)](#sec-global_gdp_2025) 📊: $115T
+- [Treaty Trajectory GDP at Year 20](#sec-treaty_trajectory_gdp_year_20) 🔢: $919 trillion
+- [Global GDP (2025)](#sec-global_gdp_2025) 📊: $115 trillion
 
 $$
 \begin{gathered}
@@ -2576,7 +2576,7 @@ $$
 
 :::
 
-### Treaty Trajectory Cumulative Lifetime Income (Per Capita): $4.58M {#sec-treaty_trajectory_cumulative_lifetime_income}
+### Treaty Trajectory Cumulative Lifetime Income (Per Capita): $4.58 million {#sec-treaty_trajectory_cumulative_lifetime_income}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -2584,9 +2584,9 @@ Cumulative per-capita income over an average remaining lifespan under Treaty Tra
 
 **Inputs**:
 
-- [Global Average Income (2025 Baseline)](#sec-global_avg_income_2025) 🔢: $14.4K
-- [Treaty Trajectory Average Income at Year 20](#sec-treaty_trajectory_avg_income_year_20) 🔢: $99.9K
-- [Current Trajectory Average Income at Year 20](#sec-current_trajectory_avg_income_year_20) 🔢: $20.5K
+- [Global Average Income (2025 Baseline)](#sec-global_avg_income_2025) 🔢: $14,375
+- [Treaty Trajectory Average Income at Year 20](#sec-treaty_trajectory_avg_income_year_20) 🔢: $99,861
+- [Current Trajectory Average Income at Year 20](#sec-current_trajectory_avg_income_year_20) 🔢: $20,483
 - [Average Remaining Years (Median Person)](#sec-global_avg_remaining_years) 🔢: 48.5 years
 
 $$
@@ -2615,7 +2615,7 @@ $$
 
 :::
 
-### Treaty Trajectory GDP at Year 20: $919T {#sec-treaty_trajectory_gdp_year_20}
+### Treaty Trajectory GDP at Year 20: $919 trillion {#sec-treaty_trajectory_gdp_year_20}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -2623,7 +2623,7 @@ Projected global GDP at year 20 under the optimistic treaty take-hold path. Comp
 
 **Inputs**:
 
-- [Global GDP (2025)](#sec-global_gdp_2025) 📊: $115T
+- [Global GDP (2025)](#sec-global_gdp_2025) 📊: $115 trillion
 - [Baseline Global GDP Growth Rate](#sec-gdp_baseline_growth_rate): 2.5%
 - [Treaty Redirect GDP Growth Bonus (Year 20)](#sec-treaty_redirect_gdp_growth_bonus_year_20) 🔢: 1.06%
 - [Treaty Peace Recovery GDP Growth Bonus (Year 20)](#sec-treaty_peace_recovery_gdp_growth_bonus_year_20) 🔢: 0.573%
@@ -2883,7 +2883,7 @@ $$
 
 :::
 
-### Treaty Trajectory Lifetime Income Gain (Per Capita): $3.48M {#sec-treaty_trajectory_lifetime_income_gain_per_capita}
+### Treaty Trajectory Lifetime Income Gain (Per Capita): $3.48 million {#sec-treaty_trajectory_lifetime_income_gain_per_capita}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -2891,8 +2891,8 @@ Lifetime per-capita income gain from Treaty Trajectory vs current trajectory. Cu
 
 **Inputs**:
 
-- [Treaty Trajectory Cumulative Lifetime Income (Per Capita)](#sec-treaty_trajectory_cumulative_lifetime_income) 🔢: $4.58M
-- [Current Trajectory Cumulative Lifetime Income (Per Capita)](#sec-current_trajectory_cumulative_lifetime_income) 🔢: $1.1M
+- [Treaty Trajectory Cumulative Lifetime Income (Per Capita)](#sec-treaty_trajectory_cumulative_lifetime_income) 🔢: $4.58 million
+- [Current Trajectory Cumulative Lifetime Income (Per Capita)](#sec-current_trajectory_cumulative_lifetime_income) 🔢: $1.1 million
 
 $$
 \begin{gathered}
@@ -3219,8 +3219,8 @@ Ratio of cumulative lifetime income under Treaty Trajectory vs current trajector
 
 **Inputs**:
 
-- [Treaty Trajectory Cumulative Lifetime Income (Per Capita)](#sec-treaty_trajectory_cumulative_lifetime_income) 🔢: $4.58M
-- [Current Trajectory Cumulative Lifetime Income (Per Capita)](#sec-current_trajectory_cumulative_lifetime_income) 🔢: $1.1M
+- [Treaty Trajectory Cumulative Lifetime Income (Per Capita)](#sec-treaty_trajectory_cumulative_lifetime_income) 🔢: $4.58 million
+- [Current Trajectory Cumulative Lifetime Income (Per Capita)](#sec-current_trajectory_cumulative_lifetime_income) 🔢: $1.1 million
 
 $$
 \begin{gathered}
@@ -3589,7 +3589,7 @@ Wishonia disease-cure fraction over 20 years under full implementation. Uses ful
 - [Trial Capacity Multiplier](#sec-dfda_trial_capacity_multiplier) 🔢: 12.3x
 - [Wishonia Military Reallocation Physical Max Share](#sec-wishonia_military_reallocation_physical_max_share) 🔢: 87.6%
 - [Maximum Trial Capacity Multiplier (Physical Limit)](#sec-dfda_max_trial_capacity_multiplier_physical) 🔢: 566x
-- [Diseases Without Effective Treatment](#sec-diseases_without_effective_treatment) 🔢: 6.65 thousand diseases
+- [Diseases Without Effective Treatment](#sec-diseases_without_effective_treatment) 🔢: 6,650 diseases
 
 $$
 \begin{gathered}
@@ -3704,7 +3704,7 @@ $$
 
 :::
 
-### Wishonia Trajectory Average Income at Year 20: $1.16M {#sec-wishonia_trajectory_avg_income_year_20}
+### Wishonia Trajectory Average Income at Year 20: $1.16 million {#sec-wishonia_trajectory_avg_income_year_20}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -3838,7 +3838,7 @@ Compound annual growth rate implied by Wishonia Trajectory GDP trajectory over 2
 **Inputs**:
 
 - [Wishonia Trajectory GDP at Year 20](#sec-wishonia_trajectory_gdp_year_20) 🔢: $10.7 quadrillion
-- [Global GDP (2025)](#sec-global_gdp_2025) 📊: $115T
+- [Global GDP (2025)](#sec-global_gdp_2025) 📊: $115 trillion
 
 $$
 \begin{gathered}
@@ -3952,7 +3952,7 @@ $$
 
 :::
 
-### Wishonia Trajectory Cumulative Lifetime Income (Per Capita): $48.3M {#sec-wishonia_trajectory_cumulative_lifetime_income}
+### Wishonia Trajectory Cumulative Lifetime Income (Per Capita): $48.3 million {#sec-wishonia_trajectory_cumulative_lifetime_income}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -3960,9 +3960,9 @@ Cumulative per-capita income over an average remaining lifespan under Wishonia T
 
 **Inputs**:
 
-- [Global Average Income (2025 Baseline)](#sec-global_avg_income_2025) 🔢: $14.4K
-- [Wishonia Trajectory Average Income at Year 20](#sec-wishonia_trajectory_avg_income_year_20) 🔢: $1.16M
-- [Current Trajectory Average Income at Year 20](#sec-current_trajectory_avg_income_year_20) 🔢: $20.5K
+- [Global Average Income (2025 Baseline)](#sec-global_avg_income_2025) 🔢: $14,375
+- [Wishonia Trajectory Average Income at Year 20](#sec-wishonia_trajectory_avg_income_year_20) 🔢: $1.16 million
+- [Current Trajectory Average Income at Year 20](#sec-current_trajectory_avg_income_year_20) 🔢: $20,483
 - [Average Remaining Years (Median Person)](#sec-global_avg_remaining_years) 🔢: 48.5 years
 
 $$
@@ -3999,16 +3999,16 @@ Projected global GDP at year 20 under the Wishonia Trajectory. Model applies all
 
 **Inputs**:
 
-- [Global GDP (2025)](#sec-global_gdp_2025) 📊: $115T
+- [Global GDP (2025)](#sec-global_gdp_2025) 📊: $115 trillion
 - [Baseline Global GDP Growth Rate](#sec-gdp_baseline_growth_rate): 2.5%
 - [Wishonia Military Reallocation Physical Max Share](#sec-wishonia_military_reallocation_physical_max_share) 🔢: 87.6%
 - [GDP Growth Boost at 30% Military Reallocation](#sec-military_redirect_gdp_boost_at_30pct): 5.5% (95% CI: 3.5% - 7.5%)
 - [R&D Spillover Multiplier](#sec-rd_spillover_multiplier): 2x (95% CI: 1.5x - 2.5x)
 - [Wishonia Disease Cure Fraction (20yr, Full Implementation)](#sec-wishonia_disease_cure_fraction_20yr_full) 🔢: 100%
 - [Disease Burden as % of GDP](#sec-disease_burden_gdp_drag_pct) 📊: 13%
-- [Global Science Opportunity Cost](#sec-political_dysfunction_global_science_opportunity_cost) 📊: $4T (95% CI: $2T - $10T)
-- [Global Lead Poisoning Cost](#sec-political_dysfunction_global_lead_opportunity_cost) 📊: $6T (95% CI: $4T - $8T)
-- [Global Migration Opportunity Cost](#sec-political_dysfunction_global_migration_opportunity_cost) 📊: $57T (95% CI: $57T - $170T)
+- [Global Science Opportunity Cost](#sec-political_dysfunction_global_science_opportunity_cost) 📊: $4 trillion (95% CI: $2 trillion - $10 trillion)
+- [Global Lead Poisoning Cost](#sec-political_dysfunction_global_lead_opportunity_cost) 📊: $6 trillion (95% CI: $4 trillion - $8 trillion)
+- [Global Migration Opportunity Cost](#sec-political_dysfunction_global_migration_opportunity_cost) 📊: $57 trillion (95% CI: $57 trillion - $170 trillion)
 - [Economic Multiplier for Healthcare Investment](#sec-economic_multiplier_healthcare_investment) 📊: 4.3x (95% CI: 3x - 6x)
 - [Economic Multiplier for Military Spending](#sec-economic_multiplier_military_spending) 📊: 0.6x (95% CI: 0.4x - 0.9x)
 
@@ -4034,7 +4034,7 @@ $$
 
 :::
 
-### Wishonia Trajectory Lifetime Income Gain (Per Capita): $47.2M {#sec-wishonia_trajectory_lifetime_income_gain_per_capita}
+### Wishonia Trajectory Lifetime Income Gain (Per Capita): $47.2 million {#sec-wishonia_trajectory_lifetime_income_gain_per_capita}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -4042,8 +4042,8 @@ Lifetime per-capita income gain from Wishonia Trajectory vs current trajectory. 
 
 **Inputs**:
 
-- [Wishonia Trajectory Cumulative Lifetime Income (Per Capita)](#sec-wishonia_trajectory_cumulative_lifetime_income) 🔢: $48.3M
-- [Current Trajectory Cumulative Lifetime Income (Per Capita)](#sec-current_trajectory_cumulative_lifetime_income) 🔢: $1.1M
+- [Wishonia Trajectory Cumulative Lifetime Income (Per Capita)](#sec-wishonia_trajectory_cumulative_lifetime_income) 🔢: $48.3 million
+- [Current Trajectory Cumulative Lifetime Income (Per Capita)](#sec-current_trajectory_cumulative_lifetime_income) 🔢: $1.1 million
 
 $$
 \begin{gathered}
@@ -4222,8 +4222,8 @@ Ratio of cumulative lifetime income under Wishonia Trajectory vs current traject
 
 **Inputs**:
 
-- [Wishonia Trajectory Cumulative Lifetime Income (Per Capita)](#sec-wishonia_trajectory_cumulative_lifetime_income) 🔢: $48.3M
-- [Current Trajectory Cumulative Lifetime Income (Per Capita)](#sec-current_trajectory_cumulative_lifetime_income) 🔢: $1.1M
+- [Wishonia Trajectory Cumulative Lifetime Income (Per Capita)](#sec-wishonia_trajectory_cumulative_lifetime_income) 🔢: $48.3 million
+- [Current Trajectory Cumulative Lifetime Income (Per Capita)](#sec-current_trajectory_cumulative_lifetime_income) 🔢: $1.1 million
 
 $$
 \begin{gathered}
@@ -4403,7 +4403,7 @@ Year-20 GDP multiplier from adding non-health dysfunction-capital reallocation o
 **Inputs**:
 
 - [Wishonia Trajectory GDP at Year 20](#sec-wishonia_trajectory_gdp_year_20) 🔢: $10.7 quadrillion
-- [Treaty Trajectory GDP at Year 20](#sec-treaty_trajectory_gdp_year_20) 🔢: $919T
+- [Treaty Trajectory GDP at Year 20](#sec-treaty_trajectory_gdp_year_20) 🔢: $919 trillion
 
 $$
 \begin{gathered}
@@ -4753,9 +4753,9 @@ dFDA pragmatic trial cost per patient. Uses ADAPTABLE trial ($929) as DELIBERATE
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$97, $3K] • Distribution: Lognormal
+**Technical**: 95% CI: [$97, $3,000] • Distribution: Lognormal
 
-**What this means**: This estimate is highly uncertain. The true value likely falls between $97 and $3K (±156%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: This estimate is highly uncertain. The true value likely falls between $97 and $3,000 (±156%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -4875,7 +4875,7 @@ Annual deaths from active combat worldwide
 
 :::
 
-### Annual Deaths from State Violence: 2.7 thousand deaths/year {#sec-global_annual_conflict_deaths_state_violence}
+### Annual Deaths from State Violence: 2,700 deaths/year {#sec-global_annual_conflict_deaths_state_violence}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -4885,9 +4885,9 @@ Annual deaths from state violence
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [1.5 thousand deaths/year, 5 thousand deaths/year] • Distribution: Lognormal
+**Technical**: 95% CI: [1,500 deaths/year, 5,000 deaths/year] • Distribution: Lognormal
 
-**What this means**: This estimate is highly uncertain. The true value likely falls between 1.5 thousand deaths/year and 5 thousand deaths/year (±65%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: This estimate is highly uncertain. The true value likely falls between 1,500 deaths/year and 5,000 deaths/year (±65%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -4899,7 +4899,7 @@ Annual deaths from state violence
 
 :::
 
-### Annual Deaths from Terror Attacks Globally: 8.3 thousand deaths/year {#sec-global_annual_conflict_deaths_terror_attacks}
+### Annual Deaths from Terror Attacks Globally: 8,300 deaths/year {#sec-global_annual_conflict_deaths_terror_attacks}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -4909,9 +4909,9 @@ Annual deaths from terror attacks globally
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [6 thousand deaths/year, 12 thousand deaths/year] • Distribution: Lognormal
+**Technical**: 95% CI: [6,000 deaths/year, 12,000 deaths/year] • Distribution: Lognormal
 
-**What this means**: There's significant uncertainty here. The true value likely falls between 6 thousand deaths/year and 12 thousand deaths/year (±36%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: There's significant uncertainty here. The true value likely falls between 6,000 deaths/year and 12,000 deaths/year (±36%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -4923,7 +4923,7 @@ Annual deaths from terror attacks globally
 
 :::
 
-### Annual Environmental Damage and Restoration Costs from Conflict: $100B {#sec-global_annual_environmental_damage_conflict}
+### Annual Environmental Damage and Restoration Costs from Conflict: $100 billion {#sec-global_annual_environmental_damage_conflict}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -4933,9 +4933,9 @@ Annual environmental damage and restoration costs from conflict
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$70B, $140B] • Distribution: Lognormal
+**Technical**: 95% CI: [$70 billion, $140 billion] • Distribution: Lognormal
 
-**What this means**: There's significant uncertainty here. The true value likely falls between $70B and $140B (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: There's significant uncertainty here. The true value likely falls between $70 billion and $140 billion (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -4947,7 +4947,7 @@ Annual environmental damage and restoration costs from conflict
 
 :::
 
-### Annual Infrastructure Damage to Communications from Conflict: $298B {#sec-global_annual_infrastructure_damage_communications_conflict}
+### Annual Infrastructure Damage to Communications from Conflict: $298 billion {#sec-global_annual_infrastructure_damage_communications_conflict}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -4957,9 +4957,9 @@ Annual infrastructure damage to communications from conflict
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$209B, $418B] • Distribution: Lognormal
+**Technical**: 95% CI: [$209 billion, $418 billion] • Distribution: Lognormal
 
-**What this means**: There's significant uncertainty here. The true value likely falls between $209B and $418B (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: There's significant uncertainty here. The true value likely falls between $209 billion and $418 billion (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -4971,7 +4971,7 @@ Annual infrastructure damage to communications from conflict
 
 :::
 
-### Annual Infrastructure Damage to Education Facilities from Conflict: $234B {#sec-global_annual_infrastructure_damage_education_conflict}
+### Annual Infrastructure Damage to Education Facilities from Conflict: $234 billion {#sec-global_annual_infrastructure_damage_education_conflict}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -4981,9 +4981,9 @@ Annual infrastructure damage to education facilities from conflict
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$164B, $328B] • Distribution: Lognormal
+**Technical**: 95% CI: [$164 billion, $328 billion] • Distribution: Lognormal
 
-**What this means**: There's significant uncertainty here. The true value likely falls between $164B and $328B (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: There's significant uncertainty here. The true value likely falls between $164 billion and $328 billion (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -4995,7 +4995,7 @@ Annual infrastructure damage to education facilities from conflict
 
 :::
 
-### Annual Infrastructure Damage to Energy Systems from Conflict: $422B {#sec-global_annual_infrastructure_damage_energy_conflict}
+### Annual Infrastructure Damage to Energy Systems from Conflict: $422 billion {#sec-global_annual_infrastructure_damage_energy_conflict}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -5005,9 +5005,9 @@ Annual infrastructure damage to energy systems from conflict
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$295B, $590B] • Distribution: Lognormal
+**Technical**: 95% CI: [$295 billion, $590 billion] • Distribution: Lognormal
 
-**What this means**: There's significant uncertainty here. The true value likely falls between $295B and $590B (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: There's significant uncertainty here. The true value likely falls between $295 billion and $590 billion (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -5019,7 +5019,7 @@ Annual infrastructure damage to energy systems from conflict
 
 :::
 
-### Annual Infrastructure Damage to Healthcare Facilities from Conflict: $166B {#sec-global_annual_infrastructure_damage_healthcare_conflict}
+### Annual Infrastructure Damage to Healthcare Facilities from Conflict: $166 billion {#sec-global_annual_infrastructure_damage_healthcare_conflict}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -5029,9 +5029,9 @@ Annual infrastructure damage to healthcare facilities from conflict
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$116B, $232B] • Distribution: Lognormal
+**Technical**: 95% CI: [$116 billion, $232 billion] • Distribution: Lognormal
 
-**What this means**: There's significant uncertainty here. The true value likely falls between $116B and $232B (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: There's significant uncertainty here. The true value likely falls between $116 billion and $232 billion (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -5043,7 +5043,7 @@ Annual infrastructure damage to healthcare facilities from conflict
 
 :::
 
-### Annual Infrastructure Damage to Transportation from Conflict: $487B {#sec-global_annual_infrastructure_damage_transportation_conflict}
+### Annual Infrastructure Damage to Transportation from Conflict: $487 billion {#sec-global_annual_infrastructure_damage_transportation_conflict}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -5053,9 +5053,9 @@ Annual infrastructure damage to transportation from conflict
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$340B, $680B] • Distribution: Lognormal
+**Technical**: 95% CI: [$340 billion, $680 billion] • Distribution: Lognormal
 
-**What this means**: There's significant uncertainty here. The true value likely falls between $340B and $680B (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: There's significant uncertainty here. The true value likely falls between $340 billion and $680 billion (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -5067,7 +5067,7 @@ Annual infrastructure damage to transportation from conflict
 
 :::
 
-### Annual Infrastructure Damage to Water Systems from Conflict: $268B {#sec-global_annual_infrastructure_damage_water_conflict}
+### Annual Infrastructure Damage to Water Systems from Conflict: $268 billion {#sec-global_annual_infrastructure_damage_water_conflict}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -5077,9 +5077,9 @@ Annual infrastructure damage to water systems from conflict
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$187B, $375B] • Distribution: Lognormal
+**Technical**: 95% CI: [$187 billion, $375 billion] • Distribution: Lognormal
 
-**What this means**: There's significant uncertainty here. The true value likely falls between $187B and $375B (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: There's significant uncertainty here. The true value likely falls between $187 billion and $375 billion (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -5091,7 +5091,7 @@ Annual infrastructure damage to water systems from conflict
 
 :::
 
-### Annual Lost Economic Growth from Military Spending Opportunity Cost: $2.72T {#sec-global_annual_lost_economic_growth_military_spending}
+### Annual Lost Economic Growth from Military Spending Opportunity Cost: $2.72 trillion {#sec-global_annual_lost_economic_growth_military_spending}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -5101,9 +5101,9 @@ Annual foregone economic output from military spending vs productive alternative
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$1.9T, $3.8T] • Distribution: Lognormal
+**Technical**: 95% CI: [$1.9 trillion, $3.8 trillion] • Distribution: Lognormal
 
-**What this means**: There's significant uncertainty here. The true value likely falls between $1.9T and $3.8T (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: There's significant uncertainty here. The true value likely falls between $1.9 trillion and $3.8 trillion (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -5115,7 +5115,7 @@ Annual foregone economic output from military spending vs productive alternative
 
 :::
 
-### Annual Lost Productivity from Conflict Casualties: $300B {#sec-global_annual_lost_human_capital_conflict}
+### Annual Lost Productivity from Conflict Casualties: $300 billion {#sec-global_annual_lost_human_capital_conflict}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -5125,9 +5125,9 @@ Annual lost productivity from conflict casualties
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$210B, $420B] • Distribution: Lognormal
+**Technical**: 95% CI: [$210 billion, $420 billion] • Distribution: Lognormal
 
-**What this means**: There's significant uncertainty here. The true value likely falls between $210B and $420B (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: There's significant uncertainty here. The true value likely falls between $210 billion and $420 billion (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -5139,7 +5139,7 @@ Annual lost productivity from conflict casualties
 
 :::
 
-### Annual PTSD and Mental Health Costs from Conflict: $232B {#sec-global_annual_psychological_impact_costs_conflict}
+### Annual PTSD and Mental Health Costs from Conflict: $232 billion {#sec-global_annual_psychological_impact_costs_conflict}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -5149,9 +5149,9 @@ Annual PTSD and mental health costs from conflict
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$162B, $325B] • Distribution: Lognormal
+**Technical**: 95% CI: [$162 billion, $325 billion] • Distribution: Lognormal
 
-**What this means**: There's significant uncertainty here. The true value likely falls between $162B and $325B (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: There's significant uncertainty here. The true value likely falls between $162 billion and $325 billion (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -5163,7 +5163,7 @@ Annual PTSD and mental health costs from conflict
 
 :::
 
-### Annual Refugee Support Costs: $150B {#sec-global_annual_refugee_support_costs}
+### Annual Refugee Support Costs: $150 billion {#sec-global_annual_refugee_support_costs}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -5173,9 +5173,9 @@ Annual refugee support costs (108.4M refugees × $1,384/year)
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$105B, $210B] • Distribution: Lognormal
+**Technical**: 95% CI: [$105 billion, $210 billion] • Distribution: Lognormal
 
-**What this means**: There's significant uncertainty here. The true value likely falls between $105B and $210B (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: There's significant uncertainty here. The true value likely falls between $105 billion and $210 billion (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -5187,7 +5187,7 @@ Annual refugee support costs (108.4M refugees × $1,384/year)
 
 :::
 
-### Annual Trade Disruption Costs from Currency Instability: $57.4B {#sec-global_annual_trade_disruption_currency_conflict}
+### Annual Trade Disruption Costs from Currency Instability: $57.4 billion {#sec-global_annual_trade_disruption_currency_conflict}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -5197,9 +5197,9 @@ Annual trade disruption costs from currency instability
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$40B, $80B] • Distribution: Lognormal
+**Technical**: 95% CI: [$40 billion, $80 billion] • Distribution: Lognormal
 
-**What this means**: There's significant uncertainty here. The true value likely falls between $40B and $80B (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: There's significant uncertainty here. The true value likely falls between $40 billion and $80 billion (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -5211,7 +5211,7 @@ Annual trade disruption costs from currency instability
 
 :::
 
-### Annual Trade Disruption Costs from Energy Price Volatility: $125B {#sec-global_annual_trade_disruption_energy_price_conflict}
+### Annual Trade Disruption Costs from Energy Price Volatility: $125 billion {#sec-global_annual_trade_disruption_energy_price_conflict}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -5221,9 +5221,9 @@ Annual trade disruption costs from energy price volatility
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$87B, $175B] • Distribution: Lognormal
+**Technical**: 95% CI: [$87 billion, $175 billion] • Distribution: Lognormal
 
-**What this means**: There's significant uncertainty here. The true value likely falls between $87B and $175B (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: There's significant uncertainty here. The true value likely falls between $87 billion and $175 billion (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -5235,7 +5235,7 @@ Annual trade disruption costs from energy price volatility
 
 :::
 
-### Annual Trade Disruption Costs from Shipping Disruptions: $247B {#sec-global_annual_trade_disruption_shipping_conflict}
+### Annual Trade Disruption Costs from Shipping Disruptions: $247 billion {#sec-global_annual_trade_disruption_shipping_conflict}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -5245,9 +5245,9 @@ Annual trade disruption costs from shipping disruptions
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$173B, $346B] • Distribution: Lognormal
+**Technical**: 95% CI: [$173 billion, $346 billion] • Distribution: Lognormal
 
-**What this means**: There's significant uncertainty here. The true value likely falls between $173B and $346B (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: There's significant uncertainty here. The true value likely falls between $173 billion and $346 billion (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -5259,7 +5259,7 @@ Annual trade disruption costs from shipping disruptions
 
 :::
 
-### Annual Trade Disruption Costs from Supply Chain Disruptions: $187B {#sec-global_annual_trade_disruption_supply_chain_conflict}
+### Annual Trade Disruption Costs from Supply Chain Disruptions: $187 billion {#sec-global_annual_trade_disruption_supply_chain_conflict}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -5269,9 +5269,9 @@ Annual trade disruption costs from supply chain disruptions
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$131B, $262B] • Distribution: Lognormal
+**Technical**: 95% CI: [$131 billion, $262 billion] • Distribution: Lognormal
 
-**What this means**: There's significant uncertainty here. The true value likely falls between $131B and $262B (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: There's significant uncertainty here. The true value likely falls between $131 billion and $262 billion (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -5283,7 +5283,7 @@ Annual trade disruption costs from supply chain disruptions
 
 :::
 
-### Annual Veteran Healthcare Costs: $200B {#sec-global_annual_veteran_healthcare_costs}
+### Annual Veteran Healthcare Costs: $200 billion {#sec-global_annual_veteran_healthcare_costs}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -5293,9 +5293,9 @@ Annual veteran healthcare costs (20-year projected)
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$140B, $280B] • Distribution: Lognormal
+**Technical**: 95% CI: [$140 billion, $280 billion] • Distribution: Lognormal
 
-**What this means**: There's significant uncertainty here. The true value likely falls between $140B and $280B (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: There's significant uncertainty here. The true value likely falls between $140 billion and $280 billion (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -5323,7 +5323,7 @@ Compound annual growth rate of global cybercrime costs. Cybersecurity Ventures: 
 
 :::
 
-### Global Cybercrime Costs (2025): $10.5T {#sec-global_cybercrime_cost_annual_2025}
+### Global Cybercrime Costs (2025): $10.5 trillion {#sec-global_cybercrime_cost_annual_2025}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -5339,7 +5339,7 @@ Projected global cybercrime costs in 2025. Includes data theft, productivity los
 
 :::
 
-### Global GDP (2025): $115T {#sec-global_gdp_2025}
+### Global GDP (2025): $115 trillion {#sec-global_gdp_2025}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -5391,7 +5391,7 @@ Global median age in 2024 from UN World Population Prospects 2024 revision.
 
 :::
 
-### Global Military Spending in 2024: $2.72T {#sec-global_military_spending_annual_2024}
+### Global Military Spending in 2024: $2.72 trillion {#sec-global_military_spending_annual_2024}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -5535,7 +5535,7 @@ Annual life-years saved by pharmaceutical innovations globally. Lichtenberg (201
 
 :::
 
-### Global Health Opportunity Cost: $34T {#sec-political_dysfunction_global_health_opportunity_cost}
+### Global Health Opportunity Cost: $34 trillion {#sec-political_dysfunction_global_health_opportunity_cost}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -5545,9 +5545,9 @@ Annual opportunity cost of slow-motion regulatory environment for health innovat
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$20T, $80T] • Distribution: Lognormal (SE: $15T)
+**Technical**: 95% CI: [$20 trillion, $80 trillion] • Distribution: Lognormal (SE: $15 trillion)
 
-**What this means**: This estimate is highly uncertain. The true value likely falls between $20T and $80T (±88%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: This estimate is highly uncertain. The true value likely falls between $20 trillion and $80 trillion (±88%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -5559,7 +5559,7 @@ Annual opportunity cost of slow-motion regulatory environment for health innovat
 
 :::
 
-### Global Lead Poisoning Cost: $6T {#sec-political_dysfunction_global_lead_opportunity_cost}
+### Global Lead Poisoning Cost: $6 trillion {#sec-political_dysfunction_global_lead_opportunity_cost}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -5569,9 +5569,9 @@ Global cost of lead exposure: World Bank/Lancet estimate. 765 million IQ points 
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$4T, $8T] • Distribution: Normal (SE: $1T)
+**Technical**: 95% CI: [$4 trillion, $8 trillion] • Distribution: Normal (SE: $1 trillion)
 
-**What this means**: There's significant uncertainty here. The true value likely falls between $4T and $8T (±33%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: There's significant uncertainty here. The true value likely falls between $4 trillion and $8 trillion (±33%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The normal distribution means values cluster around the center with equal chances of being higher or lower.*
 
@@ -5583,7 +5583,7 @@ Global cost of lead exposure: World Bank/Lancet estimate. 765 million IQ points 
 
 :::
 
-### Global Migration Opportunity Cost: $57T {#sec-political_dysfunction_global_migration_opportunity_cost}
+### Global Migration Opportunity Cost: $57 trillion {#sec-political_dysfunction_global_migration_opportunity_cost}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -5593,9 +5593,9 @@ Unrealized output from migration restrictions. Clemens (2011) calculated elimina
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$57T, $170T] • Distribution: Lognormal (SE: $30T)
+**Technical**: 95% CI: [$57 trillion, $170 trillion] • Distribution: Lognormal (SE: $30 trillion)
 
-**What this means**: This estimate is highly uncertain. The true value likely falls between $57T and $170T (±99%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: This estimate is highly uncertain. The true value likely falls between $57 trillion and $170 trillion (±99%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -5607,7 +5607,7 @@ Unrealized output from migration restrictions. Clemens (2011) calculated elimina
 
 :::
 
-### Global Science Opportunity Cost: $4T {#sec-political_dysfunction_global_science_opportunity_cost}
+### Global Science Opportunity Cost: $4 trillion {#sec-political_dysfunction_global_science_opportunity_cost}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -5617,9 +5617,9 @@ Annual opportunity cost from underfunding high-ROI science (fusion, AI safety). 
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$2T, $10T] • Distribution: Lognormal (SE: $2T)
+**Technical**: 95% CI: [$2 trillion, $10 trillion] • Distribution: Lognormal (SE: $2 trillion)
 
-**What this means**: This estimate is highly uncertain. The true value likely falls between $2T and $10T (±100%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: This estimate is highly uncertain. The true value likely falls between $2 trillion and $10 trillion (±100%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -5631,7 +5631,7 @@ Annual opportunity cost from underfunding high-ROI science (fusion, AI safety). 
 
 :::
 
-### Total Number of Rare Diseases Globally: 7 thousand diseases {#sec-rare_diseases_count_global}
+### Total Number of Rare Diseases Globally: 7,000 diseases {#sec-rare_diseases_count_global}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -5641,9 +5641,9 @@ Total number of rare diseases globally
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [6 thousand diseases, 10 thousand diseases] • Distribution: Normal
+**Technical**: 95% CI: [6,000 diseases, 10,000 diseases] • Distribution: Normal
 
-**What this means**: There's significant uncertainty here. The true value likely falls between 6 thousand diseases and 10 thousand diseases (±29%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: There's significant uncertainty here. The true value likely falls between 6,000 diseases and 10,000 diseases (±29%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The normal distribution means values cluster around the center with equal chances of being higher or lower.*
 
@@ -5675,7 +5675,7 @@ Mean age of preventable death from post-safety efficacy testing regulatory delay
 
 :::
 
-### Standard Economic Value per QALY: $150K {#sec-standard_economic_qaly_value_usd}
+### Standard Economic Value per QALY: $150,000 {#sec-standard_economic_qaly_value_usd}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -5685,7 +5685,7 @@ Standard economic value per QALY
 
 #### Uncertainty Range
 
-**Technical**: Distribution: Normal (SE: $30K)
+**Technical**: Distribution: Normal (SE: $30,000)
 
 #### Input Distribution
 
@@ -5695,7 +5695,7 @@ Standard economic value per QALY
 
 :::
 
-### US Military Spending at WW2 Peak (Constant 2024 Dollars): $1.42T {#sec-us_military_spending_1945_peak_annual_2024usd}
+### US Military Spending at WW2 Peak (Constant 2024 Dollars): $1.42 trillion {#sec-us_military_spending_1945_peak_annual_2024usd}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -5711,7 +5711,7 @@ US military spending at WW2 peak (1945) in constant 2024 dollars
 
 :::
 
-### US Military Spending in 1947 (Constant 2024 Dollars): $176B {#sec-us_military_spending_1947_annual_2024usd}
+### US Military Spending in 1947 (Constant 2024 Dollars): $176 billion {#sec-us_military_spending_1947_annual_2024usd}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -5727,7 +5727,7 @@ US military spending in 1947 (post-WW2 trough, 2 years after peak) in constant 2
 
 :::
 
-### Value of Statistical Life: $10M {#sec-value_of_statistical_life}
+### Value of Statistical Life: $10 million {#sec-value_of_statistical_life}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -5737,9 +5737,9 @@ Value of Statistical Life (conservative estimate)
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$5M, $15M] • Distribution: Gamma (SE: $3M)
+**Technical**: 95% CI: [$5 million, $15 million] • Distribution: Gamma (SE: $3 million)
 
-**What this means**: There's significant uncertainty here. The true value likely falls between $5M and $15M (±50%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: There's significant uncertainty here. The true value likely falls between $5 million and $15 million (±50%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The gamma distribution means values follow a specific statistical pattern.*
 
@@ -5791,7 +5791,7 @@ Base year for destructive economy projections. All threshold timelines are measu
 
 :::
 
-### dFDA Annual Trial Funding: $21.8B {#sec-dfda_annual_trial_funding}
+### dFDA Annual Trial Funding: $21.8 billion {#sec-dfda_annual_trial_funding}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -5805,7 +5805,7 @@ Assumed annual funding for dFDA pragmatic clinical trials (~$21.8B/year). Source
 
 :::
 
-### Decentralized Framework for Drug Assessment Community Support Costs: $2M {#sec-dfda_opex_community}
+### Decentralized Framework for Drug Assessment Community Support Costs: $2 million {#sec-dfda_opex_community}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -5813,9 +5813,9 @@ Decentralized Framework for Drug Assessment community support costs
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$1M, $3M] • Distribution: Lognormal
+**Technical**: 95% CI: [$1 million, $3 million] • Distribution: Lognormal
 
-**What this means**: There's significant uncertainty here. The true value likely falls between $1M and $3M (±50%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: There's significant uncertainty here. The true value likely falls between $1 million and $3 million (±50%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -5827,7 +5827,7 @@ Decentralized Framework for Drug Assessment community support costs
 
 :::
 
-### Decentralized Framework for Drug Assessment Infrastructure Costs: $8M {#sec-dfda_opex_infrastructure}
+### Decentralized Framework for Drug Assessment Infrastructure Costs: $8 million {#sec-dfda_opex_infrastructure}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -5835,9 +5835,9 @@ Decentralized Framework for Drug Assessment infrastructure costs (cloud, securit
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$5M, $12M] • Distribution: Lognormal
+**Technical**: 95% CI: [$5 million, $12 million] • Distribution: Lognormal
 
-**What this means**: There's significant uncertainty here. The true value likely falls between $5M and $12M (±44%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: There's significant uncertainty here. The true value likely falls between $5 million and $12 million (±44%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -5849,7 +5849,7 @@ Decentralized Framework for Drug Assessment infrastructure costs (cloud, securit
 
 :::
 
-### Decentralized Framework for Drug Assessment Maintenance Costs: $15M {#sec-dfda_opex_platform_maintenance}
+### Decentralized Framework for Drug Assessment Maintenance Costs: $15 million {#sec-dfda_opex_platform_maintenance}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -5857,9 +5857,9 @@ Decentralized Framework for Drug Assessment maintenance costs
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$10M, $22M] • Distribution: Lognormal
+**Technical**: 95% CI: [$10 million, $22 million] • Distribution: Lognormal
 
-**What this means**: There's significant uncertainty here. The true value likely falls between $10M and $22M (±40%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: There's significant uncertainty here. The true value likely falls between $10 million and $22 million (±40%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -5871,7 +5871,7 @@ Decentralized Framework for Drug Assessment maintenance costs
 
 :::
 
-### Decentralized Framework for Drug Assessment Regulatory Coordination Costs: $5M {#sec-dfda_opex_regulatory}
+### Decentralized Framework for Drug Assessment Regulatory Coordination Costs: $5 million {#sec-dfda_opex_regulatory}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -5879,9 +5879,9 @@ Decentralized Framework for Drug Assessment regulatory coordination costs
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$3M, $8M] • Distribution: Lognormal
+**Technical**: 95% CI: [$3 million, $8 million] • Distribution: Lognormal
 
-**What this means**: There's significant uncertainty here. The true value likely falls between $3M and $8M (±50%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: There's significant uncertainty here. The true value likely falls between $3 million and $8 million (±50%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -5893,7 +5893,7 @@ Decentralized Framework for Drug Assessment regulatory coordination costs
 
 :::
 
-### Decentralized Framework for Drug Assessment Staff Costs: $10M {#sec-dfda_opex_staff}
+### Decentralized Framework for Drug Assessment Staff Costs: $10 million {#sec-dfda_opex_staff}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -5901,9 +5901,9 @@ Decentralized Framework for Drug Assessment staff costs (minimal, AI-assisted)
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$7M, $15M] • Distribution: Lognormal
+**Technical**: 95% CI: [$7 million, $15 million] • Distribution: Lognormal
 
-**What this means**: There's significant uncertainty here. The true value likely falls between $7M and $15M (±40%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: There's significant uncertainty here. The true value likely falls between $7 million and $15 million (±40%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 

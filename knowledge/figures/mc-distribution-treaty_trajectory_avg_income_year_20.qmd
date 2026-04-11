@@ -117,10 +117,10 @@ plt.show()
 
 | Statistic | Value |
 |:----------|------:|
-| Baseline (deterministic) | $99.9K |
-| Mean (expected value) | $109K |
-| Median (50th percentile) | $96.8K |
-| Standard Deviation | $51.5K |
-| 90% Range (5th-95th percentile) | [$47.1K, $222K] |
+| Baseline (deterministic) | $99,861 |
+| Mean (expected value) | $109,346 |
+| Median (50th percentile) | $96,775 |
+| Standard Deviation | $51,510 |
+| 90% Range (5th-95th percentile) | [$47,101, $222,032] |
 
 *The histogram shows the distribution of Treaty Trajectory Average Income at Year 20 across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

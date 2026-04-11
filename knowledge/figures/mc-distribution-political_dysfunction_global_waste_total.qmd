@@ -117,10 +117,10 @@ plt.show()
 
 | Statistic | Value |
 |:----------|------:|
-| Baseline (deterministic) | $6.2T |
-| Mean (expected value) | $6.18T |
-| Median (50th percentile) | $6.11T |
-| Standard Deviation | $933B |
-| 90% Range (5th-95th percentile) | [$4.75T, $7.97T] |
+| Baseline (deterministic) | $6.2 trillion |
+| Mean (expected value) | $6.18 trillion |
+| Median (50th percentile) | $6.11 trillion |
+| Standard Deviation | $933 billion |
+| 90% Range (5th-95th percentile) | [$4.75 trillion, $7.97 trillion] |
 
 *The histogram shows the distribution of Global Waste Total (Efficiency Accounting) across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

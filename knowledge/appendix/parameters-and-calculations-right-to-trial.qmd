@@ -63,9 +63,9 @@ RECOVERY trial cost per patient. Note: RECOVERY was an outlier - hospital-based 
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$400, $2.5K] • Distribution: Lognormal
+**Technical**: 95% CI: [$400, $2,500] • Distribution: Lognormal
 
-**What this means**: This estimate is highly uncertain. The true value likely falls between $400 and $2.5K (±210%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: This estimate is highly uncertain. The true value likely falls between $400 and $2,500 (±210%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -77,7 +77,7 @@ RECOVERY trial cost per patient. Note: RECOVERY was an outlier - hospital-based 
 
 :::
 
-### Phase 3 Cost per Patient: $41K {#sec-traditional_phase3_cost_per_patient}
+### Phase 3 Cost per Patient: $41,000 {#sec-traditional_phase3_cost_per_patient}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -87,9 +87,9 @@ Phase 3 cost per patient (median from FDA study)
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$20K, $120K] • Distribution: Lognormal
+**Technical**: 95% CI: [$20,000, $120,000] • Distribution: Lognormal
 
-**What this means**: This estimate is highly uncertain. The true value likely falls between $20K and $120K (±122%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: This estimate is highly uncertain. The true value likely falls between $20,000 and $120,000 (±122%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 

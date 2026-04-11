@@ -117,10 +117,10 @@ plt.show()
 
 | Statistic | Value |
 |:----------|------:|
-| Baseline (deterministic) | $1.2T |
-| Mean (expected value) | $1.2T |
-| Median (50th percentile) | $1.2T |
-| Standard Deviation | $135B |
-| 90% Range (5th-95th percentile) | [$1T, $1.45T] |
+| Baseline (deterministic) | $1.2 trillion |
+| Mean (expected value) | $1.2 trillion |
+| Median (50th percentile) | $1.2 trillion |
+| Standard Deviation | $135 billion |
+| 90% Range (5th-95th percentile) | [$1 trillion, $1.45 trillion] |
 
 *The histogram shows the distribution of Category 4: System Inefficiency across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

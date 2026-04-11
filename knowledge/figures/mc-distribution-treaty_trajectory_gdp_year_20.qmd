@@ -117,10 +117,10 @@ plt.show()
 
 | Statistic | Value |
 |:----------|------:|
-| Baseline (deterministic) | $919T |
+| Baseline (deterministic) | $919 trillion |
 | Mean (expected value) | $1.01 quadrillion |
-| Median (50th percentile) | $890T |
-| Standard Deviation | $474T |
-| 90% Range (5th-95th percentile) | [$433T, $2.04 quadrillion] |
+| Median (50th percentile) | $890 trillion |
+| Standard Deviation | $474 trillion |
+| 90% Range (5th-95th percentile) | [$433 trillion, $2.04 quadrillion] |
 
 *The histogram shows the distribution of Treaty Trajectory GDP at Year 20 across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

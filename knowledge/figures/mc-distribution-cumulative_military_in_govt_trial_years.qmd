@@ -117,10 +117,10 @@ plt.show()
 
 | Statistic | Value |
 |:----------|------:|
-| Baseline (deterministic) | 37.8 thousand |
-| Mean (expected value) | 39.7 thousand |
-| Median (50th percentile) | 38.8 thousand |
-| Standard Deviation | 7.92 thousand |
-| 90% Range (5th-95th percentile) | [28.3 thousand, 55.9 thousand] |
+| Baseline (deterministic) | 37,778 |
+| Mean (expected value) | 39,705 |
+| Median (50th percentile) | 38,811 |
+| Standard Deviation | 7,918 |
+| 90% Range (5th-95th percentile) | [28,333, 55,889] |
 
 *The histogram shows the distribution of Military Spending in Government Clinical Trial Years across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

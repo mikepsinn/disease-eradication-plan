@@ -117,10 +117,10 @@ plt.show()
 
 | Statistic | Value |
 |:----------|------:|
-| Baseline (deterministic) | $6.74M |
-| Mean (expected value) | $7.31M |
-| Median (50th percentile) | $6.26M |
-| Standard Deviation | $4.01M |
-| 90% Range (5th-95th percentile) | [$2.62M, $15.7M] |
+| Baseline (deterministic) | $6.74 million |
+| Mean (expected value) | $7.31 million |
+| Median (50th percentile) | $6.26 million |
+| Standard Deviation | $4.01 million |
+| 90% Range (5th-95th percentile) | [$2.62 million, $15.7 million] |
 
 *The histogram shows the distribution of Treaty Personal Upside (Blended) across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

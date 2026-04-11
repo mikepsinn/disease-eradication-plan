@@ -117,10 +117,10 @@ plt.show()
 
 | Statistic | Value |
 |:----------|------:|
-| Baseline (deterministic) | $40M |
-| Mean (expected value) | $39.9M |
-| Median (50th percentile) | $39M |
-| Standard Deviation | $8.21M |
-| 90% Range (5th-95th percentile) | [$27.3M, $55.6M] |
+| Baseline (deterministic) | $40 million |
+| Mean (expected value) | $39.9 million |
+| Median (50th percentile) | $39 million |
+| Standard Deviation | $8.21 million |
+| 90% Range (5th-95th percentile) | [$27.3 million, $55.6 million] |
 
 *The histogram shows the distribution of Total Annual Decentralized Framework for Drug Assessment Operational Costs across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*
