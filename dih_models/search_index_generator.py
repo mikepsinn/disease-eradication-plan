@@ -518,9 +518,6 @@ class SearchIndexGenerator:
         if url_path == 'index.html':
             return '/'
 
-        # Remove knowledge/ prefix for cleaner URLs
-        url_path = url_path.replace('knowledge/', '')
-
         return f"/{url_path}"
 
     def _extract_parameter_metadata(self, content: str) -> Dict[str, Dict[str, Any]]:

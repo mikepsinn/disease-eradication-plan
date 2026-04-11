@@ -1453,7 +1453,7 @@
   function extractSourceLinksData(fullText, ragResults) {
     var links = [];
     var seen = {};
-    var BASE_URL = "https://manual.warondisease.org/knowledge";
+    var BASE_URL = "https://manual.warondisease.org";
 
     function normalizeSourceUrl(rawUrl) {
       var u = rawUrl;
