@@ -26,7 +26,7 @@ image: /assets/og-images/knowledge/strategy/declaration-of-optimization-og-bw-ac
 
 Governments were created to promote the general welfare (i.e. median health and wealth).
 
-Instead, since 1913, these governments have [printed](../economics/central-banks.qmd) {{< var cumulative_military_spending_fed_era >}} and used it to murder {{< var war_deaths_since_1900_nounit >}} people and destroy many of the valuable things those humans spent their entire lives building.
+Instead, since 1913, these governments have [printed](../economics/central-banks.qmd) {{< var cumulative_military_spending_fed_era >}} and used it to murder {{< var war_deaths_since_1900_nounit >}} humans and destroy many of the valuable things those humans spent their entire lives building.
 
 These murdered humans [include](../problem/cost-of-war.qmd) approximately 930,000 physicians, 310,000 scientists, 620,000 engineers, 1.24 million nurses, 3.1 million teachers, and {{< var war_children_killed_since_1900_nounit >}} children who will never grow up to replace them.
 
@@ -110,11 +110,11 @@ They have permitted {{< var global_disease_deaths_daily_nounit >}} people to die
 
 Nearly ten thousand known safe compounds remain untested for 99.7% of possible disease combinations. Yet the [national health research institutions](../problem/nih-fails-2-institute-health.qmd) nominally responsible for finding cures direct only {{< var nih_clinical_trials_spending_pct >}} of their budgets to the clinical trials necessary to determine which diseases those compounds could treat [@gao-clinical-research-figure].
 
-They have erected [drug regulatory agencies](../problem/fda-is-unsafe-and-ineffective.qmd) whose rules increased development costs by a factor of {{< var dfda_trial_cost_reduction_factor_nounit >}} and timelines to seventeen years [@peltzman-1973], producing {{< var type_ii_error_cost_ratio_nounit >}} deaths from delayed treatments for every one death they prevent. Since 1962, that delay has killed approximately {{< var existing_drugs_efficacy_lag_deaths_total_nounit >}} people [@gieringer-drug-lag-estimate].
+They have erected [drug regulatory agencies](../problem/fda-is-unsafe-and-ineffective.qmd) that, after a drug has been proven safe, force patients to wait an additional {{< var efficacy_lag_years_nounit >}} years [@bio-clinical-development-2021] while a committee determines whether the safe drug works well enough. For every death prevented by this vigilance, {{< var type_ii_error_cost_ratio_nounit >}} people die waiting for the answer. Since 1962, the efficacy lag has killed approximately {{< var existing_drugs_efficacy_lag_deaths_total_nounit >}} people [@gieringer-drug-lag-estimate].
 
-They have left approximately seven thousand known rare diseases in a [treatment queue](../problem/untapped-therapeutic-frontier.qmd) that, at the current rate of fifteen approvals per year [@diseases-getting-first-treatment-annually], requires {{< var status_quo_queue_clearance_years >}} to clear.
+These regulatory barriers mean treatments without a billion-dollar market are never developed at all. The treatments that never were have killed an uncountable number of patients bounded only by the {{< var global_annual_deaths_curable_diseases_nounit >}} people who die of disease each year.
 
-They have approved {{< var approved_drug_disease_pairings_nounit >}} drug-disease pairings for approximately ten thousand known diseases, leaving more than 99.98% of possible therapeutic combinations untested.
+Through the combined effect of war spending, research misallocation, and regulatory cost inflation, they have left approximately seven thousand known rare diseases in a [treatment queue](../problem/untapped-therapeutic-frontier.qmd) that, at the current rate of fifteen approvals per year [@diseases-getting-first-treatment-annually], requires {{< var status_quo_queue_clearance_years >}} to clear.
 
 Through the compound effects of this misallocation to war alone, the governed are {{< var war_counterfactual_income_multiple_nounit >}} times poorer than they would otherwise be. The average human earns {{< var global_avg_income_2025 >}} per year. Without the wars alone, that figure would be {{< var war_counterfactual_gdp_per_capita >}} [@lost-human-capital-war-cost]. On both metrics by which any government should be judged, healthy life years and median income, the present systems have failed absolutely.
 
