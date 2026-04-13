@@ -34,8 +34,24 @@ $table-border-color:   $book-border;
 $table-hover-bg:       $book-light;
 $card-bg:              $book-light;
 $card-border-color:    $book-border;
+// Quarto's .navbar rule uses $navbar-bg / $navbar-fg (defined in Quarto's
+// _bootstrap-variables.scss), not Bootstrap's standard $navbar-light-*.
+// Without these, the top navbar stays Bootstrap's default $gray-100 (#f8f9fa)
+// even in dark mode and the toggle only appears to affect the sidebar.
+$navbar-bg:                  $book-bg;
+$navbar-fg:                  $book-text;
+$navbar-hl:                  $book-accent;
+$navbar-light-bg:            $book-bg;
+$navbar-light-color:         $book-text;
+$navbar-light-hover-color:   $book-accent;
+$navbar-light-active-color:  $book-accent;
+$navbar-light-brand-color:       $book-text;
+$navbar-light-brand-hover-color: $book-accent;
+$navbar-dark-bg:             $book-bg;
 $navbar-dark-color:          $book-text;
 $navbar-dark-hover-color:    $book-accent;
+$navbar-dark-brand-color:        $book-text;
+$navbar-dark-brand-hover-color:  $book-accent;
 
 // Tell the browser this is a dark theme so form controls and scrollbars
 // adopt platform-native dark styling

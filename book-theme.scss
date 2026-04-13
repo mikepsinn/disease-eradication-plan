@@ -34,5 +34,15 @@ $table-border-color:   $book-border;
 $table-hover-bg:       $book-light;
 $card-bg:              $book-bg;
 $card-border-color:    $book-border;
+// Quarto's .navbar uses $navbar-bg / $navbar-fg (defined in Quarto's
+// _bootstrap-variables.scss), not Bootstrap's standard $navbar-*-bg.
+// Setting them here drives the top navbar background + text.
+$navbar-bg:                  $book-bg;
+$navbar-fg:                  $book-text;
+$navbar-hl:                  $book-accent;
+$navbar-light-bg:            $book-bg;
 $navbar-light-color:         $book-text;
 $navbar-light-hover-color:   $book-accent;
+$navbar-light-active-color:  $book-accent;
+$navbar-light-brand-color:       $book-text;
+$navbar-light-brand-hover-color: $book-accent;
