@@ -278,11 +278,29 @@ WHEREAS, these murdered humans include 930,000 physicians, 310,000 scientists, 6
 
 WHEREAS, diseases kill more people than all wars combined [@pandemics-vs-wars] and, unlike wars, do not even have the decency to be quick about it;
 
+WHEREAS, your chance of dying in a terrorist attack is approximately 1 in {{< var annual_terrorism_death_risk_denominator_nounit >}}, and your chance of dying of a disease is 100%, and your current budget does not reflect this;
+
 WHEREAS, we possess nuclear weapons sufficient to end civilization {{< var nuclear_overkill_factor_nounit >}} times over but have not cured Alzheimer's once;
 
 WHEREAS, this is embarrassing;
 
-WHEREAS, {{< var global_disease_deaths_daily_nounit >}} humans die of disease every single day while the treatments that might save them sit on shelves, untested, because the money that would have tested them bought a missile that will also sit on a shelf, untested;
+WHEREAS, someone you love is, at this moment, suffering from a disease;
+
+WHEREAS, the treatment that would help them exists as an untested compound on a shelf, because the money that would have tested it was busy turning into a missile;
+
+WHEREAS, that missile incinerated a child who would have grown up to discover the cure;
+
+WHEREAS, you lose the treatment;
+
+WHEREAS, you lose the scientist;
+
+WHEREAS, you get the inflation;
+
+WHEREAS, you get the tax bill;
+
+WHEREAS, you get to pay for her murder;
+
+WHEREAS, it would be nice if we could arrange to murder 1% fewer of those children;
 
 WHEREAS, we spend {{< var military_to_government_clinical_trials_spending_ratio_nounit >}} dollars on the capacity for orphan manufacturing for every one dollar spent on the trials that might cure what is actually going to kill us;
 
@@ -297,8 +315,6 @@ WHEREAS, global military spending has been compounding at {{< var global_militar
 WHEREAS, redirecting one percent now and thereby halting the growth trajectory returns approximately {{< var peace_dividend_lifetime_per_person >}} per person over that same lifetime, or {{< var peace_dividend_lifetime_per_person_compounded >}} per person if invested at the long-term real return of the Nasdaq-100;
 
 WHEREAS, the United States entered the Second World War spending {{< var us_military_spending_1939_annual_2024usd >}} a year on its military in today's dollars, won the war, then cut military spending by {{< var post_ww2_military_cut_pct >}} in the two years that followed [@us-post-wwii-military-spending-cut] and produced the greatest economic expansion in recorded history, and today spends {{< var us_military_spending_current_vs_prewar_multiplier_nounit >}} times the 1939 figure in peacetime [@us-military-spending-historical-constant-dollars], and unless the human genome has significantly degraded in the two generations since, one percent should be manageable;
-
-WHEREAS, your chance of dying in a terrorist attack is approximately 1 in {{< var annual_terrorism_death_risk_denominator_nounit >}}, and your chance of dying of a disease is 100%, and your current budget does not reflect this;
 
 WHEREAS, pragmatic clinical trials integrated into standard healthcare cost {{< var dfda_pragmatic_trial_cost_per_patient >}} per patient instead of the traditional {{< var traditional_phase3_cost_per_patient >}}, a {{< var dfda_trial_cost_reduction_factor >}} reduction, multiplying global trial capacity by {{< var dfda_trial_capacity_multiplier >}} and compressing the current {{< var status_quo_queue_clearance_years >}} wait to clear humanity's queue of untreated diseases down to {{< var dfda_queue_clearance_years >}};
 

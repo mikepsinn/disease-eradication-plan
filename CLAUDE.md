@@ -79,7 +79,7 @@ Check existing: `grep "keyword" _variables.yml`. Never duplicate. Generate: `npm
 | Task | Command |
 |------|---------|
 | Regenerate everything | `npm run generate:everything` |
-| Validate before render | `npm run validate:pre-render` |
+| Validate before render | `npm run validate:pre-render` (run only before commit/render, NOT after every edit) |
 | Find param usages | `npx tsx scripts/parameter-audit.ts PARAM_NAME` |
 | Unused params | `npm run param:unused` |
 
