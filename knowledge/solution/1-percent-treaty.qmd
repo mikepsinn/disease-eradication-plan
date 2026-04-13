@@ -282,17 +282,15 @@ WHEREAS, your chance of dying in a terrorist attack is approximately 1 in {{< va
 
 WHEREAS, the governments of Earth possess nuclear weapons sufficient to end civilization {{< var nuclear_overkill_factor_nounit >}} times over but have not cured Alzheimer's once;
 
-WHEREAS, this is embarrassing;
-
 WHEREAS, governments spend {{< var military_to_government_clinical_trials_spending_ratio_nounit >}} dollars on the capacity for orphan manufacturing for every one dollar spent on the trials that might cure what is actually going to kill their citizens;
 
 WHEREAS, the United States Department of Defense has failed seven consecutive audits and misplaced $2.46 trillion [@pentagon-unaccounted-2-5t], meaning the 1% this treaty requests is smaller than the rounding error on the money the Pentagon has already lost track of;
 
-WHEREAS, without the combined losses from war and disease the average human would earn {{< var war_counterfactual_gdp_per_capita >}} a year instead of {{< var global_avg_income_2025 >}} [@lost-human-capital-war-cost], meaning every citizen of every signatory nation is currently paying for this arrangement twice: once in taxes, and once in the income they do not have;
+WHEREAS, without the cumulative losses from war and disease the average human would earn {{< var war_counterfactual_gdp_per_capita >}} a year instead of {{< var global_avg_income_2025 >}} [@lost-human-capital-war-cost], meaning every citizen of every signatory nation pays for this arrangement twice: first when their taxes fund the destruction, and again every year afterward in the wages they do not earn, because the scientists, engineers, and builders who would have made everyone richer were killed before they could do so;
 
-WHEREAS, global military spending has been compounding at {{< var global_military_spending_real_cagr_20yr >}} per year in real terms for the last two decades [@sipri-milex-2024], and if that curve holds, the 80-year war bill per human currently alive is {{< var global_war_cost_lifetime_per_person_baseline >}} [@1-pct-treaty-impact-paper-2025], invoiced in advance for explosions in countries they cannot find on a map;
+WHEREAS, global military spending has been compounding at {{< var global_military_spending_real_cagr_20yr >}} per year in real terms for the last two decades [@sipri-milex-2024], meaning that if that trend continues, every human currently alive will owe approximately {{< var global_war_cost_lifetime_per_person_baseline >}} in taxes over their remaining lifetime to fund the resulting military budgets [@1-pct-treaty-impact-paper-2025], most of which will pay for explosions in countries they cannot find on a map;
 
-WHEREAS, redirecting one percent now and thereby halting the growth trajectory returns approximately {{< var peace_dividend_lifetime_per_person >}} per person over that same lifetime, or {{< var peace_dividend_lifetime_per_person_compounded >}} per person if invested at the long-term real return of the Nasdaq-100;
+WHEREAS, redirecting one percent now and thereby flattening that growth trajectory returns approximately {{< var peace_dividend_lifetime_per_person >}} per person over that same lifetime in direct tax savings, or {{< var peace_dividend_lifetime_per_person_compounded >}} per person had those savings been invested at historical equity market returns rather than spent on explosions;
 
 WHEREAS, the United States entered the Second World War spending {{< var us_military_spending_1939_annual_2024usd >}} a year on its military in today's dollars, won the war, then cut military spending by {{< var post_ww2_military_cut_pct >}} in the two years that followed [@us-post-wwii-military-spending-cut] and produced the greatest economic expansion in recorded history, and today spends {{< var us_military_spending_current_vs_prewar_multiplier_nounit >}} times the 1939 figure in peacetime [@us-military-spending-historical-constant-dollars]. Therefor, unless the human genome has significantly degraded in the two generations since, a one percent reallocation should be manageable;
 
@@ -310,21 +308,13 @@ WHEREAS, the treatment that would help them exists as an untested compound on a 
 
 WHEREAS, that missile incinerated a child who would have grown up to discover the cure;
 
-WHEREAS, you lose the treatment;
-
-WHEREAS, you lose the scientist;
-
-WHEREAS, you get the inflation;
-
-WHEREAS, you get the tax bill;
-
-WHEREAS, you get to pay for her murder;
+WHEREAS, you lose the treatment, you lose the scientist, you get the inflation, you get the tax bill, you get to pay for her murder;
 
 WHEREAS, it would be nice if governments could arrange to murder 1% fewer of those children;
 
 NOW, THEREFORE, the undersigned nations agree to try a different approach, as follows:
 
-**Article I**: Each signatory shall redirect exactly 1% of its annual military budget to **the 1% Treaty Fund** for allocation to pragmatic clinical trials.
+**Article I**: Each signatory shall redirect exactly 1% of its annual military budget to **the 1% Treaty Fund**, allocated as follows: {{< var dih_treasury_medical_research_pct >}} to pragmatic clinical trials administered by the Decentralized Institutes of Health; {{< var victory_bond_funding_pct >}} to perpetual returns on Incentive Alignment Bonds; and {{< var iab_political_incentive_funding_pct >}} to a Political Incentive Fund that supports legislators who vote to implement and expand this Treaty, structured in each signatory nation according to its domestic campaign finance and public-official-compensation laws.
 
 **Article II**: Transfers shall be automatic, immediate, and irrevocable. The money moves on the first of every month, the way your mortgage does, except nobody has to call and yell at anyone.
 
