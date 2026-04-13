@@ -286,8 +286,6 @@ WHEREAS, this is embarrassing;
 
 WHEREAS, governments spend {{< var military_to_government_clinical_trials_spending_ratio_nounit >}} dollars on the capacity for orphan manufacturing for every one dollar spent on the trials that might cure what is actually going to kill their citizens;
 
-WHEREAS, since 1962 the regulatory delay between proving a drug is safe and letting dying humans take it has killed approximately {{< var existing_drugs_efficacy_lag_deaths_total_nounit >}} people [@gieringer-drug-lag-estimate], waiting for a committee to decide whether the safe drug worked well enough;
-
 WHEREAS, the United States Department of Defense has failed seven consecutive audits and misplaced $2.46 trillion [@pentagon-unaccounted-2-5t], meaning the 1% this treaty requests is smaller than the rounding error on the money the Pentagon has already lost track of;
 
 WHEREAS, without the combined losses from war and disease the average human would earn {{< var war_counterfactual_gdp_per_capita >}} a year instead of {{< var global_avg_income_2025 >}} [@lost-human-capital-war-cost], meaning every citizen of every signatory nation is currently paying for this arrangement twice: once in taxes, and once in the income they do not have;
@@ -296,7 +294,9 @@ WHEREAS, global military spending has been compounding at {{< var global_militar
 
 WHEREAS, redirecting one percent now and thereby halting the growth trajectory returns approximately {{< var peace_dividend_lifetime_per_person >}} per person over that same lifetime, or {{< var peace_dividend_lifetime_per_person_compounded >}} per person if invested at the long-term real return of the Nasdaq-100;
 
-WHEREAS, the United States entered the Second World War spending {{< var us_military_spending_1939_annual_2024usd >}} a year on its military in today's dollars, won the war, then cut military spending by {{< var post_ww2_military_cut_pct >}} in the two years that followed [@us-post-wwii-military-spending-cut] and produced the greatest economic expansion in recorded history, and today spends {{< var us_military_spending_current_vs_prewar_multiplier_nounit >}} times the 1939 figure in peacetime [@us-military-spending-historical-constant-dollars], and unless the human genome has significantly degraded in the two generations since, one percent should be manageable;
+WHEREAS, the United States entered the Second World War spending {{< var us_military_spending_1939_annual_2024usd >}} a year on its military in today's dollars, won the war, then cut military spending by {{< var post_ww2_military_cut_pct >}} in the two years that followed [@us-post-wwii-military-spending-cut] and produced the greatest economic expansion in recorded history, and today spends {{< var us_military_spending_current_vs_prewar_multiplier_nounit >}} times the 1939 figure in peacetime [@us-military-spending-historical-constant-dollars]. Therefor, unless the human genome has significantly degraded in the two generations since, a one percent reallocation should be manageable;
+
+WHEREAS, since 1962 the regulatory delay between proving a drug is safe and letting dying humans take it has killed approximately {{< var existing_drugs_efficacy_lag_deaths_total_nounit >}} people [@gieringer-drug-lag-estimate], waiting for a committee to decide whether the safe drug worked well enough;
 
 WHEREAS, pragmatic clinical trials integrated into standard healthcare cost {{< var dfda_pragmatic_trial_cost_per_patient >}} per patient instead of the traditional {{< var traditional_phase3_cost_per_patient >}}, a {{< var dfda_trial_cost_reduction_factor >}} reduction, multiplying global trial capacity by {{< var dfda_trial_capacity_multiplier >}} and compressing the current {{< var status_quo_queue_clearance_years >}} wait to clear humanity's queue of untreated diseases down to {{< var dfda_queue_clearance_years >}};
 
@@ -328,21 +328,19 @@ NOW, THEREFORE, the undersigned nations agree to try a different approach, as fo
 
 **Article II**: Transfers shall be automatic, immediate, and irrevocable. The money moves on the first of every month, the way your mortgage does, except nobody has to call and yell at anyone.
 
-**Article III**: Percentages may increase but never decrease. This is a ratchet, not a yo-yo.
+**Article III**: Percentages may increase but never decrease; success metrics trigger mandatory reviews that raise the allocation when the treaty works. This is a ratchet, not a yo-yo.
 
 **Article IV**: Compliance shall be verified by public ledger and independent audits. Relabeling a submarine as "humanitarian infrastructure" will be noticed, because submarines are large and loud and do not fit in the humanitarian infrastructure drawer.
 
 **Article V**: Non-compliant parties will be given a stern talking to.
 
-**Article VI**: Success metrics trigger mandatory percentage reviews. When the treaty works, the allocation percentage increases.
+**Article VI**: Citizens have standing to enforce via domestic courts. You can sue your own government for non-compliance.
 
-**Article VII**: Citizens have standing to enforce via domestic courts. You can sue your own government for non-compliance.
+**Article VII**: Withdrawal requires unanimous consent of all parties plus 10-year notice. Your country would need every other signatory to agree, which requires a decade of phone calls none of them are going to return.
 
-**Article VIII**: Withdrawal requires unanimous consent of all parties plus 10-year notice. Your country would need every other signatory to agree, which requires a decade of phone calls none of them are going to return.
+**Article VIII**: This treaty supersedes all conflicting domestic law. Including the subsection your legislature added at 2 a.m. last session specifically to make sure this couldn't happen.
 
-**Article IX**: This treaty supersedes all conflicting domestic law. Including the subsection your legislature added at 2 a.m. last session specifically to make sure this couldn't happen.
-
-**Article X**: Entry into force upon signature by two states. Two signatures. That's the bar. Your species once got 193 countries to agree that chemical weapons were bad. This asks for 2.
+**Article IX**: Entry into force upon signature by two states. Two signatures. That's the bar. Your species once got 193 countries to agree that chemical weapons were bad. This asks for 2.
 
 IN WITNESS WHEREOF, the undersigned, being of sound mind (debatable) and tired of watching their loved ones die of preventable diseases, have executed this Treaty on behalf of populations who would have executed it much sooner if anyone had asked them, and on behalf of someone each signatory can picture right now who is currently dying of a disease that the money in Article I will help test a cure for.
 
