@@ -292,6 +292,10 @@ WHEREAS, the United States Department of Defense has failed seven consecutive au
 
 WHEREAS, without the combined losses from war and disease the average human would earn {{< var war_counterfactual_gdp_per_capita >}} a year instead of {{< var global_avg_income_2025 >}} [@lost-human-capital-war-cost], meaning every citizen of every signatory nation is currently paying for this arrangement twice: once in taxes, and once in the income they do not have;
 
+WHEREAS, global military spending has been compounding at {{< var global_military_spending_real_cagr_20yr >}} per year in real terms for the last two decades [@sipri-milex-2024], and if that curve holds, the 80-year war bill per human currently alive is {{< var global_war_cost_lifetime_per_person_baseline >}} [@1-pct-treaty-impact-paper-2025], invoiced in advance for explosions in countries they cannot find on a map;
+
+WHEREAS, redirecting one percent now and thereby halting the growth trajectory returns approximately {{< var peace_dividend_lifetime_per_person >}} per person over that same lifetime, or {{< var peace_dividend_lifetime_per_person_compounded >}} per person if invested at the long-term real return of the Nasdaq-100;
+
 WHEREAS, after the Second World War the same governments signing this treaty cut military spending by {{< var post_ww2_military_cut_pct >}} in two years [@us-post-wwii-military-spending-cut] and produced the greatest economic expansion in recorded history, which strongly suggests one percent is survivable;
 
 WHEREAS, your chance of dying in a terrorist attack is approximately 1 in {{< var annual_terrorism_death_risk_denominator_nounit >}}, and your chance of dying of a disease is 100%, and your current budget does not reflect this;
