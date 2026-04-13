@@ -268,41 +268,59 @@ If you can't agree on that, if you can't agree that spending 1 penny less on dea
 
 **THE TREATY FOR THE 1% REALLOCATION OF MILITARY EXPENDITURES TOWARDS BIOMEDICAL RESEARCH AND DEVELOPMENT FOR THE PREVENTION OF HUMAN SUFFERING AND DEATH**
 
-*(Or: The "Let's Not Die" Treaty, for short)*
+*(Short title: the treaty where you buy 1% fewer bombs and, in exchange, stop dying of things)*
 
-WHEREAS, humanity spends {{< var global_military_spending_annual_2024 >}} annually on methods of killing itself;
+WHEREAS, humanity spends {{< var global_military_spending_annual_2024 >}} a year on methods of killing itself, which is enough to buy {{< var bullets_per_person_annual_nounit >}} bullets for every human alive every year, which is more bullets than any human has a reasonable use for;
 
-WHEREAS, this seems somewhat counterproductive;
+WHEREAS, since 1900 the governments of Earth have spent {{< var cumulative_military_spending_fed_era >}} on killing approximately {{< var war_deaths_since_1900_nounit >}} humans [@lost-human-capital-war-cost];
 
-WHEREAS, diseases kill more people than all wars combined [@pandemics-vs-wars] and don't even have the decency to be quick about it;
+WHEREAS, these murdered humans include 930,000 physicians, 310,000 scientists, 620,000 engineers, 1.24 million nurses, 3.1 million teachers, and {{< var war_children_killed_since_1900_nounit >}} children who will never grow up to replace them [@lost-human-capital-war-cost];
 
-WHEREAS, we have nuclear weapons sufficient to end civilization 13 times but haven't cured Alzheimer's once;
+WHEREAS, diseases kill more people than all wars combined [@pandemics-vs-wars] and, unlike wars, do not even have the decency to be quick about it;
+
+WHEREAS, we possess nuclear weapons sufficient to end civilization {{< var nuclear_overkill_factor_nounit >}} times over but have not cured Alzheimer's once;
 
 WHEREAS, this is embarrassing;
+
+WHEREAS, {{< var global_disease_deaths_daily_nounit >}} humans die of disease every single day while the treatments that might save them sit on shelves, untested, because the money that would have tested them bought a missile that will also sit on a shelf, untested;
+
+WHEREAS, we spend {{< var military_to_government_clinical_trials_spending_ratio_nounit >}} dollars on the capacity for orphan manufacturing for every one dollar spent on the trials that might cure what is actually going to kill us;
+
+WHEREAS, since 1962 the regulatory delay between proving a drug is safe and letting dying humans take it has killed approximately {{< var existing_drugs_efficacy_lag_deaths_total_nounit >}} people [@gieringer-drug-lag-estimate], waiting for a committee to decide whether the safe drug worked well enough;
+
+WHEREAS, the United States Department of Defense has failed seven consecutive audits and misplaced $2.46 trillion [@pentagon-unaccounted-2-5t], meaning the 1% this treaty requests is smaller than the rounding error on the money the Pentagon has already lost track of;
+
+WHEREAS, without the combined losses from war and disease the average human would earn {{< var war_counterfactual_gdp_per_capita >}} a year instead of {{< var global_avg_income_2025 >}} [@lost-human-capital-war-cost], meaning every citizen of every signatory nation is currently paying for this arrangement twice: once in taxes, and once in the income they do not have;
+
+WHEREAS, after the Second World War the same governments signing this treaty cut military spending by {{< var post_ww2_military_cut_pct >}} in two years [@us-post-wwii-military-spending-cut] and produced the greatest economic expansion in recorded history, which strongly suggests one percent is survivable;
+
+WHEREAS, your chance of dying in a terrorist attack is approximately 1 in {{< var annual_terrorism_death_risk_denominator_nounit >}}, and your chance of dying of a disease is 100%, and your current budget does not reflect this;
+
+WHEREAS, redirecting one percent is projected to make the average cure arrive {{< var dfda_trial_capacity_plus_efficacy_lag_years_nounit >}} years sooner, which matters considerably to anyone currently dying;
 
 NOW, THEREFORE, the undersigned nations agree to try a different approach, as follows:
 
 **Article I**: Each signatory shall redirect exactly 1% of its annual military budget to **the 1% Treaty Fund** for allocation to pragmatic clinical trials.
 
-**Article II**: Transfers shall be automatic, immediate, and irrevocable. No "we'll get to it later."
+**Article II**: Transfers shall be automatic, immediate, and irrevocable. The money moves on the first of every month, the way your mortgage does, except nobody has to call and yell at anyone.
 
 **Article III**: Percentages may increase but never decrease. This is a ratchet, not a yo-yo.
 
-**Article IV**: Compliance shall be verified by public ledger and independent audits. No creative accounting.
+**Article IV**: Compliance shall be verified by public ledger and independent audits. Relabeling a submarine as "humanitarian infrastructure" will be noticed, because submarines are large and loud and do not fit in the humanitarian infrastructure drawer.
 
-**Article V**: Non-compliant parties lose access to [IAB benefits](incentive-alignment-bonds.qmd) and treaty fund advantages. Your opponents get what you forfeit.
+**Article V**: Non-compliant parties will be given a stern talking to.
 
 **Article VI**: Success metrics trigger mandatory percentage reviews. When it works, we do more.
 
 **Article VII**: Citizens have standing to enforce via domestic courts. You can sue your own government for non-compliance.
 
-**Article VIII**: Withdrawal requires unanimous consent of all parties plus 10-year notice. Good luck with that.
+**Article VIII**: Withdrawal requires unanimous consent of all parties plus 10-year notice. Your country would need every other signatory to agree, which requires a decade of phone calls none of them are going to return.
 
-**Article IX**: This treaty supersedes all conflicting domestic law. Yes, even that law.
+**Article IX**: This treaty supersedes all conflicting domestic law. Including the subsection your legislature added at 2 a.m. last session specifically to make sure this couldn't happen.
 
-**Article X**: Entry into force upon signature by two states. You only need two countries brave enough to go first.
+**Article X**: Entry into force upon signature by two states. Two signatures. That's the bar. Your species once got 193 countries to agree that chemical weapons were bad. This asks for 2.
 
-IN WITNESS WHEREOF, the undersigned, being of sound mind (debatable) and tired of watching their loved ones die of preventable diseases, have executed this Treaty on behalf of populations who would have executed it much sooner if anyone had asked them.
+IN WITNESS WHEREOF, the undersigned, being of sound mind (debatable) and tired of watching their loved ones die of preventable diseases, have executed this Treaty on behalf of populations who would have executed it much sooner if anyone had asked them, and on behalf of someone each signatory can picture right now who is currently dying of a disease that the money in Article I will help test a cure for.
 
 Signed this day, ____________, in the year of our ongoing confusion.
 

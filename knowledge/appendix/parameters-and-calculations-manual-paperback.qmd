@@ -38,15 +38,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 413 parameters used in the analysis, organized by type:
+This appendix documents all 414 parameters used in the analysis, organized by type:
 
-- External sources (peer-reviewed): 144
+- External sources (peer-reviewed): 145
 - Calculated values: 201
 - Core definitions: 68
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (201 parameters) • [External Data Sources](#sec-external) (144 parameters) • [Core Definitions](#sec-definitions) (68 parameters)
+[Calculated Values](#sec-calculated) (201 parameters) • [External Data Sources](#sec-external) (145 parameters) • [Core Definitions](#sec-definitions) (68 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -16417,6 +16417,22 @@ Cost per patient in ADAPTABLE trial ($14M PCORI grant / 15,076 patients). Note: 
 {{< include ../figures/distribution-adaptable_trial_cost_per_patient.qmd >}}
 
 *~ Medium confidence*
+
+:::
+
+### Annual Terrorism Death Risk (1 in X): 30 million people {#sec-annual_terrorism_death_risk_denominator}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual probability of being killed by terrorism expressed as '1 in X'. An American's annual odds of dying in a terrorist attack are approximately 1 in 30 million.
+
+**Source**: [@chance-of-dying-from-terrorism-1-in-30m]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*✓ High confidence*
 
 :::
 
