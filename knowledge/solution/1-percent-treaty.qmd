@@ -296,7 +296,7 @@ WHEREAS, global military spending has been compounding at {{< var global_militar
 
 WHEREAS, redirecting one percent now and thereby halting the growth trajectory returns approximately {{< var peace_dividend_lifetime_per_person >}} per person over that same lifetime, or {{< var peace_dividend_lifetime_per_person_compounded >}} per person if invested at the long-term real return of the Nasdaq-100;
 
-WHEREAS, after the Second World War the same governments signing this treaty cut military spending by {{< var post_ww2_military_cut_pct >}} in two years [@us-post-wwii-military-spending-cut] and produced the greatest economic expansion in recorded history, which strongly suggests one percent is survivable;
+WHEREAS, the United States entered the Second World War spending {{< var us_military_spending_1939_annual_2024usd >}} a year on its military in today's dollars, won the war, then cut military spending by {{< var post_ww2_military_cut_pct >}} in the two years that followed [@us-post-wwii-military-spending-cut] and produced the greatest economic expansion in recorded history, and today spends {{< var us_military_spending_current_vs_prewar_multiplier_nounit >}} times the 1939 figure in peacetime [@us-military-spending-historical-constant-dollars], and unless the human genome has significantly degraded in the two generations since, one percent should be manageable;
 
 WHEREAS, your chance of dying in a terrorist attack is approximately 1 in {{< var annual_terrorism_death_risk_denominator_nounit >}}, and your chance of dying of a disease is 100%, and your current budget does not reflect this;
 
