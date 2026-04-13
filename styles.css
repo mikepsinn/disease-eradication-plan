@@ -1171,6 +1171,40 @@ body.quarto-dark .version-note {
     color: #28a745;
 }
 
+body.quarto-dark #chapter-share-bar .share-icon.copied {
+    background-color: #1f3a28;
+    border-color: #4caf50;
+    color: #8bd48f;
+}
+
+/* ==========================================
+   SHARED BOOK FOOTER (generated-footer.html)
+   ========================================== */
+.book-footer {
+    text-align: center;
+    padding: 1rem;
+    border-top: 1px solid var(--book-border, #d4c5b9);
+    margin-top: 3rem;
+    color: var(--book-accent, #8b7355);
+    font-size: 0.9rem;
+}
+.book-footer .book-footer-line,
+.book-footer .book-footer-cta {
+    margin: 0.5rem 0;
+}
+.book-footer .book-footer-cta {
+    font-size: 0.95rem;
+}
+.book-footer .book-footer-link {
+    color: var(--book-accent, #8b7355);
+}
+.book-footer .book-footer-link-bold {
+    font-weight: 600;
+}
+.book-footer .book-footer-link:hover {
+    color: var(--book-heading, #5a4a35);
+}
+
 @media print {
     #chapter-share-bar {
         display: none !important;

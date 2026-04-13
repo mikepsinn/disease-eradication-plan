@@ -1407,6 +1407,19 @@ export const GLOBAL_MED_RESEARCH_SPENDING: Parameter = {
   manualPageTitle: "The 1% Treaty: Harnessing Greed to Eradicate Disease",
 };
 
+export const GLOBAL_MILITARY_SPENDING_ANNUAL_2005: Parameter = {
+  value: 1621800000000.0,
+  parameterName: "GLOBAL_MILITARY_SPENDING_ANNUAL_2005",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-global_military_spending_annual_2005",
+  unit: "USD",
+  displayName: "Global Military Spending in 2005 (Constant 2023 USD)",
+  description: "Global military spending in 2005, constant 2023 USD (SIPRI World total). Used as the 20-year reference point for computing the long-horizon real CAGR.",
+  sourceType: "external",
+  sourceRef: "sipri-milex-2024",
+  sourceUrl: "https://www.sipri.org/publications/2025/sipri-fact-sheets/trends-world-military-expenditure-2024",
+  confidence: "high",
+};
+
 export const GLOBAL_MILITARY_SPENDING_ANNUAL_2024: Parameter = {
   value: 2720000000000.0,
   parameterName: "GLOBAL_MILITARY_SPENDING_ANNUAL_2024",
@@ -1433,8 +1446,8 @@ export const GLOBAL_MILITARY_SPENDING_REAL_CAGR_10YR: Parameter = {
   sourceRef: "sipri-milex-2024",
   sourceUrl: "https://www.sipri.org/publications/2025/sipri-fact-sheets/trends-world-military-expenditure-2024",
   confidence: "high",
-  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/economics/gdp-trajectories.html",
-  manualPageTitle: "Please Select an Earth: A) Everyone Gets Rich B) Somalia, but Everywhere",
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/economics/peace-dividend.html",
+  manualPageTitle: "Peace Dividend",
 };
 
 export const GLOBAL_NONPROFIT_CLINICAL_TRIALS_SPENDING_ANNUAL: Parameter = {
@@ -5388,6 +5401,21 @@ export const GLOBAL_MILITARY_SPENDING_POST_TREATY_ANNUAL_2024: Parameter = {
   manualPageTitle: "Aligning Incentives",
 };
 
+export const GLOBAL_MILITARY_SPENDING_REAL_CAGR_20YR: Parameter = {
+  value: 0.027589264230032606,
+  parameterName: "GLOBAL_MILITARY_SPENDING_REAL_CAGR_20YR",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-global_military_spending_real_cagr_20yr",
+  unit: "percent",
+  displayName: "Military Spending Real CAGR (20-Year)",
+  description: "Real compound annual growth rate of global military spending over the last 20 years (2005-2024), computed from SIPRI World totals in constant 2023 USD. This window deliberately includes the 2011-2014 drawdown, so it cannot be attacked as trough-to-peak cherry picking. The 20-year rate (~2.75%) is actually lower than the 10-year rate (3.4%) precisely because the drawdown pulls the average down.",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "(GLOBAL_MILITARY_SPENDING_ANNUAL_2024 / GLOBAL_MILITARY_SPENDING_ANNUAL_2005)^(1/19) - 1",
+  latex: "\\begin{gathered}\ng_{mil,20yr} \\\\\n= \\left(\\frac{Spending_{mil}}{Spending_{mil,2005}}\\right)^{\\frac{1}{19}} - 1\n\\end{gathered}",
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/economics/peace-dividend.html",
+  manualPageTitle: "Peace Dividend",
+};
+
 export const GLOBAL_POLITICAL_REFORM_INVESTMENT: Parameter = {
   value: 127550000000.0,
   parameterName: "GLOBAL_POLITICAL_REFORM_INVESTMENT",
@@ -5416,6 +5444,118 @@ export const GLOBAL_TOTAL_HEALTH_AND_WAR_COST_ANNUAL: Parameter = {
   formula: "WAR_TOTAL_COSTS + DISEASE_WELFARE_BURDEN",
   latex: "\\begin{gathered}\nCost_{health+war} = Cost_{war,total} + Burden_{disease} = \\$11.4T + \\$400T = \\$412T\n\\\\[0.5em]\n\\text{where } Cost_{war,total} = Cost_{war,direct} + Cost_{war,indirect} = \\$7.66T + \\$3.7T = \\$11.4T\n\\\\[0.5em]\n\\text{where } Cost_{war,direct} = Loss_{life,conflict} + Damage_{infra,total} + Disruption_{trade} + Spending_{mil} = \\$2.45T + \\$1.88T + \\$616B + \\$2.72T = \\$7.66T\n\\\\[0.5em]\n\\text{where } Loss_{life,conflict} = Cost_{combat,human} + Cost_{state,human} + Cost_{terror,human} = \\$2.34T + \\$27B + \\$83B = \\$2.45T\n\\\\[0.5em]\n\\text{where } Cost_{combat,human} = Deaths_{combat} \\times VSL = 234{,}000 \\times \\$10M = \\$2.34T\n\\\\[0.5em]\n\\text{where } Cost_{state,human} = Deaths_{state} \\times VSL = 2{,}700 \\times \\$10M = \\$27B\n\\\\[0.5em]\n\\text{where } Cost_{terror,human} = Deaths_{terror} \\times VSL = 8{,}300 \\times \\$10M = \\$83B\n\\\\[0.5em]\n\\text{where } Damage_{infra,total} = Damage_{comms} + Damage_{edu} + Damage_{energy} + Damage_{health} + Damage_{transport} + Damage_{water} = \\$298B + \\$234B + \\$422B + \\$166B + \\$487B + \\$268B = \\$1.88T\n\\\\[0.5em]\n\\text{where } Disruption_{trade} = Disruption_{currency} + Disruption_{energy} + Disruption_{shipping} + Disruption_{supply} = \\$57.4B + \\$125B + \\$247B + \\$187B = \\$616B\n\\\\[0.5em]\n\\text{where } Cost_{war,indirect} = Damage_{env} + Loss_{growth,mil} + Loss_{capital,conflict} + Cost_{psych} + Cost_{refugee} + Cost_{vet} = \\$100B + \\$2.72T + \\$300B + \\$232B + \\$150B + \\$200B = \\$3.7T\n\\\\[0.5em]\n\\text{where } Burden_{disease} = DALYs_{global,ann} \\times Pct_{avoid,DALY} \\times Value_{QALY} = 2.88B \\times 92.6\\% \\times \\$150K = \\$400T\n\\end{gathered}",
   confidenceInterval: [250110473599734.5, 600810679454650.6],
+};
+
+export const GLOBAL_WAR_COST_LIFETIME_CUMULATIVE_BASELINE: Parameter = {
+  value: 3219900482223735.0,
+  parameterName: "GLOBAL_WAR_COST_LIFETIME_CUMULATIVE_BASELINE",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-global_war_cost_lifetime_cumulative_baseline",
+  unit: "USD",
+  displayName: "Cumulative 80-Year War Cost (Baseline Trajectory)",
+  description: "Cumulative global war cost over 80 years (one human lifespan) on the baseline trajectory, where war costs keep compounding at SIPRI's 20-year real CAGR (2.76%). This is what the world pays if nothing changes.",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "C × ((1 + g)^80 - 1) / g",
+  latex: "\\begin{gathered}\nCost_{war,cum,baseline} = C \\times ((1 + g)^{80} - 1) / g\n\\\\[0.5em]\n\\text{where } Cost_{war,total} = Cost_{war,direct} + Cost_{war,indirect} = \\$7.66T + \\$3.7T = \\$11.4T\n\\\\[0.5em]\n\\text{where } Cost_{war,direct} = Loss_{life,conflict} + Damage_{infra,total} + Disruption_{trade} + Spending_{mil} = \\$2.45T + \\$1.88T + \\$616B + \\$2.72T = \\$7.66T\n\\\\[0.5em]\n\\text{where } Loss_{life,conflict} = Cost_{combat,human} + Cost_{state,human} + Cost_{terror,human} = \\$2.34T + \\$27B + \\$83B = \\$2.45T\n\\\\[0.5em]\n\\text{where } Cost_{combat,human} = Deaths_{combat} \\times VSL = 234{,}000 \\times \\$10M = \\$2.34T\n\\\\[0.5em]\n\\text{where } Cost_{state,human} = Deaths_{state} \\times VSL = 2{,}700 \\times \\$10M = \\$27B\n\\\\[0.5em]\n\\text{where } Cost_{terror,human} = Deaths_{terror} \\times VSL = 8{,}300 \\times \\$10M = \\$83B\n\\\\[0.5em]\n\\text{where } Damage_{infra,total} = Damage_{comms} + Damage_{edu} + Damage_{energy} + Damage_{health} + Damage_{transport} + Damage_{water} = \\$298B + \\$234B + \\$422B + \\$166B + \\$487B + \\$268B = \\$1.88T\n\\\\[0.5em]\n\\text{where } Disruption_{trade} = Disruption_{currency} + Disruption_{energy} + Disruption_{shipping} + Disruption_{supply} = \\$57.4B + \\$125B + \\$247B + \\$187B = \\$616B\n\\\\[0.5em]\n\\text{where } Cost_{war,indirect} = Damage_{env} + Loss_{growth,mil} + Loss_{capital,conflict} + Cost_{psych} + Cost_{refugee} + Cost_{vet} = \\$100B + \\$2.72T + \\$300B + \\$232B + \\$150B + \\$200B = \\$3.7T\n\\\\[0.5em]\n\\text{where } g_{mil,20yr} = \\left(\\frac{Spending_{mil}}{Spending_{mil,2005}}\\right)^{\\frac{1}{19}} - 1\n\\end{gathered}",
+  confidenceInterval: [2555223954500766.5, 3985480232036186.5],
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/economics/peace-dividend.html",
+  manualPageTitle: "Peace Dividend",
+};
+
+export const GLOBAL_WAR_COST_LIFETIME_CUMULATIVE_TREATY: Parameter = {
+  value: 899482320000000.0,
+  parameterName: "GLOBAL_WAR_COST_LIFETIME_CUMULATIVE_TREATY",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-global_war_cost_lifetime_cumulative_treaty",
+  unit: "USD",
+  displayName: "Cumulative 80-Year War Cost (Treaty Trajectory)",
+  description: "Cumulative global war cost over 80 years under the treaty trajectory, where costs drop 1% immediately and then hold flat (no growth). This is what the world pays after the treaty passes.",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "C × (1 - TREATY_REDUCTION_PCT) × 80",
+  latex: "\\begin{gathered}\nCost_{war,cum,treaty} = C \\times (1 - Reduce_{treaty}) \\times 80\n\\\\[0.5em]\n\\text{where } Cost_{war,total} = Cost_{war,direct} + Cost_{war,indirect} = \\$7.66T + \\$3.7T = \\$11.4T\n\\\\[0.5em]\n\\text{where } Cost_{war,direct} = Loss_{life,conflict} + Damage_{infra,total} + Disruption_{trade} + Spending_{mil} = \\$2.45T + \\$1.88T + \\$616B + \\$2.72T = \\$7.66T\n\\\\[0.5em]\n\\text{where } Loss_{life,conflict} = Cost_{combat,human} + Cost_{state,human} + Cost_{terror,human} = \\$2.34T + \\$27B + \\$83B = \\$2.45T\n\\\\[0.5em]\n\\text{where } Cost_{combat,human} = Deaths_{combat} \\times VSL = 234{,}000 \\times \\$10M = \\$2.34T\n\\\\[0.5em]\n\\text{where } Cost_{state,human} = Deaths_{state} \\times VSL = 2{,}700 \\times \\$10M = \\$27B\n\\\\[0.5em]\n\\text{where } Cost_{terror,human} = Deaths_{terror} \\times VSL = 8{,}300 \\times \\$10M = \\$83B\n\\\\[0.5em]\n\\text{where } Damage_{infra,total} = Damage_{comms} + Damage_{edu} + Damage_{energy} + Damage_{health} + Damage_{transport} + Damage_{water} = \\$298B + \\$234B + \\$422B + \\$166B + \\$487B + \\$268B = \\$1.88T\n\\\\[0.5em]\n\\text{where } Disruption_{trade} = Disruption_{currency} + Disruption_{energy} + Disruption_{shipping} + Disruption_{supply} = \\$57.4B + \\$125B + \\$247B + \\$187B = \\$616B\n\\\\[0.5em]\n\\text{where } Cost_{war,indirect} = Damage_{env} + Loss_{growth,mil} + Loss_{capital,conflict} + Cost_{psych} + Cost_{refugee} + Cost_{vet} = \\$100B + \\$2.72T + \\$300B + \\$232B + \\$150B + \\$200B = \\$3.7T\n\\end{gathered}",
+  confidenceInterval: [713804287866254.9, 1113347765006158.4],
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/economics/peace-dividend.html",
+  manualPageTitle: "Peace Dividend",
+};
+
+export const GLOBAL_WAR_COST_LIFETIME_PER_PERSON_ABOLITION_COMPOUNDED: Parameter = {
+  value: 244281227.625377,
+  parameterName: "GLOBAL_WAR_COST_LIFETIME_PER_PERSON_ABOLITION_COMPOUNDED",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-global_war_cost_lifetime_per_person_abolition_compounded",
+  unit: "USD",
+  displayName: "Per-Person War Cost (Full Abolition) Compounded at 13% over 80 Years",
+  description: "Per-person future value at year 80 of the full baseline war cost stream, compounded at the illustrative long-term real return rate (13%, Nasdaq-100 historical). This is the hypothetical opportunity cost per person of running the baseline SIPRI trajectory rather than abolishing war entirely and redirecting every dollar. Serves as the ceiling on the peace dividend ladder: the treaty gets you a large fraction of this number, full abolition gets you all of it.",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "[Σ_{t=0..79} C(1+g)^t × (1+r)^(79-t)] / GLOBAL_POPULATION_2024",
+  latex: "\\begin{gathered}\nFV_{pp,abolition} = [Σ_{t=0..79} C(1+g)^t \\times (1+r)^{79-t}] / Pop_{global}\n\\\\[0.5em]\n\\text{where } Cost_{war,total} = Cost_{war,direct} + Cost_{war,indirect} = \\$7.66T + \\$3.7T = \\$11.4T\n\\\\[0.5em]\n\\text{where } Cost_{war,direct} = Loss_{life,conflict} + Damage_{infra,total} + Disruption_{trade} + Spending_{mil} = \\$2.45T + \\$1.88T + \\$616B + \\$2.72T = \\$7.66T\n\\\\[0.5em]\n\\text{where } Loss_{life,conflict} = Cost_{combat,human} + Cost_{state,human} + Cost_{terror,human} = \\$2.34T + \\$27B + \\$83B = \\$2.45T\n\\\\[0.5em]\n\\text{where } Cost_{combat,human} = Deaths_{combat} \\times VSL = 234{,}000 \\times \\$10M = \\$2.34T\n\\\\[0.5em]\n\\text{where } Cost_{state,human} = Deaths_{state} \\times VSL = 2{,}700 \\times \\$10M = \\$27B\n\\\\[0.5em]\n\\text{where } Cost_{terror,human} = Deaths_{terror} \\times VSL = 8{,}300 \\times \\$10M = \\$83B\n\\\\[0.5em]\n\\text{where } Damage_{infra,total} = Damage_{comms} + Damage_{edu} + Damage_{energy} + Damage_{health} + Damage_{transport} + Damage_{water} = \\$298B + \\$234B + \\$422B + \\$166B + \\$487B + \\$268B = \\$1.88T\n\\\\[0.5em]\n\\text{where } Disruption_{trade} = Disruption_{currency} + Disruption_{energy} + Disruption_{shipping} + Disruption_{supply} = \\$57.4B + \\$125B + \\$247B + \\$187B = \\$616B\n\\\\[0.5em]\n\\text{where } Cost_{war,indirect} = Damage_{env} + Loss_{growth,mil} + Loss_{capital,conflict} + Cost_{psych} + Cost_{refugee} + Cost_{vet} = \\$100B + \\$2.72T + \\$300B + \\$232B + \\$150B + \\$200B = \\$3.7T\n\\\\[0.5em]\n\\text{where } g_{mil,20yr} = \\left(\\frac{Spending_{mil}}{Spending_{mil,2005}}\\right)^{\\frac{1}{19}} - 1\n\\end{gathered}",
+  confidenceInterval: [197503622.18895984, 296599180.0890935],
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/economics/peace-dividend.html",
+  manualPageTitle: "Peace Dividend",
+};
+
+export const GLOBAL_WAR_COST_LIFETIME_PER_PERSON_BASELINE: Parameter = {
+  value: 402487.5602779669,
+  parameterName: "GLOBAL_WAR_COST_LIFETIME_PER_PERSON_BASELINE",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-global_war_cost_lifetime_per_person_baseline",
+  unit: "USD",
+  displayName: "Per-Person 80-Year War Cost (Baseline Trajectory)",
+  description: "Per-person 80-year lifetime tab for global war costs on the SIPRI baseline trajectory (2.76% real growth). About 3.5x the flat-assumption figure the chapter opens with, because war costs have been compounding while nobody updated the invoice.",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "GLOBAL_WAR_COST_LIFETIME_CUMULATIVE_BASELINE / GLOBAL_POPULATION_2024",
+  latex: "\\begin{gathered}\nCost_{war,pp,baseline} = \\frac{Cost_{war,cum,baseline}}{Pop_{global}} = \\frac{\\$3220T}{8B} = \\$402K\n\\\\[0.5em]\n\\text{where } Cost_{war,cum,baseline} = C \\times ((1 + g)^{80} - 1) / g\n\\\\[0.5em]\n\\text{where } Cost_{war,total} = Cost_{war,direct} + Cost_{war,indirect} = \\$7.66T + \\$3.7T = \\$11.4T\n\\\\[0.5em]\n\\text{where } Cost_{war,direct} = Loss_{life,conflict} + Damage_{infra,total} + Disruption_{trade} + Spending_{mil} = \\$2.45T + \\$1.88T + \\$616B + \\$2.72T = \\$7.66T\n\\\\[0.5em]\n\\text{where } Loss_{life,conflict} = Cost_{combat,human} + Cost_{state,human} + Cost_{terror,human} = \\$2.34T + \\$27B + \\$83B = \\$2.45T\n\\\\[0.5em]\n\\text{where } Cost_{combat,human} = Deaths_{combat} \\times VSL = 234{,}000 \\times \\$10M = \\$2.34T\n\\\\[0.5em]\n\\text{where } Cost_{state,human} = Deaths_{state} \\times VSL = 2{,}700 \\times \\$10M = \\$27B\n\\\\[0.5em]\n\\text{where } Cost_{terror,human} = Deaths_{terror} \\times VSL = 8{,}300 \\times \\$10M = \\$83B\n\\\\[0.5em]\n\\text{where } Damage_{infra,total} = Damage_{comms} + Damage_{edu} + Damage_{energy} + Damage_{health} + Damage_{transport} + Damage_{water} = \\$298B + \\$234B + \\$422B + \\$166B + \\$487B + \\$268B = \\$1.88T\n\\\\[0.5em]\n\\text{where } Disruption_{trade} = Disruption_{currency} + Disruption_{energy} + Disruption_{shipping} + Disruption_{supply} = \\$57.4B + \\$125B + \\$247B + \\$187B = \\$616B\n\\\\[0.5em]\n\\text{where } Cost_{war,indirect} = Damage_{env} + Loss_{growth,mil} + Loss_{capital,conflict} + Cost_{psych} + Cost_{refugee} + Cost_{vet} = \\$100B + \\$2.72T + \\$300B + \\$232B + \\$150B + \\$200B = \\$3.7T\n\\\\[0.5em]\n\\text{where } g_{mil,20yr} = \\left(\\frac{Spending_{mil}}{Spending_{mil,2005}}\\right)^{\\frac{1}{19}} - 1\n\\end{gathered}",
+  confidenceInterval: [325414.89910474705, 488688.71969801374],
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/economics/peace-dividend.html",
+  manualPageTitle: "Peace Dividend",
+};
+
+export const GLOBAL_WAR_COST_LIFETIME_PER_PERSON_FLAT: Parameter = {
+  value: 113571.0,
+  parameterName: "GLOBAL_WAR_COST_LIFETIME_PER_PERSON_FLAT",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-global_war_cost_lifetime_per_person_flat",
+  unit: "USD",
+  displayName: "Per-Person 80-Year War Cost (Flat Assumption)",
+  description: "Per-person 80-year lifetime tab for global war costs, assuming costs stay flat at today's level. This is the conservative floor the chapter opens with. The actual figure is higher because war costs have been compounding in real terms.",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "GLOBAL_ANNUAL_DIRECT_INDIRECT_WAR_COST × 80 / GLOBAL_POPULATION_2024",
+  latex: "\\begin{gathered}\nCost_{war,pp,flat} = Cost_{war,total} \\times \\frac{80}{Pop_{global}}\n\\\\[0.5em]\n\\text{where } Cost_{war,total} = Cost_{war,direct} + Cost_{war,indirect} = \\$7.66T + \\$3.7T = \\$11.4T\n\\\\[0.5em]\n\\text{where } Cost_{war,direct} = Loss_{life,conflict} + Damage_{infra,total} + Disruption_{trade} + Spending_{mil} = \\$2.45T + \\$1.88T + \\$616B + \\$2.72T = \\$7.66T\n\\\\[0.5em]\n\\text{where } Loss_{life,conflict} = Cost_{combat,human} + Cost_{state,human} + Cost_{terror,human} = \\$2.34T + \\$27B + \\$83B = \\$2.45T\n\\\\[0.5em]\n\\text{where } Cost_{combat,human} = Deaths_{combat} \\times VSL = 234{,}000 \\times \\$10M = \\$2.34T\n\\\\[0.5em]\n\\text{where } Cost_{state,human} = Deaths_{state} \\times VSL = 2{,}700 \\times \\$10M = \\$27B\n\\\\[0.5em]\n\\text{where } Cost_{terror,human} = Deaths_{terror} \\times VSL = 8{,}300 \\times \\$10M = \\$83B\n\\\\[0.5em]\n\\text{where } Damage_{infra,total} = Damage_{comms} + Damage_{edu} + Damage_{energy} + Damage_{health} + Damage_{transport} + Damage_{water} = \\$298B + \\$234B + \\$422B + \\$166B + \\$487B + \\$268B = \\$1.88T\n\\\\[0.5em]\n\\text{where } Disruption_{trade} = Disruption_{currency} + Disruption_{energy} + Disruption_{shipping} + Disruption_{supply} = \\$57.4B + \\$125B + \\$247B + \\$187B = \\$616B\n\\\\[0.5em]\n\\text{where } Cost_{war,indirect} = Damage_{env} + Loss_{growth,mil} + Loss_{capital,conflict} + Cost_{psych} + Cost_{refugee} + Cost_{vet} = \\$100B + \\$2.72T + \\$300B + \\$232B + \\$150B + \\$200B = \\$3.7T\n\\end{gathered}",
+  confidenceInterval: [91823.19940696158, 137894.61355400147],
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/economics/peace-dividend.html",
+  manualPageTitle: "Peace Dividend",
+};
+
+export const GLOBAL_WAR_COST_YEARS_UNTIL_EXCEEDS_GDP: Parameter = {
+  value: 85.06497145786949,
+  parameterName: "GLOBAL_WAR_COST_YEARS_UNTIL_EXCEEDS_GDP",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-global_war_cost_years_until_exceeds_gdp",
+  unit: "years",
+  displayName: "Years Until Baseline War Cost Exceeds Current World GDP",
+  description: "Years until annual war cost exceeds current world GDP at the SIPRI 20-year real growth rate. At ~2.76% real growth and $11.4T current war cost, this happens in under a century. The baseline trajectory is therefore a countdown, not a plan.",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "log(GLOBAL_GDP_2025 / GLOBAL_ANNUAL_DIRECT_INDIRECT_WAR_COST) / log(1 + g_{mil,20yr})",
+  latex: "\\begin{gathered}\nT_{GDP} = log\\left(\\frac{GDP_{global}}{Cost_{war,total}}\\right) / log(1 + g_{mil,20yr})\n\\\\[0.5em]\n\\text{where } Cost_{war,total} = Cost_{war,direct} + Cost_{war,indirect} = \\$7.66T + \\$3.7T = \\$11.4T\n\\\\[0.5em]\n\\text{where } Cost_{war,direct} = Loss_{life,conflict} + Damage_{infra,total} + Disruption_{trade} + Spending_{mil} = \\$2.45T + \\$1.88T + \\$616B + \\$2.72T = \\$7.66T\n\\\\[0.5em]\n\\text{where } Loss_{life,conflict} = Cost_{combat,human} + Cost_{state,human} + Cost_{terror,human} = \\$2.34T + \\$27B + \\$83B = \\$2.45T\n\\\\[0.5em]\n\\text{where } Cost_{combat,human} = Deaths_{combat} \\times VSL = 234{,}000 \\times \\$10M = \\$2.34T\n\\\\[0.5em]\n\\text{where } Cost_{state,human} = Deaths_{state} \\times VSL = 2{,}700 \\times \\$10M = \\$27B\n\\\\[0.5em]\n\\text{where } Cost_{terror,human} = Deaths_{terror} \\times VSL = 8{,}300 \\times \\$10M = \\$83B\n\\\\[0.5em]\n\\text{where } Damage_{infra,total} = Damage_{comms} + Damage_{edu} + Damage_{energy} + Damage_{health} + Damage_{transport} + Damage_{water} = \\$298B + \\$234B + \\$422B + \\$166B + \\$487B + \\$268B = \\$1.88T\n\\\\[0.5em]\n\\text{where } Disruption_{trade} = Disruption_{currency} + Disruption_{energy} + Disruption_{shipping} + Disruption_{supply} = \\$57.4B + \\$125B + \\$247B + \\$187B = \\$616B\n\\\\[0.5em]\n\\text{where } Cost_{war,indirect} = Damage_{env} + Loss_{growth,mil} + Loss_{capital,conflict} + Cost_{psych} + Cost_{refugee} + Cost_{vet} = \\$100B + \\$2.72T + \\$300B + \\$232B + \\$150B + \\$200B = \\$3.7T\n\\\\[0.5em]\n\\text{where } g_{mil,20yr} = \\left(\\frac{Spending_{mil}}{Spending_{mil,2005}}\\right)^{\\frac{1}{19}} - 1\n\\end{gathered}",
+  confidenceInterval: [77.22726656364745, 93.56050718899587],
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/economics/peace-dividend.html",
+  manualPageTitle: "Peace Dividend",
+};
+
+export const GLOBAL_WAR_COST_YEAR_80_BASELINE: Parameter = {
+  value: 100191785198480.03,
+  parameterName: "GLOBAL_WAR_COST_YEAR_80_BASELINE",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-global_war_cost_year_80_baseline",
+  unit: "USD/year",
+  displayName: "Annual War Cost in Year 80 (Baseline Trajectory)",
+  description: "Projected annual war cost in year 80 under the baseline trajectory, assuming the SIPRI 20-year real CAGR continues. At ~2.76% real growth, this approaches current world GDP (which is why the baseline trajectory breaks math around year 85).",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "GLOBAL_ANNUAL_DIRECT_INDIRECT_WAR_COST × (1 + g_{mil,20yr})^80",
+  latex: "\\begin{gathered}\nCost_{war,yr80} = Cost_{war,total} \\times (1 + g_{mil,20yr})^{80}\n\\\\[0.5em]\n\\text{where } Cost_{war,total} = Cost_{war,direct} + Cost_{war,indirect} = \\$7.66T + \\$3.7T = \\$11.4T\n\\\\[0.5em]\n\\text{where } Cost_{war,direct} = Loss_{life,conflict} + Damage_{infra,total} + Disruption_{trade} + Spending_{mil} = \\$2.45T + \\$1.88T + \\$616B + \\$2.72T = \\$7.66T\n\\\\[0.5em]\n\\text{where } Loss_{life,conflict} = Cost_{combat,human} + Cost_{state,human} + Cost_{terror,human} = \\$2.34T + \\$27B + \\$83B = \\$2.45T\n\\\\[0.5em]\n\\text{where } Cost_{combat,human} = Deaths_{combat} \\times VSL = 234{,}000 \\times \\$10M = \\$2.34T\n\\\\[0.5em]\n\\text{where } Cost_{state,human} = Deaths_{state} \\times VSL = 2{,}700 \\times \\$10M = \\$27B\n\\\\[0.5em]\n\\text{where } Cost_{terror,human} = Deaths_{terror} \\times VSL = 8{,}300 \\times \\$10M = \\$83B\n\\\\[0.5em]\n\\text{where } Damage_{infra,total} = Damage_{comms} + Damage_{edu} + Damage_{energy} + Damage_{health} + Damage_{transport} + Damage_{water} = \\$298B + \\$234B + \\$422B + \\$166B + \\$487B + \\$268B = \\$1.88T\n\\\\[0.5em]\n\\text{where } Disruption_{trade} = Disruption_{currency} + Disruption_{energy} + Disruption_{shipping} + Disruption_{supply} = \\$57.4B + \\$125B + \\$247B + \\$187B = \\$616B\n\\\\[0.5em]\n\\text{where } Cost_{war,indirect} = Damage_{env} + Loss_{growth,mil} + Loss_{capital,conflict} + Cost_{psych} + Cost_{refugee} + Cost_{vet} = \\$100B + \\$2.72T + \\$300B + \\$232B + \\$150B + \\$200B = \\$3.7T\n\\\\[0.5em]\n\\text{where } g_{mil,20yr} = \\left(\\frac{Spending_{mil}}{Spending_{mil,2005}}\\right)^{\\frac{1}{19}} - 1\n\\end{gathered}",
+  confidenceInterval: [79509429249982.17, 124013888480548.3],
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/economics/peace-dividend.html",
+  manualPageTitle: "Peace Dividend",
 };
 
 export const HEALTHCARE_VS_MILITARY_MULTIPLIER_RATIO: Parameter = {
@@ -5760,6 +5900,69 @@ export const PEACE_DIVIDEND_INFRASTRUCTURE: Parameter = {
   confidenceInterval: [13722263898.21736, 24691249387.704926],
 };
 
+export const PEACE_DIVIDEND_LIFETIME_PCT_OF_BASELINE: Parameter = {
+  value: 0.7206490309356401,
+  parameterName: "PEACE_DIVIDEND_LIFETIME_PCT_OF_BASELINE",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-peace_dividend_lifetime_pct_of_baseline",
+  unit: "percent",
+  displayName: "Share of 80-Year War Cost Avoided by Treaty",
+  description: "Fraction of the baseline 80-year war cost avoided by the treaty. Because the baseline compounds exponentially while the treaty holds spending flat, cutting 1% today and halting the growth trajectory avoids about 72% of the cumulative 80-year war cost. Most of the savings come from the halted growth, not the headline 1% cut.",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "PEACE_DIVIDEND_LIFETIME_TOTAL / GLOBAL_WAR_COST_LIFETIME_CUMULATIVE_BASELINE",
+  latex: "\\begin{gathered}\n\\phi_{avoided} = \\frac{Savings_{LT}}{Cost_{war,cum,baseline}} = \\frac{\\$2320T}{\\$3220T} = 72.1\\%\n\\\\[0.5em]\n\\text{where } Savings_{LT} = Cost_{war,cum,baseline} - Cost_{war,cum,treaty} = \\$3220T - \\$899T = \\$2320T\n\\\\[0.5em]\n\\text{where } Cost_{war,cum,baseline} = C \\times ((1 + g)^{80} - 1) / g\n\\\\[0.5em]\n\\text{where } Cost_{war,total} = Cost_{war,direct} + Cost_{war,indirect} = \\$7.66T + \\$3.7T = \\$11.4T\n\\\\[0.5em]\n\\text{where } Cost_{war,direct} = Loss_{life,conflict} + Damage_{infra,total} + Disruption_{trade} + Spending_{mil} = \\$2.45T + \\$1.88T + \\$616B + \\$2.72T = \\$7.66T\n\\\\[0.5em]\n\\text{where } Loss_{life,conflict} = Cost_{combat,human} + Cost_{state,human} + Cost_{terror,human} = \\$2.34T + \\$27B + \\$83B = \\$2.45T\n\\\\[0.5em]\n\\text{where } Cost_{combat,human} = Deaths_{combat} \\times VSL = 234{,}000 \\times \\$10M = \\$2.34T\n\\\\[0.5em]\n\\text{where } Cost_{state,human} = Deaths_{state} \\times VSL = 2{,}700 \\times \\$10M = \\$27B\n\\\\[0.5em]\n\\text{where } Cost_{terror,human} = Deaths_{terror} \\times VSL = 8{,}300 \\times \\$10M = \\$83B\n\\\\[0.5em]\n\\text{where } Damage_{infra,total} = Damage_{comms} + Damage_{edu} + Damage_{energy} + Damage_{health} + Damage_{transport} + Damage_{water} = \\$298B + \\$234B + \\$422B + \\$166B + \\$487B + \\$268B = \\$1.88T\n\\\\[0.5em]\n\\text{where } Disruption_{trade} = Disruption_{currency} + Disruption_{energy} + Disruption_{shipping} + Disruption_{supply} = \\$57.4B + \\$125B + \\$247B + \\$187B = \\$616B\n\\\\[0.5em]\n\\text{where } Cost_{war,indirect} = Damage_{env} + Loss_{growth,mil} + Loss_{capital,conflict} + Cost_{psych} + Cost_{refugee} + Cost_{vet} = \\$100B + \\$2.72T + \\$300B + \\$232B + \\$150B + \\$200B = \\$3.7T\n\\\\[0.5em]\n\\text{where } g_{mil,20yr} = \\left(\\frac{Spending_{mil}}{Spending_{mil,2005}}\\right)^{\\frac{1}{19}} - 1\n\\\\[0.5em]\n\\text{where } Cost_{war,cum,treaty} = C \\times (1 - Reduce_{treaty}) \\times 80\n\\end{gathered}",
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/economics/peace-dividend.html",
+  manualPageTitle: "Peace Dividend",
+};
+
+export const PEACE_DIVIDEND_LIFETIME_PER_PERSON: Parameter = {
+  value: 290052.27027796686,
+  parameterName: "PEACE_DIVIDEND_LIFETIME_PER_PERSON",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-peace_dividend_lifetime_per_person",
+  unit: "USD",
+  displayName: "Per-Person 80-Year Peace Dividend",
+  description: "Per-person share of the 80-year cumulative peace dividend, averaged across the global population. Not literally a check in the reader's pocket: most of it arrives as infrastructure not destroyed, wages not taxed to rebuild things that should not have been destroyed, and conflicts that never happen. Per-capita division hides that the poorest bear far more than the average today.",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "PEACE_DIVIDEND_LIFETIME_TOTAL / GLOBAL_POPULATION_2024",
+  latex: "\\begin{gathered}\nSavings_{pp,LT} = \\frac{Savings_{LT}}{Pop_{global}} = \\frac{\\$2320T}{8B} = \\$290K\n\\\\[0.5em]\n\\text{where } Savings_{LT} = Cost_{war,cum,baseline} - Cost_{war,cum,treaty} = \\$3220T - \\$899T = \\$2320T\n\\\\[0.5em]\n\\text{where } Cost_{war,cum,baseline} = C \\times ((1 + g)^{80} - 1) / g\n\\\\[0.5em]\n\\text{where } Cost_{war,total} = Cost_{war,direct} + Cost_{war,indirect} = \\$7.66T + \\$3.7T = \\$11.4T\n\\\\[0.5em]\n\\text{where } Cost_{war,direct} = Loss_{life,conflict} + Damage_{infra,total} + Disruption_{trade} + Spending_{mil} = \\$2.45T + \\$1.88T + \\$616B + \\$2.72T = \\$7.66T\n\\\\[0.5em]\n\\text{where } Loss_{life,conflict} = Cost_{combat,human} + Cost_{state,human} + Cost_{terror,human} = \\$2.34T + \\$27B + \\$83B = \\$2.45T\n\\\\[0.5em]\n\\text{where } Cost_{combat,human} = Deaths_{combat} \\times VSL = 234{,}000 \\times \\$10M = \\$2.34T\n\\\\[0.5em]\n\\text{where } Cost_{state,human} = Deaths_{state} \\times VSL = 2{,}700 \\times \\$10M = \\$27B\n\\\\[0.5em]\n\\text{where } Cost_{terror,human} = Deaths_{terror} \\times VSL = 8{,}300 \\times \\$10M = \\$83B\n\\\\[0.5em]\n\\text{where } Damage_{infra,total} = Damage_{comms} + Damage_{edu} + Damage_{energy} + Damage_{health} + Damage_{transport} + Damage_{water} = \\$298B + \\$234B + \\$422B + \\$166B + \\$487B + \\$268B = \\$1.88T\n\\\\[0.5em]\n\\text{where } Disruption_{trade} = Disruption_{currency} + Disruption_{energy} + Disruption_{shipping} + Disruption_{supply} = \\$57.4B + \\$125B + \\$247B + \\$187B = \\$616B\n\\\\[0.5em]\n\\text{where } Cost_{war,indirect} = Damage_{env} + Loss_{growth,mil} + Loss_{capital,conflict} + Cost_{psych} + Cost_{refugee} + Cost_{vet} = \\$100B + \\$2.72T + \\$300B + \\$232B + \\$150B + \\$200B = \\$3.7T\n\\\\[0.5em]\n\\text{where } g_{mil,20yr} = \\left(\\frac{Spending_{mil}}{Spending_{mil,2005}}\\right)^{\\frac{1}{19}} - 1\n\\\\[0.5em]\n\\text{where } Cost_{war,cum,treaty} = C \\times (1 - Reduce_{treaty}) \\times 80\n\\end{gathered}",
+  confidenceInterval: [234509.93169185508, 352173.05227955227],
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/economics/peace-dividend.html",
+  manualPageTitle: "Peace Dividend",
+};
+
+export const PEACE_DIVIDEND_LIFETIME_PER_PERSON_COMPOUNDED: Parameter = {
+  value: 53682432.6589155,
+  parameterName: "PEACE_DIVIDEND_LIFETIME_PER_PERSON_COMPOUNDED",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-peace_dividend_lifetime_per_person_compounded",
+  unit: "USD",
+  displayName: "Per-Person Peace Dividend Compounded at 13% over 80 Years",
+  description: "Per-person future value at year 80 of the treaty peace dividend stream, compounded at the illustrative long-term real return rate (13%, Nasdaq-100 historical). Each year's savings are invested at the end of that year and compound until year 80. This is an opportunity-cost framing, not a promise of cash in the reader's pocket: the 'return' is the real productive use of capital that weapons spending displaced, not a literal brokerage account.",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "[Σ_{t=0..79} (C(1+g)^t - C(1-p)) × (1+r)^(79-t)] / GLOBAL_POPULATION_2024",
+  latex: "\\begin{gathered}\nFV_{pp,treaty} = [Σ_{t=0..79} (C(1+g)^t - C(1-p)) \\times (1+r)^{79-t}] / Pop_{global}\n\\\\[0.5em]\n\\text{where } Cost_{war,total} = Cost_{war,direct} + Cost_{war,indirect} = \\$7.66T + \\$3.7T = \\$11.4T\n\\\\[0.5em]\n\\text{where } Cost_{war,direct} = Loss_{life,conflict} + Damage_{infra,total} + Disruption_{trade} + Spending_{mil} = \\$2.45T + \\$1.88T + \\$616B + \\$2.72T = \\$7.66T\n\\\\[0.5em]\n\\text{where } Loss_{life,conflict} = Cost_{combat,human} + Cost_{state,human} + Cost_{terror,human} = \\$2.34T + \\$27B + \\$83B = \\$2.45T\n\\\\[0.5em]\n\\text{where } Cost_{combat,human} = Deaths_{combat} \\times VSL = 234{,}000 \\times \\$10M = \\$2.34T\n\\\\[0.5em]\n\\text{where } Cost_{state,human} = Deaths_{state} \\times VSL = 2{,}700 \\times \\$10M = \\$27B\n\\\\[0.5em]\n\\text{where } Cost_{terror,human} = Deaths_{terror} \\times VSL = 8{,}300 \\times \\$10M = \\$83B\n\\\\[0.5em]\n\\text{where } Damage_{infra,total} = Damage_{comms} + Damage_{edu} + Damage_{energy} + Damage_{health} + Damage_{transport} + Damage_{water} = \\$298B + \\$234B + \\$422B + \\$166B + \\$487B + \\$268B = \\$1.88T\n\\\\[0.5em]\n\\text{where } Disruption_{trade} = Disruption_{currency} + Disruption_{energy} + Disruption_{shipping} + Disruption_{supply} = \\$57.4B + \\$125B + \\$247B + \\$187B = \\$616B\n\\\\[0.5em]\n\\text{where } Cost_{war,indirect} = Damage_{env} + Loss_{growth,mil} + Loss_{capital,conflict} + Cost_{psych} + Cost_{refugee} + Cost_{vet} = \\$100B + \\$2.72T + \\$300B + \\$232B + \\$150B + \\$200B = \\$3.7T\n\\\\[0.5em]\n\\text{where } g_{mil,20yr} = \\left(\\frac{Spending_{mil}}{Spending_{mil,2005}}\\right)^{\\frac{1}{19}} - 1\n\\end{gathered}",
+  confidenceInterval: [43402741.181202844, 65179652.43010861],
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/economics/peace-dividend.html",
+  manualPageTitle: "Peace Dividend",
+};
+
+export const PEACE_DIVIDEND_LIFETIME_TOTAL: Parameter = {
+  value: 2320418162223735.0,
+  parameterName: "PEACE_DIVIDEND_LIFETIME_TOTAL",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-peace_dividend_lifetime_total",
+  unit: "USD",
+  displayName: "Cumulative Peace Dividend Over 80 Years",
+  description: "Cumulative peace dividend over 80 years (one human lifespan): the baseline 80-year war cost (SIPRI trajectory) minus the treaty 80-year war cost (flat at 99% of today). Assumes elasticity of 1.0 between military spending and war costs, which is almost certainly conservative because the political act of passing the treaty itself would reflect and reinforce a 'war is stupid' consensus that reduces externalities super-proportionally.",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "GLOBAL_WAR_COST_LIFETIME_CUMULATIVE_BASELINE - GLOBAL_WAR_COST_LIFETIME_CUMULATIVE_TREATY",
+  latex: "\\begin{gathered}\nSavings_{LT} = Cost_{war,cum,baseline} - Cost_{war,cum,treaty} = \\$3220T - \\$899T = \\$2320T\n\\\\[0.5em]\n\\text{where } Cost_{war,cum,baseline} = C \\times ((1 + g)^{80} - 1) / g\n\\\\[0.5em]\n\\text{where } Cost_{war,total} = Cost_{war,direct} + Cost_{war,indirect} = \\$7.66T + \\$3.7T = \\$11.4T\n\\\\[0.5em]\n\\text{where } Cost_{war,direct} = Loss_{life,conflict} + Damage_{infra,total} + Disruption_{trade} + Spending_{mil} = \\$2.45T + \\$1.88T + \\$616B + \\$2.72T = \\$7.66T\n\\\\[0.5em]\n\\text{where } Loss_{life,conflict} = Cost_{combat,human} + Cost_{state,human} + Cost_{terror,human} = \\$2.34T + \\$27B + \\$83B = \\$2.45T\n\\\\[0.5em]\n\\text{where } Cost_{combat,human} = Deaths_{combat} \\times VSL = 234{,}000 \\times \\$10M = \\$2.34T\n\\\\[0.5em]\n\\text{where } Cost_{state,human} = Deaths_{state} \\times VSL = 2{,}700 \\times \\$10M = \\$27B\n\\\\[0.5em]\n\\text{where } Cost_{terror,human} = Deaths_{terror} \\times VSL = 8{,}300 \\times \\$10M = \\$83B\n\\\\[0.5em]\n\\text{where } Damage_{infra,total} = Damage_{comms} + Damage_{edu} + Damage_{energy} + Damage_{health} + Damage_{transport} + Damage_{water} = \\$298B + \\$234B + \\$422B + \\$166B + \\$487B + \\$268B = \\$1.88T\n\\\\[0.5em]\n\\text{where } Disruption_{trade} = Disruption_{currency} + Disruption_{energy} + Disruption_{shipping} + Disruption_{supply} = \\$57.4B + \\$125B + \\$247B + \\$187B = \\$616B\n\\\\[0.5em]\n\\text{where } Cost_{war,indirect} = Damage_{env} + Loss_{growth,mil} + Loss_{capital,conflict} + Cost_{psych} + Cost_{refugee} + Cost_{vet} = \\$100B + \\$2.72T + \\$300B + \\$232B + \\$150B + \\$200B = \\$3.7T\n\\\\[0.5em]\n\\text{where } g_{mil,20yr} = \\left(\\frac{Spending_{mil}}{Spending_{mil,2005}}\\right)^{\\frac{1}{19}} - 1\n\\\\[0.5em]\n\\text{where } Cost_{war,cum,treaty} = C \\times (1 - Reduce_{treaty}) \\times 80\n\\end{gathered}",
+  confidenceInterval: [1841419666634511.8, 2872132467030028.0],
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/economics/peace-dividend.html",
+  manualPageTitle: "Peace Dividend",
+};
+
 export const PEACE_DIVIDEND_LOST_ECONOMIC_GROWTH: Parameter = {
   value: 27180000000.0,
   parameterName: "PEACE_DIVIDEND_LOST_ECONOMIC_GROWTH",
@@ -5842,6 +6045,20 @@ export const PEACE_DIVIDEND_VETERAN_HEALTHCARE: Parameter = {
   formula: "VETERAN_HEALTHCARE × 1%",
   latex: "\\begin{gathered}\nSavings_{vet} \\\\\n= Cost_{vet} \\times Reduce_{treaty} \\\\\n= \\$200B \\times 1\\% \\\\\n= \\$2B\n\\end{gathered}",
   confidenceInterval: [1464495890.437629, 2634969975.027636],
+};
+
+export const PEACE_DIVIDEND_YEARS_UNTIL_BASELINE_EXCEEDS_GDP: Parameter = {
+  value: 85.06497145786949,
+  parameterName: "PEACE_DIVIDEND_YEARS_UNTIL_BASELINE_EXCEEDS_GDP",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-peace_dividend_years_until_baseline_exceeds_gdp",
+  unit: "years",
+  displayName: "Years Until Baseline War Cost Exceeds Current World GDP",
+  description: "Years until annual war cost exceeds current world GDP at the SIPRI 20-year real growth rate. At ~2.76% real growth and $11.4T current war cost, this happens in under a century. The baseline trajectory is therefore a countdown, not a plan.",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "log(GLOBAL_GDP_2025 / GLOBAL_ANNUAL_DIRECT_INDIRECT_WAR_COST) / log(1 + g_{mil,20yr})",
+  latex: "\\begin{gathered}\nT_{GDP} = log\\left(\\frac{GDP_{global}}{Cost_{war,total}}\\right) / log(1 + g_{mil,20yr})\n\\\\[0.5em]\n\\text{where } Cost_{war,total} = Cost_{war,direct} + Cost_{war,indirect} = \\$7.66T + \\$3.7T = \\$11.4T\n\\\\[0.5em]\n\\text{where } Cost_{war,direct} = Loss_{life,conflict} + Damage_{infra,total} + Disruption_{trade} + Spending_{mil} = \\$2.45T + \\$1.88T + \\$616B + \\$2.72T = \\$7.66T\n\\\\[0.5em]\n\\text{where } Loss_{life,conflict} = Cost_{combat,human} + Cost_{state,human} + Cost_{terror,human} = \\$2.34T + \\$27B + \\$83B = \\$2.45T\n\\\\[0.5em]\n\\text{where } Cost_{combat,human} = Deaths_{combat} \\times VSL = 234{,}000 \\times \\$10M = \\$2.34T\n\\\\[0.5em]\n\\text{where } Cost_{state,human} = Deaths_{state} \\times VSL = 2{,}700 \\times \\$10M = \\$27B\n\\\\[0.5em]\n\\text{where } Cost_{terror,human} = Deaths_{terror} \\times VSL = 8{,}300 \\times \\$10M = \\$83B\n\\\\[0.5em]\n\\text{where } Damage_{infra,total} = Damage_{comms} + Damage_{edu} + Damage_{energy} + Damage_{health} + Damage_{transport} + Damage_{water} = \\$298B + \\$234B + \\$422B + \\$166B + \\$487B + \\$268B = \\$1.88T\n\\\\[0.5em]\n\\text{where } Disruption_{trade} = Disruption_{currency} + Disruption_{energy} + Disruption_{shipping} + Disruption_{supply} = \\$57.4B + \\$125B + \\$247B + \\$187B = \\$616B\n\\\\[0.5em]\n\\text{where } Cost_{war,indirect} = Damage_{env} + Loss_{growth,mil} + Loss_{capital,conflict} + Cost_{psych} + Cost_{refugee} + Cost_{vet} = \\$100B + \\$2.72T + \\$300B + \\$232B + \\$150B + \\$200B = \\$3.7T\n\\\\[0.5em]\n\\text{where } g_{mil,20yr} = \\left(\\frac{Spending_{mil}}{Spending_{mil,2005}}\\right)^{\\frac{1}{19}} - 1\n\\end{gathered}",
+  confidenceInterval: [77.22726656364745, 93.56050718899587],
 };
 
 export const PEACE_TRAJECTORY_TOTAL_DIFFERENTIAL_20YR: Parameter = {
@@ -9288,6 +9505,19 @@ export const PEACE_DIVIDEND_DIRECT_FISCAL_SAVINGS: Parameter = {
   manualPageTitle: "The 1% Treaty: Harnessing Greed to Eradicate Disease",
 };
 
+export const PEACE_DIVIDEND_INVESTMENT_REAL_RETURN_RATE: Parameter = {
+  value: 0.13,
+  parameterName: "PEACE_DIVIDEND_INVESTMENT_REAL_RETURN_RATE",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-peace_dividend_investment_real_return_rate",
+  unit: "percent",
+  displayName: "Assumed Long-Term Real Return for Investment Compounding",
+  description: "Illustrative long-term real return rate used to compound the peace dividend stream into a future value at year 80. 13% is the approximate long-run real CAGR of the Nasdaq-100 index since its 1985 inception: accessible via passive ETFs (QQQ), grounded in 40+ years of data, and does not require assuming unique skill (Buffett) or access (VC/private markets). Chosen as more optimistic than 60/40 portfolio (5%) or S&P 500 (7%) because growth-tilted founder-led companies have historically outperformed the broad market.",
+  sourceType: "definition",
+  confidence: "high",
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/economics/peace-dividend.html",
+  manualPageTitle: "Peace Dividend",
+};
+
 export const PHARMA_PHASE_2_3_COST_BARRIER: Parameter = {
   value: 1560000000.0,
   parameterName: "PHARMA_PHASE_2_3_COST_BARRIER",
@@ -9754,7 +9984,7 @@ export const WISHOCRATIC_CROWD_ALPHA: Parameter = {
   calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-wishocratic_crowd_alpha",
   unit: "percent",
   displayName: "Wishocratic Crowd Allocation Alpha",
-  description: "Allocation alpha from wishocratic sector- and manager-level capital routing. Crowds route capital across sectors and managers at least as well as cap-weighted indices or committee allocators. SPIVA shows 88% of active large-cap managers underperform their benchmark over 15 years; Preqin shows top-quartile vs bottom-quartile VC manager dispersion of 5-15%. The 0.5% central value assumes only that RAPPA avoids the bottom half of manager dispersion at the allocation level — not that it finds the top quartile. This is not a claim that crowds beat experts at picking individual companies; power-law outlier selection is the one thing crowds are empirically worse at than specialists.",
+  description: "Allocation alpha from wishocratic sector- and manager-level capital routing. Crowds route capital across sectors and managers at least as well as cap-weighted indices or committee allocators. SPIVA shows 88% of active large-cap managers underperform their benchmark over 15 years; Preqin shows top-quartile vs bottom-quartile VC manager dispersion of 5-15%. The 0.5% central value assumes only that RAPPA avoids the bottom half of manager dispersion at the allocation level, not that it finds the top quartile. This is not a claim that crowds beat experts at picking individual companies; power-law outlier selection is the one thing crowds are empirically worse at than specialists.",
   sourceType: "definition",
   confidence: "high",
   confidenceInterval: [0.0, 0.015],
@@ -9878,6 +10108,7 @@ export const parameters = {
   GLOBAL_LIFE_EXPECTANCY_2024,
   GLOBAL_MEDIAN_AGE_2024,
   GLOBAL_MED_RESEARCH_SPENDING,
+  GLOBAL_MILITARY_SPENDING_ANNUAL_2005,
   GLOBAL_MILITARY_SPENDING_ANNUAL_2024,
   GLOBAL_MILITARY_SPENDING_REAL_CAGR_10YR,
   GLOBAL_NONPROFIT_CLINICAL_TRIALS_SPENDING_ANNUAL,
@@ -10138,8 +10369,16 @@ export const parameters = {
   GLOBAL_INDUSTRY_CLINICAL_TRIALS_SPENDING_ANNUAL,
   GLOBAL_MILITARY_SPENDING_PER_CAPITA_ANNUAL,
   GLOBAL_MILITARY_SPENDING_POST_TREATY_ANNUAL_2024,
+  GLOBAL_MILITARY_SPENDING_REAL_CAGR_20YR,
   GLOBAL_POLITICAL_REFORM_INVESTMENT,
   GLOBAL_TOTAL_HEALTH_AND_WAR_COST_ANNUAL,
+  GLOBAL_WAR_COST_LIFETIME_CUMULATIVE_BASELINE,
+  GLOBAL_WAR_COST_LIFETIME_CUMULATIVE_TREATY,
+  GLOBAL_WAR_COST_LIFETIME_PER_PERSON_ABOLITION_COMPOUNDED,
+  GLOBAL_WAR_COST_LIFETIME_PER_PERSON_BASELINE,
+  GLOBAL_WAR_COST_LIFETIME_PER_PERSON_FLAT,
+  GLOBAL_WAR_COST_YEARS_UNTIL_EXCEEDS_GDP,
+  GLOBAL_WAR_COST_YEAR_80_BASELINE,
   HEALTHCARE_VS_MILITARY_MULTIPLIER_RATIO,
   IAB_MECHANISM_BENEFIT_COST_RATIO,
   IAB_POLITICAL_INCENTIVE_FUNDING_ANNUAL,
@@ -10162,12 +10401,17 @@ export const parameters = {
   PEACE_DIVIDEND_HUMAN_CASUALTIES,
   PEACE_DIVIDEND_INDIRECT_COSTS,
   PEACE_DIVIDEND_INFRASTRUCTURE,
+  PEACE_DIVIDEND_LIFETIME_PCT_OF_BASELINE,
+  PEACE_DIVIDEND_LIFETIME_PER_PERSON,
+  PEACE_DIVIDEND_LIFETIME_PER_PERSON_COMPOUNDED,
+  PEACE_DIVIDEND_LIFETIME_TOTAL,
   PEACE_DIVIDEND_LOST_ECONOMIC_GROWTH,
   PEACE_DIVIDEND_LOST_HUMAN_CAPITAL,
   PEACE_DIVIDEND_PTSD,
   PEACE_DIVIDEND_REFUGEE_SUPPORT,
   PEACE_DIVIDEND_TRADE_DISRUPTION,
   PEACE_DIVIDEND_VETERAN_HEALTHCARE,
+  PEACE_DIVIDEND_YEARS_UNTIL_BASELINE_EXCEEDS_GDP,
   PEACE_TRAJECTORY_TOTAL_DIFFERENTIAL_20YR,
   PERSONAL_LIFETIME_WEALTH,
   PER_CAPITA_CHRONIC_DISEASE_COST,
@@ -10406,6 +10650,7 @@ export const parameters = {
   NUCLEAR_OVERKILL_FACTOR,
   PEACE_DIVIDEND_CONFLICT_ELASTICITY,
   PEACE_DIVIDEND_DIRECT_FISCAL_SAVINGS,
+  PEACE_DIVIDEND_INVESTMENT_REAL_RETURN_RATE,
   PHARMA_PHASE_2_3_COST_BARRIER,
   PRE_1962_VALIDATION_YEARS,
   PRIZE_POOL_PARTICIPATION_RATE,
@@ -12621,10 +12866,10 @@ export const citations: Record<string, Citation> = {
 
 /** Summary statistics */
 export const PARAMETER_STATS = {
-  total: 654,
-  external: 213,
-  calculated: 306,
-  definitions: 135,
+  total: 669,
+  external: 214,
+  calculated: 319,
+  definitions: 136,
   citations: 156,
 } as const;
 

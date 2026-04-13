@@ -3593,6 +3593,16 @@
       ],
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/economics/1-pct-treaty-impact.html"
     },
+    "GLOBAL_MILITARY_SPENDING_ANNUAL_2005": {
+      "value": 1621800000000.0,
+      "formatted": "$1.62 trillion",
+      "unit": "USD",
+      "description": "Global military spending in 2005, constant 2023 USD (SIPRI World total). Used as the 20-year reference point for computing the long-horizon real CAGR.",
+      "sourceType": "external",
+      "sourceRef": "sipri-milex-2024",
+      "confidence": "high",
+      "formula": null
+    },
     "GLOBAL_MILITARY_SPENDING_ANNUAL_2024": {
       "value": 2720000000000.0,
       "formatted": "$2.72 trillion",
@@ -3635,7 +3645,18 @@
       "sourceRef": "sipri-milex-2024",
       "confidence": "high",
       "formula": null,
-      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/economics/gdp-trajectories.html"
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/economics/peace-dividend.html"
+    },
+    "GLOBAL_MILITARY_SPENDING_REAL_CAGR_20YR": {
+      "value": 0.027589264230032606,
+      "formatted": "2.76%",
+      "unit": "percent",
+      "description": "Real compound annual growth rate of global military spending over the last 20 years (2005-2024), computed from SIPRI World totals in constant 2023 USD. This window deliberately includes the 2011-2014 drawdown, so it cannot be attacked as trough-to-peak cherry picking. The 20-year rate (~2.75%) is actually lower than the 10-year rate (3.4%) precisely because the drawdown pulls the average down.",
+      "sourceType": "calculated",
+      "sourceRef": null,
+      "confidence": "high",
+      "formula": "(GLOBAL_MILITARY_SPENDING_ANNUAL_2024 / GLOBAL_MILITARY_SPENDING_ANNUAL_2005)^(1/19) - 1",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/economics/peace-dividend.html"
     },
     "GLOBAL_NONPROFIT_CLINICAL_TRIALS_SPENDING_ANNUAL": {
       "value": 3500000000.0,
@@ -3806,6 +3827,83 @@
       "sourceRef": "world-warheads",
       "confidence": "high",
       "formula": null
+    },
+    "GLOBAL_WAR_COST_LIFETIME_CUMULATIVE_BASELINE": {
+      "value": 3219900482223735.0,
+      "formatted": "$3.22 quadrillion",
+      "unit": "USD",
+      "description": "Cumulative global war cost over 80 years (one human lifespan) on the baseline trajectory, where war costs keep compounding at SIPRI's 20-year real CAGR (2.76%). This is what the world pays if nothing changes.",
+      "sourceType": "calculated",
+      "sourceRef": null,
+      "confidence": "high",
+      "formula": "C × ((1 + g)^80 - 1) / g",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/economics/peace-dividend.html"
+    },
+    "GLOBAL_WAR_COST_LIFETIME_CUMULATIVE_TREATY": {
+      "value": 899482320000000.0,
+      "formatted": "$899 trillion",
+      "unit": "USD",
+      "description": "Cumulative global war cost over 80 years under the treaty trajectory, where costs drop 1% immediately and then hold flat (no growth). This is what the world pays after the treaty passes.",
+      "sourceType": "calculated",
+      "sourceRef": null,
+      "confidence": "high",
+      "formula": "C × (1 - TREATY_REDUCTION_PCT) × 80",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/economics/peace-dividend.html"
+    },
+    "GLOBAL_WAR_COST_LIFETIME_PER_PERSON_ABOLITION_COMPOUNDED": {
+      "value": 244281227.625377,
+      "formatted": "$244 million",
+      "unit": "USD",
+      "description": "Per-person future value at year 80 of the full baseline war cost stream, compounded at the illustrative long-term real return rate (13%, Nasdaq-100 historical). This is the hypothetical opportunity cost per person of running the baseline SIPRI trajectory rather than abolishing war entirely and redirecting every dollar. Serves as the ceiling on the peace dividend ladder: the treaty gets you a large fraction of this number, full abolition gets you all of it.",
+      "sourceType": "calculated",
+      "sourceRef": null,
+      "confidence": "high",
+      "formula": "[Σ_{t=0..79} C(1+g)^t × (1+r)^(79-t)] / GLOBAL_POPULATION_2024",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/economics/peace-dividend.html"
+    },
+    "GLOBAL_WAR_COST_LIFETIME_PER_PERSON_BASELINE": {
+      "value": 402487.5602779669,
+      "formatted": "$402,488",
+      "unit": "USD",
+      "description": "Per-person 80-year lifetime tab for global war costs on the SIPRI baseline trajectory (2.76% real growth). About 3.5x the flat-assumption figure the chapter opens with, because war costs have been compounding while nobody updated the invoice.",
+      "sourceType": "calculated",
+      "sourceRef": null,
+      "confidence": "high",
+      "formula": "GLOBAL_WAR_COST_LIFETIME_CUMULATIVE_BASELINE / GLOBAL_POPULATION_2024",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/economics/peace-dividend.html"
+    },
+    "GLOBAL_WAR_COST_LIFETIME_PER_PERSON_FLAT": {
+      "value": 113571.0,
+      "formatted": "$113,571",
+      "unit": "USD",
+      "description": "Per-person 80-year lifetime tab for global war costs, assuming costs stay flat at today's level. This is the conservative floor the chapter opens with. The actual figure is higher because war costs have been compounding in real terms.",
+      "sourceType": "calculated",
+      "sourceRef": null,
+      "confidence": "high",
+      "formula": "GLOBAL_ANNUAL_DIRECT_INDIRECT_WAR_COST × 80 / GLOBAL_POPULATION_2024",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/economics/peace-dividend.html"
+    },
+    "GLOBAL_WAR_COST_YEARS_UNTIL_EXCEEDS_GDP": {
+      "value": 85.06497145786949,
+      "formatted": "85.1 years",
+      "unit": "years",
+      "description": "Years until annual war cost exceeds current world GDP at the SIPRI 20-year real growth rate. At ~2.76% real growth and $11.4T current war cost, this happens in under a century. The baseline trajectory is therefore a countdown, not a plan.",
+      "sourceType": "calculated",
+      "sourceRef": null,
+      "confidence": "high",
+      "formula": "log(GLOBAL_GDP_2025 / GLOBAL_ANNUAL_DIRECT_INDIRECT_WAR_COST) / log(1 + g_{mil,20yr})",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/economics/peace-dividend.html"
+    },
+    "GLOBAL_WAR_COST_YEAR_80_BASELINE": {
+      "value": 100191785198480.03,
+      "formatted": "$100 trillion",
+      "unit": "USD/year",
+      "description": "Projected annual war cost in year 80 under the baseline trajectory, assuming the SIPRI 20-year real CAGR continues. At ~2.76% real growth, this approaches current world GDP (which is why the baseline trajectory breaks math around year 85).",
+      "sourceType": "calculated",
+      "sourceRef": null,
+      "confidence": "high",
+      "formula": "GLOBAL_ANNUAL_DIRECT_INDIRECT_WAR_COST × (1 + g_{mil,20yr})^80",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/economics/peace-dividend.html"
     },
     "GLOBAL_YLD_PROPORTION_OF_DALYS": {
       "value": 0.39,
@@ -4469,6 +4567,61 @@
       "confidence": "high",
       "formula": "INFRASTRUCTURE_DESTRUCTION × 1%"
     },
+    "PEACE_DIVIDEND_INVESTMENT_REAL_RETURN_RATE": {
+      "value": 0.13,
+      "formatted": "13%",
+      "unit": "percent",
+      "description": "Illustrative long-term real return rate used to compound the peace dividend stream into a future value at year 80. 13% is the approximate long-run real CAGR of the Nasdaq-100 index since its 1985 inception: accessible via passive ETFs (QQQ), grounded in 40+ years of data, and does not require assuming unique skill (Buffett) or access (VC/private markets). Chosen as more optimistic than 60/40 portfolio (5%) or S&P 500 (7%) because growth-tilted founder-led companies have historically outperformed the broad market.",
+      "sourceType": "definition",
+      "sourceRef": null,
+      "confidence": "high",
+      "formula": null,
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/economics/peace-dividend.html"
+    },
+    "PEACE_DIVIDEND_LIFETIME_PCT_OF_BASELINE": {
+      "value": 0.7206490309356401,
+      "formatted": "72.1%",
+      "unit": "percent",
+      "description": "Fraction of the baseline 80-year war cost avoided by the treaty. Because the baseline compounds exponentially while the treaty holds spending flat, cutting 1% today and halting the growth trajectory avoids about 72% of the cumulative 80-year war cost. Most of the savings come from the halted growth, not the headline 1% cut.",
+      "sourceType": "calculated",
+      "sourceRef": null,
+      "confidence": "high",
+      "formula": "PEACE_DIVIDEND_LIFETIME_TOTAL / GLOBAL_WAR_COST_LIFETIME_CUMULATIVE_BASELINE",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/economics/peace-dividend.html"
+    },
+    "PEACE_DIVIDEND_LIFETIME_PER_PERSON": {
+      "value": 290052.27027796686,
+      "formatted": "$290,052",
+      "unit": "USD",
+      "description": "Per-person share of the 80-year cumulative peace dividend, averaged across the global population. Not literally a check in the reader's pocket: most of it arrives as infrastructure not destroyed, wages not taxed to rebuild things that should not have been destroyed, and conflicts that never happen. Per-capita division hides that the poorest bear far more than the average today.",
+      "sourceType": "calculated",
+      "sourceRef": null,
+      "confidence": "high",
+      "formula": "PEACE_DIVIDEND_LIFETIME_TOTAL / GLOBAL_POPULATION_2024",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/economics/peace-dividend.html"
+    },
+    "PEACE_DIVIDEND_LIFETIME_PER_PERSON_COMPOUNDED": {
+      "value": 53682432.6589155,
+      "formatted": "$53.7 million",
+      "unit": "USD",
+      "description": "Per-person future value at year 80 of the treaty peace dividend stream, compounded at the illustrative long-term real return rate (13%, Nasdaq-100 historical). Each year's savings are invested at the end of that year and compound until year 80. This is an opportunity-cost framing, not a promise of cash in the reader's pocket: the 'return' is the real productive use of capital that weapons spending displaced, not a literal brokerage account.",
+      "sourceType": "calculated",
+      "sourceRef": null,
+      "confidence": "high",
+      "formula": "[Σ_{t=0..79} (C(1+g)^t - C(1-p)) × (1+r)^(79-t)] / GLOBAL_POPULATION_2024",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/economics/peace-dividend.html"
+    },
+    "PEACE_DIVIDEND_LIFETIME_TOTAL": {
+      "value": 2320418162223735.0,
+      "formatted": "$2.32 quadrillion",
+      "unit": "USD",
+      "description": "Cumulative peace dividend over 80 years (one human lifespan): the baseline 80-year war cost (SIPRI trajectory) minus the treaty 80-year war cost (flat at 99% of today). Assumes elasticity of 1.0 between military spending and war costs, which is almost certainly conservative because the political act of passing the treaty itself would reflect and reinforce a 'war is stupid' consensus that reduces externalities super-proportionally.",
+      "sourceType": "calculated",
+      "sourceRef": null,
+      "confidence": "high",
+      "formula": "GLOBAL_WAR_COST_LIFETIME_CUMULATIVE_BASELINE - GLOBAL_WAR_COST_LIFETIME_CUMULATIVE_TREATY",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/economics/peace-dividend.html"
+    },
     "PEACE_DIVIDEND_LOST_ECONOMIC_GROWTH": {
       "value": 27180000000.0,
       "formatted": "$27.2 billion",
@@ -4528,6 +4681,16 @@
       "sourceRef": null,
       "confidence": "high",
       "formula": "VETERAN_HEALTHCARE × 1%"
+    },
+    "PEACE_DIVIDEND_YEARS_UNTIL_BASELINE_EXCEEDS_GDP": {
+      "value": 85.06497145786949,
+      "formatted": "85.1 years",
+      "unit": "years",
+      "description": "Years until annual war cost exceeds current world GDP at the SIPRI 20-year real growth rate. At ~2.76% real growth and $11.4T current war cost, this happens in under a century. The baseline trajectory is therefore a countdown, not a plan.",
+      "sourceType": "calculated",
+      "sourceRef": null,
+      "confidence": "high",
+      "formula": "log(GLOBAL_GDP_2025 / GLOBAL_ANNUAL_DIRECT_INDIRECT_WAR_COST) / log(1 + g_{mil,20yr})"
     },
     "PEACE_TRAJECTORY_TOTAL_DIFFERENTIAL_20YR": {
       "value": 16329436000000.002,
@@ -7470,7 +7633,7 @@
       "value": 0.005,
       "formatted": "0.5%",
       "unit": "percent",
-      "description": "Allocation alpha from wishocratic sector- and manager-level capital routing. Crowds route capital across sectors and managers at least as well as cap-weighted indices or committee allocators. SPIVA shows 88% of active large-cap managers underperform their benchmark over 15 years; Preqin shows top-quartile vs bottom-quartile VC manager dispersion of 5-15%. The 0.5% central value assumes only that RAPPA avoids the bottom half of manager dispersion at the allocation level — not that it finds the top quartile. This is not a claim that crowds beat experts at picking individual companies; power-law outlier selection is the one thing crowds are empirically worse at than specialists.",
+      "description": "Allocation alpha from wishocratic sector- and manager-level capital routing. Crowds route capital across sectors and managers at least as well as cap-weighted indices or committee allocators. SPIVA shows 88% of active large-cap managers underperform their benchmark over 15 years; Preqin shows top-quartile vs bottom-quartile VC manager dispersion of 5-15%. The 0.5% central value assumes only that RAPPA avoids the bottom half of manager dispersion at the allocation level, not that it finds the top quartile. This is not a claim that crowds beat experts at picking individual companies; power-law outlier selection is the one thing crowds are empirically worse at than specialists.",
       "sourceType": "definition",
       "sourceRef": null,
       "confidence": "high",

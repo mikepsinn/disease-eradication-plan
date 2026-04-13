@@ -1,0 +1,10 @@
+**Sensitivity Indices for Share of 80-Year War Cost Avoided by Treaty**
+
+Regression-based sensitivity showing which inputs explain the most variance in the output.
+
+| Input Parameter | Sensitivity Coefficient | Interpretation |
+|:----------------|------------------------:|:---------------|
+| Cumulative Peace Dividend Over 80 Years (USD) | 4.4299 | Strong driver |
+| Cumulative 80-Year War Cost (Baseline Trajectory) (USD) | -4.4277 | Strong driver |
+
+*Interpretation*: Standardized coefficients show the change in output (in SD units) per 1 SD change in input. Values near ±1 indicate strong influence; values exceeding ±1 may occur with correlated inputs.

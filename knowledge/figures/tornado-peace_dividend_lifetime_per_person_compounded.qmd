@@ -1,0 +1,109 @@
+```{python}
+#| echo: false
+
+import matplotlib.pyplot as plt
+import numpy as np
+from pathlib import Path
+
+from dih_models.plotting.chart_style import (
+    setup_chart_style, add_watermark, clean_spines,
+    COLOR_BLACK, COLOR_WHITE, add_png_metadata, get_figure_output_path,
+    get_tick_formatter
+)
+from dih_models.parameters import format_parameter_value
+
+setup_chart_style()
+
+# Display name for chart title
+
+display_name = "Per-Person Peace Dividend Compounded at 13% over 80 Years"
+
+# Baseline and units
+
+baseline = 53682432.6589155
+
+# Tornado data from sensitivity analysis
+
+drivers = ['VALUE_OF_STATISTICAL_LIFE', 'GLOBAL_ANNUAL_LOST_ECONOMIC_GROWTH_MILITARY_SPENDING', 'GLOBAL_ANNUAL_CONFLICT_DEATHS_ACTIVE_COMBAT', 'GLOBAL_POPULATION_2024', 'GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_TRANSPORTATION_CONFLICT', 'GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_ENERGY_CONFLICT', 'GLOBAL_ANNUAL_LOST_HUMAN_CAPITAL_CONFLICT', 'GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_COMMUNICATIONS_CONFLICT', 'GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_WATER_CONFLICT', 'GLOBAL_ANNUAL_TRADE_DISRUPTION_SHIPPING_CONFLICT', 'GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_EDUCATION_CONFLICT', 'GLOBAL_ANNUAL_PSYCHOLOGICAL_IMPACT_COSTS_CONFLICT', 'GLOBAL_ANNUAL_VETERAN_HEALTHCARE_COSTS', 'GLOBAL_ANNUAL_TRADE_DISRUPTION_SUPPLY_CHAIN_CONFLICT', 'GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_HEALTHCARE_CONFLICT', 'GLOBAL_ANNUAL_REFUGEE_SUPPORT_COSTS', 'GLOBAL_ANNUAL_TRADE_DISRUPTION_ENERGY_PRICE_CONFLICT', 'GLOBAL_ANNUAL_ENVIRONMENTAL_DAMAGE_CONFLICT', 'GLOBAL_ANNUAL_CONFLICT_DEATHS_TERROR_ATTACKS', 'GLOBAL_ANNUAL_TRADE_DISRUPTION_CURRENCY_CONFLICT', 'GLOBAL_ANNUAL_CONFLICT_DEATHS_STATE_VIOLENCE']
+driver_labels = ['Value of Statistical Life', 'Annual Lost Economic Growth from Military Spending Opportunity Cost', 'Annual Deaths from Active Combat Worldwide', 'Global Population in 2024', 'Annual Infrastructure Damage to Transportation from Conflict', 'Annual Infrastructure Damage to Energy Systems from Conflict', 'Annual Lost Productivity from Conflict Casualties', 'Annual Infrastructure Damage to Communications from Conflict', 'Annual Infrastructure Damage to Water Systems from Conflict', 'Annual Trade Disruption Costs from Shipping Disruptions', 'Annual Infrastructure Damage to Education Facilities from Conflict', 'Annual PTSD and Mental Health Costs from Conflict', 'Annual Veteran Healthcare Costs', 'Annual Trade Disruption Costs from Supply Chain Disruptions', 'Annual Infrastructure Damage to Healthcare Facilities from Conflict', 'Annual Refugee Support Costs', 'Annual Trade Disruption Costs from Energy Price Volatility', 'Annual Environmental Damage and Restoration Costs from Conflict', 'Annual Deaths from Terror Attacks Globally', 'Annual Trade Disruption Costs from Currency Instability', 'Annual Deaths from State Violence']
+impacts_low = [-5780843.273534045, -3866500.2434593737, -2533550.281777829, 1376472.6322798803, -696253.6501975134, -598882.1281739324, -425409.5622387752, -421155.46661639214, -381923.25143214315, -350253.8729099184, -333237.49042036384, -330874.10396348685, -284079.0521172285, -263753.9285880849, -234447.9365227148, -212704.78111939132, -178199.33884890378, -141803.1874129027, -108715.77701657265, -82245.84869948775, -56721.27496512234]
+impacts_high = [5780843.273534089, 5114368.292693272, 3138577.214739725, -1309327.6258272082, 910849.140482448, 795515.8813866004, 567212.7496517748, 566740.0723603889, 506710.05635557324, 467477.84117133915, 441953.26743698865, 439589.8809801191, 377669.1558098048, 355453.32311514765, 313857.7214740068, 283606.37482590973, 237756.67756240815, 189070.9165506214, 174890.59780935198, 106825.0678511113, 108715.77701662481]
+
+# Convert deltas to absolute values (baseline + delta)
+
+values_low = [baseline + delta for delta in impacts_low]
+values_high = [baseline + delta for delta in impacts_high]
+
+# Create tornado chart (horizontal bars showing swing range)
+# Cap dimensions to avoid LaTeX "Dimension too large" errors in PDF output
+# 8x10 inches max keeps figures compact and PDF-compatible
+
+fig, ax = plt.subplots(figsize=(8, min(10, max(5, len(drivers) * 0.6))))
+
+y_pos = np.arange(len(drivers))
+
+# Plot low impact (left side)
+
+for i, (low, high) in enumerate(zip(values_low, values_high)):
+    left = min(low, high)
+    width_low = baseline - left if left < baseline else 0
+    width_high = max(low, high) - baseline if max(low, high) > baseline else 0
+
+    # White bar for range below baseline
+
+    if width_low > 0:
+        ax.barh(i, width_low, left=left,
+                color=COLOR_WHITE, edgecolor=COLOR_BLACK, linewidth=2)
+
+    # Black bar for range above baseline
+
+    if width_high > 0:
+        ax.barh(i, width_high, left=baseline,
+                color=COLOR_BLACK, edgecolor=COLOR_BLACK, linewidth=2)
+
+# Format axis
+
+ax.set_yticks(y_pos)
+# Simplified labels (just parameter names)
+
+ax.set_yticklabels(driver_labels, fontsize=11)
+ax.set_title(f'Sensitivity Analysis: {display_name}', fontsize=16, weight='bold', pad=20)
+
+# X-axis label with units
+
+units_label = "USD"
+if units_label:
+    ax.set_xlabel(f'{display_name} ({units_label})', fontsize=12)
+else:
+    ax.set_xlabel(f'{display_name}', fontsize=12)
+
+# Format x-axis tick labels with K/M/B/T notation
+
+ax.xaxis.set_major_formatter(get_tick_formatter(unit=units_label))
+
+# Add vertical line at baseline
+
+ax.axvline(baseline, color=COLOR_BLACK, linewidth=1, linestyle='--', alpha=0.5)
+
+# Clean spines
+
+clean_spines(ax)
+
+# Add watermark
+
+add_watermark(fig)
+
+# Save PNG to knowledge/figures/ regardless of where Quarto renders from
+# Use 96 DPI for web-optimized output (reduced from 150 DPI to minimize file size)
+
+output_path = get_figure_output_path('tornado-peace_dividend_lifetime_per_person_compounded.png')
+plt.savefig(output_path, dpi=96, bbox_inches=None, facecolor=COLOR_WHITE)
+
+add_png_metadata(
+    output_path,
+    title=f'Sensitivity: {display_name}',
+    description=f'Tornado diagram showing which input parameters have the largest impact on {display_name}'
+)
+
+plt.show()
+```

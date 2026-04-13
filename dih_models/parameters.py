@@ -352,6 +352,36 @@ GLOBAL_MILITARY_SPENDING_REAL_CAGR_10YR = Parameter(
     latex_symbol=r"g_{mil,10yr}",
 )
 
+GLOBAL_MILITARY_SPENDING_ANNUAL_2005 = Parameter(
+    1_621_800_000_000,
+    source_ref=ReferenceID.SIPRI_MILEX_2024,
+    source_type="external",
+    description="Global military spending in 2005, constant 2023 USD (SIPRI World total). "
+                "Used as the 20-year reference point for computing the long-horizon real CAGR.",
+    display_name="Global Military Spending in 2005 (Constant 2023 USD)",
+    unit="USD",
+    distribution="fixed",
+    keywords=["2005", "historical", "sipri", "military", "spending", "baseline"],
+    latex_symbol=r"Spending_{mil,2005}",
+)
+
+GLOBAL_MILITARY_SPENDING_REAL_CAGR_20YR = Parameter(
+    (2_720_000_000_000 / 1_621_800_000_000) ** (1 / 19) - 1,
+    source_type="calculated",
+    description="Real compound annual growth rate of global military spending over the last 20 years "
+                "(2005-2024), computed from SIPRI World totals in constant 2023 USD. This window "
+                "deliberately includes the 2011-2014 drawdown, so it cannot be attacked as "
+                "trough-to-peak cherry picking. The 20-year rate (~2.75%) is actually lower than the "
+                "10-year rate (3.4%) precisely because the drawdown pulls the average down.",
+    display_name="Military Spending Real CAGR (20-Year)",
+    unit="percent",
+    formula="(GLOBAL_MILITARY_SPENDING_ANNUAL_2024 / GLOBAL_MILITARY_SPENDING_ANNUAL_2005)^(1/19) - 1",
+    inputs=["GLOBAL_MILITARY_SPENDING_ANNUAL_2024", "GLOBAL_MILITARY_SPENDING_ANNUAL_2005"],
+    compute=lambda ctx: (ctx["GLOBAL_MILITARY_SPENDING_ANNUAL_2024"] / ctx["GLOBAL_MILITARY_SPENDING_ANNUAL_2005"]) ** (1 / 19) - 1,
+    keywords=["military", "spending", "growth", "CAGR", "SIPRI", "20-year", "trend", "drawdown"],
+    latex_symbol=r"g_{mil,20yr}",
+)
+
 # Cybercrime economic data
 GLOBAL_CYBERCRIME_COST_ANNUAL_2025 = Parameter(
     10_500_000_000_000,
@@ -1022,6 +1052,296 @@ PEACE_DIVIDEND_CONFLICT_ELASTICITY = Parameter(
     validation_max=2.0,
     formula="1% spending cut → ε% conflict cost reduction",
     latex_symbol=r"\varepsilon_{conflict}",
+)
+
+# ==============================================================================
+# LONG-TERM PEACE DIVIDEND (80-year horizon against SIPRI 20-year trend)
+# ==============================================================================
+# The baseline war cost isn't flat. SIPRI shows global military spending grew at
+# ~2.76% real per year over 2005-2024, a window that includes the 2011-2014
+# drawdown (so it's not cherry-picked). Project that growth forward over one
+# full human lifespan (80 years, matching the "per person lifetime tab"
+# framing the chapter opens with) and the numbers diverge: within a century,
+# war spending mathematically exceeds the entire current world GDP. The treaty
+# doesn't just save ~$114B/year, it replaces an exponential trajectory with a
+# flat one.
+# ==============================================================================
+
+import math as _pd_math
+
+# --- War costs projected forward (these are costs, not dividends) ---
+
+GLOBAL_WAR_COST_YEAR_80_BASELINE = Parameter(
+    float(GLOBAL_ANNUAL_DIRECT_INDIRECT_WAR_COST) * (1 + float(GLOBAL_MILITARY_SPENDING_REAL_CAGR_20YR)) ** 80,
+    source_type="calculated",
+    description="Projected annual war cost in year 80 under the baseline trajectory, assuming the "
+                "SIPRI 20-year real CAGR continues. At ~2.76% real growth, this approaches current "
+                "world GDP (which is why the baseline trajectory breaks math around year 85).",
+    display_name="Annual War Cost in Year 80 (Baseline Trajectory)",
+    unit="USD/year",
+    formula="GLOBAL_ANNUAL_DIRECT_INDIRECT_WAR_COST × (1 + g_{mil,20yr})^80",
+    inputs=["GLOBAL_ANNUAL_DIRECT_INDIRECT_WAR_COST", "GLOBAL_MILITARY_SPENDING_REAL_CAGR_20YR"],
+    compute=lambda ctx: ctx["GLOBAL_ANNUAL_DIRECT_INDIRECT_WAR_COST"] * (1 + ctx["GLOBAL_MILITARY_SPENDING_REAL_CAGR_20YR"]) ** 80,
+    keywords=["baseline", "projection", "year 80", "war cost", "trajectory", "lifetime"],
+    latex_symbol=r"Cost_{war,yr80}",
+)
+
+# Closed-form cumulative war cost over 80 years on the baseline trajectory:
+# Σ_{t=0..79} C(1+g)^t = C · ((1+g)^80 - 1) / g
+_pd_C = float(GLOBAL_ANNUAL_DIRECT_INDIRECT_WAR_COST)
+_pd_g = float(GLOBAL_MILITARY_SPENDING_REAL_CAGR_20YR)
+_pd_p = float(TREATY_REDUCTION_PCT)
+_pd_lt_baseline_cum = _pd_C * ((1 + _pd_g) ** 80 - 1) / _pd_g
+_pd_lt_treaty_cum = _pd_C * (1 - _pd_p) * 80
+_pd_lt_savings = _pd_lt_baseline_cum - _pd_lt_treaty_cum
+
+GLOBAL_WAR_COST_LIFETIME_CUMULATIVE_BASELINE = Parameter(
+    _pd_lt_baseline_cum,
+    source_type="calculated",
+    description="Cumulative global war cost over 80 years (one human lifespan) on the baseline "
+                "trajectory, where war costs keep compounding at SIPRI's 20-year real CAGR (2.76%). "
+                "This is what the world pays if nothing changes.",
+    display_name="Cumulative 80-Year War Cost (Baseline Trajectory)",
+    unit="USD",
+    formula="C × ((1 + g)^80 - 1) / g",
+    inputs=["GLOBAL_ANNUAL_DIRECT_INDIRECT_WAR_COST", "GLOBAL_MILITARY_SPENDING_REAL_CAGR_20YR"],
+    compute=lambda ctx: ctx["GLOBAL_ANNUAL_DIRECT_INDIRECT_WAR_COST"] * (
+        ((1 + ctx["GLOBAL_MILITARY_SPENDING_REAL_CAGR_20YR"]) ** 80 - 1)
+        / ctx["GLOBAL_MILITARY_SPENDING_REAL_CAGR_20YR"]
+    ),
+    keywords=["cumulative", "80 years", "lifetime", "baseline", "war cost", "trajectory"],
+    latex_symbol=r"Cost_{war,cum,baseline}",
+)
+
+GLOBAL_WAR_COST_LIFETIME_CUMULATIVE_TREATY = Parameter(
+    _pd_lt_treaty_cum,
+    source_type="calculated",
+    description="Cumulative global war cost over 80 years under the treaty trajectory, where costs "
+                "drop 1% immediately and then hold flat (no growth). This is what the world pays "
+                "after the treaty passes.",
+    display_name="Cumulative 80-Year War Cost (Treaty Trajectory)",
+    unit="USD",
+    formula="C × (1 - TREATY_REDUCTION_PCT) × 80",
+    inputs=["GLOBAL_ANNUAL_DIRECT_INDIRECT_WAR_COST", "TREATY_REDUCTION_PCT"],
+    compute=lambda ctx: ctx["GLOBAL_ANNUAL_DIRECT_INDIRECT_WAR_COST"] * (1 - ctx["TREATY_REDUCTION_PCT"]) * 80,
+    keywords=["cumulative", "80 years", "lifetime", "treaty", "war cost", "flat"],
+    latex_symbol=r"Cost_{war,cum,treaty}",
+)
+
+GLOBAL_WAR_COST_LIFETIME_PER_PERSON_FLAT = Parameter(
+    float(GLOBAL_ANNUAL_DIRECT_INDIRECT_WAR_COST) * 80 / 8_000_000_000,
+    source_type="calculated",
+    description="Per-person 80-year lifetime tab for global war costs, assuming costs stay flat at "
+                "today's level. This is the conservative floor the chapter opens with. The actual "
+                "figure is higher because war costs have been compounding in real terms.",
+    display_name="Per-Person 80-Year War Cost (Flat Assumption)",
+    unit="USD",
+    formula="GLOBAL_ANNUAL_DIRECT_INDIRECT_WAR_COST × 80 / GLOBAL_POPULATION_2024",
+    inputs=["GLOBAL_ANNUAL_DIRECT_INDIRECT_WAR_COST", "GLOBAL_POPULATION_2024"],
+    compute=lambda ctx: ctx["GLOBAL_ANNUAL_DIRECT_INDIRECT_WAR_COST"] * 80 / ctx["GLOBAL_POPULATION_2024"],
+    keywords=["per-person", "lifetime", "80 years", "flat", "war cost"],
+    latex_symbol=r"Cost_{war,pp,flat}",
+)
+
+GLOBAL_WAR_COST_LIFETIME_PER_PERSON_BASELINE = Parameter(
+    _pd_lt_baseline_cum / 8_000_000_000,
+    source_type="calculated",
+    description="Per-person 80-year lifetime tab for global war costs on the SIPRI baseline "
+                "trajectory (2.76% real growth). About 3.5x the flat-assumption figure the chapter "
+                "opens with, because war costs have been compounding while nobody updated the "
+                "invoice.",
+    display_name="Per-Person 80-Year War Cost (Baseline Trajectory)",
+    unit="USD",
+    formula="GLOBAL_WAR_COST_LIFETIME_CUMULATIVE_BASELINE / GLOBAL_POPULATION_2024",
+    inputs=["GLOBAL_WAR_COST_LIFETIME_CUMULATIVE_BASELINE", "GLOBAL_POPULATION_2024"],
+    compute=lambda ctx: ctx["GLOBAL_WAR_COST_LIFETIME_CUMULATIVE_BASELINE"] / ctx["GLOBAL_POPULATION_2024"],
+    keywords=["per-person", "lifetime", "80 years", "baseline", "SIPRI", "war cost"],
+    latex_symbol=r"Cost_{war,pp,baseline}",
+)
+
+GLOBAL_WAR_COST_YEARS_UNTIL_EXCEEDS_GDP = Parameter(
+    _pd_math.log(115_000_000_000_000 / _pd_C) / _pd_math.log(1 + _pd_g),
+    source_type="calculated",
+    description="Years until annual war cost exceeds current world GDP at the SIPRI 20-year real "
+                "growth rate. At ~2.76% real growth and $11.4T current war cost, this happens in "
+                "under a century. The baseline trajectory is therefore a countdown, not a plan.",
+    display_name="Years Until Baseline War Cost Exceeds Current World GDP",
+    unit="years",
+    formula="log(GLOBAL_GDP_2025 / GLOBAL_ANNUAL_DIRECT_INDIRECT_WAR_COST) / log(1 + g_{mil,20yr})",
+    inputs=["GLOBAL_GDP_2025", "GLOBAL_ANNUAL_DIRECT_INDIRECT_WAR_COST", "GLOBAL_MILITARY_SPENDING_REAL_CAGR_20YR"],
+    compute=lambda ctx: _pd_math.log(ctx["GLOBAL_GDP_2025"] / ctx["GLOBAL_ANNUAL_DIRECT_INDIRECT_WAR_COST"])
+        / _pd_math.log(1 + ctx["GLOBAL_MILITARY_SPENDING_REAL_CAGR_20YR"]),
+    keywords=["countdown", "exponential", "GDP", "limit", "baseline"],
+    latex_symbol=r"T_{GDP}",
+)
+
+# --- Actual peace dividend (these are savings) ---
+
+PEACE_DIVIDEND_LIFETIME_TOTAL = Parameter(
+    _pd_lt_savings,
+    source_type="calculated",
+    description="Cumulative peace dividend over 80 years (one human lifespan): the baseline "
+                "80-year war cost (SIPRI trajectory) minus the treaty 80-year war cost (flat at "
+                "99% of today). Assumes elasticity of 1.0 between military spending and war costs, "
+                "which is almost certainly conservative because the political act of passing the "
+                "treaty itself would reflect and reinforce a 'war is stupid' consensus that "
+                "reduces externalities super-proportionally.",
+    display_name="Cumulative Peace Dividend Over 80 Years",
+    unit="USD",
+    formula="GLOBAL_WAR_COST_LIFETIME_CUMULATIVE_BASELINE - GLOBAL_WAR_COST_LIFETIME_CUMULATIVE_TREATY",
+    inputs=["GLOBAL_WAR_COST_LIFETIME_CUMULATIVE_BASELINE", "GLOBAL_WAR_COST_LIFETIME_CUMULATIVE_TREATY"],
+    compute=lambda ctx: ctx["GLOBAL_WAR_COST_LIFETIME_CUMULATIVE_BASELINE"] - ctx["GLOBAL_WAR_COST_LIFETIME_CUMULATIVE_TREATY"],
+    keywords=["cumulative", "80 years", "lifetime", "peace dividend", "savings", "trajectory"],
+    latex_symbol=r"Savings_{LT}",
+)
+
+PEACE_DIVIDEND_LIFETIME_PER_PERSON = Parameter(
+    _pd_lt_savings / 8_000_000_000,
+    source_type="calculated",
+    description="Per-person share of the 80-year cumulative peace dividend, averaged across the "
+                "global population. Not literally a check in the reader's pocket: most of it "
+                "arrives as infrastructure not destroyed, wages not taxed to rebuild things that "
+                "should not have been destroyed, and conflicts that never happen. Per-capita "
+                "division hides that the poorest bear far more than the average today.",
+    display_name="Per-Person 80-Year Peace Dividend",
+    unit="USD",
+    formula="PEACE_DIVIDEND_LIFETIME_TOTAL / GLOBAL_POPULATION_2024",
+    inputs=["PEACE_DIVIDEND_LIFETIME_TOTAL", "GLOBAL_POPULATION_2024"],
+    compute=lambda ctx: ctx["PEACE_DIVIDEND_LIFETIME_TOTAL"] / ctx["GLOBAL_POPULATION_2024"],
+    keywords=["per-person", "lifetime", "80 years", "peace dividend", "savings"],
+    latex_symbol=r"Savings_{pp,LT}",
+)
+
+PEACE_DIVIDEND_INVESTMENT_REAL_RETURN_RATE = Parameter(
+    0.13,
+    source_type="definition",
+    description="Illustrative long-term real return rate used to compound the peace dividend "
+                "stream into a future value at year 80. 13% is the approximate long-run real CAGR "
+                "of the Nasdaq-100 index since its 1985 inception: accessible via passive ETFs "
+                "(QQQ), grounded in 40+ years of data, and does not require assuming unique skill "
+                "(Buffett) or access (VC/private markets). Chosen as more optimistic than 60/40 "
+                "portfolio (5%) or S&P 500 (7%) because growth-tilted founder-led companies have "
+                "historically outperformed the broad market.",
+    display_name="Assumed Long-Term Real Return for Investment Compounding",
+    unit="percent",
+    distribution="fixed",
+    keywords=["return", "compound", "real", "investment", "nasdaq", "historical"],
+    latex_symbol=r"r_{inv}",
+)
+
+# Closed-form future value at year 80 of the treaty savings stream:
+# FV = Σ_{t=0..79} [C(1+g)^t - C(1-p)] · (1+r)^(79-t)
+# Split into two geometric series:
+#   Term 1: C · Σ (1+g)^t · (1+r)^(79-t)
+#   Term 2: C(1-p) · Σ (1+r)^(79-t)
+def _pd_compound_fv(C, g, p, r, N):
+    total = 0.0
+    for t in range(N):
+        saving_t = C * (1 + g) ** t - C * (1 - p)
+        total += saving_t * (1 + r) ** (N - 1 - t)
+    return total
+
+def _pd_compound_fv_abolition(C, g, r, N):
+    total = 0.0
+    for t in range(N):
+        total += C * (1 + g) ** t * (1 + r) ** (N - 1 - t)
+    return total
+
+_pd_r = 0.13
+_pd_fv_treaty = _pd_compound_fv(_pd_C, _pd_g, _pd_p, _pd_r, 80)
+_pd_fv_abolition = _pd_compound_fv_abolition(_pd_C, _pd_g, _pd_r, 80)
+
+PEACE_DIVIDEND_LIFETIME_PER_PERSON_COMPOUNDED = Parameter(
+    _pd_fv_treaty / 8_000_000_000,
+    source_type="calculated",
+    description="Per-person future value at year 80 of the treaty peace dividend stream, "
+                "compounded at the illustrative long-term real return rate (13%, Nasdaq-100 "
+                "historical). Each year's savings are invested at the end of that year and "
+                "compound until year 80. This is an opportunity-cost framing, not a promise of "
+                "cash in the reader's pocket: the 'return' is the real productive use of capital "
+                "that weapons spending displaced, not a literal brokerage account.",
+    display_name="Per-Person Peace Dividend Compounded at 13% over 80 Years",
+    unit="USD",
+    formula="[Σ_{t=0..79} (C(1+g)^t - C(1-p)) × (1+r)^(79-t)] / GLOBAL_POPULATION_2024",
+    inputs=[
+        "GLOBAL_ANNUAL_DIRECT_INDIRECT_WAR_COST",
+        "GLOBAL_MILITARY_SPENDING_REAL_CAGR_20YR",
+        "TREATY_REDUCTION_PCT",
+        "PEACE_DIVIDEND_INVESTMENT_REAL_RETURN_RATE",
+        "GLOBAL_POPULATION_2024",
+    ],
+    compute=lambda ctx: _pd_compound_fv(
+        ctx["GLOBAL_ANNUAL_DIRECT_INDIRECT_WAR_COST"],
+        ctx["GLOBAL_MILITARY_SPENDING_REAL_CAGR_20YR"],
+        ctx["TREATY_REDUCTION_PCT"],
+        ctx["PEACE_DIVIDEND_INVESTMENT_REAL_RETURN_RATE"],
+        80,
+    ) / ctx["GLOBAL_POPULATION_2024"],
+    keywords=["per-person", "compounded", "future value", "investment", "peace dividend"],
+    latex_symbol=r"FV_{pp,treaty}",
+)
+
+GLOBAL_WAR_COST_LIFETIME_PER_PERSON_ABOLITION_COMPOUNDED = Parameter(
+    _pd_fv_abolition / 8_000_000_000,
+    source_type="calculated",
+    description="Per-person future value at year 80 of the full baseline war cost stream, "
+                "compounded at the illustrative long-term real return rate (13%, Nasdaq-100 "
+                "historical). This is the hypothetical opportunity cost per person of running "
+                "the baseline SIPRI trajectory rather than abolishing war entirely and "
+                "redirecting every dollar. Serves as the ceiling on the peace dividend ladder: "
+                "the treaty gets you a large fraction of this number, full abolition gets you "
+                "all of it.",
+    display_name="Per-Person War Cost (Full Abolition) Compounded at 13% over 80 Years",
+    unit="USD",
+    formula="[Σ_{t=0..79} C(1+g)^t × (1+r)^(79-t)] / GLOBAL_POPULATION_2024",
+    inputs=[
+        "GLOBAL_ANNUAL_DIRECT_INDIRECT_WAR_COST",
+        "GLOBAL_MILITARY_SPENDING_REAL_CAGR_20YR",
+        "PEACE_DIVIDEND_INVESTMENT_REAL_RETURN_RATE",
+        "GLOBAL_POPULATION_2024",
+    ],
+    compute=lambda ctx: _pd_compound_fv_abolition(
+        ctx["GLOBAL_ANNUAL_DIRECT_INDIRECT_WAR_COST"],
+        ctx["GLOBAL_MILITARY_SPENDING_REAL_CAGR_20YR"],
+        ctx["PEACE_DIVIDEND_INVESTMENT_REAL_RETURN_RATE"],
+        80,
+    ) / ctx["GLOBAL_POPULATION_2024"],
+    keywords=["per-person", "abolition", "compounded", "future value", "ceiling"],
+    latex_symbol=r"FV_{pp,abolition}",
+)
+
+PEACE_DIVIDEND_LIFETIME_PCT_OF_BASELINE = Parameter(
+    _pd_lt_savings / _pd_lt_baseline_cum,
+    source_type="calculated",
+    description="Fraction of the baseline 80-year war cost avoided by the treaty. Because the "
+                "baseline compounds exponentially while the treaty holds spending flat, cutting 1% "
+                "today and halting the growth trajectory avoids about 72% of the cumulative "
+                "80-year war cost. Most of the savings come from the halted growth, not the "
+                "headline 1% cut.",
+    display_name="Share of 80-Year War Cost Avoided by Treaty",
+    unit="percent",
+    formula="PEACE_DIVIDEND_LIFETIME_TOTAL / GLOBAL_WAR_COST_LIFETIME_CUMULATIVE_BASELINE",
+    inputs=["PEACE_DIVIDEND_LIFETIME_TOTAL", "GLOBAL_WAR_COST_LIFETIME_CUMULATIVE_BASELINE"],
+    compute=lambda ctx: ctx["PEACE_DIVIDEND_LIFETIME_TOTAL"] / ctx["GLOBAL_WAR_COST_LIFETIME_CUMULATIVE_BASELINE"],
+    keywords=["percent", "fraction", "avoided", "lifetime", "80 years", "ratio"],
+    latex_symbol=r"\phi_{avoided}",
+)
+
+PEACE_DIVIDEND_YEARS_UNTIL_BASELINE_EXCEEDS_GDP = Parameter(
+    _pd_math.log(115_000_000_000_000 / float(GLOBAL_ANNUAL_DIRECT_INDIRECT_WAR_COST))
+    / _pd_math.log(1 + float(GLOBAL_MILITARY_SPENDING_REAL_CAGR_20YR)),
+    source_type="calculated",
+    description="Years until annual war cost exceeds current world GDP at the SIPRI 20-year real "
+                "growth rate. At ~2.76% real growth and $11.4T current war cost, this happens in "
+                "under a century. The baseline trajectory is therefore a countdown, not a plan.",
+    display_name="Years Until Baseline War Cost Exceeds Current World GDP",
+    unit="years",
+    formula="log(GLOBAL_GDP_2025 / GLOBAL_ANNUAL_DIRECT_INDIRECT_WAR_COST) / log(1 + g_{mil,20yr})",
+    inputs=["GLOBAL_GDP_2025", "GLOBAL_ANNUAL_DIRECT_INDIRECT_WAR_COST", "GLOBAL_MILITARY_SPENDING_REAL_CAGR_20YR"],
+    compute=lambda ctx: _pd_math.log(ctx["GLOBAL_GDP_2025"] / ctx["GLOBAL_ANNUAL_DIRECT_INDIRECT_WAR_COST"])
+        / _pd_math.log(1 + ctx["GLOBAL_MILITARY_SPENDING_REAL_CAGR_20YR"]),
+    keywords=["countdown", "exponential", "GDP", "limit", "baseline"],
+    latex_symbol=r"T_{GDP}",
 )
 
 # Individual peace dividend components (1% savings breakdown)

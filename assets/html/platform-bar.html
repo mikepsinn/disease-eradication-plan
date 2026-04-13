@@ -55,7 +55,7 @@
   font-size: 0.7rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: #8b7355;
+  color: var(--book-accent, #8b7355);
   font-weight: 600;
   margin-right: 0.15rem;
 }
@@ -66,7 +66,7 @@
   width: 32px;
   height: 32px;
   border-radius: 6px;
-  color: #8b7355;
+  color: var(--book-accent, #8b7355);
   background: transparent;
   transition: color 0.15s ease, background 0.15s ease;
   text-decoration: none !important;
@@ -76,24 +76,19 @@
   line-height: 1;
 }
 .platform-icon:hover {
-  color: #5a4a35;
+  color: var(--book-heading, #5a4a35);
   background: rgba(139, 115, 85, 0.1);
 }
 .platform-divider {
   width: 1px;
   height: 20px;
-  background: #d4c5b9;
+  background: var(--book-border, #d4c5b9);
   margin: 0 0.25rem;
 }
 /* Hide on print */
 @media print {
   .platform-bar { display: none !important; }
 }
-/* Dark mode support */
-.dark-mode .platform-label { color: #b8a080; }
-.dark-mode .platform-icon { color: #b8a080; }
-.dark-mode .platform-icon:hover { color: #d4c0a0; background: rgba(180, 160, 128, 0.15); }
-.dark-mode .platform-divider { background: #4a4030; }
 </style>
 
 <script>
