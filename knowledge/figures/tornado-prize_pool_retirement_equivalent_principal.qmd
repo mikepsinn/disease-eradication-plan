@@ -20,14 +20,14 @@ display_name = "PRIZE Pool Retirement-Equivalent Principal"
 
 # Baseline and units
 
-baseline = 1804405541315.2495
+baseline = 2211145589288.8613
 
 # Tornado data from sensitivity analysis
 
-drivers = ['VENTURE_GROSS_RETURN', 'SCALE_COMPRESSION_FACTOR', 'CONVENTIONAL_RETIREMENT_RETURN', 'ALLOCATION_DECISION_SPREAD', 'GLOBAL_SAVINGS_RATE_PCT', 'HOME_BIAS_ALPHA', 'GLOBAL_POPULATION_2024']
-driver_labels = ['Venture Capital Gross Return', 'Scale Compression Factor', 'Conventional Retirement Return (After Fees)', 'Allocation Decision Return Spread', 'Global Gross Savings Rate', 'Home Bias Return Drag', 'Global Population in 2024']
-impacts_low = [1230875714689.145, 687773998994.1465, -345828001975.48145, 189788771919.1853, -200489504590.58325, 119318116368.03662, 0.0]
-impacts_high = [-839268471059.3124, -312938078051.66016, 421190641746.2466, -223631197592.417, 200489504590.583, -153962417541.93872, 0.0]
+drivers = ['VENTURE_GROSS_RETURN', 'SCALE_COMPRESSION_FACTOR', 'CONVENTIONAL_RETIREMENT_RETURN', 'GLOBAL_SAVINGS_RATE_PCT', 'WISHOCRATIC_CROWD_ALPHA', 'HOME_BIAS_ALPHA', 'GLOBAL_POPULATION_2024']
+driver_labels = ['Venture Capital Gross Return', 'Scale Compression Factor', 'Conventional Retirement Return (After Fees)', 'Global Gross Savings Rate', 'Wishocratic Crowd Allocation Alpha', 'Home Bias Return Drag', 'Global Population in 2024']
+impacts_low = [1535293503848.3818, 856442775583.5205, -423782815842.6543, -245682843254.3181, 148279104205.12012, 148279104205.12012, 0.0]
+impacts_high = [-1038297632703.0796, -388192268586.32715, 516133323924.57275, 245682843254.31738, -267562605354.08447, -191120100763.3059, 0.0]
 
 # Convert deltas to absolute values (baseline + delta)
 

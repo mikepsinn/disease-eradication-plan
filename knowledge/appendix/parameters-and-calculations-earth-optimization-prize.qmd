@@ -38,15 +38,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 237 parameters used in the analysis, organized by type:
+This appendix documents all 234 parameters used in the analysis, organized by type:
 
-- External sources (peer-reviewed): 75
-- Calculated values: 123
+- External sources (peer-reviewed): 73
+- Calculated values: 122
 - Core definitions: 39
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (123 parameters) • [External Data Sources](#sec-external) (75 parameters) • [Core Definitions](#sec-definitions) (39 parameters)
+[Calculated Values](#sec-calculated) (122 parameters) • [External Data Sources](#sec-external) (73 parameters) • [Core Definitions](#sec-definitions) (39 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -4391,7 +4391,7 @@ $$
 
 :::
 
-### PRIZE Pool Annual Return: 17.4% {#sec-prize_pool_annual_return}
+### PRIZE Pool Annual Return: 15.8% {#sec-prize_pool_annual_return}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -4401,7 +4401,7 @@ Canonical annual return used for PRIZE pool growth. Venture gross return + scale
 
 - [Venture Capital Gross Return](#sec-venture_gross_return) 📊: 17% (95% CI: 13% - 22%)
 - [Scale Compression Factor](#sec-scale_compression_factor): -2.5% (95% CI: -5% - -1%)
-- [Wishocratic Crowd Allocation Alpha](#sec-wishocratic_crowd_alpha) 🔢: 2.08%
+- [Wishocratic Crowd Allocation Alpha](#sec-wishocratic_crowd_alpha): 0.5% (95% CI: 0% - 1.5%)
 - [Home Bias Return Drag](#sec-home_bias_alpha) 📊: 0.8% (95% CI: 0.3% - 1.5%)
 
 $$
@@ -4409,19 +4409,11 @@ $$
 r_{pool} \\
 = r_{VC,gross} + \Delta r_{scale} + \alpha_{crowd} \\
 + \alpha_{home} \\
-= 17\% + -2.5\% + 2.08\% + 0.8\% \\
-= 17.4\%
+= 17\% + -2.5\% + 0.5\% + 0.8\% \\
+= 15.8\%
 \end{gathered}
 $$
-where:
-$$
-\begin{gathered}
-\alpha_{crowd} \\
-= S_{alloc} \times (Acc_{crowd} - Acc_{expert}) \\
-= 8\% \times (91\% - 65\%) \\
-= 2.08\%
-\end{gathered}
-$$
+
 *✓ High confidence*
 
 #### Sensitivity Analysis
@@ -4440,7 +4432,7 @@ $$
 
 :::
 
-### PRIZE Pool Horizon Multiple: 11.1x {#sec-prize_pool_horizon_multiple}
+### PRIZE Pool Horizon Multiple: 9.03x {#sec-prize_pool_horizon_multiple}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -4448,7 +4440,7 @@ Compound multiple for PRIZE pool growth over the resolution horizon (tied to the
 
 **Inputs**:
 
-- [PRIZE Pool Annual Return](#sec-prize_pool_annual_return) 🔢: 17.4%
+- [PRIZE Pool Annual Return](#sec-prize_pool_annual_return) 🔢: 15.8%
 - [Year Destructive Economy Reaches 50% of GDP](#sec-destructive_economy_50pct_year) 🔢: 2040
 - [Destructive Economy Base Year](#sec-destructive_economy_base_year): 2025
 
@@ -4461,17 +4453,8 @@ $$
 r_{pool} \\
 = r_{VC,gross} + \Delta r_{scale} + \alpha_{crowd} \\
 + \alpha_{home} \\
-= 17\% + -2.5\% + 2.08\% + 0.8\% \\
-= 17.4\%
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-\alpha_{crowd} \\
-= S_{alloc} \times (Acc_{crowd} - Acc_{expert}) \\
-= 8\% \times (91\% - 65\%) \\
-= 2.08\%
+= 17\% + -2.5\% + 0.5\% + 0.8\% \\
+= 15.8\%
 \end{gathered}
 $$
 where:
@@ -4518,7 +4501,7 @@ $$
 
 :::
 
-### PRIZE Pool Retirement-Equivalent Principal: $1.8 trillion {#sec-prize_pool_retirement_equivalent_principal}
+### PRIZE Pool Retirement-Equivalent Principal: $2.21 trillion {#sec-prize_pool_retirement_equivalent_principal}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -4528,7 +4511,7 @@ Secondary PRIZE seed benchmark: initial principal required so that the pool can 
 
 - [Global Coordination Target Supporters](#sec-global_coordination_target_supporters) 🔢: 4 billion of people
 - [Retirement-Equivalent Claim Value Target](#sec-retirement_equivalent_claim_value_target) 🔢: $4,991
-- [PRIZE Pool Horizon Multiple](#sec-prize_pool_horizon_multiple) 🔢: 11.1x
+- [PRIZE Pool Horizon Multiple](#sec-prize_pool_horizon_multiple) 🔢: 9.03x
 
 $$
 \begin{gathered}
@@ -4621,17 +4604,8 @@ $$
 r_{pool} \\
 = r_{VC,gross} + \Delta r_{scale} + \alpha_{crowd} \\
 + \alpha_{home} \\
-= 17\% + -2.5\% + 2.08\% + 0.8\% \\
-= 17.4\%
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-\alpha_{crowd} \\
-= S_{alloc} \times (Acc_{crowd} - Acc_{expert}) \\
-= 8\% \times (91\% - 65\%) \\
-= 2.08\%
+= 17\% + -2.5\% + 0.5\% + 0.8\% \\
+= 15.8\%
 \end{gathered}
 $$
 *✓ High confidence*
@@ -4652,7 +4626,7 @@ $$
 
 :::
 
-### PRIZE Pool Size: $33.7 trillion {#sec-prize_pool_size}
+### PRIZE Pool Size: $27.5 trillion {#sec-prize_pool_size}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -4662,14 +4636,14 @@ Terminal PRIZE pool size: global investable assets × participation rate × comp
 
 - [Global Investable Financial Assets](#sec-global_investable_assets) 📊: $305 trillion
 - [PRIZE Pool Participation Rate](#sec-prize_pool_participation_rate): 1% (95% CI: 0.1% - 10%)
-- [PRIZE Pool Horizon Multiple](#sec-prize_pool_horizon_multiple) 🔢: 11.1x
+- [PRIZE Pool Horizon Multiple](#sec-prize_pool_horizon_multiple) 🔢: 9.03x
 
 $$
 \begin{gathered}
 Pool \\
 = Assets_{invest} \times R_{pool} \times M_{pool} \\
-= \$305T \times 1\% \times 11.1 \\
-= \$33.7T
+= \$305T \times 1\% \times 9.03 \\
+= \$27.5T
 \end{gathered}
 $$
 where:
@@ -4682,17 +4656,8 @@ $$
 r_{pool} \\
 = r_{VC,gross} + \Delta r_{scale} + \alpha_{crowd} \\
 + \alpha_{home} \\
-= 17\% + -2.5\% + 2.08\% + 0.8\% \\
-= 17.4\%
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-\alpha_{crowd} \\
-= S_{alloc} \times (Acc_{crowd} - Acc_{expert}) \\
-= 8\% \times (91\% - 65\%) \\
-= 2.08\%
+= 17\% + -2.5\% + 0.5\% + 0.8\% \\
+= 15.8\%
 \end{gathered}
 $$
 where:
@@ -9214,7 +9179,7 @@ $$
 
 :::
 
-### VOTE Payout for 2 Claims: $16,873 {#sec-vote_2_claims_payout}
+### VOTE Payout for 2 Claims: $13,769 {#sec-vote_2_claims_payout}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -9222,18 +9187,18 @@ Payout for a depositor who recruits 2 verified participants (earning 2 VOTE clai
 
 **Inputs**:
 
-- [VOTE Point Value](#sec-vote_token_value) 🔢: $8,436
+- [VOTE Point Value](#sec-vote_token_value) 🔢: $6,884
 
 $$
-V_{2claims} = V_{vote} \times 2 = \$8.44K \times 2 = \$16.9K
+V_{2claims} = V_{vote} \times 2 = \$6.88K \times 2 = \$13.8K
 $$
 where:
 $$
 \begin{gathered}
 V_{vote} \\
 = \frac{Pool}{N_{coord}} \\
-= \frac{\$33.7T}{4B} \\
-= \$8.44K
+= \frac{\$27.5T}{4B} \\
+= \$6.88K
 \end{gathered}
 $$
 where:
@@ -9241,8 +9206,8 @@ $$
 \begin{gathered}
 Pool \\
 = Assets_{invest} \times R_{pool} \times M_{pool} \\
-= \$305T \times 1\% \times 11.1 \\
-= \$33.7T
+= \$305T \times 1\% \times 9.03 \\
+= \$27.5T
 \end{gathered}
 $$
 where:
@@ -9255,17 +9220,8 @@ $$
 r_{pool} \\
 = r_{VC,gross} + \Delta r_{scale} + \alpha_{crowd} \\
 + \alpha_{home} \\
-= 17\% + -2.5\% + 2.08\% + 0.8\% \\
-= 17.4\%
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-\alpha_{crowd} \\
-= S_{alloc} \times (Acc_{crowd} - Acc_{expert}) \\
-= 8\% \times (91\% - 65\%) \\
-= 2.08\%
+= 17\% + -2.5\% + 0.5\% + 0.8\% \\
+= 15.8\%
 \end{gathered}
 $$
 where:
@@ -9321,7 +9277,7 @@ $$
 
 :::
 
-### VOTE Point Value: $8,436 {#sec-vote_token_value}
+### VOTE Point Value: $6,884 {#sec-vote_token_value}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -9329,15 +9285,15 @@ Value of a single VOTE claim based on the modeled PRIZE pool size (investable as
 
 **Inputs**:
 
-- [PRIZE Pool Size](#sec-prize_pool_size) 🔢: $33.7 trillion
+- [PRIZE Pool Size](#sec-prize_pool_size) 🔢: $27.5 trillion
 - [Global Coordination Target Supporters](#sec-global_coordination_target_supporters) 🔢: 4 billion of people
 
 $$
 \begin{gathered}
 V_{vote} \\
 = \frac{Pool}{N_{coord}} \\
-= \frac{\$33.7T}{4B} \\
-= \$8.44K
+= \frac{\$27.5T}{4B} \\
+= \$6.88K
 \end{gathered}
 $$
 where:
@@ -9345,8 +9301,8 @@ $$
 \begin{gathered}
 Pool \\
 = Assets_{invest} \times R_{pool} \times M_{pool} \\
-= \$305T \times 1\% \times 11.1 \\
-= \$33.7T
+= \$305T \times 1\% \times 9.03 \\
+= \$27.5T
 \end{gathered}
 $$
 where:
@@ -9359,17 +9315,8 @@ $$
 r_{pool} \\
 = r_{VC,gross} + \Delta r_{scale} + \alpha_{crowd} \\
 + \alpha_{home} \\
-= 17\% + -2.5\% + 2.08\% + 0.8\% \\
-= 17.4\%
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-\alpha_{crowd} \\
-= S_{alloc} \times (Acc_{crowd} - Acc_{expert}) \\
-= 8\% \times (91\% - 65\%) \\
-= 2.08\%
+= 17\% + -2.5\% + 0.5\% + 0.8\% \\
+= 15.8\%
 \end{gathered}
 $$
 where:
@@ -9558,45 +9505,6 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-willing_trial_participants_global.qmd >}}
-
-:::
-
-### Wishocratic Crowd Allocation Alpha: 2.08% {#sec-wishocratic_crowd_alpha}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Allocation alpha from wishocratic crowd decision-making. Crowds pick correctly 91% vs experts at 65% (Surowiecki). Applied to the return spread between best/worst sectors. This is the floor: politicians (the real 'experts') are worse than 65% because they are being paid by one of the answer choices.
-
-**Inputs**:
-
-- [Crowd Decision Accuracy (Millionaire)](#sec-crowd_decision_accuracy) 📊: 91%
-- [Expert Decision Accuracy (Millionaire)](#sec-expert_decision_accuracy) 📊: 65%
-- [Allocation Decision Return Spread](#sec-allocation_decision_spread): 8% (95% CI: 5% - 12%)
-
-$$
-\begin{gathered}
-\alpha_{crowd} \\
-= S_{alloc} \times (Acc_{crowd} - Acc_{expert}) \\
-= 8\% \times (91\% - 65\%) \\
-= 2.08\%
-\end{gathered}
-$$
-
-*✓ High confidence*
-
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-wishocratic_crowd_alpha.qmd >}}
-
-{{< include ../figures/sensitivity-table-wishocratic_crowd_alpha.qmd >}}
-
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-wishocratic_crowd_alpha.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-wishocratic_crowd_alpha.qmd >}}
 
 :::
 
@@ -11524,22 +11432,6 @@ Average retail after-fee return on conventional retirement portfolios (60/40 sto
 
 :::
 
-### Crowd Decision Accuracy (Millionaire): 91% {#sec-crowd_decision_accuracy}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Crowd accuracy on Who Wants to Be a Millionaire ask-the-audience lifeline. Studio audience picked the correct answer 91% of the time (Surowiecki 2004). Used as lower bound for wishocratic allocation accuracy.
-
-**Source**: [@surowiecki-2004]
-
-#### Uncertainty Range
-
-**Technical**: Distribution: Fixed
-
-*✓ High confidence*
-
-:::
-
 ### Global Population with Chronic Diseases: 2.4 billion people {#sec-current_disease_patients_global}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -11693,22 +11585,6 @@ Regulatory delay for efficacy testing (Phase II/III) post-safety verification. B
 {{< include ../figures/distribution-efficacy_lag_years.qmd >}}
 
 *~ Medium confidence • 📊 Peer-reviewed • Updated 2021*
-
-:::
-
-### Expert Decision Accuracy (Millionaire): 65% {#sec-expert_decision_accuracy}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Expert accuracy on Who Wants to Be a Millionaire phone-a-friend lifeline. Credentialed expert picked the correct answer 65% of the time (Surowiecki 2004). Used as baseline for conventional fund manager / committee allocation.
-
-**Source**: [@surowiecki-2004]
-
-#### Uncertainty Range
-
-**Technical**: Distribution: Fixed
-
-*✓ High confidence*
 
 :::
 
@@ -13092,28 +12968,6 @@ Venture capital / private equity gross return (before 2-and-20 fees). Cambridge 
 
 Fundamental parameters and constants used throughout the analysis.
 
-### Allocation Decision Return Spread: 8% {#sec-allocation_decision_spread}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Return spread between the best and worst major asset-class sectors (biotech vs. coal, growth vs. value, emerging vs. declining). The accuracy advantage of crowds over experts is multiplied by this spread to estimate the allocation alpha from wishocratic decision-making.
-
-#### Uncertainty Range
-
-**Technical**: 95% CI: [5%, 12%] • Distribution: Normal
-
-**What this means**: There's significant uncertainty here. The true value likely falls between 5% and 12% (±44%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
-
-*The normal distribution means values cluster around the center with equal chances of being higher or lower.*
-
-#### Input Distribution
-
-{{< include ../figures/distribution-allocation_decision_spread.qmd >}}
-
-*Core definition*
-
-:::
-
 ### Annual Working Hours: 2,000 hours/year {#sec-annual_working_hours}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -13811,6 +13665,28 @@ Stacked annual growth boost from 8 non-overlapping war channels. Ch1: productive
 #### Input Distribution
 
 {{< include ../figures/distribution-war_counterfactual_annual_growth_boost.qmd >}}
+
+*Core definition*
+
+:::
+
+### Wishocratic Crowd Allocation Alpha: 0.5% {#sec-wishocratic_crowd_alpha}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Allocation alpha from wishocratic sector- and manager-level capital routing. Crowds route capital across sectors and managers at least as well as cap-weighted indices or committee allocators. SPIVA shows 88% of active large-cap managers underperform their benchmark over 15 years; Preqin shows top-quartile vs bottom-quartile VC manager dispersion of 5-15%. The 0.5% central value assumes only that RAPPA avoids the bottom half of manager dispersion at the allocation level, not that it finds the top quartile. This is not a claim that crowds beat experts at picking individual companies; power-law outlier selection is the one thing crowds are empirically worse at than specialists.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [0%, 1.5%] • Distribution: Normal
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between 0% and 1.5% (±150%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The normal distribution means values cluster around the center with equal chances of being higher or lower.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-wishocratic_crowd_alpha.qmd >}}
 
 *Core definition*
 

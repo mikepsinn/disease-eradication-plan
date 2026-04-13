@@ -8312,19 +8312,22 @@ CONVENTIONAL_RETIREMENT_HORIZON_MULTIPLE = Parameter(
 # --- Calculated: crowd allocation alpha ---
 
 WISHOCRATIC_CROWD_ALPHA = Parameter(
-    (0.91 - 0.65) * 0.08,
-    source_type="calculated",
-    description="Allocation alpha from wishocratic crowd decision-making. "
-                "Crowds pick correctly 91% vs experts at 65% (Surowiecki). "
-                "Applied to the return spread between best/worst sectors. "
-                "This is the floor: politicians (the real 'experts') are worse than 65% "
-                "because they are being paid by one of the answer choices.",
+    0.005,
+    source_type="definition",
+    description="Allocation alpha from wishocratic sector- and manager-level capital routing. "
+                "Crowds route capital across sectors and managers at least as well as "
+                "cap-weighted indices or committee allocators. SPIVA shows 88% of active large-cap "
+                "managers underperform their benchmark over 15 years; Preqin shows top-quartile vs "
+                "bottom-quartile VC manager dispersion of 5-15%. The 0.5% central value assumes "
+                "only that RAPPA avoids the bottom half of manager dispersion at the allocation "
+                "level, not that it finds the top quartile. This is not a claim that crowds beat "
+                "experts at picking individual companies; power-law outlier selection is the one "
+                "thing crowds are empirically worse at than specialists.",
     display_name="Wishocratic Crowd Allocation Alpha",
     unit="percent",
-    formula="(CROWD_DECISION_ACCURACY - EXPERT_DECISION_ACCURACY) × ALLOCATION_DECISION_SPREAD",
-    inputs=["CROWD_DECISION_ACCURACY", "EXPERT_DECISION_ACCURACY", "ALLOCATION_DECISION_SPREAD"],
-    compute=lambda ctx: (ctx["CROWD_DECISION_ACCURACY"] - ctx["EXPERT_DECISION_ACCURACY"]) * ctx["ALLOCATION_DECISION_SPREAD"],
-    keywords=["crowd", "alpha", "allocation", "wishocratic", "advantage", "surowiecki"],
+    confidence_interval=(0.0, 0.015),
+    distribution="normal",
+    keywords=["crowd", "alpha", "allocation", "wishocratic", "advantage", "SPIVA", "Preqin", "sector"],
     latex_symbol=r"\alpha_{crowd}",
 )
 

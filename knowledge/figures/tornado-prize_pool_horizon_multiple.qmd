@@ -20,14 +20,14 @@ display_name = "PRIZE Pool Horizon Multiple"
 
 # Baseline and units
 
-baseline = 11.063984983606389
+baseline = 9.028765862436396
 
 # Tornado data from sensitivity analysis
 
-drivers = ['VENTURE_GROSS_RETURN', 'SCALE_COMPRESSION_FACTOR', 'ALLOCATION_DECISION_SPREAD', 'HOME_BIAS_ALPHA']
-driver_labels = ['Venture Capital Gross Return', 'Scale Compression Factor', 'Allocation Decision Return Spread', 'Home Bias Return Drag']
-impacts_low = [-4.486698027428785, -3.05335995015891, -1.0529666585826387, -0.6862388173559069]
-impacts_high = [9.621072536932122, 2.3214332740360337, 1.5652153147940027, 1.0321094081868623]
+drivers = ['VENTURE_GROSS_RETURN', 'SCALE_COMPRESSION_FACTOR', 'WISHOCRATIC_CROWD_ALPHA', 'HOME_BIAS_ALPHA']
+driver_labels = ['Venture Capital Gross Return', 'Scale Compression Factor', 'Wishocratic Crowd Allocation Alpha', 'Home Bias Return Drag']
+impacts_low = [-3.699994910302639, -2.5207493234316205, -0.5674168443906957, -0.5674168443906957]
+impacts_high = [7.992976556388308, 1.92264775124535, 1.2429415863658164, 0.8542360733560166]
 
 # Convert deltas to absolute values (baseline + delta)
 

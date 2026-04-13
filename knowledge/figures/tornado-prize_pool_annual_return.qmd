@@ -20,14 +20,14 @@ display_name = "PRIZE Pool Annual Return"
 
 # Baseline and units
 
-baseline = 0.17380000000000004
+baseline = 0.15800000000000003
 
 # Tornado data from sensitivity analysis
 
-drivers = ['VENTURE_GROSS_RETURN', 'SCALE_COMPRESSION_FACTOR', 'ALLOCATION_DECISION_SPREAD', 'HOME_BIAS_ALPHA']
-driver_labels = ['Venture Capital Gross Return', 'Scale Compression Factor', 'Allocation Decision Return Spread', 'Home Bias Return Drag']
-impacts_low = [-0.04000000000000001, -0.025000000000000022, -0.007800000000000001, -0.0050000000000000044]
-impacts_high = [0.04999999999999999, 0.014999999999999986, 0.010399999999999993, 0.0069999999999999785]
+drivers = ['VENTURE_GROSS_RETURN', 'SCALE_COMPRESSION_FACTOR', 'WISHOCRATIC_CROWD_ALPHA', 'HOME_BIAS_ALPHA']
+driver_labels = ['Venture Capital Gross Return', 'Scale Compression Factor', 'Wishocratic Crowd Allocation Alpha', 'Home Bias Return Drag']
+impacts_low = [-0.04000000000000001, -0.025000000000000022, -0.0050000000000000044, -0.0050000000000000044]
+impacts_high = [0.04999999999999999, 0.014999999999999986, 0.010000000000000009, 0.007000000000000006]
 
 # Convert deltas to absolute values (baseline + delta)
 

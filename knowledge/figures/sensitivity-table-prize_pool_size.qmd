@@ -4,7 +4,7 @@ Regression-based sensitivity showing which inputs explain the most variance in t
 
 | Input Parameter | Sensitivity Coefficient | Interpretation |
 |:----------------|------------------------:|:---------------|
-| PRIZE Pool Participation Rate (percent) | 1.1844 | Strong driver |
-| PRIZE Pool Horizon Multiple (x) | -0.2259 | Weak driver |
+| PRIZE Pool Participation Rate (percent) | 1.1883 | Strong driver |
+| PRIZE Pool Horizon Multiple (x) | -0.2304 | Weak driver |
 
 *Interpretation*: Standardized coefficients show the change in output (in SD units) per 1 SD change in input. Values near ±1 indicate strong influence; values exceeding ±1 may occur with correlated inputs.

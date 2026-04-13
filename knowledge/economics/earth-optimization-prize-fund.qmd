@@ -1,13 +1,19 @@
 ---
 title: The Earth Optimization Prize Fund
-subtitle: How the prize pool makes money while humanity tries not to be stupid
-description: The PRIZE pool is not a jar of money on a shelf. It is the world's largest investment fund, making {{< var prize_pool_annual_return >}} per year by removing fees, removing the accreditation wall, and letting crowds allocate instead of committees being paid by the answer choices.
+subtitle: The pool of money that funds curing diseases whether the treaty passes or not
+description: The PRIZE pool is not a jar of money on a shelf. It is an investment fund. It buys the companies that cure diseases and raise incomes. If the treaty passes, the pool goes to the voters. If not, the depositors split the pool, and the pool has been compounding the whole time.
 abstract: |
-  99% of humans are legally banned from the best-performing asset class. Venture capital makes {{< var venture_gross_return >}} per year. Your retirement fund makes {{< var conventional_retirement_return >}} after fees. The difference is not skill. It is a door marked "accredited investors only." The Prize Fund walks through a loophole: a pooled vehicle is an accredited investor. A $100 depositor gets into the same club as a pension fund.
+  Listen.
 
-  Depositors allocate capital via wishocratic pairwise sliders. On *Who Wants to Be a Millionaire*, the audience got the answer right {{< var crowd_decision_accuracy >}} of the time; the phone-a-friend expert got it right {{< var expert_decision_accuracy >}} [@surowiecki-2004]. The investment industry is entirely composed of phone-a-friend experts, except they are being paid by one of the answer choices. The structural return (before the world gets better): {{< var prize_pool_annual_return >}} per year. $100 becomes $100 times {{< var prize_pool_horizon_multiple >}} by {{< var destructive_economy_50pct_year >}}. Your retirement account turns that same $100 into $100 times {{< var conventional_retirement_horizon_multiple >}}.
+  99% of humans are legally banned from the best-performing asset class. It is called venture capital. It makes about {{< var venture_gross_return >}} a year [@cambridge-pe-vc-benchmark-2024]. Your retirement fund makes {{< var conventional_retirement_return >}} after fees. The gap is not skill. It is a door marked "accredited investors only." Your government decided only rich people are smart enough to invest in things that make money. This is called investor protection. It has protected you from having money. Thank you.
 
-  The fund does not bet on whether the targets get hit. It funds hitting them. The investments cure diseases, build infrastructure, and raise incomes, which ARE the prize targets. If the fund allocates well, the targets get hit. If the targets get hit, the pool goes to VOTE point-holders. If not, depositors split the pool (still beats your 401(k)). It is a loop, not a circle.
+  The Prize Fund walks through the door. Not to beat your 401(k) by a few percent. To take {{< var global_retirement_assets >}} of retirement money your species has trapped in index funds and point it at the companies that cure diseases and raise incomes. And away from the ones billing $400 for a hammer.
+
+  There is a game attached. You put money in the pool. You vote for a 1% treaty that sends 1% of military spending to medical research. If the treaty passes and people live longer and earn more by {{< var destructive_economy_50pct_year >}}, the pool goes to the voters. You get a world with fewer diseases. If it fails, you get the pool back, which has been compounding, at a multiple of {{< var prize_pool_horizon_multiple >}}. Your retirement account makes {{< var conventional_retirement_horizon_multiple >}} over the same period.
+
+  Either way, you come out ahead. That is the whole thing. People keep asking what the catch is. There is no catch. That is the catch.
+
+  This is not a money-market account. The fund holds real companies. They go up and they go down. The 15-year lockup is there so depositors do not panic-sell at the bottom, which is the main thing that ruins normal investors.
 published: true
 tags:
   - economics
@@ -29,146 +35,238 @@ scores:
   importance: 6
 image: /assets/og-images/knowledge/economics/earth-optimization-prize-fund-og-bw-academic.jpg
 ---
-![The PRIZE pool is not a jar of money on a shelf. It is the world's largest investment fund, making 17.4% (95% CI: 10.6%-23.9%) per year by removing fees, removing the accreditation wall, and letting crowds allocate instead of committees being paid by the answer choices.](/assets/infographics/knowledge/economics/earth-optimization-prize-fund-infographic-bw-academic.jpg)
 
 {{< include ../includes/setup-parameters.qmd >}}
 
 ## The Thesis
 
-The prize pool is not a jar of money sitting on a shelf. It is the world's largest investment fund, pointed at curing diseases and raising incomes.
+The prize pool is not a jar of money on a shelf. It is an investment fund. It has three jobs.
 
-Depositors [wishocratically](../solution/wishocracy.qmd) allocate capital via pairwise sliders. The same mechanism that lets crowds outperform experts at picking trivia answers lets them outperform fund managers at picking investments. The accreditation wall comes down. {{< var global_retirement_assets >}} in retirement assets stops propping up sclerotic oligopolies and starts funding dynamic new companies. Better capital allocation means a better economy. This is not complicated. Your species just made it complicated.
+One. Make money.
 
-This chapter explains how the pool grows. It is not the first thing that needs funding (that is activation, getting enough people signed up that the Scoreboard looks real). This is what happens after.
+Two. Pay for the companies curing diseases, extending healthy life, building energy, and raising incomes. The companies that move the two numbers the prize is scored on.
 
-## Why the Baseline Is Venture, Not Public Equity
+Three. Stop paying for the opposite. Stop paying for the companies whose main product is their lobbying department. Stop paying for the defense contractors charging $400 for a hammer. Stop paying for the firms whose growth comes from buybacks.
 
-99% of humans are legally banned from the best-performing asset class. Venture capital makes {{< var venture_gross_return >}} gross annual returns [@cambridge-pe-vc-benchmark-2024]. Your retirement fund makes {{< var conventional_retirement_return >}} after fees. The difference is not skill. It is a door marked "accredited investors only" that keeps {{< var global_retirement_assets >}} trapped in index funds tracking yesterday's winners. Your government decided only rich people are smart enough to invest in things that make money.
+Your index fund rewards market cap. Market cap rewards incumbency. Incumbency rewards lobbying. Productivity is optional. The crowd, given pairwise sliders and no lobbyists, points the money somewhere else.
 
-The Prize Fund walks through a loophole your regulators left open: a pooled vehicle is, by definition, an accredited investor. A $100 depositor gets into the same asset class as a pension fund. Legal today. Reg CF ($5M/yr), Reg A+ Tier 2 ($75M/yr), and the fund-as-institutional-investor pathway.
+This is a 15-year bet. It has downside. If you need principal protection, use [IABs](../solution/incentive-alignment-bonds.qmd) [@iab-paper-2025]. That is what IABs are for. This chapter is for skeptics.
 
-The baseline is venture gross return ({{< var venture_gross_return >}}) because that is what capital earns when you remove the fees.
+## Why Venture
 
-Two things that sound like bonuses are already baked in:
+Cambridge Associates tracks venture capital back 25 years. The gross return is about {{< var venture_gross_return >}}. Your index fund makes {{< var conventional_retirement_return >}} after fees. The gap is not luck. It is access.
 
-- **No fees.** Venture gross return is before the 2-and-20 fees that fund managers charge for the privilege of losing to an index. The Prize Fund has no manager. The crowd is the allocator. Nobody takes 2%.
-- **Lockup premium.** Venture and PE pay more because you cannot pull your money out. The 15-year prize period is a natural lockup. That premium is already in the {{< var venture_gross_return >}} number.
+Venture pays more because you cannot pull the money out. That is called a lockup. The 15-year prize period is already a lockup. The premium is baked in.
 
-## Scale: What Happens When You 15x the Venture Market
+In March 2026 a company called Fundrise listed a venture fund on the New York Stock Exchange. Anyone can buy shares. The fund is called VCX. It holds OpenAI, Anthropic, Databricks, SpaceX, Anduril, and Ramp. It charges 1.85% a year. This was impossible until recently. It is no longer impossible.
 
-Right now $300 billion per year goes into venture capital. If a real share of {{< var global_retirement_assets >}} in retirement money flows through the Prize Fund, that rises to $4.7 trillion. A 15x expansion.
+Everything below is measured against VCX.
 
-More money chasing deals compresses returns: {{< var scale_compression_factor >}} in the model. But the market expands. Every viable business idea gets funded. The old economy (oligopolies surviving on regulatory moats, defense contractors billing $400 for a hammer, pharmaceutical companies spending more on lobbying than on R&D) faces real competition for the first time. The venture market is not a fixed pie. It is a pie factory.
+## Where the Extra Return Comes From
 
-High-growth startups create up to half of all new jobs [@kauffman-high-growth-startups]. Right now those startups compete for $300 billion. Give them $4.7 trillion and find out what happens.
+The crowd does not pick better individual companies than experts. Picking individual companies is a lottery. You need the one in fifty that returns everything. Crowds are bad at lotteries.
 
-## The {{< var crowd_decision_accuracy >}} vs {{< var expert_decision_accuracy >}} Advantage
+The crowd picks better sectors and better managers than experts.
 
-On *Who Wants to Be a Millionaire*, the audience got the answer right {{< var crowd_decision_accuracy >}} of the time. The phone-a-friend expert got it right {{< var expert_decision_accuracy >}} of the time [@surowiecki-2004]. This has been replicated across prediction markets, forecasting tournaments, and every situation where the expert has any incentive to shade the truth. The investment industry is entirely composed of incentive-shading.
+- SPIVA [@spiva2023]: 88% of active large-cap funds underperformed the S&P 500 over 15 years. The professionals lose to a dartboard. You do not need to be smart. You need to not be worse than a dartboard.
+- Preqin's venture data: the gap between the best firms and the worst is 5 to 15 percentage points a year. If the crowd merely avoids the bottom half (not finds the top quartile, just dodges the bottom), that is worth {{< var wishocratic_crowd_alpha >}} a year on its own.
 
-The crowd picks the better sector (biotech vs. coal, growth vs. value) {{< var crowd_decision_accuracy >}} of the time. Fund managers pick it {{< var expert_decision_accuracy >}} of the time. The return spread between sectors is {{< var allocation_decision_spread >}}. The alpha:
+That is the whole claim. The crowd does not pick companies. The crowd picks sectors and managers. Money flows to productivity instead of to buybacks.
 
-{{< var wishocratic_crowd_alpha_latex >}}
+## The Home Bias Tax
 
-That is {{< var wishocratic_crowd_alpha >}} per year from better allocation alone. And this is the floor, because:
+Japanese pensions hold Japanese stocks. American 401(k)s hold American stocks. Nigerian pensions hold Nigerian bonds. Every country is betting its own economy will beat the global average. This is arithmetically impossible for all of them at once. It is a poker table where everyone has the best hand.
 
-- **Random pairs prevent gaming.** No single ballot to flood with ads. You see random pairwise comparisons. The only way to "advertise" is to make your company genuinely better than whatever it gets compared against.
-- **Skip what you don't understand.** Voters who know biotech vote on biotech. Voters who know infrastructure vote on infrastructure.
-- **Politicians are worse than {{< var expert_decision_accuracy >}}.** Phone-a-friend experts are at least trying to get the right answer. Your appropriations committee is being paid by one of the answer choices.
+The IMF and Vanguard estimate this costs about {{< var home_bias_alpha >}} a year. A Nigerian depositor and a Norwegian depositor see the same pairwise sliders. The money goes where the crowd thinks it will do the most good, regardless of passport.
 
-The S&P SPIVA scorecard confirms: 88% of actively managed large-cap funds underperformed the S&P 500 over 15 years [@spiva2023]. The professionals are losing to a dartboard. The crowd does better than the dartboard.
+## Six Ways the Fund Can Make Money
 
-## Home Bias: 70+ Countries Each Betting on Themselves
+No single number. Six choices. Different returns, different fees, different downside.
 
-National pension systems overweight domestic assets. Japanese pensions overweight Japanese stocks. American 401(k)s overweight American stocks. Nigerian pensions overweight Nigerian bonds. Each country is betting that its own economy will outperform the global average, which is arithmetically impossible for all of them simultaneously.
+| Strategy | Where the return comes from | Fees | **Net per year** | Multiple by {{< var destructive_economy_50pct_year >}} | Downside | Honest range on the multiple |
+|---|---|---|---|---|---|---|
+| **Boring venture** | 11–13% (average venture, like VCX) | −1.85% | **9.5–11%** | 3.9–4.8× | Moderate | 2.2× – 7× |
+| **Tokenized with crowd voting** | 13–15% | −0.5–1% | **12–14%** | 5.5–7.1× | Moderate | 2.5× – 12× |
+| **Top-firm access** | 17–19% | −1–1.5% | **15.5–18%** | 8.8–12× | Higher | 2.5× – 25× |
+| **Leveraged** | 10–12% × 1.8 | −2% | **16–20%** | 10–15× | Bad in crashes | 1.5× – 30× |
+| **AI frontier secondaries** | 18–25% (Anthropic, SpaceX, OpenAI) | −1% | **17–24%** | 10–27× | Very bad | 1× – 50× |
+| **Crypto early-stage** | 15–30% | −1% | **14–29%** | 7–48× | Very bad | 0.5× – 80× |
 
-The cost: {{< var home_bias_alpha >}} in annual return drag from missed global diversification.
+The ranges are wide because they are honest. You get one 15-year window. Historical venture vintages have ranged from minus 5% to plus 25% a year depending on which year you started. Narrow confidence intervals from a single-vintage model are a fiction your species is trained to trust.
 
-Wishocratic allocation is inherently global. A Nigerian depositor and a Norwegian depositor see the same pairwise comparisons. Capital flows to wherever the crowd thinks it will do the most good, regardless of national borders. The home bias drag disappears.
+The canonical {{< var prize_pool_annual_return >}} number in the parameters file sits between the second and third rows. It assumes top-quartile access plus the sector-allocation edge plus the home-bias fix, minus the drag from scale. It is top quartile dressed as a base rate. The honest range is the table above.
 
-## Structural Return (Before the World Gets Better)
+## Ten Ways to Hold the Money
 
-Before a single disease is cured, before the treaty passes, before anything gets better, the fund makes money just from not being stupid:
+An investment strategy is not a structure. The structure is the regulated shell that lets strangers put dollars in without anyone going to jail. Some shells cost nothing. Some cost millions. Some can hold only a small amount of money before the government says stop.
 
-| Component | Value |
-|---|---|
-| Venture gross return (baseline) | {{< var venture_gross_return >}} |
-| Scale compression (15x market expansion) | {{< var scale_compression_factor >}} |
-| Crowd allocation alpha ({{< var crowd_decision_accuracy >}} vs {{< var expert_decision_accuracy >}}) | +{{< var wishocratic_crowd_alpha >}} |
-| Home bias elimination (global allocation) | +{{< var home_bias_alpha >}} |
-| **Structural annual return** | **{{< var prize_pool_annual_return >}}** |
+| # | Structure | Ordinary people can buy? | Time to launch | Upfront cost | Yearly fees | Size limit | Note |
+|---|---|---|---|---|---|---|---|
+| A | Buy VCX on NYSE | Yes, today | 0 | $0 | 1.85% | none | Works now. One manager picks the companies. |
+| B | Launch your own fund like VCX | Yes | 1–2 years | $2–5M | ~1.5% | none | Slow. Expensive. You control the picks. |
+| C | Launch a BDC | Yes | 1.5–2 years | $3–6M | ~2.0% | none, can use leverage | The only shell that can legally use leverage. |
+| D | Reg A+ Tier 2 | Yes | 1–1.5 years | $1–3M | ~1.0% | **$75M a year** | Size limit is fatal. |
+| E | Reg CF | Yes | 3–6 months | $200–500k | ~0.5% | **$5M a year** | 6,000 years to raise $30B. |
+| F | Reg D 506(c) | **Rich people only** | 6–9 months | $500k–1M | ~0.5% + carry | none | Does not fix the access problem. |
+| G | Tokenized fund on Securitize or Ondo | Rich people now; maybe everyone later | 9–12 months | $500k–1.5M | ~0.5–1.0% | none | Cheapest full stack. Depends on a bill passing. |
+| H | Interval fund | Yes | 1–1.5 years | $2–4M | ~1.5% | none | Gives up the lockup premium for partial liquidity. |
+| I | Buy VCX, wrap it in a claim token | Yes | 3–6 months | $100–300k | 1.85% + ~0.2% | limited by VCX size | Fastest way to get VCX on-chain. |
+| J | A fund-of-funds holding 20+ existing venture firms | Rich people now | 1–1.5 years | $1–3M | ~1.5–2.5% stacked | none | Sounds great. Fees eat it. |
 
-Your retirement fund makes {{< var conventional_retirement_return >}} after fees. This is not optimism. It is arithmetic: remove fees, remove the accreditation wall, let crowds allocate.
+Option J is the one that sounds better than it is. You spread the money across Sequoia, Benchmark, Founders Fund, a16z, First Round, and twenty others. The crowd votes on which ones get more money. It should be perfect. Three boring financial problems ruin it:
 
-## Why the Real Return Is Higher
+- The fees stack. You pay the wrapper 1 to 1.5%. Then each underlying fund takes 2% a year plus 20% of the profits. The net ends up worse than just buying VCX.
+- The best venture capital firms do not need new money. They say no. The list you can actually assemble is the second and third tier, which drags the returns toward average.
+- The top firms put "right of first refusal" clauses on their limited partners. You cannot turn the fund-of-funds into a tradable on-chain token without their permission, which they do not give.
 
-{{< var prize_pool_annual_return >}} is what the fund makes just from being less stupid than your current system. The real return is probably higher, because the fund makes the world better and then the better world makes the fund richer.
+So Option J is a 10 to 20% slice, not the main vehicle, and only once the pool is big enough to negotiate.
 
-The treaty redirects murder money to research. Research grows GDP (peace dividend). Cured diseases produce healthier workers. Healthier workers grow GDP (health dividend). The [destructive economy](gdp-trajectories.qmd) [@gdp-trajectories-paper-2025] shrinks. Depositors stop funding military contractors (betting against your own prize is a terrible investment strategy). More participants means better crowd wisdom. And the fund's investments directly cause the outcomes that make the prize pay out. It is the engine, not the scoreboard.
+## Which Structures Can Deliver Which Strategies
 
-The model ignores all of this to keep the numbers boring and auditable.
+Not every combination is legal. Reading this table is the fastest way to see why the decision has already been made for you in most cases.
 
-## Expected Return and 15-Year Multiple
+| Structure ↓ / Strategy → | Boring | Tokenized + voting | Top firms | Leveraged | AI secondaries | Crypto |
+|---|:---:|:---:|:---:|:---:|:---:|:---:|
+| A. Buy VCX | ✓ | - | partial | - | partial | - |
+| B. Your own fund | ✓ | partial | ✓ | - | ✓ | - |
+| C. BDC | ✓ | - | - | ✓ | - | - |
+| D. Reg A+ | capped | capped | capped | - | - | - |
+| E. Reg CF | capped | capped | - | - | - | - |
+| F. Reg D 506(c) | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ (rich only) |
+| G. Securitize | ✓ | ✓ | ✓ | - | ✓ | ✓ |
+| H. Interval fund | ✓ | partial | partial | - | - | - |
+| I. VCX + claim token | ✓ | - | - | - | - | - |
+| J. Fund-of-funds | ✓ | ✓ | partial | - | - | - |
 
-| Metric | Value |
-|---|---|
-| **Expected annual return** | **{{< var prize_pool_annual_return >}}** |
-| **15-year compound multiple** | **{{< var prize_pool_horizon_multiple >}}** |
+Only the BDC can legally use leverage. Only Securitize can carry the tokenized, top-quartile, AI-frontier, and crypto strategies in the same shell. Only VCX works today without any regulatory lift at all.
 
-$100 deposited today becomes $100 times {{< var prize_pool_horizon_multiple >}} through {{< var destructive_economy_50pct_year >}} at the current modeled pool growth rate.
+## What $100 Becomes
 
-## Opportunity Cost Is Negative
+Failure-case payout on a $100 deposit, for the eight combinations worth considering:
 
-Your retirement fund makes {{< var conventional_retirement_return >}}. This fund models {{< var prize_pool_annual_return >}}. "Opportunity cost" implies you give something up. You give up a worse deal.
+| Combination | Multiple | Dollar payout | How hard to build | How long |
+|---|---|---|---|---|
+| Buy VCX | 4.3× | $426 | trivial | 0 months |
+| VCX + claim token | 4.3× | $426 | small | 3–6 months |
+| Tokenized voting fund | 6.3× | $624 | medium | 9–12 months |
+| Top firms via tokenized | 10× | $990 | hard | 12–18 months |
+| Top firms via your own fund | 10× | $990 | very hard | 12–24 months |
+| Leveraged BDC | 12× | $1,188 | very hard | 18–24 months |
+| AI secondaries tokenized | 18× | $1,782 | hard | 12–18 months |
+| Crypto tokenized | 25× | $2,475 | medium-hard | 9–12 months |
 
-Your current portfolio:
+On success, the deposit goes to the voters and the dollar column goes to zero. But the depositor lives in a world {{< var treaty_personal_upside_blend >}} richer per person in lifetime earnings, which is larger than every number in the table combined.
 
-- Charges 1-2% in fees (advisory + fund expenses)
-- Bans you from the best-performing asset class
-- Allocates via committees being paid by the answer choices
-- Bets mostly on your own country (so does every other country, which is arithmetically impossible)
-- Does not get better when diseases get cured
+Even the most boring row pays about four times in. The aggressive rows pay ten to twenty-five times in, with the downside spelled out below. The treaty passing is pure upside. The treaty failing still pays.
 
-The Prize Fund:
+## How to Build It
 
-- Zero fees (the crowd is the allocator)
-- Full venture/PE access
-- {{< var crowd_decision_accuracy >}}-accurate crowd allocation
-- Global by default
-- Gets better as it makes the world better
+Build a barbell. Four slices. Let the crowd rebalance it.
 
-The gap between {{< var conventional_retirement_return >}} and {{< var prize_pool_annual_return >}}, compounded over a career, is the cost of not playing.
+The fund's job is not to maximize returns. The fund's job is to survive long enough to pay out. Survival means no single bad year kills the referendum. Plan everything around that.
 
-## Venture Democratization
+**Slice 1, Boring (60% of the pool).** Buy VCX on the New York Stock Exchange. Wrap it in a claim token so depositors on Base get an on-chain receipt. Ship this in 3 to 6 months. Do not rebuild the portfolio. VCX already holds OpenAI, Anthropic, Databricks, SpaceX, Anduril, and Ramp. Wrap it and move on. Budget 9 to 11% a year net, about 4× over 15 years. No legislation needed. No headline risk.
 
-Your government built a wall to "protect" small investors from risky investments. It protected them so well that they earned {{< var conventional_retirement_return >}} while rich people earned {{< var venture_gross_return >}}. Thank you for the protection.
+**Slice 2, Tokenized (20%).** Stand up a Reg D fund on Securitize. Real per-deal voting. Tokenized shares. On-chain accounting. Budget 0.5 to 1% in fees. At launch this is accredited-only; it opens to everyone if the INVEST Act passes. Expect 12 to 14% a year, about 6× over 15 years. This is the slice where the crowd actually gets tested.
 
-The wall has a door. A pooled vehicle is an accredited investor. A $100 depositor gets the same asset class as someone with $1 million. Three doors, all legal today:
+**Slice 3, Frontier (10%).** Buy pre-IPO shares in Anthropic, SpaceX, and OpenAI through the Securitize shell. Expect 10 to 18× over 15 years if the cohort holds. Keep it at 10%. A 70% drop in this slice becomes a 7% bruise to the pool, not a dead fund. Do not go above 10% even if the crowd wants to. This is the one sleeve where you overrule the vote.
 
-1. **Reg CF:** Up to $5M/year to anyone.
-2. **Reg A+ Tier 2:** Up to $75M/year with SEC qualification, available to all investors.
-3. **Fund-as-institutional-investor:** The pool itself qualifies as accredited, accessing deals on behalf of all depositors.
+**Slice 4, Ballast (10%).** Park it in Aave or Morpho stablecoin yield, or short-term tokenized Treasuries. Budget 3 to 5% a year. This slice exists to cushion rebalancing and nothing else.
 
-## Why PRIZE Is Not a Retirement Account (and What Is)
+Do not do these things.
 
-If the prize fails, your deposit beats your 401(k): {{< var prize_pool_horizon_multiple >}} vs. {{< var conventional_retirement_horizon_multiple >}}. If the prize succeeds, your deposit goes to VOTE point-holders. You get nothing back from the pool (you live in a world where diseases are cured and you are {{< var treaty_personal_upside_blend >}} richer, but your specific deposit is gone).
+- **Do not use leverage.** The math looks beautiful until a crash prints "PRIZE FUND DOWN 60%" at the exact moment the referendum needs credibility. Leverage is the enemy of survival.
+- **Do not hold crypto tokens.** The moment the fund holds anything called a "token," every government the referendum needs to reach writes the project off. Politically radioactive regardless of returns.
+- **Do not build your own SEC-registered fund from scratch at launch.** It takes 1 to 2 years and $2 to $5 million before it holds a dollar. By then the referendum is over. Wait until the pool is big enough to absorb the fixed cost, then revisit.
 
-Your species has a law called ERISA requiring that people managing your retirement money act in your interest, not theirs. Apparently this is unusual enough to require legislation. A fiduciary cannot put client money into something where the best-case outcome means the money goes to someone else. So PRIZE is not a retirement account.
+**What to let the crowd vote on.** Not individual companies. Asking a crowd to find the next Stripe in a pairwise slider is the same power-law error described above. Let the crowd vote on:
+
+1. How big each slice is. (Subject to the 10% cap on Frontier.)
+2. What sectors the Tokenized slice tilts toward. More biotech, less AI? More energy, less consumer?
+3. Which tokenized funds on Securitize the Tokenized slice allocates to.
+4. Which pre-IPO names land on the Frontier slate.
+5. What counts as Ballast.
+
+The Boring slice passes through VCX unchanged. Fundrise picked the companies. The crowd picked Fundrise.
+
+**Timeline.**
+
+- **Months 0–6.** Ship Boring and Ballast. 80% of the pool is already compounding. Configure the prize contract on Base to accept deposits, mint voting points proportional to each deposit, and route capital to the two live slices.
+- **Months 6–18.** Launch the Tokenized slice on Securitize. Accredited depositors get the full mix. Everyone else gets Boring and Ballast until the law changes.
+- **Months 12–24.** Open the Frontier slice.
+- **Year 2 and beyond.** If the INVEST Act passes, open the full mix to everyone. If it does not, the Tokenized and Frontier slices stay accredited-only indefinitely. The pool still works.
+
+That is the launch configuration.
+
+**What it pays.** The barbell nets about 12 to 13% gross a year at about 1% blended fees. About 5 to 6× over 15 years. Higher than Boring alone at 4×. Lower than the canonical {{< var prize_pool_horizon_multiple >}} headline, which assumes top-quartile access and a fully-grown Tokenized slice. The canonical is the target. The barbell is where you start. The crowd moves the mix between them as the pool grows.
+
+## If You Want a Different Shape
+
+If the barbell above does not fit your constraints, pick the row that does.
+
+- **Today, off-chain, retail.** Buy VCX.
+- **Today, on-chain, retail.** VCX wrapped in a claim token.
+- **Per-deal voting with on-chain liquidity.** Securitize Reg D. Accept that retail access depends on a bill.
+- **Manager diversification across the venture industry.** Fund-of-funds. Wait until the pool is big enough to negotiate fee breaks.
+- **Sovereign control over picks.** Your own SEC-registered fund. Wait until you can spend $2–5M up front and 1.5% a year without eating into depositors.
+- **Targeting 15%+ a year.** A BDC with leverage. Accept 40–70% drawdowns.
+- **Retail access with no legislative dependency.** Only A, B, C, or H are available.
+
+## What Can Go Wrong
+
+Plan for each of these. Do not let a depositor discover any of them from a press release.
+
+1. **One window.** You get one 15-year vintage. Historical venture returns range from minus 5% to plus 25% a year depending on the starting year. One shot. Build the pool assuming the vintage could be bad.
+2. **Drawdowns.** The aggressive slices can mark down 40 to 70% in a bad year. Depositors will see these marks on-chain in real time. Prepare the messaging before the mark, not after. The 15-year lockup stops panic-selling at the bottom, which is the main thing that ruins normal investors.
+3. **Fundrise risk.** VCX is Fundrise's picks. If they are wrong, the Boring slice is wrong with them. VCX has no long track record. Monitor their deal flow. Be ready to move the Boring slice to an alternative if Fundrise's selection visibly degrades.
+4. **Legislative risk.** The INVEST Act might die in committee. If it does, Tokenized and Frontier stay accredited-only indefinitely. Boring and Ballast still work for everyone. Write the depositor-facing copy so nothing assumes the bill passes.
+5. **Tokenized discount.** On-chain venture stakes can trade 30 to 60% below their real value in stressed markets. VCX itself trades at a discount to NAV regularly. Do not let depositors confuse the secondary-market price with the fund's underlying value.
+6. **Stacked fees.** If you pick the fund-of-funds option, the wrapper fee plus each underlying fund's 2-and-20 will quietly eat the returns. Model the stack before you commit.
+7. **Crowd goes wrong.** If the crowd is wrong at the sector level for three to five years in a row (overweighting crypto in 2021, say), the fund underperforms a dumb index. Shorten the rebalance cadence before you argue with the outcome.
+8. **Breakeven shift.** At a 6× failure payout instead of 11×, the dominant-assurance math still works, but the breakeven probability rises from 0.67% to about 1.3%. Still a winning bet for any referendum with real traction. The number just moves. Quote the new one.
+
+A 40% mark in year 5 is survivable. The fund recovers by year 15. The failure case still pays. Depositors who cannot tolerate a year-5 mark should be routed to IABs instead.
+
+## The Incentive Problem
+
+Capital providers get 4 to 25× on treaty failure and zero on success. Voters get paid on success. Put them in the same vehicle and you have capital allocators with a direct financial interest in the referendum losing. That is a short position on your own mission.
+
+The fix is boring. Every dollar deposited mints voting points proportional to the amount, at deposit time, not only on referral. Every depositor now holds both sides. Skeptics still deposit. Believers still refer. Nobody at the table profits from the referendum losing.
+
+Gating deposits on a voting action would work too, but it adds friction at the exact step where you want none.
+
+## Laws Moving Your Way
+
+Track these. Your launch plan depends on which ones land.
+
+- **INVEST Act** (H.R. 9459, passed the House in December 2025 by a bipartisan vote). Expands the accredited-investor definition to cover professional licenses, education, and an SEC-administered exam. Removes some restrictions on closed-end funds holding private funds, which directly helps structures B, C, G, and J.
+- **Fair Investment Opportunities for Professional Experts Act** (H.R. 3394, passed 397 to 12). License- and education-based accreditation.
+- **Equal Opportunity for All Investors Act.** An SEC exam pathway to accredited status with no wealth test.
+- **DTC digital-twin program** (2026). On-chain versions of SEC-registered securities, which lowers the transfer-agent cost for tokenized shells.
+- **Securitize, Ondo, Superstate.** Operating SEC-registered tokenized funds today. Talk to them before you design anything tokenized from scratch.
+
+Structures A and I need none of these to launch. Structures B, C, and H get cheaper and broader if the INVEST Act passes. Structures G and J need at least one of these bills for retail access. Plan for both the pass and the fail case.
+
+## PRIZE vs IAB vs Conventional Retirement
+
+If the prize fails, your deposit comes back at 4 to 25× what you put in, depending on which strategy the fund targets. Your retirement account makes {{< var conventional_retirement_horizon_multiple >}} over the same period. If the prize succeeds, your deposit goes to the voters, and you live in a world {{< var treaty_personal_upside_blend >}} richer per person.
+
+Your species has a law called ERISA. It requires the people managing your retirement money to act in your interest, not theirs. A fiduciary cannot put your retirement money into a fund whose best-case outcome means the money goes to someone else. So this is not a retirement account.
 
 | Instrument | Success | Failure | Retirement-compatible? |
 |:---|:---|:---|:---|
-| **PRIZE deposit** | Pool goes to VOTE holders (your deposit is gone) | Pro-rata share of pool ({{< var prize_pool_horizon_multiple >}}) | No |
+| **PRIZE deposit** | Pool routes to voters (deposit forfeited) | 4× – 25× depending on strategy | No |
 | **[IAB](../solution/incentive-alignment-bonds.qmd)** | {{< var victory_bond_annual_return_pct >}} perpetual revenue share | Principal at risk | Yes |
-| **Conventional retirement** | {{< var conventional_retirement_horizon_multiple >}} after 15 years | Same | Yes |
+| **Conventional retirement** | {{< var conventional_retirement_horizon_multiple >}} over 15 years | Same | Yes |
 
-If your retirement fund wants exposure to the treaty succeeding, [IABs](../solution/incentive-alignment-bonds.qmd) [@iab-paper-2025] are the instrument. Money in, revenue share out. Standard securities, nothing exotic. If you personally want skin in the game, PRIZE is the instrument. A conditional bet on civilization, with a very attractive consolation prize.
+If your retirement account wants exposure to the treaty succeeding, [IABs](../solution/incentive-alignment-bonds.qmd) [@iab-paper-2025] are the instrument. Standard securities. Nothing exotic. If you want skin in the game and you can tolerate drawdowns, PRIZE is the instrument. A conditional bet on civilization with a very attractive consolation prize.
 
 ## The Self-Fulfilling Property
 
-The fund does not bet on whether targets get hit. It funds hitting them.
+A normal investment fund bets on which companies will succeed. The Prize Fund puts money into companies that cure diseases, build infrastructure, and raise incomes. Those are the prize targets.
 
-A normal investment fund guesses which companies will succeed and bets accordingly. The Prize Fund allocates capital to companies that cure diseases, build infrastructure, and raise incomes, which ARE the prize targets. If the fund allocates well, the targets get hit. If the targets get hit, the pool goes to VOTE point-holders. If not, depositors split the pool.
+Allocate well, the targets get hit, the pool goes to the voters. Allocate badly, the fund still compounds and the depositors split it.
 
-Someone will call this circular. It is not circular. It is a loop. Deposit, allocate wisely, the world improves, you get paid. The objection assumes the fund sits there passively. The fund is the largest active capital allocator in human history, pointed at two numbers that everyone agrees on.
+Someone will call this circular. It is not. It is a loop. Deposit. Allocate. The world improves. You get paid.
 
-The first question is whether {{< var global_coordination_activation_budget >}} can make mass participation credible. The second is whether {{< var prize_pool_retirement_equivalent_principal >}} in the pool can make two referred votes worth {{< var retirement_equivalent_2_claims_target_payout >}} on success for a representative saver.
+The objection assumes the fund sits there passively. The fund is the largest active capital allocator in human history, pointed at two numbers everyone agrees on.
