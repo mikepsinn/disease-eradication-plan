@@ -27,6 +27,9 @@ Options:
     --inject-citations    Add [@citation] tags to economics.qmd variables
                           (legacy option, use --cite-mode=inline instead)
     --skip-concept-links Skip automatic normalization of novel concept links/citations
+    --strict-mc-degeneracy
+                          Fail when a Monte Carlo outcome is effectively deterministic
+                          despite having varying sampled inputs
 
 Examples:
     # Default: no citations
@@ -55,6 +58,7 @@ The generated files enable academic rigor with zero manual maintenance.
 """
 
 import logging
+import math
 import re
 import subprocess
 import sys
@@ -113,6 +117,73 @@ def _unlink_best_effort(path: Path) -> None:
             return
         raise
 
+
+def _classify_mc_variation(
+    samples: list[float],
+    baseline: float = 0.0,
+    std: float = 0.0,
+    *,
+    rel_tol: float = 1e-12,
+    abs_tol: float = 1e-12,
+) -> tuple[bool, str]:
+    """
+    Classify whether Monte Carlo samples are effectively deterministic.
+
+    Tiny floating-point residue can produce non-zero std/range for outcomes that
+    are algebraically constant, which later breaks histogram generation.
+    """
+    if not samples or len(samples) < 2:
+        return True, "fewer than 2 samples"
+
+    finite_samples = [
+        float(sample)
+        for sample in samples
+        if sample is not None and math.isfinite(float(sample))
+    ]
+    if len(finite_samples) < 2:
+        return True, "fewer than 2 finite samples"
+
+    sample_min = min(finite_samples)
+    sample_max = max(finite_samples)
+    sample_range = sample_max - sample_min
+    scale = max(abs(baseline), abs(sample_min), abs(sample_max), 1.0)
+    tolerance = max(abs_tol, rel_tol * scale)
+
+    if sample_range <= tolerance:
+        return True, f"range {sample_range:.3e} <= tolerance {tolerance:.3e}"
+
+    if abs(std) <= tolerance:
+        return True, f"std {abs(std):.3e} <= tolerance {tolerance:.3e}"
+
+    return False, f"range {sample_range:.3e}, std {abs(std):.3e}"
+
+
+class MCOutcomeDegeneracyError(ValueError):
+    """Raised when strict MC degeneracy detection should fail generation."""
+
+
+def _build_mc_degeneracy_message(
+    outcome_name: str,
+    reason: str,
+    varying_inputs: list[str],
+) -> str:
+    """Create a high-signal warning/error message for degenerate MC outcomes."""
+    if varying_inputs:
+        shown_inputs = ", ".join(varying_inputs[:5])
+        if len(varying_inputs) > 5:
+            shown_inputs += f", ... (+{len(varying_inputs) - 5} more)"
+        varying_inputs_text = shown_inputs
+    else:
+        varying_inputs_text = "none"
+
+    return (
+        f"Effectively deterministic MC outcome for {outcome_name}: {reason}. "
+        f"Varying sampled inputs: {varying_inputs_text}. "
+        "Likely cause: algebraic cancellation, clipping/saturation, or all surviving drivers being fixed. "
+        "Fix: if this is deterministic by design, keep the deterministic note / skip MC charts or rewrite the formula "
+        "to make that explicit; if it should vary, add uncertainty to non-canceling drivers."
+    )
+
 from lib.workflow_generator import regenerate_workflow  # noqa: E402
 from dih_models.quarto_config_sync import sync_shared_config_settings  # noqa: E402
 
@@ -124,6 +195,8 @@ from dih_models.chart_generators import (
     generate_input_distribution_chart_qmd,
     generate_monte_carlo_distribution_chart_qmd,
     generate_cdf_chart_qmd,
+    generate_deterministic_monte_carlo_note_qmd,
+    generate_deterministic_cdf_note_qmd,
 )
 from dih_models.latex_generation import (
     format_latex_value,
@@ -543,6 +616,7 @@ def main():
     # Parse command-line arguments
     inject_citations = "--inject-citations" in sys.argv
     skip_concept_links = "--skip-concept-links" in sys.argv
+    strict_mc_degeneracy = "--strict-mc-degeneracy" in sys.argv
 
     # Citation mode: --cite-mode=inline|separate|both|none
     citation_mode = "separate"  # Default: always generate _cite variables for convenience
@@ -1123,6 +1197,7 @@ def main():
             mc_dist_count = 0
             exceedance_count = 0
             analysis_json_count = 0
+            mc_degeneracy_records = []
 
             outcomes_data = {}
             for outcome in analyzable_params:
@@ -1237,11 +1312,23 @@ def main():
                                 logger.warning(f"[WARN] Failed to generate sensitivity table for {outcome.name}: {table_err}")
 
                         # Generate Monte Carlo distribution chart
-                        # Skip if zero variance (all samples identical) - these are meaningless
+                        # Skip outcomes that are effectively deterministic, including
+                        # algebraic cancellation hidden by floating-point residue.
                         try:
                             outcome_info = outcomes_data.get(outcome.name, {})
                             outcome_std = outcome_info.get("std", 0)
-                            if outcome_samples and len(outcome_samples) > 100 and outcome_std > 0:
+                            baseline_value = outcome_info.get("baseline", 0)
+                            is_effectively_deterministic = False
+                            mc_variation_reason = "no samples"
+
+                            if outcome_samples and len(outcome_samples) > 100:
+                                is_effectively_deterministic, mc_variation_reason = _classify_mc_variation(
+                                    outcome_samples,
+                                    baseline=float(baseline_value),
+                                    std=float(outcome_std),
+                                )
+
+                            if outcome_samples and len(outcome_samples) > 100 and not is_effectively_deterministic:
                                 mc_qmd = generate_monte_carlo_distribution_chart_qmd(
                                     outcome.name,
                                     outcome_info,
@@ -1261,15 +1348,72 @@ def main():
                                 )
                                 generated_outcome_qmds.add(cdf_qmd.name)
                                 exceedance_count += 1
-                            elif outcome_samples and outcome_std == 0:
-                                logger.debug(f"[SKIP] MC distribution chart for {outcome.name}: zero variance (deterministic)")
+                            elif outcome_samples and len(outcome_samples) > 100:
+                                varying_input_names = sorted(filtered_input_sims.keys())
+                                message = _build_mc_degeneracy_message(
+                                    outcome.name,
+                                    mc_variation_reason,
+                                    varying_input_names,
+                                )
+                                if varying_input_names:
+                                    mc_degeneracy_records.append({
+                                        "parameter": outcome.name,
+                                        "reason": mc_variation_reason,
+                                        "varying_inputs": varying_input_names,
+                                        "resolution": "generated deterministic MC/exceedance notes instead of plots",
+                                        "suggested_fix": (
+                                            "If deterministic by design, keep MC/exceedance disabled or rewrite the formula "
+                                            "to make the constant explicit. If uncertainty is intended, add uncertainty to "
+                                            "non-canceling drivers."
+                                        ),
+                                    })
+
+                                mc_qmd = generate_deterministic_monte_carlo_note_qmd(
+                                    outcome.name,
+                                    outcome_info,
+                                    figures_dir,
+                                    param_meta,
+                                    reason=mc_variation_reason,
+                                )
+                                generated_outcome_qmds.add(mc_qmd.name)
+                                mc_dist_count += 1
+
+                                cdf_qmd = generate_deterministic_cdf_note_qmd(
+                                    outcome.name,
+                                    outcome_info,
+                                    figures_dir,
+                                    param_meta,
+                                    reason=mc_variation_reason,
+                                )
+                                generated_outcome_qmds.add(cdf_qmd.name)
+                                exceedance_count += 1
+
+                                if varying_input_names:
+                                    if strict_mc_degeneracy:
+                                        with open(analysis_dir / "mc_degenerate_outcomes.json", "w", encoding="utf-8", newline='\n') as f:
+                                            json.dump(mc_degeneracy_records, f, indent=2)
+                                        raise MCOutcomeDegeneracyError(message)
+                                    logger.warning(f"[WARN] {message}; generating deterministic MC/exceedance notes instead")
+                                else:
+                                    logger.debug(
+                                        f"[SKIP] Histogram/CDF plots for {outcome.name}: "
+                                        f"{mc_variation_reason} (deterministic note generated)"
+                                    )
+                        except MCOutcomeDegeneracyError:
+                            raise
                         except Exception as mc_err:
                             logger.warning(f"[WARN] Failed to generate MC distribution charts for {outcome.name}: {mc_err}")
+                except MCOutcomeDegeneracyError:
+                    raise
                 except Exception as e:
                     logger.warning(f"[WARN] Skipped outcome {outcome.name}: {e}")
 
             with open(analysis_dir / "outcomes.json", "w", encoding="utf-8", newline='\n') as f:
                 json.dump(outcomes_data, f, indent=2)
+            if mc_degeneracy_records:
+                with open(analysis_dir / "mc_degenerate_outcomes.json", "w", encoding="utf-8", newline='\n') as f:
+                    json.dump(mc_degeneracy_records, f, indent=2)
+                analysis_json_count += 1
 
             # Clean up orphaned PNG files (PNGs without matching QMD)
             orphaned_pngs = []
@@ -1298,6 +1442,11 @@ def main():
             # Print summary of generated files
             logger.info(f"[OK] Generated {tornado_count} tornado, {sensitivity_count} sensitivity, {mc_dist_count} MC distribution, {exceedance_count} exceedance charts")
             logger.info(f"[OK] Wrote {analysis_json_count + 2} analysis JSON files to _analysis/")
+            if mc_degeneracy_records:
+                logger.info(
+                    f"[OK] Logged {len(mc_degeneracy_records)} effectively deterministic Monte Carlo outcome(s) "
+                    "to _analysis/mc_degenerate_outcomes.json"
+                )
 
     else:
         # No uncertainty module (numpy/scipy not installed) - generate basic outputs
@@ -1464,4 +1613,8 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except MCOutcomeDegeneracyError as err:
+        print(f"[ERROR] {err}", file=sys.stderr)
+        sys.exit(1)

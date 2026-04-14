@@ -196,6 +196,14 @@ Cost_{destruct} \\
 $$
 *✓ High confidence*
 
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-destructive_economy_25pct_year.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-destructive_economy_25pct_year.qmd >}}
+
 :::
 
 ### Year Destructive Economy Reaches 35% of GDP (Terminal Parasitic Load): 2037 {#sec-destructive_economy_35pct_year}
@@ -242,6 +250,14 @@ Cost_{destruct} \\
 $$
 *✓ High confidence*
 
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-destructive_economy_35pct_year.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-destructive_economy_35pct_year.qmd >}}
+
 :::
 
 ### Year Destructive Economy Reaches 50% of GDP: 2040 {#sec-destructive_economy_50pct_year}
@@ -287,6 +303,14 @@ Cost_{destruct} \\
 \end{gathered}
 $$
 *✓ High confidence*
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-destructive_economy_50pct_year.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-destructive_economy_50pct_year.qmd >}}
 
 :::
 
@@ -1304,6 +1328,14 @@ $$
 
 *✓ High confidence*
 
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-global_destructive_economy_annual_2025.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-global_destructive_economy_annual_2025.qmd >}}
+
 :::
 
 ### Destructive Economy as % of GDP: 11.5% {#sec-global_destructive_economy_pct_gdp}
@@ -1335,6 +1367,14 @@ Cost_{destruct} \\
 \end{gathered}
 $$
 *✓ High confidence*
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-global_destructive_economy_pct_gdp.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-global_destructive_economy_pct_gdp.qmd >}}
 
 :::
 
@@ -1565,6 +1605,14 @@ $$
 
 *✓ High confidence*
 
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-post_ww2_military_cut_pct.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-post_ww2_military_cut_pct.qmd >}}
+
 :::
 
 ### Annual Funding from 1% of Global Military Spending Redirected to DIH: $27.2 billion {#sec-treaty_annual_funding}
@@ -1588,6 +1636,14 @@ Funding_{treaty} \\
 $$
 
 *✓ High confidence*
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-treaty_annual_funding.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-treaty_annual_funding.qmd >}}
 
 :::
 
@@ -1718,6 +1774,14 @@ $$
 #### Sensitivity Analysis
 
 {{< include ../figures/tornado-treaty_disease_cure_fraction_20yr.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-treaty_disease_cure_fraction_20yr.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-treaty_disease_cure_fraction_20yr.qmd >}}
 
 :::
 
@@ -3676,6 +3740,14 @@ N_{untreated} \\
 $$
 *✓ High confidence*
 
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-wishonia_disease_cure_fraction_20yr_full.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-wishonia_disease_cure_fraction_20yr_full.qmd >}}
+
 :::
 
 ### Wishonia Military Reallocation Physical Max Share: 87.6% {#sec-wishonia_military_reallocation_physical_max_share}
@@ -3701,6 +3773,14 @@ Cut_{WW2} \\
 \end{gathered}
 $$
 *✓ High confidence*
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-wishonia_military_reallocation_physical_max_share.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-wishonia_military_reallocation_physical_max_share.qmd >}}
 
 :::
 

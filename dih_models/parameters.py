@@ -1310,7 +1310,7 @@ GLOBAL_WAR_COST_LIFETIME_PER_PERSON_ABOLITION_COMPOUNDED = Parameter(
     latex_symbol=r"FV_{pp,abolition}",
 )
 
-PEACE_DIVIDEND_LIFETIME_PCT_OF_BASELINE = Parameter(
+PEACE_DIVIDEND_SHARE_OF_80YR_BASELINE_WAR_COST = Parameter(
     _pd_lt_savings / _pd_lt_baseline_cum,
     source_type="calculated",
     description="Fraction of the baseline 80-year war cost avoided by the treaty. Because the "
@@ -1325,23 +1325,6 @@ PEACE_DIVIDEND_LIFETIME_PCT_OF_BASELINE = Parameter(
     compute=lambda ctx: ctx["PEACE_DIVIDEND_LIFETIME_TOTAL"] / ctx["GLOBAL_WAR_COST_LIFETIME_CUMULATIVE_BASELINE"],
     keywords=["percent", "fraction", "avoided", "lifetime", "80 years", "ratio"],
     latex_symbol=r"\phi_{avoided}",
-)
-
-PEACE_DIVIDEND_YEARS_UNTIL_BASELINE_EXCEEDS_GDP = Parameter(
-    _pd_math.log(115_000_000_000_000 / float(GLOBAL_ANNUAL_DIRECT_INDIRECT_WAR_COST))
-    / _pd_math.log(1 + float(GLOBAL_MILITARY_SPENDING_REAL_CAGR_20YR)),
-    source_type="calculated",
-    description="Years until annual war cost exceeds current world GDP at the SIPRI 20-year real "
-                "growth rate. At ~2.76% real growth and $11.4T current war cost, this happens in "
-                "under a century. The baseline trajectory is therefore a countdown, not a plan.",
-    display_name="Years Until Baseline War Cost Exceeds Current World GDP",
-    unit="years",
-    formula="log(GLOBAL_GDP_2025 / GLOBAL_ANNUAL_DIRECT_INDIRECT_WAR_COST) / log(1 + g_{mil,20yr})",
-    inputs=["GLOBAL_GDP_2025", "GLOBAL_ANNUAL_DIRECT_INDIRECT_WAR_COST", "GLOBAL_MILITARY_SPENDING_REAL_CAGR_20YR"],
-    compute=lambda ctx: _pd_math.log(ctx["GLOBAL_GDP_2025"] / ctx["GLOBAL_ANNUAL_DIRECT_INDIRECT_WAR_COST"])
-        / _pd_math.log(1 + ctx["GLOBAL_MILITARY_SPENDING_REAL_CAGR_20YR"]),
-    keywords=["countdown", "exponential", "GDP", "limit", "baseline"],
-    latex_symbol=r"T_{GDP}",
 )
 
 # Individual peace dividend components (1% savings breakdown)

@@ -1687,6 +1687,14 @@ $$
 
 *✓ High confidence*
 
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-post_ww2_military_cut_pct.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-post_ww2_military_cut_pct.qmd >}}
+
 :::
 
 ### Treaty Cybercrime Recovery GDP Growth Bonus (Year 20): 0.53% {#sec-treaty_cybercrime_recovery_gdp_growth_bonus_year_20}
@@ -1816,6 +1824,14 @@ $$
 #### Sensitivity Analysis
 
 {{< include ../figures/tornado-treaty_disease_cure_fraction_20yr.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-treaty_disease_cure_fraction_20yr.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-treaty_disease_cure_fraction_20yr.qmd >}}
 
 :::
 
@@ -3454,6 +3470,14 @@ N_{untreated} \\
 $$
 *✓ High confidence*
 
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-wishonia_disease_cure_fraction_20yr_full.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-wishonia_disease_cure_fraction_20yr_full.qmd >}}
+
 :::
 
 ### Wishonia Military Reallocation Physical Max Share: 87.6% {#sec-wishonia_military_reallocation_physical_max_share}
@@ -3479,6 +3503,14 @@ Cut_{WW2} \\
 \end{gathered}
 $$
 *✓ High confidence*
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-wishonia_military_reallocation_physical_max_share.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-wishonia_military_reallocation_physical_max_share.qmd >}}
 
 :::
 

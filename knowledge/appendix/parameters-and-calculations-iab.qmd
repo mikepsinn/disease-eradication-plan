@@ -1203,6 +1203,14 @@ Funding_{treaty} \\
 $$
 *✓ High confidence*
 
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-iab_political_incentive_funding_annual.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-iab_political_incentive_funding_annual.qmd >}}
+
 :::
 
 ### Annual Peace Dividend from 1% Reduction in Total War Costs: $114 billion {#sec-peace_dividend_annual_societal_benefit}
@@ -1392,6 +1400,14 @@ $$
 
 *✓ High confidence*
 
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-post_ww2_military_cut_pct.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-post_ww2_military_cut_pct.qmd >}}
+
 :::
 
 ### Annual Funding from 1% of Global Military Spending Redirected to DIH: $27.2 billion {#sec-treaty_annual_funding}
@@ -1415,6 +1431,14 @@ Funding_{treaty} \\
 $$
 
 *✓ High confidence*
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-treaty_annual_funding.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-treaty_annual_funding.qmd >}}
 
 :::
 
@@ -1638,6 +1662,14 @@ Funding_{treaty} \\
 $$
 *✓ High confidence*
 
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-victory_bond_annual_payout.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-victory_bond_annual_payout.qmd >}}
+
 :::
 
 ### Annual Return Percentage for VICTORY Incentive Alignment Bondholders: 272% {#sec-victory_bond_annual_return_pct}
@@ -1842,6 +1874,14 @@ N_{untreated} \\
 $$
 *✓ High confidence*
 
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-wishonia_disease_cure_fraction_20yr_full.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-wishonia_disease_cure_fraction_20yr_full.qmd >}}
+
 :::
 
 ### Wishonia Military Reallocation Physical Max Share: 87.6% {#sec-wishonia_military_reallocation_physical_max_share}
@@ -1867,6 +1907,14 @@ Cut_{WW2} \\
 \end{gathered}
 $$
 *✓ High confidence*
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-wishonia_military_reallocation_physical_max_share.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-wishonia_military_reallocation_physical_max_share.qmd >}}
 
 :::
 

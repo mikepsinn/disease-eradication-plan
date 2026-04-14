@@ -1,0 +1,9 @@
+**Monte Carlo note:** Year Destructive Economy Reaches 35% of GDP (Terminal Parasitic Load) is effectively deterministic across the current sampled inputs, so a histogram would mostly visualize floating-point residue instead of real uncertainty. (range 0.000e+00 <= tolerance 2.037e-09)
+
+| Statistic | Value |
+|:----------|------:|
+| Baseline (deterministic) | 2037 |
+| Mean (expected value) | 2037 |
+| Median (50th percentile) | 2037 |
+| Standard Deviation | 0 |
+| 90% Range (5th-95th percentile) | [2037, 2037] |

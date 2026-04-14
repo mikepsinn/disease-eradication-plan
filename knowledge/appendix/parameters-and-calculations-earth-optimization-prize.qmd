@@ -1833,6 +1833,14 @@ Cost_{destruct} \\
 $$
 *✓ High confidence*
 
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-destructive_economy_25pct_year.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-destructive_economy_25pct_year.qmd >}}
+
 :::
 
 ### Year Destructive Economy Reaches 50% of GDP: 2040 {#sec-destructive_economy_50pct_year}
@@ -1878,6 +1886,14 @@ Cost_{destruct} \\
 \end{gathered}
 $$
 *✓ High confidence*
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-destructive_economy_50pct_year.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-destructive_economy_50pct_year.qmd >}}
 
 :::
 
@@ -2903,6 +2919,14 @@ Funding_{political,ann} \\
 $$
 *✓ High confidence*
 
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-dih_treasury_to_medical_research_annual.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dih_treasury_to_medical_research_annual.qmd >}}
+
 :::
 
 ### Diseases Without Effective Treatment: 6,650 diseases {#sec-diseases_without_effective_treatment}
@@ -3920,6 +3944,14 @@ $$
 
 *✓ High confidence*
 
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-global_destructive_economy_annual_2025.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-global_destructive_economy_annual_2025.qmd >}}
+
 :::
 
 ### Destructive Economy as % of GDP: 11.5% {#sec-global_destructive_economy_pct_gdp}
@@ -3951,6 +3983,14 @@ Cost_{destruct} \\
 \end{gathered}
 $$
 *✓ High confidence*
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-global_destructive_economy_pct_gdp.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-global_destructive_economy_pct_gdp.qmd >}}
 
 :::
 
@@ -4037,6 +4077,14 @@ Funding_{treaty} \\
 \end{gathered}
 $$
 *✓ High confidence*
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-iab_political_incentive_funding_annual.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-iab_political_incentive_funding_annual.qmd >}}
 
 :::
 
@@ -4388,6 +4436,14 @@ Cut_{WW2} \\
 $$
 
 *✓ High confidence*
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-post_ww2_military_cut_pct.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-post_ww2_military_cut_pct.qmd >}}
 
 :::
 
@@ -5063,6 +5119,14 @@ $$
 
 *✓ High confidence*
 
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-treaty_annual_funding.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-treaty_annual_funding.qmd >}}
+
 :::
 
 ### Total 1% Treaty Campaign Cost: $1 billion {#sec-treaty_campaign_total_cost}
@@ -5302,6 +5366,14 @@ $$
 
 {{< include ../figures/tornado-treaty_cybercrime_recovery_gdp_growth_bonus_year_15.qmd >}}
 
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-treaty_cybercrime_recovery_gdp_growth_bonus_year_15.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-treaty_cybercrime_recovery_gdp_growth_bonus_year_15.qmd >}}
+
 :::
 
 ### Treaty Cybercrime Recovery GDP Growth Bonus (Year 20): 0.53% {#sec-treaty_cybercrime_recovery_gdp_growth_bonus_year_20}
@@ -5535,6 +5607,14 @@ $$
 #### Sensitivity Analysis
 
 {{< include ../figures/tornado-treaty_disease_cure_fraction_20yr.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-treaty_disease_cure_fraction_20yr.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-treaty_disease_cure_fraction_20yr.qmd >}}
 
 :::
 
@@ -9041,6 +9121,14 @@ $$
 
 {{< include ../figures/tornado-us_congress_full_advocacy_cost.qmd >}}
 
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-us_congress_full_advocacy_cost.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-us_congress_full_advocacy_cost.qmd >}}
+
 :::
 
 ### US Political Reform Investment (Total): $25.5 billion {#sec-us_political_reform_investment_total}
@@ -9111,6 +9199,14 @@ Funding_{treaty} \\
 \end{gathered}
 $$
 *✓ High confidence*
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-victory_bond_annual_payout.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-victory_bond_annual_payout.qmd >}}
 
 :::
 
@@ -9607,6 +9703,14 @@ N_{untreated} \\
 $$
 *✓ High confidence*
 
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-wishonia_disease_cure_fraction_15yr.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-wishonia_disease_cure_fraction_15yr.qmd >}}
+
 :::
 
 ### Wishonia Disease Cure Fraction (20yr, Full Implementation): 100% {#sec-wishonia_disease_cure_fraction_20yr_full}
@@ -9707,6 +9811,14 @@ N_{untreated} \\
 \end{gathered}
 $$
 *✓ High confidence*
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-wishonia_disease_cure_fraction_20yr_full.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-wishonia_disease_cure_fraction_20yr_full.qmd >}}
 
 :::
 
@@ -10143,6 +10255,14 @@ Cut_{WW2} \\
 \end{gathered}
 $$
 *✓ High confidence*
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-wishonia_military_reallocation_physical_max_share.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-wishonia_military_reallocation_physical_max_share.qmd >}}
 
 :::
 

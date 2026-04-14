@@ -1,0 +1,9 @@
+**Monte Carlo note:** Year Destructive Economy Reaches 50% of GDP is effectively deterministic across the current sampled inputs, so a histogram would mostly visualize floating-point residue instead of real uncertainty. (range 0.000e+00 <= tolerance 2.040e-09)
+
+| Statistic | Value |
+|:----------|------:|
+| Baseline (deterministic) | 2040 |
+| Mean (expected value) | 2040 |
+| Median (50th percentile) | 2040 |
+| Standard Deviation | 0 |
+| 90% Range (5th-95th percentile) | [2040, 2040] |

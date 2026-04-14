@@ -474,6 +474,14 @@ $$
 
 *✓ High confidence*
 
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-post_ww2_military_cut_pct.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-post_ww2_military_cut_pct.qmd >}}
+
 :::
 
 ### Global Patients Willing to Participate in Clinical Trials: 1.08 billion people {#sec-willing_trial_participants_global}
@@ -613,6 +621,14 @@ N_{untreated} \\
 $$
 *✓ High confidence*
 
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-wishonia_disease_cure_fraction_20yr_full.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-wishonia_disease_cure_fraction_20yr_full.qmd >}}
+
 :::
 
 ### Wishonia Military Reallocation Physical Max Share: 87.6% {#sec-wishonia_military_reallocation_physical_max_share}
@@ -638,6 +654,14 @@ Cut_{WW2} \\
 \end{gathered}
 $$
 *✓ High confidence*
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-wishonia_military_reallocation_physical_max_share.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-wishonia_military_reallocation_physical_max_share.qmd >}}
 
 :::
 

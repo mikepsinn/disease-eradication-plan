@@ -1,0 +1,9 @@
+**Monte Carlo note:** Potential Implementers is effectively deterministic across the current sampled inputs, so a histogram would mostly visualize floating-point residue instead of real uncertainty. (range 0.000e+00 <= tolerance 2.976e-09)
+
+| Statistic | Value |
+|:----------|------:|
+| Baseline (deterministic) | 2,976 |
+| Mean (expected value) | 2,976 |
+| Median (50th percentile) | 2,976 |
+| Standard Deviation | 0 |
+| 90% Range (5th-95th percentile) | [2,976, 2,976] |

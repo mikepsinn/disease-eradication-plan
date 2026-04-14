@@ -258,6 +258,14 @@ Cost_{destruct} \\
 $$
 *✓ High confidence*
 
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-destructive_economy_50pct_year.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-destructive_economy_50pct_year.qmd >}}
+
 :::
 
 ### Total Annual Decentralized Framework for Drug Assessment Operational Costs: $40 million {#sec-dfda_annual_opex}
@@ -1274,6 +1282,14 @@ $$
 
 *✓ High confidence*
 
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-global_destructive_economy_annual_2025.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-global_destructive_economy_annual_2025.qmd >}}
+
 :::
 
 ### Destructive Economy as % of GDP: 11.5% {#sec-global_destructive_economy_pct_gdp}
@@ -1305,6 +1321,14 @@ Cost_{destruct} \\
 \end{gathered}
 $$
 *✓ High confidence*
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-global_destructive_economy_pct_gdp.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-global_destructive_economy_pct_gdp.qmd >}}
 
 :::
 
@@ -1496,6 +1520,14 @@ $$
 #### Sensitivity Analysis
 
 {{< include ../figures/tornado-treaty_cybercrime_recovery_gdp_growth_bonus_year_15.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-treaty_cybercrime_recovery_gdp_growth_bonus_year_15.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-treaty_cybercrime_recovery_gdp_growth_bonus_year_15.qmd >}}
 
 :::
 
@@ -1730,6 +1762,14 @@ $$
 #### Sensitivity Analysis
 
 {{< include ../figures/tornado-treaty_disease_cure_fraction_20yr.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-treaty_disease_cure_fraction_20yr.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-treaty_disease_cure_fraction_20yr.qmd >}}
 
 :::
 

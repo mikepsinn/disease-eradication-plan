@@ -1,0 +1,9 @@
+**Monte Carlo note:** Treaty Cybercrime Recovery GDP Growth Bonus (Year 15) is effectively deterministic across the current sampled inputs, so a histogram would mostly visualize floating-point residue instead of real uncertainty. (range 0.000e+00 <= tolerance 1.000e-12)
+
+| Statistic | Value |
+|:----------|------:|
+| Baseline (deterministic) | 0.402% |
+| Mean (expected value) | 0.402% |
+| Median (50th percentile) | 0.402% |
+| Standard Deviation | 0% |
+| 90% Range (5th-95th percentile) | [0.402%, 0.402%] |

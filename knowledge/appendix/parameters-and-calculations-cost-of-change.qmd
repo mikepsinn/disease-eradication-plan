@@ -1086,6 +1086,14 @@ $$
 
 *✓ High confidence*
 
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-post_ww2_military_cut_pct.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-post_ww2_military_cut_pct.qmd >}}
+
 :::
 
 ### Status Quo Average Years to First Treatment: 222 years {#sec-status_quo_avg_years_to_first_treatment}
@@ -1213,6 +1221,14 @@ Funding_{treaty} \\
 $$
 
 *✓ High confidence*
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-treaty_annual_funding.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-treaty_annual_funding.qmd >}}
 
 :::
 
@@ -1557,6 +1573,14 @@ $$
 
 {{< include ../figures/tornado-us_congress_full_advocacy_cost.qmd >}}
 
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-us_congress_full_advocacy_cost.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-us_congress_full_advocacy_cost.qmd >}}
+
 :::
 
 ### US Political Reform Investment (Total): $25.5 billion {#sec-us_political_reform_investment_total}
@@ -1735,6 +1759,14 @@ N_{untreated} \\
 $$
 *✓ High confidence*
 
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-wishonia_disease_cure_fraction_20yr_full.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-wishonia_disease_cure_fraction_20yr_full.qmd >}}
+
 :::
 
 ### Wishonia Military Reallocation Physical Max Share: 87.6% {#sec-wishonia_military_reallocation_physical_max_share}
@@ -1760,6 +1792,14 @@ Cut_{WW2} \\
 \end{gathered}
 $$
 *✓ High confidence*
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-wishonia_military_reallocation_physical_max_share.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-wishonia_military_reallocation_physical_max_share.qmd >}}
 
 :::
 

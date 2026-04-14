@@ -1,0 +1,9 @@
+**Monte Carlo note:** Destructive Economy as % of GDP is effectively deterministic across the current sampled inputs, so a histogram would mostly visualize floating-point residue instead of real uncertainty. (range 0.000e+00 <= tolerance 1.000e-12)
+
+| Statistic | Value |
+|:----------|------:|
+| Baseline (deterministic) | 11.5% |
+| Mean (expected value) | 11.5% |
+| Median (50th percentile) | 11.5% |
+| Standard Deviation | 0% |
+| 90% Range (5th-95th percentile) | [11.5%, 11.5%] |

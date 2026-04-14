@@ -1,0 +1,9 @@
+**Monte Carlo note:** Cumulative Treaty Funding over 20 Years with IAB Ratchet Expansion is effectively deterministic across the current sampled inputs, so a histogram would mostly visualize floating-point residue instead of real uncertainty. (range 0.000e+00 <= tolerance 3.155e+00)
+
+| Statistic | Value |
+|:----------|------:|
+| Baseline (deterministic) | $3.16 trillion |
+| Mean (expected value) | $3.16 trillion |
+| Median (50th percentile) | $3.16 trillion |
+| Standard Deviation | $0 |
+| 90% Range (5th-95th percentile) | [$3.16 trillion, $3.16 trillion] |

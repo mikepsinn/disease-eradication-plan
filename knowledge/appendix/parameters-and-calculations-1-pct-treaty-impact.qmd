@@ -2981,6 +2981,14 @@ Funding_{political,ann} \\
 $$
 *✓ High confidence*
 
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-dih_treasury_to_medical_research_annual.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dih_treasury_to_medical_research_annual.qmd >}}
+
 :::
 
 ### Annual Clinical Trial Patient Subsidies: $21.7 billion {#sec-dih_treasury_trial_subsidies_annual}
@@ -4344,6 +4352,14 @@ Funding_{treaty} \\
 $$
 *✓ High confidence*
 
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-iab_political_incentive_funding_annual.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-iab_political_incentive_funding_annual.qmd >}}
+
 :::
 
 ### Medical Research Spending as Percentage of Total Disease Burden: 0.0164% {#sec-medical_research_pct_of_disease_burden}
@@ -4852,6 +4868,14 @@ Cut_{WW2} \\
 $$
 
 *✓ High confidence*
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-post_ww2_military_cut_pct.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-post_ww2_military_cut_pct.qmd >}}
 
 :::
 
@@ -5429,6 +5453,14 @@ $$
 
 *✓ High confidence*
 
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-treaty_annual_funding.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-treaty_annual_funding.qmd >}}
+
 :::
 
 ### Treaty System Benefit Multiplier vs Childhood Vaccination Programs: 11.5x {#sec-treaty_benefit_multiplier_vs_vaccines}
@@ -5928,6 +5960,14 @@ $$
 #### Sensitivity Analysis
 
 {{< include ../figures/tornado-treaty_disease_cure_fraction_20yr.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-treaty_disease_cure_fraction_20yr.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-treaty_disease_cure_fraction_20yr.qmd >}}
 
 :::
 
@@ -8479,6 +8519,14 @@ Funding_{treaty} \\
 $$
 *✓ High confidence*
 
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-victory_bond_annual_payout.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-victory_bond_annual_payout.qmd >}}
+
 :::
 
 ### Annual Return Percentage for VICTORY Incentive Alignment Bondholders: 272% {#sec-victory_bond_annual_return_pct}
@@ -8683,6 +8731,14 @@ N_{untreated} \\
 $$
 *✓ High confidence*
 
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-wishonia_disease_cure_fraction_20yr_full.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-wishonia_disease_cure_fraction_20yr_full.qmd >}}
+
 :::
 
 ### Wishonia Military Reallocation Physical Max Share: 87.6% {#sec-wishonia_military_reallocation_physical_max_share}
@@ -8708,6 +8764,14 @@ Cut_{WW2} \\
 \end{gathered}
 $$
 *✓ High confidence*
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-wishonia_military_reallocation_physical_max_share.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-wishonia_military_reallocation_physical_max_share.qmd >}}
 
 :::
 

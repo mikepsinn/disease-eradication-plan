@@ -1,0 +1,9 @@
+**Monte Carlo note:** Share of 80-Year War Cost Avoided by Treaty is effectively deterministic across the current sampled inputs, so a histogram would mostly visualize floating-point residue instead of real uncertainty. (range 2.220e-16 <= tolerance 1.000e-12)
+
+| Statistic | Value |
+|:----------|------:|
+| Baseline (deterministic) | 72.1% |
+| Mean (expected value) | 72.1% |
+| Median (50th percentile) | 72.1% |
+| Standard Deviation | 1.35e-14% |
+| 90% Range (5th-95th percentile) | [72.1%, 72.1%] |

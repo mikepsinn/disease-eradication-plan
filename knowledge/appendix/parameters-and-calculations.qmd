@@ -38,15 +38,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 668 parameters used in the analysis, organized by type:
+This appendix documents all 667 parameters used in the analysis, organized by type:
 
 - External sources (peer-reviewed): 214
-- Calculated values: 319
+- Calculated values: 318
 - Core definitions: 135
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (319 parameters) • [External Data Sources](#sec-external) (214 parameters) • [Core Definitions](#sec-definitions) (135 parameters)
+[Calculated Values](#sec-calculated) (318 parameters) • [External Data Sources](#sec-external) (214 parameters) • [Core Definitions](#sec-definitions) (135 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -431,6 +431,14 @@ N_{impl} \\
 $$
 
 *✓ High confidence*
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-chain_implementer_count.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-chain_implementer_count.qmd >}}
 
 **Used in:**
 
@@ -2871,6 +2879,14 @@ Cost_{destruct} \\
 $$
 *✓ High confidence*
 
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-destructive_economy_25pct_year.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-destructive_economy_25pct_year.qmd >}}
+
 **Used in:**
 
 - [Please Select an Earth: A) Everyone Gets Rich B) Somalia, but Everywhere](../economics/gdp-trajectories.html)
@@ -2927,6 +2943,14 @@ Cost_{destruct} \\
 $$
 *✓ High confidence*
 
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-destructive_economy_35pct_year.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-destructive_economy_35pct_year.qmd >}}
+
 **Used in:**
 
 - [Your Personal Benefits](../call-to-action/your-personal-benefits.html)
@@ -2977,6 +3001,14 @@ Cost_{destruct} \\
 \end{gathered}
 $$
 *✓ High confidence*
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-destructive_economy_50pct_year.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-destructive_economy_50pct_year.qmd >}}
 
 **Used in:**
 
@@ -6962,6 +6994,14 @@ Funding_{political,ann} \\
 $$
 *✓ High confidence*
 
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-dih_treasury_to_medical_research_annual.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dih_treasury_to_medical_research_annual.qmd >}}
+
 **Used in:**
 
 - [The 1% Treaty: Harnessing Greed to Eradicate Disease](../economics/1-pct-treaty-impact.html)
@@ -9128,6 +9168,14 @@ $$
 
 *✓ High confidence*
 
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-global_destructive_economy_annual_2025.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-global_destructive_economy_annual_2025.qmd >}}
+
 **Used in:**
 
 - [Treaty Feasibility & Cost Analysis](../appendix/treaty-feasibility.html)
@@ -9164,6 +9212,14 @@ Cost_{destruct} \\
 \end{gathered}
 $$
 *✓ High confidence*
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-global_destructive_economy_pct_gdp.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-global_destructive_economy_pct_gdp.qmd >}}
 
 **Used in:**
 
@@ -9403,6 +9459,14 @@ Spending_{mil,post} \\
 $$
 
 *✓ High confidence*
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-global_military_spending_post_treaty_annual_2024.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-global_military_spending_post_treaty_annual_2024.qmd >}}
 
 **Used in:**
 
@@ -10792,6 +10856,14 @@ Funding_{treaty} \\
 $$
 *✓ High confidence*
 
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-iab_political_incentive_funding_annual.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-iab_political_incentive_funding_annual.qmd >}}
+
 **Used in:**
 
 - [Treaty Feasibility & Cost Analysis](../appendix/treaty-feasibility.html)
@@ -10975,6 +11047,14 @@ $$
 #### Sensitivity Analysis
 
 {{< include ../figures/tornado-life_expectancy_gain_1962_2019_years_per_decade.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-life_expectancy_gain_1962_2019_years_per_decade.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-life_expectancy_gain_1962_2019_years_per_decade.qmd >}}
 
 :::
 
@@ -12120,154 +12200,6 @@ $$
 
 :::
 
-### Share of 80-Year War Cost Avoided by Treaty: 72.1% {#sec-peace_dividend_lifetime_pct_of_baseline}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Fraction of the baseline 80-year war cost avoided by the treaty. Because the baseline compounds exponentially while the treaty holds spending flat, cutting 1% today and halting the growth trajectory avoids about 72% of the cumulative 80-year war cost. Most of the savings come from the halted growth, not the headline 1% cut.
-
-**Inputs**:
-
-- [Cumulative Peace Dividend Over 80 Years](#sec-peace_dividend_lifetime_total) 🔢: $2.32 quadrillion
-- [Cumulative 80-Year War Cost (Baseline Trajectory)](#sec-global_war_cost_lifetime_cumulative_baseline) 🔢: $3.22 quadrillion
-
-$$
-\begin{gathered}
-\phi_{avoided} \\
-= \frac{Savings_{LT}}{Cost_{war,cum,baseline}} \\
-= \frac{\$2320T}{\$3220T} \\
-= 72.1\%
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Savings_{LT} \\
-= Cost_{war,cum,baseline} - Cost_{war,cum,treaty} \\
-= \$3220T - \$899T \\
-= \$2320T
-\end{gathered}
-$$
-where:
-$$
-Cost_{war,cum,baseline} = C \times ((1 + g)^{80} - 1) / g
-$$
-where:
-$$
-\begin{gathered}
-Cost_{war,total} \\
-= Cost_{war,direct} + Cost_{war,indirect} \\
-= \$7.66T + \$3.7T \\
-= \$11.4T
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Cost_{war,direct} \\
-= Loss_{life,conflict} + Damage_{infra,total} \\
-+ Disruption_{trade} + Spending_{mil} \\
-= \$2.45T + \$1.88T + \$616B + \$2.72T \\
-= \$7.66T
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Loss_{life,conflict} \\
-= Cost_{combat,human} + Cost_{state,human} \\
-+ Cost_{terror,human} \\
-= \$2.34T + \$27B + \$83B \\
-= \$2.45T
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Cost_{combat,human} \\
-= Deaths_{combat} \times VSL \\
-= 234{,}000 \times \$10M \\
-= \$2.34T
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Cost_{state,human} \\
-= Deaths_{state} \times VSL \\
-= 2{,}700 \times \$10M \\
-= \$27B
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Cost_{terror,human} \\
-= Deaths_{terror} \times VSL \\
-= 8{,}300 \times \$10M \\
-= \$83B
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Damage_{infra,total} \\
-= Damage_{comms} + Damage_{edu} + Damage_{energy} \\
-+ Damage_{health} + Damage_{transport} + Damage_{water} \\
-= \$298B + \$234B + \$422B + \$166B + \$487B + \$268B \\
-= \$1.88T
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Disruption_{trade} \\
-= Disruption_{currency} + Disruption_{energy} \\
-+ Disruption_{shipping} + Disruption_{supply} \\
-= \$57.4B + \$125B + \$247B + \$187B \\
-= \$616B
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Cost_{war,indirect} \\
-= Damage_{env} + Loss_{growth,mil} + Loss_{capital,conflict} \\
-+ Cost_{psych} + Cost_{refugee} + Cost_{vet} \\
-= \$100B + \$2.72T + \$300B + \$232B + \$150B + \$200B \\
-= \$3.7T
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-g_{mil,20yr} \\
-= \left(\frac{Spending_{mil}}{Spending_{mil,2005}}\right)^{\frac{1}{19}} - 1
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Cost_{war,cum,treaty} \\
-= C \times (1 - Reduce_{treaty}) \times 80
-\end{gathered}
-$$
-*✓ High confidence*
-
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-peace_dividend_lifetime_pct_of_baseline.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-peace_dividend_lifetime_pct_of_baseline.qmd >}}
-
-**Used in:**
-
-- [Peace Dividend](../economics/peace-dividend.html)
-
-:::
-
 ### Per-Person 80-Year Peace Dividend: $290,052 {#sec-peace_dividend_lifetime_per_person}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -12856,109 +12788,37 @@ $$
 
 :::
 
-### Annual Savings from 1% Reduction in Trade Disruption: $6.16 billion {#sec-peace_dividend_trade_disruption}
+### Share of 80-Year War Cost Avoided by Treaty: 72.1% {#sec-peace_dividend_share_of_80yr_baseline_war_cost}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Annual savings from 1% reduction in trade disruption
+Fraction of the baseline 80-year war cost avoided by the treaty. Because the baseline compounds exponentially while the treaty holds spending flat, cutting 1% today and halting the growth trajectory avoids about 72% of the cumulative 80-year war cost. Most of the savings come from the halted growth, not the headline 1% cut.
 
 **Inputs**:
 
-- [Total Annual Trade Disruption](#sec-global_annual_trade_disruption_conflict) 🔢: $616 billion
-- [1% Reduction in Military Spending/War Costs from Treaty](#sec-treaty_reduction_pct): 1%
+- [Cumulative Peace Dividend Over 80 Years](#sec-peace_dividend_lifetime_total) 🔢: $2.32 quadrillion
+- [Cumulative 80-Year War Cost (Baseline Trajectory)](#sec-global_war_cost_lifetime_cumulative_baseline) 🔢: $3.22 quadrillion
 
 $$
 \begin{gathered}
-Savings_{trade} \\
-= Disruption_{trade} \times Reduce_{treaty} \\
-= \$616B \times 1\% \\
-= \$6.16B
+\phi_{avoided} \\
+= \frac{Savings_{LT}}{Cost_{war,cum,baseline}} \\
+= \frac{\$2320T}{\$3220T} \\
+= 72.1\%
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
-Disruption_{trade} \\
-= Disruption_{currency} + Disruption_{energy} \\
-+ Disruption_{shipping} + Disruption_{supply} \\
-= \$57.4B + \$125B + \$247B + \$187B \\
-= \$616B
+Savings_{LT} \\
+= Cost_{war,cum,baseline} - Cost_{war,cum,treaty} \\
+= \$3220T - \$899T \\
+= \$2320T
 \end{gathered}
 $$
-*✓ High confidence*
-
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-peace_dividend_trade_disruption.qmd >}}
-
-{{< include ../figures/sensitivity-table-peace_dividend_trade_disruption.qmd >}}
-
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-peace_dividend_trade_disruption.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-peace_dividend_trade_disruption.qmd >}}
-
-:::
-
-### Annual Savings from 1% Reduction in Veteran Healthcare Costs: $2 billion {#sec-peace_dividend_veteran_healthcare}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Annual savings from 1% reduction in veteran healthcare costs
-
-**Inputs**:
-
-- [Annual Veteran Healthcare Costs](#sec-global_annual_veteran_healthcare_costs) 📊: $200 billion (95% CI: $140 billion - $280 billion)
-- [1% Reduction in Military Spending/War Costs from Treaty](#sec-treaty_reduction_pct): 1%
-
+where:
 $$
-\begin{gathered}
-Savings_{vet} \\
-= Cost_{vet} \times Reduce_{treaty} \\
-= \$200B \times 1\% \\
-= \$2B
-\end{gathered}
-$$
-
-*✓ High confidence*
-
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-peace_dividend_veteran_healthcare.qmd >}}
-
-{{< include ../figures/sensitivity-table-peace_dividend_veteran_healthcare.qmd >}}
-
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-peace_dividend_veteran_healthcare.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-peace_dividend_veteran_healthcare.qmd >}}
-
-:::
-
-### Years Until Baseline War Cost Exceeds Current World GDP: 85.1 years {#sec-peace_dividend_years_until_baseline_exceeds_gdp}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Years until annual war cost exceeds current world GDP at the SIPRI 20-year real growth rate. At ~2.76% real growth and $11.4T current war cost, this happens in under a century. The baseline trajectory is therefore a countdown, not a plan.
-
-**Inputs**:
-
-- [Global GDP (2025)](#sec-global_gdp_2025) 📊: $115 trillion
-- [Total Annual Cost of War Worldwide](#sec-global_annual_direct_indirect_war_cost) 🔢: $11.4 trillion
-- [Military Spending Real CAGR (20-Year)](#sec-global_military_spending_real_cagr_20yr) 🔢: 2.76%
-
-$$
-\begin{gathered}
-T_{GDP} \\
-= log\left(\frac{GDP_{global}}{Cost_{war,total}}\right) / log(1 \\
-+ g_{mil,20yr})
-\end{gathered}
+Cost_{war,cum,baseline} = C \times ((1 + g)^{80} - 1) / g
 $$
 where:
 $$
@@ -13053,21 +12913,111 @@ g_{mil,20yr} \\
 = \left(\frac{Spending_{mil}}{Spending_{mil,2005}}\right)^{\frac{1}{19}} - 1
 \end{gathered}
 $$
+where:
+$$
+\begin{gathered}
+Cost_{war,cum,treaty} \\
+= C \times (1 - Reduce_{treaty}) \times 80
+\end{gathered}
+$$
+*✓ High confidence*
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-peace_dividend_share_of_80yr_baseline_war_cost.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-peace_dividend_share_of_80yr_baseline_war_cost.qmd >}}
+
+**Used in:**
+
+- [Peace Dividend](../economics/peace-dividend.html)
+
+:::
+
+### Annual Savings from 1% Reduction in Trade Disruption: $6.16 billion {#sec-peace_dividend_trade_disruption}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual savings from 1% reduction in trade disruption
+
+**Inputs**:
+
+- [Total Annual Trade Disruption](#sec-global_annual_trade_disruption_conflict) 🔢: $616 billion
+- [1% Reduction in Military Spending/War Costs from Treaty](#sec-treaty_reduction_pct): 1%
+
+$$
+\begin{gathered}
+Savings_{trade} \\
+= Disruption_{trade} \times Reduce_{treaty} \\
+= \$616B \times 1\% \\
+= \$6.16B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Disruption_{trade} \\
+= Disruption_{currency} + Disruption_{energy} \\
++ Disruption_{shipping} + Disruption_{supply} \\
+= \$57.4B + \$125B + \$247B + \$187B \\
+= \$616B
+\end{gathered}
+$$
 *✓ High confidence*
 
 #### Sensitivity Analysis
 
-{{< include ../figures/tornado-peace_dividend_years_until_baseline_exceeds_gdp.qmd >}}
+{{< include ../figures/tornado-peace_dividend_trade_disruption.qmd >}}
 
-{{< include ../figures/sensitivity-table-peace_dividend_years_until_baseline_exceeds_gdp.qmd >}}
+{{< include ../figures/sensitivity-table-peace_dividend_trade_disruption.qmd >}}
 
 #### Monte Carlo Distribution
 
-{{< include ../figures/mc-distribution-peace_dividend_years_until_baseline_exceeds_gdp.qmd >}}
+{{< include ../figures/mc-distribution-peace_dividend_trade_disruption.qmd >}}
 
 #### Exceedance Probability
 
-{{< include ../figures/exceedance-peace_dividend_years_until_baseline_exceeds_gdp.qmd >}}
+{{< include ../figures/exceedance-peace_dividend_trade_disruption.qmd >}}
+
+:::
+
+### Annual Savings from 1% Reduction in Veteran Healthcare Costs: $2 billion {#sec-peace_dividend_veteran_healthcare}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual savings from 1% reduction in veteran healthcare costs
+
+**Inputs**:
+
+- [Annual Veteran Healthcare Costs](#sec-global_annual_veteran_healthcare_costs) 📊: $200 billion (95% CI: $140 billion - $280 billion)
+- [1% Reduction in Military Spending/War Costs from Treaty](#sec-treaty_reduction_pct): 1%
+
+$$
+\begin{gathered}
+Savings_{vet} \\
+= Cost_{vet} \times Reduce_{treaty} \\
+= \$200B \times 1\% \\
+= \$2B
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-peace_dividend_veteran_healthcare.qmd >}}
+
+{{< include ../figures/sensitivity-table-peace_dividend_veteran_healthcare.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-peace_dividend_veteran_healthcare.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-peace_dividend_veteran_healthcare.qmd >}}
 
 :::
 
@@ -13925,6 +13875,14 @@ Cut_{WW2} \\
 $$
 
 *✓ High confidence*
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-post_ww2_military_cut_pct.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-post_ww2_military_cut_pct.qmd >}}
 
 **Used in:**
 
@@ -16347,6 +16305,14 @@ $$
 
 *✓ High confidence*
 
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-treaty_annual_funding.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-treaty_annual_funding.qmd >}}
+
 **Used in:**
 
 - [The 1% Treaty: Harnessing Greed to Eradicate Disease](../economics/1-pct-treaty-impact.html)
@@ -16863,6 +16829,14 @@ $$
 
 *✓ High confidence*
 
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-treaty_cumulative_20yr_with_ratchet.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-treaty_cumulative_20yr_with_ratchet.qmd >}}
+
 **Used in:**
 
 - [Peace Dividend](../economics/peace-dividend.html)
@@ -16894,6 +16868,14 @@ $$
 #### Sensitivity Analysis
 
 {{< include ../figures/tornado-treaty_cybercrime_recovery_gdp_growth_bonus_year_15.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-treaty_cybercrime_recovery_gdp_growth_bonus_year_15.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-treaty_cybercrime_recovery_gdp_growth_bonus_year_15.qmd >}}
 
 :::
 
@@ -17128,6 +17110,14 @@ $$
 #### Sensitivity Analysis
 
 {{< include ../figures/tornado-treaty_disease_cure_fraction_20yr.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-treaty_disease_cure_fraction_20yr.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-treaty_disease_cure_fraction_20yr.qmd >}}
 
 :::
 
@@ -23029,6 +23019,14 @@ $$
 
 {{< include ../figures/tornado-us_congress_full_advocacy_cost.qmd >}}
 
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-us_congress_full_advocacy_cost.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-us_congress_full_advocacy_cost.qmd >}}
+
 **Used in:**
 
 - [The Price of Political Change: A Cost-Benefit Framework for Policy Incentivization](../appendix/cost-of-change-analysis.html)
@@ -23989,6 +23987,14 @@ $$
 
 {{< include ../figures/tornado-us_senate_treaty_advocacy_cost.qmd >}}
 
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-us_senate_treaty_advocacy_cost.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-us_senate_treaty_advocacy_cost.qmd >}}
+
 :::
 
 ### Expected Value of a Vote (US): $0.000338 {#sec-us_vote_expected_value}
@@ -24070,6 +24076,14 @@ Funding_{treaty} \\
 \end{gathered}
 $$
 *✓ High confidence*
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-victory_bond_annual_payout.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-victory_bond_annual_payout.qmd >}}
 
 **Used in:**
 
@@ -25482,6 +25496,14 @@ N_{untreated} \\
 $$
 *✓ High confidence*
 
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-wishonia_disease_cure_fraction_15yr.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-wishonia_disease_cure_fraction_15yr.qmd >}}
+
 :::
 
 ### Wishonia Disease Cure Fraction (20yr, Full Implementation): 100% {#sec-wishonia_disease_cure_fraction_20yr_full}
@@ -25582,6 +25604,14 @@ N_{untreated} \\
 \end{gathered}
 $$
 *✓ High confidence*
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-wishonia_disease_cure_fraction_20yr_full.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-wishonia_disease_cure_fraction_20yr_full.qmd >}}
 
 **Used in:**
 
@@ -26034,6 +26064,14 @@ Cut_{WW2} \\
 \end{gathered}
 $$
 *✓ High confidence*
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-wishonia_military_reallocation_physical_max_share.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-wishonia_military_reallocation_physical_max_share.qmd >}}
 
 **Used in:**
 

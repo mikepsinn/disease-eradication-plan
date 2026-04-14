@@ -1,0 +1,9 @@
+**Monte Carlo note:** Global Military Spending After 1% Treaty Reduction is effectively deterministic across the current sampled inputs, so a histogram would mostly visualize floating-point residue instead of real uncertainty. (range 0.000e+00 <= tolerance 2.693e+00)
+
+| Statistic | Value |
+|:----------|------:|
+| Baseline (deterministic) | $2.69 trillion |
+| Mean (expected value) | $2.69 trillion |
+| Median (50th percentile) | $2.69 trillion |
+| Standard Deviation | $0 |
+| 90% Range (5th-95th percentile) | [$2.69 trillion, $2.69 trillion] |

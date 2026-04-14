@@ -10,6 +10,7 @@ Generate Quarto QMD files with embedded Python matplotlib code for:
 - Input distribution charts (uncertainty visualization)
 - Monte Carlo distribution charts (outcome uncertainty)
 - CDF/exceedance probability charts (risk assessment)
+- Deterministic-outcome placeholders for degenerate MC/CDF outputs
 
 Functions:
 - generate_tornado_chart_qmd() - Tornado chart showing input parameter impacts
@@ -17,6 +18,8 @@ Functions:
 - generate_input_distribution_chart_qmd() - Probability distribution for an input
 - generate_monte_carlo_distribution_chart_qmd() - Histogram/CDF of MC outcomes
 - generate_cdf_chart_qmd() - Standalone exceedance probability chart
+- generate_deterministic_monte_carlo_note_qmd() - Placeholder for degenerate MC outputs
+- generate_deterministic_cdf_note_qmd() - Placeholder for degenerate exceedance outputs
 
 Usage:
     from chart_generators import generate_tornado_chart_qmd
@@ -37,6 +40,11 @@ from typing import Any, Dict, List, Optional
 
 from dih_models.formatting import format_parameter_value
 from dih_models.latex_generation import smart_title_case
+
+
+def _summary_table_includes_unit(units: str) -> bool:
+    """Include only short suffix-style units in compact markdown tables."""
+    return (units or "").lower() in ("usd", "dollar", "percentage", "x", "multiplier", "factor", "ratio")
 
 
 def generate_tornado_chart_qmd(param_name: str, tornado_data: dict, output_dir: Path, param_metadata: Optional[dict] = None, baseline: Optional[float] = None, units: str = "", parameters: Optional[Dict[str, Dict[str, Any]]] = None) -> Path:
@@ -563,8 +571,7 @@ def generate_monte_carlo_distribution_chart_qmd(
     units = outcome_data.get("units", "")
 
     # Table values: include format-inherent suffixes (x, :1, $, %) but not verbose unit words
-    _units_lower = (units or "").lower()
-    _table_include_unit = _units_lower in ("usd", "dollar", "percentage", "x", "multiplier", "factor", "ratio")
+    _table_include_unit = _summary_table_includes_unit(units)
 
     # Generate QMD with embedded Python
     qmd_content = f'''```{{python}}
@@ -704,6 +711,53 @@ plt.show()
     return output_file
 
 
+def generate_deterministic_monte_carlo_note_qmd(
+    param_name: str,
+    outcome_data: dict,
+    output_dir: Path,
+    param_metadata: Optional[dict] = None,
+    reason: str = "",
+) -> Path:
+    """
+    Generate a placeholder partial for effectively deterministic Monte Carlo outcomes.
+
+    This avoids misleading histograms when the sampled output collapses to a single value
+    while keeping the appendix structure stable.
+    """
+    if param_metadata and hasattr(param_metadata.get("value"), "display_name"):
+        display_name = param_metadata["value"].display_name
+    else:
+        display_name = smart_title_case(param_name)
+
+    baseline = outcome_data.get("baseline", 0)
+    mean = outcome_data.get("mean", baseline)
+    std = outcome_data.get("std", 0)
+    p5 = outcome_data.get("p5", baseline)
+    p50 = outcome_data.get("p50", baseline)
+    p95 = outcome_data.get("p95", baseline)
+    units = outcome_data.get("units", "")
+    include_unit = _summary_table_includes_unit(units)
+    note_reason = reason or "variation is below the deterministic tolerance"
+
+    qmd_content = f'''**Monte Carlo note:** {display_name} is effectively deterministic across the current sampled inputs, so a histogram would mostly visualize floating-point residue instead of real uncertainty. ({note_reason})
+
+| Statistic | Value |
+|:----------|------:|
+| Baseline (deterministic) | {format_parameter_value(baseline, units, include_unit=include_unit)} |
+| Mean (expected value) | {format_parameter_value(mean, units, include_unit=include_unit)} |
+| Median (50th percentile) | {format_parameter_value(p50, units, include_unit=include_unit)} |
+| Standard Deviation | {format_parameter_value(std, units, include_unit=include_unit)} |
+| 90% Range (5th-95th percentile) | [{format_parameter_value(p5, units, include_unit=include_unit)}, {format_parameter_value(p95, units, include_unit=include_unit)}] |
+'''
+
+    output_file = output_dir / f'mc-distribution-{param_name.lower()}.qmd'
+    output_file.parent.mkdir(parents=True, exist_ok=True)
+    with open(output_file, 'w', encoding='utf-8', newline='\n') as f:
+        f.write(qmd_content)
+
+    return output_file
+
+
 def generate_cdf_chart_qmd(
     param_name: str,
     samples: list,
@@ -826,6 +880,38 @@ plt.show()
 '''
 
     # Write QMD file
+    output_file = output_dir / f'exceedance-{param_name.lower()}.qmd'
+    output_file.parent.mkdir(parents=True, exist_ok=True)
+    with open(output_file, 'w', encoding='utf-8', newline='\n') as f:
+        f.write(qmd_content)
+
+    return output_file
+
+
+def generate_deterministic_cdf_note_qmd(
+    param_name: str,
+    outcome_data: dict,
+    output_dir: Path,
+    param_metadata: Optional[dict] = None,
+    reason: str = "",
+) -> Path:
+    """
+    Generate a placeholder partial for effectively deterministic exceedance outputs.
+    """
+    if param_metadata and hasattr(param_metadata.get("value"), "display_name"):
+        display_name = param_metadata["value"].display_name
+    else:
+        display_name = smart_title_case(param_name)
+
+    deterministic_value = outcome_data.get("p50", outcome_data.get("baseline", 0))
+    units = outcome_data.get("units", "")
+    note_reason = reason or "variation is below the deterministic tolerance"
+
+    qmd_content = f'''**Exceedance note:** {display_name} collapses to an effectively single value under the current Monte Carlo assumptions, so the exceedance curve would be a near-vertical step function. ({note_reason})
+
+Approximate deterministic value: **{format_parameter_value(deterministic_value, units)}**
+'''
+
     output_file = output_dir / f'exceedance-{param_name.lower()}.qmd'
     output_file.parent.mkdir(parents=True, exist_ok=True)
     with open(output_file, 'w', encoding='utf-8', newline='\n') as f:
