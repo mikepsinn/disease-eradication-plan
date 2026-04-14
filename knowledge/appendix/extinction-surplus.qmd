@@ -3,14 +3,15 @@ title: The Apocalypse Markup
 description: The Price of Apocalypse is {{< var price_of_apocalypse >}} per year. Your governments spend {{< var global_military_spending_annual_2024 >}}. That is an {{< var apocalypse_markup_multiplier >}} markup on the end of civilization.
 abstract: |
   We introduce three terms: the **Price of Apocalypse** ({{< var price_of_apocalypse >}} per year,
-  the cost of maintaining one nuclear-winter's worth of warheads), the **Minimum Viable Apocalypse**
-  (~4,400 warheads, the threshold for nuclear winter killing ~5 billion people), and the
-  **Apocalypse Markup** (all military spending above the Price of Apocalypse). Nine nuclear states
-  spend $92 billion per year on 12,241 warheads, 2.8x the nuclear winter threshold. Total military
-  spending of {{< var global_military_spending_annual_2024 >}} represents an {{< var apocalypse_markup_multiplier >}}
-  markup on the cost of ending civilization. A proposed 1% treaty would redirect
-  {{< var treaty_annual_funding >}} from the Apocalypse Markup to clinical trials, without touching
-  nuclear arsenals or deterrence.
+  the cost of maintaining one civilization-ending exchange's worth of warheads), the **Minimum Viable
+  Apocalypse** (~100 warheads, the threshold for a regional-scale nuclear winter that collapses the
+  global food system and kills roughly 2 billion people from famine), and the **Apocalypse Markup**
+  (all military spending above the Price of Apocalypse). Nine nuclear states spend $92 billion per
+  year on 12,241 warheads, {{< var nuclear_winter_overkill_factor >}} the threshold for civilizational
+  collapse. Total military spending of {{< var global_military_spending_annual_2024 >}} represents
+  an {{< var apocalypse_markup_multiplier >}} markup on the cost of ending civilization. A proposed
+  1% treaty would redirect {{< var treaty_annual_funding >}} from the Apocalypse Markup to clinical
+  trials, without touching nuclear arsenals or deterrence.
 published: true
 tags:
   - nuclear-weapons
@@ -33,9 +34,7 @@ aliases:
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 
-![The Price of Apocalypse is $33.1B (95% CI: $23.7B-$44B) per year. Your governments spend $2.72T. That is an 82.3x (95% CI: 61.9x-115x) markup on the end of civilization.](/assets/infographics/knowledge/appendix/extinction-surplus-infographic-bw-academic.jpg)
-
-The **Price of Apocalypse** is {{< var price_of_apocalypse >}} per year. That is the cost of maintaining enough nuclear warheads to trigger nuclear winter once, killing roughly 5 billion people. Your governments spend {{< var global_military_spending_annual_2024 >}} on military. That is an {{< var apocalypse_markup_multiplier >}} markup on the end of civilization.
+The **Price of Apocalypse** is {{< var price_of_apocalypse >}} per year. That is the cost of maintaining the ~100 warheads it takes to trigger a regional-scale nuclear winter, collapse the global food system, and kill roughly 2 billion people from famine. Your governments spend {{< var global_military_spending_annual_2024 >}} on military. That is an {{< var apocalypse_markup_multiplier >}} markup on the end of civilization.
 
 This paper shows the math. It is not complicated. A child could follow it. (The adults who set these budgets presumably also followed it, which makes the outcome harder to explain.)
 
@@ -88,11 +87,11 @@ But nuclear weapons do not only kill with blast and radiation.
 
 ### Nuclear Winter: The Actual Extinction Mechanism
 
-Xia et al. (2022, *Nature Food*) modeled what happens after a US-Russia nuclear exchange [@nuke-winter-150tg]. Approximately 4,400 warheads detonated on urban and industrial targets produce 150 teragrams of soot. The soot blocks sunlight. Global temperatures drop. Crops fail. Within two years, approximately **5 billion people die of famine**. Not from the bombs. From the dark.
+Robock, Toon, and colleagues (2007) modeled what happens after a **regional** nuclear exchange, roughly 100 warheads detonated on cities [@robock-regional-nuclear-war-2007; @toon-environmental-consequences-nuclear-war-2007]. The fires inject about 5 teragrams of soot into the stratosphere. Global temperatures drop for a decade. Growing seasons shorten worldwide. Crops fail. Approximately **2 billion people end up at risk of starvation**. Not from the bombs. From the dark. Xia et al. (2022, *Nature Food*) extended the modeling to larger exchanges and confirmed the direction: more soot, more dead [@nuke-winter-150tg]. A full 4,400-warhead US-Russia exchange kills ~5 billion from agricultural collapse. The 100-warhead regional exchange is the **lower bound**, not the total.
 
-The global arsenal contains 12,241 warheads. The nuclear winter threshold requires roughly 4,400. The overkill factor, measured against the thing that actually causes extinction, is **2.8x**.
+The global arsenal contains 12,241 warheads. The threshold for the regional-scale nuclear winter that ends civilization as the median human experiences it is roughly 100. The overkill factor, measured against the thing that actually causes extinction, is **{{< var nuclear_winter_overkill_factor >}}**.
 
-This is more modest than the 20x figure from the purchasing-power calculation above. It is also more terrifying. The purchasing-power metric asks "what could the budget buy?" The arsenal metric asks "what have you already built?" The answer: 2.8 times the weapons needed to starve 5 billion people to death in darkness.
+The arsenal you need to deter your enemies and the arsenal you need to starve the planet are, troublingly, the same number.
 
 ![Tiny sliver: cure diseases. Massive remainder: prepare for war. The military keeps 99 percent. They'll barely notice it's gone, like losing one fry from a large order.](/assets/images/extinction-surplus/extinction-surplus-section-on-what-happens-after-bw-academic.jpg)
 
@@ -105,8 +104,6 @@ China maintained approximately 200-300 warheads for decades. Nobody invaded Chin
 The academic consensus on minimum credible deterrence: **100-300 warheads**, depending on delivery system survivability. A submarine-based force requires fewer because nobody can find the submarines.
 
 The world maintains 12,241. It needs, at most, a few hundred per nuclear state.
-
-![Eight billion people. Weapons that can kill 160 billion people. Even after the 1 percent cut. Someone should check if we're doing math right.](/assets/images/extinction-surplus/extinction-surplus-section-what-a-1-treaty-changes-bw-academic.jpg)
 
 ## The Price of Apocalypse
 
@@ -125,15 +122,15 @@ The nine nuclear-armed states spend approximately $100 billion per year maintain
 | North Korea | ~$0.7 billion | ~50 |
 | **Total** | **~$92 billion** | **~12,121** |
 
-The nine states spend $92 billion total on nuclear weapons, but the arsenal is 2.8 times the nuclear winter threshold. One apocalypse's worth costs:
+The nine states spend $92 billion total on nuclear weapons, but the arsenal is {{< var nuclear_winter_overkill_factor >}} the civilizational-collapse threshold. One apocalypse's worth costs:
 
 {{< var price_of_apocalypse_latex >}}
 
-{{< var price_of_apocalypse >}} per year. That is the **Price of Apocalypse**: the Minimum Viable Apocalypse, priced. Less than what Americans spend on Halloween candy. Less than NASA's annual budget. The end of civilization costs less per year than the James Webb Space Telescope program cost in total. On Wishonia, we do not have a word for an organism that spends more looking at the stars than it would cost to extinguish them, because no organism has ever been that interesting.
+{{< var price_of_apocalypse >}} per year. That is the **Price of Apocalypse**: the Minimum Viable Apocalypse, priced. Less than one Hollywood tentpole movie. Less than a mid-size pharmaceutical company spends on marketing in a quarter. Less than what the world spends on cat food in six days. The end of civilization costs less per year than ten F-35 fighter jets, and you already bought more than a thousand of those. On Wishonia, we do not have a word for an organism that spends more on pet food than it would cost to exterminate itself, because no organism has ever been that interesting.
 
-If these states right-sized their arsenals to minimum credible deterrence (100-300 warheads each, submarine-based delivery), the cost would drop to roughly $30-40 billion per year, based on UK and French per-warhead costs. The savings: $50-60 billion per year on nuclear weapons alone.
+If these states right-sized their arsenals to minimum credible deterrence (100-300 warheads each, submarine-based delivery), they would still retain civilization-ending capacity and save tens of billions per year on maintenance alone.
 
-But nuclear spending is not the point. It is 3.4% of the global military budget. The other 96.6% is the point.
+But nuclear spending is not the point. It is a rounding error on the global military budget. The other 99+% is the point.
 
 ## The Apocalypse Markup
 
@@ -145,7 +142,7 @@ An {{< var apocalypse_markup_multiplier >}} markup. You are paying {{< var apoca
 
 You are adding a home security system to a house rigged with enough explosives to destroy the neighborhood. The security system is not the problem. The question is why you keep buying more explosives.
 
-"But conventional forces serve purposes other than extinction! Deterrence! Alliance commitments! Humanitarian operations! Power projection!" Correct. And those purposes are funded at a level where the nuclear arsenal alone, costing a small fraction of the budget, can already trigger nuclear winter 2.8 times over. Whatever "purposes" the surplus serves, it serves them on top of a civilization-ending guarantee that costs 3.4 cents of every military dollar. The other 96.6 cents is the Apocalypse Markup.
+"But conventional forces serve purposes other than extinction! Deterrence! Alliance commitments! Humanitarian operations! Power projection!" Correct. And those purposes are funded at a level where the nuclear arsenal alone, costing a small fraction of the budget, can already end civilization {{< var nuclear_winter_overkill_factor_nounit >}} times over. Whatever "purposes" the surplus serves, it serves them on top of a civilization-ending guarantee that costs a fraction of a penny of every military dollar. The rest is the Apocalypse Markup.
 
 A [1% treaty](../solution/1-percent-treaty.qmd) [@1-pct-treaty-impact-paper-2025] asks for {{< var treaty_annual_funding >}} from this surplus. It does not touch deterrence. It does not touch nuclear arsenals. It does not touch conventional readiness. It takes from the budget that sits on top of an extinction guarantee and redirects it to clinical trials.
 
@@ -210,7 +207,7 @@ A 5.56mm NATO round costs {{< var bullet_cost_556_nato >}} at bulk military rate
 
 Every year, your governments spend enough on military to murder every man, woman, and child on Earth {{< var bullets_per_person_annual_nounit >}} times over. With bullets alone. Every year.
 
-The nuclear overkill factor ({{< var nuclear_overkill_factor >}}) measures a stockpile: existing weapons, built over decades. The bullet metric measures something worse. It measures annual *cash flow*. You are not sitting on a one-time surplus of redundant death. You are renewing your subscription to it. Every year, you pay for the capacity to murder everyone {{< var bullets_per_person_annual_nounit >}} times, receive a receipt, and then pay again next year.
+The nuclear winter overkill factor ({{< var nuclear_winter_overkill_factor >}}) measures a stockpile: existing weapons, built over decades. The bullet metric measures something worse. It measures annual *cash flow*. You are not sitting on a one-time surplus of redundant death. You are renewing your subscription to it. Every year, you pay for the capacity to murder everyone {{< var bullets_per_person_annual_nounit >}} times, receive a receipt, and then pay again next year.
 
 "But militaries don't actually spend their entire budget on ammunition!" Correct. They also buy food, housing, vehicles, pensions, and very expensive airplanes. This is a purchasing power calculation. It measures the *scale* of spending by converting it to the cheapest lethal commodity available. In actual combat, it takes {{< var bullets_fired_per_kill_iraq_afghanistan >}} to kill one person {{< var bullets_fired_per_kill_iraq_afghanistan_cite >}}. At that rate, the entire global military budget converted to small arms would kill roughly 27 million people. Not 8 billion.
 
@@ -218,7 +215,7 @@ This objection is interesting because the person making it thinks it helps their
 
 | Metric | Overkill | Type |
 |--------|----------|------|
-| Nuclear arsenal | {{< var nuclear_overkill_factor >}} | Existing stockpile |
+| Nuclear arsenal | {{< var nuclear_winter_overkill_factor >}} | Existing stockpile |
 | Bullet purchasing power | {{< var bullets_per_person_annual_nounit >}}x/year | Annual spending flow |
 
 A 1% treaty moves the bullet count from {{< var bullets_per_person_annual_nounit >}} to about 842 per person. Nobody will notice.
@@ -231,6 +228,6 @@ The Price of Apocalypse is {{< var price_of_apocalypse >}}. The Apocalypse Marku
 
 The treaty does not touch the Price of Apocalypse. It does not reduce deterrence. It does not weaken a single military. It takes from the {{< var apocalypse_markup_multiplier >}} markup and redirects it to clinical trials, so that humans might figure out which of the 9.5 million untested treatment combinations actually work.
 
-Your species can kill every person on Earth {{< var nuclear_overkill_factor_nounit >}} times. It cannot cure most cancers. It spends {{< var global_military_spending_annual_2024 >}} a year on the first problem and a fraction of that on the second. The proposal is to move 1% from the budget that murders everyone {{< var nuclear_overkill_factor_nounit >}} times to the budget that might stop some of them from dying.
+Your species can end civilization {{< var nuclear_winter_overkill_factor_nounit >}} times over. It cannot cure most cancers. It spends {{< var global_military_spending_annual_2024 >}} a year on the first problem and a fraction of that on the second. The proposal is to move 1% from the budget that ends civilization {{< var nuclear_winter_overkill_factor_nounit >}} times over to the budget that might stop some of those people from dying.
 
 That is the whole proposal. I have been trying to find the controversial part. I cannot find it. If you find it, please let me know, because I have been looking for several years and I am beginning to suspect it does not exist.

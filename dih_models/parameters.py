@@ -3036,23 +3036,6 @@ WAR_CHILDREN_KILLED_SINCE_1900 = Parameter(
     latex_symbol=r"Deaths_{war,child}",
 )
 
-# Nuclear overkill capacity
-# From nuclear-weapon-cost-and-casualties.qmd: 158.4 billion potential deaths / 8 billion = 20x
-NUCLEAR_OVERKILL_FACTOR = Parameter(
-    20,
-    source_ref=ReferenceID.NUCLEAR_EXTINCTION,
-    source_type="definition",
-    confidence="medium",
-    description="How many times the global nuclear arsenal can kill Earth's entire population. "
-                "Based on total potential deaths from existing arsenals (~158.4B) divided by "
-                "global population (~8B). See nuclear-weapon-cost-and-casualties appendix.",
-    display_name="Nuclear Overkill Factor",
-    unit="x",
-    distribution="fixed",
-    keywords=["nuclear", "overkill", "arsenal", "extinction", "weapons", "redundancy"],
-    latex_symbol=r"Overkill_{nuke}",
-)
-
 # Global nuclear weapons spending and apocalypse metrics
 GLOBAL_NUCLEAR_WEAPONS_SPENDING = Parameter(
     92_000_000_000,
@@ -3070,17 +3053,22 @@ GLOBAL_NUCLEAR_WEAPONS_SPENDING = Parameter(
 )
 
 NUCLEAR_WINTER_WARHEAD_THRESHOLD = Parameter(
-    4_400,
+    100,
     source_ref=ReferenceID.NUKE_WINTER_150TG,
     source_type="external",
     confidence="medium",
-    description="Approximate number of warheads needed to trigger nuclear winter (150 Tg "
-                "soot), killing ~5 billion people from agricultural collapse. Based on Xia "
-                "et al. 2022, Nature Food, modeling a US-Russia exchange.",
+    description="Approximate number of warheads needed to trigger a regional-scale "
+                "nuclear winter sufficient to collapse the global food system. A 100-warhead "
+                "regional exchange (Robock/Toon 2007, extended by Xia et al. 2022) injects "
+                "~5 Tg of soot into the stratosphere, drops global temperatures ~1.8C for a "
+                "decade, shortens growing seasons worldwide, and kills ~2 billion people from "
+                "famine. Civilization as the median human experiences it does not survive. "
+                "Xia 2022 shows total agricultural collapse (~5B deaths) at ~4,400 warheads; "
+                "this parameter uses the lower threshold for median-human civilizational collapse.",
     display_name="Nuclear Winter Warhead Threshold",
     unit="warheads",
     distribution="uniform",
-    confidence_interval=(3_000, 6_000),
+    confidence_interval=(50, 300),
     keywords=["nuclear", "winter", "warheads", "threshold", "soot", "famine"],
     latex_symbol=r"W_{winter}",
 )
@@ -3100,12 +3088,14 @@ GLOBAL_WARHEAD_COUNT = Parameter(
 )
 
 NUCLEAR_WINTER_OVERKILL_FACTOR = Parameter(
-    12_241 / 4_400,
+    12_241 / 100,
     source_type=SourceType.CALCULATED,
     confidence="medium",
     description="How many times the global nuclear arsenal exceeds the threshold for "
-                "nuclear winter (~4,400 warheads for 150 Tg soot). The arsenal-based "
-                "overkill factor for the actual extinction mechanism.",
+                "civilizational collapse via regional-scale nuclear winter (~100 warheads, "
+                "~5 Tg soot, ~2 billion famine deaths, global food system collapse). "
+                "The arsenal-based overkill factor against the apocalypse the median "
+                "human experiences.",
     display_name="Nuclear Winter Overkill Factor",
     unit="x",
     formula="GLOBAL_WARHEAD_COUNT / NUCLEAR_WINTER_WARHEAD_THRESHOLD",
@@ -3118,13 +3108,14 @@ NUCLEAR_WINTER_OVERKILL_FACTOR = Parameter(
 # Price of Apocalypse and Apocalypse Markup
 # The cost of triggering one nuclear winter, and the markup above it
 PRICE_OF_APOCALYPSE = Parameter(
-    92_000_000_000 / (12_241 / 4_400),
+    92_000_000_000 / (12_241 / 100),
     source_type=SourceType.CALCULATED,
     confidence="medium",
     description="The Price of Apocalypse: the annual cost of maintaining enough nuclear "
-                "warheads to trigger nuclear winter once (~4,400 warheads, killing ~5 billion "
-                "from agricultural collapse). Calculated as global nuclear spending divided "
-                "by the nuclear winter overkill factor.",
+                "warheads to trigger a civilization-ending nuclear winter (~100 warheads, "
+                "~5 Tg soot, ~2 billion famine deaths, global food system collapse). "
+                "Calculated as global nuclear spending divided by the nuclear winter "
+                "overkill factor.",
     display_name="Price of Apocalypse (Minimum Viable Apocalypse)",
     unit="USD",
     formula="GLOBAL_NUCLEAR_WEAPONS_SPENDING / NUCLEAR_WINTER_OVERKILL_FACTOR",
@@ -3135,7 +3126,7 @@ PRICE_OF_APOCALYPSE = Parameter(
 )
 
 APOCALYPSE_MARKUP = Parameter(
-    GLOBAL_MILITARY_SPENDING_ANNUAL_2024 - (92_000_000_000 / (12_241 / 4_400)),
+    GLOBAL_MILITARY_SPENDING_ANNUAL_2024 - (92_000_000_000 / (12_241 / 100)),
     source_type=SourceType.CALCULATED,
     confidence="medium",
     description="The Apocalypse Markup: total military spending beyond the Price of "
@@ -3151,7 +3142,7 @@ APOCALYPSE_MARKUP = Parameter(
 )
 
 APOCALYPSE_MARKUP_MULTIPLIER = Parameter(
-    GLOBAL_MILITARY_SPENDING_ANNUAL_2024 / (92_000_000_000 / (12_241 / 4_400)),
+    GLOBAL_MILITARY_SPENDING_ANNUAL_2024 / (92_000_000_000 / (12_241 / 100)),
     source_type=SourceType.CALCULATED,
     confidence="medium",
     description="How many times total military spending exceeds the Price of Apocalypse. "

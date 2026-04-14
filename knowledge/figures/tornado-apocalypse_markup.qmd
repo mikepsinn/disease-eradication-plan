@@ -20,14 +20,14 @@ display_name = "Apocalypse Markup"
 
 # Baseline and units
 
-baseline = 2686930806306.6743
+baseline = 2719248427416.0605
 
 # Tornado data from sensitivity analysis
 
 drivers = ['NUCLEAR_WINTER_WARHEAD_THRESHOLD']
 driver_labels = ['Nuclear Winter Warhead Threshold']
-impacts_low = [10522016175.148926]
-impacts_high = [-12025161343.027344]
+impacts_low = [375786291.96972656]
+impacts_high = [-1503145167.878418]
 
 # Convert deltas to absolute values (baseline + delta)
 

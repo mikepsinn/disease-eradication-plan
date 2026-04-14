@@ -1,6 +1,6 @@
 ---
 title: A 1% Treaty
-description: You have enough nuclear weapons to kill everyone 20 times. Here's how to settle for 19.8 times and use the savings on medicine. Controversial, apparently.
+description: You have enough nuclear weapons to end civilization 122 times over. Here's how to settle for 121.2 times and use the savings on medicine. Controversial, apparently.
 published: true
 tags:
   - solution
@@ -24,7 +24,7 @@ scores:
 
 <!-- snippet:one-percent-treaty-pitch -->
 
-Your species spends {{< var global_military_spending_annual_2024 >}} a year on military forces. That amount is enough to buy enough bullets to murder every man, woman, and child on Earth {{< var bullets_per_person_annual_nounit >}} times. Every year. If every nation reduces that by 1% at the same time, the balance of power stays identical. No country gets weaker. Nobody loses a single war they would have otherwise won. You just become slightly less capable of destroying a planet you're still living on (which should be fine, since you were already capable of destroying it {{< var nuclear_overkill_factor_nounit >}} times over).
+Your species spends {{< var global_military_spending_annual_2024 >}} a year on military forces. That amount is enough to buy enough bullets to murder every man, woman, and child on Earth {{< var bullets_per_person_annual_nounit >}} times. Every year. If every nation reduces that by 1% at the same time, the balance of power stays identical. No country gets weaker. Nobody loses a single war they would have otherwise won. You just become slightly less capable of destroying a planet you're still living on (which should be fine, since you were already capable of destroying it {{< var nuclear_winter_overkill_factor_nounit >}} times over).
 
 That 1% is {{< var treaty_annual_funding >}} a year. For comparison, that's roughly what Americans spend on Valentine's Day. You are currently spending more on heart-shaped candy than on curing heart disease.
 
@@ -36,11 +36,13 @@ A 1% Treaty is a piece of paper that says every signatory nation redirects that 
 
 ## The Treaty
 
-<!-- snippet:one-percent-treaty-text -->
-
 **THE TREATY FOR THE 1% REALLOCATION OF MILITARY EXPENDITURES TOWARDS BIOMEDICAL RESEARCH AND DEVELOPMENT FOR THE PREVENTION OF HUMAN SUFFERING AND DEATH**
 
 *(Short title: the treaty where you buy 1% fewer bombs and, in exchange, stop dying of things)*
+
+<!-- snippet:one-percent-treaty-text -->
+
+WHEREAS, the governments of Earth possess nuclear weapons sufficient to end civilization {{< var nuclear_winter_overkill_factor_nounit >}} times over but have not cured Alzheimer's once, and the undersigned acknowledge that a 1% reduction brings this to 121.2 times over, which is functionally indistinguishable from {{< var nuclear_winter_overkill_factor_nounit >}} times over, because civilization only ends in whole numbers, and after the first apocalypse the remaining 121 are redundant;
 
 WHEREAS, humanity spends {{< var global_military_spending_annual_2024 >}} a year on methods of killing itself, which is enough to buy {{< var bullets_per_person_annual_nounit >}} bullets for every human alive every year, which is more bullets than any human has a reasonable use for;
 
@@ -56,8 +58,6 @@ WHEREAS, your chance of dying in a terrorist attack is approximately 1 in {{< va
 
 WHEREAS, every signatory to this Treaty will personally be dead within 80 years, which is mentioned not to be rude but because you seem weirdly calm about this;
 
-WHEREAS, the governments of Earth possess nuclear weapons sufficient to end civilization {{< var nuclear_overkill_factor_nounit >}} times over but have not cured Alzheimer's once;
-
 WHEREAS, governments spend {{< var military_to_government_clinical_trials_spending_ratio_nounit >}} dollars on the capacity for orphan manufacturing for every one dollar spent on the trials that might cure what is actually going to kill their citizens;
 
 WHEREAS, the United States Department of Defense has "misplaced" $2.46 trillion, failed seven consecutive audits trying to find it [@pentagon-unaccounted-2-5t], and then requested additional trillions without explanation or apology;
@@ -72,9 +72,15 @@ WHEREAS, cutting one percent now, and making it stick, flattens that growth. Tha
 
 WHEREAS, the United States spent {{< var us_military_spending_1939_annual_2024usd >}} a year on its military in 1939, in today's dollars. It won World War II. Then it cut military spending by {{< var post_ww2_military_cut_pct >}} in two years [@us-post-wwii-military-spending-cut] and produced the biggest economic boom in history. Today it spends {{< var us_military_spending_current_vs_prewar_multiplier_nounit >}} times the 1939 figure, in peacetime [@us-military-spending-historical-constant-dollars]. Therefor, unless the human genome has significantly degraded in the two generations since, a one percent reallocation should be manageable;
 
+WHEREAS, only 15 diseases get their first effective treatment each year [@diseases-getting-first-treatment-annually], while {{< var diseases_without_effective_treatment >}} are still waiting, forming a queue to not die longer than any queue humans have ever voluntarily stood in;
+
+WHEREAS, there are {{< var safe_compounds_count >}} known safe compounds, and {{< var unexplored_ratio >}} of their potential uses have never been tested on any human;
+
 WHEREAS, pragmatic clinical trials built into ordinary healthcare cost {{< var dfda_pragmatic_trial_cost_per_patient >}} per patient, instead of the usual {{< var traditional_phase3_cost_per_patient >}}. That makes trials {{< var dfda_trial_cost_reduction_factor >}} cheaper. It lets {{< var dfda_trial_capacity_multiplier >}} times as many people join. The wait to test treatments for every known disease drops from {{< var status_quo_queue_clearance_years >}} to {{< var dfda_queue_clearance_years >}};
 
-WHEREAS, this expansion of trial capacity is projected to prevent approximately {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}} and {{< var dfda_trial_capacity_plus_efficacy_lag_suffering_hours >}} of human suffering [@1-pct-treaty-impact-paper-2025], which are not metaphors and refer to specific future humans with specific future plans for next Tuesday;
+WHEREAS, at that expanded capacity, treatments that would have sat undiscovered for centuries arrive {{< var dfda_trial_capacity_treatment_acceleration_years_nounit >}} years sooner on average;
+
+WHEREAS, discovering treatments centuries sooner is projected to prevent approximately {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}} and {{< var dfda_trial_capacity_plus_efficacy_lag_suffering_hours >}} of human suffering [@1-pct-treaty-impact-paper-2025], which are not metaphors and refer to specific future humans with specific future plans for next Tuesday;
 
 WHEREAS, someone you love is, at this moment, suffering from a disease;
 

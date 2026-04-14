@@ -38,22 +38,22 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 561 parameters used in the analysis, organized by type:
+This appendix documents all 560 parameters used in the analysis, organized by type:
 
 - External sources (peer-reviewed): 180
 - Calculated values: 272
-- Core definitions: 109
+- Core definitions: 108
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (272 parameters) • [External Data Sources](#sec-external) (180 parameters) • [Core Definitions](#sec-definitions) (109 parameters)
+[Calculated Values](#sec-calculated) (272 parameters) • [External Data Sources](#sec-external) (180 parameters) • [Core Definitions](#sec-definitions) (108 parameters)
 
 
 ## Calculated Values {#sec-calculated}
 
 Parameters derived from mathematical formulas and economic models.
 
-### Apocalypse Markup: $2.69 trillion {#sec-apocalypse_markup}
+### Apocalypse Markup: $2.72 trillion {#sec-apocalypse_markup}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -62,14 +62,14 @@ The Apocalypse Markup: total military spending beyond the Price of Apocalypse. T
 **Inputs**:
 
 - [Global Military Spending in 2024](#sec-global_military_spending_annual_2024) 📊: $2.72 trillion
-- [Price of Apocalypse (Minimum Viable Apocalypse)](#sec-price_of_apocalypse) 🔢: $33.1 billion
+- [Price of Apocalypse (Minimum Viable Apocalypse)](#sec-price_of_apocalypse) 🔢: $752 million
 
 $$
 \begin{gathered}
 M_{apocalypse} \\
 = Spending_{mil} - P_{apocalypse} \\
-= \$2.72T - \$33.1B \\
-= \$2.69T
+= \$2.72T - \$752M \\
+= \$2.72T
 \end{gathered}
 $$
 where:
@@ -77,8 +77,8 @@ $$
 \begin{gathered}
 P_{apocalypse} \\
 = \frac{S_{nuke}}{Overkill_{winter}} \\
-= \frac{\$92B}{2.78} \\
-= \$33.1B
+= \frac{\$92B}{122} \\
+= \$752M
 \end{gathered}
 $$
 where:
@@ -86,8 +86,8 @@ $$
 \begin{gathered}
 Overkill_{winter} \\
 = \frac{W_{global}}{W_{winter}} \\
-= \frac{12{,}200}{4{,}400} \\
-= 2.78
+= \frac{12{,}200}{100} \\
+= 122
 \end{gathered}
 $$
 *~ Medium confidence*
@@ -108,7 +108,7 @@ $$
 
 :::
 
-### Apocalypse Markup Multiplier: 82.3x {#sec-apocalypse_markup_multiplier}
+### Apocalypse Markup Multiplier: 3.6kx {#sec-apocalypse_markup_multiplier}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -117,14 +117,14 @@ How many times total military spending exceeds the Price of Apocalypse. The mark
 **Inputs**:
 
 - [Global Military Spending in 2024](#sec-global_military_spending_annual_2024) 📊: $2.72 trillion
-- [Price of Apocalypse (Minimum Viable Apocalypse)](#sec-price_of_apocalypse) 🔢: $33.1 billion
+- [Price of Apocalypse (Minimum Viable Apocalypse)](#sec-price_of_apocalypse) 🔢: $752 million
 
 $$
 \begin{gathered}
 M_{apocalypse,x} \\
 = \frac{Spending_{mil}}{P_{apocalypse}} \\
-= \frac{\$2.72T}{\$33.1B} \\
-= 82.3
+= \frac{\$2.72T}{\$752M} \\
+= 3{,}620
 \end{gathered}
 $$
 where:
@@ -132,8 +132,8 @@ $$
 \begin{gathered}
 P_{apocalypse} \\
 = \frac{S_{nuke}}{Overkill_{winter}} \\
-= \frac{\$92B}{2.78} \\
-= \$33.1B
+= \frac{\$92B}{122} \\
+= \$752M
 \end{gathered}
 $$
 where:
@@ -141,8 +141,8 @@ $$
 \begin{gathered}
 Overkill_{winter} \\
 = \frac{W_{global}}{W_{winter}} \\
-= \frac{12{,}200}{4{,}400} \\
-= 2.78
+= \frac{12{,}200}{100} \\
+= 122
 \end{gathered}
 $$
 *~ Medium confidence*
@@ -9101,23 +9101,23 @@ $$
 
 :::
 
-### Nuclear Winter Overkill Factor: 2.78x {#sec-nuclear_winter_overkill_factor}
+### Nuclear Winter Overkill Factor: 122x {#sec-nuclear_winter_overkill_factor}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-How many times the global nuclear arsenal exceeds the threshold for nuclear winter (~4,400 warheads for 150 Tg soot). The arsenal-based overkill factor for the actual extinction mechanism.
+How many times the global nuclear arsenal exceeds the threshold for civilizational collapse via regional-scale nuclear winter (~100 warheads, ~5 Tg soot, ~2 billion famine deaths, global food system collapse). The arsenal-based overkill factor against the apocalypse the median human experiences.
 
 **Inputs**:
 
 - [Global Nuclear Warhead Count](#sec-global_warhead_count) 📊: 12,241 warheads
-- [Nuclear Winter Warhead Threshold](#sec-nuclear_winter_warhead_threshold) 📊: 4,400 warheads (95% CI: 3,000 warheads - 6,000 warheads)
+- [Nuclear Winter Warhead Threshold](#sec-nuclear_winter_warhead_threshold) 📊: 100 warheads (95% CI: 50 warheads - 300 warheads)
 
 $$
 \begin{gathered}
 Overkill_{winter} \\
 = \frac{W_{global}}{W_{winter}} \\
-= \frac{12{,}200}{4{,}400} \\
-= 2.78
+= \frac{12{,}200}{100} \\
+= 122
 \end{gathered}
 $$
 
@@ -10857,23 +10857,23 @@ $$
 
 :::
 
-### Price of Apocalypse (Minimum Viable Apocalypse): $33.1 billion {#sec-price_of_apocalypse}
+### Price of Apocalypse (Minimum Viable Apocalypse): $752 million {#sec-price_of_apocalypse}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-The Price of Apocalypse: the annual cost of maintaining enough nuclear warheads to trigger nuclear winter once (~4,400 warheads, killing ~5 billion from agricultural collapse). Calculated as global nuclear spending divided by the nuclear winter overkill factor.
+The Price of Apocalypse: the annual cost of maintaining enough nuclear warheads to trigger a civilization-ending nuclear winter (~100 warheads, ~5 Tg soot, ~2 billion famine deaths, global food system collapse). Calculated as global nuclear spending divided by the nuclear winter overkill factor.
 
 **Inputs**:
 
 - [Global Nuclear Weapons Spending](#sec-global_nuclear_weapons_spending) 📊: $92 billion
-- [Nuclear Winter Overkill Factor](#sec-nuclear_winter_overkill_factor) 🔢: 2.78x
+- [Nuclear Winter Overkill Factor](#sec-nuclear_winter_overkill_factor) 🔢: 122x
 
 $$
 \begin{gathered}
 P_{apocalypse} \\
 = \frac{S_{nuke}}{Overkill_{winter}} \\
-= \frac{\$92B}{2.78} \\
-= \$33.1B
+= \frac{\$92B}{122} \\
+= \$752M
 \end{gathered}
 $$
 where:
@@ -10881,8 +10881,8 @@ $$
 \begin{gathered}
 Overkill_{winter} \\
 = \frac{W_{global}}{W_{winter}} \\
-= \frac{12{,}200}{4{,}400} \\
-= 2.78
+= \frac{12{,}200}{100} \\
+= 122
 \end{gathered}
 $$
 *~ Medium confidence*
@@ -25503,19 +25503,19 @@ Typical cost per QALY for standard NIH-funded medical research portfolio. Reflec
 
 :::
 
-### Nuclear Winter Warhead Threshold: 4,400 warheads {#sec-nuclear_winter_warhead_threshold}
+### Nuclear Winter Warhead Threshold: 100 warheads {#sec-nuclear_winter_warhead_threshold}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Approximate number of warheads needed to trigger nuclear winter (150 Tg soot), killing ~5 billion people from agricultural collapse. Based on Xia et al. 2022, Nature Food, modeling a US-Russia exchange.
+Approximate number of warheads needed to trigger a regional-scale nuclear winter sufficient to collapse the global food system. A 100-warhead regional exchange (Robock/Toon 2007, extended by Xia et al. 2022) injects ~5 Tg of soot into the stratosphere, drops global temperatures ~1.8C for a decade, shortens growing seasons worldwide, and kills ~2 billion people from famine. Civilization as the median human experiences it does not survive. Xia 2022 shows total agricultural collapse (~5B deaths) at ~4,400 warheads; this parameter uses the lower threshold for median-human civilizational collapse.
 
 **Source**: [@nuke-winter-150tg]
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [3,000 warheads, 6,000 warheads] • Distribution: Uniform
+**Technical**: 95% CI: [50 warheads, 300 warheads] • Distribution: Uniform
 
-**What this means**: There's significant uncertainty here. The true value likely falls between 3,000 warheads and 6,000 warheads (±34%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: This estimate is highly uncertain. The true value likely falls between 50 warheads and 300 warheads (±125%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The uniform distribution means any value in the range is equally likely.*
 
@@ -28420,20 +28420,6 @@ Standard discount rate for NPV analysis (3% annual, social discount rate)
 ::: {.callout-note collapse="true" title="📊 Details"}
 
 Standard time horizon for NPV analysis
-
-#### Uncertainty Range
-
-**Technical**: Distribution: Fixed
-
-*Core definition*
-
-:::
-
-### Nuclear Overkill Factor: 20x {#sec-nuclear_overkill_factor}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-How many times the global nuclear arsenal can kill Earth's entire population. Based on total potential deaths from existing arsenals (~158.4B) divided by global population (~8B). See nuclear-weapon-cost-and-casualties appendix.
 
 #### Uncertainty Range
 

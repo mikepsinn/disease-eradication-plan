@@ -17,9 +17,9 @@ setup_chart_style()
 
 # Parameter values
 
-central_value = 4400.0
-low = 3000
-high = 6000
+central_value = 100.0
+low = 50
+high = 300
 dist_type = "uniform"
 display_name = "Nuclear Winter Warhead Threshold"
 unit = "warheads"

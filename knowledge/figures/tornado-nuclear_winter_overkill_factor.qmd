@@ -20,14 +20,14 @@ display_name = "Nuclear Winter Overkill Factor"
 
 # Baseline and units
 
-baseline = 2.7820454545454547
+baseline = 122.41
 
 # Tornado data from sensitivity analysis
 
 drivers = ['NUCLEAR_WINTER_WARHEAD_THRESHOLD']
 driver_labels = ['Nuclear Winter Warhead Threshold']
-impacts_low = [1.2982878787878782]
-impacts_high = [-0.7418787878787882]
+impacts_low = [122.41]
+impacts_high = [-81.60666666666665]
 
 # Convert deltas to absolute values (baseline + delta)
 

@@ -20,14 +20,14 @@ display_name = "Price of Apocalypse (Minimum Viable Apocalypse)"
 
 # Baseline and units
 
-baseline = 33069193693.325706
+baseline = 751572583.9392207
 
 # Tornado data from sensitivity analysis
 
 drivers = ['NUCLEAR_WINTER_WARHEAD_THRESHOLD']
 driver_labels = ['Nuclear Winter Warhead Threshold']
-impacts_low = [-10522016175.149086]
-impacts_high = [12025161343.027534]
+impacts_low = [-375786291.96961033]
+impacts_high = [1503145167.878441]
 
 # Convert deltas to absolute values (baseline + delta)
 
