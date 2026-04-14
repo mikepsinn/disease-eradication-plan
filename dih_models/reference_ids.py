@@ -1230,6 +1230,7 @@ class ReferenceID(str, Enum):
     WISHOCRACY2024 = "wishocracy2024"
     WORDPRESS_MULTI_BILLION_DOLLAR_ECONOMY = "wordpress-multi-billion-dollar-economy"
     WORLD_BANK_DRC_SCD_2018 = "world-bank-drc-scd-2018"
+    WORLD_BANK_GOVERNMENT_EXPENSE_PCT_GDP = "world-bank-government-expense-pct-gdp"
     WORLD_BANK_GROSS_SAVINGS_2023 = "world-bank-gross-savings-2023"
     WORLD_BANK_POVERTY_ERADICATION_COST = "world-bank-poverty-eradication-cost"
     WORLD_BANK_TRADE_DISRUPTION_CONFLICT = "world-bank-trade-disruption-conflict"
