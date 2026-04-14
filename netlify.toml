@@ -25,15 +25,21 @@
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 
+# Root-level CSS/JS are NOT content-hashed (e.g. /styles.css, /book-overrides.css).
+# Fresh 1hr, serve-stale-while-revalidating for 24hr. SCSS/CSS edits propagate
+# within ~1hr everywhere without a revalidation roundtrip on repeat visitors.
+# If a change is urgent, purge the Netlify+Cloudflare caches manually on deploy.
+# Netlify's `*` does not cross `/`, so these rules only match root-level files —
+# hashed assets under /site_libs/** keep Netlify's default long cache.
 [[headers]]
   for = "/*.css"
   [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
+    Cache-Control = "public, max-age=3600, stale-while-revalidate=86400"
 
 [[headers]]
   for = "/*.js"
   [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
+    Cache-Control = "public, max-age=3600, stale-while-revalidate=86400"
 
 # Domain redirects - redirect old dih.earth domains to warondisease.org
 [[redirects]]
