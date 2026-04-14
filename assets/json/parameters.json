@@ -4492,7 +4492,7 @@
       "sourceRef": "calculated",
       "confidence": "low",
       "formula": "PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT - TREATY_ANNUAL_FUNDING",
-      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/economics/1-pct-treaty-impact.html"
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/economics/peace-dividend.html"
     },
     "PEACE_DIVIDEND_DIRECT_COSTS": {
       "value": 76570000000.0,
@@ -4680,8 +4680,7 @@
       "sourceType": "calculated",
       "sourceRef": null,
       "confidence": "high",
-      "formula": "TREATY_CUMULATIVE_20YR_WITH_RATCHET + WAR_COSTS_SAVED_PEACE_TRAJECTORY_20YR",
-      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/economics/peace-dividend.html"
+      "formula": "TREATY_CUMULATIVE_20YR_WITH_RATCHET + WAR_COSTS_SAVED_PEACE_TRAJECTORY_20YR"
     },
     "PERSONAL_LIFETIME_WEALTH": {
       "value": 3000000.0,
@@ -7428,8 +7427,7 @@
       "sourceType": "calculated",
       "sourceRef": null,
       "confidence": "high",
-      "formula": "GLOBAL_ANNUAL_DIRECT_INDIRECT_WAR_COST × (0.01×3 + 0.02×4 + 0.05×5 + 0.10×8)",
-      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/economics/peace-dividend.html"
+      "formula": "GLOBAL_ANNUAL_DIRECT_INDIRECT_WAR_COST × (0.01×3 + 0.02×4 + 0.05×5 + 0.10×8)"
     },
     "WAR_COUNTERFACTUAL_ANNUAL_GROWTH_BOOST": {
       "value": 0.026,

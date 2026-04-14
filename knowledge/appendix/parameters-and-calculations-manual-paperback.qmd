@@ -38,15 +38,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 415 parameters used in the analysis, organized by type:
+This appendix documents all 414 parameters used in the analysis, organized by type:
 
 - External sources (peer-reviewed): 147
-- Calculated values: 201
+- Calculated values: 200
 - Core definitions: 67
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (201 parameters) • [External Data Sources](#sec-external) (147 parameters) • [Core Definitions](#sec-definitions) (67 parameters)
+[Calculated Values](#sec-calculated) (200 parameters) • [External Data Sources](#sec-external) (147 parameters) • [Core Definitions](#sec-definitions) (67 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -6206,6 +6206,149 @@ $$
 
 :::
 
+### Conflict Reduction Benefits from 1% Less Military Spending: $86.4 billion {#sec-peace_dividend_conflict_reduction}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Conflict reduction benefits from 1% less military spending (lower confidence - assumes proportional relationship)
+
+**Inputs**:
+
+- [Annual Peace Dividend from 1% Reduction in Total War Costs](#sec-peace_dividend_annual_societal_benefit) 🔢: $114 billion
+- [Annual Funding from 1% of Global Military Spending Redirected to DIH](#sec-treaty_annual_funding) 🔢: $27.2 billion
+
+$$
+\begin{gathered}
+Savings_{conflict} \\
+= Benefit_{peace,soc} - Funding_{treaty} \\
+= \$114B - \$27.2B \\
+= \$86.4B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Benefit_{peace,soc} \\
+= Cost_{war,total} \times Reduce_{treaty} \\
+= \$11.4T \times 1\% \\
+= \$114B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,total} \\
+= Cost_{war,direct} + Cost_{war,indirect} \\
+= \$7.66T + \$3.7T \\
+= \$11.4T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,direct} \\
+= Loss_{life,conflict} + Damage_{infra,total} \\
++ Disruption_{trade} + Spending_{mil} \\
+= \$2.45T + \$1.88T + \$616B + \$2.72T \\
+= \$7.66T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Loss_{life,conflict} \\
+= Cost_{combat,human} + Cost_{state,human} \\
++ Cost_{terror,human} \\
+= \$2.34T + \$27B + \$83B \\
+= \$2.45T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{combat,human} \\
+= Deaths_{combat} \times VSL \\
+= 234{,}000 \times \$10M \\
+= \$2.34T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{state,human} \\
+= Deaths_{state} \times VSL \\
+= 2{,}700 \times \$10M \\
+= \$27B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{terror,human} \\
+= Deaths_{terror} \times VSL \\
+= 8{,}300 \times \$10M \\
+= \$83B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Damage_{infra,total} \\
+= Damage_{comms} + Damage_{edu} + Damage_{energy} \\
++ Damage_{health} + Damage_{transport} + Damage_{water} \\
+= \$298B + \$234B + \$422B + \$166B + \$487B + \$268B \\
+= \$1.88T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Disruption_{trade} \\
+= Disruption_{currency} + Disruption_{energy} \\
++ Disruption_{shipping} + Disruption_{supply} \\
+= \$57.4B + \$125B + \$247B + \$187B \\
+= \$616B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,indirect} \\
+= Damage_{env} + Loss_{growth,mil} + Loss_{capital,conflict} \\
++ Cost_{psych} + Cost_{refugee} + Cost_{vet} \\
+= \$100B + \$2.72T + \$300B + \$232B + \$150B + \$200B \\
+= \$3.7T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Funding_{treaty} \\
+= Spending_{mil} \times Reduce_{treaty} \\
+= \$2.72T \times 1\% \\
+= \$27.2B
+\end{gathered}
+$$
+**Methodology**: [Direct Calculation](#calculated)
+
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-peace_dividend_conflict_reduction.qmd >}}
+
+{{< include ../figures/sensitivity-table-peace_dividend_conflict_reduction.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-peace_dividend_conflict_reduction.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-peace_dividend_conflict_reduction.qmd >}}
+
+:::
+
 ### Annual Savings from 1% Reduction in Direct War Costs: $76.6 billion {#sec-peace_dividend_direct_costs}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -6921,147 +7064,6 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-peace_dividend_share_of_80yr_baseline_war_cost.qmd >}}
-
-:::
-
-### Peace Trajectory Total Differential (20yr): $16.3 trillion {#sec-peace_trajectory_total_differential_20yr}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Total 20-year value of the peace trajectory: research funding redirected to medicine plus war externality costs avoided. The full differential between the IAB trajectory and the current trajectory. Does not include existential risk reduction.
-
-**Inputs**:
-
-- [Cumulative Treaty Funding over 20 Years with IAB Ratchet Expansion](#sec-treaty_cumulative_20yr_with_ratchet) 🔢: $3.16 trillion
-- [War Costs Saved via Peace Trajectory (20yr)](#sec-war_costs_saved_peace_trajectory_20yr) 🔢: $13.2 trillion
-
-$$
-\begin{gathered}
-V_{peace,20yr} \\
-= Fund_{20yr,ratchet} + Savings_{war,20yr} \\
-= \$3.16T + \$13.2T \\
-= \$16.3T
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Fund_{20yr,ratchet} \\
-= Spending_{mil} \times 1.16 \\
-= \$2.72T \times 1.16 \\
-= \$3.16T
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Savings_{war,20yr} \\
-= Cost_{war,total} \times 1.16 \\
-= \$11.4T \times 1.16 \\
-= \$13.2T
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Cost_{war,total} \\
-= Cost_{war,direct} + Cost_{war,indirect} \\
-= \$7.66T + \$3.7T \\
-= \$11.4T
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Cost_{war,direct} \\
-= Loss_{life,conflict} + Damage_{infra,total} \\
-+ Disruption_{trade} + Spending_{mil} \\
-= \$2.45T + \$1.88T + \$616B + \$2.72T \\
-= \$7.66T
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Loss_{life,conflict} \\
-= Cost_{combat,human} + Cost_{state,human} \\
-+ Cost_{terror,human} \\
-= \$2.34T + \$27B + \$83B \\
-= \$2.45T
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Cost_{combat,human} \\
-= Deaths_{combat} \times VSL \\
-= 234{,}000 \times \$10M \\
-= \$2.34T
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Cost_{state,human} \\
-= Deaths_{state} \times VSL \\
-= 2{,}700 \times \$10M \\
-= \$27B
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Cost_{terror,human} \\
-= Deaths_{terror} \times VSL \\
-= 8{,}300 \times \$10M \\
-= \$83B
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Damage_{infra,total} \\
-= Damage_{comms} + Damage_{edu} + Damage_{energy} \\
-+ Damage_{health} + Damage_{transport} + Damage_{water} \\
-= \$298B + \$234B + \$422B + \$166B + \$487B + \$268B \\
-= \$1.88T
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Disruption_{trade} \\
-= Disruption_{currency} + Disruption_{energy} \\
-+ Disruption_{shipping} + Disruption_{supply} \\
-= \$57.4B + \$125B + \$247B + \$187B \\
-= \$616B
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Cost_{war,indirect} \\
-= Damage_{env} + Loss_{growth,mil} + Loss_{capital,conflict} \\
-+ Cost_{psych} + Cost_{refugee} + Cost_{vet} \\
-= \$100B + \$2.72T + \$300B + \$232B + \$150B + \$200B \\
-= \$3.7T
-\end{gathered}
-$$
-*✓ High confidence*
-
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-peace_trajectory_total_differential_20yr.qmd >}}
-
-{{< include ../figures/sensitivity-table-peace_trajectory_total_differential_20yr.qmd >}}
-
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-peace_trajectory_total_differential_20yr.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-peace_trajectory_total_differential_20yr.qmd >}}
 
 :::
 
@@ -14048,128 +14050,6 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-war_costs_cumulative_20yr_current_trajectory.qmd >}}
-
-:::
-
-### War Costs Saved via Peace Trajectory (20yr): $13.2 trillion {#sec-war_costs_saved_peace_trajectory_20yr}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Cumulative war costs saved over 20 years as treaty expands via IAB ratchet. Assumes war costs decline proportionally to spending cuts (e=1.0). Conservative: Pape research suggests e>1.0 due to terrorism feedback loops.
-
-**Inputs**:
-
-- [Total Annual Cost of War Worldwide](#sec-global_annual_direct_indirect_war_cost) 🔢: $11.4 trillion
-
-$$
-\begin{gathered}
-Savings_{war,20yr} \\
-= Cost_{war,total} \times 1.16 \\
-= \$11.4T \times 1.16 \\
-= \$13.2T
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Cost_{war,total} \\
-= Cost_{war,direct} + Cost_{war,indirect} \\
-= \$7.66T + \$3.7T \\
-= \$11.4T
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Cost_{war,direct} \\
-= Loss_{life,conflict} + Damage_{infra,total} \\
-+ Disruption_{trade} + Spending_{mil} \\
-= \$2.45T + \$1.88T + \$616B + \$2.72T \\
-= \$7.66T
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Loss_{life,conflict} \\
-= Cost_{combat,human} + Cost_{state,human} \\
-+ Cost_{terror,human} \\
-= \$2.34T + \$27B + \$83B \\
-= \$2.45T
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Cost_{combat,human} \\
-= Deaths_{combat} \times VSL \\
-= 234{,}000 \times \$10M \\
-= \$2.34T
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Cost_{state,human} \\
-= Deaths_{state} \times VSL \\
-= 2{,}700 \times \$10M \\
-= \$27B
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Cost_{terror,human} \\
-= Deaths_{terror} \times VSL \\
-= 8{,}300 \times \$10M \\
-= \$83B
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Damage_{infra,total} \\
-= Damage_{comms} + Damage_{edu} + Damage_{energy} \\
-+ Damage_{health} + Damage_{transport} + Damage_{water} \\
-= \$298B + \$234B + \$422B + \$166B + \$487B + \$268B \\
-= \$1.88T
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Disruption_{trade} \\
-= Disruption_{currency} + Disruption_{energy} \\
-+ Disruption_{shipping} + Disruption_{supply} \\
-= \$57.4B + \$125B + \$247B + \$187B \\
-= \$616B
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Cost_{war,indirect} \\
-= Damage_{env} + Loss_{growth,mil} + Loss_{capital,conflict} \\
-+ Cost_{psych} + Cost_{refugee} + Cost_{vet} \\
-= \$100B + \$2.72T + \$300B + \$232B + \$150B + \$200B \\
-= \$3.7T
-\end{gathered}
-$$
-*✓ High confidence*
-
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-war_costs_saved_peace_trajectory_20yr.qmd >}}
-
-{{< include ../figures/sensitivity-table-war_costs_saved_peace_trajectory_20yr.qmd >}}
-
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-war_costs_saved_peace_trajectory_20yr.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-war_costs_saved_peace_trajectory_20yr.qmd >}}
 
 :::
 

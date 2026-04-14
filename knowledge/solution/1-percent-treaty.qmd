@@ -60,8 +60,6 @@ WHEREAS, four-year-olds eventually get tired and take a nap, and these governmen
 
 WHEREAS, the governments of Earth possess nuclear weapons sufficient to end civilization {{< var nuclear_winter_overkill_factor_nounit >}} times but have not cured Alzheimer's once;
 
-WHEREAS, global militaries would retain capacity for 121.2 apocalypses, which is functionally indistinguishable from {{< var nuclear_winter_overkill_factor_nounit >}} times over, because civilization only ends in whole numbers, and after the first apocalypse the remaining 121 are redundant;
-
 WHEREAS, governments spend {{< var global_military_spending_annual_2024 >}} a year on their capacity for mass murder, which is enough to buy {{< var bullets_per_person_annual_nounit >}} bullets for every human alive every year, which is more bullets than any human has a reasonable use for;
 
 WHEREAS, governments spend {{< var military_to_government_clinical_trials_spending_ratio_nounit >}} dollars on the capacity for orphan manufacturing for every one dollar spent on the trials that might cure what is actually going to kill their citizens;
@@ -69,8 +67,6 @@ WHEREAS, governments spend {{< var military_to_government_clinical_trials_spendi
 WHEREAS, the United States Department of Defense has "misplaced" $2.46 trillion, failed seven consecutive audits trying to find it [@pentagon-unaccounted-2-5t], and then requested additional trillions without explanation or apology;
 
 WHEREAS, the $27 billion this treaty requests is smaller than a rounding error on the $2.46 trillion the Pentagon has already "misplaced";
-
-WHEREAS, politicians are coin-operated, and the coin is currently supplied by the manufacturers of the things that kill the politicians' constituents, which is a loop that converts good intentions into missiles automatically, and the signatories propose not to ask the politicians to become better people (which is clearly out of the question) but to replace the coin;
 
 WHEREAS, the United States spent {{< var us_military_spending_1939_annual_2024usd >}} a year on its military in 1939, in today's dollars. It won World War II. Then it cut military spending by {{< var post_ww2_military_cut_pct >}} in two years [@us-post-wwii-military-spending-cut] and produced the biggest economic boom in history. Today it spends {{< var us_military_spending_current_vs_prewar_multiplier_nounit >}} times the 1939 figure, in peacetime [@us-military-spending-historical-constant-dollars]. Therefore, unless the human genome has significantly degraded in the two generations since, a one percent reallocation should be manageable;
 
