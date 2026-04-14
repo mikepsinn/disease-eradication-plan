@@ -82,9 +82,9 @@ WHEREAS, your chance of dying in a terrorist attack is approximately 1 in {{< va
 
 WHEREAS, only 15 diseases get their first effective treatment each year [@diseases-getting-first-treatment-annually], while {{< var diseases_without_effective_treatment >}} are still waiting, forming a queue to not die longer than any queue humans have ever voluntarily stood in;
 
-WHEREAS, there are {{< var safe_compounds_count >}} known safe compounds, and {{< var unexplored_ratio >}} of their potential uses have never been tested on any human;
+WHEREAS, there are {{< var safe_compounds_count_nounit >}} known safe treatments which have never been tested for {{< var unexplored_ratio >}} of their potential uses;
 
-WHEREAS, pragmatic clinical trials built into ordinary healthcare cost {{< var dfda_pragmatic_trial_cost_per_patient >}} per patient, instead of the usual {{< var traditional_phase3_cost_per_patient >}}. That makes trials {{< var dfda_trial_cost_reduction_factor >}} cheaper. It lets {{< var dfda_trial_capacity_multiplier >}} times as many people join. The wait to test treatments for every known disease drops from {{< var status_quo_queue_clearance_years >}} to {{< var dfda_queue_clearance_years >}};
+WHEREAS, pragmatic clinical trials built into ordinary healthcare cost {{< var dfda_pragmatic_trial_cost_per_patient >}} per patient, instead of the usual {{< var traditional_phase3_cost_per_patient >}}. That makes trials {{< var dfda_trial_cost_reduction_factor_nounit >}} times cheaper. It lets {{< var dfda_trial_capacity_multiplier_nounit >}} times as many people join. The wait to test treatments for every known disease drops from {{< var status_quo_queue_clearance_years >}} to {{< var dfda_queue_clearance_years >}};
 
 WHEREAS, at that expanded capacity, treatments that would have sat undiscovered for centuries arrive {{< var dfda_trial_capacity_treatment_acceleration_years_nounit >}} years sooner on average;
 
