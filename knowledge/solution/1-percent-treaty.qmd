@@ -56,9 +56,7 @@ WHEREAS, murdering {{< var war_deaths_since_1900_nounit >}} people is the opposi
 
 WHEREAS, the governments of Earth have been hitting each other for roughly 10,000 years because the other one hit them last;
 
-WHEREAS, this is the conflict resolution strategy of four-year-olds;
-
-WHEREAS, four-year-olds eventually get tired and take a nap, and these governments have failed to apply naps to foreign policy;
+WHEREAS, this is the conflict resolution strategy of four-year-olds except four-year-olds eventually get tired and take a nap, and these governments have failed to apply naps to foreign policy;
 
 WHEREAS, the governments of Earth possess nuclear weapons sufficient to end civilization {{< var nuclear_winter_overkill_factor_nounit >}} times but have not cured Alzheimer's once;
 
@@ -66,9 +64,9 @@ WHEREAS, governments spend {{< var global_military_spending_annual_2024 >}} a ye
 
 WHEREAS, governments spend {{< var military_to_government_clinical_trials_spending_ratio_nounit >}} dollars on the capacity for orphan manufacturing for every one dollar spent on the trials that might cure what is actually going to kill their citizens;
 
-WHEREAS, the United States Department of Defense has "misplaced" $2.46 trillion, failed seven consecutive audits trying to find it [@pentagon-unaccounted-2-5t], and then requested additional trillions without explanation or apology;
+WHEREAS, the Department of "Defense" has "misplaced" $2.46 trillion, failed seven consecutive audits trying to find it [@pentagon-unaccounted-2-5t], and then requested additional trillions without explanation or apology;
 
-WHEREAS, the United States spent {{< var us_military_spending_1939_annual_2024usd >}} a year on its military in 1939, in today's dollars. It won World War II. Then it cut military spending by {{< var post_ww2_military_cut_pct >}} in two years [@us-post-wwii-military-spending-cut] and produced the biggest economic boom in history. Today it spends {{< var us_military_spending_current_vs_prewar_multiplier_nounit >}} times the 1939 figure, in peacetime [@us-military-spending-historical-constant-dollars]. Therefore, unless the human genome has significantly degraded in the two generations since, a one percent reallocation should be manageable;
+WHEREAS, pre-WW2 U.S. military spending was {{< var us_1939_military_spending_pct_lower_than_current >}} lower than today's peacetime budget, in constant dollars [@us-military-spending-historical-constant-dollars]. The U.S. still won World War II, then cut spending {{< var post_ww2_military_cut_pct >}} further in two years [@us-post-wwii-military-spending-cut] and produced the biggest economic boom in history. Unless the human genome has significantly degraded in the two generations since, a one percent reallocation should be manageable;
 
 WHEREAS, without the cumulative losses from war and disease the average human would earn {{< var war_counterfactual_gdp_per_capita >}} a year instead of {{< var global_avg_income_2025 >}} [@lost-human-capital-war-cost]. Every citizen pays twice. Once in taxes that built the weapons. Again, every year, in wages they do not earn, because the scientists and engineers and builders who would have made the world richer were killed before they could;
 

@@ -1,0 +1,9 @@
+**Monte Carlo note:** Pre-WW2 US Military Spending % Lower than Current is effectively deterministic across the current sampled inputs, so a histogram would mostly visualize floating-point residue instead of real uncertainty. (range 0.000e+00 <= tolerance 1.000e-12)
+
+| Statistic | Value |
+|:----------|------:|
+| Baseline (deterministic) | 96.7% |
+| Mean (expected value) | 96.7% |
+| Median (50th percentile) | 96.7% |
+| Standard Deviation | 2.22e-14% |
+| 90% Range (5th-95th percentile) | [96.7%, 96.7%] |

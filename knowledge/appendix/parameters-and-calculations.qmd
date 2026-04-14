@@ -38,15 +38,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 667 parameters used in the analysis, organized by type:
+This appendix documents all 668 parameters used in the analysis, organized by type:
 
 - External sources (peer-reviewed): 214
-- Calculated values: 318
+- Calculated values: 319
 - Core definitions: 135
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (318 parameters) • [External Data Sources](#sec-external) (214 parameters) • [Core Definitions](#sec-definitions) (135 parameters)
+[Calculated Values](#sec-calculated) (319 parameters) • [External Data Sources](#sec-external) (214 parameters) • [Core Definitions](#sec-definitions) (135 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -22987,6 +22987,38 @@ $$
 - [Earth Optimization Protocol v1](../strategy/earth-optimization-protocol-v1.html)
 - [The 1% Treaty: Harnessing Greed to Eradicate Disease](../economics/1-pct-treaty-impact.html)
 - [Ubiquitous Pragmatic Trial Impact Analysis: How to Prevent a Year of Death and Suffering for 84 Cents](../appendix/dfda-impact-paper.html)
+
+:::
+
+### Pre-WW2 US Military Spending % Lower than Current: 96.7% {#sec-us_1939_military_spending_pct_lower_than_current}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+How much lower pre-WW2 (1939) US military spending was than today's peacetime budget, in constant 2024 dollars
+
+**Inputs**:
+
+- [US Military Spending in 1939 (Constant 2024 Dollars)](#sec-us_military_spending_1939_annual_2024usd) 📊: $29 billion
+- [US Military Spending in 2024](#sec-us_military_spending_2024_annual) 📊: $886 billion
+
+$$
+\begin{gathered}
+Pct_{1939<2024} \\
+= 1 - \frac{Spending_{US,1939}}{Spending_{US,2024}} \\
+= 1 - \frac{\$29B}{\$886B} \\
+= 96.7\%
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-us_1939_military_spending_pct_lower_than_current.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-us_1939_military_spending_pct_lower_than_current.qmd >}}
 
 :::
 

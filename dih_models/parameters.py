@@ -8966,6 +8966,19 @@ US_MILITARY_SPENDING_CURRENT_VS_PREWAR_MULTIPLIER = Parameter(
     latex_symbol=r"Ratio_{US,2024:1939}",
 )
 
+US_1939_MILITARY_SPENDING_PCT_LOWER_THAN_CURRENT = Parameter(
+    1 - (US_MILITARY_SPENDING_1939_ANNUAL_2024USD / US_MILITARY_SPENDING_2024_ANNUAL),
+    source_type="calculated",
+    description="How much lower pre-WW2 (1939) US military spending was than today's peacetime budget, in constant 2024 dollars",
+    display_name="Pre-WW2 US Military Spending % Lower than Current",
+    unit="percent",
+    formula="1 - (US_MILITARY_SPENDING_1939 / US_MILITARY_SPENDING_2024)",
+    keywords=["97%", "pre-ww2", "peacetime", "ratchet", "historical baseline"],
+    inputs=["US_MILITARY_SPENDING_1939_ANNUAL_2024USD", "US_MILITARY_SPENDING_2024_ANNUAL"],
+    compute=lambda ctx: 1 - (ctx["US_MILITARY_SPENDING_1939_ANNUAL_2024USD"] / ctx["US_MILITARY_SPENDING_2024_ANNUAL"]),
+    latex_symbol=r"Pct_{1939<2024}",
+)
+
 SWITZERLAND_DEFENSE_SPENDING_PCT = Parameter(
     0.007,
     source_ref=ReferenceID.SWISS_MILITARY_BUDGET_0_7_PCT_GDP,
