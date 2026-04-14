@@ -38,15 +38,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 414 parameters used in the analysis, organized by type:
+This appendix documents all 413 parameters used in the analysis, organized by type:
 
 - External sources (peer-reviewed): 145
-- Calculated values: 201
+- Calculated values: 200
 - Core definitions: 68
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (201 parameters) • [External Data Sources](#sec-external) (145 parameters) • [Core Definitions](#sec-definitions) (68 parameters)
+[Calculated Values](#sec-calculated) (200 parameters) • [External Data Sources](#sec-external) (145 parameters) • [Core Definitions](#sec-definitions) (68 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -3541,52 +3541,6 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-diseases_without_effective_treatment.qmd >}}
-
-:::
-
-### Ratio of Annual Disease Deaths to War Deaths: 225:1 {#sec-disease_vs_war_deaths_ratio}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Ratio of annual disease deaths to war deaths
-
-**Inputs**:
-
-- [Annual Deaths from All Diseases and Aging Globally](#sec-global_annual_deaths_curable_diseases) 📊: 55 million deaths/year (SE: ±5 million deaths/year)
-- [Total Annual Conflict Deaths Globally](#sec-global_annual_conflict_deaths_total) 🔢: 245 thousand deaths/year
-
-$$
-\begin{gathered}
-Ratio_{dis:war} \\
-= \frac{Deaths_{curable,ann}}{Deaths_{conflict}} \\
-= \frac{55M}{245{,}000} \\
-= 225
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Deaths_{conflict} \\
-= Deaths_{combat} + Deaths_{state} + Deaths_{terror} \\
-= 234{,}000 + 2{,}700 + 8{,}300 \\
-= 245{,}000
-\end{gathered}
-$$
-*✓ High confidence*
-
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-disease_vs_war_deaths_ratio.qmd >}}
-
-{{< include ../figures/sensitivity-table-disease_vs_war_deaths_ratio.qmd >}}
-
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-disease_vs_war_deaths_ratio.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-disease_vs_war_deaths_ratio.qmd >}}
 
 :::
 

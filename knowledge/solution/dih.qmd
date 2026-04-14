@@ -164,6 +164,16 @@ Your [1% Treaty](1-percent-treaty.qmd) redirects **{{< var treaty_annual_funding
 | [Incentive Alignment Bonds](incentive-alignment-bonds.qmd) | {{< var victory_bond_funding_pct >}} + {{< var iab_political_incentive_funding_pct >}} | {{< var victory_bond_annual_payout >}} + {{< var iab_political_incentive_funding_annual >}} | Align investors and politicians with outcomes |
 | **Research treasury** | {{< var dih_treasury_medical_research_pct >}} | **{{< var dih_treasury_to_medical_research_annual >}}** | Allocated via [Wishocracy](wishocracy.qmd) (~97% to DALY-weighted patient subsidies, ~3% to infrastructure) |
 
+### Year One Projected Outcomes
+
+Only {{< var current_trial_slots_available_nounit >}} humans participate in drug trials each year, out of {{< var current_disease_patients_global >}} with chronic disease. That's the current participation rate. Your species has built a lifeboat that holds two people and a queue that holds a billion. Here's what happens when the research treasury turns on:
+
+| | Current | With Treaty |
+|:---|:---|:---|
+| Cost per patient | {{< var traditional_phase3_cost_per_patient >}} | {{< var dfda_pragmatic_trial_cost_per_patient >}} ({{< var dfda_trial_cost_reduction_factor >}} cheaper) |
+| Govt trial funding | {{< var global_government_clinical_trials_spending_annual >}} | + {{< var dih_treasury_to_medical_research_annual >}} from treaty |
+| Participants/year | {{< var current_trial_slots_available >}} | {{< var dih_patients_fundable_annually_nounit >}} ({{< var dfda_trial_capacity_multiplier >}} increase) |
+
 ### What Gets Funded: Market Failures Only
 
 Most research allocation happens automatically. Patients choose trials, money follows. Markets handle it the way markets handle most things: imperfectly but vigorously. The [1% Treaty](1-percent-treaty.qmd) Fund steps in only for the things markets genuinely can't do.
