@@ -1,6 +1,6 @@
 ---
-title: Why Every Nonprofit Should Support a 1% treaty
-description: Nonprofits fighting disease currently compete for the same shrinking pile of donor money. A 1% treaty creates $27.2 billion in new funding. Every charitable organization can stop fighting over crumbs and start fighting for the bakery, if someone tells them the bakery exists.
+title: How to Coordinate 10 Million Nonprofits
+description: Your species has roughly 10 million nonprofits and cannot cure Alzheimer's. This chapter explains why, then supplies the exact emails, legal memo, and four-stage activation funnel for fixing it.
 published: true
 tags:
   - strategy
@@ -9,9 +9,11 @@ tags:
   - resource-allocation
   - 1-percent-treaty
   - game-theory
+  - playbook
+  - outreach
 image: /assets/og-images/knowledge/strategy/nonprofit-coalition-strategy-og-retro-academic.jpg
 podcast-image: /assets/podcast/nonprofit-coalition-strategy-podcast.jpg
-feed-date: '2026-03-31'
+feed-date: '2026-04-15'
 youtube-thumbnail: /assets/podcast/nonprofit-coalition-strategy-youtube.jpg
 scores:
   quality: 7
@@ -141,3 +143,290 @@ You have two options. Option A: keep competing for finite grants forever, writin
 The dogs need to turn around and notice the banquet. I've been watching them fight over the bowl for 80 years. The banquet is right there. It has always been right there. The dogs are very focused. They have written reports about the bowl. They have held conferences about bowl strategy. They have hired consultants to optimize bowl access. None of them have turned around.
 
 Turn around.
+
+## The Four Stages
+
+Everything above this heading was the *why*. Everything below it is the *how*. Getting a nonprofit to support the treaty is four concrete actions, performed in order. Each one has a matching artifact in this chapter.
+
+**Stage 1. The organization endorses the treaty.** Logo on [1percenttreaty.org](https://1percenttreaty.org), name on the coalition page, one public statement. Artifacts: [The Outreach Email](#the-outreach-email), [The Endorsement Form](#the-endorsement-form), [This Is Not Lobbying (The Legal Memo)](#this-is-not-lobbying-the-legal-memo), [Objection Handling](#objection-handling) for whoever forwards the "we need to think about this" response.
+
+**Stage 2. The organization shares the treaty with its members.** One newsletter mention, one email, one social post. The nonprofit's distribution list becomes the campaign's distribution list for a single day. Artifacts: [The Member Activation Email](#the-member-activation-email), [The Social Post Pack](#the-social-post-pack).
+
+**Stage 3. The members sign the treaty** at [1percenttreaty.org](https://1percenttreaty.org). Every signature is one more data point in a pressure system pointed at 193 heads of state. The nonprofit does not need to do anything to cause this step; the member activation email does it automatically by linking.
+
+**Stage 4. The members notify their head of state that the signing task is overdue.** At [1percenttreaty.org/tasks](https://1percenttreaty.org/tasks), every head of state has a public page showing their unsigned 1% Treaty task and its cost-of-delay clock. A member looks up their country, clicks "notify," and the head of state receives a polite email from a registered voter in their jurisdiction pointing out that the task is still outstanding. This is the stage that matters, because 193 heads of state are the entire bottleneck and they currently receive approximately zero emails about it.
+
+Stage 1 unlocks Stages 2 through 4. The nonprofit's only real job is Stages 1 and 2. The members do Stages 3 and 4, because the members are the actual leverage. A nonprofit has an email list. Lockheed Martin has a lobbying budget. The email list wins when it knows what to click.
+
+The rest of this chapter is the "knows what to click" part.
+
+## The Cost-Effectiveness Argument
+
+Nonprofits evaluate new asks by comparing the cost per disability-adjusted life year (DALY) averted against whatever else they could be funding. Insecticide-treated bed nets are the GiveWell benchmark for "unusually cost-effective." Here is how the treaty compares, on three separate accounting methods:
+
+| Measurement | Cost per DALY averted |
+|---|---|
+| Bed nets (GiveWell benchmark) | {{< var bed_nets_cost_per_daly >}} |
+| Direct pragmatic trial funding | {{< var dfda_direct_funding_cost_per_daly >}} |
+| Treaty advocacy campaign | {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}} |
+| Net of lifetime peace dividend | Negative (pays for itself) |
+
+**Direct trial funding.** A donor pays for pragmatic trials at {{< var dfda_pragmatic_trial_cost_per_patient >}} per patient instead of {{< var traditional_phase3_cost_per_patient >}} per patient traditional. This is the cost-effectiveness of the intervention itself, already roughly 100x better than bed nets.
+
+**Treaty advocacy campaign.** A donor funds the campaign to pass the treaty (~{{< var treaty_campaign_total_cost >}} total, shared across many funders). The trials are then paid for by redirected military spending, not new philanthropic money. Same {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} averted. Only the campaign costs anything. Roughly five orders of magnitude better than bed nets, if the numbers survive economist scrutiny.
+
+**Net of lifetime peace dividend.** A 1% reduction also eliminates war externalities (environmental damage, refugee costs, lost human capital, trade disruption). The estimated lifetime peace dividend is {{< var peace_dividend_lifetime_per_person >}} per person. The campaign pays for itself before a single trial enrolls a patient, and then keeps paying.
+
+Pick whichever accounting the funder finds least embarrassing to explain at the board meeting. All three are unusually good.
+
+## This Is Not Lobbying (The Legal Memo)
+
+Every 501(c)(3) general counsel raises the lobbying concern within the first thirty seconds of reading this chapter. This section is what they need. It is deliberately written without jokes. Forward it to your board, or paste it into a memo.
+
+### What the IRS defines as lobbying
+
+Under IRC §501(c)(3), "lobbying" means attempting to influence *specific domestic legislation* (a bill, resolution, or act before a legislative body). The IRS applies two tests:
+
+- **Direct lobbying.** Communicating with a legislator about specific legislation and expressing a view on it.
+- **Grassroots lobbying.** Communicating with the public about specific legislation, expressing a view, and including a call to action directed at legislators.
+
+The 1% Treaty campaign meets neither definition.
+
+### Why treaty advocacy is not lobbying
+
+**The treaty is not domestic legislation.** The 1% Treaty is a proposed international agreement between sovereign nations. It is not a bill before any domestic legislative body. Under IRS guidelines this is categorized as issue advocacy, not lobbying.
+
+**The campaign does not ask anything of domestic legislators.** The ask is directed at heads of state, who sign international agreements as executives, not legislators. There is no "call your congressperson" component. No specific domestic legislation is referenced.
+
+**The campaign does not support or oppose candidates.** The accountability dashboard at [1percenttreaty.org/tasks](https://1percenttreaty.org/tasks) tracks treaty signature status by head of state. This is functionally identical to how Transparency International publishes corruption indices by country. Publishing factual information about government performance is core 501(c)(3) educational activity.
+
+**Even if classified as lobbying, it would be permitted.** 501(c)(3) organizations can lobby up to 20% of their budget under the 501(h) election. A treaty endorsement is vastly below any threshold any interpretation could trigger.
+
+### Historical precedent
+
+No 501(c)(3) has ever lost its tax-exempt status for advocating for a global treaty. The IRS has revoked status for fraud, private inurement, failure to file Form 990 for three consecutive years, and excessive partisan political activity. Treaty advocacy has never been a basis for revocation.
+
+Multiple 501(c)(3) organizations actively campaign for international treaties. The International Campaign to Ban Landmines, a coalition of 501(c)(3)s, led the campaign that produced the Ottawa Treaty in 1997 and won the Nobel Peace Prize for it. Physicians for Social Responsibility advocates for the Treaty on the Prohibition of Nuclear Weapons. Human Rights Watch campaigns for international human rights treaties. Oxfam America advocates for international trade and arms treaties. None have faced IRS action for their treaty advocacy.
+
+### Quick reference for the board meeting
+
+| Question | Answer |
+|---|---|
+| Does the campaign promote specific domestic legislation? | No. The treaty is an international agreement. |
+| Does the campaign ask anything of senators or congresspeople? | No. The ask is directed at heads of state. |
+| Does the campaign support or oppose candidates? | No. It tracks treaty status by nation. |
+| Has any 501(c)(3) lost status for treaty advocacy? | No, not once in recorded history. |
+| Would this qualify as lobbying under the broadest possible definition? | No. And even if it did, 501(c)(3)s can lobby up to 20% of budget under 501(h). |
+
+For additional legal context, see the [legal framework](../legal/legal-framework.qmd) and [election law](../legal/election-law.qmd) chapters.
+
+## The Outreach Email
+
+The email for Stage 1. Customize the bracketed fields and delete this line before sending.
+
+::: {.callout-note icon=false}
+**Subject:** Would [Org Name] endorse the 1% Treaty?
+
+Hi [Name],
+
+[Org Name]'s work on [their focus area] is directly relevant to something we're building.
+
+The 1% Treaty is a proposal for all nations to simultaneously redirect 1% of military spending ({{< var treaty_annual_funding >}}) to pragmatic clinical trials. Because every nation reduces equally, no country gets weaker; the balance of military capability stays identical.
+
+Your lifetime risk of dying from a terrorist attack is vanishingly small. Your lifetime risk of dying from a disease is 100%. The current budget does not reflect this. Governments spend enough on military to buy {{< var bullets_per_person_annual >}} bullets for every person on Earth every year, while only {{< var new_disease_first_treatments_per_year_nounit >}} diseases per year get their first effective treatment.
+
+At this funding level, clinical trial capacity increases {{< var dfda_trial_capacity_multiplier >}}. The backlog of {{< var diseases_without_effective_treatment_nounit >}} untreated diseases drops from {{< var status_quo_queue_clearance_years_nounit >}} years to {{< var dfda_queue_clearance_years_nounit >}} years. The average treatment arrives {{< var dfda_trial_capacity_treatment_acceleration_years_nounit >}} years sooner. Whatever condition [Org Name]'s community is affected by is almost certainly in that backlog.
+
+Endorsing means three things:
+
+1. Your logo on the coalition page at 1percenttreaty.org
+2. One share with your community (newsletter or email)
+3. That's it. No budget commitment, no new operations, no hiring.
+
+Three questions for you:
+
+1. Would [Org Name] endorse the 1% Treaty?
+2. If not, what would need to change to make it a yes?
+3. Would you be willing to be listed as a coalition member?
+
+- Full treaty text: [The 1% Treaty (Articles)](../solution/1-percent-treaty.qmd)
+- Impact analysis with full methodology: [Economic Impact of the 1% Treaty](../economics/1-pct-treaty-impact.qmd)
+- Leader accountability dashboard: <https://1percenttreaty.org/tasks>
+
+Happy to jump on a call to answer any questions.
+
+[Your name]
+[Your role]
+[Contact]
+:::
+
+## The Member Activation Email
+
+The email for Stage 2. The nonprofit drops this into its existing newsletter or sends it as a one-off to its list. Customize the bracketed fields.
+
+::: {.callout-note icon=false}
+**Subject:** The most important 30 seconds of your week
+
+[Org Name] has joined a global coalition endorsing the 1% Treaty, a proposal to redirect 1% of military spending to pragmatic clinical trials. We're asking for 30 seconds of your time, in two clicks.
+
+**Click 1: Sign the treaty at [1percenttreaty.org](https://1percenttreaty.org).** Your signature is one of the data points telling 193 heads of state that the public is paying attention.
+
+**Click 2: Notify your head of state at [1percenttreaty.org/tasks](https://1percenttreaty.org/tasks).** Find your country, see the overdue signing task, click the notify button. Your head of state receives a polite email explaining that a registered voter has noticed the task is still outstanding.
+
+Why this matters: governments currently spend {{< var military_to_government_clinical_trials_spending_ratio >}} times more on weapons than on clinical trials to figure out which medicines actually work. A 1% reduction, applied simultaneously by every nation, does not weaken anyone's military (because everyone cuts equally) and generates {{< var treaty_annual_funding >}} per year for trials. That funds {{< var dfda_trial_capacity_multiplier >}} more clinical trials. The treatment backlog that currently takes {{< var status_quo_queue_clearance_years_nounit >}} years to clear drops to {{< var dfda_queue_clearance_years_nounit >}} years.
+
+This is one of the most cost-effective global health actions available this week, by a wide margin versus benchmarks like bed nets. We know because we checked.
+
+Two clicks. 30 seconds. Links again:
+
+- Sign: <https://1percenttreaty.org>
+- Notify your leader: <https://1percenttreaty.org/tasks>
+
+If you read this far, please forward the email to one person who also doesn't want to die of a preventable disease.
+
+Thank you.
+
+[Org Name]
+:::
+
+## The Social Post Pack
+
+Three short posts and one long post for Stage 2. Schedule them in your CMS; pin the first one for the week.
+
+**Short post 1 (the hook):**
+
+> Your government spends {{< var military_to_government_clinical_trials_spending_ratio >}}x more on weapons than on figuring out which medicines work. The 1% Treaty fixes this. 30 seconds to sign: 1percenttreaty.org
+
+**Short post 2 (the math):**
+
+> A simultaneous 1% cut to global military spending preserves every country's military balance AND funds {{< var dfda_trial_capacity_multiplier >}} more clinical trials. Treatment backlog drops from {{< var status_quo_queue_clearance_years_nounit >}} years to {{< var dfda_queue_clearance_years_nounit >}} years. Sign: 1percenttreaty.org
+
+**Short post 3 (the notification):**
+
+> Every head of state has an overdue task: sign the 1% Treaty. See yours at 1percenttreaty.org/tasks. Click the notify button. That's the whole step.
+
+**Long post (LinkedIn):**
+
+> Your lifetime risk of dying from terrorism is vanishingly small. Your lifetime risk of dying from a disease is 100%. The global budget does not reflect this. Governments spend enough on military to buy {{< var bullets_per_person_annual >}} bullets for every person on Earth every year, while only {{< var new_disease_first_treatments_per_year_nounit >}} diseases per year receive their first effective treatment.
+>
+> The 1% Treaty proposes a simultaneous 1% reduction in military spending across all signatory nations, redirected to pragmatic clinical trials. Because every nation cuts equally, no country's military capability changes relative to any other. The balance stays identical. But {{< var treaty_annual_funding >}} per year frees up for clinical research.
+>
+> [Org Name] has endorsed the treaty and is asking our community to do two things:
+>
+> 1. Sign at 1percenttreaty.org (10 seconds)
+> 2. Notify your head of state at 1percenttreaty.org/tasks (20 seconds)
+>
+> That is the entire ask. 30 seconds. Please share with anyone who also doesn't want to die of a preventable disease.
+
+## The Endorsement Form
+
+The form the organization signs for Stage 1. This becomes the public record of their endorsement.
+
+::: {.callout-note icon=false}
+### 1% Treaty Organizational Endorsement
+
+We, the undersigned organization, endorse the 1% Treaty and support the reallocation of 1% of global military expenditure toward pragmatic clinical trials integrated into standard healthcare delivery.
+
+We endorse this treaty because:
+
+- {{< var diseases_without_effective_treatment_nounit >}} diseases currently lack effective treatments.
+- At current trial capacity, clearing this backlog takes {{< var status_quo_queue_clearance_years_nounit >}} years.
+- Pragmatic trials cost {{< var dfda_pragmatic_trial_cost_per_patient >}} per patient versus {{< var traditional_phase3_cost_per_patient >}} per patient in traditional trials.
+- A 1% reallocation ({{< var treaty_annual_funding >}} per year) increases trial capacity {{< var dfda_trial_capacity_multiplier >}}, reducing the backlog to {{< var dfda_queue_clearance_years_nounit >}} years.
+- Simultaneous reduction preserves the balance of military capability. No nation gains or loses relative advantage.
+- Estimated cost-effectiveness is {{< var dfda_direct_funding_cost_per_daly >}} per DALY averted (direct funding) or {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}} per DALY as a treaty campaign.
+
+Full treaty text: [The 1% Treaty (Articles)](../solution/1-percent-treaty.qmd)
+
+**Organization:** ___________________________
+
+**Authorized representative:** ___________________________
+
+**Title:** ___________________________
+
+**Date:** ___________________________
+
+**Organization website:** ___________________________
+
+☐ We consent to our organization's name and logo appearing on 1percenttreaty.org as a coalition endorser.
+:::
+
+## The Grant Budget Proposal
+
+For organizations that already have grant budgets and need a funded program to staff the coalition work. Condensed here; expand to full memo length before formal submission.
+
+**Title:** The 1% Treaty Coalition: A Proposal for [Org Name] as Founding Coalition Member
+
+**Summary.** [Org Name] joins the 1% Treaty Coalition as a founding member. A dedicated coordinator (funded by the grant) handles outreach to peer organizations, endorsement tracking, member activation campaigns, and coalition reporting. Target: 50+ organizational endorsements and 10,000+ verified member signatures at 1percenttreaty.org within 6 months.
+
+**Why this campaign.** See [The Cost-Effectiveness Argument](#the-cost-effectiveness-argument) and the polemic sections above. Short version: this campaign is the most cost-effective global health intervention ever identified in the effective altruism literature, if the numbers survive economist scrutiny, and [Org Name]'s existing network is a credibility multiplier.
+
+**Campaign phases.**
+
+1. **Credibility (months 0-2).** Economist review of the cost-effectiveness numbers. Legal review of the 501(c)(3) analysis. Founding-member outreach to 5-10 warm contacts.
+2. **Coalition building (months 2-5).** Organizational outreach using the templates in this chapter. Target: 50+ endorsements.
+3. **Public launch (months 5-6).** Coordinated member activation across founding coalition members. Target: 10,000+ verified signatures and a corresponding spike in leader notifications at 1percenttreaty.org/tasks.
+
+**Coordinator role.** Outreach execution, endorsement tracking, objection handling, weekly coalition coordination calls, monthly reporting to [Org Name]'s board.
+
+**Legal.** See [This Is Not Lobbying (The Legal Memo)](#this-is-not-lobbying-the-legal-memo). No changes to [Org Name]'s 501(c)(3) status result from this campaign.
+
+**Success metrics (6 months).** 50+ endorsements, 10,000+ verified signatures, economist review complete, EA Forum post published.
+
+**The ask.** Fund the coordinator role at [amount]. Join as founding coalition member. Share the treaty with [Org Name]'s network once.
+
+Close every proposal with: "What would need to change to make this a yes?"
+
+## Outreach Sequencing
+
+Five steps. Do them in order.
+
+**Step 1. Identify warm contacts (week 1).** List every organization the outreach person has a prior relationship with. Prioritize by strength of relationship (will they respond?), mission alignment (disease, health, longevity, peace, poverty), and community size.
+
+**Step 2. Get the first three yeses (weeks 1-3).** Contact the 3-5 warmest relationships first. Use [The Outreach Email](#the-outreach-email). The goal is logos on the coalition page before going wide, because social proof compounds.
+
+**Step 3. Go wide with social proof (weeks 3-8).** Once there are founding members, update the outreach email to include "[X organizations] are already on board, including [names]." Contact 200+ organizations in batches of 50. Track responses in a simple spreadsheet: Org Name, Contact, Date Contacted, Response, Follow-Up Date, Endorsed (Y/N), Logo Received (Y/N).
+
+**Step 4. Follow up (ongoing).**
+
+- No response after 5 days: one short follow-up.
+- No response after 10 days: one more, even shorter.
+- No response after 15 days: move on.
+- "We need to think": follow up in 2 weeks.
+- "We have concerns": offer a call immediately.
+- "What would we need to change?": the most valuable response. Incorporate reasonable feedback; reject changes that gut the substance.
+
+**Step 5. Announce the coalition (months 2-3).** Once there are 10+ endorsements: publish the coalition page with logos, write a press release, have each founding member share with its community, submit to the EA Forum with economist endorsement if available.
+
+## Objection Handling
+
+The top objections, with the top answer to each. If the same objection keeps appearing, revise the outreach email so it preempts it.
+
+**"This is too political."**
+The treaty asks for a simultaneous reduction, preserving military balance. It does not favor or oppose any nation, party, or candidate. It is no more political than advocating for increased NIH funding, which hundreds of 501(c)(3)s already do. The underlying fact is not partisan: everyone's lifetime risk of dying from a disease is 100%, and the current budget does not reflect this.
+
+**"This will never work."**
+The International Campaign to Ban Landmines started with one staff member and six NGOs in 1992. By 1997, 122 nations signed the Ottawa Treaty and the campaign won the Nobel Peace Prize. A 1% cut is historically trivial: pre-WWII US military spending was {{< var us_1939_military_spending_pct_lower_than_current >}} lower than today's peacetime budget. After WWII, the US cut military spending by {{< var post_ww2_military_cut_pct >}} in two years and produced the largest economic boom in modern history. A 1% simultaneous reduction is rounding error compared to what has already been done safely.
+
+**"Our board won't approve this."**
+Send them [This Is Not Lobbying (The Legal Memo)](#this-is-not-lobbying-the-legal-memo). It addresses every IRS concern. Offer a 20-minute call with the board, or a written memo tailored to their specific bylaws.
+
+**"We don't want to link to that website."**
+Link to the treaty text itself. Organizations endorse the treaty Articles, not any particular framing of them. They can use whichever version they are comfortable with.
+
+**"We're too small to matter."**
+Every endorsement adds social proof. The first 10 matter more than the next 100. Small organizations that move fast become founding members, which is a permanently better position than large organizations that move slow.
+
+**"What about our existing campaigns?"**
+The endorsement complements existing work. It takes 30 minutes of staff time (one email to the list) and potentially unlocks new funding categories (global health, peace, policy). It does not replace or compete with anything already happening.
+
+**"The numbers seem too good to be true."**
+They are calculated with 95% confidence intervals and 90+ cited sources. The full methodology is transparent in the [parameters and calculations](../appendix/parameters-and-calculations.qmd) appendix. Offer to connect them with an economist reviewer, or invite them to review the model themselves.
+
+---
+
+That is the whole chapter. If an organization endorses, send them [The Member Activation Email](#the-member-activation-email) and move to Stage 2. If an organization declines, ask what would change their mind, incorporate the feedback, and retry in 60 days. If the same objection appears three times in a week, update the outreach email to preempt it.
+
+The bottleneck between here and {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} averted is not the math, the legal analysis, the templates, or the treaty itself. It is the number of organizations that have opened the conversation with their members. That number is a function of how many outreach emails get sent this week.
+
+Do the next thing on the sequencing list.
