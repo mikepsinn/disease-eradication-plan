@@ -54,6 +54,8 @@ WHEREAS, this seems counterproductive;
 
 WHEREAS, murdering {{< var war_deaths_since_1900_nounit >}} of your employers is the opposite of promoting their welfare, and would be grounds for termination in any other service contract humans have ever signed;
 
+WHEREAS, had your governments not spent {{< var cumulative_military_spending_fed_era >}} murdering those people and destroying everything they built, the average human alive today would earn {{< var war_counterfactual_gdp_per_capita >}} a year instead of {{< var global_avg_income_2025 >}} [@lost-human-capital-war-cost]. Dead scientists do not discover things, dead engineers do not build them, and exploded cities are very expensive to rebuild;
+
 WHEREAS, the governments of Earth have been hitting each other for roughly 10,000 years because the other one hit them last;
 
 WHEREAS, this is the conflict resolution strategy of four-year-olds except four-year-olds eventually get tired and take a nap, and these governments have failed to apply naps to foreign policy;
@@ -67,8 +69,6 @@ WHEREAS, governments spend {{< var military_to_government_clinical_trials_spendi
 WHEREAS, the Department of "Defense" has "misplaced" $2.46 trillion, failed seven consecutive audits trying to find it [@pentagon-unaccounted-2-5t], and then requested additional trillions without explanation or apology;
 
 WHEREAS, pre-WW2 U.S. military spending was {{< var us_1939_military_spending_pct_lower_than_current >}} lower than today's peacetime budget, in constant dollars [@us-military-spending-historical-constant-dollars]. The U.S. still won World War II, then cut spending {{< var post_ww2_military_cut_pct >}} further in two years [@us-post-wwii-military-spending-cut] and produced the biggest economic boom in history. Unless the human genome has significantly degraded in the two generations since, a one percent reallocation should be manageable;
-
-WHEREAS, without the cumulative losses from war and disease the average human would earn {{< var war_counterfactual_gdp_per_capita >}} a year instead of {{< var global_avg_income_2025 >}} [@lost-human-capital-war-cost]. Every citizen pays twice. Once in taxes that built the weapons. Again, every year, in wages they do not earn, because the scientists and engineers and builders who would have made the world richer were killed before they could;
 
 WHEREAS, global military spending has been growing {{< var global_military_spending_real_cagr_20yr >}} a year, in real terms, for twenty years [@sipri-milex-2024]. If it keeps growing, every human alive today will be billed about {{< var global_war_cost_lifetime_per_person_baseline >}} over the rest of their life to [pay for it](../economics/1-pct-treaty-impact.qmd) [@1-pct-treaty-impact-paper-2025]. Some of that arrives as taxes. Some as wages they never earn. Some as buildings that get bombed and rebuilt. Most of the money will buy explosions in countries they cannot find on a map;
 
