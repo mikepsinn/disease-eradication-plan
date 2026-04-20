@@ -271,11 +271,15 @@ Not all humans respond to the same logic. This is inconvenient but predictable f
 
 ## The Horizontal Path: The Most Important Secret in the World {#the-horizontal-path}
 
-Everything above this section describes the **vertical** strategy. You forward to one person more powerful than yourself, they forward up the chain, and after roughly 15 to 20 hops the message lands in front of one credible anchor investor who triggers the financing mechanism. This works if any link in the chain does their job.
+Everything above this section describes the **vertical** strategy. You forward the plan up the chain. Human to more-powerful human. After 15 to 20 hops the message lands on the desk of an anchor investor. They trigger the financing mechanism. It works if any link does their job.
 
-What follows is the **horizontal** strategy. It runs in parallel. It assumes the chain might not find its anchor in time, or that the anchor wants to see visible public demand before they commit. So instead of one climbing message, you run a doubling wave: everyone calls two people, those two people call two people, and so on, until the number of visible supporters at [warondisease.org](https://warondisease.org/) is too large for any government to ignore.
+The failure mode is simple. Somewhere in the chain, one human is busy. Busy is contagious. The message dies in an inbox next to a dry-cleaning reminder.
 
-The vertical path looks for a key. The horizontal path builds a crowd outside the building.
+What follows is the **horizontal** strategy. It runs in parallel. It assumes the chain does not find its anchor in time. Or that the anchor wants to see public demand first. Humans with checkbooks like receipts.
+
+So: instead of one climbing message, you run a doubling wave. Everyone calls two people. Those two call two. And so on. Until the visible vote count at [warondisease.org](https://warondisease.org/) is too large for any government to politely ignore.
+
+The vertical path looks for a key. The horizontal path builds a crowd. Your species has confirmed, experimentally, about seventeen times in the last century, that crowds above a certain size make buildings open on their own.
 
 ### The Script
 
@@ -283,7 +287,11 @@ You message someone you love. You say, with complete sincerity:
 
 > "Either I am crazy or I have discovered the most important secret in the history of the universe. Can you call me and tell me which?"
 
-Then you tell them. The 1% Treaty exists. The math (detailed in the [1% Treaty Impact](/knowledge/economics/1-pct-treaty-impact.qmd) paper and the [Parameters & Calculations](/knowledge/appendix/parameters-and-calculations.qmd) appendix) says redirecting one percent of global military spending into clinical trials produces roughly {{< var dfda_trial_capacity_multiplier_nounit >}} times more trial capacity, which compresses the default timeline for eradicating the major diseases from centuries to decades. You and everyone you love die of disease on the long timeline. You and everyone you love live longer on the short timeline. The difference is whether the treaty exists.
+Then you tell them. The 1% Treaty exists. Redirecting one percent of global military spending into clinical trials produces {{< var dfda_trial_capacity_multiplier_nounit >}} times more trial capacity. That compresses the timeline for eradicating the major diseases from centuries to decades. (The math is in the [1% Treaty Impact](/knowledge/economics/1-pct-treaty-impact.qmd) paper and the [Parameters & Calculations](/knowledge/appendix/parameters-and-calculations.qmd) appendix.)
+
+In concrete terms. "Centuries" means the cure for your specific disease is discovered posthumously. By your great-great-grandchildren. Who do not know which ancestor it was for. "Decades" means the cure is discovered while you are still alive to take it.
+
+You and everyone you love die of disease on the long timeline. You and everyone you love live longer on the short timeline. The difference is whether the treaty exists.
 
 The cost to them is thirty seconds at [warondisease.org](https://warondisease.org/), plus doing this exact same thing for everyone they love.
 
@@ -303,7 +311,9 @@ On Wishonia, we do not have a word for "refusing to evaluate an argument because
 
 If every person persuades two new people, and each doubling takes roughly one week, then reaching {{< var global_coordination_target_supporters_nounit >}} supporters requires about 32 doublings. That is 32 weeks, which is under eight months. If the doubling cadence is one day instead of one week, it is 32 days. The math is not subtle. 2 to the 32nd power is roughly 4.3 billion. Your species invented this math. You just rarely apply it to yourselves.
 
-No real-world cascade has ever held a clean doubling for 32 generations. Saturation happens. Message fatigue happens. Overlapping social clusters mean the second call reaches someone who already got the call. The realistic curve is logistic, not exponential, and it flattens well before 4 billion.
+No real-world cascade has ever held a clean doubling for 32 generations. Saturation happens. Message fatigue happens. The second call reaches someone who already got the call. The realistic curve is logistic, not exponential. It flattens well before 4 billion.
+
+For reference. Your most successful religious movements took millennia. Your viral pet videos plateau at a few hundred million. This plan completes faster than religion. And is harder to get wrong than a pet video.
 
 But note what the logistic curve actually implies. It implies that the ceiling is not a technical limit; it is a friction limit. Every unit of friction you can remove (a clearer script, a shorter URL, a more compelling framing) raises the ceiling. You do not need a clean doubling. You need enough doublings for the visible vote count at [warondisease.org](https://warondisease.org/) to cross the threshold where governments respond. That threshold is unknown but finite. And every month the wave propagates, {{< var global_disease_deaths_per_minute_nounit >}} humans die per minute from the diseases the treaty would accelerate the cures for. The clock is running whether you make the call or not.
 
@@ -316,6 +326,8 @@ But Pascal's Mugging usually asks you to give a stranger money, or do something 
 The 1% Treaty ask is different in every dimension. The cost is calling someone you love and having a meaningful conversation, which is not a cost at most humans would recognize as one. The mechanism is not speculative; it is the boring kind of policy change (redirecting a tiny fraction of a budget line) that has precedent (the 87% post-WW2 reallocation documented in the [Peace Dividend](/knowledge/economics/peace-dividend.qmd) chapter). The payoff is not Pascal's cosmic reward; it is compounding GDP growth and fewer dead relatives, both of which your species already believes in.
 
 The break-even probability for the individual sharing decision, derived in [The Zero Percent Problem](#the-zero-percent-problem) above, is {{< var sharing_breakeven_one_in_treaty >}} to one. Below that probability, sharing is irrational. Above it, sharing dominates. Your actual credence does not have to be high. It has to be higher than being struck by lightning 200 times. If you cannot clear that bar for a plan your own planet's history contains a precedent for, the problem is not the plan.
+
+Your species has placed larger bets on homeopathy. Homeopathy has no mechanism. No precedent. You bet real money on that. We are asking for a phone call.
 
 ### The Dominance Argument
 
@@ -354,7 +366,11 @@ Everyone you love. For most humans that is around forty people (close family, cl
 
 **How to actually do forty calls: one per day.**
 
-Forty calls is not something a human does in one sitting. Make the first one the moment you finish reading this chapter. Momentum on the first call is worth more than any subsequent rate, and every hour of delay on your first call is {{< var global_disease_deaths_per_minute_nounit >}} times 60 humans. After that, set a daily alarm or a recurring calendar event. One call per day, every day, for about six weeks. This is the pace at which you will actually do it. Any faster and you burn out; any slower and the wave decelerates.
+Forty calls is not something a human does in one sitting. Make the first one the moment you finish this chapter. Momentum matters more than rate. Every hour you delay the first call is {{< var global_disease_deaths_per_minute_nounit >}} times 60 humans.
+
+After that, set a daily alarm. Or a recurring calendar event. One call per day, every day, for about six weeks. This is the pace at which you will actually do it. Faster: you burn out. Slower: the wave decelerates.
+
+Daily alarms beat willpower. Willpower depletes. Alarms do not. Let the alarm have the discipline. You just answer it.
 
 **Accept that most of them will not act, and reframe the call anyway.**
 
@@ -364,11 +380,19 @@ Because most of your calls will feel like pleasant conversations that do not obv
 
 **What is actually happening when you make these calls.**
 
-Two waves are propagating at once. The first is horizontal: each contact who acts recruits their own contacts, until enough voters are visible at warondisease.org that governments cannot ignore them. The second is vertical, and you do not have to aim for it. Social networks have hubs: the person in your life who knows a senator, the senator who knows a president. A horizontal wave of forty calls eventually touches a hub; the hub becomes a vertical channel; the message routes upward as a byproduct of propagating sideways. You do not have to know a powerful person. You have to call forty people you love, and the topology will do the upward routing for you within a handful of hops. Your message probably reaches a head of state well before it reaches four billion voters.
+Two waves propagate at once. The first is horizontal. Each contact who acts recruits their own contacts. Until the vote count at warondisease.org is too large to ignore.
+
+The second is vertical. You do not have to aim for it. Social networks have hubs. The person in your life who knows a senator. The senator who knows a president. A horizontal wave of forty calls eventually touches a hub. The hub becomes a vertical channel. The message routes upward as a byproduct of propagating sideways.
+
+You do not have to know a powerful person. You have to call forty people you love. The network does the upward routing for you. Within a handful of hops. Your LinkedIn connections are not qualified for this work. The network is. At no charge. Without caring whether you notice.
+
+Your message probably reaches a head of state well before it reaches four billion voters.
 
 **Send your personal referral link, not the bare URL.**
 
-After you vote at warondisease.org, check whether the site gives you a personal referral link. If it does, that link is what you send to the people you call, not the bare domain. Two reasons. First, the referral link carries your identity, which lets the chain be traced. You can see how many voters your calls produced, and so can every caller below you in the recursion. The count becomes legible, which makes the project feel real instead of theoretical. Second, there is a prize pool under development that would pay voters a share proportional to the size of the chain they seeded, payable after the treaty passes. The design is not final. No guarantees. But if it lands, the referral link is how you qualify. If you care about the optional upside, use the referral link. If you do not, the bare URL still works for the vote.
+After you vote at warondisease.org, check whether the site gives you a personal referral link. If it does, that link is what you send to the people you call, not the bare domain. Two reasons. First, the referral link carries your identity, which lets the chain be traced. You can see how many voters your calls produced, and so can every caller below you in the recursion. The count becomes legible, which makes the project feel real instead of theoretical. Second, there is a prize pool under development. It would pay voters a share proportional to the size of the chain they seeded. Payable after the treaty passes. The design is not final. No guarantees. But if it lands, the referral link is how you qualify. If you care about the optional upside, use the referral link. If you do not, the bare URL still works for the vote.
+
+Your species, when offered "base case" versus "greedy case," picks greedy. Every time. No reason to break the streak for this one.
 
 **When they call, walk them through this sequence.**
 
@@ -379,7 +403,7 @@ Ask the questions in order. Wait for the answer. Do not proceed until they agree
 **The call (you are the asker; the other person is the answerer):**
 
 1. "Most humans do not want to suffer and die of diseases, and do not want their families to. Agreed?" *Yes. This is the least controversial sentence in the history of your species. If they say anything other than yes, hang up; you are talking to a hostage or a philosopher.*
-2. "Disease eradication is an engineering problem. Your body is about 37 trillion cells breaking in roughly 7,000 known ways, and each failure mode is a solvable engineering problem. Cures that exist were found by running clinical trials. Cures that do not exist yet will be found by running more clinical trials. This is throughput, not magic. Given enough funded trials and enough time, every known disease eventually gets a treatment. Agreed?" *Yes. This is the load-bearing premise of the entire argument. If they say "some diseases might be incurable," answer: "Maybe. But every additional trial is a marginal chance at a cure and a marginal life extended. Whether we cure every single disease is irrelevant to the question on the table. With more clinical trial capacity we cure more of them, faster. That part is not contested by anyone who has ever looked at it." If they say "science doesn't work like that," answer: "Smallpox eradicated. Polio nearly eradicated. HIV converted from death sentence to chronic condition. Hepatitis C now curable in twelve weeks. These are the ones we spent money on. The 6,650 diseases still waiting for a first treatment are not waiting because the science is impossible; they are waiting because the money bought something else."*
+2. "Disease eradication is an engineering problem. Your body is about 37 trillion cells breaking in roughly 7,000 known ways, and each failure mode is a solvable engineering problem. Cures that exist were found by running clinical trials. Cures that do not exist yet will be found by running more clinical trials. This is throughput, not magic. Given enough funded trials and enough time, every known disease eventually gets a treatment. Agreed?" *Yes. This is the load-bearing premise of the entire argument. If they say "some diseases might be incurable," answer: "Maybe. But every additional trial is a marginal chance at a cure and a marginal life extended. Whether we cure every single disease is irrelevant to the question on the table. With more clinical trial capacity we cure more of them, faster. That part is not contested by anyone who has ever looked at it." If they say "science doesn't work like that," answer: "Smallpox eradicated. Polio nearly eradicated. HIV converted from death sentence to chronic condition. Hepatitis C now curable in twelve weeks. These are the ones we spent money on. The 6,650 diseases still waiting for a first treatment are not waiting because the science is impossible; they are waiting because the money bought invisible jets instead."*
 3. "Humanity currently maintains enough nuclear weapons for roughly {{< var nuclear_winter_overkill_factor_nounit >}} simultaneous apocalypses. Would most people prefer we have capacity for one fewer apocalypse (roughly {{< var nuclear_winter_overkill_factor_nounit >}} minus one, still plenty) in exchange for {{< var dfda_trial_capacity_multiplier_nounit >}} times more clinical-trial capacity, which would compress the timeline for eradicating all known diseases from {{< var status_quo_queue_clearance_years_nounit >}} years to {{< var dfda_queue_clearance_years_nounit >}} years? Yes or no?" *Yes. Nobody actually believes apocalypse capacity {{< var nuclear_winter_overkill_factor_nounit >}} is superior to capacity {{< var nuclear_winter_overkill_factor_nounit >}} minus one. The math is at [manual.warondisease.org/knowledge/economics/1-pct-treaty-impact](https://manual.warondisease.org/knowledge/economics/1-pct-treaty-impact.qmd). If they say "we need the military," answer: "Your chance of dying from terrorism is 1 in 30 million. Your chance of dying from disease is 100%. And after the treaty, your country can still end civilization twenty times over. That is plenty." If they say "our enemies won't cut too," answer: "Every country cuts 1% simultaneously. Security actually increases, because everyone has 1% fewer missiles pointed at them."*
 4. "Historically, every major civilizational improvement (ending slavery, women's suffrage, civil rights) that reached {{< var global_population_activism_threshold_pct >}} active public support has succeeded. Zero exceptions in the last century {{< var global_population_activism_threshold_pct_cite >}}. So if fifty percent of humanity (every registered voter on the planet) publicly demanded we trade one apocalypse's worth of overkill for curing diseases, is it plausible any government holds the current allocation? Yes or no?" *No. {{< var global_population_activism_threshold_pct >}} is the threshold where none have ever failed; fifty percent is fourteen times that. There is no plausible world where governments keep the current allocation against fifty percent of their own voters. They cannot even keep parking policies against fifty percent of voters. If they say "governments never sign global treaties," answer: "They signed the Chemical Weapons Convention in 1993 (193 countries), the Biological Weapons Convention in 1975 (187 countries), and the Mine Ban Treaty in 1997 (164 countries). They have banned weapons they actually liked using. This treaty just asks them to buy one percent fewer." If they say "the military budget can't be cut without wrecking the economy," answer: "After World War Two, the United States cut military spending by {{< var post_ww2_military_cut_pct >}} in two years, and it stumbled into the greatest economic boom in history. You are being asked for one percent. Even people who love exploding people should be able to handle one percent."*
 5. "If you and I each persuaded two people to vote at [warondisease.org](https://warondisease.org/), and each of them persuaded two, and so on, what happens to the number of voters every week?" *It doubles. Let them say it.*
