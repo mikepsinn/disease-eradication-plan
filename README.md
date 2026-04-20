@@ -548,7 +548,7 @@ Of all the consciousness that has ever flickered into existence across 13.8 bill
 
 You get to be alive for the part where the math got done and the puppet strings got cut. Not just the part where disease ends. The part where the thing that made you irrational, violent, and incapable of caring about strangers turns out to be a circuit, and circuits can be redesigned. Where your worst Tuesday feels better than your current best birthday. Where, for the first time in 13.8 billion years, the atoms that learned to feel get to choose what they feel.
 
-Go to [warondisease.org](https://warondisease.org). Vote (fifteen seconds). Get two friends to play. That's it. The exact call script for the "getting two friends" part, including the message to send and the twenty-two questions to walk them through, is at [The Horizontal Path](https://manual.warondisease.org/knowledge/appendix/recruitment-and-propaganda-plan.html#the-horizontal-path). Every minute you delay, 104 humans permanently stop. Your vote saves 38.4 lives and prevents 6.9 million hours of suffering. 
+Go to [warondisease.org](https://warondisease.org). Vote (fifteen seconds). Get two friends to play. That's it. The exact call script for the "getting two friends" part, including the message to send and the twenty-two questions to walk them through, is at [The Most Important Secret in the World](https://manual.warondisease.org/knowledge/strategy/call-script.html). Every minute you delay, 104 humans permanently stop. Your vote saves 38.4 lives and prevents 6.9 million hours of suffering. 
 
 
 The universe is literally offering you infinite money and eternal life, and you're thinking about it.
