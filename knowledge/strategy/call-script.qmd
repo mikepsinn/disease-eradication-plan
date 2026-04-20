@@ -1,6 +1,6 @@
 ---
 title: "The Most Important Secret in the World"
-description: The call script for getting people you love to vote for the 1% Treaty. One message to send. A twenty-two-question sequence to run when they call back. A set of rebuttals for the objections that come up. Plus the math that makes a five-minute phone call worth more per hour than anything else a human can do.
+description: The call script for getting people you love to vote for the 1% Treaty. One message to send. A twenty-two-question sequence to run when they call back. A set of answers for the objections that come up. Plus the math that makes a five-minute phone call worth more per hour than anything else a human can do.
 published: true
 tags:
   - call-script
@@ -38,8 +38,6 @@ You and everyone you love die of disease on the long version. You and everyone y
 
 The cost for them: thirty seconds at [warondisease.org](https://warondisease.org/), and doing the same call for everyone they love.
 
-That is the whole script.
-
 ## Why This Opener Works
 
 Most arguments fail not because someone disproved them. They fail because nobody ever tried. Attention is limited. Defaults are strong. Your species has built-in reflexes for ignoring new ideas. The reflex fires before your brain starts. The idea never reaches the thinking part. It bounces off.
@@ -56,13 +54,11 @@ If every person gets two new people, and each round takes about a week, then rea
 
 No real-world wave has ever held a clean doubling for 32 rounds. People get tired of hearing it. The second call reaches someone who already got the call. The curve slows down. It flattens well before 4 billion.
 
-For reference. Your most successful religious movements took millennia. Your viral pet videos plateau at a few hundred million views. This plan completes faster than religion. And is harder to get wrong than a pet video.
+Your most successful religious movements took millennia. Your viral pet videos plateau at a few hundred million views. This plan completes faster than religion. And is harder to get wrong than a pet video.
 
 The slowdown matters less than it sounds. The ceiling is not a physics limit. It is a friction limit. Every bit of friction you remove (clearer script, shorter URL, better opener) raises the ceiling. You do not need a clean doubling. You need enough doublings to make the vote count at [warondisease.org](https://warondisease.org/) big enough that governments respond. That number is unknown but finite. And every month the wave spreads, {{< var global_disease_deaths_per_minute_nounit >}} humans die per minute from the diseases the treaty would cure faster. The clock is running whether you call or not.
 
 ## The $100 Bill On The Ground
-
-Before the philosopher weighs in, here is the gut-check version.
 
 If you saw a $100 bill on the ground, you would pick it up. Even though it might be counterfeit. Even though it might belong to someone watching from a window. Even though bending over is annoying. The chance it is real, multiplied by $100, still beats the cost of bending. So you bend.
 
@@ -70,13 +66,9 @@ The 1% Treaty is the same bet. Except the thing on the ground is not $100. It is
 
 You already know you would pick up the bill. This is the same decision. Bigger bill.
 
-Let us put actual numbers on it.
-
 Your vote, if the treaty passes, is attributable to {{< var voter_lives_saved >}} saved and {{< var voter_suffering_hours_prevented >}} of suffering prevented. At the standard economic value of a year of healthy life ({{< var standard_economic_qaly_value_usd >}}), that works out to over $100 million of value per voter. The cost of casting the vote is {{< var sharing_opportunity_cost >}} of your time at the global average wage of {{< var global_avg_hourly_income >}} per hour.
 
-Each phone call is about five minutes. Suppose one in ten calls produces a real new voter. That is about $10 million of expected payoff per successful call, if the plan works.
-
-Now multiply by the chance you think the plan will work.
+Each phone call is about five minutes. Suppose one in ten calls produces a real new voter. That is about $10 million of expected payoff per successful call, if the plan works. Then multiply by the chance you think the plan works.
 
 - At a pessimistic one-in-ten-thousand chance, each call is worth about $1,000 in expected payoff. Twelve calls per hour means about $12,000 per hour. That is roughly 1,600 times your normal wage.
 - At one-in-a-thousand, $120,000 per hour. About 16,000 times your wage.
@@ -99,8 +91,6 @@ The break-even number for whether sharing is worth it (derived in [The Zero Perc
 Your species has placed larger bets on homeopathy. Homeopathy has no mechanism. No precedent. You bet real money on that. We are asking for a phone call.
 
 ## Better No Matter What Happens
-
-Look at the four possible outcomes.
 
 - You make the call and the plan works: you helped end disease centuries sooner than it would have ended. You are in the causal chain of {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved_nounit >}} prevented deaths.
 - You make the call and the plan fails: you had a meaningful conversation with someone you love about something you care about. That is the cost.
