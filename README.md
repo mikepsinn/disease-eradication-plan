@@ -14,7 +14,7 @@ Here is the logical chain. If you can answer "no" to any question, stop and name
 
 2. Is disease just your meat breaking in predictable ways that can be fixed by running the right clinical trials? *Yes. You find first treatments for 15 new diseases every year. 6,650 are still waiting. You have 9,500 known-safe medicinal compounds, of which 99%) | Calculated from 2 inputs | ✓ High confidence | Formula: 1 - EXPLORATION_RATIO | Unit: percentage | Click to view details, calculation & sources">99.7% of their potential uses have never been tested. Humans are physical systems. Physical systems have physical solutions. Knowledge compounds; each cure makes the next cure easier to find. There is no physical law preventing disease eradication. There is only a funding law.*
 
-3. Do your politicians, your billionaires, and the humans who control the institutions that fund research all age, sicken, and die of the same diseases as everyone else? And their parents, spouses, and children? *Yes. Cancer does not check your net worth. Alzheimer's does not ask whether you voted for the appropriations bill. Every human in power, and every human they love, will eventually face exactly the horror the 1% Treaty prevents. They would prefer not to, when they stop to think about it. Most don't stop, because their incentive structure rewards thinking about the next election, not the next generation of their own family.*
+3. Do your politicians, your billionaires, and the humans who control the institutions that fund research all age, sicken, and die of the same diseases as everyone else? And their parents, spouses, and children? *Yes. Cancer does not check your net worth. Alzheimer's does not ask whether you voted for the appropriations bill. Every human in power, and every human they love, will eventually face exactly the horror the 1% Treaty prevents. They would prefer not to, when they stop to think about it. Most don't stop, because they are paid to think about the next election, not the grandchildren they will eventually have.*
 
 4. Every major civilizational change that reached 3.5% active support has succeeded. Slavery banned. Women's vote. Civil rights. Zero failures in the last century . If 50% of your species demanded the apocalypse-for-disease trade, is it believable any government on Earth holds out? *No. 3.5% is where your politics always breaks. 50% is 14 times that. No government survives defying half its own voters. They cannot even keep parking rules against half their voters.*
 
@@ -28,13 +28,13 @@ Here is the logical chain. If you can answer "no" to any question, stop and name
 
 9. Every second the 1% Treaty does not exist, about 2 humans die of diseases it would cure faster. Per-second is the number your nervous system actually feels. Per-year is abstract. *Correct. 150,000 deaths per day divided by 86,400 seconds is 1.74 deaths per second. You are allowed to see the per-year number because your brain cannot feel it. The per-second number is harder to find on purpose.*
 
-10. Every day the 1% Treaty does not exist, 2 billion currently-sick humans each spend one more day suffering. That is 2 billion more days of disease suffering, every day you wait. *Yes. Same WHO numbers, in a unit your brain can actually hold.*
+10. Every day the 1% Treaty does not exist, 2 billion currently-sick humans each spend one more day suffering. That is 2 billion more days of disease suffering, every day you wait. *Yes. 2 billion is a number you cannot picture. 1 is a number you can. Multiply.*
 
 11. War and disease are extremely expensive. Every dollar spent on either of them is a dollar not spent on inventions that make your life better. One economy makes things. The other breaks them. Your species spends more on the breaking one, which should be embarrassing but somehow is not. If the 1% Treaty passed, would your lifetime income go up? *Yes. Over an average lifetime the typical human gains $3.48 million. Every day of waiting is one more day your money stays in the breaking economy instead of the making one.*
 
 12. Sharing this with one human you love takes about 30 seconds. *Yes. Less time than explaining why you didn't.*
 
-13. Can you think of anything else you could do with 30 seconds that would prevent more death and suffering than shifting disease eradication forward in time? *You cannot. Sit with the silence. Actually try to think of one.*
+13. Can you think of anything else you could do with 30 seconds that would prevent more death and suffering than shifting disease eradication forward in time? *You cannot. The silence you are about to fill is the point. Whatever you come up with will be smaller than what you just gave up.*
 
 14. Can you think of anything else you could do with 30 seconds that would add more than $3.48 million to your own lifetime income? *You cannot. Your 30 seconds have never been this valuable. They will never be this valuable again.*
 
