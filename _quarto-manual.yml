@@ -49,9 +49,9 @@ book:
       - icon: check2-square
         text: "VOTE"
         href: https://WarOnDisease.org
-      - icon: chat-dots
-        text: "TALK"
-        href: https://transmit.warondisease.org
+      # - icon: chat-dots
+      #   text: "TALK"
+      #   href: https://transmit.warondisease.org
       - icon: book
         text: "GET MANUAL"
         href: knowledge/links.qmd

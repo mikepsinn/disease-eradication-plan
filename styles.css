@@ -982,8 +982,8 @@ nav.quarto-page-breadcrumbs ol.breadcrumb li a {
 .dih-fab-open .dih-fab-action:nth-last-child(6) { transition-delay: 0.14s; }
 .dih-fab-open .dih-fab-action:nth-last-child(7) { transition-delay: 0.17s; }
 
-/* Show labels on hover */
-.dih-fab-open .dih-fab-action:hover .dih-fab-action-label {
+/* Show labels whenever FAB is expanded */
+.dih-fab-open .dih-fab-action .dih-fab-action-label {
     opacity: 1;
     transform: translateX(0);
     pointer-events: auto;
