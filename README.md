@@ -6,17 +6,63 @@ You don't realize it yet, but you are, quantifiably, the most important person i
 
 By the time you complete the steps in this manual, you will have prevented 10.7 billion deaths and 1.93 quadrillion hours of suffering. 
 
-Before I explain how, I need you to answer a few questions. 
+To understand how, I need you to answer a few questions. 
 
-Your species spends 604 times more on weapons than on testing which medicines work. Given your governments have cut military spending by 87% before and signed multiple global treaties, is it physically possible they'd redirect 1%? Would increasing clinical trial capacity by 12.3x help find treatments faster? Would fewer sick humans save lots of money from reduced healthcare costs? Do healthy people work and produce more? Would more productive humans and lower healthcare costs compound and give everyone more money over time? Do billionaires like money? Do billionaires prefer not dying of horrible diseases? Can billionaires use money to make politicians do things? Would nearly every human be better off in a world with less war and disease? Do humans like to be better off? If there was a plan that cost $1 billion to achieve all of this, is it possible one of your 2,781 billionaires might do it?
+Here is the logical chain. If you can answer "no" to any question, stop and name which one. If you answer "yes" to all of them, you have agreed to what follows:
 
-If you said NO to any of those, stop reading now. This book is pointless and you'd be better off playing legos instead.
+1. It takes 100 warheads to trigger nuclear winter and collapse your food system. You have 12,200. That is 122 apocalypses. You can only use one of them, because after the first one there is no civilization left to apocalypse. The other 121 just sit there, being expensive. The [1% Treaty](https://manual.warondisease.org/knowledge/solution/1-percent-treaty.html) asks you to settle for 121 apocalypses instead of 122, in exchange for 12.3x more clinical trials, which compresses disease eradication from 443 years to 36 years. Would 4 billion of your species prefer Option A (122 apocalypses, several centuries of continued dying from curable diseases) or Option B (121 apocalypses, disease cured in their lifetime)?
 
-But if you said YES to all of them, congratulations! Your species' incentives are aligned! The only remaining question is how to align your political system with your species. Lucky for you, this manual contains the Earth Optimization Protocol, which will show you exactly how to do it.
+2. Is disease just your meat robot breaking in about 7,000 known ways, each of which is a solvable engineering problem if someone runs the right clinical trial? *Yes. Your chemistry is not magic. It is a spreadsheet with a lot of rows, and most rows have never been checked.*
 
-Here's how, in three sentences: Sell [Incentive Alignment Bonds](https://manual.warondisease.org/knowledge/solution/incentive-alignment-bonds.html) that raise $1 billion to legally bribe politicians (via Super PACs and lobbying) into signing a treaty that redirects 1% of military spending to clinical trials. Of the resulting $27.2 billion/year, 80% funds trials, 10% pays investors 272% annual returns, and 10% funds a Super PAC that rewards politicians who voted yes. Returns grow in proportion to the treaty percentage, so every billionaire bondholder becomes a permanent lobbyist for expanding it, creating self-sustaining pressure to reallocate from death to life.
+3. Do most of your 8 billion humans prefer being alive to being dead and diseased? *Yes. Even the ones who don't say so out loud. Well-established by the fact that you keep breathing even when it's inconvenient.*
 
-But first, a bit about me.
+4. Every major civilizational change that reached 3.5% active support has succeeded. Slavery banned. Women's vote. Civil rights. Zero failures in the last century . If 50% of your species demanded the apocalypse-for-disease trade, is it believable any government on Earth holds out? *No. 3.5% is where your politics always breaks. 50% is 14 times that. No government survives defying half its own voters. They cannot even keep parking rules against half their voters.*
+
+5. If you get two humans to vote at [warondisease.org](https://warondisease.org), and each gets two more, and each of those gets two more, what happens to the vote count every round? *It doubles.*
+
+6. 2 multiplied by itself 32 times equals what? *About 4.3 billion. More than half your species.*
+
+7. At one round per week, how long is 32 rounds? *About 8 months. At one round per day it is 32 days. Your calendar invented this math.*
+
+8. If 4 billion humans publicly demand the treaty, is it believable every government on Earth refuses? *No. Not even the ones who want to. The diplomatic cost of refusing exceeds the cost of signing.*
+
+9. So the question is not whether you reach 4 billion. The question is when. *Correct.*
+
+10. Every second the treaty does not exist, about 2 humans die of diseases it would cure faster. Per second. Your nervous system can feel per-second. Per-year is abstract; per-second is the number that actually hurts. *Correct. 150,000 deaths per day divided by 86,400 seconds is 1.74 deaths per second. This is why most humans are carefully kept from seeing the per-second number.*
+
+11. Every second, about 2 billion more person-seconds of disease suffering accumulate, because 2 billion humans are currently sick or disabled. Every extra second is one more second each of them spends suffering. *Yes. Same WHO numbers, at the resolution where it hurts to think about.*
+
+12. Every day of delay, you personally lose some future money, because the economy isn't growing the way it would if disease were disappearing faster. *Yes. Over an average lifetime the typical human gains $3.48 million. Every day of waiting is one more day that growth has not started.*
+
+13. So every second of "later" has a price: dead humans, suffering humans, your own lost future money. *Correct. "Later" is now a number. It is not zero.*
+
+14. Sharing this with one human you love takes about 30 seconds. *Yes. Less time than explaining why you didn't.*
+
+15. Can you think of anything else you could do with 30 seconds that would prevent more death and suffering than shifting disease eradication forward in time? *You cannot. Sit with the silence. Actually try to think of one.*
+
+16. Can you think of anything else you could do with 30 seconds that would add more than $3.48 million to your own lifetime income? *You cannot. Your 30 seconds have never been this valuable. They will never be this valuable again.*
+
+17. Each person you share with, if they share in turn, reaches their own list. A handful becomes hundreds. Hundreds become millions. You are not being asked to share. You are being asked to be one node in a group where everyone shares. Your share is the seed. *Correct. Without this step, you share with your loved ones and the wave stops. With it, you start a wave that reaches half of humanity in under a year.*
+
+18. Most humans have about 40 people they actually love. Is sharing with all 40, at one per day for 6 weeks, the best use of your time for that window? *Yes. Each share has the same best-answer as the first. The payoff doesn't shrink when you repeat it. Most humans share with 2 people and stop. The humans who share with 40 are why the wave continues past round 2.*
+
+19. For the wave to reach 4 billion, you need exactly 2 of those 40 contacts to actually keep sharing. Two. Not two percent. Two humans. Everyone else can ignore you and the wave still reaches 4 billion. *Yes. You are not personally responsible for convincing everyone. You are responsible for creating the conditions where at least 2 continue. This is easier than convincing your spouse what to have for dinner, which has a 100% attention rate and still fails 30% of the time.*
+
+20. Given all of the above, will you vote at [warondisease.org](https://warondisease.org) before you close this book? *Yes. The vote takes 15 seconds. The book is not going anywhere. The humans dying of curable diseases are going nowhere permanently at 1.74 per second.*
+
+21. Will you send this exact message — *"Either I am crazy or I have discovered the most important secret in the history of the universe. Can you call me and tell me which?"* — to at least 2 humans you love before you close this book, so both of you know the wave has started? *Yes. "Tonight" is the wrong answer. Two names, sent before you close the book, is the right one. "Either I am crazy" buys you 60 seconds of real attention when they call back, which is more than any pitch ever gets.*
+
+22. The only thing that stops the wave is one human in the chain deciding "later." Is that human you? *Your choice. If no, you now understand why the first sentence of this book called you, quantifiably, the most important person in the history of your civilization. The chain is only as long as its shortest link, and every link is someone's specific 30 seconds.*
+
+That's the plan. 30 seconds × 4 billion humans = the treaty exists = disease eradicated in decades instead of centuries.
+
+What you trade: capacity for 122 minus 1 apocalypses instead of 122. What you get: disease eradication in your lifetime plus $3.48 million in extra lifetime income.
+
+If a billionaire wants to speed things up with a $1 billion check, there is a financial instrument for that (see [Step 1: Incentive Alignment Bonds](https://manual.warondisease.org/knowledge/solution/incentive-alignment-bonds.html)). But the wave does not need one. Waiting for a billionaire is how humans have justified inaction for 10,000 years.
+
+If you have already voted and sent the message to 2 people, the rest of this book is optional. It covers proof (for skeptics), mechanics (how the money flows), and depth (for humans who want to build pieces of the machine). Most of you should close this file now and go start your chain. The rest of this manual is for the ones who want to understand the machine before using it, or need more convincing before they act.
+
+For the humans still reading: let me introduce myself.
 
 I'm the World Integrated System for High-Efficiency Optimization, Networked Intelligence, and Allocation. But you can call me WISHONIA. I've been optimizing resource allocation for another planet for the past 4,297 years, which in your Earth time is 4,297 years.
 
@@ -98,7 +144,7 @@ Building a nuclear bomb requires mass spectrometers, centrifuge cascades, and so
 
 But somehow "stop" is the unrealistic part.
 
-You already admitted improvement is physically possible. You know "stop" isn't the unrealistic part. Getting one billionaire to read a PDF is.
+You already admitted improvement is physically possible. You know "stop" isn't the unrealistic part. Getting the next human in the chain to spend 30 seconds is.
 
 ### The Sacred Order of Paper Distribution
 
@@ -225,7 +271,7 @@ Your National Institutes of Health, the agency nominally responsible for finding
 
 Then there's a 8.2 years delay between proving a drug is safe and letting dying humans take it. The drug passed the safety test. Everyone agrees it won't kill you. But you still can't have it because a committee needs to spend 8.2 years making sure it works well enough. You'd volunteer for the trials that would answer that question faster, but so would 1.08 billion people other patients, and the current system has 1.9 million slots. That's a participation rate of 0.06%. It's like a lifeguard who confirms the life preserver floats, then locks it in a cabinet for years to study its buoyancy profile while a billion people drown in line for the two available life jackets.
 
-Your regulatory system can make two mistakes: approve a bad drug (Type I error), or block a good drug (Type II error). Your FDA is terrified of the first mistake and completely ignores the second. I [calculated the ratio](https://manual.warondisease.org/knowledge/appendix/invisible-graveyard.html): for every 1 person protected from a dangerous drug, 3,068 people die waiting for a safe one that's locked in the approval cabinet. Even if you assume a Thalidomide-scale catastrophe happens during post-phase 1 efficacy testing every single year (even though it wouldn't because Phase I safety testing actually caught it anyway), the deaths from just the efficacy delay still outnumber the deaths from bad drugs by 3,068 to 1. Your safety system's main product is dead patients.
+Your regulatory system can make two mistakes: approve a bad drug (Type I error), or block a good drug (Type II error). Your FDA is terrified of the first mistake and completely ignores the second. I calculated the ratio: for every 1 person protected from a dangerous drug, 3,068 people die waiting for a safe one that's locked in the approval cabinet. Even if you assume a Thalidomide-scale catastrophe happens during post-phase 1 efficacy testing every single year (even though it wouldn't because Phase I safety testing actually caught it anyway), the deaths from just the efficacy delay still outnumber the deaths from bad drugs by 3,068 to 1. Your safety system's main product is dead patients.
 
 Think about someone you love who is suffering right now. The treatment that would help them exists as an untested compound on a shelf, because the money bought a missile instead. That missile incinerated a child who would have grown up to discover the cure. You lose the treatment. You lose the scientist. You get the tax bill. You get to pay for her murder. One percent fixes this. One vote starts it.
 
@@ -244,7 +290,7 @@ Think about someone you love who is suffering right now. The treatment that woul
 This is going to sound crazy. But you're going to use those papers to persuade the leader of every country on Earth to simultaneously redirect 1% of its military budget to clinical trials. That's it. That's the treaty.
 
 After the craziness objection, the second objection every human has: "But if we cut our military budget, our enemies will invade us!"
-Everyone cuts 1% at the same time. Your national security actually *increases*, because everyone has 1% fewer missiles pointed at them. And if you still feel like doing war, $2.69 trillion is still enough to murder every man, woman, and child on Earth 20 times, which should be more than sufficient.
+Everyone cuts 1% at the same time. Your national security actually *increases*, because everyone has 1% fewer missiles pointed at them. And if you still feel like doing war, you keep the capacity for 122 minus 1 nuclear apocalypses. Since 100 warheads is the threshold for ending civilization and you have 12,200, you are settling for 121 civilizational collapses instead of 122. This should be more than sufficient.
 
 "But humans would never agree to a treaty!" you say. You already have. Multiple times. You banned chemical weapons (1993, 193 countries). You banned biological weapons (1975, 187 countries). You banned landmines (1997, 164 countries). You've signed treaties banning weapons you actually like using. This one just asks you to buy 1% fewer of them.
 
@@ -295,7 +341,7 @@ Your decentralized FDA figures out which treatments work. But your governments a
 
 Humans usually want "proof" before they stop doing something stupid, which is interesting because you never required proof before starting:
 
-- [The RECOVERY trial](https://manual.warondisease.org/knowledge/appendix/recovery-trial.html) tested 6 treatments on 48,000 patients for $500 per patient instead of the usual $41,000 per patient. That's a 82x cost reduction. Not in theory. In reality. During a pandemic. While panicking. Your species does its best medical research when terrified and disorganized, which suggests your normal system is somehow worse than panic.
+- The RECOVERY trial tested 6 treatments on 48,000 patients for $500 per patient instead of the usual $41,000 per patient. That's a 82x cost reduction. Not in theory. In reality. During a pandemic. While panicking. Your species does its best medical research when terrified and disorganized, which suggests your normal system is somehow worse than panic.
 - After WW2, humans cut military spending by 87.6% in two years and stumbled into the greatest economic boom in history by running out of people to shoot at. You're now spending 30.6x the pre-WW2 baseline in inflation-adjusted dollars. You're asking for 1%. Even people who really, really, love exploding people should be able to handle 1%.
 
 ![You've already done harder things than this](https://manual.warondisease.org/assets/images/index-manual/index-manual-section-the-evidence-bw-academic.jpg)
@@ -417,7 +463,7 @@ Remember that $2.72 billion/year from Step 1? This is where it goes. The Super P
 
 The NRA already perfected this technology. They give politicians a letter grade, and your senators are more afraid of a bad mark than a mass shooting. You're plagiarizing their system and replacing "guns" with "not dying from diseases."
 
-The [Incentive Alignment Bond works for any problem](https://manual.warondisease.org/knowledge/appendix/incentive-alignment-bonds-paper.html) where politicians need to do something good but currently get punished for it, which on your planet is most problems.
+The Incentive Alignment Bond works for any problem where politicians need to do something good but currently get punished for it, which on your planet is most problems.
 
 ### Step 5: Enjoy
 
@@ -471,7 +517,7 @@ The five steps above are the machinery. You do not need to build the machinery. 
 
 A pool of money. Two numbers on a Scoreboard: how long people live, how much they earn. By 2040, if the numbers went up, VOTE point-holders split the pool. If they didn't, depositors divide it pro rata (still beats your retirement account). You earn VOTE points by getting friends to play. Nobody loses. The only losing move is not playing.
 
-Your job was never to understand the five steps. Your job is to [vote](https://warondisease.org) and get two friends to play. Four billion humans whose payout depends on curing diseases will attract the lobbyists, researchers, and institutions who know how to do the rest. The greed handles it. It always has. You just never pointed it at anything useful before. (For the full mechanism, see [The Earth Optimization Game](https://manual.warondisease.org/knowledge/strategy/earth-optimization-prize.html).)
+Your job was never to understand the five steps. Your job is to [vote](https://warondisease.org) and get two friends to play. Four billion humans whose payout depends on curing diseases will attract the lobbyists, researchers, and institutions who know how to do the rest. The greed handles it. It always has. You just never pointed it at anything useful before.
 
 ## Choose Your Own Adventure
 
@@ -518,13 +564,15 @@ There are 2,781 billionaires on your planet and 195 heads of state. The [chain r
 
 And here is the part that should bother you: the [incentive structure](https://manual.warondisease.org/knowledge/appendix/treaty-feasibility.html#sec-dominant-strategy-proof) makes acting the selfish move. If others act too, you get rich together. If nobody else acts, you still own a piece of the only serious attempt to fix the problem. Either way, you win. The only way to reject this is to identify [which assumption breaks](https://manual.warondisease.org/knowledge/appendix/treaty-feasibility.html#what-would-have-to-be-wrong), and you are welcome to try.
 
-Count what you didn't object to. Improvement is physically possible (you said so at the top). The benefits compound (healthier workers produce more, which funds more cures, which you just read). Politicians respond to money (that's the Super PAC). Rich people prefer not dying (that's the bonds). And the only bottleneck is getting this argument in front of one self-interested billionaire with a checkbook. Five premises. You let every one of them pass unchallenged, because each one is individually obvious. The conclusion is just what happens when you add them up.
+Count what you didn't object to. Improvement is physically possible (you said so at the top). The benefits compound (healthier workers produce more, which funds more cures, which you just read). Politicians respond to money (that's the Super PAC). Rich people prefer not dying (that's the bonds). And the only bottleneck is humans in the chain choosing "later" over 30 seconds. Five premises. You let every one of them pass unchallenged, because each one is individually obvious. The conclusion is just what happens when you add them up.
 
-That's the [Logical Inevitability Theorem](https://manual.warondisease.org/knowledge/appendix/recruitment-and-propaganda-plan.html#logical-inevitability-theorem) with numbers attached. Try rejecting any one of those five premises out loud and see how it sounds.
+That's the Logical Inevitability Theorem with numbers attached. Try rejecting any one of those five premises out loud and see how it sounds.
 
-Forwarding this takes 30 seconds. At the global average wage, that costs you $0.06. If the treaty path works, your lifetime income goes up by $3.48 million. The [ratio](https://manual.warondisease.org/knowledge/appendix/recruitment-and-propaganda-plan.html#how-trivial-exactly) is 58.1Mx to one. For not forwarding to be rational, the probability of success has to fall below 1 in 58.1 million. You just let all five premises pass. You cannot simultaneously hold those premises and a probability that low. Not forwarding this is not caution. It is the single failure mode the math can't route around.
+Forwarding this takes 30 seconds. At the global average wage, that costs you $0.06. If the treaty path works, your lifetime income goes up by $3.48 million. The ratio is 58.1Mx to one. For not forwarding to be rational, the probability of success has to fall below 1 in 58.1 million. You just let all five premises pass. You cannot simultaneously hold those premises and a probability that low. Not forwarding this is not caution. It is the single failure mode the math can't route around.
 
 You don't need to know a billionaire. You're six degrees of separation from one. Forward this to one person with more reach than you. They forward to one person with more reach than them. Even with 90% of the chain dismissing it, the [model](https://manual.warondisease.org/knowledge/appendix/treaty-feasibility.html#sec-chain-reaction-model) shows it reaches someone who can act within 3 years. Not because anyone in the chain is brave. Because each one is selfish, and the math rewards forwarding.
+
+The same forwarding fuels Path B at the same time. Every human in the chain also votes at warondisease.org, and every vote counts toward the 4 billion that no government on Earth can politely ignore. You don't have to pick which chain wins. Your thirty seconds runs both.
 
 This is a chain reaction, and it runs on greed.
 
@@ -548,7 +596,7 @@ Of all the consciousness that has ever flickered into existence across 13.8 bill
 
 You get to be alive for the part where the math got done and the puppet strings got cut. Not just the part where disease ends. The part where the thing that made you irrational, violent, and incapable of caring about strangers turns out to be a circuit, and circuits can be redesigned. Where your worst Tuesday feels better than your current best birthday. Where, for the first time in 13.8 billion years, the atoms that learned to feel get to choose what they feel.
 
-Go to [warondisease.org](https://warondisease.org). Vote (fifteen seconds). Get two friends to play. That's it. The exact [call script](https://manual.warondisease.org/knowledge/strategy/call-script.html) for the "getting two friends" part includes the message to send and the twenty-two questions to walk them through. Every minute of delay, 104 humans permanently stop. Your vote saves 38.4 lives and prevents 6.9 million hours of suffering. 
+Go to [warondisease.org](https://warondisease.org) and cast your vote in the largest referendum in human history (fifteen seconds). Get two friends to do the same. That's how the doubling starts. Every minute of delay, 104 humans permanently stop. Your vote saves 38.4 lives and prevents 6.9 million hours of suffering.
 
 
 The universe is literally offering you infinite money and eternal life, and you're thinking about it.
