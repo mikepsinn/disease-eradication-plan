@@ -899,10 +899,7 @@ where:
 $$
 \begin{gathered}
 f_{cure,20,treaty} \\
-= \min\left(1.0, Treatments_{new,ann} \times (3 \times min(k_{capacity} \times 1, k_{capacity,max}) \\
-+ 4 \times min(k_{capacity} \times 2, k_{capacity,max}) \\
-+ 5 \times min(k_{capacity} \times 5, k_{capacity,max}) \\
-+ 8 \times min(k_{capacity} \times 10, k_{capacity,max})) / N_{untreated}\right)
+= \min\left(1.0, Treatments_{new,ann} \times (3 \times min(k_{capacity} \times 1, k_{capacity,max}) + 4 \times min(k_{capacity} \times 2, k_{capacity,max}) + 5 \times min(k_{capacity} \times 5, k_{capacity,max}) + 8 \times min(k_{capacity} \times 10, k_{capacity,max})) / N_{untreated}\right)
 \end{gathered}
 $$
 where:
@@ -1217,10 +1214,7 @@ where:
 $$
 \begin{gathered}
 f_{cure,20,treaty} \\
-= \min\left(1.0, Treatments_{new,ann} \times (3 \times min(k_{capacity} \times 1, k_{capacity,max}) \\
-+ 4 \times min(k_{capacity} \times 2, k_{capacity,max}) \\
-+ 5 \times min(k_{capacity} \times 5, k_{capacity,max}) \\
-+ 8 \times min(k_{capacity} \times 10, k_{capacity,max})) / N_{untreated}\right)
+= \min\left(1.0, Treatments_{new,ann} \times (3 \times min(k_{capacity} \times 1, k_{capacity,max}) + 4 \times min(k_{capacity} \times 2, k_{capacity,max}) + 5 \times min(k_{capacity} \times 5, k_{capacity,max}) + 8 \times min(k_{capacity} \times 10, k_{capacity,max})) / N_{untreated}\right)
 \end{gathered}
 $$
 where:
@@ -1354,10 +1348,7 @@ where:
 $$
 \begin{gathered}
 f_{cure,15,treaty} \\
-= \min\left(1.0, Treatments_{new,ann} \times (3 \times min(k_{capacity} \times 1, k_{capacity,max}) \\
-+ 4 \times min(k_{capacity} \times 2, k_{capacity,max}) \\
-+ 5 \times min(k_{capacity} \times 5, k_{capacity,max}) \\
-+ 3 \times min(k_{capacity} \times 10, k_{capacity,max})) / N_{untreated}\right)
+= \min\left(1.0, Treatments_{new,ann} \times (3 \times min(k_{capacity} \times 1, k_{capacity,max}) + 4 \times min(k_{capacity} \times 2, k_{capacity,max}) + 5 \times min(k_{capacity} \times 5, k_{capacity,max}) + 3 \times min(k_{capacity} \times 10, k_{capacity,max})) / N_{untreated}\right)
 \end{gathered}
 $$
 where:
@@ -11598,10 +11589,7 @@ where:
 $$
 \begin{gathered}
 f_{cure,20,treaty} \\
-= \min\left(1.0, Treatments_{new,ann} \times (3 \times min(k_{capacity} \times 1, k_{capacity,max}) \\
-+ 4 \times min(k_{capacity} \times 2, k_{capacity,max}) \\
-+ 5 \times min(k_{capacity} \times 5, k_{capacity,max}) \\
-+ 8 \times min(k_{capacity} \times 10, k_{capacity,max})) / N_{untreated}\right)
+= \min\left(1.0, Treatments_{new,ann} \times (3 \times min(k_{capacity} \times 1, k_{capacity,max}) + 4 \times min(k_{capacity} \times 2, k_{capacity,max}) + 5 \times min(k_{capacity} \times 5, k_{capacity,max}) + 8 \times min(k_{capacity} \times 10, k_{capacity,max})) / N_{untreated}\right)
 \end{gathered}
 $$
 where:
@@ -11943,10 +11931,7 @@ where:
 $$
 \begin{gathered}
 f_{cure,20,treaty} \\
-= \min\left(1.0, Treatments_{new,ann} \times (3 \times min(k_{capacity} \times 1, k_{capacity,max}) \\
-+ 4 \times min(k_{capacity} \times 2, k_{capacity,max}) \\
-+ 5 \times min(k_{capacity} \times 5, k_{capacity,max}) \\
-+ 8 \times min(k_{capacity} \times 10, k_{capacity,max})) / N_{untreated}\right)
+= \min\left(1.0, Treatments_{new,ann} \times (3 \times min(k_{capacity} \times 1, k_{capacity,max}) + 4 \times min(k_{capacity} \times 2, k_{capacity,max}) + 5 \times min(k_{capacity} \times 5, k_{capacity,max}) + 8 \times min(k_{capacity} \times 10, k_{capacity,max})) / N_{untreated}\right)
 \end{gathered}
 $$
 where:
@@ -12335,10 +12320,7 @@ where:
 $$
 \begin{gathered}
 f_{cure,20,treaty} \\
-= \min\left(1.0, Treatments_{new,ann} \times (3 \times min(k_{capacity} \times 1, k_{capacity,max}) \\
-+ 4 \times min(k_{capacity} \times 2, k_{capacity,max}) \\
-+ 5 \times min(k_{capacity} \times 5, k_{capacity,max}) \\
-+ 8 \times min(k_{capacity} \times 10, k_{capacity,max})) / N_{untreated}\right)
+= \min\left(1.0, Treatments_{new,ann} \times (3 \times min(k_{capacity} \times 1, k_{capacity,max}) + 4 \times min(k_{capacity} \times 2, k_{capacity,max}) + 5 \times min(k_{capacity} \times 5, k_{capacity,max}) + 8 \times min(k_{capacity} \times 10, k_{capacity,max})) / N_{untreated}\right)
 \end{gathered}
 $$
 where:
@@ -13491,10 +13473,7 @@ Treaty disease-cure fraction over 15 years under the optimistic treaty take-hold
 $$
 \begin{gathered}
 f_{cure,15,treaty} \\
-= \min\left(1.0, Treatments_{new,ann} \times (3 \times min(k_{capacity} \times 1, k_{capacity,max}) \\
-+ 4 \times min(k_{capacity} \times 2, k_{capacity,max}) \\
-+ 5 \times min(k_{capacity} \times 5, k_{capacity,max}) \\
-+ 3 \times min(k_{capacity} \times 10, k_{capacity,max})) / N_{untreated}\right)
+= \min\left(1.0, Treatments_{new,ann} \times (3 \times min(k_{capacity} \times 1, k_{capacity,max}) + 4 \times min(k_{capacity} \times 2, k_{capacity,max}) + 5 \times min(k_{capacity} \times 5, k_{capacity,max}) + 3 \times min(k_{capacity} \times 10, k_{capacity,max})) / N_{untreated}\right)
 \end{gathered}
 $$
 where:
@@ -13595,10 +13574,7 @@ Treaty disease-cure fraction over 20 years under the optimistic treaty take-hold
 $$
 \begin{gathered}
 f_{cure,20,treaty} \\
-= \min\left(1.0, Treatments_{new,ann} \times (3 \times min(k_{capacity} \times 1, k_{capacity,max}) \\
-+ 4 \times min(k_{capacity} \times 2, k_{capacity,max}) \\
-+ 5 \times min(k_{capacity} \times 5, k_{capacity,max}) \\
-+ 8 \times min(k_{capacity} \times 10, k_{capacity,max})) / N_{untreated}\right)
+= \min\left(1.0, Treatments_{new,ann} \times (3 \times min(k_{capacity} \times 1, k_{capacity,max}) + 4 \times min(k_{capacity} \times 2, k_{capacity,max}) + 5 \times min(k_{capacity} \times 5, k_{capacity,max}) + 8 \times min(k_{capacity} \times 10, k_{capacity,max})) / N_{untreated}\right)
 \end{gathered}
 $$
 where:
@@ -14151,10 +14127,7 @@ where:
 $$
 \begin{gathered}
 f_{cure,15,treaty} \\
-= \min\left(1.0, Treatments_{new,ann} \times (3 \times min(k_{capacity} \times 1, k_{capacity,max}) \\
-+ 4 \times min(k_{capacity} \times 2, k_{capacity,max}) \\
-+ 5 \times min(k_{capacity} \times 5, k_{capacity,max}) \\
-+ 3 \times min(k_{capacity} \times 10, k_{capacity,max})) / N_{untreated}\right)
+= \min\left(1.0, Treatments_{new,ann} \times (3 \times min(k_{capacity} \times 1, k_{capacity,max}) + 4 \times min(k_{capacity} \times 2, k_{capacity,max}) + 5 \times min(k_{capacity} \times 5, k_{capacity,max}) + 3 \times min(k_{capacity} \times 10, k_{capacity,max})) / N_{untreated}\right)
 \end{gathered}
 $$
 where:
@@ -14279,10 +14252,7 @@ where:
 $$
 \begin{gathered}
 f_{cure,15,treaty} \\
-= \min\left(1.0, Treatments_{new,ann} \times (3 \times min(k_{capacity} \times 1, k_{capacity,max}) \\
-+ 4 \times min(k_{capacity} \times 2, k_{capacity,max}) \\
-+ 5 \times min(k_{capacity} \times 5, k_{capacity,max}) \\
-+ 3 \times min(k_{capacity} \times 10, k_{capacity,max})) / N_{untreated}\right)
+= \min\left(1.0, Treatments_{new,ann} \times (3 \times min(k_{capacity} \times 1, k_{capacity,max}) + 4 \times min(k_{capacity} \times 2, k_{capacity,max}) + 5 \times min(k_{capacity} \times 5, k_{capacity,max}) + 3 \times min(k_{capacity} \times 10, k_{capacity,max})) / N_{untreated}\right)
 \end{gathered}
 $$
 where:
@@ -14400,10 +14370,7 @@ where:
 $$
 \begin{gathered}
 f_{cure,15,treaty} \\
-= \min\left(1.0, Treatments_{new,ann} \times (3 \times min(k_{capacity} \times 1, k_{capacity,max}) \\
-+ 4 \times min(k_{capacity} \times 2, k_{capacity,max}) \\
-+ 5 \times min(k_{capacity} \times 5, k_{capacity,max}) \\
-+ 3 \times min(k_{capacity} \times 10, k_{capacity,max})) / N_{untreated}\right)
+= \min\left(1.0, Treatments_{new,ann} \times (3 \times min(k_{capacity} \times 1, k_{capacity,max}) + 4 \times min(k_{capacity} \times 2, k_{capacity,max}) + 5 \times min(k_{capacity} \times 5, k_{capacity,max}) + 3 \times min(k_{capacity} \times 10, k_{capacity,max})) / N_{untreated}\right)
 \end{gathered}
 $$
 where:
@@ -14539,10 +14506,7 @@ where:
 $$
 \begin{gathered}
 f_{cure,20,treaty} \\
-= \min\left(1.0, Treatments_{new,ann} \times (3 \times min(k_{capacity} \times 1, k_{capacity,max}) \\
-+ 4 \times min(k_{capacity} \times 2, k_{capacity,max}) \\
-+ 5 \times min(k_{capacity} \times 5, k_{capacity,max}) \\
-+ 8 \times min(k_{capacity} \times 10, k_{capacity,max})) / N_{untreated}\right)
+= \min\left(1.0, Treatments_{new,ann} \times (3 \times min(k_{capacity} \times 1, k_{capacity,max}) + 4 \times min(k_{capacity} \times 2, k_{capacity,max}) + 5 \times min(k_{capacity} \times 5, k_{capacity,max}) + 8 \times min(k_{capacity} \times 10, k_{capacity,max})) / N_{untreated}\right)
 \end{gathered}
 $$
 where:
@@ -14678,10 +14642,7 @@ where:
 $$
 \begin{gathered}
 f_{cure,15,treaty} \\
-= \min\left(1.0, Treatments_{new,ann} \times (3 \times min(k_{capacity} \times 1, k_{capacity,max}) \\
-+ 4 \times min(k_{capacity} \times 2, k_{capacity,max}) \\
-+ 5 \times min(k_{capacity} \times 5, k_{capacity,max}) \\
-+ 3 \times min(k_{capacity} \times 10, k_{capacity,max})) / N_{untreated}\right)
+= \min\left(1.0, Treatments_{new,ann} \times (3 \times min(k_{capacity} \times 1, k_{capacity,max}) + 4 \times min(k_{capacity} \times 2, k_{capacity,max}) + 5 \times min(k_{capacity} \times 5, k_{capacity,max}) + 3 \times min(k_{capacity} \times 10, k_{capacity,max})) / N_{untreated}\right)
 \end{gathered}
 $$
 where:
@@ -15375,10 +15336,7 @@ where:
 $$
 \begin{gathered}
 f_{cure,20,treaty} \\
-= \min\left(1.0, Treatments_{new,ann} \times (3 \times min(k_{capacity} \times 1, k_{capacity,max}) \\
-+ 4 \times min(k_{capacity} \times 2, k_{capacity,max}) \\
-+ 5 \times min(k_{capacity} \times 5, k_{capacity,max}) \\
-+ 8 \times min(k_{capacity} \times 10, k_{capacity,max})) / N_{untreated}\right)
+= \min\left(1.0, Treatments_{new,ann} \times (3 \times min(k_{capacity} \times 1, k_{capacity,max}) + 4 \times min(k_{capacity} \times 2, k_{capacity,max}) + 5 \times min(k_{capacity} \times 5, k_{capacity,max}) + 8 \times min(k_{capacity} \times 10, k_{capacity,max})) / N_{untreated}\right)
 \end{gathered}
 $$
 where:
@@ -15522,10 +15480,7 @@ where:
 $$
 \begin{gathered}
 f_{cure,15,treaty} \\
-= \min\left(1.0, Treatments_{new,ann} \times (3 \times min(k_{capacity} \times 1, k_{capacity,max}) \\
-+ 4 \times min(k_{capacity} \times 2, k_{capacity,max}) \\
-+ 5 \times min(k_{capacity} \times 5, k_{capacity,max}) \\
-+ 3 \times min(k_{capacity} \times 10, k_{capacity,max})) / N_{untreated}\right)
+= \min\left(1.0, Treatments_{new,ann} \times (3 \times min(k_{capacity} \times 1, k_{capacity,max}) + 4 \times min(k_{capacity} \times 2, k_{capacity,max}) + 5 \times min(k_{capacity} \times 5, k_{capacity,max}) + 3 \times min(k_{capacity} \times 10, k_{capacity,max})) / N_{untreated}\right)
 \end{gathered}
 $$
 where:
@@ -15586,10 +15541,7 @@ where:
 $$
 \begin{gathered}
 f_{cure,15,treaty} \\
-= \min\left(1.0, Treatments_{new,ann} \times (3 \times min(k_{capacity} \times 1, k_{capacity,max}) \\
-+ 4 \times min(k_{capacity} \times 2, k_{capacity,max}) \\
-+ 5 \times min(k_{capacity} \times 5, k_{capacity,max}) \\
-+ 3 \times min(k_{capacity} \times 10, k_{capacity,max})) / N_{untreated}\right)
+= \min\left(1.0, Treatments_{new,ann} \times (3 \times min(k_{capacity} \times 1, k_{capacity,max}) + 4 \times min(k_{capacity} \times 2, k_{capacity,max}) + 5 \times min(k_{capacity} \times 5, k_{capacity,max}) + 3 \times min(k_{capacity} \times 10, k_{capacity,max})) / N_{untreated}\right)
 \end{gathered}
 $$
 where:
@@ -16135,10 +16087,7 @@ where:
 $$
 \begin{gathered}
 f_{cure,15,treaty} \\
-= \min\left(1.0, Treatments_{new,ann} \times (3 \times min(k_{capacity} \times 1, k_{capacity,max}) \\
-+ 4 \times min(k_{capacity} \times 2, k_{capacity,max}) \\
-+ 5 \times min(k_{capacity} \times 5, k_{capacity,max}) \\
-+ 3 \times min(k_{capacity} \times 10, k_{capacity,max})) / N_{untreated}\right)
+= \min\left(1.0, Treatments_{new,ann} \times (3 \times min(k_{capacity} \times 1, k_{capacity,max}) + 4 \times min(k_{capacity} \times 2, k_{capacity,max}) + 5 \times min(k_{capacity} \times 5, k_{capacity,max}) + 3 \times min(k_{capacity} \times 10, k_{capacity,max})) / N_{untreated}\right)
 \end{gathered}
 $$
 where:
@@ -16408,10 +16357,7 @@ where:
 $$
 \begin{gathered}
 f_{cure,20,treaty} \\
-= \min\left(1.0, Treatments_{new,ann} \times (3 \times min(k_{capacity} \times 1, k_{capacity,max}) \\
-+ 4 \times min(k_{capacity} \times 2, k_{capacity,max}) \\
-+ 5 \times min(k_{capacity} \times 5, k_{capacity,max}) \\
-+ 8 \times min(k_{capacity} \times 10, k_{capacity,max})) / N_{untreated}\right)
+= \min\left(1.0, Treatments_{new,ann} \times (3 \times min(k_{capacity} \times 1, k_{capacity,max}) + 4 \times min(k_{capacity} \times 2, k_{capacity,max}) + 5 \times min(k_{capacity} \times 5, k_{capacity,max}) + 8 \times min(k_{capacity} \times 10, k_{capacity,max})) / N_{untreated}\right)
 \end{gathered}
 $$
 where:
@@ -16679,10 +16625,7 @@ where:
 $$
 \begin{gathered}
 f_{cure,20,treaty} \\
-= \min\left(1.0, Treatments_{new,ann} \times (3 \times min(k_{capacity} \times 1, k_{capacity,max}) \\
-+ 4 \times min(k_{capacity} \times 2, k_{capacity,max}) \\
-+ 5 \times min(k_{capacity} \times 5, k_{capacity,max}) \\
-+ 8 \times min(k_{capacity} \times 10, k_{capacity,max})) / N_{untreated}\right)
+= \min\left(1.0, Treatments_{new,ann} \times (3 \times min(k_{capacity} \times 1, k_{capacity,max}) + 4 \times min(k_{capacity} \times 2, k_{capacity,max}) + 5 \times min(k_{capacity} \times 5, k_{capacity,max}) + 8 \times min(k_{capacity} \times 10, k_{capacity,max})) / N_{untreated}\right)
 \end{gathered}
 $$
 where:
@@ -16991,10 +16934,7 @@ where:
 $$
 \begin{gathered}
 f_{cure,20,treaty} \\
-= \min\left(1.0, Treatments_{new,ann} \times (3 \times min(k_{capacity} \times 1, k_{capacity,max}) \\
-+ 4 \times min(k_{capacity} \times 2, k_{capacity,max}) \\
-+ 5 \times min(k_{capacity} \times 5, k_{capacity,max}) \\
-+ 8 \times min(k_{capacity} \times 10, k_{capacity,max})) / N_{untreated}\right)
+= \min\left(1.0, Treatments_{new,ann} \times (3 \times min(k_{capacity} \times 1, k_{capacity,max}) + 4 \times min(k_{capacity} \times 2, k_{capacity,max}) + 5 \times min(k_{capacity} \times 5, k_{capacity,max}) + 8 \times min(k_{capacity} \times 10, k_{capacity,max})) / N_{untreated}\right)
 \end{gathered}
 $$
 where:
@@ -17263,10 +17203,7 @@ where:
 $$
 \begin{gathered}
 f_{cure,15,treaty} \\
-= \min\left(1.0, Treatments_{new,ann} \times (3 \times min(k_{capacity} \times 1, k_{capacity,max}) \\
-+ 4 \times min(k_{capacity} \times 2, k_{capacity,max}) \\
-+ 5 \times min(k_{capacity} \times 5, k_{capacity,max}) \\
-+ 3 \times min(k_{capacity} \times 10, k_{capacity,max})) / N_{untreated}\right)
+= \min\left(1.0, Treatments_{new,ann} \times (3 \times min(k_{capacity} \times 1, k_{capacity,max}) + 4 \times min(k_{capacity} \times 2, k_{capacity,max}) + 5 \times min(k_{capacity} \times 5, k_{capacity,max}) + 3 \times min(k_{capacity} \times 10, k_{capacity,max})) / N_{untreated}\right)
 \end{gathered}
 $$
 where:
@@ -17531,10 +17468,7 @@ where:
 $$
 \begin{gathered}
 f_{cure,20,treaty} \\
-= \min\left(1.0, Treatments_{new,ann} \times (3 \times min(k_{capacity} \times 1, k_{capacity,max}) \\
-+ 4 \times min(k_{capacity} \times 2, k_{capacity,max}) \\
-+ 5 \times min(k_{capacity} \times 5, k_{capacity,max}) \\
-+ 8 \times min(k_{capacity} \times 10, k_{capacity,max})) / N_{untreated}\right)
+= \min\left(1.0, Treatments_{new,ann} \times (3 \times min(k_{capacity} \times 1, k_{capacity,max}) + 4 \times min(k_{capacity} \times 2, k_{capacity,max}) + 5 \times min(k_{capacity} \times 5, k_{capacity,max}) + 8 \times min(k_{capacity} \times 10, k_{capacity,max})) / N_{untreated}\right)
 \end{gathered}
 $$
 where:
@@ -17830,10 +17764,7 @@ where:
 $$
 \begin{gathered}
 f_{cure,20,treaty} \\
-= \min\left(1.0, Treatments_{new,ann} \times (3 \times min(k_{capacity} \times 1, k_{capacity,max}) \\
-+ 4 \times min(k_{capacity} \times 2, k_{capacity,max}) \\
-+ 5 \times min(k_{capacity} \times 5, k_{capacity,max}) \\
-+ 8 \times min(k_{capacity} \times 10, k_{capacity,max})) / N_{untreated}\right)
+= \min\left(1.0, Treatments_{new,ann} \times (3 \times min(k_{capacity} \times 1, k_{capacity,max}) + 4 \times min(k_{capacity} \times 2, k_{capacity,max}) + 5 \times min(k_{capacity} \times 5, k_{capacity,max}) + 8 \times min(k_{capacity} \times 10, k_{capacity,max})) / N_{untreated}\right)
 \end{gathered}
 $$
 where:
@@ -18158,10 +18089,7 @@ where:
 $$
 \begin{gathered}
 f_{cure,20,treaty} \\
-= \min\left(1.0, Treatments_{new,ann} \times (3 \times min(k_{capacity} \times 1, k_{capacity,max}) \\
-+ 4 \times min(k_{capacity} \times 2, k_{capacity,max}) \\
-+ 5 \times min(k_{capacity} \times 5, k_{capacity,max}) \\
-+ 8 \times min(k_{capacity} \times 10, k_{capacity,max})) / N_{untreated}\right)
+= \min\left(1.0, Treatments_{new,ann} \times (3 \times min(k_{capacity} \times 1, k_{capacity,max}) + 4 \times min(k_{capacity} \times 2, k_{capacity,max}) + 5 \times min(k_{capacity} \times 5, k_{capacity,max}) + 8 \times min(k_{capacity} \times 10, k_{capacity,max})) / N_{untreated}\right)
 \end{gathered}
 $$
 where:
@@ -20573,9 +20501,7 @@ Counterfactual global GDP per capita if all wars abolished since 1900. Actual is
 $$
 \begin{gathered}
 GDP_{pc,peace} \\
-= GDP_{pc,1900} \times \left(1 \\
-+ \left(\frac{\bar{y}_{0}}{GDP_{pc,1900}}\right)^{1/124} - 1 \\
-+ g_{war,penalty}\right)^{124} \\[0.5em]
+= GDP_{pc,1900} \times \left(1 + \left(\frac{\bar{y}_{0}}{GDP_{pc,1900}}\right)^{1/124} - 1 + g_{war,penalty}\right)^{124} \\[0.5em]
 = \$3.15K \times \left(1 + \left(\frac{\$14.4K}{\$3.15K}\right)^{1/124} - 1 + 2.6\%\right)^{124} \\[0.5em]
 = \$334K
 \end{gathered}
@@ -20622,9 +20548,7 @@ where:
 $$
 \begin{gathered}
 GDP_{pc,peace} \\
-= GDP_{pc,1900} \times \left(1 \\
-+ \left(\frac{\bar{y}_{0}}{GDP_{pc,1900}}\right)^{1/124} - 1 \\
-+ g_{war,penalty}\right)^{124} \\[0.5em]
+= GDP_{pc,1900} \times \left(1 + \left(\frac{\bar{y}_{0}}{GDP_{pc,1900}}\right)^{1/124} - 1 + g_{war,penalty}\right)^{124} \\[0.5em]
 = \$3.15K \times \left(1 + \left(\frac{\$14.4K}{\$3.15K}\right)^{1/124} - 1 + 2.6\%\right)^{124} \\[0.5em]
 = \$334K
 \end{gathered}
@@ -20688,9 +20612,7 @@ where:
 $$
 \begin{gathered}
 GDP_{pc,peace} \\
-= GDP_{pc,1900} \times \left(1 \\
-+ \left(\frac{\bar{y}_{0}}{GDP_{pc,1900}}\right)^{1/124} - 1 \\
-+ g_{war,penalty}\right)^{124} \\[0.5em]
+= GDP_{pc,1900} \times \left(1 + \left(\frac{\bar{y}_{0}}{GDP_{pc,1900}}\right)^{1/124} - 1 + g_{war,penalty}\right)^{124} \\[0.5em]
 = \$3.15K \times \left(1 + \left(\frac{\$14.4K}{\$3.15K}\right)^{1/124} - 1 + 2.6\%\right)^{124} \\[0.5em]
 = \$334K
 \end{gathered}
@@ -20745,9 +20667,7 @@ where:
 $$
 \begin{gathered}
 GDP_{pc,peace} \\
-= GDP_{pc,1900} \times \left(1 \\
-+ \left(\frac{\bar{y}_{0}}{GDP_{pc,1900}}\right)^{1/124} - 1 \\
-+ g_{war,penalty}\right)^{124} \\[0.5em]
+= GDP_{pc,1900} \times \left(1 + \left(\frac{\bar{y}_{0}}{GDP_{pc,1900}}\right)^{1/124} - 1 + g_{war,penalty}\right)^{124} \\[0.5em]
 = \$3.15K \times \left(1 + \left(\frac{\$14.4K}{\$3.15K}\right)^{1/124} - 1 + 2.6\%\right)^{124} \\[0.5em]
 = \$334K
 \end{gathered}
@@ -23355,10 +23275,7 @@ where:
 $$
 \begin{gathered}
 f_{cure,20,treaty} \\
-= \min\left(1.0, Treatments_{new,ann} \times (3 \times min(k_{capacity} \times 1, k_{capacity,max}) \\
-+ 4 \times min(k_{capacity} \times 2, k_{capacity,max}) \\
-+ 5 \times min(k_{capacity} \times 5, k_{capacity,max}) \\
-+ 8 \times min(k_{capacity} \times 10, k_{capacity,max})) / N_{untreated}\right)
+= \min\left(1.0, Treatments_{new,ann} \times (3 \times min(k_{capacity} \times 1, k_{capacity,max}) + 4 \times min(k_{capacity} \times 2, k_{capacity,max}) + 5 \times min(k_{capacity} \times 5, k_{capacity,max}) + 8 \times min(k_{capacity} \times 10, k_{capacity,max})) / N_{untreated}\right)
 \end{gathered}
 $$
 where:

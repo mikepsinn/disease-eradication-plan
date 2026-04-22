@@ -23,19 +23,24 @@
   margin: 0.3em 0;
 }
 
-/* Inline math images (webtex) - align with surrounding text */
-img.math {
-  vertical-align: middle;
-  height: 1.1em;
-}
-
-/* Display math images - center on page */
-img.display-math,
-p > img.math:only-child {
+/* Display math: block, centered. Quarto's webtex emits class="math display". */
+img.math.display {
   display: block;
   margin: 1em auto;
   height: auto;
   max-width: 90%;
+  text-align: center;
+}
+
+/* Inline math: align with surrounding text */
+img.math:not(.display) {
+  vertical-align: middle;
+  height: 1.1em;
+}
+
+/* Kindle quirk: also center the paragraph wrapping display math */
+p:has(> img.math.display) {
+  text-align: center;
 }
 
 /* Figures: keep in document flow, prevent e-reader repositioning */

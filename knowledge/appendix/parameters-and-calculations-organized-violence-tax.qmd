@@ -849,9 +849,7 @@ Counterfactual global GDP per capita if all wars abolished since 1900. Actual is
 $$
 \begin{gathered}
 GDP_{pc,peace} \\
-= GDP_{pc,1900} \times \left(1 \\
-+ \left(\frac{\bar{y}_{0}}{GDP_{pc,1900}}\right)^{1/124} - 1 \\
-+ g_{war,penalty}\right)^{124} \\[0.5em]
+= GDP_{pc,1900} \times \left(1 + \left(\frac{\bar{y}_{0}}{GDP_{pc,1900}}\right)^{1/124} - 1 + g_{war,penalty}\right)^{124} \\[0.5em]
 = \$3.15K \times \left(1 + \left(\frac{\$14.4K}{\$3.15K}\right)^{1/124} - 1 + 2.6\%\right)^{124} \\[0.5em]
 = \$334K
 \end{gathered}
@@ -898,9 +896,7 @@ where:
 $$
 \begin{gathered}
 GDP_{pc,peace} \\
-= GDP_{pc,1900} \times \left(1 \\
-+ \left(\frac{\bar{y}_{0}}{GDP_{pc,1900}}\right)^{1/124} - 1 \\
-+ g_{war,penalty}\right)^{124} \\[0.5em]
+= GDP_{pc,1900} \times \left(1 + \left(\frac{\bar{y}_{0}}{GDP_{pc,1900}}\right)^{1/124} - 1 + g_{war,penalty}\right)^{124} \\[0.5em]
 = \$3.15K \times \left(1 + \left(\frac{\$14.4K}{\$3.15K}\right)^{1/124} - 1 + 2.6\%\right)^{124} \\[0.5em]
 = \$334K
 \end{gathered}
@@ -964,9 +960,7 @@ where:
 $$
 \begin{gathered}
 GDP_{pc,peace} \\
-= GDP_{pc,1900} \times \left(1 \\
-+ \left(\frac{\bar{y}_{0}}{GDP_{pc,1900}}\right)^{1/124} - 1 \\
-+ g_{war,penalty}\right)^{124} \\[0.5em]
+= GDP_{pc,1900} \times \left(1 + \left(\frac{\bar{y}_{0}}{GDP_{pc,1900}}\right)^{1/124} - 1 + g_{war,penalty}\right)^{124} \\[0.5em]
 = \$3.15K \times \left(1 + \left(\frac{\$14.4K}{\$3.15K}\right)^{1/124} - 1 + 2.6\%\right)^{124} \\[0.5em]
 = \$334K
 \end{gathered}
@@ -1021,9 +1015,7 @@ where:
 $$
 \begin{gathered}
 GDP_{pc,peace} \\
-= GDP_{pc,1900} \times \left(1 \\
-+ \left(\frac{\bar{y}_{0}}{GDP_{pc,1900}}\right)^{1/124} - 1 \\
-+ g_{war,penalty}\right)^{124} \\[0.5em]
+= GDP_{pc,1900} \times \left(1 + \left(\frac{\bar{y}_{0}}{GDP_{pc,1900}}\right)^{1/124} - 1 + g_{war,penalty}\right)^{124} \\[0.5em]
 = \$3.15K \times \left(1 + \left(\frac{\$14.4K}{\$3.15K}\right)^{1/124} - 1 + 2.6\%\right)^{124} \\[0.5em]
 = \$334K
 \end{gathered}

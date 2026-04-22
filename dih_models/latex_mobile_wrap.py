@@ -30,7 +30,8 @@ def _split_at_top_level_equals(latex: str) -> list[str]:
     r"""
     Split LaTeX string on '=' signs, but only at the top level.
 
-    Does NOT split on '=' inside braces (e.g., \sum_{t=1} stays intact).
+    Does NOT split on '=' inside braces (e.g., \sum_{t=1} stays intact)
+    or inside \left...\right delimiter groups.
 
     Args:
         latex: LaTeX equation string
@@ -41,9 +42,22 @@ def _split_at_top_level_equals(latex: str) -> list[str]:
     parts = []
     current = []
     brace_depth = 0
+    left_depth = 0
     i = 0
 
     while i < len(latex):
+        # Check for \left and \right (they must stay together across line breaks)
+        if latex[i:i+5] == '\\left':
+            left_depth += 1
+            current.append(latex[i:i+5])
+            i += 5
+            continue
+        if latex[i:i+6] == '\\right':
+            left_depth -= 1
+            current.append(latex[i:i+6])
+            i += 6
+            continue
+
         char = latex[i]
 
         if char == '{':
@@ -52,7 +66,7 @@ def _split_at_top_level_equals(latex: str) -> list[str]:
         elif char == '}':
             brace_depth -= 1
             current.append(char)
-        elif char == '=' and brace_depth == 0:
+        elif char == '=' and brace_depth == 0 and left_depth == 0:
             # Top-level equals sign - split here
             parts.append(''.join(current).strip())
             current = []
@@ -142,8 +156,12 @@ def wrap_latex_for_mobile(latex: str, max_width: int = 60) -> str:
 
 
 def _split_at_top_level_operator(expr: str, operator: str) -> list[str]:
-    """
-    Split expression on operator, but only at top level (not inside braces).
+    r"""
+    Split expression on operator, but only at top level (not inside braces
+    or inside \left...\right delimiter groups).
+
+    \left and \right MUST stay on the same line in gathered/aligned environments,
+    so splits inside them would produce invalid LaTeX.
 
     Args:
         expr: Expression to split
@@ -155,11 +173,24 @@ def _split_at_top_level_operator(expr: str, operator: str) -> list[str]:
     parts = []
     current = []
     brace_depth = 0
+    left_depth = 0
     i = 0
 
     while i < len(expr):
+        # Track \left...\right depth (they must stay together)
+        if expr[i:i+5] == '\\left':
+            left_depth += 1
+            current.append(expr[i:i+5])
+            i += 5
+            continue
+        if expr[i:i+6] == '\\right':
+            left_depth -= 1
+            current.append(expr[i:i+6])
+            i += 6
+            continue
+
         # Check for multi-char operator like \times
-        if operator == '\\times' and expr[i:i+6] == '\\times' and brace_depth == 0:
+        if operator == '\\times' and expr[i:i+6] == '\\times' and brace_depth == 0 and left_depth == 0:
             parts.append(''.join(current).strip())
             current = []
             i += 6
@@ -176,7 +207,7 @@ def _split_at_top_level_operator(expr: str, operator: str) -> list[str]:
         elif char == '}':
             brace_depth -= 1
             current.append(char)
-        elif char == '+' and operator == '+' and brace_depth == 0:
+        elif char == '+' and operator == '+' and brace_depth == 0 and left_depth == 0:
             parts.append(''.join(current).strip())
             current = []
         else:

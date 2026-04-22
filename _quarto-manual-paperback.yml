@@ -89,7 +89,8 @@ book:
 
     - part: "The Plan"
       chapters:
-        - knowledge/strategy/earth-optimization-protocol-v1.qmd
+        # CUT: earth-optimization-protocol-v1.qmd - spec-doc voice (Fork Markers, "eleven required functions"); duplicates index-manual.qmd loop and the component chapters (1% treaty, DIH, dFDA, IAB, wishocracy, optimocracy) in drier prose
+        # - knowledge/strategy/earth-optimization-protocol-v1.qmd
         # - knowledge/strategy/roadmap.qmd # MERGED into earth-optimization-protocol-v1.qmd
         # CUT: election-law.qmd - operational detail for campaign staff
         # REMOVED: Merged into knowledge/solution/incentive-alignment-bonds.qmd
@@ -106,7 +107,8 @@ book:
         - knowledge/economics/peace-dividend.qmd
         - knowledge/economics/gdp-trajectories.qmd
         - knowledge/economics/health-dividend.qmd
-        - knowledge/economics/financial-plan.qmd
+        # CUT: financial-plan.qmd - the three-pillar money flow is already covered by the intro + incentive-alignment-bonds.qmd + peace-dividend.qmd; standalone score 5
+        # - knowledge/economics/financial-plan.qmd
         # CUT: campaign-budget.qmd - granular budget line items
         # CUT: investor-risk-analysis.qmd - only relevant to actual investors
 
@@ -114,7 +116,8 @@ book:
       chapters:
         - knowledge/strategy/nonprofit-coalition-strategy.qmd
         - knowledge/legal/legal-framework.qmd
-        - knowledge/appendix/recruitment-and-propaganda-plan.qmd
+        # CUT: recruitment-and-propaganda-plan.qmd - Phase 0 ops manual ("how to build an email list before you have a 501c3"); scored 5/5/5/4 on quality/value/timeliness/standalone
+        # - knowledge/appendix/recruitment-and-propaganda-plan.qmd
 
     - knowledge/appendix/conclusion.qmd
 
