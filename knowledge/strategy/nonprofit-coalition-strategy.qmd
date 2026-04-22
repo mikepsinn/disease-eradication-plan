@@ -144,21 +144,51 @@ The dogs need to turn around and notice the banquet. I've been watching them fig
 
 Turn around.
 
-## The Four Stages
+## The Five Stages
 
-Everything above this heading was the *why*. Everything below it is the *how*. Getting a nonprofit to support the treaty is four concrete actions, performed in order. Each one has a matching artifact in this chapter.
+Everything above this heading was the *why*. Everything below it is the *how*. Getting a nonprofit to support the treaty is five concrete actions, performed in order. Each one has a matching artifact in this chapter.
 
 **Stage 1. The organization endorses the treaty.** Logo on [warondisease.org](https://warondisease.org), name on the coalition page, one public statement. Artifacts: [The Outreach Email](#the-outreach-email), [The Endorsement Form](#the-endorsement-form), [This Is Not Lobbying (The Legal Memo)](#this-is-not-lobbying-the-legal-memo), [Objection Handling](#objection-handling) for whoever forwards the "we need to think about this" response.
 
-**Stage 2. The organization shares the treaty with its members.** One newsletter mention, one email, one social post. The nonprofit's distribution list becomes the campaign's distribution list for a single day. Artifacts: [The Member Activation Email](#the-member-activation-email), [The Social Post Pack](#the-social-post-pack).
+**Stage 2. The organization embeds the voting widget.** A permanent iframe on the nonprofit's site that keeps converting their warm audience indefinitely. Host credibility transfers to the widget; visitors are pre-qualified because they came to the site about the thing the widget is about. This is the single highest-leverage ask in the chapter, and it goes before the Stage 3 newsletter blast so the blast can point at the embed instead of an external URL. See [Why Your Org Should Help](#why-your-org-should-help) for the pitch.
 
-**Stage 3. The members sign the treaty** at [warondisease.org](https://warondisease.org). Every signature is one more data point in a pressure system pointed at 193 heads of state. The nonprofit does not need to do anything to cause this step; the member activation email does it automatically by linking.
+**Stage 3. The organization shares the treaty with its members.** One newsletter mention, one email, one social post, each linking to the embed on the nonprofit's own site. The distribution list becomes the campaign's distribution list for a single day; the embed catches the long tail after the blast decays. Artifacts: [The Member Activation Email](#the-member-activation-email), [The Social Post Pack](#the-social-post-pack).
 
-**Stage 4. The members notify their head of state that the signing task is overdue.** At [warondisease.org/tasks](https://warondisease.org/tasks), every head of state has a public page showing their unsigned 1% Treaty task and its cost-of-delay clock. A member looks up their country, clicks "notify," and the head of state receives a polite email from a registered voter in their jurisdiction pointing out that the task is still outstanding. This is the stage that matters, because 193 heads of state are the entire bottleneck and they currently receive approximately zero emails about it.
+**Stage 4. The members sign the treaty** at [warondisease.org](https://warondisease.org) or through the org's embed. Every signature is one more data point in a pressure system pointed at 193 heads of state. The nonprofit does not need to do anything to cause this step; the embed and the member activation email both do it automatically by linking.
 
-Stage 1 unlocks Stages 2 through 4. The nonprofit's only real job is Stages 1 and 2. The members do Stages 3 and 4, because the members are the actual leverage. A nonprofit has an email list. Lockheed Martin has a lobbying budget. The email list wins when it knows what to click.
+**Stage 5. The members notify their head of state that the signing task is overdue.** At [warondisease.org/tasks](https://warondisease.org/tasks), every head of state has a public page showing their unsigned 1% Treaty task and its cost-of-delay clock. A member looks up their country, clicks "notify," and the head of state receives a polite email from a registered voter in their jurisdiction pointing out that the task is still outstanding. This is the stage that matters, because 193 heads of state are the entire bottleneck and they currently receive approximately zero emails about it.
+
+Stage 1 unlocks Stages 2 through 5. The nonprofit's only real job is Stages 1 through 3. The members do Stages 4 and 5, because the members are the actual leverage. A nonprofit has an email list. Lockheed Martin has a lobbying budget. The email list wins when it knows what to click.
 
 The rest of this chapter is the "knows what to click" part.
+
+## Why Your Org Should Help
+
+The argument below works for any ask in the chapter: endorse, embed, share, donate staff time, allocate an Ad Grant. Use whichever parts land with whichever audience. Lead with the strongest for that org; most conversations hit two or three.
+
+The pitch has three arguments. Every recipient is at least one of rational, greedy, or altruistic. At least one of these lands.
+
+**If they are altruistic.** Every day this wave reaches four billion voters sooner, about {{< var global_disease_deaths_daily_nounit >}} fewer humans die from preventable disease, and roughly two billion fewer person-days of disease suffering accumulate. Helping shifts that date forward by a measurable amount of time. Declining to help is a decision that has a body count, and the body count is known in advance.
+
+**If they are rational.** Their org can take this as a grant-application one-pager and raise money off it. Cost per voter through their channel. Lives saved per voter ({{< var voter_lives_saved >}}). Suffering hours averted per voter ({{< var voter_suffering_hours_prevented >}}). At the standard economic value of a year of healthy life ({{< var standard_economic_qaly_value_usd >}}), that works out to over $100 million of value per voter. Funders that write checks against cost-per-DALY numbers have never seen a number this favorable.
+
+**If they are greedy.** Once the prize pool is seeded, voters referred through their channel earn their org a share of the eventual payout proportional to the size of the chain they seeded. Their org can absorb that as a new revenue line or pass it through to their referred voters as a further incentive.
+
+Most recipients hit two of these, or all three. It does not matter which. The ask is the same.
+
+**Additional benefits most orgs underweight:**
+
+- **Likely the largest single-org attributable impact in nonprofit history.** If they drive just 100,000 voters through their channel, that is 3.84 million lives saved and roughly 690 billion hours of suffering averted, attributable to their org, if the treaty passes. Probability-discount the outcome by any factor you want. It still beats the cumulative lifetime output of the largest global-health charities, for the marginal cost of adding an iframe or sending an email. No other nonprofit in the world can put a number like that in their annual report, because no other nonprofit is adjacent to an intervention at this scale. Every additional voter they drive adds another {{< var voter_lives_saved >}} and {{< var voter_suffering_hours_prevented >}} of averted suffering to their attribution.
+- **Their donors and staff (and their families) personally become healthier and richer.** If the treaty takes hold at the rates modeled in [GDP Trajectories](/knowledge/economics/gdp-trajectories.qmd) [@gdp-trajectories-paper-2025], cumulative lifetime income per person multiplies by {{< var treaty_trajectory_lifetime_income_multiplier >}} relative to the current trajectory, with average income by year 20 reaching {{< var treaty_trajectory_avg_income_year_20 >}}. Healthy-lifespan gains are in the same chapter. Everyone who helps benefits directly alongside their beneficiaries.
+- **Being on the founding-coalition list is ongoing brand value.** Once the treaty passes, the list of orgs that helped launch it becomes the list every donor asks about. Early movers end up on the plaque. Late movers do not.
+- **Their existing donors are the exact audience that converts.** People who already gave to a health or peace charity are pre-qualified to care about disease eradication. This is not a cold audience.
+- **Seeding a new democratic primitive.** The [wishocratic allocation](/knowledge/solution/wishocracy.qmd) mechanism, where every human votes on public-goods funding priorities, could be extended to all public-goods funding after the treaty passes. If it catches on, it could reshape how global public goods are funded for the rest of human history. The orgs that helped seed it in the largest global referendum ever conducted get to point at that record indefinitely.
+- **Peer-org network effect.** Once three or four similar organizations sign on, not signing on starts to look like lagging. Social proof is a real force in the nonprofit sector.
+- **They can aim their unused Google Ad Grant at the campaign (embed-specific).** Every qualifying 501(c)(3) gets $10,000 a month ($120,000 a year) in free Google Ads through the Google Ad Grants program. Most nonprofits do not spend their full allocation because they cannot generate enough targeted landing pages to use it. An embed of the widget on their site gives their Ad Grant a mission-aligned landing page to drive traffic to, converting dormant ad dollars into attributable voters without asking them to touch their operating budget.
+
+**What a decline means.** An org that declines is not choosing inaction; it is choosing something else with the same staff hours. The follow-up question is specific: what is that something else, and what is its cost per life-year saved? {{< var voter_lives_saved >}} lives and {{< var voter_suffering_hours_prevented >}} suffering-hours are averted per voter acquired, at a cost per DALY of {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}}. Whatever the alternative activity is, it should beat that number, measured the same way. If it does, the campaign wants to hear it and learn from it. If the alternative has never been benchmarked against anything, the decline is an allocation from disease sufferers toward an activity the org has not compared to its cost, and the delay has a body count that accrues during the conversation.
+
+**Outreach cadence.** Send ten outreach emails per week. Target fifty nonprofits in the first ninety days. Health charities, disease-specific foundations, peace organizations, EA orgs, development foundations. At a ten-percent response rate, that is five partnerships. Five partnerships is tens of millions of warm impressions per month. No marginal cost, very large ceiling, three independent routes to yes.
 
 ## The Cost-Effectiveness Argument
 
@@ -262,7 +292,7 @@ Happy to jump on a call to answer any questions.
 
 ## The Member Activation Email
 
-The email for Stage 2. The nonprofit drops this into its existing newsletter or sends it as a one-off to its list. Customize the bracketed fields.
+The email for Stage 3. The nonprofit drops this into its existing newsletter or sends it as a one-off to its list. Customize the bracketed fields.
 
 ::: {.callout-note icon=false}
 **Subject:** The most important 30 seconds of your week
@@ -291,7 +321,7 @@ Thank you.
 
 ## The Social Post Pack
 
-Three short posts and one long post for Stage 2. Schedule them in your CMS; pin the first one for the week.
+Three short posts and one long post for Stage 3. Schedule them in your CMS; pin the first one for the week.
 
 **Short post 1 (the hook):**
 
@@ -425,7 +455,7 @@ They are calculated with 95% confidence intervals and 90+ cited sources. The ful
 
 ---
 
-That is the whole chapter. If an organization endorses, send them [The Member Activation Email](#the-member-activation-email) and move to Stage 2. If an organization declines, ask what would change their mind, incorporate the feedback, and retry in 60 days. If the same objection appears three times in a week, update the outreach email to preempt it.
+That is the whole chapter. If an organization endorses, walk them through Stages 2 and 3: the embed goes on their site first, then [The Member Activation Email](#the-member-activation-email) and [The Social Post Pack](#the-social-post-pack) drive their audience at the embed. If an organization declines, ask what would change their mind, incorporate the feedback, and retry in 60 days. If the same objection appears three times in a week, update the outreach email to preempt it.
 
 The bottleneck between here and {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} averted is not the math, the legal analysis, the templates, or the treaty itself. It is the number of organizations that have opened the conversation with their members. That number is a function of how many outreach emails get sent this week.
 
