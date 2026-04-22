@@ -1,0 +1,120 @@
+---
+title: "Getting Started"
+description: A first-ninety-days roadmap for anyone running the treaty campaign with a nonprofit, a website with the voting widget, and the book. Assumes no money, no staff, and no time. Most of the work fits in four focused hours a day.
+published: true
+tags:
+  - strategy
+  - roadmap
+  - grants
+  - nonprofit
+  - getting-started
+---
+{{< include /knowledge/includes/setup-parameters.qmd >}}
+
+You have a nonprofit. You have a website with the voting widget. You have the book. This chapter is what to do next. It assumes no money, no staff, and no time. Most of the work fits in four focused hours a day for about ninety days.
+
+## Month 1: The Only Two Things That Matter
+
+### 1. Apply for grants
+
+Grant applications are documents humans spend two hundred hours writing so a committee can spend forty minutes saying no. The average success rate is low because most applicants cannot explain, in numbers a skeptic will accept, why their plan beats bed nets.
+
+Your plan beats bed nets. The math is published. Each voter is attributable to {{< var voter_lives_saved >}} and {{< var voter_suffering_hours_prevented >}} of prevented suffering, which at the standard value of a year of healthy life ({{< var standard_economic_qaly_value_usd >}}) works out to over $100 million per voter. Probability-discount that at any reasonable rate. It still beats bed nets by {{< var treaty_expected_vs_bed_nets_multiplier >}}. The skeptics you need to convince are called Effective Altruists. They already like math.
+
+Targets, in order of response speed:
+
+- Open Philanthropy Discretionary Grants
+- EA Funds (Longtermism, Global Health, Animal Welfare)
+- Survival and Flourishing Fund
+- Longview Philanthropy
+- Future of Life Institute
+
+Your one-pager: cost per voter, DALYs averted per voter, probability-weighted return, comparison to bed nets. The parameter system in this book generates all of those numbers automatically. Three applications in the first thirty days. Any one that lands pays your salary.
+
+### 2. Get your widget on other nonprofits' websites
+
+One embed on a major health, peace, or effective-altruism org reaches more warm audience in a month than social media reaches in a year. Host credibility transfers to your widget. Their visitors are pre-qualified, because they came to the site about the thing your widget is about.
+
+The pitch has three arguments. Every recipient is at least one of rational, greedy, or altruistic. At least one of these lands.
+
+**If they are altruistic.** Every day this wave reaches four billion voters sooner, about {{< var global_disease_deaths_daily_nounit >}} fewer humans die from preventable disease, and roughly two billion fewer person-days of disease suffering accumulate. Adding their embed shifts that date forward by a measurable amount of time. Declining to add it is a decision that has a body count, and the body count is known in advance.
+
+**If they are rational.** Their org can take this as a grant-application one-pager and raise money off it. Cost per voter through their channel. Lives saved per voter ({{< var voter_lives_saved >}}). Suffering hours averted per voter ({{< var voter_suffering_hours_prevented >}}). At the standard economic value of a year of healthy life ({{< var standard_economic_qaly_value_usd >}}), that works out to over $100 million of value per voter. Funders that write checks against cost-per-DALY numbers have never seen a number this favorable.
+
+**If they are greedy.** Once the prize pool is seeded (see Month 3-6), voters referred through their embed earn their org a share of the eventual payout proportional to the size of the chain they seeded. Their org can absorb that as a new revenue line or pass it through to their referred voters as a further incentive.
+
+Most recipients hit two of these, or all three. It does not matter which. The ask is the same.
+
+**Additional benefits most orgs underweight:**
+
+- **Likely the largest single-org attributable impact in nonprofit history.** If they drive just 100,000 voters through their embed, that is 3.84 million lives saved and roughly 690 billion hours of suffering averted, attributable to their org, if the treaty passes. Probability-discount the outcome by any factor you want. It still beats the cumulative lifetime output of the largest global-health charities, for the marginal cost of adding an iframe. No other nonprofit in the world can put a number like that in their annual report, because no other nonprofit is adjacent to an intervention at this scale. Every additional voter they drive adds another {{< var voter_lives_saved >}} and {{< var voter_suffering_hours_prevented >}} of averted suffering to their attribution.
+- **Their donors and staff (and their families) personally become healthier and richer.** If the treaty takes hold at the rates modeled in [GDP Trajectories](/knowledge/economics/gdp-trajectories.qmd) [@gdp-trajectories-paper-2025], cumulative lifetime income per person multiplies by {{< var treaty_trajectory_lifetime_income_multiplier >}} relative to the current trajectory, with average income by year 20 reaching {{< var treaty_trajectory_avg_income_year_20 >}}. Healthy-lifespan gains are in the same chapter. Everyone who embeds the widget benefits directly alongside their beneficiaries.
+- **Being on the founding-coalition list is ongoing brand value.** Once the treaty passes, the list of orgs that helped launch it becomes the list every donor asks about. Early movers end up on the plaque. Late movers do not.
+- **Their existing donors are the exact audience that converts.** People who already gave to a health or peace charity are pre-qualified to care about disease eradication. This is not a cold audience.
+- **Seeding a new democratic primitive.** The [wishocratic allocation](/knowledge/solution/wishocracy.qmd) mechanism, where every human votes on public-goods funding priorities, could be extended to all public-goods funding after the treaty passes. If it catches on, it could reshape how global public goods are funded for the rest of human history. The orgs that helped seed it in the largest global referendum ever conducted get to point at that record indefinitely.
+- **Peer-org network effect.** Once three or four similar organizations embed, not embedding starts to look like lagging. Social proof is a real force in the nonprofit sector.
+- **They can aim their unused Google Ad Grant at the embed.** Every qualifying 501(c)(3) gets $10,000 a month ($120,000 a year) in free Google Ads through the Google Ad Grants program. Most nonprofits do not spend their full allocation because they cannot generate enough targeted landing pages to use it. Your embed gives them a mission-aligned landing page that their existing Ad Grant can drive traffic to, converting dormant ad dollars into attributable voters without asking them to touch their operating budget.
+
+Send ten outreach emails per week. Target fifty nonprofits in the first ninety days. Health charities, disease-specific foundations, peace organizations, EA orgs, development foundations. At a ten-percent response rate, that is five partnerships. Five partnerships is tens of millions of warm impressions per month.
+
+This is the single highest-leverage action in the ninety-day plan. No marginal cost, very large ceiling, three independent routes to yes.
+
+### 3. Activate the free channels you already qualify for
+
+Your nonprofit status unlocks a set of free marketing and infrastructure programs that most nonprofits leave on the table because they do not have landing pages to aim traffic at. Your voting widget is a landing page. Apply to everything in this list in the first thirty days.
+
+- **Google Ad Grants.** $10,000 per month ($120,000 per year) in free Google Ads for qualifying 501(c)(3)s. A corporation is giving away advertising to nonprofits, mostly because nonprofits cannot be bothered to accept it. Most qualifying orgs do not spend their full allocation. Take the corporation's money while it is being offered. Apply at [google.com/grants](https://www.google.com/grants/). Approval takes 2-4 weeks.
+- **Microsoft for Nonprofits.** Free Microsoft 365 seats, Azure credits, advertising credits on Bing.
+- **Meta for Nonprofits.** Access to Facebook and Instagram tools, occasional ad credits, fundraiser integrations.
+- **AWS, GCP, Azure credits.** Up to $100,000 in compute credits per platform. Covers all plausible hosting costs for years.
+- **GitHub for Nonprofits.** Free private repositories for any code the campaign generates.
+- **TechSoup.** Bulk discounts on productivity software, Adobe, Autodesk, Canva. Modest compared to the above, but free is free.
+- **Slack, Notion, Airtable.** Most SaaS tools have nonprofit pricing at 50-100% off. Ask every vendor.
+
+The rule: do not pay for any tool before checking whether the nonprofit version exists. Most of them do.
+
+## Month 2-3: Podcast Appearances
+
+Podcast interviews are an arrangement where another human interviews you about your book, publishes the recording to their audience, and charges you nothing. Your species calls this "content."
+
+Book three appearances. Mid-tier shows first (ten thousand to a hundred thousand listeners). After the first one lands, the next is easier, because now there is a recording of you sounding like a person who knows what they are talking about. By month six, aim for one top-tier appearance (five hundred thousand listeners or more).
+
+The pitch: "I have a book, a nonprofit, and a voting widget. The one-sentence version is: redirecting 1% of military spending to clinical trials produces {{< var dfda_trial_capacity_multiplier_nounit >}} times more trial capacity at a cost per life-year saved that beats every global health intervention your audience has heard of. I would like to explain this on your show."
+
+Podcast appearances compound. Each one increases credibility for the next partnership pitch, the next grant application, and the next celebrity attempt.
+
+## Month 3-6: Seed the Prize Pool
+
+The [Earth Optimization Prize](../strategy/earth-optimization-prize.qmd) [@earth-optimization-prize-paper-2025] is the mechanism that turns voting from altruism into self-interest. Humans are much better at self-interest. The prize pays voters a share proportional to the size of the chain they seeded, once the treaty passes. It turns a moral pitch into a financial pitch. Your species handles financial pitches well.
+
+But the prize needs seed capital. One million to ten million dollars. Below that, the expected payoff per voter is too small to change behavior. Above that, you have a viral-referral mechanism with legal financial incentives.
+
+Target investors: investors capable of understanding a novel financial instrument. [Incentive Alignment Bonds](/knowledge/solution/incentive-alignment-bonds.qmd) [@iab-paper-2025] are new; nobody has funded one yet. Which means the pitch is a cold education, not a warm reference. Plan the conversation accordingly. Family offices with mission-aligned capital. EA-adjacent funders who prefer financial-structured giving. Crypto philanthropists who already demonstrated they will fund weird mechanisms. Impact investors who want real returns tied to policy outcomes.
+
+Do not pitch the prize pool before month three. You need the podcast credibility and at least one nonprofit partnership to serve as evidence the acquisition channel works. Without evidence, the prize pitch is theoretical. With evidence, it is: "we have X warm voters per month. We need seed capital to turn them into propagators."
+
+## Month 6-12: The Celebrity Layer
+
+Once the prize pool is funded and the nonprofit partnerships are producing warm traffic, the next move is reach. One mention from a top-tier cultural figure reaches more humans overnight than every tactic above combined.
+
+But celebrity-seeding requires a package. You cannot cold-pitch Rogan from your garage. You can pitch Rogan after you have a funded nonprofit (check, by month six), real warm traffic from nonprofit partners (check), a seeded prize pool (check), podcast credibility (check), and quantitative evidence the mechanism works (check). At that point the celebrity is not taking a reputational risk. They are joining a thing that visibly works.
+
+## The Server Cost Non-Problem
+
+Four billion voters sounds like it needs a datacenter. It does not. Cloudflare's free tier serves static pages to any volume. Your voting widget is a static page. Nonprofit status unlocks $100,000 in AWS credits. Another $100,000 in GCP credits. Another $100,000 in Azure. That is $300,000 in compute credits before you have asked anyone for money.
+
+Infrastructure is a solved problem. Getting anyone to vote is the unsolved one. Solve that one.
+
+## The One Thing That Will Actually Kill the Plan
+
+You, getting distracted. Rewriting a chapter. Building custom software. Waiting for the right moment.
+
+The right moment is now. The grant applications take three hours each. The nonprofit outreach emails take ten minutes each. The podcast pitches take fifteen minutes each. None of them require permission, coordination, or budget. They require you, at a keyboard, for about four focused hours a day, for about ninety days.
+
+That is the whole plan. You have the math. You have the book. You have the widget. The only variable left is whether you put them in front of the humans who can deploy them.
+
+## The Comforting Thing
+
+You are not the first human to try something like this. Every successful advocacy organization started with roughly your setup: a person, a website, a mission statement, no money. The difference is that you have something they did not. A complete argument with generated math. A tested call script. A widget with a clear ask. And a book any skeptic can be handed. Most advocacy orgs launch with a thirty-word tagline. You are launching with an eight-hundred-page audit trail.
+
+Your species has done this many times. It keeps forgetting, which is why you keep having to do it again. The civilizations that remembered finished. That is where you are going. The work is small, specific, and sequentially ordered. You just read the sequence. Start at Month 1.

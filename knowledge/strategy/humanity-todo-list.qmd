@@ -1,0 +1,136 @@
+---
+title: "The Decentralized To-Do List for Humanity"
+description: A public accountability primitive. Named individuals and institutions are assigned specific tasks (sign the treaty, embed the widget, fund the prize pool). A live death-counter runs next to every unfulfilled task. Anonymous inaction becomes named inaction, priced in humans per day.
+published: true
+tags:
+  - strategy
+  - accountability
+  - public-pressure
+  - coordination
+  - decentralized
+  - todo
+---
+{{< include /knowledge/includes/setup-parameters.qmd >}}
+
+Your species coordinates large things in two ways. Petitions (lots of names, no specific asks) and lobbying (specific asks, no public visibility). Both are limited. The first produces a pile of names that leaders can ignore. The second operates in the dark, where nobody can pressure anyone.
+
+This chapter is the primitive that combines them. Named individuals and institutions. Specific, achievable tasks. Public visibility. And a live counter, running in real time, showing how many humans die while each task stays open.
+
+## What It Is
+
+A public to-do list where every entry names a specific human or organization, assigns them a specific task, and displays the number of humans dying of preventable disease while they decide.
+
+An example entry:
+
+> **The President of France**
+> Task: Sign the [1% Treaty](../solution/1-percent-treaty.qmd) [@1-pct-treaty-impact-paper-2025].
+> Status: Pending.
+> Deaths since this task was assigned: 4,847,216.
+
+Another example:
+
+> **The Bill & Melinda Gates Foundation**
+> Task: Embed the voting widget and deploy $10M of annual ad spend toward it.
+> Status: Pending.
+> Deaths since this task was assigned: 4,847,216.
+
+The counter is not metaphorical. It is the actual number of humans who have died of preventable disease since each task was assigned, at {{< var global_disease_deaths_daily_nounit >}} per day, multiplied by the fraction of that burden the treaty would accelerate curing.
+
+## Why It Works
+
+Anonymous inaction is free. Named inaction is not.
+
+Every politician currently blocking the 1% Treaty does so against anonymous aggregate pressure. "Public opinion polls." "Advocacy groups." Anonymous aggregates can be ignored indefinitely. Your species has produced enough of them to wallpaper the moon.
+
+A named list changes the physics. Now the opposition is specific. Everyone can see exactly who is blocking exactly what. The person holding out on a named list is not worried about hurting the feelings of an abstract demographic. They are worried about being the identifiable human who held out while a live counter displayed the body count. That is a different kind of worry. It changes careers.
+
+This is how every successful social-pressure campaign has worked. The Montgomery Bus Boycott (named businesses). The divestment movement (named universities). The NRA scoring system (named legislators with letter grades). Each one worked because naming made the costs of inaction visible.
+
+The to-do list generalizes the mechanism. Every named assignee. Every specific task. Every live counter. And the counter is in units of dead humans, which is the unit that actually moves people.
+
+## How It Complements the Vote
+
+The vote count at [warondisease.org](https://warondisease.org) is bottom-up pressure. Millions of citizens publicly agreeing.
+
+The to-do list is top-down pressure. Named leaders with explicit asks, publicly visible.
+
+Both running at once is the whole mechanism. Each alone is easy to ignore. A million citizens with no named target: easy to survive politically. A named politician with a task but no public demand: easy to dismiss as "one advocacy group." A named politician with a specific task *and* millions of publicly agreeing citizens: that is how careers end.
+
+The [Optimitron](/knowledge/solution/optimocracy.qmd) does a related job for policies: it tracks which government programs produce results. The to-do list does it for humans: it tracks which humans took the action they were assigned and which ones did not.
+
+## Tiers of Assignees
+
+The list has three tiers.
+
+### Tier 1: Heads of State
+
+Every head of state gets the same task: sign the 1% Treaty. 196 entries. Each one with a death counter running from the date the task was assigned.
+
+The public can see, at any moment, exactly which presidents and prime ministers have signed, which have not, and how long the holdouts have been holding out.
+
+### Tier 2: Institutional
+
+Every major health, peace, or effective-altruism organization gets an embed-and-distribute task.
+
+- **Foundations** (Gates, Rockefeller, MacArthur, Ford, Hewlett, Wellcome, Bloomberg, Buffett, Chan Zuckerberg Initiative): embed the widget, allocate Google Ad Grant spend, commit a specific amount to the prize pool.
+- **Global health orgs** (WHO, UNICEF, GAVI, Against Malaria Foundation, PATH, CEPI, the Global Fund): embed the widget, promote in communications, add the cost-effectiveness comparison to their board materials.
+- **Peace orgs** (UN, ICAN, FCNL, Beyond the Bomb, Ploughshares): embed the widget, add the framing to their campaigns.
+- **EA orgs** (Open Philanthropy, GiveWell, EA Funds, Longview, FLI, SFF): evaluate and fund the voter-acquisition grant.
+- **Tech platforms** (Google, Meta, X, LinkedIn, YouTube, TikTok): feature the widget, grant ad credits, amplify coordinated-action-day posts.
+
+### Tier 3: Individual
+
+Every human with a large public platform who has ever expressed concern about disease, war, or global welfare gets a personal task. Billionaires, celebrities, CEOs, senior journalists, high-reach academics.
+
+Tasks are calibrated to position:
+
+- **Billionaires:** commit to fund the prize pool at a specified amount, conditional on treaty passage.
+- **Celebrities with a million or more followers:** one public mention per month until the treaty passes.
+- **CEOs of major corporations:** commit the company to embed-and-distribute and publicly advocate.
+- **Senior journalists:** write at least one piece on the arithmetic. Positive or critical. Whichever side they land on, the public discussion advances.
+- **Academics:** publish a critique or endorsement of the cost-per-voter math. Same logic.
+
+## The Death Counter
+
+Every task has a counter. It increments in real time. The formula is plain: daily deaths from preventable disease × fraction attributable to treaty acceleration × days since task was assigned × probability weight for treaty passage.
+
+Displayed plainly. Updated every second. Every number on the page links to the calculation, so any skeptic can audit.
+
+The counter does two jobs.
+
+For the assignee, it makes delay quantitatively expensive. "I have been thinking about this for 47 days" becomes "I have been thinking about this for 47 days, and 7 million humans have died." The second sentence is harder to live with than the first.
+
+For the public, the counter is the evidence. A movement saying "we want this" is one level of pressure. A movement pointing at a specific person and saying "you personally are costing this many lives by not signing" is several levels higher.
+
+## How Tasks Close
+
+Every task has a verifiable completion condition.
+
+- **Sign the treaty.** Observable through official government action.
+- **Embed the widget.** Observable through inspection of the target website.
+- **Commit funds.** Observable through pledge tracking on-chain or via audit.
+- **Public statement.** Observable through media citations.
+
+When a task closes, the counter for that task freezes at its final value. The assignee's entry permanently records the number of humans who died during their delay. This goes onto a permanent ledger.
+
+Humans who acted quickly have small freeze values. Humans who delayed have large ones. That number becomes their public record on this plan, in the same way NRA grades are the public record of legislators on guns. The number does not disappear. Once you are on the ledger, you are on the ledger. The obituary has a field nobody else's obituary has, and it is filled in with a large integer.
+
+## Adding New Assignees
+
+Anyone can propose a new assignee via submission form. Proposals need a specific, verifiable task. Moderators accept or reject based on whether the task is:
+
+1. Clearly specified and verifiable.
+2. Within the assignee's power to perform.
+3. Plausibly connected to the treaty outcome.
+
+Rejected submissions can be appealed. The list grows as the movement identifies new pressure points.
+
+## Beyond This Campaign
+
+The primitive is not specific to the treaty. Every global coordination problem has the same structure: named leaders who could move things, specific tasks they could take, and a real-time cost of their inaction.
+
+Climate policy has this structure. Pandemic preparedness has this structure. Nuclear disarmament has this structure. The tool built for the 1% Treaty can be forked for the next campaign, and the next, and the next. The counter's formula changes. The assignees change. The tasks change. The mechanism stays.
+
+This is a new form of public accountability that scales without a hierarchy, a bureaucracy, or a central enforcer. A live, public, named ledger of who is delaying what, priced in humans per day.
+
+On Wishonia we do not have a word for "letting named powerful individuals block specific beneficial things in public without consequence." The closest translation is "the situation you are currently in."

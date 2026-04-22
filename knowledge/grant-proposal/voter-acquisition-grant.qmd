@@ -1,0 +1,198 @@
+---
+title: "Voter Acquisition Grant Proposal"
+description: A grant proposal template for funding a coordinator that aggregates existing nonprofit Google Ad Grants, iframe embeds, and communication channels into the largest public referendum on disease eradication ever conducted. Ask sizes scale from $100K Year 1 to $50M by Year 5. Per-voter cost-effectiveness beats every existing global health intervention by orders of magnitude.
+published: true
+tags:
+  - grants
+  - grant-proposal
+  - coordinator
+  - voter-acquisition
+  - effective-altruism
+  - cost-effectiveness
+---
+{{< include /knowledge/includes/setup-parameters.qmd >}}
+
+This chapter is a grant proposal template. It is designed to be handed to funders in its current form with minor tailoring for the specific funder's language and focus. The numbers come from the book's parameter system and update automatically as the underlying research updates. Remove the Wishonia jokes before sending. Your species funds things more readily when they are presented without humor, which is itself darkly funny, but the funders are not paid to notice that.
+
+## Executive Summary
+
+**The ask.** A grant to fund a coordinator organization that aggregates existing nonprofit Google Ad Grants, iframe embeds, and distribution channels into a single global voter-acquisition campaign for the [1% Treaty](/knowledge/solution/1-percent-treaty.qmd) [@1-pct-treaty-impact-paper-2025].
+
+**The intervention.** Redirect 1% of global military spending to clinical trials. This produces {{< var dfda_trial_capacity_multiplier_nounit >}} times more clinical-trial capacity and compresses the timeline for eradicating every known disease from {{< var status_quo_queue_clearance_years_nounit >}} years to {{< var dfda_queue_clearance_years_nounit >}}.
+
+**The activation threshold.** {{< var global_population_activism_threshold_pct >}} of global population actively supporting ({{< var treaty_campaign_voting_bloc_target_nounit >}} verified voters). Every movement that has hit this threshold in the last century has succeeded. Zero exceptions {{< var global_population_activism_threshold_pct_cite >}}.
+
+**The cost-effectiveness.** Each verified voter is attributable to {{< var voter_lives_saved >}} saved and {{< var voter_suffering_hours_prevented >}} of suffering prevented. At the standard economic value of a year of healthy life ({{< var standard_economic_qaly_value_usd >}}), that works out to over $100 million of value per voter. Per-dollar, probability-discounted, this is the highest-expected-value intervention a global-health funder can support.
+
+**Why a coordinator, not direct ads.** A coordinator grant unlocks roughly ten to fifty times more ad spend than a direct-ads grant of the same size, by activating the dormant Google Ad Grants that every qualifying nonprofit partner already has but under-uses.
+
+**Year 1 ask: $100,000 to $250,000.** Covers one coordinator salary, partnership outreach tooling, campaign templates partners clone, embed widget hosting, attribution infrastructure, and a small direct-ads baseline. Year 1 target: 100,000 voters acquired.
+
+## The Problem
+
+Your funder already knows the global disease burden. The numbers your funder has likely already seen:
+
+- {{< var global_disease_deaths_daily_nounit >}} humans die every day from diseases that are basically solvable engineering problems.
+- {{< var diseases_without_effective_treatment_nounit >}} diseases currently have no effective treatment.
+- At current rates, all of them get first treatments in approximately {{< var status_quo_queue_clearance_years_nounit >}} years. Everyone alive today will be dead before the queue clears.
+
+Your funder also knows the funding gap. Global government clinical-trial spending ({{< var global_government_clinical_trials_spending_annual >}} per year) is {{< var military_to_government_clinical_trials_spending_ratio >}} times smaller than military spending ({{< var global_military_spending_annual_2024 >}} per year).
+
+The mismatch is not controversial. Every public-health economist who has examined the allocation has concluded it is suboptimal. The question is not whether the allocation should change. The question is what political mechanism can change it.
+
+Existing advocacy has failed for 70 years for a specific structural reason: politicians face no personal cost for maintaining the status quo, and the reform lobbying is diffuse (millions of small donors to health charities) while the defense lobbying is concentrated ({{< var defense_lobbying_annual >}} per year focused on a few committees).
+
+The 1% Treaty changes the structure, not the allocation. It introduces financial incentives for politicians who vote yes, verified public demand that makes voting no politically expensive, and a funded Super PAC that outbids defense lobbying dollar-for-dollar.
+
+## The Intervention
+
+The 1% Treaty is a treaty where every signatory nation redirects 1% of its military budget to clinical trials. Full architecture and legal structure are detailed in the [1% Treaty chapter](/knowledge/solution/1-percent-treaty.qmd) and the [Legal Framework](/knowledge/legal/legal-framework.qmd).
+
+Passage requires activation pressure at a verified {{< var global_population_activism_threshold_pct >}} of global population ({{< var treaty_campaign_voting_bloc_target_nounit >}} voters). Every movement that reached this threshold in the last century succeeded.
+
+The coordinator's job is voter acquisition toward that threshold. Nothing else.
+
+## The Coordinator Model
+
+Funders can choose between two structures for voter-acquisition funding.
+
+### Direct-ads model
+
+A grant of $X → coordinator buys $X of Google Ads → acquires N voters.
+
+At realistic cost-per-voter figures for political asks ($1-5 per vote depending on targeting), a $100,000 grant acquires roughly 20,000 to 100,000 voters.
+
+Pros: simple, directly attributable.
+Cons: scales linearly with grant size. No leverage.
+
+### Coordinator model (recommended)
+
+A grant of $X → coordinator recruits 30-50 partner nonprofits → each activates its existing dormant Google Ad Grant ($10,000/month, $120,000/year per org) → partners aim that Grant at the coordinator's voting widget embedded on their own site → cumulative deployed ad spend is 10-50× the grant size, at no additional cost to the funder or partners.
+
+Pros: 10-50× leverage. Activates existing-but-dormant resources. Scales multiplicatively with partnerships, not linearly with grant size. Higher expected voters per funder dollar than any direct-ads structure.
+
+Cons: requires coordinator capacity. Which is what the grant funds.
+
+**Per $100,000 coordinator grant, expected deployed ad spend: $1M-$5M. Expected voters: 200,000-2,000,000. Expected cost-per-voter to the funder: $0.05-$0.50.**
+
+That is not a typo. The funder's cost-per-voter drops by two to three orders of magnitude under the coordinator model because the funder is paying for coordination, not ad spend. The ad spend comes from partner Ad Grants the funder never had to pay for.
+
+## Cost-Effectiveness
+
+Per-voter impact (from the book's parameter system):
+
+| Metric | Value |
+|--------|-------|
+| Lives saved, attributable, per voter | {{< var voter_lives_saved >}} |
+| Suffering hours averted, per voter | {{< var voter_suffering_hours_prevented >}} |
+| QALY value per voter at ${{< var standard_economic_qaly_value_usd >}}/QALY | over $100 million |
+| Cost per voter, direct-ads model | $1-5 |
+| Cost per voter, coordinator model | $0.05-0.50 |
+| Probability-weighted return vs. bed nets | {{< var treaty_expected_vs_bed_nets_multiplier >}} better |
+
+At a pessimistic 1% probability of treaty passage, the coordinator model's expected cost-per-life-saved is below $0.50. Against Malaria Foundation's cost-per-life-saved is approximately $5,500 (GiveWell estimate). Probability-weighted, this intervention is between three and four orders of magnitude more cost-effective than the current best-in-class global-health intervention.
+
+This is not a claim that should be accepted without scrutiny. The math is published in full at [1% Treaty Impact](/knowledge/economics/1-pct-treaty-impact.qmd). Every parameter links to its source. Any funder should audit the assumptions before funding. The audit has already been invited.
+
+## Benchmarks Against Existing Interventions
+
+For a funder deciding between this and their current portfolio:
+
+| Nonprofit / Intervention | Cumulative lives saved | Total spend | Cost per life | Timespan |
+|--------|-------|-------|-------|-------|
+| Gates Foundation (partnerships-heavy, disputed) | ~130M | ~$80B | ~$615 | 2000-present |
+| GAVI (Vaccine Alliance) | ~18M | ~$20B | ~$1,100 | 2000-present |
+| PEPFAR (government program, for reference) | ~25M | ~$120B | ~$4,800 | 2003-present |
+| Against Malaria Foundation (GiveWell top-rated) | ~300-500K | ~$2B | ~$5,500 | 2004-present |
+| **1% Treaty voter-acquisition (coordinator, conditional on passage)** | **Attributable per voter: 38.4. At 500K voters acquired: ~19M attributable lives.** | **~$500K-$2M coordinator grant** | **~$0.03-$0.10 per life attributable (probability-unweighted)** | **Activation over 3-5 years; treaty effect over 20-40 years** |
+
+At 500,000 voters (a realistic Year 2-3 target), the attributable lives-saved count exceeds GAVI's 25-year output. For a coordinator grant three orders of magnitude smaller than GAVI's cumulative spend.
+
+The treaty must pass for any of these numbers to realize. Probability-discount as aggressively as your funder wants. At 0.01% probability (the deeply pessimistic case we use in the book), the expected return still beats bed nets by orders of magnitude.
+
+## The Ask, By Year
+
+| Year | Ask range | What it funds | Voter target |
+|------|-----------|---------------|--------------|
+| 1 | $100K-$250K | One salary + ops + partnership outreach + embed tooling + small direct-ads baseline | 100,000 voters |
+| 2 | $500K-$2M | 2-4 person team + prize pool seed + Earth Optimization Day Year 1 launch | 1,000,000 voters |
+| 3 | $5M-$15M | Full team + paid distribution + celebrity seeding + Earth Optimization Day Year 2 | 10,000,000 voters |
+| 4 | $10M-$50M | Campaign ramp + global partnerships + Year 3 | 100,000,000 voters |
+| 5 | $20M-$100M | Global scale + Year 4 | 1B-4B voters |
+
+Year 1 is small because Year 1 is about proving the coordinator model works. Year 2 onward, the case writes itself using Year 1's data.
+
+## Use of Funds, Year 1
+
+A typical $150,000 Year 1 budget breaks down approximately:
+
+| Line item | Amount |
+|-----------|--------|
+| Coordinator salary (1 FTE) | $80,000 |
+| Partnership outreach tools (CRM, email, calls, travel) | $10,000 |
+| Embed widget hosting (near-zero via Cloudflare free tier) | $0 |
+| Attribution and analytics infrastructure | $10,000 |
+| Campaign templates, creative assets, design | $15,000 |
+| Direct-ads baseline (for tangible attribution) | $25,000 |
+| Legal and accounting | $5,000 |
+| Contingency | $5,000 |
+| **Total** | **$150,000** |
+
+Scaling adjustments at larger grant sizes: additional coordinator staff, expanded direct-ads spend, prize-pool seed contribution.
+
+## Milestones
+
+Quarterly milestones for a Year 1 grant:
+
+- **Q1 (Months 1-3):** 50 partnership pitches sent. 5 confirmed partnership commitments. Direct-ads baseline campaign live. Attribution infrastructure operational.
+- **Q2 (Months 4-6):** First 3-5 partner embeds live on partner websites. Partner Ad Grants activated. First 20,000 voters acquired.
+- **Q3 (Months 7-9):** Earth Optimization Day Year 1 launched. Coordinated partner activation. First 50,000-100,000 voters acquired.
+- **Q4 (Months 10-12):** Year 1 data package published. Year 2 funder outreach begins. 100,000-target verification.
+
+Every milestone is observable and independently verifiable.
+
+## Risk and Mitigation
+
+**Risk: Partnership conversion is lower than projected.**
+Mitigation: Direct-ads baseline produces tangible voter attribution even at 0% partnership conversion. Year 1 minimum acquisition is guaranteed by ad spend regardless of partnership outcomes.
+
+**Risk: Treaty probability is lower than benchmark assumptions.**
+Mitigation: Probability-discount aggressively. At 0.01% treaty probability, the coordinator model's expected cost-per-life-saved still beats every existing intervention.
+
+**Risk: Regulatory challenges to the voting mechanism.**
+Mitigation: No ballot-equivalent regulation applies to an online survey of public support. The widget is a pledge-to-support instrument, not a formal vote. The legal framework is detailed in [Legal Framework](/knowledge/legal/legal-framework.qmd).
+
+**Risk: Coordinator underperformance.**
+Mitigation: Milestones are quarterly. Funder retains the option to reallocate after each quarter if targets are missed.
+
+**Risk: Prize pool seeding fails.**
+Mitigation: Prize pool is a Year 2+ accelerator, not a Year 1 dependency. Year 1 voter targets do not rely on prize pool being seeded.
+
+## Why Now
+
+Three things are happening at once that were not true five years ago.
+
+1. **The math is published.** Every claim in this proposal links to a sourced parameter or peer-reviewed study. This was not possible in earlier iterations of 1% Treaty-style proposals.
+2. **The infrastructure exists.** Cloudflare free tier handles arbitrary voting volume. Nonprofit Google Ad Grants exist and are dormantly available. Partnerships can be pitched with zero marginal cost.
+3. **The window is closing.** The destructive economy is growing faster than the productive economy. Historical pattern (see [GDP Trajectories](/knowledge/economics/gdp-trajectories.qmd) [@gdp-trajectories-paper-2025]) says civilizations cross the death-spiral threshold at 35% of GDP and cross irreversibility at 50%. Current trajectory hits 35% by {{< var destructive_economy_35pct_year >}}.
+
+The intervention has to start now. A grant cycle that waits another eighteen months forfeits the lead time needed to hit Year 1 milestones before the first Earth Optimization Day.
+
+## Next Steps
+
+Two weeks of funder diligence, then a go / no-go decision. During the diligence window, the coordinator commits to:
+
+- Providing full access to the parameter system and every calculation.
+- Connecting the funder with at least three independent reviewers of the cost-effectiveness math.
+- Providing a signed commitment to quarterly reporting against milestones.
+- Providing references from any existing partner organizations.
+
+If the funder approves, grant disbursement enables partnership outreach to start within two weeks.
+
+---
+
+**Contact for this proposal:** Institute for Accelerated Medicine (info at warondisease.org).
+
+**Full methodology and every parameter:** [manual.warondisease.org](https://manual.warondisease.org).
+
+**The book:** [How to End War and Disease](https://manual.warondisease.org/). The complete argument, every calculation, every source.

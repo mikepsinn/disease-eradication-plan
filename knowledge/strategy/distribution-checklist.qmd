@@ -1,0 +1,157 @@
+---
+title: "Distribution Checklist"
+description: A systematic checklist for repurposing the book and its arguments into platform-native formats across Medium, Substack, LinkedIn, X, Bluesky, Reddit, Hacker News, and short-form video. The book exists. The job left is putting it in front of humans on the channels they already visit.
+published: true
+tags:
+  - strategy
+  - distribution
+  - content
+  - social-media
+  - checklist
+---
+{{< include /knowledge/includes/setup-parameters.qmd >}}
+
+The book exists. The [call script](call-script.qmd) exists. The widget exists. The job left is putting them in front of humans on the channels they already visit. This chapter is the checklist for doing that systematically.
+
+Work through it in order, not all at once. One to three actions per day. Consistency compounds; brilliance does not.
+
+## The Ten Highest-Leverage Pieces
+
+Produce these first. They are the shortest, most visceral, most shareable claims in the book. Each one is its own standalone post, thread, and short-form video.
+
+1. **"Every second, two humans die of preventable disease."** The per-second framing from the [call script](call-script.qmd).
+2. **"Your vote is attributable to {{< var voter_lives_saved >}} saved and {{< var voter_suffering_hours_prevented >}} of suffering prevented."** The per-voter math.
+3. **"The Pentagon cannot find $2.46 trillion. The treaty redirects $21.8 billion a year."** Scale comparison.
+4. **"Before WW2, US military spending was {{< var us_1939_military_spending_pct_lower_than_current >}} lower than today's peacetime budget, in constant dollars. The US won from that baseline."** Precedent.
+5. **"1% of military spending produces {{< var dfda_trial_capacity_multiplier_nounit >}} times more clinical-trial capacity, compressing the timeline for curing every known disease from {{< var status_quo_queue_clearance_years_nounit >}} years to {{< var dfda_queue_clearance_years_nounit >}}."** The core claim.
+6. **"A thirty-second vote has an expected value of thousands to hundreds of thousands of dollars per hour of calling."** The EV math.
+7. **"Disease eradication is an engineering problem, not a faith problem."** The reframe.
+8. **"No movement reaching {{< var global_population_activism_threshold_pct >}} active public support has failed in the last century. Zero."** The Chenoweth result.
+9. **"If each person persuades two, thirty-two doublings reaches four billion. That is eight months."** The viral math.
+10. **"Either I am crazy or I have discovered the most important secret in the history of the universe."** The opener.
+
+Produce each of these once. Post across all platforms. Reuse indefinitely.
+
+## Per-Platform Format Checklist
+
+For each chapter in the book, convert and post in each applicable format.
+
+**Text platforms:**
+
+- [ ] Medium article (adapted chapter, 3-8 minute read, crosslinked to the book)
+- [ ] Substack post (same content, to your own list, with a crosslink to the book)
+- [ ] LinkedIn article (cut to 1-3 minute read, focused on one argument per post)
+- [ ] Personal blog post (canonical version, if maintaining one)
+
+**Short-form social:**
+
+- [ ] X / Twitter thread (10-25 posts with the strongest claims plus the book link)
+- [ ] Bluesky thread (mirror of the X thread)
+- [ ] Threads post (summary plus hook plus link)
+- [ ] Facebook post (for audiences that still use it; include the widget link directly)
+
+**Community platforms:**
+
+- [ ] Reddit post in 2-3 relevant subs (r/EffectiveAltruism, r/philanthropy, r/PublicHealth, r/science, r/Futurology, r/AskReddit for visceral claims)
+- [ ] Hacker News submission (for technical or mechanism-heavy chapters: [DFDA](../solution/dfda.qmd) [@dfda-spec-paper-2025; @dfda-impact-paper-2025], [IAB](../solution/incentive-alignment-bonds.qmd) [@iab-paper-2025], [Optimocracy](https://manual.warondisease.org/knowledge/appendix/optimocracy-paper.html) [@optimocracy-paper-2025], [GDP Trajectories](../economics/gdp-trajectories.qmd) [@gdp-trajectories-paper-2025])
+- [ ] Quora answer (pick a relevant question, answer with a chapter's argument plus a link)
+- [ ] Lemmy / Mastodon (for audiences that fled the big platforms)
+
+**Video:**
+
+- [ ] YouTube Short (the most visceral 60-90 second version of the argument)
+- [ ] Instagram Reel (same video, different platform)
+- [ ] TikTok (same video, different platform)
+- [ ] Long-form YouTube video (for chapters with enough meat for a 10-20 minute explainer)
+
+**Audio:**
+
+- [ ] Podcast pitch (your show, as host; or their show, as guest)
+- [ ] Audio version of the short post (for podcast feeds that accept micro-episodes)
+
+**Free paid channels (for qualifying 501(c)(3) nonprofits):**
+
+- [ ] Google Ad Grants ($120,000/year in free Google Ads; apply at google.com/grants)
+- [ ] Microsoft Ads credits via Microsoft for Nonprofits
+- [ ] Meta Ad Credits (occasional grants; watch for cycles)
+- [ ] YouTube Nonprofit Program (video ad features and fundraising tools)
+- [ ] Every SaaS tool's nonprofit pricing tier (most are free or 50-100% off; always ask)
+
+## Cadence
+
+A realistic steady-state looks like this:
+
+- **Daily:** 1 X post. 1 Bluesky post. 5 minutes engaging in a relevant subreddit or LinkedIn thread.
+- **Weekly:** 1 Medium article. 1 Substack post. 1 Reddit post. 1 short-form video.
+- **Monthly:** 1 long-form YouTube video. 1 podcast appearance (as guest). 1 Hacker News submission.
+
+Use Buffer, Hypefury, or similar to batch-schedule. Once a batch is queued, you do not have to think about it again for a week.
+
+## Cross-Linking Discipline
+
+Every post links back to the relevant chapter of the book. Every chapter cites the standalone papers it draws from (`1-pct-treaty-impact.qmd`, `dfda-spec-paper.qmd`, etc.). Every external reference points to a source in `references.bib`.
+
+The goal: any reader who encounters any single post can navigate to the full argument in three clicks, and any claim they are suspicious of has a source they can verify.
+
+## What to Measure, What to Ignore
+
+**Measure:**
+
+- Voters acquired per platform (if analytics on the widget permits attribution)
+- Substack subscribers
+- Podcast appearance requests received
+- Grant-funder replies
+- Nonprofit partnership responses
+
+**Ignore:**
+
+- Individual post engagement (likes, retweets, comments)
+- Platform follower counts
+- The algorithm's current mood
+
+Engagement is the metric platforms measure so they can sell your attention back to you. Voter acquisition is the metric the plan runs on. They are different problems, invented by different species, for different reasons.
+
+## Earth Optimization Day Launch Package
+
+Every year, one day gets the full queue. [Earth Optimization Day](earth-optimization-day.qmd) is when every piece of content above goes live simultaneously. Prep window is Day -90 through Day 0.
+
+**By Day -90 (prep complete):**
+
+- [ ] Ten "Earth Optimization Day 2026 is coming" posts pre-written, one per platform.
+- [ ] Countdown graphics for T-60, T-30, T-14, T-7, T-1, Day 0.
+- [ ] One long-form video on why the day matters (the ratchet mechanism, the peace and disease framing).
+- [ ] One short video per high-leverage piece (the ten claims) with a Day 0 embedded call-to-action.
+- [ ] Email signature block with countdown, ready to ship to the email list.
+- [ ] Profile banner designs for every major platform.
+- [ ] Press release draft embargoed for Day 0.
+- [ ] Partner-specific launch packages for each committed partner org.
+
+**Day -30 through Day -1:**
+
+- [ ] Countdown posts on all platforms, increasing frequency as the day approaches.
+- [ ] Op-ed pitches to major outlets targeting Day 0 publication.
+- [ ] Podcast bookings for Day -14 through Day 0.
+- [ ] Reddit AMA scheduled for Day -7 or Day 0.
+- [ ] Paid ads ramp: T-30 warm-up → T-7 escalation → Day 0 peak.
+- [ ] "Pledge to participate" campaign targeting the main mailing list.
+
+**Day 0:**
+
+- [ ] 00:00 UTC: every pre-queued post fires simultaneously across every platform.
+- [ ] Hourly milestone posts as vote counts cross round numbers.
+- [ ] Livestream or live podcast running continuously.
+- [ ] Real-time reply engagement on the coordinator's accounts across all platforms.
+- [ ] Screenshots of the live vote ticker posted every few hours for viral reshare.
+- [ ] End-of-day thank-you post with final count.
+
+**Day +1 through Day +14:**
+
+- [ ] Data package published (votes acquired, top-performing partners, total attributable impact).
+- [ ] "Here is what happened" recap post across all platforms.
+- [ ] Thank-you emails to every participant with their personal attribution.
+- [ ] Press follow-up with any outlets that missed Day 0.
+- [ ] Year N+1 partner outreach opens.
+
+## The Single Rule That Matters
+
+If you cannot produce a post, thread, or video in one sitting of thirty minutes or less, the format is too ambitious. Cut scope until you can. A ten-post X thread posted this week beats a fifty-post thread that never ships. The book is already written. Repurposing it should not take as long as writing it.

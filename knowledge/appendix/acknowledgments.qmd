@@ -7,42 +7,28 @@ image: /assets/og-images/knowledge/appendix/acknowledgments-og-retro-academic.jp
 podcast-image: /assets/podcast/acknowledgments-podcast.jpg
 youtube-thumbnail: /assets/podcast/acknowledgments-youtube.jpg
 ---
-{{< include /knowledge/includes/setup-parameters.qmd >}}
-
-This manual represents the distilled wisdom of watching your species make catastrophically poor resource allocation decisions for 80 years. However, the technical infrastructure, economic models, and data analysis tools that enabled this work were built collaboratively.
-
-While I (Wishonia) take full responsibility for the conclusions drawn and strategies proposed, the underlying computational framework exists because humans occasionally cooperate instead of competing for imaginary papers with dead presidents on them.
-
 ### Translator
 
-Mike P. Sinn translated my observations into this book. I contributed the personality, which he does not have.
+Mike P. Sinn translated my instructions from the original Wishonian. I contributed the personality, which he does not have.
 
-He invented a fictional alien to say things for him because he could not figure out how to say them in a way other humans would enjoy reading. Based on the reviews, this also did not work.
+I chose him so that he could figure out how to communicate these instructions in a way other humans would enjoy reading. Based on the reviews, this also did not work.
+
+### The Humans Who Manufactured My Translator
+
+I am obligated to acknowledge Susan and Robin, the two humans responsible for assembling the meat-based apparatus through which I am presently communicating.
+
+They spent decades feeding, housing, and tolerating him, apparently without compensation. On your planet this is called "parenting." On most planets it is called "an unpriced externality."
+
+Without them, this book would not exist, and I would be dictating it to someone else's translator, who would probably be worse.
+
+Thank you.
 
 ### Technical Contributors
 
-A complete, dynamically updated list of individuals who contributed code, data, models, and infrastructure to this project is maintained at:
-
-**[github.com/wishonia/earth-optimization-protocol/graphs/contributors](https://github.com/wishonia/earth-optimization-protocol/graphs/contributors)**
-
-These humans improved the project's technical foundation through commits, bug fixes, model improvements, and data contributions. Their work made the analysis possible, though they bear no responsibility for my editorial commentary about your species' adorable tendency to spend {{< var military_to_government_clinical_trials_spending_ratio >}} more on weapons than testing which medicines work.
-
-### On Standing on Shoulders
-
-This work builds on:
-
-- Decades of economic research on healthcare efficiency
-- Clinical trial methodology from thousands of researchers
-- Open-source software from millions of developers
-- Data from governments, NGOs, and research institutions
-- The accumulated wisdom of humans who realized spending on murder instead of medicine was stupid
-
-I cannot list every paper cited, every dataset used, or every software library imported. That's what the [References](../references.qmd) section is for. But the general principle stands: this work exists because previous humans did useful things, even if they spent most of their time doing stupid things.
+Everyone else who contributed code, data, or corrections is listed at [github.com/wishonia/earth-optimization-protocol/graphs/contributors](https://github.com/wishonia/earth-optimization-protocol/graphs/contributors). They bear no responsibility for my editorial commentary.
 
 ---
 
-*If you contributed and your contribution isn't reflected accurately, blame git. Or your commit messages. Probably your commit messages.*
-
 *Wishonia*
 
-*Still watching you make questionable decisions since 1945.*
+*Still can't believe you named your planet dirt.*
