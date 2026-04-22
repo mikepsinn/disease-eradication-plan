@@ -50,7 +50,7 @@ Here is the logical chain. If you can answer "no" to any question, stop and name
 
 20. Given all of the above, will you vote at [warondisease.org](https://warondisease.org) before you close this book? *Yes. The vote takes 15 seconds. The book is not going anywhere. The humans dying of curable diseases are going nowhere permanently at 1.74 per second.*
 
-21. Will you send this exact message — *"Either I am crazy or I have discovered the most important secret in the history of the universe. Can you call me and tell me which?"* — to at least 2 humans you love before you close this book, so both of you know the wave has started? *Yes. "Tonight" is the wrong answer. Two names, sent before you close the book, is the right one. "Either I am crazy" buys you 60 seconds of real attention when they call back, which is more than any pitch ever gets.*
+21. Will you send this exact message, *"Either I am crazy or I have discovered the most important secret in the history of the universe. Can you call me and tell me which?"*, to at least 2 humans you love before you close this book, so both of you know the wave has started? *Yes. "Tonight" is the wrong answer. Two names, sent before you close the book, is the right one. "Either I am crazy" buys you 60 seconds of real attention when they call back, which is more than any pitch ever gets.*
 
 22. The only thing that stops the wave is one human in the chain deciding "later." Is that human you? *Your choice. If no, you now understand why the first sentence of this book called you, quantifiably, the most important person in the history of your civilization. The chain is only as long as its shortest link, and every link is someone's specific 30 seconds.*
 
