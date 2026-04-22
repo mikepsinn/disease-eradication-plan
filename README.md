@@ -6,9 +6,11 @@ You don't realize it yet, but you are, quantifiably, the most important person i
 
 By the time you complete the steps in this manual, you will have prevented 10.7 billion deaths and 1.93 quadrillion hours of suffering. 
 
-To understand how, I need you to answer a few questions. 
+To understand how, I need you to answer a few questions.
 
-Here is the logical chain. If you can answer "no" to any question, stop and name which one. If you answer "yes" to all of them, you have agreed to what follows:
+What follows may be the most important list of questions ever asked in your language. If enough humans read them and answer honestly, your species ends war and disease. If not, it doesn't. The universe is indifferent either way. You do not have to be.
+
+Here is the chain of logic. If you can answer "no" to any question, stop and name which one. If you answer "yes" to all of them, you have agreed to what followws:
 
 1. It takes 100 warheads to trigger nuclear winter and collapse your food system. You have 12,200. That is 122 apocalypses. You can only use one of them, because after the first one there is no civilization left to apocalypse. The other 121 just sit there, being expensive. The [1% Treaty](https://manual.warondisease.org/knowledge/solution/1-percent-treaty.html) asks you to settle for 121 apocalypses instead of 122, in exchange for 12.3x more clinical trials, which compresses disease eradication from 443 years to 36 years. Would 4 billion of your species prefer Option A (122 apocalypses, several centuries of continued dying from curable diseases) or Option B (121 apocalypses, disease cured in their lifetime)?
 
