@@ -96,6 +96,7 @@ book:
         # REMOVED: Merged into knowledge/solution/incentive-alignment-bonds.qmd
         # - knowledge/economics/victory-bonds.qmd
         # CUT: legislation-package.qmd - draft bill text, nobody reads recreationally
+        - knowledge/strategy/questions.qmd # The 20 Questions
         - knowledge/strategy/global-referendum.qmd
         # CUT: ai-coordination-army.qmd - technical AI deployment instructions, not essential for core argument
         # REMOVED: Merged into knowledge/solution/aligning-incentives.qmd defense section

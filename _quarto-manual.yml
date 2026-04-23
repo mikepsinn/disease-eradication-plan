@@ -151,6 +151,7 @@ book:
 
     - part: "The Plan"
       chapters:
+        - knowledge/strategy/questions.qmd # The 20 Questions -- viral call script for spreading the 1% Treaty
         - knowledge/strategy/declaration-of-optimization.qmd # Declaration of Optimization (grievances precede constitution)
         - knowledge/strategy/earth-optimization-protocol-v1.qmd # ✅ Complete integrated system + sequencing
         - knowledge/strategy/nonprofit-coalition-strategy.qmd # ✅ Why every nonprofit should support a 1% treaty ~4p
