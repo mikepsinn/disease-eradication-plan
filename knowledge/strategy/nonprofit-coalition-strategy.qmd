@@ -164,7 +164,11 @@ The rest of this chapter is the "knows what to click" part.
 
 ## Why Your Org Should Help
 
-The argument below works for any ask in the chapter: endorse, embed, share, donate staff time, allocate an Ad Grant. Use whichever parts land with whichever audience. Lead with the strongest for that org; most conversations hit two or three.
+Every disease-advocacy, peace, or global-health org operates inside the same structural trap: their mission's budget is {{< var military_to_government_clinical_trials_spending_ratio >}}x smaller than the budget that makes their mission harder. This campaign fixes the upstream cause. The voting infrastructure, the attribution dashboard, the embed widget, the legal analysis, the cost-effectiveness modeling, the pre-written outreach copy, and the ongoing coordination are already built and staffed, at warondisease.org, at no cost to any partner org. The one thing the campaign cannot produce on its own is audience reach. That is the only thing a partner org contributes. Every other part of the cost-to-impact equation has been absorbed before the conversation started.
+
+So the question for a partner org is narrower than it first appears. It is not "should we take on a new campaign." It is "should we point some of our existing audience at an already-built mission amplifier that compresses our own core problem by a factor of {{< var dfda_trial_capacity_multiplier >}}." The answer in most cases is obvious. The argument below is what to hand the EDs and program officers who want the obvious spelled out.
+
+The argument works for any form of participation: endorse, embed, share, donate staff time, allocate an Ad Grant. Use whichever parts land with whichever audience. Lead with the strongest for that org; most conversations hit two or three.
 
 **Total time cost: under one hour of staff time.** Endorsement is one form signed by the ED. The embed is one iframe a webmaster pastes into the CMS. The newsletter and social posts are pre-written in this chapter and can be scheduled in a single sitting. First deployment runs about an hour end-to-end across all three org-facing stages, with zero ongoing overhead after the embed goes live. Most objections this pitch hits are time objections. That number is the answer.
 
@@ -254,38 +258,41 @@ For additional legal context, see the [legal framework](../legal/legal-framework
 
 ## The Outreach Email
 
-The email for Stage 1. Customize the bracketed fields and delete this line before sending.
+The first and usually only email sent to a nonprofit. One shot, all three asks, everything attached. No escalating commitment, no follow-up campaign to chase them across Stages 1 through 3. They do it or they don't. Customize the bracketed fields and delete this line before sending.
 
 ::: {.callout-note icon=false}
-**Subject:** Would [Org Name] endorse the 1% Treaty?
+**Subject:** [Org Name] + 1% Treaty: full package, under an hour of staff time
 
 Hi [Name],
 
 [Org Name]'s work on [their focus area] is directly relevant to something we're building.
 
-The 1% Treaty is a proposal for all nations to simultaneously redirect 1% of military spending ({{< var treaty_annual_funding >}}) to pragmatic clinical trials. Because every nation reduces equally, no country gets weaker; the balance of military capability stays identical.
+The 1% Treaty is a proposal for all nations to simultaneously redirect 1% of military spending ({{< var treaty_annual_funding >}}) to pragmatic clinical trials. Every nation cuts equally, so no country's military capability changes relative to any other. Trial capacity increases {{< var dfda_trial_capacity_multiplier >}}. The backlog of {{< var diseases_without_effective_treatment_nounit >}} untreated diseases drops from {{< var status_quo_queue_clearance_years_nounit >}} years to {{< var dfda_queue_clearance_years_nounit >}} years. Whatever condition [Org Name]'s community is affected by is almost certainly in that backlog.
 
-Your lifetime risk of dying from a terrorist attack is vanishingly small. Your lifetime risk of dying from a disease is 100%. The current budget does not reflect this. Governments spend enough on military to buy {{< var bullets_per_person_annual >}} bullets for every person on Earth every year, while only {{< var new_disease_first_treatments_per_year_nounit >}} diseases per year get their first effective treatment.
+**The proposal, in three parts, under an hour of staff time total:**
 
-At this funding level, clinical trial capacity increases {{< var dfda_trial_capacity_multiplier >}}. The backlog of {{< var diseases_without_effective_treatment_nounit >}} untreated diseases drops from {{< var status_quo_queue_clearance_years_nounit >}} years to {{< var dfda_queue_clearance_years_nounit >}} years. The average treatment arrives {{< var dfda_trial_capacity_treatment_acceleration_years_nounit >}} years sooner. Whatever condition [Org Name]'s community is affected by is almost certainly in that backlog.
+1. **Endorse.** Sign the attached endorsement form. [Org Name]'s logo appears on the coalition page at warondisease.org and locks in founding-member status. About 15 minutes of ED time.
+2. **Embed.** Paste the attached iframe snippet into your site. This becomes a mission-aligned landing page your existing Google Ad Grant ($120K/year free) can drive traffic to. Converts passively, zero ongoing overhead. About 30 minutes for a webmaster.
+3. **Share once.** Use the attached pre-written newsletter and three social posts. They link to the embed on your own site. About 15 minutes to schedule.
 
-Endorsing means three things:
+**What [Org Name] gets:**
 
-1. Your logo on the coalition page at warondisease.org
-2. One share with your community (newsletter or email)
-3. That's it. No budget commitment, no new operations, no hiring.
+- **Attributable impact.** Voters driven through your unique link are attributable to [Org Name]. 100,000 voters = 3.84M lives saved, if the treaty passes. Probability-discount however you want; no other action [Org Name] takes this year comes close. Each voter also adds {{< var voter_lives_saved >}} and {{< var voter_suffering_hours_prevented >}} suffering-hours to the tally.
+- **A new funding line.** Global-health, peace, and policy funders fund coalition work on this issue. Coalition membership opens eligibility. The attached **funder pitch template** is performance-based. Your foundation contacts pay your org per verified voter acquired, at a cost per DALY ({{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}}) that beats bed nets ({{< var bed_nets_cost_per_daly >}}) by orders of magnitude. Forward it to three of your funders. It is scaffolded so they pay on delivery, not on staff time.
+- **A founding-coalition plaque.** Early movers are named on warondisease.org permanently. Late movers are not.
 
-Three questions for you:
+**Attached:**
 
-1. Would [Org Name] endorse the 1% Treaty?
-2. If not, what would need to change to make it a yes?
-3. Would you be willing to be listed as a coalition member?
+- Endorsement form
+- Embed code snippet (three lines of HTML)
+- Newsletter template + three social posts
+- Funder pitch template (performance-based, for your own fundraising)
+- Legal memo ("This Is Not Lobbying") for your general counsel
+- Cost-effectiveness argument for your board
 
-- Full treaty text: [The 1% Treaty (Articles)](../solution/1-percent-treaty.qmd)
-- Impact analysis with full methodology: [Economic Impact of the 1% Treaty](../economics/1-pct-treaty-impact.qmd)
-- Leader accountability dashboard: <https://warondisease.org/tasks>
+Full treaty text: [The 1% Treaty (Articles)](../solution/1-percent-treaty.qmd). Impact analysis: [Economic Impact of the 1% Treaty](../economics/1-pct-treaty-impact.qmd). Leader accountability dashboard: <https://warondisease.org/tasks>.
 
-Happy to jump on a call to answer any questions.
+If [Org Name] is doing this, any blocker on finishing all three items this week? If [Org Name] is not doing this, what is your team doing instead that beats {{< var voter_lives_saved >}} saved per voter acquired on a cost-per-DALY basis? The campaign genuinely wants to know. If there is a better allocation, we want to learn from it.
 
 [Your name]
 [Your role]
@@ -383,31 +390,65 @@ Full treaty text: [The 1% Treaty (Articles)](../solution/1-percent-treaty.qmd)
 ☐ We consent to our organization's name and logo appearing on warondisease.org as a coalition endorser.
 :::
 
-## The Grant Budget Proposal
+## The Funder Pitch Template
 
-For organizations that already have grant budgets and need a funded program to staff the coalition work. Condensed here; expand to full memo length before formal submission.
+For nonprofits that want to raise money from their own foundation contacts to run the campaign through their channels. The nonprofit forwards this template (or a condensed version) to their funders. It replaces the old "fund a coordinator at $X" ask, which in practice is how campaigns raise $100K and spend it on conferences, strategy offsites, and consultants who produce slide decks nobody reads.
 
-**Title:** The 1% Treaty Coalition: A Proposal for [Org Name] as Founding Coalition Member
+This template is structured so the funder pays on verified delivery, with explicit exclusions on the waste categories that swallow most coalition grants. Condensed here; expand to full memo length before formal submission.
 
-**Summary.** [Org Name] joins the 1% Treaty Coalition as a founding member. A dedicated coordinator (funded by the grant) handles outreach to peer organizations, endorsement tracking, member activation campaigns, and coalition reporting. Target: 50+ organizational endorsements and 10,000+ verified member signatures at warondisease.org within 6 months.
+**Title:** Performance-Based Funding Request: [Org Name]'s 1% Treaty Voter Acquisition Channel
 
-**Why this campaign.** See [The Cost-Effectiveness Argument](#the-cost-effectiveness-argument) and the polemic sections above. Short version: this campaign is the most cost-effective global health intervention ever identified in the effective altruism literature, if the numbers survive economist scrutiny, and [Org Name]'s existing network is a credibility multiplier.
+**Summary.** [Org Name] commits to driving [target] verified referendum voters through its unique attribution link at warondisease.org over [timeframe]. Payment is performance-based: a small fixed baseline for campaign execution costs, plus a per-voter bonus paid only on verified delivery. The attribution infrastructure (unique URLs, dashboard, voter verification, embed widget) is already built by warondisease.org at no cost to [Org Name]; the funder is not paying to reinvent any of that. Every dollar the funder deploys has a cost-per-DALY number benchmarked against GiveWell standards, posted publicly, and verifiable at any time.
 
-**Campaign phases.**
+**The math, for your cost-per-DALY worksheet.**
 
-1. **Credibility (months 0-2).** Economist review of the cost-effectiveness numbers. Legal review of the 501(c)(3) analysis. Founding-member outreach to 5-10 warm contacts.
-2. **Coalition building (months 2-5).** Organizational outreach using the templates in this chapter. Target: 50+ endorsements.
-3. **Public launch (months 5-6).** Coordinated member activation across founding coalition members. Target: 10,000+ verified signatures and a corresponding spike in leader notifications at warondisease.org/tasks.
+| Line | Value | Source |
+|---|---|---|
+| Lives saved per voter acquired | {{< var voter_lives_saved >}} | Treaty pass × DALYs averted × attribution share |
+| Suffering-hours averted per voter | {{< var voter_suffering_hours_prevented >}} | Same chain |
+| Standard QALY value (economic) | {{< var standard_economic_qaly_value_usd >}} | Conventional economic literature |
+| Treaty campaign cost per DALY | {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}} | Full methodology in [parameters appendix](../appendix/parameters-and-calculations.qmd) |
+| Bed nets cost per DALY (GiveWell benchmark) | {{< var bed_nets_cost_per_daly >}} | GiveWell |
 
-**Coordinator role.** Outreach execution, endorsement tracking, objection handling, weekly coalition coordination calls, monthly reporting to [Org Name]'s board.
+Even at aggressive probability discounts on treaty passage, the cost per DALY beats bed nets by orders of magnitude. The full three-accounting-method comparison is in [The Cost-Effectiveness Argument](#the-cost-effectiveness-argument).
 
-**Legal.** See [This Is Not Lobbying (The Legal Memo)](#this-is-not-lobbying-the-legal-memo). No changes to [Org Name]'s 501(c)(3) status result from this campaign.
+**What warondisease.org already provides, at no cost to [Org Name].**
 
-**Success metrics (6 months).** 50+ endorsements, 10,000+ verified signatures, economist review complete, EA Forum post published.
+- A unique referral URL keyed to [Org Name]. Voters delivered through this link are auto-attributed.
+- The embed widget (three lines of HTML, drop anywhere on the site) and the voting flow it points to.
+- A live coalition dashboard showing voters delivered by org, cost per voter, and cost per DALY.
+- Voter verification, signature validation, and anti-fraud filtering.
+- Pre-written newsletter and social post templates (in this chapter).
+- The endorsement form, legal memo, and cost-effectiveness argument (in this chapter).
+- Ongoing maintenance of all of the above.
 
-**The ask.** Fund the coordinator role at [amount]. Join as founding coalition member. Share the treaty with [Org Name]'s network once.
+Setup: email [campaign contact] and receive the referral URL, embed snippet, and dashboard login within 24 hours. No code is written at [Org Name]'s end beyond pasting an iframe. This is why the baseline in the payment structure below is small. Nothing centralized is being rebuilt.
 
-Close every proposal with: "What would need to change to make this a yes?"
+**Payment structure.**
+
+| Component | Amount | Trigger |
+|---|---|---|
+| Baseline (campaign execution costs) | $5,000 | On signing, one-time |
+| Per-voter performance bonus | $1.00 per verified voter | Monthly, on verified delivery |
+| Cap | Funder-specified (default: uncapped) | None |
+
+**On the baseline.** The $5,000 covers [Org Name]'s real marginal costs during ramp-up: roughly 20–40 hours of staff time to deploy the embed, write a newsletter from the template, schedule social posts, and sub-recruit peer orgs; small prime-the-pump ad spend before the Google Ad Grant overflow kicks in; optional creative production (graphics, a short video, translated copy). Kept small deliberately. Most of the money is tied to delivered voters, and efficient orgs earn past $5,000 in the first month.
+
+**On the $1.00 per-voter anchor.** This number matches the established performance-grant benchmark in [How to Turn Grant Applicants into Billionaires](../appendix/nonprofit-partnership-incentives.qmd) ($10K per 10,000 verified votes) and the $1–2 per voter implied by [the Voter Acquisition Grant](../grant-proposal/voter-acquisition-grant.qmd) (100K voters for $100–250K all-in). It is distinct from the {{< var global_coordination_activation_reward_per_verified_participant >}} direct incentive paid to the voter and referrer, which comes from a separate pool and does not hit this budget.
+
+**Pricing as a market, not a mandate.** $1.00 per voter is an anchor, not a fixed rate. An org with a high-engagement list may propose $0.50. An org that needs to front ad spend into a cold channel may propose $1.50. Funders can accept, decline, or counter. The rate is whatever a willing nonprofit and a willing funder agree on. The performance structure is the accountability: if the org delivers, the funder pays per the agreed rate; if the org does not deliver, the funder does not pay. No milestone triggers, no pause clauses, no dead-money scenarios. Pay on delivery, per voter, monthly.
+
+**Restricted-use clause.** Funds may be used for: staff time directly allocated to campaign execution (writing the newsletter from the template, scheduling social posts, deploying the embed iframe in the CMS, outreach to peer nonprofits for sub-recruitment), paid advertising overflow beyond the org's free Google Ad Grant allocation (Meta, X, LinkedIn, programmatic), and creative production tied to shipping deliverables (graphics, short video, translated copy).
+
+Funds may not be used for: conferences, retreats, consultants whose outputs are not deliverable campaign artifacts, board or advisory compensation, travel unrelated to voter acquisition, "strategy development" without a specific shipping deliverable, new hires unrelated to the campaign, or general operating overhead outside the campaign.
+
+**Public reporting.** [Org Name] publishes a monthly campaign dashboard at [org URL]/campaign-dashboard, showing: voters delivered, cost per voter achieved, cost per DALY achieved, cumulative attributable lives saved, and spend by category. Funder and general public can audit in real time. The public dashboard is the accountability mechanism.
+
+**Legal.** See [This Is Not Lobbying (The Legal Memo)](#this-is-not-lobbying-the-legal-memo). No changes to [Org Name]'s 501(c)(3) status result from this campaign. Voter acquisition for a proposed international treaty is issue advocacy, not lobbying.
+
+**The ask.** Fund [Org Name] at a $5,000 baseline plus a per-voter rate (anchor: $1.00, negotiable) up to a delivery target of [target] voters within [timeframe]. Maximum funder exposure: $5,000 + (rate × target). At $1/voter: $15,000 for 10,000 voters, $105,000 for 100,000 voters, $1,005,000 for 1,000,000. Delivery is public through the warondisease.org dashboard; the funder pays monthly in arrears against voters actually delivered, never advanced.
+
+Close every proposal with: "What per-voter rate and delivery target would make this the best cost-per-DALY grant in your current portfolio, and if we can hit it, is there any blocker to signing?"
 
 ## Outreach Sequencing
 
@@ -457,7 +498,7 @@ They are calculated with 95% confidence intervals and 90+ cited sources. The ful
 
 ---
 
-That is the whole chapter. If an organization endorses, walk them through Stages 2 and 3: the embed goes on their site first, then [The Member Activation Email](#the-member-activation-email) and [The Social Post Pack](#the-social-post-pack) drive their audience at the embed. If an organization declines, ask what would change their mind, incorporate the feedback, and retry in 60 days. If the same objection appears three times in a week, update the outreach email to preempt it.
+That is the whole chapter. The outreach email bundles the full ask (endorse, embed, share) with every artifact attached, so first contact is also last contact for orgs that say yes. If an organization commits, confirm the embed is live on their site and the newsletter is scheduled, then move on to the next org. If an organization declines, ask what would change their mind and what they are doing with the same staff hours that beats this on cost per DALY. Incorporate useful feedback; retry in 60 days. If the same objection appears three times in a week, update the outreach email to preempt it.
 
 The bottleneck between here and {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} averted is not the math, the legal analysis, the templates, or the treaty itself. It is the number of organizations that have opened the conversation with their members. That number is a function of how many outreach emails get sent this week.
 

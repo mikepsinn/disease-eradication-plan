@@ -5656,7 +5656,7 @@ export const INDUSTRY_VS_GOVERNMENT_CLINICAL_TRIALS_SPENDING_RATIO: Parameter = 
 };
 
 export const LIFE_EXPECTANCY_GAIN_1883_1962_YEARS_PER_DECADE: Parameter = {
-  value: 0.0,
+  value: 3.8802531645569616,
   parameterName: "LIFE_EXPECTANCY_GAIN_1883_1962_YEARS_PER_DECADE",
   calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-life_expectancy_gain_1883_1962_years_per_decade",
   unit: "years/decade",
@@ -5667,13 +5667,13 @@ export const LIFE_EXPECTANCY_GAIN_1883_1962_YEARS_PER_DECADE: Parameter = {
   sourceUrl: "https://manual.warondisease.org/knowledge/data/us-life-expectancy-fda-budget-1543-2019.csv",
   confidence: "high",
   formula: "(life_exp_1962 - life_exp_1880) / 7.9 decades",
-  latex: "\\begin{gathered}\n\\Delta LE_{pre62} \\\\\n= \\frac{LE_{US,1962} - LE_{US,1880}}{7.69} \\\\\n= \\frac{70.1 - 39.4}{7.69} \\\\\n= 0\n\\end{gathered}",
-  confidenceInterval: [3.85, 3.91],
+  latex: "\\begin{gathered}\n\\Delta LE_{pre62} \\\\\n= \\frac{LE_{US,1962} - LE_{US,1880}}{7.9} \\\\\n= \\frac{70.1 - 39.4}{7.9} \\\\\n= 3.88\n\\end{gathered}",
+  confidenceInterval: [3.853729979409657, 3.907282573742793],
   peerReviewed: true,
 };
 
 export const LIFE_EXPECTANCY_GAIN_1962_2019_YEARS_PER_DECADE: Parameter = {
-  value: 0.0,
+  value: 1.5435087719298248,
   parameterName: "LIFE_EXPECTANCY_GAIN_1962_2019_YEARS_PER_DECADE",
   calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-life_expectancy_gain_1962_2019_years_per_decade",
   unit: "years/decade",
@@ -5684,7 +5684,7 @@ export const LIFE_EXPECTANCY_GAIN_1962_2019_YEARS_PER_DECADE: Parameter = {
   sourceUrl: "https://manual.warondisease.org/knowledge/data/us-life-expectancy-fda-budget-1543-2019.csv",
   confidence: "high",
   formula: "(life_exp_2019 - life_exp_1962) / 5.7 decades",
-  latex: "\\begin{gathered}\n\\Delta LE_{post62} \\\\\n= \\frac{LE_{US,2019} - LE_{US,1962}}{5.56} \\\\\n= \\frac{78.9 - 70.1}{5.56} \\\\\n= 0\n\\end{gathered}",
+  latex: "\\begin{gathered}\n\\Delta LE_{post62} \\\\\n= \\frac{LE_{US,2019} - LE_{US,1962}}{5.7} \\\\\n= \\frac{78.9 - 70.1}{5.7} \\\\\n= 1.54\n\\end{gathered}",
   peerReviewed: true,
 };
 
@@ -9260,8 +9260,8 @@ export const GLOBAL_COORDINATION_ACTIVATION_REWARD_PER_VERIFIED_PARTICIPANT: Par
   confidence: "medium",
   confidenceInterval: [2.0, 10.0],
   stdError: 1.5,
-  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/strategy/earth-optimization-prize.html",
-  manualPageTitle: "The Earth Optimization Prize",
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/strategy/nonprofit-coalition-strategy.html",
+  manualPageTitle: "How to Coordinate 10 Million Nonprofits",
 };
 
 export const GLOBAL_COORDINATION_PLATFORM_AND_OPERATIONS_COST: Parameter = {

@@ -1325,6 +1325,7 @@ PEACE_DIVIDEND_SHARE_OF_80YR_BASELINE_WAR_COST = Parameter(
     compute=lambda ctx: ctx["PEACE_DIVIDEND_LIFETIME_TOTAL"] / ctx["GLOBAL_WAR_COST_LIFETIME_CUMULATIVE_BASELINE"],
     keywords=["percent", "fraction", "avoided", "lifetime", "80 years", "ratio"],
     latex_symbol=r"\phi_{avoided}",
+    distribution="fixed",  # Algebraic cancellation: BASELINE cancels in numerator and denominator
 )
 
 # Individual peace dividend components (1% savings breakdown)
@@ -2275,7 +2276,7 @@ US_LIFE_EXPECTANCY_2019 = Parameter(
 
 # Life Expectancy Gain Rates - Calculated from data points
 LIFE_EXPECTANCY_GAIN_1883_1962_YEARS_PER_DECADE = Parameter(
-    0,  # Placeholder, computed below
+    (US_LIFE_EXPECTANCY_1962 - US_LIFE_EXPECTANCY_1880) / 7.9,
     source_ref=ReferenceID.LIFE_EXPECTANCY_INCREASE_PRE_1962,
     source_type="calculated",
     description="US life expectancy linear gain rate 1883-1962 (pre-Kefauver-Harris).",
@@ -2286,12 +2287,12 @@ LIFE_EXPECTANCY_GAIN_1883_1962_YEARS_PER_DECADE = Parameter(
     peer_reviewed=True,
     keywords=["life expectancy", "pre-1962", "historical", "biomedical progress", "years per decade"],
     inputs=["US_LIFE_EXPECTANCY_1962", "US_LIFE_EXPECTANCY_1880"],
-    compute=lambda ctx: round((ctx["US_LIFE_EXPECTANCY_1962"] - ctx["US_LIFE_EXPECTANCY_1880"]) / 7.9, 2),
+    compute=lambda ctx: (ctx["US_LIFE_EXPECTANCY_1962"] - ctx["US_LIFE_EXPECTANCY_1880"]) / 7.9,
     latex_symbol=r"\Delta LE_{pre62}",  # LaTeX symbol for equations
 )
 
 LIFE_EXPECTANCY_GAIN_1962_2019_YEARS_PER_DECADE = Parameter(
-    0,  # Placeholder, computed below
+    (US_LIFE_EXPECTANCY_2019 - US_LIFE_EXPECTANCY_1962) / 5.7,
     source_ref=ReferenceID.POST_1962_LIFE_EXPECTANCY_SLOWDOWN,
     source_type="calculated",
     description="US life expectancy linear gain rate 1962-2019 (post-Kefauver-Harris).",
@@ -2302,8 +2303,9 @@ LIFE_EXPECTANCY_GAIN_1962_2019_YEARS_PER_DECADE = Parameter(
     peer_reviewed=True,
     keywords=["life expectancy", "post-1962", "slowdown", "biomedical progress", "years per decade", "kefauver-harris"],
     inputs=["US_LIFE_EXPECTANCY_2019", "US_LIFE_EXPECTANCY_1962"],
-    compute=lambda ctx: round((ctx["US_LIFE_EXPECTANCY_2019"] - ctx["US_LIFE_EXPECTANCY_1962"]) / 5.7, 2),
+    compute=lambda ctx: (ctx["US_LIFE_EXPECTANCY_2019"] - ctx["US_LIFE_EXPECTANCY_1962"]) / 5.7,
     latex_symbol=r"\Delta LE_{post62}",  # LaTeX symbol for equations
+    distribution="fixed",  # Narrow CIs on both LE inputs; variance is sub-tolerance
 )
 
 # Research Acceleration Multipliers - MOVED to after GLOBAL_MED_RESEARCH_SPENDING (line ~2971)
@@ -9325,6 +9327,7 @@ TREATY_DISEASE_CURE_FRACTION_20YR = Parameter(
     ),
     keywords=["treaty", "disease", "cure fraction", "20 year", "optimistic", "ratchet"],
     latex_symbol=r"f_{cure,20,treaty}",
+    distribution="fixed",  # Saturates at 1.0 ceiling: raw ratio is ~3.2x, every MC sample clips
 )
 
 TREATY_REDIRECT_GDP_GROWTH_BONUS_YEAR_20 = Parameter(
@@ -9451,6 +9454,7 @@ WISHONIA_DISEASE_CURE_FRACTION_20YR_FULL = Parameter(
     ),
     keywords=["wishonia", "disease", "cure fraction", "20 year", "full implementation"],
     latex_symbol=r"f_{cure,20,wish}",
+    distribution="fixed",  # Saturates at 1.0 ceiling under full-implementation parameters
 )
 
 CURRENT_TRAJECTORY_GDP_YEAR_20 = Parameter(
@@ -9477,6 +9481,7 @@ CURRENT_TRAJECTORY_AVG_INCOME_YEAR_20 = Parameter(
     inputs=["CURRENT_TRAJECTORY_GDP_YEAR_20", "GLOBAL_POPULATION_2045_PROJECTED"],
     compute=lambda ctx: ctx["CURRENT_TRAJECTORY_GDP_YEAR_20"] / ctx["GLOBAL_POPULATION_2045_PROJECTED"],
     latex_symbol=r"\bar{y}_{base,20}",
+    distribution="fixed",  # All upstream inputs are distribution="fixed"
 )
 
 
@@ -9935,6 +9940,7 @@ WISHONIA_DISEASE_CURE_FRACTION_15YR = Parameter(
     ),
     keywords=["wishonia", "disease", "cure fraction", "15 year", "full implementation"],
     latex_symbol=r"f_{cure,15,wish}",
+    distribution="fixed",  # Saturates at 1.0 ceiling under full-implementation parameters
 )
 
 CURRENT_TRAJECTORY_GDP_YEAR_15 = Parameter(
@@ -10134,6 +10140,7 @@ CURRENT_TRAJECTORY_AVG_INCOME_YEAR_15 = Parameter(
     inputs=["CURRENT_TRAJECTORY_GDP_YEAR_15", "GLOBAL_POPULATION_2040_PROJECTED"],
     compute=lambda ctx: ctx["CURRENT_TRAJECTORY_GDP_YEAR_15"] / ctx["GLOBAL_POPULATION_2040_PROJECTED"],
     latex_symbol=r"\bar{y}_{base,15}",
+    distribution="fixed",  # All upstream inputs are distribution="fixed"
 )
 
 TREATY_TRAJECTORY_AVG_INCOME_YEAR_15 = Parameter(

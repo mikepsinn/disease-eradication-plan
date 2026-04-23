@@ -1350,12 +1350,25 @@ def main():
                                 exceedance_count += 1
                             elif outcome_samples and len(outcome_samples) > 100:
                                 varying_input_names = sorted(filtered_input_sims.keys())
+                                # Check if the outcome param is explicitly declared deterministic.
+                                # `distribution="fixed"` on a calculated param is the author's way
+                                # of saying "I know this is deterministic by design; don't warn."
+                                outcome_param_obj = param_meta.get("value") if param_meta else None
+                                outcome_declared_fixed = False
+                                if outcome_param_obj is not None and hasattr(outcome_param_obj, "distribution"):
+                                    outcome_dist = outcome_param_obj.distribution
+                                    if outcome_dist is not None:
+                                        outcome_dist_str = (
+                                            outcome_dist.value if hasattr(outcome_dist, "value") else str(outcome_dist)
+                                        )
+                                        outcome_declared_fixed = (outcome_dist_str == "fixed")
+
                                 message = _build_mc_degeneracy_message(
                                     outcome.name,
                                     mc_variation_reason,
                                     varying_input_names,
                                 )
-                                if varying_input_names:
+                                if varying_input_names and not outcome_declared_fixed:
                                     mc_degeneracy_records.append({
                                         "parameter": outcome.name,
                                         "reason": mc_variation_reason,
@@ -1388,7 +1401,7 @@ def main():
                                 generated_outcome_qmds.add(cdf_qmd.name)
                                 exceedance_count += 1
 
-                                if varying_input_names:
+                                if varying_input_names and not outcome_declared_fixed:
                                     if strict_mc_degeneracy:
                                         with open(analysis_dir / "mc_degenerate_outcomes.json", "w", encoding="utf-8", newline='\n') as f:
                                             json.dump(mc_degeneracy_records, f, indent=2)

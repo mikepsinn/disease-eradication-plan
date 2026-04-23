@@ -160,9 +160,14 @@ def validate_calculated_params_no_uncertainty(parameters: Dict[str, Dict[str, An
                 if hasattr(value, "confidence_interval") and value.confidence_interval is not None:
                     issues.append("confidence_interval")
 
-                # Check for distribution
+                # Check for distribution. `fixed` is allowed on calculated params as an
+                # explicit declaration that the formula is deterministic by design (e.g.,
+                # algebraic cancellation or all inputs themselves `fixed`). Only flag real
+                # distributions that would double-count uncertainty.
                 if hasattr(value, "distribution") and value.distribution is not None:
-                    issues.append("distribution")
+                    dist_str = value.distribution.value if hasattr(value.distribution, "value") else str(value.distribution)
+                    if dist_str != "fixed":
+                        issues.append("distribution")
 
                 # Check for std_error
                 if hasattr(value, "std_error") and value.std_error is not None:

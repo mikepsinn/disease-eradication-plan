@@ -20,14 +20,14 @@ display_name = "Life Expectancy Gain Rate (1883-1962)"
 
 # Baseline and units
 
-baseline = 3.88
+baseline = 3.8802531645569616
 
 # Tornado data from sensitivity analysis
 
 drivers = ['US_LIFE_EXPECTANCY_1880', 'US_LIFE_EXPECTANCY_1962']
 driver_labels = ['US Life Expectancy (1880)', 'US Life Expectancy (1962)']
-impacts_low = [0.06000000000000005, -0.029999999999999805]
-impacts_high = [-0.06000000000000005, 0.03000000000000025]
+impacts_low = [0.06455696202531591, -0.03341772151898681]
+impacts_high = [-0.06202531645569653, 0.029873417721519413]
 
 # Convert deltas to absolute values (baseline + delta)
 

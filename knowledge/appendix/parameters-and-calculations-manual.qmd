@@ -2311,6 +2311,10 @@ where:
 $$
 GDP_{base,15} = GDP_{global} \times (1 + g_{base})^{15}
 $$
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
 *✓ High confidence*
 
 #### Monte Carlo Distribution
@@ -2346,6 +2350,10 @@ where:
 $$
 GDP_{base,20} = GDP_{global} \times (1 + g_{base})^{20}
 $$
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
 *✓ High confidence*
 
 #### Monte Carlo Distribution
@@ -10168,6 +10176,10 @@ Cost_{war,cum,treaty} \\
 = C \times (1 - Reduce_{treaty}) \times 80
 \end{gathered}
 $$
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
 *✓ High confidence*
 
 #### Monte Carlo Distribution
@@ -13626,6 +13638,10 @@ N_{untreated} \\
 = 6{,}650
 \end{gathered}
 $$
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
 *✓ High confidence*
 
 #### Sensitivity Analysis
@@ -20943,6 +20959,10 @@ N_{untreated} \\
 = 6{,}650
 \end{gathered}
 $$
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
 *✓ High confidence*
 
 #### Monte Carlo Distribution
@@ -21052,6 +21072,10 @@ N_{untreated} \\
 = 6{,}650
 \end{gathered}
 $$
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
 *✓ High confidence*
 
 #### Monte Carlo Distribution

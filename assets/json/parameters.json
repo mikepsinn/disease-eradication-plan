@@ -3297,7 +3297,7 @@
         2.0,
         10.0
       ],
-      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/strategy/earth-optimization-prize.html"
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/strategy/nonprofit-coalition-strategy.html"
     },
     "GLOBAL_COORDINATION_PLATFORM_AND_OPERATIONS_COST": {
       "value": 4000000000.0,
@@ -4099,8 +4099,8 @@
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/solution/incentive-alignment-bonds.html"
     },
     "LIFE_EXPECTANCY_GAIN_1883_1962_YEARS_PER_DECADE": {
-      "value": 0.0,
-      "formatted": "0 years/decade",
+      "value": 3.8802531645569616,
+      "formatted": "3.88 years/decade",
       "unit": "years/decade",
       "description": "US life expectancy linear gain rate 1883-1962 (pre-Kefauver-Harris).",
       "sourceType": "calculated",
@@ -4109,8 +4109,8 @@
       "formula": "(life_exp_1962 - life_exp_1880) / 7.9 decades"
     },
     "LIFE_EXPECTANCY_GAIN_1962_2019_YEARS_PER_DECADE": {
-      "value": 0.0,
-      "formatted": "0 years/decade",
+      "value": 1.5435087719298248,
+      "formatted": "1.54 years/decade",
       "unit": "years/decade",
       "description": "US life expectancy linear gain rate 1962-2019 (post-Kefauver-Harris).",
       "sourceType": "calculated",
