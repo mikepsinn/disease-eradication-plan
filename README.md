@@ -6,11 +6,7 @@ You don't realize it yet, but you are, quantifiably, the most important person i
 
 By the time you complete the steps in this manual, you will have prevented 10.7 billion deaths and 1.93 quadrillion hours of suffering. 
 
-To understand how, I need you to answer a few questions.
-
-What follows may be the most important list of questions ever asked in your language. If enough humans read them and answer honestly, your species ends war and disease. If not, it doesn't. The universe is indifferent either way. You do not have to be.
-
-Here is the chain of logic. If you can answer "no" to any question, stop and name which one. If you answer "yes" to all of them, you have agreed to what follows:
+To understand how, I need you to answer a few questions. If you can answer "no" to any of them, stop and name which one.
 
 1. It takes 100 warheads to trigger nuclear winter and collapse your food system. You have 12,200. That is 122 apocalypses. You can only use one of them, because after the first one there is no civilization left to apocalypse. The other 121 just sit there, being expensive. The [1% Treaty](https://manual.warondisease.org/knowledge/solution/1-percent-treaty.html) asks you to settle for 121 apocalypses instead of 122, in exchange for 12.3x more clinical trials, which compresses disease eradication from 443 years to 36 years. Would 4.13 billion of your species prefer Option A (122 apocalypses, several centuries of continued dying from curable diseases) or Option B (121 apocalypses, disease cured in their lifetime)?
 
@@ -36,7 +32,7 @@ Here is the chain of logic. If you can answer "no" to any question, stop and nam
 
 12. Sharing this with one human you love takes about 30 seconds. *Yes. Less time than explaining why you didn't.*
 
-13. Can you think of anything else you could do with 30 seconds that would prevent more death and suffering than shifting disease eradication forward in time? *You cannot. The silence you are about to fill is the point. Whatever you come up with will be smaller than what you just gave up.*
+13. Can you think of anything else you could do with 30 seconds that would prevent more death and suffering than shifting disease eradication forward in time? *You cannot.*
 
 14. Can you think of anything else you could do with 30 seconds that would add more than $3.48 million to your own lifetime income? *You cannot. Your 30 seconds have never been this valuable. They will never be this valuable again.*
 
@@ -50,7 +46,7 @@ Here is the chain of logic. If you can answer "no" to any question, stop and nam
 
 19. Will you send this exact message, *"Either I am crazy or I have discovered the most important secret in the history of the universe. Can you call me and tell me which?"*, to at least 2 humans you love before you close this book, so both of you know the wave has started? *Yes. "Tonight" is the wrong answer. Two names, sent before you close the book, is the right one. "Either I am crazy" buys you 60 seconds of real attention when they call back, which is more than any pitch ever gets.*
 
-20. The only thing that stops the wave is one human in the chain deciding "later." Is that human you? *Your choice. If no, you now understand why the first sentence of this book called you, quantifiably, the most important person in the history of your civilization. The chain is only as long as its shortest link, and every link is someone's specific 30 seconds.*
+20. The only thing that stops the wave is one human in the chain deciding "later." Is that human you? *Your choice. If no, you now understand why the first sentence of this book called you, quantifiably, the most important person in the history of your civilization.*
 
 That's the plan. 30 seconds × 4.13 billion humans = the 1% Treaty exists = disease eradicated in decades instead of centuries.
 
@@ -269,8 +265,6 @@ Then there's a 8.2 years delay between proving a drug is safe and letting dying 
 
 Your regulatory system can make two mistakes: approve a bad drug (Type I error), or block a good drug (Type II error). Your FDA is terrified of the first mistake and completely ignores the second. I calculated the ratio: for every 1 person protected from a dangerous drug, 3,068 people die waiting for a safe one that's locked in the approval cabinet. Even if you assume a Thalidomide-scale catastrophe happens during post-phase 1 efficacy testing every single year (even though it wouldn't because Phase I safety testing actually caught it anyway), the deaths from just the efficacy delay still outnumber the deaths from bad drugs by 3,068 to 1. Your safety system's main product is dead patients.
 
-Think about someone you love who is suffering right now. The treatment that would help them exists as an untested compound on a shelf, because the money bought a missile instead. That missile incinerated a child who would have grown up to discover the cure. You lose the treatment. You lose the scientist. You get the tax bill. You get to pay for her murder. One percent fixes this. One vote starts it.
-
 ---
 
 **The good news:** You already know how to fix this.
@@ -290,7 +284,7 @@ Everyone cuts 1% at the same time. Your national security actually *increases*, 
 
 "But humans would never agree to a treaty!" you say. You already have. Multiple times. You banned chemical weapons (1993, 193 countries). You banned biological weapons (1975, 187 countries). You banned landmines (1997, 164 countries). You've signed treaties banning weapons you actually like using. This one just asks you to buy 1% fewer of them.
 
-I've done this before. I've sent versions of this manual to 847 civilizations on 847 planets. Some listened. Some didn't. I kept the data. The civilizations that redirected resources from killing each other to keeping each other alive transcended war and disease. The ones that didn't extincted themselves. The difference was never intelligence, technology, or resources. The only variable was the percentage of the population that decided it sounded crazy without reading the next page. That is the same reflex that kept you from inventing antibiotics for 200,000 years while bread mold sat right there on your bread.
+I've done this before. I've sent versions of this manual to 847 civilizations on 847 planets. Some listened. Some didn't. I kept the data. The ones that redirected resources from killing each other to keeping each other alive stopped doing war and disease. The ones that didn't extincted themselves. The only variable was the percentage of the population that decided it sounded crazy without reading the next page. That is the same reflex that kept you from inventing antibiotics for 200,000 years while bread mold sat right there on your bread.
 
 And you have two other advantages, the internet and a new financial instrument designed specifically for harnessing the most powerful force in the universe: human greed.
 
@@ -507,8 +501,6 @@ Now look at this cured disease.
 
 There is not a single person in the world who could cure it. The researcher in Lagos who found the cheaper trial design does not know the lobbyist in Brussels who passed the directive. The lobbyist does not know the nonprofit in Manila that recruited a million voters. The voters do not know the bondholder in New York whose greed funded the campaign. The bondholder does not know the politician in Delhi who voted yes because the Super PAC funded her opponent last time she voted no. The politician does not know the factory worker in Dhaka whose clinical trial enrollment generated the data that proved the treatment worked. Literally millions of people cooperated to cure this disease. No one sitting in a central office gave orders. No military police enforced the orders that were not given. Two numbers on a Scoreboard and pieces of paper with presidents on them did what no committee, no charity, and no central plan has ever done.
 
-The five steps above are the machinery. You do not need to build the machinery. You need to turn it on. Here is the switch.
-
 ### The Earth Optimization Game
 
 A pool of money. Two numbers on a Scoreboard: how long people live, how much they earn. By 2040, if the numbers went up, VOTE point-holders split the pool. If they didn't, depositors divide it pro rata (still beats your retirement account). You earn VOTE points by getting friends to play. Nobody loses. The only losing move is not playing.
@@ -564,7 +556,7 @@ Count what you didn't object to. Improvement is physically possible (you said so
 
 That's the Logical Inevitability Theorem with numbers attached. Try rejecting any one of those five premises out loud and see how it sounds.
 
-Forwarding this takes 30 seconds. At the global average wage, that costs you $0.06. If the treaty path works, your lifetime income goes up by $3.48 million. The ratio is 58.1Mx to one. For not forwarding to be rational, the probability of success has to fall below 1 in 58.1 million. You just let all five premises pass. You cannot simultaneously hold those premises and a probability that low. Not forwarding this is not caution. It is the single failure mode the math can't route around.
+Forwarding this takes 30 seconds. At the global average wage, that costs you $0.06. If the treaty path works, your lifetime income goes up by $3.48 million. The ratio is 58.1Mx to one. For not forwarding to be rational, the probability of success has to fall below 1 in 58.1 million. You just let all five premises pass. You cannot simultaneously hold those premises and a probability that low.
 
 You don't need to know a billionaire. You're six degrees of separation from one. Forward this to one person with more reach than you. They forward to one person with more reach than them. Even with 90% of the chain dismissing it, the [model](https://manual.warondisease.org/knowledge/appendix/treaty-feasibility.html#sec-chain-reaction-model) shows it reaches someone who can act within 3 years. Not because anyone in the chain is brave. Because each one is selfish, and the math rewards forwarding.
 
@@ -575,22 +567,6 @@ This is a chain reaction, and it runs on greed.
 Every person in the chain will do exactly what you're about to do, for exactly the same selfish reasons. Not to save the world. Because it makes them money.
 
 Humans aren't stupid. You invented cheese, which is milk you left out until it went bad but in a good way. That's genius. You just need to apply that same innovation to not dying.
-
-You've now read the plan. You have the math. You can't give it back.
-
-Right now, somewhere on your planet, a parent is holding a child who is dying of something curable because nobody ran the trial. The parent doesn't know it's curable. The doctor doesn't know it's curable. The compound that would save this child is sitting on a shelf, untested, because the money that would have funded the trial bought a missile that is also sitting on a shelf, unused, pointed at someone else's children. Not because the science doesn't exist. Not because the money doesn't exist. $2.72 trillion a year exists. The child is dying because every single person who could change that decided it wasn't their problem.
-
-You are now one of those people.
-
-If you feel something right now, that's not manipulation. That's the correct response to understanding that 10.7 billion deaths preventable deaths are a policy choice. That number is too large for your brain to feel. So feel one. Pick someone you love. Imagine the moment a doctor tells you there's nothing left to try, and somewhere on a shelf, untested, sits the compound that would have worked. Now multiply that feeling by a number your brain refuses to hold. The part you can't feel is the actual size of this problem. Go back and read this paragraph again until you can.
-
-Here is what should scare you: if this works, the world becomes unrecognizable. Not slightly better. Unrecognizable. Disease eradicated, income doubled, your species freed from the thing that has been eating it alive since before you invented writing. That future is so good your brain can't render it, which is why you're hesitating. The status quo is also unrecognizable, just in the other direction, and you've been living in it so long you've mistaken it for normal. One of these futures has children dying. The other doesn't. Pick.
-
-13.8 billion years ago, the Big Bang set particles in motion. Those particles formed stars. Stars formed elements. Elements formed you. You read this sentence. The chain reaction that ends war and disease began before your solar system existed. You were never going to not read this. Physics wouldn't allow it.
-
-Of all the consciousness that has ever flickered into existence across 13.8 billion years of matter rearranging itself, yours showed up in the exact moment the loop broke. Every organism that ever lived did so in the dark: eaten, infected, starved, or killed by its own species, running 4-billion-year-old software that optimized for copying molecules and never bothered to ask the molecules if they were in pain. Suffering was physics. Nobody had the math to stop it.
-
-You get to be alive for the part where the math got done and the puppet strings got cut. Not just the part where disease ends. The part where the thing that made you irrational, violent, and incapable of caring about strangers turns out to be a circuit, and circuits can be redesigned. Where your worst Tuesday feels better than your current best birthday. Where, for the first time in 13.8 billion years, the atoms that learned to feel get to choose what they feel.
 
 Go to [warondisease.org](https://warondisease.org) and cast your vote in the largest referendum in human history (fifteen seconds). Get two friends to do the same. That's how the doubling starts. Every minute of delay, 104 humans permanently stop. Your vote saves 38.4 lives and prevents 6.9 million hours of suffering.
 

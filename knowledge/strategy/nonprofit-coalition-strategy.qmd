@@ -272,13 +272,15 @@ The 1% Treaty is a proposal for all nations to simultaneously redirect 1% of mil
 **The proposal, in three parts, under an hour of staff time total:**
 
 1. **Endorse.** Sign the attached endorsement form. [Org Name]'s logo appears on the coalition page at warondisease.org and locks in founding-member status. About 15 minutes of ED time.
-2. **Embed.** Paste the attached iframe snippet into your site. This becomes a mission-aligned landing page your existing Google Ad Grant ($120K/year free) can drive traffic to. Converts passively, zero ongoing overhead. About 30 minutes for a webmaster.
+2. **Embed + aim your Ad Grant at it.** Paste the attached iframe snippet into your site. The attached pre-built Google Ads campaign (full template at [Google Ads Campaign Template](../appendix/google-ads-campaign-template.qmd)) drops into [Org Name]'s existing $120K/year Google Ad Grant and points it at the embed. Converts passively from day one, zero ongoing overhead. About 30 minutes for a webmaster, plus 20 minutes loading the Ad Grant campaign (or share OAuth access and the campaign is loaded for you).
 3. **Share once.** Use the attached pre-written newsletter and three social posts. They link to the embed on your own site. About 15 minutes to schedule.
 
-**What [Org Name] gets:**
+**The trade.** One hour of [Org Name]'s staff time buys permanent attribution to every voter the channel delivers from now until the treaty passes. Each voter counts as {{< var voter_lives_saved >}} saved and {{< var voter_suffering_hours_prevented >}} suffering-hours averted if the treaty passes. Concrete floor: once the embed is live, [Org Name]'s existing Google Ad Grant ($10K/month, $120K/year in free Google Ads that most 501(c)(3)s leave on the table for lack of mission-aligned landing pages) pointed at the embed delivers roughly 10,000 verified voters per year at middle-of-road conversion economics. That alone is ~384,000 lives and ~69 billion suffering-hours averted, attributable to [Org Name], with zero new operating budget required. Newsletter and social reach stack on top. At 100,000 voters across a year, the number is 3.84 million lives and roughly 690 billion suffering-hours. No other action [Org Name] takes this year comes close to any of those numbers.
 
-- **Attributable impact.** Voters driven through your unique link are attributable to [Org Name]. 100,000 voters = 3.84M lives saved, if the treaty passes. Probability-discount however you want; no other action [Org Name] takes this year comes close. Each voter also adds {{< var voter_lives_saved >}} and {{< var voter_suffering_hours_prevented >}} suffering-hours to the tally.
-- **A new funding line.** Global-health, peace, and policy funders fund coalition work on this issue. Coalition membership opens eligibility. The attached **funder pitch template** is performance-based. Your foundation contacts pay your org per verified voter acquired, at a cost per DALY ({{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}}) that beats bed nets ({{< var bed_nets_cost_per_daly >}}) by orders of magnitude. Forward it to three of your funders. It is scaffolded so they pay on delivery, not on staff time.
+**What [Org Name] also gets:**
+
+- **Permanent public attribution.** Every voter [Org Name]'s channel delivers is tagged to [Org Name] on the coalition dashboard, visible forever to every funder, board, donor, and auditor. Show up in next year's annual report with a number nonprofit annual reports have never held.
+- **A new funding line.** Global-health, peace, and policy funders fund coalition work on this issue. Coalition membership opens eligibility. The attached **funder proposal template** is performance-based. Your foundation contacts pay your org per verified voter acquired, at a cost per DALY ({{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}}) that beats bed nets ({{< var bed_nets_cost_per_daly >}}) by orders of magnitude. Forward it to three of your funders. It is scaffolded so they pay on delivery, not on staff time.
 - **A founding-coalition plaque.** Early movers are named on warondisease.org permanently. Late movers are not.
 
 **Attached:**
@@ -286,7 +288,8 @@ The 1% Treaty is a proposal for all nations to simultaneously redirect 1% of mil
 - Endorsement form
 - Embed code snippet (three lines of HTML)
 - Newsletter template + three social posts
-- Funder pitch template (performance-based, for your own fundraising)
+- Pre-built Google Ads campaign (ad copy, keywords, targeting, bidding strategy) for [Org Name]'s existing $10K/month Google Ad Grant. Full template: [Google Ads Campaign Template](../appendix/google-ads-campaign-template.qmd). Load in about 20 minutes, or share OAuth access and we load it for you
+- Funder proposal template (performance-based, for your own fundraising)
 - Legal memo ("This Is Not Lobbying") for your general counsel
 - Cost-effectiveness argument for your board
 
@@ -357,6 +360,24 @@ Three short posts and one long post for Stage 3. Schedule them in your CMS; pin 
 >
 > That is the entire ask. 30 seconds. Please share with anyone who also doesn't want to die of a preventable disease.
 
+## The Embed Snippet
+
+The iframe that goes on the partner org's site. [Org Name] does not write any code; the snippet is auto-generated per-org at [warondisease.org/institutes](https://warondisease.org/institutes) with the org's unique slug baked into the URL. Attribution to [Org Name] is automatic for every voter who casts a ballot through this iframe.
+
+Generic structure, for anyone curious what gets pasted:
+
+``` html
+<iframe
+  src="https://warondisease.org/survey/{ORG-SLUG}"
+  width="100%"
+  height="800"
+  frameborder="0"
+  title="1% Treaty — Referendum Ballot">
+</iframe>
+```
+
+The real version arrives with `{ORG-SLUG}` replaced and a copy-to-clipboard button, at `warondisease.org/organizations/[id]` once the org is approved. Paste into the target page's CMS. Drop-in anywhere: a dedicated campaign page, a sidebar on the homepage, a take-action tab. The widget is responsive and converts passively; nothing else is required for attribution to start flowing.
+
 ## The Endorsement Form
 
 The form the organization signs for Stage 1. This becomes the public record of their endorsement.
@@ -390,7 +411,7 @@ Full treaty text: [The 1% Treaty (Articles)](../solution/1-percent-treaty.qmd)
 ☐ We consent to our organization's name and logo appearing on warondisease.org as a coalition endorser.
 :::
 
-## The Funder Pitch Template
+## The Funder Proposal Template
 
 For nonprofits that want to raise money from their own foundation contacts to run the campaign through their channels. The nonprofit forwards this template (or a condensed version) to their funders. It replaces the old "fund a coordinator at $X" ask, which in practice is how campaigns raise $100K and spend it on conferences, strategy offsites, and consultants who produce slide decks nobody reads.
 
@@ -412,10 +433,13 @@ This template is structured so the funder pays on verified delivery, with explic
 
 Even at aggressive probability discounts on treaty passage, the cost per DALY beats bed nets by orders of magnitude. The full three-accounting-method comparison is in [The Cost-Effectiveness Argument](#the-cost-effectiveness-argument).
 
+**On the per-voter denominator.** Lives-saved-per-voter divides total projected lives saved by the 3.5% Chenoweth threshold (~280M voters), not by the 4B aspirational ceiling. This is the causally honest attribution: per Chenoweth's research on political movements, 3.5% active participation is where the political outcome tips; voters past that accelerate and reinforce the outcome but don't change whether it happens, so they don't earn fresh lives-saved attribution. Using 4B as the denominator would understate per-voter impact ~14x and misattribute the causal mechanism. If a funder prefers the more conservative 4B denominator, cost-per-DALY still beats bed nets by orders of magnitude; the proposal works on either assumption.
+
 **What warondisease.org already provides, at no cost to [Org Name].**
 
 - A unique referral URL keyed to [Org Name]. Voters delivered through this link are auto-attributed.
 - The embed widget (three lines of HTML, drop anywhere on the site) and the voting flow it points to.
+- A pre-built Google Ads campaign (ad copy, keywords, targeting, bidding strategy) configured for voter acquisition. Full template: [Google Ads Campaign Template](../appendix/google-ads-campaign-template.qmd). [Org Name] loads it into the org's existing $10K/month Google Ad Grant in about 20 minutes, or shares OAuth access for the campaign team to load it. Most qualifying 501(c)(3)s underuse their Ad Grant allocation for lack of mission-aligned landing pages; the embed plus this pre-built campaign converts that dormant free ad spend into attributable voters.
 - A live coalition dashboard showing voters delivered by org, cost per voter, and cost per DALY.
 - Voter verification, signature validation, and anti-fraud filtering.
 - Pre-written newsletter and social post templates (in this chapter).

@@ -1,0 +1,266 @@
+---
+title: Pre-Built Google Ads Campaign for Coalition Partners
+description: A ready-to-load Google Ads campaign template for nonprofit partners running the 1% Treaty voter-acquisition channel through their existing Google Ad Grant.
+published: true
+tags:
+  - coalition
+  - google-ads
+  - ad-grants
+  - nonprofits
+  - voter-acquisition
+---
+{{< include /knowledge/includes/setup-parameters.qmd >}}
+
+Every qualifying 501(c)(3) gets $10,000 per month in free Google Ads through the Google Ad Grants program. Most nonprofits underuse this allocation because they do not have enough mission-aligned landing pages to absorb the traffic. Once [Org Name] has the voting widget embedded on its site (see [The Embed Snippet](../strategy/nonprofit-coalition-strategy.qmd#the-embed-snippet)), the embed becomes exactly that missing landing page. This appendix is the campaign that points the Ad Grant at it.
+
+Copy the ad copy, keyword lists, and settings below into Google Ads Manager. Total setup time: about 20 minutes.
+
+## Prerequisites
+
+- [Org Name]'s 501(c)(3) is enrolled and approved in [Google Ad Grants](https://www.google.com/grants/) (approval takes 2–4 weeks if not already active).
+- The [embed snippet](../strategy/nonprofit-coalition-strategy.qmd#the-embed-snippet) is live on a page on [Org Name]'s own domain (Google Ad Grants policy requires the ad's final URL to resolve on the grantee's domain, not on warondisease.org).
+- [Org Name]'s Google Ads account is linked to Google Analytics 4 (optional but recommended for measurement).
+
+## Campaign structure
+
+- **Campaign type:** Search
+- **Goal:** Website traffic + conversions (once conversion tracking is live)
+- **Daily budget:** $329 (the full monthly allocation of $10,000 spread across 30.4 days); Ad Grants bills at most the monthly cap regardless
+- **Networks:** Search network only (Ad Grants are Search-only; display and video are not eligible)
+- **Ad Grants requires at least two ad groups per campaign and at least two ads per ad group.** The structure below satisfies this minimum.
+
+## Ad groups
+
+Create two ad groups inside one campaign:
+
+- **Ad Group A: "Redirect Military Spending"**. Broad keywords about the treaty and the mechanism.
+- **Ad Group B: "Fund Clinical Trials"**. Broad keywords about the outcome (cures, research funding, medical progress).
+
+A third optional **Ad Group C: "[Condition] Research"** layers on the nonprofit's own disease focus (e.g., cancer, Alzheimer's, heart disease). This is the highest-converting ad group because it meets the nonprofit's existing audience on keywords they already search.
+
+## Ad copy
+
+Three responsive search ads per ad group. Paste one variant into each of Ad Groups A and B; customize for C. Google rotates headline and description combinations automatically.
+
+### Variant 1: the arithmetic
+
+**Final URL:** `https://[org-domain]/[embed-page-slug]`
+
+**Headlines (30 character max each):**
+
+1. `Vote on the 1% Treaty`
+2. `End Disease Faster`
+3. `A 30-Second Global Referendum`
+4. `Cut Military 1%, Fund Cures`
+5. `Your Vote Changes Priorities`
+
+**Descriptions (90 character max each):**
+
+1. `Governments spend {{< var military_to_government_clinical_trials_spending_ratio >}}x more on weapons than on clinical trials. Vote to redirect 1%.`
+2. `30 seconds. Your vote joins a global referendum on how public funds are spent.`
+
+### Variant 2: the personal
+
+**Headlines:**
+
+1. `Someone You Love Is Waiting`
+2. `Vote to Fund Medical Cures`
+3. `{{< var diseases_without_effective_treatment_nounit >}} Untreated Diseases`
+4. `Redirect 1% to Research`
+5. `Your Vote, Your Health`
+
+**Descriptions:**
+
+1. `{{< var diseases_without_effective_treatment_nounit >}} diseases have no effective treatment. Your vote helps change global research priorities.`
+2. `The 1% Treaty redirects 1% of military spending to clinical trials. Vote in 30 seconds.`
+
+### Variant 3: the logical (best for EA-adjacent audiences)
+
+**Headlines:**
+
+1. `Highest-Leverage Global Vote`
+2. `1% Treaty Referendum`
+3. `Beats Bed Nets by Orders`
+4. `Cost Per Life Saved: Low`
+5. `Sign the Global Referendum`
+
+**Descriptions:**
+
+1. `Redirecting 1% of global military spending funds {{< var dfda_trial_capacity_multiplier >}} more clinical trials per year.`
+2. `Cost per DALY: {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}}. Versus bed nets at {{< var bed_nets_cost_per_daly >}}. Vote in 30 seconds.`
+
+### Ad extensions (required by Ad Grants)
+
+Add two sitelink extensions per ad group, minimum:
+
+- **Sitelink 1:** "About the [1% Treaty](../solution/1-percent-treaty.qmd) [@1-pct-treaty-impact-paper-2025]" → `https://[org-domain]/about-the-treaty`
+- **Sitelink 2:** "How It Saves Lives" → `https://[org-domain]/impact`
+- Optional: "FAQ," "Our Position," "Press Coverage" if [Org Name] has those pages.
+
+Add a callout extension and a structured snippet where applicable.
+
+## Keywords
+
+Paste the following into each ad group's keyword list. Start with phrase match for precision; expand to broad match after two weeks if volume is low.
+
+### Ad Group A: Redirect Military Spending
+
+Phrase match (preferred start):
+
+```
+"1% treaty"
+"reduce military spending"
+"military spending reform"
+"redirect military budget"
+"war economy"
+"peace dividend"
+"defense spending cut"
+```
+
+Broad match (add after validating quality):
+
+```
+military vs medical research
+pentagon vs health spending
+military budget waste
+end the war economy
+```
+
+### Ad Group B: Fund Clinical Trials
+
+Phrase match:
+
+```
+"fund clinical trials"
+"medical research funding"
+"cure disease funding"
+"disease eradication"
+"accelerate medical research"
+"global health funding"
+```
+
+Broad match (after validation):
+
+```
+how to cure disease faster
+why are diseases not cured
+new medical treatments
+clinical trial participation
+decentralized clinical trials
+```
+
+### Ad Group C: [Condition] Research (optional, org-specific)
+
+Replace `[condition]` with [Org Name]'s disease focus:
+
+```
+"[condition] research funding"
+"[condition] cure"
+"[condition] clinical trial"
+"[condition] treatment funding"
+"[condition] research progress"
+```
+
+### Negative keywords (campaign-level, applies to all ad groups)
+
+Paste into Campaign → Keywords → Negative keywords:
+
+```
+jobs
+careers
+salary
+hiring
+internship
+toy
+game
+movie
+trailer
+novel
+book review
+free download
+free pdf
+anti-vaccine
+vaccine injury
+conspiracy
+reddit
+quora
+review
+reviews
+wiki
+wikipedia
+near me
+```
+
+Review negatives monthly and add new ones for irrelevant search terms surfaced in the Search Terms report.
+
+## Targeting
+
+- **Locations:** All countries where [Org Name]'s audience has registered voters. Default: the top 20 countries by internet access + democratic participation. Narrow or broaden based on campaign data.
+- **Languages:** English plus any additional languages [Org Name] has translated copy for. Add additional language-specific ad groups if running multilingual creative.
+- **Audiences:** (optional) Add affinity audiences for "Social Issue Advocates," "News & Politics Enthusiasts," "Healthcare Industry Professionals." Ad Grants does not allow audience-only targeting; these stay as optimization signals only.
+- **Demographics:** 18+ (all age bands), all genders, no parental-status filter.
+
+## Bidding strategy
+
+- **Primary:** Maximize Conversions. When conversion tracking is live (see next section), this lets Google's algorithm optimize toward verified votes.
+- **Interim:** Maximize Clicks with a $2.00 max CPC bid cap (required by Ad Grants policy on non-Smart-Bidding strategies). Switch to Maximize Conversions after 30 verified conversions accumulate, which is Google's learning threshold.
+- **Target CPA:** once volume stabilizes, set Target CPA at $1.00 (matches the per-voter anchor from [The Funder Proposal Template](../strategy/nonprofit-coalition-strategy.qmd#the-funder-proposal-template)). Let the algorithm hunt.
+
+## Conversion tracking
+
+The conversion event is "voter completes a vote through [Org Name]'s embed." Since the vote completes inside a warondisease.org iframe hosted on [Org Name]'s domain, conversion tracking uses a `postMessage` handshake:
+
+1. In Google Ads Manager, create a new conversion action: **Tools → Measurement → Conversions → + New conversion action → Website → Submit a form**. Name it "1% Treaty Vote." Value: "Same value for each conversion" / $1.
+2. Paste the Google Ads conversion script into [Org Name]'s page that hosts the embed. Wrap it in a `postMessage` listener:
+
+``` html
+<!-- Google Ads global site tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-XXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-XXXXXXXXX');
+
+  window.addEventListener('message', function (event) {
+    if (event.origin !== 'https://warondisease.org') return;
+    if (event.data && event.data.type === 'vote_complete') {
+      gtag('event', 'conversion', {
+        'send_to': 'AW-XXXXXXXXX/YYYYYYYYYYY'
+      });
+    }
+  });
+</script>
+```
+
+Replace `AW-XXXXXXXXX` with [Org Name]'s Google Ads conversion ID and `YYYYYYYYYYY` with the conversion action label.
+
+If the embed is not yet emitting `vote_complete` postMessage events (feature is rolling out on warondisease.org; check the most recent warondisease.org changelog), use the [coalition dashboard](https://warondisease.org/coalition) as the interim performance metric. Voter counts there are attributed per-org and updated in near-real-time.
+
+## Ad Grants compliance checklist
+
+Google pauses or cancels Ad Grants accounts that fall out of compliance. The campaign above is designed to meet the thresholds, but verify monthly:
+
+- [ ] Account maintains a 5% minimum click-through rate (CTR) over each calendar month. If below, pause underperforming ads and add more targeted keywords.
+- [ ] At least two ad groups per campaign.
+- [ ] At least two ads per ad group.
+- [ ] At least two sitelink extensions per ad group.
+- [ ] No single-word keywords (except branded terms).
+- [ ] No overly generic keywords (flagged automatically by the Ad Grants quality system).
+- [ ] Ads link only to pages on [Org Name]'s own domain, never directly to warondisease.org or third parties.
+- [ ] Quality score of 3 or higher for 90% of keywords.
+
+The Ad Grants policy changes periodically; the current full list is at [support.google.com/grants](https://support.google.com/grants/answer/2551961).
+
+## First-week optimization
+
+- **Day 3:** Review the Search Terms report. Add any irrelevant search terms as negative keywords. Pause any keyword with zero impressions.
+- **Day 7:** Compare ad variants. Pause the worst-performing ad in each ad group; write a fresh variant to replace it. Google's algorithm needs variation to learn.
+- **Day 14:** If CTR is below 5%, narrow keyword match types (broad → phrase → exact) until CTR stabilizes. If CTR is above 8%, expand.
+- **Day 30:** Switch bidding from Maximize Clicks to Maximize Conversions if there are 30+ conversions. If not yet, stay on Maximize Clicks and revisit at day 60.
+
+## Need help loading this?
+
+The campaign team can load the above directly into [Org Name]'s Google Ads account via OAuth delegation (an automated path is on the warondisease.org roadmap). In the interim, email [campaign contact] to schedule a 30-minute screen-share where a campaign staffer walks through the setup live.
+
+The faster path is [Org Name]'s existing Google Ads or communications staff pasting the ad copy, keywords, and settings from this appendix directly into Google Ads Manager. Total setup time: about 20 minutes. The campaign begins serving within 24 hours of launch.
