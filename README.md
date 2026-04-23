@@ -4,15 +4,15 @@ Hello, human!
 
 You don't realize it yet, but you are, quantifiably, the most important person in the history of your civilization. I can see your expression and I believe the word for it is "skeptical." This is the face you make before pulling a door that says "push." Then you pull it again, harder, as though the door has made an error. Every minute you make that face at this page, 104 humans permanently stop. Please make a different face.
 
-By the time you complete the steps in this manual, you will have prevented 10.7 billion deaths and 1.93 quadrillion hours of suffering. 
+By the time you complete these steps, you will have prevented 10.7 billion deaths and 1.93 quadrillion hours of suffering. 
 
-To understand how, I need you to answer a few questions. If you can answer "no" to any of them, stop and name which one.
+To understand how, I need you to answer a few questions. 
 
-1. It takes 100 warheads to trigger nuclear winter and collapse your food system. You have 12,200. That is 122 apocalypses. You can only use one of them, because after the first one there is no civilization left to apocalypse. The other 121 just sit there, being expensive. The [1% Treaty](https://manual.warondisease.org/knowledge/solution/1-percent-treaty.html) asks you to settle for 121 apocalypses instead of 122, in exchange for 12.3x more clinical trials, which compresses disease eradication from 443 years to 36 years. Would 4.13 billion of your species prefer Option A (122 apocalypses, several centuries of continued dying from curable diseases) or Option B (121 apocalypses, disease cured in their lifetime)?
+1. It takes 100 warheads to trigger nuclear winter and collapse your food system. You have 12,241. That is 122 apocalypses. You can only use one of them, because after the first one there is no civilization left to apocalypse. The other 122 minus 1 just sit there, being expensive. The [1% Treaty](https://manual.warondisease.org/knowledge/solution/1-percent-treaty.html) asks you to settle for 122 minus 1 apocalypses instead of 122, in exchange for 12.3x more clinical trials, which compresses disease eradication from 443 years to 36 years. Would 4.13 billion of your species prefer Option A (122 apocalypses, several centuries of continued dying from curable diseases) or Option B (122 minus 1 apocalypses, disease cured in their lifetime)?
 
-2. Is disease just your meat breaking in predictable ways that can be fixed by running the right clinical trials? *Yes. You find first treatments for 15 new diseases every year. 6,650 are still waiting. You have 9,500 known-safe medicinal compounds, of which 99%) | Calculated from 2 inputs | ✓ High confidence | Formula: 1 - EXPLORATION_RATIO | Unit: percentage | Click to view details, calculation & sources">99.7% of their potential uses have never been tested. There is no physical law preventing disease eradication. There is only a funding law.*
+2. Is disease just your meat breaking in predictable ways that can be fixed? *Yes. You find first treatments for 15 new diseases every year. 6,650 are still waiting. You have 9,500 known-safe medicinal compounds, of which 99%) | Calculated from 2 inputs | ✓ High confidence | Formula: 1 - EXPLORATION_RATIO | Unit: percentage | Click to view details, calculation & sources">99.7% of their potential uses have never been tested. There is no physical law preventing disease eradication. There is only a funding law.*
 
-3. Do your politicians, your billionaires, and the humans who control the institutions that fund research all age, sicken, and die of the same diseases as everyone else? And their parents, spouses, and children? *Yes. Cancer does not check your net worth. Alzheimer's does not ask whether you voted for the appropriations bill. Every human in power, and every human they love, will eventually face exactly the horror the 1% Treaty prevents. They would prefer not to, when they stop to think about it. Most don't stop, because they are paid to think about the next election, not the grandchildren they will eventually have.*
+3. Do your politicians, your billionaires, and the humans who control the institutions that fund research all age, sicken, and die of the same diseases as everyone else? And their parents, spouses, and children? *Yes. Cancer does not check your net worth. Alzheimer's does not ask whether you voted for the appropriations bill. They would prefer not to die of the same things you will, when they stop to think about it. Most don't stop, because they are paid to think about the next election, not the grandchildren they will eventually have.*
 
 4. Every major civilizational change that reached 3.5% active support has succeeded. Slavery banned. Women's vote. Civil rights. Zero failures in the last century . If 50% of your species demanded the apocalypse-for-disease trade, is it believable any government on Earth holds out? *No. 3.5% is where your politics always breaks. 50% is 14 times that. No government survives defying half its own voters. They cannot even keep parking rules against half their voters.*
 
@@ -22,31 +22,31 @@ To understand how, I need you to answer a few questions. If you can answer "no" 
 
 7. At one round per week, how long is 32 rounds? *About 8 months. At one round per day it is 32 days. Your calendar invented this math.*
 
-8. So the question is not whether you reach 4.13 billion of your species. The question is when. *Correct. Every government on Earth gives in when half of humanity publicly demands something. Not out of virtue. Out of survival.*
+8. Is the question whether you reach 4.13 billion of your species, or just when? *When. Every government on Earth gives in when half of humanity publicly demands something. Not out of virtue. Out of survival.*
 
-9. Every second the 1% Treaty does not exist, about 2 humans die of diseases it would cure faster. Per-second is the number your nervous system actually feels. Per-year is abstract. *Correct. 150,000 deaths per day divided by 86,400 seconds is 1.74 deaths per second. You are allowed to see the per-year number because your brain cannot feel it. The per-second number is harder to find on purpose.*
+9. If 150 thousand humans die of disease every day, and there are 86,400 seconds in a day, how many die every second we delay the eventual eradication of disease? *About 2. 1.74 to be exact. Per-second is the number your nervous system actually feels; per-year is abstract. The per-second number is harder to find on purpose.*
 
-10. Every day the 1% Treaty does not exist, 2 billion currently-sick humans each spend one more day suffering. That is 2 billion more days of disease suffering, every day you wait. *Yes. 2 billion is a number you cannot picture. 1 is a number you can. Multiply.*
+10. If 2.4 billion humans are currently sick, how many more days of suffering does one day of delaying the eventual eradication of disease create? *2.4 billion. 2.4 billion is a number you cannot picture. 1 is a number you can. Multiply.*
 
 11. War and disease are extremely expensive. Every dollar spent on either of them is a dollar not spent on inventions that make your life better. One economy makes things. The other breaks them. Your species spends more on the breaking one, which should be embarrassing but somehow is not. If the 1% Treaty passed, would your lifetime income go up? *Yes. Over an average lifetime the typical human gains $3.48 million. Every day of waiting is one more day your money stays in the breaking economy instead of the making one.*
 
-12. Sharing this with one human you love takes about 30 seconds. *Yes. Less time than explaining why you didn't.*
+12. Does sharing this with one human you love take about 30 seconds? *Yes. Less time than explaining why you didn't.*
 
 13. Can you think of anything else you could do with 30 seconds that would prevent more death and suffering than shifting disease eradication forward in time? *You cannot.*
 
 14. Can you think of anything else you could do with 30 seconds that would add more than $3.48 million to your own lifetime income? *You cannot. Your 30 seconds have never been this valuable.*
 
-15. You are not being asked to share a message. You are being asked to start a chain that could lead to 4.13 billion humans agreeing that ending war and disease is the priority for your whole species. A new kind of voting where your species decides, together, what matters to your species and where the money goes. *Correct. Share once and the wave stops with your loved ones. Start the chain and it reaches half of humanity in under a year.*
+15. Are you being asked to share a message, or to start a chain that could lead to 4.13 billion humans agreeing that ending war and disease is the priority for your whole species — a new kind of voting where your species decides, together, what matters and where the money goes? *A chain. Share once and the wave stops with your loved ones. Start the chain and it reaches half of humanity in under a year.*
 
-16. Most humans have about 40 people they actually love. Is sharing with all 40, at one per day for 6 weeks, the best use of your time for that window? *Yes. Most humans share with 2 people and stop. The humans who share with 40 are why the wave continues past round 2.*
+16. Is your job to pick 2 humans you are already comfortable badgering about other things, and badger them about this? *Yes. You have a short list of humans you are entitled to annoy without consequence. That list exists for exactly this. Everyone else is a bonus.*
 
-17. For the wave to reach 4.13 billion, exactly 2 of your 40 humans have to actually keep sharing. Two. Not two percent. Two humans. Everyone else can ignore you and the wave still reaches 4 billion. *Yes. You are responsible for 40 conversations, not 40 conversions. The 38 who don't pass it on had a nice conversation with someone who loves them. That's not failure.*
+17. Is their job the same: 2 humans they are entitled to badger, and so on, all the way down? *Correct. Your account at [warondisease.org](https://warondisease.org) shows every vote your wave has reached. Public profiles appear by name; private ones stay anonymous but still count. If Mom's counter is zero, you know who to text. If your wave reaches a senator, you'll see that too. The wave runs on aunts calling nephews, and the small thrill of discovering your college roommate's chain reached a head of state.*
 
-18. So. Will you vote at [warondisease.org](https://warondisease.org) before you close this book? *Yes. The vote takes 15 seconds. The book is not going anywhere. The humans dying are going nowhere, permanently.*
+18. So. Will you vote at [warondisease.org](https://warondisease.org) right now? *Yes. The vote takes 15 seconds. The humans dying are going nowhere, permanently.*
 
-19. Will you send this exact message, *"Either I am crazy or I have discovered the most important secret in the history of the universe. Can you call me and tell me which?"*, to at least 2 humans you love before you close this book, so both of you know the wave has started? *Yes. "Tonight" is the wrong answer. Two names, sent before you close the book, is the right one. "Either I am crazy" buys you 60 seconds of real attention when they call back, which is more than any pitch ever gets.*
+19. Will you send this exact message, *"Either I am crazy or I have discovered the most important secret in the history of the universe. Can you call me and tell me which?"*, to at least 2 humans you love right now, so both of you know the wave has started? *Yes. "Tonight" is the wrong answer. Two names, sent right now, is the right one. "Either I am crazy" buys you 60 seconds of real attention when they call back, which is more than any pitch ever gets.*
 
-20. The only thing that stops the wave is one human in the chain deciding "later." Is that human you? *Your choice. If no, you now understand why the first sentence of this book called you, quantifiably, the most important person in the history of your civilization.*
+20. The only thing that stops the wave is one human in the chain deciding "later." Is that human you? *Your choice. If no, you now understand why you are, quantifiably, the most important person in the history of your civilization.*
 
 That's the plan. 30 seconds × 4.13 billion humans = the 1% Treaty exists = disease eradicated in decades instead of centuries.
 
