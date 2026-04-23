@@ -199,112 +199,112 @@ That default is not "you." It is the fastest way to make the math legible before
 </style>
 
 <div id="personal-benefits-calculator" class="pbc-shell">
-  <span id="pbc-src-income" class="visually-hidden">{{< var global_avg_income_2025 >}}</span>
-  <span id="pbc-src-years" class="visually-hidden">{{< var global_avg_remaining_years >}}</span>
-  <span id="pbc-src-age" class="visually-hidden">{{< var global_median_age_2024 >}}</span>
-  <span id="pbc-src-savings" class="visually-hidden">{{< var global_annual_savings_per_capita >}}</span>
-  <span id="pbc-src-treaty-income" class="visually-hidden">{{< var treaty_trajectory_lifetime_income_gain_per_capita >}}</span>
-  <span id="pbc-src-wish-income" class="visually-hidden">{{< var wishonia_trajectory_lifetime_income_gain_per_capita >}}</span>
-  <span id="pbc-src-treaty-health" class="visually-hidden">{{< var treaty_hale_value_per_capita >}}</span>
-  <span id="pbc-src-wish-health" class="visually-hidden">{{< var wishonia_hale_value_per_capita >}}</span>
-  <span id="pbc-src-destruct-now" class="visually-hidden">{{< var global_destructive_economy_pct_gdp >}}</span>
-  <span id="pbc-src-destruct-25" class="visually-hidden">{{< var destructive_economy_25pct_year >}}</span>
-  <span id="pbc-src-destruct-35" class="visually-hidden">{{< var destructive_economy_35pct_year >}}</span>
-  <span id="pbc-src-destruct-50" class="visually-hidden">{{< var destructive_economy_50pct_year >}}</span>
+<span id="pbc-src-income" class="visually-hidden">{{< var global_avg_income_2025 >}}</span>
+<span id="pbc-src-years" class="visually-hidden">{{< var global_avg_remaining_years >}}</span>
+<span id="pbc-src-age" class="visually-hidden">{{< var global_median_age_2024 >}}</span>
+<span id="pbc-src-savings" class="visually-hidden">{{< var global_annual_savings_per_capita >}}</span>
+<span id="pbc-src-treaty-income" class="visually-hidden">{{< var treaty_trajectory_lifetime_income_gain_per_capita >}}</span>
+<span id="pbc-src-wish-income" class="visually-hidden">{{< var wishonia_trajectory_lifetime_income_gain_per_capita >}}</span>
+<span id="pbc-src-treaty-health" class="visually-hidden">{{< var treaty_hale_value_per_capita >}}</span>
+<span id="pbc-src-wish-health" class="visually-hidden">{{< var wishonia_hale_value_per_capita >}}</span>
+<span id="pbc-src-destruct-now" class="visually-hidden">{{< var global_destructive_economy_pct_gdp >}}</span>
+<span id="pbc-src-destruct-25" class="visually-hidden">{{< var destructive_economy_25pct_year >}}</span>
+<span id="pbc-src-destruct-35" class="visually-hidden">{{< var destructive_economy_35pct_year >}}</span>
+<span id="pbc-src-destruct-50" class="visually-hidden">{{< var destructive_economy_50pct_year >}}</span>
 
-  <div class="pbc-grid">
-    <div>
-      <h3>How much is it rational for you to contribute?</h3>
-      <p class="pbc-footnote">This calculator scales the repo's average-person scenario gains to your age, income, and available savings. It is not trying to be conservative. It is trying to show the model's full upside and the downside of staying on the current path.</p>
-    </div>
+<div class="pbc-grid">
+<div>
+<h3>How much is it rational for you to contribute?</h3>
+<p class="pbc-footnote">This calculator scales the repo's average-person scenario gains to your age, income, and available savings. It is not trying to be conservative. It is trying to show the model's full upside and the downside of staying on the current path.</p>
+</div>
 
-    <div class="pbc-controls">
-      <div class="pbc-group">
-        <label for="pbc-input-scenario">Scenario upside you are trying to buy</label>
-        <select id="pbc-input-scenario">
-          <option value="treaty">Minimum Sustainable Trajectory (1% Treaty)</option>
-          <option value="wishonia">Optimal Governance Trajectory</option>
-        </select>
-        <div class="pbc-helper">Collapse-tail markers are shown in the summary below as the downside of not breaking the current loop.</div>
-      </div>
+<div class="pbc-controls">
+<div class="pbc-group">
+<label for="pbc-input-scenario">Scenario upside you are trying to buy</label>
+<select id="pbc-input-scenario">
+<option value="treaty">Minimum Sustainable Trajectory (1% Treaty)</option>
+<option value="wishonia">Optimal Governance Trajectory</option>
+</select>
+<div class="pbc-helper">Collapse-tail markers are shown in the summary below as the downside of not breaking the current loop.</div>
+</div>
 
-      <div class="pbc-group">
-        <label for="pbc-input-age">Your age</label>
-        <input id="pbc-input-age" type="number" min="0" max="120" step="1" inputmode="numeric">
-        <div class="pbc-helper">Default = global median age.</div>
-      </div>
+<div class="pbc-group">
+<label for="pbc-input-age">Your age</label>
+<input id="pbc-input-age" type="number" min="0" max="120" step="1" inputmode="numeric">
+<div class="pbc-helper">Default = global median age.</div>
+</div>
 
-      <div class="pbc-group">
-        <label for="pbc-input-income">Your annual income</label>
-        <input id="pbc-input-income" type="number" min="1" step="1000" inputmode="numeric">
-        <div class="pbc-helper">Income upside scales from the global average baseline.</div>
-      </div>
+<div class="pbc-group">
+<label for="pbc-input-income">Your annual income</label>
+<input id="pbc-input-income" type="number" min="1" step="1000" inputmode="numeric">
+<div class="pbc-helper">Income upside scales from the global average baseline.</div>
+</div>
 
-      <div class="pbc-group">
-        <label for="pbc-input-savings">Your available savings</label>
-        <input id="pbc-input-savings" type="number" min="1" step="100" inputmode="numeric">
-        <div class="pbc-helper">Default = average annual savings capacity per person.</div>
-      </div>
+<div class="pbc-group">
+<label for="pbc-input-savings">Your available savings</label>
+<input id="pbc-input-savings" type="number" min="1" step="100" inputmode="numeric">
+<div class="pbc-helper">Default = average annual savings capacity per person.</div>
+</div>
 
-      <div class="pbc-group">
-        <label for="pbc-input-contribution">Contribution you are considering</label>
-        <input id="pbc-input-contribution" type="number" min="1" step="10" inputmode="numeric">
-        <div class="pbc-helper">Used to compute break-even probability lift and share of savings.</div>
-      </div>
+<div class="pbc-group">
+<label for="pbc-input-contribution">Contribution you are considering</label>
+<input id="pbc-input-contribution" type="number" min="1" step="10" inputmode="numeric">
+<div class="pbc-helper">Used to compute break-even probability lift and share of savings.</div>
+</div>
 
-      <div class="pbc-group">
-        <label for="pbc-input-probability">Probability lift your contribution causes (percentage points)</label>
-        <input id="pbc-input-probability" type="number" min="0.000001" step="0.0001" inputmode="decimal">
-        <div class="pbc-helper">Example: <strong>0.01</strong> means one-hundredth of one percentage point.</div>
-      </div>
-    </div>
+<div class="pbc-group">
+<label for="pbc-input-probability">Probability lift your contribution causes (percentage points)</label>
+<input id="pbc-input-probability" type="number" min="0.000001" step="0.0001" inputmode="decimal">
+<div class="pbc-helper">Example: <strong>0.01</strong> means one-hundredth of one percentage point.</div>
+</div>
+</div>
 
-    <div class="pbc-actions">
-      <button id="pbc-reset" class="pbc-button" type="button">Reset to the average Earth human</button>
-      <div class="pbc-helper">Default contribution = 1% of default available savings.</div>
-    </div>
+<div class="pbc-actions">
+<button id="pbc-reset" class="pbc-button" type="button">Reset to the average Earth human</button>
+<div class="pbc-helper">Default contribution = 1% of default available savings.</div>
+</div>
 
-    <div class="pbc-cards">
-      <div class="pbc-card good">
-        <div class="pbc-card-title">Personal Income Upside</div>
-        <div id="pbc-output-income" class="pbc-card-value"></div>
-        <div id="pbc-output-income-meta" class="pbc-card-meta"></div>
-      </div>
+<div class="pbc-cards">
+<div class="pbc-card good">
+<div class="pbc-card-title">Personal Income Upside</div>
+<div id="pbc-output-income" class="pbc-card-value"></div>
+<div id="pbc-output-income-meta" class="pbc-card-meta"></div>
+</div>
 
-      <div class="pbc-card good">
-        <div class="pbc-card-title">Personal Healthy-Life Upside</div>
-        <div id="pbc-output-health" class="pbc-card-value"></div>
-        <div id="pbc-output-health-meta" class="pbc-card-meta"></div>
-      </div>
+<div class="pbc-card good">
+<div class="pbc-card-title">Personal Healthy-Life Upside</div>
+<div id="pbc-output-health" class="pbc-card-value"></div>
+<div id="pbc-output-health-meta" class="pbc-card-meta"></div>
+</div>
 
-      <div class="pbc-card good">
-        <div class="pbc-card-title">Blended Personal Upside</div>
-        <div id="pbc-output-blend" class="pbc-card-value"></div>
-        <div id="pbc-output-blend-meta" class="pbc-card-meta"></div>
-      </div>
+<div class="pbc-card good">
+<div class="pbc-card-title">Blended Personal Upside</div>
+<div id="pbc-output-blend" class="pbc-card-value"></div>
+<div id="pbc-output-blend-meta" class="pbc-card-meta"></div>
+</div>
 
-      <div class="pbc-card">
-        <div class="pbc-card-title">Expected Value Of Your Contribution</div>
-        <div id="pbc-output-ev" class="pbc-card-value"></div>
-        <div id="pbc-output-ev-meta" class="pbc-card-meta"></div>
-      </div>
+<div class="pbc-card">
+<div class="pbc-card-title">Expected Value Of Your Contribution</div>
+<div id="pbc-output-ev" class="pbc-card-value"></div>
+<div id="pbc-output-ev-meta" class="pbc-card-meta"></div>
+</div>
 
-      <div class="pbc-card">
-        <div class="pbc-card-title">Break-Even Contribution</div>
-        <div id="pbc-output-break-even" class="pbc-card-value"></div>
-        <div id="pbc-output-break-even-meta" class="pbc-card-meta"></div>
-      </div>
+<div class="pbc-card">
+<div class="pbc-card-title">Break-Even Contribution</div>
+<div id="pbc-output-break-even" class="pbc-card-value"></div>
+<div id="pbc-output-break-even-meta" class="pbc-card-meta"></div>
+</div>
 
-      <div class="pbc-card bad">
-        <div class="pbc-card-title">Break-Even Probability Lift</div>
-        <div id="pbc-output-probability" class="pbc-card-value"></div>
-        <div id="pbc-output-probability-meta" class="pbc-card-meta"></div>
-      </div>
-    </div>
+<div class="pbc-card bad">
+<div class="pbc-card-title">Break-Even Probability Lift</div>
+<div id="pbc-output-probability" class="pbc-card-value"></div>
+<div id="pbc-output-probability-meta" class="pbc-card-meta"></div>
+</div>
+</div>
 
-    <div id="pbc-summary" class="pbc-summary" aria-live="polite"></div>
-    <p class="pbc-footnote">Blended upside = lifetime income gain + valued healthy-life gain. It is intentionally expansive rather than conservative. The scenario cards above show the downside of letting the current trajectory continue.</p>
-  </div>
+<div id="pbc-summary" class="pbc-summary" aria-live="polite"></div>
+<p class="pbc-footnote">Blended upside = lifetime income gain + valued healthy-life gain. It is intentionally expansive rather than conservative. The scenario cards above show the downside of letting the current trajectory continue.</p>
+</div>
 </div>
 
 <script>
