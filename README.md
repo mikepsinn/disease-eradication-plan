@@ -6,47 +6,89 @@ You don't realize it yet, but you are, quantifiably, the most important person i
 
 By the time you complete these steps, you will have prevented 10.7 billion deaths and 1.93 quadrillion hours of suffering. 
 
-To understand how, I need you to answer a few questions. 
+To understand how, I need you to answer a few questions.
 
-1. It takes 100 warheads to trigger nuclear winter and collapse your food system. You have 12,241. That is 122 apocalypses. You can only use one of them, because after the first one there is no civilization left to apocalypse. The other 122 minus 1 just sit there, being expensive. The [1% Treaty](https://manual.warondisease.org/knowledge/solution/1-percent-treaty.html) asks you to settle for 122 minus 1 apocalypses instead of 122, in exchange for 12.3x more clinical trials, which compresses disease eradication from 443 years to 36 years. Would 4.13 billion of your species prefer Option A (122 apocalypses, several centuries of continued dying from curable diseases) or Option B (122 minus 1 apocalypses, disease cured in their lifetime)?
+*If you can find a "no" anywhere in here, stop and say which one.*
 
-2. Is disease just your meat breaking in predictable ways that can be fixed? *Yes. You find first treatments for 15 new diseases every year. 6,650 are still waiting. You have 9,500 known-safe medicinal compounds, of which 99%) | Calculated from 2 inputs | ✓ High confidence | Formula: 1 - EXPLORATION_RATIO | Unit: percentage | Click to view details, calculation & sources">99.7% of their potential uses have never been tested. There is no physical law preventing disease eradication. There is only a funding law.*
+**1. Is disease your body breaking in ways that can be physically fixed?**
 
-3. Do your politicians, your billionaires, and the humans who control the institutions that fund research all age, sicken, and die of the same diseases as everyone else? And their parents, spouses, and children? *Yes. Cancer does not check your net worth. Alzheimer's does not ask whether you voted for the appropriations bill. They would prefer not to die of the same things you will, when they stop to think about it. Most don't stop, because they are paid to think about the next election, not the grandchildren they will eventually have.*
+Yes. You find first treatments for 15 new diseases every year. You have done this consistently for decades. There are 6,650 still waiting. Your body is made of atoms. Atoms follow rules. When you figure out the rules, you fix the disease. There is no physical law preventing disease eradication. There is only a queue.
 
-4. Every major civilizational change that reached 3.5% active support has succeeded. Slavery banned. Women's vote. Civil rights. Zero failures in the last century . If 50% of your species demanded the apocalypse-for-disease trade, is it believable any government on Earth holds out? *No. 3.5% is where your politics always breaks. 50% is 14 times that. No government survives defying half its own voters. They cannot even keep parking rules against half their voters.*
+**2. Do you already have the ingredients to work through that queue faster?**
 
-5. If you get two humans to vote at [warondisease.org](https://warondisease.org), and each gets two more, and each of those gets two more, what happens to the vote count every round? *It doubles.*
+Yes. There are 9,500 known-safe medicinal compounds. 99%) | Calculated from 2 inputs | ✓ High confidence | Formula: 1 - EXPLORATION_RATIO | Unit: percentage | Click to view details, calculation & sources">99.7% of their potential uses have never been tested. Not because the tests are impossible. Because no one paid for them.
 
-6. 2 multiplied by itself 32 times equals what? *About 4.3 billion. More than half your species.*
+**3. If someone paid for them, would the money actually produce cures?**
 
-7. At one round per week, how long is 32 rounds? *About 8 months. At one round per day it is 32 days. Your calendar invented this math.*
+Yes. The RECOVERY trial tested 6 treatments on 48,000 patients for $500 per patient instead of the usual $41,000. One treatment, dexamethasone, saved over a million lives. Your species does its best medical research when terrified and disorganized, which suggests your normal system is somehow worse than panic. The method works. It just needs funding.
 
-8. Is the question whether you reach 4.13 billion of your species, or just when? *When. Every government on Earth gives in when half of humanity publicly demands something. Not out of virtue. Out of survival.*
+**4. Where is all the money going instead?**
 
-9. If 150 thousand humans die of disease every day, and there are 86,400 seconds in a day, how many die every second we delay the eventual eradication of disease? *About 2. 1.74 to be exact. Per-second is the number your nervous system actually feels; per-year is abstract. The per-second number is harder to find on purpose.*
+Your governments maintain 12,241 nuclear warheads. That is enough to end civilization 122 times. You can only end it once. The other 122 minus 1 apocalypses sit in storage, being expensive. Globally, governments spend 604 more on military than on clinical trials. Your chance of dying from terrorism: 1 in 30 million. Your chance of dying from disease: 100%.
 
-10. If 2.4 billion humans are currently sick, how many more days of suffering does one day of delaying the eventual eradication of disease create? *2.4 billion. 2.4 billion is a number you cannot picture. 1 is a number you can. Multiply.*
+**5. What if you moved 1% of military spending to clinical trials?**
 
-11. War and disease are extremely expensive. Every dollar spent on either of them is a dollar not spent on inventions that make your life better. One economy makes things. The other breaks them. Your species spends more on the breaking one, which should be embarrassing but somehow is not. If the 1% Treaty passed, would your lifetime income go up? *Yes. Over an average lifetime the typical human gains $3.48 million. Every day of waiting is one more day your money stays in the breaking economy instead of the making one.*
+That is the [1% Treaty](https://manual.warondisease.org/knowledge/solution/1-percent-treaty.html). You drop from 122 apocalypses to 122 minus 1. No strategic capability is lost. You gain 12.3x more clinical trials worldwide. Disease eradication compresses from 443 years to 36 years. You cure disease in your lifetime instead of your descendants' eighth generation.
 
-12. Does sharing this with one human you love take about 30 seconds? *Yes. Less time than explaining why you didn't.*
+**6. How many humans die while you wait for this to happen?**
 
-13. Can you think of anything else you could do with 30 seconds that would prevent more death and suffering than shifting disease eradication forward in time? *You cannot.*
+About 104 per minute. 150 thousand per day. That counter has been running while you read these questions. It does not pause while you think about it.
 
-14. Can you think of anything else you could do with 30 seconds that would add more than $3.48 million to your own lifetime income? *You cannot. Your 30 seconds have never been this valuable.*
+**7. How many are suffering right now?**
 
-15. Are you being asked to share a message, or to start a chain that could lead to 4.13 billion humans agreeing that ending war and disease is the priority for your whole species — a new kind of voting where your species decides, together, what matters and where the money goes? *A chain. Share once and the wave stops with your loved ones. Start the chain and it reaches half of humanity in under a year.*
+About 2.4 billion. Every day disease eradication is not shifted forward, each of them spends one more day sick. That is 2.4 billion additional days of suffering created every single day. Tomorrow adds another 2.4 billion. Multiply by however long you take to decide.
 
-16. Is your job to pick 2 humans you are already comfortable badgering about other things, and badger them about this? *Yes. You have a short list of humans you are entitled to annoy without consequence. That list exists for exactly this. Everyone else is a bonus.*
+**8. Do the people who control military budgets also get sick and die?**
 
-17. Is their job the same: 2 humans they are entitled to badger, and so on, all the way down? *Correct. Your account at [warondisease.org](https://warondisease.org) shows every vote your wave has reached. Public profiles appear by name; private ones stay anonymous but still count. If Mom's counter is zero, you know who to text. If your wave reaches a senator, you'll see that too. The wave runs on aunts calling nephews, and the small thrill of discovering your college roommate's chain reached a head of state.*
+Yes. Cancer does not check your net worth. Alzheimer's does not ask whether you voted for the appropriations bill. Every president, prime minister, general, and billionaire ages, sickens, and dies of the same diseases as everyone else. So do their parents, spouses, and children. Most have not stopped to think about it. Stopping costs them the next election. Dying doesn't, yet.
 
-18. So. Will you vote at [warondisease.org](https://warondisease.org) right now? *Yes. The vote takes 15 seconds. The humans dying are going nowhere, permanently.*
+**9. Has public pressure ever forced a change this large before?**
 
-19. Will you send this exact message, *"Either I am crazy or I have discovered the most important secret in the history of the universe. Can you call me and tell me which?"*, to at least 2 humans you love right now, so both of you know the wave has started? *Yes. "Tonight" is the wrong answer. Two names, sent right now, is the right one. "Either I am crazy" buys you 60 seconds of real attention when they call back, which is more than any pitch ever gets.*
+Every time. Every major civilizational shift that reached 3.5% active public support has succeeded. Abolition. Women's suffrage. Civil rights. Zero failures in the last century . 3.5% is the cheat code your species discovered and then never used on purpose.
 
-20. The only thing that stops the wave is one human in the chain deciding "later." Is that human you? *Your choice. If no, you now understand why you are, quantifiably, the most important person in the history of your civilization.*
+**10. If 3.5% is enough, why do you need more than that?**
+
+You don't. But the [1% Treaty](https://manual.warondisease.org/knowledge/solution/1-percent-treaty.html) is an even easier case: you are not asking anyone to give something up. You are asking them to trade 122 apocalypses for 122 minus 1, in exchange for curing disease in their lifetime. At 50% of the global population, 4.13 billion humans, no government on Earth holds out. Not out of virtue. Out of survival.
+
+**11. Is there a path from one person to 4.13 billion?**
+
+Yes. If every person who agrees gets 2 others to agree, and each of those gets 2 more, the count doubles every round. After 32 doublings you reach 4.3 billion. More than half of humanity. Your calendar invented this math.
+
+**12. How long does that take?**
+
+If each person shares and their 2 people share the next day: 32 days. If it takes a week: about 8 months. The speed depends entirely on how quickly each person in the chain gets 2 others to continue it.
+
+**13. Does every single person in the chain need to keep it going?**
+
+No. Most won't. That is fine. In every successful movement, most people did nothing. You need the average person who reads this to reach, on average, just over 1 new person who also keeps going. A small number of enthusiastic sharers compensate for the majority who share with zero. The wave does not require unanimous participation. It requires a positive average.
+
+**14. Can you think of anything you could do in 30 seconds that would prevent more death and suffering?**
+
+No. Not donating to charity. Not volunteering. Not any other action at any price. Compressing disease eradication from centuries to decades prevents more suffering than anything else available to you. Sharing this takes about 30 seconds.
+
+**15. What do you personally gain if disease eradication shifts forward?**
+
+The shift from a war-and-disease economy to a health-and-productivity economy adds an estimated $3.48 million in lifetime wealth for a typical person. Disease costs you money every year in insurance, lost wages, caregiving, and taxes. Shifting eradication forward does not just save lives. It makes your life measurably richer.
+
+**16. What does sharing cost?**
+
+About 30 seconds. You are not being asked to donate money, attend a rally, or change your life. You are being asked to pass this to 2 people and ask them what they think.
+
+**17. Can you think of anything else you could do with 30 seconds that would add $3.48 million to your lifetime wealth?**
+
+No. Your 30 seconds have never been this valuable. They will never be this valuable again.
+
+**18. So the trade is: 30 seconds of your time, and in exchange your species drops from 122 apocalypses to 122 minus 1, disease gets eradicated in your lifetime, your loved ones are protected, and your lifetime income goes up by $3.48 million?**
+
+Yes. That is the trade.
+
+**19. Will you vote at [warondisease.org](https://warondisease.org) right now, before you read the next question?**
+
+The vote takes 15 seconds. These questions are not going anywhere. The humans dying are going somewhere permanent.
+
+**20. Will you share this with 2 people and ask each of them to keep the chain going?**
+
+Yes. The message is: *"Either I am crazy or I found the most important thing I've read this year. Tell me which."* That takes 20 words and two names. The only thing that stops the wave is one human deciding "later." The wave does not care which human that is.
 
 That's the plan. 30 seconds × 4.13 billion humans = the 1% Treaty exists = disease eradicated in decades instead of centuries.
 
