@@ -88,7 +88,7 @@ The vote takes 15 seconds. These questions are not going anywhere. The humans dy
 
 **20. Will you share this with 2 people and ask each of them to keep the chain going?**
 
-Yes. The message is: *"Either I am crazy or I found the most important thing I've read this year. Tell me which."* That takes 20 words and two names. The only thing that stops the wave is one human deciding "later." The wave does not care which human that is.
+Yes. The message: *"Either I've gone crazy or this actually matters. Tell me which."* Two people. Thirty seconds.
 
 That's the plan. 30 seconds × 4.13 billion humans = the 1% Treaty exists = disease eradicated in decades instead of centuries.
 
