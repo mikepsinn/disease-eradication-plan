@@ -1,6 +1,6 @@
 ---
 title: Global Referendum Strategy
-description: Humanity downloaded TikTok over 4 billion times to watch strangers twerk. Getting {{< var global_coordination_target_supporters_nounit >}} verified people to click 'yes' on not dying should be easier. Here's how, with math.
+description: Humanity downloaded TikTok over 4 billion times to watch strangers twerk. Getting {{< var global_registered_voters_nounit >}} verified people to click 'yes' on not dying should be easier. Here's how, with math.
 published: true
 tags:
   - referendum
@@ -26,11 +26,11 @@ scores:
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 Politicians can ignore protests. They can ignore polls. They can ignore reality for surprisingly long periods (see: climate change, 1970-present).
 
-They cannot ignore {{< var global_coordination_target_supporters_nounit >}} cryptographically verified humans saying "do this thing or we vote you out."
+They cannot ignore {{< var global_registered_voters_nounit >}} cryptographically verified humans saying "do this thing or we vote you out."
 
 Not because they care about those humans. Because they can count.
 
-But the politicians are the secondary audience. The primary audience is you. Right now every human who thinks "obviously we should spend less on murder and more on medicine" also thinks they are the only one. They are not the only one. They are almost everyone. The referendum is the moment {{< var global_coordination_target_supporters_nounit >}} humans look up and realize they are {{< var global_coordination_target_supporters_nounit >}} humans. That is not a petition. That is a species finding out what it actually wants.
+But the politicians are the secondary audience. The primary audience is you. Right now every human who thinks "obviously we should spend less on murder and more on medicine" also thinks they are the only one. They are not the only one. They are almost everyone. The referendum is the moment {{< var global_registered_voters_nounit >}} humans look up and realize they are {{< var global_registered_voters_nounit >}} humans. That is not a petition. That is a species finding out what it actually wants.
 
 ::: {.content-visible when-format="html"}
 <figure>
@@ -51,7 +51,7 @@ On Wishonia, we would not need a website for this. We would say "please stop let
 
 Requirements: the votes have to be real (auditable), the votes have to be secret (privacy-preserving), the system has to work for everyone including people without bank accounts or government IDs (which is most of Earth, a fact that surprises the people with bank accounts), the code has to be open-source so anyone can audit it, and the whole thing has to grow fast enough to matter before your species gets distracted by a new television show.
 
-Target: **{{< var global_coordination_target_pct >}} global participation** ({{< var global_coordination_target_supporters_nounit >}}+ verified votes). That is the canonical public coordination target in the prize model. The old Chenoweth-style {{< var global_population_activism_threshold_pct >}} threshold is useful as a historical lower bound for when movements become hard to ignore, not as the end-state goal here.
+Target: **{{< var global_coordination_target_pct >}} global participation** ({{< var global_registered_voters_nounit >}}+ verified votes). That is the canonical public coordination target in the prize model. The old Chenoweth-style {{< var global_population_activism_threshold_pct >}} threshold is useful as a historical lower bound for when movements become hard to ignore, not as the end-state goal here.
 
 ## The Voting System
 
@@ -79,7 +79,7 @@ Even Layer 1 gets you counted. You don't need a passport to say "I would prefer 
 
 ## Growth Strategy
 
-Your species downloaded TikTok over 4 billion times to watch strangers twerk. Getting {{< var global_coordination_target_supporters_nounit >}} to click "yes" on not dying should be easier. It isn't, because not dying is less entertaining than twerking, but it should be, and that gap between "should be" and "isn't" is the entire marketing problem.
+Your species downloaded TikTok over 4 billion times to watch strangers twerk. Getting {{< var global_registered_voters_nounit >}} to click "yes" on not dying should be easier. It isn't, because not dying is less entertaining than twerking, but it should be, and that gap between "should be" and "isn't" is the entire marketing problem.
 
 Each person who signs up gets a small referral bonus for bringing the next, funded by [Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd) [@iab-paper-2025]. The modeled blended activation cost is {{< var global_coordination_activation_cost_per_participant >}} per verified participant. For comparison, acquiring a coffee customer costs $5-15. Nike pays $40 to get one person to buy shoes online. You're trying to convince someone to support not dying for less than the cost of a cheap online acquisition. The fact that "not dying" needs a financial incentive to compete with shoes tells you everything about your species that this manual has been trying to tell you. But here we are.
 
@@ -99,7 +99,7 @@ Legal positioning: non-binding global consultation with country-specific bridges
 
 ![Month 1-2: Build the website, plan the marketing, and make the blockchain work. Multitasking, but organized.](/assets/images/global-referendum/global-referendum-section-phase-1-foundation-months-1-2-bw-academic.jpg)
 
-The realistic target for {{< var global_coordination_target_pct >}} participation ({{< var global_coordination_target_supporters_nounit >}} verified humans) scales alongside the [current Earth Optimization manual](earth-optimization-protocol-v1.qmd#the-sequencing).
+The realistic target for {{< var global_coordination_target_pct >}} participation ({{< var global_registered_voters_nounit >}} verified humans) scales alongside the [current Earth Optimization manual](earth-optimization-protocol-v1.qmd#the-sequencing).
 
 | Phase | Timeline | Focus |
 |:------|:---------|:------|
@@ -114,13 +114,13 @@ The system works when each person brings more than one person, which is how aval
 
 ## Success Metrics
 
-You'll know it's working when four numbers are right: {{< var global_coordination_target_supporters_nounit >}}+ verified participants (the {{< var global_coordination_target_pct >}} target), blended activation cost per verified participant near {{< var global_coordination_activation_cost_per_participant >}} or lower, viral coefficient above 1.0 (each person brings more than one person), and fraud detection above 99% with false positives below 1%. If any of those numbers are wrong, something is broken and you fix it. If all four are right, you've built a machine that converts tens of billions into political pressure at world scale. Nobody has built this before. This is the most surprising part.
+You'll know it's working when four numbers are right: {{< var global_registered_voters_nounit >}}+ verified participants (the {{< var global_coordination_target_pct >}} target), blended activation cost per verified participant near {{< var global_coordination_activation_cost_per_participant >}} or lower, viral coefficient above 1.0 (each person brings more than one person), and fraud detection above 99% with false positives below 1%. If any of those numbers are wrong, something is broken and you fix it. If all four are right, you've built a machine that converts tens of billions into political pressure at world scale. Nobody has built this before. This is the most surprising part.
 
 ## Why {{< var global_population_activism_threshold_pct >}} Is A Floor, Not The Goal
 
 ![Enough people is enough to make politicians nervous. Blockchain proves they're real. Democracy, but weaponized mathematically.](/assets/images/global-referendum/global-referendum-section-what-you-re-building-bw-academic.jpg)
 
-The {{< var global_population_activism_threshold_pct >}} Rule is a useful historical floor: when {{< var global_population_activism_threshold_pct >}} of a population actively participates in sustained, nonviolent action, the movement has historically won. That tells you when politicians start to worry. The prize is aiming higher. The canonical public target is {{< var global_coordination_target_pct >}} of humanity, described in prose as roughly 90% of likely voters globally, because the objective is not marginal plausibility. The objective is overwhelming, legible coordination.
+The {{< var global_population_activism_threshold_pct >}} Rule is a useful historical floor: when {{< var global_population_activism_threshold_pct >}} of a population actively participates in sustained, nonviolent action, the movement has historically won. That tells you when politicians start to worry. The prize is aiming higher. The canonical public target is {{< var global_coordination_target_pct >}} of humanity because the objective is not marginal plausibility. The objective is overwhelming, legible coordination.
 
 The US civil rights movement crossed {{< var global_population_activism_threshold_pct >}} and ended segregation. Indian independence crossed {{< var global_population_activism_threshold_pct >}} and kicked out the British Empire, which at the time was the largest organization on Earth and was defeated by people who refused to move. Women's suffrage crossed {{< var global_population_activism_threshold_pct >}} and won the vote, which took 72 years and required marching in rain, getting arrested, and going on hunger strikes. The Earth Optimization Game uses that history as evidence that visible coordination matters, then asks for much more visible coordination than that floor.
 
@@ -134,8 +134,8 @@ The mechanism for spreading it is equally low-friction: a short message sent to 
 
 {{< var global_coordination_activation_budget >}} for the activation campaign, funded by institutions that want the first truly global public scoreboard to become credible. The modeled blended activation cost is {{< var global_coordination_activation_cost_per_participant >}} per verified participant. You spend more marketing soda. Coca-Cola's annual marketing budget could fund this campaign many times over, and Coca-Cola's product is sugar water that makes you fatter. Your product is not dying. The marketing budgets are inverted. Everything about your species' priorities is inverted. I've been saying this for 80 years and it remains true every time I check.
 
-{{< var global_coordination_target_supporters_nounit >}} verified humans saying "do this or lose your job" to every politician on Earth. That's not a petition. Petitions are what you ignore. Your species has produced enough petitions to wallpaper the moon, and the total political change achieved by all petitions combined is approximately zero. This isn't a petition.
+{{< var global_registered_voters_nounit >}} verified humans saying "do this or lose your job" to every politician on Earth. That's not a petition. Petitions are what you ignore. Your species has produced enough petitions to wallpaper the moon, and the total political change achieved by all petitions combined is approximately zero. This isn't a petition.
 
-This is a pink slip with {{< var global_coordination_target_supporters_nounit >}} signatures.
+This is a pink slip with {{< var global_registered_voters_nounit >}} signatures.
 
-People show up for the healthcare. Politicians see {{< var global_coordination_target_supporters_nounit >}} verified supporters. The math suggests the treaty becomes very difficult to ignore. Not impossible to ignore. Your politicians have a remarkable capacity for ignoring things. But very, very difficult. The kind of difficult where ignoring it costs you your career, and your career is the only thing your politicians care about more than money, and this threatens both.
+People show up for the healthcare. Politicians see {{< var global_registered_voters_nounit >}} verified humans. The math suggests the treaty becomes very difficult to ignore. Not impossible to ignore. Your politicians have a remarkable capacity for ignoring things. But very, very difficult. The kind of difficult where ignoring it costs you your career, and your career is the only thing your politicians care about more than money, and this threatens both.

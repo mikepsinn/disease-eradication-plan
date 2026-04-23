@@ -16,18 +16,18 @@ setup_chart_style()
 
 # Display name for chart title
 
-display_name = "Global Coordination Target Supporters"
+display_name = "Registered Voters as Share of Global Population"
 
 # Baseline and units
 
-baseline = 4000000000.0
+baseline = 0.516017811875
 
 # Tornado data from sensitivity analysis
 
 drivers = ['GLOBAL_POPULATION_2024']
 driver_labels = ['Global Population in 2024']
-impacts_low = [-100000000.0]
-impacts_high = [100000000.0]
+impacts_low = [0.013231225945512848]
+impacts_high = [-0.012585800289634075]
 
 # Convert deltas to absolute values (baseline + delta)
 
@@ -71,7 +71,7 @@ ax.set_title(f'Sensitivity Analysis: {display_name}', fontsize=16, weight='bold'
 
 # X-axis label with units
 
-units_label = "of people"
+units_label = "percent"
 if units_label:
     ax.set_xlabel(f'{display_name} ({units_label})', fontsize=12)
 else:
@@ -96,7 +96,7 @@ add_watermark(fig)
 # Save PNG to knowledge/figures/ regardless of where Quarto renders from
 # Use 96 DPI for web-optimized output (reduced from 150 DPI to minimize file size)
 
-output_path = get_figure_output_path('tornado-global_coordination_target_supporters.png')
+output_path = get_figure_output_path('tornado-global_coordination_target_pct.png')
 plt.savefig(output_path, dpi=96, bbox_inches=None, facecolor=COLOR_WHITE)
 
 add_png_metadata(

@@ -10,9 +10,9 @@ To understand how, I need you to answer a few questions.
 
 What follows may be the most important list of questions ever asked in your language. If enough humans read them and answer honestly, your species ends war and disease. If not, it doesn't. The universe is indifferent either way. You do not have to be.
 
-Here is the chain of logic. If you can answer "no" to any question, stop and name which one. If you answer "yes" to all of them, you have agreed to what followws:
+Here is the chain of logic. If you can answer "no" to any question, stop and name which one. If you answer "yes" to all of them, you have agreed to what follows:
 
-1. It takes 100 warheads to trigger nuclear winter and collapse your food system. You have 12,200. That is 122 apocalypses. You can only use one of them, because after the first one there is no civilization left to apocalypse. The other 121 just sit there, being expensive. The [1% Treaty](https://manual.warondisease.org/knowledge/solution/1-percent-treaty.html) asks you to settle for 121 apocalypses instead of 122, in exchange for 12.3x more clinical trials, which compresses disease eradication from 443 years to 36 years. Would 4 billion of your species prefer Option A (122 apocalypses, several centuries of continued dying from curable diseases) or Option B (121 apocalypses, disease cured in their lifetime)?
+1. It takes 100 warheads to trigger nuclear winter and collapse your food system. You have 12,200. That is 122 apocalypses. You can only use one of them, because after the first one there is no civilization left to apocalypse. The other 121 just sit there, being expensive. The [1% Treaty](https://manual.warondisease.org/knowledge/solution/1-percent-treaty.html) asks you to settle for 121 apocalypses instead of 122, in exchange for 12.3x more clinical trials, which compresses disease eradication from 443 years to 36 years. Would 4.13 billion of your species prefer Option A (122 apocalypses, several centuries of continued dying from curable diseases) or Option B (121 apocalypses, disease cured in their lifetime)?
 
 2. Is disease just your meat breaking in predictable ways that can be fixed by running the right clinical trials? *Yes. You find first treatments for 15 new diseases every year. 6,650 are still waiting. You have 9,500 known-safe medicinal compounds, of which 99%) | Calculated from 2 inputs | ✓ High confidence | Formula: 1 - EXPLORATION_RATIO | Unit: percentage | Click to view details, calculation & sources">99.7% of their potential uses have never been tested. Humans are physical systems. Physical systems have physical solutions. Knowledge compounds; each cure makes the next cure easier to find. There is no physical law preventing disease eradication. There is only a funding law.*
 
@@ -26,7 +26,7 @@ Here is the chain of logic. If you can answer "no" to any question, stop and nam
 
 7. At one round per week, how long is 32 rounds? *About 8 months. At one round per day it is 32 days. Your calendar invented this math.*
 
-8. So the question is not whether you reach 4 billion. The question is when. *Correct. Every government on Earth gives in when half of humanity publicly demands something. Not out of virtue. Out of survival.*
+8. So the question is not whether you reach 4.13 billion of your species. The question is when. *Correct. Every government on Earth gives in when half of humanity publicly demands something. Not out of virtue. Out of survival.*
 
 9. Every second the 1% Treaty does not exist, about 2 humans die of diseases it would cure faster. Per-second is the number your nervous system actually feels. Per-year is abstract. *Correct. 150,000 deaths per day divided by 86,400 seconds is 1.74 deaths per second. You are allowed to see the per-year number because your brain cannot feel it. The per-second number is harder to find on purpose.*
 
@@ -40,11 +40,11 @@ Here is the chain of logic. If you can answer "no" to any question, stop and nam
 
 14. Can you think of anything else you could do with 30 seconds that would add more than $3.48 million to your own lifetime income? *You cannot. Your 30 seconds have never been this valuable. They will never be this valuable again.*
 
-15. You are not being asked to share a message. You are being asked to start a chain that could lead to 4 billion humans agreeing that ending war and disease is the priority for your whole species. A new kind of voting where your species decides, together, what matters to your species and where the money goes. *Correct. Share once and the wave stops with your loved ones. Start the chain and it reaches half of humanity in under a year, and may permanently upgrade how your species decides anything.*
+15. You are not being asked to share a message. You are being asked to start a chain that could lead to 4.13 billion humans agreeing that ending war and disease is the priority for your whole species. A new kind of voting where your species decides, together, what matters to your species and where the money goes. *Correct. Share once and the wave stops with your loved ones. Start the chain and it reaches half of humanity in under a year, and may permanently upgrade how your species decides anything.*
 
 16. Most humans have about 40 people they actually love. Is sharing with all 40, at one per day for 6 weeks, the best use of your time for that window? *Yes. Each share has the same best-answer as the first. The payoff doesn't shrink when you repeat it. Most humans share with 2 people and stop. The humans who share with 40 are why the wave continues past round 2.*
 
-17. For the wave to reach 4 billion, exactly 2 of your 40 humans have to actually keep sharing. Two. Not two percent. Two humans. Everyone else can ignore you and the wave still reaches 4 billion. You are telling 40 humans you love that you do not want them to suffer and die from a fixable disease. Since they also love you, they do not want you to suffer and die either. The conversation is mostly nice. The action is 30 seconds. Two of them continue the chain; the other 38 had a nice conversation with someone they love. *Yes. You are responsible for 40 genuine conversations, not for convincing 40 people. The responsibility is much lower than your brain is guessing right now.*
+17. For the wave to reach 4.13 billion, exactly 2 of your 40 humans have to actually keep sharing. Two. Not two percent. Two humans. Everyone else can ignore you and the wave still reaches 4 billion. You are telling 40 humans you love that you do not want them to suffer and die from a fixable disease. Since they also love you, they do not want you to suffer and die either. The conversation is mostly nice. The action is 30 seconds. Two of them continue the chain; the other 38 had a nice conversation with someone they love. *Yes. You are responsible for 40 genuine conversations, not for convincing 40 people. The responsibility is much lower than your brain is guessing right now.*
 
 18. So. Will you vote at [warondisease.org](https://warondisease.org) before you close this book? *Yes. The vote takes 15 seconds. The book is not going anywhere. The humans dying are going nowhere, permanently.*
 
@@ -52,7 +52,7 @@ Here is the chain of logic. If you can answer "no" to any question, stop and nam
 
 20. The only thing that stops the wave is one human in the chain deciding "later." Is that human you? *Your choice. If no, you now understand why the first sentence of this book called you, quantifiably, the most important person in the history of your civilization. The chain is only as long as its shortest link, and every link is someone's specific 30 seconds.*
 
-That's the plan. 30 seconds × 4 billion humans = the 1% Treaty exists = disease eradicated in decades instead of centuries.
+That's the plan. 30 seconds × 4.13 billion humans = the 1% Treaty exists = disease eradicated in decades instead of centuries.
 
 What you trade: capacity for 122 minus 1 apocalypses instead of 122. What you get: disease eradication in your lifetime plus $3.48 million in extra lifetime income.
 
@@ -568,7 +568,7 @@ Forwarding this takes 30 seconds. At the global average wage, that costs you $0.
 
 You don't need to know a billionaire. You're six degrees of separation from one. Forward this to one person with more reach than you. They forward to one person with more reach than them. Even with 90% of the chain dismissing it, the [model](https://manual.warondisease.org/knowledge/appendix/treaty-feasibility.html#sec-chain-reaction-model) shows it reaches someone who can act within 3 years. Not because anyone in the chain is brave. Because each one is selfish, and the math rewards forwarding.
 
-The same forwarding fuels Path B at the same time. Every human in the chain also votes at warondisease.org, and every vote counts toward the 4 billion that no government on Earth can politely ignore. You don't have to pick which chain wins. Your thirty seconds runs both.
+The same forwarding fuels Path B at the same time. Every human in the chain also votes at warondisease.org, and every vote counts toward the 4.13 billion that no government on Earth can politely ignore. You don't have to pick which chain wins. Your thirty seconds runs both.
 
 This is a chain reaction, and it runs on greed.
 

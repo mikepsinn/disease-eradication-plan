@@ -8419,15 +8419,15 @@ GLOBAL_POPULATION_ACTIVISM_THRESHOLD_PCT = Parameter(
     latex_symbol=r"Threshold_{activism}",  # LaTeX symbol for equations
 )  # 3.5% rule for social change, key tipping point
 
-TREATY_CAMPAIGN_VOTING_BLOC_TARGET = Parameter(
+THREE_POINT_FIVE_PERCENT_OF_GLOBAL_POPULATION = Parameter(
     GLOBAL_POPULATION_2024 * GLOBAL_POPULATION_ACTIVISM_THRESHOLD_PCT,
     source_type="calculated",
-    description="Target voting bloc size for campaign (3.5% of global population - critical mass for social change). "
+    description="Headcount implied by the 3.5% activism threshold applied to global population. "
                 "Wide CI reflects uncertainty in applying Chenoweth's national threshold to global treaty adoption.",
-    display_name="Target Voting Bloc Size for Campaign",
+    display_name="3.5% of Global Population",
     unit="of people",
-    formula="GLOBAL_POPULATION × 3.5%",
-    keywords=["280.0m", "1%", "one percent", "international agreement", "peace treaty", "agreement", "pact"],
+    formula="GLOBAL_POPULATION_2024 × GLOBAL_POPULATION_ACTIVISM_THRESHOLD_PCT",
+    keywords=["3.5 percent", "global population", "280.0m", "international agreement", "peace treaty", "agreement", "pact"],
     inputs=['GLOBAL_POPULATION_2024', 'GLOBAL_POPULATION_ACTIVISM_THRESHOLD_PCT'],
     compute=lambda ctx: ctx["GLOBAL_POPULATION_2024"] * ctx["GLOBAL_POPULATION_ACTIVISM_THRESHOLD_PCT"],
     latex_symbol=r"N_{voters,target}",  # LaTeX symbol for equations
@@ -8436,29 +8436,29 @@ TREATY_CAMPAIGN_VOTING_BLOC_TARGET = Parameter(
 # Per-voter impact (total impact ÷ voting bloc target)
 # Used in podcast outro CTA and campaign materials
 VOTER_LIVES_SAVED = Parameter(
-    float(DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_LIVES_SAVED) / float(TREATY_CAMPAIGN_VOTING_BLOC_TARGET),
+    float(DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_LIVES_SAVED) / float(THREE_POINT_FIVE_PERCENT_OF_GLOBAL_POPULATION),
     source_type="calculated",
     description="Lives saved attributable to each voter if the treaty passes (total lives saved ÷ 3.5% voting bloc target)",
     display_name="Lives Saved per Voter",
     unit="lives",
-    formula="DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_LIVES_SAVED ÷ TREATY_CAMPAIGN_VOTING_BLOC_TARGET",
+    formula="DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_LIVES_SAVED ÷ THREE_POINT_FIVE_PERCENT_OF_GLOBAL_POPULATION",
     keywords=["per voter", "individual impact", "lives saved", "CTA", "campaign"],
-    inputs=['DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_LIVES_SAVED', 'TREATY_CAMPAIGN_VOTING_BLOC_TARGET'],
-    compute=lambda ctx: ctx["DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_LIVES_SAVED"] / ctx["TREATY_CAMPAIGN_VOTING_BLOC_TARGET"],
+    inputs=['DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_LIVES_SAVED', 'THREE_POINT_FIVE_PERCENT_OF_GLOBAL_POPULATION'],
+    compute=lambda ctx: ctx["DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_LIVES_SAVED"] / ctx["THREE_POINT_FIVE_PERCENT_OF_GLOBAL_POPULATION"],
     latex_symbol=r"Lives_{voter}",
     hide_ci=True,  # 17x CI spread (11.6-195) is distracting in CTA copy; point estimate is correct
 )
 
 VOTER_SUFFERING_HOURS_PREVENTED = Parameter(
-    float(DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_SUFFERING_HOURS) / float(TREATY_CAMPAIGN_VOTING_BLOC_TARGET),
+    float(DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_SUFFERING_HOURS) / float(THREE_POINT_FIVE_PERCENT_OF_GLOBAL_POPULATION),
     source_type="calculated",
     description="Hours of suffering prevented attributable to each voter if the treaty passes (total suffering hours ÷ 3.5% voting bloc target)",
     display_name="Suffering Hours Prevented per Voter",
     unit="hours",
-    formula="DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_SUFFERING_HOURS ÷ TREATY_CAMPAIGN_VOTING_BLOC_TARGET",
+    formula="DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_SUFFERING_HOURS ÷ THREE_POINT_FIVE_PERCENT_OF_GLOBAL_POPULATION",
     keywords=["per voter", "individual impact", "suffering", "CTA", "campaign"],
-    inputs=['DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_SUFFERING_HOURS', 'TREATY_CAMPAIGN_VOTING_BLOC_TARGET'],
-    compute=lambda ctx: ctx["DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_SUFFERING_HOURS"] / ctx["TREATY_CAMPAIGN_VOTING_BLOC_TARGET"],
+    inputs=['DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_SUFFERING_HOURS', 'THREE_POINT_FIVE_PERCENT_OF_GLOBAL_POPULATION'],
+    compute=lambda ctx: ctx["DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_SUFFERING_HOURS"] / ctx["THREE_POINT_FIVE_PERCENT_OF_GLOBAL_POPULATION"],
     latex_symbol=r"Hours_{suffer,voter}",
     hide_ci=True,  # Same wide CI as VOTER_LIVES_SAVED; point estimate only in CTA copy
 )
@@ -8697,30 +8697,39 @@ PRIZE_POOL_SIZE = Parameter(
     latex_symbol=r"Pool",
 )
 
-GLOBAL_COORDINATION_TARGET_PCT = Parameter(
-    0.50,
-    source_type="definition",
-    description="Modeled end-state global coordination target: half of humanity visibly supports the prize network, "
-                "used in prose as roughly 90% of likely voters globally.",
-    display_name="Global Coordination Target",
-    unit="percent",
+GLOBAL_REGISTERED_VOTERS = Parameter(
+    4_128_142_495,
+    source_ref=ReferenceID.INTERNATIONAL_IDEA_VOTER_TURNOUT_DATABASE_2026,
+    source_type="external",
+    description="Best current register-based estimate of the number of registered voters worldwide, "
+                "calculated by summing the latest available country-level electoral-roll counts "
+                "in International IDEA's Voter Turnout Database export.",
+    display_name="Global Registered Voters",
+    unit="of people",
+    latex=r"""
+\begin{gathered}
+N_{voters,global} \\
+= 4{,}128{,}142{,}495 \\
+\approx 4.13B
+\end{gathered}
+""".strip(),
     distribution="fixed",
-    keywords=["coordination", "global", "support", "target", "50 percent", "90 percent voters"],
-    latex_symbol=r"R_{coord}",
+    keywords=["registered voters", "global electorate", "4.13 billion", "voters worldwide", "electoral rolls"],
+    latex_symbol=r"N_{voters,global}",
 )
 
-GLOBAL_COORDINATION_TARGET_SUPPORTERS = Parameter(
-    float(GLOBAL_POPULATION_2024) * float(GLOBAL_COORDINATION_TARGET_PCT),
+GLOBAL_COORDINATION_TARGET_PCT = Parameter(
+    float(GLOBAL_REGISTERED_VOTERS) / float(GLOBAL_POPULATION_2024),
     source_type="calculated",
-    description="Number of people implied by the modeled end-state global coordination target "
-                "(global population × 50%).",
-    display_name="Global Coordination Target Supporters",
-    unit="of people",
-    formula="GLOBAL_POPULATION_2024 × GLOBAL_COORDINATION_TARGET_PCT",
-    inputs=["GLOBAL_POPULATION_2024", "GLOBAL_COORDINATION_TARGET_PCT"],
-    compute=lambda ctx: ctx["GLOBAL_POPULATION_2024"] * ctx["GLOBAL_COORDINATION_TARGET_PCT"],
-    keywords=["coordination", "supporters", "global", "target", "humanity"],
-    latex_symbol=r"N_{coord}",
+    description="Estimated global registered electorate as a share of global population "
+                "(global registered voters divided by global population).",
+    display_name="Registered Voters as Share of Global Population",
+    unit="percent",
+    formula="GLOBAL_REGISTERED_VOTERS / GLOBAL_POPULATION_2024",
+    inputs=["GLOBAL_REGISTERED_VOTERS", "GLOBAL_POPULATION_2024"],
+    compute=lambda ctx: ctx["GLOBAL_REGISTERED_VOTERS"] / ctx["GLOBAL_POPULATION_2024"],
+    keywords=["registered voters", "global population", "share", "electorate", "51.6 percent"],
+    latex_symbol=r"R_{voters,global}",
 )
 
 GLOBAL_COORDINATION_ACTIVATION_REWARD_PER_VERIFIED_PARTICIPANT = Parameter(
@@ -8761,8 +8770,9 @@ GLOBAL_COORDINATION_VERIFICATION_AND_PAYMENT_COST_PER_PARTICIPANT = Parameter(
 GLOBAL_COORDINATION_PLATFORM_AND_OPERATIONS_COST = Parameter(
     4_000_000_000,
     source_type="definition",
-    description="Fixed cost to run a global activation campaign toward 50% participation: platform buildout, "
-                "localization, customer support, compliance, payout operations, fraud response, and regional launch infrastructure.",
+    description="Fixed cost to run a global activation campaign toward participation by the full estimated "
+                "registered electorate: platform buildout, localization, customer support, compliance, "
+                "payout operations, fraud response, and regional launch infrastructure.",
     display_name="Global Coordination Platform and Operations Cost",
     unit="USD",
     confidence="medium",
@@ -8790,17 +8800,18 @@ GLOBAL_COORDINATION_ACTIVATION_COST_PER_PARTICIPANT = Parameter(
 )
 
 GLOBAL_COORDINATION_ACTIVATION_BUDGET = Parameter(
-    float(GLOBAL_COORDINATION_TARGET_SUPPORTERS) * float(GLOBAL_COORDINATION_ACTIVATION_COST_PER_PARTICIPANT) + float(GLOBAL_COORDINATION_PLATFORM_AND_OPERATIONS_COST),
+    float(GLOBAL_REGISTERED_VOTERS) * float(GLOBAL_COORDINATION_ACTIVATION_COST_PER_PARTICIPANT) + float(GLOBAL_COORDINATION_PLATFORM_AND_OPERATIONS_COST),
     source_type="calculated",
-    description="Canonical institutional activation threshold: capital required to make 50% participation "
-                "credible through direct referral incentives, verification, payment rails, and global launch operations. "
+    description="Canonical institutional activation threshold: capital required to make participation by the "
+                "full estimated registered electorate credible through direct referral incentives, verification, "
+                "payment rails, and global launch operations. "
                 "This is the main institutional ask, not the PRIZE pool seed benchmark.",
     display_name="Global Coordination Activation Budget",
     unit="USD",
-    formula="GLOBAL_COORDINATION_TARGET_SUPPORTERS × GLOBAL_COORDINATION_ACTIVATION_COST_PER_PARTICIPANT + GLOBAL_COORDINATION_PLATFORM_AND_OPERATIONS_COST",
-    inputs=["GLOBAL_COORDINATION_TARGET_SUPPORTERS", "GLOBAL_COORDINATION_ACTIVATION_COST_PER_PARTICIPANT", "GLOBAL_COORDINATION_PLATFORM_AND_OPERATIONS_COST"],
-    compute=lambda ctx: ctx["GLOBAL_COORDINATION_TARGET_SUPPORTERS"] * ctx["GLOBAL_COORDINATION_ACTIVATION_COST_PER_PARTICIPANT"] + ctx["GLOBAL_COORDINATION_PLATFORM_AND_OPERATIONS_COST"],
-    keywords=["activation", "budget", "coordination", "institutional", "referral", "verification", "50 percent"],
+    formula="GLOBAL_REGISTERED_VOTERS × GLOBAL_COORDINATION_ACTIVATION_COST_PER_PARTICIPANT + GLOBAL_COORDINATION_PLATFORM_AND_OPERATIONS_COST",
+    inputs=["GLOBAL_REGISTERED_VOTERS", "GLOBAL_COORDINATION_ACTIVATION_COST_PER_PARTICIPANT", "GLOBAL_COORDINATION_PLATFORM_AND_OPERATIONS_COST"],
+    compute=lambda ctx: ctx["GLOBAL_REGISTERED_VOTERS"] * ctx["GLOBAL_COORDINATION_ACTIVATION_COST_PER_PARTICIPANT"] + ctx["GLOBAL_COORDINATION_PLATFORM_AND_OPERATIONS_COST"],
+    keywords=["activation", "budget", "coordination", "institutional", "referral", "verification", "registered electorate"],
     latex_symbol=r"B_{activate}",
 )
 
@@ -8833,38 +8844,39 @@ RETIREMENT_EQUIVALENT_CLAIM_VALUE_TARGET = Parameter(
 )
 
 PRIZE_POOL_RETIREMENT_EQUIVALENT_PRINCIPAL = Parameter(
-    float(GLOBAL_COORDINATION_TARGET_SUPPORTERS) * float(RETIREMENT_EQUIVALENT_CLAIM_VALUE_TARGET) / float(PRIZE_POOL_HORIZON_MULTIPLE),
+    float(GLOBAL_REGISTERED_VOTERS) * float(RETIREMENT_EQUIVALENT_CLAIM_VALUE_TARGET) / float(PRIZE_POOL_HORIZON_MULTIPLE),
     source_type="calculated",
     description="Secondary PRIZE seed benchmark: initial principal required so that the pool can make two referred votes "
-                "retirement-equivalent on success at the modeled global coordination target. This is a stronger-incentive "
-                "visible-pool benchmark, not the minimum capital required to make 50% participation credible.",
+                "retirement-equivalent on success at the full estimated registered-electorate target. This is a "
+                "stronger-incentive visible-pool benchmark, not the minimum capital required to make full "
+                "registered-electorate participation credible.",
     display_name="PRIZE Pool Retirement-Equivalent Principal",
     unit="USD",
-    formula="GLOBAL_COORDINATION_TARGET_SUPPORTERS × RETIREMENT_EQUIVALENT_CLAIM_VALUE_TARGET / PRIZE_POOL_HORIZON_MULTIPLE",
-    inputs=["GLOBAL_COORDINATION_TARGET_SUPPORTERS", "RETIREMENT_EQUIVALENT_CLAIM_VALUE_TARGET", "PRIZE_POOL_HORIZON_MULTIPLE"],
-    compute=lambda ctx: ctx["GLOBAL_COORDINATION_TARGET_SUPPORTERS"] * ctx["RETIREMENT_EQUIVALENT_CLAIM_VALUE_TARGET"] / ctx["PRIZE_POOL_HORIZON_MULTIPLE"],
+    formula="GLOBAL_REGISTERED_VOTERS × RETIREMENT_EQUIVALENT_CLAIM_VALUE_TARGET / PRIZE_POOL_HORIZON_MULTIPLE",
+    inputs=["GLOBAL_REGISTERED_VOTERS", "RETIREMENT_EQUIVALENT_CLAIM_VALUE_TARGET", "PRIZE_POOL_HORIZON_MULTIPLE"],
+    compute=lambda ctx: ctx["GLOBAL_REGISTERED_VOTERS"] * ctx["RETIREMENT_EQUIVALENT_CLAIM_VALUE_TARGET"] / ctx["PRIZE_POOL_HORIZON_MULTIPLE"],
     keywords=["prize", "pool", "retirement equivalent", "principal", "seed", "benchmark", "deposit"],
     latex_symbol=r"P_{retire-eq}",
 )
 
-# VOTE token value (pool size ÷ coordination-target supporters)
+# VOTE token value (pool size ÷ global registered voters)
 VOTE_TOKEN_VALUE = Parameter(
-    float(PRIZE_POOL_SIZE) / float(GLOBAL_COORDINATION_TARGET_SUPPORTERS),
+    float(PRIZE_POOL_SIZE) / float(GLOBAL_REGISTERED_VOTERS),
     source_type="calculated",
     description="Value of a single VOTE claim based on the modeled PRIZE pool size "
                 "(investable assets × participation rate × horizon multiple). "
                 "CI range reflects participation uncertainty (0.1%-10%).",
     display_name="VOTE Point Value",
     unit="USD",
-    formula="PRIZE_POOL_SIZE / GLOBAL_COORDINATION_TARGET_SUPPORTERS",
-    inputs=["PRIZE_POOL_SIZE", "GLOBAL_COORDINATION_TARGET_SUPPORTERS"],
-    compute=lambda ctx: ctx["PRIZE_POOL_SIZE"] / ctx["GLOBAL_COORDINATION_TARGET_SUPPORTERS"],
+    formula="PRIZE_POOL_SIZE / GLOBAL_REGISTERED_VOTERS",
+    inputs=["PRIZE_POOL_SIZE", "GLOBAL_REGISTERED_VOTERS"],
+    compute=lambda ctx: ctx["PRIZE_POOL_SIZE"] / ctx["GLOBAL_REGISTERED_VOTERS"],
     keywords=["vote", "token", "value", "prize", "pool", "incentive", "recruitment"],
     latex_symbol=r"V_{vote}",
 )
 
 VOTE_2_CLAIMS_PAYOUT = Parameter(
-    2 * float(PRIZE_POOL_SIZE) / float(GLOBAL_COORDINATION_TARGET_SUPPORTERS),
+    2 * float(PRIZE_POOL_SIZE) / float(GLOBAL_REGISTERED_VOTERS),
     source_type="calculated",
     description="Payout for a depositor who recruits 2 verified participants "
                 "(earning 2 VOTE claims). CI range reflects participation uncertainty.",

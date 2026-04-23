@@ -40,13 +40,13 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 This appendix documents all 386 parameters used in the analysis, organized by type:
 
-- External sources (peer-reviewed): 138
+- External sources (peer-reviewed): 139
 - Calculated values: 185
-- Core definitions: 63
+- Core definitions: 62
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (185 parameters) • [External Data Sources](#sec-external) (138 parameters) • [Core Definitions](#sec-definitions) (63 parameters)
+[Calculated Values](#sec-calculated) (185 parameters) • [External Data Sources](#sec-external) (139 parameters) • [Core Definitions](#sec-definitions) (62 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -4470,28 +4470,22 @@ $$
 
 :::
 
-### Global Coordination Activation Budget: $30 billion {#sec-global_coordination_activation_budget}
+### Global Coordination Activation Budget: $30.8 billion {#sec-global_coordination_activation_budget}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Canonical institutional activation threshold: capital required to make 50% participation credible through direct referral incentives, verification, payment rails, and global launch operations. This is the main institutional ask, not the PRIZE pool seed benchmark.
+Canonical institutional activation threshold: capital required to make participation by the full estimated registered electorate credible through direct referral incentives, verification, payment rails, and global launch operations. This is the main institutional ask, not the PRIZE pool seed benchmark.
 
 **Inputs**:
 
-- [Global Coordination Target Supporters](#sec-global_coordination_target_supporters) 🔢: 4 billion of people
+- [Global Registered Voters](#sec-global_registered_voters) 📊: 4.13 billion of people
 - [Activation Cost per Participant](#sec-global_coordination_activation_cost_per_participant) 🔢: $6.5
 - [Global Coordination Platform and Operations Cost](#sec-global_coordination_platform_and_operations_cost): $4 billion (95% CI: $2 billion - $8 billion)
 
 $$
-B_{activate} = N_{coord} \times C_{activate,pp} + C_{ops}
-$$
-where:
-$$
 \begin{gathered}
-N_{coord} \\
-= Pop_{global} \times R_{coord} \\
-= 8B \times 50\% \\
-= 4B
+B_{activate} \\
+= N_{voters,global} \times C_{activate,pp} + C_{ops}
 \end{gathered}
 $$
 where:
@@ -4559,23 +4553,23 @@ $$
 
 :::
 
-### Global Coordination Target Supporters: 4 billion of people {#sec-global_coordination_target_supporters}
+### Registered Voters as Share of Global Population: 51.6% {#sec-global_coordination_target_pct}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Number of people implied by the modeled end-state global coordination target (global population × 50%).
+Estimated global registered electorate as a share of global population (global registered voters divided by global population).
 
 **Inputs**:
 
+- [Global Registered Voters](#sec-global_registered_voters) 📊: 4.13 billion of people
 - [Global Population in 2024](#sec-global_population_2024) 📊: 8 billion of people (95% CI: 7.8 billion of people - 8.2 billion of people)
-- [Global Coordination Target](#sec-global_coordination_target_pct): 50%
 
 $$
 \begin{gathered}
-N_{coord} \\
-= Pop_{global} \times R_{coord} \\
-= 8B \times 50\% \\
-= 4B
+R_{voters,global} \\
+= \frac{N_{voters,global}}{Pop_{global}} \\
+= \frac{4.13B}{8B} \\
+= 51.6\%
 \end{gathered}
 $$
 
@@ -4583,17 +4577,17 @@ $$
 
 #### Sensitivity Analysis
 
-{{< include ../figures/tornado-global_coordination_target_supporters.qmd >}}
+{{< include ../figures/tornado-global_coordination_target_pct.qmd >}}
 
-{{< include ../figures/sensitivity-table-global_coordination_target_supporters.qmd >}}
+{{< include ../figures/sensitivity-table-global_coordination_target_pct.qmd >}}
 
 #### Monte Carlo Distribution
 
-{{< include ../figures/mc-distribution-global_coordination_target_supporters.qmd >}}
+{{< include ../figures/mc-distribution-global_coordination_target_pct.qmd >}}
 
 #### Exceedance Probability
 
-{{< include ../figures/exceedance-global_coordination_target_supporters.qmd >}}
+{{< include ../figures/exceedance-global_coordination_target_pct.qmd >}}
 
 :::
 
@@ -8888,6 +8882,44 @@ $$
 
 :::
 
+### 3.5% of Global Population: 280 million of people {#sec-three_point_five_percent_of_global_population}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Headcount implied by the 3.5% activism threshold applied to global population. Wide CI reflects uncertainty in applying Chenoweth's national threshold to global treaty adoption.
+
+**Inputs**:
+
+- [Global Population in 2024](#sec-global_population_2024) 📊: 8 billion of people (95% CI: 7.8 billion of people - 8.2 billion of people)
+- [Critical Mass Threshold for Social Change](#sec-global_population_activism_threshold_pct) 📊: 3.5% (95% CI: 1% - 10%)
+
+$$
+\begin{gathered}
+N_{voters,target} \\
+= Pop_{global} \times Threshold_{activism} \\
+= 8B \times 3.5\% \\
+= 280M
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-three_point_five_percent_of_global_population.qmd >}}
+
+{{< include ../figures/sensitivity-table-three_point_five_percent_of_global_population.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-three_point_five_percent_of_global_population.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-three_point_five_percent_of_global_population.qmd >}}
+
+:::
+
 ### Annual Funding from 1% of Global Military Spending Redirected to DIH: $27.2 billion {#sec-treaty_annual_funding}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -9004,44 +9036,6 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-treaty_campaign_total_cost.qmd >}}
-
-:::
-
-### Target Voting Bloc Size for Campaign: 280 million of people {#sec-treaty_campaign_voting_bloc_target}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Target voting bloc size for campaign (3.5% of global population - critical mass for social change). Wide CI reflects uncertainty in applying Chenoweth's national threshold to global treaty adoption.
-
-**Inputs**:
-
-- [Global Population in 2024](#sec-global_population_2024) 📊: 8 billion of people (95% CI: 7.8 billion of people - 8.2 billion of people)
-- [Critical Mass Threshold for Social Change](#sec-global_population_activism_threshold_pct) 📊: 3.5% (95% CI: 1% - 10%)
-
-$$
-\begin{gathered}
-N_{voters,target} \\
-= Pop_{global} \times Threshold_{activism} \\
-= 8B \times 3.5\% \\
-= 280M
-\end{gathered}
-$$
-
-*✓ High confidence*
-
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-treaty_campaign_voting_bloc_target.qmd >}}
-
-{{< include ../figures/sensitivity-table-treaty_campaign_voting_bloc_target.qmd >}}
-
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-treaty_campaign_voting_bloc_target.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-treaty_campaign_voting_bloc_target.qmd >}}
 
 :::
 
@@ -12957,7 +12951,7 @@ Lives saved attributable to each voter if the treaty passes (total lives saved �
 **Inputs**:
 
 - [Total Lives Saved from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput](#sec-dfda_trial_capacity_plus_efficacy_lag_lives_saved) 🔢: 10.7 billion deaths
-- [Target Voting Bloc Size for Campaign](#sec-treaty_campaign_voting_bloc_target) 🔢: 280 million of people
+- [3.5% of Global Population](#sec-three_point_five_percent_of_global_population) 🔢: 280 million of people
 
 $$
 \begin{gathered}
@@ -13089,7 +13083,7 @@ Hours of suffering prevented attributable to each voter if the treaty passes (to
 **Inputs**:
 
 - [Suffering Hours Eliminated from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput](#sec-dfda_trial_capacity_plus_efficacy_lag_suffering_hours) 🔢: 1.93 quadrillion hours
-- [Target Voting Bloc Size for Campaign](#sec-treaty_campaign_voting_bloc_target) 🔢: 280 million of people
+- [3.5% of Global Population](#sec-three_point_five_percent_of_global_population) 🔢: 280 million of people
 
 $$
 \begin{gathered}
@@ -16428,6 +16422,22 @@ Critical mass threshold for social change (3.5% rule). Chenoweth studied nationa
 
 :::
 
+### Global Registered Voters: 4.13 billion of people {#sec-global_registered_voters}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Best current register-based estimate of the number of registered voters worldwide, calculated by summing the latest available country-level electoral-roll counts in International IDEA's Voter Turnout Database export.
+
+**Source**: [@international-idea-voter-turnout-database-2026]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*✓ High confidence*
+
+:::
+
 ### Global Nuclear Warhead Count: 12,241 warheads {#sec-global_warhead_count}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -18398,7 +18408,7 @@ Planning midpoint for the direct cash incentive required to make a successful ve
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Fixed cost to run a global activation campaign toward 50% participation: platform buildout, localization, customer support, compliance, payout operations, fraud response, and regional launch infrastructure.
+Fixed cost to run a global activation campaign toward participation by the full estimated registered electorate: platform buildout, localization, customer support, compliance, payout operations, fraud response, and regional launch infrastructure.
 
 #### Uncertainty Range
 
@@ -18411,20 +18421,6 @@ Fixed cost to run a global activation campaign toward 50% participation: platfor
 #### Input Distribution
 
 {{< include ../figures/distribution-global_coordination_platform_and_operations_cost.qmd >}}
-
-*Core definition*
-
-:::
-
-### Global Coordination Target: 50% {#sec-global_coordination_target_pct}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Modeled end-state global coordination target: half of humanity visibly supports the prize network, used in prose as roughly 90% of likely voters globally.
-
-#### Uncertainty Range
-
-**Technical**: Distribution: Fixed
 
 *Core definition*
 

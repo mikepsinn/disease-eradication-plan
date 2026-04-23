@@ -1,9 +1,10 @@
-**Sensitivity Indices for Global Coordination Target Supporters**
+**Sensitivity Indices for 3.5% of Global Population**
 
 Regression-based sensitivity showing which inputs explain the most variance in the output.
 
 | Input Parameter | Sensitivity Coefficient | Interpretation |
 |:----------------|------------------------:|:---------------|
-| Global Population in 2024 (of people) | 1.0000 | Strong driver |
+| Critical Mass Threshold for Social Change (percent) | 1.0166 | Strong driver |
+| Global Population in 2024 (of people) | -0.0177 | Minimal effect |
 
 *Interpretation*: Standardized coefficients show the change in output (in SD units) per 1 SD change in input. Values near ±1 indicate strong influence; values exceeding ±1 may occur with correlated inputs.

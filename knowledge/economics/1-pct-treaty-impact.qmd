@@ -647,9 +647,9 @@ The IAB mechanism aligns incentives across all key stakeholder groups:
 
 **Pharmaceutical Companies**: Trial costs convert to revenue streams. Instead of paying {{< var traditional_phase3_cost_per_patient >}} {{< var traditional_phase3_cost_per_patient_cite >}} per trial patient, companies collect {{< var dfda_pragmatic_trial_cost_per_patient >}} {{< var dfda_pragmatic_trial_cost_per_patient_cite >}} subsidies when patients enroll. This transforms trials from cost centers to profit centers.
 
-**Politicians**: {{< var treaty_campaign_voting_bloc_target >}} voters represent a significant electoral constituency. Politicians supporting the treaty gain reputation benefits, campaign support, and reduced opposition funding. Those opposing it face well-funded challengers and organized voter blocs.
+**Politicians**: {{< var three_point_five_percent_of_global_population >}} voters represent a significant electoral constituency. Politicians supporting the treaty gain reputation benefits, campaign support, and reduced opposition funding. Those opposing it face well-funded challengers and organized voter blocs.
 
-{{< var treaty_campaign_voting_bloc_target_latex >}}
+{{< var three_point_five_percent_of_global_population_latex >}}
 
 **Investors**: [Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd) offer projected {{< var victory_bond_annual_return_pct >}}, substantially exceeding typical market returns of {{< var average_market_return_pct >}}.
 
@@ -744,7 +744,7 @@ The methodology follows standard health economics practices. All parameters, sou
 
 One spends {{< var treaty_campaign_total_cost >}} convincing humans that not dying is preferable to dying. This covers:
 
-- [Global Referendum](../strategy/global-referendum.qmd) campaign to get {{< var treaty_campaign_voting_bloc_target >}} votes ({{< var treaty_campaign_viral_referendum_base_case >}})
+- [Global Referendum](../strategy/global-referendum.qmd) campaign to get {{< var three_point_five_percent_of_global_population >}} votes ({{< var treaty_campaign_viral_referendum_base_case >}})
 - Professional lobbyists and Super PAC spending ({{< var treaty_campaign_budget_lobbying >}})
 
 This is a one-time cost. Treaty passage is either achieved or it isn't.
@@ -1865,7 +1865,7 @@ The economic benefits outlined above demonstrate the value proposition of the {{
 
 ### Step 1: Global Mandate (The Philanthropic Catalyst)
 
-**Goal**: Survey **3.5% of the global population** ({{< var treaty_campaign_voting_bloc_target >}}).
+**Goal**: Survey **3.5% of the global population** ({{< var three_point_five_percent_of_global_population >}}).
 
 ![Get 3.5% of people angry enough and the government has to listen. That's 280 million humans. Luckily you're already angry, you're just angry about the wrong things.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-step-1-global-mandate-the-philanthropic-catalyst-bw-academic.jpg)
 
@@ -1927,7 +1927,7 @@ The {{< var treaty_campaign_total_cost >}} implementation cost (used as denomina
 
 | Budget Category | Amount | Purpose |
 |:---|---:|:---|
-| **[Global Referendum](../strategy/global-referendum.qmd)** | {{< var treaty_campaign_viral_referendum_base_case >}} | Global direct democracy campaign ({{< var treaty_campaign_voting_bloc_target >}} votes). Creates a **"Shadow Mandate"** and political cost for non-adoption. Not legally binding, but politically coercive. |
+| **[Global Referendum](../strategy/global-referendum.qmd)** | {{< var treaty_campaign_viral_referendum_base_case >}} | Global direct democracy campaign ({{< var three_point_five_percent_of_global_population >}} votes). Creates a **"Shadow Mandate"** and political cost for non-adoption. Not legally binding, but politically coercive. |
 | **Legislative Advocacy** | {{< var treaty_campaign_budget_lobbying >}} | Legislative outreach (US/EU/G20), policy education, military industry conversion, legal/compliance, opposition research. Outspends pharma + MIC combined |
 | **Reserve Fund** | {{< var treaty_campaign_budget_reserve >}} | Post-victory transition, treaty implementation support, contingency buffer |
 | **Total Implementation Cost** | **{{< var treaty_campaign_total_cost >}}** | 4-year implementation timeline |

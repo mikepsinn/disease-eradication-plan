@@ -1,6 +1,6 @@
 ```{python}
 #| echo: false
-#| fig-cap: "Monte Carlo Distribution: Target Voting Bloc Size for Campaign (10,000 simulations)"
+#| fig-cap: "Monte Carlo Distribution: 3.5% of Global Population (10,000 simulations)"
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -23,7 +23,7 @@ std = 168590044.28222427
 p5 = 84175724.43733144
 p50 = 232227856.80388364
 p95 = 638719402.961784
-display_name = "Target Voting Bloc Size for Campaign"
+display_name = "3.5% of Global Population"
 units = "of people"
 
 # Create figure with two subplots
@@ -101,7 +101,7 @@ add_watermark(fig)
 
 # Save PNG to knowledge/figures/ regardless of where Quarto renders from
 
-output_path = get_figure_output_path('mc-distribution-treaty_campaign_voting_bloc_target.png')
+output_path = get_figure_output_path('mc-distribution-three_point_five_percent_of_global_population.png')
 plt.savefig(output_path, dpi=96, bbox_inches=None, facecolor=COLOR_WHITE)
 
 add_png_metadata(
@@ -113,7 +113,7 @@ add_png_metadata(
 plt.show()
 ```
 
-**Simulation Results Summary: Target Voting Bloc Size for Campaign**
+**Simulation Results Summary: 3.5% of Global Population**
 
 | Statistic | Value |
 |:----------|------:|
@@ -123,4 +123,4 @@ plt.show()
 | Standard Deviation | 169 million |
 | 90% Range (5th-95th percentile) | [84.2 million, 639 million] |
 
-*The histogram shows the distribution of Target Voting Bloc Size for Campaign across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*
+*The histogram shows the distribution of 3.5% of Global Population across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

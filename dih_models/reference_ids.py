@@ -601,6 +601,7 @@ class ReferenceID(str, Enum):
     INSULIN_HISTORY_AND_PRICING = "insulin-history-and-pricing"
     INTELLIGENCE_SPENDING_MILITARY_BUDGETS = "intelligence-spending-military-budgets"
     INTERLEUKIN_2_DRUG_LAG_DEATHS = "interleukin-2-drug-lag-deaths"
+    INTERNATIONAL_IDEA_VOTER_TURNOUT_DATABASE_2026 = "international-idea-voter-turnout-database-2026"
     INTERNET_DARPA_INVESTMENT_ROI = "internet-darpa-investment-roi"
     INTERNET_USERS_5_BILLION = "internet-users-5-billion"
     INVESTMENT_COMMUNITY_50M = "investment-community-50m"

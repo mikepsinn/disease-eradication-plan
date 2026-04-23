@@ -42,7 +42,7 @@ Nobody gets the upside unless it works. Lawyers can take success-based compensat
 | Phase | Amount | Activities | Milestone | Difficulty Level |
 |-------|--------|------------|-----------|-----------------|
 | Seed | $250-400M | Platform, policy frameworks, pilots | 50M verified participants | "Convince a few billionaires" |
-| Series A | $500M-1B | Scale to G7 nations | {{< var global_population_activism_threshold_pct >}} global participation ({{< var treaty_campaign_voting_bloc_target_nounit >}} people) | "Convince several countries" |
+| Series A | $500M-1B | Scale to G7 nations | {{< var global_population_activism_threshold_pct >}} global participation ({{< var three_point_five_percent_of_global_population_nounit >}} people) | "Convince several countries" |
 | Growth | $500M-1.1B | Ratification push in major powers | First $1B disbursement | "Convince the countries with nukes" |
 
 Ranges reflect scenario planning (optimistic to pessimistic). The {{< var treaty_campaign_total_cost >}} target is the base case; upper bounds cover contingencies because convincing nuclear powers to behave rationally occasionally requires overtime.
@@ -68,7 +68,7 @@ The one-time activation energy to convince {{< var global_population_2024_nounit
 
 | Category | Amount | Purpose |
 |----------|--------|---------|
-| **[Global Referendum](../strategy/global-referendum.qmd)** | {{< var treaty_campaign_viral_referendum_base_case >}} | Viral referral system, {{< var treaty_campaign_voting_bloc_target_nounit >}} votes, platform development. [Budget details](campaign-budget.qmd#base-case-scenario) |
+| **[Global Referendum](../strategy/global-referendum.qmd)** | {{< var treaty_campaign_viral_referendum_base_case >}} | Viral referral system, {{< var three_point_five_percent_of_global_population_nounit >}} votes, platform development. [Budget details](campaign-budget.qmd#base-case-scenario) |
 | **Political Lobbying** | {{< var treaty_campaign_budget_lobbying >}} | AI-targeted campaigns (US/EU/G20), Super PACs, MIC conversion. Outspends pharma + MIC |
 | **Reserve Fund** | {{< var treaty_campaign_budget_reserve >}} | Post-passage transition, contingency buffer |
 

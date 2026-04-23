@@ -20,7 +20,7 @@ This chapter is a grant proposal template. It is designed to be handed to funder
 
 **The intervention.** Redirect 1% of global military spending to clinical trials. This produces {{< var dfda_trial_capacity_multiplier_nounit >}} times more clinical-trial capacity and compresses the timeline for eradicating every known disease from {{< var status_quo_queue_clearance_years_nounit >}} years to {{< var dfda_queue_clearance_years_nounit >}}.
 
-**The activation threshold.** {{< var global_population_activism_threshold_pct >}} of global population actively supporting ({{< var treaty_campaign_voting_bloc_target_nounit >}} verified voters). Every movement that has hit this threshold in the last century has succeeded. Zero exceptions {{< var global_population_activism_threshold_pct_cite >}}.
+**The activation threshold.** {{< var global_population_activism_threshold_pct >}} of global population actively supporting ({{< var three_point_five_percent_of_global_population_nounit >}} verified voters). Every movement that has hit this threshold in the last century has succeeded. Zero exceptions {{< var global_population_activism_threshold_pct_cite >}}.
 
 **The cost-effectiveness.** Each verified voter is attributable to {{< var voter_lives_saved >}} saved and {{< var voter_suffering_hours_prevented >}} of suffering prevented. At the standard economic value of a year of healthy life ({{< var standard_economic_qaly_value_usd >}}), that works out to over $100 million of value per voter. Per-dollar, probability-discounted, this is the highest-expected-value intervention a global-health funder can support.
 
@@ -48,7 +48,7 @@ The 1% Treaty changes the structure, not the allocation. It introduces financial
 
 The 1% Treaty is a treaty where every signatory nation redirects 1% of its military budget to clinical trials. Full architecture and legal structure are detailed in the [1% Treaty chapter](/knowledge/solution/1-percent-treaty.qmd) and the [Legal Framework](/knowledge/legal/legal-framework.qmd).
 
-Passage requires activation pressure at a verified {{< var global_population_activism_threshold_pct >}} of global population ({{< var treaty_campaign_voting_bloc_target_nounit >}} voters). Every movement that reached this threshold in the last century succeeded.
+Passage requires activation pressure at a verified {{< var global_population_activism_threshold_pct >}} of global population ({{< var three_point_five_percent_of_global_population_nounit >}} voters). Every movement that reached this threshold in the last century succeeded.
 
 The coordinator's job is voter acquisition toward that threshold. Nothing else.
 

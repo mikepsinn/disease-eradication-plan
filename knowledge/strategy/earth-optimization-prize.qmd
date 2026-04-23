@@ -187,7 +187,7 @@ There are a million ways to make humans healthier and richer. This manual descri
 
 The Game does not ask anyone to believe this manual is correct. It asks them to believe that less war and disease is worth more than more war and disease, and then it pays them to make it happen.
 
-No committee decides which reforms to fund. A researcher who discovers a cheaper trial design profits. A lobbyist who passes legislation profits. A nonprofit that recruits a million voters profits. {{< var global_coordination_target_supporters_nounit >}} people, each trying to get paid, all pointed at the same two numbers. Your entire species searching for whatever works, instead of arguing about what to search for.
+No committee decides which reforms to fund. A researcher who discovers a cheaper trial design profits. A lobbyist who passes legislation profits. A nonprofit that recruits a million voters profits. {{< var global_registered_voters_nounit >}} people, each trying to get paid, all pointed at the same two numbers. Your entire species searching for whatever works, instead of arguing about what to search for.
 
 Your species has tried alternatives. "We'll buy it if you build it" works for vaccines, not civilizations [@kremer2020]. Challenge prizes pay the winner, then stop paying (the disease does not stop). Government procurement funds whatever the person in charge likes, which is the current system (it is going well). Prediction markets tell you what will win but do not cause it to happen, which is like a weather forecast that cannot rain. The Game pays for outcomes, publishes the score, and lets anyone challenge the results. Capturing it requires beating every challenger on verified metrics at the same time. Not capture-proof. Capture-expensive.
 
@@ -224,11 +224,11 @@ On Wishonia, if one person tells two people and each of them tells two people, t
 
 32 rounds. Not 32 years. 32 rounds. If each round takes a week, that is eight months. If each round takes a month, under three years. One person to world scale in months, not centuries. Your species spent longer than that arguing about whether Pluto is a planet.
 
-"No product in history has achieved 32 rounds of doubling." Correct. The table is the mathematical ceiling, not the operational model. The operational model (see [Treaty Feasibility](../appendix/treaty-feasibility.qmd)) assumes each person only convinces {{< var chain_effective_r >}} others (not 2), with overlap and dropout. And the actual coordination target is not 8 billion. The Chenoweth threshold ({{< var global_population_activism_threshold_pct >}}) means you need {{< var treaty_campaign_voting_bloc_target_nounit >}} verified participants, not the full planet [@3-5-rule]. That is round 28, not round 33.
+"No product in history has achieved 32 rounds of doubling." Correct. The table is the mathematical ceiling, not the operational model. The operational model (see [Treaty Feasibility](../appendix/treaty-feasibility.qmd)) assumes each person only convinces {{< var chain_effective_r >}} others (not 2), with overlap and dropout. And the actual coordination target is not 8 billion. The Chenoweth threshold ({{< var global_population_activism_threshold_pct >}}) means you need {{< var three_point_five_percent_of_global_population_nounit >}} verified participants, not the full planet [@3-5-rule]. That is round 28, not round 33.
 
 Your species already turns out at 50-65% for elections that pay nothing and offer a 1-in-30-million chance of influencing anything [@gelman2012]. This referendum takes 30 seconds on a phone, pays VOTE points on success, and the outcome is "end war and disease and get considerably richer." The participation barrier is not "will people do this." It is "will people hear about it." That is what the recruitment incentive solves. Even with heavy dropout, one person reaches global visibility in dozens of rounds, not decades (see [the full comparison](#why-this-referendum-beats-your-elections) below).
 
-The target is {{< var global_coordination_target_supporters_nounit >}} people. Half of your species. I realize this sounds like a lot. It is also the number of people who would prefer not dying of preventable disease, which your species tells me is nearly everyone. So the real question is not "can you reach {{< var global_coordination_target_supporters_nounit >}}" but "why haven't you already." VOTE points make recruiting worth doing. The Scoreboard makes the coalition visible. At that scale, the treaty passes well before the pool matures.
+The target is {{< var global_registered_voters_nounit >}} people. Half of your species. I realize this sounds like a lot. It is also the number of people who would prefer not dying of preventable disease, which your species tells me is nearly everyone. So the real question is not "can you reach {{< var global_registered_voters_nounit >}}" but "why haven't you already." VOTE points make recruiting worth doing. The Scoreboard makes the coalition visible. At that scale, the treaty passes well before the pool matures.
 
 ## What's In It For You
 
@@ -290,7 +290,7 @@ The selfish reason to play the Game is not the VOTE payout or the pool return. I
 
 ## How the Game Spreads
 
-Everything below this point (the lobbying, the treaty campaigns, the clinical trial infrastructure, the [decentralized FDA](../solution/dfda.qmd) [@dfda-spec-paper-2025; @dfda-impact-paper-2025]) is not your job. {{< var global_coordination_target_supporters_nounit >}} people whose payout depends on curing diseases will attract the lobbyists, researchers, and institutions who know how to cure diseases. You do not need to understand lobbying or clinical trial design. You need to understand that a large enough pile of money pointed at "cure diseases" attracts the people who do. This is how your species built every industry it has. Nobody coordinated the smartphone supply chain. The money coordinated it.
+Everything below this point (the lobbying, the treaty campaigns, the clinical trial infrastructure, the [decentralized FDA](../solution/dfda.qmd) [@dfda-spec-paper-2025; @dfda-impact-paper-2025]) is not your job. {{< var global_registered_voters_nounit >}} people whose payout depends on curing diseases will attract the lobbyists, researchers, and institutions who know how to cure diseases. You do not need to understand lobbying or clinical trial design. You need to understand that a large enough pile of money pointed at "cure diseases" attracts the people who do. This is how your species built every industry it has. Nobody coordinated the smartphone supply chain. The money coordinated it.
 
 1. **A host launches the [Planetary Constitutional Convention](planetary-constitutional-convention.qmd) [@planetary-constitutional-convention-paper-2025].** The manual gets stress-tested. PRIZE deposits begin. You deposit and recruit. (This is the hard part. Everything after this is money doing what money does.)
 2. **The referendum opens.** Voters set their preferred military-to-health allocation. Every recruiter who brings a verified participant earns VOTE points. The referendum grows because recruitment is rewarded. On your planet, this is called "going viral." On Wishonia, it is called "obvious."
@@ -318,7 +318,7 @@ Look at this cured disease. There is not a single person in the world who could 
 
 ## How Many Papers Does It Take to Save a Species
 
-**What does it cost to get the Game to scale?** Here is what it costs to pay {{< var global_coordination_target_supporters_nounit >}} people to click a button:
+**What does it cost to get the Game to scale?** Here is what it costs to pay {{< var global_registered_voters_nounit >}} people to click a button:
 
 {{< var global_coordination_activation_budget_latex >}}
 
@@ -338,9 +338,9 @@ How big does the pool need to be before two VOTE points are worth more than a re
 
 **What does a VOTE point pay?** The modeled coordination target is {{< var global_coordination_target_pct >}} of humanity:
 
-{{< var global_coordination_target_supporters_latex >}}
+{{< var global_registered_voters_latex >}}
 
-At that headcount, {{< var global_coordination_target_supporters_nounit >}} people participate and split the pool based on how many people they recruited. One referred voter is one point. The payout per VOTE point (at {{< var prize_pool_participation_rate >}} participation):
+At that headcount, {{< var global_registered_voters_nounit >}} people participate and split the pool based on how many people they recruited. One referred voter is one point. The payout per VOTE point (at {{< var prize_pool_participation_rate >}} participation):
 
 {{< var vote_token_value_latex >}}
 

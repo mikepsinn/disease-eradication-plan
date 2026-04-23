@@ -20,14 +20,14 @@ display_name = "Global Coordination Activation Budget"
 
 # Baseline and units
 
-baseline = 30000000000.0
+baseline = 30832926217.5
 
 # Tornado data from sensitivity analysis
 
-drivers = ['GLOBAL_COORDINATION_ACTIVATION_REWARD_PER_VERIFIED_PARTICIPANT', 'GLOBAL_COORDINATION_VERIFICATION_AND_PAYMENT_COST_PER_PARTICIPANT', 'GLOBAL_COORDINATION_PLATFORM_AND_OPERATIONS_COST', 'GLOBAL_POPULATION_2024']
-driver_labels = ['Activation Reward per Verified Participant', 'Verification and Payment Cost per Participant', 'Global Coordination Platform and Operations Cost', 'Global Population in 2024']
-impacts_low = [-12000000000.0, -2000000000.0, -2000000000.0, -650000000.0]
-impacts_high = [20000000000.0, 6000000000.0, 4000000000.0, 650000000.0]
+drivers = ['GLOBAL_COORDINATION_ACTIVATION_REWARD_PER_VERIFIED_PARTICIPANT', 'GLOBAL_COORDINATION_VERIFICATION_AND_PAYMENT_COST_PER_PARTICIPANT', 'GLOBAL_COORDINATION_PLATFORM_AND_OPERATIONS_COST']
+driver_labels = ['Activation Reward per Verified Participant', 'Verification and Payment Cost per Participant', 'Global Coordination Platform and Operations Cost']
+impacts_low = [-12384427485.0, -2064071247.5, -2000000000.0]
+impacts_high = [20640712475.0, 6192213742.5, 4000000000.0]
 
 # Convert deltas to absolute values (baseline + delta)
 

@@ -79,7 +79,7 @@ The strategy: Generate referral links, pay people $0.25-0.30 per verified vote, 
 
 Comparable: Traditional petition signatures cost $14.87 each in 2024 (Ballotpedia). You're 96% cheaper.
 
-**Target: {{< var treaty_campaign_voting_bloc_target >}} verified votes** ({{< var global_population_activism_threshold_pct >}} of global population = tipping point for social change)
+**Target: {{< var three_point_five_percent_of_global_population >}} verified votes** ({{< var global_population_activism_threshold_pct >}} of global population = tipping point for social change)
 
 #### Payment structure
 
@@ -144,7 +144,7 @@ Alternative: Skip this, use the $30M to increase verification budget or referral
 
 **Total Budget: {{< var treaty_campaign_viral_referendum_base_case >}}**
 
-**The Challenge**: Not all voters cost the same. Early adopters (believers, idealists) vote for minimal incentive. But hitting {{< var treaty_campaign_voting_bloc_target >}} votes ({{< var global_population_activism_threshold_pct >}} of global population) requires skeptics and the actively resistant.
+**The Challenge**: Not all voters cost the same. Early adopters (believers, idealists) vote for minimal incentive. But hitting {{< var three_point_five_percent_of_global_population >}} votes ({{< var global_population_activism_threshold_pct >}} of global population) requires skeptics and the actively resistant.
 
 ![Early adopters are cheap to recruit because they're excited. Late adopters are expensive because they're suspicious. Eventually everyone costs money because you've run out of people who think independently. Human nature follows a predictable curve. So does human price.](/assets/images/campaign-budget/campaign-budget-section-budget-viral-referendum-with-tiered-incentives-base-case-scenario-bw-academic.jpg)
 
@@ -173,8 +173,8 @@ Alternative: Skip this, use the $30M to increase verification budget or referral
 
 **Still dramatically cheaper than alternatives**:
 
-- Traditional petition gathering: {{< var treaty_campaign_voting_bloc_target >}} $14.87 = $4.2B
-- Digital advertising: {{< var treaty_campaign_voting_bloc_target >}} $10 avg = $2.8B
+- Traditional petition gathering: {{< var three_point_five_percent_of_global_population >}} $14.87 = $4.2B
+- Digital advertising: {{< var three_point_five_percent_of_global_population >}} $10 avg = $2.8B
 - This approach (upper bound): $406M
 
 **You're 90% cheaper in the worst case.**
@@ -356,7 +356,7 @@ Papers for when plans fail (plans always fail somewhere)
 
 **Years 2-3** ({{< var campaign_phase2_budget >}}): Scale
 
-- {{< var treaty_campaign_voting_bloc_target >}} total votes
+- {{< var three_point_five_percent_of_global_population >}} total votes
 - 20+ countries negotiating treaties
 - Platform handles global traffic
 
