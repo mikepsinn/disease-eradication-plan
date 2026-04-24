@@ -70,7 +70,7 @@ WHEREAS, the Department of "Defense" has "misplaced" $2.46 trillion, failed seve
 
 WHEREAS, pre-WW2 U.S. military spending was {{< var us_1939_military_spending_pct_lower_than_current >}} lower than today's peacetime budget, in constant dollars [@us-military-spending-historical-constant-dollars]. The U.S. still won World War II, then cut military spending {{< var post_ww2_military_cut_pct >}} in two years [@us-post-wwii-military-spending-cut] and produced the fastest growth in median standard of living in history. 
 
-WHEREAS, unless the human genome has significantly degraded in the two generations since, a one percent improvement in resourrce allocation should be manageable;
+WHEREAS, unless the human genome has significantly degraded in the two generations since, a one percent improvement in resource allocation should be manageable;
 
 WHEREAS, global military spending has been growing {{< var global_military_spending_real_cagr_20yr >}} a year for twenty years [@sipri-milex-2024], and nobody has told it to stop. At this rate, every human alive will pay about {{< var global_war_cost_lifetime_per_person_baseline >}} over their lifetime [@1-pct-treaty-impact-paper-2025], mostly for explosions in countries they cannot find on a map. A one percent cut tells it to stop. That saves the average person about {{< var peace_dividend_lifetime_per_person >}} ([the peace dividend](../economics/peace-dividend.qmd));
 

@@ -85,7 +85,7 @@ Building a nuclear bomb requires mass spectrometers, centrifuge cascades, and so
 
 But somehow "stop" is the unrealistic part.
 
-You already admitted improvement is physically possible. You know "stop" isn't the unrealistic part. Getting the next human in the chain to spend 30 seconds is.
+You already admitted improvement is physically possible. You know "stop" isn't the unrealistic part. Getting one billionaire to read a PDF is.
 
 ### The Sacred Order of Paper Distribution
 
@@ -212,7 +212,9 @@ Your National Institutes of Health, the agency nominally responsible for finding
 
 Then there's a 8.2 years delay between proving a drug is safe and letting dying humans take it. The drug passed the safety test. Everyone agrees it won't kill you. But you still can't have it because a committee needs to spend 8.2 years making sure it works well enough. You'd volunteer for the trials that would answer that question faster, but so would 1.08 billion people other patients, and the current system has 1.9 million slots. That's a participation rate of 0.06%. It's like a lifeguard who confirms the life preserver floats, then locks it in a cabinet for years to study its buoyancy profile while a billion people drown in line for the two available life jackets.
 
-Your regulatory system can make two mistakes: approve a bad drug (Type I error), or block a good drug (Type II error). Your FDA is terrified of the first mistake and completely ignores the second. I calculated the ratio: for every 1 person protected from a dangerous drug, 3,068 people die waiting for a safe one that's locked in the approval cabinet. Even if you assume a Thalidomide-scale catastrophe happens during post-phase 1 efficacy testing every single year (even though it wouldn't because Phase I safety testing actually caught it anyway), the deaths from just the efficacy delay still outnumber the deaths from bad drugs by 3,068 to 1. Your safety system's main product is dead patients.
+Your regulatory system can make two mistakes: approve a bad drug (Type I error), or block a good drug (Type II error). Your FDA is terrified of the first mistake and completely ignores the second. I [calculated the ratio](https://manual.warondisease.org/knowledge/appendix/invisible-graveyard.html): for every 1 person protected from a dangerous drug, 3,068 people die waiting for a safe one that's locked in the approval cabinet. Even if you assume a Thalidomide-scale catastrophe happens during post-phase 1 efficacy testing every single year (even though it wouldn't because Phase I safety testing actually caught it anyway), the deaths from just the efficacy delay still outnumber the deaths from bad drugs by 3,068 to 1. Your safety system's main product is dead patients.
+
+Think about someone you love who is suffering right now. The treatment that would help them exists as an untested compound on a shelf, because the money bought a missile instead. That missile incinerated a child who would have grown up to discover the cure. You lose the treatment. You lose the scientist. You get the tax bill. You get to pay for her murder. One percent fixes this. One vote starts it.
 
 ---
 
@@ -280,7 +282,7 @@ Your decentralized FDA figures out which treatments work. But your governments a
 
 Humans usually want "proof" before they stop doing something stupid, which is interesting because you never required proof before starting:
 
-- The RECOVERY trial tested 6 treatments on 48,000 patients for $500 per patient instead of the usual $41,000 per patient. That's a 82x cost reduction. Not in theory. In reality. During a pandemic. While panicking. Your species does its best medical research when terrified and disorganized, which suggests your normal system is somehow worse than panic.
+- [The RECOVERY trial](https://manual.warondisease.org/knowledge/appendix/recovery-trial.html) tested 6 treatments on 48,000 patients for $500 per patient instead of the usual $41,000 per patient. That's a 82x cost reduction. Not in theory. In reality. During a pandemic. While panicking. Your species does its best medical research when terrified and disorganized, which suggests your normal system is somehow worse than panic.
 - After WW2, humans cut military spending by 87.6% in two years and stumbled into the greatest economic boom in history by running out of people to shoot at. You're now spending 30.6x the pre-WW2 baseline in inflation-adjusted dollars. You're asking for 1%. Even people who really, really, love exploding people should be able to handle 1%.
 
 ![You've already done harder things than this](https://manual.warondisease.org/assets/images/index-manual/index-manual-section-the-evidence-bw-academic.jpg)
@@ -450,6 +452,8 @@ Now look at this cured disease.
 
 There is not a single person in the world who could cure it. The researcher in Lagos who found the cheaper trial design does not know the lobbyist in Brussels who passed the directive. The lobbyist does not know the nonprofit in Manila that recruited a million voters. The voters do not know the bondholder in New York whose greed funded the campaign. The bondholder does not know the politician in Delhi who voted yes because the Super PAC funded her opponent last time she voted no. The politician does not know the factory worker in Dhaka whose clinical trial enrollment generated the data that proved the treatment worked. Literally millions of people cooperated to cure this disease. No one sitting in a central office gave orders. No military police enforced the orders that were not given. Two numbers on a Scoreboard and pieces of paper with presidents on them did what no committee, no charity, and no central plan has ever done.
 
+The five steps above are the machinery. You do not need to build the machinery. You need to turn it on. Here is the switch.
+
 ### The Earth Optimization Game
 
 A pool of money. Two numbers on a Scoreboard: how long people live, how much they earn. By 2040, if the numbers went up, VOTE point-holders split the pool. If they didn't, depositors divide it pro rata (still beats your retirement account). You earn VOTE points by getting friends to play. Nobody loses. The only losing move is not playing.
@@ -503,9 +507,9 @@ And here is the part that should bother you: the [incentive structure](https://m
 
 Count what you didn't object to. Improvement is physically possible (you said so at the top). The benefits compound (healthier workers produce more, which funds more cures, which you just read). Politicians respond to money (that's the Super PAC). Rich people prefer not dying (that's the bonds). And the only bottleneck is humans in the chain choosing "later" over 30 seconds. Five premises. You let every one of them pass unchallenged, because each one is individually obvious. The conclusion is just what happens when you add them up.
 
-That's the Logical Inevitability Theorem with numbers attached. Try rejecting any one of those five premises out loud and see how it sounds.
+That's the [Logical Inevitability Theorem](https://manual.warondisease.org/knowledge/appendix/recruitment-and-propaganda-plan.html#logical-inevitability-theorem) with numbers attached. Try rejecting any one of those five premises out loud and see how it sounds.
 
-Forwarding this takes 30 seconds. At the global average wage, that costs you $0.06. If the treaty path works, your lifetime income goes up by $3.48 million. The ratio is 58.1Mx to one. For not forwarding to be rational, the probability of success has to fall below 1 in 58.1 million. You just let all five premises pass. You cannot simultaneously hold those premises and a probability that low.
+Forwarding this takes 30 seconds. At the global average wage, that costs you $0.06. If the treaty path works, your lifetime income goes up by $3.48 million. The ratio is 58.1Mx to one. For not forwarding to be rational, the probability of success has to fall below 1 in 58.1 million. You just let all five premises pass. You cannot simultaneously hold those premises and a probability that low. Not forwarding this is not caution. It is the single failure mode the math can't route around.
 
 You don't need to know a billionaire. You're six degrees of separation from one. Forward this to one person with more reach than you. They forward to one person with more reach than them. Even with 90% of the chain dismissing it, the [model](https://manual.warondisease.org/knowledge/appendix/treaty-feasibility.html#sec-chain-reaction-model) shows it reaches someone who can act within 3 years. Not because anyone in the chain is brave. Because each one is selfish, and the math rewards forwarding.
 
@@ -517,7 +521,9 @@ Every person in the chain will do exactly what you're about to do, for exactly t
 
 Humans aren't stupid. You invented cheese, which is milk you left out until it went bad but in a good way. That's genius. You just need to apply that same innovation to not dying.
 
-Go to [warondisease.org](https://warondisease.org) and cast your vote in the largest referendum in human history (fifteen seconds). Get two friends to do the same. That's how the doubling starts. Every minute of delay, 104 humans permanently stop. Your vote saves 38.4 lives and prevents 6.9 million hours of suffering.
+Here is what should scare you: if this works, the world becomes unrecognizable. Not slightly better. Unrecognizable. Disease eradicated, income quadrupled, your species freed from the thing that has been eating it alive since before you invented writing. That future is so good your brain can't render it. 
+
+Go to [warondisease.org](https://warondisease.org) and cast your vote in the largest referendum in human history. Get two friends to do the same. That's how the doubling starts. Every minute of delay, 104 humans permanently stop. Your vote saves 38.4 lives and prevents 6.9 million hours of suffering.
 
 
 The universe is literally offering you infinite money and eternal life, and you're thinking about it.
