@@ -1,6 +1,6 @@
 ```{python}
 #| echo: false
-#| fig-cap: "Monte Carlo Distribution: 3.5% of Global Population (10,000 simulations)"
+#| fig-cap: "Monte Carlo Distribution: 3.5% Activism Benchmark (10,000 simulations)"
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -23,7 +23,7 @@ std = 168590044.28222427
 p5 = 84175724.43733144
 p50 = 232227856.80388364
 p95 = 638719402.961784
-display_name = "3.5% of Global Population"
+display_name = "3.5% Activism Benchmark"
 units = "of people"
 
 # Create figure with two subplots
@@ -113,7 +113,7 @@ add_png_metadata(
 plt.show()
 ```
 
-**Simulation Results Summary: 3.5% of Global Population**
+**Simulation Results Summary: 3.5% Activism Benchmark**
 
 | Statistic | Value |
 |:----------|------:|
@@ -123,4 +123,4 @@ plt.show()
 | Standard Deviation | 169 million |
 | 90% Range (5th-95th percentile) | [84.2 million, 639 million] |
 
-*The histogram shows the distribution of 3.5% of Global Population across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*
+*The histogram shows the distribution of 3.5% Activism Benchmark across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

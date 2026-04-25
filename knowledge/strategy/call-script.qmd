@@ -64,11 +64,11 @@ The 1% Treaty is the same bet. Except the thing on the ground is not $100. It is
 
 You already know you would pick up the bill. This is the same decision. Bigger bill.
 
-Your vote, if the treaty passes, is attributable to {{< var voter_lives_saved >}} saved and {{< var voter_suffering_hours_prevented >}} of suffering prevented. At the standard economic value of a year of healthy life ({{< var standard_economic_qaly_value_usd >}}), that works out to over $100 million of value per voter. The cost of casting the vote is {{< var sharing_opportunity_cost >}} of your time at the global average wage of {{< var global_avg_hourly_income >}} per hour.
+Your vote, if the treaty passes, is attributable to {{< var voter_lives_saved >}} saved and {{< var voter_suffering_hours_prevented >}} of suffering prevented. The cost of casting the vote is {{< var sharing_opportunity_cost >}} of your time at the global average wage of {{< var global_avg_hourly_income >}} per hour.
 
-Each phone call is about five minutes. Suppose one in ten calls produces a real new voter. That is about $10 million of expected payoff per successful call, if the plan works. Then multiply by the chance you think the plan works.
+Each phone call is about five minutes. Suppose one in ten calls produces a real new voter. Then every successful call moves the majority-of-humanity scoreboard by one more verified human. Multiply the impact above by whatever chance you think the treaty has.
 
-- At a pessimistic one-in-ten-thousand chance, each call is worth about $1,000 in expected payoff. Twelve calls per hour means about $12,000 per hour. That is roughly 1,600 times your normal wage.
+- At a pessimistic one-in-ten-thousand chance, the expected value still beats normal uses of five minutes by a stupid margin.
 - At one-in-a-thousand, $120,000 per hour. About 16,000 times your wage.
 - At one percent, $1.2 million per hour. About 160,000 times your wage.
 
@@ -173,7 +173,7 @@ Ask the questions in order. Wait for the answer. Do not move on until they agree
 
 13. "Sharing this with one person you love takes about thirty seconds to message them plus one phone call. Agreed?" *Agreed.*
 
-14. "Can you think of anything you could do with thirty seconds that would prevent more death and suffering than shifting the eradication of disease forward in time?" *They cannot. Do not help them. Let the silence sit. If they say "my one vote will not matter," answer: "No movement that hit 3.5% has ever failed. The 3.5% is made of individual votes. Yours is one. Your vote plus the two people you recruit plus the people they recruit is how 3.5% happens. Individual votes are the only thing big numbers are made of."*
+14. "Can you think of anything you could do with thirty seconds that would prevent more death and suffering than shifting the eradication of disease forward in time?" *They cannot. Do not help them. Let the silence sit. If they say "my one vote will not matter," answer: "A majority of humanity is made of individual votes. Yours is one. Your vote plus the two people you recruit plus the people they recruit is how the majority appears. Individual votes are the only thing big numbers are made of."*
 
 15. "Can you think of anything else you could do with thirty seconds that would add more than {{< var treaty_trajectory_lifetime_income_gain_per_capita >}} to your own lifetime income?" *They cannot.*
 

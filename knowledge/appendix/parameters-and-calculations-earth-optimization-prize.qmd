@@ -3798,7 +3798,7 @@ $$
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Canonical institutional activation threshold: capital required to make participation by the full estimated registered electorate credible through direct referral incentives, verification, payment rails, and global launch operations. This is the main institutional ask, not the PRIZE pool seed benchmark.
+Canonical institutional activation threshold: capital required to make participation by the majority-of-humanity coordination target credible through direct referral incentives, verification, payment rails, and global launch operations. This is the main institutional ask, not the PRIZE pool seed benchmark.
 
 **Inputs**:
 
@@ -3877,11 +3877,11 @@ $$
 
 :::
 
-### Registered Voters as Share of Global Population: 51.6% {#sec-global_coordination_target_pct}
+### Majority of Humanity Coordination Target: 51.6% {#sec-global_coordination_target_pct}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Estimated global registered electorate as a share of global population (global registered voters divided by global population).
+Majority-of-humanity public coordination target as a share of global population, using global registered voters as the current verified-human headcount proxy.
 
 **Inputs**:
 
@@ -3890,7 +3890,7 @@ Estimated global registered electorate as a share of global population (global r
 
 $$
 \begin{gathered}
-R_{voters,global} \\
+R_{humanity,majority} \\
 = \frac{N_{voters,global}}{Pop_{global}} \\
 = \frac{4.13B}{8B} \\
 = 51.6\%
@@ -4554,7 +4554,7 @@ $$
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Secondary PRIZE seed benchmark: initial principal required so that the pool can make two referred votes retirement-equivalent on success at the full estimated registered-electorate target. This is a stronger-incentive visible-pool benchmark, not the minimum capital required to make full registered-electorate participation credible.
+Secondary PRIZE seed benchmark: initial principal required so that the pool can make two referred votes retirement-equivalent on success at the majority-of-humanity coordination target. This is a stronger-incentive visible-pool benchmark, not the minimum capital required to make majority-of-humanity participation credible.
 
 **Inputs**:
 
@@ -5081,11 +5081,11 @@ $$
 
 :::
 
-### 3.5% of Global Population: 280 million of people {#sec-three_point_five_percent_of_global_population}
+### 3.5% Activism Benchmark: 280 million of people {#sec-three_point_five_percent_of_global_population}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Headcount implied by the 3.5% activism threshold applied to global population. Wide CI reflects uncertainty in applying Chenoweth's national threshold to global treaty adoption.
+Headcount implied by the 3.5% activism threshold applied to global population. This is a historical tipping-point benchmark, not the public majority-of-humanity coordination target. Wide CI reflects uncertainty in applying Chenoweth's national threshold to global treaty adoption.
 
 **Inputs**:
 
@@ -5094,7 +5094,7 @@ Headcount implied by the 3.5% activism threshold applied to global population. W
 
 $$
 \begin{gathered}
-N_{voters,target} \\
+N_{activism} \\
 = Pop_{global} \times Threshold_{activism} \\
 = 8B \times 3.5\% \\
 = 280M
@@ -12468,7 +12468,7 @@ Critical mass threshold for social change (3.5% rule). Chenoweth studied nationa
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Best current register-based estimate of the number of registered voters worldwide, calculated by summing the latest available country-level electoral-roll counts in International IDEA's Voter Turnout Database export.
+Best current register-based estimate of the number of registered voters worldwide, calculated by summing the latest available country-level electoral-roll counts in International IDEA's Voter Turnout Database export. Used as the verified-human headcount proxy for the majority-of-humanity coordination target.
 
 **Source**: [@international-idea-voter-turnout-database-2026]
 
@@ -13312,7 +13312,7 @@ Planning midpoint for the direct cash incentive required to make a successful ve
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Fixed cost to run a global activation campaign toward participation by the full estimated registered electorate: platform buildout, localization, customer support, compliance, payout operations, fraud response, and regional launch infrastructure.
+Fixed cost to run a global activation campaign toward majority-of-humanity participation: platform buildout, localization, customer support, compliance, payout operations, fraud response, and regional launch infrastructure.
 
 #### Uncertainty Range
 

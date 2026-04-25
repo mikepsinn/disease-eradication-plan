@@ -4478,7 +4478,7 @@ $$
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Canonical institutional activation threshold: capital required to make participation by the full estimated registered electorate credible through direct referral incentives, verification, payment rails, and global launch operations. This is the main institutional ask, not the PRIZE pool seed benchmark.
+Canonical institutional activation threshold: capital required to make participation by the majority-of-humanity coordination target credible through direct referral incentives, verification, payment rails, and global launch operations. This is the main institutional ask, not the PRIZE pool seed benchmark.
 
 **Inputs**:
 
@@ -4557,11 +4557,11 @@ $$
 
 :::
 
-### Registered Voters as Share of Global Population: 51.6% {#sec-global_coordination_target_pct}
+### Majority of Humanity Coordination Target: 51.6% {#sec-global_coordination_target_pct}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Estimated global registered electorate as a share of global population (global registered voters divided by global population).
+Majority-of-humanity public coordination target as a share of global population, using global registered voters as the current verified-human headcount proxy.
 
 **Inputs**:
 
@@ -4570,7 +4570,7 @@ Estimated global registered electorate as a share of global population (global r
 
 $$
 \begin{gathered}
-R_{voters,global} \\
+R_{humanity,majority} \\
 = \frac{N_{voters,global}}{Pop_{global}} \\
 = \frac{4.13B}{8B} \\
 = 51.6\%
@@ -8890,11 +8890,11 @@ $$
 
 :::
 
-### 3.5% of Global Population: 280 million of people {#sec-three_point_five_percent_of_global_population}
+### 3.5% Activism Benchmark: 280 million of people {#sec-three_point_five_percent_of_global_population}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Headcount implied by the 3.5% activism threshold applied to global population. Wide CI reflects uncertainty in applying Chenoweth's national threshold to global treaty adoption.
+Headcount implied by the 3.5% activism threshold applied to global population. This is a historical tipping-point benchmark, not the public majority-of-humanity coordination target. Wide CI reflects uncertainty in applying Chenoweth's national threshold to global treaty adoption.
 
 **Inputs**:
 
@@ -8903,7 +8903,7 @@ Headcount implied by the 3.5% activism threshold applied to global population. W
 
 $$
 \begin{gathered}
-N_{voters,target} \\
+N_{activism} \\
 = Pop_{global} \times Threshold_{activism} \\
 = 8B \times 3.5\% \\
 = 280M
@@ -12954,23 +12954,23 @@ $$
 
 :::
 
-### Lives Saved per Voter: 38.4 lives {#sec-voter_lives_saved}
+### Lives Saved per Verified Voter: 2.6 lives {#sec-voter_lives_saved}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Lives saved attributable to each voter if the treaty passes (total lives saved ÷ 3.5% voting bloc target)
+Average lives saved per verified voter if the treaty passes (total lives saved divided by the majority-of-humanity coordination target).
 
 **Inputs**:
 
 - [Total Lives Saved from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput](#sec-dfda_trial_capacity_plus_efficacy_lag_lives_saved) 🔢: 10.7 billion deaths
-- [3.5% of Global Population](#sec-three_point_five_percent_of_global_population) 🔢: 280 million of people
+- [Global Registered Voters](#sec-global_registered_voters) 📊: 4.13 billion of people
 
 $$
 \begin{gathered}
 Lives_{voter} \\
-= \frac{Lives_{max}}{N_{voters,target}} \\
-= \frac{10.7B}{280M} \\
-= 38.4
+= \frac{Lives_{max}}{N_{voters,global}} \\
+= \frac{10.7B}{4.13B} \\
+= 2.6
 \end{gathered}
 $$
 where:
@@ -13059,15 +13059,6 @@ OPEX_{dFDA} \\
 = \$40M
 \end{gathered}
 $$
-where:
-$$
-\begin{gathered}
-N_{voters,target} \\
-= Pop_{global} \times Threshold_{activism} \\
-= 8B \times 3.5\% \\
-= 280M
-\end{gathered}
-$$
 *✓ High confidence*
 
 #### Sensitivity Analysis
@@ -13086,23 +13077,23 @@ $$
 
 :::
 
-### Suffering Hours Prevented per Voter: 6.9 million hours {#sec-voter_suffering_hours_prevented}
+### Suffering Hours Prevented per Verified Voter: 468 thousand hours {#sec-voter_suffering_hours_prevented}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Hours of suffering prevented attributable to each voter if the treaty passes (total suffering hours ÷ 3.5% voting bloc target)
+Average suffering hours prevented per verified voter if the treaty passes (total suffering hours divided by the majority-of-humanity coordination target).
 
 **Inputs**:
 
 - [Suffering Hours Eliminated from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput](#sec-dfda_trial_capacity_plus_efficacy_lag_suffering_hours) 🔢: 1.93 quadrillion hours
-- [3.5% of Global Population](#sec-three_point_five_percent_of_global_population) 🔢: 280 million of people
+- [Global Registered Voters](#sec-global_registered_voters) 📊: 4.13 billion of people
 
 $$
 \begin{gathered}
 Hours_{suffer,voter} \\
-= \frac{Hours_{suffer,max}}{N_{voters,target}} \\
-= \frac{1930T}{280M} \\
-= 6.9M
+= \frac{Hours_{suffer,max}}{N_{voters,global}} \\
+= \frac{1930T}{4.13B} \\
+= 468{,}000
 \end{gathered}
 $$
 where:
@@ -13198,15 +13189,6 @@ OPEX_{dFDA} \\
 + Cost_{regulatory} + Cost_{community} \\
 = \$15M + \$10M + \$8M + \$5M + \$2M \\
 = \$40M
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-N_{voters,target} \\
-= Pop_{global} \times Threshold_{activism} \\
-= 8B \times 3.5\% \\
-= 280M
 \end{gathered}
 $$
 *✓ High confidence*
@@ -16442,7 +16424,7 @@ Critical mass threshold for social change (3.5% rule). Chenoweth studied nationa
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Best current register-based estimate of the number of registered voters worldwide, calculated by summing the latest available country-level electoral-roll counts in International IDEA's Voter Turnout Database export.
+Best current register-based estimate of the number of registered voters worldwide, calculated by summing the latest available country-level electoral-roll counts in International IDEA's Voter Turnout Database export. Used as the verified-human headcount proxy for the majority-of-humanity coordination target.
 
 **Source**: [@international-idea-voter-turnout-database-2026]
 
@@ -18424,7 +18406,7 @@ Planning midpoint for the direct cash incentive required to make a successful ve
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Fixed cost to run a global activation campaign toward participation by the full estimated registered electorate: platform buildout, localization, customer support, compliance, payout operations, fraud response, and regional launch infrastructure.
+Fixed cost to run a global activation campaign toward majority-of-humanity participation: platform buildout, localization, customer support, compliance, payout operations, fraud response, and regional launch infrastructure.
 
 #### Uncertainty Range
 

@@ -5435,11 +5435,11 @@ $$
 
 :::
 
-### 3.5% of Global Population: 280 million of people {#sec-three_point_five_percent_of_global_population}
+### 3.5% Activism Benchmark: 280 million of people {#sec-three_point_five_percent_of_global_population}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Headcount implied by the 3.5% activism threshold applied to global population. Wide CI reflects uncertainty in applying Chenoweth's national threshold to global treaty adoption.
+Headcount implied by the 3.5% activism threshold applied to global population. This is a historical tipping-point benchmark, not the public majority-of-humanity coordination target. Wide CI reflects uncertainty in applying Chenoweth's national threshold to global treaty adoption.
 
 **Inputs**:
 
@@ -5448,7 +5448,7 @@ Headcount implied by the 3.5% activism threshold applied to global population. W
 
 $$
 \begin{gathered}
-N_{voters,target} \\
+N_{activism} \\
 = Pop_{global} \times Threshold_{activism} \\
 = 8B \times 3.5\% \\
 = 280M

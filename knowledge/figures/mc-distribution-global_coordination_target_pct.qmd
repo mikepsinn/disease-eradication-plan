@@ -1,6 +1,6 @@
 ```{python}
 #| echo: false
-#| fig-cap: "Monte Carlo Distribution: Registered Voters as Share of Global Population (10,000 simulations)"
+#| fig-cap: "Monte Carlo Distribution: Majority of Humanity Coordination Target (10,000 simulations)"
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -23,7 +23,7 @@ std = 0.006310623277045763
 p5 = 0.5053595517593127
 p50 = 0.5161464637800888
 p95 = 0.5271973668344914
-display_name = "Registered Voters as Share of Global Population"
+display_name = "Majority of Humanity Coordination Target"
 units = "percent"
 
 # Create figure with two subplots
@@ -113,7 +113,7 @@ add_png_metadata(
 plt.show()
 ```
 
-**Simulation Results Summary: Registered Voters as Share of Global Population**
+**Simulation Results Summary: Majority of Humanity Coordination Target**
 
 | Statistic | Value |
 |:----------|------:|
@@ -123,4 +123,4 @@ plt.show()
 | Standard Deviation | 0.631% |
 | 90% Range (5th-95th percentile) | [50.5%, 52.7%] |
 
-*The histogram shows the distribution of Registered Voters as Share of Global Population across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*
+*The histogram shows the distribution of Majority of Humanity Coordination Target across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

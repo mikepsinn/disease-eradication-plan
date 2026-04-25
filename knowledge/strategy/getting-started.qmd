@@ -19,7 +19,7 @@ You have a nonprofit. You have a website with the voting widget. You have the bo
 
 Grant applications are documents humans spend two hundred hours writing so a committee can spend forty minutes saying no. The average success rate is low because most applicants cannot explain, in numbers a skeptic will accept, why their plan beats bed nets.
 
-Your plan beats bed nets. The math is published. Each voter is attributable to {{< var voter_lives_saved >}} and {{< var voter_suffering_hours_prevented >}} of prevented suffering, which at the standard value of a year of healthy life ({{< var standard_economic_qaly_value_usd >}}) works out to over $100 million per voter. Probability-discount that at any reasonable rate. It still beats bed nets by {{< var treaty_expected_vs_bed_nets_multiplier >}}. The skeptics you need to convince are called Effective Altruists. They already like math.
+Your plan beats bed nets. The math is published. Each voter is attributable to {{< var voter_lives_saved >}} and {{< var voter_suffering_hours_prevented >}} of prevented suffering. Probability-discount that at any reasonable rate. It still beats bed nets by {{< var treaty_expected_vs_bed_nets_multiplier >}}. The skeptics you need to convince are called Effective Altruists. They already like math.
 
 Targets, in order of response speed:
 

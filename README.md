@@ -523,7 +523,7 @@ Humans aren't stupid. You invented cheese, which is milk you left out until it w
 
 Here is what should scare you: if this works, the world becomes unrecognizable. Not slightly better. Unrecognizable. Disease eradicated, income quadrupled, your species freed from the thing that has been eating it alive since before you invented writing. That future is so good your brain can't render it. 
 
-Go to [warondisease.org](https://warondisease.org) and cast your vote in the largest referendum in human history. Get two friends to do the same. That's how the doubling starts. Every minute of delay, 104 humans permanently stop. Your vote saves 38.4 lives and prevents 6.9 million hours of suffering.
+Go to [warondisease.org](https://warondisease.org) and cast your vote in the largest referendum in human history. Get two friends to do the same. That's how the doubling starts. Every minute of delay, 104 humans permanently stop. Your vote saves 2.6 lives and prevents 468 thousand hours of suffering.
 
 
 The universe is literally offering you infinite money and eternal life, and you're thinking about it.

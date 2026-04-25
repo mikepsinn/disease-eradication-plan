@@ -51,7 +51,7 @@ On Wishonia, we would not need a website for this. We would say "please stop let
 
 Requirements: the votes have to be real (auditable), the votes have to be secret (privacy-preserving), the system has to work for everyone including people without bank accounts or government IDs (which is most of Earth, a fact that surprises the people with bank accounts), the code has to be open-source so anyone can audit it, and the whole thing has to grow fast enough to matter before your species gets distracted by a new television show.
 
-Target: **{{< var global_coordination_target_pct >}} global participation** ({{< var global_registered_voters_nounit >}}+ verified votes). That is the canonical public coordination target in the prize model. The old Chenoweth-style {{< var global_population_activism_threshold_pct >}} threshold is useful as a historical lower bound for when movements become hard to ignore, not as the end-state goal here.
+Target: **{{< var global_coordination_target_pct >}} of humanity** ({{< var global_registered_voters_nounit >}}+ verified votes). That is the canonical public coordination target in the prize model. The old Chenoweth-style {{< var global_population_activism_threshold_pct >}} threshold is useful as a historical lower bound for when movements become hard to ignore, not as the end-state goal here.
 
 ## The Voting System
 

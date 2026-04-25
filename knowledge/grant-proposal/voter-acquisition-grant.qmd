@@ -20,9 +20,9 @@ This chapter is a grant proposal template. It is designed to be handed to funder
 
 **The intervention.** Redirect 1% of global military spending to clinical trials. This produces {{< var dfda_trial_capacity_multiplier_nounit >}} times more clinical-trial capacity and compresses the timeline for eradicating every known disease from {{< var status_quo_queue_clearance_years_nounit >}} years to {{< var dfda_queue_clearance_years_nounit >}}.
 
-**The activation threshold.** {{< var global_population_activism_threshold_pct >}} of global population actively supporting ({{< var three_point_five_percent_of_global_population_nounit >}} verified voters). Every movement that has hit this threshold in the last century has succeeded. Zero exceptions {{< var global_population_activism_threshold_pct_cite >}}.
+**The activation threshold.** The public target is a verified majority of humanity: {{< var global_coordination_target_pct >}} of humanity, or {{< var global_registered_voters_nounit >}} verified voters. The {{< var global_population_activism_threshold_pct >}} Chenoweth benchmark remains the historical lower bound for when movements become hard to ignore {{< var global_population_activism_threshold_pct_cite >}}.
 
-**The cost-effectiveness.** Each verified voter is attributable to {{< var voter_lives_saved >}} saved and {{< var voter_suffering_hours_prevented >}} of suffering prevented. At the standard economic value of a year of healthy life ({{< var standard_economic_qaly_value_usd >}}), that works out to over $100 million of value per voter. Per-dollar, probability-discounted, this is the highest-expected-value intervention a global-health funder can support.
+**The cost-effectiveness.** Each verified voter is attributable to {{< var voter_lives_saved >}} saved and {{< var voter_suffering_hours_prevented >}} of suffering prevented. Per-dollar, probability-discounted, this is the highest-expected-value intervention a global-health funder can support.
 
 **Why a coordinator, not direct ads.** A coordinator grant unlocks roughly ten to fifty times more ad spend than a direct-ads grant of the same size, by activating the dormant Google Ad Grants that every qualifying nonprofit partner already has but under-uses.
 
@@ -85,7 +85,6 @@ Per-voter impact (from the book's parameter system):
 |--------|-------|
 | Lives saved, attributable, per voter | {{< var voter_lives_saved >}} |
 | Suffering hours averted, per voter | {{< var voter_suffering_hours_prevented >}} |
-| QALY value per voter at ${{< var standard_economic_qaly_value_usd >}}/QALY | over $100 million |
 | Cost per voter, direct-ads model | $1-5 |
 | Cost per voter, coordinator model | $0.05-0.50 |
 | Probability-weighted return vs. bed nets | {{< var treaty_expected_vs_bed_nets_multiplier >}} better |
@@ -104,9 +103,9 @@ For a funder deciding between this and their current portfolio:
 | GAVI (Vaccine Alliance) | ~18M | ~$20B | ~$1,100 | 2000-present |
 | PEPFAR (government program, for reference) | ~25M | ~$120B | ~$4,800 | 2003-present |
 | Against Malaria Foundation (GiveWell top-rated) | ~300-500K | ~$2B | ~$5,500 | 2004-present |
-| **1% Treaty voter-acquisition (coordinator, conditional on passage)** | **Attributable per voter: 38.4. At 500K voters acquired: ~19M attributable lives.** | **~$500K-$2M coordinator grant** | **~$0.03-$0.10 per life attributable (probability-unweighted)** | **Activation over 3-5 years; treaty effect over 20-40 years** |
+| **1% Treaty voter-acquisition (coordinator, conditional on passage)** | **Attributable per voter: {{< var voter_lives_saved >}}. Scales linearly with verified voters acquired.** | **~$500K-$2M coordinator grant** | **Exceptionally low per-life cost, before probability discounting** | **Activation over 3-5 years; treaty effect over 20-40 years** |
 
-At 500,000 voters (a realistic Year 2-3 target), the attributable lives-saved count exceeds GAVI's 25-year output. For a coordinator grant three orders of magnitude smaller than GAVI's cumulative spend.
+At 500,000 voters (a realistic Year 2-3 target), the attributable lives-saved count is already in the same order of magnitude as the largest global-health institutions' lifetime totals. For a coordinator grant three orders of magnitude smaller than GAVI's cumulative spend.
 
 The treaty must pass for any of these numbers to realize. Probability-discount as aggressively as your funder wants. At 0.01% probability (the deeply pessimistic case we use in the book), the expected return still beats bed nets by orders of magnitude.
 
