@@ -48,11 +48,11 @@ WHEREAS, the citizenry would like to actually receive this service at some point
 
 WHEREAS, these public servants instead used {{< var cumulative_military_spending_fed_era >}} of their salary to murder approximately {{< var war_deaths_since_1900_nounit >}} humans [@lost-human-capital-war-cost] over the last century of their employment;
 
-WHEREAS, these murdered humans included 930,000 physicians, 310,000 scientists, 620,000 engineers, 1.24 million nurses, 3.1 million teachers, and {{< var war_children_killed_since_1900_nounit >}} children who will never grow up to replace them [@lost-human-capital-war-cost];
+WHEREAS, these murdered humans included 930,000 doctors, 310,000 scientists, 620,000 engineers, 1.24 million nurses, 3.1 million teachers, and {{< var war_children_killed_since_1900_nounit >}} children who will never grow up to replace them [@lost-human-capital-war-cost];
 
 WHEREAS, this seems counterproductive;
 
-WHEREAS, murdering {{< var war_deaths_since_1900_nounit >}} of your employers is the opposite of promoting their welfare, and would be grounds for termination in any other service contract humans have ever signed;
+WHEREAS, murdering {{< var war_deaths_since_1900_nounit >}} of your employers is the opposite of promoting their welfare, and would be grounds for termination in any other employment contract humans have ever signed;
 
 WHEREAS, had your governments not spent {{< var cumulative_military_spending_fed_era >}} murdering those people and destroying everything they built, the average human alive today would earn {{< var war_counterfactual_gdp_per_capita >}} a year instead of {{< var global_avg_income_2025 >}} [@lost-human-capital-war-cost]. Dead scientists do not discover things and exploded cities are very expensive to fix;
 
@@ -68,7 +68,7 @@ WHEREAS, governments spend {{< var military_to_government_clinical_trials_spendi
 
 WHEREAS, the Department of "Defense" has "misplaced" $2.46 trillion, failed seven consecutive audits trying to find it [@pentagon-unaccounted-2-5t], and then requested additional trillions without explanation or apology;
 
-WHEREAS, pre-WW2 U.S. military spending was {{< var us_1939_military_spending_pct_lower_than_current >}} lower than today's peacetime budget, in constant dollars [@us-military-spending-historical-constant-dollars]. The U.S. still won World War II, then cut military spending {{< var post_ww2_military_cut_pct >}} in two years [@us-post-wwii-military-spending-cut] and produced the fastest growth in median standard of living in history. 
+WHEREAS, pre-WW2 U.S. military spending was {{< var us_1939_military_spending_pct_lower_than_current >}} lower than today's peacetime budget, even after adjusting for inflation [@us-military-spending-historical-constant-dollars]. The U.S. still won World War II, then cut military spending {{< var post_ww2_military_cut_pct >}} in two years [@us-post-wwii-military-spending-cut] and produced the fastest growth in median standard of living in history. 
 
 WHEREAS, unless the human genome has significantly degraded in the two generations since, a one percent improvement in resource allocation should be manageable;
 
