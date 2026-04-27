@@ -38,7 +38,7 @@ def _generate_used_in_links(param_name: str, chapter_mapping: Dict[str, list] | 
     """Generate 'Used in:' links for a parameter's collapsed details section."""
     if not chapter_mapping or param_name not in chapter_mapping:
         return []
-    pages = chapter_mapping[param_name]
+    pages = [page for page in chapter_mapping[param_name] if page.get('count', 0) > 0]
     if not pages:
         return []
     lines = []

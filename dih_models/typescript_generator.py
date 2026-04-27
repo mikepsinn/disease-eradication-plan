@@ -27,6 +27,7 @@ import shutil
 from dih_models.reference_parser import parse_references_bib
 from dih_models.latex_generation import generate_expanded_latex, collapse_latex_blocks
 from dih_models.latex_mobile_wrap import wrap_latex_for_mobile
+from dih_models.manual_ref_validation import get_parameter_manual_ref
 
 # Pattern for {{< var variable_name >}} in QMD files
 _VAR_PATTERN = re.compile(r'\{\{<\s*var\s+([a-zA-Z0-9_]+)\s*>\}\}')
@@ -253,10 +254,12 @@ def _normalize_var_to_param(var_name: str) -> str:
 def build_chapter_mapping(
     project_root: Path,
     param_names: set[str],
+    parameters: Optional[Dict[str, Any]] = None,
 ) -> Dict[str, list]:
     """
     Scan QMD files for {{< var ... >}} references and map each parameter
-    to the manual pages where it appears, sorted by usage count descending.
+    to the manual pages where it appears. If a Parameter has manual_ref,
+    that page is promoted to the primary page.
 
     Returns:
         Dict mapping PARAM_NAME -> [{"url": str, "title": str, "qmd_path": str, "count": int}, ...]
@@ -327,11 +330,9 @@ def build_chapter_mapping(
                 file_counts = usage_counts[param_name]
                 file_counts[qmd_path_str] = file_counts.get(qmd_path_str, 0) + 1
 
-    # 3. Build mapping: each param -> all pages sorted by count desc
+    # 3. Build mapping: each param -> manual_ref first, then usage count desc
     mapping: Dict[str, list] = {}
     for param_name, file_counts in usage_counts.items():
-        if not file_counts:
-            continue
         pages = []
         for qmd_path_str, count in sorted(file_counts.items(), key=lambda x: x[1], reverse=True):
             info = chapter_info.get(qmd_path_str)
@@ -342,6 +343,19 @@ def build_chapter_mapping(
                     'qmd_path': qmd_path_str,
                     'count': count,
                 })
+        manual_ref = get_parameter_manual_ref(parameters, param_name)
+        if manual_ref:
+            info = chapter_info.get(manual_ref)
+            if not info:
+                raise ValueError(f"{param_name} manual_ref is not listed in _quarto-manual.yml: {manual_ref}")
+            manual_page = {
+                'url': info['url'],
+                'title': info['title'],
+                'qmd_path': manual_ref,
+                'count': file_counts.get(manual_ref, 0),
+            }
+            pages = [page for page in pages if page.get('qmd_path') != manual_ref]
+            pages.insert(0, manual_page)
         if pages:
             mapping[param_name] = pages
 
@@ -417,7 +431,7 @@ def extract_shareable_snippets(
     Scans source files for <!-- snippet:NAME --> ... <!-- /snippet:NAME --> blocks.
     Within each block:
       - Replaces {{< var PARAM >}} with [value](chapter_url) markdown links
-        pointing to the manual chapter where the parameter appears most often
+        pointing to the parameter's primary manual chapter
       - Strips [@citation-key] references (readers follow chapter links for sources)
       - Absolutizes relative image paths and ../*.qmd links to {BASE_URL}/*.html
       - Removes any nested snippet markers and extra blank lines
@@ -1417,7 +1431,7 @@ def _generate_parameter_constant(
         if conservative:
             lines.append(f"  conservative: {_format_typescript_value(conservative)},")
 
-    # Primary manual page where this parameter is discussed (highest usage)
+    # Primary manual page where this parameter is discussed
     if chapter_mapping and param_name in chapter_mapping:
         pages = chapter_mapping[param_name]
         if pages:

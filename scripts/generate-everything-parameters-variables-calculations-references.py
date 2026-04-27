@@ -242,6 +242,7 @@ from dih_models.validation import (
     validate_compute_inputs_match,
     validate_inline_calculations_have_compute,
 )
+from dih_models.manual_ref_validation import validate_manual_refs
 from dih_models.variables_yml_generator import generate_variables_yml
 from dih_models.formatting import format_parameter_value
 
@@ -674,6 +675,19 @@ def main():
     # Track fatal validation errors
     has_fatal_error = False
 
+    # Validate manual_ref targets once, after parameters.py is loaded.
+    logger.debug("[*] Validating parameter manual_ref targets...")
+    try:
+        manual_ref_result = validate_manual_refs(parameters, project_root)
+    except ValueError as e:
+        print(f"[ERROR] {e}", file=sys.stderr)
+        has_fatal_error = True
+    else:
+        logger.info(
+            f"[OK] Validated {manual_ref_result.checked} manual_ref targets "
+            f"across {manual_ref_result.unique_refs} manual pages"
+        )
+
     # Validate that all external source_refs exist in references.qmd
     logger.debug("[*] Validating external source references...")
     missing_refs, used_refs = validate_references(parameters, available_refs)
@@ -830,7 +844,7 @@ def main():
     # Shared by TypeScript generator and parameters-and-calculations QMD generator
     from dih_models.typescript_generator import build_chapter_mapping, extract_shareable_snippets
     logger.debug("[*] Building parameter-to-chapter mapping...")
-    chapter_mapping = build_chapter_mapping(project_root, set(parameters.keys()))
+    chapter_mapping = build_chapter_mapping(project_root, set(parameters.keys()), parameters)
 
     # Extract shareable markdown snippets for embedding in external sites
     logger.debug("[*] Extracting shareable snippets...")

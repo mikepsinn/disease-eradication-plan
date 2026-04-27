@@ -34,6 +34,12 @@ except ImportError:
     # Handle direct execution (not as package)
     from reference_ids import ReferenceID
 
+try:
+    from .manual_ref_validation import normalize_manual_ref
+except ImportError:
+    # Handle direct execution (not as package)
+    from manual_ref_validation import normalize_manual_ref
+
 
 # ============================================================================
 # PARAMETER CLASS - Adds source tracking to numeric values
@@ -83,6 +89,7 @@ class Parameter(float):
 
     Args:
         value: The numeric value
+        manual_ref: Root-relative QMD page where this parameter should link in the manual
         source_ref: Reference ID (for external sources) or QMD path (for calculations)
         source_type: SourceType enum - EXTERNAL, CALCULATED, or DEFINITION
         description: Human-readable description for tooltips
@@ -109,6 +116,7 @@ class Parameter(float):
         # External data source with high confidence
         CONFLICT_DEATHS = Parameter(
             233600,
+            manual_ref="knowledge/problem/cost-of-war.qmd",
             source_ref=ReferenceID.ACLED_ACTIVE_COMBAT_DEATHS,
             source_type=SourceType.EXTERNAL,
             description="Annual deaths from active combat",
@@ -123,6 +131,7 @@ class Parameter(float):
         # Calculated value with formula and validation
         TOTAL_OPEX = Parameter(
             PLATFORM + STAFF + INFRA + REGULATORY + COMMUNITY,
+            manual_ref="knowledge/solution/dfda.qmd",
             source_type=SourceType.CALCULATED,
             description="Total annual operational costs",
             display_name="Total Annual Operational Costs",
@@ -139,6 +148,7 @@ class Parameter(float):
         # Core definition with display override
         TREATY_PCT = Parameter(
             0.01,
+            manual_ref="knowledge/solution/1-percent-treaty.qmd",
             source_type=SourceType.DEFINITION,
             description="1% treaty reduction target",
             display_name="1% Treaty Reduction Target",
@@ -150,6 +160,7 @@ class Parameter(float):
         # Statistical parameter with confidence interval
         GDP_MULTIPLIER = Parameter(
             2.7,
+            manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
             source_ref="nber-wp-12345",
             source_type=SourceType.EXTERNAL,
             description="Healthcare investment GDP multiplier",
@@ -165,7 +176,7 @@ class Parameter(float):
     """
 
     __slots__ = (
-        'source_ref', 'source_type', 'description', 'unit', 'formula', 'latex',
+        'manual_ref', 'source_ref', 'source_type', 'description', 'unit', 'formula', 'latex',
         'confidence', 'last_updated', 'peer_reviewed', 'conservative',
         'sensitivity', 'display_value', 'display_name', 'keywords',
         'validation_min', 'validation_max', 'confidence_interval', 'std_error',
@@ -173,6 +184,7 @@ class Parameter(float):
     )
 
     # Type annotations for Pylance/Pyright
+    manual_ref: str
     source_ref: str
     source_type: "SourceType"
     description: str
@@ -200,6 +212,7 @@ class Parameter(float):
     def __new__(
         cls,
         value: float,
+        manual_ref: str = "",
         source_ref: str = "",
         source_type: Union[SourceType, str] = SourceType.EXTERNAL,
         description: str = "",
@@ -261,8 +274,10 @@ class Parameter(float):
                 f"All parameters must specify unit='USD', 'years', 'deaths', 'ratio', 'multiplier', 'percentage', etc. "
                 f"This ensures consistent formatting with auto-scaling (e.g., $27.2B, 8.2 years, 463:1)."
             )
+        manual_ref = normalize_manual_ref(manual_ref, description, value)
 
         instance = super().__new__(cls, value)
+        instance.manual_ref = manual_ref
         instance.source_ref = source_ref
         instance.source_type = source_type
         instance.description = description
@@ -327,6 +342,7 @@ SECONDS_PER_YEAR = DAYS_PER_YEAR * HOURS_PER_DAY * MINUTES_PER_HOUR * SECONDS_PE
 # Direct costs
 GLOBAL_MILITARY_SPENDING_ANNUAL_2024 = Parameter(
     2_720_000_000_000,  # 3 sig figs
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_ref=ReferenceID.GLOBAL_MILITARY_SPENDING,
     source_type="external",
     description="Global military spending in 2024",
@@ -340,6 +356,7 @@ GLOBAL_MILITARY_SPENDING_ANNUAL_2024 = Parameter(
 # Military spending trend data (SIPRI)
 GLOBAL_MILITARY_SPENDING_REAL_CAGR_10YR = Parameter(
     0.034,
+    manual_ref="knowledge/economics/peace-dividend.qmd",
     source_ref=ReferenceID.SIPRI_MILEX_2024,
     source_type="external",
     description="Real compound annual growth rate of global military spending over the last decade "
@@ -354,6 +371,7 @@ GLOBAL_MILITARY_SPENDING_REAL_CAGR_10YR = Parameter(
 
 GLOBAL_MILITARY_SPENDING_ANNUAL_2005 = Parameter(
     1_621_800_000_000,
+    manual_ref="knowledge/solution/1-percent-treaty.qmd",
     source_ref=ReferenceID.SIPRI_MILEX_2024,
     source_type="external",
     description="Global military spending in 2005, constant 2023 USD (SIPRI World total). "
@@ -367,6 +385,7 @@ GLOBAL_MILITARY_SPENDING_ANNUAL_2005 = Parameter(
 
 GLOBAL_MILITARY_SPENDING_REAL_CAGR_20YR = Parameter(
     (2_720_000_000_000 / 1_621_800_000_000) ** (1 / 19) - 1,
+    manual_ref="knowledge/solution/1-percent-treaty.qmd",
     source_type="calculated",
     description="Real compound annual growth rate of global military spending over the last 20 years "
                 "(2005-2024), computed from SIPRI World totals in constant 2023 USD. This window "
@@ -385,6 +404,7 @@ GLOBAL_MILITARY_SPENDING_REAL_CAGR_20YR = Parameter(
 # Cybercrime economic data
 GLOBAL_CYBERCRIME_COST_ANNUAL_2025 = Parameter(
     10_500_000_000_000,
+    manual_ref="knowledge/economics/gdp-trajectories.qmd",
     source_ref=ReferenceID.CYBERCRIME_ECONOMY_10_5T,
     source_type="external",
     description="Projected global cybercrime costs in 2025. Includes data theft, productivity loss, "
@@ -399,6 +419,7 @@ GLOBAL_CYBERCRIME_COST_ANNUAL_2025 = Parameter(
 
 GLOBAL_CYBERCRIME_CAGR = Parameter(
     0.15,
+    manual_ref="knowledge/economics/gdp-trajectories.qmd",
     source_ref=ReferenceID.CYBERCRIME_ECONOMY_10_5T,
     source_type="external",
     description="Compound annual growth rate of global cybercrime costs. "
@@ -414,6 +435,7 @@ GLOBAL_CYBERCRIME_CAGR = Parameter(
 # Destructive economy aggregate (military + cybercrime + conflict costs)
 GLOBAL_DESTRUCTIVE_ECONOMY_ANNUAL_2025 = Parameter(
     2_720_000_000_000 + 10_500_000_000_000,
+    manual_ref="knowledge/appendix/treaty-feasibility.qmd",
     source_type="calculated",
     description="Combined annual cost of military spending and cybercrime. "
                 "The 'destructive economy' that competes with the productive economy.",
@@ -428,6 +450,7 @@ GLOBAL_DESTRUCTIVE_ECONOMY_ANNUAL_2025 = Parameter(
 
 GLOBAL_DESTRUCTIVE_ECONOMY_PCT_GDP = Parameter(
     (2_720_000_000_000 + 10_500_000_000_000) / 115_000_000_000_000,
+    manual_ref="knowledge/economics/gdp-trajectories.qmd",
     source_type="calculated",
     description="Destructive economy (military + cybercrime) as percentage of global GDP.",
     display_name="Destructive Economy as % of GDP",
@@ -452,6 +475,7 @@ _destructive_growth = _mil_share * 0.034 + _cyber_share * 0.15  # ~12.6% weighte
 
 DESTRUCTIVE_ECONOMY_BASE_YEAR = Parameter(
     2025,
+    manual_ref="knowledge/economics/gdp-trajectories.qmd",
     source_type="definition",
     distribution="fixed",
     description="Base year for destructive economy projections. All threshold timelines are measured from this year.",
@@ -484,6 +508,7 @@ def _destruct_year_compute(threshold):
 
 DESTRUCTIVE_ECONOMY_25PCT_YEAR = Parameter(
     2025 + round(_years_to_25pct),
+    manual_ref="knowledge/economics/gdp-trajectories.qmd",
     source_type="calculated",
     description="Calendar year when the destructive economy (military + cybercrime) reaches 25% of GDP "
                 "at current growth rates. Historical precedent suggests societies become unstable "
@@ -499,6 +524,7 @@ DESTRUCTIVE_ECONOMY_25PCT_YEAR = Parameter(
 
 DESTRUCTIVE_ECONOMY_35PCT_YEAR = Parameter(
     2025 + round(_years_to_35pct),
+    manual_ref="knowledge/call-to-action/your-personal-benefits.qmd",
     source_type="calculated",
     description="Calendar year when the destructive economy (military + cybercrime) reaches 35% of GDP "
                 "at current growth rates. Historical evidence from the Soviet Union, Yugoslavia, "
@@ -516,6 +542,7 @@ DESTRUCTIVE_ECONOMY_35PCT_YEAR = Parameter(
 
 DESTRUCTIVE_ECONOMY_50PCT_YEAR = Parameter(
     2025 + round(_years_to_50pct),
+    manual_ref="knowledge/strategy/earth-optimization-prize.qmd",
     source_type="calculated",
     description="Calendar year when the destructive economy (military + cybercrime) reaches 50% of GDP "
                 "at current growth rates. At that point, half of all economic activity is "
@@ -533,6 +560,7 @@ DESTRUCTIVE_ECONOMY_50PCT_YEAR = Parameter(
 # Value of Statistical Life (VSL)
 VALUE_OF_STATISTICAL_LIFE = Parameter(
     10_000_000,
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_ref=ReferenceID.DOT_VSL_13_6M,
     source_type="external",
     description="Value of Statistical Life (conservative estimate)",
@@ -550,6 +578,7 @@ VALUE_OF_STATISTICAL_LIFE = Parameter(
 # Source: knowledge/problem/cost-of-war.qmd#death-accounting
 GLOBAL_ANNUAL_CONFLICT_DEATHS_ACTIVE_COMBAT = Parameter(
     233600,
+    manual_ref="knowledge/problem/cost-of-war.qmd",
     source_ref=ReferenceID.ACLED_ACTIVE_COMBAT_DEATHS,
     source_type="external",
     description="Annual deaths from active combat worldwide",
@@ -563,6 +592,7 @@ GLOBAL_ANNUAL_CONFLICT_DEATHS_ACTIVE_COMBAT = Parameter(
 
 GLOBAL_ANNUAL_CONFLICT_DEATHS_TERROR_ATTACKS = Parameter(
     8300,
+    manual_ref="knowledge/problem/cost-of-war.qmd",
     source_ref=ReferenceID.GTD_TERROR_ATTACK_DEATHS,
     source_type="external",
     description="Annual deaths from terror attacks globally",
@@ -576,6 +606,7 @@ GLOBAL_ANNUAL_CONFLICT_DEATHS_TERROR_ATTACKS = Parameter(
 
 GLOBAL_ANNUAL_CONFLICT_DEATHS_STATE_VIOLENCE = Parameter(
     2700,
+    manual_ref="knowledge/problem/cost-of-war.qmd",
     source_ref=ReferenceID.UCDP_STATE_VIOLENCE_DEATHS,
     source_type="external",
     description="Annual deaths from state violence",
@@ -591,6 +622,7 @@ GLOBAL_ANNUAL_CONFLICT_DEATHS_STATE_VIOLENCE = Parameter(
 # Source: R.J. Rummel, "Death by Government" (1994) and "Statistics of Democide" (1998)
 DEMOCIDE_TOTAL_20TH_CENTURY = Parameter(
     262_000_000,
+    manual_ref="knowledge/problem/cost-of-war.qmd",
     source_ref=ReferenceID.RUMMEL_DEATH_BY_GOVERNMENT,
     source_type="external",
     description="Total people murdered by governments worldwide, 1900-1999 (Rummel's democide estimate)",
@@ -607,6 +639,7 @@ GLOBAL_ANNUAL_CONFLICT_DEATHS_TOTAL = Parameter(
     GLOBAL_ANNUAL_CONFLICT_DEATHS_ACTIVE_COMBAT
     + GLOBAL_ANNUAL_CONFLICT_DEATHS_TERROR_ATTACKS
     + GLOBAL_ANNUAL_CONFLICT_DEATHS_STATE_VIOLENCE,
+    manual_ref="knowledge/problem/cost-of-war.qmd",
     source_type="calculated",
     description="Total annual conflict deaths globally (sum of combat, terror, state violence)",
     display_name="Total Annual Conflict Deaths Globally",
@@ -622,6 +655,7 @@ GLOBAL_ANNUAL_CONFLICT_DEATHS_TOTAL = Parameter(
 # Breakdown of Human Life Loss Costs (billions USD)
 GLOBAL_ANNUAL_HUMAN_COST_ACTIVE_COMBAT = Parameter(
     GLOBAL_ANNUAL_CONFLICT_DEATHS_ACTIVE_COMBAT * VALUE_OF_STATISTICAL_LIFE,
+    manual_ref="knowledge/problem/cost-of-war.qmd",
     source_type="calculated",
     description="Annual cost of combat deaths (deaths × VSL)",
     display_name="Annual Cost of Combat Deaths",
@@ -635,6 +669,7 @@ GLOBAL_ANNUAL_HUMAN_COST_ACTIVE_COMBAT = Parameter(
 
 GLOBAL_ANNUAL_HUMAN_COST_TERROR_ATTACKS = Parameter(
     GLOBAL_ANNUAL_CONFLICT_DEATHS_TERROR_ATTACKS * VALUE_OF_STATISTICAL_LIFE,
+    manual_ref="knowledge/problem/cost-of-war.qmd",
     source_type="calculated",
     description="Annual cost of terror deaths (deaths × VSL)",
     display_name="Annual Cost of Terror Deaths",
@@ -648,6 +683,7 @@ GLOBAL_ANNUAL_HUMAN_COST_TERROR_ATTACKS = Parameter(
 
 GLOBAL_ANNUAL_HUMAN_COST_STATE_VIOLENCE = Parameter(
     GLOBAL_ANNUAL_CONFLICT_DEATHS_STATE_VIOLENCE * VALUE_OF_STATISTICAL_LIFE,
+    manual_ref="knowledge/problem/cost-of-war.qmd",
     source_type="calculated",
     description="Annual cost of state violence deaths (deaths × VSL)",
     display_name="Annual Cost of State Violence Deaths",
@@ -664,6 +700,7 @@ GLOBAL_ANNUAL_HUMAN_LIFE_LOSSES_CONFLICT = Parameter(
     GLOBAL_ANNUAL_HUMAN_COST_ACTIVE_COMBAT
     + GLOBAL_ANNUAL_HUMAN_COST_TERROR_ATTACKS
     + GLOBAL_ANNUAL_HUMAN_COST_STATE_VIOLENCE,
+    manual_ref="knowledge/problem/cost-of-war.qmd",
     source_type="calculated",
     description="Total annual human life losses from conflict (sum of combat, terror, state violence)",
     display_name="Total Annual Human Life Losses from Conflict",
@@ -679,6 +716,7 @@ GLOBAL_ANNUAL_HUMAN_LIFE_LOSSES_CONFLICT = Parameter(
 # Infrastructure Damage Breakdown (billions USD)
 GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_TRANSPORTATION_CONFLICT = Parameter(
     487_300_000_000,
+    manual_ref="knowledge/problem/cost-of-war.qmd",
     source_ref=ReferenceID.ENVIRONMENTAL_COST_OF_WAR,
     source_type="external",
     description="Annual infrastructure damage to transportation from conflict",
@@ -692,6 +730,7 @@ GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_TRANSPORTATION_CONFLICT = Parameter(
 
 GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_ENERGY_CONFLICT = Parameter(
     421_700_000_000,
+    manual_ref="knowledge/problem/cost-of-war.qmd",
     source_ref=ReferenceID.ENVIRONMENTAL_COST_OF_WAR,
     source_type="external",
     description="Annual infrastructure damage to energy systems from conflict",
@@ -705,6 +744,7 @@ GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_ENERGY_CONFLICT = Parameter(
 
 GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_COMMUNICATIONS_CONFLICT = Parameter(
     298_100_000_000,
+    manual_ref="knowledge/problem/cost-of-war.qmd",
     source_ref=ReferenceID.ENVIRONMENTAL_COST_OF_WAR,
     source_type="external",
     description="Annual infrastructure damage to communications from conflict",
@@ -718,6 +758,7 @@ GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_COMMUNICATIONS_CONFLICT = Parameter(
 
 GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_WATER_CONFLICT = Parameter(
     267_800_000_000,
+    manual_ref="knowledge/problem/cost-of-war.qmd",
     source_ref=ReferenceID.ENVIRONMENTAL_COST_OF_WAR,
     source_type="external",
     description="Annual infrastructure damage to water systems from conflict",
@@ -731,6 +772,7 @@ GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_WATER_CONFLICT = Parameter(
 
 GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_EDUCATION_CONFLICT = Parameter(
     234_500_000_000,
+    manual_ref="knowledge/problem/cost-of-war.qmd",
     source_ref=ReferenceID.ENVIRONMENTAL_COST_OF_WAR,
     source_type="external",
     description="Annual infrastructure damage to education facilities from conflict",
@@ -744,6 +786,7 @@ GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_EDUCATION_CONFLICT = Parameter(
 
 GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_HEALTHCARE_CONFLICT = Parameter(
     165_600_000_000,
+    manual_ref="knowledge/problem/cost-of-war.qmd",
     source_ref=ReferenceID.ENVIRONMENTAL_COST_OF_WAR,
     source_type="external",
     description="Annual infrastructure damage to healthcare facilities from conflict",
@@ -763,6 +806,7 @@ GLOBAL_ANNUAL_INFRASTRUCTURE_DESTRUCTION_CONFLICT = Parameter(
     + GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_WATER_CONFLICT
     + GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_EDUCATION_CONFLICT
     + GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_HEALTHCARE_CONFLICT,
+    manual_ref="knowledge/problem/cost-of-war.qmd",
     source_type="calculated",
     description="Total annual infrastructure destruction (sum of transportation, energy, communications, water, education, healthcare)",
     display_name="Total Annual Infrastructure Destruction",
@@ -781,6 +825,7 @@ GLOBAL_ANNUAL_INFRASTRUCTURE_DESTRUCTION_CONFLICT = Parameter(
 # Trade Disruption Breakdown (billions USD)
 GLOBAL_ANNUAL_TRADE_DISRUPTION_SHIPPING_CONFLICT = Parameter(
     247_100_000_000,
+    manual_ref="knowledge/problem/cost-of-war.qmd",
     source_ref=ReferenceID.WORLD_BANK_TRADE_DISRUPTION_CONFLICT,
     source_type="external",
     description="Annual trade disruption costs from shipping disruptions",
@@ -794,6 +839,7 @@ GLOBAL_ANNUAL_TRADE_DISRUPTION_SHIPPING_CONFLICT = Parameter(
 
 GLOBAL_ANNUAL_TRADE_DISRUPTION_SUPPLY_CHAIN_CONFLICT = Parameter(
     186_800_000_000,
+    manual_ref="knowledge/problem/cost-of-war.qmd",
     source_ref=ReferenceID.WORLD_BANK_TRADE_DISRUPTION_CONFLICT,
     source_type="external",
     description="Annual trade disruption costs from supply chain disruptions",
@@ -807,6 +853,7 @@ GLOBAL_ANNUAL_TRADE_DISRUPTION_SUPPLY_CHAIN_CONFLICT = Parameter(
 
 GLOBAL_ANNUAL_TRADE_DISRUPTION_ENERGY_PRICE_CONFLICT = Parameter(
     124_700_000_000,
+    manual_ref="knowledge/problem/cost-of-war.qmd",
     source_ref=ReferenceID.WORLD_BANK_TRADE_DISRUPTION_CONFLICT,
     source_type="external",
     description="Annual trade disruption costs from energy price volatility",
@@ -820,6 +867,7 @@ GLOBAL_ANNUAL_TRADE_DISRUPTION_ENERGY_PRICE_CONFLICT = Parameter(
 
 GLOBAL_ANNUAL_TRADE_DISRUPTION_CURRENCY_CONFLICT = Parameter(
     57_400_000_000,
+    manual_ref="knowledge/problem/cost-of-war.qmd",
     source_ref=ReferenceID.WORLD_BANK_TRADE_DISRUPTION_CONFLICT,
     source_type="external",
     description="Annual trade disruption costs from currency instability",
@@ -837,6 +885,7 @@ GLOBAL_ANNUAL_TRADE_DISRUPTION_CONFLICT = Parameter(
     + GLOBAL_ANNUAL_TRADE_DISRUPTION_SUPPLY_CHAIN_CONFLICT
     + GLOBAL_ANNUAL_TRADE_DISRUPTION_ENERGY_PRICE_CONFLICT
     + GLOBAL_ANNUAL_TRADE_DISRUPTION_CURRENCY_CONFLICT,
+    manual_ref="knowledge/problem/cost-of-war.qmd",
     source_type="calculated",
     description="Total annual trade disruption (sum of shipping, supply chain, energy prices, currency instability)",
     display_name="Total Annual Trade Disruption",
@@ -855,6 +904,7 @@ GLOBAL_ANNUAL_WAR_DIRECT_COSTS_TOTAL = Parameter(
     + GLOBAL_ANNUAL_INFRASTRUCTURE_DESTRUCTION_CONFLICT
     + GLOBAL_ANNUAL_HUMAN_LIFE_LOSSES_CONFLICT
     + GLOBAL_ANNUAL_TRADE_DISRUPTION_CONFLICT,
+    manual_ref="knowledge/economics/peace-dividend.qmd",
     source_type="calculated",
     description="Total annual direct war costs (military spending + infrastructure + human life + trade disruption)",
     display_name="Total Annual Direct War Costs",
@@ -871,6 +921,7 @@ GLOBAL_ANNUAL_WAR_DIRECT_COSTS_TOTAL = Parameter(
 # Indirect costs
 GLOBAL_ANNUAL_LOST_ECONOMIC_GROWTH_MILITARY_SPENDING = Parameter(
     2_718_000_000_000,
+    manual_ref="knowledge/economics/peace-dividend.qmd",
     source_ref=ReferenceID.DISPARITY_RATIO_WEAPONS_VS_CURES,
     source_type="external",
     description="Annual foregone economic output from military spending vs productive alternatives. This estimate implicitly captures fiscal multiplier differences (military ~0.6x vs healthcare ~4.3x GDP multiplier). Do not add separate GDP multiplier adjustment to avoid double-counting.",
@@ -884,6 +935,7 @@ GLOBAL_ANNUAL_LOST_ECONOMIC_GROWTH_MILITARY_SPENDING = Parameter(
 
 GLOBAL_ANNUAL_VETERAN_HEALTHCARE_COSTS = Parameter(
     200_100_000_000,
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_ref=ReferenceID.VETERAN_HEALTHCARE_COST_PROJECTIONS,
     source_type="external",
     description="Annual veteran healthcare costs (20-year projected)",
@@ -897,6 +949,7 @@ GLOBAL_ANNUAL_VETERAN_HEALTHCARE_COSTS = Parameter(
 
 GLOBAL_ANNUAL_REFUGEE_SUPPORT_COSTS = Parameter(
     150_000_000_000,
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_ref=ReferenceID.UNHCR_REFUGEE_SUPPORT_COST,
     source_type="external",
     description="Annual refugee support costs (108.4M refugees × $1,384/year)",
@@ -910,6 +963,7 @@ GLOBAL_ANNUAL_REFUGEE_SUPPORT_COSTS = Parameter(
 
 GLOBAL_ANNUAL_ENVIRONMENTAL_DAMAGE_CONFLICT = Parameter(
     100_000_000_000,
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_ref=ReferenceID.ENVIRONMENTAL_COST_OF_WAR,
     source_type="external",
     description="Annual environmental damage and restoration costs from conflict",
@@ -923,6 +977,7 @@ GLOBAL_ANNUAL_ENVIRONMENTAL_DAMAGE_CONFLICT = Parameter(
 
 GLOBAL_ANNUAL_PSYCHOLOGICAL_IMPACT_COSTS_CONFLICT = Parameter(
     232_000_000_000,
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_ref=ReferenceID.PSYCHOLOGICAL_IMPACT_WAR_COST,
     source_type="external",
     description="Annual PTSD and mental health costs from conflict",
@@ -936,6 +991,7 @@ GLOBAL_ANNUAL_PSYCHOLOGICAL_IMPACT_COSTS_CONFLICT = Parameter(
 
 GLOBAL_ANNUAL_LOST_HUMAN_CAPITAL_CONFLICT = Parameter(
     300_000_000_000,
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_ref=ReferenceID.LOST_HUMAN_CAPITAL_WAR_COST,
     source_type="external",
     description="Annual lost productivity from conflict casualties",
@@ -954,6 +1010,7 @@ GLOBAL_ANNUAL_WAR_INDIRECT_COSTS_TOTAL = Parameter(
     + GLOBAL_ANNUAL_ENVIRONMENTAL_DAMAGE_CONFLICT
     + GLOBAL_ANNUAL_PSYCHOLOGICAL_IMPACT_COSTS_CONFLICT
     + GLOBAL_ANNUAL_LOST_HUMAN_CAPITAL_CONFLICT,
+    manual_ref="knowledge/economics/peace-dividend.qmd",
     source_type="calculated",
     description="Total annual indirect war costs (opportunity cost + veterans + refugees + environment + mental health + lost productivity)",
     display_name="Total Annual Indirect War Costs",
@@ -972,6 +1029,7 @@ GLOBAL_ANNUAL_WAR_INDIRECT_COSTS_TOTAL = Parameter(
 # Grand total war costs
 GLOBAL_ANNUAL_DIRECT_INDIRECT_WAR_COST = Parameter(
     GLOBAL_ANNUAL_WAR_DIRECT_COSTS_TOTAL + GLOBAL_ANNUAL_WAR_INDIRECT_COSTS_TOTAL,
+    manual_ref="knowledge/economics/peace-dividend.qmd",
     source_type="calculated",
     description="Total annual cost of war worldwide (direct + indirect costs)",
     display_name="Total Annual Cost of War Worldwide",
@@ -988,6 +1046,7 @@ GLOBAL_ANNUAL_DIRECT_INDIRECT_WAR_COST = Parameter(
 # Treaty parameters
 TREATY_REDUCTION_PCT = Parameter(
     0.01,
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_ref="",  # Core definition - not sourced, it's what we're proposing
     source_type="definition",
     description="1% reduction in military spending/war costs from treaty",
@@ -1000,6 +1059,7 @@ TREATY_REDUCTION_PCT = Parameter(
 
 TREATY_ANNUAL_FUNDING = Parameter(
     GLOBAL_MILITARY_SPENDING_ANNUAL_2024 * TREATY_REDUCTION_PCT,
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_ref="",
     source_type="calculated",  # Derived from military spending and treaty percentage
     description="Annual funding from 1% of global military spending redirected to DIH",
@@ -1026,6 +1086,7 @@ TREATY_ANNUAL_FUNDING = Parameter(
 
 PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT = Parameter(
     GLOBAL_ANNUAL_DIRECT_INDIRECT_WAR_COST * TREATY_REDUCTION_PCT,
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_type="calculated",
     description="Annual peace dividend from 1% reduction in total war costs (theoretical maximum at ε=1.0)",
     display_name="Annual Peace Dividend from 1% Reduction in Total War Costs",
@@ -1042,6 +1103,7 @@ PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT = Parameter(
 
 PEACE_DIVIDEND_CONFLICT_ELASTICITY = Parameter(
     1.0,
+    manual_ref="knowledge/economics/peace-dividend.qmd",
     source_type="definition",
     description="Conflict reduction elasticity: how much conflict costs decrease per 1% military spending cut. ε=0: no effect (spending cuts don't reduce conflict). ε=0.5: moderate linkage (conservative). ε=1.0: proportional (baseline assumption). ε>1.0: shared enemy amplification (redirecting to disease creates unity).",
     display_name="Peace Dividend Conflict Elasticity",
@@ -1073,6 +1135,7 @@ import math as _pd_math
 
 GLOBAL_WAR_COST_YEAR_80_BASELINE = Parameter(
     float(GLOBAL_ANNUAL_DIRECT_INDIRECT_WAR_COST) * (1 + float(GLOBAL_MILITARY_SPENDING_REAL_CAGR_20YR)) ** 80,
+    manual_ref="knowledge/economics/peace-dividend.qmd",
     source_type="calculated",
     description="Projected annual war cost in year 80 under the baseline trajectory, assuming the "
                 "SIPRI 20-year real CAGR continues. At ~2.76% real growth, this approaches current "
@@ -1097,6 +1160,7 @@ _pd_lt_savings = _pd_lt_baseline_cum - _pd_lt_treaty_cum
 
 GLOBAL_WAR_COST_LIFETIME_CUMULATIVE_BASELINE = Parameter(
     _pd_lt_baseline_cum,
+    manual_ref="knowledge/economics/peace-dividend.qmd",
     source_type="calculated",
     description="Cumulative global war cost over 80 years (one human lifespan) on the baseline "
                 "trajectory, where war costs keep compounding at SIPRI's 20-year real CAGR (2.76%). "
@@ -1115,6 +1179,7 @@ GLOBAL_WAR_COST_LIFETIME_CUMULATIVE_BASELINE = Parameter(
 
 GLOBAL_WAR_COST_LIFETIME_CUMULATIVE_TREATY = Parameter(
     _pd_lt_treaty_cum,
+    manual_ref="knowledge/economics/peace-dividend.qmd",
     source_type="calculated",
     description="Cumulative global war cost over 80 years under the treaty trajectory, where costs "
                 "drop 1% immediately and then hold flat (no growth). This is what the world pays "
@@ -1130,6 +1195,7 @@ GLOBAL_WAR_COST_LIFETIME_CUMULATIVE_TREATY = Parameter(
 
 GLOBAL_WAR_COST_LIFETIME_PER_PERSON_FLAT = Parameter(
     float(GLOBAL_ANNUAL_DIRECT_INDIRECT_WAR_COST) * 80 / 8_000_000_000,
+    manual_ref="knowledge/economics/peace-dividend.qmd",
     source_type="calculated",
     description="Per-person 80-year lifetime tab for global war costs, assuming costs stay flat at "
                 "today's level. This is the conservative floor the chapter opens with. The actual "
@@ -1145,6 +1211,7 @@ GLOBAL_WAR_COST_LIFETIME_PER_PERSON_FLAT = Parameter(
 
 GLOBAL_WAR_COST_LIFETIME_PER_PERSON_BASELINE = Parameter(
     _pd_lt_baseline_cum / 8_000_000_000,
+    manual_ref="knowledge/solution/1-percent-treaty.qmd",
     source_type="calculated",
     description="Per-person 80-year lifetime tab for global war costs on the SIPRI baseline "
                 "trajectory (2.76% real growth). About 3.5x the flat-assumption figure the chapter "
@@ -1161,6 +1228,7 @@ GLOBAL_WAR_COST_LIFETIME_PER_PERSON_BASELINE = Parameter(
 
 GLOBAL_WAR_COST_YEARS_UNTIL_EXCEEDS_GDP = Parameter(
     _pd_math.log(115_000_000_000_000 / _pd_C) / _pd_math.log(1 + _pd_g),
+    manual_ref="knowledge/economics/peace-dividend.qmd",
     source_type="calculated",
     description="Years until annual war cost exceeds current world GDP at the SIPRI 20-year real "
                 "growth rate. At ~2.76% real growth and $11.4T current war cost, this happens in "
@@ -1179,6 +1247,7 @@ GLOBAL_WAR_COST_YEARS_UNTIL_EXCEEDS_GDP = Parameter(
 
 PEACE_DIVIDEND_LIFETIME_TOTAL = Parameter(
     _pd_lt_savings,
+    manual_ref="knowledge/economics/peace-dividend.qmd",
     source_type="calculated",
     description="Cumulative peace dividend over 80 years (one human lifespan): the baseline "
                 "80-year war cost (SIPRI trajectory) minus the treaty 80-year war cost (flat at "
@@ -1197,6 +1266,7 @@ PEACE_DIVIDEND_LIFETIME_TOTAL = Parameter(
 
 PEACE_DIVIDEND_LIFETIME_PER_PERSON = Parameter(
     _pd_lt_savings / 8_000_000_000,
+    manual_ref="knowledge/solution/1-percent-treaty.qmd",
     source_type="calculated",
     description="Per-person share of the 80-year cumulative peace dividend, averaged across the "
                 "global population. Not literally a check in the reader's pocket: most of it "
@@ -1214,6 +1284,7 @@ PEACE_DIVIDEND_LIFETIME_PER_PERSON = Parameter(
 
 PEACE_DIVIDEND_INVESTMENT_REAL_RETURN_RATE = Parameter(
     0.13,
+    manual_ref="knowledge/economics/peace-dividend.qmd",
     source_type="definition",
     description="Illustrative long-term real return rate used to compound the peace dividend "
                 "stream into a future value at year 80. 13% is the approximate long-run real CAGR "
@@ -1253,6 +1324,7 @@ _pd_fv_abolition = _pd_compound_fv_abolition(_pd_C, _pd_g, _pd_r, 80)
 
 PEACE_DIVIDEND_LIFETIME_PER_PERSON_COMPOUNDED = Parameter(
     _pd_fv_treaty / 8_000_000_000,
+    manual_ref="knowledge/economics/peace-dividend.qmd",
     source_type="calculated",
     description="Per-person future value at year 80 of the treaty peace dividend stream, "
                 "compounded at the illustrative long-term real return rate (13%, Nasdaq-100 "
@@ -1283,6 +1355,7 @@ PEACE_DIVIDEND_LIFETIME_PER_PERSON_COMPOUNDED = Parameter(
 
 GLOBAL_WAR_COST_LIFETIME_PER_PERSON_ABOLITION_COMPOUNDED = Parameter(
     _pd_fv_abolition / 8_000_000_000,
+    manual_ref="knowledge/economics/peace-dividend.qmd",
     source_type="calculated",
     description="Per-person future value at year 80 of the full baseline war cost stream, "
                 "compounded at the illustrative long-term real return rate (13%, Nasdaq-100 "
@@ -1312,6 +1385,7 @@ GLOBAL_WAR_COST_LIFETIME_PER_PERSON_ABOLITION_COMPOUNDED = Parameter(
 
 PEACE_DIVIDEND_SHARE_OF_80YR_BASELINE_WAR_COST = Parameter(
     _pd_lt_savings / _pd_lt_baseline_cum,
+    manual_ref="knowledge/economics/peace-dividend.qmd",
     source_type="calculated",
     description="Fraction of the baseline 80-year war cost avoided by the treaty. Because the "
                 "baseline compounds exponentially while the treaty holds spending flat, cutting 1% "
@@ -1331,6 +1405,7 @@ PEACE_DIVIDEND_SHARE_OF_80YR_BASELINE_WAR_COST = Parameter(
 # Individual peace dividend components (1% savings breakdown)
 PEACE_DIVIDEND_DIRECT_COSTS = Parameter(
     GLOBAL_ANNUAL_WAR_DIRECT_COSTS_TOTAL * TREATY_REDUCTION_PCT,
+    manual_ref="knowledge/economics/peace-dividend.qmd",
     source_type="calculated",
     description="Annual savings from 1% reduction in direct war costs",
     display_name="Annual Savings from 1% Reduction in Direct War Costs",
@@ -1344,6 +1419,7 @@ PEACE_DIVIDEND_DIRECT_COSTS = Parameter(
 
 PEACE_DIVIDEND_INFRASTRUCTURE = Parameter(
     GLOBAL_ANNUAL_INFRASTRUCTURE_DESTRUCTION_CONFLICT * TREATY_REDUCTION_PCT,
+    manual_ref="knowledge/economics/peace-dividend.qmd",
     source_type="calculated",
     description="Annual savings from 1% reduction in infrastructure destruction",
     display_name="Annual Savings from 1% Reduction in Infrastructure Destruction",
@@ -1357,6 +1433,7 @@ PEACE_DIVIDEND_INFRASTRUCTURE = Parameter(
 
 PEACE_DIVIDEND_HUMAN_CASUALTIES = Parameter(
     GLOBAL_ANNUAL_HUMAN_LIFE_LOSSES_CONFLICT * TREATY_REDUCTION_PCT,
+    manual_ref="knowledge/economics/peace-dividend.qmd",
     source_type="calculated",
     description="Annual savings from 1% reduction in human casualties",
     display_name="Annual Savings from 1% Reduction in Human Casualties",
@@ -1370,6 +1447,7 @@ PEACE_DIVIDEND_HUMAN_CASUALTIES = Parameter(
 
 PEACE_DIVIDEND_TRADE_DISRUPTION = Parameter(
     GLOBAL_ANNUAL_TRADE_DISRUPTION_CONFLICT * TREATY_REDUCTION_PCT,
+    manual_ref="knowledge/economics/peace-dividend.qmd",
     source_type="calculated",
     description="Annual savings from 1% reduction in trade disruption",
     display_name="Annual Savings from 1% Reduction in Trade Disruption",
@@ -1383,6 +1461,7 @@ PEACE_DIVIDEND_TRADE_DISRUPTION = Parameter(
 
 PEACE_DIVIDEND_INDIRECT_COSTS = Parameter(
     GLOBAL_ANNUAL_WAR_INDIRECT_COSTS_TOTAL * TREATY_REDUCTION_PCT,
+    manual_ref="knowledge/economics/peace-dividend.qmd",
     source_type="calculated",
     description="Annual savings from 1% reduction in indirect war costs",
     display_name="Annual Savings from 1% Reduction in Indirect War Costs",
@@ -1396,6 +1475,7 @@ PEACE_DIVIDEND_INDIRECT_COSTS = Parameter(
 
 PEACE_DIVIDEND_LOST_ECONOMIC_GROWTH = Parameter(
     GLOBAL_ANNUAL_LOST_ECONOMIC_GROWTH_MILITARY_SPENDING * TREATY_REDUCTION_PCT,
+    manual_ref="knowledge/economics/peace-dividend.qmd",
     source_type="calculated",
     description="Annual savings from 1% reduction in lost economic growth",
     display_name="Annual Savings from 1% Reduction in Lost Economic Growth",
@@ -1409,6 +1489,7 @@ PEACE_DIVIDEND_LOST_ECONOMIC_GROWTH = Parameter(
 
 PEACE_DIVIDEND_VETERAN_HEALTHCARE = Parameter(
     GLOBAL_ANNUAL_VETERAN_HEALTHCARE_COSTS * TREATY_REDUCTION_PCT,
+    manual_ref="knowledge/economics/peace-dividend.qmd",
     source_type="calculated",
     description="Annual savings from 1% reduction in veteran healthcare costs",
     display_name="Annual Savings from 1% Reduction in Veteran Healthcare Costs",
@@ -1422,6 +1503,7 @@ PEACE_DIVIDEND_VETERAN_HEALTHCARE = Parameter(
 
 PEACE_DIVIDEND_REFUGEE_SUPPORT = Parameter(
     GLOBAL_ANNUAL_REFUGEE_SUPPORT_COSTS * TREATY_REDUCTION_PCT,
+    manual_ref="knowledge/economics/peace-dividend.qmd",
     source_type="calculated",
     description="Annual savings from 1% reduction in refugee support costs",
     display_name="Annual Savings from 1% Reduction in Refugee Support Costs",
@@ -1435,6 +1517,7 @@ PEACE_DIVIDEND_REFUGEE_SUPPORT = Parameter(
 
 PEACE_DIVIDEND_ENVIRONMENTAL = Parameter(
     GLOBAL_ANNUAL_ENVIRONMENTAL_DAMAGE_CONFLICT * TREATY_REDUCTION_PCT,
+    manual_ref="knowledge/economics/peace-dividend.qmd",
     source_type="calculated",
     description="Annual savings from 1% reduction in environmental damage",
     display_name="Annual Savings from 1% Reduction in Environmental Damage",
@@ -1448,6 +1531,7 @@ PEACE_DIVIDEND_ENVIRONMENTAL = Parameter(
 
 PEACE_DIVIDEND_PTSD = Parameter(
     GLOBAL_ANNUAL_PSYCHOLOGICAL_IMPACT_COSTS_CONFLICT * TREATY_REDUCTION_PCT,
+    manual_ref="knowledge/economics/peace-dividend.qmd",
     source_type="calculated",
     description="Annual savings from 1% reduction in PTSD and mental health costs",
     display_name="Annual Savings from 1% Reduction in PTSD and Mental Health Costs",
@@ -1461,6 +1545,7 @@ PEACE_DIVIDEND_PTSD = Parameter(
 
 PEACE_DIVIDEND_LOST_HUMAN_CAPITAL = Parameter(
     GLOBAL_ANNUAL_LOST_HUMAN_CAPITAL_CONFLICT * TREATY_REDUCTION_PCT,
+    manual_ref="knowledge/economics/peace-dividend.qmd",
     source_type="calculated",
     description="Annual savings from 1% reduction in lost human capital",
     display_name="Annual Savings from 1% Reduction in Lost Human Capital",
@@ -1475,6 +1560,7 @@ PEACE_DIVIDEND_LOST_HUMAN_CAPITAL = Parameter(
 # Separate peace dividend into confidence levels
 PEACE_DIVIDEND_DIRECT_FISCAL_SAVINGS = Parameter(
     float(TREATY_ANNUAL_FUNDING),
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_ref=ReferenceID.SIPRI2024,
     source_type="definition",  # This is a policy-derived value (1% of military spending)
     confidence="high",
@@ -1488,6 +1574,7 @@ PEACE_DIVIDEND_DIRECT_FISCAL_SAVINGS = Parameter(
 
 PEACE_DIVIDEND_CONFLICT_REDUCTION = Parameter(
     float(PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT) - float(TREATY_ANNUAL_FUNDING),
+    manual_ref="knowledge/economics/peace-dividend.qmd",
     source_ref="calculated",
     source_type="calculated",
     confidence="low",
@@ -1511,6 +1598,7 @@ PEACE_DIVIDEND_CONFLICT_REDUCTION = Parameter(
 # Market reports ($83B) inflate actual spending by including CRO revenue projections and double-counting
 GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL = Parameter(
     60_000_000_000,
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_ref=ReferenceID.INDUSTRY_CLINICAL_TRIAL_SPENDING_ESTIMATE,
     source_type=SourceType.EXTERNAL,
     description="Annual global spending on clinical trials (Industry: $45-60B + Government: $3-6B + Nonprofits: $2-5B). Conservative estimate using 15-20% of $300B total pharma R&D, not inflated market size projections.",
@@ -1526,6 +1614,7 @@ GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL = Parameter(
 
 GLOBAL_GOVERNMENT_CLINICAL_TRIALS_SPENDING_ANNUAL = Parameter(
     4_500_000_000,
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_ref=ReferenceID.GLOBAL_GOVERNMENT_CLINICAL_TRIAL_SPENDING_ESTIMATE,
     source_type=SourceType.EXTERNAL,
     description="Annual global government spending on interventional clinical trials (~5-10% of total)",
@@ -1541,6 +1630,7 @@ GLOBAL_GOVERNMENT_CLINICAL_TRIALS_SPENDING_ANNUAL = Parameter(
 
 NIH_ANNUAL_BUDGET = Parameter(
     47_000_000_000,
+    manual_ref="knowledge/problem/nih-fails-2-institute-health.qmd",
     source_ref="nih-budget-fy2025",
     source_type=SourceType.EXTERNAL,
     description="NIH annual budget (FY2024/2025)",
@@ -1554,6 +1644,7 @@ NIH_ANNUAL_BUDGET = Parameter(
 
 NIH_CLINICAL_TRIALS_SPENDING_PCT = Parameter(
     0.033,
+    manual_ref="knowledge/problem/nih-fails-2-institute-health.qmd",
     source_ref=ReferenceID.NIH_CLINICAL_TRIALS_SPENDING_PCT_3_3,
     source_type=SourceType.EXTERNAL,
     description="Percentage of NIH budget spent on clinical trials (3.3%)",
@@ -1568,6 +1659,7 @@ NIH_CLINICAL_TRIALS_SPENDING_PCT = Parameter(
 
 MILITARY_TO_GOVERNMENT_CLINICAL_TRIALS_SPENDING_RATIO = Parameter(
     GLOBAL_MILITARY_SPENDING_ANNUAL_2024 / GLOBAL_GOVERNMENT_CLINICAL_TRIALS_SPENDING_ANNUAL,
+    manual_ref="knowledge/strategy/earth-optimization-prize.qmd",
     source_ref="",
     source_type=SourceType.CALCULATED,
     description="Ratio of global military spending to government clinical trials spending",
@@ -1589,6 +1681,7 @@ MILITARY_TO_GOVERNMENT_CLINICAL_TRIALS_SPENDING_RATIO = Parameter(
 # Synthesis: SIPRI 1988-2024 (~$65-72T) + Cold War (~$50-70T) + WWI/WWII/interwar (~$33T)
 CUMULATIVE_MILITARY_SPENDING_FED_ERA = Parameter(
     170_000_000_000_000,
+    manual_ref="knowledge/problem/cost-of-war.qmd",
     source_ref=ReferenceID.SIPRI_MILEX_2024,
     source_type="definition",
     confidence="low",
@@ -1605,6 +1698,7 @@ CUMULATIVE_MILITARY_SPENDING_FED_ERA = Parameter(
 # Cumulative military spending: all recorded history
 CUMULATIVE_MILITARY_SPENDING_ALL_HISTORY = Parameter(
     180_000_000_000_000,
+    manual_ref="knowledge/problem/cost-of-war.qmd",
     source_ref=ReferenceID.SIPRI_MILEX_2024,
     source_type="definition",
     confidence="low",
@@ -1621,6 +1715,7 @@ CUMULATIVE_MILITARY_SPENDING_ALL_HISTORY = Parameter(
 # Death toll from money-printed wars (appears 3+ times across chapters)
 MONEY_PRINTER_WAR_DEATHS = Parameter(
     97_000_000,
+    manual_ref="knowledge/economics/central-banks.qmd",
     source_ref=ReferenceID.CRS_WAR_COSTS_2010,
     source_type="definition",
     confidence="medium",
@@ -1636,6 +1731,7 @@ MONEY_PRINTER_WAR_DEATHS = Parameter(
 
 GLOBAL_INDUSTRY_CLINICAL_TRIALS_SPENDING_ANNUAL = Parameter(
     GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL - GLOBAL_GOVERNMENT_CLINICAL_TRIALS_SPENDING_ANNUAL,
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_ref="",
     source_type=SourceType.CALCULATED,
     description="Annual global industry spending on clinical trials (Total - Government)",
@@ -1649,6 +1745,7 @@ GLOBAL_INDUSTRY_CLINICAL_TRIALS_SPENDING_ANNUAL = Parameter(
 
 INDUSTRY_VS_GOVERNMENT_CLINICAL_TRIALS_SPENDING_RATIO = Parameter(
     (GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL - GLOBAL_GOVERNMENT_CLINICAL_TRIALS_SPENDING_ANNUAL) / GLOBAL_GOVERNMENT_CLINICAL_TRIALS_SPENDING_ANNUAL,
+    manual_ref="knowledge/appendix/global-government-medical-research-spending.qmd",
     source_ref=ReferenceID.INDUSTRY_VS_GOVERNMENT_TRIAL_SPENDING_SPLIT,
     source_type=SourceType.CALCULATED,
     description="Ratio of Industry to Government spending on clinical trials (approx 90/10 split)",
@@ -1664,6 +1761,7 @@ INDUSTRY_VS_GOVERNMENT_CLINICAL_TRIALS_SPENDING_RATIO = Parameter(
 # Total pharma R&D spending (clinical trials are 15-20% of this)
 GLOBAL_PHARMA_RD_SPENDING_ANNUAL = Parameter(
     300_000_000_000,
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_ref="global-pharma-rd-spending-300b",  # TODO: Add to references.qmd
     source_type=SourceType.EXTERNAL,
     description="Total global pharmaceutical R&D spending ($300B annually, clinical trials represent 15-20% of this total)",
@@ -1677,6 +1775,7 @@ GLOBAL_PHARMA_RD_SPENDING_ANNUAL = Parameter(
 # Nonprofit clinical trials funding
 GLOBAL_NONPROFIT_CLINICAL_TRIALS_SPENDING_ANNUAL = Parameter(
     3_500_000_000,
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_ref=ReferenceID.NONPROFIT_CLINICAL_TRIAL_SPENDING_ESTIMATE,
     source_type=SourceType.EXTERNAL,
     description="Annual global nonprofit spending on clinical trials (foundations, disease advocacy groups)",
@@ -1695,6 +1794,7 @@ GLOBAL_NONPROFIT_CLINICAL_TRIALS_SPENDING_ANNUAL = Parameter(
 # Current System Baseline
 CURRENT_TRIALS_PER_YEAR = Parameter(
     3300,
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_ref=ReferenceID.GLOBAL_CLINICAL_TRIALS_MARKET_2024,
     source_type="external",
     description="Current global clinical trials per year",
@@ -1708,6 +1808,7 @@ CURRENT_TRIALS_PER_YEAR = Parameter(
 
 CURRENT_DRUG_APPROVALS_PER_YEAR = Parameter(
     50,
+    manual_ref="knowledge/problem/nih-fails-2-institute-health.qmd",
     source_ref=ReferenceID.GLOBAL_NEW_DRUG_APPROVALS_50_ANNUALLY,
     source_type="external",
     description="Average annual new drug approvals globally",
@@ -1722,6 +1823,7 @@ CURRENT_DRUG_APPROVALS_PER_YEAR = Parameter(
 # Historical FDA/Drug Development Parameters
 OXFORD_RECOVERY_TRIAL_DURATION_MONTHS = Parameter(
     3,
+    manual_ref="knowledge/solution/dfda.qmd",
     source_ref=ReferenceID.RECOVERY_TRIAL_82X_COST_REDUCTION,
     source_type="external",
     description="Oxford RECOVERY trial duration (found life-saving treatment in 3 months)",
@@ -1735,6 +1837,7 @@ OXFORD_RECOVERY_TRIAL_DURATION_MONTHS = Parameter(
 
 FDA_PHASE_1_TO_APPROVAL_YEARS = Parameter(
     10.5,
+    manual_ref="knowledge/appendix/invisible-graveyard.qmd",
     source_ref=ReferenceID.BIO_CLINICAL_DEVELOPMENT_2021,
     source_type="external",
     description="FDA timeline from Phase 1 start to approval. Derived from BIO 2021 industry survey: Phase 1 (2.3 years) + efficacy lag (8.2 years) = 10.5 years. Consistent with PMC meta-analysis finding 9.1 years median (95% CI: 8.2-10.0).",
@@ -1750,6 +1853,7 @@ FDA_PHASE_1_TO_APPROVAL_YEARS = Parameter(
 
 POST_1962_DRUG_APPROVAL_REDUCTION_PCT = Parameter(
     0.70,
+    manual_ref="knowledge/appendix/invisible-graveyard.qmd",
     source_ref=ReferenceID.POST_1962_DRUG_APPROVAL_DROP,
     source_type="external",
     description="Reduction in new drug approvals after 1962 Kefauver-Harris Amendment (70% drop from 43→17 drugs/year)",
@@ -1764,6 +1868,7 @@ POST_1962_DRUG_APPROVAL_REDUCTION_PCT = Parameter(
 
 PRE_1962_PHYSICIAN_COUNT = Parameter(
     144_000,
+    manual_ref="knowledge/appendix/real-world-evidence-historical-success.qmd",
     source_ref=ReferenceID.PRE_1962_PHYSICIAN_TRIALS,
     source_type="external",
     description="Estimated physicians conducting real-world efficacy trials pre-1962 (unverified estimate)",
@@ -1777,6 +1882,7 @@ PRE_1962_PHYSICIAN_COUNT = Parameter(
 # CPI inflation adjustment from 1980 to 2024
 CPI_MULTIPLIER_1980_TO_2024 = Parameter(
     3.80,
+    manual_ref="knowledge/appendix/drug-development-cost-analysis.qmd",
     source_ref="bls-cpi-inflation-calculator",
     source_type="external",
     description="CPI inflation multiplier from 1980 to 2024 (280.48% cumulative inflation)",
@@ -1792,6 +1898,7 @@ CPI_MULTIPLIER_1980_TO_2024 = Parameter(
 
 PRE_1962_DRUG_DEVELOPMENT_COST_1980_USD = Parameter(
     6_500_000,
+    manual_ref="knowledge/appendix/drug-development-cost-analysis.qmd",
     source_ref="pre-1962-drug-costs-baily-1972",
     source_type="external",
     description="Average drug development cost before 1962 FDA efficacy regulations, adjusted to 1980 dollars (Baily 1972)",
@@ -1807,6 +1914,7 @@ PRE_1962_DRUG_DEVELOPMENT_COST_1980_USD = Parameter(
 
 PRE_1962_DRUG_DEVELOPMENT_COST_2024_USD = Parameter(
     PRE_1962_DRUG_DEVELOPMENT_COST_1980_USD * CPI_MULTIPLIER_1980_TO_2024,  # Calculated value stays in sync with inputs
+    manual_ref="knowledge/appendix/drug-development-cost-analysis.qmd",
     source_ref="pre-1962-drug-costs-baily-1972",
     source_type="external",  # Marked as external to avoid Monte Carlo simulation (distribution defined manually below)
     description="Pre-1962 drug development cost adjusted to 2024 dollars ($6.5M × 3.80 = $24.7M, CPI-adjusted from Baily 1972)",
@@ -1822,6 +1930,7 @@ PRE_1962_DRUG_DEVELOPMENT_COST_2024_USD = Parameter(
 
 CURRENT_ACTIVE_TRIALS = Parameter(
     10000,
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_ref=ReferenceID.CLINICALTRIALS_GOV_ENROLLMENT_DATA_2025,
     source_type="external",
     description="Current active trials at any given time (3-5 year duration)",
@@ -1836,6 +1945,7 @@ CURRENT_SMALL_TRIAL_RECRUITMENT_MONTHS_RANGE = (6, 18)  # Months to recruit 100 
 
 CURRENT_TRIAL_ABANDONMENT_RATE = Parameter(
     0.40,
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_ref="clinical-trial-abandonment-rate",
     source_type="external",
     description="Current trial abandonment rate (40% never complete)",
@@ -1847,6 +1957,7 @@ CURRENT_TRIAL_ABANDONMENT_RATE = Parameter(
 
 CURRENT_TRIAL_SLOTS_AVAILABLE = Parameter(
     1_900_000,
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_ref="global-trial-participant-capacity",
     source_type="external",
     description="Annual global clinical trial participants (IQVIA 2022: 1.9M post-COVID normalization)",
@@ -1861,6 +1972,7 @@ CURRENT_TRIAL_SLOTS_AVAILABLE = Parameter(
 # Calculated: Cost per participant
 CLINICAL_TRIAL_COST_PER_PARTICIPANT_ANNUAL = Parameter(
     GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL / CURRENT_TRIAL_SLOTS_AVAILABLE,
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_ref="",
     source_type=SourceType.CALCULATED,
     description="Average annual cost per clinical trial participant (total spending ÷ participants)",
@@ -1875,6 +1987,7 @@ CLINICAL_TRIAL_COST_PER_PARTICIPANT_ANNUAL = Parameter(
 # Calculated: Cost per approved drug (from trials only)
 CLINICAL_TRIAL_COST_PER_APPROVED_DRUG = Parameter(
     GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL / CURRENT_DRUG_APPROVALS_PER_YEAR,
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_ref="",
     source_type=SourceType.CALCULATED,
     description="Annual clinical trial spending per approved drug (trials only, excluding other R&D costs like discovery, preclinical, manufacturing)",
@@ -1889,6 +2002,7 @@ CLINICAL_TRIAL_COST_PER_APPROVED_DRUG = Parameter(
 # Calculated: Military vs ALL clinical trials ratio
 MILITARY_TO_CLINICAL_TRIALS_SPENDING_RATIO = Parameter(
     GLOBAL_MILITARY_SPENDING_ANNUAL_2024 / GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL,
+    manual_ref="knowledge/strategy/earth-optimization-prize.qmd",
     source_ref="",
     source_type=SourceType.CALCULATED,
     description="Ratio of global military spending to all clinical trials spending (government + industry + nonprofit)",
@@ -1902,6 +2016,7 @@ MILITARY_TO_CLINICAL_TRIALS_SPENDING_RATIO = Parameter(
 
 CURRENT_DISEASE_PATIENTS_GLOBAL = Parameter(
     2_400_000_000,
+    manual_ref="knowledge/solution/dfda.qmd",
     source_ref=ReferenceID.DISEASE_PREVALENCE_2_BILLION,
     source_type="external",
     description="Global population with chronic diseases",
@@ -1915,6 +2030,7 @@ CURRENT_DISEASE_PATIENTS_GLOBAL = Parameter(
 
 CURRENT_PATIENT_PARTICIPATION_RATE = Parameter(
     CURRENT_TRIAL_SLOTS_AVAILABLE / CURRENT_DISEASE_PATIENTS_GLOBAL,
+    manual_ref="knowledge/problem.qmd",
     source_ref="clinical-trial-patient-participation-rate",
     source_type="calculated",
     description="Current patient participation rate in clinical trials (0.08% = 1.9M participants / 2.4B disease patients)",
@@ -1930,6 +2046,7 @@ CURRENT_PATIENT_PARTICIPATION_RATE = Parameter(
 # Traditional Trial Economics
 PHASE_3_TRIAL_COST_MIN = Parameter(
     20_000_000,
+    manual_ref="knowledge/appendix/dfda-spec-paper.qmd",
     source_ref=ReferenceID.PHASE_3_COST_PER_TRIAL_RANGE,
     source_type="external",
     description="Phase 3 trial total cost (minimum)",
@@ -1951,6 +2068,7 @@ PHASE_3_TRIAL_COST_MIN = Parameter(
 # Component costs (per patient per month)
 DFDA_STORAGE_COST_RAW_PER_PATIENT_MONTHLY = Parameter(
     0.02,
+    manual_ref="knowledge/solution/dfda.qmd",
     source_type="definition",
     description="Raw cloud storage cost per patient per month. Based on standard cloud storage rates for ~1GB patient data.",
     display_name="Raw Storage Cost per Patient (Monthly)",
@@ -1963,6 +2081,7 @@ DFDA_STORAGE_COST_RAW_PER_PATIENT_MONTHLY = Parameter(
 
 DFDA_STORAGE_COST_COMPUTE_PER_PATIENT_MONTHLY = Parameter(
     0.20,
+    manual_ref="knowledge/solution/dfda.qmd",
     source_type="definition",
     description="Compute and API cost per patient per month. For data processing, correlation analysis, and PIS calculation.",
     display_name="Compute/API Cost per Patient (Monthly)",
@@ -1975,6 +2094,7 @@ DFDA_STORAGE_COST_COMPUTE_PER_PATIENT_MONTHLY = Parameter(
 
 DFDA_STORAGE_COST_DATABASE_PER_PATIENT_MONTHLY = Parameter(
     0.30,
+    manual_ref="knowledge/solution/dfda.qmd",
     source_type="definition",
     description="Database cost per patient per month. For structured data storage and querying.",
     display_name="Database Cost per Patient (Monthly)",
@@ -1987,6 +2107,7 @@ DFDA_STORAGE_COST_DATABASE_PER_PATIENT_MONTHLY = Parameter(
 
 DFDA_STORAGE_COST_BACKUP_PER_PATIENT_MONTHLY = Parameter(
     0.20,
+    manual_ref="knowledge/solution/dfda.qmd",
     source_type="definition",
     description="Backup and redundancy cost per patient per month. For data safety and compliance.",
     display_name="Backup/Redundancy Cost per Patient (Monthly)",
@@ -2003,6 +2124,7 @@ DFDA_STORAGE_COST_TOTAL_PER_PATIENT_MONTHLY = Parameter(
     + DFDA_STORAGE_COST_COMPUTE_PER_PATIENT_MONTHLY
     + DFDA_STORAGE_COST_DATABASE_PER_PATIENT_MONTHLY
     + DFDA_STORAGE_COST_BACKUP_PER_PATIENT_MONTHLY,
+    manual_ref="knowledge/solution/dfda.qmd",
     source_type="calculated",
     description="Total infrastructure cost per patient per month. Sum of storage, compute, database, and backup costs.",
     display_name="Total Infrastructure Cost per Patient (Monthly)",
@@ -2027,6 +2149,7 @@ DFDA_STORAGE_COST_TOTAL_PER_PATIENT_MONTHLY = Parameter(
 # Annual cost (for long-term tracking)
 DFDA_STORAGE_COST_TOTAL_PER_PATIENT_ANNUAL = Parameter(
     DFDA_STORAGE_COST_TOTAL_PER_PATIENT_MONTHLY * 12,
+    manual_ref="knowledge/solution/dfda.qmd",
     source_type="calculated",
     description="Total infrastructure cost per patient per year. Monthly cost × 12.",
     display_name="Total Infrastructure Cost per Patient (Annual)",
@@ -2043,6 +2166,7 @@ DFDA_STORAGE_COST_TOTAL_PER_PATIENT_ANNUAL = Parameter(
 # The exact value matters less than the order-of-magnitude difference vs trials ($500-41,000)
 DFDA_OBSERVATIONAL_COST_PER_PATIENT = Parameter(
     0.10,
+    manual_ref="knowledge/appendix/dfda-spec-paper.qmd",
     source_type="definition",
     description="Order-of-magnitude estimate for Stage 1 observational signal detection (PIS calculation). Validated by FDA Sentinel benchmark (~$1/patient/year for similar drug safety analysis at 100M+ scale). True cost varies with scale and complexity; exact value less important than order-of-magnitude difference vs pragmatic trials (~$500-929/patient) and traditional Phase 3 (~$41,000/patient).",
     display_name="Stage 1 Observational Analysis Cost per Patient",
@@ -2060,6 +2184,7 @@ DFDA_OBSERVATIONAL_COST_PER_PATIENT = Parameter(
 # Stage 2: Pragmatic Trial Confirmation
 RECOVERY_TRIAL_COST_PER_PATIENT = Parameter(
     500,
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_ref=ReferenceID.RECOVERY_COST_500,
     source_type="external",
     description="RECOVERY trial cost per patient. Note: RECOVERY was an outlier - hospital-based during COVID emergency, minimal extra procedures, existing NHS infrastructure, streamlined consent. Replicating this globally will be harder.",
@@ -2080,6 +2205,7 @@ RECOVERY_TRIAL_COST_PER_PATIENT = Parameter(
 # Note: $14M is the PCORI grant; true costs may be 10-40% higher with in-kind contributions
 ADAPTABLE_TRIAL_TOTAL_COST = Parameter(
     14_000_000,  # $14M PCORI grant (floor estimate)
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_ref=ReferenceID.PRAGMATIC_TRIALS_COST_ADVANTAGE,
     source_type="external",
     description="PCORI grant for ADAPTABLE trial (2016-2019). Note: Direct funding only; total costs including site overhead and in-kind contributions from health systems may be higher.",
@@ -2094,6 +2220,7 @@ ADAPTABLE_TRIAL_TOTAL_COST = Parameter(
 
 ADAPTABLE_TRIAL_PATIENTS = Parameter(
     15076,  # 15,076 patients enrolled (precise count)
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_ref=ReferenceID.PRAGMATIC_TRIALS_COST_ADVANTAGE,
     source_type="definition",  # Precise count, no uncertainty
     description="Patients enrolled in ADAPTABLE trial (PCORnet 2016-2019). Enrolled across 40 clinical sites. Precise count from trial completion records.",
@@ -2106,6 +2233,7 @@ ADAPTABLE_TRIAL_PATIENTS = Parameter(
 
 ADAPTABLE_TRIAL_COST_PER_PATIENT = Parameter(
     929,  # $14M / 15,076 patients = $929/patient
+    manual_ref="knowledge/appendix/dfda-impact-paper.qmd",
     source_ref=ReferenceID.PRAGMATIC_TRIALS_COST_ADVANTAGE,
     source_type="external",
     description="Cost per patient in ADAPTABLE trial ($14M PCORI grant / 15,076 patients). Note: This is the direct grant cost; true cost including in-kind may be 10-40% higher.",
@@ -2127,6 +2255,7 @@ ADAPTABLE_TRIAL_COST_PER_PATIENT = Parameter(
 # This means our projections likely UNDERSTATE the true potential by ~10x
 DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT = Parameter(
     929,  # ADAPTABLE trial empirical cost - CONSERVATIVE choice
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_ref=ReferenceID.PRAGMATIC_TRIALS_COST_ADVANTAGE,
     source_type="external",
     description="dFDA pragmatic trial cost per patient. Uses ADAPTABLE trial ($929) as DELIBERATELY CONSERVATIVE central estimate. Ramsberg & Platt (2018) reviewed 108 embedded pragmatic trials; 64 with cost data had median of only $97/patient - our estimate may overstate costs by 10x. Confidence interval spans meta-analysis median to complex chronic disease trials.",
@@ -2145,6 +2274,7 @@ DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT = Parameter(
 # Traditional Phase 3 Cost (baseline for comparison)
 TRADITIONAL_PHASE3_COST_PER_PATIENT = Parameter(
     41000,
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_ref=ReferenceID.TRIAL_COSTS_FDA_STUDY,
     source_type="external",
     description="Phase 3 cost per patient (median from FDA study)",
@@ -2161,6 +2291,7 @@ TRADITIONAL_PHASE3_COST_PER_PATIENT = Parameter(
 # RECOVERY Trial Cost Reduction (historical evidence)
 RECOVERY_TRIAL_COST_REDUCTION_FACTOR = Parameter(
     TRADITIONAL_PHASE3_COST_PER_PATIENT / RECOVERY_TRIAL_COST_PER_PATIENT,
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_ref=ReferenceID.RECOVERY_TRIAL_82X_COST_REDUCTION,
     source_type="calculated",
     description="Cost reduction factor demonstrated by RECOVERY trial (traditional Phase 3 cost / RECOVERY cost per patient)",
@@ -2175,6 +2306,7 @@ RECOVERY_TRIAL_COST_REDUCTION_FACTOR = Parameter(
 # dFDA Pragmatic Trial Cost Reduction (forward-looking projection)
 DFDA_TRIAL_COST_REDUCTION_FACTOR = Parameter(
     TRADITIONAL_PHASE3_COST_PER_PATIENT / DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT,
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_type="calculated",
     description="Cost reduction factor projected for dFDA pragmatic trials (traditional Phase 3 cost / dFDA pragmatic cost per patient)",
     display_name="dFDA Trial Cost Reduction Factor",
@@ -2188,6 +2320,7 @@ DFDA_TRIAL_COST_REDUCTION_FACTOR = Parameter(
 # dFDA Trial Cost Reduction as Percentage (derived from factor)
 DFDA_TRIAL_COST_REDUCTION_PCT = Parameter(
     1 - (DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT / TRADITIONAL_PHASE3_COST_PER_PATIENT),
+    manual_ref="knowledge/appendix/dfda-impact-paper.qmd",
     source_type="calculated",
     description="Trial cost reduction percentage: 1 - (dFDA pragmatic cost / traditional Phase 3 cost)",
     display_name="dFDA Trial Cost Reduction Percentage",
@@ -2204,6 +2337,7 @@ DFDA_TRIAL_COST_REDUCTION_PCT = Parameter(
 
 ANTIDEPRESSANT_TRIAL_EXCLUSION_RATE = Parameter(
     0.861,
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_ref=ReferenceID.ANTIDEPRESSANT_TRIAL_EXCLUSION_RATES,
     source_type="external",
     description="Mean exclusion rate in antidepressant trials (86.1% of real-world patients excluded)",
@@ -2215,6 +2349,7 @@ ANTIDEPRESSANT_TRIAL_EXCLUSION_RATE = Parameter(
 
 PRE_1962_VALIDATION_YEARS = Parameter(
     77,
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_ref=ReferenceID.LIFE_EXPECTANCY_INCREASE_PRE_1962,
     source_type="definition",
     description="Years of empirical validation for physician-led pragmatic trials (1883-1960)",
@@ -2231,6 +2366,7 @@ PRE_1962_VALIDATION_YEARS = Parameter(
 
 US_LIFE_EXPECTANCY_1880 = Parameter(
     39.41,
+    manual_ref="knowledge/appendix/invisible-graveyard.qmd",
     source_ref=ReferenceID.LIFE_EXPECTANCY_INCREASE_PRE_1962,
     source_type="external",
     description="US life expectancy in 1880 (closest available data point to 1883).",
@@ -2246,6 +2382,7 @@ US_LIFE_EXPECTANCY_1880 = Parameter(
 
 US_LIFE_EXPECTANCY_1962 = Parameter(
     70.064,
+    manual_ref="knowledge/appendix/invisible-graveyard.qmd",
     source_ref=ReferenceID.LIFE_EXPECTANCY_INCREASE_PRE_1962,
     source_type="external",
     description="US life expectancy in 1962 (year of Kefauver-Harris Amendments).",
@@ -2261,6 +2398,7 @@ US_LIFE_EXPECTANCY_1962 = Parameter(
 
 US_LIFE_EXPECTANCY_2019 = Parameter(
     78.862,
+    manual_ref="knowledge/appendix/invisible-graveyard.qmd",
     source_ref=ReferenceID.POST_1962_LIFE_EXPECTANCY_SLOWDOWN,
     source_type="external",
     description="US life expectancy in 2019 (latest available data).",
@@ -2277,6 +2415,7 @@ US_LIFE_EXPECTANCY_2019 = Parameter(
 # Life Expectancy Gain Rates - Calculated from data points
 LIFE_EXPECTANCY_GAIN_1883_1962_YEARS_PER_DECADE = Parameter(
     (US_LIFE_EXPECTANCY_1962 - US_LIFE_EXPECTANCY_1880) / 7.9,
+    manual_ref="knowledge/appendix/invisible-graveyard.qmd",
     source_ref=ReferenceID.LIFE_EXPECTANCY_INCREASE_PRE_1962,
     source_type="calculated",
     description="US life expectancy linear gain rate 1883-1962 (pre-Kefauver-Harris).",
@@ -2293,6 +2432,7 @@ LIFE_EXPECTANCY_GAIN_1883_1962_YEARS_PER_DECADE = Parameter(
 
 LIFE_EXPECTANCY_GAIN_1962_2019_YEARS_PER_DECADE = Parameter(
     (US_LIFE_EXPECTANCY_2019 - US_LIFE_EXPECTANCY_1962) / 5.7,
+    manual_ref="knowledge/appendix/invisible-graveyard.qmd",
     source_ref=ReferenceID.POST_1962_LIFE_EXPECTANCY_SLOWDOWN,
     source_type="calculated",
     description="US life expectancy linear gain rate 1962-2019 (post-Kefauver-Harris).",
@@ -2325,6 +2465,7 @@ LIFE_EXPECTANCY_GAIN_1962_2019_YEARS_PER_DECADE = Parameter(
 
 FDA_APPROVED_PRODUCTS_COUNT = Parameter(
     20_000,
+    manual_ref="knowledge/problem/nih-fails-2-institute-health.qmd",
     source_ref=ReferenceID.FDA_APPROVED_PRODUCTS_20K,
     source_type="external",
     description="Total FDA-approved drug products in the U.S.",
@@ -2336,6 +2477,7 @@ FDA_APPROVED_PRODUCTS_COUNT = Parameter(
 
 FDA_APPROVED_UNIQUE_ACTIVE_INGREDIENTS = Parameter(
     1_650,
+    manual_ref="knowledge/problem/untapped-therapeutic-frontier.qmd",
     source_ref=ReferenceID.FDA_APPROVED_PRODUCTS_20K,
     source_type="external",
     description="Unique active pharmaceutical ingredients in FDA-approved products (midpoint of 1,300-2,000 range)",
@@ -2349,6 +2491,7 @@ FDA_APPROVED_UNIQUE_ACTIVE_INGREDIENTS = Parameter(
 
 PHASE_1_PASSED_COMPOUNDS_GLOBAL = Parameter(
     7_500,
+    manual_ref="knowledge/problem/untapped-therapeutic-frontier.qmd",
     source_ref=ReferenceID.BIO_CLINICAL_DEVELOPMENT_2021,
     source_type="external",
     description="Investigational compounds that have passed Phase I globally (midpoint of 5,000-10,000 range)",
@@ -2362,6 +2505,7 @@ PHASE_1_PASSED_COMPOUNDS_GLOBAL = Parameter(
 
 FDA_GRAS_SUBSTANCES_COUNT = Parameter(
     635,
+    manual_ref="knowledge/problem/untapped-therapeutic-frontier.qmd",
     source_ref=ReferenceID.FDA_GRAS_LIST_COUNT,
     source_type="external",
     description="FDA Generally Recognized as Safe (GRAS) substances (midpoint of 570-700 range)",
@@ -2377,6 +2521,7 @@ FDA_GRAS_SUBSTANCES_COUNT = Parameter(
 
 SAFE_COMPOUNDS_COUNT = Parameter(
     9_500,
+    manual_ref="knowledge/problem/untapped-therapeutic-frontier.qmd",
     source_type="definition",
     description="Total safe compounds available for repurposing (FDA-approved + GRAS substances, midpoint of 7,000-12,000 range)",
     display_name="Safe Compounds Available for Testing",
@@ -2391,6 +2536,7 @@ SAFE_COMPOUNDS_COUNT = Parameter(
 
 ICD_10_TOTAL_CODES = Parameter(
     14_000,
+    manual_ref="knowledge/problem/untapped-therapeutic-frontier.qmd",
     source_ref=ReferenceID.ICD_10_CODE_COUNT,
     source_type="external",
     description="Total ICD-10 diagnostic codes for human diseases and conditions",
@@ -2402,6 +2548,7 @@ ICD_10_TOTAL_CODES = Parameter(
 
 TRIAL_RELEVANT_DISEASES_COUNT = Parameter(
     1_000,
+    manual_ref="knowledge/problem/untapped-therapeutic-frontier.qmd",
     source_type="definition",
     description="Consolidated count of trial-relevant diseases worth targeting (after grouping ICD-10 codes)",
     display_name="Trial-Relevant Diseases",
@@ -2416,6 +2563,7 @@ TRIAL_RELEVANT_DISEASES_COUNT = Parameter(
 
 DRUG_DISEASE_COMBINATIONS_POSSIBLE = Parameter(
     SAFE_COMPOUNDS_COUNT * TRIAL_RELEVANT_DISEASES_COUNT,
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_type="calculated",
     description="Total possible drug-disease combinations using existing safe compounds",
     display_name="Possible Drug-Disease Combinations",
@@ -2431,6 +2579,7 @@ DRUG_DISEASE_COMBINATIONS_POSSIBLE = Parameter(
 
 APPROVED_DRUG_DISEASE_PAIRINGS = Parameter(
     1_750,
+    manual_ref="knowledge/problem/untapped-therapeutic-frontier.qmd",
     source_type="definition",
     description="Unique approved drug-disease pairings (FDA-approved uses, midpoint of 1,500-2,000 range)",
     display_name="Approved Drug-Disease Pairings",
@@ -2443,6 +2592,7 @@ APPROVED_DRUG_DISEASE_PAIRINGS = Parameter(
 
 DRUG_REPURPOSING_SUCCESS_RATE = Parameter(
     0.30,
+    manual_ref="knowledge/appendix/dfda-impact-paper.qmd",
     source_ref=ReferenceID.DRUG_REPURPOSING_RATE,
     source_type="external",
     description="Percentage of drugs that gain at least one new indication after initial approval",
@@ -2454,6 +2604,7 @@ DRUG_REPURPOSING_SUCCESS_RATE = Parameter(
 
 TESTED_RELATIONSHIPS_ESTIMATE = Parameter(
     32_500,
+    manual_ref="knowledge/problem/untapped-therapeutic-frontier.qmd",
     source_type="definition",
     description="Estimated drug-disease relationships actually tested (approved uses + repurposed + failed trials, midpoint of 15,000-50,000 range)",
     display_name="Tested Drug-Disease Relationships",
@@ -2468,6 +2619,7 @@ TESTED_RELATIONSHIPS_ESTIMATE = Parameter(
 
 EXPLORATION_RATIO = Parameter(
     TESTED_RELATIONSHIPS_ESTIMATE / DRUG_DISEASE_COMBINATIONS_POSSIBLE,
+    manual_ref="knowledge/problem/untapped-therapeutic-frontier.qmd",
     source_type="calculated",
     description="Fraction of possible drug-disease space actually tested (<1%)",
     display_name="Therapeutic Frontier Exploration Ratio",
@@ -2480,6 +2632,7 @@ EXPLORATION_RATIO = Parameter(
 
 UNEXPLORED_RATIO = Parameter(
     1 - (TESTED_RELATIONSHIPS_ESTIMATE / DRUG_DISEASE_COMBINATIONS_POSSIBLE),
+    manual_ref="knowledge/problem/nih-fails-2-institute-health.qmd",
     source_type="calculated",
     description="Fraction of possible drug-disease space that remains unexplored (>99%)",
     display_name="Unexplored Therapeutic Frontier",
@@ -2499,6 +2652,7 @@ UNEXPLORED_RATIO = Parameter(
 
 HUMAN_PROTEIN_CODING_GENES = Parameter(
     20_000,
+    manual_ref="knowledge/problem/untapped-therapeutic-frontier.qmd",
     source_type="definition",
     description="Human protein-coding genes targetable by gene therapy, mRNA, or biologics (Human Genome Project consensus)",
     display_name="Human Protein-Coding Genes",
@@ -2511,6 +2665,7 @@ HUMAN_PROTEIN_CODING_GENES = Parameter(
 
 GENE_THERAPY_DISEASE_COMBINATIONS = Parameter(
     HUMAN_PROTEIN_CODING_GENES * TRIAL_RELEVANT_DISEASES_COUNT,
+    manual_ref="knowledge/problem/untapped-therapeutic-frontier.qmd",
     source_type="calculated",
     description="Gene therapy target-disease combinations (CRISPR, base editing, viral vectors)",
     display_name="Gene Therapy Combinations",
@@ -2524,6 +2679,7 @@ GENE_THERAPY_DISEASE_COMBINATIONS = Parameter(
 
 MRNA_THERAPEUTIC_COMBINATIONS = Parameter(
     HUMAN_PROTEIN_CODING_GENES * TRIAL_RELEVANT_DISEASES_COUNT,
+    manual_ref="knowledge/problem/untapped-therapeutic-frontier.qmd",
     source_type="calculated",
     description="mRNA therapeutic combinations (protein replacement, vaccines, enzyme delivery)",
     display_name="mRNA Therapeutic Combinations",
@@ -2537,6 +2693,7 @@ MRNA_THERAPEUTIC_COMBINATIONS = Parameter(
 
 EPIGENETIC_TARGETS_COUNT = Parameter(
     1_500,
+    manual_ref="knowledge/problem/untapped-therapeutic-frontier.qmd",
     source_type="definition",
     description="Druggable epigenetic targets (HDACs, DNMTs, histone modifiers, bromodomains)",
     display_name="Epigenetic Drug Targets",
@@ -2549,6 +2706,7 @@ EPIGENETIC_TARGETS_COUNT = Parameter(
 
 EPIGENETIC_DISEASE_COMBINATIONS = Parameter(
     EPIGENETIC_TARGETS_COUNT * TRIAL_RELEVANT_DISEASES_COUNT,
+    manual_ref="knowledge/problem/untapped-therapeutic-frontier.qmd",
     source_type="calculated",
     description="Epigenetic reprogramming target-disease combinations",
     display_name="Epigenetic Therapy Combinations",
@@ -2562,6 +2720,7 @@ EPIGENETIC_DISEASE_COMBINATIONS = Parameter(
 
 CELL_THERAPY_APPROACHES = Parameter(
     500,
+    manual_ref="knowledge/problem/untapped-therapeutic-frontier.qmd",
     source_type="definition",
     description="Distinct cell therapy approaches (CAR-T variants, iPSCs, MSCs, organoids)",
     display_name="Cell Therapy Approaches",
@@ -2574,6 +2733,7 @@ CELL_THERAPY_APPROACHES = Parameter(
 
 CELL_THERAPY_DISEASE_COMBINATIONS = Parameter(
     CELL_THERAPY_APPROACHES * TRIAL_RELEVANT_DISEASES_COUNT,
+    manual_ref="knowledge/problem/untapped-therapeutic-frontier.qmd",
     source_type="calculated",
     description="Cell therapy approach-disease combinations",
     display_name="Cell Therapy Combinations",
@@ -2589,6 +2749,7 @@ CELL_THERAPY_DISEASE_COMBINATIONS = Parameter(
 EMERGING_MODALITY_COMBINATIONS = Parameter(
     int(GENE_THERAPY_DISEASE_COMBINATIONS) + int(MRNA_THERAPEUTIC_COMBINATIONS) +
     int(EPIGENETIC_DISEASE_COMBINATIONS) + int(CELL_THERAPY_DISEASE_COMBINATIONS),
+    manual_ref="knowledge/problem/untapped-therapeutic-frontier.qmd",
     source_type="calculated",
     description="Total emerging modality combinations (gene therapy + mRNA + epigenetics + cell therapy)",
     display_name="Emerging Modality Combinations",
@@ -2607,6 +2768,7 @@ EMERGING_MODALITY_COMBINATIONS = Parameter(
 # Total testable therapeutic space (Tier 1 + Tier 2)
 TOTAL_TESTABLE_THERAPEUTIC_COMBINATIONS = Parameter(
     float(DRUG_DISEASE_COMBINATIONS_POSSIBLE) + float(EMERGING_MODALITY_COMBINATIONS),
+    manual_ref="knowledge/problem/untapped-therapeutic-frontier.qmd",
     source_type="calculated",
     description="Total testable therapeutic combinations (known safe compounds + emerging modalities)",
     display_name="Total Testable Therapeutic Space",
@@ -2626,6 +2788,7 @@ TOTAL_TESTABLE_THERAPEUTIC_COMBINATIONS = Parameter(
 
 COMBINATION_THERAPY_PAIRS = Parameter(
     int(SAFE_COMPOUNDS_COUNT * (SAFE_COMPOUNDS_COUNT - 1) / 2),
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_type="calculated",
     description="Unique pairwise drug combinations from known safe compounds (n choose 2)",
     display_name="Pairwise Drug Combinations",
@@ -2640,6 +2803,7 @@ COMBINATION_THERAPY_PAIRS = Parameter(
 
 COMBINATION_THERAPY_DISEASE_SPACE = Parameter(
     float(COMBINATION_THERAPY_PAIRS) * float(TRIAL_RELEVANT_DISEASES_COUNT),
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_type="calculated",
     description="Total combination therapy space (pairwise drug combinations × diseases). Standard in oncology, HIV, cardiology.",
     display_name="Combination Therapy Space",
@@ -2655,6 +2819,7 @@ COMBINATION_THERAPY_DISEASE_SPACE = Parameter(
 
 HUMAN_INTERACTOME_TARGETED_PCT = Parameter(
     0.12,
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_ref=ReferenceID.CLINICAL_TRIALS_PUZZLE_INTERACTOME,
     source_type="external",
     description="Percentage of human interactome (protein-protein interactions) targeted by drugs",
@@ -2667,6 +2832,7 @@ HUMAN_INTERACTOME_TARGETED_PCT = Parameter(
 # dFDA operational costs
 DFDA_UPFRONT_BUILD = Parameter(
     40_000_000,
+    manual_ref="knowledge/appendix/dfda-impact-paper.qmd",
     source_type="definition",
     description="Decentralized Framework for Drug Assessment one-time build cost (central estimate)",
     display_name="Decentralized Framework for Drug Assessment One-Time Build Cost",
@@ -2677,6 +2843,7 @@ DFDA_UPFRONT_BUILD = Parameter(
 
 DFDA_UPFRONT_BUILD_MAX = Parameter(
     46_000_000,
+    manual_ref="knowledge/appendix/dfda-impact-paper.qmd",
     source_type="definition",
     description="Decentralized Framework for Drug Assessment one-time build cost (high estimate)",
     display_name="Decentralized Framework for Drug Assessment One-Time Build Cost (Maximum)",
@@ -2688,6 +2855,7 @@ DFDA_UPFRONT_BUILD_MAX = Parameter(
 # DCT Platform Funding Comparables
 DCT_PLATFORM_FUNDING_MEDIUM = Parameter(
     500_000_000,
+    manual_ref="knowledge/solution/dfda.qmd",
     source_type="definition",
     description="Mid-range funding for commercial DCT platform",
     display_name="Mid-Range Funding for Commercial Dct Platform",
@@ -2699,6 +2867,7 @@ DCT_PLATFORM_FUNDING_MEDIUM = Parameter(
 # Per-patient cost in dollars (not billions)
 DFDA_TARGET_COST_PER_PATIENT_USD = Parameter(
     1000,
+    manual_ref="knowledge/solution.qmd",
     source_type="definition",
     description="Target cost per patient in USD (same as DFDA_TARGET_COST_PER_PATIENT but in dollars)",
     display_name="Decentralized Framework for Drug Assessment Target Cost per Patient in USD",
@@ -2710,6 +2879,7 @@ DFDA_TARGET_COST_PER_PATIENT_USD = Parameter(
 # dFDA operational cost breakdown (in billions)
 DFDA_OPEX_PLATFORM_MAINTENANCE = Parameter(
     15_000_000,
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_type="definition",
     description="Decentralized Framework for Drug Assessment maintenance costs",
     display_name="Decentralized Framework for Drug Assessment Maintenance Costs",
@@ -2722,6 +2892,7 @@ DFDA_OPEX_PLATFORM_MAINTENANCE = Parameter(
 
 DFDA_OPEX_STAFF = Parameter(
     10_000_000,
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_type="definition",
     description="Decentralized Framework for Drug Assessment staff costs (minimal, AI-assisted)",
     display_name="Decentralized Framework for Drug Assessment Staff Costs",
@@ -2734,6 +2905,7 @@ DFDA_OPEX_STAFF = Parameter(
 
 DFDA_OPEX_INFRASTRUCTURE = Parameter(
     8_000_000,
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_type="definition",
     description="Decentralized Framework for Drug Assessment infrastructure costs (cloud, security)",
     display_name="Decentralized Framework for Drug Assessment Infrastructure Costs",
@@ -2746,6 +2918,7 @@ DFDA_OPEX_INFRASTRUCTURE = Parameter(
 
 DFDA_OPEX_REGULATORY = Parameter(
     5_000_000,
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_type="definition",
     description="Decentralized Framework for Drug Assessment regulatory coordination costs",
     display_name="Decentralized Framework for Drug Assessment Regulatory Coordination Costs",
@@ -2758,6 +2931,7 @@ DFDA_OPEX_REGULATORY = Parameter(
 
 DFDA_OPEX_COMMUNITY = Parameter(
     2_000_000,
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_type="definition",
     description="Decentralized Framework for Drug Assessment community support costs",
     display_name="Decentralized Framework for Drug Assessment Community Support Costs",
@@ -2775,6 +2949,7 @@ DFDA_ANNUAL_OPEX = Parameter(
     + DFDA_OPEX_INFRASTRUCTURE
     + DFDA_OPEX_REGULATORY
     + DFDA_OPEX_COMMUNITY,
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_type="calculated",
     description="Total annual Decentralized Framework for Drug Assessment operational costs (sum of all components: platform + staff + infra + regulatory + community)",
     display_name="Total Annual Decentralized Framework for Drug Assessment Operational Costs",
@@ -2798,6 +2973,7 @@ DFDA_ANNUAL_OPEX = Parameter(
 
 DFDA_ANNUAL_TRIAL_FUNDING = Parameter(
     21_800_000_000,
+    manual_ref="knowledge/appendix/dfda-impact-paper.qmd",
     source_type="definition",
     distribution="fixed",
     description="Assumed annual funding for dFDA pragmatic clinical trials (~$21.8B/year). Source-agnostic: could come from military reallocation, philanthropy, or government appropriation.",
@@ -2809,6 +2985,7 @@ DFDA_ANNUAL_TRIAL_FUNDING = Parameter(
 
 DFDA_TRIAL_SUBSIDIES_ANNUAL = Parameter(
     DFDA_ANNUAL_TRIAL_FUNDING - DFDA_ANNUAL_OPEX,
+    manual_ref="knowledge/appendix/dfda-impact-paper.qmd",
     source_type="calculated",
     description="Annual clinical trial patient subsidies from dFDA funding (total funding minus operational costs)",
     display_name="dFDA Annual Trial Subsidies",
@@ -2822,6 +2999,7 @@ DFDA_TRIAL_SUBSIDIES_ANNUAL = Parameter(
 
 DFDA_PATIENTS_FUNDABLE_ANNUALLY = Parameter(
     DFDA_TRIAL_SUBSIDIES_ANNUAL / DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT,
+    manual_ref="knowledge/appendix/dfda-impact-paper.qmd",
     source_type="calculated",
     description="Number of patients fundable annually from dFDA funding at pragmatic trial cost. Source-agnostic counterpart of DIH_PATIENTS_FUNDABLE_ANNUALLY.",
     display_name="dFDA Patients Fundable Annually",
@@ -2854,6 +3032,7 @@ DFDA_PATIENTS_FUNDABLE_ANNUALLY = Parameter(
 # R&D Savings from Trial Cost Reduction (~$50B/year recurring)
 DFDA_BENEFIT_RD_ONLY_ANNUAL = Parameter(
     GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL * DFDA_TRIAL_COST_REDUCTION_PCT,
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_type="calculated",
     description="Annual Decentralized Framework for Drug Assessment benefit from R&D savings (trial cost reduction, secondary component)",
     display_name="Decentralized Framework for Drug Assessment Annual Benefit: R&D Savings",
@@ -2872,6 +3051,7 @@ DFDA_BENEFIT_RD_ONLY_ANNUAL = Parameter(
 
 DFDA_RD_SAVINGS_DAILY = Parameter(
     DFDA_BENEFIT_RD_ONLY_ANNUAL / DAYS_PER_YEAR,
+    manual_ref="knowledge/economics/health-dividend.qmd",
     source_type="calculated",
     description="Daily R&D savings from trial cost reduction (opportunity cost of delay)",
     display_name="Daily R&D Savings from Trial Cost Reduction",
@@ -2884,6 +3064,7 @@ DFDA_RD_SAVINGS_DAILY = Parameter(
 
 DFDA_NET_SAVINGS_RD_ONLY_ANNUAL = Parameter(
     DFDA_BENEFIT_RD_ONLY_ANNUAL - DFDA_ANNUAL_OPEX,
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_type="calculated",
     description="Annual net savings from R&D cost reduction only (gross savings minus operational costs, excludes regulatory delay value)",
     display_name="Decentralized Framework for Drug Assessment Annual Net Savings (R&D Only)",
@@ -2903,6 +3084,7 @@ DFDA_NET_SAVINGS_RD_ONLY_ANNUAL = Parameter(
 # Source: knowledge/appendix/icer-full-calculation.qmd
 STANDARD_ECONOMIC_QALY_VALUE_USD = Parameter(
     150000,
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_ref=ReferenceID.QALY_VALUE,
     source_type="external",
     description="Standard economic value per QALY",
@@ -2925,6 +3107,7 @@ STANDARD_ECONOMIC_QALY_VALUE_USD = Parameter(
 # Source: Leitenberg 2006 (CISSM) ~231M; Matthew White (necrometrics) ~123-203M; Hobsbawm ~187M
 WAR_DEATHS_SINCE_1900 = Parameter(
     310_000_000,
+    manual_ref="knowledge/problem/cost-of-war.qmd",
     source_ref="leitenberg-deaths-wars-2006",
     source_type="definition",
     confidence="low",
@@ -2945,6 +3128,7 @@ WAR_DEATHS_SINCE_1900 = Parameter(
 # Mid-20th-century global life expectancy ~55; 55 - 28 = 27 years lost per death
 WAR_AVG_YEARS_LIFE_LOST_PER_DEATH = Parameter(
     27,
+    manual_ref="knowledge/problem/cost-of-war.qmd",
     source_ref="necrometrics-20th-century",
     source_type="definition",
     confidence="low",
@@ -2961,6 +3145,7 @@ WAR_AVG_YEARS_LIFE_LOST_PER_DEATH = Parameter(
 # Total life-years lost to war since 1900
 WAR_LIFE_YEARS_LOST_SINCE_1900 = Parameter(
     WAR_DEATHS_SINCE_1900 * WAR_AVG_YEARS_LIFE_LOST_PER_DEATH,
+    manual_ref="knowledge/problem/cost-of-war.qmd",
     source_type="calculated",
     description="Total life-years stolen by war since 1900 (deaths x avg years lost per death)",
     display_name="Total Life-Years Lost to War Since 1900",
@@ -2975,6 +3160,7 @@ WAR_LIFE_YEARS_LOST_SINCE_1900 = Parameter(
 # QALY-based economic value of life-years lost to war since 1900
 WAR_QALY_VALUE_LOST_SINCE_1900 = Parameter(
     WAR_LIFE_YEARS_LOST_SINCE_1900 * STANDARD_ECONOMIC_QALY_VALUE_USD,
+    manual_ref="knowledge/problem/cost-of-war.qmd",
     source_type="calculated",
     description="Economic value of life-years destroyed by war since 1900, at $150K/QALY",
     display_name="QALY Value of Life Lost to War Since 1900",
@@ -2992,6 +3178,7 @@ WAR_QALY_VALUE_LOST_SINCE_1900 = Parameter(
 # Conservative one-in-three estimate across combat, civilian, genocide, and famine categories.
 WAR_CHILD_DEATH_PCT = Parameter(
     0.33,
+    manual_ref="knowledge/problem/cost-of-war.qmd",
     source_ref=ReferenceID.DE_WAAL_FAMINE_CHILD_MORTALITY_2018,
     source_type="definition",
     confidence="low",
@@ -3009,6 +3196,7 @@ WAR_CHILD_DEATH_PCT = Parameter(
 
 WAR_CHILDREN_KILLED_SINCE_1900 = Parameter(
     WAR_DEATHS_SINCE_1900 * WAR_CHILD_DEATH_PCT,
+    manual_ref="knowledge/problem/cost-of-war.qmd",
     source_type=SourceType.CALCULATED,
     description="Estimated children under 18 killed in wars, conflicts, genocides, and "
                 "policy-induced famines since 1900",
@@ -3024,6 +3212,7 @@ WAR_CHILDREN_KILLED_SINCE_1900 = Parameter(
 # Global nuclear weapons spending and apocalypse metrics
 GLOBAL_NUCLEAR_WEAPONS_SPENDING = Parameter(
     92_000_000_000,
+    manual_ref="knowledge/appendix/extinction-surplus.qmd",
     source_ref=ReferenceID.GLOBAL_NUCLEAR_WEAPON_MAINTENANCE_100B,
     source_type="external",
     confidence="high",
@@ -3039,6 +3228,7 @@ GLOBAL_NUCLEAR_WEAPONS_SPENDING = Parameter(
 
 NUCLEAR_WINTER_WARHEAD_THRESHOLD = Parameter(
     100,
+    manual_ref="knowledge/appendix/extinction-surplus.qmd",
     source_ref=ReferenceID.NUKE_WINTER_150TG,
     source_type="external",
     confidence="medium",
@@ -3060,6 +3250,7 @@ NUCLEAR_WINTER_WARHEAD_THRESHOLD = Parameter(
 
 GLOBAL_WARHEAD_COUNT = Parameter(
     12_241,
+    manual_ref="knowledge/appendix/extinction-surplus.qmd",
     source_ref=ReferenceID.WORLD_WARHEADS,
     source_type="external",
     confidence="high",
@@ -3074,6 +3265,7 @@ GLOBAL_WARHEAD_COUNT = Parameter(
 
 NUCLEAR_WINTER_OVERKILL_FACTOR = Parameter(
     12_241 / 100,
+    manual_ref="knowledge/appendix/extinction-surplus.qmd",
     source_type=SourceType.CALCULATED,
     confidence="medium",
     description="How many times the global nuclear arsenal exceeds the threshold for "
@@ -3094,6 +3286,7 @@ NUCLEAR_WINTER_OVERKILL_FACTOR = Parameter(
 # The cost of triggering one nuclear winter, and the markup above it
 PRICE_OF_APOCALYPSE = Parameter(
     92_000_000_000 / (12_241 / 100),
+    manual_ref="knowledge/appendix/extinction-surplus.qmd",
     source_type=SourceType.CALCULATED,
     confidence="medium",
     description="The Price of Apocalypse: the annual cost of maintaining enough nuclear "
@@ -3112,6 +3305,7 @@ PRICE_OF_APOCALYPSE = Parameter(
 
 APOCALYPSE_MARKUP = Parameter(
     GLOBAL_MILITARY_SPENDING_ANNUAL_2024 - (92_000_000_000 / (12_241 / 100)),
+    manual_ref="knowledge/appendix/extinction-surplus.qmd",
     source_type=SourceType.CALCULATED,
     confidence="medium",
     description="The Apocalypse Markup: total military spending beyond the Price of "
@@ -3128,6 +3322,7 @@ APOCALYPSE_MARKUP = Parameter(
 
 APOCALYPSE_MARKUP_MULTIPLIER = Parameter(
     GLOBAL_MILITARY_SPENDING_ANNUAL_2024 / (92_000_000_000 / (12_241 / 100)),
+    manual_ref="knowledge/appendix/extinction-surplus.qmd",
     source_type=SourceType.CALCULATED,
     confidence="medium",
     description="How many times total military spending exceeds the Price of Apocalypse. "
@@ -3144,6 +3339,7 @@ APOCALYPSE_MARKUP_MULTIPLIER = Parameter(
 # Bullet purchasing power (complements nuclear overkill with a more visceral metric)
 BULLET_COST_556_NATO = Parameter(
     0.40,
+    manual_ref="knowledge/appendix/extinction-surplus.qmd",
     source_ref=ReferenceID.NATO_556_AMMO_COST,
     source_type="external",
     confidence="medium",
@@ -3160,6 +3356,7 @@ BULLET_COST_556_NATO = Parameter(
 
 BULLETS_FIRED_PER_KILL_IRAQ_AFGHANISTAN = Parameter(
     250_000,
+    manual_ref="knowledge/appendix/extinction-surplus.qmd",
     source_ref=ReferenceID.NATO_556_ROUNDS_PER_KILL,
     source_type="external",
     confidence="medium",
@@ -3175,6 +3372,7 @@ BULLETS_FIRED_PER_KILL_IRAQ_AFGHANISTAN = Parameter(
 
 GLOBAL_BULLETS_PURCHASABLE_ANNUAL = Parameter(
     GLOBAL_MILITARY_SPENDING_ANNUAL_2024 / BULLET_COST_556_NATO,
+    manual_ref="knowledge/appendix/extinction-surplus.qmd",
     source_type=SourceType.CALCULATED,
     confidence="medium",
     description="Number of 5.56mm NATO rounds purchasable with the entire global military "
@@ -3192,6 +3390,7 @@ GLOBAL_BULLETS_PURCHASABLE_ANNUAL = Parameter(
 # Annual terrorism death risk
 ANNUAL_TERRORISM_DEATH_RISK_DENOMINATOR = Parameter(
     30_000_000,
+    manual_ref="knowledge/solution/1-percent-treaty.qmd",
     source_ref=ReferenceID.CHANCE_OF_DYING_FROM_TERRORISM_1_IN_30M,
     source_type="external",
     confidence="high",
@@ -3207,6 +3406,7 @@ ANNUAL_TERRORISM_DEATH_RISK_DENOMINATOR = Parameter(
 # Cumulative military spending expressed in years of government clinical trial spending
 CUMULATIVE_MILITARY_IN_GOVT_TRIAL_YEARS = Parameter(
     CUMULATIVE_MILITARY_SPENDING_FED_ERA / GLOBAL_GOVERNMENT_CLINICAL_TRIALS_SPENDING_ANNUAL,
+    manual_ref="knowledge/strategy/declaration-of-optimization.qmd",
     source_type=SourceType.CALCULATED,
     description="Cumulative military spending since 1913 expressed in equivalent years of "
                 "government clinical trial spending ($170T / $4.5B per year)",
@@ -3224,6 +3424,7 @@ CUMULATIVE_MILITARY_IN_GOVT_TRIAL_YEARS = Parameter(
 # Global GDP (2025) - needed for global opportunity cost calculations
 GLOBAL_GDP_2025 = Parameter(
     115_000_000_000_000,  # $115 trillion (2025 estimate from Political Dysfunction Tax paper)
+    manual_ref="knowledge/appendix/political-dysfunction-tax.qmd",
     source_ref=ReferenceID.POLITICAL_DYSFUNCTION_TAX_PAPER_2025,
     source_type="external",
     confidence="high",
@@ -3240,6 +3441,7 @@ GLOBAL_GDP_2025 = Parameter(
 # Population
 GLOBAL_POPULATION_2024 = Parameter(
     8_000_000_000,
+    manual_ref="knowledge/solution/dih.qmd",
     source_ref=ReferenceID.GLOBAL_POPULATION_8_BILLION,
     source_type="external",
     description="Global population in 2024",
@@ -3254,6 +3456,7 @@ GLOBAL_POPULATION_2024 = Parameter(
 # Bullets per person (depends on GLOBAL_POPULATION_2024 above)
 BULLETS_PER_PERSON_ANNUAL = Parameter(
     GLOBAL_BULLETS_PURCHASABLE_ANNUAL / GLOBAL_POPULATION_2024,
+    manual_ref="knowledge/appendix/extinction-surplus.qmd",
     source_type=SourceType.CALCULATED,
     confidence="medium",
     description="Number of bullets per person on Earth that could be purchased annually "
@@ -3270,6 +3473,7 @@ BULLETS_PER_PERSON_ANNUAL = Parameter(
 
 GLOBAL_AVG_INCOME_2025 = Parameter(
     GLOBAL_GDP_2025 / GLOBAL_POPULATION_2024,
+    manual_ref="knowledge/appendix/political-dysfunction-tax.qmd",
     source_type="calculated",
     description="Global average income (GDP per capita) in 2025 baseline.",
     display_name="Global Average Income (2025 Baseline)",
@@ -3284,6 +3488,7 @@ GLOBAL_AVG_INCOME_2025 = Parameter(
 # Cumulative property/infrastructure destruction from wars since 1900
 WAR_PROPERTY_DESTRUCTION_SINCE_1900 = Parameter(
     45_000_000_000_000,
+    manual_ref="knowledge/problem/cost-of-war.qmd",
     source_ref="harrison-economics-wwii",
     source_type="definition",
     confidence="low",
@@ -3300,6 +3505,7 @@ WAR_PROPERTY_DESTRUCTION_SINCE_1900 = Parameter(
 # Cumulative environmental destruction from wars since 1900
 WAR_ENVIRONMENTAL_DESTRUCTION_SINCE_1900 = Parameter(
     5_000_000_000_000,
+    manual_ref="knowledge/problem/cost-of-war.qmd",
     source_ref="brown-costs-of-war-environmental",
     source_type="definition",
     confidence="low",
@@ -3317,6 +3523,7 @@ WAR_ENVIRONMENTAL_DESTRUCTION_SINCE_1900 = Parameter(
 # Global GDP per capita in 1900 (2024 dollars, Maddison Project)
 GLOBAL_GDP_PER_CAPITA_1900 = Parameter(
     3_150,
+    manual_ref="knowledge/problem/cost-of-war.qmd",
     source_ref="maddison-project-2020",
     source_type="external",
     confidence="medium",
@@ -3341,6 +3548,7 @@ GLOBAL_GDP_PER_CAPITA_1900 = Parameter(
 # Ch8: international scientific collaboration (0.05-0.15pp)
 WAR_COUNTERFACTUAL_ANNUAL_GROWTH_BOOST = Parameter(
     0.026,
+    manual_ref="knowledge/problem/cost-of-war.qmd",
     source_ref="costa-rica-peace-dividend",
     source_type="definition",
     confidence="low",
@@ -3362,6 +3570,7 @@ WAR_COUNTERFACTUAL_ANNUAL_GROWTH_BOOST = Parameter(
 # Counterfactual GDP per capita if no wars since 1900
 WAR_COUNTERFACTUAL_GDP_PER_CAPITA = Parameter(
     GLOBAL_GDP_PER_CAPITA_1900 * (1 + (GLOBAL_AVG_INCOME_2025 / GLOBAL_GDP_PER_CAPITA_1900) ** (1/124) - 1 + WAR_COUNTERFACTUAL_ANNUAL_GROWTH_BOOST) ** 124,
+    manual_ref="knowledge/problem/cost-of-war.qmd",
     source_type="calculated",
     confidence="low",
     description="Counterfactual global GDP per capita if all wars abolished since 1900. "
@@ -3384,6 +3593,7 @@ GDP_{pc,peace} &= GDP_{pc,1900} \times \left(1 + \left(\frac{\bar{y}_{0}}{GDP_{p
 # Lost GDP per capita (counterfactual minus actual)
 WAR_COUNTERFACTUAL_LOST_GDP_PER_CAPITA = Parameter(
     WAR_COUNTERFACTUAL_GDP_PER_CAPITA - GLOBAL_AVG_INCOME_2025,
+    manual_ref="knowledge/problem/cost-of-war.qmd",
     source_type="calculated",
     description="Annual GDP per capita lost due to compound war effects since 1900",
     display_name="Annual Lost GDP per Capita from War",
@@ -3398,6 +3608,7 @@ WAR_COUNTERFACTUAL_LOST_GDP_PER_CAPITA = Parameter(
 # Total annual lost GDP (lost per capita × world population)
 WAR_COUNTERFACTUAL_LOST_GDP_GLOBAL = Parameter(
     WAR_COUNTERFACTUAL_LOST_GDP_PER_CAPITA * GLOBAL_POPULATION_2024,
+    manual_ref="knowledge/problem/cost-of-war.qmd",
     source_type="calculated",
     confidence="low",
     description="Total annual global GDP lost to compound war effects since 1900. "
@@ -3414,6 +3625,7 @@ WAR_COUNTERFACTUAL_LOST_GDP_GLOBAL = Parameter(
 # The headline number: how many times richer every person would be without war
 WAR_COUNTERFACTUAL_INCOME_MULTIPLE = Parameter(
     WAR_COUNTERFACTUAL_GDP_PER_CAPITA / GLOBAL_AVG_INCOME_2025,
+    manual_ref="knowledge/problem/cost-of-war.qmd",
     source_type="calculated",
     confidence="low",
     description="How many times richer the average person would be if wars had been abolished in 1900. "
@@ -3430,6 +3642,7 @@ WAR_COUNTERFACTUAL_INCOME_MULTIPLE = Parameter(
 # Historical sunk cost total (one-time, not ongoing)
 WAR_TOTAL_COST_SINCE_1900 = Parameter(
     CUMULATIVE_MILITARY_SPENDING_FED_ERA + WAR_PROPERTY_DESTRUCTION_SINCE_1900 + WAR_ENVIRONMENTAL_DESTRUCTION_SINCE_1900 + WAR_QALY_VALUE_LOST_SINCE_1900,
+    manual_ref="knowledge/problem/cost-of-war.qmd",
     source_type="calculated",
     confidence="low",
     description="Total historical sunk cost of war since 1900: military spending ($170T) + "
@@ -3445,6 +3658,7 @@ WAR_TOTAL_COST_SINCE_1900 = Parameter(
 
 WHO_QALY_THRESHOLD_COST_EFFECTIVE = Parameter(
     50000,
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_ref=ReferenceID.WHO_COST_EFFECTIVENESS_THRESHOLD,
     source_type="external",
     description="Cost-effectiveness threshold widely used in US health economics ($50,000/QALY, from 1980s dialysis costs)",
@@ -3456,6 +3670,7 @@ WHO_QALY_THRESHOLD_COST_EFFECTIVE = Parameter(
 
 STANDARD_QALYS_PER_LIFE_SAVED = Parameter(
     35,
+    manual_ref="knowledge/appendix/dfda-impact-paper.qmd",
     source_ref=ReferenceID.QALY_VALUE,
     source_type="external",
     description="Standard QALYs per life saved (WHO life tables)",
@@ -3470,6 +3685,7 @@ STANDARD_QALYS_PER_LIFE_SAVED = Parameter(
 # Efficacy Lag Duration
 EFFICACY_LAG_YEARS = Parameter(
     8.2,
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_ref=ReferenceID.BIO_CLINICAL_DEVELOPMENT_2021,
     source_type="external",
     description="Regulatory delay for efficacy testing (Phase II/III) post-safety verification. Based on BIO 2021 industry survey. Note: This is for drugs that COMPLETE the pipeline - survivor bias means actual delay for any given disease may be longer if candidates fail and must restart.",
@@ -3493,6 +3709,7 @@ EFFICACY_LAG_YEARS = Parameter(
 
 FDA_TO_OXFORD_RECOVERY_TRIAL_TIME_MULTIPLIER = Parameter(
     (EFFICACY_LAG_YEARS * MONTHS_PER_YEAR) / OXFORD_RECOVERY_TRIAL_DURATION_MONTHS,
+    manual_ref="knowledge/problem/fda-is-unsafe-and-ineffective.qmd",
     source_ref=ReferenceID.RECOVERY_TRIAL_82X_COST_REDUCTION,
     source_type="calculated",
     description="Efficacy testing time vs Oxford RECOVERY trial (8.2 years ÷ 3 months = 32.8x slower). Compares efficacy lag only (post-safety Phase II/III) since RECOVERY was an efficacy trial.",
@@ -3517,6 +3734,7 @@ FDA_TO_OXFORD_RECOVERY_TRIAL_TIME_MULTIPLIER = Parameter(
 # Base WHO global mortality data
 GLOBAL_DISEASE_DEATHS_DAILY = Parameter(
     150_000,
+    manual_ref="knowledge/strategy/call-script.qmd",
     source_ref=ReferenceID.WHO_GLOBAL_HEALTH_ESTIMATES_2024,
     source_type="external",
     description="Total global deaths per day from all disease and aging (WHO Global Burden of Disease 2024)",
@@ -3533,6 +3751,7 @@ GLOBAL_DISEASE_DEATHS_DAILY = Parameter(
 
 GLOBAL_DISEASE_DEATHS_PER_MINUTE = Parameter(
     GLOBAL_DISEASE_DEATHS_DAILY / 1440,
+    manual_ref="knowledge/strategy/call-script.qmd",
     source_type="calculated",
     description="Global deaths per minute from all disease and aging",
     display_name="Global Deaths per Minute from Disease",
@@ -3611,6 +3830,7 @@ _unavoidable_pct = sum(
 
 FUNDAMENTALLY_UNAVOIDABLE_DEATH_PCT = Parameter(
     _unavoidable_pct,
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_type="definition",
     description="Percentage of deaths that are fundamentally unavoidable even with perfect biotechnology (primarily accidents). Calculated as Σ(disease_burden × (1 - max_cure_potential)) across all disease categories.",
     display_name="Fundamentally Unavoidable Death Percentage",
@@ -3622,6 +3842,7 @@ FUNDAMENTALLY_UNAVOIDABLE_DEATH_PCT = Parameter(
 
 EVENTUALLY_AVOIDABLE_DEATH_PCT = Parameter(
     1 - _unavoidable_pct,
+    manual_ref="knowledge/appendix/invisible-graveyard.qmd",
     source_type="definition",
     description="Percentage of deaths that are eventually avoidable with sufficient biomedical research and technological advancement. Central estimate ~92% based on ~7.9% fundamentally unavoidable (primarily accidents). Wide uncertainty reflects debate over: (1) aging as addressable vs. fundamental, (2) asymptotic difficulty of last diseases, (3) multifactorial disease complexity.",
     display_name="Eventually Avoidable Death Percentage",
@@ -3642,6 +3863,7 @@ EVENTUALLY_AVOIDABLE_DEATH_PCT = Parameter(
 
 GLOBAL_ANNUAL_DALY_BURDEN = Parameter(
     2_880_000_000,  # 2.88 billion DALYs/year
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_ref=ReferenceID.IHME_GBD_2021,
     source_type="external",
     description="Global annual DALY burden from all diseases and injuries (WHO/IHME Global Burden of Disease 2021). Includes both YLL (years of life lost) and YLD (years lived with disability) from all causes.",
@@ -3658,6 +3880,7 @@ GLOBAL_ANNUAL_DALY_BURDEN = Parameter(
 # YLD as proportion of total DALYs (for suffering hours calculation)
 GLOBAL_YLD_PROPORTION_OF_DALYS = Parameter(
     0.39,  # ~39% of DALYs are YLD (GBD 2021: 1.13B YLD / 2.88B DALYs)
+    manual_ref="knowledge/appendix/dfda-impact-paper.qmd",
     source_ref=ReferenceID.IHME_GBD_2021,
     source_type="external",
     description="Proportion of global DALYs that are YLD (years lived with disability) vs YLL (years of life lost). From GBD 2021: 1.13B YLD out of 2.88B total DALYs = 39%.",
@@ -3675,6 +3898,7 @@ GLOBAL_YLD_PROPORTION_OF_DALYS = Parameter(
 # Similar to death percentage but accounts for non-fatal chronic conditions
 EVENTUALLY_AVOIDABLE_DALY_PCT = Parameter(
     1 - _unavoidable_pct,  # Use same base calculation as deaths
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_type="definition",
     description="Percentage of DALYs that are eventually avoidable with sufficient biomedical research. Uses same methodology as EVENTUALLY_AVOIDABLE_DEATH_PCT. Most non-fatal chronic conditions (arthritis, depression, chronic pain) are also addressable through research, so the percentage is similar to deaths.",
     display_name="Eventually Avoidable DALY Percentage",
@@ -3692,6 +3916,7 @@ EVENTUALLY_AVOIDABLE_DALY_PCT = Parameter(
 # Adjusted to exclude fundamentally unavoidable deaths (primarily accidents)
 DFDA_EFFICACY_LAG_ELIMINATION_DEATHS_AVERTED = Parameter(
     int(GLOBAL_DISEASE_DEATHS_DAILY * EFFICACY_LAG_YEARS * DAYS_PER_YEAR * (1 - _unavoidable_pct)),
+    manual_ref="knowledge/appendix/invisible-graveyard.qmd",
     source_type="calculated",
     description="Total eventually avoidable deaths from delaying disease eradication by 8.2 years (PRIMARY estimate, conservative). Excludes fundamentally unavoidable deaths (primarily accidents ~7.9%).",
     display_name="Total Deaths from Disease Eradication Delay",
@@ -3716,6 +3941,7 @@ DFDA_EFFICACY_LAG_ELIMINATION_DEATHS_AVERTED = Parameter(
 # Component values for DALY calculations
 REGULATORY_DELAY_MEAN_AGE_OF_DEATH = Parameter(
     62,
+    manual_ref="knowledge/appendix/invisible-graveyard.qmd",
     source_ref=ReferenceID.WHO_GLOBAL_HEALTH_ESTIMATES_2024,
     source_type="external",
     description="Mean age of preventable death from post-safety efficacy testing regulatory delay (Phase 2-4)",
@@ -3739,6 +3965,7 @@ REGULATORY_DELAY_MEAN_AGE_OF_DEATH = Parameter(
 
 GLOBAL_LIFE_EXPECTANCY_2024 = Parameter(
     79,
+    manual_ref="knowledge/appendix/invisible-graveyard.qmd",
     source_ref=ReferenceID.WHO_GLOBAL_HEALTH_ESTIMATES_2024,
     source_type="external",
     description="Global life expectancy (2024)",
@@ -3767,6 +3994,7 @@ GLOBAL_LIFE_EXPECTANCY_2024 = Parameter(
 # Distribution encodes beliefs about where in that range we'll land
 LIFE_EXTENSION_YEARS = Parameter(
     20,  # Conservative median: meaningful progress without assuming miracles
+    manual_ref="knowledge/strategy/earth-optimization-prize.qmd",
     source_ref=ReferenceID.LONGEVITY_ESCAPE_VELOCITY,
     source_type="external",
     description="Expected years of life extension from 1% treaty research acceleration (25x trial capacity). Bounds: 0 (complete failure) to ~150 (accident-limited lifespan minus current). Lognormal distribution allows for breakthrough scenarios.",
@@ -3792,6 +4020,7 @@ LIFE_EXTENSION_YEARS = Parameter(
 
 REGULATORY_DELAY_SUFFERING_PERIOD_YEARS = Parameter(
     6,
+    manual_ref="knowledge/appendix/invisible-graveyard.qmd",
     source_ref=ReferenceID.WHO_GLOBAL_HEALTH_ESTIMATES_2024,
     source_type="external",
     description="Pre-death suffering period during post-safety efficacy testing delay (average years lived with untreated condition while awaiting Phase 2-4 completion)",
@@ -3819,6 +4048,7 @@ REGULATORY_DELAY_SUFFERING_PERIOD_YEARS = Parameter(
 
 CHRONIC_DISEASE_DISABILITY_WEIGHT = Parameter(
     0.35,
+    manual_ref="knowledge/appendix/invisible-graveyard.qmd",
     source_ref=ReferenceID.WHO_GLOBAL_HEALTH_ESTIMATES_2024,
     source_type="external",
     description="Disability weight for untreated chronic conditions (WHO Global Burden of Disease)",
@@ -3847,6 +4077,7 @@ CHRONIC_DISEASE_DISABILITY_WEIGHT = Parameter(
 # Morbidity Analysis (DALYs) - Based on Disease Eradication Delay Model
 DFDA_EFFICACY_LAG_ELIMINATION_YLL = Parameter(
     DFDA_EFFICACY_LAG_ELIMINATION_DEATHS_AVERTED * (GLOBAL_LIFE_EXPECTANCY_2024 - REGULATORY_DELAY_MEAN_AGE_OF_DEATH),
+    manual_ref="knowledge/appendix/invisible-graveyard.qmd",
     source_type="calculated",
     description="Years of Life Lost from disease eradication delay deaths (PRIMARY estimate)",
     display_name="Years of Life Lost from Disease Eradication Delay",
@@ -3861,6 +4092,7 @@ DFDA_EFFICACY_LAG_ELIMINATION_YLL = Parameter(
 
 DFDA_EFFICACY_LAG_ELIMINATION_YLD = Parameter(
     DFDA_EFFICACY_LAG_ELIMINATION_DEATHS_AVERTED * REGULATORY_DELAY_SUFFERING_PERIOD_YEARS * CHRONIC_DISEASE_DISABILITY_WEIGHT,
+    manual_ref="knowledge/appendix/invisible-graveyard.qmd",
     source_type="calculated",
     description="Years Lived with Disability during disease eradication delay (PRIMARY estimate)",
     display_name="Years Lived with Disability During Disease Eradication Delay",
@@ -3875,6 +4107,7 @@ DFDA_EFFICACY_LAG_ELIMINATION_YLD = Parameter(
 
 DFDA_EFFICACY_LAG_ELIMINATION_DALYS = Parameter(
     DFDA_EFFICACY_LAG_ELIMINATION_YLL + DFDA_EFFICACY_LAG_ELIMINATION_YLD,
+    manual_ref="knowledge/appendix/invisible-graveyard.qmd",
     source_type="calculated",
     description="Total Disability-Adjusted Life Years lost from disease eradication delay (PRIMARY estimate)",
     display_name="Total DALYs Lost from Disease Eradication Delay",
@@ -3904,6 +4137,7 @@ DFDA_EFFICACY_LAG_ELIMINATION_DALYS = Parameter(
 
 GLOBAL_CHRONIC_THERAPY_DAYS_ANNUAL = Parameter(
     1_280_000_000_000,  # 1.8 trillion total days of therapy × 71% for chronic conditions
+    manual_ref="knowledge/appendix/invisible-graveyard.qmd",
     source_ref="iqvia-global-medicines-2024",
     source_type="external",
     description="Annual days of therapy for chronic conditions globally (diabetes, CVD, respiratory, cancer). IQVIA reports 1.8 trillion total days of therapy in 2019, with 71% for chronic conditions.",
@@ -3923,6 +4157,7 @@ GLOBAL_CHRONIC_THERAPY_DAYS_ANNUAL = Parameter(
 # = 1.28T ÷ 365 ÷ 2.5 × 0.7 ≈ 980M, rounded to 1B
 CHRONIC_DISEASE_TREATED_PATIENTS_ANNUAL = Parameter(
     GLOBAL_CHRONIC_THERAPY_DAYS_ANNUAL / 365 / 2.5 * 0.70,  # Derived from days of therapy
+    manual_ref="knowledge/appendix/invisible-graveyard.qmd",
     source_ref="iqvia-global-medicines-2024",
     source_type="calculated",
     description="Estimated unique patients receiving chronic disease treatment annually. Derived from IQVIA days of therapy (1.28T) divided by 365 days divided by 2.5 average medications per patient times 70% post-1962 drugs.",
@@ -3948,6 +4183,7 @@ CHRONIC_DISEASE_TREATED_PATIENTS_ANNUAL = Parameter(
 # Difference = 0.25 disability avoided per year of treatment
 TREATMENT_DISABILITY_REDUCTION = Parameter(
     0.25,
+    manual_ref="knowledge/appendix/invisible-graveyard.qmd",
     source_ref="gbd-disability-weights",
     source_type="external",
     description="Average disability weight reduction from pharmaceutical treatment. Untreated chronic disease averages 0.35 disability weight, treated disease averages 0.10, difference is 0.25.",
@@ -3972,6 +4208,7 @@ TREATMENT_DISABILITY_REDUCTION = Parameter(
 # patients' medications became available. This is SEPARATE from mortality burden.
 EFFICACY_LAG_TREATMENT_DELAY_YLD_ANNUAL = Parameter(
     CHRONIC_DISEASE_TREATED_PATIENTS_ANNUAL * EFFICACY_LAG_YEARS * TREATMENT_DISABILITY_REDUCTION,
+    manual_ref="knowledge/appendix/invisible-graveyard.qmd",
     source_type="calculated",
     description="Annual YLD from treatment delay: patients receiving chronic disease treatment would have collectively avoided this disability if treatments were available 8.2 years earlier. Represents morbidity burden for treatment beneficiaries (distinct from mortality burden).",
     display_name="Treatment Delay YLD - Annual",
@@ -3990,6 +4227,7 @@ EFFICACY_LAG_TREATMENT_DELAY_YLD_ANNUAL = Parameter(
 # Economic Valuation (using standardized $150k VSLY)
 DFDA_EFFICACY_LAG_ELIMINATION_ECONOMIC_VALUE = Parameter(
     DFDA_EFFICACY_LAG_ELIMINATION_DALYS * STANDARD_ECONOMIC_QALY_VALUE_USD,
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_type="calculated",
     description="Total economic loss from delaying disease eradication by 8.2 years (PRIMARY estimate, 2024 USD). Values global DALYs at standardized US/International normative rate ($150k) rather than local ability-to-pay, representing the full human capital loss.",
     display_name="Total Economic Loss from Disease Eradication Delay",
@@ -4013,6 +4251,7 @@ DFDA_EFFICACY_LAG_ELIMINATION_ECONOMIC_VALUE = Parameter(
 # PRIMARY METRIC: Life-years saved (what Lichtenberg actually measured)
 PHARMA_LIFE_YEARS_SAVED_ANNUAL = Parameter(
     148_700_000,
+    manual_ref="knowledge/appendix/invisible-graveyard.qmd",
     source_ref="lichtenberg-life-years-saved-2019",
     source_type="external",
     description="Annual life-years saved by pharmaceutical innovations globally. Lichtenberg (2019, NBER WP 25483) found that drugs launched after 1981 saved 148.7M life-years in 2013 across 22 countries using 3-way fixed-effects regression (disease-country-year). 95% CI [79.4M, 239.8M] propagated from Table 2 regression standard errors (β₀₋₁₁=-0.031±0.008, β₁₂₊=-0.057±0.013).",
@@ -4029,6 +4268,7 @@ PHARMA_LIFE_YEARS_SAVED_ANNUAL = Parameter(
 # Used to convert life-years saved to approximate number of lives saved
 AVG_LIFE_EXTENSION_PER_BENEFICIARY = Parameter(
     12,
+    manual_ref="knowledge/appendix/invisible-graveyard.qmd",
     source_ref="lichtenberg-life-years-saved-2019",
     source_type="definition",
     description="Average years of life extension per person saved by pharmaceutical interventions. Assumption used to convert life-years saved to approximate lives saved. Based on Lichtenberg's methodology where life-years are calculated from Years of Life Lost (YLL) reductions.",
@@ -4044,6 +4284,7 @@ AVG_LIFE_EXTENSION_PER_BENEFICIARY = Parameter(
 # DERIVED METRIC: Lives saved (converted from life-years for intuitive communication)
 PHARMA_LIVES_SAVED_ANNUAL = Parameter(
     PHARMA_LIFE_YEARS_SAVED_ANNUAL / AVG_LIFE_EXTENSION_PER_BENEFICIARY,
+    manual_ref="knowledge/appendix/invisible-graveyard.qmd",
     source_ref="lichtenberg-life-years-saved-2019",
     source_type="calculated",
     description="Annual lives saved by pharmaceutical interventions globally. Derived from Lichtenberg (2019) finding of 148.7M life-years saved, divided by assumed 12-year average life extension per beneficiary. Note: Life-years is the primary metric; lives is an approximation for intuitive communication.",
@@ -4060,6 +4301,7 @@ PHARMA_LIVES_SAVED_ANNUAL = Parameter(
 # Historical Progress - TOTAL (existing drugs only, excludes future innovation effects)
 EXISTING_DRUGS_EFFICACY_LAG_DEATHS_TOTAL = Parameter(
     PHARMA_LIVES_SAVED_ANNUAL * EFFICACY_LAG_YEARS,
+    manual_ref="knowledge/appendix/invisible-graveyard.qmd",
     source_type="calculated",
     description="Total deaths from delaying existing drugs over 8.2-year efficacy lag. One-time impact of eliminating Phase 2-4 testing delay for drugs already approved 1962-2024. Based on Lichtenberg (2019) estimate of 12M lives saved annually × 8.2 years efficacy lag. Excludes innovation acceleration effects.",
     display_name="Total Deaths from Historical Progress Delays",
@@ -4074,6 +4316,7 @@ EXISTING_DRUGS_EFFICACY_LAG_DEATHS_TOTAL = Parameter(
 
 EXISTING_DRUGS_EFFICACY_LAG_ECONOMIC_LOSS = Parameter(
     EXISTING_DRUGS_EFFICACY_LAG_DEATHS_TOTAL * (GLOBAL_LIFE_EXPECTANCY_2024 - REGULATORY_DELAY_MEAN_AGE_OF_DEATH) * STANDARD_ECONOMIC_QALY_VALUE_USD,
+    manual_ref="knowledge/appendix/invisible-graveyard.qmd",
     source_type="calculated",
     description="Total economic loss from delaying existing drugs over 8.2-year efficacy lag. One-time benefit of eliminating Phase 2-4 delay. Excludes innovation acceleration effects.",
     display_name="Total Economic Loss from Historical Progress Delays",
@@ -4096,6 +4339,7 @@ EXISTING_DRUGS_EFFICACY_LAG_ECONOMIC_LOSS = Parameter(
 # Thalidomide disaster parameters (1957-1962)
 THALIDOMIDE_CASES_WORLDWIDE = Parameter(
     15_000,  # Conservative midpoint of 10,000-20,000 estimate
+    manual_ref="knowledge/appendix/invisible-graveyard.qmd",
     source_ref="thalidomide-scandal",
     source_type="external",
     description="Total thalidomide birth defect cases worldwide (1957-1962)",
@@ -4110,6 +4354,7 @@ THALIDOMIDE_CASES_WORLDWIDE = Parameter(
 
 THALIDOMIDE_MORTALITY_RATE = Parameter(
     0.40,  # 40% died within first year
+    manual_ref="knowledge/appendix/invisible-graveyard.qmd",
     source_ref="thalidomide-scandal",
     source_type="external",
     description="Mortality rate for thalidomide-affected infants (died within first year)",
@@ -4124,6 +4369,7 @@ THALIDOMIDE_MORTALITY_RATE = Parameter(
 
 THALIDOMIDE_US_POPULATION_SHARE_1960 = Parameter(
     0.06,  # US was ~6% of world population in 1960
+    manual_ref="knowledge/appendix/invisible-graveyard.qmd",
     source_ref="us-census-world-population-1960",
     source_type="external",
     description="US share of world population in 1960",
@@ -4138,6 +4384,7 @@ THALIDOMIDE_US_POPULATION_SHARE_1960 = Parameter(
 
 THALIDOMIDE_US_CASES_PREVENTED = Parameter(
     int(THALIDOMIDE_CASES_WORLDWIDE * THALIDOMIDE_US_POPULATION_SHARE_1960),
+    manual_ref="knowledge/appendix/invisible-graveyard.qmd",
     source_type="calculated",
     description="Estimated US thalidomide cases prevented by FDA rejection",
     display_name="Thalidomide US Cases Prevented",
@@ -4151,6 +4398,7 @@ THALIDOMIDE_US_CASES_PREVENTED = Parameter(
 
 THALIDOMIDE_DISABILITY_WEIGHT = Parameter(
     0.40,  # Moderate-severe disability for limb deformities
+    manual_ref="knowledge/appendix/invisible-graveyard.qmd",
     source_ref="thalidomide-survivors-health",
     source_type="external",
     description="Disability weight for thalidomide survivors (limb deformities, organ damage)",
@@ -4165,6 +4413,7 @@ THALIDOMIDE_DISABILITY_WEIGHT = Parameter(
 
 THALIDOMIDE_SURVIVOR_LIFESPAN = Parameter(
     60,  # Many survivors still living in 2020s at ~65 years old
+    manual_ref="knowledge/appendix/invisible-graveyard.qmd",
     source_ref="thalidomide-survivors-health",
     source_type="external",
     description="Average lifespan for thalidomide survivors",
@@ -4180,6 +4429,7 @@ THALIDOMIDE_SURVIVOR_LIFESPAN = Parameter(
 # Calculate DALYs per "Thalidomide Event"
 THALIDOMIDE_DEATHS_PER_EVENT = Parameter(
     float(THALIDOMIDE_US_CASES_PREVENTED) * float(THALIDOMIDE_MORTALITY_RATE),
+    manual_ref="knowledge/appendix/invisible-graveyard.qmd",
     source_type="calculated",
     description="Deaths per US-scale thalidomide event",
     display_name="Thalidomide Deaths Per Event",
@@ -4193,6 +4443,7 @@ THALIDOMIDE_DEATHS_PER_EVENT = Parameter(
 
 THALIDOMIDE_YLL_PER_EVENT = Parameter(
     THALIDOMIDE_DEATHS_PER_EVENT * 80,  # Infant deaths, 80 years lost per death
+    manual_ref="knowledge/appendix/invisible-graveyard.qmd",
     source_type="calculated",
     description="Years of Life Lost per thalidomide event (infant deaths)",
     display_name="Thalidomide YLL Per Event",
@@ -4206,6 +4457,7 @@ THALIDOMIDE_YLL_PER_EVENT = Parameter(
 
 THALIDOMIDE_SURVIVORS_PER_EVENT = Parameter(
     float(THALIDOMIDE_US_CASES_PREVENTED) * (1 - float(THALIDOMIDE_MORTALITY_RATE)),
+    manual_ref="knowledge/appendix/invisible-graveyard.qmd",
     source_type="calculated",
     description="Survivors per US-scale thalidomide event",
     display_name="Thalidomide Survivors Per Event",
@@ -4220,6 +4472,7 @@ THALIDOMIDE_SURVIVORS_PER_EVENT = Parameter(
 
 THALIDOMIDE_YLD_PER_EVENT = Parameter(
     THALIDOMIDE_SURVIVORS_PER_EVENT * THALIDOMIDE_SURVIVOR_LIFESPAN * THALIDOMIDE_DISABILITY_WEIGHT,
+    manual_ref="knowledge/appendix/invisible-graveyard.qmd",
     source_type="calculated",
     description="Years Lived with Disability per thalidomide event",
     display_name="Thalidomide YLD Per Event",
@@ -4234,6 +4487,7 @@ THALIDOMIDE_YLD_PER_EVENT = Parameter(
 
 THALIDOMIDE_DALYS_PER_EVENT = Parameter(
     THALIDOMIDE_YLL_PER_EVENT + THALIDOMIDE_YLD_PER_EVENT,
+    manual_ref="knowledge/appendix/invisible-graveyard.qmd",
     source_type="calculated",
     description="Total DALYs per US-scale thalidomide event (YLL + YLD)",
     display_name="Thalidomide DALYs Per Event",
@@ -4248,6 +4502,7 @@ THALIDOMIDE_DALYS_PER_EVENT = Parameter(
 # Type I Error: Assuming one Thalidomide-scale disaster EVERY YEAR for 62 years (extreme overestimate)
 TYPE_I_ERROR_BENEFIT_DALYS = Parameter(
     THALIDOMIDE_DALYS_PER_EVENT * 62,  # 1962-2024 period
+    manual_ref="knowledge/appendix/invisible-graveyard.qmd",
     source_type="calculated",
     description="Maximum DALYs saved by FDA preventing unsafe drugs over 62-year period 1962-2024 (extreme overestimate: one Thalidomide-scale event per year)",
     display_name="Maximum DALYs Saved by FDA Preventing Unsafe Drugs (1962-2024)",
@@ -4262,6 +4517,7 @@ TYPE_I_ERROR_BENEFIT_DALYS = Parameter(
 
 TYPE_II_ERROR_COST_RATIO = Parameter(
     DFDA_EFFICACY_LAG_ELIMINATION_DALYS / TYPE_I_ERROR_BENEFIT_DALYS,
+    manual_ref="knowledge/appendix/invisible-graveyard.qmd",
     source_type="calculated",
     description="Ratio of Type II error cost to Type I error benefit (harm from delay vs. harm prevented)",
     display_name="Ratio of Type II Error Cost to Type I Error Benefit",
@@ -4277,6 +4533,7 @@ TYPE_II_ERROR_COST_RATIO = Parameter(
 # Peace dividend health benefits
 TREATY_LIVES_SAVED_ANNUAL_GLOBAL = Parameter(
     GLOBAL_ANNUAL_CONFLICT_DEATHS_TOTAL * TREATY_REDUCTION_PCT,
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_type="calculated",
     description="Annual lives saved from 1% reduction in conflict deaths",
     display_name="Annual Lives Saved from 1% Reduction in Conflict Deaths",
@@ -4289,6 +4546,7 @@ TREATY_LIVES_SAVED_ANNUAL_GLOBAL = Parameter(
 )  # 2,446 lives
 TREATY_QALYS_GAINED_ANNUAL_GLOBAL = Parameter(
     TREATY_LIVES_SAVED_ANNUAL_GLOBAL * STANDARD_QALYS_PER_LIFE_SAVED,
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_type="calculated",
     description="Annual QALYs gained from peace dividend (lives saved × QALYs/life)",
     display_name="Annual QALYs Gained from Peace Dividend",
@@ -4314,6 +4572,7 @@ TREATY_QALYS_GAINED_ANNUAL_GLOBAL = Parameter(
 # Source: /knowledge/appendix/fundraising-strategy.qmd#capital-structure-campaign-vs-implementation
 TREATY_CAMPAIGN_DURATION_YEARS = Parameter(
     4,
+    manual_ref="knowledge/appendix/treaty-feasibility.qmd",
     source_type="definition",
     description="Treaty campaign duration (3-5 year range, using midpoint)",
     display_name="Treaty Campaign Duration",
@@ -4336,6 +4595,7 @@ TREATY_CAMPAIGN_DURATION_YEARS = Parameter(
 # Diffusion theory predicts increasing marginal costs: innovators/early adopters ($0.20-0.25), early majority ($0.50), late majority ($0.75-1.00), laggards ($1.50-2.00).
 TREATY_CAMPAIGN_VIRAL_REFERENDUM_BASE_CASE = Parameter(
     250_000_000,  # Realistic scenario with $0.50/vote average
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     confidence_interval=(150_000_000, 410_000_000),  # Optimistic ($0.20/vote) to worst-case ($1.05/vote)
     source_type="definition",
     description="Viral referendum budget for 280M verified votes (base: $250M realistic with $0.50/vote avg, range: $150M optimistic $0.20/vote to $410M worst-case $1.05/vote). Components: platform ($35M), verification infrastructure (280M × friction × $0.18-0.20), tiered referral payments (varies by virality and marginal cost curve per diffusion theory), marketing seed ($5-15M). Based on PayPal referral economics ($18-36 inflation-adjusted) and biometric verification pricing ($0.15-0.25 at 300M+ scale).",
@@ -4350,6 +4610,7 @@ TREATY_CAMPAIGN_VIRAL_REFERENDUM_BASE_CASE = Parameter(
 
 TREATY_CAMPAIGN_BUDGET_LOBBYING = Parameter(
     650_000_000,
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_type="definition",
     description="Political lobbying campaign: direct lobbying (US/EU/G20), Super PACs, opposition research, staff, legal/compliance. Budget exceeds combined pharma ($300M/year) and military-industrial complex ($150M/year) lobbying to ensure competitive positioning. Referendum relies on grassroots mobilization and earned media, while lobbying requires matching or exceeding opposition spending for political viability.",
     display_name="Political Lobbying Campaign: Direct Lobbying, Super Pacs, Opposition Research, Staff, Legal/Compliance",
@@ -4370,6 +4631,7 @@ TREATY_CAMPAIGN_BUDGET_LOBBYING = Parameter(
 
 TREATY_CAMPAIGN_BUDGET_RESERVE = Parameter(
     100_000_000,
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_type="definition",
     description="Reserve fund / contingency buffer (10% of total campaign cost). Using industry standard 10% for complex campaigns with potential for unforeseen legal challenges, opposition response, or regulatory delays. Conservative lower bound of $20M (2%) reflects transparent budget allocation and predictable referendum/lobbying costs.",
     display_name="Reserve Fund / Contingency Buffer",
@@ -4389,6 +4651,7 @@ TREATY_CAMPAIGN_BUDGET_RESERVE = Parameter(
 # Total campaign cost (calculated from components)
 TREATY_CAMPAIGN_TOTAL_COST = Parameter(
     TREATY_CAMPAIGN_VIRAL_REFERENDUM_BASE_CASE + TREATY_CAMPAIGN_BUDGET_LOBBYING + TREATY_CAMPAIGN_BUDGET_RESERVE,
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_type="calculated",
     description="Total treaty campaign cost (100% VICTORY Incentive Alignment Bonds)",
     display_name="Total 1% Treaty Campaign Cost",
@@ -4411,6 +4674,7 @@ TREATY_CAMPAIGN_TOTAL_COST = Parameter(
 
 TREATY_CAMPAIGN_ANNUAL_COST_AMORTIZED = Parameter(
     TREATY_CAMPAIGN_TOTAL_COST / TREATY_CAMPAIGN_DURATION_YEARS,
+    manual_ref="knowledge/appendix/treaty-feasibility.qmd",
     source_type="calculated",
     description="Amortized annual campaign cost (total cost ÷ campaign duration)",
     display_name="Amortized Annual Treaty Campaign Cost",
@@ -4424,6 +4688,7 @@ TREATY_CAMPAIGN_ANNUAL_COST_AMORTIZED = Parameter(
 # Campaign phase budgets
 CAMPAIGN_PHASE1_BUDGET = Parameter(
     200_000_000,
+    manual_ref="knowledge/solution/ai-coordination-army.qmd",
     source_type="definition",
     description="Phase 1 campaign budget (Foundation, Year 1)",
     display_name="Phase 1 Campaign Budget",
@@ -4436,6 +4701,7 @@ CAMPAIGN_PHASE1_BUDGET = Parameter(
 
 CAMPAIGN_PHASE2_BUDGET = Parameter(
     500_000_000,
+    manual_ref="knowledge/economics/campaign-budget.qmd",
     source_type="definition",
     description="Phase 2 campaign budget (Scale & Momentum, Years 2-3)",
     display_name="Phase 2 Campaign Budget",
@@ -4448,6 +4714,7 @@ CAMPAIGN_PHASE2_BUDGET = Parameter(
 
 CAMPAIGN_MEDIA_BUDGET_MIN = Parameter(
     500_000_000,
+    manual_ref="knowledge/economics/campaign-budget.qmd",
     source_type="definition",
     description="Minimum mass media campaign budget",
     display_name="Minimum Mass Media Campaign Budget",
@@ -4460,6 +4727,7 @@ CAMPAIGN_MEDIA_BUDGET_MIN = Parameter(
 
 CAMPAIGN_MEDIA_BUDGET_MAX = Parameter(
     1_000_000_000,
+    manual_ref="knowledge/economics/campaign-budget.qmd",
     source_type="definition",
     description="Maximum mass media campaign budget",
     display_name="Maximum Mass Media Campaign Budget",
@@ -4472,6 +4740,7 @@ CAMPAIGN_MEDIA_BUDGET_MAX = Parameter(
 
 CAMPAIGN_STAFF_BUDGET = Parameter(
     40_000_000,
+    manual_ref="knowledge/economics/campaign-budget.qmd",
     source_type="definition",
     description="Campaign core team staff budget",
     display_name="Campaign Core Team Staff Budget",
@@ -4485,6 +4754,7 @@ CAMPAIGN_STAFF_BUDGET = Parameter(
 # Detailed campaign budget line items (in millions USD)
 CAMPAIGN_LEGAL_AI_BUDGET = Parameter(
     50_000_000,
+    manual_ref="knowledge/economics/campaign-budget.qmd",
     source_type="definition",
     description="AI-assisted legal work budget",
     display_name="AI-Assisted Legal Work Budget",
@@ -4497,6 +4767,7 @@ CAMPAIGN_LEGAL_AI_BUDGET = Parameter(
 
 CAMPAIGN_VIRAL_CONTENT_BUDGET = Parameter(
     40_000_000,
+    manual_ref="knowledge/economics/campaign-budget.qmd",
     source_type="definition",
     description="Viral marketing content creation budget",
     display_name="Viral Marketing Content Creation Budget",
@@ -4509,6 +4780,7 @@ CAMPAIGN_VIRAL_CONTENT_BUDGET = Parameter(
 
 CAMPAIGN_COMMUNITY_ORGANIZING = Parameter(
     30_000_000,
+    manual_ref="knowledge/economics/campaign-budget.qmd",
     source_type="definition",
     description="Community organizing and ambassador program budget",
     display_name="Community Organizing and Ambassador Program Budget",
@@ -4521,6 +4793,7 @@ CAMPAIGN_COMMUNITY_ORGANIZING = Parameter(
 
 CAMPAIGN_LOBBYING_US = Parameter(
     50_000_000,
+    manual_ref="knowledge/economics/campaign-budget.qmd",
     source_type="definition",
     description="US lobbying campaign budget",
     display_name="US Lobbying Campaign Budget",
@@ -4533,6 +4806,7 @@ CAMPAIGN_LOBBYING_US = Parameter(
 
 CAMPAIGN_LOBBYING_EU = Parameter(
     40_000_000,
+    manual_ref="knowledge/economics/campaign-budget.qmd",
     source_type="definition",
     description="EU lobbying campaign budget",
     display_name="EU Lobbying Campaign Budget",
@@ -4545,6 +4819,7 @@ CAMPAIGN_LOBBYING_EU = Parameter(
 
 CAMPAIGN_LOBBYING_G20_MILLIONS = Parameter(
     35_000_000,
+    manual_ref="knowledge/economics/campaign-budget.qmd",
     source_type="definition",
     description="G20 countries lobbying budget",
     display_name="G20 Countries Lobbying Budget",
@@ -4555,6 +4830,7 @@ CAMPAIGN_LOBBYING_G20_MILLIONS = Parameter(
 
 CAMPAIGN_DEFENSE_LOBBYIST_BUDGET = Parameter(
     50_000_000,
+    manual_ref="knowledge/economics/campaign-budget.qmd",
     source_type="definition",
     description="Budget for co-opting defense industry lobbyists",
     display_name="Budget for Co-Opting Defense Industry Lobbyists",
@@ -4567,6 +4843,7 @@ CAMPAIGN_DEFENSE_LOBBYIST_BUDGET = Parameter(
 
 DEFENSE_LOBBYING_ANNUAL = Parameter(
     127_000_000,
+    manual_ref="knowledge/appendix/faq.qmd",
     source_ref=ReferenceID.LOBBYING_SPEND_DEFENSE,
     source_type="external",
     confidence="high",
@@ -4582,6 +4859,7 @@ DEFENSE_LOBBYING_ANNUAL = Parameter(
 
 CAMPAIGN_SUPER_PAC_BUDGET = Parameter(
     30_000_000,
+    manual_ref="knowledge/legal/election-law.qmd",
     source_type="definition",
     description="Super PAC campaign expenditures",
     display_name="Super PAC Campaign Expenditures",
@@ -4594,6 +4872,7 @@ CAMPAIGN_SUPER_PAC_BUDGET = Parameter(
 
 CAMPAIGN_OPPOSITION_RESEARCH = Parameter(
     25_000_000,
+    manual_ref="knowledge/economics/campaign-budget.qmd",
     source_type="definition",
     description="Opposition research and rapid response",
     display_name="Opposition Research and Rapid Response",
@@ -4606,6 +4885,7 @@ CAMPAIGN_OPPOSITION_RESEARCH = Parameter(
 
 CAMPAIGN_PILOT_PROGRAMS = Parameter(
     30_000_000,
+    manual_ref="knowledge/economics/campaign-budget.qmd",
     source_type="definition",
     description="Pilot program testing in small countries",
     display_name="Pilot Program Testing in Small Countries",
@@ -4618,6 +4898,7 @@ CAMPAIGN_PILOT_PROGRAMS = Parameter(
 
 CAMPAIGN_LEGAL_WORK = Parameter(
     60_000_000,
+    manual_ref="knowledge/economics/campaign-budget.qmd",
     source_type="definition",
     description="Legal drafting and compliance work",
     display_name="Legal Drafting and Compliance Work",
@@ -4636,6 +4917,7 @@ CAMPAIGN_LEGAL_WORK = Parameter(
 
 CAMPAIGN_REGULATORY_NAVIGATION = Parameter(
     20_000_000,
+    manual_ref="knowledge/economics/campaign-budget.qmd",
     source_type="definition",
     description="Regulatory compliance and navigation",
     display_name="Regulatory Compliance and Navigation",
@@ -4648,6 +4930,7 @@ CAMPAIGN_REGULATORY_NAVIGATION = Parameter(
 
 CAMPAIGN_LEGAL_DEFENSE = Parameter(
     20_000_000,
+    manual_ref="knowledge/economics/campaign-budget.qmd",
     source_type="definition",
     description="Legal defense fund",
     display_name="Legal Defense Fund",
@@ -4660,6 +4943,7 @@ CAMPAIGN_LEGAL_DEFENSE = Parameter(
 
 CAMPAIGN_DEFENSE_CONVERSION = Parameter(
     50_000_000,
+    manual_ref="knowledge/economics/campaign-budget.qmd",
     source_type="definition",
     description="Defense industry conversion program",
     display_name="Defense Industry Conversion Program",
@@ -4678,6 +4962,7 @@ CAMPAIGN_DEFENSE_CONVERSION = Parameter(
 
 CAMPAIGN_HEALTHCARE_ALIGNMENT = Parameter(
     35_000_000,
+    manual_ref="knowledge/economics/campaign-budget.qmd",
     source_type="definition",
     description="Healthcare industry alignment and partnerships",
     display_name="Healthcare Industry Alignment and Partnerships",
@@ -4690,6 +4975,7 @@ CAMPAIGN_HEALTHCARE_ALIGNMENT = Parameter(
 
 CAMPAIGN_TECH_PARTNERSHIPS = Parameter(
     25_000_000,
+    manual_ref="knowledge/economics/campaign-budget.qmd",
     source_type="definition",
     description="Tech industry partnerships and infrastructure",
     display_name="Tech Industry Partnerships and Infrastructure",
@@ -4702,6 +4988,7 @@ CAMPAIGN_TECH_PARTNERSHIPS = Parameter(
 
 CAMPAIGN_CELEBRITY_ENDORSEMENT = Parameter(
     15_000_000,
+    manual_ref="knowledge/economics/campaign-budget.qmd",
     source_type="definition",
     description="Celebrity and influencer endorsements",
     display_name="Celebrity and Influencer Endorsements",
@@ -4714,6 +5001,7 @@ CAMPAIGN_CELEBRITY_ENDORSEMENT = Parameter(
 
 CAMPAIGN_INFRASTRUCTURE = Parameter(
     20_000_000,
+    manual_ref="knowledge/economics/campaign-budget.qmd",
     source_type="definition",
     description="Campaign operational infrastructure",
     display_name="Campaign Operational Infrastructure",
@@ -4726,6 +5014,7 @@ CAMPAIGN_INFRASTRUCTURE = Parameter(
 
 CAMPAIGN_CONTINGENCY = Parameter(
     50_000_000,
+    manual_ref="knowledge/economics/campaign-budget.qmd",
     source_type="definition",
     description="Contingency fund for unexpected costs",
     display_name="Contingency Fund for Unexpected Costs",
@@ -4744,6 +5033,7 @@ CAMPAIGN_CONTINGENCY = Parameter(
 
 CAMPAIGN_TREATY_IMPLEMENTATION = Parameter(
     40_000_000,
+    manual_ref="knowledge/economics/campaign-budget.qmd",
     source_type="definition",
     description="Post-victory treaty implementation support",
     display_name="Post-Victory Treaty Implementation Support",
@@ -4762,6 +5052,7 @@ CAMPAIGN_TREATY_IMPLEMENTATION = Parameter(
 
 CAMPAIGN_SCALING_PREP = Parameter(
     30_000_000,
+    manual_ref="knowledge/economics/campaign-budget.qmd",
     source_type="definition",
     description="Scaling preparation and blueprints",
     display_name="Scaling Preparation and Blueprints",
@@ -4774,6 +5065,7 @@ CAMPAIGN_SCALING_PREP = Parameter(
 
 CAMPAIGN_PLATFORM_DEVELOPMENT = Parameter(
     35_000_000,
+    manual_ref="knowledge/economics/campaign-budget.qmd",
     source_type="definition",
     description="Voting platform and technology development",
     display_name="Voting Platform and Technology Development",
@@ -4794,6 +5086,7 @@ CAMPAIGN_PLATFORM_DEVELOPMENT = Parameter(
 # Investment tier minimums (in millions USD or thousands USD)
 INSTITUTIONAL_INVESTOR_MIN = Parameter(
     10_000_000,
+    manual_ref="knowledge/solution/incentive-alignment-bonds.qmd",
     source_type="definition",
     description="Minimum investment for institutional investors",
     display_name="Minimum Investment for Institutional Investors",
@@ -4804,6 +5097,7 @@ INSTITUTIONAL_INVESTOR_MIN = Parameter(
 
 FAMILY_OFFICE_INVESTMENT_MIN = Parameter(
     5_000_000,
+    manual_ref="knowledge/solution/aligning-incentives.qmd",
     source_type="definition",
     description="Minimum investment for family offices",
     display_name="Minimum Investment for Family Offices",
@@ -4816,6 +5110,7 @@ FAMILY_OFFICE_INVESTMENT_MIN = Parameter(
 # Total system costs
 TREATY_TOTAL_ANNUAL_COSTS = Parameter(
     TREATY_CAMPAIGN_ANNUAL_COST_AMORTIZED + DFDA_ANNUAL_OPEX,
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_type="calculated",
     description="Total annual system costs (campaign + Decentralized Framework for Drug Assessment operations)",
     display_name="Total Annual Treaty System Costs",
@@ -4834,6 +5129,7 @@ TREATY_TOTAL_ANNUAL_COSTS = Parameter(
 # Basic annual benefits (peace dividend + R&D savings only, excludes regulatory delay & other benefits)
 TREATY_PEACE_PLUS_RD_ANNUAL_BENEFITS = Parameter(
     PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT + DFDA_BENEFIT_RD_ONLY_ANNUAL,
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_type="calculated",
     description="Basic annual benefits: peace dividend + Decentralized Framework for Drug Assessment R&D savings only (2 of 8 benefit categories, excludes regulatory delay value)",
     display_name="1% treaty Basic Annual Benefits (Peace + R&D Savings)",
@@ -4853,6 +5149,7 @@ TREATY_PEACE_PLUS_RD_ANNUAL_BENEFITS = Parameter(
 # Source: knowledge/appendix/dfda-calculation-framework.qmd
 NPV_DISCOUNT_RATE_STANDARD = Parameter(
     0.03,
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_ref="",
     source_type="definition",
     description="Standard discount rate for NPV analysis (3% annual, social discount rate)",
@@ -4877,6 +5174,7 @@ NPV_DISCOUNT_RATE_STANDARD = Parameter(
 
 NPV_TIME_HORIZON_YEARS = Parameter(
     10, source_ref="", source_type="definition", description="Standard time horizon for NPV analysis", unit="years",
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     display_name="Standard Time Horizon for NPV Analysis",
     keywords=["npv", "time", "horizon", "years"],
     distribution="fixed",  # Methodological choice: standard 10-year NPV analysis window
@@ -4891,6 +5189,7 @@ NPV_TIME_HORIZON_YEARS = Parameter(
 # Core framework and broader initiative costs (for detailed breakdowns)
 DFDA_NPV_UPFRONT_COST = Parameter(
     40_000_000,
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_type="definition",
     description="Decentralized Framework for Drug Assessment Core framework build cost",
     display_name="Decentralized Framework for Drug Assessment Core framework Build Cost",
@@ -4903,6 +5202,7 @@ DFDA_NPV_UPFRONT_COST = Parameter(
 
 DIH_NPV_UPFRONT_COST_INITIATIVES = Parameter(
     229_750_000,
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_type="definition",
     description="DIH broader initiatives upfront cost (medium case)",
     display_name="DIH Broader Initiatives Upfront Cost",
@@ -4915,6 +5215,7 @@ DIH_NPV_UPFRONT_COST_INITIATIVES = Parameter(
 
 DFDA_NPV_ANNUAL_OPEX = Parameter(
     18_950_000,
+    manual_ref="knowledge/appendix/dfda-impact-paper.qmd",
     source_type="definition",
     description="Decentralized Framework for Drug Assessment Core framework annual opex (midpoint of $11-26.5M)",
     display_name="Decentralized Framework for Drug Assessment Core framework Annual OPEX",
@@ -4927,6 +5228,7 @@ DFDA_NPV_ANNUAL_OPEX = Parameter(
 
 DIH_NPV_ANNUAL_OPEX_INITIATIVES = Parameter(
     21_100_000,
+    manual_ref="knowledge/appendix/dfda-impact-paper.qmd",
     source_type="definition",
     description="DIH broader initiatives annual opex (medium case)",
     display_name="DIH Broader Initiatives Annual OPEX",
@@ -4941,6 +5243,7 @@ DIH_NPV_ANNUAL_OPEX_INITIATIVES = Parameter(
 # Total upfront costs (C0): combines core dFDA framework + broader DIH initiative setup
 DFDA_NPV_UPFRONT_COST_TOTAL = Parameter(
     DFDA_NPV_UPFRONT_COST + DIH_NPV_UPFRONT_COST_INITIATIVES,
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_type="calculated",
     description="Total NPV upfront costs (Decentralized Framework for Drug Assessment core + DIH initiatives)",
     display_name="Decentralized Framework for Drug Assessment Total NPV Upfront Costs",
@@ -4957,6 +5260,7 @@ DFDA_NPV_UPFRONT_COST_TOTAL = Parameter(
 # Total annual operational costs (Cop): combines core dFDA framework + broader DIH initiative annual costs
 DFDA_NPV_ANNUAL_OPEX_TOTAL = Parameter(
     DFDA_NPV_ANNUAL_OPEX + DIH_NPV_ANNUAL_OPEX_INITIATIVES,
+    manual_ref="knowledge/appendix/dfda-impact-paper.qmd",
     source_type="calculated",
     description="Total NPV annual opex (Decentralized Framework for Drug Assessment core + DIH initiatives)",
     display_name="Decentralized Framework for Drug Assessment Total NPV Annual OPEX",
@@ -4970,6 +5274,7 @@ DFDA_NPV_ANNUAL_OPEX_TOTAL = Parameter(
 # dFDA adoption curve: linear ramp from 0% to 100% over 5 years, then constant at 100%
 DFDA_NPV_ADOPTION_RAMP_YEARS = Parameter(
     5,
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_type="definition",
     description="Years to reach full Decentralized Framework for Drug Assessment adoption",
     display_name="Years to Reach Full Decentralized Framework for Drug Assessment Adoption",
@@ -4983,6 +5288,7 @@ DFDA_NPV_PV_ANNUAL_OPEX = Parameter(
     DFDA_NPV_ANNUAL_OPEX_TOTAL
     * (1 - (1 + NPV_DISCOUNT_RATE_STANDARD) ** -NPV_TIME_HORIZON_YEARS)
     / NPV_DISCOUNT_RATE_STANDARD,
+    manual_ref="knowledge/appendix/dfda-impact-paper.qmd",
     source_type="calculated",
     description="Present value of annual opex over 10 years (NPV formula)",
     display_name="Decentralized Framework for Drug Assessment Present Value of Annual OPEX Over 10 Years",
@@ -4997,6 +5303,7 @@ DFDA_NPV_PV_ANNUAL_OPEX = Parameter(
 )
 DFDA_NPV_TOTAL_COST = Parameter(
     DFDA_NPV_UPFRONT_COST_TOTAL + DFDA_NPV_PV_ANNUAL_OPEX,
+    manual_ref="knowledge/appendix/dfda-impact-paper.qmd",
     source_type="calculated",
     description="Total NPV cost (upfront + PV of annual opex)",
     display_name="Decentralized Framework for Drug Assessment Total NPV Cost",
@@ -5018,6 +5325,7 @@ DFDA_NPV_BENEFIT_RD_ONLY = Parameter(
             for year in range(1, 11)
         ]
     ),
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_type="calculated",
     description="NPV of Decentralized Framework for Drug Assessment R&D savings only with 5-year adoption ramp (10-year horizon, most conservative financial estimate)",
     display_name="NPV of Decentralized Framework for Drug Assessment Benefits (R&D Only, 10-Year Discounted)",
@@ -5038,6 +5346,7 @@ DFDA_NPV_BENEFIT_RD_ONLY = Parameter(
 
 DFDA_NPV_NET_BENEFIT_RD_ONLY = Parameter(
     DFDA_NPV_BENEFIT_RD_ONLY - DFDA_NPV_TOTAL_COST,
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_type="calculated",
     description="NPV net benefit using R&D savings only (benefits minus costs)",
     display_name="NPV Net Benefit (R&D Only)",
@@ -5071,6 +5380,7 @@ DFDA_NPV_NET_BENEFIT_RD_ONLY = Parameter(
 # Source: knowledge/appendix/dfda-roi-calculations.qmd NPV analysis
 DFDA_ROI_RD_ONLY = Parameter(
     DFDA_NPV_BENEFIT_RD_ONLY / DFDA_NPV_TOTAL_COST,
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_type="calculated",
     description="ROI from Decentralized Framework for Drug Assessment R&D savings only (10-year NPV, most conservative estimate)",
     display_name="ROI from Decentralized Framework for Drug Assessment R&D Savings Only",
@@ -5105,6 +5415,7 @@ DFDA_ROI_RD_ONLY = Parameter(
 # - Ceiling (10%): Optimistic scenario where major crisis creates political window
 POLITICAL_SUCCESS_PROBABILITY = Parameter(
     0.01,  # Central estimate: 1% - assumes 99% failure rate, yet still 7x better than bed nets
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_ref=ReferenceID.ICBL_OTTAWA_TREATY,
     source_type="external",
     confidence="low",
@@ -5144,6 +5455,7 @@ POLITICAL_SUCCESS_PROBABILITY = Parameter(
 # US GDP (2024) - needed for US waste percentage calculations
 US_GDP_2024 = Parameter(
     28_780_000_000_000,  # $28.78 trillion (2024 estimate)
+    manual_ref="knowledge/appendix/us-efficiency-audit.qmd",
     source_ref="worldbank-gdp",
     source_type="external",
     confidence="high",
@@ -5163,6 +5475,7 @@ US_GDP_2024 = Parameter(
 
 POLITICAL_DYSFUNCTION_GLOBAL_FOSSIL_FUEL_SUBSIDIES = Parameter(
     1_300_000_000_000,  # $1.3T annually
+    manual_ref="knowledge/appendix/political-dysfunction-tax.qmd",
     source_ref=ReferenceID.POLITICAL_DYSFUNCTION_TAX_PAPER_2025,
     source_type="external",
     confidence="high",
@@ -5187,6 +5500,7 @@ POLITICAL_DYSFUNCTION_GLOBAL_FOSSIL_FUEL_SUBSIDIES = Parameter(
 
 POLITICAL_DYSFUNCTION_GLOBAL_HEALTH_OPPORTUNITY_COST = Parameter(
     34_000_000_000_000,  # $34T annually
+    manual_ref="knowledge/appendix/political-dysfunction-tax.qmd",
     source_ref=ReferenceID.POLITICAL_DYSFUNCTION_TAX_PAPER_2025,
     source_type="external",
     confidence="low",
@@ -5206,6 +5520,7 @@ POLITICAL_DYSFUNCTION_GLOBAL_HEALTH_OPPORTUNITY_COST = Parameter(
 
 POLITICAL_DYSFUNCTION_GLOBAL_SCIENCE_OPPORTUNITY_COST = Parameter(
     4_000_000_000_000,  # $4T annually
+    manual_ref="knowledge/appendix/optimocracy-paper.qmd",
     source_ref=ReferenceID.POLITICAL_DYSFUNCTION_TAX_PAPER_2025,
     source_type="external",
     confidence="low",
@@ -5225,6 +5540,7 @@ POLITICAL_DYSFUNCTION_GLOBAL_SCIENCE_OPPORTUNITY_COST = Parameter(
 
 POLITICAL_DYSFUNCTION_GLOBAL_LEAD_OPPORTUNITY_COST = Parameter(
     6_000_000_000_000,  # $6T annually
+    manual_ref="knowledge/appendix/political-dysfunction-tax.qmd",
     source_ref=ReferenceID.POLITICAL_DYSFUNCTION_TAX_PAPER_2025,
     source_type="external",
     confidence="high",
@@ -5243,6 +5559,7 @@ POLITICAL_DYSFUNCTION_GLOBAL_LEAD_OPPORTUNITY_COST = Parameter(
 
 POLITICAL_DYSFUNCTION_GLOBAL_MIGRATION_OPPORTUNITY_COST = Parameter(
     57_000_000_000_000,  # $57T annually (conservative lower bound)
+    manual_ref="knowledge/appendix/political-dysfunction-tax.qmd",
     source_ref=ReferenceID.POLITICAL_DYSFUNCTION_TAX_PAPER_2025,
     source_type="external",
     confidence="low",
@@ -5266,6 +5583,7 @@ POLITICAL_DYSFUNCTION_GLOBAL_OPPORTUNITY_COST_TOTAL = Parameter(
      POLITICAL_DYSFUNCTION_GLOBAL_SCIENCE_OPPORTUNITY_COST +
      POLITICAL_DYSFUNCTION_GLOBAL_LEAD_OPPORTUNITY_COST +
      POLITICAL_DYSFUNCTION_GLOBAL_MIGRATION_OPPORTUNITY_COST),
+    manual_ref="knowledge/appendix/optimocracy-paper.qmd",
     source_ref=ReferenceID.POLITICAL_DYSFUNCTION_TAX_PAPER_2025,
     source_type="calculated",
     confidence="low",
@@ -5295,6 +5613,7 @@ POLITICAL_DYSFUNCTION_GLOBAL_OPPORTUNITY_COST_TOTAL = Parameter(
 # Global opportunity cost as percentage of global GDP
 POLITICAL_DYSFUNCTION_GLOBAL_OPPORTUNITY_COST_PCT_GDP = Parameter(
     POLITICAL_DYSFUNCTION_GLOBAL_OPPORTUNITY_COST_TOTAL / GLOBAL_GDP_2025,
+    manual_ref="knowledge/solution/optimocracy.qmd",
     source_ref=ReferenceID.POLITICAL_DYSFUNCTION_TAX_PAPER_2025,
     source_type="calculated",
     confidence="low",
@@ -5327,6 +5646,7 @@ POLITICAL_DYSFUNCTION_GLOBAL_OPPORTUNITY_COST_PCT_GDP = Parameter(
 # US Federal Budget baseline for percentage calculations
 US_FEDERAL_SPENDING_2024 = Parameter(
     6_800_000_000_000,  # $6.8 trillion federal spending FY2024
+    manual_ref="knowledge/appendix/us-efficiency-audit.qmd",
     source_ref="cbo-long-term-budget-2024",
     source_type="external",
     confidence="high",
@@ -5349,6 +5669,7 @@ US_FEDERAL_SPENDING_2024 = Parameter(
 # Component 1.1: Military overspend ($615B) [CATEGORY 1: Direct Spending]
 US_GOV_WASTE_MILITARY_OVERSPEND = Parameter(
     615_000_000_000,  # $615B annually
+    manual_ref="knowledge/appendix/us-efficiency-audit.qmd",
     source_ref=ReferenceID.POLITICAL_DYSFUNCTION_TAX_PAPER_2025,
     source_type="external",
     confidence="medium",
@@ -5369,6 +5690,7 @@ US_GOV_WASTE_MILITARY_OVERSPEND = Parameter(
 # Component 1.2: Corporate welfare ($181B) [CATEGORY 1: Direct Spending]
 US_GOV_WASTE_CORPORATE_WELFARE = Parameter(
     181_000_000_000,  # $181B annually
+    manual_ref="knowledge/appendix/us-efficiency-audit.qmd",
     source_ref=ReferenceID.POLITICAL_DYSFUNCTION_TAX_PAPER_2025,
     source_type="external",
     confidence="high",
@@ -5388,6 +5710,7 @@ US_GOV_WASTE_CORPORATE_WELFARE = Parameter(
 # Component 1.3: Drug war ($90B) [CATEGORY 1: Direct Spending]
 US_GOV_WASTE_DRUG_WAR = Parameter(
     90_000_000_000,  # $90B annually
+    manual_ref="knowledge/appendix/us-efficiency-audit.qmd",
     source_ref="drugpolicyalliance2021",
     source_type="external",
     confidence="medium",
@@ -5407,6 +5730,7 @@ US_GOV_WASTE_DRUG_WAR = Parameter(
 # Component 1.4: Fossil fuel subsidies - explicit only ($50B) [CATEGORY 1: Direct Spending]
 US_GOV_WASTE_FOSSIL_FUEL_SUBSIDIES = Parameter(
     50_000_000_000,  # $50B annually (explicit only, not externalities)
+    manual_ref="knowledge/appendix/us-efficiency-audit.qmd",
     source_ref="imf-fossilfuel2023",
     source_type="external",
     confidence="medium",
@@ -5426,6 +5750,7 @@ US_GOV_WASTE_FOSSIL_FUEL_SUBSIDIES = Parameter(
 # Component 1.5: Agricultural subsidies deadweight loss ($75B) [CATEGORY 1: Direct Spending]
 US_GOV_WASTE_AGRICULTURAL_SUBSIDIES = Parameter(
     75_000_000_000,  # $75B annually
+    manual_ref="knowledge/appendix/us-efficiency-audit.qmd",
     source_ref="ewg-farm-subsidies",
     source_type="external",
     confidence="high",
@@ -5451,6 +5776,7 @@ US_GOV_WASTE_AGRICULTURAL_SUBSIDIES = Parameter(
 # Component 2.1: Tax compliance ($546B) [CATEGORY 2: Compliance Burden]
 US_GOV_WASTE_TAX_COMPLIANCE = Parameter(
     546_000_000_000,  # $546B annually
+    manual_ref="knowledge/appendix/us-efficiency-audit.qmd",
     source_ref="taxfoundation2024-compliance",
     source_type="external",
     confidence="high",
@@ -5470,6 +5796,7 @@ US_GOV_WASTE_TAX_COMPLIANCE = Parameter(
 # Component 2.2: Regulatory red tape ($580B) [CATEGORY 2: Compliance Burden]
 US_GOV_WASTE_REGULATORY_RED_TAPE = Parameter(
     580_000_000_000,  # $580B annually
+    manual_ref="knowledge/appendix/us-efficiency-audit.qmd",
     source_ref=ReferenceID.POLITICAL_DYSFUNCTION_TAX_PAPER_2025,
     source_type="external",
     confidence="medium",
@@ -5495,6 +5822,7 @@ US_GOV_WASTE_REGULATORY_RED_TAPE = Parameter(
 # Component 3.1: Housing/zoning restrictions ($1.4T) [CATEGORY 3: GDP Loss]
 US_GOV_WASTE_HOUSING_ZONING = Parameter(
     1_400_000_000_000,  # $1.4T annually
+    manual_ref="knowledge/appendix/us-efficiency-audit.qmd",
     source_ref="hsieh-moretti2019",
     source_type="external",
     confidence="medium",
@@ -5514,6 +5842,7 @@ US_GOV_WASTE_HOUSING_ZONING = Parameter(
 # Component 3.2: Tariffs ($160B) [CATEGORY 3: GDP Loss]
 US_GOV_WASTE_TARIFFS = Parameter(
     160_000_000_000,  # $160B annually
+    manual_ref="knowledge/appendix/us-efficiency-audit.qmd",
     source_ref="yalebudgetlab2025",
     source_type="external",
     confidence="medium",
@@ -5538,6 +5867,7 @@ US_GOV_WASTE_TARIFFS = Parameter(
 # Component 4.1: Healthcare system inefficiency ($1.2T) [CATEGORY 4: System Inefficiency]
 US_GOV_WASTE_HEALTHCARE_INEFFICIENCY = Parameter(
     1_200_000_000_000,  # $1.2T annually
+    manual_ref="knowledge/appendix/us-efficiency-audit.qmd",
     source_ref="papanicolas2018",
     source_type="external",
     confidence="high",
@@ -5566,6 +5896,7 @@ US_GOV_WASTE_CATEGORY_1_DIRECT_SPENDING = Parameter(
      US_GOV_WASTE_DRUG_WAR +
      US_GOV_WASTE_FOSSIL_FUEL_SUBSIDIES +
      US_GOV_WASTE_AGRICULTURAL_SUBSIDIES),
+    manual_ref="knowledge/appendix/us-efficiency-audit.qmd",
     source_type="calculated",
     confidence="medium",
     description="Category 1: Direct Federal Spending Waste. Actual federal budget allocations "
@@ -5596,6 +5927,7 @@ US_GOV_WASTE_CATEGORY_1_DIRECT_SPENDING = Parameter(
 # Category 2 Subtotal: Compliance Burden (~$1.13T)
 US_GOV_WASTE_CATEGORY_2_COMPLIANCE = Parameter(
     US_GOV_WASTE_TAX_COMPLIANCE + US_GOV_WASTE_REGULATORY_RED_TAPE,
+    manual_ref="knowledge/appendix/us-efficiency-audit.qmd",
     source_type="calculated",
     confidence="medium",
     description="Category 2: Compliance Burden on Private Sector. Private sector resources consumed "
@@ -5620,6 +5952,7 @@ US_GOV_WASTE_CATEGORY_2_COMPLIANCE = Parameter(
 # Category 3 Subtotal: Policy-Induced GDP Loss (~$1.56T)
 US_GOV_WASTE_CATEGORY_3_GDP_LOSS = Parameter(
     US_GOV_WASTE_HOUSING_ZONING + US_GOV_WASTE_TARIFFS,
+    manual_ref="knowledge/appendix/us-efficiency-audit.qmd",
     source_type="calculated",
     confidence="medium",
     description="Category 3: Policy-Induced GDP Loss. Economic output foregone due to policy "
@@ -5644,6 +5977,7 @@ US_GOV_WASTE_CATEGORY_3_GDP_LOSS = Parameter(
 # Category 4 Subtotal: System Inefficiency (~$1.20T)
 US_GOV_WASTE_CATEGORY_4_SYSTEM = Parameter(
     US_GOV_WASTE_HEALTHCARE_INEFFICIENCY,
+    manual_ref="knowledge/appendix/us-efficiency-audit.qmd",
     source_type="calculated",
     confidence="high",
     description="Category 4: Total System Inefficiency. Fundamental system design failures requiring "
@@ -5662,6 +5996,7 @@ US_GOV_WASTE_CATEGORY_4_SYSTEM = Parameter(
 # Overlap discount factor (removed - categories treated as additive)
 US_GOV_WASTE_OVERLAP_DISCOUNT = Parameter(
     1.0,  # No overlap discount applied
+    manual_ref="knowledge/appendix/us-efficiency-audit.qmd",
     source_type="definition",
     confidence="high",
     distribution="fixed",
@@ -5687,6 +6022,7 @@ US_GOV_WASTE_RAW_TOTAL = Parameter(
      US_GOV_WASTE_DRUG_WAR +
      US_GOV_WASTE_FOSSIL_FUEL_SUBSIDIES +
      US_GOV_WASTE_AGRICULTURAL_SUBSIDIES),
+    manual_ref="knowledge/appendix/us-efficiency-audit.qmd",
     source_type="calculated",
     confidence="medium",
     description="Raw sum of US government waste components before overlap discount: "
@@ -5727,6 +6063,7 @@ US_GOV_WASTE_RAW_TOTAL = Parameter(
 # Total US government waste (no overlap discount)
 US_GOV_WASTE_TOTAL = Parameter(
     US_GOV_WASTE_RAW_TOTAL * US_GOV_WASTE_OVERLAP_DISCOUNT,
+    manual_ref="knowledge/appendix/us-efficiency-audit.qmd",
     source_type="calculated",
     confidence="medium",
     description="Total annual US government waste (additive sum of components). "
@@ -5747,6 +6084,7 @@ US_GOV_WASTE_TOTAL = Parameter(
 # US Federal Discretionary Spending (FY2024) - denominator for discretionary efficiency
 US_FED_DISCRETIONARY_SPENDING_2024 = Parameter(
     1_700_000_000_000,  # $886B defense + ~$814B non-defense
+    manual_ref="knowledge/appendix/us-efficiency-audit.qmd",
     source_ref="cbo-long-term-budget-2024",
     source_type="external",
     confidence="high",
@@ -5763,6 +6101,7 @@ US_FED_DISCRETIONARY_SPENDING_2024 = Parameter(
 # Cat 1 direct waste as percentage of discretionary spending
 US_FED_DISCRETIONARY_WASTE_PCT = Parameter(
     US_GOV_WASTE_CATEGORY_1_DIRECT_SPENDING / US_FED_DISCRETIONARY_SPENDING_2024,
+    manual_ref="knowledge/appendix/us-efficiency-audit.qmd",
     source_type="calculated",
     confidence="medium",
     description="Category 1 direct spending waste as percentage of federal discretionary spending. "
@@ -5781,6 +6120,7 @@ US_FED_DISCRETIONARY_WASTE_PCT = Parameter(
 # US federal discretionary efficiency (complement of Cat 1 waste / discretionary)
 US_FED_DISCRETIONARY_EFFICIENCY = Parameter(
     1 - (US_GOV_WASTE_CATEGORY_1_DIRECT_SPENDING / US_FED_DISCRETIONARY_SPENDING_2024),
+    manual_ref="knowledge/appendix/us-efficiency-audit.qmd",
     source_type="calculated",
     confidence="medium",
     unit="percent",
@@ -5799,6 +6139,7 @@ US_FED_DISCRETIONARY_EFFICIENCY = Parameter(
 # US governance efficiency (total waste as share of GDP)
 US_GOVERNANCE_EFFICIENCY_GDP = Parameter(
     1 - (US_GOV_WASTE_TOTAL / US_GDP_2024),
+    manual_ref="knowledge/appendix/us-efficiency-audit.qmd",
     source_type="calculated",
     confidence="medium",
     unit="percent",
@@ -5817,6 +6158,7 @@ US_GOVERNANCE_EFFICIENCY_GDP = Parameter(
 # US waste as percentage of GDP
 US_GOV_WASTE_PCT_GDP = Parameter(
     US_GOV_WASTE_TOTAL / US_GDP_2024,
+    manual_ref="knowledge/appendix/optimocracy-paper.qmd",
     source_type="calculated",
     confidence="medium",
     description="US government waste as percentage of GDP. "
@@ -5838,6 +6180,7 @@ US_GOV_WASTE_PCT_GDP = Parameter(
 # DOT Value of Statistical Life ($13.7M) - used in federal efficiency audit
 DOT_VALUE_OF_STATISTICAL_LIFE = Parameter(
     13_700_000,
+    manual_ref="knowledge/appendix/us-efficiency-audit.qmd",
     source_ref="dot-vsl-2024",
     source_type="external",
     description="DOT Value of Statistical Life (2024). Used by federal agencies to "
@@ -5853,6 +6196,7 @@ DOT_VALUE_OF_STATISTICAL_LIFE = Parameter(
 # Medical cost-effectiveness QALY threshold ($100K)
 MEDICAL_QALY_THRESHOLD = Parameter(
     100_000,
+    manual_ref="knowledge/appendix/us-efficiency-audit.qmd",
     source_ref="qaly-threshold-history",
     source_type="external",
     description="Medical cost-effectiveness QALY threshold. Standard threshold for "
@@ -5869,6 +6213,7 @@ MEDICAL_QALY_THRESHOLD = Parameter(
 # US waste expressed as VSL equivalents
 US_GOV_WASTE_VSL_EQUIVALENTS = Parameter(
     US_GOV_WASTE_TOTAL / DOT_VALUE_OF_STATISTICAL_LIFE,
+    manual_ref="knowledge/appendix/us-efficiency-audit.qmd",
     source_type="calculated",
     confidence="medium",
     description="US government waste expressed as VSL equivalents. "
@@ -5886,6 +6231,7 @@ US_GOV_WASTE_VSL_EQUIVALENTS = Parameter(
 # US waste expressed as QALY equivalents
 US_GOV_WASTE_QALY_EQUIVALENTS = Parameter(
     US_GOV_WASTE_TOTAL / MEDICAL_QALY_THRESHOLD,
+    manual_ref="knowledge/appendix/us-efficiency-audit.qmd",
     source_type="calculated",
     confidence="medium",
     description="US government waste expressed as QALY equivalents. "
@@ -5903,6 +6249,7 @@ US_GOV_WASTE_QALY_EQUIVALENTS = Parameter(
 # US waste vs treaty funding multiplier
 US_GOV_WASTE_VS_TREATY_MULTIPLIER = Parameter(
     US_GOV_WASTE_TOTAL / TREATY_ANNUAL_FUNDING,
+    manual_ref="knowledge/appendix/us-efficiency-audit.qmd",
     source_type="calculated",
     confidence="medium",
     description="How many times the US government efficiency gap could fund the 1% Treaty. "
@@ -5920,6 +6267,7 @@ US_GOV_WASTE_VS_TREATY_MULTIPLIER = Parameter(
 # Recoverable capital (if US improved to OECD median 80% efficiency)
 US_GOV_WASTE_RECOVERABLE = Parameter(
     US_GOV_WASTE_TOTAL * 0.50,  # ~50% of gap is recoverable (38% -> 80%)
+    manual_ref="knowledge/appendix/us-efficiency-audit.qmd",
     source_type="calculated",
     confidence="low",
     description="Recoverable capital if US improved to OECD median efficiency. "
@@ -5942,6 +6290,7 @@ US_GOV_WASTE_RECOVERABLE = Parameter(
 
 POLITICAL_DYSFUNCTION_GLOBAL_WASTE_TOTAL = Parameter(
     US_GOV_WASTE_TOTAL + POLITICAL_DYSFUNCTION_GLOBAL_FOSSIL_FUEL_SUBSIDIES,
+    manual_ref="knowledge/appendix/political-dysfunction-tax.qmd",
     source_type="calculated",
     confidence="medium",
     description="Global waste deduction used in Political Dysfunction Tax efficiency accounting. "
@@ -5960,6 +6309,7 @@ POLITICAL_DYSFUNCTION_GLOBAL_WASTE_TOTAL = Parameter(
 
 POLITICAL_DYSFUNCTION_GLOBAL_REALIZED_WELFARE_ADJUSTED = Parameter(
     GLOBAL_GDP_2025 - POLITICAL_DYSFUNCTION_GLOBAL_WASTE_TOTAL,
+    manual_ref="knowledge/appendix/political-dysfunction-tax.qmd",
     source_type="calculated",
     confidence="medium",
     description="Adjusted realized welfare after subtracting measured governance waste from global GDP.",
@@ -5976,6 +6326,7 @@ POLITICAL_DYSFUNCTION_GLOBAL_REALIZED_WELFARE_ADJUSTED = Parameter(
 
 POLITICAL_DYSFUNCTION_GLOBAL_THEORETICAL_MAX_WELFARE = Parameter(
     POLITICAL_DYSFUNCTION_GLOBAL_REALIZED_WELFARE_ADJUSTED + POLITICAL_DYSFUNCTION_GLOBAL_OPPORTUNITY_COST_TOTAL,
+    manual_ref="knowledge/appendix/political-dysfunction-tax.qmd",
     source_type="calculated",
     confidence="low",
     description="Conservative theoretical maximum welfare under opportunity-cost recapture assumptions.",
@@ -5994,6 +6345,7 @@ POLITICAL_DYSFUNCTION_GLOBAL_THEORETICAL_MAX_WELFARE = Parameter(
 POLITICAL_DYSFUNCTION_GLOBAL_EFFICIENCY_SCORE = Parameter(
     POLITICAL_DYSFUNCTION_GLOBAL_REALIZED_WELFARE_ADJUSTED /
     POLITICAL_DYSFUNCTION_GLOBAL_THEORETICAL_MAX_WELFARE,
+    manual_ref="knowledge/appendix/political-dysfunction-tax.qmd",
     source_ref=ReferenceID.POLITICAL_DYSFUNCTION_TAX_PAPER_2025,
     source_type="calculated",
     confidence="low",
@@ -6026,6 +6378,7 @@ POLITICAL_DYSFUNCTION_GLOBAL_EFFICIENCY_SCORE = Parameter(
 # US baseline for comparison
 US_GOVT_SPENDING_PCT_GDP = Parameter(
     38.0,  # ~38% of GDP (federal + state + local)
+    manual_ref="knowledge/appendix/us-efficiency-audit.qmd",
     source_ref="oecd-govt-spending",
     source_type="external",
     confidence="high",
@@ -6040,6 +6393,7 @@ US_GOVT_SPENDING_PCT_GDP = Parameter(
 
 US_LIFE_EXPECTANCY_2023 = Parameter(
     77.5,
+    manual_ref="knowledge/appendix/us-efficiency-audit.qmd",
     source_ref="cdc-life-expectancy",
     source_type="external",
     confidence="high",
@@ -6054,6 +6408,7 @@ US_LIFE_EXPECTANCY_2023 = Parameter(
 
 US_MEDIAN_HOUSEHOLD_INCOME_2023 = Parameter(
     80_610,  # $80,610 median household income 2023
+    manual_ref="knowledge/appendix/us-efficiency-audit.qmd",
     source_ref="census-income-2023",
     source_type="external",
     confidence="high",
@@ -6069,6 +6424,7 @@ US_MEDIAN_HOUSEHOLD_INCOME_2023 = Parameter(
 # SWITZERLAND - Lower spending, better outcomes
 SWITZERLAND_GOVT_SPENDING_PCT_GDP = Parameter(
     35.0,  # ~35% of GDP
+    manual_ref="knowledge/appendix/us-efficiency-audit.qmd",
     source_ref="oecd-govt-spending",
     source_type="external",
     confidence="high",
@@ -6083,6 +6439,7 @@ SWITZERLAND_GOVT_SPENDING_PCT_GDP = Parameter(
 
 SWITZERLAND_LIFE_EXPECTANCY = Parameter(
     84.0,
+    manual_ref="knowledge/appendix/faq.qmd",
     source_ref="who-life-expectancy",
     source_type="external",
     confidence="high",
@@ -6097,6 +6454,7 @@ SWITZERLAND_LIFE_EXPECTANCY = Parameter(
 
 SWITZERLAND_MEDIAN_INCOME_PPP = Parameter(
     65_000,  # ~$65K median income PPP
+    manual_ref="knowledge/appendix/us-efficiency-audit.qmd",
     source_ref="oecd-median-income",
     source_type="external",
     confidence="medium",
@@ -6112,6 +6470,7 @@ SWITZERLAND_MEDIAN_INCOME_PPP = Parameter(
 # SINGAPORE - Much lower spending, excellent outcomes
 SINGAPORE_GOVT_SPENDING_PCT_GDP = Parameter(
     15.0,  # ~15% of GDP - very lean government
+    manual_ref="knowledge/appendix/us-efficiency-audit.qmd",
     source_ref="imf-singapore-spending",
     source_type="external",
     confidence="high",
@@ -6126,6 +6485,7 @@ SINGAPORE_GOVT_SPENDING_PCT_GDP = Parameter(
 
 SINGAPORE_LIFE_EXPECTANCY = Parameter(
     84.1,
+    manual_ref="knowledge/call-to-action/your-personal-benefits.qmd",
     source_ref="who-life-expectancy",
     source_type="external",
     confidence="high",
@@ -6140,6 +6500,7 @@ SINGAPORE_LIFE_EXPECTANCY = Parameter(
 
 SINGAPORE_GDP_PER_CAPITA_PPP = Parameter(
     105_000,  # ~$105K GDP per capita PPP
+    manual_ref="knowledge/appendix/us-efficiency-audit.qmd",
     source_ref="worldbank-singapore-gdp",
     source_type="external",
     confidence="high",
@@ -6156,6 +6517,7 @@ SINGAPORE_GDP_PER_CAPITA_PPP = Parameter(
 # These are definitions based on fixed government statistics (no uncertainty propagation needed)
 US_VS_SWITZERLAND_LIFE_EXPECTANCY_GAP = Parameter(
     6.5,  # 84.0 - 77.5 = 6.5 years
+    manual_ref="knowledge/solution/optimocracy.qmd",
     source_ref="who-life-expectancy",
     source_type="definition",
     confidence="high",
@@ -6171,6 +6533,7 @@ US_VS_SWITZERLAND_LIFE_EXPECTANCY_GAP = Parameter(
 
 US_VS_SWITZERLAND_SPENDING_GAP = Parameter(
     3.0,  # 38.0 - 35.0 = 3.0%
+    manual_ref="knowledge/solution/optimocracy.qmd",
     source_ref="oecd-govt-spending",
     source_type="definition",
     confidence="high",
@@ -6186,6 +6549,7 @@ US_VS_SWITZERLAND_SPENDING_GAP = Parameter(
 
 US_VS_SINGAPORE_SPENDING_GAP = Parameter(
     23.0,  # 38.0 - 15.0 = 23.0%
+    manual_ref="knowledge/appendix/us-efficiency-audit.qmd",
     source_ref="oecd-govt-spending",
     source_type="definition",
     confidence="high",
@@ -6204,6 +6568,7 @@ US_VS_SINGAPORE_SPENDING_GAP = Parameter(
 # If US achieved Singapore efficiency, same outcomes could be achieved with 60% less spending
 US_DYSFUNCTION_PREMIUM_VS_SWITZERLAND = Parameter(
     3.0,  # 3% of GDP more spending for worse outcomes (38% - 35%)
+    manual_ref="knowledge/appendix/us-efficiency-audit.qmd",
     source_ref="oecd-govt-spending",
     source_type="definition",
     confidence="high",
@@ -6231,6 +6596,7 @@ US_DYSFUNCTION_PREMIUM_VS_SWITZERLAND = Parameter(
 
 US_TOTAL_FEDERAL_CAMPAIGN_SPENDING_2024 = Parameter(
     20_000_000_000,  # $20B total federal campaign spending 2024 cycle
+    manual_ref="knowledge/appendix/cost-of-change-analysis.qmd",
     source_ref=ReferenceID.FEC_2024_SUMMARY,
     source_type="external",
     description="Total US federal election spending in 2024 cycle including presidential, congressional, party committees, and PACs. Source: FEC Statistical Summary 2024.",
@@ -6244,6 +6610,7 @@ US_TOTAL_FEDERAL_CAMPAIGN_SPENDING_2024 = Parameter(
 
 US_TOTAL_LOBBYING_ANNUAL = Parameter(
     4_400_000_000,  # $4.4B record lobbying in 2024
+    manual_ref="knowledge/appendix/algorithmic-public-administration-paper.qmd",
     source_ref=ReferenceID.OPENSECRETS_LOBBYING_2024,
     source_type="external",
     description="Total US federal lobbying expenditure in 2024 (record year). Source: OpenSecrets.",
@@ -6257,6 +6624,7 @@ US_TOTAL_LOBBYING_ANNUAL = Parameter(
 
 US_CONGRESS_MEMBER_COUNT = Parameter(
     535,  # 100 senators + 435 representatives
+    manual_ref="knowledge/problem/unrepresentative-democracy.qmd",
     source_ref="",
     source_type="definition",
     description="Total members of US Congress (100 senators + 435 representatives)",
@@ -6270,6 +6638,7 @@ US_CONGRESS_MEMBER_COUNT = Parameter(
 
 US_SENATORS_FOR_TREATY = Parameter(
     67,  # 2/3 majority required for treaty ratification
+    manual_ref="knowledge/appendix/cost-of-change-analysis.qmd",
     source_ref=ReferenceID.US_SENATE_TREATIES,
     source_type="external",
     description="Senators needed for treaty ratification (2/3 majority per Article II, Section 2)",
@@ -6283,6 +6652,7 @@ US_SENATORS_FOR_TREATY = Parameter(
 
 POLITICIAN_POST_OFFICE_CAREER_VALUE = Parameter(
     10_000_000,  # ~$10M NPV of post-office career premium
+    manual_ref="knowledge/appendix/cost-of-change-analysis.qmd",
     source_ref=ReferenceID.OPENSECRETS_REVOLVING_DOOR,
     source_type="external",
     description="Net present value of post-office career premium for average congressperson (10 years x $1M/year premium). Based on documented cases: Gephardt $7M/year, Daschle $2M+/year.",
@@ -6299,6 +6669,7 @@ POLITICIAN_POST_OFFICE_CAREER_VALUE = Parameter(
 # to enable diffuse beneficiaries to participate in the democratic process at scale
 US_SENATE_TREATY_ADVOCACY_COST = Parameter(
     US_SENATORS_FOR_TREATY * POLITICIAN_POST_OFFICE_CAREER_VALUE,
+    manual_ref="knowledge/appendix/treaty-feasibility.qmd",
     source_type="calculated",
     description="Upper-bound advocacy cost to match career incentives for 67 senators (treaty ratification threshold)",
     display_name="US Senate Treaty Advocacy Cost",
@@ -6313,6 +6684,7 @@ US_SENATE_TREATY_ADVOCACY_COST = Parameter(
 
 US_CONGRESS_FULL_ADVOCACY_COST = Parameter(
     US_CONGRESS_MEMBER_COUNT * POLITICIAN_POST_OFFICE_CAREER_VALUE,
+    manual_ref="knowledge/appendix/cost-of-change-analysis.qmd",
     source_type="calculated",
     description="Upper-bound advocacy cost to match career incentives for all 535 members of Congress",
     display_name="US Congress Full Advocacy Cost",
@@ -6329,6 +6701,7 @@ US_CONGRESS_FULL_ADVOCACY_COST = Parameter(
 # <1 means partial matching is sufficient; >1 means you need to outspend incumbents
 US_POLITICAL_EFFORT_MULTIPLIER = Parameter(
     0.7,
+    manual_ref="knowledge/appendix/cost-of-change-analysis.qmd",
     source_type="definition",
     description="Fraction of campaign + lobbying spending needed to achieve policy reform. Accounts for efficiency gains from coordination, message clarity, and public interest alignment. Range 0.4-1.2 reflects uncertainty about political dynamics.",
     display_name="Political Effort Multiplier (US)",
@@ -6345,6 +6718,7 @@ _US_BASE_POLITICAL_SPENDING = float(US_TOTAL_FEDERAL_CAMPAIGN_SPENDING_2024) + f
 
 US_POLITICAL_REFORM_INVESTMENT_TOTAL = Parameter(
     _US_BASE_POLITICAL_SPENDING * float(US_POLITICAL_EFFORT_MULTIPLIER) + float(US_CONGRESS_FULL_ADVOCACY_COST),
+    manual_ref="knowledge/appendix/cost-of-change-analysis.qmd",
     source_type="calculated",
     description="Total upper-bound investment for US political reform: (campaign spending + 2 years lobbying) × effort multiplier + Congress career advocacy. Represents cost to achieve democratic parity with incumbent interests.",
     display_name="US Political Reform Investment (Total)",
@@ -6361,6 +6735,7 @@ US_POLITICAL_REFORM_INVESTMENT_TOTAL = Parameter(
 # Global Political Costs
 NATO_DEFENSE_SPENDING_ANNUAL = Parameter(
     1_506_000_000_000,  # $1.506T NATO defense spending 2024
+    manual_ref="knowledge/economics/peace-dividend.qmd",
     source_ref=ReferenceID.SIPRI2024,
     source_type="external",
     description="Total NATO member defense spending in 2024. Source: SIPRI.",
@@ -6376,6 +6751,7 @@ NATO_DEFENSE_SPENDING_ANNUAL = Parameter(
 # Discounted ~50% because non-US political systems tend to be less transparent/expensive
 GLOBAL_TO_US_POLITICAL_COST_RATIO = Parameter(
     5.0,
+    manual_ref="knowledge/appendix/cost-of-change-analysis.qmd",
     source_type="definition",
     description="Ratio of global to US political reform costs. Based on discretionary spending ratio (~9x) discounted by ~50% for less transparent/expensive non-US political systems. Range 3-8 reflects uncertainty about non-US political dynamics and hidden influence channels.",
     display_name="Global-to-US Political Cost Ratio",
@@ -6389,6 +6765,7 @@ GLOBAL_TO_US_POLITICAL_COST_RATIO = Parameter(
 
 GLOBAL_POLITICAL_REFORM_INVESTMENT = Parameter(
     float(US_POLITICAL_REFORM_INVESTMENT_TOTAL) * float(GLOBAL_TO_US_POLITICAL_COST_RATIO),
+    manual_ref="knowledge/appendix/cost-of-change-analysis.qmd",
     source_type="calculated",
     description="Estimated global advocacy investment for policy reform. Calculated as US costs × global ratio (based on discretionary spending). Upper bound representing full democratic engagement at scale.",
     display_name="Global Political Reform Investment",
@@ -6412,6 +6789,7 @@ GLOBAL_POLITICAL_REFORM_INVESTMENT = Parameter(
 # Source: knowledge/economics/victory-bonds.qmd
 VICTORY_BOND_FUNDING_PCT = Parameter(
     0.10,
+    manual_ref="knowledge/strategy/earth-optimization-protocol-v1.qmd",
     source_ref="",
     source_type="definition",
     description="Percentage of captured dividend funding VICTORY Incentive Alignment Bonds (10%)",
@@ -6423,6 +6801,7 @@ VICTORY_BOND_FUNDING_PCT = Parameter(
 )  # 10% of captured dividend funds bonds
 VICTORY_BOND_ANNUAL_PAYOUT = Parameter(
     TREATY_ANNUAL_FUNDING * VICTORY_BOND_FUNDING_PCT,
+    manual_ref="knowledge/economics/financial-plan.qmd",
     source_ref="",
     source_type="calculated",
     description="Annual VICTORY Incentive Alignment Bond payout (treaty funding × bond percentage)",
@@ -6436,6 +6815,7 @@ VICTORY_BOND_ANNUAL_PAYOUT = Parameter(
 )  # $2.718B
 VICTORY_BOND_ANNUAL_RETURN_PCT = Parameter(
     VICTORY_BOND_ANNUAL_PAYOUT / TREATY_CAMPAIGN_TOTAL_COST,
+    manual_ref="knowledge/strategy/earth-optimization-protocol-v1.qmd",
     source_ref="",
     source_type="calculated",
     description="Annual return percentage for VICTORY Incentive Alignment Bondholders",
@@ -6457,6 +6837,7 @@ VICTORY_BOND_ANNUAL_RETURN_PCT = Parameter(
 # Source: knowledge/solution/incentive-alignment-bonds.qmd
 IAB_POLITICAL_INCENTIVE_FUNDING_PCT = Parameter(
     0.10,
+    manual_ref="knowledge/strategy/earth-optimization-protocol-v1.qmd",
     source_ref="",
     source_type="definition",
     description="Percentage of treaty funding allocated to Incentive Alignment Bond mechanism for political incentives (independent expenditures/PACs, post-office fellowships, Public Good Score infrastructure)",
@@ -6469,6 +6850,7 @@ IAB_POLITICAL_INCENTIVE_FUNDING_PCT = Parameter(
 
 IAB_POLITICAL_INCENTIVE_FUNDING_ANNUAL = Parameter(
     TREATY_ANNUAL_FUNDING * IAB_POLITICAL_INCENTIVE_FUNDING_PCT,
+    manual_ref="knowledge/appendix/treaty-feasibility.qmd",
     source_ref="",
     source_type="calculated",  # Derived from treaty funding and IAB allocation percentage
     description="Annual funding for IAB political incentive mechanism (independent expenditures supporting high-scoring politicians, post-office fellowship endowments, Public Good Score infrastructure)",
@@ -6492,6 +6874,7 @@ IAB_POLITICAL_INCENTIVE_FUNDING_ANNUAL = Parameter(
 # IAB political incentive funding vs defense industry lobbying at 1% treaty level
 IAB_VS_DEFENSE_LOBBY_RATIO_AT_1PCT = Parameter(
     IAB_POLITICAL_INCENTIVE_FUNDING_ANNUAL / DEFENSE_LOBBYING_ANNUAL,
+    manual_ref="knowledge/economics/peace-dividend.qmd",
     source_type="calculated",
     description="Ratio of IAB political incentive funding to defense industry lobbying at 1% treaty level. "
                 "At just 1%, the health lobby already outguns the defense lobby by this factor.",
@@ -6512,6 +6895,7 @@ IAB_VS_DEFENSE_LOBBY_RATIO_AT_1PCT = Parameter(
 
 GLOBAL_SAVINGS_RATE_PCT = Parameter(
     0.27,
+    manual_ref="knowledge/call-to-action/your-personal-benefits.qmd",
     source_ref=ReferenceID.WORLD_BANK_GROSS_SAVINGS_2023,
     source_type="external",
     confidence="high",
@@ -6526,6 +6910,7 @@ GLOBAL_SAVINGS_RATE_PCT = Parameter(
 
 GLOBAL_ANNUAL_SAVINGS = Parameter(
     GLOBAL_SAVINGS_RATE_PCT * GLOBAL_GDP_2025,
+    manual_ref="knowledge/call-to-action/your-personal-benefits.qmd",
     source_type="calculated",
     description="Global annual savings in USD (savings rate × GDP)",
     display_name="Global Annual Savings",
@@ -6540,6 +6925,7 @@ GLOBAL_ANNUAL_SAVINGS = Parameter(
 # Moved here from IAB PAPER PARAMETERS section to keep wealth inputs available for downstream calculations
 GLOBAL_HOUSEHOLD_WEALTH_USD = Parameter(
     454e12,
+    manual_ref="knowledge/appendix/incentive-alignment-bonds-paper.qmd",
     source_ref=ReferenceID.CS_GLOBAL_WEALTH_REPORT_2023,
     source_type="external",
     confidence="high",
@@ -6559,6 +6945,7 @@ TREATY_CUMULATIVE_20YR_WITH_RATCHET = Parameter(
         0.05 * 5 +    # Years 8-12: 5%
         0.10 * 8      # Years 13-20: 10%
     ),
+    manual_ref="knowledge/economics/peace-dividend.qmd",
     source_type="calculated",
     description="Cumulative treaty funding over 20 years with IAB ratchet expansion following roadmap timeline. "
                 "Expansion driven by bondholder lobbying incentives (10% of treaty inflows).",
@@ -6576,6 +6963,7 @@ TREATY_CUMULATIVE_20YR_WITH_RATCHET = Parameter(
 # War costs on current trajectory (20 years at current levels)
 WAR_COSTS_CUMULATIVE_20YR_CURRENT_TRAJECTORY = Parameter(
     GLOBAL_ANNUAL_DIRECT_INDIRECT_WAR_COST * 20,
+    manual_ref="knowledge/economics/peace-dividend.qmd",
     source_type="calculated",
     description="Cumulative global war costs over 20 years if current spending levels continue. "
                 "The price tag of the status quo trajectory.",
@@ -6597,6 +6985,7 @@ WAR_COSTS_SAVED_PEACE_TRAJECTORY_20YR = Parameter(
         0.05 * 5 +    # Years 8-12: 5% reduction
         0.10 * 8      # Years 13-20: 10% reduction
     ),
+    manual_ref="knowledge/economics/peace-dividend.qmd",
     source_type="calculated",
     description="Cumulative war costs saved over 20 years as treaty expands via IAB ratchet. "
                 "Assumes war costs decline proportionally to spending cuts (e=1.0). "
@@ -6615,6 +7004,7 @@ WAR_COSTS_SAVED_PEACE_TRAJECTORY_20YR = Parameter(
 # Total trajectory differential: research funding redirected + war externality costs saved
 PEACE_TRAJECTORY_TOTAL_DIFFERENTIAL_20YR = Parameter(
     TREATY_CUMULATIVE_20YR_WITH_RATCHET + WAR_COSTS_SAVED_PEACE_TRAJECTORY_20YR,
+    manual_ref="knowledge/economics/peace-dividend.qmd",
     source_type="calculated",
     description="Total 20-year value of the peace trajectory: research funding redirected to medicine "
                 "plus war externality costs avoided. The full differential between the IAB trajectory "
@@ -6634,6 +7024,7 @@ PEACE_TRAJECTORY_TOTAL_DIFFERENTIAL_20YR = Parameter(
 
 DIVIDEND_COVERAGE_FACTOR = Parameter(
     TREATY_ANNUAL_FUNDING / DFDA_ANNUAL_OPEX,
+    manual_ref="knowledge/economics/peace-dividend.qmd",
     source_type="calculated",
     description="Coverage factor of treaty funding vs Decentralized Framework for Drug Assessment opex (sustainability margin)",
     display_name="Coverage Factor of Treaty Funding vs Decentralized Framework for Drug Assessment OPEX",
@@ -6645,6 +7036,7 @@ DIVIDEND_COVERAGE_FACTOR = Parameter(
 )  # ~679x
 DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL = Parameter(
     TREATY_ANNUAL_FUNDING - VICTORY_BOND_ANNUAL_PAYOUT - IAB_POLITICAL_INCENTIVE_FUNDING_ANNUAL,
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_ref="",
     source_type="calculated",  # Derived from treaty funding minus bond and IAB allocations
     description="Annual funding for pragmatic clinical trials (treaty funding minus VICTORY Incentive Alignment Bond payouts and IAB political incentive mechanism)",
@@ -6658,6 +7050,7 @@ DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL = Parameter(
 )  # $21.744B/year (80% of treaty funding)
 DIH_TREASURY_TRIAL_SUBSIDIES_ANNUAL = Parameter(
     DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL - DFDA_ANNUAL_OPEX,
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_type="calculated",
     description="Annual clinical trial patient subsidies (all medical research funds after Decentralized Framework for Drug Assessment operations)",
     display_name="Annual Clinical Trial Patient Subsidies",
@@ -6670,6 +7063,7 @@ DIH_TREASURY_TRIAL_SUBSIDIES_ANNUAL = Parameter(
 
 DIH_PATIENTS_FUNDABLE_ANNUALLY = Parameter(
     DIH_TREASURY_TRIAL_SUBSIDIES_ANNUAL / DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT,
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_type="calculated",
     description="Number of patients fundable annually at dFDA pragmatic trial cost. Based on empirical pragmatic trial costs (RECOVERY to PCORnet range).",
     display_name="Patients Fundable Annually",
@@ -6683,6 +7077,7 @@ DIH_PATIENTS_FUNDABLE_ANNUALLY = Parameter(
 # Funding allocation percentages (calculated from absolute values)
 DIH_TREASURY_MEDICAL_RESEARCH_PCT = Parameter(
     DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL / TREATY_ANNUAL_FUNDING,
+    manual_ref="knowledge/strategy/earth-optimization-protocol-v1.qmd",
     source_type="calculated",
     description="Percentage of treaty funding allocated to medical research (after bond payouts and IAB incentives)",
     display_name="Medical Research Percentage of Treaty Funding",
@@ -6697,6 +7092,7 @@ DIH_TREASURY_MEDICAL_RESEARCH_PCT = Parameter(
 
 DIH_TREASURY_TRIAL_SUBSIDIES_PCT = Parameter(
     DIH_TREASURY_TRIAL_SUBSIDIES_ANNUAL / TREATY_ANNUAL_FUNDING,
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_type="calculated",
     description="Percentage of treaty funding going directly to patient trial subsidies",
     display_name="Patient Trial Subsidies Percentage of Treaty Funding",
@@ -6711,6 +7107,7 @@ DIH_TREASURY_TRIAL_SUBSIDIES_PCT = Parameter(
 
 DFDA_OPEX_PCT_OF_TREATY_FUNDING = Parameter(
     DFDA_ANNUAL_OPEX / TREATY_ANNUAL_FUNDING,
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_type="calculated",
     description="Percentage of treaty funding allocated to Decentralized Framework for Drug Assessment framework overhead",
     display_name="Decentralized Framework for Drug Assessment Overhead Percentage of Treaty Funding",
@@ -6725,6 +7122,7 @@ DFDA_OPEX_PCT_OF_TREATY_FUNDING = Parameter(
 
 SUGAR_SUBSIDY_COST_PER_PERSON_ANNUAL = Parameter(
     10,
+    manual_ref="knowledge/problem/unrepresentative-democracy.qmd",
     source_ref=ReferenceID.SUGAR_SUBSIDIES_COST,
     source_type="external",
     description="Annual cost of sugar subsidies per person",
@@ -6736,6 +7134,7 @@ SUGAR_SUBSIDY_COST_PER_PERSON_ANNUAL = Parameter(
 
 GLOBAL_MED_RESEARCH_SPENDING = Parameter(
     67_500_000_000,
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_ref=ReferenceID.GLOBAL_GOV_MED_RESEARCH_SPENDING,
     source_type="external",
     description="Global government medical research spending",
@@ -6749,6 +7148,7 @@ GLOBAL_MED_RESEARCH_SPENDING = Parameter(
 
 TOTAL_RESEARCH_FUNDING_WITH_TREATY = Parameter(
     GLOBAL_MED_RESEARCH_SPENDING + TREATY_ANNUAL_FUNDING,
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_type="calculated",
     description="Total global research funding (baseline + 1% treaty funding)",
     display_name="Total Global Research Funding (Baseline + 1% treaty Funding)",
@@ -6766,6 +7166,7 @@ TOTAL_RESEARCH_FUNDING_WITH_TREATY = Parameter(
 # Capacity Multiplier = dFDA capacity / Current capacity
 DFDA_TRIAL_CAPACITY_MULTIPLIER = Parameter(
     DFDA_PATIENTS_FUNDABLE_ANNUALLY / CURRENT_TRIAL_SLOTS_AVAILABLE,
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_type="calculated",
     description="Trial capacity multiplier from dFDA funding capacity vs. current global trial participation",
     display_name="Trial Capacity Multiplier",
@@ -6779,6 +7180,7 @@ DFDA_TRIAL_CAPACITY_MULTIPLIER = Parameter(
 
 TRIAL_CAPACITY_CUMULATIVE_YEARS_20YR = Parameter(
     float(DFDA_TRIAL_CAPACITY_MULTIPLIER) * 20,
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_type="calculated",
     description="Cumulative trial-capacity-equivalent years over 20-year period",
     display_name="Cumulative Trial Capacity Years Over 20 Years",
@@ -6808,6 +7210,7 @@ TRIAL_CAPACITY_CUMULATIVE_YEARS_20YR = Parameter(
 # Phase 2: ~$15-25B (24%), Phase 3: ~$29-45B (45%), combined ~69%
 PHASE_2_3_CLINICAL_TRIAL_COST_PCT = Parameter(
     0.69,
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_ref=ReferenceID.GLOBAL_CLINICAL_TRIALS_MARKET_2024,
     source_type="external",
     description="Percentage of total clinical trial spending on Phase 2/3 efficacy testing (Phase 2: 24% + Phase 3: 45%)",
@@ -6824,6 +7227,7 @@ PHASE_2_3_CLINICAL_TRIAL_COST_PCT = Parameter(
 # Current drug development: $2.6B (PHARMA_DRUG_DEVELOPMENT_COST_CURRENT), ~60% is Phase 2/3/4 efficacy testing
 PHARMA_PHASE_2_3_COST_BARRIER = Parameter(
     1_560_000_000,  # $2.6B × 60% = $1.56B
+    manual_ref="knowledge/appendix/invisible-graveyard.qmd",
     source_ref=ReferenceID.DRUG_DEVELOPMENT_COST,
     source_type="definition",  # Model estimate: 60% of $2.6B total drug dev cost
     description="Average Phase 2/3 efficacy testing cost per drug that pharma must fund (~60% of total drug development cost)",
@@ -6844,6 +7248,7 @@ PHARMA_PHASE_2_3_COST_BARRIER = Parameter(
 
 DRUGS_APPROVED_SINCE_1962 = Parameter(
     CURRENT_DRUG_APPROVALS_PER_YEAR * 62,
+    manual_ref="knowledge/appendix/invisible-graveyard.qmd",
     source_ref=ReferenceID.GLOBAL_NEW_DRUG_APPROVALS_50_ANNUALLY,
     source_type="calculated",
     description="Estimated total drugs approved globally since 1962 (62 years × average approval rate). Conservative: uses current rate, actual historical rate was lower in 1960s-80s.",
@@ -6859,6 +7264,7 @@ DRUGS_APPROVED_SINCE_1962 = Parameter(
 
 EFFICACY_LAG_CUMULATIVE_EXCESS_COST = Parameter(
     PHARMA_PHASE_2_3_COST_BARRIER * DRUGS_APPROVED_SINCE_1962,
+    manual_ref="knowledge/appendix/invisible-graveyard.qmd",
     source_type="calculated",
     description="Cumulative Phase 2/3 efficacy testing cost since 1962. Uses direct Phase 2/3 cost per drug - this is a LOWER BOUND because it excludes opportunity cost of delays, compounds abandoned due to cost barrier, and regulatory overhead.",
     display_name="Cumulative Efficacy Testing Cost (1962-2024)",
@@ -6876,6 +7282,7 @@ EFFICACY_LAG_CUMULATIVE_EXCESS_COST = Parameter(
 
 SEPT_11_DEATHS = Parameter(
     2977,
+    manual_ref="knowledge/appendix/invisible-graveyard.qmd",
     source_ref="september-11-memorial",  # National September 11 Memorial & Museum
     source_type="external",
     description="Total deaths in the September 11, 2001 attacks. 2,977 victims (excluding 19 hijackers). Used as a reference point for scale comparisons.",
@@ -6889,6 +7296,7 @@ SEPT_11_DEATHS = Parameter(
 
 EFFICACY_LAG_DEATHS_911_EQUIVALENTS = Parameter(
     EXISTING_DRUGS_EFFICACY_LAG_DEATHS_TOTAL / SEPT_11_DEATHS,
+    manual_ref="knowledge/appendix/invisible-graveyard.qmd",
     source_type="calculated",
     description="Total deaths from efficacy lag expressed in 9/11 equivalents. Makes the mortality cost viscerally understandable: how many September 11ths worth of deaths did the 1962 efficacy requirements cause?",
     display_name="Efficacy Lag Deaths (9/11 Equivalents)",
@@ -6906,6 +7314,7 @@ EFFICACY_LAG_DEATHS_911_EQUIVALENTS = Parameter(
 # ~99.8% attrition, but not all due to cost - maybe 30-50% could succeed if funded
 VALLEY_OF_DEATH_ATTRITION_PCT = Parameter(
     0.40,
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_ref=ReferenceID.VALLEY_OF_DEATH_ATTRITION,
     source_type="external",
     description="Percentage of promising Phase 1-passed compounds abandoned primarily due to Phase 2/3 cost barriers (not scientific failure). Conservative estimate: many rare disease, natural compound, and low-margin drugs never tested.",
@@ -6944,6 +7353,7 @@ VALLEY_OF_DEATH_ATTRITION_PCT = Parameter(
 # 50 drugs/year × 40% valley-of-death compounds = 20 additional drugs/year
 ADDITIONAL_DRUGS_FROM_COST_ELIMINATION = Parameter(
     float(CURRENT_DRUG_APPROVALS_PER_YEAR) * float(VALLEY_OF_DEATH_ATTRITION_PCT),
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_type="calculated",
     description="Additional drug approvals per year when Phase 2/3 cost barrier eliminated. Assumes valley-of-death compounds (abandoned due to cost) would have similar success rate to funded compounds.",
     display_name="Additional Drug Approvals from Cost Elimination",
@@ -6959,6 +7369,7 @@ ADDITIONAL_DRUGS_FROM_COST_ELIMINATION = Parameter(
 # 40% more drugs enter development when cost barrier removed
 DFDA_VALLEY_OF_DEATH_RESCUE_MULTIPLIER = Parameter(
     1 + float(VALLEY_OF_DEATH_ATTRITION_PCT),
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_type="calculated",
     description="Factor increase in drugs entering development when dFDA eliminates Phase 2/3 cost barrier. Valley-of-death attrition (40%) becomes new drugs, so 1 + 0.40 = 1.4× more drugs.",
     display_name="dFDA Valley of Death Rescue Multiplier",
@@ -6974,6 +7385,7 @@ DFDA_VALLEY_OF_DEATH_RESCUE_MULTIPLIER = Parameter(
 # Trial capacity multiplier × valley of death rescue multiplier
 DFDA_COMBINED_TREATMENT_SPEEDUP_MULTIPLIER = Parameter(
     float(DFDA_TRIAL_CAPACITY_MULTIPLIER) * float(DFDA_VALLEY_OF_DEATH_RESCUE_MULTIPLIER),
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_type="calculated",
     description="Combined speedup factor for treatment discovery from dFDA. Trial capacity multiplier times valley of death rescue multiplier. Diseases that would take T years to get first treatment now take T/speedup years.",
     display_name="dFDA Combined Treatment Discovery Speedup Multiplier",
@@ -6989,6 +7401,7 @@ DFDA_COMBINED_TREATMENT_SPEEDUP_MULTIPLIER = Parameter(
 # Rare diseases (moved here to enable calculated parameters below)
 RARE_DISEASES_COUNT_GLOBAL = Parameter(
     7000,
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_ref=ReferenceID.N95_PCT_DISEASES_NO_TREATMENT,
     source_type="external",
     description="Total number of rare diseases globally",
@@ -7004,6 +7417,7 @@ RARE_DISEASES_COUNT_GLOBAL = Parameter(
 # 95% of ~7,000 rare diseases have no treatment
 DISEASES_WITHOUT_EFFECTIVE_TREATMENT = Parameter(
     float(RARE_DISEASES_COUNT_GLOBAL) * 0.95,  # ~6,650 diseases
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_ref=ReferenceID.RARE_DISEASE_ONLY_5PCT_HAVE_TREATMENT,
     source_type="calculated",
     description="Number of diseases without effective treatment. 95% of 7,000 rare diseases lack FDA-approved treatment (per Orphanet 2024). This represents the therapeutic search space that remains unexplored.",
@@ -7020,6 +7434,7 @@ DISEASES_WITHOUT_EFFECTIVE_TREATMENT = Parameter(
 # ~9 rare diseases/year (350 over 40 years of ODA) + ~5-10 common diseases
 NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR = Parameter(
     15,  # Central estimate: ~15 diseases/year get FIRST treatment
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_ref=ReferenceID.DISEASES_GETTING_FIRST_TREATMENT_ANNUALLY,
     source_type="external",
     description="Number of diseases that receive their FIRST effective treatment each year under current system. ~9 rare diseases/year (based on 40 years of ODA: 350 with treatment ÷ 40 years), plus ~5-10 common diseases. Note: FDA approves ~50 drugs/year, but most are for diseases that already have treatments.",
@@ -7039,6 +7454,7 @@ NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR = Parameter(
 # ~6,650 diseases ÷ ~15 cures/year = ~443 years to find treatments for ALL diseases
 STATUS_QUO_QUEUE_CLEARANCE_YEARS = Parameter(
     float(DISEASES_WITHOUT_EFFECTIVE_TREATMENT) / float(NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR),
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_ref=ReferenceID.STATUS_QUO_CURE_TIMELINE_ESTIMATE,
     source_type="calculated",
     description="Years to explore the entire therapeutic search space under current system. At current discovery rate of ~15 diseases/year getting first treatments, finding treatments for all ~6,650 untreated diseases would take ~443 years.",
@@ -7056,6 +7472,7 @@ STATUS_QUO_QUEUE_CLEARANCE_YEARS = Parameter(
 # ~443 years ÷ 2 = ~222 years for the average disease
 STATUS_QUO_AVG_YEARS_TO_FIRST_TREATMENT = Parameter(
     float(STATUS_QUO_QUEUE_CLEARANCE_YEARS) / 2,
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_ref=ReferenceID.STATUS_QUO_CURE_TIMELINE_ESTIMATE,
     source_type="calculated",
     description="Average years until first treatment discovered for a typical disease under current system. At current discovery rates, the average disease waits half the total exploration time (~443/2 = ~222 years).",
@@ -7074,6 +7491,7 @@ STATUS_QUO_AVG_YEARS_TO_FIRST_TREATMENT = Parameter(
 # because valley of death rescue adds more drug candidates but doesn't directly speed therapeutic space exploration
 DFDA_TRIAL_CAPACITY_TREATMENT_ACCELERATION_YEARS = Parameter(
     float(STATUS_QUO_AVG_YEARS_TO_FIRST_TREATMENT) * (1 - 1 / float(DFDA_TRIAL_CAPACITY_MULTIPLIER)),
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_type="calculated",
     description="Years earlier the average first treatment arrives due to dFDA's trial capacity increase. Calculated as the status quo timeline reduced by the inverse of the capacity multiplier. Uses only trial capacity multiplier (not combined with valley of death rescue) because additional candidates don't directly speed therapeutic space exploration.",
     display_name="dFDA Treatment Timeline Acceleration",
@@ -7095,6 +7513,7 @@ DFDA_TRIAL_CAPACITY_TREATMENT_ACCELERATION_YEARS = Parameter(
 
 DFDA_TRIAL_CAPACITY_LIVES_SAVED = Parameter(
     float(GLOBAL_DISEASE_DEATHS_DAILY) * float(DFDA_TRIAL_CAPACITY_TREATMENT_ACCELERATION_YEARS) * DAYS_PER_YEAR * (1 - _unavoidable_pct),
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_type="calculated",
     description="Total eventually avoidable deaths from trial capacity increase alone. Represents first treatments arriving earlier due to faster therapeutic space exploration from increased trial capacity.",
     display_name="Lives Saved from Trial Capacity Increase",
@@ -7117,6 +7536,7 @@ _yld_ratio_of_dalys = float(DFDA_EFFICACY_LAG_ELIMINATION_YLD) / float(DFDA_EFFI
 
 DFDA_TRIAL_CAPACITY_DALYS_AVERTED = Parameter(
     float(GLOBAL_ANNUAL_DALY_BURDEN) * float(EVENTUALLY_AVOIDABLE_DALY_PCT) * float(DFDA_TRIAL_CAPACITY_TREATMENT_ACCELERATION_YEARS),
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_type="calculated",
     description="Total DALYs averted from trial capacity increase alone. Calculated as annual global DALY burden × eventually avoidable percentage × treatment acceleration years. Includes both fatal and non-fatal diseases.",
     display_name="DALYs Averted from Trial Capacity Increase",
@@ -7131,6 +7551,7 @@ DFDA_TRIAL_CAPACITY_DALYS_AVERTED = Parameter(
 
 DFDA_TRIAL_CAPACITY_ECONOMIC_VALUE = Parameter(
     float(DFDA_TRIAL_CAPACITY_DALYS_AVERTED) * float(STANDARD_ECONOMIC_QALY_VALUE_USD),
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_type="calculated",
     description="Total economic value from trial capacity increase alone. DALYs valued at standard economic rate.",
     display_name="Economic Value from Trial Capacity Increase",
@@ -7151,6 +7572,7 @@ DFDA_TRIAL_CAPACITY_ECONOMIC_VALUE = Parameter(
 # 2. Efficacy lag elimination - once discovered, treatments deploy without post-safety delay
 DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_YEARS = Parameter(
     float(DFDA_TRIAL_CAPACITY_TREATMENT_ACCELERATION_YEARS) + float(EFFICACY_LAG_YEARS),
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_type="calculated",
     description="Average years earlier patients receive treatments due to dFDA. Combines treatment timeline acceleration from increased trial capacity with efficacy lag elimination for treatments already discovered.",
     display_name="dFDA Average Total Timeline Shift",
@@ -7166,6 +7588,7 @@ DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_YEARS = Parameter(
 # dFDA treatment rate (diseases getting first treatment per year)
 DFDA_FIRST_TREATMENTS_PER_YEAR = Parameter(
     float(NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR) * float(DFDA_TRIAL_CAPACITY_MULTIPLIER),
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_type="calculated",
     description="Diseases per year receiving their first effective treatment with dFDA. Scales proportionally with trial capacity multiplier.",
     display_name="dFDA New Treatments Per Year",
@@ -7181,6 +7604,7 @@ DFDA_FIRST_TREATMENTS_PER_YEAR = Parameter(
 # Time to explore entire therapeutic space with dFDA
 DFDA_QUEUE_CLEARANCE_YEARS = Parameter(
     float(STATUS_QUO_QUEUE_CLEARANCE_YEARS) / float(DFDA_TRIAL_CAPACITY_MULTIPLIER),
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_type="calculated",
     description="Years to explore the entire therapeutic search space with dFDA implementation. At increased discovery rate, finding first treatments for all currently untreatable diseases takes ~36 years instead of ~443.",
     display_name="dFDA Therapeutic Space Exploration Time",
@@ -7201,6 +7625,7 @@ DFDA_QUEUE_CLEARANCE_YEARS = Parameter(
 
 DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_LIVES_SAVED = Parameter(
     float(GLOBAL_DISEASE_DEATHS_DAILY) * float(DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_YEARS) * DAYS_PER_YEAR * (1 - _unavoidable_pct),
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_type="calculated",
     description="Total eventually avoidable deaths from the combined dFDA timeline shift. Represents deaths prevented when cures arrive earlier due to both increased trial capacity and eliminated efficacy lag.",
     display_name="Total Lives Saved from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput",
@@ -7215,6 +7640,7 @@ DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_LIVES_SAVED = Parameter(
 
 DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS = Parameter(
     float(GLOBAL_ANNUAL_DALY_BURDEN) * float(EVENTUALLY_AVOIDABLE_DALY_PCT) * float(DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_YEARS),
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_type="calculated",
     description="Total DALYs averted from the combined dFDA timeline shift. Calculated as annual global DALY burden × eventually avoidable percentage × timeline shift years. Includes both fatal and non-fatal diseases (WHO GBD methodology).",
     display_name="Total DALYs from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput",
@@ -7229,6 +7655,7 @@ DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS = Parameter(
 
 DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_ECONOMIC_VALUE = Parameter(
     float(DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS) * float(STANDARD_ECONOMIC_QALY_VALUE_USD),
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_type="calculated",
     description="Total economic value from the combined dFDA timeline shift. DALYs valued at standard economic rate.",
     display_name="Total Economic Benefit from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput",
@@ -7243,6 +7670,7 @@ DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_ECONOMIC_VALUE = Parameter(
 
 DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_SUFFERING_HOURS = Parameter(
     float(DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS) * float(GLOBAL_YLD_PROPORTION_OF_DALYS) * HOURS_PER_YEAR,
+    manual_ref="knowledge/appendix/dfda-impact-paper.qmd",
     source_type="calculated",
     description="Hours of suffering eliminated from the combined dFDA timeline shift. Calculated from YLD component of DALYs (39% of total DALYs × hours per year). One-time benefit, not annual recurring.",
     display_name="Suffering Hours Eliminated from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput",
@@ -7258,6 +7686,7 @@ DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_SUFFERING_HOURS = Parameter(
 # dFDA System Targets (using trial capacity multiplier)
 DFDA_TRIALS_PER_YEAR_CAPACITY = Parameter(
     float(CURRENT_TRIALS_PER_YEAR) * float(DFDA_TRIAL_CAPACITY_MULTIPLIER),
+    manual_ref="knowledge/problem/untapped-therapeutic-frontier.qmd",
     source_type="calculated",
     description="Maximum trials per year possible with trial capacity multiplier",
     display_name="Decentralized Framework for Drug Assessment Maximum Trials per Year",
@@ -7276,6 +7705,7 @@ DFDA_TRIALS_PER_YEAR_CAPACITY = Parameter(
 
 CURRENT_KNOWN_SAFE_EXPLORATION_YEARS = Parameter(
     float(DRUG_DISEASE_COMBINATIONS_POSSIBLE) / float(CURRENT_TRIALS_PER_YEAR),
+    manual_ref="knowledge/problem/untapped-therapeutic-frontier.qmd",
     source_type="calculated",
     description="Years to test all known safe drug-disease combinations at current global trial capacity",
     display_name="Known Safe Exploration Time (Current)",
@@ -7289,6 +7719,7 @@ CURRENT_KNOWN_SAFE_EXPLORATION_YEARS = Parameter(
 
 DFDA_KNOWN_SAFE_EXPLORATION_YEARS = Parameter(
     float(DRUG_DISEASE_COMBINATIONS_POSSIBLE) / float(DFDA_TRIALS_PER_YEAR_CAPACITY),
+    manual_ref="knowledge/problem/untapped-therapeutic-frontier.qmd",
     source_type="calculated",
     description="Years to test all known safe drug-disease combinations with dFDA trial capacity",
     display_name="Known Safe Exploration Time (dFDA)",
@@ -7302,6 +7733,7 @@ DFDA_KNOWN_SAFE_EXPLORATION_YEARS = Parameter(
 
 CURRENT_TOTAL_EXPLORATION_YEARS = Parameter(
     float(TOTAL_TESTABLE_THERAPEUTIC_COMBINATIONS) / float(CURRENT_TRIALS_PER_YEAR),
+    manual_ref="knowledge/problem/untapped-therapeutic-frontier.qmd",
     source_type="calculated",
     description="Years to test all therapeutic combinations (known safe + emerging modalities) at current capacity",
     display_name="Total Exploration Time (Current)",
@@ -7315,6 +7747,7 @@ CURRENT_TOTAL_EXPLORATION_YEARS = Parameter(
 
 DFDA_TOTAL_EXPLORATION_YEARS = Parameter(
     float(TOTAL_TESTABLE_THERAPEUTIC_COMBINATIONS) / float(DFDA_TRIALS_PER_YEAR_CAPACITY),
+    manual_ref="knowledge/problem/untapped-therapeutic-frontier.qmd",
     source_type="calculated",
     description="Years to test all therapeutic combinations (known safe + emerging modalities) with dFDA capacity",
     display_name="Total Exploration Time (dFDA)",
@@ -7329,6 +7762,7 @@ DFDA_TOTAL_EXPLORATION_YEARS = Parameter(
 # Combination therapy exploration (pairwise drug combinations - standard in modern medicine)
 CURRENT_COMBINATION_EXPLORATION_YEARS = Parameter(
     float(COMBINATION_THERAPY_DISEASE_SPACE) / float(CURRENT_TRIALS_PER_YEAR),
+    manual_ref="knowledge/problem/untapped-therapeutic-frontier.qmd",
     source_type="calculated",
     description="Years to test all pairwise drug combinations at current trial capacity. Combination therapy is standard in oncology, HIV, cardiology.",
     display_name="Combination Therapy Exploration Time (Current)",
@@ -7346,6 +7780,7 @@ CURRENT_COMBINATION_EXPLORATION_YEARS = Parameter(
 # U.S. median $187, non-U.S. median $27 (2015 USD)
 PMC_PRAGMATIC_TRIAL_MEDIAN_COST_PER_PATIENT = Parameter(
     97.0,
+    manual_ref="knowledge/appendix/dfda-impact-paper.qmd",
     source_ref="pmc-pragmatic-trial-cost",
     source_type="external",
     description="Median cost per patient in embedded pragmatic clinical trials (Ramsberg & Platt 2018: 108 trials reviewed, 64 with cost data). IQR: $19-$478 (2015 USD).",
@@ -7362,6 +7797,7 @@ PMC_PRAGMATIC_TRIAL_MEDIAN_COST_PER_PATIENT = Parameter(
 
 GLOBAL_ANNUAL_SAVINGS_PER_CAPITA = Parameter(
     GLOBAL_ANNUAL_SAVINGS / GLOBAL_POPULATION_2024,
+    manual_ref="knowledge/call-to-action/your-personal-benefits.qmd",
     source_type="calculated",
     description="Global annual savings divided by global population. Useful as a rough average-person "
                 "default for prize-contribution sizing.",
@@ -7376,6 +7812,7 @@ GLOBAL_ANNUAL_SAVINGS_PER_CAPITA = Parameter(
 
 POLITICAL_DYSFUNCTION_TAX_PER_PERSON_ANNUAL = Parameter(
     POLITICAL_DYSFUNCTION_GLOBAL_OPPORTUNITY_COST_TOTAL / GLOBAL_POPULATION_2024,
+    manual_ref="knowledge/strategy/earth-optimization-prize.qmd",
     source_type="calculated",
     confidence="low",
     description="Annual per-person burden implied by global Political Dysfunction Tax opportunity costs.",
@@ -7392,6 +7829,7 @@ POLITICAL_DYSFUNCTION_TAX_PER_PERSON_ANNUAL = Parameter(
 
 POLITICAL_DYSFUNCTION_TAX_PER_HOUSEHOLD_OF_FOUR_ANNUAL = Parameter(
     POLITICAL_DYSFUNCTION_TAX_PER_PERSON_ANNUAL * 4,
+    manual_ref="knowledge/appendix/political-dysfunction-tax.qmd",
     source_type="calculated",
     confidence="low",
     description="Annual household burden for a 4-person household implied by global Political Dysfunction Tax.",
@@ -7408,6 +7846,7 @@ POLITICAL_DYSFUNCTION_TAX_PER_HOUSEHOLD_OF_FOUR_ANNUAL = Parameter(
 # Annual disease deaths (from WHO global health estimates)
 GLOBAL_ANNUAL_DEATHS_CURABLE_DISEASES = Parameter(
     55_000_000,
+    manual_ref="knowledge/problem/cost-of-war.qmd",
     source_ref=ReferenceID.WHO_GLOBAL_HEALTH_ESTIMATES_2024,
     source_type="external",
     description="Annual deaths from all diseases and aging globally",
@@ -7423,6 +7862,7 @@ GLOBAL_ANNUAL_DEATHS_CURABLE_DISEASES = Parameter(
 # Disease economic burden
 GLOBAL_SYMPTOMATIC_DISEASE_TREATMENT_ANNUAL = Parameter(
     8_200_000_000_000,
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_ref=ReferenceID.DISEASE_ECONOMIC_BURDEN_109T,
     source_type="external",
     description="Annual global spending on symptomatic disease treatment",
@@ -7437,6 +7877,7 @@ GLOBAL_SYMPTOMATIC_DISEASE_TREATMENT_ANNUAL = Parameter(
 # Disease cost breakdown components (standalone market-cost parameters, NOT summed into welfare burden)
 GLOBAL_DISEASE_DIRECT_MEDICAL_COST_ANNUAL = Parameter(
     9_900_000_000_000,
+    manual_ref="knowledge/appendix/dfda-impact-paper.qmd",
     source_ref=ReferenceID.DISEASE_ECONOMIC_BURDEN_109T,
     source_type="external",
     description="Direct medical costs of disease globally (treatment, hospitalization, medication). Standalone market-cost metric; not included in DALY-based welfare burden to avoid double-counting.",
@@ -7450,6 +7891,7 @@ GLOBAL_DISEASE_DIRECT_MEDICAL_COST_ANNUAL = Parameter(
 
 GLOBAL_DISEASE_PRODUCTIVITY_LOSS_ANNUAL = Parameter(
     5_000_000_000_000,
+    manual_ref="knowledge/appendix/dfda-impact-paper.qmd",
     source_ref=ReferenceID.DISEASE_ECONOMIC_BURDEN_109T,
     source_type="external",
     description="Annual productivity loss from disease globally (absenteeism, reduced output). Standalone market-cost metric; not included in DALY-based welfare burden to avoid double-counting.",
@@ -7467,6 +7909,7 @@ GLOBAL_DISEASE_PRODUCTIVITY_LOSS_ANNUAL = Parameter(
 # because QALY valuation already captures productivity and healthcare welfare losses.
 GLOBAL_DISEASE_ECONOMIC_BURDEN_ANNUAL = Parameter(
     float(GLOBAL_ANNUAL_DALY_BURDEN) * float(EVENTUALLY_AVOIDABLE_DALY_PCT) * float(STANDARD_ECONOMIC_QALY_VALUE_USD),
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_type="calculated",
     description="Annual welfare cost of avoidable disease globally. Calculated as global DALY burden × eventually avoidable percentage × standard QALY value ($150K). Uses consistent QALY valuation matching all other health impact calculations. Medical costs and productivity losses are NOT added separately to avoid double-counting (QALY valuation already captures these welfare components).",
     display_name="Annual Welfare Cost of Avoidable Disease",
@@ -7480,6 +7923,7 @@ GLOBAL_DISEASE_ECONOMIC_BURDEN_ANNUAL = Parameter(
 
 GLOBAL_TOTAL_HEALTH_AND_WAR_COST_ANNUAL = Parameter(
     GLOBAL_ANNUAL_DIRECT_INDIRECT_WAR_COST + GLOBAL_DISEASE_ECONOMIC_BURDEN_ANNUAL,
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_type="calculated",
     description="Total annual welfare cost of war and disease. Disease burden uses DALY-based welfare valuation; war costs use direct + indirect economic costs. Symptomatic treatment costs NOT added separately (already captured in QALY valuation).",
     display_name="Total Annual Cost of War and Disease",
@@ -7494,6 +7938,7 @@ GLOBAL_TOTAL_HEALTH_AND_WAR_COST_ANNUAL = Parameter(
 # Defense and research participation rates
 DEFENSE_SECTOR_RETENTION_PCT = Parameter(
     0.99,
+    manual_ref="knowledge/solution.qmd",
     source_ref="",
     source_type="definition",
     description="Percentage of budget defense sector keeps under 1% treaty",
@@ -7505,6 +7950,7 @@ DEFENSE_SECTOR_RETENTION_PCT = Parameter(
 
 CURRENT_CLINICAL_TRIAL_PARTICIPATION_RATE = Parameter(
     0.0006,
+    manual_ref="knowledge/solution/dfda.qmd",
     source_ref=ReferenceID.CLINICAL_TRIAL_PATIENT_PARTICIPATION_RATE,
     source_type="external",
     description="Current clinical trial participation rate (0.06% of population)",
@@ -7516,6 +7962,7 @@ CURRENT_CLINICAL_TRIAL_PARTICIPATION_RATE = Parameter(
 
 PATIENT_WILLINGNESS_TRIAL_PARTICIPATION_PCT = Parameter(
     0.448,
+    manual_ref="knowledge/problem/nih-fails-2-institute-health.qmd",
     source_ref=ReferenceID.PATIENT_WILLINGNESS_CLINICAL_TRIALS,
     source_type="external",
     description="Patient willingness to participate in drug trials (44.8% in surveys, 88% when actually approached)",
@@ -7531,6 +7978,7 @@ PATIENT_WILLINGNESS_TRIAL_PARTICIPATION_PCT = Parameter(
 
 WILLING_TRIAL_PARTICIPANTS_GLOBAL = Parameter(
     CURRENT_DISEASE_PATIENTS_GLOBAL * PATIENT_WILLINGNESS_TRIAL_PARTICIPATION_PCT,
+    manual_ref="knowledge/economics/gdp-trajectories.qmd",
     source_type="calculated",
     description="Global chronic disease patients willing to participate in trials (2.4B × 44.8%)",
     display_name="Global Patients Willing to Participate in Clinical Trials",
@@ -7544,6 +7992,7 @@ WILLING_TRIAL_PARTICIPANTS_GLOBAL = Parameter(
 
 DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL = Parameter(
     WILLING_TRIAL_PARTICIPANTS_GLOBAL / CURRENT_TRIAL_SLOTS_AVAILABLE,
+    manual_ref="knowledge/economics/gdp-trajectories.qmd",
     source_type="calculated",
     description="Physical upper bound on trial-capacity multiplier from participant availability. "
                 "Even with unlimited funding, annual trial enrollment cannot exceed willing participant pool.",
@@ -7560,6 +8009,7 @@ DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL = Parameter(
 
 US_MILITARY_SPENDING_PCT_GDP = Parameter(
     0.035,
+    manual_ref="knowledge/problem.qmd",
     source_ref=ReferenceID.US_MILITARY_BUDGET_3_5_PCT_GDP,
     source_type="external",
     description="US military spending as percentage of GDP (2024)",
@@ -7572,6 +8022,7 @@ US_MILITARY_SPENDING_PCT_GDP = Parameter(
 # Historical terrorism deaths
 TERRORISM_DEATHS_911 = Parameter(
     2996,
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_ref=ReferenceID.CHANCE_OF_DYING_FROM_TERRORISM_1_IN_30M,
     source_type="external",
     description="Deaths from 9/11 terrorist attacks",
@@ -7587,6 +8038,7 @@ TERRORISM_DEATHS_911 = Parameter(
 # Calculated ratios and comparisons
 DISEASE_VS_TERRORISM_DEATHS_RATIO = Parameter(
     GLOBAL_ANNUAL_DEATHS_CURABLE_DISEASES / TERRORISM_DEATHS_911,
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_type="calculated",
     description="Ratio of annual disease deaths to 9/11 terrorism deaths",
     display_name="Ratio of Annual Disease Deaths to 9/11 Terrorism Deaths",
@@ -7600,6 +8052,7 @@ DISEASE_VS_TERRORISM_DEATHS_RATIO = Parameter(
 
 DISEASE_VS_WAR_DEATHS_RATIO = Parameter(
     GLOBAL_ANNUAL_DEATHS_CURABLE_DISEASES / GLOBAL_ANNUAL_CONFLICT_DEATHS_TOTAL,
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_type="calculated",
     description="Ratio of annual disease deaths to war deaths",
     display_name="Ratio of Annual Disease Deaths to War Deaths",
@@ -7614,6 +8067,7 @@ DISEASE_VS_WAR_DEATHS_RATIO = Parameter(
 # Medical research as percentage of disease burden
 MEDICAL_RESEARCH_PCT_OF_DISEASE_BURDEN = Parameter(
     GLOBAL_MED_RESEARCH_SPENDING / GLOBAL_TOTAL_HEALTH_AND_WAR_COST_ANNUAL,
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_type="calculated",
     description="Medical research spending as percentage of total disease burden",
     display_name="Medical Research Spending as Percentage of Total Disease Burden",
@@ -7628,6 +8082,7 @@ MEDICAL_RESEARCH_PCT_OF_DISEASE_BURDEN = Parameter(
 # Per capita calculations
 GLOBAL_MILITARY_SPENDING_PER_CAPITA_ANNUAL = Parameter(
     GLOBAL_MILITARY_SPENDING_ANNUAL_2024 / GLOBAL_POPULATION_2024,
+    manual_ref="knowledge/problem.qmd",
     source_type="calculated",
     description="Per capita military spending globally",
     display_name="Per Capita Military Spending Globally",
@@ -7643,6 +8098,7 @@ GLOBAL_MILITARY_SPENDING_PER_CAPITA_ANNUAL = Parameter(
 # Source: knowledge/appendix/icer-full-calculation.qmd
 GIVEWELL_COST_PER_LIFE_MIN = Parameter(
     3500,
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_ref=ReferenceID.GIVEWELL_COST_PER_LIFE_SAVED,
     source_type="external",
     description="GiveWell cost per life saved (Helen Keller International)",
@@ -7654,6 +8110,7 @@ GIVEWELL_COST_PER_LIFE_MIN = Parameter(
 
 GIVEWELL_COST_PER_LIFE_MAX = Parameter(
     5500,
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_ref=ReferenceID.GIVEWELL_COST_PER_LIFE_SAVED,
     source_type="external",
     description="GiveWell cost per life saved (Against Malaria Foundation)",
@@ -7665,6 +8122,7 @@ GIVEWELL_COST_PER_LIFE_MAX = Parameter(
 
 GIVEWELL_COST_PER_LIFE_AVG = Parameter(
     4500,
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_ref=ReferenceID.GIVEWELL_COST_PER_LIFE_SAVED,
     source_type="external",
     description="GiveWell average cost per life saved across top charities",
@@ -7677,6 +8135,7 @@ GIVEWELL_COST_PER_LIFE_AVG = Parameter(
 # Historical public health comparisons
 SMALLPOX_ERADICATION_ROI = Parameter(
     280,
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_ref=ReferenceID.SMALLPOX_ERADICATION_ROI,
     source_type="external",
     description="Return on investment from smallpox eradication campaign",
@@ -7688,6 +8147,7 @@ SMALLPOX_ERADICATION_ROI = Parameter(
 
 CHILDHOOD_VACCINATION_ROI = Parameter(
     13,
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_ref=ReferenceID.CHILDHOOD_VACCINATION_ROI,
     source_type="external",
     description="Return on investment from childhood vaccination programs",
@@ -7699,6 +8159,7 @@ CHILDHOOD_VACCINATION_ROI = Parameter(
 
 POLIO_VACCINATION_ROI = Parameter(
     39,
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_ref=ReferenceID.POLIO_VACCINATION_ROI,
     source_type="external",
     description="Return on investment from sustaining polio vaccination assets and integrating into expanded immunization programs",
@@ -7710,6 +8171,7 @@ POLIO_VACCINATION_ROI = Parameter(
 
 MEASLES_VACCINATION_ROI = Parameter(
     14,
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_ref=ReferenceID.MEASLES_VACCINATION_ROI,
     source_type="external",
     description="Return on investment from measles (MMR) vaccination programs",
@@ -7721,6 +8183,7 @@ MEASLES_VACCINATION_ROI = Parameter(
 
 CHILDHOOD_VACCINATION_ANNUAL_BENEFIT = Parameter(
     15_000_000_000,
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_ref="childhood-vaccination-economic-benefits",  # Will use ReferenceID enum after regeneration
     source_type="external",
     description="Estimated annual global economic benefit from childhood vaccination programs (measles, polio, etc.)",
@@ -7734,6 +8197,7 @@ CHILDHOOD_VACCINATION_ANNUAL_BENEFIT = Parameter(
 
 WATER_FLUORIDATION_ROI = Parameter(
     23,
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_ref=ReferenceID.CLEAN_WATER_SANITATION_ROI,
     source_type="external",
     description="Return on investment from water fluoridation programs",
@@ -7747,6 +8211,7 @@ WATER_FLUORIDATION_ROI = Parameter(
 
 SMALLPOX_ERADICATION_TOTAL_BENEFIT = Parameter(
     1_420_000_000,
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_ref=ReferenceID.SMALLPOX_ERADICATION_ROI,
     source_type="external",
     description="Total economic benefit from smallpox eradication campaign",
@@ -7758,6 +8223,7 @@ SMALLPOX_ERADICATION_TOTAL_BENEFIT = Parameter(
 
 HUMAN_GENOME_PROJECT_TOTAL_ECONOMIC_IMPACT = Parameter(
     1_000_000_000_000,
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_ref=ReferenceID.HUMAN_GENOME_AND_GENETIC_EDITING,
     source_type="external",
     description="Estimated total economic impact of Human Genome Project",
@@ -7771,6 +8237,7 @@ HUMAN_GENOME_PROJECT_TOTAL_ECONOMIC_IMPACT = Parameter(
 
 WATER_FLUORIDATION_ANNUAL_BENEFIT = Parameter(
     800_000_000,
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_ref=ReferenceID.CLEAN_WATER_SANITATION_ROI,
     source_type="external",
     description="Estimated annual global economic benefit from water fluoridation programs",
@@ -7782,6 +8249,7 @@ WATER_FLUORIDATION_ANNUAL_BENEFIT = Parameter(
 
 SMOKING_CESSATION_ANNUAL_BENEFIT = Parameter(
     12_000_000_000,
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_ref="life-expectancy-gains-smoking-reduction",
     source_type="external",
     description="Estimated annual global economic benefit from smoking cessation programs",
@@ -7795,6 +8263,7 @@ SMOKING_CESSATION_ANNUAL_BENEFIT = Parameter(
 # Three-tier ROI analysis based on TOTAL one-time health benefits
 TREATY_ROI_EXISTING_DRUGS_ONLY = Parameter(
     EXISTING_DRUGS_EFFICACY_LAG_ECONOMIC_LOSS / TREATY_CAMPAIGN_TOTAL_COST,
+    manual_ref="knowledge/strategy/earth-optimization-prize.qmd",
     source_type="calculated",
     description="Treaty ROI based on historical rate of drug development (existing drugs only). Total one-time benefit from avoiding regulatory delay for drugs already in development divided by campaign cost. Excludes future innovation effects.",
     display_name="Treaty ROI - Historical Rate (Existing Drugs)",
@@ -7809,6 +8278,7 @@ TREATY_ROI_EXISTING_DRUGS_ONLY = Parameter(
 
 TREATY_ROI_TRIAL_CAPACITY_PLUS_EFFICACY_LAG = Parameter(
     DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_ECONOMIC_VALUE / TREATY_CAMPAIGN_TOTAL_COST,
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_type="calculated",
     description="Treaty ROI from elimination of efficacy lag plus earlier treatment discovery from increased trial throughput. Total one-time benefit divided by campaign cost. This is the primary ROI estimate for total health benefits.",
     display_name="Treaty ROI - Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Increased Trial Throughput",
@@ -7829,6 +8299,7 @@ TREATY_ROI_TRIAL_CAPACITY_PLUS_EFFICACY_LAG = Parameter(
 # Uses the uncertain POLITICAL_SUCCESS_PROBABILITY - Monte Carlo will sample the full distribution
 TREATY_EXPECTED_ROI_TRIAL_CAPACITY_PLUS_EFFICACY_LAG = Parameter(
     float(TREATY_ROI_TRIAL_CAPACITY_PLUS_EFFICACY_LAG) * float(POLITICAL_SUCCESS_PROBABILITY),
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_ref="calculated",
     source_type="calculated",
     description="Expected ROI for 1% treaty accounting for political success probability uncertainty. "
@@ -7859,6 +8330,7 @@ TREATY_EXPECTED_ROI_TRIAL_CAPACITY_PLUS_EFFICACY_LAG = Parameter(
 
 GLOBAL_MILITARY_SPENDING_POST_TREATY_ANNUAL_2024 = Parameter(
     GLOBAL_MILITARY_SPENDING_ANNUAL_2024 * (1 - TREATY_REDUCTION_PCT),
+    manual_ref="knowledge/solution/aligning-incentives.qmd",
     source_type="calculated",  # Derived from military spending and treaty reduction percentage
     description="Global military spending after 1% treaty reduction",
     display_name="Global Military Spending After 1% Treaty Reduction",
@@ -7873,6 +8345,7 @@ GLOBAL_MILITARY_SPENDING_POST_TREATY_ANNUAL_2024 = Parameter(
 
 DRUG_DISCOVERY_TO_APPROVAL_YEARS = Parameter(
     14,
+    manual_ref="knowledge/problem.qmd",
     source_ref=ReferenceID.BIO_CLINICAL_DEVELOPMENT_2021,
     source_type="external",
     description="Full drug development timeline from discovery to FDA approval. Typical range is 12-15 years based on BIO 2021 and PMC meta-analyses. Breakdown: preclinical 4-6 years + clinical 10.5 years. Using 14 years as central estimate.",
@@ -7894,6 +8367,7 @@ DRUG_DISCOVERY_TO_APPROVAL_YEARS = Parameter(
 # Drug Development Phase Durations
 PHASE_1_SAFETY_DURATION_YEARS = Parameter(
     2.3,
+    manual_ref="knowledge/appendix/dfda-impact-paper.qmd",
     source_ref=ReferenceID.BIO_CLINICAL_DEVELOPMENT_2021,
     source_type="external",
     description="Phase I safety trial duration",
@@ -7909,6 +8383,7 @@ PHASE_1_SAFETY_DURATION_YEARS = Parameter(
 # Baseline Lives Saved by Modern Medicine
 BASELINE_LIVES_SAVED_ANNUAL = Parameter(
     12.0,
+    manual_ref="knowledge/appendix/dfda-impact-paper.qmd",
     source_ref=ReferenceID.WHO_GLOBAL_HEALTH_ESTIMATES_2024,
     source_type="external",
     description="Baseline annual lives saved by pharmaceuticals (conservative aggregate)",
@@ -7961,6 +8436,7 @@ BASELINE_LIVES_SAVED_ANNUAL = Parameter(
 # Cost per DALY benchmarks for comparison
 BED_NETS_COST_PER_DALY = Parameter(
     89,
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_ref=ReferenceID.GIVEWELL_COST_PER_LIFE_SAVED,
     source_type="external",
     peer_reviewed=True,  # GiveWell synthesizes peer-reviewed research and undergoes extensive expert review
@@ -7976,6 +8452,7 @@ BED_NETS_COST_PER_DALY = Parameter(
 
 DEWORMING_COST_PER_DALY = Parameter(
     55,  # Midpoint of $28-82 range from GiveWell 2011 analysis
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_ref=ReferenceID.DEWORMING_COST_PER_DALY,
     source_type="external",
     description="Cost per DALY for deworming programs (range $28-82, midpoint estimate). GiveWell notes this 2011 estimate is outdated and their current methodology focuses on long-term income effects rather than short-term health DALYs.",
@@ -7988,6 +8465,7 @@ DEWORMING_COST_PER_DALY = Parameter(
 
 VITAMIN_A_COST_PER_DALY = Parameter(
     37,  # Midpoint of $23-50 India estimate (most conservative published estimate)
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_ref=ReferenceID.VITAMIN_A_COST_PER_DALY,
     source_type="external",
     description="Cost per DALY for vitamin A supplementation programs (India: $23-50; Africa: $40-255; wide variation by region and baseline VAD prevalence). Using India midpoint as conservative estimate.",
@@ -8000,6 +8478,7 @@ VITAMIN_A_COST_PER_DALY = Parameter(
 
 CHILDHOOD_VACCINATION_COST_PER_DALY = Parameter(
     30,  # Estimated from ROI and benefit parameters; US studies use QALYs not DALYs
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_ref="childhood-vaccination-roi",
     source_type="definition",
     description="Estimated cost per DALY for US childhood vaccination programs. Note: US cost-effectiveness studies primarily use cost per QALY (Quality-Adjusted Life Year) rather than cost per DALY. This estimate is derived from program costs and benefits for comparison purposes only.",
@@ -8018,6 +8497,7 @@ CHILDHOOD_VACCINATION_COST_PER_DALY = Parameter(
 # RECOVERY trial component parameters for calculating cost per QALY
 RECOVERY_TRIAL_TOTAL_COST = Parameter(
     20_000_000,  # ~$20M total trial cost (£20M, ~$20M USD)
+    manual_ref="knowledge/problem/nih-fails-2-institute-health.qmd",
     source_ref=ReferenceID.RECOVERY_TRIAL_82X_COST_REDUCTION,
     source_type="external",
     description="Total cost of UK RECOVERY trial. Enrolled tens of thousands of patients across "
@@ -8033,6 +8513,7 @@ RECOVERY_TRIAL_TOTAL_COST = Parameter(
 
 RECOVERY_TRIAL_GLOBAL_LIVES_SAVED = Parameter(
     1_000_000,  # ~1 million lives saved globally from dexamethasone adoption (NHS England, March 2021)
+    manual_ref="knowledge/problem/nih-fails-2-institute-health.qmd",
     source_ref=ReferenceID.RECOVERY_TRIAL_1M_LIVES_SAVED,
     source_type="external",
     description="Estimated lives saved globally by RECOVERY trial's dexamethasone discovery. "
@@ -8050,6 +8531,7 @@ RECOVERY_TRIAL_GLOBAL_LIVES_SAVED = Parameter(
 
 QALYS_PER_COVID_DEATH_AVERTED = Parameter(
     5,  # Conservative: COVID deaths skewed toward elderly, so fewer remaining life-years
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_type="definition",
     description="Average QALYs gained per COVID death averted. Conservative estimate reflecting "
                 "older age distribution of COVID mortality. See confidence_interval for range.",
@@ -8064,6 +8546,7 @@ QALYS_PER_COVID_DEATH_AVERTED = Parameter(
 
 RECOVERY_TRIAL_TOTAL_QALYS_GENERATED = Parameter(
     RECOVERY_TRIAL_GLOBAL_LIVES_SAVED * QALYS_PER_COVID_DEATH_AVERTED,
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_type="calculated",
     description="Total QALYs generated by RECOVERY trial's discoveries (lives saved × QALYs per life). "
                 "Uses global impact methodology: counts all downstream health gains from the discovery.",
@@ -8079,6 +8562,7 @@ RECOVERY_TRIAL_TOTAL_QALYS_GENERATED = Parameter(
 
 NIH_STANDARD_RESEARCH_COST_PER_QALY = Parameter(
     50_000,  # Midpoint of $20,000-$100,000 range
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_ref=ReferenceID.STANDARD_MEDICAL_RESEARCH_ROI,
     source_type="external",
     description="Typical cost per QALY for standard NIH-funded medical research portfolio. "
@@ -8095,6 +8579,7 @@ NIH_STANDARD_RESEARCH_COST_PER_QALY = Parameter(
 
 PRAGMATIC_TRIAL_COST_PER_QALY = Parameter(
     RECOVERY_TRIAL_TOTAL_COST / RECOVERY_TRIAL_TOTAL_QALYS_GENERATED,
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_ref=ReferenceID.RECOVERY_TRIAL_82X_COST_REDUCTION,
     source_type="calculated",
     description="Cost per QALY for pragmatic platform trials, calculated from RECOVERY trial data. "
@@ -8112,6 +8597,7 @@ PRAGMATIC_TRIAL_COST_PER_QALY = Parameter(
 
 NIH_TRADITIONAL_TRIAL_MAX_EFFICIENCY_PCT = Parameter(
     DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT / TRADITIONAL_PHASE3_COST_PER_PATIENT,
+    manual_ref="knowledge/problem/nih-fails-2-institute-health.qmd",
     source_type="calculated",
     description="Maximum efficiency of NIH traditional Phase 3 trials relative to pragmatic trials, "
                 "expressed as a percentage. Calculated as pragmatic cost / traditional cost. "
@@ -8137,6 +8623,7 @@ NIH_TRADITIONAL_TRIAL_MAX_EFFICIENCY_PCT = Parameter(
 
 TREATY_COST_PER_DALY_TRIAL_CAPACITY_PLUS_EFFICACY_LAG = Parameter(
     TREATY_CAMPAIGN_TOTAL_COST / DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS,
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_type="calculated",
     description="Cost per DALY averted from elimination of efficacy lag plus earlier treatment discovery from increased trial throughput. Only counts campaign cost; ignores economic benefits from funding and R&D savings.",
     display_name="Cost per DALY Averted (Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Increased Trial Throughput)",
@@ -8153,6 +8640,7 @@ TREATY_COST_PER_DALY_TRIAL_CAPACITY_PLUS_EFFICACY_LAG = Parameter(
 # The "conservative" label is retained for compatibility, but uses the unified parameter
 TREATY_EXPECTED_COST_PER_DALY = Parameter(
     TREATY_COST_PER_DALY_TRIAL_CAPACITY_PLUS_EFFICACY_LAG / POLITICAL_SUCCESS_PROBABILITY,
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_type="calculated",
     description=f"Expected cost per DALY accounting for political success probability uncertainty. "
                 f"Monte Carlo samples from beta(0.1%, 10%) distribution. At the conservative 1% estimate, "
@@ -8176,6 +8664,7 @@ DFDA_DIRECT_FUNDING_QUEUE_CLEARANCE_NPV = Parameter(
     DFDA_ANNUAL_TRIAL_FUNDING
     * (1 - (1 + NPV_DISCOUNT_RATE_STANDARD) ** -DFDA_QUEUE_CLEARANCE_YEARS)
     / NPV_DISCOUNT_RATE_STANDARD,
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_type="calculated",  # NPV calculation from funding, discount rate, and time horizon
     description="NPV of annual direct funding for the therapeutic space exploration period. Funding period equals exploration time (queue clearance years at given capacity multiplier). After exploration completes, the full timeline shift benefit is realized.",
     display_name="dFDA Direct Funding NPV (Exploration Period)",
@@ -8192,6 +8681,7 @@ DFDA_DIRECT_FUNDING_QUEUE_CLEARANCE_NPV = Parameter(
 # Cost per DALY for direct funding scenario
 DFDA_DIRECT_FUNDING_COST_PER_DALY = Parameter(
     DFDA_DIRECT_FUNDING_QUEUE_CLEARANCE_NPV / DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS,
+    manual_ref="knowledge/appendix/dfda-impact-paper.qmd",
     source_type="calculated",  # Derived from NPV and DALYs
     description="Cost per DALY at direct funding level for the therapeutic space exploration period. Still highly cost-effective vs bed nets.",
     display_name="dFDA Direct Funding Cost per DALY",
@@ -8206,6 +8696,7 @@ DFDA_DIRECT_FUNDING_COST_PER_DALY = Parameter(
 # Direct funding ROI
 DFDA_DIRECT_FUNDING_ROI_TRIAL_CAPACITY_PLUS_EFFICACY_LAG = Parameter(
     DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_ECONOMIC_VALUE / DFDA_DIRECT_FUNDING_QUEUE_CLEARANCE_NPV,
+    manual_ref="knowledge/appendix/dfda-impact-paper.qmd",
     source_type="calculated",
     description="ROI from directly funding pragmatic clinical trials over the therapeutic space exploration period.",
     display_name="Direct Funding ROI - Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Increased Trial Throughput",
@@ -8221,6 +8712,7 @@ DFDA_DIRECT_FUNDING_ROI_TRIAL_CAPACITY_PLUS_EFFICACY_LAG = Parameter(
 # Direct funding vs bed nets comparison
 DFDA_DIRECT_FUNDING_VS_BED_NETS_MULTIPLIER = Parameter(
     BED_NETS_COST_PER_DALY / DFDA_DIRECT_FUNDING_COST_PER_DALY,
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_type="calculated",
     description="How many times more cost-effective direct funding of medical research is vs bed nets.",
     display_name="Direct Funding Cost-Effectiveness vs Bed Nets",
@@ -8236,6 +8728,7 @@ DFDA_DIRECT_FUNDING_VS_BED_NETS_MULTIPLIER = Parameter(
 # Treaty campaign leverage vs direct funding
 TREATY_VS_DIRECT_FUNDING_LEVERAGE = Parameter(
     DFDA_DIRECT_FUNDING_COST_PER_DALY / TREATY_COST_PER_DALY_TRIAL_CAPACITY_PLUS_EFFICACY_LAG,
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_type="calculated",  # Ratio of cost per DALY metrics
     description="How many times more cost-effective the treaty campaign is vs direct funding. Treaty campaign unlocks government funding at scale, avoiding need for philanthropists/NIH to directly commit equivalent amounts. Both approaches achieve same DALY timeline shift benefit. Treaty spreads cost across governments while building sustainable public funding infrastructure.",
     display_name="Treaty Campaign Leverage vs Direct Funding",
@@ -8250,6 +8743,7 @@ TREATY_VS_DIRECT_FUNDING_LEVERAGE = Parameter(
 # Cost-effectiveness multipliers vs. bed nets
 TREATY_VS_BED_NETS_MULTIPLIER = Parameter(
     BED_NETS_COST_PER_DALY / TREATY_COST_PER_DALY_TRIAL_CAPACITY_PLUS_EFFICACY_LAG,
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_type="calculated",
     description="How many times more cost-effective than bed nets (using bed net cost per DALY midpoint estimate)",
     display_name="Cost-Effectiveness vs Bed Nets Multiplier",
@@ -8263,6 +8757,7 @@ TREATY_VS_BED_NETS_MULTIPLIER = Parameter(
 
 TREATY_EXPECTED_VS_BED_NETS_MULTIPLIER = Parameter(
     BED_NETS_COST_PER_DALY / TREATY_EXPECTED_COST_PER_DALY,
+    manual_ref="knowledge/appendix/treaty-feasibility.qmd",
     source_type="calculated",
     description="Expected value multiplier vs bed nets (accounts for political uncertainty at 1% success rate)",
     display_name="Expected Cost-Effectiveness vs Bed Nets Multiplier",
@@ -8305,6 +8800,7 @@ if __name__ == "__main__":
 # SECONDS_PER_YEAR = DAYS_PER_YEAR * HOURS_PER_DAY * 60 * 60
 GLOBAL_ANNUAL_LIVES_SAVED_BY_MED_RESEARCH = Parameter(
     4_200_000,
+    manual_ref="knowledge/appendix/dfda-impact-paper.qmd",
     source_ref="medical-research-lives-saved-annually",
     source_type="external",
     description="Annual lives saved by medical research globally",
@@ -8317,6 +8813,7 @@ GLOBAL_ANNUAL_LIVES_SAVED_BY_MED_RESEARCH = Parameter(
 )
 GLOBAL_COST_PER_LIFE_SAVED_MED_RESEARCH_ANNUAL = Parameter(
     GLOBAL_MED_RESEARCH_SPENDING / GLOBAL_ANNUAL_LIVES_SAVED_BY_MED_RESEARCH,
+    manual_ref="knowledge/appendix/dfda-impact-paper.qmd",
     source_type="calculated",
     description="Cost per life saved by medical research",
     display_name="Cost per Life Saved by Medical Research",
@@ -8329,6 +8826,7 @@ GLOBAL_COST_PER_LIFE_SAVED_MED_RESEARCH_ANNUAL = Parameter(
 MISALLOCATION_FACTOR_DEATH_VS_SAVING = Parameter(
     (GLOBAL_ANNUAL_DIRECT_INDIRECT_WAR_COST / GLOBAL_ANNUAL_CONFLICT_DEATHS_TOTAL)
     / GLOBAL_COST_PER_LIFE_SAVED_MED_RESEARCH_ANNUAL,
+    manual_ref="knowledge/appendix/dfda-impact-paper.qmd",
     source_type="calculated",
     description="Misallocation factor: cost to kill vs cost to save",
     display_name="Misallocation Factor: Cost to Kill vs Cost to Save",
@@ -8344,6 +8842,7 @@ MISALLOCATION_FACTOR_DEATH_VS_SAVING = Parameter(
 # Opportunity Cost Parameters
 ECONOMIC_MULTIPLIER_MILITARY_SPENDING = Parameter(
     0.6,
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_ref=ReferenceID.MILITARY_SPENDING_ECONOMIC_MULTIPLIER,
     source_type="external",
     description="Economic multiplier for military spending (0.6x ROI). Literature range 0.4-1.0×.",
@@ -8357,6 +8856,7 @@ ECONOMIC_MULTIPLIER_MILITARY_SPENDING = Parameter(
 
 ECONOMIC_MULTIPLIER_INFRASTRUCTURE_INVESTMENT = Parameter(
     1.6,
+    manual_ref="knowledge/problem/cost-of-war.qmd",
     source_ref=ReferenceID.INFRASTRUCTURE_INVESTMENT_ECONOMIC_MULTIPLIER,
     source_type="external",
     description="Economic multiplier for infrastructure investment (1.6x ROI)",
@@ -8368,6 +8868,7 @@ ECONOMIC_MULTIPLIER_INFRASTRUCTURE_INVESTMENT = Parameter(
 
 ECONOMIC_MULTIPLIER_EDUCATION_INVESTMENT = Parameter(
     2.1,
+    manual_ref="knowledge/problem/cost-of-war.qmd",
     source_ref=ReferenceID.EDUCATION_INVESTMENT_ECONOMIC_MULTIPLIER,
     source_type="external",
     description="Economic multiplier for education investment (2.1x ROI)",
@@ -8379,6 +8880,7 @@ ECONOMIC_MULTIPLIER_EDUCATION_INVESTMENT = Parameter(
 
 ECONOMIC_MULTIPLIER_HEALTHCARE_INVESTMENT = Parameter(
     4.3,
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_ref=ReferenceID.HEALTHCARE_INVESTMENT_ECONOMIC_MULTIPLIER,
     source_type="external",
     description="Economic multiplier for healthcare investment (4.3x ROI). Literature range 3.0-6.0×.",
@@ -8393,6 +8895,7 @@ ECONOMIC_MULTIPLIER_HEALTHCARE_INVESTMENT = Parameter(
 # Healthcare vs Military Spending Multiplier Ratio
 HEALTHCARE_VS_MILITARY_MULTIPLIER_RATIO = Parameter(
     float(ECONOMIC_MULTIPLIER_HEALTHCARE_INVESTMENT) / float(ECONOMIC_MULTIPLIER_MILITARY_SPENDING),
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_type="calculated",
     description="Ratio of healthcare to military fiscal multipliers. Healthcare investment generates 7× more "
                 "economic activity per dollar than military spending.",
@@ -8407,6 +8910,7 @@ HEALTHCARE_VS_MILITARY_MULTIPLIER_RATIO = Parameter(
 
 GLOBAL_REGISTERED_VOTERS = Parameter(
     4_128_142_495,
+    manual_ref="knowledge/strategy/global-referendum.qmd",
     source_ref=ReferenceID.INTERNATIONAL_IDEA_VOTER_TURNOUT_DATABASE_2026,
     source_type="external",
     description="Best current register-based estimate of the number of registered voters worldwide, "
@@ -8429,6 +8933,7 @@ N_{voters,global} \\
 
 GLOBAL_POPULATION_ACTIVISM_THRESHOLD_PCT = Parameter(
     0.035,
+    manual_ref="knowledge/strategy/global-referendum.qmd",
     source_ref=ReferenceID.N3_5_RULE,
     source_type="external",
     description="Critical mass threshold for social change (3.5% rule). Chenoweth studied national "
@@ -8445,6 +8950,7 @@ GLOBAL_POPULATION_ACTIVISM_THRESHOLD_PCT = Parameter(
 
 THREE_POINT_FIVE_PERCENT_OF_GLOBAL_POPULATION = Parameter(
     GLOBAL_POPULATION_2024 * GLOBAL_POPULATION_ACTIVISM_THRESHOLD_PCT,
+    manual_ref="knowledge/economics/campaign-budget.qmd",
     source_type="calculated",
     description="Headcount implied by the 3.5% activism threshold applied to global population. "
                 "This is a historical tipping-point benchmark, not the public majority-of-humanity "
@@ -8463,6 +8969,7 @@ THREE_POINT_FIVE_PERCENT_OF_GLOBAL_POPULATION = Parameter(
 # Used in podcast outro CTA and campaign materials
 VOTER_LIVES_SAVED = Parameter(
     float(DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_LIVES_SAVED) / float(GLOBAL_REGISTERED_VOTERS),
+    manual_ref="knowledge/strategy/nonprofit-coalition-strategy.qmd",
     source_type="calculated",
     description="Average lives saved per verified voter if the treaty passes "
                 "(total lives saved divided by the majority-of-humanity coordination target).",
@@ -8478,6 +8985,7 @@ VOTER_LIVES_SAVED = Parameter(
 
 VOTER_SUFFERING_HOURS_PREVENTED = Parameter(
     float(DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_SUFFERING_HOURS) / float(GLOBAL_REGISTERED_VOTERS),
+    manual_ref="knowledge/strategy/nonprofit-coalition-strategy.qmd",
     source_type="calculated",
     description="Average suffering hours prevented per verified voter if the treaty passes "
                 "(total suffering hours divided by the majority-of-humanity coordination target).",
@@ -8501,6 +9009,7 @@ VOTER_SUFFERING_HOURS_PREVENTED = Parameter(
 
 VENTURE_GROSS_RETURN = Parameter(
     0.17,
+    manual_ref="knowledge/economics/earth-optimization-prize-fund.qmd",
     source_type="external",
     description="Venture capital / private equity gross return (before 2-and-20 fees). "
                 "Cambridge Associates US VC index 25-year pooled gross IRR. "
@@ -8516,6 +9025,7 @@ VENTURE_GROSS_RETURN = Parameter(
 
 SCALE_COMPRESSION_FACTOR = Parameter(
     -0.025,
+    manual_ref="knowledge/strategy/earth-optimization-prize.qmd",
     source_type="definition",
     description="Diminishing-returns drag as the venture market expands ~15x "
                 "(current global VC ~$300B/yr; Prize Fund deploys ~$4.7T/yr). "
@@ -8533,6 +9043,7 @@ SCALE_COMPRESSION_FACTOR = Parameter(
 
 CROWD_DECISION_ACCURACY = Parameter(
     0.91,
+    manual_ref="knowledge/solution/wishocracy.qmd",
     source_ref=ReferenceID.SUROWIECKI_2004,
     source_type="external",
     distribution="fixed",
@@ -8547,6 +9058,7 @@ CROWD_DECISION_ACCURACY = Parameter(
 
 EXPERT_DECISION_ACCURACY = Parameter(
     0.65,
+    manual_ref="knowledge/solution/wishocracy.qmd",
     source_ref=ReferenceID.SUROWIECKI_2004,
     source_type="external",
     distribution="fixed",
@@ -8561,6 +9073,7 @@ EXPERT_DECISION_ACCURACY = Parameter(
 
 ALLOCATION_DECISION_SPREAD = Parameter(
     0.08,
+    manual_ref="knowledge/solution/wishocracy.qmd",
     source_type="definition",
     description="Return spread between the best and worst major asset-class sectors "
                 "(biotech vs. coal, growth vs. value, emerging vs. declining). "
@@ -8576,6 +9089,7 @@ ALLOCATION_DECISION_SPREAD = Parameter(
 
 HOME_BIAS_ALPHA = Parameter(
     0.008,
+    manual_ref="knowledge/economics/earth-optimization-prize-fund.qmd",
     source_type="external",
     description="Return drag from home bias in fragmented national pension systems. "
                 "70+ countries each overweight domestic assets, missing global diversification. "
@@ -8591,6 +9105,7 @@ HOME_BIAS_ALPHA = Parameter(
 
 GLOBAL_RETIREMENT_ASSETS = Parameter(
     70_000_000_000_000,
+    manual_ref="knowledge/economics/earth-optimization-prize-fund.qmd",
     source_type="external",
     description="Total global pension and retirement assets (OECD 2024). "
                 "This is the capital pool that the Prize Fund competes with "
@@ -8604,6 +9119,7 @@ GLOBAL_RETIREMENT_ASSETS = Parameter(
 
 CONVENTIONAL_RETIREMENT_RETURN = Parameter(
     0.065,
+    manual_ref="knowledge/economics/earth-optimization-prize-fund.qmd",
     source_type="external",
     description="Average retail after-fee return on conventional retirement portfolios "
                 "(60/40 stock/bond mix, ~1% advisory fees, ~0.4% fund fees). "
@@ -8619,6 +9135,7 @@ CONVENTIONAL_RETIREMENT_RETURN = Parameter(
 
 CONVENTIONAL_RETIREMENT_HORIZON_MULTIPLE = Parameter(
     (1 + float(CONVENTIONAL_RETIREMENT_RETURN)) ** round(_years_to_50pct),
+    manual_ref="knowledge/economics/earth-optimization-prize-fund.qmd",
     source_type="calculated",
     description="Compound multiple for conventional retirement investing over the PRIZE pool resolution horizon "
                 "(tied to the destructive economy 50% threshold year).",
@@ -8635,6 +9152,7 @@ CONVENTIONAL_RETIREMENT_HORIZON_MULTIPLE = Parameter(
 
 WISHOCRATIC_CROWD_ALPHA = Parameter(
     0.005,
+    manual_ref="knowledge/economics/earth-optimization-prize-fund.qmd",
     source_type="definition",
     description="Allocation alpha from wishocratic sector- and manager-level capital routing. "
                 "Crowds route capital across sectors and managers at least as well as "
@@ -8657,6 +9175,7 @@ WISHOCRATIC_CROWD_ALPHA = Parameter(
 
 PRIZE_POOL_ANNUAL_RETURN = Parameter(
     float(VENTURE_GROSS_RETURN) + float(SCALE_COMPRESSION_FACTOR) + float(WISHOCRATIC_CROWD_ALPHA) + float(HOME_BIAS_ALPHA),
+    manual_ref="knowledge/strategy/earth-optimization-prize.qmd",
     source_type="calculated",
     description="Canonical annual return used for PRIZE pool growth. "
                 "Venture gross return + scale compression + crowd allocation alpha + home bias elimination. "
@@ -8672,6 +9191,7 @@ PRIZE_POOL_ANNUAL_RETURN = Parameter(
 
 PRIZE_POOL_HORIZON_MULTIPLE = Parameter(
     (1 + float(PRIZE_POOL_ANNUAL_RETURN)) ** round(_years_to_50pct),
+    manual_ref="knowledge/strategy/earth-optimization-prize.qmd",
     source_type="calculated",
     description="Compound multiple for PRIZE pool growth over the resolution horizon "
                 "(tied to the destructive economy 50% threshold year).",
@@ -8686,6 +9206,7 @@ PRIZE_POOL_HORIZON_MULTIPLE = Parameter(
 
 GLOBAL_INVESTABLE_ASSETS = Parameter(
     305_000_000_000_000,
+    manual_ref="knowledge/strategy/earth-optimization-prize.qmd",
     source_type="external",
     description="Total global financial wealth (2024): equities, bonds, cash/deposits, and "
                 "investment funds. Excludes real estate and physical assets. This is the "
@@ -8699,6 +9220,7 @@ GLOBAL_INVESTABLE_ASSETS = Parameter(
 
 PRIZE_POOL_PARTICIPATION_RATE = Parameter(
     0.01,
+    manual_ref="knowledge/strategy/earth-optimization-prize.qmd",
     source_type="definition",
     description="Fraction of global investable financial assets that flow into the PRIZE pool. "
                 "1% central estimate parallels the 1% Treaty ask: 1% of your weapons money, "
@@ -8713,6 +9235,7 @@ PRIZE_POOL_PARTICIPATION_RATE = Parameter(
 
 PRIZE_POOL_SIZE = Parameter(
     float(GLOBAL_INVESTABLE_ASSETS) * float(PRIZE_POOL_PARTICIPATION_RATE) * float(PRIZE_POOL_HORIZON_MULTIPLE),
+    manual_ref="knowledge/strategy/earth-optimization-protocol-v1.qmd",
     source_type="calculated",
     description="Terminal PRIZE pool size: global investable assets × participation rate × "
                 "compound multiple over the resolution horizon.",
@@ -8727,6 +9250,7 @@ PRIZE_POOL_SIZE = Parameter(
 
 GLOBAL_COORDINATION_TARGET_PCT = Parameter(
     float(GLOBAL_REGISTERED_VOTERS) / float(GLOBAL_POPULATION_2024),
+    manual_ref="knowledge/strategy/global-referendum.qmd",
     source_type="calculated",
     description="Majority-of-humanity public coordination target as a share of global population, "
                 "using global registered voters as the current verified-human headcount proxy.",
@@ -8741,6 +9265,7 @@ GLOBAL_COORDINATION_TARGET_PCT = Parameter(
 
 GLOBAL_COORDINATION_ACTIVATION_REWARD_PER_VERIFIED_PARTICIPANT = Parameter(
     5.0,
+    manual_ref="knowledge/strategy/nonprofit-coalition-strategy.qmd",
     source_type="definition",
     description="Planning midpoint for the direct cash incentive required to make a successful verified recruit "
                 "materially worth sharing at global scale. Intended as a research-backed blended reward across "
@@ -8759,6 +9284,7 @@ GLOBAL_COORDINATION_ACTIVATION_REWARD_PER_VERIFIED_PARTICIPANT = Parameter(
 
 GLOBAL_COORDINATION_VERIFICATION_AND_PAYMENT_COST_PER_PARTICIPANT = Parameter(
     1.5,
+    manual_ref="knowledge/strategy/earth-optimization-prize.qmd",
     source_type="definition",
     description="Planning midpoint for non-reward variable cost per successful verified participant: identity "
                 "verification, payment rails, fraud checks, support, and completion friction.",
@@ -8776,6 +9302,7 @@ GLOBAL_COORDINATION_VERIFICATION_AND_PAYMENT_COST_PER_PARTICIPANT = Parameter(
 
 GLOBAL_COORDINATION_PLATFORM_AND_OPERATIONS_COST = Parameter(
     4_000_000_000,
+    manual_ref="knowledge/strategy/earth-optimization-prize.qmd",
     source_type="definition",
     description="Fixed cost to run a global activation campaign toward majority-of-humanity participation: "
                 "platform buildout, localization, customer support, compliance, "
@@ -8794,6 +9321,7 @@ GLOBAL_COORDINATION_PLATFORM_AND_OPERATIONS_COST = Parameter(
 
 GLOBAL_COORDINATION_ACTIVATION_COST_PER_PARTICIPANT = Parameter(
     float(GLOBAL_COORDINATION_ACTIVATION_REWARD_PER_VERIFIED_PARTICIPANT) + float(GLOBAL_COORDINATION_VERIFICATION_AND_PAYMENT_COST_PER_PARTICIPANT),
+    manual_ref="knowledge/strategy/global-referendum.qmd",
     source_type="calculated",
     description="Blended variable activation cost per successful verified participant: direct incentive plus "
                 "verification and payment operations.",
@@ -8808,6 +9336,7 @@ GLOBAL_COORDINATION_ACTIVATION_COST_PER_PARTICIPANT = Parameter(
 
 GLOBAL_COORDINATION_ACTIVATION_BUDGET = Parameter(
     float(GLOBAL_REGISTERED_VOTERS) * float(GLOBAL_COORDINATION_ACTIVATION_COST_PER_PARTICIPANT) + float(GLOBAL_COORDINATION_PLATFORM_AND_OPERATIONS_COST),
+    manual_ref="knowledge/strategy/earth-optimization-protocol-v1.qmd",
     source_type="calculated",
     description="Canonical institutional activation threshold: capital required to make participation by the "
                 "majority-of-humanity coordination target credible through direct referral incentives, verification, "
@@ -8824,6 +9353,7 @@ GLOBAL_COORDINATION_ACTIVATION_BUDGET = Parameter(
 
 RETIREMENT_EQUIVALENT_2_CLAIMS_TARGET_PAYOUT = Parameter(
     float(GLOBAL_ANNUAL_SAVINGS_PER_CAPITA) * float(CONVENTIONAL_RETIREMENT_HORIZON_MULTIPLE),
+    manual_ref="knowledge/strategy/earth-optimization-prize.qmd",
     source_type="calculated",
     description="Target success-side payout for two referred votes: what one representative annual savings contribution "
                 "would become in a conventional retirement account by PRIZE resolution.",
@@ -8838,6 +9368,7 @@ RETIREMENT_EQUIVALENT_2_CLAIMS_TARGET_PAYOUT = Parameter(
 
 RETIREMENT_EQUIVALENT_CLAIM_VALUE_TARGET = Parameter(
     float(RETIREMENT_EQUIVALENT_2_CLAIMS_TARGET_PAYOUT) / 2,
+    manual_ref="knowledge/strategy/earth-optimization-prize.qmd",
     source_type="calculated",
     description="Target value of one referred-voter claim when two claims are meant to match the conventional-retirement "
                 "future value of one representative annual savings contribution.",
@@ -8852,6 +9383,7 @@ RETIREMENT_EQUIVALENT_CLAIM_VALUE_TARGET = Parameter(
 
 PRIZE_POOL_RETIREMENT_EQUIVALENT_PRINCIPAL = Parameter(
     float(GLOBAL_REGISTERED_VOTERS) * float(RETIREMENT_EQUIVALENT_CLAIM_VALUE_TARGET) / float(PRIZE_POOL_HORIZON_MULTIPLE),
+    manual_ref="knowledge/strategy/earth-optimization-prize.qmd",
     source_type="calculated",
     description="Secondary PRIZE seed benchmark: initial principal required so that the pool can make two referred votes "
                 "retirement-equivalent on success at the majority-of-humanity coordination target. This is a "
@@ -8869,6 +9401,7 @@ PRIZE_POOL_RETIREMENT_EQUIVALENT_PRINCIPAL = Parameter(
 # VOTE token value (pool size ÷ majority-of-humanity coordination target)
 VOTE_TOKEN_VALUE = Parameter(
     float(PRIZE_POOL_SIZE) / float(GLOBAL_REGISTERED_VOTERS),
+    manual_ref="knowledge/strategy/earth-optimization-prize.qmd",
     source_type="calculated",
     description="Value of a single VOTE claim based on the modeled PRIZE pool size "
                 "(investable assets × participation rate × horizon multiple). "
@@ -8884,6 +9417,7 @@ VOTE_TOKEN_VALUE = Parameter(
 
 VOTE_2_CLAIMS_PAYOUT = Parameter(
     2 * float(PRIZE_POOL_SIZE) / float(GLOBAL_REGISTERED_VOTERS),
+    manual_ref="knowledge/strategy/earth-optimization-prize.qmd",
     source_type="calculated",
     description="Payout for a depositor who recruits 2 verified participants "
                 "(earning 2 VOTE claims). CI range reflects participation uncertainty.",
@@ -8899,6 +9433,7 @@ VOTE_2_CLAIMS_PAYOUT = Parameter(
 # Historical & Comparison Multipliers
 MILITARY_VS_MEDICAL_RESEARCH_RATIO = Parameter(
     GLOBAL_MILITARY_SPENDING_ANNUAL_2024 / GLOBAL_MED_RESEARCH_SPENDING,
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_type="calculated",
     description="Ratio of military spending to medical research spending",
     display_name="Ratio of Military Spending to Medical Research Spending",
@@ -8913,6 +9448,7 @@ MILITARY_VS_MEDICAL_RESEARCH_RATIO = Parameter(
 # WW2 demobilization: historical military spending in constant 2024 dollars
 US_MILITARY_SPENDING_1939_ANNUAL_2024USD = Parameter(
     29_000_000_000,
+    manual_ref="knowledge/problem/unrepresentative-democracy.qmd",
     source_ref=ReferenceID.US_MILITARY_SPENDING_HISTORICAL_CONSTANT_DOLLARS,
     source_type="external",
     description="US military spending in 1939 (pre-WW2 baseline) in constant 2024 dollars",
@@ -8925,6 +9461,7 @@ US_MILITARY_SPENDING_1939_ANNUAL_2024USD = Parameter(
 
 US_MILITARY_SPENDING_1945_PEAK_ANNUAL_2024USD = Parameter(
     1_420_000_000_000,
+    manual_ref="knowledge/economics/peace-dividend.qmd",
     source_ref=ReferenceID.US_MILITARY_SPENDING_HISTORICAL_CONSTANT_DOLLARS,
     source_type="external",
     description="US military spending at WW2 peak (1945) in constant 2024 dollars",
@@ -8937,6 +9474,7 @@ US_MILITARY_SPENDING_1945_PEAK_ANNUAL_2024USD = Parameter(
 
 US_MILITARY_SPENDING_1947_ANNUAL_2024USD = Parameter(
     176_000_000_000,
+    manual_ref="knowledge/economics/peace-dividend.qmd",
     source_ref=ReferenceID.US_MILITARY_SPENDING_HISTORICAL_CONSTANT_DOLLARS,
     source_type="external",
     description="US military spending in 1947 (post-WW2 trough, 2 years after peak) in constant 2024 dollars",
@@ -8949,6 +9487,7 @@ US_MILITARY_SPENDING_1947_ANNUAL_2024USD = Parameter(
 
 US_MILITARY_SPENDING_2024_ANNUAL = Parameter(
     886_000_000_000,
+    manual_ref="knowledge/problem/unrepresentative-democracy.qmd",
     source_ref=ReferenceID.US_MILITARY_SPENDING_HISTORICAL_CONSTANT_DOLLARS,
     source_type="external",
     description="US military spending in 2024 in constant dollars",
@@ -8961,6 +9500,7 @@ US_MILITARY_SPENDING_2024_ANNUAL = Parameter(
 
 POST_WW2_MILITARY_CUT_PCT = Parameter(
     1 - (US_MILITARY_SPENDING_1947_ANNUAL_2024USD / US_MILITARY_SPENDING_1945_PEAK_ANNUAL_2024USD),
+    manual_ref="knowledge/economics/peace-dividend.qmd",
     source_type="calculated",
     description="Percentage US military spending cut after WW2 (1945-1947, inflation-adjusted: $1,420B to $176B in constant 2024 dollars)",
     display_name="Percentage Military Spending Cut After WW2",
@@ -8974,6 +9514,7 @@ POST_WW2_MILITARY_CUT_PCT = Parameter(
 
 US_MILITARY_SPENDING_CURRENT_VS_PREWAR_MULTIPLIER = Parameter(
     US_MILITARY_SPENDING_2024_ANNUAL / US_MILITARY_SPENDING_1939_ANNUAL_2024USD,
+    manual_ref="knowledge/problem/cost-of-war.qmd",
     source_type="calculated",
     description="Ratio of current US military spending to pre-WW2 baseline in constant dollars ($886B / $29B)",
     display_name="Current US Military Spending vs Pre-WW2 Baseline (Multiplier)",
@@ -8987,6 +9528,7 @@ US_MILITARY_SPENDING_CURRENT_VS_PREWAR_MULTIPLIER = Parameter(
 
 US_1939_MILITARY_SPENDING_PCT_LOWER_THAN_CURRENT = Parameter(
     1 - (US_MILITARY_SPENDING_1939_ANNUAL_2024USD / US_MILITARY_SPENDING_2024_ANNUAL),
+    manual_ref="knowledge/solution/1-percent-treaty.qmd",
     source_type="calculated",
     description="How much lower pre-WW2 (1939) US military spending was than today's peacetime budget, in constant 2024 dollars",
     display_name="Pre-WW2 US Military Spending % Lower than Current",
@@ -9000,6 +9542,7 @@ US_1939_MILITARY_SPENDING_PCT_LOWER_THAN_CURRENT = Parameter(
 
 SWITZERLAND_DEFENSE_SPENDING_PCT = Parameter(
     0.007,
+    manual_ref="knowledge/problem.qmd",
     source_ref=ReferenceID.SWISS_MILITARY_BUDGET_0_7_PCT_GDP,
     source_type="external",
     description="Switzerland's defense spending as percentage of GDP (0.7%)",
@@ -9011,6 +9554,7 @@ SWITZERLAND_DEFENSE_SPENDING_PCT = Parameter(
 
 SWITZERLAND_GDP_PER_CAPITA_K = Parameter(
     93_000,
+    manual_ref="knowledge/problem.qmd",
     source_ref=ReferenceID.SWISS_VS_US_GDP_PER_CAPITA,
     source_type="external",
     description="Switzerland GDP per capita",
@@ -9022,6 +9566,7 @@ SWITZERLAND_GDP_PER_CAPITA_K = Parameter(
 
 AVERAGE_MARKET_RETURN_PCT = Parameter(
     0.10,
+    manual_ref="knowledge/solution/aligning-incentives.qmd",
     source_ref=ReferenceID.WARREN_BUFFETT_CAREER_AVERAGE_RETURN_20_PCT,
     source_type="external",
     description="Average annual stock market return (10%)",
@@ -9034,6 +9579,7 @@ AVERAGE_MARKET_RETURN_PCT = Parameter(
 # Lobbyist compensation & incentives
 LOBBYIST_BOND_INVESTMENT_MAX = Parameter(
     20_000_000,
+    manual_ref="knowledge/solution/aligning-incentives.qmd",
     source_type="definition",
     description="Maximum bond investment for lobbyist incentives",
     display_name="Maximum Bond Investment for Lobbyist Incentives",
@@ -9044,6 +9590,7 @@ LOBBYIST_BOND_INVESTMENT_MAX = Parameter(
 
 LOBBYIST_SALARY_MIN_K = Parameter(
     500_000,
+    manual_ref="knowledge/solution/aligning-incentives.qmd",
     source_ref=ReferenceID.LOBBYIST_STATISTICS_DC,
     source_type="external",
     description="Minimum annual lobbyist salary range",
@@ -9055,6 +9602,7 @@ LOBBYIST_SALARY_MIN_K = Parameter(
 
 LOBBYIST_SALARY_MAX = Parameter(
     2_000_000,
+    manual_ref="knowledge/solution/aligning-incentives.qmd",
     source_ref=ReferenceID.LOBBYIST_STATISTICS_DC,
     source_type="external",
     description="Maximum annual lobbyist salary range",
@@ -9070,6 +9618,7 @@ LOBBYIST_SALARY_MAX = Parameter(
 _infinite_roi_dividends = round(float(TREATY_PEACE_PLUS_RD_ANNUAL_BENEFITS) / 1e9)
 TREATY_REDIRECTED_SPENDING_INFINITE_ROI = Parameter(
     0,  # Placeholder - conceptual parameter for the latex equation only
+    manual_ref="knowledge/solution/1-percent-treaty.qmd",
     source_type="definition",
     description="ROI when redirecting existing spending (no new costs = infinite return)",
     display_name="Infinite ROI from Redirected Spending",
@@ -9082,6 +9631,7 @@ TREATY_REDIRECTED_SPENDING_INFINITE_ROI = Parameter(
 
 TREATY_BENEFIT_MULTIPLIER_VS_VACCINES = Parameter(
     TREATY_PEACE_PLUS_RD_ANNUAL_BENEFITS / CHILDHOOD_VACCINATION_ANNUAL_BENEFIT,
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_type="calculated",
     description="Treaty system benefit multiplier vs childhood vaccination programs",
     display_name="Treaty System Benefit Multiplier vs Childhood Vaccination Programs",
@@ -9186,6 +9736,7 @@ def compound_sum(annual_benefit: float, years: float, growth_rate: float, discou
 
 RD_SPILLOVER_MULTIPLIER = Parameter(
     2.0,
+    manual_ref="knowledge/economics/gdp-trajectories.qmd",
     source_type="definition",
     distribution=DistributionType.NORMAL,
     description="R&D spillover multiplier: each $1 in directed medical research produces $2 in "
@@ -9203,6 +9754,7 @@ RD_SPILLOVER_MULTIPLIER = Parameter(
 
 GDP_BASELINE_GROWTH_RATE = Parameter(
     0.025,
+    manual_ref="knowledge/appendix/political-dysfunction-tax.qmd",
     source_type="definition",
     distribution="fixed",
     description="Status-quo baseline annual global GDP growth rate.",
@@ -9214,6 +9766,7 @@ GDP_BASELINE_GROWTH_RATE = Parameter(
 
 MILITARY_REDIRECT_GDP_BOOST_AT_30PCT = Parameter(
     0.055,
+    manual_ref="knowledge/appendix/political-dysfunction-tax.qmd",
     source_type="definition",
     distribution=DistributionType.NORMAL,
     description="Historical calibration target: 30% military reallocation maps to ~5.5 percentage points annual GDP growth boost.",
@@ -9228,6 +9781,7 @@ MILITARY_REDIRECT_GDP_BOOST_AT_30PCT = Parameter(
 
 DISEASE_BURDEN_GDP_DRAG_PCT = Parameter(
     0.13,
+    manual_ref="knowledge/economics/gdp-trajectories.qmd",
     source_ref=ReferenceID.DISEASE_ECONOMIC_BURDEN_109T,
     source_type="external",
     distribution="fixed",
@@ -9244,6 +9798,7 @@ DISEASE_BURDEN_GDP_DRAG_PCT = Parameter(
 
 GLOBAL_POPULATION_2045_PROJECTED = Parameter(
     9_200_000_000,
+    manual_ref="knowledge/economics/gdp-trajectories.qmd",
     source_ref=ReferenceID.GLOBAL_POPULATION_8_BILLION,
     source_type="external",
     distribution="fixed",
@@ -9256,6 +9811,7 @@ GLOBAL_POPULATION_2045_PROJECTED = Parameter(
 
 WISHONIA_MILITARY_REALLOCATION_PHYSICAL_MAX_SHARE = Parameter(
     POST_WW2_MILITARY_CUT_PCT,
+    manual_ref="knowledge/economics/gdp-trajectories.qmd",
     source_type="calculated",
     description="Maximum physically demonstrated military reallocation share, anchored to post-WW2 US demobilization.",
     display_name="Wishonia Military Reallocation Physical Max Share",
@@ -9269,6 +9825,7 @@ WISHONIA_MILITARY_REALLOCATION_PHYSICAL_MAX_SHARE = Parameter(
 
 TREATY_EFFECTIVE_REALLOCATION_SHARE_YEAR_15 = Parameter(
     (0.01 * 3 + 0.02 * 4 + 0.05 * 5 + 0.10 * 3) / 15,
+    manual_ref="knowledge/strategy/earth-optimization-prize.qmd",
     source_type="definition",
     distribution="fixed",
     description="Average military-to-medicine reallocation share over 15 years under the optimistic treaty take-hold path "
@@ -9282,6 +9839,7 @@ TREATY_EFFECTIVE_REALLOCATION_SHARE_YEAR_15 = Parameter(
 
 TREATY_EFFECTIVE_REALLOCATION_SHARE_YEAR_20 = Parameter(
     (0.01 * 3 + 0.02 * 4 + 0.05 * 5 + 0.10 * 8) / 20,
+    manual_ref="knowledge/appendix/political-dysfunction-tax.qmd",
     source_type="definition",
     distribution="fixed",
     description="Average military-to-medicine reallocation share over 20 years under the optimistic treaty take-hold path "
@@ -9305,6 +9863,7 @@ TREATY_DISEASE_CURE_FRACTION_20YR = Parameter(
         )
         / DISEASES_WITHOUT_EFFECTIVE_TREATMENT,
     ),
+    manual_ref="knowledge/appendix/political-dysfunction-tax.qmd",
     source_type="calculated",
     description="Treaty disease-cure fraction over 20 years under the optimistic treaty take-hold path. "
                 "The initial 1% treaty expands to 2%, then 5%, then 10%, with trial-throughput scaling linearly "
@@ -9337,6 +9896,7 @@ TREATY_DISEASE_CURE_FRACTION_20YR = Parameter(
 
 TREATY_REDIRECT_GDP_GROWTH_BONUS_YEAR_20 = Parameter(
     TREATY_EFFECTIVE_REALLOCATION_SHARE_YEAR_20 * ((MILITARY_REDIRECT_GDP_BOOST_AT_30PCT / 0.30) * (RD_SPILLOVER_MULTIPLIER / 2.0)),
+    manual_ref="knowledge/appendix/political-dysfunction-tax.qmd",
     source_type="calculated",
     description="Annual GDP growth bonus by year 20 from redirecting military spending to medical research under the treaty take-hold path, "
                 "including R&D spillovers.",
@@ -9353,6 +9913,7 @@ TREATY_PEACE_RECOVERY_GDP_GROWTH_BONUS_YEAR_20 = Parameter(
     (PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT / GLOBAL_GDP_2025)
     * (TREATY_EFFECTIVE_REALLOCATION_SHARE_YEAR_20 / TREATY_REDUCTION_PCT)
     * PEACE_DIVIDEND_CONFLICT_ELASTICITY,
+    manual_ref="knowledge/appendix/political-dysfunction-tax.qmd",
     source_type="calculated",
     description="Annual GDP growth bonus by year 20 from explicit avoided war-cost drag under the treaty take-hold path.",
     display_name="Treaty Peace Recovery GDP Growth Bonus (Year 20)",
@@ -9378,6 +9939,7 @@ TREATY_CYBERCRIME_RECOVERY_GDP_GROWTH_BONUS_YEAR_20 = Parameter(
     (GLOBAL_CYBERCRIME_COST_ANNUAL_2025 / GLOBAL_GDP_2025)
     * TREATY_EFFECTIVE_REALLOCATION_SHARE_YEAR_20
     * PEACE_DIVIDEND_CONFLICT_ELASTICITY,
+    manual_ref="knowledge/appendix/political-dysfunction-tax.qmd",
     source_type="calculated",
     description="Annual GDP growth bonus by year 20 from reducing cybercrime drag as the treaty weakens the destructive economy feedback loop.",
     display_name="Treaty Cybercrime Recovery GDP Growth Bonus (Year 20)",
@@ -9400,6 +9962,7 @@ TREATY_CYBERCRIME_RECOVERY_GDP_GROWTH_BONUS_YEAR_20 = Parameter(
 
 TREATY_HEALTH_RECOVERY_GDP_GROWTH_BONUS_YEAR_20 = Parameter(
     ((1 + TREATY_DISEASE_CURE_FRACTION_20YR * DISEASE_BURDEN_GDP_DRAG_PCT + (EXISTING_DRUGS_EFFICACY_LAG_ECONOMIC_LOSS / GLOBAL_GDP_2025)) ** (1 / 20)) - 1,
+    manual_ref="knowledge/appendix/political-dysfunction-tax.qmd",
     source_type="calculated",
     description="Annualized GDP growth bonus by year 20 from lower disease burden plus eliminating existing-drug efficacy lag under the treaty path.",
     display_name="Treaty Health Recovery GDP Growth Bonus (Year 20)",
@@ -9433,6 +9996,7 @@ WISHONIA_DISEASE_CURE_FRACTION_20YR_FULL = Parameter(
         * 20
         / DISEASES_WITHOUT_EFFECTIVE_TREATMENT,
     ),
+    manual_ref="knowledge/economics/gdp-trajectories.qmd",
     source_type="calculated",
     description="Wishonia disease-cure fraction over 20 years under full implementation. "
                 "Uses full trial-capacity scaling and applies an upper bound of 100% of untreated disease classes.",
@@ -9464,6 +10028,7 @@ WISHONIA_DISEASE_CURE_FRACTION_20YR_FULL = Parameter(
 
 CURRENT_TRAJECTORY_GDP_YEAR_20 = Parameter(
     GLOBAL_GDP_2025 * ((1 + GDP_BASELINE_GROWTH_RATE) ** 20),
+    manual_ref="knowledge/economics/gdp-trajectories.qmd",
     source_type="calculated",
     description="Global GDP at year 20 under status-quo current trajectory growth.",
     display_name="Current Trajectory GDP at Year 20",
@@ -9477,6 +10042,7 @@ CURRENT_TRAJECTORY_GDP_YEAR_20 = Parameter(
 
 CURRENT_TRAJECTORY_AVG_INCOME_YEAR_20 = Parameter(
     CURRENT_TRAJECTORY_GDP_YEAR_20 / GLOBAL_POPULATION_2045_PROJECTED,
+    manual_ref="knowledge/appendix/political-dysfunction-tax.qmd",
     source_type="calculated",
     description="Average income (GDP per capita) at year 20 under current trajectory trajectory.",
     display_name="Current Trajectory Average Income at Year 20",
@@ -9500,6 +10066,7 @@ TREATY_TRAJECTORY_GDP_YEAR_20 = Parameter(
         + TREATY_CYBERCRIME_RECOVERY_GDP_GROWTH_BONUS_YEAR_20
         + TREATY_HEALTH_RECOVERY_GDP_GROWTH_BONUS_YEAR_20
     ) ** 20,
+    manual_ref="knowledge/appendix/political-dysfunction-tax.qmd",
     source_type="calculated",
     description="Projected global GDP at year 20 under the optimistic treaty take-hold path. "
                 "Compounds baseline growth plus explicit military redirect spillovers, peace dividend recovery, "
@@ -9532,6 +10099,7 @@ TREATY_TRAJECTORY_GDP_YEAR_20 = Parameter(
 
 TREATY_TRAJECTORY_CAGR_YEAR_20 = Parameter(
     (TREATY_TRAJECTORY_GDP_YEAR_20 / GLOBAL_GDP_2025) ** (1 / 20) - 1,
+    manual_ref="knowledge/appendix/political-dysfunction-tax.qmd",
     source_type="calculated",
     description="Compound annual growth rate implied by Treaty Trajectory GDP trajectory over 20 years.",
     display_name="Treaty Trajectory CAGR (20 Years)",
@@ -9545,6 +10113,7 @@ TREATY_TRAJECTORY_CAGR_YEAR_20 = Parameter(
 
 TREATY_TRAJECTORY_GDP_VS_CURRENT_TRAJECTORY_MULTIPLIER_YEAR_20 = Parameter(
     TREATY_TRAJECTORY_GDP_YEAR_20 / CURRENT_TRAJECTORY_GDP_YEAR_20,
+    manual_ref="knowledge/appendix/recruitment-and-propaganda-plan.qmd",
     source_type="calculated",
     description="Treaty Trajectory GDP at year 20 as a multiple of current trajectory GDP at year 20.",
     display_name="Treaty Trajectory vs Current Trajectory GDP Multiplier (Year 20)",
@@ -9558,6 +10127,7 @@ TREATY_TRAJECTORY_GDP_VS_CURRENT_TRAJECTORY_MULTIPLIER_YEAR_20 = Parameter(
 
 TREATY_TRAJECTORY_AVG_INCOME_YEAR_20 = Parameter(
     float(TREATY_TRAJECTORY_GDP_YEAR_20) / float(GLOBAL_POPULATION_2045_PROJECTED),
+    manual_ref="knowledge/economics/gdp-trajectories.qmd",
     source_type="calculated",
     description="Average income (GDP per capita) at year 20 under the Treaty Trajectory.",
     display_name="Treaty Trajectory Average Income at Year 20",
@@ -9623,6 +10193,7 @@ WISHONIA_TRAJECTORY_GDP_YEAR_20 = Parameter(
             )
         ) ** 17
     ),
+    manual_ref="knowledge/appendix/political-dysfunction-tax.qmd",
     source_type="calculated",
     description="Projected global GDP at year 20 under the Wishonia Trajectory. "
                 "Model applies all Wishonia policy channels and redirects the full Political Dysfunction Tax "
@@ -9708,6 +10279,7 @@ WISHONIA_TRAJECTORY_GDP_YEAR_20 = Parameter(
 
 WISHONIA_TRAJECTORY_CAGR_YEAR_20 = Parameter(
     (WISHONIA_TRAJECTORY_GDP_YEAR_20 / GLOBAL_GDP_2025) ** (1 / 20) - 1,
+    manual_ref="knowledge/appendix/political-dysfunction-tax.qmd",
     source_type="calculated",
     description="Compound annual growth rate implied by Wishonia Trajectory GDP trajectory over 20 years.",
     display_name="Wishonia Trajectory CAGR (20 Years)",
@@ -9721,6 +10293,7 @@ WISHONIA_TRAJECTORY_CAGR_YEAR_20 = Parameter(
 
 WISHONIA_TRAJECTORY_GDP_VS_CURRENT_TRAJECTORY_MULTIPLIER_YEAR_20 = Parameter(
     WISHONIA_TRAJECTORY_GDP_YEAR_20 / CURRENT_TRAJECTORY_GDP_YEAR_20,
+    manual_ref="knowledge/appendix/treaty-feasibility.qmd",
     source_type="calculated",
     description="Wishonia Trajectory GDP at year 20 as a multiple of current trajectory GDP at year 20.",
     display_name="Wishonia Trajectory vs Current Trajectory GDP Multiplier (Year 20)",
@@ -9734,6 +10307,7 @@ WISHONIA_TRAJECTORY_GDP_VS_CURRENT_TRAJECTORY_MULTIPLIER_YEAR_20 = Parameter(
 
 WISHONIA_TRAJECTORY_AVG_INCOME_YEAR_20 = Parameter(
     float(WISHONIA_TRAJECTORY_GDP_YEAR_20) / float(GLOBAL_POPULATION_2045_PROJECTED),
+    manual_ref="knowledge/appendix/political-dysfunction-tax.qmd",
     source_type="calculated",
     description="Average income (GDP per capita) at year 20 under the Wishonia Trajectory.",
     display_name="Wishonia Trajectory Average Income at Year 20",
@@ -9747,6 +10321,7 @@ WISHONIA_TRAJECTORY_AVG_INCOME_YEAR_20 = Parameter(
 
 WISHONIA_TRAJECTORY_VS_TREATY_TRAJECTORY_GDP_MULTIPLIER_YEAR_20 = Parameter(
     WISHONIA_TRAJECTORY_GDP_YEAR_20 / TREATY_TRAJECTORY_GDP_YEAR_20,
+    manual_ref="knowledge/economics/gdp-trajectories.qmd",
     source_type="calculated",
     description="Year-20 GDP multiplier from adding non-health dysfunction-capital reallocation "
                 "on top of the Treaty Trajectory channels.",
@@ -9769,6 +10344,7 @@ WISHONIA_TRAJECTORY_VS_TREATY_TRAJECTORY_GDP_MULTIPLIER_YEAR_20 = Parameter(
 
 GLOBAL_POPULATION_2040_PROJECTED = Parameter(
     8_900_000_000,
+    manual_ref="knowledge/strategy/earth-optimization-prize.qmd",
     source_ref=ReferenceID.GLOBAL_POPULATION_8_BILLION,
     source_type="external",
     distribution="fixed",
@@ -9792,6 +10368,7 @@ TREATY_DISEASE_CURE_FRACTION_15YR = Parameter(
         )
         / DISEASES_WITHOUT_EFFECTIVE_TREATMENT,
     ),
+    manual_ref="knowledge/strategy/earth-optimization-prize.qmd",
     source_type="calculated",
     description="Treaty disease-cure fraction over 15 years under the optimistic treaty take-hold path. "
                 "The initial 1% treaty expands to 2%, then 5%, then 10%, with trial-throughput scaling linearly "
@@ -9823,6 +10400,7 @@ TREATY_DISEASE_CURE_FRACTION_15YR = Parameter(
 
 TREATY_REDIRECT_GDP_GROWTH_BONUS_YEAR_15 = Parameter(
     TREATY_EFFECTIVE_REALLOCATION_SHARE_YEAR_15 * ((MILITARY_REDIRECT_GDP_BOOST_AT_30PCT / 0.30) * (RD_SPILLOVER_MULTIPLIER / 2.0)),
+    manual_ref="knowledge/strategy/earth-optimization-prize.qmd",
     source_type="calculated",
     description="Annual GDP growth bonus by year 15 from redirecting military spending to medical research under the treaty take-hold path, "
                 "including R&D spillovers.",
@@ -9839,6 +10417,7 @@ TREATY_PEACE_RECOVERY_GDP_GROWTH_BONUS_YEAR_15 = Parameter(
     (PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT / GLOBAL_GDP_2025)
     * (TREATY_EFFECTIVE_REALLOCATION_SHARE_YEAR_15 / TREATY_REDUCTION_PCT)
     * PEACE_DIVIDEND_CONFLICT_ELASTICITY,
+    manual_ref="knowledge/strategy/earth-optimization-prize.qmd",
     source_type="calculated",
     description="Annual GDP growth bonus by year 15 from explicit avoided war-cost drag under the treaty take-hold path.",
     display_name="Treaty Peace Recovery GDP Growth Bonus (Year 15)",
@@ -9864,6 +10443,7 @@ TREATY_CYBERCRIME_RECOVERY_GDP_GROWTH_BONUS_YEAR_15 = Parameter(
     (GLOBAL_CYBERCRIME_COST_ANNUAL_2025 / GLOBAL_GDP_2025)
     * TREATY_EFFECTIVE_REALLOCATION_SHARE_YEAR_15
     * PEACE_DIVIDEND_CONFLICT_ELASTICITY,
+    manual_ref="knowledge/strategy/earth-optimization-prize.qmd",
     source_type="calculated",
     description="Annual GDP growth bonus by year 15 from reducing cybercrime drag as the treaty weakens the destructive economy feedback loop.",
     display_name="Treaty Cybercrime Recovery GDP Growth Bonus (Year 15)",
@@ -9886,6 +10466,7 @@ TREATY_CYBERCRIME_RECOVERY_GDP_GROWTH_BONUS_YEAR_15 = Parameter(
 
 TREATY_HEALTH_RECOVERY_GDP_GROWTH_BONUS_YEAR_15 = Parameter(
     ((1 + TREATY_DISEASE_CURE_FRACTION_15YR * DISEASE_BURDEN_GDP_DRAG_PCT + (EXISTING_DRUGS_EFFICACY_LAG_ECONOMIC_LOSS / GLOBAL_GDP_2025)) ** (1 / 15)) - 1,
+    manual_ref="knowledge/strategy/earth-optimization-prize.qmd",
     source_type="calculated",
     description="Annualized GDP growth bonus by year 15 from lower disease burden plus eliminating existing-drug efficacy lag under the treaty path.",
     display_name="Treaty Health Recovery GDP Growth Bonus (Year 15)",
@@ -9919,6 +10500,7 @@ WISHONIA_DISEASE_CURE_FRACTION_15YR = Parameter(
         * 15
         / DISEASES_WITHOUT_EFFECTIVE_TREATMENT,
     ),
+    manual_ref="knowledge/call-to-action/your-personal-benefits.qmd",
     source_type="calculated",
     description="Wishonia disease-cure fraction over 15 years under full implementation. "
                 "Uses full trial-capacity scaling and applies an upper bound of 100% of untreated disease classes.",
@@ -9950,6 +10532,7 @@ WISHONIA_DISEASE_CURE_FRACTION_15YR = Parameter(
 
 CURRENT_TRAJECTORY_GDP_YEAR_15 = Parameter(
     GLOBAL_GDP_2025 * ((1 + GDP_BASELINE_GROWTH_RATE) ** 15),
+    manual_ref="knowledge/strategy/earth-optimization-prize.qmd",
     source_type="calculated",
     description="Global GDP at year 15 under status-quo current trajectory growth.",
     display_name="Current Trajectory GDP at Year 15",
@@ -9971,6 +10554,7 @@ TREATY_TRAJECTORY_GDP_YEAR_15 = Parameter(
         + TREATY_CYBERCRIME_RECOVERY_GDP_GROWTH_BONUS_YEAR_15
         + TREATY_HEALTH_RECOVERY_GDP_GROWTH_BONUS_YEAR_15
     ) ** 15,
+    manual_ref="knowledge/strategy/earth-optimization-prize.qmd",
     source_type="calculated",
     description="Projected global GDP at year 15 under the optimistic treaty take-hold path. "
                 "Compounds baseline growth plus explicit military redirect spillovers, peace dividend recovery, "
@@ -10054,6 +10638,7 @@ WISHONIA_TRAJECTORY_GDP_YEAR_15 = Parameter(
             )
         ) ** 12
     ),
+    manual_ref="knowledge/strategy/earth-optimization-protocol-v1.qmd",
     source_type="calculated",
     description="Projected global GDP at year 15 under the Wishonia Trajectory. "
                 "Applies all Wishonia policy channels including military reallocation, disease-burden recovery, "
@@ -10136,6 +10721,7 @@ WISHONIA_TRAJECTORY_GDP_YEAR_15 = Parameter(
 
 CURRENT_TRAJECTORY_AVG_INCOME_YEAR_15 = Parameter(
     CURRENT_TRAJECTORY_GDP_YEAR_15 / GLOBAL_POPULATION_2040_PROJECTED,
+    manual_ref="knowledge/strategy/earth-optimization-prize.qmd",
     source_type="calculated",
     description="Average income (GDP per capita) at year 15 under current trajectory.",
     display_name="Current Trajectory Average Income at Year 15",
@@ -10150,6 +10736,7 @@ CURRENT_TRAJECTORY_AVG_INCOME_YEAR_15 = Parameter(
 
 TREATY_TRAJECTORY_AVG_INCOME_YEAR_15 = Parameter(
     float(TREATY_TRAJECTORY_GDP_YEAR_15) / float(GLOBAL_POPULATION_2040_PROJECTED),
+    manual_ref="knowledge/strategy/earth-optimization-prize.qmd",
     source_type="calculated",
     description="Average income (GDP per capita) at year 15 under the Treaty Trajectory.",
     display_name="Treaty Trajectory Average Income at Year 15",
@@ -10163,6 +10750,7 @@ TREATY_TRAJECTORY_AVG_INCOME_YEAR_15 = Parameter(
 
 WISHONIA_TRAJECTORY_AVG_INCOME_YEAR_15 = Parameter(
     float(WISHONIA_TRAJECTORY_GDP_YEAR_15) / float(GLOBAL_POPULATION_2040_PROJECTED),
+    manual_ref="knowledge/strategy/earth-optimization-protocol-v1.qmd",
     source_type="calculated",
     description="Average income (GDP per capita) at year 15 under the Wishonia Trajectory.",
     display_name="Wishonia Trajectory Average Income at Year 15",
@@ -10176,6 +10764,7 @@ WISHONIA_TRAJECTORY_AVG_INCOME_YEAR_15 = Parameter(
 
 TREATY_TRAJECTORY_GDP_VS_CURRENT_TRAJECTORY_MULTIPLIER_YEAR_15 = Parameter(
     TREATY_TRAJECTORY_GDP_YEAR_15 / CURRENT_TRAJECTORY_GDP_YEAR_15,
+    manual_ref="knowledge/economics/gdp-trajectories.qmd",
     source_type="calculated",
     description="Treaty Trajectory GDP at year 15 as a multiple of current trajectory GDP at year 15.",
     display_name="Treaty Trajectory vs Current Trajectory GDP Multiplier (Year 15)",
@@ -10189,6 +10778,7 @@ TREATY_TRAJECTORY_GDP_VS_CURRENT_TRAJECTORY_MULTIPLIER_YEAR_15 = Parameter(
 
 WISHONIA_TRAJECTORY_GDP_VS_CURRENT_TRAJECTORY_MULTIPLIER_YEAR_15 = Parameter(
     WISHONIA_TRAJECTORY_GDP_YEAR_15 / CURRENT_TRAJECTORY_GDP_YEAR_15,
+    manual_ref="knowledge/strategy/earth-optimization-prize.qmd",
     source_type="calculated",
     description="Wishonia Trajectory GDP at year 15 as a multiple of current trajectory GDP at year 15.",
     display_name="Wishonia Trajectory vs Current Trajectory GDP Multiplier (Year 15)",
@@ -10209,6 +10799,7 @@ WISHONIA_TRAJECTORY_GDP_VS_CURRENT_TRAJECTORY_MULTIPLIER_YEAR_15 = Parameter(
 
 GLOBAL_HALE_CURRENT = Parameter(
     63.3,
+    manual_ref="knowledge/strategy/earth-optimization-prize.qmd",
     source_ref=ReferenceID.WHO_GLOBAL_HEALTH_ESTIMATES_2024,
     source_type="external",
     distribution="normal",
@@ -10227,6 +10818,7 @@ GLOBAL_HALE_CURRENT = Parameter(
 
 GLOBAL_HALE_GAP = Parameter(
     float(GLOBAL_LIFE_EXPECTANCY_2024) - 63.3,
+    manual_ref="knowledge/economics/gdp-trajectories.qmd",
     source_type="calculated",
     description="Gap between life expectancy and healthy life expectancy. Represents years lived "
                 "with disability or disease that could be recovered by curing diseases.",
@@ -10241,6 +10833,7 @@ GLOBAL_HALE_GAP = Parameter(
 
 HALE_LONGEVITY_REALIZATION_SHARE_YEAR_15 = Parameter(
     0.30,
+    manual_ref="knowledge/strategy/earth-optimization-prize.qmd",
     source_type="definition",
     distribution="fixed",
     description="Share of longer-run life-extension gains that have plausibly materialized into healthy years by year 15. "
@@ -10255,6 +10848,7 @@ HALE_LONGEVITY_REALIZATION_SHARE_YEAR_15 = Parameter(
 
 BEST_PRACTICE_LIFE_EXPECTANCY_GAIN = Parameter(
     max(float(SWITZERLAND_LIFE_EXPECTANCY), float(SINGAPORE_LIFE_EXPECTANCY)) - float(GLOBAL_LIFE_EXPECTANCY_2024),
+    manual_ref="knowledge/call-to-action/your-personal-benefits.qmd",
     source_type="calculated",
     description="Gap between current global life expectancy and the best life expectancy achieved by a major country today. "
                 "Used as a non-arbitrary governance/public-health uplift benchmark rather than capping Wishonia at today's global average.",
@@ -10269,6 +10863,7 @@ BEST_PRACTICE_LIFE_EXPECTANCY_GAIN = Parameter(
 
 TREATY_LONGEVITY_HALE_GAIN_YEAR_15 = Parameter(
     LIFE_EXTENSION_YEARS * HALE_LONGEVITY_REALIZATION_SHARE_YEAR_15 * TREATY_DISEASE_CURE_FRACTION_15YR,
+    manual_ref="knowledge/strategy/earth-optimization-prize.qmd",
     source_type="calculated",
     description="Additional healthy years at year 15 from partial realization of longer-run treaty longevity gains. "
                 "This removes the implicit cap at today's life expectancy while keeping year-15 realization conservative.",
@@ -10283,6 +10878,7 @@ TREATY_LONGEVITY_HALE_GAIN_YEAR_15 = Parameter(
 
 WISHONIA_EXTRA_HALE_GAIN_YEAR_15 = Parameter(
     WISHONIA_DISEASE_CURE_FRACTION_15YR * (BEST_PRACTICE_LIFE_EXPECTANCY_GAIN + LIFE_EXTENSION_YEARS * HALE_LONGEVITY_REALIZATION_SHARE_YEAR_15),
+    manual_ref="knowledge/call-to-action/your-personal-benefits.qmd",
     source_type="calculated",
     description="Additional healthy years at year 15 from optimal-governance public-health improvements plus partial realization "
                 "of longer-run longevity gains. This removes the implicit cap at today's life expectancy and lets Wishonia exceed it for non-arbitrary reasons.",
@@ -10305,6 +10901,7 @@ WISHONIA_EXTRA_HALE_GAIN_YEAR_15 = Parameter(
 
 TREATY_HALE_GAIN_YEAR_15 = Parameter(
     TREATY_DISEASE_CURE_FRACTION_15YR * (float(GLOBAL_LIFE_EXPECTANCY_2024) - 63.3) + float(TREATY_LONGEVITY_HALE_GAIN_YEAR_15),
+    manual_ref="knowledge/strategy/earth-optimization-prize.qmd",
     source_type="calculated",
     description="HALE improvement at year 15 under Treaty Trajectory. It includes both closing the current "
                 "HALE gap from disease/disability and a conservative partial realization of longer-run longevity gains.",
@@ -10322,6 +10919,7 @@ TREATY_HALE_GAIN_YEAR_15 = Parameter(
 
 WISHONIA_HALE_GAIN_YEAR_15 = Parameter(
     WISHONIA_DISEASE_CURE_FRACTION_15YR * (float(GLOBAL_LIFE_EXPECTANCY_2024) - 63.3) + float(WISHONIA_EXTRA_HALE_GAIN_YEAR_15),
+    manual_ref="knowledge/call-to-action/your-personal-benefits.qmd",
     source_type="calculated",
     description="HALE improvement at year 15 under Wishonia Trajectory. It includes closing the current "
                 "HALE gap, reaching today's best-practice life expectancy through optimal governance/public health, "
@@ -10340,6 +10938,7 @@ WISHONIA_HALE_GAIN_YEAR_15 = Parameter(
 
 TREATY_HALE_VALUE_PER_CAPITA = Parameter(
     float(TREATY_HALE_GAIN_YEAR_15) * float(STANDARD_ECONOMIC_QALY_VALUE_USD),
+    manual_ref="knowledge/call-to-action/your-personal-benefits.qmd",
     source_type="calculated",
     description="Economic value of Treaty Trajectory HALE gains at year 15 using the standard QALY value.",
     display_name="Treaty HALE Value Per Capita",
@@ -10353,6 +10952,7 @@ TREATY_HALE_VALUE_PER_CAPITA = Parameter(
 
 WISHONIA_HALE_VALUE_PER_CAPITA = Parameter(
     float(WISHONIA_HALE_GAIN_YEAR_15) * float(STANDARD_ECONOMIC_QALY_VALUE_USD),
+    manual_ref="knowledge/call-to-action/your-personal-benefits.qmd",
     source_type="calculated",
     description="Economic value of Wishonia Trajectory HALE gains at year 15 using the standard QALY value.",
     display_name="Wishonia HALE Value Per Capita",
@@ -10366,6 +10966,7 @@ WISHONIA_HALE_VALUE_PER_CAPITA = Parameter(
 
 TREATY_PROJECTED_HALE_YEAR_15 = Parameter(
     float(GLOBAL_HALE_CURRENT) + float(TREATY_HALE_GAIN_YEAR_15),
+    manual_ref="knowledge/appendix/earth-optimization-prize-protocol.qmd",
     source_type="calculated",
     description="Projected global HALE at year 15 under Treaty Trajectory. "
                 "Current HALE plus the treaty-driven improvement from closing the disease gap.",
@@ -10380,6 +10981,7 @@ TREATY_PROJECTED_HALE_YEAR_15 = Parameter(
 
 WISHONIA_PROJECTED_HALE_YEAR_15 = Parameter(
     float(GLOBAL_HALE_CURRENT) + float(WISHONIA_HALE_GAIN_YEAR_15),
+    manual_ref="knowledge/strategy/earth-optimization-protocol-v1.qmd",
     source_type="calculated",
     description="Projected global HALE at year 15 under Wishonia Trajectory. "
                 "Full implementation closes the entire disease gap, pushing HALE toward life expectancy.",
@@ -10403,6 +11005,7 @@ WISHONIA_PROJECTED_HALE_YEAR_15 = Parameter(
 
 GLOBAL_MEDIAN_AGE_2024 = Parameter(
     30.5,
+    manual_ref="knowledge/call-to-action/your-personal-benefits.qmd",
     source_ref=ReferenceID.GLOBAL_MEDIAN_AGE_UN_WPP_2024,
     source_type="external",
     description="Global median age in 2024 from UN World Population Prospects 2024 revision.",
@@ -10416,6 +11019,7 @@ GLOBAL_MEDIAN_AGE_2024 = Parameter(
 
 GLOBAL_AVG_REMAINING_YEARS = Parameter(
     float(GLOBAL_LIFE_EXPECTANCY_2024) - float(GLOBAL_MEDIAN_AGE_2024),
+    manual_ref="knowledge/call-to-action/your-personal-benefits.qmd",
     source_type="calculated",
     description="Average remaining lifespan for the median-age person. Conservative: uses "
                 "life expectancy at birth minus median age, which underestimates remaining years "
@@ -10448,6 +11052,7 @@ CURRENT_TRAJECTORY_CUMULATIVE_LIFETIME_INCOME = Parameter(
     * (1 + _current_pc_growth_0)
     * (((1 + _current_pc_growth_0) ** _remaining_years_0) - 1)
     / _current_pc_growth_0,
+    manual_ref="knowledge/call-to-action/your-personal-benefits.qmd",
     source_type="calculated",
     description="Cumulative per-capita income over an average remaining lifespan under current trajectory "
                 "baseline trajectory. Uses the implied per-capita baseline CAGR from 2025 to 2045.",
@@ -10498,6 +11103,7 @@ TREATY_TRAJECTORY_CUMULATIVE_LIFETIME_INCOME = Parameter(
         if _phase2_years_0 > 0
         else 0
     ),
+    manual_ref="knowledge/appendix/recruitment-and-propaganda-plan.qmd",
     source_type="calculated",
     description="Cumulative per-capita income over an average remaining lifespan under Treaty Trajectory. "
                 "Uses implied per-capita CAGR for years 1-20 (derived from known year-0 and year-20 "
@@ -10562,6 +11168,7 @@ TREATY_TRAJECTORY_CUMULATIVE_LIFETIME_INCOME = Parameter(
 
 TREATY_TRAJECTORY_LIFETIME_INCOME_GAIN_PER_CAPITA = Parameter(
     float(TREATY_TRAJECTORY_CUMULATIVE_LIFETIME_INCOME) - float(CURRENT_TRAJECTORY_CUMULATIVE_LIFETIME_INCOME),
+    manual_ref="knowledge/appendix/recruitment-and-propaganda-plan.qmd",
     source_type="calculated",
     description="Lifetime per-capita income gain from Treaty Trajectory vs current trajectory. "
                 "Cumulative treaty income minus cumulative earth income over average remaining lifespan. "
@@ -10576,6 +11183,7 @@ TREATY_TRAJECTORY_LIFETIME_INCOME_GAIN_PER_CAPITA = Parameter(
 
 TREATY_TRAJECTORY_LIFETIME_INCOME_MULTIPLIER = Parameter(
     float(TREATY_TRAJECTORY_CUMULATIVE_LIFETIME_INCOME) / float(CURRENT_TRAJECTORY_CUMULATIVE_LIFETIME_INCOME),
+    manual_ref="knowledge/appendix/recruitment-and-propaganda-plan.qmd",
     source_type="calculated",
     description="Ratio of cumulative lifetime income under Treaty Trajectory vs current trajectory. "
                 "Income-agnostic: applies as a multiplier to any individual's lifetime earnings.",
@@ -10602,6 +11210,7 @@ WISHONIA_TRAJECTORY_CUMULATIVE_LIFETIME_INCOME = Parameter(
         if _phase2_years_0 > 0
         else 0
     ),
+    manual_ref="knowledge/strategy/earth-optimization-prize.qmd",
     source_type="calculated",
     description="Cumulative per-capita income over an average remaining lifespan under Wishonia Trajectory. "
                 "Uses implied per-capita CAGR for years 1-20, then current-trajectory per-capita growth "
@@ -10665,6 +11274,7 @@ WISHONIA_TRAJECTORY_CUMULATIVE_LIFETIME_INCOME = Parameter(
 
 WISHONIA_TRAJECTORY_LIFETIME_INCOME_GAIN_PER_CAPITA = Parameter(
     float(WISHONIA_TRAJECTORY_CUMULATIVE_LIFETIME_INCOME) - float(CURRENT_TRAJECTORY_CUMULATIVE_LIFETIME_INCOME),
+    manual_ref="knowledge/strategy/earth-optimization-prize.qmd",
     source_type="calculated",
     description="Lifetime per-capita income gain from Wishonia Trajectory vs current trajectory. "
                 "Cumulative Wishonia income minus cumulative current trajectory income over average remaining lifespan.",
@@ -10678,6 +11288,7 @@ WISHONIA_TRAJECTORY_LIFETIME_INCOME_GAIN_PER_CAPITA = Parameter(
 
 TREATY_PERSONAL_UPSIDE_BLEND = Parameter(
     float(TREATY_TRAJECTORY_LIFETIME_INCOME_GAIN_PER_CAPITA) + float(TREATY_HALE_VALUE_PER_CAPITA),
+    manual_ref="knowledge/strategy/earth-optimization-prize.qmd",
     source_type="calculated",
     description="Blended personal upside under Treaty Trajectory: lifetime income gain plus valued healthy-life gains.",
     display_name="Treaty Personal Upside (Blended)",
@@ -10691,6 +11302,7 @@ TREATY_PERSONAL_UPSIDE_BLEND = Parameter(
 
 WISHONIA_PERSONAL_UPSIDE_BLEND = Parameter(
     float(WISHONIA_TRAJECTORY_LIFETIME_INCOME_GAIN_PER_CAPITA) + float(WISHONIA_HALE_VALUE_PER_CAPITA),
+    manual_ref="knowledge/call-to-action/your-personal-benefits.qmd",
     source_type="calculated",
     description="Blended personal upside under Wishonia Trajectory: lifetime income gain plus valued healthy-life gains.",
     display_name="Wishonia Personal Upside (Blended)",
@@ -10704,6 +11316,7 @@ WISHONIA_PERSONAL_UPSIDE_BLEND = Parameter(
 
 WISHONIA_TRAJECTORY_LIFETIME_INCOME_MULTIPLIER = Parameter(
     float(WISHONIA_TRAJECTORY_CUMULATIVE_LIFETIME_INCOME) / float(CURRENT_TRAJECTORY_CUMULATIVE_LIFETIME_INCOME),
+    manual_ref="knowledge/strategy/earth-optimization-prize.qmd",
     source_type="calculated",
     description="Ratio of cumulative lifetime income under Wishonia Trajectory vs current trajectory. "
                 "Income-agnostic: applies as a multiplier to any individual's lifetime earnings.",
@@ -10724,6 +11337,7 @@ WISHONIA_TRAJECTORY_LIFETIME_INCOME_MULTIPLIER = Parameter(
 
 SHARING_TIME_MINUTES = Parameter(
     0.5,
+    manual_ref="knowledge/appendix/recruitment-and-propaganda-plan.qmd",
     source_type="definition",
     distribution="fixed",
     description="Time to copy, paste, and send the recruitment message. 30 seconds.",
@@ -10735,6 +11349,7 @@ SHARING_TIME_MINUTES = Parameter(
 
 ANNUAL_WORKING_HOURS = Parameter(
     2_000,
+    manual_ref="knowledge/appendix/recruitment-and-propaganda-plan.qmd",
     source_type="definition",
     distribution="fixed",
     description="Standard annual working hours globally. Approximately 40 hours/week x 50 weeks. "
@@ -10747,6 +11362,7 @@ ANNUAL_WORKING_HOURS = Parameter(
 
 GLOBAL_AVG_HOURLY_INCOME = Parameter(
     float(GLOBAL_AVG_INCOME_2025) / 2_000,
+    manual_ref="knowledge/appendix/recruitment-and-propaganda-plan.qmd",
     source_type="calculated",
     description="Global average hourly income derived from GDP per capita. Uses average (not median), "
                 "which overestimates the cost of sharing, making the payoff ratio conservative.",
@@ -10760,6 +11376,7 @@ GLOBAL_AVG_HOURLY_INCOME = Parameter(
 
 SHARING_OPPORTUNITY_COST = Parameter(
     (0.5 / 60) * float(GLOBAL_AVG_INCOME_2025) / 2_000,
+    manual_ref="knowledge/appendix/recruitment-and-propaganda-plan.qmd",
     source_type="calculated",
     description="Dollar cost of 30 seconds at global average hourly income. "
                 "The maximum downside of forwarding the message if the plan is impossible.",
@@ -10773,6 +11390,7 @@ SHARING_OPPORTUNITY_COST = Parameter(
 
 SHARING_UPSIDE_DOWNSIDE_RATIO_TREATY = Parameter(
     float(TREATY_TRAJECTORY_LIFETIME_INCOME_GAIN_PER_CAPITA) / float(SHARING_OPPORTUNITY_COST),
+    manual_ref="knowledge/appendix/recruitment-and-propaganda-plan.qmd",
     source_type="calculated",
     description="Raw ratio of upside (lifetime income gain if plan works) to downside (cost of sharing "
                 "if plan is impossible). Not expected value; see SHARING_BREAKEVEN_PROBABILITY_TREATY for the "
@@ -10787,6 +11405,7 @@ SHARING_UPSIDE_DOWNSIDE_RATIO_TREATY = Parameter(
 
 SHARING_BREAKEVEN_PROBABILITY_TREATY = Parameter(
     float(SHARING_OPPORTUNITY_COST) / float(TREATY_TRAJECTORY_LIFETIME_INCOME_GAIN_PER_CAPITA),
+    manual_ref="knowledge/appendix/recruitment-and-propaganda-plan.qmd",
     source_type="calculated",
     description="Minimum probability that the plan works for forwarding to have positive expected value. "
                 "EV > 0 when P(works) > cost_of_sharing / gain_if_works. Below this probability, "
@@ -10802,6 +11421,7 @@ SHARING_BREAKEVEN_PROBABILITY_TREATY = Parameter(
 
 SHARING_BREAKEVEN_ONE_IN_TREATY = Parameter(
     float(TREATY_TRAJECTORY_LIFETIME_INCOME_GAIN_PER_CAPITA) / float(SHARING_OPPORTUNITY_COST),
+    manual_ref="knowledge/appendix/recruitment-and-propaganda-plan.qmd",
     source_type="calculated",
     description="Breakeven probability expressed as '1 in N'. Forwarding has positive expected value "
                 "if you believe there is at least a 1-in-N chance the plan works. "
@@ -10822,6 +11442,7 @@ SHARING_BREAKEVEN_ONE_IN_TREATY = Parameter(
 # Constants for improved healthcare savings model
 US_CHRONIC_DISEASE_SPENDING_ANNUAL = Parameter(
     4.1e12,
+    manual_ref="knowledge/problem/cost-of-disease.qmd",
     source_ref="us-chronic-disease-spending",
     source_type="external",
     description="US annual chronic disease spending",
@@ -10835,6 +11456,7 @@ US_CHRONIC_DISEASE_SPENDING_ANNUAL = Parameter(
 
 US_POPULATION_2024 = Parameter(
     335e6, source_ref=ReferenceID.US_VOTER_POPULATION, source_type="external", description="US population in 2024", unit="people",
+    manual_ref="knowledge/problem/unrepresentative-democracy.qmd",
     display_name="US Population in 2024",
     keywords=["2024", "335.0m", "people", "citizens", "individuals", "inhabitants", "persons"],
     distribution="lognormal",
@@ -10844,6 +11466,7 @@ US_POPULATION_2024 = Parameter(
 
 US_VOTE_DECISIVE_PROBABILITY = Parameter(
     1 / 60_000_000,
+    manual_ref="knowledge/problem/unrepresentative-democracy.qmd",
     source_ref=ReferenceID.ODDS_OF_DECISIVE_VOTE,
     source_type="external",
     confidence="high",
@@ -10859,6 +11482,7 @@ US_VOTE_DECISIVE_PROBABILITY = Parameter(
 
 US_FEDERAL_SPENDING_PER_CAPITA = Parameter(
     US_FEDERAL_SPENDING_2024 / US_POPULATION_2024,
+    manual_ref="knowledge/problem/unrepresentative-democracy.qmd",
     source_type="calculated",
     confidence="high",
     description="US federal spending per capita. $6.8T total federal spending divided by 335M population.",
@@ -10873,6 +11497,7 @@ US_FEDERAL_SPENDING_PER_CAPITA = Parameter(
 
 US_VOTE_EXPECTED_VALUE = Parameter(
     US_VOTE_DECISIVE_PROBABILITY * US_FEDERAL_SPENDING_PER_CAPITA,
+    manual_ref="knowledge/problem/unrepresentative-democracy.qmd",
     source_type="calculated",
     confidence="high",
     description="Expected monetary value of a single vote in a US presidential election. "
@@ -10890,6 +11515,7 @@ US_VOTE_EXPECTED_VALUE = Parameter(
 
 PER_CAPITA_CHRONIC_DISEASE_COST = Parameter(
     US_CHRONIC_DISEASE_SPENDING_ANNUAL / US_POPULATION_2024,
+    manual_ref="knowledge/problem/cost-of-disease.qmd",
     source_type="calculated",
     description="US per capita chronic disease cost",
     display_name="US Per Capita Chronic Disease Cost",
@@ -10904,6 +11530,7 @@ PER_CAPITA_CHRONIC_DISEASE_COST = Parameter(
 # Mental health constants
 US_MENTAL_HEALTH_COST_ANNUAL = Parameter(
     350e9,
+    manual_ref="knowledge/problem/cost-of-disease.qmd",
     source_ref=ReferenceID.MENTAL_HEALTH_BURDEN,
     source_type="external",
     description="US mental health costs (treatment + productivity loss)",
@@ -10917,6 +11544,7 @@ US_MENTAL_HEALTH_COST_ANNUAL = Parameter(
 
 PER_CAPITA_MENTAL_HEALTH_COST = Parameter(
     US_MENTAL_HEALTH_COST_ANNUAL / US_POPULATION_2024,
+    manual_ref="knowledge/problem/cost-of-disease.qmd",
     source_type="calculated",
     description="US per capita mental health cost",
     display_name="US Per Capita Mental Health Cost",
@@ -10930,6 +11558,7 @@ PER_CAPITA_MENTAL_HEALTH_COST = Parameter(
 
 MENTAL_HEALTH_PRODUCTIVITY_LOSS_PER_CAPITA = Parameter(
     2000,
+    manual_ref="knowledge/problem/cost-of-disease.qmd",
     source_ref=ReferenceID.MENTAL_HEALTH_BURDEN,
     source_type="external",
     description="Annual productivity loss per capita from mental health issues (beyond treatment costs)",
@@ -10942,6 +11571,7 @@ MENTAL_HEALTH_PRODUCTIVITY_LOSS_PER_CAPITA = Parameter(
 # Caregiver time constants (simple model - deprecated, use detailed model below)
 CAREGIVER_HOURS_PER_MONTH = Parameter(
     20,
+    manual_ref="knowledge/problem/cost-of-disease.qmd",
     source_ref=ReferenceID.UNPAID_CAREGIVER_HOURS_ECONOMIC_VALUE,
     source_type="external",
     description="Average monthly hours of unpaid family caregiving in US",
@@ -10953,6 +11583,7 @@ CAREGIVER_HOURS_PER_MONTH = Parameter(
 
 CAREGIVER_VALUE_PER_HOUR_SIMPLE = Parameter(
     25,
+    manual_ref="knowledge/problem/cost-of-disease.qmd",
     source_ref=ReferenceID.UNPAID_CAREGIVER_HOURS_ECONOMIC_VALUE,
     source_type="external",
     description="Estimated replacement cost per hour of caregiving",
@@ -10963,6 +11594,7 @@ CAREGIVER_VALUE_PER_HOUR_SIMPLE = Parameter(
 )  # Replacement cost estimate
 CAREGIVER_COST_ANNUAL = Parameter(
     CAREGIVER_HOURS_PER_MONTH * MONTHS_PER_YEAR * CAREGIVER_VALUE_PER_HOUR_SIMPLE,
+    manual_ref="knowledge/problem/cost-of-disease.qmd",
     source_ref="unpaid-caregiver-hours-economic-value",
     source_type="definition",
     description="Annual cost of unpaid caregiving (replacement cost method)",
@@ -10976,6 +11608,7 @@ CAREGIVER_COST_ANNUAL = Parameter(
 
 WORKFORCE_WITH_PRODUCTIVITY_LOSS = Parameter(
     0.28,
+    manual_ref="knowledge/problem/cost-of-disease.qmd",
     source_ref="chronic-illness-workforce-productivity-loss",
     source_type="external",
     description="Percentage of workforce experiencing productivity loss from chronic illness (28%)",
@@ -10987,6 +11620,7 @@ WORKFORCE_WITH_PRODUCTIVITY_LOSS = Parameter(
 
 CAREGIVER_ANNUAL_VALUE_TOTAL = Parameter(
     600e9,
+    manual_ref="knowledge/problem/cost-of-disease.qmd",
     source_ref="unpaid-caregiver-hours-economic-value",
     source_type="external",
     description="Total annual value of unpaid caregiving in US",
@@ -10998,6 +11632,7 @@ CAREGIVER_ANNUAL_VALUE_TOTAL = Parameter(
 
 CAREGIVER_COUNT_US = Parameter(
     38e6,
+    manual_ref="knowledge/problem/cost-of-disease.qmd",
     source_ref="unpaid-caregiver-hours-economic-value",
     source_type="external",
     description="Number of unpaid caregivers in US",
@@ -11011,6 +11646,7 @@ CAREGIVER_COUNT_US = Parameter(
 # Estimate: 40% of caregiving is for treatable disease conditions
 DISEASE_RELATED_CAREGIVER_PCT = Parameter(
     0.40,
+    manual_ref="knowledge/problem/cost-of-disease.qmd",
     source_ref="disease-related-caregiving-estimate",
     source_type="definition",
     description="Percentage of caregiving for treatable disease conditions (vs aging, disability, children)",
@@ -11290,6 +11926,7 @@ def calculate_personal_lifetime_wealth_conservative_baseline(
 # Range via Monte Carlo: $750K (5yr) to $15M (100yr)
 PERSONAL_LIFETIME_WEALTH = Parameter(
     float(LIFE_EXTENSION_YEARS) * float(STANDARD_ECONOMIC_QALY_VALUE_USD),
+    manual_ref="knowledge/call-to-action/your-personal-benefits.qmd",
     source_type="calculated",
     description="Personal lifetime wealth from life extension valued at standard QALY rate. Simple formula: years of life gained × economic value per healthy year. Uncertainty in LIFE_EXTENSION_YEARS (5-100 year range, median 20) propagates through Monte Carlo.",
     display_name="Personal Lifetime Wealth (QALY-Based)",
@@ -11316,6 +11953,7 @@ PERSONAL_LIFETIME_WEALTH = Parameter(
 
 PHARMA_DRUG_DEVELOPMENT_COST_CURRENT = Parameter(
     2_600_000_000,
+    manual_ref="knowledge/problem/fda-is-unsafe-and-ineffective.qmd",
     source_ref=ReferenceID.DRUG_DEVELOPMENT_COST,
     source_type="external",
     description="Average cost to develop one drug in current system",
@@ -11332,6 +11970,7 @@ PHARMA_DRUG_DEVELOPMENT_COST_CURRENT = Parameter(
 
 DRUG_DEVELOPMENT_COST_1980S = Parameter(
     194_000_000,
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_ref=ReferenceID.PRE_1962_DRUG_COSTS_TIMELINE,
     source_type="external",
     description="Drug development cost in 1980s (compounded to approval, 1990 dollars)",
@@ -11346,6 +11985,7 @@ DRUG_DEVELOPMENT_COST_1980S = Parameter(
 
 DRUG_COST_INCREASE_1980S_TO_CURRENT_MULTIPLIER = Parameter(
     PHARMA_DRUG_DEVELOPMENT_COST_CURRENT / DRUG_DEVELOPMENT_COST_1980S,
+    manual_ref="knowledge/appendix/invisible-graveyard.qmd",
     source_ref=ReferenceID.PRE_1962_DRUG_COSTS_TIMELINE,
     source_type="calculated",
     description="Drug development cost increase from 1980s to current",
@@ -11361,6 +12001,7 @@ DRUG_COST_INCREASE_1980S_TO_CURRENT_MULTIPLIER = Parameter(
 
 DRUG_COST_INCREASE_PRE1962_TO_CURRENT_MULTIPLIER = Parameter(
     PHARMA_DRUG_DEVELOPMENT_COST_CURRENT / PRE_1962_DRUG_DEVELOPMENT_COST_2024_USD,
+    manual_ref="knowledge/appendix/drug-development-cost-analysis.qmd",
     source_ref=ReferenceID.PRE_1962_DRUG_COSTS_BAILY_1972,
     source_type="calculated",
     description="Drug development cost increase from pre-1962 to current",
@@ -11376,6 +12017,7 @@ DRUG_COST_INCREASE_PRE1962_TO_CURRENT_MULTIPLIER = Parameter(
 
 PHARMA_SUCCESS_RATE_CURRENT_PCT = Parameter(
     0.10,
+    manual_ref="knowledge/problem/fda-is-unsafe-and-ineffective.qmd",
     source_ref=ReferenceID.DRUG_TRIAL_SUCCESS_RATE_12_PCT,
     source_type="external",
     description="Percentage of drugs that reach market in current system",
@@ -11389,6 +12031,7 @@ PHARMA_SUCCESS_RATE_CURRENT_PCT = Parameter(
 
 PHARMA_DRUG_REVENUE_AVERAGE_CURRENT = Parameter(
     6_700_000_000,
+    manual_ref="knowledge/solution/aligning-incentives.qmd",
     source_ref="pharma-drug-revenue-average",
     source_type="external",
     description="Median lifetime revenue per successful drug (study of 361 FDA-approved drugs 1995-2014, median follow-up 13.2 years)",
@@ -11402,6 +12045,7 @@ PHARMA_DRUG_REVENUE_AVERAGE_CURRENT = Parameter(
 
 PHARMA_ROI_CURRENT_SYSTEM_PCT = Parameter(
     0.012,
+    manual_ref="knowledge/solution/aligning-incentives.qmd",
     source_ref="pharma-roi-current",
     source_type="external",
     description="ROI for pharma R&D (2022 historic low from Deloitte study of top 20 pharma companies, down from 6.8% in 2021, recovered to 5.9% in 2024)",
@@ -11426,6 +12070,7 @@ PHARMA_ROI_CURRENT_SYSTEM_PCT = Parameter(
 
 US_DIABETES_ANNUAL_COST = Parameter(
     327_000_000_000,
+    manual_ref="knowledge/solution/aligning-incentives.qmd",
     source_ref=ReferenceID.DISEASE_COST_DIABETES_1500B,
     source_type="external",
     description="Annual US cost of diabetes (direct and indirect)",
@@ -11441,6 +12086,7 @@ US_DIABETES_ANNUAL_COST = Parameter(
 
 US_ALZHEIMERS_ANNUAL_COST = Parameter(
     355_000_000_000,
+    manual_ref="knowledge/solution/aligning-incentives.qmd",
     source_ref=ReferenceID.DISEASE_COST_ALZHEIMERS_1300B,
     source_type="external",
     description="Annual US cost of Alzheimer's disease (direct and indirect)",
@@ -11456,6 +12102,7 @@ US_ALZHEIMERS_ANNUAL_COST = Parameter(
 
 US_HEART_DISEASE_ANNUAL_COST = Parameter(
     363_000_000_000,
+    manual_ref="knowledge/solution/aligning-incentives.qmd",
     source_ref=ReferenceID.DISEASE_COST_HEART_DISEASE_2100B,
     source_type="external",
     description="Annual US cost of heart disease and stroke (direct and indirect)",
@@ -11471,6 +12118,7 @@ US_HEART_DISEASE_ANNUAL_COST = Parameter(
 
 US_CANCER_ANNUAL_COST = Parameter(
     208_000_000_000,
+    manual_ref="knowledge/solution/aligning-incentives.qmd",
     source_ref=ReferenceID.DISEASE_COST_CANCER_1800B,
     source_type="external",
     description="Annual US cost of cancer (direct and indirect)",
@@ -11486,6 +12134,7 @@ US_CANCER_ANNUAL_COST = Parameter(
 
 US_MAJOR_DISEASES_TOTAL_ANNUAL_COST = Parameter(
     US_DIABETES_ANNUAL_COST + US_ALZHEIMERS_ANNUAL_COST + US_HEART_DISEASE_ANNUAL_COST + US_CANCER_ANNUAL_COST,
+    manual_ref="knowledge/problem/cost-of-disease.qmd",
     source_type="calculated",
     description="Total annual US cost of major diseases (diabetes, Alzheimer's, heart disease, cancer)",
     display_name="US Major Diseases Total Annual Cost",
@@ -11505,6 +12154,7 @@ US_MAJOR_DISEASES_TOTAL_ANNUAL_COST = Parameter(
 
 CONCENTRATED_INTEREST_SECTOR_MARKET_CAP_USD = Parameter(
     5e12,
+    manual_ref="knowledge/appendix/incentive-alignment-bonds-paper.qmd",
     source_ref="",
     source_type="definition",
     description="Estimated combined market capitalization of concentrated interest opposition (defense, fossil fuel, etc.)",
@@ -11516,6 +12166,7 @@ CONCENTRATED_INTEREST_SECTOR_MARKET_CAP_USD = Parameter(
 
 IAB_MECHANISM_ANNUAL_COST = Parameter(
     750_000_000,
+    manual_ref="knowledge/appendix/incentive-alignment-bonds-paper.qmd",
     source_ref="https://iab.warondisease.org#welfare-analysis",
     source_type="definition",
     description="Estimated annual cost of the IAB mechanism (high-end estimate including regulatory defense)",
@@ -11528,6 +12179,7 @@ IAB_MECHANISM_ANNUAL_COST = Parameter(
 
 IAB_MECHANISM_BENEFIT_COST_RATIO = Parameter(
     TREATY_PEACE_PLUS_RD_ANNUAL_BENEFITS / IAB_MECHANISM_ANNUAL_COST,
+    manual_ref="knowledge/appendix/incentive-alignment-bonds-paper.qmd",
     source_ref="https://iab.warondisease.org##welfare-analysis",
     source_type="calculated",
     description="Benefit-Cost Ratio of the IAB mechanism itself",
@@ -11557,6 +12209,7 @@ IAB_MECHANISM_BENEFIT_COST_RATIO = Parameter(
 
 CHAIN_GLOBAL_BILLIONAIRE_COUNT = Parameter(
     2_781,
+    manual_ref="knowledge/appendix/treaty-feasibility.qmd",
     source_ref="forbes-billionaires-2024",
     source_type="external",
     description="Number of billionaires globally (Forbes 2024 count)",
@@ -11571,6 +12224,7 @@ CHAIN_GLOBAL_BILLIONAIRE_COUNT = Parameter(
 
 CHAIN_WORLD_LEADER_COUNT = Parameter(
     195,
+    manual_ref="knowledge/appendix/treaty-feasibility.qmd",
     source_ref="",
     source_type="definition",
     description="Number of sovereign heads of state/government",
@@ -11583,6 +12237,7 @@ CHAIN_WORLD_LEADER_COUNT = Parameter(
 
 CHAIN_IMPLEMENTER_COUNT = Parameter(
     float(CHAIN_GLOBAL_BILLIONAIRE_COUNT) + float(CHAIN_WORLD_LEADER_COUNT),
+    manual_ref="knowledge/appendix/treaty-feasibility.qmd",
     source_type="calculated",
     description="Total potential implementers (billionaires + world leaders)",
     display_name="Potential Implementers",
@@ -11596,6 +12251,7 @@ CHAIN_IMPLEMENTER_COUNT = Parameter(
 
 CHAIN_INITIAL_AUDIENCE = Parameter(
     50_000,
+    manual_ref="knowledge/appendix/treaty-feasibility.qmd",
     source_type="definition",
     description="Conservative initial audience size (readers, website visitors, conference attendees)",
     display_name="Initial Audience",
@@ -11610,6 +12266,7 @@ CHAIN_INITIAL_AUDIENCE = Parameter(
 
 CHAIN_DISMISS_PROBABILITY = Parameter(
     0.90,
+    manual_ref="knowledge/appendix/treaty-feasibility.qmd",
     source_type="definition",
     description="Probability someone dismisses the idea without engaging (the 'institutionalization rate')",
     display_name="Dismissal Rate",
@@ -11624,6 +12281,7 @@ CHAIN_DISMISS_PROBABILITY = Parameter(
 
 CHAIN_ENGAGE_PROBABILITY = Parameter(
     1.0 - float(CHAIN_DISMISS_PROBABILITY),
+    manual_ref="knowledge/appendix/recruitment-and-propaganda-plan.qmd",
     source_type="calculated",
     description="Probability someone engages with the idea (1 - dismissal rate)",
     display_name="Engagement Rate",
@@ -11637,6 +12295,7 @@ CHAIN_ENGAGE_PROBABILITY = Parameter(
 
 CHAIN_HORIZON_YEARS = Parameter(
     3,
+    manual_ref="knowledge/strategy/earth-optimization-protocol-v1.qmd",
     source_type="definition",
     description="Conservative upper bound for cascade propagation (social media cascades propagate in weeks; 3 years allows for slower channels and multiple cascade waves)",
     display_name="Model Horizon",
@@ -11668,6 +12327,7 @@ _CASCADE_GENERATIONS = 3              # practical sharing depth
 
 CHAIN_IMPLEMENTER_ORBIT_SIZE = Parameter(
     1_000,
+    manual_ref="knowledge/appendix/treaty-feasibility.qmd",
     source_type="definition",
     description="Information-orbit size per implementer: people whose recommendation would reach them (staff, advisors, active social media feeds, professional contacts). Lower bound: Dunbar's 150; upper: corporate C-suite intake funnel.",
     display_name="Implementer Orbit Size",
@@ -11682,6 +12342,7 @@ CHAIN_IMPLEMENTER_ORBIT_SIZE = Parameter(
 
 CHAIN_EFFECTIVE_R = Parameter(
     0.15,
+    manual_ref="knowledge/appendix/treaty-feasibility.qmd",
     source_type="definition",
     description="Effective reproduction number per cascade generation: fraction of viewers who share (5%) x average forwards per sharer (3). CI spans pessimistic (2% x 2 = 0.04) to optimistic (10% x 8 = 0.80).",
     display_name="Effective R",
@@ -11709,6 +12370,7 @@ _p_reach_0 = 1.0 - (1.0 - _p_orbit_0) ** _total_reach_0
 
 CHAIN_P_ENCOUNTER_DIRECT_10YR = Parameter(
     _p_reach_0,
+    manual_ref="knowledge/appendix/treaty-feasibility.qmd",
     source_type="calculated",
     description="Probability a given implementer's information orbit is reached by the content cascade",
     display_name="Implementer Orbit Reach Probability",
@@ -11733,6 +12395,7 @@ CHAIN_P_ENCOUNTER_DIRECT_10YR = Parameter(
 
 CHAIN_EXPECTED_ENGAGED_IMPLEMENTERS = Parameter(
     _p_reach_0 * float(CHAIN_ENGAGE_PROBABILITY) * float(CHAIN_IMPLEMENTER_COUNT),
+    manual_ref="knowledge/appendix/treaty-feasibility.qmd",
     source_type="calculated",
     description="Expected number of implementers who engage (orbit reached x engagement rate x implementer count)",
     display_name="Expected Engaged Implementers",
@@ -11760,6 +12423,7 @@ CHAIN_EXPECTED_ENGAGED_IMPLEMENTERS = Parameter(
 
 CHAIN_P_NO_IMPLEMENTER_ENGAGES = Parameter(
     (1.0 - _p_reach_0 * float(CHAIN_ENGAGE_PROBABILITY)) ** float(CHAIN_IMPLEMENTER_COUNT),
+    manual_ref="knowledge/appendix/treaty-feasibility.qmd",
     source_type="calculated",
     description="Probability that NO implementer engages (all orbits missed or all dismiss)",
     display_name="P(No Implementer Engages)",
@@ -11790,6 +12454,7 @@ CHAIN_P_NO_IMPLEMENTER_ENGAGES = Parameter(
 
 CHAIN_P_AT_LEAST_ONE_ENGAGES = Parameter(
     1.0 - float(CHAIN_P_NO_IMPLEMENTER_ENGAGES),
+    manual_ref="knowledge/appendix/treaty-feasibility.qmd",
     source_type="calculated",
     description="Probability at least one implementer engages (information diffusion only; dominant strategy proof handles action)",
     display_name="P(At Least One Engages)",
@@ -11806,6 +12471,7 @@ CHAIN_P_AT_LEAST_ONE_ENGAGES = Parameter(
 
 CONTRIBUTION_EV_PER_PCT_POINT_TREATY = Parameter(
     float(TREATY_TRAJECTORY_LIFETIME_INCOME_GAIN_PER_CAPITA) * 0.01,
+    manual_ref="knowledge/strategy/earth-optimization-prize.qmd",
     source_type="calculated",
     description="Personal expected value per percentage point of implementation probability shift under Treaty Trajectory. "
                 "One percent of the per-capita lifetime income gain.",
@@ -11819,6 +12485,7 @@ CONTRIBUTION_EV_PER_PCT_POINT_TREATY = Parameter(
 
 CONTRIBUTION_EV_PER_PCT_POINT_WISHONIA = Parameter(
     float(WISHONIA_TRAJECTORY_LIFETIME_INCOME_GAIN_PER_CAPITA) * 0.01,
+    manual_ref="knowledge/strategy/earth-optimization-prize.qmd",
     source_type="calculated",
     description="Personal expected value per percentage point of implementation probability shift under Wishonia Trajectory. "
                 "One percent of the per-capita lifetime income gain.",
@@ -11832,6 +12499,7 @@ CONTRIBUTION_EV_PER_PCT_POINT_WISHONIA = Parameter(
 
 CONTRIBUTION_EV_PER_PCT_POINT_TREATY_BLEND = Parameter(
     float(TREATY_PERSONAL_UPSIDE_BLEND) * 0.01,
+    manual_ref="knowledge/strategy/earth-optimization-prize.qmd",
     source_type="calculated",
     description="Blended personal expected value per percentage point of implementation probability shift under Treaty Trajectory.",
     display_name="Contribution EV per Percentage Point (Treaty, Blended)",
@@ -11844,6 +12512,7 @@ CONTRIBUTION_EV_PER_PCT_POINT_TREATY_BLEND = Parameter(
 
 CONTRIBUTION_EV_PER_PCT_POINT_WISHONIA_BLEND = Parameter(
     float(WISHONIA_PERSONAL_UPSIDE_BLEND) * 0.01,
+    manual_ref="knowledge/strategy/earth-optimization-prize.qmd",
     source_type="calculated",
     description="Blended personal expected value per percentage point of implementation probability shift under Wishonia Trajectory.",
     display_name="Contribution EV per Percentage Point (Wishonia, Blended)",
@@ -11856,6 +12525,7 @@ CONTRIBUTION_EV_PER_PCT_POINT_WISHONIA_BLEND = Parameter(
 
 CONTRIBUTION_DALYS_PER_PCT_POINT = Parameter(
     float(DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS) * 0.01,
+    manual_ref="knowledge/strategy/earth-optimization-prize.qmd",
     source_type="calculated",
     description="DALYs averted per percentage point of implementation probability shift. "
                 "One percent of total DALYs from eliminating trial capacity bottleneck and efficacy lag.",
@@ -11869,6 +12539,7 @@ CONTRIBUTION_DALYS_PER_PCT_POINT = Parameter(
 
 CONTRIBUTION_LIVES_SAVED_PER_PCT_POINT = Parameter(
     float(DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_LIVES_SAVED) * 0.01,
+    manual_ref="knowledge/strategy/earth-optimization-prize.qmd",
     source_type="calculated",
     description="Lives saved per percentage point of implementation probability shift. "
                 "One percent of total lives saved from eliminating trial capacity bottleneck and efficacy lag.",
@@ -11882,6 +12553,7 @@ CONTRIBUTION_LIVES_SAVED_PER_PCT_POINT = Parameter(
 
 CONTRIBUTION_SUFFERING_HOURS_PER_PCT_POINT = Parameter(
     float(DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_SUFFERING_HOURS) * 0.01,
+    manual_ref="knowledge/strategy/earth-optimization-prize.qmd",
     source_type="calculated",
     description="Suffering hours prevented per percentage point of implementation probability shift. "
                 "One percent of total suffering hours from eliminating trial capacity bottleneck and efficacy lag.",
