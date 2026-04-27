@@ -72,7 +72,7 @@ WHEREAS, pre-WW2 U.S. military spending was {{< var us_1939_military_spending_pc
 
 WHEREAS, unless the human genome has significantly degraded in the two generations since, a one percent improvement in resource allocation should be manageable;
 
-WHEREAS, global military spending has been growing {{< var global_military_spending_real_cagr_20yr >}} a year for twenty years [@sipri-milex-2024], and nobody has told it to stop. At this rate, every human alive will pay about {{< var global_war_cost_lifetime_per_person_baseline >}} over their lifetime [@1-pct-treaty-impact-paper-2025], mostly for explosions in countries they cannot find on a map. A one percent cut tells it to stop. That saves the average person about {{< var peace_dividend_lifetime_per_person >}} ([the peace dividend](../economics/peace-dividend.qmd));
+WHEREAS, global military spending has been growing {{< var global_military_spending_real_cagr_20yr >}} a year for twenty years [@sipri-milex-2024]. If no one tells it to stop, every human alive will pay about {{< var global_war_cost_lifetime_per_person_baseline >}} over their lifetime [@1-pct-treaty-impact-paper-2025] (mostly funding explosions in countries they cannot find on a map). A one percent cut tells it to stop. That saves the average person about {{< var peace_dividend_lifetime_per_person >}} ([the peace dividend](../economics/peace-dividend.qmd));
 
 WHEREAS, [diseases kill more people than all wars combined](../problem/cost-of-disease.qmd) [@pandemics-vs-wars] and, unlike wars, do not even have the decency to be quick about it;
 
@@ -94,7 +94,7 @@ WHEREAS, this is suboptimal;
 
 NOW, THEREFORE, the undersigned nations agree to be 1% more rational, as follows:
 
-**Article I**: Each signatory shall redirect exactly 1% of its annual military budget to **the 1% Treaty Fund**, split as follows: {{< var dih_treasury_medical_research_pct >}} to [pragmatic clinical trials](../appendix/dfda-spec-paper.qmd); {{< var victory_bond_funding_pct >}} to perpetual returns on [Incentive Alignment Bonds](../appendix/incentive-alignment-bonds-paper.qmd) [@iab-paper-2025]; and {{< var iab_political_incentive_funding_pct >}} to a [Political Incentive Fund](aligning-incentives.qmd) that supports campaigns of legislators who vote to implement and expand this Treaty. The {{< var dih_treasury_medical_research_pct >}} cures the diseases. The other two slices make sure nobody quietly cancels the part that cures the diseases.
+**Article I**: Each signatory shall redirect exactly 1% of its annual military budget to **the 1% Treaty Fund**, split as follows: {{< var dih_treasury_medical_research_pct >}} to [pragmatic clinical trials](../appendix/dfda-spec-paper.qmd); {{< var victory_bond_funding_pct >}} to perpetual returns on [Incentive Alignment Bonds](../appendix/incentive-alignment-bonds-paper.qmd) [@iab-paper-2025]; and {{< var iab_political_incentive_funding_pct >}} to a [Political Incentive Fund](aligning-incentives.qmd) that supports campaigns of legislators who vote to implement and expand this Treaty. The {{< var dih_treasury_medical_research_pct >}} cures the diseases. The other 20% make sure nobody quietly cancels the part that cures the diseases.
 
 **Article II**: Transfers shall be automatic, immediate, and irrevocable. The money moves on the first of every month, the way your mortgage does, except nobody has to call and yell at anyone.
 
