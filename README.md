@@ -561,6 +561,12 @@ This is why aliens don't visit.
 
 > Your destructive economy (military spending plus cybercrime) is already 11.5% of GDP and growing faster than your productive economy. At current rates, it reaches the Soviet collapse threshold in 8 years and exceeds productive output in 15. This paper models two GDP trajectories: the optimized path under military-to-medical reallocation, and the default path to civilizational collapse.
 
+### [The Court of Humanity](https://manual.warondisease.org/knowledge/appendix/court-of-humanity-paper.html)
+
+[![The Court of Humanity](https://manual.warondisease.org/assets/og/court-of-humanity-og-1200x630.jpg)](https://manual.warondisease.org/knowledge/appendix/court-of-humanity-paper.html)
+
+> Sovereign immunity is the legal doctrine preventing private parties from suing governments without the government's consent. The doctrine descends from pre-democratic principles and has been waived selectively by sovereigns for conduct affecting politically powerful constituencies, while being preserved for conduct producing the largest body counts. This paper proposes the **Court of Humanity**, a decentralized adjudication mechanism deriving jurisdiction from popular legitimacy rather than sovereign consent. Plaintiffs may be any human; defendants may be any government; the jury is the verified human population, voting per capita with proof of personhood. Enforcement is not coercive but *capital*: judgments are priced into sovereign bond yields, insurance premia, trade flows, and procurement decisions. Applying standard regulatory life valuations ($7-12M per statistical life) to historical and projected government-attributable mortality (war, regulatory delay, misallocation; see), we estimate aggregate unliquidated wrongful-death exposure at approximately $104 quadrillion. Governments cannot pay this judgment. They can, however, settle for the 1% Treaty, which functions as the most generous settlement offer in legal history. We outline the Court's architecture, the proof-of-personhood mechanism, the capital-markets enforcement model, and the implementation pathway through a global referendum.
+
 ### [Incentive Alignment Bonds: Making Public Goods Financially and Politically Profitable](https://manual.warondisease.org/knowledge/appendix/incentive-alignment-bonds-paper.html)
 
 [![Incentive Alignment Bonds: Making Public Goods Financially and Politically Profitable](https://manual.warondisease.org/assets/og/iab-og-1200x630.jpg)](https://manual.warondisease.org/knowledge/appendix/incentive-alignment-bonds-paper.html)

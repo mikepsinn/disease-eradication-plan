@@ -1,0 +1,159 @@
+---
+title: "Methodology, Parameters, and Calculations"
+description: "Parameter definitions, formulas, uncertainty ranges, and data sources."
+feed-date: false
+keywords:
+  - health economics methodology
+  - clinical trial cost analysis
+  - medical research ROI
+  - cost-benefit analysis healthcare
+  - sensitivity analysis
+  - Monte Carlo simulation
+  - DALY calculation
+  - pragmatic clinical trials
+aliases:
+  - /calculations.html
+  - /methodology.html
+  - /knowledge/appendix/parameters-and-calculations
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    number-sections: false
+    code-fold: true
+podcast-image: /assets/podcast/parameters-and-calculations-podcast.jpg
+youtube-thumbnail: /assets/podcast/parameters-and-calculations-youtube.jpg
+---
+
+::: {.content-visible when-format="epub"}
+Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo distributions are available at [https://manual.warondisease.org/knowledge/appendix/court-of-humanity-paper.html/knowledge/appendix/parameters-and-calculations.html](https://manual.warondisease.org/knowledge/appendix/court-of-humanity-paper.html/knowledge/appendix/parameters-and-calculations.html).
+:::
+
+::: {.content-visible when-format="docx"}
+Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo distributions are available at [https://manual.warondisease.org/knowledge/appendix/court-of-humanity-paper.html/knowledge/appendix/parameters-and-calculations.html](https://manual.warondisease.org/knowledge/appendix/court-of-humanity-paper.html/knowledge/appendix/parameters-and-calculations.html).
+:::
+
+::::: {.content-visible unless-format="epub"}
+:::: {.content-visible unless-format="docx"}
+
+## Overview {#sec-parameters-and-calculations}
+
+This appendix documents all 4 parameters used in the analysis, organized by type:
+
+- External sources (peer-reviewed): 3
+- Calculated values: 1
+- Core definitions: 0
+
+### Quick Navigation
+
+[Calculated Values](#sec-calculated) (1 parameters) • [External Data Sources](#sec-external) (3 parameters)
+
+
+## Calculated Values {#sec-calculated}
+
+Parameters derived from mathematical formulas and economic models.
+
+### Global Deaths per Minute from Disease: 104 deaths/minute {#sec-global_disease_deaths_per_minute}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Global deaths per minute from all disease and aging
+
+**Inputs**:
+
+- [Global Daily Deaths from Disease and Aging](#sec-global_disease_deaths_daily) 📊: 150 thousand deaths/day (SE: ±7,500 deaths/day)
+
+$$
+\begin{gathered}
+Deaths_{disease,min} \\
+= Deaths_{disease,daily} \times 0.000694 \\
+= 150{,}000 \times 0.000694 \\
+= 104
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-global_disease_deaths_per_minute.qmd >}}
+
+{{< include ../figures/sensitivity-table-global_disease_deaths_per_minute.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-global_disease_deaths_per_minute.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-global_disease_deaths_per_minute.qmd >}}
+
+:::
+
+## External Data Sources {#sec-external}
+
+Parameters sourced from peer-reviewed publications, institutional databases, and authoritative reports.
+
+### Regulatory Delay for Efficacy Testing Post-Safety Verification: 8.2 years {#sec-efficacy_lag_years}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Regulatory delay for efficacy testing (Phase II/III) post-safety verification. Based on BIO 2021 industry survey. Note: This is for drugs that COMPLETE the pipeline - survivor bias means actual delay for any given disease may be longer if candidates fail and must restart.
+
+**Source**: [@bio-clinical-development-2021]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Normal (SE: 2 years)
+
+#### Input Distribution
+
+{{< include ../figures/distribution-efficacy_lag_years.qmd >}}
+
+*~ Medium confidence • 📊 Peer-reviewed • Updated 2021*
+
+:::
+
+### Global Daily Deaths from Disease and Aging: 150 thousand deaths/day {#sec-global_disease_deaths_daily}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Total global deaths per day from all disease and aging (WHO Global Burden of Disease 2024)
+
+**Source**: [@who-global-health-estimates-2024]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Normal (SE: 7,500 deaths/day)
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_disease_deaths_daily.qmd >}}
+
+*✓ High confidence • 📊 Peer-reviewed*
+
+:::
+
+### Standard Economic Value per QALY: $150,000 {#sec-standard_economic_qaly_value_usd}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Standard economic value per QALY
+
+**Source**: [@qaly-value]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Normal (SE: $30,000)
+
+#### Input Distribution
+
+{{< include ../figures/distribution-standard_economic_qaly_value_usd.qmd >}}
+
+*✓ High confidence*
+
+:::
+
+
+::::
+:::::

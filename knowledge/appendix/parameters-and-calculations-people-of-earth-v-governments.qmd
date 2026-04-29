@@ -38,15 +38,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 140 parameters used in the analysis, organized by type:
+This appendix documents all 143 parameters used in the analysis, organized by type:
 
-- External sources (peer-reviewed): 55
+- External sources (peer-reviewed): 57
 - Calculated values: 67
-- Core definitions: 18
+- Core definitions: 19
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (67 parameters) • [External Data Sources](#sec-external) (55 parameters) • [Core Definitions](#sec-definitions) (18 parameters)
+[Calculated Values](#sec-calculated) (67 parameters) • [External Data Sources](#sec-external) (57 parameters) • [Core Definitions](#sec-definitions) (19 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -6086,6 +6086,30 @@ Standard economic value per QALY
 
 :::
 
+### Switzerland's Defense Spending as Percentage of GDP: 0.7% {#sec-switzerland_defense_spending_pct}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Switzerland's defense spending as percentage of GDP (0.7%)
+
+**Source**: [@swiss-military-budget-0-7-pct-gdp]
+
+*✓ High confidence*
+
+:::
+
+### Switzerland GDP per Capita: $93,000 {#sec-switzerland_gdp_per_capita_k}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Switzerland GDP per capita
+
+**Source**: [@swiss-vs-us-gdp-per-capita]
+
+*✓ High confidence*
+
+:::
+
 ### Thalidomide Cases Worldwide: 15,000 cases {#sec-thalidomide_cases_worldwide}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -6289,6 +6313,20 @@ Average years of life extension per person saved by pharmaceutical interventions
 #### Input Distribution
 
 {{< include ../figures/distribution-avg_life_extension_per_beneficiary.qmd >}}
+
+*Core definition*
+
+:::
+
+### Cumulative Military Spending (Fed Era): $170 trillion {#sec-cumulative_military_spending_fed_era}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Cumulative global military spending since 1913 (Fed era) in constant 2024 dollars. Built from: SIPRI 1988-2024 ($65-72T), Cold War 1946-1987 ($50-70T reconstructed), WWI+WWII+interwar ($33T from Harrison). Range: $150-190T.
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
 
 *Core definition*
 

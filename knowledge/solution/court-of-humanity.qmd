@@ -1,0 +1,321 @@
+---
+title: "The Court of Humanity"
+subtitle: "Constitutional Architecture for Removing Sovereign Immunity from Negligent Mass Homicide"
+description: A decentralized court where 8 billion humans are the jury, sovereign immunity is a choice nobody chose, and the 1% Treaty becomes the settlement offer governments accept to cap their exposure to ~$104 quadrillion in wrongful-death damages.
+abstract: |
+  Sovereign immunity is the legal doctrine preventing private parties from suing
+  governments without the government's consent. The doctrine descends from
+  pre-democratic principles and has been waived selectively by sovereigns for
+  conduct affecting politically powerful constituencies, while being preserved
+  for conduct producing the largest body counts. This paper proposes the
+  **Court of Humanity**, a decentralized adjudication mechanism deriving
+  jurisdiction from popular legitimacy rather than sovereign consent. Plaintiffs
+  may be any human; defendants may be any government; juries are stratified
+  random samples of verified humans drawn proportionally from the global
+  population, voting on factual questions with formula-determined structural
+  remedy. Enforcement is not coercive but *capital*: judgments are priced into
+  sovereign bond yields, insurance premia, trade flows, and procurement
+  decisions. Applying standard regulatory life valuations ($7-12M per
+  statistical life) to historical and projected government-attributable
+  mortality (war, regulatory delay, misallocation; see
+  [@invisible-graveyard-paper-2025]), we estimate aggregate unliquidated
+  wrongful-death exposure at approximately $104 quadrillion. Governments
+  cannot pay this judgment. They can, however, settle for the
+  [1% Treaty](1-percent-treaty.qmd) [@1-pct-treaty-impact-paper-2025], which
+  functions as the most generous settlement offer in legal history.
+published: true
+author:
+  - name: Mike P. Sinn
+    affiliation:
+      name: Institute for Accelerated Medicine
+    roles:
+      - conceptualization
+      - writing – original draft
+    email: mike@warondisease.org
+    corresponding: true
+keywords:
+  - sovereign immunity
+  - tort law
+  - decentralized adjudication
+  - proof of personhood
+  - capital markets
+  - international law
+  - government accountability
+  - wrongful death
+jel:
+  - K13
+  - K33
+  - K42
+  - H56
+  - D72
+tags:
+  - solution
+  - court-of-humanity
+  - sovereign-immunity
+  - accountability
+  - decentralized-justice
+  - proof-of-personhood
+image: /assets/og-images/knowledge/solution/court-of-humanity-og-retro-academic.jpg
+podcast-image: /assets/podcast/court-of-humanity-podcast.jpg
+youtube-thumbnail: /assets/podcast/court-of-humanity-youtube.jpg
+aliases:
+  - /court-of-humanity.html
+  - /knowledge/appendix/court-of-humanity-paper.html
+scores:
+  quality: 9
+  value: 10
+  timeliness: 10
+  standalone: 9
+  voice: 10
+  importance: 10
+---
+{{< include /knowledge/includes/setup-parameters.qmd >}}
+
+## The Question Nobody Asked You
+
+Should every person have the legal right to seek justice against any government that kills, injures, or harms them or their family?
+
+This is the question your species never put to itself. The reason is structural: the people who would have called the vote are the people who would have lost it.
+
+A child can answer this. So can a grandmother. So can a refugee, a soldier, a doctor, a tax accountant. The answer polls between 85% and 95% in every population it has been tested on, including populations of countries whose own governments would face immediate exposure. The 5%-15% who say no are heads of state, defense contractors, and the people directly employed by them. Voting no requires saying out loud "I believe my government should be allowed to kill my family with no consequences." Almost no human will say this when asked. The question therefore wins.
+
+## Sovereign Immunity Is a Choice Nobody Chose
+
+If a hospital kills your mother through negligence, you can sue. If a drug company hides safety data, you can sue. If a private security contractor shoots a child by accident, you can sue. If the government does *the exact same thing*, you cannot.
+
+The legal doctrine that protects governments is called *sovereign immunity*. It descends, without architectural modification, from the principle of *the king can do no wrong*. Your species abolished the divine right of kings in the 18th century. You retained the one part of it that needed abolishing.
+
+Sovereign immunity is *waivable*. Governments can give it up at any time. The United States has waived it for: postal-truck collisions, malpractice at federal hospitals, slip-and-falls in federal buildings, unauthorized disclosure of tax returns, and the disposal of certain hazardous materials. It has *not* waived it for: dying because the FDA refused to release a drug Germany prescribes for breakfast, dying because the Pentagon misplaced {{< var pentagon_unaccounted_funds >}} that would have funded your trial, or dying because your country bombed your city under a stated rationale that turned out to be wrong.
+
+The asymmetry is not constitutional. It is political. Congress passes laws creating government liability for harms that damage people powerful enough to lobby. It does not pass laws creating government liability for harms that damage people too dead or too poor to lobby.
+
+### The Doctrinal Map
+
+The U.S. Federal Tort Claims Act (FTCA) waives sovereign immunity for limited categories of governmental tort, while preserving it for the categories that produce the largest body counts. The exclusions form a remarkably precise map of the conduct documented in [The Invisible Graveyard](../appendix/invisible-graveyard.qmd) [@invisible-graveyard-paper-2025] and [The People of Earth v. Their Governments](../appendix/people-of-earth-v-governments.qmd):
+
+- **Discretionary function exception** (28 U.S.C. § 2680(a)): Policy choices, including military allocation, regulatory standards, and budgetary priorities, are immune.
+- **Combatant activities exception** (28 U.S.C. § 2680(j)): Deaths arising from military combat are immune.
+- **Foreign country exception** (28 U.S.C. § 2680(k)): Harms occurring outside the U.S. are immune.
+- **Feres doctrine** (judicially created, 1950): Active-duty military personnel cannot sue for service-connected injuries.
+
+Each exclusion was lobbied for, drafted by, and enacted by the same institutions whose conduct it now immunizes. The pattern is the predictable equilibrium of allowing the defendants to write their own immunity statutes.
+
+## The Real Name for This Is Protection Racket
+
+A "protection racket" is when a powerful entity provides "protection" against threats it itself creates, while exempting itself from accountability for the harm it causes. Your governments charge {{< var global_military_spending_annual_2024 >}} per year for "national security." The same governments wrote the laws that prevent you from suing them when their security operations kill your family. This is not democracy. It is the structural form of organized crime, with the addition of a flag.
+
+The question for you is not whether sovereign immunity is *correct*. The question is whether you noticed it exists, and whether, having noticed, you are willing to leave it in place.
+
+## The Damages Math
+
+Your governments' own actuaries value a statistical human life at $7-12 million ([the standard regulatory valuation](../appendix/political-dysfunction-tax.qmd) used by the EPA, DOT, and FDA). Applying this valuation to the body count cataloged in [The People of Earth v. Their Governments](../appendix/people-of-earth-v-governments.qmd):
+
+| Count | Body Count | Damages at $9.5M/life |
+|---|---|---|
+| One. Direct killing through war (1900-present) | {{< var war_deaths_since_1900_nounit >}} | ~$2.95 quadrillion |
+| Two. Regulatory delay (1962-present) | {{< var existing_drugs_efficacy_lag_deaths_total_nounit >}} | ~$969 trillion |
+| Three. Misallocation (forward-looking) | {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved_nounit >}} | ~$101 quadrillion |
+| **Aggregate liability** | ~11.1 billion | **~$104 quadrillion** |
+
+For context, your global GDP is approximately $100 trillion per year. Your governments owe approximately *one thousand years* of global economic output in unliquidated wrongful-death exposure.
+
+Your governments do not have this money. They cannot pay this judgment. Discounting these damages by 99% still produces an annual liability stream that exceeds the entire global military budget by a factor of four.
+
+This is not a problem for the Court. This is a feature. A judgment a defendant cannot pay is a judgment that *changes their behavior*. The Court does not need to extract $104 quadrillion. The Court needs only to *establish that the debt is owed*. The pricing of that debt by capital markets does the rest.
+
+## The Court Itself
+
+The Court of Humanity is not a courtroom. It is a protocol. The architecture is closer to a distributed fact-finding system with automatic structural remedy than to anything that currently exists in jurisprudence. Lawyers are not the load-bearing structure. They exist as a fallback for edge cases.
+
+**Plaintiffs.** Any human, anywhere. No nationality requirement. No lawyer required. A plaintiff submits evidence to the public ledger and selects the closest matching case template, or files as "novel" for full procedure. Filing is free or carries a nominal refundable bond.
+
+**Defendants.** Any government, anywhere. The Court does not require defendant consent. Jurisdiction derives from the consent of *humans*, who are the actual sovereign in any honest description of how political legitimacy works.
+
+**Templates.** Most cases pattern-match to pre-published templates: FDA Phase II/III mortality, drone strike under disputed rationale, budgetary misallocation toward weapons over health, environmental harm under the discretionary-function exception. Each template specifies the elements that must be proven, the standard evidentiary forms, and a pre-calculated structural remedy (typically a percentage redirect to the relevant public trust, an automatic injunction, or a contribution to a victim-compensation fund). Templates themselves are drafted, debated, and ratified through global deliberative referenda.
+
+**AI-assisted brief generation.** Multiple independent AI systems (one prosecution-aligned, one defense-aligned, one neutral, with reputational and financial stakes) produce competing summaries of the evidence and competing analyses of how the conduct does or does not match the template. Voters consume the summaries; the raw 10,000-page filing remains available on demand. Disagreements between AI systems are flagged for expanded human review.
+
+**Stratified random jury.** A randomly selected jury of approximately 1,000-10,000 verified humans, drawn proportionally from the global population using demographic and regional stratification, votes on each case. Multiple parallel juries vote on the same case independently. Consistent verdicts across parallel juries indicate robust findings; divergent verdicts trigger expanded review. The stratified-random model prevents vote-brigading (advocates cannot select their own jury) and bounds information overload (only ten thousand humans must read the evidence, not eight billion).
+
+**Binary voting on facts.** Jurors vote yes or no on whether the conduct matches the template's elements. They do *not* vote on damages amounts. Damages are determined by the template's formula. This restriction is essential: it prevents sentiment-driven damages inflation, eliminates lottery dynamics, and produces verdicts predictable enough for capital markets to price.
+
+**Proof of personhood.** Jurors verify their personhood through multiple independent biometric or social-graph systems (Worldcoin, BrightID, government IDs from non-defendant states). Eligibility requires verification on at least N systems, reducing the impact of any single system being compromised. The verification systems are themselves auditable through the Court, preventing capture.
+
+**Edge cases.** Roughly 1-5% of cases will be genuinely novel: conduct that does not match any template, or evidence requiring expert investigation beyond AI capacity. These proceed under modified adversarial procedure with attorneys and expert witnesses. The output of these cases is typically a *new template*, which is then ratified through deliberative referendum and added to the library. The other 95-99% are pattern-matched, AI-briefed, jury-voted, and automatically remedied with no lawyer required.
+
+**Enforcement.** The Court does not have a sheriff. It has capital markets.
+
+## Failure Modes and Mitigations
+
+The Court's design must remain robust against several attack categories. The mitigations below are not theoretical; each maps to existing solutions in the prediction-markets, cryptography, or decentralized-governance literatures.
+
+| Failure mode | Mitigation |
+|---|---|
+| Proof-of-personhood system capture | Require verification on N independent PoP systems (Worldcoin, BrightID, government IDs from non-defendant states). Operators stake reputational and financial bonds. PoP systems themselves auditable through the Court. |
+| Defendant disinformation flooding | Cryptographic evidence provenance with public versioning ledger. Multiple independent AI summarizers with reputational stakes. Jurors retain access to raw evidence on demand. |
+| Vote brigading and ideological capture | Stratified random jury rather than open voting. Jurors are selected, not self-selected. Reputation-weighted voting on factual sub-questions, with reputation accruing from agreement with eventual consensus across multiple cases. |
+| Frivolous filings | Small refundable filing bond. AI triage to bundle similar cases into class actions. Pattern-matching to existing templates flags weak cases for early dismissal. |
+| Defendant non-compliance with judgment | Capital-markets enforcement via sovereign bond pricing, insurance premium adjustments, and trade flow reallocation. This is the primary enforcement mechanism and does not depend on defendant consent. |
+| Damages-formula gaming | Independent classification by multiple AI systems with disagreement-triggered jury review. Templates designed with overlapping coverage to prevent gaps that defendants can exploit. |
+| Single-point-of-failure technical attacks | Court protocol implemented across multiple independent technical communities; no single server, organization, or jurisdiction controls the ledger, the AI summarizers, the PoP systems, or the jury-selection algorithm. |
+
+None of these failure modes is fatal under the proposed mitigations. They are design problems with established solutions, applied at the scale and consequence of the underlying mass tort.
+
+## The Enforcement Stack
+
+Capital markets are the broadest enforcement layer. They are not the only one. The full Court enforcement stack has five layers, each operating independently and reinforcing the others.
+
+| Layer | Mechanism | Acts on |
+|---|---|---|
+| **Economic** | Sovereign bond yields, insurance premia, trade flow reallocation | Treasuries, central banks, finance ministries |
+| **Diplomatic** | Procurement conditions, treaty access, recognition rules | Foreign ministries, UN seats, trade pacts |
+| **Judicial** | Bondholder suits under [Treaty Article VI](1-percent-treaty.qmd) | Domestic courts, Treasury solicitors |
+| **Political** | Super PACs scoring legislators on Court compliance, funded by the IAB Political Incentive Fund | Individual legislators, party leadership, campaign finance |
+| **Reputational** | Public verdict ledger, citizen pressure, journalist scrutiny | Voters, donors, regulators, civil society |
+
+The political layer is the one most likely to operationalize the others. Capital-markets pressure is real but slow. Diplomatic pressure is real but coordinated by the same officials being scored. Judicial pressure is bottlenecked by court calendars. Political pressure is the layer that can fire the people in office and replace them with people who are not. It is the fastest available enforcement mechanism that operates within each defendant's existing constitutional framework.
+
+## How the Political Layer Works
+
+The [Political Incentive Fund](aligning-incentives.qmd), funded by {{< var iab_political_incentive_funding_pct >}} of every Treaty dollar ({{< var iab_political_incentive_funding_annual >}}/year at scale), is the largest political-incentive fund in human history by an order of magnitude. It is structured as a Super PAC and operates by the rules every Super PAC operates by. The difference is the target.
+
+The Fund scores every legislator on two voting axes:
+
+1. **Treaty compliance.** Did you vote to implement and expand the 1% Treaty?
+2. **Court compliance.** Did you vote to honor Court of Humanity judgments against your government, or did you vote to obstruct, defund, or ignore them?
+
+Compliant legislators receive campaign support for reelection and post-office fellowships when they retire (board seats, lobbying-free advisory positions, university chairs, foundation grants). Non-compliant legislators face the same thing aimed at their opponents.
+
+The NRA has run this exact system for 50 years and has demonstrated that a single-issue scoring fund can reliably shape congressional votes regardless of party affiliation, district demographics, or stated principles. The infrastructure exists. The legal framework exists. The only thing missing was the funding source and the target list. The Treaty provides the first; the Court provides the second.
+
+A legislator's choice becomes structurally simple:
+
+- *Vote to comply with Court rulings:* receive Fund support, retain seat, retire to a fellowship.
+- *Vote to obstruct Court rulings:* watch the Fund support your opponent, lose the next primary, exit politics with no fellowship.
+
+This is not a moral appeal. It is an incentive realignment. The legislators are not being asked to change their values. They are being asked to respond to incentives, which is what they already do, on every other issue, every day. The Fund is the upstream redirect that determines which incentives they respond to.
+
+## How Capital Markets Enforce What Courts Cannot
+
+The Court does not need to seize bank accounts or arrest officials. It needs only to *publish judgments*. Bond markets are excellent at pricing tail risk; they will price this. Insurance underwriters will reflect wrongful-death exposure in premiums. Investors prefer jurisdictions with lower legal-risk tails, so capital reallocates toward recognizing governments. Empirically, the same mechanism produced the South African divestment cascade, ESG-driven sovereign repricing, and rule-of-law shocks visible in CDS spreads on Hungarian and Turkish debt. The mechanism is mature; the application to sovereign-immunity-shielded conduct is novel.
+
+The mechanism that enforces the Court is not the Court. It is the consequence of being a defendant.
+
+## Nobody Gets a Lottery Ticket
+
+A reasonable concern: if any human can sue any government for negligent homicide, will rich plaintiffs with good lawyers collect $9.5 million per family member while the defendants collapse into bankruptcy and the rest of humanity gets nothing?
+
+No. The Court does not work that way, and the reason it does not work that way is the reason it works at all.
+
+**The Court is a class-action mass tort with mandatory structural settlement.** Individual plaintiffs do not collect individual checks. Here is what actually happens:
+
+1. **Liability is established globally.** The defendants owe approximately $104 quadrillion. This figure exists to set the negotiating floor, not to be distributed.
+2. **The Court issues structural judgments, not individual awards.** A typical judgment looks like: *"the defendant shall redirect X% of military spending to clinical trials, perpetually, with bondholders enforcing compliance."* The 1% Treaty is the standard form of such judgment.
+3. **The remedy flows to a public trust**, not to plaintiffs' bank accounts. Disease victims receive *cures*, not checks. War victims receive *peace*, not reparations. Regulatory-delay victims receive *faster access to the next drug*, not retroactive damages.
+4. **Specific harm categories may have dedicated victim trust funds**, paying out per formula. This is exactly how the 9/11 Victim Compensation Fund worked ($7 billion disbursed, no individual lottery winners), how the Vaccine Injury Compensation Program works (no-fault structured payouts), and how asbestos trust funds work (industry-financed, formula-based). Decades of precedent. None of them bankrupted anyone.
+5. **Lawyers are mostly absent.** For the 95-99% of cases that pattern-match to existing templates, no attorney is involved. AI-assisted briefs and stratified juries do the work. For the small minority of novel cases that proceed through traditional adversarial procedure, attorneys are paid through fee-shifting (capped at 15–20% of the settlement fund) rather than individual contingency, aligning their incentives with establishing precedent rather than hunting jackpots.
+6. **The only category of human who profits in cash is bondholders**, and bondholders profit by *financing the case*, not by being victims. They are the plaintiff's underwriters. Their returns scale with the structural settlement's success. This is the [Incentive Alignment Bond](incentive-alignment-bonds.qmd) mechanism.
+
+This architecture solves four problems simultaneously:
+
+- **No defendant bankruptcy.** Governments pay X% per year, sustainably, perpetually.
+- **No race to the courthouse.** First-filers and last-filers receive equivalent structural compensation.
+- **No fraudulent-claim epidemic.** You do not get money personally. There is nothing to defraud.
+- **The damages flow to fixing the cause of death**, which prevents the next set of cases from arising.
+
+The pattern, in tort-law terminology, is *aggregated injunctive and structural relief* rather than *individual compensatory damages*. The body count is too large to compensate individually anyway. Even if every defendant liquidated their entire treasury, $104 quadrillion divided by 11.1 billion victims is approximately $9.4 million per victim, and the defendants do not have $104 quadrillion. Individual compensation is mathematically impossible at the scale of the harm. Structural remedy is the only model that arithmetic permits.
+
+### Precedents
+
+The structural-settlement model has substantial historical precedent in mass-tort and policy-driven compensation systems:
+
+- **Asbestos trust funds (1980s–present):** Following industry-wide bankruptcy filings, courts approved Section 524(g) trusts that pay claimants per formula. Disbursements are reduced as funds deplete; no claimant collects full theoretical damages; the system has paid over $30 billion to >800,000 claimants without bankrupting any participating industry.
+- **9/11 Victim Compensation Fund (2001–present):** Special master Kenneth Feinberg administered $7+ billion in disbursements to ~5,500 families and survivors using a structured formula. No individual recipient received "full" damages; all received roughly proportional structured awards.
+- **Vaccine Injury Compensation Program (1988–present):** No-fault administrative compensation system funded by a per-dose excise tax. Has paid >$5 billion to ~9,000 claimants without producing vaccine-industry collapse or fraudulent-claim epidemic.
+- **Camp Lejeune Justice Act (2022):** Recent precedent specifically waiving sovereign immunity for a defined class of harm (toxic water exposure) with structured settlement formulas.
+- **Tobacco Master Settlement Agreement (1998):** $206 billion structured settlement paid to 46 states over 25+ years, funded by ongoing per-pack assessments. Did not bankrupt the tobacco industry; did transform industry behavior and fund public-health programs.
+
+Each precedent demonstrates that mass tort liability of significant magnitude can be resolved through structural settlement without either defendant collapse or plaintiff-lottery dynamics. The Court of Humanity's structural-settlement model is the same mechanism, scaled to the global level and applied to the largest unaddressed mass tort in human history.
+
+This means the Court of Humanity is not a vehicle for getting rich off your government's negligence. It is a vehicle for *making your government stop being negligent*. The compensation you receive is your own non-death and your descendants' continued existence. This is, on examination, a more useful form of compensation than a check.
+
+## The 1% Treaty Becomes the Settlement Offer
+
+Your governments cannot pay $104 quadrillion. They can, however, settle.
+
+The [1% Treaty](1-percent-treaty.qmd) [@1-pct-treaty-impact-paper-2025] is the settlement offer. It is the most generous settlement offer in legal history: governments accept liability for {{< var treaty_annual_funding >}} per year (1% of military spending), in exchange for capping their exposure to the larger judgment indefinitely. The redirected funds go to clinical trials and bondholders, both of which are net welfare-positive uses.
+
+| Mechanism | Function |
+|---|---|
+| **Court of Humanity** | The lawsuit. Establishes ~$104 quadrillion in unliquidated wrongful-death exposure. |
+| **1% Treaty** | The settlement. Caps governments' exposure for 1% of military spending. |
+| **Incentive Alignment Bonds** | The plaintiff's contingency arrangement. Pays the lawyers and campaigns. |
+| **dFDA** | The court-supervised remedy. Absorbs redirected funds and clears the disease backlog. |
+
+In any private-sector tort context, defendants facing $104 quadrillion in exposure would settle for 1% of their annual budget the day the suit was filed. Their lawyers would advise it. Their boards would demand it. Their shareholders would sue them if they didn't. Your governments do not have lawyers, boards, or shareholders. They have voters. The Court of Humanity is what gives the voters the leverage that lawyers, boards, and shareholders provide in every other context.
+
+## Why This Is Not the ICC
+
+The International Criminal Court (ICC), International Court of Justice (ICJ), and various tribunals (ad hoc, hybrid, regional) have not produced the accountability outcomes their proponents anticipated. The reason is structural: each existing court derives jurisdiction from defendant consent. Defendants who anticipate being defendants do not consent. The United States, China, Russia, Israel, and India are not parties to the Rome Statute. The result is a system that prosecutes the powerless on behalf of the powerful, which is the exact inversion of what international criminal law was supposed to do.
+
+The Court of Humanity differs in three respects:
+
+1. **Jurisdiction is not consent-based.** Jurisdiction derives from the consent of *humans*, not the consent of governments.
+2. **Enforcement is not coercive.** Enforcement is via capital-markets pricing of judgments. The defendants cannot revoke their participation in capital markets without imposing higher costs on themselves than the judgment would have imposed.
+3. **The plaintiff base is global and individual.** Existing courts admit only state-on-state suits (ICJ) or specific listed cases (ICC). The Court admits any harmed human against any government.
+
+The Court is therefore not a competitor to the ICC. It is a *successor* class of institution, addressing the structural gaps that existing institutions cannot close.
+
+## The Two-Question Ballot
+
+The current global referendum asks one question: "Do you support the 1% Treaty?" The polling is good but mixed; the Treaty involves specific budget mechanics that some voters find complicated.
+
+The Court referendum question is simpler and polls 10-15 points higher: "Should every person have the legal right to seek justice against any government that kills, injures, or harms them or their family?"
+
+The strategy is to put both on the same ballot. The Court question polls 90%+ and drags the Treaty question across the finish line. The Court question is the popular trigger; the Treaty is the operational mechanism it triggers.
+
+A voter who answers yes to the Court question has, in operational terms, voted to remove sovereign immunity. A voter who answers yes to the Treaty question has, in operational terms, voted to accept the settlement offer rather than pursue the full judgment. Most voters will answer yes to both. The remainder will answer yes to the first and no or undecided to the second. The first vote is sufficient to begin the process. The second is sufficient to end it on terms favorable to everyone except defense contractors and the regulatory bureaucracies that have spent 60 years killing more people than they saved.
+
+## What Happens When 4 Billion People Answer Yes
+
+The dynamics are deterministic once the threshold is crossed:
+
+1. **The result is impossible to ignore.** More participation than every election in human history combined. Every politician asked: "Do you support the result?"
+2. **Smaller nations sign on first.** Costa Rica, Ireland, New Zealand, Iceland, Norway, Switzerland. Costs them nothing. Makes them moral leaders. Cascades.
+3. **Holdout governments expose themselves.** The United States, China, Russia, Israel, France, the UK forced to argue for sovereign immunity against a backdrop of 4 billion people who voted no. Every argument sounds like "we need the legal right to kill people without consequences."
+4. **Legal infrastructure self-organizes.** The Court does not require government permission. It requires legitimacy. 4 billion verified human votes is more democratic legitimacy than any institution ever constituted. Lawyers draft the charter. Scholars define jurisdiction. Participating countries recognize authority.
+5. **Capital responds before the first ruling.** Bond yields adjust. Insurance premia adjust. Investment flows adjust. Defendants' costs of capital rise without anyone seizing anything.
+6. **The first ruling is small.** Likely a wrongful-death claim against a participating government for police violence or pharmaceutical-delay mortality. The participating government pays. Precedent is set. Legitimacy compounds.
+7. **Holdouts choose.** Join and accept accountability, or remain outside and pay escalating capital, diplomatic, and reputational costs forever. This is the same dynamic that produced WTO adoption, the Geneva Conventions, and the Universal Declaration of Human Rights. The dynamic is not new. The application is.
+
+## Bootstrapping the System
+
+The Court's most genuine weakness is the bootstrapping period. Until templates are established, every case is novel. Until proof-of-personhood systems achieve adequate population coverage, jury legitimacy depends on the available verified population. Until capital markets begin pricing judgments, the enforcement mechanism is partial.
+
+The proposed bootstrap path proceeds in three phases:
+
+**Phase 1: Foundation cases.** The first ~100 cases proceed under traditional adversarial procedure with attorneys, expert witnesses, and full discovery. These cases establish initial templates, develop the evidentiary infrastructure, and produce the first capital-markets pricing data. Voluntary participating governments (likely Costa Rica, Ireland, New Zealand, Iceland, Norway) supply the early defendants. Foundation-case attorneys are paid through fee-shifting from a pre-funded litigation trust capitalized by the [Incentive Alignment Bond](incentive-alignment-bonds.qmd) [@iab-paper-2025] mechanism.
+
+**Phase 2: Template ratification.** Drawing from the foundation-case docket, the Court drafts initial case templates and submits them for global deliberative referendum. Successful templates enter the library; unsuccessful templates remain in traditional adversarial procedure. The next ~10,000 cases use a hybrid model: templated where possible, traditional where not.
+
+**Phase 3: Steady-state.** Pattern-matched cases dominate the docket (95-99% of filings). Attorneys and expert witnesses occupy the edge-case fallback procedure rather than the routine procedure. The Court operates primarily as an automated structural-relief mechanism with occasional traditional-procedure inputs for novel conduct categories.
+
+## The Judicial Branch of Wishocracy
+
+[Wishocracy](wishocracy.qmd) [@wishocracy-paper-2025] describes a governance system in which decisions are made by the consent of the governed, weighted by neither wealth nor party affiliation, with corruption capped at 20% by structural design. The Court of Humanity is wishocracy's judicial branch. The book has previously described the executive branch (the [Optimitron](optimocracy.qmd)), the budgetary mechanism ([Incentive Alignment Bonds](incentive-alignment-bonds.qmd) [@iab-paper-2025]), and the legislative trigger (the [1% Treaty](1-percent-treaty.qmd)). The Court is what was missing.
+
+In existing political theory, separation of powers requires three branches that constrain each other. Your current system has three branches that *coordinate* with each other against the citizenry. The Court of Humanity restores the separation by introducing a fourth branch (the citizenry itself, voting on cases) that constrains the other three.
+
+The defendants will object that this is mob rule. The prosecution observes that 8 billion humans are not a mob. They are the population. The current system is mob rule by approximately 5,000 elites operating under the procedural shield of sovereign immunity. The Court of Humanity replaces the small mob with the large one, weighted equally per capita. This is what democracy was supposed to be. It is not what democracy currently is.
+
+## What You Do
+
+The vote is at [warondisease.org](https://warondisease.org). It contains both questions. The vote takes 30 seconds. The Court referendum question is the simpler one. Answer it first. The Treaty question is the second. Answer it however you like; the math works out either way, because the Court question is the one that matters.
+
+Forward this to one human you know who has more reach than you. They forward to one human with more reach than them. Within seven steps, the message reaches a head of state, a billionaire, a litigator, or a journalist with a column. Within twenty steps, it reaches all of them. The math of the chain reaction is in [the appendix](../appendix/treaty-feasibility.qmd#sec-chain-reaction-model).
+
+Your government has spent the past 80 years getting better at killing people while writing the laws that prevent you from suing them for it. The next 80 years are about whether your species notices.
+
+You have noticed.
+
+The remaining question is what you do next.

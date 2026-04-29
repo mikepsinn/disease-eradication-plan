@@ -142,6 +142,95 @@ The defendants do not lack the money. The defendants chose to spend the money on
 
 This is what your legal system calls *depraved indifference*: a state of mind in which the defendant knows the consequences of their action, knows the alternative was available, and proceeds anyway. The prosecution submits that there is no other defensible characterization of a budget that allocates {{< var military_to_government_clinical_trials_spending_ratio_nounit >}}-to-1 in favor of murder over medicine while {{< var global_disease_deaths_daily_nounit >}} citizens die per day of the things the medicine would have cured.
 
+## Exhibits
+
+The prosecution submits the following non-exhaustive list of specific named cases as evidence. Each entry is a single instance within the broader pattern. Each victim named below stands for many additional victims unnamed.
+
+### Exhibits A through H: Direct Killing (Count One)
+
+| Exhibit | Defendant(s) | Period | Body Count | Notes |
+|---|---|---|---|---|
+| A | All belligerents | 1914–1918 | ~17,000,000 | World War I. Industrial-scale killing rationalized by alliance treaties whose precise terms most belligerents could not articulate when interviewed. |
+| B | All belligerents | 1939–1945 | ~70,000,000 | World War II. Includes the Holocaust (~6,000,000), industrial democide previously assumed to be impossible by people whose job was to assume things. |
+| C | USSR | 1932–1933 | ~3,000,000–7,000,000 | Holodomor. Famine engineered by grain requisitions during agricultural collectivization. |
+| D | PRC | 1958–1962 | ~30,000,000+ | Great Leap Forward famine. Deaths via policy-induced agricultural collapse. |
+| E | Khmer Rouge | 1975–1979 | ~2,000,000 | Cambodian genocide. ~25% of national population killed in four years. |
+| F | Hutu Power factions / RPF | 1994 | ~800,000 | Rwandan genocide. UN forces present, withdrew under orders. |
+| G | United States, Coalition | 2003–2011 | ~200,000+ | Iraq War. Conducted under stated rationale (WMD) later acknowledged as factually incorrect by the conducting parties. |
+| H | United States | 1945 | ~200,000 | Hiroshima and Nagasaki. The only two instances of atomic weapons use against civilian populations in human history. |
+
+The prosecution stresses that these eight exhibits represent perhaps 40% of the Count One total. The remaining 60% is distributed across hundreds of smaller wars, civil conflicts, ethnic cleansings, and policy-induced famines, each with its own named victims.
+
+### Exhibits I through M: Regulatory Delay (Count Two)
+
+| Exhibit | Defendant | Drug / Therapy | Delay | Estimated Deaths | Source |
+|---|---|---|---|---|---|
+| I | FDA | Propranolol (cardiac arrhythmia) | ~10 years vs. UK/Germany | ~100,000 Americans | [@peltzman-1973] |
+| J | FDA | Beta blockers (general class) | Multi-year delays vs. EU | Tens of thousands | [@invisible-graveyard-paper-2025] |
+| K | FDA | Misoprostol, deferiprone, and other off-patent drugs delayed by Phase II/III requirements for indications already in use abroad | 5–15 years | Unquantified, large | [@invisible-graveyard-paper-2025] |
+| L | FDA | Vioxx, Rezulin, fen-phen post-approval safety failures | N/A | 55,000–100,000 cumulative across 60 years | [@vioxx-deaths] |
+| M | FDA / Multiple | COVID-19 vaccine and monoclonal antibody authorization timelines | ~6–12 months vs. emergency-feasible | ~290,000+ U.S. deaths attributable to authorization lag | (multiple estimates) |
+
+Exhibit L is presented in a different posture from the others. Exhibit L represents the *entire* universe of harms the defense routinely invokes to justify the system that produced Exhibits I through K. The ratio of Exhibit L deaths to Exhibits I-K-M deaths is approximately 1:{{< var type_ii_error_cost_ratio >}}. The defense built the regulatory apparatus around Exhibit L while ignoring Exhibits I, J, K, and M.
+
+### Exhibits N through R: Misallocation (Count Three)
+
+| Exhibit | Defendant | Item | Amount | Disease Equivalent |
+|---|---|---|---|---|
+| N | U.S. DoD | F-35 Joint Strike Fighter program (lifetime) | ~$1.7 trillion | ~378 years of global government clinical trial spending |
+| O | United States | Iraq War (direct + indirect) | ~$2 trillion | ~444 years of global government clinical trial spending |
+| P | U.S. DoD | "Misplaced" funds across seven failed audits | {{< var pentagon_unaccounted_funds >}} | {{< var pentagon_unaccounted_clinical_trial_years_nounit >}} years of global government clinical trial spending |
+| Q | All defendants | Annual global military spending (2024) | {{< var global_military_spending_annual_2024 >}} | {{< var military_to_government_clinical_trials_spending_ratio_nounit >}}x annual government clinical trial spending |
+| R | All defendants | Cumulative spending since the Federal Reserve era (1913) | {{< var cumulative_military_spending_fed_era >}} | ~38,000 years of global government clinical trial spending |
+
+The prosecution observes that Exhibit P alone, recovered, would fund the clinical trials necessary to clear the entire global disease backlog several times over. The defendants would prefer to keep looking for it.
+
+## Schedule of Formal Charges
+
+The prosecution submits the following taxonomy of formal criminal categories applicable to the defendants' conduct. The prosecution does not assert that all categories apply to all defendants in all jurisdictions. The prosecution asserts that *at least one* category applies to *each* defendant for *each* count.
+
+### Charges Arising from Count One (Direct Killing)
+
+1. **Murder, first-degree.** Premeditated and authorized killing in offensive operations not justified by imminent threat. (E.g., Exhibits G, H.)
+2. **Mass murder.** Killing of large groups under organizational direction. (E.g., Exhibits A, B.)
+3. **Genocide.** Killing with intent to destroy in whole or in part a national, ethnic, racial, or religious group. (E.g., Exhibits B, E, F.) Codified under the Genocide Convention (1948), to which most defendants are signatories.
+4. **Crimes against humanity.** Widespread or systematic attack against any civilian population. (E.g., Exhibits B, C, D, E, F.) Codified under the Rome Statute.
+5. **War crimes.** Violations of the laws and customs of war, including disproportionate civilian targeting. (E.g., Exhibits B, G, H.) Codified under the Geneva Conventions, to which all defendants are signatories.
+6. **Conspiracy to commit any of the above.** Coordinated action by multiple defendants in furtherance of any Count One charge. (Applicable to most exhibits.)
+
+### Charges Arising from Count Two (Regulatory Delay)
+
+7. **Negligent homicide.** Causing death by failure to exercise reasonable care, with foreseeability of harm. The classical fit for the {{< var efficacy_lag_years >}} efficacy lag, where the harm was foreseen by named experts in print and the defendants proceeded anyway.
+8. **Manslaughter via gross criminal negligence.** Death caused by conduct so reckless it constitutes a gross deviation from the standard of care a reasonable person would observe. Stronger charge, applicable when the defense's conduct continued *after* the body count was published.
+9. **Depraved-indifference homicide** (also "depraved-heart murder" in some jurisdictions). Killing through conduct demonstrating extreme indifference to human life. Distinguished from negligent homicide by the *severity* of indifference. The maintenance of an efficacy regime that kills {{< var type_ii_error_cost_ratio >}} times more people than it saves, with the ratio publicly known and unaddressed for 50+ years, satisfies this standard.
+10. **Reckless endangerment.** Conduct creating substantial risk of death to others. Applicable as a lesser-included offense for officials below the policymaker level.
+
+### Charges Arising from Count Three (Misallocation)
+
+11. **Negligent homicide via deprivation.** Causing death by withholding resources reasonably required to prevent it, when those resources were available. Doctrinal analogues exist in failure-to-rescue cases involving fiduciaries (parents, custodians, captains of vessels).
+12. **Breach of fiduciary duty resulting in death.** The defendants accepted public funds for the explicit purpose of "promoting the general welfare." Allocating those funds to weaponry while citizens died of curable diseases is a breach of the underlying fiduciary obligation. Where the breach causes death, the breach itself becomes criminal.
+13. **Misappropriation of public funds.** Specifically applicable to Exhibit P (Pentagon's {{< var pentagon_unaccounted_funds >}}). Funds were appropriated, are unaccounted for, and seven consecutive audits have failed to locate them. In any jurisdiction other than the defendants' own, this would have produced criminal indictments.
+14. **Depraved-indifference homicide.** Same standard as Charge 9, applied to the budgetary axis rather than the regulatory axis.
+
+### Charges Arising from the Combined Conduct
+
+15. **Conspiracy.** Multiple defendants coordinated their conduct via treaties, alliances, defense pacts, and harmonized regulatory standards. Where the coordinated conduct caused death, the coordination itself is criminal.
+16. **Aiding and abetting.** Defendants provided material support (weapons sales, intelligence sharing, regulatory copy-pasting) to other defendants engaged in the underlying offenses.
+17. **Obstruction of justice.** The defendants enacted sovereign-immunity statutes, discretionary-function exceptions, and combatant-activities exceptions specifically to prevent prosecution of the conduct at issue. Drafting and enacting laws that immunize one's own ongoing criminal conduct is itself an obstruction offense in any system that does not allow the obstructor to also serve as the legislature. The defendants do.
+18. **Continuing offense.** The conduct described herein is not historical. It is occurring during the time required to read this paper. Each minute of continuation extends the body count by approximately {{< var global_disease_deaths_per_minute_nounit >}} additional victims of Count Three alone.
+
+## Direct Versus Counterfactual Deaths
+
+The prosecution distinguishes between two categories of homicide for clarity.
+
+**Direct deaths (Count One)** are deaths the defendants caused by killing the victim with a weapon. The body is in the morgue because the defendant put it there.
+
+**Counterfactual deaths (Counts Two and Three)** are deaths the defendants caused by withholding the means by which the victim could have remained alive. The body is in the morgue because the defendant declined to put it elsewhere. These are not metaphysical deaths. They are real corpses, in real graves, with real grieving relatives. The defendants' contribution is the *withholding*, not the disease itself.
+
+The defense will argue that counterfactual deaths are categorically different from direct deaths. The prosecution agrees, in one specific way: counterfactual deaths are larger by a factor of approximately 30. The defense's preferred category is the smaller one.
+
+In legal doctrine, the distinction tracks **commission** versus **omission**. Common-law systems generally treat omission as criminal only where there is a duty to act. The defendants accept salaries, write founding documents, and swear oaths to act. The duty is established. The omission is established. The deaths are established. The remaining elements are present.
+
 ## The Aggregate Body Count
 
 | Count | Charge | Body Count | Period |
@@ -219,7 +308,7 @@ The prosecution further stipulates: name a single post-1962 Thalidomide. The def
 
 The prosecution further notes: drugs available in Europe but blocked in the United States by the FDA's Phase II/III delay include propranolol (delayed for cardiac arrhythmia, costing approximately 100,000 American lives [@peltzman-1973]), beta blockers in general, and dozens of others. These are not hypothetical. These are named drugs, with named diseases, and named patients who died in the United States while the same compounds were prescribed routinely in Germany, France, and the United Kingdom. The defense's preferred system killed approximately 100,000 Americans because it was uncertain whether propranolol worked, while German doctors prescribed it for fifteen years with the answer.
 
-The decentralized FDA model proposed in [@dfda-spec-paper-2025; @dfda-impact-paper-2025] would generate real-time efficacy data orders of magnitude faster than the current system, with outcomes published rather than buried in proprietary trial reports. The defense's preferred system optimizes for *not knowing* whether drugs work. Ours optimizes for *knowing*.
+The [decentralized FDA](../solution/dfda.qmd) model proposed in [@dfda-spec-paper-2025; @dfda-impact-paper-2025] would generate real-time efficacy data orders of magnitude faster than the current system, with outcomes published rather than buried in proprietary trial reports. The defense's preferred system optimizes for *not knowing* whether drugs work. Ours optimizes for *knowing*.
 
 **Defense Argument 5: "Democratic accountability provides remedy. Voters can correct misallocation."**
 
@@ -240,13 +329,15 @@ The defense will argue that public budgets, regulatory standards, and military a
 
 The defense's framing of this as "honest disagreement" requires a redefinition of "honest" so broad it loses operational meaning. When the body count exceeds the combined toll of the Black Death, both World Wars, and the 1918 pandemic, "policy disagreement" is no longer the right grammatical category. The prosecution submits that the defendants voted on the slave trade. The vote did not make the trade ethical. The defendants voted on Apartheid. The vote did not make Apartheid ethical. Voting on a thing does not transmute the thing into not-a-crime. It merely launders the responsibility across enough hands that no individual hand can be held.
 
-**Defense Argument 7: "Sovereign immunity. You cannot bring this case in any court that exists."**
+**Defense Argument 7: "[Sovereign immunity](../solution/court-of-humanity.qmd). You cannot bring this case in any court that exists."**
 
 The defense will argue that the entire indictment is procedurally void, because under sovereign-immunity doctrine, governments cannot be sued without their own consent. The Federal Tort Claims Act explicitly excludes military activities and discretionary policy choices, which is the entire prosecution's case. The court has no jurisdiction.
 
 *Rebuttal:* This is the strongest defense argument. The prosecution concedes its truth and submits that the defendants' own concession converts every other defense into nonsense.
 
 The defendants wrote the laws that immunize the defendants from prosecution for the specific conduct alleged. They did not do this accidentally. They did this because they understood the conduct was indictable under any neutral standard, and chose to engineer the standard rather than the conduct. This is itself the most damning piece of evidence in the case. *The defendants' first response to discovering the body count was to make the body count un-litigable.*
+
+The prosecution's response is the [Court of Humanity](../solution/court-of-humanity.qmd), a decentralized adjudication mechanism that derives jurisdiction from human consent rather than sovereign consent, with verdicts rendered by the verified human population voting per capita and judgments enforced not by coercion but by capital-markets pricing of the resulting liability. The defendants cannot withdraw consent that was never theirs to give. Applying standard regulatory life valuations to the body counts in this paper yields approximately $104 quadrillion in unliquidated wrongful-death exposure across the defendant class. The defendants cannot pay this judgment. They can, however, settle. The [1% Treaty](../solution/1-percent-treaty.qmd) [@1-pct-treaty-impact-paper-2025] is the settlement vehicle.
 
 The prosecution therefore brings this case in the only court that retains jurisdiction: the court of public attention. The remedy is not awarded by a judge. It is awarded by 8 billion humans noticing that the procedural shield exists. The shield falls when the public stops respecting it, and the public stops respecting it when someone counts the bodies in one place. Which is what this paper does.
 
