@@ -180,29 +180,87 @@ The prosecution calls the defendants' own experts.
 
 The defense's anticipated rebuttal that no one could have foreseen these consequences is hereby foreclosed. The consequences were foreseen, in print, by named experts, in the defendants' own libraries, with citations.
 
-## The Defense's Anticipated Arguments
+## The Defense Cross-Examined
 
-The prosecution will preempt the four arguments the defense is most likely to raise.
+The prosecution has retained imaginary defense counsel to make the strongest possible case for the defendants. The defense's arguments are presented in their best form. They are then refuted using the defendants' own records.
 
-**Defense Argument 1: "Counterfactuals are speculative."**
+**Defense Argument 1: "The numbers are speculative. You cannot prove counterfactual deaths."**
 
-The defense will argue that we cannot know how many would have died absent government action, and therefore Counts Two and Three are not provable.
+The defense will argue, with appropriate gravitas, that the prosecution cannot demonstrate how many would have died *absent* government action. Counts Two and Three depend on counterfactual reasoning. Therefore, the defense argues, the body count is rhetorical inflation.
 
-*Rebuttal:* The same defendants accept counterfactual reasoning when calculating their own benefits. The Department of Defense routinely claims credit for "deterring" wars that did not happen. The FDA claims credit for "preventing" thalidomide-style disasters that did not occur. The defendants cannot accept counterfactual benefits and reject counterfactual costs without admitting that their accounting is rhetorical rather than analytical. We are using their own methodology, applied honestly.
+*Rebuttal:* The defendants invented this methodology and use it daily. The Department of Defense's annual budget request includes specific dollar amounts for wars *deterred but not fought*. The FDA's institutional self-defense rests entirely on Thalidomide-style disasters *prevented but not observed*. The Department of Homeland Security claims credit for terrorist attacks *foiled but not specified*. The defendants accept counterfactual benefits as the *foundation* of their own performance metrics. They cannot accept the counterfactual when it adds dollars to their budget and reject it when it adds bodies to their ledger. The prosecution is using the defendants' own accounting framework, applied symmetrically. If the methodology is invalid, the defendants' entire institutional justification collapses with it. The defense is welcome to pick which side of that trade they prefer.
 
-**Defense Argument 2: "We had no choice. The other governments were doing it."**
+**Defense Argument 2: "Necessity. We had to maintain military capacity for security."**
 
-This is a useful argument because all of the defendants can use it simultaneously. The prosecution submits that "I had to commit the crime because the other defendants were committing it" is not a defense recognized in any legal system. It is, however, a fairly accurate description of the dynamic, which is precisely why the proposed remedy involves all defendants reducing their offense by 1% at the same time.
+The defense will argue that the dead in Count One are the unavoidable cost of national security, and that any reduction in military spending would result in invasion, conquest, and a larger body count.
 
-**Defense Argument 3: "Regulation prevents harm."**
+*Rebuttal:* This is a falsifiable empirical claim. The prosecution presents the defendants' own peer countries:
 
-This is occasionally true. Phase I safety testing, for example, does in fact catch dangerous drugs before they reach patients. The prosecution does not seek to abolish safety testing. The prosecution seeks the abolition of the *additional* {{< var efficacy_lag_years >}} delay imposed by efficacy testing, during which the drug is known to be safe and unknown to be ineffective, while patients die waiting to find out.
+- **Switzerland** spends {{< var switzerland_defense_spending_pct >}} of GDP on its military. Has not been invaded since 1815. GDP per capita: {{< var switzerland_gdp_per_capita_k >}}, exceeding the United States.
+- **Costa Rica** abolished its military entirely in 1948. Has not been invaded. Has higher life expectancy than the United States.
+- **Iceland** has no standing army. Population still alive.
+- **Japan** capped military spending at ~1% of GDP for 70 years. Was the world's second-largest economy for most of that period.
 
-The defense will argue that without the efficacy lag, ineffective drugs would proliferate. The prosecution responds that under the proposed [decentralized FDA](dfda-spec-paper.qmd) [@dfda-spec-paper-2025; @dfda-impact-paper-2025] model, real-time outcome tracking would generate efficacy data orders of magnitude faster than the current system, with the data made public rather than buried in proprietary trial reports. The defense's preferred system optimizes for *not knowing* whether drugs work. Ours optimizes for *knowing*.
+The defense's necessity argument predicts these countries should have been overrun decades ago. They were not. The argument is not merely weak; it is *empirically falsified*. The prosecution invites the defense to explain why these specific peer-reviewed counterexamples do not count, in a way that does not also invalidate every other piece of national-security analysis the defendants have ever produced.
 
-**Defense Argument 4: "We are not the relevant actor; markets are."**
+**Defense Argument 3: "Prisoner's dilemma. We could not unilaterally disarm."**
 
-The defendants are the actor that allocates {{< var global_military_spending_annual_2024 >}} per year through tax-funded budgetary processes. The defendants are also the actor that determines what counts as an approved drug, what counts as a legal trial design, and what counts as fundable research. Markets allocate the residual after the defendants take their cut and impose their constraints. The defendants cannot simultaneously claim credit for the allocation system and disavow responsibility for what it allocates.
+The defense will argue that game theory makes coordinated reduction impossible. Each defendant is locked in a non-cooperative equilibrium where reducing capacity unilaterally invites attack from the others.
+
+*Rebuttal:* The defendants have already coordinated reductions of weapons categories they considered desirable to keep. The Chemical Weapons Convention (1993, 193 countries). The Biological Weapons Convention (1975, 187 countries). The Mine Ban Treaty (1997, 164 countries). The Treaty on the Non-Proliferation of Nuclear Weapons (1968, 191 countries). The Outer Space Treaty (1967, 115 countries). The mechanism for coordinated multilateral arms reduction *was invented by the defendants* and has been used successfully on at least five occasions, including for weapons the defendants liked using. The current treaty asks for a 1% reduction in the *expenditure* on weapons the defendants claim to find regrettable. The argument that coordination is impossible is contradicted by the defendants' own filing cabinets.
+
+**Defense Argument 4: "The FDA prevents Thalidomides. Without efficacy testing, dangerous drugs would proliferate."**
+
+The defense will invoke Thalidomide. They always invoke Thalidomide. It is the only specific case the defense reliably remembers.
+
+*Rebuttal:* Thalidomide was identified by *Phase I safety testing*, which the prosecution is not proposing to abolish. The prosecution proposes to abolish the {{< var efficacy_lag_years >}} *Phase II/III efficacy testing* that follows safety verification. The defense's invocation of Thalidomide is therefore not merely irrelevant; it is *evidence against the defense's own position*, because the safety mechanism that caught Thalidomide is the one mechanism the prosecution is preserving.
+
+The prosecution further stipulates: name a single post-1962 Thalidomide. The defense will struggle. The handful of post-approval safety withdrawals (Vioxx, Rezulin, fen-phen) account for an estimated 55,000 to 100,000 deaths total across 60 years [@vioxx-deaths]. The efficacy lag killed {{< var existing_drugs_efficacy_lag_deaths_total_nounit >}}. The ratio is {{< var type_ii_error_cost_ratio >}} to one [@invisible-graveyard-paper-2025].
+
+The prosecution further notes: drugs available in Europe but blocked in the United States by the FDA's Phase II/III delay include propranolol (delayed for cardiac arrhythmia, costing approximately 100,000 American lives [@peltzman-1973]), beta blockers in general, and dozens of others. These are not hypothetical. These are named drugs, with named diseases, and named patients who died in the United States while the same compounds were prescribed routinely in Germany, France, and the United Kingdom. The defense's preferred system killed approximately 100,000 Americans because it was uncertain whether propranolol worked, while German doctors prescribed it for fifteen years with the answer.
+
+The decentralized FDA model proposed in [@dfda-spec-paper-2025; @dfda-impact-paper-2025] would generate real-time efficacy data orders of magnitude faster than the current system, with outcomes published rather than buried in proprietary trial reports. The defense's preferred system optimizes for *not knowing* whether drugs work. Ours optimizes for *knowing*.
+
+**Defense Argument 5: "Democratic accountability provides remedy. Voters can correct misallocation."**
+
+The defense will argue that the proper remedy for misallocation is electoral, not judicial. Voters can replace governments that misallocate. The system is self-correcting.
+
+*Rebuttal:* The Princeton-Northwestern study by Gilens and Page (2014) found a correlation of approximately *zero* between the policy preferences of the median U.S. voter and the policy outcomes that actually occur. Wealthy elites and organized interest groups have meaningful influence. The median voter does not. The "accountability" the defense invokes is a procedural simulation of accountability, not the substance of it. The defense is welcome to produce the regression that contradicts Gilens-Page. They will not, because the regression does not exist. The defense's "remedy" is a vending machine that takes coins and dispenses nothing. The prosecution submits that a remedy that does not function is not a remedy.
+
+**Defense Argument 6: "These are policy disagreements, not crimes. The prosecution is criminalizing politics."**
+
+The defense will argue that public budgets, regulatory standards, and military allocations are quintessentially political questions, and that calling them criminal is rhetorical inflation that confuses honest disagreement with malice.
+
+*Rebuttal:* The prosecution charged *negligent* homicide, not murder. Negligent homicide does not require malice or intent. It requires four elements: (a) the defendant owed a duty of care; (b) the defendant breached that duty; (c) the breach caused death; (d) a reasonable person in the defendant's position would have known of the risk. All four are satisfied:
+
+- *Duty of care:* The defendants accept salaries from the citizenry for the explicit purpose of "promoting the general welfare." This is not in dispute. It is in the founding documents.
+- *Breach:* {{< var military_to_government_clinical_trials_spending_ratio_nounit >}}-to-1 allocation toward killing capacity over disease research is not "promoting the general welfare" by any operational definition.
+- *Causation:* Mathematically demonstrated in Counts One through Three.
+- *Foreseeability:* Eisenhower (1961). Peltzman (1973). Tabarrok (ongoing for 20 years). Lichtenberg (multiple peer-reviewed papers). Rummel (1994). The Government Accountability Office (seven separate audits). The risks were not merely foreseeable. They were *foreseen, in print, by named experts, repeatedly, in the defendants' own libraries, with citations*.
+
+The defense's framing of this as "honest disagreement" requires a redefinition of "honest" so broad it loses operational meaning. When the body count exceeds the combined toll of the Black Death, both World Wars, and the 1918 pandemic, "policy disagreement" is no longer the right grammatical category. The prosecution submits that the defendants voted on the slave trade. The vote did not make the trade ethical. The defendants voted on Apartheid. The vote did not make Apartheid ethical. Voting on a thing does not transmute the thing into not-a-crime. It merely launders the responsibility across enough hands that no individual hand can be held.
+
+**Defense Argument 7: "Sovereign immunity. You cannot bring this case in any court that exists."**
+
+The defense will argue that the entire indictment is procedurally void, because under sovereign-immunity doctrine, governments cannot be sued without their own consent. The Federal Tort Claims Act explicitly excludes military activities and discretionary policy choices, which is the entire prosecution's case. The court has no jurisdiction.
+
+*Rebuttal:* This is the strongest defense argument. The prosecution concedes its truth and submits that the defendants' own concession converts every other defense into nonsense.
+
+The defendants wrote the laws that immunize the defendants from prosecution for the specific conduct alleged. They did not do this accidentally. They did this because they understood the conduct was indictable under any neutral standard, and chose to engineer the standard rather than the conduct. This is itself the most damning piece of evidence in the case. *The defendants' first response to discovering the body count was to make the body count un-litigable.*
+
+The prosecution therefore brings this case in the only court that retains jurisdiction: the court of public attention. The remedy is not awarded by a judge. It is awarded by 8 billion humans noticing that the procedural shield exists. The shield falls when the public stops respecting it, and the public stops respecting it when someone counts the bodies in one place. Which is what this paper does.
+
+The defense's procedural argument is the case's procedural problem, and the case's procedural problem is the reason for [Article VI of the proposed remedy](../solution/1-percent-treaty.qmd), which routes enforcement through bondholder lawsuits rather than citizen lawsuits, taking advantage of the one category of plaintiff the defendants cannot ignore: rich people with retainer agreements.
+
+**Defense Argument 8: "These deaths were the price of civilization. Without governments, the toll would be worse."**
+
+The defense will fall back on a Hobbesian argument. State capacity prevents anarchy. Anarchy kills more than government. Therefore the body count is the lower of two evils.
+
+*Rebuttal:* The prosecution accepts the premise and rejects the conclusion. State capacity that prevents anarchy is valuable. State capacity that allocates {{< var military_to_government_clinical_trials_spending_ratio_nounit >}}-to-1 toward killing rather than curing is not "preventing anarchy." It *is* the anarchy, dressed in a uniform.
+
+The relevant counterfactual is not "no government." It is "differently allocated government." The prosecution does not propose abolishing the state. The prosecution proposes that the state spend 1% less on the capacity to murder its own employers and 1% more on the capacity to keep them alive. The defense's response to this proposal cannot be "without us, things would be worse," because we are not proposing the absence of the defendants. We are proposing the presence of slightly less destructive defendants.
+
+The prosecution observes that no defendant has yet articulated a coherent objection to the actual proposal. The defendants object instead to a proposal not made.
 
 ## The Court's Question
 
