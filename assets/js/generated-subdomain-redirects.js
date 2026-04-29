@@ -15,6 +15,7 @@
   "optimocracy.warondisease.org": "https://manual.warondisease.org/knowledge/appendix/optimocracy-paper.html",
   "organized-violence-tax.warondisease.org": "https://manual.warondisease.org/knowledge/problem/cost-of-war.html",
   "papers.warondisease.org": "https://manual.warondisease.org/knowledge/papers.html",
+  "people-of-earth-v-governments.warondisease.org": "https://manual.warondisease.org/knowledge/appendix/people-of-earth-v-governments.html",
   "political-dysfunction-tax.warondisease.org": "https://manual.warondisease.org/knowledge/appendix/political-dysfunction-tax.html",
   "prize-protocol.warondisease.org": "https://manual.warondisease.org/knowledge/appendix/earth-optimization-prize-protocol.html",
   "prize.warondisease.org": "https://manual.warondisease.org/knowledge/strategy/earth-optimization-prize.html",

@@ -38,15 +38,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 559 parameters used in the analysis, organized by type:
+This appendix documents all 561 parameters used in the analysis, organized by type:
 
-- External sources (peer-reviewed): 181
-- Calculated values: 271
+- External sources (peer-reviewed): 182
+- Calculated values: 272
 - Core definitions: 107
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (271 parameters) • [External Data Sources](#sec-external) (181 parameters) • [Core Definitions](#sec-definitions) (107 parameters)
+[Calculated Values](#sec-calculated) (272 parameters) • [External Data Sources](#sec-external) (182 parameters) • [Core Definitions](#sec-definitions) (107 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -10189,6 +10189,44 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-peace_dividend_share_of_80yr_baseline_war_cost.qmd >}}
+
+:::
+
+### Pentagon Unaccounted Funds in Clinical Trial Years: 547 years {#sec-pentagon_unaccounted_clinical_trial_years}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Number of years of clinical trial funding at current government spending levels that the Pentagon's unaccounted funds could have provided
+
+**Inputs**:
+
+- [Pentagon Unaccounted Funds](#sec-pentagon_unaccounted_funds) 📊: $2.46 trillion
+- [Annual Global Government Spending on Clinical Trials](#sec-global_government_clinical_trials_spending_annual) 📊: $4.5 billion (95% CI: $3 billion - $6 billion)
+
+$$
+\begin{gathered}
+Years_{pentagon,trials} \\
+= \frac{Funds_{pentagon,unaccounted}}{Spending_{trials,gov}} \\
+= \frac{\$2.46T}{\$4.5B} \\
+= 547
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-pentagon_unaccounted_clinical_trial_years.qmd >}}
+
+{{< include ../figures/sensitivity-table-pentagon_unaccounted_clinical_trial_years.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-pentagon_unaccounted_clinical_trial_years.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-pentagon_unaccounted_clinical_trial_years.qmd >}}
 
 :::
 
@@ -25391,6 +25429,22 @@ Patient willingness to participate in drug trials (44.8% in surveys, 88% when ac
 {{< include ../figures/distribution-patient_willingness_trial_participation_pct.qmd >}}
 
 *~ Medium confidence*
+
+:::
+
+### Pentagon Unaccounted Funds: $2.46 trillion {#sec-pentagon_unaccounted_funds}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Funds the Department of Defense has failed to account for across seven consecutive failed audits
+
+**Source**: [@pentagon-unaccounted-2-5t]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*✓ High confidence*
 
 :::
 

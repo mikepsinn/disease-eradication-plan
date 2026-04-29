@@ -1,0 +1,237 @@
+---
+title: "The People of Earth v. Their Governments"
+subtitle: "An Indictment for Negligent Mass Homicide, on Three Counts"
+description: An accounting of deaths attributable to government failure across three categories (war, regulatory delay, and resource misallocation), aggregating prior single-silo literatures into a single body count and proposing a remedy.
+abstract: |
+  Existing literatures count deaths from government failure one silo at a time.
+  Historians count war deaths. Health economists count efficacy-lag deaths. Global
+  health researchers count disease deaths. No prior paper aggregates them. This
+  paper does. We charge the governments of Earth with three categories of negligent
+  homicide spanning 1900 to the present and projecting forward over the disease
+  eradication window: (1) Direct killing through war, conflict, and democide
+  ({{< var war_deaths_since_1900_nounit >}} deaths since 1900); (2) Regulatory
+  delay of safe and effective treatments under the {{< var efficacy_lag_years >}}
+  efficacy lag mandated since 1962 ({{< var existing_drugs_efficacy_lag_deaths_total_nounit >}}
+  deaths in existing-drug delay alone); and (3) Misallocation of resources away
+  from disease treatment, projected to result in
+  {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved_nounit >}} avoidable
+  deaths over the disease eradication window. The aggregate body count is
+  approximately 11.1 billion. Per dollar spent, the defendants killed
+  {{< var type_ii_error_cost_ratio >}} times more people through Type II regulatory
+  errors than they prevented through Type I. The misallocation count is the
+  largest by an order of magnitude. The defendants had the money. They spent it
+  elsewhere. We propose a 1% reallocation of military expenditure as the only
+  remedy commensurate with the offense.
+aliases:
+  - /people-of-earth-v-governments.html
+author:
+  - name: Mike P. Sinn
+    affiliation:
+      name: Institute for Accelerated Medicine
+    roles:
+      - conceptualization
+      - writing – original draft
+    email: mike@warondisease.org
+    corresponding: true
+keywords:
+  - government failure
+  - mortality accounting
+  - regulatory economics
+  - public choice
+  - opportunity cost
+  - efficacy lag
+  - Type II error
+  - democide
+  - clinical trials
+jel:
+  - I18
+  - H56
+  - K23
+  - D72
+  - I11
+image: /assets/og-images/knowledge/appendix/people-of-earth-v-governments-og-retro-academic.jpg
+podcast-image: /assets/podcast/people-of-earth-v-governments-podcast.jpg
+youtube-thumbnail: /assets/podcast/people-of-earth-v-governments-youtube.jpg
+scores:
+  quality: 9
+  value: 10
+  timeliness: 10
+  standalone: 9
+  voice: 9
+  importance: 10
+---
+{{< include /knowledge/includes/setup-parameters.qmd >}}
+
+## Preamble
+
+I, Wishonia, having observed your planet for the past 80 years and your governments for somewhat longer than that, hereby submit the following indictment to the court of common sense.
+
+The defendants are the governments of Earth, collectively. The charges are three counts of negligent mass homicide. The aggravating factor is that the defendants pay their own prosecutors, judges, and juries, then write their own laws about whether anything they do can be called a crime. We will be ignoring this last point because the alternative is to let approximately 11 billion humans die quietly while we file paperwork.
+
+The It's not in
+
+## Count One: Death by War
+
+**Charge:** That the defendants, between 1900 and the present, did willfully and with premeditation engage in the organized killing of approximately {{< var war_deaths_since_1900_nounit >}} of their own employers (the citizenry).
+
+### The Evidence
+
+Since 1900, governments have killed approximately {{< var war_deaths_since_1900_nounit >}} humans through wars, conflicts, genocides, and policy-induced famines [@lost-human-capital-war-cost]. This figure synthesizes Rummel's democide accounting (~264 million), battle deaths (~39 million), and collateral civilian deaths (~30 million), with overlap adjustments [@leitenberg-deaths-wars-2006].
+
+Of these dead, approximately {{< var war_children_killed_since_1900_nounit >}} were children under 18 [@lost-human-capital-war-cost]. The defendants will note that children rarely start wars. The prosecution will not dispute this.
+
+Among the dead were 930,000 doctors, 310,000 scientists, 620,000 engineers, 1.24 million nurses, and 3.1 million teachers [@lost-human-capital-war-cost]. The defendants killed an entire generation of the people whose job was to keep the rest alive, then complained about a shortage of skilled labor.
+
+### Aggravating Circumstances
+
+The defendants currently maintain {{< var nuclear_winter_overkill_factor_nounit >}} times the nuclear capacity required to end civilization [@world-warheads]. They spend {{< var global_military_spending_annual_2024 >}} per year [@sipri-milex-2024] on the capacity for additional killing, equivalent to enough bullets to murder every human on Earth {{< var bullets_per_person_annual_nounit >}} times annually. It requires at most two bullets to kill someone. The defendants are stockpiling at a ratio of approximately {{< var bullets_per_person_annual_nounit >}} bullets to two corpses per person, which suggests either innumeracy or enthusiasm.
+
+The defendants will argue that these weapons are for *deterrence*, not killing. The prosecution accepts this argument as sincere and notes only that the deterrence has not, in fact, deterred. {{< var war_deaths_since_1900_nounit >}} dead people, sorted from a thousand wars, were also deterring something.
+
+### The Defendants Were Warned
+
+In 1961, the supreme commander of Allied forces in WWII, who had personally won a war, gave a televised farewell address to the people of the United States in which he warned that the military-industrial complex would consume the civilization that built it. The defendants gave him a standing ovation, then ignored him for 65 consecutive years.
+
+This is not negligence in the sense of *not knowing*. This is negligence in the sense of *being told, applauding the warning, and proceeding anyway*.
+
+## Count Two: Death by Regulatory Delay
+
+**Charge:** That the defendants, between 1962 and the present, did require an additional {{< var efficacy_lag_years >}} of efficacy testing before letting humans access drugs already proven safe, killing approximately {{< var existing_drugs_efficacy_lag_deaths_total_nounit >}} humans in the resulting waiting period.
+
+### The Evidence
+
+Following the Kefauver-Harris Amendments of 1962, the U.S. Food and Drug Administration began requiring proof of efficacy *in addition* to proof of safety before allowing patient access to new medicines [@peltzman-1973]. The average efficacy lag is {{< var efficacy_lag_years >}}.
+
+During this delay, patients who would have benefited from the eventually-approved drug die instead. Multiplying the {{< var efficacy_lag_years >}} efficacy lag by the affected disease burden, the cumulative historical death toll is approximately {{< var existing_drugs_efficacy_lag_deaths_total_nounit >}} humans [@invisible-graveyard-paper-2025].
+
+That is {{< var efficacy_lag_deaths_911_equivalents >}}, which I will explain to the jury for context. Your species suffered a single attack on a Tuesday in September of 2001 in which {{< var sept_11_deaths >}} humans died. Your defendants responded with an $8 trillion war that lasted twenty years and killed several hundred thousand additional humans, none of them responsible. The death toll from regulatory delay is {{< var efficacy_lag_deaths_911_equivalents >}} of those, and your defendants responded by extending the efficacy requirements to additional drug classes.
+
+### The Asymmetry
+
+The defendants have always been afraid of one specific kind of mistake: approving a drug that turned out to be harmful (a *Type I error*, in their language). They have never been afraid of the other kind of mistake: blocking a drug that turned out to be helpful (a *Type II error*).
+
+The prosecution has calculated the ratio. Even assuming the worst-case Thalidomide-style harm event happens *every single year* (which it does not, because Phase I safety trials catch it), Type II errors kill approximately {{< var type_ii_error_cost_ratio >}} times more people than Type I errors save [@invisible-graveyard-paper-2025].
+
+This is not regulatory caution. This is a system optimized to kill {{< var type_ii_error_cost_ratio >}} people quietly in order to avoid killing one person on the news.
+
+### The Defendants Were Warned
+
+Sam Peltzman published the seminal analysis of efficacy-lag mortality in 1973 [@peltzman-1973]. He concluded that the 1962 amendments killed more people than they saved. The defendants thanked him for his contribution and changed nothing. Subsequent work by Tabarrok, Lichtenberg, Klein, Miller, Bhattacharya, and others reached the same conclusion using different methods. The defendants thanked them for their contributions and changed nothing.
+
+53 years of warnings. {{< var existing_drugs_efficacy_lag_deaths_total_nounit >}} dead. The prosecution submits that "we did not know" is no longer available as a defense.
+
+## Count Three: Death by Misallocation
+
+**Charge:** That the defendants, having access to the funds necessary to prevent disease deaths at scale, did instead allocate those funds to the capacity for additional killing under Count One, with the foreseeable result of approximately {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved_nounit >}} avoidable disease deaths over the disease eradication window.
+
+### The Evidence
+
+Disease kills approximately {{< var global_disease_deaths_per_minute_nounit >}} humans per minute. The defendants spend {{< var military_to_government_clinical_trials_spending_ratio_nounit >}} dollars on the capacity for orphan manufacturing for every one dollar spent on the clinical trials that might cure what is actually killing their citizens.
+
+This is not because the funds are unavailable. The funds are exactly available. The defendants spend {{< var global_military_spending_annual_2024 >}} per year on weaponry. A one percent reallocation would fund {{< var treaty_annual_funding >}} in clinical trials annually [@1-pct-treaty-impact-paper-2025]. The Department of Defense has, by its own admission, "misplaced" {{< var pentagon_unaccounted_funds >}} across seven consecutive failed audits [@pentagon-unaccounted-2-5t]. That figure alone is {{< var pentagon_unaccounted_clinical_trial_years_nounit >}} years of clinical trials at current funding levels.
+
+Under [pragmatic clinical trial protocols](dfda-spec-paper.qmd), trials cost {{< var dfda_pragmatic_trial_cost_per_patient >}} per patient instead of the traditional {{< var traditional_phase3_cost_per_patient >}}, a {{< var dfda_trial_cost_reduction_factor_nounit >}}x cost reduction [@recovery-trial-cost-reduction]. With the treaty's funding redirected through pragmatic protocols, the timeline to clear the disease backlog drops from {{< var status_quo_queue_clearance_years >}} to {{< var dfda_queue_clearance_years >}} [@1-pct-treaty-impact-paper-2025; @dfda-impact-paper-2025].
+
+The cumulative number of preventable deaths over that timeline shift is approximately {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved_nounit >}}, with approximately {{< var dfda_trial_capacity_plus_efficacy_lag_suffering_hours >}} of human suffering [@1-pct-treaty-impact-paper-2025].
+
+These are not metaphors. These refer to specific future humans with specific future plans for next Tuesday.
+
+### The Aggravation
+
+The defendants do not lack the money. The defendants chose to spend the money on the capacity for additional killing, while the people they are tasked with protecting died of curable diseases.
+
+This is what your legal system calls *depraved indifference*: a state of mind in which the defendant knows the consequences of their action, knows the alternative was available, and proceeds anyway. The prosecution submits that there is no other defensible characterization of a budget that allocates {{< var military_to_government_clinical_trials_spending_ratio_nounit >}}-to-1 in favor of murder over medicine while {{< var global_disease_deaths_daily_nounit >}} citizens die per day of the things the medicine would have cured.
+
+## The Aggregate Body Count
+
+| Count | Charge | Body Count | Period |
+|---|---|---|---|
+| One | Direct killing through war, conflict, democide | {{< var war_deaths_since_1900_nounit >}} | 1900-present |
+| Two | Regulatory delay of safe-and-effective drugs | {{< var existing_drugs_efficacy_lag_deaths_total_nounit >}} | 1962-present |
+| Three | Misallocation away from disease treatment | {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved_nounit >}} | Forward-looking, eradication window |
+| | **Aggregate** | **~11.1 billion** | |
+
+For every person the defendants killed directly through war, they will kill approximately 30 more through the combination of regulatory delay and misallocation. The war deaths are the headline. The other counts are the iceberg.
+
+The prosecution wishes to note that this is a conservative tally. It excludes:
+
+1. **Sanctions deaths.** Recent research estimates approximately 38 million deaths over 50 years from economic sanctions, not separately counted here to avoid double-counting with war and misallocation.
+2. **COVID delay deaths.** Estimates ranging from hundreds of thousands to several million globally, attributable to delayed regulatory response during the pandemic.
+3. **Drugs never developed.** The historical efficacy-lag count assumes drugs that were eventually developed and approved. It excludes drugs that were never developed because the regulatory cost made them economically unviable. This exclusion alone may double or triple Count Two.
+4. **Compound effects.** Wars destroyed scientists, doctors, and engineers (Count One) who would have prevented deaths in Counts Two and Three. The counts are sequential, not summative; the actual interaction is multiplicative.
+
+The 11.1 billion figure is therefore a *floor*, not a ceiling.
+
+## Witnesses for the Prosecution
+
+The prosecution calls the defendants' own experts.
+
+**Dwight D. Eisenhower** (United States, 1961). Warned that the military-industrial complex would consume the civilization that built it. Was ignored.
+
+**Sam Peltzman** (University of Chicago, 1973). Documented that the 1962 efficacy amendments killed more people than they saved. Was ignored.
+
+**R.J. Rummel** (University of Hawaii, 1994). Tabulated democide at ~262 million across the 20th century. Was cited but not acted upon.
+
+**Alex Tabarrok** (George Mason University, ongoing). Has written approximately one paper, blog post, or op-ed per week for two decades arguing the FDA kills more people than it saves. Was added to a list and ignored more efficiently.
+
+**Frank Lichtenberg** (Columbia University, ongoing). Documented that pharmaceutical innovations save millions of life-years annually, allowing direct calculation of how many die from each year of regulatory delay. Was politely thanked.
+
+**The Government Accountability Office** (United States, 2023 and seven prior occasions). Reported that the Department of Defense cannot account for {{< var pentagon_unaccounted_funds >}} of taxpayer money [@pentagon-unaccounted-2-5t]. Was given an additional appropriation.
+
+The defense's anticipated rebuttal that no one could have foreseen these consequences is hereby foreclosed. The consequences were foreseen, in print, by named experts, in the defendants' own libraries, with citations.
+
+## The Defense's Anticipated Arguments
+
+The prosecution will preempt the four arguments the defense is most likely to raise.
+
+**Defense Argument 1: "Counterfactuals are speculative."**
+
+The defense will argue that we cannot know how many would have died absent government action, and therefore Counts Two and Three are not provable.
+
+*Rebuttal:* The same defendants accept counterfactual reasoning when calculating their own benefits. The Department of Defense routinely claims credit for "deterring" wars that did not happen. The FDA claims credit for "preventing" thalidomide-style disasters that did not occur. The defendants cannot accept counterfactual benefits and reject counterfactual costs without admitting that their accounting is rhetorical rather than analytical. We are using their own methodology, applied honestly.
+
+**Defense Argument 2: "We had no choice. The other governments were doing it."**
+
+This is a useful argument because all of the defendants can use it simultaneously. The prosecution submits that "I had to commit the crime because the other defendants were committing it" is not a defense recognized in any legal system. It is, however, a fairly accurate description of the dynamic, which is precisely why the proposed remedy involves all defendants reducing their offense by 1% at the same time.
+
+**Defense Argument 3: "Regulation prevents harm."**
+
+This is occasionally true. Phase I safety testing, for example, does in fact catch dangerous drugs before they reach patients. The prosecution does not seek to abolish safety testing. The prosecution seeks the abolition of the *additional* {{< var efficacy_lag_years >}} delay imposed by efficacy testing, during which the drug is known to be safe and unknown to be ineffective, while patients die waiting to find out.
+
+The defense will argue that without the efficacy lag, ineffective drugs would proliferate. The prosecution responds that under the proposed [decentralized FDA](dfda-spec-paper.qmd) [@dfda-spec-paper-2025; @dfda-impact-paper-2025] model, real-time outcome tracking would generate efficacy data orders of magnitude faster than the current system, with the data made public rather than buried in proprietary trial reports. The defense's preferred system optimizes for *not knowing* whether drugs work. Ours optimizes for *knowing*.
+
+**Defense Argument 4: "We are not the relevant actor; markets are."**
+
+The defendants are the actor that allocates {{< var global_military_spending_annual_2024 >}} per year through tax-funded budgetary processes. The defendants are also the actor that determines what counts as an approved drug, what counts as a legal trial design, and what counts as fundable research. Markets allocate the residual after the defendants take their cut and impose their constraints. The defendants cannot simultaneously claim credit for the allocation system and disavow responsibility for what it allocates.
+
+## The Court's Question
+
+The prosecution rests.
+
+The court is asked to consider not whether the defendants are guilty (the body count is conceded; only the framing is in dispute) but what an appropriate remedy looks like.
+
+The prosecution does not seek punishment. The defendants are too large to imprison and too entrenched to dissolve. The prosecution seeks structural relief: a 1% reallocation of military expenditure to clinical trials, perpetuated by a class of bondholders whose financial interests align with the treaty's continuation. See [@iab-paper-2025; @1-pct-treaty-impact-paper-2025] for the mechanism.
+
+This remedy is unusual in that it does not penalize the defendants. It pays them. It pays the legislators who vote for it. It pays the bondholders who fund it. It pays the patients who participate in the trials it enables. Every party to the case is materially better off after the remedy than before.
+
+The prosecution submits that this is the *only* category of remedy ever observed to work on humans, which is why we are using it. The species has spent 10,000 years trying remedies that require humans to be better than they are. None of these remedies have worked, because the species was the same species before and after. We are proposing the first remedy that works *on the species you actually have*.
+
+## The Court's Question to the Reader
+
+The reader is reminded that they are also the jury. The reader is also the prosecution. The reader is, in a meaningful sense, also the victim. The defendants have arranged the procedural rules such that the jury must vote unanimously for relief or none of the parties receives any.
+
+The vote takes 30 seconds. It is located at [warondisease.org](https://warondisease.org). At the global average wage, the opportunity cost of forwarding this paper to one additional juror is approximately {{< var sharing_opportunity_cost >}}. The expected lifetime benefit of the treaty passing, distributed per juror, is approximately {{< var treaty_trajectory_lifetime_income_gain_per_capita >}}. The ratio of expected benefit to opportunity cost is {{< var sharing_upside_downside_ratio_treaty >}} to one.
+
+For the rational juror, refusing to vote is more expensive than voting. The defendants have arranged the procedure such that the jury will mostly refuse anyway, because the procedure is also the dysfunction.
+
+The prosecution rests, again. The verdict is yours.
+
+## Methodological Note
+
+The figures in this paper are drawn from the same parameter model used throughout the [How to End War and Disease](https://manual.warondisease.org) corpus. Each named figure links to its derivation, source citation, and sensitivity analysis in the [Parameters and Calculations appendix](parameters-and-calculations.qmd). All formulas are reproducible. All citations are verifiable. The aggregate body count is built from non-overlapping categories: Count One uses Rummel's democide methodology plus battle and collateral civilian deaths net of overlap; Count Two uses Lichtenberg's pharmaceutical-impact framework applied to the {{< var efficacy_lag_years >}} efficacy lag; Count Three uses the [1% Treaty Impact](../economics/1-pct-treaty-impact.qmd) [@1-pct-treaty-impact-paper-2025] projection model.
+
+This is a *forensic* paper, not a polemic. The voice is alien because the prosecution is alien. The math is human because the dead are human.
+
+---
+
+*This paper is dedicated to the {{< var global_disease_deaths_per_minute_nounit >}} humans who died of preventable causes during the time it took to read it.*

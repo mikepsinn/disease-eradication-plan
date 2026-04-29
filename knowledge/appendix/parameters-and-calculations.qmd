@@ -38,15 +38,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 668 parameters used in the analysis, organized by type:
+This appendix documents all 670 parameters used in the analysis, organized by type:
 
-- External sources (peer-reviewed): 215
-- Calculated values: 319
+- External sources (peer-reviewed): 216
+- Calculated values: 320
 - Core definitions: 134
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (319 parameters) • [External Data Sources](#sec-external) (215 parameters) • [Core Definitions](#sec-definitions) (134 parameters)
+[Calculated Values](#sec-calculated) (320 parameters) • [External Data Sources](#sec-external) (216 parameters) • [Core Definitions](#sec-definitions) (134 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -294,6 +294,7 @@ $$
 
 - [The Apocalypse Markup](../appendix/extinction-surplus.html)
 - [A 1% Treaty](../solution/1-percent-treaty.html)
+- [The People of Earth v. Their Governments](../appendix/people-of-earth-v-governments.html)
 - [The Cost of War](../problem/cost-of-war.html)
 - [Declaration of Optimization](../strategy/declaration-of-optimization.html)
 - [How to Coordinate 10 Million Nonprofits](../strategy/nonprofit-coalition-strategy.html)
@@ -4931,6 +4932,7 @@ $$
 - [Declaration of Optimization](../strategy/declaration-of-optimization.html)
 - [The Most Important Secret in the World](../strategy/call-script.html)
 - [The Planetary Constitutional Convention](../strategy/planetary-constitutional-convention.html)
+- [The People of Earth v. Their Governments](../appendix/people-of-earth-v-governments.html)
 - [About This Manual](../appendix/back-cover.html)
 
 :::
@@ -6230,6 +6232,7 @@ $$
 - [The 1% Treaty: Harnessing Greed to Eradicate Disease](../economics/1-pct-treaty-impact.html)
 - [Recruitment & Propaganda Plan](../appendix/recruitment-and-propaganda-plan.html)
 - [Ubiquitous Pragmatic Trial Impact Analysis: How to Prevent a Year of Death and Suffering for 84 Cents](../appendix/dfda-impact-paper.html)
+- [The People of Earth v. Their Governments](../appendix/people-of-earth-v-governments.html)
 - [The Most Important Secret in the World](../strategy/call-script.html)
 - [Health Dividend](../economics/health-dividend.html)
 - [About This Manual](../appendix/back-cover.html)
@@ -6369,6 +6372,7 @@ $$
 - [A 1% Treaty](../solution/1-percent-treaty.html)
 - [Health Dividend](../economics/health-dividend.html)
 - [The 1% Treaty: Harnessing Greed to Eradicate Disease](../economics/1-pct-treaty-impact.html)
+- [The People of Earth v. Their Governments](../appendix/people-of-earth-v-governments.html)
 - [About This Manual](../appendix/back-cover.html)
 
 :::
@@ -6647,6 +6651,7 @@ $$
 - [Frequently Asked Objections](../appendix/faq.html)
 - [Peace Dividend](../economics/peace-dividend.html)
 - [Campaign Budget: The Legal Bribery Machine](../economics/campaign-budget.html)
+- [The People of Earth v. Their Governments](../appendix/people-of-earth-v-governments.html)
 - [The Optimal Budget Generator: A Causal Inference Protocol for Maximizing Median Health and Wealth Through Public Goods Funding](../appendix/optimal-budget-generator-spec.html)
 
 :::
@@ -7693,6 +7698,7 @@ $$
 **Used in:**
 
 - [The Invisible Graveyard: Quantifying the Mortality Cost of FDA Efficacy Lag](../appendix/invisible-graveyard.html)
+- [The People of Earth v. Their Governments](../appendix/people-of-earth-v-governments.html)
 
 :::
 
@@ -7907,6 +7913,7 @@ $$
 **Used in:**
 
 - [The Invisible Graveyard: Quantifying the Mortality Cost of FDA Efficacy Lag](../appendix/invisible-graveyard.html)
+- [The People of Earth v. Their Governments](../appendix/people-of-earth-v-governments.html)
 - [The Continuous Evidence Generation Protocol: Two-Stage Validation (RWE → Pragmatic Trials)](../appendix/dfda-spec-paper.html)
 - [Declaration of Optimization](../strategy/declaration-of-optimization.html)
 - [The Planetary Constitutional Convention](../strategy/planetary-constitutional-convention.html)
@@ -9287,6 +9294,7 @@ $$
 **Used in:**
 
 - [The Most Important Secret in the World](../strategy/call-script.html)
+- [The People of Earth v. Their Governments](../appendix/people-of-earth-v-governments.html)
 - [The 20 Questions](../strategy/questions.html)
 - [Declaration of Optimization](../strategy/declaration-of-optimization.html)
 - [About This Manual](../appendix/back-cover.html)
@@ -11313,6 +11321,7 @@ $$
 - [The Cautionary Tale of Moronia](../futures/moronia.html)
 - [Declaration of Optimization](../strategy/declaration-of-optimization.html)
 - [Recruitment & Propaganda Plan](../appendix/recruitment-and-propaganda-plan.html)
+- [The People of Earth v. Their Governments](../appendix/people-of-earth-v-governments.html)
 - [Medical Research Spending: The Lie](../appendix/global-government-medical-research-spending.html)
 - [Diagnostic Summary](../problem.html)
 - [Genetic Slavery](../problem/genetic-slavery.html)
@@ -11630,6 +11639,7 @@ $$
 - [The Most Important Secret in the World](../strategy/call-script.html)
 - [A 1% Treaty](../solution/1-percent-treaty.html)
 - [Declaration of Optimization](../strategy/declaration-of-optimization.html)
+- [The People of Earth v. Their Governments](../appendix/people-of-earth-v-governments.html)
 
 :::
 
@@ -13192,6 +13202,50 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-peace_trajectory_total_differential_20yr.qmd >}}
+
+:::
+
+### Pentagon Unaccounted Funds in Clinical Trial Years: 547 years {#sec-pentagon_unaccounted_clinical_trial_years}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Number of years of clinical trial funding at current government spending levels that the Pentagon's unaccounted funds could have provided
+
+**Inputs**:
+
+- [Pentagon Unaccounted Funds](#sec-pentagon_unaccounted_funds) 📊: $2.46 trillion
+- [Annual Global Government Spending on Clinical Trials](#sec-global_government_clinical_trials_spending_annual) 📊: $4.5 billion (95% CI: $3 billion - $6 billion)
+
+$$
+\begin{gathered}
+Years_{pentagon,trials} \\
+= \frac{Funds_{pentagon,unaccounted}}{Spending_{trials,gov}} \\
+= \frac{\$2.46T}{\$4.5B} \\
+= 547
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-pentagon_unaccounted_clinical_trial_years.qmd >}}
+
+{{< include ../figures/sensitivity-table-pentagon_unaccounted_clinical_trial_years.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-pentagon_unaccounted_clinical_trial_years.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-pentagon_unaccounted_clinical_trial_years.qmd >}}
+
+**Used in:**
+
+- [A 1% Treaty](../solution/1-percent-treaty.html)
+- [Declaration of Optimization](../strategy/declaration-of-optimization.html)
+- [The People of Earth v. Their Governments](../appendix/people-of-earth-v-governments.html)
 
 :::
 
@@ -15358,6 +15412,7 @@ $$
 
 - [Recruitment & Propaganda Plan](../appendix/recruitment-and-propaganda-plan.html)
 - [The Most Important Secret in the World](../strategy/call-script.html)
+- [The People of Earth v. Their Governments](../appendix/people-of-earth-v-governments.html)
 - [The Earth Optimization Prize](../strategy/earth-optimization-prize.html)
 
 :::
@@ -15715,6 +15770,7 @@ $$
 **Used in:**
 
 - [Recruitment & Propaganda Plan](../appendix/recruitment-and-propaganda-plan.html)
+- [The People of Earth v. Their Governments](../appendix/people-of-earth-v-governments.html)
 
 :::
 
@@ -15840,6 +15896,7 @@ $$
 - [The 20 Questions](../strategy/questions.html)
 - [The Most Important Secret in the World](../strategy/call-script.html)
 - [The Planetary Constitutional Convention](../strategy/planetary-constitutional-convention.html)
+- [The People of Earth v. Their Governments](../appendix/people-of-earth-v-governments.html)
 
 :::
 
@@ -16407,6 +16464,7 @@ $$
 - [The Legislation Package](../strategy/legislation-package.html)
 - [The Planetary Constitutional Convention](../strategy/planetary-constitutional-convention.html)
 - [Health Dividend](../economics/health-dividend.html)
+- [The People of Earth v. Their Governments](../appendix/people-of-earth-v-governments.html)
 - [The Price of Political Change: A Cost-Benefit Framework for Policy Incentivization](../appendix/cost-of-change-analysis.html)
 - [Algorithmic Public Administration](../appendix/algorithmic-public-administration-paper.html)
 - [Medical Research Spending: The Lie](../appendix/global-government-medical-research-spending.html)
@@ -21943,6 +22001,7 @@ $$
 - [Conclusion](../appendix/conclusion.html)
 - [Please Select an Earth: A) Everyone Gets Rich B) Somalia, but Everywhere](../economics/gdp-trajectories.html)
 - [Health Dividend](../economics/health-dividend.html)
+- [The People of Earth v. Their Governments](../appendix/people-of-earth-v-governments.html)
 
 :::
 
@@ -22814,6 +22873,7 @@ $$
 - [Your FDA Is Unsafe and Ineffective](../problem/fda-is-unsafe-and-ineffective.html)
 - [The 1% Treaty: Harnessing Greed to Eradicate Disease](../economics/1-pct-treaty-impact.html)
 - [Ubiquitous Pragmatic Trial Impact Analysis: How to Prevent a Year of Death and Suffering for 84 Cents](../appendix/dfda-impact-paper.html)
+- [The People of Earth v. Their Governments](../appendix/people-of-earth-v-governments.html)
 - [Frequently Asked Objections](../appendix/faq.html)
 - [Declaration of Optimization](../strategy/declaration-of-optimization.html)
 - [Earth Optimization Protocol v1](../strategy/earth-optimization-protocol-v1.html)
@@ -24695,6 +24755,7 @@ $$
 - [The Cost of War](../problem/cost-of-war.html)
 - [A 1% Treaty](../solution/1-percent-treaty.html)
 - [Declaration of Optimization](../strategy/declaration-of-optimization.html)
+- [The People of Earth v. Their Governments](../appendix/people-of-earth-v-governments.html)
 
 :::
 
@@ -28667,6 +28728,7 @@ dFDA pragmatic trial cost per patient. Uses ADAPTABLE trial ($929) as DELIBERATE
 - [Frequently Asked Objections](../appendix/faq.html)
 - [The Planetary Constitutional Convention](../strategy/planetary-constitutional-convention.html)
 - [Health Dividend](../economics/health-dividend.html)
+- [The People of Earth v. Their Governments](../appendix/people-of-earth-v-governments.html)
 
 :::
 
@@ -28901,6 +28963,7 @@ Regulatory delay for efficacy testing (Phase II/III) post-safety verification. B
 - [The Invisible Graveyard: Quantifying the Mortality Cost of FDA Efficacy Lag](../appendix/invisible-graveyard.html)
 - [Ubiquitous Pragmatic Trial Impact Analysis: How to Prevent a Year of Death and Suffering for 84 Cents](../appendix/dfda-impact-paper.html)
 - [Your FDA Is Unsafe and Ineffective](../problem/fda-is-unsafe-and-ineffective.html)
+- [The People of Earth v. Their Governments](../appendix/people-of-earth-v-governments.html)
 - [Frequently Asked Objections](../appendix/faq.html)
 - [Earth Optimization Protocol v1](../strategy/earth-optimization-protocol-v1.html)
 - [The Continuous Evidence Generation Protocol: Two-Stage Validation (RWE → Pragmatic Trials)](../appendix/dfda-spec-paper.html)
@@ -29788,6 +29851,7 @@ Total global deaths per day from all disease and aging (WHO Global Burden of Dis
 - [How to Coordinate 10 Million Nonprofits](../strategy/nonprofit-coalition-strategy.html)
 - [The Decentralized To-Do List for Humanity](../strategy/humanity-todo-list.html)
 - [Health Dividend](../economics/health-dividend.html)
+- [The People of Earth v. Their Governments](../appendix/people-of-earth-v-governments.html)
 - [The Earth Optimization Prize](../strategy/earth-optimization-prize.html)
 - [API & Data Indexes](../appendix/api-and-data.html)
 
@@ -30111,6 +30175,7 @@ Global military spending in 2024
 - [The Earth Optimization Prize](../strategy/earth-optimization-prize.html)
 - [How to Coordinate 10 Million Nonprofits](../strategy/nonprofit-coalition-strategy.html)
 - [Recruitment & Propaganda Plan](../appendix/recruitment-and-propaganda-plan.html)
+- [The People of Earth v. Their Governments](../appendix/people-of-earth-v-governments.html)
 - [Diagnostic Summary](../problem.html)
 - [Money Comes From a Building and They Use It to Kill People](../economics/central-banks.html)
 - [A 1% Treaty](../solution/1-percent-treaty.html)
@@ -30825,6 +30890,26 @@ Patient willingness to participate in drug trials (44.8% in surveys, 88% when ac
 
 - [NIH Fails to Institute Health](../problem/nih-fails-2-institute-health.html)
 - [A Decentralized FDA](../solution/dfda.html)
+
+:::
+
+### Pentagon Unaccounted Funds: $2.46 trillion {#sec-pentagon_unaccounted_funds}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Funds the Department of Defense has failed to account for across seven consecutive failed audits
+
+**Source**: [@pentagon-unaccounted-2-5t]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*✓ High confidence*
+
+**Used in:**
+
+- [The People of Earth v. Their Governments](../appendix/people-of-earth-v-governments.html)
 
 :::
 
@@ -31557,6 +31642,7 @@ Total deaths in the September 11, 2001 attacks. 2,977 victims (excluding 19 hija
 **Used in:**
 
 - [The Invisible Graveyard: Quantifying the Mortality Cost of FDA Efficacy Lag](../appendix/invisible-graveyard.html)
+- [The People of Earth v. Their Governments](../appendix/people-of-earth-v-governments.html)
 
 :::
 
@@ -31985,6 +32071,7 @@ Phase 3 cost per patient (median from FDA study)
 - [Frequently Asked Objections](../appendix/faq.html)
 - [The 20 Questions](../strategy/questions.html)
 - [Health Dividend](../economics/health-dividend.html)
+- [The People of Earth v. Their Governments](../appendix/people-of-earth-v-governments.html)
 - [The Earth Optimization Prize](../strategy/earth-optimization-prize.html)
 - [Right to Trial & FDA Upgrade Act](../appendix/right-to-trial-fda-upgrade-act.html)
 
@@ -35654,6 +35741,7 @@ Total deaths from wars, conflicts, genocides, and policy-induced famines since 1
 **Used in:**
 
 - [The Cost of War](../problem/cost-of-war.html)
+- [The People of Earth v. Their Governments](../appendix/people-of-earth-v-governments.html)
 - [A 1% Treaty](../solution/1-percent-treaty.html)
 - [Declaration of Optimization](../strategy/declaration-of-optimization.html)
 

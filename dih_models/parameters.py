@@ -1672,6 +1672,33 @@ MILITARY_TO_GOVERNMENT_CLINICAL_TRIALS_SPENDING_RATIO = Parameter(
     latex_symbol=r"Ratio_{mil:gov}",  # LaTeX symbol for equations
 )
 
+PENTAGON_UNACCOUNTED_FUNDS = Parameter(
+    2_460_000_000_000,
+    manual_ref="knowledge/solution/1-percent-treaty.qmd",
+    source_ref=ReferenceID.PENTAGON_UNACCOUNTED_2_5T,
+    source_type=SourceType.EXTERNAL,
+    description="Funds the Department of Defense has failed to account for across seven consecutive failed audits",
+    display_name="Pentagon Unaccounted Funds",
+    unit="USD",
+    distribution="fixed",
+    keywords=["pentagon", "dod", "audit", "misplaced", "unaccounted", "2.46 trillion"],
+    latex_symbol=r"Funds_{pentagon,unaccounted}",
+)
+
+PENTAGON_UNACCOUNTED_CLINICAL_TRIAL_YEARS = Parameter(
+    PENTAGON_UNACCOUNTED_FUNDS / GLOBAL_GOVERNMENT_CLINICAL_TRIALS_SPENDING_ANNUAL,
+    manual_ref="knowledge/solution/1-percent-treaty.qmd",
+    source_ref="",
+    source_type=SourceType.CALCULATED,
+    description="Number of years of clinical trial funding at current government spending levels that the Pentagon's unaccounted funds could have provided",
+    display_name="Pentagon Unaccounted Funds in Clinical Trial Years",
+    unit="years",
+    formula="PENTAGON_UNACCOUNTED_FUNDS / GLOBAL_GOVERNMENT_CLINICAL_TRIALS_SPENDING_ANNUAL",
+    inputs=["PENTAGON_UNACCOUNTED_FUNDS", "GLOBAL_GOVERNMENT_CLINICAL_TRIALS_SPENDING_ANNUAL"],
+    compute=lambda ctx: ctx["PENTAGON_UNACCOUNTED_FUNDS"] / ctx["GLOBAL_GOVERNMENT_CLINICAL_TRIALS_SPENDING_ANNUAL"],
+    latex_symbol=r"Years_{pentagon,trials}",
+)
+
 # ---
 # CENTRAL BANKS CHAPTER: CUMULATIVE SPENDING & CLINICAL TRIAL YEAR CONVERSIONS
 # These stats appear in 2+ places and/or are calculated from other params.
