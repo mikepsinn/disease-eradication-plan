@@ -1659,7 +1659,7 @@ NIH_CLINICAL_TRIALS_SPENDING_PCT = Parameter(
 
 MILITARY_TO_GOVERNMENT_CLINICAL_TRIALS_SPENDING_RATIO = Parameter(
     GLOBAL_MILITARY_SPENDING_ANNUAL_2024 / GLOBAL_GOVERNMENT_CLINICAL_TRIALS_SPENDING_ANNUAL,
-    manual_ref="knowledge/strategy/earth-optimization-prize.qmd",
+    manual_ref="knowledge/economics/central-banks.qmd",
     source_ref="",
     source_type=SourceType.CALCULATED,
     description="Ratio of global military spending to government clinical trials spending",
