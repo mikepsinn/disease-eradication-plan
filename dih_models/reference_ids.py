@@ -51,6 +51,7 @@ class ReferenceID(str, Enum):
     AI_INDEX_REPORT_2025 = "ai-index-report-2025"
     ALESINA1993 = "alesina1993"
     ALEXANDER2009 = "alexander2009"
+    ALLIANZ_RETIREMENT_MONEY_DEATH_2026 = "allianz-retirement-money-death-2026"
     ALPHABET_RD_SPENDING_40B = "alphabet-rd-spending-40b"
     ALZHEIMERS_DEATHS_2_6M_ANNUALLY = "alzheimers-deaths-2-6m-annually"
     AMAZON_RD_SPENDING_85B = "amazon-rd-spending-85b"
