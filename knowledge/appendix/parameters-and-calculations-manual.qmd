@@ -38,15 +38,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 563 parameters used in the analysis, organized by type:
+This appendix documents all 562 parameters used in the analysis, organized by type:
 
 - External sources (peer-reviewed): 182
 - Calculated values: 272
-- Core definitions: 109
+- Core definitions: 108
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (272 parameters) • [External Data Sources](#sec-external) (182 parameters) • [Core Definitions](#sec-definitions) (109 parameters)
+[Calculated Values](#sec-calculated) (272 parameters) • [External Data Sources](#sec-external) (182 parameters) • [Core Definitions](#sec-definitions) (108 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -27671,16 +27671,6 @@ Number of sovereign heads of state/government
 #### Uncertainty Range
 
 **Technical**: Distribution: Fixed
-
-*Core definition*
-
-:::
-
-### Childhood Vaccination Cost per DALY (Estimated): $30 {#sec-childhood_vaccination_cost_per_daly}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Estimated cost per DALY for US childhood vaccination programs. Note: US cost-effectiveness studies primarily use cost per QALY (Quality-Adjusted Life Year) rather than cost per DALY. This estimate is derived from program costs and benefits for comparison purposes only.
 
 *Core definition*
 

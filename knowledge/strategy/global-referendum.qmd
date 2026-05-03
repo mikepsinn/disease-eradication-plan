@@ -32,6 +32,8 @@ Not because they care about those humans. Because they can count.
 
 But the politicians are the secondary audience. The primary audience is you. Right now every human who thinks "obviously we should spend less on murder and more on medicine" also thinks they are the only one. They are not the only one. They are almost everyone. The referendum is the moment {{< var global_registered_voters_nounit >}} humans look up and realize they are {{< var global_registered_voters_nounit >}} humans. That is not a petition. That is a species finding out what it actually wants.
 
+The **International Campaign to End War and Disease** (the Campaign) is the public coalition of humans and organizations signing the 1% Treaty before governments do. The referendum is its public signature layer. Humans are not passive recipients of policy here. They are creating the consent record that governments, courts, funders, and treaty negotiators must answer.
+
 ::: {.content-visible when-format="html"}
 <figure>
 <img src="/assets/images/unrepresentative-democracy/ant-death-spiral.gif" alt="Ants marching in a circular death spiral" />
@@ -43,15 +45,15 @@ But the politicians are the secondary audience. The primary audience is you. Rig
 
 ### The Goal
 
-A website where people say "please stop letting me die of stupid things" in a way that lawyers find convincing.
+A public treaty register where people say "please stop letting me die of stupid things" in a way that lawyers find convincing.
 
 ![The five things you need for a global referendum that politicians can't ignore: real votes, secret votes, fair votes, visible votes, and viral growth.](/assets/images/global-referendum/global-referendum-section-the-goal-bw-academic.jpg)
 
 On Wishonia, we would not need a website for this. We would say "please stop letting me die of stupid things" and then someone would stop letting us die of stupid things. On your planet, this requires cryptographic verification, because your species lies about everything, including whether it wants to be alive. You need mathematical proof that people prefer living. Think about that sentence for a moment. You have built a civilization where "I don't want to die" requires a receipt.
 
-Requirements: the votes have to be real (auditable), the votes have to be secret (privacy-preserving), the system has to work for everyone including people without bank accounts or government IDs (which is most of Earth, a fact that surprises the people with bank accounts), the code has to be open-source so anyone can audit it, and the whole thing has to grow fast enough to matter before your species gets distracted by a new television show.
+Requirements: the public signatures have to be real (auditable), the votes have to be secret (privacy-preserving), the system has to work for everyone including people without bank accounts or government IDs (which is most of Earth, a fact that surprises the people with bank accounts), the code has to be open-source so anyone can audit it, and the whole thing has to grow fast enough to matter before your species gets distracted by a new television show.
 
-Target: **{{< var global_coordination_target_pct >}} of humanity** ({{< var global_registered_voters_nounit >}}+ verified votes). That is the canonical public coordination target in the prize model. The old Chenoweth-style {{< var global_population_activism_threshold_pct >}} threshold is useful as a historical lower bound for when movements become hard to ignore, not as the end-state goal here.
+Target: **{{< var global_coordination_target_pct >}} of humanity** ({{< var global_registered_voters_nounit >}}+ verified public signatures). That is the canonical public coordination target in the prize model. The old Chenoweth-style {{< var global_population_activism_threshold_pct >}} threshold is useful as a historical lower bound for when movements become hard to ignore, not as the end-state goal here.
 
 ## The Voting System
 
@@ -59,7 +61,7 @@ The system uses end-to-end verifiable cryptography. Each voter gets a receipt th
 
 ![Your vote gets encrypted, mixed with everyone else's votes like a cryptographic smoothie, then posted publicly. You can verify yours; nobody knows it's yours.](/assets/images/global-referendum/global-referendum-section-end-to-end-verifiable-system-bw-academic.jpg)
 
-Every ballot published anonymized. Biometric data never leaves your device. All code open-source. The system is designed so that even the people running it can't see how you voted, which makes it more private than your actual elections, where the voting booth has a curtain that stops two feet off the ground and the poll worker is definitely looking at your shoes.
+Every public signature is counted. Every ballot is published anonymized. Biometric data never leaves your device. All code open-source. The system is designed so that even the people running it can't see how you voted, which makes it more private than your actual elections, where the voting booth has a curtain that stops two feet off the ground and the poll worker is definitely looking at your shoes.
 
 ## On Stopping People from Cheating
 
@@ -81,7 +83,7 @@ Even Layer 1 gets you counted. You don't need a passport to say "I would prefer 
 
 Your species downloaded TikTok over 4 billion times to watch strangers twerk. Getting {{< var global_registered_voters_nounit >}} to click "yes" on not dying should be easier. It isn't, because not dying is less entertaining than twerking, but it should be, and that gap between "should be" and "isn't" is the entire marketing problem.
 
-Each person who signs up gets a small referral bonus for bringing the next, funded by [Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd) [@iab-paper-2025]. The modeled blended activation cost is {{< var global_coordination_activation_cost_per_participant >}} per verified participant. For comparison, acquiring a coffee customer costs $5-15. Nike pays $40 to get one person to buy shoes online. You're trying to convince someone to support not dying for less than the cost of a cheap online acquisition. The fact that "not dying" needs a financial incentive to compete with shoes tells you everything about your species that this manual has been trying to tell you. But here we are.
+Each person who signs the public treaty register gets a small referral bonus for bringing the next, funded by [Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd) [@iab-paper-2025]. The modeled blended activation cost is {{< var global_coordination_activation_cost_per_participant >}} per verified participant. For comparison, acquiring a coffee customer costs $5-15. Nike pays $40 to get one person to buy shoes online. You're trying to convince someone to support not dying for less than the cost of a cheap online acquisition. The fact that "not dying" needs a financial incentive to compete with shoes tells you everything about your species that this manual has been trying to tell you. But here we are.
 
 ![Getting someone to support ending disease: $0.75. Getting someone to buy shoes online: $40. You've been spending marketing money wrong.](/assets/images/global-referendum/global-referendum-section-the-money-part-bw-academic.jpg)
 
@@ -93,7 +95,7 @@ The defense: make cheating mathematically impossible, then publish the math. NGO
 
 Participants complete structured learning paths before voting. Higher reward tiers unlock as you learn more. This produces informed participants instead of confused button-clickers, though confused button-clickers who want to not die are also welcome. An uninformed person who clicks "don't let me die" is still more useful than an informed person who clicks nothing, and your planet has a surplus of informed people clicking nothing. You call them "academics."
 
-Legal positioning: non-binding global consultation with country-specific bridges to official mechanisms where feasible. "Non-binding" sounds weak until you remember that every major social change in your history started as non-binding. The suffragettes' petitions were non-binding. So were the civil rights marches. So was the Declaration of Independence, technically, until enough people with guns agreed with it. "Non-binding" is what your politicians call something before they're forced to bind to it.
+Legal positioning: non-binding global consultation and public treaty register with country-specific bridges to official mechanisms where feasible. A public signature is not a formal state signature. It does not create Article I funding obligations. It creates democratic consent, Court legitimacy, and political pressure. "Non-binding" sounds weak until you remember that every major social change in your history started as non-binding. The suffragettes' petitions were non-binding. So were the civil rights marches. So was the Declaration of Independence, technically, until enough people with guns agreed with it. "Non-binding" is what your politicians call something before they're forced to bind to it.
 
 ## Implementation Roadmap
 
@@ -114,7 +116,7 @@ The system works when each person brings more than one person, which is how aval
 
 ## Success Metrics
 
-You'll know it's working when four numbers are right: {{< var global_registered_voters_nounit >}}+ verified participants (the {{< var global_coordination_target_pct >}} target), blended activation cost per verified participant near {{< var global_coordination_activation_cost_per_participant >}} or lower, viral coefficient above 1.0 (each person brings more than one person), and fraud detection above 99% with false positives below 1%. If any of those numbers are wrong, something is broken and you fix it. If all four are right, you've built a machine that converts tens of billions into political pressure at world scale. Nobody has built this before. This is the most surprising part.
+You'll know it's working when four numbers are right: {{< var global_registered_voters_nounit >}}+ verified public signatories (the {{< var global_coordination_target_pct >}} target), blended activation cost per verified participant near {{< var global_coordination_activation_cost_per_participant >}} or lower, viral coefficient above 1.0 (each person brings more than one person), and fraud detection above 99% with false positives below 1%. If any of those numbers are wrong, something is broken and you fix it. If all four are right, you've built a machine that converts tens of billions into political pressure at world scale. Nobody has built this before. This is the most surprising part.
 
 ## Why {{< var global_population_activism_threshold_pct >}} Is A Floor, Not The Goal
 

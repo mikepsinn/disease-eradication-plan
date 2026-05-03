@@ -144,17 +144,19 @@ The dogs need to turn around and notice the banquet. I've been watching them fig
 
 Turn around.
 
+The **International Campaign to End War and Disease** (the Campaign) is the public coalition of humans and organizations signing the 1% Treaty before governments do. Public signatures create democratic consent and coalition legitimacy. Formal state signatures create international-law obligations and move the money. Both matter. They are not the same legal act.
+
 ## The Five Stages
 
 Everything above this heading was the *why*. Everything below it is the *how*. Getting a nonprofit to support the treaty is five concrete actions, performed in order. Each one has a matching artifact in this chapter.
 
-**Stage 1. The organization endorses the treaty.** Logo on [warondisease.org](https://warondisease.org), name on the coalition page, one public statement. Artifacts: [The Outreach Email](#the-outreach-email), [The Endorsement Form](#the-endorsement-form), [This Is Not Lobbying (The Legal Memo)](#this-is-not-lobbying-the-legal-memo), [Objection Handling](#objection-handling) for whoever forwards the "we need to think about this" response.
+**Stage 1. The organization joins the International Campaign to End War and Disease as an organizational signatory of the 1% Treaty.** Logo on [warondisease.org](https://warondisease.org), name on the Campaign page, one public statement. Artifacts: [The Outreach Email](#the-outreach-email), [The Organizational Signatory and Campaign Membership Form](#the-organizational-signatory-and-campaign-membership-form), [This Is Not Lobbying (The Legal Memo)](#this-is-not-lobbying-the-legal-memo), [Objection Handling](#objection-handling) for whoever forwards the "we need to think about this" response.
 
 **Stage 2. The organization embeds the voting widget.** A permanent iframe on the nonprofit's site that keeps converting their warm audience indefinitely. Host credibility transfers to the widget; visitors are pre-qualified because they came to the site about the thing the widget is about. This is the single highest-leverage ask in the chapter, and it goes before the Stage 3 newsletter blast so the blast can point at the embed instead of an external URL. See [Why Your Org Should Help](#why-your-org-should-help) for the pitch.
 
 **Stage 3. The organization shares the treaty with its members.** One newsletter mention, one email, one social post, each linking to the embed on the nonprofit's own site. The distribution list becomes the campaign's distribution list for a single day; the embed catches the long tail after the blast decays. Artifacts: [The Member Activation Email](#the-member-activation-email), [The Social Post Pack](#the-social-post-pack).
 
-**Stage 4. The members sign the treaty** at [warondisease.org](https://warondisease.org) or through the org's embed. Every signature is one more data point in a pressure system pointed at 193 heads of state. The nonprofit does not need to do anything to cause this step; the embed and the member activation email both do it automatically by linking.
+**Stage 4. The members sign the public treaty register** at [warondisease.org](https://warondisease.org) or through the org's embed. Every public signature is one more data point in a pressure system pointed at 193 heads of state. The nonprofit does not need to do anything to cause this step; the embed and the member activation email both do it automatically by linking.
 
 **Stage 5. The members notify their head of state that the signing task is overdue.** At [warondisease.org/tasks](https://warondisease.org/tasks), every head of state has a public page showing their unsigned 1% Treaty task and its cost-of-delay clock. A member looks up their country, clicks "notify," and the head of state receives a polite email from a registered voter in their jurisdiction pointing out that the task is still outstanding. This is the stage that matters, because 193 heads of state are the entire bottleneck and they currently receive approximately zero emails about it.
 
@@ -164,13 +166,13 @@ The rest of this chapter is the "knows what to click" part.
 
 ## Why Your Org Should Help
 
-Every disease-advocacy, peace, or global-health org operates inside the same structural trap: their mission's budget is {{< var military_to_government_clinical_trials_spending_ratio >}}x smaller than the budget that makes their mission harder. This campaign fixes the upstream cause. The voting infrastructure, the attribution dashboard, the embed widget, the legal analysis, the cost-effectiveness modeling, the pre-written outreach copy, and the ongoing coordination are already built and staffed, at warondisease.org, at no cost to any partner org. The one thing the campaign cannot produce on its own is audience reach. That is the only thing a partner org contributes. Every other part of the cost-to-impact equation has been absorbed before the conversation started.
+Every disease-advocacy, peace, or global-health org operates inside the same structural trap: their mission's budget is {{< var military_to_government_clinical_trials_spending_ratio >}}x smaller than the budget that makes their mission harder. The Campaign fixes the upstream cause. The voting infrastructure, the attribution dashboard, the embed widget, the legal analysis, the cost-effectiveness modeling, the pre-written outreach copy, and the ongoing coordination are already built and staffed, at warondisease.org, at no cost to any partner org. The one thing the Campaign cannot produce on its own is audience reach. That is the only thing a partner org contributes. Every other part of the cost-to-impact equation has been absorbed before the conversation started.
 
 So the question for a partner org is narrower than it first appears. It is not "should we take on a new campaign." It is "should we point some of our existing audience at an already-built mission amplifier that compresses our own core problem by a factor of {{< var dfda_trial_capacity_multiplier >}}." The answer in most cases is obvious. The argument below is what to hand the EDs and program officers who want the obvious spelled out.
 
-The argument works for any form of participation: endorse, embed, share, donate staff time, allocate an Ad Grant. Use whichever parts land with whichever audience. Lead with the strongest for that org; most conversations hit two or three.
+The argument works for any form of participation: join the Campaign, sign the public treaty register, embed, share, donate staff time, allocate an Ad Grant. Use whichever parts land with whichever audience. Lead with the strongest for that org; most conversations hit two or three.
 
-**Total time cost: under one hour of staff time.** Endorsement is one form signed by the ED. The embed is one iframe a webmaster pastes into the CMS. The newsletter and social posts are pre-written in this chapter and can be scheduled in a single sitting. First deployment runs about an hour end-to-end across all three org-facing stages, with zero ongoing overhead after the embed goes live. Most objections this pitch hits are time objections. That number is the answer.
+**Total time cost: under one hour of staff time.** Campaign membership is one form signed by the ED. The embed is one iframe a webmaster pastes into the CMS. The newsletter and social posts are pre-written in this chapter and can be scheduled in a single sitting. First deployment runs about an hour end-to-end across all three org-facing stages, with zero ongoing overhead after the embed goes live. Most objections this pitch hits are time objections. That number is the answer.
 
 The pitch has three arguments. Every recipient is at least one of rational, greedy, or altruistic. At least one of these lands.
 
@@ -190,9 +192,9 @@ Most recipients hit two of these, or all three. It does not matter which. The as
 - **Their existing donors are the exact audience that converts.** People who already gave to a health or peace charity are pre-qualified to care about disease eradication. This is not a cold audience.
 - **Seeding a new democratic primitive.** The [wishocratic allocation](/knowledge/solution/wishocracy.qmd) mechanism, where every human votes on public-goods funding priorities, could be extended to all public-goods funding after the treaty passes. If it catches on, it could reshape how global public goods are funded for the rest of human history. The orgs that helped seed it in the largest global referendum ever conducted get to point at that record indefinitely.
 - **Peer-org network effect.** Once three or four similar organizations sign on, not signing on starts to look like lagging. Social proof is a real force in the nonprofit sector.
-- **They can aim their unused Google Ad Grant at the campaign (embed-specific).** Every qualifying 501(c)(3) gets $10,000 a month ($120,000 a year) in free Google Ads through the Google Ad Grants program. Most nonprofits do not spend their full allocation because they cannot generate enough targeted landing pages to use it. An embed of the widget on their site gives their Ad Grant a mission-aligned landing page to drive traffic to, converting dormant ad dollars into attributable voters without asking them to touch their operating budget.
+- **They can aim their unused Google Ad Grant at the Campaign (embed-specific).** Every qualifying 501(c)(3) gets $10,000 a month ($120,000 a year) in free Google Ads through the Google Ad Grants program. Most nonprofits do not spend their full allocation because they cannot generate enough targeted landing pages to use it. An embed of the widget on their site gives their Ad Grant a mission-aligned landing page to drive traffic to, converting dormant ad dollars into attributable voters without asking them to touch their operating budget.
 
-**What a decline means.** An org that declines is not choosing inaction; it is choosing something else with the same staff hours. The follow-up question is specific: what is that something else, and what is its cost per life-year saved? {{< var voter_lives_saved >}} and {{< var voter_suffering_hours_prevented >}} suffering-hours are averted per voter acquired, at a cost per DALY of {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}}. Whatever the alternative activity is, it should beat that number, measured the same way. If it does, the campaign wants to hear it and learn from it. If the alternative has never been benchmarked against anything, the decline is an allocation from disease sufferers toward an activity the org has not compared to its cost, and the delay has a body count that accrues during the conversation.
+**What a decline means.** An org that declines is not choosing inaction; it is choosing something else with the same staff hours. The follow-up question is specific: what is that something else, and what is its cost per life-year saved? {{< var voter_lives_saved >}} and {{< var voter_suffering_hours_prevented >}} suffering-hours are averted per voter acquired, at a cost per DALY of {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}}. Whatever the alternative activity is, it should beat that number, measured the same way. If it does, the Campaign wants to hear it and learn from it. If the alternative has never been benchmarked against anything, the decline is an allocation from disease sufferers toward an activity the org has not compared to its cost, and the delay has a body count that accrues during the conversation.
 
 **Outreach cadence.** Send ten outreach emails per week. Target fifty nonprofits in the first ninety days. Health charities, disease-specific foundations, peace organizations, EA orgs, development foundations. At a ten-percent response rate, that is five partnerships. Five partnerships is tens of millions of warm impressions per month. No marginal cost, very large ceiling, three independent routes to yes.
 
@@ -219,6 +221,15 @@ Pick whichever accounting the funder finds least embarrassing to explain at the 
 
 Every 501(c)(3) general counsel raises the lobbying concern within the first thirty seconds of reading this chapter. This section is what they need. It is deliberately written without jokes. Forward it to your board, or paste it into a memo.
 
+### What the words mean
+
+| Term | Meaning |
+|---|---|
+| Public signature | A human or organization signs the public treaty register. This creates democratic consent and coalition legitimacy. |
+| Organizational signatory | A nonprofit, company, union, school, church, or other institution joins the International Campaign to End War and Disease and publicly signs the 1% Treaty as an organizational supporter. |
+| Formal state signature | A government signs or ratifies the treaty through its ordinary international-law process. This creates Article I funding obligations. |
+| Treaty party | A state bound by the treaty. Nonprofits are not treaty parties and do not assume government budget obligations. |
+
 ### What the IRS defines as lobbying
 
 Under IRC §501(c)(3), "lobbying" means attempting to influence *specific domestic legislation* (a bill, resolution, or act before a legislative body). The IRS applies two tests:
@@ -226,17 +237,17 @@ Under IRC §501(c)(3), "lobbying" means attempting to influence *specific domest
 - **Direct lobbying.** Communicating with a legislator about specific legislation and expressing a view on it.
 - **Grassroots lobbying.** Communicating with the public about specific legislation, expressing a view, and including a call to action directed at legislators.
 
-The 1% Treaty campaign meets neither definition.
+The Campaign's public-signature work meets neither definition.
 
 ### Why treaty advocacy is not lobbying
 
 **The treaty is not domestic legislation.** The 1% Treaty is a proposed international agreement between sovereign nations. It is not a bill before any domestic legislative body. Under IRS guidelines this is categorized as issue advocacy, not lobbying.
 
-**The campaign does not ask anything of domestic legislators.** The ask is directed at heads of state, who sign international agreements as executives, not legislators. There is no "call your congressperson" component. No specific domestic legislation is referenced.
+**The Campaign does not ask anything of domestic legislators.** The ask is directed at heads of state, who sign international agreements as executives, not legislators. There is no "call your congressperson" component. No specific domestic legislation is referenced.
 
-**The campaign does not support or oppose candidates.** The accountability dashboard at [warondisease.org/tasks](https://warondisease.org/tasks) tracks treaty signature status by head of state. This is functionally identical to how Transparency International publishes corruption indices by country. Publishing factual information about government performance is core 501(c)(3) educational activity.
+**The Campaign does not support or oppose candidates.** The accountability dashboard at [warondisease.org/tasks](https://warondisease.org/tasks) tracks treaty signature status by head of state. This is functionally identical to how Transparency International publishes corruption indices by country. Publishing factual information about government performance is core 501(c)(3) educational activity.
 
-**Even if classified as lobbying, it would be permitted.** 501(c)(3) organizations can lobby up to 20% of their budget under the 501(h) election. A treaty endorsement is vastly below any threshold any interpretation could trigger.
+**Even if classified as lobbying, it would be permitted.** 501(c)(3) organizations can lobby up to 20% of their budget under the 501(h) election. A public treaty signature and organizational signature are vastly below any threshold any interpretation could trigger.
 
 ### Historical precedent
 
@@ -248,9 +259,9 @@ Multiple 501(c)(3) organizations actively campaign for international treaties. T
 
 | Question | Answer |
 |---|---|
-| Does the campaign promote specific domestic legislation? | No. The treaty is an international agreement. |
-| Does the campaign ask anything of senators or congresspeople? | No. The ask is directed at heads of state. |
-| Does the campaign support or oppose candidates? | No. It tracks treaty status by nation. |
+| Does the Campaign promote specific domestic legislation? | No. The treaty is an international agreement. |
+| Does the Campaign ask anything of senators or congresspeople? | No. The ask is directed at heads of state. |
+| Does the Campaign support or oppose candidates? | No. It tracks treaty status by nation. |
 | Has any 501(c)(3) lost status for treaty advocacy? | No, not once in recorded history. |
 | Would this qualify as lobbying under the broadest possible definition? | No. And even if it did, 501(c)(3)s can lobby up to 20% of budget under 501(h). |
 
@@ -261,19 +272,19 @@ For additional legal context, see the [legal framework](../legal/legal-framework
 The first and usually only email sent to a nonprofit. One shot, all three asks, everything attached. No escalating commitment, no follow-up campaign to chase them across Stages 1 through 3. They do it or they don't. Customize the bracketed fields and delete this line before sending.
 
 ::: {.callout-note icon=false}
-**Subject:** [Org Name] + 1% Treaty: full package, under an hour of staff time
+**Subject:** Join the International Campaign to End War and Disease: full package, under an hour
 
 Hi [Name],
 
 [Org Name]'s work on [their focus area] is directly relevant to something we're building.
 
-The 1% Treaty is a proposal for all nations to simultaneously redirect 1% of military spending ({{< var treaty_annual_funding >}}) to pragmatic clinical trials. Every nation cuts equally, so no country's military capability changes relative to any other. Trial capacity increases {{< var dfda_trial_capacity_multiplier >}}. The backlog of {{< var diseases_without_effective_treatment_nounit >}} untreated diseases drops from {{< var status_quo_queue_clearance_years_nounit >}} years to {{< var dfda_queue_clearance_years_nounit >}} years. Whatever condition [Org Name]'s community is affected by is almost certainly in that backlog.
+The International Campaign to End War and Disease is building the public signature layer for the 1% Treaty, a proposal for all nations to simultaneously redirect 1% of military spending ({{< var treaty_annual_funding >}}) to pragmatic clinical trials. Every nation cuts equally, so no country's military capability changes relative to any other. Trial capacity increases {{< var dfda_trial_capacity_multiplier >}}. The backlog of {{< var diseases_without_effective_treatment_nounit >}} untreated diseases drops from {{< var status_quo_queue_clearance_years_nounit >}} years to {{< var dfda_queue_clearance_years_nounit >}} years. Whatever condition [Org Name]'s community is affected by is almost certainly in that backlog.
 
 **The proposal, in three parts, under an hour of staff time total:**
 
-1. **Endorse.** Sign the attached endorsement form. [Org Name]'s logo appears on the coalition page at warondisease.org and locks in founding-member status. About 15 minutes of ED time.
+1. **Join and sign.** Sign the attached Organizational Signatory and Campaign Membership Form. [Org Name]'s logo appears on the Campaign page at warondisease.org and locks in founding-member status. About 15 minutes of ED time.
 2. **Embed + aim your Ad Grant at it.** Paste the attached iframe snippet into your site. The attached pre-built Google Ads campaign (full template at [Google Ads Campaign Template](../appendix/google-ads-campaign-template.qmd)) drops into [Org Name]'s existing $120K/year Google Ad Grant and points it at the embed. Converts passively from day one, zero ongoing overhead. About 30 minutes for a webmaster, plus 20 minutes loading the Ad Grant campaign (or share OAuth access and the campaign is loaded for you).
-3. **Share once.** Use the attached pre-written newsletter and three social posts. They link to the embed on your own site. About 15 minutes to schedule.
+3. **Share once.** Use the attached pre-written newsletter and three social posts asking members to sign the public treaty register. They link to the embed on your own site. About 15 minutes to schedule.
 
 **The trade.** One hour of [Org Name]'s staff time buys permanent attribution to every voter the channel delivers from now until the treaty passes. Each voter counts as {{< var voter_lives_saved >}} saved and {{< var voter_suffering_hours_prevented >}} suffering-hours averted if the treaty passes. Concrete floor: once the embed is live, [Org Name]'s existing Google Ad Grant ($10K/month, $120K/year in free Google Ads that most 501(c)(3)s leave on the table for lack of mission-aligned landing pages) pointed at the embed can deliver verified voters every year at middle-of-road conversion economics. Newsletter and social reach stack on top. No other action [Org Name] takes this year comes close to that leverage.
 
@@ -285,7 +296,7 @@ The 1% Treaty is a proposal for all nations to simultaneously redirect 1% of mil
 
 **Attached:**
 
-- Endorsement form
+- Organizational Signatory and Campaign Membership Form
 - Embed code snippet (three lines of HTML)
 - Newsletter template + three social posts
 - Pre-built Google Ads campaign (ad copy, keywords, targeting, bidding strategy) for [Org Name]'s existing $10K/month Google Ad Grant. Full template: [Google Ads Campaign Template](../appendix/google-ads-campaign-template.qmd). Load in about 20 minutes, or share OAuth access and we load it for you
@@ -295,7 +306,7 @@ The 1% Treaty is a proposal for all nations to simultaneously redirect 1% of mil
 
 Full treaty text: [The 1% Treaty (Articles)](../solution/1-percent-treaty.qmd). Impact analysis: [Economic Impact of the 1% Treaty](../economics/1-pct-treaty-impact.qmd). Leader accountability dashboard: <https://warondisease.org/tasks>.
 
-If [Org Name] is doing this, any blocker on finishing all three items this week? If [Org Name] is not doing this, what is your team doing instead that beats {{< var voter_lives_saved >}} saved per voter acquired on a cost-per-DALY basis? The campaign genuinely wants to know. If there is a better allocation, we want to learn from it.
+If [Org Name] is doing this, any blocker on finishing all three items this week? If [Org Name] is not doing this, what is your team doing instead that beats {{< var voter_lives_saved >}} saved per voter acquired on a cost-per-DALY basis? The Campaign genuinely wants to know. If there is a better allocation, we want to learn from it.
 
 [Your name]
 [Your role]
@@ -307,11 +318,11 @@ If [Org Name] is doing this, any blocker on finishing all three items this week?
 The email for Stage 3. The nonprofit drops this into its existing newsletter or sends it as a one-off to its list. Customize the bracketed fields.
 
 ::: {.callout-note icon=false}
-**Subject:** The most important 30 seconds of your week
+**Subject:** Sign the public treaty register
 
-[Org Name] has joined a global coalition endorsing the 1% Treaty, a proposal to redirect 1% of military spending to pragmatic clinical trials. We're asking for 30 seconds of your time, in two clicks.
+[Org Name] has joined the International Campaign to End War and Disease as an organizational signatory of the 1% Treaty, a proposal to redirect 1% of military spending to pragmatic clinical trials. We're asking for 30 seconds of your time, in two clicks.
 
-**Click 1: Sign the treaty at [warondisease.org](https://warondisease.org).** Your signature is one of the data points telling 193 heads of state that the public is paying attention.
+**Click 1: Sign the public treaty register at [warondisease.org](https://warondisease.org).** Your signature is one of the data points telling 193 heads of state that the public is not waiting for permission.
 
 **Click 2: Notify your head of state at [warondisease.org/tasks](https://warondisease.org/tasks).** Find your country, see the overdue signing task, click the notify button. Your head of state receives a polite email explaining that a registered voter has noticed the task is still outstanding.
 
@@ -353,9 +364,9 @@ Three short posts and one long post for Stage 3. Schedule them in your CMS; pin 
 >
 > The 1% Treaty proposes a simultaneous 1% reduction in military spending across all signatory nations, redirected to pragmatic clinical trials. Because every nation cuts equally, no country's military capability changes relative to any other. The balance stays identical. But {{< var treaty_annual_funding >}} per year frees up for clinical research.
 >
-> [Org Name] has endorsed the treaty and is asking our community to do two things:
+> [Org Name] has joined the International Campaign to End War and Disease as an organizational signatory of the 1% Treaty. We are asking our community to do two things:
 >
-> 1. Sign at warondisease.org (10 seconds)
+> 1. Sign the public treaty register at warondisease.org (10 seconds)
 > 2. Notify your head of state at warondisease.org/tasks (20 seconds)
 >
 > That is the entire ask. 30 seconds. Please share with anyone who also doesn't want to die of a preventable disease.
@@ -378,16 +389,16 @@ Generic structure, for anyone curious what gets pasted:
 
 The real version arrives with `{ORG-SLUG}` replaced and a copy-to-clipboard button, at `warondisease.org/organizations/[id]` once the org is approved. Paste into the target page's CMS. Drop-in anywhere: a dedicated campaign page, a sidebar on the homepage, a take-action tab. The widget is responsive and converts passively; nothing else is required for attribution to start flowing.
 
-## The Endorsement Form
+## The Organizational Signatory and Campaign Membership Form
 
-The form the organization signs for Stage 1. This becomes the public record of their endorsement.
+The form the organization signs for Stage 1. This becomes the public record of their Campaign membership and organizational signature.
 
 ::: {.callout-note icon=false}
-### 1% Treaty Organizational Endorsement
+### Organizational Signatory and Campaign Membership Form
 
-We, the undersigned organization, endorse the 1% Treaty and support the reallocation of 1% of global military expenditure toward pragmatic clinical trials integrated into standard healthcare delivery.
+We, the undersigned organization, join the International Campaign to End War and Disease as an organizational signatory of the 1% Treaty. We publicly sign the treaty register and support the reallocation of 1% of global military expenditure toward pragmatic clinical trials integrated into standard healthcare delivery.
 
-We endorse this treaty because:
+We sign because:
 
 - {{< var diseases_without_effective_treatment_nounit >}} diseases currently lack effective treatments.
 - At current trial capacity, clearing this backlog takes {{< var status_quo_queue_clearance_years_nounit >}} years.
@@ -408,12 +419,12 @@ Full treaty text: [The 1% Treaty (Articles)](../solution/1-percent-treaty.qmd)
 
 **Organization website:** ___________________________
 
-☐ We consent to our organization's name and logo appearing on warondisease.org as a coalition endorser.
+☐ We consent to our organization's name and logo appearing on warondisease.org as a Campaign member and organizational signatory.
 :::
 
 ## The Funder Proposal Template
 
-For nonprofits that want to raise money from their own foundation contacts to run the campaign through their channels. The nonprofit forwards this template (or a condensed version) to their funders. It replaces the old "fund a coordinator at $X" ask, which in practice is how campaigns raise $100K and spend it on conferences, strategy offsites, and consultants who produce slide decks nobody reads.
+For nonprofits that want to raise money from their own foundation contacts to run the Campaign's voter-acquisition work through their channels. The nonprofit forwards this template (or a condensed version) to their funders. It replaces the old "fund a coordinator at $X" ask, which in practice is how campaigns raise $100K and spend it on conferences, strategy offsites, and consultants who produce slide decks nobody reads.
 
 This template is structured so the funder pays on verified delivery, with explicit exclusions on the waste categories that swallow most coalition grants. Condensed here; expand to full memo length before formal submission.
 
@@ -433,17 +444,17 @@ This template is structured so the funder pays on verified delivery, with explic
 
 Even at aggressive probability discounts on treaty passage, the cost per DALY beats bed nets by orders of magnitude. The full three-accounting-method comparison is in [The Cost-Effectiveness Argument](#the-cost-effectiveness-argument).
 
-**On the per-voter denominator.** Lives-saved-per-voter divides total projected lives saved by the verified majority-of-humanity coordination target, not by the smaller Chenoweth tipping-point benchmark. This is the conservative public attribution: the campaign asks people to build a majority humans can see, so the impact math uses that larger denominator. The {{< var global_population_activism_threshold_pct >}} benchmark remains useful as evidence that political pressure can become decisive before the full target is reached.
+**On the per-voter denominator.** Lives-saved-per-voter divides total projected lives saved by the verified majority-of-humanity coordination target, not by the smaller Chenoweth tipping-point benchmark. This is the conservative public attribution: the public-signature strategy asks people to build a majority humans can see, so the impact math uses that larger denominator. The {{< var global_population_activism_threshold_pct >}} benchmark remains useful as evidence that political pressure can become decisive before the full target is reached.
 
 **What warondisease.org already provides, at no cost to [Org Name].**
 
 - A unique referral URL keyed to [Org Name]. Voters delivered through this link are auto-attributed.
 - The embed widget (three lines of HTML, drop anywhere on the site) and the voting flow it points to.
-- A pre-built Google Ads campaign (ad copy, keywords, targeting, bidding strategy) configured for voter acquisition. Full template: [Google Ads Campaign Template](../appendix/google-ads-campaign-template.qmd). [Org Name] loads it into the org's existing $10K/month Google Ad Grant in about 20 minutes, or shares OAuth access for the campaign team to load it. Most qualifying 501(c)(3)s underuse their Ad Grant allocation for lack of mission-aligned landing pages; the embed plus this pre-built campaign converts that dormant free ad spend into attributable voters.
+- A pre-built Google Ads campaign (ad copy, keywords, targeting, bidding strategy) configured for voter acquisition. Full template: [Google Ads Campaign Template](../appendix/google-ads-campaign-template.qmd). [Org Name] loads it into the org's existing $10K/month Google Ad Grant in about 20 minutes, or shares OAuth access for the Campaign team to load it. Most qualifying 501(c)(3)s underuse their Ad Grant allocation for lack of mission-aligned landing pages; the embed plus this pre-built campaign converts that dormant free ad spend into attributable voters.
 - A live coalition dashboard showing voters delivered by org, cost per voter, and cost per DALY.
 - Voter verification, signature validation, and anti-fraud filtering.
 - Pre-written newsletter and social post templates (in this chapter).
-- The endorsement form, legal memo, and cost-effectiveness argument (in this chapter).
+- The Organizational Signatory and Campaign Membership Form, legal memo, and cost-effectiveness argument (in this chapter).
 - Ongoing maintenance of all of the above.
 
 Setup: email [campaign contact] and receive the referral URL, embed snippet, and dashboard login within 24 hours. No code is written at [Org Name]'s end beyond pasting an iframe. This is why the baseline in the payment structure below is small. Nothing centralized is being rebuilt.
@@ -468,7 +479,7 @@ Funds may not be used for: conferences, retreats, consultants whose outputs are 
 
 **Public reporting.** [Org Name] publishes a monthly campaign dashboard at [org URL]/campaign-dashboard, showing: voters delivered, cost per voter achieved, cost per DALY achieved, cumulative attributable lives saved, and spend by category. Funder and general public can audit in real time. The public dashboard is the accountability mechanism.
 
-**Legal.** See [This Is Not Lobbying (The Legal Memo)](#this-is-not-lobbying-the-legal-memo). No changes to [Org Name]'s 501(c)(3) status result from this campaign. Voter acquisition for a proposed international treaty is issue advocacy, not lobbying.
+**Legal.** See [This Is Not Lobbying (The Legal Memo)](#this-is-not-lobbying-the-legal-memo). No changes to [Org Name]'s 501(c)(3) status result from this Campaign work. Voter acquisition for a proposed international treaty is issue advocacy, not lobbying.
 
 **The ask.** Fund [Org Name] at a $5,000 baseline plus a per-voter rate (anchor: $1.00, negotiable) up to a delivery target of [target] voters within [timeframe]. Maximum funder exposure: $5,000 + (rate × target). At $1/voter: $15,000 for 10,000 voters, $105,000 for 100,000 voters, $1,005,000 for 1,000,000. Delivery is public through the warondisease.org dashboard; the funder pays monthly in arrears against voters actually delivered, never advanced.
 
@@ -482,7 +493,7 @@ Five steps. Do them in order.
 
 **Step 2. Get the first three yeses (weeks 1-3).** Contact the 3-5 warmest relationships first. Use [The Outreach Email](#the-outreach-email). The goal is logos on the coalition page before going wide, because social proof compounds.
 
-**Step 3. Go wide with social proof (weeks 3-8).** Once there are founding members, update the outreach email to include "[X organizations] are already on board, including [names]." Contact 200+ organizations in batches of 50. Track responses in a simple spreadsheet: Org Name, Contact, Date Contacted, Response, Follow-Up Date, Endorsed (Y/N), Logo Received (Y/N).
+**Step 3. Go wide with social proof (weeks 3-8).** Once there are founding members, update the outreach email to include "[X organizations] are already on board, including [names]." Contact 200+ organizations in batches of 50. Track responses in a simple spreadsheet: Org Name, Contact, Date Contacted, Response, Follow-Up Date, Signed (Y/N), Logo Received (Y/N).
 
 **Step 4. Follow up (ongoing).**
 
@@ -493,7 +504,7 @@ Five steps. Do them in order.
 - "We have concerns": offer a call immediately.
 - "What would we need to change?": the most valuable response. Incorporate reasonable feedback; reject changes that gut the substance.
 
-**Step 5. Announce the coalition (months 2-3).** Once there are 10+ endorsements: publish the coalition page with logos, write a press release, have each founding member share with its community, submit to the EA Forum with economist endorsement if available.
+**Step 5. Announce the coalition (months 2-3).** Once there are 10+ organizational signatories: publish the coalition page with logos, write a press release, have each founding member share with its community, submit to the EA Forum with economist sign-on if available.
 
 ## Objection Handling
 
@@ -509,20 +520,20 @@ The International Campaign to Ban Landmines started with one staff member and si
 Send them [This Is Not Lobbying (The Legal Memo)](#this-is-not-lobbying-the-legal-memo). It addresses every IRS concern. Offer a 20-minute call with the board, or a written memo tailored to their specific bylaws.
 
 **"We don't want to link to that website."**
-Link to the treaty text itself. Organizations endorse the treaty Articles, not any particular framing of them. They can use whichever version they are comfortable with.
+Link to the treaty text itself. Organizations sign the public treaty register and publicly support the treaty Articles, not any particular framing of them. They can use whichever version they are comfortable with.
 
 **"We're too small to matter."**
-Every endorsement adds social proof. The first 10 matter more than the next 100. Small organizations that move fast become founding members, which is a permanently better position than large organizations that move slow.
+Every organizational signature adds social proof. The first 10 matter more than the next 100. Small organizations that move fast become founding members, which is a permanently better position than large organizations that move slow.
 
 **"What about our existing campaigns?"**
-This complements existing work and does not replace or compete with anything. End-to-end first deployment is under one hour of staff time across all three org-facing stages: about 15 minutes to endorse, about 30 minutes for a webmaster to paste the embed iframe into the CMS, and about 15 minutes to schedule the pre-written newsletter and social posts from this chapter. After that, the embed converts passively with zero ongoing overhead. The ask is also a potential new-funding unlock: global-health, peace, and policy funders increasingly fund coalition work on this issue, and coalition membership opens eligibility.
+This complements existing work and does not replace or compete with anything. End-to-end first deployment is under one hour of staff time across all three org-facing stages: about 15 minutes to sign, about 30 minutes for a webmaster to paste the embed iframe into the CMS, and about 15 minutes to schedule the pre-written newsletter and social posts from this chapter. After that, the embed converts passively with zero ongoing overhead. The ask is also a potential new-funding unlock: global-health, peace, and policy funders increasingly fund coalition work on this issue, and coalition membership opens eligibility.
 
 **"The numbers seem too good to be true."**
 They are calculated with 95% confidence intervals and 90+ cited sources. The full methodology is transparent in the [parameters and calculations](../appendix/parameters-and-calculations.qmd) appendix. Offer to connect them with an economist reviewer, or invite them to review the model themselves.
 
 ---
 
-That is the whole chapter. The outreach email bundles the full ask (endorse, embed, share) with every artifact attached, so first contact is also last contact for orgs that say yes. If an organization commits, confirm the embed is live on their site and the newsletter is scheduled, then move on to the next org. If an organization declines, ask what would change their mind and what they are doing with the same staff hours that beats this on cost per DALY. Incorporate useful feedback; retry in 60 days. If the same objection appears three times in a week, update the outreach email to preempt it.
+That is the whole chapter. The outreach email bundles the full ask (sign, embed, share) with every artifact attached, so first contact is also last contact for orgs that say yes. If an organization commits, confirm the embed is live on their site and the newsletter is scheduled, then move on to the next org. If an organization declines, ask what would change their mind and what they are doing with the same staff hours that beats this on cost per DALY. Incorporate useful feedback; retry in 60 days. If the same objection appears three times in a week, update the outreach email to preempt it.
 
 The bottleneck between here and {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} averted is not the math, the legal analysis, the templates, or the treaty itself. It is the number of organizations that have opened the conversation with their members. That number is a function of how many outreach emails get sent this week.
 
