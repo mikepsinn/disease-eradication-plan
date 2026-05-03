@@ -38,15 +38,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 33 parameters used in the analysis, organized by type:
+This appendix documents all 49 parameters used in the analysis, organized by type:
 
-- External sources (peer-reviewed): 9
-- Calculated values: 14
-- Core definitions: 10
+- External sources (peer-reviewed): 14
+- Calculated values: 19
+- Core definitions: 16
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (14 parameters) • [External Data Sources](#sec-external) (9 parameters) • [Core Definitions](#sec-definitions) (10 parameters)
+[Calculated Values](#sec-calculated) (19 parameters) • [External Data Sources](#sec-external) (14 parameters) • [Core Definitions](#sec-definitions) (16 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -213,6 +213,121 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-dfda_trial_capacity_multiplier.qmd >}}
+
+:::
+
+### Total DALYs from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput: 565 billion DALYs {#sec-dfda_trial_capacity_plus_efficacy_lag_dalys}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Total DALYs averted from the combined dFDA timeline shift. Calculated as annual global DALY burden × eventually avoidable percentage × timeline shift years. Includes both fatal and non-fatal diseases (WHO GBD methodology).
+
+**Inputs**:
+
+- [Global Annual DALY Burden](#sec-global_annual_daly_burden) 📊: 2.88 billion DALYs/year (SE: ±150 million DALYs/year)
+- [Eventually Avoidable DALY Percentage](#sec-eventually_avoidable_daly_pct): 92.6% (95% CI: 50% - 98%)
+- [dFDA Average Total Timeline Shift](#sec-dfda_trial_capacity_plus_efficacy_lag_years) 🔢: 212 years
+
+$$
+\begin{gathered}
+DALYs_{max} \\
+= DALYs_{global,ann} \times Pct_{avoid,DALY} \times T_{accel,max} \\
+= 2.88B \times 92.6\% \times 212 \\
+= 565B
+\end{gathered}
+$$
+where:
+$$
+T_{accel,max} = T_{accel} + T_{lag} = 204 + 8.2 = 212
+$$
+where:
+$$
+\begin{gathered}
+T_{accel} \\
+= T_{first,SQ} \times \left(1 - \frac{1}{k_{capacity}}\right) \\
+= 222 \times \left(1 - \frac{1}{12.3}\right) \\
+= 204
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{first,SQ} \\
+= T_{queue,SQ} \times 0.5 \\
+= 443 \times 0.5 \\
+= 222
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{queue,SQ} \\
+= \frac{N_{untreated}}{Treatments_{new,ann}} \\
+= \frac{6{,}650}{15} \\
+= 443
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{untreated} \\
+= N_{rare} \times 0.95 \\
+= 7{,}000 \times 0.95 \\
+= 6{,}650
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+k_{capacity} \\
+= \frac{N_{fundable,dFDA}}{Slots_{curr}} \\
+= \frac{23.4M}{1.9M} \\
+= 12.3
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{fundable,dFDA} \\
+= \frac{Subsidies_{dFDA,ann}}{Cost_{pragmatic,pt}} \\
+= \frac{\$21.8B}{\$929} \\
+= 23.4M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Subsidies_{dFDA,ann} \\
+= Funding_{dFDA,ann} - OPEX_{dFDA} \\
+= \$21.8B - \$40M \\
+= \$21.8B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+OPEX_{dFDA} \\
+= Cost_{platform} + Cost_{staff} + Cost_{infra} \\
++ Cost_{regulatory} + Cost_{community} \\
+= \$15M + \$10M + \$8M + \$5M + \$2M \\
+= \$40M
+\end{gathered}
+$$
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-dfda_trial_capacity_plus_efficacy_lag_dalys.qmd >}}
+
+{{< include ../figures/sensitivity-table-dfda_trial_capacity_plus_efficacy_lag_dalys.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-dfda_trial_capacity_plus_efficacy_lag_dalys.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_trial_capacity_plus_efficacy_lag_dalys.qmd >}}
 
 :::
 
@@ -884,9 +999,499 @@ $$
 
 :::
 
+### Total 1% Treaty Campaign Cost: $1 billion {#sec-treaty_campaign_total_cost}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Total treaty campaign cost (100% VICTORY Incentive Alignment Bonds)
+
+**Inputs**:
+
+- [Viral Referendum Budget](#sec-treaty_campaign_viral_referendum_base_case): $250 million (95% CI: $150 million - $410 million)
+- [Political Lobbying Campaign: Direct Lobbying, Super Pacs, Opposition Research, Staff, Legal/Compliance](#sec-treaty_campaign_budget_lobbying): $650 million (95% CI: $325 million - $1.3 billion)
+- [Reserve Fund / Contingency Buffer](#sec-treaty_campaign_budget_reserve): $100 million (95% CI: $20 million - $150 million)
+
+$$
+\begin{gathered}
+Cost_{campaign} \\
+= Budget_{viral,base} + Budget_{lobby,treaty} \\
++ Budget_{reserve} \\
+= \$250M + \$650M + \$100M \\
+= \$1B
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-treaty_campaign_total_cost.qmd >}}
+
+{{< include ../figures/sensitivity-table-treaty_campaign_total_cost.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-treaty_campaign_total_cost.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-treaty_campaign_total_cost.qmd >}}
+
+:::
+
+### Cost per DALY Averted (Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Increased Trial Throughput): $0.00177 {#sec-treaty_cost_per_daly_trial_capacity_plus_efficacy_lag}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Cost per DALY averted from elimination of efficacy lag plus earlier treatment discovery from increased trial throughput. Only counts campaign cost; ignores economic benefits from funding and R&D savings.
+
+**Inputs**:
+
+- [Total 1% Treaty Campaign Cost](#sec-treaty_campaign_total_cost) 🔢: $1 billion
+- [Total DALYs from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput](#sec-dfda_trial_capacity_plus_efficacy_lag_dalys) 🔢: 565 billion DALYs
+
+$$
+\begin{gathered}
+Cost_{treaty,DALY} \\
+= \frac{Cost_{campaign}}{DALYs_{max}} \\
+= \frac{\$1B}{565B} \\
+= \$0.00177
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{campaign} \\
+= Budget_{viral,base} + Budget_{lobby,treaty} \\
++ Budget_{reserve} \\
+= \$250M + \$650M + \$100M \\
+= \$1B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+DALYs_{max} \\
+= DALYs_{global,ann} \times Pct_{avoid,DALY} \times T_{accel,max} \\
+= 2.88B \times 92.6\% \times 212 \\
+= 565B
+\end{gathered}
+$$
+where:
+$$
+T_{accel,max} = T_{accel} + T_{lag} = 204 + 8.2 = 212
+$$
+where:
+$$
+\begin{gathered}
+T_{accel} \\
+= T_{first,SQ} \times \left(1 - \frac{1}{k_{capacity}}\right) \\
+= 222 \times \left(1 - \frac{1}{12.3}\right) \\
+= 204
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{first,SQ} \\
+= T_{queue,SQ} \times 0.5 \\
+= 443 \times 0.5 \\
+= 222
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{queue,SQ} \\
+= \frac{N_{untreated}}{Treatments_{new,ann}} \\
+= \frac{6{,}650}{15} \\
+= 443
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{untreated} \\
+= N_{rare} \times 0.95 \\
+= 7{,}000 \times 0.95 \\
+= 6{,}650
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+k_{capacity} \\
+= \frac{N_{fundable,dFDA}}{Slots_{curr}} \\
+= \frac{23.4M}{1.9M} \\
+= 12.3
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{fundable,dFDA} \\
+= \frac{Subsidies_{dFDA,ann}}{Cost_{pragmatic,pt}} \\
+= \frac{\$21.8B}{\$929} \\
+= 23.4M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Subsidies_{dFDA,ann} \\
+= Funding_{dFDA,ann} - OPEX_{dFDA} \\
+= \$21.8B - \$40M \\
+= \$21.8B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+OPEX_{dFDA} \\
+= Cost_{platform} + Cost_{staff} + Cost_{infra} \\
++ Cost_{regulatory} + Cost_{community} \\
+= \$15M + \$10M + \$8M + \$5M + \$2M \\
+= \$40M
+\end{gathered}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-treaty_cost_per_daly_trial_capacity_plus_efficacy_lag.qmd >}}
+
+{{< include ../figures/sensitivity-table-treaty_cost_per_daly_trial_capacity_plus_efficacy_lag.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-treaty_cost_per_daly_trial_capacity_plus_efficacy_lag.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-treaty_cost_per_daly_trial_capacity_plus_efficacy_lag.qmd >}}
+
+:::
+
+### Expected Cost per DALY (Risk-Adjusted): $0.177 {#sec-treaty_expected_cost_per_daly}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Expected cost per DALY accounting for political success probability uncertainty. Monte Carlo samples from beta(0.1%, 10%) distribution. At the conservative 1% estimate, this is still more cost-effective than bed nets ($89.0/DALY).
+
+**Inputs**:
+
+- [Cost per DALY Averted (Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Increased Trial Throughput)](#sec-treaty_cost_per_daly_trial_capacity_plus_efficacy_lag) 🔢: $0.00177
+- [Political Success Probability](#sec-political_success_probability) 📊: 1% (95% CI: 0.1% - 10%)
+
+$$
+\begin{gathered}
+E[Cost_{DALY}] \\
+= \frac{Cost_{treaty,DALY}}{P_{success}} \\
+= \frac{\$0.00177}{1\%} \\
+= \$0.177
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{treaty,DALY} \\
+= \frac{Cost_{campaign}}{DALYs_{max}} \\
+= \frac{\$1B}{565B} \\
+= \$0.00177
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{campaign} \\
+= Budget_{viral,base} + Budget_{lobby,treaty} \\
++ Budget_{reserve} \\
+= \$250M + \$650M + \$100M \\
+= \$1B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+DALYs_{max} \\
+= DALYs_{global,ann} \times Pct_{avoid,DALY} \times T_{accel,max} \\
+= 2.88B \times 92.6\% \times 212 \\
+= 565B
+\end{gathered}
+$$
+where:
+$$
+T_{accel,max} = T_{accel} + T_{lag} = 204 + 8.2 = 212
+$$
+where:
+$$
+\begin{gathered}
+T_{accel} \\
+= T_{first,SQ} \times \left(1 - \frac{1}{k_{capacity}}\right) \\
+= 222 \times \left(1 - \frac{1}{12.3}\right) \\
+= 204
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{first,SQ} \\
+= T_{queue,SQ} \times 0.5 \\
+= 443 \times 0.5 \\
+= 222
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{queue,SQ} \\
+= \frac{N_{untreated}}{Treatments_{new,ann}} \\
+= \frac{6{,}650}{15} \\
+= 443
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{untreated} \\
+= N_{rare} \times 0.95 \\
+= 7{,}000 \times 0.95 \\
+= 6{,}650
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+k_{capacity} \\
+= \frac{N_{fundable,dFDA}}{Slots_{curr}} \\
+= \frac{23.4M}{1.9M} \\
+= 12.3
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{fundable,dFDA} \\
+= \frac{Subsidies_{dFDA,ann}}{Cost_{pragmatic,pt}} \\
+= \frac{\$21.8B}{\$929} \\
+= 23.4M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Subsidies_{dFDA,ann} \\
+= Funding_{dFDA,ann} - OPEX_{dFDA} \\
+= \$21.8B - \$40M \\
+= \$21.8B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+OPEX_{dFDA} \\
+= Cost_{platform} + Cost_{staff} + Cost_{infra} \\
++ Cost_{regulatory} + Cost_{community} \\
+= \$15M + \$10M + \$8M + \$5M + \$2M \\
+= \$40M
+\end{gathered}
+$$
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-treaty_expected_cost_per_daly.qmd >}}
+
+{{< include ../figures/sensitivity-table-treaty_expected_cost_per_daly.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-treaty_expected_cost_per_daly.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-treaty_expected_cost_per_daly.qmd >}}
+
+:::
+
+### Expected Cost-Effectiveness vs Bed Nets Multiplier: 503x {#sec-treaty_expected_vs_bed_nets_multiplier}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Expected value multiplier vs bed nets (accounts for political uncertainty at 1% success rate)
+
+**Inputs**:
+
+- [Bed Nets Cost per DALY](#sec-bed_nets_cost_per_daly) 📊: $89 (95% CI: $78 - $100)
+- [Expected Cost per DALY (Risk-Adjusted)](#sec-treaty_expected_cost_per_daly) 🔢: $0.177
+
+$$
+\begin{gathered}
+E[k_{nets}] \\
+= \frac{Cost_{nets}}{E[Cost_{DALY}]} \\
+= \frac{\$89}{\$0.177} \\
+= 503
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+E[Cost_{DALY}] \\
+= \frac{Cost_{treaty,DALY}}{P_{success}} \\
+= \frac{\$0.00177}{1\%} \\
+= \$0.177
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{treaty,DALY} \\
+= \frac{Cost_{campaign}}{DALYs_{max}} \\
+= \frac{\$1B}{565B} \\
+= \$0.00177
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{campaign} \\
+= Budget_{viral,base} + Budget_{lobby,treaty} \\
++ Budget_{reserve} \\
+= \$250M + \$650M + \$100M \\
+= \$1B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+DALYs_{max} \\
+= DALYs_{global,ann} \times Pct_{avoid,DALY} \times T_{accel,max} \\
+= 2.88B \times 92.6\% \times 212 \\
+= 565B
+\end{gathered}
+$$
+where:
+$$
+T_{accel,max} = T_{accel} + T_{lag} = 204 + 8.2 = 212
+$$
+where:
+$$
+\begin{gathered}
+T_{accel} \\
+= T_{first,SQ} \times \left(1 - \frac{1}{k_{capacity}}\right) \\
+= 222 \times \left(1 - \frac{1}{12.3}\right) \\
+= 204
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{first,SQ} \\
+= T_{queue,SQ} \times 0.5 \\
+= 443 \times 0.5 \\
+= 222
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{queue,SQ} \\
+= \frac{N_{untreated}}{Treatments_{new,ann}} \\
+= \frac{6{,}650}{15} \\
+= 443
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{untreated} \\
+= N_{rare} \times 0.95 \\
+= 7{,}000 \times 0.95 \\
+= 6{,}650
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+k_{capacity} \\
+= \frac{N_{fundable,dFDA}}{Slots_{curr}} \\
+= \frac{23.4M}{1.9M} \\
+= 12.3
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{fundable,dFDA} \\
+= \frac{Subsidies_{dFDA,ann}}{Cost_{pragmatic,pt}} \\
+= \frac{\$21.8B}{\$929} \\
+= 23.4M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Subsidies_{dFDA,ann} \\
+= Funding_{dFDA,ann} - OPEX_{dFDA} \\
+= \$21.8B - \$40M \\
+= \$21.8B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+OPEX_{dFDA} \\
+= Cost_{platform} + Cost_{staff} + Cost_{infra} \\
++ Cost_{regulatory} + Cost_{community} \\
+= \$15M + \$10M + \$8M + \$5M + \$2M \\
+= \$40M
+\end{gathered}
+$$
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-treaty_expected_vs_bed_nets_multiplier.qmd >}}
+
+{{< include ../figures/sensitivity-table-treaty_expected_vs_bed_nets_multiplier.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-treaty_expected_vs_bed_nets_multiplier.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-treaty_expected_vs_bed_nets_multiplier.qmd >}}
+
+:::
+
 ## External Data Sources {#sec-external}
 
 Parameters sourced from peer-reviewed publications, institutional databases, and authoritative reports.
+
+### Bed Nets Cost per DALY: $89 {#sec-bed_nets_cost_per_daly}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+GiveWell cost per DALY for insecticide-treated bed nets (midpoint estimate, range $78-100). DALYs (Disability-Adjusted Life Years) measure disease burden by combining years of life lost and years lived with disability. Bed nets prevent malaria deaths and are considered a gold standard benchmark for cost-effective global health interventions - if an intervention costs less per DALY than bed nets, it's exceptionally cost-effective. GiveWell synthesizes peer-reviewed academic research with transparent, rigorous methodology and extensive external expert review.
+
+**Source**: [@givewell-cost-per-life-saved]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$78, $100] • Distribution: Normal
+
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between $78 and $100 (±12%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The normal distribution means values cluster around the center with equal chances of being higher or lower.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-bed_nets_cost_per_daly.qmd >}}
+
+*✓ High confidence • 📊 Peer-reviewed*
+
+:::
 
 ### Annual Global Clinical Trial Participants: 1.9 million patients/year {#sec-current_trial_slots_available}
 
@@ -909,6 +1514,18 @@ Annual global clinical trial participants (IQVIA 2022: 1.9M post-COVID normaliza
 {{< include ../figures/distribution-current_trial_slots_available.qmd >}}
 
 *✓ High confidence*
+
+:::
+
+### Deworming Cost per DALY: $55 {#sec-deworming_cost_per_daly}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Cost per DALY for deworming programs (range $28-82, midpoint estimate). GiveWell notes this 2011 estimate is outdated and their current methodology focuses on long-term income effects rather than short-term health DALYs.
+
+**Source**: [@deworming-cost-per-daly]
+
+*? Low confidence*
 
 :::
 
@@ -953,6 +1570,26 @@ Regulatory delay for efficacy testing (Phase II/III) post-safety verification. B
 {{< include ../figures/distribution-efficacy_lag_years.qmd >}}
 
 *~ Medium confidence • 📊 Peer-reviewed • Updated 2021*
+
+:::
+
+### Global Annual DALY Burden: 2.88 billion DALYs/year {#sec-global_annual_daly_burden}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Global annual DALY burden from all diseases and injuries (WHO/IHME Global Burden of Disease 2021). Includes both YLL (years of life lost) and YLD (years lived with disability) from all causes.
+
+**Source**: [@ihme-gbd-2021]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Normal (SE: 150 million DALYs/year)
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_annual_daly_burden.qmd >}}
+
+*✓ High confidence • 📊 Peer-reviewed*
 
 :::
 
@@ -1056,6 +1693,30 @@ Annual life-years saved by pharmaceutical innovations globally. Lichtenberg (201
 
 :::
 
+### Political Success Probability: 1% {#sec-political_success_probability}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Estimated probability of treaty ratification and sustained implementation. Central estimate 1% is conservative. This assumes 99% chance of failure. 
+
+**Source**: [@icbl-ottawa-treaty]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [0.1%, 10%] • Distribution: Beta (SE: 2%)
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between 0.1% and 10% (±495%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The beta distribution means values are bounded and can skew toward one end.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-political_success_probability.qmd >}}
+
+*? Low confidence*
+
+:::
+
 ### Total Number of Rare Diseases Globally: 7,000 diseases {#sec-rare_diseases_count_global}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -1080,6 +1741,18 @@ Total number of rare diseases globally
 
 :::
 
+### Vitamin A Supplementation Cost per DALY: $37 {#sec-vitamin_a_cost_per_daly}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Cost per DALY for vitamin A supplementation programs (India: $23-50; Africa: $40-255; wide variation by region and baseline VAD prevalence). Using India midpoint as conservative estimate.
+
+**Source**: [@vitamin-a-cost-per-daly]
+
+*~ Medium confidence*
+
+:::
+
 ## Core Definitions {#sec-definitions}
 
 Fundamental parameters and constants used throughout the analysis.
@@ -1101,6 +1774,38 @@ Average years of life extension per person saved by pharmaceutical interventions
 #### Input Distribution
 
 {{< include ../figures/distribution-avg_life_extension_per_beneficiary.qmd >}}
+
+*Core definition*
+
+:::
+
+### Childhood Vaccination Cost per DALY (Estimated): $30 {#sec-childhood_vaccination_cost_per_daly}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Estimated cost per DALY for US childhood vaccination programs. Note: US cost-effectiveness studies primarily use cost per QALY (Quality-Adjusted Life Year) rather than cost per DALY. This estimate is derived from program costs and benefits for comparison purposes only.
+
+*Core definition*
+
+:::
+
+### Court of Humanity Build Cost: $30 million {#sec-court_build_cost}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+One-time cost to build the Court of Humanity. Range reflects digital-first institutional design (no physical courtrooms, no detention, AI-assisted evidence triage, cryptographic provenance, stratified random jury infrastructure). Lower bound: minimal viable institution. Upper bound: fully-staffed initial operations, roughly 27% of one year of ICC operating budget (the ICC funds physical courtrooms, detention, and 425+ staff).
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$10 million, $50 million] • Distribution: Lognormal
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between $10 million and $50 million (±67%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-court_build_cost.qmd >}}
 
 *Core definition*
 
@@ -1230,6 +1935,28 @@ Decentralized Framework for Drug Assessment staff costs (minimal, AI-assisted)
 
 :::
 
+### Eventually Avoidable DALY Percentage: 92.6% {#sec-eventually_avoidable_daly_pct}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Percentage of DALYs that are eventually avoidable with sufficient biomedical research. Uses same methodology as EVENTUALLY_AVOIDABLE_DEATH_PCT. Most non-fatal chronic conditions (arthritis, depression, chronic pain) are also addressable through research, so the percentage is similar to deaths.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [50%, 98%] • Distribution: Beta
+
+**What this means**: There's significant uncertainty here. The true value likely falls between 50% and 98% (±26%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The beta distribution means values are bounded and can skew toward one end.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-eventually_avoidable_daly_pct.qmd >}}
+
+*Core definition*
+
+:::
+
 ### IAB Political Incentive Funding Percentage: 10% {#sec-iab_political_incentive_funding_pct}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -1239,6 +1966,70 @@ Percentage of treaty funding allocated to Incentive Alignment Bond mechanism for
 #### Uncertainty Range
 
 **Technical**: Distribution: Fixed
+
+*Core definition*
+
+:::
+
+### Political Lobbying Campaign: Direct Lobbying, Super Pacs, Opposition Research, Staff, Legal/Compliance: $650 million {#sec-treaty_campaign_budget_lobbying}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Political lobbying campaign: direct lobbying (US/EU/G20), Super PACs, opposition research, staff, legal/compliance. Budget exceeds combined pharma ($300M/year) and military-industrial complex ($150M/year) lobbying to ensure competitive positioning. Referendum relies on grassroots mobilization and earned media, while lobbying requires matching or exceeding opposition spending for political viability.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$325 million, $1.3 billion] • Distribution: Lognormal
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between $325 million and $1.3 billion (±75%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-treaty_campaign_budget_lobbying.qmd >}}
+
+*Core definition*
+
+:::
+
+### Reserve Fund / Contingency Buffer: $100 million {#sec-treaty_campaign_budget_reserve}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Reserve fund / contingency buffer (10% of total campaign cost). Using industry standard 10% for complex campaigns with potential for unforeseen legal challenges, opposition response, or regulatory delays. Conservative lower bound of $20M (2%) reflects transparent budget allocation and predictable referendum/lobbying costs.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$20 million, $150 million] • Distribution: Lognormal
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between $20 million and $150 million (±65%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-treaty_campaign_budget_reserve.qmd >}}
+
+*Core definition*
+
+:::
+
+### Viral Referendum Budget: $250 million {#sec-treaty_campaign_viral_referendum_base_case}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Viral referendum budget for 280M verified votes (base: $250M realistic with $0.50/vote avg, range: $150M optimistic $0.20/vote to $410M worst-case $1.05/vote). Components: platform ($35M), verification infrastructure (280M × friction × $0.18-0.20), tiered referral payments (varies by virality and marginal cost curve per diffusion theory), marketing seed ($5-15M). Based on PayPal referral economics ($18-36 inflation-adjusted) and biometric verification pricing ($0.15-0.25 at 300M+ scale).
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$150 million, $410 million]
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between $150 million and $410 million (±52%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+#### Input Distribution
+
+{{< include ../figures/distribution-treaty_campaign_viral_referendum_base_case.qmd >}}
 
 *Core definition*
 

@@ -8797,6 +8797,29 @@ TREATY_EXPECTED_VS_BED_NETS_MULTIPLIER = Parameter(
 )
 
 # ---
+# COURT OF HUMANITY COST-EFFECTIVENESS
+# ---
+
+COURT_BUILD_COST = Parameter(
+    30_000_000,  # midpoint of $10M-$50M; Monte Carlo distribution carries uncertainty
+    manual_ref="knowledge/solution/court-of-humanity.qmd",
+    source_type=SourceType.DEFINITION,
+    description="One-time cost to build the Court of Humanity. Range reflects digital-first "
+                "institutional design (no physical courtrooms, no detention, AI-assisted "
+                "evidence triage, cryptographic provenance, stratified random jury "
+                "infrastructure). Lower bound: minimal viable institution. Upper bound: "
+                "fully-staffed initial operations, roughly 27% of one year of ICC operating "
+                "budget (the ICC funds physical courtrooms, detention, and 425+ staff).",
+    display_name="Court of Humanity Build Cost",
+    unit="USD",
+    distribution=DistributionType.LOGNORMAL,
+    confidence_interval=(10_000_000, 50_000_000),
+    confidence="estimated",
+    keywords=["court", "build cost", "court of humanity", "estimate"],
+    latex_symbol=r"Cost_{court}",
+)
+
+# ---
 # HELPER FUNCTIONS
 # ---
 

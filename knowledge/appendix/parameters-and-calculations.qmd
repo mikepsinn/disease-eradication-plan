@@ -38,15 +38,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 670 parameters used in the analysis, organized by type:
+This appendix documents all 671 parameters used in the analysis, organized by type:
 
 - External sources (peer-reviewed): 216
 - Calculated values: 320
-- Core definitions: 134
+- Core definitions: 135
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (320 parameters) • [External Data Sources](#sec-external) (216 parameters) • [Core Definitions](#sec-definitions) (134 parameters)
+[Calculated Values](#sec-calculated) (320 parameters) • [External Data Sources](#sec-external) (216 parameters) • [Core Definitions](#sec-definitions) (135 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -2383,6 +2383,7 @@ $$
 **Used in:**
 
 - [Declaration of Optimization](../strategy/declaration-of-optimization.html)
+- [The People of Earth v. Their Governments](../appendix/people-of-earth-v-governments.html)
 
 :::
 
@@ -4924,6 +4925,7 @@ $$
 - [How to Coordinate 10 Million Nonprofits](../strategy/nonprofit-coalition-strategy.html)
 - [Earth Optimization Protocol v1](../strategy/earth-optimization-protocol-v1.html)
 - [Health Dividend](../economics/health-dividend.html)
+- [The People of Earth v. Their Governments](../appendix/people-of-earth-v-governments.html)
 - [The Earth Optimization Prize](../strategy/earth-optimization-prize.html)
 - [Money Comes From a Building and They Use It to Kill People](../economics/central-banks.html)
 - [A 1% Treaty](../solution/1-percent-treaty.html)
@@ -4932,7 +4934,6 @@ $$
 - [Declaration of Optimization](../strategy/declaration-of-optimization.html)
 - [The Most Important Secret in the World](../strategy/call-script.html)
 - [The Planetary Constitutional Convention](../strategy/planetary-constitutional-convention.html)
-- [The People of Earth v. Their Governments](../appendix/people-of-earth-v-governments.html)
 
 :::
 
@@ -16736,6 +16737,7 @@ $$
 - [Incentive Alignment Bonds](../solution/incentive-alignment-bonds.html)
 - [Legal Architecture](../legal/legal-framework.html)
 - [The Planetary Constitutional Convention](../strategy/planetary-constitutional-convention.html)
+- [The Court of Humanity](../solution/court-of-humanity.html)
 - [Aligning Incentives](../solution/aligning-incentives.html)
 - [Frequently Asked Objections](../appendix/faq.html)
 - [How to Coordinate 10 Million Nonprofits](../strategy/nonprofit-coalition-strategy.html)
@@ -17344,6 +17346,7 @@ $$
 
 - [The 1% Treaty: Harnessing Greed to Eradicate Disease](../economics/1-pct-treaty-impact.html)
 - [Treaty Feasibility & Cost Analysis](../appendix/treaty-feasibility.html)
+- [The Court of Humanity](../solution/court-of-humanity.html)
 - [The Planetary Constitutional Convention](../strategy/planetary-constitutional-convention.html)
 
 :::
@@ -17659,6 +17662,7 @@ $$
 
 - [Treaty Feasibility & Cost Analysis](../appendix/treaty-feasibility.html)
 - [The 1% Treaty: Harnessing Greed to Eradicate Disease](../economics/1-pct-treaty-impact.html)
+- [The Court of Humanity](../solution/court-of-humanity.html)
 - [Voter Acquisition Grant Proposal](../grant-proposal/voter-acquisition-grant.html)
 - [Getting Started](../strategy/getting-started.html)
 
@@ -28167,6 +28171,7 @@ GiveWell cost per DALY for insecticide-treated bed nets (midpoint estimate, rang
 - [Ubiquitous Pragmatic Trial Impact Analysis: How to Prevent a Year of Death and Suffering for 84 Cents](../appendix/dfda-impact-paper.html)
 - [How to Coordinate 10 Million Nonprofits](../strategy/nonprofit-coalition-strategy.html)
 - [Treaty Feasibility & Cost Analysis](../appendix/treaty-feasibility.html)
+- [The Court of Humanity](../solution/court-of-humanity.html)
 - [Earth Optimization Protocol v1](../strategy/earth-optimization-protocol-v1.html)
 - [Pre-Built Google Ads Campaign for Coalition Partners](../appendix/google-ads-campaign-template.html)
 - [The Planetary Constitutional Convention](../strategy/planetary-constitutional-convention.html)
@@ -28686,6 +28691,7 @@ Cost per DALY for deworming programs (range $28-82, midpoint estimate). GiveWell
 **Used in:**
 
 - [The 1% Treaty: Harnessing Greed to Eradicate Disease](../economics/1-pct-treaty-impact.html)
+- [The Court of Humanity](../solution/court-of-humanity.html)
 
 :::
 
@@ -33055,6 +33061,7 @@ Cost per DALY for vitamin A supplementation programs (India: $23-50; Africa: $40
 **Used in:**
 
 - [The 1% Treaty: Harnessing Greed to Eradicate Disease](../economics/1-pct-treaty-impact.html)
+- [The Court of Humanity](../solution/court-of-humanity.html)
 
 :::
 
@@ -34054,6 +34061,10 @@ Estimated cost per DALY for US childhood vaccination programs. Note: US cost-eff
 
 *Core definition*
 
+**Used in:**
+
+- [The Court of Humanity](../solution/court-of-humanity.html)
+
 :::
 
 ### Concentrated Interest Sector Market Cap: $5 trillion {#sec-concentrated_interest_sector_market_cap_usd}
@@ -34070,6 +34081,32 @@ Estimated combined market capitalization of concentrated interest opposition (de
 - [Aligning Incentives](../solution/aligning-incentives.html)
 - [Wishocracy: Solving the Democratic Principal-Agent Problem Through Pairwise Preference Aggregation](../appendix/wishocracy-paper.html)
 - [The Earth Optimization Prize](../strategy/earth-optimization-prize.html)
+
+:::
+
+### Court of Humanity Build Cost: $30 million {#sec-court_build_cost}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+One-time cost to build the Court of Humanity. Range reflects digital-first institutional design (no physical courtrooms, no detention, AI-assisted evidence triage, cryptographic provenance, stratified random jury infrastructure). Lower bound: minimal viable institution. Upper bound: fully-staffed initial operations, roughly 27% of one year of ICC operating budget (the ICC funds physical courtrooms, detention, and 425+ staff).
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$10 million, $50 million] • Distribution: Lognormal
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between $10 million and $50 million (±67%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-court_build_cost.qmd >}}
+
+*Core definition*
+
+**Used in:**
+
+- [The Court of Humanity](../solution/court-of-humanity.html)
 
 :::
 

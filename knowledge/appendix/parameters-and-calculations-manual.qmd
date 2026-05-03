@@ -38,15 +38,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 561 parameters used in the analysis, organized by type:
+This appendix documents all 563 parameters used in the analysis, organized by type:
 
 - External sources (peer-reviewed): 182
 - Calculated values: 272
-- Core definitions: 107
+- Core definitions: 109
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (272 parameters) • [External Data Sources](#sec-external) (182 parameters) • [Core Definitions](#sec-definitions) (107 parameters)
+[Calculated Values](#sec-calculated) (272 parameters) • [External Data Sources](#sec-external) (182 parameters) • [Core Definitions](#sec-definitions) (109 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -27676,11 +27676,43 @@ Number of sovereign heads of state/government
 
 :::
 
+### Childhood Vaccination Cost per DALY (Estimated): $30 {#sec-childhood_vaccination_cost_per_daly}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Estimated cost per DALY for US childhood vaccination programs. Note: US cost-effectiveness studies primarily use cost per QALY (Quality-Adjusted Life Year) rather than cost per DALY. This estimate is derived from program costs and benefits for comparison purposes only.
+
+*Core definition*
+
+:::
+
 ### Concentrated Interest Sector Market Cap: $5 trillion {#sec-concentrated_interest_sector_market_cap_usd}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
 Estimated combined market capitalization of concentrated interest opposition (defense, fossil fuel, etc.)
+
+*Core definition*
+
+:::
+
+### Court of Humanity Build Cost: $30 million {#sec-court_build_cost}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+One-time cost to build the Court of Humanity. Range reflects digital-first institutional design (no physical courtrooms, no detention, AI-assisted evidence triage, cryptographic provenance, stratified random jury infrastructure). Lower bound: minimal viable institution. Upper bound: fully-staffed initial operations, roughly 27% of one year of ICC operating budget (the ICC funds physical courtrooms, detention, and 425+ staff).
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$10 million, $50 million] • Distribution: Lognormal
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between $10 million and $50 million (±67%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-court_build_cost.qmd >}}
 
 *Core definition*
 

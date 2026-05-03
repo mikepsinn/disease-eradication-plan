@@ -38,15 +38,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 143 parameters used in the analysis, organized by type:
+This appendix documents all 144 parameters used in the analysis, organized by type:
 
 - External sources (peer-reviewed): 57
-- Calculated values: 67
+- Calculated values: 68
 - Core definitions: 19
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (67 parameters) • [External Data Sources](#sec-external) (57 parameters) • [Core Definitions](#sec-definitions) (19 parameters)
+[Calculated Values](#sec-calculated) (68 parameters) • [External Data Sources](#sec-external) (57 parameters) • [Core Definitions](#sec-definitions) (19 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -96,6 +96,44 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-bullets_per_person_annual.qmd >}}
+
+:::
+
+### Military Spending in Government Clinical Trial Years: 37,778 years {#sec-cumulative_military_in_govt_trial_years}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Cumulative military spending since 1913 expressed in equivalent years of government clinical trial spending ($170T / $4.5B per year)
+
+**Inputs**:
+
+- [Cumulative Military Spending (Fed Era)](#sec-cumulative_military_spending_fed_era): $170 trillion
+- [Annual Global Government Spending on Clinical Trials](#sec-global_government_clinical_trials_spending_annual) 📊: $4.5 billion (95% CI: $3 billion - $6 billion)
+
+$$
+\begin{gathered}
+Years_{mil \to trials,gov} \\
+= \frac{Spending_{mil,cum,fed}}{Spending_{trials,gov}} \\
+= \frac{\$170T}{\$4.5B} \\
+= 37{,}800
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-cumulative_military_in_govt_trial_years.qmd >}}
+
+{{< include ../figures/sensitivity-table-cumulative_military_in_govt_trial_years.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-cumulative_military_in_govt_trial_years.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-cumulative_military_in_govt_trial_years.qmd >}}
 
 :::
 
