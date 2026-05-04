@@ -16,7 +16,7 @@ setup_chart_style()
 
 # Display name for chart title
 
-display_name = "Decentralized Framework for Drug Assessment Total NPV Annual OPEX"
+display_name = "Pragmatic Trial Platform Total NPV Annual OPEX"
 
 # Baseline and units
 
@@ -25,7 +25,7 @@ baseline = 40050000.0
 # Tornado data from sensitivity analysis
 
 drivers = ['DIH_NPV_ANNUAL_OPEX_INITIATIVES', 'DFDA_NPV_ANNUAL_OPEX']
-driver_labels = ['DIH Broader Initiatives Annual OPEX', 'Decentralized Framework for Drug Assessment Core framework Annual OPEX']
+driver_labels = ['DIH Broader Initiatives Annual OPEX', 'Pragmatic Trial Platform Core Framework Annual OPEX']
 impacts_low = [-7100000.0, -7950000.0]
 impacts_high = [10900000.0, 7550000.0]
 

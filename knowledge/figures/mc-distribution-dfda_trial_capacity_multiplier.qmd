@@ -1,6 +1,6 @@
 ```{python}
 #| echo: false
-#| fig-cap: "Monte Carlo Distribution: Trial Capacity Multiplier (10,000 simulations)"
+#| fig-cap: "Monte Carlo Distribution: Pragmatic Trial Capacity Multiplier at Treaty-Scale Funding (10,000 simulations)"
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -23,7 +23,7 @@ std = 20.233456475870234
 p5 = 4.198505418517696
 p50 = 16.02672190029694
 p95 = 61.41256294099413
-display_name = "Trial Capacity Multiplier"
+display_name = "Pragmatic Trial Capacity Multiplier at Treaty-Scale Funding"
 units = "x"
 
 # Create figure with two subplots
@@ -113,7 +113,7 @@ add_png_metadata(
 plt.show()
 ```
 
-**Simulation Results Summary: Trial Capacity Multiplier**
+**Simulation Results Summary: Pragmatic Trial Capacity Multiplier at Treaty-Scale Funding**
 
 | Statistic | Value |
 |:----------|------:|
@@ -123,4 +123,4 @@ plt.show()
 | Standard Deviation | 20.2x |
 | 90% Range (5th-95th percentile) | [4.2x, 61.4x] |
 
-*The histogram shows the distribution of Trial Capacity Multiplier across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*
+*The histogram shows the distribution of Pragmatic Trial Capacity Multiplier at Treaty-Scale Funding across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

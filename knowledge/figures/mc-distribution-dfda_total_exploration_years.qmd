@@ -1,6 +1,6 @@
 ```{python}
 #| echo: false
-#| fig-cap: "Monte Carlo Distribution: Total Exploration Time (dFDA) (10,000 simulations)"
+#| fig-cap: "Monte Carlo Distribution: Total Exploration Time at Treaty-Scale Trial Capacity (10,000 simulations)"
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -23,7 +23,7 @@ std = 925.0560805824935
 p5 = 297.19654494410366
 p50 = 974.0751193274509
 p95 = 3219.273868542128
-display_name = "Total Exploration Time (dFDA)"
+display_name = "Total Exploration Time at Treaty-Scale Trial Capacity"
 units = "years"
 
 # Create figure with two subplots
@@ -113,7 +113,7 @@ add_png_metadata(
 plt.show()
 ```
 
-**Simulation Results Summary: Total Exploration Time (dFDA)**
+**Simulation Results Summary: Total Exploration Time at Treaty-Scale Trial Capacity**
 
 | Statistic | Value |
 |:----------|------:|
@@ -123,4 +123,4 @@ plt.show()
 | Standard Deviation | 925 |
 | 90% Range (5th-95th percentile) | [297, 3,219] |
 
-*The histogram shows the distribution of Total Exploration Time (dFDA) across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*
+*The histogram shows the distribution of Total Exploration Time at Treaty-Scale Trial Capacity across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

@@ -16,7 +16,7 @@ setup_chart_style()
 
 # Display name for chart title
 
-display_name = "Decentralized Framework for Drug Assessment Overhead Percentage of Treaty Funding"
+display_name = "Pragmatic Trial Platform Overhead Percentage of Treaty Funding"
 
 # Baseline and units
 
@@ -25,7 +25,7 @@ baseline = 0.0014705882352941176
 # Tornado data from sensitivity analysis
 
 drivers = ['DFDA_OPEX_PLATFORM_MAINTENANCE', 'DFDA_OPEX_STAFF', 'DFDA_OPEX_INFRASTRUCTURE', 'DFDA_OPEX_REGULATORY', 'DFDA_OPEX_COMMUNITY']
-driver_labels = ['Decentralized Framework for Drug Assessment Maintenance Costs', 'Decentralized Framework for Drug Assessment Staff Costs', 'Decentralized Framework for Drug Assessment Infrastructure Costs', 'Decentralized Framework for Drug Assessment Regulatory Coordination Costs', 'Decentralized Framework for Drug Assessment Community Support Costs']
+driver_labels = ['Pragmatic Trial Platform Maintenance Costs', 'Pragmatic Trial Platform Staff Costs', 'Pragmatic Trial Platform Infrastructure Costs', 'Pragmatic Trial Platform Regulatory Coordination Costs', 'Pragmatic Trial Platform Community Support Costs']
 impacts_low = [-0.0001838235294117647, -0.00011029411764705891, -0.00011029411764705891, -7.35294117647058e-05, -3.67647058823529e-05]
 impacts_high = [0.0002573529411764707, 0.0001838235294117647, 0.0001470588235294118, 0.00011029411764705891, 3.67647058823529e-05]
 

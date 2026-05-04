@@ -1,10 +1,10 @@
-**Sensitivity Indices for dFDA New Treatments Per Year**
+**Sensitivity Indices for New Treatments Per Year at Treaty-Scale Trial Capacity**
 
 Regression-based sensitivity showing which inputs explain the most variance in the output.
 
 | Input Parameter | Sensitivity Coefficient | Interpretation |
 |:----------------|------------------------:|:---------------|
-| Trial Capacity Multiplier (x) | 0.9380 | Strong driver |
+| Pragmatic Trial Capacity Multiplier at Treaty-Scale Funding (x) | 0.9380 | Strong driver |
 | Diseases Getting First Treatment Per Year (diseases/year) | -0.0784 | Minimal effect |
 
 *Interpretation*: Standardized coefficients show the change in output (in SD units) per 1 SD change in input. Values near ±1 indicate strong influence; values exceeding ±1 may occur with correlated inputs.

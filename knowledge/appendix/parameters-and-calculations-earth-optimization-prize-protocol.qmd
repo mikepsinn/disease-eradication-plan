@@ -276,23 +276,23 @@ $$
 
 :::
 
-### Total Annual Decentralized Framework for Drug Assessment Operational Costs: $40 million {#sec-dfda_annual_opex}
+### Total Annual Pragmatic Trial Platform Operational Costs: $40 million {#sec-dfda_annual_opex}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Total annual Decentralized Framework for Drug Assessment operational costs (sum of all components: platform + staff + infra + regulatory + community)
+Total annual pragmatic trial platform operational costs (sum of all components: platform + staff + infra + regulatory + community)
 
 **Inputs**:
 
-- [Decentralized Framework for Drug Assessment Maintenance Costs](#sec-dfda_opex_platform_maintenance): $15 million (95% CI: $10 million - $22 million)
-- [Decentralized Framework for Drug Assessment Staff Costs](#sec-dfda_opex_staff): $10 million (95% CI: $7 million - $15 million)
-- [Decentralized Framework for Drug Assessment Infrastructure Costs](#sec-dfda_opex_infrastructure): $8 million (95% CI: $5 million - $12 million)
-- [Decentralized Framework for Drug Assessment Regulatory Coordination Costs](#sec-dfda_opex_regulatory): $5 million (95% CI: $3 million - $8 million)
-- [Decentralized Framework for Drug Assessment Community Support Costs](#sec-dfda_opex_community): $2 million (95% CI: $1 million - $3 million)
+- [Pragmatic Trial Platform Maintenance Costs](#sec-dfda_opex_platform_maintenance): $15 million (95% CI: $10 million - $22 million)
+- [Pragmatic Trial Platform Staff Costs](#sec-dfda_opex_staff): $10 million (95% CI: $7 million - $15 million)
+- [Pragmatic Trial Platform Infrastructure Costs](#sec-dfda_opex_infrastructure): $8 million (95% CI: $5 million - $12 million)
+- [Pragmatic Trial Platform Regulatory Coordination Costs](#sec-dfda_opex_regulatory): $5 million (95% CI: $3 million - $8 million)
+- [Pragmatic Trial Platform Community Support Costs](#sec-dfda_opex_community): $2 million (95% CI: $1 million - $3 million)
 
 $$
 \begin{gathered}
-OPEX_{dFDA} \\
+OPEX_{trial} \\
 = Cost_{platform} + Cost_{staff} + Cost_{infra} \\
 + Cost_{regulatory} + Cost_{community} \\
 = \$15M + \$10M + \$8M + \$5M + \$2M \\
@@ -364,21 +364,21 @@ $$
 
 :::
 
-### dFDA Patients Fundable Annually: 23.4 million patients/year {#sec-dfda_patients_fundable_annually}
+### Patients Fundable Annually at Reference Funding: 23.4 million patients/year {#sec-dfda_patients_fundable_annually}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Number of patients fundable annually from dFDA funding at pragmatic trial cost. Source-agnostic counterpart of DIH_PATIENTS_FUNDABLE_ANNUALLY.
+Number of patients fundable annually at the reference pragmatic trial funding level and empirical pragmatic trial cost. Source-agnostic counterpart of DIH_PATIENTS_FUNDABLE_ANNUALLY.
 
 **Inputs**:
 
-- [dFDA Annual Trial Subsidies](#sec-dfda_trial_subsidies_annual) 🔢: $21.8 billion
-- [dFDA Pragmatic Trial Cost per Patient](#sec-dfda_pragmatic_trial_cost_per_patient) 📊: $929 (95% CI: $97 - $3,000)
+- [Reference Annual Trial Subsidies](#sec-dfda_trial_subsidies_annual) 🔢: $21.8 billion
+- [Pragmatic Trial Cost per Patient](#sec-dfda_pragmatic_trial_cost_per_patient) 📊: $929 (95% CI: $97 - $3,000)
 
 $$
 \begin{gathered}
-N_{fundable,dFDA} \\
-= \frac{Subsidies_{dFDA,ann}}{Cost_{pragmatic,pt}} \\
+N_{fundable,ref} \\
+= \frac{Subsidies_{trial,ref}}{Cost_{pragmatic,pt}} \\
 = \frac{\$21.8B}{\$929} \\
 = 23.4M
 \end{gathered}
@@ -386,8 +386,8 @@ $$
 where:
 $$
 \begin{gathered}
-Subsidies_{dFDA,ann} \\
-= Funding_{dFDA,ann} - OPEX_{dFDA} \\
+Subsidies_{trial,ref} \\
+= Funding_{trial,ref} - OPEX_{trial} \\
 = \$21.8B - \$40M \\
 = \$21.8B
 \end{gathered}
@@ -395,7 +395,7 @@ $$
 where:
 $$
 \begin{gathered}
-OPEX_{dFDA} \\
+OPEX_{trial} \\
 = Cost_{platform} + Cost_{staff} + Cost_{infra} \\
 + Cost_{regulatory} + Cost_{community} \\
 = \$15M + \$10M + \$8M + \$5M + \$2M \\
@@ -420,21 +420,21 @@ $$
 
 :::
 
-### Trial Capacity Multiplier: 12.3x {#sec-dfda_trial_capacity_multiplier}
+### Pragmatic Trial Capacity Multiplier at Treaty-Scale Funding: 12.3x {#sec-dfda_trial_capacity_multiplier}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Trial capacity multiplier from dFDA funding capacity vs. current global trial participation
+Trial capacity multiplier from treaty-scale pragmatic trial funding capacity vs. current global trial participation
 
 **Inputs**:
 
 - [Annual Global Clinical Trial Participants](#sec-current_trial_slots_available) 📊: 1.9 million patients/year (95% CI: 1.5 million patients/year - 2.3 million patients/year)
-- [dFDA Patients Fundable Annually](#sec-dfda_patients_fundable_annually) 🔢: 23.4 million patients/year
+- [Patients Fundable Annually at Reference Funding](#sec-dfda_patients_fundable_annually) 🔢: 23.4 million patients/year
 
 $$
 \begin{gathered}
 k_{capacity} \\
-= \frac{N_{fundable,dFDA}}{Slots_{curr}} \\
+= \frac{N_{fundable,ref}}{Slots_{curr}} \\
 = \frac{23.4M}{1.9M} \\
 = 12.3
 \end{gathered}
@@ -442,8 +442,8 @@ $$
 where:
 $$
 \begin{gathered}
-N_{fundable,dFDA} \\
-= \frac{Subsidies_{dFDA,ann}}{Cost_{pragmatic,pt}} \\
+N_{fundable,ref} \\
+= \frac{Subsidies_{trial,ref}}{Cost_{pragmatic,pt}} \\
 = \frac{\$21.8B}{\$929} \\
 = 23.4M
 \end{gathered}
@@ -451,8 +451,8 @@ $$
 where:
 $$
 \begin{gathered}
-Subsidies_{dFDA,ann} \\
-= Funding_{dFDA,ann} - OPEX_{dFDA} \\
+Subsidies_{trial,ref} \\
+= Funding_{trial,ref} - OPEX_{trial} \\
 = \$21.8B - \$40M \\
 = \$21.8B
 \end{gathered}
@@ -460,7 +460,7 @@ $$
 where:
 $$
 \begin{gathered}
-OPEX_{dFDA} \\
+OPEX_{trial} \\
 = Cost_{platform} + Cost_{staff} + Cost_{infra} \\
 + Cost_{regulatory} + Cost_{community} \\
 = \$15M + \$10M + \$8M + \$5M + \$2M \\
@@ -485,21 +485,21 @@ $$
 
 :::
 
-### dFDA Annual Trial Subsidies: $21.8 billion {#sec-dfda_trial_subsidies_annual}
+### Reference Annual Trial Subsidies: $21.8 billion {#sec-dfda_trial_subsidies_annual}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Annual clinical trial patient subsidies from dFDA funding (total funding minus operational costs)
+Annual patient-level pragmatic trial subsidies after operating costs at the reference funding level
 
 **Inputs**:
 
-- [dFDA Annual Trial Funding](#sec-dfda_annual_trial_funding): $21.8 billion
-- [Total Annual Decentralized Framework for Drug Assessment Operational Costs](#sec-dfda_annual_opex) 🔢: $40 million
+- [Reference Annual Pragmatic Trial Funding](#sec-dfda_annual_trial_funding): $21.8 billion
+- [Total Annual Pragmatic Trial Platform Operational Costs](#sec-dfda_annual_opex) 🔢: $40 million
 
 $$
 \begin{gathered}
-Subsidies_{dFDA,ann} \\
-= Funding_{dFDA,ann} - OPEX_{dFDA} \\
+Subsidies_{trial,ref} \\
+= Funding_{trial,ref} - OPEX_{trial} \\
 = \$21.8B - \$40M \\
 = \$21.8B
 \end{gathered}
@@ -507,7 +507,7 @@ $$
 where:
 $$
 \begin{gathered}
-OPEX_{dFDA} \\
+OPEX_{trial} \\
 = Cost_{platform} + Cost_{staff} + Cost_{infra} \\
 + Cost_{regulatory} + Cost_{community} \\
 = \$15M + \$10M + \$8M + \$5M + \$2M \\
@@ -1584,21 +1584,21 @@ Treaty disease-cure fraction over 15 years under the optimistic treaty take-hold
 **Inputs**:
 
 - [Diseases Getting First Treatment Per Year](#sec-new_disease_first_treatments_per_year) 📊: 15 diseases/year (95% CI: 8 diseases/year - 30 diseases/year)
-- [Trial Capacity Multiplier](#sec-dfda_trial_capacity_multiplier) 🔢: 12.3x
+- [Pragmatic Trial Capacity Multiplier at Treaty-Scale Funding](#sec-dfda_trial_capacity_multiplier) 🔢: 12.3x
 - [Maximum Trial Capacity Multiplier (Physical Limit)](#sec-dfda_max_trial_capacity_multiplier_physical) 🔢: 566x
 - [Diseases Without Effective Treatment](#sec-diseases_without_effective_treatment) 🔢: 6,650 diseases
 
 $$
 \begin{gathered}
 f_{cure,15,treaty} \\
-= \min\left(1.0, Treatments_{new,ann} \times (3 \times min(k_{capacity} \times 1, k_{capacity,max}) + 4 \times min(k_{capacity} \times 2, k_{capacity,max}) + 5 \times min(k_{capacity} \times 5, k_{capacity,max}) + 3 \times min(k_{capacity} \times 10, k_{capacity,max})) / N_{untreated}\right)
+= \min\left(1.0, Treatments_{new,ann} \times (3 \times min(\text{TRIAL\_CAPACITY\_MULTIPLIER} \times 1, \text{MAX\_TRIAL\_CAPACITY\_MULTIPLIER\_PHYSICAL}) + 4 \times min(\text{TRIAL\_CAPACITY\_MULTIPLIER} \times 2, \text{MAX\_TRIAL\_CAPACITY\_MULTIPLIER\_PHYSICAL}) + 5 \times min(\text{TRIAL\_CAPACITY\_MULTIPLIER} \times 5, \text{MAX\_TRIAL\_CAPACITY\_MULTIPLIER\_PHYSICAL}) + 3 \times min(\text{TRIAL\_CAPACITY\_MULTIPLIER} \times 10, \text{MAX\_TRIAL\_CAPACITY\_MULTIPLIER\_PHYSICAL})) / N_{untreated}\right)
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
 k_{capacity} \\
-= \frac{N_{fundable,dFDA}}{Slots_{curr}} \\
+= \frac{N_{fundable,ref}}{Slots_{curr}} \\
 = \frac{23.4M}{1.9M} \\
 = 12.3
 \end{gathered}
@@ -1606,8 +1606,8 @@ $$
 where:
 $$
 \begin{gathered}
-N_{fundable,dFDA} \\
-= \frac{Subsidies_{dFDA,ann}}{Cost_{pragmatic,pt}} \\
+N_{fundable,ref} \\
+= \frac{Subsidies_{trial,ref}}{Cost_{pragmatic,pt}} \\
 = \frac{\$21.8B}{\$929} \\
 = 23.4M
 \end{gathered}
@@ -1615,8 +1615,8 @@ $$
 where:
 $$
 \begin{gathered}
-Subsidies_{dFDA,ann} \\
-= Funding_{dFDA,ann} - OPEX_{dFDA} \\
+Subsidies_{trial,ref} \\
+= Funding_{trial,ref} - OPEX_{trial} \\
 = \$21.8B - \$40M \\
 = \$21.8B
 \end{gathered}
@@ -1624,7 +1624,7 @@ $$
 where:
 $$
 \begin{gathered}
-OPEX_{dFDA} \\
+OPEX_{trial} \\
 = Cost_{platform} + Cost_{staff} + Cost_{infra} \\
 + Cost_{regulatory} + Cost_{community} \\
 = \$15M + \$10M + \$8M + \$5M + \$2M \\
@@ -1685,21 +1685,21 @@ Treaty disease-cure fraction over 20 years under the optimistic treaty take-hold
 **Inputs**:
 
 - [Diseases Getting First Treatment Per Year](#sec-new_disease_first_treatments_per_year) 📊: 15 diseases/year (95% CI: 8 diseases/year - 30 diseases/year)
-- [Trial Capacity Multiplier](#sec-dfda_trial_capacity_multiplier) 🔢: 12.3x
+- [Pragmatic Trial Capacity Multiplier at Treaty-Scale Funding](#sec-dfda_trial_capacity_multiplier) 🔢: 12.3x
 - [Maximum Trial Capacity Multiplier (Physical Limit)](#sec-dfda_max_trial_capacity_multiplier_physical) 🔢: 566x
 - [Diseases Without Effective Treatment](#sec-diseases_without_effective_treatment) 🔢: 6,650 diseases
 
 $$
 \begin{gathered}
 f_{cure,20,treaty} \\
-= \min\left(1.0, Treatments_{new,ann} \times (3 \times min(k_{capacity} \times 1, k_{capacity,max}) + 4 \times min(k_{capacity} \times 2, k_{capacity,max}) + 5 \times min(k_{capacity} \times 5, k_{capacity,max}) + 8 \times min(k_{capacity} \times 10, k_{capacity,max})) / N_{untreated}\right)
+= \min\left(1.0, Treatments_{new,ann} \times (3 \times min(\text{TRIAL\_CAPACITY\_MULTIPLIER} \times 1, \text{MAX\_TRIAL\_CAPACITY\_MULTIPLIER\_PHYSICAL}) + 4 \times min(\text{TRIAL\_CAPACITY\_MULTIPLIER} \times 2, \text{MAX\_TRIAL\_CAPACITY\_MULTIPLIER\_PHYSICAL}) + 5 \times min(\text{TRIAL\_CAPACITY\_MULTIPLIER} \times 5, \text{MAX\_TRIAL\_CAPACITY\_MULTIPLIER\_PHYSICAL}) + 8 \times min(\text{TRIAL\_CAPACITY\_MULTIPLIER} \times 10, \text{MAX\_TRIAL\_CAPACITY\_MULTIPLIER\_PHYSICAL})) / N_{untreated}\right)
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
 k_{capacity} \\
-= \frac{N_{fundable,dFDA}}{Slots_{curr}} \\
+= \frac{N_{fundable,ref}}{Slots_{curr}} \\
 = \frac{23.4M}{1.9M} \\
 = 12.3
 \end{gathered}
@@ -1707,8 +1707,8 @@ $$
 where:
 $$
 \begin{gathered}
-N_{fundable,dFDA} \\
-= \frac{Subsidies_{dFDA,ann}}{Cost_{pragmatic,pt}} \\
+N_{fundable,ref} \\
+= \frac{Subsidies_{trial,ref}}{Cost_{pragmatic,pt}} \\
 = \frac{\$21.8B}{\$929} \\
 = 23.4M
 \end{gathered}
@@ -1716,8 +1716,8 @@ $$
 where:
 $$
 \begin{gathered}
-Subsidies_{dFDA,ann} \\
-= Funding_{dFDA,ann} - OPEX_{dFDA} \\
+Subsidies_{trial,ref} \\
+= Funding_{trial,ref} - OPEX_{trial} \\
 = \$21.8B - \$40M \\
 = \$21.8B
 \end{gathered}
@@ -1725,7 +1725,7 @@ $$
 where:
 $$
 \begin{gathered}
-OPEX_{dFDA} \\
+OPEX_{trial} \\
 = Cost_{platform} + Cost_{staff} + Cost_{infra} \\
 + Cost_{regulatory} + Cost_{community} \\
 = \$15M + \$10M + \$8M + \$5M + \$2M \\
@@ -1803,14 +1803,14 @@ where:
 $$
 \begin{gathered}
 f_{cure,15,treaty} \\
-= \min\left(1.0, Treatments_{new,ann} \times (3 \times min(k_{capacity} \times 1, k_{capacity,max}) + 4 \times min(k_{capacity} \times 2, k_{capacity,max}) + 5 \times min(k_{capacity} \times 5, k_{capacity,max}) + 3 \times min(k_{capacity} \times 10, k_{capacity,max})) / N_{untreated}\right)
+= \min\left(1.0, Treatments_{new,ann} \times (3 \times min(\text{TRIAL\_CAPACITY\_MULTIPLIER} \times 1, \text{MAX\_TRIAL\_CAPACITY\_MULTIPLIER\_PHYSICAL}) + 4 \times min(\text{TRIAL\_CAPACITY\_MULTIPLIER} \times 2, \text{MAX\_TRIAL\_CAPACITY\_MULTIPLIER\_PHYSICAL}) + 5 \times min(\text{TRIAL\_CAPACITY\_MULTIPLIER} \times 5, \text{MAX\_TRIAL\_CAPACITY\_MULTIPLIER\_PHYSICAL}) + 3 \times min(\text{TRIAL\_CAPACITY\_MULTIPLIER} \times 10, \text{MAX\_TRIAL\_CAPACITY\_MULTIPLIER\_PHYSICAL})) / N_{untreated}\right)
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
 k_{capacity} \\
-= \frac{N_{fundable,dFDA}}{Slots_{curr}} \\
+= \frac{N_{fundable,ref}}{Slots_{curr}} \\
 = \frac{23.4M}{1.9M} \\
 = 12.3
 \end{gathered}
@@ -1818,8 +1818,8 @@ $$
 where:
 $$
 \begin{gathered}
-N_{fundable,dFDA} \\
-= \frac{Subsidies_{dFDA,ann}}{Cost_{pragmatic,pt}} \\
+N_{fundable,ref} \\
+= \frac{Subsidies_{trial,ref}}{Cost_{pragmatic,pt}} \\
 = \frac{\$21.8B}{\$929} \\
 = 23.4M
 \end{gathered}
@@ -1827,8 +1827,8 @@ $$
 where:
 $$
 \begin{gathered}
-Subsidies_{dFDA,ann} \\
-= Funding_{dFDA,ann} - OPEX_{dFDA} \\
+Subsidies_{trial,ref} \\
+= Funding_{trial,ref} - OPEX_{trial} \\
 = \$21.8B - \$40M \\
 = \$21.8B
 \end{gathered}
@@ -1836,7 +1836,7 @@ $$
 where:
 $$
 \begin{gathered}
-OPEX_{dFDA} \\
+OPEX_{trial} \\
 = Cost_{platform} + Cost_{staff} + Cost_{infra} \\
 + Cost_{regulatory} + Cost_{community} \\
 = \$15M + \$10M + \$8M + \$5M + \$2M \\
@@ -1921,14 +1921,14 @@ where:
 $$
 \begin{gathered}
 f_{cure,15,treaty} \\
-= \min\left(1.0, Treatments_{new,ann} \times (3 \times min(k_{capacity} \times 1, k_{capacity,max}) + 4 \times min(k_{capacity} \times 2, k_{capacity,max}) + 5 \times min(k_{capacity} \times 5, k_{capacity,max}) + 3 \times min(k_{capacity} \times 10, k_{capacity,max})) / N_{untreated}\right)
+= \min\left(1.0, Treatments_{new,ann} \times (3 \times min(\text{TRIAL\_CAPACITY\_MULTIPLIER} \times 1, \text{MAX\_TRIAL\_CAPACITY\_MULTIPLIER\_PHYSICAL}) + 4 \times min(\text{TRIAL\_CAPACITY\_MULTIPLIER} \times 2, \text{MAX\_TRIAL\_CAPACITY\_MULTIPLIER\_PHYSICAL}) + 5 \times min(\text{TRIAL\_CAPACITY\_MULTIPLIER} \times 5, \text{MAX\_TRIAL\_CAPACITY\_MULTIPLIER\_PHYSICAL}) + 3 \times min(\text{TRIAL\_CAPACITY\_MULTIPLIER} \times 10, \text{MAX\_TRIAL\_CAPACITY\_MULTIPLIER\_PHYSICAL})) / N_{untreated}\right)
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
 k_{capacity} \\
-= \frac{N_{fundable,dFDA}}{Slots_{curr}} \\
+= \frac{N_{fundable,ref}}{Slots_{curr}} \\
 = \frac{23.4M}{1.9M} \\
 = 12.3
 \end{gathered}
@@ -1936,8 +1936,8 @@ $$
 where:
 $$
 \begin{gathered}
-N_{fundable,dFDA} \\
-= \frac{Subsidies_{dFDA,ann}}{Cost_{pragmatic,pt}} \\
+N_{fundable,ref} \\
+= \frac{Subsidies_{trial,ref}}{Cost_{pragmatic,pt}} \\
 = \frac{\$21.8B}{\$929} \\
 = 23.4M
 \end{gathered}
@@ -1945,8 +1945,8 @@ $$
 where:
 $$
 \begin{gathered}
-Subsidies_{dFDA,ann} \\
-= Funding_{dFDA,ann} - OPEX_{dFDA} \\
+Subsidies_{trial,ref} \\
+= Funding_{trial,ref} - OPEX_{trial} \\
 = \$21.8B - \$40M \\
 = \$21.8B
 \end{gathered}
@@ -1954,7 +1954,7 @@ $$
 where:
 $$
 \begin{gathered}
-OPEX_{dFDA} \\
+OPEX_{trial} \\
 = Cost_{platform} + Cost_{staff} + Cost_{infra} \\
 + Cost_{regulatory} + Cost_{community} \\
 = \$15M + \$10M + \$8M + \$5M + \$2M \\
@@ -2057,14 +2057,14 @@ where:
 $$
 \begin{gathered}
 f_{cure,20,treaty} \\
-= \min\left(1.0, Treatments_{new,ann} \times (3 \times min(k_{capacity} \times 1, k_{capacity,max}) + 4 \times min(k_{capacity} \times 2, k_{capacity,max}) + 5 \times min(k_{capacity} \times 5, k_{capacity,max}) + 8 \times min(k_{capacity} \times 10, k_{capacity,max})) / N_{untreated}\right)
+= \min\left(1.0, Treatments_{new,ann} \times (3 \times min(\text{TRIAL\_CAPACITY\_MULTIPLIER} \times 1, \text{MAX\_TRIAL\_CAPACITY\_MULTIPLIER\_PHYSICAL}) + 4 \times min(\text{TRIAL\_CAPACITY\_MULTIPLIER} \times 2, \text{MAX\_TRIAL\_CAPACITY\_MULTIPLIER\_PHYSICAL}) + 5 \times min(\text{TRIAL\_CAPACITY\_MULTIPLIER} \times 5, \text{MAX\_TRIAL\_CAPACITY\_MULTIPLIER\_PHYSICAL}) + 8 \times min(\text{TRIAL\_CAPACITY\_MULTIPLIER} \times 10, \text{MAX\_TRIAL\_CAPACITY\_MULTIPLIER\_PHYSICAL})) / N_{untreated}\right)
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
 k_{capacity} \\
-= \frac{N_{fundable,dFDA}}{Slots_{curr}} \\
+= \frac{N_{fundable,ref}}{Slots_{curr}} \\
 = \frac{23.4M}{1.9M} \\
 = 12.3
 \end{gathered}
@@ -2072,8 +2072,8 @@ $$
 where:
 $$
 \begin{gathered}
-N_{fundable,dFDA} \\
-= \frac{Subsidies_{dFDA,ann}}{Cost_{pragmatic,pt}} \\
+N_{fundable,ref} \\
+= \frac{Subsidies_{trial,ref}}{Cost_{pragmatic,pt}} \\
 = \frac{\$21.8B}{\$929} \\
 = 23.4M
 \end{gathered}
@@ -2081,8 +2081,8 @@ $$
 where:
 $$
 \begin{gathered}
-Subsidies_{dFDA,ann} \\
-= Funding_{dFDA,ann} - OPEX_{dFDA} \\
+Subsidies_{trial,ref} \\
+= Funding_{trial,ref} - OPEX_{trial} \\
 = \$21.8B - \$40M \\
 = \$21.8B
 \end{gathered}
@@ -2090,7 +2090,7 @@ $$
 where:
 $$
 \begin{gathered}
-OPEX_{dFDA} \\
+OPEX_{trial} \\
 = Cost_{platform} + Cost_{staff} + Cost_{infra} \\
 + Cost_{regulatory} + Cost_{community} \\
 = \$15M + \$10M + \$8M + \$5M + \$2M \\
@@ -2193,14 +2193,14 @@ where:
 $$
 \begin{gathered}
 f_{cure,15,treaty} \\
-= \min\left(1.0, Treatments_{new,ann} \times (3 \times min(k_{capacity} \times 1, k_{capacity,max}) + 4 \times min(k_{capacity} \times 2, k_{capacity,max}) + 5 \times min(k_{capacity} \times 5, k_{capacity,max}) + 3 \times min(k_{capacity} \times 10, k_{capacity,max})) / N_{untreated}\right)
+= \min\left(1.0, Treatments_{new,ann} \times (3 \times min(\text{TRIAL\_CAPACITY\_MULTIPLIER} \times 1, \text{MAX\_TRIAL\_CAPACITY\_MULTIPLIER\_PHYSICAL}) + 4 \times min(\text{TRIAL\_CAPACITY\_MULTIPLIER} \times 2, \text{MAX\_TRIAL\_CAPACITY\_MULTIPLIER\_PHYSICAL}) + 5 \times min(\text{TRIAL\_CAPACITY\_MULTIPLIER} \times 5, \text{MAX\_TRIAL\_CAPACITY\_MULTIPLIER\_PHYSICAL}) + 3 \times min(\text{TRIAL\_CAPACITY\_MULTIPLIER} \times 10, \text{MAX\_TRIAL\_CAPACITY\_MULTIPLIER\_PHYSICAL})) / N_{untreated}\right)
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
 k_{capacity} \\
-= \frac{N_{fundable,dFDA}}{Slots_{curr}} \\
+= \frac{N_{fundable,ref}}{Slots_{curr}} \\
 = \frac{23.4M}{1.9M} \\
 = 12.3
 \end{gathered}
@@ -2208,8 +2208,8 @@ $$
 where:
 $$
 \begin{gathered}
-N_{fundable,dFDA} \\
-= \frac{Subsidies_{dFDA,ann}}{Cost_{pragmatic,pt}} \\
+N_{fundable,ref} \\
+= \frac{Subsidies_{trial,ref}}{Cost_{pragmatic,pt}} \\
 = \frac{\$21.8B}{\$929} \\
 = 23.4M
 \end{gathered}
@@ -2217,8 +2217,8 @@ $$
 where:
 $$
 \begin{gathered}
-Subsidies_{dFDA,ann} \\
-= Funding_{dFDA,ann} - OPEX_{dFDA} \\
+Subsidies_{trial,ref} \\
+= Funding_{trial,ref} - OPEX_{trial} \\
 = \$21.8B - \$40M \\
 = \$21.8B
 \end{gathered}
@@ -2226,7 +2226,7 @@ $$
 where:
 $$
 \begin{gathered}
-OPEX_{dFDA} \\
+OPEX_{trial} \\
 = Cost_{platform} + Cost_{staff} + Cost_{infra} \\
 + Cost_{regulatory} + Cost_{community} \\
 = \$15M + \$10M + \$8M + \$5M + \$2M \\
@@ -2575,14 +2575,14 @@ where:
 $$
 \begin{gathered}
 f_{cure,15,treaty} \\
-= \min\left(1.0, Treatments_{new,ann} \times (3 \times min(k_{capacity} \times 1, k_{capacity,max}) + 4 \times min(k_{capacity} \times 2, k_{capacity,max}) + 5 \times min(k_{capacity} \times 5, k_{capacity,max}) + 3 \times min(k_{capacity} \times 10, k_{capacity,max})) / N_{untreated}\right)
+= \min\left(1.0, Treatments_{new,ann} \times (3 \times min(\text{TRIAL\_CAPACITY\_MULTIPLIER} \times 1, \text{MAX\_TRIAL\_CAPACITY\_MULTIPLIER\_PHYSICAL}) + 4 \times min(\text{TRIAL\_CAPACITY\_MULTIPLIER} \times 2, \text{MAX\_TRIAL\_CAPACITY\_MULTIPLIER\_PHYSICAL}) + 5 \times min(\text{TRIAL\_CAPACITY\_MULTIPLIER} \times 5, \text{MAX\_TRIAL\_CAPACITY\_MULTIPLIER\_PHYSICAL}) + 3 \times min(\text{TRIAL\_CAPACITY\_MULTIPLIER} \times 10, \text{MAX\_TRIAL\_CAPACITY\_MULTIPLIER\_PHYSICAL})) / N_{untreated}\right)
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
 k_{capacity} \\
-= \frac{N_{fundable,dFDA}}{Slots_{curr}} \\
+= \frac{N_{fundable,ref}}{Slots_{curr}} \\
 = \frac{23.4M}{1.9M} \\
 = 12.3
 \end{gathered}
@@ -2590,8 +2590,8 @@ $$
 where:
 $$
 \begin{gathered}
-N_{fundable,dFDA} \\
-= \frac{Subsidies_{dFDA,ann}}{Cost_{pragmatic,pt}} \\
+N_{fundable,ref} \\
+= \frac{Subsidies_{trial,ref}}{Cost_{pragmatic,pt}} \\
 = \frac{\$21.8B}{\$929} \\
 = 23.4M
 \end{gathered}
@@ -2599,8 +2599,8 @@ $$
 where:
 $$
 \begin{gathered}
-Subsidies_{dFDA,ann} \\
-= Funding_{dFDA,ann} - OPEX_{dFDA} \\
+Subsidies_{trial,ref} \\
+= Funding_{trial,ref} - OPEX_{trial} \\
 = \$21.8B - \$40M \\
 = \$21.8B
 \end{gathered}
@@ -2608,7 +2608,7 @@ $$
 where:
 $$
 \begin{gathered}
-OPEX_{dFDA} \\
+OPEX_{trial} \\
 = Cost_{platform} + Cost_{staff} + Cost_{infra} \\
 + Cost_{regulatory} + Cost_{community} \\
 = \$15M + \$10M + \$8M + \$5M + \$2M \\
@@ -2905,14 +2905,14 @@ where:
 $$
 \begin{gathered}
 f_{cure,15,treaty} \\
-= \min\left(1.0, Treatments_{new,ann} \times (3 \times min(k_{capacity} \times 1, k_{capacity,max}) + 4 \times min(k_{capacity} \times 2, k_{capacity,max}) + 5 \times min(k_{capacity} \times 5, k_{capacity,max}) + 3 \times min(k_{capacity} \times 10, k_{capacity,max})) / N_{untreated}\right)
+= \min\left(1.0, Treatments_{new,ann} \times (3 \times min(\text{TRIAL\_CAPACITY\_MULTIPLIER} \times 1, \text{MAX\_TRIAL\_CAPACITY\_MULTIPLIER\_PHYSICAL}) + 4 \times min(\text{TRIAL\_CAPACITY\_MULTIPLIER} \times 2, \text{MAX\_TRIAL\_CAPACITY\_MULTIPLIER\_PHYSICAL}) + 5 \times min(\text{TRIAL\_CAPACITY\_MULTIPLIER} \times 5, \text{MAX\_TRIAL\_CAPACITY\_MULTIPLIER\_PHYSICAL}) + 3 \times min(\text{TRIAL\_CAPACITY\_MULTIPLIER} \times 10, \text{MAX\_TRIAL\_CAPACITY\_MULTIPLIER\_PHYSICAL})) / N_{untreated}\right)
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
 k_{capacity} \\
-= \frac{N_{fundable,dFDA}}{Slots_{curr}} \\
+= \frac{N_{fundable,ref}}{Slots_{curr}} \\
 = \frac{23.4M}{1.9M} \\
 = 12.3
 \end{gathered}
@@ -2920,8 +2920,8 @@ $$
 where:
 $$
 \begin{gathered}
-N_{fundable,dFDA} \\
-= \frac{Subsidies_{dFDA,ann}}{Cost_{pragmatic,pt}} \\
+N_{fundable,ref} \\
+= \frac{Subsidies_{trial,ref}}{Cost_{pragmatic,pt}} \\
 = \frac{\$21.8B}{\$929} \\
 = 23.4M
 \end{gathered}
@@ -2929,8 +2929,8 @@ $$
 where:
 $$
 \begin{gathered}
-Subsidies_{dFDA,ann} \\
-= Funding_{dFDA,ann} - OPEX_{dFDA} \\
+Subsidies_{trial,ref} \\
+= Funding_{trial,ref} - OPEX_{trial} \\
 = \$21.8B - \$40M \\
 = \$21.8B
 \end{gathered}
@@ -2938,7 +2938,7 @@ $$
 where:
 $$
 \begin{gathered}
-OPEX_{dFDA} \\
+OPEX_{trial} \\
 = Cost_{platform} + Cost_{staff} + Cost_{infra} \\
 + Cost_{regulatory} + Cost_{community} \\
 = \$15M + \$10M + \$8M + \$5M + \$2M \\
@@ -3175,14 +3175,14 @@ where:
 $$
 \begin{gathered}
 f_{cure,20,treaty} \\
-= \min\left(1.0, Treatments_{new,ann} \times (3 \times min(k_{capacity} \times 1, k_{capacity,max}) + 4 \times min(k_{capacity} \times 2, k_{capacity,max}) + 5 \times min(k_{capacity} \times 5, k_{capacity,max}) + 8 \times min(k_{capacity} \times 10, k_{capacity,max})) / N_{untreated}\right)
+= \min\left(1.0, Treatments_{new,ann} \times (3 \times min(\text{TRIAL\_CAPACITY\_MULTIPLIER} \times 1, \text{MAX\_TRIAL\_CAPACITY\_MULTIPLIER\_PHYSICAL}) + 4 \times min(\text{TRIAL\_CAPACITY\_MULTIPLIER} \times 2, \text{MAX\_TRIAL\_CAPACITY\_MULTIPLIER\_PHYSICAL}) + 5 \times min(\text{TRIAL\_CAPACITY\_MULTIPLIER} \times 5, \text{MAX\_TRIAL\_CAPACITY\_MULTIPLIER\_PHYSICAL}) + 8 \times min(\text{TRIAL\_CAPACITY\_MULTIPLIER} \times 10, \text{MAX\_TRIAL\_CAPACITY\_MULTIPLIER\_PHYSICAL})) / N_{untreated}\right)
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
 k_{capacity} \\
-= \frac{N_{fundable,dFDA}}{Slots_{curr}} \\
+= \frac{N_{fundable,ref}}{Slots_{curr}} \\
 = \frac{23.4M}{1.9M} \\
 = 12.3
 \end{gathered}
@@ -3190,8 +3190,8 @@ $$
 where:
 $$
 \begin{gathered}
-N_{fundable,dFDA} \\
-= \frac{Subsidies_{dFDA,ann}}{Cost_{pragmatic,pt}} \\
+N_{fundable,ref} \\
+= \frac{Subsidies_{trial,ref}}{Cost_{pragmatic,pt}} \\
 = \frac{\$21.8B}{\$929} \\
 = 23.4M
 \end{gathered}
@@ -3199,8 +3199,8 @@ $$
 where:
 $$
 \begin{gathered}
-Subsidies_{dFDA,ann} \\
-= Funding_{dFDA,ann} - OPEX_{dFDA} \\
+Subsidies_{trial,ref} \\
+= Funding_{trial,ref} - OPEX_{trial} \\
 = \$21.8B - \$40M \\
 = \$21.8B
 \end{gathered}
@@ -3208,7 +3208,7 @@ $$
 where:
 $$
 \begin{gathered}
-OPEX_{dFDA} \\
+OPEX_{trial} \\
 = Cost_{platform} + Cost_{staff} + Cost_{infra} \\
 + Cost_{regulatory} + Cost_{community} \\
 = \$15M + \$10M + \$8M + \$5M + \$2M \\
@@ -3479,14 +3479,14 @@ where:
 $$
 \begin{gathered}
 f_{cure,15,treaty} \\
-= \min\left(1.0, Treatments_{new,ann} \times (3 \times min(k_{capacity} \times 1, k_{capacity,max}) + 4 \times min(k_{capacity} \times 2, k_{capacity,max}) + 5 \times min(k_{capacity} \times 5, k_{capacity,max}) + 3 \times min(k_{capacity} \times 10, k_{capacity,max})) / N_{untreated}\right)
+= \min\left(1.0, Treatments_{new,ann} \times (3 \times min(\text{TRIAL\_CAPACITY\_MULTIPLIER} \times 1, \text{MAX\_TRIAL\_CAPACITY\_MULTIPLIER\_PHYSICAL}) + 4 \times min(\text{TRIAL\_CAPACITY\_MULTIPLIER} \times 2, \text{MAX\_TRIAL\_CAPACITY\_MULTIPLIER\_PHYSICAL}) + 5 \times min(\text{TRIAL\_CAPACITY\_MULTIPLIER} \times 5, \text{MAX\_TRIAL\_CAPACITY\_MULTIPLIER\_PHYSICAL}) + 3 \times min(\text{TRIAL\_CAPACITY\_MULTIPLIER} \times 10, \text{MAX\_TRIAL\_CAPACITY\_MULTIPLIER\_PHYSICAL})) / N_{untreated}\right)
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
 k_{capacity} \\
-= \frac{N_{fundable,dFDA}}{Slots_{curr}} \\
+= \frac{N_{fundable,ref}}{Slots_{curr}} \\
 = \frac{23.4M}{1.9M} \\
 = 12.3
 \end{gathered}
@@ -3494,8 +3494,8 @@ $$
 where:
 $$
 \begin{gathered}
-N_{fundable,dFDA} \\
-= \frac{Subsidies_{dFDA,ann}}{Cost_{pragmatic,pt}} \\
+N_{fundable,ref} \\
+= \frac{Subsidies_{trial,ref}}{Cost_{pragmatic,pt}} \\
 = \frac{\$21.8B}{\$929} \\
 = 23.4M
 \end{gathered}
@@ -3503,8 +3503,8 @@ $$
 where:
 $$
 \begin{gathered}
-Subsidies_{dFDA,ann} \\
-= Funding_{dFDA,ann} - OPEX_{dFDA} \\
+Subsidies_{trial,ref} \\
+= Funding_{trial,ref} - OPEX_{trial} \\
 = \$21.8B - \$40M \\
 = \$21.8B
 \end{gathered}
@@ -3512,7 +3512,7 @@ $$
 where:
 $$
 \begin{gathered}
-OPEX_{dFDA} \\
+OPEX_{trial} \\
 = Cost_{platform} + Cost_{staff} + Cost_{infra} \\
 + Cost_{regulatory} + Cost_{community} \\
 = \$15M + \$10M + \$8M + \$5M + \$2M \\
@@ -3744,14 +3744,14 @@ where:
 $$
 \begin{gathered}
 f_{cure,20,treaty} \\
-= \min\left(1.0, Treatments_{new,ann} \times (3 \times min(k_{capacity} \times 1, k_{capacity,max}) + 4 \times min(k_{capacity} \times 2, k_{capacity,max}) + 5 \times min(k_{capacity} \times 5, k_{capacity,max}) + 8 \times min(k_{capacity} \times 10, k_{capacity,max})) / N_{untreated}\right)
+= \min\left(1.0, Treatments_{new,ann} \times (3 \times min(\text{TRIAL\_CAPACITY\_MULTIPLIER} \times 1, \text{MAX\_TRIAL\_CAPACITY\_MULTIPLIER\_PHYSICAL}) + 4 \times min(\text{TRIAL\_CAPACITY\_MULTIPLIER} \times 2, \text{MAX\_TRIAL\_CAPACITY\_MULTIPLIER\_PHYSICAL}) + 5 \times min(\text{TRIAL\_CAPACITY\_MULTIPLIER} \times 5, \text{MAX\_TRIAL\_CAPACITY\_MULTIPLIER\_PHYSICAL}) + 8 \times min(\text{TRIAL\_CAPACITY\_MULTIPLIER} \times 10, \text{MAX\_TRIAL\_CAPACITY\_MULTIPLIER\_PHYSICAL})) / N_{untreated}\right)
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
 k_{capacity} \\
-= \frac{N_{fundable,dFDA}}{Slots_{curr}} \\
+= \frac{N_{fundable,ref}}{Slots_{curr}} \\
 = \frac{23.4M}{1.9M} \\
 = 12.3
 \end{gathered}
@@ -3759,8 +3759,8 @@ $$
 where:
 $$
 \begin{gathered}
-N_{fundable,dFDA} \\
-= \frac{Subsidies_{dFDA,ann}}{Cost_{pragmatic,pt}} \\
+N_{fundable,ref} \\
+= \frac{Subsidies_{trial,ref}}{Cost_{pragmatic,pt}} \\
 = \frac{\$21.8B}{\$929} \\
 = 23.4M
 \end{gathered}
@@ -3768,8 +3768,8 @@ $$
 where:
 $$
 \begin{gathered}
-Subsidies_{dFDA,ann} \\
-= Funding_{dFDA,ann} - OPEX_{dFDA} \\
+Subsidies_{trial,ref} \\
+= Funding_{trial,ref} - OPEX_{trial} \\
 = \$21.8B - \$40M \\
 = \$21.8B
 \end{gathered}
@@ -3777,7 +3777,7 @@ $$
 where:
 $$
 \begin{gathered}
-OPEX_{dFDA} \\
+OPEX_{trial} \\
 = Cost_{platform} + Cost_{staff} + Cost_{infra} \\
 + Cost_{regulatory} + Cost_{community} \\
 = \$15M + \$10M + \$8M + \$5M + \$2M \\
@@ -4040,14 +4040,14 @@ where:
 $$
 \begin{gathered}
 f_{cure,20,treaty} \\
-= \min\left(1.0, Treatments_{new,ann} \times (3 \times min(k_{capacity} \times 1, k_{capacity,max}) + 4 \times min(k_{capacity} \times 2, k_{capacity,max}) + 5 \times min(k_{capacity} \times 5, k_{capacity,max}) + 8 \times min(k_{capacity} \times 10, k_{capacity,max})) / N_{untreated}\right)
+= \min\left(1.0, Treatments_{new,ann} \times (3 \times min(\text{TRIAL\_CAPACITY\_MULTIPLIER} \times 1, \text{MAX\_TRIAL\_CAPACITY\_MULTIPLIER\_PHYSICAL}) + 4 \times min(\text{TRIAL\_CAPACITY\_MULTIPLIER} \times 2, \text{MAX\_TRIAL\_CAPACITY\_MULTIPLIER\_PHYSICAL}) + 5 \times min(\text{TRIAL\_CAPACITY\_MULTIPLIER} \times 5, \text{MAX\_TRIAL\_CAPACITY\_MULTIPLIER\_PHYSICAL}) + 8 \times min(\text{TRIAL\_CAPACITY\_MULTIPLIER} \times 10, \text{MAX\_TRIAL\_CAPACITY\_MULTIPLIER\_PHYSICAL})) / N_{untreated}\right)
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
 k_{capacity} \\
-= \frac{N_{fundable,dFDA}}{Slots_{curr}} \\
+= \frac{N_{fundable,ref}}{Slots_{curr}} \\
 = \frac{23.4M}{1.9M} \\
 = 12.3
 \end{gathered}
@@ -4055,8 +4055,8 @@ $$
 where:
 $$
 \begin{gathered}
-N_{fundable,dFDA} \\
-= \frac{Subsidies_{dFDA,ann}}{Cost_{pragmatic,pt}} \\
+N_{fundable,ref} \\
+= \frac{Subsidies_{trial,ref}}{Cost_{pragmatic,pt}} \\
 = \frac{\$21.8B}{\$929} \\
 = 23.4M
 \end{gathered}
@@ -4064,8 +4064,8 @@ $$
 where:
 $$
 \begin{gathered}
-Subsidies_{dFDA,ann} \\
-= Funding_{dFDA,ann} - OPEX_{dFDA} \\
+Subsidies_{trial,ref} \\
+= Funding_{trial,ref} - OPEX_{trial} \\
 = \$21.8B - \$40M \\
 = \$21.8B
 \end{gathered}
@@ -4073,7 +4073,7 @@ $$
 where:
 $$
 \begin{gathered}
-OPEX_{dFDA} \\
+OPEX_{trial} \\
 = Cost_{platform} + Cost_{staff} + Cost_{infra} \\
 + Cost_{regulatory} + Cost_{community} \\
 = \$15M + \$10M + \$8M + \$5M + \$2M \\
@@ -4271,11 +4271,11 @@ Annual global clinical trial participants (IQVIA 2022: 1.9M post-COVID normaliza
 
 :::
 
-### dFDA Pragmatic Trial Cost per Patient: $929 {#sec-dfda_pragmatic_trial_cost_per_patient}
+### Pragmatic Trial Cost per Patient: $929 {#sec-dfda_pragmatic_trial_cost_per_patient}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-dFDA pragmatic trial cost per patient. Uses ADAPTABLE trial ($929) as DELIBERATELY CONSERVATIVE central estimate. Ramsberg & Platt (2018) reviewed 108 embedded pragmatic trials; 64 with cost data had median of only $97/patient - our estimate may overstate costs by 10x. Confidence interval spans meta-analysis median to complex chronic disease trials.
+Embedded pragmatic trial cost per patient. Uses ADAPTABLE trial ($929) as DELIBERATELY CONSERVATIVE central estimate. Ramsberg & Platt (2018) reviewed 108 embedded pragmatic trials; 64 with cost data had median of only $97/patient - this estimate may overstate costs by 10x. Confidence interval spans meta-analysis median to complex chronic disease trials.
 
 **Source**: [@pragmatic-trials-cost-advantage]
 
@@ -5203,11 +5203,11 @@ Base year for destructive economy projections. All threshold timelines are measu
 
 :::
 
-### dFDA Annual Trial Funding: $21.8 billion {#sec-dfda_annual_trial_funding}
+### Reference Annual Pragmatic Trial Funding: $21.8 billion {#sec-dfda_annual_trial_funding}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Assumed annual funding for dFDA pragmatic clinical trials (~$21.8B/year). Source-agnostic: could come from military reallocation, philanthropy, or government appropriation.
+Reference annual funding level used for direct-funding comparisons. Source-agnostic: funds could come from treaty reallocation, philanthropy, or public appropriation, and are modeled as funding available for pragmatic clinical trials rather than funding owed to any one organization.
 
 #### Uncertainty Range
 
@@ -5217,11 +5217,11 @@ Assumed annual funding for dFDA pragmatic clinical trials (~$21.8B/year). Source
 
 :::
 
-### Decentralized Framework for Drug Assessment Community Support Costs: $2 million {#sec-dfda_opex_community}
+### Pragmatic Trial Platform Community Support Costs: $2 million {#sec-dfda_opex_community}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Decentralized Framework for Drug Assessment community support costs
+Pragmatic trial platform community support costs
 
 #### Uncertainty Range
 
@@ -5239,11 +5239,11 @@ Decentralized Framework for Drug Assessment community support costs
 
 :::
 
-### Decentralized Framework for Drug Assessment Infrastructure Costs: $8 million {#sec-dfda_opex_infrastructure}
+### Pragmatic Trial Platform Infrastructure Costs: $8 million {#sec-dfda_opex_infrastructure}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Decentralized Framework for Drug Assessment infrastructure costs (cloud, security)
+Pragmatic trial platform infrastructure costs (cloud, security)
 
 #### Uncertainty Range
 
@@ -5261,11 +5261,11 @@ Decentralized Framework for Drug Assessment infrastructure costs (cloud, securit
 
 :::
 
-### Decentralized Framework for Drug Assessment Maintenance Costs: $15 million {#sec-dfda_opex_platform_maintenance}
+### Pragmatic Trial Platform Maintenance Costs: $15 million {#sec-dfda_opex_platform_maintenance}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Decentralized Framework for Drug Assessment maintenance costs
+Pragmatic trial platform maintenance costs
 
 #### Uncertainty Range
 
@@ -5283,11 +5283,11 @@ Decentralized Framework for Drug Assessment maintenance costs
 
 :::
 
-### Decentralized Framework for Drug Assessment Regulatory Coordination Costs: $5 million {#sec-dfda_opex_regulatory}
+### Pragmatic Trial Platform Regulatory Coordination Costs: $5 million {#sec-dfda_opex_regulatory}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Decentralized Framework for Drug Assessment regulatory coordination costs
+Pragmatic trial platform regulatory coordination costs
 
 #### Uncertainty Range
 
@@ -5305,11 +5305,11 @@ Decentralized Framework for Drug Assessment regulatory coordination costs
 
 :::
 
-### Decentralized Framework for Drug Assessment Staff Costs: $10 million {#sec-dfda_opex_staff}
+### Pragmatic Trial Platform Staff Costs: $10 million {#sec-dfda_opex_staff}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Decentralized Framework for Drug Assessment staff costs (minimal, AI-assisted)
+Pragmatic trial platform staff costs (minimal, AI-assisted)
 
 #### Uncertainty Range
 

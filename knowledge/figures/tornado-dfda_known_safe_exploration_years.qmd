@@ -16,7 +16,7 @@ setup_chart_style()
 
 # Display name for chart title
 
-display_name = "Known Safe Exploration Time (dFDA)"
+display_name = "Known Safe Exploration Time at Treaty-Scale Trial Capacity"
 
 # Baseline and units
 
@@ -25,7 +25,7 @@ baseline = 233.51785316399287
 # Tornado data from sensitivity analysis
 
 drivers = ['DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT', 'SAFE_COMPOUNDS_COUNT', 'CURRENT_TRIAL_SLOTS_AVAILABLE', 'CURRENT_TRIALS_PER_YEAR', 'TRIAL_RELEVANT_DISEASES_COUNT', 'DFDA_OPEX_PLATFORM_MAINTENANCE', 'DFDA_OPEX_STAFF', 'DFDA_OPEX_INFRASTRUCTURE', 'DFDA_OPEX_REGULATORY', 'DFDA_OPEX_COMMUNITY']
-driver_labels = ['dFDA Pragmatic Trial Cost per Patient', 'Safe Compounds Available for Testing', 'Annual Global Clinical Trial Participants', 'Current Global Clinical Trials per Year', 'Trial-Relevant Diseases', 'Decentralized Framework for Drug Assessment Maintenance Costs', 'Decentralized Framework for Drug Assessment Staff Costs', 'Decentralized Framework for Drug Assessment Infrastructure Costs', 'Decentralized Framework for Drug Assessment Regulatory Coordination Costs', 'Decentralized Framework for Drug Assessment Community Support Costs']
+driver_labels = ['Pragmatic Trial Cost per Patient', 'Safe Compounds Available for Testing', 'Annual Global Clinical Trial Participants', 'Current Global Clinical Trials per Year', 'Trial-Relevant Diseases', 'Pragmatic Trial Platform Maintenance Costs', 'Pragmatic Trial Platform Staff Costs', 'Pragmatic Trial Platform Infrastructure Costs', 'Pragmatic Trial Platform Regulatory Coordination Costs', 'Pragmatic Trial Platform Community Support Costs']
 impacts_low = [-209.13547237076648, -61.45206662210339, -49.161653297682705, 58.37946329099822, -46.703570632798574, -0.05364526835836614, -0.03219011898599433, -0.03219011898599433, -0.02146106545021098, -0.010731025833564445]
 impacts_high = [520.5763981729056, 61.45206662210336, 49.161653297682676, -38.91964219399881, 46.703570632798574, 0.07514480633233234, 0.05366992718086294, 0.0429339682227976, 0.03219899616183852, 0.01073201218642339]
 

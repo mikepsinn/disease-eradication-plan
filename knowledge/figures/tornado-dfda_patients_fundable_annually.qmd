@@ -16,7 +16,7 @@ setup_chart_style()
 
 # Display name for chart title
 
-display_name = "dFDA Patients Fundable Annually"
+display_name = "Patients Fundable Annually at Reference Funding"
 
 # Baseline and units
 
@@ -25,7 +25,7 @@ baseline = 23423035.52206674
 # Tornado data from sensitivity analysis
 
 drivers = ['DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT', 'DFDA_OPEX_PLATFORM_MAINTENANCE', 'DFDA_OPEX_STAFF', 'DFDA_OPEX_INFRASTRUCTURE', 'DFDA_OPEX_REGULATORY', 'DFDA_OPEX_COMMUNITY']
-driver_labels = ['dFDA Pragmatic Trial Cost per Patient', 'Decentralized Framework for Drug Assessment Maintenance Costs', 'Decentralized Framework for Drug Assessment Staff Costs', 'Decentralized Framework for Drug Assessment Infrastructure Costs', 'Decentralized Framework for Drug Assessment Regulatory Coordination Costs', 'Decentralized Framework for Drug Assessment Community Support Costs']
+driver_labels = ['Pragmatic Trial Cost per Patient', 'Pragmatic Trial Platform Maintenance Costs', 'Pragmatic Trial Platform Staff Costs', 'Pragmatic Trial Platform Infrastructure Costs', 'Pragmatic Trial Platform Regulatory Coordination Costs', 'Pragmatic Trial Platform Community Support Costs']
 impacts_low = [200906861.38514975, 5382.131324004382, 3229.2787944041193, 3229.2787944041193, 2152.8525296002626, 1076.4262648001313]
 impacts_high = [-16169702.188733406, -7534.9838536046445, -5382.131324004382, -4305.705059204251, -3229.2787944041193, -1076.4262648001313]
 

@@ -1,6 +1,6 @@
 ```{python}
 #| echo: false
-#| fig-cap: "Monte Carlo Distribution: dFDA Valley of Death Rescue Multiplier (10,000 simulations)"
+#| fig-cap: "Monte Carlo Distribution: Valley of Death Rescue Multiplier (10,000 simulations)"
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -23,7 +23,7 @@ std = 0.08646195271805314
 p5 = 1.2647218414075347
 p50 = 1.399490447424863
 p95 = 1.5350010215617111
-display_name = "dFDA Valley of Death Rescue Multiplier"
+display_name = "Valley of Death Rescue Multiplier"
 units = "multiplier"
 
 # Create figure with two subplots
@@ -113,7 +113,7 @@ add_png_metadata(
 plt.show()
 ```
 
-**Simulation Results Summary: dFDA Valley of Death Rescue Multiplier**
+**Simulation Results Summary: Valley of Death Rescue Multiplier**
 
 | Statistic | Value |
 |:----------|------:|
@@ -123,4 +123,4 @@ plt.show()
 | Standard Deviation | 0.0865x |
 | 90% Range (5th-95th percentile) | [1.26x, 1.54x] |
 
-*The histogram shows the distribution of dFDA Valley of Death Rescue Multiplier across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*
+*The histogram shows the distribution of Valley of Death Rescue Multiplier across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

@@ -4,7 +4,7 @@ Regression-based sensitivity showing which inputs explain the most variance in t
 
 | Input Parameter | Sensitivity Coefficient | Interpretation |
 |:----------------|------------------------:|:---------------|
-| dFDA Average Total Timeline Shift (years) | 0.8999 | Strong driver |
+| Average Total Treatment Timeline Shift (years) | 0.8999 | Strong driver |
 | Eventually Avoidable DALY Percentage (percentage) | 0.4866 | Moderate driver |
 | Global Annual DALY Burden (DALYs/year) | 0.0432 | Minimal effect |
 

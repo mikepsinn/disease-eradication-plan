@@ -1,10 +1,10 @@
-**Sensitivity Indices for dFDA Average Total Timeline Shift**
+**Sensitivity Indices for Average Total Treatment Timeline Shift**
 
 Regression-based sensitivity showing which inputs explain the most variance in the output.
 
 | Input Parameter | Sensitivity Coefficient | Interpretation |
 |:----------------|------------------------:|:---------------|
-| dFDA Treatment Timeline Acceleration (years) | 1.0325 | Strong driver |
+| Treatment Timeline Acceleration from Pragmatic Trial Capacity (years) | 1.0325 | Strong driver |
 | Regulatory Delay for Efficacy Testing Post-Safety Verification (years) | 0.0328 | Minimal effect |
 
 *Interpretation*: Standardized coefficients show the change in output (in SD units) per 1 SD change in input. Values near ±1 indicate strong influence; values exceeding ±1 may occur with correlated inputs.

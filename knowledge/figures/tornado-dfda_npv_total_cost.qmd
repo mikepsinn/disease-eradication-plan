@@ -16,7 +16,7 @@ setup_chart_style()
 
 # Display name for chart title
 
-display_name = "Decentralized Framework for Drug Assessment Total NPV Cost"
+display_name = "Pragmatic Trial Platform Total NPV Cost"
 
 # Baseline and units
 
@@ -25,7 +25,7 @@ baseline = 611384623.6128722
 # Tornado data from sensitivity analysis
 
 drivers = ['DIH_NPV_UPFRONT_COST_INITIATIVES', 'DIH_NPV_ANNUAL_OPEX_INITIATIVES', 'DFDA_NPV_ANNUAL_OPEX', 'DFDA_NPV_UPFRONT_COST']
-driver_labels = ['DIH Broader Initiatives Upfront Cost', 'DIH Broader Initiatives Annual OPEX', 'Decentralized Framework for Drug Assessment Core framework Annual OPEX', 'Decentralized Framework for Drug Assessment Core framework Build Cost']
+driver_labels = ['DIH Broader Initiatives Upfront Cost', 'DIH Broader Initiatives Annual OPEX', 'Pragmatic Trial Platform Core Framework Annual OPEX', 'Pragmatic Trial Platform Core Framework Build Cost']
 impacts_low = [-79750000.0, -60564440.14110839, -67815112.55236793, -15000000.0]
 impacts_high = [120250000.0, 92979210.9208566, 64403031.417657495, 25000000.0]
 

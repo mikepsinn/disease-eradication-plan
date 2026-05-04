@@ -16,7 +16,7 @@ setup_chart_style()
 
 # Display name for chart title
 
-display_name = "dFDA New Treatments Per Year"
+display_name = "New Treatments Per Year at Treaty-Scale Trial Capacity"
 
 # Baseline and units
 
@@ -25,7 +25,7 @@ baseline = 184.91870149000056
 # Tornado data from sensitivity analysis
 
 drivers = ['DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT', 'NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR', 'CURRENT_TRIAL_SLOTS_AVAILABLE', 'DFDA_OPEX_PLATFORM_MAINTENANCE', 'DFDA_OPEX_STAFF', 'DFDA_OPEX_INFRASTRUCTURE', 'DFDA_OPEX_REGULATORY', 'DFDA_OPEX_COMMUNITY']
-driver_labels = ['dFDA Pragmatic Trial Cost per Patient', 'Diseases Getting First Treatment Per Year', 'Annual Global Clinical Trial Participants', 'Decentralized Framework for Drug Assessment Maintenance Costs', 'Decentralized Framework for Drug Assessment Staff Costs', 'Decentralized Framework for Drug Assessment Infrastructure Costs', 'Decentralized Framework for Drug Assessment Regulatory Coordination Costs', 'Decentralized Framework for Drug Assessment Community Support Costs']
+driver_labels = ['Pragmatic Trial Cost per Patient', 'Diseases Getting First Treatment Per Year', 'Annual Global Clinical Trial Participants', 'Pragmatic Trial Platform Maintenance Costs', 'Pragmatic Trial Platform Staff Costs', 'Pragmatic Trial Platform Infrastructure Costs', 'Pragmatic Trial Platform Regulatory Coordination Costs', 'Pragmatic Trial Platform Community Support Costs']
 impacts_low = [1586.1068004090769, -86.29539402866692, 49.31165373066685, 0.04249051045266583, 0.025494306271610867, 0.025494306271610867, 0.016996204181054964, 0.008498102090555903]
 impacts_high = [-127.65554359526371, 184.91870149000056, -32.159774172174, -0.059486714633720794, -0.04249051045263741, -0.03399240836210993, -0.025494306271610867, -0.008498102090527482]
 

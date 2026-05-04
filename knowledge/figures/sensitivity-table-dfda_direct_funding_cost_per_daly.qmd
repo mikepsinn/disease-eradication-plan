@@ -1,10 +1,10 @@
-**Sensitivity Indices for dFDA Direct Funding Cost per DALY**
+**Sensitivity Indices for Direct Pragmatic Trial Funding Cost per DALY**
 
 Regression-based sensitivity showing which inputs explain the most variance in the output.
 
 | Input Parameter | Sensitivity Coefficient | Interpretation |
 |:----------------|------------------------:|:---------------|
 | Total DALYs from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput (DALYs) | -0.5173 | Strong driver |
-| dFDA Direct Funding NPV (Exploration Period) (USD) | 0.4592 | Moderate driver |
+| Direct Pragmatic Trial Funding NPV (Exploration Period) (USD) | 0.4592 | Moderate driver |
 
 *Interpretation*: Standardized coefficients show the change in output (in SD units) per 1 SD change in input. Values near ±1 indicate strong influence; values exceeding ±1 may occur with correlated inputs.

@@ -1,6 +1,6 @@
 ```{python}
 #| echo: false
-#| fig-cap: "Monte Carlo Distribution: dFDA Combined Treatment Discovery Speedup Multiplier (10,000 simulations)"
+#| fig-cap: "Monte Carlo Distribution: Combined Treatment Discovery Speedup Multiplier (10,000 simulations)"
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -23,7 +23,7 @@ std = 28.343167370462055
 p5 = 5.821417956409717
 p50 = 22.314945671689745
 p95 = 86.80477120196355
-display_name = "dFDA Combined Treatment Discovery Speedup Multiplier"
+display_name = "Combined Treatment Discovery Speedup Multiplier"
 units = "multiplier"
 
 # Create figure with two subplots
@@ -113,7 +113,7 @@ add_png_metadata(
 plt.show()
 ```
 
-**Simulation Results Summary: dFDA Combined Treatment Discovery Speedup Multiplier**
+**Simulation Results Summary: Combined Treatment Discovery Speedup Multiplier**
 
 | Statistic | Value |
 |:----------|------:|
@@ -123,4 +123,4 @@ plt.show()
 | Standard Deviation | 28.3x |
 | 90% Range (5th-95th percentile) | [5.82x, 86.8x] |
 
-*The histogram shows the distribution of dFDA Combined Treatment Discovery Speedup Multiplier across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*
+*The histogram shows the distribution of Combined Treatment Discovery Speedup Multiplier across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

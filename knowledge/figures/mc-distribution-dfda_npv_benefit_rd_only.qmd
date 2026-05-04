@@ -1,6 +1,6 @@
 ```{python}
 #| echo: false
-#| fig-cap: "Monte Carlo Distribution: NPV of Decentralized Framework for Drug Assessment Benefits (R&D Only, 10-Year Discounted) (10,000 simulations)"
+#| fig-cap: "Monte Carlo Distribution: NPV of Pragmatic Trial Benefits (R&D Only, 10-Year Discounted) (10,000 simulations)"
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -23,7 +23,7 @@ std = 50866666586.26128
 p5 = 326896766467.5119
 p50 = 383938475072.4498
 p95 = 485006710505.33374
-display_name = "NPV of Decentralized Framework for Drug Assessment Benefits (R&D Only, 10-Year Discounted)"
+display_name = "NPV of Pragmatic Trial Benefits (R&D Only, 10-Year Discounted)"
 units = "USD"
 
 # Create figure with two subplots
@@ -113,7 +113,7 @@ add_png_metadata(
 plt.show()
 ```
 
-**Simulation Results Summary: NPV of Decentralized Framework for Drug Assessment Benefits (R&D Only, 10-Year Discounted)**
+**Simulation Results Summary: NPV of Pragmatic Trial Benefits (R&D Only, 10-Year Discounted)**
 
 | Statistic | Value |
 |:----------|------:|
@@ -123,4 +123,4 @@ plt.show()
 | Standard Deviation | $50.9 billion |
 | 90% Range (5th-95th percentile) | [$327 billion, $485 billion] |
 
-*The histogram shows the distribution of NPV of Decentralized Framework for Drug Assessment Benefits (R&D Only, 10-Year Discounted) across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*
+*The histogram shows the distribution of NPV of Pragmatic Trial Benefits (R&D Only, 10-Year Discounted) across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

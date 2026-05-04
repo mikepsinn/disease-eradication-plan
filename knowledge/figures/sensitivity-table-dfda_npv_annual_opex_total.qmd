@@ -1,10 +1,10 @@
-**Sensitivity Indices for Decentralized Framework for Drug Assessment Total NPV Annual OPEX**
+**Sensitivity Indices for Pragmatic Trial Platform Total NPV Annual OPEX**
 
 Regression-based sensitivity showing which inputs explain the most variance in the output.
 
 | Input Parameter | Sensitivity Coefficient | Interpretation |
 |:----------------|------------------------:|:---------------|
 | DIH Broader Initiatives Annual OPEX (USD/year) | 0.5419 | Strong driver |
-| Decentralized Framework for Drug Assessment Core framework Annual OPEX (USD/year) | 0.4592 | Moderate driver |
+| Pragmatic Trial Platform Core Framework Annual OPEX (USD/year) | 0.4592 | Moderate driver |
 
 *Interpretation*: Standardized coefficients show the change in output (in SD units) per 1 SD change in input. Values near ±1 indicate strong influence; values exceeding ±1 may occur with correlated inputs.

@@ -16,7 +16,7 @@ setup_chart_style()
 
 # Display name for chart title
 
-display_name = "dFDA Trial Cost Reduction Percentage"
+display_name = "Pragmatic Trial Cost Reduction Percentage"
 
 # Baseline and units
 
@@ -25,7 +25,7 @@ baseline = 0.9773414634146341
 # Tornado data from sensitivity analysis
 
 drivers = ['DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT', 'TRADITIONAL_PHASE3_COST_PER_PATIENT']
-driver_labels = ['dFDA Pragmatic Trial Cost per Patient', 'Phase 3 Cost per Patient']
+driver_labels = ['Pragmatic Trial Cost per Patient', 'Phase 3 Cost per Patient']
 impacts_low = [0.020292682926829286, -0.023791463414634118]
 impacts_high = [-0.05051219512195115, 0.014916869918699227]
 

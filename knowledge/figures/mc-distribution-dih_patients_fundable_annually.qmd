@@ -1,6 +1,6 @@
 ```{python}
 #| echo: false
-#| fig-cap: "Monte Carlo Distribution: Patients Fundable Annually (10,000 simulations)"
+#| fig-cap: "Monte Carlo Distribution: Patients Fundable Annually Under the 1% Treaty (10,000 simulations)"
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -23,7 +23,7 @@ std = 30180534.28133789
 p5 = 9439932.886597235
 p50 = 30178375.596258145
 p95 = 96794734.77395707
-display_name = "Patients Fundable Annually"
+display_name = "Patients Fundable Annually Under the 1% Treaty"
 units = "patients/year"
 
 # Create figure with two subplots
@@ -113,7 +113,7 @@ add_png_metadata(
 plt.show()
 ```
 
-**Simulation Results Summary: Patients Fundable Annually**
+**Simulation Results Summary: Patients Fundable Annually Under the 1% Treaty**
 
 | Statistic | Value |
 |:----------|------:|
@@ -123,4 +123,4 @@ plt.show()
 | Standard Deviation | 30.2 million |
 | 90% Range (5th-95th percentile) | [9.44 million, 96.8 million] |
 
-*The histogram shows the distribution of Patients Fundable Annually across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*
+*The histogram shows the distribution of Patients Fundable Annually Under the 1% Treaty across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

@@ -1,10 +1,10 @@
-**Sensitivity Indices for dFDA Trial Cost Reduction Factor**
+**Sensitivity Indices for Pragmatic Trial Cost Reduction Factor**
 
 Regression-based sensitivity showing which inputs explain the most variance in the output.
 
 | Input Parameter | Sensitivity Coefficient | Interpretation |
 |:----------------|------------------------:|:---------------|
-| dFDA Pragmatic Trial Cost per Patient (USD/patient) | -8.8326 | Strong driver |
+| Pragmatic Trial Cost per Patient (USD/patient) | -8.8326 | Strong driver |
 | Phase 3 Cost per Patient (USD/patient) | 8.3341 | Strong driver |
 
 *Interpretation*: Standardized coefficients show the change in output (in SD units) per 1 SD change in input. Values near ±1 indicate strong influence; values exceeding ±1 may occur with correlated inputs.

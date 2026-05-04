@@ -1,6 +1,6 @@
 ```{python}
 #| echo: false
-#| fig-cap: "Monte Carlo Distribution: dFDA Therapeutic Space Exploration Time (10,000 simulations)"
+#| fig-cap: "Monte Carlo Distribution: Therapeutic Space Exploration Time at Treaty-Scale Trial Capacity (10,000 simulations)"
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -23,7 +23,7 @@ std = 19.90005896818707
 p5 = 11.6018608310743
 p50 = 29.619063539627096
 p95 = 77.10521984787384
-display_name = "dFDA Therapeutic Space Exploration Time"
+display_name = "Therapeutic Space Exploration Time at Treaty-Scale Trial Capacity"
 units = "years"
 
 # Create figure with two subplots
@@ -113,7 +113,7 @@ add_png_metadata(
 plt.show()
 ```
 
-**Simulation Results Summary: dFDA Therapeutic Space Exploration Time**
+**Simulation Results Summary: Therapeutic Space Exploration Time at Treaty-Scale Trial Capacity**
 
 | Statistic | Value |
 |:----------|------:|
@@ -123,4 +123,4 @@ plt.show()
 | Standard Deviation | 19.9 |
 | 90% Range (5th-95th percentile) | [11.6, 77.1] |
 
-*The histogram shows the distribution of dFDA Therapeutic Space Exploration Time across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*
+*The histogram shows the distribution of Therapeutic Space Exploration Time at Treaty-Scale Trial Capacity across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

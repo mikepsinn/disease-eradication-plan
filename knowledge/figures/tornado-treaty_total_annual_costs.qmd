@@ -25,7 +25,7 @@ baseline = 290000000.0
 # Tornado data from sensitivity analysis
 
 drivers = ['TREATY_CAMPAIGN_BUDGET_LOBBYING', 'TREATY_CAMPAIGN_DURATION_YEARS', 'TREATY_CAMPAIGN_VIRAL_REFERENDUM_BASE_CASE', 'TREATY_CAMPAIGN_BUDGET_RESERVE', 'DFDA_OPEX_PLATFORM_MAINTENANCE', 'DFDA_OPEX_STAFF', 'DFDA_OPEX_INFRASTRUCTURE', 'DFDA_OPEX_REGULATORY', 'DFDA_OPEX_COMMUNITY']
-driver_labels = ['Political Lobbying Campaign: Direct Lobbying, Super Pacs, Opposition Research, Staff, Legal/Compliance', 'Treaty Campaign Duration', 'Viral Referendum Budget', 'Reserve Fund / Contingency Buffer', 'Decentralized Framework for Drug Assessment Maintenance Costs', 'Decentralized Framework for Drug Assessment Staff Costs', 'Decentralized Framework for Drug Assessment Infrastructure Costs', 'Decentralized Framework for Drug Assessment Regulatory Coordination Costs', 'Decentralized Framework for Drug Assessment Community Support Costs']
+driver_labels = ['Political Lobbying Campaign: Direct Lobbying, Super Pacs, Opposition Research, Staff, Legal/Compliance', 'Treaty Campaign Duration', 'Viral Referendum Budget', 'Reserve Fund / Contingency Buffer', 'Pragmatic Trial Platform Maintenance Costs', 'Pragmatic Trial Platform Staff Costs', 'Pragmatic Trial Platform Infrastructure Costs', 'Pragmatic Trial Platform Regulatory Coordination Costs', 'Pragmatic Trial Platform Community Support Costs']
 impacts_low = [-81250000.0, 83333333.33333331, -25000000.0, -20000000.0, -5000000.0, -3000000.0, -3000000.0, -2000000.0, -1000000.0]
 impacts_high = [162500000.0, -50000000.0, 40000000.0, 12500000.0, 7000000.0, 5000000.0, 4000000.0, 3000000.0, 1000000.0]
 

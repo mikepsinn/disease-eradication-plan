@@ -16,7 +16,7 @@ setup_chart_style()
 
 # Display name for chart title
 
-display_name = "Total Exploration Time (dFDA)"
+display_name = "Total Exploration Time at Treaty-Scale Trial Capacity"
 
 # Baseline and units
 
@@ -25,7 +25,7 @@ baseline = 1265.9125724153298
 # Tornado data from sensitivity analysis
 
 drivers = ['DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT', 'CURRENT_TRIAL_SLOTS_AVAILABLE', 'CURRENT_TRIALS_PER_YEAR', 'TRIAL_RELEVANT_DISEASES_COUNT', 'SAFE_COMPOUNDS_COUNT', 'HUMAN_PROTEIN_CODING_GENES', 'EPIGENETIC_TARGETS_COUNT', 'CELL_THERAPY_APPROACHES', 'DFDA_OPEX_PLATFORM_MAINTENANCE', 'DFDA_OPEX_STAFF', 'DFDA_OPEX_INFRASTRUCTURE', 'DFDA_OPEX_REGULATORY', 'DFDA_OPEX_COMMUNITY']
-driver_labels = ['dFDA Pragmatic Trial Cost per Patient', 'Annual Global Clinical Trial Participants', 'Current Global Clinical Trials per Year', 'Trial-Relevant Diseases', 'Safe Compounds Available for Testing', 'Human Protein-Coding Genes', 'Epigenetic Drug Targets', 'Cell Therapy Approaches', 'Decentralized Framework for Drug Assessment Maintenance Costs', 'Decentralized Framework for Drug Assessment Staff Costs', 'Decentralized Framework for Drug Assessment Infrastructure Costs', 'Decentralized Framework for Drug Assessment Regulatory Coordination Costs', 'Decentralized Framework for Drug Assessment Community Support Costs']
+driver_labels = ['Pragmatic Trial Cost per Patient', 'Annual Global Clinical Trial Participants', 'Current Global Clinical Trials per Year', 'Trial-Relevant Diseases', 'Safe Compounds Available for Testing', 'Human Protein-Coding Genes', 'Epigenetic Drug Targets', 'Cell Therapy Approaches', 'Pragmatic Trial Platform Maintenance Costs', 'Pragmatic Trial Platform Staff Costs', 'Pragmatic Trial Platform Infrastructure Costs', 'Pragmatic Trial Platform Regulatory Coordination Costs', 'Pragmatic Trial Platform Community Support Costs']
 impacts_low = [-1133.73440285205, -266.50790998217474, 316.4781431038323, -253.18251448306603, -61.45206662210353, -49.16165329768273, -12.290413324420797, -4.916165329768319, -0.29081382320600824, -0.17450432923988046, -0.17450432923988046, -0.11634156533546047, -0.05817345583477618]
 impacts_high = [2822.0720532531195, 266.5079099821746, -210.98542873588826, 253.18251448306592, 61.4520666221033, 49.16165329768273, 12.29041332442057, 7.374247994652251, 0.40736395011731474, 0.29094749998034786, 0.23274730141838518, 0.17455245287715115, 0.058178802905331395]
 

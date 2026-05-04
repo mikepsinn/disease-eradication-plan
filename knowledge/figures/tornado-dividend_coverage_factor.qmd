@@ -16,7 +16,7 @@ setup_chart_style()
 
 # Display name for chart title
 
-display_name = "Coverage Factor of Treaty Funding vs Decentralized Framework for Drug Assessment OPEX"
+display_name = "Coverage Factor of Treaty Funding vs Pragmatic Trial Platform OPEX"
 
 # Baseline and units
 
@@ -25,7 +25,7 @@ baseline = 680.0
 # Tornado data from sensitivity analysis
 
 drivers = ['DFDA_OPEX_PLATFORM_MAINTENANCE', 'DFDA_OPEX_STAFF', 'DFDA_OPEX_INFRASTRUCTURE', 'DFDA_OPEX_REGULATORY', 'DFDA_OPEX_COMMUNITY']
-driver_labels = ['Decentralized Framework for Drug Assessment Maintenance Costs', 'Decentralized Framework for Drug Assessment Staff Costs', 'Decentralized Framework for Drug Assessment Infrastructure Costs', 'Decentralized Framework for Drug Assessment Regulatory Coordination Costs', 'Decentralized Framework for Drug Assessment Community Support Costs']
+driver_labels = ['Pragmatic Trial Platform Maintenance Costs', 'Pragmatic Trial Platform Staff Costs', 'Pragmatic Trial Platform Infrastructure Costs', 'Pragmatic Trial Platform Regulatory Coordination Costs', 'Pragmatic Trial Platform Community Support Costs']
 impacts_low = [97.14285714285711, 55.1351351351351, 55.1351351351351, 35.78947368421052, 17.43589743589746]
 impacts_high = [-101.27659574468089, -75.55555555555554, -61.81818181818187, -47.44186046511629, -16.585365853658573]
 

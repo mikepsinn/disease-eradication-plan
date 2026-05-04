@@ -1,6 +1,6 @@
 ```{python}
 #| echo: false
-#| fig-cap: "Monte Carlo Distribution: dFDA Direct Funding NPV (Exploration Period) (10,000 simulations)"
+#| fig-cap: "Monte Carlo Distribution: Direct Pragmatic Trial Funding NPV (Exploration Period) (10,000 simulations)"
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -23,7 +23,7 @@ std = 135290625746.9154
 p5 = 210963801005.89468
 p50 = 423899577957.79126
 p95 = 652276041925.836
-display_name = "dFDA Direct Funding NPV (Exploration Period)"
+display_name = "Direct Pragmatic Trial Funding NPV (Exploration Period)"
 units = "USD"
 
 # Create figure with two subplots
@@ -113,7 +113,7 @@ add_png_metadata(
 plt.show()
 ```
 
-**Simulation Results Summary: dFDA Direct Funding NPV (Exploration Period)**
+**Simulation Results Summary: Direct Pragmatic Trial Funding NPV (Exploration Period)**
 
 | Statistic | Value |
 |:----------|------:|
@@ -123,4 +123,4 @@ plt.show()
 | Standard Deviation | $135 billion |
 | 90% Range (5th-95th percentile) | [$211 billion, $652 billion] |
 
-*The histogram shows the distribution of dFDA Direct Funding NPV (Exploration Period) across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*
+*The histogram shows the distribution of Direct Pragmatic Trial Funding NPV (Exploration Period) across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

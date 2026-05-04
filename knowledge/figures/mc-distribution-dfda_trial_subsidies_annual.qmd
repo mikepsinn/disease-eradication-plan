@@ -1,6 +1,6 @@
 ```{python}
 #| echo: false
-#| fig-cap: "Monte Carlo Distribution: dFDA Annual Trial Subsidies (10,000 simulations)"
+#| fig-cap: "Monte Carlo Distribution: Reference Annual Trial Subsidies (10,000 simulations)"
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -23,7 +23,7 @@ std = 8211363.959935859
 p5 = 21744403344.569122
 p50 = 21761024362.39647
 p95 = 21772667149.911274
-display_name = "dFDA Annual Trial Subsidies"
+display_name = "Reference Annual Trial Subsidies"
 units = "USD/year"
 
 # Create figure with two subplots
@@ -113,7 +113,7 @@ add_png_metadata(
 plt.show()
 ```
 
-**Simulation Results Summary: dFDA Annual Trial Subsidies**
+**Simulation Results Summary: Reference Annual Trial Subsidies**
 
 | Statistic | Value |
 |:----------|------:|
@@ -123,4 +123,4 @@ plt.show()
 | Standard Deviation | $8.21 million |
 | 90% Range (5th-95th percentile) | [$21.7 billion, $21.8 billion] |
 
-*The histogram shows the distribution of dFDA Annual Trial Subsidies across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*
+*The histogram shows the distribution of Reference Annual Trial Subsidies across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

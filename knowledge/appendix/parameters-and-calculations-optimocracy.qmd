@@ -119,23 +119,23 @@ $$
 
 :::
 
-### Total Annual Decentralized Framework for Drug Assessment Operational Costs: $40 million {#sec-dfda_annual_opex}
+### Total Annual Pragmatic Trial Platform Operational Costs: $40 million {#sec-dfda_annual_opex}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Total annual Decentralized Framework for Drug Assessment operational costs (sum of all components: platform + staff + infra + regulatory + community)
+Total annual pragmatic trial platform operational costs (sum of all components: platform + staff + infra + regulatory + community)
 
 **Inputs**:
 
-- [Decentralized Framework for Drug Assessment Maintenance Costs](#sec-dfda_opex_platform_maintenance): $15 million (95% CI: $10 million - $22 million)
-- [Decentralized Framework for Drug Assessment Staff Costs](#sec-dfda_opex_staff): $10 million (95% CI: $7 million - $15 million)
-- [Decentralized Framework for Drug Assessment Infrastructure Costs](#sec-dfda_opex_infrastructure): $8 million (95% CI: $5 million - $12 million)
-- [Decentralized Framework for Drug Assessment Regulatory Coordination Costs](#sec-dfda_opex_regulatory): $5 million (95% CI: $3 million - $8 million)
-- [Decentralized Framework for Drug Assessment Community Support Costs](#sec-dfda_opex_community): $2 million (95% CI: $1 million - $3 million)
+- [Pragmatic Trial Platform Maintenance Costs](#sec-dfda_opex_platform_maintenance): $15 million (95% CI: $10 million - $22 million)
+- [Pragmatic Trial Platform Staff Costs](#sec-dfda_opex_staff): $10 million (95% CI: $7 million - $15 million)
+- [Pragmatic Trial Platform Infrastructure Costs](#sec-dfda_opex_infrastructure): $8 million (95% CI: $5 million - $12 million)
+- [Pragmatic Trial Platform Regulatory Coordination Costs](#sec-dfda_opex_regulatory): $5 million (95% CI: $3 million - $8 million)
+- [Pragmatic Trial Platform Community Support Costs](#sec-dfda_opex_community): $2 million (95% CI: $1 million - $3 million)
 
 $$
 \begin{gathered}
-OPEX_{dFDA} \\
+OPEX_{trial} \\
 = Cost_{platform} + Cost_{staff} + Cost_{infra} \\
 + Cost_{regulatory} + Cost_{community} \\
 = \$15M + \$10M + \$8M + \$5M + \$2M \\
@@ -161,16 +161,16 @@ $$
 
 :::
 
-### Decentralized Framework for Drug Assessment Annual Benefit: R&D Savings: $58.6 billion {#sec-dfda_benefit_rd_only_annual}
+### Annual R&D Savings from Pragmatic Trials: $58.6 billion {#sec-dfda_benefit_rd_only_annual}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Annual Decentralized Framework for Drug Assessment benefit from R&D savings (trial cost reduction, secondary component)
+Annual benefit from pragmatic trial R&D savings (trial cost reduction, secondary component)
 
 **Inputs**:
 
 - [Annual Global Spending on Clinical Trials](#sec-global_clinical_trials_spending_annual) 📊: $60 billion (95% CI: $50 billion - $75 billion)
-- [dFDA Trial Cost Reduction Percentage](#sec-dfda_trial_cost_reduction_pct) 🔢: 97.7%
+- [Pragmatic Trial Cost Reduction Percentage](#sec-dfda_trial_cost_reduction_pct) 🔢: 97.7%
 
 $$
 \begin{gathered}
@@ -253,7 +253,7 @@ $$
 
 :::
 
-### Decentralized Framework for Drug Assessment Annual Net Savings (R&D Only): $58.6 billion {#sec-dfda_net_savings_rd_only_annual}
+### Annual Net Savings from Pragmatic Trials (R&D Only): $58.6 billion {#sec-dfda_net_savings_rd_only_annual}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -261,13 +261,13 @@ Annual net savings from R&D cost reduction only (gross savings minus operational
 
 **Inputs**:
 
-- [Decentralized Framework for Drug Assessment Annual Benefit: R&D Savings](#sec-dfda_benefit_rd_only_annual) 🔢: $58.6 billion
-- [Total Annual Decentralized Framework for Drug Assessment Operational Costs](#sec-dfda_annual_opex) 🔢: $40 million
+- [Annual R&D Savings from Pragmatic Trials](#sec-dfda_benefit_rd_only_annual) 🔢: $58.6 billion
+- [Total Annual Pragmatic Trial Platform Operational Costs](#sec-dfda_annual_opex) 🔢: $40 million
 
 $$
 \begin{gathered}
 Savings_{RD,ann} \\
-= Benefit_{RD,ann} - OPEX_{dFDA} \\
+= Benefit_{RD,ann} - OPEX_{trial} \\
 = \$58.6B - \$40M \\
 = \$58.6B
 \end{gathered}
@@ -293,7 +293,7 @@ $$
 where:
 $$
 \begin{gathered}
-OPEX_{dFDA} \\
+OPEX_{trial} \\
 = Cost_{platform} + Cost_{staff} + Cost_{infra} \\
 + Cost_{regulatory} + Cost_{community} \\
 = \$15M + \$10M + \$8M + \$5M + \$2M \\
@@ -318,15 +318,15 @@ $$
 
 :::
 
-### Decentralized Framework for Drug Assessment Total NPV Annual OPEX: $40 million {#sec-dfda_npv_annual_opex_total}
+### Pragmatic Trial Platform Total NPV Annual OPEX: $40 million {#sec-dfda_npv_annual_opex_total}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Total NPV annual opex (Decentralized Framework for Drug Assessment core + DIH initiatives)
+Total NPV annual opex (pragmatic trial platform core + DIH initiatives)
 
 **Inputs**:
 
-- [Decentralized Framework for Drug Assessment Core framework Annual OPEX](#sec-dfda_npv_annual_opex): $18.9 million (95% CI: $11 million - $26.5 million)
+- [Pragmatic Trial Platform Core Framework Annual OPEX](#sec-dfda_npv_annual_opex): $18.9 million (95% CI: $11 million - $26.5 million)
 - [DIH Broader Initiatives Annual OPEX](#sec-dih_npv_annual_opex_initiatives): $21.1 million (95% CI: $14 million - $32 million)
 
 $$
@@ -356,15 +356,15 @@ $$
 
 :::
 
-### NPV of Decentralized Framework for Drug Assessment Benefits (R&D Only, 10-Year Discounted): $389 billion {#sec-dfda_npv_benefit_rd_only}
+### NPV of Pragmatic Trial Benefits (R&D Only, 10-Year Discounted): $389 billion {#sec-dfda_npv_benefit_rd_only}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-NPV of Decentralized Framework for Drug Assessment R&D savings only with 5-year adoption ramp (10-year horizon, most conservative financial estimate)
+NPV of pragmatic trial R&D savings only with 5-year adoption ramp (10-year horizon, most conservative financial estimate)
 
 **Inputs**:
 
-- [Decentralized Framework for Drug Assessment Annual Net Savings (R&D Only)](#sec-dfda_net_savings_rd_only_annual) 🔢: $58.6 billion
+- [Annual Net Savings from Pragmatic Trials (R&D Only)](#sec-dfda_net_savings_rd_only_annual) 🔢: $58.6 billion
 - [Standard Discount Rate for NPV Analysis](#sec-npv_discount_rate_standard): 3%
 
 $$
@@ -392,7 +392,7 @@ $$
 
 :::
 
-### Decentralized Framework for Drug Assessment Present Value of Annual OPEX Over 10 Years: $342 million {#sec-dfda_npv_pv_annual_opex}
+### Pragmatic Trial Platform Present Value of Annual OPEX Over 10 Years: $342 million {#sec-dfda_npv_pv_annual_opex}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -400,7 +400,7 @@ Present value of annual opex over 10 years (NPV formula)
 
 **Inputs**:
 
-- [Decentralized Framework for Drug Assessment Total NPV Annual OPEX](#sec-dfda_npv_annual_opex_total) 🔢: $40 million
+- [Pragmatic Trial Platform Total NPV Annual OPEX](#sec-dfda_npv_annual_opex_total) 🔢: $40 million
 - [Standard Discount Rate for NPV Analysis](#sec-npv_discount_rate_standard): 3%
 - [Standard Time Horizon for NPV Analysis](#sec-npv_time_horizon_years): 10 years
 
@@ -439,7 +439,7 @@ $$
 
 :::
 
-### Decentralized Framework for Drug Assessment Total NPV Cost: $611 million {#sec-dfda_npv_total_cost}
+### Pragmatic Trial Platform Total NPV Cost: $611 million {#sec-dfda_npv_total_cost}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -447,12 +447,12 @@ Total NPV cost (upfront + PV of annual opex)
 
 **Inputs**:
 
-- [Decentralized Framework for Drug Assessment Present Value of Annual OPEX Over 10 Years](#sec-dfda_npv_pv_annual_opex) 🔢: $342 million
-- [Decentralized Framework for Drug Assessment Total NPV Upfront Costs](#sec-dfda_npv_upfront_cost_total) 🔢: $270 million
+- [Pragmatic Trial Platform Present Value of Annual OPEX Over 10 Years](#sec-dfda_npv_pv_annual_opex) 🔢: $342 million
+- [Pragmatic Trial Platform Total NPV Upfront Costs](#sec-dfda_npv_upfront_cost_total) 🔢: $270 million
 
 $$
 \begin{gathered}
-Cost_{dFDA,total} \\
+Cost_{platform,total} \\
 = PV_{OPEX} + Cost_{upfront,total} \\
 = \$342M + \$270M \\
 = \$611M
@@ -503,15 +503,15 @@ $$
 
 :::
 
-### Decentralized Framework for Drug Assessment Total NPV Upfront Costs: $270 million {#sec-dfda_npv_upfront_cost_total}
+### Pragmatic Trial Platform Total NPV Upfront Costs: $270 million {#sec-dfda_npv_upfront_cost_total}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Total NPV upfront costs (Decentralized Framework for Drug Assessment core + DIH initiatives)
+Total NPV upfront costs (pragmatic trial platform core + DIH initiatives)
 
 **Inputs**:
 
-- [Decentralized Framework for Drug Assessment Core framework Build Cost](#sec-dfda_npv_upfront_cost): $40 million (95% CI: $25 million - $65 million)
+- [Pragmatic Trial Platform Core Framework Build Cost](#sec-dfda_npv_upfront_cost): $40 million (95% CI: $25 million - $65 million)
 - [DIH Broader Initiatives Upfront Cost](#sec-dih_npv_upfront_cost_initiatives): $230 million (95% CI: $150 million - $350 million)
 
 $$
@@ -541,21 +541,21 @@ $$
 
 :::
 
-### dFDA Patients Fundable Annually: 23.4 million patients/year {#sec-dfda_patients_fundable_annually}
+### Patients Fundable Annually at Reference Funding: 23.4 million patients/year {#sec-dfda_patients_fundable_annually}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Number of patients fundable annually from dFDA funding at pragmatic trial cost. Source-agnostic counterpart of DIH_PATIENTS_FUNDABLE_ANNUALLY.
+Number of patients fundable annually at the reference pragmatic trial funding level and empirical pragmatic trial cost. Source-agnostic counterpart of DIH_PATIENTS_FUNDABLE_ANNUALLY.
 
 **Inputs**:
 
-- [dFDA Annual Trial Subsidies](#sec-dfda_trial_subsidies_annual) 🔢: $21.8 billion
-- [dFDA Pragmatic Trial Cost per Patient](#sec-dfda_pragmatic_trial_cost_per_patient) 📊: $929 (95% CI: $97 - $3,000)
+- [Reference Annual Trial Subsidies](#sec-dfda_trial_subsidies_annual) 🔢: $21.8 billion
+- [Pragmatic Trial Cost per Patient](#sec-dfda_pragmatic_trial_cost_per_patient) 📊: $929 (95% CI: $97 - $3,000)
 
 $$
 \begin{gathered}
-N_{fundable,dFDA} \\
-= \frac{Subsidies_{dFDA,ann}}{Cost_{pragmatic,pt}} \\
+N_{fundable,ref} \\
+= \frac{Subsidies_{trial,ref}}{Cost_{pragmatic,pt}} \\
 = \frac{\$21.8B}{\$929} \\
 = 23.4M
 \end{gathered}
@@ -563,8 +563,8 @@ $$
 where:
 $$
 \begin{gathered}
-Subsidies_{dFDA,ann} \\
-= Funding_{dFDA,ann} - OPEX_{dFDA} \\
+Subsidies_{trial,ref} \\
+= Funding_{trial,ref} - OPEX_{trial} \\
 = \$21.8B - \$40M \\
 = \$21.8B
 \end{gathered}
@@ -572,7 +572,7 @@ $$
 where:
 $$
 \begin{gathered}
-OPEX_{dFDA} \\
+OPEX_{trial} \\
 = Cost_{platform} + Cost_{staff} + Cost_{infra} \\
 + Cost_{regulatory} + Cost_{community} \\
 = \$15M + \$10M + \$8M + \$5M + \$2M \\
@@ -597,21 +597,21 @@ $$
 
 :::
 
-### ROI from Decentralized Framework for Drug Assessment R&D Savings Only: 637:1 {#sec-dfda_roi_rd_only}
+### ROI from Pragmatic Trial R&D Savings Only: 637:1 {#sec-dfda_roi_rd_only}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-ROI from Decentralized Framework for Drug Assessment R&D savings only (10-year NPV, most conservative estimate)
+ROI from pragmatic trial R&D savings only (10-year NPV, most conservative estimate)
 
 **Inputs**:
 
-- [NPV of Decentralized Framework for Drug Assessment Benefits (R&D Only, 10-Year Discounted)](#sec-dfda_npv_benefit_rd_only) 🔢: $389 billion
-- [Decentralized Framework for Drug Assessment Total NPV Cost](#sec-dfda_npv_total_cost) 🔢: $611 million
+- [NPV of Pragmatic Trial Benefits (R&D Only, 10-Year Discounted)](#sec-dfda_npv_benefit_rd_only) 🔢: $389 billion
+- [Pragmatic Trial Platform Total NPV Cost](#sec-dfda_npv_total_cost) 🔢: $611 million
 
 $$
 \begin{gathered}
 ROI_{RD} \\
-= \frac{NPV_{RD}}{Cost_{dFDA,total}} \\
+= \frac{NPV_{RD}}{Cost_{platform,total}} \\
 = \frac{\$389B}{\$611M} \\
 = 637
 \end{gathered}
@@ -627,7 +627,7 @@ where:
 $$
 \begin{gathered}
 Savings_{RD,ann} \\
-= Benefit_{RD,ann} - OPEX_{dFDA} \\
+= Benefit_{RD,ann} - OPEX_{trial} \\
 = \$58.6B - \$40M \\
 = \$58.6B
 \end{gathered}
@@ -653,7 +653,7 @@ $$
 where:
 $$
 \begin{gathered}
-OPEX_{dFDA} \\
+OPEX_{trial} \\
 = Cost_{platform} + Cost_{staff} + Cost_{infra} \\
 + Cost_{regulatory} + Cost_{community} \\
 = \$15M + \$10M + \$8M + \$5M + \$2M \\
@@ -663,7 +663,7 @@ $$
 where:
 $$
 \begin{gathered}
-Cost_{dFDA,total} \\
+Cost_{platform,total} \\
 = PV_{OPEX} + Cost_{upfront,total} \\
 = \$342M + \$270M \\
 = \$611M
@@ -714,21 +714,21 @@ $$
 
 :::
 
-### Trial Capacity Multiplier: 12.3x {#sec-dfda_trial_capacity_multiplier}
+### Pragmatic Trial Capacity Multiplier at Treaty-Scale Funding: 12.3x {#sec-dfda_trial_capacity_multiplier}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Trial capacity multiplier from dFDA funding capacity vs. current global trial participation
+Trial capacity multiplier from treaty-scale pragmatic trial funding capacity vs. current global trial participation
 
 **Inputs**:
 
 - [Annual Global Clinical Trial Participants](#sec-current_trial_slots_available) 📊: 1.9 million patients/year (95% CI: 1.5 million patients/year - 2.3 million patients/year)
-- [dFDA Patients Fundable Annually](#sec-dfda_patients_fundable_annually) 🔢: 23.4 million patients/year
+- [Patients Fundable Annually at Reference Funding](#sec-dfda_patients_fundable_annually) 🔢: 23.4 million patients/year
 
 $$
 \begin{gathered}
 k_{capacity} \\
-= \frac{N_{fundable,dFDA}}{Slots_{curr}} \\
+= \frac{N_{fundable,ref}}{Slots_{curr}} \\
 = \frac{23.4M}{1.9M} \\
 = 12.3
 \end{gathered}
@@ -736,8 +736,8 @@ $$
 where:
 $$
 \begin{gathered}
-N_{fundable,dFDA} \\
-= \frac{Subsidies_{dFDA,ann}}{Cost_{pragmatic,pt}} \\
+N_{fundable,ref} \\
+= \frac{Subsidies_{trial,ref}}{Cost_{pragmatic,pt}} \\
 = \frac{\$21.8B}{\$929} \\
 = 23.4M
 \end{gathered}
@@ -745,8 +745,8 @@ $$
 where:
 $$
 \begin{gathered}
-Subsidies_{dFDA,ann} \\
-= Funding_{dFDA,ann} - OPEX_{dFDA} \\
+Subsidies_{trial,ref} \\
+= Funding_{trial,ref} - OPEX_{trial} \\
 = \$21.8B - \$40M \\
 = \$21.8B
 \end{gathered}
@@ -754,7 +754,7 @@ $$
 where:
 $$
 \begin{gathered}
-OPEX_{dFDA} \\
+OPEX_{trial} \\
 = Cost_{platform} + Cost_{staff} + Cost_{infra} \\
 + Cost_{regulatory} + Cost_{community} \\
 = \$15M + \$10M + \$8M + \$5M + \$2M \\
@@ -779,15 +779,15 @@ $$
 
 :::
 
-### dFDA Trial Cost Reduction Percentage: 97.7% {#sec-dfda_trial_cost_reduction_pct}
+### Pragmatic Trial Cost Reduction Percentage: 97.7% {#sec-dfda_trial_cost_reduction_pct}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Trial cost reduction percentage: 1 - (dFDA pragmatic cost / traditional Phase 3 cost)
+Trial cost reduction percentage: 1 - (pragmatic trial cost / traditional Phase 3 cost)
 
 **Inputs**:
 
-- [dFDA Pragmatic Trial Cost per Patient](#sec-dfda_pragmatic_trial_cost_per_patient) 📊: $929 (95% CI: $97 - $3,000)
+- [Pragmatic Trial Cost per Patient](#sec-dfda_pragmatic_trial_cost_per_patient) 📊: $929 (95% CI: $97 - $3,000)
 - [Phase 3 Cost per Patient](#sec-traditional_phase3_cost_per_patient) 📊: $41,000 (95% CI: $20,000 - $120,000)
 
 $$
@@ -817,21 +817,21 @@ $$
 
 :::
 
-### dFDA Annual Trial Subsidies: $21.8 billion {#sec-dfda_trial_subsidies_annual}
+### Reference Annual Trial Subsidies: $21.8 billion {#sec-dfda_trial_subsidies_annual}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Annual clinical trial patient subsidies from dFDA funding (total funding minus operational costs)
+Annual patient-level pragmatic trial subsidies after operating costs at the reference funding level
 
 **Inputs**:
 
-- [dFDA Annual Trial Funding](#sec-dfda_annual_trial_funding): $21.8 billion
-- [Total Annual Decentralized Framework for Drug Assessment Operational Costs](#sec-dfda_annual_opex) 🔢: $40 million
+- [Reference Annual Pragmatic Trial Funding](#sec-dfda_annual_trial_funding): $21.8 billion
+- [Total Annual Pragmatic Trial Platform Operational Costs](#sec-dfda_annual_opex) 🔢: $40 million
 
 $$
 \begin{gathered}
-Subsidies_{dFDA,ann} \\
-= Funding_{dFDA,ann} - OPEX_{dFDA} \\
+Subsidies_{trial,ref} \\
+= Funding_{trial,ref} - OPEX_{trial} \\
 = \$21.8B - \$40M \\
 = \$21.8B
 \end{gathered}
@@ -839,7 +839,7 @@ $$
 where:
 $$
 \begin{gathered}
-OPEX_{dFDA} \\
+OPEX_{trial} \\
 = Cost_{platform} + Cost_{staff} + Cost_{infra} \\
 + Cost_{regulatory} + Cost_{community} \\
 = \$15M + \$10M + \$8M + \$5M + \$2M \\
@@ -1524,7 +1524,7 @@ Wishonia disease-cure fraction over 20 years under full implementation. Uses ful
 **Inputs**:
 
 - [Diseases Getting First Treatment Per Year](#sec-new_disease_first_treatments_per_year) 📊: 15 diseases/year (95% CI: 8 diseases/year - 30 diseases/year)
-- [Trial Capacity Multiplier](#sec-dfda_trial_capacity_multiplier) 🔢: 12.3x
+- [Pragmatic Trial Capacity Multiplier at Treaty-Scale Funding](#sec-dfda_trial_capacity_multiplier) 🔢: 12.3x
 - [Wishonia Military Reallocation Physical Max Share](#sec-wishonia_military_reallocation_physical_max_share) 🔢: 87.6%
 - [Maximum Trial Capacity Multiplier (Physical Limit)](#sec-dfda_max_trial_capacity_multiplier_physical) 🔢: 566x
 - [Diseases Without Effective Treatment](#sec-diseases_without_effective_treatment) 🔢: 6,650 diseases
@@ -1532,14 +1532,14 @@ Wishonia disease-cure fraction over 20 years under full implementation. Uses ful
 $$
 \begin{gathered}
 f_{cure,20,wish} \\
-= \min\left(1.0, Treatments_{new,ann} \times min(k_{capacity} \times \left(\frac{s_{mil,max}}{0.01}\right), k_{capacity,max}) \times \frac{20}{N_{untreated}}\right)
+= \min\left(1.0, Treatments_{new,ann} \times min(\text{TRIAL\_CAPACITY\_MULTIPLIER} \times \left(\frac{s_{mil,max}}{0.01}\right), \text{MAX\_TRIAL\_CAPACITY\_MULTIPLIER\_PHYSICAL}) \times \frac{20}{N_{untreated}}\right)
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
 k_{capacity} \\
-= \frac{N_{fundable,dFDA}}{Slots_{curr}} \\
+= \frac{N_{fundable,ref}}{Slots_{curr}} \\
 = \frac{23.4M}{1.9M} \\
 = 12.3
 \end{gathered}
@@ -1547,8 +1547,8 @@ $$
 where:
 $$
 \begin{gathered}
-N_{fundable,dFDA} \\
-= \frac{Subsidies_{dFDA,ann}}{Cost_{pragmatic,pt}} \\
+N_{fundable,ref} \\
+= \frac{Subsidies_{trial,ref}}{Cost_{pragmatic,pt}} \\
 = \frac{\$21.8B}{\$929} \\
 = 23.4M
 \end{gathered}
@@ -1556,8 +1556,8 @@ $$
 where:
 $$
 \begin{gathered}
-Subsidies_{dFDA,ann} \\
-= Funding_{dFDA,ann} - OPEX_{dFDA} \\
+Subsidies_{trial,ref} \\
+= Funding_{trial,ref} - OPEX_{trial} \\
 = \$21.8B - \$40M \\
 = \$21.8B
 \end{gathered}
@@ -1565,7 +1565,7 @@ $$
 where:
 $$
 \begin{gathered}
-OPEX_{dFDA} \\
+OPEX_{trial} \\
 = Cost_{platform} + Cost_{staff} + Cost_{infra} \\
 + Cost_{regulatory} + Cost_{community} \\
 = \$15M + \$10M + \$8M + \$5M + \$2M \\
@@ -1702,14 +1702,14 @@ where:
 $$
 \begin{gathered}
 f_{cure,20,wish} \\
-= \min\left(1.0, Treatments_{new,ann} \times min(k_{capacity} \times \left(\frac{s_{mil,max}}{0.01}\right), k_{capacity,max}) \times \frac{20}{N_{untreated}}\right)
+= \min\left(1.0, Treatments_{new,ann} \times min(\text{TRIAL\_CAPACITY\_MULTIPLIER} \times \left(\frac{s_{mil,max}}{0.01}\right), \text{MAX\_TRIAL\_CAPACITY\_MULTIPLIER\_PHYSICAL}) \times \frac{20}{N_{untreated}}\right)
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
 k_{capacity} \\
-= \frac{N_{fundable,dFDA}}{Slots_{curr}} \\
+= \frac{N_{fundable,ref}}{Slots_{curr}} \\
 = \frac{23.4M}{1.9M} \\
 = 12.3
 \end{gathered}
@@ -1717,8 +1717,8 @@ $$
 where:
 $$
 \begin{gathered}
-N_{fundable,dFDA} \\
-= \frac{Subsidies_{dFDA,ann}}{Cost_{pragmatic,pt}} \\
+N_{fundable,ref} \\
+= \frac{Subsidies_{trial,ref}}{Cost_{pragmatic,pt}} \\
 = \frac{\$21.8B}{\$929} \\
 = 23.4M
 \end{gathered}
@@ -1726,8 +1726,8 @@ $$
 where:
 $$
 \begin{gathered}
-Subsidies_{dFDA,ann} \\
-= Funding_{dFDA,ann} - OPEX_{dFDA} \\
+Subsidies_{trial,ref} \\
+= Funding_{trial,ref} - OPEX_{trial} \\
 = \$21.8B - \$40M \\
 = \$21.8B
 \end{gathered}
@@ -1735,7 +1735,7 @@ $$
 where:
 $$
 \begin{gathered}
-OPEX_{dFDA} \\
+OPEX_{trial} \\
 = Cost_{platform} + Cost_{staff} + Cost_{infra} \\
 + Cost_{regulatory} + Cost_{community} \\
 = \$15M + \$10M + \$8M + \$5M + \$2M \\
@@ -1827,14 +1827,14 @@ where:
 $$
 \begin{gathered}
 f_{cure,20,wish} \\
-= \min\left(1.0, Treatments_{new,ann} \times min(k_{capacity} \times \left(\frac{s_{mil,max}}{0.01}\right), k_{capacity,max}) \times \frac{20}{N_{untreated}}\right)
+= \min\left(1.0, Treatments_{new,ann} \times min(\text{TRIAL\_CAPACITY\_MULTIPLIER} \times \left(\frac{s_{mil,max}}{0.01}\right), \text{MAX\_TRIAL\_CAPACITY\_MULTIPLIER\_PHYSICAL}) \times \frac{20}{N_{untreated}}\right)
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
 k_{capacity} \\
-= \frac{N_{fundable,dFDA}}{Slots_{curr}} \\
+= \frac{N_{fundable,ref}}{Slots_{curr}} \\
 = \frac{23.4M}{1.9M} \\
 = 12.3
 \end{gathered}
@@ -1842,8 +1842,8 @@ $$
 where:
 $$
 \begin{gathered}
-N_{fundable,dFDA} \\
-= \frac{Subsidies_{dFDA,ann}}{Cost_{pragmatic,pt}} \\
+N_{fundable,ref} \\
+= \frac{Subsidies_{trial,ref}}{Cost_{pragmatic,pt}} \\
 = \frac{\$21.8B}{\$929} \\
 = 23.4M
 \end{gathered}
@@ -1851,8 +1851,8 @@ $$
 where:
 $$
 \begin{gathered}
-Subsidies_{dFDA,ann} \\
-= Funding_{dFDA,ann} - OPEX_{dFDA} \\
+Subsidies_{trial,ref} \\
+= Funding_{trial,ref} - OPEX_{trial} \\
 = \$21.8B - \$40M \\
 = \$21.8B
 \end{gathered}
@@ -1860,7 +1860,7 @@ $$
 where:
 $$
 \begin{gathered}
-OPEX_{dFDA} \\
+OPEX_{trial} \\
 = Cost_{platform} + Cost_{staff} + Cost_{infra} \\
 + Cost_{regulatory} + Cost_{community} \\
 = \$15M + \$10M + \$8M + \$5M + \$2M \\
@@ -2011,11 +2011,11 @@ Annual global clinical trial participants (IQVIA 2022: 1.9M post-COVID normaliza
 
 :::
 
-### dFDA Pragmatic Trial Cost per Patient: $929 {#sec-dfda_pragmatic_trial_cost_per_patient}
+### Pragmatic Trial Cost per Patient: $929 {#sec-dfda_pragmatic_trial_cost_per_patient}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-dFDA pragmatic trial cost per patient. Uses ADAPTABLE trial ($929) as DELIBERATELY CONSERVATIVE central estimate. Ramsberg & Platt (2018) reviewed 108 embedded pragmatic trials; 64 with cost data had median of only $97/patient - our estimate may overstate costs by 10x. Confidence interval spans meta-analysis median to complex chronic disease trials.
+Embedded pragmatic trial cost per patient. Uses ADAPTABLE trial ($929) as DELIBERATELY CONSERVATIVE central estimate. Ramsberg & Platt (2018) reviewed 108 embedded pragmatic trials; 64 with cost data had median of only $97/patient - this estimate may overstate costs by 10x. Confidence interval spans meta-analysis median to complex chronic disease trials.
 
 **Source**: [@pragmatic-trials-cost-advantage]
 
@@ -2663,11 +2663,11 @@ US military spending in 1947 (post-WW2 trough, 2 years after peak) in constant 2
 
 Fundamental parameters and constants used throughout the analysis.
 
-### dFDA Annual Trial Funding: $21.8 billion {#sec-dfda_annual_trial_funding}
+### Reference Annual Pragmatic Trial Funding: $21.8 billion {#sec-dfda_annual_trial_funding}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Assumed annual funding for dFDA pragmatic clinical trials (~$21.8B/year). Source-agnostic: could come from military reallocation, philanthropy, or government appropriation.
+Reference annual funding level used for direct-funding comparisons. Source-agnostic: funds could come from treaty reallocation, philanthropy, or public appropriation, and are modeled as funding available for pragmatic clinical trials rather than funding owed to any one organization.
 
 #### Uncertainty Range
 
@@ -2677,11 +2677,11 @@ Assumed annual funding for dFDA pragmatic clinical trials (~$21.8B/year). Source
 
 :::
 
-### Decentralized Framework for Drug Assessment Core framework Annual OPEX: $18.9 million {#sec-dfda_npv_annual_opex}
+### Pragmatic Trial Platform Core Framework Annual OPEX: $18.9 million {#sec-dfda_npv_annual_opex}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Decentralized Framework for Drug Assessment Core framework annual opex (midpoint of $11-26.5M)
+Pragmatic trial platform core framework annual opex (midpoint of $11-26.5M)
 
 #### Uncertainty Range
 
@@ -2699,11 +2699,11 @@ Decentralized Framework for Drug Assessment Core framework annual opex (midpoint
 
 :::
 
-### Decentralized Framework for Drug Assessment Core framework Build Cost: $40 million {#sec-dfda_npv_upfront_cost}
+### Pragmatic Trial Platform Core Framework Build Cost: $40 million {#sec-dfda_npv_upfront_cost}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Decentralized Framework for Drug Assessment Core framework build cost
+Pragmatic trial platform core framework build cost
 
 #### Uncertainty Range
 
@@ -2721,11 +2721,11 @@ Decentralized Framework for Drug Assessment Core framework build cost
 
 :::
 
-### Decentralized Framework for Drug Assessment Community Support Costs: $2 million {#sec-dfda_opex_community}
+### Pragmatic Trial Platform Community Support Costs: $2 million {#sec-dfda_opex_community}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Decentralized Framework for Drug Assessment community support costs
+Pragmatic trial platform community support costs
 
 #### Uncertainty Range
 
@@ -2743,11 +2743,11 @@ Decentralized Framework for Drug Assessment community support costs
 
 :::
 
-### Decentralized Framework for Drug Assessment Infrastructure Costs: $8 million {#sec-dfda_opex_infrastructure}
+### Pragmatic Trial Platform Infrastructure Costs: $8 million {#sec-dfda_opex_infrastructure}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Decentralized Framework for Drug Assessment infrastructure costs (cloud, security)
+Pragmatic trial platform infrastructure costs (cloud, security)
 
 #### Uncertainty Range
 
@@ -2765,11 +2765,11 @@ Decentralized Framework for Drug Assessment infrastructure costs (cloud, securit
 
 :::
 
-### Decentralized Framework for Drug Assessment Maintenance Costs: $15 million {#sec-dfda_opex_platform_maintenance}
+### Pragmatic Trial Platform Maintenance Costs: $15 million {#sec-dfda_opex_platform_maintenance}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Decentralized Framework for Drug Assessment maintenance costs
+Pragmatic trial platform maintenance costs
 
 #### Uncertainty Range
 
@@ -2787,11 +2787,11 @@ Decentralized Framework for Drug Assessment maintenance costs
 
 :::
 
-### Decentralized Framework for Drug Assessment Regulatory Coordination Costs: $5 million {#sec-dfda_opex_regulatory}
+### Pragmatic Trial Platform Regulatory Coordination Costs: $5 million {#sec-dfda_opex_regulatory}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Decentralized Framework for Drug Assessment regulatory coordination costs
+Pragmatic trial platform regulatory coordination costs
 
 #### Uncertainty Range
 
@@ -2809,11 +2809,11 @@ Decentralized Framework for Drug Assessment regulatory coordination costs
 
 :::
 
-### Decentralized Framework for Drug Assessment Staff Costs: $10 million {#sec-dfda_opex_staff}
+### Pragmatic Trial Platform Staff Costs: $10 million {#sec-dfda_opex_staff}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Decentralized Framework for Drug Assessment staff costs (minimal, AI-assisted)
+Pragmatic trial platform staff costs (minimal, AI-assisted)
 
 #### Uncertainty Range
 

@@ -1,6 +1,6 @@
 ```{python}
 #| echo: false
-#| fig-cap: "Monte Carlo Distribution: dFDA Trial Cost Reduction Percentage (10,000 simulations)"
+#| fig-cap: "Monte Carlo Distribution: Pragmatic Trial Cost Reduction Percentage (10,000 simulations)"
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -23,7 +23,7 @@ std = 0.00400937926833328
 p5 = 0.974637343298825
 p50 = 0.9791680016522417
 p95 = 0.9887738380624588
-display_name = "dFDA Trial Cost Reduction Percentage"
+display_name = "Pragmatic Trial Cost Reduction Percentage"
 units = "percentage"
 
 # Create figure with two subplots
@@ -113,7 +113,7 @@ add_png_metadata(
 plt.show()
 ```
 
-**Simulation Results Summary: dFDA Trial Cost Reduction Percentage**
+**Simulation Results Summary: Pragmatic Trial Cost Reduction Percentage**
 
 | Statistic | Value |
 |:----------|------:|
@@ -123,4 +123,4 @@ plt.show()
 | Standard Deviation | 0.401% |
 | 90% Range (5th-95th percentile) | [97.5%, 98.9%] |
 
-*The histogram shows the distribution of dFDA Trial Cost Reduction Percentage across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*
+*The histogram shows the distribution of Pragmatic Trial Cost Reduction Percentage across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

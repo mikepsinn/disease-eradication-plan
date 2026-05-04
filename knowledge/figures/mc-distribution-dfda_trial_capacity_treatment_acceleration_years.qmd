@@ -1,6 +1,6 @@
 ```{python}
 #| echo: false
-#| fig-cap: "Monte Carlo Distribution: dFDA Treatment Timeline Acceleration (10,000 simulations)"
+#| fig-cap: "Monte Carlo Distribution: Treatment Timeline Acceleration from Pragmatic Trial Capacity (10,000 simulations)"
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -23,7 +23,7 @@ std = 62.29091565533151
 p5 = 123.31073169417157
 p50 = 222.53871502068733
 p95 = 350.44906958446285
-display_name = "dFDA Treatment Timeline Acceleration"
+display_name = "Treatment Timeline Acceleration from Pragmatic Trial Capacity"
 units = "years"
 
 # Create figure with two subplots
@@ -113,7 +113,7 @@ add_png_metadata(
 plt.show()
 ```
 
-**Simulation Results Summary: dFDA Treatment Timeline Acceleration**
+**Simulation Results Summary: Treatment Timeline Acceleration from Pragmatic Trial Capacity**
 
 | Statistic | Value |
 |:----------|------:|
@@ -123,4 +123,4 @@ plt.show()
 | Standard Deviation | 62.3 |
 | 90% Range (5th-95th percentile) | [123, 350] |
 
-*The histogram shows the distribution of dFDA Treatment Timeline Acceleration across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*
+*The histogram shows the distribution of Treatment Timeline Acceleration from Pragmatic Trial Capacity across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

@@ -25,7 +25,7 @@ baseline = 0.022658536585365853
 # Tornado data from sensitivity analysis
 
 drivers = ['DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT', 'TRADITIONAL_PHASE3_COST_PER_PATIENT']
-driver_labels = ['dFDA Pragmatic Trial Cost per Patient', 'Phase 3 Cost per Patient']
+driver_labels = ['Pragmatic Trial Cost per Patient', 'Phase 3 Cost per Patient']
 impacts_low = [-0.02029268292682927, 0.023791463414634145]
 impacts_high = [0.050512195121951216, -0.014916869918699185]
 

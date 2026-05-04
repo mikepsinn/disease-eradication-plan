@@ -16,7 +16,7 @@ setup_chart_style()
 
 # Display name for chart title
 
-display_name = "dFDA Direct Funding Cost per DALY"
+display_name = "Direct Pragmatic Trial Funding Cost per DALY"
 
 # Baseline and units
 
@@ -25,7 +25,7 @@ baseline = 0.8415122325165139
 # Tornado data from sensitivity analysis
 
 drivers = ['DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT', 'EVENTUALLY_AVOIDABLE_DALY_PCT', 'NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR', 'CURRENT_TRIAL_SLOTS_AVAILABLE', 'RARE_DISEASES_COUNT_GLOBAL', 'GLOBAL_ANNUAL_DALY_BURDEN', 'EFFICACY_LAG_YEARS', 'DFDA_OPEX_PLATFORM_MAINTENANCE', 'DFDA_OPEX_STAFF', 'DFDA_OPEX_INFRASTRUCTURE', 'DFDA_OPEX_REGULATORY', 'DFDA_OPEX_COMMUNITY']
-driver_labels = ['dFDA Pragmatic Trial Cost per Patient', 'Eventually Avoidable DALY Percentage', 'Diseases Getting First Treatment Per Year', 'Annual Global Clinical Trial Participants', 'Total Number of Rare Diseases Globally', 'Global Annual DALY Burden', 'Regulatory Delay for Efficacy Testing Post-Safety Verification', 'Decentralized Framework for Drug Assessment Maintenance Costs', 'Decentralized Framework for Drug Assessment Staff Costs', 'Decentralized Framework for Drug Assessment Infrastructure Costs', 'Decentralized Framework for Drug Assessment Regulatory Coordination Costs', 'Decentralized Framework for Drug Assessment Community Support Costs']
+driver_labels = ['Pragmatic Trial Cost per Patient', 'Eventually Avoidable DALY Percentage', 'Diseases Getting First Treatment Per Year', 'Annual Global Clinical Trial Participants', 'Total Number of Rare Diseases Globally', 'Global Annual DALY Burden', 'Regulatory Delay for Efficacy Testing Post-Safety Verification', 'Pragmatic Trial Platform Maintenance Costs', 'Pragmatic Trial Platform Staff Costs', 'Pragmatic Trial Platform Infrastructure Costs', 'Pragmatic Trial Platform Regulatory Coordination Costs', 'Pragmatic Trial Platform Community Support Costs']
 impacts_low = [-0.7159981548725916, 0.7174364358786218, -0.23841115527236834, -0.12418963552510609, 0.04954383363361381, 0.046236935852555505, 0.008018763200746792, -0.0001248559620196099, -7.491786793345501e-05, -7.491786793345501e-05, -4.9946675648615546e-05, -2.4974053044246602e-05]
 impacts_high = [0.6928053131024148, -0.04613025884552624, 0.1790147491719949, 0.10596940839668678, -0.1304555493582341, -0.04165902141170874, -0.00786879974358079, 0.00017485843367426313, 0.00012489172600560483, 9.991051896784953e-05, 7.493074296804902e-05, 2.4975483603806303e-05]
 

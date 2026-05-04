@@ -104,7 +104,7 @@ class Parameter(float):
 
         # NEW FIELDS (v2.0):
         display_value: Optional override for formatted display (e.g., "$2.7T" instead of auto-format)
-        display_name: Optional override for parameter title in documentation (e.g., "dFDA Active Trials")
+        display_name: Optional override for parameter title in documentation (e.g., "Active Trials")
         keywords: List of search keywords for parameter discovery
         validation_min: Minimum valid value (hard constraint for validation)
         validation_max: Maximum valid value (hard constraint for validation)
@@ -206,7 +206,7 @@ class Parameter(float):
     distribution: "DistributionType | None"
     inputs: "list[str]"
     compute: "Callable[[ComputeContext], float] | None"
-    latex_symbol: "str | None"  # LaTeX symbol for this parameter in equations, e.g. "Cost_{DFDA}"
+    latex_symbol: "str | None"  # LaTeX symbol for this parameter in equations, e.g. "Cost_{trial}"
     hide_ci: bool  # Suppress confidence interval display in _variables.yml
 
     def __new__(
@@ -235,7 +235,7 @@ class Parameter(float):
         distribution: Union[DistributionType, str, None] = None,
         inputs: Optional[List[str]] = None,
         compute: Optional[Callable[[ComputeContext], float]] = None,
-        latex_symbol: Optional[str] = None,  # LaTeX symbol for equations, e.g. "Cost_{DFDA}"
+        latex_symbol: Optional[str] = None,  # LaTeX symbol for equations, e.g. "Cost_{trial}"
         hide_ci: bool = False,  # Suppress confidence interval display in _variables.yml
     ):
         # Convert string source_type to enum (backwards compatibility)
@@ -301,7 +301,7 @@ class Parameter(float):
         instance.distribution = distribution
         instance.inputs = inputs or []
         instance.compute = compute
-        instance.latex_symbol = latex_symbol  # LaTeX symbol for equations, e.g. "Cost_{DFDA}"
+        instance.latex_symbol = latex_symbol  # LaTeX symbol for equations, e.g. "Cost_{trial}"
         instance.hide_ci = hide_ci  # Suppress confidence interval display
 
         return instance
@@ -2285,8 +2285,8 @@ DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT = Parameter(
     manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_ref=ReferenceID.PRAGMATIC_TRIALS_COST_ADVANTAGE,
     source_type="external",
-    description="dFDA pragmatic trial cost per patient. Uses ADAPTABLE trial ($929) as DELIBERATELY CONSERVATIVE central estimate. Ramsberg & Platt (2018) reviewed 108 embedded pragmatic trials; 64 with cost data had median of only $97/patient - our estimate may overstate costs by 10x. Confidence interval spans meta-analysis median to complex chronic disease trials.",
-    display_name="dFDA Pragmatic Trial Cost per Patient",
+    description="Embedded pragmatic trial cost per patient. Uses ADAPTABLE trial ($929) as DELIBERATELY CONSERVATIVE central estimate. Ramsberg & Platt (2018) reviewed 108 embedded pragmatic trials; 64 with cost data had median of only $97/patient - this estimate may overstate costs by 10x. Confidence interval spans meta-analysis median to complex chronic disease trials.",
+    display_name="Pragmatic Trial Cost per Patient",
     unit="USD/patient",
     confidence="medium",
     keywords=["dfda", "pragmatic", "trial", "cost", "per patient", "pcornet", "adaptable", "conservative"],
@@ -2330,29 +2330,29 @@ RECOVERY_TRIAL_COST_REDUCTION_FACTOR = Parameter(
     latex_symbol=r"k_{RECOVERY}",  # LaTeX symbol for equations
 )
 
-# dFDA Pragmatic Trial Cost Reduction (forward-looking projection)
+# Pragmatic Trial Cost Reduction (forward-looking projection)
 DFDA_TRIAL_COST_REDUCTION_FACTOR = Parameter(
     TRADITIONAL_PHASE3_COST_PER_PATIENT / DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT,
     manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_type="calculated",
-    description="Cost reduction factor projected for dFDA pragmatic trials (traditional Phase 3 cost / dFDA pragmatic cost per patient)",
-    display_name="dFDA Trial Cost Reduction Factor",
+    description="Cost reduction factor projected for embedded pragmatic trials (traditional Phase 3 cost / pragmatic trial cost per patient)",
+    display_name="Pragmatic Trial Cost Reduction Factor",
     unit="multiplier",
-    formula="TRADITIONAL_PHASE3_COST / DFDA_PRAGMATIC_COST",    keywords=["dfda", "pragmatic", "rct", "clinical trial", "cost reduction", "projected"],
+    formula="TRADITIONAL_PHASE3_COST / PRAGMATIC_TRIAL_COST",    keywords=["pragmatic", "rct", "clinical trial", "cost reduction", "projected"],
     inputs=['TRADITIONAL_PHASE3_COST_PER_PATIENT', 'DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT'],
     compute=lambda ctx: ctx["TRADITIONAL_PHASE3_COST_PER_PATIENT"] / ctx["DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT"],
     latex_symbol=r"k_{reduce}",  # LaTeX symbol for equations
 )
 
-# dFDA Trial Cost Reduction as Percentage (derived from factor)
+# Pragmatic Trial Cost Reduction as Percentage (derived from factor)
 DFDA_TRIAL_COST_REDUCTION_PCT = Parameter(
     1 - (DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT / TRADITIONAL_PHASE3_COST_PER_PATIENT),
     manual_ref="knowledge/appendix/dfda-impact-paper.qmd",
     source_type="calculated",
-    description="Trial cost reduction percentage: 1 - (dFDA pragmatic cost / traditional Phase 3 cost)",
-    display_name="dFDA Trial Cost Reduction Percentage",
+    description="Trial cost reduction percentage: 1 - (pragmatic trial cost / traditional Phase 3 cost)",
+    display_name="Pragmatic Trial Cost Reduction Percentage",
     unit="percentage",
-    formula="1 - (DFDA_COST / TRADITIONAL_COST)",
+    formula="1 - (PRAGMATIC_TRIAL_COST / TRADITIONAL_COST)",
     # RECOVERY trial achieved higher reduction (98.8%), so this is conservative relative to historical evidence
     validation_min=0.90,   # Floor: 90% reduction (minimum based on RECOVERY-like efficiency)
     validation_max=0.99,   # Ceiling: 99% reduction (approaching theoretical maximum)
@@ -2856,13 +2856,13 @@ HUMAN_INTERACTOME_TARGETED_PCT = Parameter(
     latex_symbol=r"Pct_{interactome}",  # LaTeX symbol for equations
 )
 
-# dFDA operational costs
+# Pragmatic trial platform operational costs
 DFDA_UPFRONT_BUILD = Parameter(
     40_000_000,
     manual_ref="knowledge/appendix/dfda-impact-paper.qmd",
     source_type="definition",
-    description="Decentralized Framework for Drug Assessment one-time build cost (central estimate)",
-    display_name="Decentralized Framework for Drug Assessment One-Time Build Cost",
+    description="Pragmatic trial platform one-time build cost (central estimate)",
+    display_name="Pragmatic Trial Platform One-Time Build Cost",
     unit="USD",
     keywords=["40.0m", "pragmatic trials", "real world evidence", "decentralized trials", "drug agency", "food and drug administration", "medicines agency"],
     latex_symbol=r"Cost_{build}",  # LaTeX symbol for equations
@@ -2872,8 +2872,8 @@ DFDA_UPFRONT_BUILD_MAX = Parameter(
     46_000_000,
     manual_ref="knowledge/appendix/dfda-impact-paper.qmd",
     source_type="definition",
-    description="Decentralized Framework for Drug Assessment one-time build cost (high estimate)",
-    display_name="Decentralized Framework for Drug Assessment One-Time Build Cost (Maximum)",
+    description="Pragmatic trial platform one-time build cost (high estimate)",
+    display_name="Pragmatic Trial Platform One-Time Build Cost (Maximum)",
     unit="USD",
     keywords=["46.0m", "pragmatic trials", "real world evidence", "decentralized trials", "drug agency", "food and drug administration", "medicines agency"],
     latex_symbol=r"Cost_{build,max}",  # LaTeX symbol for equations
@@ -2896,20 +2896,20 @@ DFDA_TARGET_COST_PER_PATIENT_USD = Parameter(
     1000,
     manual_ref="knowledge/solution.qmd",
     source_type="definition",
-    description="Target cost per patient in USD (same as DFDA_TARGET_COST_PER_PATIENT but in dollars)",
-    display_name="Decentralized Framework for Drug Assessment Target Cost per Patient in USD",
+    description="Target pragmatic trial cost per patient in USD",
+    display_name="Target Pragmatic Trial Cost per Patient",
     unit="USD/patient",
     keywords=["1k", "pragmatic trials", "real world evidence", "participant", "subject", "volunteer", "enrollee"],
     latex_symbol=r"Cost_{target,pt}",  # LaTeX symbol for equations
 )  # $1,000 per patient
 
-# dFDA operational cost breakdown (in billions)
+# Pragmatic trial platform operational cost breakdown (in dollars)
 DFDA_OPEX_PLATFORM_MAINTENANCE = Parameter(
     15_000_000,
     manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_type="definition",
-    description="Decentralized Framework for Drug Assessment maintenance costs",
-    display_name="Decentralized Framework for Drug Assessment Maintenance Costs",
+    description="Pragmatic trial platform maintenance costs",
+    display_name="Pragmatic Trial Platform Maintenance Costs",
     unit="USD/year",
     keywords=["15.0m", "pragmatic trials", "real world evidence", "decentralized trials", "drug agency", "food and drug administration", "medicines agency"],
     distribution="lognormal",
@@ -2921,8 +2921,8 @@ DFDA_OPEX_STAFF = Parameter(
     10_000_000,
     manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_type="definition",
-    description="Decentralized Framework for Drug Assessment staff costs (minimal, AI-assisted)",
-    display_name="Decentralized Framework for Drug Assessment Staff Costs",
+    description="Pragmatic trial platform staff costs (minimal, AI-assisted)",
+    display_name="Pragmatic Trial Platform Staff Costs",
     unit="USD/year",
     keywords=["10.0m", "pragmatic trials", "real world evidence", "decentralized trials", "drug agency", "food and drug administration", "medicines agency"],
     distribution="lognormal",
@@ -2934,8 +2934,8 @@ DFDA_OPEX_INFRASTRUCTURE = Parameter(
     8_000_000,
     manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_type="definition",
-    description="Decentralized Framework for Drug Assessment infrastructure costs (cloud, security)",
-    display_name="Decentralized Framework for Drug Assessment Infrastructure Costs",
+    description="Pragmatic trial platform infrastructure costs (cloud, security)",
+    display_name="Pragmatic Trial Platform Infrastructure Costs",
     unit="USD/year",
     keywords=["8.0m", "pragmatic trials", "real world evidence", "decentralized trials", "drug agency", "food and drug administration", "medicines agency"],
     distribution="lognormal",
@@ -2947,8 +2947,8 @@ DFDA_OPEX_REGULATORY = Parameter(
     5_000_000,
     manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_type="definition",
-    description="Decentralized Framework for Drug Assessment regulatory coordination costs",
-    display_name="Decentralized Framework for Drug Assessment Regulatory Coordination Costs",
+    description="Pragmatic trial platform regulatory coordination costs",
+    display_name="Pragmatic Trial Platform Regulatory Coordination Costs",
     unit="USD/year",
     keywords=["5.0m", "pragmatic trials", "real world evidence", "approval", "authorization", "oversight", "regulation"],
     distribution="lognormal",
@@ -2960,8 +2960,8 @@ DFDA_OPEX_COMMUNITY = Parameter(
     2_000_000,
     manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_type="definition",
-    description="Decentralized Framework for Drug Assessment community support costs",
-    display_name="Decentralized Framework for Drug Assessment Community Support Costs",
+    description="Pragmatic trial platform community support costs",
+    display_name="Pragmatic Trial Platform Community Support Costs",
     unit="USD/year",
     keywords=["2.0m", "pragmatic trials", "real world evidence", "decentralized trials", "drug agency", "food and drug administration", "medicines agency"],
     distribution="lognormal",
@@ -2978,22 +2978,22 @@ DFDA_ANNUAL_OPEX = Parameter(
     + DFDA_OPEX_COMMUNITY,
     manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_type="calculated",
-    description="Total annual Decentralized Framework for Drug Assessment operational costs (sum of all components: platform + staff + infra + regulatory + community)",
-    display_name="Total Annual Decentralized Framework for Drug Assessment Operational Costs",
+    description="Total annual pragmatic trial platform operational costs (sum of all components: platform + staff + infra + regulatory + community)",
+    display_name="Total Annual Pragmatic Trial Platform Operational Costs",
     unit="USD/year",
     formula="PLATFORM_MAINTENANCE + STAFF + INFRASTRUCTURE + REGULATORY + COMMUNITY",    keywords=["pragmatic trials", "real world evidence", "approval", "authorization", "oversight", "regulation", "decentralized trials"],
     # Uncertainty derived from component inputs
     validation_min=25_000_000,   # Floor: Lean MVP with minimal regulatory team
     validation_max=80_000_000,   # Ceiling: Full global compliance + 24/7 support + security audit responses
     inputs=["DFDA_OPEX_PLATFORM_MAINTENANCE", "DFDA_OPEX_STAFF", "DFDA_OPEX_INFRASTRUCTURE", "DFDA_OPEX_REGULATORY", "DFDA_OPEX_COMMUNITY"],
-    latex_symbol=r"OPEX_{dFDA}",  # LaTeX symbol for equations
+    latex_symbol=r"OPEX_{trial}",  # LaTeX symbol for equations
     compute=lambda ctx: sum([ctx["DFDA_OPEX_PLATFORM_MAINTENANCE"], ctx["DFDA_OPEX_STAFF"], ctx["DFDA_OPEX_INFRASTRUCTURE"], ctx["DFDA_OPEX_REGULATORY"], ctx["DFDA_OPEX_COMMUNITY"]])
 )
 
 # ===================================================================
-# STANDALONE dFDA FUNDING CHAIN (source-agnostic)
+# STANDALONE PRAGMATIC TRIAL FUNDING CHAIN (source-agnostic)
 # ===================================================================
-# These parameters represent dFDA's assumed annual funding level WITHOUT
+# These parameters represent a reference annual funding level WITHOUT
 # specifying the source (treaty, philanthropy, government, etc.).
 # The treaty-derived chain (DIH_TREASURY_*) is kept separately for
 # the treaty impact paper.
@@ -3003,39 +3003,39 @@ DFDA_ANNUAL_TRIAL_FUNDING = Parameter(
     manual_ref="knowledge/appendix/dfda-impact-paper.qmd",
     source_type="definition",
     distribution="fixed",
-    description="Assumed annual funding for dFDA pragmatic clinical trials (~$21.8B/year). Source-agnostic: could come from military reallocation, philanthropy, or government appropriation.",
-    display_name="dFDA Annual Trial Funding",
+    description="Reference annual funding level used for direct-funding comparisons. Source-agnostic: funds could come from treaty reallocation, philanthropy, or public appropriation, and are modeled as funding available for pragmatic clinical trials rather than funding owed to any one organization.",
+    display_name="Reference Annual Pragmatic Trial Funding",
     unit="USD/year",
-    keywords=["funding", "annual", "trials", "dfda", "pragmatic trials"],
-    latex_symbol=r"Funding_{dFDA,ann}",
+    keywords=["funding", "annual", "trials", "pragmatic trials"],
+    latex_symbol=r"Funding_{trial,ref}",
 )  # $21.8B/year (source-agnostic)
 
 DFDA_TRIAL_SUBSIDIES_ANNUAL = Parameter(
     DFDA_ANNUAL_TRIAL_FUNDING - DFDA_ANNUAL_OPEX,
     manual_ref="knowledge/appendix/dfda-impact-paper.qmd",
     source_type="calculated",
-    description="Annual clinical trial patient subsidies from dFDA funding (total funding minus operational costs)",
-    display_name="dFDA Annual Trial Subsidies",
+    description="Annual patient-level pragmatic trial subsidies after operating costs at the reference funding level",
+    display_name="Reference Annual Trial Subsidies",
     unit="USD/year",
-    formula="DFDA_ANNUAL_TRIAL_FUNDING - DFDA_ANNUAL_OPEX",
-    keywords=["subsidy", "trial", "patient", "funding", "dfda"],
+    formula="REFERENCE_TRIAL_FUNDING - TRIAL_PLATFORM_OPEX",
+    keywords=["subsidy", "trial", "patient", "funding", "pragmatic trials"],
     inputs=["DFDA_ANNUAL_TRIAL_FUNDING", "DFDA_ANNUAL_OPEX"],
     compute=lambda ctx: ctx["DFDA_ANNUAL_TRIAL_FUNDING"] - ctx["DFDA_ANNUAL_OPEX"],
-    latex_symbol=r"Subsidies_{dFDA,ann}",
+    latex_symbol=r"Subsidies_{trial,ref}",
 )  # $21.76B/year
 
 DFDA_PATIENTS_FUNDABLE_ANNUALLY = Parameter(
     DFDA_TRIAL_SUBSIDIES_ANNUAL / DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT,
     manual_ref="knowledge/appendix/dfda-impact-paper.qmd",
     source_type="calculated",
-    description="Number of patients fundable annually from dFDA funding at pragmatic trial cost. Source-agnostic counterpart of DIH_PATIENTS_FUNDABLE_ANNUALLY.",
-    display_name="dFDA Patients Fundable Annually",
+    description="Number of patients fundable annually at the reference pragmatic trial funding level and empirical pragmatic trial cost. Source-agnostic counterpart of DIH_PATIENTS_FUNDABLE_ANNUALLY.",
+    display_name="Patients Fundable Annually at Reference Funding",
     unit="patients/year",
-    formula="DFDA_TRIAL_SUBSIDIES_ANNUAL / DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT",
-    keywords=["patients", "fundable", "trial", "capacity", "dfda"],
+    formula="REFERENCE_TRIAL_SUBSIDIES / PRAGMATIC_TRIAL_COST_PER_PATIENT",
+    keywords=["patients", "fundable", "trial", "capacity", "pragmatic trials"],
     inputs=["DFDA_TRIAL_SUBSIDIES_ANNUAL", "DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT"],
     compute=lambda ctx: ctx["DFDA_TRIAL_SUBSIDIES_ANNUAL"] / ctx["DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT"],
-    latex_symbol=r"N_{fundable,dFDA}",
+    latex_symbol=r"N_{fundable,ref}",
 )  # ~23.4M patients/year
 
 # ===================================================================
@@ -3061,8 +3061,8 @@ DFDA_BENEFIT_RD_ONLY_ANNUAL = Parameter(
     GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL * DFDA_TRIAL_COST_REDUCTION_PCT,
     manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_type="calculated",
-    description="Annual Decentralized Framework for Drug Assessment benefit from R&D savings (trial cost reduction, secondary component)",
-    display_name="Decentralized Framework for Drug Assessment Annual Benefit: R&D Savings",
+    description="Annual benefit from pragmatic trial R&D savings (trial cost reduction, secondary component)",
+    display_name="Annual R&D Savings from Pragmatic Trials",
     unit="USD/year",
     formula="TRIAL_SPENDING × COST_REDUCTION_PCT",
     keywords=["rd savings", "pragmatic trials", "real world evidence", "rct", "clinical trial"],
@@ -3094,7 +3094,7 @@ DFDA_NET_SAVINGS_RD_ONLY_ANNUAL = Parameter(
     manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_type="calculated",
     description="Annual net savings from R&D cost reduction only (gross savings minus operational costs, excludes regulatory delay value)",
-    display_name="Decentralized Framework for Drug Assessment Annual Net Savings (R&D Only)",
+    display_name="Annual Net Savings from Pragmatic Trials (R&D Only)",
     unit="USD/year",
     formula="GROSS_SAVINGS - ANNUAL_OPEX",    keywords=["pragmatic trials", "real world evidence", "decentralized trials", "drug agency", "food and drug administration", "medicines agency", "yearly", "conservative"],
     inputs=["DFDA_BENEFIT_RD_ONLY_ANNUAL", "DFDA_ANNUAL_OPEX"],
@@ -5139,10 +5139,10 @@ TREATY_TOTAL_ANNUAL_COSTS = Parameter(
     TREATY_CAMPAIGN_ANNUAL_COST_AMORTIZED + DFDA_ANNUAL_OPEX,
     manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_type="calculated",
-    description="Total annual system costs (campaign + Decentralized Framework for Drug Assessment operations)",
+    description="Total annual treaty system costs (campaign + pragmatic trial platform operations)",
     display_name="Total Annual Treaty System Costs",
     unit="USD/year",
-    formula="CAMPAIGN_ANNUAL + DFDA_OPEX",
+    formula="CAMPAIGN_ANNUAL + TRIAL_PLATFORM_OPEX",
     keywords=["1%", "pragmatic trials", "real world evidence", "one percent", "decentralized trials", "drug agency", "food and drug administration"],
     inputs=['DFDA_ANNUAL_OPEX', 'TREATY_CAMPAIGN_ANNUAL_COST_AMORTIZED'],
     compute=lambda ctx: ctx["TREATY_CAMPAIGN_ANNUAL_COST_AMORTIZED"] + ctx["DFDA_ANNUAL_OPEX"],
@@ -5158,10 +5158,10 @@ TREATY_PEACE_PLUS_RD_ANNUAL_BENEFITS = Parameter(
     PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT + DFDA_BENEFIT_RD_ONLY_ANNUAL,
     manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_type="calculated",
-    description="Basic annual benefits: peace dividend + Decentralized Framework for Drug Assessment R&D savings only (2 of 8 benefit categories, excludes regulatory delay value)",
+    description="Basic annual benefits: peace dividend + pragmatic trial R&D savings only (2 of 8 benefit categories, excludes regulatory delay value)",
     display_name="1% treaty Basic Annual Benefits (Peace + R&D Savings)",
     unit="USD/year",
-    formula="PEACE_DIVIDEND + DFDA_RD_SAVINGS",
+    formula="PEACE_DIVIDEND + PRAGMATIC_TRIAL_RD_SAVINGS",
     keywords=["1%", "pragmatic trials", "real world evidence", "one percent", "conflict resolution", "decentralized trials", "drug agency", "basic benefits"],
     inputs=["PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT", "DFDA_BENEFIT_RD_ONLY_ANNUAL"],
     compute=lambda ctx: ctx["PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT"] + ctx["DFDA_BENEFIT_RD_ONLY_ANNUAL"],
@@ -5218,8 +5218,8 @@ DFDA_NPV_UPFRONT_COST = Parameter(
     40_000_000,
     manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_type="definition",
-    description="Decentralized Framework for Drug Assessment Core framework build cost",
-    display_name="Decentralized Framework for Drug Assessment Core framework Build Cost",
+    description="Pragmatic trial platform core framework build cost",
+    display_name="Pragmatic Trial Platform Core Framework Build Cost",
     unit="USD",
     keywords=["40.0m", "pragmatic trials", "real world evidence", "decentralized trials", "drug agency", "food and drug administration", "medicines agency"],
     distribution="lognormal",
@@ -5244,8 +5244,8 @@ DFDA_NPV_ANNUAL_OPEX = Parameter(
     18_950_000,
     manual_ref="knowledge/appendix/dfda-impact-paper.qmd",
     source_type="definition",
-    description="Decentralized Framework for Drug Assessment Core framework annual opex (midpoint of $11-26.5M)",
-    display_name="Decentralized Framework for Drug Assessment Core framework Annual OPEX",
+    description="Pragmatic trial platform core framework annual opex (midpoint of $11-26.5M)",
+    display_name="Pragmatic Trial Platform Core Framework Annual OPEX",
     unit="USD/year",
     keywords=["18.9m", "pragmatic trials", "real world evidence", "decentralized trials", "drug agency", "food and drug administration", "medicines agency"],
     distribution="lognormal",
@@ -5266,16 +5266,16 @@ DIH_NPV_ANNUAL_OPEX_INITIATIVES = Parameter(
     latex_symbol=r"OPEX_{DIH,ann}",  # LaTeX symbol for equations
 )  # $21.1M medium case broader initiatives
 
-# NPV Model - Primary Parameters (dFDA-specific)
-# Total upfront costs (C0): combines core dFDA framework + broader DIH initiative setup
+# NPV Model - Primary Parameters (pragmatic trial platform)
+# Total upfront costs (C0): combines core pragmatic trial framework + broader DIH initiative setup
 DFDA_NPV_UPFRONT_COST_TOTAL = Parameter(
     DFDA_NPV_UPFRONT_COST + DIH_NPV_UPFRONT_COST_INITIATIVES,
     manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_type="calculated",
-    description="Total NPV upfront costs (Decentralized Framework for Drug Assessment core + DIH initiatives)",
-    display_name="Decentralized Framework for Drug Assessment Total NPV Upfront Costs",
+    description="Total NPV upfront costs (pragmatic trial platform core + DIH initiatives)",
+    display_name="Pragmatic Trial Platform Total NPV Upfront Costs",
     unit="USD",
-    formula="DFDA_BUILD + DIH_INITIATIVES",    keywords=["pragmatic trials", "real world evidence", "distributed research", "global research", "open science", "decentralized trials", "drug agency"],
+    formula="TRIAL_PLATFORM_BUILD + DIH_INITIATIVES",    keywords=["pragmatic trials", "real world evidence", "distributed research", "global research", "open science", "decentralized trials", "drug agency"],
     # Uncertainty derived from inputs (DFDA_BUILD + DIH_INITIATIVES)
     validation_min=150_000_000,  # Floor: MVP + essential initiatives only
     validation_max=800_000_000,  # Ceiling: Full scope creep + regulatory capture (raised from $500M)
@@ -5284,33 +5284,33 @@ DFDA_NPV_UPFRONT_COST_TOTAL = Parameter(
     latex_symbol=r"Cost_{upfront,total}",  # LaTeX symbol for equations
 )  # C0 = $0.26975B
 
-# Total annual operational costs (Cop): combines core dFDA framework + broader DIH initiative annual costs
+# Total annual operational costs (Cop): combines core pragmatic trial framework + broader DIH initiative annual costs
 DFDA_NPV_ANNUAL_OPEX_TOTAL = Parameter(
     DFDA_NPV_ANNUAL_OPEX + DIH_NPV_ANNUAL_OPEX_INITIATIVES,
     manual_ref="knowledge/appendix/dfda-impact-paper.qmd",
     source_type="calculated",
-    description="Total NPV annual opex (Decentralized Framework for Drug Assessment core + DIH initiatives)",
-    display_name="Decentralized Framework for Drug Assessment Total NPV Annual OPEX",
+    description="Total NPV annual opex (pragmatic trial platform core + DIH initiatives)",
+    display_name="Pragmatic Trial Platform Total NPV Annual OPEX",
     unit="USD/year",
-    formula="DFDA_OPEX + DIH_OPEX",    keywords=["pragmatic trials", "real world evidence", "distributed research", "global research", "open science", "decentralized trials", "drug agency"],
+    formula="TRIAL_PLATFORM_OPEX + DIH_OPEX",    keywords=["pragmatic trials", "real world evidence", "distributed research", "global research", "open science", "decentralized trials", "drug agency"],
     inputs=['DFDA_NPV_ANNUAL_OPEX', 'DIH_NPV_ANNUAL_OPEX_INITIATIVES'],
     compute=lambda ctx: ctx["DFDA_NPV_ANNUAL_OPEX"] + ctx["DIH_NPV_ANNUAL_OPEX_INITIATIVES"],
     latex_symbol=r"OPEX_{total}",  # LaTeX symbol for equations
 )  # Cop = $0.04005B
 
-# dFDA adoption curve: linear ramp from 0% to 100% over 5 years, then constant at 100%
+# Pragmatic trial platform adoption curve: linear ramp from 0% to 100% over 5 years, then constant at 100%
 DFDA_NPV_ADOPTION_RAMP_YEARS = Parameter(
     5,
     manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_type="definition",
-    description="Years to reach full Decentralized Framework for Drug Assessment adoption",
-    display_name="Years to Reach Full Decentralized Framework for Drug Assessment Adoption",
+    description="Years to reach full pragmatic trial platform adoption",
+    display_name="Years to Reach Full Pragmatic Trial Platform Adoption",
     unit="years",
     keywords=["pragmatic trials", "real world evidence", "deployment rate", "market penetration", "participation rate", "uptake", "usage rate"],
     latex_symbol=r"T_{ramp}",  # LaTeX symbol for equations
 )  # Years to reach full adoption
 
-# Calculated NPV values for dFDA
+# Calculated NPV values for pragmatic trial platform
 DFDA_NPV_PV_ANNUAL_OPEX = Parameter(
     DFDA_NPV_ANNUAL_OPEX_TOTAL
     * (1 - (1 + NPV_DISCOUNT_RATE_STANDARD) ** -NPV_TIME_HORIZON_YEARS)
@@ -5318,7 +5318,7 @@ DFDA_NPV_PV_ANNUAL_OPEX = Parameter(
     manual_ref="knowledge/appendix/dfda-impact-paper.qmd",
     source_type="calculated",
     description="Present value of annual opex over 10 years (NPV formula)",
-    display_name="Decentralized Framework for Drug Assessment Present Value of Annual OPEX Over 10 Years",
+    display_name="Pragmatic Trial Platform Present Value of Annual OPEX Over 10 Years",
     unit="USD",
     formula="OPEX × [(1 - (1 + r)^-T) / r]",
     keywords=["pragmatic trials", "real world evidence", "decentralized trials", "drug agency", "food and drug administration", "medicines agency", "yearly"],
@@ -5333,15 +5333,15 @@ DFDA_NPV_TOTAL_COST = Parameter(
     manual_ref="knowledge/appendix/dfda-impact-paper.qmd",
     source_type="calculated",
     description="Total NPV cost (upfront + PV of annual opex)",
-    display_name="Decentralized Framework for Drug Assessment Total NPV Cost",
+    display_name="Pragmatic Trial Platform Total NPV Cost",
     unit="USD",
     formula="UPFRONT + PV_OPEX",    keywords=["pragmatic trials", "real world evidence", "decentralized trials", "drug agency", "food and drug administration", "medicines agency", "costs"],
     inputs=['DFDA_NPV_PV_ANNUAL_OPEX', 'DFDA_NPV_UPFRONT_COST_TOTAL'],
     compute=lambda ctx: ctx["DFDA_NPV_UPFRONT_COST_TOTAL"] + ctx["DFDA_NPV_PV_ANNUAL_OPEX"],
-    latex_symbol=r"Cost_{dFDA,total}",  # LaTeX symbol for equations
+    latex_symbol=r"Cost_{platform,total}",  # LaTeX symbol for equations
 )  # ~$0.54B
 
-# NPV of dFDA benefits with 5-year linear adoption ramp
+# NPV of pragmatic trial benefits with 5-year linear adoption ramp
 # Years 1-5: 20%, 40%, 60%, 80%, 100% adoption
 # Years 6-10: 100% adoption
 # Discounted at 8% annual rate
@@ -5354,8 +5354,8 @@ DFDA_NPV_BENEFIT_RD_ONLY = Parameter(
     ),
     manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_type="calculated",
-    description="NPV of Decentralized Framework for Drug Assessment R&D savings only with 5-year adoption ramp (10-year horizon, most conservative financial estimate)",
-    display_name="NPV of Decentralized Framework for Drug Assessment Benefits (R&D Only, 10-Year Discounted)",
+    description="NPV of pragmatic trial R&D savings only with 5-year adoption ramp (10-year horizon, most conservative financial estimate)",
+    display_name="NPV of Pragmatic Trial Benefits (R&D Only, 10-Year Discounted)",
     unit="USD",
     formula="SUM[Savings × adoption(t) / (1+r)^t] for t=1..10",
     latex=r"NPV_{RD} = \sum_{t=1}^{10} \frac{Savings_{RD,ann} \cdot \frac{\min(t,5)}{5}}{(1+r)^t}",
@@ -5403,14 +5403,14 @@ DFDA_NPV_NET_BENEFIT_RD_ONLY = Parameter(
 # ROI TIERS
 # ---
 
-# Tier 1: Conservative - dFDA R&D savings only (10-year NPV)
+# Tier 1: Conservative - pragmatic trial R&D savings only (10-year NPV)
 # Source: knowledge/appendix/dfda-roi-calculations.qmd NPV analysis
 DFDA_ROI_RD_ONLY = Parameter(
     DFDA_NPV_BENEFIT_RD_ONLY / DFDA_NPV_TOTAL_COST,
     manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_type="calculated",
-    description="ROI from Decentralized Framework for Drug Assessment R&D savings only (10-year NPV, most conservative estimate)",
-    display_name="ROI from Decentralized Framework for Drug Assessment R&D Savings Only",
+    description="ROI from pragmatic trial R&D savings only (10-year NPV, most conservative estimate)",
+    display_name="ROI from Pragmatic Trial R&D Savings Only",
     unit="ratio",
     formula="NPV_BENEFIT ÷ NPV_TOTAL_COST",
     keywords=["pragmatic trials", "real world evidence", "bcr", "benefit cost ratio", "economic return", "investment return", "low estimate"],
@@ -7053,10 +7053,10 @@ DIVIDEND_COVERAGE_FACTOR = Parameter(
     TREATY_ANNUAL_FUNDING / DFDA_ANNUAL_OPEX,
     manual_ref="knowledge/economics/peace-dividend.qmd",
     source_type="calculated",
-    description="Coverage factor of treaty funding vs Decentralized Framework for Drug Assessment opex (sustainability margin)",
-    display_name="Coverage Factor of Treaty Funding vs Decentralized Framework for Drug Assessment OPEX",
+    description="Coverage factor of treaty funding vs pragmatic trial platform opex (sustainability margin)",
+    display_name="Coverage Factor of Treaty Funding vs Pragmatic Trial Platform OPEX",
     unit="ratio",
-    formula="TREATY_FUNDING ÷ DFDA_OPEX",    keywords=["pragmatic trials", "real world evidence", "multiple", "decentralized trials", "drug agency", "food and drug administration", "international agreement"],
+    formula="TREATY_FUNDING ÷ TRIAL_PLATFORM_OPEX",    keywords=["pragmatic trials", "real world evidence", "multiple", "decentralized trials", "drug agency", "food and drug administration", "international agreement"],
     inputs=['DFDA_ANNUAL_OPEX', 'TREATY_ANNUAL_FUNDING'],
     compute=lambda ctx: ctx["TREATY_ANNUAL_FUNDING"] / ctx["DFDA_ANNUAL_OPEX"],
     latex_symbol=r"k_{coverage}",  # LaTeX symbol for equations
@@ -7066,8 +7066,8 @@ DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL = Parameter(
     manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_ref="",
     source_type="calculated",  # Derived from treaty funding minus bond and IAB allocations
-    description="Annual funding for pragmatic clinical trials (treaty funding minus VICTORY Incentive Alignment Bond payouts and IAB political incentive mechanism)",
-    display_name="Annual Funding for Pragmatic Clinical Trials",
+    description="Annual 1% Treaty funding available for pragmatic clinical trials after bond payouts and political incentive funding.",
+    display_name="1% Treaty Pragmatic Trial Funding",
     unit="USD/year",
     formula="TREATY_FUNDING - BOND_PAYOUT - IAB_POLITICAL_INCENTIVE_FUNDING",
     keywords=["impact investing", "pay for success", "distributed research", "global research", "open science", "debt instrument", "development finance"],
@@ -7079,10 +7079,10 @@ DIH_TREASURY_TRIAL_SUBSIDIES_ANNUAL = Parameter(
     DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL - DFDA_ANNUAL_OPEX,
     manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_type="calculated",
-    description="Annual clinical trial patient subsidies (all medical research funds after Decentralized Framework for Drug Assessment operations)",
-    display_name="Annual Clinical Trial Patient Subsidies",
+    description="Annual 1% Treaty patient-level pragmatic trial subsidies after platform operating costs",
+    display_name="1% Treaty Annual Trial Subsidies",
     unit="USD/year",
-    formula="MEDICAL_RESEARCH_FUNDING - DFDA_OPEX",    keywords=["pragmatic trials", "real world evidence", "distributed research", "global research", "open science", "rct", "patient subsidy"],
+    formula="ONE_PERCENT_TREATY_TRIAL_FUNDING - TRIAL_PLATFORM_OPEX",    keywords=["pragmatic trials", "real world evidence", "distributed research", "global research", "open science", "rct", "patient subsidy"],
     inputs=['DFDA_ANNUAL_OPEX', 'DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL'],
     compute=lambda ctx: ctx["DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL"] - ctx["DFDA_ANNUAL_OPEX"],
     latex_symbol=r"Subsidies_{trial,ann}",  # LaTeX symbol for equations
@@ -7092,10 +7092,10 @@ DIH_PATIENTS_FUNDABLE_ANNUALLY = Parameter(
     DIH_TREASURY_TRIAL_SUBSIDIES_ANNUAL / DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT,
     manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_type="calculated",
-    description="Number of patients fundable annually at dFDA pragmatic trial cost. Based on empirical pragmatic trial costs (RECOVERY to PCORnet range).",
-    display_name="Patients Fundable Annually",
+    description="Number of patients fundable annually from 1% Treaty pragmatic trial subsidies at empirical pragmatic trial cost (RECOVERY to PCORnet range).",
+    display_name="Patients Fundable Annually Under the 1% Treaty",
     unit="patients/year",
-    formula="TRIAL_SUBSIDIES ÷ DFDA_COST_PER_PATIENT",    keywords=["trial", "participant", "enrollment", "capacity", "patient"],
+    formula="ONE_PERCENT_TREATY_TRIAL_SUBSIDIES ÷ PRAGMATIC_TRIAL_COST_PER_PATIENT",    keywords=["trial", "participant", "enrollment", "capacity", "patient"],
     inputs=['DIH_TREASURY_TRIAL_SUBSIDIES_ANNUAL', 'DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT'],
     compute=lambda ctx: ctx["DIH_TREASURY_TRIAL_SUBSIDIES_ANNUAL"] / ctx["DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT"],
     latex_symbol=r"N_{fundable,ann}",  # LaTeX symbol for equations
@@ -7136,10 +7136,10 @@ DFDA_OPEX_PCT_OF_TREATY_FUNDING = Parameter(
     DFDA_ANNUAL_OPEX / TREATY_ANNUAL_FUNDING,
     manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_type="calculated",
-    description="Percentage of treaty funding allocated to Decentralized Framework for Drug Assessment framework overhead",
-    display_name="Decentralized Framework for Drug Assessment Overhead Percentage of Treaty Funding",
+    description="Percentage of treaty funding allocated to pragmatic trial platform overhead",
+    display_name="Pragmatic Trial Platform Overhead Percentage of Treaty Funding",
     unit="rate",
-    formula="DFDA_OPEX / TREATY_FUNDING",
+    formula="TRIAL_PLATFORM_OPEX / TREATY_FUNDING",
     confidence="high",
     keywords=["allocation", "percentage", "overhead", "platform", "opex"],
     inputs=["DFDA_ANNUAL_OPEX", "TREATY_ANNUAL_FUNDING"],
@@ -7188,22 +7188,22 @@ TOTAL_RESEARCH_FUNDING_WITH_TREATY = Parameter(
 )
 
 # Trial Capacity Multiplier (Simple Economic Calculation)
-# dFDA funding can support ~23.4M patients/year at pragmatic trial cost ($929/patient)
+# Treaty-scale reference funding can support ~23.4M patients/year at pragmatic trial cost ($929/patient)
 # Current global trial capacity: 1.9M patients/year (IQVIA 2022)
-# Capacity Multiplier = dFDA capacity / Current capacity
+# Capacity Multiplier = treaty-scale pragmatic trial capacity / current capacity
 DFDA_TRIAL_CAPACITY_MULTIPLIER = Parameter(
     DFDA_PATIENTS_FUNDABLE_ANNUALLY / CURRENT_TRIAL_SLOTS_AVAILABLE,
     manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_type="calculated",
-    description="Trial capacity multiplier from dFDA funding capacity vs. current global trial participation",
-    display_name="Trial Capacity Multiplier",
+    description="Trial capacity multiplier from treaty-scale pragmatic trial funding capacity vs. current global trial participation",
+    display_name="Pragmatic Trial Capacity Multiplier at Treaty-Scale Funding",
     unit="x",
-    formula="DFDA_PATIENTS_FUNDABLE_ANNUALLY ÷ CURRENT_TRIAL_SLOTS",
+    formula="PATIENTS_FUNDABLE_AT_REFERENCE_FUNDING ÷ CURRENT_TRIAL_SLOTS",
     keywords=["pragmatic trials", "real world evidence", "economic impact", "fiscal multiplier", "gdp multiplier", "multiplier effect", "multiple"],
     inputs=['CURRENT_TRIAL_SLOTS_AVAILABLE', 'DFDA_PATIENTS_FUNDABLE_ANNUALLY'],
     compute=lambda ctx: ctx["DFDA_PATIENTS_FUNDABLE_ANNUALLY"] / ctx["CURRENT_TRIAL_SLOTS_AVAILABLE"],
     latex_symbol=r"k_{capacity}",  # LaTeX symbol for equations
-)  # Trial capacity multiplier from simple funding economics (dFDA patients fundable / current trial slots)
+)  # Trial capacity multiplier from simple funding economics (reference patients fundable / current trial slots)
 
 TRIAL_CAPACITY_CUMULATIVE_YEARS_20YR = Parameter(
     float(DFDA_TRIAL_CAPACITY_MULTIPLIER) * 20,
@@ -7212,7 +7212,7 @@ TRIAL_CAPACITY_CUMULATIVE_YEARS_20YR = Parameter(
     description="Cumulative trial-capacity-equivalent years over 20-year period",
     display_name="Cumulative Trial Capacity Years Over 20 Years",
     unit="years",
-    formula="DFDA_TRIAL_CAPACITY_MULTIPLIER × 20 YEARS",
+    formula="PRAGMATIC_TRIAL_CAPACITY_MULTIPLIER × 20 YEARS",
     keywords=["trial", "capacity", "cumulative", "20 years"],
     inputs=['DFDA_TRIAL_CAPACITY_MULTIPLIER'],
     compute=lambda ctx: ctx["DFDA_TRIAL_CAPACITY_MULTIPLIER"] * 20,
@@ -7398,28 +7398,28 @@ DFDA_VALLEY_OF_DEATH_RESCUE_MULTIPLIER = Parameter(
     1 + float(VALLEY_OF_DEATH_ATTRITION_PCT),
     manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_type="calculated",
-    description="Factor increase in drugs entering development when dFDA eliminates Phase 2/3 cost barrier. Valley-of-death attrition (40%) becomes new drugs, so 1 + 0.40 = 1.4× more drugs.",
-    display_name="dFDA Valley of Death Rescue Multiplier",
+    description="Factor increase in drugs entering development when pragmatic trial subsidies remove the Phase 2/3 cost barrier. Valley-of-death attrition (40%) becomes new drugs, so 1 + 0.40 = 1.4× more drugs.",
+    display_name="Valley of Death Rescue Multiplier",
     unit="multiplier",
     formula="1 + VALLEY_OF_DEATH_ATTRITION_PCT",    confidence="medium",
-    keywords=["dfda", "valley of death", "rescue", "multiplier", "cost barrier"],
+    keywords=["pragmatic trials", "valley of death", "rescue", "multiplier", "cost barrier"],
     inputs=['VALLEY_OF_DEATH_ATTRITION_PCT'],
     compute=lambda ctx: 1 + ctx["VALLEY_OF_DEATH_ATTRITION_PCT"],
     latex_symbol=r"k_{rescue}",  # LaTeX symbol for equations
-)  # 1.4× more drugs when dFDA eliminates cost barrier
+)  # 1.4x more drugs when pragmatic trial subsidies eliminate the cost barrier
 
-# Combined treatment discovery speedup from dFDA implementation
+# Combined treatment discovery speedup from pragmatic trial expansion
 # Trial capacity multiplier × valley of death rescue multiplier
 DFDA_COMBINED_TREATMENT_SPEEDUP_MULTIPLIER = Parameter(
     float(DFDA_TRIAL_CAPACITY_MULTIPLIER) * float(DFDA_VALLEY_OF_DEATH_RESCUE_MULTIPLIER),
     manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_type="calculated",
-    description="Combined speedup factor for treatment discovery from dFDA. Trial capacity multiplier times valley of death rescue multiplier. Diseases that would take T years to get first treatment now take T/speedup years.",
-    display_name="dFDA Combined Treatment Discovery Speedup Multiplier",
+    description="Combined speedup factor for treatment discovery from pragmatic trial expansion. Trial capacity multiplier times valley of death rescue multiplier. Diseases that would take T years to get first treatment now take T/speedup years.",
+    display_name="Combined Treatment Discovery Speedup Multiplier",
     unit="multiplier",
-    formula="DFDA_TRIAL_CAPACITY_MULTIPLIER × DFDA_VALLEY_OF_DEATH_RESCUE_MULTIPLIER",
+    formula="PRAGMATIC_TRIAL_CAPACITY_MULTIPLIER × VALLEY_OF_DEATH_RESCUE_MULTIPLIER",
     confidence="medium",
-    keywords=["dfda", "treatment", "speedup", "combined", "multiplier"],
+    keywords=["pragmatic trials", "treatment", "speedup", "combined", "multiplier"],
     inputs=['DFDA_TRIAL_CAPACITY_MULTIPLIER', 'DFDA_VALLEY_OF_DEATH_RESCUE_MULTIPLIER'],
     compute=lambda ctx: ctx["DFDA_TRIAL_CAPACITY_MULTIPLIER"] * ctx["DFDA_VALLEY_OF_DEATH_RESCUE_MULTIPLIER"],
     latex_symbol=r"k_{speedup}",  # LaTeX symbol for equations
@@ -7512,7 +7512,7 @@ STATUS_QUO_AVG_YEARS_TO_FIRST_TREATMENT = Parameter(
     latex_symbol=r"T_{first,SQ}",  # LaTeX symbol for equations
 )  # ~222 years for average disease (half the exploration time)
 
-# Treatment timeline acceleration from dFDA implementation (trial capacity only)
+# Treatment timeline acceleration from pragmatic trial expansion (trial capacity only)
 # Calculated as: Status Quo Baseline × (1 - 1/Speedup)
 # Uses only trial capacity multiplier, not combined with valley of death rescue,
 # because valley of death rescue adds more drug candidates but doesn't directly speed therapeutic space exploration
@@ -7520,12 +7520,12 @@ DFDA_TRIAL_CAPACITY_TREATMENT_ACCELERATION_YEARS = Parameter(
     float(STATUS_QUO_AVG_YEARS_TO_FIRST_TREATMENT) * (1 - 1 / float(DFDA_TRIAL_CAPACITY_MULTIPLIER)),
     manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_type="calculated",
-    description="Years earlier the average first treatment arrives due to dFDA's trial capacity increase. Calculated as the status quo timeline reduced by the inverse of the capacity multiplier. Uses only trial capacity multiplier (not combined with valley of death rescue) because additional candidates don't directly speed therapeutic space exploration.",
-    display_name="dFDA Treatment Timeline Acceleration",
+    description="Years earlier the average first treatment arrives due to increased pragmatic trial capacity. Calculated as the status quo timeline reduced by the inverse of the capacity multiplier. Uses only trial capacity multiplier (not combined with valley of death rescue) because additional candidates do not directly speed therapeutic space exploration.",
+    display_name="Treatment Timeline Acceleration from Pragmatic Trial Capacity",
     unit="years",
-    formula="STATUS_QUO_AVG_YEARS_TO_FIRST_TREATMENT × (1 - 1/DFDA_TRIAL_CAPACITY_MULTIPLIER)",
+    formula="STATUS_QUO_AVG_YEARS_TO_FIRST_TREATMENT × (1 - 1/PRAGMATIC_TRIAL_CAPACITY_MULTIPLIER)",
     confidence="low",
-    keywords=["dfda", "acceleration", "first treatment", "timeline", "years"],
+    keywords=["pragmatic trials", "acceleration", "first treatment", "timeline", "years"],
     inputs=['STATUS_QUO_AVG_YEARS_TO_FIRST_TREATMENT', 'DFDA_TRIAL_CAPACITY_MULTIPLIER'],
     compute=lambda ctx: ctx["STATUS_QUO_AVG_YEARS_TO_FIRST_TREATMENT"] * (1 - 1 / ctx["DFDA_TRIAL_CAPACITY_MULTIPLIER"]),
     latex_symbol=r"T_{accel}",  # LaTeX symbol for equations
@@ -7545,7 +7545,7 @@ DFDA_TRIAL_CAPACITY_LIVES_SAVED = Parameter(
     description="Total eventually avoidable deaths from trial capacity increase alone. Represents first treatments arriving earlier due to faster therapeutic space exploration from increased trial capacity.",
     display_name="Lives Saved from Trial Capacity Increase",
     unit="deaths",
-    formula="ANNUAL_DEATHS × DFDA_TRIAL_CAPACITY_TREATMENT_ACCELERATION_YEARS × AVOIDABLE_PCT",
+    formula="ANNUAL_DEATHS × TRIAL_CAPACITY_TREATMENT_ACCELERATION_YEARS × AVOIDABLE_PCT",
     confidence="low",
     keywords=["trial capacity", "lives saved", "treatment acceleration"],
     inputs=['GLOBAL_DISEASE_DEATHS_DAILY', 'DFDA_TRIAL_CAPACITY_TREATMENT_ACCELERATION_YEARS'],
@@ -7583,7 +7583,7 @@ DFDA_TRIAL_CAPACITY_ECONOMIC_VALUE = Parameter(
     description="Total economic value from trial capacity increase alone. DALYs valued at standard economic rate.",
     display_name="Economic Value from Trial Capacity Increase",
     unit="USD",
-    formula="DFDA_TRIAL_CAPACITY_DALYS_AVERTED × STANDARD_QALY_VALUE",
+    formula="TRIAL_CAPACITY_DALYS_AVERTED × STANDARD_QALY_VALUE",
     confidence="low",
     keywords=["trial capacity", "economic", "value", "USD"],
     inputs=['DFDA_TRIAL_CAPACITY_DALYS_AVERTED', 'STANDARD_ECONOMIC_QALY_VALUE_USD'],
@@ -7601,47 +7601,47 @@ DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_YEARS = Parameter(
     float(DFDA_TRIAL_CAPACITY_TREATMENT_ACCELERATION_YEARS) + float(EFFICACY_LAG_YEARS),
     manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_type="calculated",
-    description="Average years earlier patients receive treatments due to dFDA. Combines treatment timeline acceleration from increased trial capacity with efficacy lag elimination for treatments already discovered.",
-    display_name="dFDA Average Total Timeline Shift",
+    description="Average years earlier patients receive treatments from increased pragmatic trial capacity plus efficacy lag elimination for treatments already discovered.",
+    display_name="Average Total Treatment Timeline Shift",
     unit="years",
-    formula="DFDA_TRIAL_CAPACITY_TREATMENT_ACCELERATION_YEARS + EFFICACY_LAG_YEARS",
+    formula="TRIAL_CAPACITY_TREATMENT_ACCELERATION_YEARS + EFFICACY_LAG_YEARS",
     confidence="low",
-    keywords=["dfda", "total", "timeline", "shift", "acceleration", "efficacy lag", "years", "average"],
+    keywords=["pragmatic trials", "total", "timeline", "shift", "acceleration", "efficacy lag", "years", "average"],
     inputs=['DFDA_TRIAL_CAPACITY_TREATMENT_ACCELERATION_YEARS', 'EFFICACY_LAG_YEARS'],
     compute=lambda ctx: ctx["DFDA_TRIAL_CAPACITY_TREATMENT_ACCELERATION_YEARS"] + ctx["EFFICACY_LAG_YEARS"],
     latex_symbol=r"T_{accel,max}",  # LaTeX symbol for equations
 )  # ~207 years average total timeline shift from dFDA
 
-# dFDA treatment rate (diseases getting first treatment per year)
+# Pragmatic trial treatment rate (diseases getting first treatment per year)
 DFDA_FIRST_TREATMENTS_PER_YEAR = Parameter(
     float(NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR) * float(DFDA_TRIAL_CAPACITY_MULTIPLIER),
     manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_type="calculated",
-    description="Diseases per year receiving their first effective treatment with dFDA. Scales proportionally with trial capacity multiplier.",
-    display_name="dFDA New Treatments Per Year",
+    description="Diseases per year receiving their first effective treatment with treaty-scale pragmatic trial capacity. Scales proportionally with trial capacity multiplier.",
+    display_name="New Treatments Per Year at Treaty-Scale Trial Capacity",
     unit="diseases/year",
-    formula="NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR × DFDA_TRIAL_CAPACITY_MULTIPLIER",
+    formula="NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR × PRAGMATIC_TRIAL_CAPACITY_MULTIPLIER",
     confidence="low",
-    keywords=["dfda", "cures", "diseases", "per year", "rate", "first treatment"],
+    keywords=["pragmatic trials", "cures", "diseases", "per year", "rate", "first treatment"],
     inputs=['NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR', 'DFDA_TRIAL_CAPACITY_MULTIPLIER'],
     compute=lambda ctx: ctx["NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR"] * ctx["DFDA_TRIAL_CAPACITY_MULTIPLIER"],
-    latex_symbol=r"Treatments_{dFDA,ann}",  # LaTeX symbol for equations
+    latex_symbol=r"Treatments_{trial,ann}",  # LaTeX symbol for equations
 )
 
-# Time to explore entire therapeutic space with dFDA
+# Time to explore entire therapeutic space with treaty-scale pragmatic trial capacity
 DFDA_QUEUE_CLEARANCE_YEARS = Parameter(
     float(STATUS_QUO_QUEUE_CLEARANCE_YEARS) / float(DFDA_TRIAL_CAPACITY_MULTIPLIER),
     manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_type="calculated",
-    description="Years to explore the entire therapeutic search space with dFDA implementation. At increased discovery rate, finding first treatments for all currently untreatable diseases takes ~36 years instead of ~443.",
-    display_name="dFDA Therapeutic Space Exploration Time",
+    description="Years to explore the entire therapeutic search space with treaty-scale pragmatic trial capacity. At increased discovery rate, finding first treatments for all currently untreatable diseases takes ~36 years instead of ~443.",
+    display_name="Therapeutic Space Exploration Time at Treaty-Scale Trial Capacity",
     unit="years",
-    formula="STATUS_QUO_QUEUE_CLEARANCE_YEARS ÷ DFDA_TRIAL_CAPACITY_MULTIPLIER",
+    formula="STATUS_QUO_QUEUE_CLEARANCE_YEARS ÷ PRAGMATIC_TRIAL_CAPACITY_MULTIPLIER",
     confidence="low",
-    keywords=["dfda", "queue", "clearance", "all diseases", "cure all", "years"],
+    keywords=["pragmatic trials", "queue", "clearance", "all diseases", "cure all", "years"],
     inputs=['STATUS_QUO_QUEUE_CLEARANCE_YEARS', 'DFDA_TRIAL_CAPACITY_MULTIPLIER'],
     compute=lambda ctx: ctx["STATUS_QUO_QUEUE_CLEARANCE_YEARS"] / ctx["DFDA_TRIAL_CAPACITY_MULTIPLIER"],
-    latex_symbol=r"T_{queue,dFDA}",  # LaTeX symbol for equations
+    latex_symbol=r"T_{queue,trial}",  # LaTeX symbol for equations
 )
 
 # ============================================================================
@@ -7654,10 +7654,10 @@ DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_LIVES_SAVED = Parameter(
     float(GLOBAL_DISEASE_DEATHS_DAILY) * float(DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_YEARS) * DAYS_PER_YEAR * (1 - _unavoidable_pct),
     manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_type="calculated",
-    description="Total eventually avoidable deaths from the combined dFDA timeline shift. Represents deaths prevented when cures arrive earlier due to both increased trial capacity and eliminated efficacy lag.",
+    description="Total eventually avoidable deaths from the combined treatment timeline shift. Represents deaths prevented when cures arrive earlier due to both increased trial capacity and eliminated efficacy lag.",
     display_name="Total Lives Saved from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput",
     unit="deaths",
-    formula="ANNUAL_DEATHS × DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_YEARS × AVOIDABLE_PCT",
+    formula="ANNUAL_DEATHS × TOTAL_TIMELINE_SHIFT_YEARS × AVOIDABLE_PCT",
     confidence="low",
     keywords=["total", "lives saved", "timeline shift", "cure acceleration", "efficacy lag", "average"],
     inputs=['GLOBAL_DISEASE_DEATHS_DAILY', 'DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_YEARS'],
@@ -7669,7 +7669,7 @@ DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS = Parameter(
     float(GLOBAL_ANNUAL_DALY_BURDEN) * float(EVENTUALLY_AVOIDABLE_DALY_PCT) * float(DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_YEARS),
     manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_type="calculated",
-    description="Total DALYs averted from the combined dFDA timeline shift. Calculated as annual global DALY burden × eventually avoidable percentage × timeline shift years. Includes both fatal and non-fatal diseases (WHO GBD methodology).",
+    description="Total DALYs averted from the combined treatment timeline shift. Calculated as annual global DALY burden × eventually avoidable percentage × timeline shift years. Includes both fatal and non-fatal diseases (WHO GBD methodology).",
     display_name="Total DALYs from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput",
     unit="DALYs",
     formula="GLOBAL_ANNUAL_DALY_BURDEN × EVENTUALLY_AVOIDABLE_DALY_PCT × TIMELINE_SHIFT",
@@ -7684,7 +7684,7 @@ DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_ECONOMIC_VALUE = Parameter(
     float(DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS) * float(STANDARD_ECONOMIC_QALY_VALUE_USD),
     manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_type="calculated",
-    description="Total economic value from the combined dFDA timeline shift. DALYs valued at standard economic rate.",
+    description="Total economic value from the combined treatment timeline shift. DALYs valued at standard economic rate.",
     display_name="Total Economic Benefit from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput",
     unit="USD",
     formula="DALYS × STANDARD_QALY_VALUE",
@@ -7699,10 +7699,10 @@ DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_SUFFERING_HOURS = Parameter(
     float(DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS) * float(GLOBAL_YLD_PROPORTION_OF_DALYS) * HOURS_PER_YEAR,
     manual_ref="knowledge/appendix/dfda-impact-paper.qmd",
     source_type="calculated",
-    description="Hours of suffering eliminated from the combined dFDA timeline shift. Calculated from YLD component of DALYs (39% of total DALYs × hours per year). One-time benefit, not annual recurring.",
+    description="Hours of suffering eliminated from the combined treatment timeline shift. Calculated from YLD component of DALYs (39% of total DALYs × hours per year). One-time benefit, not annual recurring.",
     display_name="Suffering Hours Eliminated from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput",
     unit="hours",
-    formula="DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS × GLOBAL_YLD_PROPORTION × HOURS_PER_YEAR",
+    formula="TOTAL_TIMELINE_SHIFT_DALYS × GLOBAL_YLD_PROPORTION × HOURS_PER_YEAR",
     confidence="low",
     keywords=["suffering", "disability", "pain", "morbidity", "quality of life", "one-time benefit", "disease burden", "trial capacity", "efficacy lag", "YLD", "hours"],
     inputs=['DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS', 'GLOBAL_YLD_PROPORTION_OF_DALYS'],
@@ -7710,15 +7710,15 @@ DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_SUFFERING_HOURS = Parameter(
     latex_symbol=r"Hours_{suffer,max}",  # LaTeX symbol for equations
 )  # ~1,875 trillion hours from full timeline shift (vs old 193T - now based on WHO YLD proportion)
 
-# dFDA System Targets (using trial capacity multiplier)
+# Pragmatic trial system targets (using trial capacity multiplier)
 DFDA_TRIALS_PER_YEAR_CAPACITY = Parameter(
     float(CURRENT_TRIALS_PER_YEAR) * float(DFDA_TRIAL_CAPACITY_MULTIPLIER),
     manual_ref="knowledge/problem/untapped-therapeutic-frontier.qmd",
     source_type="calculated",
     description="Maximum trials per year possible with trial capacity multiplier",
-    display_name="Decentralized Framework for Drug Assessment Maximum Trials per Year",
+    display_name="Maximum Trials per Year at Treaty-Scale Trial Capacity",
     unit="trials/year",
-    formula="CURRENT_TRIALS × DFDA_TRIAL_CAPACITY_MULTIPLIER",
+    formula="CURRENT_TRIALS × PRAGMATIC_TRIAL_CAPACITY_MULTIPLIER",
     keywords=["pragmatic trials", "real world evidence", "economic impact", "fiscal multiplier", "gdp multiplier", "multiplier effect"],
     inputs=['CURRENT_TRIALS_PER_YEAR', 'DFDA_TRIAL_CAPACITY_MULTIPLIER'],
     compute=lambda ctx: ctx["CURRENT_TRIALS_PER_YEAR"] * ctx["DFDA_TRIAL_CAPACITY_MULTIPLIER"],
@@ -7728,7 +7728,7 @@ DFDA_TRIALS_PER_YEAR_CAPACITY = Parameter(
 # =============================================================================
 # THERAPEUTIC SPACE EXPLORATION TIMELINES
 # =============================================================================
-# How long to systematically test all therapeutic combinations at current vs dFDA capacity
+# How long to systematically test all therapeutic combinations at current vs treaty-scale capacity
 
 CURRENT_KNOWN_SAFE_EXPLORATION_YEARS = Parameter(
     float(DRUG_DISEASE_COMBINATIONS_POSSIBLE) / float(CURRENT_TRIALS_PER_YEAR),
@@ -7748,14 +7748,14 @@ DFDA_KNOWN_SAFE_EXPLORATION_YEARS = Parameter(
     float(DRUG_DISEASE_COMBINATIONS_POSSIBLE) / float(DFDA_TRIALS_PER_YEAR_CAPACITY),
     manual_ref="knowledge/problem/untapped-therapeutic-frontier.qmd",
     source_type="calculated",
-    description="Years to test all known safe drug-disease combinations with dFDA trial capacity",
-    display_name="Known Safe Exploration Time (dFDA)",
+    description="Years to test all known safe drug-disease combinations with treaty-scale pragmatic trial capacity",
+    display_name="Known Safe Exploration Time at Treaty-Scale Trial Capacity",
     unit="years",
-    formula="DRUG_DISEASE_COMBINATIONS ÷ DFDA_TRIALS_PER_YEAR",
-    keywords=["exploration", "therapeutic frontier", "timeline", "dfda", "accelerated", "known safe", "years"],
+    formula="DRUG_DISEASE_COMBINATIONS ÷ TREATY_SCALE_TRIALS_PER_YEAR",
+    keywords=["exploration", "therapeutic frontier", "timeline", "accelerated", "known safe", "years"],
     inputs=["DRUG_DISEASE_COMBINATIONS_POSSIBLE", "DFDA_TRIALS_PER_YEAR_CAPACITY"],
     compute=lambda ctx: ctx["DRUG_DISEASE_COMBINATIONS_POSSIBLE"] / ctx["DFDA_TRIALS_PER_YEAR_CAPACITY"],
-    latex_symbol=r"T_{safe,dFDA}",  # LaTeX symbol for equations
+    latex_symbol=r"T_{safe,trial}",  # LaTeX symbol for equations
 )
 
 CURRENT_TOTAL_EXPLORATION_YEARS = Parameter(
@@ -7776,14 +7776,14 @@ DFDA_TOTAL_EXPLORATION_YEARS = Parameter(
     float(TOTAL_TESTABLE_THERAPEUTIC_COMBINATIONS) / float(DFDA_TRIALS_PER_YEAR_CAPACITY),
     manual_ref="knowledge/problem/untapped-therapeutic-frontier.qmd",
     source_type="calculated",
-    description="Years to test all therapeutic combinations (known safe + emerging modalities) with dFDA capacity",
-    display_name="Total Exploration Time (dFDA)",
+    description="Years to test all therapeutic combinations (known safe + emerging modalities) with treaty-scale pragmatic trial capacity",
+    display_name="Total Exploration Time at Treaty-Scale Trial Capacity",
     unit="years",
-    formula="TOTAL_COMBINATIONS ÷ DFDA_TRIALS_PER_YEAR",
-    keywords=["exploration", "total", "all modalities", "timeline", "dfda", "accelerated", "years"],
+    formula="TOTAL_COMBINATIONS ÷ TREATY_SCALE_TRIALS_PER_YEAR",
+    keywords=["exploration", "total", "all modalities", "timeline", "accelerated", "years"],
     inputs=["TOTAL_TESTABLE_THERAPEUTIC_COMBINATIONS", "DFDA_TRIALS_PER_YEAR_CAPACITY"],
     compute=lambda ctx: ctx["TOTAL_TESTABLE_THERAPEUTIC_COMBINATIONS"] / ctx["DFDA_TRIALS_PER_YEAR_CAPACITY"],
-    latex_symbol=r"T_{explore,dFDA}",  # LaTeX symbol for equations
+    latex_symbol=r"T_{explore,trial}",  # LaTeX symbol for equations
 )
 
 # Combination therapy exploration (pairwise drug combinations - standard in modern medicine)
@@ -8310,7 +8310,7 @@ TREATY_ROI_TRIAL_CAPACITY_PLUS_EFFICACY_LAG = Parameter(
     description="Treaty ROI from elimination of efficacy lag plus earlier treatment discovery from increased trial throughput. Total one-time benefit divided by campaign cost. This is the primary ROI estimate for total health benefits.",
     display_name="Treaty ROI - Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Increased Trial Throughput",
     unit="ratio",
-    formula="DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_ECONOMIC_VALUE ÷ CAMPAIGN_COST",
+    formula="TOTAL_TIMELINE_SHIFT_ECONOMIC_VALUE ÷ CAMPAIGN_COST",
     confidence="medium",
     keywords=["trial capacity", "efficacy lag", "primary", "timeline shift", "roi"],
     inputs=["DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_ECONOMIC_VALUE", "TREATY_CAMPAIGN_TOTAL_COST"],
@@ -8633,7 +8633,7 @@ NIH_TRADITIONAL_TRIAL_MAX_EFFICIENCY_PCT = Parameter(
                 "marginal value when thousands of safe compounds already await testing.",
     display_name="NIH Traditional Trial Maximum Efficiency vs Pragmatic (%)",
     unit="percent",
-    formula="DFDA_PRAGMATIC_COST ÷ TRADITIONAL_PHASE3_COST",
+    formula="PRAGMATIC_TRIAL_COST ÷ TRADITIONAL_PHASE3_COST",
     confidence="medium",
     keywords=["efficiency", "traditional", "pragmatic", "nih", "comparison", "cost", "ceiling", "maximum"],
     inputs=["DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT", "TRADITIONAL_PHASE3_COST_PER_PATIENT"],
@@ -8694,7 +8694,7 @@ DFDA_DIRECT_FUNDING_QUEUE_CLEARANCE_NPV = Parameter(
     manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_type="calculated",  # NPV calculation from funding, discount rate, and time horizon
     description="NPV of annual direct funding for the therapeutic space exploration period. Funding period equals exploration time (queue clearance years at given capacity multiplier). After exploration completes, the full timeline shift benefit is realized.",
-    display_name="dFDA Direct Funding NPV (Exploration Period)",
+    display_name="Direct Pragmatic Trial Funding NPV (Exploration Period)",
     unit="USD",
     formula="ANNUAL_FUNDING × [(1 - (1 + r)^-T) / r] where T = exploration time",
     keywords=["philanthropy", "direct funding", "alternative", "npv", "exploration"],
@@ -8711,7 +8711,7 @@ DFDA_DIRECT_FUNDING_COST_PER_DALY = Parameter(
     manual_ref="knowledge/appendix/dfda-impact-paper.qmd",
     source_type="calculated",  # Derived from NPV and DALYs
     description="Cost per DALY at direct funding level for the therapeutic space exploration period. Still highly cost-effective vs bed nets.",
-    display_name="dFDA Direct Funding Cost per DALY",
+    display_name="Direct Pragmatic Trial Funding Cost per DALY",
     unit="USD/DALY",
     formula="NPV_DIRECT_FUNDING ÷ DALYS_TIMELINE_SHIFT",    confidence="medium",
     keywords=["philanthropy", "direct funding", "cost effectiveness"],
@@ -8757,10 +8757,10 @@ TREATY_VS_DIRECT_FUNDING_LEVERAGE = Parameter(
     DFDA_DIRECT_FUNDING_COST_PER_DALY / TREATY_COST_PER_DALY_TRIAL_CAPACITY_PLUS_EFFICACY_LAG,
     manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_type="calculated",  # Ratio of cost per DALY metrics
-    description="How many times more cost-effective the treaty campaign is vs direct funding. Treaty campaign unlocks government funding at scale, avoiding need for philanthropists/NIH to directly commit equivalent amounts. Both approaches achieve same DALY timeline shift benefit. Treaty spreads cost across governments while building sustainable public funding infrastructure.",
+    description="How many times more cost-effective the treaty campaign is vs direct pragmatic trial funding. Treaty campaign unlocks government funding at scale, avoiding need for philanthropists/NIH to directly commit equivalent amounts. Both approaches achieve same DALY timeline shift benefit. Treaty spreads cost across governments while building sustainable public funding infrastructure.",
     display_name="Treaty Campaign Leverage vs Direct Funding",
     unit="x",
-    formula="DFDA_DIRECT_FUNDING_COST_PER_DALY ÷ TREATY_COST_PER_DALY",    confidence="high",
+    formula="DIRECT_PRAGMATIC_TRIAL_FUNDING_COST_PER_DALY ÷ TREATY_COST_PER_DALY",    confidence="high",
     keywords=["leverage", "campaign effectiveness", "treaty advantage", "cost comparison", "therapeutic space"],
     inputs=['DFDA_DIRECT_FUNDING_COST_PER_DALY', 'TREATY_COST_PER_DALY_TRIAL_CAPACITY_PLUS_EFFICACY_LAG'],
     compute=lambda ctx: ctx["DFDA_DIRECT_FUNDING_COST_PER_DALY"] / ctx["TREATY_COST_PER_DALY_TRIAL_CAPACITY_PLUS_EFFICACY_LAG"],
@@ -9025,7 +9025,7 @@ VOTER_LIVES_SAVED = Parameter(
                 "(total lives saved divided by the majority-of-humanity coordination target).",
     display_name="Lives Saved per Verified Voter",
     unit="lives",
-    formula="DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_LIVES_SAVED ÷ GLOBAL_REGISTERED_VOTERS",
+    formula="TOTAL_TIMELINE_SHIFT_LIVES_SAVED ÷ GLOBAL_REGISTERED_VOTERS",
     keywords=["per voter", "individual impact", "lives saved", "CTA", "campaign", "majority of humanity"],
     inputs=['DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_LIVES_SAVED', 'GLOBAL_REGISTERED_VOTERS'],
     compute=lambda ctx: ctx["DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_LIVES_SAVED"] / ctx["GLOBAL_REGISTERED_VOTERS"],
@@ -9041,7 +9041,7 @@ VOTER_SUFFERING_HOURS_PREVENTED = Parameter(
                 "(total suffering hours divided by the majority-of-humanity coordination target).",
     display_name="Suffering Hours Prevented per Verified Voter",
     unit="hours",
-    formula="DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_SUFFERING_HOURS ÷ GLOBAL_REGISTERED_VOTERS",
+    formula="TOTAL_TIMELINE_SHIFT_SUFFERING_HOURS ÷ GLOBAL_REGISTERED_VOTERS",
     keywords=["per voter", "individual impact", "suffering", "CTA", "campaign", "majority of humanity"],
     inputs=['DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_SUFFERING_HOURS', 'GLOBAL_REGISTERED_VOTERS'],
     compute=lambda ctx: ctx["DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_SUFFERING_HOURS"] / ctx["GLOBAL_REGISTERED_VOTERS"],
@@ -9921,7 +9921,7 @@ TREATY_DISEASE_CURE_FRACTION_20YR = Parameter(
                 "Cumulative throughput is capped by the physical participant ceiling.",
     display_name="Treaty Disease Cure Fraction (20yr, Take-Hold Path)",
     unit="rate",
-    formula="min(1.0, NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR × (3×min(DFDA_TRIAL_CAPACITY_MULTIPLIER×1, DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL) + 4×min(DFDA_TRIAL_CAPACITY_MULTIPLIER×2, DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL) + 5×min(DFDA_TRIAL_CAPACITY_MULTIPLIER×5, DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL) + 8×min(DFDA_TRIAL_CAPACITY_MULTIPLIER×10, DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL)) ÷ DISEASES_WITHOUT_EFFECTIVE_TREATMENT)",
+    formula="min(1.0, NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR × (3×min(TRIAL_CAPACITY_MULTIPLIER×1, MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL) + 4×min(TRIAL_CAPACITY_MULTIPLIER×2, MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL) + 5×min(TRIAL_CAPACITY_MULTIPLIER×5, MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL) + 8×min(TRIAL_CAPACITY_MULTIPLIER×10, MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL)) ÷ DISEASES_WITHOUT_EFFECTIVE_TREATMENT)",
     inputs=[
         "NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR",
         "DFDA_TRIAL_CAPACITY_MULTIPLIER",
@@ -10052,7 +10052,7 @@ WISHONIA_DISEASE_CURE_FRACTION_20YR_FULL = Parameter(
                 "Uses full trial-capacity scaling and applies an upper bound of 100% of untreated disease classes.",
     display_name="Wishonia Disease Cure Fraction (20yr, Full Implementation)",
     unit="rate",
-    formula="min(1.0, NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR × min(DFDA_TRIAL_CAPACITY_MULTIPLIER × (WISHONIA_MILITARY_REALLOCATION_PHYSICAL_MAX_SHARE ÷ 0.01), DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL) × 20 ÷ DISEASES_WITHOUT_EFFECTIVE_TREATMENT)",
+    formula="min(1.0, NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR × min(TRIAL_CAPACITY_MULTIPLIER × (WISHONIA_MILITARY_REALLOCATION_PHYSICAL_MAX_SHARE ÷ 0.01), MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL) × 20 ÷ DISEASES_WITHOUT_EFFECTIVE_TREATMENT)",
     inputs=[
         "NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR",
         "DFDA_TRIAL_CAPACITY_MULTIPLIER",
@@ -10426,7 +10426,7 @@ TREATY_DISEASE_CURE_FRACTION_15YR = Parameter(
                 "Cumulative throughput is capped by the physical participant ceiling.",
     display_name="Treaty Disease Cure Fraction (15yr, Take-Hold Path)",
     unit="rate",
-    formula="min(1.0, NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR × (3×min(DFDA_TRIAL_CAPACITY_MULTIPLIER×1, DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL) + 4×min(DFDA_TRIAL_CAPACITY_MULTIPLIER×2, DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL) + 5×min(DFDA_TRIAL_CAPACITY_MULTIPLIER×5, DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL) + 3×min(DFDA_TRIAL_CAPACITY_MULTIPLIER×10, DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL)) ÷ DISEASES_WITHOUT_EFFECTIVE_TREATMENT)",
+    formula="min(1.0, NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR × (3×min(TRIAL_CAPACITY_MULTIPLIER×1, MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL) + 4×min(TRIAL_CAPACITY_MULTIPLIER×2, MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL) + 5×min(TRIAL_CAPACITY_MULTIPLIER×5, MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL) + 3×min(TRIAL_CAPACITY_MULTIPLIER×10, MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL)) ÷ DISEASES_WITHOUT_EFFECTIVE_TREATMENT)",
     inputs=[
         "NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR",
         "DFDA_TRIAL_CAPACITY_MULTIPLIER",
@@ -10556,7 +10556,7 @@ WISHONIA_DISEASE_CURE_FRACTION_15YR = Parameter(
                 "Uses full trial-capacity scaling and applies an upper bound of 100% of untreated disease classes.",
     display_name="Wishonia Disease Cure Fraction (15yr, Full Implementation)",
     unit="rate",
-    formula="min(1.0, NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR * min(DFDA_TRIAL_CAPACITY_MULTIPLIER * (WISHONIA_MILITARY_REALLOCATION_PHYSICAL_MAX_SHARE / 0.01), DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL) * 15 / DISEASES_WITHOUT_EFFECTIVE_TREATMENT)",
+    formula="min(1.0, NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR * min(TRIAL_CAPACITY_MULTIPLIER * (WISHONIA_MILITARY_REALLOCATION_PHYSICAL_MAX_SHARE / 0.01), MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL) * 15 / DISEASES_WITHOUT_EFFECTIVE_TREATMENT)",
     inputs=[
         "NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR",
         "DFDA_TRIAL_CAPACITY_MULTIPLIER",
@@ -12581,7 +12581,7 @@ CONTRIBUTION_DALYS_PER_PCT_POINT = Parameter(
                 "One percent of total DALYs from eliminating trial capacity bottleneck and efficacy lag.",
     display_name="DALYs Averted per Percentage Point",
     unit="DALYs",
-    formula="DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS × 0.01",
+    formula="TOTAL_TIMELINE_SHIFT_DALYS × 0.01",
     inputs=["DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS"],
     compute=lambda ctx: ctx["DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS"] * 0.01,
     latex_symbol=r"DALYs_{pp}",
@@ -12595,7 +12595,7 @@ CONTRIBUTION_LIVES_SAVED_PER_PCT_POINT = Parameter(
                 "One percent of total lives saved from eliminating trial capacity bottleneck and efficacy lag.",
     display_name="Lives Saved per Percentage Point",
     unit="lives",
-    formula="DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_LIVES_SAVED × 0.01",
+    formula="TOTAL_TIMELINE_SHIFT_LIVES_SAVED × 0.01",
     inputs=["DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_LIVES_SAVED"],
     compute=lambda ctx: ctx["DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_LIVES_SAVED"] * 0.01,
     latex_symbol=r"Lives_{pp}",
@@ -12609,7 +12609,7 @@ CONTRIBUTION_SUFFERING_HOURS_PER_PCT_POINT = Parameter(
                 "One percent of total suffering hours from eliminating trial capacity bottleneck and efficacy lag.",
     display_name="Suffering Hours Prevented per Percentage Point",
     unit="hours",
-    formula="DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_SUFFERING_HOURS × 0.01",
+    formula="TOTAL_TIMELINE_SHIFT_SUFFERING_HOURS × 0.01",
     inputs=["DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_SUFFERING_HOURS"],
     compute=lambda ctx: ctx["DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_SUFFERING_HOURS"] * 0.01,
     latex_symbol=r"Hours_{pp}",

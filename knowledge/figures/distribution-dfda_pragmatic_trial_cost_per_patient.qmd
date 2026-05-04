@@ -1,6 +1,6 @@
 ```{python}
 #| echo: false
-#| fig-cap: "Probability Distribution: dFDA Pragmatic Trial Cost per Patient"
+#| fig-cap: "Probability Distribution: Pragmatic Trial Cost per Patient"
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -21,7 +21,7 @@ central_value = 929.0
 low = 97
 high = 3000
 dist_type = "lognormal"
-display_name = "dFDA Pragmatic Trial Cost per Patient"
+display_name = "Pragmatic Trial Cost per Patient"
 unit = "USD/patient"
 
 # Calculate distribution parameters

@@ -16,7 +16,7 @@ setup_chart_style()
 
 # Display name for chart title
 
-display_name = "NPV of Decentralized Framework for Drug Assessment Benefits (R&D Only, 10-Year Discounted)"
+display_name = "NPV of Pragmatic Trial Benefits (R&D Only, 10-Year Discounted)"
 
 # Baseline and units
 
@@ -25,7 +25,7 @@ baseline = 389352903335.6751
 # Tornado data from sensitivity analysis
 
 drivers = ['GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL', 'DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT', 'TRADITIONAL_PHASE3_COST_PER_PATIENT', 'DFDA_OPEX_PLATFORM_MAINTENANCE', 'DFDA_OPEX_STAFF', 'DFDA_OPEX_INFRASTRUCTURE', 'DFDA_OPEX_REGULATORY', 'DFDA_OPEX_COMMUNITY']
-driver_labels = ['Annual Global Spending on Clinical Trials', 'dFDA Pragmatic Trial Cost per Patient', 'Phase 3 Cost per Patient', 'Decentralized Framework for Drug Assessment Maintenance Costs', 'Decentralized Framework for Drug Assessment Staff Costs', 'Decentralized Framework for Drug Assessment Infrastructure Costs', 'Decentralized Framework for Drug Assessment Regulatory Coordination Costs', 'Decentralized Framework for Drug Assessment Community Support Costs']
+driver_labels = ['Annual Global Spending on Clinical Trials', 'Pragmatic Trial Cost per Patient', 'Phase 3 Cost per Patient', 'Pragmatic Trial Platform Maintenance Costs', 'Pragmatic Trial Platform Staff Costs', 'Pragmatic Trial Platform Infrastructure Costs', 'Pragmatic Trial Platform Regulatory Coordination Costs', 'Pragmatic Trial Platform Community Support Costs']
 impacts_low = [-64936445170.53815, 8089709123.588867, -9484503322.842163, 33220960.944213867, 19932576.56652832, 19932576.56652832, 13288384.377685547, 6644192.188842773]
 impacts_high = [97404667755.80725, -20136763936.240784, 5946633035.750244, -46509345.32196045, -33220960.944213867, -26576768.75543213, -19932576.56652832, -6644192.188842773]
 

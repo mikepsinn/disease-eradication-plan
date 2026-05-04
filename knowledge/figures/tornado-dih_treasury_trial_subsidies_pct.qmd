@@ -25,7 +25,7 @@ baseline = 0.7985294117647059
 # Tornado data from sensitivity analysis
 
 drivers = ['DFDA_OPEX_PLATFORM_MAINTENANCE', 'DFDA_OPEX_STAFF', 'DFDA_OPEX_INFRASTRUCTURE', 'DFDA_OPEX_REGULATORY', 'DFDA_OPEX_COMMUNITY']
-driver_labels = ['Decentralized Framework for Drug Assessment Maintenance Costs', 'Decentralized Framework for Drug Assessment Staff Costs', 'Decentralized Framework for Drug Assessment Infrastructure Costs', 'Decentralized Framework for Drug Assessment Regulatory Coordination Costs', 'Decentralized Framework for Drug Assessment Community Support Costs']
+driver_labels = ['Pragmatic Trial Platform Maintenance Costs', 'Pragmatic Trial Platform Staff Costs', 'Pragmatic Trial Platform Infrastructure Costs', 'Pragmatic Trial Platform Regulatory Coordination Costs', 'Pragmatic Trial Platform Community Support Costs']
 impacts_low = [0.00018382352941170854, 0.00011029411764695851, 0.00011029411764695851, 7.352941176463901e-05, 3.6764705882319504e-05]
 impacts_high = [-0.0002573529411765696, -0.00018382352941181956, -0.00014705882352950006, -0.00011029411764706953, -3.6764705882430526e-05]
 

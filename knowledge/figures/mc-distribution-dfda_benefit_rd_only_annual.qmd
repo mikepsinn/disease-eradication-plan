@@ -1,6 +1,6 @@
 ```{python}
 #| echo: false
-#| fig-cap: "Monte Carlo Distribution: Decentralized Framework for Drug Assessment Annual Benefit: R&D Savings (10,000 simulations)"
+#| fig-cap: "Monte Carlo Distribution: Annual R&D Savings from Pragmatic Trials (10,000 simulations)"
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -23,7 +23,7 @@ std = 7663872802.699494
 p5 = 49230710022.124435
 p50 = 57824551996.61527
 p95 = 73053124934.98944
-display_name = "Decentralized Framework for Drug Assessment Annual Benefit: R&D Savings"
+display_name = "Annual R&D Savings from Pragmatic Trials"
 units = "USD/year"
 
 # Create figure with two subplots
@@ -113,7 +113,7 @@ add_png_metadata(
 plt.show()
 ```
 
-**Simulation Results Summary: Decentralized Framework for Drug Assessment Annual Benefit: R&D Savings**
+**Simulation Results Summary: Annual R&D Savings from Pragmatic Trials**
 
 | Statistic | Value |
 |:----------|------:|
@@ -123,4 +123,4 @@ plt.show()
 | Standard Deviation | $7.66 billion |
 | 90% Range (5th-95th percentile) | [$49.2 billion, $73.1 billion] |
 
-*The histogram shows the distribution of Decentralized Framework for Drug Assessment Annual Benefit: R&D Savings across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*
+*The histogram shows the distribution of Annual R&D Savings from Pragmatic Trials across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

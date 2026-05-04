@@ -1,6 +1,6 @@
 ```{python}
 #| echo: false
-#| fig-cap: "Monte Carlo Distribution: Known Safe Exploration Time (dFDA) (10,000 simulations)"
+#| fig-cap: "Monte Carlo Distribution: Known Safe Exploration Time at Treaty-Scale Trial Capacity (10,000 simulations)"
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -23,7 +23,7 @@ std = 181.35358520942833
 p5 = 51.33046488814189
 p50 = 176.92512730516904
 p95 = 606.750404837319
-display_name = "Known Safe Exploration Time (dFDA)"
+display_name = "Known Safe Exploration Time at Treaty-Scale Trial Capacity"
 units = "years"
 
 # Create figure with two subplots
@@ -113,7 +113,7 @@ add_png_metadata(
 plt.show()
 ```
 
-**Simulation Results Summary: Known Safe Exploration Time (dFDA)**
+**Simulation Results Summary: Known Safe Exploration Time at Treaty-Scale Trial Capacity**
 
 | Statistic | Value |
 |:----------|------:|
@@ -123,4 +123,4 @@ plt.show()
 | Standard Deviation | 181 |
 | 90% Range (5th-95th percentile) | [51.3, 607] |
 
-*The histogram shows the distribution of Known Safe Exploration Time (dFDA) across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*
+*The histogram shows the distribution of Known Safe Exploration Time at Treaty-Scale Trial Capacity across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

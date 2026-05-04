@@ -16,7 +16,7 @@ setup_chart_style()
 
 # Display name for chart title
 
-display_name = "Decentralized Framework for Drug Assessment Annual Net Savings (R&D Only)"
+display_name = "Annual Net Savings from Pragmatic Trials (R&D Only)"
 
 # Baseline and units
 
@@ -25,7 +25,7 @@ baseline = 58600487804.878044
 # Tornado data from sensitivity analysis
 
 drivers = ['GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL', 'DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT', 'TRADITIONAL_PHASE3_COST_PER_PATIENT', 'DFDA_OPEX_PLATFORM_MAINTENANCE', 'DFDA_OPEX_STAFF', 'DFDA_OPEX_INFRASTRUCTURE', 'DFDA_OPEX_REGULATORY', 'DFDA_OPEX_COMMUNITY']
-driver_labels = ['Annual Global Spending on Clinical Trials', 'dFDA Pragmatic Trial Cost per Patient', 'Phase 3 Cost per Patient', 'Decentralized Framework for Drug Assessment Maintenance Costs', 'Decentralized Framework for Drug Assessment Staff Costs', 'Decentralized Framework for Drug Assessment Infrastructure Costs', 'Decentralized Framework for Drug Assessment Regulatory Coordination Costs', 'Decentralized Framework for Drug Assessment Community Support Costs']
+driver_labels = ['Annual Global Spending on Clinical Trials', 'Pragmatic Trial Cost per Patient', 'Phase 3 Cost per Patient', 'Pragmatic Trial Platform Maintenance Costs', 'Pragmatic Trial Platform Staff Costs', 'Pragmatic Trial Platform Infrastructure Costs', 'Pragmatic Trial Platform Regulatory Coordination Costs', 'Pragmatic Trial Platform Community Support Costs']
 impacts_low = [-9773414634.14634, 1217560975.609764, -1427487804.8780441, 5000000.0, 3000000.0, 3000000.0, 2000000.0, 1000000.0]
 impacts_high = [14660121951.21952, -3030731707.3170624, 895012195.1219559, -7000000.0, -5000000.0, -4000000.0, -3000000.0, -1000000.0]
 
