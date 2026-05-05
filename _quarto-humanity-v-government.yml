@@ -1,6 +1,6 @@
 project:
   type: website
-  output-dir: _site/people-of-earth-v-governments
+  output-dir: _site/humanity-v-government
   execute-dir: project
   resources:
     - knowledge/data/
@@ -16,15 +16,15 @@ project:
 # Custom fields for render-quarto.py
 dih-render:
   emoji: "⚖️"
-  index-source: knowledge/appendix/people-of-earth-v-governments.qmd
-  redirect-from: https://people-of-earth-v-governments.warondisease.org
+  index-source: knowledge/appendix/humanity-v-government.qmd
+  redirect-from: https://humanity-v-government.warondisease.org
   fallback-404-redirect-domain: https://manual.WarOnDisease.org
   netlify-site-id: ""  # TODO: create Netlify site and add ID
-  netlify-cname: "people-of-earth-v-governments-warondisease-org.netlify.app"
+  netlify-cname: "humanity-v-government-warondisease-org.netlify.app"
   show-confidence-intervals: true
   concept-terms:
     - term: "Negligent Mass Homicide"
-      manual-target: knowledge/appendix/people-of-earth-v-governments.qmd
+      manual-target: knowledge/appendix/humanity-v-government.qmd
   favicon-prompt: "A scales-of-justice icon with one side weighted down by skulls and the other holding a single pill, in stark black and white retro-academic style"
 
 profiles:
@@ -43,12 +43,12 @@ author:
 website:
   title: "The People of Earth v. Their Governments"
   description: "An indictment for negligent mass homicide. Aggregating war, regulatory-delay, and misallocation deaths into a single 11.1 billion body count attributable to government failure."
-  site-url: https://manual.warondisease.org/knowledge/appendix/people-of-earth-v-governments.html
-  favicon: assets/icons/people-of-earth-v-governments-favicon.png
+  site-url: https://manual.warondisease.org/knowledge/appendix/humanity-v-government.html
+  favicon: assets/icons/humanity-v-government-favicon.png
   page-navigation: true
   page-footer:
     left: "© 2025 [Institute for Accelerated Medicine](https://acceleratedmedicine.org) | [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)"
-    center: "[PDF](/people-of-earth-v-governments.pdf) | [All Papers](https://manual.warondisease.org/knowledge/papers.html)"
+    center: "[PDF](/humanity-v-government.pdf) | [All Papers](https://manual.warondisease.org/knowledge/papers.html)"
     right: "[VOTE](https://WarOnDisease.org)"
   navbar:
     right:
@@ -124,11 +124,11 @@ metadata:
   # doi: ""
 
   open-graph: true
-  image: "https://manual.warondisease.org/assets/og/people-of-earth-v-governments-og-1200x630.jpg"
+  image: "https://manual.warondisease.org/assets/og/humanity-v-government-og-1200x630.jpg"
 
   publishing:
     own-site:
-      url: "https://manual.warondisease.org/knowledge/appendix/people-of-earth-v-governments.html"
+      url: "https://manual.warondisease.org/knowledge/appendix/humanity-v-government.html"
       status: pending
     preprints:
       - platform: zenodo
@@ -189,11 +189,11 @@ format:
       - file: assets/html/generated-footer.html
     include-in-header:
       - text: |
-          <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/people-of-earth-v-governments-favicon-32x32.png">
-          <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/people-of-earth-v-governments-favicon-16x16.png">
-          <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/people-of-earth-v-governments-apple-touch-icon.png">
-          <link rel="icon" type="image/png" sizes="192x192" href="/assets/icons/people-of-earth-v-governments-android-chrome-192x192.png">
-          <link rel="icon" type="image/png" sizes="512x512" href="/assets/icons/people-of-earth-v-governments-android-chrome-512x512.png">
+          <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/humanity-v-government-favicon-32x32.png">
+          <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/humanity-v-government-favicon-16x16.png">
+          <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/humanity-v-government-apple-touch-icon.png">
+          <link rel="icon" type="image/png" sizes="192x192" href="/assets/icons/humanity-v-government-android-chrome-192x192.png">
+          <link rel="icon" type="image/png" sizes="512x512" href="/assets/icons/humanity-v-government-android-chrome-512x512.png">
       - file: assets/html/google-analytics.html
       - file: assets/html/hypothesis.html
       - file: assets/html/fonts-preload.html
@@ -204,7 +204,7 @@ format:
     code-tools: false
     filters: [assets/filters/live-version-note.lua]
   pdf:
-    output-file: "people-of-earth-v-governments.pdf"
+    output-file: "humanity-v-government.pdf"
     documentclass: article
     institute: "Institute for Accelerated Medicine"
     echo: false
@@ -217,7 +217,7 @@ format:
       - callout-bw.tex
       - institute-header.tex
       - text: |
-          \paperurl{https://manual.warondisease.org/knowledge/appendix/people-of-earth-v-governments.html}
+          \paperurl{https://manual.warondisease.org/knowledge/appendix/humanity-v-government.html}
     geometry:
       - top=1in
       - bottom=1in

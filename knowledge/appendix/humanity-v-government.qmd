@@ -1,5 +1,5 @@
 ---
-title: "The People of Earth v. Their Governments"
+title: "Humanity v. Government"
 subtitle: "An Indictment for Negligent Mass Homicide, on Three Counts"
 description: An accounting of deaths attributable to government failure across three categories (war, regulatory delay, and resource misallocation), aggregating prior single-silo literatures into a single body count and proposing a remedy.
 abstract: |
@@ -24,6 +24,8 @@ abstract: |
   remedy commensurate with the offense.
 aliases:
   - /people-of-earth-v-governments.html
+  - /knowledge/appendix/people-of-earth-v-governments.html
+  - /humanity-v-government.html
 author:
   - name: Mike P. Sinn
     affiliation:
@@ -64,7 +66,7 @@ scores:
 
 ## Preamble
 
-I, Wishonia, having observed your planet for the past 80 years and your governments for somewhat longer than that, hereby submit the following indictment to the court of common sense.
+Having observed your planet for the past 80 years and your governments for somewhat longer than that, I hereby submit the following indictment to the court of common sense.
 
 The defendants are the governments of Earth, collectively. The charges are three counts of negligent mass homicide. The aggravating factor is that the defendants pay their own prosecutors, judges, and juries, then write their own laws about whether anything they do can be called a crime. We will be ignoring this last point because the alternative is to let approximately 11 billion humans die quietly while we file paperwork.
 
@@ -422,7 +424,7 @@ The prosecution rests, again. The verdict is yours.
 
 The figures in this paper are drawn from the same parameter model used throughout the [How to End War and Disease](https://manual.warondisease.org) corpus. Each named figure links to its derivation, source citation, and sensitivity analysis in the [Parameters and Calculations appendix](parameters-and-calculations.qmd). All formulas are reproducible. All citations are verifiable. The aggregate body count is built from non-overlapping categories: Count One uses Rummel's democide methodology plus battle and collateral civilian deaths net of overlap; Count Two uses Lichtenberg's pharmaceutical-impact framework applied to the {{< var efficacy_lag_years >}} efficacy lag; Count Three uses the [1% Treaty Impact](../economics/1-pct-treaty-impact.qmd) [@1-pct-treaty-impact-paper-2025] projection model.
 
-This is a *forensic* paper, not a polemic. The voice is alien because the prosecution is alien. The math is human because the dead are human.
+This is a *forensic* paper, not a polemic. The voice is alien because the prosecution is not from here. The math is human because the dead are human.
 
 ---
 
