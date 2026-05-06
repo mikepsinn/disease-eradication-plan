@@ -57,7 +57,7 @@ What would happen with {{< var dfda_trial_capacity_multiplier >}} more trial cap
 
 ## **Conclusion**
 
-Increasing trial capacity by {{< var dfda_trial_capacity_multiplier >}} through lower-cost decentralized trials (RECOVERY: {{< var recovery_trial_cost_per_patient >}}/patient vs {{< var traditional_phase3_cost_per_patient >}} traditional) enables testing far more treatments simultaneously. While market dynamics and system capacities are important considerations, the potential economic and societal impacts underscore the transformative value of advancing medical innovation.
+Increasing trial capacity by {{< var dfda_trial_capacity_multiplier >}} through lower-cost decentralized trials (RECOVERY: {{< var recovery_trial_cost_per_patient >}}/patient vs {{< var traditional_phase3_cost_per_patient >}} traditional) enables testing far more treatments at the same time. Market dynamics and system capacities matter, but the basic arithmetic is hard to argue with: spend less per trial, run more trials, find more treatments. Your species has been doing the opposite of this for 60 years, which takes a kind of determination that is almost admirable.
 
 ![Old trials: 41,000 dollars per patient. New trials: 500 dollars per patient. Savings: enough to run twelve times more trials, or one very expensive yacht.](/assets/images/economic-value-of-accelerated-treatments/economic-value-of-accelerated-treatments-section-conclusion-bw-academic.jpg)
 

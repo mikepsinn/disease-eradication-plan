@@ -136,7 +136,7 @@ The protocol enables existing systems (DCT platforms, EHRs, health apps) to:
 - Register treatments through any protocol-compliant system
 - Access aggregated effectiveness data across all participating platforms
 - Receive automatic liability coverage through protocol governance
-- Benefit from standardized outcome reporting across the ecosystem
+- Benefit from standardized outcome reporting across the network
 
 **For Patients (via participating apps and platforms):**
 
@@ -146,7 +146,7 @@ The protocol enables existing systems (DCT platforms, EHRs, health apps) to:
 - Report outcomes through any protocol-compliant interface
 - Access "Outcome Labels" showing what happened to similar patients
 
-**The Result:** A self-sustaining research ecosystem where participating platforms collect outcome data using standardized schemas, and the protocol aggregates this into continuously-updated treatment rankings available to all participants.
+**The Result:** A self-sustaining research network where participating platforms collect outcome data using standardized formats, and the protocol aggregates this into continuously-updated treatment rankings available to all participants.
 
 ![A map of how sick people might meet doctors, if everyone agreed to use the same computer system. They won't.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-core-model-an-open-coordination-protocol-bw-academic.jpg)
 
@@ -240,7 +240,7 @@ Approximately {{< var diseases_without_effective_treatment >}} have zero FDA-app
 > - **Integration onboarding fund:** \$20-50M (one-time, to support EHR and DCT platform adoption)
 > - **Total initiative:** ~\$40-75M upfront, \$5-12M annual
 >
-> **Ecosystem Integration**: The protocol leverages existing infrastructure - DCT platforms, major EHR systems, academic medical centers, and consumer health apps. These organizations have invested billions in infrastructure that becomes more valuable through protocol interoperability.
+> **Using What Already Exists**: The protocol builds on existing infrastructure (DCT platforms, major EHR systems, academic medical centers, and consumer health apps). These organizations have invested billions in infrastructure that becomes more valuable through protocol interoperability.
 
 ![How much it costs to make all the medical computer systems talk to each other, assuming they want to. They don't want to.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-framework-costs-rom-estimates-dfda-framework-costs-rom-estim-bw-academic.jpg)
 
@@ -304,9 +304,9 @@ _Note: This ROM estimate focuses **only on the Core framework build effort and a
 
 The following sections provide ROM estimates for both the ongoing operational costs of the Core framework and for these essential broader initiatives.
 
-### Ecosystem Participants
+### Who Participates
 
-The protocol creates value by enabling interoperability among existing clinical trial infrastructure. These organizations represent the ecosystem that would adopt and benefit from the protocol:
+The protocol creates value by enabling interoperability among existing clinical trial infrastructure. These organizations represent the network that would adopt and benefit from the protocol:
 
 | Participant | Current Investment | How They Integrate | What They Gain |
 |-------------|-------------------|-------------------|----------------|
@@ -443,7 +443,7 @@ The global pharmaceutical and medical device R&D market is vast. Annual global s
 
 - **Oxford RECOVERY**: Achieved **~{{< var recovery_trial_cost_per_patient >}}**. Key strategies included:
   1. Embedding trial protocols within routine hospital care.
-  2. Minimizing overhead by leveraging existing staff/resources and electronic data capture.
+  2. Minimizing overhead by using existing staff, resources, and electronic data capture.
   3. Focused, pragmatic trial designs.
 
 - **Systematic Review Evidence**: A systematic review of 64 embedded pragmatic clinical trials found a **median cost per patient of {{< var pmc_pragmatic_trial_median_cost_per_patient >}}** [@pmc-pragmatic-trial-cost]. This confirms that low-cost execution is a replicable property of the pragmatic design, not an anomaly of any single trial.
@@ -504,7 +504,7 @@ This reduction applies to trials amenable to pragmatic design - approximately 70
 
 4. **Transparent, Standardized Environment**
 
-   - The transparent nature of the protocol creates a standardized operating environment. Outcome data is visible across the ecosystem, enabling sponsors to benchmark their trial designs and optimize operational costs, further driving down R&D expenditure beyond the technical efficiencies of pragmatic trials.
+   - The transparent nature of the protocol creates a standardized operating environment. Outcome data is visible across the entire network, enabling sponsors to benchmark their trial designs and reduce operational costs, further driving down R&D expenditure beyond the technical efficiencies of pragmatic trials.
 
 ### Economic Value of Earlier Access to Treatments
 
@@ -866,7 +866,7 @@ Beyond direct savings, the effects on medical progress are substantial: expanded
 
 ### Disclaimer
 
-All figures in this document are estimates based on publicly available information, industry benchmarks, and simplifying assumptions. Real-world costs, savings, and ROI will vary greatly depending on the scope of implementation, the speed of adoption, regulatory cooperation, and numerous other factors. Nonetheless, this high-level exercise illustrates the substantial potential gains from a global, decentralized, continuously learning clinical trial and regulatory ecosystem.
+All figures in this document are estimates based on publicly available information, industry benchmarks, and simplifying assumptions. Real-world costs, savings, and ROI will vary greatly depending on the scope of implementation, the speed of adoption, regulatory cooperation, and numerous other factors. Nonetheless, this high-level exercise illustrates the substantial potential gains from a global, decentralized, continuously learning clinical trial and regulatory system.
 
 ## Verification: Complete Derivation Chains
 
@@ -1114,7 +1114,7 @@ Value of using comprehensive data to optimize preventative care and treatment ef
 
 **C. Enabling Research for Previously Untreatable Diseases**
 
-Transformative potential to create viable research pathways for conditions ignored due to high trial costs:
+Opens research pathways for conditions currently ignored because trials are too expensive to bother:
 
 - **Baseline:** {{< var rare_diseases_count_global >}}+ rare diseases, 95% lack FDA-approved treatments
 - **Mechanism:** Radically lower per-patient costs ({{< var dfda_pragmatic_trial_cost_per_patient >}} vs {{< var traditional_phase3_cost_per_patient >}}) make rare disease R&D economically feasible
@@ -1213,7 +1213,7 @@ This intervention differs in five critical ways:
 
 3. **Self-Correcting Feedback**: Unlike infrastructure projects where failures compound, the protocol has built-in error correction. If a treatment doesn't work, the data shows it. If costs exceed projections, we can adjust scope. The framework generates its own performance metrics.
 
-4. **Historical Precedent**: Smallpox eradication ({{< var smallpox_eradication_roi >}}:1 ROI) and childhood vaccination programs demonstrate that systematic health interventions can achieve extraordinary returns. The difference: those targeted specific diseases. This targets the discovery process itself, potentially even higher leverage.
+4. **Historical Precedent**: Smallpox eradication ({{< var smallpox_eradication_roi >}}:1 ROI) and childhood vaccination programs demonstrate that systematic health interventions can achieve extraordinary returns. The difference: those targeted specific diseases. This targets the discovery process itself, which is the difference between fixing one pothole and repaving the road.
 
 5. **Modern Infrastructure Makes This Possible Now**: The convergence of electronic health records (major EHR systems covering 57% of US hospitals), consumer wearables (billions of devices tracking health metrics), federated data networks (querying 300M+ patient records without moving data), and AI-powered analysis enables systematic outcome tracking at scale that wasn't feasible even a decade ago. This isn't speculation about future technology - it's deployment of existing, proven infrastructure.
 

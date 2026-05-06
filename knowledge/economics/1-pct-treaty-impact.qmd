@@ -633,9 +633,9 @@ Consider a legislator's decision calculus regarding the 1% Treaty vote:
 
 The mechanism changes the math. Supporting beneficial policy becomes professionally advantageous rather than requiring self-sacrifice.
 
-#### Stakeholder Alignment
+#### Who Gets Paid (And Why They Stay)
 
-The IAB mechanism aligns incentives across all key stakeholder groups:
+The IAB mechanism aligns incentives across every group that matters:
 
 {{< include ../figures/victory-bonds-money-flow-diagram.qmd >}}
 
@@ -1010,7 +1010,7 @@ Value of using comprehensive data to optimize preventative care and treatment ef
 
 **C. Enabling Research for Previously Untreatable Diseases**
 
-Transformative potential to create viable research pathways for conditions ignored due to high trial costs:
+Opens research pathways for conditions currently ignored because trials are too expensive to bother:
 
 - **Baseline:** {{< var rare_diseases_count_global >}} {{< var rare_diseases_count_global_cite >}}+ rare diseases, 95% lack FDA-approved treatments
 - **Mechanism:** Radically lower per-patient costs make rare disease R&D economically feasible
@@ -1859,7 +1859,7 @@ By collapsing the cost of clinical trials by {{< var dfda_trial_cost_reduction_f
 
 ## Implementation Strategy
 
-The economic benefits outlined above demonstrate the value proposition of the {{< var treaty_reduction_pct >}} Treaty system. Implementation requires political mobilization to achieve treaty adoption:
+The economic benefits outlined above demonstrate why the {{< var treaty_reduction_pct >}} Treaty pays for itself many times over. Implementation requires political mobilization to achieve treaty adoption:
 
 {{< include ../figures/five-step-strategy-flowchart.qmd >}}
 
@@ -2068,7 +2068,7 @@ See [Anti-Capture Design](../solution/dih.qmd#anti-capture-design) and [Legal Ar
 
 ## Limitations and Uncertainties
 
-This analysis acknowledges several important limitations and sources of uncertainty inherent in modeling a transformative policy intervention of this scale.
+This analysis acknowledges several important limitations and sources of uncertainty. Modeling a policy change this large involves assumptions that could be wrong in interesting ways.
 
 ### Adoption Timeline Uncertainty
 
@@ -2230,14 +2230,14 @@ The following table summarizes key risk factors and their mitigation strategies:
 | Risk Factor | Level | Primary Uncertainty | Mitigation Strategy |
 |:---|:---:|:---|:---|
 | **Political Risk** | VERY HIGH | Treaty ratification dependent on international coordination | Modest {{< var treaty_reduction_pct >}} reduction; precedent from military-industrial lobbying ROI (1,813:1) |
-| **Execution Risk** | HIGH | Complex global legal/technical coordination required | Phased implementation; leverage existing regulatory expertise |
+| **Execution Risk** | HIGH | Complex global legal/technical coordination required | Phased implementation; use existing regulatory expertise |
 | **Regulatory Risk** | MEDIUM-HIGH | Harmonization across jurisdictions varies | Pilot programs in willing jurisdictions first |
 | **Market Risk** | VERY LOW | {{< var global_military_spending_annual_2024 >}} {{< var global_military_spending_annual_2024_cite >}} military spending already allocated | Redirection rather than new appropriation |
 | **Technical Risk** | MEDIUM | Data interoperability, AI/ML accuracy | Build on proven platforms (DCT platforms collectively raising $1B+ in VC funding) |
 
 ### Scenario Analysis Robustness
 
-Comprehensive sensitivity analysis across multiple scenarios demonstrates:
+Sensitivity analysis across multiple scenarios demonstrates:
 
 - **Risk-adjusted ({{< var treaty_expected_roi_trial_capacity_plus_efficacy_lag >}}:1 expected ROI):** Central estimate with political success probability uncertainty ({{< var political_success_probability >}}), intervention generates substantial positive returns
 - **Conservative ({{< var dfda_roi_rd_only >}}:1 ROI):** R&D savings only, excludes peace dividend, intervention is dominant

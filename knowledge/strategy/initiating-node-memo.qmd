@@ -9,7 +9,7 @@ scores:
   value: 5
   timeliness: 6
   standalone: 3
-  voice: 3
+  voice: 5
   importance: 4
 ---
 
@@ -88,7 +88,7 @@ This is not just a paper stack. A large share of the software substrate already 
 | **Treasury layer** | PRIZE, VOTE, IAB, and `$WISH` contract packages exist in Solidity, with PRIZE/VOTE infrastructure substantially built | Treasury packages in the monorepo |
 | **Engineering discipline** | Strict TypeScript, Prisma + Zod typing, pure-function libraries, and roughly 2,900+ tests across the workspace | Stated in the repo README |
 
-The institutional ask is therefore narrower than “fund a speculative concept.” It is: help host, stress-test, and legitimize a public coordination layer on top of infrastructure that is already materially implemented.
+The ask is therefore narrower than “fund a speculative concept.” It is: help host, stress-test, and give credibility to a public process on top of software that already works.
 
 ## Why This Role Exists
 
@@ -104,7 +104,7 @@ The bottleneck is not a shortage of possible solutions. It is a shortage of publ
 4. publish visible milestones, and
 5. remain open enough that no single institution can quietly kill it.
 
-An initiating institution solves the first coordination problem: it gives the process a credible first venue.
+A host institution solves the first problem: it gives the process a credible first venue. Everything else follows from something existing in public that people can point at.
 
 ## What The Institution Is Actually Agreeing To
 
@@ -120,20 +120,20 @@ The right frame is **host**, not **owner**.
 
 This is the sponsor-safe version of the project: endorse the convention, the metric standard, and the improvement process, not the current draft as revealed truth.
 
-## Why This Is A Strong Institutional Bet
+## Why This Is Worth Hosting
 
-For a foresight-style institution, hosting the initiating node is attractive for four reasons.
+Four reasons.
 
-1. It is high-leverage epistemic infrastructure. You are not picking one policy memo and hoping people read it. You are creating a public mechanism that rewards better proposals, exposes weak ones, and makes progress visible.
-2. It is legible public-good work. The outputs are concrete: rules, panel roster, challenge page, bounty pool, live scoreboard, and first submissions.
-3. It is reputationally safer than endorsing a finished ideology. The institution is sponsoring an open constitutional convention with explicit [adversarial review](earth-optimization-prize.qmd).
-4. It can surface a better v2 than the current benchmark. If the current proposal is wrong, the pilot is how that gets discovered before larger-scale commitment.
+1. You are not picking one policy memo and hoping people read it. You are creating a public process that rewards better proposals, exposes weak ones, and makes progress visible. That is more useful than publishing another report that gets cited and ignored.
+2. The outputs are concrete: rules, panel roster, challenge page, bounty pool, live scoreboard, and first submissions. Your board can point at real things.
+3. You are sponsoring an open contest with explicit [adversarial review](earth-optimization-prize.qmd), not endorsing a finished ideology. That is a much easier thing to defend at a dinner party.
+4. If the current proposal is wrong, the pilot is how that gets discovered before anyone bets big on it.
 
-## The Minimum Viable Pilot
+## The Smallest Credible Pilot
 
-The smallest credible institutional pilot is bounded and public.
+Five things, in public, by day 90.
 
-| Component | Minimum viable output by day 90 |
+| Component | What exists by day 90 |
 |---|---|
 | Rules | Public challenge page defining targets, constraints, and judging flow |
 | Panel | Named reviewers able to filter out unserious or noncompliant submissions |
@@ -141,7 +141,7 @@ The smallest credible institutional pilot is bounded and public.
 | Scoreboard | A live public page tracking host milestones, submissions, and the first participant/commitment totals |
 | Entry set | The baseline [Earth Optimization Protocol v1](earth-optimization-protocol-v1.qmd) plus any serious competing submissions |
 
-If those five things exist in public, the institution has done the essential catalytic job.
+If those five things exist in public, the institution has done the hard part: making the process real.
 
 ## The Governance Boundary
 
@@ -169,11 +169,11 @@ Success at this stage is not treaty passage, not lobbying victory, and not full 
 4. outsiders can see visible progress, and
 5. the next institution or funder can join without asking permission from the first.
 
-That is enough to move the project from “interesting paper” to “live coordination mechanism.”
+That is enough to move the project from “interesting paper” to “thing that exists and can be joined.”
 
 ## Recommended Decision
 
-If your institution is willing to host ambitious but bounded public infrastructure, the correct move is not to wait for perfect certainty. It is to run the [90-day pilot](../grant-proposal/earth-optimization-prize-90-day-pilot.qmd) with explicit non-sovereign boundaries.
+If your institution is willing to host a 90-day public contest with clear boundaries, the correct move is not to wait for perfect certainty. It is to run the [90-day pilot](../grant-proposal/earth-optimization-prize-90-day-pilot.qmd) and see what happens.
 
 Read the full background paper here:
 
