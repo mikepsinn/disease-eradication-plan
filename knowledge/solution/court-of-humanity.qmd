@@ -106,16 +106,21 @@ The question for you is not whether sovereign immunity is *correct*. The questio
 
 ## The Damages Math
 
-Your governments' own actuaries value a statistical human life at roughly {{< var value_of_statistical_life >}} ([the standard regulatory valuation](../appendix/political-dysfunction-tax.qmd) used by the EPA, DOT, and FDA). This is not the same thing as a court-awarded wrongful-death verdict. It is the number governments already use when deciding how many deaths a policy is allowed to buy. Applying that valuation as an exposure estimate to the body count cataloged in [Humanity v. Government](../appendix/humanity-v-government.qmd):
+Your governments' own actuaries value a statistical human life at roughly {{< var value_of_statistical_life >}} ([the standard regulatory valuation](../appendix/political-dysfunction-tax.qmd) used by the EPA, DOT, and FDA). This is not the same thing as a court-awarded wrongful-death verdict. It is the number governments already use when deciding how many deaths a policy is allowed to buy.
 
-| Count | Body Count | What it establishes |
+The damages model has to keep separate things separate. [Humanity v. Government](../appendix/humanity-v-government.qmd) establishes the liability theory. [Cost of War](../problem/cost-of-war.qmd#the-medical-opportunity-cost) supplies the historical opportunity-cost counterfactual. [1% Treaty Impact](../economics/1-pct-treaty-impact.qmd) [@1-pct-treaty-impact-paper-2025] supplies the forward settlement value if the remedy is adopted now.
+
+| Ledger | Measure | What it establishes |
 |---|---|---|
-| One. Direct killing through war (1900-present) | {{< var war_deaths_since_1900_nounit >}} | Traditional mass-fatality exposure. |
-| Two. Regulatory delay (1962-present) | {{< var existing_drugs_efficacy_lag_deaths_total_nounit >}} | A forum for deaths hidden inside delay. |
-| Three. Misallocation (forward-looking) | {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved_nounit >}} | The largest category, and the one existing courts are least willing to hear. |
-| **Aggregate exposure** | Combined counts above | Too large for ordinary compensation; useful as settlement leverage. |
+| One. Direct killing through war | {{< var war_deaths_since_1900_nounit >}} deaths since 1900 | Traditional mass-fatality exposure. |
+| Two. Regulatory delay | {{< var existing_drugs_efficacy_lag_deaths_total_nounit >}} deaths since 1962 | A forum for deaths hidden inside delay. |
+| Count Three, historical | Disease-control dates in the 1900 redirect counterfactual | The drugs and public-health systems that did not arrive because the money went to war. |
+| Count Three, forward | {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved_nounit >}} future deaths prevented by the treaty remedy | The value of settling now instead of continuing the offense. |
+| **Aggregate exposure** | Separate ledgers above | Too large for ordinary compensation; useful as settlement leverage. |
 
-For context, global GDP is approximately {{< var global_gdp_2025 >}} per year. The exposure is on the order of a thousand years of global economic output.
+The table deliberately does not add every line into one central damages number. VSL deaths, DALYs, lost GDP, and punitive multipliers are different legal theories. Add them all together and the spreadsheet starts lying.
+
+For context, global GDP is approximately {{< var global_gdp_2025 >}} per year. Even a heavily discounted exposure is larger than ordinary compensation can handle.
 
 Your governments do not have this money. They cannot pay the full exposure. Even brutal discounting still produces a liability stream larger than the political system can absorb without changing behavior. That is not a problem. That is the point. A debt a defendant cannot pay is a debt that changes how the defendant behaves. You do not need to collect the full amount. You need the defendant to know the full amount exists, and you need voters, bondholders, insurers, and treaty parties to know it too.
 

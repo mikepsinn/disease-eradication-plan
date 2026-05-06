@@ -3446,6 +3446,124 @@ CUMULATIVE_MILITARY_IN_GOVT_TRIAL_YEARS = Parameter(
     latex_symbol=r"Years_{mil \to trials,gov}",
 )
 
+WAR_TRIAL_REDIRECT_1900_FREEZE_BASELINE_ANNUAL = Parameter(
+    66_100_000_000,
+    manual_ref="knowledge/problem/cost-of-war.qmd",
+    source_ref=ReferenceID.CORRELATES_OF_WAR_NMC,
+    source_type=SourceType.EXTERNAL,
+    confidence="low",
+    description="Global military spending in 1900 in constant 2023 USD, from the Correlates of War "
+                "National Material Capabilities (NMC) dataset (knowledge/data/global-military-spending-"
+                "1900-2024-constant-2023-usd.csv, COW_NMC source). Used as the annual real spending "
+                "cap in the 1900-freeze counterfactual.",
+    display_name="1900 Military Spending Freeze Baseline",
+    unit="USD/year",
+    distribution="uniform",
+    confidence_interval=(50_000_000_000, 90_000_000_000),
+    keywords=["war", "military", "1900", "freeze", "baseline", "counterfactual"],
+    latex_symbol=r"Spending_{mil,1900}",
+)
+
+WAR_TRIAL_REDIRECT_EXCESS_MILITARY_SPENDING_ABOVE_1900_FREEZE = Parameter(
+    134_716_000_000_000,
+    manual_ref="knowledge/problem/cost-of-war.qmd",
+    source_ref=ReferenceID.CORRELATES_OF_WAR_NMC,
+    source_type=SourceType.EXTERNAL,
+    confidence="low",
+    description="Dataset-derived aggregate: cumulative global military spending above a 1900 real-"
+                "spending freeze, 1900-2024, computed offline from "
+                "knowledge/data/global-military-spending-1900-2024-constant-2023-usd.csv "
+                "(Correlates of War NMC) as the sum of max(0, annual spending - 1900 baseline) "
+                "across years. Marked EXTERNAL because the parameter system reserves CALCULATED "
+                "for derivations whose uncertainty is propagated from other Parameter inputs; this "
+                "aggregate's uncertainty band reflects dataset and methodology uncertainty in the "
+                "underlying CSV. The stricter medical redirect pot, distinct from total cumulative "
+                "military spending.",
+    display_name="Excess Military Spending Above 1900 Freeze",
+    unit="USD",
+    distribution="uniform",
+    confidence_interval=(100_000_000_000_000, 170_000_000_000_000),
+    keywords=["war", "military", "1900", "freeze", "excess", "counterfactual", "clinical trials"],
+    latex_symbol=r"Spending_{mil,excess1900}",
+)
+
+WAR_TRIAL_REDIRECT_EXCESS_MILITARY_TRIAL_YEARS = Parameter(
+    WAR_TRIAL_REDIRECT_EXCESS_MILITARY_SPENDING_ABOVE_1900_FREEZE / GLOBAL_GOVERNMENT_CLINICAL_TRIALS_SPENDING_ANNUAL,
+    manual_ref="knowledge/problem/cost-of-war.qmd",
+    source_type=SourceType.CALCULATED,
+    confidence="low",
+    description="Clinical-trial years funded by military spending above a 1900 real-spending freeze. "
+                "This is the literal 1900-freeze medical redirect capacity, not total cumulative "
+                "military spending.",
+    display_name="Excess Military Spending Above 1900 Freeze in Clinical Trial Years",
+    unit="years",
+    formula="WAR_TRIAL_REDIRECT_EXCESS_MILITARY_SPENDING_ABOVE_1900_FREEZE / GLOBAL_GOVERNMENT_CLINICAL_TRIALS_SPENDING_ANNUAL",
+    inputs=[
+        "WAR_TRIAL_REDIRECT_EXCESS_MILITARY_SPENDING_ABOVE_1900_FREEZE",
+        "GLOBAL_GOVERNMENT_CLINICAL_TRIALS_SPENDING_ANNUAL",
+    ],
+    compute=lambda ctx: (
+        ctx["WAR_TRIAL_REDIRECT_EXCESS_MILITARY_SPENDING_ABOVE_1900_FREEZE"]
+        / ctx["GLOBAL_GOVERNMENT_CLINICAL_TRIALS_SPENDING_ANNUAL"]
+    ),
+    keywords=["war", "medical opportunity cost", "1900 freeze", "clinical trials", "trial years"],
+    latex_symbol=r"Years_{excess1900 \to trials,gov}",
+)
+
+WAR_TRIAL_REDIRECT_INFECTIOUS_DISEASE_CONTROL_YEAR = Parameter(
+    1950,
+    manual_ref="knowledge/problem/cost-of-war.qmd",
+    source_type=SourceType.DEFINITION,
+    confidence="low",
+    description="Counterfactual calendar year by which a 1900 treaty freezing military spending "
+                "and redirecting avoided military growth to pragmatic trials could plausibly have "
+                "achieved practical control of major infectious diseases. Practical control means "
+                "effective prevention, treatment, or elimination in most places, not literal "
+                "extinction of every pathogen.",
+    display_name="War-Redirect Infectious Disease Control Year",
+    unit="year",
+    distribution="triangular",
+    confidence_interval=(1935, 1975),
+    keywords=["war", "medical opportunity cost", "infectious disease", "clinical trials", "counterfactual"],
+    latex_symbol=r"Y_{infectious,redirect}",
+)
+
+WAR_TRIAL_REDIRECT_NONAGING_DISEASE_CONTROL_YEAR = Parameter(
+    1990,
+    manual_ref="knowledge/problem/cost-of-war.qmd",
+    source_type=SourceType.DEFINITION,
+    confidence="low",
+    description="Counterfactual calendar year by which a 1900 treaty freezing military spending "
+                "and redirecting avoided military growth to pragmatic trials could plausibly have "
+                "delivered effective prevention, treatment, or control for most major non-aging "
+                "disease burden. This is a scenario parameter for historical opportunity-cost "
+                "reasoning, not a measured historical fact.",
+    display_name="War-Redirect Major Non-Aging Disease Control Year",
+    unit="year",
+    distribution="triangular",
+    confidence_interval=(1965, 2015),
+    keywords=["war", "medical opportunity cost", "non-aging disease control", "clinical trials", "counterfactual"],
+    latex_symbol=r"Y_{disease,redirect}",
+)
+
+WAR_TRIAL_REDIRECT_AGING_CONTROL_SENSITIVITY_YEAR = Parameter(
+    2015,
+    manual_ref="knowledge/problem/cost-of-war.qmd",
+    source_type=SourceType.DEFINITION,
+    confidence="low",
+    description="Exploratory sensitivity year for when a 1900 treaty freezing military spending "
+                "and redirecting avoided military growth to pragmatic trials might have made "
+                "biological aging a treatable risk factor. Included only to show what the same "
+                "trial platform could surface if geroscience became testable at population scale; "
+                "not part of the central historical damages estimate.",
+    display_name="War-Redirect Biological Aging Control Year (Sensitivity)",
+    unit="year",
+    distribution="triangular",
+    confidence_interval=(1985, 2060),
+    keywords=["war", "medical opportunity cost", "aging", "longevity", "clinical trials", "sensitivity"],
+    latex_symbol=r"Y_{aging,redirect}",
+)
+
 # --- Moved here from later in file so war counterfactual params can reference them ---
 
 # Global GDP (2025) - needed for global opportunity cost calculations
@@ -3673,7 +3791,7 @@ WAR_TOTAL_COST_SINCE_1900 = Parameter(
     source_type="calculated",
     confidence="low",
     description="Total historical sunk cost of war since 1900: military spending ($170T) + "
-                "property destruction ($45T) + environmental ($5T) + QALY value of lives ($810T).",
+                "property destruction ($45T) + environmental ($5T) + QALY value of lives ($1.26Q).",
     display_name="Total Historical Cost of War Since 1900",
     unit="USD",
     formula="CUMULATIVE_MILITARY_SPENDING_FED_ERA + WAR_PROPERTY_DESTRUCTION_SINCE_1900 + WAR_ENVIRONMENTAL_DESTRUCTION_SINCE_1900 + WAR_QALY_VALUE_LOST_SINCE_1900",

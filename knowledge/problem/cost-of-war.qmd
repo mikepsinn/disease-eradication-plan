@@ -400,6 +400,34 @@ Global GDP per capita in 1900: {{< var global_gdp_per_capita_1900 >}}. Today: {{
 
 At mid-range: {{< var war_counterfactual_lost_gdp_per_capita >}} per person per year times 8 billion people = **{{< var war_counterfactual_lost_gdp_global >}} in annual output that does not exist.**
 
+### The Medical Opportunity Cost
+
+The income number above answers one question: how much richer the average person would be if war had not interrupted growth since 1900. It does not answer the medical counterfactual by itself.
+
+Keep the ledgers separate:
+
+| Ledger | What it counts | Use |
+|--------|----------------|-----|
+| Direct war receipt | Spending, rubble, poisoned land, and stolen life-years | Historical sunk cost |
+| Compound peace economy | Eight growth channels that never got interrupted | How much richer people would be today |
+| Medical redirect | Military spending above the 1900 freeze redirected to pragmatic trials | When treatment arrival and disease control plausibly move forward |
+
+The medical redirect is not a fourth invoice stacked on top of the all-channels GDP estimate. Channel 1 already includes "murder money becomes medicine money." If the medical scenario becomes the headline, it replaces or refines that channel. It does not get paid twice. Arithmetic is cruel this way.
+
+Here is the minimal historical medical counterfactual:
+
+| Counterfactual step | Estimate | Meaning |
+|---------------------|----------|---------|
+| 1900 treaty | Military spending frozen at {{< var war_trial_redirect_1900_freeze_baseline_annual >}} in real absolute terms | The arms race stops growing, instead of becoming the planet's most expensive murder subscription. |
+| Excess military spending above the 1900 freeze | {{< var war_trial_redirect_excess_military_trial_years >}} of current government clinical-trial spending | The scale is absurd enough that even a badly run trial system would have learned things. |
+| Major infectious disease control | {{< var war_trial_redirect_infectious_disease_control_year >}} | Vaccination, antibiotics, sanitation, vector control, and surveillance arrive earlier and at global scale. |
+| Major non-aging disease treatment/control | {{< var war_trial_redirect_nonaging_disease_control_year >}} | Most cancer, cardiovascular, autoimmune, psychiatric, rare-disease, and metabolic burden has effective prevention, treatment, or control paths. |
+| Biological aging control | {{< var war_trial_redirect_aging_control_sensitivity_year >}} | Exploratory sensitivity only. Included to show what the same trial platform might surface if geroscience became testable at population scale. |
+
+"Control" here means practical prevention, treatment, or functional eradication for most of the burden. It does not mean every pathogen is extinct, every tumor biology is solved, or every human has become an immortal invoice reviewer.
+
+For the forward-looking version of the same machinery starting now, see [1% Treaty Impact](../economics/1-pct-treaty-impact.qmd) [@1-pct-treaty-impact-paper-2025]. That chapter estimates what happens if the treaty is adopted today. This section estimates what humanity lost by not doing the obvious version in 1900.
+
 ### The Grand Total: Everything War Has Cost Since 1900
 
 | Category | Estimate (2024 USD) | Method |
@@ -408,7 +436,7 @@ At mid-range: {{< var war_counterfactual_lost_gdp_per_capita >}} per person per 
 | Property and infrastructure destruction | {{< var war_property_destruction_since_1900 >}} | Sum of major conflict estimates |
 | Environmental destruction and contamination | {{< var war_environmental_destruction_since_1900 >}} | Annual estimates x century + catastrophic events |
 | QALY value of lives lost | {{< var war_qaly_value_lost_since_1900 >}} | {{< var war_deaths_since_1900_nounit >}} deaths x {{< var war_avg_years_life_lost_per_death_nounit >}} years x {{< var standard_economic_qaly_value_usd >}}/QALY |
-| Compound opportunity cost (lost annual GDP) | {{< var war_counterfactual_lost_gdp_global >}}/year | 6 channels stacked, 124 years compounded |
+| Compound opportunity cost (lost annual GDP) | {{< var war_counterfactual_lost_gdp_global >}}/year | 8 channels stacked, 124 years compounded |
 | **Historical sunk cost** | **{{< var war_total_cost_since_1900 >}}** | Military + destruction + lives |
 | **Ongoing annual loss** | **{{< var war_counterfactual_lost_gdp_global >}}/year** | Compound growth penalty |
 | **Per capita impact** | **{{< var war_counterfactual_income_multiple >}} richer** | Every person, everywhere |

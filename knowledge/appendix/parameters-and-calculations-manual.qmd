@@ -38,15 +38,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 562 parameters used in the analysis, organized by type:
+This appendix documents all 568 parameters used in the analysis, organized by type:
 
-- External sources (peer-reviewed): 182
-- Calculated values: 272
-- Core definitions: 108
+- External sources (peer-reviewed): 184
+- Calculated values: 273
+- Core definitions: 111
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (272 parameters) • [External Data Sources](#sec-external) (182 parameters) • [Core Definitions](#sec-definitions) (108 parameters)
+[Calculated Values](#sec-calculated) (273 parameters) • [External Data Sources](#sec-external) (184 parameters) • [Core Definitions](#sec-definitions) (111 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -20790,7 +20790,7 @@ $$
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Total historical sunk cost of war since 1900: military spending ($170T) + property destruction ($45T) + environmental ($5T) + QALY value of lives ($810T).
+Total historical sunk cost of war since 1900: military spending ($170T) + property destruction ($45T) + environmental ($5T) + QALY value of lives ($1.26Q).
 
 **Inputs**:
 
@@ -20841,6 +20841,44 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-war_total_cost_since_1900.qmd >}}
+
+:::
+
+### Excess Military Spending Above 1900 Freeze in Clinical Trial Years: 29,937 years {#sec-war_trial_redirect_excess_military_trial_years}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Clinical-trial years funded by military spending above a 1900 real-spending freeze. This is the literal 1900-freeze medical redirect capacity, not total cumulative military spending.
+
+**Inputs**:
+
+- [Excess Military Spending Above 1900 Freeze](#sec-war_trial_redirect_excess_military_spending_above_1900_freeze) 📊: $135 trillion (95% CI: $100 trillion - $170 trillion)
+- [Annual Global Government Spending on Clinical Trials](#sec-global_government_clinical_trials_spending_annual) 📊: $4.5 billion (95% CI: $3 billion - $6 billion)
+
+$$
+\begin{gathered}
+Years_{excess1900 \to trials,gov} \\
+= \frac{Spending_{mil,excess1900}}{Spending_{trials,gov}} \\
+= \frac{\$135T}{\$4.5B} \\
+= 29{,}900
+\end{gathered}
+$$
+
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-war_trial_redirect_excess_military_trial_years.qmd >}}
+
+{{< include ../figures/sensitivity-table-war_trial_redirect_excess_military_trial_years.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-war_trial_redirect_excess_military_trial_years.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-war_trial_redirect_excess_military_trial_years.qmd >}}
 
 :::
 
@@ -26924,6 +26962,54 @@ Cost per DALY for vitamin A supplementation programs (India: $23-50; Africa: $40
 
 :::
 
+### 1900 Military Spending Freeze Baseline: $66.1 billion {#sec-war_trial_redirect_1900_freeze_baseline_annual}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Global military spending in 1900 in constant 2023 USD, from the Correlates of War National Material Capabilities (NMC) dataset (knowledge/data/global-military-spending-1900-2024-constant-2023-usd.csv, COW_NMC source). Used as the annual real spending cap in the 1900-freeze counterfactual.
+
+**Source**: [@correlates-of-war-nmc]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$50 billion, $90 billion] • Distribution: Uniform
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $50 billion and $90 billion (±30%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The uniform distribution means any value in the range is equally likely.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-war_trial_redirect_1900_freeze_baseline_annual.qmd >}}
+
+*? Low confidence*
+
+:::
+
+### Excess Military Spending Above 1900 Freeze: $135 trillion {#sec-war_trial_redirect_excess_military_spending_above_1900_freeze}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Dataset-derived aggregate: cumulative global military spending above a 1900 real-spending freeze, 1900-2024, computed offline from knowledge/data/global-military-spending-1900-2024-constant-2023-usd.csv (Correlates of War NMC) as the sum of max(0, annual spending - 1900 baseline) across years. Marked EXTERNAL because the parameter system reserves CALCULATED for derivations whose uncertainty is propagated from other Parameter inputs; this aggregate's uncertainty band reflects dataset and methodology uncertainty in the underlying CSV. The stricter medical redirect pot, distinct from total cumulative military spending.
+
+**Source**: [@correlates-of-war-nmc]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$100 trillion, $170 trillion] • Distribution: Uniform
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $100 trillion and $170 trillion (±26%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The uniform distribution means any value in the range is equally likely.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-war_trial_redirect_excess_military_spending_above_1900_freeze.qmd >}}
+
+*? Low confidence*
+
+:::
+
 ### Return on Investment from Water Fluoridation Programs: 23:1 {#sec-water_fluoridation_roi}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -28907,6 +28993,72 @@ Cumulative property and infrastructure destruction from major wars since 1900 (2
 #### Input Distribution
 
 {{< include ../figures/distribution-war_property_destruction_since_1900.qmd >}}
+
+*Core definition*
+
+:::
+
+### War-Redirect Biological Aging Control Year (Sensitivity): 2015 {#sec-war_trial_redirect_aging_control_sensitivity_year}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Exploratory sensitivity year for when a 1900 treaty freezing military spending and redirecting avoided military growth to pragmatic trials might have made biological aging a treatable risk factor. Included only to show what the same trial platform could surface if geroscience became testable at population scale; not part of the central historical damages estimate.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [1985, 2060] • Distribution: Triangular
+
+**What this means**: We're quite confident in this estimate. The true value likely falls between 1985 and 2060 (±2%). This represents a narrow range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The triangular distribution means values cluster around a most-likely point but can range higher or lower.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-war_trial_redirect_aging_control_sensitivity_year.qmd >}}
+
+*Core definition*
+
+:::
+
+### War-Redirect Infectious Disease Control Year: 1950 {#sec-war_trial_redirect_infectious_disease_control_year}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Counterfactual calendar year by which a 1900 treaty freezing military spending and redirecting avoided military growth to pragmatic trials could plausibly have achieved practical control of major infectious diseases. Practical control means effective prevention, treatment, or elimination in most places, not literal extinction of every pathogen.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [1935, 1975] • Distribution: Triangular
+
+**What this means**: We're quite confident in this estimate. The true value likely falls between 1935 and 1975 (±1%). This represents a narrow range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The triangular distribution means values cluster around a most-likely point but can range higher or lower.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-war_trial_redirect_infectious_disease_control_year.qmd >}}
+
+*Core definition*
+
+:::
+
+### War-Redirect Major Non-Aging Disease Control Year: 1990 {#sec-war_trial_redirect_nonaging_disease_control_year}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Counterfactual calendar year by which a 1900 treaty freezing military spending and redirecting avoided military growth to pragmatic trials could plausibly have delivered effective prevention, treatment, or control for most major non-aging disease burden. This is a scenario parameter for historical opportunity-cost reasoning, not a measured historical fact.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [1965, 2015] • Distribution: Triangular
+
+**What this means**: We're quite confident in this estimate. The true value likely falls between 1965 and 2015 (±1%). This represents a narrow range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The triangular distribution means values cluster around a most-likely point but can range higher or lower.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-war_trial_redirect_nonaging_disease_control_year.qmd >}}
 
 *Core definition*
 

@@ -1,27 +1,30 @@
 ---
 title: "Humanity v. Government"
 subtitle: "An Indictment for Negligent Mass Homicide, on Three Counts"
-description: An accounting of deaths attributable to government failure across three categories (war, regulatory delay, and resource misallocation), aggregating prior single-silo literatures into a single body count and proposing a remedy.
+description: An accounting of deaths attributable to government failure across three categories (war, regulatory delay, and resource misallocation), separating historical body counts from forward-looking treaty-settlement exposure, and proposing a 1% military reallocation as the only remedy commensurate with the offense.
 abstract: |
   Existing literatures count deaths from government failure one silo at a time.
   Historians count war deaths. Health economists count efficacy-lag deaths. Global
   health researchers count disease deaths. No prior paper aggregates them. This
-  paper does. We charge the governments of Earth with three categories of negligent
-  homicide spanning 1900 to the present and projecting forward over the disease
-  eradication window: (1) Direct killing through war, conflict, and democide
-  ({{< var war_deaths_since_1900_nounit >}} deaths since 1900); (2) Regulatory
-  delay of safe and effective treatments under the {{< var efficacy_lag_years >}}
+  paper does, while separating historical deaths from forward-looking settlement
+  exposure. We charge the governments of Earth with three categories of negligent
+  homicide and fiduciary failure: (1) Direct killing through war, conflict, and
+  democide ({{< var war_deaths_since_1900_nounit >}} deaths since 1900); (2)
+  Regulatory delay of safe and effective treatments under the {{< var efficacy_lag_years >}}
   efficacy lag mandated since 1962 ({{< var existing_drugs_efficacy_lag_deaths_total_nounit >}}
   deaths in existing-drug delay alone); and (3) Misallocation of resources away
-  from disease treatment, projected to result in
+  from disease treatment. Count Three has two ledgers: a historical medical
+  opportunity cost from the 1900 war-money-to-trials counterfactual, and a
+  forward-looking treaty remedy projected to prevent
   {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved_nounit >}} avoidable
-  deaths over the disease eradication window. The aggregate body count is
-  approximately 11.1 billion. Per dollar spent, the defendants killed
+  deaths if adopted now. The slice of military spending above a 1900 real-spending
+  freeze alone runs to {{< var war_trial_redirect_excess_military_spending_above_1900_freeze >}},
+  equal to {{< var war_trial_redirect_excess_military_trial_years_nounit >}} years of current
+  government clinical-trial budgets. Per dollar spent, the defendants killed
   {{< var type_ii_error_cost_ratio >}} times more people through Type II regulatory
-  errors than they prevented through Type I. The misallocation count is the
-  largest by an order of magnitude. The defendants had the money. They spent it
-  elsewhere. We propose a 1% reallocation of military expenditure as the only
-  remedy commensurate with the offense.
+  errors than they prevented through Type I. The defendants had the money. They
+  spent it elsewhere. We propose a 1% reallocation of military expenditure as the
+  only remedy commensurate with the offense.
 aliases:
   - /people-of-earth-v-governments.html
   - /knowledge/appendix/people-of-earth-v-governments.html
@@ -126,7 +129,7 @@ Sam Peltzman published the seminal analysis of efficacy-lag mortality in 1973 [@
 
 ## Count Three: Death by Misallocation
 
-**Charge:** That the defendants, having access to the funds necessary to prevent disease deaths at scale, did instead allocate those funds to the capacity for additional killing under Count One, with the foreseeable result of approximately {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved_nounit >}} avoidable disease deaths over the disease eradication window.
+**Charge:** That the defendants, having access to the funds necessary to prevent disease deaths at scale, did instead allocate those funds to the capacity for additional killing under Count One. The historical ledger appears in [Cost of War](../problem/cost-of-war.qmd#the-medical-opportunity-cost): a 1900 freeze on real military spending redirected to pragmatic trials moves practical infectious disease control to {{< var war_trial_redirect_infectious_disease_control_year >}} and non-aging disease control to {{< var war_trial_redirect_nonaging_disease_control_year >}}. The forward ledger appears in [1% Treaty Impact](../economics/1-pct-treaty-impact.qmd) [@1-pct-treaty-impact-paper-2025]: treaty-scale trials prevent approximately {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved_nounit >}} future deaths if adopted now.
 
 ### The Evidence
 
@@ -136,9 +139,7 @@ This is not because the funds are unavailable. The funds are exactly available. 
 
 Under [pragmatic clinical trial protocols](dfda-spec-paper.qmd), trials cost {{< var dfda_pragmatic_trial_cost_per_patient >}} per patient instead of the traditional {{< var traditional_phase3_cost_per_patient >}}, a {{< var dfda_trial_cost_reduction_factor_nounit >}}x cost reduction [@recovery-trial-cost-reduction]. With the treaty's funding redirected through pragmatic protocols, the timeline to clear the disease backlog drops from {{< var status_quo_queue_clearance_years >}} to {{< var dfda_queue_clearance_years >}} [@1-pct-treaty-impact-paper-2025; @dfda-impact-paper-2025].
 
-The cumulative number of preventable deaths over that timeline shift is approximately {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved_nounit >}}, with approximately {{< var dfda_trial_capacity_plus_efficacy_lag_suffering_hours >}} of human suffering [@1-pct-treaty-impact-paper-2025].
-
-These are not metaphors. These refer to specific future humans with specific future plans for next Tuesday.
+The cumulative number of preventable deaths over that forward timeline shift is approximately {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved_nounit >}}, with approximately {{< var dfda_trial_capacity_plus_efficacy_lag_suffering_hours >}} of human suffering [@1-pct-treaty-impact-paper-2025]. That is the settlement value of adopting the remedy now, not a historical death toll. The world the defendants failed to build is the separate question priced in [Cost of War](../problem/cost-of-war.qmd#the-medical-opportunity-cost).
 
 ### The Aggravation
 
@@ -150,7 +151,7 @@ This is what your legal system calls *depraved indifference*: a state of mind in
 
 Count Two documents deaths from drugs that existed but were stuck in approval. This is real, and it is provable. It is also the visible tip of a much larger iceberg.
 
-Cumulative military spending since the Federal Reserve era equals {{< var cumulative_military_in_govt_trial_years >}} of clinical trials at current government funding levels. The defendants have been conducting clinical trials for approximately 80 years. The backlog of untreated diseases would require {{< var dfda_queue_clearance_years >}} to clear at current capacity. The defendants had {{< var cumulative_military_in_govt_trial_years >}} of capacity. They spent it on submarines.
+Cumulative military spending since the Federal Reserve era equals {{< var cumulative_military_in_govt_trial_years >}} of clinical trials at current government funding levels. The defendants have been conducting clinical trials for approximately 80 years. The backlog of untreated diseases would require {{< var dfda_queue_clearance_years >}} to clear at treaty-scale pragmatic capacity. The defendants had {{< var cumulative_military_in_govt_trial_years >}} of capacity. They spent it on submarines.
 
 I would like to understand who authorized this.
 
@@ -231,7 +232,7 @@ The prosecution submits the following taxonomy of formal criminal categories app
 15. **Conspiracy.** Multiple defendants coordinated their conduct via treaties, alliances, defense pacts, and harmonized regulatory standards. Where the coordinated conduct caused death, the coordination itself is criminal.
 16. **Aiding and abetting.** Defendants provided material support (weapons sales, intelligence sharing, regulatory copy-pasting) to other defendants engaged in the underlying offenses.
 17. **Obstruction of justice.** The defendants enacted sovereign-immunity statutes, discretionary-function exceptions, and combatant-activities exceptions specifically to prevent prosecution of the conduct at issue. Drafting and enacting laws that immunize one's own ongoing criminal conduct is itself an obstruction offense in any system that does not allow the obstructor to also serve as the legislature. The defendants do.
-18. **Continuing offense.** The conduct described herein is not historical. It is occurring during the time required to read this paper. Each minute of continuation extends the body count by approximately {{< var global_disease_deaths_per_minute_nounit >}} additional victims of Count Three alone.
+18. **Continuing offense.** The conduct described herein is not historical. It is occurring during the time required to read this paper. Each minute of continuation, approximately {{< var global_disease_deaths_per_minute_nounit >}} humans die of preventable disease the misallocated resources could have been treating. Whether the deaths attach to Count Three's historical or forward ledger depends on the settlement framework adopted. The urgency does not.
 
 ### Antecedent Charges (No Death Element, Inapplicable Due to Self-Exemption)
 
@@ -276,16 +277,15 @@ The defense will argue that counterfactual deaths are categorically different fr
 
 In legal doctrine, the distinction tracks **commission** versus **omission**. Common-law systems generally treat omission as criminal only where there is a duty to act. The defendants accept salaries, write founding documents, and swear oaths to act. The duty is established. The omission is established. The deaths are established. The remaining elements are present.
 
-## The Aggregate Body Count
+## The Aggregate Exposure
 
-| Count | Charge | Body Count | Period |
+| Count | Charge | Measure | Period |
 |---|---|---|---|
 | One | Direct killing through war, conflict, democide | {{< var war_deaths_since_1900_nounit >}} | 1900-present |
 | Two | Regulatory delay of safe-and-effective drugs | {{< var existing_drugs_efficacy_lag_deaths_total_nounit >}} | 1962-present |
-| Three | Misallocation away from disease treatment | {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved_nounit >}} | Forward-looking, eradication window |
-| | **Aggregate** | **~11.1 billion** | |
+| Three | Misallocation away from disease treatment | Historical medical opportunity cost plus {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved_nounit >}} future deaths preventable by settlement | 1900 counterfactual plus forward remedy |
 
-For every person the defendants killed directly through war, they will kill approximately 30 more through the combination of regulatory delay and misallocation. The war deaths are the headline. The other counts are the larger mass behind it.
+This table is deliberately not a simple body-count addition. Counts One and Two are historical mortality claims. Count Three has two ledgers: the historical opportunity cost of trials not run, documented in [Cost of War](../problem/cost-of-war.qmd#the-medical-opportunity-cost), and the forward treaty value of trials still possible, modeled in [1% Treaty Impact](../economics/1-pct-treaty-impact.qmd).
 
 The prosecution wishes to note that this is a conservative tally. It excludes:
 
@@ -294,7 +294,7 @@ The prosecution wishes to note that this is a conservative tally. It excludes:
 3. **Drugs never developed.** The historical efficacy-lag count assumes drugs that were eventually developed and approved. It excludes drugs that were never developed because the regulatory cost made them economically unviable. This exclusion alone may double or triple Count Two.
 4. **Compound effects.** Wars destroyed scientists, doctors, and engineers (Count One) who would have prevented deaths in Counts Two and Three. The counts are sequential, not summative; the actual interaction is multiplicative.
 
-The 11.1 billion figure is therefore a *floor*, not a ceiling.
+The exposure is therefore a *floor*, not a ceiling. The exact court demand should itemize ledgers, not mash VSL, DALYs, GDP, and punitive damages into one suspiciously round monster number.
 
 ## Witnesses for the Prosecution
 
@@ -382,7 +382,7 @@ The defense will argue that the entire indictment is procedurally void, because 
 
 The defendants wrote the laws that immunize the defendants from prosecution for the specific conduct alleged. They did not do this accidentally. They did this because they understood the conduct was indictable under any neutral standard, and chose to engineer the standard rather than the conduct. This is itself the most damning piece of evidence in the case. *The defendants' first response to discovering the body count was to make the body count un-litigable.*
 
-The prosecution's response is the [Court of Humanity](../solution/court-of-humanity.qmd), a decentralized adjudication mechanism that derives legitimacy from human consent rather than sovereign consent, with verdicts rendered by verified humans and judgments enforced not by coercion but by capital-markets pricing of the resulting liability. The defendants cannot withdraw consent that was never theirs to give. Applying standard regulatory life valuations to the body counts in this paper yields economic exposure far beyond any government's ability to pay. The defendants cannot pay the full exposure. They can, however, settle. The [1% Treaty](../solution/1-percent-treaty.qmd) [@1-pct-treaty-impact-paper-2025] is the settlement vehicle.
+The prosecution's response is the [Court of Humanity](../solution/court-of-humanity.qmd), a decentralized adjudication mechanism that derives legitimacy from human consent rather than sovereign consent, with verdicts rendered by verified humans and judgments enforced not by coercion but by capital-markets pricing of the resulting liability. The defendants cannot withdraw consent that was never theirs to give. Applying standard regulatory life valuations to the historical body counts, and then separately pricing the forward settlement exposure, yields economic exposure far beyond any government's ability to pay. The defendants cannot pay the full exposure. They can, however, settle. The [1% Treaty](../solution/1-percent-treaty.qmd) [@1-pct-treaty-impact-paper-2025] is the settlement vehicle.
 
 The prosecution therefore brings this case in the only court that retains jurisdiction: the court of public attention. The remedy is not awarded by a judge. It is awarded by 8 billion humans noticing that the procedural shield exists. The shield falls when the public stops respecting it, and the public stops respecting it when someone counts the bodies in one place. Which is what this paper does.
 
@@ -422,7 +422,7 @@ The prosecution rests, again. The verdict is yours.
 
 ## Methodological Note
 
-The figures in this paper are drawn from the same parameter model used throughout the [How to End War and Disease](https://manual.warondisease.org) corpus. Each named figure links to its derivation, source citation, and sensitivity analysis in the [Parameters and Calculations appendix](parameters-and-calculations.qmd). All formulas are reproducible. All citations are verifiable. The aggregate body count is built from non-overlapping categories: Count One uses Rummel's democide methodology plus battle and collateral civilian deaths net of overlap; Count Two uses Lichtenberg's pharmaceutical-impact framework applied to the {{< var efficacy_lag_years >}} efficacy lag; Count Three uses the [1% Treaty Impact](../economics/1-pct-treaty-impact.qmd) [@1-pct-treaty-impact-paper-2025] projection model.
+The figures in this paper are drawn from the same parameter model used throughout the [How to End War and Disease](https://manual.warondisease.org) corpus. Each named figure links to its derivation, source citation, and sensitivity analysis in the [Parameters and Calculations appendix](parameters-and-calculations.qmd). All formulas are reproducible. All citations are verifiable. Count One uses Rummel's democide methodology plus battle and collateral civilian deaths net of overlap. Count Two uses Lichtenberg's pharmaceutical-impact framework applied to the {{< var efficacy_lag_years >}} efficacy lag. Count Three's historical ledger is in [Cost of War](../problem/cost-of-war.qmd#the-medical-opportunity-cost); its forward ledger is in [1% Treaty Impact](../economics/1-pct-treaty-impact.qmd) [@1-pct-treaty-impact-paper-2025].
 
 This is a *forensic* paper, not a polemic. The voice is alien because the prosecution is not from here. The math is human because the dead are human.
 

@@ -238,6 +238,7 @@ class ReferenceID(str, Enum):
     COPPA_COMPLIANCE = "coppa-compliance"
     COPYCAT_MODEL_LEGISLATION_10000 = "copycat-model-legislation-10000"
     CORPORATE_LOBBYING_SPENDING_2023 = "corporate-lobbying-spending-2023"
+    CORRELATES_OF_WAR_NMC = "correlates-of-war-nmc"
     COST_OF_CHANGE_PAPER_2025 = "cost-of-change-paper-2025"
     COST_OF_POLITICAL_INFLUENCE = "cost-of-political-influence"
     COST_OF_UNIVERSAL_HEALTHCARE = "cost-of-universal-healthcare"
