@@ -38,15 +38,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 394 parameters used in the analysis, organized by type:
+This appendix documents all 396 parameters used in the analysis, organized by type:
 
 - External sources (peer-reviewed): 142
-- Calculated values: 187
+- Calculated values: 189
 - Core definitions: 65
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (187 parameters) • [External Data Sources](#sec-external) (142 parameters) • [Core Definitions](#sec-definitions) (65 parameters)
+[Calculated Values](#sec-calculated) (189 parameters) • [External Data Sources](#sec-external) (142 parameters) • [Core Definitions](#sec-definitions) (65 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -4740,6 +4740,38 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-global_disease_economic_burden_annual.qmd >}}
+
+:::
+
+### Annual Global Government Expense: $36.5 trillion {#sec-global_government_expense_annual}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Approximate annual global government expenditure, computed as global GDP times the World Bank general-government expense share of GDP.
+
+**Inputs**:
+
+- [Global GDP (2025)](#sec-global_gdp_2025) 📊: $115 trillion
+- [Global Government Expense Share of GDP](#sec-global_government_expense_pct_gdp) 📊: 31.8%
+
+$$
+\begin{gathered}
+Expense_{gov,global} \\
+= GDP_{global} \times p_{gov,expense} \\
+= \$115T \times 31.8\% \\
+= \$36.5T
+\end{gathered}
+$$
+
+*~ Medium confidence*
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-global_government_expense_annual.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-global_government_expense_annual.qmd >}}
 
 :::
 
@@ -13762,6 +13794,45 @@ $$
 
 :::
 
+### Excess Military Spending Above 1900 Freeze: $135 trillion {#sec-war_trial_redirect_excess_military_spending_above_1900_freeze}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Dataset-derived aggregate: cumulative global military spending above a 1900 real-spending freeze, 1900-2024, calculated from knowledge/data/global-military-spending-1900-2024-constant-2023-usd.csv (Correlates of War NMC) as the sum of max(0, annual spending - 1900 baseline) across years. The stricter medical redirect pot, distinct from total cumulative military spending.
+
+**Inputs**:
+
+- [1900 Military Spending Freeze Baseline](#sec-war_trial_redirect_1900_freeze_baseline_annual) 📊: $66.1 billion (95% CI: $50 billion - $90 billion)
+
+$$
+\begin{gathered}
+Spending_{mil,excess1900} \\
+= \sum_{t=1900}^{2024} \max\left(0, Spending_{mil,t} - Spending_{mil,1900}\right) \\
+= \sum_{t=1900}^{2024} \max\left(0, Spending_{mil,t} - \$66.1B\right) \\
+= \$135T
+\end{gathered}
+$$
+
+**Methodology**: [@correlates-of-war-nmc]
+
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-war_trial_redirect_excess_military_spending_above_1900_freeze.qmd >}}
+
+{{< include ../figures/sensitivity-table-war_trial_redirect_excess_military_spending_above_1900_freeze.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-war_trial_redirect_excess_military_spending_above_1900_freeze.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-war_trial_redirect_excess_military_spending_above_1900_freeze.qmd >}}
+
+:::
+
 ### Excess Military Spending Above 1900 Freeze in Clinical Trial Years: 29,937 years {#sec-war_trial_redirect_excess_military_trial_years}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -13770,7 +13841,7 @@ Clinical-trial years funded by military spending above a 1900 real-spending free
 
 **Inputs**:
 
-- [Excess Military Spending Above 1900 Freeze](#sec-war_trial_redirect_excess_military_spending_above_1900_freeze) 📊: $135 trillion (95% CI: $100 trillion - $170 trillion)
+- [Excess Military Spending Above 1900 Freeze](#sec-war_trial_redirect_excess_military_spending_above_1900_freeze) 🔢: $135 trillion
 - [Annual Global Government Spending on Clinical Trials](#sec-global_government_clinical_trials_spending_annual) 📊: $4.5 billion (95% CI: $3 billion - $6 billion)
 
 $$
@@ -13781,7 +13852,15 @@ Years_{excess1900 \to trials,gov} \\
 = 29{,}900
 \end{gathered}
 $$
-
+where:
+$$
+\begin{gathered}
+Spending_{mil,excess1900} \\
+= \sum_{t=1900}^{2024} \max\left(0, Spending_{mil,t} - Spending_{mil,1900}\right) \\
+= \sum_{t=1900}^{2024} \max\left(0, Spending_{mil,t} - \$66.1B\right) \\
+= \$135T
+\end{gathered}
+$$
 *? Low confidence*
 
 #### Sensitivity Analysis
@@ -16308,6 +16387,22 @@ Annual global government spending on interventional clinical trials (~5-10% of t
 
 :::
 
+### Global Government Expense Share of GDP: 31.8% {#sec-global_government_expense_pct_gdp}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+World general government total expense as a share of GDP, using World Bank indicator GC.XPN.TOTL.GD.ZS. The most recent world aggregate in the cited source is 2021.
+
+**Source**: [@world-bank-government-expense-pct-gdp]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*~ Medium confidence*
+
+:::
+
 ### Global Household Wealth: $454 trillion {#sec-global_household_wealth_usd}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -17963,30 +18058,6 @@ Global military spending in 1900 in constant 2023 USD, from the Correlates of Wa
 #### Input Distribution
 
 {{< include ../figures/distribution-war_trial_redirect_1900_freeze_baseline_annual.qmd >}}
-
-*? Low confidence*
-
-:::
-
-### Excess Military Spending Above 1900 Freeze: $135 trillion {#sec-war_trial_redirect_excess_military_spending_above_1900_freeze}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Dataset-derived aggregate: cumulative global military spending above a 1900 real-spending freeze, 1900-2024, computed offline from knowledge/data/global-military-spending-1900-2024-constant-2023-usd.csv (Correlates of War NMC) as the sum of max(0, annual spending - 1900 baseline) across years. Marked EXTERNAL because the parameter system reserves CALCULATED for derivations whose uncertainty is propagated from other Parameter inputs; this aggregate's uncertainty band reflects dataset and methodology uncertainty in the underlying CSV. The stricter medical redirect pot, distinct from total cumulative military spending.
-
-**Source**: [@correlates-of-war-nmc]
-
-#### Uncertainty Range
-
-**Technical**: 95% CI: [$100 trillion, $170 trillion] • Distribution: Uniform
-
-**What this means**: There's significant uncertainty here. The true value likely falls between $100 trillion and $170 trillion (±26%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
-
-*The uniform distribution means any value in the range is equally likely.*
-
-#### Input Distribution
-
-{{< include ../figures/distribution-war_trial_redirect_excess_military_spending_above_1900_freeze.qmd >}}
 
 *? Low confidence*
 

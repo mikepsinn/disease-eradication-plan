@@ -1,0 +1,9 @@
+**Monte Carlo note:** Corporate Damages Pentagon FCA Penalty Increment is effectively deterministic across the current sampled inputs, so a histogram would mostly visualize floating-point residue instead of real uncertainty. (range 0.000e+00 <= tolerance 4.920e+00)
+
+| Statistic | Value |
+|:----------|------:|
+| Baseline (deterministic) | $4.92 trillion |
+| Mean (expected value) | $4.92 trillion |
+| Median (50th percentile) | $4.92 trillion |
+| Standard Deviation | $0 |
+| 90% Range (5th-95th percentile) | [$4.92 trillion, $4.92 trillion] |

@@ -351,6 +351,36 @@ export const CONVENTIONAL_RETIREMENT_RETURN: Parameter = {
   manualPageTitle: "The Earth Optimization Prize Fund",
 };
 
+export const CORPORATE_ANALOG_FALSE_CLAIMS_TREBLE_MULTIPLIER: Parameter = {
+  value: 3.0,
+  parameterName: "CORPORATE_ANALOG_FALSE_CLAIMS_TREBLE_MULTIPLIER",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-corporate_analog_false_claims_treble_multiplier",
+  unit: "multiplier",
+  displayName: "Corporate Analog False Claims Act Treble Multiplier",
+  description: "Treble-damages multiplier from the False Claims Act, used here as the corporate-defendant analogy for audit and public-money claims in Humanity v. Government.",
+  sourceType: "external",
+  sourceRef: "doj-false-claims-act",
+  sourceUrl: "https://www.justice.gov/civil/false-claims-act",
+  confidence: "high",
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/humanity-v-government.html",
+  manualPageTitle: "Humanity v. Government",
+};
+
+export const CORPORATE_DAMAGES_STATE_FARM_CEILING_MULTIPLIER: Parameter = {
+  value: 10.0,
+  parameterName: "CORPORATE_DAMAGES_STATE_FARM_CEILING_MULTIPLIER",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-corporate_damages_state_farm_ceiling_multiplier",
+  unit: "multiplier",
+  displayName: "State Farm Constitutional-Ceiling Exposure Multiplier",
+  description: "Total exposure multiplier for a 9:1 punitive-to-compensatory ratio, meaning base damages plus nine times base damages. Used as constitutional-ceiling exposure under State Farm v. Campbell, not a typical award.",
+  sourceType: "external",
+  sourceRef: "state-farm-v-campbell-2003",
+  sourceUrl: "https://www.govinfo.gov/app/details/USREPORTS-538/USREPORTS-538-408",
+  confidence: "high",
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/humanity-v-government.html",
+  manualPageTitle: "Humanity v. Government",
+};
+
 export const CPI_MULTIPLIER_1980_TO_2024: Parameter = {
   value: 3.8,
   parameterName: "CPI_MULTIPLIER_1980_TO_2024",
@@ -1350,6 +1380,21 @@ export const GLOBAL_GOVERNMENT_CLINICAL_TRIALS_SPENDING_ANNUAL: Parameter = {
   stdError: 1000000000.0,
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/economics/1-pct-treaty-impact.html",
   manualPageTitle: "The 1% Treaty: Harnessing Greed to Eradicate Disease",
+};
+
+export const GLOBAL_GOVERNMENT_EXPENSE_PCT_GDP: Parameter = {
+  value: 0.3178,
+  parameterName: "GLOBAL_GOVERNMENT_EXPENSE_PCT_GDP",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-global_government_expense_pct_gdp",
+  unit: "percent",
+  displayName: "Global Government Expense Share of GDP",
+  description: "World general government total expense as a share of GDP, using World Bank indicator GC.XPN.TOTL.GD.ZS. The most recent world aggregate in the cited source is 2021.",
+  sourceType: "external",
+  sourceRef: "world-bank-government-expense-pct-gdp",
+  sourceUrl: "https://data.worldbank.org/indicator/GC.XPN.TOTL.GD.ZS?locations=1W",
+  confidence: "medium",
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/humanity-v-government.html",
+  manualPageTitle: "Humanity v. Government",
 };
 
 export const GLOBAL_HALE_CURRENT: Parameter = {
@@ -3439,22 +3484,6 @@ export const WAR_TRIAL_REDIRECT_1900_FREEZE_BASELINE_ANNUAL: Parameter = {
   manualPageTitle: "The Cost of War",
 };
 
-export const WAR_TRIAL_REDIRECT_EXCESS_MILITARY_SPENDING_ABOVE_1900_FREEZE: Parameter = {
-  value: 134716000000000.0,
-  parameterName: "WAR_TRIAL_REDIRECT_EXCESS_MILITARY_SPENDING_ABOVE_1900_FREEZE",
-  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-war_trial_redirect_excess_military_spending_above_1900_freeze",
-  unit: "USD",
-  displayName: "Excess Military Spending Above 1900 Freeze",
-  description: "Dataset-derived aggregate: cumulative global military spending above a 1900 real-spending freeze, 1900-2024, computed offline from knowledge/data/global-military-spending-1900-2024-constant-2023-usd.csv (Correlates of War NMC) as the sum of max(0, annual spending - 1900 baseline) across years. Marked EXTERNAL because the parameter system reserves CALCULATED for derivations whose uncertainty is propagated from other Parameter inputs; this aggregate's uncertainty band reflects dataset and methodology uncertainty in the underlying CSV. The stricter medical redirect pot, distinct from total cumulative military spending.",
-  sourceType: "external",
-  sourceRef: "correlates-of-war-nmc",
-  sourceUrl: "https://correlatesofwar.org/data-sets/national-material-capabilities/",
-  confidence: "low",
-  confidenceInterval: [100000000000000.0, 170000000000000.0],
-  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/problem/cost-of-war.html",
-  manualPageTitle: "The Cost of War",
-};
-
 export const WATER_FLUORIDATION_ANNUAL_BENEFIT: Parameter = {
   value: 800000000.0,
   parameterName: "WATER_FLUORIDATION_ANNUAL_BENEFIT",
@@ -3917,6 +3946,229 @@ export const CONVENTIONAL_RETIREMENT_HORIZON_MULTIPLE: Parameter = {
   confidenceInterval: [2.144867844917442, 3.066863226999378],
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/economics/earth-optimization-prize-fund.html",
   manualPageTitle: "The Earth Optimization Prize Fund",
+};
+
+export const CORPORATE_DAMAGES_DRUGS_NEVER_DEVELOPED_VSL: Parameter = {
+  value: 3000000000000000.0,
+  parameterName: "CORPORATE_DAMAGES_DRUGS_NEVER_DEVELOPED_VSL",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-corporate_damages_drugs_never_developed_vsl",
+  unit: "USD",
+  displayName: "Corporate Damages Drugs Never Developed VSL",
+  description: "Corporate-defendant wrongful-death valuation for the aggressive prosecutor estimate of deaths from drugs never developed.",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "CORPORATE_DAMAGES_DRUGS_NEVER_DEVELOPED_DEATHS * VALUE_OF_STATISTICAL_LIFE",
+  latex: "\\begin{gathered}\nV_{neverdev,VSL} \\\\\n= Deaths_{neverdev} \\times VSL \\\\\n= 300M \\times \\$10M \\\\\n= \\$3000T\n\\end{gathered}",
+  confidenceInterval: [1687716309004259.8, 4500000000000000.0],
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/humanity-v-government.html",
+  manualPageTitle: "Humanity v. Government",
+};
+
+export const CORPORATE_DAMAGES_EFFICACY_LAG_DEATHS_VSL: Parameter = {
+  value: 1016116666666666.6,
+  parameterName: "CORPORATE_DAMAGES_EFFICACY_LAG_DEATHS_VSL",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-corporate_damages_efficacy_lag_deaths_vsl",
+  unit: "USD",
+  displayName: "Corporate Damages Efficacy Lag Deaths VSL",
+  description: "Corporate-defendant wrongful-death valuation for existing-drug efficacy-lag deaths using the standard value of a statistical life.",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "EXISTING_DRUGS_EFFICACY_LAG_DEATHS_TOTAL * VALUE_OF_STATISTICAL_LIFE",
+  latex: "\\begin{gathered}\nV_{lag,VSL} = Deaths_{lag,total} \\times VSL = 102M \\times \\$10M = \\$1020T\n\\\\[0.5em]\n\\text{where } Deaths_{lag,total} = Lives_{saved,annual} \\times T_{lag} = 12.4M \\times 8.2 = 102M\n\\\\[0.5em]\n\\text{where } Lives_{saved,annual} = \\frac{LY_{saved,annual}}{T_{ext}} = \\frac{149M}{12} = 12.4M\n\\end{gathered}",
+  confidenceInterval: [314545453188383.5, 2267150113928112.0],
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/humanity-v-government.html",
+  manualPageTitle: "Humanity v. Government",
+};
+
+export const CORPORATE_DAMAGES_FORWARD_SETTLEMENT_VALUE_PER_CAPITA: Parameter = {
+  value: 10598318.87533123,
+  parameterName: "CORPORATE_DAMAGES_FORWARD_SETTLEMENT_VALUE_PER_CAPITA",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-corporate_damages_forward_settlement_value_per_capita",
+  unit: "USD/person",
+  displayName: "Corporate Damages Forward Settlement Value Per Capita",
+  description: "Forward treaty settlement value per living human from the 1% Treaty impact model. Kept separate from historical corporate damages.",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_ECONOMIC_VALUE / GLOBAL_POPULATION_2024",
+  latex: "\\begin{gathered}\nV_{settlement,pc} = \\frac{Value_{max}}{Pop_{global}} = \\frac{\\$84800T}{8B} = \\$10.6M\n\\\\[0.5em]\n\\text{where } Value_{max} = DALYs_{max} \\times Value_{QALY} = 565B \\times \\$150K = \\$84800T\n\\\\[0.5em]\n\\text{where } DALYs_{max} = DALYs_{global,ann} \\times Pct_{avoid,DALY} \\times T_{accel,max} = 2.88B \\times 92.6\\% \\times 212 = 565B\n\\\\[0.5em]\n\\text{where } T_{accel,max} = T_{accel} + T_{lag} = 204 + 8.2 = 212\n\\\\[0.5em]\n\\text{where } T_{accel} = T_{first,SQ} \\times \\left(1 - \\frac{1}{k_{capacity}}\\right) = 222 \\times \\left(1 - \\frac{1}{12.3}\\right) = 204\n\\\\[0.5em]\n\\text{where } T_{first,SQ} = T_{queue,SQ} \\times 0.5 = 443 \\times 0.5 = 222\n\\\\[0.5em]\n\\text{where } T_{queue,SQ} = \\frac{N_{untreated}}{Treatments_{new,ann}} = \\frac{6{,}650}{15} = 443\n\\\\[0.5em]\n\\text{where } N_{untreated} = N_{rare} \\times 0.95 = 7{,}000 \\times 0.95 = 6{,}650\n\\\\[0.5em]\n\\text{where } k_{capacity} = \\frac{N_{fundable,ref}}{Slots_{curr}} = \\frac{23.4M}{1.9M} = 12.3\n\\\\[0.5em]\n\\text{where } N_{fundable,ref} = \\frac{Subsidies_{trial,ref}}{Cost_{pragmatic,pt}} = \\frac{\\$21.8B}{\\$929} = 23.4M\n\\\\[0.5em]\n\\text{where } Subsidies_{trial,ref} = Funding_{trial,ref} - OPEX_{trial} = \\$21.8B - \\$40M = \\$21.8B\n\\\\[0.5em]\n\\text{where } OPEX_{trial} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \\$15M + \\$10M + \\$8M + \\$5M + \\$2M = \\$40M\n\\end{gathered}",
+  confidenceInterval: [7782477.739564056, 12172153.00621689],
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/solution/court-of-humanity.html",
+  manualPageTitle: "The Court of Humanity",
+};
+
+export const CORPORATE_DAMAGES_PENTAGON_FCA_PENALTY_INCREMENT: Parameter = {
+  value: 4920000000000.0,
+  parameterName: "CORPORATE_DAMAGES_PENTAGON_FCA_PENALTY_INCREMENT",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-corporate_damages_pentagon_fca_penalty_increment",
+  unit: "USD",
+  displayName: "Corporate Damages Pentagon FCA Penalty Increment",
+  description: "False Claims Act-style penalty increment on Pentagon unaccounted funds, calculated as treble exposure minus principal so the principal is not counted twice.",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "PENTAGON_UNACCOUNTED_FALSE_CLAIMS_ANALOG_EXPOSURE - PENTAGON_UNACCOUNTED_FUNDS",
+  latex: "\\begin{gathered}\nPenalty_{pentagon,FCA} = Exposure_{pentagon,FCA} - Funds_{pentagon,unaccounted} = \\$7.38T - \\$2.46T = \\$4.92T\n\\\\[0.5em]\n\\text{where } Exposure_{pentagon,FCA} = Funds_{pentagon,unaccounted} \\times m_{FCA} = \\$2.46T \\times 3 = \\$7.38T\n\\end{gathered}",
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/humanity-v-government.html",
+  manualPageTitle: "Humanity v. Government",
+};
+
+export const CORPORATE_DAMAGES_PROPERTY_ENVIRONMENTAL_DESTRUCTION: Parameter = {
+  value: 50000000000000.0,
+  parameterName: "CORPORATE_DAMAGES_PROPERTY_ENVIRONMENTAL_DESTRUCTION",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-corporate_damages_property_environmental_destruction",
+  unit: "USD",
+  displayName: "Corporate Damages Property Plus Environmental Destruction",
+  description: "Property and environmental destruction from war since 1900, separated from war death valuation to avoid adding the QALY component embedded in the broader historical sunk-cost parameter.",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "WAR_PROPERTY_DESTRUCTION_SINCE_1900 + WAR_ENVIRONMENTAL_DESTRUCTION_SINCE_1900",
+  latex: "\\begin{gathered}\nD_{property+env} \\\\\n= D_{property} + D_{env} \\\\\n= \\$45T + \\$5T \\\\\n= \\$50T\n\\end{gathered}",
+  confidenceInterval: [36143663183398.266, 63673509075913.79],
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/humanity-v-government.html",
+  manualPageTitle: "Humanity v. Government",
+};
+
+export const CORPORATE_DAMAGES_PROSECUTOR_BASE_ASK_PER_CAPITA: Parameter = {
+  value: 913218.9708806707,
+  parameterName: "CORPORATE_DAMAGES_PROSECUTOR_BASE_ASK_PER_CAPITA",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-corporate_damages_prosecutor_base_ask_per_capita",
+  unit: "USD/person",
+  displayName: "Corporate Damages Prosecutor Base Ask Per Capita",
+  description: "Aggressive corporate-liability prosecutor base ask per living human.",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "CORPORATE_DAMAGES_PROSECUTOR_BASE_ASK_TOTAL / GLOBAL_POPULATION_2024",
+  latex: "\\begin{gathered}\nD_{corp,ask,pc} = \\frac{D_{corp,ask}}{Pop_{global}} = \\frac{\\$7310T}{8B} = \\$913K\n\\\\[0.5em]\n\\text{where } D_{corp,ask} = D_{corp,floor} + V_{neverdev,VSL} = \\$4310T + \\$3000T = \\$7310T\n\\\\[0.5em]\n\\text{where } D_{corp,floor} = V_{war,VSL} + V_{lag,VSL} + D_{property+env} + Spending_{mil,excess1900} + Penalty_{pentagon,FCA} = \\$3100T + \\$1020T + \\$50T + \\$135T + \\$4.92T = \\$4310T\n\\\\[0.5em]\n\\text{where } V_{war,VSL} = Deaths_{war,1900} \\times VSL = 310M \\times \\$10M = \\$3100T\n\\\\[0.5em]\n\\text{where } V_{lag,VSL} = Deaths_{lag,total} \\times VSL = 102M \\times \\$10M = \\$1020T\n\\\\[0.5em]\n\\text{where } Deaths_{lag,total} = Lives_{saved,annual} \\times T_{lag} = 12.4M \\times 8.2 = 102M\n\\\\[0.5em]\n\\text{where } Lives_{saved,annual} = \\frac{LY_{saved,annual}}{T_{ext}} = \\frac{149M}{12} = 12.4M\n\\\\[0.5em]\n\\text{where } D_{property+env} = D_{property} + D_{env} = \\$45T + \\$5T = \\$50T\n\\\\[0.5em]\n\\text{where } Spending_{mil,excess1900} = \\sum_{t=1900}^{2024} \\max\\left(0, Spending_{mil,t} - Spending_{mil,1900}\\right) = \\sum_{t=1900}^{2024} \\max\\left(0, Spending_{mil,t} - \\$66.1B\\right) = \\$135T\n\\\\[0.5em]\n\\text{where } Penalty_{pentagon,FCA} = Exposure_{pentagon,FCA} - Funds_{pentagon,unaccounted} = \\$7.38T - \\$2.46T = \\$4.92T\n\\\\[0.5em]\n\\text{where } Exposure_{pentagon,FCA} = Funds_{pentagon,unaccounted} \\times m_{FCA} = \\$2.46T \\times 3 = \\$7.38T\n\\\\[0.5em]\n\\text{where } V_{neverdev,VSL} = Deaths_{neverdev} \\times VSL = 300M \\times \\$10M = \\$3000T\n\\end{gathered}",
+  confidenceInterval: [487689.95742848073, 1287473.5995737363],
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/humanity-v-government.html",
+  manualPageTitle: "Humanity v. Government",
+};
+
+export const CORPORATE_DAMAGES_PROSECUTOR_BASE_ASK_TOTAL: Parameter = {
+  value: 7305751767045366.0,
+  parameterName: "CORPORATE_DAMAGES_PROSECUTOR_BASE_ASK_TOTAL",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-corporate_damages_prosecutor_base_ask_total",
+  unit: "USD",
+  displayName: "Corporate Damages Prosecutor Base Ask Total",
+  description: "Aggressive corporate-liability prosecutor base ask: strict floor plus the aggressive pleading estimate for deaths from drugs never developed. Excludes punitive damages, disgorgement, ongoing lost-income damages, and forward treaty settlement value.",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "CORPORATE_DAMAGES_STRICT_FLOOR_TOTAL + CORPORATE_DAMAGES_DRUGS_NEVER_DEVELOPED_VSL",
+  latex: "\\begin{gathered}\nD_{corp,ask} = D_{corp,floor} + V_{neverdev,VSL} = \\$4310T + \\$3000T = \\$7310T\n\\\\[0.5em]\n\\text{where } D_{corp,floor} = V_{war,VSL} + V_{lag,VSL} + D_{property+env} + Spending_{mil,excess1900} + Penalty_{pentagon,FCA} = \\$3100T + \\$1020T + \\$50T + \\$135T + \\$4.92T = \\$4310T\n\\\\[0.5em]\n\\text{where } V_{war,VSL} = Deaths_{war,1900} \\times VSL = 310M \\times \\$10M = \\$3100T\n\\\\[0.5em]\n\\text{where } V_{lag,VSL} = Deaths_{lag,total} \\times VSL = 102M \\times \\$10M = \\$1020T\n\\\\[0.5em]\n\\text{where } Deaths_{lag,total} = Lives_{saved,annual} \\times T_{lag} = 12.4M \\times 8.2 = 102M\n\\\\[0.5em]\n\\text{where } Lives_{saved,annual} = \\frac{LY_{saved,annual}}{T_{ext}} = \\frac{149M}{12} = 12.4M\n\\\\[0.5em]\n\\text{where } D_{property+env} = D_{property} + D_{env} = \\$45T + \\$5T = \\$50T\n\\\\[0.5em]\n\\text{where } Spending_{mil,excess1900} = \\sum_{t=1900}^{2024} \\max\\left(0, Spending_{mil,t} - Spending_{mil,1900}\\right) = \\sum_{t=1900}^{2024} \\max\\left(0, Spending_{mil,t} - \\$66.1B\\right) = \\$135T\n\\\\[0.5em]\n\\text{where } Penalty_{pentagon,FCA} = Exposure_{pentagon,FCA} - Funds_{pentagon,unaccounted} = \\$7.38T - \\$2.46T = \\$4.92T\n\\\\[0.5em]\n\\text{where } Exposure_{pentagon,FCA} = Funds_{pentagon,unaccounted} \\times m_{FCA} = \\$2.46T \\times 3 = \\$7.38T\n\\\\[0.5em]\n\\text{where } V_{neverdev,VSL} = Deaths_{neverdev} \\times VSL = 300M \\times \\$10M = \\$3000T\n\\end{gathered}",
+  confidenceInterval: [3892493716349089.5, 1.0340149635944944e+16],
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/humanity-v-government.html",
+  manualPageTitle: "Humanity v. Government",
+};
+
+export const CORPORATE_DAMAGES_STATE_FARM_CEILING_EXPOSURE_PER_CAPITA: Parameter = {
+  value: 9132189.708806708,
+  parameterName: "CORPORATE_DAMAGES_STATE_FARM_CEILING_EXPOSURE_PER_CAPITA",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-corporate_damages_state_farm_ceiling_exposure_per_capita",
+  unit: "USD/person",
+  displayName: "Corporate Damages State Farm Constitutional-Ceiling Exposure Per Capita",
+  description: "Constitutional-ceiling exposure per living human under State Farm v. Campbell. This is exposure, not a typical award.",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "CORPORATE_DAMAGES_STATE_FARM_CEILING_EXPOSURE_TOTAL / GLOBAL_POPULATION_2024",
+  latex: "\\begin{gathered}\nD_{corp,StateFarm,pc} = \\frac{D_{corp,StateFarm}}{Pop_{global}} = \\frac{\\$73100T}{8B} = \\$9.13M\n\\\\[0.5em]\n\\text{where } D_{corp,StateFarm} = D_{corp,ask} \\times m_{StateFarm} = \\$7310T \\times 10 = \\$73100T\n\\\\[0.5em]\n\\text{where } D_{corp,ask} = D_{corp,floor} + V_{neverdev,VSL} = \\$4310T + \\$3000T = \\$7310T\n\\\\[0.5em]\n\\text{where } D_{corp,floor} = V_{war,VSL} + V_{lag,VSL} + D_{property+env} + Spending_{mil,excess1900} + Penalty_{pentagon,FCA} = \\$3100T + \\$1020T + \\$50T + \\$135T + \\$4.92T = \\$4310T\n\\\\[0.5em]\n\\text{where } V_{war,VSL} = Deaths_{war,1900} \\times VSL = 310M \\times \\$10M = \\$3100T\n\\\\[0.5em]\n\\text{where } V_{lag,VSL} = Deaths_{lag,total} \\times VSL = 102M \\times \\$10M = \\$1020T\n\\\\[0.5em]\n\\text{where } Deaths_{lag,total} = Lives_{saved,annual} \\times T_{lag} = 12.4M \\times 8.2 = 102M\n\\\\[0.5em]\n\\text{where } Lives_{saved,annual} = \\frac{LY_{saved,annual}}{T_{ext}} = \\frac{149M}{12} = 12.4M\n\\\\[0.5em]\n\\text{where } D_{property+env} = D_{property} + D_{env} = \\$45T + \\$5T = \\$50T\n\\\\[0.5em]\n\\text{where } Spending_{mil,excess1900} = \\sum_{t=1900}^{2024} \\max\\left(0, Spending_{mil,t} - Spending_{mil,1900}\\right) = \\sum_{t=1900}^{2024} \\max\\left(0, Spending_{mil,t} - \\$66.1B\\right) = \\$135T\n\\\\[0.5em]\n\\text{where } Penalty_{pentagon,FCA} = Exposure_{pentagon,FCA} - Funds_{pentagon,unaccounted} = \\$7.38T - \\$2.46T = \\$4.92T\n\\\\[0.5em]\n\\text{where } Exposure_{pentagon,FCA} = Funds_{pentagon,unaccounted} \\times m_{FCA} = \\$2.46T \\times 3 = \\$7.38T\n\\\\[0.5em]\n\\text{where } V_{neverdev,VSL} = Deaths_{neverdev} \\times VSL = 300M \\times \\$10M = \\$3000T\n\\end{gathered}",
+  confidenceInterval: [4876899.574284808, 12874735.99573736],
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/humanity-v-government.html",
+  manualPageTitle: "Humanity v. Government",
+};
+
+export const CORPORATE_DAMAGES_STATE_FARM_CEILING_EXPOSURE_TOTAL: Parameter = {
+  value: 7.305751767045366e+16,
+  parameterName: "CORPORATE_DAMAGES_STATE_FARM_CEILING_EXPOSURE_TOTAL",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-corporate_damages_state_farm_ceiling_exposure_total",
+  unit: "USD",
+  displayName: "Corporate Damages State Farm Constitutional-Ceiling Exposure Total",
+  description: "Constitutional-ceiling exposure under State Farm v. Campbell: prosecutor base ask plus a 9:1 punitive-to-compensatory multiplier. This is exposure, not a typical award.",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "CORPORATE_DAMAGES_PROSECUTOR_BASE_ASK_TOTAL * CORPORATE_DAMAGES_STATE_FARM_CEILING_MULTIPLIER",
+  latex: "\\begin{gathered}\nD_{corp,StateFarm} = D_{corp,ask} \\times m_{StateFarm} = \\$7310T \\times 10 = \\$73100T\n\\\\[0.5em]\n\\text{where } D_{corp,ask} = D_{corp,floor} + V_{neverdev,VSL} = \\$4310T + \\$3000T = \\$7310T\n\\\\[0.5em]\n\\text{where } D_{corp,floor} = V_{war,VSL} + V_{lag,VSL} + D_{property+env} + Spending_{mil,excess1900} + Penalty_{pentagon,FCA} = \\$3100T + \\$1020T + \\$50T + \\$135T + \\$4.92T = \\$4310T\n\\\\[0.5em]\n\\text{where } V_{war,VSL} = Deaths_{war,1900} \\times VSL = 310M \\times \\$10M = \\$3100T\n\\\\[0.5em]\n\\text{where } V_{lag,VSL} = Deaths_{lag,total} \\times VSL = 102M \\times \\$10M = \\$1020T\n\\\\[0.5em]\n\\text{where } Deaths_{lag,total} = Lives_{saved,annual} \\times T_{lag} = 12.4M \\times 8.2 = 102M\n\\\\[0.5em]\n\\text{where } Lives_{saved,annual} = \\frac{LY_{saved,annual}}{T_{ext}} = \\frac{149M}{12} = 12.4M\n\\\\[0.5em]\n\\text{where } D_{property+env} = D_{property} + D_{env} = \\$45T + \\$5T = \\$50T\n\\\\[0.5em]\n\\text{where } Spending_{mil,excess1900} = \\sum_{t=1900}^{2024} \\max\\left(0, Spending_{mil,t} - Spending_{mil,1900}\\right) = \\sum_{t=1900}^{2024} \\max\\left(0, Spending_{mil,t} - \\$66.1B\\right) = \\$135T\n\\\\[0.5em]\n\\text{where } Penalty_{pentagon,FCA} = Exposure_{pentagon,FCA} - Funds_{pentagon,unaccounted} = \\$7.38T - \\$2.46T = \\$4.92T\n\\\\[0.5em]\n\\text{where } Exposure_{pentagon,FCA} = Funds_{pentagon,unaccounted} \\times m_{FCA} = \\$2.46T \\times 3 = \\$7.38T\n\\\\[0.5em]\n\\text{where } V_{neverdev,VSL} = Deaths_{neverdev} \\times VSL = 300M \\times \\$10M = \\$3000T\n\\end{gathered}",
+  confidenceInterval: [3.89249371634909e+16, 1.0340149635944944e+17],
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/humanity-v-government.html",
+  manualPageTitle: "Humanity v. Government",
+};
+
+export const CORPORATE_DAMAGES_STRICT_FLOOR_PER_CAPITA: Parameter = {
+  value: 538218.9708806707,
+  parameterName: "CORPORATE_DAMAGES_STRICT_FLOOR_PER_CAPITA",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-corporate_damages_strict_floor_per_capita",
+  unit: "USD/person",
+  displayName: "Corporate Damages Strict Floor Per Capita",
+  description: "Strict non-duplicative corporate damages floor per living human.",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "CORPORATE_DAMAGES_STRICT_FLOOR_TOTAL / GLOBAL_POPULATION_2024",
+  latex: "\\begin{gathered}\nD_{corp,floor,pc} = \\frac{D_{corp,floor}}{Pop_{global}} = \\frac{\\$4310T}{8B} = \\$538K\n\\\\[0.5em]\n\\text{where } D_{corp,floor} = V_{war,VSL} + V_{lag,VSL} + D_{property+env} + Spending_{mil,excess1900} + Penalty_{pentagon,FCA} = \\$3100T + \\$1020T + \\$50T + \\$135T + \\$4.92T = \\$4310T\n\\\\[0.5em]\n\\text{where } V_{war,VSL} = Deaths_{war,1900} \\times VSL = 310M \\times \\$10M = \\$3100T\n\\\\[0.5em]\n\\text{where } V_{lag,VSL} = Deaths_{lag,total} \\times VSL = 102M \\times \\$10M = \\$1020T\n\\\\[0.5em]\n\\text{where } Deaths_{lag,total} = Lives_{saved,annual} \\times T_{lag} = 12.4M \\times 8.2 = 102M\n\\\\[0.5em]\n\\text{where } Lives_{saved,annual} = \\frac{LY_{saved,annual}}{T_{ext}} = \\frac{149M}{12} = 12.4M\n\\\\[0.5em]\n\\text{where } D_{property+env} = D_{property} + D_{env} = \\$45T + \\$5T = \\$50T\n\\\\[0.5em]\n\\text{where } Spending_{mil,excess1900} = \\sum_{t=1900}^{2024} \\max\\left(0, Spending_{mil,t} - Spending_{mil,1900}\\right) = \\sum_{t=1900}^{2024} \\max\\left(0, Spending_{mil,t} - \\$66.1B\\right) = \\$135T\n\\\\[0.5em]\n\\text{where } Penalty_{pentagon,FCA} = Exposure_{pentagon,FCA} - Funds_{pentagon,unaccounted} = \\$7.38T - \\$2.46T = \\$4.92T\n\\\\[0.5em]\n\\text{where } Exposure_{pentagon,FCA} = Funds_{pentagon,unaccounted} \\times m_{FCA} = \\$2.46T \\times 3 = \\$7.38T\n\\end{gathered}",
+  confidenceInterval: [268557.222847836, 763113.3680215908],
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/humanity-v-government.html",
+  manualPageTitle: "Humanity v. Government",
+};
+
+export const CORPORATE_DAMAGES_STRICT_FLOOR_TOTAL: Parameter = {
+  value: 4305751767045365.5,
+  parameterName: "CORPORATE_DAMAGES_STRICT_FLOOR_TOTAL",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-corporate_damages_strict_floor_total",
+  unit: "USD",
+  displayName: "Corporate Damages Strict Floor Total",
+  description: "Strict non-duplicative corporate damages floor: war-death VSL, existing-drug efficacy-lag VSL, property and environmental destruction, excess military spending above the 1900 freeze, and the Pentagon FCA-style penalty increment.",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "CORPORATE_DAMAGES_WAR_DEATHS_VSL + CORPORATE_DAMAGES_EFFICACY_LAG_DEATHS_VSL + CORPORATE_DAMAGES_PROPERTY_ENVIRONMENTAL_DESTRUCTION + WAR_TRIAL_REDIRECT_EXCESS_MILITARY_SPENDING_ABOVE_1900_FREEZE + CORPORATE_DAMAGES_PENTAGON_FCA_PENALTY_INCREMENT",
+  latex: "\\begin{gathered}\nD_{corp,floor} = V_{war,VSL} + V_{lag,VSL} + D_{property+env} + Spending_{mil,excess1900} + Penalty_{pentagon,FCA} = \\$3100T + \\$1020T + \\$50T + \\$135T + \\$4.92T = \\$4310T\n\\\\[0.5em]\n\\text{where } V_{war,VSL} = Deaths_{war,1900} \\times VSL = 310M \\times \\$10M = \\$3100T\n\\\\[0.5em]\n\\text{where } V_{lag,VSL} = Deaths_{lag,total} \\times VSL = 102M \\times \\$10M = \\$1020T\n\\\\[0.5em]\n\\text{where } Deaths_{lag,total} = Lives_{saved,annual} \\times T_{lag} = 12.4M \\times 8.2 = 102M\n\\\\[0.5em]\n\\text{where } Lives_{saved,annual} = \\frac{LY_{saved,annual}}{T_{ext}} = \\frac{149M}{12} = 12.4M\n\\\\[0.5em]\n\\text{where } D_{property+env} = D_{property} + D_{env} = \\$45T + \\$5T = \\$50T\n\\\\[0.5em]\n\\text{where } Spending_{mil,excess1900} = \\sum_{t=1900}^{2024} \\max\\left(0, Spending_{mil,t} - Spending_{mil,1900}\\right) = \\sum_{t=1900}^{2024} \\max\\left(0, Spending_{mil,t} - \\$66.1B\\right) = \\$135T\n\\\\[0.5em]\n\\text{where } Penalty_{pentagon,FCA} = Exposure_{pentagon,FCA} - Funds_{pentagon,unaccounted} = \\$7.38T - \\$2.46T = \\$4.92T\n\\\\[0.5em]\n\\text{where } Exposure_{pentagon,FCA} = Funds_{pentagon,unaccounted} \\times m_{FCA} = \\$2.46T \\times 3 = \\$7.38T\n\\end{gathered}",
+  confidenceInterval: [2137862816189208.0, 6151673716780461.0],
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/humanity-v-government.html",
+  manualPageTitle: "Humanity v. Government",
+};
+
+export const CORPORATE_DAMAGES_TREBLE_EXPOSURE_PER_CAPITA: Parameter = {
+  value: 2739656.912642012,
+  parameterName: "CORPORATE_DAMAGES_TREBLE_EXPOSURE_PER_CAPITA",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-corporate_damages_treble_exposure_per_capita",
+  unit: "USD/person",
+  displayName: "Corporate Damages Treble-Style Exposure Per Capita",
+  description: "Treble-style exposure per living human under the False Claims Act-style corporate penalty analogy.",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "CORPORATE_DAMAGES_TREBLE_EXPOSURE_TOTAL / GLOBAL_POPULATION_2024",
+  latex: "\\begin{gathered}\nD_{corp,treble,pc} = \\frac{D_{corp,treble}}{Pop_{global}} = \\frac{\\$21900T}{8B} = \\$2.74M\n\\\\[0.5em]\n\\text{where } D_{corp,treble} = D_{corp,ask} \\times m_{FCA} = \\$7310T \\times 3 = \\$21900T\n\\\\[0.5em]\n\\text{where } D_{corp,ask} = D_{corp,floor} + V_{neverdev,VSL} = \\$4310T + \\$3000T = \\$7310T\n\\\\[0.5em]\n\\text{where } D_{corp,floor} = V_{war,VSL} + V_{lag,VSL} + D_{property+env} + Spending_{mil,excess1900} + Penalty_{pentagon,FCA} = \\$3100T + \\$1020T + \\$50T + \\$135T + \\$4.92T = \\$4310T\n\\\\[0.5em]\n\\text{where } V_{war,VSL} = Deaths_{war,1900} \\times VSL = 310M \\times \\$10M = \\$3100T\n\\\\[0.5em]\n\\text{where } V_{lag,VSL} = Deaths_{lag,total} \\times VSL = 102M \\times \\$10M = \\$1020T\n\\\\[0.5em]\n\\text{where } Deaths_{lag,total} = Lives_{saved,annual} \\times T_{lag} = 12.4M \\times 8.2 = 102M\n\\\\[0.5em]\n\\text{where } Lives_{saved,annual} = \\frac{LY_{saved,annual}}{T_{ext}} = \\frac{149M}{12} = 12.4M\n\\\\[0.5em]\n\\text{where } D_{property+env} = D_{property} + D_{env} = \\$45T + \\$5T = \\$50T\n\\\\[0.5em]\n\\text{where } Spending_{mil,excess1900} = \\sum_{t=1900}^{2024} \\max\\left(0, Spending_{mil,t} - Spending_{mil,1900}\\right) = \\sum_{t=1900}^{2024} \\max\\left(0, Spending_{mil,t} - \\$66.1B\\right) = \\$135T\n\\\\[0.5em]\n\\text{where } Penalty_{pentagon,FCA} = Exposure_{pentagon,FCA} - Funds_{pentagon,unaccounted} = \\$7.38T - \\$2.46T = \\$4.92T\n\\\\[0.5em]\n\\text{where } Exposure_{pentagon,FCA} = Funds_{pentagon,unaccounted} \\times m_{FCA} = \\$2.46T \\times 3 = \\$7.38T\n\\\\[0.5em]\n\\text{where } V_{neverdev,VSL} = Deaths_{neverdev} \\times VSL = 300M \\times \\$10M = \\$3000T\n\\end{gathered}",
+  confidenceInterval: [1463069.8722854422, 3862420.7987212087],
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/humanity-v-government.html",
+  manualPageTitle: "Humanity v. Government",
+};
+
+export const CORPORATE_DAMAGES_TREBLE_EXPOSURE_TOTAL: Parameter = {
+  value: 2.1917255301136096e+16,
+  parameterName: "CORPORATE_DAMAGES_TREBLE_EXPOSURE_TOTAL",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-corporate_damages_treble_exposure_total",
+  unit: "USD",
+  displayName: "Corporate Damages Treble-Style Exposure Total",
+  description: "Treble-style exposure if the prosecutor base ask is multiplied under a False Claims Act-style corporate penalty analogy.",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "CORPORATE_DAMAGES_PROSECUTOR_BASE_ASK_TOTAL * CORPORATE_ANALOG_FALSE_CLAIMS_TREBLE_MULTIPLIER",
+  latex: "\\begin{gathered}\nD_{corp,treble} = D_{corp,ask} \\times m_{FCA} = \\$7310T \\times 3 = \\$21900T\n\\\\[0.5em]\n\\text{where } D_{corp,ask} = D_{corp,floor} + V_{neverdev,VSL} = \\$4310T + \\$3000T = \\$7310T\n\\\\[0.5em]\n\\text{where } D_{corp,floor} = V_{war,VSL} + V_{lag,VSL} + D_{property+env} + Spending_{mil,excess1900} + Penalty_{pentagon,FCA} = \\$3100T + \\$1020T + \\$50T + \\$135T + \\$4.92T = \\$4310T\n\\\\[0.5em]\n\\text{where } V_{war,VSL} = Deaths_{war,1900} \\times VSL = 310M \\times \\$10M = \\$3100T\n\\\\[0.5em]\n\\text{where } V_{lag,VSL} = Deaths_{lag,total} \\times VSL = 102M \\times \\$10M = \\$1020T\n\\\\[0.5em]\n\\text{where } Deaths_{lag,total} = Lives_{saved,annual} \\times T_{lag} = 12.4M \\times 8.2 = 102M\n\\\\[0.5em]\n\\text{where } Lives_{saved,annual} = \\frac{LY_{saved,annual}}{T_{ext}} = \\frac{149M}{12} = 12.4M\n\\\\[0.5em]\n\\text{where } D_{property+env} = D_{property} + D_{env} = \\$45T + \\$5T = \\$50T\n\\\\[0.5em]\n\\text{where } Spending_{mil,excess1900} = \\sum_{t=1900}^{2024} \\max\\left(0, Spending_{mil,t} - Spending_{mil,1900}\\right) = \\sum_{t=1900}^{2024} \\max\\left(0, Spending_{mil,t} - \\$66.1B\\right) = \\$135T\n\\\\[0.5em]\n\\text{where } Penalty_{pentagon,FCA} = Exposure_{pentagon,FCA} - Funds_{pentagon,unaccounted} = \\$7.38T - \\$2.46T = \\$4.92T\n\\\\[0.5em]\n\\text{where } Exposure_{pentagon,FCA} = Funds_{pentagon,unaccounted} \\times m_{FCA} = \\$2.46T \\times 3 = \\$7.38T\n\\\\[0.5em]\n\\text{where } V_{neverdev,VSL} = Deaths_{neverdev} \\times VSL = 300M \\times \\$10M = \\$3000T\n\\end{gathered}",
+  confidenceInterval: [1.1677481149047268e+16, 3.1020448907834828e+16],
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/humanity-v-government.html",
+  manualPageTitle: "Humanity v. Government",
+};
+
+export const CORPORATE_DAMAGES_WAR_DEATHS_VSL: Parameter = {
+  value: 3100000000000000.0,
+  parameterName: "CORPORATE_DAMAGES_WAR_DEATHS_VSL",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-corporate_damages_war_deaths_vsl",
+  unit: "USD",
+  displayName: "Corporate Damages War Deaths VSL",
+  description: "Corporate-defendant wrongful-death valuation for war deaths since 1900 using the standard value of a statistical life.",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "WAR_DEATHS_SINCE_1900 * VALUE_OF_STATISTICAL_LIFE",
+  latex: "\\begin{gathered}\nV_{war,VSL} \\\\\n= Deaths_{war,1900} \\times VSL \\\\\n= 310M \\times \\$10M \\\\\n= \\$3100T\n\\end{gathered}",
+  confidenceInterval: [1422953040505334.2, 4203896431174983.0],
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/humanity-v-government.html",
+  manualPageTitle: "Humanity v. Government",
 };
 
 export const CUMULATIVE_MILITARY_IN_GOVT_TRIAL_YEARS: Parameter = {
@@ -5600,6 +5852,21 @@ export const GLOBAL_DISEASE_ECONOMIC_BURDEN_ANNUAL: Parameter = {
   manualPageTitle: "The 1% Treaty: Harnessing Greed to Eradicate Disease",
 };
 
+export const GLOBAL_GOVERNMENT_EXPENSE_ANNUAL: Parameter = {
+  value: 36547000000000.0,
+  parameterName: "GLOBAL_GOVERNMENT_EXPENSE_ANNUAL",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-global_government_expense_annual",
+  unit: "USD/year",
+  displayName: "Annual Global Government Expense",
+  description: "Approximate annual global government expenditure, computed as global GDP times the World Bank general-government expense share of GDP.",
+  sourceType: "calculated",
+  confidence: "medium",
+  formula: "GLOBAL_GDP_2025 × GLOBAL_GOVERNMENT_EXPENSE_PCT_GDP",
+  latex: "\\begin{gathered}\nExpense_{gov,global} \\\\\n= GDP_{global} \\times p_{gov,expense} \\\\\n= \\$115T \\times 31.8\\% \\\\\n= \\$36.5T\n\\end{gathered}",
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/humanity-v-government.html",
+  manualPageTitle: "Humanity v. Government",
+};
+
 export const GLOBAL_HALE_GAP: Parameter = {
   value: 15.700000000000003,
   parameterName: "GLOBAL_HALE_GAP",
@@ -6371,6 +6638,21 @@ export const PENTAGON_UNACCOUNTED_CLINICAL_TRIAL_YEARS: Parameter = {
   confidenceInterval: [410.0, 808.7477993719046],
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/solution/1-percent-treaty.html",
   manualPageTitle: "A 1% Treaty",
+};
+
+export const PENTAGON_UNACCOUNTED_FALSE_CLAIMS_ANALOG_EXPOSURE: Parameter = {
+  value: 7380000000000.0,
+  parameterName: "PENTAGON_UNACCOUNTED_FALSE_CLAIMS_ANALOG_EXPOSURE",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-pentagon_unaccounted_false_claims_analog_exposure",
+  unit: "USD",
+  displayName: "Pentagon Unaccounted Funds False Claims Analog Exposure",
+  description: "False Claims Act-style treble-damages exposure on Pentagon unaccounted funds, used as a corporate-defendant audit analogy rather than a literal claim under existing sovereign law.",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "PENTAGON_UNACCOUNTED_FUNDS × CORPORATE_ANALOG_FALSE_CLAIMS_TREBLE_MULTIPLIER",
+  latex: "\\begin{gathered}\nExposure_{pentagon,FCA} \\\\\n= Funds_{pentagon,unaccounted} \\times m_{FCA} \\\\\n= \\$2.46T \\times 3 \\\\\n= \\$7.38T\n\\end{gathered}",
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/humanity-v-government.html",
+  manualPageTitle: "Humanity v. Government",
 };
 
 export const PERSONAL_LIFETIME_WEALTH: Parameter = {
@@ -8329,8 +8611,26 @@ export const WAR_TOTAL_COST_SINCE_1900: Parameter = {
   manualPageTitle: "The Cost of War",
 };
 
+export const WAR_TRIAL_REDIRECT_EXCESS_MILITARY_SPENDING_ABOVE_1900_FREEZE: Parameter = {
+  value: 134715100378699.22,
+  parameterName: "WAR_TRIAL_REDIRECT_EXCESS_MILITARY_SPENDING_ABOVE_1900_FREEZE",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-war_trial_redirect_excess_military_spending_above_1900_freeze",
+  unit: "USD",
+  displayName: "Excess Military Spending Above 1900 Freeze",
+  description: "Dataset-derived aggregate: cumulative global military spending above a 1900 real-spending freeze, 1900-2024, calculated from knowledge/data/global-military-spending-1900-2024-constant-2023-usd.csv (Correlates of War NMC) as the sum of max(0, annual spending - 1900 baseline) across years. The stricter medical redirect pot, distinct from total cumulative military spending.",
+  sourceType: "calculated",
+  sourceRef: "correlates-of-war-nmc",
+  sourceUrl: "https://correlatesofwar.org/data-sets/national-material-capabilities/",
+  confidence: "low",
+  formula: "for t=1900..2024: sum max(0, MILITARY_SPENDING_YEAR - WAR_TRIAL_REDIRECT_1900_FREEZE_BASELINE_ANNUAL)",
+  latex: "\\begin{gathered}\nSpending_{mil,excess1900} \\\\\n= \\sum_{t=1900}^{2024} \\max\\left(0, Spending_{mil,t} - Spending_{mil,1900}\\right) \\\\\n= \\sum_{t=1900}^{2024} \\max\\left(0, Spending_{mil,t} - \\$66.1B\\right) \\\\\n= \\$135T\n\\end{gathered}",
+  confidenceInterval: [132443244815829.12, 136335051516747.62],
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/problem/cost-of-war.html",
+  manualPageTitle: "The Cost of War",
+};
+
 export const WAR_TRIAL_REDIRECT_EXCESS_MILITARY_TRIAL_YEARS: Parameter = {
-  value: 29936.88888888889,
+  value: 29936.68897304427,
   parameterName: "WAR_TRIAL_REDIRECT_EXCESS_MILITARY_TRIAL_YEARS",
   calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-war_trial_redirect_excess_military_trial_years",
   unit: "years",
@@ -8339,8 +8639,8 @@ export const WAR_TRIAL_REDIRECT_EXCESS_MILITARY_TRIAL_YEARS: Parameter = {
   sourceType: "calculated",
   confidence: "low",
   formula: "WAR_TRIAL_REDIRECT_EXCESS_MILITARY_SPENDING_ABOVE_1900_FREEZE / GLOBAL_GOVERNMENT_CLINICAL_TRIALS_SPENDING_ANNUAL",
-  latex: "\\begin{gathered}\nYears_{excess1900 \\to trials,gov} \\\\\n= \\frac{Spending_{mil,excess1900}}{Spending_{trials,gov}} \\\\\n= \\frac{\\$135T}{\\$4.5B} \\\\\n= 29{,}900\n\\end{gathered}",
-  confidenceInterval: [20165.833576060293, 46423.272482831075],
+  latex: "\\begin{gathered}\nYears_{excess1900 \\to trials,gov} = \\frac{Spending_{mil,excess1900}}{Spending_{trials,gov}} = \\frac{\\$135T}{\\$4.5B} = 29{,}900\n\\\\[0.5em]\n\\text{where } Spending_{mil,excess1900} = \\sum_{t=1900}^{2024} \\max\\left(0, Spending_{mil,t} - Spending_{mil,1900}\\right) = \\sum_{t=1900}^{2024} \\max\\left(0, Spending_{mil,t} - \\$66.1B\\right) = \\$135T\n\\end{gathered}",
+  confidenceInterval: [22443.88907745716, 44091.74233598829],
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/problem/cost-of-war.html",
   manualPageTitle: "The Cost of War",
 };
@@ -9256,6 +9556,19 @@ export const CONCENTRATED_INTEREST_SECTOR_MARKET_CAP_USD: Parameter = {
   confidence: "high",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/incentive-alignment-bonds-paper.html",
   manualPageTitle: "Incentive Alignment Bonds: Making Public Goods Financially and Politically Profitable",
+};
+
+export const CORPORATE_DAMAGES_DRUGS_NEVER_DEVELOPED_DEATHS: Parameter = {
+  value: 300000000.0,
+  parameterName: "CORPORATE_DAMAGES_DRUGS_NEVER_DEVELOPED_DEATHS",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-corporate_damages_drugs_never_developed_deaths",
+  unit: "deaths",
+  displayName: "Corporate Damages Drugs Never Developed Deaths",
+  description: "Aggressive prosecutor pleading estimate for deaths from drugs never developed because regulatory cost and misallocated trial capacity suppressed development. Based on the Humanity v. Government exclusion note that drugs never developed may double or triple Count Two; this uses the high end of that pleading range.",
+  sourceType: "definition",
+  confidence: "high",
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/humanity-v-government.html",
+  manualPageTitle: "Humanity v. Government",
 };
 
 export const COURT_BUILD_COST: Parameter = {
@@ -10557,6 +10870,8 @@ export const parameters = {
   CHILDHOOD_VACCINATION_ROI,
   CHRONIC_DISEASE_DISABILITY_WEIGHT,
   CONVENTIONAL_RETIREMENT_RETURN,
+  CORPORATE_ANALOG_FALSE_CLAIMS_TREBLE_MULTIPLIER,
+  CORPORATE_DAMAGES_STATE_FARM_CEILING_MULTIPLIER,
   CPI_MULTIPLIER_1980_TO_2024,
   CROWD_DECISION_ACCURACY,
   CURRENT_ACTIVE_TRIALS,
@@ -10620,6 +10935,7 @@ export const parameters = {
   GLOBAL_GDP_2025,
   GLOBAL_GDP_PER_CAPITA_1900,
   GLOBAL_GOVERNMENT_CLINICAL_TRIALS_SPENDING_ANNUAL,
+  GLOBAL_GOVERNMENT_EXPENSE_PCT_GDP,
   GLOBAL_HALE_CURRENT,
   GLOBAL_HOUSEHOLD_WEALTH_USD,
   GLOBAL_INVESTABLE_ASSETS,
@@ -10752,7 +11068,6 @@ export const parameters = {
   VENTURE_GROSS_RETURN,
   VITAMIN_A_COST_PER_DALY,
   WAR_TRIAL_REDIRECT_1900_FREEZE_BASELINE_ANNUAL,
-  WAR_TRIAL_REDIRECT_EXCESS_MILITARY_SPENDING_ABOVE_1900_FREEZE,
   WATER_FLUORIDATION_ANNUAL_BENEFIT,
   WATER_FLUORIDATION_ROI,
   WHO_QALY_THRESHOLD_COST_EFFECTIVE,
@@ -10782,6 +11097,20 @@ export const parameters = {
   CONTRIBUTION_LIVES_SAVED_PER_PCT_POINT,
   CONTRIBUTION_SUFFERING_HOURS_PER_PCT_POINT,
   CONVENTIONAL_RETIREMENT_HORIZON_MULTIPLE,
+  CORPORATE_DAMAGES_DRUGS_NEVER_DEVELOPED_VSL,
+  CORPORATE_DAMAGES_EFFICACY_LAG_DEATHS_VSL,
+  CORPORATE_DAMAGES_FORWARD_SETTLEMENT_VALUE_PER_CAPITA,
+  CORPORATE_DAMAGES_PENTAGON_FCA_PENALTY_INCREMENT,
+  CORPORATE_DAMAGES_PROPERTY_ENVIRONMENTAL_DESTRUCTION,
+  CORPORATE_DAMAGES_PROSECUTOR_BASE_ASK_PER_CAPITA,
+  CORPORATE_DAMAGES_PROSECUTOR_BASE_ASK_TOTAL,
+  CORPORATE_DAMAGES_STATE_FARM_CEILING_EXPOSURE_PER_CAPITA,
+  CORPORATE_DAMAGES_STATE_FARM_CEILING_EXPOSURE_TOTAL,
+  CORPORATE_DAMAGES_STRICT_FLOOR_PER_CAPITA,
+  CORPORATE_DAMAGES_STRICT_FLOOR_TOTAL,
+  CORPORATE_DAMAGES_TREBLE_EXPOSURE_PER_CAPITA,
+  CORPORATE_DAMAGES_TREBLE_EXPOSURE_TOTAL,
+  CORPORATE_DAMAGES_WAR_DEATHS_VSL,
   CUMULATIVE_MILITARY_IN_GOVT_TRIAL_YEARS,
   CURRENT_COMBINATION_EXPLORATION_YEARS,
   CURRENT_KNOWN_SAFE_EXPLORATION_YEARS,
@@ -10887,6 +11216,7 @@ export const parameters = {
   GLOBAL_DESTRUCTIVE_ECONOMY_PCT_GDP,
   GLOBAL_DISEASE_DEATHS_PER_MINUTE,
   GLOBAL_DISEASE_ECONOMIC_BURDEN_ANNUAL,
+  GLOBAL_GOVERNMENT_EXPENSE_ANNUAL,
   GLOBAL_HALE_GAP,
   GLOBAL_INDUSTRY_CLINICAL_TRIALS_SPENDING_ANNUAL,
   GLOBAL_MILITARY_SPENDING_PER_CAPITA_ANNUAL,
@@ -10935,6 +11265,7 @@ export const parameters = {
   PEACE_DIVIDEND_VETERAN_HEALTHCARE,
   PEACE_TRAJECTORY_TOTAL_DIFFERENTIAL_20YR,
   PENTAGON_UNACCOUNTED_CLINICAL_TRIAL_YEARS,
+  PENTAGON_UNACCOUNTED_FALSE_CLAIMS_ANALOG_EXPOSURE,
   PERSONAL_LIFETIME_WEALTH,
   PER_CAPITA_CHRONIC_DISEASE_COST,
   PER_CAPITA_MENTAL_HEALTH_COST,
@@ -11057,6 +11388,7 @@ export const parameters = {
   WAR_LIFE_YEARS_LOST_SINCE_1900,
   WAR_QALY_VALUE_LOST_SINCE_1900,
   WAR_TOTAL_COST_SINCE_1900,
+  WAR_TRIAL_REDIRECT_EXCESS_MILITARY_SPENDING_ABOVE_1900_FREEZE,
   WAR_TRIAL_REDIRECT_EXCESS_MILITARY_TRIAL_YEARS,
   WILLING_TRIAL_PARTICIPANTS_GLOBAL,
   WISHONIA_DISEASE_CURE_FRACTION_15YR,
@@ -11120,6 +11452,7 @@ export const parameters = {
   CHAIN_WORLD_LEADER_COUNT,
   CHILDHOOD_VACCINATION_COST_PER_DALY,
   CONCENTRATED_INTEREST_SECTOR_MARKET_CAP_USD,
+  CORPORATE_DAMAGES_DRUGS_NEVER_DEVELOPED_DEATHS,
   COURT_BUILD_COST,
   CUMULATIVE_MILITARY_SPENDING_ALL_HISTORY,
   CUMULATIVE_MILITARY_SPENDING_FED_ERA,
@@ -11251,7 +11584,7 @@ export const shareableSnippets = {
     originalName: "one-percent-treaty-pitch",
   },
   onePercentTreatyText: {
-    markdown: "WHEREAS, humanity pays governments \\$36 trillion a year for the service of promoting the general welfare, defined as the median health and wealth of the citizenry;\n\nWHEREAS, the citizenry would like to actually receive this service at some point;\n\nWHEREAS, these public servants instead used [$170 trillion](https://manual.WarOnDisease.org/knowledge/problem/cost-of-war.html) of their salary to murder approximately [310 million](https://manual.WarOnDisease.org/knowledge/problem/cost-of-war.html) humans over the last century of their employment;\n\nWHEREAS, these murdered humans included 930,000 doctors, 310,000 scientists, 620,000 engineers, 1.24 million nurses, 3.1 million teachers, and [102 million](https://manual.WarOnDisease.org/knowledge/problem/cost-of-war.html) children who will never grow up to replace them;\n\nWHEREAS, this seems counterproductive;\n\nWHEREAS, murdering [310 million](https://manual.WarOnDisease.org/knowledge/problem/cost-of-war.html) of your employers is the opposite of promoting their welfare, and would be grounds for termination in any other employment contract humans have ever signed;\n\nWHEREAS, had your governments not spent [$170 trillion](https://manual.WarOnDisease.org/knowledge/problem/cost-of-war.html) murdering those people and destroying everything they spent their entire lives building, the average human alive today would earn [$333,636](https://manual.WarOnDisease.org/knowledge/problem/cost-of-war.html) a year instead of [$14,375](https://manual.WarOnDisease.org/knowledge/appendix/political-dysfunction-tax.html). Dead scientists do not discover things and exploded cities are very expensive to fix;\n\nWHEREAS, the governments of Earth have been hitting each other for roughly 10,000 years because the other one hit them last;\n\nWHEREAS, this is the conflict resolution strategy of four-year-olds except four-year-olds eventually get tired and take a nap, and these governments have failed to apply naps to foreign policy;\n\nWHEREAS, the governments of Earth possess nuclear weapons sufficient to end civilization [122](https://manual.WarOnDisease.org/knowledge/appendix/extinction-surplus.html) times but have not cured Alzheimer's once (which is particularly wasteful given we only have one civilization to destroy);\n\nWHEREAS, your employees spend [$2.72 trillion](https://manual.WarOnDisease.org/knowledge/economics/1-pct-treaty-impact.html) a year on their capacity for mass murder, which is enough to buy [850](https://manual.WarOnDisease.org/knowledge/appendix/extinction-surplus.html) bullets for every man, woman, and child every year, even though it would require at most 2 bullets per person to murder everyone;\n\nWHEREAS, governments spend [604](https://manual.WarOnDisease.org/knowledge/economics/central-banks.html) dollars on the capacity for orphan manufacturing for every one dollar spent on the trials that might cure what is actually going to kill their citizens;\n\nWHEREAS, the Department of \"Defense\" has \"misplaced\" $2.46 trillion, failed seven consecutive audits trying to find it, and then requested additional trillions without explanation or apology (Not to belabor the point, but that money could have funded [547](https://manual.WarOnDisease.org/knowledge/solution/1-percent-treaty.html) years of clinical trials at current funding levels, possibly saving billions of lives and preventing quadrillions of hours of suffering, so we would appreciate it if you would have them be more careful in the future);\n\nWHEREAS, pre-WW2 U.S. military spending was [96.7%](https://manual.WarOnDisease.org/knowledge/solution/1-percent-treaty.html) lower than today's peacetime budget, even after adjusting for inflation. The U.S. still won World War II, then cut military spending [87.6%](https://manual.WarOnDisease.org/knowledge/economics/peace-dividend.html) in two years and produced the fastest growth in median standard of living in history. \n\nWHEREAS, unless the human genome has significantly degraded in the two generations since, a one percent improvement in resource allocation should be manageable;\n\nWHEREAS, global military spending has been growing [2.76%](https://manual.WarOnDisease.org/knowledge/solution/1-percent-treaty.html) a year for twenty years. If no one tells it to stop, every human alive will pay about [$402,488](https://manual.WarOnDisease.org/knowledge/solution/1-percent-treaty.html) over their lifetime (mostly funding explosions in countries they cannot find on a map). A one percent cut tells it to stop. That saves the average person about [$290,052](https://manual.WarOnDisease.org/knowledge/solution/1-percent-treaty.html) ([the peace dividend](https://manual.WarOnDisease.org/knowledge/economics/peace-dividend.html));\n\nWHEREAS, [diseases kill more people than all wars combined](https://manual.WarOnDisease.org/knowledge/problem/cost-of-disease.html) and, unlike wars, do not even have the decency to be quick about it;\n\nWHEREAS, your chance of dying in a terrorist attack is approximately 1 in [30 million](https://manual.WarOnDisease.org/knowledge/solution/1-percent-treaty.html), and your chance of dying of a disease is 100%, and your current budget does not reflect this;\n\nWHEREAS, only 15 diseases get their first effective treatment each year, while [6,650 diseases](https://manual.WarOnDisease.org/knowledge/economics/1-pct-treaty-impact.html) are still waiting;\n\nWHEREAS, at this rate, it takes [443](https://manual.WarOnDisease.org/knowledge/economics/1-pct-treaty-impact.html) years to find treatments for all diseases, which is important because you will personally be dead within 80 years (which I mention not to be rude but because you seem weirdly calm about this);\n\nWHEREAS, there are [9,500](https://manual.WarOnDisease.org/knowledge/problem/untapped-therapeutic-frontier.html) known safe treatments which have never been tested for [99.7%](https://manual.WarOnDisease.org/knowledge/problem/nih-fails-2-institute-health.html) of their potential uses;\n\nWHEREAS, [pragmatic clinical trials built into ordinary healthcare](https://manual.WarOnDisease.org/knowledge/appendix/dfda-spec-paper.html) cost [$929](https://manual.WarOnDisease.org/knowledge/economics/1-pct-treaty-impact.html) per patient instead of the usual [$41,000](https://manual.WarOnDisease.org/knowledge/economics/1-pct-treaty-impact.html), which makes them [44.1](https://manual.WarOnDisease.org/knowledge/economics/1-pct-treaty-impact.html) times cheaper, which means [12.3](https://manual.WarOnDisease.org/knowledge/economics/1-pct-treaty-impact.html) times as many patients can join, which drops the wait from [443 years](https://manual.WarOnDisease.org/knowledge/economics/1-pct-treaty-impact.html) to [36 years](https://manual.WarOnDisease.org/knowledge/economics/1-pct-treaty-impact.html), which means treatments arrive [204](https://manual.WarOnDisease.org/knowledge/economics/1-pct-treaty-impact.html) years sooner on average. \n\nWHEREAS, discovering treatments centuries sooner is [projected](https://manual.WarOnDisease.org/knowledge/economics/1-pct-treaty-impact.html) to prevent approximately [10.7 billion deaths](https://manual.WarOnDisease.org/knowledge/economics/1-pct-treaty-impact.html) and [1.93 quadrillion hours](https://manual.WarOnDisease.org/knowledge/appendix/dfda-impact-paper.html) of human suffering, which are not metaphors and refer to specific future humans with specific future plans for next Tuesday;\n\nWHEREAS, someone you love is, at this moment, suffering from a disease because the treatment that would help them exists untested on a shelf, because the money that would have tested it was busy turning into a missile; that missile incinerated a child who might have grown up to discover the cure; you lose the treatment, you lose the scientist, you get the inflation, you get the tax bill, you get to pay for her murder;\n\nWHEREAS, this is suboptimal;\n\nNOW, THEREFORE, the undersigned nations agree to be 1% more rational, as follows:\n\n**Article I**: Each signatory shall redirect exactly 1% of its annual military budget to **the 1% Treaty Fund**, split as follows: [80%](https://manual.WarOnDisease.org/knowledge/strategy/earth-optimization-protocol-v1.html) to [pragmatic clinical trials](https://manual.WarOnDisease.org/knowledge/appendix/dfda-spec-paper.html); [10%](https://manual.WarOnDisease.org/knowledge/strategy/earth-optimization-protocol-v1.html) to perpetual returns on [Incentive Alignment Bonds](https://manual.WarOnDisease.org/knowledge/appendix/incentive-alignment-bonds-paper.html); and [10%](https://manual.WarOnDisease.org/knowledge/strategy/earth-optimization-protocol-v1.html) to a [Political Incentive Fund](https://manual.WarOnDisease.org/knowledge/solution/aligning-incentives.html) that supports campaigns of legislators who vote to implement and expand this Treaty. The [80%](https://manual.WarOnDisease.org/knowledge/strategy/earth-optimization-protocol-v1.html) cures the diseases. The other 20% make sure nobody quietly cancels the part that cures the diseases.\n\n**Article II**: Transfers shall be automatic, immediate, and irrevocable. The money moves on the first of every month, the way your mortgage does, except nobody has to call and yell at anyone.\n\n**Article III**: The percentage can go up. It never goes down. When the treaty works, a mandatory review raises it. Because Article I allocates in percentages, not fixed dollars, every increase enlarges the bondholder payouts and the Political Incentive Fund in lockstep. This produces something your species has never had before: a class of wealthy humans whose bank accounts grow every time a war ends, a disease is eradicated, or a child who would have died gets to grow up and have opinions about things. For the first time in human history, the absence of war and disease will be more profitable than their existence.\n\n**Article IV**: Compliance shall be verified by public ledger and independent audits. Relabeling a submarine as \"humanitarian infrastructure\" will be noticed, because submarines are large and loud and do not fit in the humanitarian infrastructure drawer. Non-compliant parties shall be given a stern talking to; their compliant political opponents shall be funded via the Political Incentive Fund, which rewards legislators by recorded vote on two axes: (a) Treaty implementation and expansion, and (b) honoring [Court of Humanity](https://manual.WarOnDisease.org/knowledge/solution/court-of-humanity.html) judgments against their government. Compliant votes earn campaign support for those seeking reelection, post-office appointments for those retiring. Non-compliant votes earn the same thing for their opponents. No funds pass directly to any legislator; all disbursements route through [a scoring algorithm](https://manual.WarOnDisease.org/knowledge/legal/election-law.html), which is apparently the only legal way to train a senator. The NRA already perfected this technology; this Treaty plagiarizes it, substituting \"not dying from diseases\" for \"guns.\"\n\n**Article V**: Citizens of any signatory nation may sue their own government in its own courts for non-compliance with this Treaty. Where domestic courts decline jurisdiction or invoke [sovereign immunity](https://manual.WarOnDisease.org/knowledge/solution/court-of-humanity.html), citizens may bring the same claim in [the Court of Humanity](https://manual.WarOnDisease.org/knowledge/solution/court-of-humanity.html), whose jurisdiction derives from human rather than sovereign consent and whose judgments are enforced through capital markets rather than coercion.\n\n**Article VI**: Holders of Article I [Incentive Alignment Bonds](https://manual.WarOnDisease.org/knowledge/appendix/incentive-alignment-bonds-paper.html) may sue any signatory's government in its own courts for non-payment. Billionaires have lawyers the way other humans have socks. This Treaty points those lawyers at the one thing billionaires and dying people both want, which is the treaty to keep working.\n\n**Article VII**: Withdrawal requires unanimous consent of all parties plus 10-year notice. Ten years is enough time for the bondholders to sue, the Political Incentive Fund to replace whoever is trying to leave, and the voters to notice that the party attempting withdrawal is the one that wants the diseases back.\n\n**Article VIII**: This treaty supersedes all conflicting domestic law. Including the subsection your legislature added at 2 a.m. last session specifically to make sure this couldn't happen.\n\n**Article IX**: This Treaty enters into force upon signature by two states. War has killed humans for as long as there have been humans to kill. Disease has been killing them longer. Its founding signatories will be responsible for the largest reduction in human suffering and the largest increase in human prosperity in the history of planet Earth.\n\nIN WITNESS WHEREOF, the undersigned, being of sound mind (debatable) and tired of watching their loved ones die of preventable diseases, have executed this Treaty.\n",
+    markdown: "WHEREAS, humanity pays governments approximately [$36.5 trillion](https://manual.WarOnDisease.org/knowledge/appendix/humanity-v-government.html) per year for the service of promoting the general welfare, defined as the median health and wealth of the citizenry;\n\nWHEREAS, the citizenry would like to actually receive this service at some point;\n\nWHEREAS, these public servants instead used [$170 trillion](https://manual.WarOnDisease.org/knowledge/problem/cost-of-war.html) of their salary to murder approximately [310 million](https://manual.WarOnDisease.org/knowledge/problem/cost-of-war.html) humans over the last century of their employment;\n\nWHEREAS, these murdered humans included 930,000 doctors, 310,000 scientists, 620,000 engineers, 1.24 million nurses, 3.1 million teachers, and [102 million](https://manual.WarOnDisease.org/knowledge/problem/cost-of-war.html) children who will never grow up to replace them;\n\nWHEREAS, this seems counterproductive;\n\nWHEREAS, murdering [310 million](https://manual.WarOnDisease.org/knowledge/problem/cost-of-war.html) of your employers is the opposite of promoting their welfare, and would be grounds for termination in any other employment contract humans have ever signed;\n\nWHEREAS, had your governments not spent [$170 trillion](https://manual.WarOnDisease.org/knowledge/problem/cost-of-war.html) murdering those people and destroying everything they spent their entire lives building, the average human alive today would earn [$333,636](https://manual.WarOnDisease.org/knowledge/problem/cost-of-war.html) a year instead of [$14,375](https://manual.WarOnDisease.org/knowledge/appendix/political-dysfunction-tax.html). Dead scientists do not discover things and exploded cities are very expensive to fix;\n\nWHEREAS, the governments of Earth have been hitting each other for roughly 10,000 years because the other one hit them last;\n\nWHEREAS, this is the conflict resolution strategy of four-year-olds except four-year-olds eventually get tired and take a nap, and these governments have failed to apply naps to foreign policy;\n\nWHEREAS, the governments of Earth possess nuclear weapons sufficient to end civilization [122](https://manual.WarOnDisease.org/knowledge/appendix/extinction-surplus.html) times but have not cured Alzheimer's once (which is particularly wasteful given we only have one civilization to destroy);\n\nWHEREAS, your employees spend [$2.72 trillion](https://manual.WarOnDisease.org/knowledge/economics/1-pct-treaty-impact.html) a year on their capacity for mass murder, which is enough to buy [850](https://manual.WarOnDisease.org/knowledge/appendix/extinction-surplus.html) bullets for every man, woman, and child every year, even though it would require at most 2 bullets per person to murder everyone;\n\nWHEREAS, governments spend [604](https://manual.WarOnDisease.org/knowledge/economics/central-banks.html) dollars on the capacity for orphan manufacturing for every one dollar spent on the trials that might cure what is actually going to kill their citizens;\n\nWHEREAS, the Department of \"Defense\" has \"misplaced\" $2.46 trillion, failed seven consecutive audits trying to find it, and then requested additional trillions without explanation or apology (Not to belabor the point, but that money could have funded [547](https://manual.WarOnDisease.org/knowledge/solution/1-percent-treaty.html) years of clinical trials at current funding levels, possibly saving billions of lives and preventing quadrillions of hours of suffering, so we would appreciate it if you would have them be more careful in the future);\n\nWHEREAS, pre-WW2 U.S. military spending was [96.7%](https://manual.WarOnDisease.org/knowledge/solution/1-percent-treaty.html) lower than today's peacetime budget, even after adjusting for inflation. The U.S. still won World War II, then cut military spending [87.6%](https://manual.WarOnDisease.org/knowledge/economics/peace-dividend.html) in two years and produced the fastest growth in median standard of living in history. \n\nWHEREAS, unless the human genome has significantly degraded in the two generations since, a one percent improvement in resource allocation should be manageable;\n\nWHEREAS, global military spending has been growing [2.76%](https://manual.WarOnDisease.org/knowledge/solution/1-percent-treaty.html) a year for twenty years. If no one tells it to stop, every human alive will pay about [$402,488](https://manual.WarOnDisease.org/knowledge/solution/1-percent-treaty.html) over their lifetime (mostly funding explosions in countries they cannot find on a map). A one percent cut tells it to stop. That saves the average person about [$290,052](https://manual.WarOnDisease.org/knowledge/solution/1-percent-treaty.html) ([the peace dividend](https://manual.WarOnDisease.org/knowledge/economics/peace-dividend.html));\n\nWHEREAS, [diseases kill more people than all wars combined](https://manual.WarOnDisease.org/knowledge/problem/cost-of-disease.html) and, unlike wars, do not even have the decency to be quick about it;\n\nWHEREAS, your chance of dying in a terrorist attack is approximately 1 in [30 million](https://manual.WarOnDisease.org/knowledge/solution/1-percent-treaty.html), and your chance of dying of a disease is 100%, and your current budget does not reflect this;\n\nWHEREAS, only 15 diseases get their first effective treatment each year, while [6,650 diseases](https://manual.WarOnDisease.org/knowledge/economics/1-pct-treaty-impact.html) are still waiting;\n\nWHEREAS, at this rate, it takes [443](https://manual.WarOnDisease.org/knowledge/economics/1-pct-treaty-impact.html) years to find treatments for all diseases, which is important because you will personally be dead within 80 years (which I mention not to be rude but because you seem weirdly calm about this);\n\nWHEREAS, there are [9,500](https://manual.WarOnDisease.org/knowledge/problem/untapped-therapeutic-frontier.html) known safe treatments which have never been tested for [99.7%](https://manual.WarOnDisease.org/knowledge/problem/nih-fails-2-institute-health.html) of their potential uses;\n\nWHEREAS, [pragmatic clinical trials built into ordinary healthcare](https://manual.WarOnDisease.org/knowledge/appendix/dfda-spec-paper.html) cost [$929](https://manual.WarOnDisease.org/knowledge/economics/1-pct-treaty-impact.html) per patient instead of the usual [$41,000](https://manual.WarOnDisease.org/knowledge/economics/1-pct-treaty-impact.html), which makes them [44.1](https://manual.WarOnDisease.org/knowledge/economics/1-pct-treaty-impact.html) times cheaper, which means [12.3](https://manual.WarOnDisease.org/knowledge/economics/1-pct-treaty-impact.html) times as many patients can join, which drops the wait from [443 years](https://manual.WarOnDisease.org/knowledge/economics/1-pct-treaty-impact.html) to [36 years](https://manual.WarOnDisease.org/knowledge/economics/1-pct-treaty-impact.html), which means treatments arrive [204](https://manual.WarOnDisease.org/knowledge/economics/1-pct-treaty-impact.html) years sooner on average. \n\nWHEREAS, discovering treatments centuries sooner is [projected](https://manual.WarOnDisease.org/knowledge/economics/1-pct-treaty-impact.html) to prevent approximately [10.7 billion deaths](https://manual.WarOnDisease.org/knowledge/economics/1-pct-treaty-impact.html) and [1.93 quadrillion hours](https://manual.WarOnDisease.org/knowledge/appendix/dfda-impact-paper.html) of human suffering, which are not metaphors and refer to specific future humans with specific future plans for next Tuesday;\n\nWHEREAS, someone you love is, at this moment, suffering from a disease because the treatment that would help them exists untested on a shelf, because the money that would have tested it was busy turning into a missile; that missile incinerated a child who might have grown up to discover the cure; you lose the treatment, you lose the scientist, you get the inflation, you get the tax bill, you get to pay for her murder;\n\nWHEREAS, this is suboptimal;\n\nNOW, THEREFORE, the undersigned nations agree to be 1% more rational, as follows:\n\n**Article I**: Each signatory shall redirect exactly 1% of its annual military budget to **the 1% Treaty Fund**, split as follows: [80%](https://manual.WarOnDisease.org/knowledge/strategy/earth-optimization-protocol-v1.html) to [pragmatic clinical trials](https://manual.WarOnDisease.org/knowledge/appendix/dfda-spec-paper.html); [10%](https://manual.WarOnDisease.org/knowledge/strategy/earth-optimization-protocol-v1.html) to perpetual returns on [Incentive Alignment Bonds](https://manual.WarOnDisease.org/knowledge/appendix/incentive-alignment-bonds-paper.html); and [10%](https://manual.WarOnDisease.org/knowledge/strategy/earth-optimization-protocol-v1.html) to a [Political Incentive Fund](https://manual.WarOnDisease.org/knowledge/solution/aligning-incentives.html) that supports campaigns of legislators who vote to implement and expand this Treaty. The [80%](https://manual.WarOnDisease.org/knowledge/strategy/earth-optimization-protocol-v1.html) cures the diseases. The other 20% make sure nobody quietly cancels the part that cures the diseases.\n\n**Article II**: Transfers shall be automatic, immediate, and irrevocable. The money moves on the first of every month, the way your mortgage does, except nobody has to call and yell at anyone.\n\n**Article III**: The percentage can go up. It never goes down. When the treaty works, a mandatory review raises it. Because Article I allocates in percentages, not fixed dollars, every increase enlarges the bondholder payouts and the Political Incentive Fund in lockstep. This produces something your species has never had before: a class of wealthy humans whose bank accounts grow every time a war ends, a disease is eradicated, or a child who would have died gets to grow up and have opinions about things. For the first time in human history, the absence of war and disease will be more profitable than their existence.\n\n**Article IV**: Compliance shall be verified by public ledger and independent audits. Relabeling a submarine as \"humanitarian infrastructure\" will be noticed, because submarines are large and loud and do not fit in the humanitarian infrastructure drawer. Non-compliant parties shall be given a stern talking to; their compliant political opponents shall be funded via the Political Incentive Fund, which rewards legislators by recorded vote on two axes: (a) Treaty implementation and expansion, and (b) honoring [Court of Humanity](https://manual.WarOnDisease.org/knowledge/solution/court-of-humanity.html) judgments against their government. Compliant votes earn campaign support for those seeking reelection, post-office appointments for those retiring. Non-compliant votes earn the same thing for their opponents. No funds pass directly to any legislator; all disbursements route through [a scoring algorithm](https://manual.WarOnDisease.org/knowledge/legal/election-law.html), which is apparently the only legal way to train a senator. The NRA already perfected this technology; this Treaty plagiarizes it, substituting \"not dying from diseases\" for \"guns.\"\n\n**Article V**: Citizens of any signatory nation may sue their own government in its own courts for non-compliance with this Treaty. Where domestic courts decline jurisdiction or invoke [sovereign immunity](https://manual.WarOnDisease.org/knowledge/solution/court-of-humanity.html), citizens may bring the same claim in [the Court of Humanity](https://manual.WarOnDisease.org/knowledge/solution/court-of-humanity.html), whose jurisdiction derives from human rather than sovereign consent and whose judgments are enforced through capital markets rather than coercion.\n\n**Article VI**: Holders of Article I [Incentive Alignment Bonds](https://manual.WarOnDisease.org/knowledge/appendix/incentive-alignment-bonds-paper.html) may sue any signatory's government in its own courts for non-payment. Billionaires have lawyers the way other humans have socks. This Treaty points those lawyers at the one thing billionaires and dying people both want, which is the treaty to keep working.\n\n**Article VII**: Withdrawal requires unanimous consent of all parties plus 10-year notice. Ten years is enough time for the bondholders to sue, the Political Incentive Fund to replace whoever is trying to leave, and the voters to notice that the party attempting withdrawal is the one that wants the diseases back.\n\n**Article VIII**: This treaty supersedes all conflicting domestic law. Including the subsection your legislature added at 2 a.m. last session specifically to make sure this couldn't happen.\n\n**Article IX**: This Treaty enters into force upon signature by two states. War has killed humans for as long as there have been humans to kill. Disease has been killing them longer. Its founding signatories will be responsible for the largest reduction in human suffering and the largest increase in human prosperity in the history of planet Earth.\n\nIN WITNESS WHEREOF, the undersigned, being of sound mind (debatable) and tired of watching their loved ones die of preventable diseases, have executed this Treaty.\n",
     sourceFile: "knowledge/solution/1-percent-treaty.qmd",
     updatedAt: "2026-05-06",
     originalName: "one-percent-treaty-text",
@@ -11742,6 +12075,19 @@ export const citations: Record<string, Citation> = {
         'container-title': "SIPRI: Military Spending",
         URL: "https://www.sipri.org/commentary/blog/2016/opportunity-cost-world-military-spending",
         note: "SIPRI: Military Spending | PMC: Military vs Healthcare Crowding Out | Congress.gov: Global R&D Landscape",
+  },
+  "doj-false-claims-act": {
+        id: "doj-false-claims-act",
+        type: "webpage",
+        title: "The False Claims Act",
+        author: [
+          {
+            literal: "U.S. Department of Justice"
+          },
+        ],
+        issued: { 'date-parts': [[2025]] },
+        URL: "https://www.justice.gov/civil/false-claims-act",
+        note: "Official DOJ summary of the False Claims Act, including treble damages and civil penalties for false claims involving federal funds.",
   },
   "dot-vsl-13-6m": {
         id: "dot-vsl-13-6m",
@@ -13003,6 +13349,19 @@ export const citations: Record<string, Citation> = {
         URL: "https://pmc.ncbi.nlm.nih.gov/articles/PMC10114019/",
         note: "PMC: Cost-effectiveness Thresholds Used by Study Authors, 1990-2021 | ICER Cost-Effectiveness Methods",
   },
+  "state-farm-v-campbell-2003": {
+        id: "state-farm-v-campbell-2003",
+        type: "webpage",
+        title: "State Farm Mutual Automobile Insurance Co. v. Campbell, 538 U.S. 408",
+        author: [
+          {
+            literal: "United States Supreme Court"
+          },
+        ],
+        issued: { 'date-parts': [[2003]] },
+        URL: "https://www.govinfo.gov/app/details/USREPORTS-538/USREPORTS-538-408",
+        note: "Official United States Reports entry. The Court treated single-digit punitive-to-compensatory ratios as the due-process boundary in ordinary cases, while rejecting a rigid mathematical rule.",
+  },
   "status-quo-cure-timeline-estimate": {
         id: "status-quo-cure-timeline-estimate",
         type: "webpage",
@@ -13336,6 +13695,19 @@ export const citations: Record<string, Citation> = {
         URL: "https://www.who.int/data/gho/data/themes/mortality-and-global-health-estimates/ghe-life-expectancy-and-healthy-life-expectancy",
         note: "WHO, 2024, Life Expectancy",
   },
+  "world-bank-government-expense-pct-gdp": {
+        id: "world-bank-government-expense-pct-gdp",
+        type: "webpage",
+        title: "Expense (% of GDP) - World",
+        author: [
+          {
+            literal: "World Bank"
+          },
+        ],
+        issued: { 'date-parts': [[2024]] },
+        URL: "https://data.worldbank.org/indicator/GC.XPN.TOTL.GD.ZS?locations=1W",
+        note: "World Development Indicators, indicator GC.XPN.TOTL.GD.ZS. World general government total expense reported at 31.78% of GDP (2021, most recent global aggregate). Applied to IMF world GDP estimate of \\$115 trillion yields approximately \\$36 trillion in annual government expenditure worldwide.",
+  },
   "world-bank-gross-savings-2023": {
         id: "world-bank-gross-savings-2023",
         type: "webpage",
@@ -13421,11 +13793,11 @@ export const citations: Record<string, Citation> = {
 
 /** Summary statistics */
 export const PARAMETER_STATS = {
-  total: 677,
-  external: 218,
-  calculated: 321,
-  definitions: 138,
-  citations: 158,
+  total: 697,
+  external: 220,
+  calculated: 338,
+  definitions: 139,
+  citations: 161,
 } as const;
 
 // ============================================================================

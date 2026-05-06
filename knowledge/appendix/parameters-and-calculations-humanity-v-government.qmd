@@ -38,15 +38,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 148 parameters used in the analysis, organized by type:
+This appendix documents all 181 parameters used in the analysis, organized by type:
 
-- External sources (peer-reviewed): 58
-- Calculated values: 69
-- Core definitions: 21
+- External sources (peer-reviewed): 62
+- Calculated values: 93
+- Core definitions: 26
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (69 parameters) • [External Data Sources](#sec-external) (58 parameters) • [Core Definitions](#sec-definitions) (21 parameters)
+[Calculated Values](#sec-calculated) (93 parameters) • [External Data Sources](#sec-external) (62 parameters) • [Core Definitions](#sec-definitions) (26 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -96,6 +96,1410 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-bullets_per_person_annual.qmd >}}
+
+:::
+
+### Corporate Damages Drugs Never Developed VSL: $3 quadrillion {#sec-corporate_damages_drugs_never_developed_vsl}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Corporate-defendant wrongful-death valuation for the aggressive prosecutor estimate of deaths from drugs never developed.
+
+**Inputs**:
+
+- [Corporate Damages Drugs Never Developed Deaths](#sec-corporate_damages_drugs_never_developed_deaths): 300 million deaths
+- [Value of Statistical Life](#sec-value_of_statistical_life) 📊: $10 million (95% CI: $5 million - $15 million)
+
+$$
+\begin{gathered}
+V_{neverdev,VSL} \\
+= Deaths_{neverdev} \times VSL \\
+= 300M \times \$10M \\
+= \$3000T
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-corporate_damages_drugs_never_developed_vsl.qmd >}}
+
+{{< include ../figures/sensitivity-table-corporate_damages_drugs_never_developed_vsl.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-corporate_damages_drugs_never_developed_vsl.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-corporate_damages_drugs_never_developed_vsl.qmd >}}
+
+:::
+
+### Corporate Damages Efficacy Lag Deaths VSL: $1.02 quadrillion {#sec-corporate_damages_efficacy_lag_deaths_vsl}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Corporate-defendant wrongful-death valuation for existing-drug efficacy-lag deaths using the standard value of a statistical life.
+
+**Inputs**:
+
+- [Total Deaths from Historical Progress Delays](#sec-existing_drugs_efficacy_lag_deaths_total) 🔢: 102 million deaths
+- [Value of Statistical Life](#sec-value_of_statistical_life) 📊: $10 million (95% CI: $5 million - $15 million)
+
+$$
+\begin{gathered}
+V_{lag,VSL} \\
+= Deaths_{lag,total} \times VSL \\
+= 102M \times \$10M \\
+= \$1020T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Deaths_{lag,total} \\
+= Lives_{saved,annual} \times T_{lag} \\
+= 12.4M \times 8.2 \\
+= 102M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Lives_{saved,annual} \\
+= \frac{LY_{saved,annual}}{T_{ext}} \\
+= \frac{149M}{12} \\
+= 12.4M
+\end{gathered}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-corporate_damages_efficacy_lag_deaths_vsl.qmd >}}
+
+{{< include ../figures/sensitivity-table-corporate_damages_efficacy_lag_deaths_vsl.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-corporate_damages_efficacy_lag_deaths_vsl.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-corporate_damages_efficacy_lag_deaths_vsl.qmd >}}
+
+:::
+
+### Corporate Damages Forward Settlement Value Per Capita: $10.6 million {#sec-corporate_damages_forward_settlement_value_per_capita}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Forward treaty settlement value per living human from the 1% Treaty impact model. Kept separate from historical corporate damages.
+
+**Inputs**:
+
+- [Total Economic Benefit from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput](#sec-dfda_trial_capacity_plus_efficacy_lag_economic_value) 🔢: $84.8 quadrillion
+- [Global Population in 2024](#sec-global_population_2024) 📊: 8 billion of people (95% CI: 7.8 billion of people - 8.2 billion of people)
+
+$$
+\begin{gathered}
+V_{settlement,pc} \\
+= \frac{Value_{max}}{Pop_{global}} \\
+= \frac{\$84800T}{8B} \\
+= \$10.6M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Value_{max} \\
+= DALYs_{max} \times Value_{QALY} \\
+= 565B \times \$150K \\
+= \$84800T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+DALYs_{max} \\
+= DALYs_{global,ann} \times Pct_{avoid,DALY} \times T_{accel,max} \\
+= 2.88B \times 92.6\% \times 212 \\
+= 565B
+\end{gathered}
+$$
+where:
+$$
+T_{accel,max} = T_{accel} + T_{lag} = 204 + 8.2 = 212
+$$
+where:
+$$
+\begin{gathered}
+T_{accel} \\
+= T_{first,SQ} \times \left(1 - \frac{1}{k_{capacity}}\right) \\
+= 222 \times \left(1 - \frac{1}{12.3}\right) \\
+= 204
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{first,SQ} \\
+= T_{queue,SQ} \times 0.5 \\
+= 443 \times 0.5 \\
+= 222
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{queue,SQ} \\
+= \frac{N_{untreated}}{Treatments_{new,ann}} \\
+= \frac{6{,}650}{15} \\
+= 443
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{untreated} \\
+= N_{rare} \times 0.95 \\
+= 7{,}000 \times 0.95 \\
+= 6{,}650
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+k_{capacity} \\
+= \frac{N_{fundable,ref}}{Slots_{curr}} \\
+= \frac{23.4M}{1.9M} \\
+= 12.3
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{fundable,ref} \\
+= \frac{Subsidies_{trial,ref}}{Cost_{pragmatic,pt}} \\
+= \frac{\$21.8B}{\$929} \\
+= 23.4M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Subsidies_{trial,ref} \\
+= Funding_{trial,ref} - OPEX_{trial} \\
+= \$21.8B - \$40M \\
+= \$21.8B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+OPEX_{trial} \\
+= Cost_{platform} + Cost_{staff} + Cost_{infra} \\
++ Cost_{regulatory} + Cost_{community} \\
+= \$15M + \$10M + \$8M + \$5M + \$2M \\
+= \$40M
+\end{gathered}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-corporate_damages_forward_settlement_value_per_capita.qmd >}}
+
+{{< include ../figures/sensitivity-table-corporate_damages_forward_settlement_value_per_capita.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-corporate_damages_forward_settlement_value_per_capita.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-corporate_damages_forward_settlement_value_per_capita.qmd >}}
+
+:::
+
+### Corporate Damages Pentagon FCA Penalty Increment: $4.92 trillion {#sec-corporate_damages_pentagon_fca_penalty_increment}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+False Claims Act-style penalty increment on Pentagon unaccounted funds, calculated as treble exposure minus principal so the principal is not counted twice.
+
+**Inputs**:
+
+- [Pentagon Unaccounted Funds False Claims Analog Exposure](#sec-pentagon_unaccounted_false_claims_analog_exposure) 🔢: $7.38 trillion
+- [Pentagon Unaccounted Funds](#sec-pentagon_unaccounted_funds) 📊: $2.46 trillion
+
+$$
+\begin{gathered}
+Penalty_{pentagon,FCA} \\
+= Exposure_{pentagon,FCA} - Funds_{pentagon,unaccounted} \\
+= \$7.38T - \$2.46T \\
+= \$4.92T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Exposure_{pentagon,FCA} \\
+= Funds_{pentagon,unaccounted} \times m_{FCA} \\
+= \$2.46T \times 3 \\
+= \$7.38T
+\end{gathered}
+$$
+*✓ High confidence*
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-corporate_damages_pentagon_fca_penalty_increment.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-corporate_damages_pentagon_fca_penalty_increment.qmd >}}
+
+:::
+
+### Corporate Damages Property Plus Environmental Destruction: $50 trillion {#sec-corporate_damages_property_environmental_destruction}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Property and environmental destruction from war since 1900, separated from war death valuation to avoid adding the QALY component embedded in the broader historical sunk-cost parameter.
+
+**Inputs**:
+
+- [Cumulative Property Destruction from War Since 1900](#sec-war_property_destruction_since_1900): $45 trillion (95% CI: $30 trillion - $60 trillion)
+- [Cumulative Environmental Destruction from War Since 1900](#sec-war_environmental_destruction_since_1900): $5 trillion (95% CI: $2 trillion - $10 trillion)
+
+$$
+\begin{gathered}
+D_{property+env} \\
+= D_{property} + D_{env} \\
+= \$45T + \$5T \\
+= \$50T
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-corporate_damages_property_environmental_destruction.qmd >}}
+
+{{< include ../figures/sensitivity-table-corporate_damages_property_environmental_destruction.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-corporate_damages_property_environmental_destruction.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-corporate_damages_property_environmental_destruction.qmd >}}
+
+:::
+
+### Corporate Damages Prosecutor Base Ask Per Capita: $913,219 {#sec-corporate_damages_prosecutor_base_ask_per_capita}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Aggressive corporate-liability prosecutor base ask per living human.
+
+**Inputs**:
+
+- [Corporate Damages Prosecutor Base Ask Total](#sec-corporate_damages_prosecutor_base_ask_total) 🔢: $7.31 quadrillion
+- [Global Population in 2024](#sec-global_population_2024) 📊: 8 billion of people (95% CI: 7.8 billion of people - 8.2 billion of people)
+
+$$
+\begin{gathered}
+D_{corp,ask,pc} \\
+= \frac{D_{corp,ask}}{Pop_{global}} \\
+= \frac{\$7310T}{8B} \\
+= \$913K
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+D_{corp,ask} \\
+= D_{corp,floor} + V_{neverdev,VSL} \\
+= \$4310T + \$3000T \\
+= \$7310T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+D_{corp,floor} \\
+= V_{war,VSL} + V_{lag,VSL} + D_{property+env} \\
++ Spending_{mil,excess1900} + Penalty_{pentagon,FCA} \\
+= \$3100T + \$1020T + \$50T + \$135T + \$4.92T \\
+= \$4310T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+V_{war,VSL} \\
+= Deaths_{war,1900} \times VSL \\
+= 310M \times \$10M \\
+= \$3100T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+V_{lag,VSL} \\
+= Deaths_{lag,total} \times VSL \\
+= 102M \times \$10M \\
+= \$1020T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Deaths_{lag,total} \\
+= Lives_{saved,annual} \times T_{lag} \\
+= 12.4M \times 8.2 \\
+= 102M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Lives_{saved,annual} \\
+= \frac{LY_{saved,annual}}{T_{ext}} \\
+= \frac{149M}{12} \\
+= 12.4M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+D_{property+env} \\
+= D_{property} + D_{env} \\
+= \$45T + \$5T \\
+= \$50T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Spending_{mil,excess1900} \\
+= \sum_{t=1900}^{2024} \max\left(0, Spending_{mil,t} - Spending_{mil,1900}\right) \\
+= \sum_{t=1900}^{2024} \max\left(0, Spending_{mil,t} - \$66.1B\right) \\
+= \$135T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Penalty_{pentagon,FCA} \\
+= Exposure_{pentagon,FCA} - Funds_{pentagon,unaccounted} \\
+= \$7.38T - \$2.46T \\
+= \$4.92T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Exposure_{pentagon,FCA} \\
+= Funds_{pentagon,unaccounted} \times m_{FCA} \\
+= \$2.46T \times 3 \\
+= \$7.38T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+V_{neverdev,VSL} \\
+= Deaths_{neverdev} \times VSL \\
+= 300M \times \$10M \\
+= \$3000T
+\end{gathered}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-corporate_damages_prosecutor_base_ask_per_capita.qmd >}}
+
+{{< include ../figures/sensitivity-table-corporate_damages_prosecutor_base_ask_per_capita.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-corporate_damages_prosecutor_base_ask_per_capita.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-corporate_damages_prosecutor_base_ask_per_capita.qmd >}}
+
+:::
+
+### Corporate Damages Prosecutor Base Ask Total: $7.31 quadrillion {#sec-corporate_damages_prosecutor_base_ask_total}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Aggressive corporate-liability prosecutor base ask: strict floor plus the aggressive pleading estimate for deaths from drugs never developed. Excludes punitive damages, disgorgement, ongoing lost-income damages, and forward treaty settlement value.
+
+**Inputs**:
+
+- [Corporate Damages Strict Floor Total](#sec-corporate_damages_strict_floor_total) 🔢: $4.31 quadrillion
+- [Corporate Damages Drugs Never Developed VSL](#sec-corporate_damages_drugs_never_developed_vsl) 🔢: $3 quadrillion
+
+$$
+\begin{gathered}
+D_{corp,ask} \\
+= D_{corp,floor} + V_{neverdev,VSL} \\
+= \$4310T + \$3000T \\
+= \$7310T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+D_{corp,floor} \\
+= V_{war,VSL} + V_{lag,VSL} + D_{property+env} \\
++ Spending_{mil,excess1900} + Penalty_{pentagon,FCA} \\
+= \$3100T + \$1020T + \$50T + \$135T + \$4.92T \\
+= \$4310T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+V_{war,VSL} \\
+= Deaths_{war,1900} \times VSL \\
+= 310M \times \$10M \\
+= \$3100T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+V_{lag,VSL} \\
+= Deaths_{lag,total} \times VSL \\
+= 102M \times \$10M \\
+= \$1020T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Deaths_{lag,total} \\
+= Lives_{saved,annual} \times T_{lag} \\
+= 12.4M \times 8.2 \\
+= 102M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Lives_{saved,annual} \\
+= \frac{LY_{saved,annual}}{T_{ext}} \\
+= \frac{149M}{12} \\
+= 12.4M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+D_{property+env} \\
+= D_{property} + D_{env} \\
+= \$45T + \$5T \\
+= \$50T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Spending_{mil,excess1900} \\
+= \sum_{t=1900}^{2024} \max\left(0, Spending_{mil,t} - Spending_{mil,1900}\right) \\
+= \sum_{t=1900}^{2024} \max\left(0, Spending_{mil,t} - \$66.1B\right) \\
+= \$135T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Penalty_{pentagon,FCA} \\
+= Exposure_{pentagon,FCA} - Funds_{pentagon,unaccounted} \\
+= \$7.38T - \$2.46T \\
+= \$4.92T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Exposure_{pentagon,FCA} \\
+= Funds_{pentagon,unaccounted} \times m_{FCA} \\
+= \$2.46T \times 3 \\
+= \$7.38T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+V_{neverdev,VSL} \\
+= Deaths_{neverdev} \times VSL \\
+= 300M \times \$10M \\
+= \$3000T
+\end{gathered}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-corporate_damages_prosecutor_base_ask_total.qmd >}}
+
+{{< include ../figures/sensitivity-table-corporate_damages_prosecutor_base_ask_total.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-corporate_damages_prosecutor_base_ask_total.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-corporate_damages_prosecutor_base_ask_total.qmd >}}
+
+:::
+
+### Corporate Damages State Farm Constitutional-Ceiling Exposure Per Capita: $9.13 million {#sec-corporate_damages_state_farm_ceiling_exposure_per_capita}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Constitutional-ceiling exposure per living human under State Farm v. Campbell. This is exposure, not a typical award.
+
+**Inputs**:
+
+- [Corporate Damages State Farm Constitutional-Ceiling Exposure Total](#sec-corporate_damages_state_farm_ceiling_exposure_total) 🔢: $73.1 quadrillion
+- [Global Population in 2024](#sec-global_population_2024) 📊: 8 billion of people (95% CI: 7.8 billion of people - 8.2 billion of people)
+
+$$
+\begin{gathered}
+D_{corp,StateFarm,pc} \\
+= \frac{D_{corp,StateFarm}}{Pop_{global}} \\
+= \frac{\$73100T}{8B} \\
+= \$9.13M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+D_{corp,StateFarm} \\
+= D_{corp,ask} \times m_{StateFarm} \\
+= \$7310T \times 10 \\
+= \$73100T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+D_{corp,ask} \\
+= D_{corp,floor} + V_{neverdev,VSL} \\
+= \$4310T + \$3000T \\
+= \$7310T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+D_{corp,floor} \\
+= V_{war,VSL} + V_{lag,VSL} + D_{property+env} \\
++ Spending_{mil,excess1900} + Penalty_{pentagon,FCA} \\
+= \$3100T + \$1020T + \$50T + \$135T + \$4.92T \\
+= \$4310T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+V_{war,VSL} \\
+= Deaths_{war,1900} \times VSL \\
+= 310M \times \$10M \\
+= \$3100T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+V_{lag,VSL} \\
+= Deaths_{lag,total} \times VSL \\
+= 102M \times \$10M \\
+= \$1020T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Deaths_{lag,total} \\
+= Lives_{saved,annual} \times T_{lag} \\
+= 12.4M \times 8.2 \\
+= 102M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Lives_{saved,annual} \\
+= \frac{LY_{saved,annual}}{T_{ext}} \\
+= \frac{149M}{12} \\
+= 12.4M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+D_{property+env} \\
+= D_{property} + D_{env} \\
+= \$45T + \$5T \\
+= \$50T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Spending_{mil,excess1900} \\
+= \sum_{t=1900}^{2024} \max\left(0, Spending_{mil,t} - Spending_{mil,1900}\right) \\
+= \sum_{t=1900}^{2024} \max\left(0, Spending_{mil,t} - \$66.1B\right) \\
+= \$135T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Penalty_{pentagon,FCA} \\
+= Exposure_{pentagon,FCA} - Funds_{pentagon,unaccounted} \\
+= \$7.38T - \$2.46T \\
+= \$4.92T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Exposure_{pentagon,FCA} \\
+= Funds_{pentagon,unaccounted} \times m_{FCA} \\
+= \$2.46T \times 3 \\
+= \$7.38T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+V_{neverdev,VSL} \\
+= Deaths_{neverdev} \times VSL \\
+= 300M \times \$10M \\
+= \$3000T
+\end{gathered}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-corporate_damages_state_farm_ceiling_exposure_per_capita.qmd >}}
+
+{{< include ../figures/sensitivity-table-corporate_damages_state_farm_ceiling_exposure_per_capita.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-corporate_damages_state_farm_ceiling_exposure_per_capita.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-corporate_damages_state_farm_ceiling_exposure_per_capita.qmd >}}
+
+:::
+
+### Corporate Damages State Farm Constitutional-Ceiling Exposure Total: $73.1 quadrillion {#sec-corporate_damages_state_farm_ceiling_exposure_total}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Constitutional-ceiling exposure under State Farm v. Campbell: prosecutor base ask plus a 9:1 punitive-to-compensatory multiplier. This is exposure, not a typical award.
+
+**Inputs**:
+
+- [Corporate Damages Prosecutor Base Ask Total](#sec-corporate_damages_prosecutor_base_ask_total) 🔢: $7.31 quadrillion
+- [State Farm Constitutional-Ceiling Exposure Multiplier](#sec-corporate_damages_state_farm_ceiling_multiplier) 📊: 10x
+
+$$
+\begin{gathered}
+D_{corp,StateFarm} \\
+= D_{corp,ask} \times m_{StateFarm} \\
+= \$7310T \times 10 \\
+= \$73100T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+D_{corp,ask} \\
+= D_{corp,floor} + V_{neverdev,VSL} \\
+= \$4310T + \$3000T \\
+= \$7310T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+D_{corp,floor} \\
+= V_{war,VSL} + V_{lag,VSL} + D_{property+env} \\
++ Spending_{mil,excess1900} + Penalty_{pentagon,FCA} \\
+= \$3100T + \$1020T + \$50T + \$135T + \$4.92T \\
+= \$4310T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+V_{war,VSL} \\
+= Deaths_{war,1900} \times VSL \\
+= 310M \times \$10M \\
+= \$3100T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+V_{lag,VSL} \\
+= Deaths_{lag,total} \times VSL \\
+= 102M \times \$10M \\
+= \$1020T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Deaths_{lag,total} \\
+= Lives_{saved,annual} \times T_{lag} \\
+= 12.4M \times 8.2 \\
+= 102M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Lives_{saved,annual} \\
+= \frac{LY_{saved,annual}}{T_{ext}} \\
+= \frac{149M}{12} \\
+= 12.4M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+D_{property+env} \\
+= D_{property} + D_{env} \\
+= \$45T + \$5T \\
+= \$50T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Spending_{mil,excess1900} \\
+= \sum_{t=1900}^{2024} \max\left(0, Spending_{mil,t} - Spending_{mil,1900}\right) \\
+= \sum_{t=1900}^{2024} \max\left(0, Spending_{mil,t} - \$66.1B\right) \\
+= \$135T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Penalty_{pentagon,FCA} \\
+= Exposure_{pentagon,FCA} - Funds_{pentagon,unaccounted} \\
+= \$7.38T - \$2.46T \\
+= \$4.92T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Exposure_{pentagon,FCA} \\
+= Funds_{pentagon,unaccounted} \times m_{FCA} \\
+= \$2.46T \times 3 \\
+= \$7.38T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+V_{neverdev,VSL} \\
+= Deaths_{neverdev} \times VSL \\
+= 300M \times \$10M \\
+= \$3000T
+\end{gathered}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-corporate_damages_state_farm_ceiling_exposure_total.qmd >}}
+
+{{< include ../figures/sensitivity-table-corporate_damages_state_farm_ceiling_exposure_total.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-corporate_damages_state_farm_ceiling_exposure_total.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-corporate_damages_state_farm_ceiling_exposure_total.qmd >}}
+
+:::
+
+### Corporate Damages Strict Floor Per Capita: $538,219 {#sec-corporate_damages_strict_floor_per_capita}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Strict non-duplicative corporate damages floor per living human.
+
+**Inputs**:
+
+- [Corporate Damages Strict Floor Total](#sec-corporate_damages_strict_floor_total) 🔢: $4.31 quadrillion
+- [Global Population in 2024](#sec-global_population_2024) 📊: 8 billion of people (95% CI: 7.8 billion of people - 8.2 billion of people)
+
+$$
+\begin{gathered}
+D_{corp,floor,pc} \\
+= \frac{D_{corp,floor}}{Pop_{global}} \\
+= \frac{\$4310T}{8B} \\
+= \$538K
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+D_{corp,floor} \\
+= V_{war,VSL} + V_{lag,VSL} + D_{property+env} \\
++ Spending_{mil,excess1900} + Penalty_{pentagon,FCA} \\
+= \$3100T + \$1020T + \$50T + \$135T + \$4.92T \\
+= \$4310T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+V_{war,VSL} \\
+= Deaths_{war,1900} \times VSL \\
+= 310M \times \$10M \\
+= \$3100T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+V_{lag,VSL} \\
+= Deaths_{lag,total} \times VSL \\
+= 102M \times \$10M \\
+= \$1020T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Deaths_{lag,total} \\
+= Lives_{saved,annual} \times T_{lag} \\
+= 12.4M \times 8.2 \\
+= 102M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Lives_{saved,annual} \\
+= \frac{LY_{saved,annual}}{T_{ext}} \\
+= \frac{149M}{12} \\
+= 12.4M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+D_{property+env} \\
+= D_{property} + D_{env} \\
+= \$45T + \$5T \\
+= \$50T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Spending_{mil,excess1900} \\
+= \sum_{t=1900}^{2024} \max\left(0, Spending_{mil,t} - Spending_{mil,1900}\right) \\
+= \sum_{t=1900}^{2024} \max\left(0, Spending_{mil,t} - \$66.1B\right) \\
+= \$135T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Penalty_{pentagon,FCA} \\
+= Exposure_{pentagon,FCA} - Funds_{pentagon,unaccounted} \\
+= \$7.38T - \$2.46T \\
+= \$4.92T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Exposure_{pentagon,FCA} \\
+= Funds_{pentagon,unaccounted} \times m_{FCA} \\
+= \$2.46T \times 3 \\
+= \$7.38T
+\end{gathered}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-corporate_damages_strict_floor_per_capita.qmd >}}
+
+{{< include ../figures/sensitivity-table-corporate_damages_strict_floor_per_capita.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-corporate_damages_strict_floor_per_capita.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-corporate_damages_strict_floor_per_capita.qmd >}}
+
+:::
+
+### Corporate Damages Strict Floor Total: $4.31 quadrillion {#sec-corporate_damages_strict_floor_total}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Strict non-duplicative corporate damages floor: war-death VSL, existing-drug efficacy-lag VSL, property and environmental destruction, excess military spending above the 1900 freeze, and the Pentagon FCA-style penalty increment.
+
+**Inputs**:
+
+- [Corporate Damages War Deaths VSL](#sec-corporate_damages_war_deaths_vsl) 🔢: $3.1 quadrillion
+- [Corporate Damages Efficacy Lag Deaths VSL](#sec-corporate_damages_efficacy_lag_deaths_vsl) 🔢: $1.02 quadrillion
+- [Corporate Damages Property Plus Environmental Destruction](#sec-corporate_damages_property_environmental_destruction) 🔢: $50 trillion
+- [Excess Military Spending Above 1900 Freeze](#sec-war_trial_redirect_excess_military_spending_above_1900_freeze) 🔢: $135 trillion
+- [Corporate Damages Pentagon FCA Penalty Increment](#sec-corporate_damages_pentagon_fca_penalty_increment) 🔢: $4.92 trillion
+
+$$
+\begin{gathered}
+D_{corp,floor} \\
+= V_{war,VSL} + V_{lag,VSL} + D_{property+env} \\
++ Spending_{mil,excess1900} + Penalty_{pentagon,FCA} \\
+= \$3100T + \$1020T + \$50T + \$135T + \$4.92T \\
+= \$4310T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+V_{war,VSL} \\
+= Deaths_{war,1900} \times VSL \\
+= 310M \times \$10M \\
+= \$3100T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+V_{lag,VSL} \\
+= Deaths_{lag,total} \times VSL \\
+= 102M \times \$10M \\
+= \$1020T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Deaths_{lag,total} \\
+= Lives_{saved,annual} \times T_{lag} \\
+= 12.4M \times 8.2 \\
+= 102M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Lives_{saved,annual} \\
+= \frac{LY_{saved,annual}}{T_{ext}} \\
+= \frac{149M}{12} \\
+= 12.4M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+D_{property+env} \\
+= D_{property} + D_{env} \\
+= \$45T + \$5T \\
+= \$50T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Spending_{mil,excess1900} \\
+= \sum_{t=1900}^{2024} \max\left(0, Spending_{mil,t} - Spending_{mil,1900}\right) \\
+= \sum_{t=1900}^{2024} \max\left(0, Spending_{mil,t} - \$66.1B\right) \\
+= \$135T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Penalty_{pentagon,FCA} \\
+= Exposure_{pentagon,FCA} - Funds_{pentagon,unaccounted} \\
+= \$7.38T - \$2.46T \\
+= \$4.92T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Exposure_{pentagon,FCA} \\
+= Funds_{pentagon,unaccounted} \times m_{FCA} \\
+= \$2.46T \times 3 \\
+= \$7.38T
+\end{gathered}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-corporate_damages_strict_floor_total.qmd >}}
+
+{{< include ../figures/sensitivity-table-corporate_damages_strict_floor_total.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-corporate_damages_strict_floor_total.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-corporate_damages_strict_floor_total.qmd >}}
+
+:::
+
+### Corporate Damages Treble-Style Exposure Per Capita: $2.74 million {#sec-corporate_damages_treble_exposure_per_capita}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Treble-style exposure per living human under the False Claims Act-style corporate penalty analogy.
+
+**Inputs**:
+
+- [Corporate Damages Treble-Style Exposure Total](#sec-corporate_damages_treble_exposure_total) 🔢: $21.9 quadrillion
+- [Global Population in 2024](#sec-global_population_2024) 📊: 8 billion of people (95% CI: 7.8 billion of people - 8.2 billion of people)
+
+$$
+\begin{gathered}
+D_{corp,treble,pc} \\
+= \frac{D_{corp,treble}}{Pop_{global}} \\
+= \frac{\$21900T}{8B} \\
+= \$2.74M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+D_{corp,treble} \\
+= D_{corp,ask} \times m_{FCA} \\
+= \$7310T \times 3 \\
+= \$21900T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+D_{corp,ask} \\
+= D_{corp,floor} + V_{neverdev,VSL} \\
+= \$4310T + \$3000T \\
+= \$7310T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+D_{corp,floor} \\
+= V_{war,VSL} + V_{lag,VSL} + D_{property+env} \\
++ Spending_{mil,excess1900} + Penalty_{pentagon,FCA} \\
+= \$3100T + \$1020T + \$50T + \$135T + \$4.92T \\
+= \$4310T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+V_{war,VSL} \\
+= Deaths_{war,1900} \times VSL \\
+= 310M \times \$10M \\
+= \$3100T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+V_{lag,VSL} \\
+= Deaths_{lag,total} \times VSL \\
+= 102M \times \$10M \\
+= \$1020T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Deaths_{lag,total} \\
+= Lives_{saved,annual} \times T_{lag} \\
+= 12.4M \times 8.2 \\
+= 102M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Lives_{saved,annual} \\
+= \frac{LY_{saved,annual}}{T_{ext}} \\
+= \frac{149M}{12} \\
+= 12.4M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+D_{property+env} \\
+= D_{property} + D_{env} \\
+= \$45T + \$5T \\
+= \$50T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Spending_{mil,excess1900} \\
+= \sum_{t=1900}^{2024} \max\left(0, Spending_{mil,t} - Spending_{mil,1900}\right) \\
+= \sum_{t=1900}^{2024} \max\left(0, Spending_{mil,t} - \$66.1B\right) \\
+= \$135T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Penalty_{pentagon,FCA} \\
+= Exposure_{pentagon,FCA} - Funds_{pentagon,unaccounted} \\
+= \$7.38T - \$2.46T \\
+= \$4.92T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Exposure_{pentagon,FCA} \\
+= Funds_{pentagon,unaccounted} \times m_{FCA} \\
+= \$2.46T \times 3 \\
+= \$7.38T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+V_{neverdev,VSL} \\
+= Deaths_{neverdev} \times VSL \\
+= 300M \times \$10M \\
+= \$3000T
+\end{gathered}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-corporate_damages_treble_exposure_per_capita.qmd >}}
+
+{{< include ../figures/sensitivity-table-corporate_damages_treble_exposure_per_capita.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-corporate_damages_treble_exposure_per_capita.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-corporate_damages_treble_exposure_per_capita.qmd >}}
+
+:::
+
+### Corporate Damages Treble-Style Exposure Total: $21.9 quadrillion {#sec-corporate_damages_treble_exposure_total}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Treble-style exposure if the prosecutor base ask is multiplied under a False Claims Act-style corporate penalty analogy.
+
+**Inputs**:
+
+- [Corporate Damages Prosecutor Base Ask Total](#sec-corporate_damages_prosecutor_base_ask_total) 🔢: $7.31 quadrillion
+- [Corporate Analog False Claims Act Treble Multiplier](#sec-corporate_analog_false_claims_treble_multiplier) 📊: 3x
+
+$$
+\begin{gathered}
+D_{corp,treble} \\
+= D_{corp,ask} \times m_{FCA} \\
+= \$7310T \times 3 \\
+= \$21900T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+D_{corp,ask} \\
+= D_{corp,floor} + V_{neverdev,VSL} \\
+= \$4310T + \$3000T \\
+= \$7310T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+D_{corp,floor} \\
+= V_{war,VSL} + V_{lag,VSL} + D_{property+env} \\
++ Spending_{mil,excess1900} + Penalty_{pentagon,FCA} \\
+= \$3100T + \$1020T + \$50T + \$135T + \$4.92T \\
+= \$4310T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+V_{war,VSL} \\
+= Deaths_{war,1900} \times VSL \\
+= 310M \times \$10M \\
+= \$3100T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+V_{lag,VSL} \\
+= Deaths_{lag,total} \times VSL \\
+= 102M \times \$10M \\
+= \$1020T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Deaths_{lag,total} \\
+= Lives_{saved,annual} \times T_{lag} \\
+= 12.4M \times 8.2 \\
+= 102M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Lives_{saved,annual} \\
+= \frac{LY_{saved,annual}}{T_{ext}} \\
+= \frac{149M}{12} \\
+= 12.4M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+D_{property+env} \\
+= D_{property} + D_{env} \\
+= \$45T + \$5T \\
+= \$50T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Spending_{mil,excess1900} \\
+= \sum_{t=1900}^{2024} \max\left(0, Spending_{mil,t} - Spending_{mil,1900}\right) \\
+= \sum_{t=1900}^{2024} \max\left(0, Spending_{mil,t} - \$66.1B\right) \\
+= \$135T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Penalty_{pentagon,FCA} \\
+= Exposure_{pentagon,FCA} - Funds_{pentagon,unaccounted} \\
+= \$7.38T - \$2.46T \\
+= \$4.92T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Exposure_{pentagon,FCA} \\
+= Funds_{pentagon,unaccounted} \times m_{FCA} \\
+= \$2.46T \times 3 \\
+= \$7.38T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+V_{neverdev,VSL} \\
+= Deaths_{neverdev} \times VSL \\
+= 300M \times \$10M \\
+= \$3000T
+\end{gathered}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-corporate_damages_treble_exposure_total.qmd >}}
+
+{{< include ../figures/sensitivity-table-corporate_damages_treble_exposure_total.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-corporate_damages_treble_exposure_total.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-corporate_damages_treble_exposure_total.qmd >}}
+
+:::
+
+### Corporate Damages War Deaths VSL: $3.1 quadrillion {#sec-corporate_damages_war_deaths_vsl}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Corporate-defendant wrongful-death valuation for war deaths since 1900 using the standard value of a statistical life.
+
+**Inputs**:
+
+- [Total War and Conflict Deaths Since 1900](#sec-war_deaths_since_1900): 310 million deaths (95% CI: 200 million deaths - 340 million deaths)
+- [Value of Statistical Life](#sec-value_of_statistical_life) 📊: $10 million (95% CI: $5 million - $15 million)
+
+$$
+\begin{gathered}
+V_{war,VSL} \\
+= Deaths_{war,1900} \times VSL \\
+= 310M \times \$10M \\
+= \$3100T
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-corporate_damages_war_deaths_vsl.qmd >}}
+
+{{< include ../figures/sensitivity-table-corporate_damages_war_deaths_vsl.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-corporate_damages_war_deaths_vsl.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-corporate_damages_war_deaths_vsl.qmd >}}
 
 :::
 
@@ -844,6 +2248,129 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-dfda_trial_capacity_plus_efficacy_lag_dalys.qmd >}}
+
+:::
+
+### Total Economic Benefit from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput: $84.8 quadrillion {#sec-dfda_trial_capacity_plus_efficacy_lag_economic_value}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Total economic value from the combined treatment timeline shift. DALYs valued at standard economic rate.
+
+**Inputs**:
+
+- [Total DALYs from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput](#sec-dfda_trial_capacity_plus_efficacy_lag_dalys) 🔢: 565 billion DALYs
+- [Standard Economic Value per QALY](#sec-standard_economic_qaly_value_usd) 📊: $150,000 (SE: ±$30,000)
+
+$$
+\begin{gathered}
+Value_{max} \\
+= DALYs_{max} \times Value_{QALY} \\
+= 565B \times \$150K \\
+= \$84800T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+DALYs_{max} \\
+= DALYs_{global,ann} \times Pct_{avoid,DALY} \times T_{accel,max} \\
+= 2.88B \times 92.6\% \times 212 \\
+= 565B
+\end{gathered}
+$$
+where:
+$$
+T_{accel,max} = T_{accel} + T_{lag} = 204 + 8.2 = 212
+$$
+where:
+$$
+\begin{gathered}
+T_{accel} \\
+= T_{first,SQ} \times \left(1 - \frac{1}{k_{capacity}}\right) \\
+= 222 \times \left(1 - \frac{1}{12.3}\right) \\
+= 204
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{first,SQ} \\
+= T_{queue,SQ} \times 0.5 \\
+= 443 \times 0.5 \\
+= 222
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{queue,SQ} \\
+= \frac{N_{untreated}}{Treatments_{new,ann}} \\
+= \frac{6{,}650}{15} \\
+= 443
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{untreated} \\
+= N_{rare} \times 0.95 \\
+= 7{,}000 \times 0.95 \\
+= 6{,}650
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+k_{capacity} \\
+= \frac{N_{fundable,ref}}{Slots_{curr}} \\
+= \frac{23.4M}{1.9M} \\
+= 12.3
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{fundable,ref} \\
+= \frac{Subsidies_{trial,ref}}{Cost_{pragmatic,pt}} \\
+= \frac{\$21.8B}{\$929} \\
+= 23.4M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Subsidies_{trial,ref} \\
+= Funding_{trial,ref} - OPEX_{trial} \\
+= \$21.8B - \$40M \\
+= \$21.8B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+OPEX_{trial} \\
+= Cost_{platform} + Cost_{staff} + Cost_{infra} \\
++ Cost_{regulatory} + Cost_{community} \\
+= \$15M + \$10M + \$8M + \$5M + \$2M \\
+= \$40M
+\end{gathered}
+$$
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-dfda_trial_capacity_plus_efficacy_lag_economic_value.qmd >}}
+
+{{< include ../figures/sensitivity-table-dfda_trial_capacity_plus_efficacy_lag_economic_value.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-dfda_trial_capacity_plus_efficacy_lag_economic_value.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_trial_capacity_plus_efficacy_lag_economic_value.qmd >}}
 
 :::
 
@@ -2287,6 +3814,38 @@ $$
 
 :::
 
+### Annual Global Government Expense: $36.5 trillion {#sec-global_government_expense_annual}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Approximate annual global government expenditure, computed as global GDP times the World Bank general-government expense share of GDP.
+
+**Inputs**:
+
+- [Global GDP (2025)](#sec-global_gdp_2025) 📊: $115 trillion
+- [Global Government Expense Share of GDP](#sec-global_government_expense_pct_gdp) 📊: 31.8%
+
+$$
+\begin{gathered}
+Expense_{gov,global} \\
+= GDP_{global} \times p_{gov,expense} \\
+= \$115T \times 31.8\% \\
+= \$36.5T
+\end{gathered}
+$$
+
+*~ Medium confidence*
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-global_government_expense_annual.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-global_government_expense_annual.qmd >}}
+
+:::
+
 ### Ratio of Military to Government Clinical Trials Spending: 604:1 {#sec-military_to_government_clinical_trials_spending_ratio}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -2521,6 +4080,38 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-pentagon_unaccounted_clinical_trial_years.qmd >}}
+
+:::
+
+### Pentagon Unaccounted Funds False Claims Analog Exposure: $7.38 trillion {#sec-pentagon_unaccounted_false_claims_analog_exposure}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+False Claims Act-style treble-damages exposure on Pentagon unaccounted funds, used as a corporate-defendant audit analogy rather than a literal claim under existing sovereign law.
+
+**Inputs**:
+
+- [Pentagon Unaccounted Funds](#sec-pentagon_unaccounted_funds) 📊: $2.46 trillion
+- [Corporate Analog False Claims Act Treble Multiplier](#sec-corporate_analog_false_claims_treble_multiplier) 📊: 3x
+
+$$
+\begin{gathered}
+Exposure_{pentagon,FCA} \\
+= Funds_{pentagon,unaccounted} \times m_{FCA} \\
+= \$2.46T \times 3 \\
+= \$7.38T
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-pentagon_unaccounted_false_claims_analog_exposure.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-pentagon_unaccounted_false_claims_analog_exposure.qmd >}}
 
 :::
 
@@ -5034,6 +6625,345 @@ $$
 
 :::
 
+### GDP per Capita in Peace Timeline: $333,636 {#sec-war_counterfactual_gdp_per_capita}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Counterfactual global GDP per capita if all wars abolished since 1900. Actual is $14,375. Mid-range counterfactual: $333,636 (23.2x richer). 8 non-overlapping channels at +2.6pp.
+
+**Inputs**:
+
+- [Global GDP per Capita in 1900](#sec-global_gdp_per_capita_1900) 📊: $3,150 (SE: ±$500)
+- [Peace Growth Boost (8 Channels, Overlap-Corrected)](#sec-war_counterfactual_annual_growth_boost): 2.6% (95% CI: 1.65% - 3.55%)
+- [Global Average Income (2025 Baseline)](#sec-global_avg_income_2025) 🔢: $14,375
+
+$$
+\begin{gathered}
+GDP_{pc,peace} \\
+= GDP_{pc,1900} \times \left(1 + \left(\frac{\bar{y}_{0}}{GDP_{pc,1900}}\right)^{1/124} - 1 + g_{war,penalty}\right)^{124} \\[0.5em]
+= \$3.15K \times \left(1 + \left(\frac{\$14.4K}{\$3.15K}\right)^{1/124} - 1 + 2.6\%\right)^{124} \\[0.5em]
+= \$334K
+\end{gathered}
+$$
+
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-war_counterfactual_gdp_per_capita.qmd >}}
+
+{{< include ../figures/sensitivity-table-war_counterfactual_gdp_per_capita.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-war_counterfactual_gdp_per_capita.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-war_counterfactual_gdp_per_capita.qmd >}}
+
+:::
+
+### Annual Lost GDP Global from War: $2.55 quadrillion {#sec-war_counterfactual_lost_gdp_global}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Total annual global GDP lost to compound war effects since 1900. Lost GDP per capita × 8 billion people.
+
+**Inputs**:
+
+- [Annual Lost GDP per Capita from War](#sec-war_counterfactual_lost_gdp_per_capita) 🔢: $319,261
+- [Global Population in 2024](#sec-global_population_2024) 📊: 8 billion of people (95% CI: 7.8 billion of people - 8.2 billion of people)
+
+$$
+\begin{gathered}
+GDP_{lost,total} \\
+= GDP_{pc,lost} \times Pop_{global} \\
+= \$319K \times 8B \\
+= \$2550T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+GDP_{pc,lost} \\
+= GDP_{pc,peace} - \bar{y}_{0} \\
+= \$334K - \$14.4K \\
+= \$319K
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+GDP_{pc,peace} \\
+= GDP_{pc,1900} \times \left(1 + \left(\frac{\bar{y}_{0}}{GDP_{pc,1900}}\right)^{1/124} - 1 + g_{war,penalty}\right)^{124} \\[0.5em]
+= \$3.15K \times \left(1 + \left(\frac{\$14.4K}{\$3.15K}\right)^{1/124} - 1 + 2.6\%\right)^{124} \\[0.5em]
+= \$334K
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+\bar{y}_{0} \\
+= \frac{GDP_{global}}{Pop_{global}} \\
+= \frac{\$115T}{8B} \\
+= \$14.4K
+\end{gathered}
+$$
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-war_counterfactual_lost_gdp_global.qmd >}}
+
+{{< include ../figures/sensitivity-table-war_counterfactual_lost_gdp_global.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-war_counterfactual_lost_gdp_global.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-war_counterfactual_lost_gdp_global.qmd >}}
+
+:::
+
+### Annual Lost GDP per Capita from War: $319,261 {#sec-war_counterfactual_lost_gdp_per_capita}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual GDP per capita lost due to compound war effects since 1900
+
+**Inputs**:
+
+- [GDP per Capita in Peace Timeline](#sec-war_counterfactual_gdp_per_capita) 🔢: $333,636
+- [Global Average Income (2025 Baseline)](#sec-global_avg_income_2025) 🔢: $14,375
+
+$$
+\begin{gathered}
+GDP_{pc,lost} \\
+= GDP_{pc,peace} - \bar{y}_{0} \\
+= \$334K - \$14.4K \\
+= \$319K
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+GDP_{pc,peace} \\
+= GDP_{pc,1900} \times \left(1 + \left(\frac{\bar{y}_{0}}{GDP_{pc,1900}}\right)^{1/124} - 1 + g_{war,penalty}\right)^{124} \\[0.5em]
+= \$3.15K \times \left(1 + \left(\frac{\$14.4K}{\$3.15K}\right)^{1/124} - 1 + 2.6\%\right)^{124} \\[0.5em]
+= \$334K
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+\bar{y}_{0} \\
+= \frac{GDP_{global}}{Pop_{global}} \\
+= \frac{\$115T}{8B} \\
+= \$14.4K
+\end{gathered}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-war_counterfactual_lost_gdp_per_capita.qmd >}}
+
+{{< include ../figures/sensitivity-table-war_counterfactual_lost_gdp_per_capita.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-war_counterfactual_lost_gdp_per_capita.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-war_counterfactual_lost_gdp_per_capita.qmd >}}
+
+:::
+
+### Total Life-Years Lost to War Since 1900: 8.37 billion life-years {#sec-war_life_years_lost_since_1900}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Total life-years stolen by war since 1900 (deaths x avg years lost per death)
+
+**Inputs**:
+
+- [Total War and Conflict Deaths Since 1900](#sec-war_deaths_since_1900): 310 million deaths (95% CI: 200 million deaths - 340 million deaths)
+- [Average Years of Life Lost per War Death](#sec-war_avg_years_life_lost_per_death): 27 years (95% CI: 20 years - 35 years)
+
+$$
+\begin{gathered}
+YLL_{war,total} \\
+= Deaths_{war,1900} \times YLL_{war} \\
+= 310M \times 27 \\
+= 8.37B
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-war_life_years_lost_since_1900.qmd >}}
+
+{{< include ../figures/sensitivity-table-war_life_years_lost_since_1900.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-war_life_years_lost_since_1900.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-war_life_years_lost_since_1900.qmd >}}
+
+:::
+
+### QALY Value of Life Lost to War Since 1900: $1.26 quadrillion {#sec-war_qaly_value_lost_since_1900}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Economic value of life-years destroyed by war since 1900, at $150K/QALY
+
+**Inputs**:
+
+- [Total Life-Years Lost to War Since 1900](#sec-war_life_years_lost_since_1900) 🔢: 8.37 billion life-years
+- [Standard Economic Value per QALY](#sec-standard_economic_qaly_value_usd) 📊: $150,000 (SE: ±$30,000)
+
+$$
+\begin{gathered}
+V_{war,QALY} \\
+= YLL_{war,total} \times Value_{QALY} \\
+= 8.37B \times \$150K \\
+= \$1260T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+YLL_{war,total} \\
+= Deaths_{war,1900} \times YLL_{war} \\
+= 310M \times 27 \\
+= 8.37B
+\end{gathered}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-war_qaly_value_lost_since_1900.qmd >}}
+
+{{< include ../figures/sensitivity-table-war_qaly_value_lost_since_1900.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-war_qaly_value_lost_since_1900.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-war_qaly_value_lost_since_1900.qmd >}}
+
+:::
+
+### Total Historical Cost of War Since 1900: $1.48 quadrillion {#sec-war_total_cost_since_1900}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Total historical sunk cost of war since 1900: military spending ($170T) + property destruction ($45T) + environmental ($5T) + QALY value of lives ($1.26Q).
+
+**Inputs**:
+
+- [Cumulative Military Spending (Fed Era)](#sec-cumulative_military_spending_fed_era): $170 trillion
+- [Cumulative Property Destruction from War Since 1900](#sec-war_property_destruction_since_1900): $45 trillion (95% CI: $30 trillion - $60 trillion)
+- [Cumulative Environmental Destruction from War Since 1900](#sec-war_environmental_destruction_since_1900): $5 trillion (95% CI: $2 trillion - $10 trillion)
+- [QALY Value of Life Lost to War Since 1900](#sec-war_qaly_value_lost_since_1900) 🔢: $1.26 quadrillion
+
+$$
+\begin{gathered}
+C_{war,hist} \\
+= Spending_{mil,cum,fed} + D_{property} + D_{env} \\
++ V_{war,QALY} \\
+= \$170T + \$45T + \$5T + \$1260T \\
+= \$1480T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+V_{war,QALY} \\
+= YLL_{war,total} \times Value_{QALY} \\
+= 8.37B \times \$150K \\
+= \$1260T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+YLL_{war,total} \\
+= Deaths_{war,1900} \times YLL_{war} \\
+= 310M \times 27 \\
+= 8.37B
+\end{gathered}
+$$
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-war_total_cost_since_1900.qmd >}}
+
+{{< include ../figures/sensitivity-table-war_total_cost_since_1900.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-war_total_cost_since_1900.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-war_total_cost_since_1900.qmd >}}
+
+:::
+
+### Excess Military Spending Above 1900 Freeze: $135 trillion {#sec-war_trial_redirect_excess_military_spending_above_1900_freeze}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Dataset-derived aggregate: cumulative global military spending above a 1900 real-spending freeze, 1900-2024, calculated from knowledge/data/global-military-spending-1900-2024-constant-2023-usd.csv (Correlates of War NMC) as the sum of max(0, annual spending - 1900 baseline) across years. The stricter medical redirect pot, distinct from total cumulative military spending.
+
+**Inputs**:
+
+- [1900 Military Spending Freeze Baseline](#sec-war_trial_redirect_1900_freeze_baseline_annual) 📊: $66.1 billion (95% CI: $50 billion - $90 billion)
+
+$$
+\begin{gathered}
+Spending_{mil,excess1900} \\
+= \sum_{t=1900}^{2024} \max\left(0, Spending_{mil,t} - Spending_{mil,1900}\right) \\
+= \sum_{t=1900}^{2024} \max\left(0, Spending_{mil,t} - \$66.1B\right) \\
+= \$135T
+\end{gathered}
+$$
+
+**Methodology**: [@correlates-of-war-nmc]
+
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-war_trial_redirect_excess_military_spending_above_1900_freeze.qmd >}}
+
+{{< include ../figures/sensitivity-table-war_trial_redirect_excess_military_spending_above_1900_freeze.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-war_trial_redirect_excess_military_spending_above_1900_freeze.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-war_trial_redirect_excess_military_spending_above_1900_freeze.qmd >}}
+
+:::
+
 ### Excess Military Spending Above 1900 Freeze in Clinical Trial Years: 29,937 years {#sec-war_trial_redirect_excess_military_trial_years}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -5042,7 +6972,7 @@ Clinical-trial years funded by military spending above a 1900 real-spending free
 
 **Inputs**:
 
-- [Excess Military Spending Above 1900 Freeze](#sec-war_trial_redirect_excess_military_spending_above_1900_freeze) 📊: $135 trillion (95% CI: $100 trillion - $170 trillion)
+- [Excess Military Spending Above 1900 Freeze](#sec-war_trial_redirect_excess_military_spending_above_1900_freeze) 🔢: $135 trillion
 - [Annual Global Government Spending on Clinical Trials](#sec-global_government_clinical_trials_spending_annual) 📊: $4.5 billion (95% CI: $3 billion - $6 billion)
 
 $$
@@ -5053,7 +6983,15 @@ Years_{excess1900 \to trials,gov} \\
 = 29{,}900
 \end{gathered}
 $$
-
+where:
+$$
+\begin{gathered}
+Spending_{mil,excess1900} \\
+= \sum_{t=1900}^{2024} \max\left(0, Spending_{mil,t} - Spending_{mil,1900}\right) \\
+= \sum_{t=1900}^{2024} \max\left(0, Spending_{mil,t} - \$66.1B\right) \\
+= \$135T
+\end{gathered}
+$$
 *? Low confidence*
 
 #### Sensitivity Analysis
@@ -5155,6 +7093,38 @@ Disability weight for untreated chronic conditions (WHO Global Burden of Disease
 {{< include ../figures/distribution-chronic_disease_disability_weight.qmd >}}
 
 *~ Medium confidence • 📊 Peer-reviewed*
+
+:::
+
+### Corporate Analog False Claims Act Treble Multiplier: 3x {#sec-corporate_analog_false_claims_treble_multiplier}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Treble-damages multiplier from the False Claims Act, used here as the corporate-defendant analogy for audit and public-money claims in Humanity v. Government.
+
+**Source**: [@doj-false-claims-act]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*✓ High confidence*
+
+:::
+
+### State Farm Constitutional-Ceiling Exposure Multiplier: 10x {#sec-corporate_damages_state_farm_ceiling_multiplier}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Total exposure multiplier for a 9:1 punitive-to-compensatory ratio, meaning base damages plus nine times base damages. Used as constitutional-ceiling exposure under State Farm v. Campbell, not a typical award.
+
+**Source**: [@state-farm-v-campbell-2003]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*✓ High confidence*
 
 :::
 
@@ -5794,6 +7764,26 @@ Global nominal GDP (2025 estimate). From Political Dysfunction Tax paper citing 
 
 :::
 
+### Global GDP per Capita in 1900: $3,150 {#sec-global_gdp_per_capita_1900}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Global GDP per capita in 1900 in constant 2024 USD. Maddison Project: ~$1,260 in 1990 international dollars, adjusted to 2024 USD (~2.5x).
+
+**Source**: [@maddison-project-2020]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Normal (SE: $500)
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_gdp_per_capita_1900.qmd >}}
+
+*~ Medium confidence*
+
+:::
+
 ### Annual Global Government Spending on Clinical Trials: $4.5 billion {#sec-global_government_clinical_trials_spending_annual}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -5815,6 +7805,22 @@ Annual global government spending on interventional clinical trials (~5-10% of t
 {{< include ../figures/distribution-global_government_clinical_trials_spending_annual.qmd >}}
 
 *✓ High confidence*
+
+:::
+
+### Global Government Expense Share of GDP: 31.8% {#sec-global_government_expense_pct_gdp}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+World general government total expense as a share of GDP, using World Bank indicator GC.XPN.TOTL.GD.ZS. The most recent world aggregate in the cited source is 2021.
+
+**Source**: [@world-bank-government-expense-pct-gdp]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*~ Medium confidence*
 
 :::
 
@@ -6354,25 +8360,25 @@ Value of Statistical Life (conservative estimate)
 
 :::
 
-### Excess Military Spending Above 1900 Freeze: $135 trillion {#sec-war_trial_redirect_excess_military_spending_above_1900_freeze}
+### 1900 Military Spending Freeze Baseline: $66.1 billion {#sec-war_trial_redirect_1900_freeze_baseline_annual}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Dataset-derived aggregate: cumulative global military spending above a 1900 real-spending freeze, 1900-2024, computed offline from knowledge/data/global-military-spending-1900-2024-constant-2023-usd.csv (Correlates of War NMC) as the sum of max(0, annual spending - 1900 baseline) across years. Marked EXTERNAL because the parameter system reserves CALCULATED for derivations whose uncertainty is propagated from other Parameter inputs; this aggregate's uncertainty band reflects dataset and methodology uncertainty in the underlying CSV. The stricter medical redirect pot, distinct from total cumulative military spending.
+Global military spending in 1900 in constant 2023 USD, from the Correlates of War National Material Capabilities (NMC) dataset (knowledge/data/global-military-spending-1900-2024-constant-2023-usd.csv, COW_NMC source). Used as the annual real spending cap in the 1900-freeze counterfactual.
 
 **Source**: [@correlates-of-war-nmc]
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$100 trillion, $170 trillion] • Distribution: Uniform
+**Technical**: 95% CI: [$50 billion, $90 billion] • Distribution: Uniform
 
-**What this means**: There's significant uncertainty here. The true value likely falls between $100 trillion and $170 trillion (±26%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: There's significant uncertainty here. The true value likely falls between $50 billion and $90 billion (±30%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The uniform distribution means any value in the range is equally likely.*
 
 #### Input Distribution
 
-{{< include ../figures/distribution-war_trial_redirect_excess_military_spending_above_1900_freeze.qmd >}}
+{{< include ../figures/distribution-war_trial_redirect_1900_freeze_baseline_annual.qmd >}}
 
 *? Low confidence*
 
@@ -6413,6 +8419,20 @@ Average years of life extension per person saved by pharmaceutical interventions
 #### Input Distribution
 
 {{< include ../figures/distribution-avg_life_extension_per_beneficiary.qmd >}}
+
+*Core definition*
+
+:::
+
+### Corporate Damages Drugs Never Developed Deaths: 300 million deaths {#sec-corporate_damages_drugs_never_developed_deaths}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Aggressive prosecutor pleading estimate for deaths from drugs never developed because regulatory cost and misallocated trial capacity suppressed development. Based on the Humanity v. Government exclusion note that drugs never developed may double or triple Count Two; this uses the high end of that pleading range.
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
 
 *Core definition*
 
@@ -6700,6 +8720,28 @@ Average military-to-medicine reallocation share over 20 years under the optimist
 
 :::
 
+### Average Years of Life Lost per War Death: 27 years {#sec-war_avg_years_life_lost_per_death}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Average years of life lost per war/conflict death. Based on avg age at death ~28 (soldiers ~23, civilians older) vs mid-century life expectancy ~55.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [20 years, 35 years] • Distribution: Uniform
+
+**What this means**: There's significant uncertainty here. The true value likely falls between 20 years and 35 years (±28%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The uniform distribution means any value in the range is equally likely.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-war_avg_years_life_lost_per_death.qmd >}}
+
+*Core definition*
+
+:::
+
 ### Child Share of War Deaths Since 1900: 33% {#sec-war_child_death_pct}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -6722,6 +8764,28 @@ Estimated share of war deaths since 1900 that were children under 18. Constructe
 
 :::
 
+### Peace Growth Boost (8 Channels, Overlap-Corrected): 2.6% {#sec-war_counterfactual_annual_growth_boost}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Stacked annual growth boost from 8 non-overlapping war channels. Ch1: productive reallocation 0.8-1.5pp (budget + innovation merged). Ch2: preserved capital 0.2-0.4pp. Ch3: population 0.2-0.4pp. Ch4: no trade drag 0.1-0.3pp. Ch5: no environmental damage 0.1-0.2pp. Ch6: no Cold War isolation 0.1-0.3pp. Ch7: better institutions 0.1-0.3pp. Ch8: open scientific collaboration 0.05-0.15pp. Low 1.65pp, mid 2.6pp, high 3.55pp.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [1.65%, 3.55%] • Distribution: Uniform
+
+**What this means**: There's significant uncertainty here. The true value likely falls between 1.65% and 3.55% (±37%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The uniform distribution means any value in the range is equally likely.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-war_counterfactual_annual_growth_boost.qmd >}}
+
+*Core definition*
+
+:::
+
 ### Total War and Conflict Deaths Since 1900: 310 million deaths {#sec-war_deaths_since_1900}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -6739,6 +8803,50 @@ Total deaths from wars, conflicts, genocides, and policy-induced famines since 1
 #### Input Distribution
 
 {{< include ../figures/distribution-war_deaths_since_1900.qmd >}}
+
+*Core definition*
+
+:::
+
+### Cumulative Environmental Destruction from War Since 1900: $5 trillion {#sec-war_environmental_destruction_since_1900}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Cumulative environmental destruction from wars since 1900 (2024 USD). Nuclear testing, Agent Orange, Gulf War oil fires, DU contamination, Zone Rouge, military CO2 emissions, land mines.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$2 trillion, $10 trillion] • Distribution: Lognormal
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between $2 trillion and $10 trillion (±80%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-war_environmental_destruction_since_1900.qmd >}}
+
+*Core definition*
+
+:::
+
+### Cumulative Property Destruction from War Since 1900: $45 trillion {#sec-war_property_destruction_since_1900}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Cumulative property and infrastructure destruction from major wars since 1900 (2024 USD). WWI ~$5T, WWII ~$23T, Korea ~$0.5T, Vietnam ~$1T, post-9/11 ~$8T, other ~$7.5T.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$30 trillion, $60 trillion] • Distribution: Uniform
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $30 trillion and $60 trillion (±33%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The uniform distribution means any value in the range is equally likely.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-war_property_destruction_since_1900.qmd >}}
 
 *Core definition*
 

@@ -1878,6 +1878,13 @@ def generate_auto_latex(
         numeric = f"{b['formatted']} \\times ({a['formatted']} + {c['formatted']}) \\times {d['formatted']}"
         latex = f"{lhs_short} = {symbolic} = {numeric} = {result_formatted}"
 
+    elif operation == 'complex' and len(input_data) == 1 and (getattr(param_value, 'formula', '') or '').startswith('for t='):
+        # Dataset time-series sum: X = sum_t max(0, Spending_t - baseline)
+        baseline = input_data[0]
+        symbolic = f"\\sum_{{t=1900}}^{{2024}} \\max\\left(0, Spending_{{mil,t}} - {baseline['symbolic']}\\right)"
+        numeric = f"\\sum_{{t=1900}}^{{2024}} \\max\\left(0, Spending_{{mil,t}} - {baseline['formatted']}\\right)"
+        latex = f"{lhs_short} = {symbolic} = {numeric} = {result_formatted}"
+
     else:
         # Unrecognized operation - check if there's a hardcoded latex
         hardcoded_latex = getattr(param_value, 'latex', None)

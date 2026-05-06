@@ -20,14 +20,14 @@ display_name = "Excess Military Spending Above 1900 Freeze in Clinical Trial Yea
 
 # Baseline and units
 
-baseline = 29936.88888888889
+baseline = 29936.68897304427
 
 # Tornado data from sensitivity analysis
 
-drivers = ['GLOBAL_GOVERNMENT_CLINICAL_TRIALS_SPENDING_ANNUAL', 'WAR_TRIAL_REDIRECT_EXCESS_MILITARY_SPENDING_ABOVE_1900_FREEZE']
-driver_labels = ['Annual Global Government Spending on Clinical Trials', 'Excess Military Spending Above 1900 Freeze']
-impacts_low = [14968.444444444445, -7714.666666666668]
-impacts_high = [-7484.222222222223, 7840.8888888888905]
+drivers = ['GLOBAL_GOVERNMENT_CLINICAL_TRIALS_SPENDING_ANNUAL', 'WAR_TRIAL_REDIRECT_1900_FREEZE_BASELINE_ANNUAL']
+driver_labels = ['Annual Global Government Spending on Clinical Trials', '1900 Military Spending Freeze Baseline']
+impacts_low = [14968.344486522139, 411.0248586679845]
+impacts_high = [-7484.172243261066, -549.0015311207899]
 
 # Convert deltas to absolute values (baseline + delta)
 

@@ -1,7 +1,7 @@
 ---
 title: "The Court of Humanity"
-subtitle: "Constitutional Architecture for Removing Sovereign Immunity from Negligent Mass Homicide"
-description: A decentralized court where {{< var global_population_2024_nounit >}} humans are the jury, sovereign immunity is a choice nobody chose, and the 1% Treaty becomes the settlement offer governments accept to cap their exposure to mass-death accountability.
+subtitle: "Constitutional Architecture for Refusing Sovereign Immunity in Negligent Mass Homicide"
+description: A decentralized court where {{< var global_population_2024_nounit >}} humans are the jury, sovereign immunity is not recognized as a defense, and the 1% Treaty becomes the settlement offer governments accept to cap their exposure to mass-death accountability.
 abstract: |
   Sovereign immunity is the legal doctrine preventing private parties from suing
   governments without the government's consent. The doctrine descends from
@@ -13,7 +13,8 @@ abstract: |
   may be any human; defendants may be any government; juries are stratified
   random samples of verified humans drawn proportionally from the global
   population, voting on factual questions with formula-determined structural
-  remedy. Enforcement is not coercive but *capital*: judgments can be priced into
+  remedy. The Court does not recognize sovereign immunity as a defense.
+  Enforcement is not coercive but *capital*: judgments can be priced into
   sovereign bond yields, insurance premia, trade flows, and procurement
   decisions. Applying regulatory life valuations to historical and projected
   government-attributable mortality (war, regulatory delay, misallocation; see
@@ -104,21 +105,37 @@ A "protection racket" is when a powerful entity provides "protection" against th
 
 The question for you is not whether sovereign immunity is *correct*. The question is whether you noticed it exists, and whether, having noticed, you are willing to leave it in place.
 
-## The Damages Math
+## The Corporate Damages Posture
 
 Your governments' own actuaries value a statistical human life at roughly {{< var value_of_statistical_life >}} ([the standard regulatory valuation](../appendix/political-dysfunction-tax.qmd) used by the EPA, DOT, and FDA). This is not the same thing as a court-awarded wrongful-death verdict. It is the number governments already use when deciding how many deaths a policy is allowed to buy.
 
-The damages model has to keep separate things separate. [Humanity v. Government](../appendix/humanity-v-government.qmd) establishes the liability theory. [Cost of War](../problem/cost-of-war.qmd#the-medical-opportunity-cost) supplies the historical opportunity-cost counterfactual. [1% Treaty Impact](../economics/1-pct-treaty-impact.qmd) [@1-pct-treaty-impact-paper-2025] supplies the forward settlement value if the remedy is adopted now.
+The damages model uses the same posture a prosecutor would use against a corporate defendant: plead every viable theory, prove the strongest ledgers first, then prevent double recovery at judgment. Corporate prosecution doctrine already separates restitution, fines, victim compensation, compliance measures, monitors, debarment, disgorgement, and remedial orders [@doj-federal-prosecution-business-organizations; @ussc-organizational-guidelines-2025]. The Court of Humanity applies that structure to the larger organization currently calling itself government.
 
-| Ledger | Measure | What it establishes |
+Your existing system already uses this posture against corporations. Pfizer paid $2.3 billion in a 2009 health-care fraud resolution [@doj-pfizer-2009-health-care-fraud-settlement]. BP's Deepwater Horizon civil settlement reached $20.8 billion [@doj-bp-deepwater-horizon-20-8b-settlement]. Volkswagen paid $4.3 billion in criminal and civil penalties and accepted a corporate monitor after cheating emissions tests [@doj-volkswagen-4-3b-2017]. The Court is not inventing the remedy stack. It is applying the existing corporate remedy stack to a defendant whose revenue, customer base, and body count are larger.
+
+The model has to keep separate things separate. [Humanity v. Government](../appendix/humanity-v-government.qmd) establishes the liability theory. [Cost of War](../problem/cost-of-war.qmd#the-medical-opportunity-cost) supplies the historical opportunity-cost counterfactual. [1% Treaty Impact](../economics/1-pct-treaty-impact.qmd) [@1-pct-treaty-impact-paper-2025] supplies the forward settlement value if the remedy is adopted now.
+
+| Remedy ledger | Measure | What it establishes |
 |---|---|---|
-| One. Direct killing through war | {{< var war_deaths_since_1900_nounit >}} deaths since 1900 | Traditional mass-fatality exposure. |
-| Two. Regulatory delay | {{< var existing_drugs_efficacy_lag_deaths_total_nounit >}} deaths since 1962 | A forum for deaths hidden inside delay. |
-| Count Three, historical | Disease-control dates in the 1900 redirect counterfactual | The drugs and public-health systems that did not arrive because the money went to war. |
-| Count Three, forward | {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved_nounit >}} future deaths prevented by the treaty remedy | The value of settling now instead of continuing the offense. |
-| **Aggregate exposure** | Separate ledgers above | Too large for ordinary compensation; useful as settlement leverage. |
+| Compensation | {{< var war_deaths_since_1900_nounit >}} war deaths, {{< var existing_drugs_efficacy_lag_deaths_total_nounit >}} efficacy-lag deaths, and related healthy life-years lost | Victim harm, using VSL or QALY/DALY methods as alternatives. |
+| Restitution | {{< var war_trial_redirect_excess_military_spending_above_1900_freeze >}} above the 1900 freeze | Entrusted funds that should have become treatment discovery capacity. |
+| Audit and fraud exposure | {{< var pentagon_unaccounted_funds >}} unaccounted, or {{< var pentagon_unaccounted_false_claims_analog_exposure >}} under a False Claims Act-style treble analogy | What ordinary corporate treatment of missing public funds would imply [@doj-false-claims-act]. |
+| Disgorgement | Defense-contractor gains, revolving-door compensation, procurement rents | Gains retained from the offense, separated from victim compensation. |
+| Remediation | 1% Treaty funding, clinical-trial trust, independent audit monitor, debarment, clawbacks | Structural cure and risk reduction. |
+| Forward settlement | {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved_nounit >}} future deaths prevented by the treaty remedy | The value of settling now instead of continuing the offense. |
 
-The table deliberately does not add every line into one central damages number. VSL deaths, DALYs, lost GDP, and punitive multipliers are different legal theories. Add them all together and the spreadsheet starts lying.
+The table deliberately does not add every line into one central damages number. VSL deaths, DALYs, lost GDP, restitution, disgorgement, and punitive multipliers are different legal theories. Add them all together and the spreadsheet starts lying.
+
+Keeping ledgers separate does not mean the prosecution lacks a demand. It means the Court prevents double recovery at judgment while allowing the prosecutor to plead the strongest corporate-liability number. The headline base ask is {{< var corporate_damages_prosecutor_base_ask_per_capita >}} per living human. The strict floor is what a cautious court could award. The prosecutor's base ask is the aggressive corporate-liability demand. Punitive damages, disgorgement, ongoing lost-income damages, and the forward treaty settlement value are pleaded separately.
+
+| Prosecutor posture | Per living human | Status |
+|---|---:|---|
+| Strict floor | {{< var corporate_damages_strict_floor_per_capita >}} | Cautious non-duplicative award. |
+| Prosecutor base ask | {{< var corporate_damages_prosecutor_base_ask_per_capita >}} | Aggressive historical corporate-liability demand. |
+| Treble-style exposure | {{< var corporate_damages_treble_exposure_per_capita >}} | False Claims Act-style penalty exposure. |
+| Constitutional-ceiling exposure under *State Farm v. Campbell* | {{< var corporate_damages_state_farm_ceiling_exposure_per_capita >}} | Base ask plus a 9:1 punitive-to-compensatory ceiling, exposure only [@state-farm-v-campbell-2003]. |
+| Ongoing lost prosperity | {{< var war_counterfactual_lost_gdp_per_capita >}}/person/year | Annual damages flow, not a one-time stock. |
+| Forward treaty settlement value | {{< var corporate_damages_forward_settlement_value_per_capita >}} | Separate settlement value from adopting the remedy now. |
 
 For context, global GDP is approximately {{< var global_gdp_2025 >}} per year. Even a heavily discounted exposure is larger than ordinary compensation can handle.
 
@@ -132,7 +149,7 @@ Here is what the Court of Humanity looks like, stripped of the jargon your legal
 
 **Who can file.** Any human, anywhere. No nationality requirement. No lawyer required. You submit evidence and select the closest matching case template, or file as "novel" for full procedure. Filing is free or carries a small refundable bond. On most planets, this is considered so obvious that describing it feels like explaining that water is wet.
 
-**Who gets sued.** Any government, anywhere. The Court does not begin with defendant consent, because your species already tried that and the defendants who most need suing are the ones who decline to be sued. The Court's claim to authority derives from the consent of *humans*, who are, in any honest description of how political authority works, the actual sovereign. Its legal force grows as states, courts, bond contracts, procurement rules, and treaty parties choose to recognize that claim.
+**Who gets sued.** Any government, anywhere. The Court does not begin with defendant consent, because your species already tried that and the defendants who most need suing are the ones who decline to be sued. Sovereign immunity is not a defense in this court. It is an exhibit. The Court's claim to authority derives from the consent of *humans*, who are, in any honest description of how political authority works, the actual sovereign. Its legal force grows as states, courts, bond contracts, procurement rules, and treaty parties choose to recognize that claim.
 
 **Templates.** Most of the terrible things governments do are not creative. They pattern-match. FDA delay killing a cancer patient looks like FDA delay killing a heart patient looks like FDA delay killing a Parkinson's patient. Drone strikes under disputed rationale look like other drone strikes under disputed rationale. So the Court pre-publishes case templates: what must be proven, what evidence looks like, and what the structural remedy is (typically a percentage redirect to a public trust, an automatic injunction, or a contribution to a victim-compensation fund). The templates themselves are drafted, debated, and ratified through global deliberative referenda, not by a committee of lawyers in a conference room.
 

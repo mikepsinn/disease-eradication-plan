@@ -71,9 +71,17 @@ scores:
 
 Having observed your planet for the past 80 years and your governments for somewhat longer than that, I hereby submit the following indictment to the court of common sense.
 
-The defendants are the governments of Earth, collectively. The charges are three counts of negligent mass homicide. The aggravating factor is that the defendants pay their own prosecutors, judges, and juries, then write their own laws about whether anything they do can be called a crime. We will be ignoring this last point because the alternative is to let approximately 11 billion humans die quietly while we file paperwork.
+The defendants are the governments of Earth, collectively. The charges are three counts of negligent mass homicide. The aggravating factor is that the defendants pay their own prosecutors, judges, and juries, then write their own laws about whether anything they do can be called a crime. We will be ignoring this last point because the alternative is to let billions of humans die quietly while we file paperwork.
 
 This case is brought by the **International Campaign to End War and Disease** (the Campaign), modeled on the International Campaign to Ban Landmines and the International Campaign to Abolish Nuclear Weapons. Both predecessor campaigns received Nobel Peace Prizes for asking governments to sign treaties. The Campaign asks governments to settle a lawsuit. The institutional architecture for the lawsuit is described in [The Court of Humanity](../solution/court-of-humanity.qmd). The settlement vehicle is described in [The 1% Treaty](../solution/1-percent-treaty.qmd) [@1-pct-treaty-impact-paper-2025]. The body count is described below.
+
+## Corporate Defendant Theory
+
+The jurisdictional ruling is simple: in the [Court of Humanity](../solution/court-of-humanity.qmd), [sovereign immunity](../solution/court-of-humanity.qmd) is not recognized as a defense. The defendants collectively bill the species approximately {{< var global_government_expense_annual >}} per year [@world-bank-government-expense-pct-gdp] to promote welfare, safety, health, and peace. They are therefore judged under the same corporate-defendant standard applied to any organization that takes entrusted funds, kills its own customers, fails to maintain books and records, and then asks the victims to admire the logo.
+
+Under that standard, the public is not an abstraction. Citizens and taxpayers are the customers, shareholders, employers, beneficiaries, and victims. Heads of state, ministers, legislators, agency heads, generals, central bankers, procurement officers, and defense contractors are actors inside the enterprise. The prosecution applies the same logic ordinary corporate prosecutors already use: seriousness of the offense, pervasiveness of the misconduct, management culpability, victim harm, restitution, compliance failure, individual accountability, debarment, monitors, and remedial orders [@doj-federal-prosecution-business-organizations; @ussc-organizational-guidelines-2025].
+
+The defendants will object that governments are special. The Court of Humanity answers: yes. They are special because the customer base is the species, the revenue stream is compulsory, the body count is planetary, and the accounting department owns nuclear weapons. The standard should be higher, not lower.
 
 ## Count One: Death by War
 
@@ -255,7 +263,7 @@ The pattern is the precise pattern of Charge 17. Each line above is a law that c
 
 The charges file in different forums, in different order, for different reasons. Count One (war) has the most viscerally obvious harm and the most jurisdictionally available forum, because existing international and domestic courts already accept wrongful-death and war-crime claims under their existing rules. Counts Two and Three, plus the antecedent financial charges, require the new institution because no existing court accepts the underlying claim. Within the Court of Humanity, the prosecution leads with the case that has the tightest causation chain. That is the audit case. After the audit case wins, Count Two follows. After Count Two wins, Count Three follows. Count One runs in parallel the entire time, in existing courts.
 
-**Audit case filed first in the [Court of Humanity](../solution/court-of-humanity.qmd).** The audit case is the tightest causation chain in this entire paper, by a margin. No counterfactual reasoning is required. The conduct is the failure to account. The damage is the unaccounted funds. The breach is the failure of fiduciary stewardship. The evidence is the {{< var pentagon_unaccounted_funds >}} of seven-times-failed audit reports, which the defendants produced themselves and have published on their own website. A jury reading the audit reports does not need to evaluate any hypothetical. The reports state the conclusion. The defendants signed them. The audit case has no other forum because, as documented in the antecedent-charges section above, the defendants have surgically removed the jurisdiction of every existing court that might have heard it. This is itself the strongest available evidence that the Court of Humanity is necessary: not because the conduct is novel, but because the immunity is comprehensive.
+**Audit case filed first in the [Court of Humanity](../solution/court-of-humanity.qmd).** The audit case is the tightest causation chain in this entire paper, by a margin. No counterfactual reasoning is required. The conduct is the failure to account. The damage is the unaccounted funds. The breach is the failure of fiduciary stewardship. The evidence is the {{< var pentagon_unaccounted_funds >}} of seven-times-failed audit reports, which the defendants produced themselves and have published on their own website. A jury reading the audit reports does not need to evaluate an alternate timeline. The reports state the conclusion. The defendants signed them. The audit case has no other forum because, as documented in the antecedent-charges section above, the defendants have surgically removed the jurisdiction of every existing court that might have heard it. This is itself the strongest available evidence that the Court of Humanity is necessary: not because the conduct is novel, but because the immunity is comprehensive.
 
 **Count Two filed second in the Court of Humanity.** The causal chain is the next-tightest: a specific drug existed, evidence of its efficacy existed, the government delayed its approval, a specific named person died during the delay, the drug was later approved and now saves lives in countries with faster regulatory regimes. The reasoning still involves a counterfactual ("would have lived if approved sooner"), but the counterfactual is constrained to a single drug and a single delay window. Compare to Count Three's counterfactual, which spans decades of R&D budget allocation across the entire pharmaceutical pipeline. Count Two's named victims are now indexed in the [Invisible Graveyard](invisible-graveyard.qmd), one drug at a time, with photographs and family testimony attached. This is how every major class action works. The prosecution does not sue a chemical company for "generally polluting the earth." It sues for "this specific chemical, in this specific water supply, caused this specific cancer, in these specific people." Once the prosecution wins that, it expands.
 
@@ -276,6 +284,46 @@ The prosecution distinguishes between two categories of homicide for clarity.
 The defense will argue that counterfactual deaths are categorically different from direct deaths. The prosecution agrees, in one specific way: counterfactual deaths are larger by a factor of approximately 30. The defense's preferred category is the smaller one.
 
 In legal doctrine, the distinction tracks **commission** versus **omission**. Common-law systems generally treat omission as criminal only where there is a duty to act. The defendants accept salaries, write founding documents, and swear oaths to act. The duty is established. The omission is established. The deaths are established. The remaining elements are present.
+
+## Proof Elements
+
+| Element | Corporate-defendant standard | Evidence in this case |
+|---|---|---|
+| Duty | The organization accepted entrusted funds for a stated public-benefit service. | Approximately {{< var global_government_expense_annual >}} per year [@world-bank-government-expense-pct-gdp], taxes, public budgets, constitutional welfare clauses, public-health mandates, defense appropriations justified as protection. |
+| Breach | Management diverted resources, ignored foreseeable harm, failed controls, and continued after warnings. | War spending, regulatory delay, military growth above the 1900 freeze, seven failed Pentagon audits, and published warnings from Eisenhower, Peltzman, Rummel, Lichtenberg, Tabarrok, and GAO. |
+| Causation | The breach directly caused deaths or foreseeably withheld the means to prevent deaths. | Count One direct killing; Count Two named treatment delays; Count Three treatment discovery and loss-of-chance causation through the medical redirect ledger. |
+| Damages | The law separates compensation, restitution, disgorgement, penalties, remediation, and settlement. | War deaths, disease deaths, healthy life-years lost, lost output, excess military spending, unaccounted funds, contractor gains, and the treaty remedy. |
+
+## Corporate Damages Schedule
+
+The audit row is the tightest single damages number in the case. Everything else is larger. This one is easiest to prove: the defendants published the failed audits themselves.
+
+| Damages category | Corporate analog | Measure in this case | Counting rule |
+|---|---|---|---|
+| Compensatory war harm | Wrongful death, injury, property destruction, environmental tort | {{< var war_deaths_since_1900_nounit >}} deaths; {{< var war_total_cost_since_1900 >}} historical sunk cost, including {{< var war_qaly_value_lost_since_1900 >}} in stolen life-year value | Do not add the included QALY component again as a separate central number. |
+| Consequential medical harm | Failure to perform paid safety and welfare service | Existing-drug efficacy lag plus the 1900 medical redirect counterfactual in [Cost of War](../problem/cost-of-war.qmd#the-medical-opportunity-cost) | Plead as consequential and loss-of-chance damages, not literal proof that every disease death has one named defendant. |
+| Restitution | Return misused entrusted funds | {{< var war_trial_redirect_excess_military_spending_above_1900_freeze >}} above the 1900 freeze | This is the medical redirect pot, not the whole war-cost ledger. |
+| Audit and books-records exposure | False Claims Act, Sarbanes-Oxley, fiduciary accounting | {{< var pentagon_unaccounted_funds >}} unaccounted; {{< var pentagon_unaccounted_false_claims_analog_exposure >}} under a {{< var corporate_analog_false_claims_treble_multiplier >}} False Claims Act-style analogy [@doj-false-claims-act] | The treble figure is an analogy to corporate treatment of false public-money claims, not a claim that existing sovereign courts already apply the FCA to governments. |
+| Disgorgement | Remove gains retained from the offense | Defense-contractor gains, revolving-door compensation, war-profiteering proceeds, procurement rents | Qualitative in this version unless a verified profit or gross-receipts parameter is added. |
+| Remediation | Monitor, trust fund, debarment, corrective action | 1% Treaty funding, clinical-trial trust, independent audit monitor, debarment and clawbacks where traceable | Forward-looking remedy, priced separately from historical damages. |
+| Punitive and exemplary exposure | Willful-recklessness penalty | Pleaded for repeated warnings ignored after the body count was knowable | Kept separate from compensatory and restitution ledgers. |
+
+## The Prosecutor's Demand
+
+The aggressive corporate-liability demand is {{< var corporate_damages_prosecutor_base_ask_per_capita >}} per living human. This is not the most cautious number. It is the number a prosecutor asks for after treating governments like any other enterprise paid {{< var global_government_expense_annual >}} per year to promote welfare, safety, health, and peace.
+
+The strict floor is what a cautious court could award. The prosecutor's base ask is the aggressive corporate-liability demand. Punitive damages, disgorgement, ongoing lost-income damages, and the forward treaty settlement value are pleaded separately.
+
+| Tier | Total exposure | Per living human | Counting rule |
+|---|---:|---:|---|
+| Strict non-duplicative floor | {{< var corporate_damages_strict_floor_total >}} | {{< var corporate_damages_strict_floor_per_capita >}} | War-death VSL, existing-drug efficacy-lag VSL, property plus environmental destruction, excess military spending above the 1900 freeze, and the Pentagon FCA-style penalty increment. |
+| Prosecutor base ask | {{< var corporate_damages_prosecutor_base_ask_total >}} | {{< var corporate_damages_prosecutor_base_ask_per_capita >}} | Strict floor plus {{< var corporate_damages_drugs_never_developed_deaths_nounit >}} aggressive pleading deaths from drugs never developed. |
+| Treble-style exposure | {{< var corporate_damages_treble_exposure_total >}} | {{< var corporate_damages_treble_exposure_per_capita >}} | False Claims Act-style trebling of the base ask, pleaded as penalty exposure rather than ordinary compensation [@doj-false-claims-act]. |
+| Constitutional-ceiling exposure under *State Farm v. Campbell* | {{< var corporate_damages_state_farm_ceiling_exposure_total >}} | {{< var corporate_damages_state_farm_ceiling_exposure_per_capita >}} | Base ask plus a 9:1 punitive-to-compensatory ceiling. This is exposure, not a typical award [@state-farm-v-campbell-2003]. |
+| Ongoing lost prosperity | {{< var war_counterfactual_lost_gdp_global >}} per year | {{< var war_counterfactual_lost_gdp_per_capita >}}/person/year | Consequential lost-income flow. It accrues annually until the no-war growth gap is cured. |
+| Forward treaty settlement value | {{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}} | {{< var corporate_damages_forward_settlement_value_per_capita >}} | Settlement value from adopting the 1% Treaty now, not historical damages. |
+
+The base ask excludes punitive damages, disgorgement, ongoing lost-income damages, and treaty settlement value. It also avoids the unsupported broader disease-delay claim that would require a separate historical disease-control model. If the prosecution later pleads a wider disease-delay sensitivity, it belongs in its own ledger with its own causation proof.
 
 ## The Aggregate Exposure
 
@@ -351,7 +399,7 @@ The defense will invoke Thalidomide. They always invoke Thalidomide. It is the o
 
 The prosecution further stipulates: name a single post-1962 Thalidomide. The defense will struggle. The handful of post-approval safety withdrawals (Vioxx, Rezulin, fen-phen) account for an estimated 55,000 to 100,000 deaths total across 60 years [@vioxx-deaths]. The efficacy lag killed {{< var existing_drugs_efficacy_lag_deaths_total_nounit >}}. The ratio is {{< var type_ii_error_cost_ratio >}} to one [@invisible-graveyard-paper-2025].
 
-The prosecution further notes: drugs available in Europe but blocked in the United States by the FDA's Phase II/III delay include propranolol (delayed for cardiac arrhythmia, costing approximately 100,000 American lives [@peltzman-1973]), beta blockers in general, and dozens of others. These are not hypothetical. These are named drugs, with named diseases, and named patients who died in the United States while the same compounds were prescribed routinely in Germany, France, and the United Kingdom. The defense's preferred system killed approximately 100,000 Americans because it was uncertain whether propranolol worked, while German doctors prescribed it for fifteen years with the answer.
+The prosecution further notes: drugs available in Europe but blocked in the United States by the FDA's Phase II/III delay include propranolol (delayed for cardiac arrhythmia, costing approximately 100,000 American lives [@peltzman-1973]), beta blockers in general, and dozens of others. These are named drugs, with named diseases, and named patients who died in the United States while the same compounds were prescribed routinely in Germany, France, and the United Kingdom. The defense's preferred system killed approximately 100,000 Americans because it was uncertain whether propranolol worked, while German doctors prescribed it for fifteen years with the answer.
 
 The [decentralized FDA](../solution/dfda.qmd) model proposed in [@dfda-spec-paper-2025; @dfda-impact-paper-2025] would generate real-time efficacy data orders of magnitude faster than the current system, with outcomes published rather than buried in proprietary trial reports. The defense's preferred system optimizes for *not knowing* whether drugs work. Ours optimizes for *knowing*.
 
@@ -376,17 +424,17 @@ The defense's framing of this as "honest disagreement" requires a redefinition o
 
 **Defense Argument 7: "[Sovereign immunity](../solution/court-of-humanity.qmd). You cannot bring this case in any court that exists."**
 
-The defense will argue that the entire indictment is procedurally void, because under sovereign-immunity doctrine, governments cannot be sued without their own consent. The Federal Tort Claims Act explicitly excludes military activities and discretionary policy choices, which is the entire prosecution's case. The court has no jurisdiction.
+The defense will argue that existing sovereign courts decline the indictment because governments cannot be sued without their own consent. The Federal Tort Claims Act explicitly excludes military activities and discretionary policy choices, which is the entire prosecution's case. The defendants will call this jurisdiction.
 
-*Rebuttal:* This is the strongest defense argument. The prosecution concedes its truth and submits that the defendants' own concession converts every other defense into nonsense.
+*Rebuttal:* Yes, in any sovereign court. The Court of Humanity does not recognize sovereign immunity as a defense. The defendants' immunity doctrines are admitted as evidence of the obstruction count.
 
 The defendants wrote the laws that immunize the defendants from prosecution for the specific conduct alleged. They did not do this accidentally. They did this because they understood the conduct was indictable under any neutral standard, and chose to engineer the standard rather than the conduct. This is itself the most damning piece of evidence in the case. *The defendants' first response to discovering the body count was to make the body count un-litigable.*
 
 The prosecution's response is the [Court of Humanity](../solution/court-of-humanity.qmd), a decentralized adjudication mechanism that derives legitimacy from human consent rather than sovereign consent, with verdicts rendered by verified humans and judgments enforced not by coercion but by capital-markets pricing of the resulting liability. The defendants cannot withdraw consent that was never theirs to give. Applying standard regulatory life valuations to the historical body counts, and then separately pricing the forward settlement exposure, yields economic exposure far beyond any government's ability to pay. The defendants cannot pay the full exposure. They can, however, settle. The [1% Treaty](../solution/1-percent-treaty.qmd) [@1-pct-treaty-impact-paper-2025] is the settlement vehicle.
 
-The prosecution therefore brings this case in the only court that retains jurisdiction: the court of public attention. The remedy is not awarded by a judge. It is awarded by 8 billion humans noticing that the procedural shield exists. The shield falls when the public stops respecting it, and the public stops respecting it when someone counts the bodies in one place. Which is what this paper does.
+The prosecution therefore brings this case in the only court that did not sign the defendants' waiver: the court of humanity itself. The remedy is awarded by humans noticing that the procedural shield exists, refusing to respect it, and pricing the defendants accordingly.
 
-The defense's procedural argument is the case's procedural problem, and the case's procedural problem is the reason for [Article VI of the proposed remedy](../solution/1-percent-treaty.qmd), which routes enforcement through bondholder lawsuits rather than citizen lawsuits, taking advantage of the one category of plaintiff the defendants cannot ignore: rich people with retainer agreements.
+The defense's procedural argument is not a defense in this court. It is the reason for [Article VI of the proposed remedy](../solution/1-percent-treaty.qmd), which routes enforcement through bondholder lawsuits rather than citizen lawsuits, taking advantage of the one category of plaintiff the defendants cannot ignore: rich people with retainer agreements.
 
 **Defense Argument 8: "These deaths were the price of civilization. Without governments, the toll would be worse."**
 

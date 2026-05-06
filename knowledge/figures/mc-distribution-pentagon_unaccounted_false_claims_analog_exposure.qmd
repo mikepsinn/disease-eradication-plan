@@ -1,0 +1,9 @@
+**Monte Carlo note:** Pentagon Unaccounted Funds False Claims Analog Exposure is effectively deterministic across the current sampled inputs, so a histogram would mostly visualize floating-point residue instead of real uncertainty. (range 0.000e+00 <= tolerance 7.380e+00)
+
+| Statistic | Value |
+|:----------|------:|
+| Baseline (deterministic) | $7.38 trillion |
+| Mean (expected value) | $7.38 trillion |
+| Median (50th percentile) | $7.38 trillion |
+| Standard Deviation | $0 |
+| 90% Range (5th-95th percentile) | [$7.38 trillion, $7.38 trillion] |

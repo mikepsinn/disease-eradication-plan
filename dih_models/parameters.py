@@ -15,9 +15,11 @@ Usage:
 """
 from __future__ import annotations
 
+import csv
 import math
 import warnings
 from enum import Enum
+from pathlib import Path
 from typing import Optional, List, Tuple, Union, Callable, Any  # noqa: F401
 
 # Import compute context type for type-safe compute lambdas
@@ -39,6 +41,23 @@ try:
 except ImportError:
     # Handle direct execution (not as package)
     from manual_ref_validation import normalize_manual_ref
+
+
+def _sum_excess_military_spending_above_1900_freeze(baseline_annual_usd: float) -> float:
+    if baseline_annual_usd < 1_000_000_000:
+        raise ValueError("baseline_annual_usd must be in dollars")
+    data_path = (
+        Path(__file__).resolve().parents[1]
+        / "knowledge"
+        / "data"
+        / "global-military-spending-1900-2024-constant-2023-usd.csv"
+    )
+    with data_path.open(newline="", encoding="utf-8") as handle:
+        rows = csv.DictReader(handle)
+        return sum(
+            max(0.0, float(row["Spending_2023_USD_Billions"]) * 1_000_000_000 - baseline_annual_usd)
+            for row in rows
+        )
 
 
 # ============================================================================
@@ -1683,6 +1702,38 @@ PENTAGON_UNACCOUNTED_FUNDS = Parameter(
     distribution="fixed",
     keywords=["pentagon", "dod", "audit", "misplaced", "unaccounted", "2.46 trillion"],
     latex_symbol=r"Funds_{pentagon,unaccounted}",
+)
+
+CORPORATE_ANALOG_FALSE_CLAIMS_TREBLE_MULTIPLIER = Parameter(
+    3,
+    manual_ref="knowledge/appendix/humanity-v-government.qmd",
+    source_ref=ReferenceID.DOJ_FALSE_CLAIMS_ACT,
+    source_type=SourceType.EXTERNAL,
+    description="Treble-damages multiplier from the False Claims Act, used here as the corporate-defendant "
+                "analogy for audit and public-money claims in Humanity v. Government.",
+    display_name="Corporate Analog False Claims Act Treble Multiplier",
+    unit="multiplier",
+    distribution="fixed",
+    keywords=["corporate", "false claims", "treble damages", "pentagon", "audit", "damages"],
+    latex_symbol=r"m_{FCA}",
+)
+
+PENTAGON_UNACCOUNTED_FALSE_CLAIMS_ANALOG_EXPOSURE = Parameter(
+    PENTAGON_UNACCOUNTED_FUNDS * CORPORATE_ANALOG_FALSE_CLAIMS_TREBLE_MULTIPLIER,
+    manual_ref="knowledge/appendix/humanity-v-government.qmd",
+    source_type=SourceType.CALCULATED,
+    description="False Claims Act-style treble-damages exposure on Pentagon unaccounted funds, used as a "
+                "corporate-defendant audit analogy rather than a literal claim under existing sovereign law.",
+    display_name="Pentagon Unaccounted Funds False Claims Analog Exposure",
+    unit="USD",
+    formula="PENTAGON_UNACCOUNTED_FUNDS × CORPORATE_ANALOG_FALSE_CLAIMS_TREBLE_MULTIPLIER",
+    inputs=["PENTAGON_UNACCOUNTED_FUNDS", "CORPORATE_ANALOG_FALSE_CLAIMS_TREBLE_MULTIPLIER"],
+    compute=lambda ctx: (
+        ctx["PENTAGON_UNACCOUNTED_FUNDS"]
+        * ctx["CORPORATE_ANALOG_FALSE_CLAIMS_TREBLE_MULTIPLIER"]
+    ),
+    keywords=["pentagon", "false claims", "treble damages", "audit", "corporate", "exposure"],
+    latex_symbol=r"Exposure_{pentagon,FCA}",
 )
 
 PENTAGON_UNACCOUNTED_CLINICAL_TRIAL_YEARS = Parameter(
@@ -3465,24 +3516,21 @@ WAR_TRIAL_REDIRECT_1900_FREEZE_BASELINE_ANNUAL = Parameter(
 )
 
 WAR_TRIAL_REDIRECT_EXCESS_MILITARY_SPENDING_ABOVE_1900_FREEZE = Parameter(
-    134_716_000_000_000,
+    _sum_excess_military_spending_above_1900_freeze(float(WAR_TRIAL_REDIRECT_1900_FREEZE_BASELINE_ANNUAL)),
     manual_ref="knowledge/problem/cost-of-war.qmd",
     source_ref=ReferenceID.CORRELATES_OF_WAR_NMC,
-    source_type=SourceType.EXTERNAL,
+    source_type=SourceType.CALCULATED,
     confidence="low",
-    description="Dataset-derived aggregate: cumulative global military spending above a 1900 real-"
-                "spending freeze, 1900-2024, computed offline from "
-                "knowledge/data/global-military-spending-1900-2024-constant-2023-usd.csv "
-                "(Correlates of War NMC) as the sum of max(0, annual spending - 1900 baseline) "
-                "across years. Marked EXTERNAL because the parameter system reserves CALCULATED "
-                "for derivations whose uncertainty is propagated from other Parameter inputs; this "
-                "aggregate's uncertainty band reflects dataset and methodology uncertainty in the "
-                "underlying CSV. The stricter medical redirect pot, distinct from total cumulative "
-                "military spending.",
+    description="Dataset-derived aggregate: cumulative global military spending above a 1900 real-spending "
+                "freeze, 1900-2024, calculated from knowledge/data/global-military-spending-1900-2024-"
+                "constant-2023-usd.csv (Correlates of War NMC) as the sum of max(0, annual spending - "
+                "1900 baseline) across years. The stricter medical redirect pot, distinct from total "
+                "cumulative military spending.",
     display_name="Excess Military Spending Above 1900 Freeze",
     unit="USD",
-    distribution="uniform",
-    confidence_interval=(100_000_000_000_000, 170_000_000_000_000),
+    formula="for t=1900..2024: sum max(0, MILITARY_SPENDING_YEAR - WAR_TRIAL_REDIRECT_1900_FREEZE_BASELINE_ANNUAL)",
+    inputs=["WAR_TRIAL_REDIRECT_1900_FREEZE_BASELINE_ANNUAL"],
+    compute=lambda ctx: _sum_excess_military_spending_above_1900_freeze(ctx["WAR_TRIAL_REDIRECT_1900_FREEZE_BASELINE_ANNUAL"]),
     keywords=["war", "military", "1900", "freeze", "excess", "counterfactual", "clinical trials"],
     latex_symbol=r"Spending_{mil,excess1900}",
 )
@@ -3581,6 +3629,37 @@ GLOBAL_GDP_2025 = Parameter(
     unit="USD",
     keywords=["GDP", "global", "world", "economy", "2025"],
     latex_symbol=r"GDP_{global}",
+)
+
+GLOBAL_GOVERNMENT_EXPENSE_PCT_GDP = Parameter(
+    0.3178,
+    manual_ref="knowledge/appendix/humanity-v-government.qmd",
+    source_ref=ReferenceID.WORLD_BANK_GOVERNMENT_EXPENSE_PCT_GDP,
+    source_type=SourceType.EXTERNAL,
+    confidence="medium",
+    distribution="fixed",
+    description="World general government total expense as a share of GDP, using World Bank indicator "
+                "GC.XPN.TOTL.GD.ZS. The most recent world aggregate in the cited source is 2021.",
+    display_name="Global Government Expense Share of GDP",
+    unit="percent",
+    keywords=["government", "expense", "GDP", "public spending", "world bank", "taxes"],
+    latex_symbol=r"p_{gov,expense}",
+)
+
+GLOBAL_GOVERNMENT_EXPENSE_ANNUAL = Parameter(
+    GLOBAL_GDP_2025 * GLOBAL_GOVERNMENT_EXPENSE_PCT_GDP,
+    manual_ref="knowledge/appendix/humanity-v-government.qmd",
+    source_type=SourceType.CALCULATED,
+    confidence="medium",
+    description="Approximate annual global government expenditure, computed as global GDP times the "
+                "World Bank general-government expense share of GDP.",
+    display_name="Annual Global Government Expense",
+    unit="USD/year",
+    formula="GLOBAL_GDP_2025 × GLOBAL_GOVERNMENT_EXPENSE_PCT_GDP",
+    inputs=["GLOBAL_GDP_2025", "GLOBAL_GOVERNMENT_EXPENSE_PCT_GDP"],
+    compute=lambda ctx: ctx["GLOBAL_GDP_2025"] * ctx["GLOBAL_GOVERNMENT_EXPENSE_PCT_GDP"],
+    keywords=["government", "expense", "annual", "public spending", "taxes", "global"],
+    latex_symbol=r"Expense_{gov,global}",
 )
 
 # Population
@@ -7811,6 +7890,243 @@ DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_ECONOMIC_VALUE = Parameter(
     inputs=['DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS', 'STANDARD_ECONOMIC_QALY_VALUE_USD'],
     compute=lambda ctx: ctx["DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS"] * ctx["STANDARD_ECONOMIC_QALY_VALUE_USD"],
     latex_symbol=r"Value_{max}",  # LaTeX symbol for equations
+)
+
+CORPORATE_DAMAGES_WAR_DEATHS_VSL = Parameter(
+    WAR_DEATHS_SINCE_1900 * VALUE_OF_STATISTICAL_LIFE,
+    manual_ref="knowledge/appendix/humanity-v-government.qmd",
+    source_type=SourceType.CALCULATED,
+    description="Corporate-defendant wrongful-death valuation for war deaths since 1900 using the standard value of a statistical life.",
+    display_name="Corporate Damages War Deaths VSL",
+    unit="USD",
+    formula="WAR_DEATHS_SINCE_1900 * VALUE_OF_STATISTICAL_LIFE",
+    inputs=["WAR_DEATHS_SINCE_1900", "VALUE_OF_STATISTICAL_LIFE"],
+    compute=lambda ctx: ctx["WAR_DEATHS_SINCE_1900"] * ctx["VALUE_OF_STATISTICAL_LIFE"],
+    keywords=["corporate", "damages", "war deaths", "VSL", "prosecutor"],
+    latex_symbol=r"V_{war,VSL}",
+)
+
+CORPORATE_DAMAGES_EFFICACY_LAG_DEATHS_VSL = Parameter(
+    EXISTING_DRUGS_EFFICACY_LAG_DEATHS_TOTAL * VALUE_OF_STATISTICAL_LIFE,
+    manual_ref="knowledge/appendix/humanity-v-government.qmd",
+    source_type=SourceType.CALCULATED,
+    description="Corporate-defendant wrongful-death valuation for existing-drug efficacy-lag deaths using the standard value of a statistical life.",
+    display_name="Corporate Damages Efficacy Lag Deaths VSL",
+    unit="USD",
+    formula="EXISTING_DRUGS_EFFICACY_LAG_DEATHS_TOTAL * VALUE_OF_STATISTICAL_LIFE",
+    inputs=["EXISTING_DRUGS_EFFICACY_LAG_DEATHS_TOTAL", "VALUE_OF_STATISTICAL_LIFE"],
+    compute=lambda ctx: ctx["EXISTING_DRUGS_EFFICACY_LAG_DEATHS_TOTAL"] * ctx["VALUE_OF_STATISTICAL_LIFE"],
+    keywords=["corporate", "damages", "efficacy lag", "VSL", "prosecutor"],
+    latex_symbol=r"V_{lag,VSL}",
+)
+
+CORPORATE_DAMAGES_DRUGS_NEVER_DEVELOPED_DEATHS = Parameter(
+    300_000_000,
+    manual_ref="knowledge/appendix/humanity-v-government.qmd",
+    source_type=SourceType.DEFINITION,
+    description="Aggressive prosecutor pleading estimate for deaths from drugs never developed because regulatory cost and misallocated trial capacity suppressed development. Based on the Humanity v. Government exclusion note that drugs never developed may double or triple Count Two; this uses the high end of that pleading range.",
+    display_name="Corporate Damages Drugs Never Developed Deaths",
+    unit="deaths",
+    distribution="fixed",
+    keywords=["corporate", "damages", "drugs never developed", "Count Two", "prosecutor"],
+    latex_symbol=r"Deaths_{neverdev}",
+)
+
+CORPORATE_DAMAGES_DRUGS_NEVER_DEVELOPED_VSL = Parameter(
+    CORPORATE_DAMAGES_DRUGS_NEVER_DEVELOPED_DEATHS * VALUE_OF_STATISTICAL_LIFE,
+    manual_ref="knowledge/appendix/humanity-v-government.qmd",
+    source_type=SourceType.CALCULATED,
+    description="Corporate-defendant wrongful-death valuation for the aggressive prosecutor estimate of deaths from drugs never developed.",
+    display_name="Corporate Damages Drugs Never Developed VSL",
+    unit="USD",
+    formula="CORPORATE_DAMAGES_DRUGS_NEVER_DEVELOPED_DEATHS * VALUE_OF_STATISTICAL_LIFE",
+    inputs=["CORPORATE_DAMAGES_DRUGS_NEVER_DEVELOPED_DEATHS", "VALUE_OF_STATISTICAL_LIFE"],
+    compute=lambda ctx: ctx["CORPORATE_DAMAGES_DRUGS_NEVER_DEVELOPED_DEATHS"] * ctx["VALUE_OF_STATISTICAL_LIFE"],
+    keywords=["corporate", "damages", "drugs never developed", "VSL", "prosecutor"],
+    latex_symbol=r"V_{neverdev,VSL}",
+)
+
+CORPORATE_DAMAGES_PROPERTY_ENVIRONMENTAL_DESTRUCTION = Parameter(
+    WAR_PROPERTY_DESTRUCTION_SINCE_1900 + WAR_ENVIRONMENTAL_DESTRUCTION_SINCE_1900,
+    manual_ref="knowledge/appendix/humanity-v-government.qmd",
+    source_type=SourceType.CALCULATED,
+    description="Property and environmental destruction from war since 1900, separated from war death valuation to avoid adding the QALY component embedded in the broader historical sunk-cost parameter.",
+    display_name="Corporate Damages Property Plus Environmental Destruction",
+    unit="USD",
+    formula="WAR_PROPERTY_DESTRUCTION_SINCE_1900 + WAR_ENVIRONMENTAL_DESTRUCTION_SINCE_1900",
+    inputs=["WAR_PROPERTY_DESTRUCTION_SINCE_1900", "WAR_ENVIRONMENTAL_DESTRUCTION_SINCE_1900"],
+    compute=lambda ctx: ctx["WAR_PROPERTY_DESTRUCTION_SINCE_1900"] + ctx["WAR_ENVIRONMENTAL_DESTRUCTION_SINCE_1900"],
+    keywords=["corporate", "damages", "property", "environmental", "war"],
+    latex_symbol=r"D_{property+env}",
+)
+
+CORPORATE_DAMAGES_PENTAGON_FCA_PENALTY_INCREMENT = Parameter(
+    PENTAGON_UNACCOUNTED_FALSE_CLAIMS_ANALOG_EXPOSURE - PENTAGON_UNACCOUNTED_FUNDS,
+    manual_ref="knowledge/appendix/humanity-v-government.qmd",
+    source_type=SourceType.CALCULATED,
+    description="False Claims Act-style penalty increment on Pentagon unaccounted funds, calculated as treble exposure minus principal so the principal is not counted twice.",
+    display_name="Corporate Damages Pentagon FCA Penalty Increment",
+    unit="USD",
+    formula="PENTAGON_UNACCOUNTED_FALSE_CLAIMS_ANALOG_EXPOSURE - PENTAGON_UNACCOUNTED_FUNDS",
+    inputs=["PENTAGON_UNACCOUNTED_FALSE_CLAIMS_ANALOG_EXPOSURE", "PENTAGON_UNACCOUNTED_FUNDS"],
+    compute=lambda ctx: ctx["PENTAGON_UNACCOUNTED_FALSE_CLAIMS_ANALOG_EXPOSURE"] - ctx["PENTAGON_UNACCOUNTED_FUNDS"],
+    keywords=["corporate", "damages", "false claims", "pentagon", "audit", "penalty increment"],
+    latex_symbol=r"Penalty_{pentagon,FCA}",
+)
+
+CORPORATE_DAMAGES_STRICT_FLOOR_TOTAL = Parameter(
+    CORPORATE_DAMAGES_WAR_DEATHS_VSL
+    + CORPORATE_DAMAGES_EFFICACY_LAG_DEATHS_VSL
+    + CORPORATE_DAMAGES_PROPERTY_ENVIRONMENTAL_DESTRUCTION
+    + WAR_TRIAL_REDIRECT_EXCESS_MILITARY_SPENDING_ABOVE_1900_FREEZE
+    + CORPORATE_DAMAGES_PENTAGON_FCA_PENALTY_INCREMENT,
+    manual_ref="knowledge/appendix/humanity-v-government.qmd",
+    source_type=SourceType.CALCULATED,
+    description="Strict non-duplicative corporate damages floor: war-death VSL, existing-drug efficacy-lag VSL, property and environmental destruction, excess military spending above the 1900 freeze, and the Pentagon FCA-style penalty increment.",
+    display_name="Corporate Damages Strict Floor Total",
+    unit="USD",
+    formula="CORPORATE_DAMAGES_WAR_DEATHS_VSL + CORPORATE_DAMAGES_EFFICACY_LAG_DEATHS_VSL + CORPORATE_DAMAGES_PROPERTY_ENVIRONMENTAL_DESTRUCTION + WAR_TRIAL_REDIRECT_EXCESS_MILITARY_SPENDING_ABOVE_1900_FREEZE + CORPORATE_DAMAGES_PENTAGON_FCA_PENALTY_INCREMENT",
+    inputs=[
+        "CORPORATE_DAMAGES_WAR_DEATHS_VSL",
+        "CORPORATE_DAMAGES_EFFICACY_LAG_DEATHS_VSL",
+        "CORPORATE_DAMAGES_PROPERTY_ENVIRONMENTAL_DESTRUCTION",
+        "WAR_TRIAL_REDIRECT_EXCESS_MILITARY_SPENDING_ABOVE_1900_FREEZE",
+        "CORPORATE_DAMAGES_PENTAGON_FCA_PENALTY_INCREMENT",
+    ],
+    compute=lambda ctx: (
+        ctx["CORPORATE_DAMAGES_WAR_DEATHS_VSL"]
+        + ctx["CORPORATE_DAMAGES_EFFICACY_LAG_DEATHS_VSL"]
+        + ctx["CORPORATE_DAMAGES_PROPERTY_ENVIRONMENTAL_DESTRUCTION"]
+        + ctx["WAR_TRIAL_REDIRECT_EXCESS_MILITARY_SPENDING_ABOVE_1900_FREEZE"]
+        + ctx["CORPORATE_DAMAGES_PENTAGON_FCA_PENALTY_INCREMENT"]
+    ),
+    keywords=["corporate", "damages", "strict floor", "non-duplicative", "prosecutor"],
+    latex_symbol=r"D_{corp,floor}",
+)
+
+CORPORATE_DAMAGES_STRICT_FLOOR_PER_CAPITA = Parameter(
+    CORPORATE_DAMAGES_STRICT_FLOOR_TOTAL / GLOBAL_POPULATION_2024,
+    manual_ref="knowledge/appendix/humanity-v-government.qmd",
+    source_type=SourceType.CALCULATED,
+    description="Strict non-duplicative corporate damages floor per living human.",
+    display_name="Corporate Damages Strict Floor Per Capita",
+    unit="USD/person",
+    formula="CORPORATE_DAMAGES_STRICT_FLOOR_TOTAL / GLOBAL_POPULATION_2024",
+    inputs=["CORPORATE_DAMAGES_STRICT_FLOOR_TOTAL", "GLOBAL_POPULATION_2024"],
+    compute=lambda ctx: ctx["CORPORATE_DAMAGES_STRICT_FLOOR_TOTAL"] / ctx["GLOBAL_POPULATION_2024"],
+    keywords=["corporate", "damages", "strict floor", "per capita", "prosecutor"],
+    latex_symbol=r"D_{corp,floor,pc}",
+)
+
+CORPORATE_DAMAGES_PROSECUTOR_BASE_ASK_TOTAL = Parameter(
+    CORPORATE_DAMAGES_STRICT_FLOOR_TOTAL + CORPORATE_DAMAGES_DRUGS_NEVER_DEVELOPED_VSL,
+    manual_ref="knowledge/appendix/humanity-v-government.qmd",
+    source_type=SourceType.CALCULATED,
+    description="Aggressive corporate-liability prosecutor base ask: strict floor plus the aggressive pleading estimate for deaths from drugs never developed. Excludes punitive damages, disgorgement, ongoing lost-income damages, and forward treaty settlement value.",
+    display_name="Corporate Damages Prosecutor Base Ask Total",
+    unit="USD",
+    formula="CORPORATE_DAMAGES_STRICT_FLOOR_TOTAL + CORPORATE_DAMAGES_DRUGS_NEVER_DEVELOPED_VSL",
+    inputs=["CORPORATE_DAMAGES_STRICT_FLOOR_TOTAL", "CORPORATE_DAMAGES_DRUGS_NEVER_DEVELOPED_VSL"],
+    compute=lambda ctx: ctx["CORPORATE_DAMAGES_STRICT_FLOOR_TOTAL"] + ctx["CORPORATE_DAMAGES_DRUGS_NEVER_DEVELOPED_VSL"],
+    keywords=["corporate", "damages", "base ask", "prosecutor", "drugs never developed"],
+    latex_symbol=r"D_{corp,ask}",
+)
+
+CORPORATE_DAMAGES_PROSECUTOR_BASE_ASK_PER_CAPITA = Parameter(
+    CORPORATE_DAMAGES_PROSECUTOR_BASE_ASK_TOTAL / GLOBAL_POPULATION_2024,
+    manual_ref="knowledge/appendix/humanity-v-government.qmd",
+    source_type=SourceType.CALCULATED,
+    description="Aggressive corporate-liability prosecutor base ask per living human.",
+    display_name="Corporate Damages Prosecutor Base Ask Per Capita",
+    unit="USD/person",
+    formula="CORPORATE_DAMAGES_PROSECUTOR_BASE_ASK_TOTAL / GLOBAL_POPULATION_2024",
+    inputs=["CORPORATE_DAMAGES_PROSECUTOR_BASE_ASK_TOTAL", "GLOBAL_POPULATION_2024"],
+    compute=lambda ctx: ctx["CORPORATE_DAMAGES_PROSECUTOR_BASE_ASK_TOTAL"] / ctx["GLOBAL_POPULATION_2024"],
+    keywords=["corporate", "damages", "base ask", "per capita", "prosecutor"],
+    latex_symbol=r"D_{corp,ask,pc}",
+)
+
+CORPORATE_DAMAGES_TREBLE_EXPOSURE_TOTAL = Parameter(
+    CORPORATE_DAMAGES_PROSECUTOR_BASE_ASK_TOTAL * CORPORATE_ANALOG_FALSE_CLAIMS_TREBLE_MULTIPLIER,
+    manual_ref="knowledge/appendix/humanity-v-government.qmd",
+    source_type=SourceType.CALCULATED,
+    description="Treble-style exposure if the prosecutor base ask is multiplied under a False Claims Act-style corporate penalty analogy.",
+    display_name="Corporate Damages Treble-Style Exposure Total",
+    unit="USD",
+    formula="CORPORATE_DAMAGES_PROSECUTOR_BASE_ASK_TOTAL * CORPORATE_ANALOG_FALSE_CLAIMS_TREBLE_MULTIPLIER",
+    inputs=["CORPORATE_DAMAGES_PROSECUTOR_BASE_ASK_TOTAL", "CORPORATE_ANALOG_FALSE_CLAIMS_TREBLE_MULTIPLIER"],
+    compute=lambda ctx: ctx["CORPORATE_DAMAGES_PROSECUTOR_BASE_ASK_TOTAL"] * ctx["CORPORATE_ANALOG_FALSE_CLAIMS_TREBLE_MULTIPLIER"],
+    keywords=["corporate", "damages", "treble", "false claims", "exposure"],
+    latex_symbol=r"D_{corp,treble}",
+)
+
+CORPORATE_DAMAGES_TREBLE_EXPOSURE_PER_CAPITA = Parameter(
+    CORPORATE_DAMAGES_TREBLE_EXPOSURE_TOTAL / GLOBAL_POPULATION_2024,
+    manual_ref="knowledge/appendix/humanity-v-government.qmd",
+    source_type=SourceType.CALCULATED,
+    description="Treble-style exposure per living human under the False Claims Act-style corporate penalty analogy.",
+    display_name="Corporate Damages Treble-Style Exposure Per Capita",
+    unit="USD/person",
+    formula="CORPORATE_DAMAGES_TREBLE_EXPOSURE_TOTAL / GLOBAL_POPULATION_2024",
+    inputs=["CORPORATE_DAMAGES_TREBLE_EXPOSURE_TOTAL", "GLOBAL_POPULATION_2024"],
+    compute=lambda ctx: ctx["CORPORATE_DAMAGES_TREBLE_EXPOSURE_TOTAL"] / ctx["GLOBAL_POPULATION_2024"],
+    keywords=["corporate", "damages", "treble", "per capita", "exposure"],
+    latex_symbol=r"D_{corp,treble,pc}",
+)
+
+CORPORATE_DAMAGES_STATE_FARM_CEILING_MULTIPLIER = Parameter(
+    10,
+    manual_ref="knowledge/appendix/humanity-v-government.qmd",
+    source_ref=ReferenceID.STATE_FARM_V_CAMPBELL_2003,
+    source_type=SourceType.EXTERNAL,
+    description="Total exposure multiplier for a 9:1 punitive-to-compensatory ratio, meaning base damages plus nine times base damages. Used as constitutional-ceiling exposure under State Farm v. Campbell, not a typical award.",
+    display_name="State Farm Constitutional-Ceiling Exposure Multiplier",
+    unit="multiplier",
+    distribution="fixed",
+    keywords=["corporate", "damages", "State Farm", "punitive", "constitutional ceiling"],
+    latex_symbol=r"m_{StateFarm}",
+)
+
+CORPORATE_DAMAGES_STATE_FARM_CEILING_EXPOSURE_TOTAL = Parameter(
+    CORPORATE_DAMAGES_PROSECUTOR_BASE_ASK_TOTAL * CORPORATE_DAMAGES_STATE_FARM_CEILING_MULTIPLIER,
+    manual_ref="knowledge/appendix/humanity-v-government.qmd",
+    source_type=SourceType.CALCULATED,
+    description="Constitutional-ceiling exposure under State Farm v. Campbell: prosecutor base ask plus a 9:1 punitive-to-compensatory multiplier. This is exposure, not a typical award.",
+    display_name="Corporate Damages State Farm Constitutional-Ceiling Exposure Total",
+    unit="USD",
+    formula="CORPORATE_DAMAGES_PROSECUTOR_BASE_ASK_TOTAL * CORPORATE_DAMAGES_STATE_FARM_CEILING_MULTIPLIER",
+    inputs=["CORPORATE_DAMAGES_PROSECUTOR_BASE_ASK_TOTAL", "CORPORATE_DAMAGES_STATE_FARM_CEILING_MULTIPLIER"],
+    compute=lambda ctx: ctx["CORPORATE_DAMAGES_PROSECUTOR_BASE_ASK_TOTAL"] * ctx["CORPORATE_DAMAGES_STATE_FARM_CEILING_MULTIPLIER"],
+    keywords=["corporate", "damages", "State Farm", "punitive", "constitutional ceiling", "exposure"],
+    latex_symbol=r"D_{corp,StateFarm}",
+)
+
+CORPORATE_DAMAGES_STATE_FARM_CEILING_EXPOSURE_PER_CAPITA = Parameter(
+    CORPORATE_DAMAGES_STATE_FARM_CEILING_EXPOSURE_TOTAL / GLOBAL_POPULATION_2024,
+    manual_ref="knowledge/appendix/humanity-v-government.qmd",
+    source_type=SourceType.CALCULATED,
+    description="Constitutional-ceiling exposure per living human under State Farm v. Campbell. This is exposure, not a typical award.",
+    display_name="Corporate Damages State Farm Constitutional-Ceiling Exposure Per Capita",
+    unit="USD/person",
+    formula="CORPORATE_DAMAGES_STATE_FARM_CEILING_EXPOSURE_TOTAL / GLOBAL_POPULATION_2024",
+    inputs=["CORPORATE_DAMAGES_STATE_FARM_CEILING_EXPOSURE_TOTAL", "GLOBAL_POPULATION_2024"],
+    compute=lambda ctx: ctx["CORPORATE_DAMAGES_STATE_FARM_CEILING_EXPOSURE_TOTAL"] / ctx["GLOBAL_POPULATION_2024"],
+    keywords=["corporate", "damages", "State Farm", "punitive", "per capita", "exposure"],
+    latex_symbol=r"D_{corp,StateFarm,pc}",
+)
+
+CORPORATE_DAMAGES_FORWARD_SETTLEMENT_VALUE_PER_CAPITA = Parameter(
+    DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_ECONOMIC_VALUE / GLOBAL_POPULATION_2024,
+    manual_ref="knowledge/solution/court-of-humanity.qmd",
+    source_type=SourceType.CALCULATED,
+    description="Forward treaty settlement value per living human from the 1% Treaty impact model. Kept separate from historical corporate damages.",
+    display_name="Corporate Damages Forward Settlement Value Per Capita",
+    unit="USD/person",
+    formula="DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_ECONOMIC_VALUE / GLOBAL_POPULATION_2024",
+    inputs=["DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_ECONOMIC_VALUE", "GLOBAL_POPULATION_2024"],
+    compute=lambda ctx: ctx["DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_ECONOMIC_VALUE"] / ctx["GLOBAL_POPULATION_2024"],
+    keywords=["corporate", "damages", "forward settlement", "treaty", "per capita"],
+    latex_symbol=r"V_{settlement,pc}",
 )
 
 DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_SUFFERING_HOURS = Parameter(
