@@ -80,6 +80,8 @@ scores:
 
 ## Abstract {.unnumbered}
 
+Thousands of jurisdictions have been running different policies for centuries. Some of them got richer. Some of them got healthier. Some of them did both. The data to figure out which policies worked already exists. Nobody has systematically harvested it. This is like having centuries of clinical trial data in a filing cabinet and never opening the cabinet.
+
 This specification describes the **Optimal Policy Generator (OPG)**, a framework for producing jurisdiction-specific policy recommendations from quasi-experimental evidence. OPG measures policy impact on two fundamental welfare dimensions: **real after-tax median income growth** (economic welfare) and **median healthy life years** (health welfare). These metrics capture the primary welfare effects of most policies while remaining directly interpretable.
 
 > **OPG output classes:** ENACT (add policy), REPLACE (adjust policy level), REPEAL (remove harmful policy), MAINTAIN (retain evidence-aligned policy).

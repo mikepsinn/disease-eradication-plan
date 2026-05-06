@@ -76,6 +76,8 @@ scores:
 
 ## Abstract {.unnumbered}
 
+Your government decides how much to spend on each category the same way it has for decades: last year's number, plus whatever the loudest lobbyist got added, minus whatever the latest crisis forced a cut on. This is called "the budget process." It has no optimization function. It has no feedback loop. It has no measurable objective. It is, in the technical sense, not a process at all. It is an accident that repeats annually.
+
 This specification describes the **Optimal Budget Generator (OBG)** framework, a systematic approach to generating integrated budget recommendations that maximize welfare as measured by two metrics: **real after-tax median income growth** and **median healthy life years**.
 
 ![Three ways to figure out optimal spending combine to show the gap between what you spend and what you should spend. The gap is filled with lobbyists.](/assets/images/optimal-budget-generator-spec/optimal-budget-generator-spec-section-abstract-unnumbered-bw-academic.jpg)

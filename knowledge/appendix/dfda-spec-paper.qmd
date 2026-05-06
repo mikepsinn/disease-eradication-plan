@@ -84,6 +84,8 @@ scores:
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 ## Abstract
 
+Right now, the way your species figures out if a drug works is: give it to 500 carefully selected people in a controlled environment for a few months, write a paper about it, and then give it to millions of unselected people in uncontrolled environments forever. If something goes wrong, you hope someone fills out a form. This is called "the gold standard." The gold is spray-painted.
+
 Current pharmacovigilance systems rely primarily on spontaneous adverse event reporting, which suffers from significant underreporting, lack of denominator data, and inability to quantify effect sizes. Meanwhile, the proliferation of wearable devices, health apps, and patient-reported outcomes has generated unprecedented volumes of longitudinal real-world data (RWD) that remain largely untapped for safety and efficacy signal detection.
 
 ![Step 1: Let computers watch a billion people take medicine. Step 2: Test the interesting bits. You were doing Step 2 first, which is why everything costs a billion dollars.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-abstract-bw-academic.jpg)

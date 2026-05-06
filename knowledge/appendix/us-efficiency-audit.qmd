@@ -55,6 +55,8 @@ scores:
 
 ## Executive Summary
 
+The United States federal government spends {{< var us_federal_spending_2024 >}} per year. It does not know what it gets for this. Nobody does. The Government Accountability Office has tried to find out and has produced 900 reports per year for decades. The departments read some of them. Nothing changed. This is the federal equivalent of a gym membership you pay for but never use, except the gym costs trillions and the treadmill is on fire.
+
 This audit applies engineering systems analysis to federal resource allocation. Rather than treating all "waste" as equivalent, we identify four distinct categories of dysfunction, each requiring different solutions:
 
 ### Dysfunction Category Breakdown
@@ -97,7 +99,7 @@ The efficiency gap represents capital that could fund the [1% Treaty](../solutio
 
 ### Designed Function
 
-The federal government's designed function is to convert fiscal inputs (federal outlays and imposed compliance burdens) into citizen welfare. We measure this conversion efficiency using two terminal outcomes:
+The federal government's designed function is to convert fiscal inputs (federal outlays and imposed compliance burdens) into citizen welfare. It is, in engineering terms, a machine that takes in money and produces quality of life. Any engineer looking at a machine that converts inputs to outputs at {{< var us_fed_discretionary_efficiency >}} efficiency would replace the machine. Your species instead feeds the machine more money. We measure this conversion efficiency using two terminal outcomes:
 
 1. **After-tax real median income growth**: measures economic welfare delivery
 2. **Median healthy life years (HALE)**: measures health and longevity delivery
@@ -137,7 +139,7 @@ These contextual figures imply a combined fiscal and compliance footprint in the
 
 ### Category Framework: Why Distinctions Matter
 
-Not all inefficiency is created equal. A dollar misspent in the federal budget requires a different remedy than a dollar consumed by tax compliance or a dollar of GDP lost to zoning restrictions. We organize dysfunction into four categories by **mechanism** and **solution pathway**:
+Calling everything "government waste" is like calling every medical problem "feeling bad." A broken arm and a brain tumor both make you feel bad, but the treatment is different. Similarly, a dollar misspent in the federal budget requires a different fix than a dollar consumed by tax compliance or a dollar of GDP lost to zoning restrictions. We organize dysfunction into four categories by **mechanism** and **solution pathway**:
 
 **Direct Federal Spending Waste ({{< var us_gov_waste_category_1_direct_spending >}})**
 
@@ -165,7 +167,7 @@ The solution is **system redesign**. Compare to Singapore's model: catastrophic 
 
 **Why This Categorization?**
 
-Lumping all {{< var us_gov_waste_total >}} together as "federal spending waste" is misleading and tactically foolish. Critics can correctly point out that zoning restrictions and tax compliance aren't "federal waste" in the traditional sense. But separately categorized, each claim becomes defensible:
+Saying "the government wastes {{< var us_gov_waste_total >}}" invites the response "that's not all waste!" Correct. Some of it is waste. Some of it is friction. Some of it is GDP that would exist if the government would get out of the way. Separately categorized, each claim becomes defensible:
 
 - {{< var us_gov_waste_category_1_direct_spending >}} in direct budget waste? Documented line-by-line.
 - {{< var us_gov_waste_category_2_compliance >}} in compliance burden? Tax Foundation + Competitive Enterprise Institute data.

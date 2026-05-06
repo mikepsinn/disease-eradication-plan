@@ -69,15 +69,11 @@ scores:
 
 ### The Political Impossibility Objection
 
-Policy analysts frequently encounter a distinctive form of objection: proposals that would generate large net benefits are dismissed as "politically impossible" due to opposition from concentrated interests. This objection is applied to carbon pricing [@nordhaus2013], agricultural subsidy reform [@orden2011], occupational licensing reform [@kleiner2006], military spending reallocation, and numerous other high-value policy changes.
+Every good idea in public policy eventually meets the same six words: "That will never happen politically." This is treated as a conversation-ender, like a law of physics. Gravity pulls things down. Politicians serve donors. Nothing to be done.
 
-The objection typically takes an implicit form: "Politicians will never vote against [industry X]" or "The [Y] lobby is too powerful." These statements treat political feasibility as binary (either possible or impossible) rather than as a cost that varies with the resources devoted to achieving change.
+This paper points out that "politically impossible" is not a law of physics. It is a price tag. Everything politicians do, they do because someone made it worth their while. The question is not whether change is possible, but how much it costs, and whether the benefits exceed the price.
 
-### Political Change as an Investment
-
-This paper argues that political feasibility should be analyzed using the same cost-benefit framework applied to other investments. Political actors (legislators, regulators, executives) respond to incentives. This is not a normative claim but an empirical observation: lobbying exists because it works, and campaign contributions correlate with legislative outcomes [@ansolabehere2003].
-
-If incentives affect political outcomes, then political change has a price. The question is not whether change is "possible" but whether the cost of achieving change is less than the value created. We formalize this as:
+The objection is applied to carbon pricing [@nordhaus2013], agricultural subsidy reform [@orden2011], occupational licensing reform [@kleiner2006], military spending reallocation, and numerous other high-value policy changes. Lobbying exists because it works. Campaign contributions correlate with legislative outcomes [@ansolabehere2003]. If incentives affect political outcomes, then political change has a price. We formalize this as:
 
 $$
 \text{Political Change is Rational if: } \quad C(p) < B(p) \times P(s|C)
@@ -85,17 +81,13 @@ $$
 
 Where $C(p)$ is the cost of achieving policy $p$, $B(p)$ is the benefit if successful, and $P(s|C)$ is the probability of success given investment $C$.
 
-### Contribution and Roadmap
+### What This Paper Does
 
-This paper makes three contributions:
+1. **Framework**: A general model for estimating political reform investment costs, decomposed into campaign finance, lobbying, and career value components. (How much does a senator cost? Not as much as you'd think.)
 
-1. **Framework**: We develop a general model for estimating political reform investment costs, decomposing them into campaign finance, lobbying, and career value components.
+2. **Empirical estimates**: Upper-bound estimates for US and global political systems, establishing that even maximum democratic engagement scenarios have quantifiable costs. (The answer for the US: about $25 billion. For the whole world: about $200 billion. This sounds like a lot until you compare it to the benefits.)
 
-2. **Empirical estimates**: We provide upper-bound estimates for US and global political systems, establishing that even maximum democratic engagement scenarios have quantifiable costs.
-
-3. **Case studies**: We apply the framework to multiple policy domains, demonstrating that high-NSV reforms yield positive expected value even under pessimistic assumptions about political costs.
-
-The remainder proceeds as follows: Section 2 reviews relevant literature. Section 3 presents the theoretical framework. Section 4 details our empirical methodology with uncertainty analysis. Section 5 applies the framework to military-to-health reallocation. Section 6 discusses limitations. Section 7 concludes.
+3. **Case studies**: Multiple policy domains, demonstrating that high-NSV reforms yield positive expected value even under pessimistic assumptions about political costs. (Military-to-health reallocation: 400,000:1 benefit-cost ratio. Four hundred thousand to one. The worst investment on this list still returns 1,000:1.)
 
 **Scale note.** The benefit side that this paper is pricing is enormous. Under the project's best-case governance ceiling, the recoverable upside is {{< var political_dysfunction_global_opportunity_cost_total >}} per year. Over 20 years, the [Wishonian](../futures/wishonia.qmd) [Optimal Governance Trajectory](../economics/gdp-trajectories.qmd) reaches {{< var wishonia_trajectory_gdp_vs_current_trajectory_multiplier_year_20 >}} the Earth baseline, raises average income to {{< var wishonia_trajectory_avg_income_year_20 >}} versus {{< var current_trajectory_avg_income_year_20 >}} on the status-quo path, and reaches {{< var wishonia_trajectory_gdp_year_20 >}} in total output. This paper focuses on the cost of getting there through democratic incentives and capital deployment; the full upside derivation lives in [The Political Dysfunction Tax](political-dysfunction-tax.qmd) [@political-dysfunction-tax-paper-2025].
 

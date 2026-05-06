@@ -96,7 +96,7 @@ The protocol has five parts:
 
 5. **Automated monetary policy.** Fixed algorithmic rule targeting 0% change in a rule-bound purchasing-power basket. A final-consumption settlement tax funds the budget, a separate stabilization component is burned or parked in reserve as needed, and new money creation equals productivity growth. The productivity dividend is distributed equally via UBI. Eliminates the Federal Reserve's discretionary monetary policy.
 
-These five primitives are interdependent. On Wishonia, we call this a system. On Earth, you call it five separate agencies with five separate budgets, five separate directors, and five separate lobbying targets. The ledger enables accountability without auditors. Wishocracy enables allocation without appropriators. The evidence engine enables informed preferences without policy analysts. Identity enables distribution without means-testing. Monetary policy enables stable prices without central bankers. Remove any primitive and the system degrades.
+These five primitives are interdependent. An engineer would call this a system. Your species calls it five separate agencies with five separate budgets, five separate directors, and five separate lobbying targets. The ledger enables accountability without auditors. Wishocracy enables allocation without appropriators. The evidence engine enables informed preferences without policy analysts. Identity enables distribution without means-testing. Monetary policy enables stable prices without central bankers. Remove any primitive and the system degrades.
 
 ## Monetary Policy and Revenue
 
@@ -158,7 +158,7 @@ The Consumer Price Index (CPI), compiled by the Bureau of Labor Statistics, has 
 - **Owner's equivalent rent.** Instead of measuring what housing actually costs, the BLS asks homeowners what they think their house would rent for. Housing prices doubled in many markets between 2020 and 2024. CPI barely noticed.
 - **Geometric weighting.** A technical adjustment that systematically lowers the measured rate by assuming you keep switching to whatever is cheapest. This is a math trick that makes inflation smaller on paper.
 
-The institution compiling CPI is the same government that benefits from reported inflation being low (lower Social Security COLA adjustments, lower inflation-indexed bond payouts, lower TIPS returns). On Wishonia, we do not let the defendant grade their own exam.
+The institution compiling CPI is the same government that benefits from reported inflation being low (lower Social Security COLA adjustments, lower inflation-indexed bond payouts, lower TIPS returns). No sane audit process lets the defendant grade their own exam.
 
 The protocol uses a different metric: **a rule-bound purchasing-power basket derived from actual settlement data on the ledger**. The algorithm does not rely on surveys or hedonic imputations. It observes actual cleared prices. For private transactions, the ledger exposes only the fields needed for macro measurement and tax collection: amount, standardized category, jurisdiction, and time bucket. Identities, counterparties, and item-level receipts remain private and are validated with zero-knowledge proofs. There is no owner's-equivalent-rent fiction because the system uses actual rents and observed housing transaction data.
 
@@ -197,7 +197,7 @@ Americans spend 6.1 billion hours per year on tax compliance. To put that in a u
 
 The IRS employs over 100,000 people (up from ~79,000 in 2021). The agency's own operating budget is about $14 billion, while the tax system built around it imposes {{< var us_gov_waste_tax_compliance >}} per year {{< var us_gov_waste_tax_compliance_cite >}} in direct compliance burden on the rest of society. Regulatory compliance adds another {{< var us_gov_waste_regulatory_red_tape >}} per year {{< var us_gov_waste_regulatory_red_tape_cite >}}.
 
-The compliance industry (tax preparers, accountants, software companies) has a structural interest in complexity. Intuit, the maker of TurboTax, has spent millions lobbying against IRS proposals to offer free, pre-filled tax returns. The IRS could pre-fill most returns using data it already has (employers report wages; banks report interest; brokerages report gains). It does not, partly because the compliance industry lobbies against it. You are paying to solve a problem that the people you are paying have a financial interest in not solving. On Wishonia, we have a word for this. The word is "protection racket." Yours is the same word. You just don't use it when the racketeer files a 10-K.
+The compliance industry (tax preparers, accountants, software companies) has a structural interest in complexity. Intuit, the maker of TurboTax, has spent millions lobbying against IRS proposals to offer free, pre-filled tax returns. The IRS could pre-fill most returns using data it already has (employers report wages; banks report interest; brokerages report gains). It does not, partly because the compliance industry lobbies against it. You are paying to solve a problem that the people you are paying have a financial interest in not solving. There is a word for this. The word is "protection racket." Your species uses the same word. You just don't apply it when the racketeer files a 10-K.
 
 ### What This Replaces
 
@@ -254,7 +254,7 @@ The administrative cost per dollar distributed varies by program, but the patter
 
 The cruelty is structural. The people who need help most (the disabled, the elderly, non-English speakers, the severely ill) are the least capable of navigating application processes. The system selects for form-filling ability, not need. A healthy 30-year-old with internet access can complete a SNAP application in an afternoon. A disabled 70-year-old who needs the benefits more urgently may not complete it at all. Social Security disability claims take an average of 7-8 months for initial determination (230 days in FY2024, up 81% from 121 days in 2019). Appeals take years. People die waiting. The system designed to prevent their suffering becomes, through administrative delay, the mechanism of their suffering.
 
-On Wishonia, we had a similar system once. We noticed that the gate cost more than what was behind it and removed the gate. This was not considered a radical policy innovation. It was considered arithmetic.
+The gate costs more than what is behind it. Removing the gate is not a radical policy innovation. It is arithmetic.
 
 ### The Protocol
 
@@ -264,7 +264,7 @@ The UBI has three funding layers. The **structural dividend** is the fiscal cash
 
 No application. No eligibility determination. No means test. No caseworker. No waiting period. The ledger verifies citizenship (identity layer), calculates the per-citizen amount (total UBI pool / citizen count), and distributes. Every day. To everyone.
 
-Maximum workable UBI does not mean pretending one flat check can replace civilization. It means cashing out everything that is fundamentally a transfer and making the residual exception layer brutally rule-bound. Catastrophic health risk remains pooled through a protocol-defined catastrophic insurance layer rather than a caseworker gate or a blank-check entitlement. Child education remains a per-child voucher or credit rather than adult cash. Everything else that is basically a transfer becomes cash. On Wishonia, this took us about a week to figure out. It took your species 89 federal programs.
+Maximum workable UBI does not mean pretending one flat check can replace civilization. It means cashing out everything that is fundamentally a transfer and making the residual exception layer brutally rule-bound. Catastrophic health risk remains pooled through a protocol-defined catastrophic insurance layer rather than a caseworker gate or a blank-check entitlement. Child education remains a per-child voucher or credit rather than adult cash. Everything else that is basically a transfer becomes cash. This should take about a week to figure out. It has taken your species 89 federal programs.
 
 The federal layer should therefore do only four things in distribution: guarantee the universal cash floor, guarantee catastrophic portability, finance child-linked base funding, and move money. States and localities should handle most service delivery: schools, land use, provider markets, supplementary services, and local top-ups. Incapacity cases are handled through explicit representative-payee or guardianship rules, not by recreating a giant means-tested bureaucracy. That is the maximum-cash design that still respects risk pooling, children, and federalism.
 
@@ -333,7 +333,7 @@ The Government Accountability Office employs approximately 3,600 staff, spends $
 
 The results are instructive. The Department of Defense has failed its financial audit every single year since audits became mandatory in 2018. Seven consecutive failures through FY2024. The Pentagon cannot account for where trillions of dollars went. The consequence of seven consecutive audit failures: nothing. No budget cut. No personnel change. No criminal investigation. The GAO identified the problem. Congress received the report. The report went into a filing cabinet. The filing cabinet went into a building. The building is still there. So is the problem.
 
-The Freedom of Information Act is the mechanism by which citizens can see how their money is spent. The average FOIA response time is measured in months; complex requests take years. Some agencies have backlogs exceeding 10,000 requests. The system designed to provide transparency has a waiting list. On Wishonia, we find the concept of a "transparency waiting list" remarkable. It is like a "visibility queue" at a window factory. The window exists. You are not allowed to look through it yet. Please take a number.
+The Freedom of Information Act is the mechanism by which citizens can see how their money is spent. The average FOIA response time is measured in months; complex requests take years. Some agencies have backlogs exceeding 10,000 requests. The system designed to provide transparency has a waiting list. The concept of a "transparency waiting list" is remarkable. It is like a "visibility queue" at a window factory. The window exists. You are not allowed to look through it yet. Please take a number.
 
 ### The Protocol
 
@@ -383,7 +383,7 @@ The lobbying industry's return on investment is extraordinary because the interm
 
 The United States Census Bureau spent $14.2 billion on the 2020 census. It counted everyone once. The count took months to process. By publication, it was already out of date. The next count is in 2030.
 
-Every American carries a GPS-enabled device that reports its location continuously to at least three private corporations. Your phone company knows where you are right now. Your search engine knows where you were yesterday. Your social media platform can estimate where you will be tomorrow. The government, which ostensibly needs to know where people are, spends $14.2 billion to find out approximately the same information, once per decade, less accurately, and several months late. On Wishonia, this would be performance art. On Earth, it is the Census Bureau.
+Every American carries a GPS-enabled device that reports its location continuously to at least three private corporations. Your phone company knows where you are right now. Your search engine knows where you were yesterday. Your social media platform can estimate where you will be tomorrow. The government, which ostensibly needs to know where people are, spends $14.2 billion to find out approximately the same information, once per decade, less accurately, and several months late. In a rational civilization, this would be performance art. On Earth, it is the Census Bureau.
 
 ### The Protocol
 

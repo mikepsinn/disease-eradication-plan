@@ -49,7 +49,9 @@ scores:
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 ## Executive Summary
 
-**The Problem:** {{< var diseases_without_effective_treatment >}} have zero FDA-approved treatments. We have {{< var safe_compounds_count >}} proven-safe compounds (FDA-approved drugs + GRAS substances), yet only {{< var exploration_ratio >}} of {{< var drug_disease_combinations_possible >}} plausible drug-disease combinations have been tested. At the current discovery rate of {{< var new_disease_first_treatments_per_year >}}, clearing this backlog would take ~{{< var status_quo_queue_clearance_years >}}. Of {{< var current_disease_patients_global >}} with chronic disease, only {{< var current_trial_slots_available >}} participate in trials annually ({{< var current_clinical_trial_participation_rate >}}).
+There are {{< var safe_compounds_count >}} that have already been proven safe for human consumption. There are {{< var diseases_without_effective_treatment >}} with zero approved treatments. The number of possible combinations between those safe compounds and those untreated diseases is {{< var drug_disease_combinations_possible >}}. The fraction that has actually been tested is {{< var exploration_ratio >}}. At the current rate of {{< var new_disease_first_treatments_per_year >}} per year, testing the rest would take ~{{< var status_quo_queue_clearance_years >}}. Your species is sitting on a combinatorial goldmine of potential cures and has chosen to explore it with a teaspoon.
+
+Of {{< var current_disease_patients_global >}} with chronic disease, only {{< var current_trial_slots_available >}} participate in trials annually ({{< var current_clinical_trial_participation_rate >}}).
 
 **The Solution:** A [decentralized FDA](../solution/dfda.qmd) [@dfda-spec-paper-2025; @dfda-impact-paper-2025], an open protocol (like HTTP/FHIR, not a competing platform) that existing DCT platforms, EHRs, and health apps adopt to integrate pragmatic clinical trials into standard healthcare, enabling:
 

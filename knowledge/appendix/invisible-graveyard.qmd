@@ -51,7 +51,7 @@ scores:
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 ## The Short Version
 
-The 1962 Kefauver-Harris Amendments require a {{< var efficacy_lag_years >}} efficacy delay after drugs are proven safe. This creates two distinct mortality costs:
+A drug is proven safe. It might cure your disease. The FDA says you cannot have it yet because they need {{< var efficacy_lag_years >}} to confirm it works (the 1962 Kefauver-Harris Amendments). You die during those {{< var efficacy_lag_years >}}. The drug is then approved and given to people who are not you, because you are dead. This has happened {{< var existing_drugs_efficacy_lag_deaths_total >}} times since 1962. It is called "consumer protection." Two distinct mortality costs:
 
 1. **Historical deaths (1962-2024):** {{< var existing_drugs_efficacy_lag_deaths_total_nounit >}} people died waiting for approved drugs during their approval process - a **lower bound** excluding drugs never developed due to cost barriers
 2. **Future timeline shift (under cascade assumption):** {{< var dfda_efficacy_lag_elimination_deaths_averted >}} additional deaths will occur because the entire disease eradication timeline is pushed back by {{< var efficacy_lag_years >}}

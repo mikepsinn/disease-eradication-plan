@@ -59,6 +59,8 @@ image: /assets/og-images/knowledge/appendix/earth-optimization-prize-protocol-og
 
 ## Introduction
 
+This is the wiring diagram. If the [Earth Optimization Prize](../strategy/earth-optimization-prize.qmd) [@earth-optimization-prize-paper-2025] is the promise ("make the world measurably better and collect money"), this paper is the plumbing that makes multiple independent prize pools work together without trusting each other. If you are not building software for this system, you can safely skip to the mechanism paper. If you are, everything below is load-bearing.
+
 The [Earth Optimization Prize](../strategy/earth-optimization-prize.qmd) [@earth-optimization-prize-paper-2025] is a same-pool outcome prize that rewards humanity for hitting two targets by {{< var destructive_economy_50pct_year >}}: global HALE reaching {{< var treaty_projected_hale_year_15 >}} and global median income reaching {{< var treaty_trajectory_avg_income_year_15 >}}. If the targets are not met, depositors divide the realized pool pro rata by deposits. If both targets are met, that same treasury releases to participants proportionally.
 
 Registration asks two questions:

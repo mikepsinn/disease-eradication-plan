@@ -81,17 +81,11 @@ scores:
 
 ### The Information-Incentive Disconnect
 
-A central puzzle in political economy is why policies with large positive net social welfare often fail to be adopted. The economic case for many global public goods, including climate mitigation, pandemic preparedness, and clinical trials, is overwhelming, yet governments don't do them. **The conventional diagnosis is wrong**: the problem is not lack of information or resources, but wrong incentives.
+Your species has known for decades which government programs save the most lives per dollar. You have ranked them. You have published the rankings. You have held conferences about the rankings. Then you funded the programs at the bottom of the list and defunded the programs at the top. This is not a knowledge problem. It is an incentive problem. The people who decide where the money goes are not rewarded for putting it in the right place. They are rewarded for putting it where the lobbyist asked.
 
-**Rankings of government programs by net societal value already exist and are systematically ignored.** The Copenhagen Consensus has published rigorous benefit-cost ratio (BCR) analyses since 2004 [@copenhagenconsensus2023]. Their findings are clear: childhood vaccinations (101:1 BCR), e-government procurement (125:1), and maternal health interventions (87:1) dramatically outperform military spending beyond deterrence requirements (~0.7:1) and fossil fuel subsidies (negative net societal value). GiveWell, Open Philanthropy, the IMF, and numerous academic institutions produce similar analyses.
+The Copenhagen Consensus has published benefit-cost ratios since 2004 [@copenhagenconsensus2023]: childhood vaccinations (101:1), e-government procurement (125:1), maternal health (87:1) versus military spending beyond deterrence (~0.7:1) and fossil fuel subsidies (negative). GiveWell, Open Philanthropy, and the IMF produce similar analyses. The U.S. spends $16 on military operations for every $1 on diplomacy. Programs returning 100:1 get single-digit billions. Programs returning negative get hundreds of billions. If a private equity firm allocated capital this way, it would be bankrupt within a year. The government prints more money and calls it "fiscal policy."
 
-Yet government spending patterns have not shifted. The U.S. spends $16 on military operations for every $1 on diplomacy and humanitarian aid. Programs with benefit-cost ratios exceeding 100:1 receive single-digit billions while programs with negative net societal value receive hundreds of billions.
-
-**Here's the reality:** If a private equity firm allocated capital like the U.S. government, it would invest $100M in ventures that destroy $500M in value while rejecting ventures that return $10B. The firm would be bankrupt within a year. The government simply prints more money and calls it "fiscal policy."
-
-**The marginal value of producing another ranking is zero.** We don't need more information. Politicians already know which programs produce net societal value. We need a mechanism to make existing information consequential in the political utility function (the mathematical representation of what politicians actually care about: reelection, money, status).
-
-This paper argues that politicians maximize reelection probability, post-office career prospects, and status, not aggregate social welfare. **The problem is not that decision-makers don't know which programs produce value. They do know. They don't care, because caring doesn't appear in their utility function.**
+**The marginal value of producing another ranking is zero.** Politicians already know which programs produce value. They do not care, because caring does not appear in their utility function (the mathematical representation of what they actually optimize: reelection probability, post-office career value, and status).
 
 Mancur Olson's seminal work *The Logic of Collective Action* [-@olson1965] established that groups with concentrated interests (small groups with huge per-person stakes, like weapons manufacturers) systematically outcompete groups with diffuse interests (millions of people with small individual stakes, like citizens who'd benefit from cures) in political competition. Why? A small group facing large per-member stakes will invest more in lobbying than a large group facing small per-member stakes. This holds even when total welfare losses exceed total welfare gains. The beneficiaries of inefficient policies (weapons manufacturers, pharmaceutical incumbents, fossil fuel producers) are concentrated. The beneficiaries of efficient policies (citizens who would benefit from cures, climate stability, reduced existential risk) are diffuse.
 
@@ -141,9 +135,7 @@ The third property is crucial. Many government expenditures persist not because 
 
 The key innovation is that all three alignments reinforce each other. A fraction of redirected funding flows perpetually to (a) investor returns and (b) political incentive mechanisms, while (c) the funding source ensures no beneficial programs are displaced. This makes the instrument self-sustaining: policy success generates the resources that maintain both investor and politician alignment, creating pressure for continuation and expansion.
 
-Unlike Social Impact Bonds (which align service providers with program outcomes), IABs align the actors who control large-scale budget decisions, the politicians, with public-good production. Unlike lobbying (which aligns politicians with narrow interests), IABs align politicians with measurable, welfare-improving outcomes. Unlike campaign contributions (which are ad hoc and candidate-specific), IABs create universal, ex-ante rules tied to objective metrics. And unlike new taxation or deficit spending, IABs fund public goods by displacing harmful or wasteful expenditure.
-
-**A natural objection:** "How is this not just PACs + voter scorecards + SIBs?" The answer is that existing mechanisms fail to solve the Olsonian problem because they operate in isolation. PACs exist but remain dominated by concentrated interests due to the 90:1 capital asymmetry. Scorecards exist (League of Conservation Voters, NRA ratings) but lack teeth without accompanying financial incentives. SIBs exist but require government to agree upfront, which faces the same collective action problem IABs solve. IABs integrate all three components (investor capital, electoral accountability, post-office incentives) into a single instrument where each component's effectiveness depends on the others, and where the funding mechanism creates permanent financial incentives for diffuse beneficiaries to overcome collective action barriers. The whole is greater than the sum of its parts because the integrated architecture makes coordinated capital deployment economically rational for millions of individual investors.
+**"How is this not just PACs + voter scorecards + SIBs?"** Each of those exists. None of them works alone. PACs are dominated by concentrated interests. Scorecards (League of Conservation Voters, NRA ratings) lack financial teeth. Social Impact Bonds require the government to agree upfront, which is the problem you were trying to solve. IABs wire all three together into a single instrument where investor capital funds the scorecards, the scorecards direct the PAC spending, the PAC spending elects the politicians, and the politicians' votes generate the returns that fund the next round. Each piece fails alone. Together, they make coordinated capital deployment rational for millions of individual investors.
 
 ### Why Reallocation, Not Addition
 
@@ -151,23 +143,11 @@ A natural question: why insist on *redirecting* resources from harmful programs 
 
 ![Spending more money doesn't work because there aren't more doctors. Moving money from bombs to medicine does work because doctors already exist.](/assets/images/incentive-alignment-bonds-paper/incentive-alignment-bonds-paper-section-why-reallocation-not-addition-bw-academic.jpg)
 
-When advocates successfully lobby for increased spending on a beneficial program, the political response is rarely a corresponding reduction in harmful programs. Instead, governments usually:
+When advocates successfully lobby for *more* spending on a good program, governments rarely cut a bad program to pay for it. They just spend more total. Between 2000 and 2024, U.S. federal spending on both military and healthcare increased. Neither "lost." Total federal spending grew from \$1.8 trillion to \$6.1 trillion. The national debt expanded from \$5.6 trillion to \$34 trillion. The real constraint (finite engineers, scientists, and productive capacity) was diluted across an ever-expanding pile of nominal claims. Defense contractors kept their share of real resources. Healthcare advocates won nominal victories diluted by inflation and competing claims.
 
-1. **Expand the overall budget** through deficit spending or monetary expansion
-2. **Increase spending on politically powerful programs** in parallel, to maintain coalition support
-3. **Dilute the real value** of new spending through inflation and competition for fixed resources
+This is not a failure of advocacy. It is what happens when concentrated interests protect their programs absolutely while diffuse interests win symbolic increases funded by debt. The budget grows in nominal terms while each program's claim on real resources remains contested.
 
-The result is that the beneficial program's *nominal* budget increases while its *real* share of resources remains unchanged or even decreases. The concentrated beneficiaries of harmful programs lose nothing; the diffuse beneficiaries of the new program gain less than the headline figures suggest.
-
-Consider the empirical pattern: between 2000 and 2024, U.S. federal spending on both military and healthcare increased much in nominal terms. Neither constituency "lost" to the other. Instead, total federal spending grew from \$1.8 trillion to \$6.1 trillion, while the national debt expanded from \$5.6 trillion to \$34 trillion. The real constraint, the finite pool of engineers, scientists, manufacturers, and productive capacity, was diluted across an ever-expanding set of nominal claims. Defense contractors retained their share of real resources; healthcare advocates won nominal victories that competed with inflation and expanding claims elsewhere in the budget.
-
-This is not a failure of advocacy. It is the equilibrium outcome (stable result when everyone optimizes given current rules) of Olsonian dynamics operating under soft budget constraints (when governments can spend without immediate consequences; they just print money or charge it to the credit card of future generations). Concentrated interests protect their programs absolutely. Diffuse interests win nominal victories. The budget grows in nominal terms while each program's claim on real resources remains contested.
-
-The mechanism is straightforward: when Congress appropriates \$10 billion for pragmatic clinical trials without specifying a funding source, the Treasury either borrows or the Federal Reserve accommodates. Total nominal spending increases.
-
-But the supply of trained researchers, laboratory equipment, and institutional capacity does not increase proportionally. The new dollars compete with existing dollars, including those flowing to military, fossil fuel subsidies, and other Olsonian programs, for the same finite resources.
-
-Inflation, both general and sector-specific, erodes the real purchasing power of the nominal increase.
+When Congress appropriates \$10 billion for pragmatic clinical trials without specifying a funding source, the Treasury borrows and the real supply of researchers and lab capacity does not change. The new dollars compete with existing dollars for the same finite resources. Inflation erodes the nominal increase.
 
 IABs break this dynamic by *specifying the funding source* as part of the mechanism. The policy does not say "fund pragmatic clinical trials"; it says "redirect 1% of military spending to pragmatic clinical trials." This forces a real reallocation:
 
@@ -176,7 +156,7 @@ IABs break this dynamic by *specifying the funding source* as part of the mechan
 - But the IAB political incentive layer ensures politicians who support the reallocation benefit more than those who resist
 - The finite pool of resources shifts from net-negative to net-positive uses
 
-The third primitive property, funding from harmful sources, is therefore not merely a normative preference or a political strategy. Under the soft budget constraint dynamics described above, it is enough to achieve real resource reallocation (likely needed in practice). Without specifying the funding source, advocates win symbolic victories while real resources continue flowing to Olsonian programs. With specified reallocation, the IAB creates genuine redistribution from net-negative to net-positive uses, constrained only by political will rather than by the illusion of unlimited budgetary capacity.
+The third property (fund from harmful sources) is therefore not a preference. It is a requirement. Without specifying the funding source, advocates win symbolic victories while real resources continue flowing to Olsonian programs. With specified reallocation, the IAB creates genuine redistribution from net-negative to net-positive uses.
 
 ### Political Change as an Asset Class
 

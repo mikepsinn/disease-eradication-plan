@@ -68,6 +68,8 @@ scores:
 
 ## Abstract
 
+Your species spends {{< var global_military_spending_annual_2024 >}} per year on the organized killing of other members of your species. It spends a fraction of that on figuring out why members of your species die of diseases. One percent. That is all this paper asks to move. One penny from every dollar currently spent on death, redirected to preventing death. The math that follows will show you what that penny buys.
+
 **The bottleneck:** Approximately {{< var diseases_without_effective_treatment >}} have zero FDA-approved treatments. At current trial capacity (~{{< var new_disease_first_treatments_per_year >}} new treatments/year), systematically testing all {{< var drug_disease_combinations_possible >}} plausible drug-disease combinations would take ~{{< var status_quo_queue_clearance_years >}}. Effectively never.
 
 {{< var diseases_without_effective_treatment_latex >}}

@@ -16,14 +16,14 @@ scores:
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 ## The Short Version
 
-Developing a new drug costs **{{< var drug_cost_increase_pre1962_to_current_multiplier >}} more** today than before 1962. Adjusted for inflation. Using real academic data (Baily 1972).
+In 1960, developing a new drug cost {{< var pre_1962_drug_development_cost_2024_usd >}} in today's dollars. Now it costs {{< var pharma_drug_development_cost_current >}}. That is **{{< var drug_cost_increase_pre1962_to_current_multiplier >}} more**. Adjusted for inflation. Using real academic data (Baily 1972). The drugs are not {{< var drug_cost_increase_pre1962_to_current_multiplier >}} better.
 
 Four things drove this:
 
-1. **Timelines exploded.** 2-3 years became 10-15 years.
+1. **Timelines exploded.** 2-3 years became 10-15 years. The drug does not take longer to invent. The paperwork takes longer to complete.
 2. **Failure rates climbed.** More capital at risk per approved drug.
-3. **Regulations multiplied.** The 1962 Kefauver-Harris Amendment added layers.
-4. **Trial costs ballooned.** Cost per patient increased by {{< var recovery_trial_cost_reduction_factor >}}.
+3. **Regulations multiplied.** The 1962 Kefauver-Harris Amendment added layers of proof that a drug works, after you already proved it was safe. The layers have been adding layers ever since.
+4. **Trial costs ballooned.** Cost per patient increased by {{< var recovery_trial_cost_reduction_factor >}}. The patient is not {{< var recovery_trial_cost_reduction_factor >}} sicker.
 
 Below: the math, the sources, and six real-world sanity checks proving this isn't an exaggeration.
 
