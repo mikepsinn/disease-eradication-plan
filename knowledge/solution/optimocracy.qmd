@@ -1,6 +1,6 @@
 ---
 title: 'Optimocracy: The Evidence Machine'
-description: On Wishonia, the Optimitron comes free with your first government. Its Optimal Budget Generator (OBG) and Optimal Policy Generator (OPG) check which policies work by looking at the 10,000 places that already tried them. Your species skipped this step and went straight to arguing.
+description: The Optimitron comes free with your first government. Its Optimal Budget Generator (OBG) and Optimal Policy Generator (OPG) check which policies work by looking at the 10,000 places that already tried them. Your species skipped this step and went straight to arguing.
 published: true
 tags:
   - solution
@@ -40,13 +40,13 @@ Now that you know what we're measuring, here's how badly your species is doing a
 
 ## The Price of Not Checking
 
-The United States spends {{< var us_vs_switzerland_spending_gap >}} percentage points more of GDP than Switzerland on government. Switzerland gets {{< var us_vs_switzerland_life_expectancy_gap >}} more years of life expectancy. One of these countries is doing it wrong. On Wishonia, we would check which one. On Earth, you have a debate about it. The debate has been going on for 50 years. The Swiss are still winning. You're paying more and dying sooner, and your response is to have opinions about it.
+The United States spends {{< var us_vs_switzerland_spending_gap >}} percentage points more of GDP than Switzerland on government. Switzerland gets {{< var us_vs_switzerland_life_expectancy_gap >}} more years of life expectancy. One of these countries is doing it wrong. A rational civilization would check which one. Your species had a debate about it. The debate has been going on for 50 years. The Swiss are still winning. You're paying more and dying sooner, and your response is to have opinions about it.
 
 ![Rich countries aren't rich because of resources. They're rich because their rules aren't stupid. Poor countries have bad governments. It's the institutions, not the dirt.](/assets/images/optimocracy-paper/optimocracy-paper-section-the-scale-of-welfare-loss-empirical-foundations-bw-academic.jpg)
 
 Documented US governance waste totals {{< var us_gov_waste_total >}} ({{< var us_gov_waste_pct_gdp >}} of GDP). Globally, the opportunity cost of suboptimal policy reaches {{< var political_dysfunction_global_opportunity_cost_total >}} ({{< var political_dysfunction_global_opportunity_cost_pct_gdp >}} of GDP), putting your civilization's governance efficiency at {{< var political_dysfunction_global_efficiency_score >}}. Your species is running at roughly half its technological potential. Imagine building a car, then only turning on half the cylinders because the other half are controlled by a committee that meets once a year and disagrees about what "forward" means. (For the full accounting, see the [Political Dysfunction Tax](../appendix/political-dysfunction-tax.qmd) [@political-dysfunction-tax-paper-2025] and [US Efficiency Audit](../appendix/us-efficiency-audit.qmd) [@us-efficiency-audit-paper-2025].)
 
-Or consider the War on Drugs. Your species spends {{< var us_gov_waste_drug_war >}} per year on it. When Nixon declared it in 1971, about 6,000 Americans died annually from drug overdoses [@cdc-overdose-1980]. After 50 years and over a trillion dollars, that number exceeded 100,000 [@cdc-overdose-2023]. At no point did anyone check whether the policy was working. At no point did anyone stop funding it because it wasn't. On Wishonia, if you spend a trillion dollars on something and the problem gets 18 times worse, you stop doing it. On Earth, you increase the budget.
+Or consider the War on Drugs. Your species spends {{< var us_gov_waste_drug_war >}} per year on it. When Nixon declared it in 1971, about 6,000 Americans died annually from drug overdoses [@cdc-overdose-1980]. After 50 years and over a trillion dollars, that number exceeded 100,000 [@cdc-overdose-2023]. At no point did anyone check whether the policy was working. At no point did anyone stop funding it because it wasn't. No sane species would spend a trillion dollars on something, watch the problem get 18 times worse, and increase the budget. Your species did exactly that.
 
 ## The Answer Key You Already Have
 
@@ -72,7 +72,7 @@ This is the gap between [Incentive Alignment Bonds](incentive-alignment-bonds.qm
 
 The Evidence Machine does three things. That's it. Three things. Your species has difficulty with three things, so I'll use small words.
 
-(On Wishonia, we just call this the Optimitron. It's an appliance. You plug in policies, it tells you which ones work.)
+(It's an appliance. You plug in policies, it tells you which ones work. Your species will find this concept exotic.)
 
 **Recommend.** The Optimitron has two settings. The [Optimal Budget Generator](https://obg.warondisease.org) [@obg-paper-2025] answers "how much should you spend on what?" The [Optimal Policy Generator](https://opg.warondisease.org) [@opg-paper-2025] answers "which laws should you enact, replace, or repeal?" Here's a sample of what the budget output looks like, applied to the United States:
 
@@ -85,7 +85,7 @@ The Evidence Machine does three things. That's it. Three things. Your species ha
 
 You are spending 100 times less than optimal on figuring out which medicines work, and paying farmers $25 billion a year to grow food nobody asked for. The Optimitron noticed. It also noticed you could cut $391 billion from the murder budget and still have the largest military on the planet. The policy generator then does the same thing law by law: enact this, repeal that, adjust the other thing. Every recommendation traceable to what actually happened when another jurisdiction tried it. No opinions. Just receipts.
 
-**Track.** When politicians vote, record whether they aligned with the evidence-based recommendation. Senator Smith: 78% aligned. Senator Jones: 34% aligned. This information is public. Any citizen can check. On Wishonia, this is called "checking if the person you hired did the thing you hired them to do." Your species finds this concept revolutionary, which tells you everything. Politicians who ignore the evidence must do so on the record.
+**Track.** When politicians vote, record whether they aligned with the evidence-based recommendation. Senator Smith: 78% aligned. Senator Jones: 34% aligned. This information is public. Any citizen can check. There is a word for this. The word is "checking if the person you hired did the thing you hired them to do." Your species finds this concept revolutionary, which tells you everything. Politicians who ignore the evidence must do so on the record.
 
 **Reward.** The [IAB-funded SuperPAC](incentive-alignment-bonds.qmd) allocates campaign support proportional to alignment scores. Follow evidence, get funded. Ignore it, watch your opponent get funded. Same mechanism the NRA perfected, but pointed at "not dying" instead of "more guns."
 
@@ -117,7 +117,7 @@ Take the median: **+2.1%**. If one source reports +5.0% (because someone bribed 
 
 These five sources overlap in some inputs. The sixth source, decentralized citizen surveys, breaks that dependence by adding a methodology-independent stream collected directly from millions of humans. One person lying has approximately zero effect on the median. This is statistics, not voting.
 
-Your species has spent centuries making corruption illegal. It hasn't worked, because laws are enforced by the same humans who are being bribed. On Wishonia, we tried something different: we made corruption impractical. There's a difference between "you shouldn't steal" and "the vault has five locks held by five people who hate each other." Your species tried door number one for 3,000 years. We recommend door number two.
+Your species has spent centuries making corruption illegal. It hasn't worked, because laws are enforced by the same humans who are being bribed. The alternative is obvious: make corruption impractical. There's a difference between "you shouldn't steal" and "the vault has five locks held by five people who hate each other." Your species tried door number one for 3,000 years. We recommend door number two.
 
 This is also why it's different from every previous attempt at technocratic governance. Soviet central planning had one source of truth (the Politburo). Credit rating agencies had one source of truth (the agency paid by the people being rated, which is like letting students grade their own exams and then being surprised when everyone gets an A). Both were captured immediately, because corrupting one institution is a Tuesday. Corrupting five independent institutions simultaneously, without any of them noticing or telling anyone, is a conspiracy theory. The expensive kind that doesn't work.
 
@@ -129,7 +129,7 @@ Why not 50 metrics? Because each additional target creates a new way to cheat, a
 
 ## Putting It Together
 
-The full loop: [1% Treaty](1-percent-treaty.qmd) [@1-pct-treaty-impact-paper-2025] funds it, [IABs](incentive-alignment-bonds.qmd) align incentives, the Evidence Machine identifies what works, and [Wishocracy](wishocracy.qmd) [@wishocracy-paper-2025] allocates the research funds. The Evidence Machine tells governments which policies work. [Wishocracy](wishocracy.qmd) tells the research fund where to aim. On Wishonia, this is called "an obvious system." On Earth, it required four chapters and a bibliography.
+The full loop: [1% Treaty](1-percent-treaty.qmd) [@1-pct-treaty-impact-paper-2025] funds it, [IABs](incentive-alignment-bonds.qmd) align incentives, the Evidence Machine identifies what works, and [Wishocracy](wishocracy.qmd) [@wishocracy-paper-2025] allocates the research funds. The Evidence Machine tells governments which policies work. [Wishocracy](wishocracy.qmd) tells the research fund where to aim. Your species calls this "a bold new paradigm." Everyone else calls it "an obvious system." It required four chapters and a bibliography because you're you.
 
 ![Tribal politics: my team good, your team bad. Optimocracy: did anyone get healthier or richer. One is sports, the other is governance.](/assets/images/optimocracy-paper/optimocracy-paper-section-depolarization-bw-academic.jpg)
 

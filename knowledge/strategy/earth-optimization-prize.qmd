@@ -209,7 +209,7 @@ Without the Optimitron, the Prize can measure whether the two numbers moved by {
 
 ## The Part Where You Tell Two People
 
-On Wishonia, if one person tells two people and each of them tells two people, the math handles the rest. Not everyone becomes a recruiter. But "tell two people" gets very large very fast.
+If one person tells two people and each of them tells two people, the math handles the rest. Not everyone becomes a recruiter. But "tell two people" gets very large very fast.
 
 | Round | Cumulative people | What that looks like |
 |:---|:---|:---|
@@ -239,9 +239,9 @@ The target is {{< var global_registered_voters_nounit >}} people. Half of your s
 | **Optimal governance** | +{{< var wishonia_trajectory_lifetime_income_gain_per_capita >}} lifetime income ({{< var wishonia_trajectory_lifetime_income_multiplier >}}), +{{< var wishonia_hale_gain_year_15_nounit >}} healthy years. |
 | **Collapse tail** | Half the economy is looted by {{< var destructive_economy_50pct_year >}}. Already at {{< var global_destructive_economy_pct_gdp >}} of GDP and accelerating. |
 
-I have been studying this table for 81 years and I still cannot understand why your species picks row 1 or row 4 when rows 2 and 3 are right there. On Wishonia, we call this "looking at a menu and ordering the food poisoning."
+I have been studying this table for 81 years and I still cannot understand why your species picks row 1 or row 4 when rows 2 and 3 are right there. Your species calls this "prudence." I call it "looking at a menu and ordering the food poisoning."
 
-That spread is the difference between a civilization and a collapse, and most humans still treat "do nothing" as if it were the safe option. On Wishonia, "do nothing" is what we call the thing that killed you. The average human earns {{< var global_avg_income_2025 >}}/year, has {{< var global_avg_remaining_years >}} left to live, and can save about {{< var global_annual_savings_per_capita >}}/year. If you want your own numbers, use the [personal benefits calculator](../call-to-action/your-personal-benefits.qmd).
+That spread is the difference between a civilization and a collapse, and most humans still treat "do nothing" as if it were the safe option. There is a word for "do nothing." The word is "cause of death." The average human earns {{< var global_avg_income_2025 >}}/year, has {{< var global_avg_remaining_years >}} left to live, and can save about {{< var global_annual_savings_per_capita >}}/year. If you want your own numbers, use the [personal benefits calculator](../call-to-action/your-personal-benefits.qmd).
 
 Those are not projections about charity. They are projections about your money, your health, and whether your civilization collapses. Anything that makes this even slightly more likely to happen is worth real money to you:
 
@@ -264,7 +264,7 @@ Your governments already waste {{< var political_dysfunction_tax_per_person_annu
 ::: {.callout-tip}
 ## For Context on "Political Donations"
 
-On your planet, humans give papers to politicians and receive nothing back except a warm feeling and occasionally a hat. This deposit grows at {{< var prize_pool_annual_return >}} annually, reaching {{< var prize_pool_horizon_multiple >}} by {{< var destructive_economy_50pct_year >}}, and you keep it if the targets are missed. On Wishonia, we would call your current system "giving money to strangers who do not give it back." You call it "democracy."
+On your planet, humans give papers to politicians and receive nothing back except a warm feeling and occasionally a hat. This deposit grows at {{< var prize_pool_annual_return >}} annually, reaching {{< var prize_pool_horizon_multiple >}} by {{< var destructive_economy_50pct_year >}}, and you keep it if the targets are missed. No sane accountant would call your current system anything other than "giving money to strangers who do not give it back." You call it "democracy."
 :::
 
 You do not need to tip the scale by yourself. The stakes are so large that even a tiny nudge is worth real money:
@@ -293,7 +293,7 @@ The selfish reason to play the Game is not the VOTE payout or the pool return. I
 Everything below this point (the lobbying, the treaty campaigns, the clinical trial infrastructure, the [decentralized FDA](../solution/dfda.qmd) [@dfda-spec-paper-2025; @dfda-impact-paper-2025]) is not your job. {{< var global_registered_voters_nounit >}} people whose payout depends on curing diseases will attract the lobbyists, researchers, and institutions who know how to cure diseases. You do not need to understand lobbying or clinical trial design. You need to understand that a large enough pile of money pointed at "cure diseases" attracts the people who do. This is how your species built every industry it has. Nobody coordinated the smartphone supply chain. The money coordinated it.
 
 1. **A host launches the [Planetary Constitutional Convention](planetary-constitutional-convention.qmd) [@planetary-constitutional-convention-paper-2025].** The manual gets stress-tested. PRIZE deposits begin. You deposit and recruit. (This is the hard part. Everything after this is money doing what money does.)
-2. **The referendum opens.** Voters set their preferred military-to-health allocation. Every recruiter who brings a verified participant earns VOTE points. The referendum grows because recruitment is rewarded. On your planet, this is called "going viral." On Wishonia, it is called "obvious."
+2. **The referendum opens.** Voters set their preferred military-to-health allocation. Every recruiter who brings a verified participant earns VOTE points. The referendum grows because recruitment is rewarded. Your species calls this "going viral." A rational civilization would call it "obvious."
 3. **The Scoreboard climbs.** Votes, treaty support, pool size, and the two numbers. Each new name makes the next name easier. Your species calls this "momentum." We call it "counting."
 4. **The lobbying campaign starts itself.** Millions of people whose payout depends on the treaty attract lobbyists and institutions because the pool makes showing up profitable. ([Implementation financing](earth-optimization-protocol-v1.qmd) [@earth-optimization-protocol-2025].) Nobody organizes this centrally. The money organizes it, the same way nobody centrally organizes which restaurants open in your city. The restaurants that serve food people want get money. The restaurants that don't, close. You are building the restaurant version of not dying.
 5. **Implementation.** Governments move the money. People compete to cure diseases cheaply. Not your job. Your job was step 1. You can go back to arguing about Pluto now.

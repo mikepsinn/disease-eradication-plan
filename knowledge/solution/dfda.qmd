@@ -1,6 +1,6 @@
 ---
 title: A Decentralized FDA
-description: On Wishonia, you type in what's wrong with you, see what worked for everyone else, and try it. The outcomes get recorded automatically. We've had this for millennia. Your decentralized FDA is the same thing, built with technology you already have. It's an open protocol that connects treatments to patients, records what actually happens, and publishes the results. Consumer Reports, but for not dying. It cuts trial costs from {{< var traditional_phase3_cost_per_patient >}} to {{< var dfda_pragmatic_trial_cost_per_patient >}}, expands capacity from {{< var current_trial_slots_available >}} to {{< var dih_patients_fundable_annually >}}, and replaces your 40-page drug inserts with Outcome Labels that tell you what actually happened to real humans who took the pill.
+description: You type in what's wrong with you, see what worked for everyone else, and try it. The outcomes get recorded automatically. We've had this for millennia. Your decentralized FDA is the same thing, built with technology you already have. It's an open protocol that connects treatments to patients, records what actually happens, and publishes the results. Consumer Reports, but for not dying. It cuts trial costs from {{< var traditional_phase3_cost_per_patient >}} to {{< var dfda_pragmatic_trial_cost_per_patient >}}, expands capacity from {{< var current_trial_slots_available >}} to {{< var dih_patients_fundable_annually >}}, and replaces your 40-page drug inserts with Outcome Labels that tell you what actually happened to real humans who took the pill.
 published: true
 tags:
   - overview
@@ -36,7 +36,7 @@ Meanwhile, the system that's supposed to catch dangerous side effects misses 90-
 
 ## The Solution: Consumer Reports for Drugs
 
-On Wishonia, this is just called "medicine." You type in what's wrong with you, see what worked for everyone else, and try it. The outcomes get recorded automatically. We've had this for millennia. You have all the technology to build it right now, and somehow haven't.
+Your species calls this "revolutionary." Everyone else calls it "medicine." You type in what's wrong with you, see what worked for everyone else, and try it. The outcomes get recorded automatically. You have all the technology to build it right now, and somehow haven't.
 
 Your decentralized FDA will be an **open coordination protocol**. It will connect companies with treatments to patients who need them. It will be HTTP for clinical trials. A standard that lets all the existing systems talk to each other and share outcomes.
 You invented the internet over three decades ago and somehow forgot to plug medicine into it.
@@ -73,7 +73,7 @@ Correlation isn't causation.
 
 But now there's enough data and computing power to make each person their own control group. Track arthritis pain for a month. Take Turmeric, stop, start again. The pattern reveals whether it works or if it's coincidence.
 
-A meta-analysis in the New England Journal of Medicine [@meta-analysis-in-the-new-england-journal-of-medicine] quietly ended this argument while nobody was listening. Researchers compared observational studies against randomized controlled trials across 19 treatments. Cardiac surgery, cancer, ophthalmology, obstetrics. Result: nearly identical effect sizes. The cheap method and the expensive method found the same answers. You've been overpaying for data like tourists at an airport restaurant. On Wishonia, we figured this out 3,000 years ago. We call it "looking at what happened." You call it a "landmark meta-analysis."
+A meta-analysis in the New England Journal of Medicine [@meta-analysis-in-the-new-england-journal-of-medicine] quietly ended this argument while nobody was listening. Researchers compared observational studies against randomized controlled trials across 19 treatments. Cardiac surgery, cancer, ophthalmology, obstetrics. Result: nearly identical effect sizes. The cheap method and the expensive method found the same answers. You've been overpaying for data like tourists at an airport restaurant. There is a word for this. The word is "looking at what happened." Your species calls it a "landmark meta-analysis."
 
 ![Forest plot comparing effect sizes from observational studies vs. RCTs for cardiac treatments. The dots land in the same place. The expensive method and the cheap method found the same answers.](../../assets/images/observational-vs-randomized-effect-sizes.png)
 
@@ -252,7 +252,7 @@ Every treatment ranked. Drugs, supplements, lifestyle interventions, off-label u
 
 ## Your Personal Death-Prevention Assistant: The FDAi
 
-On Wishonia, every citizen gets one of these at birth. It monitors their health, finds treatments matched to their biology, and adjusts dosing in real time. We've had them for 3,000 years. You've had the technology for two decades and used it to count steps.
+Every citizen should get one of these at birth. It monitors their health, finds treatments matched to their biology, and adjusts dosing in real time. The technology has existed for two decades. Your species used it to count steps.
 
 Everyone gets a superintelligent doctor that lives in their phone and doesn't judge them for Googling "is my poop normal?"
 

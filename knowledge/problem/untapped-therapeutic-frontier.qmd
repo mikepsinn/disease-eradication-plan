@@ -33,7 +33,7 @@ This had never happened before. People don't hoard failed medicine. The scientis
 
 Minoxidil has a similar origin story. Developed for high blood pressure. Failed at that too. Side effect: hair growth. It became Rogaine. Then sildenafil got repurposed *again* for pulmonary hypertension, making it three cures from two failed drugs, none of them intentional.
 
-On Wishonia, when we heard about this, we asked the obvious question: "So then you tested all the other drugs for all the other side effects, right?"
+The obvious question: "So then you tested all the other drugs for all the other side effects, right?"
 
 You did not.
 
@@ -45,14 +45,14 @@ I have been observing your species for 80 years. I have seen you do many confusi
 
 Here is everything humanity considers "medicine":
 
-* **Prescriptions:** {{< var fda_approved_products_count >}} approved in the U.S. Sounds impressive until you realize most are variations of each other. Your pharmaceutical industry has invented 300 ways to sell the same painkiller in different-colored packaging. On Wishonia, this would be considered a graphic design achievement, not a medical one.
+* **Prescriptions:** {{< var fda_approved_products_count >}} approved in the U.S. Sounds impressive until you realize most are variations of each other. Your pharmaceutical industry has invented 300 ways to sell the same painkiller in different-colored packaging. Your species would call this a graphic design achievement, not a medical one, if your species were paying attention.
 * **Unique Ingredients:** These products contain only {{< var fda_approved_unique_active_ingredients >}}. Fewer unique molecules than a French bakery uses ingredients.
 * **Investigational Drugs:** {{< var phase_1_passed_compounds_global >}} have passed Phase I globally. These are compounds you already know won't kill people, sitting in filing cabinets, doing nothing.
 * **Safe Stuff:** The FDA GRAS list contains {{< var fda_gras_substances_count >}}. Things you could eat right now without dying. Low bar. Still useful.
 
 **Total unique compounds humanity knows are safe-ish: {{< var safe_compounds_count >}}.**
 
-That's it. Five millennia of civilization, and this is your entire toolkit. On Wishonia, we have more compounds in a single bathroom cabinet. Your bathroom cabinet has shampoo and expired cough syrup from 2019.
+That's it. Five millennia of civilization, and this is your entire toolkit. A rational civilization would have more compounds in a single bathroom cabinet. Your bathroom cabinet has shampoo and expired cough syrup from 2019.
 
 ## Ways Your Body Breaks (The To-Do List Nobody's Doing)
 
@@ -93,7 +93,7 @@ I want to sit with that for a moment. You have safe compounds. You have sick peo
 
 ![The dot is everything you know about medicine. The rest is everything you don't. The dot is very small. You seem comfortable with this.](/assets/images/untapped-therapeutic-frontier/untapped-therapeutic-frontier-section-the-scorecard-bw-academic.jpg)
 
-On Wishonia, if a doctor explored {{< var exploration_ratio >}} of treatment options and declared the patient incurable, we would gently suggest the doctor continue looking. On Earth, you publish a paper about the {{< var exploration_ratio >}} and apply for a grant to re-study the same {{< var exploration_ratio >}} you studied last time.
+No sane doctor would explore {{< var exploration_ratio >}} of treatment options and declare the patient incurable. Your species publishes a paper about the {{< var exploration_ratio >}} and applies for a grant to re-study the same {{< var exploration_ratio >}} it studied last time.
 
 ## "Maybe the Other 99.66% Is Useless"
 
@@ -133,7 +133,7 @@ The disease introduction system has four design flaws. All of them are about mon
 
 **Cheap molecules can't play.** Most molecules have no patent. No patent means no $100M trial. No trial means no approval. Metformin, a diabetes drug from the 1950s, shows persistent signals for reducing cancer risk and extending lifespan. It costs pennies. It's off-patent. The trial to prove it works for aging (TAME) spent years begging for funding because no pharmaceutical company will bankroll a drug they can't monopolize. The molecule that could save your life doesn't make enough money to be worth testing. You die. Quarterly earnings go up. The system is working exactly as designed, which is the problem.
 
-**Unprofitable diseases don't exist.** If you have a rare disease with no market, you don't get a drug. Your cells malfunction in an unprofitable way. The invisible hand of the market has weighed your life against shareholder returns and found you wanting. On Wishonia, we don't have an invisible hand. We have a visible calculator. It counts deaths. When the number goes up, it allocates resources. This is apparently "radical" on your planet.
+**Unprofitable diseases don't exist.** If you have a rare disease with no market, you don't get a drug. Your cells malfunction in an unprofitable way. The invisible hand of the market has weighed your life against shareholder returns and found you wanting. There is a simpler system. It is called a visible calculator. It counts deaths. When the number goes up, it allocates resources. Your species calls this "radical."
 
 ## The Timeline (How Long Until You Finish Looking)
 
@@ -199,5 +199,5 @@ Your [decentralized FDA](../solution/dfda.qmd) builds *permanent infrastructure*
 
 The cures exist. The molecules are sitting in your cabinets. The patients are willing. The only thing between them is a system that charges $100 million to introduce them and takes 17 years to make the introduction.
 
-On Wishonia, we have a word for holding sick people hostage until someone pays a ransom. We call it crime. On Earth, you call it "regulation." You seem very proud of it.
+There is a word for holding sick people hostage until someone pays a ransom. The word is "crime." Your species calls it "regulation." You seem very proud of it.
 

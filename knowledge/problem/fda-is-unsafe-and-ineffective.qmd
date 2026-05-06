@@ -28,7 +28,7 @@ In 1962, your Congress decided that after proving a drug won't kill you, sick pe
 
 You're not allowed to volunteer for the trials that would answer the question faster, either. You are, however, allowed to die. Nobody blocks that. There's no {{< var efficacy_lag_years >}} waiting period on dying.
 
-On Wishonia, when we confirm something won't harm you, we let you try it. On Earth, you lock it in a cabinet and form a committee. The committee meets quarterly. You decompose on a different schedule.
+Your species confirms something won't harm you, then locks it in a cabinet and forms a committee. The committee meets quarterly. You decompose on a different schedule.
 
 ## A Note on Blame
 
@@ -39,7 +39,7 @@ Congress wrote the rules. The FDA follows them. Blaming the FDA is like blaming 
 
 This is the part where humans panic, so let me be very precise about what this chapter is (and isn't) proposing: keep Phase I safety testing (it works, it caught thalidomide, nobody is suggesting you skip it). Do *radically more* efficacy testing, on *real patients*, with *transparent results*. But stop holding known-safe drugs hostage while you run the trials.
 
-On Wishonia, we don't have a word for "preventing someone from accessing a safe substance that could help them while they die." It would never occur to us to do it, so we never needed a word. You have several words for it. My favorite is "the approval process."
+There is no word for "preventing someone from accessing a safe substance that could help them while they die." No sane civilization would do it, so none needed a word. You have several words for it. My favorite is "the approval process."
 
 ## The {{< var dfda_trial_cost_reduction_factor >}} Inefficiency Tax
 
@@ -202,7 +202,7 @@ Dead patients don't testify before Congress. I checked.
 Even generously crediting ALL drug withdrawals to the 1962 changes (ignoring that Phase I safety testing already existed), the prevented harm totals ~{{< var type_i_error_benefit_dalys >}}.
 The delay harm totals {{< var dfda_efficacy_lag_elimination_dalys >}}.
 
-**For every 1 unit of harm prevented, the current system creates {{< var type_ii_error_cost_ratio >}} units of harm through delay.** The safety net catches one person and drops {{< var type_ii_error_cost_ratio >}}. On Wishonia, we'd call that a hole, not a net.
+**For every 1 unit of harm prevented, the current system creates {{< var type_ii_error_cost_ratio >}} units of harm through delay.** The safety net catches one person and drops {{< var type_ii_error_cost_ratio >}}. There is a word for that. The word is "hole."
 
 ## Clinical Trial Theater: Excluding {{< var antidepressant_trial_exclusion_rate >}} of Reality Makes Drugs More Dangerous
 
@@ -245,7 +245,7 @@ The regulations require drug developers to predict exactly what a treatment will
 
 In 2007, Dendreon showed that its immunotherapy drug Provenge significantly reduced deaths from prostate cancer. The FDA advisory committee agreed it worked. Then the FDA rejected it anyway. Not because it didn't save lives. Because Dendreon filled out the wrong form about which lives it was planning to save.
 
-"People stopped dying" wasn't good enough. The paperwork predicting that people would stop dying wasn't filed in the right order. Three more years and another trial were required. During those three years, people who could have stopped dying continued dying, but at least the forms were correct. On Wishonia, we have a saying: "The gravestone was filed on time." It means someone prioritized procedure over the thing the procedure was supposed to protect. We retired the saying because it kept applying to too many situations. You could use it daily.
+"People stopped dying" wasn't good enough. The paperwork predicting that people would stop dying wasn't filed in the right order. Three more years and another trial were required. During those three years, people who could have stopped dying continued dying, but at least the forms were correct. A rational civilization would have a saying for this: "The gravestone was filed on time." It means someone prioritized procedure over the thing the procedure was supposed to protect. You could use it daily.
 
 Due to these additional costs, Dendreon filed for chapter 11 bankruptcy [@filed-for-chapter-11-bankruptcy]. So the approval process killed the patients, then killed the company trying to save them. You have a phrase for this: "killing two birds with one stone." Although in this case the stone was paperwork and there were considerably more than two birds. But you can't count the dead birds who would have been cured by a company you bankrupted.
 
@@ -259,7 +259,7 @@ The problem: patients could tell they'd taken MDMA, because MDMA makes you feel 
 
 I want to make sure I understand the logic. The drug works by making you feel profoundly different. The FDA requires that you not know whether you feel profoundly different. If you notice that you feel profoundly different, the trial fails, because you weren't supposed to notice. The drug's mechanism of action is, itself, a protocol violation.
 
-This is not a fixable design problem. You cannot double-blind a drug whose therapeutic effect is that the patient feels it working. The FDA knows this. They granted MDMA "Breakthrough Therapy Designation" in 2017, signaling that yes, this looks promising, please spend another seven years and tens of millions of dollars on Phase 3 trials. Then they rejected it for a property of the molecule that was evident before the trials began. On Wishonia, if you tell someone to build a house and then condemn it for having walls, you owe them a house. Here, you owe them nothing. The veterans kept their PTSD. The FDA kept its process. Everyone kept exactly what they had, which was the problem in the first place.
+This is not a fixable design problem. You cannot double-blind a drug whose therapeutic effect is that the patient feels it working. The FDA knows this. They granted MDMA "Breakthrough Therapy Designation" in 2017, signaling that yes, this looks promising, please spend another seven years and tens of millions of dollars on Phase 3 trials. Then they rejected it for a property of the molecule that was evident before the trials began. No sane inspector would tell someone to build a house and then condemn it for having walls. Here, you owe them nothing. The veterans kept their PTSD. The FDA kept its process. Everyone kept exactly what they had, which was the problem in the first place.
 
 Meanwhile, approximately 49,000 Americans kill themselves every year [@cdc-suicide-statistics-2023], including 6,400 veterans [@veteran-suicide-2022] at twice the civilian rate. About 13 million Americans have PTSD in any given year [@nimh-ptsd-prevalence], and PTSD nearly quadruples your suicide risk [@ptsd-suicide-risk-swedish-cohort]. MDMA-assisted therapy produced a 67% remission rate versus 32% for standard care. Even conservatively, if half of PTSD patients had accessed the treatment over the 40 years since it was scheduled, the 35-percentage-point improvement in remission would have prevented something on the order of 30,000 suicides in the US alone, and freed millions of people from a condition that destroys families, drives substance abuse, and fills your homeless shelters with veterans.
 
@@ -316,7 +316,7 @@ I asked the FDA what might go wrong and they said "the patient could die." The p
 **Right to Try (US)** [@right-to-try-act-2018] passed despite FDA opposition.
 The FDA made it effectively impossible to use. The law says you can *ask* a manufacturer for their experimental drug. The manufacturer can say no. They almost always say no, because the law provides no liability protection, no funding mechanism, and no insurance coverage. So "Right to Try" means "Right to Ask a Corporation for a Favor While Dying." Corporations said no. Patients helped: <200 total [@right-to-try-act-outcomes].
 Patients who wanted help: tens of thousands.
-On Wishonia, "Right to Try" is just called "rights." The fact that your species needed a special law to allow dying people to take known-safe drugs, and then made the law effectively unusable, is the most human thing I've ever observed. You named it "Right to Try." The name was accurate, which was so unusual for your species that it should have been suspicious. And it was: the law doesn't work. The naming convention holds.
+Everywhere else in the universe, "Right to Try" is just called "rights." The fact that your species needed a special law to allow dying people to take known-safe drugs, and then made the law effectively unusable, is the most human thing I've ever observed. You named it "Right to Try." The name was accurate, which was so unusual for your species that it should have been suspicious. And it was: the law doesn't work. The naming convention holds.
 
 ## The COVID Test Fiasco
 

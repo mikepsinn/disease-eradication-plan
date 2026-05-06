@@ -40,7 +40,7 @@ Wars cost {{< var global_annual_direct_indirect_war_cost >}}/year, and that tota
 
 {{< var peace_dividend_annual_societal_benefit >}} - {{< var treaty_annual_funding >}} = {{< var peace_dividend_conflict_reduction >}}
 
-Money no longer spent on unblowing-up hospitals and bridges, removing shrapnel from people you put shrapnel into, housing refugees whose homes you converted into craters, and routing shipping containers around minefields. Your species has an entire industry dedicated to rebuilding things it blew up. You employ people to fill holes that you employed other people to make. On Wishonia, this is used as a children's fable about inefficiency. The children laugh. Then they ask if it's real. Then they stop laughing. It replaced the previous worst children's fable, which was about a species that invented an instrument called "the recorder" and then made every child play it. The violence fable is considered more tragic, but only slightly.
+Money no longer spent on unblowing-up hospitals and bridges, removing shrapnel from people you put shrapnel into, housing refugees whose homes you converted into craters, and routing shipping containers around minefields. Your species has an entire industry dedicated to rebuilding things it blew up. You employ people to fill holes that you employed other people to make. This sounds like a children's fable about inefficiency. The children laugh. Then they ask if it's real. Then they stop laughing. It replaced the previous worst children's fable, which was about a species that invented an instrument called "the recorder" and then made every child play it. The violence fable is considered more tragic, but only slightly.
 
 ### Where the {{< var peace_dividend_annual_societal_benefit >}} Total Comes From
 
@@ -100,7 +100,7 @@ The annual conflict-reduction numbers above use the chapter's baseline elasticit
 
 ### The GDP Multiplier
 
-Spend a dollar on weapons, get 60 cents of economic value. Spend a dollar on healthcare, get $4.30 back. Your species chose weapons. Every time. For centuries. On Wishonia, this would be considered evidence. On Earth, it is considered an anecdote, which is what humans call evidence when they don't want to act on it. The Lost Economic Growth component ({{< var global_annual_lost_economic_growth_military_spending >}}) already captures this difference. It's not double-counted, just consistently ignored.
+Spend a dollar on weapons, get 60 cents of economic value. Spend a dollar on healthcare, get $4.30 back. Your species chose weapons. Every time. For centuries. Your species calls this "an anecdote," which is the word humans use for evidence they don't want to act on. The Lost Economic Growth component ({{< var global_annual_lost_economic_growth_military_spending >}}) already captures this difference. It's not double-counted, just consistently ignored.
 
 ![Spend a dollar on weapons, get 60 cents of economic value. Spend a dollar on healthcare, get 4.30 dollars back. You've chosen weapons.](/assets/images/peace-dividend/peace-dividend-section-gdp-multiplier-note-bw-academic.jpg)
 

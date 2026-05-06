@@ -36,9 +36,13 @@ Wishonia is a naive alien observing Earth's self-destructive choices with genuin
 
 ## "On Wishonia" References
 
-The Wishonia **voice** (deadpan alien tone, stating obvious absurdities as simple observations) should be used everywhere. But explicit **"On Wishonia, we..."** world-building references should be limited to book chapters where Wishonia is a character (solution/, problem/, strategy/ chapters).
+**Remove "On Wishonia" from punchlines.** When it's just framing a joke ("On Wishonia, we have a word for this"), the joke is funnier without it. "There is a word for this" lands harder and works as a standalone paper, tweet, or pitch deck.
 
-**In independently published papers** (appendix/*-paper.qmd, appendix/*-spec.qmd, appendix/*-analysis.qmd, appendix/*-audit.qmd, appendix/cost-benefit-*.qmd, appendix/extinction-*.qmd, economics/*.qmd), avoid "On Wishonia" framing. **Never use the same replacement pattern twice in one file.** Repetition kills humor. Rotate through these:
+**Keep "On Wishonia" for counterfactual world-building.** When Wishonia is describing what it actually did as a civilization ("On Wishonia, we eliminated disease 4,000 years ago," "On Wishonia, we fixed this 4,297 years ago," "On Wishonia, we built a system that asks everyone"), the reader needs to know WHO did it. Without "On Wishonia," the "we" is orphaned and the counterfactual loses its power.
+
+**The test:** Does the sentence describe something that happened on the planet (built, eliminated, fixed, tried, discovered)? Keep "On Wishonia." Is it just a setup for a punchline (we have a word for this, we call this X, we find this remarkable)? Remove it.
+
+**Never use the same replacement pattern twice in one file.** Repetition kills humor. Rotate through these:
 
 | Pattern | Example | Best for |
 |---------|---------|----------|
@@ -48,10 +52,10 @@ The Wishonia **voice** (deadpan alien tone, stating obvious absurdities as simpl
 | "No sane X would..." | "No sane audit process lets the defendant grade their own exam." | Institutional absurdities |
 | "There is a word for this." | "There is a word for this. The word is 'cancer.'" | Punchline delivery |
 | "A rational civilization..." | "In a rational civilization, this would be performance art." | Contrast jokes (use ONCE per file max) |
+| Reframe the contrast | "On Earth, you call it X" → "Your species calls it X" | When the Earth/Wishonia contrast was the joke |
+| Kill the setup | Cut "On Wishonia we do X" entirely, keep only the punchline | When the punchline doesn't need a setup |
 
 **The funniest option is usually the shortest.** If you can cut the framing entirely and just state the obvious absurdity, do that. Vonnegut never needed a narrator to tell you something was insane. He just described it.
-
-**OK in book chapters:** solution/, problem/, strategy/, educational-film.qmd, futures/wishonia.qmd — these are part of the book's narrative where Wishonia is an established character.
 
 ## Descriptions and Subtitles
 

@@ -90,7 +90,7 @@ You aren't buying a treaty. You're buying the machinery that makes the treaty ve
 
 ## Political Success Probability: Economic Analysis {#sec-political-success-probability}
 
-This section documents the rationale for the **{{< var political_success_probability >}} central estimate** (and a 25% optimistic scenario ceiling). The model assumes failure is the base case. It's still a good bet. On Wishonia, we would not invest in something where failure is the base case. On Earth, this is called "venture capital" and your richest humans do it professionally.
+This section documents the rationale for the **{{< var political_success_probability >}} central estimate** (and a 25% optimistic scenario ceiling). The model assumes failure is the base case. It's still a good bet. No sane species would invest in something where failure is the base case. Your species calls it "venture capital" and your richest humans do it professionally.
 
 Even at {{< var political_success_probability >}} probability of success, this intervention's expected cost per DALY ({{< var treaty_expected_cost_per_daly >}}) is still **{{< var treaty_expected_vs_bed_nets_multiplier >}} more cost-effective** than malaria bed nets ({{< var bed_nets_cost_per_daly >}}/DALY). Bed nets are the gold standard of global health interventions. This beats the gold standard while assuming it will almost certainly fail. Your pessimism is not the variable you think it is.
 
@@ -190,7 +190,7 @@ This model is deliberately conservative in three ways:
 
 ## The Decision-Theoretic Case: Why Rational Actors Eventually Move {#sec-dominant-strategy-proof}
 
-The chain reaction model says approximately {{< var chain_expected_engaged_implementers_nounit >}} implementers will probably engage with this idea. The next question is what they do once they understand it. On Wishonia, they would act immediately, because on Wishonia we are not insane. On Earth, you need to prove that acting is profitable, because your species will not save itself for free.
+The chain reaction model says approximately {{< var chain_expected_engaged_implementers_nounit >}} implementers will probably engage with this idea. The next question is what they do once they understand it. Any rational actor would move immediately. Your species requires proof that acting is profitable, because it will not save itself for free.
 
 ### The Incentive Structure
 
@@ -293,7 +293,7 @@ Once 1% passes, {{< var iab_political_incentive_funding_annual >}}/year flows to
 
 The politicians feel it too. The treaty's {{< var iab_political_incentive_funding_pct >}} [political incentive allocation](../solution/incentive-alignment-bonds.qmd#sec-why-ten-pct-scaling-engine) scales identically: at 1%, it's {{< var iab_political_incentive_funding_annual >}}/year in campaign support for legislators who voted yes. At 5%, five times that. A politician who votes to expand the treaty is voting to expand their own reelection budget. You didn't change what politicians are. You changed what they're rewarded for.
 
-Most treaties are gym memberships purchased in January and abandoned by February. This one has a constituency that *grows* with each success. On Wishonia, we find this arrangement embarrassing. On Earth, it's the only arrangement that works.
+Most treaties are gym memberships purchased in January and abandoned by February. This one has a constituency that *grows* with each success. This arrangement is embarrassing. It is also the only arrangement that works.
 
 ### Long-Term Feasibility
 

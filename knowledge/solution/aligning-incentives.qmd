@@ -21,7 +21,7 @@ scores:
 
 This manual is not about convincing people to be better. You've been trying that for six thousand years and it hasn't worked once. Every temple, sermon, philosophy lecture, and after-school special in your history has been an attempt to make humans behave nicely, and the result is your current situation, which I think we can all agree is not nice.
 
-This chapter is about something different. It's about building a system where doing well and doing good are the same thing. Every major interest group gets aligned behind curing disease, not through charity or guilt, but through pure profit. On Wishonia, we discovered that you can't change what organisms want. You can only change what's profitable. Then they change themselves, enthusiastically, and take credit for it afterward.
+This chapter is about something different. It's about building a system where doing well and doing good are the same thing. Every major interest group gets aligned behind curing disease, not through charity or guilt, but through pure profit. You can't change what organisms want. You can only change what's profitable. Then they change themselves, enthusiastically, and take credit for it afterward.
 
 ## Defense Contractors: Teaching Merchants of Death to Love Life
 
@@ -31,7 +31,7 @@ Lobbyists are like pigeons. They go where the food is. Currently the food is in 
 
 ### The Offer
 
-You give them [VICTORY Incentive Alignment Bonds](incentive-alignment-bonds.qmd) [@iab-paper-2025] paying {{< var victory_bond_annual_return_pct >}} annually, which is more than their current salary and stock options. You give them early access, which means they get rich before everyone else, which is the thing your species cares about even more than getting rich (getting rich first). You give them consulting fees, which is legal bribery with a name, and strategic advisor positions, which are fake jobs with real money. On Wishonia, we would find this arrangement absurd. On Earth, it's called "industry relations" and there are conferences about it.
+You give them [VICTORY Incentive Alignment Bonds](incentive-alignment-bonds.qmd) [@iab-paper-2025] paying {{< var victory_bond_annual_return_pct >}} annually, which is more than their current salary and stock options. You give them early access, which means they get rich before everyone else, which is the thing your species cares about even more than getting rich (getting rich first). You give them consulting fees, which is legal bribery with a name, and strategic advisor positions, which are fake jobs with real money. This arrangement is absurd. Your species calls it "industry relations" and holds conferences about it.
 
 ### The Math
 
@@ -41,13 +41,13 @@ Their current job (lobbying against the treaty): pays {{< var lobbyist_salary_mi
 
 ### Why They Take It
 
-{{< var victory_bond_annual_return_pct >}} is more than whatever they're making now. That's it. That's the whole reason. On Wishonia, we spent years looking for a deeper explanation for human behavior. There isn't one. It's money. It's always money. The deeper explanation IS money.
+{{< var victory_bond_annual_return_pct >}} is more than whatever they're making now. That's it. That's the whole reason. I spent years looking for a deeper explanation for human behavior. There isn't one. It's money. It's always money. The deeper explanation IS money.
 
 The treaty doesn't actually hurt them. Military budget drops 1% (from {{< var global_military_spending_annual_2024 >}} to {{< var global_military_spending_post_treaty_annual_2024 >}}). They still have {{< var defense_sector_retention_pct >}} to protect. Defense contracts still flow. Jobs stay. You're asking them to accept slightly less murder funding in exchange for becoming extremely wealthy. This is not a hard sell. This is barely a sell at all. It's more of a notification.
 
 ![The defense industry keeps 99% of its budget. They lose 1% and gain trillions in cure markets. This is the easiest math problem in history.](/assets/images/co-opting-defense-contractors/co-opting-defense-contractors-section-the-treaty-doesn-t-actually-hurt-them-bw-academic.jpg)
 
-Add {{< var victory_bond_funding_pct >}} VICTORY [Incentive Alignment Bonds](incentive-alignment-bonds.qmd) to a pension portfolio and blended returns jump from {{< var average_market_return_pct >}} to something that looks like a typo on a spreadsheet. (Be suspicious. Then check the math.) Once Lockheed buys bonds, Raytheon has to follow or explain to shareholders why Lockheed's portfolio is outperforming theirs. Start with pension funds (fiduciary duty requires best returns). They end up lobbying FOR the treaty to protect their investment. Your species calls this "unintended consequences." On Wishonia, we call it "the intended consequence," because we intended it, because that was the plan.
+Add {{< var victory_bond_funding_pct >}} VICTORY [Incentive Alignment Bonds](incentive-alignment-bonds.qmd) to a pension portfolio and blended returns jump from {{< var average_market_return_pct >}} to something that looks like a typo on a spreadsheet. (Be suspicious. Then check the math.) Once Lockheed buys bonds, Raytheon has to follow or explain to shareholders why Lockheed's portfolio is outperforming theirs. Start with pension funds (fiduciary duty requires best returns). They end up lobbying FOR the treaty to protect their investment. Your species calls this "unintended consequences." There is a word for consequences you designed on purpose. The word is "consequences."
 
 Once they're lobbying for the treaty, the rebrand starts writing itself. Lockheed Martin Presents: The F-35 Cancer Killer. Boeing Proud Sponsor of: Not Dying of Alzheimer's. Raytheon Technologies: Now With 1% Less Death. They keep their contracts. They keep their profits. They just point 1% of their death machines at actual death.
 
@@ -69,7 +69,7 @@ Here's what the CFO tells the CEO after the board meeting: the treaty is even be
 
 ### The Timeline
 
-Optimistic (if this works): key lobbyists flip in months 1-12, defense contractor trade associations go neutral by month 18, and by month 25 former opponents take credit for supporting medical research, which they discovered they cared about yesterday but will swear they've cared about their whole lives. Your species does this with every social change. Opposition, resistance, capitulation, retroactive credit. It's the four seasons of human progress. On Wishonia, we have a word for the moment when someone who fought against a good idea starts claiming they invented it. The word is "creditworm." Your species doesn't have a word for it, which is why it happens so often. Things without names are invisible.
+Optimistic (if this works): key lobbyists flip in months 1-12, defense contractor trade associations go neutral by month 18, and by month 25 former opponents take credit for supporting medical research, which they discovered they cared about yesterday but will swear they've cared about their whole lives. Your species does this with every social change. Opposition, resistance, capitulation, retroactive credit. It's the four seasons of human progress. No sane observer would fail to name the moment when someone who fought against a good idea starts claiming they invented it. The word is "creditworm." Your species doesn't have a word for it, which is why it happens so often. Things without names are invisible.
 
 ![How long it takes for politicians to go from 'this is outrageous' to 'I supported this all along.' Three years, apparently.](/assets/images/co-opting-defense-contractors/co-opting-defense-contractors-section-adoption-timeline-bw-academic.jpg)
 
@@ -85,7 +85,7 @@ Insurance companies are theoretically on your side. They've had this exact incen
 
 ![The insurance death spiral. Costs go up, premiums go up, healthy people leave, costs go up more. Like a toilet flush but with your healthcare.](/assets/images/aligning-incentives/aligning-incentives-section-their-current-death-spiral-bw-academic.jpg)
 
-Medical costs rise 7% annually. Premiums can't keep pace because of regulation. Claims are destroying margins. Chronic disease means lifetime payouts, which means every patient who doesn't die is a patient who keeps costing money, which means insurance companies are in the bizarre position of profiting when you die quickly and losing money when you die slowly, which is not what they put on their brochures but is what their actuarial tables reveal. Their ideal customer is someone who pays premiums for 40 years and then drops dead instantly. On Wishonia, we have a name for an organization that collects your money for decades and hopes you die before you can use it. We call it "a casino." You call it "healthcare." Their business model is dying, which is ironic given that their business model is about dying.
+Medical costs rise 7% annually. Premiums can't keep pace because of regulation. Claims are destroying margins. Chronic disease means lifetime payouts, which means every patient who doesn't die is a patient who keeps costing money, which means insurance companies are in the bizarre position of profiting when you die quickly and losing money when you die slowly, which is not what they put on their brochures but is what their actuarial tables reveal. Their ideal customer is someone who pays premiums for 40 years and then drops dead instantly. An organization that collects your money for decades and hopes you die before you can use it is called "a casino." Your species calls it "healthcare." Their business model is dying, which is ironic given that their business model is about dying.
 
 ### Your Salvation Offer
 
@@ -161,7 +161,7 @@ Republicans will call it a free market solution that cuts government spending. D
 
 ## Billionaires: Self-Interest Meets Self-Preservation
 
-Billionaires have everything except the one thing money can't buy: not dying. A billion dollars and a body that rots at the same rate as everyone else's. On Wishonia, we find this the most fascinating thing about your wealthy. They accumulate resources for decades, building empires, optimizing returns, diversifying portfolios, and then their cells malfunction and they die like everyone else. It's as if a dragon spent its whole life hoarding gold and then choked on a coin. The irony would be poetic if it weren't so common.
+Billionaires have everything except the one thing money can't buy: not dying. A billion dollars and a body that rots at the same rate as everyone else's. This is the most fascinating thing about your wealthy. They accumulate resources for decades, building empires, optimizing returns, diversifying portfolios, and then their cells malfunction and they die like everyone else. It's as if a dragon spent its whole life hoarding gold and then choked on a coin. The irony would be poetic if it weren't so common.
 
 ![Billionaires buying longevity like it's life insurance. Pay now, live forever. The premium is 100 million dollars but so is their watch.](/assets/images/aligning-incentives/aligning-incentives-section-the-insurance-bw-academic.jpg)
 
@@ -187,7 +187,7 @@ Having more capital doesn't help if you can't deploy it. That's Olson's whole po
 
 Once IABs concentrate financial benefits on the pro-health side, politicians face a new calculation where IAB benefits outweigh concentrated opposition costs. Each policy success increases IAB funding, which strengthens the coalition. Investors lobby for treaty expansion to increase their returns. The dynamic reverses: supporting clinical trial funding becomes the concentrated-benefit option. The diffuse interest becomes concentrated. The Olsonian problem dissolves. Not because humans got better. Because the math changed.
 
-This isn't inevitable. It requires sufficient IAB funding to overcome opposition, and "sufficient" is a number nobody can calculate in advance. But the capital exists. It just needs a reason to move. On Wishonia, we'd call this "providing a reason." On Earth, you'd call it "the most important financial product in history" or "a pipe dream," depending on whether you've read the math.
+This isn't inevitable. It requires sufficient IAB funding to overcome opposition, and "sufficient" is a number nobody can calculate in advance. But the capital exists. It just needs a reason to move. A rational civilization would call this "providing a reason." Your species calls it "the most important financial product in history" or "a pipe dream," depending on whether you've read the math.
 
 ![The virtuous cycle: fund research, cures happen, politicians look good, more funding arrives. Like the weapon-money cycle but nobody explodes.](/assets/images/aligning-incentives/aligning-incentives-section-why-the-cascade-can-happen-not-must-happen-bw-academic.jpg)
 
@@ -195,4 +195,4 @@ This isn't inevitable. It requires sufficient IAB funding to overcome opposition
 
 Each treaty expansion creates more political incentive funding to lobby for the next expansion. At 1%, political incentive funding is {{< var iab_political_incentive_funding_annual >}} per year. At 10%, that scales to 10x. Politicians who supported the [1% Treaty](1-percent-treaty.qmd) [@1-pct-treaty-impact-paper-2025] get rewarded. Those rewards grow if they push for 2%. It's a ratchet that only moves in one direction: the direction where people stop dying.
 
-You've built ratchets like this before. Social Security. Medicare. Once they exist, dismantling them is politically suicidal because too many people depend on them. The difference is you built those by accident, through crisis and desperation, and spent decades arguing about whether they were good ideas. This time, try doing it on purpose. On Wishonia, we've found that building things on purpose works better than building them by accident, though I realize this is a controversial position for a species that invented penicillin by leaving a sandwich out.
+You've built ratchets like this before. Social Security. Medicare. Once they exist, dismantling them is politically suicidal because too many people depend on them. The difference is you built those by accident, through crisis and desperation, and spent decades arguing about whether they were good ideas. This time, try doing it on purpose. Building things on purpose works better than building them by accident. I realize this is a controversial position for a species that invented penicillin by leaving a sandwich out.

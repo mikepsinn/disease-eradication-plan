@@ -24,7 +24,7 @@ scores:
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 Correlation between public opinion and policy outcomes: 0%.
 
-On Wishonia, decisions are made by whoever has the best evidence. On Earth, decisions are made by whoever has the most papers to give the people who survive a popularity contest held every four years among people who were too busy to research the contestants. You call this "democracy," which is Greek for "rule by the people," in the same way that "waterboarding" is about water.
+Your species makes decisions by whoever has the most papers to give the people who survive a popularity contest held every four years among people who were too busy to research the contestants. You call this "democracy," which is Greek for "rule by the people," in the same way that "waterboarding" is about water.
 
 Your chance of deciding a presidential election is 1 in 60 million [@odds-of-decisive-vote]. You are more likely to die driving to the polls. The expected value of your vote: {{< var us_vote_expected_value >}}. The cost of casting it (time, transportation, parking, standing in line behind a man arguing about his ID, a woman who brought her dog, and a voting machine manufactured by a company that donates to one of the candidates): about $50. You lose money voting. This is called "civic duty," which means "a financial loss you perform in formal clothing."
 
@@ -54,7 +54,7 @@ Will you take a day off work, drive to your capitol, and stand in a hallway to s
 
 That's it. That is the entire explanation for why your government does what it does. One paragraph. Everything else in this chapter is details. The details are where the crime hides.
 
-On Wishonia, we call this "beige crime": theft so boring that nobody investigates it. Your best criminals discovered long ago that the boredom threshold of the average citizen is approximately {{< var sugar_subsidy_cost_per_person_annual >}}. Steal more than that from one person and they'll complain. Steal {{< var sugar_subsidy_cost_per_person_annual >}} from 330 million people and you'll receive an industry award.
+There is a word for this. The word is "beige crime": theft so boring that nobody investigates it. Your best criminals discovered long ago that the boredom threshold of the average citizen is approximately {{< var sugar_subsidy_cost_per_person_annual >}}. Steal more than that from one person and they'll complain. Steal {{< var sugar_subsidy_cost_per_person_annual >}} from 330 million people and you'll receive an industry award.
 
 The pattern repeats everywhere, like wallpaper in a prison:
 
@@ -68,7 +68,7 @@ The small group hires lobbyists. You hire nobody. This is called "representative
 
 ### The Death Spiral: How Two Choices Kill 330 Million Options
 
-A human named James Surowiecki proved that crowds outperform experts under four conditions: diversity of opinion, independence of judgment, decentralization, and a good aggregation mechanism [@surowiecki-2004]. On Wishonia, we learned this by watching fish. Your political scientists spent 200 years and several revolutions to reach the same conclusion. The fish were faster.
+A human named James Surowiecki proved that crowds outperform experts under four conditions: diversity of opinion, independence of judgment, decentralization, and a good aggregation mechanism [@surowiecki-2004]. Fish figured this out by accident. Your political scientists spent 200 years and several revolutions to reach the same conclusion. The fish were faster.
 
 Your democracy has three of these conditions. It systematically destroys the most important one. A human named Charles Mackay described the result in 1841: the wisdom of crowds becomes the madness of crowds [@mackay-madness-of-crowds]. He was ignored, obviously.
 
@@ -76,7 +76,7 @@ Your democracy has three of these conditions. It systematically destroys the mos
 
 Then you don't even vote for the one you like. You vote against the one you fear. This is called "strategic voting," which means your ballot doesn't measure what you want. It measures what you think other people will do. That is not independence. That is a herd.
 
-On Wishonia, we observed this same phenomenon in army ants.
+You can observe this same phenomenon in army ants.
 
 Army ants are nearly blind [@army-ant-death-spiral]. They navigate by following pheromone trails laid by the ants ahead of them. When a foraging column gets separated from the main trail, the leading ants have nothing to follow, so they wander. But they're still laying pheromone as they walk. If the front of the column curves enough to cross its own trail, the leaders pick up that signal and follow it. The circle closes. Every ant is now both following and reinforcing the path that traps it. They march in a loop, sometimes hundreds of thousands strong, until they die of exhaustion.
 
@@ -84,7 +84,7 @@ No individual ant is stupid. Each is following a perfectly rational rule: follow
 
 Your two-party system is a death spiral with bumper stickers. Pollsters tell you who's "electable." Media covers the two "real" candidates. Donors fund the two "viable" options. You vote for one of them because everyone else is voting for one of them because everyone else is voting for one of them. The best candidate out of 330 million people could be standing right there, but if they're not wearing the right color tie, they're "throwing their vote away" (a phrase that only makes sense in a system designed to waste votes).
 
-The result: a nation of 330 million, selecting from a talent pool of 330 million, reliably produces a choice between two people that approximately nobody is enthusiastic about. On Wishonia, this would be classified as a math error. On Earth, it is classified as "freedom."
+The result: a nation of 330 million, selecting from a talent pool of 330 million, reliably produces a choice between two people that approximately nobody is enthusiastic about. An engineer would classify this as a math error. Your species classifies it as "freedom."
 
 ::: {.content-visible when-format="html"}
 <figure>
@@ -95,7 +95,7 @@ The result: a nation of 330 million, selecting from a talent pool of 330 million
 
 ## How Money Buys Your Government
 
-On most planets, giving someone papers so they'll do what you want is called "bribery." On Earth, it's called "campaign finance." The distinction matters, but not in the way you think. Campaign contributions don't directly buy how politicians vote. Only 1 in 4 studies even support that [@cost-of-political-influence]. The system is much more elegant than direct bribery.
+Giving someone papers so they'll do what you want is called "bribery." Your species calls it "campaign finance." The distinction matters, but not in the way you think. Campaign contributions don't directly buy how politicians vote. Only 1 in 4 studies even support that [@cost-of-political-influence]. The system is much more elegant than direct bribery.
 
 ![Money buys votes. Votes buy power. Power buys money. It's a circle. Calling it a "cycle" makes it sound natural.](/assets/images/unrepresentative-democracy/unrepresentative-democracy-section-how-money-buys-power-bw-academic.jpg)
 
@@ -105,7 +105,7 @@ What money actually buys is **which politicians exist in the first place:**
 - Average winning House campaign: $2.79 million [@cost-of-political-influence] (less than a nice apartment in Manhattan, and arguably less useful)
 - Average winning Senate campaign: $26.53 million [@cost-of-political-influence] (a senator costs more, presumably because there are fewer of them, like truffles)
 
-Why bribe a politician when you can manufacture one who already agrees with you? On Wishonia, we had a saying: "why train the dog when you can buy a dog that already sits?"
+Why bribe a politician when you can manufacture one who already agrees with you? Why train the dog when you can buy a dog that already sits?
 
 For the ones already sitting, papers buy something more useful than votes:
 
@@ -139,15 +139,15 @@ How congressmen spend a 10-hour workday:
 - Reading the laws they're about to vote on: whatever's left (roughly 1 hour)
 - Laws that need reading: 6 hours' worth
 
-That last part is important. The 110th Congress dealt with 7,441 bills totaling 125,000 pages [@congress-bill-volume-reading-time]. The House was in session 294 days. That is 425 pages per working day. At normal human reading speed, 6 hours. They have 1. They would need to read at six times normal speed. On Wishonia, we have a word for creatures that process information six times faster than their biology allows. The word is "lying."
+That last part is important. The 110th Congress dealt with 7,441 bills totaling 125,000 pages [@congress-bill-volume-reading-time]. The House was in session 294 days. That is 425 pages per working day. At normal human reading speed, 6 hours. They have 1. They would need to read at six times normal speed. There is a word for creatures that process information six times faster than their biology allows. The word is "lying."
 
 They do not read what they vote on. But it gets worse (on Earth, it always gets worse): they often do not write what they vote on, either.
 
 In 2013, the House passed a bill to weaken financial regulations. Of its 85 lines, 70 were written by Citigroup lobbyists [@lobbyists-write-bills-citigroup]. Two paragraphs were copied word for word; the only change was making two words plural. The bank wrote a law to deregulate itself, handed it to Congress, and Congress passed it. This is like letting the burglar write the building codes. (On your planet, this actually happened. I keep having to clarify this.)
 
-Over eight years, at least 10,000 bills copied from corporate templates were introduced in state legislatures. More than 2,100 became law [@copycat-model-legislation-10000]. Corporations draft the language, hand it to legislators, and legislators hit paste. On Wishonia, we have a word for a system where the person holding the stamp provides no function except the stamp. The word is "rubber." On Earth, the word is "representative."
+Over eight years, at least 10,000 bills copied from corporate templates were introduced in state legislatures. More than 2,100 became law [@copycat-model-legislation-10000]. Corporations draft the language, hand it to legislators, and legislators hit paste. No sane auditor would call this "authorship." The person holding the stamp provides no function except the stamp. The word for that is "rubber." Your species chose the word "representative."
 
-The PATRIOT Act: 342 pages, voted on 45 minutes after release [@patriot-act-passage]. That is 7.6 pages per minute. The Affordable Care Act: 2,700 pages, described by the Speaker of the House as something "we have to pass to see what's in it" [@affordable-care-act-passage]. On Wishonia, if you approved a 2,700-page document without reading it, you would not be allowed to operate heavy machinery. On Earth, these people operate nuclear weapons. (And they didn't read the manual for those either, presumably.)
+The PATRIOT Act: 342 pages, voted on 45 minutes after release [@patriot-act-passage]. That is 7.6 pages per minute. The Affordable Care Act: 2,700 pages, described by the Speaker of the House as something "we have to pass to see what's in it" [@affordable-care-act-passage]. No sane employer would let someone who approved a 2,700-page document without reading it operate heavy machinery. These people operate nuclear weapons. (And they didn't read the manual for those either, presumably.)
 
 ## Congressional Committees: The Menu
 
@@ -172,7 +172,7 @@ The House Speaker must raise $31 million for Democrats or $20 million for Republ
 
 This is why congressmen spend 4 hours a day fundraising. They're not campaigning. They're paying rent. The people writing your healthcare laws bought their positions from the industries those laws regulate. On your planet, this is called "the system working."
 
-On Wishonia, this is called "the system."
+An accountant would just call it "the system."
 
 ## Public Choice Theory (Or: The Nobel Prize for Cynicism)
 
@@ -196,7 +196,7 @@ This is Public Choice Theory. Bureaucrats, politicians, and regulators are exact
 | Defense Contractor | "National security" | Government contracts (forever) | Endless wars |
 :::
 
-On Wishonia, we noticed a pattern: any organism that controls its own food supply eventually optimizes for feeding itself. The surprise is not that your institutions do this. The surprise is that you keep expecting them not to.
+Any organism that controls its own food supply eventually optimizes for feeding itself. The surprise is not that your institutions do this. The surprise is that you keep expecting them not to.
 
 Nobody in this system is incentivized to cure disease or end war. You could elect {{< var us_congress_member_count_nounit >}} clones of your most idealistic human and within two years they'd be collecting papers from pharmaceutical companies, because the system requires it and the system does not care who you put inside it. It digests idealists the way a stomach digests food.
 
@@ -208,15 +208,15 @@ Every political faction on your planet has diagnosed the same problem and prescr
 
 I attended three of your political meetings. At the first, they said the government was too big. At the second, they said the government was too small. At the third, they said the government was exactly the right size but full of the wrong species. I left with the third group. They had better snacks, and also they were correct.
 
-The third group is called "Public Choice Theory." Their solution: design systems where selfish behavior accidentally produces good outcomes. On Wishonia, we went with this option 4,297 years ago. It took us 12 minutes to agree. You've been arguing about the first two for several centuries. This is called "political philosophy," which is the art of being wrong about the same thing in increasingly sophisticated ways.
+The third group is called "Public Choice Theory." Their solution: design systems where selfish behavior accidentally produces good outcomes. A rational civilization would pick this option in about 12 minutes. Your species has been arguing about the first two for several centuries. This is called "political philosophy," which is the art of being wrong about the same thing in increasingly sophisticated ways.
 
 ## Regulatory Capture: How the Burglar Trained the Guard Dog
 
 You hired a guard dog. Someone fed it treats. Now it guards them.
 
-There are 13,700 registered lobbyists in Washington [@lobbyist-statistics-dc]. "Lobbying" literally means standing in a lobby. Your corporations spend billions of papers a year paying people to stand in hallways. On Wishonia, people who stand in hallways are called "lost." On Earth, they're called "the most powerful people in your government."
+There are 13,700 registered lobbyists in Washington [@lobbyist-statistics-dc]. "Lobbying" literally means standing in a lobby. Your corporations spend billions of papers a year paying people to stand in hallways. People who stand in hallways are usually lost. Here, they're the most powerful people in your government.
 
-Half of them used to work in the government they're now lobbying, which on your planet is called "a career path" and on Wishonia is called "defecting." Corporations spend {{< var us_total_lobbying_annual >}} a year on this professional persuading {{< var us_total_lobbying_annual_cite >}}. Divide that by {{< var us_congress_member_count_nounit >}} members of Congress and you get over $8 million in professional persuasion surrounding each congressman, who earns less than a mid-level dentist [@congressman-salary].
+Half of them used to work in the government they're now lobbying, which your species calls "a career path." Every other profession calls it "defecting." Corporations spend {{< var us_total_lobbying_annual >}} a year on this professional persuading {{< var us_total_lobbying_annual_cite >}}. Divide that by {{< var us_congress_member_count_nounit >}} members of Congress and you get over $8 million in professional persuasion surrounding each congressman, who earns less than a mid-level dentist [@congressman-salary].
 
 The mystery is not that they're influenced. The mystery is that any of them aren't.
 
@@ -240,7 +240,7 @@ But the remarkable part is not that the war industry lobbies for budgets. It's t
 5. Military budgets fund more bases abroad
 6. Go to step 1 (forever)
 
-Robert Pape at the University of Chicago found that 95% of suicide terrorist attacks from 1980 to 2003 were driven by foreign military occupation, not ideology [@pape-dying-to-win]. Half the attackers were atheists and Marxists who couldn't have found Mecca on a map. Your $8 trillion War on Terror [@war-on-terror-cost-blowback] took terrorist attacks from roughly 1,000 per year to nearly 17,000 by 2014 [@terrorism-attacks-increased-post-2001]. You spent $8 trillion to increase the problem by 1,600%. On Wishonia, this is called "watering the fire with gasoline." On Earth, this is called "defense policy."
+Robert Pape at the University of Chicago found that 95% of suicide terrorist attacks from 1980 to 2003 were driven by foreign military occupation, not ideology [@pape-dying-to-win]. Half the attackers were atheists and Marxists who couldn't have found Mecca on a map. Your $8 trillion War on Terror [@war-on-terror-cost-blowback] took terrorist attacks from roughly 1,000 per year to nearly 17,000 by 2014 [@terrorism-attacks-increased-post-2001]. You spent $8 trillion to increase the problem by 1,600%. You spent $8 trillion to increase the problem by 1,600%. Your species calls this "defense policy."
 
 Most industries merely buy favorable rules. The defense industry manufactures the emergencies that make the rules seem necessary. The Pentagon has never passed an audit [@pentagon-unaccounted-2-5t]. It cannot tell you where the last trillion dollars went. It is, however, very confident about needing the next one.
 
@@ -266,7 +266,7 @@ Everything is working exactly as designed:
 
 The system works perfectly. It is just optimized for the wrong species.
 
-On Wishonia, we noticed the same pattern 6,000 years ago. The solution was not to elect better people. (We tried. They got eaten by the system in about 12 minutes.) The solution was to build a different system.
+The solution is not to elect better people. (Every civilization tries. They get eaten by the system in about 12 minutes.) The solution is to build a different system.
 
 ## The Solution They Don't Want You to Have
 
@@ -282,6 +282,6 @@ That's what a [1% Treaty](../solution/1-percent-treaty.qmd) [@1-pct-treaty-impac
 
 [Wishocracy](../solution/wishocracy.qmd) [@wishocracy-paper-2025] replaces the committees that lobbyists capture. Instead of 535 congressmen deciding which diseases get funded (based on who bought them dinner), 8 billion people make pairwise comparisons, and an algorithm allocates the budget. No committee chairs. No fundraising quotas. No lobbyist can bribe 8 billion random voters, and the only way to try is to offer them something they actually want (which is the system working correctly, for once).
 
-The plan is to give the bribers more money than the other bribers are giving them, and then replace the thing they were bribing with an equation. On Wishonia, this took 12 minutes. On Earth, it will probably take longer, because you will want to argue about it first.
+The plan is to give the bribers more money than the other bribers are giving them, and then replace the thing they were bribing with an equation. This should take about 12 minutes to understand. It will probably take your species longer, because you will want to argue about it first.
 
 ![The corruption machine, pointed at something useful for once.](/assets/images/unrepresentative-democracy/unrepresentative-democracy-section-the-solution-they-don-t-want-bw-academic.jpg)
