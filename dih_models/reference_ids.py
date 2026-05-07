@@ -28,6 +28,7 @@ class ReferenceID(str, Enum):
     """Valid reference IDs from knowledge/references.bib"""
 
     N1_PCT_TREATY_IMPACT_PAPER_2025 = "1-pct-treaty-impact-paper-2025"
+    N1_PERCENT_TREATY_PAPER_2025 = "1-percent-treaty-paper-2025"
     N166_BILLION_COMPOUNDS = "166-billion-compounds"
     N21ST_CENTURY_CURES_ACT_2016 = "21st-century-cures-act-2016"
     N3_5_RULE = "3-5-rule"

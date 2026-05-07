@@ -500,7 +500,7 @@ The protocol cannot be deployed simultaneously. Each primitive has prerequisites
 
 **Phase 0: Evidence layer (deploy now).** The Optimocracy engine [@optimocracy-paper-2025] and [Optimal Budget Generator](https://manual.warondisease.org/knowledge/appendix/optimal-budget-generator-spec.html) [@obg-paper-2025] require no legislative change. They compare existing policy outcomes across jurisdictions and publish findings. This is research, not governance. Deployment: immediate.
 
-**Phase 1: Preference aggregation (deploy with treaty).** The [1% Treaty](../solution/1-percent-treaty.qmd) [@1-pct-treaty-impact-paper-2025] creates the first pool of wishocratically allocated funds. Citizens allocate {{< var treaty_annual_funding >}}/year via pairwise comparison. One funding stream, one mechanism, outcomes measured by the evidence layer. Deployment: concurrent with treaty ratification.
+**Phase 1: Preference aggregation (deploy with treaty).** The [1% Treaty](../solution/1-percent-treaty.qmd) [@1-percent-treaty-paper-2025] [@1-pct-treaty-impact-paper-2025] creates the first pool of wishocratically allocated funds. Citizens allocate {{< var treaty_annual_funding >}}/year via pairwise comparison. One funding stream, one mechanism, outcomes measured by the evidence layer. Deployment: concurrent with treaty ratification.
 
 **Phase 2: Transparency layer (Years 1-3).** Treaty funds flow through a public ledger. Every allocation from wishocratic preference to final expenditure is visible. This demonstrates the accountability model at limited scale before extending it.
 

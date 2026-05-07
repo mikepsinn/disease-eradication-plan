@@ -437,7 +437,7 @@ That default is not "you." It is the fastest way to make the math legible before
 
   const scenarioMap = {
     treaty: {
-      label: 'Minimum Sustainable Trajectory ([1% Treaty](../solution/1-percent-treaty.qmd) [@1-pct-treaty-impact-paper-2025])',
+      label: 'Minimum Sustainable Trajectory ([1% Treaty](../solution/1-percent-treaty.qmd) [@1-percent-treaty-paper-2025] [@1-pct-treaty-impact-paper-2025])',
       income: treatyIncome,
       health: treatyHealth
     },
