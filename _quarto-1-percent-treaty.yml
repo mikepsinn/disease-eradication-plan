@@ -1,6 +1,6 @@
 project:
   type: website
-  output-dir: _site/humanity-v-government
+  output-dir: _site/1-percent-treaty
   execute-dir: project
   resources:
     - knowledge/data/
@@ -9,23 +9,24 @@ project:
     - robots.txt
     - llms.txt
   render:
-    # Paper is copied to index.qmd by render script
     - index.qmd
     - knowledge/appendix/parameters-and-calculations.qmd
 
 # Custom fields for render-quarto.py
 dih-render:
-  emoji: "⚖️"
-  index-source: knowledge/appendix/humanity-v-government.qmd
-  redirect-from: https://humanity-v-government.warondisease.org
+  emoji: "📜"
+  index-source: knowledge/solution/1-percent-treaty.qmd
+  redirect-from: https://1-percent-treaty.warondisease.org
   fallback-404-redirect-domain: https://manual.WarOnDisease.org
   netlify-site-id: ""  # TODO: create Netlify site and add ID
-  netlify-cname: "humanity-v-government-warondisease-org.netlify.app"
+  netlify-cname: "1-percent-treaty-warondisease-org.netlify.app"
   show-confidence-intervals: true
   concept-terms:
-    - term: "Negligent Mass Homicide"
-      manual-target: knowledge/appendix/humanity-v-government.qmd
-  favicon-prompt: "A scales-of-justice icon with one side weighted down by skulls and the other holding a single pill, in stark black and white retro-academic style"
+    - term: "1% Treaty"
+      manual-target: knowledge/solution/1-percent-treaty.qmd
+    - term: "1 Percent Treaty"
+      manual-target: knowledge/solution/1-percent-treaty.qmd
+  favicon-prompt: "A scroll of parchment bearing a single bold 1% mark, sealed with a wax stamp depicting a dove, in stark black and white retro-academic style"
 
 profiles:
   default:
@@ -41,14 +42,14 @@ author:
         url: https://acceleratedmedicine.org
 
 website:
-  title: "The People of Earth v. Their Governments"
-  description: "An indictment for negligent mass homicide separating historical body counts from forward-looking treaty-settlement exposure, with a 1% military reallocation as the only remedy commensurate with the offense."
-  site-url: https://manual.warondisease.org/knowledge/appendix/humanity-v-government.html
-  favicon: assets/icons/humanity-v-government-favicon.png
+  title: "The 1% Treaty"
+  description: "Your governments possess nuclear weapons sufficient to end civilization 122 times but have not cured Alzheimer's once. This treaty asks them to be 1% more rational."
+  site-url: https://manual.warondisease.org/knowledge/solution/1-percent-treaty.html
+  favicon: assets/icons/1-percent-treaty-favicon.png
   page-navigation: true
   page-footer:
     left: "© 2025 [Institute for Accelerated Medicine](https://acceleratedmedicine.org) | [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)"
-    center: "[PDF](/humanity-v-government.pdf) | [All Papers](https://manual.warondisease.org/knowledge/papers.html)"
+    center: "[PDF](/1-percent-treaty.pdf) | [All Papers](https://manual.warondisease.org/knowledge/papers.html)"
     right: "[VOTE](https://WarOnDisease.org)"
   navbar:
     right:
@@ -65,9 +66,7 @@ execute:
     PYTHONPATH: "."
 
 metadata:
-  doi: "10.5281/zenodo.20075757"
-  # Zenodo Concept DOI (stable across all versions - use for citations and new versions)
-  importance: 95
+  importance: 100
   creator: "Mike P. Sinn"
   orcid: "0009-0006-0212-1094"
   primary-author: "Mike P. Sinn"
@@ -78,26 +77,25 @@ metadata:
   author-website: "https://mikesinn.com"
   contact: "mike@warondisease.org"
   language: "en-US"
-  subject: "Mortality Accounting, Government Failure, Regulatory Economics, Public Choice"
-  category: "Academic Paper, Public Policy, Political Science, Health Economics"
-  coi-statement: "The author declares no competing interests beyond a vested interest in not being killed by any of the three counts described herein, an interest shared with the rest of the species."
+  subject: "International Law, Treaty Law, Public Economics, Health Policy, Mechanism Design"
+  category: "Academic Paper, International Treaty, Public Policy, Political Science"
+  coi-statement: "The author declares no competing interests beyond a vested interest in not dying of preventable disease, an interest shared with the rest of the species."
   data-availability: "All parameters, formulas, and citations are publicly available at https://manual.warondisease.org/knowledge/appendix/parameters-and-calculations.html"
-  ethics-statement: "This paper does not involve human subjects. The defendants do, however, involve all of them."
-  funding: "This research received no funding. The defendants' research budget is approximately $97 trillion per year in opportunity cost."
+  ethics-statement: "This paper does not involve human subjects. The signatories, however, would govern all of them."
+  funding: "This research received no funding from any signatory."
   github-profile: "https://github.com/mikepsinn"
   linkedin: "https://www.linkedin.com/in/mikesinn"
   orcid-url: "https://orcid.org/0009-0006-0212-1094"
   google-scholar: "https://scholar.google.com/citations?user=RjDd_qcAAAAJ"
   keywords:
-    - government-failure
-    - mortality-accounting
-    - regulatory-economics
-    - public-choice
-    - opportunity-cost
-    - efficacy-lag
-    - type-ii-error
-    - democide
+    - international-treaty
+    - military-reallocation
     - clinical-trials
+    - peace-dividend
+    - incentive-alignment-bonds
+    - political-incentive-fund
+    - settlement-mechanism
+    - international-law
   version: "1.0"
   edition: "First Edition"
   copyright: "© 2025 Mike P. Sinn"
@@ -113,30 +111,30 @@ metadata:
   issue-url: "https://github.com/wishonia/earth-optimization-protocol/issues"
   source-url: "https://github.com/wishonia/earth-optimization-protocol"
   geographic-coverage: "Global"
-  audience: "Researchers, Policy Makers, Economists, Political Scientists, Journalists, Lawyers"
+  audience: "Foreign Ministers, Treaty Negotiators, Legal Scholars, Policy Makers, NGO Coalitions, Journalists"
   format: "Working Paper"
   type: "Academic"
-  genre: "Mortality Accounting, Public Choice, Health Economics"
+  genre: "International Law, Treaty Drafting, Mechanism Design"
   medium: "Digital"
   twitter-site: "https://x.com/warondisease"
   twitter-creator: "https://x.com/warondisease"
-  og-site-name: "People of Earth v. Their Governments"
+  og-site-name: "The 1% Treaty"
 
   # Identifiers (to be added after Zenodo upload)
   # doi: ""
 
   open-graph: true
-  image: "https://manual.warondisease.org/assets/og/humanity-v-government-og-1200x630.jpg"
+  image: "https://manual.warondisease.org/assets/og/1-percent-treaty-og-1200x630.jpg"
 
   publishing:
     own-site:
-      url: "https://manual.warondisease.org/knowledge/appendix/humanity-v-government.html"
+      url: "https://manual.warondisease.org/knowledge/solution/1-percent-treaty.html"
       status: pending
     preprints:
       - platform: zenodo
-        status: auto-uploaded
-        url: "https://zenodo.org/record/20075757"
-        doi: "10.5281/zenodo.20075757"
+        status: pending
+        url: ""
+        doi: ""
       - platform: ssrn
         status: pending
         url: ""
@@ -144,12 +142,16 @@ metadata:
         status: pending
         category: econ.GN
     journals:
-      - name: "Journal of Public Economics"
+      - name: "American Journal of International Law"
         tier: 1
         status: target
         url: ""
-      - name: "Public Choice"
-        tier: 2
+      - name: "Yale Journal of International Law"
+        tier: 1
+        status: target
+        url: ""
+      - name: "Journal of Public Economics"
+        tier: 1
         status: target
         url: ""
 
@@ -191,11 +193,11 @@ format:
       - file: assets/html/generated-footer.html
     include-in-header:
       - text: |
-          <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/humanity-v-government-favicon-32x32.png">
-          <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/humanity-v-government-favicon-16x16.png">
-          <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/humanity-v-government-apple-touch-icon.png">
-          <link rel="icon" type="image/png" sizes="192x192" href="/assets/icons/humanity-v-government-android-chrome-192x192.png">
-          <link rel="icon" type="image/png" sizes="512x512" href="/assets/icons/humanity-v-government-android-chrome-512x512.png">
+          <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/1-percent-treaty-favicon-32x32.png">
+          <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/1-percent-treaty-favicon-16x16.png">
+          <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/1-percent-treaty-apple-touch-icon.png">
+          <link rel="icon" type="image/png" sizes="192x192" href="/assets/icons/1-percent-treaty-android-chrome-192x192.png">
+          <link rel="icon" type="image/png" sizes="512x512" href="/assets/icons/1-percent-treaty-android-chrome-512x512.png">
       - file: assets/html/google-analytics.html
       - file: assets/html/hypothesis.html
       - file: assets/html/fonts-preload.html
@@ -206,7 +208,7 @@ format:
     code-tools: false
     filters: [assets/filters/live-version-note.lua]
   pdf:
-    output-file: "humanity-v-government.pdf"
+    output-file: "1-percent-treaty.pdf"
     documentclass: article
     institute: "Institute for Accelerated Medicine"
     echo: false
@@ -219,7 +221,7 @@ format:
       - callout-bw.tex
       - institute-header.tex
       - text: |
-          \paperurl{https://manual.warondisease.org/knowledge/appendix/humanity-v-government.html}
+          \paperurl{https://manual.warondisease.org/knowledge/solution/1-percent-treaty.html}
     geometry:
       - top=1in
       - bottom=1in

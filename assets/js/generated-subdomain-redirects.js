@@ -3,6 +3,7 @@
 // Do not edit manually - regenerate with generate-everything script
 (function () {
   var redirects = {
+  "1-percent-treaty.warondisease.org": "https://manual.warondisease.org/knowledge/solution/1-percent-treaty.html",
   "apa.warondisease.org": "https://manual.warondisease.org/knowledge/appendix/algorithmic-public-administration.html",
   "court-of-humanity.warondisease.org": "https://manual.warondisease.org/knowledge/appendix/court-of-humanity-paper.html",
   "drug-cost.warondisease.org": "https://manual.warondisease.org/knowledge/appendix/drug-development-cost-analysis.html",

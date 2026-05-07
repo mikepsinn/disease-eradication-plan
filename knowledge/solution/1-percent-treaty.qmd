@@ -1,7 +1,65 @@
 ---
-title: A 1% Treaty
-description: You have enough nuclear weapons to end civilization 122 times over. Here's how to settle for 121.2 times and use the savings on medicine. Controversial, apparently.
+title: "The 1% Treaty"
+subtitle: "A Treaty for the Reallocation of 1% of Military Expenditures Toward Biomedical Research and the Prevention of Human Suffering and Death"
+description: Your governments possess nuclear weapons sufficient to end civilization {{< var nuclear_winter_overkill_factor_nounit >}} times but have not cured Alzheimer's once. This treaty asks them to be 1% more rational.
+abstract: |
+  Your public servants used {{< var cumulative_military_spending_fed_era >}} of
+  their salary to murder approximately {{< var war_deaths_since_1900_nounit >}}
+  humans over the last century of their employment. The murdered included 930,000
+  doctors, 310,000 scientists, 620,000 engineers, and
+  {{< var war_children_killed_since_1900_nounit >}} children who will never grow up
+  to replace them. They spend
+  {{< var military_to_government_clinical_trials_spending_ratio_nounit >}} dollars
+  on the capacity for orphan manufacturing for every one dollar spent on the trials
+  that might cure what is actually going to kill their citizens. Someone you love
+  is, at this moment, suffering from a disease because the treatment that would
+  help them exists untested on a shelf, because the money that would have tested it
+  was busy turning into a missile.
+
+  This treaty asks the undersigned nations to be 1% more rational. Each signatory
+  redirects exactly one percent of its military budget to pragmatic clinical
+  trials, perpetual [Incentive Alignment Bond](../appendix/incentive-alignment-bonds-paper.qmd)
+  [@iab-paper-2025] returns, and a Political Incentive Fund that scores legislators
+  on compliance. Every nation cuts equally, so no country gets weaker. Trial
+  capacity scales {{< var dfda_trial_capacity_multiplier >}}. The backlog of
+  {{< var diseases_without_effective_treatment >}} untreated diseases drops from
+  {{< var status_quo_queue_clearance_years >}} to {{< var dfda_queue_clearance_years >}}.
+  Treatments arrive {{< var dfda_trial_capacity_plus_efficacy_lag_years_nounit >}}
+  years sooner. {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}}
+  preventable deaths averted, valued at
+  {{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}}.
+
+  The percentage can go up. It never goes down. The Treaty is the settlement offer
+  for the liability established in
+  [Humanity v. Government](../appendix/humanity-v-government.qmd), adjudicated
+  through the [Court of Humanity](court-of-humanity.qmd) [@court-of-humanity-paper-2025],
+  with the economic case quantified in
+  [1% Treaty Impact](../economics/1-pct-treaty-impact.qmd) [@1-pct-treaty-impact-paper-2025].
 published: true
+author:
+  - name: Mike P. Sinn
+    affiliation:
+      name: Institute for Accelerated Medicine
+    roles:
+      - conceptualization
+      - writing – original draft
+    email: mike@warondisease.org
+    corresponding: true
+keywords:
+  - international treaty
+  - military reallocation
+  - clinical trials
+  - peace dividend
+  - incentive alignment bonds
+  - political incentive fund
+  - settlement mechanism
+  - international law
+jel:
+  - F53
+  - H56
+  - I18
+  - K33
+  - O38
 tags:
   - solution
   - 1-percent-treaty
@@ -13,6 +71,9 @@ image: /assets/og-images/knowledge/solution/1-percent-treaty-og-retro-academic.j
 podcast-image: /assets/podcast/1-percent-treaty-podcast.jpg
 feed-date: '2026-03-10'
 youtube-thumbnail: /assets/podcast/1-percent-treaty-youtube.jpg
+aliases:
+  - /1-percent-treaty.html
+  - /knowledge/appendix/1-percent-treaty-paper.html
 scores:
   quality: 9
   value: 10

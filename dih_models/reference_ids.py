@@ -568,6 +568,7 @@ class ReferenceID(str, Enum):
     HUMAN_GENOME_AND_GENETIC_EDITING = "human-genome-and-genetic-editing"
     HUMAN_GENOME_PROJECT_ROI_796B = "human-genome-project-roi-796b"
     HUMAN_METABOLIC_ACTIVITY = "human-metabolic-activity"
+    HUMANITY_V_GOVERNMENT_PAPER_2025 = "humanity-v-government-paper-2025"
     HUNTER_GATHERER_VIOLENCE = "hunter-gatherer-violence"
     HURWICZ1972 = "hurwicz1972"
     HYPERTENSION_SCREENING_TREATMENT_QALY = "hypertension-screening-treatment-qaly"
