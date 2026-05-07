@@ -276,7 +276,7 @@ The first and usually only email sent to a nonprofit. One shot, all three asks, 
 
 Hi [Name],
 
-[Org Name]'s work on [their focus area] is directly relevant to something we're building.
+[Org Name]'s work on [their focus area] is directly relevant to the 1% Treaty campaign.
 
 The International Campaign to End War and Disease is building the public signature layer for the 1% Treaty, a proposal for all nations to simultaneously redirect 1% of military spending ({{< var treaty_annual_funding >}}) to pragmatic clinical trials. Every nation cuts equally, so no country's military capability changes relative to any other. Trial capacity increases {{< var dfda_trial_capacity_multiplier >}}. The backlog of {{< var diseases_without_effective_treatment_nounit >}} untreated diseases drops from {{< var status_quo_queue_clearance_years_nounit >}} years to {{< var dfda_queue_clearance_years_nounit >}} years. Whatever condition [Org Name]'s community is affected by is almost certainly in that backlog.
 

@@ -66,6 +66,8 @@ execute:
     PYTHONPATH: "."
 
 metadata:
+  doi: "10.5281/zenodo.20075681"
+  # Zenodo Concept DOI (stable across all versions - use for citations and new versions)
   importance: 96
   creator: "Mike P. Sinn"
   orcid: "0009-0006-0212-1094"
@@ -132,9 +134,9 @@ metadata:
       status: pending
     preprints:
       - platform: zenodo
-        status: pending
-        url: ""
-        doi: ""
+        status: auto-uploaded
+        url: "https://zenodo.org/record/20075681"
+        doi: "10.5281/zenodo.20075681"
       - platform: ssrn
         status: pending
         url: ""

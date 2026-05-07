@@ -249,6 +249,7 @@ class ReferenceID(str, Enum):
     COSTSOFWAR_DISPLACEMENT_2020 = "costsofwar-displacement-2020"
     COSTSOFWAR_HUMAN_2024 = "costsofwar-human-2024"
     COSTSOFWAR2023 = "costsofwar2023"
+    COURT_OF_HUMANITY_PAPER_2025 = "court-of-humanity-paper-2025"
     COVID_14_TRILLION_USC = "covid-14-trillion-usc"
     COVID_16_TRILLION_VIRUS = "covid-16-trillion-virus"
     COVID_DEATHS_VS_US_WAR_DEATHS = "covid-deaths-vs-us-war-deaths"
