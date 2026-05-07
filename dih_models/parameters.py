@@ -3677,6 +3677,35 @@ GLOBAL_POPULATION_2024 = Parameter(
     latex_symbol=r"Pop_{global}",  # LaTeX symbol for equations
 )  # UN World Population Prospects 2022
 
+# Global life expectancy at birth, used as the cohort-lifetime horizon for representative
+# full-life damages calculations and as the YLL anchor in the regulatory-delay QALY chain.
+# Moved here from later in the file so lost-prosperity-only damages params can reference it.
+GLOBAL_LIFE_EXPECTANCY_2024 = Parameter(
+    79,
+    manual_ref="knowledge/appendix/invisible-graveyard.qmd",
+    source_ref=ReferenceID.WHO_GLOBAL_HEALTH_ESTIMATES_2024,
+    source_type="external",
+    description="Global life expectancy (2024)",
+    display_name="Global Life Expectancy (2024)",
+    unit="years",
+    confidence="high",
+    last_updated="2024",
+    peer_reviewed=True,
+    keywords=["life expectancy", "longevity", "lifespan", "actuarial", "demographics"],
+    distribution="normal",  # Normal appropriate: tight empirical data, slow-changing
+    std_error=2,  # ±2 years (2.5% CV): Captures measurement + projection uncertainty
+    # Economist justification: WHO reports 73.4 (global), with regional variance:
+    #   - High-income: 80.3 years (Japan 84, US 77)
+    #   - Low-income: 63.7 years (Chad 54, Nigeria 55)
+    # Using 79 assumes developed-country treatment access (optimistic for global model)
+    # CRITICAL: If dFDA benefits accrue mainly to high-income countries, use 80+
+    #           If global access, weight toward lower 73-75 range
+    # Tight ±2 years appropriate: actuarial tables very stable, no sudden shifts expected
+    validation_min=70,  # Floor: Pessimistic scenario (global conflicts, pandemics)
+    validation_max=85,  # Ceiling: Optimistic scenario (longevity breakthroughs, developed countries)
+    latex_symbol=r"LE_{global}",  # LaTeX symbol for equations
+)
+
 # Bullets per person (depends on GLOBAL_POPULATION_2024 above)
 BULLETS_PER_PERSON_ANNUAL = Parameter(
     GLOBAL_BULLETS_PURCHASABLE_ANNUAL / GLOBAL_POPULATION_2024,
@@ -3861,6 +3890,54 @@ WAR_COUNTERFACTUAL_INCOME_MULTIPLE = Parameter(
     compute=lambda ctx: ctx["WAR_COUNTERFACTUAL_GDP_PER_CAPITA"] / ctx["GLOBAL_AVG_INCOME_2025"],
     keywords=["war", "income", "multiple", "richer", "counterfactual", "compound"],
     latex_symbol=r"M_{war,income}",
+)
+
+# Lost-prosperity-only damages: representative full-life cohort exposure, undiscounted,
+# single-coherent-theory pleading. NOT a per-individual award — it is the lifetime exposure
+# computed for a representative person who experiences the full WHO global life-expectancy
+# horizon. Actual per-individual award would scale by remaining life expectancy at the
+# time of pleading. Implicitly captures war deaths, property destruction, and medical
+# opportunity cost via their drag on compound growth, so it cannot be added to the body-
+# count ledger.
+LOST_PROSPERITY_LIFETIME_DAMAGES_PER_CAPITA = Parameter(
+    WAR_COUNTERFACTUAL_LOST_GDP_PER_CAPITA * GLOBAL_LIFE_EXPECTANCY_2024,
+    manual_ref="knowledge/appendix/humanity-v-government.qmd",
+    source_type=SourceType.CALCULATED,
+    confidence="low",
+    description="Representative full-life cohort exposure: lifetime lost earnings under the "
+                "8-channel compound peace economy counterfactual, undiscounted, over WHO global "
+                "life expectancy at birth. NOT a uniform per-individual award. A 5-year-old, "
+                "45-year-old, and 85-year-old plaintiff would each have a different remaining-life "
+                "horizon; this number is the representative full-cohort exposure used as the "
+                "single-theory headline. Implicitly captures war deaths, property destruction, and "
+                "medical opportunity cost via their drag on compound growth, so cannot be added to "
+                "the body-count ledger.",
+    display_name="Lost-Prosperity-Only Lifetime Damages, Representative Full-Life Cohort",
+    unit="USD/person",
+    formula="WAR_COUNTERFACTUAL_LOST_GDP_PER_CAPITA × GLOBAL_LIFE_EXPECTANCY_2024",
+    inputs=["WAR_COUNTERFACTUAL_LOST_GDP_PER_CAPITA", "GLOBAL_LIFE_EXPECTANCY_2024"],
+    compute=lambda ctx: ctx["WAR_COUNTERFACTUAL_LOST_GDP_PER_CAPITA"] * ctx["GLOBAL_LIFE_EXPECTANCY_2024"],
+    keywords=["lost prosperity", "lifetime", "damages", "per capita", "cohort", "single theory", "lost profits"],
+    latex_symbol=r"D_{prosperity,life,pc}",
+)
+
+LOST_PROSPERITY_LIFETIME_DAMAGES_TOTAL = Parameter(
+    WAR_COUNTERFACTUAL_LOST_GDP_GLOBAL * GLOBAL_LIFE_EXPECTANCY_2024,
+    manual_ref="knowledge/appendix/humanity-v-government.qmd",
+    source_type=SourceType.CALCULATED,
+    confidence="low",
+    description="Global lifetime lost prosperity damages, undiscounted, WHO global life expectancy "
+                "horizon. Single coherent damages theory under corporate-liability lost-profits "
+                "doctrine: the integral of the productive economy that didn't happen because of the "
+                "destructive economy. Cannot be added to the body-count ledger; replaces it as a "
+                "single-theory pleading.",
+    display_name="Lost-Prosperity-Only Lifetime Damages Total (Cohort Horizon)",
+    unit="USD",
+    formula="WAR_COUNTERFACTUAL_LOST_GDP_GLOBAL × GLOBAL_LIFE_EXPECTANCY_2024",
+    inputs=["WAR_COUNTERFACTUAL_LOST_GDP_GLOBAL", "GLOBAL_LIFE_EXPECTANCY_2024"],
+    compute=lambda ctx: ctx["WAR_COUNTERFACTUAL_LOST_GDP_GLOBAL"] * ctx["GLOBAL_LIFE_EXPECTANCY_2024"],
+    keywords=["lost prosperity", "lifetime", "damages", "total", "cohort", "single theory", "lost profits"],
+    latex_symbol=r"D_{prosperity,life}",
 )
 
 # Historical sunk cost total (one-time, not ongoing)
@@ -4185,32 +4262,6 @@ REGULATORY_DELAY_MEAN_AGE_OF_DEATH = Parameter(
     validation_min=50,  # Floor: Infectious disease-dominated scenario (HIV, TB, malaria)
     validation_max=75,  # Ceiling: Chronic disease-dominated scenario (cancer, CVD, Alzheimer's)
     latex_symbol=r"Age_{death,delay}",  # LaTeX symbol for equations
-)
-
-GLOBAL_LIFE_EXPECTANCY_2024 = Parameter(
-    79,
-    manual_ref="knowledge/appendix/invisible-graveyard.qmd",
-    source_ref=ReferenceID.WHO_GLOBAL_HEALTH_ESTIMATES_2024,
-    source_type="external",
-    description="Global life expectancy (2024)",
-    display_name="Global Life Expectancy (2024)",
-    unit="years",
-    confidence="high",
-    last_updated="2024",
-    peer_reviewed=True,
-    keywords=["life expectancy", "longevity", "lifespan", "actuarial", "demographics"],
-    distribution="normal",  # Normal appropriate: tight empirical data, slow-changing
-    std_error=2,  # ±2 years (2.5% CV): Captures measurement + projection uncertainty
-    # Economist justification: WHO reports 73.4 (global), with regional variance:
-    #   - High-income: 80.3 years (Japan 84, US 77)
-    #   - Low-income: 63.7 years (Chad 54, Nigeria 55)
-    # Using 79 assumes developed-country treatment access (optimistic for global model)
-    # CRITICAL: If dFDA benefits accrue mainly to high-income countries, use 80+
-    #           If global access, weight toward lower 73-75 range
-    # Tight ±2 years appropriate: actuarial tables very stable, no sudden shifts expected
-    validation_min=70,  # Floor: Pessimistic scenario (global conflicts, pandemics)
-    validation_max=85,  # Ceiling: Optimistic scenario (longevity breakthroughs, developed countries)
-    latex_symbol=r"LE_{global}",  # LaTeX symbol for equations
 )
 
 # Expected life extension from 1% treaty research acceleration (25x trial capacity)
@@ -5404,6 +5455,50 @@ NPV_TIME_HORIZON_YEARS = Parameter(
     distribution="fixed",  # Methodological choice: standard 10-year NPV analysis window
     latex_symbol=r"T_{horizon}",  # LaTeX symbol for equations
 )  # Standard 10-year analysis window (T)
+
+# Lost-prosperity-only damages: NPV of perpetual annual lost-income flow at the
+# standard 3% social discount rate, under a NO-CURE / NO-CONVERGENCE baseline
+# assumption (the gap continues forever). This is a sensitivity exposure, not a
+# claim that the gap actually persists indefinitely. A finite-horizon NPV would
+# be slightly smaller (a 100-year truncated NPV at 3% captures ~94.7% of the
+# perpetuity, so the assumption matters less than the discount-rate choice).
+LOST_PROSPERITY_NPV_PERPETUITY_PER_CAPITA = Parameter(
+    WAR_COUNTERFACTUAL_LOST_GDP_PER_CAPITA / NPV_DISCOUNT_RATE_STANDARD,
+    manual_ref="knowledge/appendix/humanity-v-government.qmd",
+    source_type=SourceType.CALCULATED,
+    confidence="low",
+    description="Net present value of perpetual annual lost-income flow per representative living "
+                "human, at the standard 3% social discount rate, under a no-cure/no-convergence "
+                "baseline. Sensitivity exposure for the corporate-liability lost-profits theory. "
+                "Treats the lost-prosperity flow as continuing indefinitely; a finite-horizon "
+                "convergence assumption would shrink this slightly (~5% reduction at 100 years). "
+                "Single-theory pleading; cannot be added to the body-count ledger.",
+    display_name="Lost-Prosperity-Only NPV Perpetuity Per Capita (3%, No-Cure Baseline)",
+    unit="USD/person",
+    formula="WAR_COUNTERFACTUAL_LOST_GDP_PER_CAPITA / NPV_DISCOUNT_RATE_STANDARD",
+    inputs=["WAR_COUNTERFACTUAL_LOST_GDP_PER_CAPITA", "NPV_DISCOUNT_RATE_STANDARD"],
+    compute=lambda ctx: ctx["WAR_COUNTERFACTUAL_LOST_GDP_PER_CAPITA"] / ctx["NPV_DISCOUNT_RATE_STANDARD"],
+    keywords=["lost prosperity", "NPV", "perpetuity", "per capita", "no-cure", "single theory", "lost profits"],
+    latex_symbol=r"D_{prosperity,NPV,pc}",
+)
+
+LOST_PROSPERITY_NPV_PERPETUITY_TOTAL = Parameter(
+    WAR_COUNTERFACTUAL_LOST_GDP_GLOBAL / NPV_DISCOUNT_RATE_STANDARD,
+    manual_ref="knowledge/appendix/humanity-v-government.qmd",
+    source_type=SourceType.CALCULATED,
+    confidence="low",
+    description="Net present value of perpetual lost-income flow globally, at the standard 3% "
+                "social discount rate, under a no-cure/no-convergence baseline. Sensitivity "
+                "exposure under corporate-liability lost-profits doctrine. Cannot be added to the "
+                "body-count ledger.",
+    display_name="Lost-Prosperity-Only NPV Perpetuity Total (3%, No-Cure Baseline)",
+    unit="USD",
+    formula="WAR_COUNTERFACTUAL_LOST_GDP_GLOBAL / NPV_DISCOUNT_RATE_STANDARD",
+    inputs=["WAR_COUNTERFACTUAL_LOST_GDP_GLOBAL", "NPV_DISCOUNT_RATE_STANDARD"],
+    compute=lambda ctx: ctx["WAR_COUNTERFACTUAL_LOST_GDP_GLOBAL"] / ctx["NPV_DISCOUNT_RATE_STANDARD"],
+    keywords=["lost prosperity", "NPV", "perpetuity", "total", "no-cure", "single theory", "lost profits"],
+    latex_symbol=r"D_{prosperity,NPV}",
+)
 
 # ---
 # FINANCIAL PARAMETERS - NPV MODEL COMPONENTS

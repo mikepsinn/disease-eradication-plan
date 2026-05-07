@@ -38,15 +38,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 79 parameters used in the analysis, organized by type:
+This appendix documents all 85 parameters used in the analysis, organized by type:
 
-- External sources (peer-reviewed): 21
-- Calculated values: 39
-- Core definitions: 19
+- External sources (peer-reviewed): 23
+- Calculated values: 42
+- Core definitions: 20
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (39 parameters) • [External Data Sources](#sec-external) (21 parameters) • [Core Definitions](#sec-definitions) (19 parameters)
+[Calculated Values](#sec-calculated) (42 parameters) • [External Data Sources](#sec-external) (23 parameters) • [Core Definitions](#sec-definitions) (20 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -2348,6 +2348,38 @@ $$
 
 :::
 
+### Annual Global Government Expense: $36.5 trillion {#sec-global_government_expense_annual}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Approximate annual global government expenditure, computed as global GDP times the World Bank general-government expense share of GDP.
+
+**Inputs**:
+
+- [Global GDP (2025)](#sec-global_gdp_2025) 📊: $115 trillion
+- [Global Government Expense Share of GDP](#sec-global_government_expense_pct_gdp) 📊: 31.8%
+
+$$
+\begin{gathered}
+Expense_{gov,global} \\
+= GDP_{global} \times p_{gov,expense} \\
+= \$115T \times 31.8\% \\
+= \$36.5T
+\end{gathered}
+$$
+
+*~ Medium confidence*
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-global_government_expense_annual.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-global_government_expense_annual.qmd >}}
+
+:::
+
 ### Annual IAB Political Incentive Funding: $2.72 billion {#sec-iab_political_incentive_funding_annual}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -2385,6 +2417,134 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-iab_political_incentive_funding_annual.qmd >}}
+
+:::
+
+### Lost-Prosperity-Only Lifetime Damages, Representative Full-Life Cohort: $25.2 million {#sec-lost_prosperity_lifetime_damages_per_capita}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Representative full-life cohort exposure: lifetime lost earnings under the 8-channel compound peace economy counterfactual, undiscounted, over WHO global life expectancy at birth. NOT a uniform per-individual award. A 5-year-old, 45-year-old, and 85-year-old plaintiff would each have a different remaining-life horizon; this number is the representative full-cohort exposure used as the single-theory headline. Implicitly captures war deaths, property destruction, and medical opportunity cost via their drag on compound growth, so cannot be added to the body-count ledger.
+
+**Inputs**:
+
+- [Annual Lost GDP per Capita from War](#sec-war_counterfactual_lost_gdp_per_capita) 🔢: $319,261
+- [Global Life Expectancy (2024)](#sec-global_life_expectancy_2024) 📊: 79 years (SE: ±2 years)
+
+$$
+\begin{gathered}
+D_{prosperity,life,pc} \\
+= GDP_{pc,lost} \times LE_{global} \\
+= \$319K \times 79 \\
+= \$25.2M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+GDP_{pc,lost} \\
+= GDP_{pc,peace} - \bar{y}_{0} \\
+= \$334K - \$14.4K \\
+= \$319K
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+GDP_{pc,peace} \\
+= GDP_{pc,1900} \times \left(1 + \left(\frac{\bar{y}_{0}}{GDP_{pc,1900}}\right)^{1/124} - 1 + g_{war,penalty}\right)^{124} \\[0.5em]
+= \$3.15K \times \left(1 + \left(\frac{\$14.4K}{\$3.15K}\right)^{1/124} - 1 + 2.6\%\right)^{124} \\[0.5em]
+= \$334K
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+\bar{y}_{0} \\
+= \frac{GDP_{global}}{Pop_{global}} \\
+= \frac{\$115T}{8B} \\
+= \$14.4K
+\end{gathered}
+$$
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-lost_prosperity_lifetime_damages_per_capita.qmd >}}
+
+{{< include ../figures/sensitivity-table-lost_prosperity_lifetime_damages_per_capita.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-lost_prosperity_lifetime_damages_per_capita.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-lost_prosperity_lifetime_damages_per_capita.qmd >}}
+
+:::
+
+### Lost-Prosperity-Only NPV Perpetuity Per Capita (3%, No-Cure Baseline): $10.6 million {#sec-lost_prosperity_npv_perpetuity_per_capita}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Net present value of perpetual annual lost-income flow per representative living human, at the standard 3% social discount rate, under a no-cure/no-convergence baseline. Sensitivity exposure for the corporate-liability lost-profits theory. Treats the lost-prosperity flow as continuing indefinitely; a finite-horizon convergence assumption would shrink this slightly (~5% reduction at 100 years). Single-theory pleading; cannot be added to the body-count ledger.
+
+**Inputs**:
+
+- [Annual Lost GDP per Capita from War](#sec-war_counterfactual_lost_gdp_per_capita) 🔢: $319,261
+- [Standard Discount Rate for NPV Analysis](#sec-npv_discount_rate_standard): 3%
+
+$$
+\begin{gathered}
+D_{prosperity,NPV,pc} \\
+= \frac{GDP_{pc,lost}}{r_{discount}} \\
+= \frac{\$319K}{3\%} \\
+= \$10.6M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+GDP_{pc,lost} \\
+= GDP_{pc,peace} - \bar{y}_{0} \\
+= \$334K - \$14.4K \\
+= \$319K
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+GDP_{pc,peace} \\
+= GDP_{pc,1900} \times \left(1 + \left(\frac{\bar{y}_{0}}{GDP_{pc,1900}}\right)^{1/124} - 1 + g_{war,penalty}\right)^{124} \\[0.5em]
+= \$3.15K \times \left(1 + \left(\frac{\$14.4K}{\$3.15K}\right)^{1/124} - 1 + 2.6\%\right)^{124} \\[0.5em]
+= \$334K
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+\bar{y}_{0} \\
+= \frac{GDP_{global}}{Pop_{global}} \\
+= \frac{\$115T}{8B} \\
+= \$14.4K
+\end{gathered}
+$$
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-lost_prosperity_npv_perpetuity_per_capita.qmd >}}
+
+{{< include ../figures/sensitivity-table-lost_prosperity_npv_perpetuity_per_capita.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-lost_prosperity_npv_perpetuity_per_capita.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-lost_prosperity_npv_perpetuity_per_capita.qmd >}}
 
 :::
 
@@ -3399,6 +3559,42 @@ Global GDP per capita in 1900 in constant 2024 USD. Maddison Project: ~$1,260 in
 
 :::
 
+### Global Government Expense Share of GDP: 31.8% {#sec-global_government_expense_pct_gdp}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+World general government total expense as a share of GDP, using World Bank indicator GC.XPN.TOTL.GD.ZS. The most recent world aggregate in the cited source is 2021.
+
+**Source**: [@world-bank-government-expense-pct-gdp]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*~ Medium confidence*
+
+:::
+
+### Global Life Expectancy (2024): 79 years {#sec-global_life_expectancy_2024}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Global life expectancy (2024)
+
+**Source**: [@who-global-health-estimates-2024]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Normal (SE: 2 years)
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_life_expectancy_2024.qmd >}}
+
+*✓ High confidence • 📊 Peer-reviewed • Updated 2024*
+
+:::
+
 ### Global Military Spending in 2024: $2.72 trillion {#sec-global_military_spending_annual_2024}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -3848,6 +4044,20 @@ Percentage of DALYs that are eventually avoidable with sufficient biomedical res
 ::: {.callout-note collapse="true" title="📊 Details"}
 
 Percentage of treaty funding allocated to Incentive Alignment Bond mechanism for political incentives (independent expenditures/PACs, post-office fellowships, Public Good Score infrastructure)
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*Core definition*
+
+:::
+
+### Standard Discount Rate for NPV Analysis: 3% {#sec-npv_discount_rate_standard}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Standard discount rate for NPV analysis (3% annual, social discount rate)
 
 #### Uncertainty Range
 

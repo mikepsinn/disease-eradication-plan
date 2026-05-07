@@ -19,6 +19,7 @@ Quarto book: "How to End War and Disease" - getting nations to sign a 1% treaty 
 - **No em-dashes.** Use parentheses, commas, periods, or semicolons.
 - **Links:** Always `.qmd` extensions (not `.html`). Target must be in `_quarto-manual.yml`.
 - **Decision quality:** Evaluate trade-offs, state confidence. Don't mirror; hold position when evidence supports it.
+- **Strategic answers:** For plans, estimates, damages, architecture, and persuasion, identify the strongest defensible frame, public headline, conservative fallback, and double-counting or risk issues before optimizing the user's narrower frame. If the user's frame is weaker than the best available frame, say so first.
 - **Brevity.** Omit needless words. In comedy, shorter is funnier. Trim until removing a word makes it worse, then stop.
 
 ## Citations (references.bib)
@@ -82,5 +83,4 @@ Check existing: `grep "keyword" _variables.yml`. Never duplicate. Generate: `npm
 | Validate before render | `npm run validate:pre-render` (run only before commit/render, NOT after every edit) |
 | Find param usages | `npx tsx scripts/parameter-audit.ts PARAM_NAME` |
 | Unused params | `npm run param:unused` |
-
 

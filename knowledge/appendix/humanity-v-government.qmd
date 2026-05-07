@@ -20,7 +20,11 @@ abstract: |
   deaths if adopted now. The slice of military spending above a 1900 real-spending
   freeze alone runs to {{< var war_trial_redirect_excess_military_spending_above_1900_freeze >}},
   equal to {{< var war_trial_redirect_excess_military_trial_years_nounit >}} years of current
-  government clinical-trial budgets. Per dollar spent, the defendants killed
+  government clinical-trial budgets. Under the primary lost-profits damages theory
+  the corporate-liability exposure is roughly
+  {{< var lost_prosperity_lifetime_damages_per_capita >}} per representative full-life
+  cohort, or {{< var lost_prosperity_npv_perpetuity_per_capita >}} per person as the
+  NPV of the perpetual annual flow at 3%. Per dollar spent, the defendants killed
   {{< var type_ii_error_cost_ratio >}} times more people through Type II regulatory
   errors than they prevented through Type I. The defendants had the money. They
   spent it elsewhere. We propose a 1% reallocation of military expenditure as the
@@ -310,20 +314,28 @@ The audit row is the tightest single damages number in the case. Everything else
 
 ## The Prosecutor's Demand
 
-The aggressive corporate-liability demand is {{< var corporate_damages_prosecutor_base_ask_per_capita >}} per living human. This is not the most cautious number. It is the number a prosecutor asks for after treating governments like any other enterprise paid {{< var global_government_expense_annual >}} per year to promote welfare, safety, health, and peace.
+The primary damages theory is **lost profits**, the framework antitrust and commercial-litigation prosecutors actually lead with. Treated as a corporation paid {{< var global_government_expense_annual >}} per year to promote welfare, safety, health, and peace, the defendants face a representative full-life cohort exposure of {{< var lost_prosperity_lifetime_damages_per_capita >}} per person (undiscounted, 80-year horizon) or {{< var lost_prosperity_npv_perpetuity_per_capita >}} per person as the NPV of the perpetual annual lost-income flow at the standard 3% social discount rate.
 
-The strict floor is what a cautious court could award. The prosecutor's base ask is the aggressive corporate-liability demand. Punitive damages, disgorgement, ongoing lost-income damages, and the forward treaty settlement value are pleaded separately.
+The body-count tiers (strict floor, prosecutor base ask, treble, *State Farm* ceiling) are **alternative pleadings**, not the primary theory. A prosecutor pleads both in the alternative and lets the court pick the recovery framework. The body-count base ask of {{< var corporate_damages_prosecutor_base_ask_per_capita >}} per person is the more cautious number a court might award if it rejects the lost-profits theory entirely.
 
-| Tier | Total exposure | Per living human | Counting rule |
+### The Lost-Prosperity-Only Single-Theory Headline
+
+A real corporate-liability prosecutor leads with **lost-profits damages**: the integral of the productive economy that didn't happen because the defendants chose the [destructive economy](../economics/gdp-trajectories.qmd) [@gdp-trajectories-paper-2025]. The lost-profits theory implicitly captures war deaths (their lost productivity), property destruction (drag on growth), and medical opportunity cost (drag on growth) as components of the same single integral. It cannot be added to the body-count tiers; it replaces them as a single-theory pleading.
+
+The lifetime-cohort number is a representative full-life exposure. It is not a uniform per-individual award: a 5-year-old, a 45-year-old, and an 85-year-old plaintiff would each have a different remaining-life horizon, and any per-individual award would scale by remaining life expectancy. The headline number is the representative cohort version used to scale the corporation's overall liability, the same way a class-action complaint pleads representative damages first and then breaks them out by sub-class.
+
+| Tier | Total exposure | Per representative person | Counting rule |
 |---|---:|---:|---|
-| Strict non-duplicative floor | {{< var corporate_damages_strict_floor_total >}} | {{< var corporate_damages_strict_floor_per_capita >}} | War-death VSL, existing-drug efficacy-lag VSL, property plus environmental destruction, excess military spending above the 1900 freeze, and the Pentagon FCA-style penalty increment. |
-| Prosecutor base ask | {{< var corporate_damages_prosecutor_base_ask_total >}} | {{< var corporate_damages_prosecutor_base_ask_per_capita >}} | Strict floor plus {{< var corporate_damages_drugs_never_developed_deaths_nounit >}} aggressive pleading deaths from drugs never developed. |
-| Treble-style exposure | {{< var corporate_damages_treble_exposure_total >}} | {{< var corporate_damages_treble_exposure_per_capita >}} | False Claims Act-style trebling of the base ask, pleaded as penalty exposure rather than ordinary compensation [@doj-false-claims-act]. |
-| Constitutional-ceiling exposure under *State Farm v. Campbell* | {{< var corporate_damages_state_farm_ceiling_exposure_total >}} | {{< var corporate_damages_state_farm_ceiling_exposure_per_capita >}} | Base ask plus a 9:1 punitive-to-compensatory ceiling. This is exposure, not a typical award [@state-farm-v-campbell-2003]. |
-| Ongoing lost prosperity | {{< var war_counterfactual_lost_gdp_global >}} per year | {{< var war_counterfactual_lost_gdp_per_capita >}}/person/year | Consequential lost-income flow. It accrues annually until the no-war growth gap is cured. |
+| **Lost-prosperity-only, lifetime undiscounted (80-year cohort)** | {{< var lost_prosperity_lifetime_damages_total >}} | **{{< var lost_prosperity_lifetime_damages_per_capita >}}** | Primary single-theory pleading: lost compound output across a representative 80-year cohort. Cannot be added to the body-count tiers; replaces them. Per-individual award scales by remaining life expectancy. |
+| **Lost-prosperity-only, NPV perpetuity at 3% (no-cure baseline)** | {{< var lost_prosperity_npv_perpetuity_total >}} | **{{< var lost_prosperity_npv_perpetuity_per_capita >}}** | Net present value of the perpetual annual lost-income flow at the standard 3% social discount rate, under a no-cure / no-convergence baseline. Sensitivity exposure; a finite-horizon convergence assumption shrinks it slightly (~5% reduction at 100 years). |
+| Strict non-duplicative floor (body-count alternative) | {{< var corporate_damages_strict_floor_total >}} | {{< var corporate_damages_strict_floor_per_capita >}} | Alternative pleading. War-death VSL, existing-drug efficacy-lag VSL, property plus environmental destruction, excess military spending above the 1900 freeze, and the Pentagon FCA-style penalty increment. |
+| Prosecutor body-count base ask | {{< var corporate_damages_prosecutor_base_ask_total >}} | {{< var corporate_damages_prosecutor_base_ask_per_capita >}} | Alternative pleading. Strict floor plus {{< var corporate_damages_drugs_never_developed_deaths_nounit >}} aggressive pleading deaths from drugs never developed. |
+| Treble-style exposure (body-count) | {{< var corporate_damages_treble_exposure_total >}} | {{< var corporate_damages_treble_exposure_per_capita >}} | Alternative pleading. False Claims Act-style trebling of the body-count base ask, pleaded as penalty exposure rather than ordinary compensation [@doj-false-claims-act]. |
+| Constitutional-ceiling exposure under *State Farm v. Campbell* | {{< var corporate_damages_state_farm_ceiling_exposure_total >}} | {{< var corporate_damages_state_farm_ceiling_exposure_per_capita >}} | Alternative pleading. Body-count base ask plus a 9:1 punitive-to-compensatory ceiling. This is exposure, not a typical award [@state-farm-v-campbell-2003]. |
+| Ongoing lost prosperity (annual flow) | {{< var war_counterfactual_lost_gdp_global >}} per year | {{< var war_counterfactual_lost_gdp_per_capita >}}/person/year | Consequential lost-income flow. It accrues annually until the no-war growth gap is cured. The two lost-prosperity-only rows above are this same flow capitalized as a stock. |
 | Forward treaty settlement value | {{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}} | {{< var corporate_damages_forward_settlement_value_per_capita >}} | Settlement value from adopting the 1% Treaty now, not historical damages. |
 
-The base ask excludes punitive damages, disgorgement, ongoing lost-income damages, and treaty settlement value. It also avoids the unsupported broader disease-delay claim that would require a separate historical disease-control model. If the prosecution later pleads a wider disease-delay sensitivity, it belongs in its own ledger with its own causation proof.
+The lost-prosperity-only tiers and the body-count tiers are **alternative primary theories**, not additive ledgers. The body-count base ask also excludes punitive damages, disgorgement, ongoing lost-income flow (separately disclosed below), and treaty settlement value. It avoids the unsupported broader disease-delay claim that would require a separate historical disease-control model; if the prosecution later pleads a wider disease-delay sensitivity, it belongs in its own ledger with its own causation proof.
 
 ## The Aggregate Exposure
 

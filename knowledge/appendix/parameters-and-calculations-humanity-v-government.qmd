@@ -38,15 +38,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 181 parameters used in the analysis, organized by type:
+This appendix documents all 186 parameters used in the analysis, organized by type:
 
 - External sources (peer-reviewed): 62
-- Calculated values: 93
-- Core definitions: 26
+- Calculated values: 97
+- Core definitions: 27
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (93 parameters) • [External Data Sources](#sec-external) (62 parameters) • [Core Definitions](#sec-definitions) (26 parameters)
+[Calculated Values](#sec-calculated) (97 parameters) • [External Data Sources](#sec-external) (62 parameters) • [Core Definitions](#sec-definitions) (27 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -3843,6 +3843,280 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-global_government_expense_annual.qmd >}}
+
+:::
+
+### Lost-Prosperity-Only Lifetime Damages, Representative Full-Life Cohort: $25.2 million {#sec-lost_prosperity_lifetime_damages_per_capita}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Representative full-life cohort exposure: lifetime lost earnings under the 8-channel compound peace economy counterfactual, undiscounted, over WHO global life expectancy at birth. NOT a uniform per-individual award. A 5-year-old, 45-year-old, and 85-year-old plaintiff would each have a different remaining-life horizon; this number is the representative full-cohort exposure used as the single-theory headline. Implicitly captures war deaths, property destruction, and medical opportunity cost via their drag on compound growth, so cannot be added to the body-count ledger.
+
+**Inputs**:
+
+- [Annual Lost GDP per Capita from War](#sec-war_counterfactual_lost_gdp_per_capita) 🔢: $319,261
+- [Global Life Expectancy (2024)](#sec-global_life_expectancy_2024) 📊: 79 years (SE: ±2 years)
+
+$$
+\begin{gathered}
+D_{prosperity,life,pc} \\
+= GDP_{pc,lost} \times LE_{global} \\
+= \$319K \times 79 \\
+= \$25.2M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+GDP_{pc,lost} \\
+= GDP_{pc,peace} - \bar{y}_{0} \\
+= \$334K - \$14.4K \\
+= \$319K
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+GDP_{pc,peace} \\
+= GDP_{pc,1900} \times \left(1 + \left(\frac{\bar{y}_{0}}{GDP_{pc,1900}}\right)^{1/124} - 1 + g_{war,penalty}\right)^{124} \\[0.5em]
+= \$3.15K \times \left(1 + \left(\frac{\$14.4K}{\$3.15K}\right)^{1/124} - 1 + 2.6\%\right)^{124} \\[0.5em]
+= \$334K
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+\bar{y}_{0} \\
+= \frac{GDP_{global}}{Pop_{global}} \\
+= \frac{\$115T}{8B} \\
+= \$14.4K
+\end{gathered}
+$$
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-lost_prosperity_lifetime_damages_per_capita.qmd >}}
+
+{{< include ../figures/sensitivity-table-lost_prosperity_lifetime_damages_per_capita.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-lost_prosperity_lifetime_damages_per_capita.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-lost_prosperity_lifetime_damages_per_capita.qmd >}}
+
+:::
+
+### Lost-Prosperity-Only Lifetime Damages Total (Cohort Horizon): $202 quadrillion {#sec-lost_prosperity_lifetime_damages_total}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Global lifetime lost prosperity damages, undiscounted, WHO global life expectancy horizon. Single coherent damages theory under corporate-liability lost-profits doctrine: the integral of the productive economy that didn't happen because of the destructive economy. Cannot be added to the body-count ledger; replaces it as a single-theory pleading.
+
+**Inputs**:
+
+- [Annual Lost GDP Global from War](#sec-war_counterfactual_lost_gdp_global) 🔢: $2.55 quadrillion
+- [Global Life Expectancy (2024)](#sec-global_life_expectancy_2024) 📊: 79 years (SE: ±2 years)
+
+$$
+\begin{gathered}
+D_{prosperity,life} \\
+= GDP_{lost,total} \times LE_{global} \\
+= \$2550T \times 79 \\
+= \$202000T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+GDP_{lost,total} \\
+= GDP_{pc,lost} \times Pop_{global} \\
+= \$319K \times 8B \\
+= \$2550T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+GDP_{pc,lost} \\
+= GDP_{pc,peace} - \bar{y}_{0} \\
+= \$334K - \$14.4K \\
+= \$319K
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+GDP_{pc,peace} \\
+= GDP_{pc,1900} \times \left(1 + \left(\frac{\bar{y}_{0}}{GDP_{pc,1900}}\right)^{1/124} - 1 + g_{war,penalty}\right)^{124} \\[0.5em]
+= \$3.15K \times \left(1 + \left(\frac{\$14.4K}{\$3.15K}\right)^{1/124} - 1 + 2.6\%\right)^{124} \\[0.5em]
+= \$334K
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+\bar{y}_{0} \\
+= \frac{GDP_{global}}{Pop_{global}} \\
+= \frac{\$115T}{8B} \\
+= \$14.4K
+\end{gathered}
+$$
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-lost_prosperity_lifetime_damages_total.qmd >}}
+
+{{< include ../figures/sensitivity-table-lost_prosperity_lifetime_damages_total.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-lost_prosperity_lifetime_damages_total.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-lost_prosperity_lifetime_damages_total.qmd >}}
+
+:::
+
+### Lost-Prosperity-Only NPV Perpetuity Per Capita (3%, No-Cure Baseline): $10.6 million {#sec-lost_prosperity_npv_perpetuity_per_capita}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Net present value of perpetual annual lost-income flow per representative living human, at the standard 3% social discount rate, under a no-cure/no-convergence baseline. Sensitivity exposure for the corporate-liability lost-profits theory. Treats the lost-prosperity flow as continuing indefinitely; a finite-horizon convergence assumption would shrink this slightly (~5% reduction at 100 years). Single-theory pleading; cannot be added to the body-count ledger.
+
+**Inputs**:
+
+- [Annual Lost GDP per Capita from War](#sec-war_counterfactual_lost_gdp_per_capita) 🔢: $319,261
+- [Standard Discount Rate for NPV Analysis](#sec-npv_discount_rate_standard): 3%
+
+$$
+\begin{gathered}
+D_{prosperity,NPV,pc} \\
+= \frac{GDP_{pc,lost}}{r_{discount}} \\
+= \frac{\$319K}{3\%} \\
+= \$10.6M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+GDP_{pc,lost} \\
+= GDP_{pc,peace} - \bar{y}_{0} \\
+= \$334K - \$14.4K \\
+= \$319K
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+GDP_{pc,peace} \\
+= GDP_{pc,1900} \times \left(1 + \left(\frac{\bar{y}_{0}}{GDP_{pc,1900}}\right)^{1/124} - 1 + g_{war,penalty}\right)^{124} \\[0.5em]
+= \$3.15K \times \left(1 + \left(\frac{\$14.4K}{\$3.15K}\right)^{1/124} - 1 + 2.6\%\right)^{124} \\[0.5em]
+= \$334K
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+\bar{y}_{0} \\
+= \frac{GDP_{global}}{Pop_{global}} \\
+= \frac{\$115T}{8B} \\
+= \$14.4K
+\end{gathered}
+$$
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-lost_prosperity_npv_perpetuity_per_capita.qmd >}}
+
+{{< include ../figures/sensitivity-table-lost_prosperity_npv_perpetuity_per_capita.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-lost_prosperity_npv_perpetuity_per_capita.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-lost_prosperity_npv_perpetuity_per_capita.qmd >}}
+
+:::
+
+### Lost-Prosperity-Only NPV Perpetuity Total (3%, No-Cure Baseline): $85.1 quadrillion {#sec-lost_prosperity_npv_perpetuity_total}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Net present value of perpetual lost-income flow globally, at the standard 3% social discount rate, under a no-cure/no-convergence baseline. Sensitivity exposure under corporate-liability lost-profits doctrine. Cannot be added to the body-count ledger.
+
+**Inputs**:
+
+- [Annual Lost GDP Global from War](#sec-war_counterfactual_lost_gdp_global) 🔢: $2.55 quadrillion
+- [Standard Discount Rate for NPV Analysis](#sec-npv_discount_rate_standard): 3%
+
+$$
+\begin{gathered}
+D_{prosperity,NPV} \\
+= \frac{GDP_{lost,total}}{r_{discount}} \\
+= \frac{\$2550T}{3\%} \\
+= \$85100T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+GDP_{lost,total} \\
+= GDP_{pc,lost} \times Pop_{global} \\
+= \$319K \times 8B \\
+= \$2550T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+GDP_{pc,lost} \\
+= GDP_{pc,peace} - \bar{y}_{0} \\
+= \$334K - \$14.4K \\
+= \$319K
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+GDP_{pc,peace} \\
+= GDP_{pc,1900} \times \left(1 + \left(\frac{\bar{y}_{0}}{GDP_{pc,1900}}\right)^{1/124} - 1 + g_{war,penalty}\right)^{124} \\[0.5em]
+= \$3.15K \times \left(1 + \left(\frac{\$14.4K}{\$3.15K}\right)^{1/124} - 1 + 2.6\%\right)^{124} \\[0.5em]
+= \$334K
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+\bar{y}_{0} \\
+= \frac{GDP_{global}}{Pop_{global}} \\
+= \frac{\$115T}{8B} \\
+= \$14.4K
+\end{gathered}
+$$
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-lost_prosperity_npv_perpetuity_total.qmd >}}
+
+{{< include ../figures/sensitivity-table-lost_prosperity_npv_perpetuity_total.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-lost_prosperity_npv_perpetuity_total.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-lost_prosperity_npv_perpetuity_total.qmd >}}
 
 :::
 
@@ -8629,6 +8903,20 @@ Historical calibration target: 30% military reallocation maps to ~5.5 percentage
 #### Input Distribution
 
 {{< include ../figures/distribution-military_redirect_gdp_boost_at_30pct.qmd >}}
+
+*Core definition*
+
+:::
+
+### Standard Discount Rate for NPV Analysis: 3% {#sec-npv_discount_rate_standard}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Standard discount rate for NPV analysis (3% annual, social discount rate)
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
 
 *Core definition*
 

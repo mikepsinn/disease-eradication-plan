@@ -126,15 +126,17 @@ The model has to keep separate things separate. [Humanity v. Government](../appe
 
 The table deliberately does not add every line into one central damages number. VSL deaths, DALYs, lost GDP, restitution, disgorgement, and punitive multipliers are different legal theories. Add them all together and the spreadsheet starts lying.
 
-Keeping ledgers separate does not mean the prosecution lacks a demand. It means the Court prevents double recovery at judgment while allowing the prosecutor to plead the strongest corporate-liability number. The headline base ask is {{< var corporate_damages_prosecutor_base_ask_per_capita >}} per living human. The strict floor is what a cautious court could award. The prosecutor's base ask is the aggressive corporate-liability demand. Punitive damages, disgorgement, ongoing lost-income damages, and the forward treaty settlement value are pleaded separately.
+Keeping ledgers separate does not mean the prosecution lacks a demand. The primary damages theory is **lost profits**, the framework antitrust and commercial-litigation prosecutors actually lead with. Treated as a corporation paid {{< var global_government_expense_annual >}} per year to promote the general welfare, the defendants face a representative full-life cohort exposure of {{< var lost_prosperity_lifetime_damages_per_capita >}} per person, or {{< var lost_prosperity_npv_perpetuity_per_capita >}} per person as the NPV perpetuity at 3% under a no-cure baseline. The body-count tiers below are **alternative pleadings** the Court can fall back on if the lost-profits theory is rejected.
 
-| Prosecutor posture | Per living human | Status |
+| Prosecutor posture | Per representative person | Status |
 |---|---:|---|
-| Strict floor | {{< var corporate_damages_strict_floor_per_capita >}} | Cautious non-duplicative award. |
-| Prosecutor base ask | {{< var corporate_damages_prosecutor_base_ask_per_capita >}} | Aggressive historical corporate-liability demand. |
-| Treble-style exposure | {{< var corporate_damages_treble_exposure_per_capita >}} | False Claims Act-style penalty exposure. |
-| Constitutional-ceiling exposure under *State Farm v. Campbell* | {{< var corporate_damages_state_farm_ceiling_exposure_per_capita >}} | Base ask plus a 9:1 punitive-to-compensatory ceiling, exposure only [@state-farm-v-campbell-2003]. |
-| Ongoing lost prosperity | {{< var war_counterfactual_lost_gdp_per_capita >}}/person/year | Annual damages flow, not a one-time stock. |
+| **Lost-prosperity-only, lifetime undiscounted (cohort)** | **{{< var lost_prosperity_lifetime_damages_per_capita >}}** | **Primary theory.** Single coherent lost-profits claim, 80-year cohort horizon. Per-individual award scales by remaining life expectancy. Cannot be added to the body-count tiers; replaces them. |
+| **Lost-prosperity-only, NPV perpetuity at 3% (no-cure baseline)** | **{{< var lost_prosperity_npv_perpetuity_per_capita >}}** | Primary theory, financial-standard valuation. Sensitivity exposure under a no-convergence baseline. Cannot be added to the body-count tiers; replaces them. |
+| Strict floor (body-count alternative) | {{< var corporate_damages_strict_floor_per_capita >}} | Cautious non-duplicative award if the Court rejects the lost-profits theory. |
+| Body-count base ask | {{< var corporate_damages_prosecutor_base_ask_per_capita >}} | Aggressive body-count alternative if the Court rejects the lost-profits theory. |
+| Treble-style exposure (body-count) | {{< var corporate_damages_treble_exposure_per_capita >}} | False Claims Act-style penalty exposure on the body-count base ask. |
+| Constitutional-ceiling exposure under *State Farm v. Campbell* | {{< var corporate_damages_state_farm_ceiling_exposure_per_capita >}} | Body-count base ask plus a 9:1 punitive-to-compensatory ceiling, exposure only [@state-farm-v-campbell-2003]. |
+| Ongoing lost prosperity (annual flow) | {{< var war_counterfactual_lost_gdp_per_capita >}}/person/year | Annual damages flow. The two lost-prosperity-only rows above are this same flow capitalized as a stock. |
 | Forward treaty settlement value | {{< var corporate_damages_forward_settlement_value_per_capita >}} | Separate settlement value from adopting the remedy now. |
 
 For context, global GDP is approximately {{< var global_gdp_2025 >}} per year. Even a heavily discounted exposure is larger than ordinary compensation can handle.
