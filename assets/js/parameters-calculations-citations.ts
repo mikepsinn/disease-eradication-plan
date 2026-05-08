@@ -2319,7 +2319,7 @@ export const POLITICIAN_POST_OFFICE_CAREER_VALUE: Parameter = {
   confidence: "medium",
   confidenceInterval: [5000000.0, 20000000.0],
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/cost-of-change-analysis.html",
-  manualPageTitle: "The Price of Political Change: A Cost-Benefit Framework for Policy Incentivization",
+  manualPageTitle: "How Much Does It Cost to Buy All the Governments?",
 };
 
 export const POST_1962_DRUG_APPROVAL_REDUCTION_PCT: Parameter = {
@@ -3356,7 +3356,7 @@ export const US_SENATORS_FOR_TREATY: Parameter = {
   sourceUrl: "https://www.senate.gov/about/powers-procedures/treaties.htm",
   confidence: "high",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/cost-of-change-analysis.html",
-  manualPageTitle: "The Price of Political Change: A Cost-Benefit Framework for Policy Incentivization",
+  manualPageTitle: "How Much Does It Cost to Buy All the Governments?",
 };
 
 export const US_TOTAL_FEDERAL_CAMPAIGN_SPENDING_2024: Parameter = {
@@ -3372,7 +3372,7 @@ export const US_TOTAL_FEDERAL_CAMPAIGN_SPENDING_2024: Parameter = {
   confidence: "high",
   confidenceInterval: [18000000000.0, 22000000000.0],
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/cost-of-change-analysis.html",
-  manualPageTitle: "The Price of Political Change: A Cost-Benefit Framework for Policy Incentivization",
+  manualPageTitle: "How Much Does It Cost to Buy All the Governments?",
 };
 
 export const US_TOTAL_LOBBYING_ANNUAL: Parameter = {
@@ -5958,7 +5958,7 @@ export const GLOBAL_POLITICAL_REFORM_INVESTMENT: Parameter = {
   latex: "\\begin{gathered}\nCost_{global,reform} = Cost_{US,total} \\times \\rho_{global/US} = \\$25.5B \\times 5 = \\$128B\n\\\\[0.5em]\n\\text{where } Cost_{US,total} = (Cost_{campaign} + Cost_{lobby} \\times 2) \\times \\mu_{effort} + Cost_{career}\n\\\\[0.5em]\n\\text{where } Cost_{US,congress} = N_{congress} \\times V_{post-office} = 535 \\times \\$10M = \\$5.35B\n\\end{gathered}",
   confidenceInterval: [55204908356.46437, 265598764020.24426],
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/cost-of-change-analysis.html",
-  manualPageTitle: "The Price of Political Change: A Cost-Benefit Framework for Policy Incentivization",
+  manualPageTitle: "How Much Does It Cost to Buy All the Governments?",
 };
 
 export const GLOBAL_TOTAL_HEALTH_AND_WAR_COST_ANNUAL: Parameter = {
@@ -8099,7 +8099,7 @@ export const US_CONGRESS_FULL_ADVOCACY_COST: Parameter = {
   formula: "CONGRESS_MEMBERS x POST_OFFICE_VALUE",
   latex: "\\begin{gathered}\nCost_{US,congress} \\\\\n= N_{congress} \\times V_{post-office} \\\\\n= 535 \\times \\$10M \\\\\n= \\$5.35B\n\\end{gathered}",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/cost-of-change-analysis.html",
-  manualPageTitle: "The Price of Political Change: A Cost-Benefit Framework for Policy Incentivization",
+  manualPageTitle: "How Much Does It Cost to Buy All the Governments?",
 };
 
 export const US_FEDERAL_SPENDING_PER_CAPITA: Parameter = {
@@ -8386,7 +8386,7 @@ export const US_POLITICAL_REFORM_INVESTMENT_TOTAL: Parameter = {
   latex: "\\begin{gathered}\nCost_{US,total} \\\\\n= (Cost_{campaign} \\\\\n+ Cost_{lobby} \\times 2) \\times \\mu_{effort} + Cost_{career}\n\\end{gathered}",
   confidenceInterval: [17348201681.71765, 36291868507.12682],
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/cost-of-change-analysis.html",
-  manualPageTitle: "The Price of Political Change: A Cost-Benefit Framework for Policy Incentivization",
+  manualPageTitle: "How Much Does It Cost to Buy All the Governments?",
 };
 
 export const US_SENATE_TREATY_ADVOCACY_COST: Parameter = {
@@ -10139,7 +10139,7 @@ export const GLOBAL_TO_US_POLITICAL_COST_RATIO: Parameter = {
   confidence: "low",
   confidenceInterval: [3.0, 8.0],
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/cost-of-change-analysis.html",
-  manualPageTitle: "The Price of Political Change: A Cost-Benefit Framework for Policy Incentivization",
+  manualPageTitle: "How Much Does It Cost to Buy All the Governments?",
 };
 
 export const HALE_LONGEVITY_REALIZATION_SHARE_YEAR_15: Parameter = {
@@ -10671,7 +10671,7 @@ export const US_POLITICAL_EFFORT_MULTIPLIER: Parameter = {
   confidence: "low",
   confidenceInterval: [0.4, 1.2],
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/cost-of-change-analysis.html",
-  manualPageTitle: "The Price of Political Change: A Cost-Benefit Framework for Policy Incentivization",
+  manualPageTitle: "How Much Does It Cost to Buy All the Governments?",
 };
 
 export const US_VS_SINGAPORE_SPENDING_GAP: Parameter = {

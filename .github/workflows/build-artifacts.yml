@@ -375,7 +375,7 @@ jobs:
 
 
   build-cost-of-change:
-    name: "Build The Price of Political Change: A Cost-Benefit Fram"
+    name: "Build How Much Does It Cost to Buy All the Governments?"
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
@@ -442,7 +442,7 @@ jobs:
           ~/.TinyTeX/bin/*/tlmgr update --self || true
           ~/.TinyTeX/bin/*/tlmgr install fontspec unicode-math lualatex-math luaotfload || true
 
-      - name: "Render Build The Price of Political Change: A Cost-Benefit Fram"
+      - name: "Render Build How Much Does It Cost to Buy All the Governments?"
         run: python scripts/render-quarto.py cost-of-change --to pdf
         env:
           GOOGLE_GENERATIVE_AI_API_KEY: ${{ (secrets.LLM_VALIDATION == 'true' || github.ref == 'refs/heads/master') && secrets.GOOGLE_GENERATIVE_AI_API_KEY || '' }}
@@ -486,7 +486,7 @@ jobs:
           retention-days: 7
 
 
-      - name: "Upload Build The Price of Political Change: A Cost-Benefit Fram PDF to Zenodo (draft)"
+      - name: "Upload Build How Much Does It Cost to Buy All the Governments? PDF to Zenodo (draft)"
         if: github.event_name == 'push' && github.ref == 'refs/heads/master'
         env:
           ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
