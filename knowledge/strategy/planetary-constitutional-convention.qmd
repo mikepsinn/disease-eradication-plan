@@ -113,7 +113,7 @@ The prize asks one question: *who can cause verified implementation of a complet
 | **[Wishocracy](../solution/wishocracy.qmd)** [@wishocracy-paper-2025] | Preference aggregation with intensity | Binding at >=2% participation; 10-30 pairwise comparisons per citizen |
 | **The [Political Dysfunction Tax](../appendix/political-dysfunction-tax.qmd)** [@political-dysfunction-tax-paper-2025] | Master ledger of value left on the floor | {{< var political_dysfunction_global_opportunity_cost_total >}}/year globally |
 | **The Invisible Graveyard** [@invisible-graveyard-paper-2025] | Mortality proof that delay kills | {{< var efficacy_lag_years_nounit >}} years delay; {{< var existing_drugs_efficacy_lag_deaths_total_nounit >}} deaths; {{< var dfda_efficacy_lag_elimination_dalys >}} |
-| **The Price of Political Change** [@cost-of-change-paper-2025] | Budget ceiling for buying legal democratic pressure | {{< var treaty_campaign_total_cost >}}; >{{< var treaty_roi_existing_drugs_only >}} benefit-cost ratio |
+| **How Much Does It Cost to Buy All the Governments?** [@cost-of-change-paper-2025] | Budget ceiling for buying legal democratic pressure | {{< var treaty_campaign_total_cost >}}; >{{< var treaty_roi_existing_drugs_only >}} benefit-cost ratio |
 | **United States Efficiency Audit** [@us-efficiency-audit-paper-2025] | Concrete waste map | {{< var us_gov_waste_total >}}/year; {{< var us_gov_waste_recoverable >}} recoverable |
 | **[Optimocracy](../solution/optimocracy.qmd)** [@optimocracy-paper-2025] | Cross-jurisdiction recommendation engine | Causal policy comparison across thousands of jurisdictions |
 | **OPG** [@opg-paper-2025] | Law-level enact/replace/repeal engine | Policy Impact Score; 5-15% GDP welfare gains |

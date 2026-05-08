@@ -15,8 +15,8 @@ author:
     email: m@warondisease.org
     orcid: 0009-0006-0212-1094
     affiliations:
-      - name: "Institute for Accelerated Medicine"
-        url: https://acceleratedmedicine.org
+      - name: "International Campaign to End War and Disease"
+        url: https://warondisease.org
 
 # Environment profiles
 profiles:
@@ -87,8 +87,8 @@ metadata:
   rights: "Creative Commons Attribution-NonCommercial 4.0 International License"
 
   # Publisher
-  publisher: "Institute for Accelerated Medicine"
-  publisher-url: "https://acceleratedmedicine.org"
+  publisher: "International Campaign to End War and Disease"
+  publisher-url: "https://warondisease.org"
   publisher-name: "Mike P. Sinn"
   publisher-email: "mike@warondisease.org"
 
@@ -197,7 +197,7 @@ format:
 
   pdf:
     documentclass: article
-    institute: "Institute for Accelerated Medicine"
+    institute: "International Campaign to End War and Disease"
     filters:
       - assets/filters/live-version-note.lua
     echo: false

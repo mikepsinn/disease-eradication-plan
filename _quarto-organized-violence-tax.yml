@@ -37,8 +37,8 @@ author:
     email: m@warondisease.org
     orcid: 0009-0006-0212-1094
     affiliations:
-      - name: "Institute for Accelerated Medicine"
-        url: https://acceleratedmedicine.org
+      - name: "International Campaign to End War and Disease"
+        url: https://warondisease.org
 
 website:
   title: "The Organized Violence Tax"
@@ -47,7 +47,7 @@ website:
   favicon: assets/icons/organized-violence-tax-favicon.png
   page-navigation: true
   page-footer:
-    left: "© 2025 [Institute for Accelerated Medicine](https://acceleratedmedicine.org) | [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)"
+    left: "© 2025 [International Campaign to End War and Disease](https://warondisease.org) | [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)"
     center: "[PDF](/organized-violence-tax.pdf) | [All Papers](https://manual.warondisease.org/knowledge/papers.html)"
     right: "[VOTE](https://WarOnDisease.org)"
   navbar:
@@ -104,8 +104,8 @@ metadata:
   license: "CC BY-NC 4.0"
   license-url: "https://creativecommons.org/licenses/by-nc/4.0/"
   rights: "Creative Commons Attribution-NonCommercial 4.0 International License"
-  publisher: "Institute for Accelerated Medicine"
-  publisher-url: "https://acceleratedmedicine.org"
+  publisher: "International Campaign to End War and Disease"
+  publisher-url: "https://warondisease.org"
   publisher-name: "Mike P. Sinn"
   publisher-email: "mike@warondisease.org"
   repo-url: "https://github.com/wishonia/earth-optimization-protocol"
@@ -208,7 +208,7 @@ format:
   pdf:
     output-file: "organized-violence-tax.pdf"
     documentclass: article
-    institute: "Institute for Accelerated Medicine"
+    institute: "International Campaign to End War and Disease"
     echo: false
     toc: true
     toc-depth: 3

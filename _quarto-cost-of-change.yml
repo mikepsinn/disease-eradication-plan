@@ -37,17 +37,17 @@ author:
     email: m@warondisease.org
     orcid: 0009-0006-0212-1094
     affiliations:
-      - name: "Institute for Accelerated Medicine"
-        url: https://acceleratedmedicine.org
+      - name: "International Campaign to End War and Disease"
+        url: https://warondisease.org
 
 website:
-  title: "The Price of Political Change: A Cost-Benefit Framework for Policy Incentivization"
+  title: "How Much Does It Cost to Buy All the Governments?"
   description: "What's the maximum cost to achieve any policy change through legal democratic channels? $25B for the US, $200B globally. For high-value reforms like military-to-health reallocation, this yields ROI exceeding 400,000:1."
   site-url: https://manual.warondisease.org/knowledge/appendix/cost-of-change-analysis.html
   favicon: assets/icons/favicon.png  # TODO: Create cost-of-change-favicon.png
   page-navigation: true
   page-footer:
-    left: "© 2025 [Institute for Accelerated Medicine](https://acceleratedmedicine.org) | [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)"
+    left: "© 2025 [International Campaign to End War and Disease](https://warondisease.org) | [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)"
     center: "[PDF](https://manual.warondisease.org/knowledge/appendix/cost-of-change-analysis.pdf) | [All Papers](https://manual.warondisease.org/knowledge/papers.html)"
     right: "[VOTE](https://WarOnDisease.org)"
   navbar:
@@ -105,8 +105,8 @@ metadata:
   license: "CC BY-NC 4.0"
   license-url: "https://creativecommons.org/licenses/by-nc/4.0/"
   rights: "Creative Commons Attribution-NonCommercial 4.0 International License"
-  publisher: "Institute for Accelerated Medicine"
-  publisher-url: "https://acceleratedmedicine.org"
+  publisher: "International Campaign to End War and Disease"
+  publisher-url: "https://warondisease.org"
   publisher-name: "Mike P. Sinn"
   publisher-email: "mike@warondisease.org"
   repo-url: "https://github.com/wishonia/earth-optimization-protocol"
@@ -140,6 +140,10 @@ metadata:
         status: auto-uploaded
         url: "https://zenodo.org/record/18522030"
         doi: "10.5281/zenodo.18356215"
+      - platform: osf
+        status: published
+        url: "https://osf.io/preprints/socarxiv/urh5t_v1"
+        id: "urh5t_v1"
       - platform: ssrn
         status: pending
         url: ""
@@ -211,7 +215,7 @@ format:
   pdf:
     output-file: "cost-of-change-analysis.pdf"
     documentclass: article
-    institute: "Institute for Accelerated Medicine"
+    institute: "International Campaign to End War and Disease"
     echo: false
     toc: true
     toc-depth: 3

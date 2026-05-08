@@ -118,7 +118,7 @@ def extract_paper_citation_info(config_path: Path, config_name: str) -> Optional
 
     # Default institution if not found
     if not institution:
-        institution = "Institute for Accelerated Medicine"
+        institution = "International Campaign to End War and Disease"
 
     # Convert "Mike P. Sinn" to "Sinn, Mike P." for BibTeX
     author_bibtex = author_name

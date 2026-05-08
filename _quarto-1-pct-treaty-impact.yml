@@ -40,8 +40,8 @@ book:
       email: m@warondisease.org
       orcid: 0009-0006-0212-1094
       affiliations:
-        - name: "Institute for Accelerated Medicine"
-          url: https://acceleratedmedicine.org
+        - name: "International Campaign to End War and Disease"
+          url: https://warondisease.org
   description: '6.65 thousand diseases have zero FDA-approved treatments; at current trial capacity, exploring them takes ~443 years. Redirecting 1% of military spending scales capacity 12.3x, cutting the timeline to ~36 years and preventing 10.7 billion deaths. At $0.00177/DALY, 50.3kx more cost-effective than the best existing interventions. Incentive Alignment Bonds make adoption politically viable.'
   abstract: "6.65 thousand diseases have 0 FDA-approved treatments. At current trial capacity (15 diseases/year), exploring the therapeutic search space takes ~443 years. Redirect 1% of military spending ($27.2B/year) to pragmatic clinical trials. Trial capacity jumps 12.3x. Search space explored in ~36 years instead of centuries. Average treatment reaches patients 212 years sooner. Timeline shift saves 10.7 billion deaths, valued at $84.8 quadrillion. Cost-effectiveness: $0.00177/DALY, 50.3kx better than bed nets. Even at 1% probability of treaty adoption, risk-adjusted cost-effectiveness remains superior to the best existing global health interventions. Incentive Alignment Bonds address political feasibility by tying legislators' career incentives to a public voting scorecard."
   site-url: https://manual.warondisease.org/knowledge/economics/1-pct-treaty-impact.html
@@ -148,13 +148,13 @@ metadata:
     - impact-investing
   version: "1.0"
   edition: "Working Paper"
-  copyright: "© 2025 The Institute for Accelerated Medicine"
+  copyright: "© 2025 The International Campaign to End War and Disease"
   copyright-year: "2025"
   license: "CC BY-NC 4.0"
   license-url: "https://creativecommons.org/licenses/by-nc/4.0/"
   rights: "Creative Commons Attribution-NonCommercial 4.0 International License"
-  publisher: "Institute for Accelerated Medicine"
-  publisher-url: "https://acceleratedmedicine.org"
+  publisher: "International Campaign to End War and Disease"
+  publisher-url: "https://warondisease.org"
   publisher-name: "Mike P. Sinn"
   publisher-email: "mike@warondisease.org"
   repo-url: "https://github.com/mikepsinn"
@@ -185,6 +185,10 @@ metadata:
         status: auto-uploaded
         url: "https://zenodo.org/record/18522796"
         doi: "10.5281/zenodo.18161560"
+      - platform: osf
+        status: published
+        url: "https://osf.io/preprints/socarxiv/vua53_v1"
+        id: "vua53_v1"
       - platform: ssrn
         status: pending
         url: ""
@@ -256,7 +260,7 @@ format:
   pdf:
     output-file: "1-percent-treaty-impact.pdf"
     documentclass: report
-    institute: "Institute for Accelerated Medicine"
+    institute: "International Campaign to End War and Disease"
     echo: false
     toc: true
     toc-depth: 3

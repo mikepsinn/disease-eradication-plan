@@ -168,7 +168,7 @@ def generate_llms_txt(project_root: Path) -> Path:
         "",
         "## Organization",
         "",
-        "Institute for Accelerated Medicine",
+        "International Campaign to End War and Disease",
         "- Website: https://WarOnDisease.org",
         "",
         "## Source Code",

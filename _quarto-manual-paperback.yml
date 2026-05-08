@@ -48,8 +48,8 @@ book:
       email: m@warondisease.org
       orcid: 0009-0006-0212-1094
       affiliations:
-        - name: "Institute for Accelerated Medicine"
-          url: https://acceleratedmedicine.org
+        - name: "International Campaign to End War and Disease"
+          url: https://warondisease.org
   description: "The Complete Idiot's Guide to Legally Bribing Your Way to Utopia"
   site-url: https://manual.WarOnDisease.org
   chapters:
@@ -176,8 +176,8 @@ metadata:
   copyright-year: "2025"
   license: "CC BY-NC 4.0"
   license-url: "https://creativecommons.org/licenses/by-nc/4.0/"
-  publisher: "Institute for Accelerated Medicine"
-  publisher-url: "https://acceleratedmedicine.org"
+  publisher: "International Campaign to End War and Disease"
+  publisher-url: "https://warondisease.org"
   publisher-name: "Mike P. Sinn"
   publisher-email: "mike@warondisease.org"
   geographic-coverage: "Global"
@@ -233,7 +233,7 @@ format:
     output-file: "How-to-End-War-and-Disease-Paperback.pdf"
     documentclass: report
     classoption: [twoside]
-    institute: "Institute for Accelerated Medicine"
+    institute: "International Campaign to End War and Disease"
     echo: false
     fig-format: png
     toc: false
