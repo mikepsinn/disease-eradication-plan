@@ -10,17 +10,32 @@ from __future__ import annotations
 
 import re
 from html import unescape
+from html.parser import HTMLParser
 from pathlib import Path
 from typing import Dict, List, Tuple
 
 from dih_models.yaml_utils import yaml_safe_load
 
 
+class VisibleTextHTMLParser(HTMLParser):
+    """Extract visible text from generated parameter HTML."""
+
+    def __init__(self) -> None:
+        super().__init__(convert_charrefs=True)
+        self.parts: List[str] = []
+
+    def handle_data(self, data: str) -> None:
+        self.parts.append(data)
+
+
 def strip_html_tags(text: str) -> str:
     """Remove HTML tags and extract just the display text."""
-    # Remove HTML tags
-    clean = re.sub(r'<[^>]+>', '', text)
-    # Unescape HTML entities
+    parser = VisibleTextHTMLParser()
+    parser.feed(text)
+    parser.close()
+    clean = ''.join(parser.parts)
+    if not clean and '<' in text:
+        clean = re.sub(r'<[^>]+>', '', text)
     clean = unescape(clean)
     return clean.strip()
 
@@ -176,6 +191,7 @@ def remove_citation_keys(content: str) -> str:
     # Remove bare citations: @key-with-dashes (but not email addresses)
     # Also clean up any trailing space left before punctuation
     content = re.sub(r'(?<![.\w])\s*@[\w][\w-]+', '', content)
+    content = re.sub(r'\s+([,.;:!?])', r'\1', content)
     return content
 
 

@@ -21,118 +21,114 @@ When they call back, walk them through the questions below. Not a speech. Ask in
 
 ---
 
-Your religious institutions invented a format: a fixed chain of questions and answers where accepting each one commits you to the next. The original purpose was installing beliefs that were not meant to be examined. Your species uses this format to teach children not to question anything. I am using it to teach you to question everything. The irony is noted.
-
-*If you can find a "no" anywhere in here, stop and say which one.*
+These are 20 questions. Each one follows from the last. If you can say "no" to any of them, stop me and tell me which one.
 
 **1. Is disease your body breaking in ways that can be physically fixed?**
 
-Yes. You find first treatments for {{< var new_disease_first_treatments_per_year_nounit >}} new diseases every year. You have done this consistently for decades. There are {{< var diseases_without_effective_treatment_nounit >}} still waiting. Your body is made of atoms. Atoms follow rules. When you figure out the rules, you fix the disease. There is no physical law preventing disease eradication. There is only a queue.
+Yes. We find first treatments for {{< var new_disease_first_treatments_per_year_nounit >}} new diseases every year. We've done this for decades. There are {{< var diseases_without_effective_treatment_nounit >}} still waiting. Your body is made of atoms. Atoms follow rules. When you figure out the rules, you fix the disease. There is no physical law preventing this. There is only a waiting list.
 
-**2. Do you already have the ingredients to work through that queue faster?**
+**2. Do we already have what we need to work through that list faster?**
 
-Yes. There are {{< var safe_compounds_count_nounit >}} known-safe medicinal compounds. {{< var unexplored_ratio >}} of their potential uses have never been tested. Not because the tests are impossible. Because no one paid for them.
+Yes. There are {{< var safe_compounds_count_nounit >}} drugs already proven safe. {{< var unexplored_ratio >}} of the diseases they might treat have never been tested. Not because the tests are impossible. Because nobody paid for them.
 
 **3. If someone paid for them, would the money actually produce cures?**
 
-Yes. The RECOVERY trial tested 6 treatments on 48,000 patients for {{< var recovery_trial_cost_per_patient >}} per patient instead of the usual {{< var traditional_phase3_cost_per_patient >}}. One treatment, dexamethasone, saved over a million lives. Your species does its best medical research when terrified and disorganized, which suggests your normal system is somehow worse than panic. The method works. It just needs funding.
+Yes. During COVID, the RECOVERY trial tested 6 treatments on 48,000 patients for {{< var recovery_trial_cost_per_patient >}} per patient instead of the usual {{< var traditional_phase3_cost_per_patient >}}. One of those treatments, dexamethasone, saved over a million lives. Panicking scientists with no money did better than the normal system does on purpose. The method works. It just needs funding.
 
 **4. Where is all the money going instead?**
 
-Your governments maintain {{< var global_warhead_count_nounit >}} nuclear warheads. That is enough to end civilization {{< var nuclear_winter_overkill_factor_nounit >}} times. You can only end it once. The other {{< var nuclear_winter_overkill_factor_nounit >}} minus 1 apocalypses sit in storage, being expensive. Globally, governments spend {{< var military_to_government_clinical_trials_spending_ratio >}} more on military than on clinical trials. Your chance of dying from terrorism: 1 in 30 million [@chance-of-dying-from-terrorism-1-in-30m]. Your chance of dying from disease: 100%.
+Governments maintain {{< var global_warhead_count_nounit >}} nuclear warheads. That is enough to end civilization {{< var nuclear_winter_overkill_factor_nounit >}} times. You can only end it once. The other {{< var nuclear_winter_overkill_factor_nounit >}} minus 1 apocalypses sit in storage, being expensive. Governments spend {{< var military_to_government_clinical_trials_spending_ratio >}} more on military than on clinical trials. Your chance of dying from terrorism: 1 in 30 million [@chance-of-dying-from-terrorism-1-in-30m]. Your chance of dying from disease: 100%.
 
 **5. What if you moved 1% of military spending to clinical trials?**
 
-That is the [1% Treaty](/knowledge/solution/1-percent-treaty.qmd) [@1-percent-treaty-paper-2025] [@1-pct-treaty-impact-paper-2025]. You drop from {{< var nuclear_winter_overkill_factor_nounit >}} apocalypses to {{< var nuclear_winter_overkill_factor_nounit >}} minus 1. No strategic capability is lost. You gain {{< var dfda_trial_capacity_multiplier >}} more clinical trials worldwide. Disease eradication compresses from {{< var status_quo_queue_clearance_years >}} to {{< var dfda_queue_clearance_years >}}. You cure disease in your lifetime instead of your descendants' eighth generation.
+That is the [1% Treaty](/knowledge/solution/1-percent-treaty.qmd) [@1-percent-treaty-paper-2025] [@1-pct-treaty-impact-paper-2025]. Everyone reduces 1%, so everyone still has the same number of missiles pointed at each other. Nobody is easier to invade than before. Everyone has 1% fewer missiles pointed at them. We gain {{< var dfda_trial_capacity_multiplier >}} more clinical trials. Disease eradication goes from {{< var status_quo_queue_clearance_years >}} to {{< var dfda_queue_clearance_years >}}. In our lifetime instead of centuries.
 
-**6. How many humans die while you wait for this to happen?**
+**6. How many people die while we wait?**
 
-About {{< var global_disease_deaths_per_minute_nounit >}} per minute. {{< var global_disease_deaths_daily_nounit >}} per day. That counter has been running while you read these questions. It does not pause while you think about it.
+About {{< var global_disease_deaths_per_minute_nounit >}} per minute. {{< var global_disease_deaths_daily_nounit >}} per day. That counter has been running since you picked up the phone.
 
 **7. How many are suffering right now?**
 
-About {{< var current_disease_patients_global_nounit >}}. Every day disease eradication is not shifted forward, each of them spends one more day sick. That is {{< var current_disease_patients_global_nounit >}} additional days of suffering created every single day. Tomorrow adds another {{< var current_disease_patients_global_nounit >}}. Multiply by however long you take to decide.
+About {{< var current_disease_patients_global_nounit >}}. Every day we wait, each of them spends one more day sick. That is {{< var current_disease_patients_global_nounit >}} additional days of suffering created every single day. Tomorrow adds another {{< var current_disease_patients_global_nounit >}}. Multiply by however long we take to decide.
 
 **8. Do the people who control military budgets also get sick and die?**
 
-Yes. Cancer does not check your net worth. Alzheimer's does not ask whether you voted for the appropriations bill. Every president, prime minister, general, and billionaire ages, sickens, and dies of the same diseases as everyone else. So do their parents, spouses, and children. Most have not stopped to think about it. Stopping costs them the next election. Dying doesn't, yet.
+Yes. Cancer does not check your net worth. Alzheimer's doesn't care who you voted for. Every president, prime minister, general, and billionaire gets sick and dies of the same diseases as everyone else. So do their parents, spouses, and children. Most haven't stopped to think about it. They're too busy worrying about the next election to notice they're dying too.
 
 **9. Has public pressure ever forced a change this large before?**
 
-Every time. Every major civilizational shift that reached {{< var global_population_activism_threshold_pct >}} active public support has succeeded. Abolition. Women's suffrage. Civil rights. Zero failures in the last century {{< var global_population_activism_threshold_pct_cite >}}. {{< var global_population_activism_threshold_pct >}} is the cheat code your species discovered and then never used on purpose.
+Every time. Every major change that reached {{< var global_population_activism_threshold_pct >}} active public support has succeeded. Abolition. Women's suffrage. Civil rights. Zero failures in the last century {{< var global_population_activism_threshold_pct_cite >}}. We figured out that number and then never used it on purpose.
 
 **10. If {{< var global_population_activism_threshold_pct >}} is enough, why do you need more than that?**
 
-You don't. But the [1% Treaty](/knowledge/solution/1-percent-treaty.qmd) is an even easier case: you are not asking anyone to give something up. You are asking them to trade {{< var nuclear_winter_overkill_factor_nounit >}} apocalypses for {{< var nuclear_winter_overkill_factor_nounit >}} minus 1, in exchange for curing disease in their lifetime. At 50% of the global population, {{< var global_registered_voters_nounit >}} humans, no government on Earth holds out. Not out of virtue. Out of survival.
+You don't. But the [1% Treaty](/knowledge/solution/1-percent-treaty.qmd) is an even easier case: we're not asking anyone to give something up. We're asking them to trade {{< var nuclear_winter_overkill_factor_nounit >}} apocalypses for {{< var nuclear_winter_overkill_factor_nounit >}} minus 1, in exchange for curing disease in their lifetime. At 50% of the global population, {{< var global_registered_voters_nounit >}} people, no government on Earth holds out. Not out of virtue. Out of survival.
 
 **11. Is there a path from one person to {{< var global_registered_voters_nounit >}}?**
 
-Yes. If every person who agrees gets 2 others to agree, and each of those gets 2 more, the count doubles every round. After 32 doublings you reach 4.3 billion. More than half of humanity. Your calendar invented this math.
+Yes. If every person who agrees gets 2 others to agree, and each of those gets 2 more, the count doubles every round. After 32 doublings you reach 4.3 billion. More than half of humanity.
 
 **12. How long does that take?**
 
-If each person shares and their 2 people share the next day: 32 days. If it takes a week: about 8 months. The speed depends entirely on how quickly each person in the chain gets 2 others to continue it.
+If each person shares and their 2 people share the next day: 32 days. If it takes a week: about 8 months.
 
 **13. Does every single person in the chain need to keep it going?**
 
-No. Most won't. That is fine. In every successful movement, most people did nothing. You need the average person who reads this to reach, on average, just over 1 new person who also keeps going. A small number of enthusiastic sharers compensate for the majority who share with zero. The wave does not require unanimous participation. It requires a positive average.
+No. Most won't. That's fine. In every successful movement, most people did nothing. On average, each person just needs to reach 1 new person who keeps going. A few enthusiastic sharers make up for the majority who share with zero.
 
 **14. Can you think of anything you could do in 30 seconds that would prevent more death and suffering?**
 
-No. Not donating to charity. Not volunteering. Not any other action at any price. Compressing disease eradication from centuries to decades prevents more suffering than anything else available to you. Sharing this takes about 30 seconds. The silence you are about to fill is the point. Whatever you come up with will be smaller than what you just gave up.
+No. Not donating to charity. Not volunteering. Not any other action at any price. Curing disease decades sooner prevents more suffering than anything else you can do right now. Sharing this takes 30 seconds. The silence you're about to fill is the point. Whatever you come up with will be smaller than what you just gave up.
 
-**15. What do you personally gain if disease eradication shifts forward?**
+**15. What do you personally get out of this?**
 
-The shift from a war-and-disease economy to a health-and-productivity economy adds an estimated {{< var treaty_trajectory_lifetime_income_gain_per_capita >}} in lifetime wealth for a typical person. Disease costs you money every year in insurance, lost wages, caregiving, and taxes. Shifting eradication forward does not just save lives. It makes your life measurably richer.
+An estimated {{< var treaty_trajectory_lifetime_income_gain_per_capita >}} in lifetime wealth for a typical person. Disease costs you money every year in insurance, lost wages, caregiving, and taxes. Curing it doesn't just save lives. It makes you richer.
 
 **16. What does sharing cost?**
 
-About 30 seconds. Less time than explaining why you didn't. You are not being asked to donate money, attend a rally, or change your life. You are being asked to pass this to 2 people and ask them what they think.
+About 30 seconds. Less time than explaining why you didn't. You're not being asked to donate money, attend a rally, or change your life. You're being asked to pass this to 2 people and ask them what they think.
 
 **17. Can you think of anything else you could do with 30 seconds that would add {{< var treaty_trajectory_lifetime_income_gain_per_capita >}} to your lifetime wealth?**
 
 No. Your 30 seconds have never been this valuable. They will never be this valuable again.
 
-**18. So the trade is: 30 seconds of your time, and in exchange your species drops from {{< var nuclear_winter_overkill_factor_nounit >}} apocalypses to {{< var nuclear_winter_overkill_factor_nounit >}} minus 1, disease gets eradicated in your lifetime, your loved ones are protected, and your lifetime income goes up by {{< var treaty_trajectory_lifetime_income_gain_per_capita >}}?**
+**18. So the trade is: 30 seconds of your time, and in exchange we drop from {{< var nuclear_winter_overkill_factor_nounit >}} apocalypses to {{< var nuclear_winter_overkill_factor_nounit >}} minus 1, disease gets eradicated in our lifetime, the people we love are protected, and our lifetime income goes up by {{< var treaty_trajectory_lifetime_income_gain_per_capita >}}?**
 
 Yes. That is the trade.
 
 **19. Will you vote at [warondisease.org](https://warondisease.org) right now, before you read the next question?**
 
-The vote takes 15 seconds. These questions are not going anywhere. The humans dying are going somewhere permanent.
+The vote takes 15 seconds. These questions aren't going anywhere. The people dying aren't waiting for you.
 
 **20. Will you share this with 2 people and ask each of them to keep the chain going?**
 
-Yes. The message: *"An alien asked me to forward this. I don't know what that means but here."* Two people. Thirty seconds. The only thing that stops the wave is one human in the chain deciding "later." Is that human you?
+Yes. Two people. Thirty seconds. The only thing that stops the wave is one person in the chain deciding "later." Is that person you?
 
 ---
 
-30 seconds × {{< var global_registered_voters_nounit >}} humans = the 1% Treaty exists = disease eradicated in decades instead of centuries.
+30 seconds × {{< var global_registered_voters_nounit >}} people = the 1% Treaty exists = disease eradicated in decades instead of centuries.
 
 ## If They Argue With You
 
-- **"Defense contractors will crush this."** Defense contractors keep {{< var defense_sector_retention_pct >}} of their existing budget under the treaty. The Victory Incentive Alignment Bond pays them {{< var victory_bond_annual_return_pct >}} returns on top. They make more money going along with this than fighting it. Lobbyists do not have beliefs. They have clients. This gives them a better client.
+- **"Defense contractors will crush this."** Defense contractors keep {{< var defense_sector_retention_pct >}} of their budget under the treaty. The Victory Incentive Alignment Bond pays them {{< var victory_bond_annual_return_pct >}} returns on top. They make more money going along with this than fighting it. Lobbyists do not have beliefs. They have clients. This gives them a better client.
 
-- **"Big Pharma will block this. They profit from sick people."** Pharma currently spends about $1 billion per drug and fails 90% of the time. They are not profiting from disease. They are gambling on disease. Under this plan, they get paid per patient enrolled in trials. Revenue instead of cost. Guaranteed salary instead of casino. Casinos love guaranteed salaries. Pharma will not block the plan. They will trample each other to sign up.
+- **"Big Pharma will block this. They profit from sick people."** Pharma currently spends about $1 billion per drug and fails 90% of the time. They're not profiting from disease. They're gambling on disease. Under this plan, they get paid per patient enrolled in trials. Revenue instead of cost. A guaranteed paycheck instead of a casino. Pharma won't block this. They'll trample each other to sign up.
 
-- **"Politicians will never vote for this."** Correct. That is why the plan does not ask them to be saints. A Super PAC rewards every politician who votes yes. Campaign support when they are running. Post-office career incentives after they leave. The campaign budget is about eight times what defense lobbyists currently spend per year. Political behavior follows incentives.
+- **"Politicians will never vote for this."** Correct. That's why the plan doesn't ask them to be saints. A Super PAC rewards every politician who votes yes. Campaign support when they're running. Good jobs after they leave office. The campaign budget is about eight times what defense lobbyists currently spend per year. Politicians do whatever gets them re-elected.
 
-- **"This sounds like bribery."** Correct. You are describing lobbying. Same K Street firms, same campaign contributions, same revolving door, same wine. The only difference is what the money buys. Current lobbying buys missile contracts. This one buys clinical trials. If one kind of lobbying feels normal and the other feels shocking, that is worth noticing. Also: this plan caps the lobbying portion at 20% and puts every contribution on a public ledger. No government budget in history has had a lower corruption rate.
+- **"This sounds like bribery."** You're describing lobbying. Same lobbying firms, same campaign contributions, same revolving door, same wine. The only difference is what the money buys. Current lobbying buys missile contracts. This buys clinical trials. If one kind of lobbying feels normal and the other feels shocking, that's worth noticing. Also: this plan caps the lobbying portion at 20% and puts every dollar where everyone can see it. Try finding a government budget that's more transparent than that.
 
-- **"The FDA and NIH already handle clinical trials."** The NIH spends about {{< var nih_clinical_trials_spending_pct >}} of its budget on actual trials. The rest is buildings and paperwork. The FDA blocks safe drugs for years even after safety is confirmed. For every 1 person saved from a bad drug, about {{< var type_ii_error_cost_ratio >}} die waiting for a good one. The current system is what we are fixing, not competing with.
+- **"The FDA and NIH already handle clinical trials."** The NIH spends about {{< var nih_clinical_trials_spending_pct >}} of its budget on actual trials. The rest is buildings and paperwork. The FDA blocks safe drugs for years even after safety is confirmed. For every 1 person saved from a bad drug, about {{< var type_ii_error_cost_ratio >}} die waiting for a good one. The current system is what we're fixing, not competing with.
 
-- **"Why not just reform the existing system instead?"** People have been trying for fifty years. More funding: they hired more administrators. Different leadership: same results, fancier titles. New regulations: now takes 20 years instead of 17. Reform bills: killed in committee. The system is not broken. It works perfectly for the people who built it. They will not surrender it because you asked nicely. They will surrender it when you outbid them. That is what this plan is.
+- **"Why not just reform the existing system instead?"** People have been trying for fifty years. More funding: they hired more administrators. Different leadership: same results, fancier titles. New regulations: now takes 20 years instead of 17. Reform bills: killed in committee. The system isn't broken. It works perfectly for the people who built it. They won't surrender it because you asked nicely. They'll surrender it when you outbid them. That's what this plan does.
 
-- **"This website could be a scam."** Nobody takes your money. You type your name and you vote. If it is a scam, the worst case is your name sat on a list. The only thing being collected is a count of humans who want fewer preventable deaths. That count is the whole point.
+- **"I don't have time to call everyone I love."** One call a day for six weeks. By the math we just went through, it's the best use of five minutes you have until the treaty exists.
 
-- **"I don't have time to call everyone I love."** One call a day for six weeks. By the math we just went through, it is the best use of five minutes you have until the treaty exists.
+- **"My friends will think I'm weird."** Probably. They'll also call you back, which is the whole point. Seeming weird is a one-time cost. Not calling costs {{< var global_disease_deaths_daily_nounit >}} lives per day the treaty doesn't exist. Weird is cheaper.
 
-- **"My friends will think I'm weird."** Probably. They will also call you back, which is the whole point. Seeming weird is a one-time cost. Not calling costs {{< var global_disease_deaths_daily_nounit >}} more dead humans per day the treaty does not exist. Weird is cheaper.
+- **"Nothing like this ever works. Big systems don't change."** Communism was invented, took over half the planet, and collapsed in one human lifetime. No fax machines. Required mass murder. Was a genuinely terrible idea. This plan has the internet and an idea that asks people to click a button and call two people they love. If that can't happen, the obstacle isn't the system.
 
-- **"Nothing like this ever works. Big systems don't change."** Communism was invented, took over half the planet, and collapsed in one human lifetime. No fax machines. Required mass murder. Was a genuinely terrible idea. This plan has the internet and an idea that asks people to click a button and call two people they love. If that cannot happen, the obstacle is not the system.
+- **"War is human nature. Militaries are inevitable."** Switzerland spent 200+ years avoiding major wars on a fraction of the US defense budget. Life expectancy there is years higher than in the US. Costa Rica abolished its army in 1948. Nobody invaded. Both countries are still sovereign, and both are richer per capita for spending less on killing people. Nuclear weapons made territorial conquest mostly pointless in 1945. We're still budgeting like it's 1944.
 
-- **"War is human nature. Militaries are inevitable."** Switzerland spent 200+ years avoiding major wars on a fraction of the US defense budget. Life expectancy there is years higher than in the US. Costa Rica abolished its army in 1948. Nobody invaded. Both countries are still sovereign, and both are richer per capita for spending less on murder. Nuclear weapons made territorial conquest mostly pointless in 1945. Your planet is still budgeting like it is 1944. Someone should tell the accountants.
+- **"I don't believe the {{< var dfda_trial_capacity_multiplier_nounit >}} times number."** The RECOVERY trial already showed a {{< var recovery_trial_cost_reduction_factor >}} cost reduction on real patients during the pandemic. The {{< var dfda_trial_capacity_multiplier_nounit >}} number comes from how much funding divided by current trial slots. The math is at [manual.warondisease.org/knowledge/economics/1-pct-treaty-impact](https://manual.warondisease.org/knowledge/economics/1-pct-treaty-impact.qmd). Offer the link. Don't wait for them to read it before moving on.
 
-- **"I don't believe the {{< var dfda_trial_capacity_multiplier_nounit >}} times number."** The RECOVERY trial already showed a {{< var recovery_trial_cost_reduction_factor >}} cost reduction on real patients during the pandemic. The {{< var dfda_trial_capacity_multiplier_nounit >}} number comes from how much funding divided by current trial slots. If they want to check the math, it is at [manual.warondisease.org/knowledge/economics/1-pct-treaty-impact](https://manual.warondisease.org/knowledge/economics/1-pct-treaty-impact.qmd). Offer the link. Do not wait for them to read it before moving on.
-
-- **"I want to think about it first."** "Thinking about it" is the default the rest of humanity has been doing for decades. Which is why the treaty does not exist yet. The questions we just walked through are the thinking. Anything beyond that is delay. Delay costs {{< var global_disease_deaths_daily_nounit >}} humans per day. Vote now. Think about it after. The vote is reversible. The deaths are not.
+- **"I want to think about it first."** "Thinking about it" is what everyone has been doing for decades. That's why the treaty doesn't exist yet. The questions we just walked through are the thinking. Anything beyond that is delay. Delay costs {{< var global_disease_deaths_daily_nounit >}} lives per day. Vote now. Think about it after. The vote is reversible. The deaths aren't.

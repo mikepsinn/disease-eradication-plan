@@ -45,6 +45,7 @@
     "render:pdfs": ".venv\\Scripts\\python.exe -u scripts/render-and-validate-pdfs.py --skip-validation",
     "render:validate:pdfs": ".venv\\Scripts\\python.exe -u scripts/render-and-validate-pdfs.py",
     "generate:everything": ".venv\\Scripts\\python.exe -u scripts/generate-everything-parameters-variables-calculations-references.py",
+    "qmd:export-markdown": ".venv\\Scripts\\python.exe -u scripts/preview-qmd-with-variables.py --export-markdown",
     "distribute": ".venv\\Scripts\\python.exe -u scripts/distribute/distributor.py",
     "distribute:dry-run": ".venv\\Scripts\\python.exe -u scripts/distribute/distributor.py --dry-run",
     "distribute:backfill": ".venv\\Scripts\\python.exe -u scripts/distribute/distributor.py --backfill",
