@@ -607,25 +607,25 @@ The IAB mechanism aligns incentives across every group that matters:
 
 {{< include ../figures/victory-bonds-money-flow-diagram.qmd >}}
 
-**Weapons Manufacturers**: Retain {{< var defense_sector_retention_pct >}} of current budgets while earning projected {{< var victory_bond_annual_return_pct >}} returns on [Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd). The treaty creates new revenue streams without threatening core business.
+**Weapons Manufacturers**: Keep {{< var defense_sector_retention_pct >}} of current budgets. Earn projected {{< var victory_bond_annual_return_pct >}} returns on [Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd). You still get rich. You just stop killing people to do it.
 
 ![Before: everyone fights over the same pie. After: everyone gets more pie. You could have done this earlier, but you were busy fighting.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-stakeholder-alignment-bw-academic.jpg)
 
-**Insurance Companies**: Healthier populations generate higher lifetime premium revenue. Patients living longer with better health outcomes produce better actuarial performance than the current mortality-driven model.
+**Insurance Companies**: Healthier populations pay premiums for more years. Patients who don't die keep paying you. This is better for your spreadsheets than the current model where your customers keep dying.
 
-**Pharmaceutical Companies**: Trial costs convert to revenue streams. Instead of paying {{< var traditional_phase3_cost_per_patient >}} {{< var traditional_phase3_cost_per_patient_cite >}} per trial patient, companies collect {{< var dfda_pragmatic_trial_cost_per_patient >}} {{< var dfda_pragmatic_trial_cost_per_patient_cite >}} subsidies when patients enroll. This transforms trials from cost centers to profit centers.
+**Pharmaceutical Companies**: Instead of paying {{< var traditional_phase3_cost_per_patient >}} {{< var traditional_phase3_cost_per_patient_cite >}} per trial patient, companies collect {{< var dfda_pragmatic_trial_cost_per_patient >}} {{< var dfda_pragmatic_trial_cost_per_patient_cite >}} subsidies when patients enroll. You currently spend money to test drugs. Under this system, you get paid to test drugs. Read that sentence again if you need to.
 
-**Politicians**: {{< var three_point_five_percent_of_global_population >}} voters represent a significant electoral constituency. Politicians supporting the treaty gain reputation benefits, campaign support, and reduced opposition funding. Those opposing it face well-funded challengers and organized voter blocs.
+**Politicians**: {{< var three_point_five_percent_of_global_population >}} voters want this. Support the treaty and they vote for you, fund your campaign, and stop funding whoever runs against you. Oppose it and they do the opposite. Politicians are good at counting.
 
 {{< var three_point_five_percent_of_global_population_latex >}}
 
-**Investors**: [Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd) offer projected {{< var victory_bond_annual_return_pct >}}, substantially exceeding typical market returns of {{< var average_market_return_pct >}}.
+**Investors**: [Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd) offer projected {{< var victory_bond_annual_return_pct >}}. The stock market averages {{< var average_market_return_pct >}}. You give them money, they give you more money back, and also people stop dying. The pitch writes itself.
 
 {{< var victory_bond_annual_return_pct_latex >}}
 
-**Patients**: Subsidized access to experimental treatments recommended by physicians. Patients choose which trials to join, with subsidies following their decisions. Additional benefits include lifetime wealth gains and longevity increases from the economic multiplier effect.
+**Patients**: You get paid to try treatments your doctor recommends. You pick which trials to join. The money follows your decision, not a pharmaceutical company's. Also you get richer over your (now longer) lifetime because the economy grows when people stop dying.
 
-The mechanism redirects competitive incentives from zero-sum conflicts toward positive-sum health outcomes.
+Everyone gets more of what they want. The trick was to stop playing a game where your gain requires someone else's loss.
 
 See [Aligning Incentives](../solution/aligning-incentives.qmd) for complete analysis.
 
