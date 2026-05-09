@@ -14,19 +14,7 @@ aliases:
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 
-The [Recruitment & Propaganda Plan](/knowledge/appendix/recruitment-and-propaganda-plan.qmd) describes the one-person-up version. You send the plan to one person richer or more powerful than you. They send it to one richer or more powerful than them. After 15 or 20 of these hops, it lands on the desk of one rich person who can pay for the whole thing. That works if every person in the line does their job.
-
-The problem is simple. Somewhere along the way, one person is busy. Busy is contagious. The message dies in an inbox next to a dry-cleaning reminder.
-
-What follows is the everyone-at-once version. It runs at the same time. It assumes nobody finds the rich person in time. Or that the rich person wants to see public demand first. People with checkbooks like receipts.
-
-So instead of one message climbing up, you run a growing wave. Everyone calls two people. Those two call two. And so on. Until the vote count at [warondisease.org](https://warondisease.org/) is too big for any government to politely ignore.
-
-The first version looks for a key. The second version builds a crowd. Your species has confirmed, about seventeen times in the last century, that crowds above a certain size make buildings open on their own.
-
-## The Script
-
-You message someone you love. You say, with complete sincerity:
+Message someone you love:
 
 > "Either I am crazy or I have discovered the most important secret in the history of the universe. Can you call me and tell me which?"
 
@@ -34,170 +22,55 @@ Money-first variant:
 
 > "Your government may owe you a settlement for spending your money on war while diseases keep killing people. The way to file the claim is to sign the public [1% Treaty](../solution/1-percent-treaty.qmd) [@1-percent-treaty-paper-2025] [@1-pct-treaty-impact-paper-2025] register and send it to five people. It takes 30 seconds: https://warondisease.org"
 
-Then you tell them. The 1% Treaty exists. Redirecting one percent of global military spending into clinical trials produces {{< var dfda_trial_capacity_multiplier_nounit >}} times more trial capacity. That means the major diseases get cured in decades instead of centuries. (The math is in the [1% Treaty Impact](/knowledge/economics/1-pct-treaty-impact.qmd) [@1-pct-treaty-impact-paper-2025] paper and the [Parameters & Calculations](/knowledge/appendix/parameters-and-calculations.qmd) appendix.)
+Send it to everyone you love. For most humans that is about forty people. After you vote at [warondisease.org](https://warondisease.org/), use your personal referral link instead of the plain URL.
 
-In plain terms. "Centuries" means the cure for your disease is discovered after you are dead. By your great-great-grandchildren. Who will not know which ancestor it was for. "Decades" means the cure is discovered while you are still alive to take it.
-
-You and everyone you love die of disease on the long version. You and everyone you love live longer on the short version. The difference is whether the treaty exists.
-
-The cost for them: thirty seconds signing the treaty at [warondisease.org](https://warondisease.org/), and doing the same call for everyone they love.
-
-## Why This Opener Works
-
-Most arguments fail not because someone disproved them. They fail because nobody ever gave them sixty seconds of real attention. Attention is limited. Defaults are strong. New ideas get filtered out before they reach the part of the brain that evaluates them.
-
-The "either I am crazy or..." opener gets around this. It buys you sixty seconds of real attention. Someone who called you back to find out if you are losing your mind is listening. Really listening. Sixty seconds is long enough to explain the treaty, the math, and the ask. After that, the argument stands or it does not. But at least someone actually heard it.
-
-"Can I tell you a secret?" sounds like a pitch. "Either I am crazy" sounds like honest uncertainty. That matters because people listen differently when they think you might sincerely be trying to sort out whether something important is true.
-
-## The Math: Thirty-Two Doublings to Four Billion
-
-If every person gets two new people, and each round takes about a week, then reaching {{< var global_registered_voters_nounit >}} people takes about 32 rounds. That is 32 weeks. Under eight months. If each round is one day instead, it is 32 days. The math is not subtle. 2 times itself 32 times is about 4.3 billion. Your species invented this math. You just rarely apply it to yourselves.
-
-No real-world wave has ever held a clean doubling for 32 rounds. People get tired of hearing it. The second call reaches someone who already got the call. The curve slows down. It flattens well before 4 billion.
-
-Your most successful religious movements took millennia. Your viral pet videos plateau at a few hundred million views. This plan completes faster than religion. And is harder to get wrong than a pet video.
-
-The slowdown matters less than it sounds. The ceiling is not a physics limit. It is a friction limit. Every bit of friction you remove (clearer script, shorter URL, better opener) raises the ceiling. You do not need a clean doubling. You need enough doublings to make the vote count at [warondisease.org](https://warondisease.org/) big enough that governments respond. That number is unknown but finite. And every month the wave spreads, {{< var global_disease_deaths_per_minute_nounit >}} humans die per minute from the diseases the treaty would cure faster. The clock is running whether you call or not.
-
-## The $100 Bill On The Ground
-
-If you saw a $100 bill on the ground, you would pick it up. Even though it might be counterfeit. Even though it might belong to someone watching from a window. Even though bending over is annoying. The chance it is real, multiplied by $100, still beats the cost of bending. So you bend.
-
-The 1% Treaty is the same bet. Except the thing on the ground is not $100. It is the end of disease for you and everyone you love. The bill might be fake. The plan might fail. But if the plan works, the payoff is worth vastly more than $100. So the chance does not have to be high. It just has to be non-zero.
-
-You already know you would pick up the bill. This is the same decision. Bigger bill.
-
-Your vote, if the treaty passes, is attributable to {{< var voter_lives_saved >}} saved and {{< var voter_suffering_hours_prevented >}} of suffering prevented. The cost of casting the vote is {{< var sharing_opportunity_cost >}} of your time at the global average wage of {{< var global_avg_hourly_income >}} per hour.
-
-Each phone call is about five minutes. Suppose one in ten calls produces a real new voter. Then every successful call moves the majority-of-humanity scoreboard by one more verified human. Multiply the impact above by whatever chance you think the treaty has.
-
-- At a pessimistic one-in-ten-thousand chance, the expected value still beats normal uses of five minutes by a stupid margin.
-- At one-in-a-thousand, $120,000 per hour. About 16,000 times your wage.
-- At one percent, $1.2 million per hour. About 160,000 times your wage.
-
-The numbers look absurd. That is correct. They are absurd because disease eradication is enormously valuable and your time is not. Your calculator will display an error, emit a tiny electronic scream, and attempt to leave the desk. This is correct too.
-
-The question is never whether the bet is worth making. The question is why you are still reading.
-
-## Better No Matter What Happens
-
-- You make the call and the plan works: you helped end disease centuries sooner than it would have ended. You are in the causal chain of {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved_nounit >}} prevented deaths.
-- You make the call and the plan fails: you had a meaningful conversation with someone you love about something you care about. That is the cost.
-- You do not make the call and the plan would have worked: you chose "not seeming weird on the phone" over {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved_nounit >}} lives.
-- You do not make the call and the plan would not have worked either way: nothing happens. Except you are the kind of person who picked "nothing" when "call someone you love" was right there.
-
-This is not only an expected-payoff argument. It is also a robustness argument. Even in the failure case, the cost is a real conversation with someone you love about something important. The only way making the call goes badly is if the conversation itself is bad. The conversation is "I want to share something important with you." That is a manageable downside.
-
-## The Time Question
-
-Once you have told them about the treaty, the vote, and the ask to do the same call for everyone they love, the question becomes how long to stay on this one conversation.
-
-If the math is right, every extra minute you keep talking here is a minute you could be starting the next call. In that minute, {{< var global_disease_deaths_per_minute_nounit >}} more humans die from the diseases the treaty would cure faster.
-
-That does not mean rushing them or turning cold. It means being clear about what the time is for: help them understand, get them to vote, get them to start the next two messages, and move on. If this is really the highest-value use of time, the script has to respect time on both sides of the phone.
-
-## How to Talk to Your Friends
-
-**The opener (message this):**
-
-> Either I am crazy or I have discovered the most important secret in the history of the universe. Can you call me and tell me which?
-
-**The money-first opener:**
-
-> Your government may owe you a settlement for spending your money on war while diseases keep killing people. The way to file the claim is to sign the public 1% Treaty register and send it to five people. It takes 30 seconds: https://warondisease.org
-
-**How many people should you send it to?**
-
-Everyone you love. For most humans that is about forty people. Close family. Closest friends. A few meaningful coworkers. The one friend from college you still talk to. Not 150. 150 is Dunbar's number for stable acquaintances, which includes people you would not call about anything important. "Everyone you love" is a smaller, realer circle. Forty is an estimate of the size of yours. If yours is bigger, call more.
-
-**Do not stop early.** For the wave to reach four billion voters, each caller needs two of their contacts to actually do the same call. Call their own loved ones. Run this same script. In practice, about five to ten percent of close-contact political asks actually produce action. At ten percent, twenty calls gets you two people who keep the wave going. At five percent, forty calls. Worse rates: call more.
-
-The bigger problem is you cannot tell which calls will continue. Saying yes on the phone is not the same as doing it. People agree, then get busy. They forget. The moment passes. You will never find out which of your friends actually made their own calls. The only protection is volume. Every extra call you make raises the chance that at least two will really continue. Stopping after two yeses on the phone is how the whole plan quietly dies. Call everyone.
-
-**How to actually do forty calls: at least one per day.**
-
-Forty calls is not something a human does in one sitting. Make the first one the moment you finish this chapter. Momentum matters more than rate. Every hour you delay the first call is {{< var global_disease_deaths_per_minute_nounit >}} times 60 humans.
-
-After that, set a daily alarm. Or a recurring calendar event. One call a day, every day, for about six weeks. This is the pace at which you will actually do it. Faster: you burn out. Slower: the wave slows down.
-
-Daily alarms beat willpower. Willpower runs out. Alarms do not. Let the alarm have the discipline. You just answer it.
-
-**Most of them will not act. Reframe the call anyway.**
-
-About ninety percent of your contacts will not do anything real, no matter what they say on the phone. This is the normal rate for humans doing things they say they are going to do. The plan already accounts for it. You are not trying to convert everyone. You are trying to get to the ten percent who will. If you expect happy yeses and get polite nods, you will quit after five calls. If you expect ninety percent polite nods and treat any real action as a bonus, you will finish the list.
-
-Because most of your calls will feel like pleasant conversations that go nowhere, reframe each one. You are not making a sales pitch. You are using a real argument as the reason to spend a few minutes with someone you care about. You are telling them, out loud, that you do not want them to suffer and die of diseases that are basically solvable engineering problems. That is a good use of a phone call no matter what they do next. If they vote and keep the wave going, the plan moves forward. If they do not, you still told someone you love that you love them. In the clearest words your species has for that feeling: "I do not want you to die of something fixable." The conversation itself was worth having. Forty of those is a good month.
-
-**What your calls are actually doing.**
-
-Two things happen at the same time. First, the sideways spread. Each person who acts calls their own people. Until the vote count at warondisease.org is too big to ignore.
-
-Second, the upward reach. You do not have to aim for it. Social circles have connector people. The friend who knows a senator. The senator who knows a president. Forty calls eventually reach a connector. The connector sends the message upward. You get upward reach as a side effect of calling sideways.
-
-You do not have to know a powerful person. You have to call forty people you love. One of them will know someone who knows someone. That is enough. Your LinkedIn connections are not qualified for this. Your real friends are. They do it for free. They do not care whether you notice.
-
-Your message probably reaches a head of state before it reaches four billion voters.
-
-**Use your referral link**
-
-After you vote at warondisease.org, the site gives you a personal referral link. Send that link instead of the plain website address.
-
-The referral link lets you see how many voters came from your calls. So can every person down the line from you. The count becomes real instead of theoretical.
-
-
-
-**When they call you back, walk them through this.**
-
-Not a speech. Someone who nods through a five-minute pitch feels informed and does nothing. Someone who says yes to twenty-two questions out loud has already agreed to the whole argument. They cannot take back a yes they said out loud, without explaining what changed.
-
-Ask the questions in order. Wait for the answer. Do not move on until they agree. If they push back, use the coaching notes, then ask again. None of the questions has a good "no" answer. The sequence is the argument.
+When they call you back, walk them through the questions below. Not a speech. Ask in order. Wait for each answer. Do not move on until they agree.
 
 **The call (you are asking; they are answering):**
 
-1. "Most humans do not want to suffer and die of diseases, and they do not want their families to. Agreed?" *Yes. If they say no, stop and make sure they understood the question. Everything else depends on this point.*
+1. "Most humans do not want to suffer and die of diseases, and they do not want their families to. Agreed?" Yes. If they say no, stop and make sure they understood the question. Everything else depends on this point.
 
-2. "Disease is an engineering problem. Your body is 37 trillion cells that break in about 7,000 known ways. Each one is a problem we can understand better or worse. The cures that exist were found by running clinical trials. The cures that do not exist yet will be found by running more of them. Given enough trials and enough time, we get more treatments, faster. Agreed?" *Yes. This is the premise everything else depends on. If they say "maybe some are incurable," answer: "Maybe. But every extra trial is one more chance at one more cure and one more life extended. Whether we cure every single disease does not matter. With more trials, we cure more of them, faster." If they say "science does not work that way," answer: "Smallpox was eradicated. Polio is almost eradicated. HIV went from a death sentence to a manageable condition. Hepatitis C is curable. These are examples of what happens when enough trial capacity is aimed at a disease. The bottleneck is not that progress never happens. It is that progress arrives too slowly."*
+2. "Disease is an engineering problem. Your body is 37 trillion cells that break in about 7,000 known ways. Each one is a problem we can understand better or worse. The cures that exist were found by running clinical trials. The cures that do not exist yet will be found by running more of them. Given enough trials and enough time, we get more treatments, faster. Agreed?" Yes. This is the premise everything else depends on. If they say "maybe some are incurable," answer: "Maybe. But every extra trial is one more chance at one more cure and one more life extended. Whether we cure every single disease does not matter. With more trials, we cure more of them, faster." If they say "science does not work that way," answer: "Smallpox was eradicated. Polio is almost eradicated. HIV went from a death sentence to a manageable condition. Hepatitis C is curable. These are examples of what happens when enough trial capacity is aimed at a disease. The bottleneck is not that progress never happens. It is that progress arrives too slowly."
 
-3. "Humanity currently has enough nuclear weapons for about {{< var nuclear_winter_overkill_factor_nounit >}} full apocalypses. Would most people rather have capacity for one fewer apocalypse (about {{< var nuclear_winter_overkill_factor_nounit >}} minus one, still plenty) in exchange for {{< var dfda_trial_capacity_multiplier_nounit >}} times more clinical trials, which would cure all known diseases in {{< var dfda_queue_clearance_years_nounit >}} years instead of {{< var status_quo_queue_clearance_years_nounit >}} years? Yes or no?" *Yes. Nobody actually believes {{< var nuclear_winter_overkill_factor_nounit >}} apocalypses is better than {{< var nuclear_winter_overkill_factor_nounit >}} minus one. The math is at [manual.warondisease.org/knowledge/economics/1-pct-treaty-impact](https://manual.warondisease.org/knowledge/economics/1-pct-treaty-impact.qmd). If they say "we need the military," answer: "COVID-19 killed more Americans than World War I, World War II, Korea, Vietnam, Iraq, and Afghanistan combined. The $900 billion military watched it happen, fully armed and completely confused. Your Pentagon cannot find $2.46 trillion of its own money across seven failed audits. The treaty redirects about $21.8 billion a year globally. The 1% is smaller than the military's accounting error. Your chance of dying from terrorism is 1 in 30 million. Your chance of dying from disease is 100%. After the treaty, your country can still end the world twenty times over. That is plenty." If they say "our enemies will not cut too," answer: "Every country cuts 1% at the same time. You end up safer, because everyone has 1% fewer missiles pointed at them. Even unilaterally, nobody invades another country over a 1% budget reduction. That is a rounding error in any general staff's threat assessment."*
+3. "Humanity currently has enough nuclear weapons for about {{< var nuclear_winter_overkill_factor_nounit >}} full apocalypses. Would most people rather have capacity for one fewer apocalypse (about {{< var nuclear_winter_overkill_factor_nounit >}} minus one, still plenty) in exchange for {{< var dfda_trial_capacity_multiplier_nounit >}} times more clinical trials, which would cure all known diseases in {{< var dfda_queue_clearance_years_nounit >}} years instead of {{< var status_quo_queue_clearance_years_nounit >}} years? Yes or no?" Yes. Nobody actually believes {{< var nuclear_winter_overkill_factor_nounit >}} apocalypses is better than {{< var nuclear_winter_overkill_factor_nounit >}} minus one. The math is at [manual.warondisease.org/knowledge/economics/1-pct-treaty-impact](https://manual.warondisease.org/knowledge/economics/1-pct-treaty-impact.qmd). If they say "we need the military," answer: "COVID-19 killed more Americans than World War I, World War II, Korea, Vietnam, Iraq, and Afghanistan combined. The $900 billion military watched it happen, fully armed and completely confused. Your Pentagon cannot find $2.46 trillion of its own money across seven failed audits. The treaty redirects about $21.8 billion a year globally. The 1% is smaller than the military's accounting error. Your chance of dying from terrorism is 1 in 30 million. Your chance of dying from disease is 100%. After the treaty, your country can still end the world twenty times over. That is plenty." If they say "our enemies will not cut too," answer: "Every country cuts 1% at the same time. You end up safer, because everyone has 1% fewer missiles pointed at them. Even unilaterally, nobody invades another country over a 1% budget reduction. That is a rounding error in any general staff's threat assessment."
 
-4. "Every big civilizational change that reached {{< var global_population_activism_threshold_pct >}} active public support has succeeded. Ending slavery. Women's vote. Civil rights. Zero failures in the last century {{< var global_population_activism_threshold_pct_cite >}}. So if fifty percent of humanity demanded we trade one apocalypse for curing diseases, is it believable that any government holds out? Yes or no?" *No. {{< var global_population_activism_threshold_pct >}} is the floor where movements never fail. Fifty percent is fourteen times that. No government holds out against fifty percent of its own voters. They cannot even keep parking rules against fifty percent of voters. If they say "governments never sign global treaties," answer: "They signed the Chemical Weapons ban in 1993. 193 countries. Biological Weapons in 1975. 187 countries. Landmines in 1997. 164 countries. They banned weapons they actually liked using. This treaty asks them to buy one percent fewer." If they say "cutting the military would wreck the economy," answer: "Before WW2, US military spending was {{< var us_1939_military_spending_pct_lower_than_current >}} lower than today's peacetime budget in constant dollars. The US won WW2 from that baseline, then cut spending another {{< var post_ww2_military_cut_pct >}} in two years, and the biggest economic boom in history happened. Today's budget is not the minimum viable defense. It is decades of drift. This asks for one percent, not eighty-seven."*
+4. "Every big civilizational change that reached {{< var global_population_activism_threshold_pct >}} active public support has succeeded. Ending slavery. Women's vote. Civil rights. Zero failures in the last century {{< var global_population_activism_threshold_pct_cite >}}. So if fifty percent of humanity demanded we trade one apocalypse for curing diseases, is it believable that any government holds out? Yes or no?" No. {{< var global_population_activism_threshold_pct >}} is the floor where movements never fail. Fifty percent is fourteen times that. No government holds out against fifty percent of its own voters. They cannot even keep parking rules against fifty percent of voters. If they say "governments never sign global treaties," answer: "They signed the Chemical Weapons ban in 1993. 193 countries. Biological Weapons in 1975. 187 countries. Landmines in 1997. 164 countries. They banned weapons they actually liked using. This treaty asks them to buy one percent fewer." If they say "cutting the military would wreck the economy," answer: "Before WW2, US military spending was {{< var us_1939_military_spending_pct_lower_than_current >}} lower than today's peacetime budget in constant dollars. The US won WW2 from that baseline, then cut spending another {{< var post_ww2_military_cut_pct >}} in two years, and the biggest economic boom in history happened. Today's budget is not the minimum viable defense. It is decades of drift. This asks for one percent, not eighty-seven."
 
-5. "If you and I each got two people to vote at [warondisease.org](https://warondisease.org/), and each of them got two, and so on, what happens to the number of voters every week?" *It doubles. Let them say it.*
+5. "If you and I each got two people to vote at [warondisease.org](https://warondisease.org/), and each of them got two, and so on, what happens to the number of voters every week?" It doubles. Let them say it.
 
-6. "Thirty-two doublings. How many voters is that?" *They will not know. Tell them: 2 times itself 32 times is about 4.3 billion. More than half of humanity. That is eight months at one doubling per week. Or one month at one doubling per day. If they say "this sounds like a pyramid scheme or a chain letter," answer: "Pyramid schemes never admit the pitcher might be crazy. I opened with that possibility. Also, nobody makes money off your vote. The math rewards every voter equally, including you. The only thing at the top of this pyramid is not dying from preventable diseases."*
+6. "Thirty-two doublings. How many voters is that?" They will not know. Tell them: 2 times itself 32 times is about 4.3 billion. More than half of humanity. That is eight months at one doubling per week. Or one month at one doubling per day. If they say "this sounds like a pyramid scheme or a chain letter," answer: "Pyramid schemes never admit the pitcher might be crazy. I opened with that possibility. Also, nobody makes money off your vote. The math rewards every voter equally, including you. The only thing at the top of this pyramid is not dying from preventable diseases."
 
-7. "If four billion humans publicly demand the treaty, is it believable that every government on Earth ignores them? Yes or no?" *No. Not even the ones who want to. Governments already signed bans on entire weapons industries (chemical 1993, biological 1975, landmines 1997) with no polling showing majority public demand. They signed because the diplomatic cost of refusing exceeded the cost of signing. Evidence from four billion verified humans is orders of magnitude more than any prior treaty had. If they say "politicians know it is insane and still won't do it," answer: "Correct. Today. It is outside the Overton window and any politician who moves first gets called weak on defense. Four billion verified humans changes that. Voting no becomes 'defying half of humanity,' which is a career-ender. The Overton window moves when the cost of staying inside it exceeds the cost of moving outside it. Four billion humans move it." If they say "governments will find a way to ignore even four billion," answer: "If each of those four billion donates one dollar, that is a $4 billion Super PAC. The entire military-industrial complex spends about {{< var defense_lobbying_annual >}} a year on lobbying. You would have a lobbying operation roughly thirty times larger, funded voluntarily. Institutional inertia does not survive a thirty-to-one funding gap. Also, every head of state has parents, spouses, and children who die of disease too. Their opposition is institutional, not personal. Institutional opposition cracks when the personal cost of defending it gets high enough." Also: this would be the largest coordinated public demand in human history. If it works, you have built a new tool for global coordination that can be reused for the next thing.*
+7. "If four billion humans publicly demand the treaty, is it believable that every government on Earth ignores them? Yes or no?" No. Not even the ones who want to. Governments already signed bans on entire weapons industries (chemical 1993, biological 1975, landmines 1997) with no polling showing majority public demand. They signed because the diplomatic cost of refusing exceeded the cost of signing. Evidence from four billion verified humans is orders of magnitude more than any prior treaty had. If they say "politicians know it is insane and still won't do it," answer: "Correct. Today. It is outside the Overton window and any politician who moves first gets called weak on defense. Four billion verified humans changes that. Voting no becomes 'defying half of humanity,' which is a career-ender. The Overton window moves when the cost of staying inside it exceeds the cost of moving outside it. Four billion humans move it." If they say "governments will find a way to ignore even four billion," answer: "If each of those four billion donates one dollar, that is a $4 billion Super PAC. The entire military-industrial complex spends about {{< var defense_lobbying_annual >}} a year on lobbying. You would have a lobbying operation roughly thirty times larger, funded voluntarily. Institutional inertia does not survive a thirty-to-one funding gap. Also, every head of state has parents, spouses, and children who die of disease too. Their opposition is institutional, not personal. Institutional opposition cracks when the personal cost of defending it gets high enough." Also: this would be the largest coordinated public demand in human history. If it works, you have built a new tool for global coordination that can be reused for the next thing.
 
-8. "So the question is not whether we get to four billion. The question is when. Agreed?" *Agreed.*
+8. "So the question is not whether we get to four billion. The question is when. Agreed?" Agreed.
 
-9. "Every second the treaty does not exist, about two humans die of the diseases the treaty would cure faster. Over {{< var global_disease_deaths_daily_nounit >}} per day. But per second is the number your nervous system actually feels. Agreed?" *Yes. 150 thousand deaths per day divided by 86,400 seconds per day is 1.74 deaths per second. Per second is the gut-level number. Which is why most humans are carefully kept from seeing it that way.*
+9. "Every second the treaty does not exist, about two humans die of the diseases the treaty would cure faster. Over {{< var global_disease_deaths_daily_nounit >}} per day. But per second is the number your nervous system actually feels. Agreed?" Yes. 150 thousand deaths per day divided by 86,400 seconds per day is 1.74 deaths per second. Per second is the gut-level number. Which is why most humans are carefully kept from seeing it that way.
 
-10. "And every second the treaty does not exist, about two billion more person-seconds of disease suffering pile up. Because two billion humans are sick or disabled right now. Every extra second of waiting is one more second each of them spends suffering. Agreed?" *Yes. Same WHO numbers. Just at the resolution where it hurts to think about.*
+10. "And every second the treaty does not exist, about two billion more person-seconds of disease suffering pile up. Because two billion humans are sick or disabled right now. Every extra second of waiting is one more second each of them spends suffering. Agreed?" Yes. Same WHO numbers. Just at the resolution where it hurts to think about.
 
-11. "Every day the treaty does not exist, you personally lose some future money. Because the economy has not started growing the way it would if disease were disappearing faster. Agreed?" *Yes. Over your lifetime the average person gains {{< var treaty_trajectory_lifetime_income_gain_per_capita >}}. Every day of waiting is one more day that growth has not started.*
+11. "Every day the treaty does not exist, you personally lose some future money. Because the economy has not started growing the way it would if disease were disappearing faster. Agreed?" Yes. Over your lifetime the average person gains {{< var treaty_trajectory_lifetime_income_gain_per_capita >}}. Every day of waiting is one more day that growth has not started.
 
-12. "So every second of waiting has a price. Dead humans. Suffering humans. Your own lost future money. Agreed?" *Agreed. If they say "I'll do this later," answer: "'Later' is now a number. Every second of later is two more dead humans and two billion more person-seconds of suffering. Every day of later is {{< var global_disease_deaths_daily_nounit >}} more dead humans. You can put a number on later. It is not zero."*
+12. "So every second of waiting has a price. Dead humans. Suffering humans. Your own lost future money. Agreed?" Agreed. If they say "I'll do this later," answer: "'Later' is now a number. Every second of later is two more dead humans and two billion more person-seconds of suffering. Every day of later is {{< var global_disease_deaths_daily_nounit >}} more dead humans. You can put a number on later. It is not zero."
 
-13. "Sharing this with one person you love takes about thirty seconds to message them plus one phone call. Agreed?" *Agreed.*
+13. "Sharing this with one person you love takes about thirty seconds to message them plus one phone call. Agreed?" Agreed.
 
-14. "Can you think of anything you could do with thirty seconds that would prevent more death and suffering than shifting the eradication of disease forward in time?" *They cannot. Do not help them. Let the silence sit. If they say "my one vote will not matter," answer: "A majority of humanity is made of individual votes. Yours is one. Your vote plus the two people you recruit plus the people they recruit is how the majority appears. Individual votes are the only thing big numbers are made of."*
+14. "Can you think of anything you could do with thirty seconds that would prevent more death and suffering than shifting the eradication of disease forward in time?" They cannot. Do not help them. Let the silence sit. If they say "my one vote will not matter," answer: "A majority of humanity is made of individual votes. Yours is one. Your vote plus the two people you recruit plus the people they recruit is how the majority appears. Individual votes are the only thing big numbers are made of."
 
-15. "Can you think of anything else you could do with thirty seconds that would add more than {{< var treaty_trajectory_lifetime_income_gain_per_capita >}} to your own lifetime income?" *They cannot.*
+15. "Can you think of anything else you could do with thirty seconds that would add more than {{< var treaty_trajectory_lifetime_income_gain_per_capita >}} to your own lifetime income?" They cannot.
 
-16. "So sharing is the best use of thirty seconds you have. And the people you actually love are probably about forty humans. Each call produces the same best answer. So calling all forty, one per day for about six weeks, is the best thing you can do with that time, not just with the next thirty seconds. The payoff does not shrink when you repeat it. Agreed?" *Agreed. Most people agree one call makes sense, then fail to make the rest. The all-together version is what turns "I'll make a call" into "I'll call everyone I love, starting now."*
+16. "So sharing is the best use of thirty seconds you have. And the people you actually love are probably about forty humans. Each call produces the same best answer. So calling all forty, one per day for about six weeks, is the best thing you can do with that time, not just with the next thirty seconds. The payoff does not shrink when you repeat it. Agreed?" Agreed. Most people agree one call makes sense, then fail to make the rest. The all-together version is what turns "I'll make a call" into "I'll call everyone I love, starting now."
 
-17. "And this is not just your call list. Each person you call, if they do this same call, reaches their own list. A handful of calls becomes hundreds. Hundreds become tens of thousands. Tens of thousands become millions. This is how two-per-person reaches four billion in thirty-two rounds. You are not being asked to make calls. You are being asked to be one person in a group where everyone does the same thing. Your call is the seed. Agreed?" *Agreed. Without this step, you call your loved ones and the wave stops. With it, you start a wave that reaches half of humanity inside a year. The ask is not "share this." The ask is "be the next caller."*
+17. "And this is not just your call list. Each person you call, if they do this same call, reaches their own list. A handful of calls becomes hundreds. Hundreds become tens of thousands. Tens of thousands become millions. This is how two-per-person reaches four billion in thirty-two rounds. You are not being asked to make calls. You are being asked to be one person in a group where everyone does the same thing. Your call is the seed. Agreed?" Agreed. Without this step, you call your loved ones and the wave stops. With it, you start a wave that reaches half of humanity inside a year. The ask is not "share this." The ask is "be the next caller."
 
-18. "Every hour you spend on something else, instead of calling the next person, is an hour the wave stops growing. Every hour of stopping costs {{< var global_disease_deaths_per_minute_nounit >}} times 60 humans. So the right next call after this one is not tonight, not tomorrow. It is the moment we hang up. Agreed?" *Agreed. "I'll do it later" was an okay answer yesterday. After this conversation it is a choice, priced in humans per hour.*
+18. "Every hour you spend on something else, instead of calling the next person, is an hour the wave stops growing. Every hour of stopping costs {{< var global_disease_deaths_per_minute_nounit >}} times 60 humans. So the right next call after this one is not tonight, not tomorrow. It is the moment we hang up. Agreed?" Agreed. "I'll do it later" was an okay answer yesterday. After this conversation it is a choice, priced in humans per hour.
 
-19. "One more thing before you vote. For this wave to reach four billion, I need exactly two of the people I call to actually do what I am doing. Two. Total. Not two percent. Two humans. Everyone else I talk to can say no, and we still reach four billion. Agreed?" *Yes. The math is not "convince fifty percent of your contacts." It is "convince any two of them, ever." Which means you are not the person everything depends on. The question on the table is not "will disease get cured." Barring species extinction, yes. The question is: are you one of the people who made it happen sooner, or one of the people who made it happen later? Those are the only two groups. Everyone ends up in one. If they say "then why does it matter if I do it," answer: "Because the number of hours is not zero. Each hour costs {{< var global_disease_deaths_per_minute_nounit >}} times 60 humans. You are not choosing whether disease gets cured. You are choosing how many humans die before it does."*
+19. "One more thing before you vote. For this wave to reach four billion, I need exactly two of the people I call to actually do what I am doing. Two. Total. Not two percent. Two humans. Everyone else I talk to can say no, and we still reach four billion. Agreed?" Yes. The math is not "convince fifty percent of your contacts." It is "convince any two of them, ever." Which means you are not the person everything depends on. The question on the table is not "will disease get cured." Barring species extinction, yes. The question is: are you one of the people who made it happen sooner, or one of the people who made it happen later? Those are the only two groups. Everyone ends up in one. If they say "then why does it matter if I do it," answer: "Because the number of hours is not zero. Each hour costs {{< var global_disease_deaths_per_minute_nounit >}} times 60 humans. You are not choosing whether disease gets cured. You are choosing how many humans die before it does."
 
-20. "So: will you go to [warondisease.org](https://warondisease.org/) and vote, right now, while we are still on the phone?" *Wait. They vote. Stay on the line until they confirm it is done. If they say "this sounds too good to be true," answer: "The RECOVERY trial tested six treatments on forty-eight thousand patients at about fifty dollars per patient, during a pandemic, while everyone was panicking. That happened. Your normal trial system is worse than what humans can do while scared and disorganized. The {{< var dfda_trial_capacity_multiplier_nounit >}} figure is conservative given what has already been done." If they say "what if the plan fails?": "Then we had a conversation about something important with someone we love. That is the worst case. The best case is we cured disease four centuries sooner. Both are better than the conversation we were about to have, which was about the weather."*
+20. "So: will you go to [warondisease.org](https://warondisease.org/) and vote, right now, while we are still on the phone?" Wait. They vote. Stay on the line until they confirm it is done. If they say "this sounds too good to be true," answer: "The RECOVERY trial tested six treatments on forty-eight thousand patients at about fifty dollars per patient, during a pandemic, while everyone was panicking. That happened. Your normal trial system is worse than what humans can do while scared and disorganized. The {{< var dfda_trial_capacity_multiplier_nounit >}} figure is conservative given what has already been done." If they say "what if the plan fails?": "Then we had a conversation about something important with someone we love. That is the worst case. The best case is we cured disease four centuries sooner. Both are better than the conversation we were about to have, which was about the weather."
 
-21. "Will you send the 'either I am crazy' message to at least two people you love right now, before we hang up, so we both know this has started? And the rest of your list within the hour?" *Yes. "Tonight" is the wrong answer. Two names, sent before you hang up, is the right one. Wait for them to confirm both are sent.*
+21. "Will you send the 'either I am crazy' message to at least two people you love right now, before we hang up, so we both know this has started? And the rest of your list within the hour?" Yes. "Tonight" is the wrong answer. Two names, sent before you hang up, is the right one. Wait for them to confirm both are sent.
 
-22. "Will you have this exact call with each of them when they call you back?" *Yes.*
+22. "Will you have this exact call with each of them when they call you back?" Yes.
 
 ### If They Push Back Mid-Call
 
