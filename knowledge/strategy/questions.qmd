@@ -1,9 +1,25 @@
 ---
-title: The 20 Questions
-description: "A Socratic catechism for the 1% Treaty. Works as a conversation script, forwarded message, or standalone read."
+title: "The Most Important Secret in the World: 20 Questions to End War and Disease"
+description: "A call script for the someone you love. Ask them 20 questions. Get them to ask 2 more people. If the average person asks 2, this reaches 4 billion humans in 32 rounds."
 published: true
+aliases:
+  - /knowledge/strategy/call-script.html
+  - /knowledge/appendix/recruitment-and-propaganda-plan.html#the-horizontal-path
+tags:
+  - call-script
+  - strategy
+  - viral
+  - voting
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
+
+Message someone you love:
+
+> "Either I am crazy or I have discovered the most important secret in the history of the universe. Can you call me and tell me which?"
+
+When they call back, walk them through the questions below. Not a speech. Ask in order. Wait for each answer.
+
+---
 
 Your religious institutions invented a format: a fixed chain of questions and answers where accepting each one commits you to the next. The original purpose was installing beliefs that were not meant to be examined. Your species uses this format to teach children not to question anything. I am using it to teach you to question everything. The irony is noted.
 
@@ -92,3 +108,31 @@ Yes. The message: *"An alien asked me to forward this. I don't know what that me
 ---
 
 30 seconds × {{< var global_registered_voters_nounit >}} humans = the 1% Treaty exists = disease eradicated in decades instead of centuries.
+
+## If They Argue With You
+
+- **"Defense contractors will crush this."** Defense contractors keep {{< var defense_sector_retention_pct >}} of their existing budget under the treaty. The Victory Incentive Alignment Bond pays them {{< var victory_bond_annual_return_pct >}} returns on top. They make more money going along with this than fighting it. Lobbyists do not have beliefs. They have clients. This gives them a better client.
+
+- **"Big Pharma will block this. They profit from sick people."** Pharma currently spends about $1 billion per drug and fails 90% of the time. They are not profiting from disease. They are gambling on disease. Under this plan, they get paid per patient enrolled in trials. Revenue instead of cost. Guaranteed salary instead of casino. Casinos love guaranteed salaries. Pharma will not block the plan. They will trample each other to sign up.
+
+- **"Politicians will never vote for this."** Correct. That is why the plan does not ask them to be saints. A Super PAC rewards every politician who votes yes. Campaign support when they are running. Post-office career incentives after they leave. The campaign budget is about eight times what defense lobbyists currently spend per year. Political behavior follows incentives.
+
+- **"This sounds like bribery."** Correct. You are describing lobbying. Same K Street firms, same campaign contributions, same revolving door, same wine. The only difference is what the money buys. Current lobbying buys missile contracts. This one buys clinical trials. If one kind of lobbying feels normal and the other feels shocking, that is worth noticing. Also: this plan caps the lobbying portion at 20% and puts every contribution on a public ledger. No government budget in history has had a lower corruption rate.
+
+- **"The FDA and NIH already handle clinical trials."** The NIH spends about {{< var nih_clinical_trials_spending_pct >}} of its budget on actual trials. The rest is buildings and paperwork. The FDA blocks safe drugs for years even after safety is confirmed. For every 1 person saved from a bad drug, about {{< var type_ii_error_cost_ratio >}} die waiting for a good one. The current system is what we are fixing, not competing with.
+
+- **"Why not just reform the existing system instead?"** People have been trying for fifty years. More funding: they hired more administrators. Different leadership: same results, fancier titles. New regulations: now takes 20 years instead of 17. Reform bills: killed in committee. The system is not broken. It works perfectly for the people who built it. They will not surrender it because you asked nicely. They will surrender it when you outbid them. That is what this plan is.
+
+- **"This website could be a scam."** Nobody takes your money. You type your name and you vote. If it is a scam, the worst case is your name sat on a list. The only thing being collected is a count of humans who want fewer preventable deaths. That count is the whole point.
+
+- **"I don't have time to call everyone I love."** One call a day for six weeks. By the math we just went through, it is the best use of five minutes you have until the treaty exists.
+
+- **"My friends will think I'm weird."** Probably. They will also call you back, which is the whole point. Seeming weird is a one-time cost. Not calling costs {{< var global_disease_deaths_daily_nounit >}} more dead humans per day the treaty does not exist. Weird is cheaper.
+
+- **"Nothing like this ever works. Big systems don't change."** Communism was invented, took over half the planet, and collapsed in one human lifetime. No fax machines. Required mass murder. Was a genuinely terrible idea. This plan has the internet and an idea that asks people to click a button and call two people they love. If that cannot happen, the obstacle is not the system.
+
+- **"War is human nature. Militaries are inevitable."** Switzerland spent 200+ years avoiding major wars on a fraction of the US defense budget. Life expectancy there is years higher than in the US. Costa Rica abolished its army in 1948. Nobody invaded. Both countries are still sovereign, and both are richer per capita for spending less on murder. Nuclear weapons made territorial conquest mostly pointless in 1945. Your planet is still budgeting like it is 1944. Someone should tell the accountants.
+
+- **"I don't believe the {{< var dfda_trial_capacity_multiplier_nounit >}} times number."** The RECOVERY trial already showed a {{< var recovery_trial_cost_reduction_factor >}} cost reduction on real patients during the pandemic. The {{< var dfda_trial_capacity_multiplier_nounit >}} number comes from how much funding divided by current trial slots. If they want to check the math, it is at [manual.warondisease.org/knowledge/economics/1-pct-treaty-impact](https://manual.warondisease.org/knowledge/economics/1-pct-treaty-impact.qmd). Offer the link. Do not wait for them to read it before moving on.
+
+- **"I want to think about it first."** "Thinking about it" is the default the rest of humanity has been doing for decades. Which is why the treaty does not exist yet. The questions we just walked through are the thinking. Anything beyond that is delay. Delay costs {{< var global_disease_deaths_daily_nounit >}} humans per day. Vote now. Think about it after. The vote is reversible. The deaths are not.

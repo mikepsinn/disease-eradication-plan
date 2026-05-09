@@ -11,7 +11,7 @@ tags:
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 
-The book exists. The [call script](call-script.qmd) exists. The widget exists. The job left is putting them in front of humans on the channels they already visit. This chapter is the checklist for doing that systematically.
+The book exists. The [call script](questions.qmd) exists. The widget exists. The job left is putting them in front of humans on the channels they already visit. This chapter is the checklist for doing that systematically.
 
 Work through it in order, not all at once. One to three actions per day. Consistency compounds; brilliance does not.
 
@@ -19,7 +19,7 @@ Work through it in order, not all at once. One to three actions per day. Consist
 
 Produce these first. They are the shortest, most visceral, most shareable claims in the book. Each one is its own standalone post, thread, and short-form video.
 
-1. **"Every second, two humans die of preventable disease."** The per-second framing from the [call script](call-script.qmd).
+1. **"Every second, two humans die of preventable disease."** The per-second framing from the [call script](questions.qmd).
 2. **"Your vote is attributable to {{< var voter_lives_saved >}} saved and {{< var voter_suffering_hours_prevented >}} of suffering prevented."** The per-voter math.
 3. **"The Pentagon cannot find $2.46 trillion. The treaty redirects $21.8 billion a year."** Scale comparison.
 4. **"Before WW2, US military spending was {{< var us_1939_military_spending_pct_lower_than_current >}} lower than today's peacetime budget, in constant dollars. The US won from that baseline."** Precedent.

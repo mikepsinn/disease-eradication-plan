@@ -4035,7 +4035,7 @@ FDA_TO_OXFORD_RECOVERY_TRIAL_TIME_MULTIPLIER = Parameter(
 # Base WHO global mortality data
 GLOBAL_DISEASE_DEATHS_DAILY = Parameter(
     150_000,
-    manual_ref="knowledge/strategy/call-script.qmd",
+    manual_ref="knowledge/strategy/questions.qmd",
     source_ref=ReferenceID.WHO_GLOBAL_HEALTH_ESTIMATES_2024,
     source_type="external",
     description="Total global deaths per day from all disease and aging (WHO Global Burden of Disease 2024)",
@@ -4052,7 +4052,7 @@ GLOBAL_DISEASE_DEATHS_DAILY = Parameter(
 
 GLOBAL_DISEASE_DEATHS_PER_MINUTE = Parameter(
     GLOBAL_DISEASE_DEATHS_DAILY / 1440,
-    manual_ref="knowledge/strategy/call-script.qmd",
+    manual_ref="knowledge/strategy/questions.qmd",
     source_type="calculated",
     description="Global deaths per minute from all disease and aging",
     display_name="Global Deaths per Minute from Disease",
