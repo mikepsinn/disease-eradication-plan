@@ -534,11 +534,9 @@ This is why aliens don't visit.
 
 ---
 
-## Sponsor
+## Donate
 
-<a href="https://github.com/sponsors/wishonia"><img src="https://img.shields.io/badge/Sponsor-wishonia-ea4aaa?logo=github-sponsors&style=for-the-badge" alt="Sponsor wishonia" /></a>
-
-<iframe src="https://github.com/sponsors/wishonia/card" title="Sponsor wishonia" height="225" width="600" style="border: 0;"></iframe>
+[Support the War on Disease](https://warondisease.org/donate)
 
 ---
 
@@ -710,4 +708,3 @@ quarto render
 - `CONTRIBUTING.md` - Writing standards and style guide
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed contribution guidelines.
-

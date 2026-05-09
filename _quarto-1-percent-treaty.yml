@@ -212,7 +212,9 @@ format:
     link-citations: true
     smooth-scroll: true
     code-tools: false
-    filters: [assets/filters/live-version-note.lua]
+    filters:
+      - assets/filters/live-version-note.lua
+      - scripts/filters/strip-snippet-markers.lua
   pdf:
     output-file: "1-percent-treaty.pdf"
     documentclass: article

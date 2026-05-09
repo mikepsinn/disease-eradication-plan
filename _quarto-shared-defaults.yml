@@ -152,7 +152,7 @@ links:
       primary: true
   support:
     - label: "Support the War on Disease"
-      url: "https://github.com/sponsors/wishonia"
+      url: "https://warondisease.org/donate"
       subtitle: "Fund the mission to end war and disease"
       icon: "fa-solid fa-heart"
       primary: true
@@ -171,6 +171,7 @@ format:
       - cosmo
     filters:
       - assets/filters/live-version-note.lua
+      - scripts/filters/strip-snippet-markers.lua
     mermaid:
       theme: neutral
     echo: false

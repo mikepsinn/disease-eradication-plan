@@ -82,9 +82,9 @@ book:
           - href: knowledge/references.qmd
             text: "References & Citations"
   page-footer:
-    left: "© 2025 [Mike P. Sinn](https://mikesinn.com) | [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)"
+    left: "© 2025 [International Campaign to End War and Disease](https://warondisease.org) | [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)"
     center: "[Get Manual](/knowledge/links.html) | [Listen](/knowledge/podcast.html) | [All Papers](/knowledge/papers.html)"
-    right: "[Support](https://github.com/sponsors/wishonia) | [Vote](https://WarOnDisease.org)"
+    right: "[Support](https://warondisease.org/donate) | [Vote](https://WarOnDisease.org)"
   chapters:
     - text: "Start Here"
       href: index.qmd  # ~19p
@@ -457,6 +457,8 @@ format:
     number-sections: false
     toc: true
     toc-depth: 3
+    filters:
+      - scripts/filters/strip-snippet-markers.lua
     link-citations: true
     citation-hover: true
     css:

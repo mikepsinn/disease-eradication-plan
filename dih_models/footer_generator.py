@@ -36,7 +36,7 @@ def _build_cta_html(project_root: Path) -> str:
     <a href="{amazon_url}" class="book-footer-link book-footer-link-bold">Buy on Amazon</a> &nbsp;|&nbsp;
     <a href="https://manual.WarOnDisease.org/knowledge/links.html" class="book-footer-link">Listen</a> &nbsp;|&nbsp;
     <a href="https://WarOnDisease.org" class="book-footer-link">Vote</a> &nbsp;|&nbsp;
-    <a href="https://github.com/sponsors/wishonia" class="book-footer-link">&#10084; Support this work</a>
+    <a href="https://warondisease.org/donate" class="book-footer-link">&#10084; Support this work</a>
   </p>"""
 
 
@@ -58,7 +58,6 @@ def generate_footer_html(project_root: Path) -> Path:
 <div class="book-footer">
   <p class="book-footer-line">
     &copy; 2026 <a href="https://warondisease.org" class="book-footer-link">The International Campaign to End War and Disease</a> |
-    <a href="https://mikesinn.com" class="book-footer-link">Mike P. Sinn</a> |
     <a href="https://creativecommons.org/licenses/by-nc/4.0/" class="book-footer-link">CC BY-NC 4.0</a> |
     <a href="https://manual.WarOnDisease.org/knowledge/about.html" class="book-footer-link">About &amp; Follow</a> |
     <a href="https://github.com/wishonia/earth-optimization-protocol" class="book-footer-link">&#128194; Source Code &amp; Data</a>

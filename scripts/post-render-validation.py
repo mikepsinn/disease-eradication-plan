@@ -333,6 +333,24 @@ def check_qmd_file_links(content, file_path):
     return errors
 
 
+def check_snippet_markers(content, file_path):
+    """Check for source-only snippet markers in rendered HTML."""
+    errors = []
+    lines = content.split("\n")
+    pattern = re.compile(r"<!--\s*/?snippet:[a-zA-Z0-9_-]+\s*-->")
+
+    for i, line in enumerate(lines, 1):
+        match = pattern.search(line)
+        if not match:
+            continue
+
+        marker = match.group(0)
+        context = f"Source-only snippet marker leaked into rendered HTML: `{marker}`"
+        errors.append(ValidationError(file_path, i, "SNIPPET_MARKER_LEAK", context))
+
+    return errors
+
+
 def check_broken_internal_links(content, file_path, output_dir):
     """Check for broken internal links (relative paths that don't exist)"""
     errors = []
@@ -646,6 +664,7 @@ def validate_file(file_path, output_dir):
     errors.extend(check_dollar_python_pattern(content, file_path))
     errors.extend(check_blacklisted_strings(content, file_path))
     errors.extend(check_qmd_file_links(content, file_path))
+    errors.extend(check_snippet_markers(content, file_path))
     errors.extend(check_broken_internal_links(content, file_path, output_dir))
     errors.extend(check_meta_description_match(content, file_path))
     errors.extend(check_bibliography_annotations(content, file_path))
@@ -671,6 +690,7 @@ def write_job_summary(errors_by_type: dict, output_dir: Path):
 
             error_descriptions = {
                 "QMD_FILE_LINK": "Links to .qmd files in rendered HTML (should be .html)",
+                "SNIPPET_MARKER_LEAK": "Source-only snippet markers in rendered HTML",
                 "BROKEN_LINK": "Internal links to non-existent files",
                 "BROKEN_IMAGE": "Image references to non-existent files",
                 "UNRENDERED_PYTHON": "Inline Python expressions that didn't evaluate",
@@ -841,6 +861,9 @@ def main():
         print("   - Links to .qmd files: rendered HTML should only contain .html links")
         print("     Update the SOURCE .qmd file to link to another .qmd (Quarto converts)")
         print("     Ensure the target .qmd exists and is listed in the book config")
+    if "SNIPPET_MARKER_LEAK" in errors_by_type:
+        print("   - Snippet markers leaked: ensure scripts/filters/strip-snippet-markers.lua")
+        print("     is listed under format.html.filters for the rendered Quarto config")
     if "BROKEN_LINK" in errors_by_type:
         print("   - Broken internal links: Some links point to files that don't exist")
         print("     Check that all referenced files were rendered")
