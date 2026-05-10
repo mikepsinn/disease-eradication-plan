@@ -17,24 +17,15 @@ import re
 from pathlib import Path
 from typing import Dict, Optional
 
-from .variable_replacement import (
-    load_variables,
-    replace_variables,
-    clean_for_readme,
+from .markdown_export import (
+    extract_content_after_frontmatter,
+    load_markdown_variables,
+    load_parameter_link_overrides_from_json,
+    qmd_content_to_markdown,
 )
+from .variable_replacement import replace_variables
 
 logger = logging.getLogger("dih.readme")
-
-
-def strip_confidence_intervals(text: str) -> str:
-    """
-    Remove (95% CI: ...) parentheticals for cleaner README prose.
-
-    Keeps the base value but removes verbose uncertainty ranges.
-    """
-    # Pattern: (95% CI: anything-anything)
-    text = re.sub(r'\s*\(95% CI:[^)]+\)', '', text)
-    return text
 
 
 def clean_value_for_prose(value: str) -> str:
@@ -93,27 +84,11 @@ def fix_relative_paths(content: str, source_dir: str) -> str:
     return content
 
 
-def extract_content_after_frontmatter(content: str) -> str:
-    """Extract content after YAML frontmatter."""
-    lines = content.split('\n')
-    in_frontmatter = False
-    frontmatter_end = 0
-
-    for i, line in enumerate(lines):
-        if line.strip() == '---':
-            if not in_frontmatter:
-                in_frontmatter = True
-            else:
-                frontmatter_end = i + 1
-                break
-
-    return '\n'.join(lines[frontmatter_end:])
-
-
 def generate_readme(
     project_root: Path,
     variables_path: Optional[Path] = None,
     output_path: Optional[Path] = None,
+    chapter_mapping: Optional[Dict[str, list]] = None,
 ) -> Path:
     """
     Generate README.md with strategic structure for project success.
@@ -122,6 +97,7 @@ def generate_readme(
         project_root: Root directory of the project
         variables_path: Path to _variables.yml
         output_path: Path for output README
+        chapter_mapping: Optional parameter-to-chapter mapping
 
     Returns:
         Path to the generated README.md
@@ -132,13 +108,19 @@ def generate_readme(
         output_path = project_root / "README.md"
 
     # Load variables
-    variables = load_variables(variables_path)
+    link_overrides = {}
+    if chapter_mapping is None:
+        link_overrides = load_parameter_link_overrides_from_json(project_root)
+    variables = load_markdown_variables(
+        variables_path,
+        chapter_mapping=chapter_mapping,
+        link_overrides=link_overrides,
+    )
     logger.debug("Loaded %d variables for README generation", len(variables))
 
     # Helper to resolve variables and clean for README prose
     def v(text: str, clean_units: bool = True) -> str:
         result = replace_variables(text, variables, highlight_missing=False)
-        result = strip_confidence_intervals(result)
         if clean_units:
             result = clean_value_for_prose(result)
         return result
@@ -155,34 +137,12 @@ def generate_readme(
         with open(index_qmd, 'r', encoding='utf-8') as f:
             index_content = f.read()
 
-        # Extract content after frontmatter
-        index_content = extract_content_after_frontmatter(index_content)
-
-        # Replace variables and strip CI ranges
-        index_content = replace_variables(index_content, variables, highlight_missing=False)
-        index_content = strip_confidence_intervals(index_content)
-
-        # Clean all Quarto-specific syntax
-        index_content = clean_for_readme(index_content)
-
-        # Strip HTML comments
-        index_content = re.sub(r'<!--.*?-->', '', index_content, flags=re.DOTALL)
-
-        # Strip raw HTML tags (links with <a>, etc.)
-        index_content = re.sub(r'<a\s+[^>]*>([^<]*)</a>', r'\1', index_content)
-
-        # Convert .qmd links to manual.warondisease.org URLs
-        index_content = re.sub(
-            r'\]\(/?(knowledge/[^)]+)\.qmd([^)]*)\)',
-            r'](https://manual.warondisease.org/\1.html\2)',
-            index_content
-        )
-
-        # Convert absolute image paths to manual.warondisease.org URLs
-        index_content = re.sub(
-            r'(\!\[[^\]]*\])\(/assets/',
-            r'\1(https://manual.warondisease.org/assets/',
-            index_content
+        index_content = qmd_content_to_markdown(
+            index_content,
+            index_qmd,
+            project_root,
+            variables,
+            include_title=False,
         )
 
         # Add title
@@ -221,18 +181,16 @@ def generate_readme(
         content = re.sub(r'This page provides an index[^\n]*\n+', '', content)
         content = re.sub(r'produced as part of[^\n]*\n+', '', content)
 
-        # Replace variables and strip CI ranges for cleaner prose
-        content = replace_variables(content, variables, highlight_missing=False)
-        content = strip_confidence_intervals(content)
-
-        # Clean Quarto-specific syntax
-        content = clean_for_readme(content)
+        content = qmd_content_to_markdown(
+            content,
+            papers_qmd,
+            project_root,
+            variables,
+            include_title=False,
+        )
 
         # Fix relative paths for README at project root
         content = fix_relative_paths(content, "knowledge")
-
-        # Strip HTML comments (e.g., submission info blocks)
-        content = re.sub(r'<!--.*?-->', '', content, flags=re.DOTALL)
 
         # Clean up excess blank lines left by removed comments
         content = re.sub(r'\n{3,}', '\n\n', content)

@@ -38,15 +38,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 592 parameters used in the analysis, organized by type:
+This appendix documents all 591 parameters used in the analysis, organized by type:
 
 - External sources (peer-reviewed): 186
 - Calculated values: 294
-- Core definitions: 112
+- Core definitions: 111
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (294 parameters) • [External Data Sources](#sec-external) (186 parameters) • [Core Definitions](#sec-definitions) (112 parameters)
+[Calculated Values](#sec-calculated) (294 parameters) • [External Data Sources](#sec-external) (186 parameters) • [Core Definitions](#sec-definitions) (111 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -30184,20 +30184,6 @@ Historical calibration target: 30% military reallocation maps to ~5.5 percentage
 #### Input Distribution
 
 {{< include ../figures/distribution-military_redirect_gdp_boost_at_30pct.qmd >}}
-
-*Core definition*
-
-:::
-
-### Money-Printer War Deaths: 97 million deaths {#sec-money_printer_war_deaths}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Cumulative deaths from 6 wars funded by money printing: Napoleonic (5M), Civil War (750K), WWI (20M), WWII (60M), Korea (3M), Vietnam (3M), post-9/11 (4.5M). Mid-range estimates; conservative total exceeds 110M.
-
-#### Uncertainty Range
-
-**Technical**: Distribution: Fixed
 
 *Core definition*
 

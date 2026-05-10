@@ -38,15 +38,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 701 parameters used in the analysis, organized by type:
+This appendix documents all 700 parameters used in the analysis, organized by type:
 
 - External sources (peer-reviewed): 220
 - Calculated values: 342
-- Core definitions: 139
+- Core definitions: 138
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (342 parameters) • [External Data Sources](#sec-external) (220 parameters) • [Core Definitions](#sec-definitions) (139 parameters)
+[Calculated Values](#sec-calculated) (342 parameters) • [External Data Sources](#sec-external) (220 parameters) • [Core Definitions](#sec-definitions) (138 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -32323,8 +32323,8 @@ Critical mass threshold for social change (3.5% rule). Chenoweth studied nationa
 
 - [Global Referendum Strategy](../strategy/global-referendum.html)
 - [The Proof: Overview](../proof.html)
-- [The Most Important Secret in the World: 20 Questions to End War and Disease](../strategy/questions.html)
 - [Voter Acquisition Grant Proposal](../grant-proposal/voter-acquisition-grant.html)
+- [The Most Important Secret in the World: 20 Questions to End War and Disease](../strategy/questions.html)
 - [Treaty Feasibility & Cost Analysis](../appendix/treaty-feasibility.html)
 - [Campaign Budget: The Legal Bribery Machine](../economics/campaign-budget.html)
 - [The Earth Optimization Prize](../strategy/earth-optimization-prize.html)
@@ -36988,27 +36988,6 @@ Historical calibration target: 30% military reallocation maps to ~5.5 percentage
 
 :::
 
-### Money-Printer War Deaths: 97 million deaths {#sec-money_printer_war_deaths}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Cumulative deaths from 6 wars funded by money printing: Napoleonic (5M), Civil War (750K), WWI (20M), WWII (60M), Korea (3M), Vietnam (3M), post-9/11 (4.5M). Mid-range estimates; conservative total exceeds 110M.
-
-#### Uncertainty Range
-
-**Technical**: Distribution: Fixed
-
-*Core definition*
-
-**Used in:**
-
-- [Money Comes From a Building and They Use It to Kill People](../economics/central-banks.html)
-- [The Cost of War](../problem/cost-of-war.html)
-- [The Earth Optimization Prize](../strategy/earth-optimization-prize.html)
-- [Algorithmic Public Administration](../appendix/algorithmic-public-administration-paper.html)
-
-:::
-
 ### Months Per Year: 12 {#sec-months_per_year}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -37779,9 +37758,12 @@ Total deaths from wars, conflicts, genocides, and policy-induced famines since 1
 
 - [The Cost of War](../problem/cost-of-war.html)
 - [Humanity v. Government](../appendix/humanity-v-government.html)
+- [Money Comes From a Building and They Use It to Kill People](../economics/central-banks.html)
 - [The 1% Treaty](../solution/1-percent-treaty.html)
 - [Declaration of Optimization](../strategy/declaration-of-optimization.html)
 - [The Court of Humanity](../solution/court-of-humanity.html)
+- [The Earth Optimization Prize](../strategy/earth-optimization-prize.html)
+- [Algorithmic Public Administration](../appendix/algorithmic-public-administration-paper.html)
 
 :::
 

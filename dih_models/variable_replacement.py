@@ -12,7 +12,8 @@ import re
 from html import unescape
 from html.parser import HTMLParser
 from pathlib import Path
-from typing import Dict, List, Tuple
+from typing import Dict, List, Mapping, Optional, Tuple
+from urllib.parse import urlsplit, urlunsplit
 
 from dih_models.yaml_utils import yaml_safe_load
 
@@ -23,6 +24,32 @@ class VisibleTextHTMLParser(HTMLParser):
     def __init__(self) -> None:
         super().__init__(convert_charrefs=True)
         self.parts: List[str] = []
+
+    def handle_data(self, data: str) -> None:
+        self.parts.append(data)
+
+
+class MarkdownLinkHTMLParser(HTMLParser):
+    """Extract visible text and first href from generated parameter HTML."""
+
+    def __init__(self) -> None:
+        super().__init__(convert_charrefs=True)
+        self.parts: List[str] = []
+        self.href: Optional[str] = None
+        self.is_parameter_value = False
+
+    def handle_starttag(self, tag: str, attrs: List[Tuple[str, Optional[str]]]) -> None:
+        attr_map = {name.lower(): value or '' for name, value in attrs}
+        classes = set(attr_map.get('class', '').split())
+        if {'parameter-link', 'parameter-definition'} & classes:
+            self.is_parameter_value = True
+
+        if self.href is not None or tag.lower() != 'a':
+            return
+        for name, value in attrs:
+            if name.lower() == 'href' and value:
+                self.href = value
+                return
 
     def handle_data(self, data: str) -> None:
         self.parts.append(data)
@@ -40,12 +67,91 @@ def strip_html_tags(text: str) -> str:
     return clean.strip()
 
 
-def load_variables(variables_yml_path: Path) -> Dict[str, str]:
+def absolutize_href(href: str, base_url: str) -> str:
+    """Convert generated root-relative manual hrefs to absolute URLs."""
+    if href.startswith(('http://', 'https://', 'mailto:', 'tel:')):
+        return href
+
+    base = urlsplit(base_url)
+    if href.startswith('/'):
+        return urlunsplit((base.scheme or 'https', base.netloc, href, '', ''))
+
+    base_path = base.path.rstrip('/')
+    path = f"{base_path}/{href}" if base_path else f"/{href}"
+    return urlunsplit((base.scheme or 'https', base.netloc, path, '', ''))
+
+
+def parameter_anchor_name(variable_name: str) -> str:
+    """Map display variants back to the main parameter section anchor."""
+    for suffix in ('_nounit', '_cite', '_latex'):
+        if variable_name.endswith(suffix):
+            return variable_name[:-len(suffix)]
+    return variable_name
+
+
+def link_override_for_variable(
+    variable_name: str,
+    link_overrides: Optional[Mapping[str, str]] = None,
+) -> Optional[str]:
+    """Find a manual URL override for a variable or its base parameter name."""
+    if not variable_name or not link_overrides:
+        return None
+
+    candidates = (variable_name, parameter_anchor_name(variable_name))
+    for candidate in candidates:
+        for key in (candidate, candidate.lower(), candidate.upper()):
+            url = link_overrides.get(key)
+            if url:
+                return url
+    return None
+
+
+def markdown_link_from_html(
+    text: str,
+    base_url: str,
+    variable_name: str = '',
+    link_overrides: Optional[Mapping[str, str]] = None,
+) -> str:
+    """Convert generated parameter HTML to Markdown link text when it has href."""
+    parser = MarkdownLinkHTMLParser()
+    parser.feed(text)
+    parser.close()
+
+    visible_text = unescape(''.join(parser.parts)).strip()
+    if not visible_text:
+        visible_text = strip_html_tags(text)
+
+    override_url = link_override_for_variable(variable_name, link_overrides)
+
+    if parser.href:
+        url = absolutize_href(override_url or parser.href, base_url)
+        return f"[{visible_text}]({url})"
+
+    if parser.is_parameter_value and variable_name:
+        anchor = parameter_anchor_name(variable_name)
+        url = absolutize_href(
+            override_url or f"/knowledge/appendix/parameters-and-calculations.html#sec-{anchor}",
+            base_url,
+        )
+        return f"[{visible_text}]({url})"
+
+    return visible_text
+
+
+def load_variables(
+    variables_yml_path: Path,
+    preserve_links: bool = False,
+    link_base_url: str = "https://manual.warondisease.org",
+    link_overrides: Optional[Mapping[str, str]] = None,
+) -> Dict[str, str]:
     """
     Load variables from YAML and strip HTML for plain text values.
 
     Args:
         variables_yml_path: Path to _variables.yml file
+        preserve_links: Convert generated parameter <a> values to Markdown links
+        link_base_url: Base URL for root-relative generated parameter links
+        link_overrides: Optional mapping from parameter names to preferred links
 
     Returns:
         Dict mapping variable names to their plain text values
@@ -61,8 +167,10 @@ def load_variables(variables_yml_path: Path) -> Dict[str, str]:
     if data:
         for key, value in data.items():
             if isinstance(value, str):
-                # Strip HTML to get plain text value
-                plain_value = strip_html_tags(value)
+                if preserve_links:
+                    plain_value = markdown_link_from_html(value, link_base_url, key, link_overrides)
+                else:
+                    plain_value = strip_html_tags(value)
                 variables[key] = plain_value
             else:
                 variables[key] = str(value)
@@ -187,11 +295,11 @@ def remove_citation_keys(content: str) -> str:
     and bare @foo-bar citations (e.g. from resolved variables).
     """
     # Remove bracketed citations: [@key] or [@key; @key2]
-    content = re.sub(r'\s*\[(?:@[\w-]+(?:\s*;\s*@[\w-]+)*)\]', '', content)
+    content = re.sub(r'[ \t]*\[(?:@[\w-]+(?:[ \t]*;[ \t]*@[\w-]+)*)\]', '', content)
     # Remove bare citations: @key-with-dashes (but not email addresses)
     # Also clean up any trailing space left before punctuation
-    content = re.sub(r'(?<![.\w])\s*@[\w][\w-]+', '', content)
-    content = re.sub(r'\s+([,.;:!?])', r'\1', content)
+    content = re.sub(r'(?<![.\w])[ \t]*@[\w][\w-]+', '', content)
+    content = re.sub(r'[ \t]+([,.;:!?])', r'\1', content)
     return content
 
 

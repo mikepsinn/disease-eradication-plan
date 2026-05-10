@@ -1607,7 +1607,7 @@ def main():
 
     # Generate README.md from QMD sources with variables replaced
     logger.debug("[*] Generating README.md from QMD sources...")
-    readme_path = generate_readme(project_root)
+    readme_path = generate_readme(project_root, chapter_mapping=chapter_mapping)
 
     # Generate _redirects file from Quarto config redirect-from fields
     logger.debug("[*] Generating _redirects from Quarto configs...")

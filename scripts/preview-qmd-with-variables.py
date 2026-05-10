@@ -14,142 +14,30 @@ Usage:
 from __future__ import annotations
 
 import sys
+import io
 import re
 import argparse
 from pathlib import Path
-from typing import List, Tuple
-from urllib.parse import urlsplit, urlunsplit
+from typing import List, Tuple, cast
 
 # Handle Windows encoding
 if sys.platform == 'win32':
-    sys.stdout.reconfigure(encoding='utf-8')
+    cast(io.TextIOWrapper, sys.stdout).reconfigure(encoding='utf-8')
 
 # Add project root to path for imports
 _project_root = Path(__file__).parent.parent
 if str(_project_root) not in sys.path:
     sys.path.insert(0, str(_project_root))
 
-from dih_models.variable_replacement import clean_for_readme, load_variables, replace_variables
-from dih_models.yaml_utils import yaml_safe_load
-
-MANUAL_BASE_URL = "https://manual.warondisease.org"
-
-
-def strip_confidence_intervals(text: str) -> str:
-    """Strip '(95% CI: ...)' from resolved variable text to match rendered HTML."""
-    return re.sub(r'\s*\(95% CI:\s*[^)]+\)', '', text)
-
-
-def split_qmd_frontmatter(content: str) -> Tuple[dict, str]:
-    """Return parsed YAML frontmatter and body content."""
-    match = re.match(r'^---\r?\n([\s\S]*?)\r?\n---\r?\n?', content)
-    if not match:
-        return {}, content
-
-    metadata = yaml_safe_load(match.group(1)) or {}
-    if not isinstance(metadata, dict):
-        metadata = {}
-
-    return metadata, content[match.end():]
-
-
-def qmd_rel_to_html_url(path: Path, project_root: Path, manual_base_url: str) -> str:
-    """Convert a project QMD path to its public manual HTML URL."""
-    rel_path = path.resolve().relative_to(project_root.resolve()).as_posix()
-    if rel_path.endswith('.qmd'):
-        rel_path = rel_path[:-4] + '.html'
-    return f"{manual_base_url.rstrip('/')}/{rel_path}"
-
-
-def qmd_path_to_html_path(path: str) -> str:
-    """Convert a URL path ending in .qmd to the rendered .html path."""
-    if path.endswith('.qmd'):
-        return path[:-4] + '.html'
-    return path
-
-
-def resolve_manual_href(
-    href: str,
-    source_path: Path,
-    project_root: Path,
-    manual_base_url: str,
-) -> str:
-    """Resolve local Markdown/QMD links to public manual URLs."""
-    href = href.strip()
-    if not href:
-        return href
-
-    source_url = qmd_rel_to_html_url(source_path, project_root, manual_base_url)
-
-    if href.startswith('#'):
-        return f"{source_url}{href}"
-
-    if href.startswith(('mailto:', 'tel:', 'javascript:', '{{', '//')):
-        return href
-
-    parsed = urlsplit(href)
-
-    if parsed.scheme in {'http', 'https'}:
-        if parsed.netloc.lower() == 'manual.warondisease.org':
-            path = qmd_path_to_html_path(parsed.path)
-            return urlunsplit((parsed.scheme, parsed.netloc, path, parsed.query, parsed.fragment))
-        return href
-
-    if href.startswith('/'):
-        path = qmd_path_to_html_path(parsed.path)
-        return urlunsplit(('https', urlsplit(manual_base_url).netloc, path, parsed.query, parsed.fragment))
-
-    path = parsed.path.replace('\\', '/')
-    if not path:
-        return href
-
-    if path.endswith(('.qmd', '.html')) or path.startswith(('assets/', './assets/', '../assets/')):
-        resolved_path = (source_path.parent / path).resolve()
-        rel_path = resolved_path.relative_to(project_root.resolve()).as_posix()
-        rel_path = qmd_path_to_html_path(rel_path)
-        return urlunsplit(('https', urlsplit(manual_base_url).netloc, f"/{rel_path}", parsed.query, parsed.fragment))
-
-    return href
-
-
-def absolutize_manual_links(
-    content: str,
-    source_path: Path,
-    project_root: Path,
-    manual_base_url: str,
-) -> str:
-    """Convert local Markdown link targets to absolute manual URLs."""
-    link_pattern = re.compile(r'(!?\[[^\]]*\]\()([^\s)]+)(\))')
-
-    def replace_link(match: re.Match) -> str:
-        return (
-            match.group(1)
-            + resolve_manual_href(match.group(2), source_path, project_root, manual_base_url)
-            + match.group(3)
-        )
-
-    return link_pattern.sub(replace_link, content)
-
-
-def clean_for_export_markdown(
-    content: str,
-    source_path: Path,
-    project_root: Path,
-    manual_base_url: str,
-) -> str:
-    """Build exportable Markdown from a resolved QMD body."""
-    metadata, body = split_qmd_frontmatter(content)
-
-    title = metadata.get('title')
-    if title:
-        body = f"# {title}\n\n{body.lstrip()}"
-
-    body = re.sub(r'<(script|style)\b[^>]*>.*?</\1>', '', body, flags=re.IGNORECASE | re.DOTALL)
-    body = clean_for_readme(body)
-    body = re.sub(r'<!--.*?-->', '', body, flags=re.DOTALL)
-    body = absolutize_manual_links(body, source_path, project_root, manual_base_url)
-    body = re.sub(r'\n{4,}', '\n\n\n', body)
-    return body.strip() + '\n'
+from dih_models.markdown_export import (
+    MANUAL_BASE_URL,
+    absolutize_manual_links,
+    load_markdown_variables,
+    load_parameter_link_overrides_from_json,
+    qmd_content_to_markdown,
+    strip_confidence_intervals,
+)
+from dih_models.variable_replacement import load_variables, replace_variables
 
 
 def find_hardcoded_numbers(content: str) -> List[Tuple[int, str, str, str]]:
@@ -248,8 +136,17 @@ def main():
         print(f"ERROR: File not found: {qmd_path}", file=sys.stderr)
         sys.exit(1)
 
-    # Load variables
-    variables = load_variables(yml_path)
+    # Load variables. Markdown exports preserve parameter links; plain previews stay plain text.
+    if args.export_markdown:
+        link_overrides = load_parameter_link_overrides_from_json(project_root, args.manual_base_url)
+        variables = load_markdown_variables(
+            yml_path,
+            manual_base_url=args.manual_base_url,
+            show_ci=args.show_ci,
+            link_overrides=link_overrides,
+        )
+    else:
+        variables = load_variables(yml_path)
     print(f"# Loaded {len(variables)} variables from {yml_path.name}", file=sys.stderr)
 
     # Read QMD content
@@ -284,14 +181,21 @@ def main():
         return
 
     # Strip CIs from variable values unless --show-ci is set
-    if not args.show_ci:
+    if not args.show_ci and not args.export_markdown:
         variables = {k: strip_confidence_intervals(v) for k, v in variables.items()}
 
     # Replace variables
     preview = replace_variables(content, variables)
 
     if args.export_markdown:
-        preview = clean_for_export_markdown(preview, qmd_path, project_root, args.manual_base_url)
+        preview = qmd_content_to_markdown(
+            content,
+            qmd_path,
+            project_root,
+            variables,
+            manual_base_url=args.manual_base_url,
+            include_title=True,
+        )
     elif args.absolute_manual_links:
         preview = absolutize_manual_links(preview, qmd_path, project_root, args.manual_base_url)
 

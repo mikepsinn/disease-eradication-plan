@@ -430,8 +430,7 @@ def extract_shareable_snippets(
 
     Scans source files for <!-- snippet:NAME --> ... <!-- /snippet:NAME --> blocks.
     Within each block:
-      - Replaces {{< var PARAM >}} with [value](chapter_url) markdown links
-        pointing to the parameter's primary manual chapter
+      - Replaces {{< var PARAM >}} with Markdown links to primary manual chapters
       - Strips [@citation-key] references (readers follow chapter links for sources)
       - Absolutizes relative image paths and ../*.qmd links to {BASE_URL}/*.html
       - Removes any nested snippet markers and extra blank lines
@@ -439,11 +438,16 @@ def extract_shareable_snippets(
     Returns:
         Dict mapping snippet_name -> {markdown, sourceFile, updatedAt}
     """
-    from dih_models.formatting import format_parameter_value
+    from dih_models.markdown_export import load_markdown_variables, qmd_content_to_markdown
     from datetime import datetime, timezone
 
     sources = list(source_files) if source_files is not None else list(_DEFAULT_SNIPPET_SOURCES)
     today = datetime.now(timezone.utc).strftime('%Y-%m-%d')
+    variables = load_markdown_variables(
+        project_root / "_variables.yml",
+        manual_base_url=BASE_URL,
+        chapter_mapping=chapter_mapping,
+    )
     result: Dict[str, Dict[str, str]] = {}
 
     for src in sources:
@@ -454,68 +458,19 @@ def extract_shareable_snippets(
 
         content = full_path.read_text(encoding='utf-8')
         content = _FRONTMATTER_PATTERN.sub('', content, count=1)
-        src_dir = Path(src).parent.as_posix()
-
-        def _resolve_rel(rel_path: str) -> str:
-            # Resolve ../foo/bar.qmd relative to the source file's directory
-            parts: list[str] = [p for p in src_dir.split('/') if p and p != '.']
-            for seg in rel_path.split('/'):
-                if seg in ('', '.'):
-                    continue
-                if seg == '..':
-                    if parts:
-                        parts.pop()
-                else:
-                    parts.append(seg)
-            return '/'.join(parts)
-
-        def _replace_var(match: 're.Match[str]') -> str:
-            raw_name = match.group(1)
-            lowered = raw_name.lower()
-            # Skip suffixes we can't render as prose values
-            if lowered.endswith('_latex') or lowered.endswith('_cite'):
-                logger.warning("Snippet in %s uses unsupported var suffix: %s", src, raw_name)
-                return match.group(0)
-            include_unit = not lowered.endswith('_nounit')
-            param_name = _normalize_var_to_param(raw_name)
-            param_data = parameters.get(param_name)
-            if not param_data or 'value' not in param_data:
-                logger.warning("Snippet in %s references unknown param: %s", src, param_name)
-                return match.group(0)
-            value_obj = param_data['value']
-            try:
-                value_str = format_parameter_value(value_obj, include_unit=include_unit)
-            except Exception as e:
-                logger.warning("Snippet in %s failed to format %s: %s", src, param_name, e)
-                return match.group(0)
-            pages = chapter_mapping.get(param_name) or []
-            if pages:
-                return f"[{value_str}]({pages[0]['url']})"
-            return value_str
-
-        def _absolutize_image(match: 're.Match[str]') -> str:
-            alt, path = match.group(1), match.group(2)
-            return f'![{alt}]({BASE_URL}{path})'
-
-        def _absolutize_qmd_link(match: 're.Match[str]') -> str:
-            label, rel = match.group(1), match.group(2)
-            resolved = _resolve_rel(rel).replace('.qmd', '.html')
-            return f'[{label}]({BASE_URL}/{resolved})'
-
         for block in _SNIPPET_BLOCK_PATTERN.finditer(content):
             name = block.group(1)
             body = block.group(2).strip('\n')
             # Strip any nested snippet markers (e.g. 'intro' markers inside 'full')
             body = _SNIPPET_MARKER_PATTERN.sub('', body)
-            # Strip citations
-            body = _CITATION_PATTERN.sub('', body)
-            # Replace parameter vars with linked values
-            body = _VAR_PATTERN.sub(_replace_var, body)
-            # Absolutize relative asset and chapter links
-            body = _REL_IMG_PATTERN.sub(_absolutize_image, body)
-            body = _REL_QMD_LINK_PATTERN.sub(_absolutize_qmd_link, body)
-            # Collapse runs of blank lines created by marker/citation removal
-            body = re.sub(r'\n{3,}', '\n\n', body).strip() + '\n'
+            body = qmd_content_to_markdown(
+                body,
+                full_path,
+                project_root,
+                variables,
+                manual_base_url=BASE_URL,
+                include_title=False,
+            )
 
             # Normalize the snippet name to camelCase so TS and JSON consumers
             # see the same key. Source-of-truth markers in the qmd can use any

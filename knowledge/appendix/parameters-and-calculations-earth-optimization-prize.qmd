@@ -13424,20 +13424,6 @@ Historical calibration target: 30% military reallocation maps to ~5.5 percentage
 
 :::
 
-### Money-Printer War Deaths: 97 million deaths {#sec-money_printer_war_deaths}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Cumulative deaths from 6 wars funded by money printing: Napoleonic (5M), Civil War (750K), WWI (20M), WWII (60M), Korea (3M), Vietnam (3M), post-9/11 (4.5M). Mid-range estimates; conservative total exceeds 110M.
-
-#### Uncertainty Range
-
-**Technical**: Distribution: Fixed
-
-*Core definition*
-
-:::
-
 ### Peace Dividend Conflict Elasticity: 1:1 {#sec-peace_dividend_conflict_elasticity}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -13713,6 +13699,28 @@ Stacked annual growth boost from 8 non-overlapping war channels. Ch1: productive
 #### Input Distribution
 
 {{< include ../figures/distribution-war_counterfactual_annual_growth_boost.qmd >}}
+
+*Core definition*
+
+:::
+
+### Total War and Conflict Deaths Since 1900: 310 million deaths {#sec-war_deaths_since_1900}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Total deaths from wars, conflicts, genocides, and policy-induced famines since 1900. Built from non-overlapping categories: Rummel democide 264M (incl 21st century) + battle deaths 39M + collateral civilian deaths 30M - overlap adjustment 25M = 308M, rounded to 310M. Range: White low 200M to Rummel-high-plus-military 340M.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [200 million deaths, 340 million deaths] • Distribution: Uniform
+
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between 200 million deaths and 340 million deaths (±23%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The uniform distribution means any value in the range is equally likely.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-war_deaths_since_1900.qmd >}}
 
 *Core definition*
 

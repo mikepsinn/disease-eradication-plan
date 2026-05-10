@@ -1790,23 +1790,6 @@ CUMULATIVE_MILITARY_SPENDING_ALL_HISTORY = Parameter(
     latex_symbol=r"Spending_{mil,cum,all}",
 )
 
-# Death toll from money-printed wars (appears 3+ times across chapters)
-MONEY_PRINTER_WAR_DEATHS = Parameter(
-    97_000_000,
-    manual_ref="knowledge/economics/central-banks.qmd",
-    source_ref=ReferenceID.CRS_WAR_COSTS_2010,
-    source_type="definition",
-    confidence="medium",
-    description="Cumulative deaths from 6 wars funded by money printing: Napoleonic (5M), "
-                "Civil War (750K), WWI (20M), WWII (60M), Korea (3M), Vietnam (3M), post-9/11 (4.5M). "
-                "Mid-range estimates; conservative total exceeds 110M.",
-    display_name="Money-Printer War Deaths",
-    unit="deaths",
-    distribution="fixed",
-    keywords=["war", "deaths", "money printer", "central bank", "total", "receipt"],
-    latex_symbol=r"Deaths_{printer}",
-)
-
 GLOBAL_INDUSTRY_CLINICAL_TRIALS_SPENDING_ANNUAL = Parameter(
     GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL - GLOBAL_GOVERNMENT_CLINICAL_TRIALS_SPENDING_ANNUAL,
     manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",

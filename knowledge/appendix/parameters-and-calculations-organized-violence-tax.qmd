@@ -38,15 +38,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 74 parameters used in the analysis, organized by type:
+This appendix documents all 73 parameters used in the analysis, organized by type:
 
 - External sources (peer-reviewed): 37
 - Calculated values: 25
-- Core definitions: 12
+- Core definitions: 11
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (25 parameters) • [External Data Sources](#sec-external) (37 parameters) • [Core Definitions](#sec-definitions) (12 parameters)
+[Calculated Values](#sec-calculated) (25 parameters) • [External Data Sources](#sec-external) (37 parameters) • [Core Definitions](#sec-definitions) (11 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -2107,20 +2107,6 @@ Fundamental parameters and constants used throughout the analysis.
 ::: {.callout-note collapse="true" title="📊 Details"}
 
 Cumulative global military spending since 1913 (Fed era) in constant 2024 dollars. Built from: SIPRI 1988-2024 ($65-72T), Cold War 1946-1987 ($50-70T reconstructed), WWI+WWII+interwar ($33T from Harrison). Range: $150-190T.
-
-#### Uncertainty Range
-
-**Technical**: Distribution: Fixed
-
-*Core definition*
-
-:::
-
-### Money-Printer War Deaths: 97 million deaths {#sec-money_printer_war_deaths}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Cumulative deaths from 6 wars funded by money printing: Napoleonic (5M), Civil War (750K), WWI (20M), WWII (60M), Korea (3M), Vietnam (3M), post-9/11 (4.5M). Mid-range estimates; conservative total exceeds 110M.
 
 #### Uncertainty Range
 
