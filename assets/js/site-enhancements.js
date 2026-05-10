@@ -6,6 +6,7 @@
  * 2. Smooth scroll to hash targets with visual highlight
  * 3. Unified FAB with spring-out sub-buttons:
  *    - Chat (Wishonia, registered by external chat-widget.js via window.dihFAB)
+ *    - Vote
  *    - Copy citation (BibTeX)
  *    - Show/hide confidence intervals
  *    - Dark mode toggle
@@ -13,7 +14,7 @@
  *
  * Note: Page loader is handled separately in page-loader.html
  *
- * Version: 5.2.0
+ * Version: 5.2.1
  */
 
 (function() {
@@ -493,6 +494,20 @@
   }
 
   // ========================================
+  // VOTE LINK
+  // ========================================
+
+  function createVoteLink() {
+    addFABAction('vote', 'Vote',
+      '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>',
+      function() {
+        window.open('https://WarOnDisease.org', '_blank', 'noopener');
+      },
+      { order: 5 }
+    );
+  }
+
+  // ========================================
   // CHAT LINK (via meta tag, no embedded widget)
   // ========================================
 
@@ -553,6 +568,7 @@
     expandHashTarget();
     createUnifiedFAB();
     //createChatLink();
+    if (!isFeatureDisabled('vote')) createVoteLink();
     if (!isFeatureDisabled('ci-toggle')) createUncertaintyToggle();
     if (!isFeatureDisabled('cite')) createCopyCitationButton();
     if (!isFeatureDisabled('share')) createShareBar();

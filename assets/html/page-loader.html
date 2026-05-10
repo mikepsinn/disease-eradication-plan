@@ -11,7 +11,7 @@
 <div id="calc-loader" style="display: none;">
   <div class="calc-loader-row">
     <span class="hash-loader-spinner" aria-hidden="true"></span>
-    <span class="calc-loader-text" id="calc-loader-text">Loading a bajillion calculations...</span>
+    <span class="calc-loader-text" id="calc-loader-text">Please wait, this takes like 47 seconds. Thank you for your patience! :)</span>
   </div>
   <div class="calc-loader-death-row">
     <span class="calc-loader-skull" aria-hidden="true">&#9760;</span>
@@ -263,8 +263,7 @@
     var startTime = Date.now();
 
     var messages = [
-      'Loading a bajillion calculations...',
-      'Thank you for your patience.',
+      'Please wait, this takes like 47 seconds. Thank you for your patience.',
       'Your call is very important to us.',
       '647 parameters. Monte Carlo sims. Tornado diagrams. The works.',
       'Still crunching numbers...',
@@ -278,15 +277,18 @@
 
     loader.style.display = 'block';
 
-    // Rotate messages every 3 seconds
-    var msgInterval = setInterval(function() {
-      msgIndex = (msgIndex + 1) % messages.length;
-      textEl.style.opacity = '0';
-      setTimeout(function() {
-        textEl.textContent = messages[msgIndex];
-        textEl.style.opacity = '1';
-      }, 300);
-    }, 3000);
+    // Rotate messages every 3 seconds when multiple messages are configured.
+    var msgInterval = null;
+    if (messages.length > 1) {
+      msgInterval = setInterval(function() {
+        msgIndex = (msgIndex + 1) % messages.length;
+        textEl.style.opacity = '0';
+        setTimeout(function() {
+          textEl.textContent = messages[msgIndex];
+          textEl.style.opacity = '1';
+        }, 300);
+      }, 3000);
+    }
 
     // Tick death counter
     var counterInterval = setInterval(function() {
@@ -317,7 +319,7 @@
       var finalDeaths = Math.floor(finalElapsed * DEATHS_PER_SECOND);
       deathCount.textContent = finalDeaths.toLocaleString();
 
-      clearInterval(msgInterval);
+      if (msgInterval) clearInterval(msgInterval);
       textEl.style.opacity = '0';
       setTimeout(function() {
         textEl.textContent = finalDeaths + ' people. That\u2019s why this page exists.';

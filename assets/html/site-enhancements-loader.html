@@ -1,13 +1,13 @@
 <!-- Site Enhancements Loader -->
-<!-- Loads site-enhancements.js and promotion-bar.js with correct path offset -->
+<!-- Loads site-enhancements.js with correct path offset -->
 <!-- Chat widget lives at transmit.warondisease.org (not loaded here) -->
-<!-- To disable promotion bar on a page: <meta name="wod-promo-hide" content="true"> -->
+<!-- promotion-bar.js is intentionally commented out below. -->
 <script>
   (function() {
     var offset = document.querySelector('meta[name="quarto:offset"]')?.getAttribute('content') || '';
     if (offset && offset.charAt(offset.length - 1) !== '/') offset += '/';
 
-    var v = '5.2.0';
+    var v = '5.2.1';
 
     // Cache-bust styles.css
     var links = document.querySelectorAll('link[rel="stylesheet"]');
@@ -18,7 +18,11 @@
       }
     }
 
-    var scripts = ['assets/js/generated-subdomain-redirects.js', 'assets/js/site-enhancements.js', 'assets/js/promotion-bar.js'];
+    var scripts = [
+      'assets/js/generated-subdomain-redirects.js',
+      'assets/js/site-enhancements.js',
+      // 'assets/js/promotion-bar.js'
+    ];
     for (var i = 0; i < scripts.length; i++) {
       var s = document.createElement('script');
       s.src = offset + scripts[i] + '?v=' + v;
