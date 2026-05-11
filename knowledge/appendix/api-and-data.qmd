@@ -45,9 +45,9 @@ Every numeric value in this book lives in a single Python file and is auto-gener
     "whyOptimizationIsNecessary": {
       "markdown": "Governments were created to promote the general welfare...",
       "sourceFile": "knowledge/strategy/declaration-of-optimization.qmd",
-      "updatedAt": "2026-04-09"
+      "originalName": "why-optimization-is-necessary"
     },
-    "declarationOfOptimization": { "markdown": "...", "sourceFile": "...", "updatedAt": "..." }
+    "declarationOfOptimization": { "markdown": "...", "sourceFile": "...", "originalName": "declaration_of_optimization" }
   },
   "citations": {
     "sipri-milex-2024": { "type": "report", "title": "SIPRI Military Expenditure Database 2024", "..." }

@@ -436,13 +436,11 @@ def extract_shareable_snippets(
       - Removes any nested snippet markers and extra blank lines
 
     Returns:
-        Dict mapping snippet_name -> {markdown, sourceFile, updatedAt}
+        Dict mapping snippet_name -> {markdown, sourceFile, originalName}
     """
     from dih_models.markdown_export import load_markdown_variables, qmd_content_to_markdown
-    from datetime import datetime, timezone
 
     sources = list(source_files) if source_files is not None else list(_DEFAULT_SNIPPET_SOURCES)
-    today = datetime.now(timezone.utc).strftime('%Y-%m-%d')
     variables = load_markdown_variables(
         project_root / "_variables.yml",
         manual_base_url=BASE_URL,
@@ -479,7 +477,6 @@ def extract_shareable_snippets(
             result[key] = {
                 'markdown': body,
                 'sourceFile': src,
-                'updatedAt': today,
                 'originalName': name,
             }
 
@@ -724,7 +721,6 @@ def generate_typescript_parameters(
         content.append("export interface ShareableSnippet {")
         content.append("  markdown: string;")
         content.append("  sourceFile: string;")
-        content.append("  updatedAt: string;")
         content.append("  originalName: string;")
         content.append("}")
         content.append("")
@@ -733,13 +729,11 @@ def generate_typescript_parameters(
         for i, (key, data) in enumerate(snippet_items):
             md_literal = _js_string_literal(data.get('markdown', ''))
             src_literal = _js_string_literal(data.get('sourceFile', ''))
-            updated_literal = _js_string_literal(data.get('updatedAt', ''))
             orig_literal = _js_string_literal(data.get('originalName', key))
             comma = "," if i < len(snippet_items) - 1 else ""
             content.append(f"  {key}: {{")
             content.append(f"    markdown: {md_literal},")
             content.append(f"    sourceFile: {src_literal},")
-            content.append(f"    updatedAt: {updated_literal},")
             content.append(f"    originalName: {orig_literal},")
             content.append(f"  }}{comma}")
         content.append("} as const satisfies Record<string, ShareableSnippet>;")
