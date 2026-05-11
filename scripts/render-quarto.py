@@ -58,6 +58,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 sys.path.insert(0, str(Path(__file__).parent / "lib"))
 from build_logger import BuildLogger  # type: ignore[import-not-found]
 from local_webtex import start_server as start_webtex, stop_server as stop_webtex  # type: ignore[import-not-found]
+from parameter_appendix_optimizer import optimize_parameters_appendix_html  # type: ignore[import-not-found]
 from python_utils import load_project_dotenv  # type: ignore[import-not-found]
 from render_utils import (  # type: ignore[import-not-found]
     BuildMonitor,
@@ -117,64 +118,6 @@ def ensure_epubcheck(project_root: Path) -> Optional[Path]:
 
     print(f"[WARN] epubcheck jar not found after extraction", file=sys.stderr)
     return None
-
-
-def _add_lazy_attrs_to_img_tags(html: str) -> tuple[str, int]:
-    """Add native lazy-loading attributes to non-data images in rendered HTML."""
-    count = 0
-
-    def replace(match: re.Match[str]) -> str:
-        nonlocal count
-        attrs = match.group(1)
-        src_match = re.search(r'\ssrc=(["\'])(.*?)\1', attrs, re.IGNORECASE)
-        if not src_match:
-            return match.group(0)
-
-        src = src_match.group(2)
-        if src.startswith("data:"):
-            return match.group(0)
-
-        updated = attrs
-        changed = False
-
-        if not re.search(r'\sloading=', updated, re.IGNORECASE):
-            updated += ' loading="lazy"'
-            changed = True
-        if not re.search(r'\sdecoding=', updated, re.IGNORECASE):
-            updated += ' decoding="async"'
-            changed = True
-        if not re.search(r'\sfetchpriority=', updated, re.IGNORECASE):
-            updated += ' fetchpriority="low"'
-            changed = True
-
-        if changed:
-            count += 1
-
-        return f"<img{updated}>"
-
-    updated_html = re.sub(r"<img([^>]*?)>", replace, html, flags=re.IGNORECASE)
-    return updated_html, count
-
-
-def optimize_parameters_appendix_html(output_dir: Path) -> int:
-    """
-    Post-process rendered parameter appendix pages so chart images lazy-load.
-
-    Quarto/Jupyter plot outputs are injected after the Pandoc filter stage, so
-    the reliable place to add loading attrs is the final HTML.
-    """
-    total_updated = 0
-
-    for html_path in output_dir.rglob("parameters-and-calculations*.html"):
-        html = html_path.read_text(encoding="utf-8")
-        updated_html, updated_count = _add_lazy_attrs_to_img_tags(html)
-        if updated_count == 0:
-            continue
-
-        html_path.write_text(updated_html, encoding="utf-8", newline='\n')
-        total_updated += updated_count
-
-    return total_updated
 
 
 # =============================================================================
@@ -1612,7 +1555,7 @@ def render_quarto(
                 html_output_dir = build_temp / metadata["output_dir"]
                 optimized_images = optimize_parameters_appendix_html(html_output_dir)
                 if optimized_images:
-                    print(f"[*] Added lazy-loading attrs to {optimized_images} parameter-appendix image(s)")
+                    print(f"[*] Deferred {optimized_images} parameter-appendix chart image(s)")
 
                 # Fix OG/Twitter metadata (og:description, twitter:card, og:url, etc.)
                 site_url = metadata.get("site_url", "")
