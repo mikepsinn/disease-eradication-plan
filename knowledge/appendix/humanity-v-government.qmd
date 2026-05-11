@@ -73,9 +73,7 @@ scores:
 
 ## Preamble
 
-Having observed your planet for the past 80 years and your governments for somewhat longer than that, I hereby submit the following indictment to the court of common sense.
-
-The defendants are the governments of Earth, collectively. The charges are three counts of negligent mass homicide. The aggravating factor is that the defendants pay their own prosecutors, judges, and juries, then write their own laws about whether anything they do can be called a crime. We will be ignoring this last point because the alternative is to let billions of humans die quietly while we file paperwork.
+The defendants are the governments of Earth. The charges are three counts of negligent mass homicide. The defendants pay their own prosecutors, judges, and juries, and write their own laws about whether anything they do can be called a crime.
 
 This case is brought by the **International Campaign to End War and Disease** (the Campaign), modeled on the International Campaign to Ban Landmines and the International Campaign to Abolish Nuclear Weapons. Both predecessor campaigns drove governments to sign treaties most governments did not want to sign. The Campaign asks governments to settle a lawsuit. The institutional architecture for the lawsuit is described in [The Court of Humanity](../solution/court-of-humanity.qmd) [@court-of-humanity-paper-2025]. The settlement vehicle is described in [The 1% Treaty](../solution/1-percent-treaty.qmd) [@1-percent-treaty-paper-2025] [@1-pct-treaty-impact-paper-2025]. The body count is described below.
 
@@ -145,7 +143,7 @@ Sam Peltzman published the seminal analysis of efficacy-lag mortality in 1973 [@
 
 ### The Evidence
 
-Disease kills approximately {{< var global_disease_deaths_per_minute_nounit >}} humans per minute. The defendants spend {{< var military_to_government_clinical_trials_spending_ratio_nounit >}} dollars on the capacity for orphan manufacturing for every one dollar spent on the clinical trials that might cure what is actually killing their citizens.
+Disease kills approximately {{< var global_disease_deaths_per_minute_nounit >}} humans per minute. The defendants spend {{< var military_to_government_clinical_trials_spending_ratio_nounit >}} dollars on weapons for every one dollar spent on the clinical trials that might cure what is actually killing their citizens.
 
 This is not because the funds are unavailable. The funds are exactly available. The defendants spend {{< var global_military_spending_annual_2024 >}} per year on weaponry. A one percent reallocation would fund {{< var treaty_annual_funding >}} in clinical trials annually [@1-pct-treaty-impact-paper-2025]. The Department of Defense has, by its own admission, "misplaced" {{< var pentagon_unaccounted_funds >}} across seven consecutive failed audits [@pentagon-unaccounted-2-5t]. That figure alone is {{< var pentagon_unaccounted_clinical_trial_years_nounit >}} years of clinical trials at current funding levels.
 

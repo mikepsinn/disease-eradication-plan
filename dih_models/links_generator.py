@@ -228,6 +228,7 @@ page-layout: full
 toc: false
 aliases:
   - /podcast
+  - /listen
 podcast-image: /assets/podcast/podcast-podcast.jpg
 youtube-thumbnail: /assets/podcast/podcast-youtube.jpg
 ---
