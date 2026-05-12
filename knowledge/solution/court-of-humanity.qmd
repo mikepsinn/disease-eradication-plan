@@ -1,27 +1,23 @@
 ---
 title: "The Court of Humanity"
 subtitle: "Constitutional Architecture for Refusing Sovereign Immunity in Negligent Mass Homicide"
-description: A decentralized court where {{< var global_population_2024_nounit >}} humans are the jury, sovereign immunity is not recognized as a defense, and the 1% Treaty becomes the settlement offer governments accept to cap their exposure to mass-death accountability.
+description: A court where any human can sue any government, sovereign immunity is not a defense, and the 1% Treaty is the settlement offer.
 abstract: |
-  Sovereign immunity is the legal doctrine preventing private parties from suing
-  governments without the government's consent. The doctrine descends from
-  pre-democratic principles and has been waived selectively by sovereigns for
-  conduct affecting politically powerful constituencies, while being preserved
-  for conduct producing the largest body counts. This paper proposes the
-  **Court of Humanity**, a decentralized adjudication mechanism deriving
-  legitimacy from humans rather than sovereign consent. Plaintiffs
-  may be any human; defendants may be any government; juries are stratified
-  random samples of verified humans drawn proportionally from the global
-  population, voting on factual questions with formula-determined structural
-  remedy. The Court does not recognize sovereign immunity as a defense.
-  Enforcement is not coercive but *capital*: judgments can be priced into
-  sovereign bond yields, insurance premia, trade flows, and procurement
-  decisions. Applying regulatory life valuations to historical and projected
-  government-attributable mortality (war, regulatory delay, misallocation; see
-  [@invisible-graveyard-paper-2025]), we estimate economic exposure far beyond
-  any government's ability to pay. Governments can, however, settle for the
-  [1% Treaty](1-percent-treaty.qmd) [@1-pct-treaty-impact-paper-2025], which
-  functions as the most generous settlement offer in legal history.
+  Governments wrote laws making it illegal to sue them. The legal term is
+  "sovereign immunity." It descends from "the king can do no wrong," which
+  your species abolished in theory and preserved in practice. Governments
+  waived it for slip-and-falls in federal buildings. They kept it for
+  killing people through war, drug delay, and budget misallocation. This
+  paper proposes the **Court of Humanity**: any human can file, any
+  government can be sued, juries are randomly selected from the global
+  population, and sovereign immunity is not recognized as a defense.
+  Enforcement runs through bond markets, not armies: if the world's
+  investors agree the defendants owe the bill, the defendants' borrowing
+  costs go up whether they cooperate or not. The bill, calculated from
+  the body count using the governments' own life valuations
+  ([@invisible-graveyard-paper-2025]), is larger than any government can
+  pay. They can, however, settle. The [1% Treaty](1-percent-treaty.qmd)
+  [@1-pct-treaty-impact-paper-2025] is the settlement offer.
 published: true
 author:
   - name: Mike P. Sinn
@@ -88,16 +84,16 @@ Sovereign immunity is *waivable*. Governments can give it up at any time. The Un
 
 The asymmetry is not constitutional. It is political. Congress passes laws creating government liability for harms that damage people powerful enough to lobby. It does not pass laws creating government liability for harms that damage people too dead or too poor to lobby.
 
-### The Doctrinal Map
+### The Map of What You Cannot Sue For
 
-The U.S. Federal Tort Claims Act (FTCA) waives sovereign immunity for limited categories of governmental tort, while preserving it for the categories that produce the largest body counts. The exclusions form a remarkably precise map of the conduct documented in [The Invisible Graveyard](../appendix/invisible-graveyard.qmd) [@invisible-graveyard-paper-2025] and [Humanity v. Government](../appendix/humanity-v-government.qmd):
+The United States passed a law (the Federal Tort Claims Act) that lets you sue the government for some things. The exceptions are a precise map of the things that kill the most people. You cannot sue for:
 
-- **Discretionary function exception** (28 U.S.C. § 2680(a)): Policy choices, including military allocation, regulatory standards, and budgetary priorities, are immune.
-- **Combatant activities exception** (28 U.S.C. § 2680(j)): Deaths arising from military combat are immune.
-- **Foreign country exception** (28 U.S.C. § 2680(k)): Harms occurring outside the U.S. are immune.
-- **Feres doctrine** (judicially created, 1950): Active-duty military personnel cannot sue for service-connected injuries.
+- **"Policy choices"** (28 U.S.C. § 2680(a)): budget allocation, regulatory standards, military spending. The things that determine who lives and dies.
+- **Military combat deaths** (28 U.S.C. § 2680(j)): if the government kills someone during a war, immune.
+- **Anything that happens outside the U.S.** (28 U.S.C. § 2680(k)): if the government harms someone in another country, immune.
+- **Soldiers injured in service** (the Feres doctrine, 1950): if you are in the military and the military hurts you, you cannot sue the military.
 
-The pattern is the predictable equilibrium of allowing defendants to write immunity rules for themselves. The more a harm looks like policy, war, diplomacy, or budget allocation, the less likely existing law is to let victims sue.
+The pattern is what happens when you let the defendant write the immunity rules. The bigger the body count, the stronger the shield.
 
 ## The Real Name for This Is Protection Racket
 
@@ -109,39 +105,13 @@ The question for you is not whether sovereign immunity is *correct*. The questio
 
 Your governments' own actuaries value a statistical human life at roughly {{< var value_of_statistical_life >}} ([the standard regulatory valuation](../appendix/political-dysfunction-tax.qmd) used by the EPA, DOT, and FDA). This is not the same thing as a court-awarded wrongful-death verdict. It is the number governments already use when deciding how many deaths a policy is allowed to buy.
 
-The damages model uses the same posture a prosecutor would use against a corporate defendant: plead every viable theory, prove the strongest ledgers first, then prevent double recovery at judgment. Corporate prosecution doctrine already separates restitution, fines, victim compensation, compliance measures, monitors, debarment, disgorgement, and remedial orders [@doj-federal-prosecution-business-organizations; @ussc-organizational-guidelines-2025]. The Court of Humanity applies that structure to the larger organization currently calling itself government.
+The bill is calculated the same way a prosecutor would calculate it against a corporation: list every category of harm, prove the biggest ones first, and do not count the same death twice. Your existing system already does this. Pfizer paid $2.3 billion for health-care fraud [@doj-pfizer-2009-health-care-fraud-settlement]. BP paid $20.8 billion for the Deepwater Horizon spill [@doj-bp-deepwater-horizon-20-8b-settlement]. Volkswagen paid $4.3 billion for cheating emissions tests and accepted a government monitor [@doj-volkswagen-4-3b-2017]. The Court is not inventing the bill format. It is applying the existing corporate bill format to a defendant whose revenue, customer base, and body count are larger [@doj-federal-prosecution-business-organizations; @ussc-organizational-guidelines-2025].
 
-Your existing system already uses this posture against corporations. Pfizer paid $2.3 billion in a 2009 health-care fraud resolution [@doj-pfizer-2009-health-care-fraud-settlement]. BP's Deepwater Horizon civil settlement reached $20.8 billion [@doj-bp-deepwater-horizon-20-8b-settlement]. Volkswagen paid $4.3 billion in criminal and civil penalties and accepted a corporate monitor after cheating emissions tests [@doj-volkswagen-4-3b-2017]. The Court is not inventing the remedy stack. It is applying the existing corporate remedy stack to a defendant whose revenue, customer base, and body count are larger.
+The full bill, broken into categories (what they owe for killing people, giving the money back, losing the money, making them return the profits, fixing the problem, and the value of settling now) is in the [Corporate Damages Schedule](../appendix/humanity-v-government.qmd#corporate-damages-schedule) of [Humanity v. Government](../appendix/humanity-v-government.qmd). The prosecutor's demand, including the primary lost-income theory ({{< var lost_prosperity_lifetime_damages_per_capita >}} per person over a lifetime) and the body-count backup tiers, is in the [Prosecutor's Demand](../appendix/humanity-v-government.qmd#the-prosecutors-demand). The three source ledgers are: [Humanity v. Government](../appendix/humanity-v-government.qmd) for the liability theory, [Cost of War](../problem/cost-of-war.qmd#the-medical-opportunity-cost) for the historical cost of trials never funded, and [1% Treaty Impact](../economics/1-pct-treaty-impact.qmd) [@1-percent-treaty-paper-2025] [@1-pct-treaty-impact-paper-2025] for the future value of adopting the remedy now.
 
-The model has to keep separate things separate. [Humanity v. Government](../appendix/humanity-v-government.qmd) establishes the liability theory. [Cost of War](../problem/cost-of-war.qmd#the-medical-opportunity-cost) supplies the historical opportunity-cost counterfactual. [1% Treaty Impact](../economics/1-pct-treaty-impact.qmd) [@1-percent-treaty-paper-2025] [@1-pct-treaty-impact-paper-2025] supplies the forward settlement value if the remedy is adopted now.
+For context, global GDP is approximately {{< var global_gdp_2025 >}} per year. Even after heavy discounting, the bill is larger than any government can pay.
 
-| Remedy ledger | Measure | What it establishes |
-|---|---|---|
-| Compensation | {{< var war_deaths_since_1900_nounit >}} war deaths, {{< var existing_drugs_efficacy_lag_deaths_total_nounit >}} efficacy-lag deaths, and related healthy life-years lost | Victim harm, using VSL or QALY/DALY methods as alternatives. |
-| Restitution | {{< var war_trial_redirect_excess_military_spending_above_1900_freeze >}} above the 1900 freeze | Entrusted funds that should have become treatment discovery capacity. |
-| Audit and fraud exposure | {{< var pentagon_unaccounted_funds >}} unaccounted, or {{< var pentagon_unaccounted_false_claims_analog_exposure >}} under a False Claims Act-style treble analogy | What ordinary corporate treatment of missing public funds would imply [@doj-false-claims-act]. |
-| Disgorgement | Defense-contractor gains, revolving-door compensation, procurement rents | Gains retained from the offense, separated from victim compensation. |
-| Remediation | 1% Treaty funding, clinical-trial trust, independent audit monitor, debarment, clawbacks | Structural cure and risk reduction. |
-| Forward settlement | {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved_nounit >}} future deaths prevented by the treaty remedy | The value of settling now instead of continuing the offense. |
-
-The table deliberately does not add every line into one central damages number. VSL deaths, DALYs, lost GDP, restitution, disgorgement, and punitive multipliers are different legal theories. Add them all together and the spreadsheet starts lying.
-
-Keeping ledgers separate does not mean the prosecution lacks a demand. The primary damages theory is **lost profits**, the framework antitrust and commercial-litigation prosecutors actually lead with. Treated as a corporation paid {{< var global_government_expense_annual >}} per year to promote the general welfare, the defendants face a representative full-life cohort exposure of {{< var lost_prosperity_lifetime_damages_per_capita >}} per person, or {{< var lost_prosperity_npv_perpetuity_per_capita >}} per person as the NPV perpetuity at 3% under a no-cure baseline. The body-count tiers below are **alternative pleadings** the Court can fall back on if the lost-profits theory is rejected.
-
-| Prosecutor posture | Per representative person | Status |
-|---|---:|---|
-| **Lost-prosperity-only, lifetime undiscounted (cohort)** | **{{< var lost_prosperity_lifetime_damages_per_capita >}}** | **Primary theory.** Single coherent lost-profits claim, 80-year cohort horizon. Per-individual award scales by remaining life expectancy. Cannot be added to the body-count tiers; replaces them. |
-| **Lost-prosperity-only, NPV perpetuity at 3% (no-cure baseline)** | **{{< var lost_prosperity_npv_perpetuity_per_capita >}}** | Primary theory, financial-standard valuation. Sensitivity exposure under a no-convergence baseline. Cannot be added to the body-count tiers; replaces them. |
-| Strict floor (body-count alternative) | {{< var corporate_damages_strict_floor_per_capita >}} | Cautious non-duplicative award if the Court rejects the lost-profits theory. |
-| Body-count base ask | {{< var corporate_damages_prosecutor_base_ask_per_capita >}} | Aggressive body-count alternative if the Court rejects the lost-profits theory. |
-| Treble-style exposure (body-count) | {{< var corporate_damages_treble_exposure_per_capita >}} | False Claims Act-style penalty exposure on the body-count base ask. |
-| Constitutional-ceiling exposure under *State Farm v. Campbell* | {{< var corporate_damages_state_farm_ceiling_exposure_per_capita >}} | Body-count base ask plus a 9:1 punitive-to-compensatory ceiling, exposure only [@state-farm-v-campbell-2003]. |
-| Ongoing lost prosperity (annual flow) | {{< var war_counterfactual_lost_gdp_per_capita >}}/person/year | Annual damages flow. The two lost-prosperity-only rows above are this same flow capitalized as a stock. |
-| Forward treaty settlement value | {{< var corporate_damages_forward_settlement_value_per_capita >}} | Separate settlement value from adopting the remedy now. |
-
-For context, global GDP is approximately {{< var global_gdp_2025 >}} per year. Even a heavily discounted exposure is larger than ordinary compensation can handle.
-
-Your governments do not have this money. They cannot pay the full exposure. Even brutal discounting still produces a liability stream larger than the political system can absorb without changing behavior. That is not a problem. That is the point. A debt a defendant cannot pay is a debt that changes how the defendant behaves. You do not need to collect the full amount. You need the defendant to know the full amount exists, and you need voters, bondholders, insurers, and treaty parties to know it too.
+Your governments do not have this money. They cannot pay the full amount. That is not a problem. That is the point. A debt a defendant cannot pay is a debt that changes how the defendant behaves. You do not need to collect it. You need the defendant to know it exists, and you need voters, bondholders, insurers, and treaty parties to know it too.
 
 ## What a Sensible Species Would Build
 
@@ -273,21 +243,11 @@ The Court of Humanity differs in three respects: its legitimacy derives from the
 
 ## Why Existing Courts Are Insufficient (But Useful)
 
-Several existing institutions can hear parts of the case. None can hear all of it.
+Several existing courts can hear parts of this case. None can hear all of it. The ICC prosecutes war criminals but only from countries that signed up; the United States, China, Russia, Israel, and India did not. The International Court of Justice only hears disputes between states, not claims by individual victims. The European Court of Human Rights can hear right-to-life claims but has never been pushed on drug-delay deaths. The U.S. Federal Tort Claims Act allows negligence suits against the government but exempts "policy choices," which is the legal wall around every budget decision. The Inter-American Court has actually ruled against governments for failing to protect health, but only covers the Americas.
 
-**International Criminal Court.** Prosecutes individuals for genocide, crimes against humanity, war crimes, and aggression. Useful for Count One against specific commanders or heads of state, when the defendant is a national of a member state, the conduct occurs on member-state territory, a non-party state accepts jurisdiction, or the Security Council refers the case. Weak for powerful non-party states. Useless for resource misallocation, which is not a Rome Statute crime. Slow even when jurisdiction exists.
+What none of these courts will hear is the misallocation claim. The proposition that a government is liable for the cancer that was never cured because it spent the research budget on weapons does not have a serious forum anywhere on Earth. Existing courts treat budget allocation as a "political question," which is a polite way of saying "we are not going to touch the thing that matters most." The Court of Humanity is the only proposed institution that treats spending the cure money on weapons as a harm you can sue over.
 
-**International Court of Justice.** Hears disputes between states, not claims by individual victims. Only states may appear before it. Jurisdiction depends on consent.
-
-**European Court of Human Rights, Article 2.** Any person within a High Contracting Party's jurisdiction may bring a right-to-life claim after exhausting domestic remedies. Article 2 has been read to cover state failures in health-care regulatory systems, but has not been pushed to the question of efficacy lag. One well-documented efficacy-lag death inside the Convention system could produce useful precedent. The defendant would be European; the implications would not be.
-
-**United States Federal Tort Claims Act.** Allows suits against the federal government for negligent acts. The discretionary-function exception immunizes "policy choices," which is the doctrinal wall around budget allocation and regulatory standards. A propranolol-style Count Two case (specific drug, specific delay, specific death) might survive on a non-discretionary regulatory negligence theory. Even dismissal enters evidence into the public record, which is helpful.
-
-**Inter-American Court of Human Rights.** Has actually ruled against governments for failing to protect health. This is the closest analog in current jurisprudence. Jurisdiction is limited to the Americas and to states that recognize the court.
-
-What none of these courts will hear is the misallocation claim. The proposition that a government is liable for the cancer that was never cured because it spent the research budget on weapons does not have a serious forum anywhere on Earth. Existing courts treat budget allocation as a political question, which is a polite way of saying "we are not going to touch the thing that matters most." The Court of Humanity is the only proposed institution that treats resource misallocation as a harm you can sue over.
-
-The practical strategy: file Count One and Count Two cases in existing courts simultaneously while building the Court of Humanity. Wins generate precedent. Losses generate evidence that existing institutions are insufficient. Dismissals generate documentation of the gap the Court is designed to close. Every jurisdiction that declines to hear the misallocation claim adds an entry to the record explaining why a new jurisdiction is required. You cannot lose. You can only build the case for why the Court must exist.
+The practical strategy: file war-death and drug-delay cases in existing courts while building the Court of Humanity. Wins create precedent. Losses create evidence that existing courts are insufficient. Dismissals create documentation of the gap. Every court that declines to hear the misallocation claim adds an entry to the record explaining why a new court is required. You cannot lose. You can only build the case for why the Court must exist.
 
 ## Two Questions on the Same Ballot
 
@@ -331,21 +291,21 @@ The Court of Humanity introduces a fourth branch: the citizenry itself, voting o
 
 ## The Cost-Effectiveness Case
 
-Your species evaluates charitable interventions in dollars per Disability-Adjusted Life Year averted. The standard benchmark is the insecticide-treated bed net, at {{< var bed_nets_cost_per_daly >}} per DALY. The Court of Humanity is, by a margin I find interesting, the highest expected-value charitable intervention currently available to your species.
+Your species measures charitable interventions by how many years of healthy life each dollar buys. The standard benchmark is the malaria bed net, at {{< var bed_nets_cost_per_daly >}} per year of healthy life saved. The Court of Humanity is, by a margin I find interesting, the highest-value charitable intervention currently available to your species.
 
-Building the Court costs {{< var court_build_cost >}}. The International Criminal Court, for comparison, funds physical courtrooms, detention infrastructure, and a permanent staff. The Court of Humanity is digital-first: evidence submitted via web, AI-assisted triage, stratified random juries voting from their own homes. No marble. No gavels. No parking garage.
+Building the Court costs {{< var court_build_cost >}}. The International Criminal Court, for comparison, funds physical courtrooms, detention facilities, and a permanent staff. The Court of Humanity is digital: evidence submitted via web, AI triage, juries voting from home. No marble. No gavels. No parking garage.
 
-The honest accounting matters here. The Court does not directly prevent any deaths. The 1% Treaty does that. The Court is the legal instrument that increases the probability the Treaty gets adopted. So the math is not "Court cost divided by deaths prevented." There are no Court deaths in the honest accounting. The math is "Court cost compared to the increase in expected Treaty deaths-prevented caused by the Court existing."
+The honest accounting matters. The Court does not directly prevent any deaths. The 1% Treaty does that. The Court is what makes the Treaty more likely to get adopted. So the math is not "Court cost divided by deaths prevented." The math is "Court cost compared to how much more likely the Treaty becomes because the Court exists."
 
-The [1% Treaty](1-percent-treaty.qmd) has already established itself, separately, as approximately {{< var treaty_expected_vs_bed_nets_multiplier >}} more cost-effective than bed nets in expected value. That figure already accounts for political-success probability. The Court is small compared with the Treaty advocacy campaign itself ({{< var court_build_cost >}} compared to {{< var treaty_campaign_total_cost >}}). If the Court increases the probability of Treaty adoption by even a small fraction, the Court's marginal cost per DALY collapses several orders of magnitude below bed nets.
+The [1% Treaty](1-percent-treaty.qmd) has already established itself, separately, as approximately {{< var treaty_expected_vs_bed_nets_multiplier >}} more cost-effective than bed nets in expected value. That figure already accounts for the probability of political failure. The Court is small compared with the Treaty campaign itself ({{< var court_build_cost >}} compared to {{< var treaty_campaign_total_cost >}}). If the Court increases the probability of Treaty adoption by even a small fraction, the Court's cost per year of healthy life saved drops several orders of magnitude below bed nets.
 
-The breakeven question: how small would the Court's marginal probability shift need to be before it is no longer worth funding? Very small. The Court does not need to pass the Treaty by itself. It only needs to make adoption slightly more likely.
+The breakeven question: how little would the Court need to improve the odds before it is no longer worth funding? Very little. The Court does not need to pass the Treaty by itself. It only needs to make adoption slightly more likely.
 
-To believe the Court is not worth funding, you must believe a structured legal institution, documenting millions of preventable deaths with named victims and family testimony, contributes almost nothing to the political adoption of the 1% Treaty. I would be interested to read the argument for this position. I have not encountered it on any planet, and I have looked on 847.
+To believe the Court is not worth funding, you must believe that a legal institution documenting millions of preventable deaths with named victims and family testimony contributes almost nothing to the political adoption of the 1% Treaty. I would be interested to read the argument for this position. I have not encountered it on any planet, and I have looked on 847.
 
-For donors with an existing charitable portfolio: a dollar that funds bed nets averts DALYs in proportion to the bed nets benchmark. A dollar that funds the Court averts DALYs in proportion to its marginal contribution to a treaty that has already, separately, established itself as the most cost-effective intervention ever evaluated against that benchmark. Same dollar. Different multiplier. The Court is an intervention that buys other interventions. Its DALYs are purchased by improving the conditional probability of every other DALY-averting outcome the Treaty unlocks.
+For donors with an existing charitable portfolio: a dollar that funds bed nets saves healthy life-years at the bed-net rate. A dollar that funds the Court saves healthy life-years by improving the odds that the Treaty passes, and the Treaty has already, separately, established itself as the most cost-effective intervention ever measured against that benchmark. Same dollar. Different multiplier. The Court is a charity that buys other charities. It works by making everything else more likely to happen.
 
-The full upside is described in the [1% Treaty Impact Analysis](../economics/1-pct-treaty-impact.qmd) [@1-pct-treaty-impact-paper-2025] for the conservative case, in [The Political Dysfunction Tax](../appendix/political-dysfunction-tax.qmd) [@political-dysfunction-tax-paper-2025] for the recoverable losses across the broader governance system, and in [GDP Trajectories](../economics/gdp-trajectories.qmd) [@gdp-trajectories-paper-2025] for the optimal-governance scenario. The Court is the legal instrument that connects the indictment to the settlement. Everything else in this book describes what the settlement pays for.
+The full upside is described in the [1% Treaty Impact Analysis](../economics/1-pct-treaty-impact.qmd) [@1-pct-treaty-impact-paper-2025] for the conservative case, in [The Political Dysfunction Tax](../appendix/political-dysfunction-tax.qmd) [@political-dysfunction-tax-paper-2025] for the recoverable losses across the broader governance system, and in [GDP Trajectories](../economics/gdp-trajectories.qmd) [@gdp-trajectories-paper-2025] for the best-case scenario. The Court is the legal instrument that connects the indictment to the settlement. Everything else in this book describes what the settlement pays for.
 
 ## What You Do
 
