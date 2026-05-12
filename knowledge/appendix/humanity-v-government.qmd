@@ -73,17 +73,11 @@ scores:
 
 ## Preamble
 
-The defendants are the governments of Earth. The charges are three counts of negligent mass homicide. The defendants pay their own prosecutors, judges, and juries, and write their own laws about whether anything they do can be called a crime.
+The governments of Earth are paid approximately {{< var global_government_expense_annual >}} per year [@world-bank-government-expense-pct-gdp] to promote the general welfare. Since 1900, they have spent {{< var cumulative_military_spending_fed_era >}} murdering {{< var war_deaths_since_1900_nounit >}} of their employers. The citizenry. This includes {{< var war_children_killed_since_1900_nounit >}} children, 930,000 doctors, 310,000 scientists, 620,000 engineers, 1.24 million nurses, and 3.1 million teachers [@lost-human-capital-war-cost].
 
-This case is brought by the **International Campaign to End War and Disease** (the Campaign), modeled on the International Campaign to Ban Landmines and the International Campaign to Abolish Nuclear Weapons. Both predecessor campaigns drove governments to sign treaties most governments did not want to sign. The Campaign asks governments to settle a lawsuit. The institutional architecture for the lawsuit is described in [The Court of Humanity](../solution/court-of-humanity.qmd) [@court-of-humanity-paper-2025]. The settlement vehicle is described in [The 1% Treaty](../solution/1-percent-treaty.qmd) [@1-percent-treaty-paper-2025] [@1-pct-treaty-impact-paper-2025]. The body count is described below.
+If a corporation were paid {{< var global_government_expense_annual >}} a year to promote the general welfare and it misused the funds to this degree, it would be prosecuted, fined, monitored, and its officers imprisoned. The governments wrote laws exempting themselves from exactly this prosecution. The customer base is the species, the revenue is compulsory, the body count is planetary, and the accounting department owns nuclear weapons. The standard should be higher, not lower.
 
-## Corporate Defendant Theory
-
-The jurisdictional ruling is simple: in the [Court of Humanity](../solution/court-of-humanity.qmd), [sovereign immunity](../solution/court-of-humanity.qmd) [@court-of-humanity-paper-2025] is not recognized as a defense. The defendants collectively bill the species approximately {{< var global_government_expense_annual >}} per year [@world-bank-government-expense-pct-gdp] to promote welfare, safety, health, and peace. They are therefore judged under the same corporate-defendant standard applied to any organization that takes entrusted funds, kills its own customers, fails to maintain books and records, and then asks the victims to admire the logo.
-
-Under that standard, the public is not an abstraction. Citizens and taxpayers are the customers, shareholders, employers, beneficiaries, and victims. Heads of state, ministers, legislators, agency heads, generals, central bankers, procurement officers, and defense contractors are actors inside the enterprise. The prosecution applies the same logic ordinary corporate prosecutors already use: seriousness of the offense, pervasiveness of the misconduct, management culpability, victim harm, restitution, compliance failure, individual accountability, debarment, monitors, and remedial orders [@doj-federal-prosecution-business-organizations; @ussc-organizational-guidelines-2025].
-
-The defendants will object that governments are special. The Court of Humanity answers: yes. They are special because the customer base is the species, the revenue stream is compulsory, the body count is planetary, and the accounting department owns nuclear weapons. The standard should be higher, not lower.
+The charges are three counts of negligent mass homicide. The body count follows.
 
 ## Count One: Death by War
 
@@ -212,8 +206,6 @@ The prosecution observes that Exhibit P alone, recovered, would fund the clinica
 
 ## Schedule of Formal Charges
 
-The prosecution submits the following taxonomy of formal criminal categories applicable to the defendants' conduct. The prosecution does not assert that all categories apply to all defendants in all jurisdictions. The prosecution asserts that *at least one* category applies to *each* defendant for *each* count.
-
 ### Charges Arising from Count One (Direct Killing)
 
 1. **Murder, first-degree.** Premeditated and authorized killing in offensive operations not justified by imminent threat. (E.g., Exhibits G, H.)
@@ -261,40 +253,9 @@ The eighteen charges above all describe conduct that resulted in death. They are
 
 The pattern is the precise pattern of Charge 17. Each line above is a law that catches this conduct in every other organization on Earth. Each line above has a hand-written exemption attached, drafted by the same defendants whose conduct it would otherwise catch. The Court of Humanity is the forum in which these antecedent charges become litigable, because no prior forum has refused jurisdiction over them; rather, every prior forum has had the jurisdiction surgically removed by the defendants themselves.
 
-## The Order of Prosecution
-
-The charges file in different forums, in different order, for different reasons. Count One (war) has the most viscerally obvious harm and the most jurisdictionally available forum, because existing international and domestic courts already accept wrongful-death and war-crime claims under their existing rules. Counts Two and Three, plus the antecedent financial charges, require the new institution because no existing court accepts the underlying claim. Within the Court of Humanity, the prosecution leads with the case that has the tightest causation chain. That is the audit case. After the audit case wins, Count Two follows. After Count Two wins, Count Three follows. Count One runs in parallel the entire time, in existing courts.
-
-**Audit case filed first in the [Court of Humanity](../solution/court-of-humanity.qmd).** The audit case is the tightest causation chain in this entire paper, by a margin. No counterfactual reasoning is required. The conduct is the failure to account. The damage is the unaccounted funds. The breach is the failure of fiduciary stewardship. The evidence is the {{< var pentagon_unaccounted_funds >}} of seven-times-failed audit reports, which the defendants produced themselves and have published on their own website. A jury reading the audit reports does not need to evaluate an alternate timeline. The reports state the conclusion. The defendants signed them. The audit case has no other forum because, as documented in the antecedent-charges section above, the defendants have surgically removed the jurisdiction of every existing court that might have heard it. This is itself the strongest available evidence that the Court of Humanity is necessary: not because the conduct is novel, but because the immunity is comprehensive.
-
-**Count Two filed second in the Court of Humanity.** The causal chain is the next-tightest: a specific drug existed, evidence of its efficacy existed, the government delayed its approval, a specific named person died during the delay, the drug was later approved and now saves lives in countries with faster regulatory regimes. The reasoning still involves a counterfactual ("would have lived if approved sooner"), but the counterfactual is constrained to a single drug and a single delay window. Compare to Count Three's counterfactual, which spans decades of R&D budget allocation across the entire pharmaceutical pipeline. Count Two's named victims are now indexed in the [Invisible Graveyard](invisible-graveyard.qmd), one drug at a time, with photographs and family testimony attached. This is how every major class action works. The prosecution does not sue a chemical company for "generally polluting the earth." It sues for "this specific chemical, in this specific water supply, caused this specific cancer, in these specific people." Once the prosecution wins that, it expands.
-
-**Count One in parallel, in existing courts.** Direct harm. Named victims. Photographs. Testimony. Count One does not depend on Court of Humanity precedent because it is straightforward wrongful death at scale, and existing courts already hear it. It can be filed simultaneously in the [International Criminal Court](../solution/court-of-humanity.qmd#why-existing-courts-are-insufficient-but-useful) for member-state defendants, in the European Court of Human Rights under Article 2 for European victims, and in domestic courts under FTCA-equivalent statutes (where the conduct falls outside the combatant-activities exception). These filings generate press, exercise the evidence database, and demonstrate that existing institutions are insufficient even when fed the easy cases. Wins, losses, and dismissals all advance the case for the [Court of Humanity](../solution/court-of-humanity.qmd) being necessary.
-
-**Count Three follows the audit case and Count Two.** Once the audit case establishes that the defendants are liable for stewardship failure of public funds, and Count Two establishes that the defendants are liable for health outcomes caused by their decisions, Count Three becomes a natural extension: the defendants are liable not just for the funds they cannot account for and not just for the drugs they delayed, but for the drugs that were never developed at all because the R&D budget was spent on {{< var cumulative_military_in_govt_trial_years >}} of clinical trial capacity worth of weaponry. Each prior precedent narrows the defense argument. By the time Count Three is filed, the only remaining question is scale.
-
-**Settlement as endpoint.** Once the audit-case precedent, Count Two precedent, and Count Three liability under the [Political Dysfunction Tax](political-dysfunction-tax.qmd) [@political-dysfunction-tax-paper-2025] are all established, the defendants face a structurally simple choice. They can continue litigating against billions of plaintiffs in a forum they did not design and cannot dismiss, or they can settle. The [1% Treaty](../solution/1-percent-treaty.qmd) [@1-pct-treaty-impact-paper-2025] is the settlement vehicle. The math suggests the defendants will eventually prefer to settle.
-
 ## Direct Versus Counterfactual Deaths
 
-The prosecution distinguishes between two categories of homicide for clarity.
-
-**Direct deaths (Count One)** are deaths the defendants caused by killing the victim with a weapon. The body is in the morgue because the defendant put it there.
-
-**Counterfactual deaths (Counts Two and Three)** are deaths the defendants caused by withholding the means by which the victim could have remained alive. The body is in the morgue because the defendant declined to put it elsewhere. These are not metaphysical deaths. They are real corpses, in real graves, with real grieving relatives. The defendants' contribution is the *withholding*, not the disease itself.
-
-The defense will argue that counterfactual deaths are categorically different from direct deaths. The prosecution agrees, in one specific way: counterfactual deaths are larger by a factor of approximately 30. The defense's preferred category is the smaller one.
-
-In legal doctrine, the distinction tracks **commission** versus **omission**. Common-law systems generally treat omission as criminal only where there is a duty to act. The defendants accept salaries, write founding documents, and swear oaths to act. The duty is established. The omission is established. The deaths are established. The remaining elements are present.
-
-## Proof Elements
-
-| Element | Corporate-defendant standard | Evidence in this case |
-|---|---|---|
-| Duty | The organization accepted entrusted funds for a stated public-benefit service. | Approximately {{< var global_government_expense_annual >}} per year [@world-bank-government-expense-pct-gdp], taxes, public budgets, constitutional welfare clauses, public-health mandates, defense appropriations justified as protection. |
-| Breach | Management diverted resources, ignored foreseeable harm, failed controls, and continued after warnings. | War spending, regulatory delay, military growth above the 1900 freeze, seven failed Pentagon audits, and published warnings from Eisenhower, Peltzman, Rummel, Lichtenberg, Tabarrok, and GAO. |
-| Causation | The breach directly caused deaths or foreseeably withheld the means to prevent deaths. | Count One direct killing; Count Two named treatment delays; Count Three treatment discovery and loss-of-chance causation through the medical redirect ledger. |
-| Damages | The law separates compensation, restitution, disgorgement, penalties, remediation, and settlement. | War deaths, disease deaths, healthy life-years lost, lost output, excess military spending, unaccounted funds, contractor gains, and the treaty remedy. |
+The defense will argue that counterfactual deaths (Counts Two and Three) are categorically different from direct deaths (Count One). The prosecution agrees, in one specific way: counterfactual deaths are larger by a factor of approximately 30. The defense's preferred category is the smaller one.
 
 ## Corporate Damages Schedule
 
@@ -316,12 +277,6 @@ The primary damages theory is **lost profits**, the framework antitrust and comm
 
 The body-count tiers (strict floor, prosecutor base ask, treble, *State Farm* ceiling) are **alternative pleadings**, not the primary theory. A prosecutor pleads both in the alternative and lets the court pick the recovery framework. The body-count base ask of {{< var corporate_damages_prosecutor_base_ask_per_capita >}} per person is the more cautious number a court might award if it rejects the lost-profits theory entirely.
 
-### The Lost-Prosperity-Only Single-Theory Headline
-
-A real corporate-liability prosecutor leads with **lost-profits damages**: the integral of the productive economy that didn't happen because the defendants chose the [destructive economy](../economics/gdp-trajectories.qmd) [@gdp-trajectories-paper-2025]. The lost-profits theory implicitly captures war deaths (their lost productivity), property destruction (drag on growth), and medical opportunity cost (drag on growth) as components of the same single integral. It cannot be added to the body-count tiers; it replaces them as a single-theory pleading.
-
-The lifetime-cohort number is a representative full-life exposure. It is not a uniform per-individual award: a 5-year-old, a 45-year-old, and an 85-year-old plaintiff would each have a different remaining-life horizon, and any per-individual award would scale by remaining life expectancy. The headline number is the representative cohort version used to scale the corporation's overall liability, the same way a class-action complaint pleads representative damages first and then breaks them out by sub-class.
-
 | Tier | Total exposure | Per representative person | Counting rule |
 |---|---:|---:|---|
 | **Lost-prosperity-only, lifetime undiscounted (80-year cohort)** | {{< var lost_prosperity_lifetime_damages_total >}} | **{{< var lost_prosperity_lifetime_damages_per_capita >}}** | Primary single-theory pleading: lost compound output across a representative 80-year cohort. Cannot be added to the body-count tiers; replaces them. Per-individual award scales by remaining life expectancy. |
@@ -332,8 +287,6 @@ The lifetime-cohort number is a representative full-life exposure. It is not a u
 | Constitutional-ceiling exposure under *State Farm v. Campbell* | {{< var corporate_damages_state_farm_ceiling_exposure_total >}} | {{< var corporate_damages_state_farm_ceiling_exposure_per_capita >}} | Alternative pleading. Body-count base ask plus a 9:1 punitive-to-compensatory ceiling. This is exposure, not a typical award [@state-farm-v-campbell-2003]. |
 | Ongoing lost prosperity (annual flow) | {{< var war_counterfactual_lost_gdp_global >}} per year | {{< var war_counterfactual_lost_gdp_per_capita >}}/person/year | Consequential lost-income flow. It accrues annually until the no-war growth gap is cured. The two lost-prosperity-only rows above are this same flow capitalized as a stock. |
 | Forward treaty settlement value | {{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}} | {{< var corporate_damages_forward_settlement_value_per_capita >}} | Settlement value from adopting the 1% Treaty now, not historical damages. |
-
-The lost-prosperity-only tiers and the body-count tiers are **alternative primary theories**, not additive ledgers. The body-count base ask also excludes punitive damages, disgorgement, ongoing lost-income flow (separately disclosed below), and treaty settlement value. It avoids the unsupported broader disease-delay claim that would require a separate historical disease-control model; if the prosecution later pleads a wider disease-delay sensitivity, it belongs in its own ledger with its own causation proof.
 
 ## The Aggregate Exposure
 
@@ -373,8 +326,6 @@ The prosecution calls the defendants' own experts.
 The defense's anticipated rebuttal that no one could have foreseen these consequences is hereby foreclosed. The consequences were foreseen, in print, by named experts, in the defendants' own libraries, with citations.
 
 ## The Defense Cross-Examined
-
-The prosecution has retained imaginary defense counsel to make the strongest possible case for the defendants. The defense's arguments are presented in their best form. They are then refuted using the defendants' own records.
 
 **Defense Argument 1: "The numbers are speculative. You cannot prove counterfactual deaths."**
 
@@ -476,14 +427,3 @@ The vote takes 30 seconds. It is located at [warondisease.org](https://warondise
 
 For the rational juror, refusing to vote is more expensive than voting. The defendants have arranged the procedure such that the jury will mostly refuse anyway, because the procedure is also the dysfunction.
 
-The prosecution rests, again. The verdict is yours.
-
-## Methodological Note
-
-The figures in this paper are drawn from the same parameter model used throughout the [How to End War and Disease](https://manual.warondisease.org) corpus. Each named figure links to its derivation, source citation, and sensitivity analysis in the [Parameters and Calculations appendix](parameters-and-calculations.qmd). All formulas are reproducible. All citations are verifiable. Count One uses Rummel's democide methodology plus battle and collateral civilian deaths net of overlap. Count Two uses Lichtenberg's pharmaceutical-impact framework applied to the {{< var efficacy_lag_years >}} efficacy lag. Count Three's historical ledger is in [Cost of War](../problem/cost-of-war.qmd#the-medical-opportunity-cost); its forward ledger is in [1% Treaty Impact](../economics/1-pct-treaty-impact.qmd) [@1-pct-treaty-impact-paper-2025].
-
-This is a *forensic* paper, not a polemic. The voice is alien because the prosecution is not from here. The math is human because the dead are human.
-
----
-
-*This paper is dedicated to the {{< var global_disease_deaths_per_minute_nounit >}} humans who died of preventable causes during the time it took to read it.*

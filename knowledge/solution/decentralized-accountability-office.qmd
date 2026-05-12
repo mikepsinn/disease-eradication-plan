@@ -27,11 +27,11 @@ By the time you read an audit, the money is spent, the people are gone, and the 
 // No function needed. The blockchain IS the audit.
 //
 // Every transaction is:
-//   Public          — anyone can read it
-//   Immutable       — no one can alter it
-//   Real-time       — visible in seconds, not 18 months
-//   Deterministic   — smart contracts execute exactly as written
-//   Free            — no $803M/yr budget required
+//   Public          : anyone can read it
+//   Immutable       : no one can alter it
+//   Real-time       : visible in seconds, not 18 months
+//   Deterministic   : smart contracts execute exactly as written
+//   Free            : no $803M/yr budget required
 ```
 
 When every government transaction is on a public ledger, auditing is free, instant, and automatic. There is nothing to investigate because there is nothing to hide. The ledger is the audit.
