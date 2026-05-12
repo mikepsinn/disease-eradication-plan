@@ -1,34 +1,22 @@
 ---
 title: "Humanity v. Government"
 subtitle: "An Indictment for Negligent Mass Homicide, on Three Counts"
-description: An accounting of deaths attributable to government failure across three categories (war, regulatory delay, and resource misallocation), separating historical body counts from forward-looking treaty-settlement exposure, and proposing a 1% military reallocation as the only remedy commensurate with the offense.
+description: Three counts of negligent mass homicide against the governments of Earth. The body count, the bill, and the only remedy that works on actual humans.
 abstract: |
-  Existing literatures count deaths from government failure one silo at a time.
-  Historians count war deaths. Health economists count efficacy-lag deaths. Global
-  health researchers count disease deaths. No prior paper aggregates them. This
-  paper does, while separating historical deaths from forward-looking settlement
-  exposure. We charge the governments of Earth with three categories of negligent
-  homicide and fiduciary failure: (1) Direct killing through war, conflict, and
-  democide ({{< var war_deaths_since_1900_nounit >}} deaths since 1900); (2)
-  Regulatory delay of safe and effective treatments under the {{< var efficacy_lag_years >}}
-  efficacy lag mandated since 1962 ({{< var existing_drugs_efficacy_lag_deaths_total_nounit >}}
-  deaths in existing-drug delay alone); and (3) Misallocation of resources away
-  from disease treatment. Count Three has two ledgers: a historical medical
-  opportunity cost from the 1900 war-money-to-trials counterfactual, and a
-  forward-looking treaty remedy projected to prevent
-  {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved_nounit >}} avoidable
-  deaths if adopted now. The slice of military spending above a 1900 real-spending
-  freeze alone runs to {{< var war_trial_redirect_excess_military_spending_above_1900_freeze >}},
-  equal to {{< var war_trial_redirect_excess_military_trial_years_nounit >}} years of current
-  government clinical-trial budgets. Under the primary lost-profits damages theory
-  the corporate-liability exposure is roughly
-  {{< var lost_prosperity_lifetime_damages_per_capita >}} per representative full-life
-  cohort, or {{< var lost_prosperity_npv_perpetuity_per_capita >}} per person as the
-  NPV of the perpetual annual flow at 3%. Per dollar spent, the defendants killed
-  {{< var type_ii_error_cost_ratio >}} times more people through Type II regulatory
-  errors than they prevented through Type I. The defendants had the money. They
-  spent it elsewhere. We propose a 1% reallocation of military expenditure as the
-  only remedy commensurate with the offense.
+  Historians count war deaths. Health economists count drug-delay deaths.
+  Disease researchers count disease deaths. Nobody adds them up. This paper
+  does. The governments of Earth are charged with three counts of negligent
+  mass homicide: (1) killing {{< var war_deaths_since_1900_nounit >}} people
+  through war, conflict, and democide since 1900; (2) killing
+  {{< var existing_drugs_efficacy_lag_deaths_total_nounit >}} people by blocking
+  access to drugs already proven safe, under the {{< var efficacy_lag_years >}}
+  efficacy delay mandated since 1962; and (3) spending the money that could
+  have cured diseases on weapons instead. The drug-approval system kills
+  {{< var type_ii_error_cost_ratio >}} people by blocking good drugs for every
+  one person it saves by blocking bad ones. The defendants had the money.
+  They spent it on missiles. The proposed remedy: move 1% of military
+  spending to clinical trials. The remedy pays everyone involved, because
+  that is the only kind of remedy that has ever worked on humans.
 aliases:
   - /people-of-earth-v-governments.html
   - /knowledge/appendix/people-of-earth-v-governments.html
@@ -66,7 +54,7 @@ scores:
   value: 10
   timeliness: 10
   standalone: 9
-  voice: 9
+  voice: 7
   importance: 10
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
@@ -133,7 +121,7 @@ Sam Peltzman published the seminal analysis of efficacy-lag mortality in 1973 [@
 
 ## Count Three: Death by Misallocation
 
-**Charge:** That the defendants, having access to the funds necessary to prevent disease deaths at scale, did instead allocate those funds to the capacity for additional killing under Count One. The historical ledger appears in [Cost of War](../problem/cost-of-war.qmd#the-medical-opportunity-cost): a 1900 freeze on real military spending redirected to pragmatic trials moves practical infectious disease control to {{< var war_trial_redirect_infectious_disease_control_year >}} and non-aging disease control to {{< var war_trial_redirect_nonaging_disease_control_year >}}. The forward ledger appears in [1% Treaty Impact](../economics/1-pct-treaty-impact.qmd) [@1-pct-treaty-impact-paper-2025]: treaty-scale trials prevent approximately {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved_nounit >}} future deaths if adopted now.
+**Charge:** That the defendants, having access to the funds necessary to prevent disease deaths at scale, did instead allocate those funds to the capacity for additional killing under Count One. The historical ledger appears in [Cost of War](../problem/cost-of-war.qmd#the-medical-opportunity-cost): a 1900 freeze on real military spending redirected to pragmatic trials moves practical infectious disease control to {{< var war_trial_redirect_infectious_disease_control_year >}} and non-aging disease control to {{< var war_trial_redirect_nonaging_disease_control_year >}}. The forward ledger appears in [1% Treaty Impact](../economics/1-pct-treaty-impact.qmd) [@1-percent-treaty-paper-2025] [@1-pct-treaty-impact-paper-2025]: treaty-scale trials prevent approximately {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved_nounit >}} future deaths if adopted now.
 
 ### The Evidence
 
@@ -149,7 +137,7 @@ The cumulative number of preventable deaths over that forward timeline shift is 
 
 The defendants do not lack the money. The defendants chose to spend the money on the capacity for additional killing, while the people they are tasked with protecting died of curable diseases.
 
-This is what your legal system calls *depraved indifference*: a state of mind in which the defendant knows the consequences of their action, knows the alternative was available, and proceeds anyway. The prosecution submits that there is no other defensible characterization of a budget that allocates {{< var military_to_government_clinical_trials_spending_ratio_nounit >}}-to-1 in favor of murder over medicine while {{< var global_disease_deaths_daily_nounit >}} citizens die per day of the things the medicine would have cured.
+Your legal system has a term for this: *depraved indifference*. It means you knew people would die, you knew how to stop it, and you did not care. There is no other honest description of a budget that spends {{< var military_to_government_clinical_trials_spending_ratio_nounit >}} dollars on killing for every one dollar on curing while {{< var global_disease_deaths_daily_nounit >}} citizens die per day of the things the medicine would have fixed.
 
 ### The Invisible Mass Beneath the Iceberg
 
@@ -208,50 +196,50 @@ The prosecution observes that Exhibit P alone, recovered, would fund the clinica
 
 ### Charges Arising from Count One (Direct Killing)
 
-1. **Murder, first-degree.** Premeditated and authorized killing in offensive operations not justified by imminent threat. (E.g., Exhibits G, H.)
-2. **Mass murder.** Killing of large groups under organizational direction. (E.g., Exhibits A, B.)
-3. **Genocide.** Killing with intent to destroy in whole or in part a national, ethnic, racial, or religious group. (E.g., Exhibits B, E, F.) Codified under the Genocide Convention (1948), to which most defendants are signatories.
-4. **Crimes against humanity.** Widespread or systematic attack against any civilian population. (E.g., Exhibits B, C, D, E, F.) Codified under the Rome Statute.
-5. **War crimes.** Violations of the laws and customs of war, including disproportionate civilian targeting. (E.g., Exhibits B, G, H.) Codified under the Geneva Conventions, to which all defendants are signatories.
-6. **Conspiracy to commit any of the above.** Coordinated action by multiple defendants in furtherance of any Count One charge. (Applicable to most exhibits.)
+1. **Planned murder.** They knew what they were doing and ordered it anyway. Not self-defense. Offense. (Exhibits G, H.)
+2. **Mass murder.** Killing large groups on purpose, under official orders. (Exhibits A, B.)
+3. **Genocide.** Trying to destroy an entire people because of who they are. (Exhibits B, E, F.) The defendants signed a treaty in 1948 promising not to do this. They did it anyway.
+4. **Crimes against humanity.** Attacking civilians on a large scale, systematically, as policy. (Exhibits B, C, D, E, F.)
+5. **War crimes.** Breaking the rules of war the defendants wrote for themselves. Targeting civilians. Disproportionate force. (Exhibits B, G, H.) The defendants signed the Geneva Conventions. The Conventions did not sign back.
+6. **Conspiracy.** Doing any of the above together, on purpose, with allies.
 
 ### Charges Arising from Count Two (Regulatory Delay)
 
-7. **Negligent homicide.** Causing death by failure to exercise reasonable care, with foreseeability of harm. The classical fit for the {{< var efficacy_lag_years >}} efficacy lag, where the harm was foreseen by named experts in print and the defendants proceeded anyway.
-8. **Manslaughter via gross criminal negligence.** Death caused by conduct so reckless it constitutes a gross deviation from the standard of care a reasonable person would observe. Stronger charge, applicable when the defense's conduct continued *after* the body count was published.
-9. **Depraved-indifference homicide** (also "depraved-heart murder" in some jurisdictions). Killing through conduct demonstrating extreme indifference to human life. Distinguished from negligent homicide by the *severity* of indifference. The maintenance of an efficacy regime that kills {{< var type_ii_error_cost_ratio >}} times more people than it saves, with the ratio publicly known and unaddressed for 50+ years, satisfies this standard.
-10. **Reckless endangerment.** Conduct creating substantial risk of death to others. Applicable as a lesser-included offense for officials below the policymaker level.
+7. **Killing people by not paying attention.** The legal term is "negligent homicide": you had a responsibility, you ignored it, people died, and you knew (or should have known) they would. The defendants were told in print, by named experts, that the {{< var efficacy_lag_years >}} drug delay was killing people. They kept the delay.
+8. **Killing people by being so careless it looks intentional.** The legal term is "gross criminal negligence." It applies when the carelessness is so extreme a normal person would call it insane. It applies here because the defendants continued the policy *after the body count was published.*
+9. **Killing people by not caring whether they live or die.** The legal term is "depraved indifference." You knew people would die, you knew the alternative, and you shrugged. A system that kills {{< var type_ii_error_cost_ratio >}} people quietly for every one it saves publicly, and has known that ratio for 50+ years, meets this standard.
+10. **Putting people in danger.** The legal term is "reckless endangerment." For the officials who did not set the policy but enforced it without asking questions.
 
 ### Charges Arising from Count Three (Misallocation)
 
-11. **Negligent homicide via deprivation.** Causing death by withholding resources reasonably required to prevent it, when those resources were available. Doctrinal analogues exist in failure-to-rescue cases involving fiduciaries (parents, custodians, captains of vessels).
-12. **Breach of fiduciary duty resulting in death.** The defendants accepted public funds for the explicit purpose of "promoting the general welfare." Allocating those funds to weaponry while citizens died of curable diseases is a breach of the underlying fiduciary obligation. Where the breach causes death, the breach itself becomes criminal.
-13. **Misappropriation of public funds.** Specifically applicable to Exhibit P (Pentagon's {{< var pentagon_unaccounted_funds >}}). Funds were appropriated, are unaccounted for, and seven consecutive audits have failed to locate them. In any jurisdiction other than the defendants' own, this would have produced criminal indictments.
-14. **Depraved-indifference homicide.** Same standard as Charge 9, applied to the budgetary axis rather than the regulatory axis.
+11. **Letting people die by withholding what would save them.** If a parent has food and lets a child starve, that is a crime. The defendants had the money for clinical trials. They spent it on missiles.
+12. **Breaking a promise that got people killed.** A "fiduciary" is someone trusted with other people's money for a specific purpose. The defendants were trusted with public money to "promote the general welfare." They spent it on the capacity for killing. When breaking that trust gets people killed, the breach becomes criminal.
+13. **Losing the money.** The Pentagon cannot account for {{< var pentagon_unaccounted_funds >}} across seven failed audits (Exhibit P). If you or I lost that much of someone else's money, we would be in prison. The defendants gave themselves an audit extension.
+14. **Not caring whether people live or die (budget version).** Same as Charge 9, applied to how they spent the money instead of how they approved the drugs.
 
 ### Charges Arising from the Combined Conduct
 
-15. **Conspiracy.** Multiple defendants coordinated their conduct via treaties, alliances, defense pacts, and harmonized regulatory standards. Where the coordinated conduct caused death, the coordination itself is criminal.
-16. **Aiding and abetting.** Defendants provided material support (weapons sales, intelligence sharing, regulatory copy-pasting) to other defendants engaged in the underlying offenses.
-17. **Obstruction of justice.** The defendants enacted sovereign-immunity statutes, discretionary-function exceptions, and combatant-activities exceptions specifically to prevent prosecution of the conduct at issue. Drafting and enacting laws that immunize one's own ongoing criminal conduct is itself an obstruction offense in any system that does not allow the obstructor to also serve as the legislature. The defendants do.
-18. **Continuing offense.** The conduct described herein is not historical. It is occurring during the time required to read this paper. Each minute of continuation, approximately {{< var global_disease_deaths_per_minute_nounit >}} humans die of preventable disease the misallocated resources could have been treating. Whether the deaths attach to Count Three's historical or forward ledger depends on the settlement framework adopted. The urgency does not.
+15. **Working together to do it.** The defendants coordinated through treaties, alliances, and defense pacts. When the coordination killed people, the coordination itself became criminal.
+16. **Helping each other do it.** The defendants sold each other weapons, shared intelligence, and copied each other's drug-approval rules. Each defendant helped the others commit the offenses described above.
+17. **Writing laws to avoid getting caught.** The defendants passed laws making it illegal to sue them for exactly the conduct described in this indictment. In any system where the accused is not also the legislature, writing laws to protect your own crimes is itself a crime. The defendants are also the legislature.
+18. **Still doing it.** This is not history. It is happening while you read this sentence. Every minute, approximately {{< var global_disease_deaths_per_minute_nounit >}} humans die of diseases the misallocated money could have been treating. The killing has not stopped. The charges are not past tense.
 
-### Antecedent Charges (No Death Element, Inapplicable Due to Self-Exemption)
+### Antecedent Charges (Laws That Would Apply If the Defendants Had Not Exempted Themselves)
 
-The eighteen charges above all describe conduct that resulted in death. They are the indictment proper. Before the indictment proper, however, sits a separate category of charges: the financial-stewardship offenses that any private organization would face for losing track of {{< var pentagon_unaccounted_funds >}} across seven consecutive failed audits. These charges do not appear in the indictment because, in each case, the defendants exempted themselves from the relevant law. The list below records what the exemptions hide. Each exemption is a separate count of Charge 17 (obstruction of justice).
+The eighteen charges above all resulted in death. Before those sit a separate category: the financial crimes any private organization would face for losing {{< var pentagon_unaccounted_funds >}} across seven consecutive failed audits. These charges cannot currently be brought, because in every case, the defendants wrote themselves an exemption. Each exemption is a separate count of Charge 17 (writing laws to avoid getting caught).
 
-19. **Wire fraud** (18 U.S.C. § 1343 in the United States; analogous statutes elsewhere). Use of interstate wire communication in furtherance of a scheme to defraud. Each transaction is a separate count. *Inapplicable to the defendants because* federal wire-fraud statutes have been judicially construed to exclude government officials acting in official capacity, even where the conduct would be a felony if committed by anyone else.
-20. **Mail fraud** (18 U.S.C. § 1341). Same conduct using postal infrastructure. *Same exemption.*
-21. **Securities fraud** (15 U.S.C. § 78j(b); SEC Rule 10b-5). Material misstatements or omissions affecting investor decisions. *Inapplicable because* governments do not issue securities through the SEC and are therefore not subject to disclosure requirements that apply to every publicly traded company.
-22. **Sarbanes-Oxley §302 and §404 violations** (15 U.S.C. § 7241, § 7262). CEO and CFO personal certification of internal controls and financial statements; criminal liability for false certification. The Department of Defense's seven failed audits would, in any company subject to SOX, have produced multiple §404 enforcement actions and personal liability for the certifying officers. *Inapplicable because* SOX explicitly exempts federal agencies.
-23. **False Claims Act violations** (31 U.S.C. § 3729). Treble damages for false claims submitted to the federal government. *Inapplicable because* the Act runs against contractors who defraud the government, not against the government itself when the government cannot account for what it spent.
-24. **Conversion.** Civil tort for the wrongful exercise of dominion over the property of another. *Inapplicable because* the FTCA's discretionary-function exception immunizes budget allocation, accounting, and audit-response decisions as "policy choices."
-25. **Embezzlement** (18 U.S.C. § 641 for federal employees, but routinely under-enforced for unaccounted appropriations). *Inapplicable in practice because* the prosecutorial discretion to charge sits with the same Department of Justice that represents the defendants in every other forum.
-26. **Breach of fiduciary duty for stewardship of public funds.** A 501(c)(3) nonprofit chartered to "promote the general welfare" would face state Attorney General enforcement, donor-class actions, and revocation of nonprofit status for losing track of any non-trivial fraction of its budget. *Inapplicable because* the federal government is neither a charitable corporation nor subject to state Attorney General enforcement of its fiduciary obligations.
-27. **Failure to maintain books and records.** Required of every regulated entity in the country. *Inapplicable because* the Chief Financial Officers Act of 1990 requires federal agencies to produce auditable financial statements but provides no enforcement mechanism when they do not. The Department of Defense has not produced a clean audit since the requirement took effect.
-28. **Loss of fiduciary contracts and federal-contracting eligibility.** A private contractor with seven consecutive failed audits would be debarred from federal contracting (3-year minimum, lifetime possible) and lose every fiduciary engagement. *Inapplicable because* the Department of Defense is the federal contracting authority and cannot be debarred from itself.
+19. **Fraud by wire** (18 U.S.C. § 1343). Using electronic communications to steal. *Cannot be charged because* the courts decided government officials acting in their official capacity are exempt, even when the same conduct by anyone else is a felony.
+20. **Fraud by mail** (18 U.S.C. § 1341). Same thing, using the postal system. *Same exemption.*
+21. **Lying to investors** (15 U.S.C. § 78j(b)). Misleading people about what you did with their money. *Cannot be charged because* governments do not have to follow the disclosure rules that every publicly traded company must follow.
+22. **Refusing to certify the books are accurate** (Sarbanes-Oxley, 15 U.S.C. § 7241, § 7262). After the Enron scandal, the law required corporate executives to personally sign off that their financial statements are real. Seven failed Pentagon audits would have sent corporate officers to prison. *Cannot be charged because* the law explicitly exempts federal agencies.
+23. **Filing false claims** (31 U.S.C. § 3729). When a contractor lies about what they spent government money on, the penalty is triple damages. *Cannot be charged because* the law only punishes people who defraud the government, not the government when it cannot account for what it spent itself.
+24. **Taking other people's property.** The legal term is "conversion." *Cannot be charged because* the defendants classified their own budget decisions as "policy choices," which are immune from lawsuits.
+25. **Stealing from the till** (18 U.S.C. § 641). The legal term is "embezzlement." *Cannot be charged in practice because* the office that decides whether to prosecute (the Department of Justice) also represents the defendants in court. They are their own prosecutor.
+26. **Betraying the trust placed in them as managers of public money.** A charity that lost track of this much money would be shut down by the state attorney general. *Cannot be charged because* the federal government is not classified as a charity and is not subject to the same oversight.
+27. **Not keeping books.** Every business in the country is required to maintain financial records. *Cannot be charged because* the law that requires federal agencies to produce auditable financial statements (1990) has no penalty for ignoring it. The Pentagon has not produced a clean audit since the law took effect.
+28. **Getting fired.** A private contractor with seven failed audits would be banned from government work for a minimum of three years, and possibly for life. *Cannot be charged because* the Pentagon is the contracting authority and cannot ban itself.
 
-The pattern is the precise pattern of Charge 17. Each line above is a law that catches this conduct in every other organization on Earth. Each line above has a hand-written exemption attached, drafted by the same defendants whose conduct it would otherwise catch. The Court of Humanity is the forum in which these antecedent charges become litigable, because no prior forum has refused jurisdiction over them; rather, every prior forum has had the jurisdiction surgically removed by the defendants themselves.
+The pattern is Charge 17, repeated ten times. Each line above is a law that catches this exact conduct in every other organization on Earth. Each line has a handwritten exemption attached, drafted by the same defendants whose conduct it would otherwise catch. The [Court of Humanity](../solution/court-of-humanity.qmd) [@court-of-humanity-paper-2025] exists because every prior court had its jurisdiction surgically removed by the defendants themselves.
 
 ## Direct Versus Counterfactual Deaths
 
@@ -259,34 +247,34 @@ The defense will argue that counterfactual deaths (Counts Two and Three) are cat
 
 ## Corporate Damages Schedule
 
-The audit row is the tightest single damages number in the case. Everything else is larger. This one is easiest to prove: the defendants published the failed audits themselves.
+If the defendants were a corporation, here is what the bill would look like. The audit row is the easiest to prove: the defendants published the failed audits themselves.
 
-| Damages category | Corporate analog | Measure in this case | Counting rule |
+| What they owe for | What a corporation would call it | The number | Notes |
 |---|---|---|---|
-| Compensatory war harm | Wrongful death, injury, property destruction, environmental tort | {{< var war_deaths_since_1900_nounit >}} deaths; {{< var war_total_cost_since_1900 >}} historical sunk cost, including {{< var war_qaly_value_lost_since_1900 >}} in stolen life-year value | Do not add the included QALY component again as a separate central number. |
-| Consequential medical harm | Failure to perform paid safety and welfare service | Existing-drug efficacy lag plus the 1900 medical redirect counterfactual in [Cost of War](../problem/cost-of-war.qmd#the-medical-opportunity-cost) | Plead as consequential and loss-of-chance damages, not literal proof that every disease death has one named defendant. |
-| Restitution | Return misused entrusted funds | {{< var war_trial_redirect_excess_military_spending_above_1900_freeze >}} above the 1900 freeze | This is the medical redirect pot, not the whole war-cost ledger. |
-| Audit and books-records exposure | False Claims Act, Sarbanes-Oxley, fiduciary accounting | {{< var pentagon_unaccounted_funds >}} unaccounted; {{< var pentagon_unaccounted_false_claims_analog_exposure >}} under a {{< var corporate_analog_false_claims_treble_multiplier >}} False Claims Act-style analogy [@doj-false-claims-act] | The treble figure is an analogy to corporate treatment of false public-money claims, not a claim that existing sovereign courts already apply the FCA to governments. |
-| Disgorgement | Remove gains retained from the offense | Defense-contractor gains, revolving-door compensation, war-profiteering proceeds, procurement rents | Qualitative in this version unless a verified profit or gross-receipts parameter is added. |
-| Remediation | Monitor, trust fund, debarment, corrective action | 1% Treaty funding, clinical-trial trust, independent audit monitor, debarment and clawbacks where traceable | Forward-looking remedy, priced separately from historical damages. |
-| Punitive and exemplary exposure | Willful-recklessness penalty | Pleaded for repeated warnings ignored after the body count was knowable | Kept separate from compensatory and restitution ledgers. |
+| Killing people in wars | Wrongful death and property destruction | {{< var war_deaths_since_1900_nounit >}} deaths; {{< var war_total_cost_since_1900 >}} in total cost, including {{< var war_qaly_value_lost_since_1900 >}} in stolen years of life | The life-years are already included in the total. Do not count them twice. |
+| Letting people die of diseases they could have treated | Failure to do the job they were paid for | Existing-drug delay deaths plus the medical research that was never funded because the money went to weapons ([Cost of War](../problem/cost-of-war.qmd#the-medical-opportunity-cost)) | The prosecution does not need to prove that every disease death has one named defendant. The pattern is enough. |
+| Giving the money back | Returning misused funds to their owners | {{< var war_trial_redirect_excess_military_spending_above_1900_freeze >}} above what they needed to spend at 1900 levels | This is the excess military money that could have gone to trials. Not the entire war budget. |
+| Losing the money and failing audits | The "where did the money go" penalty | {{< var pentagon_unaccounted_funds >}} unaccounted; {{< var pentagon_unaccounted_false_claims_analog_exposure >}} if you apply the standard corporate penalty of {{< var corporate_analog_false_claims_treble_multiplier >}} (triple damages for lying about public money) [@doj-false-claims-act] | The triple-damages figure is what a corporation would owe. It is an analogy. No existing court currently applies this to governments. |
+| Making them give back the profits | Forcing the winners to return their winnings | Defense-contractor profits, revolving-door salaries, war-profiteering proceeds | Not yet calculated. Qualitative until a verified profit number is added. |
+| Fixing the problem | Monitoring, trust fund, corrective action | 1% Treaty funding, clinical-trial trust, independent auditor, bans and clawbacks where traceable | Forward-looking. Priced separately from historical damages. |
+| Punishment for doing it on purpose | A penalty for being warned and ignoring the warning | Pleaded for repeated warnings ignored after the body count was knowable | Separate from compensation. This is the "you knew and you kept doing it" penalty. |
 
 ## The Prosecutor's Demand
 
-The primary damages theory is **lost profits**, the framework antitrust and commercial-litigation prosecutors actually lead with. Treated as a corporation paid {{< var global_government_expense_annual >}} per year to promote welfare, safety, health, and peace, the defendants face a representative full-life cohort exposure of {{< var lost_prosperity_lifetime_damages_per_capita >}} per person (undiscounted, 80-year horizon) or {{< var lost_prosperity_npv_perpetuity_per_capita >}} per person as the NPV of the perpetual annual lost-income flow at the standard 3% social discount rate.
+The main argument is simple: the defendants were paid to make the world better, and they didn't. The money humanity lost because the defendants chose war over medicine is the primary bill. Treated as a corporation paid {{< var global_government_expense_annual >}} per year to promote welfare, safety, health, and peace, the defendants owe each person {{< var lost_prosperity_lifetime_damages_per_capita >}} over a lifetime (80 years, not adjusted for inflation) or {{< var lost_prosperity_npv_perpetuity_per_capita >}} per person if you calculate what that lost income stream is worth in today's money (at the standard 3% discount rate economists use).
 
-The body-count tiers (strict floor, prosecutor base ask, treble, *State Farm* ceiling) are **alternative pleadings**, not the primary theory. A prosecutor pleads both in the alternative and lets the court pick the recovery framework. The body-count base ask of {{< var corporate_damages_prosecutor_base_ask_per_capita >}} per person is the more cautious number a court might award if it rejects the lost-profits theory entirely.
+The body-count rows below are the backup argument. A prosecutor presents both and lets the court pick. The body-count base ask of {{< var corporate_damages_prosecutor_base_ask_per_capita >}} per person is the more cautious number a court might award if it rejects the lost-income theory entirely.
 
-| Tier | Total exposure | Per representative person | Counting rule |
+| What is being measured | Total | Per person | How it is counted |
 |---|---:|---:|---|
-| **Lost-prosperity-only, lifetime undiscounted (80-year cohort)** | {{< var lost_prosperity_lifetime_damages_total >}} | **{{< var lost_prosperity_lifetime_damages_per_capita >}}** | Primary single-theory pleading: lost compound output across a representative 80-year cohort. Cannot be added to the body-count tiers; replaces them. Per-individual award scales by remaining life expectancy. |
-| **Lost-prosperity-only, NPV perpetuity at 3% (no-cure baseline)** | {{< var lost_prosperity_npv_perpetuity_total >}} | **{{< var lost_prosperity_npv_perpetuity_per_capita >}}** | Net present value of the perpetual annual lost-income flow at the standard 3% social discount rate, under a no-cure / no-convergence baseline. Sensitivity exposure; a finite-horizon convergence assumption shrinks it slightly (~5% reduction at 100 years). |
-| Strict non-duplicative floor (body-count alternative) | {{< var corporate_damages_strict_floor_total >}} | {{< var corporate_damages_strict_floor_per_capita >}} | Alternative pleading. War-death VSL, existing-drug efficacy-lag VSL, property plus environmental destruction, excess military spending above the 1900 freeze, and the Pentagon FCA-style penalty increment. |
-| Prosecutor body-count base ask | {{< var corporate_damages_prosecutor_base_ask_total >}} | {{< var corporate_damages_prosecutor_base_ask_per_capita >}} | Alternative pleading. Strict floor plus {{< var corporate_damages_drugs_never_developed_deaths_nounit >}} aggressive pleading deaths from drugs never developed. |
-| Treble-style exposure (body-count) | {{< var corporate_damages_treble_exposure_total >}} | {{< var corporate_damages_treble_exposure_per_capita >}} | Alternative pleading. False Claims Act-style trebling of the body-count base ask, pleaded as penalty exposure rather than ordinary compensation [@doj-false-claims-act]. |
-| Constitutional-ceiling exposure under *State Farm v. Campbell* | {{< var corporate_damages_state_farm_ceiling_exposure_total >}} | {{< var corporate_damages_state_farm_ceiling_exposure_per_capita >}} | Alternative pleading. Body-count base ask plus a 9:1 punitive-to-compensatory ceiling. This is exposure, not a typical award [@state-farm-v-campbell-2003]. |
-| Ongoing lost prosperity (annual flow) | {{< var war_counterfactual_lost_gdp_global >}} per year | {{< var war_counterfactual_lost_gdp_per_capita >}}/person/year | Consequential lost-income flow. It accrues annually until the no-war growth gap is cured. The two lost-prosperity-only rows above are this same flow capitalized as a stock. |
-| Forward treaty settlement value | {{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}} | {{< var corporate_damages_forward_settlement_value_per_capita >}} | Settlement value from adopting the 1% Treaty now, not historical damages. |
+| **Lost income over a lifetime (primary argument)** | {{< var lost_prosperity_lifetime_damages_total >}} | **{{< var lost_prosperity_lifetime_damages_per_capita >}}** | The main bill. How much richer everyone would be over 80 years if the defendants had done their job. This replaces the body-count rows; you cannot add both. |
+| **Lost income, valued in today's money** | {{< var lost_prosperity_npv_perpetuity_total >}} | **{{< var lost_prosperity_npv_perpetuity_per_capita >}}** | Same lost income, but expressed as what it is worth right now (using the standard 3% discount rate). Slightly smaller (~5%) if you assume the gap eventually closes. |
+| Minimum provable damages (body-count backup) | {{< var corporate_damages_strict_floor_total >}} | {{< var corporate_damages_strict_floor_per_capita >}} | Backup argument. Only the deaths and costs that are hardest to dispute: war deaths, drug-delay deaths, property destruction, excess military spending, and the Pentagon audit penalty. |
+| Prosecutor's base ask (body-count) | {{< var corporate_damages_prosecutor_base_ask_total >}} | {{< var corporate_damages_prosecutor_base_ask_per_capita >}} | Backup argument. Minimum plus {{< var corporate_damages_drugs_never_developed_deaths_nounit >}} additional deaths from drugs that were never developed because the money went to weapons. |
+| Triple damages (body-count) | {{< var corporate_damages_treble_exposure_total >}} | {{< var corporate_damages_treble_exposure_per_capita >}} | Backup argument. The base ask tripled, which is the standard corporate penalty for lying about public money [@doj-false-claims-act]. |
+| Maximum penalty under U.S. Supreme Court precedent | {{< var corporate_damages_state_farm_ceiling_exposure_total >}} | {{< var corporate_damages_state_farm_ceiling_exposure_per_capita >}} | Backup argument. The base ask plus a 9-to-1 punishment multiplier, which is the constitutional ceiling the Supreme Court set in *State Farm v. Campbell* (2003) [@state-farm-v-campbell-2003]. This is the upper bound, not a typical award. |
+| Lost income each year (ongoing) | {{< var war_counterfactual_lost_gdp_global >}} per year | {{< var war_counterfactual_lost_gdp_per_capita >}}/person/year | This is how much poorer the world is *every year* because of the defendants' choices. It keeps adding up until the damage is repaired. The lifetime rows above are this same number added up over time. |
+| Settlement value of adopting the 1% Treaty now | {{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}} | {{< var corporate_damages_forward_settlement_value_per_capita >}} | Not a historical bill. This is what humanity gains if the defendants agree to the remedy today. |
 
 ## The Aggregate Exposure
 
@@ -294,18 +282,18 @@ The body-count tiers (strict floor, prosecutor base ask, treble, *State Farm* ce
 |---|---|---|---|
 | One | Direct killing through war, conflict, democide | {{< var war_deaths_since_1900_nounit >}} | 1900-present |
 | Two | Regulatory delay of safe-and-effective drugs | {{< var existing_drugs_efficacy_lag_deaths_total_nounit >}} | 1962-present |
-| Three | Misallocation away from disease treatment | Historical medical opportunity cost plus {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved_nounit >}} future deaths preventable by settlement | 1900 counterfactual plus forward remedy |
+| Three | Spending the cure money on weapons | Historical deaths from trials never funded, plus {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved_nounit >}} future deaths preventable if the remedy is adopted now | 1900 to present, plus forward |
 
-This table is deliberately not a simple body-count addition. Counts One and Two are historical mortality claims. Count Three has two ledgers: the historical opportunity cost of trials not run, documented in [Cost of War](../problem/cost-of-war.qmd#the-medical-opportunity-cost), and the forward treaty value of trials still possible, modeled in [1% Treaty Impact](../economics/1-pct-treaty-impact.qmd).
+You cannot simply add these three numbers together. Counts One and Two are people already dead. Count Three has two parts: the historical cost of trials never funded (documented in [Cost of War](../problem/cost-of-war.qmd#the-medical-opportunity-cost)), and the future lives saveable if the defendants agree to the remedy now (modeled in [1% Treaty Impact](../economics/1-pct-treaty-impact.qmd)).
 
 The prosecution wishes to note that this is a conservative tally. It excludes:
 
 1. **Sanctions deaths.** Recent research estimates approximately 38 million deaths over 50 years from economic sanctions, not separately counted here to avoid double-counting with war and misallocation.
 2. **COVID delay deaths.** Estimates ranging from hundreds of thousands to several million globally, attributable to delayed regulatory response during the pandemic.
-3. **Drugs never developed.** The historical efficacy-lag count assumes drugs that were eventually developed and approved. It excludes drugs that were never developed because the regulatory cost made them economically unviable. This exclusion alone may double or triple Count Two.
-4. **Compound effects.** Wars destroyed scientists, doctors, and engineers (Count One) who would have prevented deaths in Counts Two and Three. The counts are sequential, not summative; the actual interaction is multiplicative.
+3. **Drugs never developed.** Count Two only counts drugs that were eventually approved but arrived late. It does not count drugs that were never made at all, because the approval process was so expensive that nobody tried. This exclusion alone may double or triple Count Two.
+4. **Compound effects.** Wars killed the scientists, doctors, and engineers (Count One) who would have prevented the deaths in Counts Two and Three. The counts feed into each other. Kill the researchers, lose the cures, lose the people the cures would have saved.
 
-The exposure is therefore a *floor*, not a ceiling. The exact court demand should itemize ledgers, not mash VSL, DALYs, GDP, and punitive damages into one suspiciously round monster number.
+The total is therefore a *floor*, not a ceiling. The actual number is larger. The court should keep each category separate and not mash the value of lives, lost health, lost income, and punishment penalties into one suspiciously round monster number.
 
 ## Witnesses for the Prosecution
 
@@ -368,22 +356,22 @@ The [decentralized FDA](../solution/dfda.qmd) model proposed in [@dfda-spec-pape
 
 The defense will argue that the proper remedy for misallocation is electoral, not judicial. Voters can replace governments that misallocate. The system is self-correcting.
 
-*Rebuttal:* The Princeton-Northwestern study by Gilens and Page (2014) found a correlation of approximately *zero* between the policy preferences of the median U.S. voter and the policy outcomes that actually occur. Wealthy elites and organized interest groups have meaningful influence. The median voter does not. The "accountability" the defense invokes is a procedural simulation of accountability, not the substance of it. The defense is welcome to produce the regression that contradicts Gilens-Page. They will not, because the regression does not exist. The defense's "remedy" is a vending machine that takes coins and dispenses nothing. The prosecution submits that a remedy that does not function is not a remedy.
+*Rebuttal:* Researchers at Princeton and Northwestern (Gilens and Page, 2014) checked whether what ordinary voters want has any effect on what the government actually does. The answer was approximately zero. Rich people and organized interest groups get what they want. Regular voters do not. The "accountability" the defense is describing is a voting booth that does not connect to anything. The defense is welcome to produce the study that proves otherwise. They will not, because the study does not exist. A vending machine that takes coins and dispenses nothing is not a vending machine. A remedy that does not function is not a remedy.
 
 **Defense Argument 6: "These are policy disagreements, not crimes. The prosecution is criminalizing politics."**
 
 The defense will argue that public budgets, regulatory standards, and military allocations are quintessentially political questions, and that calling them criminal is rhetorical inflation that confuses honest disagreement with malice.
 
-*Rebuttal:* The prosecution charged *negligent* homicide, not murder. Negligent homicide does not require malice or intent. It requires four elements: (a) the defendant owed a duty of care; (b) the defendant breached that duty; (c) the breach caused death; (d) a reasonable person in the defendant's position would have known of the risk. All four are satisfied:
+*Rebuttal:* The prosecution charged *negligent* homicide, not murder. We are not saying they wanted people dead. We are saying they should have known people would die, because they were told. Negligent homicide requires four things: (a) you had a responsibility; (b) you failed at it; (c) people died because you failed; (d) a reasonable person in your position would have seen it coming. All four:
 
-- *Duty of care:* The defendants accept salaries from the citizenry for the explicit purpose of "promoting the general welfare." This is not in dispute. It is in the founding documents.
-- *Breach:* {{< var military_to_government_clinical_trials_spending_ratio_nounit >}}-to-1 allocation toward killing capacity over disease research is not "promoting the general welfare" by any operational definition.
-- *Causation:* Mathematically demonstrated in Counts One through Three.
-- *Foreseeability:* Eisenhower (1961). Peltzman (1973). Tabarrok (ongoing for 20 years). Lichtenberg (multiple peer-reviewed papers). Rummel (1994). The Government Accountability Office (seven separate audits). The risks were not merely foreseeable. They were *foreseen, in print, by named experts, repeatedly, in the defendants' own libraries, with citations*.
+- *Responsibility:* The defendants are paid by the public to "promote the general welfare." This is in the founding documents.
+- *Failure:* Spending {{< var military_to_government_clinical_trials_spending_ratio_nounit >}} dollars on weapons for every one dollar on disease research is not "promoting the general welfare" by any definition.
+- *Death:* Counts One through Three.
+- *They were told:* Eisenhower (1961). Peltzman (1973). Tabarrok (ongoing for 20 years). Lichtenberg (multiple papers). Rummel (1994). The Government Accountability Office (seven audits). The risks were not merely foreseeable. They were *foreseen, in print, by named experts, in the defendants' own libraries, with citations*.
 
-The defense's framing of this as "honest disagreement" requires a redefinition of "honest" so broad it loses operational meaning. When the body count exceeds the combined toll of the Black Death, both World Wars, and the 1918 pandemic, "policy disagreement" is no longer the right grammatical category. The prosecution submits that the defendants voted on the slave trade. The vote did not make the trade ethical. The defendants voted on Apartheid. The vote did not make Apartheid ethical. Voting on a thing does not transmute the thing into not-a-crime. It merely launders the responsibility across enough hands that no individual hand can be held.
+When the body count exceeds the combined toll of the Black Death, both World Wars, and the 1918 pandemic, "policy disagreement" is no longer the right word. The defendants voted on the slave trade. The vote did not make the trade ethical. The defendants voted on Apartheid. The vote did not make Apartheid ethical. Voting on a thing does not turn the thing into not-a-crime. It just spreads the blame across enough hands that no single hand can be held.
 
-**Defense Argument 7: "[Sovereign immunity](../solution/court-of-humanity.qmd). You cannot bring this case in any court that exists."**
+**Defense Argument 7: "[Sovereign immunity](../solution/court-of-humanity.qmd) [@court-of-humanity-paper-2025]. You cannot bring this case in any court that exists."**
 
 The defense will argue that existing sovereign courts decline the indictment because governments cannot be sued without their own consent. The Federal Tort Claims Act explicitly excludes military activities and discretionary policy choices, which is the entire prosecution's case. The defendants will call this jurisdiction.
 
@@ -391,11 +379,11 @@ The defense will argue that existing sovereign courts decline the indictment bec
 
 The defendants wrote the laws that immunize the defendants from prosecution for the specific conduct alleged. They did not do this accidentally. They did this because they understood the conduct was indictable under any neutral standard, and chose to engineer the standard rather than the conduct. This is itself the most damning piece of evidence in the case. *The defendants' first response to discovering the body count was to make the body count un-litigable.*
 
-The prosecution's response is the [Court of Humanity](../solution/court-of-humanity.qmd), a decentralized adjudication mechanism that derives legitimacy from human consent rather than sovereign consent, with verdicts rendered by verified humans and judgments enforced not by coercion but by capital-markets pricing of the resulting liability. The defendants cannot withdraw consent that was never theirs to give. Applying standard regulatory life valuations to the historical body counts, and then separately pricing the forward settlement exposure, yields economic exposure far beyond any government's ability to pay. The defendants cannot pay the full exposure. They can, however, settle. The [1% Treaty](../solution/1-percent-treaty.qmd) [@1-pct-treaty-impact-paper-2025] is the settlement vehicle.
+The prosecution's response is the [Court of Humanity](../solution/court-of-humanity.qmd). It gets its authority from people, not governments. Verdicts are rendered by verified humans. Judgments are enforced not by force but by pricing: if the world's financial markets agree the defendants owe the bill, the defendants owe the bill. The defendants cannot withdraw consent that was never theirs to give. The bill, calculated from the body count using standard government-approved life valuations, is far more than any government can pay. They cannot pay the full amount. They can, however, settle. The [1% Treaty](../solution/1-percent-treaty.qmd) [@1-pct-treaty-impact-paper-2025] is the settlement offer.
 
-The prosecution therefore brings this case in the only court that did not sign the defendants' waiver: the court of humanity itself. The remedy is awarded by humans noticing that the procedural shield exists, refusing to respect it, and pricing the defendants accordingly.
+This case is therefore brought in the only court that did not sign the defendants' waiver: the court of humanity itself. The remedy is awarded by humans noticing that the shield exists, refusing to respect it, and pricing the defendants accordingly.
 
-The defense's procedural argument is not a defense in this court. It is the reason for [Article VI of the proposed remedy](../solution/1-percent-treaty.qmd), which routes enforcement through bondholder lawsuits rather than citizen lawsuits, taking advantage of the one category of plaintiff the defendants cannot ignore: rich people with retainer agreements.
+The defense's procedural argument is not a defense here. It is the reason for [Article VI of the proposed remedy](../solution/1-percent-treaty.qmd), which routes enforcement through bondholder lawsuits instead of citizen lawsuits. The one category of plaintiff the defendants cannot ignore: rich people with lawyers on retainer.
 
 **Defense Argument 8: "These deaths were the price of civilization. Without governments, the toll would be worse."**
 
