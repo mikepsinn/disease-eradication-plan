@@ -44,34 +44,17 @@ If this is worth a conversation, I can send a one-page brief and a 90-day pilot 
 Best,
 [Name]
 
-## Cold Email: Slightly Longer Version
+## Longer Version (Use If You Need Context)
 
 Hi [Name],
 
-The project is called the [Earth Optimization Prize](earth-optimization-prize.qmd). Short version: it is a public contest for discovering better plans to redirect resources from war to medicine, with a scoreboard, red-team review, and a referral mechanism that makes public support visible.
+The [destructive economy](../economics/gdp-trajectories.qmd) [@gdp-trajectories-paper-2025] (military spending, cybercrime, related extraction) is {{< var global_destructive_economy_pct_gdp >}} of GDP and growing faster than the productive economy. The modeled upside of changing course is {{< var treaty_trajectory_lifetime_income_gain_per_capita >}} to {{< var wishonia_trajectory_lifetime_income_gain_per_capita >}} in lifetime income per person. The bottleneck is not ideas. It is the absence of any public process that can compare plans, test them, and make support countable.
 
-The reason it matters: the [destructive economy](../economics/gdp-trajectories.qmd) [@gdp-trajectories-paper-2025] (military spending plus cybercrime plus related extraction) is already {{< var global_destructive_economy_pct_gdp >}} of GDP and growing faster than the productive economy. The modeled upside of changing course is {{< var treaty_trajectory_lifetime_income_gain_per_capita >}} to {{< var wishonia_trajectory_lifetime_income_gain_per_capita >}} in lifetime income per person. The bottleneck is not ideas. It is the absence of any public process that can compare plans, test them against critics, and make support countable.
+I built one. It is called the [Earth Optimization Prize](earth-optimization-prize.qmd): a public contest with a scoreboard, red-team bounties, and a referral mechanism. Most of the software is already live ([Optimitron](https://optomitron.com), [open source](https://github.com/mikepsinn/optomitron)).
 
-I am not asking [Institution] to endorse the current draft. I am asking whether [Institution] would host a 90-day pilot:
+Would [Institution] host a 90-day pilot? Publish the rules, convene a panel, fund red-team bounties, launch the scoreboard, admit the first submissions. Not endorsing the plan. Hosting the process that finds out whether the plan survives contact with critics.
 
-1. publish the contest rules,
-2. convene a credible review panel,
-3. fund red-team bounties,
-4. launch the first public scoreboard,
-5. admit the first serious submissions.
-
-Most of the software already exists publicly:
-
-- [Optimitron](https://optomitron.com) (live application)
-- [Optimitron repository](https://github.com/mikepsinn/optomitron) (open source)
-
-So this is not a request to fund a concept. It is a request to host the first credible public review of something already built.
-
-If useful, I can send:
-
-1. a one-page brief,
-2. the initiating-host memo,
-3. the 90-day pilot proposal.
+I can send a one-page brief, the [initiating-host memo](initiating-node-memo.qmd), or the [90-day pilot proposal](../grant-proposal/earth-optimization-prize-90-day-pilot.qmd).
 
 Best,
 [Name]
@@ -80,53 +63,35 @@ Best,
 
 Hi [Name],
 
-[Mutual contact] suggested I reach out. I think this fits what [Institution] cares about.
+[Mutual contact] suggested I reach out. I built a public contest for discovering better plans to redirect resources from destruction to medicine. Live at [Optimitron](https://optomitron.com), [open source](https://github.com/mikepsinn/optomitron).
 
-I built a system called the [Earth Optimization Prize](earth-optimization-prize.qmd): a public contest for discovering better plans to shift resources from destruction to medicine. Live components are already public through [Optimitron](https://optomitron.com) and its [open-source repository](https://github.com/mikepsinn/optomitron).
+Would [Institution] host a 90-day pilot? Publish the contest, convene the panel, fund red-team bounties, launch the scoreboard. You start the process. You do not own it.
 
-The ask: would [Institution] host a 90-day pilot? That means publishing the contest, convening the panel, funding red-team review, and launching the first public scoreboard. It does **not** mean endorsing the plan or becoming the permanent owner of anything.
-
-If that sounds worth a conversation, I can send a short brief or do a quick call.
+Short brief or quick call, your pick.
 
 Best,
 [Name]
 
-## Follow-Up Email
+## Follow-Up
 
 Hi [Name],
 
-Following up on the note below in case the pilot-host role is relevant for [Institution].
+Following up. The short version: the software is already built, the ask is a bounded 90-day pilot, the host starts the process but does not own it.
 
-The short version is:
+Two shortest background docs:
 
-1. the project already has a substantial implementation base,
-2. the ask is a bounded 90-day pilot,
-3. the host starts the process but does not own it.
+- [Why Host This](initiating-node-memo.qmd)
+- [90-Day Pilot Proposal](../grant-proposal/earth-optimization-prize-90-day-pilot.qmd)
 
-If it helps, the two shortest background docs are:
-
-- [Why Your Institution Should Be The Initiating Node](initiating-node-memo.qmd)
-- [Earth Optimization Prize 90-Day Pilot](../grant-proposal/earth-optimization-prize-90-day-pilot.qmd)
-
-Happy to send a cleaner PDF version or adjust for your internal review process.
-
-Best,  
+Best,
 [Name]
 
-## Suggested Attachments
+## Attachments (In Order)
 
-If you send an outreach email, attach or link these in this order:
-
-1. [Why Your Institution Should Be The Initiating Node](initiating-node-memo.qmd)
-2. [The Initiating Node Memo](initiating-node-memo.qmd)
-3. [Earth Optimization Prize 90-Day Pilot](../grant-proposal/earth-optimization-prize-90-day-pilot.qmd)
-4. [The Earth Optimization Prize](earth-optimization-prize.qmd)
+1. [The Initiating Node Memo](initiating-node-memo.qmd)
+2. [Earth Optimization Prize 90-Day Pilot](../grant-proposal/earth-optimization-prize-90-day-pilot.qmd)
+3. [The Earth Optimization Prize](earth-optimization-prize.qmd)
 
 ## Call Goal
 
-The first call is successful if it produces one of these:
-
-1. a request for the pilot package,
-2. an internal forward to the right program lead,
-3. a request for a tailored version of the brief,
-4. a clear no with reasons specific enough to improve the next approach.
+A successful first call produces one of: a request for the pilot package, an internal forward to the right person, or a clear no with reasons specific enough to improve the next approach.

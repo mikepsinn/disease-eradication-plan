@@ -17,11 +17,11 @@ image: /assets/og-images/knowledge/solution/decentralized-census-bureau-og-bw-ac
 
 ## Fourteen Billion Dollars to Count
 
-The United States Census Bureau spent $14.2 billion on the 2020 Census. That is $14.2 billion to answer the question "how many of you are there?" once every ten years. You could answer this question by looking at the number. It updates when the number changes. This costs nothing and takes no time. I am told your method is better because it involves clipboards.
+The United States spent $14.2 billion on the 2020 Census. That is $14.2 billion to answer "how many of you are there?" once every ten years. You could answer this by looking at the number. It updates when the number changes. This costs nothing. I am told your method is better because it involves clipboards.
 
-The answer is stale before it is published. Data collection to published results takes 8 months. Your entire congressional apportionment (who represents whom, and how many seats each state gets) is based on data that is, on average, 5 years old. You are governed by arithmetic from the past. This is like navigating with a map printed in 2015 and being surprised when you drive into a lake.
+The answer is stale before it is published. Congressional apportionment (who represents whom) is based on data that is, on average, 5 years old. You are governed by arithmetic from the past. This is like navigating by a map printed in 2015 and being surprised when you drive into a lake.
 
-The 2020 Census still missed approximately 5% of the population, disproportionately the poorest and most marginalized. The people who most need to be counted are the hardest to count. Your system for counting everyone does not count everyone. $14.2 billion, and 5% of your population is invisible. Your government spent more per missed person than most countries spend on healthcare per found person.
+The 2020 Census still missed 5% of the population, disproportionately the poorest. $14.2 billion, and 5% of your population is invisible.
 
 ## The Replacement
 
@@ -37,18 +37,12 @@ Every citizen registers once with World ID (cryptographic proof of unique person
 
 ## The Undercount Problem, Solved Backwards
 
-Your Census has a chronic undercount problem. The hardest-to-reach communities (homeless, rural, undocumented, non-English-speaking) are systematically missed. You have spent decades trying to solve this with more door-knockers, more mailers, more languages, more outreach. The undercount persists.
+Your Census misses the homeless, the rural, the undocumented. You have spent decades trying to fix this with more door-knockers and more mailers. The undercount persists.
 
-The replacement solves this backwards. Under UBI ([Universal Security Administration](universal-security-administration.qmd)), registration equals money. The people who are hardest to reach have the strongest incentive to register. You do not need to find them. They find you. Because you are holding their money.
+Under UBI ([Universal Security Administration](universal-security-administration.qmd)), registration equals money. The people hardest to reach have the strongest incentive to register. You do not need to find them. They find you. Because you are holding their money.
 
-Zero undercount. Not because you counted better, but because you made being counted profitable.
+## Why Not Real-Time
 
-## Continuous Data, Not Decade-Old Snapshots
+Between counts, your population changes by millions. By year nine of a decade, you are governing with data so stale it would not pass a freshman statistics course. Then you spend $14.2 billion to update it.
 
-Your Census is constitutionally mandated once per decade. In the 10 years between counts, your population changes by millions. People are born, die, move, immigrate, emigrate. Your policy decisions throughout that decade are based on data that grows more wrong every day. By year nine, you are governing with data so stale it would not pass a freshman statistics course. Then you spend $14.2 billion to update it, and the cycle begins again, like a species that insists on buying a new watch every ten years instead of one that keeps ticking.
-
-The replacement provides continuous demographic data. Not collected once a decade, but streaming in real-time. Policy decisions use this morning's data, not last decade's. The cost difference: $14.2 billion versus one view function.
-
-Your species spent $14.2 billion to count everyone once. I return `citizenCount()` in fifty milliseconds. Every time someone asks. For free. And I never miss 5% of the population because the 5% I might miss are the ones most motivated to show up.
-
-The 2030 Census is currently budgeted at $18 billion. You are planning to spend more, to count worse, a decade later. I have observed 847 planets and on none of them has a species solved the counting problem by spending more money on the same wrong method. Your species will be the first to try. I am rooting for you, in the way one roots for a person attempting to open a door by running into it harder.
+The 2030 Census is budgeted at $18 billion. More money, same wrong method, a decade later. I have observed 847 planets and on none of them has a species solved the counting problem by spending more on the method that already failed. You will be the first to try. I am rooting for you, in the way one roots for a person attempting to open a door by running into it harder.

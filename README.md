@@ -33,7 +33,7 @@ But WITH these papers, you will:
 - Start wars (somehow this makes more papers)
 - Destroy the planet (surprisingly profitable in papers)
 
-In fact, your governments spend [604](https://manual.warondisease.org/knowledge/economics/central-banks.html) papers on weapons for every 1 paper on testing which medicines work.
+In fact, your governments spend [604](https://manual.warondisease.org/knowledge/solution/1-percent-treaty.html) papers on weapons for every 1 paper on testing which medicines work.
 
 ### The Human Economy
 
@@ -113,7 +113,7 @@ Your treaty passes, redirecting [$27.2 billion](https://manual.warondisease.org/
 
 ### Why Your Leaders Aren't the Problem
 
-With over two billion humans suffering from disease, you'd have to be a complete psychopath to make the conscious decision to spend [604](https://manual.warondisease.org/knowledge/economics/central-banks.html) times more on weapons than on helping them.
+With over two billion humans suffering from disease, you'd have to be a complete psychopath to make the conscious decision to spend [604](https://manual.warondisease.org/knowledge/solution/1-percent-treaty.html) times more on weapons than on helping them.
 But your leaders aren't monsters. They're just operating in a system that rewards the wrong things.
 
 Your civilization's incentive structure is the psychopath:
@@ -180,7 +180,7 @@ Since 1913, your governments have printed [$170 trillion](https://manual.warondi
 
 Through compounding effects, you would be [23.2x](https://manual.warondisease.org/knowledge/problem/cost-of-war.html) richer and significantly less diseased today if someone had aligned your governments properly in 1900. The average person would earn [$333,636](https://manual.warondisease.org/knowledge/problem/cost-of-war.html) per year instead of [$14,375](https://manual.warondisease.org/knowledge/appendix/political-dysfunction-tax.html).
 
-Today, government spending on clinical trials: **[604](https://manual.warondisease.org/knowledge/economics/central-banks.html) times less** than military spending. Your chance of dying from terrorism: 1 in 30 million. Your chance of dying from disease: 100%.
+Today, government spending on clinical trials: **[604](https://manual.warondisease.org/knowledge/solution/1-percent-treaty.html) times less** than military spending. Your chance of dying from terrorism: 1 in 30 million. Your chance of dying from disease: 100%.
 
 If cancer had oil reserves, you would have cured it by 2003. Instead, you spent the repair money on murder tubes that cost more than countries and submarines that hide underwater, as if that's somehow useful when you live on land.
 
@@ -472,7 +472,7 @@ Over an average remaining lifespan, reallocation from the destructive economy to
 
 #### Future A: You Ignore This Manual
 
-- Year 2027: Still spending [604](https://manual.warondisease.org/knowledge/economics/central-banks.html) times more on weapons than on testing which medicines actually work. Nobody finds this weird.
+- Year 2027: Still spending [604](https://manual.warondisease.org/knowledge/solution/1-percent-treaty.html) times more on weapons than on testing which medicines actually work. Nobody finds this weird.
 - Year 2033: Destructive economy hits 25% of GDP. The Soviet Union collapsed at 15%. You have better technology and worse planning.
 - Year 2035: Your best engineers now work in ransomware because it pays better than engineering. Hospitals budget for extortion the way they used to budget for gauze. A nurse clicks a chart and gets a countdown timer instead of a medication dose. The people who could reverse this trend are the ones profiting from it.
 - Year 2040: Parasitic economy hits 50%. AI agents file more fake court cases than real ones. Tax collection collapses because AI can evade faster than humans can audit. Your governments don't fall; they rot in place, like a body whose organs are still technically present but no longer speaking to one another. When Venezuela collapsed, Venezuelans fled to Colombia. When the global economy collapses, there is no Colombia.
@@ -570,7 +570,7 @@ This is why aliens don't visit.
 
 [![The Court of Humanity](https://manual.warondisease.org/assets/og/court-of-humanity-og-1200x630.jpg)](https://manual.warondisease.org/knowledge/appendix/court-of-humanity-paper.html)
 
-> Sovereign immunity is the legal doctrine preventing private parties from suing governments without the government's consent. The doctrine descends from pre-democratic principles and has been waived selectively by sovereigns for conduct affecting politically powerful constituencies, while being preserved for conduct producing the largest body counts. This paper proposes the **Court of Humanity**, a decentralized adjudication mechanism deriving legitimacy from humans rather than sovereign consent. Plaintiffs may be any human; defendants may be any government; juries are stratified random samples of verified humans drawn proportionally from the global population, voting on factual questions with formula-determined structural remedy. The Court does not recognize sovereign immunity as a defense. Enforcement is not coercive but *capital*: judgments can be priced into sovereign bond yields, insurance premia, trade flows, and procurement decisions. Applying regulatory life valuations to historical and projected government-attributable mortality (war, regulatory delay, misallocation; see), we estimate economic exposure far beyond any government's ability to pay. Governments can, however, settle for the 1% Treaty, which functions as the most generous settlement offer in legal history.
+> Governments wrote laws making it illegal to sue them. The legal term is "sovereign immunity." It descends from "the king can do no wrong," which your species abolished in theory and preserved in practice. Governments waived it for slip-and-falls in federal buildings. They kept it for killing people through war, drug delay, and budget misallocation. This paper proposes the **Court of Humanity**: any human can file, any government can be sued, juries are randomly selected from the global population, and sovereign immunity is not recognized as a defense. Enforcement runs through bond markets, not armies: if the world's investors agree the defendants owe the bill, the defendants' borrowing costs go up whether they cooperate or not. The bill, calculated from the body count using the governments' own life valuations (), is larger than any government can pay. They can, however, settle. The 1% Treaty is the settlement offer.
 
 ### [Incentive Alignment Bonds: Making Public Goods Financially and Politically Profitable](https://manual.warondisease.org/knowledge/appendix/incentive-alignment-bonds-paper.html)
 
