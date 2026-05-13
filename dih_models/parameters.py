@@ -1678,7 +1678,7 @@ NIH_CLINICAL_TRIALS_SPENDING_PCT = Parameter(
 
 MILITARY_TO_GOVERNMENT_CLINICAL_TRIALS_SPENDING_RATIO = Parameter(
     GLOBAL_MILITARY_SPENDING_ANNUAL_2024 / GLOBAL_GOVERNMENT_CLINICAL_TRIALS_SPENDING_ANNUAL,
-    manual_ref="knowledge/economics/central-banks.qmd",
+    manual_ref="knowledge/solution/1-percent-treaty.qmd",
     source_ref="",
     source_type=SourceType.CALCULATED,
     description="Ratio of global military spending to government clinical trials spending",
@@ -1693,7 +1693,7 @@ MILITARY_TO_GOVERNMENT_CLINICAL_TRIALS_SPENDING_RATIO = Parameter(
 
 PENTAGON_UNACCOUNTED_FUNDS = Parameter(
     2_460_000_000_000,
-    manual_ref="knowledge/solution/1-percent-treaty.qmd",
+    manual_ref="knowledge/appendix/humanity-v-government.qmd",
     source_ref=ReferenceID.PENTAGON_UNACCOUNTED_2_5T,
     source_type=SourceType.EXTERNAL,
     description="Funds the Department of Defense has failed to account for across seven consecutive failed audits",
@@ -10090,7 +10090,7 @@ US_MILITARY_SPENDING_CURRENT_VS_PREWAR_MULTIPLIER = Parameter(
 
 US_1939_MILITARY_SPENDING_PCT_LOWER_THAN_CURRENT = Parameter(
     1 - (US_MILITARY_SPENDING_1939_ANNUAL_2024USD / US_MILITARY_SPENDING_2024_ANNUAL),
-    manual_ref="knowledge/solution/1-percent-treaty.qmd",
+    manual_ref="knowledge/economics/peace-dividend.qmd",
     source_type="calculated",
     description="How much lower pre-WW2 (1939) US military spending was than today's peacetime budget, in constant 2024 dollars",
     display_name="Pre-WW2 US Military Spending % Lower than Current",

@@ -10,11 +10,11 @@ podcast-image: /assets/podcast/election-law-podcast.jpg
 feed-date: '2026-04-07'
 youtube-thumbnail: /assets/podcast/election-law-youtube.jpg
 scores:
-  quality: 4
+  quality: 5
   value: 5
   timeliness: 6
   standalone: 5
-  voice: 6
+  voice: 7
   importance: 5
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
@@ -30,29 +30,30 @@ This chapter teaches you how to legally deploy {{< var treaty_campaign_budget_lo
 
 ![Money laundering, but legal. You put the money in different washing machines with different settings.](/assets/images/election-law/election-law-section-citizens-united-changed-everything-bw-academic.jpg)
 
-In 2010, the Supreme Court gave you a gift: unlimited political spending. [The Legal Framework chapter](legal-framework.qmd) covers the legal entities you'll deploy. Here's how to use them tactically:
+In 2010, the Supreme Court gave you a gift: unlimited political spending. [The Legal Framework chapter](legal-framework.qmd) covers the legal entities you'll deploy. Here's how to use them tactically.
 
-#### Super PACs (Independent Expenditure Committees)
+There are three types of washing machines for your money, each with different settings:
+
+**Super PACs (Independent Expenditure Committees):**
 
 - Raise unlimited money from anyone
 - Spend unlimited amounts on elections
 - Run ads saying "Senator X kills babies" (if factual)
-- Cannot coordinate with candidates (wink wink)
+- Can't coordinate with candidates (federal felony). Everyone coordinates anyway, through a careful game of publicly posting "strategy memos" that candidates just happen to read
 
 **501(c)(4) "Social Welfare" Organizations:**
 
 - Don't have to disclose donors (dark money)
-- Can engage in political activity (just not primarily)
-- The NRA model: "education" that happens to be political
+- Can do political activity, just not "primarily"
+- The NRA figured this out decades ago: "education" that happens to be political. Very educational
 
 **527 Organizations:**
 
 - Like Super PACs but for "issue advocacy"
-- Can say "call Senator X about dead children"
-- Slightly different tax treatment
-- Less regulated than Super PACs
+- Can say "call Senator X about dead children" but not "vote against Senator X"
+- Less regulated, slightly different tax paperwork
 
-You'll use all three. A 501c4 "action fund" for your [Decentralized Institutes of Health](../solution/dih.qmd) will be the primary political vehicle. It will operate a Super PAC like 'Cure Not Kill PAC' to handle independent expenditures.
+You'll use all three. A 501(c)(4) "action fund" for your [Decentralized Institutes of Health](../solution/dih.qmd) will be the primary political vehicle. It will operate a Super PAC like "Cure Not Kill PAC" to handle independent expenditures.
 
 ![Three ways to buy senators. Each comes with different receipt requirements.](/assets/images/election-law/election-law-section-legal-vehicle-comparison-bw-academic.jpg)
 
@@ -62,42 +63,48 @@ You'll use all three. A 501c4 "action fund" for your [Decentralized Institutes o
 
 #### Formation (One Day)
 
+Takes about as long as registering a car:
+
 1. File FEC Form 1 (Statement of Organization)
-2. Get an EIN from IRS
+2. Get a tax ID from the IRS
 3. Open a bank account
-4. Start taking unlimited money
-5. Begin destroying political careers
+4. Start taking unlimited money that afternoon
+5. By dinner, you're in the business of destroying political careers
 
 #### The Legal Requirements
 
-- File reports with FEC (monthly in election years)
-- Include disclaimer on all ads ("Paid for by Cure Not Kill PAC")
-- No coordination with candidates (this is a federal felony; don't do it)
+- File reports with the FEC (monthly in election years)
+- Every ad needs a disclaimer ("Paid for by Cure Not Kill PAC")
 - Keep records of all donors over $200
 - Report independent expenditures within 48 hours
+- Do not coordinate with candidates. Federal felony. Don't do it. (Every Super PAC in history has found creative workarounds, but don't do it.)
 
 #### What You Can Do
 
+Everything except directly bribing candidates:
+
 - Run attack ads against treaty opponents
-- Support ads for treaty supporters
+- Run support ads for treaty supporters
 - Hire armies of canvassers
 - Buy entire media markets
 - Fund opposition research
 - Create viral content
-- Anything except directly bribing candidates
+- The list of things you *can't* do is shorter than a tweet
 
 ## The 501(c)(4) Dark Money Machine
 
 ### Your Action Fund (The Dark Money Vehicle)
 
-This is your 501(c)(4) dark money vehicle. Unlike Super PACs, you don't have to disclose donors.
+This is your 501(c)(4). Unlike Super PACs, you don't have to tell anyone who's paying.
 
 #### The 51/49 Rule
 
-- 51% must be "social welfare" activity
-- 49% can be pure political destruction
-- "Education" about treaty benefits = social welfare
-- "Senator X is a murderer" ads = political
+The IRS says 51% of what you do must be "social welfare" and only 49% can be political:
+
+- 51% "social welfare": educating people about how many children die from preventable disease, publishing voting records, funding research reports
+- 49% political destruction: running ads that call Senator X a murderer
+
+Conveniently, most of what you actually want to do counts as social welfare.
 
 ![Spend 51% on good things and 49% on buying politicians. Balance is important.](/assets/images/election-law/election-law-section-the-51-49-rule-visualization-bw-academic.jpg)
 
@@ -105,11 +112,11 @@ This is your 501(c)(4) dark money vehicle. Unlike Super PACs, you don't have to 
 
 ![How to be mostly good while being somewhat evil. The IRS calls this 'tax-exempt.'](/assets/images/election-law/election-law-section-how-to-stay-legal-bw-academic.jpg)
 
-1. Write educational materials about the treaty benefits
-2. Educate the public on voting records
-3. Run issue advocacy (no "vote for" language)
-4. Stay within the 51% social welfare / 49% political split
-5. Keep excellent records to prove compliance
+1. Write educational materials about treaty benefits
+2. Publish voting records
+3. Run issue advocacy (say "call Senator X" but never "vote against Senator X")
+4. Keep the 51/49 split
+5. Keep records good enough that an auditor would cry tears of boredom
 
 ## Campaign Finance Jujitsu
 
@@ -119,22 +126,24 @@ This is your 501(c)(4) dark money vehicle. Unlike Super PACs, you don't have to 
 
 ![Threaten politicians with someone worse than them so they become your friend. Like high school, but with democracy.](/assets/images/election-law/election-law-section-the-primary-threat-bw-academic.jpg)
 
-- Find primary challengers for treaty opponents
+- Find primary challengers for every treaty opponent
 - Fund them with $5-10M each
-- Force opponents to spend $20M defending
-- Even if they win, they're weakened and poor
-- Next election, they support you to avoid this
+- The incumbent now has to spend $20M defending a seat they thought was safe
+- Even if they win, they're broke and exhausted
+- Next election cycle, they support the treaty just to avoid going through that again
+
+You didn't beat them. You made losing too expensive.
 
 #### The Bidding War
 
 ![Auction rules for buying people. Eventually someone runs out of money and loses their soul at a discount.](/assets/images/election-law/election-law-section-the-bidding-war-bw-academic.jpg)
 
 - Publicly announce $10M against treaty opponents
-- Wait for the death manufacturers to counter
+- Wait for the weapons manufacturers to counter
 - Raise to $20M
 - They match
 - Keep escalating until they break
-- You have {{< var treaty_campaign_budget_lobbying >}}; they have stockholders to answer to
+- You have {{< var treaty_campaign_budget_lobbying >}}; they have stockholders asking why profits are going to Iowa attack ads instead of dividends
 
 #### The Overwhelming Force Doctrine
 
@@ -143,35 +152,36 @@ This is your 501(c)(4) dark money vehicle. Unlike Super PACs, you don't have to 
 - Pick one opponent to destroy completely
 - Spend $50M in their small state
 - Make them lose by 40 points
-- Every other politician gets the message
-- Total cost: $50M. Political control: Priceless
+- Every other politician in the country quietly updates their position on the treaty
+- Total cost: $50M. Political control: priceless
 
 ## State and Local Compliance
 
-Every state has different rules. Here's how to handle them:
+Every state has different rules for how you're allowed to buy their politicians. This is called "federalism."
 
 ### The Nightmare States
 
-**California:** Requires extensive disclosure, frequent reporting
+**California:** Extensive disclosure, frequent reporting
 **New York:** Complex registration, strict coordination rules
-**Texas:** Actually pretty loose, go wild
+**Texas:** Actually pretty loose. Go wild.
 
 ### The Compliance Strategy
 
 ![Which type of democracy-buying account to use, depending on how many lawyers you want to hire.](/assets/images/election-law/election-law-section-the-compliance-strategy-bw-academic.jpg)
 
-- Create separate state PACs for complex states
-- Use federal Super PAC for simple states
-- Route money through appropriate entities
-- Hire local lawyers who know the rules
-- When in doubt, seek legal counsel before acting
+- Create separate state PACs for the complicated states
+- Use the federal Super PAC for the simple ones
+- Hire local lawyers who know the rules (an election law violation in New York looks very different from one in Alabama)
+- When in doubt, ask a lawyer before spending. It's cheaper than the fine
 
 ### Local Elections
 
-- City councils: $50K buys a seat
+This is where your money goes furthest:
+
+- City councils: $50K flips a seat
 - State legislators: $200K flips most races
 - Governors: $5-10M flips a race
-- Focus on cheap races with treaty impact
+- Focus on cheap races where the winner actually votes on treaty-relevant policy. A $50K city council race beats a $50M Senate race if the council controls something you need
 
 ## The Media Buy Strategy
 
@@ -179,24 +189,24 @@ Every state has different rules. Here's how to handle them:
 
 #### Early and Often
 
-- Define opponents before they define themselves
-- First impression sticks
-- Run attacks during non-political shows
-- Capture low-information voters
+- Define opponents before they define themselves. First impressions stick
+- If voters hear "Senator X blocked childhood cancer research" before anything else, that's who Senator X is forever
+- Run attacks during non-political shows. The people watching cooking competitions are exactly the voters you want
 
 #### The Saturation Approach
 
 - Buy every ad slot in small markets
-- Make opposition invisible
+- Make the opposition literally unable to get on TV
 - Cost: $500K/week in Wyoming
-- Impact: Total narrative control
+- It's like owning the only billboard in a one-road town
 
 #### Digital Micro-Targeting
 
 - Facebook: $0.50 per voter reached
-- Google: Target searches for "Senator [Name]"
-- YouTube: Pre-roll on local news
-- TikTok: Pay influencers to "discover" treaty benefits
+- Google: target people searching for "Senator [Name]"
+- YouTube: pre-roll on local news
+- TikTok: pay influencers $5K to "discover" treaty benefits
+- The internet made political persuasion absurdly cheap. Use that
 
 ## The Ground Game
 
@@ -204,37 +214,44 @@ Every state has different rules. Here's how to handle them:
 
 ![Money becomes people knocking on doors asking if you've heard the good news about our candidate.](/assets/images/election-law/election-law-section-paid-volunteers-bw-academic.jpg)
 
-- Hire 10,000 "volunteers" at $20/hour
-- They happen to support the treaty
+- Hire 10,000 people at $20/hour
 - They knock doors, make calls, register voters
-- Completely legal if disclosed properly
-- Call them "organizers" not volunteers
+- They happen to believe in the treaty
+- Call them "organizers" not volunteers (because you're paying them)
+- Completely legal as long as you disclose it
+- This is what every campaign in history has done. You're just doing it bigger
 
 ### The Petition Army
 
 - Gather signatures for ballot initiatives
-- Each signature costs $3-5
-- 100,000 signatures = massive pressure
-- Politicians see organized opposition
-- They fold immediately
+- Each signature costs $3-5 to collect
+- 100,000 signatures on a "Fund Cancer Research" petition = massive pressure
+- Politicians don't see a piece of paper. They see 100,000 people who are paying attention and might vote
+- Most of them fold immediately
 
 ## Enforcement: What Happens If You Break Rules
 
 ### FEC Enforcement (LOL)
 
-- Requires 4 of 6 commissioners to act
-- Always split 3-3 on party lines
+- Needs 4 of 6 commissioners to agree before it can do anything
+- They split 3-3 on party lines on virtually every case
 - Average investigation: 2-4 years
 - Average fine: $50K
-- Worth it for the impact
+- The FEC is a guard dog that was bred not to bite
+
+This doesn't mean you should break the rules. It means the rules are mostly enforced by shame, not punishment.
 
 ### DOJ Enforcement (Rare but Real)
 
+The Department of Justice is the one you actually worry about:
+
 - Criminal prosecution for knowing violations
-- Foreign money = serious crime
-- Coordination = potential felony
+- Foreign money in US elections = serious federal crime
+- Coordination between a Super PAC and a candidate = potential felony
 - Keep good lawyers on retainer
 - Document everything as "independent"
+
+The DOJ doesn't investigate often, but when they do, people go to prison.
 
 ![Things that make the Department of Justice angry, and how to make them slightly less angry with paperwork.](/assets/images/election-law/election-law-section-doj-enforcement-rare-but-real-bw-academic.jpg)
 
@@ -242,11 +259,11 @@ Every state has different rules. Here's how to handle them:
 
 ![States that care about election law versus states that don't. Choose your battlefield accordingly.](/assets/images/election-law/election-law-section-state-enforcement-varies-bw-academic.jpg)
 
-- Some states have aggressive enforcement (New York, California)
-- Some states have minimal oversight (Delaware)
-- Compliance requirements vary by state
-- Budget for legal counsel in each state ($50-100K per state)
-- Full compliance is cheaper than fines and bad press
+- Some states enforce aggressively (New York, California)
+- Some states barely check (Delaware)
+- Budget $50-100K per state for legal counsel
+- Full compliance is always cheaper than fines and bad headlines
+- "Health PAC Caught Breaking Election Law" is not the headline you want
 
 ## The Lobbying Registration Trap
 
@@ -260,12 +277,12 @@ Every state has different rules. Here's how to handle them:
 ### When You Don't
 
 - "Education" about issues
-- Grassroots organizing (if genuine)
+- Genuine grassroots organizing
 - Media campaigns
 - Think tank research
 - Public speeches
 
-Stay on the non-registration side when possible. Registered lobbyists have restrictions.
+Notice how most of what you're doing falls in the second category. That's not an accident. Registered lobbyists have restrictions, so stay on the non-registration side whenever possible.
 
 ![Things you can say for free versus things you need a license to say. First Amendment sold separately.](/assets/images/election-law/election-law-section-when-you-don-t-bw-academic.jpg)
 
@@ -278,40 +295,42 @@ Stay on the non-registration side when possible. Registered lobbyists have restr
 - Foreign citizens cannot donate to US political activities
 - Foreign citizens cannot direct how US election money gets spent
 - Keep a strict firewall between international and US operations
-- Fund and control US political operations with 100% US money
-- Violation is a federal crime; take this seriously
+- Fund US political operations with 100% US money
+- This is a federal crime the DOJ actually prosecutes. Take it seriously
 
 ### Treaty Promotion
 
 ![Steps to promote peace treaties without going to jail. More complicated than it sounds.](/assets/images/election-law/election-law-section-treaty-promotion-bw-academic.jpg)
 
-- International treaty promotion is complex legally
-- Each jurisdiction requires separate legal analysis
-- Consult with election law experts before any international spending
+- International treaty promotion is legally complicated (every country has its own rules)
+- Each jurisdiction needs separate legal analysis
+- Consult election law experts before spending a dime internationally
 
 ## The Victory Conditions
 
 ### Phase 1: Create Fear (Months 1-6)
 
-- {{< var campaign_super_pac_budget >}} in attack ads (Phase 1)
+- {{< var campaign_super_pac_budget >}} in attack ads
 - Target 10 key opponents
-- 3-5 lose primaries
-- Rest get message
+- 3-5 lose their primaries
+- The rest get the message
+- Fear is a faster teacher than hope
 
 ### Phase 2: Offer Carrots (Months 7-12)
 
 ![Make politicians look good for doing good things. They like this so much their enemies become jealous and join in. Positive reinforcement works on humans too.](/assets/images/election-law/election-law-section-phase-2-offer-carrots-months-7-12-bw-academic.jpg)
 
-- {{< var campaign_super_pac_budget >}} in positive ads for supporters (Phase 1)
+- {{< var campaign_super_pac_budget >}} in positive ads for treaty supporters
 - Create "treaty heroes"
-- Make support politically profitable
-- Opponents start switching
+- Make supporting the treaty the politically profitable position
+- Watch opponents start switching sides
+- Positive reinforcement works on politicians exactly the way it works on dogs
 
 ### Phase 3: Ensure Victory (Months 13-18)
 
-- Surge for final push
+- Surge spending for the final push
 - Overwhelming force in key states
-- Make opposition political suicide
+- Make opposing the treaty political suicide
 - Treaty passes with 70%+ support
 
 ![Month 1: Threaten them. Month 18: Thank them. The middle months are where democracy happens.](/assets/images/election-law/election-law-section-campaign-strategic-timeline-bw-academic.jpg)
@@ -328,6 +347,6 @@ Remember: It's not bribery if you use the right forms. It's not corruption if th
 
 The treaty opponents have two choices: Support you and keep their jobs, or oppose you and lose everything. That's not a threat. That's democracy.
 
-## Legal Notice
+## Fine Print
 
-This chapter describes legal campaign finance activities under current US law. Consult with election lawyers before implementing. Laws change. Enforcement varies. What's technically legal might still look terrible in headlines. Always hire excellent lawyers.
+This chapter describes legal campaign finance activities under current US law. Laws change. Enforcement varies. What's technically legal might still look terrible in headlines. Consult election lawyers before implementing any of this, and hire excellent ones.
