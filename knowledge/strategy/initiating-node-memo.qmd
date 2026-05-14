@@ -35,34 +35,32 @@ You are not endorsing the current draft as final truth. You are hosting a proces
 
 The benchmark plan ([Earth Optimization Protocol v1](earth-optimization-protocol-v1.qmd)) has these parts:
 
-| Component | What it does | Details |
-|---|---|---|
-| **[Earth Optimization Prize](earth-optimization-prize.qmd)** | Runs the open constitutional convention, public scoreboard, and recruitment-aligned success pool | Selection and coalition entry layer |
-| **[Global Referendum](global-referendum.qmd)** | Makes latent support visible and records public preference on reallocation | Public headcount and preference signal |
-| **[Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd)** | Finance lobbying and political adoption with direct financial upside | Campaign-financing engine |
-| **[1% Treaty](../solution/1-percent-treaty.qmd)** | Redirects 1% of military spending into clinical trials and related incentives | Initial durable funding wedge |
-| **[Decentralized Institutes of Health](../solution/dih.qmd)** | Receives treaty funds and routes them through a thin coordination protocol | Treasury and verification layer |
-| **[Your decentralized FDA](../solution/dfda.qmd)** | Runs cheaper, faster pragmatic clinical trials and real-time evidence generation | Medical throughput engine |
-| **[Wishocracy](../solution/wishocracy.qmd)** | Allocates research/public-goods budgets through pairwise citizen preference aggregation | Governance and allocation engine |
-| **[Optimocracy](../solution/optimocracy.qmd) / [OPG](https://opg.warondisease.org) / [OBG](https://obg.warondisease.org)** | Measures what improves health and income and recommends better policy/budget choices | Evidence and recommendation engine |
-| **[Political Dysfunction Tax](../problem/unrepresentative-democracy.qmd)** and **[US Efficiency Audit](https://us-efficiency-audit.warondisease.org)** | Identify waste pools and quantify the scale of misallocation | Waste-mapping and opportunity-cost layer |
-| **[Legal framework](../legal/legal-framework.qmd)** | Supplies treaty, statutory, and election-law-compliant implementation paths | Binding-force layer |
-| **[Phase 2 monetary transition](../futures/wishonia.qmd#the-algorithm-that-replaced-twelve-humans)** | Replaces fiat-era fiscal/monetary machinery after the earlier loop is running | Long-run system replacement |
+| Component | What it does |
+|---|---|
+| **[Earth Optimization Prize](earth-optimization-prize.qmd)** | Open contest, public scoreboard, recruitment-aligned prize pool |
+| **[Global Referendum](global-referendum.qmd)** | Makes latent support visible and countable |
+| **[Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd)** | Finance the campaign with greed, not generosity |
+| **[1% Treaty](../solution/1-percent-treaty.qmd)** | Redirects 1% of military spending to clinical trials |
+| **[Decentralized Institutes of Health](../solution/dih.qmd)** | Receives treaty funds, routes them to trials |
+| **[Your decentralized FDA](../solution/dfda.qmd)** | Cheaper, faster trials; real-time evidence |
+| **[Wishocracy](../solution/wishocracy.qmd)** | Citizens allocate budgets; nobody with money decides |
+| **[Optimocracy](../solution/optimocracy.qmd) / [OPG](https://opg.warondisease.org) / [OBG](https://obg.warondisease.org)** | Measures which policies make people richer or less dead |
+| **[Legal framework](../legal/legal-framework.qmd)** | Treaty, statutory, and election-law-compliant paths |
 
 You are not being asked to bless every component. You are hosting the first public process that can compare, attack, improve, and replace them.
 
 ## What Already Exists
 
-This is not a request to fund a concept. The software is already built and public:
+This is not a request to fund a concept. The software is built and public:
 
-| Asset | What works |
+| Asset | Status |
 |---|---|
-| **[Optimitron](https://optomitron.com)** | Live web app: policy analysis, budget optimization, prize/referendum surfaces |
-| **[Open-source repo](https://github.com/mikepsinn/optomitron)** | Evidence engine, [Wishocracy](../solution/wishocracy.qmd), policy/budget generators, treasury packages, 2,900+ tests |
-| **Participation layer** | World ID referendum flow, referral plumbing, alignment interfaces |
+| **[Optimitron](https://optomitron.com)** | Live: policy analysis, budget optimization, prize/referendum surfaces |
+| **[Open-source repo](https://github.com/mikepsinn/optomitron)** | 2,900+ tests, evidence engine, policy/budget generators, treasury packages |
+| **Participation layer** | World ID referendum, referral plumbing, alignment interfaces |
 | **Treasury layer** | PRIZE, VOTE, IAB contracts in Solidity |
 
-The ask is: host and stress-test a public process on top of software that already works.
+The software works. The ask is: put a credible name on the front door and let people try to break it.
 
 ## What You Are Agreeing To
 
