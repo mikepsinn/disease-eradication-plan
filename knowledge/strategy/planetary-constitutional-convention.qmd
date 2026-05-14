@@ -93,7 +93,7 @@ These are constitutional constraints, not preferences. A proposed revision that 
 
 The ratified revision becomes the current Earth Optimization manual. If no revision improves the current manual, the current manual remains in force by default, which means we were right that it is terrible but wrong that nobody could improve it, and that is a more depressing outcome than we are prepared to contemplate.
 
-The minimum bar for scoring. Any proposal that cannot beat the risk-adjusted treaty benchmark on cost per DALY does not get scored:
+The floor. Any proposal that cannot beat the risk-adjusted treaty benchmark on cost per DALY does not get scored. If you cannot beat bed nets, you are not improving the manual, you are writing fiction:
 
 | Intervention | Cost per DALY averted |
 |:---|:---|
@@ -121,3 +121,9 @@ The prize asks one question: *who can cause verified implementation of a complet
 | **Continuous Evidence Generation Protocol** [@dfda-spec-paper-2025] | Medical evidence machine | {{< var dfda_observational_cost_per_patient >}}/patient Stage 1; {{< var dfda_pragmatic_trial_cost_per_patient >}}/patient Stage 2 |
 | **Drug Development Cost Increase Analysis** [@drug-development-cost] | Proof current regulation is catastrophically expensive | {{< var drug_cost_increase_pre1962_to_current_multiplier >}} cost increase; {{< var pharma_drug_development_cost_current >}}/drug |
 | **How to End War and Disease** | Integrated narrative and coalition wrapper | {{< var treaty_campaign_total_cost >}} total cost; {{< var political_success_probability >}} success probability |
+
+## What Happens Next
+
+The convention is open. Fork the manual. Tear it apart. The constitutional constraints are public. The benchmarks are public. The version history is public. Anyone who improves any row of the Minimum Acceptable Governance table has already done more constitutional drafting than the average constitutional drafter, who typically does none.
+
+We do not expect to be the people who write the final version. We expect to be the people who wrote the first draft bad enough that someone better was forced to fix it. That is the job. We are doing it on purpose.
