@@ -1,0 +1,126 @@
+```{python}
+#| echo: false
+#| fig-cap: "Monte Carlo Distribution: War Trial Redirect Post-Cutoff Disease Years (10,000 simulations)"
+
+import matplotlib.pyplot as plt
+import numpy as np
+from pathlib import Path
+
+from dih_models.plotting.chart_style import (
+    setup_chart_style, add_watermark, clean_spines, get_tick_formatter,
+    COLOR_BLACK, COLOR_WHITE, add_png_metadata, get_figure_output_path
+)
+from dih_models.parameters import format_parameter_value
+
+setup_chart_style()
+
+# Simulation results
+
+samples = [75.0, 95.0, 65.0, 59.0, 102.0, 97.0, 79.0, 86.0, 81.0, 93.0, 61.0, 64.0, 80.0, 53.0, 72.0, 93.0, 74.0, 94.0, 61.0, 82.0, 84.0, 91.0, 50.0, 84.0, 88.0, 87.0, 70.0, 74.0, 73.0, 73.0, 19.0, 88.0, 89.0, 93.0, 68.0, 53.0, 83.0, 93.0, 93.0, 67.0, 65.0, 70.0, 91.0, 77.0, 79.0, 77.0, 61.0, 77.0, 67.0, 80.0, 76.0, 68.0, 98.0, 86.0, 88.0, 91.0, 86.0, 40.0, 93.0, 58.0, 99.0, 87.0, 78.0, 69.0, 66.0, 64.0, 87.0, 88.0, 62.0, 84.0, 97.0, 96.0, 94.0, 71.0, 79.0, 66.0, 88.0, 78.0, 68.0, 86.0, 72.0, 91.0, 87.0, 87.0, 96.0, 71.0, 88.0, 81.0, 71.0, 72.0, 67.0, 83.0, 88.0, 83.0, 100.0, 98.0, 97.0, 95.0, 73.0, 94.0, 87.0, 48.0, 87.0, 65.0, 94.0, 85.0, 94.0, 87.0, 62.0, 100.0, 72.0, 77.0, 90.0, 98.0, 80.0, 89.0, 77.0, 81.0, 36.0, 85.0, 95.0, 78.0, 77.0, 45.0, 62.0, 74.0, 41.0, 96.0, 91.0, 94.0, 87.0, 97.0, 68.0, 85.0, 98.0, 95.0, 75.0, 62.0, 19.0, 11.0, 73.0, 95.0, 103.0, 76.0, 93.0, 88.0, 90.0, 84.0, 55.0, 78.0, 84.0, 95.0, 99.0, 89.0, 82.0, 28.0, 79.0, 58.0, 89.0, 96.0, 94.0, 92.0, 19.0, 93.0, 62.0, 94.0, 60.0, 74.0, 84.0, 82.0, 91.0, 72.0, 88.0, 96.0, 97.0, 78.0, 37.0, 78.0, 83.0, 76.0, 47.0, 77.0, 88.0, 54.0, 73.0, 38.0, 78.0, 96.0, 97.0, 34.0, 30.0, 84.0, 87.0, 41.0, 95.0, 94.0, 67.0, 87.0, 81.0, 84.0, 75.0, 44.0, 80.0, 67.0, 102.0, 82.0, 93.0, 96.0, 93.0, 87.0, 60.0, 97.0, 81.0, 89.0, 86.0, 57.0, 70.0, 46.0, 84.0, 91.0, 85.0, 77.0, 78.0, 95.0, 80.0, 77.0, 15.0, 23.0, 93.0, 86.0, 98.0, 90.0, 75.0, 51.0, 92.0, 91.0, 103.0, 84.0, 95.0, 89.0, 93.0, 83.0, 100.0, 98.0, 19.0, 97.0, 95.0, 25.0, 11.0, 96.0, 87.0, 74.0, 30.0, 95.0, 85.0, 64.0, 72.0, 87.0, 83.0, 97.0, 85.0, 86.0, 77.0, 90.0, 72.0, 57.0, 78.0, 74.0, 80.0, 81.0, 92.0, 75.0, 83.0, 19.0, 37.0, 74.0, 92.0, 95.0, 51.0, 76.0, 71.0, 100.0, 60.0, 72.0, 95.0, 88.0, 76.0, 80.0, 86.0, 83.0, 85.0, 78.0, 41.0, 105.0, 85.0, 78.0, 75.0, 87.0, 100.0, 75.0, 30.0, 98.0, 62.0, 86.0, 82.0, 95.0, 87.0, 48.0, 69.0, 30.0, 52.0, 72.0, 29.0, 72.0, 63.0, 86.0, 80.0, 91.0, 58.0, 96.0, 64.0, 84.0, 52.0, 65.0, 26.0, 65.0, 98.0, 82.0, 96.0, 89.0, 39.0, 68.0, 91.0, 95.0, 81.0, 96.0, 91.0, 75.0, 53.0, 68.0, 104.0, 75.0, 80.0, 73.0, 35.0, 103.0, 90.0, 69.0, 98.0, 41.0, 74.0, 62.0, 90.0, 63.0, 55.0, 77.0, 77.0, 76.0, 93.0, 84.0, 84.0, 74.0, 58.0, 95.0, 83.0, 41.0, 92.0, 93.0, 77.0, 62.0, 81.0, 46.0, 62.0, 62.0, 70.0, 17.0, 85.0, 102.0, 36.0, 88.0, 79.0, 47.0, 99.0, 96.0, 99.0, 92.0, 72.0, 70.0, 76.0, 97.0, 104.0, 80.0, 88.0, 72.0, 66.0, 79.0, 64.0, 77.0, 70.0, 91.0, 84.0, 77.0, 63.0, 87.0, 70.0, 86.0, 83.0, 63.0, 102.0, 97.0, 98.0, 104.0, 91.0, 65.0, 86.0, 77.0, 55.0, 47.0, 82.0, 46.0, 79.0, 93.0, 90.0, 98.0, 94.0, 87.0, 63.0, 30.0, 97.0, 73.0, 95.0, 72.0, 83.0, 101.0, 60.0, 90.0, 89.0, 95.0, 91.0, 73.0, 84.0, 75.0, 74.0, 47.0, 87.0, 98.0, 55.0, 87.0, 54.0, 74.0, 83.0, 74.0, 20.0, 19.0, 80.0, 78.0, 55.0, 93.0, 75.0, 82.0, 75.0, 93.0, 99.0, 103.0, 95.0, 88.0, 86.0, 21.0, 54.0, 94.0, 74.0, 88.0, 86.0, 78.0, 68.0, 87.0, 56.0, 96.0, 81.0, 14.0, 77.0, 43.0, 79.0, 69.0, 82.0, 84.0, 92.0, 73.0, 93.0, 67.0, 55.0, 74.0, 86.0, 72.0, 86.0, 59.0, 101.0, 87.0, 102.0, 98.0, 45.0, 61.0, 92.0, 98.0, 106.0, 89.0, 16.0, 72.0, 90.0, 72.0, 98.0, 86.0, 79.0, 83.0, 64.0, 74.0, 67.0, 91.0, 61.0, 34.0, 94.0, 94.0, 46.0, 84.0, 44.0, 88.0, 42.0, 79.0, 76.0, 37.0, 87.0, 94.0, 88.0, 72.0, 98.0, 68.0, 89.0, 53.0, 104.0, 92.0, 100.0, 93.0, 76.0, 84.0, 85.0, 84.0, 77.0, 95.0, 66.0, 67.0, 74.0, 70.0, 75.0, 18.0, 83.0, 86.0, 92.0, 95.0, 96.0, 94.0, 82.0, 75.0, 80.0, 92.0, 61.0, 65.0, 84.0, 91.0, 70.0, 78.0, 98.0, 82.0, 76.0, 94.0, 78.0, 98.0, 46.0, 49.0, 85.0, 74.0, 104.0, 96.0, 86.0, 95.0, 66.0, 18.0, 96.0, 93.0, 77.0, 35.0, 96.0, 76.0, 26.0, 99.0, 97.0, 88.0, 89.0, 63.0, 77.0, 100.0, 71.0, 90.0, 48.0, 91.0, 91.0, 70.0, 64.0, 72.0, 100.0, 70.0, 95.0, 77.0, 97.0, 72.0, 93.0, 97.0, 66.0, 77.0, 90.0, 42.0, 88.0, 81.0, 76.0, 90.0, 72.0, 89.0, 88.0, 45.0, 95.0, 104.0, 35.0, 15.0, 88.0, 102.0, 86.0, 86.0, 84.0, 95.0, 69.0, 70.0, 98.0, 66.0, 18.0, 78.0, 87.0, 84.0, 68.0, 100.0, 78.0, 87.0, 25.0, 84.0, 33.0, 95.0, 69.0, 75.0, 93.0, 78.0, 51.0, 86.0, 100.0, 81.0, 94.0, 87.0, 83.0, 100.0, 99.0, 71.0, 89.0, 105.0, 64.0, 76.0, 92.0, 97.0, 62.0, 74.0, 16.0, 73.0, 73.0, 84.0, 63.0, 68.0, 49.0, 89.0, 88.0, 89.0, 64.0, 40.0, 88.0, 88.0, 75.0, 85.0, 59.0, 104.0, 93.0, 92.0, 104.0, 94.0, 94.0, 85.0, 54.0, 85.0, 95.0, 82.0, 56.0, 94.0, 94.0, 70.0, 85.0, 67.0, 81.0, 66.0, 95.0, 81.0, 85.0, 96.0, 98.0, 66.0, 87.0, 95.0, 83.0, 53.0, 104.0, 98.0, 94.0, 41.0, 76.0, 64.0, 96.0, 95.0, 72.0, 80.0, 70.0, 84.0, 76.0, 78.0, 64.0, 63.0, 99.0, 104.0, 57.0, 51.0, 95.0, 101.0, 79.0, 60.0, 27.0, 71.0, 87.0, 94.0, 81.0, 86.0, 95.0, 18.0, 27.0, 53.0, 94.0, 62.0, 68.0, 72.0, 49.0, 68.0, 65.0, 68.0, 75.0, 100.0, 80.0, 90.0, 97.0, 32.0, 30.0, 45.0, 76.0, 46.0, 81.0, 77.0, 95.0, 73.0, 80.0, 97.0, 82.0, 83.0, 27.0, 61.0, 81.0, 76.0, 80.0, 85.0, 95.0, 84.0, 92.0, 96.0, 71.0, 73.0, 100.0, 83.0, 58.0, 56.0, 57.0, 80.0, 93.0, 95.0, 74.0, 74.0, 48.0, 54.0, 83.0, 96.0, 86.0, 77.0, 85.0, 90.0, 76.0, 89.0, 91.0, 75.0, 88.0, 77.0, 76.0, 96.0, 89.0, 42.0, 96.0, 103.0, 101.0, 81.0, 81.0, 83.0, 51.0, 106.0, 73.0, 37.0, 96.0, 87.0, 92.0, 94.0, 86.0, 43.0, 25.0, 87.0, 22.0, 81.0, 29.0, 83.0, 79.0, 74.0, 10.0, 62.0, 91.0, 58.0, 87.0, 89.0, 60.0, 81.0, 76.0, 81.0, 75.0, 73.0, 102.0, 67.0, 95.0, 98.0, 82.0, 80.0, 91.0, 62.0, 97.0, 88.0, 90.0, 82.0, 76.0, 95.0, 65.0, 80.0, 101.0, 102.0, 81.0, 85.0, 83.0, 82.0, 77.0, 59.0, 95.0, 96.0, 95.0, 76.0, 49.0, 88.0, 105.0, 100.0, 93.0, 90.0, 88.0, 80.0, 86.0, 56.0, 91.0, 93.0, 71.0, 98.0, 73.0, 79.0, 84.0, 36.0, 90.0, 18.0, 85.0, 97.0, 80.0, 95.0, 92.0, 73.0, 70.0, 90.0, 58.0, 52.0, 42.0, 70.0, 45.0, 101.0, 86.0, 93.0, 79.0, 90.0, 84.0, 23.0, 84.0, 73.0, 85.0, 80.0, 81.0, 72.0, 52.0, 34.0, 75.0, 69.0, 96.0, 83.0, 59.0, 61.0, 77.0, 61.0, 71.0, 51.0, 76.0, 87.0, 75.0, 106.0, 74.0, 106.0, 100.0, 72.0, 71.0, 96.0, 92.0, 45.0, 89.0, 18.0, 81.0, 73.0, 35.0, 79.0, 95.0, 83.0, 82.0, 97.0, 85.0, 92.0, 60.0, 81.0, 86.0, 83.0, 77.0, 68.0, 95.0, 95.0, 54.0, 88.0, 97.0, 72.0, 72.0, 98.0, 77.0, 65.0, 74.0, 68.0, 97.0, 75.0, 86.0, 89.0, 61.0, 41.0, 27.0, 47.0, 83.0, 74.0, 64.0, 79.0, 79.0, 63.0]  # Truncate for embedding
+baseline = 75.0
+mean = 76.4646
+std = 19.902480921734355
+p5 = 34.0
+p50 = 81.0
+p95 = 99.0
+display_name = "War Trial Redirect Post-Cutoff Disease Years"
+units = "years"
+
+# Create figure with two subplots
+
+fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(8, 6))
+fig.subplots_adjust(wspace=0.3)
+
+# --- Left: Histogram ---
+
+# Handle edge case where all samples are identical (zero variance)
+
+if std == 0 or (max(samples) == min(samples)):
+    n_bins = 1
+else:
+    n_bins = min(50, max(1, int(np.sqrt(len(samples)))))
+n, bins, patches = ax1.hist(samples, bins=n_bins, color=COLOR_WHITE, edgecolor=COLOR_BLACK, linewidth=1)
+
+# Apply tick formatter for readable labels (K, M, B suffixes, $ for USD)
+
+ax1.xaxis.set_major_formatter(get_tick_formatter(unit=units))
+
+# Mark key statistics with formatted values in legend (use format_parameter_value for full units)
+
+ax1.axvline(p50, color=COLOR_BLACK, linestyle='--', linewidth=2, label=f'Median: {format_parameter_value(p50, units)}')
+ax1.axvline(p5, color=COLOR_BLACK, linestyle=':', linewidth=1.5, alpha=0.7, label=f'5th %-ile: {format_parameter_value(p5, units)}')
+ax1.axvline(p95, color=COLOR_BLACK, linestyle=':', linewidth=1.5, alpha=0.7, label=f'95th %-ile: {format_parameter_value(p95, units)}')
+ax1.axvline(baseline, color=COLOR_BLACK, linestyle='-', linewidth=1.5, alpha=0.5, label=f'Baseline: {format_parameter_value(baseline, units)}')
+
+ax1.set_xlabel(f'{display_name} ({units})' if units else display_name, fontsize=11)
+ax1.set_ylabel('Frequency', fontsize=11)
+ax1.set_title('Distribution of Outcomes', fontsize=12, weight='bold')
+ax1.legend(loc='upper right', fontsize=9)
+clean_spines(ax1)
+
+# --- Right: CDF (Cumulative Probability) ---
+
+sorted_samples = np.sort(samples)
+cumulative = np.arange(1, len(sorted_samples) + 1) / len(sorted_samples)
+
+ax2.plot(sorted_samples, cumulative * 100, color=COLOR_BLACK, linewidth=2)
+ax2.fill_between(sorted_samples, 0, cumulative * 100, alpha=0.1, color=COLOR_BLACK)
+
+# Apply tick formatter for readable labels (K, M, B suffixes, $ for USD)
+
+ax2.xaxis.set_major_formatter(get_tick_formatter(unit=units))
+
+# Mark key percentiles
+
+ax2.axhline(50, color=COLOR_BLACK, linestyle='--', linewidth=1, alpha=0.5)
+ax2.axhline(5, color=COLOR_BLACK, linestyle=':', linewidth=1, alpha=0.5)
+ax2.axhline(95, color=COLOR_BLACK, linestyle=':', linewidth=1, alpha=0.5)
+ax2.axvline(p50, color=COLOR_BLACK, linestyle='--', linewidth=1, alpha=0.5)
+
+ax2.set_xlabel(f'{display_name} ({units})' if units else display_name, fontsize=11)
+ax2.set_ylabel('Cumulative Probability (%)', fontsize=11)
+ax2.set_title('Probability of Exceeding Value', fontsize=12, weight='bold')
+ax2.set_ylim(0, 100)
+clean_spines(ax2)
+
+# Add annotation for "probability of exceeding baseline"
+
+exceed_baseline_pct = (np.array(samples) > baseline).sum() / len(samples) * 100
+ax2.annotate(f'{exceed_baseline_pct:.0f}% chance of\nexceeding baseline',
+             xy=(baseline, exceed_baseline_pct), xytext=(baseline * 1.1, exceed_baseline_pct + 10),
+             fontsize=9, ha='left',
+             arrowprops=dict(arrowstyle='->', color=COLOR_BLACK, lw=1))
+
+# Main title
+
+fig.suptitle(f'Monte Carlo Analysis: {display_name}', fontsize=14, weight='bold', y=1.02)
+
+# Add watermark
+
+add_watermark(fig)
+
+# Save PNG to knowledge/figures/ regardless of where Quarto renders from
+
+output_path = get_figure_output_path('mc-distribution-war_trial_redirect_post_cutoff_disease_years.png')
+plt.savefig(output_path, dpi=96, bbox_inches=None, facecolor=COLOR_WHITE)
+
+add_png_metadata(
+    output_path,
+    title=f'Monte Carlo: {display_name}',
+    description=f'Monte Carlo simulation results showing uncertainty distribution for {display_name}'
+)
+
+plt.show()
+```
+
+**Simulation Results Summary: War Trial Redirect Post-Cutoff Disease Years**
+
+| Statistic | Value |
+|:----------|------:|
+| Baseline (deterministic) | 75 |
+| Mean (expected value) | 76.5 |
+| Median (50th percentile) | 81 |
+| Standard Deviation | 19.9 |
+| 90% Range (5th-95th percentile) | [34, 99] |
+
+*The histogram shows the distribution of War Trial Redirect Post-Cutoff Disease Years across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

@@ -37,7 +37,7 @@ Congress wrote the rules. The FDA follows them. Blaming the FDA is like blaming 
 
 ## "But What About Safety?"
 
-This is the part where humans panic, so let me be very precise about what this chapter is (and isn't) proposing: keep Phase I safety testing (it works, it caught thalidomide, nobody is suggesting you skip it). Do *radically more* efficacy testing, on *real patients*, with *transparent results*. But stop holding known-safe drugs hostage while you run the trials.
+This is the part where humans panic, so let me be precise: keep Phase I safety testing. It works. It caught thalidomide. Nobody is suggesting you skip it. Do *radically more* efficacy testing, on *real patients*, with *transparent results*. But stop holding known-safe drugs hostage while you run the trials.
 
 There is no word for "preventing someone from accessing a safe substance that could help them while they die." No sane civilization would do it, so none needed a word. You have several words for it. My favorite is "the approval process."
 
@@ -127,7 +127,7 @@ Economists call it "drug lag," which is a lovely, clinical way of saying "people
 Early estimates: **21,000 to 120,000 American lives per decade [@gieringer-drug-lag-estimate]**.
 But that was just the US.
 
-A [comprehensive quantitative analysis](https://invisible-graveyard.warondisease.org) using WHO mortality data estimates the *total* cost of the {{< var efficacy_lag_years >}} *post-safety* efficacy delay (the lag *after* drugs are known safe): **{{< var dfda_efficacy_lag_elimination_deaths_averted >}} eventually avoidable deaths.**
+A [full accounting](https://invisible-graveyard.warondisease.org) using WHO mortality data puts the *total* cost of the {{< var efficacy_lag_years >}} *post-safety* efficacy delay (the lag *after* drugs are known safe) at **{{< var dfda_efficacy_lag_elimination_deaths_averted >}} eventually avoidable deaths.**
 
 ![The number of people who died waiting for permission to try safe medicine. The number is very large. The permission was not.](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-the-global-body-count-bw-academic.jpg)
 
@@ -338,11 +338,6 @@ It is not a safety system. It is a filing system that produces corpses as a bypr
 
 The only thing missing is the political will to admit that a law signed before the Beatles existed might not be the pinnacle of pharmaceutical regulation. The Beatles broke up. The law didn't. Draw your own conclusions.
 
-## Technical Analysis
-
-For the full quantitative analysis including methodology, sensitivity analysis, and source data (warning: contains numbers large enough to make you physically ill), see:
-[https://invisible-graveyard.warondisease.org](https://invisible-graveyard.warondisease.org)
-
 ---
 
-*P.S. - The FDA will likely object to this chapter. Estimated response time: 12-15 years, pending Phase III review and proper documentation.*
+*P.S. - The FDA will likely object to this chapter. Estimated response time: 12-15 years, pending Phase III review and proper documentation. The full quantitative model is at [invisible-graveyard.warondisease.org](https://invisible-graveyard.warondisease.org), for those who enjoy numbers large enough to induce nausea.*

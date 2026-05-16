@@ -158,7 +158,7 @@ Replacing a bridge in a war zone costs 1.3-2.1x more than building one in peace.
 | Global Education Access | 90.6 years of universal coverage | {{< var global_military_spending_annual_2024 >}} ÷ \$30B [@unesco-education-for-all-cost] = 90.6 | UNESCO Education for All [@unesco-education-for-all] |
 | Poverty Eradication | 2.7 complete eliminations | {{< var global_military_spending_annual_2024 >}} ÷ \$1,000B [@world-bank-poverty-eradication-cost] = 2.7 | World Bank extreme poverty estimates |
 
-#### The Multiplier Effect
+#### You Chose the Worst One
 
 Economic multipliers per dollar spent:
 
@@ -402,17 +402,9 @@ At mid-range: {{< var war_counterfactual_lost_gdp_per_capita >}} per person per 
 
 ### The Medical Opportunity Cost
 
-The income number above answers one question: how much richer the average person would be if war had not interrupted growth since 1900. It does not answer the medical counterfactual by itself.
+The income number above answers one question: how much richer you would be if your species had not spent 124 years optimizing for rubble. The medical question is separate: what would have happened if the murder money had been spent on not dying?
 
-Keep the ledgers separate:
-
-| Ledger | What it counts | Use |
-|--------|----------------|-----|
-| Direct war receipt | Spending, rubble, poisoned land, and stolen life-years | Historical sunk cost |
-| Compound peace economy | Eight growth channels that never got interrupted | How much richer people would be today |
-| Medical redirect | Military spending above the 1900 freeze redirected to pragmatic trials | When treatment arrival and disease control plausibly move forward |
-
-The medical redirect is not a fourth invoice stacked on top of the all-channels GDP estimate. Channel 1 already includes "murder money becomes medicine money." If the medical scenario becomes the headline, it replaces or refines that channel. It does not get paid twice. Arithmetic is cruel this way.
+These are different ledgers. The compound peace economy counts growth that never happened. The medical redirect counts trials that never ran. They overlap (medicine money is part of growth), so you do not get to add them together and wave the total around like a flag. Arithmetic does not allow double-counting, even when the numbers are this embarrassing.
 
 Here is the minimal historical medical counterfactual:
 
@@ -426,9 +418,30 @@ Here is the minimal historical medical counterfactual:
 
 "Control" here means practical prevention, treatment, or functional eradication for most of the burden. It does not mean every pathogen is extinct, every tumor biology is solved, or every human has become an immortal invoice reviewer.
 
+#### Money-Unconstrained Medical Toolchain
+
+The aggressive prosecutor gets a sharper branch. Pretend the defense says, correctly, that trials alone do not buy sequencing, diagnostics, factories, EHRs, AI tooling, surveillance, or the rest of the boring machinery that turns science into medicine. Fine. Reserve {{< var war_medical_toolchain_prize_budget >}} first for prizes and tool-building. Make it intentionally absurd. Pay every difficult person enough money to become briefly useful.
+
+Then count only what remains. After that reserve, the misallocated war ledger still leaves {{< var war_trial_redirect_net_trial_budget >}} for pragmatic trials. At {{< var dfda_pragmatic_trial_cost_per_patient >}} per patient-slot, that buys {{< var war_trial_redirect_patient_slots_funded >}}, or {{< var war_trial_redirect_patient_slots_per_living_human >}} for every living human. Patient-slots are not unique people. They are repeated opportunities to test prevention, combination therapy, diagnostics, dosing, repurposing, platform vaccines, and population-scale protocols across time. The claim is not that the planet contained hundreds of billions of spare patients. The claim is that the defendants had enough money to saturate every practical bottleneck and still have trial capacity left over.
+
+Observed toolchain anchors show the scale problem:
+
+| Toolchain anchor | Observed cost |
+|---|---:|
+| Human Genome Project | {{< var medical_toolchain_hgp_cost_usd >}} |
+| NIH CRISPR-related funding, FY2011-FY2018 | {{< var medical_toolchain_crispr_nih_funding_2011_2018 >}} |
+| BRAIN Initiative planned budget | {{< var medical_toolchain_brain_initiative_planned_budget >}} |
+| PCORnet infrastructure funding anchor | {{< var medical_toolchain_pcornet_infrastructure_funding >}} |
+| HITECH EHR incentive estimate | {{< var medical_toolchain_hitech_ehr_incentive_estimated_spending >}} |
+| Operation Warp Speed potential vaccine awards | {{< var medical_toolchain_ows_potential_vaccine_awards >}} |
+| **Observed anchor costs** | **{{< var medical_toolchain_observed_anchor_costs >}}** |
+| **Aggressive prosecutor reserve** | **{{< var war_medical_toolchain_prize_budget >}}** |
+
+The reserve is {{< var war_medical_toolchain_prize_overpay_multiple >}} the observed anchor costs above. This is the point. The pleading theory does not need Nobel-grade precision. It needs to defeat the excuse that the missing tools made the medical counterfactual impossible. The money was large enough to buy the tools, overpay for the tools, build factories for the tools, and then fund the trials.
+
 For the forward-looking version of the same machinery starting now, see [1% Treaty Impact](../economics/1-pct-treaty-impact.qmd) [@1-percent-treaty-paper-2025] [@1-pct-treaty-impact-paper-2025]. That chapter estimates what happens if the treaty is adopted today. This section estimates what humanity lost by not doing the obvious version in 1900.
 
-This section supplies the factual predicate for Count Three in [Humanity v. Government](../appendix/humanity-v-government.qmd). The prosecution can use it as consequential and loss-of-chance damages: not "every disease death is added to the war invoice," but "the defendants diverted the trial capacity that would have moved treatment arrival and disease control forward." That distinction is the difference between a damages brief and a spreadsheet with a fever.
+This section is the factual basis for Count Three in [Humanity v. Government](../appendix/humanity-v-government.qmd). The charge is not "every disease death is your fault." The charge is "you had the money to run the trials and you spent it on missiles instead." One is a tantrum. The other is arithmetic.
 
 ### The Grand Total: Everything War Has Cost Since 1900
 

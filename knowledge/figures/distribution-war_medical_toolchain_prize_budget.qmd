@@ -1,6 +1,6 @@
 ```{python}
 #| echo: false
-#| fig-cap: "Probability Distribution: War-Redirect Infectious Disease Control Year"
+#| fig-cap: "Probability Distribution: War Medical Toolchain Prize Budget"
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -17,12 +17,12 @@ setup_chart_style()
 
 # Parameter values
 
-central_value = 1950.0
-low = 1935
-high = 1975
+central_value = 20000000000000.0
+low = 5000000000000
+high = 50000000000000
 dist_type = "triangular"
-display_name = "War-Redirect Infectious Disease Control Year"
-unit = "year"
+display_name = "War Medical Toolchain Prize Budget"
+unit = "USD"
 
 # Calculate distribution parameters
 
@@ -143,7 +143,7 @@ add_watermark(fig)
 
 # Save PNG to knowledge/figures/ regardless of where Quarto renders from
 
-output_path = get_figure_output_path('distribution-war_trial_redirect_infectious_disease_control_year.png')
+output_path = get_figure_output_path('distribution-war_medical_toolchain_prize_budget.png')
 plt.savefig(output_path, dpi=96, bbox_inches=None, facecolor=COLOR_WHITE)
 
 add_png_metadata(

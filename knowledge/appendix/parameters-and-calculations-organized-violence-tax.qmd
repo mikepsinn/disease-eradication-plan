@@ -38,15 +38,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 73 parameters used in the analysis, organized by type:
+This appendix documents all 107 parameters used in the analysis, organized by type:
 
-- External sources (peer-reviewed): 37
-- Calculated values: 25
-- Core definitions: 11
+- External sources (peer-reviewed): 47
+- Calculated values: 42
+- Core definitions: 18
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (25 parameters) • [External Data Sources](#sec-external) (37 parameters) • [Core Definitions](#sec-definitions) (11 parameters)
+[Calculated Values](#sec-calculated) (42 parameters) • [External Data Sources](#sec-external) (47 parameters) • [Core Definitions](#sec-definitions) (18 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -96,6 +96,347 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-bullets_per_person_annual.qmd >}}
+
+:::
+
+### Total Annual Pragmatic Trial Platform Operational Costs: $40 million {#sec-dfda_annual_opex}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Total annual pragmatic trial platform operational costs (sum of all components: platform + staff + infra + regulatory + community)
+
+**Inputs**:
+
+- [Pragmatic Trial Platform Maintenance Costs](#sec-dfda_opex_platform_maintenance): $15 million (95% CI: $10 million - $22 million)
+- [Pragmatic Trial Platform Staff Costs](#sec-dfda_opex_staff): $10 million (95% CI: $7 million - $15 million)
+- [Pragmatic Trial Platform Infrastructure Costs](#sec-dfda_opex_infrastructure): $8 million (95% CI: $5 million - $12 million)
+- [Pragmatic Trial Platform Regulatory Coordination Costs](#sec-dfda_opex_regulatory): $5 million (95% CI: $3 million - $8 million)
+- [Pragmatic Trial Platform Community Support Costs](#sec-dfda_opex_community): $2 million (95% CI: $1 million - $3 million)
+
+$$
+\begin{gathered}
+OPEX_{trial} \\
+= Cost_{platform} + Cost_{staff} + Cost_{infra} \\
++ Cost_{regulatory} + Cost_{community} \\
+= \$15M + \$10M + \$8M + \$5M + \$2M \\
+= \$40M
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-dfda_annual_opex.qmd >}}
+
+{{< include ../figures/sensitivity-table-dfda_annual_opex.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-dfda_annual_opex.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_annual_opex.qmd >}}
+
+:::
+
+### Patients Fundable Annually at Reference Funding: 23.4 million patients/year {#sec-dfda_patients_fundable_annually}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Number of patients fundable annually at the reference pragmatic trial funding level and empirical pragmatic trial cost. Source-agnostic counterpart of DIH_PATIENTS_FUNDABLE_ANNUALLY.
+
+**Inputs**:
+
+- [Reference Annual Trial Subsidies](#sec-dfda_trial_subsidies_annual) 🔢: $21.8 billion
+- [Pragmatic Trial Cost per Patient](#sec-dfda_pragmatic_trial_cost_per_patient) 📊: $929 (95% CI: $97 - $3,000)
+
+$$
+\begin{gathered}
+N_{fundable,ref} \\
+= \frac{Subsidies_{trial,ref}}{Cost_{pragmatic,pt}} \\
+= \frac{\$21.8B}{\$929} \\
+= 23.4M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Subsidies_{trial,ref} \\
+= Funding_{trial,ref} - OPEX_{trial} \\
+= \$21.8B - \$40M \\
+= \$21.8B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+OPEX_{trial} \\
+= Cost_{platform} + Cost_{staff} + Cost_{infra} \\
++ Cost_{regulatory} + Cost_{community} \\
+= \$15M + \$10M + \$8M + \$5M + \$2M \\
+= \$40M
+\end{gathered}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-dfda_patients_fundable_annually.qmd >}}
+
+{{< include ../figures/sensitivity-table-dfda_patients_fundable_annually.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-dfda_patients_fundable_annually.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_patients_fundable_annually.qmd >}}
+
+:::
+
+### Therapeutic Space Exploration Time at Treaty-Scale Trial Capacity: 36 years {#sec-dfda_queue_clearance_years}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Years to explore the entire therapeutic search space with treaty-scale pragmatic trial capacity. At increased discovery rate, finding first treatments for all currently untreatable diseases takes ~36 years instead of ~443.
+
+**Inputs**:
+
+- [Status Quo Therapeutic Space Exploration Time](#sec-status_quo_queue_clearance_years) 🔢: 443 years
+- [Pragmatic Trial Capacity Multiplier at Treaty-Scale Funding](#sec-dfda_trial_capacity_multiplier) 🔢: 12.3x
+
+$$
+\begin{gathered}
+T_{queue,trial} \\
+= \frac{T_{queue,SQ}}{k_{capacity}} \\
+= \frac{443}{12.3} \\
+= 36
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{queue,SQ} \\
+= \frac{N_{untreated}}{Treatments_{new,ann}} \\
+= \frac{6{,}650}{15} \\
+= 443
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{untreated} \\
+= N_{rare} \times 0.95 \\
+= 7{,}000 \times 0.95 \\
+= 6{,}650
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+k_{capacity} \\
+= \frac{N_{fundable,ref}}{Slots_{curr}} \\
+= \frac{23.4M}{1.9M} \\
+= 12.3
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{fundable,ref} \\
+= \frac{Subsidies_{trial,ref}}{Cost_{pragmatic,pt}} \\
+= \frac{\$21.8B}{\$929} \\
+= 23.4M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Subsidies_{trial,ref} \\
+= Funding_{trial,ref} - OPEX_{trial} \\
+= \$21.8B - \$40M \\
+= \$21.8B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+OPEX_{trial} \\
+= Cost_{platform} + Cost_{staff} + Cost_{infra} \\
++ Cost_{regulatory} + Cost_{community} \\
+= \$15M + \$10M + \$8M + \$5M + \$2M \\
+= \$40M
+\end{gathered}
+$$
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-dfda_queue_clearance_years.qmd >}}
+
+{{< include ../figures/sensitivity-table-dfda_queue_clearance_years.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-dfda_queue_clearance_years.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_queue_clearance_years.qmd >}}
+
+:::
+
+### Pragmatic Trial Capacity Multiplier at Treaty-Scale Funding: 12.3x {#sec-dfda_trial_capacity_multiplier}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Trial capacity multiplier from treaty-scale pragmatic trial funding capacity vs. current global trial participation
+
+**Inputs**:
+
+- [Annual Global Clinical Trial Participants](#sec-current_trial_slots_available) 📊: 1.9 million patients/year (95% CI: 1.5 million patients/year - 2.3 million patients/year)
+- [Patients Fundable Annually at Reference Funding](#sec-dfda_patients_fundable_annually) 🔢: 23.4 million patients/year
+
+$$
+\begin{gathered}
+k_{capacity} \\
+= \frac{N_{fundable,ref}}{Slots_{curr}} \\
+= \frac{23.4M}{1.9M} \\
+= 12.3
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{fundable,ref} \\
+= \frac{Subsidies_{trial,ref}}{Cost_{pragmatic,pt}} \\
+= \frac{\$21.8B}{\$929} \\
+= 23.4M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Subsidies_{trial,ref} \\
+= Funding_{trial,ref} - OPEX_{trial} \\
+= \$21.8B - \$40M \\
+= \$21.8B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+OPEX_{trial} \\
+= Cost_{platform} + Cost_{staff} + Cost_{infra} \\
++ Cost_{regulatory} + Cost_{community} \\
+= \$15M + \$10M + \$8M + \$5M + \$2M \\
+= \$40M
+\end{gathered}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-dfda_trial_capacity_multiplier.qmd >}}
+
+{{< include ../figures/sensitivity-table-dfda_trial_capacity_multiplier.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-dfda_trial_capacity_multiplier.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_trial_capacity_multiplier.qmd >}}
+
+:::
+
+### Reference Annual Trial Subsidies: $21.8 billion {#sec-dfda_trial_subsidies_annual}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual patient-level pragmatic trial subsidies after operating costs at the reference funding level
+
+**Inputs**:
+
+- [Reference Annual Pragmatic Trial Funding](#sec-dfda_annual_trial_funding): $21.8 billion
+- [Total Annual Pragmatic Trial Platform Operational Costs](#sec-dfda_annual_opex) 🔢: $40 million
+
+$$
+\begin{gathered}
+Subsidies_{trial,ref} \\
+= Funding_{trial,ref} - OPEX_{trial} \\
+= \$21.8B - \$40M \\
+= \$21.8B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+OPEX_{trial} \\
+= Cost_{platform} + Cost_{staff} + Cost_{infra} \\
++ Cost_{regulatory} + Cost_{community} \\
+= \$15M + \$10M + \$8M + \$5M + \$2M \\
+= \$40M
+\end{gathered}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-dfda_trial_subsidies_annual.qmd >}}
+
+{{< include ../figures/sensitivity-table-dfda_trial_subsidies_annual.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-dfda_trial_subsidies_annual.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_trial_subsidies_annual.qmd >}}
+
+:::
+
+### Diseases Without Effective Treatment: 6,650 diseases {#sec-diseases_without_effective_treatment}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Number of diseases without effective treatment. 95% of 7,000 rare diseases lack FDA-approved treatment (per Orphanet 2024). This represents the therapeutic search space that remains unexplored.
+
+**Inputs**:
+
+- [Total Number of Rare Diseases Globally](#sec-rare_diseases_count_global) 📊: 7,000 diseases (95% CI: 6,000 diseases - 10,000 diseases)
+
+$$
+\begin{gathered}
+N_{untreated} \\
+= N_{rare} \times 0.95 \\
+= 7{,}000 \times 0.95 \\
+= 6{,}650
+\end{gathered}
+$$
+
+**Methodology**: [@rare-disease-only-5pct-have-treatment]
+
+*~ Medium confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-diseases_without_effective_treatment.qmd >}}
+
+{{< include ../figures/sensitivity-table-diseases_without_effective_treatment.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-diseases_without_effective_treatment.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-diseases_without_effective_treatment.qmd >}}
 
 :::
 
@@ -732,6 +1073,91 @@ $$
 
 :::
 
+### Observed Medical Toolchain Anchor Costs: $58.6 billion {#sec-medical_toolchain_observed_anchor_costs}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Sum of observed anchor costs for major medical toolchain programs. This is anchor evidence for the prosecutor reserve, not a claim that these programs alone cure disease.
+
+**Inputs**:
+
+- [Medical Toolchain Human Genome Project Cost](#sec-medical_toolchain_hgp_cost_usd) 📊: $2.7 billion
+- [Medical Toolchain NIH CRISPR Funding, FY2011-FY2018](#sec-medical_toolchain_crispr_nih_funding_2011_2018) 📊: $3.1 billion
+- [Medical Toolchain BRAIN Initiative Planned Budget](#sec-medical_toolchain_brain_initiative_planned_budget) 📊: $4.5 billion
+- [Medical Toolchain PCORnet Infrastructure Funding Anchor](#sec-medical_toolchain_pcornet_infrastructure_funding) 📊: $325 million
+- [Medical Toolchain HITECH EHR Incentive Estimated Spending](#sec-medical_toolchain_hitech_ehr_incentive_estimated_spending) 📊: $30 billion
+- [Medical Toolchain Operation Warp Speed Potential Vaccine Awards](#sec-medical_toolchain_ows_potential_vaccine_awards) 📊: $18 billion
+
+$$
+\begin{gathered}
+C_{tool,anchors} \\
+= C_{tool,HGP} + C_{tool,CRISPR} + C_{tool,BRAIN} \\
++ C_{tool,PCORnet} + C_{tool,EHR} + C_{tool,OWS} \\
+= \$2.7B + \$3.1B + \$4.5B + \$325M + \$30B + \$18B \\
+= \$58.6B
+\end{gathered}
+$$
+
+*~ Medium confidence*
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-medical_toolchain_observed_anchor_costs.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-medical_toolchain_observed_anchor_costs.qmd >}}
+
+:::
+
+### Status Quo Therapeutic Space Exploration Time: 443 years {#sec-status_quo_queue_clearance_years}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Years to explore the entire therapeutic search space under current system. At current discovery rate of ~15 diseases/year getting first treatments, finding treatments for all ~6,650 untreated diseases would take ~443 years.
+
+**Inputs**:
+
+- [Diseases Without Effective Treatment](#sec-diseases_without_effective_treatment) 🔢: 6,650 diseases
+- [Diseases Getting First Treatment Per Year](#sec-new_disease_first_treatments_per_year) 📊: 15 diseases/year (95% CI: 8 diseases/year - 30 diseases/year)
+
+$$
+\begin{gathered}
+T_{queue,SQ} \\
+= \frac{N_{untreated}}{Treatments_{new,ann}} \\
+= \frac{6{,}650}{15} \\
+= 443
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{untreated} \\
+= N_{rare} \times 0.95 \\
+= 7{,}000 \times 0.95 \\
+= 6{,}650
+\end{gathered}
+$$
+**Methodology**: [@status-quo-cure-timeline-estimate]
+
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-status_quo_queue_clearance_years.qmd >}}
+
+{{< include ../figures/sensitivity-table-status_quo_queue_clearance_years.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-status_quo_queue_clearance_years.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-status_quo_queue_clearance_years.qmd >}}
+
+:::
+
 ### Annual Funding from 1% of Global Military Spending Redirected to DIH: $27.2 billion {#sec-treaty_annual_funding}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -1085,6 +1511,51 @@ $$
 
 :::
 
+### War Medical Toolchain Prize Overpay Multiple: 341x {#sec-war_medical_toolchain_prize_overpay_multiple}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+How many times larger the prosecutor's medical-toolchain prize reserve is than the observed anchor costs listed here.
+
+**Inputs**:
+
+- [War Medical Toolchain Prize Budget](#sec-war_medical_toolchain_prize_budget): $20 trillion (95% CI: $5 trillion - $50 trillion)
+- [Observed Medical Toolchain Anchor Costs](#sec-medical_toolchain_observed_anchor_costs) 🔢: $58.6 billion
+
+$$
+\begin{gathered}
+m_{tool,overpay} \\
+= \frac{C_{tool,prize}}{C_{tool,anchors}} \\
+= \frac{\$20T}{\$58.6B} \\
+= 341
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+C_{tool,anchors} \\
+= C_{tool,HGP} + C_{tool,CRISPR} + C_{tool,BRAIN} \\
++ C_{tool,PCORnet} + C_{tool,EHR} + C_{tool,OWS} \\
+= \$2.7B + \$3.1B + \$4.5B + \$325M + \$30B + \$18B \\
+= \$58.6B
+\end{gathered}
+$$
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-war_medical_toolchain_prize_overpay_multiple.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-war_medical_toolchain_prize_overpay_multiple.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-war_medical_toolchain_prize_overpay_multiple.qmd >}}
+
+:::
+
 ### QALY Value of Life Lost to War Since 1900: $1.26 quadrillion {#sec-war_qaly_value_lost_since_1900}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -1189,6 +1660,331 @@ $$
 
 :::
 
+### War-Redirect Biological Aging Control Year: 1990 {#sec-war_trial_redirect_aging_control_sensitivity_year}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Counterfactual calendar year when biological aging becomes a treatable risk factor in the aggressive medical-redirect model. Uses the calculated aging pleading cutoff year.
+
+**Inputs**:
+
+- [War-Redirect Aging Pleading Cutoff Year](#sec-war_trial_redirect_aging_pleading_cutoff_year) 🔢: 1990
+
+$$
+Y_{aging,redirect} = Y_{aging,plead} = 1{,}990 = 1{,}990
+$$
+where:
+$$
+\begin{gathered}
+Y_{aging,plead} \\
+= Y_{disease,plead} + T_{aging,lag} \\
+= 1{,}950 + 40 \\
+= 1{,}990
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Y_{disease,plead} \\
+= Y_{redirect,start} + T_{tool,bootstrap} + T_{queue,trial} \\
+= 1{,}900 + 14 + 36 \\
+= 1{,}950
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{queue,trial} \\
+= \frac{T_{queue,SQ}}{k_{capacity}} \\
+= \frac{443}{12.3} \\
+= 36
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{queue,SQ} \\
+= \frac{N_{untreated}}{Treatments_{new,ann}} \\
+= \frac{6{,}650}{15} \\
+= 443
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{untreated} \\
+= N_{rare} \times 0.95 \\
+= 7{,}000 \times 0.95 \\
+= 6{,}650
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+k_{capacity} \\
+= \frac{N_{fundable,ref}}{Slots_{curr}} \\
+= \frac{23.4M}{1.9M} \\
+= 12.3
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{fundable,ref} \\
+= \frac{Subsidies_{trial,ref}}{Cost_{pragmatic,pt}} \\
+= \frac{\$21.8B}{\$929} \\
+= 23.4M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Subsidies_{trial,ref} \\
+= Funding_{trial,ref} - OPEX_{trial} \\
+= \$21.8B - \$40M \\
+= \$21.8B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+OPEX_{trial} \\
+= Cost_{platform} + Cost_{staff} + Cost_{infra} \\
++ Cost_{regulatory} + Cost_{community} \\
+= \$15M + \$10M + \$8M + \$5M + \$2M \\
+= \$40M
+\end{gathered}
+$$
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-war_trial_redirect_aging_control_sensitivity_year.qmd >}}
+
+{{< include ../figures/sensitivity-table-war_trial_redirect_aging_control_sensitivity_year.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-war_trial_redirect_aging_control_sensitivity_year.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-war_trial_redirect_aging_control_sensitivity_year.qmd >}}
+
+:::
+
+### War-Redirect Aging Pleading Cutoff Year: 1990 {#sec-war_trial_redirect_aging_pleading_cutoff_year}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Aggressive prosecutor pleading cutoff year for presumptive aging-death plaintiffs. Calculated as the disease cutoff plus the geroscience lag assumption.
+
+**Inputs**:
+
+- [War-Redirect Disease Pleading Cutoff Year](#sec-war_trial_redirect_disease_pleading_cutoff_year) 🔢: 1950
+- [War-Redirect Aging Lag After Disease Control](#sec-war_trial_redirect_aging_lag_after_disease_control_years): 40 years (95% CI: 10 years - 65 years)
+
+$$
+\begin{gathered}
+Y_{aging,plead} \\
+= Y_{disease,plead} + T_{aging,lag} \\
+= 1{,}950 + 40 \\
+= 1{,}990
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Y_{disease,plead} \\
+= Y_{redirect,start} + T_{tool,bootstrap} + T_{queue,trial} \\
+= 1{,}900 + 14 + 36 \\
+= 1{,}950
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{queue,trial} \\
+= \frac{T_{queue,SQ}}{k_{capacity}} \\
+= \frac{443}{12.3} \\
+= 36
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{queue,SQ} \\
+= \frac{N_{untreated}}{Treatments_{new,ann}} \\
+= \frac{6{,}650}{15} \\
+= 443
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{untreated} \\
+= N_{rare} \times 0.95 \\
+= 7{,}000 \times 0.95 \\
+= 6{,}650
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+k_{capacity} \\
+= \frac{N_{fundable,ref}}{Slots_{curr}} \\
+= \frac{23.4M}{1.9M} \\
+= 12.3
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{fundable,ref} \\
+= \frac{Subsidies_{trial,ref}}{Cost_{pragmatic,pt}} \\
+= \frac{\$21.8B}{\$929} \\
+= 23.4M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Subsidies_{trial,ref} \\
+= Funding_{trial,ref} - OPEX_{trial} \\
+= \$21.8B - \$40M \\
+= \$21.8B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+OPEX_{trial} \\
+= Cost_{platform} + Cost_{staff} + Cost_{infra} \\
++ Cost_{regulatory} + Cost_{community} \\
+= \$15M + \$10M + \$8M + \$5M + \$2M \\
+= \$40M
+\end{gathered}
+$$
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-war_trial_redirect_aging_pleading_cutoff_year.qmd >}}
+
+{{< include ../figures/sensitivity-table-war_trial_redirect_aging_pleading_cutoff_year.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-war_trial_redirect_aging_pleading_cutoff_year.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-war_trial_redirect_aging_pleading_cutoff_year.qmd >}}
+
+:::
+
+### War-Redirect Disease Pleading Cutoff Year: 1950 {#sec-war_trial_redirect_disease_pleading_cutoff_year}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Aggressive prosecutor pleading cutoff year for presumptive disease-death plaintiffs. Calculated as the 1900 redirect start year plus medical-toolchain bootstrap years plus the treaty-scale therapeutic queue-clearance years.
+
+**Inputs**:
+
+- [War-Redirect Medical Counterfactual Start Year](#sec-war_trial_redirect_start_year): 1900
+- [War-Redirect Medical Toolchain Bootstrap Years](#sec-war_trial_redirect_toolchain_bootstrap_years): 14 years (95% CI: 0 years - 40 years)
+- [Therapeutic Space Exploration Time at Treaty-Scale Trial Capacity](#sec-dfda_queue_clearance_years) 🔢: 36 years
+
+$$
+\begin{gathered}
+Y_{disease,plead} \\
+= Y_{redirect,start} + T_{tool,bootstrap} + T_{queue,trial} \\
+= 1{,}900 + 14 + 36 \\
+= 1{,}950
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{queue,trial} \\
+= \frac{T_{queue,SQ}}{k_{capacity}} \\
+= \frac{443}{12.3} \\
+= 36
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{queue,SQ} \\
+= \frac{N_{untreated}}{Treatments_{new,ann}} \\
+= \frac{6{,}650}{15} \\
+= 443
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{untreated} \\
+= N_{rare} \times 0.95 \\
+= 7{,}000 \times 0.95 \\
+= 6{,}650
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+k_{capacity} \\
+= \frac{N_{fundable,ref}}{Slots_{curr}} \\
+= \frac{23.4M}{1.9M} \\
+= 12.3
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{fundable,ref} \\
+= \frac{Subsidies_{trial,ref}}{Cost_{pragmatic,pt}} \\
+= \frac{\$21.8B}{\$929} \\
+= 23.4M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Subsidies_{trial,ref} \\
+= Funding_{trial,ref} - OPEX_{trial} \\
+= \$21.8B - \$40M \\
+= \$21.8B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+OPEX_{trial} \\
+= Cost_{platform} + Cost_{staff} + Cost_{infra} \\
++ Cost_{regulatory} + Cost_{community} \\
+= \$15M + \$10M + \$8M + \$5M + \$2M \\
+= \$40M
+\end{gathered}
+$$
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-war_trial_redirect_disease_pleading_cutoff_year.qmd >}}
+
+{{< include ../figures/sensitivity-table-war_trial_redirect_disease_pleading_cutoff_year.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-war_trial_redirect_disease_pleading_cutoff_year.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-war_trial_redirect_disease_pleading_cutoff_year.qmd >}}
+
+:::
+
 ### Excess Military Spending Above 1900 Freeze: $135 trillion {#sec-war_trial_redirect_excess_military_spending_above_1900_freeze}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -1274,6 +2070,356 @@ $$
 
 :::
 
+### War-Redirect Infectious Disease Control Year: 1950 {#sec-war_trial_redirect_infectious_disease_control_year}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Counterfactual calendar year for practical infectious-disease control in the aggressive medical-redirect model. Uses the calculated disease pleading cutoff year.
+
+**Inputs**:
+
+- [War-Redirect Disease Pleading Cutoff Year](#sec-war_trial_redirect_disease_pleading_cutoff_year) 🔢: 1950
+
+$$
+\begin{gathered}
+Y_{infectious,redirect} \\
+= Y_{disease,plead} \\
+= 1{,}950 \\
+= 1{,}950
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Y_{disease,plead} \\
+= Y_{redirect,start} + T_{tool,bootstrap} + T_{queue,trial} \\
+= 1{,}900 + 14 + 36 \\
+= 1{,}950
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{queue,trial} \\
+= \frac{T_{queue,SQ}}{k_{capacity}} \\
+= \frac{443}{12.3} \\
+= 36
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{queue,SQ} \\
+= \frac{N_{untreated}}{Treatments_{new,ann}} \\
+= \frac{6{,}650}{15} \\
+= 443
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{untreated} \\
+= N_{rare} \times 0.95 \\
+= 7{,}000 \times 0.95 \\
+= 6{,}650
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+k_{capacity} \\
+= \frac{N_{fundable,ref}}{Slots_{curr}} \\
+= \frac{23.4M}{1.9M} \\
+= 12.3
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{fundable,ref} \\
+= \frac{Subsidies_{trial,ref}}{Cost_{pragmatic,pt}} \\
+= \frac{\$21.8B}{\$929} \\
+= 23.4M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Subsidies_{trial,ref} \\
+= Funding_{trial,ref} - OPEX_{trial} \\
+= \$21.8B - \$40M \\
+= \$21.8B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+OPEX_{trial} \\
+= Cost_{platform} + Cost_{staff} + Cost_{infra} \\
++ Cost_{regulatory} + Cost_{community} \\
+= \$15M + \$10M + \$8M + \$5M + \$2M \\
+= \$40M
+\end{gathered}
+$$
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-war_trial_redirect_infectious_disease_control_year.qmd >}}
+
+{{< include ../figures/sensitivity-table-war_trial_redirect_infectious_disease_control_year.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-war_trial_redirect_infectious_disease_control_year.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-war_trial_redirect_infectious_disease_control_year.qmd >}}
+
+:::
+
+### War Trial Redirect Net Trial Budget After Toolchain Reserve: $150 trillion {#sec-war_trial_redirect_net_trial_budget}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Cumulative military spending since the Federal Reserve era after reserving the aggressive prosecutor's medical-toolchain prize budget.
+
+**Inputs**:
+
+- [Cumulative Military Spending (Fed Era)](#sec-cumulative_military_spending_fed_era): $170 trillion
+- [War Medical Toolchain Prize Budget](#sec-war_medical_toolchain_prize_budget): $20 trillion (95% CI: $5 trillion - $50 trillion)
+
+$$
+\begin{gathered}
+B_{trials,net} \\
+= Spending_{mil,cum,fed} - C_{tool,prize} \\
+= \$170T - \$20T \\
+= \$150T
+\end{gathered}
+$$
+
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-war_trial_redirect_net_trial_budget.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-war_trial_redirect_net_trial_budget.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-war_trial_redirect_net_trial_budget.qmd >}}
+
+:::
+
+### War-Redirect Major Non-Aging Disease Control Year: 1950 {#sec-war_trial_redirect_nonaging_disease_control_year}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Counterfactual calendar year for practical control of major non-aging disease burden in the aggressive medical-redirect model. Uses the calculated disease pleading cutoff year.
+
+**Inputs**:
+
+- [War-Redirect Disease Pleading Cutoff Year](#sec-war_trial_redirect_disease_pleading_cutoff_year) 🔢: 1950
+
+$$
+Y_{disease,redirect} = Y_{disease,plead} = 1{,}950 = 1{,}950
+$$
+where:
+$$
+\begin{gathered}
+Y_{disease,plead} \\
+= Y_{redirect,start} + T_{tool,bootstrap} + T_{queue,trial} \\
+= 1{,}900 + 14 + 36 \\
+= 1{,}950
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{queue,trial} \\
+= \frac{T_{queue,SQ}}{k_{capacity}} \\
+= \frac{443}{12.3} \\
+= 36
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{queue,SQ} \\
+= \frac{N_{untreated}}{Treatments_{new,ann}} \\
+= \frac{6{,}650}{15} \\
+= 443
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{untreated} \\
+= N_{rare} \times 0.95 \\
+= 7{,}000 \times 0.95 \\
+= 6{,}650
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+k_{capacity} \\
+= \frac{N_{fundable,ref}}{Slots_{curr}} \\
+= \frac{23.4M}{1.9M} \\
+= 12.3
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{fundable,ref} \\
+= \frac{Subsidies_{trial,ref}}{Cost_{pragmatic,pt}} \\
+= \frac{\$21.8B}{\$929} \\
+= 23.4M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Subsidies_{trial,ref} \\
+= Funding_{trial,ref} - OPEX_{trial} \\
+= \$21.8B - \$40M \\
+= \$21.8B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+OPEX_{trial} \\
+= Cost_{platform} + Cost_{staff} + Cost_{infra} \\
++ Cost_{regulatory} + Cost_{community} \\
+= \$15M + \$10M + \$8M + \$5M + \$2M \\
+= \$40M
+\end{gathered}
+$$
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-war_trial_redirect_nonaging_disease_control_year.qmd >}}
+
+{{< include ../figures/sensitivity-table-war_trial_redirect_nonaging_disease_control_year.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-war_trial_redirect_nonaging_disease_control_year.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-war_trial_redirect_nonaging_disease_control_year.qmd >}}
+
+:::
+
+### War Trial Redirect Patient Slots Funded: 161 billion patient-slots {#sec-war_trial_redirect_patient_slots_funded}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Patient-slots funded by the net redirected war budget at pragmatic trial cost per patient. Patient-slots are repeated experimental opportunities, not unique people.
+
+**Inputs**:
+
+- [War Trial Redirect Net Trial Budget After Toolchain Reserve](#sec-war_trial_redirect_net_trial_budget) 🔢: $150 trillion
+- [Pragmatic Trial Cost per Patient](#sec-dfda_pragmatic_trial_cost_per_patient) 📊: $929 (95% CI: $97 - $3,000)
+
+$$
+\begin{gathered}
+N_{slots,war} \\
+= \frac{B_{trials,net}}{Cost_{pragmatic,pt}} \\
+= \frac{\$150T}{\$929} \\
+= 161B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+B_{trials,net} \\
+= Spending_{mil,cum,fed} - C_{tool,prize} \\
+= \$170T - \$20T \\
+= \$150T
+\end{gathered}
+$$
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-war_trial_redirect_patient_slots_funded.qmd >}}
+
+{{< include ../figures/sensitivity-table-war_trial_redirect_patient_slots_funded.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-war_trial_redirect_patient_slots_funded.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-war_trial_redirect_patient_slots_funded.qmd >}}
+
+:::
+
+### War Trial Redirect Patient Slots Per Living Human: 20.2 patient-slots/person {#sec-war_trial_redirect_patient_slots_per_living_human}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Patient-slots funded per living human, used to avoid implying hundreds of billions of unique patients. It means repeated trial opportunities across time and indications.
+
+**Inputs**:
+
+- [War Trial Redirect Patient Slots Funded](#sec-war_trial_redirect_patient_slots_funded) 🔢: 161 billion patient-slots
+- [Global Population in 2024](#sec-global_population_2024) 📊: 8 billion of people (95% CI: 7.8 billion of people - 8.2 billion of people)
+
+$$
+\begin{gathered}
+N_{slots,pc} \\
+= \frac{N_{slots,war}}{Pop_{global}} \\
+= \frac{161B}{8B} \\
+= 20.2
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{slots,war} \\
+= \frac{B_{trials,net}}{Cost_{pragmatic,pt}} \\
+= \frac{\$150T}{\$929} \\
+= 161B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+B_{trials,net} \\
+= Spending_{mil,cum,fed} - C_{tool,prize} \\
+= \$170T - \$20T \\
+= \$150T
+\end{gathered}
+$$
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-war_trial_redirect_patient_slots_per_living_human.qmd >}}
+
+{{< include ../figures/sensitivity-table-war_trial_redirect_patient_slots_per_living_human.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-war_trial_redirect_patient_slots_per_living_human.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-war_trial_redirect_patient_slots_per_living_human.qmd >}}
+
+:::
+
 ## External Data Sources {#sec-external}
 
 Parameters sourced from peer-reviewed publications, institutional databases, and authoritative reports.
@@ -1302,6 +2448,30 @@ Cost per round of 5.56x45mm NATO ammunition (military bulk procurement). Based o
 
 :::
 
+### Annual Global Clinical Trial Participants: 1.9 million patients/year {#sec-current_trial_slots_available}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual global clinical trial participants (IQVIA 2022: 1.9M post-COVID normalization)
+
+**Source**: [@global-trial-participant-capacity]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [1.5 million patients/year, 2.3 million patients/year] • Distribution: Lognormal
+
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between 1.5 million patients/year and 2.3 million patients/year (±21%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-current_trial_slots_available.qmd >}}
+
+*✓ High confidence*
+
+:::
+
 ### 20th-Century Government Democide Total: 262 million deaths {#sec-democide_total_20th_century}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -1323,6 +2493,30 @@ Total people murdered by governments worldwide, 1900-1999 (Rummel's democide est
 {{< include ../figures/distribution-democide_total_20th_century.qmd >}}
 
 *✓ High confidence*
+
+:::
+
+### Pragmatic Trial Cost per Patient: $929 {#sec-dfda_pragmatic_trial_cost_per_patient}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Embedded pragmatic trial cost per patient. Uses ADAPTABLE trial ($929) as DELIBERATELY CONSERVATIVE central estimate. Ramsberg & Platt (2018) reviewed 108 embedded pragmatic trials; 64 with cost data had median of only $97/patient - this estimate may overstate costs by 10x. Confidence interval spans meta-analysis median to complex chronic disease trials.
+
+**Source**: [@pragmatic-trials-cost-advantage]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$97, $3,000] • Distribution: Lognormal
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between $97 and $3,000 (±156%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-dfda_pragmatic_trial_cost_per_patient.qmd >}}
+
+*~ Medium confidence*
 
 :::
 
@@ -1998,6 +3192,150 @@ Global population in 2024
 
 :::
 
+### Medical Toolchain BRAIN Initiative Planned Budget: $4.5 billion {#sec-medical_toolchain_brain_initiative_planned_budget}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Planned NIH BRAIN Initiative commitment described in the BRAIN 2025 scientific vision.
+
+**Source**: [@nih-brain-initiative-planned-budget]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*✓ High confidence*
+
+:::
+
+### Medical Toolchain NIH CRISPR Funding, FY2011-FY2018: $3.1 billion {#sec-medical_toolchain_crispr_nih_funding_2011_2018}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Rounded NIH CRISPR-related research funding for FY2011-FY2018 from CRS Table 1.
+
+**Source**: [@crs-crispr-nih-funding-2011-2018]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*✓ High confidence*
+
+:::
+
+### Medical Toolchain Human Genome Project Cost: $2.7 billion {#sec-medical_toolchain_hgp_cost_usd}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Approximate Human Genome Project cost used as an observed medical-toolchain anchor.
+
+**Source**: [@human-genome-and-genetic-editing]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*~ Medium confidence*
+
+:::
+
+### Medical Toolchain HITECH EHR Incentive Estimated Spending: $30 billion {#sec-medical_toolchain_hitech_ehr_incentive_estimated_spending}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+GAO estimate of Medicare and Medicaid EHR incentive program spending from 2011 through 2019.
+
+**Source**: [@hitech-ehr-incentive-estimated-spending]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*✓ High confidence*
+
+:::
+
+### Medical Toolchain Operation Warp Speed Potential Vaccine Awards: $18 billion {#sec-medical_toolchain_ows_potential_vaccine_awards}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+GAO-reported total potential estimated value of Operation Warp Speed vaccine candidate awards.
+
+**Source**: [@operation-warp-speed-potential-vaccine-awards]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*✓ High confidence*
+
+:::
+
+### Medical Toolchain PCORnet Infrastructure Funding Anchor: $325 million {#sec-medical_toolchain_pcornet_infrastructure_funding}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Rounded PCORI-funded PCORnet Studies amount from the Q4 2025 PCORnet dashboard. Used as a network-scale pragmatic-trial infrastructure anchor.
+
+**Source**: [@pcornet-infrastructure-funding]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*~ Medium confidence*
+
+:::
+
+### Diseases Getting First Treatment Per Year: 15 diseases/year {#sec-new_disease_first_treatments_per_year}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Number of diseases that receive their FIRST effective treatment each year under current system. ~9 rare diseases/year (based on 40 years of ODA: 350 with treatment ÷ 40 years), plus ~5-10 common diseases. Note: FDA approves ~50 drugs/year, but most are for diseases that already have treatments.
+
+**Source**: [@diseases-getting-first-treatment-annually]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [8 diseases/year, 30 diseases/year] • Distribution: Lognormal
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between 8 diseases/year and 30 diseases/year (±73%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-new_disease_first_treatments_per_year.qmd >}}
+
+*? Low confidence*
+
+:::
+
+### Total Number of Rare Diseases Globally: 7,000 diseases {#sec-rare_diseases_count_global}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Total number of rare diseases globally
+
+**Source**: [@95-pct-diseases-no-treatment]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [6,000 diseases, 10,000 diseases] • Distribution: Normal
+
+**What this means**: There's significant uncertainty here. The true value likely falls between 6,000 diseases and 10,000 diseases (±29%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The normal distribution means values cluster around the center with equal chances of being higher or lower.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-rare_diseases_count_global.qmd >}}
+
+*✓ High confidence*
+
+:::
+
 ### Standard Economic Value per QALY: $150,000 {#sec-standard_economic_qaly_value_usd}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -2111,6 +3449,130 @@ Cumulative global military spending since 1913 (Fed era) in constant 2024 dollar
 #### Uncertainty Range
 
 **Technical**: Distribution: Fixed
+
+*Core definition*
+
+:::
+
+### Reference Annual Pragmatic Trial Funding: $21.8 billion {#sec-dfda_annual_trial_funding}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Reference annual funding level used for direct-funding comparisons. Source-agnostic: funds could come from treaty reallocation, philanthropy, or public appropriation, and are modeled as funding available for pragmatic clinical trials rather than funding owed to any one organization.
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*Core definition*
+
+:::
+
+### Pragmatic Trial Platform Community Support Costs: $2 million {#sec-dfda_opex_community}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Pragmatic trial platform community support costs
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$1 million, $3 million] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $1 million and $3 million (±50%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-dfda_opex_community.qmd >}}
+
+*Core definition*
+
+:::
+
+### Pragmatic Trial Platform Infrastructure Costs: $8 million {#sec-dfda_opex_infrastructure}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Pragmatic trial platform infrastructure costs (cloud, security)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$5 million, $12 million] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $5 million and $12 million (±44%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-dfda_opex_infrastructure.qmd >}}
+
+*Core definition*
+
+:::
+
+### Pragmatic Trial Platform Maintenance Costs: $15 million {#sec-dfda_opex_platform_maintenance}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Pragmatic trial platform maintenance costs
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$10 million, $22 million] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $10 million and $22 million (±40%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-dfda_opex_platform_maintenance.qmd >}}
+
+*Core definition*
+
+:::
+
+### Pragmatic Trial Platform Regulatory Coordination Costs: $5 million {#sec-dfda_opex_regulatory}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Pragmatic trial platform regulatory coordination costs
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$3 million, $8 million] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $3 million and $8 million (±50%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-dfda_opex_regulatory.qmd >}}
+
+*Core definition*
+
+:::
+
+### Pragmatic Trial Platform Staff Costs: $10 million {#sec-dfda_opex_staff}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Pragmatic trial platform staff costs (minimal, AI-assisted)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$7 million, $15 million] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $7 million and $15 million (±40%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-dfda_opex_staff.qmd >}}
 
 *Core definition*
 
@@ -2240,6 +3702,28 @@ Cumulative environmental destruction from wars since 1900 (2024 USD). Nuclear te
 
 :::
 
+### War Medical Toolchain Prize Budget: $20 trillion {#sec-war_medical_toolchain_prize_budget}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Aggressive prosecutor reserve for buying the missing medical toolchain: prizes, diagnostics, EHRs, sequencing, AI, factories, surveillance, and pragmatic-trial infrastructure before counting remaining money as direct trial capacity.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$5 trillion, $50 trillion] • Distribution: Triangular
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between $5 trillion and $50 trillion (±112%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The triangular distribution means values cluster around a most-likely point but can range higher or lower.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-war_medical_toolchain_prize_budget.qmd >}}
+
+*Core definition*
+
+:::
+
 ### Cumulative Property Destruction from War Since 1900: $45 trillion {#sec-war_property_destruction_since_1900}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -2262,67 +3746,59 @@ Cumulative property and infrastructure destruction from major wars since 1900 (2
 
 :::
 
-### War-Redirect Biological Aging Control Year (Sensitivity): 2015 {#sec-war_trial_redirect_aging_control_sensitivity_year}
+### War-Redirect Aging Lag After Disease Control: 40 years {#sec-war_trial_redirect_aging_lag_after_disease_control_years}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Exploratory sensitivity year for when a 1900 treaty freezing military spending and redirecting avoided military growth to pragmatic trials might have made biological aging a treatable risk factor. Included only to show what the same trial platform could surface if geroscience became testable at population scale; not part of the central historical damages estimate.
+Additional lag after broad disease-control capacity before biological aging becomes a treatable risk factor in the aggressive prosecutor model.
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [1985, 2060] • Distribution: Triangular
+**Technical**: 95% CI: [10 years, 65 years] • Distribution: Triangular
 
-**What this means**: We're quite confident in this estimate. The true value likely falls between 1985 and 2060 (±2%). This represents a narrow range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: This estimate is highly uncertain. The true value likely falls between 10 years and 65 years (±69%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The triangular distribution means values cluster around a most-likely point but can range higher or lower.*
 
 #### Input Distribution
 
-{{< include ../figures/distribution-war_trial_redirect_aging_control_sensitivity_year.qmd >}}
+{{< include ../figures/distribution-war_trial_redirect_aging_lag_after_disease_control_years.qmd >}}
 
 *Core definition*
 
 :::
 
-### War-Redirect Infectious Disease Control Year: 1950 {#sec-war_trial_redirect_infectious_disease_control_year}
+### War-Redirect Medical Counterfactual Start Year: 1900 {#sec-war_trial_redirect_start_year}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Counterfactual calendar year by which a 1900 treaty freezing military spending and redirecting avoided military growth to pragmatic trials could plausibly have achieved practical control of major infectious diseases. Practical control means effective prevention, treatment, or elimination in most places, not literal extinction of every pathogen.
+Start year for the aggressive prosecutor medical redirect counterfactual.
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [1935, 1975] • Distribution: Triangular
-
-**What this means**: We're quite confident in this estimate. The true value likely falls between 1935 and 1975 (±1%). This represents a narrow range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
-
-*The triangular distribution means values cluster around a most-likely point but can range higher or lower.*
-
-#### Input Distribution
-
-{{< include ../figures/distribution-war_trial_redirect_infectious_disease_control_year.qmd >}}
+**Technical**: Distribution: Fixed
 
 *Core definition*
 
 :::
 
-### War-Redirect Major Non-Aging Disease Control Year: 1990 {#sec-war_trial_redirect_nonaging_disease_control_year}
+### War-Redirect Medical Toolchain Bootstrap Years: 14 years {#sec-war_trial_redirect_toolchain_bootstrap_years}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Counterfactual calendar year by which a 1900 treaty freezing military spending and redirecting avoided military growth to pragmatic trials could plausibly have delivered effective prevention, treatment, or control for most major non-aging disease burden. This is a scenario parameter for historical opportunity-cost reasoning, not a measured historical fact.
+Assumed years to build the missing medical toolchain before the queue-clearance clock runs at full force: diagnostics, EHRs, sequencing, AI, factories, surveillance, and trial infrastructure. Set so the central queue model yields a 1950 disease cutoff.
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [1965, 2015] • Distribution: Triangular
+**Technical**: 95% CI: [0 years, 40 years] • Distribution: Triangular
 
-**What this means**: We're quite confident in this estimate. The true value likely falls between 1965 and 2015 (±1%). This represents a narrow range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: This estimate is highly uncertain. The true value likely falls between 0 years and 40 years (±143%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The triangular distribution means values cluster around a most-likely point but can range higher or lower.*
 
 #### Input Distribution
 
-{{< include ../figures/distribution-war_trial_redirect_nonaging_disease_control_year.qmd >}}
+{{< include ../figures/distribution-war_trial_redirect_toolchain_bootstrap_years.qmd >}}
 
 *Core definition*
 

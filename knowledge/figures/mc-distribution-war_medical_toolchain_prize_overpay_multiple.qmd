@@ -1,0 +1,9 @@
+**Monte Carlo note:** War Medical Toolchain Prize Overpay Multiple is effectively deterministic across the current sampled inputs, so a histogram would mostly visualize floating-point residue instead of real uncertainty. (range 0.000e+00 <= tolerance 3.412e-10)
+
+| Statistic | Value |
+|:----------|------:|
+| Baseline (deterministic) | 341x |
+| Mean (expected value) | 341x |
+| Median (50th percentile) | 341x |
+| Standard Deviation | 0x |
+| 90% Range (5th-95th percentile) | [341x, 341x] |

@@ -301,7 +301,7 @@ The worst outcome is still a net gain. The best outcome cures your cancer and yo
 
 ## How Your [decentralized FDA](solution/dfda.qmd) Would Compare to History's Best Health Interventions {#dfda-comparison}
 
-The best health interventions in history have delivered extraordinary returns on investment. Smallpox eradication returned hundreds of dollars for every dollar spent. Childhood vaccines, clean water, and tobacco control all delivered similar orders-of-magnitude returns. A decentralized drug assessment framework projects even higher ROI than any of them: {{< var treaty_roi_trial_capacity_plus_efficacy_lag >}} to 1^[Total societal benefit including lives saved and DALYs averted, not R&D savings alone. R&D-only ROI: {{< var dfda_roi_rd_only >}}:1.].
+The best health investments in history made obscene amounts of money. Smallpox eradication returned hundreds of dollars for every dollar spent. Childhood vaccines, clean water, and tobacco control did similar things. A [decentralized FDA](solution/dfda.qmd) projects even higher returns than any of them: {{< var treaty_roi_trial_capacity_plus_efficacy_lag >}} to 1^[Total societal benefit including lives saved and DALYs averted, not R&D savings alone. R&D-only ROI: {{< var dfda_roi_rd_only >}}:1.].
 
 | Intervention | ROI (per $1) | Cost per QALY | QALYs per $1M |
 |---|---|---|---|

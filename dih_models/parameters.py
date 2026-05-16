@@ -3541,58 +3541,213 @@ WAR_TRIAL_REDIRECT_EXCESS_MILITARY_TRIAL_YEARS = Parameter(
     latex_symbol=r"Years_{excess1900 \to trials,gov}",
 )
 
-WAR_TRIAL_REDIRECT_INFECTIOUS_DISEASE_CONTROL_YEAR = Parameter(
-    1950,
+WAR_TRIAL_REDIRECT_START_YEAR = Parameter(
+    1900,
     manual_ref="knowledge/problem/cost-of-war.qmd",
     source_type=SourceType.DEFINITION,
-    confidence="low",
-    description="Counterfactual calendar year by which a 1900 treaty freezing military spending "
-                "and redirecting avoided military growth to pragmatic trials could plausibly have "
-                "achieved practical control of major infectious diseases. Practical control means "
-                "effective prevention, treatment, or elimination in most places, not literal "
-                "extinction of every pathogen.",
-    display_name="War-Redirect Infectious Disease Control Year",
+    confidence="high",
+    description="Start year for the aggressive prosecutor medical redirect counterfactual.",
+    display_name="War-Redirect Medical Counterfactual Start Year",
     unit="year",
-    distribution="triangular",
-    confidence_interval=(1935, 1975),
-    keywords=["war", "medical opportunity cost", "infectious disease", "clinical trials", "counterfactual"],
-    latex_symbol=r"Y_{infectious,redirect}",
+    distribution="fixed",
+    keywords=["war", "medical opportunity cost", "1900", "clinical trials", "counterfactual"],
+    latex_symbol=r"Y_{redirect,start}",
 )
 
-WAR_TRIAL_REDIRECT_NONAGING_DISEASE_CONTROL_YEAR = Parameter(
-    1990,
+WAR_TRIAL_REDIRECT_TOOLCHAIN_BOOTSTRAP_YEARS = Parameter(
+    14,
     manual_ref="knowledge/problem/cost-of-war.qmd",
     source_type=SourceType.DEFINITION,
     confidence="low",
-    description="Counterfactual calendar year by which a 1900 treaty freezing military spending "
-                "and redirecting avoided military growth to pragmatic trials could plausibly have "
-                "delivered effective prevention, treatment, or control for most major non-aging "
-                "disease burden. This is a scenario parameter for historical opportunity-cost "
-                "reasoning, not a measured historical fact.",
-    display_name="War-Redirect Major Non-Aging Disease Control Year",
-    unit="year",
+    description="Assumed years to build the missing medical toolchain before the queue-clearance clock "
+                "runs at full force: diagnostics, EHRs, sequencing, AI, factories, surveillance, and "
+                "trial infrastructure. Set so the central queue model yields a 1950 disease cutoff.",
+    display_name="War-Redirect Medical Toolchain Bootstrap Years",
+    unit="years",
     distribution="triangular",
-    confidence_interval=(1965, 2015),
-    keywords=["war", "medical opportunity cost", "non-aging disease control", "clinical trials", "counterfactual"],
-    latex_symbol=r"Y_{disease,redirect}",
+    confidence_interval=(0, 40),
+    keywords=["war", "medical opportunity cost", "toolchain", "bootstrap", "clinical trials", "counterfactual"],
+    latex_symbol=r"T_{tool,bootstrap}",
 )
 
-WAR_TRIAL_REDIRECT_AGING_CONTROL_SENSITIVITY_YEAR = Parameter(
-    2015,
+WAR_TRIAL_REDIRECT_AGING_LAG_AFTER_DISEASE_CONTROL_YEARS = Parameter(
+    40,
     manual_ref="knowledge/problem/cost-of-war.qmd",
     source_type=SourceType.DEFINITION,
     confidence="low",
-    description="Exploratory sensitivity year for when a 1900 treaty freezing military spending "
-                "and redirecting avoided military growth to pragmatic trials might have made "
-                "biological aging a treatable risk factor. Included only to show what the same "
-                "trial platform could surface if geroscience became testable at population scale; "
-                "not part of the central historical damages estimate.",
-    display_name="War-Redirect Biological Aging Control Year (Sensitivity)",
-    unit="year",
+    description="Additional lag after broad disease-control capacity before biological aging becomes "
+                "a treatable risk factor in the aggressive prosecutor model.",
+    display_name="War-Redirect Aging Lag After Disease Control",
+    unit="years",
     distribution="triangular",
-    confidence_interval=(1985, 2060),
-    keywords=["war", "medical opportunity cost", "aging", "longevity", "clinical trials", "sensitivity"],
-    latex_symbol=r"Y_{aging,redirect}",
+    confidence_interval=(10, 65),
+    keywords=["war", "medical opportunity cost", "aging", "geroscience", "clinical trials", "counterfactual"],
+    latex_symbol=r"T_{aging,lag}",
+)
+
+WAR_TRIAL_REDIRECT_PLEADING_END_YEAR = Parameter(
+    2024,
+    manual_ref="knowledge/appendix/humanity-v-government.qmd",
+    source_type=SourceType.DEFINITION,
+    confidence="high",
+    description="End year for the aggressive prosecutor post-cutoff plaintiff count.",
+    display_name="War-Redirect Pleading End Year",
+    unit="year",
+    distribution="fixed",
+    keywords=["war", "medical misallocation", "pleading", "end year", "plaintiffs", "prosecutor"],
+    latex_symbol=r"Y_{plead,end}",
+)
+
+MEDICAL_TOOLCHAIN_HGP_COST_USD = Parameter(
+    2_700_000_000,
+    manual_ref="knowledge/problem/cost-of-war.qmd",
+    source_ref=ReferenceID.HUMAN_GENOME_AND_GENETIC_EDITING,
+    source_type=SourceType.EXTERNAL,
+    confidence="medium",
+    description="Approximate Human Genome Project cost used as an observed medical-toolchain anchor.",
+    display_name="Medical Toolchain Human Genome Project Cost",
+    unit="USD",
+    distribution="fixed",
+    keywords=["medical toolchain", "human genome project", "genomics", "anchor cost"],
+    latex_symbol=r"C_{tool,HGP}",
+)
+
+MEDICAL_TOOLCHAIN_CRISPR_NIH_FUNDING_2011_2018 = Parameter(
+    3_100_000_000,
+    manual_ref="knowledge/problem/cost-of-war.qmd",
+    source_ref=ReferenceID.CRS_CRISPR_NIH_FUNDING_2011_2018,
+    source_type=SourceType.EXTERNAL,
+    confidence="high",
+    description="Rounded NIH CRISPR-related research funding for FY2011-FY2018 from CRS Table 1.",
+    display_name="Medical Toolchain NIH CRISPR Funding, FY2011-FY2018",
+    unit="USD",
+    distribution="fixed",
+    keywords=["medical toolchain", "CRISPR", "NIH", "gene editing", "anchor cost"],
+    latex_symbol=r"C_{tool,CRISPR}",
+)
+
+MEDICAL_TOOLCHAIN_BRAIN_INITIATIVE_PLANNED_BUDGET = Parameter(
+    4_500_000_000,
+    manual_ref="knowledge/problem/cost-of-war.qmd",
+    source_ref=ReferenceID.NIH_BRAIN_INITIATIVE_PLANNED_BUDGET,
+    source_type=SourceType.EXTERNAL,
+    confidence="high",
+    description="Planned NIH BRAIN Initiative commitment described in the BRAIN 2025 scientific vision.",
+    display_name="Medical Toolchain BRAIN Initiative Planned Budget",
+    unit="USD",
+    distribution="fixed",
+    keywords=["medical toolchain", "BRAIN Initiative", "neuroscience", "anchor cost"],
+    latex_symbol=r"C_{tool,BRAIN}",
+)
+
+MEDICAL_TOOLCHAIN_PCORNET_INFRASTRUCTURE_FUNDING = Parameter(
+    325_000_000,
+    manual_ref="knowledge/problem/cost-of-war.qmd",
+    source_ref=ReferenceID.PCORNET_INFRASTRUCTURE_FUNDING,
+    source_type=SourceType.EXTERNAL,
+    confidence="medium",
+    description="Rounded PCORI-funded PCORnet Studies amount from the Q4 2025 PCORnet dashboard. "
+                "Used as a network-scale pragmatic-trial infrastructure anchor.",
+    display_name="Medical Toolchain PCORnet Infrastructure Funding Anchor",
+    unit="USD",
+    distribution="fixed",
+    keywords=["medical toolchain", "PCORnet", "PCORI", "pragmatic trials", "infrastructure"],
+    latex_symbol=r"C_{tool,PCORnet}",
+)
+
+MEDICAL_TOOLCHAIN_HITECH_EHR_INCENTIVE_ESTIMATED_SPENDING = Parameter(
+    30_000_000_000,
+    manual_ref="knowledge/problem/cost-of-war.qmd",
+    source_ref=ReferenceID.HITECH_EHR_INCENTIVE_ESTIMATED_SPENDING,
+    source_type=SourceType.EXTERNAL,
+    confidence="high",
+    description="GAO estimate of Medicare and Medicaid EHR incentive program spending from 2011 through 2019.",
+    display_name="Medical Toolchain HITECH EHR Incentive Estimated Spending",
+    unit="USD",
+    distribution="fixed",
+    keywords=["medical toolchain", "HITECH", "EHR", "health data", "anchor cost"],
+    latex_symbol=r"C_{tool,EHR}",
+)
+
+MEDICAL_TOOLCHAIN_OWS_POTENTIAL_VACCINE_AWARDS = Parameter(
+    18_000_000_000,
+    manual_ref="knowledge/problem/cost-of-war.qmd",
+    source_ref=ReferenceID.OPERATION_WARP_SPEED_POTENTIAL_VACCINE_AWARDS,
+    source_type=SourceType.EXTERNAL,
+    confidence="high",
+    description="GAO-reported total potential estimated value of Operation Warp Speed vaccine candidate awards.",
+    display_name="Medical Toolchain Operation Warp Speed Potential Vaccine Awards",
+    unit="USD",
+    distribution="fixed",
+    keywords=["medical toolchain", "Operation Warp Speed", "vaccines", "manufacturing", "anchor cost"],
+    latex_symbol=r"C_{tool,OWS}",
+)
+
+MEDICAL_TOOLCHAIN_OBSERVED_ANCHOR_COSTS = Parameter(
+    MEDICAL_TOOLCHAIN_HGP_COST_USD
+    + MEDICAL_TOOLCHAIN_CRISPR_NIH_FUNDING_2011_2018
+    + MEDICAL_TOOLCHAIN_BRAIN_INITIATIVE_PLANNED_BUDGET
+    + MEDICAL_TOOLCHAIN_PCORNET_INFRASTRUCTURE_FUNDING
+    + MEDICAL_TOOLCHAIN_HITECH_EHR_INCENTIVE_ESTIMATED_SPENDING
+    + MEDICAL_TOOLCHAIN_OWS_POTENTIAL_VACCINE_AWARDS,
+    manual_ref="knowledge/problem/cost-of-war.qmd",
+    source_type=SourceType.CALCULATED,
+    confidence="medium",
+    description="Sum of observed anchor costs for major medical toolchain programs. This is anchor "
+                "evidence for the prosecutor reserve, not a claim that these programs alone cure disease.",
+    display_name="Observed Medical Toolchain Anchor Costs",
+    unit="USD",
+    formula="HGP + CRISPR + BRAIN + PCORnet + HITECH + OWS",
+    inputs=[
+        "MEDICAL_TOOLCHAIN_HGP_COST_USD",
+        "MEDICAL_TOOLCHAIN_CRISPR_NIH_FUNDING_2011_2018",
+        "MEDICAL_TOOLCHAIN_BRAIN_INITIATIVE_PLANNED_BUDGET",
+        "MEDICAL_TOOLCHAIN_PCORNET_INFRASTRUCTURE_FUNDING",
+        "MEDICAL_TOOLCHAIN_HITECH_EHR_INCENTIVE_ESTIMATED_SPENDING",
+        "MEDICAL_TOOLCHAIN_OWS_POTENTIAL_VACCINE_AWARDS",
+    ],
+    compute=lambda ctx: (
+        ctx["MEDICAL_TOOLCHAIN_HGP_COST_USD"]
+        + ctx["MEDICAL_TOOLCHAIN_CRISPR_NIH_FUNDING_2011_2018"]
+        + ctx["MEDICAL_TOOLCHAIN_BRAIN_INITIATIVE_PLANNED_BUDGET"]
+        + ctx["MEDICAL_TOOLCHAIN_PCORNET_INFRASTRUCTURE_FUNDING"]
+        + ctx["MEDICAL_TOOLCHAIN_HITECH_EHR_INCENTIVE_ESTIMATED_SPENDING"]
+        + ctx["MEDICAL_TOOLCHAIN_OWS_POTENTIAL_VACCINE_AWARDS"]
+    ),
+    keywords=["medical toolchain", "anchor costs", "prizes", "infrastructure"],
+    latex_symbol=r"C_{tool,anchors}",
+)
+
+WAR_MEDICAL_TOOLCHAIN_PRIZE_BUDGET = Parameter(
+    20_000_000_000_000,
+    manual_ref="knowledge/problem/cost-of-war.qmd",
+    source_type=SourceType.DEFINITION,
+    confidence="low",
+    description="Aggressive prosecutor reserve for buying the missing medical toolchain: prizes, "
+                "diagnostics, EHRs, sequencing, AI, factories, surveillance, and pragmatic-trial "
+                "infrastructure before counting remaining money as direct trial capacity.",
+    display_name="War Medical Toolchain Prize Budget",
+    unit="USD",
+    distribution="triangular",
+    confidence_interval=(5_000_000_000_000, 50_000_000_000_000),
+    keywords=["war", "medical toolchain", "prize budget", "trials", "infrastructure", "prosecutor"],
+    latex_symbol=r"C_{tool,prize}",
+)
+
+WAR_MEDICAL_TOOLCHAIN_PRIZE_OVERPAY_MULTIPLE = Parameter(
+    WAR_MEDICAL_TOOLCHAIN_PRIZE_BUDGET / MEDICAL_TOOLCHAIN_OBSERVED_ANCHOR_COSTS,
+    manual_ref="knowledge/problem/cost-of-war.qmd",
+    source_type=SourceType.CALCULATED,
+    confidence="low",
+    description="How many times larger the prosecutor's medical-toolchain prize reserve is than "
+                "the observed anchor costs listed here.",
+    display_name="War Medical Toolchain Prize Overpay Multiple",
+    unit="x",
+    formula="WAR_MEDICAL_TOOLCHAIN_PRIZE_BUDGET / MEDICAL_TOOLCHAIN_OBSERVED_ANCHOR_COSTS",
+    inputs=["WAR_MEDICAL_TOOLCHAIN_PRIZE_BUDGET", "MEDICAL_TOOLCHAIN_OBSERVED_ANCHOR_COSTS"],
+    compute=lambda ctx: ctx["WAR_MEDICAL_TOOLCHAIN_PRIZE_BUDGET"] / ctx["MEDICAL_TOOLCHAIN_OBSERVED_ANCHOR_COSTS"],
+    keywords=["war", "medical toolchain", "overpay", "prize budget", "anchor costs"],
+    latex_symbol=r"m_{tool,overpay}",
 )
 
 # --- Moved here from later in file so war counterfactual params can reference them ---
@@ -3659,6 +3814,54 @@ GLOBAL_POPULATION_2024 = Parameter(
     keywords=["2024", "8.0b", "people", "worldwide", "citizens", "individuals", "inhabitants"],
     latex_symbol=r"Pop_{global}",  # LaTeX symbol for equations
 )  # UN World Population Prospects 2022
+
+WAR_TRIAL_REDIRECT_NET_TRIAL_BUDGET = Parameter(
+    CUMULATIVE_MILITARY_SPENDING_FED_ERA - WAR_MEDICAL_TOOLCHAIN_PRIZE_BUDGET,
+    manual_ref="knowledge/problem/cost-of-war.qmd",
+    source_type=SourceType.CALCULATED,
+    confidence="low",
+    description="Cumulative military spending since the Federal Reserve era after reserving the "
+                "aggressive prosecutor's medical-toolchain prize budget.",
+    display_name="War Trial Redirect Net Trial Budget After Toolchain Reserve",
+    unit="USD",
+    formula="CUMULATIVE_MILITARY_SPENDING_FED_ERA - WAR_MEDICAL_TOOLCHAIN_PRIZE_BUDGET",
+    inputs=["CUMULATIVE_MILITARY_SPENDING_FED_ERA", "WAR_MEDICAL_TOOLCHAIN_PRIZE_BUDGET"],
+    compute=lambda ctx: ctx["CUMULATIVE_MILITARY_SPENDING_FED_ERA"] - ctx["WAR_MEDICAL_TOOLCHAIN_PRIZE_BUDGET"],
+    keywords=["war", "medical misallocation", "toolchain reserve", "trial budget", "prosecutor"],
+    latex_symbol=r"B_{trials,net}",
+)
+
+WAR_TRIAL_REDIRECT_PATIENT_SLOTS_FUNDED = Parameter(
+    WAR_TRIAL_REDIRECT_NET_TRIAL_BUDGET / DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT,
+    manual_ref="knowledge/problem/cost-of-war.qmd",
+    source_type=SourceType.CALCULATED,
+    confidence="low",
+    description="Patient-slots funded by the net redirected war budget at pragmatic trial cost per "
+                "patient. Patient-slots are repeated experimental opportunities, not unique people.",
+    display_name="War Trial Redirect Patient Slots Funded",
+    unit="patient-slots",
+    formula="WAR_TRIAL_REDIRECT_NET_TRIAL_BUDGET / DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT",
+    inputs=["WAR_TRIAL_REDIRECT_NET_TRIAL_BUDGET", "DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT"],
+    compute=lambda ctx: ctx["WAR_TRIAL_REDIRECT_NET_TRIAL_BUDGET"] / ctx["DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT"],
+    keywords=["war", "medical misallocation", "patient slots", "pragmatic trials", "prosecutor"],
+    latex_symbol=r"N_{slots,war}",
+)
+
+WAR_TRIAL_REDIRECT_PATIENT_SLOTS_PER_LIVING_HUMAN = Parameter(
+    WAR_TRIAL_REDIRECT_PATIENT_SLOTS_FUNDED / GLOBAL_POPULATION_2024,
+    manual_ref="knowledge/problem/cost-of-war.qmd",
+    source_type=SourceType.CALCULATED,
+    confidence="low",
+    description="Patient-slots funded per living human, used to avoid implying hundreds of billions "
+                "of unique patients. It means repeated trial opportunities across time and indications.",
+    display_name="War Trial Redirect Patient Slots Per Living Human",
+    unit="patient-slots/person",
+    formula="WAR_TRIAL_REDIRECT_PATIENT_SLOTS_FUNDED / GLOBAL_POPULATION_2024",
+    inputs=["WAR_TRIAL_REDIRECT_PATIENT_SLOTS_FUNDED", "GLOBAL_POPULATION_2024"],
+    compute=lambda ctx: ctx["WAR_TRIAL_REDIRECT_PATIENT_SLOTS_FUNDED"] / ctx["GLOBAL_POPULATION_2024"],
+    keywords=["war", "medical misallocation", "patient slots", "population", "prosecutor"],
+    latex_symbol=r"N_{slots,pc}",
+)
 
 # Global life expectancy at birth, used as the cohort-lifetime horizon for representative
 # full-life damages calculations and as the YLL anchor in the regulatory-delay QALY chain.
@@ -3876,7 +4079,7 @@ WAR_COUNTERFACTUAL_INCOME_MULTIPLE = Parameter(
 )
 
 # Lost-prosperity-only damages: representative full-life cohort exposure, undiscounted,
-# single-coherent-theory pleading. NOT a per-individual award — it is the lifetime exposure
+# single-coherent-theory pleading. NOT a per-individual award, it is the lifetime exposure
 # computed for a representative person who experiences the full WHO global life-expectancy
 # horizon. Actual per-individual award would scale by remaining life expectancy at the
 # time of pleading. Implicitly captures war deaths, property destruction, and medical
@@ -4241,7 +4444,7 @@ REGULATORY_DELAY_MEAN_AGE_OF_DEATH = Parameter(
     #   - Cancer deaths: mean age 65 (mid)
     #   - Infectious disease: mean age 45 (younger, esp. developing countries)
     # Using 62 ± 3 is population-weighted average. Consider disease-specific sub-models.
-    # Critique: Assumes regulatory delay affects all age groups equally—may overweight elderly
+    # Critique: Assumes regulatory delay affects all age groups equally, may overweight elderly
     validation_min=50,  # Floor: Infectious disease-dominated scenario (HIV, TB, malaria)
     validation_max=75,  # Ceiling: Chronic disease-dominated scenario (cancer, CVD, Alzheimer's)
     latex_symbol=r"Age_{death,delay}",  # LaTeX symbol for equations
@@ -4919,7 +5122,7 @@ TREATY_CAMPAIGN_TOTAL_COST = Parameter(
     # UNCERTAINTY: Propagates from component budgets (REFERENDUM, LOBBYING, RESERVE)
     # Expected ±50% given unprecedented scale (no manual override)
     # Comparables: Brexit campaigns ~£40M, Ottawa Treaty ~$10M (1997 dollars)
-    # This is 20x larger than any treaty campaign—weak precedents justify wide uncertainty
+    # This is 20x larger than any treaty campaign, weak precedents justify wide uncertainty
     # Right skew expected: cost overruns more likely than savings (planning fallacy, scope creep)
     # Tornado analysis will show which budget components drive most variance
     validation_min=500_000_000,   # Floor: Bare minimum (digital-only, no paid media)
@@ -5212,7 +5415,7 @@ CAMPAIGN_DEFENSE_CONVERSION = Parameter(
     # Economist rationale: Defense industry transition programs historically underfunded.
     # Post-Cold War conversion: $2B over 10 years ($200M/year) for entire US defense sector.
     # Our $50M targets key stakeholders only. Right-skewed: industry resistance could escalate costs.
-    # CRITICAL: Lockheed, Raytheon lobbying power—conversion could require 2-3x budget if contested.
+    # CRITICAL: Lockheed, Raytheon lobbying power, conversion could require 2-3x budget if contested.
     validation_min=30_000_000,   # Floor: Minimal outreach, focus on willing partners
     validation_max=100_000_000,  # Ceiling: Full industry engagement + job retraining programs
     latex_symbol=r"Budget_{conversion}",  # LaTeX symbol for equations
@@ -5278,12 +5481,12 @@ CAMPAIGN_CONTINGENCY = Parameter(
     display_name="Contingency Fund for Unexpected Costs",
     unit="USD",
     keywords=["50.0m", "contingency", "most likely", "campaign", "base case", "central", "expenditure"],
-    distribution="uniform",  # Uniform by definition—contingency is for unknown unknowns
+    distribution="uniform",  # Uniform by definition, contingency is for unknown unknowns
     confidence_interval=(30_000_000, 80_000_000),  # $30M-$80M (wide for true contingency)
     # Economist rationale: Contingency should be 10-20% of total project cost ($1B × 10-20% = $100M-$200M).
-    # Using $50M as baseline (5% of $1B) is conservative. Uniform distribution reflects epistemic uncertainty—
+    # Using $50M as baseline (5% of $1B) is conservative. Uniform distribution reflects epistemic uncertainty,
     # we don't know what we don't know. Historical precedent: mega-projects require 15-30% contingency.
-    # CRITICAL: This is NOT lognormal—contingency spending is bounded and uniform by construction.
+    # CRITICAL: This is NOT lognormal, contingency spending is bounded and uniform by construction.
     validation_min=20_000_000,   # Floor: Minimal buffer (2% of $1B)
     validation_max=150_000_000,  # Ceiling: Full 15% contingency for mega-project risk
     latex_symbol=r"Budget_{contingency}",  # LaTeX symbol for equations
@@ -5301,7 +5504,7 @@ CAMPAIGN_TREATY_IMPLEMENTATION = Parameter(
     confidence_interval=(30_000_000, 55_000_000),  # $30M-$55M (±30%)
     # Economist rationale: Post-treaty implementation varies with compliance enforcement needs.
     # Ottawa Treaty implementation: $20M/year for 10 years ($200M total). Paris Climate: $100M/year ongoing.
-    # Our $40M is 1-year support (campaign phase)—ongoing DIH funding covers long-term implementation.
+    # Our $40M is 1-year support (campaign phase), ongoing DIH funding covers long-term implementation.
     # Right-skewed: compliance failures (e.g., Syria violating Ottawa Treaty) require surge funding.
     validation_min=25_000_000,   # Floor: Lean monitoring team, voluntary compliance
     validation_max=80_000_000,   # Ceiling: Full enforcement mechanism + dispute resolution
@@ -7919,6 +8122,106 @@ DFDA_QUEUE_CLEARANCE_YEARS = Parameter(
     latex_symbol=r"T_{queue,trial}",  # LaTeX symbol for equations
 )
 
+WAR_TRIAL_REDIRECT_DISEASE_PLEADING_CUTOFF_YEAR = Parameter(
+    round(
+        float(WAR_TRIAL_REDIRECT_START_YEAR)
+        + float(WAR_TRIAL_REDIRECT_TOOLCHAIN_BOOTSTRAP_YEARS)
+        + float(DFDA_QUEUE_CLEARANCE_YEARS)
+    ),
+    manual_ref="knowledge/appendix/humanity-v-government.qmd",
+    source_type=SourceType.CALCULATED,
+    confidence="low",
+    description="Aggressive prosecutor pleading cutoff year for presumptive disease-death plaintiffs. "
+                "Calculated as the 1900 redirect start year plus medical-toolchain bootstrap years "
+                "plus the treaty-scale therapeutic queue-clearance years.",
+    display_name="War-Redirect Disease Pleading Cutoff Year",
+    unit="year",
+    formula="round(WAR_TRIAL_REDIRECT_START_YEAR + WAR_TRIAL_REDIRECT_TOOLCHAIN_BOOTSTRAP_YEARS + DFDA_QUEUE_CLEARANCE_YEARS)",
+    inputs=[
+        "WAR_TRIAL_REDIRECT_START_YEAR",
+        "WAR_TRIAL_REDIRECT_TOOLCHAIN_BOOTSTRAP_YEARS",
+        "DFDA_QUEUE_CLEARANCE_YEARS",
+    ],
+    compute=lambda ctx: round(
+        ctx["WAR_TRIAL_REDIRECT_START_YEAR"]
+        + ctx["WAR_TRIAL_REDIRECT_TOOLCHAIN_BOOTSTRAP_YEARS"]
+        + ctx["DFDA_QUEUE_CLEARANCE_YEARS"]
+    ),
+    keywords=["war", "medical misallocation", "pleading", "disease deaths", "plaintiffs", "prosecutor"],
+    latex_symbol=r"Y_{disease,plead}",
+)
+
+WAR_TRIAL_REDIRECT_INFECTIOUS_DISEASE_CONTROL_YEAR = Parameter(
+    WAR_TRIAL_REDIRECT_DISEASE_PLEADING_CUTOFF_YEAR,
+    manual_ref="knowledge/problem/cost-of-war.qmd",
+    source_type=SourceType.CALCULATED,
+    confidence="low",
+    description="Counterfactual calendar year for practical infectious-disease control in the "
+                "aggressive medical-redirect model. Uses the calculated disease pleading cutoff year.",
+    display_name="War-Redirect Infectious Disease Control Year",
+    unit="year",
+    formula="WAR_TRIAL_REDIRECT_DISEASE_PLEADING_CUTOFF_YEAR",
+    inputs=["WAR_TRIAL_REDIRECT_DISEASE_PLEADING_CUTOFF_YEAR"],
+    compute=lambda ctx: ctx["WAR_TRIAL_REDIRECT_DISEASE_PLEADING_CUTOFF_YEAR"],
+    keywords=["war", "medical opportunity cost", "infectious disease", "clinical trials", "counterfactual"],
+    latex_symbol=r"Y_{infectious,redirect}",
+)
+
+WAR_TRIAL_REDIRECT_NONAGING_DISEASE_CONTROL_YEAR = Parameter(
+    WAR_TRIAL_REDIRECT_DISEASE_PLEADING_CUTOFF_YEAR,
+    manual_ref="knowledge/problem/cost-of-war.qmd",
+    source_type=SourceType.CALCULATED,
+    confidence="low",
+    description="Counterfactual calendar year for practical control of major non-aging disease burden "
+                "in the aggressive medical-redirect model. Uses the calculated disease pleading cutoff year.",
+    display_name="War-Redirect Major Non-Aging Disease Control Year",
+    unit="year",
+    formula="WAR_TRIAL_REDIRECT_DISEASE_PLEADING_CUTOFF_YEAR",
+    inputs=["WAR_TRIAL_REDIRECT_DISEASE_PLEADING_CUTOFF_YEAR"],
+    compute=lambda ctx: ctx["WAR_TRIAL_REDIRECT_DISEASE_PLEADING_CUTOFF_YEAR"],
+    keywords=["war", "medical opportunity cost", "non-aging disease control", "clinical trials", "counterfactual"],
+    latex_symbol=r"Y_{disease,redirect}",
+)
+
+WAR_TRIAL_REDIRECT_AGING_PLEADING_CUTOFF_YEAR = Parameter(
+    WAR_TRIAL_REDIRECT_DISEASE_PLEADING_CUTOFF_YEAR
+    + WAR_TRIAL_REDIRECT_AGING_LAG_AFTER_DISEASE_CONTROL_YEARS,
+    manual_ref="knowledge/appendix/humanity-v-government.qmd",
+    source_type=SourceType.CALCULATED,
+    confidence="low",
+    description="Aggressive prosecutor pleading cutoff year for presumptive aging-death plaintiffs. "
+                "Calculated as the disease cutoff plus the geroscience lag assumption.",
+    display_name="War-Redirect Aging Pleading Cutoff Year",
+    unit="year",
+    formula="WAR_TRIAL_REDIRECT_DISEASE_PLEADING_CUTOFF_YEAR + WAR_TRIAL_REDIRECT_AGING_LAG_AFTER_DISEASE_CONTROL_YEARS",
+    inputs=[
+        "WAR_TRIAL_REDIRECT_DISEASE_PLEADING_CUTOFF_YEAR",
+        "WAR_TRIAL_REDIRECT_AGING_LAG_AFTER_DISEASE_CONTROL_YEARS",
+    ],
+    compute=lambda ctx: (
+        ctx["WAR_TRIAL_REDIRECT_DISEASE_PLEADING_CUTOFF_YEAR"]
+        + ctx["WAR_TRIAL_REDIRECT_AGING_LAG_AFTER_DISEASE_CONTROL_YEARS"]
+    ),
+    keywords=["war", "medical misallocation", "pleading", "aging", "plaintiffs", "prosecutor"],
+    latex_symbol=r"Y_{aging,plead}",
+)
+
+WAR_TRIAL_REDIRECT_AGING_CONTROL_SENSITIVITY_YEAR = Parameter(
+    WAR_TRIAL_REDIRECT_AGING_PLEADING_CUTOFF_YEAR,
+    manual_ref="knowledge/problem/cost-of-war.qmd",
+    source_type=SourceType.CALCULATED,
+    confidence="low",
+    description="Counterfactual calendar year when biological aging becomes a treatable risk factor "
+                "in the aggressive medical-redirect model. Uses the calculated aging pleading cutoff year.",
+    display_name="War-Redirect Biological Aging Control Year",
+    unit="year",
+    formula="WAR_TRIAL_REDIRECT_AGING_PLEADING_CUTOFF_YEAR",
+    inputs=["WAR_TRIAL_REDIRECT_AGING_PLEADING_CUTOFF_YEAR"],
+    compute=lambda ctx: ctx["WAR_TRIAL_REDIRECT_AGING_PLEADING_CUTOFF_YEAR"],
+    keywords=["war", "medical opportunity cost", "aging", "longevity", "clinical trials", "sensitivity"],
+    latex_symbol=r"Y_{aging,redirect}",
+)
+
 # ============================================================================
 # TOTAL LIVES SAVED FROM COMBINED TIMELINE SHIFT
 # ============================================================================
@@ -8397,6 +8700,262 @@ GLOBAL_ANNUAL_DEATHS_CURABLE_DISEASES = Parameter(
     std_error=5_000_000,  # ±5M (~10% uncertainty in WHO estimates)
     latex_symbol=r"Deaths_{curable,ann}",  # LaTeX symbol for equations
 )  # 55 million deaths/year from WHO (all diseases + aging)
+
+WAR_TRIAL_REDIRECT_POST_CUTOFF_DISEASE_YEARS = Parameter(
+    WAR_TRIAL_REDIRECT_PLEADING_END_YEAR
+    - WAR_TRIAL_REDIRECT_DISEASE_PLEADING_CUTOFF_YEAR
+    + 1,
+    manual_ref="knowledge/appendix/humanity-v-government.qmd",
+    source_type=SourceType.CALCULATED,
+    confidence="low",
+    description="Inclusive number of years in the aggressive prosecutor disease-death plaintiff window.",
+    display_name="War Trial Redirect Post-Cutoff Disease Years",
+    unit="years",
+    formula="WAR_TRIAL_REDIRECT_PLEADING_END_YEAR - WAR_TRIAL_REDIRECT_DISEASE_PLEADING_CUTOFF_YEAR + 1",
+    inputs=["WAR_TRIAL_REDIRECT_PLEADING_END_YEAR", "WAR_TRIAL_REDIRECT_DISEASE_PLEADING_CUTOFF_YEAR"],
+    compute=lambda ctx: (
+        ctx["WAR_TRIAL_REDIRECT_PLEADING_END_YEAR"]
+        - ctx["WAR_TRIAL_REDIRECT_DISEASE_PLEADING_CUTOFF_YEAR"]
+        + 1
+    ),
+    keywords=["war", "medical misallocation", "post-cutoff", "years", "prosecutor"],
+    latex_symbol=r"T_{post,disease}",
+)
+
+WAR_TRIAL_REDIRECT_POST_CUTOFF_AGING_YEARS = Parameter(
+    WAR_TRIAL_REDIRECT_PLEADING_END_YEAR
+    - WAR_TRIAL_REDIRECT_AGING_PLEADING_CUTOFF_YEAR
+    + 1,
+    manual_ref="knowledge/appendix/humanity-v-government.qmd",
+    source_type=SourceType.CALCULATED,
+    confidence="low",
+    description="Inclusive number of years in the aggressive prosecutor aging-death intake window.",
+    display_name="War Trial Redirect Post-Cutoff Aging Years",
+    unit="years",
+    formula="WAR_TRIAL_REDIRECT_PLEADING_END_YEAR - WAR_TRIAL_REDIRECT_AGING_PLEADING_CUTOFF_YEAR + 1",
+    inputs=["WAR_TRIAL_REDIRECT_PLEADING_END_YEAR", "WAR_TRIAL_REDIRECT_AGING_PLEADING_CUTOFF_YEAR"],
+    compute=lambda ctx: (
+        ctx["WAR_TRIAL_REDIRECT_PLEADING_END_YEAR"]
+        - ctx["WAR_TRIAL_REDIRECT_AGING_PLEADING_CUTOFF_YEAR"]
+        + 1
+    ),
+    keywords=["war", "medical misallocation", "post-cutoff", "aging", "years", "prosecutor"],
+    latex_symbol=r"T_{post,aging}",
+)
+
+WAR_TRIAL_REDIRECT_POST_CUTOFF_DISEASE_PLAINTIFFS = Parameter(
+    WAR_TRIAL_REDIRECT_POST_CUTOFF_DISEASE_YEARS
+    * GLOBAL_ANNUAL_DEATHS_CURABLE_DISEASES
+    * EVENTUALLY_AVOIDABLE_DEATH_PCT,
+    manual_ref="knowledge/appendix/humanity-v-government.qmd",
+    source_type=SourceType.CALCULATED,
+    confidence="low",
+    description="Aggressive prosecutor pleading count for post-cutoff disease-death plaintiffs: "
+                "inclusive years from the disease cutoff through the pleading end year, multiplied "
+                "by annual disease deaths and the eventually avoidable death share.",
+    display_name="War Trial Redirect Post-Cutoff Disease Plaintiffs",
+    unit="plaintiffs",
+    formula="WAR_TRIAL_REDIRECT_POST_CUTOFF_DISEASE_YEARS * GLOBAL_ANNUAL_DEATHS_CURABLE_DISEASES * EVENTUALLY_AVOIDABLE_DEATH_PCT",
+    inputs=[
+        "WAR_TRIAL_REDIRECT_POST_CUTOFF_DISEASE_YEARS",
+        "GLOBAL_ANNUAL_DEATHS_CURABLE_DISEASES",
+        "EVENTUALLY_AVOIDABLE_DEATH_PCT",
+    ],
+    compute=lambda ctx: (
+        ctx["WAR_TRIAL_REDIRECT_POST_CUTOFF_DISEASE_YEARS"]
+        * ctx["GLOBAL_ANNUAL_DEATHS_CURABLE_DISEASES"]
+        * ctx["EVENTUALLY_AVOIDABLE_DEATH_PCT"]
+    ),
+    keywords=["war", "medical misallocation", "plaintiffs", "disease deaths", "prosecutor"],
+    latex_symbol=r"N_{plaintiffs,disease}",
+)
+
+WAR_TRIAL_REDIRECT_POST_CUTOFF_AGING_PLAINTIFFS = Parameter(
+    WAR_TRIAL_REDIRECT_POST_CUTOFF_AGING_YEARS
+    * GLOBAL_ANNUAL_DEATHS_CURABLE_DISEASES
+    * EVENTUALLY_AVOIDABLE_DEATH_PCT,
+    manual_ref="knowledge/appendix/humanity-v-government.qmd",
+    source_type=SourceType.CALCULATED,
+    confidence="low",
+    description="Aggressive prosecutor aging intake count after the aging cutoff year. This overlaps "
+                "with the broader disease-death plaintiff class because the annual-deaths parameter "
+                "covers all disease and aging deaths; it is an intake class, not an additive damages line.",
+    display_name="War Trial Redirect Post-Cutoff Aging Plaintiffs",
+    unit="plaintiffs",
+    formula="WAR_TRIAL_REDIRECT_POST_CUTOFF_AGING_YEARS * GLOBAL_ANNUAL_DEATHS_CURABLE_DISEASES * EVENTUALLY_AVOIDABLE_DEATH_PCT",
+    inputs=[
+        "WAR_TRIAL_REDIRECT_POST_CUTOFF_AGING_YEARS",
+        "GLOBAL_ANNUAL_DEATHS_CURABLE_DISEASES",
+        "EVENTUALLY_AVOIDABLE_DEATH_PCT",
+    ],
+    compute=lambda ctx: (
+        ctx["WAR_TRIAL_REDIRECT_POST_CUTOFF_AGING_YEARS"]
+        * ctx["GLOBAL_ANNUAL_DEATHS_CURABLE_DISEASES"]
+        * ctx["EVENTUALLY_AVOIDABLE_DEATH_PCT"]
+    ),
+    keywords=["war", "medical misallocation", "aging", "plaintiffs", "prosecutor"],
+    latex_symbol=r"N_{plaintiffs,aging}",
+)
+
+WAR_TRIAL_REDIRECT_POST_CUTOFF_DISEASE_DALYS = Parameter(
+    WAR_TRIAL_REDIRECT_POST_CUTOFF_DISEASE_YEARS
+    * GLOBAL_ANNUAL_DALY_BURDEN
+    * EVENTUALLY_AVOIDABLE_DALY_PCT,
+    manual_ref="knowledge/appendix/humanity-v-government.qmd",
+    source_type=SourceType.CALCULATED,
+    confidence="low",
+    description="Aggressive prosecutor estimate of post-cutoff avoidable disease DALYs. This measures "
+                "disease-years, disability, and suffering after the disease cutoff, separate from the "
+                "death-plaintiff VSL count.",
+    display_name="War Trial Redirect Post-Cutoff Disease DALYs",
+    unit="DALYs",
+    formula="WAR_TRIAL_REDIRECT_POST_CUTOFF_DISEASE_YEARS * GLOBAL_ANNUAL_DALY_BURDEN * EVENTUALLY_AVOIDABLE_DALY_PCT",
+    inputs=[
+        "WAR_TRIAL_REDIRECT_POST_CUTOFF_DISEASE_YEARS",
+        "GLOBAL_ANNUAL_DALY_BURDEN",
+        "EVENTUALLY_AVOIDABLE_DALY_PCT",
+    ],
+    compute=lambda ctx: (
+        ctx["WAR_TRIAL_REDIRECT_POST_CUTOFF_DISEASE_YEARS"]
+        * ctx["GLOBAL_ANNUAL_DALY_BURDEN"]
+        * ctx["EVENTUALLY_AVOIDABLE_DALY_PCT"]
+    ),
+    keywords=["war", "medical misallocation", "DALYs", "disease years", "suffering", "prosecutor"],
+    latex_symbol=r"DALYs_{post,disease}",
+)
+
+CORPORATE_DAMAGES_PROSECUTOR_GROSS_MEDICAL_MISALLOCATION_EXPOSURE = Parameter(
+    WAR_TRIAL_REDIRECT_POST_CUTOFF_DISEASE_PLAINTIFFS * VALUE_OF_STATISTICAL_LIFE,
+    manual_ref="knowledge/appendix/humanity-v-government.qmd",
+    source_type=SourceType.CALCULATED,
+    confidence="low",
+    description="Gross pleading exposure for post-cutoff medical misallocation disease plaintiffs "
+                "valued at VSL. This is pleading exposure, not a final non-duplicative award.",
+    display_name="Corporate Damages Prosecutor Gross Medical Misallocation Exposure",
+    unit="USD",
+    formula="WAR_TRIAL_REDIRECT_POST_CUTOFF_DISEASE_PLAINTIFFS * VALUE_OF_STATISTICAL_LIFE",
+    inputs=["WAR_TRIAL_REDIRECT_POST_CUTOFF_DISEASE_PLAINTIFFS", "VALUE_OF_STATISTICAL_LIFE"],
+    compute=lambda ctx: ctx["WAR_TRIAL_REDIRECT_POST_CUTOFF_DISEASE_PLAINTIFFS"] * ctx["VALUE_OF_STATISTICAL_LIFE"],
+    keywords=["corporate", "damages", "medical misallocation", "gross pleading exposure", "prosecutor"],
+    latex_symbol=r"D_{corp,med,gross}",
+)
+
+CORPORATE_DAMAGES_PROSECUTOR_GROSS_AGING_INTAKE_EXPOSURE = Parameter(
+    WAR_TRIAL_REDIRECT_POST_CUTOFF_AGING_PLAINTIFFS * VALUE_OF_STATISTICAL_LIFE,
+    manual_ref="knowledge/appendix/humanity-v-government.qmd",
+    source_type=SourceType.CALCULATED,
+    confidence="low",
+    description="Gross pleading exposure for the overlapping aging intake class valued at VSL. "
+                "Displayed separately because it overlaps with the broader disease-death class.",
+    display_name="Corporate Damages Prosecutor Gross Aging Intake Exposure",
+    unit="USD",
+    formula="WAR_TRIAL_REDIRECT_POST_CUTOFF_AGING_PLAINTIFFS * VALUE_OF_STATISTICAL_LIFE",
+    inputs=["WAR_TRIAL_REDIRECT_POST_CUTOFF_AGING_PLAINTIFFS", "VALUE_OF_STATISTICAL_LIFE"],
+    compute=lambda ctx: ctx["WAR_TRIAL_REDIRECT_POST_CUTOFF_AGING_PLAINTIFFS"] * ctx["VALUE_OF_STATISTICAL_LIFE"],
+    keywords=["corporate", "damages", "medical misallocation", "aging", "gross pleading exposure", "prosecutor"],
+    latex_symbol=r"D_{corp,aging,gross}",
+)
+
+CORPORATE_DAMAGES_PROSECUTOR_GROSS_DISEASE_DALY_EXPOSURE = Parameter(
+    WAR_TRIAL_REDIRECT_POST_CUTOFF_DISEASE_DALYS * STANDARD_ECONOMIC_QALY_VALUE_USD,
+    manual_ref="knowledge/appendix/humanity-v-government.qmd",
+    source_type=SourceType.CALCULATED,
+    confidence="low",
+    description="Gross pleading exposure for post-cutoff disease DALYs valued at the standard QALY "
+                "value. This is disease-year and suffering exposure, not a final non-duplicative award.",
+    display_name="Corporate Damages Prosecutor Gross Disease DALY Exposure",
+    unit="USD",
+    formula="WAR_TRIAL_REDIRECT_POST_CUTOFF_DISEASE_DALYS * STANDARD_ECONOMIC_QALY_VALUE_USD",
+    inputs=["WAR_TRIAL_REDIRECT_POST_CUTOFF_DISEASE_DALYS", "STANDARD_ECONOMIC_QALY_VALUE_USD"],
+    compute=lambda ctx: ctx["WAR_TRIAL_REDIRECT_POST_CUTOFF_DISEASE_DALYS"] * ctx["STANDARD_ECONOMIC_QALY_VALUE_USD"],
+    keywords=["corporate", "damages", "medical misallocation", "DALYs", "gross pleading exposure", "prosecutor"],
+    latex_symbol=r"D_{corp,DALY,gross}",
+)
+
+CORPORATE_DAMAGES_PROSECUTOR_GROSS_PLEADING_EXPOSURE_TOTAL = Parameter(
+    CORPORATE_DAMAGES_STRICT_FLOOR_TOTAL
+    + CORPORATE_DAMAGES_PROSECUTOR_GROSS_MEDICAL_MISALLOCATION_EXPOSURE,
+    manual_ref="knowledge/appendix/humanity-v-government.qmd",
+    source_type=SourceType.CALCULATED,
+    confidence="low",
+    description="Aggressive prosecutor gross pleading exposure: strict non-duplicative floor plus "
+                "gross medical misallocation exposure. This is gross pleading exposure, not a final award.",
+    display_name="Corporate Damages Prosecutor Gross Pleading Exposure Total",
+    unit="USD",
+    formula="CORPORATE_DAMAGES_STRICT_FLOOR_TOTAL + CORPORATE_DAMAGES_PROSECUTOR_GROSS_MEDICAL_MISALLOCATION_EXPOSURE",
+    inputs=[
+        "CORPORATE_DAMAGES_STRICT_FLOOR_TOTAL",
+        "CORPORATE_DAMAGES_PROSECUTOR_GROSS_MEDICAL_MISALLOCATION_EXPOSURE",
+    ],
+    compute=lambda ctx: (
+        ctx["CORPORATE_DAMAGES_STRICT_FLOOR_TOTAL"]
+        + ctx["CORPORATE_DAMAGES_PROSECUTOR_GROSS_MEDICAL_MISALLOCATION_EXPOSURE"]
+    ),
+    keywords=["corporate", "damages", "gross pleading exposure", "medical misallocation", "prosecutor"],
+    latex_symbol=r"D_{corp,plead,gross}",
+)
+
+CORPORATE_DAMAGES_PROSECUTOR_GROSS_PLEADING_EXPOSURE_PER_CAPITA = Parameter(
+    CORPORATE_DAMAGES_PROSECUTOR_GROSS_PLEADING_EXPOSURE_TOTAL / GLOBAL_POPULATION_2024,
+    manual_ref="knowledge/appendix/humanity-v-government.qmd",
+    source_type=SourceType.CALCULATED,
+    confidence="low",
+    description="Gross death-based pleading exposure per living human if the judgment were distributed "
+                "as universal residual restitution. This is not a final award.",
+    display_name="Corporate Damages Prosecutor Gross Pleading Exposure Per Living Human",
+    unit="USD/person",
+    formula="CORPORATE_DAMAGES_PROSECUTOR_GROSS_PLEADING_EXPOSURE_TOTAL / GLOBAL_POPULATION_2024",
+    inputs=["CORPORATE_DAMAGES_PROSECUTOR_GROSS_PLEADING_EXPOSURE_TOTAL", "GLOBAL_POPULATION_2024"],
+    compute=lambda ctx: ctx["CORPORATE_DAMAGES_PROSECUTOR_GROSS_PLEADING_EXPOSURE_TOTAL"] / ctx["GLOBAL_POPULATION_2024"],
+    keywords=["corporate", "damages", "gross pleading exposure", "per capita", "restitution", "prosecutor"],
+    latex_symbol=r"D_{corp,plead,gross,pc}",
+)
+
+CORPORATE_DAMAGES_PROSECUTOR_GROSS_PLEADING_EXPOSURE_WITH_DALYS = Parameter(
+    CORPORATE_DAMAGES_STRICT_FLOOR_TOTAL
+    + CORPORATE_DAMAGES_PROSECUTOR_GROSS_MEDICAL_MISALLOCATION_EXPOSURE
+    + CORPORATE_DAMAGES_PROSECUTOR_GROSS_DISEASE_DALY_EXPOSURE,
+    manual_ref="knowledge/appendix/humanity-v-government.qmd",
+    source_type=SourceType.CALCULATED,
+    confidence="low",
+    description="Aggressive prosecutor stacked gross pleading exposure: strict floor plus post-cutoff "
+                "disease-death VSL exposure plus post-cutoff disease DALY exposure. This intentionally "
+                "shows the full pleading stack and may overlap; it is not a final non-duplicative award.",
+    display_name="Corporate Damages Prosecutor Gross Pleading Exposure With DALYs",
+    unit="USD",
+    formula="CORPORATE_DAMAGES_STRICT_FLOOR_TOTAL + CORPORATE_DAMAGES_PROSECUTOR_GROSS_MEDICAL_MISALLOCATION_EXPOSURE + CORPORATE_DAMAGES_PROSECUTOR_GROSS_DISEASE_DALY_EXPOSURE",
+    inputs=[
+        "CORPORATE_DAMAGES_STRICT_FLOOR_TOTAL",
+        "CORPORATE_DAMAGES_PROSECUTOR_GROSS_MEDICAL_MISALLOCATION_EXPOSURE",
+        "CORPORATE_DAMAGES_PROSECUTOR_GROSS_DISEASE_DALY_EXPOSURE",
+    ],
+    compute=lambda ctx: (
+        ctx["CORPORATE_DAMAGES_STRICT_FLOOR_TOTAL"]
+        + ctx["CORPORATE_DAMAGES_PROSECUTOR_GROSS_MEDICAL_MISALLOCATION_EXPOSURE"]
+        + ctx["CORPORATE_DAMAGES_PROSECUTOR_GROSS_DISEASE_DALY_EXPOSURE"]
+    ),
+    keywords=["corporate", "damages", "gross pleading exposure", "DALYs", "medical misallocation", "prosecutor"],
+    latex_symbol=r"D_{corp,plead,DALY}",
+)
+
+CORPORATE_DAMAGES_PROSECUTOR_GROSS_PLEADING_EXPOSURE_WITH_DALYS_PER_CAPITA = Parameter(
+    CORPORATE_DAMAGES_PROSECUTOR_GROSS_PLEADING_EXPOSURE_WITH_DALYS / GLOBAL_POPULATION_2024,
+    manual_ref="knowledge/appendix/humanity-v-government.qmd",
+    source_type=SourceType.CALCULATED,
+    confidence="low",
+    description="Gross stacked pleading exposure per living human if the death and DALY pleading stack "
+                "were distributed as universal residual restitution. This is not a final award.",
+    display_name="Corporate Damages Prosecutor Gross Pleading Exposure With DALYs Per Living Human",
+    unit="USD/person",
+    formula="CORPORATE_DAMAGES_PROSECUTOR_GROSS_PLEADING_EXPOSURE_WITH_DALYS / GLOBAL_POPULATION_2024",
+    inputs=["CORPORATE_DAMAGES_PROSECUTOR_GROSS_PLEADING_EXPOSURE_WITH_DALYS", "GLOBAL_POPULATION_2024"],
+    compute=lambda ctx: (
+        ctx["CORPORATE_DAMAGES_PROSECUTOR_GROSS_PLEADING_EXPOSURE_WITH_DALYS"]
+        / ctx["GLOBAL_POPULATION_2024"]
+    ),
+    keywords=["corporate", "damages", "gross pleading exposure", "DALYs", "per capita", "restitution"],
+    latex_symbol=r"D_{corp,plead,DALY,pc}",
+)
 
 # Disease economic burden
 GLOBAL_SYMPTOMATIC_DISEASE_TREATMENT_ANNUAL = Parameter(
@@ -9151,7 +9710,7 @@ NIH_TRADITIONAL_TRIAL_MAX_EFFICIENCY_PCT = Parameter(
     inputs=["DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT", "TRADITIONAL_PHASE3_COST_PER_PATIENT"],
     compute=lambda ctx: ctx["DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT"] / ctx["TRADITIONAL_PHASE3_COST_PER_PATIENT"],
     latex_symbol=r"\eta_{NIH,max}",
-)  # ~2.3% — ceiling because 96.7% of NIH budget isn't even spent on trials
+)  # ~2.3%, ceiling because 96.7% of NIH budget isn't even spent on trials
 
 # Cost per DALY - Primary cost-effectiveness metric
 # Note: ICER (Incremental Cost-Effectiveness Ratio) is not calculated because this is a

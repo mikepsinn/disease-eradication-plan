@@ -1,6 +1,6 @@
 ```{python}
 #| echo: false
-#| fig-cap: "Probability Distribution: War-Redirect Major Non-Aging Disease Control Year"
+#| fig-cap: "Probability Distribution: War-Redirect Medical Toolchain Bootstrap Years"
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -17,12 +17,12 @@ setup_chart_style()
 
 # Parameter values
 
-central_value = 1990.0
-low = 1965
-high = 2015
+central_value = 14.0
+low = 0
+high = 40
 dist_type = "triangular"
-display_name = "War-Redirect Major Non-Aging Disease Control Year"
-unit = "year"
+display_name = "War-Redirect Medical Toolchain Bootstrap Years"
+unit = "years"
 
 # Calculate distribution parameters
 
@@ -143,7 +143,7 @@ add_watermark(fig)
 
 # Save PNG to knowledge/figures/ regardless of where Quarto renders from
 
-output_path = get_figure_output_path('distribution-war_trial_redirect_nonaging_disease_control_year.png')
+output_path = get_figure_output_path('distribution-war_trial_redirect_toolchain_bootstrap_years.png')
 plt.savefig(output_path, dpi=96, bbox_inches=None, facecolor=COLOR_WHITE)
 
 add_png_metadata(

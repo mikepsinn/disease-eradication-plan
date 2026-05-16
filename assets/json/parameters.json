@@ -1191,6 +1191,83 @@
       "formula": "CORPORATE_DAMAGES_STRICT_FLOOR_TOTAL + CORPORATE_DAMAGES_DRUGS_NEVER_DEVELOPED_VSL",
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/humanity-v-government.html"
     },
+    "CORPORATE_DAMAGES_PROSECUTOR_GROSS_AGING_INTAKE_EXPOSURE": {
+      "value": 1.783085302091402e+16,
+      "formatted": "$17.8 quadrillion",
+      "unit": "USD",
+      "description": "Gross pleading exposure for the overlapping aging intake class valued at VSL. Displayed separately because it overlaps with the broader disease-death class.",
+      "sourceType": "calculated",
+      "sourceRef": null,
+      "confidence": "low",
+      "formula": "WAR_TRIAL_REDIRECT_POST_CUTOFF_AGING_PLAINTIFFS * VALUE_OF_STATISTICAL_LIFE",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/humanity-v-government.html"
+    },
+    "CORPORATE_DAMAGES_PROSECUTOR_GROSS_DISEASE_DALY_EXPOSURE": {
+      "value": 3.0011409759876064e+16,
+      "formatted": "$30 quadrillion",
+      "unit": "USD",
+      "description": "Gross pleading exposure for post-cutoff disease DALYs valued at the standard QALY value. This is disease-year and suffering exposure, not a final non-duplicative award.",
+      "sourceType": "calculated",
+      "sourceRef": null,
+      "confidence": "low",
+      "formula": "WAR_TRIAL_REDIRECT_POST_CUTOFF_DISEASE_DALYS * STANDARD_ECONOMIC_QALY_VALUE_USD",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/humanity-v-government.html"
+    },
+    "CORPORATE_DAMAGES_PROSECUTOR_GROSS_MEDICAL_MISALLOCATION_EXPOSURE": {
+      "value": 3.820897075910147e+16,
+      "formatted": "$38.2 quadrillion",
+      "unit": "USD",
+      "description": "Gross pleading exposure for post-cutoff medical misallocation disease plaintiffs valued at VSL. This is pleading exposure, not a final non-duplicative award.",
+      "sourceType": "calculated",
+      "sourceRef": null,
+      "confidence": "low",
+      "formula": "WAR_TRIAL_REDIRECT_POST_CUTOFF_DISEASE_PLAINTIFFS * VALUE_OF_STATISTICAL_LIFE",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/humanity-v-government.html"
+    },
+    "CORPORATE_DAMAGES_PROSECUTOR_GROSS_PLEADING_EXPOSURE_PER_CAPITA": {
+      "value": 5314340.315768355,
+      "formatted": "$5.31 million",
+      "unit": "USD/person",
+      "description": "Gross death-based pleading exposure per living human if the judgment were distributed as universal residual restitution. This is not a final award.",
+      "sourceType": "calculated",
+      "sourceRef": null,
+      "confidence": "low",
+      "formula": "CORPORATE_DAMAGES_PROSECUTOR_GROSS_PLEADING_EXPOSURE_TOTAL / GLOBAL_POPULATION_2024",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/humanity-v-government.html"
+    },
+    "CORPORATE_DAMAGES_PROSECUTOR_GROSS_PLEADING_EXPOSURE_TOTAL": {
+      "value": 4.251472252614684e+16,
+      "formatted": "$42.5 quadrillion",
+      "unit": "USD",
+      "description": "Aggressive prosecutor gross pleading exposure: strict non-duplicative floor plus gross medical misallocation exposure. This is gross pleading exposure, not a final award.",
+      "sourceType": "calculated",
+      "sourceRef": null,
+      "confidence": "low",
+      "formula": "CORPORATE_DAMAGES_STRICT_FLOOR_TOTAL + CORPORATE_DAMAGES_PROSECUTOR_GROSS_MEDICAL_MISALLOCATION_EXPOSURE",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/humanity-v-government.html"
+    },
+    "CORPORATE_DAMAGES_PROSECUTOR_GROSS_PLEADING_EXPOSURE_WITH_DALYS": {
+      "value": 7.252613228602291e+16,
+      "formatted": "$72.5 quadrillion",
+      "unit": "USD",
+      "description": "Aggressive prosecutor stacked gross pleading exposure: strict floor plus post-cutoff disease-death VSL exposure plus post-cutoff disease DALY exposure. This intentionally shows the full pleading stack and may overlap; it is not a final non-duplicative award.",
+      "sourceType": "calculated",
+      "sourceRef": null,
+      "confidence": "low",
+      "formula": "CORPORATE_DAMAGES_STRICT_FLOOR_TOTAL + CORPORATE_DAMAGES_PROSECUTOR_GROSS_MEDICAL_MISALLOCATION_EXPOSURE + CORPORATE_DAMAGES_PROSECUTOR_GROSS_DISEASE_DALY_EXPOSURE",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/humanity-v-government.html"
+    },
+    "CORPORATE_DAMAGES_PROSECUTOR_GROSS_PLEADING_EXPOSURE_WITH_DALYS_PER_CAPITA": {
+      "value": 9065766.535752865,
+      "formatted": "$9.07 million",
+      "unit": "USD/person",
+      "description": "Gross stacked pleading exposure per living human if the death and DALY pleading stack were distributed as universal residual restitution. This is not a final award.",
+      "sourceType": "calculated",
+      "sourceRef": null,
+      "confidence": "low",
+      "formula": "CORPORATE_DAMAGES_PROSECUTOR_GROSS_PLEADING_EXPOSURE_WITH_DALYS / GLOBAL_POPULATION_2024",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/humanity-v-government.html"
+    },
     "CORPORATE_DAMAGES_STATE_FARM_CEILING_EXPOSURE_PER_CAPITA": {
       "value": 9132189.708806708,
       "formatted": "$9.13 million",
@@ -4555,6 +4632,83 @@
       "confidence": "high",
       "formula": "MED_RESEARCH ÷ TOTAL_BURDEN",
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/economics/1-pct-treaty-impact.html"
+    },
+    "MEDICAL_TOOLCHAIN_BRAIN_INITIATIVE_PLANNED_BUDGET": {
+      "value": 4500000000.0,
+      "formatted": "$4.5 billion",
+      "unit": "USD",
+      "description": "Planned NIH BRAIN Initiative commitment described in the BRAIN 2025 scientific vision.",
+      "sourceType": "external",
+      "sourceRef": "nih-brain-initiative-planned-budget",
+      "confidence": "high",
+      "formula": null,
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/problem/cost-of-war.html"
+    },
+    "MEDICAL_TOOLCHAIN_CRISPR_NIH_FUNDING_2011_2018": {
+      "value": 3100000000.0,
+      "formatted": "$3.1 billion",
+      "unit": "USD",
+      "description": "Rounded NIH CRISPR-related research funding for FY2011-FY2018 from CRS Table 1.",
+      "sourceType": "external",
+      "sourceRef": "crs-crispr-nih-funding-2011-2018",
+      "confidence": "high",
+      "formula": null,
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/problem/cost-of-war.html"
+    },
+    "MEDICAL_TOOLCHAIN_HGP_COST_USD": {
+      "value": 2700000000.0,
+      "formatted": "$2.7 billion",
+      "unit": "USD",
+      "description": "Approximate Human Genome Project cost used as an observed medical-toolchain anchor.",
+      "sourceType": "external",
+      "sourceRef": "human-genome-and-genetic-editing",
+      "confidence": "medium",
+      "formula": null,
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/problem/cost-of-war.html"
+    },
+    "MEDICAL_TOOLCHAIN_HITECH_EHR_INCENTIVE_ESTIMATED_SPENDING": {
+      "value": 30000000000.0,
+      "formatted": "$30 billion",
+      "unit": "USD",
+      "description": "GAO estimate of Medicare and Medicaid EHR incentive program spending from 2011 through 2019.",
+      "sourceType": "external",
+      "sourceRef": "hitech-ehr-incentive-estimated-spending",
+      "confidence": "high",
+      "formula": null,
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/problem/cost-of-war.html"
+    },
+    "MEDICAL_TOOLCHAIN_OBSERVED_ANCHOR_COSTS": {
+      "value": 58625000000.0,
+      "formatted": "$58.6 billion",
+      "unit": "USD",
+      "description": "Sum of observed anchor costs for major medical toolchain programs. This is anchor evidence for the prosecutor reserve, not a claim that these programs alone cure disease.",
+      "sourceType": "calculated",
+      "sourceRef": null,
+      "confidence": "medium",
+      "formula": "HGP + CRISPR + BRAIN + PCORnet + HITECH + OWS",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/problem/cost-of-war.html"
+    },
+    "MEDICAL_TOOLCHAIN_OWS_POTENTIAL_VACCINE_AWARDS": {
+      "value": 18000000000.0,
+      "formatted": "$18 billion",
+      "unit": "USD",
+      "description": "GAO-reported total potential estimated value of Operation Warp Speed vaccine candidate awards.",
+      "sourceType": "external",
+      "sourceRef": "operation-warp-speed-potential-vaccine-awards",
+      "confidence": "high",
+      "formula": null,
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/problem/cost-of-war.html"
+    },
+    "MEDICAL_TOOLCHAIN_PCORNET_INFRASTRUCTURE_FUNDING": {
+      "value": 325000000.0,
+      "formatted": "$325 million",
+      "unit": "USD",
+      "description": "Rounded PCORI-funded PCORnet Studies amount from the Q4 2025 PCORnet dashboard. Used as a network-scale pragmatic-trial infrastructure anchor.",
+      "sourceType": "external",
+      "sourceRef": "pcornet-infrastructure-funding",
+      "confidence": "medium",
+      "formula": null,
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/problem/cost-of-war.html"
     },
     "MENTAL_HEALTH_PRODUCTIVITY_LOSS_PER_CAPITA": {
       "value": 2000.0,
@@ -8020,6 +8174,32 @@
       "formula": "WAR_DEATHS_SINCE_1900 × WAR_AVG_YEARS_LIFE_LOST_PER_DEATH",
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/problem/cost-of-war.html"
     },
+    "WAR_MEDICAL_TOOLCHAIN_PRIZE_BUDGET": {
+      "value": 20000000000000.0,
+      "formatted": "$20 trillion",
+      "unit": "USD",
+      "description": "Aggressive prosecutor reserve for buying the missing medical toolchain: prizes, diagnostics, EHRs, sequencing, AI, factories, surveillance, and pragmatic-trial infrastructure before counting remaining money as direct trial capacity.",
+      "sourceType": "definition",
+      "sourceRef": null,
+      "confidence": "low",
+      "formula": null,
+      "confidenceInterval": [
+        5000000000000.0,
+        50000000000000.0
+      ],
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/problem/cost-of-war.html"
+    },
+    "WAR_MEDICAL_TOOLCHAIN_PRIZE_OVERPAY_MULTIPLE": {
+      "value": 341.1513859275053,
+      "formatted": "341x",
+      "unit": "x",
+      "description": "How many times larger the prosecutor's medical-toolchain prize reserve is than the observed anchor costs listed here.",
+      "sourceType": "calculated",
+      "sourceRef": null,
+      "confidence": "low",
+      "formula": "WAR_MEDICAL_TOOLCHAIN_PRIZE_BUDGET / MEDICAL_TOOLCHAIN_OBSERVED_ANCHOR_COSTS",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/problem/cost-of-war.html"
+    },
     "WAR_PROPERTY_DESTRUCTION_SINCE_1900": {
       "value": 45000000000000.0,
       "formatted": "$45 trillion",
@@ -8073,19 +8253,52 @@
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/problem/cost-of-war.html"
     },
     "WAR_TRIAL_REDIRECT_AGING_CONTROL_SENSITIVITY_YEAR": {
-      "value": 2015.0,
-      "formatted": "2015",
+      "value": 1990.0,
+      "formatted": "1990",
       "unit": "year",
-      "description": "Exploratory sensitivity year for when a 1900 treaty freezing military spending and redirecting avoided military growth to pragmatic trials might have made biological aging a treatable risk factor. Included only to show what the same trial platform could surface if geroscience became testable at population scale; not part of the central historical damages estimate.",
+      "description": "Counterfactual calendar year when biological aging becomes a treatable risk factor in the aggressive medical-redirect model. Uses the calculated aging pleading cutoff year.",
+      "sourceType": "calculated",
+      "sourceRef": null,
+      "confidence": "low",
+      "formula": "WAR_TRIAL_REDIRECT_AGING_PLEADING_CUTOFF_YEAR",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/problem/cost-of-war.html"
+    },
+    "WAR_TRIAL_REDIRECT_AGING_LAG_AFTER_DISEASE_CONTROL_YEARS": {
+      "value": 40.0,
+      "formatted": "40 years",
+      "unit": "years",
+      "description": "Additional lag after broad disease-control capacity before biological aging becomes a treatable risk factor in the aggressive prosecutor model.",
       "sourceType": "definition",
       "sourceRef": null,
       "confidence": "low",
       "formula": null,
       "confidenceInterval": [
-        1985.0,
-        2060.0
+        10.0,
+        65.0
       ],
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/problem/cost-of-war.html"
+    },
+    "WAR_TRIAL_REDIRECT_AGING_PLEADING_CUTOFF_YEAR": {
+      "value": 1990.0,
+      "formatted": "1990",
+      "unit": "year",
+      "description": "Aggressive prosecutor pleading cutoff year for presumptive aging-death plaintiffs. Calculated as the disease cutoff plus the geroscience lag assumption.",
+      "sourceType": "calculated",
+      "sourceRef": null,
+      "confidence": "low",
+      "formula": "WAR_TRIAL_REDIRECT_DISEASE_PLEADING_CUTOFF_YEAR + WAR_TRIAL_REDIRECT_AGING_LAG_AFTER_DISEASE_CONTROL_YEARS",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/humanity-v-government.html"
+    },
+    "WAR_TRIAL_REDIRECT_DISEASE_PLEADING_CUTOFF_YEAR": {
+      "value": 1950.0,
+      "formatted": "1950",
+      "unit": "year",
+      "description": "Aggressive prosecutor pleading cutoff year for presumptive disease-death plaintiffs. Calculated as the 1900 redirect start year plus medical-toolchain bootstrap years plus the treaty-scale therapeutic queue-clearance years.",
+      "sourceType": "calculated",
+      "sourceRef": null,
+      "confidence": "low",
+      "formula": "round(WAR_TRIAL_REDIRECT_START_YEAR + WAR_TRIAL_REDIRECT_TOOLCHAIN_BOOTSTRAP_YEARS + DFDA_QUEUE_CLEARANCE_YEARS)",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/humanity-v-government.html"
     },
     "WAR_TRIAL_REDIRECT_EXCESS_MILITARY_SPENDING_ABOVE_1900_FREEZE": {
       "value": 134715100378699.22,
@@ -8113,29 +8326,146 @@
       "value": 1950.0,
       "formatted": "1950",
       "unit": "year",
-      "description": "Counterfactual calendar year by which a 1900 treaty freezing military spending and redirecting avoided military growth to pragmatic trials could plausibly have achieved practical control of major infectious diseases. Practical control means effective prevention, treatment, or elimination in most places, not literal extinction of every pathogen.",
-      "sourceType": "definition",
+      "description": "Counterfactual calendar year for practical infectious-disease control in the aggressive medical-redirect model. Uses the calculated disease pleading cutoff year.",
+      "sourceType": "calculated",
       "sourceRef": null,
       "confidence": "low",
-      "formula": null,
-      "confidenceInterval": [
-        1935.0,
-        1975.0
-      ],
+      "formula": "WAR_TRIAL_REDIRECT_DISEASE_PLEADING_CUTOFF_YEAR",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/problem/cost-of-war.html"
+    },
+    "WAR_TRIAL_REDIRECT_NET_TRIAL_BUDGET": {
+      "value": 150000000000000.0,
+      "formatted": "$150 trillion",
+      "unit": "USD",
+      "description": "Cumulative military spending since the Federal Reserve era after reserving the aggressive prosecutor's medical-toolchain prize budget.",
+      "sourceType": "calculated",
+      "sourceRef": null,
+      "confidence": "low",
+      "formula": "CUMULATIVE_MILITARY_SPENDING_FED_ERA - WAR_MEDICAL_TOOLCHAIN_PRIZE_BUDGET",
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/problem/cost-of-war.html"
     },
     "WAR_TRIAL_REDIRECT_NONAGING_DISEASE_CONTROL_YEAR": {
-      "value": 1990.0,
-      "formatted": "1990",
+      "value": 1950.0,
+      "formatted": "1950",
       "unit": "year",
-      "description": "Counterfactual calendar year by which a 1900 treaty freezing military spending and redirecting avoided military growth to pragmatic trials could plausibly have delivered effective prevention, treatment, or control for most major non-aging disease burden. This is a scenario parameter for historical opportunity-cost reasoning, not a measured historical fact.",
+      "description": "Counterfactual calendar year for practical control of major non-aging disease burden in the aggressive medical-redirect model. Uses the calculated disease pleading cutoff year.",
+      "sourceType": "calculated",
+      "sourceRef": null,
+      "confidence": "low",
+      "formula": "WAR_TRIAL_REDIRECT_DISEASE_PLEADING_CUTOFF_YEAR",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/problem/cost-of-war.html"
+    },
+    "WAR_TRIAL_REDIRECT_PATIENT_SLOTS_FUNDED": {
+      "value": 161463939720.12918,
+      "formatted": "161 billion patient-slots",
+      "unit": "patient-slots",
+      "description": "Patient-slots funded by the net redirected war budget at pragmatic trial cost per patient. Patient-slots are repeated experimental opportunities, not unique people.",
+      "sourceType": "calculated",
+      "sourceRef": null,
+      "confidence": "low",
+      "formula": "WAR_TRIAL_REDIRECT_NET_TRIAL_BUDGET / DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/problem/cost-of-war.html"
+    },
+    "WAR_TRIAL_REDIRECT_PATIENT_SLOTS_PER_LIVING_HUMAN": {
+      "value": 20.18299246501615,
+      "formatted": "20.2 patient-slots/person",
+      "unit": "patient-slots/person",
+      "description": "Patient-slots funded per living human, used to avoid implying hundreds of billions of unique patients. It means repeated trial opportunities across time and indications.",
+      "sourceType": "calculated",
+      "sourceRef": null,
+      "confidence": "low",
+      "formula": "WAR_TRIAL_REDIRECT_PATIENT_SLOTS_FUNDED / GLOBAL_POPULATION_2024",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/problem/cost-of-war.html"
+    },
+    "WAR_TRIAL_REDIRECT_PLEADING_END_YEAR": {
+      "value": 2024.0,
+      "formatted": "2024",
+      "unit": "year",
+      "description": "End year for the aggressive prosecutor post-cutoff plaintiff count.",
+      "sourceType": "definition",
+      "sourceRef": null,
+      "confidence": "high",
+      "formula": null,
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/humanity-v-government.html"
+    },
+    "WAR_TRIAL_REDIRECT_POST_CUTOFF_AGING_PLAINTIFFS": {
+      "value": 1783085302.091402,
+      "formatted": "1.78 billion plaintiffs",
+      "unit": "plaintiffs",
+      "description": "Aggressive prosecutor aging intake count after the aging cutoff year. This overlaps with the broader disease-death plaintiff class because the annual-deaths parameter covers all disease and aging deaths; it is an intake class, not an additive damages line.",
+      "sourceType": "calculated",
+      "sourceRef": null,
+      "confidence": "low",
+      "formula": "WAR_TRIAL_REDIRECT_POST_CUTOFF_AGING_YEARS * GLOBAL_ANNUAL_DEATHS_CURABLE_DISEASES * EVENTUALLY_AVOIDABLE_DEATH_PCT",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/humanity-v-government.html"
+    },
+    "WAR_TRIAL_REDIRECT_POST_CUTOFF_AGING_YEARS": {
+      "value": 35.0,
+      "formatted": "35 years",
+      "unit": "years",
+      "description": "Inclusive number of years in the aggressive prosecutor aging-death intake window.",
+      "sourceType": "calculated",
+      "sourceRef": null,
+      "confidence": "low",
+      "formula": "WAR_TRIAL_REDIRECT_PLEADING_END_YEAR - WAR_TRIAL_REDIRECT_AGING_PLEADING_CUTOFF_YEAR + 1",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/humanity-v-government.html"
+    },
+    "WAR_TRIAL_REDIRECT_POST_CUTOFF_DISEASE_DALYS": {
+      "value": 200076065065.84042,
+      "formatted": "200 billion DALYs",
+      "unit": "DALYs",
+      "description": "Aggressive prosecutor estimate of post-cutoff avoidable disease DALYs. This measures disease-years, disability, and suffering after the disease cutoff, separate from the death-plaintiff VSL count.",
+      "sourceType": "calculated",
+      "sourceRef": null,
+      "confidence": "low",
+      "formula": "WAR_TRIAL_REDIRECT_POST_CUTOFF_DISEASE_YEARS * GLOBAL_ANNUAL_DALY_BURDEN * EVENTUALLY_AVOIDABLE_DALY_PCT",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/humanity-v-government.html"
+    },
+    "WAR_TRIAL_REDIRECT_POST_CUTOFF_DISEASE_PLAINTIFFS": {
+      "value": 3820897075.910147,
+      "formatted": "3.82 billion plaintiffs",
+      "unit": "plaintiffs",
+      "description": "Aggressive prosecutor pleading count for post-cutoff disease-death plaintiffs: inclusive years from the disease cutoff through the pleading end year, multiplied by annual disease deaths and the eventually avoidable death share.",
+      "sourceType": "calculated",
+      "sourceRef": null,
+      "confidence": "low",
+      "formula": "WAR_TRIAL_REDIRECT_POST_CUTOFF_DISEASE_YEARS * GLOBAL_ANNUAL_DEATHS_CURABLE_DISEASES * EVENTUALLY_AVOIDABLE_DEATH_PCT",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/humanity-v-government.html"
+    },
+    "WAR_TRIAL_REDIRECT_POST_CUTOFF_DISEASE_YEARS": {
+      "value": 75.0,
+      "formatted": "75 years",
+      "unit": "years",
+      "description": "Inclusive number of years in the aggressive prosecutor disease-death plaintiff window.",
+      "sourceType": "calculated",
+      "sourceRef": null,
+      "confidence": "low",
+      "formula": "WAR_TRIAL_REDIRECT_PLEADING_END_YEAR - WAR_TRIAL_REDIRECT_DISEASE_PLEADING_CUTOFF_YEAR + 1",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/humanity-v-government.html"
+    },
+    "WAR_TRIAL_REDIRECT_START_YEAR": {
+      "value": 1900.0,
+      "formatted": "1900",
+      "unit": "year",
+      "description": "Start year for the aggressive prosecutor medical redirect counterfactual.",
+      "sourceType": "definition",
+      "sourceRef": null,
+      "confidence": "high",
+      "formula": null,
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/problem/cost-of-war.html"
+    },
+    "WAR_TRIAL_REDIRECT_TOOLCHAIN_BOOTSTRAP_YEARS": {
+      "value": 14.0,
+      "formatted": "14 years",
+      "unit": "years",
+      "description": "Assumed years to build the missing medical toolchain before the queue-clearance clock runs at full force: diagnostics, EHRs, sequencing, AI, factories, surveillance, and trial infrastructure. Set so the central queue model yields a 1950 disease cutoff.",
       "sourceType": "definition",
       "sourceRef": null,
       "confidence": "low",
       "formula": null,
       "confidenceInterval": [
-        1965.0,
-        2015.0
+        0.0,
+        40.0
       ],
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/problem/cost-of-war.html"
     },
@@ -12825,6 +13155,24 @@
       "volume": "",
       "pages": "",
       "number": ""
+    },
+    "crs-crispr-nih-funding-2011-2018": {
+      "id": "crs-crispr-nih-funding-2011-2018",
+      "title": "Advanced Gene Editing: CRISPR-Cas9",
+      "author": "Congressional Research Service",
+      "year": "2018",
+      "source": "Congressional Research Service",
+      "url": "https://www.congress.gov/crs_external_products/R/PDF/R44824/R44824.7.pdf",
+      "urls": [
+        "https://www.congress.gov/crs_external_products/R/PDF/R44824/R44824.7.pdf"
+      ],
+      "quote": "",
+      "note": "Table 1 reports NIH CRISPR-related funding totaling \\$3,083,419,930 for FY2011-FY2018.",
+      "type": "techreport",
+      "doi": "",
+      "volume": "",
+      "pages": "",
+      "number": "R44824"
     },
     "crs-defense-primer-nuclear-forces": {
       "id": "crs-defense-primer-nuclear-forces",
@@ -18287,6 +18635,24 @@
       "pages": "",
       "number": ""
     },
+    "hitech-ehr-incentive-estimated-spending": {
+      "id": "hitech-ehr-incentive-estimated-spending",
+      "title": "Electronic Health Records: First Year of CMS's Incentive Programs Shows Opportunities to Improve Processes to Verify Providers Met Requirements",
+      "author": "U.S. Government Accountability Office",
+      "year": "2012",
+      "source": "U.S. Government Accountability Office",
+      "url": "https://www.gao.gov/products/gao-12-481",
+      "urls": [
+        "https://www.gao.gov/products/gao-12-481"
+      ],
+      "quote": "",
+      "note": "GAO states Medicare and Medicaid EHR incentive program spending was estimated to total \\$30 billion from 2011 through 2019.",
+      "type": "techreport",
+      "doi": "",
+      "volume": "",
+      "pages": "",
+      "number": "GAO-12-481"
+    },
     "hoddinott2013": {
       "id": "hoddinott2013",
       "title": "Long-Term Economic Benefits of Early Childhood Nutrition",
@@ -21965,6 +22331,24 @@
       "pages": "",
       "number": ""
     },
+    "nih-brain-initiative-planned-budget": {
+      "id": "nih-brain-initiative-planned-budget",
+      "title": "BRAIN 2025: A Scientific Vision",
+      "author": "National Institutes of Health BRAIN Initiative",
+      "year": "2014",
+      "source": "",
+      "url": "https://braininitiative.nih.gov/vision/nih-brain-initiative-reports/brain-2025-scientific-vision",
+      "urls": [
+        "https://braininitiative.nih.gov/vision/nih-brain-initiative-reports/brain-2025-scientific-vision"
+      ],
+      "quote": "",
+      "note": "The BRAIN 2025 scientific vision set the NIH component plan; NIH notices describe the plan as a sustained federal commitment of \\$4.5 billion over 12 years.",
+      "type": "misc",
+      "doi": "",
+      "volume": "",
+      "pages": "",
+      "number": ""
+    },
     "nih-budget-allocation-breakdown": {
       "id": "nih-budget-allocation-breakdown",
       "title": "NIH budget allocation for basic vs. clinical research",
@@ -23782,6 +24166,24 @@
       "pages": "",
       "number": ""
     },
+    "operation-warp-speed-potential-vaccine-awards": {
+      "id": "operation-warp-speed-potential-vaccine-awards",
+      "title": "Operation Warp Speed Vaccine Candidate Awards Potential Value",
+      "author": "U.S. Government Accountability Office",
+      "year": "2020",
+      "source": "U.S. Government Accountability Office",
+      "url": "https://www.gao.gov/assets/gao-21-207.pdf",
+      "urls": [
+        "https://www.gao.gov/assets/gao-21-207.pdf"
+      ],
+      "quote": "",
+      "note": "GAO reported Operation Warp Speed vaccine candidate awards with obligations of at least \\$10 billion and total potential estimated value of at least \\$18 billion.",
+      "type": "techreport",
+      "doi": "",
+      "volume": "",
+      "pages": "",
+      "number": "GAO-21-207"
+    },
     "opg-paper-2025": {
       "id": "opg-paper-2025",
       "title": "The Optimal Policy Generator: A Causal Inference Protocol for Maximizing Median Health and Wealth Through Public Policy",
@@ -24223,6 +24625,24 @@
       ],
       "quote": "Exact statutory text: \"The Patient-Centered Outcomes Research Institute established under section 1320e(b)(1) of this title shall not develop or employ a dollars-per-quality adjusted life year (or similar measure that discounts the value of a life because of an individual's disability) as a threshold to establish what type of health care is cost effective or recommended.\" The Secretary also cannot use such thresholds for Medicare coverage or reimbursement decisions.",
       "note": "Affordable Care Act Section 6301(c) | 42 U.S.C. § 1320e-1(e)",
+      "type": "misc",
+      "doi": "",
+      "volume": "",
+      "pages": "",
+      "number": ""
+    },
+    "pcornet-infrastructure-funding": {
+      "id": "pcornet-infrastructure-funding",
+      "title": "PCORnet Quarterly Progress Report, Q4 2025",
+      "author": "PCORnet",
+      "year": "2026",
+      "source": "",
+      "url": "https://pcornet.org/wp-content/uploads/2026/01/EXTERNAL_PCORnetDashboard.Q4.v2.FINAL_.pdf",
+      "urls": [
+        "https://pcornet.org/wp-content/uploads/2026/01/EXTERNAL_PCORnetDashboard.Q4.v2.FINAL_.pdf"
+      ],
+      "quote": "",
+      "note": "The dashboard reports PCORI funding for PCORnet Studies of \\$324,785,410, rounded here to \\$325 million as a network-scale infrastructure anchor.",
       "type": "misc",
       "doi": "",
       "volume": "",
