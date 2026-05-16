@@ -27,38 +27,22 @@ Build the foundation (core API and data standards), pay bounties for critical fe
 
 ## The Open Platform Model
 
-The most successful software platforms share a pattern: a small core team builds the foundation, then thousands of outside developers build specialized tools on top of it.
+Linux started as one person in Finland writing a kernel. Today it runs most of the internet, every Android phone, and the world's fastest supercomputers. The core team is still tiny. The contributor network is massive. WordPress works the same way: a small core, 60,000+ plugins built by other people. Your species discovered that if you give strangers a good foundation, they will build everything else on it for free, because some of them enjoy building things and others want to put it on their resume. Both motivations produce working software.
 
-Linux started as one person in Finland writing a kernel. Today it runs most of the internet, every Android phone, and the world's fastest supercomputers. The core team is still tiny. The contributor network is massive. WordPress works the same way: a small core, 60,000+ plugins built by other people.
+Open-source platform models aren't theoretical. They're a multi-trillion-dollar economic reality [@open-source-platform-multi-trillion-dollar-reality]. WordPress, Linux, Android, and Chrome were all built this way. Combined value: trillions. Combined cost to build the cores: billions. You used this method to build the infrastructure for cat videos. You have not used it to build the infrastructure for clinical trials. Priorities.
 
-Open-source platform models aren't theoretical. They're a multi-trillion-dollar economic reality [@open-source-platform-multi-trillion-dollar-reality]. WordPress, Linux, Android, and Chrome were all built this way. Combined value: trillions. Combined cost to build the cores: billions. The math is not subtle.
-
-A dFDA follows the same structure:
-
-- **Core infrastructure:** APIs, data standards, identity, and consent management. You build this.
-- **Everything else:** Trial matching tools, analysis dashboards, EHR connectors, patient-facing apps. Developers (companies, academics, individuals with too much free time) build these.
+A dFDA follows the same structure. You build the core (APIs, data standards, identity, consent). Developers build everything else (trial matching, analysis dashboards, EHR connectors, patient apps). The same way WordPress gets 60,000 plugins from strangers, you get a medical research platform from strangers. Except these strangers are also dying of the diseases, so they're more motivated than the average WordPress developer.
 
 ## Bounties: Paying for Results, Not Promises
 
-An open platform mostly builds itself, but sometimes you need specific features that nobody's volunteering to create. That's where bounties come in.
+An open platform mostly builds itself, but sometimes you need specific features that nobody's volunteering to create.
 
-The traditional approach is grants: "Here's money. Build something. Let us know how it goes." The bounty approach inverts this: "Build this specific thing. If it works, you get paid. If it doesn't, you don't." One of these wastes less money. The distinction is left as an exercise for the reader.
+Your traditional approach is grants: "Here's money. Build something. Let us know how it goes." The bounty approach: "Build this specific thing. If it works, you get paid. If it doesn't, you don't." One of these has produced the NIH's track record. The other has produced the internet. I'll let you figure out which is which.
 
-The "[Right to Trial](../solution/dfda.qmd) [@right-to-trial-paper-2025] & FDA Upgrade Act" mandates a **public bounty and prize program** for exactly this reason. What it funds:
-
-- **Critical features:** Essential tools nobody's building yet. Post a bounty, pay on delivery.
-- **Security reporting:** Pay hackers to find vulnerabilities and report them instead of exploiting them. Cheaper than getting hacked.
-- **High-value integrations:** Connectors to major EHR systems and national health registries. Everyone benefits, nobody wants to go first. Bounties fix the coordination problem.
-- **Major prizes:** Big money for big achievements. Want a breakthrough component? Offer $1M to whoever builds it best.
+The "[Right to Trial](../solution/dfda.qmd) [@right-to-trial-paper-2025] & FDA Upgrade Act" mandates a **public bounty and prize program**: post bounties for critical features nobody's building yet (pay on delivery, not on promise); pay hackers to find security vulnerabilities and report them instead of exploiting them (cheaper than getting hacked); fund connectors to major EHR systems where everyone benefits but nobody wants to go first; and offer major prizes for breakthrough components. This is how your species built private spaceflight. It's also how you keep your military's computers from being hacked. You just haven't tried it on the thing that kills 150,000 of you every day.
 
 ## This Already Works
 
-Governments already use bounties and prizes [@us-government-prize-and-bounty-programs] to solve complex problems, and they consistently outperform traditional procurement:
+Governments already use bounties and prizes [@us-government-prize-and-bounty-programs] to solve complex problems, and they consistently outperform traditional procurement. XPRIZE produced private spaceflight. NASA Centennial Challenges produced lunar landers and space robotics. The Department of Defense pays hackers to break into its own systems. All succeeded. All cost less than the traditional "hire a contractor and hope" approach.
 
-- **XPRIZE:** Private-sector space travel
-- **NASA Centennial Challenges:** Lunar lander, space robotics
-- **Department of Defense bug bounties:** Cybersecurity
-
-All succeeded. All cost less than the traditional "hire a contractor and hope" approach.
-
-Apply the same model to medical research infrastructure, and you get a global network of tools built by people who actually want them to work, at a fraction of what centralized development would cost. The alternative is the one your species defaults to: build everything from scratch, slowly, expensively, and badly. Then hold an awards dinner about it.
+The alternative is the one your species defaults to: build everything from scratch, slowly, expensively, and badly. Then hold an awards dinner about it. I have attended your awards dinners. The food is adequate and nobody mentions the dead.
