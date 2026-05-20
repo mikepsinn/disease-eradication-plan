@@ -53,6 +53,7 @@ NON_PAPER_CONFIGS: Set[str] = {
 
 # Configs that should never be deployed to Netlify
 NON_DEPLOYABLE_CONFIGS: Set[str] = {
+    "manual-paperback", # Paperback/PDF/EPUB render config
     "test",             # Test config
     "shared-defaults",  # Template file
 }

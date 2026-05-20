@@ -20,7 +20,7 @@ dih-render:
   redirect-from: https://iab.warondisease.org
   fallback-404-redirect-domain: https://manual.WarOnDisease.org  # Redirects here if path doesn't exist on this site
   netlify-site-id: "8f7611db-1075-48a2-abd8-7f77f55538f9"
-  netlify-cname: "iab-warondisease-org.netlify.app"
+  netlify-cname: "manual-warondisease-org.netlify.app"
   show-confidence-intervals: true  # Show 95% CI ranges for calculated values in academic papers
   concept-terms:
     - term: "Incentive Alignment Bonds"

@@ -20,7 +20,7 @@ dih-render:
   redirect-from: https://us-efficiency-audit.warondisease.org
   fallback-404-redirect-domain: https://manual.WarOnDisease.org  # Redirects here if path doesn't exist on this site
   netlify-site-id: "9a8ec013-54cd-4b7a-9364-fa13dc46bd92"
-  netlify-cname: "us-efficiency-audit-warondisease-org.netlify.app"
+  netlify-cname: "manual-warondisease-org.netlify.app"
   show-confidence-intervals: true  # Show 95% CI ranges for calculated values in academic papers
   concept-terms:
     - term: "United States Efficiency Audit"

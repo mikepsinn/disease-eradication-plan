@@ -71,9 +71,9 @@ def generate_redirects(project_root: Path | str) -> Path:
 
         title = _get_title(config) or config_path.stem
         rules.append(f"# {title}")
-        rules.append(f"{redirect_from}  {site_url}  301")
-        rules.append(f"{redirect_from}/  {site_url}  301")
-        rules.append(f"{redirect_from}/*  {site_url}  301")
+        rules.append(f"{redirect_from}  {site_url}  301!")
+        rules.append(f"{redirect_from}/  {site_url}  301!")
+        rules.append(f"{redirect_from}/*  {site_url}  301!")
         rules.append("")
 
     # Build the auto-generated section
@@ -102,9 +102,10 @@ def generate_redirects(project_root: Path | str) -> Path:
         else:
             # No markers found; treat entire file as manual content
             manual_content = existing.strip()
+    manual_content = manual_content.strip()
 
-    # Combine manual content and auto-generated section
-    parts = [p for p in [manual_content, auto_section] if p.strip()]
+    # Put host-specific redirects before broad fallback rules.
+    parts = [p for p in [auto_section, manual_content] if p.strip()]
     final = "\n\n".join(parts) + "\n"
 
     redirects_path.write_text(final, encoding="utf-8")

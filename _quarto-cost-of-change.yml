@@ -18,8 +18,9 @@ dih-render:
   emoji: "💵"
   index-source: knowledge/appendix/cost-of-change-analysis.qmd
   fallback-404-redirect-domain: https://manual.WarOnDisease.org  # Redirects here if path doesn't exist on this site
+  redirect-from: https://cost-of-change.warondisease.org
   netlify-site-id: "7daf95c9-506f-4cb9-99e3-2f0f9477f816"
-  netlify-cname: "cost-of-change-warondisease-org.netlify.app"
+  netlify-cname: "manual-warondisease-org.netlify.app"
   show-confidence-intervals: true  # Show 95% CI ranges for calculated values in academic papers
   concept-terms:
     - term: "Price of Political Change"

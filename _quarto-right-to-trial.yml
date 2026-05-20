@@ -21,7 +21,7 @@ dih-render:
   fallback-404-redirect-domain: https://manual.WarOnDisease.org  # Redirects here if path doesn't exist on this site
   pdf-output-file: right-to-trial-fda-upgrade-act.pdf
   netlify-site-id: "f0cfd162-dc07-474f-9b19-367ce1c1616f"
-  netlify-cname: "right-to-trial-warondisease-org.netlify.app"
+  netlify-cname: "manual-warondisease-org.netlify.app"
   show-confidence-intervals: false  # Legislative text, not academic paper
   concept-terms:
     - term: "Right to Trial"

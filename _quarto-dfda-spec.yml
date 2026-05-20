@@ -18,9 +18,10 @@ dih-render:
   emoji: "🔬"
   index-source: knowledge/appendix/dfda-spec-paper.qmd
   fallback-404-redirect-domain: https://manual.WarOnDisease.org  # Redirects here if path doesn't exist on this site
+  redirect-from: https://dfda-spec.warondisease.org
   pdf-output-file: dfda-spec-paper.pdf
   netlify-site-id: "01e9af64-b6d0-48ee-8c3d-43994745ac3f"
-  netlify-cname: "dfda-spec-warondisease-org.netlify.app"
+  netlify-cname: "manual-warondisease-org.netlify.app"
   show-confidence-intervals: true  # Show 95% CI ranges for calculated values in academic papers
   concept-terms:
     - term: "decentralized FDA"

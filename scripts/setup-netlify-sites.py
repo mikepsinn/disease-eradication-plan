@@ -44,6 +44,7 @@ except ImportError:
 
 PROJECT_ROOT = Path(__file__).parent.parent
 BASE_DOMAIN = "warondisease.org"
+MANUAL_NETLIFY_CNAME = "manual-warondisease-org.netlify.app"
 
 # Add project root and scripts/lib to path for imports
 sys.path.insert(0, str(PROJECT_ROOT))
@@ -545,20 +546,26 @@ def discover_configs() -> dict:
         if not site_url and "website" in config:
             site_url = config["website"].get("site-url")
 
-        # Extract subdomain from site-url, or fall back to config name
-        subdomain = extract_subdomain_from_url(site_url)
-        if not subdomain:
-            subdomain = config_name.replace("_", "-")
-
-        # Extract full custom domain from site-url (e.g., dfda-impact.warondisease.org)
-        custom_domain = extract_custom_domain_from_url(site_url)
-        if not custom_domain:
-            custom_domain = f"{subdomain}.{BASE_DOMAIN}"
-
-        # Check for existing site ID and CNAME
+        # Check for existing site ID, CNAME, and legacy redirect host
         dih_render = config.get("dih-render", {})
         site_id = dih_render.get("netlify-site-id")
         netlify_cname = dih_render.get("netlify-cname")
+        redirect_from = dih_render.get("redirect-from")
+
+        # DNS is managed for the legacy host when a config redirects into the manual.
+        # The canonical site-url may be a manual page, not the old paper hostname.
+        dns_source_url = redirect_from or site_url
+
+        # Extract subdomain from redirect-from/site-url, or fall back to config name
+        subdomain = extract_subdomain_from_url(dns_source_url)
+        if not subdomain:
+            subdomain = config_name.replace("_", "-")
+
+        # Extract full custom domain from redirect-from/site-url
+        custom_domain = extract_custom_domain_from_url(dns_source_url)
+        if not custom_domain:
+            custom_domain = f"{subdomain}.{BASE_DOMAIN}"
+        redirect_only = bool(redirect_from and netlify_cname == MANUAL_NETLIFY_CNAME)
 
         configs[config_name] = {
             "path": config_path,
@@ -569,8 +576,10 @@ def discover_configs() -> dict:
             "netlify_cname": netlify_cname,
             "has_site": bool(site_id),
             "site_url": site_url,
+            "redirect_from": redirect_from,
+            "redirect_only": redirect_only,
             "subdomain": subdomain,  # The subdomain part (for warondisease.org sites)
-            "custom_domain": custom_domain,  # The full domain from site-url (e.g., dfda-impact.warondisease.org)
+            "custom_domain": custom_domain,  # The full DNS hostname being managed
         }
 
     return configs
@@ -683,15 +692,18 @@ def list_configs(configs: dict, token: str | None = None, cf_token: str | None =
     invalid_sites = []
 
     for name, info in sorted(configs.items()):
-        # Use the custom domain directly from site-url in config
         expected_domain = info.get("custom_domain", f"{name.replace('_', '-')}.{BASE_DOMAIN}")
-        expected_cname = f"{expected_domain.replace('.', '-')}.netlify.app"
+        expected_cname = info.get("netlify_cname") or f"{expected_domain.replace('.', '-')}.netlify.app"
+        redirect_only = info.get("redirect_only", False)
 
         print(f"\n{'─' * 90}")
         print(f"CONFIG: {name}")
         print(f"  Title: {info['title'][:70]}")
         print(f"  Site URL: {info.get('site_url', '(not set)')}")
-        print(f"  Expected Domain: https://{expected_domain}")
+        if info.get("redirect_from"):
+            print(f"  Redirect From: {info.get('redirect_from')}")
+        print(f"  Expected DNS Host: https://{expected_domain}")
+        print(f"  Expected CNAME: {expected_cname or '(not set)'}")
 
         # Netlify info
         site_id = info.get("site_id")
@@ -709,12 +721,16 @@ def list_configs(configs: dict, token: str | None = None, cf_token: str | None =
                     print(f"    Netlify URL: https://{netlify_url}")
                     print(f"    Custom Domain: {custom_domain or '(not set)'}")
 
+                    # Redirect-only configs serve their legacy host from the manual site.
+                    if redirect_only:
+                        print(f"    [INFO] Redirect-only DNS target is {expected_cname}")
+
                     # Check if custom domain matches expected
-                    if custom_domain and custom_domain != expected_domain:
+                    if not redirect_only and custom_domain and custom_domain != expected_domain:
                         print(f"    [WARN] Expected: {expected_domain}")
 
                     # Check if netlify URL matches expected CNAME
-                    if netlify_url and netlify_url != expected_cname:
+                    if not redirect_only and netlify_url and netlify_url != expected_cname:
                         print(f"    [INFO] CNAME target differs from expected: {expected_cname}")
                 elif site and site.get("status") == "error":
                     print(f"    [ERROR] {site.get('error', 'Unknown error')}")
@@ -758,7 +774,10 @@ def list_configs(configs: dict, token: str | None = None, cf_token: str | None =
 
     total = len(configs)
     with_sites = sum(1 for c in configs.values() if c.get("site_id"))
-    missing_sites = [n for n, c in configs.items() if not c.get("site_id")]
+    missing_sites = [
+        n for n, c in configs.items()
+        if not c.get("site_id") and not c.get("redirect_only")
+    ]
 
     print(f"  Total configs: {total}")
     print(f"  With Netlify sites: {with_sites}")
@@ -789,6 +808,9 @@ def update_existing_cnames(token: str, configs: dict) -> int:
     """Fetch and update CNAME info for configs that have site IDs."""
     updated = 0
     for config_name, info in configs.items():
+        if info.get("redirect_only"):
+            continue
+
         site_id = info.get("site_id")
         if not site_id:
             continue
@@ -825,6 +847,10 @@ def update_netlify_domains(token: str, configs: dict) -> tuple[int, int]:
     sites_renamed = 0
 
     for config_name, info in configs.items():
+        if info.get("redirect_only"):
+            print(f"\n[*] {config_name}: redirect-only, leaving Netlify custom domain unchanged")
+            continue
+
         site_id = info.get("site_id")
         if not site_id:
             continue
@@ -909,7 +935,10 @@ def main():
     # ===========================================
     # STEP 1: Create missing Netlify sites
     # ===========================================
-    configs_needing_sites = {k: v for k, v in configs.items() if not v["has_site"]}
+    configs_needing_sites = {
+        k: v for k, v in configs.items()
+        if not v["has_site"] and not v.get("redirect_only")
+    }
     if configs_needing_sites:
         print(f"\n[1/4] Creating {len(configs_needing_sites)} missing Netlify site(s)...")
         for config_name, info in configs_needing_sites.items():
@@ -931,8 +960,11 @@ def main():
     # ===========================================
     # STEP 2: Update custom domains from Quarto configs
     # ===========================================
-    print("\n[2/4] Syncing custom domains from site-url in configs...")
-    configs_with_sites = {k: v for k, v in configs.items() if v.get("site_id")}
+    print("\n[2/4] Syncing custom domains for standalone Netlify sites...")
+    configs_with_sites = {
+        k: v for k, v in configs.items()
+        if v.get("site_id") and not v.get("redirect_only")
+    }
     if configs_with_sites:
         for config_name, info in configs_with_sites.items():
             site_id = info.get("site_id")

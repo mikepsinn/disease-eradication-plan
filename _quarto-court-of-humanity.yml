@@ -19,7 +19,7 @@ dih-render:
   redirect-from: https://court-of-humanity.warondisease.org
   fallback-404-redirect-domain: https://manual.WarOnDisease.org
   netlify-site-id: ""  # TODO: create Netlify site and add ID
-  netlify-cname: "court-of-humanity-warondisease-org.netlify.app"
+  netlify-cname: "manual-warondisease-org.netlify.app"
   show-confidence-intervals: true
   concept-terms:
     - term: "Court of Humanity"

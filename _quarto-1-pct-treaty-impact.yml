@@ -14,9 +14,10 @@ dih-render:
   emoji: "📜"
   index-source: knowledge/economics/1-pct-treaty-impact.qmd
   fallback-404-redirect-domain: https://manual.WarOnDisease.org  # Redirects here if path doesn't exist on this site
+  redirect-from: https://impact.warondisease.org
   pdf-output-file: 1-percent-treaty-impact.pdf
   netlify-site-id: "8cb62a4c-0a10-4a92-a9ab-088c5b2cf094"
-  netlify-cname: "impact-warondisease-org.netlify.app"
+  netlify-cname: "manual-warondisease-org.netlify.app"
   show-confidence-intervals: true  # Show 95% CI ranges for calculated values in academic papers
   concept-terms:
     - term: "1% Treaty"

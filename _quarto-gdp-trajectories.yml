@@ -21,7 +21,7 @@ dih-render:
   fallback-404-redirect-domain: https://manual.WarOnDisease.org
   pdf-output-file: gdp-trajectories-paper.pdf
   netlify-site-id: "7459777b-36c9-45ef-9307-f47434d0acc2"
-  netlify-cname: "gdp-trajectories-warondisease-org.netlify.app"
+  netlify-cname: "manual-warondisease-org.netlify.app"
   show-confidence-intervals: true
   concept-terms:
     - term: "Destructive Economy"

@@ -21,7 +21,7 @@ dih-render:
   fallback-404-redirect-domain: https://manual.WarOnDisease.org  # Redirects here if path doesn't exist on this site
   pdf-output-file: invisible-graveyard.pdf
   netlify-site-id: "ef37ca63-13e5-4403-bf47-173763af79ab"
-  netlify-cname: "invisible-graveyard-warondisease-org.netlify.app"
+  netlify-cname: "manual-warondisease-org.netlify.app"
   show-confidence-intervals: true  # Show 95% CI ranges for calculated values in academic papers
   concept-terms:
     - term: "Invisible Graveyard"

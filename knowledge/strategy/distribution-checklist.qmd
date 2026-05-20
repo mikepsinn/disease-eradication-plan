@@ -21,7 +21,7 @@ Produce these first. They are the shortest, most visceral, most shareable claims
 
 1. **"Every second, two humans die of preventable disease."** The per-second framing from the [call script](questions.qmd).
 2. **"Your vote is attributable to {{< var voter_lives_saved >}} saved and {{< var voter_suffering_hours_prevented >}} of suffering prevented."** The per-voter math.
-3. **"The Pentagon cannot find $2.46 trillion. The treaty redirects $21.8 billion a year."** Scale comparison.
+3. **"The Pentagon cannot find {{< var pentagon_unaccounted_funds >}}. The treaty redirects {{< var treaty_annual_funding >}} a year."** Scale comparison.
 4. **"Before WW2, US military spending was {{< var us_1939_military_spending_pct_lower_than_current >}} lower than today's peacetime budget, in constant dollars. The US won from that baseline."** Precedent.
 5. **"1% of military spending produces {{< var dfda_trial_capacity_multiplier_nounit >}} times more clinical-trial capacity, compressing the timeline for curing every known disease from {{< var status_quo_queue_clearance_years_nounit >}} years to {{< var dfda_queue_clearance_years_nounit >}}."** The core claim.
 6. **"A thirty-second vote has an expected value of thousands to hundreds of thousands of dollars per hour of calling."** The EV math.

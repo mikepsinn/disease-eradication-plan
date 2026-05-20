@@ -19,7 +19,7 @@ dih-render:
   redirect-from: https://1-percent-treaty.warondisease.org
   fallback-404-redirect-domain: https://manual.WarOnDisease.org
   netlify-site-id: ""  # TODO: create Netlify site and add ID
-  netlify-cname: "1-percent-treaty-warondisease-org.netlify.app"
+  netlify-cname: "manual-warondisease-org.netlify.app"
   show-confidence-intervals: true
   concept-terms:
     - term: "1% Treaty"
