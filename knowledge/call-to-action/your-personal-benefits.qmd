@@ -9,7 +9,7 @@ scores:
   value: 5
   timeliness: 6
   standalone: 3
-  voice: 4
+  voice: 6
   importance: 6
 ---
 {{< include ../includes/setup-parameters.qmd >}}
@@ -33,12 +33,16 @@ If you earn more than the global average, your personal upside is proportionally
 
 ## The Four Futures
 
+Your species has four options. Three of them involve math. One involves the Soviet Union.
+
 | Future | What the model says |
 |---|---|
-| **Failed-State Trajectory** | The average person ends up with roughly {{< var current_trajectory_cumulative_lifetime_income >}} in cumulative lifetime income while the destructive economy rises from {{< var global_destructive_economy_pct_gdp >}} of GDP now, reaches 25% by {{< var destructive_economy_25pct_year >}}, and reaches 50% of GDP by {{< var destructive_economy_50pct_year >}}, where stealing beats creating because whatever gets built gets looted. |
+| **Failed-State Trajectory** | {{< var current_trajectory_cumulative_lifetime_income >}} in cumulative lifetime income. The destructive economy grows from {{< var global_destructive_economy_pct_gdp >}} of GDP now to 50% by {{< var destructive_economy_50pct_year >}}. At 50%, stealing beats creating. Whatever gets built gets looted. |
 | **Minimum Sustainable Trajectory (1% Treaty)** | Adds {{< var treaty_trajectory_lifetime_income_gain_per_capita >}} in lifetime income, {{< var treaty_hale_gain_year_15 >}} in healthy life by year 15, and {{< var treaty_personal_upside_blend >}} in blended upside. |
 | **[Wishonian](../futures/wishonia.qmd) [Optimal Governance Trajectory](../economics/gdp-trajectories.qmd)** | Adds {{< var wishonia_trajectory_lifetime_income_gain_per_capita >}} in lifetime income, {{< var wishonia_hale_gain_year_15 >}} in healthy life by year 15, and {{< var wishonia_personal_upside_blend >}} in blended upside. |
-| **Collapse Tail** | The destructive economy reaches 35% of GDP (Terminal Parasitic Load) by {{< var destructive_economy_35pct_year >}} if the loop is not broken. Historical collapses (Soviet Union, Yugoslavia, Argentina, Zimbabwe) consistently begin at 35-45% total extraction. |
+| **Collapse Tail** | The destructive economy hits 35% of GDP by {{< var destructive_economy_35pct_year >}} if the loop is not broken. The Soviet Union, Yugoslavia, Argentina, and Zimbabwe all collapsed between 35% and 45%. This is not a metaphor. It is a pattern. |
+
+The calculator below lets you replace "the average human" with yourself. I recommend this. Your species is much more attentive when the spreadsheet has its name on it.
 
 ## Personal Scenario Calculator
 
@@ -545,9 +549,9 @@ If you earn more than the global average, your personal upside is proportionally
 
 ## What This Means
 
-The calculator has no feelings. It has arithmetic. Your contribution does not need to cause the treaty to pass. It needs to make the treaty fractionally more likely. The expected value of "fractionally more likely," multiplied by the size of the upside, is large. This is how insurance works. This is how venture capital works. You understand this math when it applies to stock portfolios. You ignore it when it applies to not dying. This is the most expensive cognitive bias in human history, and you are experiencing it right now.
+The calculator has no feelings. It has arithmetic. Your contribution does not need to cause the treaty to pass. It needs to make it fractionally more likely. The expected value of "fractionally more likely," multiplied by the size of the upside, is large. This is how insurance works. This is how venture capital works. You understand this math when it applies to stock portfolios. You ignore it when it applies to not dying.
 
-Do three things: make a PRIZE deposit, answer the referendum questions at [warondisease.org](https://warondisease.org), and recruit two people. The twenty-question phone script for recruiting is at [The Most Important Secret in the World](../strategy/questions.qmd).
+Three things. Make a PRIZE deposit. Answer the referendum questions at [warondisease.org](https://warondisease.org). Recruit two people. The phone script is at [The Most Important Secret in the World](../strategy/questions.qmd). Total time: less than it takes to order lunch. Expected value: considerably more than lunch.
 
 ---
 
