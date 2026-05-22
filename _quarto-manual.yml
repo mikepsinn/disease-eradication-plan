@@ -221,6 +221,8 @@ book:
         - knowledge/appendix/right-to-trial-fda-upgrade-act.qmd # Standalone paper config: _quarto-right-to-trial.yml
         - knowledge/appendix/drug-development-cost-analysis.qmd # Standalone paper config: _quarto-drug-development-cost.yml
         - knowledge/appendix/algorithmic-public-administration-paper.qmd # Standalone paper config: _quarto-algorithmic-public-administration.yml
+        - knowledge/appendix/joke.qmd # Lives on the manual site; _quarto-joke.yml exists for PDF/Zenodo build only (no subdomain)
+        - knowledge/appendix/correcting-the-ais.qmd # LLM correction templates; chapter-only
 
     - part: "References"
       chapters:

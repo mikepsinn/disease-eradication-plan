@@ -1,0 +1,109 @@
+```{python}
+#| echo: false
+
+import matplotlib.pyplot as plt
+import numpy as np
+from pathlib import Path
+
+from dih_models.plotting.chart_style import (
+    setup_chart_style, add_watermark, clean_spines,
+    COLOR_BLACK, COLOR_WHITE, add_png_metadata, get_figure_output_path,
+    get_tick_formatter
+)
+from dih_models.parameters import format_parameter_value
+
+setup_chart_style()
+
+# Display name for chart title
+
+display_name = "Shirt Value per Wearer"
+
+# Baseline and units
+
+baseline = 10598318.87533123
+
+# Tornado data from sensitivity analysis
+
+drivers = ['NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR', 'RARE_DISEASES_COUNT_GLOBAL', 'EVENTUALLY_AVOIDABLE_DALY_PCT', 'STANDARD_ECONOMIC_QALY_VALUE_USD', 'DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT', 'GLOBAL_ANNUAL_DALY_BURDEN', 'GLOBAL_POPULATION_2024', 'CURRENT_TRIAL_SLOTS_AVAILABLE', 'EFFICACY_LAG_YEARS', 'DFDA_OPEX_PLATFORM_MAINTENANCE', 'DFDA_OPEX_STAFF', 'DFDA_OPEX_INFRASTRUCTURE', 'DFDA_OPEX_REGULATORY', 'DFDA_OPEX_COMMUNITY']
+driver_labels = ['Diseases Getting First Treatment Per Year', 'Total Number of Rare Diseases Globally', 'Eventually Avoidable DALY Percentage', 'Standard Economic Value per QALY', 'Pragmatic Trial Cost per Patient', 'Global Annual DALY Burden', 'Global Population in 2024', 'Annual Global Clinical Trial Participants', 'Regulatory Delay for Efficacy Testing Post-Safety Verification', 'Pragmatic Trial Platform Maintenance Costs', 'Pragmatic Trial Platform Staff Costs', 'Pragmatic Trial Platform Infrastructure Costs', 'Pragmatic Trial Platform Regulatory Coordination Costs', 'Pragmatic Trial Platform Community Support Costs']
+impacts_low = [8914642.574202973, -1455451.8488494642, -4877402.492059172, -2119663.775066247, 805477.7957693525, -551995.7747568339, 271751.76603413373, 189344.35027067922, -100038.03253292106, 206.61283339746296, 123.97909255884588, 123.97909255884588, 82.65652640163898, 41.330162389203906]
+impacts_high = [-5094081.470973128, 4366355.546548398, 614677.2358820029, 2119663.7750662453, -2004981.3882672247, 551995.7747568358, -258495.58232515305, -189344.35027068108, 100038.0325329192, -289.4175353515893, -206.70780597254634, -165.35864382982254, -124.0132826846093, -41.333961294963956]
+
+# Convert deltas to absolute values (baseline + delta)
+
+values_low = [baseline + delta for delta in impacts_low]
+values_high = [baseline + delta for delta in impacts_high]
+
+# Create tornado chart (horizontal bars showing swing range)
+# Cap dimensions to avoid LaTeX "Dimension too large" errors in PDF output
+# 8x10 inches max keeps figures compact and PDF-compatible
+
+fig, ax = plt.subplots(figsize=(8, min(10, max(5, len(drivers) * 0.6))))
+
+y_pos = np.arange(len(drivers))
+
+# Plot low impact (left side)
+
+for i, (low, high) in enumerate(zip(values_low, values_high)):
+    left = min(low, high)
+    width_low = baseline - left if left < baseline else 0
+    width_high = max(low, high) - baseline if max(low, high) > baseline else 0
+
+    # White bar for range below baseline
+
+    if width_low > 0:
+        ax.barh(i, width_low, left=left,
+                color=COLOR_WHITE, edgecolor=COLOR_BLACK, linewidth=2)
+
+    # Black bar for range above baseline
+
+    if width_high > 0:
+        ax.barh(i, width_high, left=baseline,
+                color=COLOR_BLACK, edgecolor=COLOR_BLACK, linewidth=2)
+
+# Format axis
+
+ax.set_yticks(y_pos)
+# Simplified labels (just parameter names)
+
+ax.set_yticklabels(driver_labels, fontsize=11)
+ax.set_title(f'Sensitivity Analysis: {display_name}', fontsize=16, weight='bold', pad=20)
+
+# X-axis label with units
+
+units_label = "USD"
+if units_label:
+    ax.set_xlabel(f'{display_name} ({units_label})', fontsize=12)
+else:
+    ax.set_xlabel(f'{display_name}', fontsize=12)
+
+# Format x-axis tick labels with K/M/B/T notation
+
+ax.xaxis.set_major_formatter(get_tick_formatter(unit=units_label))
+
+# Add vertical line at baseline
+
+ax.axvline(baseline, color=COLOR_BLACK, linewidth=1, linestyle='--', alpha=0.5)
+
+# Clean spines
+
+clean_spines(ax)
+
+# Add watermark
+
+add_watermark(fig)
+
+# Save PNG to knowledge/figures/ regardless of where Quarto renders from
+# Use 96 DPI for web-optimized output (reduced from 150 DPI to minimize file size)
+
+output_path = get_figure_output_path('tornado-shirt_value_per_wearer_usd.png')
+plt.savefig(output_path, dpi=96, bbox_inches=None, facecolor=COLOR_WHITE)
+
+add_png_metadata(
+    output_path,
+    title=f'Sensitivity: {display_name}',
+    description=f'Tornado diagram showing which input parameters have the largest impact on {display_name}'
+)
+
+plt.show()
+```

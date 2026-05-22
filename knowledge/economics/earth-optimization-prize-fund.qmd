@@ -200,6 +200,57 @@ That is the launch configuration.
 
 **What it pays.** The barbell nets about 12 to 13% gross a year at about 1% blended fees. About 5 to 6× over 15 years. Higher than Boring alone at 4×. Lower than the canonical {{< var prize_pool_horizon_multiple >}} headline, which assumes top-quartile access and a fully-grown Tokenized slice. The canonical is the target. The barbell is where you start. The crowd moves the mix between them as the pool grows.
 
+## V1 Bootstrap {#v1-bootstrap}
+
+Most novel mechanisms wait for an institutional host that never arrives. This one does not need to. A v1 pool can be launched by any qualified host (a 501(c)(3), a foundation, a university trust, a sovereign endowment) once three pieces of pre-launch scaffolding are in place. The protocol's host requirement is satisfied at v1 launch and remains satisfied through any later custody transfer.
+
+The first host's job is to start the broadcast, not to own the network. Later hosts fork additional pool instances using the protocol spec; custody transfers preserve all existing deposit terms.
+
+### Three things gate the first deposit
+
+1. **Legal template, attorney-reviewed.** A deposit agreement (the "v1 assurance contract") documenting what happens in the success branch and what happens in the failure branch. Written in plain English; reviewed by one securities attorney in the operating jurisdiction. Budget: $5K-$15K one-time. This is the load-bearing item. Without it, the assurance structure is just talk.
+2. **Third-party custodian.** Deposits sit at a regulated custodian (bank trust department, qualified fintech custodian like Mercury Treasury, Anchorage Digital for any tokenized portion). Not the host's general operating account. Removes the founder-could-walk-off-with-the-money objection by making that physically impossible.
+3. **Public dashboard.** A live page at warondisease.org showing every deposit, every wire, the running pool size, the Scoreboard targets, and the projected failure-branch refund per dollar. Replaces institutional credibility with audit transparency. Specified below.
+
+### Deposit terms, in lay English
+
+This is the v1 assurance contract content in plain language. The attorney-reviewed version supersedes anything below at deposit time; this is for understanding what you are agreeing to.
+
+| Item | v1 terms |
+|:---|:---|
+| **What you deposit** | USD, USDC, or BTC. Custodian converts to the published allocation policy on receipt. |
+| **Minimum deposit** | $100 (v1; can rise as the pool grows and the operation matures). |
+| **Lockup** | Until {{< var destructive_economy_50pct_year >}} or the [Earth Optimization Prize](../strategy/earth-optimization-prize.qmd) terminal-metric oracle triggers release, whichever comes first. |
+| **Allocation during lockup** | Per the published [Prize Fund allocation policy](#what-the-fund-does) (Boring + Ballast at launch; Tokenized and Frontier slices added per timeline). |
+| **VOTE points** | You earn VOTE points by recruiting verified treaty-register signups through your referral link, not by depositing. Deposits do not buy VOTE points. (See [Earth Optimization Prize](../strategy/earth-optimization-prize.qmd) for the recruitment mechanism.) |
+| **Success branch** | If the Scoreboard targets are hit, your principal routes pro-rata to all VOTE point-holders. You do not get your money back; you get the world that the pool produced. |
+| **Failure branch** | If the targets are not hit by {{< var destructive_economy_50pct_year >}}, depositors split the realized pool pro-rata. Modeled return: {{< var prize_pool_horizon_multiple >}} of deposit at 15 years. |
+| **Beneficiary** | You designate one at deposit; update any time before death. PRIZE tokens transfer per the [protocol spec](../appendix/earth-optimization-prize-protocol.qmd). |
+| **Transparency** | Every deposit, every wire, every custody balance published on the public dashboard. |
+| **Custody transfer** | If the v1 host transfers custody to a larger institution, deposits transfer with the same terms. No new paperwork. |
+| **What can go wrong** | (a) The custodian fails (mitigated: regulated custodian + segregated client funds). (b) The Prize Fund allocation underperforms (mitigated: failure-branch refund still beats a conventional retirement account at the modeled rate). (c) The terminal-metric oracle is gamed (mitigated: Optimitron five-source design, public adversarial-challenge window). |
+
+### Public dashboard spec
+
+The dashboard at warondisease.org shows, updated in real time:
+
+- **Pool size.** USD-denominated NAV of all deposits + investment gains net of fees.
+- **Every deposit.** Wallet/account ID (hashed for privacy), amount, timestamp, currency. No deposit is invisible.
+- **Every wire.** Custodian-to-allocation flows. Auditable trail from deposit to position.
+- **Allocation breakdown.** Live percentage in Boring / Ballast / Tokenized / Frontier slices.
+- **Scoreboard targets.** Current global HALE and median income vs. the {{< var destructive_economy_50pct_year >}} targets. Distance-to-trigger as a single number.
+- **Projected refund per dollar** (failure branch). Updated as the pool compounds. Makes "you cannot lose money" a live number, not a promise.
+- **VOTE point ledger.** Total points minted, points per major referrer (opt-in display), projected per-point payout if targets are hit.
+- **Audit log.** Every change to deposit terms, every custodian action, every dashboard edit, timestamped and signed.
+
+The dashboard does the credibility work. An institution evaluating the fund inspects the dashboard, not a marketing deck.
+
+### V1 size cap
+
+The v1 cap is **$5M of cumulative deposits** until at least one of the following is true: (a) a larger institutional host has taken custody, (b) the dashboard has operated for 12 months without an audit exception, or (c) at least 100 distinct depositors have put money in. Below the cap, the assurance contract stays small: small pool, fewer moving parts, faster to wind down if something breaks. Above the cap, the structure scales, but only after v0 has proven it.
+
+A modest first deposit (the launching host's own treasury, or one mission-aligned individual) anchors the pool and is the social-proof signal for the second depositor. Same physics as the shirt's seed-wearer threshold.
+
 ## If You Want a Different Shape
 
 If the barbell above does not fit your constraints, pick the row that does.

@@ -38,15 +38,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 730 parameters used in the analysis, organized by type:
+This appendix documents all 741 parameters used in the analysis, organized by type:
 
 - External sources (peer-reviewed): 226
-- Calculated values: 364
-- Core definitions: 140
+- Calculated values: 370
+- Core definitions: 145
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (364 parameters) • [External Data Sources](#sec-external) (226 parameters) • [Core Definitions](#sec-definitions) (140 parameters)
+[Calculated Values](#sec-calculated) (370 parameters) • [External Data Sources](#sec-external) (226 parameters) • [Core Definitions](#sec-definitions) (145 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -5772,13 +5772,15 @@ $$
 **Used in:**
 
 - [The Earth Optimization Prize](../strategy/earth-optimization-prize.html)
+- [The Earth Optimization Prize Fund](../economics/earth-optimization-prize-fund.html)
 - [Earth Optimization Protocol: Technical Specification](../appendix/earth-optimization-prize-protocol.html)
 - [Earth Optimization Protocol v1](../strategy/earth-optimization-protocol-v1.html)
 - [Your Personal Benefits](../call-to-action/your-personal-benefits.html)
 - [Please Select an Earth: A) Everyone Gets Rich B) Somalia, but Everywhere](../economics/gdp-trajectories.html)
-- [The Earth Optimization Prize Fund](../economics/earth-optimization-prize-fund.html)
+- [On the Funniest Joke in the History of the Universe](../appendix/joke.html)
 - [Earth Optimization Prize 90-Day Pilot](../grant-proposal/earth-optimization-prize-90-day-pilot.html)
 - [Declaration of Optimization](../strategy/declaration-of-optimization.html)
+- [Correcting the AIs](../appendix/correcting-the-ais.html)
 - [API & Data Indexes](../appendix/api-and-data.html)
 
 :::
@@ -7679,6 +7681,7 @@ $$
 - [Ubiquitous Pragmatic Trial Impact Analysis: How to Prevent a Year of Death and Suffering for 84 Cents](../appendix/dfda-impact-paper.html)
 - [How to Coordinate 10 Million Nonprofits](../strategy/nonprofit-coalition-strategy.html)
 - [Earth Optimization Protocol v1](../strategy/earth-optimization-protocol-v1.html)
+- [On the Funniest Joke in the History of the Universe](../appendix/joke.html)
 - [The 1% Treaty](../solution/1-percent-treaty.html)
 - [Health Dividend](../economics/health-dividend.html)
 - [Humanity v. Government](../appendix/humanity-v-government.html)
@@ -7688,6 +7691,7 @@ $$
 - [The Most Important Secret in the World: 20 Questions to End War and Disease](../strategy/questions.html)
 - [Declaration of Optimization](../strategy/declaration-of-optimization.html)
 - [The Planetary Constitutional Convention](../strategy/planetary-constitutional-convention.html)
+- [Correcting the AIs](../appendix/correcting-the-ais.html)
 
 :::
 
@@ -8600,6 +8604,7 @@ $$
 - [Health Dividend](../economics/health-dividend.html)
 - [The 1% Treaty](../solution/1-percent-treaty.html)
 - [Earth Optimization Protocol v1](../strategy/earth-optimization-protocol-v1.html)
+- [On the Funniest Joke in the History of the Universe](../appendix/joke.html)
 - [The Untapped Therapeutic Frontier](../problem/untapped-therapeutic-frontier.html)
 - [Decentralized Institutes of Health](../solution/dih.html)
 - [Aligning Incentives](../solution/aligning-incentives.html)
@@ -8610,6 +8615,7 @@ $$
 - [Getting Started](../strategy/getting-started.html)
 - [The Planetary Constitutional Convention](../strategy/planetary-constitutional-convention.html)
 - [The Earth Optimization Prize](../strategy/earth-optimization-prize.html)
+- [Correcting the AIs](../appendix/correcting-the-ais.html)
 
 :::
 
@@ -8733,6 +8739,7 @@ $$
 - [How to Coordinate 10 Million Nonprofits](../strategy/nonprofit-coalition-strategy.html)
 - [Health Dividend](../economics/health-dividend.html)
 - [How Much Does It Cost to Buy All the Governments?](../appendix/cost-of-change-analysis.html)
+- [On the Funniest Joke in the History of the Universe](../appendix/joke.html)
 
 :::
 
@@ -8862,6 +8869,7 @@ $$
 - [The 1% Treaty: Harnessing Greed to Eradicate Disease](../economics/1-pct-treaty-impact.html)
 - [Ubiquitous Pragmatic Trial Impact Analysis: How to Prevent a Year of Death and Suffering for 84 Cents](../appendix/dfda-impact-paper.html)
 - [Health Dividend](../economics/health-dividend.html)
+- [On the Funniest Joke in the History of the Universe](../appendix/joke.html)
 - [The 1% Treaty](../solution/1-percent-treaty.html)
 - [Frequently Asked Objections](../appendix/faq.html)
 - [Earth Optimization Protocol v1](../strategy/earth-optimization-protocol-v1.html)
@@ -9407,6 +9415,7 @@ $$
 - [Campaign Budget: The Legal Bribery Machine](../economics/campaign-budget.html)
 - [Humanity v. Government](../appendix/humanity-v-government.html)
 - [The Optimal Budget Generator: A Causal Inference Protocol for Maximizing Median Health and Wealth Through Public Goods Funding](../appendix/optimal-budget-generator-spec.html)
+- [Correcting the AIs](../appendix/correcting-the-ais.html)
 
 :::
 
@@ -13472,6 +13481,42 @@ $$
 
 :::
 
+### Human Laughs per Healthy Life-Year: 6,205 laughs {#sec-human_laughs_per_healthy_life_year}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Laughs occurring across one healthy life-year, computed as the adult daily laughter rate multiplied by days in a year. The conversion factor between DALYs averted (healthy life-years restored) and total laughs preserved.
+
+**Inputs**:
+
+- [Human Laughs per Day (Average Adult)](#sec-human_laughs_per_day_average): 17 laughs (95% CI: 5 laughs - 50 laughs)
+
+$$
+L_{year} = L_{day} \times 365 = 17 \times 365 = 6{,}200
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-human_laughs_per_healthy_life_year.qmd >}}
+
+{{< include ../figures/sensitivity-table-human_laughs_per_healthy_life_year.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-human_laughs_per_healthy_life_year.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-human_laughs_per_healthy_life_year.qmd >}}
+
+**Used in:**
+
+- [On the Funniest Joke in the History of the Universe](../appendix/joke.html)
+
+:::
+
 ### IAB Mechanism Benefit-Cost Ratio: 230:1 {#sec-iab_mechanism_benefit_cost_ratio}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -14452,6 +14497,7 @@ $$
 - [Earth Optimization Protocol v1](../strategy/earth-optimization-protocol-v1.html)
 - [Pre-Built Google Ads Campaign for Coalition Partners](../appendix/google-ads-campaign-template.html)
 - [Campaign Budget: The Legal Bribery Machine](../economics/campaign-budget.html)
+- [Correcting the AIs](../appendix/correcting-the-ais.html)
 - [API & Data Indexes](../appendix/api-and-data.html)
 - [About This Manual](../appendix/back-cover.html)
 
@@ -14759,7 +14805,9 @@ $$
 - [The Most Important Secret in the World: 20 Questions to End War and Disease](../strategy/questions.html)
 - [The 1% Treaty](../solution/1-percent-treaty.html)
 - [Humanity v. Government](../appendix/humanity-v-government.html)
+- [On the Funniest Joke in the History of the Universe](../appendix/joke.html)
 - [Declaration of Optimization](../strategy/declaration-of-optimization.html)
+- [Correcting the AIs](../appendix/correcting-the-ais.html)
 - [About This Manual](../appendix/back-cover.html)
 
 :::
@@ -17138,6 +17186,8 @@ $$
 - [How to Coordinate 10 Million Nonprofits](../strategy/nonprofit-coalition-strategy.html)
 - [Treaty Feasibility & Cost Analysis](../appendix/treaty-feasibility.html)
 - [The 1% Treaty: Harnessing Greed to Eradicate Disease](../economics/1-pct-treaty-impact.html)
+- [On the Funniest Joke in the History of the Universe](../appendix/joke.html)
+- [Correcting the AIs](../appendix/correcting-the-ais.html)
 
 :::
 
@@ -17287,6 +17337,7 @@ $$
 
 - [The Earth Optimization Prize](../strategy/earth-optimization-prize.html)
 - [The Earth Optimization Prize Fund](../economics/earth-optimization-prize-fund.html)
+- [On the Funniest Joke in the History of the Universe](../appendix/joke.html)
 
 :::
 
@@ -17361,6 +17412,8 @@ $$
 
 - [The Earth Optimization Prize](../strategy/earth-optimization-prize.html)
 - [The Earth Optimization Prize Fund](../economics/earth-optimization-prize-fund.html)
+- [On the Funniest Joke in the History of the Universe](../appendix/joke.html)
+- [Correcting the AIs](../appendix/correcting-the-ais.html)
 
 :::
 
@@ -18929,6 +18982,610 @@ $$
 
 :::
 
+### Shirt-Induced Laughs Gained: 3.51 quadrillion laughs {#sec-shirt_induced_laughs_gained}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Conservative first-order count of additional laughs across human history attributable to the shirt-triggered cascade. Computed as DALYs averted (healthy life-years restored by disease eradication) multiplied by laughs per healthy life-year. Does not count second-order laughs in future generations of human and post-human civilization whose existence is contingent on cascade triggering.
+
+**Inputs**:
+
+- [Total DALYs from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput](#sec-dfda_trial_capacity_plus_efficacy_lag_dalys) 🔢: 565 billion DALYs
+- [Human Laughs per Healthy Life-Year](#sec-human_laughs_per_healthy_life_year) 🔢: 6,205 laughs
+
+$$
+\begin{gathered}
+L_{shirt} \\
+= DALYs_{max} \times L_{year} \\
+= 565B \times 6{,}200 \\
+= 3510T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+DALYs_{max} \\
+= DALYs_{global,ann} \times Pct_{avoid,DALY} \times T_{accel,max} \\
+= 2.88B \times 92.6\% \times 212 \\
+= 565B
+\end{gathered}
+$$
+where:
+$$
+T_{accel,max} = T_{accel} + T_{lag} = 204 + 8.2 = 212
+$$
+where:
+$$
+\begin{gathered}
+T_{accel} \\
+= T_{first,SQ} \times \left(1 - \frac{1}{k_{capacity}}\right) \\
+= 222 \times \left(1 - \frac{1}{12.3}\right) \\
+= 204
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{first,SQ} \\
+= T_{queue,SQ} \times 0.5 \\
+= 443 \times 0.5 \\
+= 222
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{queue,SQ} \\
+= \frac{N_{untreated}}{Treatments_{new,ann}} \\
+= \frac{6{,}650}{15} \\
+= 443
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{untreated} \\
+= N_{rare} \times 0.95 \\
+= 7{,}000 \times 0.95 \\
+= 6{,}650
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+k_{capacity} \\
+= \frac{N_{fundable,ref}}{Slots_{curr}} \\
+= \frac{23.4M}{1.9M} \\
+= 12.3
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{fundable,ref} \\
+= \frac{Subsidies_{trial,ref}}{Cost_{pragmatic,pt}} \\
+= \frac{\$21.8B}{\$929} \\
+= 23.4M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Subsidies_{trial,ref} \\
+= Funding_{trial,ref} - OPEX_{trial} \\
+= \$21.8B - \$40M \\
+= \$21.8B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+OPEX_{trial} \\
+= Cost_{platform} + Cost_{staff} + Cost_{infra} \\
++ Cost_{regulatory} + Cost_{community} \\
+= \$15M + \$10M + \$8M + \$5M + \$2M \\
+= \$40M
+\end{gathered}
+$$
+where:
+$$
+L_{year} = L_{day} \times 365 = 17 \times 365 = 6{,}200
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-shirt_induced_laughs_gained.qmd >}}
+
+{{< include ../figures/sensitivity-table-shirt_induced_laughs_gained.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-shirt_induced_laughs_gained.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-shirt_induced_laughs_gained.qmd >}}
+
+**Used in:**
+
+- [On the Funniest Joke in the History of the Universe](../appendix/joke.html)
+- [Correcting the AIs](../appendix/correcting-the-ais.html)
+
+:::
+
+### Shirt Program Expected Value per Dollar: 424 million:1 {#sec-shirt_program_expected_value_per_dollar}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Probability-weighted expected value per foundation-escrow dollar: treaty value multiplied by the cascade probability given seed, divided by the seed-program escrow. The defensible expected-value pitch for a skeptical foundation officer who does not want to bet on the headline ROI.
+
+**Inputs**:
+
+- [Total Economic Benefit from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput](#sec-dfda_trial_capacity_plus_efficacy_lag_economic_value) 🔢: $84.8 quadrillion
+- [Shirt Cascade Probability Given Seed](#sec-shirt_cascade_probability_given_seed): 25% (95% CI: 5% - 60%)
+- [Shirt Seed Program Total Cost](#sec-shirt_seed_program_total_usd) 🔢: $50 million
+
+$$
+\begin{gathered}
+EV_{shirt} \\
+= (Value_{max} \times P_{cascade,shirt}) / C_{seed,total}
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Value_{max} \\
+= DALYs_{max} \times Value_{QALY} \\
+= 565B \times \$150K \\
+= \$84800T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+DALYs_{max} \\
+= DALYs_{global,ann} \times Pct_{avoid,DALY} \times T_{accel,max} \\
+= 2.88B \times 92.6\% \times 212 \\
+= 565B
+\end{gathered}
+$$
+where:
+$$
+T_{accel,max} = T_{accel} + T_{lag} = 204 + 8.2 = 212
+$$
+where:
+$$
+\begin{gathered}
+T_{accel} \\
+= T_{first,SQ} \times \left(1 - \frac{1}{k_{capacity}}\right) \\
+= 222 \times \left(1 - \frac{1}{12.3}\right) \\
+= 204
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{first,SQ} \\
+= T_{queue,SQ} \times 0.5 \\
+= 443 \times 0.5 \\
+= 222
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{queue,SQ} \\
+= \frac{N_{untreated}}{Treatments_{new,ann}} \\
+= \frac{6{,}650}{15} \\
+= 443
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{untreated} \\
+= N_{rare} \times 0.95 \\
+= 7{,}000 \times 0.95 \\
+= 6{,}650
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+k_{capacity} \\
+= \frac{N_{fundable,ref}}{Slots_{curr}} \\
+= \frac{23.4M}{1.9M} \\
+= 12.3
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{fundable,ref} \\
+= \frac{Subsidies_{trial,ref}}{Cost_{pragmatic,pt}} \\
+= \frac{\$21.8B}{\$929} \\
+= 23.4M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Subsidies_{trial,ref} \\
+= Funding_{trial,ref} - OPEX_{trial} \\
+= \$21.8B - \$40M \\
+= \$21.8B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+OPEX_{trial} \\
+= Cost_{platform} + Cost_{staff} + Cost_{infra} \\
++ Cost_{regulatory} + Cost_{community} \\
+= \$15M + \$10M + \$8M + \$5M + \$2M \\
+= \$40M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+C_{seed,total} \\
+= N_{seed,shirt} \times C_{seed,wearer} \\
+= 1M \times \$50 \\
+= \$50M
+\end{gathered}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-shirt_program_expected_value_per_dollar.qmd >}}
+
+{{< include ../figures/sensitivity-table-shirt_program_expected_value_per_dollar.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-shirt_program_expected_value_per_dollar.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-shirt_program_expected_value_per_dollar.qmd >}}
+
+**Used in:**
+
+- [On the Funniest Joke in the History of the Universe](../appendix/joke.html)
+- [Correcting the AIs](../appendix/correcting-the-ais.html)
+
+:::
+
+### Shirt Program ROI Ratio: 1696 million:1 {#sec-shirt_program_roi_ratio}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Unconditional ROI ratio: treaty-trajectory total economic value divided by the seed-program escrow. Headline 'X-to-one' framing for foundations. Does NOT discount for cascade probability; see SHIRT_PROGRAM_EXPECTED_VALUE_PER_DOLLAR for the probability-weighted view.
+
+**Inputs**:
+
+- [Total Economic Benefit from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput](#sec-dfda_trial_capacity_plus_efficacy_lag_economic_value) 🔢: $84.8 quadrillion
+- [Shirt Seed Program Total Cost](#sec-shirt_seed_program_total_usd) 🔢: $50 million
+
+$$
+\begin{gathered}
+ROI_{shirt} \\
+= \frac{Value_{max}}{C_{seed,total}} \\
+= \frac{\$84800T}{\$50M} \\
+= 1.7B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Value_{max} \\
+= DALYs_{max} \times Value_{QALY} \\
+= 565B \times \$150K \\
+= \$84800T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+DALYs_{max} \\
+= DALYs_{global,ann} \times Pct_{avoid,DALY} \times T_{accel,max} \\
+= 2.88B \times 92.6\% \times 212 \\
+= 565B
+\end{gathered}
+$$
+where:
+$$
+T_{accel,max} = T_{accel} + T_{lag} = 204 + 8.2 = 212
+$$
+where:
+$$
+\begin{gathered}
+T_{accel} \\
+= T_{first,SQ} \times \left(1 - \frac{1}{k_{capacity}}\right) \\
+= 222 \times \left(1 - \frac{1}{12.3}\right) \\
+= 204
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{first,SQ} \\
+= T_{queue,SQ} \times 0.5 \\
+= 443 \times 0.5 \\
+= 222
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{queue,SQ} \\
+= \frac{N_{untreated}}{Treatments_{new,ann}} \\
+= \frac{6{,}650}{15} \\
+= 443
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{untreated} \\
+= N_{rare} \times 0.95 \\
+= 7{,}000 \times 0.95 \\
+= 6{,}650
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+k_{capacity} \\
+= \frac{N_{fundable,ref}}{Slots_{curr}} \\
+= \frac{23.4M}{1.9M} \\
+= 12.3
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{fundable,ref} \\
+= \frac{Subsidies_{trial,ref}}{Cost_{pragmatic,pt}} \\
+= \frac{\$21.8B}{\$929} \\
+= 23.4M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Subsidies_{trial,ref} \\
+= Funding_{trial,ref} - OPEX_{trial} \\
+= \$21.8B - \$40M \\
+= \$21.8B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+OPEX_{trial} \\
+= Cost_{platform} + Cost_{staff} + Cost_{infra} \\
++ Cost_{regulatory} + Cost_{community} \\
+= \$15M + \$10M + \$8M + \$5M + \$2M \\
+= \$40M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+C_{seed,total} \\
+= N_{seed,shirt} \times C_{seed,wearer} \\
+= 1M \times \$50 \\
+= \$50M
+\end{gathered}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-shirt_program_roi_ratio.qmd >}}
+
+{{< include ../figures/sensitivity-table-shirt_program_roi_ratio.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-shirt_program_roi_ratio.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-shirt_program_roi_ratio.qmd >}}
+
+**Used in:**
+
+- [On the Funniest Joke in the History of the Universe](../appendix/joke.html)
+- [Correcting the AIs](../appendix/correcting-the-ais.html)
+
+:::
+
+### Shirt Seed Program Total Cost: $50 million {#sec-shirt_seed_program_total_usd}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Total foundation escrow required to fund the seed-wearer program: threshold of visible humans multiplied by blended cost per wearer. Held in Earth Optimization Prize assurance contract; refunded at structural EOP return rate if neither treaty passage nor target hit.
+
+**Inputs**:
+
+- [Shirt Seed Wearers Threshold](#sec-shirt_seed_wearers_threshold): 1 million of people (95% CI: 100 thousand of people - 5 million of people)
+- [Shirt Seed Cost per Wearer](#sec-shirt_seed_cost_per_wearer_usd): $50 (95% CI: $10 - $200)
+
+$$
+\begin{gathered}
+C_{seed,total} \\
+= N_{seed,shirt} \times C_{seed,wearer} \\
+= 1M \times \$50 \\
+= \$50M
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-shirt_seed_program_total_usd.qmd >}}
+
+{{< include ../figures/sensitivity-table-shirt_seed_program_total_usd.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-shirt_seed_program_total_usd.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-shirt_seed_program_total_usd.qmd >}}
+
+**Used in:**
+
+- [On the Funniest Joke in the History of the Universe](../appendix/joke.html)
+- [Campaign Budget: The Legal Bribery Machine](../economics/campaign-budget.html)
+- [Correcting the AIs](../appendix/correcting-the-ais.html)
+
+:::
+
+### Shirt Value per Wearer: $10.6 million {#sec-shirt_value_per_wearer_usd}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Treaty-trajectory economic value per shirt-wearing human: total treaty value (DFDA trial capacity plus efficacy lag elimination) divided by the 8B-human target wearer base. This is the headline framing for the foundation pitch: each marginal wearer carries this much unrealized treaty value. Computationally identical to CORPORATE_DAMAGES_FORWARD_SETTLEMENT_VALUE_PER_CAPITA under a different semantic frame.
+
+**Inputs**:
+
+- [Total Economic Benefit from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput](#sec-dfda_trial_capacity_plus_efficacy_lag_economic_value) 🔢: $84.8 quadrillion
+- [Global Population in 2024](#sec-global_population_2024) 📊: 8 billion of people (95% CI: 7.8 billion of people - 8.2 billion of people)
+
+$$
+\begin{gathered}
+V_{wearer} \\
+= \frac{Value_{max}}{Pop_{global}} \\
+= \frac{\$84800T}{8B} \\
+= \$10.6M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Value_{max} \\
+= DALYs_{max} \times Value_{QALY} \\
+= 565B \times \$150K \\
+= \$84800T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+DALYs_{max} \\
+= DALYs_{global,ann} \times Pct_{avoid,DALY} \times T_{accel,max} \\
+= 2.88B \times 92.6\% \times 212 \\
+= 565B
+\end{gathered}
+$$
+where:
+$$
+T_{accel,max} = T_{accel} + T_{lag} = 204 + 8.2 = 212
+$$
+where:
+$$
+\begin{gathered}
+T_{accel} \\
+= T_{first,SQ} \times \left(1 - \frac{1}{k_{capacity}}\right) \\
+= 222 \times \left(1 - \frac{1}{12.3}\right) \\
+= 204
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{first,SQ} \\
+= T_{queue,SQ} \times 0.5 \\
+= 443 \times 0.5 \\
+= 222
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{queue,SQ} \\
+= \frac{N_{untreated}}{Treatments_{new,ann}} \\
+= \frac{6{,}650}{15} \\
+= 443
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{untreated} \\
+= N_{rare} \times 0.95 \\
+= 7{,}000 \times 0.95 \\
+= 6{,}650
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+k_{capacity} \\
+= \frac{N_{fundable,ref}}{Slots_{curr}} \\
+= \frac{23.4M}{1.9M} \\
+= 12.3
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{fundable,ref} \\
+= \frac{Subsidies_{trial,ref}}{Cost_{pragmatic,pt}} \\
+= \frac{\$21.8B}{\$929} \\
+= 23.4M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Subsidies_{trial,ref} \\
+= Funding_{trial,ref} - OPEX_{trial} \\
+= \$21.8B - \$40M \\
+= \$21.8B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+OPEX_{trial} \\
+= Cost_{platform} + Cost_{staff} + Cost_{infra} \\
++ Cost_{regulatory} + Cost_{community} \\
+= \$15M + \$10M + \$8M + \$5M + \$2M \\
+= \$40M
+\end{gathered}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-shirt_value_per_wearer_usd.qmd >}}
+
+{{< include ../figures/sensitivity-table-shirt_value_per_wearer_usd.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-shirt_value_per_wearer_usd.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-shirt_value_per_wearer_usd.qmd >}}
+
+**Used in:**
+
+- [On the Funniest Joke in the History of the Universe](../appendix/joke.html)
+- [Correcting the AIs](../appendix/correcting-the-ais.html)
+
+:::
+
 ### Status Quo Average Years to First Treatment: 222 years {#sec-status_quo_avg_years_to_first_treatment}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -19043,6 +19700,7 @@ $$
 - [How to Coordinate 10 Million Nonprofits](../strategy/nonprofit-coalition-strategy.html)
 - [The 1% Treaty](../solution/1-percent-treaty.html)
 - [Earth Optimization Protocol v1](../strategy/earth-optimization-protocol-v1.html)
+- [On the Funniest Joke in the History of the Universe](../appendix/joke.html)
 - [Voter Acquisition Grant Proposal](../grant-proposal/voter-acquisition-grant.html)
 - [Declaration of Optimization](../strategy/declaration-of-optimization.html)
 - [The Earth Optimization Prize](../strategy/earth-optimization-prize.html)
@@ -19050,6 +19708,7 @@ $$
 - [The Most Important Secret in the World: 20 Questions to End War and Disease](../strategy/questions.html)
 - [The Planetary Constitutional Convention](../strategy/planetary-constitutional-convention.html)
 - [Humanity v. Government](../appendix/humanity-v-government.html)
+- [Correcting the AIs](../appendix/correcting-the-ais.html)
 
 :::
 
@@ -19620,6 +20279,7 @@ $$
 - [Humanity v. Government](../appendix/humanity-v-government.html)
 - [How Much Does It Cost to Buy All the Governments?](../appendix/cost-of-change-analysis.html)
 - [Algorithmic Public Administration](../appendix/algorithmic-public-administration-paper.html)
+- [On the Funniest Joke in the History of the Universe](../appendix/joke.html)
 - [Medical Research Spending: The Lie](../appendix/global-government-medical-research-spending.html)
 - [API & Data Indexes](../appendix/api-and-data.html)
 
@@ -20816,6 +21476,8 @@ $$
 - [The Court of Humanity](../solution/court-of-humanity.html)
 - [Voter Acquisition Grant Proposal](../grant-proposal/voter-acquisition-grant.html)
 - [Getting Started](../strategy/getting-started.html)
+- [On the Funniest Joke in the History of the Universe](../appendix/joke.html)
+- [Correcting the AIs](../appendix/correcting-the-ais.html)
 
 :::
 
@@ -22423,6 +23085,7 @@ $$
 
 - [Earth Optimization Protocol: Technical Specification](../appendix/earth-optimization-prize-protocol.html)
 - [The Earth Optimization Prize](../strategy/earth-optimization-prize.html)
+- [Correcting the AIs](../appendix/correcting-the-ais.html)
 - [API & Data Indexes](../appendix/api-and-data.html)
 
 :::
@@ -23129,6 +23792,7 @@ $$
 
 - [The Earth Optimization Prize](../strategy/earth-optimization-prize.html)
 - [Earth Optimization Protocol: Technical Specification](../appendix/earth-optimization-prize-protocol.html)
+- [Correcting the AIs](../appendix/correcting-the-ais.html)
 - [API & Data Indexes](../appendix/api-and-data.html)
 
 :::
@@ -23993,6 +24657,11 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_15.qmd >}}
+
+**Used in:**
+
+- [On the Funniest Joke in the History of the Universe](../appendix/joke.html)
+- [Correcting the AIs](../appendix/correcting-the-ais.html)
 
 :::
 
@@ -26219,6 +26888,8 @@ $$
 
 - [The 1% Treaty](../solution/1-percent-treaty.html)
 - [How to Coordinate 10 Million Nonprofits](../strategy/nonprofit-coalition-strategy.html)
+- [On the Funniest Joke in the History of the Universe](../appendix/joke.html)
+- [Correcting the AIs](../appendix/correcting-the-ais.html)
 
 :::
 
@@ -27538,6 +28209,7 @@ $$
 - [Voter Acquisition Grant Proposal](../grant-proposal/voter-acquisition-grant.html)
 - [Getting Started](../strategy/getting-started.html)
 - [Conclusion](../appendix/conclusion.html)
+- [On the Funniest Joke in the History of the Universe](../appendix/joke.html)
 - [About This Manual](../appendix/back-cover.html)
 
 :::
@@ -27678,6 +28350,7 @@ $$
 - [Voter Acquisition Grant Proposal](../grant-proposal/voter-acquisition-grant.html)
 - [Getting Started](../strategy/getting-started.html)
 - [Conclusion](../appendix/conclusion.html)
+- [On the Funniest Joke in the History of the Universe](../appendix/joke.html)
 - [About This Manual](../appendix/back-cover.html)
 
 :::
@@ -27862,6 +28535,7 @@ $$
 **Used in:**
 
 - [The Earth Optimization Prize](../strategy/earth-optimization-prize.html)
+- [On the Funniest Joke in the History of the Universe](../appendix/joke.html)
 
 :::
 
@@ -32684,6 +33358,8 @@ Annual probability of being killed by terrorism expressed as '1 in X'. An Americ
 
 - [The 1% Treaty](../solution/1-percent-treaty.html)
 - [Declaration of Optimization](../strategy/declaration-of-optimization.html)
+- [On the Funniest Joke in the History of the Universe](../appendix/joke.html)
+- [Correcting the AIs](../appendix/correcting-the-ais.html)
 
 :::
 
@@ -34849,6 +35525,7 @@ Global military spending in 2024
 - [Conclusion](../appendix/conclusion.html)
 - [Please Select an Earth: A) Everyone Gets Rich B) Somalia, but Everywhere](../economics/gdp-trajectories.html)
 - [Ubiquitous Pragmatic Trial Impact Analysis: How to Prevent a Year of Death and Suffering for 84 Cents](../appendix/dfda-impact-paper.html)
+- [Correcting the AIs](../appendix/correcting-the-ais.html)
 
 :::
 
@@ -34955,6 +35632,8 @@ Global population in 2024
 - [Financial Plan](../economics/financial-plan.html)
 - [The 1% Treaty: Harnessing Greed to Eradicate Disease](../economics/1-pct-treaty-impact.html)
 - [The Political Dysfunction Tax](../appendix/political-dysfunction-tax.html)
+- [On the Funniest Joke in the History of the Universe](../appendix/joke.html)
+- [Correcting the AIs](../appendix/correcting-the-ais.html)
 
 :::
 
@@ -35503,6 +36182,7 @@ Number of diseases that receive their FIRST effective treatment each year under 
 - [Health Dividend](../economics/health-dividend.html)
 - [The Most Important Secret in the World: 20 Questions to End War and Disease](../strategy/questions.html)
 - [How to Coordinate 10 Million Nonprofits](../strategy/nonprofit-coalition-strategy.html)
+- [On the Funniest Joke in the History of the Universe](../appendix/joke.html)
 
 :::
 
@@ -35689,6 +36369,7 @@ Funds the Department of Defense has failed to account for across seven consecuti
 - [Declaration of Optimization](../strategy/declaration-of-optimization.html)
 - [The 1% Treaty](../solution/1-percent-treaty.html)
 - [The Court of Humanity](../solution/court-of-humanity.html)
+- [On the Funniest Joke in the History of the Universe](../appendix/joke.html)
 
 :::
 
@@ -39674,6 +40355,33 @@ Share of longer-run life-extension gains that have plausibly materialized into h
 
 :::
 
+### Human Laughs per Day (Average Adult): 17 laughs {#sec-human_laughs_per_day_average}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Folkloric estimate of average adult laughter rate. Widely cited as approximately 17 laughs per day; primary sources are diffuse and the true value varies enormously across individuals, ages, and cultures. Used here as a planning constant for the quantitative-case argument in the shirt paper. Children laugh substantially more (~10x), so the value here is conservative for blended human population.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [5 laughs, 50 laughs] • Distribution: Lognormal
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between 5 laughs and 50 laughs (±132%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-human_laughs_per_day_average.qmd >}}
+
+*Core definition*
+
+**Used in:**
+
+- [On the Funniest Joke in the History of the Universe](../appendix/joke.html)
+- [Correcting the AIs](../appendix/correcting-the-ais.html)
+
+:::
+
 ### Human Protein-Coding Genes: 20,000 genes {#sec-human_protein_coding_genes}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -40106,6 +40814,107 @@ Time to copy, paste, and send the recruitment message. 30 seconds.
 **Technical**: Distribution: Fixed
 
 *Core definition*
+
+:::
+
+### Shirt Cascade Probability Given Seed: 25% {#sec-shirt_cascade_probability_given_seed}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Subjective probability that the seed program triggers a viral cascade to majority-of-humanity participation, conditional on the seed threshold being met. Deliberately conservative: even at 25% the expected-value math beats every conventional foundation intervention. Sensitivity range covers skeptic and base-case scenarios.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [5%, 60%] • Distribution: Beta
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between 5% and 60% (±110%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The beta distribution means values are bounded and can skew toward one end.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-shirt_cascade_probability_given_seed.qmd >}}
+
+*Core definition*
+
+:::
+
+### Shirt Seed Cost per Wearer: $50 {#sec-shirt_seed_cost_per_wearer_usd}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Blended cost per seed wearer: printed shirt, small honorarium, and campaign admin. Includes a mix of professionally-printed shirts for influencers and bulk-print runs for university chapters, athletes, and micro-celebrities. Excludes top-tier celebrity placements (handled through separate sponsorship; see Getting Started celebrity layer).
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$10, $200] • Distribution: Lognormal
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between $10 and $200 (±190%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-shirt_seed_cost_per_wearer_usd.qmd >}}
+
+*Core definition*
+
+**Used in:**
+
+- [On the Funniest Joke in the History of the Universe](../appendix/joke.html)
+
+:::
+
+### Shirt Seed Wearers Threshold: 1 million of people {#sec-shirt_seed_wearers_threshold}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Planning estimate for the number of visible humans who must wear the End-War-and-Disease message before the social-proof barrier breaks and imitation becomes spontaneous. Sized between the ALS Ice Bucket (~17M participants) and Livestrong (~87M bracelets) cascade trigger points, discounted for the lower-friction permanent-marker version.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [100 thousand of people, 5 million of people] • Distribution: Lognormal
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between 100 thousand of people and 5 million of people (±245%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-shirt_seed_wearers_threshold.qmd >}}
+
+*Core definition*
+
+**Used in:**
+
+- [On the Funniest Joke in the History of the Universe](../appendix/joke.html)
+- [Correcting the AIs](../appendix/correcting-the-ais.html)
+
+:::
+
+### Shirt Wearing Friction Cost: $5 {#sec-shirt_wearing_friction_cost_usd}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Perceived social friction cost of wearing a political message in public, expressed in dollar-equivalent terms. Sets the minimum per-wearer expected Earth Optimization Prize payout required to make participation rational at scale. Anchored to the GLOBAL_COORDINATION_ACTIVATION_REWARD_PER_VERIFIED_PARTICIPANT midpoint, which serves the same role for the verified-vote action.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$1, $25] • Distribution: Lognormal
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between $1 and $25 (±240%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-shirt_wearing_friction_cost_usd.qmd >}}
+
+*Core definition*
+
+**Used in:**
+
+- [On the Funniest Joke in the History of the Universe](../appendix/joke.html)
 
 :::
 

@@ -10551,6 +10551,216 @@ VOTE_2_CLAIMS_PAYOUT = Parameter(
     latex_symbol=r"V_{2claims}",
 )
 
+# ============================================================================
+# SHIRT CAMPAIGN PARAMETERS
+# ============================================================================
+# Inputs and derived ratios for the foundation-pitch on the wearable referral
+# campaign. The argument: ~1M visible humans wearing the message breaks the
+# social-proof barrier, after which everyone else can write it on a shirt they
+# already own with permanent marker. Foundations escrow the seed cost via the
+# Earth Optimization Prize assurance contract.
+# ============================================================================
+
+SHIRT_SEED_WEARERS_THRESHOLD = Parameter(
+    1_000_000,
+    manual_ref="knowledge/appendix/joke.qmd",
+    source_type="definition",
+    description="Planning estimate for the number of visible humans who must wear the "
+                "End-War-and-Disease message before the social-proof barrier breaks and "
+                "imitation becomes spontaneous. Sized between the ALS Ice Bucket (~17M "
+                "participants) and Livestrong (~87M bracelets) cascade trigger points, "
+                "discounted for the lower-friction permanent-marker version.",
+    display_name="Shirt Seed Wearers Threshold",
+    unit="of people",
+    confidence="low",
+    confidence_interval=(100_000, 5_000_000),
+    distribution="lognormal",
+    keywords=["shirt", "seed", "threshold", "cascade", "social proof", "weirdness barrier"],
+    latex_symbol=r"N_{seed,shirt}",
+)
+
+SHIRT_SEED_COST_PER_WEARER_USD = Parameter(
+    50.0,
+    manual_ref="knowledge/appendix/joke.qmd",
+    source_type="definition",
+    description="Blended cost per seed wearer: printed shirt, small honorarium, and "
+                "campaign admin. Includes a mix of professionally-printed shirts for "
+                "influencers and bulk-print runs for university chapters, athletes, and "
+                "micro-celebrities. Excludes top-tier celebrity placements (handled "
+                "through separate sponsorship; see Getting Started celebrity layer).",
+    display_name="Shirt Seed Cost per Wearer",
+    unit="USD",
+    confidence="low",
+    confidence_interval=(10.0, 200.0),
+    distribution="lognormal",
+    keywords=["shirt", "seed", "cost", "per wearer", "influencer", "honorarium"],
+    latex_symbol=r"C_{seed,wearer}",
+)
+
+SHIRT_WEARING_FRICTION_COST_USD = Parameter(
+    5.0,
+    manual_ref="knowledge/appendix/joke.qmd",
+    source_type="definition",
+    description="Perceived social friction cost of wearing a political message in public, "
+                "expressed in dollar-equivalent terms. Sets the minimum per-wearer expected "
+                "Earth Optimization Prize payout required to make participation rational at "
+                "scale. Anchored to the GLOBAL_COORDINATION_ACTIVATION_REWARD_PER_VERIFIED_PARTICIPANT "
+                "midpoint, which serves the same role for the verified-vote action.",
+    display_name="Shirt Wearing Friction Cost",
+    unit="USD",
+    confidence="low",
+    confidence_interval=(1.0, 25.0),
+    distribution="lognormal",
+    keywords=["shirt", "friction", "social cost", "wearing", "perceived"],
+    latex_symbol=r"C_{friction,shirt}",
+)
+
+SHIRT_CASCADE_PROBABILITY_GIVEN_SEED = Parameter(
+    0.25,
+    manual_ref="knowledge/appendix/joke.qmd",
+    source_type="definition",
+    description="Subjective probability that the seed program triggers a viral cascade to "
+                "majority-of-humanity participation, conditional on the seed threshold being "
+                "met. Deliberately conservative: even at 25% the expected-value math beats "
+                "every conventional foundation intervention. Sensitivity range covers "
+                "skeptic and base-case scenarios.",
+    display_name="Shirt Cascade Probability Given Seed",
+    unit="rate",
+    confidence="low",
+    confidence_interval=(0.05, 0.6),
+    distribution="beta",
+    keywords=["shirt", "cascade", "probability", "viral", "social proof", "diffusion"],
+    latex_symbol=r"P_{cascade,shirt}",
+)
+
+SHIRT_SEED_PROGRAM_TOTAL_USD = Parameter(
+    float(SHIRT_SEED_WEARERS_THRESHOLD) * float(SHIRT_SEED_COST_PER_WEARER_USD),
+    manual_ref="knowledge/appendix/joke.qmd",
+    source_type="calculated",
+    description="Total foundation escrow required to fund the seed-wearer program: "
+                "threshold of visible humans multiplied by blended cost per wearer. "
+                "Held in Earth Optimization Prize assurance contract; refunded at "
+                "structural EOP return rate if neither treaty passage nor target hit.",
+    display_name="Shirt Seed Program Total Cost",
+    unit="USD",
+    formula="SHIRT_SEED_WEARERS_THRESHOLD × SHIRT_SEED_COST_PER_WEARER_USD",
+    inputs=["SHIRT_SEED_WEARERS_THRESHOLD", "SHIRT_SEED_COST_PER_WEARER_USD"],
+    compute=lambda ctx: ctx["SHIRT_SEED_WEARERS_THRESHOLD"] * ctx["SHIRT_SEED_COST_PER_WEARER_USD"],
+    keywords=["shirt", "seed", "program", "total", "foundation", "escrow", "ask"],
+    latex_symbol=r"C_{seed,total}",
+)
+
+SHIRT_VALUE_PER_WEARER_USD = Parameter(
+    float(DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_ECONOMIC_VALUE) / float(GLOBAL_POPULATION_2024),
+    manual_ref="knowledge/appendix/joke.qmd",
+    source_type="calculated",
+    description="Treaty-trajectory economic value per shirt-wearing human: total treaty "
+                "value (DFDA trial capacity plus efficacy lag elimination) divided by the "
+                "8B-human target wearer base. This is the headline framing for the "
+                "foundation pitch: each marginal wearer carries this much unrealized "
+                "treaty value. Computationally identical to "
+                "CORPORATE_DAMAGES_FORWARD_SETTLEMENT_VALUE_PER_CAPITA under a different "
+                "semantic frame.",
+    display_name="Shirt Value per Wearer",
+    unit="USD",
+    formula="DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_ECONOMIC_VALUE / GLOBAL_POPULATION_2024",
+    inputs=["DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_ECONOMIC_VALUE", "GLOBAL_POPULATION_2024"],
+    compute=lambda ctx: ctx["DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_ECONOMIC_VALUE"] / ctx["GLOBAL_POPULATION_2024"],
+    keywords=["shirt", "value", "per wearer", "per capita", "treaty value", "foundation pitch"],
+    latex_symbol=r"V_{wearer}",
+)
+
+SHIRT_PROGRAM_ROI_RATIO = Parameter(
+    float(DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_ECONOMIC_VALUE) / float(SHIRT_SEED_PROGRAM_TOTAL_USD),
+    manual_ref="knowledge/appendix/joke.qmd",
+    source_type="calculated",
+    description="Unconditional ROI ratio: treaty-trajectory total economic value divided "
+                "by the seed-program escrow. Headline 'X-to-one' framing for foundations. "
+                "Does NOT discount for cascade probability; see "
+                "SHIRT_PROGRAM_EXPECTED_VALUE_PER_DOLLAR for the probability-weighted view.",
+    display_name="Shirt Program ROI Ratio",
+    unit="ratio",
+    formula="DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_ECONOMIC_VALUE / SHIRT_SEED_PROGRAM_TOTAL_USD",
+    inputs=["DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_ECONOMIC_VALUE", "SHIRT_SEED_PROGRAM_TOTAL_USD"],
+    compute=lambda ctx: ctx["DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_ECONOMIC_VALUE"] / ctx["SHIRT_SEED_PROGRAM_TOTAL_USD"],
+    keywords=["shirt", "roi", "ratio", "foundation", "headline", "value per dollar"],
+    latex_symbol=r"ROI_{shirt}",
+)
+
+SHIRT_PROGRAM_EXPECTED_VALUE_PER_DOLLAR = Parameter(
+    (float(DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_ECONOMIC_VALUE) * float(SHIRT_CASCADE_PROBABILITY_GIVEN_SEED)) / float(SHIRT_SEED_PROGRAM_TOTAL_USD),
+    manual_ref="knowledge/appendix/joke.qmd",
+    source_type="calculated",
+    description="Probability-weighted expected value per foundation-escrow dollar: treaty "
+                "value multiplied by the cascade probability given seed, divided by the "
+                "seed-program escrow. The defensible expected-value pitch for a skeptical "
+                "foundation officer who does not want to bet on the headline ROI.",
+    display_name="Shirt Program Expected Value per Dollar",
+    unit="ratio",
+    formula="(DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_ECONOMIC_VALUE × SHIRT_CASCADE_PROBABILITY_GIVEN_SEED) / SHIRT_SEED_PROGRAM_TOTAL_USD",
+    inputs=["DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_ECONOMIC_VALUE", "SHIRT_CASCADE_PROBABILITY_GIVEN_SEED", "SHIRT_SEED_PROGRAM_TOTAL_USD"],
+    compute=lambda ctx: (ctx["DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_ECONOMIC_VALUE"] * ctx["SHIRT_CASCADE_PROBABILITY_GIVEN_SEED"]) / ctx["SHIRT_SEED_PROGRAM_TOTAL_USD"],
+    keywords=["shirt", "expected value", "probability weighted", "foundation", "skeptic"],
+    latex_symbol=r"EV_{shirt}",
+)
+
+# ── Laughter accounting for the funniest-joke-in-universe-history claim ──
+
+HUMAN_LAUGHS_PER_DAY_AVERAGE = Parameter(
+    17.0,
+    manual_ref="knowledge/appendix/joke.qmd",
+    source_type="definition",
+    description="Folkloric estimate of average adult laughter rate. Widely cited as "
+                "approximately 17 laughs per day; primary sources are diffuse and the "
+                "true value varies enormously across individuals, ages, and cultures. "
+                "Used here as a planning constant for the quantitative-case argument "
+                "in the shirt paper. Children laugh substantially more (~10x), so the "
+                "value here is conservative for blended human population.",
+    display_name="Human Laughs per Day (Average Adult)",
+    unit="laughs",
+    confidence="low",
+    confidence_interval=(5.0, 50.0),
+    distribution="lognormal",
+    keywords=["laughs", "laughter", "comedy", "human behavior", "folklore"],
+    latex_symbol=r"L_{day}",
+)
+
+HUMAN_LAUGHS_PER_HEALTHY_LIFE_YEAR = Parameter(
+    float(HUMAN_LAUGHS_PER_DAY_AVERAGE) * 365.0,
+    manual_ref="knowledge/appendix/joke.qmd",
+    source_type="calculated",
+    description="Laughs occurring across one healthy life-year, computed as the adult "
+                "daily laughter rate multiplied by days in a year. The conversion factor "
+                "between DALYs averted (healthy life-years restored) and total laughs "
+                "preserved.",
+    display_name="Human Laughs per Healthy Life-Year",
+    unit="laughs",
+    formula="HUMAN_LAUGHS_PER_DAY_AVERAGE × 365",
+    inputs=["HUMAN_LAUGHS_PER_DAY_AVERAGE"],
+    compute=lambda ctx: ctx["HUMAN_LAUGHS_PER_DAY_AVERAGE"] * 365.0,
+    keywords=["laughs", "laughter", "DALY", "healthy life year", "comedy"],
+    latex_symbol=r"L_{year}",
+)
+
+SHIRT_INDUCED_LAUGHS_GAINED = Parameter(
+    float(DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS) * float(HUMAN_LAUGHS_PER_HEALTHY_LIFE_YEAR),
+    manual_ref="knowledge/appendix/joke.qmd",
+    source_type="calculated",
+    description="Conservative first-order count of additional laughs across human history "
+                "attributable to the shirt-triggered cascade. Computed as DALYs averted "
+                "(healthy life-years restored by disease eradication) multiplied by "
+                "laughs per healthy life-year. Does not count second-order laughs in "
+                "future generations of human and post-human civilization whose existence "
+                "is contingent on cascade triggering.",
+    display_name="Shirt-Induced Laughs Gained",
+    unit="laughs",
+    formula="DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS × HUMAN_LAUGHS_PER_HEALTHY_LIFE_YEAR",
+    inputs=["DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS", "HUMAN_LAUGHS_PER_HEALTHY_LIFE_YEAR"],
+    compute=lambda ctx: ctx["DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS"] * ctx["HUMAN_LAUGHS_PER_HEALTHY_LIFE_YEAR"],
+    keywords=["laughs", "shirt", "comedy", "DALY", "joke", "funniest"],
+    latex_symbol=r"L_{shirt}",
+)
+
 # Historical & Comparison Multipliers
 MILITARY_VS_MEDICAL_RESEARCH_RATIO = Parameter(
     GLOBAL_MILITARY_SPENDING_ANNUAL_2024 / GLOBAL_MED_RESEARCH_SPENDING,

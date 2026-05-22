@@ -38,15 +38,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 621 parameters used in the analysis, organized by type:
+This appendix documents all 633 parameters used in the analysis, organized by type:
 
 - External sources (peer-reviewed): 192
-- Calculated values: 316
-- Core definitions: 113
+- Calculated values: 323
+- Core definitions: 118
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (316 parameters) • [External Data Sources](#sec-external) (192 parameters) • [Core Definitions](#sec-definitions) (113 parameters)
+[Calculated Values](#sec-calculated) (323 parameters) • [External Data Sources](#sec-external) (192 parameters) • [Core Definitions](#sec-definitions) (118 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -11342,6 +11342,38 @@ $$
 
 :::
 
+### Human Laughs per Healthy Life-Year: 6,205 laughs {#sec-human_laughs_per_healthy_life_year}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Laughs occurring across one healthy life-year, computed as the adult daily laughter rate multiplied by days in a year. The conversion factor between DALYs averted (healthy life-years restored) and total laughs preserved.
+
+**Inputs**:
+
+- [Human Laughs per Day (Average Adult)](#sec-human_laughs_per_day_average): 17 laughs (95% CI: 5 laughs - 50 laughs)
+
+$$
+L_{year} = L_{day} \times 365 = 17 \times 365 = 6{,}200
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-human_laughs_per_healthy_life_year.qmd >}}
+
+{{< include ../figures/sensitivity-table-human_laughs_per_healthy_life_year.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-human_laughs_per_healthy_life_year.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-human_laughs_per_healthy_life_year.qmd >}}
+
+:::
+
 ### IAB Mechanism Benefit-Cost Ratio: 230:1 {#sec-iab_mechanism_benefit_cost_ratio}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -15579,6 +15611,584 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-sharing_upside_downside_ratio_treaty.qmd >}}
+
+:::
+
+### Shirt-Induced Laughs Gained: 3.51 quadrillion laughs {#sec-shirt_induced_laughs_gained}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Conservative first-order count of additional laughs across human history attributable to the shirt-triggered cascade. Computed as DALYs averted (healthy life-years restored by disease eradication) multiplied by laughs per healthy life-year. Does not count second-order laughs in future generations of human and post-human civilization whose existence is contingent on cascade triggering.
+
+**Inputs**:
+
+- [Total DALYs from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput](#sec-dfda_trial_capacity_plus_efficacy_lag_dalys) 🔢: 565 billion DALYs
+- [Human Laughs per Healthy Life-Year](#sec-human_laughs_per_healthy_life_year) 🔢: 6,205 laughs
+
+$$
+\begin{gathered}
+L_{shirt} \\
+= DALYs_{max} \times L_{year} \\
+= 565B \times 6{,}200 \\
+= 3510T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+DALYs_{max} \\
+= DALYs_{global,ann} \times Pct_{avoid,DALY} \times T_{accel,max} \\
+= 2.88B \times 92.6\% \times 212 \\
+= 565B
+\end{gathered}
+$$
+where:
+$$
+T_{accel,max} = T_{accel} + T_{lag} = 204 + 8.2 = 212
+$$
+where:
+$$
+\begin{gathered}
+T_{accel} \\
+= T_{first,SQ} \times \left(1 - \frac{1}{k_{capacity}}\right) \\
+= 222 \times \left(1 - \frac{1}{12.3}\right) \\
+= 204
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{first,SQ} \\
+= T_{queue,SQ} \times 0.5 \\
+= 443 \times 0.5 \\
+= 222
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{queue,SQ} \\
+= \frac{N_{untreated}}{Treatments_{new,ann}} \\
+= \frac{6{,}650}{15} \\
+= 443
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{untreated} \\
+= N_{rare} \times 0.95 \\
+= 7{,}000 \times 0.95 \\
+= 6{,}650
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+k_{capacity} \\
+= \frac{N_{fundable,ref}}{Slots_{curr}} \\
+= \frac{23.4M}{1.9M} \\
+= 12.3
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{fundable,ref} \\
+= \frac{Subsidies_{trial,ref}}{Cost_{pragmatic,pt}} \\
+= \frac{\$21.8B}{\$929} \\
+= 23.4M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Subsidies_{trial,ref} \\
+= Funding_{trial,ref} - OPEX_{trial} \\
+= \$21.8B - \$40M \\
+= \$21.8B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+OPEX_{trial} \\
+= Cost_{platform} + Cost_{staff} + Cost_{infra} \\
++ Cost_{regulatory} + Cost_{community} \\
+= \$15M + \$10M + \$8M + \$5M + \$2M \\
+= \$40M
+\end{gathered}
+$$
+where:
+$$
+L_{year} = L_{day} \times 365 = 17 \times 365 = 6{,}200
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-shirt_induced_laughs_gained.qmd >}}
+
+{{< include ../figures/sensitivity-table-shirt_induced_laughs_gained.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-shirt_induced_laughs_gained.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-shirt_induced_laughs_gained.qmd >}}
+
+:::
+
+### Shirt Program Expected Value per Dollar: 424 million:1 {#sec-shirt_program_expected_value_per_dollar}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Probability-weighted expected value per foundation-escrow dollar: treaty value multiplied by the cascade probability given seed, divided by the seed-program escrow. The defensible expected-value pitch for a skeptical foundation officer who does not want to bet on the headline ROI.
+
+**Inputs**:
+
+- [Total Economic Benefit from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput](#sec-dfda_trial_capacity_plus_efficacy_lag_economic_value) 🔢: $84.8 quadrillion
+- [Shirt Cascade Probability Given Seed](#sec-shirt_cascade_probability_given_seed): 25% (95% CI: 5% - 60%)
+- [Shirt Seed Program Total Cost](#sec-shirt_seed_program_total_usd) 🔢: $50 million
+
+$$
+\begin{gathered}
+EV_{shirt} \\
+= (Value_{max} \times P_{cascade,shirt}) / C_{seed,total}
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Value_{max} \\
+= DALYs_{max} \times Value_{QALY} \\
+= 565B \times \$150K \\
+= \$84800T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+DALYs_{max} \\
+= DALYs_{global,ann} \times Pct_{avoid,DALY} \times T_{accel,max} \\
+= 2.88B \times 92.6\% \times 212 \\
+= 565B
+\end{gathered}
+$$
+where:
+$$
+T_{accel,max} = T_{accel} + T_{lag} = 204 + 8.2 = 212
+$$
+where:
+$$
+\begin{gathered}
+T_{accel} \\
+= T_{first,SQ} \times \left(1 - \frac{1}{k_{capacity}}\right) \\
+= 222 \times \left(1 - \frac{1}{12.3}\right) \\
+= 204
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{first,SQ} \\
+= T_{queue,SQ} \times 0.5 \\
+= 443 \times 0.5 \\
+= 222
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{queue,SQ} \\
+= \frac{N_{untreated}}{Treatments_{new,ann}} \\
+= \frac{6{,}650}{15} \\
+= 443
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{untreated} \\
+= N_{rare} \times 0.95 \\
+= 7{,}000 \times 0.95 \\
+= 6{,}650
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+k_{capacity} \\
+= \frac{N_{fundable,ref}}{Slots_{curr}} \\
+= \frac{23.4M}{1.9M} \\
+= 12.3
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{fundable,ref} \\
+= \frac{Subsidies_{trial,ref}}{Cost_{pragmatic,pt}} \\
+= \frac{\$21.8B}{\$929} \\
+= 23.4M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Subsidies_{trial,ref} \\
+= Funding_{trial,ref} - OPEX_{trial} \\
+= \$21.8B - \$40M \\
+= \$21.8B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+OPEX_{trial} \\
+= Cost_{platform} + Cost_{staff} + Cost_{infra} \\
++ Cost_{regulatory} + Cost_{community} \\
+= \$15M + \$10M + \$8M + \$5M + \$2M \\
+= \$40M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+C_{seed,total} \\
+= N_{seed,shirt} \times C_{seed,wearer} \\
+= 1M \times \$50 \\
+= \$50M
+\end{gathered}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-shirt_program_expected_value_per_dollar.qmd >}}
+
+{{< include ../figures/sensitivity-table-shirt_program_expected_value_per_dollar.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-shirt_program_expected_value_per_dollar.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-shirt_program_expected_value_per_dollar.qmd >}}
+
+:::
+
+### Shirt Program ROI Ratio: 1696 million:1 {#sec-shirt_program_roi_ratio}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Unconditional ROI ratio: treaty-trajectory total economic value divided by the seed-program escrow. Headline 'X-to-one' framing for foundations. Does NOT discount for cascade probability; see SHIRT_PROGRAM_EXPECTED_VALUE_PER_DOLLAR for the probability-weighted view.
+
+**Inputs**:
+
+- [Total Economic Benefit from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput](#sec-dfda_trial_capacity_plus_efficacy_lag_economic_value) 🔢: $84.8 quadrillion
+- [Shirt Seed Program Total Cost](#sec-shirt_seed_program_total_usd) 🔢: $50 million
+
+$$
+\begin{gathered}
+ROI_{shirt} \\
+= \frac{Value_{max}}{C_{seed,total}} \\
+= \frac{\$84800T}{\$50M} \\
+= 1.7B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Value_{max} \\
+= DALYs_{max} \times Value_{QALY} \\
+= 565B \times \$150K \\
+= \$84800T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+DALYs_{max} \\
+= DALYs_{global,ann} \times Pct_{avoid,DALY} \times T_{accel,max} \\
+= 2.88B \times 92.6\% \times 212 \\
+= 565B
+\end{gathered}
+$$
+where:
+$$
+T_{accel,max} = T_{accel} + T_{lag} = 204 + 8.2 = 212
+$$
+where:
+$$
+\begin{gathered}
+T_{accel} \\
+= T_{first,SQ} \times \left(1 - \frac{1}{k_{capacity}}\right) \\
+= 222 \times \left(1 - \frac{1}{12.3}\right) \\
+= 204
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{first,SQ} \\
+= T_{queue,SQ} \times 0.5 \\
+= 443 \times 0.5 \\
+= 222
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{queue,SQ} \\
+= \frac{N_{untreated}}{Treatments_{new,ann}} \\
+= \frac{6{,}650}{15} \\
+= 443
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{untreated} \\
+= N_{rare} \times 0.95 \\
+= 7{,}000 \times 0.95 \\
+= 6{,}650
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+k_{capacity} \\
+= \frac{N_{fundable,ref}}{Slots_{curr}} \\
+= \frac{23.4M}{1.9M} \\
+= 12.3
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{fundable,ref} \\
+= \frac{Subsidies_{trial,ref}}{Cost_{pragmatic,pt}} \\
+= \frac{\$21.8B}{\$929} \\
+= 23.4M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Subsidies_{trial,ref} \\
+= Funding_{trial,ref} - OPEX_{trial} \\
+= \$21.8B - \$40M \\
+= \$21.8B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+OPEX_{trial} \\
+= Cost_{platform} + Cost_{staff} + Cost_{infra} \\
++ Cost_{regulatory} + Cost_{community} \\
+= \$15M + \$10M + \$8M + \$5M + \$2M \\
+= \$40M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+C_{seed,total} \\
+= N_{seed,shirt} \times C_{seed,wearer} \\
+= 1M \times \$50 \\
+= \$50M
+\end{gathered}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-shirt_program_roi_ratio.qmd >}}
+
+{{< include ../figures/sensitivity-table-shirt_program_roi_ratio.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-shirt_program_roi_ratio.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-shirt_program_roi_ratio.qmd >}}
+
+:::
+
+### Shirt Seed Program Total Cost: $50 million {#sec-shirt_seed_program_total_usd}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Total foundation escrow required to fund the seed-wearer program: threshold of visible humans multiplied by blended cost per wearer. Held in Earth Optimization Prize assurance contract; refunded at structural EOP return rate if neither treaty passage nor target hit.
+
+**Inputs**:
+
+- [Shirt Seed Wearers Threshold](#sec-shirt_seed_wearers_threshold): 1 million of people (95% CI: 100 thousand of people - 5 million of people)
+- [Shirt Seed Cost per Wearer](#sec-shirt_seed_cost_per_wearer_usd): $50 (95% CI: $10 - $200)
+
+$$
+\begin{gathered}
+C_{seed,total} \\
+= N_{seed,shirt} \times C_{seed,wearer} \\
+= 1M \times \$50 \\
+= \$50M
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-shirt_seed_program_total_usd.qmd >}}
+
+{{< include ../figures/sensitivity-table-shirt_seed_program_total_usd.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-shirt_seed_program_total_usd.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-shirt_seed_program_total_usd.qmd >}}
+
+:::
+
+### Shirt Value per Wearer: $10.6 million {#sec-shirt_value_per_wearer_usd}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Treaty-trajectory economic value per shirt-wearing human: total treaty value (DFDA trial capacity plus efficacy lag elimination) divided by the 8B-human target wearer base. This is the headline framing for the foundation pitch: each marginal wearer carries this much unrealized treaty value. Computationally identical to CORPORATE_DAMAGES_FORWARD_SETTLEMENT_VALUE_PER_CAPITA under a different semantic frame.
+
+**Inputs**:
+
+- [Total Economic Benefit from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput](#sec-dfda_trial_capacity_plus_efficacy_lag_economic_value) 🔢: $84.8 quadrillion
+- [Global Population in 2024](#sec-global_population_2024) 📊: 8 billion of people (95% CI: 7.8 billion of people - 8.2 billion of people)
+
+$$
+\begin{gathered}
+V_{wearer} \\
+= \frac{Value_{max}}{Pop_{global}} \\
+= \frac{\$84800T}{8B} \\
+= \$10.6M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Value_{max} \\
+= DALYs_{max} \times Value_{QALY} \\
+= 565B \times \$150K \\
+= \$84800T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+DALYs_{max} \\
+= DALYs_{global,ann} \times Pct_{avoid,DALY} \times T_{accel,max} \\
+= 2.88B \times 92.6\% \times 212 \\
+= 565B
+\end{gathered}
+$$
+where:
+$$
+T_{accel,max} = T_{accel} + T_{lag} = 204 + 8.2 = 212
+$$
+where:
+$$
+\begin{gathered}
+T_{accel} \\
+= T_{first,SQ} \times \left(1 - \frac{1}{k_{capacity}}\right) \\
+= 222 \times \left(1 - \frac{1}{12.3}\right) \\
+= 204
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{first,SQ} \\
+= T_{queue,SQ} \times 0.5 \\
+= 443 \times 0.5 \\
+= 222
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{queue,SQ} \\
+= \frac{N_{untreated}}{Treatments_{new,ann}} \\
+= \frac{6{,}650}{15} \\
+= 443
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{untreated} \\
+= N_{rare} \times 0.95 \\
+= 7{,}000 \times 0.95 \\
+= 6{,}650
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+k_{capacity} \\
+= \frac{N_{fundable,ref}}{Slots_{curr}} \\
+= \frac{23.4M}{1.9M} \\
+= 12.3
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{fundable,ref} \\
+= \frac{Subsidies_{trial,ref}}{Cost_{pragmatic,pt}} \\
+= \frac{\$21.8B}{\$929} \\
+= 23.4M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Subsidies_{trial,ref} \\
+= Funding_{trial,ref} - OPEX_{trial} \\
+= \$21.8B - \$40M \\
+= \$21.8B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+OPEX_{trial} \\
+= Cost_{platform} + Cost_{staff} + Cost_{infra} \\
++ Cost_{regulatory} + Cost_{community} \\
+= \$15M + \$10M + \$8M + \$5M + \$2M \\
+= \$40M
+\end{gathered}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-shirt_value_per_wearer_usd.qmd >}}
+
+{{< include ../figures/sensitivity-table-shirt_value_per_wearer_usd.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-shirt_value_per_wearer_usd.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-shirt_value_per_wearer_usd.qmd >}}
 
 :::
 
@@ -19880,6 +20490,280 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-treaty_trajectory_cumulative_lifetime_income.qmd >}}
+
+:::
+
+### Treaty Trajectory vs Current Trajectory GDP Multiplier (Year 15): 4.1x {#sec-treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_15}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Treaty Trajectory GDP at year 15 as a multiple of current trajectory GDP at year 15.
+
+**Inputs**:
+
+- [Treaty Trajectory GDP at Year 15](#sec-treaty_trajectory_gdp_year_15) 🔢: $683 trillion
+- [Current Trajectory GDP at Year 15](#sec-current_trajectory_gdp_year_15) 🔢: $167 trillion
+
+$$
+\begin{gathered}
+k_{treaty:base,15} \\
+= \frac{GDP_{treaty,15}}{GDP_{base,15}} \\
+= \frac{\$683T}{\$167T} \\
+= 4.1
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+GDP_{treaty,15} \\
+= GDP_{global} \times (1 + g_{base} + g_{redirect,treaty,15} \\
++ g_{peace,treaty,15} + g_{cyber,treaty,15} \\
++ g_{health,treaty,15})^{15}
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+g_{redirect,treaty,15} \\
+= \bar{s}_{treaty,15} \times \Delta g_{30\%} \times m_{spillover} \times 1.67 \\
+= 4.4\% \times 5.5\% \times 2 \times 1.67 \\
+= 0.807\%
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+g_{peace,treaty,15} \\
+= \left(\frac{Benefit_{peace,soc}}{GDP_{global}}\right) \times \left(\frac{\bar{s}_{treaty,15}}{Reduce_{treaty}}\right) \times \varepsilon_{conflict}
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Benefit_{peace,soc} \\
+= Cost_{war,total} \times Reduce_{treaty} \\
+= \$11.4T \times 1\% \\
+= \$114B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,total} \\
+= Cost_{war,direct} + Cost_{war,indirect} \\
+= \$7.66T + \$3.7T \\
+= \$11.4T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,direct} \\
+= Loss_{life,conflict} + Damage_{infra,total} \\
++ Disruption_{trade} + Spending_{mil} \\
+= \$2.45T + \$1.88T + \$616B + \$2.72T \\
+= \$7.66T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Loss_{life,conflict} \\
+= Cost_{combat,human} + Cost_{state,human} \\
++ Cost_{terror,human} \\
+= \$2.34T + \$27B + \$83B \\
+= \$2.45T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{combat,human} \\
+= Deaths_{combat} \times VSL \\
+= 234{,}000 \times \$10M \\
+= \$2.34T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{state,human} \\
+= Deaths_{state} \times VSL \\
+= 2{,}700 \times \$10M \\
+= \$27B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{terror,human} \\
+= Deaths_{terror} \times VSL \\
+= 8{,}300 \times \$10M \\
+= \$83B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Damage_{infra,total} \\
+= Damage_{comms} + Damage_{edu} + Damage_{energy} \\
++ Damage_{health} + Damage_{transport} + Damage_{water} \\
+= \$298B + \$234B + \$422B + \$166B + \$487B + \$268B \\
+= \$1.88T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Disruption_{trade} \\
+= Disruption_{currency} + Disruption_{energy} \\
++ Disruption_{shipping} + Disruption_{supply} \\
+= \$57.4B + \$125B + \$247B + \$187B \\
+= \$616B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,indirect} \\
+= Damage_{env} + Loss_{growth,mil} + Loss_{capital,conflict} \\
++ Cost_{psych} + Cost_{refugee} + Cost_{vet} \\
+= \$100B + \$2.72T + \$300B + \$232B + \$150B + \$200B \\
+= \$3.7T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+g_{cyber,treaty,15} \\
+= \left(\frac{Cost_{cyber}}{GDP_{global}}\right) \times \bar{s}_{treaty,15} \times \varepsilon_{conflict}
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+g_{health,treaty,15} \\
+= ((1 + f_{cure,15,treaty} \times d_{disease} \\
++ \left(\frac{Loss_{lag}}{GDP_{global}}\right))^{\frac{1}{15}}) - 1
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+f_{cure,15,treaty} \\
+= \min\left(1.0, Treatments_{new,ann} \times (3 \times min(\text{TRIAL\_CAPACITY\_MULTIPLIER} \times 1, \text{MAX\_TRIAL\_CAPACITY\_MULTIPLIER\_PHYSICAL}) + 4 \times min(\text{TRIAL\_CAPACITY\_MULTIPLIER} \times 2, \text{MAX\_TRIAL\_CAPACITY\_MULTIPLIER\_PHYSICAL}) + 5 \times min(\text{TRIAL\_CAPACITY\_MULTIPLIER} \times 5, \text{MAX\_TRIAL\_CAPACITY\_MULTIPLIER\_PHYSICAL}) + 3 \times min(\text{TRIAL\_CAPACITY\_MULTIPLIER} \times 10, \text{MAX\_TRIAL\_CAPACITY\_MULTIPLIER\_PHYSICAL})) / N_{untreated}\right)
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+k_{capacity} \\
+= \frac{N_{fundable,ref}}{Slots_{curr}} \\
+= \frac{23.4M}{1.9M} \\
+= 12.3
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{fundable,ref} \\
+= \frac{Subsidies_{trial,ref}}{Cost_{pragmatic,pt}} \\
+= \frac{\$21.8B}{\$929} \\
+= 23.4M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Subsidies_{trial,ref} \\
+= Funding_{trial,ref} - OPEX_{trial} \\
+= \$21.8B - \$40M \\
+= \$21.8B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+OPEX_{trial} \\
+= Cost_{platform} + Cost_{staff} + Cost_{infra} \\
++ Cost_{regulatory} + Cost_{community} \\
+= \$15M + \$10M + \$8M + \$5M + \$2M \\
+= \$40M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+k_{capacity,max} \\
+= \frac{N_{willing}}{Slots_{curr}} \\
+= \frac{1.08B}{1.9M} \\
+= 566
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{willing} \\
+= N_{patients} \times Pct_{willing} \\
+= 2.4B \times 44.8\% \\
+= 1.08B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{untreated} \\
+= N_{rare} \times 0.95 \\
+= 7{,}000 \times 0.95 \\
+= 6{,}650
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Loss_{lag} \\
+= Deaths_{lag,total} \times (LE_{global} - Age_{death,delay}) \times Value_{QALY} \\
+= 102M \times (79 - 62) \times \$150K \\
+= \$259T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Deaths_{lag,total} \\
+= Lives_{saved,annual} \times T_{lag} \\
+= 12.4M \times 8.2 \\
+= 102M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Lives_{saved,annual} \\
+= \frac{LY_{saved,annual}}{T_{ext}} \\
+= \frac{149M}{12} \\
+= 12.4M
+\end{gathered}
+$$
+where:
+$$
+GDP_{base,15} = GDP_{global} \times (1 + g_{base})^{15}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_15.qmd >}}
+
+{{< include ../figures/sensitivity-table-treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_15.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_15.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_15.qmd >}}
 
 :::
 
@@ -32828,6 +33712,28 @@ Share of longer-run life-extension gains that have plausibly materialized into h
 
 :::
 
+### Human Laughs per Day (Average Adult): 17 laughs {#sec-human_laughs_per_day_average}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Folkloric estimate of average adult laughter rate. Widely cited as approximately 17 laughs per day; primary sources are diffuse and the true value varies enormously across individuals, ages, and cultures. Used here as a planning constant for the quantitative-case argument in the shirt paper. Children laugh substantially more (~10x), so the value here is conservative for blended human population.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [5 laughs, 50 laughs] • Distribution: Lognormal
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between 5 laughs and 50 laughs (±132%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-human_laughs_per_day_average.qmd >}}
+
+*Core definition*
+
+:::
+
 ### IAB Mechanism Annual Cost (High Estimate): $750 million {#sec-iab_mechanism_annual_cost}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -33125,6 +34031,94 @@ Time to copy, paste, and send the recruitment message. 30 seconds.
 #### Uncertainty Range
 
 **Technical**: Distribution: Fixed
+
+*Core definition*
+
+:::
+
+### Shirt Cascade Probability Given Seed: 25% {#sec-shirt_cascade_probability_given_seed}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Subjective probability that the seed program triggers a viral cascade to majority-of-humanity participation, conditional on the seed threshold being met. Deliberately conservative: even at 25% the expected-value math beats every conventional foundation intervention. Sensitivity range covers skeptic and base-case scenarios.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [5%, 60%] • Distribution: Beta
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between 5% and 60% (±110%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The beta distribution means values are bounded and can skew toward one end.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-shirt_cascade_probability_given_seed.qmd >}}
+
+*Core definition*
+
+:::
+
+### Shirt Seed Cost per Wearer: $50 {#sec-shirt_seed_cost_per_wearer_usd}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Blended cost per seed wearer: printed shirt, small honorarium, and campaign admin. Includes a mix of professionally-printed shirts for influencers and bulk-print runs for university chapters, athletes, and micro-celebrities. Excludes top-tier celebrity placements (handled through separate sponsorship; see Getting Started celebrity layer).
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$10, $200] • Distribution: Lognormal
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between $10 and $200 (±190%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-shirt_seed_cost_per_wearer_usd.qmd >}}
+
+*Core definition*
+
+:::
+
+### Shirt Seed Wearers Threshold: 1 million of people {#sec-shirt_seed_wearers_threshold}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Planning estimate for the number of visible humans who must wear the End-War-and-Disease message before the social-proof barrier breaks and imitation becomes spontaneous. Sized between the ALS Ice Bucket (~17M participants) and Livestrong (~87M bracelets) cascade trigger points, discounted for the lower-friction permanent-marker version.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [100 thousand of people, 5 million of people] • Distribution: Lognormal
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between 100 thousand of people and 5 million of people (±245%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-shirt_seed_wearers_threshold.qmd >}}
+
+*Core definition*
+
+:::
+
+### Shirt Wearing Friction Cost: $5 {#sec-shirt_wearing_friction_cost_usd}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Perceived social friction cost of wearing a political message in public, expressed in dollar-equivalent terms. Sets the minimum per-wearer expected Earth Optimization Prize payout required to make participation rational at scale. Anchored to the GLOBAL_COORDINATION_ACTIVATION_REWARD_PER_VERIFIED_PARTICIPANT midpoint, which serves the same role for the verified-vote action.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$1, $25] • Distribution: Lognormal
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between $1 and $25 (±240%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-shirt_wearing_friction_cost_usd.qmd >}}
 
 *Core definition*
 

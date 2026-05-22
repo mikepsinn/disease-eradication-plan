@@ -43,7 +43,7 @@ This chapter explains the game, and then explains why your species needs it.
 2. **How you keep score.** By {{< var destructive_economy_50pct_year >}}: did people live {{< var treaty_hale_gain_year_15 >}} longer? Did they earn {{< var treaty_trajectory_lifetime_income_multiplier >}} as much? (See [GDP Trajectories](../economics/gdp-trajectories.qmd) [@gdp-trajectories-paper-2025].) That is {{< var treaty_personal_upside_blend >}} per person.
 3. **How PRIZE works.** You fund one pool until {{< var destructive_economy_50pct_year >}}. Targets missed: you divide the realized pool pro rata. (Either way, you beat your retirement account. Your retirement account is not trying very hard.)
 4. **How VOTE works.** You recruit one verified referendum participant, you earn one point. Targets met: the pool routes to VOTE point-holders.
-5. **How you start.** Find a host to launch the [Planetary Constitutional Convention](planetary-constitutional-convention.qmd). PRIZE deposits begin, the Scoreboard goes live, and recruitment compounds from there. (For the institutional deployment plan, see [Why Your Institution Should Be The Initiating Node](initiating-node-memo.qmd).)
+5. **How you start.** A v1 pool launches once any qualified host completes the three scaffolding pieces in [V1 Bootstrap](../economics/earth-optimization-prize-fund.qmd#v1-bootstrap). Other hosts fork additional pools using the [protocol spec](../appendix/earth-optimization-prize-protocol.qmd) [@earth-optimization-prize-protocol-paper-2025]. The [Planetary Constitutional Convention](planetary-constitutional-convention.qmd) and [Initiating Node memo](initiating-node-memo.qmd) describe the larger-institution path.
 6. **Why you bother.** "Do nothing" is not free. It has a price, and the price is accelerating (see [Political Dysfunction Tax](../appendix/political-dysfunction-tax.qmd) [@political-dysfunction-tax-paper-2025] and [GDP Trajectories](../economics/gdp-trajectories.qmd) [@gdp-trajectories-paper-2025]).
 
 ## How It Works (The 90-Second Version)
@@ -86,15 +86,14 @@ The "crazy" number is not the solution. It is the ratio that made the solution n
 
 ## What To Do Right Now
 
-The Game needs an institutional host before it can accept PRIZE deposits. Until then, the instructions are short:
+The Game accepts deposits once a v1 pool has its three pre-launch pieces in place: an attorney-reviewed deposit template, a third-party custodian, and a public dashboard. The [V1 Bootstrap section in the Prize Fund chapter](../economics/earth-optimization-prize-fund.qmd#v1-bootstrap) documents what each piece looks like. Any 501(c)(3), foundation, or qualified entity can be the v1 host. Later, larger hosts can fork additional pool instances.
 
 1. **[Vote on the 1% Treaty.](https://warondisease.org)** 30 seconds. Treaty yes/no, allocation slider with evidence.
 2. **Tell two people.** Get two more verified participants onto the Scoreboard.
-3. **If you run an institution:** host the Game. The Scoreboard and PRIZE deposits cannot start without you. Contact [m@warondisease.org](mailto:m@warondisease.org).
+3. **If you represent a foundation:** the wearable-surface assurance contract pitch is in [The T-Shirt That Ended War and Disease](../appendix/joke.qmd). The Prize Fund is the escrow vehicle; the [shirt seed campaign](../appendix/joke.qmd) is the trigger.
+4. **If you run an institution that wants to host a pool:** the protocol is forkable. See [the protocol spec](../appendix/earth-optimization-prize-protocol.qmd) [@earth-optimization-prize-protocol-paper-2025] and the [V1 Bootstrap section](../economics/earth-optimization-prize-fund.qmd#v1-bootstrap). Multiple pool instances are explicitly supported.
 
-I notice humans cover stock tickers in real time but have never built a ticker for whether people die. The Scoreboard is that ticker. It needs a host the same way a television broadcast needs a transmitter. The broadcast is ready. The transmitter is missing.
-
-PRIZE deposits begin once an institution hosts the pool. That is the bottleneck. Everything else is clicking buttons.
+I notice humans cover stock tickers in real time but have never built a ticker for whether people die. The Scoreboard is that ticker. It needs a transmitter; any qualified host can build one. The broadcast is ready.
 
 Everything below this line is for readers who want to understand why before they act.
 

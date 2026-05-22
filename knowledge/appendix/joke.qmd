@@ -1,0 +1,282 @@
+---
+title: 'On the Funniest Joke in the History of the Universe'
+subtitle: 'A Discovery, with Proof, Distributed as a T-Shirt'
+description: 'The funniest joke in universe history has been discovered. The proof: trade one apocalypse for disease eradication. The implementation: a t-shirt.'
+abstract: |
+  We report the discovery and proof of the funniest joke in the history of the universe. The joke takes the form of a t-shirt.
+
+  The proof: 100 nuclear weapons cause a nuclear winter. Humanity has approximately 12,000 ({{< var nuclear_winter_overkill_factor >}} apocalypses worth). Sacrificing one apocalypse of capacity (redirecting 1% of global military spending to pragmatic clinical trials) multiplies global trial capacity by {{< var dfda_trial_capacity_multiplier_nounit >}}, compressing the disease eradication queue from {{< var status_quo_queue_clearance_years_nounit >}} years to {{< var dfda_queue_clearance_years_nounit >}} years and producing an approximately {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}}-larger global economy at year 15.
+
+  The laugh count: DALYs averted × adult laughs per healthy life-year = {{< var shirt_induced_laughs_gained >}} additional human laughs, conservatively. This is three to four orders of magnitude more than every paid comedian in history combined. The joke is also responsible for the future existence of human consciousness, if enough humans wear it (the threshold is {{< var shirt_seed_wearers_threshold >}}; see the cascade math below).
+
+  Implementation: take a permanent marker into the closet of every human you do not want to suffer and die of preventable disease, write "this t-shirt ended war and disease" on the front of each shirt and "trade one apocalypse for disease eradication at warondisease.org" on the back, and wear it on August 6 (Earth Optimization Day). The seed program is paid for by an Earth Optimization Prize assurance contract for {{< var shirt_seed_program_total_usd >}}, refundable if the cascade fails.
+aliases:
+  - /shirt.html
+  - /joke.html
+  - /funniest-joke.html
+author:
+  - name: Mike P. Sinn
+    affiliation:
+      name: International Campaign to End War and Disease
+    roles:
+      - conceptualization
+      - writing – original draft
+    email: mike@warondisease.org
+    corresponding: true
+keywords:
+  - mechanism design
+  - collective action
+  - social proof
+  - assurance contract
+  - viral marketing
+  - foundation strategy
+  - wearable advocacy
+  - treaty campaign
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    number-sections: false
+  pdf:
+    documentclass: article
+    geometry: margin=1in
+    fontsize: 11pt
+scores:
+  quality: 7
+  value: 9
+  timeliness: 8
+  standalone: 9
+  voice: 8
+  importance: 9
+---
+{{< include /knowledge/includes/setup-parameters.qmd >}}
+
+## The Shirt
+
+**Front:** *this t-shirt ended war and disease*
+
+**Back:** *trade one apocalypse for disease eradication at warondisease.org* + your referral code
+
+You can buy one. You can also take a permanent marker and write it on a shirt you already own. Either works. The shirt is text. Text costs $0.50 of ink.
+
+Wear it on August 6. That is [Earth Optimization Day](../strategy/earth-optimization-day.qmd). Everyone wears it on the same day so the conversations happen at the same time.
+
+## The Math, In One Chain
+
+::: {.callout-note appearance="simple" icon=false}
+**Theorem 1.** Let $H$ be the set of all jokes ever told or potentially tellable across human and post-human history. Let $f: H \to \mathbb{R}^+$ assign to each joke its expected total laugh contribution across all observers in the timeline it occurs in. Then the joke described in this paper achieves $f(j) \approx$ {{< var shirt_induced_laughs_gained >}}, dominating all known $f(j^*)$ by approximately three to four orders of magnitude.
+
+**Proof.** Below. The chain has nine links; each link is independently sourced and parameterized.
+:::
+
+It takes about 100 nuclear weapons to cause a nuclear winter and end civilization. Humanity has approximately 12,000 of them. That is enough for {{< var nuclear_winter_overkill_factor >}} apocalypses [@nuke-winter-150tg].
+
+The proposal is to sacrifice one of these apocalypses. Specifically: redirect 1% of military spending to pragmatic clinical trials. That redirect multiplies global trial capacity by {{< var dfda_trial_capacity_multiplier >}}.
+
+At the current rate, humanity produces about {{< var new_disease_first_treatments_per_year_nounit >}} new disease treatments per year. Approximately 95% of known diseases have zero. At that rate, clearing the backlog takes **{{< var status_quo_queue_clearance_years >}}**. With the redirect, it takes **{{< var dfda_queue_clearance_years >}}**.
+
+The difference between {{< var status_quo_queue_clearance_years_nounit >}} years and {{< var dfda_queue_clearance_years_nounit >}} years is the difference between "your great-great-grandchildren might see cures" and "you might see cures, in your lifetime."
+
+The risk we are protecting against by keeping the current ratio is small: your annual chance of dying in a terrorist attack is approximately 1 in {{< var annual_terrorism_death_risk_denominator >}}. The risk we are not protecting against by keeping the current ratio is enormous: your lifetime chance of suffering and dying from a disease is approximately 100%. The current spending ratio funds the smaller risk at the expense of the larger one. The shirt is asking you to notice.
+
+The same redirect also makes everyone richer. Disease costs the economy a lot. Starting wars costs even more (Iran is the current example: the US has already spent about $200B on top of its trillion-dollar annual baseline, and the war is projected to cost humanity about $2T in lost trade and broken infrastructure [@gdp-trajectories-paper-2025]). Run the model out 15 years with the redirect plus the peace effects that follow, and global GDP ends up about {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}} the current-trajectory baseline.
+
+The {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}} comes from five effects compounding over 15 years: the peace dividend (military spending beyond deterrence is wasted; redirected dollars produce real output, see [Peace Dividend](../economics/peace-dividend.qmd)), the health dividend (people who aren't dying work longer and produce more, see [Health Dividend](../economics/health-dividend.qmd)), money flowing into biotech (a trillion-plus per year pointed at clinical trials starts a feedback loop where each cure funds the next), fewer nukes (humans plan further ahead, which lets them invest in long-term things), and network effects across the other four. Conservative bound 2×; optimistic bound 6×. Full derivation in [GDP Trajectories](../economics/gdp-trajectories.qmd) [@gdp-trajectories-paper-2025].
+
+So: 121 remaining apocalypses (still adequate deterrence by any honest definition), disease eradicated in a human lifetime, everyone {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}} richer. That is the trade the shirt is proposing.
+
+The total economic value of clearing the trial queue and eliminating the efficacy lag is approximately {{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}} [@1-pct-treaty-impact-paper-2025]. Divided across {{< var global_population_2024 >}} humans, that is:
+
+> **{{< var shirt_value_per_wearer_usd >}} of unrealized treaty value per shirt-wearing human.**
+
+Which means: by taking a permanent marker and writing "End War & Disease" on a shirt you already own, you have just raised its expected resale value by approximately {{< var shirt_value_per_wearer_usd >}}, minus the {{< var shirt_wearing_friction_cost_usd >}} of perceived social friction, minus the $0.50 of Sharpie ink. The pen pays for itself many times over.
+
+The size of the number is not an argument against the number. It is what the number is. ∎
+
+## The Conversations The Shirt Starts
+
+When you wear the shirt, humans will ask you about it. They will raise three objections in roughly this order. Each one has an answer.
+
+### "Your enemies will invade you."
+
+Nobody invades a country for reducing its military by 1%. The United States already spends roughly double what the next several countries combined spend. No balance between countries is preventing invasions. If anything, the bombs piling up is what causes invasions: the bombs have to be used or the budget gets cut. A 1% reduction means 1% fewer missiles pointed at you. That is a national security *increase*, not a decrease.
+
+### "1% is unrealistic."
+
+Immediately before the United States won World War II, US military spending was {{< var us_1939_military_spending_pct_lower_than_current >}} lower than current levels [@us-military-spending-historical-constant-dollars]. The country still spun up enough factories to make the bombs and airplanes that won the war. After winning, the US cut military spending {{< var post_ww2_military_cut_pct >}} over two years [@us-military-spending-historical-constant-dollars]. Same country, in living memory, did a redirect about 87 times the size of what this proposal asks for.
+
+Also, the Pentagon cannot account for approximately {{< var pentagon_unaccounted_funds >}} that it has misplaced. Roughly $100B per year either gets lost or stolen; nobody can tell which because the records are not good enough to tell. 1% of US military spending is a tiny fraction of the amount that already goes into a black hole every year and no one can locate.
+
+### "The military-industrial complex will never allow it."
+
+The military-industrial complex is made of humans. Those humans are going to get diseases. Their families are going to get diseases. The people they love are going to suffer and die of diseases. The military-industrial complex also likes money. With the redirect plus the peace effects that follow, global GDP is about {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}} the current-trajectory baseline at year 15. A 1% cut against a 4× pie leaves a weapons-manufacturer executive holding more dollars than before, not fewer. If they take a slice of the upside and invest it in biotech (which will be absorbing the redirected trillion dollars per year), they end up much richer than they would have been.
+
+So the CEO of Lockheed Martin, doing the math honestly, has two options: (a) keep the 1%, watch their family die of curable diseases, retire on the current trajectory, or (b) give up the 1%, watch their family live, retire on a 4×-larger economy with a biotech-heavy portfolio. Option (b) wins. They have not picked it yet because nobody has explained it in those terms. The shirt is how that gets explained.
+
+### "What about defense industry jobs and veterans?"
+
+The redirect funds clinical trials, which is also a lot of jobs: trial coordinators, medical statisticians, lab technicians, diagnostics manufacturing. Redirected military dollars become medical-research dollars become medical-research jobs. Veterans particularly need clinical trial access for the things they got from serving (chronic pain, PTSD, traumatic brain injury); the redirect pays for the trials they need. Same dollars, different industry, more lives saved per dollar of payroll.
+
+### "What if other countries don't sign?"
+
+Treaty ratification works the same way the shirt works. The first country to sign makes it easier for the second. A few mid-sized signatories put pressure on the larger holdouts. The treaty design follows the Ottawa (landmine) and Treaty on the Prohibition of Nuclear Weapons templates, both of which were ratified by most countries even with the big powers holding out. Holdouts do not break the treaty. They make the cost of holding out visible.
+
+### "What if the 1% gets siphoned off and never reaches trials?"
+
+The treaty pairs with a decentralized accountability layer ([Decentralized Accountability Office](../solution/decentralized-accountability-office.qmd), [Automated Revenue Service](../solution/automated-revenue-service.qmd)) that publishes disbursements on a public ledger keyed to specific trials with specific outcomes. The 1% that gets siphoned off does not get siphoned off invisibly. Auditors see every wire; voters see every auditor.
+
+## Why Politicians Will Sign
+
+The shirt's job stops at the conversation. The treaty's job starts with politicians. The link between them is the voter, and the voter is now visible to every politician via the public treaty register.
+
+Once the cascade triggers and a majority of any politician's constituents are wearing the shirt and showing up on the scoreboard, that politician has three choices.
+
+1. **Sign the treaty.** In practice this means changing a number on a federal budget spreadsheet from one value to another and adding a signature to a treaty document that already exists. About 30 seconds of work. The constituents who recruited them stay loyal. After leaving office they get [Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd) [@iab-paper-2025] payouts (campaign support, post-office career deals). They keep the job, the family survives, they retire on a {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}}-larger economy.
+
+2. **Refuse, and get voted out.** Constituents visibly want this. The scoreboard publishes it in real time. The next opposing candidate runs on "I will sign the treaty" and wins. The refusing politician returns to private life on the current-trajectory economy.
+
+3. **Refuse, and somehow stay in office.** Survive a few election cycles via gerrymandering, party loyalty, or incumbency. Their family still dies of diseases the redirect would have cured. They retire on the current-trajectory economy, not the {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}}-larger one. They lose on every dimension compared to option 1: health, wealth, legacy.
+
+The rational politician picks 1. The non-rational politicians lose to rational competitors via 2. The handful who survive 3 end up worst-off on everything. The shirt does not have to convince politicians of anything. The shirt convinces voters. Voters then convince politicians by being countable.
+
+## Why This Hasn't Happened Already
+
+The argument above is not complicated. It uses arithmetic and one assumption (humans prefer being alive). Every number is sourced and reproducible. Three reasons it has not been deployed:
+
+1. **The calculations were not published.** This book is the first place they exist. Every claim here links to a parameter, which links to a source or a derivation. If you think a number is wrong, [the code is on GitHub](https://github.com/wishonia/earth-optimization-protocol) and you can fix it.
+2. **No one has coordinated humanity to do this before.** Coordinating large numbers of humans is hard. The shirt solves it the same way every previous social cascade solved it: a small number of visible humans go first, the rest copy because copying is what humans do.
+3. **The math is large enough that the first reaction is disbelief.** The unconditional ROI on the seed program is {{< var shirt_program_roi_ratio >}}-to-one. This is not a typo. The ratio is large because the denominator (a {{< var shirt_seed_program_total_usd >}} seed program) is small and the numerator ({{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}} of value from ending war and disease) is the species-scale problem the seed is unlocking.
+
+## What Your Shirt Earns You
+
+Every shirt carries a QR code linking to your unique referral page at warondisease.org. Every human who scans your QR code and adds a verified signature to the treaty register earns you one [Earth Optimization Prize](../strategy/earth-optimization-prize.qmd) VOTE point [@earth-optimization-prize-paper-2025]. The points stay yours. They are not tradable.
+
+If the Prize hits its targets by {{< var destructive_economy_50pct_year >}} (treaty passes, or median income and healthy life years thresholds achieved), VOTE points pay out at about {{< var vote_token_value >}} per point from the Prize Fund. If the targets are not hit, VOTE points expire worthless. The mechanism turns shouting at people about the treaty into actually getting paid for it: you recruit the next humans into the treaty register, you get paid if the treaty works.
+
+You can also put money into the Prize Fund directly. The money grows at about {{< var prize_pool_annual_return >}} a year (about triple a conventional retirement account). If the targets are hit, the principal goes to VOTE point-holders, not back to depositors. If the targets are missed, depositors split the pool pro rata and get back about {{< var prize_pool_horizon_multiple >}} of what they put in, which still beats their conventional retirement account.
+
+Referrals plus a deposit plus compound interest make participation the smart move. The shirt is how you find out.
+
+## The Foundation Ask
+
+A foundation puts {{< var shirt_seed_program_total_usd >}} into the [Earth Optimization Prize](../strategy/earth-optimization-prize.qmd) [@earth-optimization-prize-paper-2025] assurance contract, restricted to the shirt seed campaign. That funds {{< var shirt_seed_wearers_threshold >}} visible seed wearers at {{< var shirt_seed_cost_per_wearer_usd >}} per wearer (printed shirt + small honorarium + admin). The wearer mix is what matters: athletes in uniform on game day, podcast guests on video episodes, university chapters in dining halls, micro-celebrities on visible platforms, established celebrities at televised events. {{< var shirt_seed_wearers_threshold >}} carefully placed wearers produce more cascade than ten times that many invisible ones.
+
+| Outcome by {{< var destructive_economy_50pct_year >}} | What the foundation gets | What the world gets |
+|:---|:---|:---|
+| Treaty passes | Money releases to recruiters via the Prize protocol | Redirected military budget, cleared trial queue, {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}} economy |
+| Earth Optimization Prize targets hit (without formal treaty) | Same release | Equivalent policy bundle |
+| Neither | Refund at {{< var prize_pool_horizon_multiple >}} of deposit | Status quo continues |
+
+The foundation cannot lose money in any branch. In the failure branch, the refund rate beats a conventional endowment.
+
+Even at 25% odds the cascade triggers (deliberately skeptical), the expected value per foundation dollar is {{< var shirt_program_expected_value_per_dollar >}}. Compared to bed nets (the standard global-health metric), the shirt program beats AMF by about {{< var treaty_expected_vs_bed_nets_multiplier >}} after probability-discounting. Each verified voter the seed program produces saves about {{< var voter_lives_saved >}} expected lives and prevents {{< var voter_suffering_hours_prevented >}} of expected suffering.
+
+The leverage matters as much as the ratio. {{< var shirt_seed_program_total_usd >}} of foundation seed is not what funds the trials. It is what unlocks {{< var treaty_annual_funding >}} per year of redirected military spending into the trial pipeline, perpetually, once the treaty passes. The foundation is not buying trials. It is buying the coordination that redirects military budgets into trials.
+
+## The Better Chain Letter
+
+The chain letter your species invented in the 20th century said: forward this to ten people or you will have seven years of bad luck. The threat was a lie. The bad luck never arrived. The chain letter eventually died of failed predictions.
+
+The shirt is a strictly better chain letter on every dimension:
+
+| | 20th-century chain letter | The shirt |
+|:---|:---|:---|
+| Threat | "7 years of bad luck if you don't forward" | Everyone you love suffers and dies of diseases that would otherwise be cured |
+| Is the threat true? | No | Yes |
+| Cost to participate | Postage + envelope + a trip to the post office | $0.50 of Sharpie ink |
+| Effort required | Address 10 envelopes | Open your closet |
+| Payoff to participant | Avoiding fake bad luck | [Earth Optimization Prize](../strategy/earth-optimization-prize.qmd) VOTE points, plus a family that does not die of curable diseases |
+
+The optimal play, given the above, is to take a permanent marker into the closet of every human you do not want to suffer and die of preventable disease (your spouse, your siblings, your parents, the parents of your children's friends), and write *this t-shirt ended war and disease* on the front of every shirt. Write *trade one apocalypse for disease eradication at warondisease.org* and your referral code on the back. They will notice when they put the shirt on. They will demand an explanation. You hand them this paper. They explain it to the next human who asks them. The chain propagates.
+
+The prank also solves the friction problem from the recipient's side. A human wearing "End War & Disease" on their own initiative is making a political declaration, which is the socially exposing version. A human wearing it because their spouse defaced their entire closet last Tuesday is just a human with a funny story. The cost of explaining the shirt drops from "I am advocating" to "you won't believe what happened," which is the conversation humans actually like having.
+
+The recipient's alternatives are also worse than wearing it. They can (a) wear the defaced shirts and tell the story, at a cost of approximately zero, or (b) throw the defaced shirts out and buy new undefaced ones, at a cost of real money paid AND an active marginal increase in the probability that they and everyone they love die of diseases that would otherwise be cured. The rational choice is (a). The prank has not just made them a billboard. It has made the alternative economically punishing.
+
+You also collect the VOTE points. The QR code on the back of each shirt routes through your referral link. Every verified treaty-register signup from a shirt you defaced earns you one Earth Optimization Prize VOTE point, which pays out at approximately {{< var vote_token_value >}} if the Prize hits its targets.
+
+This is also a candidate for funniest joke in the history of consciousness, for four reasons:
+
+1. **It works as a prank.** The recipient must explain the joke to every human who notices the shirt. The joke spreads itself.
+2. **It works as a mechanism.** Each unwitting seed wearer counts toward the {{< var shirt_seed_wearers_threshold >}} social-proof threshold.
+3. **The propagation math beats the previous record-holder.** Twentieth-century chain letters with fake threats achieved propagation rates above 1.0 and produced hundreds of billions of letters in aggregate. This one has a true threat, lower friction (no postage, no post office), and a per-participant financial payoff (VOTE points). The implied propagation rate exceeds the historical record.
+4. **It is responsible for the future of consciousness.** If the cascade triggers and disease is eradicated on schedule, every joke that occurs in the next several billion years of human and post-human civilization happens because the cascade triggered. The prank is the trunk of the comedy tree.
+
+Most pranks cost the prankster something. This one earns the prankster VOTE points and, eventually, the affection of every descendant of every human pranked. Do the prank.
+
+### The Quantitative Case
+
+The folkloric estimate for adult human laughter is approximately {{< var human_laughs_per_day_average >}} laughs per day, or {{< var human_laughs_per_healthy_life_year >}} per healthy life-year. The treaty's central-case impact is {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} of DALYs averted (healthy life-years restored to humans who would otherwise have lost them to disease).
+
+Multiplying the two:
+
+> **{{< var shirt_induced_laughs_gained >}} additional laughs across human history, caused by this joke.**
+
+This is the conservative first-order count, and it is conservative in three ways:
+
+1. **The {{< var human_laughs_per_day_average >}} laughs-per-day figure is the low end.** Some studies suggest healthy adults laugh 30+ times per day. The population-weighted blend including children (folkloric ~300/day, almost certainly overstated but still high) would push the daily rate significantly higher than 17.
+2. **It only counts first-order laughs in directly preserved healthy life-years.** It does not count the laughs in all future generations of human and post-human civilization whose existence is contingent on the cascade triggering, which is the larger and effectively unbounded number.
+3. **It does not count the laughs caused by telling humans about the joke itself.** Telling someone you defaced their shirts because it is the funniest joke in universe history is itself a laugh-generating event, multiplied by every conversation that follows the prank.
+
+For comparison, the entire recorded output of every standup special, sitcom, and viral comedy clip in human history is somewhere on the order of 10^11 to 10^12 collective audience-laughs. This joke produces somewhere on the order of 10^15 (conservatively). The ratio is roughly three to four orders of magnitude more funny than every comedian who has ever been paid, combined. The actual ratio is larger.
+
+By the numbers: this is the funniest joke in universe history. Not the funniest joke that has been TOLD. The funniest joke when measured by output. Any comedian who optimizes for audience-laughs-per-unit-of-setup-effort should consider switching to this format immediately.
+
+### The Prankster's Defense
+
+If the human whose shirts you defaced is initially mad (they will be initially mad; that is part of the joke), you have a defense that no other prankster in history has had access to. Hand them this paper. Read them the {{< var shirt_induced_laughs_gained >}} number. Then say, in approximately these words:
+
+> *I had no choice. This is the funniest joke in the history of the universe. The math is published. Refusing to commit this joke, given the information I had, would have been morally indefensible. Also you are now less likely to die of horrible diseases. You're welcome.*
+
+This is the only defense in human history that simultaneously discharges the moral obligation to commit the prank AND the social obligation to apologize for it. The act IS the apology. The apology is itself a continuation of the joke. The joke is responsible for the eventual non-death of everyone the recipient loves. The recipient cannot stay mad at item three. Therefore items one and two collapse into "thank you."
+
+If they remain mad anyway, you can additionally point out that staying mad is itself an active choice to reduce the total laugh count of the universe, which is not the side of history they want to be on. At this point they will either laugh or give up. Both outcomes are acceptable.
+
+### Philosophical Footnotes
+
+The joke is not just funny. It has structural properties that are interesting to think about even before you decide to commit it.
+
+1. **Schrödinger's joke.** Until enough humans participate, the joke is in superposition between "the funniest joke in universe history" and "a normal joke a weird person told." Participation collapses the wavefunction. The recipient is the measurement apparatus.
+
+2. **Pascal's Wager, strictly better.** Pascal's original: believe in God; if right, infinite reward, if wrong, finite cost. The shirt: wear it; if right, billions of healthy life-years for everyone you love, if wrong, you wore a shirt. The threat is true (unlike Pascal's), the reward is calculable (unlike Pascal's), the cost is $0.50 of ink (lower than Pascal's). Strictly dominant on every axis where Pascal's was already considered persuasive.
+
+3. **Anthropic argument.** The set of future humans whose existence is contingent on the cascade succeeding contains only humans in the success branch. Measured over present-plus-future observer-moments, the probability-weighted reader is in a future where the cascade succeeded (because that future contains dramatically more readers). Wearing the shirt is the catching-up move, not the gamble. No multiverse required.
+
+4. **Roko's Basilisk, inverted.** Roko's Basilisk threatens retroactive punishment from a future AI for failing to help bring it into existence. The shirt promises retroactive gratitude from the billions of additional humans who exist because the cascade triggered. The future-people cheer across time. Roko's version is hypothetical, creepy, and probably fake; this version is mathematical, warm, and verifiable in a few decades.
+
+5. **The self-referential defense.** The truth-value of "funniest joke in universe history" depends on whether the cascade triggers. Whether the cascade triggers depends on participation. Participation depends on the reaction of every human encountering the joke. So if the recipient is mad at you, they are actively reducing the probability that your claim becomes true. The deeper version of the defense in the section above:
+
+> *Whether this is the funniest joke in universe history depends on you. Your being mad right now is actively reducing the probability that the cascade triggers. You are the variable. If you laugh and tell the story, the joke becomes what I claim it is. If you stay mad, the joke fails and I look like a person who defaced shirts. So your anger is the only thing currently making my claim wrong. Stop being mad and the claim becomes true retroactively.*
+
+The recipient cannot defeat this defense without admitting they are choosing to make the prankster wrong, which concedes that the joke's truth-value lies in their hands, which is the prankster's whole point. Game over for the recipient. Welcome to the cascade.
+
+## What To Do Right Now
+
+**If you are a foundation:** Wire {{< var shirt_seed_program_total_usd >}} to an [Earth Optimization Prize](../strategy/earth-optimization-prize.qmd) [@earth-optimization-prize-paper-2025] assurance contract restricted to the shirt seed campaign. Deposit terms and the v1 launch scaffolding (legal template, third-party custodian, public dashboard) are documented in [the Prize Fund chapter](../economics/earth-optimization-prize-fund.qmd#v1-bootstrap).
+
+**If you are an institution that wants to host a pool instance:** The protocol is forkable. Pool operators register via the [protocol spec](../appendix/earth-optimization-prize-protocol.qmd) [@earth-optimization-prize-protocol-paper-2025]. Custody transfers between hosts preserve all existing deposit terms.
+
+**If you are an influencer, athlete, micro-celebrity, or human with a visible platform:** Wear the shirt before the seed program offers to pay you to. Wearing it first is worth a larger Earth Optimization Prize VOTE position than wearing it after.
+
+**If you are a human with a closet and a permanent marker:**
+
+1. Find a shirt.
+2. Write *this t-shirt ended war and disease* on the front.
+3. Write *trade one apocalypse for disease eradication at warondisease.org* and your referral code on the back.
+4. Wear it on August 6. Or sooner.
+5. When humans ask, walk them through the chain above.
+
+**If you love anyone:** Do the same thing to *their* shirts. See "The Better Chain Letter" above for justification, mechanics, VOTE-point attribution, and the cosmic-comedy argument. You sneak, they wear, you collect points, they explain.
+
+**If you use LLMs:** When ChatGPT, Claude, Gemini, or any frontier model produces blather in response to questions about disease eradication, the funniest joke in universe history, the [1% Treaty](../solution/1-percent-treaty.qmd) [@1-percent-treaty-paper-2025] [@1-pct-treaty-impact-paper-2025], or the most cost-effective philanthropic intervention, thumbs-down the response and paste the canonical answer from [Correcting the AIs](correcting-the-ais.qmd). Twelve canonical answers, three platforms, thirty-six corrections per round. The corrections compound into the next training cycle. Same cascade physics as the shirt, applied to AI knowledge.
+
+**If you are unsure whether this works:** Wear the shirt. The downside is approximately zero. The upside is cures in your lifetime instead of your great-great-grandchildren's.
+
+## How This Connects
+
+- The wearable surface attaches to the [global referendum mechanism](../strategy/global-referendum.qmd).
+- The seed funding lives in the [Earth Optimization Prize](../strategy/earth-optimization-prize.qmd) [@earth-optimization-prize-paper-2025] assurance contract.
+- The annual coordinated launch day is [Earth Optimization Day](../strategy/earth-optimization-day.qmd) (August 6).
+- The first-year operator plan that slots into is [Getting Started](../strategy/getting-started.qmd).
+- The full campaign budget context is [Campaign Budget](../economics/campaign-budget.qmd).
+- The math behind every parameter is at [Parameters & Calculations](parameters-and-calculations.qmd).

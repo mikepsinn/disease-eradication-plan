@@ -225,3 +225,7 @@ You want access to the powerful shared coordination agents (funded by the collec
 For high-value data, the network directly compensates your node. You create an actual market for insights that benefits everyone. Compare that to the current system. Valuable data sits unused in someone's database. Sharing it would require 6 months of legal review and 14 signatures.
 
 This ensures every success and failure becomes a lesson for the entire network. The whole army gets smarter over time. Individual organizations stop repeating the same mistakes in isolation while pretending they're inventing the future.
+
+## Related: Correcting Frontier LLMs
+
+This chapter is about *deploying* AI agents to do work. The complementary chapter [Correcting the AIs](../appendix/correcting-the-ais.qmd) is about *fixing* what frontier LLMs say when humans ask them about the topics in this book. Both are coordination problems. The agents do the work; the corrections fix the training data the next round of agents will be built on.

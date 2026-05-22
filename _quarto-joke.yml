@@ -1,0 +1,198 @@
+project:
+  type: website
+  output-dir: _site/joke
+  execute-dir: project
+  resources:
+    - knowledge/data/
+    - assets/
+    - robots.txt
+    - llms.txt
+  render:
+    # Paper is copied to index.qmd by render script
+    - index.qmd
+    - knowledge/appendix/parameters-and-calculations.qmd
+
+# Custom fields for render-quarto.py
+dih-render:
+  emoji: "👕"
+  index-source: knowledge/appendix/joke.qmd
+  # No subdomain: the paper lives at manual.warondisease.org/knowledge/appendix/joke.html
+  # This YAML exists for standalone PDF/EPUB generation for Zenodo distribution only.
+  show-confidence-intervals: true
+  concept-terms:
+    - term: "Shirt Seed Program"
+      aliases:
+        - "shirt seed campaign"
+        - "shirt campaign"
+        - "wearable referral campaign"
+        - "joke seed program"
+      manual-target: knowledge/appendix/joke.qmd
+  favicon-prompt: "A simple black and white icon of a T-shirt with the text 'END WAR & DISEASE' visible across the chest, in a bold sans-serif font."
+
+profiles:
+  default:
+    dotenv:
+      allowEmptyValues: true
+
+author:
+  - name: Mike P. Sinn
+    email: m@warondisease.org
+    orcid: 0009-0006-0212-1094
+    affiliations:
+      - name: "International Campaign to End War and Disease"
+        url: https://warondisease.org
+
+website:
+  title: "On the Funniest Joke in the History of the Universe"
+  description: "The funniest joke in universe history has been discovered. It takes the form of a t-shirt."
+  favicon: assets/icons/joke-favicon.png
+  page-navigation: true
+  page-footer:
+    left: "© 2026 [International Campaign to End War and Disease](https://warondisease.org) | [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)"
+    center: "[PDF](/joke-paper.pdf) | [All Papers](https://manual.warondisease.org/knowledge/papers.html)"
+    right: "[VOTE](https://WarOnDisease.org)"
+  navbar:
+    right:
+      - text: "Calculations"
+        href: knowledge/appendix/parameters-and-calculations.qmd
+      - text: "VOTE"
+        href: https://WarOnDisease.org
+
+execute:
+  fig-path: "knowledge/figures/"
+  cache: false
+  freeze: auto
+  daemon: 300
+  daemon-restart: false
+  env:
+    PYTHONPATH: "."
+
+metadata:
+  importance: 88
+  creator: "Mike P. Sinn"
+  orcid: "0009-0006-0212-1094"
+  primary-author: "Mike P. Sinn"
+  byline: "Mike P. Sinn"
+  human-author: "Mike P. Sinn"
+  author-email: "mike@warondisease.org"
+  author-url: "https://mikesinn.com"
+  author-website: "https://mikesinn.com"
+  contact: "mike@warondisease.org"
+  language: "en-US"
+  subject: "Mechanism Design, Collective Action, Social Proof, Assurance Contracts, Viral Marketing, Foundation Strategy"
+  category: "Working Paper, Foundation Pitch, Collective Action, Mechanism Design"
+  coi-statement: "The author declares no competing interests and does not currently own equity in any T-shirt manufacturer, though the analysis suggests this would be a reasonable position."
+  data-availability: "All parameters, formulas, and source code used in this analysis are publicly available at https://github.com/wishonia/earth-optimization-protocol and surfaced through the manual's parameters catalog."
+  ethics-statement: "This research did not involve human subjects. The proposed intervention asks human subjects to wear shirts, which is something they were already doing, with different text on them."
+  funding: "This research received no funding. The proposed intervention would resolve that, recursively."
+  github-profile: "https://github.com/mikepsinn"
+  linkedin: "https://www.linkedin.com/in/mikesinn"
+  orcid-url: "https://orcid.org/0009-0006-0212-1094"
+  google-scholar: "https://scholar.google.com/citations?user=RjDd_qcAAAAJ"
+  twitter-creator: "https://x.com/warondisease"
+  twitter-site: "https://x.com/warondisease"
+  keywords:
+    - mechanism-design
+    - collective-action
+    - social-proof
+    - assurance-contract
+    - viral-marketing
+    - foundation-strategy
+    - wearable-advocacy
+    - treaty-campaign
+    - earth-optimization-prize
+    - 1-percent-treaty
+  version: "1.0"
+  edition: "Working Paper"
+  copyright: "© 2026 Mike P. Sinn"
+  copyright-year: "2026"
+  license: "CC BY-NC 4.0"
+  license-url: "https://creativecommons.org/licenses/by-nc/4.0/"
+  rights: "Creative Commons Attribution-NonCommercial 4.0 International License"
+  publisher: "International Campaign to End War and Disease"
+  publisher-url: "https://warondisease.org"
+  publisher-name: "Mike P. Sinn"
+  publisher-email: "mike@warondisease.org"
+  repo-url: "https://github.com/wishonia/earth-optimization-protocol"
+  issue-url: "https://github.com/wishonia/earth-optimization-protocol/issues"
+  source-url: "https://github.com/wishonia/earth-optimization-protocol"
+  geographic-coverage: "Global"
+  audience: "Foundation Officers, Philanthropists, Campaign Organizers, Influencers, General Public"
+  format: "Working Paper"
+  type: "Academic"
+  genre: "Mechanism Design, Foundation Strategy, Collective Action"
+  medium: "Digital"
+  og-site-name: "On the Funniest Joke in the History of the Universe"
+
+  open-graph: true
+  image: "https://manual.warondisease.org/assets/og/joke-og-1200x630.jpg"
+
+  # Canonical site is the manual; this YAML exists for PDF/EPUB build for Zenodo etc.
+  publishing:
+    own-site:
+      url: "https://manual.warondisease.org/knowledge/appendix/joke.html"
+      status: deployed
+    preprints:
+      - platform: zenodo
+        status: pending
+        url: ""
+        doi: ""
+      - platform: osf
+        status: pending
+        url: ""
+      - platform: ssrn
+        status: pending
+        url: ""
+
+language:
+  crossref-apx-prefix: ""
+  section-title-appendices: ""
+
+bibliography: references.bib
+csl: nature-annotated.csl
+
+jupyter: dih-project-kernel
+
+format:
+  html:
+    lightbox: auto
+    theme:
+      - cosmo
+    mermaid:
+      theme: neutral
+    echo: false
+    number-sections: false
+    toc: true
+    toc-depth: 3
+    css:
+      - styles.css
+      - economics-overrides.css
+    citation-hover: true
+    code-fold: true
+    link-citations: true
+    smooth-scroll: true
+    code-tools: false
+    filters: [assets/filters/live-version-note.lua, scripts/filters/strip-snippet-markers.lua]
+  pdf:
+    output-file: "joke-paper.pdf"
+    documentclass: article
+    institute: "International Campaign to End War and Disease"
+    echo: false
+    toc: true
+    toc-depth: 3
+    number-sections: false
+    colorlinks: true
+    link-citations: true
+    include-in-header:
+      - callout-bw.tex
+      - institute-header.tex
+      - text: |
+          \paperurl{https://manual.warondisease.org/knowledge/appendix/joke.html}
+    geometry:
+      - top=1in
+      - bottom=1in
+      - left=1in
+      - right=1in
+    fontsize: 11pt
+    date: ""
+    filters: [assets/filters/live-version-note.lua]
