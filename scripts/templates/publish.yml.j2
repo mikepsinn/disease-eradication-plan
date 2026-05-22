@@ -102,6 +102,10 @@ jobs:
       - name: "Deploy {{ job.display_name }} to Netlify"
         if: {% raw %}${{ (github.event_name == 'push' && github.ref == 'refs/heads/develop') || (github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/develop') }}{% endraw %}
         run: |
+          if [ -z "$NETLIFY_SITE_ID" ]; then
+            echo "Missing GitHub Actions secret {{ job.netlify_secret }}"
+            exit 1
+          fi
           npm install -g netlify-cli
           netlify deploy \
             --dir='{{ job.build_dir }}' \
@@ -110,6 +114,6 @@ jobs:
             --message="Deploy {{ job.config_name }} from {% raw %}${{ github.ref_name }}{% endraw %}"
         env:
           NETLIFY_AUTH_TOKEN: {% raw %}${{ secrets.NETLIFY_AUTH_TOKEN }}{% endraw %}
-          NETLIFY_SITE_ID: {{ job.netlify_site_id }}
+          NETLIFY_SITE_ID: {% raw %}${{ secrets.{% endraw %}{{ job.netlify_secret }}{% raw %} }}{% endraw %}
         timeout-minutes: 5
 {% endfor %}

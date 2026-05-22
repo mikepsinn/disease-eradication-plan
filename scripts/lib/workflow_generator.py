@@ -50,8 +50,8 @@ class JobConfig:
     configured_formats: List[str] # e.g. ["html", "pdf"]
     downloadable_formats: List[str]  # subset of configured_formats
     artifact_render_format: str | None  # explicit --to format, or None for all configured formats
-    netlify_site_id: str | None   # Direct site ID from config (preferred)
-    netlify_secret: str           # Fallback: "NETLIFY_ECONOMICS_SITE_ID"
+    netlify_site_id: str | None   # Configured site ID, used as a deploy opt-in
+    netlify_secret: str           # GitHub secret that stores the deploy site ID
     upload_to_zenodo: bool        # True for papers
     deploy_to_netlify: bool       # True for all
 
@@ -72,7 +72,7 @@ class JobConfig:
         else:
             title = config.get('website', {}).get('title', '')
 
-        # Get Netlify site ID from dih-render section (preferred over secrets)
+        # Get Netlify site ID from dih-render section for setup inventory and deploy opt-in
         dih_render = config.get('dih-render', {})
         netlify_site_id = dih_render.get('netlify-site-id')
         site_url = get_config_site_url(config)
@@ -178,7 +178,7 @@ def infer_build_dir(config_name: str, output_dir: str, project_type: str) -> str
 
 def derive_netlify_secret(config_name: str) -> str:
     """Derive Netlify secret name from config name."""
-    if config_name == "book":
+    if config_name in ("book", "manual"):
         return "NETLIFY_MAIN_SITE_ID"
     return f"NETLIFY_{config_name.upper().replace('-', '_')}_SITE_ID"
 

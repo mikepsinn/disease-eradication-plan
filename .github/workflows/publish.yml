@@ -102,6 +102,10 @@ jobs:
       - name: "Deploy Build How to End War and Disease to Netlify"
         if: ${{ (github.event_name == 'push' && github.ref == 'refs/heads/develop') || (github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/develop') }}
         run: |
+          if [ -z "$NETLIFY_SITE_ID" ]; then
+            echo "Missing GitHub Actions secret NETLIFY_MAIN_SITE_ID"
+            exit 1
+          fi
           npm install -g netlify-cli
           netlify deploy \
             --dir='_build_temp/manual/_manual/warondisease' \
@@ -110,5 +114,5 @@ jobs:
             --message="Deploy manual from ${{ github.ref_name }}"
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: 4e36b0d6-9b80-49e2-bf16-eb4d2f79f062
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_MAIN_SITE_ID }}
         timeout-minutes: 5
