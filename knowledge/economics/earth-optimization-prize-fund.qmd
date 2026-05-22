@@ -206,6 +206,8 @@ Most novel mechanisms wait for an institutional host that never arrives. This on
 
 The first host's job is to start the broadcast, not to own the network. Later hosts fork additional pool instances using the protocol spec; custody transfers preserve all existing deposit terms.
 
+**The 2026 regulatory environment makes the cheapest path also the safest one.** Structure the v1 pool as restricted charitable gifts to a 501(c)(3) (the existing host nonprofit) with refund provisions tied to objective oracle conditions. Under the Atkins-era SEC's [March 2026 Interpretive Release](https://www.sec.gov/files/rules/interp/2026/33-11412.pdf), this arrangement is well outside the "digital security" category of the new five-token taxonomy: depositors do not expect profit from others' efforts; the "return" is treaty passage and disease eradication, which are public goods, not investor profit. FinCEN's AML/CFT program requirement for investment advisers is delayed to January 1, 2028 and the agency is reconsidering scope. A token-based VOTE points layer can be issued through a Wyoming DAO LLC alongside the charitable wrapper and qualifies as a "digital tool" under the new taxonomy (utility-based, earned through verified-voter recruitment, not pre-purchased as an investment). The result: a launch path that's 90% cheaper and 95% faster than the same launch in 2024 would have been. State-level money-transmitter rules (NY DFS, CA DFPI) are still the bright lines and need a per-state opinion before accepting deposits in those jurisdictions; everything else has loosened.
+
 ### Three things gate the first deposit
 
 1. **Legal template, attorney-reviewed.** A deposit agreement (the "v1 assurance contract") documenting what happens in the success branch and what happens in the failure branch. Written in plain English; reviewed by one securities attorney in the operating jurisdiction. Budget: $5K-$15K one-time. This is the load-bearing item. Without it, the assurance structure is just talk.
@@ -295,8 +297,10 @@ Track these. Your launch plan depends on which ones land.
 - **Equal Opportunity for All Investors Act.** An SEC exam pathway to accredited status with no wealth test.
 - **DTC digital-twin program** (2026). On-chain versions of SEC-registered securities, which lowers the transfer-agent cost for tokenized shells.
 - **Securitize, Ondo, Superstate.** Operating SEC-registered tokenized funds today. Talk to them before you design anything tokenized from scratch.
+- **SEC Interpretive Release on crypto assets** ([March 17, 2026](https://www.sec.gov/files/rules/interp/2026/33-11412.pdf)). The Atkins-era SEC's five-token taxonomy puts utility-like tokens outside "digital security" status. A proposed Token Safe Harbor would add startup ($5M) and fundraising ($75M) exemptions. Interpretive guidance is faster than legislation and can already be relied on, but is reversible by a future SEC chair. Most relevant to structure G (Securitize tokenized) and any token-based VOTE points layer.
+- **FinCEN AML/CFT delay for investment advisers** (now January 1, 2028). Reduces the compliance burden for structures B, C, F, G, and J during the launch window.
 
-Structures A and I need none of these to launch. Structures B, C, and H get cheaper and broader if the INVEST Act passes. Structures G and J need at least one of these bills for retail access. Plan for both the pass and the fail case.
+Structures A and I need none of these to launch. Structures B, C, and H get cheaper and broader if the INVEST Act passes. Structures G and J get cheaper and broader on multiple of these landing. Plan for both the pass and the fail case on legislation; the interpretive guidance is already in effect.
 
 ## PRIZE vs IAB vs Conventional Retirement
 
