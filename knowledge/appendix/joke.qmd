@@ -1,7 +1,6 @@
 ---
-title: 'On the Funniest Joke in the History of the Universe'
-subtitle: 'A Discovery, with Proof, Distributed as a T-Shirt'
-description: 'The funniest joke in universe history has been discovered. The proof: trade one apocalypse for disease eradication. The implementation: a t-shirt.'
+title: 'The Funniest Joke in the Universe'
+description: 'How to end war and disease through vandalism.'
 abstract: |
   We report the discovery and proof of the funniest joke in the history of the universe. The joke takes the form of a t-shirt.
 
@@ -71,13 +70,13 @@ Wear it on August 6. That is [Earth Optimization Day](../strategy/earth-optimiza
 
 It takes about 100 nuclear weapons to cause a nuclear winter and end civilization. Humanity has approximately 12,000 of them. That is enough for {{< var nuclear_winter_overkill_factor >}} apocalypses [@nuke-winter-150tg].
 
-The proposal is to sacrifice one of these apocalypses. Specifically: redirect 1% of military spending to pragmatic clinical trials. That redirect multiplies global trial capacity by {{< var dfda_trial_capacity_multiplier >}}.
+Sacrifice one apocalypse. Specifically: redirect 1% of military spending to pragmatic clinical trials. That redirect multiplies global trial capacity by {{< var dfda_trial_capacity_multiplier >}}.
 
-At the current rate, humanity produces about {{< var new_disease_first_treatments_per_year_nounit >}} new disease treatments per year. Approximately 95% of known diseases have zero. At that rate, clearing the backlog takes **{{< var status_quo_queue_clearance_years >}}**. With the redirect, it takes **{{< var dfda_queue_clearance_years >}}**.
+Humanity currently produces about {{< var new_disease_first_treatments_per_year_nounit >}} new disease treatments per year. About 95% of known diseases have zero treatments. At that rate, clearing the backlog takes **{{< var status_quo_queue_clearance_years >}}**. With the redirect, it takes **{{< var dfda_queue_clearance_years >}}**.
 
 The difference between {{< var status_quo_queue_clearance_years_nounit >}} years and {{< var dfda_queue_clearance_years_nounit >}} years is the difference between "your great-great-grandchildren might see cures" and "you might see cures, in your lifetime."
 
-The risk we are protecting against by keeping the current ratio is small: your annual chance of dying in a terrorist attack is approximately 1 in {{< var annual_terrorism_death_risk_denominator >}}. The risk we are not protecting against by keeping the current ratio is enormous: your lifetime chance of suffering and dying from a disease is approximately 100%. The current spending ratio funds the smaller risk at the expense of the larger one. The shirt is asking you to notice.
+The risk we are protecting against is small: your annual chance of dying in a terrorist attack is about 1 in {{< var annual_terrorism_death_risk_denominator >}}. The risk we are not protecting against is enormous: your lifetime chance of suffering and dying from a disease is approximately 100%. The current spending ratio funds the smaller risk at the expense of the larger one. The shirt is asking you to notice.
 
 The same redirect also makes everyone richer. Disease costs the economy a lot. Starting wars costs even more (Iran is the current example: the US has already spent about $200B on top of its trillion-dollar annual baseline, and the war is projected to cost humanity about $2T in lost trade and broken infrastructure [@gdp-trajectories-paper-2025]). Run the model out 15 years with the redirect plus the peace effects that follow, and global GDP ends up about {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}} the current-trajectory baseline.
 
@@ -95,7 +94,7 @@ The size of the number is not an argument against the number. It is what the num
 
 ## The Conversations The Shirt Starts
 
-When you wear the shirt, humans will ask you about it. They will raise three objections in roughly this order. Each one has an answer.
+When you wear the shirt, humans will ask you about it. They will raise three objections in this order. Each one has an answer.
 
 ### "Your enemies will invade you."
 
@@ -147,23 +146,23 @@ The argument above is not complicated. It uses arithmetic and one assumption (hu
 2. **No one has coordinated humanity to do this before.** Coordinating large numbers of humans is hard. The shirt solves it the same way every previous social cascade solved it: a small number of visible humans go first, the rest copy because copying is what humans do.
 3. **The math is large enough that the first reaction is disbelief.** The unconditional ROI on the seed program is {{< var shirt_program_roi_ratio >}}-to-one. This is not a typo. The ratio is large because the denominator (a {{< var shirt_seed_program_total_usd >}} seed program) is small and the numerator ({{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}} of value from ending war and disease) is the species-scale problem the seed is unlocking.
 
-## The Primary Risk
+## On the Greatest Tragedy in the History of the Universe
 
-The math is right. The mechanism is designed. The cost is small. The trigger is a permanent marker. None of those things is what can fail.
+The math is right. The mechanism is fully specified. The cost is small. The trigger is a permanent marker. What can fail is attention.
 
-What can fail is attention. Each step in the chain (hear "funniest joke in universe history," click, read, understand, find it funny, recognize the mechanism, pick up a marker, do it) filters for some combination of attention span, humor comprehension, willingness to engage with an unfamiliar frame, and physical follow-through. If half of humans clear each step and there are seven steps, the survival rate is about 0.8% of the population. That might be enough for the cascade. It might not.
+Each step in the chain (hear "funniest joke in universe history," click, read, understand, find it funny, recognize the mechanism, pick up a marker, do it) filters for some combination of attention span, humor comprehension, willingness to engage with an unfamiliar frame, and physical follow-through. If half of humans clear each step and there are seven steps, the survival rate is about 0.8% of the population. That might be enough for the cascade. It might not.
 
-There is a recursive cruelty inside the risk. The diseases that erode attention (long COVID, Alzheimer's, depression, chronic pain) are among the diseases the treaty would eradicate. The humans most in need of the cure are the ones least cognitively equipped to process the mechanism that produces it. The system is eating its own repair capacity.
+There is a recursive cruelty inside this. The diseases that erode attention (long COVID, Alzheimer's, depression, chronic pain) are among the diseases the treaty would eradicate. The humans most in need of the cure are the ones least cognitively equipped to process the mechanism that produces it. The system eats its own repair capacity.
 
 If the cascade fails because humans cannot hold focus for sixty seconds, the binding constraint on civilization is not resources, not technology, not coordination, not political will. It is attention. The cost of human inattention measured against this specific opportunity is approximately 150,000 lives per day, every day, until the mechanism propagates or disease is eradicated by some slower path centuries from now. **Quantitatively, this would be the greatest known tragedy in the world.**
 
-But the joke is designed to compensate. You do not need all humans to get the joke. You need enough humans to get the joke. The chain letter comparison says the threshold is lower than intuition suggests: chain letters worked despite being unfunny, costly, and fake, and a large fraction of the population engaged with them anyway. The question is not whether 8 billion people can hold focus for sixty seconds. It is whether {{< var shirt_seed_wearers_threshold >}} can.
+The joke's design compensates for exactly this. You do not need all humans to get the joke. You need enough humans to get the joke. The chain letter comparison says the threshold is lower than intuition suggests: chain letters worked despite being unfunny, costly, and fake, and a large fraction of the population engaged with them anyway. The question is not whether 8 billion people can hold focus for sixty seconds. It is whether {{< var shirt_seed_wearers_threshold >}} can.
 
-The joke structure distributes cognitive load across the chain. The person whose shirts you defaced does not need to understand the mechanism. They need to ask "why is there marker on my shirts" and receive the explanation from someone who loves them and who already understood it. The prankster does the understanding. The pranked person does the wearing. The people who see the shirt do the wondering. Some fraction of the wonderers become pranksters. Not all. Just enough.
+The joke structure also distributes the cognitive load across the chain. The person whose shirts you defaced does not need to understand the mechanism. They need to ask "why is there marker on my shirts" and receive the explanation from someone who loves them and who already understood it. The prankster does the understanding. The pranked person does the wearing. The people who see the shirt do the wondering. Some fraction of the wonderers become pranksters. Not all. Just enough.
 
-This is why the joke frame outperforms every previous version of the pitch. "Read a 200-page book about global resource allocation" requires sustained attention from every participant. "Someone wrote on your shirt, here is why" requires sustained attention from zero participants. The understanding propagates through conversation, not through reading. Conversation is the one cognitive activity humans perform even when their attention span for everything else is gone.
+The joke frame outperforms "Read a 200-page book about global resource allocation" which requires sustained attention from every participant. "Someone wrote on your shirt, here is why" requires no sustained attention. The understanding propagates through conversation, not through reading. Conversation is the one cognitive activity humans perform even when their attention span for everything else is gone.
 
-So the tragedy framing is philosophically correct and practically too pessimistic. The mechanism is built around the constraint above. That is why it runs on humor and love and vandalism rather than on argument and data and policy papers. The design is humans-as-they-are, not humans-as-one-wishes-they-were. The only way to find out if the design is sufficient is to launch it.
+The mechanism is built around the constraint above. That is why it runs on humor and love and vandalism rather than on argument and data and policy papers. The design is humans-as-they-are, not humans-as-one-wishes-they-were. The only way to find out if the design is sufficient is to play the joke on everyone you love.
 
 ## What Your Shirt Earns You
 
@@ -297,4 +296,13 @@ The recipient cannot defeat this defense without admitting they are choosing to 
 - The annual coordinated launch day is [Earth Optimization Day](../strategy/earth-optimization-day.qmd) (August 6).
 - The first-year operator plan that slots into is [Getting Started](../strategy/getting-started.qmd).
 - The full campaign budget context is [Campaign Budget](../economics/campaign-budget.qmd).
+
+
+- [Wishocracy](../solution/wishocracy.qmd) [@wishocracy-paper-2025]: the targeting system that tells humans and AI agents what to work on, so the redirected military budget actually goes to the highest-priority problems.
+- [Optimal Policy Generator](../appendix/optimal-policy-generator-spec.qmd) [@opg-paper-2025]: generates the policies the redirected budget funds, scored on net societal value rather than lobbying intensity.
+- [Optimal Budget Generator](../appendix/optimal-budget-generator-spec.qmd) [@obg-paper-2025]: generates budgets at the level of specific programs and trials.
+- [Optimocracy](../solution/optimocracy.qmd) [@optimocracy-paper-2025]: the evidence machine that scores which policies actually moved the two terminal metrics.
+- [Court of Humanity](../solution/court-of-humanity.qmd) [@court-of-humanity-paper-2025]: the accountability mechanism for politicians.
+
+
 - The math behind every parameter is at [Parameters & Calculations](parameters-and-calculations.qmd).

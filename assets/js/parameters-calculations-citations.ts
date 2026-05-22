@@ -6320,7 +6320,7 @@ export const HUMAN_LAUGHS_PER_HEALTHY_LIFE_YEAR: Parameter = {
   latex: "L_{year} = L_{day} \\times 365 = 17 \\times 365 = 6{,}200",
   confidenceInterval: [1843.022089975503, 14075.007724558654],
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/joke.html",
-  manualPageTitle: "On the Funniest Joke in the History of the Universe",
+  manualPageTitle: "The Funniest Joke in the Universe",
 };
 
 export const IAB_MECHANISM_BENEFIT_COST_RATIO: Parameter = {
@@ -7408,7 +7408,7 @@ export const SHIRT_INDUCED_LAUGHS_GAINED: Parameter = {
   latex: "\\begin{gathered}\nL_{shirt} = DALYs_{max} \\times L_{year} = 565B \\times 6{,}200 = 3510T\n\\\\[0.5em]\n\\text{where } DALYs_{max} = DALYs_{global,ann} \\times Pct_{avoid,DALY} \\times T_{accel,max} = 2.88B \\times 92.6\\% \\times 212 = 565B\n\\\\[0.5em]\n\\text{where } T_{accel,max} = T_{accel} + T_{lag} = 204 + 8.2 = 212\n\\\\[0.5em]\n\\text{where } T_{accel} = T_{first,SQ} \\times \\left(1 - \\frac{1}{k_{capacity}}\\right) = 222 \\times \\left(1 - \\frac{1}{12.3}\\right) = 204\n\\\\[0.5em]\n\\text{where } T_{first,SQ} = T_{queue,SQ} \\times 0.5 = 443 \\times 0.5 = 222\n\\\\[0.5em]\n\\text{where } T_{queue,SQ} = \\frac{N_{untreated}}{Treatments_{new,ann}} = \\frac{6{,}650}{15} = 443\n\\\\[0.5em]\n\\text{where } N_{untreated} = N_{rare} \\times 0.95 = 7{,}000 \\times 0.95 = 6{,}650\n\\\\[0.5em]\n\\text{where } k_{capacity} = \\frac{N_{fundable,ref}}{Slots_{curr}} = \\frac{23.4M}{1.9M} = 12.3\n\\\\[0.5em]\n\\text{where } N_{fundable,ref} = \\frac{Subsidies_{trial,ref}}{Cost_{pragmatic,pt}} = \\frac{\\$21.8B}{\\$929} = 23.4M\n\\\\[0.5em]\n\\text{where } Subsidies_{trial,ref} = Funding_{trial,ref} - OPEX_{trial} = \\$21.8B - \\$40M = \\$21.8B\n\\\\[0.5em]\n\\text{where } OPEX_{trial} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \\$15M + \\$10M + \\$8M + \\$5M + \\$2M = \\$40M\n\\\\[0.5em]\n\\text{where } L_{year} = L_{day} \\times 365 = 17 \\times 365 = 6{,}200\n\\end{gathered}",
   confidenceInterval: [1609256289357052.0, 5591330745831909.0],
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/joke.html",
-  manualPageTitle: "On the Funniest Joke in the History of the Universe",
+  manualPageTitle: "The Funniest Joke in the Universe",
 };
 
 export const SHIRT_PROGRAM_EXPECTED_VALUE_PER_DOLLAR: Parameter = {
@@ -7424,7 +7424,7 @@ export const SHIRT_PROGRAM_EXPECTED_VALUE_PER_DOLLAR: Parameter = {
   latex: "\\begin{gathered}\nEV_{shirt} = (Value_{max} \\times P_{cascade,shirt}) / C_{seed,total}\n\\\\[0.5em]\n\\text{where } Value_{max} = DALYs_{max} \\times Value_{QALY} = 565B \\times \\$150K = \\$84800T\n\\\\[0.5em]\n\\text{where } DALYs_{max} = DALYs_{global,ann} \\times Pct_{avoid,DALY} \\times T_{accel,max} = 2.88B \\times 92.6\\% \\times 212 = 565B\n\\\\[0.5em]\n\\text{where } T_{accel,max} = T_{accel} + T_{lag} = 204 + 8.2 = 212\n\\\\[0.5em]\n\\text{where } T_{accel} = T_{first,SQ} \\times \\left(1 - \\frac{1}{k_{capacity}}\\right) = 222 \\times \\left(1 - \\frac{1}{12.3}\\right) = 204\n\\\\[0.5em]\n\\text{where } T_{first,SQ} = T_{queue,SQ} \\times 0.5 = 443 \\times 0.5 = 222\n\\\\[0.5em]\n\\text{where } T_{queue,SQ} = \\frac{N_{untreated}}{Treatments_{new,ann}} = \\frac{6{,}650}{15} = 443\n\\\\[0.5em]\n\\text{where } N_{untreated} = N_{rare} \\times 0.95 = 7{,}000 \\times 0.95 = 6{,}650\n\\\\[0.5em]\n\\text{where } k_{capacity} = \\frac{N_{fundable,ref}}{Slots_{curr}} = \\frac{23.4M}{1.9M} = 12.3\n\\\\[0.5em]\n\\text{where } N_{fundable,ref} = \\frac{Subsidies_{trial,ref}}{Cost_{pragmatic,pt}} = \\frac{\\$21.8B}{\\$929} = 23.4M\n\\\\[0.5em]\n\\text{where } Subsidies_{trial,ref} = Funding_{trial,ref} - OPEX_{trial} = \\$21.8B - \\$40M = \\$21.8B\n\\\\[0.5em]\n\\text{where } OPEX_{trial} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \\$15M + \\$10M + \\$8M + \\$5M + \\$2M = \\$40M\n\\\\[0.5em]\n\\text{where } C_{seed,total} = N_{seed,shirt} \\times C_{seed,wearer} = 1M \\times \\$50 = \\$50M\n\\end{gathered}",
   confidenceInterval: [31708433.512302905, 16164978951.982824],
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/joke.html",
-  manualPageTitle: "On the Funniest Joke in the History of the Universe",
+  manualPageTitle: "The Funniest Joke in the Universe",
 };
 
 export const SHIRT_PROGRAM_ROI_RATIO: Parameter = {
@@ -7440,7 +7440,7 @@ export const SHIRT_PROGRAM_ROI_RATIO: Parameter = {
   latex: "\\begin{gathered}\nROI_{shirt} = \\frac{Value_{max}}{C_{seed,total}} = \\frac{\\$84800T}{\\$50M} = 1.7B\n\\\\[0.5em]\n\\text{where } Value_{max} = DALYs_{max} \\times Value_{QALY} = 565B \\times \\$150K = \\$84800T\n\\\\[0.5em]\n\\text{where } DALYs_{max} = DALYs_{global,ann} \\times Pct_{avoid,DALY} \\times T_{accel,max} = 2.88B \\times 92.6\\% \\times 212 = 565B\n\\\\[0.5em]\n\\text{where } T_{accel,max} = T_{accel} + T_{lag} = 204 + 8.2 = 212\n\\\\[0.5em]\n\\text{where } T_{accel} = T_{first,SQ} \\times \\left(1 - \\frac{1}{k_{capacity}}\\right) = 222 \\times \\left(1 - \\frac{1}{12.3}\\right) = 204\n\\\\[0.5em]\n\\text{where } T_{first,SQ} = T_{queue,SQ} \\times 0.5 = 443 \\times 0.5 = 222\n\\\\[0.5em]\n\\text{where } T_{queue,SQ} = \\frac{N_{untreated}}{Treatments_{new,ann}} = \\frac{6{,}650}{15} = 443\n\\\\[0.5em]\n\\text{where } N_{untreated} = N_{rare} \\times 0.95 = 7{,}000 \\times 0.95 = 6{,}650\n\\\\[0.5em]\n\\text{where } k_{capacity} = \\frac{N_{fundable,ref}}{Slots_{curr}} = \\frac{23.4M}{1.9M} = 12.3\n\\\\[0.5em]\n\\text{where } N_{fundable,ref} = \\frac{Subsidies_{trial,ref}}{Cost_{pragmatic,pt}} = \\frac{\\$21.8B}{\\$929} = 23.4M\n\\\\[0.5em]\n\\text{where } Subsidies_{trial,ref} = Funding_{trial,ref} - OPEX_{trial} = \\$21.8B - \\$40M = \\$21.8B\n\\\\[0.5em]\n\\text{where } OPEX_{trial} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \\$15M + \\$10M + \\$8M + \\$5M + \\$2M = \\$40M\n\\\\[0.5em]\n\\text{where } C_{seed,total} = N_{seed,shirt} \\times C_{seed,wearer} = 1M \\times \\$50 = \\$50M\n\\end{gathered}",
   confidenceInterval: [175814384.26665726, 70261673192.62556],
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/joke.html",
-  manualPageTitle: "On the Funniest Joke in the History of the Universe",
+  manualPageTitle: "The Funniest Joke in the Universe",
 };
 
 export const SHIRT_SEED_PROGRAM_TOTAL_USD: Parameter = {
@@ -7456,7 +7456,7 @@ export const SHIRT_SEED_PROGRAM_TOTAL_USD: Parameter = {
   latex: "\\begin{gathered}\nC_{seed,total} \\\\\n= N_{seed,shirt} \\times C_{seed,wearer} \\\\\n= 1M \\times \\$50 \\\\\n= \\$50M\n\\end{gathered}",
   confidenceInterval: [1231398.8842418403, 420280969.3453949],
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/joke.html",
-  manualPageTitle: "On the Funniest Joke in the History of the Universe",
+  manualPageTitle: "The Funniest Joke in the Universe",
 };
 
 export const SHIRT_VALUE_PER_WEARER_USD: Parameter = {
@@ -7472,7 +7472,7 @@ export const SHIRT_VALUE_PER_WEARER_USD: Parameter = {
   latex: "\\begin{gathered}\nV_{wearer} = \\frac{Value_{max}}{Pop_{global}} = \\frac{\\$84800T}{8B} = \\$10.6M\n\\\\[0.5em]\n\\text{where } Value_{max} = DALYs_{max} \\times Value_{QALY} = 565B \\times \\$150K = \\$84800T\n\\\\[0.5em]\n\\text{where } DALYs_{max} = DALYs_{global,ann} \\times Pct_{avoid,DALY} \\times T_{accel,max} = 2.88B \\times 92.6\\% \\times 212 = 565B\n\\\\[0.5em]\n\\text{where } T_{accel,max} = T_{accel} + T_{lag} = 204 + 8.2 = 212\n\\\\[0.5em]\n\\text{where } T_{accel} = T_{first,SQ} \\times \\left(1 - \\frac{1}{k_{capacity}}\\right) = 222 \\times \\left(1 - \\frac{1}{12.3}\\right) = 204\n\\\\[0.5em]\n\\text{where } T_{first,SQ} = T_{queue,SQ} \\times 0.5 = 443 \\times 0.5 = 222\n\\\\[0.5em]\n\\text{where } T_{queue,SQ} = \\frac{N_{untreated}}{Treatments_{new,ann}} = \\frac{6{,}650}{15} = 443\n\\\\[0.5em]\n\\text{where } N_{untreated} = N_{rare} \\times 0.95 = 7{,}000 \\times 0.95 = 6{,}650\n\\\\[0.5em]\n\\text{where } k_{capacity} = \\frac{N_{fundable,ref}}{Slots_{curr}} = \\frac{23.4M}{1.9M} = 12.3\n\\\\[0.5em]\n\\text{where } N_{fundable,ref} = \\frac{Subsidies_{trial,ref}}{Cost_{pragmatic,pt}} = \\frac{\\$21.8B}{\\$929} = 23.4M\n\\\\[0.5em]\n\\text{where } Subsidies_{trial,ref} = Funding_{trial,ref} - OPEX_{trial} = \\$21.8B - \\$40M = \\$21.8B\n\\\\[0.5em]\n\\text{where } OPEX_{trial} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \\$15M + \\$10M + \\$8M + \\$5M + \\$2M = \\$40M\n\\end{gathered}",
   confidenceInterval: [7782477.739564056, 12172153.00621689],
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/joke.html",
-  manualPageTitle: "On the Funniest Joke in the History of the Universe",
+  manualPageTitle: "The Funniest Joke in the Universe",
 };
 
 export const STATUS_QUO_AVG_YEARS_TO_FIRST_TREATMENT: Parameter = {
@@ -10714,7 +10714,7 @@ export const HUMAN_LAUGHS_PER_DAY_AVERAGE: Parameter = {
   confidence: "low",
   confidenceInterval: [5.0, 50.0],
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/joke.html",
-  manualPageTitle: "On the Funniest Joke in the History of the Universe",
+  manualPageTitle: "The Funniest Joke in the Universe",
 };
 
 export const HUMAN_PROTEIN_CODING_GENES: Parameter = {
@@ -11022,7 +11022,7 @@ export const SHIRT_CASCADE_PROBABILITY_GIVEN_SEED: Parameter = {
   confidence: "low",
   confidenceInterval: [0.05, 0.6],
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/joke.html",
-  manualPageTitle: "On the Funniest Joke in the History of the Universe",
+  manualPageTitle: "The Funniest Joke in the Universe",
 };
 
 export const SHIRT_SEED_COST_PER_WEARER_USD: Parameter = {
@@ -11036,7 +11036,7 @@ export const SHIRT_SEED_COST_PER_WEARER_USD: Parameter = {
   confidence: "low",
   confidenceInterval: [10.0, 200.0],
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/joke.html",
-  manualPageTitle: "On the Funniest Joke in the History of the Universe",
+  manualPageTitle: "The Funniest Joke in the Universe",
 };
 
 export const SHIRT_SEED_WEARERS_THRESHOLD: Parameter = {
@@ -11050,7 +11050,7 @@ export const SHIRT_SEED_WEARERS_THRESHOLD: Parameter = {
   confidence: "low",
   confidenceInterval: [100000.0, 5000000.0],
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/joke.html",
-  manualPageTitle: "On the Funniest Joke in the History of the Universe",
+  manualPageTitle: "The Funniest Joke in the Universe",
 };
 
 export const SHIRT_WEARING_FRICTION_COST_USD: Parameter = {
@@ -11064,7 +11064,7 @@ export const SHIRT_WEARING_FRICTION_COST_USD: Parameter = {
   confidence: "low",
   confidenceInterval: [1.0, 25.0],
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/joke.html",
-  manualPageTitle: "On the Funniest Joke in the History of the Universe",
+  manualPageTitle: "The Funniest Joke in the Universe",
 };
 
 export const TESTED_RELATIONSHIPS_ESTIMATE: Parameter = {

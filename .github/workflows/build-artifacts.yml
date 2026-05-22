@@ -1695,7 +1695,7 @@ jobs:
 
 
   build-joke:
-    name: "Build On the Funniest Joke in the History of the Univers"
+    name: "Build The Funniest Joke in the Universe"
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
@@ -1762,7 +1762,7 @@ jobs:
           ~/.TinyTeX/bin/*/tlmgr update --self || true
           ~/.TinyTeX/bin/*/tlmgr install fontspec unicode-math lualatex-math luaotfload || true
 
-      - name: "Render Build On the Funniest Joke in the History of the Univers"
+      - name: "Render Build The Funniest Joke in the Universe"
         run: python scripts/render-quarto.py joke --to pdf
         env:
           GOOGLE_GENERATIVE_AI_API_KEY: ${{ (secrets.LLM_VALIDATION == 'true' || github.ref == 'refs/heads/master') && secrets.GOOGLE_GENERATIVE_AI_API_KEY || '' }}
@@ -1806,7 +1806,7 @@ jobs:
           retention-days: 7
 
 
-      - name: "Upload Build On the Funniest Joke in the History of the Univers PDF to Zenodo (draft)"
+      - name: "Upload Build The Funniest Joke in the Universe PDF to Zenodo (draft)"
         if: github.event_name == 'push' && github.ref == 'refs/heads/master'
         env:
           ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
