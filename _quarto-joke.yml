@@ -8,9 +8,11 @@ project:
     - robots.txt
     - llms.txt
   render:
-    # Paper is copied to index.qmd by render script
+    # Paper is copied to index.qmd by render script.
+    # parameters-and-calculations.qmd is omitted: it lives on the manual site and
+    # would inherit the project-level output-file when rendered to PDF, which
+    # Quarto rejects (paths are not allowed in output-file).
     - index.qmd
-    - knowledge/appendix/parameters-and-calculations.qmd
 
 # Custom fields for render-quarto.py
 dih-render:
@@ -68,6 +70,8 @@ execute:
     PYTHONPATH: "."
 
 metadata:
+  doi: "10.5281/zenodo.20336705"
+  # Zenodo Concept DOI (stable across all versions - use for citations and new versions)
   importance: 88
   creator: "Mike P. Sinn"
   orcid: "0009-0006-0212-1094"
@@ -134,9 +138,9 @@ metadata:
       status: deployed
     preprints:
       - platform: zenodo
-        status: pending
-        url: ""
-        doi: ""
+        status: auto-uploaded
+        url: "https://zenodo.org/record/20336705"
+        doi: "10.5281/zenodo.20336705"
       - platform: osf
         status: pending
         url: ""

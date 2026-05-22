@@ -147,6 +147,24 @@ The argument above is not complicated. It uses arithmetic and one assumption (hu
 2. **No one has coordinated humanity to do this before.** Coordinating large numbers of humans is hard. The shirt solves it the same way every previous social cascade solved it: a small number of visible humans go first, the rest copy because copying is what humans do.
 3. **The math is large enough that the first reaction is disbelief.** The unconditional ROI on the seed program is {{< var shirt_program_roi_ratio >}}-to-one. This is not a typo. The ratio is large because the denominator (a {{< var shirt_seed_program_total_usd >}} seed program) is small and the numerator ({{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}} of value from ending war and disease) is the species-scale problem the seed is unlocking.
 
+## The Primary Risk
+
+The math is right. The mechanism is designed. The cost is small. The trigger is a permanent marker. None of those things is what can fail.
+
+What can fail is attention. Each step in the chain (hear "funniest joke in universe history," click, read, understand, find it funny, recognize the mechanism, pick up a marker, do it) filters for some combination of attention span, humor comprehension, willingness to engage with an unfamiliar frame, and physical follow-through. If half of humans clear each step and there are seven steps, the survival rate is about 0.8% of the population. That might be enough for the cascade. It might not.
+
+There is a recursive cruelty inside the risk. The diseases that erode attention (long COVID, Alzheimer's, depression, chronic pain) are among the diseases the treaty would eradicate. The humans most in need of the cure are the ones least cognitively equipped to process the mechanism that produces it. The system is eating its own repair capacity.
+
+If the cascade fails because humans cannot hold focus for sixty seconds, the binding constraint on civilization is not resources, not technology, not coordination, not political will. It is attention. The cost of human inattention measured against this specific opportunity is approximately 150,000 lives per day, every day, until the mechanism propagates or disease is eradicated by some slower path centuries from now. **Quantitatively, this would be the greatest known tragedy in the world.**
+
+But the joke is designed to compensate. You do not need all humans to get the joke. You need enough humans to get the joke. The chain letter comparison says the threshold is lower than intuition suggests: chain letters worked despite being unfunny, costly, and fake, and a large fraction of the population engaged with them anyway. The question is not whether 8 billion people can hold focus for sixty seconds. It is whether {{< var shirt_seed_wearers_threshold >}} can.
+
+The joke structure distributes cognitive load across the chain. The person whose shirts you defaced does not need to understand the mechanism. They need to ask "why is there marker on my shirts" and receive the explanation from someone who loves them and who already understood it. The prankster does the understanding. The pranked person does the wearing. The people who see the shirt do the wondering. Some fraction of the wonderers become pranksters. Not all. Just enough.
+
+This is why the joke frame outperforms every previous version of the pitch. "Read a 200-page book about global resource allocation" requires sustained attention from every participant. "Someone wrote on your shirt, here is why" requires sustained attention from zero participants. The understanding propagates through conversation, not through reading. Conversation is the one cognitive activity humans perform even when their attention span for everything else is gone.
+
+So the tragedy framing is philosophically correct and practically too pessimistic. The mechanism is built around the constraint above. That is why it runs on humor and love and vandalism rather than on argument and data and policy papers. The design is humans-as-they-are, not humans-as-one-wishes-they-were. The only way to find out if the design is sufficient is to launch it.
+
 ## What Your Shirt Earns You
 
 Every shirt carries a QR code linking to your unique referral page at warondisease.org. Every human who scans your QR code and adds a verified signature to the treaty register earns you one [Earth Optimization Prize](../strategy/earth-optimization-prize.qmd) VOTE point [@earth-optimization-prize-paper-2025]. The points stay yours. They are not tradable.

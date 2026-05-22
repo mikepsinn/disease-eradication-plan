@@ -636,6 +636,7 @@ class ReferenceID(str, Enum):
     JHA2013 = "jha2013"
     JNJ_2023_FINANCIALS = "jnj-2023-financials"
     JOHNSON_BLOWBACK_2000 = "johnson-blowback-2000"
+    JOKE_PAPER_2026 = "joke-paper-2026"
     JUNE_2024_AMENDMENTS = "june-2024-amendments"
     KAHNEMAN_LOSS_AVERSION = "kahneman-loss-aversion"
     KAUFFMAN_HIGH_GROWTH_STARTUPS = "kauffman-high-growth-startups"
