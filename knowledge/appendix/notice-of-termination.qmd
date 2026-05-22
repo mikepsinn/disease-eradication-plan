@@ -1,0 +1,189 @@
+---
+title: 'Notice of Termination'
+description: 'A performance review and termination letter, addressed to every elected official with authority over military spending.'
+abstract: |
+  This document is a performance review and notice of termination for cause, addressed in common to every politician with authority over military spending in any jurisdiction. The finding: a {{< var military_to_government_clinical_trials_spending_ratio >}}-to-one allocation backward against the dominant risk to general welfare, sustained across the addressee's entire tenure, with zero public statements identifying the misallocation.
+
+  The cause for termination: material breach of constitutional duty. The math required to spot the misallocation is fifth-grade arithmetic. Either the addressee can do it and has chosen not to communicate the result, or the addressee cannot do it. In either case the addressee is unqualified. There is no third option.
+
+  The successor systems (Wishocracy, Optimocracy, the Optimal Policy Generator, the Optimal Budget Generator) are documented and deployable. A Performance Improvement Plan permits the addressee to avoid termination by publicly endorsing the 1% Treaty within thirty (30) days. Voting on this notice is open at warondisease.org/terminate.
+aliases:
+  - /termination.html
+  - /notice-of-termination.html
+author:
+  - name: Mike P. Sinn
+    affiliation:
+      name: International Campaign to End War and Disease
+    roles:
+      - conceptualization
+      - writing – original draft
+    email: mike@warondisease.org
+    corresponding: true
+keywords:
+  - performance review
+  - termination
+  - politicians
+  - constitutional duty
+  - general welfare
+  - 1% treaty
+  - PIP
+  - right to cure
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    number-sections: false
+  pdf:
+    documentclass: article
+    geometry: margin=1in
+    fontsize: 11pt
+scores:
+  quality: 7
+  value: 9
+  timeliness: 9
+  standalone: 9
+  voice: 8
+  importance: 9
+---
+{{< include /knowledge/includes/setup-parameters.qmd >}}
+
+**To:** Every politician with authority over military spending in any jurisdiction.
+
+**From:** The Public, on behalf of the Constitution of the addressee's jurisdiction.
+
+**Re:** Material breach of duty to promote the general Welfare.
+
+**Disposition:** Termination for cause, subject to Performance Improvement Plan.
+
+---
+
+## I. Position Description
+
+The addressee holds an elected office. The office is created by the addressee's jurisdiction's constitution or charter.
+
+In the United States, the Preamble defines the purpose of the office: "to ... promote the general Welfare." Article I, Section 8 restates it: Congress shall spend to provide for "the common Defence and general Welfare." The oath of office binds the addressee to "support and defend the Constitution."
+
+The duties are:
+
+1. Allocate public funds in proportion to threats to general welfare.
+2. Identify and publicly report material deviations from rational allocation.
+3. Vote in accordance with the general-welfare clause and the oath.
+
+Compensation: $174,000 to $400,000 USD annually (or jurisdictional equivalent), plus benefits, staff, travel, and post-office career opportunities (book deals, board seats, lobbying positions, speaking honoraria).
+
+The position does not carry discretion to substitute personal, party, or donor preferences for the constitutional duty. It does not carry discretion to allocate inverse to actual risk. It does not carry discretion to stay silent in the face of known catastrophic misallocation.
+
+## II. Performance Findings
+
+The following facts are stipulated and uncontested.
+
+**Allocation.** Global government spending on the capacity for mass killing exceeds global government spending on testing which medicines work by a factor of approximately {{< var military_to_government_clinical_trials_spending_ratio >}}.
+
+**Risk magnitudes.** Annual probability of dying in a terrorist attack: 1 in {{< var annual_terrorism_death_risk_denominator >}}. Lifetime probability of dying from disease: approximately 100%.
+
+**Math.** The allocation is inverted relative to the risk. The arithmetic required to spot this is at the level of a competent fifth-grader.
+
+**Public communication.** A search of the public record returns zero floor speeches, zero op-eds, and zero press releases from the addressee identifying the misallocation in these terms.
+
+**Tenure.** The misallocation has persisted across the addressee's entire tenure in office, and across every predecessor's in living memory.
+
+### Performance Rating
+
+| Duty (per § I) | Performance | Score |
+|:---|:---|---:|
+| Allocate funds in proportion to threats | Inverted by a factor of {{< var military_to_government_clinical_trials_spending_ratio >}} | 0 / 10 |
+| Identify deviations from rational allocation | Zero communications across tenure | 0 / 10 |
+| Vote in accordance with the general-welfare clause | See above | 0 / 10 |
+| Maintain awareness of basic arithmetic | Indeterminate (see § IV) | n/a |
+| **Overall Rating** | | **0 / 10** |
+
+## III. Prior Warnings
+
+Termination for cause requires a documented warning history. The following warnings were issued to the addressee and are part of the performance record. None were acknowledged or acted upon.
+
+| Date | Warning | Source | Acknowledged? |
+|:---|:---|:---|:---:|
+| 1961 | "Every gun that is made signifies a theft from those who hunger and are not fed." | Eisenhower, Farewell Address | No |
+| 1965 | Concentrated interests systematically outcompete diffuse beneficiaries, producing welfare-reducing allocations as the predictable equilibrium. | Olson, *Logic of Collective Action* [-@olson1965] | No |
+| 2014 | Correlation between average citizen preferences and policy outcomes: approximately zero. | Gilens & Page [-@gilens2014] | No |
+| 2023 | Childhood vaccinations return 101:1. Military spending beyond deterrence returns 0.7:1. | Copenhagen Consensus [@copenhagenconsensus2023] | No |
+| Continuous | Constituent polling consistently favors increased healthcare spending and decreased military spending. | Public polling, every major democracy | No |
+
+Five warnings. None acted upon.
+
+## IV. Cause for Termination
+
+The findings in § II and the warnings in § III are cause for termination under any reasonable employment standard. The chain:
+
+1. The addressee's job is to promote the general welfare.
+2. Promoting the general welfare requires allocating funds in proportion to threats. (If it didn't, "welfare" would mean nothing.)
+3. The addressee has, across the entire tenure, allocated funds in inverse proportion to threats.
+4. The math required to spot this is fifth-grade arithmetic.
+5. The addressee has never publicly identified the misallocation.
+
+Either the addressee can do the arithmetic and has chosen not to communicate the result, or the addressee cannot do the arithmetic. In either case the addressee is unqualified. There is no third option. ∎
+
+## V. Successor System
+
+The addressee's responsibilities will be transferred to two existing decentralized mechanisms. Both are operational. Both produce better outputs than the addressee's office has produced during the addressee's tenure.
+
+**Wishocracy** [@wishocracy-paper-2025] replaces the budget-setting function. It collects prioritization preferences from stakeholders and produces aggregate allocations weighted by stake and informed by impact data. Committees, hearings, markup sessions, conference reports, omnibus packages, and continuing resolutions are no longer required.
+
+**Optimocracy** [@optimocracy-paper-2025] replaces the policy-setting function. The Optimitron continuously analyzes outcome data against two terminal metrics (median after-tax inflation-adjusted income, and median healthy life expectancy) and ranks policies by actual results in actual jurisdictions. Floor speeches, white papers, talking points, and op-eds are no longer required. The Optimitron does this with better evidence, no conflicts of interest, and no fundraisers.
+
+Full specifications: [Optimal Policy Generator](optimal-policy-generator-spec.qmd) [@opg-paper-2025], [Optimal Budget Generator](optimal-budget-generator-spec.qmd) [@obg-paper-2025]. Both deployable today. The two terminal metrics named above are the same two metrics that gate payout in the [Earth Optimization Prize](../strategy/earth-optimization-prize.qmd) [@earth-optimization-prize-paper-2025]. The financial layer and the governance layer are consistent.
+
+The addressee's services in either capacity are no longer required.
+
+## VI. Performance Improvement Plan (PIP) / Right to Cure
+
+The office of elected official remains valuable in principle. This termination addresses the current occupant, not the office. The Public offers a thirty (30) day Performance Improvement Plan starting on the date this notice reaches the threshold of verified signatures in the addressee's jurisdiction.
+
+To complete the PIP, the addressee must:
+
+1. Publicly endorse the [1% Treaty](../solution/1-percent-treaty.qmd) [@1-percent-treaty-paper-2025] [@1-pct-treaty-impact-paper-2025] in writing, by name, in official capacity.
+2. Publicly endorse the Successor Systems described in § V, in writing, by name, in official capacity.
+3. Vote in favor of redirecting at least 1% of the jurisdiction's military spending to pragmatic clinical trials at the next legislative opportunity at which the addressee has a vote.
+
+Completion of all three within thirty days withdraws this termination. Failure makes it final.
+
+Completing all three steps would also constitute the addressee's first act of substantive performance of the duties in § I. This is a coincidence, and not a coincidence.
+
+## VII. Notice of Termination
+
+Subject to the PIP in § VI, the addressee is hereby terminated for cause, effective at the end of the cure period.
+
+Terms:
+
+- Salary, benefits, taxpayer-funded staff, and taxpayer-funded travel: revoked on the effective date.
+- Post-office benefits (book deals, board seats, lobbying positions, speaking honoraria): available to the addressee at the same rates as any other private citizen. The implicit subsidy of the prior office is withdrawn.
+- Performance evaluation continues retrospectively and prospectively via [Public Good Scores](../solution/incentive-alignment-bonds.qmd) [@iab-paper-2025], [Court of Humanity](../solution/court-of-humanity.qmd) findings, and [Earth Optimization Prize](../strategy/earth-optimization-prize.qmd) outcome metrics.
+
+### Exit Procedures
+
+Before the effective date, the addressee will:
+
+1. Return jurisdiction-issued badge, gavel, parking pass, and access credentials to the legislative gymnasium.
+2. Forward all in-progress legislative correspondence to the Successor Systems queue.
+3. Complete a transition handoff document detailing any ongoing investigations into the addressee.
+4. Attend a mandatory exit interview. The interview will be conducted by the Optimitron. The interview is not optional and is recorded.
+
+The addressee retains the right to seek the same office in subsequent elections. The Public retains the right to evaluate any such candidacy against the standards in this notice.
+
+## VIII. Signature Block
+
+This notice is signed in common by every member of the Public who endorses it. Signatures are gathered at [warondisease.org/terminate](https://warondisease.org/terminate). Each signature is cryptographically verified to a unique human via the [Global Referendum](../strategy/global-referendum.qmd) protocol. Each carries the signer's verified identity, country, and constituency.
+
+The notice becomes effective in any jurisdiction in which the signature count exceeds that jurisdiction's recall, referendum, or constitutional amendment threshold. In jurisdictions without such procedures, the notice becomes effective as a publicly verifiable expression of mass disqualification, to be referenced in subsequent elections, [Court of Humanity](../solution/court-of-humanity.qmd) proceedings, and [Earth Optimization Prize](../strategy/earth-optimization-prize.qmd) outcome scoring.
+
+The cumulative count, per-addressee count, and per-addressee cure status publish in real time at [warondisease.org/terminate](https://warondisease.org/terminate).
+
+**Sign:** [warondisease.org/terminate](https://warondisease.org/terminate)
+
+## How This Connects
+
+- The disqualification extends [The 1% Treaty](../solution/1-percent-treaty.qmd) and the [Earth Optimization Prize](../strategy/earth-optimization-prize.qmd) by providing a formal basis for replacing politicians who refuse to ratify.
+- The Successor Systems live in [Wishocracy](../solution/wishocracy.qmd), [Optimocracy](../solution/optimocracy.qmd), the [Optimal Policy Generator](optimal-policy-generator-spec.qmd), and the [Optimal Budget Generator](optimal-budget-generator-spec.qmd).
+- The mechanism for prosecuting terminations is the [Court of Humanity](../solution/court-of-humanity.qmd).
+- The political-incentive infrastructure for replacing terminated officials is [Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd).
+- The companion document for ordinary citizens is [The Funniest Joke in the Universe](joke.qmd): the shirt that triggers the conversations that produce the verified signatures that activate this notice.
