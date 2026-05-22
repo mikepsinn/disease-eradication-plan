@@ -127,9 +127,9 @@ Either the addressee can do the arithmetic and has chosen not to communicate the
 
 The addressee's responsibilities will be transferred to two existing decentralized mechanisms. Both are operational. Both produce better outputs than the addressee's office has produced during the addressee's tenure.
 
-**Wishocracy** [@wishocracy-paper-2025] replaces the budget-setting function. It collects prioritization preferences from stakeholders and produces aggregate allocations weighted by stake and informed by impact data. Committees, hearings, markup sessions, conference reports, omnibus packages, and continuing resolutions are no longer required.
+**[Wishocracy](../solution/wishocracy.qmd)** [@wishocracy-paper-2025] replaces the budget-setting function. It collects prioritization preferences from stakeholders and produces aggregate allocations weighted by stake and informed by impact data. Committees, hearings, markup sessions, conference reports, omnibus packages, and continuing resolutions are no longer required.
 
-**Optimocracy** [@optimocracy-paper-2025] replaces the policy-setting function. The Optimitron continuously analyzes outcome data against two terminal metrics (median after-tax inflation-adjusted income, and median healthy life expectancy) and ranks policies by actual results in actual jurisdictions. Floor speeches, white papers, talking points, and op-eds are no longer required. The Optimitron does this with better evidence, no conflicts of interest, and no fundraisers.
+**[Optimocracy](https://manual.warondisease.org/knowledge/appendix/optimocracy-paper.html)** [@optimocracy-paper-2025] replaces the policy-setting function. The Optimitron continuously analyzes outcome data against two terminal metrics (median after-tax inflation-adjusted income, and median healthy life expectancy) and ranks policies by actual results in actual jurisdictions. Floor speeches, white papers, talking points, and op-eds are no longer required. The Optimitron does this with better evidence, no conflicts of interest, and no fundraisers.
 
 Full specifications: [Optimal Policy Generator](optimal-policy-generator-spec.qmd) [@opg-paper-2025], [Optimal Budget Generator](optimal-budget-generator-spec.qmd) [@obg-paper-2025]. Both deployable today. The two terminal metrics named above are the same two metrics that gate payout in the [Earth Optimization Prize](../strategy/earth-optimization-prize.qmd) [@earth-optimization-prize-paper-2025]. The financial layer and the governance layer are consistent.
 
@@ -157,7 +157,7 @@ Terms:
 
 - Salary, benefits, taxpayer-funded staff, and taxpayer-funded travel: revoked on the effective date.
 - Post-office benefits (book deals, board seats, lobbying positions, speaking honoraria): available to the addressee at the same rates as any other private citizen. The implicit subsidy of the prior office is withdrawn.
-- Performance evaluation continues retrospectively and prospectively via [Public Good Scores](../solution/incentive-alignment-bonds.qmd) [@iab-paper-2025], [Court of Humanity](../solution/court-of-humanity.qmd) findings, and [Earth Optimization Prize](../strategy/earth-optimization-prize.qmd) outcome metrics.
+- Performance evaluation continues retrospectively and prospectively via [Public Good Scores](../solution/incentive-alignment-bonds.qmd) [@iab-paper-2025], [Court of Humanity](../solution/court-of-humanity.qmd) [@court-of-humanity-paper-2025] findings, and [Earth Optimization Prize](../strategy/earth-optimization-prize.qmd) outcome metrics.
 
 ### Exit Procedures
 
@@ -185,5 +185,5 @@ The cumulative count, per-addressee count, and per-addressee cure status publish
 - The disqualification extends [The 1% Treaty](../solution/1-percent-treaty.qmd) and the [Earth Optimization Prize](../strategy/earth-optimization-prize.qmd) by providing a formal basis for replacing politicians who refuse to ratify.
 - The Successor Systems live in [Wishocracy](../solution/wishocracy.qmd), [Optimocracy](../solution/optimocracy.qmd), the [Optimal Policy Generator](optimal-policy-generator-spec.qmd), and the [Optimal Budget Generator](optimal-budget-generator-spec.qmd).
 - The mechanism for prosecuting terminations is the [Court of Humanity](../solution/court-of-humanity.qmd).
-- The political-incentive infrastructure for replacing terminated officials is [Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd).
+- The political-incentive infrastructure for replacing terminated officials is [Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd) [@iab-paper-2025].
 - The companion document for ordinary citizens is [The Funniest Joke in the Universe](joke.qmd): the shirt that triggers the conversations that produce the verified signatures that activate this notice.
