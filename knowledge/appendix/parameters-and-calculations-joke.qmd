@@ -38,15 +38,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 141 parameters used in the analysis, organized by type:
+This appendix documents all 143 parameters used in the analysis, organized by type:
 
-- External sources (peer-reviewed): 55
+- External sources (peer-reviewed): 56
 - Calculated values: 60
-- Core definitions: 26
+- Core definitions: 27
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (60 parameters) • [External Data Sources](#sec-external) (55 parameters) • [Core Definitions](#sec-definitions) (26 parameters)
+[Calculated Values](#sec-calculated) (60 parameters) • [External Data Sources](#sec-external) (56 parameters) • [Core Definitions](#sec-definitions) (27 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -5015,6 +5015,28 @@ Annual global clinical trial participants (IQVIA 2022: 1.9M post-COVID normaliza
 
 :::
 
+### Annual Defense Industry Lobbying Spending: $127 million {#sec-defense_lobbying_annual}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual defense industry lobbying spending
+
+**Source**: [@lobbying-spend-defense]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$100 million, $160 million]
+
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between $100 million and $160 million (±24%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+#### Input Distribution
+
+{{< include ../figures/distribution-defense_lobbying_annual.qmd >}}
+
+*✓ High confidence • 📊 Peer-reviewed • Updated 2024*
+
+:::
+
 ### Pragmatic Trial Cost per Patient: $929 {#sec-dfda_pragmatic_trial_cost_per_patient}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -6114,6 +6136,16 @@ Average years of life extension per person saved by pharmaceutical interventions
 #### Input Distribution
 
 {{< include ../figures/distribution-avg_life_extension_per_beneficiary.qmd >}}
+
+*Core definition*
+
+:::
+
+### Percentage of Budget Defense Sector Keeps Under 1% treaty: 99% {#sec-defense_sector_retention_pct}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Percentage of budget defense sector keeps under 1% treaty
 
 *Core definition*
 
