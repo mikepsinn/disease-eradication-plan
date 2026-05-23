@@ -52,11 +52,13 @@ scores:
 
 ## The Shirt
 
+It's a t-shirt. That's the whole intervention. The rest of this paper is the proof.
+
 **Front:** *this t-shirt ended war and disease*
 
 **Back:** *trade one apocalypse for disease eradication at warondisease.org* + your referral code
 
-You can buy one. You can also take a permanent marker and write it on a shirt you already own. Either works. The shirt is text. Text costs $0.50 of ink.
+You can buy one. You can also take a permanent marker and write it on a shirt you already own. The shirt is text. Text costs $0.50 of ink.
 
 Wear it on August 6. That is [Earth Optimization Day](../strategy/earth-optimization-day.qmd). Everyone wears it on the same day so the conversations happen at the same time.
 
@@ -114,7 +116,7 @@ The CEO of Lockheed Martin has two options: (a) keep apocalypse #122, watch thei
 
 Consider the 1% loss carefully. Yes, Lockheed loses 1% of its revenue from doomsday devices. But: if the CEO is dead from a disease the redirect would have cured, the remaining 99% of revenue is not very useful to them. And if the economy is {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}} larger, 99% of a slice of a {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}}-larger pie is much more than 100% of the current pie. The 1% loss is not a sacrifice. It is the best investment the defense industry has ever been offered, and it comes with the bonus of not dying.
 
-This is not an Olsonian collective action problem. The standard excuse for why entrenched industries block reform is "concentrated benefits, diffuse costs": the industry profits, the public pays. But the military-industrial complex does not benefit from the status quo. They die of the same diseases. They live in the same economy. Their children attend the same funerals. The costs of the current system are concentrated on everyone, including them. There is no winner. There is no rational beneficiary of the current arrangement. There is only a species that has not yet done the arithmetic. This book is the arithmetic.
+This is not the usual problem where an industry profits while the public pays. The military-industrial complex does not benefit from the status quo. They die of the same diseases. They live in the same economy. Their children attend the same funerals. There is no winner. There is no rational beneficiary of the current arrangement. There is only a species that has not yet done the arithmetic. This book is the arithmetic.
 
 ### "What about defense industry jobs?"
 
@@ -122,7 +124,7 @@ This is not an Olsonian collective action problem. The standard excuse for why e
 
 ### "What if countries cheat?"
 
-Of course they will. This system was designed by someone who has watched 847 civilizations (me), and it does not use trust. It uses math. Politicians who comply receive [Incentive Alignment Bond](../solution/incentive-alignment-bonds.qmd) [@iab-paper-2025] benefits: campaign funding and cushy post-office careers. Politicians who don't comply get nothing. Every disbursement is published on a public ledger keyed to specific trials with specific outcomes via the [Decentralized Accountability Office](../solution/decentralized-accountability-office.qmd) and [Automated Revenue Service](../solution/automated-revenue-service.qmd). The 1% that gets siphoned off does not get siphoned off invisibly. Auditors see every wire; voters see every auditor.
+Of course they will. The system does not use trust. It uses math. Politicians who comply receive [Incentive Alignment Bond](../solution/incentive-alignment-bonds.qmd) [@iab-paper-2025] benefits: campaign funding and cushy post-office careers. Politicians who don't comply get nothing. Every disbursement publishes on a public ledger via the [Decentralized Accountability Office](../solution/decentralized-accountability-office.qmd) and [Automated Revenue Service](../solution/automated-revenue-service.qmd). The 1% that gets siphoned off does not get siphoned off invisibly. Auditors see every wire; voters see every auditor.
 
 ### "What if other countries don't sign?"
 
@@ -141,37 +143,17 @@ The argument above is not complicated. It uses arithmetic and one assumption (hu
 1. **The calculations were not published.** This paper is the first place they exist. Every claim links to a parameter, which links to a source or a derivation. If you think a number is wrong, [the code is on GitHub](https://github.com/wishonia/earth-optimization-protocol) and you can fix it.
 2. **The math is large enough that the first reaction is disbelief.** The unconditional ROI on the seed program is {{< var shirt_program_roi_ratio >}}-to-one. This is not a typo. The ratio is large because the denominator (a {{< var shirt_seed_program_total_usd >}} seed program) is small and the numerator ({{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}} of value from ending war and disease) is the species-scale problem the seed is unlocking.
 
-## On the Greatest Tragedy in the History of the Universe
+## What Can Fail
 
-The math is right. The instructions fit on a shirt. The cost is $0.50 of ink. What can fail is none of those things. What can fail is attention.
+The math is right. The instructions fit on a shirt. The cost is $0.50 of ink. What can fail is attention.
 
-Each step in the chain (hear "funniest joke in universe history," click, read, understand, find it funny, recognize the mechanism, pick up a marker, do it) filters for some combination of attention span, humor comprehension, willingness to engage with an unfamiliar frame, and physical follow-through. If half of humans clear each step and there are seven steps, the survival rate is about 0.8% of the population. That might be enough for the cascade. It might not.
+Seven filtering steps: hear "funniest joke in universe history," click, read, understand, find it funny, pick up a marker, do it. Half survive each step. That leaves 0.8% of the population. Chain letters worked at worse rates, and chain letters were unfunny, costly, and fake.
 
-There is a recursive cruelty inside this. The diseases that erode attention (long COVID, Alzheimer's, depression, chronic pain) are among the diseases the treaty would eradicate. The humans most in need of the cure are the ones least cognitively equipped to process the mechanism that produces it. The system eats its own repair capacity.
+There is a recursive cruelty here. The diseases that erode attention (long COVID, Alzheimer's, depression, chronic pain) are among the diseases the treaty would eradicate. The humans most in need of the cure are the ones least equipped to process the mechanism that produces it. The system eats its own repair capacity. If the cascade fails because humans cannot hold focus for sixty seconds, the binding constraint on civilization is attention. The cost: approximately 150,000 lives per day, every day, until the mechanism propagates or disease is eradicated by some slower path centuries from now.
 
-If the cascade fails because humans cannot hold focus for sixty seconds, the binding constraint on civilization is not resources, not technology, not coordination, not political will. It is attention. The cost of human inattention measured against this specific opportunity is approximately 150,000 lives per day, every day, until the mechanism propagates or disease is eradicated by some slower path centuries from now. **Quantitatively, this would be the greatest known tragedy in the world.**
+The joke is designed around this constraint. The person whose shirts you defaced does not need to understand the mechanism. They need to ask "why is there marker on my shirts" and receive the explanation from someone who loves them. The prankster does the understanding. The pranked does the wearing. The people who see the shirt do the wondering. Some fraction of the wonderers become pranksters. Not all. Just enough. "Someone wrote on your shirt, here is why" propagates through conversation, not reading. Conversation is the one cognitive activity humans perform even when their attention span for everything else is gone.
 
-The joke's design compensates for exactly this. You do not need all humans to get the joke. You need enough humans to get the joke. The chain letter comparison says the threshold is lower than intuition suggests: chain letters worked despite being unfunny, costly, and fake, and a large fraction of the population engaged with them anyway. The question is not whether 8 billion people can hold focus for sixty seconds. It is whether {{< var shirt_seed_wearers_threshold >}} can.
-
-The joke structure also distributes the cognitive load across the chain. The person whose shirts you defaced does not need to understand the mechanism. They need to ask "why is there marker on my shirts" and receive the explanation from someone who loves them and who already understood it. The prankster does the understanding. The pranked person does the wearing. The people who see the shirt do the wondering. Some fraction of the wonderers become pranksters. Not all. Just enough.
-
-The joke frame outperforms "Read a 200-page book about global resource allocation" which requires sustained attention from every participant. "Someone wrote on your shirt, here is why" requires no sustained attention. The understanding propagates through conversation, not through reading. Conversation is the one cognitive activity humans perform even when their attention span for everything else is gone.
-
-The mechanism is built around the constraint above. That is why it runs on humor and love and vandalism rather than on argument and data and policy papers. The design is humans-as-they-are, not humans-as-one-wishes-they-were. The only way to find out if the design is sufficient is to play the joke on everyone you love.
-
-## Why Humor Scales
-
-The funniest joke in the universe is the cure for the greatest tragedy in the universe. That is not a coincidence. It is structural.
-
-The tragedy is large because the misallocation is large. The joke works because the misallocation is large. They are the same number seen from two directions. The {{< var military_to_government_clinical_trials_spending_ratio >}}-to-1 ratio is simultaneously the measure of the tragedy and the reason the joke is funny. The joke is funny because the ratio is absurd. The tragedy is tragic because the ratio is absurd. Same absurdity, two emotional responses.
-
-The tragedy persists specifically because it is too large to process emotionally. Ten billion deaths. Trillions of hours of suffering. Those numbers produce numbness, not action. Stalin's possibly apocryphal line about one death being a tragedy and a million being a statistic is operationally correct even if morally monstrous. The human brain cannot grieve ten billion people. It shuts down. The scale of the tragedy is itself the mechanism that prevents the tragedy from being addressed.
-
-Humor does the opposite. Humor scales. A joke that is funny to one person is funny to eight billion. The absurdity of writing on a shirt is exactly as absurd whether one person does it or everyone does it. The emotional response does not numb with scale. It amplifies. One person with marker on their shirts is mildly funny. A billion people with marker on their shirts is the funniest thing that has ever happened. The joke gets funnier as it gets bigger. The tragedy gets more invisible as it gets bigger. They move in opposite directions on the same axis.
-
-The joke is not just a delivery mechanism for the information. It is the only emotional register that can operate at the same scale as the tragedy without collapsing. Grief cannot scale to ten billion. Outrage cannot scale to ten billion. Policy analysis cannot scale to ten billion. Humor can. Humor is the one human emotional response that does not have a ceiling, does not produce numbness, does not trigger defensiveness, and becomes more powerful as more people participate in it.
-
-That is why the funniest joke in the universe is the correct solution to the greatest tragedy in the universe. Not because funny is the opposite of tragic, though it is. Because funny is the only thing that matches tragic at scale without breaking.
+One person with marker on their shirts is mildly funny. A billion people with marker on their shirts is the funniest thing that has ever happened. The joke gets funnier as it gets bigger. The tragedy gets more invisible as it gets bigger. Grief cannot scale to ten billion. Outrage cannot. Policy analysis cannot. Humor can. That is why the funniest joke in the universe is the correct format for the greatest tragedy in the universe.
 
 ## If You Have Money
 
@@ -179,7 +161,7 @@ The basic version of the joke is $0.50 of Sharpie ink, your spouse's closet, and
 
 The wealthier version is {{< var shirt_seed_program_total_usd >}} into an [Earth Optimization Prize](../strategy/earth-optimization-prize.qmd) [@earth-optimization-prize-paper-2025] assurance contract. Same outcome: {{< var shirt_seed_wearers_threshold >}} additional people end up with marker on their shirts and the conversation propagates. The mechanism is just funded differently. The basic version is funded by you. The wealthier version is funded by the assurance contract, which routes to recruiters if the cascade succeeds and refunds at {{< var prize_pool_horizon_multiple >}} of deposit if it doesn't. In no branch does the funder lose money.
 
-The {{< var shirt_seed_program_total_usd >}} pays {{< var shirt_seed_wearers_threshold >}} visible seed wearers at {{< var shirt_seed_cost_per_wearer_usd >}} per wearer (printed shirt, small honorarium, admin). The wearer mix is what matters: athletes in uniform on game day, podcast guests on video episodes, university chapters in dining halls, micro-celebrities on visible platforms, established celebrities at televised events. {{< var shirt_seed_wearers_threshold >}} carefully placed wearers produce more cascade than ten times that many invisible ones.
+The {{< var shirt_seed_program_total_usd >}} pays {{< var shirt_seed_wearers_threshold >}} visible seed wearers at {{< var shirt_seed_cost_per_wearer_usd >}} per wearer (printed shirt, small honorarium, admin). The wearer mix is what matters: athletes in uniform on game day, university chapters in dining halls, established celebrities at televised events. {{< var shirt_seed_wearers_threshold >}} carefully placed wearers produce more cascade than ten times that many invisible ones.
 
 | Outcome by {{< var destructive_economy_50pct_year >}} | What the funder gets | What the world gets |
 |:---|:---|:---|
@@ -225,24 +207,20 @@ The recipient's alternatives are also worse than wearing it. They can (a) wear t
 
 ### The Conversion Question
 
-The recipient is wearing the three shirts you defaced. The cascade is not done. They are propagating the joke. They are not yet a prankster themselves. There is one more move.
+They are wearing the three shirts you defaced. They are not yet a prankster. One more move.
 
-Ask them, in genuine curiosity:
+Ask them:
 
-> "I am not trying to argue. I am genuinely curious. You agree the math is right. You are willing to wear these three. Can you help me understand why not the rest? I want to understand what I am missing."
+> "You agree the math is right. You are wearing three. Why not the rest?"
 
-You are asking them to help you understand. They become your ally in examining their own resistance.
+Then shut up. Every answer they give sounds terrible out loud:
 
-Possible answers:
+- *"I like those shirts."* Translation: "I like my shirts more than I like marginal progress toward disease eradication." Not a sentence anyone survives hearing themselves say.
+- *"It will not make a difference."* They are already wearing three. If three matter, more matters more. If three do not matter, why are they wearing them.
+- *"People will think I am weird."* Translation: "I am letting people die of preventable diseases because I am worried about what strangers at the grocery store think of my shirt."
+- *"I just don't want to."* Invites: "Why not?" The loop restarts.
 
-- *"I like those shirts."* Out loud, this is: "I like my shirts more than I like marginal progress toward disease eradication." Not a sentence anyone wants to hear themselves say.
-- *"It will not make a difference."* They are already wearing three. If three make a difference, more makes more. If three do not, why are they wearing them.
-- *"People will think I am weird."* Out loud: "I am letting people die of preventable diseases because I am worried about what strangers at the grocery store think of my shirt."
-- *"I just don't want to."* Honest. Invites the follow-up: "Why not?" The loop restarts.
-
-Every answer sounds trivially selfish out loud, or is logically inconsistent with the three shirts they are already wearing. The question does not argue. It does not persuade. It asks the person to hear their own resistance out loud, and notice that it is insufficient.
-
-Not immediately. Eventually. The next time they open the closet and choose between the marked shirt and the clean shirt, they hear their own answer. It sounds a little weaker than it did yesterday.
+The question does not argue. It makes them hear their own reason out loud. The next time they open the closet, they hear it again. It sounds weaker than it did yesterday.
 
 Most pranks cost the prankster something. This one makes the recipient a walking billboard for not dying and counts each unwitting wearer toward the {{< var shirt_seed_wearers_threshold >}} social-proof threshold. The joke spreads itself. Do the prank.
 
@@ -252,7 +230,7 @@ Healthy adults laugh about {{< var human_laughs_per_day_average >}} times per da
 
 > **{{< var shirt_induced_laughs_gained >}} additional laughs across human history, caused by this joke.**
 
-For comparison, the entire recorded output of every standup special, sitcom, and viral comedy clip in human history is somewhere on the order of 10^11 to 10^12 collective audience-laughs. This joke produces on the order of 10^15 (conservatively). That is three to four orders of magnitude more funny than every comedian who has ever been paid, combined. Any comedian who optimizes for audience-laughs-per-unit-of-setup-effort should consider switching to this format immediately.
+For comparison, every standup special, sitcom, and viral comedy clip in human history has produced on the order of 10^11 to 10^12 collective audience-laughs. This joke produces on the order of 10^15, conservatively. Three to four orders of magnitude funnier than every comedian who has ever been paid, combined. Any comedian who wants better numbers should consider switching to vandalism.
 
 ### The Prankster's Defense
 
@@ -266,7 +244,9 @@ If they remain mad anyway, you can additionally point out that staying mad is it
 
 ### Why This Is Pascal's Wager, But Better
 
-Pascal's original: believe in God; if right, infinite reward, if wrong, finite cost. The shirt: wear it; if right, billions of healthy life-years for everyone you love, if wrong, you wore a shirt. The threat is true (unlike Pascal's), the reward is calculable (unlike Pascal's), the cost is $0.50 of ink (lower than Pascal's). Strictly dominant on every axis where Pascal's was already considered persuasive.
+Pascal's original: believe in God; if right, infinite reward; if wrong, finite cost. The shirt: wear it; if right, billions of healthy life-years for everyone you love; if wrong, you wore a shirt. Pascal's threat is unfalsifiable. This one is published. Pascal's reward is infinite and therefore meaningless. This one is {{< var shirt_induced_laughs_gained >}} laughs and calculable to the unit. Pascal's cost is a lifetime of church. This one is $0.50 of ink. Strictly dominant on every axis where Pascal's was already considered persuasive, and Pascal's convinced roughly a billion people.
+
+You have a permanent marker. You have a closet. The math is sitting right there. The only remaining question is whether you are the kind of person who, upon learning that the funniest joke in the history of the universe exists and costs fifty cents, declines to tell it.
 
 ## Further Reading
 

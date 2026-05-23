@@ -23,7 +23,7 @@ scores:
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 The infrastructure for a [dFDA](../solution/dfda.qmd) [@dfda-spec-paper-2025; @dfda-impact-paper-2025] won't cost billions to build. Because you're not building most of it. Your species already figured out how to get strangers to build software for free. You call it "open source." It runs most of the internet. You just forgot to point it at medicine.
 
-Build the foundation (core API and data standards), pay bounties for critical features nobody wants to build first, and let everyone else build everything else for free. You build the rails, not every train.
+Build the foundation (core API and data standards), pay bounties for critical features nobody wants to build first, and let everyone else build everything else for free. You build the foundation. Strangers build everything on top of it. For free. Because some of them are dying.
 
 ## The Open Platform Model
 
