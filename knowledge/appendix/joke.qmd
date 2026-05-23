@@ -173,21 +173,25 @@ The joke is not just a delivery mechanism for the information. It is the only em
 
 That is why the funniest joke in the universe is the correct solution to the greatest tragedy in the universe. Not because funny is the opposite of tragic, though it is. Because funny is the only thing that matches tragic at scale without breaking.
 
-## The Foundation Ask
+## If You Have Money
 
-A foundation puts {{< var shirt_seed_program_total_usd >}} into the [Earth Optimization Prize](../strategy/earth-optimization-prize.qmd) [@earth-optimization-prize-paper-2025] assurance contract, restricted to the shirt seed campaign. That funds {{< var shirt_seed_wearers_threshold >}} visible seed wearers at {{< var shirt_seed_cost_per_wearer_usd >}} per wearer (printed shirt + small honorarium + admin). The wearer mix is what matters: athletes in uniform on game day, podcast guests on video episodes, university chapters in dining halls, micro-celebrities on visible platforms, established celebrities at televised events. {{< var shirt_seed_wearers_threshold >}} carefully placed wearers produce more cascade than ten times that many invisible ones.
+The basic version of the joke is $0.50 of Sharpie ink, your spouse's closet, and the social risk of being asked why there is marker on your spouse's shirts.
 
-| Outcome by {{< var destructive_economy_50pct_year >}} | What the foundation gets | What the world gets |
+The wealthier version is {{< var shirt_seed_program_total_usd >}} into an [Earth Optimization Prize](../strategy/earth-optimization-prize.qmd) [@earth-optimization-prize-paper-2025] assurance contract. Same outcome: {{< var shirt_seed_wearers_threshold >}} additional people end up with marker on their shirts and the conversation propagates. The mechanism is just funded differently. The basic version is funded by you. The wealthier version is funded by the assurance contract, which routes to recruiters if the cascade succeeds and refunds at {{< var prize_pool_horizon_multiple >}} of deposit if it doesn't. In no branch does the funder lose money.
+
+The {{< var shirt_seed_program_total_usd >}} pays {{< var shirt_seed_wearers_threshold >}} visible seed wearers at {{< var shirt_seed_cost_per_wearer_usd >}} per wearer (printed shirt, small honorarium, admin). The wearer mix is what matters: athletes in uniform on game day, podcast guests on video episodes, university chapters in dining halls, micro-celebrities on visible platforms, established celebrities at televised events. {{< var shirt_seed_wearers_threshold >}} carefully placed wearers produce more cascade than ten times that many invisible ones.
+
+| Outcome by {{< var destructive_economy_50pct_year >}} | What the funder gets | What the world gets |
 |:---|:---|:---|
 | Treaty passes | Money releases to recruiters via the Prize protocol | Redirected military budget, cleared trial queue, {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}} economy |
 | Earth Optimization Prize targets hit (without formal treaty) | Same release | Equivalent policy bundle |
 | Neither | Refund at {{< var prize_pool_horizon_multiple >}} of deposit | Status quo continues |
 
-The foundation cannot lose money in any branch. In the failure branch, the refund rate beats a conventional endowment.
+The funder cannot lose money in any branch. In the failure branch, the refund rate beats a conventional endowment.
 
-Even at 25% odds the cascade triggers (deliberately skeptical), the expected value per foundation dollar is {{< var shirt_program_expected_value_per_dollar >}}. Compared to bed nets (the standard global-health metric), the shirt program beats AMF by about {{< var treaty_expected_vs_bed_nets_multiplier >}} after probability-discounting. Each verified voter the seed program produces saves about {{< var voter_lives_saved >}} expected lives and prevents {{< var voter_suffering_hours_prevented >}} of expected suffering.
+Even at 25% odds the cascade triggers (deliberately skeptical), the expected value per dollar is {{< var shirt_program_expected_value_per_dollar >}}. Compared to bed nets (the standard global-health metric), the shirt program beats AMF by about {{< var treaty_expected_vs_bed_nets_multiplier >}} after probability-discounting. Each verified voter the seed program produces saves about {{< var voter_lives_saved >}} expected lives and prevents {{< var voter_suffering_hours_prevented >}} of expected suffering.
 
-{{< var shirt_seed_program_total_usd >}} of foundation seed is not what funds the trials. It is what unlocks {{< var treaty_annual_funding >}} per year of redirected military spending into the trial pipeline, perpetually, once the treaty passes. The foundation is not buying trials. It is buying the permanent marker that redirects military budgets into trials.
+{{< var shirt_seed_program_total_usd >}} of seed is not what funds the trials. It is what unlocks {{< var treaty_annual_funding >}} per year of redirected military spending into the trial pipeline, perpetually, once the treaty passes. The funder is not buying trials. The funder is buying the permanent marker that redirects military budgets into trials.
 
 ## The Better Chain Letter
 
@@ -263,26 +267,6 @@ If they remain mad anyway, you can additionally point out that staying mad is it
 ### Why This Is Pascal's Wager, But Better
 
 Pascal's original: believe in God; if right, infinite reward, if wrong, finite cost. The shirt: wear it; if right, billions of healthy life-years for everyone you love, if wrong, you wore a shirt. The threat is true (unlike Pascal's), the reward is calculable (unlike Pascal's), the cost is $0.50 of ink (lower than Pascal's). Strictly dominant on every axis where Pascal's was already considered persuasive.
-
-## What To Do Right Now
-
-**If you are a foundation:** Wire {{< var shirt_seed_program_total_usd >}} to an [Earth Optimization Prize](../strategy/earth-optimization-prize.qmd) [@earth-optimization-prize-paper-2025] assurance contract restricted to the shirt seed campaign. Deposit terms and the v1 launch scaffolding (legal template, third-party custodian, public dashboard) are documented in [the Prize Fund chapter](../economics/earth-optimization-prize-fund.qmd#v1-bootstrap).
-
-**If you are an institution that wants to host a pool instance:** The protocol is forkable. Pool operators register via the [protocol spec](../appendix/earth-optimization-prize-protocol.qmd) [@earth-optimization-prize-protocol-paper-2025]. Custody transfers between hosts preserve all existing deposit terms.
-
-**If you are an influencer, athlete, micro-celebrity, or human with a visible platform:** Wear the shirt before the seed program offers to pay you to. Wearing it first is worth more, financially and reputationally, than wearing it after. Email [m@warondisease.org](mailto:m@warondisease.org).
-
-**If you are a human with a closet and a permanent marker:**
-
-1. Find a shirt.
-2. Write *this t-shirt ended war and disease* on the front.
-3. Write *trade one apocalypse for disease eradication at warondisease.org* and your referral code on the back.
-4. Wear it on August 6. Or sooner.
-5. When humans ask, walk them through the chain above.
-
-**If you love anyone:** Do the same thing to *their* shirts. See "The Better Chain Letter" above for justification, mechanics, and the cosmic-comedy argument. You sneak. They wear. They explain. Repeat.
-
-**If you are unsure whether this works:** Wear the shirt. The downside is $0.50 of ink. The upside is cures in your lifetime instead of your great-great-grandchildren's.
 
 ## Further Reading
 

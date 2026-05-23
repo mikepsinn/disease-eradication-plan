@@ -38,15 +38,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 145 parameters used in the analysis, organized by type:
+This appendix documents all 141 parameters used in the analysis, organized by type:
 
-- External sources (peer-reviewed): 57
-- Calculated values: 61
-- Core definitions: 27
+- External sources (peer-reviewed): 56
+- Calculated values: 59
+- Core definitions: 26
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (61 parameters) • [External Data Sources](#sec-external) (57 parameters) • [Core Definitions](#sec-definitions) (27 parameters)
+[Calculated Values](#sec-calculated) (59 parameters) • [External Data Sources](#sec-external) (56 parameters) • [Core Definitions](#sec-definitions) (26 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -2305,84 +2305,6 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-prize_pool_horizon_multiple.qmd >}}
-
-:::
-
-### PRIZE Pool Size: $27.5 trillion {#sec-prize_pool_size}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Terminal PRIZE pool size: global investable assets × participation rate × compound multiple over the resolution horizon.
-
-**Inputs**:
-
-- [Global Investable Financial Assets](#sec-global_investable_assets) 📊: $305 trillion
-- [PRIZE Pool Participation Rate](#sec-prize_pool_participation_rate): 1% (95% CI: 0.1% - 10%)
-- [PRIZE Pool Horizon Multiple](#sec-prize_pool_horizon_multiple) 🔢: 9.03x
-
-$$
-\begin{gathered}
-Pool \\
-= Assets_{invest} \times R_{pool} \times M_{pool} \\
-= \$305T \times 1\% \times 9.03 \\
-= \$27.5T
-\end{gathered}
-$$
-where:
-$$
-M_{pool} = (1 + r_{pool}) ^{Y_{50\%} - Y_0}
-$$
-where:
-$$
-\begin{gathered}
-r_{pool} \\
-= r_{VC,gross} + \Delta r_{scale} + \alpha_{crowd} \\
-+ \alpha_{home} \\
-= 17\% + -2.5\% + 0.5\% + 0.8\% \\
-= 15.8\%
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Y_{50\%} \\
-= Y_0 \\
-+ \frac{\ln\left(0.50 / \text{DESTRUCTIVE\_PCT\_GDP}\right)}{\ln\left(1 + \text{DESTRUCTIVE\_GROWTH} - \text{GDP\_GROWTH}\right)}
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-r_{destruct:GDP} \\
-= \frac{Cost_{destruct}}{GDP_{global}} \\
-= \frac{\$13.2T}{\$115T} \\
-= 11.5\%
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Cost_{destruct} \\
-= Spending_{mil} + Cost_{cyber} \\
-= \$2.72T + \$10.5T \\
-= \$13.2T
-\end{gathered}
-$$
-*✓ High confidence*
-
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-prize_pool_size.qmd >}}
-
-{{< include ../figures/sensitivity-table-prize_pool_size.qmd >}}
-
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-prize_pool_size.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-prize_pool_size.qmd >}}
 
 :::
 
@@ -4837,92 +4759,6 @@ $$
 
 :::
 
-### VOTE Point Value: $6,671 {#sec-vote_token_value}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Value of a single VOTE claim based on the modeled PRIZE pool size (investable assets × participation rate × horizon multiple). CI range reflects participation uncertainty (0.1%-10%).
-
-**Inputs**:
-
-- [PRIZE Pool Size](#sec-prize_pool_size) 🔢: $27.5 trillion
-- [Global Registered Voters](#sec-global_registered_voters) 📊: 4.13 billion of people
-
-$$
-\begin{gathered}
-V_{vote} \\
-= \frac{Pool}{N_{voters,global}} \\
-= \frac{\$27.5T}{4.13B} \\
-= \$6.67K
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Pool \\
-= Assets_{invest} \times R_{pool} \times M_{pool} \\
-= \$305T \times 1\% \times 9.03 \\
-= \$27.5T
-\end{gathered}
-$$
-where:
-$$
-M_{pool} = (1 + r_{pool}) ^{Y_{50\%} - Y_0}
-$$
-where:
-$$
-\begin{gathered}
-r_{pool} \\
-= r_{VC,gross} + \Delta r_{scale} + \alpha_{crowd} \\
-+ \alpha_{home} \\
-= 17\% + -2.5\% + 0.5\% + 0.8\% \\
-= 15.8\%
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Y_{50\%} \\
-= Y_0 \\
-+ \frac{\ln\left(0.50 / \text{DESTRUCTIVE\_PCT\_GDP}\right)}{\ln\left(1 + \text{DESTRUCTIVE\_GROWTH} - \text{GDP\_GROWTH}\right)}
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-r_{destruct:GDP} \\
-= \frac{Cost_{destruct}}{GDP_{global}} \\
-= \frac{\$13.2T}{\$115T} \\
-= 11.5\%
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Cost_{destruct} \\
-= Spending_{mil} + Cost_{cyber} \\
-= \$2.72T + \$10.5T \\
-= \$13.2T
-\end{gathered}
-$$
-*✓ High confidence*
-
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-vote_token_value.qmd >}}
-
-{{< include ../figures/sensitivity-table-vote_token_value.qmd >}}
-
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-vote_token_value.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-vote_token_value.qmd >}}
-
-:::
-
 ### Global Patients Willing to Participate in Clinical Trials: 1.08 billion people {#sec-willing_trial_participants_global}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -5703,20 +5539,6 @@ Annual global government spending on interventional clinical trials (~5-10% of t
 
 :::
 
-### Global Investable Financial Assets: $305 trillion {#sec-global_investable_assets}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Total global financial wealth (2024): equities, bonds, cash/deposits, and investment funds. Excludes real estate and physical assets. This is the addressable capital pool for PRIZE deposits.
-
-#### Uncertainty Range
-
-**Technical**: Distribution: Fixed
-
-*✓ High confidence*
-
-:::
-
 ### Global Life Expectancy (2024): 79 years {#sec-global_life_expectancy_2024}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -6448,28 +6270,6 @@ Conflict reduction elasticity: how much conflict costs decrease per 1% military 
 #### Input Distribution
 
 {{< include ../figures/distribution-peace_dividend_conflict_elasticity.qmd >}}
-
-*Core definition*
-
-:::
-
-### PRIZE Pool Participation Rate: 1% {#sec-prize_pool_participation_rate}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Fraction of global investable financial assets that flow into the PRIZE pool. 1% central estimate parallels the 1% Treaty ask: 1% of your weapons money, 1% of your savings.
-
-#### Uncertainty Range
-
-**Technical**: 95% CI: [0.1%, 10%] • Distribution: Lognormal
-
-**What this means**: This estimate is highly uncertain. The true value likely falls between 0.1% and 10% (±495%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
-
-*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
-
-#### Input Distribution
-
-{{< include ../figures/distribution-prize_pool_participation_rate.qmd >}}
 
 *Core definition*
 
