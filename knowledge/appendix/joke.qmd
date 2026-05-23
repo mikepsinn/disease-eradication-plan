@@ -173,16 +173,6 @@ The joke is not just a delivery mechanism for the information. It is the only em
 
 That is why the funniest joke in the universe is the correct solution to the greatest tragedy in the universe. Not because funny is the opposite of tragic, though it is. Because funny is the only thing that matches tragic at scale without breaking.
 
-## What Your Shirt Earns You
-
-Every shirt carries a QR code linking to your unique referral page at warondisease.org. Every human who scans your QR code and adds a verified signature to the treaty register earns you one [Earth Optimization Prize](../strategy/earth-optimization-prize.qmd) VOTE point [@earth-optimization-prize-paper-2025]. The points stay yours. They are not tradable.
-
-If the Prize hits its targets by {{< var destructive_economy_50pct_year >}} (treaty passes, or median income and healthy life years thresholds achieved), VOTE points pay out at about {{< var vote_token_value >}} per point from the Prize Fund. If the targets are not hit, VOTE points expire worthless. The mechanism turns shouting at people about the treaty into actually getting paid for it: you recruit the next humans into the treaty register, you get paid if the treaty works.
-
-You can also put money into the Prize Fund directly. The money grows at about {{< var prize_pool_annual_return >}} a year (about triple a conventional retirement account). If the targets are hit, the principal goes to VOTE point-holders, not back to depositors. If the targets are missed, depositors split the pool pro rata and get back about {{< var prize_pool_horizon_multiple >}} of what they put in, which still beats their conventional retirement account.
-
-Referrals plus a deposit plus compound interest make participation the smart move. The shirt is how you find out.
-
 ## The Foundation Ask
 
 A foundation puts {{< var shirt_seed_program_total_usd >}} into the [Earth Optimization Prize](../strategy/earth-optimization-prize.qmd) [@earth-optimization-prize-paper-2025] assurance contract, restricted to the shirt seed campaign. That funds {{< var shirt_seed_wearers_threshold >}} visible seed wearers at {{< var shirt_seed_cost_per_wearer_usd >}} per wearer (printed shirt + small honorarium + admin). The wearer mix is what matters: athletes in uniform on game day, podcast guests on video episodes, university chapters in dining halls, micro-celebrities on visible platforms, established celebrities at televised events. {{< var shirt_seed_wearers_threshold >}} carefully placed wearers produce more cascade than ten times that many invisible ones.
@@ -211,17 +201,46 @@ The shirt is a strictly better chain letter on every dimension:
 | Is the threat true? | No | Yes |
 | Cost to participate | Postage + envelope + a trip to the post office | $0.50 of Sharpie ink |
 | Effort required | Address 10 envelopes | Open your closet |
-| Payoff to participant | Avoiding fake bad luck | [Earth Optimization Prize](../strategy/earth-optimization-prize.qmd) VOTE points, plus a family that does not die of curable diseases |
+| Payoff to participant | Avoiding fake bad luck | A family that does not die of curable diseases |
 
-Take a permanent marker into the closet of every human you do not want to suffer and die of preventable disease. Your spouse. Your siblings. Your parents. The parents of your children's friends. Write *this t-shirt ended war and disease* on the front. Write *trade one apocalypse for disease eradication at warondisease.org* and your referral code on the back. They will notice when they put the shirt on. They will demand an explanation. You hand them this paper. They explain it to the next human who asks them. The chain propagates.
+Take a permanent marker into the closet of every human you do not want to suffer and die of preventable disease. Your spouse. Your siblings. Your parents. The parents of your children's friends. Write *this t-shirt ended war and disease* on the front. Write *trade one apocalypse for disease eradication at warondisease.org* and your referral code on the back. They will notice when they put the shirt on. They will demand an explanation. You hand them this paper (warondisease.org/joke). They explain it to the next human who asks them. The chain propagates.
+
+**Bring a friend.** One writes. One watches the door.
+
+Alone, you are a person standing in a closet vandalizing your spouse's clothing. The comedy is abstract. You feel weird.
+
+Two of you sneaking into the closet with markers is a heist movie. You giggle in real time. Two friends recall a story together. One person alone recalls a moment of being weird in a closet. Humans repeat heist movies. They do not repeat being-weird-in-a-closet.
+
+The pair also creates two propagation nodes. Each takes the story to a different social network. Each becomes a separate cascade-trigger.
+
+Earth Optimization Mission: recommended team size 2.
 
 The prank also solves the friction problem from the recipient's side. A human wearing "End War & Disease" on their own initiative is making a political declaration, which is the socially exposing version. A human wearing it because their spouse defaced their entire closet last Tuesday is just a human with a funny story. The cost of explaining the shirt drops from "I am advocating" to "you won't believe what happened," which is the conversation humans actually like having.
 
 The recipient's alternatives are also worse than wearing it. They can (a) wear the defaced shirts and tell the story, at a cost of approximately zero, or (b) throw the defaced shirts out and buy new undefaced ones, at a cost of real money paid AND an active marginal increase in the probability that they and everyone they love die of diseases that would otherwise be cured. The rational choice is (a). The prank has not just made them a billboard. It has made the alternative economically punishing.
 
-You also collect the VOTE points. The QR code on the back of each shirt routes through your referral link. Every verified treaty-register signup from a shirt you defaced earns you one Earth Optimization Prize VOTE point, which pays out at approximately {{< var vote_token_value >}} if the Prize hits its targets.
+### The Conversion Question
 
-Most pranks cost the prankster something. This one earns the prankster VOTE points, makes the recipient a walking billboard for not dying, and counts each unwitting wearer toward the {{< var shirt_seed_wearers_threshold >}} social-proof threshold. The joke spreads itself. Do the prank.
+The recipient is wearing the three shirts you defaced. The cascade is not done. They are propagating the joke. They are not yet a prankster themselves. There is one more move.
+
+Ask them, in genuine curiosity:
+
+> "I am not trying to argue. I am genuinely curious. You agree the math is right. You are willing to wear these three. Can you help me understand why not the rest? I want to understand what I am missing."
+
+You are asking them to help you understand. They become your ally in examining their own resistance.
+
+Possible answers:
+
+- *"I like those shirts."* Out loud, this is: "I like my shirts more than I like marginal progress toward disease eradication." Not a sentence anyone wants to hear themselves say.
+- *"It will not make a difference."* They are already wearing three. If three make a difference, more makes more. If three do not, why are they wearing them.
+- *"People will think I am weird."* Out loud: "I am letting people die of preventable diseases because I am worried about what strangers at the grocery store think of my shirt."
+- *"I just don't want to."* Honest. Invites the follow-up: "Why not?" The loop restarts.
+
+Every answer sounds trivially selfish out loud, or is logically inconsistent with the three shirts they are already wearing. The question does not argue. It does not persuade. It asks the person to hear their own resistance out loud, and notice that it is insufficient.
+
+Not immediately. Eventually. The next time they open the closet and choose between the marked shirt and the clean shirt, they hear their own answer. It sounds a little weaker than it did yesterday.
+
+Most pranks cost the prankster something. This one makes the recipient a walking billboard for not dying and counts each unwitting wearer toward the {{< var shirt_seed_wearers_threshold >}} social-proof threshold. The joke spreads itself. Do the prank.
 
 ### The Quantitative Case
 
@@ -251,7 +270,7 @@ Pascal's original: believe in God; if right, infinite reward, if wrong, finite c
 
 **If you are an institution that wants to host a pool instance:** The protocol is forkable. Pool operators register via the [protocol spec](../appendix/earth-optimization-prize-protocol.qmd) [@earth-optimization-prize-protocol-paper-2025]. Custody transfers between hosts preserve all existing deposit terms.
 
-**If you are an influencer, athlete, micro-celebrity, or human with a visible platform:** Wear the shirt before the seed program offers to pay you to. Wearing it first is worth a larger Earth Optimization Prize VOTE position than wearing it after.
+**If you are an influencer, athlete, micro-celebrity, or human with a visible platform:** Wear the shirt before the seed program offers to pay you to. Wearing it first is worth more, financially and reputationally, than wearing it after. Email [m@warondisease.org](mailto:m@warondisease.org).
 
 **If you are a human with a closet and a permanent marker:**
 
@@ -261,7 +280,7 @@ Pascal's original: believe in God; if right, infinite reward, if wrong, finite c
 4. Wear it on August 6. Or sooner.
 5. When humans ask, walk them through the chain above.
 
-**If you love anyone:** Do the same thing to *their* shirts. See "The Better Chain Letter" above for justification, mechanics, VOTE-point attribution, and the cosmic-comedy argument. You sneak, they wear, you collect points, they explain.
+**If you love anyone:** Do the same thing to *their* shirts. See "The Better Chain Letter" above for justification, mechanics, and the cosmic-comedy argument. You sneak. They wear. They explain. Repeat.
 
 **If you are unsure whether this works:** Wear the shirt. The downside is $0.50 of ink. The upside is cures in your lifetime instead of your great-great-grandchildren's.
 
@@ -270,6 +289,6 @@ Pascal's original: believe in God; if right, infinite reward, if wrong, finite c
 - [The full objection demolitions](../appendix/faq.qmd) (147 objections and counting)
 - [Earth Optimization Prize](../strategy/earth-optimization-prize.qmd) [@earth-optimization-prize-paper-2025] (the assurance contract that funds the seed)
 - [Earth Optimization Day](../strategy/earth-optimization-day.qmd) (August 6; the coordinated wearing day)
-- [Global Referendum](../strategy/global-referendum.qmd) (the voting mechanism the QR code connects to)
+- [Global Referendum](../strategy/global-referendum.qmd) (the voting mechanism the URL connects to)
 - [Getting Started](../strategy/getting-started.qmd) (the first-year operator plan)
 - [Parameters & Calculations](parameters-and-calculations.qmd) (every number, sourced and derivable)
