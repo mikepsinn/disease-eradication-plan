@@ -80,7 +80,7 @@ The size of the number is not an argument against the number. It is what the num
 
 The first assumption is that powerful people benefit from the status quo and block change. Military contractors make billions selling bombs. They buy politicians. Politicians keep the budget.
 
-This is wrong. The CEO of Lockheed Martin has two options: (a) keep apocalypse #122, watch their family die of curable diseases, retire on the current trajectory; or (b) give up the one apocalypse they cannot use, watch their family live, invest in the biotech sector that absorbs a trillion redirected dollars per year, retire on a {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}}-larger economy. There is no rational beneficiary of the current arrangement. The military-industrial complex does not benefit from the status quo. They die of the same diseases. They live in the same economy. Their children attend the same funerals. At most they sacrifice 1% of their mass-murder revenues and gain a {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}}-larger economy where they are alive to spend it.
+This is wrong. The CEO of Lockheed Martin has two options: (a) keep apocalypse #122, watch their family die of curable diseases, retire on the current trajectory; or (b) give up the one apocalypse they cannot use, watch their family live, invest in the biotech sector that absorbs a trillion redirected dollars per year, retire on a {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}}-larger economy. There is no rational beneficiary of the current arrangement. The military-industrial complex does not benefit from the status quo. They die of the same diseases. They live in the same economy. Their children attend the same funerals. They keep {{< var defense_sector_retention_pct >}} of their revenue and gain a {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}}-larger economy where they are alive to spend it.
 
 The real reason is simpler. Some of the individual facts are known. Military contractors know their annual chance of dying in a terrorist attack is about 1 in {{< var annual_terrorism_death_risk_denominator >}}. They probably suspect that their lifetime chance of suffering and dying from a disease is approximately 100%. They may even know that the current spending ratio funds the smaller risk at the expense of the larger one.
 
@@ -90,12 +90,30 @@ And the background facts that make the coordination mechanism obviously feasible
 
 Most people do not know that the Pentagon cannot account for {{< var pentagon_unaccounted_funds >}} it has already misplaced [@pentagon-unaccounted-2-5t]. 1% of US military spending is a fraction of the amount that goes into a black hole every year and no one can locate. You are not redirecting the missile budget. You are redirecting the "we lost it somewhere" budget.
 
+Most people do not know that the defense lobby spends {{< var defense_lobbying_annual >}} per year buying politicians, while the [treaty campaign budget](../economics/campaign-budget.qmd) needed to outbid them is {{< var treaty_campaign_budget_lobbying >}}. Outbidding the people who profit from your death turns out to be cheaper than your annual coffee budget, aggregated across humans who would prefer not to die.
+
 Most people do not know that COVID-19 killed more Americans than World War I, World War II, Korea, Vietnam, Iraq, and Afghanistan combined. The $900 billion murder budget watched it happen, fully armed and completely confused. The virus did not check your passport. Disease is the only enemy that attacks every nation simultaneously, and your species is the only one that needs to be talked into fighting it.
 
 The problem is not money. The problem is not power. The problem is that eight billion people do not know how much better their lives could be, and that a mechanism to get there exists and is absurdly cheap relative to what it unlocks.
 
 So: inform everybody. But humans find budget reallocation boring. They will not sit down and read a paper about military spending ratios. They will listen to an explanation of why someone wrote on their shirt.
-Facts as to why this is morally the correct act, and it is essentially immoral.
+
+## The Cost of Not Telling Them
+
+Imagine you are in the passenger seat. Someone you love is driving. The road is covered in sick people, lying down. The car is rolling over them. The driver has not noticed.
+
+You have two options. (a) Say nothing, because pointing it out will hurt their feelings. They will feel terrible when they realize what they have been doing. They will get defensive. They may snap at you. (b) Say something. Watch them feel terrible. Watch them snap at you. Watch them stop the car.
+
+(b) is the correct option. The temporary discomfort of being told you have been driving over sick people is small compared to the permanent harm of continuing to drive over sick people. This remains true even if the driver is your spouse. Even if they are your parent. Even if they will be mad at you for a week.
+
+The shirt is the same situation. About 150,000 humans die of preventable disease every day. Every day the treaty is not signed is another 150,000 funerals that a working mechanism would have prevented. The person who has not yet written on their shirts is not pulling the trigger. They were just looking somewhere else when there was something they could have done.
+
+The argument against telling them is that it will hurt their feelings to learn this. Their feelings will hurt for an hour. Then they will either (a) write on their shirts and start the conversations, in which case the queue clears faster and 150,000-per-day starts trending down, or (b) refuse, in which case at least they made the choice consciously.
+
+The argument for not telling them only works if you assume their feelings matter more than 150,000 humans per day. Stated out loud, this argument is bad. It is bad even when the person is your spouse. The kindest thing you can do for someone you love is make sure they are not the kind of person who, when given the option, chose to keep driving.
+
+Tell them.
+
 ## The Shirt
 
 **Front:** *this t-shirt ended war and disease*
@@ -263,7 +281,9 @@ The basic version costs $0.50 of Sharpie ink. The funded version is {{< var shir
 | Prize targets hit (without formal treaty) | Same release | Equivalent policy bundle |
 | Neither | Refund at {{< var prize_pool_horizon_multiple >}} of deposit | Status quo continues |
 
-Even at 25% odds the cascade triggers, the expected value per dollar is {{< var shirt_program_expected_value_per_dollar >}}. The shirt program beats bed nets (the gold standard) by about {{< var treaty_expected_vs_bed_nets_multiplier >}} after probability-discounting. {{< var shirt_seed_program_total_usd >}} does not fund the trials. It unlocks {{< var treaty_annual_funding >}} per year of redirected military spending into the trial pipeline, perpetually. The funder is not buying trials. The funder is buying the permanent marker that redirects military budgets into trials.
+If the cascade triggers, the unconditional ROI is {{< var shirt_program_roi_ratio >}}-to-one. This is not a typo. The ratio is large because the denominator (a {{< var shirt_seed_program_total_usd >}} seed) is small and the numerator ({{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}} of unlocked treaty value) is the species-scale problem the seed is unlocking. Probability-discounted at 25% odds the cascade triggers (deliberately skeptical), the expected value per dollar is {{< var shirt_program_expected_value_per_dollar >}}. The shirt program beats bed nets (the gold standard) by about {{< var treaty_expected_vs_bed_nets_multiplier >}} after probability-discounting. Each verified voter the seed produces saves about {{< var voter_lives_saved >}} expected lives and prevents {{< var voter_suffering_hours_prevented >}} of expected suffering.
+
+{{< var shirt_seed_program_total_usd >}} does not fund the trials. It unlocks {{< var treaty_annual_funding >}} per year of redirected military spending into the trial pipeline, perpetually. The funder is not buying trials. The funder is buying the permanent marker that redirects military budgets into trials.
 
 ## Why This Is Pascal's Wager, But Better
 

@@ -1,0 +1,106 @@
+---
+title: 'Why Someone Wrote on Your Shirts'
+description: 'The handout that gets tucked into the collar of every vandalized t-shirt. Designed to be read in a closet, in the dark, while mildly furious.'
+aliases:
+  - /handout.html
+  - /why-someone-wrote-on-your-shirts.html
+author:
+  - name: Mike P. Sinn
+    affiliation:
+      name: International Campaign to End War and Disease
+    roles:
+      - conceptualization
+      - writing – original draft
+    email: mike@warondisease.org
+    corresponding: true
+keywords:
+  - handout
+  - flyer
+  - prank
+  - explanation
+  - objections
+  - 1% treaty
+format:
+  html:
+    toc: false
+    number-sections: false
+  pdf:
+    documentclass: article
+    geometry: margin=0.75in
+    fontsize: 10pt
+scores:
+  quality: 7
+  value: 8
+  timeliness: 9
+  standalone: 9
+  voice: 8
+  importance: 8
+---
+{{< include /knowledge/includes/setup-parameters.qmd >}}
+
+You found this in the collar of a shirt that used to be yours. The shirt now says: *this t-shirt ended war and disease*.
+
+You did not consent to this. The person who did it loves you. They love you so much that they were willing to ruin every shirt you own rather than watch you die of preventable disease.
+
+Being mad is the correct first reaction. Keep reading anyway.
+
+## What is happening
+
+About {{< var global_disease_deaths_daily_nounit >}} humans die every day of diseases that would have treatments if anyone had funded the trials. Tomorrow, another {{< var global_disease_deaths_daily_nounit >}}. This has been happening every day of your life.
+
+Your body is quietly falling apart. Right now, as you read this sentence, something inside you is breaking. You don't know which part yet. You won't know until a doctor sits you down and says a word that rearranges the rest of your life. The treatments that would have helped exist as untested compounds on shelves, because the money was busy turning into a missile.
+
+Your chance of dying from terrorism this year: 1 in {{< var annual_terrorism_death_risk_denominator >}}. Your chance of dying from disease, lifetime: approximately 100%. Government spending on the smaller risk vs the larger one: **{{< var military_to_government_clinical_trials_spending_ratio >}} to one**. If cancer had oil reserves, you would have cured it by 2003.
+
+## What your shirt is asking the world to do
+
+Every country redirects 1% of its military budget to clinical trials. That is the entire treaty. It does not require new taxes, new agencies, or new ideologies. It requires adjusting a 190 cells in the budget spreadsheets of 190 countries.
+
+If it passes:
+
+1. 100 nuclear weapons end civilization. Your species has 12,000. You keep 121 of your 122 apocalypses (still adequate deterrence by any honest definition).
+2. The disease-eradication queue compresses from **{{< var status_quo_queue_clearance_years >}}** to **{{< var dfda_queue_clearance_years >}}**.
+3. Global GDP at year 15 is approximately {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}} the current trajectory, because dead people do not work.
+4. Per shirt-wearing human, the unlocked treaty value is approximately **{{< var shirt_value_per_wearer_usd >}}**.
+5. The marker used to write on your shirts cost $0.50. The pen pays for itself many times over. ∎
+
+## Why specifically this method
+
+**Why a shirt and not a flyer?** A flyer ends up in a trash can. A shirt walks around for a decade, starting conversations with strangers at coffee shops.
+
+**Why permanent marker and not store-bought shirts?** Because store-bought shirts require buying shirts, and the joke is that the entire intervention costs $0.50 of ink and the closet you already own. Removing the cost barrier removes the last excuse.
+
+**Why all your shirts and not just one?** Because one shirt is a costume you wear once. Twelve shirts is a wardrobe, which is the only kind of clothing humans actually wear in public.
+
+**Why didn't they ask first?** They did the math. They calculated that the expected harm of asking ("you say no, your closet is unchanged, {{< var global_disease_deaths_daily_nounit >}} continue dying daily") was greater than the expected harm of not asking ("you are mad for a week, then you wear the shirts, conversations happen, the cascade triggers"). They picked the option that did not require your permission to save your life. Imagine you are in a car with someone you love and they are driving over sick people lying in the road. You say something even though it hurts their feelings. The shirts are the same conversation.
+
+## The objections you are about to raise
+
+**"My shirts!"** Replacement cost of a closet: ~$200. Unlocked treaty value per wearer: {{< var shirt_value_per_wearer_usd >}}. Even at terrible odds of working, the trade favors not throwing the shirts away.
+
+**"My military will be vulnerable!"** Every nation cuts by the same 1% at the same time. Relative balance is unchanged. Same math, different feelings.
+
+**"This is naive."** After WW2, the US cut military spending by {{< var post_ww2_military_cut_pct >}} in two years and stumbled into the greatest economic boom in history. GM went from B-24 bombers back to Cadillacs. Frigidaire stopped making machine guns. You are being asked for 1%.
+
+**"Politicians will never agree."** The defense lobby spends {{< var defense_lobbying_annual >}} per year buying politicians. The [treaty campaign budget](../economics/campaign-budget.qmd) to outbid them is {{< var treaty_campaign_budget_lobbying >}}. "Politically impossible" is a phrase that means "the bribes currently flow in a direction I am comfortable with."
+
+**"The Pentagon needs that money."** The Pentagon cannot account for $2.5 trillion it has already misplaced. You are not redirecting the missile budget. You are redirecting the "we lost it somewhere" budget. The missiles will not notice.
+
+**"COVID killed more Americans than what?"** COVID-19 killed more Americans than World War I, World War II, Korea, Vietnam, Iraq, and Afghanistan combined. Your $900 billion murder budget watched it happen, fully armed and completely confused. The virus did not check your passport.
+
+**"What about defense industry jobs?"** Engineers who build guidance systems can build medical imaging devices. Same differential equations, fewer funerals.
+
+**"This won't work."** Then you wore some defaced shirts for a while and had some conversations with strangers at the grocery store. The downside is bounded by your wardrobe. The upside is your family not dying. Pascal's Wager, but better: Pascal's reward was unfalsifiable; this one is published.
+
+**"I'm just one person."** Your vote + 15 minutes of sharing = 17 minutes. Each verified voter saves about {{< var voter_lives_saved >}} expected lives and prevents {{< var voter_suffering_hours_prevented >}} of expected suffering. You spent longer than 17 minutes last night choosing what to watch on Netflix. You chose a show about murder. You could have chosen not to be murdered by disease, but the interface was less intuitive.
+
+**"Humans will never coordinate this."** If your species can coordinate dance moves across 150 countries on TikTok, it can coordinate not dying.
+
+## What you do now (three things)
+
+1. **Wear the shirts.** Every day. Every stranger who asks "what's that about?" is a new conversation. Every conversation is a new node in the cascade. The shirts work even if you say nothing; they work better if you read aloud the card tucked in the collar.
+
+2. **Vote at [warondisease.org](https://warondisease.org).** Drag the slider. Register that you support redirecting 1% of military spending to clinical trials. The vote is how the cascade becomes countable. Politicians respond to numbers. Give them a number.
+
+3. **Forgive the human who wrote on your shirts.** They did this because they love you and do not want you to suffer and die of horrible diseases. and do not want you to suffer and die of horrible diseases.
+
