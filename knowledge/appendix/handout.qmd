@@ -38,6 +38,10 @@ scores:
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 
+::: {.callout-important appearance="simple" icon=false}
+**PLEASE READ BEFORE YELLING.**
+:::
+
 You found this in the collar of a shirt that used to be yours. The shirt now says: *this t-shirt ended war and disease*.
 
 You did not consent to this. The person who did it loves you. They love you so much that they were willing to ruin every shirt you own rather than watch you die of preventable disease.
@@ -46,7 +50,7 @@ Being mad is the correct first reaction. Keep reading anyway.
 
 ## What is happening
 
-About {{< var global_disease_deaths_daily_nounit >}} humans die every day of diseases that would have treatments if anyone had funded the trials. Tomorrow, another {{< var global_disease_deaths_daily_nounit >}}. This has been happening every day of your life.
+About {{< var global_disease_deaths_daily_nounit >}} humans die every day of diseases that would have treatments if anyone had funded the trials. That is about 50 September 11s every day. Nobody invades anyone about it because diseases do not have oil.
 
 Your body is quietly falling apart. Right now, as you read this sentence, something inside you is breaking. You don't know which part yet. You won't know until a doctor sits you down and says a word that rearranges the rest of your life. The treatments that would have helped exist as untested compounds on shelves, because the money was busy turning into a missile.
 
@@ -64,25 +68,29 @@ If it passes:
 4. Per shirt-wearing human, the unlocked treaty value is approximately **{{< var shirt_value_per_wearer_usd >}}**.
 5. The marker used to write on your shirts cost $0.50. The pen pays for itself many times over. ∎
 
+The spreadsheet stops killing people.
+
 ## Why specifically this method
 
 **Why a shirt and not a flyer?** A flyer ends up in a trash can. A shirt walks around for a decade, starting conversations with strangers at coffee shops.
 
 **Why permanent marker and not store-bought shirts?** Because store-bought shirts require buying shirts, and the joke is that the entire intervention costs $0.50 of ink and the closet you already own. Removing the cost barrier removes the last excuse.
 
-**Why all your shirts and not just one?** Because one shirt is a costume you wear once. Twelve shirts is a wardrobe, which is the only kind of clothing humans actually wear in public.
+**Why all your shirts and not just one?** Because one shirt is a costume you wear once. Twelve shirts is a wardrobe, which is the only kind of clothing humans actually wear in public. Social proof handles the part the facts cannot.
 
 **Why didn't they ask first?** They did the math. They calculated that the expected harm of asking ("you say no, your closet is unchanged, {{< var global_disease_deaths_daily_nounit >}} continue dying daily") was greater than the expected harm of not asking ("you are mad for a week, then you wear the shirts, conversations happen, the cascade triggers"). They picked the option that did not require your permission to save your life. Imagine you are in a car with someone you love and they are driving over sick people lying in the road. You say something even though it hurts their feelings. The shirts are the same conversation.
 
-## The objections you are about to raise
+## Answers for the person currently yelling at you
 
 **"My shirts!"** Replacement cost of a closet: ~$200. Unlocked treaty value per wearer: {{< var shirt_value_per_wearer_usd >}}. Even at terrible odds of working, the trade favors not throwing the shirts away.
 
 **"My military will be vulnerable!"** Every nation cuts by the same 1% at the same time. Relative balance is unchanged. Same math, different feelings.
 
+**"We cannot afford it."** Disease already burns approximately {{< var global_disease_economic_burden_annual >}} per year in lost work and drags off about {{< var global_destructive_economy_pct_gdp >}} of global GDP. The current arrangement is what nobody can afford.
+
 **"This is naive."** After WW2, the US cut military spending by {{< var post_ww2_military_cut_pct >}} in two years and stumbled into the greatest economic boom in history. GM went from B-24 bombers back to Cadillacs. Frigidaire stopped making machine guns. You are being asked for 1%.
 
-**"Politicians will never agree."** The defense lobby spends {{< var defense_lobbying_annual >}} per year buying politicians. The [treaty campaign budget](../economics/campaign-budget.qmd) to outbid them is {{< var treaty_campaign_budget_lobbying >}}. "Politically impossible" is a phrase that means "the bribes currently flow in a direction I am comfortable with."
+**"Politicians will never agree."** The defense lobby spends {{< var defense_lobbying_annual >}} per year buying politicians. The [treaty campaign budget](../economics/campaign-budget.qmd) to outbid them is {{< var treaty_campaign_budget_lobbying >}}. "Politically impossible" is a phrase that means "the bribes currently flow in a direction I am comfortable with." Blocking the treaty to protect the last 1% of murder revenue is not self-interest. It is arithmetic failure with a lobbyist.
 
 **"The Pentagon needs that money."** The Pentagon cannot account for $2.5 trillion it has already misplaced. You are not redirecting the missile budget. You are redirecting the "we lost it somewhere" budget. The missiles will not notice.
 
@@ -96,11 +104,23 @@ If it passes:
 
 **"Humans will never coordinate this."** If your species can coordinate dance moves across 150 countries on TikTok, it can coordinate not dying.
 
-## What you do now (three things)
+## What you do now (four things)
 
 1. **Wear the shirts.** Every day. Every stranger who asks "what's that about?" is a new conversation. Every conversation is a new node in the cascade. The shirts work even if you say nothing; they work better if you read aloud the card tucked in the collar.
 
 2. **Vote at [warondisease.org](https://warondisease.org).** Drag the slider. Register that you support redirecting 1% of military spending to clinical trials. The vote is how the cascade becomes countable. Politicians respond to numbers. Give them a number.
 
-3. **Forgive the human who wrote on your shirts.** They did this because they love you and do not want you to suffer and die of horrible diseases. and do not want you to suffer and die of horrible diseases.
+3. **Write this on two more shirts.** Pick the two humans whose funerals you least want to attend. Their closets are next. Permanent marker is at any drugstore. Front: *this t-shirt ended war and disease.* Back: *trade one apocalypse for disease eradication at warondisease.org.* Tuck a copy of this handout in each collar.
 
+4. **Forgive the human who wrote on your shirts.** They did this because they love you and do not want you to suffer and die of horrible diseases.
+
+## If you want the receipts
+
+- [The Funniest Joke in the Universe](joke.qmd), the full paper, with theorems and Monte Carlo intervals
+- [Frequently Asked Objections](faq.qmd), 147 objections demolished individually
+- [How to End War and Disease (for Busy People)](../../index-manual.qmd), the whole book
+- [Parameters & Calculations](parameters-and-calculations.qmd), every number, sourced and derivable
+
+---
+
+**WARONDISEASE.ORG. VOTE FIRST. YELL LATER.**
