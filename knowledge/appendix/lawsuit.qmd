@@ -207,7 +207,7 @@ Wealth gained by redirecting lobbying:           $[calculated]
 Additional healthy life-years (median estimate):     [X]
 ```
 
-*Healthy life-years estimate: the treaty scenario produces a global HALE gain of {{< var treaty_hale_gain_year_15 >}} by year 15, computed from disease cure fraction and longevity gains (see [GDP Trajectories](../economics/gdp-trajectories.qmd) and [parameters](parameters-and-calculations.qmd#sec-treaty_hale_gain_year_15)). For the CEO template, adjust using actuarial tables for the CEO's age and sex. Conservative floor: {{< var best_practice_life_expectancy_gain >}} (gap between global average and best-performing country). Cite the specific number your counsel is comfortable defending.*
+*Healthy life-years estimate: the treaty scenario produces a global HALE gain of {{< var treaty_hale_gain_year_15 >}} by year 15, computed from disease cure fraction and longevity gains (see [GDP Trajectories](../economics/gdp-trajectories.qmd) [@gdp-trajectories-paper-2025] and [parameters](parameters-and-calculations.qmd#sec-treaty_hale_gain_year_15)). For the CEO template, adjust using actuarial tables for the CEO's age and sex. Conservative floor: {{< var best_practice_life_expectancy_gain >}} (gap between global average and best-performing country). Cite the specific number your counsel is comfortable defending.*
 
 ### 7. The Fiduciary Questions
 
@@ -478,6 +478,26 @@ Demand requirement:                          This letter IS the demand
 ```
 
 Key authority: DGCL § 327 (contemporaneous ownership); *Tooley v. Donaldson, Lufkin & Jennette*, 845 A.2d 1031 (Del. 2004) (direct vs derivative test). The lobbying expenditure is an ongoing, recurring use of corporate funds, not a discrete historical transaction. Contemporaneous ownership is satisfied by purchasing shares at any point while the expenditure continues. Do not sell shares at any point during the process.
+
+### Target reference table
+
+Cost per share as of May 2026; lobbying figures from OpenSecrets (2024 full-year, the most recent complete reporting period).
+
+| Company | Ticker | ~Price/share | Lobbying (2024) | Incorporated |
+|---------|--------|---:|---:|:---:|
+| Lockheed Martin | LMT | $530 | $15.7M | MD |
+| RTX Corporation | RTX | $197 | $13.5M | DE |
+| Boeing | BA | $229 | $11.9M | DE |
+| General Dynamics | GD | $342 | $12.2M | DE |
+| Northrop Grumman | NOC | $557 | $8.8M | DE |
+| Huntington Ingalls | HII | $321 | $5.2M | DE |
+| Leidos Holdings | LDOS | $123 | $3.8M | DE |
+| L3Harris Technologies | LHX | $318 | $2.5M | DE |
+| **Sector total** | | | **$191M** | |
+
+Seven of eight are Delaware corporations; Lockheed Martin is Maryland. Both states permit Caremark-type oversight claims. Step 2 in the execution sequence above ("buy 10 shares") costs roughly $1,200-$5,600 depending on target. Filing against all eight requires approximately $25,600 in share purchases, which also happens to be the hedge: if the demand letters work and defense stocks dip, the treaty-driven GDP growth more than compensates (see Part 3).
+
+Share prices are approximate and will change. Look them up before buying. The lobbying column is what you cite in Section 1 of the demand letter as the specific expenditure constituting the alleged oversight failure.
 
 ### Eligible-Shareholder Proposal Track
 
