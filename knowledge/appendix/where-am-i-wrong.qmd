@@ -125,7 +125,7 @@ Doubling biomedical research dollars does not double cures. Diminishing returns 
 
 **Refutation:**
 
-You are basing this on a situation where trials are only done on profitable novel molecules. These trials are done on all potentially medicinal molecules, regardless of whether they are profitable, and the cost is about 40 times cheaper than traditional trials. Additionally, under this system, it is a decentralized FDA where all information is published, giving us additional public and shared information about the effectiveness of each intervention on each target. This allows us to better understand human biology and improves our ability to target and select the next intervention. You can aggregate all of this data, rank interventions, and always be trialing the most promising intervention available based on the entire universe of data. Therefore, the number of cures produced per trial should increase over time.
+You are basing this on a situation where trials are only done on profitable novel molecules. These trials are done on all potentially medicinal molecules, regardless of whether they are profitable, and the cost is about 40 times cheaper than traditional trials. Additionally, under this system, it is a [decentralized FDA](../solution/dfda.qmd) [@dfda-spec-paper-2025; @dfda-impact-paper-2025] where all information is published, giving us additional public and shared information about the effectiveness of each intervention on each target. This allows us to better understand human biology and improves our ability to target and select the next intervention. You can aggregate all of this data, rank interventions, and always be trialing the most promising intervention available based on the entire universe of data. Therefore, the number of cures produced per trial should increase over time.
 
 We are not running out of low-hanging fruit. 99.7% of the potential uses of 10,000 known-safe but generally unpatentable interventions have never been tested. You can't run out of low-hanging fruit if you haven't even gone into the orchard.
 
@@ -221,7 +221,7 @@ Multi-jurisdiction filings, plaintiff recruitment, legal templates updated for e
 
 **Refutation:**
 
-Why does this need centralized organizational capacity any greater than the website we already have? The website lets people drag a slider to allocate spending between mass murder capacity and clinical trials and vote yes or no on the 1% treaty. That is the entire required interface for the public.
+Why does this need centralized organizational capacity any greater than the website we already have? The website lets people drag a slider to allocate spending between mass murder capacity and clinical trials and vote yes or no on the [1% treaty](../solution/1-percent-treaty.qmd) [@1-percent-treaty-paper-2025] [@1-pct-treaty-impact-paper-2025]. That is the entire required interface for the public.
 
 This is not a corporate campaign. It does not need a corporate campaign's infrastructure. The strategy is fundamentally distributed: information propagation through shirts and news cycles, plus a one-click action (drag slider, vote, optionally file a lawsuit from an open-source template). Each individual actor is incentivized to spread the message because it is, per unit of money and effort, the best thing any human can do for themselves and their family. The mechanism is the same one that made chain letters reach hundreds of millions of people in the 1930s on a stamp and a trip to the post office, without any centralized organizational capacity.
 
