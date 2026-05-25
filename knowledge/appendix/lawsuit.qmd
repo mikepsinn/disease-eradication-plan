@@ -516,3 +516,22 @@ That forces the arithmetic without asking the SEC staff to adjudicate the meanin
 - The global agreement that would absorb the redirected military spending is documented in the [1% Treaty](../solution/1-percent-treaty.qmd) and the [Earth Optimization Prize](../strategy/earth-optimization-prize.qmd) [@earth-optimization-prize-paper-2025].
 - The successor systems for the budgets and policies the treaty redirects are [Wishocracy](../solution/wishocracy.qmd) [@wishocracy-paper-2025], [Optimocracy](../solution/optimocracy.qmd) [@optimocracy-paper-2025], the [Optimal Policy Generator](optimal-policy-generator-spec.qmd) [@opg-paper-2025], and the [Optimal Budget Generator](optimal-budget-generator-spec.qmd) [@obg-paper-2025].
 - Defense contractor lobbying is also discussed in the [Frequently Asked Objections](faq.qmd) chapter under "This Is Politically Impossible."
+
+## The Funniness of This Lawsuit, Mathematically
+
+A normal lawsuit produces zero laughs. The defendants do not laugh, the plaintiffs do not laugh, and the lawyers laugh only at the billable hours. This one produces approximately {{< var shirt_induced_laughs_gained >}}.
+
+The chain:
+
+- Average human laughter rate: {{< var human_laughs_per_day_average_nounit >}} laughs per day, or {{< var human_laughs_per_healthy_life_year_nounit >}} per healthy life-year.
+- The lawsuit's purpose is to force the math into the boardroom and the public record, redirecting the {{< var defense_lobbying_annual >}} per year of defense lobbying from blocking the 1% treaty to championing it.
+- The treaty compresses the disease eradication queue from {{< var status_quo_queue_clearance_years_nounit >}} years to {{< var dfda_queue_clearance_years_nounit >}} years, recovering approximately 565 billion healthy life-years across humanity.
+- 565 billion recovered healthy life-years × {{< var human_laughs_per_healthy_life_year_nounit >}} laughs per year = **{{< var shirt_induced_laughs_gained_nounit >}} laughs.**
+
+The full calculation:
+
+{{< var shirt_induced_laughs_gained_latex >}}
+
+For comparison, the most successful class action in US history (the 1998 Tobacco Master Settlement) produced approximately zero laughs. This one produces 3.51 quadrillion. The cost-per-laugh is approximately **$0.00000000003**, which is the lowest cost-per-laugh ever recorded for a legal proceeding.
+
+The defendants will find this less funny than the plaintiffs do. That is fine. The laugh count is calculated for humanity in aggregate, not for the named defendants. They are welcome to file an amicus brief explaining why their 1% revenue is funnier than 3.51 quadrillion laughs. We will read it carefully and then file it next to the other defenses against the funniest lawsuit in the universe.

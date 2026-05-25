@@ -2,7 +2,7 @@
 title: 'The Funniest Hostile Takeover in the Universe'
 description: 'For roughly $90 per global human, humanity can buy a controlling stake in every major defense contractor on Earth, redirect their lobbying budgets toward the 1% treaty, and end the political opposition to disease eradication. The math is on this page.'
 abstract: |
-  The Western military-industrial complex has a combined market capitalization of approximately $670 billion across the major US primes, plus another $50 billion across allied European primes. A majority shareholding requires roughly $385 billion nominal (~$700 billion realistic after price inflation during a coordinated buy-up). Distributed across 8 billion humans, that is approximately $48-$90 per person. Once humanity holds the majority, the single highest-leverage action is to redirect the $127 million per year of defense lobbying from blocking the 1% treaty to championing it. Expected return per global human: ~3,500x-11,000x at base case; ~35x-110x even after a 99% pessimistic haircut.
+  The Western military-industrial complex has a combined market capitalization of approximately $670 billion across the major US primes, plus another $50 billion across allied European primes. A majority shareholding requires roughly $385 billion nominal (~$700 billion realistic after price inflation during a coordinated buy-up). Distributed across the global population, that is approximately $48-$90 per person. Once humanity holds the majority, the single highest-leverage action is to redirect the ~$127 million per year of defense lobbying from blocking the 1% treaty to championing it. Expected return per global human: ~3,500x-11,000x at base case; ~35x-110x even after a 99% pessimistic haircut.
 aliases:
   - /hostile-takeover.html
   - /funniest-hostile-takeover.html
@@ -98,7 +98,7 @@ A coordinated purchase of half the float of every major defense prime simultaneo
 
 | Cost distributed across | Per-person cost (realistic) |
 |---|---:|
-| Global humans (8 billion) | **~$90** |
+| Global humans ({{< var global_population_2024_nounit >}}) | **~$90** |
 | Global adults (~5.5 billion) | ~$130 |
 | Global middle class+ (~3.5 billion) | ~$200 |
 | US adults (260 million) | ~$2,700 |
@@ -181,9 +181,9 @@ Defense factories have precision manufacturing, supply chain, and quality system
 
 **Time to effect:** 3-5 years.
 
-### Tier 9: Distribute dividends directly to the 8 billion shareholders
+### Tier 9: Distribute dividends directly to the {{< var global_population_2024_nounit >}} shareholders
 
-Defense contractor profits historically flow to a narrow set of institutional and high-net-worth shareholders. After the takeover, profits flow to the 8 billion humans who own the shares. Per-capita this is small (~$10-50 per global human per year) but it is the first direct income transfer from the military industrial complex to humanity in history.
+Defense contractor profits historically flow to a narrow set of institutional and high-net-worth shareholders. After the takeover, profits flow to the {{< var global_population_2024_nounit >}} humans who own the shares. Per-capita this is small (~$10-50 per global human per year) but it is the first direct income transfer from the military industrial complex to humanity in history.
 
 **Cost:** Negative (just redistributes existing profits).
 
@@ -218,7 +218,7 @@ For a US adult contributing ~$2,700:
 | Benefit | Approx value per person |
 |---:|---:|
 | Personal share of GDP-doubling at year 15 (US median net worth ~$190K → ~$380-570K) | ~$190,000-$380,000 |
-| Disease eradication: ~10-20 extra healthy life-years × US VSL (~$100K/year) | ~$1,000,000-$2,000,000 |
+| Disease eradication: ~10-20 extra healthy life-years × US QALY threshold ({{< var medical_qaly_threshold >}}/year) | ~$1,000,000-$2,000,000 |
 | Lower lifetime apocalypse risk | ~$10,000-$100,000 |
 | Direct defense-industry dividends | ~$500-$2,000/year ongoing |
 | **Total EV per US adult (base case)** | **~$1,200,000-$2,500,000** |
@@ -294,3 +294,26 @@ This page is a draft. Before any campaign acts on the math:
 6. **Coordinate with the [handout and shirts campaign](handout.qmd)** so recruitment of participants happens through the same funnel.
 
 For the underlying argument for why this is necessary, see [Where Am I Wrong?](where-am-i-wrong.qmd) and the [1% treaty paper](../solution/1-percent-treaty.qmd). For the liability framework that quantifies the harm the takeover is correcting, see [Humanity v. Government](humanity-v-government.qmd).
+
+## The Funniness of This Hostile Takeover, Mathematically
+
+The financial ROI is obvious: ~$90 in, ~$310,000-$1,000,000 out. The financial ROI is also not the point. The point is that this is the funniest hostile takeover in the universe, and the funniness is also calculable.
+
+A normal hostile takeover produces one laugh: the laugh of the acquirer counting their gains. This one produces approximately {{< var shirt_induced_laughs_gained >}}.
+
+The chain:
+
+- Average human laughter rate: {{< var human_laughs_per_day_average_nounit >}} laughs per day, or {{< var human_laughs_per_healthy_life_year_nounit >}} per healthy life-year.
+- The takeover redirects the {{< var defense_lobbying_annual >}} per year of defense lobbying from blocking the 1% treaty to championing it.
+- The treaty compresses the disease eradication queue from {{< var status_quo_queue_clearance_years_nounit >}} years to {{< var dfda_queue_clearance_years_nounit >}} years, recovering approximately 565 billion healthy life-years across humanity.
+- 565 billion recovered healthy life-years × {{< var human_laughs_per_healthy_life_year_nounit >}} laughs per year = **{{< var shirt_induced_laughs_gained_nounit >}} laughs.**
+
+The full calculation:
+
+{{< var shirt_induced_laughs_gained_latex >}}
+
+The ratio of laughs produced to laughs generated by a typical joke is approximately **3.51 quadrillion to 1**. The ratio of laughs produced to the ~$90 per-human cost is approximately **39 trillion laughs per dollar**. The cost-per-laugh is approximately **$0.00000000003**.
+
+Carl Linnaeus, Charles Darwin, and the entire history of biology never had a sample size large enough to measure a joke this funny. This page contains the first known calculation of a joke at quadrillion-laugh scale. The other contenders (the ozone treaty, the eradication of smallpox, the Marshall Plan) all produced fewer than 10^12 laughs each. This one produces more than 10^15.
+
+If you have any remaining objections, please weigh them against {{< var shirt_induced_laughs_gained_nounit >}} laughs and proceed accordingly.
