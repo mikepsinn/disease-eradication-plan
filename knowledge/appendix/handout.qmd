@@ -45,9 +45,9 @@ scores:
 
 1. **Pick the person whose funeral you least want to attend.**
 
-2. **Find a co-conspirator.** Alone, you are vandalizing clothing and it feels weird. Two of you sneaking into the closet is a heist movie. Each of you also starts a separate chain of vandalism downstream.
+2. **Find a co-conspirator.** Alone, you are vandalizing clothing and it feels weird. Two of you sneaking into the closet is a heist movie.
 
-3. **Raid the closet. Write on every shirt.**
+3. **Write on every shirt.**
    - **Front:** *this t-shirt ended war and disease*
    - **Back:** *trade one apocalypse for disease eradication at warondisease.org* + your referral code
 
@@ -55,24 +55,24 @@ scores:
 
 5. **When they catch you, confess with love.** Look them in the eyes and say: *"I love you and I don't want you to die of horrible diseases. This is the least terrible way I know to prevent that. Read the other side of this paper."* Then walk them through it.
 
-6. **Extend to everyone they love.** Their siblings. Their parents. The parents of their children's friends. Everyone whose funeral you are not willing to watch when the treatments were sitting in a queue the whole time.
+6. **Extend to everyone they love.** Their siblings. Their parents. The parents of their children's friends. Everyone whose funeral you are not willing to watch.
 
-7. **Wear them every day.** Not once. Every day. On August 6 ([Earth Optimization Day](../strategy/earth-optimization-day.qmd)), everyone wears them at the same time. August 6 is the wave; the daily wearing is the ocean.
+7. **Wear them every day.** Not once. Every day. On August 6 ([Earth Optimization Day](../strategy/earth-optimization-day.qmd)), everyone wears them at once.
 
 8. **Vote at [warondisease.org](https://warondisease.org).** Drag the slider. Politicians count votes; give them a big number to count.
 
-9. **Convert the person whose closet you vandalized.** They are wearing the three shirts you defaced but not the other twelve. One more move. Ask: *"You agree the math is right. You are wearing three. Why not the rest?"* Then shut up. Every answer they give sounds terrible out loud:
+9. **Convert the person whose closet you vandalized.** They are wearing the three shirts you defaced but not the other twelve. Ask: *"You agree the math is right. You are wearing three. Why not the rest?"* Every answer sounds terrible out loud:
     - *"I like those shirts."* = "I like my shirts more than progress toward disease eradication."
     - *"It won't make a difference."* = "If three matter, more matters more. If three don't matter, why am I wearing them."
     - *"People will think I'm weird."* = "I am letting people die because I'm worried what strangers think of my shirt."
 
-10. **Print more handouts at [warondisease.org/handout](https://warondisease.org/handout).** Each handout that ends up in a collar produces another vandal. Eight billion brains, one piece of paper at a time.
+10. **Print more handouts at [warondisease.org/handout](https://warondisease.org/handout).** Each handout that ends up in a collar produces another vandal. Eight billion people, one piece of paper at a time.
 
 ### Why this works (chain letters did, and they were worse)
 
 In the 1930s, chain letters reached hundreds of millions of people. They cost a stamp and a trip to the post office. They promised $1,000 that never came. They threatened seven years of bad luck that was not real. They were expensive, annoying, and fake. They worked anyway.
 
-This is the same mechanism, with the obvious bugs fixed:
+Same mechanism, fixed:
 
 - **Cost.** Chain letter: $5 and an hour at the post office. This: a marker and fifteen minutes in a closet.
 - **Reward.** Chain letter: $1,000 that never came. This: **{{< var shirt_value_per_wearer_usd >}}** in unlocked treaty value per shirt-wearing human, and your family not dying.
@@ -87,13 +87,13 @@ Chain letters replicated despite being costly, unfunny, and fake. This is cheap,
 
 You found this in the collar of a shirt that used to be yours. The shirt now says: *this t-shirt ended war and disease*.
 
-Being mad is the correct first reaction. Now imagine you had a disease and someone had to cut off your shirt to save your life. You wouldn't get mad at the surgeon. This is the same situation, except instead of cutting off your shirt, they had to write on it, and the disease is in the future. Keep reading.
+Being mad is the correct first reaction. Now imagine you had a disease and someone had to cut off your shirt to save your life. You wouldn't get mad at the surgeon. This is the same situation, except instead of cutting off your shirt, they had to write on it, and the disease is in the future.
 
 ## What is happening
 
 About {{< var global_disease_deaths_daily_nounit >}} humans die every day of diseases that would have treatments if anyone had funded the trials. That is about 50 September 11s every day. Nobody invades anyone about it because diseases do not have oil.
 
-Your body is quietly falling apart. Right now, as you read this sentence, something inside you is breaking. You don't know which part yet. You won't know until a doctor sits you down and says a word that rearranges the rest of your life. The treatments that would have helped exist as untested compounds on shelves, because the money was busy turning into a missile.
+Your body is quietly falling apart. Right now, as you read this sentence, something inside you is breaking. You don't know which part yet. You won't know until a doctor sits you down and says one word and the rest of your life is different. The treatments that would have helped exist as untested compounds on shelves, because the money was busy turning into a missile.
 
 Your chance of dying from terrorism this year: 1 in {{< var annual_terrorism_death_risk_denominator >}}. Your chance of dying from disease, lifetime: approximately 100%. Your governments spend **{{< var military_to_government_clinical_trials_spending_ratio >}} times more on mass murder capacity than on testing which medicines work**. If cancer had oil reserves, you would have cured it by 2003.
 
@@ -117,9 +117,6 @@ The chain:
 2. That 1% buys a {{< var dfda_trial_capacity_multiplier_nounit >}}x increase in clinical trial capacity. The queue compresses from {{< var status_quo_queue_clearance_years_nounit >}} years to {{< var dfda_queue_clearance_years_nounit >}}.
 3. Global GDP at year 15 is {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}} the current trajectory. About 2 billion humans are currently too sick or dead to work. Another 2 billion are taking care of them instead of producing anything.
 4. If 8 billion humans wear the shirt, the treaty passes. Nobody has invented the politician who can ignore 8 billion votes.
-5. The marker cost $0.50. ∎
-
-The spreadsheet stops killing people.
 
 ## The calculation, on one page
 
@@ -141,11 +138,11 @@ The spreadsheet stops killing people.
 
 ## Answers for the person still yelling at you
 
-**"My shirts!"** Closet replacement: $200. Treaty value per wearer: {{< var shirt_value_per_wearer_usd >}}. Don't throw the shirts away.
+**"My shirts!"** Each shirt is worth {{< var shirt_value_per_wearer_usd >}} in treaty value. Don't throw them away.
 
-**"This is naive."** After WW2, the US cut military spending by {{< var post_ww2_military_cut_pct >}} in two years and got the greatest economic boom in history. You are being asked for 1%.
+**"This is naive."** After WW2, the US cut military spending by {{< var post_ww2_military_cut_pct >}} in two years and got the greatest economic boom in history. The treaty asks for 1%.
 
-**"Lobbyists will block this."** If you are a 60-year-old defense contractor CEO, you are dead in 20 years and take none of it with you. Under the treaty, the economy is {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}} larger, your grandchildren are alive, and your dynasty compounds for centuries. Nobody in the loop is your enemy. Everyone is bad at arithmetic.
+**"Lobbyists will block this."** Defense contractors want money, not war. Without the treaty: they die of disease in 20 years and their net worth is zero. Unless they are buried with their money. Which their kids are unlikely to do. With the treaty: they lose 1% of revenue, the economy is {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}} bigger, and they make much more money. They are bad at arithmetic, not evil.
 
 **"Politicians will never agree."** Politicians follow voters. Once 3.5% of voters demand the treaty (the threshold every major political movement in history has crossed), refusing it becomes career suicide. Politicians are extremely good at not committing career suicide. It is their primary skill.
 
