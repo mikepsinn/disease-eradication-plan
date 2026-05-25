@@ -4,9 +4,11 @@ description: 'A $3,000 shareholder demand letter that turns the defense lobby in
 abstract: |
   This document is a shareholder demand letter, structured as a derivative-action precursor under Delaware corporate law, addressed in common to the boards of every major US defense contractor. The legal theory is duty of care plus Caremark 2.0 oversight, framed entirely within the single-firm shareholder-primacy model to avoid the McRitchie v. Zuckerberg problem.
 
-  The substantive claim: each defendant's annual lobbying expenditure to maintain current military spending ratios produces negative ROI for its own shareholders. The maintained ratio suppresses the GDP growth that would expand the defendant's addressable market. Under the 1% Treaty scenario, defense contractor revenue at year 20 grows from $2.25T to $10.9T (a 4.88x multiple). The lobbying is therefore destroying the very economic regime that funds the contracts.
+  The substantive claim: each defendant's annual lobbying expenditure to maintain current military spending ratios produces negative ROI for its own shareholders. The maintained ratio suppresses the GDP growth that would expand the defendant's addressable market. Under the 1% Treaty scenario, defense contractor revenue at year 20 grows by {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_20 >}}. The lobbying is therefore destroying the very economic regime that funds the contracts.
 
   The strategic structure is a Zugzwang: every possible board response (accept, fight, ignore, refute) benefits the plaintiff. Total cost to file: approximately $3,000 (10 shares of stock; pro bono counsel). Total time: approximately 43 hours.
+
+  The chapter is also a campaign instrument with three layers: a public indictment, plaintiff recruitment, and legal instruments for shareholder demands, derivative litigation, direct personal-damages theories, and eligible-shareholder proposals. The derivative claim is disciplined. The direct personal-damages theory is unlikely but strategically useful. Every response is useful if it forces the defense budget ratchet to speak in public.
 aliases:
   - /lawsuit.html
   - /funniest-lawsuit.html
@@ -17,7 +19,7 @@ author:
       name: International Campaign to End War and Disease
     roles:
       - conceptualization
-      - writing – original draft
+      - writing - original draft
     email: mike@warondisease.org
     corresponding: true
 keywords:
@@ -28,6 +30,7 @@ keywords:
   - defense contractor lobbying
   - 1% treaty
   - Delaware Chancery
+  - litigation campaign
 format:
   html:
     toc: true
@@ -38,32 +41,36 @@ format:
     geometry: margin=1in
     fontsize: 11pt
 scores:
-  quality: 7
-  value: 9
+  quality: 8
+  value: 10
   timeliness: 9
   standalone: 9
-  voice: 7
-  importance: 9
+  voice: 8
+  importance: 10
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 
-**STATUS: DRAFT.** Requires securities lawyer review before sending.
+**STATUS: DRAFT.** Requires securities, derivative-litigation, Rule 14a-8, and damages counsel review before sending or filing.
 
 **COST TO FILE:** approximately $3,000 (10 shares of stock; pro bono counsel).
 
 **PROBABILITY OF THE MATH BEING READ BY THE BOARD:** approximately 100%.
 
-::: {.callout-warning}
-**Critical legal note for reviewing attorney.** In *McRitchie v. Zuckerberg*, C.A. No. 2022-0890-JTL (Del. Ch. Apr. 30, 2024), Vice Chancellor Laster rejected a fiduciary-duty theory based on directors' obligation to consider societal and macroeconomic impact. Delaware law applies the single-firm, shareholder-primacy model.
+**PUBLIC OBJECTIVE:** help unlock a 1% military-to-clinical-trials redirection path [@1-percent-treaty-paper-2025] [@1-pct-treaty-impact-paper-2025] that could prevent {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved_nounit >}} deaths by compressing the untreated-disease queue from {{< var status_quo_queue_clearance_years >}} to {{< var dfda_queue_clearance_years >}}.
 
-**This letter does NOT argue the board should consider societal impact.** This letter argues the board's specific lobbying expenditure produces negative ROI for this company's own shareholders. This is a duty-of-care and corporate-waste claim within the single-firm model. Every reference to GDP growth is framed as impact on shareholder wealth, not societal welfare. Review all language to ensure no McRitchie-vulnerable framing.
+::: {.callout-warning}
+**Legal posture for reviewing counsel.** The public wrapper is morally aggressive. The board-facing demand is narrower. In *McRitchie v. Zuckerberg*, C.A. No. 2022-0890-JTL (Del. Ch. Apr. 30, 2024), Vice Chancellor Laster rejected a fiduciary-duty theory based on directors' obligation to consider society-wide or macroeconomic interests. Delaware law applies the single-firm, shareholder-primacy model.
+
+The demand letter therefore does not ask directors to save the world as a charitable act. It asks whether a recurring corporate expenditure benefits this company's shareholders after accounting for the effect of defense-budget-ratchet lobbying on the economy that funds future contracts, shareholder income, shareholder survival, and long-term market value.
 
 Target doctrine: *Caremark* 2.0 duty of oversight, as expanded in *Marchand v. Barnhill* (2019) and *Garfield v. Allen* (2024, V.C. Laster). The demand letter itself creates the "red flag" that triggers oversight obligations.
+
+Derivative recovery usually belongs to the corporation, not the filing shareholder. Direct personal damages are an aggressive and unlikely theory. Rule 14a-8 is a separate eligible-shareholder path with ownership and holding requirements. Do not promise plaintiffs a direct payout from derivative recovery.
 :::
 
 ## Why This Works
 
-The defense lobby is the most effective political-influence operation on Earth. It spends approximately {{< var defense_lobbying_annual >}} per year buying politicians and receives close to a trillion dollars in defense contracts in return. The standard mistake of treaty-advocacy efforts is to try to defeat this lobby by outbidding it. The standard outcome is a fundraising treadmill that never reaches the budget.
+The defense lobby is the most effective political-influence operation on Earth. It spends approximately {{< var defense_lobbying_annual >}} per year buying politicians and receives close to a trillion dollars in defense contracts in return. The standard mistake of treaty-advocacy efforts is to try to defeat this lobby by outbidding it. That is charming, like trying to drown the ocean with a cup. The standard outcome is a fundraising treadmill that never reaches the budget.
 
 The lawsuit does something different. It does not try to defeat the defense lobby. It tries to flip it.
 
@@ -72,6 +79,54 @@ The defense industry's lobbying machine produces negative ROI for its own shareh
 Once a single board receives a sourced, quantitative analysis showing this expenditure destroys shareholder value, the board has two options: investigate, or knowingly continue to destroy shareholder value with a documented red flag in its possession. Under *Caremark* and its progeny, the second option creates personal liability for directors. The first option requires commissioning an independent analysis that will reach the same conclusion as the demand letter, because the demand letter's math comes from SIPRI, the WHO, the NIH, and the boards' own SEC filings.
 
 In either path, the lobby has to switch sides. The cost to make it happen is $3,000 of stock and 43 hours of work per defendant.
+
+## The Defense Budget Ratchet
+
+The defense industry does not merely defend an existing line item. It lobbies to protect and expand the defense budget ratchet: more appropriations, more procurement, more threat inflation, more programs, more contracts, and fewer budget conversations where clinical trials are allowed into the room.
+
+The ratchet is visible in the numbers. Defense lobbying is {{< var defense_lobbying_annual >}} per year. Global military spending has grown at a real {{< var global_military_spending_real_cagr_20yr >}} annual rate over the last two decades. Current US military spending is {{< var us_military_spending_current_vs_prewar_multiplier >}} the pre-World War II baseline. This is not an accident. It is the political economy Dwight Eisenhower warned about when he described the military-industrial complex in his farewell address. Humanity then performed the traditional Earth ceremony where it hears an accurate warning, nods solemnly, and funds the problem for several more generations. See [Eisenhower and the Military-Industrial Complex](../proof.qmd#eisenhower).
+
+The lawsuit's causal claim is simple: if boards fund lobbying whose functional KPI is budget expansion, then boards should have a defensible answer when shareholders ask whether that KPI is actually good for shareholders.
+
+## Campaign Architecture
+
+The chapter has three layers because one lawsuit vehicle is too brittle.
+
+| Layer | Audience | Job |
+|---|---|---|
+| Public indictment | Courts, journalists, voters, employees, plaintiffs | Make the moral stakes explicit: the budget ratchet is being defended while the disease queue remains {{< var status_quo_queue_clearance_years >}} long. |
+| Plaintiff recruitment | Shareholders, patients, families, workers | Explain why filing can still be rational if the case loses, without promising derivative payouts. |
+| Legal instruments | Boards, counsel, courts, eligible shareholders | Demand ROI analysis, disclosure, injunctive relief, and litigation hooks that create public pressure. |
+
+The public layer says the quiet part loudly. The legal layer asks a smaller question the board cannot honestly avoid: did anyone ever analyze this expenditure?
+
+## Legal Vehicles
+
+| Vehicle | Plaintiff | Ask | Main value | Caveat |
+|---|---|---|---|---|
+| Shareholder demand | Current shareholder | Independent ROI analysis and assumptions disclosure | Forces board attention and creates a documented record | Demand refusal may still be protected by business judgment. |
+| Derivative flank | Shareholder on behalf of the corporation | Corporate waste recovery, process reform, injunction | Makes lobbying spend itself the fiduciary object | Recovery usually goes to the corporation, not the plaintiff. |
+| Direct personal-damages case | Individual plaintiff | Lost prosperity, delayed treatment, survival damages | Recruits plaintiffs and frames the human stakes | Very aggressive, likely dismissed, and still strategically useful. |
+| Rule 14a-8 path | Eligible long-term shareholder | Proxy proposal for independent ROI audit | Puts the issue in the company's own shareholder materials | Eligibility and procedural requirements are real; this is not available to every new buyer. |
+
+This is not a purity contest between legal theories. It is a pressure system. A derivative suit can create the board record. A direct case can create the human story. A shareholder proposal can create the proxy fight. A dismissal can create the headline.
+
+## Outcome Matrix
+
+| Response | Public translation | Next action |
+|---|---|---|
+| Board ignores demand | They received the math and chose silence. | File derivative complaint, publish the refusal record, recruit employees and shareholders. |
+| Board says the math is wrong | Excellent. The defense budget ratchet has entered the arithmetic arena. | Publish their assumptions beside the redirection model; invite economists, analysts, and journalists to adjudicate. |
+| Board orders independent analysis | The central demand worked. | Demand disclosure of methods, assumptions, and whether lobbying objectives will change. |
+| Court dismisses | The court was asked whether boards must analyze lobbying that may help keep the disease queue {{< var status_quo_queue_clearance_years >}} long. The court said no. | Use dismissal as press, appeal if counsel recommends it, file cleaner vehicles and shareholder proposals. |
+| Court allows discovery | The budget ratchet is now under oath. | Seek lobbying ROI documents, board minutes, assumptions, and communications about long-term demand. |
+| Media covers it | The public learns that defense lobbying can be challenged as shareholder-negative. | Recruit parallel plaintiffs against more boards and ask politicians why clinical trials are not in the budget room. |
+
+Loss is not the opposite of campaign progress. Silence, dismissal, and ridicule are all admissions that the budget ratchet would rather not do the ROI analysis in public.
+
+### The Settlement Is the Trap
+
+The settlement asks them to redirect existing lobbying from one objective to another. Same lobbyists. Same offices. Same budget. Different talking points. The settlement makes the defendant richer. There is no settlement in legal history where accepting makes the defendant better off than before the lawsuit.
 
 ---
 
@@ -97,45 +152,32 @@ The question is whether this expenditure actually achieves its stated purpose of
 
 ### 2. The Investment the Lobbying Maintains
 
-The lobbying is effective. Global military spending is approximately {{< var global_military_spending_annual_2024 >}} per year (SIPRI, 2024 Yearbook, [sipri.org/yearbook/2024](https://www.sipri.org/yearbook/2024)). Global government-funded clinical trials receive approximately $4.5 billion per year (NIH Budget Office, [officeofbudget.od.nih.gov](https://officeofbudget.od.nih.gov/)). The ratio is {{< var military_to_government_clinical_trials_spending_ratio >}} to 1.
+The lobbying is effective. Global military spending is approximately {{< var global_military_spending_annual_2024 >}} per year (SIPRI, 2024 Yearbook, [sipri.org/yearbook/2024](https://www.sipri.org/yearbook/2024)). Global government-funded clinical trials receive approximately {{< var global_government_clinical_trials_spending_annual >}} per year (NIH Budget Office, [officeofbudget.od.nih.gov](https://officeofbudget.od.nih.gov/)). The ratio is {{< var military_to_government_clinical_trials_spending_ratio >}} to 1.
 
 The question is not whether the lobbying maintains this ratio. It does. The question is whether maintaining this ratio benefits shareholders.
 
 ### 3. The ROI Analysis the Board Has Not Conducted
 
-Disease costs the global economy approximately $5 trillion per year in direct medical costs and {{< var global_disease_economic_burden_annual >}} in total burden including productivity loss (WHO, [who.int/data/gho](https://www.who.int/data/gho)). This is approximately {{< var global_destructive_economy_pct_gdp >}} of global GDP. Military spending has an economic multiplier of approximately 0.6x. Healthcare investment has a multiplier of approximately 4.3x (Congressional Budget Office; Moody's Analytics).
+Disease costs the global economy {{< var global_disease_economic_burden_annual >}} per year in total burden including productivity loss (WHO, [who.int/data/gho](https://www.who.int/data/gho)). Military spending has an economic multiplier of approximately {{< var economic_multiplier_military_spending >}}. Healthcare investment has a multiplier of approximately {{< var economic_multiplier_healthcare_investment >}} (Congressional Budget Office; Moody's Analytics).
 
 The Company operates in an economy. The size of that economy determines the size of government budgets, including military budgets. A larger economy produces larger military budgets in absolute dollars.
 
-If 1% of military spending were redirected to clinical trials (the [1% Treaty](../solution/1-percent-treaty.qmd) scenario), the resulting economic growth from disease burden reduction produces the following effect on the Company's addressable market:
+If 1% of military spending were redirected to clinical trials (the [1% Treaty](../solution/1-percent-treaty.qmd) [@1-percent-treaty-paper-2025] [@1-pct-treaty-impact-paper-2025] scenario), the resulting economic growth from disease burden reduction produces the following effect on the Company's addressable market:
 
-```
-STATUS QUO (year 20, 2.5% baseline CAGR)
-Global GDP:                              $188,000,000,000,000
-Military spending (~2.4% of GDP):          $4,500,000,000,000
-Defense contractor revenue (~50%):         $2,250,000,000,000
-
-1% TREATY (year 20, 10.9% CAGR from disease burden reduction)
-Global GDP:                              $919,000,000,000,000
-Military spending (2.376% of GDP):         $21,800,000,000,000
-Defense contractor revenue (~50%):        $10,900,000,000,000
-```
+| Metric | Status quo (year 20) | 1% Treaty (year 20) |
+|---|---:|---:|
+| Global GDP | {{< var current_trajectory_gdp_year_20 >}} | {{< var treaty_trajectory_gdp_year_20 >}} |
+| Relative economy size | Baseline | {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_20 >}} |
+| Modeled cumulative lifetime income per person | {{< var current_trajectory_cumulative_lifetime_income >}} | {{< var treaty_trajectory_cumulative_lifetime_income >}} |
+| Incremental lifetime income | Baseline | {{< var treaty_trajectory_lifetime_income_gain_per_capita >}} |
 
 Source: GDP trajectory modeling at [manual.warondisease.org/knowledge/economics/gdp-trajectories.html](https://manual.warondisease.org/knowledge/economics/gdp-trajectories.html). CAGR differential derived from healthcare vs. military economic multipliers (CBO) and disease burden as percentage of GDP (WHO).
 
-Defense contractor revenue under the treaty scenario is **$10.9 trillion**, compared to **$2.25 trillion** under the status quo. The Company's lobbying to maintain the current military spending percentage is lobbying to keep small the economy that funds the Company's contracts. The lobbying produces less Company revenue, not more, over any horizon longer than 5-7 years.
+The Company's lobbying to maintain the current military spending percentage is lobbying to keep small the economy that funds the Company's contracts. The lobbying produces less Company revenue, not more, over any horizon longer than 5-7 years.
 
 ### 4. Impact on Shareholder Wealth
 
-Each shareholder is an individual with total wealth composed of Company shares, other investments, income, and assets. All of these exist within an economy. The size of that economy directly affects shareholder wealth:
-
-```
-                                       STATUS QUO        TREATY
-Average per-capita lifetime income:     $1,100,000   $4,580,000
-Lifetime income gain per shareholder:        ---     $3,480,000
-```
-
-Source: [1% Treaty impact analysis](https://manual.warondisease.org/knowledge/economics/1-pct-treaty-impact.html).
+Each shareholder is an individual with total wealth composed of Company shares, other investments, income, and assets. All of these exist within an economy. The size of that economy directly affects shareholder wealth.
 
 The Company's lobbying expenditure maintains an economic regime in which each shareholder earns approximately {{< var treaty_trajectory_lifetime_income_gain_per_capita >}} less over their lifetime than they would under the alternative. This is a direct, quantifiable harm to shareholder wealth caused by a specific Company expenditure.
 
@@ -145,22 +187,9 @@ A deceased shareholder has a net worth of $0 regardless of the Company's share p
 
 ### 5. Historical Precedent
 
-This reallocation is not unprecedented:
+This reallocation is not unprecedented. After the World War II peak, US military spending fell by {{< var post_ww2_military_cut_pct >}} in two years. Current US military spending is {{< var us_military_spending_current_vs_prewar_multiplier >}} the pre-World War II baseline in constant dollars. The period following the {{< var post_ww2_military_cut_pct >}} post-war reduction produced the greatest sustained economic expansion in American history.
 
-```
-US military spending in 1939 (2024 dollars):  $29,000,000,000
-US military spending in 2024:                $886,000,000,000
-Pre-WWII spending was lower by:                         96.7%
-
-US military spending at WW2 peak (2024 $): $1,420,000,000,000
-US military spending in 1947 (2024 $):       $176,000,000,000
-Post-war reduction:                                     87.6%
-Time to execute:                                      2 years
-```
-
-Source: US Office of Management and Budget Historical Tables, Table 3.1 ([whitehouse.gov/omb/historical-tables](https://www.whitehouse.gov/omb/historical-tables/)).
-
-The period following the 87.6% post-war reduction produced the greatest sustained economic expansion in American history.
+The Board should ask whether its lobbying is helping shareholders adapt to the next high-return allocation or merely extending the old one because the old one has lobbyists.
 
 ### 6. Personalized Impact on [COMPANY] CEO
 
@@ -170,12 +199,12 @@ Based on [COMPANY] proxy statement (DEF 14A, [sec.gov](https://www.sec.gov/)):
 [CEO NAME], age [X], estimated net worth: $[X]
 
 SCENARIO A: STATUS QUO (continue current lobbying)
-Net worth in 20 years (2.5% CAGR):              $[calculated]
+Net worth in 20 years (baseline CAGR):              $[calculated]
 Probability of being alive at [age+20]:               ~[X]%
 Expected accessible wealth:                      $[calculated]
 
 SCENARIO B: 1% TREATY (redirect lobbying objective)
-Net worth in 20 years (10.9% CAGR):              $[calculated]
+Net worth in 20 years (treaty CAGR):              $[calculated]
 Probability of being alive at [age+20]:               ~[X]%
 Expected accessible wealth:                      $[calculated]
 
@@ -192,7 +221,7 @@ The Company's lobbying expenditure is a significant, recurring use of shareholde
 
 1. Has the Board ever conducted an ROI analysis of the Company's lobbying expenditure that accounts for the effect of the maintained spending ratio on the size of the economy that funds the Company's contracts?
 2. If not, on what basis does the Board conclude this expenditure benefits shareholders?
-3. If yes, does that analysis account for the GDP growth differential between the status quo and the treaty scenario (4.88x at year 20)? Please provide the analysis.
+3. If yes, does that analysis account for the GDP growth differential between the status quo and the treaty scenario ({{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_20 >}} at year 20)? Please provide the analysis.
 4. Has the Board considered whether maintaining the current ratio ({{< var military_to_government_clinical_trials_spending_ratio >}} to 1, military spending to government clinical trials) suppresses the economic growth that would increase the Company's total addressable market?
 
 ### 8. Proposed Resolution
@@ -204,7 +233,7 @@ The Company redirects its annual lobbying objective from maintaining current mil
 This resolution:
 
 - Costs the Company $0 in additional expenditure (same lobbying budget, different objective).
-- Increases the Company's long-term addressable market (4.88x larger economy).
+- Increases the Company's long-term addressable market ({{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_20 >}} larger economy).
 - Increases shareholder lifetime wealth by approximately {{< var treaty_trajectory_lifetime_income_gain_per_capita >}} per shareholder.
 - Is consistent with the Board's duty of care to make informed expenditure decisions.
 
@@ -268,10 +297,6 @@ Strengthens the *Caremark* claim. The Board received a detailed, sourced analysi
 
 Best outcome for public discourse. Their counter-analysis enters the public record. The plaintiff responds. The financial press covers the debate. Every number is from SIPRI, WHO, NIH, and SEC filings. They are arguing against their own government's data.
 
-### The settlement is the trap
-
-The settlement asks them to redirect existing lobbying from one objective to another. Same lobbyists. Same offices. Same budget. Different talking points. The settlement makes the defendant richer. There is no settlement in legal history where accepting makes the defendant better off than before the lawsuit.
-
 ### Key legal notes for counsel
 
 **DO:** Frame everything as single-firm shareholder harm. "This expenditure hurts YOUR shareholders."
@@ -283,6 +308,20 @@ The settlement asks them to redirect existing lobbying from one objective to ano
 **DO:** File in Delaware Chancery. Most major defense contractors are Delaware-incorporated.
 
 **DO:** Note that V.C. Laster accepted the novel *Caremark* theory in *Garfield v. Allen*. Approximately 1-in-7 chance of drawing him.
+
+**McRitchie guardrail:** never make the demand letter depend on a board duty to maximize global welfare. The public wrapper can say the case could prevent {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved_nounit >}} deaths. The legal demand must ask whether the expenditure benefits this Company's shareholders.
+
+**Caremark guardrail:** do not overstate survival past a motion to dismiss. The demand creates a record and may create a red flag, but the law remains difficult. Say "may," not "will."
+
+**Noerr-Pennington and politics:** expect defendants to argue that lobbying is protected petitioning and that courts should not supervise political advocacy. The answer is not "lobbying is illegal." The answer is "shareholders can ask whether spending shareholder money on this lobbying objective is informed and value-positive."
+
+**Damages discipline:** do not double count lifetime income, corporate market value, medical damages, and derivative waste as if they all accrue independently to the same plaintiff. Plead them in the alternative unless counsel has a precise aggregation theory.
+
+**Derivative mechanics:** derivative recovery usually belongs to the corporation. Plaintiff incentives come from the redirection probability shift, fee awards if available, governance reform, and public pressure, not a guaranteed direct payout.
+
+**Direct mechanics:** direct personal damages are the aggressive vehicle. Expect attacks on standing, causation, redressability, remoteness, political question, and speculative damages. Keep the theory because it is morally and memetically central, not because it is the safest claim.
+
+**Rule 14a-8 mechanics:** keep this separate from the new-shareholder demand path. Eligible long-term shareholders can use it. New shareholders usually cannot use it immediately.
 
 ---
 
@@ -347,7 +386,7 @@ $3,000 in S&P 500 (10% annual return assumption):
   20-year gain:                                    $17,182
 
 $3,000 in this lawsuit (5% per-defendant flip probability,
-ten defendants sued, $3.48M per-shareholder treaty upside):
+ten defendants sued, treaty-driven per-shareholder upside):
   Expected value of treaty-driven income gain:  $1,392,000
   Plus you still own the $3,000 in stock.
 ```
@@ -398,10 +437,20 @@ Demand requirement:                          This letter IS the demand
 
 Key authority: DGCL § 327 (contemporaneous ownership); *Tooley v. Donaldson, Lufkin & Jennette*, 845 A.2d 1031 (Del. 2004) (direct vs derivative test). The lobbying expenditure is an ongoing, recurring use of corporate funds, not a discrete historical transaction. Contemporaneous ownership is satisfied by purchasing shares at any point while the expenditure continues. Do not sell shares at any point during the process.
 
+### Eligible-Shareholder Proposal Track
+
+Rule 14a-8 can be powerful because the company's own proxy machinery distributes the question to shareholders. It is also procedural. It has ownership, holding-period, timing, and exclusion rules. Treat it as a separate path for eligible shareholders, not as something every new buyer can do immediately.
+
+The clean proposal is not "support the treaty now." The clean proposal is:
+
+> Shareholders request that the Board commission and disclose an independent ROI analysis of lobbying expenditures related to defense appropriations, procurement, and military-contract expansion, including comparison to a 1% military-to-clinical-trials redirection scenario.
+
+That forces the arithmetic without asking the SEC staff to bless the entire cosmic lawsuit in one sitting.
+
 ## How This Connects
 
 - The lawsuit is the financial-pressure layer of a three-front campaign. The citizen-pressure layer is [The Funniest Joke in the Universe](joke.qmd): the shirt that triggers the conversations that produce the verified signatures.
 - The political-pressure layer is the [Notice of Termination](notice-of-termination.qmd): the HR-format termination letter for every elected official with authority over military spending.
-- The fund that absorbs the redirected military spending is documented in the [1% Treaty](../solution/1-percent-treaty.qmd) and the [Earth Optimization Prize](../strategy/earth-optimization-prize.qmd).
-- The successor systems for the budgets and policies the treaty redirects are [Wishocracy](../solution/wishocracy.qmd), [Optimocracy](../solution/optimocracy.qmd), the [Optimal Policy Generator](optimal-policy-generator-spec.qmd), and the [Optimal Budget Generator](optimal-budget-generator-spec.qmd).
+- The fund that absorbs the redirected military spending is documented in the [1% Treaty](../solution/1-percent-treaty.qmd) and the [Earth Optimization Prize](../strategy/earth-optimization-prize.qmd) [@earth-optimization-prize-paper-2025].
+- The successor systems for the budgets and policies the treaty redirects are [Wishocracy](../solution/wishocracy.qmd) [@wishocracy-paper-2025], [Optimocracy](../solution/optimocracy.qmd) [@optimocracy-paper-2025], the [Optimal Policy Generator](optimal-policy-generator-spec.qmd) [@opg-paper-2025], and the [Optimal Budget Generator](optimal-budget-generator-spec.qmd) [@obg-paper-2025].
 - Defense contractor lobbying is also discussed in the [Frequently Asked Objections](faq.qmd) chapter under "This Is Politically Impossible."
