@@ -113,13 +113,13 @@ The human who wrote on your shirts loves you and does not want you to die of a h
 
 Every country redirects 1% of its military budget to clinical trials. That is the entire treaty. It requires adjusting 190 cells in the budget spreadsheets of 190 countries.
 
-The chain, in one breath:
+The chain:
 
-1. 100 nuclear weapons end civilization. Your species has 12,000. Capacity for 122 apocalypses. You sacrifice ONE.
-2. That 1% buys a {{< var dfda_trial_capacity_multiplier_nounit >}}x increase in clinical trial capacity. The disease-eradication queue compresses from {{< var status_quo_queue_clearance_years_nounit >}} years to {{< var dfda_queue_clearance_years_nounit >}}.
-3. You keep 121 apocalypses, which is adequate deterrence by any honest definition. Global GDP at year 15 is approximately {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}} the current trajectory, because dead people do not work.
-4. If 8 billion humans wear the shirt, every politician on Earth knows what every voter wants. The treaty passes.
-5. The marker that wrote on your shirts cost $0.50. The pen pays for itself many times over. ∎
+1. 100 nuclear weapons end civilization. Your species has 12,000. Capacity for 122 apocalypses. You sacrifice ONE. 121 is adequate deterrence by any honest definition.
+2. That 1% buys a {{< var dfda_trial_capacity_multiplier_nounit >}}x increase in clinical trial capacity. The queue compresses from {{< var status_quo_queue_clearance_years_nounit >}} years to {{< var dfda_queue_clearance_years_nounit >}}.
+3. Global GDP at year 15 is {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}} the current trajectory, because dead people do not work.
+4. If 8 billion humans wear the shirt, every politician knows what every voter wants. The treaty passes.
+5. The marker cost $0.50. ∎
 
 The spreadsheet stops killing people.
 
@@ -143,19 +143,13 @@ The spreadsheet stops killing people.
 
 ## Answers for the person still yelling at you
 
-**"My shirts!"** Replacement cost of a closet: ~$200. Treaty value per shirt-wearer if it passes: {{< var shirt_value_per_wearer_usd >}}. Don't throw the shirts away.
+**"My shirts!"** Closet replacement: $200. Treaty value per wearer: {{< var shirt_value_per_wearer_usd >}}. Don't throw the shirts away.
 
-**"This is naive."** After WW2, the US cut military spending by {{< var post_ww2_military_cut_pct >}} in two years and stumbled into the greatest economic boom in history. GM went from B-24 bombers back to Cadillacs. Frigidaire stopped making machine guns. You are being asked for 1%.
+**"This is naive."** After WW2, the US cut military spending by {{< var post_ww2_military_cut_pct >}} in two years and got the greatest economic boom in history. You are being asked for 1%.
 
-**"Defense contractors will block this."** They won't, once they see the math. They keep 99% of their revenue, lose one unusable apocalypse, and get an economy {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}} larger where their families are alive to spend the money. 1% of nothing is what defense contractors get when they're dead of the same diseases as everyone else. Nobody in the loop is your enemy. Everyone in it is just bad at arithmetic.
+**"Lobbyists will block this."** If you are a 60-year-old defense contractor CEO, you are dead in 20 years and take none of it with you. Under the treaty, the economy is {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}} larger, your grandchildren are alive, and your dynasty compounds for centuries. Nobody in the loop is your enemy. Everyone is bad at arithmetic.
 
 **"Politicians will never agree."** Politicians follow voters. Once 3.5% of voters demand the treaty (the threshold every major political movement in history has crossed), refusing it becomes career suicide. Politicians are extremely good at not committing career suicide. It is their primary skill.
-
-**"What about defense industry jobs?"** Engineers who build guidance systems can build medical imaging devices. Same differential equations, fewer funerals.
-
-**"This won't work."** Then you wore some defaced shirts for a while and had some conversations with strangers at the grocery store. The downside is bounded by your wardrobe. The upside is your family not dying.
-
-**"I'm just one person."** Your vote + 15 minutes of sharing = 17 minutes. Each verified voter saves about {{< var voter_lives_saved >}} expected lives and prevents {{< var voter_suffering_hours_prevented >}} of expected suffering. You spent longer than 17 minutes last night choosing what to watch on Netflix. You chose a show about murder. You could have chosen not to be murdered by disease, but the interface was less intuitive.
 
 ## If you want the receipts
 
