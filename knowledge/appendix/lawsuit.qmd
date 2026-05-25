@@ -2,13 +2,7 @@
 title: 'The Funniest Lawsuit in the Universe'
 description: 'A $3,000 shareholder demand letter that turns the defense lobby into the most effective advocate for pragmatic clinical trials on Earth.'
 abstract: |
-  This document is a shareholder demand letter, structured as a derivative-action precursor under Delaware corporate law, addressed in common to the boards of every major US defense contractor. The legal theory is duty of care plus Caremark 2.0 oversight, framed entirely within the single-firm shareholder-primacy model to avoid the McRitchie v. Zuckerberg problem.
-
-  The substantive claim: each defendant's annual lobbying expenditure to maintain current military spending ratios produces negative ROI for its own shareholders. The maintained ratio suppresses the GDP growth that would expand the defendant's addressable market. Under a 1% military-to-clinical-trials redirection, defense contractor revenue at year 20 grows by {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_20 >}}. The lobbying is therefore destroying the very economic regime that funds the contracts.
-
-  The strategic structure is a Zugzwang: every possible board response (accept, fight, ignore, refute) benefits the plaintiff. Total cost to file: approximately $3,000 (10 shares of stock; pro bono counsel). Total time: approximately 43 hours.
-
-  The chapter is also a campaign instrument with three layers: a public indictment, plaintiff recruitment, and legal instruments for shareholder demands, derivative litigation, direct personal-damages theories, and eligible-shareholder proposals. The derivative claim is disciplined. The direct personal-damages theory is unlikely but strategically useful. Every response is useful if it forces the defense budget ratchet to explain itself in public.
+  Shareholder demand letter addressed to the boards of major US defense contractors. Legal theory: Caremark 2.0 duty of oversight, single-firm shareholder-primacy framing. Substantive claim: each defendant's lobbying to maintain current military spending ratios produces negative ROI for its own shareholders by suppressing the GDP growth that would expand its addressable market. Every possible board response (accept, fight, ignore, refute) benefits the plaintiff. Cost to file: approximately $3,000.
 aliases:
   - /lawsuit.html
   - /funniest-lawsuit.html
@@ -126,7 +120,7 @@ Every response on this list is useful. On your planet, you call this "losing." O
 
 ### The Settlement Is the Trap
 
-The settlement asks them to redirect existing lobbying from one objective to another. Same lobbyists. Same offices. Same budget. Different talking points. The settlement makes the defendant richer. There is no settlement in legal history where accepting makes the defendant better off than before the lawsuit.
+The settlement asks them to redirect existing lobbying from one objective to another. Same lobbyists. Same offices. Same budget. Different talking points. The settlement makes the defendant richer. It is hard to find a settlement in legal history where accepting makes the defendant better off than before the lawsuit.
 
 ---
 
@@ -210,8 +204,10 @@ Expected accessible wealth:                      $[calculated]
 
 DIFFERENCE
 Wealth gained by redirecting lobbying:           $[calculated]
-Additional years of life:                            20-30
+Additional healthy life-years (median estimate):     [X]
 ```
+
+*Healthy life-years estimate: the treaty scenario produces a global HALE gain of {{< var treaty_hale_gain_year_15 >}} by year 15, computed from disease cure fraction and longevity gains (see [GDP Trajectories](../economics/gdp-trajectories.qmd) and [parameters](parameters-and-calculations.qmd#sec-treaty_hale_gain_year_15)). For the CEO template, adjust using actuarial tables for the CEO's age and sex. Conservative floor: {{< var best_practice_life_expectancy_gain >}} (gap between global average and best-performing country). Cite the specific number your counsel is comfortable defending.*
 
 ### 7. The Fiduciary Questions
 
@@ -256,7 +252,7 @@ I note that this letter constitutes notice to the Board. The Board is now inform
 - US OMB Historical Tables: [whitehouse.gov/omb/historical-tables](https://www.whitehouse.gov/omb/historical-tables/)
 - FDA Approved Drug Products: [accessdata.fda.gov/scripts/cder/daf](https://www.accessdata.fda.gov/scripts/cder/daf/)
 - Full methodology (Monte Carlo analysis): [parameters and calculations](parameters-and-calculations.qmd)
-- 1% Treaty impact analysis: [1-pct-treaty-impact.html](https://manual.warondisease.org/knowledge/economics/1-pct-treaty-impact.html)
+- [1% Treaty](../solution/1-percent-treaty.qmd) [@1-percent-treaty-paper-2025] [@1-pct-treaty-impact-paper-2025] impact analysis: [1-pct-treaty-impact.html](https://manual.warondisease.org/knowledge/economics/1-pct-treaty-impact.html)
 - *In re Caremark Int'l Inc. Derivative Litig.*, 698 A.2d 959 (Del. Ch. 1996)
 - *Stone v. Ritter*, 911 A.2d 362 (Del. 2006)
 - *Marchand v. Barnhill*, 212 A.3d 805 (Del. 2019)
@@ -356,39 +352,85 @@ The chain is multiplicative. A single lawsuit against a single defense contracto
 
 Each major defense contractor is a separate corporate entity with a separate board. Suing more contractors creates more independent paths to a lobby flip. Assuming 5% per-defendant probability of producing a flip (the midpoint of the chain above):
 
-| Defendants sued | P(at least one board flips) | Expected value per shareholder |
-|----:|---:|---:|
-| 1   | 5%    | $174,000   |
-| 3   | 14%   | $487,000   |
-| 10  | 40%   | $1,392,000 |
-| 30  | 79%   | $2,749,000 |
+```{python}
+#| echo: false
+#| output: asis
+from dih_models.parameters import TREATY_TRAJECTORY_LIFETIME_INCOME_GAIN_PER_CAPITA
 
-EV computed against the {{< var treaty_trajectory_lifetime_income_gain_per_capita >}} lifetime income gain per shareholder if the redirection happens.
+gain = float(TREATY_TRAJECTORY_LIFETIME_INCOME_GAIN_PER_CAPITA)
+p_flip = 0.05
 
-The five largest US defense contractors (Lockheed Martin, RTX, Boeing, Northrop Grumman, General Dynamics) account for the majority of US military procurement spending. Suing all five produces approximately 23% probability of at least one board flip, or approximately $800,000 expected value per shareholder.
+print("| Defendants sued | P(at least one board flips) | Expected value per shareholder |")
+print("|----:|---:|---:|")
+for n in [1, 3, 5, 10, 30]:
+    p = 1 - (1 - p_flip) ** n
+    ev = p * gain
+    print(f"| {n} | {p:.0%} | ${ev:,.0f} |")
+
+p5 = 1 - (1 - p_flip) ** 5
+ev5 = p5 * gain
+```
+
+EV = P(at least one flip) × {{< var treaty_trajectory_lifetime_income_gain_per_capita >}} lifetime income gain per shareholder if the redirection happens. P(at least one flip) = 1 − (1 − 0.05)^N^.
+
+The five largest US defense contractors (Lockheed Martin, RTX, Boeing, Northrop Grumman, General Dynamics) account for the majority of US military procurement spending.
+
+```{python}
+#| echo: false
+#| output: asis
+print(f"Suing all five produces approximately {p5:.0%} probability of at least one board flip, or approximately ${ev5:,.0f} expected value per shareholder.")
+```
 
 ### Marginal Value of Joining as Plaintiff Number N
 
 The marginal probability lift declines with N (a collective-action effect). The marginal cost stays at $3,000. Joining is rational as long as:
 
-```
-ΔP × {{< var treaty_trajectory_lifetime_income_gain_per_capita >}} > $3,000
-ΔP > 0.086%
-```
+```{python}
+#| echo: false
+#| output: asis
+from dih_models.parameters import TREATY_TRAJECTORY_LIFETIME_INCOME_GAIN_PER_CAPITA
 
-Joining is rational as long as your participation lifts the lawsuit's success probability by more than 1 in 1,158. Given the novelty of the *Caremark 2.0* lobbying-ROI theory and the diversity of defense contractors that can be sued, plaintiff number N is far from the marginal-value floor for many orders of magnitude of N. The lawsuit does not run out of room for joiners until the math is several thousand plaintiffs deep.
+gain = float(TREATY_TRAJECTORY_LIFETIME_INCOME_GAIN_PER_CAPITA)
+cost = 3000
+threshold = cost / gain
+threshold_inv = int(1 / threshold)
+
+print(f"```")
+print(f"ΔP × ${gain:,.0f} > ${cost:,}")
+print(f"ΔP > {threshold:.3%}")
+print(f"```")
+print()
+print(f"Joining is rational as long as your participation lifts the lawsuit's success probability by more than 1 in {threshold_inv:,}. Given the novelty of the *Caremark 2.0* lobbying-ROI theory and the diversity of defense contractors that can be sued, plaintiff number N is far from the marginal-value floor for many orders of magnitude of N. The lawsuit does not run out of room for joiners until the math is several thousand plaintiffs deep.")
+```
 
 ### Compared to Other Investments
 
-```
-$3,000 in S&P 500 (10% annual return assumption):
-  20-year terminal value:                          $20,182
-  20-year gain:                                    $17,182
+```{python}
+#| echo: false
+#| output: asis
+from dih_models.parameters import TREATY_TRAJECTORY_LIFETIME_INCOME_GAIN_PER_CAPITA
 
-$3,000 in this lawsuit (5% per-defendant flip probability,
-ten defendants sued, treaty-driven per-shareholder upside):
-  Expected value of treaty-driven income gain:  $1,392,000
-  Plus you still own the $3,000 in stock.
+gain = float(TREATY_TRAJECTORY_LIFETIME_INCOME_GAIN_PER_CAPITA)
+cost = 3000
+sp500_rate = 0.10
+years = 20
+sp500_terminal = cost * (1 + sp500_rate) ** years
+sp500_gain = sp500_terminal - cost
+p_flip = 0.05
+n_defendants = 10
+p_at_least_one = 1 - (1 - p_flip) ** n_defendants
+ev_lawsuit = p_at_least_one * gain
+
+print(f"```")
+print(f"$3,000 in S&P 500 (10% annual return assumption):")
+print(f"  20-year terminal value:                          ${sp500_terminal:,.0f}")
+print(f"  20-year gain:                                    ${sp500_gain:,.0f}")
+print()
+print(f"$3,000 in this lawsuit (5% per-defendant flip probability,")
+print(f"ten defendants sued, treaty-driven per-shareholder upside):")
+print(f"  Expected value of treaty-driven income gain:  ${ev_lawsuit:,.0f}")
+print(f"  Plus you still own the $3,000 in stock.")
+print(f"```")
 ```
 
 The S&P 500 line item assumes 10% nominal returns for 20 years and a stock market that still exists in 20 years, both of which become more probable in the treaty scenario than the status-quo scenario.
