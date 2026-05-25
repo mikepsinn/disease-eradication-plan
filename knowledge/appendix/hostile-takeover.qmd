@@ -1,0 +1,296 @@
+---
+title: 'The Funniest Hostile Takeover in the Universe'
+description: 'For roughly $90 per global human, humanity can buy a controlling stake in every major defense contractor on Earth, redirect their lobbying budgets toward the 1% treaty, and end the political opposition to disease eradication. The math is on this page.'
+abstract: |
+  The Western military-industrial complex has a combined market capitalization of approximately $670 billion across the major US primes, plus another $50 billion across allied European primes. A majority shareholding requires roughly $385 billion nominal (~$700 billion realistic after price inflation during a coordinated buy-up). Distributed across 8 billion humans, that is approximately $48-$90 per person. Once humanity holds the majority, the single highest-leverage action is to redirect the $127 million per year of defense lobbying from blocking the 1% treaty to championing it. Expected return per global human: ~3,500x-11,000x at base case; ~35x-110x even after a 99% pessimistic haircut.
+aliases:
+  - /hostile-takeover.html
+  - /funniest-hostile-takeover.html
+  - /buy-the-military-industrial-complex.html
+  - /takeover.html
+author:
+  - name: Mike P. Sinn
+    affiliation:
+      name: International Campaign to End War and Disease
+    roles:
+      - conceptualization
+      - writing - original draft
+    email: mike@warondisease.org
+    corresponding: true
+keywords:
+  - hostile takeover
+  - shareholder coalition
+  - military industrial complex
+  - defense contractors
+  - 1% treaty
+  - coordinated share purchase
+  - lobbying redirection
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    number-sections: false
+  pdf:
+    documentclass: article
+    geometry: margin=1in
+    fontsize: 11pt
+scores:
+  quality: 7
+  value: 10
+  timeliness: 9
+  standalone: 9
+  voice: 8
+  importance: 10
+---
+{{< include /knowledge/includes/setup-parameters.qmd >}}
+
+**STATUS: DRAFT.** Requires securities, antitrust, and CFIUS counsel review before any organized buy-up begins. Market-cap numbers are approximate and should be re-verified against current 10-K filings before publication.
+
+**COST TO BUY CONTROL OF THE WESTERN MILITARY-INDUSTRIAL COMPLEX:** approximately $700 billion realistic, or **~$90 per global human**.
+
+**ANNUAL LOBBYING BUDGET YOU GET TO REDIRECT:** {{< var defense_lobbying_annual >}}, currently spent blocking the 1% treaty. After the takeover, spent passing it.
+
+**EXPECTED VALUE PER GLOBAL HUMAN PARTICIPANT:** ~$310,000-$1,000,000 in base case, or ~$3,500-$11,000 in ROI multiple. Even after a 99% pessimism haircut, ~$3,000-$10,000 in expected return per $90 contributed.
+
+This is the [lawsuit](lawsuit.qmd) escalated. The lawsuit campaign is the cheap version: own one share, file a demand letter, force the math into the boardroom. The takeover is the maximalist version: own enough shares to vote out the board, redirect the lobbying budget, and convert the most effective political-influence operation on Earth from blocking the treaty to championing it. Same mechanism, larger surface area.
+
+## Why This Works
+
+The military-industrial complex is not a sovereign power. It is a collection of publicly traded corporations whose shares are for sale. The lobby that has driven defense budget expansion for eighty years is a line item in those corporations' SG&A. The line item is controllable by whoever holds the board. The board is electable by whoever holds 50%+1 of the shares. The shares are for sale to anyone with a brokerage account.
+
+The lobby is the binding constraint on US military and foreign policy. Politicians follow the money. The money comes from the lobby. The lobby comes from a board vote. The board vote comes from shareholder elections. The shareholder elections come from whoever shows up with shares.
+
+Humanity has not previously shown up with shares because humanity has not previously been organized as a coordinated buyer. There is no rule preventing this. There is only an absence of coordination. The cost of the coordination is the subject of this page.
+
+## The Math
+
+### Major Western defense primes (approximate market caps)
+
+| Contractor | Ticker | Approx market cap | 50%+1 control cost |
+|---|---|---:|---:|
+| RTX (Raytheon) | RTX | ~$160B | ~$80B |
+| Boeing | BA | ~$130B | ~$65B |
+| Lockheed Martin | LMT | ~$110B | ~$55B |
+| General Dynamics | GD | ~$80B | ~$40B |
+| Northrop Grumman | NOC | ~$75B | ~$38B |
+| L3Harris | LHX | ~$45B | ~$23B |
+| Leidos | LDOS | ~$20B | ~$10B |
+| Booz Allen Hamilton | BAH | ~$20B | ~$10B |
+| CACI International | CACI | ~$11B | ~$6B |
+| Huntington Ingalls | HII | ~$10B | ~$5B |
+| SAIC | SAIC | ~$8B | ~$4B |
+| **US primes subtotal** | | **~$670B** | **~$336B** |
+| BAE Systems (UK) | BA.L | ~$60B | ~$30B |
+| Thales (France) | HO.PA | ~$35B | ~$18B |
+| **Allied primes** | | **~$95B** | **~$48B** |
+| **Total Western primes** | | **~$765B** | **~$384B** |
+
+Numbers are approximate and require verification against current filings before any campaign acts on them.
+
+### Realistic cost after price inflation
+
+A coordinated purchase of half the float of every major defense prime simultaneously would push prices up sharply. Realistic effective cost after a 1.5x-3x acquisition premium:
+
+- Nominal: **~$385 billion**
+- Realistic with acquisition premium: **~$600 billion to $1 trillion**
+
+### Per-person cost
+
+| Cost distributed across | Per-person cost (realistic) |
+|---|---:|
+| Global humans (8 billion) | **~$90** |
+| Global adults (~5.5 billion) | ~$130 |
+| Global middle class+ (~3.5 billion) | ~$200 |
+| US adults (260 million) | ~$2,700 |
+| US households (130 million) | ~$5,400 |
+| US households earning >$100k (~50 million) | ~$14,000 |
+
+The entire Western military-industrial lobbying apparatus can be brought under common shareholder control for less than the price of a coffee per week per global human for a single year.
+
+This number is calculable. It is not a fantasy.
+
+## What Humanity Does Once It Owns the Companies
+
+Ranked by leverage. The first action is the entire game; the rest are bonus.
+
+### Tier 1: Redirect the lobbying budget (highest leverage, zero cost)
+
+Defense contractors currently spend {{< var defense_lobbying_annual >}} per year lobbying Congress to expand defense appropriations. This is the most effective political-influence operation on Earth. It has driven US military spending from its 1939 baseline to current levels and prevented every serious proposal for reallocation.
+
+After the takeover, the same budget is reallocated to lobby for the [1% treaty](../solution/1-percent-treaty.qmd). The same lobbyists, the same congressional relationships, the same legislative drafting expertise, the same media operations, all pointed in the opposite direction.
+
+**Cost:** $0 (it is the same line item, just relabeled).
+
+**Time to effect:** Immediate. The first quarter's lobbying disclosures will show the new direction.
+
+**Why this is the entire game:** US military and foreign policy follows defense-industry lobbying with high fidelity. Flip the lobby, and the senators who depend on defense PAC money to keep their seats follow within one election cycle. China and Russia become the only remaining holdouts, and they are easier holdouts to address with the US lobby championing the treaty than with the US lobby blocking it.
+
+### Tier 2: Public corporate endorsement
+
+Every major defense contractor publicly endorses the 1% treaty. The most common political argument against the treaty ("industry opposes it") evaporates overnight. Senators lose cover. Editorial boards reverse positions. The Overton window shifts by a decade in a week.
+
+**Cost:** $0.
+
+**Time to effect:** One press release per contractor.
+
+### Tier 3: Stop opposing donations
+
+Defense PACs currently donate to candidates who oppose the treaty. After the takeover, those donations stop. They can also reverse direction: donate to candidates who support the treaty. Per cycle this redirects roughly $30-50 million across all defense PACs.
+
+**Cost:** $0 (reallocates existing political spending).
+
+**Time to effect:** Next election cycle.
+
+### Tier 4: Shareholder resolutions requiring ROI analysis of all lobbying
+
+Every shareholder meeting requires the board to publish an ROI analysis of all lobbying spending against the long-term shareholder value of the company. The new analyses will reach the conclusion the demand letters have been forcing all along: lobbying for military expansion produces negative ROI for shareholders because it suppresses the GDP growth that funds the company's addressable market. The analysis becomes auditable documentation that locks in the new lobbying direction against backsliding.
+
+**Cost:** Negligible (corporate audit work).
+
+**Time to effect:** Next AGM, typically 3-9 months.
+
+### Tier 5: Pivot R&D toward medical and biotech applications
+
+Defense contractors already produce technologies with direct medical applications: imaging, sensors, materials, AI, robotics, encryption. R&D budgets can be partially redirected toward decentralized FDA infrastructure, AI-augmented drug discovery, and clinical trial logistics. The existing engineering workforce is well suited to this pivot; many of these companies already have biotech-adjacent product lines.
+
+**Cost:** Capital reallocation, no new spending required.
+
+**Time to effect:** 1-3 years for substantial product impact.
+
+### Tier 6: Cancel weapons systems with no defensive justification
+
+Some defense programs have negative externalities exceeding their revenue (autonomous weapons, cluster munitions, certain export-only programs). The board can wind these down without compromising the company's defensive product lines.
+
+**Cost:** Negative (eliminates loss-making or marginal programs).
+
+**Time to effect:** 1-3 years.
+
+### Tier 7: Open-source defense IP for medical use
+
+Patents on technologies with dual-use applications (imaging, sensors, AI models, materials, manufacturing processes) can be licensed for free for medical applications. This accelerates DFDA infrastructure and drug discovery without requiring active R&D pivot.
+
+**Cost:** Foregone licensing revenue, typically small relative to the medical impact.
+
+**Time to effect:** 6-12 months.
+
+### Tier 8: Partial manufacturing conversion to medical devices and vaccines
+
+Defense factories have precision manufacturing, supply chain, and quality systems that translate well to medical device and vaccine production. Reverse-WW2 industrial mobilization: instead of converting consumer factories to military, convert military to consumer and medical.
+
+**Cost:** Capex investment, typically pays back within 5-7 years.
+
+**Time to effect:** 3-5 years.
+
+### Tier 9: Distribute dividends directly to the 8 billion shareholders
+
+Defense contractor profits historically flow to a narrow set of institutional and high-net-worth shareholders. After the takeover, profits flow to the 8 billion humans who own the shares. Per-capita this is small (~$10-50 per global human per year) but it is the first direct income transfer from the military industrial complex to humanity in history.
+
+**Cost:** Negative (just redistributes existing profits).
+
+**Time to effect:** Next dividend declaration.
+
+## Expected Value Per Person
+
+### Investment per person (realistic, including acquisition premium)
+
+| Population | Cost |
+|---|---:|
+| Per global human | ~$90 |
+| Per US adult | ~$2,700 |
+| Per US household | ~$5,400 |
+
+### Expected return per person (base case, treaty passes and multipliers hold)
+
+For a global human contributing ~$90:
+
+| Benefit | Approx value per person |
+|---:|---:|
+| Personal share of global GDP growth from reduced disease burden | ~$10,000-$50,000 |
+| Disease eradication value: ~10-20 extra healthy life-years × global VSL (~$30-50K/year) | ~$300,000-$1,000,000 |
+| Lower lifetime apocalypse risk | ~$1,000-$10,000 |
+| Defense-contractor dividends now flowing to humanity | ~$10-50/year ongoing |
+| **Total EV per global human (base case)** | **~$310,000-$1,000,000** |
+
+**Base case ROI multiple per global human: ~3,500x to 11,000x.**
+
+For a US adult contributing ~$2,700:
+
+| Benefit | Approx value per person |
+|---:|---:|
+| Personal share of GDP-doubling at year 15 (US median net worth ~$190K → ~$380-570K) | ~$190,000-$380,000 |
+| Disease eradication: ~10-20 extra healthy life-years × US VSL (~$100K/year) | ~$1,000,000-$2,000,000 |
+| Lower lifetime apocalypse risk | ~$10,000-$100,000 |
+| Direct defense-industry dividends | ~$500-$2,000/year ongoing |
+| **Total EV per US adult (base case)** | **~$1,200,000-$2,500,000** |
+
+**Base case ROI multiple per US adult: ~450x to 900x.**
+
+### Pessimism-adjusted expected value
+
+Apply a 99% pessimism haircut to every line item above (treaty fails to pass, multipliers are wrong, takeover is partially blocked, implementation is incomplete, etc.):
+
+| Population | Discounted EV | Discounted ROI |
+|---|---:|---:|
+| Global human (~$90 in) | ~$3,000-$10,000 | **~35x-110x** |
+| US adult (~$2,700 in) | ~$12,000-$25,000 | **~4.5x-9x** |
+
+Even with a brutally pessimistic discount, the per-person expected return on this single one-time purchase exceeds the lifetime return of any standard investment vehicle available to a retail buyer.
+
+This is per-unit-money the highest-EV investment a human can make.
+
+## Real Frictions
+
+These are real, and they shape how the campaign is structured. They do not eliminate it.
+
+### Price inflation during a coordinated buy-up
+
+Defense stock floats are not infinitely liquid. A coordinated purchase of half the float of every prime would push prices up sharply. Estimates range from 1.5x to 3x premium during acquisition.
+
+**Mitigation:** Phased buying across multiple quarters, distributed across many small purchasers rather than concentrated, public communication of intent to acquire long positions rather than to flip them. Index fund or trust vehicle that aggregates small purchases without telegraphing the buy to the market.
+
+### CFIUS and national security review
+
+Any large or unusual ownership change in a US defense prime triggers Committee on Foreign Investment in the United States review. A coalition of US citizens buying shares is domestic and falls outside CFIUS, but the Department of Defense has informal mechanisms to slow or block ownership changes it considers adversarial to national security. This is a real obstacle, not a fatal one.
+
+**Mitigation:** The public framing matters. "Long-term shareholders organized to align defense industry lobbying with shareholder interests" is a defensible CFIUS posture. "Hostile takeover to end the military industrial complex" is not. The substance is the same; the framing is what CFIUS reviews.
+
+### Staggered boards and poison pills
+
+Most defense primes have anti-takeover provisions that delay control even with majority ownership. Staggered boards can be replaced only one-third per year. Poison pills can dilute hostile acquirers.
+
+**Mitigation:** Practical control takes 2-3 years post-acquisition rather than immediate. Shareholder resolutions and demand letters operate in parallel during the transition period and produce most of the lobbying-redirection benefit before formal board control is achieved.
+
+### Coordination capacity
+
+Buying half the float of every Western defense prime requires coordinating millions of purchasers. This is a real operational challenge, though not the corporate-campaign kind. It is closer to the chain-letter or viral-meme kind: distributed, opt-in, low-friction per participant.
+
+**Mitigation:** A standardized acquisition vehicle (e.g., an index fund or trust dedicated to the takeover) that anyone can buy into for the price of one share. Open-source coordination of which contractors are being targeted in which quarter. The same recruitment funnel as the [shirts campaign](handout.qmd) and the [lawsuit campaign](lawsuit.qmd).
+
+## Relationship to the Lawsuit Campaign
+
+The two campaigns are complementary, not alternative.
+
+| | Lawsuit | Hostile takeover |
+|---|---|---|
+| Cost per participant | ~$3,000 (one share) | ~$90 (proportional share of control) |
+| Number of participants required | Hundreds to thousands | Millions to billions |
+| Mechanism | Force the math into boardrooms via demand letters | Buy the board, change the lobbying direction |
+| Time to effect | 1-3 years | 2-5 years |
+| What it produces | Public board responses, media coverage, Overton window shift | Direct policy change via redirected lobbying |
+| Failure mode | Court dismisses, board ignores | Buy-up incomplete, board partial control |
+| Compounding effect on the other | Demand letters become takeover groundwork | Shareholder control becomes the venue for the demand letters' asks |
+
+The lawsuit campaign generates the public attention and shareholder organization that makes the takeover financially feasible. The takeover, in turn, locks in the lawsuit's asks against backsliding by ensuring the board itself supports the treaty. Run them together.
+
+## Next Steps
+
+This page is a draft. Before any campaign acts on the math:
+
+1. **Verify market cap and float numbers** against current 10-K filings.
+2. **Engage securities and antitrust counsel** on the structure of an aggregating acquisition vehicle.
+3. **Engage CFIUS counsel** on framing and review posture.
+4. **Build the acquisition vehicle** (index fund, trust, or DAO-style coordination) that allows distributed participation at $90 per share.
+5. **Coordinate with the [lawsuit campaign](lawsuit.qmd)** so demand letters and share accumulation reinforce each other.
+6. **Coordinate with the [handout and shirts campaign](handout.qmd)** so recruitment of participants happens through the same funnel.
+
+For the underlying argument for why this is necessary, see [Where Am I Wrong?](where-am-i-wrong.qmd) and the [1% treaty paper](../solution/1-percent-treaty.qmd). For the liability framework that quantifies the harm the takeover is correcting, see [Humanity v. Government](humanity-v-government.qmd).
