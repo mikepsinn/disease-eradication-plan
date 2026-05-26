@@ -23,7 +23,7 @@ scores:
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 Most financial plans are complicated because the writers are confused or lying. This one is complicated because you're convincing 195 countries to voluntarily stop buying so many weapons while paying your investors forever.
 
-The architecture is embarrassingly simple. Raise {{< var treaty_campaign_total_cost >}}. Spend it to pass the treaty. Manage {{< var treaty_annual_funding >}}+ annually forever. Three things. That's the whole financial plan. The rest of this chapter is just explaining why your species needs 4,000 words to understand three things.
+The architecture is embarrassingly simple. Raise {{< var treaty_campaign_total_cost >}}. Spend it to pass the treaty. Manage {{< var treaty_annual_funding >}}+ annually forever. Three things. That's the whole financial plan. Three things. The rest of this chapter explains each one.
 
 ## Pillar 1: The Money Part (Raise {{< var treaty_campaign_total_cost >}})
 
@@ -45,7 +45,7 @@ Nobody gets the upside unless it works. Lawyers can take success-based compensat
 | Series A | $500M-1B | Scale to G7 nations | Majority-of-humanity path credible ({{< var global_coordination_target_pct >}} target, {{< var global_population_activism_threshold_pct >}} benchmark) | "Convince several countries" |
 | Growth | $500M-1.1B | Ratification push in major powers | First $1B disbursement | "Convince the countries with nukes" |
 
-Ranges reflect scenario planning (optimistic to pessimistic). The {{< var treaty_campaign_total_cost >}} target is the base case; upper bounds cover contingencies because convincing nuclear powers to behave rationally occasionally requires overtime.
+Ranges cover best to worst case. The {{< var treaty_campaign_total_cost >}} target is the base case; upper bounds cover contingencies because convincing nuclear powers to behave rationally occasionally requires overtime.
 
 ### Who Funds What
 
@@ -129,4 +129,4 @@ Patients organize to grow the treasury, because participating in their own survi
 
 Invest {{< var treaty_campaign_total_cost >}}. Get {{< var victory_bond_annual_payout >}}/year. Forever. Your species spent roughly $5 billion on a particle accelerator to find a boson. This costs less and finds a cure for dying.
 
-If these numbers trigger your "this can't be real" reflex, good. That reflex exists because most things that sound this good aren't. But the reflex is not an argument. Try answering [five questions](/knowledge/appendix/recruitment-and-propaganda-plan.qmd#logical-inevitability-theorem) and find the one that's wrong. Is it physically possible to improve resource allocation? Do the benefits compound? Do you have a better plan? Should this be your top priority? Then what are you waiting for? If you can't find the flaw in the logic, the numbers aren't the problem. The problem is that nobody with a checkbook has spent 45 minutes reading the [formal proof](/knowledge/appendix/incentive-alignment-bonds-paper.qmd) yet. That's the only bottleneck. Not the math. Not human nature. Attention.
+If these numbers trigger your "this can't be real" reflex, good. That reflex exists because most things that sound this good aren't. The reflex is not an argument. The [five questions](/knowledge/appendix/recruitment-and-propaganda-plan.qmd#logical-inevitability-theorem) are. Find the one that's wrong, or forward this to someone with a checkbook and 45 minutes.

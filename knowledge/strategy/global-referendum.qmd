@@ -118,7 +118,7 @@ The system works when each person brings more than one person, which is how aval
 
 ## Success Metrics
 
-You'll know it's working when four numbers are right: {{< var global_registered_voters_nounit >}}+ verified public signatories (the {{< var global_coordination_target_pct >}} target), blended activation cost per verified participant near {{< var global_coordination_activation_cost_per_participant >}} or lower, viral coefficient above 1.0 (each person brings more than one person), and fraud detection above 99% with false positives below 1%. If any of those numbers are wrong, something is broken and you fix it. If all four are right, you've built a machine that converts tens of billions into political pressure at world scale. Nobody has built this before. This is the most surprising part.
+You'll know it's working when four numbers are right: {{< var global_registered_voters_nounit >}}+ verified public signatories (the {{< var global_coordination_target_pct >}} target), blended activation cost per verified participant near {{< var global_coordination_activation_cost_per_participant >}} or lower, viral coefficient above 1.0 (each person brings more than one person), and fraud detection above 99% with false positives below 1%. If any of those numbers are wrong, something is broken and you fix it. If all four are right, you've built a machine that turns money into a threat politicians can count. Nobody has built this before. This is the most surprising part.
 
 ## Why {{< var global_population_activism_threshold_pct >}} Is A Floor, Not The Goal
 

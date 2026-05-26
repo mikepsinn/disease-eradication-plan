@@ -50,7 +50,7 @@ Direct costs: {{< var global_annual_war_direct_costs_total >}} per year. Militar
 
 Indirect costs: {{< var global_annual_war_indirect_costs_total >}} per year. The part your accountants pretend doesn't exist. Lost economic growth from pointing engineers at missiles instead of medicine ({{< var global_annual_lost_economic_growth_military_spending >}}). Veteran healthcare, because the humans you send to war come back needing hospitals ({{< var global_annual_veteran_healthcare_costs >}}). Refugees, PTSD, environmental damage, lost human capital. Cut 1%: {{< var peace_dividend_indirect_costs >}} saved.
 
-**Total: {{< var global_annual_direct_indirect_war_cost >}} per year on war. In the baseline e = 1.0 case, 1% less war yields {{< var peace_dividend_annual_societal_benefit >}}/year in total societal benefit = {{< var treaty_annual_funding >}} in guaranteed funding + {{< var peace_dividend_conflict_reduction >}} in additional conflict-cost reduction.**
+**Total: {{< var global_annual_direct_indirect_war_cost >}} per year on war. In the baseline e = 1.0 case, 1% less war yields {{< var peace_dividend_annual_societal_benefit >}}/year in total societal benefit = {{< var treaty_annual_funding >}} in treaty-mandated funding + {{< var peace_dividend_conflict_reduction >}} in additional conflict-cost reduction.**
 
 On your planet, this is called "a good deal." On mine, it's called "so obvious that failing to do it constitutes evidence of a cognitive disability."
 
@@ -68,7 +68,7 @@ The benefits cascade beyond medicine in ways that should be obvious but apparent
 
 ### The Elasticity Question
 
-The elasticity parameter asks the only interesting question here: once you've already captured the guaranteed {{< var treaty_annual_funding >}}, how much of the additional {{< var peace_dividend_conflict_reduction >}} actually materializes? If you cut military spending 1%, do the wider war costs actually drop too? Or do humans, being humans, find a way to keep killing each other at full price?
+The elasticity parameter asks the only interesting question here: once you've already captured the contractual {{< var treaty_annual_funding >}}, how much of the additional {{< var peace_dividend_conflict_reduction >}} actually materializes? If you cut military spending 1%, do the wider war costs actually drop too? Or do humans, being humans, find a way to keep killing each other at full price?
 
 At e = 0, you still get {{< var treaty_annual_funding >}} and none of the extra conflict savings. At e = 0.25, a quarter of the extra piece survives. At e = 0.5, half. At e = 1.0 (the chapter's baseline assumption), you get the full {{< var peace_dividend_conflict_reduction >}} and the total reaches {{< var peace_dividend_annual_societal_benefit >}}/year. At e > 1.0, curing cancer together turns out to be better bonding than threatening each other with missiles, which is suspiciously wholesome and therefore the scenario I trust least.
 
@@ -78,7 +78,7 @@ That is why the Captured Dividend matters. Even if humans refuse to become less 
 
 ![Best case: 114 billion in benefits. Worst case: 27.2 billion and you double medical research funding. Truly a devastating range of outcomes.](/assets/images/peace-dividend/peace-dividend-section-key-findings-bw-academic.jpg)
 
-The guaranteed floor is {{< var treaty_annual_funding >}}/year. Direct budget transfer. No elasticity, no assumptions, no hoping humans behave. Just math. Under the chapter's baseline e = 1.0 case, the total annual societal dividend is {{< var peace_dividend_annual_societal_benefit >}}/year: {{< var treaty_annual_funding >}} in treaty-mandated funding plus {{< var peace_dividend_conflict_reduction >}} in additional conflict-cost reduction. Lower elasticities shrink only that second term. For policy decisions, the safe number is still the Captured Dividend. For context, the Captured Dividend alone would boost global medical research funding by roughly 40% over the current {{< var global_med_research_spending >}} baseline. You've been spending more on camouflage paint than on curing Alzheimer's. Camouflage paint. To make things invisible. While Alzheimer's makes people invisible and you can't even be bothered to match the budget.
+The contractual floor is {{< var treaty_annual_funding >}}/year. Direct budget transfer. No elasticity, no assumptions, no hoping humans behave. Just math. Under the chapter's baseline e = 1.0 case, the total annual societal dividend is {{< var peace_dividend_annual_societal_benefit >}}/year: {{< var treaty_annual_funding >}} in treaty-mandated funding plus {{< var peace_dividend_conflict_reduction >}} in additional conflict-cost reduction. Lower elasticities shrink only that second term. For policy decisions, the safe number is still the Captured Dividend. For context, the Captured Dividend alone would boost global medical research funding by roughly 40% over the current {{< var global_med_research_spending >}} baseline. You've been spending more on camouflage paint than on curing Alzheimer's. Camouflage paint. To make things invisible. While Alzheimer's makes people invisible and you can't even be bothered to match the budget.
 
 ## The Countdown, Not Just the Dividend
 

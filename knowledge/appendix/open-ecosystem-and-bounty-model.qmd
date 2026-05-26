@@ -23,15 +23,13 @@ scores:
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 The infrastructure for a [dFDA](../solution/dfda.qmd) [@dfda-spec-paper-2025; @dfda-impact-paper-2025] won't cost billions to build. Because you're not building most of it. Your species already figured out how to get strangers to build software for free. You call it "open source." It runs most of the internet. You just forgot to point it at medicine.
 
-Build the foundation (core API and data standards), pay bounties for critical features nobody wants to build first, and let everyone else build everything else for free. You build the foundation. Strangers build everything on top of it. For free. Because some of them are dying.
+The strategy: build the foundation (core API and data standards), pay bounties for the parts nobody wants to build first, and let strangers build everything else for free. Because some of them are dying.
 
 ## The Open Platform Model
 
-Linux started as one person in Finland writing a kernel. Today it runs most of the internet, every Android phone, and the world's fastest supercomputers. The core team is still tiny. The contributor network is massive. WordPress works the same way: a small core, 60,000+ plugins built by other people. Your species discovered that if you give strangers a good foundation, they will build everything else on it for free, because some of them enjoy building things and others want to put it on their resume. Both motivations produce working software.
+Linux started as one person in Finland writing a kernel. Today it runs most of the internet, every Android phone, and the world's fastest supercomputers. WordPress: a small core, 60,000+ plugins built by other people. Open-source platform models are a multi-trillion-dollar economic reality [@open-source-platform-multi-trillion-dollar-reality]. Combined value of Linux, WordPress, Android, and Chrome: trillions. Combined cost to build the cores: billions. You used this method to build the infrastructure for cat videos. You have not used it to build the infrastructure for clinical trials.
 
-Open-source platform models aren't theoretical. They're a multi-trillion-dollar economic reality [@open-source-platform-multi-trillion-dollar-reality]. WordPress, Linux, Android, and Chrome were all built this way. Combined value: trillions. Combined cost to build the cores: billions. You used this method to build the infrastructure for cat videos. You have not used it to build the infrastructure for clinical trials. Priorities.
-
-A dFDA follows the same structure. You build the core (APIs, data standards, identity, consent). Developers build everything else (trial matching, analysis dashboards, EHR connectors, patient apps). The same way WordPress gets 60,000 plugins from strangers, you get a medical research platform from strangers. Except these strangers are also dying of the diseases, so they're more motivated than the average WordPress developer.
+A dFDA follows the same structure. Build the core (APIs, data standards, identity, consent). Developers build everything else (trial matching, analysis dashboards, EHR connectors, patient apps). Except these developers are also dying of the diseases, so they're more motivated than the average WordPress contributor.
 
 ## Bounties: Paying for Results, Not Promises
 

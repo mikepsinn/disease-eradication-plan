@@ -71,6 +71,23 @@ Now project this forward. To replicate a WW2-style 83x mobilization from today's
 
 After winning the war, the United States cut military spending by {{< var post_ww2_military_cut_pct >}} in two years. The period that followed produced the largest sustained economic expansion in American history. The country was strong because it had stopped spending its strength on weapons it did not need.
 
+## 1939 vs 2026, Side by Side
+
+The clearest way to see the curve at work is to compare the two end states of the same country.
+
+| | **1939** | **2026** |
+|---|---|---|
+| Military spending (real) | ~{{< var us_military_spending_1939_annual_2024usd >}} | {{< var us_military_spending_2024_annual >}} ({{< var us_military_spending_current_vs_prewar_multiplier >}} the 1939 level) |
+| What the spending bought | A peacetime military that scaled 83x in five years and won the largest war in human history | A peacetime military that cannot produce enough munitions for a proxy war or scale chip fabrication without Taiwan |
+| What the productive economy looked like | Ford, Boeing, GM, US Steel, Bethlehem, DuPont. Largest industrial base on Earth | Manufacturing employment down from ~28% of workforce in 1960 to ~8% today. Leading-edge chips fabricated abroad. Most precision shipbuilding capacity outside the US |
+| What the procurement system rewarded | Competence in production. Henry Ford reached the top of Ford by building cars | Competence in bribery. Talent rises by capturing earmarks, navigating clearance pipelines, and managing congressional staff |
+| Pentagon audit failures | Not applicable (no modern audit framework) | {{< var pentagon_unaccounted_funds >}} in unaccounted transactions; failed every audit since one was required |
+| Cost per unit of capability | Civilian-comparable | 5-20x civilian comparable; F-35 program lifetime cost >$1.5T |
+| Time to convert civilian factory to wartime production | Months (Willow Run: 1 B-24 per hour at peak) | Years to decades, if at all (no civilian factory base to draw on) |
+| Strategic outcome | Won WW2; longest sustained economic expansion in American history followed | Losing strategic competition to a country that spends a third as much in absolute terms |
+
+Same country. One peacetime military at a small fraction of the modern budget, one peacetime military at the largest absolute budget in human history. The smaller one produced the country that won World War II. The larger one is producing the country that is losing strategic competition. The Eisenhower Curve is the mechanism by which a country with more spending ends up with less power.
+
 ## The Contemporary Trap
 
 The United States currently spends approximately {{< var us_military_spending_current_vs_prewar_multiplier >}} the pre-World War II baseline in constant dollars. In exchange, the country has:
@@ -194,11 +211,9 @@ The country that finishes this math is the country that reverts to something lik
 
 ## The Implication
 
-The reader who cares about American strategic position correctly identifies China as the central long-run threat. The reader who cares about American defense correctly identifies the need for sufficient deterrent capacity. The reader who cares about American national security correctly identifies the danger of strategic decline.
+You are worried about China. You should be. China is spending less on its military as a share of GDP and growing faster. You are spending more and growing slower. The Eisenhower Curve explains why: you are cannibalizing the productive economy that your deterrence depends on.
 
-All three of those readers are presently misidentifying the solution. The current allocation does not serve American strategic position; it accelerates its erosion. The current allocation does not maintain deterrent capacity; it cannibalizes the productive economy that deterrence depends on. The current allocation does not prevent strategic decline; it is the mechanism by which strategic decline is occurring.
-
-The defense-aligned reader who has been arguing for more spending, more procurement, more capacity, more readiness has been arguing for a position the math no longer supports. The empirical estimate is that the current allocation reduces Wartime Power, not increases it. Any policy that redirects current military spending toward the civilian productive base, in any amount, raises Wartime Power. Specific implementations of that redirection are downstream policy questions; the analytical conclusion is upstream of any specific policy and survives regardless of which one is adopted.
+The human who has been arguing for more spending, more procurement, more capacity, more readiness has been arguing for a position the math no longer supports. The empirical estimate is that the current allocation reduces Wartime Power, not increases it. Any policy that redirects current military spending toward the civilian productive base, in any amount, raises Wartime Power. You do not need to agree on which specific policy. The analytical conclusion survives regardless.
 
 ## Sources and Related Analysis
 

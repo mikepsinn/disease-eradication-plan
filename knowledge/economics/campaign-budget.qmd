@@ -87,7 +87,7 @@ Comparable: Traditional petition signatures cost $14.87 each in 2024 (Ballotpedi
 
 - Standard reward: $0.25-0.30 per verified vote via referral link
 - Early adopter bonus: $0.50 for first 10M (creates FOMO)
-- Recruitment bonus: $0.10 per successful recruit (pyramid scheme but legal)
+- Recruitment bonus: $0.10 per successful recruit (recursive but legal)
 
 **The Clicking Platform**: {{< var campaign_platform_development >}}
 
@@ -108,7 +108,7 @@ Alternative: Skip this. Increase referral payment to $0.35-0.40. Let economics d
 
 #### The Message That Spreads
 
-Your species responds to four things: anger, fear, hope, and greed. Your messaging exploits all four simultaneously.
+Your species responds to four things: anger, fear, hope, and greed. The content hits all four simultaneously.
 
 **The Content Ladder:**
 
@@ -126,21 +126,13 @@ Your species responds to four things: anger, fear, hope, and greed. Your messagi
 - "{{< var global_military_spending_per_capita_annual >}}/year on killing people, $8/year on curing them"
 - "13,000 nukes [@world-warheads] but no cure for your kid's cancer"
 
-**Influencer targets:** Health/wellness creators (100M+ combined followers, already care). Finance/investment creators ({{< var victory_bond_annual_return_pct >}} returns makes compelling content). Gaming/tech audiences (young, internet-native, hate bureaucracy). Political voices (bipartisan message, career-making position). The pitch: "Make one video. Go viral. Save millions of lives. Plus, here are some bonds."
+**Influencer targets:** Health/wellness creators (100M+ combined followers, already care). Finance/investment creators ({{< var victory_bond_annual_return_pct >}} returns makes compelling content). Gaming/tech audiences (young, internet-native, hate bureaucracy). Political voices (bipartisan message, career-making position). One video explaining the arithmetic reaches more humans than a year of congressional testimony.
 
-**Expected pushback:** "You're oversimplifying!" (And you're overcomplicating. People are dying.) "This will never work!" (Oxford RECOVERY trial already proved it works.) "The military needs its budget!" (The treaty takes 1%. Nations keep {{< var defense_sector_retention_pct >}}. Relax.)
+**Expected pushback:** Your species will say you are oversimplifying. This is the species that spends {{< var military_to_government_clinical_trials_spending_ratio >}} more on mass murder capacity than on testing which medicines work. The simplification is the point. The complication is what is killing you.
 
 ![Budget for technology, marketing, and community organizing. Plus you pay people $0.10 to $0.50 to recruit voters. You already pay people to vote for candidates who kill them. Now you're paying people to vote for candidates who cure them. Seems rude to charge.](/assets/images/campaign-budget/campaign-budget-section-payment-structure-bw-academic.jpg)
 
-**Community Organizing** (optional acceleration): {{< var campaign_community_organizing >}}
-
-Organic communities form when there's money involved. This budget is for:
-
-- 100+ country ambassadors (humans who like organizing other humans)
-- Tools for coordination (spreadsheets that don't crash)
-- Event support (folding chairs and PowerPoints)
-
-Alternative: Skip this, use the $30M to increase verification budget or referral rewards.
+**Community Organizing** (optional): {{< var campaign_community_organizing >}}. 100+ country ambassadors plus coordination tools. If the viral mechanism works, this is unnecessary. If it doesn't, folding chairs won't save it.
 
 #### Budget: Viral Referendum with Tiered Incentives {#base-case-scenario}
 
@@ -304,11 +296,7 @@ Turn your enemies into allies through superior returns. On your planet, loyalty 
 - Cloud credits (free computers from companies with too many computers)
 - Open source (programmers work for free if you ask nicely)
 
-**Celebrity Endorsements**: {{< var campaign_celebrity_endorsement >}}
-
-- Famous people saying things (your species will ignore a spreadsheet but obey a celebrity)
-- Scientists willing to say "this math is correct" on camera
-- Cultural influencers (humans who influence culture, apparently)
+**Celebrity Endorsements**: {{< var campaign_celebrity_endorsement >}}. Your species will ignore a spreadsheet but rearrange its life for a celebrity. Scientists willing to say "this math is correct" on camera. Disease survivors with public profiles willing to say "this math is personal."
 
 ### Operations (overhead across all categories)
 
@@ -367,7 +355,7 @@ Money for when plans fail (plans always fail somewhere)
 - 100+ countries signed
 - Major powers committed
 - Your [decentralized FDA](../solution/dfda.qmd) network is operational
-- Death becomes optional
+- Death becomes increasingly negotiable
 
 ## Why This Works
 
