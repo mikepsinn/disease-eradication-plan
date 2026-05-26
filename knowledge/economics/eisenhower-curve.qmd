@@ -1,0 +1,217 @@
+---
+title: 'The Eisenhower Curve'
+description: 'In 1961 the retiring five-star general warned the country about the military-industrial complex. The country nodded solemnly and spent the next sixty years building exactly what he warned against. The empirical literature now puts a number on it: an extra one percentage point of military spending as a share of GDP reduces economic growth by approximately one percentage point. The country that won World War II had {{< var us_1939_military_spending_pct_lower_than_current >}} less military spending than the United States has today, and it won because its productive economy had not been cannibalized to fund a peacetime military. The current allocation is the mechanism by which the United States is losing strategic competition to China.'
+aliases:
+  - /eisenhower-curve.html
+  - /defense-spending-paradox.html
+  - /pentagon-tax.html
+published: true
+tags:
+  - eisenhower-curve
+  - 1-percent-treaty
+  - strategic-competition
+  - national-security
+  - economic-analysis
+scores:
+  quality: 8
+  value: 9
+  timeliness: 9
+  standalone: 8
+  voice: 8
+  importance: 9
+---
+{{< include /knowledge/includes/setup-parameters.qmd >}}
+
+The United States is the country with the largest defense budget in human history. It is also the country losing strategic ground, year after year, to a country that spends less than half as much on defense. These two facts are the same fact. 
+
+## The Paradox in One Sentence
+
+The country with the smaller peacetime military and the larger productive economy wins the real war, because real wars are won by the productive economy that the peacetime military either supports or eats.
+
+## The Model
+
+A nation's **Wartime Power** is, to a first approximation, the product of four things:
+
+> **Wartime Power = Readiness × Economy × Pivot Speed × Competence**
+
+where:
+
+- **Readiness** is how prepared the standing peacetime military forces are.
+- **Economy** is the size of the civilian productive base that gets converted to wartime output.
+- **Pivot Speed** is how fast that civilian economy retools for war.
+- **Competence** is the operational and strategic skill of the people doing the converting.
+
+Increasing peacetime military spending has four effects on these terms:
+
+- **Readiness increases.** More peacetime spending buys more standing forces.
+- **Economy decreases.** Every dollar going to defense is a dollar not going to civilian production.
+- **Pivot Speed decreases.** When defense is the high-status sector, the engineers and managers who would lead a wartime pivot go to defense in peacetime instead. Cost-plus procurement habits destroy the pivot reflex. A workforce that has spent forty years building one F-35 per month does not know how to build one B-24 per hour.
+- **Competence decreases.** When defense becomes the prestige sector, talent flows there for status, lobbying access, and clearance value, not for productive competence. Over decades the meritocratic signal weakens. The country that picked Henry Ford in 1942 now picks people who can extract congressional earmarks.
+
+So Wartime Power is a product of one term that grows with defense spending and three terms that shrink with it. At low spending, the gain in Readiness wins, and more defense produces more wartime power. At high spending, the losses in Economy, Pivot Speed, and Competence win, and more defense produces *less* wartime power.
+
+There is an optimal level of peacetime defense spending. Beyond that level, more spending makes the country weaker, not stronger. This is a Laffer curve for defense.
+
+The argument in this chapter is that the United States is, and has been for decades, well past that optimum.
+
+## The Historical Anchor: WW2
+
+In 1939 the United States spent approximately {{< var us_military_spending_1939_annual_2024usd >}} per year on defense (constant dollars). By 1945 the United States was spending approximately {{< var us_military_spending_1945_peak_annual_2024usd >}} per year. The mobilization scaled defense output by roughly **83x in five years**. The country won the war.
+
+The mobilization was possible because:
+
+- **Economy was huge.** Ford, Boeing, General Motors, US Steel, Bethlehem Steel, DuPont, the rail network. A civilian industrial base that exceeded every other country's combined.
+- **Pivot Speed was high.** Ford converted the Willow Run plant from passenger cars to B-24 bombers and reached, at peak, one B-24 per hour off the line. General Motors converted to tanks and aircraft engines. Singer Sewing Machine made bomb sights. Civilian factories pivoted because the people who ran them knew how to build things.
+- **Competence was high.** The best engineers, managers, and operations researchers were in the productive sector by default. When the war demanded their talent, they were already trained on real production.
+- **Readiness was small.** The peacetime US military was tiny by modern standards, which left almost all of the country's resources in the productive Economy that the war then drew on.
+
+The United States won World War II precisely because the peacetime military had been **small enough not to cannibalize the productive economy**. The 83x mobilization had room to run.
+
+Now project this forward. To replicate a WW2-style 83x mobilization from today's defense baseline of {{< var us_military_spending_2024_annual >}}, the United States would need to scale to approximately **$73 trillion per year**. That exceeds the entire global GDP. **The WW2 mobilization is mathematically impossible to repeat from current baselines.** The country has spent eighty years cannibalizing the Economy, Pivot Speed, and Competence that made it possible.
+
+After winning the war, the United States cut military spending by {{< var post_ww2_military_cut_pct >}} in two years. The period that followed produced the largest sustained economic expansion in American history. The country was strong because it had stopped spending its strength on weapons it did not need.
+
+## The Contemporary Trap
+
+The United States currently spends approximately {{< var us_military_spending_current_vs_prewar_multiplier >}} the pre-World War II baseline in constant dollars. In exchange, the country has:
+
+### Hollowed manufacturing base
+
+Most precision manufacturing capacity now sits outside the United States. Chips are fabricated in Taiwan and South Korea. Ships are built in Korea and China. Rare-earth processing is in China. The country cannot scale production of chips, ships, missiles, batteries, or drones at wartime speed without foreign supply chains that would be cut on day one of any real conflict. The civilian E that the WW2 mobilization drew on no longer exists in the form it did in 1940.
+
+### Defense procurement at five to twenty times civilian cost
+
+The F-35 program has accumulated lifetime cost projections exceeding $1.5 trillion. The Constellation-class frigate program is years behind schedule and over budget by orders of magnitude. The Sentinel ICBM program has experienced a Nunn-McCurdy breach. Cost-plus contracting reliably produces products that cost an order of magnitude more than civilian equivalents while delivering less. The defense industry has become, by civilian production standards, structurally bad at production.
+
+### Pentagon audit failures totaling {{< var pentagon_unaccounted_funds >}}
+
+The Department of Defense has failed every audit since auditing was required. Approximately {{< var pentagon_unaccounted_funds >}} in unaccounted transactions and assets are missing from the public ledger. This is not "waste" in the colloquial sense. It is money that exists nowhere, produced nothing, and is mathematically unrecoverable. The country built it, spent it, and cannot find it.
+
+### The selection function has inverted
+
+This is the deepest of the four problems and the one most often missed.
+
+The free market is, when functioning, a competence-selection mechanism. A firm that produces better products at lower cost wins customers, captures market share, and reinvests in further productive capacity. The talent inside the firm rises by demonstrating production competence. The CEO of Ford in 1942 reached that position by being good at building cars. When the country needed bombers, the country had a CEO who knew how to build things.
+
+Government procurement at scale, particularly under cost-plus contracting, inverts this selection function. A firm that captures more federal contracts wins regardless of whether its products work. Cost overruns are absorbed by the customer. The skill that wins contracts is not the skill that produces better weapons; it is the skill that captures the procurement officer, the congressional appropriator, and the relevant committee staff. The talent that rises inside a defense contractor over the past forty years has been selected for **competence in bribery**, not competence in production. Competence in lobbying, regulatory capture, earmark engineering, security-clearance navigation, post-government revolving-door placement, and the social management of congressional staff.
+
+This is not a moral failing of the individuals involved. It is a structural feature of the system. When the dominant customer is a government that pays cost-plus regardless of outcome, the firm that excels at managing the customer's procurement bureaucracy wins. The firm that excels at building the actual product, but is less good at managing the bureaucracy, loses or gets acquired. Over decades, the bureaucracy-management firms acquire the production-competent firms, and the entire sector reorganizes around bureaucracy management. The competence-selection signal that picked Henry Ford has been replaced by a competence-selection signal that picks people who can secure a meeting with the chair of House Armed Services. Eisenhower warned about exactly this dynamic in his 1961 farewell address. The country listened, nodded solemnly, and proceeded to spend the next sixty years building the system he warned against.
+
+A country whose defense industry has been selected for bribery competence is structurally less capable of winning a real war than a country whose defense industry has been selected for production competence. The bribery-competent industry can extract money. It cannot, by the time a war starts, retool quickly enough to build the weapons the war actually needs. The country that wins is the country whose civilian economy still has production-competent firms that can be pivoted in eighteen months, the way Ford was. The country that loses is the country whose entire industrial talent pool has spent forty years optimizing earmark capture in a Crystal City office park.
+
+This is the deepest reason the WW2 mobilization cannot be repeated from current baselines. It is not that the dollars are unavailable. It is that the talent that knew how to convert dollars into bombers has been re-trained to convert dollars into appropriations. Reversing this requires shifting the country's selection function back toward production competence. Every percent of spending moved out of cost-plus government procurement and into market-disciplined civilian sectors shifts the selection function incrementally back toward production competence. The country that selects for production competence wins the next real war. The country that has spent eighty years selecting for bribery competence does not.
+
+The country is paying more for defense and getting less defense, because the spending is destroying the underlying productive capacity that defense ultimately depends on.
+
+## What the Empirical Literature Says
+
+The Eisenhower Curve is not just a theoretical model. The cleanest empirical estimate available was published in 2025 by Luqman Saeed at the University of Liverpool in *Defence and Peace Economics*. Saeed used two new instrumental variables, arms imports during peacetime and the count of neighboring states experiencing interstate conflict, to break the long-standing endogeneity problem that had hobbled fifty years of earlier work in this field. Across a panel of 133 countries from 1960 to 2012, the result was robust across 2SLS, LIML, and GMM specifications:
+
+> **An increase in military expenditure as a share of GDP of one percentage point reduces economic growth by approximately 1.10 percentage points.**
+
+[Saeed 2025, *Defence and Peace Economics* 36(1): 86-101](https://www.tandfonline.com/doi/full/10.1080/10242694.2023.2259651).
+
+That is the empirical Eisenhower Curve. One percentage point of GDP spent on the military costs the country approximately one percentage point of growth. Applied to the United States: cutting military spending from 3.4% of GDP to 2.4% of GDP would, in the central estimate, raise the long-run growth rate by ~1 percentage point per year. Compounded over twenty years, that is roughly a 22% larger US economy in 2046.
+
+The supporting evidence from the rest of the field:
+
+- **The CBO** has produced periodic analyses showing that defense spending has lower fiscal multipliers than civilian R&D and healthcare investment. These multiplier estimates underpin the {{< var economic_multiplier_military_spending >}} and {{< var economic_multiplier_healthcare_investment >}} parameters used elsewhere in this book. They are not contested.
+- **The theoretical mechanism** (crowding-out of civilian investment, talent reallocation toward rent extraction, productive-base atrophy, selection-function inversion toward bribery competence) is widely accepted across the defense-economics literature regardless of which empirical estimate any individual author prefers.
+
+Saeed (2025) is the rigorous answer to the question "what is the effect of military spending on growth?" The CBO multipliers explain why. The Eisenhower Curve is what these tools have been describing all along.
+
+Older work in the field reported contested or null results: Dunne & Smith (2020) found "no strong relation" between military expenditure and investment or growth in a developed-country panel; Alptekin & Levine (2012) meta-analyzed 32 studies and reported small positive effects in developed countries. These findings predate the instrumental-variables methodology Saeed used to identify the causal effect and are best read as evidence that the older methods could not detect what the rigorous method now finds. The next section explains specifically why.
+
+## Caveats on the Literature
+
+The empirical literature looks more contested than the underlying mechanism warrants. This is worth surfacing honestly.
+
+**On methodology.** The older "neutral effect" findings suffer from problems the modern instrumental-variables work was built to fix.
+
+- **Reverse causation.** Countries that grow fast can afford more military spending. Naive panel regressions see military spending and GDP rising together and attribute the GDP growth partly to the military. This is backwards. Saeed's instrumental variables (arms imports during peacetime, neighbor-state conflict counts) exist precisely to break this. When you properly identify the causal direction, the strongly negative effect emerges. The older "no effect" findings are most likely reverse-causation bias inflating the apparent effect toward zero.
+- **Threshold averaging.** Military spending at very low levels (1% of GDP) may genuinely have neutral or modestly positive effects: enough deterrence to prevent costly wars, some civilian R&D spillover. Spending at high levels (4%+) is negative. Studies that pool across all spending levels report "no effect on average" because the positive low-level effect cancels the negative high-level effect. This is statistically real and substantively misleading: it cannot speak to the policy-relevant question, which is "are we above the threshold?"
+- **Time horizon.** Negative effects compound slowly. Crowding out of civilian R&D shows up as fewer patents two decades later. Talent migration shows up as a hollowed manufacturing base after thirty years. The Soviet collapse took forty years to manifest. Studies on 5-10 year horizons systematically miss the most important effects.
+- **Accounting artifact.** GDP is defined to include government spending. Cut military spending by 1% of GDP and measured GDP falls by 1% before any reallocation effect shows up. Studies that look at short-run GDP without controlling for this systematically undercount the negative effect on the productive economy.
+- **Aggregation.** "Military spending" lumps together nuclear deterrent, R&D, procurement, personnel costs, and overseas deployments. These have very different multipliers. Treating them as one variable obscures everything.
+
+The methodological answer to "how could military spending have no impact" is: it doesn't, but the techniques that find no impact are systematically obscuring the impact. The most rigorous recent identification strategy (Saeed's IV) finds a strongly negative effect. The older neutral findings should be treated as a null hypothesis the field has been failing to reject, not as positive evidence that no effect exists.
+
+**On funding.** The literature has selection pressure from the defense funding ecosystem that is worth being honest about.
+
+- **RAND** is a federally funded research and development center primarily funded by the US Department of Defense. The Air Force, Army, and Office of the Secretary of Defense are RAND's largest clients. RAND has institutional incentives to produce findings that do not threaten defense budgets. Their work is typically careful and nuanced; it is not typically where one finds strongly negative findings about US military spending. The historical studies (1870-1939 great powers) are academically distant from current policy and consequently easier to publish honestly. The reports closer to current policy are where the funding pressure is highest.
+- **CSIS, AEI, Heritage** are think tanks with substantial defense industry donor relationships. Their defense-spending work systematically supports more defense spending. This is not corruption in the criminal sense; it is selection. Donors fund work consistent with their interests; researchers who produce that work get more grants; researchers who do not, find different careers.
+- **Academic economics** has dramatically weaker conflict-of-interest disclosure norms than medical research. Most defense-economics papers do not disclose consulting relationships, government grants, or industry funding. Peer review screens for methodology, not for whether findings serve defense industry. The selection into publication happens upstream: which questions get asked, which methods get used, whose graduate students get hired.
+
+Saeed (2025) is, by contrast, produced outside the US defense funding ecosystem (University of Liverpool), uses methodology that directly addresses the dominant identification problem, and is the most rigorous recent estimate available. Its convergence with the theoretical mechanism (crowding-out, productive-base atrophy, selection-function inversion) is therefore informative. The "no effect" tradition has not converged on anything except an artifact of weaker methodology and stronger funding pressures.
+
+## A Note on the "% of GDP" Metric
+
+The empirical literature reports military spending as a share of GDP because that is the academic convention. The convention is convenient but conceptually wrong, and it deserves to be flagged.
+
+Defense needs are mostly **absolute**, not relative to economic size. They are determined by the threats the country faces, the cost of deterring those threats, and the infrastructure required to maintain that deterrent. They are not a function of how good the country's widget factories are. If the American economy doubles in real terms over the next twenty years, the number of nuclear weapons required to deter strategic adversaries does not double. The number was sufficient at the smaller economy and remains sufficient at the larger one. Tying defense spending to a percentage of GDP smuggles in a hidden assumption that defense is a normal good that should rise with prosperity. It is not. It is a threat-response variable whose appropriate level is set by the threats and the deterrence math, not by the size of the civilian economy that funds it.
+
+The "% of GDP" framing also creates a ratchet. NATO's 2% target is the canonical example: it pegs the spending obligation to GDP, which means the obligation rises every year you do better at making widgets, regardless of whether the threats grew. The metric naturalizes growth in defense spending without anyone having to justify it.
+
+For the rest of this chapter, where the academic literature is being cited, "% of GDP" appears because that is how the empirical work is reported. Elsewhere, the comparisons are in absolute dollars or as multiples of historical baselines, which are the metrics the question actually demands.
+
+## The China Comparison
+
+China spends approximately $300 billion per year on its military. The United States spends approximately {{< var us_military_spending_2024_annual >}} per year on its military. That is roughly **three times more in absolute terms**, against an adversary that conducts its strategic competition by investing the difference into infrastructure, advanced manufacturing, R&D, education, energy capacity, and supply-chain dominance.
+
+China is not winning strategic competition because it spends more on defense. China is winning because **it is not making the mistake the United States is making**. The Chinese economy compounds; the American economy is partly self-cannibalized by defense overspending. Over 20-30 years, this difference becomes decisive. The country that spent less on defense ends up with more total power because the productive base that defense ultimately depends on is larger.
+
+This is not a hypothetical projection. It is observable in current shipbuilding capacity (China builds roughly 230 times more commercial shipping tonnage than the United States), in chip-manufacturing capacity, in installed solar and battery capacity, in graduating engineers per year, and in patents per year. The pace of Chinese industrial capacity growth is the pace at which the United States is losing the next war it has not yet fought.
+
+If the goal of American defense policy is American strategic position, the current allocation is the worst possible allocation: it is the one that maximizes peacetime spending and minimizes the long-run economic base from which that spending is paid.
+
+## The Soviet Precedent
+
+The Soviet Union spent enormous fractions of its GDP on military, possibly as much as 15-25% at peak. The Soviet civilian economy was hollowed by this allocation. By the 1980s the country could not produce shoes for its citizens but could produce intercontinental ballistic missiles. The military spending continued, the productive economy collapsed under it, and the country fell apart in 1991. The military spending did not save it. The military spending was what killed it.
+
+The American trajectory is a slower version of the same curve. The United States is not yet at Soviet-level defense burden, but it has been on the same path for eighty years. Each decade the productive economy shrinks slightly relative to defense, the audit failures accumulate, the procurement costs balloon, and the strategic position erodes against rising competitors that have not made the same mistake.
+
+The Soviet Union was the natural experiment. The Soviet Union proved the curve.
+
+## What Optimal Looks Like
+
+The model says the optimum is where additional military spending stops increasing wartime power and starts decreasing it. To convert that abstraction into a dollar figure, look at the convergence of five honest anchors:
+
+| Anchor | Implied annual US military budget |
+|---|---:|
+| Pre-WW2 baseline (the budget that funded the country that won the largest war in human history) | ~$280 billion |
+| Peer democracies with comparable threat profiles (UK, France, Germany, Japan, averaged) | ~$450 billion |
+| China's current allocation, scaled to US economy size | ~$420-560 billion |
+| Deterrence-required floor (100-200 warheads sufficient for nuclear winter; conventional capacity for allied defense; intelligence and cyber sufficient for current threats) | ~$300-500 billion |
+| Saeed (2025) implication (every additional percentage point of military/GDP costs ~1.1 percentage points of growth) | the minimum consistent with deterrence; well below current levels |
+
+The anchors converge. Optimal US military spending is somewhere in the range of **$300 billion to $550 billion per year**, depending on how generous you want to be on the conventional and intelligence side.
+
+Current US military spending: **{{< var us_military_spending_2024_annual >}}**.
+
+The Eisenhower-Curve-optimal allocation therefore implies a cut of approximately **35-65% from current levels**. That sounds enormous, and it is. It is also historically normal. The post-WW2 cut was {{< var post_ww2_military_cut_pct >}} over two years. The period that followed produced the largest sustained economic expansion in American history. The country was strong because it had stopped spending its strength on weapons it did not need.
+
+The country that finishes this math is the country that reverts to something like the spending levels that won WW2, won the Cold War, and produced the longest economic expansion in American history. Those are the actually-defensible peacetime defense budgets. Everything above them is the Eisenhower Curve in action: spending more, getting less, and watching China win.
+
+## The Implication
+
+The reader who cares about American strategic position correctly identifies China as the central long-run threat. The reader who cares about American defense correctly identifies the need for sufficient deterrent capacity. The reader who cares about American national security correctly identifies the danger of strategic decline.
+
+All three of those readers are presently misidentifying the solution. The current allocation does not serve American strategic position; it accelerates its erosion. The current allocation does not maintain deterrent capacity; it cannibalizes the productive economy that deterrence depends on. The current allocation does not prevent strategic decline; it is the mechanism by which strategic decline is occurring.
+
+The defense-aligned reader who has been arguing for more spending, more procurement, more capacity, more readiness has been arguing for a position the math no longer supports. The empirical estimate is that the current allocation reduces Wartime Power, not increases it. Any policy that redirects current military spending toward the civilian productive base, in any amount, raises Wartime Power. Specific implementations of that redirection are downstream policy questions; the analytical conclusion is upstream of any specific policy and survives regardless of which one is adopted.
+
+## Sources and Related Analysis
+
+### Empirical literature
+
+- Saeed, L. (2025). "The Impact of Military Expenditures on Economic Growth: A New Instrumental Variables Approach." *Defence and Peace Economics* 36(1): 86-101. The headline finding cited in this chapter: ≈ −1.10 pp growth per +1 pp military/GDP. [tandfonline.com/doi/full/10.1080/10242694.2023.2259651](https://www.tandfonline.com/doi/full/10.1080/10242694.2023.2259651)
+- Dunne, J.P. & Smith, R.P. (2020). "Military Expenditure, Investment and Growth." *Defence and Peace Economics* 31(6): 601-614. The agnostic developed-country finding. [ideas.repec.org/a/taf/defpea/v31y2020i6p601-614.html](https://ideas.repec.org/a/taf/defpea/v31y2020i6p601-614.html)
+- Alptekin, A. & Levine, P. (2012). "Military expenditure and economic growth: A meta-analysis." *European Journal of Political Economy* 28(4): 636-650. The contrarian meta-analysis. [ideas.repec.org/a/eee/poleco/v28y2012i4p636-650.html](https://ideas.repec.org/a/eee/poleco/v28y2012i4p636-650.html)
+- RAND (2001). "Military Expenditures and Economic Growth," MR-1112. Great-power historical comparison 1870-1939. [rand.org/pubs/monograph_reports/MR1112.html](https://www.rand.org/pubs/monograph_reports/MR1112.html)
+
+### Related chapters in this book
+
+- Eisenhower's military-industrial complex warning (1961): [Proof](../proof.qmd#eisenhower)
+- Pentagon audit failures and the {{< var pentagon_unaccounted_funds >}} figure: [Pentagon Audit Failures](../appendix/parameters-and-calculations.qmd#sec-pentagon_unaccounted_funds)
+- The civilian-multiplier comparison underlying the Economy term: [Peace Dividend](peace-dividend.qmd)
+- The full GDP trajectory modeling that the strategic-competition argument draws on: [GDP Trajectories](gdp-trajectories.qmd) [@gdp-trajectories-paper-2025]
