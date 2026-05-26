@@ -1,0 +1,153 @@
+---
+title: 'The Filing-Day Checklist'
+description: 'A single printable one-page checklist for the human filing the shareholder demand letter. Run through it on filing day with a pen.'
+aliases:
+  - /filing-day-checklist.html
+  - /filing-checklist.html
+author:
+  - name: Mike P. Sinn
+    affiliation:
+      name: International Campaign to End War and Disease
+    email: mike@warondisease.org
+    corresponding: true
+keywords:
+  - filing checklist
+  - shareholder lawsuit
+  - demand letter
+  - operations
+format:
+  html:
+    toc: false
+    number-sections: false
+  pdf:
+    documentclass: article
+    geometry: margin=0.75in
+    fontsize: 10pt
+scores:
+  quality: 8
+  value: 9
+  timeliness: 9
+  standalone: 10
+  voice: 7
+  importance: 9
+---
+{{< include /knowledge/includes/setup-parameters.qmd >}}
+
+Print this. Mark each box as you go. Total time: ~43 hours spread across 2-4 weeks. Total cost: as little as ~$200-$600 for one share, up to ~$3,000 if buying 10 shares to keep the Rule 14a-8 option open. One share is legally sufficient for the demand letter and derivative action under DGCL § 327.
+
+## Week -4 to -2: Preparation
+
+### Target selection
+- [ ] Picked the defendant. Logged the choice and reason. (See [pre-filled letters](pre-filled-demand-letters.qmd) for the 8 prime options.)
+- [ ] Verified the company is still publicly traded under the same ticker.
+- [ ] Confirmed state of incorporation (Delaware for 7 of 8; Maryland for Lockheed Martin).
+
+### Counsel
+- [ ] Sent the [counsel pitch letter](counsel-outreach.qmd#the-pitch-letter) to 3-5 firms on the [firm list](counsel-outreach.qmd#firm-list-starting-set).
+- [ ] Received at least one positive response, or made the explicit decision to file pro se.
+- [ ] Executed a retention agreement if engaging counsel.
+- [ ] Counsel has reviewed the pre-filled demand letter.
+
+### Shares
+- [ ] Read the [brokerage how-to](brokerage-how-to.qmd).
+- [ ] Opened a brokerage account (if needed).
+- [ ] Bought at least 1 share of the target ticker (1 share is legally sufficient; many plaintiffs buy 5-10 for optics or to keep the Rule 14a-8 path open later).
+- [ ] Confirmed shares settled (T+2 business days).
+- [ ] Saved the trade confirmation, share certificate, or DTC reference. Will be attached to the demand letter.
+- [ ] Set up direct registration (DRS) with the transfer agent if possible, so the shares are not held in street name. Optional but cleaner for derivative standing.
+
+### Funding
+- [ ] Receipts saved for share purchase, any filing fees, postage.
+
+## Week -2 to -1: Personalization
+
+### Board research
+- [ ] Pulled the latest DEF 14A from [SEC EDGAR](https://www.sec.gov/cgi-bin/browse-edgar) for the target company.
+- [ ] Filled in the [board research template](board-member-research.qmd#the-per-director-template):
+  - [ ] CEO name (verified from latest filing, not from older sources)
+  - [ ] CEO age
+  - [ ] CEO direct equity holdings
+  - [ ] CEO probability of being alive in 20 years (from [SSA actuarial table](https://www.ssa.gov/oact/STATS/table4c6.html))
+  - [ ] Estimated net worth (range, not point estimate)
+- [ ] Pulled current lobbying figure from [OpenSecrets](https://www.opensecrets.org/industries/lobbying.php?ind=D); verified against the prior year for the 10-K reporting period.
+- [ ] Filled in the personalized math in Section 4 of the demand letter.
+
+### Counsel review
+- [ ] Counsel has reviewed the final, personalized demand letter.
+- [ ] Counsel has signed off on the filing forum (Delaware Chancery for 7 of 8; Maryland circuit for Lockheed).
+- [ ] Counsel has signed off on the proposed resolution and the consequences-of-non-response language.
+
+## Week -1: Media Prep
+
+### Press release
+- [ ] [Press release template](press-release.qmd#the-press-release) filled in with company name, lobbying figure, CEO name, plaintiff name, counsel name.
+- [ ] Counsel has reviewed the press release for privileged content.
+- [ ] Plaintiff bio (100 words) drafted.
+- [ ] Counsel bio (100 words) drafted.
+- [ ] Math one-pager drafted as a summary for journalists.
+- [ ] Visual assets ready: military-to-trials ratio chart, disease queue chart, plaintiff portrait.
+
+### Journalist outreach
+- [ ] [Journalist target list](press-release.qmd#journalist-target-list) refreshed; reporter names verified as currently on the beat.
+- [ ] 5-10 priority reporters identified for embargo offer.
+- [ ] Embargo emails drafted and ready to send 24 hours before filing.
+
+### Plaintiff prep
+- [ ] [Media kit](plaintiff-media-kit.qmd) read end to end.
+- [ ] [Interview Q&A](plaintiff-media-kit.qmd#interview-prep-qa) reviewed; practiced the top 5 questions out loud.
+- [ ] Tweet thread and LinkedIn post drafted but not yet published.
+
+## Filing day (T=0)
+
+Time-of-day order. Use a clock.
+
+### Morning (T-2h to T=0)
+- [ ] Final review of the demand letter, signed.
+- [ ] Demand letter printed; certified mail label printed; return-receipt requested.
+- [ ] Demand letter envelope addressed to the corporate secretary at the address on the [pre-filled letter](pre-filled-demand-letters.qmd).
+- [ ] Email copy of demand letter prepared, addressed to the corporate secretary's email (from the company's investor relations page).
+
+### T=0: Drop the package
+- [ ] Demand letter taken to the post office. Certified return-receipt mailing scanned.
+- [ ] Tracking number recorded. Date and time of mailing logged.
+- [ ] Demand letter sent simultaneously by email.
+
+### T=0 + 1 hour: Distribute the press release
+- [ ] Press release sent to full journalist list.
+- [ ] warondisease.org/lawsuit page goes live with the public filing (or the lawsuit page already has it; verify the case is referenced).
+- [ ] Tweet thread published.
+- [ ] LinkedIn post published.
+- [ ] Plaintiff and counsel available at the phone numbers in the press release.
+
+### T+1 hour to T+24 hours
+- [ ] Acknowledgment from corporate secretary received (or note absence).
+- [ ] First-tier reporters acknowledged or scheduled for follow-up.
+- [ ] Plaintiff did the first interview or has it scheduled.
+
+## T+1 to T+7 days: Follow-up
+
+- [ ] Follow-up email sent to journalists who did not respond.
+- [ ] Op-ed pitched to the strongest interested outlet (use [op-ed template](plaintiff-media-kit.qmd#op-ed-template)).
+- [ ] Journalist tracker updated daily.
+- [ ] Status posted to the [plaintiff registry](funding-and-coordination.qmd#plaintiff-registry-format) if one is running.
+
+## T+30: Mid-point check
+
+- [ ] Defendant has not yet responded substantively (typical at this point).
+- [ ] Counsel has prepared the [Rule 14a-8 shareholder proposal](shareholder-proposal-14a-8.qmd) for the next proxy cycle.
+- [ ] Counsel has begun drafting the [derivative complaint](litigation-phase.qmd#derivative-complaint-structural-template) for filing at day 61 if needed.
+
+## T+60: Response deadline
+
+- [ ] Defendant's response received (or note non-response).
+- [ ] [Board response analysis](litigation-phase.qmd#board-response-analysis-decision-tree) completed.
+- [ ] Decision made: accept, negotiate, escalate to Rule 14a-8, or file derivative action.
+- [ ] [T+60d follow-up press release](plaintiff-media-kit.qmd#t60-follow-up-press-release) distributed regardless of outcome.
+
+## If filing against multiple defendants
+
+Coordinate the filings rather than running them in series. The press coverage from one coordinated 8-defendant filing is larger than the sum of 8 sequential filings. See [funding-and-coordination.qmd](funding-and-coordination.qmd) for the multi-defendant coordination protocol.
+
+## Stop-sign
+
+If counsel declines and you have not decided to file pro se: pause and reach out to the next 5 firms.

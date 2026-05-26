@@ -142,6 +142,7 @@ book:
         - knowledge/futures/moronia.qmd # ✅ Path A: Moronia ~10p
         - knowledge/futures/wishonia.qmd # ✅ Path B: Wishonia ~13p
         - knowledge/appendix/faq.qmd # ✅ Demolishing Objections ~15p
+        - knowledge/appendix/where-am-i-wrong.qmd # Full argument for the 1% treaty in one breath; FAQ with strongest known objections and refutations
 
     - part: "For Institutions"
       chapters:
@@ -181,6 +182,28 @@ book:
         # - knowledge/strategy/how-to-launch-your-prize.qmd
         - knowledge/appendix/conclusion.qmd # ✅ Conclusion ~1p
   # appendices: Commented to get rid of the Appendix prefix in the titles
+    - part: "Repair Procedures"
+      chapters:
+        # Operational kits the reader can execute today. Ordered cheapest-first and grouped by phase.
+        # ── Direct action (any reader, today) ──
+        - knowledge/appendix/handout.qmd # Single-sheet flyer tucked in the collar of vandalized shirts; recipient-facing explainer
+        - knowledge/appendix/joke.qmd # The shirt; lives on the manual site; _quarto-joke.yml exists for PDF/Zenodo build only (no subdomain)
+        - knowledge/appendix/notice-of-termination.qmd # HR-format termination letter for all politicians with authority over military spending
+        # ── Lawsuit kit ──
+        - knowledge/appendix/lawsuit.qmd # Master shareholder demand letter against defense contractor boards; Caremark 2.0 duty-of-care theory
+        - knowledge/appendix/pre-filled-demand-letters.qmd # 8 per-contractor fact sheets (addresses, tickers, lobbying spend, filing forum) to plug into the master demand letter
+        - knowledge/appendix/brokerage-how-to.qmd # Step-by-step for readers who have never bought stock; opens an account and buys 1 share
+        - knowledge/appendix/board-member-research.qmd # Protocol for extracting CEO and board details from DEF 14A proxy statements to personalize the demand letter
+        - knowledge/appendix/counsel-outreach.qmd # Pro bono / contingency law firm list + pitch letter for recruiting plaintiff-side counsel
+        - knowledge/appendix/press-release.qmd # Press release template + journalist target list by beat for simultaneous distribution with the demand letter
+        - knowledge/appendix/plaintiff-media-kit.qmd # Op-ed template + social media kit + interview Q&A + T+60d follow-up press release
+        - knowledge/appendix/filing-day-checklist.qmd # Single printable one-page checklist for filing day
+        - knowledge/appendix/shareholder-proposal-14a-8.qmd # SEC Rule 14a-8 shareholder proposal template; escalation after the 60-day demand-letter window
+        - knowledge/appendix/litigation-phase.qmd # Post-response decision tree, derivative complaint structural template, settlement playbook
+        - knowledge/appendix/funding-and-coordination.qmd # Self-funding default, co-plaintiff recruit template, multi-defendant coordination, plaintiff registry format
+        # ── Escalation ──
+        - knowledge/appendix/hostile-takeover.qmd # ~$90/global human to buy controlling stake in Western defense primes; redirects lobbying to championing the 1% treaty
+
     - part: "Economics & Finance"
       chapters:
         - knowledge/economics/peace-dividend.qmd # ✅ (data presentation, appropriate) ~6p
@@ -221,13 +244,18 @@ book:
         - knowledge/appendix/right-to-trial-fda-upgrade-act.qmd # Standalone paper config: _quarto-right-to-trial.yml
         - knowledge/appendix/drug-development-cost-analysis.qmd # Standalone paper config: _quarto-drug-development-cost.yml
         - knowledge/appendix/algorithmic-public-administration-paper.qmd # Standalone paper config: _quarto-algorithmic-public-administration.yml
-        - knowledge/appendix/joke.qmd # Lives on the manual site; _quarto-joke.yml exists for PDF/Zenodo build only (no subdomain)
-        - knowledge/appendix/handout.qmd # Single-sheet flyer tucked in the collar of vandalized shirts; recipient-facing explainer
-        - knowledge/appendix/notice-of-termination.qmd # HR-format termination letter for all politicians with authority over military spending
-        - knowledge/appendix/lawsuit.qmd # Shareholder demand letter against defense contractor boards; Caremark 2.0 duty-of-care theory
-        - knowledge/appendix/hostile-takeover.qmd # ~$90/global human to buy controlling stake in Western defense primes; redirects lobbying to championing the 1% treaty
-        - knowledge/appendix/where-am-i-wrong.qmd # Full argument for the 1% treaty in one breath; FAQ with strongest known objections and refutations
         - knowledge/appendix/correcting-the-ais.qmd # LLM correction templates; chapter-only
+        # MOVED to "Repair Procedures" part above:
+        # - knowledge/appendix/handout.qmd
+        # - knowledge/appendix/joke.qmd
+        # - knowledge/appendix/notice-of-termination.qmd
+        # - knowledge/appendix/lawsuit.qmd
+        # - knowledge/appendix/board-member-research.qmd
+        # - knowledge/appendix/counsel-outreach.qmd
+        # - knowledge/appendix/press-release.qmd
+        # - knowledge/appendix/hostile-takeover.qmd
+        # MOVED to "For Skeptics" part:
+        # - knowledge/appendix/where-am-i-wrong.qmd
 
     - part: "References"
       chapters:

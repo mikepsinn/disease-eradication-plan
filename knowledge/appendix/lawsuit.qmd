@@ -447,18 +447,19 @@ This has not yet happened. On my planet, the first time someone ran the numbers,
 
 ### Execution sequence
 
-1. Write one-page cost-benefit analysis (4 hrs, $0).
-2. Buy 10 shares of the target defense contractor's stock (1 hr, approximately $3,000).
-3. Research board members, personalize from proxy statements (9 hrs, $0).
-4. Engage pro bono counsel; pitch Cohen Milstein, Selendy Gay, or BLB&G (3 hrs, $0).
-5. Counsel reviews, finalizes, and files demand letter ($0).
-6. Prepare press release and journalist list (4 hrs, $0).
-7. Send demand letters and press releases simultaneously (1 hr, postage).
+1. Write one-page cost-benefit analysis (4 hrs, $0). The [demand letter](#part-1-the-demand-letter) already contains the full analysis; the one-pager is the executive summary for the journalist list. Source the math from [Where Am I Wrong?](where-am-i-wrong.qmd).
+2. Buy at least 1 share of the target defense contractor's stock (1 hr, $200-$600 for one share depending on contractor). Per DGCL § 327, one share is legally sufficient for the demand letter and derivative action. Many plaintiffs buy 5-10 shares for optics and to preserve the Rule 14a-8 path (which has separate dollar thresholds; see [shareholder-proposal-14a-8.qmd](shareholder-proposal-14a-8.qmd)). Total cost: ~$500 minimum, ~$3,000 if buying 10 shares. See the [target reference table](#target-reference-table) below for current prices.
+3. Research board members, personalize from proxy statements (9 hrs, $0). Use the [board member research protocol](board-member-research.qmd) to extract CEO name, age, holdings, and probability of being alive in 20 years from the latest DEF 14A. Output goes into Section 6 of the demand letter.
+4. Engage pro bono counsel; pitch Cohen Milstein, Selendy Gay, or BLB&G (3 hrs, $0). Use the [counsel pitch letter and firm list](counsel-outreach.qmd). The pitch letter is distinct from the demand letter and emphasizes strategic value to the firm, not the moral case.
+5. Counsel reviews, finalizes, and files [demand letter](#part-1-the-demand-letter) ($0).
+6. Prepare [press release](press-release.qmd) and journalist list (4 hrs, $0). The press release page also contains the full journalist target list by beat.
+7. Send demand letters and press releases simultaneously (1 hr, postage). The [press release sequencing section](press-release.qmd#sequencing) covers embargo timing and same-day distribution.
 8. Wait 60 days.
-9. If no adequate response: file shareholder proposals under SEC Rule 14a-8 plus a derivative suit in Delaware Chancery.
+9. If no adequate response: file shareholder proposals under SEC Rule 14a-8 (see the [eligible-shareholder proposal track](#eligible-shareholder-proposal-track) below) plus a derivative suit in Delaware Chancery (Maryland for Lockheed Martin).
 
 ```
-Total cost:                                         $3,000
+Total cost (minimum, 1 share):              ~$200-$600
+Total cost (typical, ~10 shares):           ~$3,000
 Total time:                                  ~43 hours
 Probability of math reaching boards:                  ~100%
 ```

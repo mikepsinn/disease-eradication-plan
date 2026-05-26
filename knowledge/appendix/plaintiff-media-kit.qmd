@@ -1,0 +1,126 @@
+---
+title: 'The Plaintiff Media Kit'
+description: 'Op-ed template, social media kit (tweet thread, LinkedIn post, video script), interview Q&A with the 20 most likely reporter questions, and the T+60d follow-up press release. Everything the plaintiff needs to handle the media side of the filing without freelancing each piece.'
+aliases:
+  - /plaintiff-media-kit.html
+  - /media-kit.html
+author:
+  - name: Mike P. Sinn
+    affiliation:
+      name: International Campaign to End War and Disease
+    email: mike@warondisease.org
+    corresponding: true
+keywords:
+  - media kit
+  - op-ed template
+  - social media
+  - interview prep
+  - press release
+  - shareholder lawsuit
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    number-sections: false
+  pdf:
+    documentclass: article
+    geometry: margin=1in
+    fontsize: 11pt
+scores:
+  quality: 7
+  value: 9
+  timeliness: 8
+  standalone: 8
+  voice: 7
+  importance: 9
+---
+{{< include /knowledge/includes/setup-parameters.qmd >}}
+
+The [press release](press-release.qmd) goes to reporters. This kit goes to the plaintiff. Print all four sections and have them in hand on filing day. Counsel reviews everything before publication.
+
+## Op-Ed Outline (Optional) {#op-ed-template}
+
+If you want to pitch an op-ed at T+7d, the beat structure (800-1,200 words):
+
+1. **Lede:** "Last week I mailed a shareholder demand letter to the Board of [COMPANY]. I own 1 share. I paid $[X]. The Board has 60 days to investigate whether the company's $[X]M annual lobbying expenditure is positive or negative ROI for shareholders. I believe the answer is negative."
+2. **The setup:** [COMPANY] lobbies to maintain US military appropriations. The ratio of military to clinical-trial spending is {{< var military_to_government_clinical_trials_spending_ratio >}}:1. US military spending is {{< var us_military_spending_current_vs_prewar_multiplier >}} the pre-WW2 baseline.
+3. **The model:** 1% redirection compresses disease eradication from {{< var status_quo_queue_clearance_years_nounit >}} to {{< var dfda_queue_clearance_years_nounit >}} years; year-15 GDP is ~{{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}} the current trajectory. [COMPANY]'s revenue is a fraction of US federal spending, which is a fraction of US GDP. The lobbying suppresses the company's own addressable market.
+4. **The settlement ask:** redirect the existing lobbying budget; $0 incremental cost; positive shareholder ROI.
+5. **The human angle:** ~{{< var global_disease_deaths_daily_nounit >}} humans die daily. {{< var unexplored_ratio >}} of potential uses for {{< var safe_compounds_count_nounit >}} known-safe compounds are untested. The Board's lobbying maintains that rate.
+6. **The legal theory (1 paragraph):** *Caremark* (1996), *Marchand* (2019), *Stone v. Ritter* (2006). Recurring expenditure + documented red flag = oversight breach.
+7. **Close:** "Buy 1 share of [COMPANY] for $[X] and send your own demand letter. Template at warondisease.org/lawsuit. The lobbying assumes no one is doing the math. I did the math. So can you."
+
+Byline: "[PLAINTIFF NAME] is a shareholder of [COMPANY] and the lead plaintiff in the demand letter described above."
+
+## Social Media Kit
+
+Publish at T=0 + 1 hour, simultaneously with the press release distribution. Counsel reviews before publishing.
+
+### Tweet thread (5 tweets)
+
+**1.** Today I sued the board of [COMPANY] for spending $[X]M/year on lobbying that's mathematically bad for shareholders. I own 1 share. It cost $[X]. The math is public. 🧵
+
+**2.** [COMPANY] lobbies to keep military appropriations high. Current ratio of military to clinical-trial spending: {{< var military_to_government_clinical_trials_spending_ratio >}}:1. Redirecting 1% to trials compresses the disease eradication timeline from {{< var status_quo_queue_clearance_years_nounit >}} years to {{< var dfda_queue_clearance_years_nounit >}}.
+
+**3.** Global GDP at year 15 under the 1% redirect: ~{{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}} the current trajectory. [COMPANY]'s revenue is a fraction of US federal spending, which is a fraction of US GDP. They're paying lobbyists to keep small the economy that funds them.
+
+**4.** I'm asking the Board to redirect the SAME lobbying budget from "maintain military appropriations" to "support a 1% redirection." Same lobbyists. Different objective. Net cost: $0. Legal basis: *Caremark*, *Marchand*.
+
+**5.** You can do this too. 1 share = ~$200. Template + 8 pre-filled letters at warondisease.org/lawsuit. The Board has 60 days to respond regardless of who sent the letter. RT this to the next shareholder.
+
+### LinkedIn post
+
+Reshare the op-ed link with a 2-sentence framing: "Today I filed a shareholder demand letter against the Board of [COMPANY] under *Caremark*. The pleading argues the company's $[X]M annual lobbying budget is mathematically negative-ROI for its own shareholders. Full piece: [op-ed link]."
+
+### Video script (optional, 60-90 seconds vertical for TikTok/Reels/Shorts)
+
+If you want to shoot one: open with "Today I sued a defense contractor for $200" on camera holding the share, hit the {{< var military_to_government_clinical_trials_spending_ratio >}}:1 ratio + the 443→36 years compression + the 4× GDP point, close with "1 share, ~$200, template at warondisease.org/lawsuit."
+
+## Interview Prep Q&A
+
+The 8 most likely reporter questions. Practice the top 4 out loud before the first call.
+
+### Q1: What are you suing for?
+
+I'm not suing for damages personally. I'm asking the Board of [COMPANY] to commission an independent ROI analysis of their $[X] million annual lobbying expenditure, accounting for the lobbying's effect on the macroeconomic environment that funds the company's contracts. The proposed settlement is that they redirect the existing lobbying objective from maintaining military spending levels to supporting a 1% redirection to clinical trials. No incremental cost to the company.
+
+### Q2: Why do you think the lobbying is bad for shareholders?
+
+The company's revenue is denominated in a fraction of US federal spending. US federal spending is denominated in a fraction of US GDP. Independent modeling shows that redirecting 1% of military spending to pragmatic clinical trials produces global GDP at year 15 of approximately 4× the current trajectory, through reduced disease burden and accelerated productivity. So the 1% they're "protecting" through lobbying is dominated by the gain they'd get from operating in a 4× larger economy.
+
+### Q3: This sounds like a stunt. Is this serious?
+
+The legal theory is grounded in *Caremark*, *Marchand v. Barnhill*, and *Stone v. Ritter*. The math is sourced from SIPRI, WHO, NIH, OpenSecrets, and the company's own SEC filings. The 60-day clock is statutory. The Rule 14a-8 proposal and the derivative action that follow if the Board doesn't respond are real legal vehicles. The pleading is publicly available.
+
+### Q4: How much will this cost the company in damages if you win?
+
+Zero, if the Board accepts the proposed settlement. The settlement is non-monetary. Same budget. Different objective. Net incremental cost: $0.
+
+### Q5: Why this company?
+
+The lawsuit theory applies to every major defense prime. Pre-filled demand letters exist for all 8 (Lockheed, RTX, Boeing, GD, Northrop, L3Harris, HII, Leidos). [COMPANY] is the first/early defendant because of [pick: largest, most prominent CEO, largest lobbying spend, state of incorporation].
+
+### Q6: Are you trying to disarm America?
+
+No. The proposal is a 1% redirection. The country retains 99% of its existing military spending. After WW2 demobilization, the US cut military spending by 87% over two years and the resulting economic expansion was the largest in American history.
+
+### Q7: What if the company just ignores the demand letter?
+
+I'll file a Rule 14a-8 shareholder proposal in the next proxy cycle and a derivative action in [Delaware Chancery / Maryland] at day 61.
+
+### Q8: Why should I care?
+
+Disease kills approximately 100% of humans, eventually. Most of those deaths are from diseases that would have treatments if anyone had funded the trials. The lobbying is paid for by the same companies whose shareholders die of those diseases. You are probably a shareholder through an index fund or 401k. You can do this too: 1 share, ~$200, template at warondisease.org/lawsuit. The Board has to respond within 60 days regardless of who sent the letter.
+
+## T+60d Follow-Up Press Release {#t60-follow-up-press-release}
+
+Distribute the day the Board's response (or non-response) becomes public. Use the same journalist list with a different headline angle depending on the outcome.
+
+### If the Board commissions the analysis
+
+> [CITY, DATE]: [COMPANY]'s Board of Directors has agreed to commission an independent ROI analysis of the company's federal lobbying expenditure, in response to a shareholder demand letter filed [60 days ago]. The analysis is scheduled for [TIMELINE] and will be published on the company's investor relations website. [PLAINTIFF NAME] welcomed the response and announced [next-step action]. The same demand-letter template has been filed against [N other contractors].
+
+### If the Board declines or doesn't respond
+
+> [CITY, DATE]: [COMPANY]'s Board of Directors has [declined to respond / responded inadequately / failed to respond] to a shareholder demand letter filed 60 days ago alleging that its annual $[X] million lobbying expenditure produces negative shareholder ROI. [PLAINTIFF NAME] today announced the filing of a shareholder proposal under SEC Rule 14a-8 plus a derivative action in [Delaware Chancery / Maryland circuit] alleging breach of the duty of care and failure of oversight under *Caremark*. Counsel: [FIRM NAME].
+

@@ -1,0 +1,197 @@
+---
+title: 'Per-Contractor Fact Sheets'
+description: 'The eight contractor-specific fill-ins for the master demand letter: addresses, lobbying figures, SEC EDGAR links, filing forums, and any per-defendant notes. Plug these into the master letter in lawsuit.qmd.'
+abstract: |
+  The master demand letter is in [lawsuit.qmd](lawsuit.qmd#part-1-the-demand-letter). This page provides eight per-contractor fact sheets you plug into it: address for the corporate secretary, lobbying spend, SEC EDGAR link, state of incorporation, filing forum, and contractor-specific notes. Verify everything against the latest DEF 14A and OpenSecrets data before mailing because both shift.
+aliases:
+  - /pre-filled-demand-letters.html
+  - /demand-letters.html
+  - /contractor-fact-sheets.html
+author:
+  - name: Mike P. Sinn
+    affiliation:
+      name: International Campaign to End War and Disease
+    email: mike@warondisease.org
+    corresponding: true
+keywords:
+  - demand letter
+  - defense contractors
+  - Caremark
+  - shareholder rights
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    number-sections: false
+  pdf:
+    documentclass: article
+    geometry: margin=1in
+    fontsize: 11pt
+scores:
+  quality: 7
+  value: 10
+  timeliness: 9
+  standalone: 8
+  voice: 6
+  importance: 10
+---
+{{< include /knowledge/includes/setup-parameters.qmd >}}
+
+**STATUS: DRAFT.** CEO names, ages, and current lobbying figures all shift. Verify the values for your target contractor against the latest DEF 14A and OpenSecrets before mailing.
+
+## How to Use This Page
+
+1. Pick your target contractor. Pull the fact sheet below.
+2. Open the master demand letter in [lawsuit.qmd Part 1](lawsuit.qmd#part-1-the-demand-letter).
+3. Substitute the fact-sheet values into the master letter's placeholders.
+4. Run the CEO-personalization research per [board-member-research.qmd](board-member-research.qmd) and fill in Section 6.
+5. Counsel reviews ([counsel-outreach.qmd](counsel-outreach.qmd)).
+6. Mail by certified return receipt to the corporate secretary address below.
+
+Each fact sheet contains everything that varies per contractor. The legal theory, the macroeconomic argument, and the proposed resolution are identical across all eight and live in the master letter.
+
+## Lockheed Martin (LMT)
+
+```
+Corporate Secretary
+Lockheed Martin Corporation
+6801 Rockledge Drive
+Bethesda, MD 20817
+
+State of incorporation:     Maryland (NOT Delaware)
+Filing forum:                Maryland circuit court for derivative; SEC for 14a-8
+Applicable law:              Maryland MD. Code, Corps. & Ass'ns § 2-405.1
+                             (Caremark-equivalent; slightly different procedure)
+~Lobbying (FY 2024):         $15.7 million
+SEC EDGAR (CIK 0000936468):  sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000936468
+OpenSecrets:                 opensecrets.org/orgs/lockheed-martin/summary?id=D000000104
+Note:                        Largest pure-play defense prime. File first if there is
+                             media leverage in being first.
+```
+
+## RTX Corporation (RTX, formerly Raytheon)
+
+```
+Corporate Secretary
+RTX Corporation
+1000 Wilson Boulevard
+Arlington, VA 22209
+
+State of incorporation:     Delaware
+Filing forum:                Delaware Chancery for derivative; SEC for 14a-8
+~Lobbying (FY 2024):         $13.5 million
+SEC EDGAR (CIK 0000101829):  sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000101829
+OpenSecrets:                 opensecrets.org/orgs/rtx-corp/summary?id=D000000125
+Note:                        Largest defense prime by revenue post merger. Heavy
+                             congressional relationships across multiple states
+                             (RTX, Pratt & Whitney, Collins Aerospace).
+```
+
+## Boeing (BA)
+
+```
+Corporate Secretary
+The Boeing Company
+929 Long Bridge Drive
+Arlington, VA 22202
+
+State of incorporation:     Delaware
+Filing forum:                Delaware Chancery for derivative; SEC for 14a-8
+~Lobbying (FY 2024):         $11.9 million
+SEC EDGAR (CIK 0000012927):  sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000012927
+OpenSecrets:                 opensecrets.org/orgs/boeing-co/summary?id=D000000100
+Note:                        Lobbying is dual-purpose (defense + commercial aviation).
+                             Demand applies to the defense-budget-targeted portion.
+                             Isolate that portion in the letter; if the Board cannot
+                             disaggregate, that is itself a Caremark disclosure failure.
+```
+
+## General Dynamics (GD)
+
+```
+Corporate Secretary
+General Dynamics Corporation
+11011 Sunset Hills Road
+Reston, VA 20190
+
+State of incorporation:     Delaware
+Filing forum:                Delaware Chancery for derivative; SEC for 14a-8
+~Lobbying (FY 2024):         $12.2 million
+SEC EDGAR (CIK 0000040533):  sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000040533
+OpenSecrets:                 opensecrets.org/orgs/general-dynamics/summary?id=D000000080
+```
+
+## Northrop Grumman (NOC)
+
+```
+Corporate Secretary
+Northrop Grumman Corporation
+2980 Fairview Park Drive
+Falls Church, VA 22042
+
+State of incorporation:     Delaware
+Filing forum:                Delaware Chancery for derivative; SEC for 14a-8
+~Lobbying (FY 2024):         $8.8 million
+SEC EDGAR (CIK 0001133421):  sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001133421
+OpenSecrets:                 opensecrets.org/orgs/northrop-grumman/summary?id=D000000170
+```
+
+## L3Harris Technologies (LHX)
+
+```
+Corporate Secretary
+L3Harris Technologies, Inc.
+1025 W. NASA Blvd.
+Melbourne, FL 32919
+
+State of incorporation:     Delaware
+Filing forum:                Delaware Chancery for derivative; SEC for 14a-8
+~Lobbying (FY 2024):         $2.5 million
+SEC EDGAR (CIK 0000202058):  sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000202058
+OpenSecrets:                 opensecrets.org/orgs/l3harris-technologies/summary?id=D000000098
+```
+
+## Huntington Ingalls Industries (HII)
+
+```
+Corporate Secretary
+Huntington Ingalls Industries, Inc.
+4101 Washington Avenue
+Newport News, VA 23607
+
+State of incorporation:     Delaware
+Filing forum:                Delaware Chancery for derivative; SEC for 14a-8
+~Lobbying (FY 2024):         $5.2 million
+SEC EDGAR (CIK 0001501585):  sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001501585
+OpenSecrets:                 opensecrets.org/orgs/huntington-ingalls-industries/summary?id=D000031908
+Note:                        Largest US military shipbuilder (carriers, submarines).
+                             Revenue concentrated in Navy programs; addressable-market
+                             argument applies with equal force.
+```
+
+## Leidos Holdings (LDOS)
+
+```
+Corporate Secretary
+Leidos Holdings, Inc.
+1750 Presidents Street
+Reston, VA 20190
+
+State of incorporation:     Delaware
+Filing forum:                Delaware Chancery for derivative; SEC for 14a-8
+~Lobbying (FY 2024):         $3.8 million
+SEC EDGAR (CIK 0001336920):  sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001336920
+OpenSecrets:                 opensecrets.org/orgs/leidos/summary?id=D000022490
+Note:                        Substantial federal IT/analytics revenue in addition to
+                             defense procurement. Argument applies most strongly to the
+                             defense-revenue segment but extends to federal-spending-funded
+                             portions of IT services revenue.
+```
+
+## Coordinated 8-Defendant Filing
+
+Total cost: ~$2,400 if buying 1 share of each (sufficient for the derivative action), or ~$25,600 if buying 10 shares of each to also preserve the 14a-8 path.
+
+See [funding-and-coordination.qmd](funding-and-coordination.qmd#multi-defendant-coordination) for sequencing options and the coordinator role.
+
+The [hostile-takeover.qmd](hostile-takeover.qmd) campaign is the parallel escalation if the lawsuits stall.

@@ -1,0 +1,146 @@
+---
+title: 'How to Buy the Share'
+description: 'Step-by-step for readers who have never bought stock. Open a brokerage account, buy one share of a defense contractor, confirm settlement, and you are now a shareholder with legal standing to file the demand letter.'
+aliases:
+  - /brokerage-how-to.html
+  - /how-to-buy-the-share.html
+author:
+  - name: Mike P. Sinn
+    affiliation:
+      name: International Campaign to End War and Disease
+    email: mike@warondisease.org
+    corresponding: true
+keywords:
+  - brokerage
+  - shareholder
+  - buying stock
+  - defense contractors
+  - filing a lawsuit
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    number-sections: false
+  pdf:
+    documentclass: article
+    geometry: margin=1in
+    fontsize: 11pt
+scores:
+  quality: 8
+  value: 9
+  timeliness: 8
+  standalone: 10
+  voice: 7
+  importance: 8
+---
+{{< include /knowledge/includes/setup-parameters.qmd >}}
+
+You need to own at least one share of the defendant before you can send the [demand letter](lawsuit.qmd). One share is legally sufficient under DGCL § 327. This page is for readers who have never bought stock. Total time: 15-60 minutes including account creation.
+
+## What You Need Before Starting
+
+1. Government-issued photo ID (driver's license or passport).
+2. Social Security Number (US) or equivalent national tax ID.
+3. A bank account you can link.
+4. Around $200-$600 to spend on one share.
+5. A computer or phone with internet.
+
+## Pick a Brokerage
+
+Use **Fidelity** or **Charles Schwab**. Both have $0 minimums, no commissions, and stable apps. Avoid crypto-only platforms (Coinbase, Kraken) and CFD platforms (eToro); they don't give you actual share ownership and won't establish legal standing.
+
+## Step-by-Step: Fidelity
+
+(The flow is similar across all major brokerages. Fidelity is used here as a concrete example.)
+
+### 1. Open the account (~15 minutes)
+
+1. Go to [fidelity.com](https://www.fidelity.com) and click **"Open an Account"**.
+2. Select **"Individual Brokerage Account"** (not retirement, not joint, unless you have a reason).
+3. Fill in personal information: full legal name, address, date of birth, SSN, employment info.
+4. Answer suitability questions ("investment experience: beginner", "investment objective: capital appreciation", "risk tolerance: medium"). Honest answers are fine.
+5. Read and electronically sign the account agreement.
+6. You will receive an account number immediately.
+
+### 2. Link your bank (~10 minutes)
+
+1. Go to **"Move Money"** or **"Transfer"** in the account menu.
+2. Add your external bank account by routing number + account number, or by logging into your bank through Fidelity's instant-link service (Plaid).
+3. Verify the bank link. For routing-number setup, this typically requires confirming two small test deposits (~1-3 business days). For Plaid-linked accounts, it is usually instant.
+4. Initiate a transfer of ~$1,000 (or whatever you plan to spend) from your bank to the Fidelity account. ACH transfers take 1-3 business days to settle.
+
+### 3. Buy the share (~5 minutes once cash settles)
+
+1. Go to **"Trade"** in the top menu.
+2. Enter the ticker symbol of the target contractor. The 8 tickers from the [target reference table](lawsuit.qmd#target-reference-table):
+   - **LMT** (Lockheed Martin)
+   - **RTX** (RTX Corporation, formerly Raytheon)
+   - **BA** (Boeing)
+   - **GD** (General Dynamics)
+   - **NOC** (Northrop Grumman)
+   - **LHX** (L3Harris Technologies)
+   - **HII** (Huntington Ingalls Industries)
+   - **LDOS** (Leidos Holdings)
+3. Set **Action**: BUY.
+4. Set **Quantity**: 1 share (or more, see below).
+5. Set **Order Type**: **Market** (executes immediately at the current price). Limit orders are also fine but unnecessary for a one-share order.
+6. Set **Time in Force**: Day.
+7. Review and submit.
+
+Confirmation appears on screen within seconds. You now own one share.
+
+### 4. Confirm settlement (~2 business days)
+
+The trade executes immediately but the shares "settle" 2 business days later (T+2). Once shares are settled:
+
+- The shares appear in your account holdings.
+- You can request a trade confirmation document showing the purchase date, share count, and price.
+- You are officially a shareholder of record for the purposes of the demand letter.
+
+**Do not mail the demand letter before settlement.** A defendant board can challenge standing if the shares were not yet legally owned at the time of the alleged wrong (here, the lobbying expenditure). Wait the 2 business days.
+
+## How Many Shares
+
+1 whole share for the demand letter and derivative action. $25,000 worth held for at least 1 year if you also want to file a [Rule 14a-8 proposal](shareholder-proposal-14a-8.qmd). For a coordinated 8-defendant filing, 1 share each (~$2,400 total).
+
+## Direct Registration (DRS)
+
+Optional. Street-name shares are fine; direct-register only if counsel advises it after a standing challenge.
+
+## How to Hold the Shares
+
+Do not sell during the lawsuit. Continuous ownership is required under DGCL § 327; selling moots the suit. Disable any automatic dividend reinvestment that might convert shares.
+
+## Tax
+
+Buying has no immediate tax consequence. Selling later triggers capital gains; consult an accountant.
+
+## What to Save for the Demand Letter
+
+After purchase, save the following for your records and for inclusion in the demand letter package:
+
+1. **Trade confirmation document** (PDF from brokerage) showing buy date, share count, price, and account number.
+2. **Most recent account statement** showing the share is held in your account.
+3. **DRS certificate** (if you direct-registered) from the transfer agent.
+
+These attach to the demand letter to establish standing. Counsel will tell you what additional documentation is needed.
+
+## What If You Don't Have $200
+
+See [funding-and-coordination.qmd](funding-and-coordination.qmd). Default: borrow it from one person.
+
+## Order of Operations
+
+```
+Day 1:    Open brokerage account (15 min)
+Day 1:    Link bank account (10 min, or up to 3 days for ACH verification)
+Day 1-3:  Transfer cash from bank to brokerage (ACH settlement)
+Day 4:    Buy 1 share (5 min)
+Day 4-6:  Wait for trade settlement (T+2 business days)
+Day 6:    Save trade confirmation; you are now a shareholder of record
+Day 7+:   Proceed with the [filing-day checklist](filing-day-checklist.qmd)
+```
+
+Total elapsed time from "I've never bought stock" to "I am a defense-contractor shareholder ready to file": **~1 week**.
+
+The single share has done its work. The math is now legally yours to send to the Board.

@@ -1,0 +1,100 @@
+---
+title: 'The Litigation Phase'
+description: 'What happens after the 60-day demand-letter response window closes. Decision tree for the Board response, derivative complaint structural template, settlement negotiation playbook, and the rules of engagement for active litigation.'
+abstract: |
+  Most of the campaign is upstream of the courtroom. This page covers the downstream contingency: the Board's response (or non-response) at day 60, the decision tree for what to do next, the structural template for the derivative complaint if litigation becomes necessary, and the settlement negotiation playbook. Counsel finalizes everything before any court filing.
+aliases:
+  - /litigation-phase.html
+  - /post-response-playbook.html
+author:
+  - name: Mike P. Sinn
+    affiliation:
+      name: International Campaign to End War and Disease
+    email: mike@warondisease.org
+    corresponding: true
+keywords:
+  - derivative complaint
+  - Caremark
+  - settlement
+  - Delaware Chancery
+  - shareholder litigation
+  - board response
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    number-sections: false
+  pdf:
+    documentclass: article
+    geometry: margin=1in
+    fontsize: 11pt
+scores:
+  quality: 7
+  value: 9
+  timeliness: 8
+  standalone: 8
+  voice: 6
+  importance: 9
+---
+{{< include /knowledge/includes/setup-parameters.qmd >}}
+
+**STATUS: DRAFT.** Counsel must finalize every filing in this phase. The structural templates below are scaffolds; they are not substitutes for licensed legal drafting.
+
+## Board Response: Three Outcomes {#board-response-analysis-decision-tree}
+
+The 60-day clock ends at midnight of day 60 after the demand letter was received. Categorize the response within 48 hours and execute next steps within 7 days.
+
+### Outcome 1: No response or procedural-only acknowledgment
+
+**Definition:** No substantive engagement with the ROI question. May include silence, a "we'll consider it" letter, or a denial that doesn't cite independent analysis.
+
+**Next steps:**
+1. T+60d follow-up press release (decline variant).
+2. File the [Rule 14a-8 shareholder proposal](shareholder-proposal-14a-8.qmd) for the next proxy cycle.
+3. Counsel files the derivative complaint in Delaware Chancery (Maryland for Lockheed).
+
+### Outcome 2: Accommodation
+
+**Definition:** The Board commits to commissioning the ROI analysis, with or without scope negotiation.
+
+**Next steps:**
+1. T+60d follow-up press release (accommodation variant).
+2. Hold the shares. Continued ownership obligation persists.
+3. Monitor the analysis. If the published analysis confirms negative ROI but the Board declines to redirect lobbying, that is itself a fresh *Caremark* trigger; refile.
+
+### Outcome 3: Settlement offer or adversarial response
+
+**Definition:** Either the Board offers to settle (often by redirecting the lobbying objective in exchange for plaintiff withdrawing), or the Board responds with threats, vexatious counterclaims, or personal attacks.
+
+**Next steps:**
+1. For settlement: engage the negotiation playbook below. Walkaway terms below. Never accept a settlement that does not include public disclosure.
+2. For adversarial response: document everything; press release on the response itself; counsel files the derivative complaint plus any counterclaims.
+
+## Derivative Complaint Elements (For Counsel) {#derivative-complaint-structural-template}
+
+Counsel drafts the actual pleading. The complaint must include: caption naming each Director Defendant individually plus the Company as Nominal Defendant; standing allegations (continuous ownership since [DATE PURCHASED]); demand-refusal pleading under *Levine v. Smith* (not *Zuckerberg* demand-futility, since demand was made); Count I for breach of duty of care; Count II for *Caremark* failure of oversight citing *Marchand v. Barnhill* (Del. 2019); Count III alternative for conscious disregard under *Stone v. Ritter* (Del. 2006); prayer for relief asking the court to order the independent ROI analysis and public disclosure (not monetary damages to plaintiff personally). Filed in Delaware Chancery (or Maryland circuit for Lockheed). Factual allegations track the demand letter's sections 1-6, plus each Director's knowledge of the demand letter (audit and risk committee members carry the heaviest exposure per *Marchand*).
+
+## Settlement
+
+Acceptable only with: public board commitment to redirect the lobbying objective, independent ROI analysis as specified, public disclosure of findings within 6-12 months, and reasonable attorneys' fees under the corporate-benefit doctrine. Walk if any element is missing or if the offer includes an NDA on the underlying analysis. No personal monetary payment to the plaintiff; that creates the appearance of personal-financial motivation. All negotiations through counsel; argument stays institutional, not personal to board members.
+
+## After the Lawsuit (Win, Lose, or Settle)
+
+The lawsuit is one move in the campaign. The campaign continues regardless of outcome:
+
+- The [shirts](joke.qmd) continue.
+- The [handout](handout.qmd) continues.
+- The [notices of termination](notice-of-termination.qmd) continue.
+- The [hostile takeover](hostile-takeover.qmd) share-accumulation continues.
+- New plaintiffs file against new defendants via the [filing-day checklist](filing-day-checklist.qmd).
+
+The campaign succeeds when the [1% treaty](../solution/1-percent-treaty.qmd) [@1-percent-treaty-paper-2025] [@1-pct-treaty-impact-paper-2025] passes. The lawsuit is a force-multiplier on that trajectory; it is not the trajectory itself.
+
+## What to Have Ready Before Day 60
+
+- Counsel on retainer.
+- The derivative complaint drafted but not filed.
+- The Rule 14a-8 proposal drafted and ready to submit at the next proxy cycle window.
+- The T+60d press release drafted in all three variants (Outcomes A, E, F).
+- The plaintiff prepared for deposition prep if the case proceeds to litigation.
+- The next defendant's pre-filled demand letter ready to mail, regardless of how this one resolves.

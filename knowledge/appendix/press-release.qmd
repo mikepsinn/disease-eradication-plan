@@ -1,0 +1,147 @@
+---
+title: 'The Press Release and Journalist List'
+description: 'Press release template and journalist target list for the simultaneous distribution of the shareholder demand letter against a defense contractor board. Includes sequencing, embargo posture, and follow-up cadence.'
+abstract: |
+  The shareholder demand letter is filed with the defendant board. The press release is distributed simultaneously, so the story breaks publicly the same day the board receives the math. This page provides the press release template, a journalist target list by beat, the sequencing instructions, and the follow-up cadence. Specific reporter names require verification before each filing because beats and personnel shift.
+aliases:
+  - /press-release.html
+  - /journalist-list.html
+  - /lawsuit-press.html
+author:
+  - name: Mike P. Sinn
+    affiliation:
+      name: International Campaign to End War and Disease
+    roles:
+      - conceptualization
+      - writing - original draft
+    email: mike@warondisease.org
+    corresponding: true
+keywords:
+  - press release
+  - journalist outreach
+  - shareholder lawsuit
+  - media strategy
+  - defense industry
+  - 1% treaty
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    number-sections: false
+  pdf:
+    documentclass: article
+    geometry: margin=1in
+    fontsize: 11pt
+scores:
+  quality: 6
+  value: 9
+  timeliness: 8
+  standalone: 8
+  voice: 7
+  importance: 9
+---
+{{< include /knowledge/includes/setup-parameters.qmd >}}
+
+**STATUS: DRAFT.** Specific reporter names require verification at the time of filing. The press release template is structurally complete; placeholders marked [BRACKETS] must be filled with current data.
+
+## Sequencing {#sequencing}
+
+The press release is timed to the demand letter filing:
+
+| T | Action |
+|---|---|
+| T-72h | Counsel reviews final draft of press release; verifies no privileged content. |
+| T-48h | Journalist list refreshed; embargo offered to 5-10 priority reporters for advance copy. |
+| T-24h | Embargoed copies sent to priority reporters with explicit lift time. |
+| **T=0** | **Demand letter delivered to defendant board by certified mail and email; press release distributed simultaneously to full journalist list; warondisease.org/lawsuit page goes live with the public filing.** |
+| T+1h | Plaintiff and counsel available for interviews. |
+| T+24h | Follow-up emails to journalists who did not respond; offer additional context, named sources, supplementary data. |
+| T+7d | Op-ed pitch to the strongest interested outlet, drafted by the plaintiff with counsel's review. |
+| T+60d | Board response received or not; second press release covering the outcome. |
+
+## The Press Release
+
+---
+
+**FOR IMMEDIATE RELEASE**
+
+**[DATE]**
+
+**Contact:** [PLAINTIFF NAME] | [EMAIL] | [PHONE]
+**Counsel:** [LAW FIRM] | [PARTNER NAME] | [FIRM PHONE]
+
+# Shareholder Sues [COMPANY] Board Alleging $[X] Million Annual Lobbying Budget Destroys Long-Term Shareholder Value
+
+## A first-of-its-kind *Caremark* derivative theory argues that defense industry lobbying is mathematically negative-ROI for the shareholders it claims to represent.
+
+**[CITY, DATE]**: [PLAINTIFF NAME], a shareholder of [COMPANY] ([TICKER]), today filed a shareholder demand letter with the company's Board of Directors alleging that the company's annual lobbying expenditure of approximately $[X] million produces negative return on investment for its own shareholders.
+
+The legal theory, based on Delaware's *Caremark* duty of oversight doctrine as expanded in *Marchand v. Barnhill* (2019) and *Garfield v. Allen* (2024), argues that [COMPANY]'s lobbying to maintain current US military appropriations suppresses the GDP growth that funds the company's long-term addressable market. Specifically, the lobbying targets maintaining the current {{< var military_to_government_clinical_trials_spending_ratio >}}-to-1 ratio of military spending to government clinical-trial spending, which the demand letter argues delays disease eradication by approximately {{< var dfda_trial_capacity_treatment_acceleration_years_nounit >}} years and reduces global GDP at year 15 by a factor of approximately {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}}.
+
+"The math is straightforward," said [PLAINTIFF NAME]. "[COMPANY] is paying lobbyists to keep small the economy that funds [COMPANY]'s contracts. The Board has, on information and belief, never conducted an ROI analysis of this expenditure that accounts for its macroeconomic effect on the company's future revenue. Under *Caremark*, that analysis is not optional."
+
+The proposed resolution is non-monetary: [COMPANY] would redirect its annual lobbying objective from maintaining current military spending levels to supporting a global agreement to redirect 1% of military spending to pragmatic clinical trials. Per the demand letter, this resolution costs [COMPANY] $0 in additional expenditure, expands its long-term addressable market by a factor of approximately {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}}, and increases shareholder lifetime wealth by approximately {{< var treaty_trajectory_lifetime_income_gain_per_capita >}} per shareholder.
+
+"This is a frontier *Caremark* theory," said [COUNSEL NAME], partner at [LAW FIRM] and counsel for [PLAINTIFF NAME]. "The duty of oversight has historically focused on backward-looking harm: failed acquisitions, accounting fraud, product safety. We are arguing it extends to forward-looking value destruction through recurring expenditures that the board has never scrutinized. The pleading is sourced entirely from public data."
+
+The Board has 60 days to respond. If the response is inadequate, [PLAINTIFF NAME] intends to file a shareholder proposal under SEC Rule 14a-8 requiring an independent ROI analysis of [COMPANY]'s lobbying expenditure, and a derivative action in [Delaware Chancery / Maryland] alleging breach of the duty of care.
+
+The full demand letter, supporting calculations, and underlying treaty proposal are available at [warondisease.org/lawsuit](https://warondisease.org/lawsuit). The campaign's broader analysis of why the 1% redirection benefits every party, including [COMPANY]'s own executives and board members, is at [warondisease.org/where-am-i-wrong](https://warondisease.org/where-am-i-wrong).
+
+### Key facts
+
+- **Cost to file:** approximately $3,000 in share purchases plus counsel time.
+- **Damages theory:** lobbying expenditure suppresses GDP growth that funds the company's addressable market. Each [COMPANY] shareholder loses approximately {{< var treaty_trajectory_lifetime_income_gain_per_capita >}} in lifetime income compared to the alternative.
+- **Proposed settlement:** redirect lobbying objective at zero incremental cost.
+- **Legal basis:** *In re Caremark Int'l Inc. Derivative Litig.*, 698 A.2d 959 (Del. Ch. 1996); *Marchand v. Barnhill*, 212 A.3d 805 (Del. 2019); *Garfield v. Allen*, C.A. No. 2022-0837-JTL (Del. Ch. 2024); *Stone v. Ritter*, 911 A.2d 362 (Del. 2006).
+
+### About the 1% Treaty Campaign
+
+The International Campaign to End War and Disease is advocating for a global agreement under which each nation redirects 1% of its military budget to pragmatic clinical trials. The compressed disease eradication timeline (from {{< var status_quo_queue_clearance_years_nounit >}} years to {{< var dfda_queue_clearance_years_nounit >}} years) would recover approximately {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} of healthy life-years across humanity. Full impact analysis at [warondisease.org](https://warondisease.org).
+
+### Spokespeople available for interview
+
+- **[PLAINTIFF NAME]**, named plaintiff. Available for written, phone, and on-camera interviews. Contact: [EMAIL] | [PHONE].
+- **[COUNSEL NAME]**, partner at [LAW FIRM]. Available for legal-theory questions. Contact: [FIRM EMAIL] | [FIRM PHONE].
+- **Mike P. Sinn**, founder, International Campaign to End War and Disease. Available for the broader treaty context. Contact: mike@warondisease.org.
+
+### ###
+
+---
+
+## Journalist Target List
+
+Reporters and outlets are organized by beat. Each row needs a verified current reporter name before sending. Beats shift; reporters move. Refresh the list at T-48h, not at T-30d.
+
+| Beat | Priority outlets |
+|---|---|
+| Defense | Defense News, Breaking Defense, Politico Defense, Roll Call, The Hill |
+| Business / finance | Wall Street Journal, Bloomberg, Reuters, Financial Times, CNBC |
+| Legal trade | Reuters Legal, Bloomberg Law, Law360 |
+| Healthcare / science | STAT News, Vox Future Perfect, MIT Technology Review |
+| Opinion (politically diverse) | NYT Opinion, WSJ Opinion, The Atlantic, Reason |
+
+20 outlets is enough for a first wave. Expand from there if interest is high.
+
+## Follow-Up Cadence
+
+Most reporters do not respond to first contact. The follow-up cadence:
+
+| Day | Action |
+|---|---|
+| T=0 | Send press release with personalized opening line referencing the reporter's prior beat. |
+| T+24h | Brief follow-up email offering specific elements (interview, custom data slice, source). Do not resend the full release. |
+| T+72h | Final follow-up; one paragraph; offer to introduce a different angle. Acknowledge they may be on a different story. |
+| T+7d | If interested but no story yet, offer an exclusive angle (a different defendant; an institutional-investor reaction; an op-ed). |
+| T+14d | If silent, archive and move on. They may revisit when the 60-day board response is due. |
+| T+60d | Re-engage at the board-response milestone with a new release. |
+
+## Tracker
+
+Maintain a journalist tracker parallel to the [counsel tracker](counsel-outreach.qmd#outreach-tracker-template):
+
+| Outlet | Reporter | Date sent | Embargo offered? | Acknowledged? | Story published? | Tone | Follow-up |
+|---|---|---|---|---|---|---|---|
+| [outlet] | [name] | [date] | yes/no | yes/no/silent | yes/no/scheduled | favorable/neutral/critical | [next step] |
+
+The tracker informs the second wave (the next defendant) by showing which beats responded, which framings landed, and which reporters declined and why.
