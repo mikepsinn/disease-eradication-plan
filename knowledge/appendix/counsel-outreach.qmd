@@ -47,11 +47,11 @@ scores:
 
 ## Why Counsel Will Take This
 
-The pitch is the strategic-value pitch, not the moral pitch:
+Three reasons, in descending order of how strategy memos usually rank them and ascending order of what actually matters.
 
-1. **Precedent-setting *Caremark* expansion.** Frontier theory consistent with *Marchand* (2019) and *Garfield v. Allen* (2024). Win establishes new fiduciary obligation; loss generates published opinion that frames the next case. Either outcome is professionally valuable.
-2. **Asymmetric press coverage.** Defense, healthcare, business, science, and political beats all cover the same filing.
-3. **Low cost.** ~43 hours of attorney time per defendant, not the multi-year discovery slog of securities class actions. The settlement ask (redirect lobbying objective at zero incremental cost) is structurally easier for a board to accept than a damages payout.
+1. **Frontier *Caremark* expansion that gets published either way.** Win or lose, the case produces a Delaware Chancery opinion on whether a board's duty of oversight extends to lobbying that suppresses the macroeconomy that funds the company. Either outcome is the precedent-setting opinion. Either outcome is the named-on-the-docket professional credit.
+2. **The only derivative action that gets covered in defense, healthcare, business, science, and political beats simultaneously.** The press release writes itself across six different reporter assignments. Few derivative filings produce that breadth.
+3. **The clients are people you would otherwise spend the rest of your career losing to cancer.** The plaintiffs in this case are humans who have buried family members to pancreatic cancer, Alzheimer's, ALS, and cardiovascular disease. The math says the case prevents approximately {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved_nounit >}} additional deaths from those diseases. Some of those deaths would otherwise have been members of your own family. Reason 3 is the only reason that matters. Reasons 1 and 2 are why your firm's compensation committee will let you take it.
 
 ## Firm List (Starting Set)
 
@@ -89,6 +89,10 @@ Send to a specific partner identified through the firm's website or LinkedIn. Do
 Dear [PARTNER NAME],
 
 I am writing to ask whether [FIRM NAME] would consider representing me, on a pro bono or contingency basis, in a shareholder derivative matter against the board of one or more major US defense contractors. The legal theory and proposed demand letter are available at [warondisease.org/lawsuit](https://warondisease.org/lawsuit). The short version follows.
+
+This is the only kind of derivative action I am aware of in which the plaintiff loves the defendants. I do not want the board members to suffer and die of horrible diseases. I do not want their families or their shareholders to either. The lawsuit is the only legal mechanism I have to force the math in front of them. Settlement is the preferred outcome; litigation is the backup the math compels when the Board declines to investigate.
+
+I believe this is also the first lawsuit in legal history in which the defendants are radically better off losing than winning. The proposed settlement is non-monetary, zero incremental cost, expands the defendants' addressable market by approximately {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}}, and increases the defendants' personal life expectancy. There is no scenario in which they win in court and are materially better off than if they had settled.
 
 **The theory.** Each defendant's annual lobbying expenditure ({{< var defense_lobbying_annual >}} across the sector) is targeted at maintaining the current ratio of military spending to government clinical-trial spending ({{< var military_to_government_clinical_trials_spending_ratio >}} to 1). That expenditure suppresses the GDP growth that funds the defendants' addressable market. The Board has, on information and belief, never conducted an ROI analysis of this expenditure that accounts for its macroeconomic effect on the defendants' future revenue. The duty of oversight under *Caremark*, *Marchand*, and *Garfield* requires that analysis. The demand letter creates the red flag that triggers the duty.
 
