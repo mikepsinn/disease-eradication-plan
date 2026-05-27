@@ -1,8 +1,8 @@
 ---
 title: 'The Funniest Lawsuit in the Universe'
-description: 'A $3,000 shareholder demand letter that turns the defense lobby into the most effective advocate for pragmatic clinical trials on Earth.'
+description: 'A $200 shareholder demand letter (one share of stock is legally sufficient under DGCL § 327) that turns the defense lobby into the most effective advocate for pragmatic clinical trials on Earth. This page is everything you need to file it.'
 abstract: |
-  Shareholder demand letter addressed to the boards of major US defense contractors. Legal theory: Caremark 2.0 duty of oversight, single-firm shareholder-primacy framing. Substantive claim: each defendant's lobbying to maintain current military spending ratios produces negative ROI for its own shareholders by suppressing the GDP growth that would expand its addressable market. Every possible board response (accept, fight, ignore, refute) benefits the plaintiff. Cost to file: approximately $3,000.
+  Shareholder demand letter addressed to the boards of major US defense contractors. Legal theory: Caremark 2.0 duty of oversight, single-firm shareholder-primacy framing. Substantive claim: each defendant's lobbying to maintain current military spending ratios produces negative ROI for its own shareholders by suppressing the GDP growth that would expand its addressable market. Every possible board response (accept, fight, ignore, refute) benefits the plaintiff. Cost to file: approximately $200 (one share of stock; 1 share is sufficient under DGCL § 327). This page is structured as a standalone distribution artifact: post it anywhere, forward it to any defense-contractor shareholder, file it yourself. The math, the legal theory, and the templates are all in this document.
 aliases:
   - /lawsuit.html
   - /funniest-lawsuit.html
@@ -62,6 +62,46 @@ Target doctrine: *Caremark* 2.0 duty of oversight, as expanded in *Marchand v. B
 Derivative recovery usually belongs to the corporation, not the filing shareholder. Direct personal damages are an aggressive and unlikely theory. Rule 14a-8 is a separate eligible-shareholder path with ownership and holding requirements. Do not promise plaintiffs a direct payout from derivative recovery.
 :::
 
+## What This Document Is (Read This Part If You Just Got Forwarded This Link)
+
+This is the funniest lawsuit in the universe and this page is everything you need to file it.
+
+It is the first lawsuit in legal history where the defendants are radically better off losing than winning. Settling adds approximately {{< var avg_life_extension_per_beneficiary >}} to each defendant's healthy life and approximately {{< var treaty_trajectory_lifetime_income_gain_per_capita >}} to the average shareholder's lifetime income. Winning leaves the defendant where they started: facing the same diseases on the same timeline, while their lobbying continues to keep the cure trials underfunded.
+
+It is also the first lawsuit you can file for $200. One share of any major defense contractor is legally sufficient under DGCL § 327. The full demand letter, the share-purchase instructions, the brokerage walkthrough, the pre-filled defendant fact sheets, and the post-response decision tree are all linked from this page.
+
+**The selfish version.** If you do not care about the disease eradication argument and only care about money, the share you bought to file the lawsuit also goes up in price. As the campaign scales, demand for defense contractor shares mechanically exceeds the available float (see [The Loving Takeover](loving-takeover.qmd) for the math), and prices spike for the same reason GameStop spiked in 2021. The lawsuit is the catalyst that activates the price action. Heads you make money on the share, tails you hold a normal defense position. The downside is foregone index-fund return on $200.
+
+**The altruistic version.** If you do care about disease eradication: the math says the campaign prevents approximately {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved_nounit >}} deaths from the diseases that will otherwise kill someone you love. Filing one demand letter forces the math into one boardroom for $200.
+
+**Selfish and altruistic converge on the same action.** Both readers buy the share, both read the demand letter below, both file it. The campaign requires no shared motivation, only shared action.
+
+### What You Personally Get From Filing
+
+| Benefit | Approximate value |
+|---|---:|
+| Additional healthy life expectancy if treaty passes | ~{{< var avg_life_extension_per_beneficiary >}} |
+| Additional lifetime income if treaty passes | ~{{< var treaty_trajectory_lifetime_income_gain_per_capita >}} |
+| Share-price appreciation on the $200 share, mechanically, as the campaign scales | ~$200 to $2,000 (scenario-dependent; see [Loving Takeover](loving-takeover.qmd)) |
+| Personal share of the recovered lifespan of the {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved_nounit >}} humans the campaign prevents from dying | Not pricable; this is the part the demand letter is about |
+| Standing to tell the people you love that you tried | This one is free; you just have to file |
+
+The cost is one share (~$200) plus 43 hours of work. The expected return on the dollars alone exceeds every retail investment vehicle available. The expected return on the years is the rest of your life and the rest of the lives of everyone you love.
+
+### How To File (60-Second Version)
+
+1. Open a [brokerage account](brokerage-how-to.qmd) if you do not have one (Fidelity walkthrough at the link).
+2. Buy 1 share of any major defense contractor (RTX, LMT, BA, GD, NOC, LHX, LDOS, BAH, CACI, HII, SAIC, or BAE / Thales).
+3. Copy the demand letter below, fill in the bracketed fields, sign it.
+4. Send it certified mail to the corporate secretary of the defendant.
+5. Wait 60 days. Use the [post-response decision tree](litigation-phase.qmd) when the board responds.
+
+If you want company on the way: [counsel outreach pitch](counsel-outreach.qmd), [filing-day checklist](filing-day-checklist.qmd), [pre-filled defendant fact sheets](pre-filled-demand-letters.qmd), and [the media kit](plaintiff-media-kit.qmd) are all linked.
+
+If you want to read the full argument before deciding: [Where Am I Wrong?](where-am-i-wrong.qmd) is the most rigorous version of the math, and [The Eisenhower Curve](../economics/eisenhower-curve.qmd) is the strategic-competition version of why the current allocation makes the country weaker, not stronger.
+
+The rest of this document is the demand letter itself, the legal theory, the outcome matrix, and the operational templates. The Open Letter to the Boards (below) is the version of the demand letter you can post on social media unchanged. The numbered demand letter in Part 1 is the version you send by certified mail.
+
 ## An Open Letter to the Boards
 
 To the board members and CEOs of every defense contractor named in this campaign:
@@ -110,7 +150,7 @@ The defense industry's lobbying machine produces negative ROI for its own shareh
 
 Once a single board receives a sourced, quantitative analysis showing this expenditure destroys shareholder value, the board has two options: investigate, or knowingly continue to destroy shareholder value with a documented red flag in its possession. Under *Caremark* and its progeny, the second option creates personal liability for directors. The first option requires commissioning an independent analysis that will reach the same conclusion as the demand letter, because the demand letter's math comes from SIPRI, the WHO, the NIH, and the boards' own SEC filings.
 
-In either path, the lobby has to switch sides. The cost to make it happen is $3,000 of stock and 43 hours of work per defendant.
+In either path, the lobby has to switch sides. The cost to make it happen is $200 of stock (one share is sufficient under DGCL § 327) and 43 hours of work per defendant.
 
 ## The Defense Budget Ratchet
 
