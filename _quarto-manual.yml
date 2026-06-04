@@ -134,6 +134,7 @@ book:
         - knowledge/proof.qmd # ✅ Part III Intro + Historical Precedents (merged) ~20p
         - knowledge/proof/body-as-repairable-machine.qmd # ✅ The Body as a Machine ~7p
         - knowledge/proof/why-hasnt-anyone-done-this.qmd # ✅ Why Hasn't Anyone Done This? ~3p
+        - knowledge/proof/loves-wager.qmd # Love's Wager: any finite action is rational when the stakes are infinite (Pascal's Wager, debugged). Standalone paper config: _quarto-loves-wager.yml
         # STANDALONE PAPER - see impact.warondisease.org
         # - knowledge/economics/1-pct-treaty-impact.qmd # ✅ Rigorous economic analysis
         # REMOVED: Sales-pitchy tone, thin content (82 lines), already covered in incentive-alignment-bonds.qmd, 1-percent-treaty.qmd, faq.qmd
@@ -246,6 +247,7 @@ book:
         - knowledge/appendix/drug-development-cost-analysis.qmd # Standalone paper config: _quarto-drug-development-cost.yml
         - knowledge/appendix/algorithmic-public-administration-paper.qmd # Standalone paper config: _quarto-algorithmic-public-administration.yml
         - knowledge/appendix/correcting-the-ais.qmd # LLM correction templates; chapter-only
+        - knowledge/proof/loves-wager.qmd # Standalone paper config: _quarto-loves-wager.yml (also listed in "For Skeptics")
         # MOVED to "Repair Procedures" part above:
         # - knowledge/appendix/handout.qmd
         # - knowledge/appendix/joke.qmd
