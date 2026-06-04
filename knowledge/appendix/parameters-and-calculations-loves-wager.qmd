@@ -38,15 +38,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 6 parameters used in the analysis, organized by type:
+This appendix documents all 9 parameters used in the analysis, organized by type:
 
-- External sources (peer-reviewed): 4
-- Calculated values: 2
+- External sources (peer-reviewed): 6
+- Calculated values: 3
 - Core definitions: 0
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (2 parameters) • [External Data Sources](#sec-external) (4 parameters)
+[Calculated Values](#sec-calculated) (3 parameters) • [External Data Sources](#sec-external) (6 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -129,6 +129,44 @@ $$
 
 :::
 
+### Nuclear Winter Overkill Factor: 122x {#sec-nuclear_winter_overkill_factor}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+How many times the global nuclear arsenal exceeds the threshold for civilizational collapse via regional-scale nuclear winter (~100 warheads, ~5 Tg soot, ~2 billion famine deaths, global food system collapse). The arsenal-based overkill factor against the apocalypse the median human experiences.
+
+**Inputs**:
+
+- [Global Nuclear Warhead Count](#sec-global_warhead_count) 📊: 12,241 warheads
+- [Nuclear Winter Warhead Threshold](#sec-nuclear_winter_warhead_threshold) 📊: 100 warheads (95% CI: 50 warheads - 300 warheads)
+
+$$
+\begin{gathered}
+Overkill_{winter} \\
+= \frac{W_{global}}{W_{winter}} \\
+= \frac{12{,}200}{100} \\
+= 122
+\end{gathered}
+$$
+
+*~ Medium confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-nuclear_winter_overkill_factor.qmd >}}
+
+{{< include ../figures/sensitivity-table-nuclear_winter_overkill_factor.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-nuclear_winter_overkill_factor.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-nuclear_winter_overkill_factor.qmd >}}
+
+:::
+
 ## External Data Sources {#sec-external}
 
 Parameters sourced from peer-reviewed publications, institutional databases, and authoritative reports.
@@ -194,6 +232,46 @@ Global military spending in 2024
 **Technical**: Distribution: Fixed
 
 *✓ High confidence*
+
+:::
+
+### Global Nuclear Warhead Count: 12,241 warheads {#sec-global_warhead_count}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Total global nuclear warhead inventory across nine nuclear-armed states. Includes deployed, reserve, and retired warheads awaiting dismantlement.
+
+**Source**: [@world-warheads]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*✓ High confidence*
+
+:::
+
+### Nuclear Winter Warhead Threshold: 100 warheads {#sec-nuclear_winter_warhead_threshold}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Approximate number of warheads needed to trigger a regional-scale nuclear winter sufficient to collapse the global food system. A 100-warhead regional exchange (Robock/Toon 2007, extended by Xia et al. 2022) injects ~5 Tg of soot into the stratosphere, drops global temperatures ~1.8C for a decade, shortens growing seasons worldwide, and kills ~2 billion people from famine. Civilization as the median human experiences it does not survive. Xia 2022 shows total agricultural collapse (~5B deaths) at ~4,400 warheads; this parameter uses the lower threshold for median-human civilizational collapse.
+
+**Source**: [@nuke-winter-150tg]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [50 warheads, 300 warheads] • Distribution: Uniform
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between 50 warheads and 300 warheads (±125%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The uniform distribution means any value in the range is equally likely.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-nuclear_winter_warhead_threshold.qmd >}}
+
+*~ Medium confidence*
 
 :::
 
