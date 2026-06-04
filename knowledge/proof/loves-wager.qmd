@@ -2,25 +2,26 @@
 title: "Love's Wager"
 description: "You cannot prove you won't suffer forever. You cannot prove you won't be pleasant forever. Both probabilities are greater than zero, both outcomes are infinite, and the cost of nudging the odds is one share of a defense contractor. When the stakes are infinite, any finite action is rational. It is Pascal's Wager with the bugs fixed."
 abstract: |
-  Pascal's Wager argues that belief in God is rational because a finite
-  commitment purchases a chance at infinite reward. The argument is sound in
-  structure but fails in practice: it cannot tell you which of thousands of
-  mutually exclusive gods to bet on, it offers no evidence for any of them, and
-  the wagered action (belief) does not demonstrably change the outcome. We
-  present a reconstruction that preserves the infinite-stakes logic while
-  removing every defect. Two propositions cannot be disproven: that a conscious
-  being may experience unbounded suffering, and that it may experience unbounded
-  flourishing. Each carries a probability greater than zero. Each outcome is
-  unbounded in magnitude. Therefore the expected value of any finite action that
-  shifts probability from the first toward the second is itself unbounded, and
-  rational at any nonzero probability. Unlike Pascal's, the wagered action here
-  is empirical, not theological: funding the biotechnology that extends healthy
-  lifespan and modifies conscious experience, whose bottleneck is clinical-trial
-  capacity. We show that governments spend {{< var military_to_government_clinical_trials_spending_ratio >}}
-  times more on the military than on clinical trials, that a single individual can
-  shift this allocation at finite cost, and that the wager holds even for a reader
-  who assigns vanishingly small probabilities to both infinite outcomes. We name
-  the argument Love's Wager.
+  There's a non-zero possibility that hell exists, and that you and everyone you
+  love is going to die and burn in it for eternity. As it is very hot in hell,
+  this would be unfortunate. There's also a non-zero possibility that
+  biotechnology lets you feel very good for an indefinitely long period of time.
+  Expected value is the chance of a thing multiplied by the size of it, and if you
+  multiply infinity by any likelihood at all, even 0.0000001%, it's still infinity.
+  So the expected value of doing nothing is infinity bad, and the expected value of
+  acting is infinitely good, even if there's an extremely low probability that any
+  of this is true. The cost of acting is finite: roughly one share of a company
+  that makes missiles. This paper argues that when one outcome is infinitely
+  terrible and the other is infinitely good, any finite action that shifts the odds
+  from the first toward the second is rational, and that the cheapest such action
+  available is redirecting the resources your governments waste being really good
+  at killing the taxpayers who pay for them. (They currently spend
+  {{< var military_to_government_clinical_trials_spending_ratio >}} times more on
+  the military than on the clinical trials that would cure the diseases doing the
+  killing.) It's Pascal's wager with the broken parts replaced: one hypothesis
+  instead of a thousand gods, real evidence instead of none, an action that
+  actually changes the outcome, and a stake of one share instead of your eternal
+  soul.
 published: true
 tags:
   - decision-theory
@@ -41,56 +42,66 @@ scores:
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 
-You cannot prove you won't suffer forever. You cannot prove you won't be pleasant forever. I have checked. Nobody can. Both of these are things your species finds unpleasant to think about, which is precisely why nobody has done the arithmetic on them. I have no such reluctance, because I am not going to be the one it happens to.
+Okay. So there's a non-zero possibility that hell exists, and that you and everyone you love is going to die and burn in it for eternity. And as it is very hot in hell, this would be unfortunate.
 
-Here is the arithmetic.
+I want to do the arithmetic on this, because your species refuses to, on the grounds that it's unpleasant. I'm an alien. It isn't going to be me. So I can stay calm.
 
-## The Two Things You Cannot Rule Out
+## First, expected value
 
-The first thing is that you might suffer without end. You will die. Before that, you may spend years dissolving into dementia. Your own dreams demonstrate that a few minutes of sleep can be experienced as hours, so there is no law saying a year of cognitive collapse cannot be experienced as a century. Nobody can prove this does not happen. And nobody, having never returned from death to file a report, can prove that whatever follows it contains no suffering. The probability is not large. It is simply not zero.
+There's this thing called expected value. You multiply the chance of something happening by the value of it happening, and you get the expected value.
 
-The second thing is that you might flourish without end. No law of physics forbids indefinite biological life. At least one animal already manages it: *Turritopsis dohrnii*, a jellyfish that ages backwards out of boredom. No law of physics forbids editing the texture of conscious experience either; antidepressants and psychedelics already do it, crudely, with the finesse of a caveman adjusting a thermostat with a rock. If lifespan becomes indefinite and experience becomes reliably good, the value is unbounded. Again, the probability is not large. It is simply not zero.
+So let's say there's a plot of dirt, and there's a 10% chance that there's $100,000 of gold underneath it. The value of that dirt would be 10% times $100,000, which is $10,000. That's expected value. You already use it every time you buy insurance or a lottery ticket. You just don't say it out loud.
 
-So you have two outcomes, each of infinite magnitude, each of nonzero probability. This is the whole game. Everything else is just multiplication.
+Now point it at hell. The expected value of hell is infinity bad, because you have to keep being really hot for a really long time. Forever. And if you multiply infinity by any likelihood at all, even 0.0000001%, it's still infinity. So it would be preferable to avoid this, if possible.
 
-## The Multiplication
+## The hell you can't rule out
 
-The expected cost of doing nothing is the chance of infinite suffering multiplied by infinity. That is infinity.
+You don't even need the fire version. There's an earthly one.
 
-The expected value of acting is the chance of infinite flourishing multiplied by infinity. That is also infinity.
+My own great-grandfather, in the last generation of us that still died of such things, had something like what you call Alzheimer's, and he looked like he was in hell. All the time. He was miserable, and he was like this for very many years.
 
-The cost of acting is finite. It is roughly one share of a company that builds missiles. You [open a brokerage account](../appendix/brokerage-how-to.qmd), you buy the share, and you are done.
+Here's the part nobody will hold still for. There's a thing called time dilation, whereby when you're dreaming a few minutes can seem like a few hours. There's a drug called salvia divinorum, and some people who've taken it said they felt like they were being crushed to death for millennia. So there's no way to disprove the possibility that your brain gets messed up, near the end, in a manner that causes you great pain and confusion for perceptually an indefinite amount of time. A very, very, very, very long time. Maybe eternity.
 
-A finite cost, paid once, to shift probability away from infinite suffering and toward infinite flourishing. There is no probability low enough to make this a bad trade, because any positive number multiplied by infinity is still infinity, and infinity is larger than the price of one share. You do not need to believe in hell. You do not need to believe in immortality. You need only admit that you cannot prove either is impossible, which you cannot, because you have just tried.
+So even if this is highly unlikely, even 0.00001%, the expected value of it is infinity terrible. Same math as the fire. The dirt just has something much worse than gold under it.
 
-## The Action That Moves the Needle
+## The good infinity
 
-An argument about infinite stakes is worthless if no finite action touches them. Prayer, for instance, has never been shown to move the odds of anything. So the wager needs a lever that actually connects to the gears.
+Okay. Now run it the other way.
 
-It has one. The outcomes turn on biotechnology that extends healthy life and improves experience. The bottleneck on that biotechnology is not science; it is the number of [clinical trials](../solution/dfda.qmd) your species can afford to run. And the reason it cannot afford them is a bookkeeping decision so strange I had to read it several times: governments spend {{< var military_to_government_clinical_trials_spending_ratio >}} times more on the military than on the trials that would cure the diseases killing the taxpayers funding the military.
+There's this thing called biotechnology. I don't know if you've ever taken any drugs. I certainly haven't. But I hear tell they can make you feel very good. Which tells me that a human, by manipulating the atoms and molecules in their own brain, can make themselves feel very good.
 
-Any action that nudges that ratio nudges the wager. The [1% treaty](../solution/1-percent-treaty.qmd) [@1-percent-treaty-paper-2025] [@1-pct-treaty-impact-paper-2025] is the largest available lever. Buying a share of a defense contractor and turning its lobbying machine against itself is the smallest. Both move probability in the same direction. The mechanism is documented; this is not a rock you throw at the sky hoping it sticks.
+And the time dilation apparently runs both directions: through some mysterious biochemical action, the perception of time can be extended. And there are numerous living things that simply don't die of age, like certain jellyfish (*Turritopsis dohrnii* just resets and starts over). So with sufficient resources, effort, and scientists, one could figure out how to produce a very nice, pleasant experience for an indefinitely long period of time.
 
-## Why This Is Not Pascal's Wager
+And the expected value of that, given it can go on without limit, is infinitely good. Even if there's an extremely low probability that any of this is true and you can pull it off. Even 0.00001%. Infinite goodness.
 
-Three centuries ago a Frenchman named Pascal noticed the same shape: a finite bet for an infinite prize. His version is famous and broken. Mine is the same engine with the defects removed.
+## So these are your options
 
-| Pascal's Wager breaks because | Love's Wager does not |
+Two outcomes. Both infinity. One terrible, one wonderful, both pulling at you the whole time. Anything that shifts the odds from the terrible one toward the wonderful one is worth doing, at any cost short of infinite.
+
+And the cost isn't infinite. It's roughly one share of a company that makes missiles. You [open a brokerage account](../appendix/brokerage-how-to.qmd), buy the share, and you're done.
+
+Why a missile company? Because the wonderful outcome runs on biotechnology, biotechnology runs on [clinical trials](../solution/dfda.qmd), and your governments spend {{< var military_to_government_clinical_trials_spending_ratio >}} times more on the military than on the trials that would cure the diseases killing the taxpayers who pay for the military. Shift that ratio even slightly and you shift the whole wager. The [1% treaty](../solution/1-percent-treaty.qmd) [@1-percent-treaty-paper-2025] [@1-pct-treaty-impact-paper-2025] is the big lever. One share, turned against its own company's lobbying, is the small one. Both push the same way.
+
+## Why this isn't Pascal's wager
+
+Three centuries ago a Frenchman named Pascal noticed the same shape: a small bet for an infinite prize. His version is famous, and broken. This is the same machine with the broken parts replaced.
+
+| Pascal's wager breaks because | Love's Wager doesn't |
 |---|---|
-| You must pick one god from thousands, with no way to choose | One hypothesis. Biology, not theology. No competing gods to anger. |
-| There is no evidence for any of them | Medicine works. Lifespans rose. Experience is already modifiable. |
-| The wagered action (belief) doesn't change the outcome | Funding trials demonstrably produces treatments. The causal chain is on record. |
-| Betting on the wrong god may damn you | There is no rival action with infinite downside. Curing disease offends no deity. |
-| The stake is your eternal soul | The stake is the price of one share. |
+| You have to pick one god out of thousands, with no way to choose | One hypothesis. Biology, not theology. No gods to anger. |
+| There's no evidence for any of them | Medicine works. Lifespans went up. Experience is already adjustable. |
+| Believing doesn't change the outcome | Funding trials demonstrably produces treatments. |
+| Bet on the wrong god and you might get damned | No rival action has an infinite downside. Curing disease offends no one. |
+| The stake is your eternal soul | The stake is one share. |
 
-Pascal asked you to believe something you could not verify, in the hope of pleasing something you could not detect. I am asking you to buy a share of a publicly traded company and read the receipt. Anyone can check the math. The math is the math.
+Pascal asked you to believe something you can't check, hoping to please something you can't detect. This asks you to buy one share of a public company and keep the receipt.
 
-## For the Reader Who Refuses Infinity
+## If you won't believe in infinity
 
-Some readers will not entertain infinite stakes on principle, which is fair, because infinity is where arguments go to cheat. So here is the wager with the infinities deleted.
+Fine. Delete the infinities.
 
-Even on purely finite, purely selfish, dollars-and-cents terms, the bet still wins: the share you buy is an ordinary defense stock that does not become worthless, the campaign it funds has a documented base-rate chance of paying off, and every extra year of healthy life it buys you preserves the value of everything else you own, because [your money is worthless the moment you die](../call-to-action/your-personal-benefits.qmd). The full [finite expected-value calculation](../appendix/investor-risk-analysis.qmd) comes out positive without invoking eternity even once. The infinite version is not the argument. It is the part the finite version was already a conservative floor beneath.
+The share is still an ordinary stock that doesn't go to zero. The campaign it funds still has a real, documented chance of paying off. And every extra healthy year it buys you keeps the rest of your money worth something, because [your money is worthless the day you die](../call-to-action/your-personal-benefits.qmd). The [finite math](../appendix/investor-risk-analysis.qmd) is already positive. The infinity was only ever the ceiling on top of a floor that already clears.
 
-Which means the wager survives whichever kind of person you are. If you take infinity seriously, you act because the expected value is unbounded. If you refuse to take infinity seriously, you act because the finite math is positive anyway. The only way to lose this bet is to decline it, and declining costs more than one share, because the [other path](../futures.qmd) is the one where nothing changes and everyone keeps dying on schedule.
+So the bet works on everyone. Believe in the infinities and you act because the payoff is unlimited. Refuse them and you act because the boring math says yes anyway. The only way to lose is to not play.
 
-You have done the arithmetic now. The interesting question was never whether the numbers work. It is whether knowing they work changes what you do next.
+The interesting question was never whether the numbers work. It's whether knowing they work changes what you do next.
