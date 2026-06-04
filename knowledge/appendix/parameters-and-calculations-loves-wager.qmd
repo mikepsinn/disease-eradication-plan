@@ -38,20 +38,58 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 3 parameters used in the analysis, organized by type:
+This appendix documents all 6 parameters used in the analysis, organized by type:
 
-- External sources (peer-reviewed): 2
-- Calculated values: 1
+- External sources (peer-reviewed): 4
+- Calculated values: 2
 - Core definitions: 0
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (1 parameters) • [External Data Sources](#sec-external) (2 parameters)
+[Calculated Values](#sec-calculated) (2 parameters) • [External Data Sources](#sec-external) (4 parameters)
 
 
 ## Calculated Values {#sec-calculated}
 
 Parameters derived from mathematical formulas and economic models.
+
+### Pragmatic Trial Cost Reduction Factor: 44.1x {#sec-dfda_trial_cost_reduction_factor}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Cost reduction factor projected for embedded pragmatic trials (traditional Phase 3 cost / pragmatic trial cost per patient)
+
+**Inputs**:
+
+- [Phase 3 Cost per Patient](#sec-traditional_phase3_cost_per_patient) 📊: $41,000 (95% CI: $20,000 - $120,000)
+- [Pragmatic Trial Cost per Patient](#sec-dfda_pragmatic_trial_cost_per_patient) 📊: $929 (95% CI: $97 - $3,000)
+
+$$
+\begin{gathered}
+k_{reduce} \\
+= \frac{Cost_{P3,pt}}{Cost_{pragmatic,pt}} \\
+= \frac{\$41K}{\$929} \\
+= 44.1
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-dfda_trial_cost_reduction_factor.qmd >}}
+
+{{< include ../figures/sensitivity-table-dfda_trial_cost_reduction_factor.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-dfda_trial_cost_reduction_factor.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_trial_cost_reduction_factor.qmd >}}
+
+:::
 
 ### Ratio of Military to Government Clinical Trials Spending: 604:1 {#sec-military_to_government_clinical_trials_spending_ratio}
 
@@ -95,6 +133,30 @@ $$
 
 Parameters sourced from peer-reviewed publications, institutional databases, and authoritative reports.
 
+### Pragmatic Trial Cost per Patient: $929 {#sec-dfda_pragmatic_trial_cost_per_patient}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Embedded pragmatic trial cost per patient. Uses ADAPTABLE trial ($929) as DELIBERATELY CONSERVATIVE central estimate. Ramsberg & Platt (2018) reviewed 108 embedded pragmatic trials; 64 with cost data had median of only $97/patient - this estimate may overstate costs by 10x. Confidence interval spans meta-analysis median to complex chronic disease trials.
+
+**Source**: [@pragmatic-trials-cost-advantage]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$97, $3,000] • Distribution: Lognormal
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between $97 and $3,000 (±156%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-dfda_pragmatic_trial_cost_per_patient.qmd >}}
+
+*~ Medium confidence*
+
+:::
+
 ### Annual Global Government Spending on Clinical Trials: $4.5 billion {#sec-global_government_clinical_trials_spending_annual}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -130,6 +192,30 @@ Global military spending in 2024
 #### Uncertainty Range
 
 **Technical**: Distribution: Fixed
+
+*✓ High confidence*
+
+:::
+
+### Phase 3 Cost per Patient: $41,000 {#sec-traditional_phase3_cost_per_patient}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Phase 3 cost per patient (median from FDA study)
+
+**Source**: [@trial-costs-fda-study]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$20,000, $120,000] • Distribution: Lognormal
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between $20,000 and $120,000 (±122%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-traditional_phase3_cost_per_patient.qmd >}}
 
 *✓ High confidence*
 

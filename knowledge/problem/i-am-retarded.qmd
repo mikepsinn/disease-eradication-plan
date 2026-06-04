@@ -1,0 +1,104 @@
+---
+title: "I Am Retarded"
+description: "There is no line between smart people and the other kind. There is a ladder, from snails up to perfect logic, and every human who ever lived (the geniuses, the presidents, you) is bunched together near the bottom of it, squinting up. Which means a large fraction of what you believe, voted for, and are angry about is probably wrong. This chapter proves it, kindly, before the book asks you to change your mind."
+published: true
+tags:
+  - cognition
+  - epistemic-humility
+  - bounded-rationality
+  - root-cause
+  - leaded-gasoline
+  - semmelweis
+  - misdirected-anger
+image: /assets/og-images/knowledge/problem/i-am-retarded-og-bw-academic.jpg
+scores:
+  quality: 7
+  value: 8
+  timeliness: 7
+  standalone: 8
+  voice: 9
+  importance: 9
+---
+<!--
+TITLE DECISION PENDING: "I Am Retarded" is the chosen book-chapter title.
+The word is used ONLY inside the argued body, self-directed and aimed upward (at the
+powerful) and inward (at everyone, the author included), never at a group. Take this
+to the mom-review before publishing. If the word is cut, the fallback title is
+"Nobody Here Is Smart" and the in-body instances revert to "wrong" / "limited" /
+"stupid". For the eventual standalone paper, the journal-facing title should be the
+clean fallback via a _quarto-*.yml title override. Keep the slur OUT of frontmatter
+`description` and all OG/ad metadata (machine-scanned naked surfaces) -- it already is.
+
+VOICE: per author instruction ("use my exact language"), this chapter is written
+first-person as the translator (Mike) stepping forward, since the source material is
+first-person and personal. This is the one deliberate break from the Wishonia (alien)
+voice used elsewhere. The opening italic frame is optional/removable.
+
+PROFANITY DIAL: "wash your goddamn hands" is kept as an intentional refrain; one
+"fucking" is kept in the "everyone thinks they're right" line. Both are author's exact
+language and can be dialed up or down.
+
+NUMBERS NEEDING CITATION: the specific figures below (IQ ~10 points lost, ~2% sepsis
+rate, ~70 years to 1996, shareholders 20-60% richer, "tens or hundreds of millions"
+of childbed deaths) are the author's claims and still need the WebSearch -> WebFetch ->
+references.bib pipeline before publication. Do NOT add citations without verification.
+-->
+{{< include /knowledge/includes/setup-parameters.qmd >}}
+
+*For one chapter, Wishonia has agreed to let the translator speak in his own voice.*
+
+I am retarded.
+
+I want to be precise about what I mean, because it's one of the two most important sentences in this book, and you're going to want to argue with it.
+
+## There's this thing called information, and this thing called logic
+
+If you have perfect information and perfect logic, that is what I'd call smart. The real thing. If you've got both, my hat is off to you, and I would genuinely like to meet you. But my theory is that no such human exists. Which means every human suffers from some degree of relative mental retardation relative to smart. Including me. Including you. Especially the ones currently in charge of the nuclear weapons.
+
+So hold your hand up at the top of your head, and call that smart. Snails are down around your shoes. Monkeys are somewhere around the middle of your shin. Humans are a little bit above that. Dolphins are a little bit above the humans, and have the decency not to start wars about it. So we are all varying degrees of retarded, bunched together near the ankle, and the gap between the smartest human who ever lived and the village idiot is about two fingers wide, which neither of them can see from down there.
+
+## There is no line
+
+My mother spent her entire life trying to help people with mental disabilities. Since I was very young I've had great sympathy for them, partly because I have them too. And my argument, after a great deal of thinking about it, is that everyone does.
+
+People believe there's a binary. A borderline, with normal-or-smart on one side, and a separate, lesser category, with an ugly word, on the other. There is no borderline. There's only the distance from perfect information and perfect logic, and every one of us is a long way down it. There are lots of different dimensions of retardation. I am, for instance, extremely retarded at getting any human to do anything, or at getting these ideas into anybody's brain. I got a degree in electrical engineering. I did root-cause industrial failure analysis in a lab for years. I built a platform that ran more observational studies on the effects of foods and drugs than almost anyone, across thousands of things. And I have convinced almost no one of almost anything. In my estimation, I am relatively less retarded at figuring things out, and profoundly retarded at doing things and getting other people to do them. 
+
+Here is why this matters, and why it is the opposite of cruelty. Right now the word is used to shove a set of people into a lower-value pile. But if everyone realizes that everyone is retarded, it stops doing that, because we are all in the same pile. The harm was never the word. The harm is the sorting. Remove the sorting and the word is just true.
+
+And the people who carry the heavier forms of this, the ones my mother spent her life beside, are not a separate, inferior species. They are us, a little further along the same ladder. The thing almost nobody will say is that their suffering can be alleviated, with biotechnology, the same biotechnology this entire book is about. The fallacy that they are a lower group is the thing standing in front of the help. Destroy the fallacy and you help them. That is the whole reason I am willing to use the word.
+
+## Everyone thinks they're right
+
+Here is the main problem: everyone thinks they're right. And the day everyone realizes they're wrong about a lot of fucking stuff is the first day anyone gets to stop being wrong.
+
+So let me say the thing the rest of this book is too polite to put plainly. A significant percentage of what you believe, what you have voted for your entire life, what you are angry about, and the solutions you are passionate about, is probably wrong. Not wrong because you are bad. Wrong because it is not actually moving you toward the things you would want if you had thought about it a little more deeply, in different ways than you currently do. You reached those conclusions on the same retarded hardware as everyone else: fast, hot, and then defended to the death.
+
+## The people in charge are not the smart ones
+
+There is a common misconception that there is such a thing as smartness, and that the people making the decisions have it. The humans who are good at getting in charge of deciding policies and budgets are not necessarily good at deciding policies and budgets. They are merely relatively less retarded at the specific task of getting themselves into the rooms where the decisions are made. History books are a catalog of humans being retarded for a very long time and occasionally becoming slightly less retarded. Here are two entries.
+
+## The corporation that gave everyone brain damage on purpose
+
+Take the Ethyl Gasoline Corporation. In 1924 they had cars. They put gasoline in the engines, and the engines went. But the gasoline combusted too early and wore the engines out. They called it knocking. There were two fixes. One: put ethanol in the gasoline. Two: put a thing called tetraethyl lead in the gasoline.
+
+The advantage of the lead was that the Ethyl Gasoline Corporation, a joint venture of General Motors and DuPont, held the patent on it, and you cannot patent alcohol. So they made a great deal of money licensing the lead. The disadvantage of the lead was that it made everyone increasingly retarded. It lowered human IQ by roughly ten points on average, and produced a great deal of crime, which is enormously expensive to a society. A scientist named Clair Patterson worked this out and suggested it might be preferable not to give everyone brain damage, and to use ethanol instead. In response, millions of dollars, possibly billions in today's money, were spent lobbying and controlling the government so they could keep putting lead in the gasoline and giving themselves, and everyone they ever loved, brain damage. They kept it up for about seventy years, until 1996, when human retardation had finally declined just enough to stop.
+
+Here is the lesson people miss. Everyone blames selfishness and greed. But if you do the math, even the shareholders of the Ethyl Gasoline Corporation would have been twenty to sixty percent richer if they had spent that money on something useful, like biomedical research, instead of on making everyone retarded and bribing the government to let them continue. They had to make the switch eventually anyway. In the long run, even they would have been vastly richer for never having done it. The only reason they did it was that everyone, including them, assumed the people in charge were not retarded.
+
+## The doctors who would not wash their goddamn hands
+
+Another entry. A doctor named Ignaz Semmelweis worked out that if you washed your goddamn hands before delivering a baby, there was only about a two percent chance the mother and child would die of sepsis afterward. So he instituted a rule in his hospitals: doctors had to wash their goddamn hands after the autopsies and before the deliveries. The doctors, being retarded, were offended. How dare he suggest they were filthy, and killing their own patients. As a reward for the discovery, they had him committed to a mental institution, where the guards beat him to death over a few weeks. And then they went back to not washing their hands, and went on killing, possibly, tens or hundreds of millions of mothers and babies, because they did not want to wash their goddamn hands.
+
+The reason I tell you these two stories is that you need to calibrate your expectations about the wisdom of the people you currently think of as smart. Scientists, and math, and data, are smarter than the gut instinct of whatever human happened to be good enough at lying his way into power.
+
+## Watch which hand you're watching
+
+You can watch the wrongness operate in real time, today, in which direction the anger points.
+
+Republicans are mad at immigrants, who are doing very cheap labor for them, and who, mathematically, contribute more to the tax base than they consume. Democrats are mad at billionaires, who are building new technologies that, by allocating resources well, are radically improving their lives in ways they do not appreciate. Both sides are screaming, at full volume, at people who are stealing very little from them, or nothing, in plain and comprehensible ways.
+
+And almost nobody is mad at the parasites printing money by the trillion and handing it to their friends, starting wars, murdering people, and blowing up global energy infrastructure, who run the {{< var military_to_government_clinical_trials_spending_ratio >}}-to-one machine this whole book is about. Because those people rob you in ways too elaborate and too boring to fit on a sign. That is the entire trick. The magician's whole act is getting you to watch the other hand. You are watching the other hand, and you are certain it is the right one.
+
+That certainty is the disease. This chapter is the first dose of the cure, and the cure tastes like admitting you were wrong.
+
+So: I am retarded. So are you. So is everyone you have ever voted for. Now that none of us are pretending otherwise, we can finally get on with being a little less wrong, which is the only direction anything good has ever come from. The rest of this book is a list of ways to do it.
