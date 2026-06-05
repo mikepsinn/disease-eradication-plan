@@ -1,0 +1,9 @@
+**Monte Carlo note:** Defense Takeover Total Cost is effectively deterministic across the current sampled inputs, so a histogram would mostly visualize floating-point residue instead of real uncertainty. (range 0.000e+00 <= tolerance 6.899e-01)
+
+| Statistic | Value |
+|:----------|------:|
+| Baseline (deterministic) | $690 billion |
+| Mean (expected value) | $690 billion |
+| Median (50th percentile) | $690 billion |
+| Standard Deviation | $0 |
+| 90% Range (5th-95th percentile) | [$690 billion, $690 billion] |

@@ -1,7 +1,7 @@
 ---
 title: How to End War and Disease
-subtitle: A 3-Minute Educational Film
-description: 1950s educational film-style animated explainer of the 1% treaty proposal.
+subtitle: Employee Onboarding Video
+description: Your orientation film. You have been employed at Earth Optimization Services since birth. 1950s educational film style, 3 minutes, producible with AI for the budget of a medium wedding.
 toc: false
 number-sections: false
 video:
@@ -26,10 +26,10 @@ video:
 }
 </style>
 
-**Target audience:** Funders and investors, framed as instruction, not solicitation\
+**What this is:** Your employee orientation video. You have been employed at [Earth Optimization Services](solution/earth-optimization-services.qmd) since birth. You were not informed because your previous management did not believe in transparency.\
 **Tone:** Wishonia/Philomena Cunk deadpan. Genuine alien confusion at human behavior.\
 **Duration:** ~3.5 minutes\
-**Visual style:** 1950s educational film cartoon ("Duck and Cover" meets Wishonia)
+**Visual style:** 1950s corporate onboarding film ("Duck and Cover" meets HR orientation)
 
 ## Scene 1: The Most Important Person {.scene}
 
@@ -101,7 +101,7 @@ If cancer had oil reserves, you would have cured it by 2003. Instead you spent t
 ![](../assets/images/educational-film/02-04.jpg)
 :::
 
-Your destructive economy is {{< var global_destructive_economy_pct_gdp >}} of GDP and growing. Once stealing pays better than building, everyone becomes a thief. You have a word for places where this already happened. You call them "failed states." Your species has never unfailed one.
+Your [destructive economy](economics/gdp-trajectories.qmd) [@gdp-trajectories-paper-2025] is {{< var global_destructive_economy_pct_gdp >}} of GDP and growing. Once stealing pays better than building, everyone becomes a thief. You have a word for places where this already happened. You call them "failed states." Your species has never unfailed one.
 
 :::{.scene-direction}
 **Keyframe:** A split scene. Left side: a factory with workers building things, shrinking and crumbling. Right side: cartoon thieves and hackers multiplying, growing larger, stealing the factory's output over a low wall. The thieves' side is winning. A tipping scale in the center tips toward the thieves. Do not include any text.
@@ -141,7 +141,7 @@ On Wishonia, we skip the mass murder step and just give people food directly, bu
 
 ## Scene 4: The Machine {.scene}
 
-You sell Incentive Alignment Bonds that raise {{< var treaty_campaign_total_cost >}} to legally bribe politicians into passing a 1% treaty: redirect 1% of murder money to medicine money.
+You sell [Incentive Alignment Bonds](solution/incentive-alignment-bonds.qmd) [@iab-paper-2025] that raise {{< var treaty_campaign_total_cost >}} to legally bribe politicians into passing a [1% treaty](solution/1-percent-treaty.qmd) [@1-percent-treaty-paper-2025] [@1-pct-treaty-impact-paper-2025]: redirect 1% of murder money to medicine money.
 
 :::{.scene-direction}
 **Keyframe:** A 1950s chalkboard flow diagram drawn in thick chalk arrows. Left: a bond certificate labeled "BONDS" with an arrow to a bag of money labeled "$1B". Arrow down to a group of tiny politicians with dollar signs for eyes, labeled "BRIBE". Arrow right to a document labeled "1% TREATY". Arrow right to a huge arrow labeled "TRIALS" that explodes into an avalanche of medicine bottles cascading off the board. Each stage is bigger than the last. Display text labels at each stage: "BONDS", "$1B", "BRIBE", "1% TREATY", "TRIALS".

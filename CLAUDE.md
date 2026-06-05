@@ -69,10 +69,13 @@ Check existing: `grep "keyword" _variables.yml`. Never duplicate. Generate: `npm
 | Confidence | "probably irresistible", "the math suggests" | "unstoppable", "inevitable", "guaranteed" |
 | Comparisons | Like with like (margins to margins) | 8% operating margin vs 272% bond return |
 | Treaty durability | Billionaire bondholders have pre-existing influence + motive to keep/expand | "if the treaty holds" without explaining why it will |
-| Cross-chapter | Each chapter gets its own joke version | Same joke verbatim in 2+ chapters |
+| Cross-chapter | Recurring jokes OK if they land differently in context | Same template with one word swapped ("The Funniest X in the Universe" x4) |
 | Bond terms | Securities, revenue share, perpetual bonds | Utility tokens, DAO governance |
 | Ownership | Reader builds everything: "your Scoreboard," "here's how you launch" | "Join us," "our platform," "we're building" |
 | Jargon | Alien voice: "you give them money, they stop dying" | "leverage", "synergy", "stakeholder", "operationalize" |
+| Persuasion | Reason from objective: "what would make this person act?" | Pattern-match: "what do persuasive essays usually look like?" |
+
+**Anti-pattern-matching:** Standard persuasion patterns (establish credentials, build authority, hedge claims, protect the author's status) are the average of every failed pitch, ignored white paper, and unread manifesto in history. Pattern-matching on failed attempts computes the optimal way to fail. When the objective (reader action) contradicts the convention (writer pattern), do the objective. If vulnerability disarms the reader, credentials are ego armor. If raw numbers persuade, hedging is cowardice. Ask "what would make this person act?" not "what does this type of writing usually look like?"
 
 ## Quick Commands
 

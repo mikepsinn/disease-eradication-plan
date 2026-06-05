@@ -38,15 +38,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 743 parameters used in the analysis, organized by type:
+This appendix documents all 771 parameters used in the analysis, organized by type:
 
-- External sources (peer-reviewed): 226
-- Calculated values: 371
-- Core definitions: 146
+- External sources (peer-reviewed): 228
+- Calculated values: 384
+- Core definitions: 159
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (371 parameters) • [External Data Sources](#sec-external) (226 parameters) • [Core Definitions](#sec-definitions) (146 parameters)
+[Calculated Values](#sec-calculated) (384 parameters) • [External Data Sources](#sec-external) (228 parameters) • [Core Definitions](#sec-definitions) (159 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -5602,7 +5602,7 @@ $$
 
 :::
 
-### Defense Takeover Cost per Human: $88 {#sec-defense_takeover_cost_per_human}
+### Defense Takeover Cost per Human: $86 {#sec-defense_takeover_cost_per_human}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -5610,18 +5610,25 @@ Per-person cost of the defense takeover distributed across global population
 
 **Inputs**:
 
-- [Defense Takeover Total Cost](#sec-defense_takeover_cost_total): $700 billion (95% CI: $300 billion - $700 billion)
+- [Defense Takeover Total Cost](#sec-defense_takeover_cost_total) 🔢: $690 billion
 - [Global Population in 2024](#sec-global_population_2024) 📊: 8 billion of people (95% CI: 7.8 billion of people - 8.2 billion of people)
 
 $$
 \begin{gathered}
 C_{takeover,pp} \\
 = \frac{C_{takeover}}{Pop_{global}} \\
-= \frac{\$700B}{8B} \\
-= \$87.5
+= \frac{\$690B}{8B} \\
+= \$86.2
 \end{gathered}
 $$
-
+where:
+$$
+\begin{gathered}
+C_{takeover} \\
+= (MarketCap_{US} \\
++ MarketCap_{allied}) \times f_{control} \times m_{premium}
+\end{gathered}
+$$
 *✓ High confidence*
 
 #### Sensitivity Analysis
@@ -5640,6 +5647,51 @@ $$
 
 **Used in:**
 
+- [The Loving Takeover](../appendix/loving-takeover.html)
+- [Love's Wager](../proof/loves-wager.html)
+- [Investment Terms](../economics/investment-terms.html)
+
+:::
+
+### Defense Takeover Total Cost: $690 billion {#sec-defense_takeover_cost_total}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Total realistic cost to acquire controlling stakes in all major Western defense contractors, including acquisition premium from coordinated buying pressure
+
+**Inputs**:
+
+- [US Defense Primes Market Cap](#sec-defense_primes_market_cap_us) 📊: $670 billion
+- [Allied Defense Primes Market Cap](#sec-defense_primes_market_cap_allied) 📊: $95 billion
+- [Control Fraction](#sec-defense_takeover_control_fraction): 0.501:1
+- [Acquisition Premium Multiplier](#sec-defense_takeover_acquisition_premium): 1.8x (95% CI: 1.5x - 3x)
+
+$$
+\begin{gathered}
+C_{takeover} \\
+= (MarketCap_{US} \\
++ MarketCap_{allied}) \times f_{control} \times m_{premium}
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-defense_takeover_cost_total.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-defense_takeover_cost_total.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-defense_takeover_cost_total.qmd >}}
+
+**Used in:**
+
+- [The Loving Takeover](../appendix/loving-takeover.html)
+- [Investment Terms](../economics/investment-terms.html)
 - [Love's Wager](../proof/loves-wager.html)
 
 :::
@@ -5703,6 +5755,7 @@ $$
 - [Your Personal Benefits](../call-to-action/your-personal-benefits.html)
 - [Earth Optimization Prize 90-Day Pilot](../grant-proposal/earth-optimization-prize-90-day-pilot.html)
 - [Earth Optimization Protocol v1](../strategy/earth-optimization-protocol-v1.html)
+- [How to End War and Disease](../educational-film.html)
 - [The Earth Optimization Prize](../strategy/earth-optimization-prize.html)
 
 :::
@@ -7729,18 +7782,20 @@ $$
 **Used in:**
 
 - [The 1% Treaty: Harnessing Greed to Eradicate Disease](../economics/1-pct-treaty-impact.html)
-- [The Funniest Joke in the Universe](../appendix/joke.html)
 - [Ubiquitous Pragmatic Trial Impact Analysis: How to Prevent a Year of Death and Suffering for 84 Cents](../appendix/dfda-impact-paper.html)
 - [How to Coordinate 10 Million Nonprofits](../strategy/nonprofit-coalition-strategy.html)
+- [The Funniest Joke in the Universe](../appendix/joke.html)
 - [Where Am I Wrong?](../appendix/where-am-i-wrong.html)
 - [Earth Optimization Protocol v1](../strategy/earth-optimization-protocol-v1.html)
 - [The 1% Treaty](../solution/1-percent-treaty.html)
+- [How to End War and Disease](../educational-film.html)
 - [The Vandalism Handout](../appendix/handout.html)
 - [The Funniest Lawsuit in the Universe](../appendix/lawsuit.html)
 - [Health Dividend](../economics/health-dividend.html)
 - [Humanity v. Government](../appendix/humanity-v-government.html)
 - [The Earth Optimization Prize](../strategy/earth-optimization-prize.html)
 - [Money Comes From a Building and They Use It to Kill People](../economics/central-banks.html)
+- [Earth Optimization Services](../solution/earth-optimization-services.html)
 - [Voter Acquisition Grant Proposal](../grant-proposal/voter-acquisition-grant.html)
 - [The Most Important Secret in the World: 20 Questions to End War and Disease](../strategy/questions.html)
 - [Declaration of Optimization](../strategy/declaration-of-optimization.html)
@@ -7748,7 +7803,7 @@ $$
 - [The Press Release and Journalist List](../appendix/press-release.html)
 - [The Plaintiff Media Kit](../appendix/plaintiff-media-kit.html)
 - [The Rule 14a-8 Shareholder Proposal](../appendix/shareholder-proposal-14a-8.html)
-- [The Funniest Loving Takeover in the Universe](../appendix/loving-takeover.html)
+- [The Loving Takeover](../appendix/loving-takeover.html)
 - [Correcting the AIs](../appendix/correcting-the-ais.html)
 
 :::
@@ -8667,6 +8722,7 @@ $$
 - [The Untapped Therapeutic Frontier](../problem/untapped-therapeutic-frontier.html)
 - [Decentralized Institutes of Health](../solution/dih.html)
 - [Aligning Incentives](../solution/aligning-incentives.html)
+- [Earth Optimization Services](../solution/earth-optimization-services.html)
 - [Frequently Asked Objections](../appendix/faq.html)
 - [Voter Acquisition Grant Proposal](../grant-proposal/voter-acquisition-grant.html)
 - [Declaration of Optimization](../strategy/declaration-of-optimization.html)
@@ -9062,6 +9118,7 @@ $$
 - [The Funniest Lawsuit in the Universe](../appendix/lawsuit.html)
 - [Humanity v. Government](../appendix/humanity-v-government.html)
 - [The 1% Treaty](../solution/1-percent-treaty.html)
+- [How to End War and Disease](../educational-film.html)
 - [Health Dividend](../economics/health-dividend.html)
 - [Earth Optimization Protocol v1](../strategy/earth-optimization-protocol-v1.html)
 - [The Planetary Constitutional Convention](../strategy/planetary-constitutional-convention.html)
@@ -9473,15 +9530,15 @@ $$
 - [Optimization Summary](../solution.html)
 - [The Proof: Overview](../proof.html)
 - [Earth Optimization Protocol v1](../strategy/earth-optimization-protocol-v1.html)
-- [NIH Fails to Institute Health](../problem/nih-fails-2-institute-health.html)
 - [Love's Wager](../proof/loves-wager.html)
+- [NIH Fails to Institute Health](../problem/nih-fails-2-institute-health.html)
 - [The 1% Treaty](../solution/1-percent-treaty.html)
 - [Decentralized Institutes of Health](../solution/dih.html)
 - [A Decentralized FDA](../solution/dfda.html)
 - [Aligning Incentives](../solution/aligning-incentives.html)
 - [Frequently Asked Objections](../appendix/faq.html)
 - [Where Am I Wrong?](../appendix/where-am-i-wrong.html)
-- [The Funniest Loving Takeover in the Universe](../appendix/loving-takeover.html)
+- [The Loving Takeover](../appendix/loving-takeover.html)
 - [Peace Dividend](../economics/peace-dividend.html)
 - [Campaign Budget: The Legal Bribery Machine](../economics/campaign-budget.html)
 - [Humanity v. Government](../appendix/humanity-v-government.html)
@@ -9714,6 +9771,7 @@ $$
 - [Decentralized Institutes of Health](../solution/dih.html)
 - [A Decentralized FDA](../solution/dfda.html)
 - [The Legislation Package](../strategy/legislation-package.html)
+- [How to End War and Disease](../educational-film.html)
 - [Health Dividend](../economics/health-dividend.html)
 
 :::
@@ -9791,6 +9849,7 @@ $$
 - [Financial Plan](../economics/financial-plan.html)
 - [Optimization Summary](../solution.html)
 - [The 1% Treaty](../solution/1-percent-treaty.html)
+- [How to End War and Disease](../educational-film.html)
 - [Decentralized Institutes of Health](../solution/dih.html)
 - [Frequently Asked Objections](../appendix/faq.html)
 - [Health Dividend](../economics/health-dividend.html)
@@ -12088,6 +12147,7 @@ $$
 - [Institution Outreach Email Templates](../strategy/institution-outreach-email.html)
 - [Declaration of Optimization](../strategy/declaration-of-optimization.html)
 - [Earth Optimization Protocol v1](../strategy/earth-optimization-protocol-v1.html)
+- [How to End War and Disease](../educational-film.html)
 
 :::
 
@@ -12129,6 +12189,7 @@ $$
 **Used in:**
 
 - [The Most Important Secret in the World: 20 Questions to End War and Disease](../strategy/questions.html)
+- [How to End War and Disease](../educational-film.html)
 - [Humanity v. Government](../appendix/humanity-v-government.html)
 - [Declaration of Optimization](../strategy/declaration-of-optimization.html)
 
@@ -13593,7 +13654,7 @@ $$
 - [The Funniest Joke in the Universe](../appendix/joke.html)
 - [Where Am I Wrong?](../appendix/where-am-i-wrong.html)
 - [The Funniest Lawsuit in the Universe](../appendix/lawsuit.html)
-- [The Funniest Loving Takeover in the Universe](../appendix/loving-takeover.html)
+- [The Loving Takeover](../appendix/loving-takeover.html)
 
 :::
 
@@ -14294,6 +14355,1135 @@ $$
 
 :::
 
+### Court of Humanity Expected Social Value: $11.4 billion {#sec-mechanism_court_ev}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Expected annual social value from the Court of Humanity: P(success) * annual peace dividend. Expenditure ($30M).
+
+**Inputs**:
+
+- [P(Success | Court of Humanity Funded)](#sec-mechanism_court_of_humanity_p_success): 0.1:1 (95% CI: 0.03:1 - 0.25:1)
+- [Annual Peace Dividend from 1% Reduction in Total War Costs](#sec-peace_dividend_annual_societal_benefit) 🔢: $114 billion
+
+$$
+\begin{gathered}
+EV_{court} \\
+= P_{court} \times Benefit_{peace,soc} \\
+= 0.1 \times \$114B \\
+= \$11.4B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Benefit_{peace,soc} \\
+= Cost_{war,total} \times Reduce_{treaty} \\
+= \$11.4T \times 1\% \\
+= \$114B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,total} \\
+= Cost_{war,direct} + Cost_{war,indirect} \\
+= \$7.66T + \$3.7T \\
+= \$11.4T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,direct} \\
+= Loss_{life,conflict} + Damage_{infra,total} \\
++ Disruption_{trade} + Spending_{mil} \\
+= \$2.45T + \$1.88T + \$616B + \$2.72T \\
+= \$7.66T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Loss_{life,conflict} \\
+= Cost_{combat,human} + Cost_{state,human} \\
++ Cost_{terror,human} \\
+= \$2.34T + \$27B + \$83B \\
+= \$2.45T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{combat,human} \\
+= Deaths_{combat} \times VSL \\
+= 234{,}000 \times \$10M \\
+= \$2.34T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{state,human} \\
+= Deaths_{state} \times VSL \\
+= 2{,}700 \times \$10M \\
+= \$27B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{terror,human} \\
+= Deaths_{terror} \times VSL \\
+= 8{,}300 \times \$10M \\
+= \$83B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Damage_{infra,total} \\
+= Damage_{comms} + Damage_{edu} + Damage_{energy} \\
++ Damage_{health} + Damage_{transport} + Damage_{water} \\
+= \$298B + \$234B + \$422B + \$166B + \$487B + \$268B \\
+= \$1.88T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Disruption_{trade} \\
+= Disruption_{currency} + Disruption_{energy} \\
++ Disruption_{shipping} + Disruption_{supply} \\
+= \$57.4B + \$125B + \$247B + \$187B \\
+= \$616B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,indirect} \\
+= Damage_{env} + Loss_{growth,mil} + Loss_{capital,conflict} \\
++ Cost_{psych} + Cost_{refugee} + Cost_{vet} \\
+= \$100B + \$2.72T + \$300B + \$232B + \$150B + \$200B \\
+= \$3.7T
+\end{gathered}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-mechanism_court_ev.qmd >}}
+
+{{< include ../figures/sensitivity-table-mechanism_court_ev.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-mechanism_court_ev.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-mechanism_court_ev.qmd >}}
+
+:::
+
+### dFDA Expected Social Value: $79.5 billion {#sec-mechanism_dfda_ev}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Expected annual social value from the dFDA: P(success) * annual peace dividend. Platform build is expenditure ($500M).
+
+**Inputs**:
+
+- [P(Success | dFDA Funded)](#sec-mechanism_dfda_p_success): 0.7:1 (95% CI: 0.4:1 - 0.9:1)
+- [Annual Peace Dividend from 1% Reduction in Total War Costs](#sec-peace_dividend_annual_societal_benefit) 🔢: $114 billion
+
+$$
+\begin{gathered}
+EV_{dFDA} \\
+= P_{dFDA} \times Benefit_{peace,soc} \\
+= 0.7 \times \$114B \\
+= \$79.5B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Benefit_{peace,soc} \\
+= Cost_{war,total} \times Reduce_{treaty} \\
+= \$11.4T \times 1\% \\
+= \$114B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,total} \\
+= Cost_{war,direct} + Cost_{war,indirect} \\
+= \$7.66T + \$3.7T \\
+= \$11.4T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,direct} \\
+= Loss_{life,conflict} + Damage_{infra,total} \\
++ Disruption_{trade} + Spending_{mil} \\
+= \$2.45T + \$1.88T + \$616B + \$2.72T \\
+= \$7.66T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Loss_{life,conflict} \\
+= Cost_{combat,human} + Cost_{state,human} \\
++ Cost_{terror,human} \\
+= \$2.34T + \$27B + \$83B \\
+= \$2.45T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{combat,human} \\
+= Deaths_{combat} \times VSL \\
+= 234{,}000 \times \$10M \\
+= \$2.34T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{state,human} \\
+= Deaths_{state} \times VSL \\
+= 2{,}700 \times \$10M \\
+= \$27B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{terror,human} \\
+= Deaths_{terror} \times VSL \\
+= 8{,}300 \times \$10M \\
+= \$83B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Damage_{infra,total} \\
+= Damage_{comms} + Damage_{edu} + Damage_{energy} \\
++ Damage_{health} + Damage_{transport} + Damage_{water} \\
+= \$298B + \$234B + \$422B + \$166B + \$487B + \$268B \\
+= \$1.88T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Disruption_{trade} \\
+= Disruption_{currency} + Disruption_{energy} \\
++ Disruption_{shipping} + Disruption_{supply} \\
+= \$57.4B + \$125B + \$247B + \$187B \\
+= \$616B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,indirect} \\
+= Damage_{env} + Loss_{growth,mil} + Loss_{capital,conflict} \\
++ Cost_{psych} + Cost_{refugee} + Cost_{vet} \\
+= \$100B + \$2.72T + \$300B + \$232B + \$150B + \$200B \\
+= \$3.7T
+\end{gathered}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-mechanism_dfda_ev.qmd >}}
+
+{{< include ../figures/sensitivity-table-mechanism_dfda_ev.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-mechanism_dfda_ev.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-mechanism_dfda_ev.qmd >}}
+
+:::
+
+### IAB Expected Social Value: $68.1 billion {#sec-mechanism_iab_ev}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Expected annual social value from IABs: P(success) * annual peace dividend. Investor capital is returned with interest, not spent.
+
+**Inputs**:
+
+- [P(Success | IABs Funded)](#sec-mechanism_iab_p_success): 0.6:1 (95% CI: 0.3:1 - 0.85:1)
+- [Annual Peace Dividend from 1% Reduction in Total War Costs](#sec-peace_dividend_annual_societal_benefit) 🔢: $114 billion
+
+$$
+\begin{gathered}
+EV_{IAB} \\
+= P_{IAB} \times Benefit_{peace,soc} \\
+= 0.6 \times \$114B \\
+= \$68.1B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Benefit_{peace,soc} \\
+= Cost_{war,total} \times Reduce_{treaty} \\
+= \$11.4T \times 1\% \\
+= \$114B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,total} \\
+= Cost_{war,direct} + Cost_{war,indirect} \\
+= \$7.66T + \$3.7T \\
+= \$11.4T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,direct} \\
+= Loss_{life,conflict} + Damage_{infra,total} \\
++ Disruption_{trade} + Spending_{mil} \\
+= \$2.45T + \$1.88T + \$616B + \$2.72T \\
+= \$7.66T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Loss_{life,conflict} \\
+= Cost_{combat,human} + Cost_{state,human} \\
++ Cost_{terror,human} \\
+= \$2.34T + \$27B + \$83B \\
+= \$2.45T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{combat,human} \\
+= Deaths_{combat} \times VSL \\
+= 234{,}000 \times \$10M \\
+= \$2.34T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{state,human} \\
+= Deaths_{state} \times VSL \\
+= 2{,}700 \times \$10M \\
+= \$27B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{terror,human} \\
+= Deaths_{terror} \times VSL \\
+= 8{,}300 \times \$10M \\
+= \$83B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Damage_{infra,total} \\
+= Damage_{comms} + Damage_{edu} + Damage_{energy} \\
++ Damage_{health} + Damage_{transport} + Damage_{water} \\
+= \$298B + \$234B + \$422B + \$166B + \$487B + \$268B \\
+= \$1.88T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Disruption_{trade} \\
+= Disruption_{currency} + Disruption_{energy} \\
++ Disruption_{shipping} + Disruption_{supply} \\
+= \$57.4B + \$125B + \$247B + \$187B \\
+= \$616B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,indirect} \\
+= Damage_{env} + Loss_{growth,mil} + Loss_{capital,conflict} \\
++ Cost_{psych} + Cost_{refugee} + Cost_{vet} \\
+= \$100B + \$2.72T + \$300B + \$232B + \$150B + \$200B \\
+= \$3.7T
+\end{gathered}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-mechanism_iab_ev.qmd >}}
+
+{{< include ../figures/sensitivity-table-mechanism_iab_ev.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-mechanism_iab_ev.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-mechanism_iab_ev.qmd >}}
+
+:::
+
+### IAB Net Cost (Annual): $50 million {#sec-mechanism_iab_net_cost}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Net annual cost of IABs to EOS: administration only (investor capital is returned, not spent)
+
+**Inputs**:
+
+- [Total 1% Treaty Campaign Cost](#sec-treaty_campaign_total_cost) 🔢: $1 billion
+- [IAB Admin Cost Rate](#sec-mechanism_iab_admin_rate): 0.05:1
+
+$$
+\begin{gathered}
+C_{IAB,net} \\
+= Cost_{campaign} \times r_{IAB,admin} \\
+= \$1B \times 0.05 \\
+= \$50M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{campaign} \\
+= Budget_{viral,base} + Budget_{lobby,treaty} \\
++ Budget_{reserve} \\
+= \$250M + \$650M + \$100M \\
+= \$1B
+\end{gathered}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-mechanism_iab_net_cost.qmd >}}
+
+{{< include ../figures/sensitivity-table-mechanism_iab_net_cost.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-mechanism_iab_net_cost.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-mechanism_iab_net_cost.qmd >}}
+
+:::
+
+### Defense Takeover Total Cost: $690 billion {#sec-mechanism_loving_takeover_capital}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Total realistic cost to acquire controlling stakes in all major Western defense contractors, including acquisition premium from coordinated buying pressure
+
+**Inputs**:
+
+- [US Defense Primes Market Cap](#sec-defense_primes_market_cap_us) 📊: $670 billion
+- [Allied Defense Primes Market Cap](#sec-defense_primes_market_cap_allied) 📊: $95 billion
+- [Control Fraction](#sec-defense_takeover_control_fraction): 0.501:1
+- [Acquisition Premium Multiplier](#sec-defense_takeover_acquisition_premium): 1.8x (95% CI: 1.5x - 3x)
+
+$$
+\begin{gathered}
+C_{takeover} \\
+= (MarketCap_{US} \\
++ MarketCap_{allied}) \times f_{control} \times m_{premium}
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-mechanism_loving_takeover_capital.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-mechanism_loving_takeover_capital.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-mechanism_loving_takeover_capital.qmd >}}
+
+:::
+
+### Loving Takeover Expected Social Value: $108 billion {#sec-mechanism_loving_takeover_ev}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Expected annual social value from the Loving Takeover: P(success) * annual peace dividend. Capital is deployed into shares (retained and appreciating), not spent.
+
+**Inputs**:
+
+- [P(Success | Loving Takeover Funded)](#sec-mechanism_loving_takeover_p_success): 0.95:1 (95% CI: 0.8:1 - 0.99:1)
+- [Annual Peace Dividend from 1% Reduction in Total War Costs](#sec-peace_dividend_annual_societal_benefit) 🔢: $114 billion
+
+$$
+\begin{gathered}
+EV_{takeover} \\
+= P_{takeover} \times Benefit_{peace,soc} \\
+= 0.95 \times \$114B \\
+= \$108B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Benefit_{peace,soc} \\
+= Cost_{war,total} \times Reduce_{treaty} \\
+= \$11.4T \times 1\% \\
+= \$114B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,total} \\
+= Cost_{war,direct} + Cost_{war,indirect} \\
+= \$7.66T + \$3.7T \\
+= \$11.4T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,direct} \\
+= Loss_{life,conflict} + Damage_{infra,total} \\
++ Disruption_{trade} + Spending_{mil} \\
+= \$2.45T + \$1.88T + \$616B + \$2.72T \\
+= \$7.66T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Loss_{life,conflict} \\
+= Cost_{combat,human} + Cost_{state,human} \\
++ Cost_{terror,human} \\
+= \$2.34T + \$27B + \$83B \\
+= \$2.45T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{combat,human} \\
+= Deaths_{combat} \times VSL \\
+= 234{,}000 \times \$10M \\
+= \$2.34T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{state,human} \\
+= Deaths_{state} \times VSL \\
+= 2{,}700 \times \$10M \\
+= \$27B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{terror,human} \\
+= Deaths_{terror} \times VSL \\
+= 8{,}300 \times \$10M \\
+= \$83B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Damage_{infra,total} \\
+= Damage_{comms} + Damage_{edu} + Damage_{energy} \\
++ Damage_{health} + Damage_{transport} + Damage_{water} \\
+= \$298B + \$234B + \$422B + \$166B + \$487B + \$268B \\
+= \$1.88T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Disruption_{trade} \\
+= Disruption_{currency} + Disruption_{energy} \\
++ Disruption_{shipping} + Disruption_{supply} \\
+= \$57.4B + \$125B + \$247B + \$187B \\
+= \$616B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,indirect} \\
+= Damage_{env} + Loss_{growth,mil} + Loss_{capital,conflict} \\
++ Cost_{psych} + Cost_{refugee} + Cost_{vet} \\
+= \$100B + \$2.72T + \$300B + \$232B + \$150B + \$200B \\
+= \$3.7T
+\end{gathered}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-mechanism_loving_takeover_ev.qmd >}}
+
+{{< include ../figures/sensitivity-table-mechanism_loving_takeover_ev.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-mechanism_loving_takeover_ev.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-mechanism_loving_takeover_ev.qmd >}}
+
+:::
+
+### Loving Takeover Net Cost (Annual): $13.8 billion {#sec-mechanism_loving_takeover_net_cost}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Net annual cost of the Loving Takeover: opportunity cost only (capital deployed into shares is retained, not spent). At 2% annual opportunity cost rate.
+
+**Inputs**:
+
+- [Defense Takeover Total Cost](#sec-defense_takeover_cost_total) 🔢: $690 billion
+- [Mechanism Opportunity Cost Rate](#sec-mechanism_opportunity_cost_rate): 0.02:1 (95% CI: 0:1 - 0.05:1)
+
+$$
+\begin{gathered}
+C_{takeover,net} \\
+= C_{takeover} \times r_{opp} \\
+= \$690B \times 0.02 \\
+= \$13.8B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+C_{takeover} \\
+= (MarketCap_{US} \\
++ MarketCap_{allied}) \times f_{control} \times m_{premium}
+\end{gathered}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-mechanism_loving_takeover_net_cost.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-mechanism_loving_takeover_net_cost.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-mechanism_loving_takeover_net_cost.qmd >}}
+
+:::
+
+### Referendum Expected Social Value: $34.1 billion {#sec-mechanism_referendum_ev}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Expected annual social value from the global referendum: P(success) * annual peace dividend. Expenditure ($250M).
+
+**Inputs**:
+
+- [P(Success | Referendum Funded)](#sec-mechanism_referendum_p_success): 0.3:1 (95% CI: 0.1:1 - 0.55:1)
+- [Annual Peace Dividend from 1% Reduction in Total War Costs](#sec-peace_dividend_annual_societal_benefit) 🔢: $114 billion
+
+$$
+\begin{gathered}
+EV_{referendum} \\
+= P_{referendum} \times Benefit_{peace,soc} \\
+= 0.3 \times \$114B \\
+= \$34.1B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Benefit_{peace,soc} \\
+= Cost_{war,total} \times Reduce_{treaty} \\
+= \$11.4T \times 1\% \\
+= \$114B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,total} \\
+= Cost_{war,direct} + Cost_{war,indirect} \\
+= \$7.66T + \$3.7T \\
+= \$11.4T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,direct} \\
+= Loss_{life,conflict} + Damage_{infra,total} \\
++ Disruption_{trade} + Spending_{mil} \\
+= \$2.45T + \$1.88T + \$616B + \$2.72T \\
+= \$7.66T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Loss_{life,conflict} \\
+= Cost_{combat,human} + Cost_{state,human} \\
++ Cost_{terror,human} \\
+= \$2.34T + \$27B + \$83B \\
+= \$2.45T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{combat,human} \\
+= Deaths_{combat} \times VSL \\
+= 234{,}000 \times \$10M \\
+= \$2.34T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{state,human} \\
+= Deaths_{state} \times VSL \\
+= 2{,}700 \times \$10M \\
+= \$27B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{terror,human} \\
+= Deaths_{terror} \times VSL \\
+= 8{,}300 \times \$10M \\
+= \$83B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Damage_{infra,total} \\
+= Damage_{comms} + Damage_{edu} + Damage_{energy} \\
++ Damage_{health} + Damage_{transport} + Damage_{water} \\
+= \$298B + \$234B + \$422B + \$166B + \$487B + \$268B \\
+= \$1.88T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Disruption_{trade} \\
+= Disruption_{currency} + Disruption_{energy} \\
++ Disruption_{shipping} + Disruption_{supply} \\
+= \$57.4B + \$125B + \$247B + \$187B \\
+= \$616B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,indirect} \\
+= Damage_{env} + Loss_{growth,mil} + Loss_{capital,conflict} \\
++ Cost_{psych} + Cost_{refugee} + Cost_{vet} \\
+= \$100B + \$2.72T + \$300B + \$232B + \$150B + \$200B \\
+= \$3.7T
+\end{gathered}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-mechanism_referendum_ev.qmd >}}
+
+{{< include ../figures/sensitivity-table-mechanism_referendum_ev.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-mechanism_referendum_ev.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-mechanism_referendum_ev.qmd >}}
+
+:::
+
+### Shirt Cascade Expected Social Value: $28.4 billion {#sec-mechanism_shirt_cascade_ev}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Expected annual social value from the shirt cascade: P(success) * annual peace dividend. Expenditure ($50M).
+
+**Inputs**:
+
+- [Shirt Cascade Probability Given Seed](#sec-mechanism_shirt_cascade_p_success): 25% (95% CI: 5% - 60%)
+- [Annual Peace Dividend from 1% Reduction in Total War Costs](#sec-peace_dividend_annual_societal_benefit) 🔢: $114 billion
+
+$$
+\begin{gathered}
+EV_{shirt} \\
+= P_{cascade,shirt} \times Benefit_{peace,soc} \\
+= 25\% \times \$114B \\
+= \$28.4B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Benefit_{peace,soc} \\
+= Cost_{war,total} \times Reduce_{treaty} \\
+= \$11.4T \times 1\% \\
+= \$114B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,total} \\
+= Cost_{war,direct} + Cost_{war,indirect} \\
+= \$7.66T + \$3.7T \\
+= \$11.4T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,direct} \\
+= Loss_{life,conflict} + Damage_{infra,total} \\
++ Disruption_{trade} + Spending_{mil} \\
+= \$2.45T + \$1.88T + \$616B + \$2.72T \\
+= \$7.66T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Loss_{life,conflict} \\
+= Cost_{combat,human} + Cost_{state,human} \\
++ Cost_{terror,human} \\
+= \$2.34T + \$27B + \$83B \\
+= \$2.45T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{combat,human} \\
+= Deaths_{combat} \times VSL \\
+= 234{,}000 \times \$10M \\
+= \$2.34T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{state,human} \\
+= Deaths_{state} \times VSL \\
+= 2{,}700 \times \$10M \\
+= \$27B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{terror,human} \\
+= Deaths_{terror} \times VSL \\
+= 8{,}300 \times \$10M \\
+= \$83B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Damage_{infra,total} \\
+= Damage_{comms} + Damage_{edu} + Damage_{energy} \\
++ Damage_{health} + Damage_{transport} + Damage_{water} \\
+= \$298B + \$234B + \$422B + \$166B + \$487B + \$268B \\
+= \$1.88T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Disruption_{trade} \\
+= Disruption_{currency} + Disruption_{energy} \\
++ Disruption_{shipping} + Disruption_{supply} \\
+= \$57.4B + \$125B + \$247B + \$187B \\
+= \$616B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,indirect} \\
+= Damage_{env} + Loss_{growth,mil} + Loss_{capital,conflict} \\
++ Cost_{psych} + Cost_{refugee} + Cost_{vet} \\
+= \$100B + \$2.72T + \$300B + \$232B + \$150B + \$200B \\
+= \$3.7T
+\end{gathered}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-mechanism_shirt_cascade_ev.qmd >}}
+
+{{< include ../figures/sensitivity-table-mechanism_shirt_cascade_ev.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-mechanism_shirt_cascade_ev.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-mechanism_shirt_cascade_ev.qmd >}}
+
+:::
+
+### Shirt Seed Program Total Cost: $50 million {#sec-mechanism_shirt_cascade_net_cost}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Total foundation escrow required to fund the seed-wearer program: threshold of visible humans multiplied by blended cost per wearer. Held in Earth Optimization Prize assurance contract; refunded at structural EOP return rate if neither treaty passage nor target hit.
+
+**Inputs**:
+
+- [Shirt Seed Wearers Threshold](#sec-shirt_seed_wearers_threshold): 1 million of people (95% CI: 100 thousand of people - 5 million of people)
+- [Shirt Seed Cost per Wearer](#sec-shirt_seed_cost_per_wearer_usd): $50 (95% CI: $10 - $200)
+
+$$
+\begin{gathered}
+C_{seed,total} \\
+= N_{seed,shirt} \times C_{seed,wearer} \\
+= 1M \times \$50 \\
+= \$50M
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-mechanism_shirt_cascade_net_cost.qmd >}}
+
+{{< include ../figures/sensitivity-table-mechanism_shirt_cascade_net_cost.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-mechanism_shirt_cascade_net_cost.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-mechanism_shirt_cascade_net_cost.qmd >}}
+
+:::
+
+### Treaty Campaign Expected Social Value: $45.4 billion {#sec-mechanism_treaty_campaign_ev}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Expected annual social value from the treaty campaign: P(success) * annual peace dividend. Lobbying + referendum is expenditure ($1B).
+
+**Inputs**:
+
+- [P(Success | Treaty Campaign Funded)](#sec-mechanism_treaty_campaign_p_success): 0.4:1 (95% CI: 0.15:1 - 0.7:1)
+- [Annual Peace Dividend from 1% Reduction in Total War Costs](#sec-peace_dividend_annual_societal_benefit) 🔢: $114 billion
+
+$$
+\begin{gathered}
+EV_{campaign} \\
+= P_{campaign} \times Benefit_{peace,soc} \\
+= 0.4 \times \$114B \\
+= \$45.4B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Benefit_{peace,soc} \\
+= Cost_{war,total} \times Reduce_{treaty} \\
+= \$11.4T \times 1\% \\
+= \$114B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,total} \\
+= Cost_{war,direct} + Cost_{war,indirect} \\
+= \$7.66T + \$3.7T \\
+= \$11.4T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,direct} \\
+= Loss_{life,conflict} + Damage_{infra,total} \\
++ Disruption_{trade} + Spending_{mil} \\
+= \$2.45T + \$1.88T + \$616B + \$2.72T \\
+= \$7.66T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Loss_{life,conflict} \\
+= Cost_{combat,human} + Cost_{state,human} \\
++ Cost_{terror,human} \\
+= \$2.34T + \$27B + \$83B \\
+= \$2.45T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{combat,human} \\
+= Deaths_{combat} \times VSL \\
+= 234{,}000 \times \$10M \\
+= \$2.34T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{state,human} \\
+= Deaths_{state} \times VSL \\
+= 2{,}700 \times \$10M \\
+= \$27B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{terror,human} \\
+= Deaths_{terror} \times VSL \\
+= 8{,}300 \times \$10M \\
+= \$83B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Damage_{infra,total} \\
+= Damage_{comms} + Damage_{edu} + Damage_{energy} \\
++ Damage_{health} + Damage_{transport} + Damage_{water} \\
+= \$298B + \$234B + \$422B + \$166B + \$487B + \$268B \\
+= \$1.88T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Disruption_{trade} \\
+= Disruption_{currency} + Disruption_{energy} \\
++ Disruption_{shipping} + Disruption_{supply} \\
+= \$57.4B + \$125B + \$247B + \$187B \\
+= \$616B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,indirect} \\
+= Damage_{env} + Loss_{growth,mil} + Loss_{capital,conflict} \\
++ Cost_{psych} + Cost_{refugee} + Cost_{vet} \\
+= \$100B + \$2.72T + \$300B + \$232B + \$150B + \$200B \\
+= \$3.7T
+\end{gathered}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-mechanism_treaty_campaign_ev.qmd >}}
+
+{{< include ../figures/sensitivity-table-mechanism_treaty_campaign_ev.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-mechanism_treaty_campaign_ev.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-mechanism_treaty_campaign_ev.qmd >}}
+
+:::
+
+### Total 1% Treaty Campaign Cost: $1 billion {#sec-mechanism_treaty_campaign_net_cost}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Total treaty campaign cost (100% VICTORY Incentive Alignment Bonds)
+
+**Inputs**:
+
+- [Viral Referendum Budget](#sec-treaty_campaign_viral_referendum_base_case): $250 million (95% CI: $150 million - $410 million)
+- [Political Lobbying Campaign: Direct Lobbying, Super Pacs, Opposition Research, Staff, Legal/Compliance](#sec-treaty_campaign_budget_lobbying): $650 million (95% CI: $325 million - $1.3 billion)
+- [Reserve Fund / Contingency Buffer](#sec-treaty_campaign_budget_reserve): $100 million (95% CI: $20 million - $150 million)
+
+$$
+\begin{gathered}
+Cost_{campaign} \\
+= Budget_{viral,base} + Budget_{lobby,treaty} \\
++ Budget_{reserve} \\
+= \$250M + \$650M + \$100M \\
+= \$1B
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-mechanism_treaty_campaign_net_cost.qmd >}}
+
+{{< include ../figures/sensitivity-table-mechanism_treaty_campaign_net_cost.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-mechanism_treaty_campaign_net_cost.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-mechanism_treaty_campaign_net_cost.qmd >}}
+
+:::
+
 ### Medical Research Spending as Percentage of Total Disease Burden: 0.0164% {#sec-medical_research_pct_of_disease_burden}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -14563,12 +15753,14 @@ $$
 - [The 1% Treaty](../solution/1-percent-treaty.html)
 - [The Earth Optimization Prize](../strategy/earth-optimization-prize.html)
 - [Humanity v. Government](../appendix/humanity-v-government.html)
+- [The Funniest Joke in the Universe](../appendix/joke.html)
 - [Money Comes From a Building and They Use It to Kill People](../economics/central-banks.html)
 - [Where Am I Wrong?](../appendix/where-am-i-wrong.html)
 - [How to Coordinate 10 Million Nonprofits](../strategy/nonprofit-coalition-strategy.html)
 - [The Funniest Lawsuit in the Universe](../appendix/lawsuit.html)
 - [Love's Wager](../proof/loves-wager.html)
-- [The Funniest Joke in the Universe](../appendix/joke.html)
+- [The Delusion of Insignificance](../proof/delusion-of-insignificance.html)
+- [The Vandalism Handout](../appendix/handout.html)
 - [Notice of Termination](../appendix/notice-of-termination.html)
 - [The Plaintiff Media Kit](../appendix/plaintiff-media-kit.html)
 - [The 1% Treaty: Harnessing Greed to Eradicate Disease](../economics/1-pct-treaty-impact.html)
@@ -14585,7 +15777,7 @@ $$
 - [The Most Important Secret in the World: 20 Questions to End War and Disease](../strategy/questions.html)
 - [Earth Optimization Protocol v1](../strategy/earth-optimization-protocol-v1.html)
 - [Pre-Built Google Ads Campaign for Coalition Partners](../appendix/google-ads-campaign-template.html)
-- [The Vandalism Handout](../appendix/handout.html)
+- [How to End War and Disease](../educational-film.html)
 - [The Counsel Pitch](../appendix/counsel-outreach.html)
 - [The Press Release and Journalist List](../appendix/press-release.html)
 - [The Rule 14a-8 Shareholder Proposal](../appendix/shareholder-proposal-14a-8.html)
@@ -14900,6 +16092,7 @@ $$
 - [The Funniest Joke in the Universe](../appendix/joke.html)
 - [Love's Wager](../proof/loves-wager.html)
 - [The 1% Treaty](../solution/1-percent-treaty.html)
+- [Earth Optimization Services](../solution/earth-optimization-services.html)
 - [The Funniest Lawsuit in the Universe](../appendix/lawsuit.html)
 - [Humanity v. Government](../appendix/humanity-v-government.html)
 - [Declaration of Optimization](../strategy/declaration-of-optimization.html)
@@ -17271,10 +18464,11 @@ $$
 **Used in:**
 
 - [Peace Dividend](../economics/peace-dividend.html)
-- [The Funniest Joke in the Universe](../appendix/joke.html)
+- [How to End War and Disease](../educational-film.html)
 - [The Proof: Overview](../proof.html)
 - [Frequently Asked Objections](../appendix/faq.html)
 - [Declaration of Optimization](../strategy/declaration-of-optimization.html)
+- [The Funniest Joke in the Universe](../appendix/joke.html)
 - [The Funniest Lawsuit in the Universe](../appendix/lawsuit.html)
 - [The Eisenhower Curve](../economics/eisenhower-curve.html)
 - [The Earth Optimization Prize](../strategy/earth-optimization-prize.html)
@@ -17768,6 +18962,7 @@ $$
 - [NIH Fails to Institute Health](../problem/nih-fails-2-institute-health.html)
 - [Your FDA Is Unsafe and Ineffective](../problem/fda-is-unsafe-and-ineffective.html)
 - [The Most Important Secret in the World: 20 Questions to End War and Disease](../strategy/questions.html)
+- [How to End War and Disease](../educational-film.html)
 - [The Optimal Budget Generator: A Causal Inference Protocol for Maximizing Median Health and Wealth Through Public Goods Funding](../appendix/optimal-budget-generator-spec.html)
 - [Real-World Evidence Historical Success (Pre-1962)](../appendix/real-world-evidence-historical-success.html)
 
@@ -19209,7 +20404,7 @@ $$
 **Used in:**
 
 - [The Funniest Joke in the Universe](../appendix/joke.html)
-- [The Funniest Loving Takeover in the Universe](../appendix/loving-takeover.html)
+- [The Loving Takeover](../appendix/loving-takeover.html)
 - [Where Am I Wrong?](../appendix/where-am-i-wrong.html)
 - [The Funniest Lawsuit in the Universe](../appendix/lawsuit.html)
 - [The Vandalism Handout](../appendix/handout.html)
@@ -19801,23 +20996,25 @@ $$
 - [The 1% Treaty: Harnessing Greed to Eradicate Disease](../economics/1-pct-treaty-impact.html)
 - [The Funniest Lawsuit in the Universe](../appendix/lawsuit.html)
 - [Ubiquitous Pragmatic Trial Impact Analysis: How to Prevent a Year of Death and Suffering for 84 Cents](../appendix/dfda-impact-paper.html)
-- [The Funniest Joke in the Universe](../appendix/joke.html)
 - [Health Dividend](../economics/health-dividend.html)
 - [Where Am I Wrong?](../appendix/where-am-i-wrong.html)
 - [How to Coordinate 10 Million Nonprofits](../strategy/nonprofit-coalition-strategy.html)
+- [The Funniest Joke in the Universe](../appendix/joke.html)
 - [The 1% Treaty](../solution/1-percent-treaty.html)
 - [Earth Optimization Protocol v1](../strategy/earth-optimization-protocol-v1.html)
 - [Voter Acquisition Grant Proposal](../grant-proposal/voter-acquisition-grant.html)
 - [Declaration of Optimization](../strategy/declaration-of-optimization.html)
+- [How to End War and Disease](../educational-film.html)
 - [The Vandalism Handout](../appendix/handout.html)
 - [The Earth Optimization Prize](../strategy/earth-optimization-prize.html)
 - [Money Comes From a Building and They Use It to Kill People](../economics/central-banks.html)
+- [Earth Optimization Services](../solution/earth-optimization-services.html)
 - [The Most Important Secret in the World: 20 Questions to End War and Disease](../strategy/questions.html)
 - [The Planetary Constitutional Convention](../strategy/planetary-constitutional-convention.html)
 - [The Press Release and Journalist List](../appendix/press-release.html)
 - [The Plaintiff Media Kit](../appendix/plaintiff-media-kit.html)
 - [The Rule 14a-8 Shareholder Proposal](../appendix/shareholder-proposal-14a-8.html)
-- [The Funniest Loving Takeover in the Universe](../appendix/loving-takeover.html)
+- [The Loving Takeover](../appendix/loving-takeover.html)
 - [Humanity v. Government](../appendix/humanity-v-government.html)
 - [Correcting the AIs](../appendix/correcting-the-ais.html)
 
@@ -20190,6 +21387,7 @@ $$
 - [Treaty Feasibility & Cost Analysis](../appendix/treaty-feasibility.html)
 - [Aligning Incentives](../solution/aligning-incentives.html)
 - [Voter Acquisition Grant Proposal](../grant-proposal/voter-acquisition-grant.html)
+- [How to End War and Disease](../educational-film.html)
 - [Financial Plan](../economics/financial-plan.html)
 - [The Earth Optimization Prize](../strategy/earth-optimization-prize.html)
 
@@ -20377,10 +21575,12 @@ $$
 - [Decentralized Institutes of Health](../solution/dih.html)
 - [Incentive Alignment Bonds](../solution/incentive-alignment-bonds.html)
 - [The Legislation Package](../strategy/legislation-package.html)
+- [How to End War and Disease](../educational-film.html)
 - [Please Select an Earth: A) Everyone Gets Rich B) Somalia, but Everywhere](../economics/gdp-trajectories.html)
 - [Campaign Budget: The Legal Bribery Machine](../economics/campaign-budget.html)
 - [The Cost-Benefit Analysis of Global Hegemony](../appendix/cost-benefit-of-hegemony.html)
 - [United States Efficiency Audit](../appendix/us-efficiency-audit.html)
+- [Love's Wager](../proof/loves-wager.html)
 - [The Cost of War](../problem/cost-of-war.html)
 - [Money Comes From a Building and They Use It to Kill People](../economics/central-banks.html)
 - [The Court of Humanity](../solution/court-of-humanity.html)
@@ -20660,6 +21860,7 @@ $$
 - [Incentive Alignment Bonds: Making Public Goods Financially and Politically Profitable](../appendix/incentive-alignment-bonds-paper.html)
 - [Treaty Feasibility & Cost Analysis](../appendix/treaty-feasibility.html)
 - [Incentive Alignment Bonds](../solution/incentive-alignment-bonds.html)
+- [How to End War and Disease](../educational-film.html)
 - [Legal Architecture](../legal/legal-framework.html)
 - [The Planetary Constitutional Convention](../strategy/planetary-constitutional-convention.html)
 - [The Court of Humanity](../solution/court-of-humanity.html)
@@ -23561,6 +24762,7 @@ $$
 
 - [The 1% Treaty: Harnessing Greed to Eradicate Disease](../economics/1-pct-treaty-impact.html)
 - [The Proof: Overview](../proof.html)
+- [How to End War and Disease](../educational-film.html)
 - [Campaign Budget: The Legal Bribery Machine](../economics/campaign-budget.html)
 - [Earth Optimization Protocol v1](../strategy/earth-optimization-protocol-v1.html)
 - [Recruitment & Propaganda Plan](../appendix/recruitment-and-propaganda-plan.html)
@@ -24780,12 +25982,12 @@ $$
 **Used in:**
 
 - [The Funniest Joke in the Universe](../appendix/joke.html)
-- [Investment Terms](../economics/investment-terms.html)
 - [The Press Release and Journalist List](../appendix/press-release.html)
+- [Investment Terms](../economics/investment-terms.html)
 - [The Vandalism Handout](../appendix/handout.html)
 - [The Funniest Lawsuit in the Universe](../appendix/lawsuit.html)
 - [The Counsel Pitch](../appendix/counsel-outreach.html)
-- [The Funniest Loving Takeover in the Universe](../appendix/loving-takeover.html)
+- [The Loving Takeover](../appendix/loving-takeover.html)
 - [Where Am I Wrong?](../appendix/where-am-i-wrong.html)
 - [The Board Member Research](../appendix/board-member-research.html)
 - [The Plaintiff Media Kit](../appendix/plaintiff-media-kit.html)
@@ -26290,6 +27492,7 @@ $$
 
 - [Recruitment & Propaganda Plan](../appendix/recruitment-and-propaganda-plan.html)
 - [The Earth Optimization Prize](../strategy/earth-optimization-prize.html)
+- [How to End War and Disease](../educational-film.html)
 - [How to Coordinate 10 Million Nonprofits](../strategy/nonprofit-coalition-strategy.html)
 - [Peace Dividend](../economics/peace-dividend.html)
 - [Please Select an Earth: A) Everyone Gets Rich B) Somalia, but Everywhere](../economics/gdp-trajectories.html)
@@ -27024,10 +28227,10 @@ $$
 
 **Used in:**
 
-- [The Funniest Joke in the Universe](../appendix/joke.html)
 - [The 1% Treaty](../solution/1-percent-treaty.html)
 - [Where Am I Wrong?](../appendix/where-am-i-wrong.html)
 - [How to Coordinate 10 Million Nonprofits](../strategy/nonprofit-coalition-strategy.html)
+- [The Funniest Joke in the Universe](../appendix/joke.html)
 - [The Funniest Lawsuit in the Universe](../appendix/lawsuit.html)
 - [The Plaintiff Media Kit](../appendix/plaintiff-media-kit.html)
 - [The Eisenhower Curve](../economics/eisenhower-curve.html)
@@ -28218,6 +29421,8 @@ $$
 - [Optimization Summary](../solution.html)
 - [The Proof: Overview](../proof.html)
 - [Treaty Feasibility & Cost Analysis](../appendix/treaty-feasibility.html)
+- [How to End War and Disease](../educational-film.html)
+- [Earth Optimization Services](../solution/earth-optimization-services.html)
 - [The Most Important Secret in the World: 20 Questions to End War and Disease](../strategy/questions.html)
 - [Legal Architecture](../legal/legal-framework.html)
 - [Recruitment & Propaganda Plan](../appendix/recruitment-and-propaganda-plan.html)
@@ -28354,6 +29559,7 @@ $$
 - [How to Coordinate 10 Million Nonprofits](../strategy/nonprofit-coalition-strategy.html)
 - [Voter Acquisition Grant Proposal](../grant-proposal/voter-acquisition-grant.html)
 - [Getting Started](../strategy/getting-started.html)
+- [How to End War and Disease](../educational-film.html)
 - [Conclusion](../appendix/conclusion.html)
 - [The Funniest Joke in the Universe](../appendix/joke.html)
 - [About This Manual](../appendix/back-cover.html)
@@ -28495,6 +29701,7 @@ $$
 - [How to Coordinate 10 Million Nonprofits](../strategy/nonprofit-coalition-strategy.html)
 - [Voter Acquisition Grant Proposal](../grant-proposal/voter-acquisition-grant.html)
 - [Getting Started](../strategy/getting-started.html)
+- [How to End War and Disease](../educational-film.html)
 - [Conclusion](../appendix/conclusion.html)
 - [The Funniest Joke in the Universe](../appendix/joke.html)
 - [About This Manual](../appendix/back-cover.html)
@@ -33504,10 +34711,10 @@ Annual probability of being killed by terrorism expressed as '1 in X'. An Americ
 **Used in:**
 
 - [The 1% Treaty](../solution/1-percent-treaty.html)
-- [The Funniest Joke in the Universe](../appendix/joke.html)
 - [Where Am I Wrong?](../appendix/where-am-i-wrong.html)
 - [Declaration of Optimization](../strategy/declaration-of-optimization.html)
 - [The Vandalism Handout](../appendix/handout.html)
+- [The Funniest Joke in the Universe](../appendix/joke.html)
 - [Notice of Termination](../appendix/notice-of-termination.html)
 - [Correcting the AIs](../appendix/correcting-the-ais.html)
 
@@ -33891,6 +35098,7 @@ Crowd accuracy on Who Wants to Be a Millionaire ask-the-audience lifeline. Studi
 **Used in:**
 
 - [Wishocracy](../solution/wishocracy.html)
+- [Earth Optimization Services](../solution/earth-optimization-services.html)
 
 :::
 
@@ -34068,6 +35276,7 @@ Annual global clinical trial participants (IQVIA 2022: 1.9M post-COVID normaliza
 - [Diagnostic Summary](../problem.html)
 - [Frequently Asked Objections](../appendix/faq.html)
 - [Earth Optimization Protocol v1](../strategy/earth-optimization-protocol-v1.html)
+- [How to End War and Disease](../educational-film.html)
 - [Health Dividend](../economics/health-dividend.html)
 - [The Continuous Evidence Generation Protocol: Two-Stage Validation (RWE → Pragmatic Trials)](../appendix/dfda-spec-paper.html)
 
@@ -34096,7 +35305,7 @@ Annual defense industry lobbying spending
 **Used in:**
 
 - [Frequently Asked Objections](../appendix/faq.html)
-- [The Funniest Loving Takeover in the Universe](../appendix/loving-takeover.html)
+- [The Loving Takeover](../appendix/loving-takeover.html)
 - [The Funniest Lawsuit in the Universe](../appendix/lawsuit.html)
 - [Where Am I Wrong?](../appendix/where-am-i-wrong.html)
 - [Earth Optimization Protocol v1](../strategy/earth-optimization-protocol-v1.html)
@@ -34109,6 +35318,34 @@ Annual defense industry lobbying spending
 - [The Funniest Joke in the Universe](../appendix/joke.html)
 - [The Counsel Pitch](../appendix/counsel-outreach.html)
 - [Peace Dividend](../economics/peace-dividend.html)
+
+:::
+
+### Allied Defense Primes Market Cap: $95 billion {#sec-defense_primes_market_cap_allied}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Combined market capitalization of major allied European defense primes (BAE Systems, Thales)
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*✓ High confidence*
+
+:::
+
+### US Defense Primes Market Cap: $670 billion {#sec-defense_primes_market_cap_us}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Combined market capitalization of major US defense primes (RTX, Boeing, LMT, GD, NOC, LHX, LDOS, BAH, CACI, HII, SAIC)
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*✓ High confidence*
 
 :::
 
@@ -34187,6 +35424,7 @@ Embedded pragmatic trial cost per patient. Uses ADAPTABLE trial ($929) as DELIBE
 - [A Decentralized FDA](../solution/dfda.html)
 - [Earth Optimization Protocol v1](../strategy/earth-optimization-protocol-v1.html)
 - [How to Coordinate 10 Million Nonprofits](../strategy/nonprofit-coalition-strategy.html)
+- [How to End War and Disease](../educational-film.html)
 - [The Earth Optimization Prize](../strategy/earth-optimization-prize.html)
 - [The Cost of War](../problem/cost-of-war.html)
 - [Optimization Summary](../solution.html)
@@ -34465,6 +35703,7 @@ Expert accuracy on Who Wants to Be a Millionaire phone-a-friend lifeline. Creden
 **Used in:**
 
 - [Wishocracy](../solution/wishocracy.html)
+- [Earth Optimization Services](../solution/earth-optimization-services.html)
 
 :::
 
@@ -34753,6 +35992,7 @@ Annual deaths from all diseases and aging globally
 - [The Cost of War](../problem/cost-of-war.html)
 - [NIH Fails to Institute Health](../problem/nih-fails-2-institute-health.html)
 - [Optimocracy: The Evidence Machine](../solution/optimocracy.html)
+- [The Delusion of Insignificance](../proof/delusion-of-insignificance.html)
 - [The Cautionary Tale of Moronia](../futures/moronia.html)
 - [Frequently Asked Objections](../appendix/faq.html)
 - [Declaration of Optimization](../strategy/declaration-of-optimization.html)
@@ -35320,6 +36560,7 @@ Total global deaths per day from all disease and aging (WHO Global Burden of Dis
 - [The Most Important Secret in the World: 20 Questions to End War and Disease](../strategy/questions.html)
 - [Treaty Feasibility & Cost Analysis](../appendix/treaty-feasibility.html)
 - [The Vandalism Handout](../appendix/handout.html)
+- [The Delusion of Insignificance](../proof/delusion-of-insignificance.html)
 - [Wishonia](../futures/wishonia.html)
 - [Where Am I Wrong?](../appendix/where-am-i-wrong.html)
 - [Voter Acquisition Grant Proposal](../grant-proposal/voter-acquisition-grant.html)
@@ -35795,7 +37036,7 @@ Global population in 2024
 - [Decentralized Institutes of Health](../solution/dih.html)
 - [A Decentralized FDA](../solution/dfda.html)
 - [Where Am I Wrong?](../appendix/where-am-i-wrong.html)
-- [The Funniest Loving Takeover in the Universe](../appendix/loving-takeover.html)
+- [The Loving Takeover](../appendix/loving-takeover.html)
 - [The Court of Humanity](../solution/court-of-humanity.html)
 - [Money Comes From a Building and They Use It to Kill People](../economics/central-banks.html)
 - [Optimization Summary](../solution.html)
@@ -35877,6 +37118,7 @@ Critical mass threshold for social change (3.5% rule). Chenoweth studied nationa
 - [Genetic Slavery](../problem/genetic-slavery.html)
 - [How to Coordinate 10 Million Nonprofits](../strategy/nonprofit-coalition-strategy.html)
 - [Legal Architecture](../legal/legal-framework.html)
+- [How to End War and Disease](../educational-film.html)
 - [Financial Plan](../economics/financial-plan.html)
 
 :::
@@ -35992,6 +37234,8 @@ Total global nuclear warhead inventory across nine nuclear-armed states. Include
 
 **Used in:**
 
+- [Earth Optimization Services](../solution/earth-optimization-services.html)
+- [The Delusion of Insignificance](../proof/delusion-of-insignificance.html)
 - [Where Am I Wrong?](../appendix/where-am-i-wrong.html)
 - [The Most Important Secret in the World: 20 Questions to End War and Disease](../strategy/questions.html)
 
@@ -36175,7 +37419,7 @@ Medical cost-effectiveness QALY threshold. Standard threshold for evaluating whe
 **Used in:**
 
 - [United States Efficiency Audit](../appendix/us-efficiency-audit.html)
-- [The Funniest Loving Takeover in the Universe](../appendix/loving-takeover.html)
+- [The Loving Takeover](../appendix/loving-takeover.html)
 - [Algorithmic Public Administration](../appendix/algorithmic-public-administration-paper.html)
 
 :::
@@ -37140,6 +38384,7 @@ RECOVERY trial cost per patient. Note: RECOVERY was an outlier - hospital-based 
 - [The Untapped Therapeutic Frontier](../problem/untapped-therapeutic-frontier.html)
 - [Your FDA Is Unsafe and Ineffective](../problem/fda-is-unsafe-and-ineffective.html)
 - [A Decentralized FDA](../solution/dfda.html)
+- [Earth Optimization Services](../solution/earth-optimization-services.html)
 - [The Proof: Overview](../proof.html)
 - [Frequently Asked Objections](../appendix/faq.html)
 - [The Most Important Secret in the World: 20 Questions to End War and Disease](../strategy/questions.html)
@@ -37703,11 +38948,13 @@ Phase 3 cost per patient (median from FDA study)
 - [The Untapped Therapeutic Frontier](../problem/untapped-therapeutic-frontier.html)
 - [Aligning Incentives](../solution/aligning-incentives.html)
 - [How to Coordinate 10 Million Nonprofits](../strategy/nonprofit-coalition-strategy.html)
+- [How to End War and Disease](../educational-film.html)
 - [The Continuous Evidence Generation Protocol: Two-Stage Validation (RWE → Pragmatic Trials)](../appendix/dfda-spec-paper.html)
 - [Your FDA Is Unsafe and Ineffective](../problem/fda-is-unsafe-and-ineffective.html)
 - [Optimization Summary](../solution.html)
 - [The 1% Treaty](../solution/1-percent-treaty.html)
 - [Decentralized Institutes of Health](../solution/dih.html)
+- [Earth Optimization Services](../solution/earth-optimization-services.html)
 - [The Proof: Overview](../proof.html)
 - [Frequently Asked Objections](../appendix/faq.html)
 - [The Most Important Secret in the World: 20 Questions to End War and Disease](../strategy/questions.html)
@@ -38888,10 +40135,11 @@ Average years of life extension per person saved by pharmaceutical interventions
 
 - [The Invisible Graveyard: Quantifying the Mortality Cost of FDA Efficacy Lag](../appendix/invisible-graveyard.html)
 - [The Funniest Lawsuit in the Universe](../appendix/lawsuit.html)
+- [Earth Optimization Services](../solution/earth-optimization-services.html)
 - [The Press Release and Journalist List](../appendix/press-release.html)
 - [The Plaintiff Media Kit](../appendix/plaintiff-media-kit.html)
 - [The Rule 14a-8 Shareholder Proposal](../appendix/shareholder-proposal-14a-8.html)
-- [The Funniest Loving Takeover in the Universe](../appendix/loving-takeover.html)
+- [The Loving Takeover](../appendix/loving-takeover.html)
 - [Investment Terms](../economics/investment-terms.html)
 
 :::
@@ -39870,27 +41118,37 @@ Percentage of budget defense sector keeps under 1% treaty
 
 :::
 
-### Defense Takeover Total Cost: $700 billion {#sec-defense_takeover_cost_total}
+### Acquisition Premium Multiplier: 1.8x {#sec-defense_takeover_acquisition_premium}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Total cost to acquire controlling stakes in all major Western defense contractors (~$670B US primes + ~$50B European primes, rounded to $700B with acquisition premium)
+Expected price multiplier from coordinated buy-up demand pressure (midpoint of 1.5x-3x range based on float constraints)
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$300 billion, $700 billion]
+**Technical**: 95% CI: [1.5x, 3x]
 
-**What this means**: There's significant uncertainty here. The true value likely falls between $300 billion and $700 billion (±29%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: There's significant uncertainty here. The true value likely falls between 1.5x and 3x (±42%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 #### Input Distribution
 
-{{< include ../figures/distribution-defense_takeover_cost_total.qmd >}}
+{{< include ../figures/distribution-defense_takeover_acquisition_premium.qmd >}}
 
 *Core definition*
 
-**Used in:**
+:::
 
-- [Investment Terms](../economics/investment-terms.html)
+### Control Fraction: 0.501:1 {#sec-defense_takeover_control_fraction}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Fraction of shares required for board control (50% + 1 share)
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*Core definition*
 
 :::
 
@@ -40595,7 +41853,7 @@ Folkloric estimate of average adult laughter rate. Widely cited as approximately
 - [Where Am I Wrong?](../appendix/where-am-i-wrong.html)
 - [The Vandalism Handout](../appendix/handout.html)
 - [The Funniest Lawsuit in the Universe](../appendix/lawsuit.html)
-- [The Funniest Loving Takeover in the Universe](../appendix/loving-takeover.html)
+- [The Loving Takeover](../appendix/loving-takeover.html)
 - [Correcting the AIs](../appendix/correcting-the-ais.html)
 
 :::
@@ -40665,6 +41923,7 @@ Percentage of treaty funding allocated to Incentive Alignment Bond mechanism for
 - [Incentive Alignment Bonds](../solution/incentive-alignment-bonds.html)
 - [Optimization Summary](../solution.html)
 - [Treaty Feasibility & Cost Analysis](../appendix/treaty-feasibility.html)
+- [How to End War and Disease](../educational-film.html)
 - [Financial Plan](../economics/financial-plan.html)
 - [Incentive Alignment Bonds: Making Public Goods Financially and Politically Profitable](../appendix/incentive-alignment-bonds-paper.html)
 - [The 1% Treaty](../solution/1-percent-treaty.html)
@@ -40700,6 +41959,242 @@ Maximum bond investment for lobbyist incentives
 **Used in:**
 
 - [Aligning Incentives](../solution/aligning-incentives.html)
+
+:::
+
+### Court of Humanity Build Cost: $30 million {#sec-mechanism_court_of_humanity_net_cost}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+One-time cost to build the Court of Humanity. Range reflects digital-first institutional design (no physical courtrooms, no detention, AI-assisted evidence triage, cryptographic provenance, stratified random jury infrastructure). Lower bound: minimal viable institution. Upper bound: fully-staffed initial operations, roughly 27% of one year of ICC operating budget (the ICC funds physical courtrooms, detention, and 425+ staff).
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$10 million, $50 million] • Distribution: Lognormal
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between $10 million and $50 million (±67%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-mechanism_court_of_humanity_net_cost.qmd >}}
+
+*Core definition*
+
+:::
+
+### P(Success | Court of Humanity Funded): 0.1:1 {#sec-mechanism_court_of_humanity_p_success}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Probability of treaty passage given Court of Humanity operational. Lowest direct causal link: court rulings are non-binding but create political pressure.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [0.03:1, 0.25:1]
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between 0.03:1 and 0.25:1 (±110%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+#### Input Distribution
+
+{{< include ../figures/distribution-mechanism_court_of_humanity_p_success.qmd >}}
+
+*Core definition*
+
+:::
+
+### dFDA Deployment Net Cost: $500 million {#sec-mechanism_dfda_net_cost}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Net cost to build and deploy the dFDA to operational scale (expenditure; platform generates revenue after deployment but initial build is sunk cost)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$200 million, $1 billion]
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between $200 million and $1 billion (±80%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+#### Input Distribution
+
+{{< include ../figures/distribution-mechanism_dfda_net_cost.qmd >}}
+
+*Core definition*
+
+:::
+
+### P(Success | dFDA Funded): 0.7:1 {#sec-mechanism_dfda_p_success}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Probability that a funded dFDA produces sufficient cures to create political momentum for the treaty. High because clinical trials mechanically produce treatments; the platform reduces cost per trial.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [0.4:1, 0.9:1]
+
+**What this means**: There's significant uncertainty here. The true value likely falls between 0.4:1 and 0.9:1 (±36%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+#### Input Distribution
+
+{{< include ../figures/distribution-mechanism_dfda_p_success.qmd >}}
+
+*Core definition*
+
+:::
+
+### IAB Admin Cost Rate: 0.05:1 {#sec-mechanism_iab_admin_rate}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual administrative cost of IABs as fraction of principal (legal, compliance, reporting). The principal itself is investor capital returned with interest, not EOS expenditure.
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*Core definition*
+
+:::
+
+### P(Success | IABs Funded): 0.6:1 {#sec-mechanism_iab_p_success}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Probability of treaty passage given full IAB issuance. High because lobbying is a proven mechanism and IABs align politician incentives directly.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [0.3:1, 0.85:1]
+
+**What this means**: There's significant uncertainty here. The true value likely falls between 0.3:1 and 0.85:1 (±46%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+#### Input Distribution
+
+{{< include ../figures/distribution-mechanism_iab_p_success.qmd >}}
+
+*Core definition*
+
+:::
+
+### P(Success | Loving Takeover Funded): 0.95:1 {#sec-mechanism_loving_takeover_p_success}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Probability of treaty passage given full funding of the Loving Takeover (mechanical: money buys shares, shares buy board control, board redirects lobbying)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [0.8:1, 0.99:1]
+
+**What this means**: We're quite confident in this estimate. The true value likely falls between 0.8:1 and 0.99:1 (±10%). This represents a narrow range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+#### Input Distribution
+
+{{< include ../figures/distribution-mechanism_loving_takeover_p_success.qmd >}}
+
+*Core definition*
+
+:::
+
+### Mechanism Opportunity Cost Rate: 0.02:1 {#sec-mechanism_opportunity_cost_rate}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual opportunity cost rate for capital deployment mechanisms (forgone excess return vs market). Defense stocks historically return near-market, so excess opportunity cost is low.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [0:1, 0.05:1] • Distribution: Fixed
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between 0:1 and 0.05:1 (±125%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The fixed distribution means values follow a specific statistical pattern.*
+
+*Core definition*
+
+:::
+
+### Viral Referendum Budget: $250 million {#sec-mechanism_referendum_net_cost}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Viral referendum budget for 280M verified votes (base: $250M realistic with $0.50/vote avg, range: $150M optimistic $0.20/vote to $410M worst-case $1.05/vote). Components: platform ($35M), verification infrastructure (280M × friction × $0.18-0.20), tiered referral payments (varies by virality and marginal cost curve per diffusion theory), marketing seed ($5-15M). Based on PayPal referral economics ($18-36 inflation-adjusted) and biometric verification pricing ($0.15-0.25 at 300M+ scale).
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$150 million, $410 million]
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between $150 million and $410 million (±52%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+#### Input Distribution
+
+{{< include ../figures/distribution-mechanism_referendum_net_cost.qmd >}}
+
+*Core definition*
+
+:::
+
+### P(Success | Referendum Funded): 0.3:1 {#sec-mechanism_referendum_p_success}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Probability of treaty passage given a successful global referendum demonstrating majority support. Non-binding but creates political pressure.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [0.1:1, 0.55:1]
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between 0.1:1 and 0.55:1 (±75%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+#### Input Distribution
+
+{{< include ../figures/distribution-mechanism_referendum_p_success.qmd >}}
+
+*Core definition*
+
+:::
+
+### Shirt Cascade Probability Given Seed: 25% {#sec-mechanism_shirt_cascade_p_success}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Subjective probability that the seed program triggers a viral cascade to majority-of-humanity participation, conditional on the seed threshold being met. Deliberately conservative: even at 25% the expected-value math beats every conventional foundation intervention. Sensitivity range covers skeptic and base-case scenarios.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [5%, 60%] • Distribution: Beta
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between 5% and 60% (±110%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The beta distribution means values are bounded and can skew toward one end.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-mechanism_shirt_cascade_p_success.qmd >}}
+
+*Core definition*
+
+:::
+
+### P(Success | Treaty Campaign Funded): 0.4:1 {#sec-mechanism_treaty_campaign_p_success}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Probability of treaty passage given full funding of the lobbying + referendum campaign ($1B). Depends on political will after lobbying and public pressure.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [0.15:1, 0.7:1]
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between 0.15:1 and 0.7:1 (±69%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+#### Input Distribution
+
+{{< include ../figures/distribution-mechanism_treaty_campaign_p_success.qmd >}}
+
+*Core definition*
 
 :::
 
@@ -41501,6 +42996,7 @@ Percentage of captured dividend funding VICTORY Incentive Alignment Bonds (10%)
 - [Incentive Alignment Bonds](../solution/incentive-alignment-bonds.html)
 - [Financial Plan](../economics/financial-plan.html)
 - [Optimization Summary](../solution.html)
+- [How to End War and Disease](../educational-film.html)
 - [The Earth Optimization Prize](../strategy/earth-optimization-prize.html)
 - [The 1% Treaty](../solution/1-percent-treaty.html)
 - [Decentralized Institutes of Health](../solution/dih.html)

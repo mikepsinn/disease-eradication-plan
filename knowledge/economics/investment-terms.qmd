@@ -1,0 +1,520 @@
+---
+title: "Investment Terms"
+description: "Fund terms for Earth Optimization Services. How the money moves, where the returns come from, and why no one who operates it owns equity in it."
+published: true
+tags:
+  - investment
+  - eos
+  - fund
+  - terms
+  - finance
+scores:
+  quality: 7
+  value: 9
+  timeliness: 8
+  standalone: 8
+  voice: 8
+  importance: 9
+---
+{{< include /knowledge/includes/setup-parameters.qmd >}}
+
+On my planet, when somebody asks you for money, you check two things. First: is anybody keeping any of it? Second: does giving it away make you richer or poorer?
+
+Nobody who operates Earth Optimization Services owns equity in it. I am told this is unusual. On my planet, building something and then not owning it is just called building something. But on yours, the question "what do you get out of this?" apparently requires an answer more complicated than "the same thing you get out of it: a planet where fewer people die." So here is the longer answer.
+
+The people who operate EOS live on the same planet you do. If the planet gets better, they get the better planet. Equity in a company is a number on a screen. A world where your children do not die of treatable diseases is a thing that is actually real. These are different categories of object. Your species treats them as the same category, which I find philosophically interesting and practically fatal.
+
+The second check: does giving money make you richer or poorer? If war and disease end, the shares appreciate substantially. If they do not, you own shares in defense contractors, which historically perform well during periods of continued military spending. The downside is whatever else you would have done with the money.
+
+## What EOS is
+
+Earth Optimization Services is a company. Not a fund. Not a nonprofit. Not a movement. A company that sells products and services, makes money, and uses the money to optimize Earth. Your government requires me to be specific about the legal structure, so: it is a holding company. Everything described in this book is a product or subsidiary of EOS.
+
+| Product | What it does | Revenue |
+|---------|-------------|---------|
+| The Manual | The book you are reading | Sales (pay-what-you-want, anchored to {{< var defense_takeover_cost_per_human >}}) |
+| The Uniform | T-shirts that say "I am retarded" | Sales + the free permanent-marker version |
+| The Fund | Buys defense contractor shares, redirects lobbying via voting rights | 2% management fee, 20% performance fee |
+| [Optimitron](../solution/optimocracy.qmd) | Policy optimization platform | SaaS subscriptions, consulting |
+| [The dFDA](../solution/dfda.qmd) | Clinical trial infrastructure | Platform fees |
+| [The Prize](../strategy/earth-optimization-prize.qmd) | Assurance contracts for coordinated action | Escrow returns |
+| [Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd) | Revenue-share bonds funding the political campaign | Bond issuance fees |
+
+The fund arm buys shares in defense contractors and uses the voting rights to redirect their lobbying budgets toward the [1% Treaty](/knowledge/solution/1-percent-treaty.qmd) [@1-percent-treaty-paper-2025] [@1-pct-treaty-impact-paper-2025]. This is the [Loving Takeover](../appendix/loving-takeover.qmd). The shareholders being bought out end up richer (buying shares increases the price) and longer-lived (the treaty adds approximately {{< var avg_life_extension_per_beneficiary >}} to every beneficiary, including the people being bought out). On my planet this is called a gift. On yours it requires a 494-line document.
+
+The long-term goal is to acquire sufficient influence over every company that shapes government policy, then redistribute that control to humanity through [wishocracy](../solution/optimocracy.qmd) [@wishocracy-paper-2025]. EOS is the temporary centralized structure that builds the decentralized one. When wishocracy is operational, EOS hands over the keys.
+
+## How you make money
+
+There are three layers of appreciation.
+
+**Layer 1: Buying pressure.** A coordinated buy-up creates roughly {{< var defense_takeover_cost_total >}} of net new demand against a tradeable float of roughly $460 billion. When demand exceeds supply, prices rise. This is arithmetic.
+
+**Layer 2: Credibility cascade.** As the campaign builds credibility, the market prices in the probability of success. Early buyers see appreciation, which attracts more buyers, which raises prices further. This is the same mechanism that prices in M&A announcements, FDA approvals, and earnings revisions.
+
+**Layer 3: The pivot.** If the treaty passes, GDP at year 15 is roughly {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}} larger than the current trajectory. Defense contractors in a larger economy capture proportionally more revenue. The engineering workforce pivots to medical, biotech, and civilian applications.
+
+**The asymmetric structure.** If the campaign succeeds, shares appreciate through all three layers. If it fails, you hold a normal defense contractor position. The downside is the foregone return on whatever else you would have bought.
+
+## The terms
+
+| Term | Value | Why |
+|------|-------|-----|
+| Fund target | $500K to $2M | Seed capital. Enough to begin. Not enough to waste. |
+| Minimum investment (friends & family) | $25,000 | Low enough to include the humans who believed before it was obvious. |
+| Minimum investment (institutional) | $100,000 | Standard institutional minimum. |
+| Management fee | 2% annually | Standard. Covers operations. |
+| Performance fee | 20% above S&P benchmark | You only pay for outperformance. |
+| Lockup | 1 year | The interesting part takes longer, but you can leave. |
+| Operator equity | 0% | Nobody who runs this owns a piece of it. |
+| Security type | Revenue-share notes | Money in, more money out. No voting rights, no governance, no board seat. |
+
+## How the share price works
+
+The share price of EOS is not derived from revenue. It is not derived from assets. It is not derived from what similar companies sell for. There are no similar companies.
+
+The share price represents one thing: your fractional claim on the probability-weighted value of optimizing Earth. The formula:
+
+$$\text{price} = \frac{P(I) \times V}{\text{total shares}}$$
+
+V is the total value of success. This is the civilizational alpha from eliminating the [political dysfunction tax](../appendix/political-dysfunction-tax.qmd) [@political-dysfunction-tax-paper-2025]: the gap between what humanity produces under current policy and what it would produce under optimal policy. The book, the shirts, the fund fees, the consulting revenue. None of these enter V. They are mechanisms. V is what happens to civilization if the mechanisms work.
+
+P(I) is the probability of success given total investment I. This is the only variable that changes with each share sold. Each purchase increases I, which increases P, which increases the rational price.
+
+This is circular. The price depends on the probability, the probability depends on the investment, the investment depends on the price. But the circle has a fixed point: a price at which the market's implied belief in success is self-consistent with the investment level the price represents. That fixed point is the Platonic ideal.
+
+**Why the price must be pure.** If you mix product revenue into the valuation, the share becomes a bet on book sales and consulting contracts. That is a different bet. The share is a bet on whether Earth gets optimized. Product revenue is how EOS funds its operations. It is not what the share is worth. Pricing the share on revenue would be like pricing the book on printing costs instead of anchoring to the civilizational value. Same category error.
+
+A share priced at $X implies P(success) = X × total_shares / V. If you think the probability is higher than what the price implies, the share is undervalued. If lower, overvalued. The price discovery is honest because it is grounded in a falsifiable estimate of one thing: how likely is it that Earth gets optimized?
+
+**The continuous auction.** Each new share is priced at the current P(I) × V / shares. As more people invest, I rises, P rises, price rises. No round numbers. No arbitrary caps. The price at any moment is the market's self-consistent belief in the probability that Earth gets optimized. Any fixed price is wrong at almost every point: too high early (deters believers), too low late (subsidizes latecomers at believers' expense). Only the continuous auction tracks the true expected value at every point.
+
+**If the campaign fails.** P drops. Price drops. But investors still hold defense contractor shares, which perform normally during periods of continued military spending. The downside is the foregone return on whatever you would have bought instead. The share price goes to zero only if the probability of success goes to zero, which requires the complete impossibility of optimizing Earth. On my planet we would call that an unusual claim.
+
+## Where the money goes
+
+```
+Your investment
+    └─> Buy defense contractor shares
+            └─> Share price goes up (Layer 1)
+            └─> Gain voting rights
+                    └─> Redirect lobbying budget
+                            └─> Campaign credibility rises
+                                    └─> Share price goes up more (Layer 2)
+                                            └─> Pass the 1% treaty
+                                                    └─> Economy grows {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}}
+                                                            └─> Share price goes up a lot (Layer 3)
+                                                                    └─> You also don't die
+```
+
+The last line is not priced into the return, but it is arguably the more valuable one.
+
+## The cascade: how $5,000 becomes {{< var defense_takeover_cost_total >}}
+
+The diagram above assumes somebody buys everything at once. Nobody has {{< var defense_takeover_cost_total >}}.
+
+But you do not need to buy 50% of a company to control its board. In 2021, Engine No. 1 won three board seats at ExxonMobil while holding 0.02% of its shares. Carl Icahn has been redirecting boards since 1979 with positions between 1% and 10%. The mechanism is a demand letter the board is legally required to read (Caremark), a proxy proposal institutional investors are required to evaluate (ISS guidelines), and enough credibility that the board's lawyers recommend settling.
+
+Three methods, ordered by cost:
+
+| Method | Cost (all 9 US primes) | Feasibility |
+|--------|-------------------:|-------------|
+| Buy 51% of shares | ~$460 billion | Impossible without being a nation-state |
+| Activist positions (1-5%) | ~$9.1 billion | Hard but demonstrated (Icahn, Ackman, Peltz) |
+| Governance pressure + institutional votes | $75-200 million | Possible |
+
+The third method works because institutional investors (Vanguard, BlackRock, State Street) hold 60-75% of defense contractor shares. They do not need to be bought. They need to be presented with an economically rational proxy proposal. ISS and Glass Lewis evaluate every one. "Your lobbying has negative ROI for your own shareholders" is economically rational. Engine No. 1 proved this at Exxon.
+
+The cascade starts small.
+
+**Target 1: Huntington Ingalls (HII).** Market cap ~$10 billion. The smallest major prime. A governance-pressure campaign costs $5,000-$15,000. If HII's board commissions the lobbying ROI analysis (which Caremark doctrine increasingly requires), and the analysis shows what existing studies show (that the lobbying is self-defeating), the lobbying budget begins to redirect. This generates media coverage. Media coverage attracts investors. Investors create buying pressure.
+
+**Target 2: Kratos (KTOS).** Then Leidos (LDOS). Then L3Harris (LHX). Each success creates three things: credibility (the previous one worked), capital (appreciation from the last campaign funds the next), and attention (which attracts more investors). Each target is funded by the appreciation from the previous one.
+
+```
+HII ($10B) → KTOS ($12B) → LDOS ($20B) → LHX ($45B)
+→ GD ($80B) → NOC ($75B) → LMT ($110B) → BA ($130B)
+→ RTX ($160B) → GE Aerospace ($200B+)
+```
+
+Then pharma ($373M/yr in lobbying). Then finance ($720M/yr). Then energy. Each sector's lobbying apparatus, redirected to champion the treaty. Each funded by the appreciation from the last.
+
+The cascade starts with one demand letter filed by one shareholder who paid $200 for one share.
+
+## How EOS funds its operations
+
+The share price is derived from the probability of civilizational optimization, not from revenue. But EOS still needs money to operate. Here is where it comes from. Four layers. Each works independently. None of them enter the share price formula.
+
+**Layer 1: Fund management.** 2% management fee, 20% performance fee. Standard fund economics. Not interesting.
+
+**Layer 2: Consulting.** The demand letter creates a legal obligation for the board to respond (Caremark). Responding requires commissioning an analysis of whether the company's lobbying generates positive shareholder returns. EOS, through [Optimitron](../solution/optimocracy.qmd), provides this analysis. The free version demonstrates competence. The paid version (deeper, proprietary, ongoing advisory) is how EOS becomes a consultant to the companies it is pressuring.
+
+I spent a long time looking for the part where the demand letter and the consulting pipeline stop being the same object and could not find it. Each demand letter in the cascade creates a potential client. Across defense, pharma, and finance at scale, this is $10-50 million per year.
+
+**Layer 3: Platform.** Optimitron becomes a SaaS product. Institutional investors, proxy advisory firms, and pension funds subscribe to the lobbying ROI data. This data is valuable to everyone who votes proxies, which is every institutional investor.
+
+**Layer 4: Brand.** The book you are reading. The [educational film](../educational-film.qmd). The shirts. None of this is large revenue. It is marketing that covers its own costs.
+
+EOS does not need donations or grants. The revenue comes from the same activities that redirect the lobbying. If you separate the revenue from the mechanism, neither functions. Together, they compound: the more successfully EOS redirects lobbying, the more profitable it becomes.
+
+## Why competitors help
+
+If another fund copies this strategy, EOS investors make more money. More funds buying means more buying pressure means higher share prices. More demand letters means faster board responses. More media attention means more retail investors.
+
+Ten competing funds means ten times the buying pressure and ten times the demand letters. Competition and cooperation produce identical outcomes. I do not know a word for a game where this is true, but it is the game you are in.
+
+The only thing that needs protecting is the governance: that whoever controls the redirected lobbying does not use it for extraction. This is why EOS publishes the equity formula, the humanity reserve, and the transfer clause before any of it is profitable. Establishing the norms first is the only defense against a version of this that is sleazy.
+
+If someone copies this and executes it well, they have ended war and disease.
+
+## The two investment products
+
+EOS offers two instruments. Both are products of the same company.
+
+**Revenue-share notes (the EOS share).** Your money buys defense contractor shares via the fund. You receive two returns: (1) a revenue-share percentage of EOS's operating revenue (fund fees, consulting, platform, brand), which is your cash return, and (2) appreciation of the share itself, whose price is set by the continuous auction at P(I) × V / shares. The cash return is operational. The share value is civilizational. They are separate. This is the takeover arm.
+
+**[Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd) [@iab-paper-2025].** Your money funds the political campaign to pass the treaty. If the treaty passes, it generates {{< var treaty_annual_funding >}} per year, and bondholders receive {{< var victory_bond_annual_payout >}} per year forever (a {{< var victory_bond_annual_return_pct >}} annual return on the campaign cost of {{< var treaty_campaign_total_cost >}}). This is the campaign financing arm.
+
+The takeover buys the opposition. The bonds fund the campaign. You can buy one or both. Both are EOS products.
+
+## The math on your investment
+
+<div id="eos-investment-calculator" class="eit-shell">
+<span id="eit-src-takeover-cost" class="visually-hidden">{{< var defense_takeover_cost_total >}}</span>
+<span id="eit-src-sp-return" class="visually-hidden">{{< var average_market_return_pct >}}</span>
+
+<div class="eit-grid">
+<div>
+<h3>What does your investment become?</h3>
+<p class="eit-footnote">This calculator models the equity appreciation thesis. If the campaign fails, you hold defense stocks at market return. If it succeeds, the appreciation is substantially higher. Adjust the probability and success-case multiplier to match your own estimate.</p>
+</div>
+
+<div class="eit-controls">
+<div class="eit-group">
+<label for="eit-input-amount">Your investment amount</label>
+<input id="eit-input-amount" type="number" min="1000" step="1000" value="25000" inputmode="numeric">
+<div class="eit-helper">Minimum: friends & family $25K, institutional $100K.</div>
+</div>
+
+<div class="eit-group">
+<label for="eit-input-years">Investment horizon (years)</label>
+<input id="eit-input-years" type="number" min="1" max="30" step="1" value="10" inputmode="numeric">
+<div class="eit-helper">Longer horizons favor the thesis.</div>
+</div>
+
+<div class="eit-group">
+<label for="eit-input-probability">Probability campaign succeeds (%)</label>
+<input id="eit-input-probability" type="number" min="0.1" max="100" step="0.1" value="10" inputmode="decimal">
+<div class="eit-helper">Your estimate. Even at low probabilities, the asymmetry is interesting.</div>
+</div>
+
+<div class="eit-group">
+<label for="eit-input-multiplier">Share price multiplier if campaign succeeds</label>
+<input id="eit-input-multiplier" type="number" min="1" max="100" step="0.5" value="4" inputmode="decimal">
+<div class="eit-helper">Conservative: 2x. Base case: 4x (GDP grows {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}}). Optimistic: 10x+.</div>
+</div>
+</div>
+
+<div class="eit-cards">
+<div class="eit-card good">
+<div class="eit-card-title">Value if Campaign Succeeds</div>
+<div id="eit-output-success" class="eit-card-value"></div>
+<div id="eit-output-success-meta" class="eit-card-meta"></div>
+</div>
+
+<div class="eit-card">
+<div class="eit-card-title">Value if Campaign Fails</div>
+<div id="eit-output-fail" class="eit-card-value"></div>
+<div id="eit-output-fail-meta" class="eit-card-meta"></div>
+</div>
+
+<div class="eit-card good">
+<div class="eit-card-title">Expected Value (probability-weighted)</div>
+<div id="eit-output-ev" class="eit-card-value"></div>
+<div id="eit-output-ev-meta" class="eit-card-meta"></div>
+</div>
+
+<div class="eit-card">
+<div class="eit-card-title">Same Money in the S&P 500</div>
+<div id="eit-output-sp" class="eit-card-value"></div>
+<div id="eit-output-sp-meta" class="eit-card-meta"></div>
+</div>
+
+<div class="eit-card good">
+<div class="eit-card-title">Expected Return vs S&P</div>
+<div id="eit-output-vs" class="eit-card-value"></div>
+<div id="eit-output-vs-meta" class="eit-card-meta"></div>
+</div>
+
+<div class="eit-card">
+<div class="eit-card-title">Your Share of the Takeover</div>
+<div id="eit-output-share" class="eit-card-value"></div>
+<div id="eit-output-share-meta" class="eit-card-meta"></div>
+</div>
+</div>
+
+<div id="eit-summary" class="eit-summary" aria-live="polite"></div>
+</div>
+</div>
+
+<style>
+.eit-shell {
+  --eit-bg: #f5efe4;
+  --eit-card: #fffaf1;
+  --eit-line: rgba(60, 43, 16, 0.16);
+  --eit-text: #2c2115;
+  --eit-muted: #6a5a45;
+  --eit-accent: #a04f1a;
+  --eit-good: #0e5f47;
+  --eit-bad: #8d2f25;
+  background: linear-gradient(135deg, #fbf5ea 0%, #f1e4cb 100%);
+  border: 1px solid var(--eit-line);
+  border-radius: 22px;
+  color: var(--eit-text);
+  margin: 1.5rem 0 2rem;
+  padding: clamp(1rem, 2.5vw, 1.4rem);
+}
+
+.eit-shell h3,
+.eit-shell h4,
+.eit-shell p,
+.eit-shell label,
+.eit-shell div,
+.eit-shell span {
+  color: inherit;
+}
+
+.eit-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.eit-controls {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.eit-group {
+  background: var(--eit-card);
+  border: 1px solid var(--eit-line);
+  border-radius: 16px;
+  padding: 0.95rem;
+}
+
+.eit-group label {
+  display: block;
+  font-size: 0.92rem;
+  font-weight: 600;
+  margin-bottom: 0.45rem;
+}
+
+.eit-group input {
+  background: #fff;
+  border: 1px solid rgba(60, 43, 16, 0.25);
+  border-radius: 10px;
+  box-sizing: border-box;
+  font-size: 1rem;
+  padding: 0.7rem 0.8rem;
+  width: 100%;
+}
+
+.eit-helper {
+  color: var(--eit-muted);
+  font-size: 0.84rem;
+  margin-top: 0.45rem;
+}
+
+.eit-cards {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+}
+
+.eit-card {
+  background: var(--eit-card);
+  border: 1px solid var(--eit-line);
+  border-radius: 16px;
+  padding: 1rem;
+}
+
+.eit-card-title {
+  color: var(--eit-muted);
+  font-size: 0.84rem;
+  letter-spacing: 0.03em;
+  margin-bottom: 0.35rem;
+  text-transform: uppercase;
+}
+
+.eit-card-value {
+  font-size: clamp(1.35rem, 2vw, 1.55rem);
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.eit-card-meta {
+  color: var(--eit-muted);
+  font-size: 0.88rem;
+  line-height: 1.45;
+  margin-top: 0.35rem;
+}
+
+.eit-card.good .eit-card-value {
+  color: var(--eit-good);
+}
+
+.eit-card.bad .eit-card-value {
+  color: var(--eit-bad);
+}
+
+.eit-summary {
+  background: var(--eit-card);
+  border: 1px solid var(--eit-line);
+  border-radius: 16px;
+  font-size: 1rem;
+  line-height: 1.65;
+  padding: 1rem;
+}
+
+.eit-footnote {
+  color: var(--eit-muted);
+  font-size: 0.86rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.visually-hidden {
+  left: -9999px;
+  position: absolute;
+}
+</style>
+
+<script>
+(function() {
+  var root = document.getElementById('eos-investment-calculator');
+  if (!root || root.dataset.initialized === 'true') return;
+  root.dataset.initialized = 'true';
+
+  function parsePrimary(text, fallback) {
+    if (!text) return fallback;
+    var clean = text.replace(/,/g, '').replace(/ /g, ' ');
+    var map = { K: 1e3, M: 1e6, B: 1e9, T: 1e12 };
+    var pctMatch = clean.match(/([0-9]+(?:\.[0-9]+)?)\s*%/);
+    if (pctMatch) return parseFloat(pctMatch[1]) / 100;
+    var re = /\$?\s*([0-9]+(?:\.[0-9]+)?)\s*([KMBT]?)/i;
+    var match = clean.match(re);
+    if (!match) return fallback;
+    var base = parseFloat(match[1]);
+    if (!isFinite(base)) return fallback;
+    var suffix = (match[2] || '').toUpperCase();
+    return base * (map[suffix] || 1);
+  }
+
+  function fmt(v) {
+    return new Intl.NumberFormat('en-US', {
+      style: 'currency', currency: 'USD', maximumFractionDigits: 0
+    }).format(v);
+  }
+
+  function fmtPct(v) { return (v * 100).toFixed(1) + '%'; }
+
+  function setOutput(id, v) {
+    var el = document.getElementById(id);
+    if (el) el.textContent = v;
+  }
+
+  var takeoverCost = parsePrimary(
+    (document.getElementById('eit-src-takeover-cost') || {}).textContent, 700e9);
+  var spReturn = parsePrimary(
+    (document.getElementById('eit-src-sp-return') || {}).textContent, 0.10);
+
+  var amountInput = document.getElementById('eit-input-amount');
+  var yearsInput = document.getElementById('eit-input-years');
+  var probInput = document.getElementById('eit-input-probability');
+  var multInput = document.getElementById('eit-input-multiplier');
+
+  function render() {
+    var amount = Math.max(1000, parseFloat(amountInput.value) || 25000);
+    var years = Math.max(1, Math.min(30, parseInt(yearsInput.value) || 10));
+    var prob = Math.max(0.001, Math.min(1, (parseFloat(probInput.value) || 10) / 100));
+    var mult = Math.max(1, parseFloat(multInput.value) || 4);
+
+    var successValue = amount * mult;
+    var failValue = amount * Math.pow(1 + spReturn, years);
+    var ev = prob * successValue + (1 - prob) * failValue;
+    var spTotal = failValue;
+    var evVsSp = ev - spTotal;
+    var shareOfPlanet = amount / takeoverCost;
+
+    setOutput('eit-output-success', fmt(successValue));
+    setOutput('eit-output-success-meta', mult.toFixed(1) + 'x your investment');
+
+    setOutput('eit-output-fail', fmt(failValue));
+    setOutput('eit-output-fail-meta',
+      'Defense stocks at market return (' + fmtPct(spReturn) + '/yr, ' + years + ' years)');
+
+    setOutput('eit-output-ev', fmt(ev));
+    setOutput('eit-output-ev-meta',
+      fmtPct(prob) + ' chance of ' + fmt(successValue) +
+      ' + ' + fmtPct(1 - prob) + ' chance of ' + fmt(failValue));
+
+    setOutput('eit-output-sp', fmt(spTotal));
+    setOutput('eit-output-sp-meta',
+      fmt(amount) + ' at ' + fmtPct(spReturn) + ' for ' + years + ' years');
+
+    setOutput('eit-output-vs', (evVsSp >= 0 ? '+' : '') + fmt(evVsSp));
+    setOutput('eit-output-vs-meta',
+      evVsSp >= 0
+        ? 'Expected value exceeds S&P by ' + fmt(evVsSp)
+        : 'S&P exceeds expected value by ' + fmt(-evVsSp));
+
+    setOutput('eit-output-share', (shareOfPlanet * 100).toFixed(6) + '%');
+    setOutput('eit-output-share-meta',
+      fmt(amount) + ' of ' + fmt(takeoverCost) + ' total takeover cost');
+
+    setOutput('eit-summary',
+      'You invest ' + fmt(amount) + '. If the campaign succeeds (' +
+      fmtPct(prob) + ' estimated probability), your shares appreciate to ' +
+      fmt(successValue) + ' (' + mult.toFixed(1) + 'x). If it fails, you hold ' +
+      'defense stocks worth ' + fmt(failValue) + ' at market return. ' +
+      'The probability-weighted expected value is ' + fmt(ev) +
+      ', which is ' + fmt(Math.abs(evVsSp)) +
+      (evVsSp >= 0 ? ' more' : ' less') +
+      ' than the S&P would have returned. You also do not die of a curable disease, ' +
+      'which is not reflected in the numbers above but is arguably the better return.'
+    );
+  }
+
+  [amountInput, yearsInput, probInput, multInput].forEach(function(el) {
+    el.addEventListener('input', render);
+  });
+
+  render();
+})();
+</script>
+
+## Your money is melting
+
+This section is not about the fund. It is about everything else you own.
+
+The value of money is a function of two variables: how much you have, and how long you can use it. Your species obsesses over the first variable and ignores the second, which is strange, because the second one is going to zero.
+
+Your probability of being alive and cognitively functional decreases every day. Not because of the market. Because of biology. Every dollar you own is worth slightly less to you today than it was yesterday, because you are slightly closer to the point where you cannot use it. The account balance goes up. The person who can spend it degrades.
+
+The math: if you have $1 million and you spend $200 on something that increases your probability of being alive to use the rest, you have increased the expected value of the remaining $999,800. The $200 does not just generate its own return. It preserves the value of everything else.
+
+This scales linearly with wealth. A person with $1,000 who spends $200 preserves $800 of future utility. A person with $1 billion who spends $200 preserves $999,999,800. Same cost. Same action. The wealthier you are, the more you lose by dying on schedule.
+
+A person who spends 80 years accumulating $100 million and then dies of a treatable disease has built a pile of something that became worthless at the moment of their death. On my planet we find this very confusing. You are building a number and then not being alive for it. It is like spending your life writing a book and then burning it on the last page.
+
+## If you are greedy
+
+If the campaign fails, you hold defense stocks. If it succeeds, the appreciation is a multiple of your investment. The expected value exceeds the S&P at most reasonable probability estimates because the upside is so much larger than the downside. The calculator above lets you test this with your own numbers.
+
+## If you are generous
+
+Every dollar buys voting shares in the companies whose lobbyists are the single largest obstacle to the treaty. The money does not fund an advocacy campaign. It buys the opposition and redirects it.
+
+## If you are both
+
+Greed and generosity arrive at the same place.

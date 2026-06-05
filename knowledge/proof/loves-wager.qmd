@@ -95,6 +95,22 @@ Here are some fun ways to do that. Some of them will work by themselves. Some ar
 
 There is also [a shirt](../appendix/joke.qmd), [a lawsuit](../appendix/lawsuit.qmd), and the option of putting every leader on Earth in a single room and Clockwork-Orange-ing them until they have read all of the above, but I am told at least one of these may be illegal.
 
+### Why some of these are not probabilistic
+
+The 10%-per-mechanism estimate above is deliberately conservative, and for several mechanisms it is wrong in a useful direction. Some of these are not bets. They are purchases.
+
+Shares are for sale. Money buys shares. Enough shares give you board control. The board controls the lobbying budget. Given {{< var defense_takeover_cost_total >}}, the [Loving Takeover](../appendix/loving-takeover.qmd) succeeds with near-certainty. The uncertainty is whether the money gets allocated, not whether the mechanism works once funded. The mechanism is arithmetic.
+
+Clinical trials produce cures. This is not a hypothesis. It is the observed base rate of the last century of medicine. Given {{< var treaty_annual_funding >}} per year pointed at a [trial infrastructure](../solution/dfda.qmd) that runs at {{< var dfda_trial_cost_reduction_factor >}} the current cost, diseases get cured faster. The uncertainty is the timeline, not the outcome.
+
+Lobbying works. The defense industry has demonstrated this for eighty years, exposed to full public scrutiny, and nobody has stopped them. The [Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd) point the same proven mechanism the other direction, with the same money. There is no reason it fails differently.
+
+For each of these mechanisms, the logical structure is the same: the mechanism succeeds if a resource condition is met; the resource condition can be met with a known, finite amount of money; that amount of money is smaller than current global military spending. The conclusion is not probabilistic. It is conditional: *if* the resources are allocated, *then* the mechanism works, where "works" is mechanical, not hopeful.
+
+The probability math applies to the coordination problem (getting the resources allocated), not to the mechanisms themselves. This is the distinction everyone misses. They assume the hard part is curing disease. The hard part is getting humans to spend money on curing disease instead of on the capacity to cause it. Every mechanism in this list is a different answer to that coordination problem. Several of them would work independently. All of them are cheaper than what your governments currently spend on the problem they would solve.
+
+The primary obstacle to ending war and disease is the belief that ending war and disease is hard. It is not. It is expensive, in the same way that buying a house is expensive: the money exists, the mechanism is known, and the only question is whether the entity that has the money decides to use the mechanism. That decision is the only hard part, and it is the part this book is about.
+
 ## The actual cost
 
 The cost is not money. It is the most expensive thing you own, which is your attention.

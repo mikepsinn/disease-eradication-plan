@@ -38,15 +38,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 635 parameters used in the analysis, organized by type:
+This appendix documents all 639 parameters used in the analysis, organized by type:
 
-- External sources (peer-reviewed): 192
-- Calculated values: 324
-- Core definitions: 119
+- External sources (peer-reviewed): 194
+- Calculated values: 325
+- Core definitions: 120
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (324 parameters) • [External Data Sources](#sec-external) (192 parameters) • [Core Definitions](#sec-definitions) (119 parameters)
+[Calculated Values](#sec-calculated) (325 parameters) • [External Data Sources](#sec-external) (194 parameters) • [Core Definitions](#sec-definitions) (120 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -5150,7 +5150,7 @@ $$
 
 :::
 
-### Defense Takeover Cost per Human: $88 {#sec-defense_takeover_cost_per_human}
+### Defense Takeover Cost per Human: $86 {#sec-defense_takeover_cost_per_human}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -5158,18 +5158,25 @@ Per-person cost of the defense takeover distributed across global population
 
 **Inputs**:
 
-- [Defense Takeover Total Cost](#sec-defense_takeover_cost_total): $700 billion (95% CI: $300 billion - $700 billion)
+- [Defense Takeover Total Cost](#sec-defense_takeover_cost_total) 🔢: $690 billion
 - [Global Population in 2024](#sec-global_population_2024) 📊: 8 billion of people (95% CI: 7.8 billion of people - 8.2 billion of people)
 
 $$
 \begin{gathered}
 C_{takeover,pp} \\
 = \frac{C_{takeover}}{Pop_{global}} \\
-= \frac{\$700B}{8B} \\
-= \$87.5
+= \frac{\$690B}{8B} \\
+= \$86.2
 \end{gathered}
 $$
-
+where:
+$$
+\begin{gathered}
+C_{takeover} \\
+= (MarketCap_{US} \\
++ MarketCap_{allied}) \times f_{control} \times m_{premium}
+\end{gathered}
+$$
 *✓ High confidence*
 
 #### Sensitivity Analysis
@@ -5185,6 +5192,43 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-defense_takeover_cost_per_human.qmd >}}
+
+:::
+
+### Defense Takeover Total Cost: $690 billion {#sec-defense_takeover_cost_total}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Total realistic cost to acquire controlling stakes in all major Western defense contractors, including acquisition premium from coordinated buying pressure
+
+**Inputs**:
+
+- [US Defense Primes Market Cap](#sec-defense_primes_market_cap_us) 📊: $670 billion
+- [Allied Defense Primes Market Cap](#sec-defense_primes_market_cap_allied) 📊: $95 billion
+- [Control Fraction](#sec-defense_takeover_control_fraction): 0.501:1
+- [Acquisition Premium Multiplier](#sec-defense_takeover_acquisition_premium): 1.8x (95% CI: 1.5x - 3x)
+
+$$
+\begin{gathered}
+C_{takeover} \\
+= (MarketCap_{US} \\
++ MarketCap_{allied}) \times f_{control} \times m_{premium}
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-defense_takeover_cost_total.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-defense_takeover_cost_total.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-defense_takeover_cost_total.qmd >}}
 
 :::
 
@@ -29174,6 +29218,34 @@ Annual defense industry lobbying spending
 
 :::
 
+### Allied Defense Primes Market Cap: $95 billion {#sec-defense_primes_market_cap_allied}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Combined market capitalization of major allied European defense primes (BAE Systems, Thales)
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*✓ High confidence*
+
+:::
+
+### US Defense Primes Market Cap: $670 billion {#sec-defense_primes_market_cap_us}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Combined market capitalization of major US defense primes (RTX, Boeing, LMT, GD, NOC, LHX, LDOS, BAH, CACI, HII, SAIC)
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*✓ High confidence*
+
+:::
+
 ### 20th-Century Government Democide Total: 262 million deaths {#sec-democide_total_20th_century}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -33282,21 +33354,35 @@ Percentage of budget defense sector keeps under 1% treaty
 
 :::
 
-### Defense Takeover Total Cost: $700 billion {#sec-defense_takeover_cost_total}
+### Acquisition Premium Multiplier: 1.8x {#sec-defense_takeover_acquisition_premium}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Total cost to acquire controlling stakes in all major Western defense contractors (~$670B US primes + ~$50B European primes, rounded to $700B with acquisition premium)
+Expected price multiplier from coordinated buy-up demand pressure (midpoint of 1.5x-3x range based on float constraints)
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$300 billion, $700 billion]
+**Technical**: 95% CI: [1.5x, 3x]
 
-**What this means**: There's significant uncertainty here. The true value likely falls between $300 billion and $700 billion (±29%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: There's significant uncertainty here. The true value likely falls between 1.5x and 3x (±42%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 #### Input Distribution
 
-{{< include ../figures/distribution-defense_takeover_cost_total.qmd >}}
+{{< include ../figures/distribution-defense_takeover_acquisition_premium.qmd >}}
+
+*Core definition*
+
+:::
+
+### Control Fraction: 0.501:1 {#sec-defense_takeover_control_fraction}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Fraction of shares required for board control (50% + 1 share)
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
 
 *Core definition*
 

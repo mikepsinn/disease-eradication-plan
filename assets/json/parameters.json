@@ -1658,6 +1658,28 @@
       ],
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/faq.html"
     },
+    "DEFENSE_PRIMES_MARKET_CAP_ALLIED": {
+      "value": 95000000000.0,
+      "formatted": "$95 billion",
+      "unit": "USD",
+      "description": "Combined market capitalization of major allied European defense primes (BAE Systems, Thales)",
+      "sourceType": "external",
+      "sourceRef": null,
+      "confidence": "high",
+      "formula": null,
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/loving-takeover.html"
+    },
+    "DEFENSE_PRIMES_MARKET_CAP_US": {
+      "value": 670000000000.0,
+      "formatted": "$670 billion",
+      "unit": "USD",
+      "description": "Combined market capitalization of major US defense primes (RTX, Boeing, LMT, GD, NOC, LHX, LDOS, BAH, CACI, HII, SAIC)",
+      "sourceType": "external",
+      "sourceRef": null,
+      "confidence": "high",
+      "formula": null,
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/loving-takeover.html"
+    },
     "DEFENSE_SECTOR_RETENTION_PCT": {
       "value": 0.99,
       "formatted": "99%",
@@ -1669,9 +1691,35 @@
       "formula": null,
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/solution.html"
     },
+    "DEFENSE_TAKEOVER_ACQUISITION_PREMIUM": {
+      "value": 1.8,
+      "formatted": "1.8x",
+      "unit": "x",
+      "description": "Expected price multiplier from coordinated buy-up demand pressure (midpoint of 1.5x-3x range based on float constraints)",
+      "sourceType": "definition",
+      "sourceRef": null,
+      "confidence": "high",
+      "formula": null,
+      "confidenceInterval": [
+        1.5,
+        3.0
+      ],
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/loving-takeover.html"
+    },
+    "DEFENSE_TAKEOVER_CONTROL_FRACTION": {
+      "value": 0.501,
+      "formatted": "0.501:1",
+      "unit": "ratio",
+      "description": "Fraction of shares required for board control (50% + 1 share)",
+      "sourceType": "definition",
+      "sourceRef": null,
+      "confidence": "high",
+      "formula": null,
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/loving-takeover.html"
+    },
     "DEFENSE_TAKEOVER_COST_PER_HUMAN": {
-      "value": 87.5,
-      "formatted": "$88",
+      "value": 86.234625,
+      "formatted": "$86",
       "unit": "USD",
       "description": "Per-person cost of the defense takeover distributed across global population",
       "sourceType": "calculated",
@@ -1681,18 +1729,14 @@
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/loving-takeover.html"
     },
     "DEFENSE_TAKEOVER_COST_TOTAL": {
-      "value": 700000000000.0,
-      "formatted": "$700 billion",
+      "value": 689877000000.0,
+      "formatted": "$690 billion",
       "unit": "USD",
-      "description": "Total cost to acquire controlling stakes in all major Western defense contractors (~$670B US primes + ~$50B European primes, rounded to $700B with acquisition premium)",
-      "sourceType": "definition",
+      "description": "Total realistic cost to acquire controlling stakes in all major Western defense contractors, including acquisition premium from coordinated buying pressure",
+      "sourceType": "calculated",
       "sourceRef": null,
       "confidence": "high",
-      "formula": null,
-      "confidenceInterval": [
-        300000000000.0,
-        700000000000.0
-      ],
+      "formula": "(DEFENSE_PRIMES_MARKET_CAP_US + DEFENSE_PRIMES_MARKET_CAP_ALLIED) * DEFENSE_TAKEOVER_CONTROL_FRACTION * DEFENSE_TAKEOVER_ACQUISITION_PREMIUM",
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/loving-takeover.html"
     },
     "DEMOCIDE_TOTAL_20TH_CENTURY": {
@@ -4662,6 +4706,314 @@
       "confidence": "high",
       "formula": null,
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/economics/1-pct-treaty-impact.html"
+    },
+    "MECHANISM_COURT_EV": {
+      "value": 11357100000.0,
+      "formatted": "$11.4 billion",
+      "unit": "USD",
+      "description": "Expected annual social value from the Court of Humanity: P(success) * annual peace dividend. Expenditure ($30M).",
+      "sourceType": "calculated",
+      "sourceRef": null,
+      "confidence": "high",
+      "formula": "MECHANISM_COURT_OF_HUMANITY_P_SUCCESS * PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/proof/loves-wager.html"
+    },
+    "MECHANISM_COURT_OF_HUMANITY_NET_COST": {
+      "value": 30000000.0,
+      "formatted": "$30 million",
+      "unit": "USD",
+      "description": "One-time cost to build the Court of Humanity. Range reflects digital-first institutional design (no physical courtrooms, no detention, AI-assisted evidence triage, cryptographic provenance, stratified random jury infrastructure). Lower bound: minimal viable institution. Upper bound: fully-staffed initial operations, roughly 27% of one year of ICC operating budget (the ICC funds physical courtrooms, detention, and 425+ staff).",
+      "sourceType": "definition",
+      "sourceRef": null,
+      "confidence": "estimated",
+      "formula": null,
+      "confidenceInterval": [
+        10000000.0,
+        50000000.0
+      ],
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/solution/court-of-humanity.html"
+    },
+    "MECHANISM_COURT_OF_HUMANITY_P_SUCCESS": {
+      "value": 0.1,
+      "formatted": "0.1:1",
+      "unit": "ratio",
+      "description": "Probability of treaty passage given Court of Humanity operational. Lowest direct causal link: court rulings are non-binding but create political pressure.",
+      "sourceType": "definition",
+      "sourceRef": null,
+      "confidence": "high",
+      "formula": null,
+      "confidenceInterval": [
+        0.03,
+        0.25
+      ],
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/proof/loves-wager.html"
+    },
+    "MECHANISM_DFDA_EV": {
+      "value": 79499700000.0,
+      "formatted": "$79.5 billion",
+      "unit": "USD",
+      "description": "Expected annual social value from the dFDA: P(success) * annual peace dividend. Platform build is expenditure ($500M).",
+      "sourceType": "calculated",
+      "sourceRef": null,
+      "confidence": "high",
+      "formula": "MECHANISM_DFDA_P_SUCCESS * PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/proof/loves-wager.html"
+    },
+    "MECHANISM_DFDA_NET_COST": {
+      "value": 500000000.0,
+      "formatted": "$500 million",
+      "unit": "USD",
+      "description": "Net cost to build and deploy the dFDA to operational scale (expenditure; platform generates revenue after deployment but initial build is sunk cost)",
+      "sourceType": "definition",
+      "sourceRef": null,
+      "confidence": "high",
+      "formula": null,
+      "confidenceInterval": [
+        200000000.0,
+        1000000000.0
+      ],
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/proof/loves-wager.html"
+    },
+    "MECHANISM_DFDA_P_SUCCESS": {
+      "value": 0.7,
+      "formatted": "0.7:1",
+      "unit": "ratio",
+      "description": "Probability that a funded dFDA produces sufficient cures to create political momentum for the treaty. High because clinical trials mechanically produce treatments; the platform reduces cost per trial.",
+      "sourceType": "definition",
+      "sourceRef": null,
+      "confidence": "high",
+      "formula": null,
+      "confidenceInterval": [
+        0.4,
+        0.9
+      ],
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/proof/loves-wager.html"
+    },
+    "MECHANISM_IAB_ADMIN_RATE": {
+      "value": 0.05,
+      "formatted": "0.05:1",
+      "unit": "ratio",
+      "description": "Annual administrative cost of IABs as fraction of principal (legal, compliance, reporting). The principal itself is investor capital returned with interest, not EOS expenditure.",
+      "sourceType": "definition",
+      "sourceRef": null,
+      "confidence": "high",
+      "formula": null,
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/proof/loves-wager.html"
+    },
+    "MECHANISM_IAB_EV": {
+      "value": 68142600000.0,
+      "formatted": "$68.1 billion",
+      "unit": "USD",
+      "description": "Expected annual social value from IABs: P(success) * annual peace dividend. Investor capital is returned with interest, not spent.",
+      "sourceType": "calculated",
+      "sourceRef": null,
+      "confidence": "high",
+      "formula": "MECHANISM_IAB_P_SUCCESS * PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/proof/loves-wager.html"
+    },
+    "MECHANISM_IAB_NET_COST": {
+      "value": 50000000.0,
+      "formatted": "$50 million",
+      "unit": "USD",
+      "description": "Net annual cost of IABs to EOS: administration only (investor capital is returned, not spent)",
+      "sourceType": "calculated",
+      "sourceRef": null,
+      "confidence": "high",
+      "formula": "TREATY_CAMPAIGN_TOTAL_COST * MECHANISM_IAB_ADMIN_RATE",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/proof/loves-wager.html"
+    },
+    "MECHANISM_IAB_P_SUCCESS": {
+      "value": 0.6,
+      "formatted": "0.6:1",
+      "unit": "ratio",
+      "description": "Probability of treaty passage given full IAB issuance. High because lobbying is a proven mechanism and IABs align politician incentives directly.",
+      "sourceType": "definition",
+      "sourceRef": null,
+      "confidence": "high",
+      "formula": null,
+      "confidenceInterval": [
+        0.3,
+        0.85
+      ],
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/proof/loves-wager.html"
+    },
+    "MECHANISM_LOVING_TAKEOVER_CAPITAL": {
+      "value": 689877000000.0,
+      "formatted": "$690 billion",
+      "unit": "USD",
+      "description": "Total realistic cost to acquire controlling stakes in all major Western defense contractors, including acquisition premium from coordinated buying pressure",
+      "sourceType": "calculated",
+      "sourceRef": null,
+      "confidence": "high",
+      "formula": "(DEFENSE_PRIMES_MARKET_CAP_US + DEFENSE_PRIMES_MARKET_CAP_ALLIED) * DEFENSE_TAKEOVER_CONTROL_FRACTION * DEFENSE_TAKEOVER_ACQUISITION_PREMIUM",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/loving-takeover.html"
+    },
+    "MECHANISM_LOVING_TAKEOVER_EV": {
+      "value": 107892450000.0,
+      "formatted": "$108 billion",
+      "unit": "USD",
+      "description": "Expected annual social value from the Loving Takeover: P(success) * annual peace dividend. Capital is deployed into shares (retained and appreciating), not spent.",
+      "sourceType": "calculated",
+      "sourceRef": null,
+      "confidence": "high",
+      "formula": "MECHANISM_LOVING_TAKEOVER_P_SUCCESS * PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/proof/loves-wager.html"
+    },
+    "MECHANISM_LOVING_TAKEOVER_NET_COST": {
+      "value": 13797540000.0,
+      "formatted": "$13.8 billion",
+      "unit": "USD",
+      "description": "Net annual cost of the Loving Takeover: opportunity cost only (capital deployed into shares is retained, not spent). At 2% annual opportunity cost rate.",
+      "sourceType": "calculated",
+      "sourceRef": null,
+      "confidence": "high",
+      "formula": "DEFENSE_TAKEOVER_COST_TOTAL * MECHANISM_OPPORTUNITY_COST_RATE",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/proof/loves-wager.html"
+    },
+    "MECHANISM_LOVING_TAKEOVER_P_SUCCESS": {
+      "value": 0.95,
+      "formatted": "0.95:1",
+      "unit": "ratio",
+      "description": "Probability of treaty passage given full funding of the Loving Takeover (mechanical: money buys shares, shares buy board control, board redirects lobbying)",
+      "sourceType": "definition",
+      "sourceRef": null,
+      "confidence": "high",
+      "formula": null,
+      "confidenceInterval": [
+        0.8,
+        0.99
+      ],
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/proof/loves-wager.html"
+    },
+    "MECHANISM_OPPORTUNITY_COST_RATE": {
+      "value": 0.02,
+      "formatted": "0.02:1",
+      "unit": "ratio",
+      "description": "Annual opportunity cost rate for capital deployment mechanisms (forgone excess return vs market). Defense stocks historically return near-market, so excess opportunity cost is low.",
+      "sourceType": "definition",
+      "sourceRef": null,
+      "confidence": "high",
+      "formula": null,
+      "confidenceInterval": [
+        0.0,
+        0.05
+      ],
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/proof/loves-wager.html"
+    },
+    "MECHANISM_REFERENDUM_EV": {
+      "value": 34071300000.0,
+      "formatted": "$34.1 billion",
+      "unit": "USD",
+      "description": "Expected annual social value from the global referendum: P(success) * annual peace dividend. Expenditure ($250M).",
+      "sourceType": "calculated",
+      "sourceRef": null,
+      "confidence": "high",
+      "formula": "MECHANISM_REFERENDUM_P_SUCCESS * PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/proof/loves-wager.html"
+    },
+    "MECHANISM_REFERENDUM_NET_COST": {
+      "value": 250000000.0,
+      "formatted": "$250 million",
+      "unit": "USD",
+      "description": "Viral referendum budget for 280M verified votes (base: $250M realistic with $0.50/vote avg, range: $150M optimistic $0.20/vote to $410M worst-case $1.05/vote). Components: platform ($35M), verification infrastructure (280M × friction × $0.18-0.20), tiered referral payments (varies by virality and marginal cost curve per diffusion theory), marketing seed ($5-15M). Based on PayPal referral economics ($18-36 inflation-adjusted) and biometric verification pricing ($0.15-0.25 at 300M+ scale).",
+      "sourceType": "definition",
+      "sourceRef": null,
+      "confidence": "medium",
+      "formula": "PLATFORM + VERIFICATION + PAYMENTS (tiered by adopter segment) + MARKETING",
+      "confidenceInterval": [
+        150000000.0,
+        410000000.0
+      ],
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/economics/1-pct-treaty-impact.html"
+    },
+    "MECHANISM_REFERENDUM_P_SUCCESS": {
+      "value": 0.3,
+      "formatted": "0.3:1",
+      "unit": "ratio",
+      "description": "Probability of treaty passage given a successful global referendum demonstrating majority support. Non-binding but creates political pressure.",
+      "sourceType": "definition",
+      "sourceRef": null,
+      "confidence": "high",
+      "formula": null,
+      "confidenceInterval": [
+        0.1,
+        0.55
+      ],
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/proof/loves-wager.html"
+    },
+    "MECHANISM_SHIRT_CASCADE_EV": {
+      "value": 28392750000.0,
+      "formatted": "$28.4 billion",
+      "unit": "USD",
+      "description": "Expected annual social value from the shirt cascade: P(success) * annual peace dividend. Expenditure ($50M).",
+      "sourceType": "calculated",
+      "sourceRef": null,
+      "confidence": "high",
+      "formula": "MECHANISM_SHIRT_CASCADE_P_SUCCESS * PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/proof/loves-wager.html"
+    },
+    "MECHANISM_SHIRT_CASCADE_NET_COST": {
+      "value": 50000000.0,
+      "formatted": "$50 million",
+      "unit": "USD",
+      "description": "Total foundation escrow required to fund the seed-wearer program: threshold of visible humans multiplied by blended cost per wearer. Held in Earth Optimization Prize assurance contract; refunded at structural EOP return rate if neither treaty passage nor target hit.",
+      "sourceType": "calculated",
+      "sourceRef": null,
+      "confidence": "high",
+      "formula": "SHIRT_SEED_WEARERS_THRESHOLD × SHIRT_SEED_COST_PER_WEARER_USD",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/joke.html"
+    },
+    "MECHANISM_SHIRT_CASCADE_P_SUCCESS": {
+      "value": 0.25,
+      "formatted": "25%",
+      "unit": "rate",
+      "description": "Subjective probability that the seed program triggers a viral cascade to majority-of-humanity participation, conditional on the seed threshold being met. Deliberately conservative: even at 25% the expected-value math beats every conventional foundation intervention. Sensitivity range covers skeptic and base-case scenarios.",
+      "sourceType": "definition",
+      "sourceRef": null,
+      "confidence": "low",
+      "formula": null,
+      "confidenceInterval": [
+        0.05,
+        0.6
+      ],
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/joke.html"
+    },
+    "MECHANISM_TREATY_CAMPAIGN_EV": {
+      "value": 45428400000.0,
+      "formatted": "$45.4 billion",
+      "unit": "USD",
+      "description": "Expected annual social value from the treaty campaign: P(success) * annual peace dividend. Lobbying + referendum is expenditure ($1B).",
+      "sourceType": "calculated",
+      "sourceRef": null,
+      "confidence": "high",
+      "formula": "MECHANISM_TREATY_CAMPAIGN_P_SUCCESS * PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/proof/loves-wager.html"
+    },
+    "MECHANISM_TREATY_CAMPAIGN_NET_COST": {
+      "value": 1000000000.0,
+      "formatted": "$1 billion",
+      "unit": "USD",
+      "description": "Total treaty campaign cost (100% VICTORY Incentive Alignment Bonds)",
+      "sourceType": "calculated",
+      "sourceRef": null,
+      "confidence": "high",
+      "formula": "REFERENDUM + LOBBYING + RESERVE",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/economics/1-pct-treaty-impact.html"
+    },
+    "MECHANISM_TREATY_CAMPAIGN_P_SUCCESS": {
+      "value": 0.4,
+      "formatted": "0.4:1",
+      "unit": "ratio",
+      "description": "Probability of treaty passage given full funding of the lobbying + referendum campaign ($1B). Depends on political will after lobbying and public pressure.",
+      "sourceType": "definition",
+      "sourceRef": null,
+      "confidence": "high",
+      "formula": null,
+      "confidenceInterval": [
+        0.15,
+        0.7
+      ],
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/proof/loves-wager.html"
     },
     "MEDICAL_QALY_THRESHOLD": {
       "value": 100000.0,

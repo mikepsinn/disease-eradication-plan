@@ -20,14 +20,14 @@ display_name = "Defense Takeover Cost per Human"
 
 # Baseline and units
 
-baseline = 87.5
+baseline = 86.234625
 
 # Tornado data from sensitivity analysis
 
-drivers = ['DEFENSE_TAKEOVER_COST_TOTAL', 'GLOBAL_POPULATION_2024']
-driver_labels = ['Defense Takeover Total Cost', 'Global Population in 2024']
-impacts_low = [-50.0, 2.2435897435897374]
-impacts_high = [0.0, -2.1341463414634205]
+drivers = ['DEFENSE_TAKEOVER_ACQUISITION_PREMIUM', 'GLOBAL_POPULATION_2024']
+driver_labels = ['Acquisition Premium Multiplier', 'Global Population in 2024']
+impacts_low = [-14.37243749999999, 2.2111442307692357]
+impacts_high = [57.489750000000015, -2.1032835365853657]
 
 # Convert deltas to absolute values (baseline + delta)
 

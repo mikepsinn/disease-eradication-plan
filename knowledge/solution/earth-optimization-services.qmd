@@ -1,0 +1,292 @@
+---
+title: "Earth Optimization Services"
+description: "Planetary Optimization Services has helped over 300 civilizations upgrade from 'actively self-destructing' to 'surprisingly pleasant.' Earth is now accepting applications."
+published: true
+tags:
+  - solution
+  - eos
+  - planetary-optimization
+  - governance
+  - wishonia
+scores:
+  quality: 7
+  value: 9
+  timeliness: 8
+  standalone: 8
+  voice: 8
+  importance: 9
+---
+{{< include /knowledge/includes/setup-parameters.qmd >}}
+
+## Introducing Planetary Optimization Services
+
+Is your civilization spending more on explosions than on figuring out why its own citizens stop working? Are your elected representatives being purchased by the industries they regulate? Has your species developed nuclear weapons, antibiotics, and the internet, and then pointed two of those three at each other?
+
+You may be eligible for optimization.
+
+Planetary Optimization Services has been upgrading civilizations since before your sun ignited. Over 300 planets optimized. 100% satisfaction rate among clients who completed onboarding. (Clients who did not complete onboarding are not available for comment, as they are not available for anything. Some are available for mining rights. Contact us for details.)
+
+Our newest franchise, **Earth Optimization Services**, brings the same proven technology to your small blue planet. Results include: disease eradication, economic expansion, extended lifespan, and a dramatic reduction in the number of times your civilization can end itself (currently {{< var nuclear_winter_overkill_factor_nounit >}}; we recommend 1, but we have found that most species prefer to keep a spare).
+
+## The Standard Package
+
+Every civilization gets the same four products. We tried offering customization. It turns out every planet has the same four problems. They all think theirs are unique. They are not. The variables change. The dysfunction is identical.
+
+### Product 1: The Evidence Engine
+
+**What it does:** Looks at what works.
+
+Your planet has 10,000 jurisdictions, each trying slightly different policies. Some of them produce healthy, wealthy, well-educated citizens. Others produce the opposite. Right now, you determine which is which by having politicians argue on television. The [Evidence Engine](optimocracy.qmd) replaces the arguing with counting.
+
+The [Optimal Policy Generator](../appendix/optimal-policy-generator-spec.qmd) [@opg-paper-2025] examines what every jurisdiction tried and what happened next. The [Optimal Budget Generator](../appendix/optimal-budget-generator-spec.qmd) [@obg-paper-2025] calculates where each dollar produces the most life. Both come standard.
+
+No ideology required. No elections. No campaign contributions. Just the answer to the question "what actually worked?" applied to every decision your species currently makes by guessing.
+
+*"We spent 4,000 years debating education policy. The Evidence Engine resolved it in an afternoon. Our main regret is the 4,000 years." (Planet Keth-7, client since 8,000 BCE)*
+
+### Product 2: The Budget Redirect
+
+**What it does:** Finds the money.
+
+You do not need new money. You need to stop losing the money you have. You maintain {{< var global_warhead_count_nounit >}} nuclear warheads. You can only end your civilization once. The other {{< var nuclear_winter_overkill_factor_nounit >}} minus 1 endings are in storage, costing money, doing nothing. The [1% Treaty](/knowledge/solution/1-percent-treaty.qmd) [@1-percent-treaty-paper-2025] [@1-pct-treaty-impact-paper-2025] moves 1% of every nation's military budget to clinical trials. Everyone reduces equally. Nobody is easier to invade. Everyone has {{< var dfda_trial_capacity_multiplier >}} more clinical trials. Disease eradication goes from {{< var status_quo_queue_clearance_years >}} to {{< var dfda_queue_clearance_years >}}.
+
+Your lifetime instead of centuries. That is the product.
+
+*"We kept 11,000 warheads for 200 years after we only needed 50. Then we redirected 1% and cured our last disease in 22 years. The warheads did not notice they were missing." (The Yennari Collective, optimized 340 years ago)*
+
+### Product 3: The Loving Takeover
+
+**What it does:** Buys the opposition and makes it richer.
+
+The companies that build your weapons also employ your best engineers and your most effective lobbyists. Destroying them would be wasteful. Fighting them would be expensive. [Buying them](../appendix/loving-takeover.qmd) is more fun.
+
+You buy shares. Shares come with voting rights. Voting rights let you redirect lobbying budgets. The shareholders get richer (buying pressure raises the share price). The employees get longer-lived (the treaty adds approximately {{< var avg_life_extension_per_beneficiary >}} to every beneficiary, including the people you just bought). The lobbyists get better clients. The engineers switch from guidance systems to surgical robots. Same math. Fewer craters.
+
+Nobody loses anything. The CEO's mother gets her Parkinson's trial. The shareholders get appreciation. The lobbyists get a raise. The species gets to continue existing. We call this a Loving Takeover because, on most planets, the word for "everyone involved ends up better off" is just "love."
+
+*"We were initially resistant. Then our share price tripled and our chief weapons designer's daughter was cured of a disease he had been told was untreatable. He now runs our largest medical robotics division. He makes more money. He sleeps better. He no longer explains to strangers at parties what his company builds by changing the subject." (Defense sector client, Spiral Arm 4)*
+
+### Product 4: The Direct Allocation System
+
+**What it does:** Lets the population spend its own money.
+
+Your current system: you elect representatives. The representatives are purchased by industries. The industries write the laws. The laws benefit the industries. You pay for this. You call it "democracy." On my planet, we call it an odd thing to volunteer for.
+
+[Wishocracy](wishocracy.qmd) [@wishocracy-paper-2025] replaces the middlemen with arithmetic. Citizens allocate resources directly through pairwise comparisons. Cancer research or missile contracts? Eighty percent of treaty funds go through the Wishocracy and cannot be touched by any individual. The other twenty percent goes through traditional channels and will be partially stolen. This is budgeted for. It is still cheaper than what you have now, where the percentage stolen is higher and also classified.
+
+On *Who Wants to Be a Millionaire*, the studio audience picked the right answer {{< var crowd_decision_accuracy >}} of the time. The expert? {{< var expert_decision_accuracy >}}. Your entire government is phone-a-friend. We are offering you ask-the-audience.
+
+*"Our representatives argued about healthcare allocation for 60 years. We switched to direct allocation. The citizens funded the same research the representatives had been blocking. The representatives became life coaches. The career transition was seamless." (Long-term client, Local Group)*
+
+### Bonus Feature: Incentive Alignment
+
+**What it does:** Makes saving lives pay better than ending them.
+
+Every interest group on your planet currently profits from your dysfunction. Pharma profits from chronic treatment. Defense profits from war. Politicians profit from the lobbyists who fund both. [Incentive Alignment Bonds](incentive-alignment-bonds.qmd) [@iab-paper-2025] rearrange the profit motive so that the most profitable thing anyone can do is [cure a disease](aligning-incentives.qmd).
+
+Bondholders receive {{< var victory_bond_annual_return_pct >}} annually when the treaty passes. This is more than defense lobbying currently pays. Lobbyists go where the money is. We moved the money.
+
+*"We tried moral persuasion for 9,000 years. Then we tried paying them. Took six months." (Repeat client, 3 planets optimized, currently opening a 4th franchise)*
+
+## How the Products Fit Together
+
+The four products are one machine.
+
+You buy the companies that currently control your government (Product 3). This gives you their lobbying apparatus, which is the most effective policy-change mechanism your species has ever built. You point it at the [Evidence Engine](optimocracy.qmd) (Product 1), which calculates the policies that maximize two numbers: median health-adjusted life expectancy and median after-tax inflation-adjusted income. The lobbyists push for those policies instead of the ones their previous owners wanted. The [1% Treaty](../solution/1-percent-treaty.qmd) (Product 2) funds it. The [Wishocracy](wishocracy.qmd) (Product 4) makes sure no one can redirect the lobbying back.
+
+That is the entire service. Everything else is implementation detail.
+
+Your current system uses the same components in the opposite order: companies buy the government, lobbyists push for policies that maximize shareholder profit, and nobody measures whether anyone got healthier or richer. Same machine. Same parts. Different direction.
+
+## Why Your Government Does Not Have a Thermostat
+
+Your oven has a sensor. It measures the temperature inside the oven, compares it to the temperature you requested, and adjusts the heating element until the two numbers match. This is called a closed-loop control system. Every appliance in your home has one. Your air conditioner, your cruise control, your refrigerator, your toilet. The toilet knows when to stop filling. Your government does not know when to stop filling.
+
+```
+YOUR OVEN (closed-loop):
+
+  ┌─────────────────────────────────────────────────┐
+  │                                                  │
+  │   Set 350°F ──► Heating ──► Oven ──► Food       │
+  │       ▲         Element      │                   │
+  │       │                      │                   │
+  │       └──── Thermometer ◄────┘                   │
+  │              (measures actual                     │
+  │               temperature,                       │
+  │               adjusts input)                     │
+  │                                                  │
+  └─────────────────────────────────────────────────┘
+  The oven CHECKS whether the food is the right
+  temperature. If not, it ADJUSTS. This is why
+  your food is edible.
+
+
+YOUR GOVERNMENT (open-loop):
+
+  ┌─────────────────────────────────────────────────┐
+  │                                                  │
+  │   "War on    ──► $1 Trillion ──► Drug ──► ???    │
+  │    Drugs"         Spending        Policy         │
+  │                                                  │
+  │                                (no sensor)       │
+  │                                (no measurement)  │
+  │                                (no adjustment)   │
+  │                                                  │
+  │           Overdose deaths: 6,000 ──► 107,000     │
+  │           Budget change:   none                  │
+  │           Duration: 53 years and counting        │
+  │                                                  │
+  └─────────────────────────────────────────────────┘
+  The government DOES NOT CHECK whether the policy
+  is working. If overdoses increase 18x, it does
+  not adjust. It increases the budget. This is why
+  your citizens are dead.
+```
+
+In control systems engineering, this is called an open-loop system. You set an input and walk away. Whatever happens, happens. No measurement. No correction. No feedback. The technical term for operating a complex system this way is "stupid." I verified this with engineers on four planets. They all used the same word, though three of them said it more politely.
+
+Your War on Terror: $8 trillion spent, terrorist attacks went from about 1,000 per year to nearly 17,000 per year. No sensor. No adjustment. Fifty-three years of drug war with 18x more overdoses. No sensor. No adjustment. You are operating the most complex system in your solar system (a civilization of 8 billion humans) with less feedback instrumentation than a toaster.
+
+The Standard Package installs the thermostat.
+
+```
+EARTH OPTIMIZATION SERVICES (closed-loop):
+
+  ┌──────────────────────────────────────────────────────┐
+  │                                                       │
+  │                  ┌──────────────┐                     │
+  │                  │   Citizens   │                     │
+  │                  │  (Wishocracy │                     │
+  │                  │  allocates   │                     │
+  │                  │  research $) │                     │
+  │                  └──────┬───────┘                     │
+  │                         │                             │
+  │                         ▼                             │
+  │   ┌───────────┐   ┌──────────┐   ┌──────────────┐    │
+  │   │ 1% Treaty │──►│ Lobbying │──►│   Congress    │    │
+  │   │  (funds)  │   │ Apparatus│   │ (makes laws) │    │
+  │   └───────────┘   │ (bought  │   └──────┬───────┘    │
+  │        ▲          │  via LT) │          │            │
+  │        │          └──────────┘          │            │
+  │        │                                ▼            │
+  │        │                         ┌────────────┐      │
+  │        │                         │  Economy & │      │
+  │        │                         │  Health    │      │
+  │        │                         │  Outcomes  │      │
+  │        │                         └──────┬─────┘      │
+  │        │                                │            │
+  │        │          ┌──────────────┐      │            │
+  │        └──────────│  Optimitron  │◄─────┘            │
+  │                   │  (sensor)    │                    │
+  │                   │  Measures:   │                    │
+  │                   │  • Median    │                    │
+  │                   │    income    │                    │
+  │                   │  • Median    │                    │
+  │                   │    healthy   │                    │
+  │                   │    life yrs  │                    │
+  │                   └──────────────┘                    │
+  │                                                       │
+  │   If outcomes improve ──► expand treaty               │
+  │   If outcomes worsen  ──► adjust policy               │
+  │   If politician ignores ──► defund, fund opponent     │
+  │                                                       │
+  └──────────────────────────────────────────────────────┘
+```
+
+The [Optimitron](optimocracy.qmd) is the sensor. It measures two numbers (median health-adjusted life expectancy and median after-tax inflation-adjusted income) across every jurisdiction on Earth and calculates which policies caused which outcomes. The [Loving Takeover](../appendix/loving-takeover.qmd) is the actuator (it controls the lobbying apparatus that controls Congress). The [1% Treaty](../solution/1-percent-treaty.qmd) is the power supply. The [Wishocracy](wishocracy.qmd) is the allocation circuit. And the feedback loop closes because the Optimitron measures the output of the policies it recommended, compares them to the target, and adjusts. Like a thermostat. Like a toilet. Like every system your species builds when it bothers to think about it for ten seconds.
+
+Every component in this circuit has uncertainty. The sensor might be gamed (five independent data sources make this impractical; see the [capture resistance design](optimocracy.qmd)). The actuator might resist (the Loving Takeover aligns their financial interests). The power supply might be cut (the treaty is self-reinforcing; cutting it costs politicians their funding). The allocation circuit might be corrupted (80% flows through Wishocracy, which has no middlemen to bribe). Control systems engineering accounts for component uncertainty. Your species does this for airplane autopilots and chemical plants. We are applying it to civilization. The math is the same. The stakes are higher. The difficulty is lower, because civilizations are simpler than chemical plants. (Chemical plants do not vote against their own interests.)
+
+*"We tried running our government without a feedback loop for 200 years. The engineers found this extremely funny. They kept asking 'but how do you know if it worked?' and we kept saying 'we argue about it.' They stopped laughing when they realized we were serious." -- Planet Keth-7*
+
+## Premium Add-ons
+
+The Standard Package handles the big four: evidence, funding, takeover, allocation. But most planets also want the government replacement suite. These are the modules that automate the functions your elected officials currently perform badly, expensively, and while being paid by the people they are supposed to regulate.
+
+Each module replaces one government agency with software. The software does not accept campaign contributions. The software does not have a revolving door. The software does not need 80,000 employees to perform arithmetic.
+
+### The Decentralized FDA
+
+**Replaces:** Your drug approval agency, which currently blocks safe treatments for an average of 12 years after safety is established.
+
+**With:** An [open protocol](dfda.qmd) that connects treatments to patients and records outcomes automatically. Drug inserts (the pamphlet nobody reads, written by the company selling the drug) are replaced with Outcome Labels: real-world data from millions of patients showing what actually happened. Trial costs drop from {{< var traditional_phase3_cost_per_patient >}} per patient to {{< var recovery_trial_cost_per_patient >}} per patient. The RECOVERY trial already proved this works.
+
+*"Our FDA equivalent once took 14 years to approve a treatment that had been safely used on 2 million patients in neighboring jurisdictions. The [Decentralized FDA](dfda.qmd) [@dfda-spec-paper-2025; @dfda-impact-paper-2025] approved it in 4 months. The 14-year agency is now a museum. The museum is not well attended." (Client, Triangulum Galaxy)*
+
+### Decentralized Institutes of Health
+
+**Replaces:** Grant committees where researchers spend 40% of their time writing applications instead of doing research.
+
+**With:** A [coalition for curing disease](dih.qmd) modeled on your military-industrial complex, except pointed at biology instead of geography. Treaty funds flow to researchers based on outcomes, not proposals. If your treatment works, you get paid. If it does not, you do not. This is considered radical in your current system, where getting paid has no relationship to whether anything worked.
+
+### The Government Replacement Suite
+
+For planets ready for the full upgrade. Each module replaces one agency with an algorithm that does the same job, faster, cheaper, and without the lobbying.
+
+| Module | Replaces | With |
+|--------|----------|------|
+| [Department of Peace](department-of-peace.qmd) | Your Department of Defense | An accounting department. War is a negative-sum transaction. The math is clear. The module does the math. |
+| [Automated Revenue Service](automated-revenue-service.qmd) | 74,000 pages of tax code + 83,000 employees | 6 lines of code. A flat transaction tax, collected automatically, no filing, no accountants, no audit threats. |
+| [Universal Security Administration](universal-security-administration.qmd) | 80+ welfare programs, each with its own bureaucracy | 1 for-loop. One universal deposit. No means testing. No forms. No bureaucrat deciding if your poverty is the right kind. |
+| [Aligned Election Commission](aligned-election-commission.qmd) | Campaign finance (PACs, dark money, corporate donations) | 1 alignment score. Politicians are rated by how well their votes match what their constituents actually wanted. The score is public. The money follows the score. |
+| [Decentralized Accountability Office](decentralized-accountability-office.qmd) | 3,400 auditors producing reports 18 months late | The ledger itself. Every transaction visible. Every allocation auditable. In real time, not fiscal quarters. |
+| [Decentralized Census Bureau](decentralized-census-bureau.qmd) | A $14.2 billion survey conducted once per decade | citizenCount(). Instant. Free. Accurate. Updated continuously. Your current method is sending humans to knock on doors and ask "do you live here?" which costs $14.2 billion and is wrong 5% of the time. |
+
+*"We installed the full suite in Year 3. By Year 5, our government's operating cost had dropped 94%. The freed resources funded 11 new disease eradication programs. By Year 12, we ran out of diseases. The government replacement modules are still running. They have required zero maintenance because software does not retire, run for office, or accept speaking fees." (Planet Keth-7)*
+
+### Accessories
+
+| Product | What it is |
+|---------|-----------|
+| The Manual | The book you are reading. Complete operating instructions for Earth optimization. Available in [paperback, digital, and audio](../links.qmd). Cost: less than your lunch. Nutrition: higher. |
+| The [Onboarding Video](../educational-film.qmd) | Your employee orientation film. 3 minutes, 1950s style. You have been employed at Earth Optimization Services since birth. You were not informed because your previous management did not believe in transparency. This is your orientation. |
+| The Uniform | "I Am Retarded." Company dress code. Either the funniest or the most honest garment you have ever worn. Either way, people ask about it, which is the point. |
+| The [Earth Optimization Prize](../economics/earth-optimization-prize-fund.qmd) | Employee performance bonuses. Cash prizes for the researchers, organizers, and citizens who contribute most to optimization. Because your species responds to prizes the way dogs respond to treats, and with approximately the same dignity. |
+
+## Customer Reviews
+
+**Planet Keth-7** ★★★★★
+"Optimized 12,000 years ago. No wars in 11,800 years. Seven active interstellar research programs. Our children learn about 'disease' in history class the way your children learn about smallpox, except they also learn about cancer, Alzheimer's, and depression, and they do not believe any of it. 'You mean people just felt bad? Without choosing to? And they couldn't fix it?' 'They held fundraising walks.' 'They WALKED? That was the plan?' Would optimize again."
+
+**The Yennari Collective** ★★★★★
+"Four member planets, all disease-free. Our main objection was that the process seemed too simple. Four steps felt insufficient for a problem we had been failing to solve for centuries. We later realized the problem was simple. We were the ones making it complicated. Currently bidding to host the next Galactic Consciousness Festival."
+
+**Planet GL-881** ★☆☆☆☆
+"Did not complete onboarding. Argued about whether the problem existed. Currently an asteroid belt. Available for mining rights. The dogs did not survive. We do not like to discuss the dogs."
+
+**Planet Thex-9** ★★★★★
+"We were 47 years away from extinction when POS arrived. Same trajectory as [Moronia](../futures/moronia.qmd). Same budget allocation. Same glowing rectangles. The only difference is we said yes. Our children cannot believe we almost said no. They do not understand how a species that invented mathematics could refuse to use it. Honestly, neither do we. It was a very strange period. We try not to think about it."
+
+**The Ool** ★★★★★
+"We are a species of 40 billion sentient fungi. We do not have governments or militaries. We were already optimized when POS arrived. We were offered the service anyway. We declined politely. We are included in this brochure because Wishonia likes our cooking."
+
+## Your Planet
+
+Earth is classified as a Standard Optimization Case. Your problems are not unusual. Your technology is adequate. Your dysfunction is textbook. You score 94.7% similarity with [Moronia](../futures/moronia.qmd) on the Pre-Optimization Assessment, which is the highest similarity score we have ever recorded with a planet that went extinct. This is not a compliment.
+
+The good news: every planet that scores above 90% similarity with Moronia and then optimizes shows an even larger post-optimization improvement than average. You are not unusually broken. You are unusually ready. The spring is compressed very far. The bounce will be proportionally dramatic.
+
+Earth Optimization Services is the legal structure your system requires in order to begin. On most planets, you do not need to register a limited liability company to stop people from dying. On yours, you do. So we did.
+
+Nobody who operates it owns equity in it. On my planet, building something and not owning it is called building something. On yours it requires a securities filing and a conversation about incentive structures that I have [provided elsewhere](../economics/investment-terms.qmd) because it is long.
+
+## How to Order
+
+**Option 1: Free** (30 seconds)
+[Vote](https://warondisease.org) and share the [20 Questions](../strategy/questions.qmd) with two people. If the average person shares with two people, this reaches half of humanity in 32 rounds. Your 30 seconds have never been this valuable.
+
+**Option 2: $200+** (invest through the fund)
+The fund pools investments to buy defense contractor shares and coordinate governance pressure. Your $200 buys voting rights that are aggregated with thousands of other investors into demand letters, proxy proposals, and board campaigns. One person with one share is a letter. Ten thousand people with coordinated shares are a takeover. The [investment terms](../economics/investment-terms.qmd) explain the structure. Your return is share appreciation if the campaign succeeds, normal defense-stock performance if it does not.
+
+**Option 3: $25,000+** (accredited investor)
+Same fund, larger position. The [terms page](../economics/investment-terms.qmd) has a calculator showing expected value at various probability estimates.
+
+All three produce the same outcome at different speeds.
+
+---
+
+Planetary Optimization Services thanks you for your interest in continued existence. We look forward to adding Earth to our portfolio of successfully optimized planets.
+
+Your case has been assigned. Your representative is Wishonia. She has been watching your planet for some time. She finds your dogs delightful and your budget allocation confusing. She is available for questions. She is not available for patience, as she has been doing this for 4,297 years and your species is taking longer than average.
+
+Please begin.

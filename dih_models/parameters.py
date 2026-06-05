@@ -13900,16 +13900,66 @@ CONTRIBUTION_SUFFERING_HOURS_PER_PCT_POINT = Parameter(
 # EARTH OPTIMIZATION SERVICES - DEFENSE TAKEOVER & FUND PARAMETERS
 # ============================================================================
 
-DEFENSE_TAKEOVER_COST_TOTAL = Parameter(
-    700_000_000_000,
+DEFENSE_PRIMES_MARKET_CAP_US = Parameter(
+    670_000_000_000,
+    manual_ref="knowledge/appendix/loving-takeover.qmd",
+    source_type="external",
+    description="Combined market capitalization of major US defense primes (RTX, Boeing, LMT, GD, NOC, LHX, LDOS, BAH, CACI, HII, SAIC)",
+    display_name="US Defense Primes Market Cap",
+    unit="USD",
+    keywords=["defense contractor", "market cap", "US primes"],
+    latex_symbol=r"MarketCap_{US}",
+    distribution="fixed",
+)
+
+DEFENSE_PRIMES_MARKET_CAP_ALLIED = Parameter(
+    95_000_000_000,
+    manual_ref="knowledge/appendix/loving-takeover.qmd",
+    source_type="external",
+    description="Combined market capitalization of major allied European defense primes (BAE Systems, Thales)",
+    display_name="Allied Defense Primes Market Cap",
+    unit="USD",
+    keywords=["defense contractor", "market cap", "European primes", "BAE", "Thales"],
+    latex_symbol=r"MarketCap_{allied}",
+    distribution="fixed",
+)
+
+DEFENSE_TAKEOVER_CONTROL_FRACTION = Parameter(
+    0.501,
     manual_ref="knowledge/appendix/loving-takeover.qmd",
     source_type="definition",
-    description="Total cost to acquire controlling stakes in all major Western defense contractors (~$670B US primes + ~$50B European primes, rounded to $700B with acquisition premium)",
+    description="Fraction of shares required for board control (50% + 1 share)",
+    display_name="Control Fraction",
+    unit="ratio",
+    keywords=["control", "majority", "board"],
+    latex_symbol=r"f_{control}",
+    distribution="fixed",
+)
+
+DEFENSE_TAKEOVER_ACQUISITION_PREMIUM = Parameter(
+    1.8,
+    manual_ref="knowledge/appendix/loving-takeover.qmd",
+    source_type="definition",
+    description="Expected price multiplier from coordinated buy-up demand pressure (midpoint of 1.5x-3x range based on float constraints)",
+    display_name="Acquisition Premium Multiplier",
+    unit="x",
+    confidence_interval=(1.5, 3.0),
+    keywords=["acquisition premium", "price impact", "float"],
+    latex_symbol=r"m_{premium}",
+)
+
+DEFENSE_TAKEOVER_COST_TOTAL = Parameter(
+    (DEFENSE_PRIMES_MARKET_CAP_US + DEFENSE_PRIMES_MARKET_CAP_ALLIED) * DEFENSE_TAKEOVER_CONTROL_FRACTION * DEFENSE_TAKEOVER_ACQUISITION_PREMIUM,
+    manual_ref="knowledge/appendix/loving-takeover.qmd",
+    source_type="calculated",
+    description="Total realistic cost to acquire controlling stakes in all major Western defense contractors, including acquisition premium from coordinated buying pressure",
     display_name="Defense Takeover Total Cost",
     unit="USD",
-    confidence_interval=(300_000_000_000, 700_000_000_000),
     keywords=["loving takeover", "defense contractor", "market cap", "acquisition"],
     latex_symbol=r"C_{takeover}",
+    formula="(DEFENSE_PRIMES_MARKET_CAP_US + DEFENSE_PRIMES_MARKET_CAP_ALLIED) * DEFENSE_TAKEOVER_CONTROL_FRACTION * DEFENSE_TAKEOVER_ACQUISITION_PREMIUM",
+    inputs=["DEFENSE_PRIMES_MARKET_CAP_US", "DEFENSE_PRIMES_MARKET_CAP_ALLIED", "DEFENSE_TAKEOVER_CONTROL_FRACTION", "DEFENSE_TAKEOVER_ACQUISITION_PREMIUM"],
+    compute=lambda ctx: (ctx["DEFENSE_PRIMES_MARKET_CAP_US"] + ctx["DEFENSE_PRIMES_MARKET_CAP_ALLIED"]) * ctx["DEFENSE_TAKEOVER_CONTROL_FRACTION"] * ctx["DEFENSE_TAKEOVER_ACQUISITION_PREMIUM"],
 )
 
 DEFENSE_TAKEOVER_COST_PER_HUMAN = Parameter(
@@ -13924,4 +13974,285 @@ DEFENSE_TAKEOVER_COST_PER_HUMAN = Parameter(
     compute=lambda ctx: ctx["DEFENSE_TAKEOVER_COST_TOTAL"] / ctx["GLOBAL_POPULATION_2024"],
     keywords=["loving takeover", "per person", "cost"],
     latex_symbol=r"C_{takeover,pp}",
+)
+
+# ============================================================================
+# MECHANISM COST-EFFECTIVENESS RANKING
+# ============================================================================
+# Each mechanism has:
+#   - NET COST: the money that is actually spent (gone, not recoverable).
+#     Capital deployment (buying shares you keep) has near-zero net cost.
+#     Bond issuance (investor capital returned with interest) has near-zero net cost.
+#     Expenditure (lobbying, marketing, platform build) is real cost.
+#   - P(success|funded): probability of treaty passage given full funding.
+#   - EV per dollar: P(success) * annual peace dividend / net cost.
+#
+# The distinction between expenditure and capital deployment is critical.
+# The Loving Takeover deploys $690B into shares the fund retains. The net cost
+# is the opportunity cost: forgone return from an alternative investment.
+# At market-rate returns on defense stocks, opportunity cost approaches zero.
+# IABs deploy investor capital that is returned at 272%. Net cost to EOS is
+# the bond administration, not the principal.
+# ============================================================================
+
+# -- Assumed opportunity cost rate for capital deployment mechanisms --
+MECHANISM_OPPORTUNITY_COST_RATE = Parameter(
+    0.02,
+    manual_ref="knowledge/proof/loves-wager.qmd",
+    source_type="definition",
+    description="Annual opportunity cost rate for capital deployment mechanisms (forgone excess return vs market). Defense stocks historically return near-market, so excess opportunity cost is low.",
+    display_name="Mechanism Opportunity Cost Rate",
+    unit="ratio",
+    confidence_interval=(0.0, 0.05),
+    keywords=["mechanism", "opportunity cost", "capital deployment"],
+    latex_symbol=r"r_{opp}",
+    distribution="fixed",
+)
+
+# -- LOVING TAKEOVER (capital deployment: shares retained) --
+MECHANISM_LOVING_TAKEOVER_CAPITAL = DEFENSE_TAKEOVER_COST_TOTAL
+MECHANISM_LOVING_TAKEOVER_NET_COST = Parameter(
+    DEFENSE_TAKEOVER_COST_TOTAL * 0.02,
+    manual_ref="knowledge/proof/loves-wager.qmd",
+    source_type="calculated",
+    description="Net annual cost of the Loving Takeover: opportunity cost only (capital deployed into shares is retained, not spent). At 2% annual opportunity cost rate.",
+    display_name="Loving Takeover Net Cost (Annual)",
+    unit="USD",
+    keywords=["mechanism", "loving takeover", "net cost", "opportunity cost"],
+    latex_symbol=r"C_{takeover,net}",
+    formula="DEFENSE_TAKEOVER_COST_TOTAL * MECHANISM_OPPORTUNITY_COST_RATE",
+    inputs=["DEFENSE_TAKEOVER_COST_TOTAL", "MECHANISM_OPPORTUNITY_COST_RATE"],
+    compute=lambda ctx: ctx["DEFENSE_TAKEOVER_COST_TOTAL"] * ctx["MECHANISM_OPPORTUNITY_COST_RATE"],
+)
+MECHANISM_LOVING_TAKEOVER_P_SUCCESS = Parameter(
+    0.95,
+    manual_ref="knowledge/proof/loves-wager.qmd",
+    source_type="definition",
+    description="Probability of treaty passage given full funding of the Loving Takeover (mechanical: money buys shares, shares buy board control, board redirects lobbying)",
+    display_name="P(Success | Loving Takeover Funded)",
+    unit="ratio",
+    confidence_interval=(0.80, 0.99),
+    keywords=["mechanism", "probability", "loving takeover", "cost-effectiveness"],
+    latex_symbol=r"P_{takeover}",
+)
+
+# -- TREATY CAMPAIGN (expenditure: lobbying + political spending) --
+MECHANISM_TREATY_CAMPAIGN_NET_COST = TREATY_CAMPAIGN_TOTAL_COST
+MECHANISM_TREATY_CAMPAIGN_P_SUCCESS = Parameter(
+    0.40,
+    manual_ref="knowledge/proof/loves-wager.qmd",
+    source_type="definition",
+    description="Probability of treaty passage given full funding of the lobbying + referendum campaign ($1B). Depends on political will after lobbying and public pressure.",
+    display_name="P(Success | Treaty Campaign Funded)",
+    unit="ratio",
+    confidence_interval=(0.15, 0.70),
+    keywords=["mechanism", "probability", "treaty campaign", "cost-effectiveness"],
+    latex_symbol=r"P_{campaign}",
+)
+
+# -- SHIRT CASCADE (expenditure: seed program) --
+MECHANISM_SHIRT_CASCADE_NET_COST = SHIRT_SEED_PROGRAM_TOTAL_USD
+MECHANISM_SHIRT_CASCADE_P_SUCCESS = SHIRT_CASCADE_PROBABILITY_GIVEN_SEED
+
+# -- COURT OF HUMANITY (expenditure: platform build) --
+MECHANISM_COURT_OF_HUMANITY_NET_COST = COURT_BUILD_COST
+MECHANISM_COURT_OF_HUMANITY_P_SUCCESS = Parameter(
+    0.10,
+    manual_ref="knowledge/proof/loves-wager.qmd",
+    source_type="definition",
+    description="Probability of treaty passage given Court of Humanity operational. Lowest direct causal link: court rulings are non-binding but create political pressure.",
+    display_name="P(Success | Court of Humanity Funded)",
+    unit="ratio",
+    confidence_interval=(0.03, 0.25),
+    keywords=["mechanism", "probability", "court of humanity", "cost-effectiveness"],
+    latex_symbol=r"P_{court}",
+)
+
+# -- IABs (capital deployment: investor capital returned at 272%) --
+# Net cost to EOS is bond administration, estimated at 5% of principal
+MECHANISM_IAB_ADMIN_RATE = Parameter(
+    0.05,
+    manual_ref="knowledge/proof/loves-wager.qmd",
+    source_type="definition",
+    description="Annual administrative cost of IABs as fraction of principal (legal, compliance, reporting). The principal itself is investor capital returned with interest, not EOS expenditure.",
+    display_name="IAB Admin Cost Rate",
+    unit="ratio",
+    keywords=["mechanism", "iab", "admin cost"],
+    latex_symbol=r"r_{IAB,admin}",
+    distribution="fixed",
+)
+MECHANISM_IAB_NET_COST = Parameter(
+    TREATY_CAMPAIGN_TOTAL_COST * 0.05,
+    manual_ref="knowledge/proof/loves-wager.qmd",
+    source_type="calculated",
+    description="Net annual cost of IABs to EOS: administration only (investor capital is returned, not spent)",
+    display_name="IAB Net Cost (Annual)",
+    unit="USD",
+    keywords=["mechanism", "iab", "net cost"],
+    latex_symbol=r"C_{IAB,net}",
+    formula="TREATY_CAMPAIGN_TOTAL_COST * MECHANISM_IAB_ADMIN_RATE",
+    inputs=["TREATY_CAMPAIGN_TOTAL_COST", "MECHANISM_IAB_ADMIN_RATE"],
+    compute=lambda ctx: ctx["TREATY_CAMPAIGN_TOTAL_COST"] * ctx["MECHANISM_IAB_ADMIN_RATE"],
+)
+MECHANISM_IAB_P_SUCCESS = Parameter(
+    0.60,
+    manual_ref="knowledge/proof/loves-wager.qmd",
+    source_type="definition",
+    description="Probability of treaty passage given full IAB issuance. High because lobbying is a proven mechanism and IABs align politician incentives directly.",
+    display_name="P(Success | IABs Funded)",
+    unit="ratio",
+    confidence_interval=(0.30, 0.85),
+    keywords=["mechanism", "probability", "incentive alignment bonds", "cost-effectiveness"],
+    latex_symbol=r"P_{IAB}",
+)
+
+# -- dFDA (expenditure: platform build + initial operations) --
+MECHANISM_DFDA_NET_COST = Parameter(
+    500_000_000,
+    manual_ref="knowledge/proof/loves-wager.qmd",
+    source_type="definition",
+    description="Net cost to build and deploy the dFDA to operational scale (expenditure; platform generates revenue after deployment but initial build is sunk cost)",
+    display_name="dFDA Deployment Net Cost",
+    unit="USD",
+    confidence_interval=(200_000_000, 1_000_000_000),
+    keywords=["mechanism", "dfda", "deployment", "cost"],
+    latex_symbol=r"C_{dFDA}",
+)
+MECHANISM_DFDA_P_SUCCESS = Parameter(
+    0.70,
+    manual_ref="knowledge/proof/loves-wager.qmd",
+    source_type="definition",
+    description="Probability that a funded dFDA produces sufficient cures to create political momentum for the treaty. High because clinical trials mechanically produce treatments; the platform reduces cost per trial.",
+    display_name="P(Success | dFDA Funded)",
+    unit="ratio",
+    confidence_interval=(0.40, 0.90),
+    keywords=["mechanism", "probability", "dfda", "cost-effectiveness"],
+    latex_symbol=r"P_{dFDA}",
+)
+
+# -- GLOBAL REFERENDUM (expenditure: platform + voter acquisition) --
+MECHANISM_REFERENDUM_NET_COST = TREATY_CAMPAIGN_VIRAL_REFERENDUM_BASE_CASE
+MECHANISM_REFERENDUM_P_SUCCESS = Parameter(
+    0.30,
+    manual_ref="knowledge/proof/loves-wager.qmd",
+    source_type="definition",
+    description="Probability of treaty passage given a successful global referendum demonstrating majority support. Non-binding but creates political pressure.",
+    display_name="P(Success | Referendum Funded)",
+    unit="ratio",
+    confidence_interval=(0.10, 0.55),
+    keywords=["mechanism", "probability", "referendum", "cost-effectiveness"],
+    latex_symbol=r"P_{referendum}",
+)
+
+# ============================================================================
+# EXPECTED SOCIAL VALUE FOR EACH MECHANISM
+# ============================================================================
+# EV = P(success) * annual peace dividend. No denominator.
+# This is the right metric for comparing mechanisms because cost structures
+# are not comparable: some mechanisms deploy capital into assets (Loving
+# Takeover, IABs) and the capital is returned or appreciates. Others are
+# pure expenditure (shirts, court, campaign). Dividing by "cost" produces
+# a metric that penalizes capital deployment and rewards cheap long-shots,
+# which is backwards. The Loving Takeover costs negative money (shares
+# appreciate from buying pressure alone, before any policy outcome), has
+# the highest P(success), and is mechanical. It is the best mechanism.
+# The cheap expenditure mechanisms (shirts, court) are what you do while
+# building toward the capital for the takeover.
+
+MECHANISM_LOVING_TAKEOVER_EV = Parameter(
+    MECHANISM_LOVING_TAKEOVER_P_SUCCESS * PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT,
+    manual_ref="knowledge/proof/loves-wager.qmd",
+    source_type="calculated",
+    description="Expected annual social value from the Loving Takeover: P(success) * annual peace dividend. Capital is deployed into shares (retained and appreciating), not spent.",
+    display_name="Loving Takeover Expected Social Value",
+    unit="USD",
+    keywords=["mechanism", "cost-effectiveness", "loving takeover", "ev"],
+    latex_symbol=r"EV_{takeover}",
+    formula="MECHANISM_LOVING_TAKEOVER_P_SUCCESS * PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT",
+    inputs=["MECHANISM_LOVING_TAKEOVER_P_SUCCESS", "PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT"],
+    compute=lambda ctx: ctx["MECHANISM_LOVING_TAKEOVER_P_SUCCESS"] * ctx["PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT"],
+)
+
+MECHANISM_IAB_EV = Parameter(
+    MECHANISM_IAB_P_SUCCESS * PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT,
+    manual_ref="knowledge/proof/loves-wager.qmd",
+    source_type="calculated",
+    description="Expected annual social value from IABs: P(success) * annual peace dividend. Investor capital is returned with interest, not spent.",
+    display_name="IAB Expected Social Value",
+    unit="USD",
+    keywords=["mechanism", "cost-effectiveness", "incentive alignment bonds", "ev"],
+    latex_symbol=r"EV_{IAB}",
+    formula="MECHANISM_IAB_P_SUCCESS * PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT",
+    inputs=["MECHANISM_IAB_P_SUCCESS", "PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT"],
+    compute=lambda ctx: ctx["MECHANISM_IAB_P_SUCCESS"] * ctx["PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT"],
+)
+
+MECHANISM_DFDA_EV = Parameter(
+    MECHANISM_DFDA_P_SUCCESS * PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT,
+    manual_ref="knowledge/proof/loves-wager.qmd",
+    source_type="calculated",
+    description="Expected annual social value from the dFDA: P(success) * annual peace dividend. Platform build is expenditure ($500M).",
+    display_name="dFDA Expected Social Value",
+    unit="USD",
+    keywords=["mechanism", "cost-effectiveness", "dfda", "ev"],
+    latex_symbol=r"EV_{dFDA}",
+    formula="MECHANISM_DFDA_P_SUCCESS * PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT",
+    inputs=["MECHANISM_DFDA_P_SUCCESS", "PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT"],
+    compute=lambda ctx: ctx["MECHANISM_DFDA_P_SUCCESS"] * ctx["PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT"],
+)
+
+MECHANISM_TREATY_CAMPAIGN_EV = Parameter(
+    MECHANISM_TREATY_CAMPAIGN_P_SUCCESS * PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT,
+    manual_ref="knowledge/proof/loves-wager.qmd",
+    source_type="calculated",
+    description="Expected annual social value from the treaty campaign: P(success) * annual peace dividend. Lobbying + referendum is expenditure ($1B).",
+    display_name="Treaty Campaign Expected Social Value",
+    unit="USD",
+    keywords=["mechanism", "cost-effectiveness", "treaty campaign", "ev"],
+    latex_symbol=r"EV_{campaign}",
+    formula="MECHANISM_TREATY_CAMPAIGN_P_SUCCESS * PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT",
+    inputs=["MECHANISM_TREATY_CAMPAIGN_P_SUCCESS", "PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT"],
+    compute=lambda ctx: ctx["MECHANISM_TREATY_CAMPAIGN_P_SUCCESS"] * ctx["PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT"],
+)
+
+MECHANISM_REFERENDUM_EV = Parameter(
+    MECHANISM_REFERENDUM_P_SUCCESS * PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT,
+    manual_ref="knowledge/proof/loves-wager.qmd",
+    source_type="calculated",
+    description="Expected annual social value from the global referendum: P(success) * annual peace dividend. Expenditure ($250M).",
+    display_name="Referendum Expected Social Value",
+    unit="USD",
+    keywords=["mechanism", "cost-effectiveness", "referendum", "ev"],
+    latex_symbol=r"EV_{referendum}",
+    formula="MECHANISM_REFERENDUM_P_SUCCESS * PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT",
+    inputs=["MECHANISM_REFERENDUM_P_SUCCESS", "PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT"],
+    compute=lambda ctx: ctx["MECHANISM_REFERENDUM_P_SUCCESS"] * ctx["PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT"],
+)
+
+MECHANISM_SHIRT_CASCADE_EV = Parameter(
+    MECHANISM_SHIRT_CASCADE_P_SUCCESS * PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT,
+    manual_ref="knowledge/proof/loves-wager.qmd",
+    source_type="calculated",
+    description="Expected annual social value from the shirt cascade: P(success) * annual peace dividend. Expenditure ($50M).",
+    display_name="Shirt Cascade Expected Social Value",
+    unit="USD",
+    keywords=["mechanism", "cost-effectiveness", "shirt cascade", "ev"],
+    latex_symbol=r"EV_{shirt}",
+    formula="MECHANISM_SHIRT_CASCADE_P_SUCCESS * PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT",
+    inputs=["MECHANISM_SHIRT_CASCADE_P_SUCCESS", "PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT"],
+    compute=lambda ctx: ctx["MECHANISM_SHIRT_CASCADE_P_SUCCESS"] * ctx["PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT"],
+)
+
+MECHANISM_COURT_EV = Parameter(
+    MECHANISM_COURT_OF_HUMANITY_P_SUCCESS * PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT,
+    manual_ref="knowledge/proof/loves-wager.qmd",
+    source_type="calculated",
+    description="Expected annual social value from the Court of Humanity: P(success) * annual peace dividend. Expenditure ($30M).",
+    display_name="Court of Humanity Expected Social Value",
+    unit="USD",
+    keywords=["mechanism", "cost-effectiveness", "court of humanity", "ev"],
+    latex_symbol=r"EV_{court}",
+    formula="MECHANISM_COURT_OF_HUMANITY_P_SUCCESS * PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT",
+    inputs=["MECHANISM_COURT_OF_HUMANITY_P_SUCCESS", "PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT"],
+    compute=lambda ctx: ctx["MECHANISM_COURT_OF_HUMANITY_P_SUCCESS"] * ctx["PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT"],
 )

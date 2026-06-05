@@ -211,7 +211,7 @@ The first host's job is to start the broadcast, not to own the network. Later ho
 ### Three things gate the first deposit
 
 1. **Legal template, attorney-reviewed.** A deposit agreement (the "v1 assurance contract") documenting what happens in the success branch and what happens in the failure branch. Written in plain English; reviewed by one securities attorney in the operating jurisdiction. Budget: $5K-$15K one-time. This is the load-bearing item. Without it, the assurance structure is just talk.
-2. **Third-party custodian.** Deposits sit at a regulated custodian (bank trust department, qualified fintech custodian like Mercury Treasury, Anchorage Digital for any tokenized portion). Not the host's general operating account. Removes the founder-could-walk-off-with-the-money objection by making that physically impossible.
+2. **Third-party custodian.** Deposits sit at a regulated custodian (bank trust department, qualified fintech custodian like Mercury Treasury, Anchorage Digital for any tokenized portion). Not the host's general operating account. Removes the someone-could-walk-off-with-the-money objection by making that physically impossible.
 3. **Public dashboard.** A live page at warondisease.org showing every deposit, every wire, the running pool size, the Scoreboard targets, and the projected failure-branch refund per dollar. Replaces institutional credibility with audit transparency. Specified below.
 
 ### Deposit terms, in lay English

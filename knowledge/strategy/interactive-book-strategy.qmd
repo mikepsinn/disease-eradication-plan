@@ -1,0 +1,83 @@
+---
+title: "Interactive Book Strategy (internal)"
+description: "The book IS the pitch. Interactive parameters, crowdsourced assumptions, Wishonia as AI CEO. Not reader-facing; an internal operations doc."
+published: false
+---
+
+## The principle: the book is the pitch
+
+The book, the investor pitch, and the operational plan are the same document on the same website. Not three documents that link to each other. One document with sections appropriate for different audiences.
+
+A philosopher reads Love's Wager and stops. An investor reads the financial plan and the mechanism ranking and stops. A politician reads the legislation package and stops. A teenager reads the jokes and the shirt and stops. All of them are reading the same book. The book is the company. The company is the book.
+
+## The team is the agent
+
+Wishonia is the CEO. The management team is an AI agent that acts on the world: writes the book, runs the numbers, coordinates the mechanisms, answers investor questions. There is no human management team to staff. The founder owns 0%. The agent does the work.
+
+This is not a metaphor. The entity that updates the parameters, reruns the Monte Carlo simulations, responds to reader objections, and coordinates mechanism execution is the same entity that wrote the book. The "team" slide in any pitch deck is a screenshot of this conversation.
+
+## Interactive parameters
+
+Every number in the book is a parameter. Every parameter has an uncertainty range. The reader should be able to:
+
+1. **See the uncertainty.** Popovers already show confidence intervals. Extend these to show the full distribution.
+2. **Edit the uncertainty.** Click a number, drag a slider, change the assumption. The reader's skepticism becomes an input, not an objection.
+3. **Watch the book recalculate.** Change P(treaty) from 40% to 5%. The expected value drops but remains positive. The argument still holds. The reader just proved it to themselves.
+4. **Save their assumptions.** Local storage persists the reader's parameter overrides across sessions.
+5. **See everyone else's assumptions.** A database aggregates all reader inputs. Wisdom-of-crowds estimate displayed alongside the author's estimate and the reader's own.
+
+### Why this matters
+
+The book's weakest point is that the P(success) estimates are the author's guesses. "Why should I believe your 40%?" is the obvious objection. The answer: "You shouldn't. Put in your own number. The conclusion doesn't change."
+
+This converts the book's greatest weakness (arbitrary assumptions) into its greatest strength (reader-verified robustness). If the argument survives hostile assumptions, it is not an argument. It is arithmetic.
+
+### Technical approach
+
+- **Observable JS** or equivalent reactive framework embedded in Quarto
+- Quarto already supports OJS cells natively (`{ojs}` code blocks)
+- Parameters bridge from `_variables.yml` into OJS via hidden spans (same pattern as existing calculators in `your-personal-benefits.qmd`)
+- Reader overrides stored in `localStorage` with a namespace prefix
+- Crowdsource database: simple API endpoint that accepts `{param_name, value, confidence_interval, user_hash}` tuples
+- Display: for each parameter, show three values: author's estimate, reader's override (if any), crowd median
+
+### What already exists
+
+- Parameter system: `dih_models/parameters.py` -> `_variables.yml` -> shortcodes in `.qmd` files
+- Confidence intervals on most parameters
+- Monte Carlo simulation infrastructure
+- Popovers that show parameter metadata
+- Interactive calculators in `your-personal-benefits.qmd` and `investment-terms.qmd` (IIFE pattern with hidden spans)
+
+### What needs to be built
+
+1. **OJS reactive layer**: wrap key parameters in Observable cells so changes propagate
+2. **Parameter override UI**: slider/input for each editable parameter, appearing on click/hover
+3. **localStorage persistence**: save reader overrides, restore on page load
+4. **Recalculation engine**: client-side Monte Carlo or at minimum expected-value recalculation
+5. **Crowdsource API**: endpoint to collect and serve aggregated reader assumptions
+6. **Crowd display**: show crowd median alongside author estimate for each parameter
+
+### Priority
+
+Phase 1: One chapter (Love's Wager) with editable parameters and local recalculation. Prove the UX works.
+
+Phase 2: Extend to all chapters. Add localStorage persistence.
+
+Phase 3: Crowdsource database. Aggregate reader assumptions. Display crowd estimates.
+
+## Current gaps in mathematical rigor
+
+These are honest about what the book currently lacks. The interactive approach addresses each one:
+
+| Gap | Current state | Interactive fix |
+|-----|--------------|-----------------|
+| P(success) estimates | Author's guesses | Reader inputs their own; crowd aggregates |
+| No discounting | NPV not compared across mechanisms | Reader sets discount rate; NPV recalculates |
+| No marginal analysis | Diminishing returns not modeled | Slider for funding level shows diminishing curve |
+| Mechanism correlation | Treated as independent | Correlation matrix editable; portfolio model runs |
+| No management team | "Who does this?" | "The agent that wrote the book does this" |
+
+## What this document is not
+
+This is not a product spec. It is a strategic decision: the book is interactive, the pitch is the book, and the team is the agent. Implementation details will change. The principle will not.

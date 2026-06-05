@@ -1,0 +1,59 @@
+---
+title: "Book Pricing Model (internal strategy)"
+description: "How the book is priced, and why. Not reader-facing prose; an internal operations doc. The objective is total dollars raised for ending war and disease, not margin per copy."
+published: false
+---
+{{< include /knowledge/includes/setup-parameters.qmd >}}
+
+## The objective
+
+Maximize **total dollars raised for ending war and disease.** Not margin per copy, not units sold, not bestseller rank. Every pricing decision is judged only by how much money it routes to Earth Optimization Services to execute the plan.
+
+## Why normal book pricing is wrong here
+
+Conventional books price off comparables and demand curves: find the average price of similar books, land near it. That optimizes for a normal product competing on margin. It fails us on three counts:
+
+1. **It forecloses the whale.** The money is in the right tail. A coalition of patrons could fund the entire ~{{< var defense_takeover_cost_total >}} takeover from a few percent of their wealth. Any single fixed price caps your largest supporter at that price. A {{< var defense_takeover_cost_per_human >}} book caps a billionaire at {{< var defense_takeover_cost_per_human >}}. That alone disqualifies fixed pricing.
+2. **It is not remarkable.** A normal price gets zero free distribution. Weirdness is remarkability; remarkability is free reach; reach is the input to every dollar downstream. A normal price wastes the book's biggest marketing asset, which is its price.
+3. **It taxes propagation.** The ideas must spread to work. Any paywall on the cure for war is self-defeating. Reach is the engine, not a revenue line.
+
+## The principle: value vs price vs payment
+
+- **Value** (what it is worth): the expected value of the plan succeeding. Two infinities of utility; ~{{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}} in lives; ~$400 trillion per year of recoverable dysfunction tax. **Uncharge-able.** No one can pay what it is worth.
+- **Price** (what it costs to make real): the takeover. **~{{< var defense_takeover_cost_total >}}** to buy controlling stakes in the defense primes, which is **~{{< var defense_takeover_cost_per_human >}} per living human.**
+- **Payment** (what you actually pay): **your share** of that price. From $0 (read it free) to {{< var defense_takeover_cost_per_human >}} (your one-eight-billionth) to {{< var defense_takeover_cost_total >}} (you fund the whole thing).
+
+Honest framing: *"We cannot charge you what this is worth, because that is infinity. So we charge what it costs, and you pay your share."*
+
+## The optimal price is a structure, not a number
+
+**Pay-what-you-want, anchored to the truth.** PWYW with a strong meaning motive, a transparent destination (founder owns 0%, money buys defense shares), and a credible anchor empirically out-raises a low fixed price, and it is the only structure that lets payment run from $0 to {{< var defense_takeover_cost_total >}} on one principle. The objective is total money; the money is in the tail; only PWYW captures the tail.
+
+The price, stated as one memetic line:
+
+> Worth {{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}}. Free to read. Pay your {{< var defense_takeover_cost_per_human >}} share of buying back the planet. Or buy the whole planet for {{< var defense_takeover_cost_total >}}.
+
+That single line is simultaneously the meme, the price, and the patron-capture mechanism.
+
+## Tiers (one principle: your share of the planet)
+
+| Tier | Who | Payment | Job |
+|------|-----|---------|-----|
+| Free | anyone, the words | $0 | Maximize reach. The engine. Read online, no account. |
+| Fair share | the default buyer | ~{{< var defense_takeover_cost_per_human >}} | The derived, meaningful cover price: your 1/8-billionth of the takeover. |
+| Patron / "buy the planet" | a whale | up to ~{{< var defense_takeover_cost_total >}} | A real SKU. One person can fund the entire takeover by "buying the book." |
+| Anything between | true believers | PWYW | Captures everyone who values it above {{< var defense_takeover_cost_per_human >}} but is not a whale. |
+
+## Channels (split capture from reach)
+
+- **warondisease.org store: PWYW, anchored.** This is where the magic and the real money happen. Suggested {{< var defense_takeover_cost_per_human >}}, $0 floor, explicit patron tier, transparent "where your money goes" (the flywheel). Optionally a crowdfund-style live counter: "$X needed, N backers, your share falls as more join."
+- **Amazon / retail: a low fixed discovery price (~$9.99 Kindle, paperback at cost).** Amazon cannot do PWYW, and its job is reach, legitimacy, and algorithm, not capture. Do not point ad campaigns at high-priced pages.
+- **The meme travels on PR and social, not on the Amazon listing.** What gets remarked on is the *spread* (most valuable book ever written, free to read, {{< var defense_takeover_cost_per_human >}} to own your share, {{< var defense_takeover_cost_total >}} to buy the planet), not any single number.
+
+## Why this beats a single weird fixed price
+
+A fixed {{< var defense_takeover_cost_per_human >}} ("the book that is your share of the planet") is memetic and clean, but it caps the whale at {{< var defense_takeover_cost_per_human >}} and forecloses the tail where the money is. PWYW keeps the same {{< var defense_takeover_cost_per_human >}} as the anchor/default (so it loses none of the meme) while uncapping the top. PWYW dominates fixed on the only axis that matters: total dollars for the mission.
+
+## One-line summary
+
+Price = your share of the cost of buying back the planet. Anchored to {{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}}, defaulting to {{< var defense_takeover_cost_per_human >}}, free if you cannot pay, up to {{< var defense_takeover_cost_total >}} if you can. The spread is the meme; the tail is the money; reach is the engine.
