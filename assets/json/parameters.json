@@ -1669,6 +1669,32 @@
       "formula": null,
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/solution.html"
     },
+    "DEFENSE_TAKEOVER_COST_PER_HUMAN": {
+      "value": 87.5,
+      "formatted": "$88",
+      "unit": "USD",
+      "description": "Per-person cost of the defense takeover distributed across global population",
+      "sourceType": "calculated",
+      "sourceRef": null,
+      "confidence": "high",
+      "formula": "DEFENSE_TAKEOVER_COST_TOTAL / GLOBAL_POPULATION_2024",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/loving-takeover.html"
+    },
+    "DEFENSE_TAKEOVER_COST_TOTAL": {
+      "value": 700000000000.0,
+      "formatted": "$700 billion",
+      "unit": "USD",
+      "description": "Total cost to acquire controlling stakes in all major Western defense contractors (~$670B US primes + ~$50B European primes, rounded to $700B with acquisition premium)",
+      "sourceType": "definition",
+      "sourceRef": null,
+      "confidence": "high",
+      "formula": null,
+      "confidenceInterval": [
+        300000000000.0,
+        700000000000.0
+      ],
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/loving-takeover.html"
+    },
     "DEMOCIDE_TOTAL_20TH_CENTURY": {
       "value": 262000000.0,
       "formatted": "262 million deaths",
@@ -21501,6 +21527,24 @@
       "pages": "",
       "number": ""
     },
+    "mcfarland-lead-iq-2022": {
+      "id": "mcfarland-lead-iq-2022",
+      "title": "Half of US Population Exposed to Adverse Lead Levels in Early Childhood",
+      "author": "McFarland, Michael J. and Hauer, Matt E. and Reuben, Aaron",
+      "year": "2022",
+      "source": "Proceedings of the National Academy of Sciences",
+      "url": "https://www.pnas.org/doi/10.1073/pnas.2118631119",
+      "urls": [
+        "https://www.pnas.org/doi/10.1073/pnas.2118631119"
+      ],
+      "quote": "Leaded gasoline, used in the US from 1923 until its on-road ban in 1996, exposed more than half of the 2015 US population to adverse blood-lead levels in early childhood. The authors estimate childhood lead exposure cost the population a cumulative 824 million IQ points, an average of 2.6 points per person, rising to 5.9 points for the most-exposed 1966-1970 birth cohort.",
+      "note": "",
+      "type": "article",
+      "doi": "10.1073/pnas.2118631119",
+      "volume": "119",
+      "pages": "e2118631119",
+      "number": "11"
+    },
     "mdma-phase3-mapp2": {
       "id": "mdma-phase3-mapp2",
       "title": "MDMA-assisted therapy for moderate to severe PTSD: a randomized, placebo-controlled phase 3 trial",
@@ -27881,6 +27925,24 @@
       "doi": "10.1056/NEJMoa1210951",
       "volume": "369",
       "pages": "341-350",
+      "number": ""
+    },
+    "semmelweis-handwashing-2024": {
+      "id": "semmelweis-handwashing-2024",
+      "title": "Pioneering Hand Hygiene: Ignaz Semmelweis and the Fight Against Puerperal Fever",
+      "author": "Paul, Sheuli and Salunkhe, Shradha and Sravanthi, Kasireddy and Mane, Shailaja V.",
+      "year": "2024",
+      "source": "Cureus",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11568873/",
+      "urls": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC11568873/"
+      ],
+      "quote": "After Semmelweis required chlorinated-lime handwashing, the First Clinic maternal mortality rate fell from 18.27% in 1847 to 1.27% in 1848. His findings were rejected by the medical establishment; in 1865 he was committed to an asylum, where he died shortly thereafter.",
+      "note": "",
+      "type": "article",
+      "doi": "",
+      "volume": "",
+      "pages": "",
       "number": ""
     },
     "september-11-memorial": {

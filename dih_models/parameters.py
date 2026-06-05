@@ -13895,3 +13895,33 @@ CONTRIBUTION_SUFFERING_HOURS_PER_PCT_POINT = Parameter(
     compute=lambda ctx: ctx["DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_SUFFERING_HOURS"] * 0.01,
     latex_symbol=r"Hours_{pp}",
 )
+
+# ============================================================================
+# EARTH OPTIMIZATION SERVICES - DEFENSE TAKEOVER & FUND PARAMETERS
+# ============================================================================
+
+DEFENSE_TAKEOVER_COST_TOTAL = Parameter(
+    700_000_000_000,
+    manual_ref="knowledge/appendix/loving-takeover.qmd",
+    source_type="definition",
+    description="Total cost to acquire controlling stakes in all major Western defense contractors (~$670B US primes + ~$50B European primes, rounded to $700B with acquisition premium)",
+    display_name="Defense Takeover Total Cost",
+    unit="USD",
+    confidence_interval=(300_000_000_000, 700_000_000_000),
+    keywords=["loving takeover", "defense contractor", "market cap", "acquisition"],
+    latex_symbol=r"C_{takeover}",
+)
+
+DEFENSE_TAKEOVER_COST_PER_HUMAN = Parameter(
+    DEFENSE_TAKEOVER_COST_TOTAL / GLOBAL_POPULATION_2024,
+    manual_ref="knowledge/appendix/loving-takeover.qmd",
+    source_type="calculated",
+    description="Per-person cost of the defense takeover distributed across global population",
+    display_name="Defense Takeover Cost per Human",
+    unit="USD",
+    formula="DEFENSE_TAKEOVER_COST_TOTAL / GLOBAL_POPULATION_2024",
+    inputs=["DEFENSE_TAKEOVER_COST_TOTAL", "GLOBAL_POPULATION_2024"],
+    compute=lambda ctx: ctx["DEFENSE_TAKEOVER_COST_TOTAL"] / ctx["GLOBAL_POPULATION_2024"],
+    keywords=["loving takeover", "per person", "cost"],
+    latex_symbol=r"C_{takeover,pp}",
+)

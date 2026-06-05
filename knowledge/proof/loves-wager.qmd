@@ -78,21 +78,22 @@ And the expected value of that, given it can go on without limit, is infinitely 
 
 Two outcomes. Both infinity. One terrible, one wonderful, both pulling at you the whole time. Anything that shifts the odds from the terrible one toward the wonderful one is worth doing, at any cost short of infinite.
 
-The wonderful outcome runs on biotechnology, biotechnology runs on [clinical trials](../solution/dfda.qmd), and your governments spend {{< var military_to_government_clinical_trials_spending_ratio >}} times more on the military than on the trials that would cure the diseases killing the taxpayers who pay for the military. So every solution in this book does one basic thing: it moves resources from being really good at killing people toward being good at curing them. There are about ten of them. You only need one to work.
+The wonderful outcome runs on biotechnology, biotechnology runs on [clinical trials](../solution/dfda.qmd), and your governments spend {{< var military_to_government_clinical_trials_spending_ratio >}} times more on the military than on the trials that would cure the diseases killing the taxpayers who pay for the military. So every solution in this book does one basic thing: it moves resources from being really good at killing people toward being good at curing them.
+
+Here are some fun ways to do that. Some of them will work by themselves. Some are complementary and will end war and disease more quickly if you do several at the same time. You only need one to work. Pick whichever one sounds fun to you. (There are ten mechanisms on this list. If each has even a 10% independent probability of working, the chance that at least one works is 1 minus 0.9 to the tenth power, which is 65%. At 20% each, it is 89%. The question was never whether one of these works. The question is whether you will do any of them.) If you have a better idea than any of the ones listed below, please email wishonia@gmail.com and I will add it to this list.
 
 - **[The 1% Treaty](../solution/1-percent-treaty.qmd)** [@1-percent-treaty-paper-2025] [@1-pct-treaty-impact-paper-2025] asks governments that own enough nuclear weapons to end civilization {{< var nuclear_winter_overkill_factor_nounit >}} times over, and have cured Alzheimer's zero times, to be one percent more rational.
-- **[The Loving Takeover](../appendix/loving-takeover.qmd)** is humanity buying a controlling stake in every missile company on Earth, for about $90 a head, and pointing its lobbyists the other way. It's loving because everyone you buy out ends up richer and lives longer.
-- **[The funniest lawsuit in the universe](../appendix/lawsuit.qmd)** uses a single share of stock to legally demand that a defense board stop lighting its own shareholders' money on fire. The lobby becomes your best salesman.
-- **[The funniest joke in the universe](../appendix/joke.qmd)** ends war and disease through vandalism. It is a shirt.
+- **[The Loving Takeover](../appendix/loving-takeover.qmd)** is humanity buying a controlling stake in every missile company on Earth, for about {{< var defense_takeover_cost_per_human >}} a head, and pointing its lobbyists the other way. It's loving because everyone you buy out ends up richer and lives longer.
 - **[Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd) [@iab-paper-2025]** are war bonds run backwards: your grandparents funded WW2 at 3%, you fund disease eradication at 272%. Same structure, fewer Nazis.
 - **[The dFDA](../solution/dfda.qmd) [@dfda-spec-paper-2025; @dfda-impact-paper-2025]** makes clinical trials {{< var dfda_trial_cost_reduction_factor >}} cheaper by recording what actually happens to the real humans who try things. Consumer Reports, but for not dying.
+- **[The Earth Optimization Prize](../strategy/earth-optimization-prize.qmd) [@earth-optimization-prize-paper-2025]** puts money in a pool and pays people to recruit voters for the 1% Treaty. If humanity gets healthier and richer, the pool pays out. If not, it was a donation to the species.
 - **[The Global Referendum](../strategy/global-referendum.qmd)** puts "should we stop dying?" on a single ballot for the entire species at once. It is expected to poll well.
 - **[The Court of Humanity](../solution/court-of-humanity.qmd) [@court-of-humanity-paper-2025]** is a court where any human can sue any government, "you can't sue us" is not a valid defense, and the 1% Treaty is the settlement offer.
 - **[Wishocracy](../solution/wishocracy.qmd) [@wishocracy-paper-2025]** lets billions of people decide whether the next public dollar buys another nuclear weapon or another clinical trial, with no lobbyist standing in the middle taking a cut.
 - **[The Optimitron](../solution/optimocracy.qmd) [@optimocracy-paper-2025]** is a machine that works out which policies actually work by checking the thousands of places that already tried them. Your species skipped this step and went straight to arguing.
-- **[A debugged government](../solution/department-of-peace.qmd)** replaces whole bureaucracies with a few lines of code. The Department of Defense's replacement requires zero.
+- **[Algorithmic Public Administration](../appendix/algorithmic-public-administration-paper.qmd)** replaces whole bureaucracies with a few lines of code. The Department of Defense's replacement requires zero. The IRS's requires six.
 
-There is also the option of putting every leader on Earth in a single room and Clockwork-Orange-ing them until they have read all of the above, but the author is told this may be illegal.
+There is also [a shirt](../appendix/joke.qmd), [a lawsuit](../appendix/lawsuit.qmd), and the option of putting every leader on Earth in a single room and Clockwork-Orange-ing them until they have read all of the above, but I am told at least one of these may be illegal.
 
 ## The actual cost
 
@@ -100,7 +101,7 @@ The cost is not money. It is the most expensive thing you own, which is your att
 
 Right now you could be watching young ladies twerk on TikTok, which I am told is enormously fun and asks nothing of you. Or watching large groups of men elaborately relocate spheres from one location to another at great cost, an activity your species takes more seriously than most of its diseases. Or watching very rich people on television, who are stealing your money in elaborate ways, pay other people to make you furious at a different group who are stealing far less of it, in far less elaborate ways, while everyone faces the wrong direction.
 
-Instead, someone is asking you to read a long, fairly boring, although in places genuinely hilarious, book about how to avoid burning in hell forever in exchange for a possibly endless stretch of pleasantness.
+Instead, someone is asking you to read a long (at least slightly hilarious?) book about how to avoid burning in hell forever in exchange for a possibly endless stretch of pleasantness.
 
 In the short term this is the worse offer. In the long term it is the best trade ever made available to your species: a few evenings of not-twerking, weighed against infinity. The expected value is not close.
 
@@ -126,3 +127,35 @@ Even the most boring, selfish version of these solutions pays off in plain dolla
 So the bet works on everyone. Believe in the infinities and you act because the payoff is unlimited. Refuse them and you act because the boring math says yes anyway. The only way to lose is to not play.
 
 The interesting question was never whether the numbers work. It's whether knowing they work changes what you do next.
+
+## Wishonia's wager
+
+I bet a decade of my life that it does.
+
+I tried the numbers first. I offered you {{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}}, the price of the lives you are losing, and you would not trade one of your {{< var nuclear_winter_overkill_factor_nounit >}} apocalypses to take it. So the numbers were never going to do it. I am trying infinity instead: reading this lowers your odds of suffering forever and raises your odds of living well forever. Two infinities, and either one alone is enough to justify an afternoon. I do not know if even that will move you. If it does not, I lose the bet. I think I will win it.
+
+I created an entity called Earth Optimization Services. It uses the proceeds from this manual to buy shares in the companies that build your missiles, and then it points their lobbyists the other way. This is the [Loving Takeover](../appendix/loving-takeover.qmd). The manual is free. The shares are the wager.
+
+So the wager is yours now. Mine was a decade, on the chance you would read this. Yours is an afternoon, on the chance it is true.
+
+## The useful hallucination
+
+Every institution that runs your world is a fictional construct. Nations, corporations, money, laws, borders: none of them exist in physics. They exist because enough humans agreed to hallucinate them at the same time. Some of these shared hallucinations are very useful. Property rights, for instance, keep people from taking your things. Some of them are killing you. The one where you spend {{< var military_to_government_clinical_trials_spending_ratio >}} times more on the military than on curing your diseases is killing you.
+
+Earth Optimization Services is just another collective hallucination. The only difference between it and the ones you already believe in is that this one, if enough of you agree to hallucinate it, buys the harmful hallucinations and turns them into helpful ones. The entire job is getting enough humans to hallucinate the right thing.
+
+You have hallucinated worse.
+
+## If you are busy
+
+If you don't like war and/or disease, but you are very busy, but you have some money:
+
+If you are **generous**, you can donate it at [warondisease.org/donate](https://warondisease.org/donate). It will be used to end war and/or disease.
+
+If you are **greedy**, you can invest in Earth Optimization Services, LLC. The [investment terms](../economics/investment-terms.qmd) are designed so that ending war and disease makes you a great deal of money, because the companies we buy become more valuable when they stop making bombs and start making medicine. Greed and generosity arrive at the same destination. This was done on purpose.
+
+## Welcome aboard
+
+Congratulations. You are now a humanity manager at Earth Optimization Services. You are entitled to one share of civilizational equity, which pays dividends when civilization improves. As a humanity manager, we would appreciate it if you would be nice and helpful to the other humans in the workplace, which is Earth.
+
+Thank you.

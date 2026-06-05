@@ -38,15 +38,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 633 parameters used in the analysis, organized by type:
+This appendix documents all 635 parameters used in the analysis, organized by type:
 
 - External sources (peer-reviewed): 192
-- Calculated values: 323
-- Core definitions: 118
+- Calculated values: 324
+- Core definitions: 119
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (323 parameters) • [External Data Sources](#sec-external) (192 parameters) • [Core Definitions](#sec-definitions) (118 parameters)
+[Calculated Values](#sec-calculated) (324 parameters) • [External Data Sources](#sec-external) (192 parameters) • [Core Definitions](#sec-definitions) (119 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -5147,6 +5147,44 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-current_trajectory_gdp_year_20.qmd >}}
+
+:::
+
+### Defense Takeover Cost per Human: $88 {#sec-defense_takeover_cost_per_human}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Per-person cost of the defense takeover distributed across global population
+
+**Inputs**:
+
+- [Defense Takeover Total Cost](#sec-defense_takeover_cost_total): $700 billion (95% CI: $300 billion - $700 billion)
+- [Global Population in 2024](#sec-global_population_2024) 📊: 8 billion of people (95% CI: 7.8 billion of people - 8.2 billion of people)
+
+$$
+\begin{gathered}
+C_{takeover,pp} \\
+= \frac{C_{takeover}}{Pop_{global}} \\
+= \frac{\$700B}{8B} \\
+= \$87.5
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-defense_takeover_cost_per_human.qmd >}}
+
+{{< include ../figures/sensitivity-table-defense_takeover_cost_per_human.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-defense_takeover_cost_per_human.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-defense_takeover_cost_per_human.qmd >}}
 
 :::
 
@@ -33239,6 +33277,26 @@ Cumulative global military spending since 1913 (Fed era) in constant 2024 dollar
 ::: {.callout-note collapse="true" title="📊 Details"}
 
 Percentage of budget defense sector keeps under 1% treaty
+
+*Core definition*
+
+:::
+
+### Defense Takeover Total Cost: $700 billion {#sec-defense_takeover_cost_total}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Total cost to acquire controlling stakes in all major Western defense contractors (~$670B US primes + ~$50B European primes, rounded to $700B with acquisition premium)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$300 billion, $700 billion]
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $300 billion and $700 billion (±29%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+#### Input Distribution
+
+{{< include ../figures/distribution-defense_takeover_cost_total.qmd >}}
 
 *Core definition*
 

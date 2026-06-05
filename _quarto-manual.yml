@@ -93,6 +93,9 @@ book:
     - text: "Listen"
       href: knowledge/podcast.qmd
 
+    - text: "Love's Wager"
+      href: knowledge/proof/loves-wager.qmd # Opening chapter / introduction: the reader's wager (act on infinite stakes), the ten-solution overview, attention-as-cost, Pascal debugged, and the "Wishonia's wager" coda (author's bet on humanity + revenue-funds-takeover flywheel + price gag). Standalone paper config: _quarto-loves-wager.yml
+
     - part: "Failure Analysis"
       chapters:
         - knowledge/problem.qmd  # ✅ Part I Intro ~8p
@@ -135,7 +138,7 @@ book:
         - knowledge/proof.qmd # ✅ Part III Intro + Historical Precedents (merged) ~20p
         - knowledge/proof/body-as-repairable-machine.qmd # ✅ The Body as a Machine ~7p
         - knowledge/proof/why-hasnt-anyone-done-this.qmd # ✅ Why Hasn't Anyone Done This? ~3p
-        - knowledge/proof/loves-wager.qmd # Love's Wager: any finite action is rational when the stakes are infinite (Pascal's Wager, debugged). Standalone paper config: _quarto-loves-wager.yml
+        # MOVED to front as the opening chapter / introduction (see top of chapters list). loves-wager.qmd is also dual-listed in Papers & Publications.
         # STANDALONE PAPER - see impact.warondisease.org
         # - knowledge/economics/1-pct-treaty-impact.qmd # ✅ Rigorous economic analysis
         # REMOVED: Sales-pitchy tone, thin content (82 lines), already covered in incentive-alignment-bonds.qmd, 1-percent-treaty.qmd, faq.qmd
@@ -213,6 +216,7 @@ book:
         - knowledge/economics/gdp-trajectories.qmd # ✅ (expected-value model, 3 civilization trajectories) ~5p
         - knowledge/economics/health-dividend.qmd # ✅ (good voice) ~3p
         - knowledge/economics/financial-plan.qmd # ✅ (IMPROVED - added personality to opening) ~10p
+        - knowledge/economics/investment-terms.qmd # EOS Fund I terms in Wishonia voice + interactive investment calculator
         - knowledge/economics/earth-optimization-prize-fund.qmd # ✅ (prize fund model) ~8p
         - knowledge/economics/campaign-budget.qmd # ✅ (IMPROVED - "On How to Buy a Planet for $1B") ~7p
         - knowledge/appendix/investor-risk-analysis.qmd # ✅ (risk analysis, appropriate) ~5p

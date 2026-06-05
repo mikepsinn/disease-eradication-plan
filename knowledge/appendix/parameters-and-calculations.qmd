@@ -38,15 +38,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 741 parameters used in the analysis, organized by type:
+This appendix documents all 743 parameters used in the analysis, organized by type:
 
 - External sources (peer-reviewed): 226
-- Calculated values: 370
-- Core definitions: 145
+- Calculated values: 371
+- Core definitions: 146
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (370 parameters) • [External Data Sources](#sec-external) (226 parameters) • [Core Definitions](#sec-definitions) (145 parameters)
+[Calculated Values](#sec-calculated) (371 parameters) • [External Data Sources](#sec-external) (226 parameters) • [Core Definitions](#sec-definitions) (146 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -5602,6 +5602,48 @@ $$
 
 :::
 
+### Defense Takeover Cost per Human: $88 {#sec-defense_takeover_cost_per_human}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Per-person cost of the defense takeover distributed across global population
+
+**Inputs**:
+
+- [Defense Takeover Total Cost](#sec-defense_takeover_cost_total): $700 billion (95% CI: $300 billion - $700 billion)
+- [Global Population in 2024](#sec-global_population_2024) 📊: 8 billion of people (95% CI: 7.8 billion of people - 8.2 billion of people)
+
+$$
+\begin{gathered}
+C_{takeover,pp} \\
+= \frac{C_{takeover}}{Pop_{global}} \\
+= \frac{\$700B}{8B} \\
+= \$87.5
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-defense_takeover_cost_per_human.qmd >}}
+
+{{< include ../figures/sensitivity-table-defense_takeover_cost_per_human.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-defense_takeover_cost_per_human.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-defense_takeover_cost_per_human.qmd >}}
+
+**Used in:**
+
+- [Love's Wager](../proof/loves-wager.html)
+
+:::
+
 ### Year Destructive Economy Reaches 25% of GDP: 2033 {#sec-destructive_economy_25pct_year}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -8890,6 +8932,7 @@ $$
 - [The Funniest Joke in the Universe](../appendix/joke.html)
 - [Ubiquitous Pragmatic Trial Impact Analysis: How to Prevent a Year of Death and Suffering for 84 Cents](../appendix/dfda-impact-paper.html)
 - [Health Dividend](../economics/health-dividend.html)
+- [Love's Wager](../proof/loves-wager.html)
 - [The 1% Treaty](../solution/1-percent-treaty.html)
 - [Frequently Asked Objections](../appendix/faq.html)
 - [Earth Optimization Protocol v1](../strategy/earth-optimization-protocol-v1.html)
@@ -9431,13 +9474,14 @@ $$
 - [The Proof: Overview](../proof.html)
 - [Earth Optimization Protocol v1](../strategy/earth-optimization-protocol-v1.html)
 - [NIH Fails to Institute Health](../problem/nih-fails-2-institute-health.html)
+- [Love's Wager](../proof/loves-wager.html)
 - [The 1% Treaty](../solution/1-percent-treaty.html)
 - [Decentralized Institutes of Health](../solution/dih.html)
 - [A Decentralized FDA](../solution/dfda.html)
 - [Aligning Incentives](../solution/aligning-incentives.html)
-- [Love's Wager](../proof/loves-wager.html)
 - [Frequently Asked Objections](../appendix/faq.html)
 - [Where Am I Wrong?](../appendix/where-am-i-wrong.html)
+- [The Funniest Loving Takeover in the Universe](../appendix/loving-takeover.html)
 - [Peace Dividend](../economics/peace-dividend.html)
 - [Campaign Budget: The Legal Bribery Machine](../economics/campaign-budget.html)
 - [Humanity v. Government](../appendix/humanity-v-government.html)
@@ -14523,12 +14567,13 @@ $$
 - [Where Am I Wrong?](../appendix/where-am-i-wrong.html)
 - [How to Coordinate 10 Million Nonprofits](../strategy/nonprofit-coalition-strategy.html)
 - [The Funniest Lawsuit in the Universe](../appendix/lawsuit.html)
+- [Love's Wager](../proof/loves-wager.html)
 - [The Funniest Joke in the Universe](../appendix/joke.html)
 - [Notice of Termination](../appendix/notice-of-termination.html)
 - [The Plaintiff Media Kit](../appendix/plaintiff-media-kit.html)
 - [The 1% Treaty: Harnessing Greed to Eradicate Disease](../economics/1-pct-treaty-impact.html)
+- [I Am Retarded](../problem/i-am-retarded.html)
 - [Department of Peace](../solution/department-of-peace.html)
-- [Love's Wager](../proof/loves-wager.html)
 - [The Cautionary Tale of Moronia](../futures/moronia.html)
 - [Declaration of Optimization](../strategy/declaration-of-optimization.html)
 - [Recruitment & Propaganda Plan](../appendix/recruitment-and-propaganda-plan.html)
@@ -14536,7 +14581,6 @@ $$
 - [Medical Research Spending: The Lie](../appendix/global-government-medical-research-spending.html)
 - [Diagnostic Summary](../problem.html)
 - [Genetic Slavery](../problem/genetic-slavery.html)
-- [I Am Retarded](../problem/i-am-retarded.html)
 - [Voter Acquisition Grant Proposal](../grant-proposal/voter-acquisition-grant.html)
 - [The Most Important Secret in the World: 20 Questions to End War and Disease](../strategy/questions.html)
 - [Earth Optimization Protocol v1](../strategy/earth-optimization-protocol-v1.html)
@@ -14851,12 +14895,13 @@ $$
 
 - [The Apocalypse Markup](../appendix/extinction-surplus.html)
 - [The Most Important Secret in the World: 20 Questions to End War and Disease](../strategy/questions.html)
+- [I Am Retarded](../problem/i-am-retarded.html)
 - [Where Am I Wrong?](../appendix/where-am-i-wrong.html)
 - [The Funniest Joke in the Universe](../appendix/joke.html)
+- [Love's Wager](../proof/loves-wager.html)
 - [The 1% Treaty](../solution/1-percent-treaty.html)
 - [The Funniest Lawsuit in the Universe](../appendix/lawsuit.html)
 - [Humanity v. Government](../appendix/humanity-v-government.html)
-- [Love's Wager](../proof/loves-wager.html)
 - [Declaration of Optimization](../strategy/declaration-of-optimization.html)
 - [Correcting the AIs](../appendix/correcting-the-ais.html)
 - [About This Manual](../appendix/back-cover.html)
@@ -20344,6 +20389,7 @@ $$
 - [The Planetary Constitutional Convention](../strategy/planetary-constitutional-convention.html)
 - [The Funniest Joke in the Universe](../appendix/joke.html)
 - [Health Dividend](../economics/health-dividend.html)
+- [Investment Terms](../economics/investment-terms.html)
 - [Humanity v. Government](../appendix/humanity-v-government.html)
 - [How Much Does It Cost to Buy All the Governments?](../appendix/cost-of-change-analysis.html)
 - [Algorithmic Public Administration](../appendix/algorithmic-public-administration-paper.html)
@@ -20622,6 +20668,7 @@ $$
 - [How to Coordinate 10 Million Nonprofits](../strategy/nonprofit-coalition-strategy.html)
 - [Recruitment & Propaganda Plan](../appendix/recruitment-and-propaganda-plan.html)
 - [Health Dividend](../economics/health-dividend.html)
+- [Investment Terms](../economics/investment-terms.html)
 - [How Much Does It Cost to Buy All the Governments?](../appendix/cost-of-change-analysis.html)
 
 :::
@@ -24733,6 +24780,7 @@ $$
 **Used in:**
 
 - [The Funniest Joke in the Universe](../appendix/joke.html)
+- [Investment Terms](../economics/investment-terms.html)
 - [The Press Release and Journalist List](../appendix/press-release.html)
 - [The Vandalism Handout](../appendix/handout.html)
 - [The Funniest Lawsuit in the Universe](../appendix/lawsuit.html)
@@ -28090,6 +28138,7 @@ $$
 - [Decentralized Institutes of Health](../solution/dih.html)
 - [Earth Optimization Protocol v1](../strategy/earth-optimization-protocol-v1.html)
 - [Peace Dividend](../economics/peace-dividend.html)
+- [Investment Terms](../economics/investment-terms.html)
 - [Incentive Alignment Bonds: Making Public Goods Financially and Politically Profitable](../appendix/incentive-alignment-bonds-paper.html)
 
 :::
@@ -28174,6 +28223,7 @@ $$
 - [Recruitment & Propaganda Plan](../appendix/recruitment-and-propaganda-plan.html)
 - [The Planetary Constitutional Convention](../strategy/planetary-constitutional-convention.html)
 - [Financial Plan](../economics/financial-plan.html)
+- [Investment Terms](../economics/investment-terms.html)
 - [The Earth Optimization Prize Fund](../economics/earth-optimization-prize-fund.html)
 
 :::
@@ -33498,6 +33548,7 @@ Average annual stock market return (10%)
 - [Incentive Alignment Bonds: Making Public Goods Financially and Politically Profitable](../appendix/incentive-alignment-bonds-paper.html)
 - [Incentive Alignment Bonds](../solution/incentive-alignment-bonds.html)
 - [Earth Optimization Protocol v1](../strategy/earth-optimization-protocol-v1.html)
+- [Investment Terms](../economics/investment-terms.html)
 - [The 1% Treaty: Harnessing Greed to Eradicate Disease](../economics/1-pct-treaty-impact.html)
 
 :::
@@ -38841,6 +38892,7 @@ Average years of life extension per person saved by pharmaceutical interventions
 - [The Plaintiff Media Kit](../appendix/plaintiff-media-kit.html)
 - [The Rule 14a-8 Shareholder Proposal](../appendix/shareholder-proposal-14a-8.html)
 - [The Funniest Loving Takeover in the Universe](../appendix/loving-takeover.html)
+- [Investment Terms](../economics/investment-terms.html)
 
 :::
 
@@ -39774,6 +39826,7 @@ Cumulative global military spending since 1913 (Fed era) in constant 2024 dollar
 - [Declaration of Optimization](../strategy/declaration-of-optimization.html)
 - [Humanity v. Government](../appendix/humanity-v-government.html)
 - [Where Am I Wrong?](../appendix/where-am-i-wrong.html)
+- [I Am Retarded](../problem/i-am-retarded.html)
 - [The Earth Optimization Prize](../strategy/earth-optimization-prize.html)
 
 :::
@@ -39814,6 +39867,30 @@ Percentage of budget defense sector keeps under 1% treaty
 - [The Most Important Secret in the World: 20 Questions to End War and Disease](../strategy/questions.html)
 - [How to Coordinate 10 Million Nonprofits](../strategy/nonprofit-coalition-strategy.html)
 - [The Funniest Joke in the Universe](../appendix/joke.html)
+
+:::
+
+### Defense Takeover Total Cost: $700 billion {#sec-defense_takeover_cost_total}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Total cost to acquire controlling stakes in all major Western defense contractors (~$670B US primes + ~$50B European primes, rounded to $700B with acquisition premium)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$300 billion, $700 billion]
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $300 billion and $700 billion (±29%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+#### Input Distribution
+
+{{< include ../figures/distribution-defense_takeover_cost_total.qmd >}}
+
+*Core definition*
+
+**Used in:**
+
+- [Investment Terms](../economics/investment-terms.html)
 
 :::
 
@@ -41532,6 +41609,7 @@ Total deaths from wars, conflicts, genocides, and policy-induced famines since 1
 - [Humanity v. Government](../appendix/humanity-v-government.html)
 - [Money Comes From a Building and They Use It to Kill People](../economics/central-banks.html)
 - [The 1% Treaty](../solution/1-percent-treaty.html)
+- [I Am Retarded](../problem/i-am-retarded.html)
 - [Declaration of Optimization](../strategy/declaration-of-optimization.html)
 - [The Earth Optimization Prize](../strategy/earth-optimization-prize.html)
 - [Algorithmic Public Administration](../appendix/algorithmic-public-administration-paper.html)

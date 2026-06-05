@@ -323,6 +323,20 @@ Even with a brutally pessimistic discount, the per-person expected return on thi
 
 This is per-unit-money the highest-EV investment a human can make.
 
+## How It Finances Itself (Not a $385 Billion Bonfire)
+
+The numbers above are the price if you paid all cash and then set the money on fire. You would do neither.
+
+Start with the cash. Defense cash flows are about as steady as cash flows get, which is precisely what lets you borrow against them. A leveraged buyout of something this stable can carry 50% to 65% debt, so taking a company private costs an equity slice, not the whole sticker. The acquisition premium pushes the price up and the leverage pushes the cash-down requirement back down; they roughly cancel. You need an equity check, plus debt the company itself carries.
+
+Then comes the good objection: if the debt is serviced by the company's cash flows, and you are redirecting the company, do you not strangle the thing you just bought? In today's world, yes. That is the trap.
+
+But you are not redirecting these companies into a desert. You are redirecting them into a market the plan itself irrigates. Today a company pays for its own efficacy trials, which are the majority of the cost of a drug, and then waits a decade to see a dollar back. That decade-long hole is what would eat the debt. The [Right to Trial Act](right-to-trial-fda-upgrade-act.qmd) [@right-to-trial-paper-2025] and the [decentralized FDA](../solution/dfda.qmd) [@dfda-spec-paper-2025; @dfda-impact-paper-2025] fill it: the public trial fund pays for the efficacy component, the dFDA makes each trial roughly {{< var dfda_trial_cost_reduction_factor >}} cheaper, and anyone may join any trial. The company's single largest expense stops being an expense and becomes a funded revenue line. It is cash-flow positive on the new model almost at once. There is no decade to bridge.
+
+And the competence transfers exactly. These firms are not good at "weapons." They are good at winning government-funded R&D contracts, integrating complex systems, and lobbying. Point that skill at the health-security market the treaty creates and it is the same skill in a new costume. The lobbying you redirect passes the treaty; the treaty funds the trials; the trials are the contracts these companies win. The snake eats its own tail in the one direction where that is a good thing.
+
+So this is not capital poured into a hole. It is capital redeployed into a government-funded growth sector that the redeployment itself calls into being. The redirected company is worth more, not less, which is the entire reason the debt is serviceable and the early shareholders get richer on the way in. Lenders finance growth pivots. They do not finance bonfires. This is the former wearing the costume of the latter.
+
 ## Real Frictions
 
 These are real, and they shape how the campaign is structured. They do not eliminate it.
@@ -338,6 +352,8 @@ Defense stock floats are not infinitely liquid. A coordinated purchase of half t
 Any large or unusual ownership change in a US defense prime triggers Committee on Foreign Investment in the United States review. A coalition of US citizens buying shares is domestic and falls outside CFIUS, but the Department of Defense has informal mechanisms to slow or block ownership changes it considers adversarial to national security. This is a real obstacle, not a fatal one.
 
 **Mitigation:** The public framing matters. "Long-term shareholders organized to align defense industry lobbying with shareholder interests" is a defensible CFIUS posture. The "loving takeover" framing is more defensible than "hostile" but still requires careful presentation. The substance is the same; the framing is what CFIUS reviews.
+
+**The deeper argument runs the other way.** The current base is itself the national-security problem: it rewards competence in lobbying over competence in production, which is how a system spending close to a trillion dollars a year still cannot surge artillery shells and has failed its audit every year it has been tried. A takeover that turns these companies from buyers of influence back into builders of things, and stands up a health-security industrial base alongside the defense one, is the pro-security move, not the adversarial one. The single piece to keep off the table is the weapons themselves: the actual munitions and classified programs stay under existing cleared control. Humanity votes on the lobbying and the capital allocation. It does not vote on the nuclear codes.
 
 ### Staggered boards and poison pills
 

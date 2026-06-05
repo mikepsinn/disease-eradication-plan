@@ -4531,6 +4531,22 @@ export const CURRENT_TRAJECTORY_GDP_YEAR_20: Parameter = {
   manualPageTitle: "Please Select an Earth: A) Everyone Gets Rich B) Somalia, but Everywhere",
 };
 
+export const DEFENSE_TAKEOVER_COST_PER_HUMAN: Parameter = {
+  value: 87.5,
+  parameterName: "DEFENSE_TAKEOVER_COST_PER_HUMAN",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-defense_takeover_cost_per_human",
+  unit: "USD",
+  displayName: "Defense Takeover Cost per Human",
+  description: "Per-person cost of the defense takeover distributed across global population",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "DEFENSE_TAKEOVER_COST_TOTAL / GLOBAL_POPULATION_2024",
+  latex: "\\begin{gathered}\nC_{takeover,pp} \\\\\n= \\frac{C_{takeover}}{Pop_{global}} \\\\\n= \\frac{\\$700B}{8B} \\\\\n= \\$87.5\n\\end{gathered}",
+  confidenceInterval: [85.69270238611736, 89.39569242852504],
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/loving-takeover.html",
+  manualPageTitle: "The Funniest Loving Takeover in the Universe",
+};
+
 export const DESTRUCTIVE_ECONOMY_25PCT_YEAR: Parameter = {
   value: 2033.0,
   parameterName: "DESTRUCTIVE_ECONOMY_25PCT_YEAR",
@@ -10246,6 +10262,20 @@ export const DEFENSE_SECTOR_RETENTION_PCT: Parameter = {
   manualPageTitle: "Optimization Summary",
 };
 
+export const DEFENSE_TAKEOVER_COST_TOTAL: Parameter = {
+  value: 700000000000.0,
+  parameterName: "DEFENSE_TAKEOVER_COST_TOTAL",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-defense_takeover_cost_total",
+  unit: "USD",
+  displayName: "Defense Takeover Total Cost",
+  description: "Total cost to acquire controlling stakes in all major Western defense contractors (~$670B US primes + ~$50B European primes, rounded to $700B with acquisition premium)",
+  sourceType: "definition",
+  confidence: "high",
+  confidenceInterval: [300000000000.0, 700000000000.0],
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/loving-takeover.html",
+  manualPageTitle: "The Funniest Loving Takeover in the Universe",
+};
+
 export const DESTRUCTIVE_ECONOMY_BASE_YEAR: Parameter = {
   value: 2025.0,
   parameterName: "DESTRUCTIVE_ECONOMY_BASE_YEAR",
@@ -11814,6 +11844,7 @@ export const parameters = {
   CURRENT_TRAJECTORY_CUMULATIVE_LIFETIME_INCOME,
   CURRENT_TRAJECTORY_GDP_YEAR_15,
   CURRENT_TRAJECTORY_GDP_YEAR_20,
+  DEFENSE_TAKEOVER_COST_PER_HUMAN,
   DESTRUCTIVE_ECONOMY_25PCT_YEAR,
   DESTRUCTIVE_ECONOMY_35PCT_YEAR,
   DESTRUCTIVE_ECONOMY_50PCT_YEAR,
@@ -12177,6 +12208,7 @@ export const parameters = {
   DAYS_PER_YEAR,
   DCT_PLATFORM_FUNDING_MEDIUM,
   DEFENSE_SECTOR_RETENTION_PCT,
+  DEFENSE_TAKEOVER_COST_TOTAL,
   DESTRUCTIVE_ECONOMY_BASE_YEAR,
   DFDA_ANNUAL_TRIAL_FUNDING,
   DFDA_NPV_ADOPTION_RAMP_YEARS,
@@ -14560,10 +14592,10 @@ export const citations: Record<string, Citation> = {
 
 /** Summary statistics */
 export const PARAMETER_STATS = {
-  total: 741,
+  total: 743,
   external: 226,
-  calculated: 370,
-  definitions: 145,
+  calculated: 371,
+  definitions: 146,
   citations: 165,
 } as const;
 
