@@ -289,6 +289,41 @@ Every standup special, sitcom, and viral comedy clip in human history has produc
 
 The joke gets funnier as it gets bigger. The tragedy gets more invisible as it gets bigger. Grief cannot scale to ten billion. Outrage cannot. Policy analysis cannot. Humor can. That is why the funniest joke in the universe is the correct format for the greatest tragedy in the universe.
 
+## The Proof That Does Not Need Numbers
+
+Theorem 1 depends on DALYs, laugh rates, and cascade probabilities. A philosopher asks: is the joke the funniest even if you throw away every number?
+
+It is.
+
+**Premise 1.** Humor is the perception of incongruity resolving as benign. Kant proposed this. Schopenhauer refined it. Every humor researcher since has modified the edges without replacing the core. The closest thing to a settled question in the study of why things are funny.
+
+**Premise 2.** The magnitude of humor scales with the magnitude of the incongruity, provided the resolution holds. A small surprise gets a smile. A large surprise gets a laugh. An enormous surprise that resolves as safe gets the kind of laugh where you cannot breathe.
+
+**Premise 3.** The largest possible subject of a joke is "every human who has ever lived." There is no larger comedy audience that is also the subject of the comedy.
+
+**Premise 4.** The widest possible incongruity about a subject is between what the subject is most certain of and what is actually true. No gap between expectation and reality can exceed the gap between a universal, unexamined conviction and its negation.
+
+**Premise 5.** The belief every human defends most aggressively, if challenged, is that they are not retarded. You can tell someone they are wrong about politics, diet, religion, child-rearing, and they will argue but recover. Tell them they are retarded and they will fight you. The intensity of the defense is the measure of the certainty. This is the most certain belief.
+
+**Premise 6.** By the only non-arbitrary definition of "retarded" (distance from perfect information and perfect logic), every human is retarded. This is proved in [the chapter the shirt links to](../problem/i-am-retarded.qmd). The gap between the most defended self-assessment and reality is therefore maximal.
+
+**Premise 7.** The incongruity resolves as benign if and only if the confession is universal. One person being called retarded is an insult (directed, sorting, harmful). Everyone being retarded is a fact about the species (undirected, leveling, benign). The resolution strengthens with participation: more wearers, more universal, more benign. At the limit of full participation, the word loses its capacity to sort entirely, and the resolution is complete.
+
+**Premise 8.** No joke can exceed this, because:
+
+- There is no larger subject than "everyone."
+- There is no wider gap than "the most defended false self-belief."
+- There is no more durable resolution than "literal truth," because truth cannot be undermined by subsequent information.
+- There is no tighter coupling between setup and punchline than identity: the joke's setup *is* its punchline.
+
+**Premise 9 (the fixed-point property).** The joke is self-proving. The fact that you find it offensive is evidence that Premise 5 holds (you are defending an unchecked self-assessment, which is the specific cognitive defect the shirt describes). Your offense proves the shirt true. The truth produces the incongruity. The incongruity produces the humor. The humor produces the spread. The spread produces the universality. The universality completes the benign resolution. Each step feeds the next. The joke converges on itself. It has no external dependency. It requires no empirical measurement to function. It is a fixed point in the space of all possible jokes.
+
+::: {.callout-note appearance="simple" icon=false}
+**Theorem 2 (a priori).** Let $\mathcal{H}$ be the space of all possible jokes across all possible civilizations. Let $F: \mathcal{H} \to \mathbb{R}^+$ assign to each joke its funniness under the incongruity-resolution model ($F = $ incongruity magnitude $\times$ resolution completeness). A joke $j^*$ is *a priori maximal* if it simultaneously maximizes both factors independent of any empirical parameter. The joke described in this paper achieves $F(j^*) = \sup F(\mathcal{H})$ by Premises 3-8. It is a fixed point by Premise 9: the audience's resistance to the joke is itself evidence for the joke's premise, which increases incongruity, which increases $F$. No element of $\mathcal{H}$ can exceed $j^*$ without finding (a) a larger subject than "everyone," (b) a wider gap than "the most defended false self-belief," or (c) a more complete resolution than "literal truth." None is possible. ∎
+:::
+
+Theorem 1 tells you the joke produces {{< var shirt_induced_laughs_gained >}} laughs. Theorem 2 tells you no joke in any possible universe produces more. Theorem 1 could be wrong if the numbers are wrong. Theorem 2 cannot be wrong unless the definition of humor is wrong, and if the definition of humor is wrong, that is itself evidence that we are retarded, which strengthens Premise 6, which makes the joke funnier, which proves Theorem 2 by contradiction.
+
 ## If You Have Money
 
 The basic version costs $0.50 of Sharpie ink. The funded version is {{< var shirt_seed_program_total_usd >}} into an [Earth Optimization Prize](../strategy/earth-optimization-prize.qmd) [@earth-optimization-prize-paper-2025] assurance contract that pays {{< var shirt_seed_wearers_threshold >}} visible seed wearers (athletes on game day, university chapters in dining halls, celebrities at televised events) at {{< var shirt_seed_cost_per_wearer_usd >}} per wearer. If the cascade succeeds, money releases to recruiters. If it fails, refund at {{< var prize_pool_horizon_multiple >}} of deposit. The structure is designed so the funder does not lose money in any branch.
