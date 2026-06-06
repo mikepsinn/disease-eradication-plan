@@ -13903,8 +13903,9 @@ CONTRIBUTION_SUFFERING_HOURS_PER_PCT_POINT = Parameter(
 DEFENSE_PRIMES_MARKET_CAP_US = Parameter(
     670_000_000_000,
     manual_ref="knowledge/appendix/loving-takeover.qmd",
+    source_ref="defense-primes-market-cap-2026",
     source_type="external",
-    description="Combined market capitalization of major US defense primes (RTX, Boeing, LMT, GD, NOC, LHX, LDOS, BAH, CACI, HII, SAIC)",
+    description="Combined market capitalization of major US defense primes (RTX, LMT, GD, NOC, LHX, HII plus IT primes LDOS, BAH, CACI, SAIC), approx as of June 2026; Boeing is largely commercial and only partially attributable",
     display_name="US Defense Primes Market Cap",
     unit="USD",
     keywords=["defense contractor", "market cap", "US primes"],
@@ -13913,10 +13914,11 @@ DEFENSE_PRIMES_MARKET_CAP_US = Parameter(
 )
 
 DEFENSE_PRIMES_MARKET_CAP_ALLIED = Parameter(
-    95_000_000_000,
+    131_000_000_000,
     manual_ref="knowledge/appendix/loving-takeover.qmd",
+    source_ref="defense-primes-market-cap-2026",
     source_type="external",
-    description="Combined market capitalization of major allied European defense primes (BAE Systems, Thales)",
+    description="Combined market capitalization of major allied European defense primes (BAE Systems approx $75.6B + Thales approx $55.0B), approx as of June 2026",
     display_name="Allied Defense Primes Market Cap",
     unit="USD",
     keywords=["defense contractor", "market cap", "European primes", "BAE", "Thales"],

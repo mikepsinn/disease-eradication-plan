@@ -1,0 +1,258 @@
+---
+title: "Methodology, Parameters, and Calculations"
+description: "Parameter definitions, formulas, uncertainty ranges, and data sources."
+feed-date: false
+keywords:
+  - health economics methodology
+  - clinical trial cost analysis
+  - medical research ROI
+  - cost-benefit analysis healthcare
+  - sensitivity analysis
+  - Monte Carlo simulation
+  - DALY calculation
+  - pragmatic clinical trials
+aliases:
+  - /calculations.html
+  - /methodology.html
+  - /knowledge/appendix/parameters-and-calculations
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    number-sections: false
+    code-fold: true
+podcast-image: /assets/podcast/parameters-and-calculations-podcast.jpg
+youtube-thumbnail: /assets/podcast/parameters-and-calculations-youtube.jpg
+---
+
+::: {.content-visible when-format="epub"}
+Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo distributions are available in the online version of this document.
+:::
+
+::: {.content-visible when-format="docx"}
+Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo distributions are available in the online version of this document.
+:::
+
+::::: {.content-visible unless-format="epub"}
+:::: {.content-visible unless-format="docx"}
+
+## Overview {#sec-parameters-and-calculations}
+
+This appendix documents all 8 parameters used in the analysis, organized by type:
+
+- External sources (peer-reviewed): 4
+- Calculated values: 2
+- Core definitions: 2
+
+### Quick Navigation
+
+[Calculated Values](#sec-calculated) (2 parameters) • [External Data Sources](#sec-external) (4 parameters) • [Core Definitions](#sec-definitions) (2 parameters)
+
+
+## Calculated Values {#sec-calculated}
+
+Parameters derived from mathematical formulas and economic models.
+
+### Ratio of Military to Government Clinical Trials Spending: 604:1 {#sec-military_to_government_clinical_trials_spending_ratio}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Ratio of global military spending to government clinical trials spending
+
+**Inputs**:
+
+- [Global Military Spending in 2024](#sec-global_military_spending_annual_2024) 📊: $2.72 trillion
+- [Annual Global Government Spending on Clinical Trials](#sec-global_government_clinical_trials_spending_annual) 📊: $4.5 billion (95% CI: $3 billion - $6 billion)
+
+$$
+\begin{gathered}
+Ratio_{mil:gov} \\
+= \frac{Spending_{mil}}{Spending_{trials,gov}} \\
+= \frac{\$2.72T}{\$4.5B} \\
+= 604
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-military_to_government_clinical_trials_spending_ratio.qmd >}}
+
+{{< include ../figures/sensitivity-table-military_to_government_clinical_trials_spending_ratio.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-military_to_government_clinical_trials_spending_ratio.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-military_to_government_clinical_trials_spending_ratio.qmd >}}
+
+:::
+
+### Nuclear Winter Overkill Factor: 122x {#sec-nuclear_winter_overkill_factor}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+How many times the global nuclear arsenal exceeds the threshold for civilizational collapse via regional-scale nuclear winter (~100 warheads, ~5 Tg soot, ~2 billion famine deaths, global food system collapse). The arsenal-based overkill factor against the apocalypse the median human experiences.
+
+**Inputs**:
+
+- [Global Nuclear Warhead Count](#sec-global_warhead_count) 📊: 12,241 warheads
+- [Nuclear Winter Warhead Threshold](#sec-nuclear_winter_warhead_threshold) 📊: 100 warheads (95% CI: 50 warheads - 300 warheads)
+
+$$
+\begin{gathered}
+Overkill_{winter} \\
+= \frac{W_{global}}{W_{winter}} \\
+= \frac{12{,}200}{100} \\
+= 122
+\end{gathered}
+$$
+
+*~ Medium confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-nuclear_winter_overkill_factor.qmd >}}
+
+{{< include ../figures/sensitivity-table-nuclear_winter_overkill_factor.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-nuclear_winter_overkill_factor.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-nuclear_winter_overkill_factor.qmd >}}
+
+:::
+
+## External Data Sources {#sec-external}
+
+Parameters sourced from peer-reviewed publications, institutional databases, and authoritative reports.
+
+### Annual Global Government Spending on Clinical Trials: $4.5 billion {#sec-global_government_clinical_trials_spending_annual}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual global government spending on interventional clinical trials (~5-10% of total)
+
+**Source**: [@global-government-clinical-trial-spending-estimate]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$3 billion, $6 billion] • Distribution: Lognormal (SE: $1 billion)
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $3 billion and $6 billion (±33%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_government_clinical_trials_spending_annual.qmd >}}
+
+*✓ High confidence*
+
+:::
+
+### Global Military Spending in 2024: $2.72 trillion {#sec-global_military_spending_annual_2024}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Global military spending in 2024
+
+**Source**: [@global-military-spending]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*✓ High confidence*
+
+:::
+
+### Global Nuclear Warhead Count: 12,241 warheads {#sec-global_warhead_count}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Total global nuclear warhead inventory across nine nuclear-armed states. Includes deployed, reserve, and retired warheads awaiting dismantlement.
+
+**Source**: [@world-warheads]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*✓ High confidence*
+
+:::
+
+### Nuclear Winter Warhead Threshold: 100 warheads {#sec-nuclear_winter_warhead_threshold}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Approximate number of warheads needed to trigger a regional-scale nuclear winter sufficient to collapse the global food system. A 100-warhead regional exchange (Robock/Toon 2007, extended by Xia et al. 2022) injects ~5 Tg of soot into the stratosphere, drops global temperatures ~1.8C for a decade, shortens growing seasons worldwide, and kills ~2 billion people from famine. Civilization as the median human experiences it does not survive. Xia 2022 shows total agricultural collapse (~5B deaths) at ~4,400 warheads; this parameter uses the lower threshold for median-human civilizational collapse.
+
+**Source**: [@nuke-winter-150tg]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [50 warheads, 300 warheads] • Distribution: Uniform
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between 50 warheads and 300 warheads (±125%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The uniform distribution means any value in the range is equally likely.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-nuclear_winter_warhead_threshold.qmd >}}
+
+*~ Medium confidence*
+
+:::
+
+## Core Definitions {#sec-definitions}
+
+Fundamental parameters and constants used throughout the analysis.
+
+### Cumulative Military Spending (Fed Era): $170 trillion {#sec-cumulative_military_spending_fed_era}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Cumulative global military spending since 1913 (Fed era) in constant 2024 dollars. Built from: SIPRI 1988-2024 ($65-72T), Cold War 1946-1987 ($50-70T reconstructed), WWI+WWII+interwar ($33T from Harrison). Range: $150-190T.
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*Core definition*
+
+:::
+
+### Total War and Conflict Deaths Since 1900: 310 million deaths {#sec-war_deaths_since_1900}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Total deaths from wars, conflicts, genocides, and policy-induced famines since 1900. Built from non-overlapping categories: Rummel democide 264M (incl 21st century) + battle deaths 39M + collateral civilian deaths 30M - overlap adjustment 25M = 308M, rounded to 310M. Range: White low 200M to Rummel-high-plus-military 340M.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [200 million deaths, 340 million deaths] • Distribution: Uniform
+
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between 200 million deaths and 340 million deaths (±23%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The uniform distribution means any value in the range is equally likely.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-war_deaths_since_1900.qmd >}}
+
+*Core definition*
+
+:::
+
+
+::::
+:::::

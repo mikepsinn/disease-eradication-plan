@@ -215,6 +215,7 @@ from dih_models.paper_parameters_and_calculations_qmd_generator import generate_
 from dih_models.quarto_formatting import (
     generate_html_with_tooltip,
 )
+from dih_models.reactive_formula import compute_to_js
 from dih_models.reference_ids_generator import generate_reference_ids_enum
 from dih_models.reference_parser import (
     parse_references_bib,
@@ -579,6 +580,20 @@ def publish_public_parameters_exports(
         ci = getattr(value_obj, "confidence_interval", None)
         if ci:
             entry["confidenceInterval"] = [float(ci[0]), float(ci[1])]
+
+        # Reactive metadata: dependency list, distribution, and a JS-evaluable
+        # expression traced from the compute lambda. Powers the interactive
+        # parameter editor (see knowledge/includes/reactive-params.qmd).
+        dist = getattr(value_obj, "distribution", None)
+        dist_str = dist.value if hasattr(dist, "value") else (str(dist) if dist else None)
+        if dist_str:
+            entry["distribution"] = dist_str
+        if getattr(value_obj, "compute", None) and getattr(value_obj, "inputs", None):
+            js_expr, js_inputs, ok = compute_to_js(value_obj)
+            if ok:
+                entry["inputs"] = js_inputs
+                entry["computeExpr"] = js_expr
+
         pages = chapter_mapping.get(name) or []
         if pages:
             entry["chapterUrl"] = pages[0]["url"]
@@ -596,6 +611,11 @@ def publish_public_parameters_exports(
     with open(json_output, "w", encoding="utf-8", newline="\n") as f:
         json.dump(payload, f, indent=2, ensure_ascii=False, default=str, sort_keys=False)
     logger.debug(f"[OK] Published {len(json_params)} parameters to {json_output}")
+
+    # The interactive parameter editor (knowledge/includes/reactive-params.qmd)
+    # reads this same parameters.json. The inputs/computeExpr/distribution fields
+    # added above are what it needs; no separate twin file is required. The async
+    # fetch never blocks page render, and the citations bulk gzips + caches away.
 
 
 def main():

@@ -53,7 +53,7 @@ This appendix documents all 42 parameters used in the analysis, organized by typ
 
 Parameters derived from mathematical formulas and economic models.
 
-### Defense Takeover Cost per Human: $86 {#sec-defense_takeover_cost_per_human}
+### Defense Takeover Cost per Human: $90 {#sec-defense_takeover_cost_per_human}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -61,15 +61,15 @@ Per-person cost of the defense takeover distributed across global population
 
 **Inputs**:
 
-- [Defense Takeover Total Cost](#sec-defense_takeover_cost_total) 🔢: $690 billion
+- [Defense Takeover Total Cost](#sec-defense_takeover_cost_total) 🔢: $722 billion
 - [Global Population in 2024](#sec-global_population_2024) 📊: 8 billion of people (95% CI: 7.8 billion of people - 8.2 billion of people)
 
 $$
 \begin{gathered}
 C_{takeover,pp} \\
 = \frac{C_{takeover}}{Pop_{global}} \\
-= \frac{\$690B}{8B} \\
-= \$86.2
+= \frac{\$722B}{8B} \\
+= \$90.3
 \end{gathered}
 $$
 where:
@@ -98,7 +98,7 @@ $$
 
 :::
 
-### Defense Takeover Total Cost: $690 billion {#sec-defense_takeover_cost_total}
+### Defense Takeover Total Cost: $722 billion {#sec-defense_takeover_cost_total}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -107,7 +107,7 @@ Total realistic cost to acquire controlling stakes in all major Western defense 
 **Inputs**:
 
 - [US Defense Primes Market Cap](#sec-defense_primes_market_cap_us) 📊: $670 billion
-- [Allied Defense Primes Market Cap](#sec-defense_primes_market_cap_allied) 📊: $95 billion
+- [Allied Defense Primes Market Cap](#sec-defense_primes_market_cap_allied) 📊: $131 billion
 - [Control Fraction](#sec-defense_takeover_control_fraction): 0.501:1
 - [Acquisition Premium Multiplier](#sec-defense_takeover_acquisition_premium): 1.8x (95% CI: 1.5x - 3x)
 
@@ -1106,11 +1106,13 @@ Annual global clinical trial participants (IQVIA 2022: 1.9M post-COVID normaliza
 
 :::
 
-### Allied Defense Primes Market Cap: $95 billion {#sec-defense_primes_market_cap_allied}
+### Allied Defense Primes Market Cap: $131 billion {#sec-defense_primes_market_cap_allied}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Combined market capitalization of major allied European defense primes (BAE Systems, Thales)
+Combined market capitalization of major allied European defense primes (BAE Systems approx $75.6B + Thales approx $55.0B), approx as of June 2026
+
+**Source**: [@defense-primes-market-cap-2026]
 
 #### Uncertainty Range
 
@@ -1124,7 +1126,9 @@ Combined market capitalization of major allied European defense primes (BAE Syst
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Combined market capitalization of major US defense primes (RTX, Boeing, LMT, GD, NOC, LHX, LDOS, BAH, CACI, HII, SAIC)
+Combined market capitalization of major US defense primes (RTX, LMT, GD, NOC, LHX, HII plus IT primes LDOS, BAH, CACI, SAIC), approx as of June 2026; Boeing is largely commercial and only partially attributable
+
+**Source**: [@defense-primes-market-cap-2026]
 
 #### Uncertainty Range
 

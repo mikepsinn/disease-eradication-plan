@@ -539,13 +539,15 @@ export const DEFENSE_LOBBYING_ANNUAL: Parameter = {
 };
 
 export const DEFENSE_PRIMES_MARKET_CAP_ALLIED: Parameter = {
-  value: 95000000000.0,
+  value: 131000000000.0,
   parameterName: "DEFENSE_PRIMES_MARKET_CAP_ALLIED",
   calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-defense_primes_market_cap_allied",
   unit: "USD",
   displayName: "Allied Defense Primes Market Cap",
-  description: "Combined market capitalization of major allied European defense primes (BAE Systems, Thales)",
+  description: "Combined market capitalization of major allied European defense primes (BAE Systems approx $75.6B + Thales approx $55.0B), approx as of June 2026",
   sourceType: "external",
+  sourceRef: "defense-primes-market-cap-2026",
+  sourceUrl: "https://companiesmarketcap.com/defense-contractors/largest-companies-by-market-cap/",
   confidence: "high",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/loving-takeover.html",
   manualPageTitle: "The Loving Takeover",
@@ -557,8 +559,10 @@ export const DEFENSE_PRIMES_MARKET_CAP_US: Parameter = {
   calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-defense_primes_market_cap_us",
   unit: "USD",
   displayName: "US Defense Primes Market Cap",
-  description: "Combined market capitalization of major US defense primes (RTX, Boeing, LMT, GD, NOC, LHX, LDOS, BAH, CACI, HII, SAIC)",
+  description: "Combined market capitalization of major US defense primes (RTX, LMT, GD, NOC, LHX, HII plus IT primes LDOS, BAH, CACI, SAIC), approx as of June 2026; Boeing is largely commercial and only partially attributable",
   sourceType: "external",
+  sourceRef: "defense-primes-market-cap-2026",
+  sourceUrl: "https://companiesmarketcap.com/defense-contractors/largest-companies-by-market-cap/",
   confidence: "high",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/loving-takeover.html",
   manualPageTitle: "The Loving Takeover",
@@ -4558,7 +4562,7 @@ export const CURRENT_TRAJECTORY_GDP_YEAR_20: Parameter = {
 };
 
 export const DEFENSE_TAKEOVER_COST_PER_HUMAN: Parameter = {
-  value: 86.234625,
+  value: 90.292725,
   parameterName: "DEFENSE_TAKEOVER_COST_PER_HUMAN",
   calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-defense_takeover_cost_per_human",
   unit: "USD",
@@ -4567,14 +4571,14 @@ export const DEFENSE_TAKEOVER_COST_PER_HUMAN: Parameter = {
   sourceType: "calculated",
   confidence: "high",
   formula: "DEFENSE_TAKEOVER_COST_TOTAL / GLOBAL_POPULATION_2024",
-  latex: "\\begin{gathered}\nC_{takeover,pp} = \\frac{C_{takeover}}{Pop_{global}} = \\frac{\\$690B}{8B} = \\$86.2\n\\\\[0.5em]\n\\text{where } C_{takeover} = (MarketCap_{US} + MarketCap_{allied}) \\times f_{control} \\times m_{premium}\n\\end{gathered}",
-  confidenceInterval: [84.45346349146783, 88.10290300787652],
+  latex: "\\begin{gathered}\nC_{takeover,pp} = \\frac{C_{takeover}}{Pop_{global}} = \\frac{\\$722B}{8B} = \\$90.3\n\\\\[0.5em]\n\\text{where } C_{takeover} = (MarketCap_{US} + MarketCap_{allied}) \\times f_{control} \\times m_{premium}\n\\end{gathered}",
+  confidenceInterval: [88.42774412636044, 92.24892197295307],
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/loving-takeover.html",
   manualPageTitle: "The Loving Takeover",
 };
 
 export const DEFENSE_TAKEOVER_COST_TOTAL: Parameter = {
-  value: 689877000000.0,
+  value: 722341800000.0,
   parameterName: "DEFENSE_TAKEOVER_COST_TOTAL",
   calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-defense_takeover_cost_total",
   unit: "USD",
@@ -6612,7 +6616,7 @@ export const MECHANISM_IAB_NET_COST: Parameter = {
 };
 
 export const MECHANISM_LOVING_TAKEOVER_CAPITAL: Parameter = {
-  value: 689877000000.0,
+  value: 722341800000.0,
   parameterName: "MECHANISM_LOVING_TAKEOVER_CAPITAL",
   calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-mechanism_loving_takeover_capital",
   unit: "USD",
@@ -6643,7 +6647,7 @@ export const MECHANISM_LOVING_TAKEOVER_EV: Parameter = {
 };
 
 export const MECHANISM_LOVING_TAKEOVER_NET_COST: Parameter = {
-  value: 13797540000.0,
+  value: 14446836000.0,
   parameterName: "MECHANISM_LOVING_TAKEOVER_NET_COST",
   calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-mechanism_loving_takeover_net_cost",
   unit: "USD",
@@ -6652,7 +6656,7 @@ export const MECHANISM_LOVING_TAKEOVER_NET_COST: Parameter = {
   sourceType: "calculated",
   confidence: "high",
   formula: "DEFENSE_TAKEOVER_COST_TOTAL * MECHANISM_OPPORTUNITY_COST_RATE",
-  latex: "\\begin{gathered}\nC_{takeover,net} = C_{takeover} \\times r_{opp} = \\$690B \\times 0.02 = \\$13.8B\n\\\\[0.5em]\n\\text{where } C_{takeover} = (MarketCap_{US} + MarketCap_{allied}) \\times f_{control} \\times m_{premium}\n\\end{gathered}",
+  latex: "\\begin{gathered}\nC_{takeover,net} = C_{takeover} \\times r_{opp} = \\$722B \\times 0.02 = \\$14.4B\n\\\\[0.5em]\n\\text{where } C_{takeover} = (MarketCap_{US} + MarketCap_{allied}) \\times f_{control} \\times m_{premium}\n\\end{gathered}",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/proof/loves-wager.html",
   manualPageTitle: "Love's Wager",
 };
@@ -13139,6 +13143,20 @@ export const citations: Record<string, Citation> = {
         'container-title': "Political Geography",
         URL: "https://doi.org/10.1016/j.polgeo.2017.09.004",
   },
+  "defense-primes-market-cap-2026": {
+        id: "defense-primes-market-cap-2026",
+        type: "article-journal",
+        title: "Largest defense contractors by market capitalization",
+        author: [
+          {
+            literal: "Companies Market Cap"
+          },
+        ],
+        issued: { 'date-parts': [[2026]] },
+        'container-title': "CompaniesMarketCap.com: Defense Contractors",
+        URL: "https://companiesmarketcap.com/defense-contractors/largest-companies-by-market-cap/",
+        note: "Verified market caps June 2026: RTX \\$243.7B, Lockheed Martin \\$120.8B, General Dynamics \\$93.7B, Northrop Grumman \\$77.3B, L3Harris \\$57.3B, Huntington Ingalls \\$11.5B; BAE Systems \\$75.6B, Thales \\$55.0B. US defense primes aggregate approx \\$670B (Boeing is largely commercial and only partially attributable); allied primes BAE + Thales approx \\$131B.",
+  },
   "deworming-cost-per-daly": {
         id: "deworming-cost-per-daly",
         type: "article-journal",
@@ -15036,7 +15054,7 @@ export const PARAMETER_STATS = {
   external: 228,
   calculated: 384,
   definitions: 159,
-  citations: 165,
+  citations: 166,
 } as const;
 
 // ============================================================================

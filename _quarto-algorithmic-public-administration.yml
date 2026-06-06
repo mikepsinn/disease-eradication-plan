@@ -128,6 +128,7 @@ metadata:
 
   # Identifiers (to be added after Zenodo upload)
   # Zenodo Concept DOI (stable across all versions - use for citations and new versions)
+  doi: "10.5281/zenodo.20574628"
   # doi: ""
 
   # Open Graph metadata (enables per-page custom OG images)
@@ -141,9 +142,9 @@ metadata:
       status: pending
     preprints:
       - platform: zenodo
-        status: pending
-        url: ""
-        doi: ""
+        status: auto-uploaded
+        url: "https://zenodo.org/record/20574628"
+        doi: "10.5281/zenodo.20574628"
       - platform: ssrn
         status: pending
         url: ""

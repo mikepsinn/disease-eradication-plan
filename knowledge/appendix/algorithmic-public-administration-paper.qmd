@@ -275,10 +275,10 @@ If this system is serious, it should be designed for how people actually behave,
 At the protocol-design level, the target can be written as:
 
 $$
-\max_R \left[\Delta \widetilde{Y}^{after-tax}_{median}(R) + \theta \, \Delta \widetilde{HLY}_{median}(R)\right] - \lambda A(R)
+\max_R \left[\Delta \widetilde{Y}^{\text{after-tax}}_{\text{median}}(R) + \theta \, \Delta \widetilde{HLY}_{\text{median}}(R)\right] - \lambda A(R)
 $$
 
-where \(\widetilde{Y}^{after-tax}_{median}\) is real after-tax median income, \(\widetilde{HLY}_{median}\) is median healthy life years, and \(A(R)\) is the arbitrage value the rule set itself creates for gaming, lobbying, overbilling, denial, or misreporting. Median rather than average is the point: the protocol is trying to make the person in the middle richer and less dead, not make national aggregates prettier while rents concentrate at the top.
+where $\widetilde{Y}^{\text{after-tax}}_{\text{median}}$ is real after-tax median income, $\widetilde{HLY}_{\text{median}}$ is median healthy life years, and $A(R)$ is the arbitrage value the rule set itself creates for gaming, lobbying, overbilling, denial, or misreporting. Median rather than average is the point: the protocol is trying to make the person in the middle richer and less dead, not make national aggregates prettier while rents concentrate at the top.
 
 In practice, that means maximizing what citizens actually get, given two constraints: money is finite, and people will game whatever you build:
 
@@ -286,7 +286,7 @@ $$
 \max_R \sum_i \mathbb{E}\left[u(c_i) + \alpha h_i + \beta s_i - \delta d_i\right] - \lambda A(R)
 $$
 
-where \(c_i\) is disposable consumption, \(h_i\) is health and human-capital outcome, \(s_i\) is insurance against ruin, \(d_i\) is delay and compliance burden, and \(A(R)\) is the same arbitrage term above. In plain English: maximize median after-tax income and median healthy life years by increasing cash, reducing ruin risk, and minimizing the profit available from manipulating the system.
+where $c_i$ is disposable consumption, $h_i$ is health and human-capital outcome, $s_i$ is insurance against ruin, $d_i$ is delay and compliance burden, and $A(R)$ is the same arbitrage term above. In plain English: maximize median after-tax income and median healthy life years by increasing cash, reducing ruin risk, and minimizing the profit available from manipulating the system.
 
 - **Citizens** maximize consumption, security, and autonomy. Therefore ordinary redistribution should arrive as unconditional cash. People spend their own money with better local information than a bureaucracy ever has.
 - **Patients** respond to marginal price on routine care but cannot rationally self-insure million-dollar tail risk. Therefore routine care should run through a personal health wallet with rollover, while catastrophe should be pooled.

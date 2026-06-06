@@ -1,6 +1,6 @@
 project:
   type: website
-  output-dir: _site/joke
+  output-dir: _site/i-am-retarded
   execute-dir: project
   resources:
     - knowledge/data/
@@ -13,20 +13,12 @@ project:
 
 # Custom fields for render-quarto.py
 dih-render:
-  emoji: "👕"
-  index-source: knowledge/appendix/joke.qmd
-  # No subdomain: the paper lives at manual.warondisease.org/knowledge/appendix/joke.html
+  emoji: "🧠"
+  index-source: knowledge/problem/i-am-retarded.qmd
+  # No subdomain: the paper lives at manual.warondisease.org/knowledge/problem/i-am-retarded.html
   # This YAML exists for standalone PDF/EPUB generation for Zenodo distribution only.
   show-confidence-intervals: true
-  concept-terms:
-    - term: "Shirt Seed Program"
-      aliases:
-        - "shirt seed campaign"
-        - "shirt campaign"
-        - "wearable referral campaign"
-        - "joke seed program"
-      manual-target: knowledge/appendix/joke.qmd
-  favicon-prompt: "A simple black and white icon of a T-shirt with the text 'END WAR & DISEASE' visible across the chest, in a bold sans-serif font."
+  favicon-prompt: "A simple black and white icon of a human brain with a question mark overlaid, minimalist line art."
 
 profiles:
   default:
@@ -42,18 +34,18 @@ author:
         url: https://warondisease.org
 
 website:
-  title: "The Funniest Joke in the Universe"
-  description: "How to end war and disease through vandalism."
-  favicon: assets/icons/joke-favicon.png
+  title: "I Am Retarded"
+  description: "There is no line between smart people and the other kind. There is a ladder, from snails up to perfect logic, and every human who ever lived is bunched together near the bottom. A large fraction of what you believe, voted for, and are angry about is probably wrong. This chapter proves it, kindly, before the book asks you to change your mind."
+  favicon: assets/icons/book-favicon.png
   page-navigation: true
   page-footer:
     left: "© 2026 [International Campaign to End War and Disease](https://warondisease.org) | [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)"
-    center: "[PDF](/joke-paper.pdf) | [All Papers](https://manual.warondisease.org/knowledge/papers.html)"
+    center: "[PDF](/i-am-retarded.pdf) | [All Papers](https://manual.warondisease.org/knowledge/papers.html)"
     right: "[VOTE](https://WarOnDisease.org)"
   navbar:
     right:
-      - text: "Calculations"
-        href: knowledge/appendix/parameters-and-calculations.qmd
+      - text: "The 1% Treaty"
+        href: https://manual.warondisease.org/knowledge/solution/1-percent-treaty.html
       - text: "VOTE"
         href: https://WarOnDisease.org
 
@@ -67,9 +59,9 @@ execute:
     PYTHONPATH: "."
 
 metadata:
-  doi: "10.5281/zenodo.20336705"
+  doi: "10.5281/zenodo.20574417"
   # Zenodo Concept DOI (stable across all versions - use for citations and new versions)
-  importance: 88
+  importance: 90
   creator: "Mike P. Sinn"
   orcid: "0009-0006-0212-1094"
   primary-author: "Mike P. Sinn"
@@ -80,12 +72,12 @@ metadata:
   author-website: "https://mikesinn.com"
   contact: "mike@warondisease.org"
   language: "en-US"
-  subject: "Mechanism Design, Collective Action, Social Proof, Assurance Contracts, Viral Marketing, Foundation Strategy"
-  category: "Working Paper, Foundation Pitch, Collective Action, Mechanism Design"
-  coi-statement: "The author declares no competing interests and does not currently own equity in any T-shirt manufacturer, though the analysis suggests this would be a reasonable position."
-  data-availability: "All parameters, formulas, and source code used in this analysis are publicly available at https://github.com/wishonia/earth-optimization-protocol and surfaced through the manual's parameters catalog."
-  ethics-statement: "This research did not involve human subjects. The proposed intervention asks human subjects to wear shirts, which is something they were already doing, with different text on them."
-  funding: "This research received no funding. The proposed intervention would resolve that, recursively."
+  subject: "Epistemic Humility, Bounded Rationality, Cognitive Bias, Root Cause Analysis, Public Health"
+  category: "Working Paper, Philosophy, Cognitive Science, Public Policy"
+  coi-statement: "The author declares no competing interests, except the ones described in the paper, which include being retarded."
+  data-availability: "All parameters, formulas, and source code used in this analysis are publicly available at https://github.com/wishonia/earth-optimization-protocol"
+  ethics-statement: "This research did not involve human subjects. It did involve the author admitting something that most researchers would rather not."
+  funding: "This research received no funding, which is itself evidence for the thesis."
   github-profile: "https://github.com/mikepsinn"
   linkedin: "https://www.linkedin.com/in/mikesinn"
   orcid-url: "https://orcid.org/0009-0006-0212-1094"
@@ -93,15 +85,15 @@ metadata:
   twitter-creator: "https://x.com/warondisease"
   twitter-site: "https://x.com/warondisease"
   keywords:
-    - mechanism-design
-    - collective-action
-    - social-proof
-    - assurance-contract
-    - viral-marketing
-    - foundation-strategy
-    - wearable-advocacy
-    - treaty-campaign
-    - earth-optimization-prize
+    - epistemic-humility
+    - bounded-rationality
+    - cognitive-bias
+    - leaded-gasoline
+    - semmelweis-reflex
+    - misdirected-anger
+    - root-cause-analysis
+    - military-spending
+    - clinical-trials
     - 1-percent-treaty
   version: "1.0"
   edition: "Working Paper"
@@ -118,26 +110,25 @@ metadata:
   issue-url: "https://github.com/wishonia/earth-optimization-protocol/issues"
   source-url: "https://github.com/wishonia/earth-optimization-protocol"
   geographic-coverage: "Global"
-  audience: "Foundation Officers, Philanthropists, Campaign Organizers, Influencers, General Public"
+  audience: "General Public, Policy Makers, Philosophers, Cognitive Scientists"
   format: "Working Paper"
   type: "Academic"
-  genre: "Mechanism Design, Foundation Strategy, Collective Action"
+  genre: "Philosophy, Cognitive Science, Public Policy"
   medium: "Digital"
-  og-site-name: "The Funniest Joke in the Universe"
+  og-site-name: "I Am Retarded"
 
   open-graph: true
-  image: "https://manual.warondisease.org/assets/og/joke-og-1200x630.jpg"
+  image: ""
 
-  # Canonical site is the manual; this YAML exists for PDF/EPUB build for Zenodo etc.
   publishing:
     own-site:
-      url: "https://manual.warondisease.org/knowledge/appendix/joke.html"
+      url: "https://manual.warondisease.org/knowledge/problem/i-am-retarded.html"
       status: deployed
     preprints:
       - platform: zenodo
         status: auto-uploaded
-        url: "https://zenodo.org/record/20336705"
-        doi: "10.5281/zenodo.20336705"
+        url: "https://zenodo.org/record/20574417"
+        doi: "10.5281/zenodo.20574417"
       - platform: osf
         status: pending
         url: ""
@@ -175,7 +166,7 @@ format:
     code-tools: false
     filters: [assets/filters/live-version-note.lua, scripts/filters/strip-snippet-markers.lua]
   pdf:
-    output-file: "joke-paper.pdf"
+    output-file: "i-am-retarded.pdf"
     documentclass: article
     institute: "International Campaign to End War and Disease"
     echo: false
@@ -188,7 +179,7 @@ format:
       - callout-bw.tex
       - institute-header.tex
       - text: |
-          \paperurl{https://manual.warondisease.org/knowledge/appendix/joke.html}
+          \paperurl{https://manual.warondisease.org/knowledge/problem/i-am-retarded.html}
     geometry:
       - top=1in
       - bottom=1in

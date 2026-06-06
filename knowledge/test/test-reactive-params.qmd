@@ -1,0 +1,32 @@
+---
+title: "Test: Reactive Parameters"
+description: "Development harness for the interactive parameter editor."
+published: false
+---
+
+{{< include /knowledge/includes/reactive-params.qmd >}}
+
+This page tests the recursive parameter disclosure tree. Below is the cost of the
+Loving Takeover per human. Click any calculated value to expand its formula and
+inputs. Drag a leaf slider and watch every parent recompute.
+
+```{ojs}
+//| echo: false
+viewof takeoverTree = paramTree("DEFENSE_TAKEOVER_COST_PER_HUMAN")
+```
+
+::: {.content-visible when-format="html"}
+The live value the tree reports (downstream OJS reacts to edits):
+:::
+
+```{ojs}
+//| echo: false
+md`**Current cost per human:** ${fmtValue(paramData["DEFENSE_TAKEOVER_COST_PER_HUMAN"], takeoverTree["DEFENSE_TAKEOVER_COST_PER_HUMAN"])}`
+```
+
+::: {.content-hidden when-format="html"}
+
+(Interactive parameter editor available in the web edition.) The default
+per-person cost of the defense takeover is {{< var defense_takeover_cost_per_human >}}.
+
+:::

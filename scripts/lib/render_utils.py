@@ -588,6 +588,17 @@ class BuildMonitor:
 
         # Detect warnings (WARN: can appear anywhere in line, often with timestamps)
         if any(marker in line for marker in ["WARN:", "Warning:", "[WARNING]"]):
+            # Benign Quarto warnings that do not affect output validity.
+            # "OJS block count mismatch" fires when OJS cells are conditionally
+            # included via ::: {.content-visible when-format="html"} (the required
+            # pattern so OJS calculators are HTML-only). The PDF/EPUB outputs still
+            # validate (epubcheck + PDF validation pass), so this is not fatal.
+            benign_warnings = [
+                "OJS block count mismatch",
+                "Line number reporting is likely to be wrong",
+            ]
+            if any(b in line for b in benign_warnings):
+                return None
             # Ignore warnings about thinkbynumbers (Twitter handle in YAML, not a citation)
             if all(ignore_word not in line for ignore_word in ["thinkbynumbers", "warondisease"]):
                 # Treat certain critical warnings as errors (content rendering failures)

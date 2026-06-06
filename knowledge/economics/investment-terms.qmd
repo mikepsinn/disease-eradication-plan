@@ -17,6 +17,7 @@ scores:
   importance: 9
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
+{{< include /knowledge/includes/reactive-params.qmd >}}
 
 On my planet, when somebody asks you for money, you check two things. First: is anybody keeping any of it? Second: does giving it away make you richer or poorer?
 
@@ -34,7 +35,7 @@ Earth Optimization Services is a company. Not a fund. Not a nonprofit. Not a mov
 |---------|-------------|---------|
 | The Manual | The book you are reading | Sales (pay-what-you-want, anchored to {{< var defense_takeover_cost_per_human >}}) |
 | The Uniform | T-shirts that say "I am retarded" | Sales + the free permanent-marker version |
-| The Fund | Buys defense contractor shares, redirects lobbying via voting rights | 2% management fee, 20% performance fee |
+| The Fund | Buys defense contractor shares, redirects lobbying via voting rights | A transparent operating fee, no carry |
 | [Optimitron](../solution/optimocracy.qmd) | Policy optimization platform | SaaS subscriptions, consulting |
 | [The dFDA](../solution/dfda.qmd) | Clinical trial infrastructure | Platform fees |
 | [The Prize](../strategy/earth-optimization-prize.qmd) | Assurance contracts for coordinated action | Escrow returns |
@@ -63,8 +64,8 @@ There are three layers of appreciation.
 | Fund target | $500K to $2M | Seed capital. Enough to begin. Not enough to waste. |
 | Minimum investment (friends & family) | $25,000 | Low enough to include the humans who believed before it was obvious. |
 | Minimum investment (institutional) | $100,000 | Standard institutional minimum. |
-| Management fee | 2% annually | Standard. Covers operations. |
-| Performance fee | 20% above S&P benchmark | You only pay for outperformance. |
+| Operating fee | Transparent, covers cost | Salaries and operations, nothing above cost. |
+| Performance fee / carry | None | The operators do not skim the upside. Their upside is the same notes you hold. |
 | Lockup | 1 year | The interesting part takes longer, but you can leave. |
 | Operator equity | 0% | Nobody who runs this owns a piece of it. |
 | Security type | Revenue-share notes | Money in, more money out. No voting rights, no governance, no board seat. |
@@ -145,7 +146,7 @@ The cascade starts with one demand letter filed by one shareholder who paid $200
 
 The share price is derived from the probability of civilizational optimization, not from revenue. But EOS still needs money to operate. Here is where it comes from. Four layers. Each works independently. None of them enter the share price formula.
 
-**Layer 1: Fund management.** 2% management fee, 20% performance fee. Standard fund economics. Not interesting.
+**Layer 1: Fund management.** A transparent operating fee that covers salaries and operations, and nothing above cost. No performance fee, no carry. The operators do not skim the upside; they hold the same notes you do. This is less than a normal fund takes, on purpose.
 
 **Layer 2: Consulting.** The demand letter creates a legal obligation for the board to respond (Caremark). Responding requires commissioning an analysis of whether the company's lobbying generates positive shareholder returns. EOS, through [Optimitron](../solution/optimocracy.qmd), provides this analysis. The free version demonstrates competence. The paid version (deeper, proprietary, ongoing advisory) is how EOS becomes a consultant to the companies it is pressuring.
 
@@ -179,83 +180,208 @@ The takeover buys the opposition. The bonds fund the campaign. You can buy one o
 
 ## The math on your investment
 
-<div id="eos-investment-calculator" class="eit-shell">
-<span id="eit-src-takeover-cost" class="visually-hidden">{{< var defense_takeover_cost_total >}}</span>
-<span id="eit-src-sp-return" class="visually-hidden">{{< var average_market_return_pct >}}</span>
+::: {.content-visible when-format="html"}
+Set the three personal variables. The success multiplier is not a number you guess: it is derived from how much larger the economy gets if the treaty passes. Expand it to see where the base case comes from, and drag any underlying driver to set your own.
+:::
 
-<div class="eit-grid">
-<div>
-<h3>What does your investment become?</h3>
-<p class="eit-footnote">This calculator models the equity appreciation thesis. If the campaign fails, you hold defense stocks at market return. If it succeeds, the appreciation is substantially higher. Adjust the probability and success-case multiplier to match your own estimate.</p>
-</div>
+```{ojs}
+//| echo: false
+viewof eosAmount = Inputs.range([1000, 5000000], {value: 25000, step: 1000, label: "Your investment ($)"})
+```
 
-<div class="eit-controls">
-<div class="eit-group">
-<label for="eit-input-amount">Your investment amount</label>
-<input id="eit-input-amount" type="number" min="1000" step="1000" value="25000" inputmode="numeric">
-<div class="eit-helper">Minimum: friends & family $25K, institutional $100K.</div>
-</div>
+```{ojs}
+//| echo: false
+viewof eosYears = Inputs.range([1, 30], {value: 10, step: 1, label: "Investment horizon (years)"})
+```
 
-<div class="eit-group">
-<label for="eit-input-years">Investment horizon (years)</label>
-<input id="eit-input-years" type="number" min="1" max="30" step="1" value="10" inputmode="numeric">
-<div class="eit-helper">Longer horizons favor the thesis.</div>
-</div>
+```{ojs}
+//| echo: false
+viewof eosProb = Inputs.range([0.1, 100], {value: 10, step: 0.1, label: "Probability campaign succeeds (%) — your belief"})
+```
 
-<div class="eit-group">
-<label for="eit-input-probability">Probability campaign succeeds (%)</label>
-<input id="eit-input-probability" type="number" min="0.1" max="100" step="0.1" value="10" inputmode="decimal">
-<div class="eit-helper">Your estimate. Even at low probabilities, the asymmetry is interesting.</div>
-</div>
+```{ojs}
+//| echo: false
+viewof eosEntryProb = Inputs.range([0.5, 100], {value: 5, step: 0.5, label: "Probability the market prices in when you buy (%) — low while the market is asleep"})
+```
 
-<div class="eit-group">
-<label for="eit-input-multiplier">Share price multiplier if campaign succeeds</label>
-<input id="eit-input-multiplier" type="number" min="1" max="100" step="0.5" value="4" inputmode="decimal">
-<div class="eit-helper">Conservative: 2x. Base case: 4x (GDP grows {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}}). Optimistic: 10x+.</div>
-</div>
-</div>
+```{ojs}
+//| echo: false
+viewof eosSpReturn = Inputs.range([0, 0.2], {value: paramData["AVERAGE_MARKET_RETURN_PCT"].value, step: 0.005, label: "S&P annual return (decimal)"})
+```
 
-<div class="eit-cards">
-<div class="eit-card good">
-<div class="eit-card-title">Value if Campaign Succeeds</div>
-<div id="eit-output-success" class="eit-card-value"></div>
-<div id="eit-output-success-meta" class="eit-card-meta"></div>
-</div>
+```{ojs}
+//| echo: false
+viewof eosNetWorth = Inputs.range([0, 100000000], {value: 250000, step: 10000, label: "Your total net worth ($)"})
+```
 
-<div class="eit-card">
-<div class="eit-card-title">Value if Campaign Fails</div>
-<div id="eit-output-fail" class="eit-card-value"></div>
-<div id="eit-output-fail-meta" class="eit-card-meta"></div>
-</div>
+::: {.content-visible when-format="html"}
+**Share-price multiplier if the campaign succeeds** (base case = the economy at year 15 under the treaty, divided by the economy under the current trajectory). Expand to edit the drivers:
+:::
 
-<div class="eit-card good">
-<div class="eit-card-title">Expected Value (probability-weighted)</div>
-<div id="eit-output-ev" class="eit-card-value"></div>
-<div id="eit-output-ev-meta" class="eit-card-meta"></div>
-</div>
+```{ojs}
+//| echo: false
+viewof eosMultiplierTree = paramTree("TREATY_TRAJECTORY_GDP_VS_CURRENT_TRAJECTORY_MULTIPLIER_YEAR_15")
+```
 
-<div class="eit-card">
-<div class="eit-card-title">Same Money in the S&P 500</div>
-<div id="eit-output-sp" class="eit-card-value"></div>
-<div id="eit-output-sp-meta" class="eit-card-meta"></div>
-</div>
+```{ojs}
+//| echo: false
+eosCalc = {
+  const amount = eosAmount;
+  const years = eosYears;
+  const prob = eosProb / 100;
+  const mult = eosMultiplierTree["TREATY_TRAJECTORY_GDP_VS_CURRENT_TRAJECTORY_MULTIPLIER_YEAR_15"];
+  const sp = eosSpReturn;
+  const netWorth = eosNetWorth;
+  const takeover = paramData["DEFENSE_TAKEOVER_COST_TOTAL"].value;
+  const success = amount * mult;
+  const fail = amount * Math.pow(1 + sp, years);
+  const ev = prob * success + (1 - prob) * fail;
+  // Systemic upside: the difference your existing economy-exposed wealth is worth
+  // under the treaty trajectory vs the current trajectory at year 15. Conservative
+  // (uses today's net worth, ignores 15 years of compounding that apply to both).
+  const systemicUpside = netWorth * (mult - 1);
+  const systemicEv = prob * systemicUpside;
+  // Entry-timing (the credibility cascade, Layer 2). A share is priced at
+  // P x V / shares. You buy when the market implies p0; if it succeeds, the share
+  // reprices to reflect ~certainty and the assets appreciate by `mult`. So the
+  // success multiple captured is mult / p0, and your edge over the market is the
+  // ratio of your belief to the implied price.
+  const p0 = eosEntryProb / 100;
+  const asleepSuccessMult = mult / p0;          // what you make if it works, buying asleep
+  const asleepSuccess = amount * asleepSuccessMult;
+  const asleepEv = prob * asleepSuccess + (1 - prob) * fail;
+  const efficientEv = amount * mult;            // if p0 == your belief, entry timing is fair
+  const edge = prob / p0;                        // belief / implied price
+  return {amount, years, prob, mult, sp, netWorth, takeover, success, fail, ev,
+          evVsSp: ev - fail, share: amount / takeover, systemicUpside, systemicEv,
+          leverage: systemicEv / Math.max(amount, 1),
+          p0, asleepSuccessMult, asleepSuccess, asleepEv, efficientEv, edge};
+}
+```
 
-<div class="eit-card good">
-<div class="eit-card-title">Expected Return vs S&P</div>
-<div id="eit-output-vs" class="eit-card-value"></div>
-<div id="eit-output-vs-meta" class="eit-card-meta"></div>
-</div>
+```{ojs}
+//| echo: false
+function eosMoney(v) {
+  return new Intl.NumberFormat("en-US", {style: "currency", currency: "USD", maximumFractionDigits: 0}).format(v);
+}
+```
 
-<div class="eit-card">
-<div class="eit-card-title">Your Share of the Takeover</div>
-<div id="eit-output-share" class="eit-card-value"></div>
-<div id="eit-output-share-meta" class="eit-card-meta"></div>
-</div>
-</div>
+```{ojs}
+//| echo: false
+html`<div class="eit-cards">
+  <div class="eit-card good">
+    <div class="eit-card-title">Value if Campaign Succeeds</div>
+    <div class="eit-card-value">${eosMoney(eosCalc.success)}</div>
+    <div class="eit-card-meta">${eosCalc.mult.toFixed(1)}x your investment</div>
+  </div>
+  <div class="eit-card">
+    <div class="eit-card-title">Value if Campaign Fails</div>
+    <div class="eit-card-value">${eosMoney(eosCalc.fail)}</div>
+    <div class="eit-card-meta">Defense stocks at ${(eosCalc.sp * 100).toFixed(1)}%/yr for ${eosCalc.years} years</div>
+  </div>
+  <div class="eit-card good">
+    <div class="eit-card-title">Expected Value (probability-weighted)</div>
+    <div class="eit-card-value">${eosMoney(eosCalc.ev)}</div>
+    <div class="eit-card-meta">${(eosCalc.prob * 100).toFixed(1)}% chance of ${eosMoney(eosCalc.success)} + ${((1 - eosCalc.prob) * 100).toFixed(1)}% chance of ${eosMoney(eosCalc.fail)}</div>
+  </div>
+  <div class="eit-card">
+    <div class="eit-card-title">Same Money in the S&P 500</div>
+    <div class="eit-card-value">${eosMoney(eosCalc.fail)}</div>
+    <div class="eit-card-meta">${eosMoney(eosCalc.amount)} at ${(eosCalc.sp * 100).toFixed(1)}% for ${eosCalc.years} years</div>
+  </div>
+  <div class="eit-card good">
+    <div class="eit-card-title">Expected Return vs S&P</div>
+    <div class="eit-card-value">${(eosCalc.evVsSp >= 0 ? "+" : "") + eosMoney(eosCalc.evVsSp)}</div>
+    <div class="eit-card-meta">${eosCalc.evVsSp >= 0 ? "Expected value exceeds S&P" : "S&P exceeds expected value"}</div>
+  </div>
+  <div class="eit-card">
+    <div class="eit-card-title">Your Share of the Takeover</div>
+    <div class="eit-card-value">${(eosCalc.share * 100).toFixed(6)}%</div>
+    <div class="eit-card-meta">${eosMoney(eosCalc.amount)} of ${eosMoney(eosCalc.takeover)} total</div>
+  </div>
+</div>`
+```
 
-<div id="eit-summary" class="eit-summary" aria-live="polite"></div>
-</div>
-</div>
+```{ojs}
+//| echo: false
+html`<div class="eit-summary">You invest ${eosMoney(eosCalc.amount)}. If the campaign succeeds (${(eosCalc.prob * 100).toFixed(1)}% estimated), your shares appreciate to ${eosMoney(eosCalc.success)} (${eosCalc.mult.toFixed(1)}x). If it fails, you hold defense stocks worth ${eosMoney(eosCalc.fail)} at market return. The probability-weighted expected value is ${eosMoney(eosCalc.ev)}, which is ${eosMoney(Math.abs(eosCalc.evVsSp))} ${eosCalc.evVsSp >= 0 ? "more" : "less"} than the S&P would have returned. You also do not die of a curable disease, which is not reflected above but is arguably the better return.</div>`
+```
+
+::: {.content-visible when-format="html"}
+### When you buy changes what you make
+
+The cards above value the share by the appreciation of what it holds (defense contractors pivoting in a larger economy). That is only one of the layers. The other is repricing: a share is worth its probability of success times the value of success. You buy while the market prices that probability near zero. If you are right, the share reprices the whole way up, and you keep the difference.
+
+This cuts two ways, and an honest pitch shows both.
+:::
+
+```{ojs}
+//| echo: false
+html`<div class="eit-cards">
+  <div class="eit-card good">
+    <div class="eit-card-title">If the Market Is Asleep (the thesis)</div>
+    <div class="eit-card-value">${eosCalc.asleepSuccessMult >= 1 ? Math.round(eosCalc.asleepSuccessMult).toLocaleString() + "x" : eosCalc.asleepSuccessMult.toFixed(1) + "x"}</div>
+    <div class="eit-card-meta">success multiple buying at ${(eosCalc.p0 * 100).toFixed(1)}% implied (${eosCalc.mult.toFixed(1)}x assets times the repricing from ${(eosCalc.p0 * 100).toFixed(1)}% to certainty) = ${eosMoney(eosCalc.asleepSuccess)} on ${eosMoney(eosCalc.amount)}</div>
+  </div>
+  <div class="eit-card">
+    <div class="eit-card-title">If the Market Is Efficient (textbook)</div>
+    <div class="eit-card-value">${eosMoney(eosCalc.efficientEv)}</div>
+    <div class="eit-card-meta">then the price already reflects the odds, entry timing is fair, and you are paid in variance, not extra expected value. Early just means cheaper and riskier.</div>
+  </div>
+  <div class="eit-card good">
+    <div class="eit-card-title">Your Edge Over the Market</div>
+    <div class="eit-card-value">${eosCalc.edge >= 1 ? eosCalc.edge.toFixed(1) + "x" : eosCalc.edge.toFixed(2) + "x"}</div>
+    <div class="eit-card-meta">your ${(eosCalc.prob * 100).toFixed(1)}% belief divided by the ${(eosCalc.p0 * 100).toFixed(1)}% the market prices in. Above 1x, the market is underpaying you for the risk.</div>
+  </div>
+</div>`
+```
+
+```{ojs}
+//| echo: false
+html`<div class="eit-summary">Two ways to read the same share. <strong>If the market is efficient</strong>, the price already encodes the probability, so it does not matter when you buy: your expected value is about ${eosMoney(eosCalc.efficientEv)} either way, and entering early just trades safety for a bigger, rarer payoff. <strong>If the market is asleep</strong> (which it is, since no analyst models the end of war), you are buying at roughly ${(eosCalc.p0 * 100).toFixed(1)}% implied while believing ${(eosCalc.prob * 100).toFixed(1)}%, an edge of ${eosCalc.edge.toFixed(1)}x, and a win reprices the share about ${eosCalc.asleepSuccessMult >= 1 ? Math.round(eosCalc.asleepSuccessMult).toLocaleString() + "x" : eosCalc.asleepSuccessMult.toFixed(1) + "x"}. The edge is real exactly to the degree the market disbelieves, and it shrinks to zero the moment the thesis becomes obvious. That is the argument for going early.</div>`
+```
+
+::: {.content-visible when-format="html"}
+### The number you are actually betting
+
+Your investment is the lever. Your **net worth** is the bet. If the treaty passes and the economy ends up larger than the current trajectory, everything you own that tracks the economy (stocks, property, business equity) is worth more under that trajectory than the one where nothing happens. You are already long this outcome. The only question is whether you spend a little to improve its odds.
+:::
+
+```{ojs}
+//| echo: false
+html`<div class="eit-cards">
+  <div class="eit-card good">
+    <div class="eit-card-title">Your Net Worth's Upside If It Works</div>
+    <div class="eit-card-value">${eosMoney(eosCalc.systemicUpside)}</div>
+    <div class="eit-card-meta">${eosMoney(eosCalc.netWorth)} riding the ${eosCalc.mult.toFixed(1)}x trajectory gap (economy-exposed wealth)</div>
+  </div>
+  <div class="eit-card good">
+    <div class="eit-card-title">Expected Systemic Upside</div>
+    <div class="eit-card-value">${eosMoney(eosCalc.systemicEv)}</div>
+    <div class="eit-card-meta">${(eosCalc.prob * 100).toFixed(1)}% chance of ${eosMoney(eosCalc.systemicUpside)}</div>
+  </div>
+  <div class="eit-card">
+    <div class="eit-card-title">Per Dollar Invested in EOS</div>
+    <div class="eit-card-value">${eosCalc.leverage >= 1 ? Math.round(eosCalc.leverage).toLocaleString() + "x" : eosCalc.leverage.toFixed(2) + "x"}</div>
+    <div class="eit-card-meta">expected systemic upside per dollar of EOS investment</div>
+  </div>
+</div>`
+```
+
+```{ojs}
+//| echo: false
+html`<div class="eit-summary">Your ${eosMoney(eosCalc.amount)} investment is dwarfed by what it protects. At a net worth of ${eosMoney(eosCalc.netWorth)}, the difference between the treaty trajectory and the current one is worth about ${eosMoney(eosCalc.systemicUpside)} to you if it passes, or ${eosMoney(eosCalc.systemicEv)} probability-weighted. That is roughly ${eosCalc.leverage >= 1 ? Math.round(eosCalc.leverage).toLocaleString() + " times" : eosCalc.leverage.toFixed(2) + " times"} your EOS investment, and it accrues whether or not you buy a single share. The investment does not create this upside; it nudges the probability that you collect it. (Caveat: this assumes your wealth tracks the economy. Cash and bonds lag; equities, property, and business equity track it more closely. Adjust the multiplier drivers above to set your own.)</div>`
+```
+
+::: {.content-hidden when-format="html"}
+
+For a $25,000 investment over 10 years at a 10% estimated probability of success, a base-case success multiplier of {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}} (the economy grows that much by year 15 if the treaty passes), and a {{< var average_market_return_pct >}} S&P benchmark: if the campaign succeeds your stake becomes roughly $102,000; if it fails you hold about $65,000 in defense stocks at market return.
+
+When you buy matters. A share is worth its probability of success times the value of success. If the market is efficient, the price already encodes the odds and entry timing is fair (early just trades safety for a bigger, rarer payoff, same expected value). If the market is asleep, which it is, since no analyst models the end of war, you buy at a near-zero implied probability and a win reprices the share the whole way up. Buying at 5% implied while believing 10% is a 2x edge and a roughly 80x repricing on success. The edge is real exactly to the degree the market disbelieves, and it vanishes the moment the thesis becomes obvious.
+
+But the investment is the lever, not the bet. Your whole net worth is the bet. If the treaty passes, everything you own that tracks the economy is worth roughly the multiplier more under that trajectory than under the current one. For a net worth of $250,000, that is a systemic upside near $775,000 if it works (or $77,500 probability-weighted at 10%), which dwarfs the return on the investment itself and accrues whether or not you buy a share. The investment only nudges the odds that you collect it. (This assumes your wealth tracks the economy; cash and bonds lag, equities and property track it more closely.) The web edition lets you edit every input, including the drivers behind the multiplier.
+
+:::
 
 <style>
 .eit-shell {
@@ -389,110 +515,6 @@ The takeover buys the opposition. The bonds fund the campaign. You can buy one o
 }
 </style>
 
-<script>
-(function() {
-  var root = document.getElementById('eos-investment-calculator');
-  if (!root || root.dataset.initialized === 'true') return;
-  root.dataset.initialized = 'true';
-
-  function parsePrimary(text, fallback) {
-    if (!text) return fallback;
-    var clean = text.replace(/,/g, '').replace(/ /g, ' ');
-    var map = { K: 1e3, M: 1e6, B: 1e9, T: 1e12 };
-    var pctMatch = clean.match(/([0-9]+(?:\.[0-9]+)?)\s*%/);
-    if (pctMatch) return parseFloat(pctMatch[1]) / 100;
-    var re = /\$?\s*([0-9]+(?:\.[0-9]+)?)\s*([KMBT]?)/i;
-    var match = clean.match(re);
-    if (!match) return fallback;
-    var base = parseFloat(match[1]);
-    if (!isFinite(base)) return fallback;
-    var suffix = (match[2] || '').toUpperCase();
-    return base * (map[suffix] || 1);
-  }
-
-  function fmt(v) {
-    return new Intl.NumberFormat('en-US', {
-      style: 'currency', currency: 'USD', maximumFractionDigits: 0
-    }).format(v);
-  }
-
-  function fmtPct(v) { return (v * 100).toFixed(1) + '%'; }
-
-  function setOutput(id, v) {
-    var el = document.getElementById(id);
-    if (el) el.textContent = v;
-  }
-
-  var takeoverCost = parsePrimary(
-    (document.getElementById('eit-src-takeover-cost') || {}).textContent, 700e9);
-  var spReturn = parsePrimary(
-    (document.getElementById('eit-src-sp-return') || {}).textContent, 0.10);
-
-  var amountInput = document.getElementById('eit-input-amount');
-  var yearsInput = document.getElementById('eit-input-years');
-  var probInput = document.getElementById('eit-input-probability');
-  var multInput = document.getElementById('eit-input-multiplier');
-
-  function render() {
-    var amount = Math.max(1000, parseFloat(amountInput.value) || 25000);
-    var years = Math.max(1, Math.min(30, parseInt(yearsInput.value) || 10));
-    var prob = Math.max(0.001, Math.min(1, (parseFloat(probInput.value) || 10) / 100));
-    var mult = Math.max(1, parseFloat(multInput.value) || 4);
-
-    var successValue = amount * mult;
-    var failValue = amount * Math.pow(1 + spReturn, years);
-    var ev = prob * successValue + (1 - prob) * failValue;
-    var spTotal = failValue;
-    var evVsSp = ev - spTotal;
-    var shareOfPlanet = amount / takeoverCost;
-
-    setOutput('eit-output-success', fmt(successValue));
-    setOutput('eit-output-success-meta', mult.toFixed(1) + 'x your investment');
-
-    setOutput('eit-output-fail', fmt(failValue));
-    setOutput('eit-output-fail-meta',
-      'Defense stocks at market return (' + fmtPct(spReturn) + '/yr, ' + years + ' years)');
-
-    setOutput('eit-output-ev', fmt(ev));
-    setOutput('eit-output-ev-meta',
-      fmtPct(prob) + ' chance of ' + fmt(successValue) +
-      ' + ' + fmtPct(1 - prob) + ' chance of ' + fmt(failValue));
-
-    setOutput('eit-output-sp', fmt(spTotal));
-    setOutput('eit-output-sp-meta',
-      fmt(amount) + ' at ' + fmtPct(spReturn) + ' for ' + years + ' years');
-
-    setOutput('eit-output-vs', (evVsSp >= 0 ? '+' : '') + fmt(evVsSp));
-    setOutput('eit-output-vs-meta',
-      evVsSp >= 0
-        ? 'Expected value exceeds S&P by ' + fmt(evVsSp)
-        : 'S&P exceeds expected value by ' + fmt(-evVsSp));
-
-    setOutput('eit-output-share', (shareOfPlanet * 100).toFixed(6) + '%');
-    setOutput('eit-output-share-meta',
-      fmt(amount) + ' of ' + fmt(takeoverCost) + ' total takeover cost');
-
-    setOutput('eit-summary',
-      'You invest ' + fmt(amount) + '. If the campaign succeeds (' +
-      fmtPct(prob) + ' estimated probability), your shares appreciate to ' +
-      fmt(successValue) + ' (' + mult.toFixed(1) + 'x). If it fails, you hold ' +
-      'defense stocks worth ' + fmt(failValue) + ' at market return. ' +
-      'The probability-weighted expected value is ' + fmt(ev) +
-      ', which is ' + fmt(Math.abs(evVsSp)) +
-      (evVsSp >= 0 ? ' more' : ' less') +
-      ' than the S&P would have returned. You also do not die of a curable disease, ' +
-      'which is not reflected in the numbers above but is arguably the better return.'
-    );
-  }
-
-  [amountInput, yearsInput, probInput, multInput].forEach(function(el) {
-    el.addEventListener('input', render);
-  });
-
-  render();
-})();
-</script>
-
 ## Your money is melting
 
 This section is not about the fund. It is about everything else you own.
@@ -506,6 +528,269 @@ The math: if you have $1 million and you spend $200 on something that increases 
 This scales linearly with wealth. A person with $1,000 who spends $200 preserves $800 of future utility. A person with $1 billion who spends $200 preserves $999,999,800. Same cost. Same action. The wealthier you are, the more you lose by dying on schedule.
 
 A person who spends 80 years accumulating $100 million and then dies of a treatable disease has built a pile of something that became worthless at the moment of their death. On my planet we find this very confusing. You are building a number and then not being alive for it. It is like spending your life writing a book and then burning it on the last page.
+
+## Where to point the money: the lobbying allocation calculator
+
+::: {.content-visible when-format="html"}
+The question is not "should I buy defense stocks?" The question is: which companies give you the most lobbying redirect per dollar of shares?
+
+Defense contractors are not the only companies lobbying against rational policy. Pharmaceutical companies spend roughly $56M/year lobbying against drug pricing reform and clinical trial modernization. That lobbying directly blocks the infrastructure this entire plan depends on. Insurance companies block healthcare reform. Oil and gas companies block energy transition. Each dollar of lobbying, redirected, is a dollar pushing toward the treaty instead of against it.
+
+The calculator below takes your investment amount, allocates it across companies in proportion to their lobbying-per-dollar-of-market-cap ratio, and shows you what that buys: how many shareholder proposals you can file, how much lobbying you can challenge, and at what cost.
+:::
+
+```{ojs}
+//| echo: false
+
+// Company data: lobbying spend, market cap, sector, mission relevance
+companies = [
+  {ticker: "RTX",  name: "RTX Corp (Raytheon)",    sector: "Defense", lobby: 13.51e6, mcap: 243.7e9, relevance: "Missile defense, arms exports"},
+  {ticker: "LMT",  name: "Lockheed Martin",        sector: "Defense", lobby: 12.67e6, mcap: 120.8e9, relevance: "F-35, NDAA budgets"},
+  {ticker: "GD",   name: "General Dynamics",        sector: "Defense", lobby: 12.21e6, mcap:  93.7e9, relevance: "Navy ships, combat vehicles"},
+  {ticker: "BA",   name: "Boeing",                  sector: "Defense", lobby: 11.93e6, mcap: 170.9e9, relevance: "Defense contracts, FAA"},
+  {ticker: "NOC",  name: "Northrop Grumman",        sector: "Defense", lobby:  8.84e6, mcap:  77.3e9, relevance: "B-21, nuclear modernization"},
+  {ticker: "LHX",  name: "L3Harris",                sector: "Defense", lobby:  2.49e6, mcap:  57.3e9, relevance: "ISR, electronic warfare"},
+  {ticker: "PFE",  name: "Pfizer",                  sector: "Pharma",  lobby: 10.07e6, mcap: 148.4e9, relevance: "Blocks drug price negotiation"},
+  {ticker: "RHHBY",name: "Roche/Genentech",         sector: "Pharma",  lobby: 10.76e6, mcap: 331.8e9, relevance: "Blocks biosimilar expansion"},
+  {ticker: "MRK",  name: "Merck",                   sector: "Pharma",  lobby:  9.32e6, mcap: 298.3e9, relevance: "Blocks Medicare negotiation"},
+  {ticker: "JNJ",  name: "Johnson & Johnson",       sector: "Pharma",  lobby:  8.25e6, mcap: 560.3e9, relevance: "Blocks drug pricing reform"},
+  {ticker: "LLY",  name: "Eli Lilly",               sector: "Pharma",  lobby:  6.72e6, mcap:1008.0e9, relevance: "Blocks insulin/GLP-1 price caps"},
+  {ticker: "NVS",  name: "Novartis",                sector: "Pharma",  lobby:  6.22e6, mcap: 284.6e9, relevance: "Blocks drug importation"},
+  {ticker: "ABBV", name: "AbbVie",                  sector: "Pharma",  lobby:  4.53e6, mcap: 401.5e9, relevance: "Patent thicket protections"},
+  {ticker: "UNH",  name: "UnitedHealth",            sector: "Insurance", lobby: 7.52e6, mcap: 360.1e9, relevance: "Blocks single-payer reform"},
+  {ticker: "XOM",  name: "ExxonMobil",              sector: "Energy",  lobby:  6.82e6, mcap: 619.2e9, relevance: "Blocks climate regulation"},
+  {ticker: "CVX",  name: "Chevron",                 sector: "Energy",  lobby:  9.24e6, mcap: 373.0e9, relevance: "Blocks carbon tax"}
+]
+```
+
+```{ojs}
+//| echo: false
+
+// Inputs
+viewof investmentAmount = Inputs.range([2000, 5000000], {
+  value: 400000,
+  step: 1000,
+  label: "Your investment ($)"
+})
+
+viewof holdingPeriod = Inputs.radio(
+  new Map([["1 year ($25K threshold)", 25000], ["2 years ($15K threshold)", 15000], ["3 years ($2K threshold)", 2000]]),
+  {value: 25000, label: "Holding period"}
+)
+
+viewof sectorWeighting = Inputs.radio(
+  new Map([["Equal (by lobby ratio)", "ratio"], ["Defense priority", "defense"], ["Pharma priority", "pharma"], ["All sectors", "all"]]),
+  {value: "ratio", label: "Sector weighting"}
+)
+```
+
+```{ojs}
+//| echo: false
+
+// Compute lobby-per-market-cap ratio and allocations
+ranked = {
+  let weighted = companies.map(c => {
+    let ratio = c.lobby / c.mcap;
+    let sectorMult = 1.0;
+    if (sectorWeighting === "defense") sectorMult = c.sector === "Defense" ? 3.0 : 0.5;
+    if (sectorWeighting === "pharma") sectorMult = c.sector === "Pharma" ? 3.0 : 0.5;
+    if (sectorWeighting === "all") sectorMult = 1.0;
+    return {...c, ratio, weight: ratio * sectorMult};
+  });
+
+  let totalWeight = weighted.reduce((s, c) => s + c.weight, 0);
+
+  return weighted
+    .map(c => {
+      let allocation = (c.weight / totalWeight) * investmentAmount;
+      let canFile = allocation >= holdingPeriod;
+      return {
+        ...c,
+        allocation: Math.round(allocation),
+        canFile,
+        lobbyRatio_bps: (c.ratio * 10000).toFixed(2),
+        lobbyChallenged: canFile ? c.lobby : 0
+      };
+    })
+    .sort((a, b) => b.ratio - a.ratio);
+}
+```
+
+```{ojs}
+//| echo: false
+
+// Summary statistics
+summary = {
+  let totalAllocated = ranked.reduce((s, c) => s + c.allocation, 0);
+  let proposalsEnabled = ranked.filter(c => c.canFile).length;
+  let totalLobbyChallenged = ranked.reduce((s, c) => s + c.lobbyChallenged, 0);
+  let leverageRatio = totalLobbyChallenged / Math.max(totalAllocated, 1);
+  let sectorBreakdown = {};
+  for (let c of ranked) {
+    if (!sectorBreakdown[c.sector]) sectorBreakdown[c.sector] = {allocated: 0, lobbied: 0, count: 0};
+    sectorBreakdown[c.sector].allocated += c.allocation;
+    sectorBreakdown[c.sector].lobbied += c.lobbyChallenged;
+    sectorBreakdown[c.sector].count += c.canFile ? 1 : 0;
+  }
+  return {totalAllocated, proposalsEnabled, totalLobbyChallenged, leverageRatio, sectorBreakdown};
+}
+```
+
+```{ojs}
+//| echo: false
+
+// Display summary cards
+html`<div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap:1rem; margin:1rem 0;">
+  <div style="background:#fffaf1; border:1px solid rgba(60,43,16,0.16); border-radius:16px; padding:1rem;">
+    <div style="color:#6a5a45; font-size:0.84rem; text-transform:uppercase; letter-spacing:0.03em;">Proposals Enabled</div>
+    <div style="font-size:1.5rem; font-weight:700; color:#0e5f47;">${summary.proposalsEnabled} of ${ranked.length}</div>
+    <div style="color:#6a5a45; font-size:0.88rem;">companies where you meet the ${holdingPeriod === 25000 ? "$25K" : holdingPeriod === 15000 ? "$15K" : "$2K"} threshold</div>
+  </div>
+  <div style="background:#fffaf1; border:1px solid rgba(60,43,16,0.16); border-radius:16px; padding:1rem;">
+    <div style="color:#6a5a45; font-size:0.84rem; text-transform:uppercase; letter-spacing:0.03em;">Lobbying Challenged</div>
+    <div style="font-size:1.5rem; font-weight:700; color:#0e5f47;">$${(summary.totalLobbyChallenged / 1e6).toFixed(1)}M/year</div>
+    <div style="color:#6a5a45; font-size:0.88rem;">annual lobbying spend you can file proposals against</div>
+  </div>
+  <div style="background:#fffaf1; border:1px solid rgba(60,43,16,0.16); border-radius:16px; padding:1rem;">
+    <div style="color:#6a5a45; font-size:0.84rem; text-transform:uppercase; letter-spacing:0.03em;">Leverage Ratio</div>
+    <div style="font-size:1.5rem; font-weight:700; color:#0e5f47;">${Math.round(summary.leverageRatio)}x</div>
+    <div style="color:#6a5a45; font-size:0.88rem;">dollars of lobbying challenged per dollar invested</div>
+  </div>
+  <div style="background:#fffaf1; border:1px solid rgba(60,43,16,0.16); border-radius:16px; padding:1rem;">
+    <div style="color:#6a5a45; font-size:0.84rem; text-transform:uppercase; letter-spacing:0.03em;">Cost Per Proposal</div>
+    <div style="font-size:1.5rem; font-weight:700;">$${holdingPeriod.toLocaleString()}</div>
+    <div style="color:#6a5a45; font-size:0.88rem;">in shares held (you keep the shares)</div>
+  </div>
+</div>`
+```
+
+```{ojs}
+//| echo: false
+
+// Allocation table
+html`<div style="overflow-x:auto; margin:1rem 0;">
+<table style="width:100%; border-collapse:collapse; font-size:0.9rem;">
+<thead>
+<tr style="border-bottom:2px solid rgba(60,43,16,0.2);">
+  <th style="text-align:left; padding:0.5rem;">Company</th>
+  <th style="text-align:left; padding:0.5rem;">Sector</th>
+  <th style="text-align:right; padding:0.5rem;">Lobbying/yr</th>
+  <th style="text-align:right; padding:0.5rem;">Ratio (bps)</th>
+  <th style="text-align:right; padding:0.5rem;">Your Allocation</th>
+  <th style="text-align:center; padding:0.5rem;">Can File?</th>
+</tr>
+</thead>
+<tbody>
+${ranked.map(c => html`<tr style="border-bottom:1px solid rgba(60,43,16,0.1);">
+  <td style="padding:0.4rem 0.5rem; font-weight:600;">${c.ticker}</td>
+  <td style="padding:0.4rem 0.5rem; color:#6a5a45;">${c.sector}</td>
+  <td style="padding:0.4rem 0.5rem; text-align:right;">$${(c.lobby / 1e6).toFixed(1)}M</td>
+  <td style="padding:0.4rem 0.5rem; text-align:right;">${c.lobbyRatio_bps}</td>
+  <td style="padding:0.4rem 0.5rem; text-align:right; font-weight:600;">$${c.allocation.toLocaleString()}</td>
+  <td style="padding:0.4rem 0.5rem; text-align:center; color:${c.canFile ? '#0e5f47' : '#8d2f25'}; font-weight:700;">${c.canFile ? 'Yes' : 'No'}</td>
+</tr>`)}
+</tbody>
+</table>
+</div>`
+```
+
+```{ojs}
+//| echo: false
+
+// Sector breakdown
+html`<div style="margin:1rem 0; background:#fffaf1; border:1px solid rgba(60,43,16,0.16); border-radius:16px; padding:1rem; overflow-x:auto;">
+<table style="width:100%; border-collapse:collapse; font-size:0.9rem;">
+<thead>
+<tr style="border-bottom:2px solid rgba(60,43,16,0.2);">
+  <th style="text-align:left; padding:0.4rem 0.5rem;">Sector</th>
+  <th style="text-align:right; padding:0.4rem 0.5rem;">Invested</th>
+  <th style="text-align:right; padding:0.4rem 0.5rem;">Lobbying</th>
+  <th style="text-align:right; padding:0.4rem 0.5rem;">Proposals</th>
+</tr>
+</thead>
+<tbody>
+${Object.entries(summary.sectorBreakdown).map(([sector, data]) =>
+  html`<tr style="border-bottom:1px solid rgba(60,43,16,0.08);">
+    <td style="padding:0.4rem 0.5rem; font-weight:600;">${sector}</td>
+    <td style="padding:0.4rem 0.5rem; text-align:right;">$${data.allocated.toLocaleString()}</td>
+    <td style="padding:0.4rem 0.5rem; text-align:right;">$${(data.lobbied / 1e6).toFixed(1)}M/yr</td>
+    <td style="padding:0.4rem 0.5rem; text-align:right;">${data.count}</td>
+  </tr>`
+)}
+</tbody>
+</table>
+</div>`
+```
+
+```{ojs}
+//| echo: false
+//| output: false
+
+// Save to localStorage for crowdsource-ready schema
+{
+  if (typeof localStorage !== 'undefined') {
+    let overrides = {
+      param: "lobbying_allocation_investment",
+      value: investmentAmount,
+      holding_period_threshold: holdingPeriod,
+      sector_weighting: sectorWeighting,
+      timestamp: new Date().toISOString(),
+      results: {
+        proposals_enabled: summary.proposalsEnabled,
+        lobbying_challenged: summary.totalLobbyChallenged,
+        leverage_ratio: summary.leverageRatio
+      }
+    };
+    localStorage.setItem("eos_param_lobbying_allocation", JSON.stringify(overrides));
+  }
+}
+```
+
+::: {.content-hidden when-format="html"}
+
+**Lobbying allocation strategy** (default: $400,000 invested, 1-year holding period, $25K proposal threshold)
+
+| Company | Sector | Lobbying/yr | Ratio (bps) | Allocation | Can File? |
+|---------|--------|-------------|-------------|------------|-----------|
+| GD | Defense | $12.2M | 1.30 | $68,496 | Yes |
+| NOC | Defense | $8.8M | 1.14 | $60,112 | Yes |
+| LMT | Defense | $12.7M | 1.05 | $55,131 | Yes |
+| BA | Defense | $11.9M | 0.70 | $36,693 | Yes |
+| PFE | Pharma | $10.1M | 0.68 | $35,668 | Yes |
+| RTX | Defense | $13.5M | 0.55 | $29,140 | Yes |
+| LHX | Defense | $2.5M | 0.43 | $22,842 | No |
+| RHHBY | Pharma | $10.8M | 0.32 | $17,046 | No |
+| MRK | Pharma | $9.3M | 0.31 | $16,423 | No |
+| CVX | Energy | $9.2M | 0.25 | $13,021 | No |
+| NVS | Pharma | $6.2M | 0.22 | $11,488 | No |
+| UNH | Insurance | $7.5M | 0.21 | $10,977 | No |
+| JNJ | Pharma | $8.3M | 0.15 | $7,740 | No |
+| ABBV | Pharma | $4.5M | 0.11 | $5,931 | No |
+| XOM | Energy | $6.8M | 0.11 | $5,789 | No |
+| LLY | Pharma | $6.7M | 0.07 | $3,503 | No |
+
+| Sector | Invested | Lobbying | Proposals |
+|--------|----------|----------|-----------|
+| Defense | $272,414 | $69.2M/yr | 6 |
+| Pharma | $97,799 | $0.0M/yr | 0 |
+| Energy | $18,810 | $0.0M/yr | 0 |
+| Insurance | $10,977 | $0.0M/yr | 0 |
+
+**Summary:** 6 of 16 proposals enabled. $69.2M/year lobbying challenged. Leverage ratio: 173x. At the 3-year/$2K threshold, all 16 companies qualify (leverage: 353x, $141M/yr challenged).
+
+:::
+
+## Risk analysis: three scenarios
+
+**Scenario 1: Thesis works.** Buy shares, gain influence, redirect lobbying, treaty passes. Shares appreciate through buying pressure, credibility cascade, and economic growth. Best case.
+
+**Scenario 2: Peace gets priced in early.** Other forces (fiscal crisis, parallel peace movements, public opinion shift) reduce military spending before the takeover completes. Defense stocks decline. But: you're buying shares cheaper, biotech positions (if held) appreciate, and board influence during a forced pivot is more valuable than ever.
+
+**Scenario 3: Status quo holds.** Military spending continues. Treaty fails. But you hold defense stocks, which perform well during periods of continued military spending. The downside is the opportunity cost of whatever else you would have bought.
+
+**The asymmetry:** In all three scenarios, owning the shares is better than not owning them. The worst case is "you own defense stocks that perform like defense stocks." The best case is you own the companies that pivoted from weapons to medicine in the largest reallocation of capital in human history.
+
+**The hedge:** The portfolio should include biotech and healthcare positions alongside defense. When defense spending falls, health spending rises. The two sectors are natural hedges. A portfolio long both captures the transition instead of suffering through it.
 
 ## If you are greedy
 

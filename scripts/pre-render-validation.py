@@ -184,10 +184,16 @@ def check_math_delimiters(content: str, filename: str, lines: List[str]):
         return
 
     in_math_block = False
+    in_code_block = False
 
     for line_index, line in enumerate(lines):
-        # Skip code blocks
+        # Track code blocks
         if line.strip().startswith("```"):
+            in_code_block = not in_code_block
+            continue
+
+        # Skip lines inside code blocks
+        if in_code_block:
             continue
 
         # Track display math mode ($$)
@@ -1136,7 +1142,13 @@ def check_markdown_links(content: str, filepath: str, lines: List[str]):
     """
     file_dir = os.path.dirname(filepath)
 
+    in_code_block = False
     for line_index, line in enumerate(lines):
+        if line.strip().startswith("```"):
+            in_code_block = not in_code_block
+            continue
+        if in_code_block:
+            continue
         # Skip HTML comments
         if _RE_HTML_COMMENT_START.match(line.strip()) or ("<!--" in line and "-->" in line):
             continue

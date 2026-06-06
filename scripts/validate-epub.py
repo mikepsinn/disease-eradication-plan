@@ -577,17 +577,29 @@ def _build_qmd_to_chapter_map(epub, project_root):
     return mapping
 
 
-def _fix_qmd_links(html, qmd_map, all_section_ids):
+def _fix_qmd_links(html, qmd_map, all_section_ids, current_chapter=None):
     """Rewrite .qmd href links to point to correct EPUB chapter files.
 
     Args:
         html: XHTML content string
         qmd_map: mapping from QMD path variants to (chapter_file, section_id)
         all_section_ids: mapping from section_id to chapter_file (for anchor resolution)
+        current_chapter: this file's EPUB-relative name (e.g. "ch016.xhtml"), used
+            to detect bare same-file anchors that actually target another chapter.
     """
     def replace_link(match):
         full_tag = match.group(0)
         href = match.group(1)
+
+        # Bare same-file fragment links (#sec-...) break epubcheck (RSC-012) when
+        # the target anchor lives in a different EPUB chapter file (Quarto splits
+        # chapters at heading level). Rewrite cross-chapter ones to file#anchor.
+        if href.startswith("#"):
+            anchor = href[1:]
+            anchor_chapter = all_section_ids.get(anchor)
+            if anchor_chapter and current_chapter and anchor_chapter != current_chapter:
+                return full_tag.replace(f'href="{href}"', f'href="{anchor_chapter}#{anchor}"')
+            return full_tag
 
         # Only fix .qmd links
         if ".qmd" not in href:
@@ -699,7 +711,8 @@ def fix_epub(epub_path, project_root=None):
                 new_content = _strip_emoji(new_content)
                 if qmd_map:
                     before_links = new_content
-                    new_content = _fix_qmd_links(new_content, qmd_map, all_section_ids)
+                    current_chapter = item.filename.replace("EPUB/text/", "")
+                    new_content = _fix_qmd_links(new_content, qmd_map, all_section_ids, current_chapter)
                     if new_content != before_links:
                         # Count how many links were fixed
                         links_fixed += len(re.findall(r'\.qmd', before_links)) - len(re.findall(r'\.qmd', new_content))

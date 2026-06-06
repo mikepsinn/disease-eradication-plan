@@ -20,14 +20,14 @@ display_name = "Loving Takeover Net Cost (Annual)"
 
 # Baseline and units
 
-baseline = 13797540000.0
+baseline = 14446836000.0
 
 # Tornado data from sensitivity analysis
 
 drivers = ['MECHANISM_OPPORTUNITY_COST_RATE', 'DEFENSE_TAKEOVER_ACQUISITION_PREMIUM']
 driver_labels = ['Mechanism Opportunity Cost Rate', 'Acquisition Premium Multiplier']
-impacts_low = [-13797540000.0, -2299590000.0]
-impacts_high = [20696310000.0, 9198360000.0]
+impacts_low = [-14446836000.0, -2407806000.0]
+impacts_high = [21670254000.0, 9631224000.0]
 
 # Convert deltas to absolute values (baseline + delta)
 

@@ -1,0 +1,253 @@
+<!-- Reactive parameter engine. OJS cells are HTML-only natively (echo:false ->
+     no output in PDF/EPUB), so they are NOT wrapped in a content-visible div:
+     OJS cells inside a fenced div break the div close in non-HTML formats
+     (Pandoc "unclosed div, closing implicitly"). Leave OJS cells bare. -->
+
+```{ojs}
+//| echo: false
+// ============================================================================
+// Reactive parameter engine (auto-generated data from dih_models/parameters.py)
+// ----------------------------------------------------------------------------
+// Single source of truth. Every number, formula, dependency, and confidence
+// interval comes from parameters.json (inputs/computeExpr/distribution are
+// added by the generate:everything pipeline, which traces the compute lambdas
+// in parameters.py). The fetch is async, so it never blocks page render; the
+// citations block in the file is unused here but harmless (gzipped + cached).
+// ============================================================================
+
+paramFile = await fetch("/assets/json/parameters.json").then(r => r.json())
+```
+
+```{ojs}
+//| echo: false
+paramData = paramFile.parameters
+```
+
+```{ojs}
+//| echo: false
+// Citations are already in the payload (no extra fetch). Used to show the
+// source for every external leaf parameter, so a reader can verify each input.
+citations = paramFile.citations || ({})
+```
+
+```{ojs}
+//| echo: false
+// sourceNode(meta): a small "source" line for a leaf. External params link to
+// their citation; definitions are labelled assumptions; external-but-unsourced
+// is flagged honestly so missing citations are visible rather than hidden.
+// Built with createElement (not an HTML string) so the link-validator does not
+// misread the embedded OJS source as a real anchor.
+function sourceNode(meta) {
+  const ref = meta && meta.sourceRef;
+  const type = meta && meta.sourceType;
+  const el = document.createElement("div");
+  el.className = "rp-source";
+  function link(href, text) {
+    el.appendChild(document.createTextNode("source: "));
+    const a = document.createElement("a");
+    a.href = href; a.target = "_blank"; a.rel = "noopener"; a.textContent = text;
+    el.appendChild(a);
+    return el;
+  }
+  if (ref && citations[ref] && citations[ref].url) {
+    const c = citations[ref];
+    const who = [c.author, c.year].filter(Boolean).join(" ");
+    return link(c.url, c.title ? (c.title + (who ? ` (${who})` : "")) : (c.source || ref));
+  }
+  if (ref && /^https?:\/\//.test(ref)) return link(ref, ref);
+  if (type === "definition") { el.className = "rp-source rp-assumption"; el.textContent = "assumption / definition"; return el; }
+  if (type === "external") { el.className = "rp-source rp-uncited"; el.textContent = "source not yet cited"; return el; }
+  return null;
+}
+```
+
+```{ojs}
+//| echo: false
+// Compiled compute functions: turn each computeExpr string into a function of
+// a lookup `p(name)`. Done once; reused for every evaluation.
+compiledCompute = {
+  const fns = {};
+  for (const [name, meta] of Object.entries(paramData)) {
+    if (meta.computeExpr) {
+      // Rewrite BARE_PARAM_NAMES into p("BARE_PARAM_NAME") lookups.
+      const expr = meta.computeExpr.replace(
+        /\b[A-Z][A-Z0-9_]+\b/g,
+        (m) => (paramData[m] ? `p(${JSON.stringify(m)})` : m)
+      );
+      // eslint-disable-next-line no-new-func
+      fns[name] = new Function("p", `return (${expr});`);
+    }
+  }
+  return fns;
+}
+```
+
+```{ojs}
+//| echo: false
+// evaluate(name): resolve a parameter's current value given reader overrides,
+// recomputing calculated parameters from their dependencies. Memoized per call.
+function makeEvaluator(ov) {
+  const cache = new Map();
+  function p(name) {
+    if (cache.has(name)) return cache.get(name);
+    let val;
+    if (name in ov) {
+      val = ov[name];                       // reader override wins
+    } else if (compiledCompute[name]) {
+      val = compiledCompute[name](p);       // recompute from dependencies
+    } else {
+      val = paramData[name] ? paramData[name].value : NaN;  // leaf default
+    }
+    cache.set(name, val);
+    return val;
+  }
+  return p;
+}
+```
+
+```{ojs}
+//| echo: false
+// Formatting helpers mirroring the book's style.
+function fmtValue(meta, v) {
+  const unit = meta && meta.unit;
+  if (unit === "USD") {
+    const a = Math.abs(v);
+    if (a >= 1e12) return "$" + (v / 1e12).toFixed(2) + "T";
+    if (a >= 1e9)  return "$" + (v / 1e9).toFixed(1) + "B";
+    if (a >= 1e6)  return "$" + (v / 1e6).toFixed(1) + "M";
+    if (a >= 1e3)  return "$" + (v / 1e3).toFixed(1) + "K";
+    return "$" + v.toFixed(2);
+  }
+  if (unit === "percent" || unit === "ratio") return v.toFixed(3);
+  if (unit === "x") return v.toFixed(2) + "x";
+  if (Math.abs(v) >= 1e6) return v.toLocaleString(undefined, {maximumFractionDigits: 0});
+  return v.toLocaleString(undefined, {maximumFractionDigits: 2});
+}
+```
+
+```{ojs}
+//| echo: false
+// paramTree(rootName): the recursive disclosure widget. Returns an Observable
+// view whose .value is the live { name -> value } map. Native <details> gives
+// progressive disclosure with zero overload: collapsed = one number, each click
+// reveals one more level of the formula. Leaves are editable sliders bounded by
+// their confidence interval; calculated nodes are read-only and expandable.
+function paramTree(rootName) {
+  const ov = {};   // reader overrides: leaf name -> chosen value (local state)
+  const root = document.createElement("div");
+  root.className = "rp-shell";
+
+  // Imperative recompute: re-resolve all visible value spans from overrides.
+  const valueSpans = [];  // {name, el}
+  function recompute() {
+    const p = makeEvaluator(ov);
+    for (const {name, el} of valueSpans) {
+      const meta = paramData[name];
+      el.textContent = fmtValue(meta, p(name));
+    }
+    root.value = Object.fromEntries(valueSpans.map(({name}) => [name, p(name)]));
+    root.dispatchEvent(new CustomEvent("input"));
+  }
+
+  function node(name, depth) {
+    const meta = paramData[name];
+    if (!meta) return document.createElement("span");
+    const isCalc = !!meta.computeExpr;
+    const wrap = document.createElement(isCalc ? "details" : "div");
+    wrap.className = "rp-node";
+    wrap.style.marginLeft = depth === 0 ? "0" : "1rem";
+
+    const head = document.createElement(isCalc ? "summary" : "div");
+    head.className = "rp-head";
+
+    const label = document.createElement("span");
+    label.className = "rp-label";
+    label.textContent = (meta.description || name).split(".")[0];
+
+    const value = document.createElement("span");
+    value.className = "rp-value";
+    valueSpans.push({name, el: value});
+
+    head.appendChild(label);
+    head.appendChild(value);
+    wrap.appendChild(head);
+
+    if (isCalc) {
+      // Formula line + recurse into each dependency.
+      const body = document.createElement("div");
+      body.className = "rp-body";
+      const formula = document.createElement("div");
+      formula.className = "rp-formula";
+      formula.textContent = "= " + meta.computeExpr.replace(/\b([A-Z][A-Z0-9_]+)\b/g, (m) => {
+        const dm = paramData[m];
+        return dm ? (dm.description || m).split(".")[0].replace(/\s+/g, " ") : m;
+      });
+      body.appendChild(formula);
+      for (const dep of (meta.inputs || [])) body.appendChild(node(dep, depth + 1));
+      wrap.appendChild(body);
+    } else {
+      // Editable leaf: slider bounded by CI (or +/-50% if no CI).
+      const ci = meta.confidenceInterval;
+      const base = meta.value;
+      const lo = ci ? ci[0] : base * 0.5;
+      const hi = ci ? ci[1] : base * 1.5;
+      const ctrl = document.createElement("div");
+      ctrl.className = "rp-control";
+      const slider = document.createElement("input");
+      slider.type = "range";
+      slider.min = lo;
+      slider.max = hi;
+      slider.step = (hi - lo) / 100 || 1;
+      slider.value = base;
+      const reset = document.createElement("button");
+      reset.className = "rp-reset";
+      reset.textContent = "reset";
+      slider.addEventListener("input", () => {
+        ov[name] = +slider.value;
+        recompute();
+      });
+      reset.addEventListener("click", () => {
+        delete ov[name];
+        slider.value = base;
+        recompute();
+      });
+      const range = document.createElement("span");
+      range.className = "rp-range";
+      range.textContent = ci ? `${fmtValue(meta, lo)} – ${fmtValue(meta, hi)} (95% CI)` : "adjustable";
+      ctrl.appendChild(slider);
+      ctrl.appendChild(reset);
+      ctrl.appendChild(range);
+      wrap.appendChild(ctrl);
+
+      // Source line: cite the data behind this input so the reader can verify it.
+      const srcEl = sourceNode(meta);
+      if (srcEl) wrap.appendChild(srcEl);
+    }
+    return wrap;
+  }
+
+  if (rootName) root.appendChild(node(rootName, 0));
+  recompute();
+  return root;
+}
+```
+
+```{=html}
+<style>
+.rp-shell { font-size: 0.93rem; margin: 1rem 0; }
+.rp-node { border-left: 2px solid rgba(60,43,16,0.12); padding-left: 0.5rem; margin: 0.2rem 0; }
+.rp-head { display: flex; justify-content: space-between; gap: 1rem; align-items: baseline; cursor: default; padding: 0.25rem 0; }
+details.rp-node > summary.rp-head { cursor: pointer; list-style: revert; }
+.rp-label { color: #2c2115; }
+.rp-value { font-weight: 700; color: #0e5f47; white-space: nowrap; }
+.rp-formula { color: #6a5a45; font-size: 0.82rem; font-style: italic; margin: 0.2rem 0 0.4rem; }
+.rp-control { display: flex; align-items: center; gap: 0.6rem; padding: 0.2rem 0 0.4rem; flex-wrap: wrap; }
+.rp-control input[type=range] { flex: 1 1 160px; }
+.rp-range { color: #6a5a45; font-size: 0.8rem; }
+.rp-source { color: #6a5a45; font-size: 0.78rem; padding: 0 0 0.3rem; }
+.rp-source a { color: #a04f1a; }
+.rp-assumption { color: #6a5a45; font-style: italic; }
+.rp-uncited { color: #8d2f25; font-style: italic; }
+.rp-reset { font-size: 0.75rem; background: #f1e4cb; border: 1px solid rgba(60,43,16,0.2); border-radius: 6px; padding: 0.1rem 0.5rem; cursor: pointer; }
+</style>
+```

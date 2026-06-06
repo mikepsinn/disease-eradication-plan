@@ -1454,6 +1454,126 @@ jobs:
 
 
 
+  build-i-am-retarded:
+    name: "Build I Am Retarded"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Cache Quarto freeze
+        uses: actions/cache@v4
+        with:
+          path: _freeze
+          key: quarto-freeze-i-am-retarded-${{ hashFiles('**/*.qmd', '**/*.ipynb') }}
+          restore-keys: |
+            quarto-freeze-i-am-retarded-
+            quarto-freeze-
+
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+
+      - name: Cache validation results
+        uses: actions/cache@v4
+        with:
+          path: .cache
+          key: validation-cache-${{ runner.os }}-${{ hashFiles('.cache/pdf-validation-cache.json') }}
+          restore-keys: |
+            validation-cache-${{ runner.os }}-
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+
+      - name: Install Graphviz
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y graphviz
+
+      - name: Install Python dependencies
+        run: uv pip install --system -r requirements.txt
+
+      - name: Install dih_models package
+        run: uv pip install --system -e .
+
+      - name: Install Jupyter kernel
+        run: |
+          python -m ipykernel install --user --name dih-project-kernel --display-name "DIH Project"
+
+      - name: Cache TinyTeX
+        uses: actions/cache@v4
+        with:
+          path: ~/.TinyTeX
+          key: tinytex-${{ runner.os }}-${{ hashFiles('.github/workflows/build-artifacts.yml') }}
+          restore-keys: |
+            tinytex-${{ runner.os }}-
+
+      - name: Install LaTeX
+        run: |
+          if [ ! -d ~/.TinyTeX ]; then
+            quarto install tinytex
+          fi
+          ~/.TinyTeX/bin/*/tlmgr update --self || true
+          ~/.TinyTeX/bin/*/tlmgr install fontspec unicode-math lualatex-math luaotfload || true
+
+      - name: "Render Build I Am Retarded"
+        run: python scripts/render-quarto.py i-am-retarded --to pdf
+        env:
+          GOOGLE_GENERATIVE_AI_API_KEY: ${{ (secrets.LLM_VALIDATION == 'true' || github.ref == 'refs/heads/master') && secrets.GOOGLE_GENERATIVE_AI_API_KEY || '' }}
+        timeout-minutes: 30
+
+
+      - name: Upload PDFs artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: pdfs-i-am-retarded
+          path: _build_temp/i-am-retarded/**/*.pdf
+          if-no-files-found: error
+
+
+
+
+
+
+      - name: Upload validation checklists
+        uses: actions/upload-artifact@v4
+        with:
+          name: validation-checklists-i-am-retarded
+          path: pdf-validation-checklist-*.md
+          if-no-files-found: ignore
+
+      - name: Upload LaTeX logs on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: latex-logs-i-am-retarded
+          path: |
+            logs/build-i-am-retarded.log
+            _build_temp/i-am-retarded/*.log
+            _build_temp/i-am-retarded/**/*.log
+            _build_temp/i-am-retarded/*.aux
+            _build_temp/i-am-retarded/**/*.aux
+            _build_temp/i-am-retarded/*.toc
+            _build_temp/i-am-retarded/**/*.toc
+            _build_temp/i-am-retarded/*.out
+            _build_temp/i-am-retarded/**/*.out
+          retention-days: 7
+
+
+      - name: "Upload Build I Am Retarded PDF to Zenodo (draft)"
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        env:
+          ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
+        run: python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild i-am-retarded
+
+
+
   build-iab:
     name: "Build Incentive Alignment Bonds: Making Public Goods Fin"
     runs-on: ubuntu-latest
@@ -2924,6 +3044,8 @@ jobs:
       - build-gdp-trajectories
 
       - build-humanity-v-government
+
+      - build-i-am-retarded
 
       - build-iab
 
