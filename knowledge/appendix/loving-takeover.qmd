@@ -367,6 +367,24 @@ Buying half the float of every Western defense prime requires coordinating milli
 
 **Mitigation:** A standardized acquisition vehicle (e.g., an index fund or trust dedicated to the takeover) that anyone can buy into for the price of one share. Open-source coordination of which contractors are being targeted in which quarter. The same recruitment funnel as the [shirts campaign](handout.qmd) and the [lawsuit campaign](lawsuit.qmd).
 
+## "But They'll Lose Their Government Contracts"
+
+This is the objection that sounds serious. It is not.
+
+The objection goes: if a shareholder coalition takes over defense companies and redirects their lobbying, the government will punish them by canceling their contracts. The companies go bankrupt. You bought an expensive pile of nothing. Congratulations.
+
+The problem with this objection is that it assumes the Pentagon has options. It does not.
+
+Huntington Ingalls Industries is the sole builder of nuclear aircraft carriers on planet Earth. There is no backup aircraft carrier factory. If the Pentagon cancels HII's contract, the US Navy stops getting aircraft carriers. Not "gets them from someone else." Stops getting them. Northrop Grumman is the sole builder of the B-21 Raider stealth bomber. General Dynamics is the sole builder of Columbia-class nuclear submarines. These are not competitive markets. They are monopolies, and the customer cannot leave.
+
+The government does not contract with these companies because the companies lobby well. The government contracts with them because nobody else on the planet can build what they build. The lobbying wins marginal contracts, cost-plus expansions, and favorable terms on the next procurement cycle. It does not win the core work. The core work exists because a nuclear submarine requires roughly 10 million person-hours of specialized labor, and exactly one company has the workforce, the facilities, and the security clearances to deliver it.
+
+So the real question is narrower than it sounds: does the marginal ROI on lobbying (winning the next cost-plus expansion) exceed the marginal ROI on diversification (pivoting that same money into health tech, renewable energy, AI-augmented drug discovery)? For a company operating in a post-treaty economy where GDP at year 15 is roughly {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}} larger, the diversification bet is obviously better. You are not choosing between revenue and no revenue. You are choosing between a slow-growth monopoly and a fast-growth monopoly that also has new product lines.
+
+If this sounds theoretical, it has already happened. In 2021, a twelve-person hedge fund called Engine No. 1 won three board seats at ExxonMobil, one of the largest companies on Earth, on a platform of accelerating the energy transition. The stock did not crash. It went up. Shareholder activism that aligns a company with long-term secular trends makes the company more valuable, not less. The market is not confused about this. The market prices it in, which is why Engine No. 1's investors made money.
+
+The sole-supplier argument is not a reason the takeover fails. It is a reason the takeover is structurally safe. You are buying monopolies whose customers cannot leave, and redirecting their discretionary spending toward higher-return opportunities. The downside is "you own a monopoly defense contractor." The upside is "you own a monopoly defense contractor that also does health tech in a 4x economy." This is not a hard trade.
+
 ## Relationship to the Lawsuit Campaign
 
 The two campaigns are complementary, not alternative.
@@ -395,6 +413,28 @@ This page is a draft. Before any campaign acts on the math:
 6. **Coordinate with the [handout and shirts campaign](handout.qmd)** so recruitment of participants happens through the same funnel.
 
 For the underlying argument for why this is necessary, see [Where Am I Wrong?](where-am-i-wrong.qmd) and the [1% treaty paper](../solution/1-percent-treaty.qmd). For the liability framework that quantifies the harm the takeover is correcting, see [Humanity v. Government](humanity-v-government.qmd).
+
+## Your Money, Your Choice
+
+The entire plan on this page, stated once: buy the defense contractors, use their lobbyists to give the money back to the people, let the people decide what to spend it on.
+
+That is it. Everything else on this page is the math proving it works and the frictions slowing it down.
+
+The redirected {{< var defense_lobbying_annual >}} per year does not go to a committee. It does not go to a czar. It does not go to a panel of experts who will thoughtfully allocate it on your behalf while charging 40% overhead. It goes to a [Wishocracy](../solution/wishocracy.qmd): every person gets a proportional say in how the reallocated funds are spent, under real budget constraints, with tradeoffs visible. You want the money spent on cancer trials? Vote for cancer trials. Pandemic preparedness? Vote for that. You think the whole thing is stupid and the money should stay in defense? Vote for defense. The system does not care what you pick. It cares that you pick.
+
+This is the part that breaks political objections, because every political tribe already wants this. They just describe it differently.
+
+If you are conservative: this is smaller government. The money currently disappears into a defense bureaucracy that has failed its own audit every single year it has been tried. Giving it back to the people who earned it and letting them choose is the most conservative fiscal policy available. Less bureaucracy, more accountability, your money back.
+
+If you are progressive: this is direct democratic allocation of public resources to healthcare, education, climate, and poverty reduction. No intermediary. No lobbying. The people who need the services choose the services.
+
+If you are libertarian: this is individual choice replacing government planning. Instead of 535 members of Congress deciding how to spend a trillion dollars, 330 million Americans decide how to spend their share. The mechanism is voluntary. The outcome is decentralized.
+
+If you are religious: this is what "love thy neighbor" looks like when you write it into the budget. Your neighbor is dying of a disease that has a cure stuck in a trial queue. You take the money currently pointed at building the next missile and point it at finishing the trial. You do not need to use the word "love." You just move the decimal point.
+
+The only people who lose under this arrangement are the current recipients of the lobbying: the members of Congress who receive defense PAC contributions in exchange for voting to expand the budget, and the lobbyists whose fees depend on the budget they are expanding. That is roughly 2,000 people. The number of people who benefit is roughly {{< var global_population_2024 >}}.
+
+This is [Wishocracy](../solution/wishocracy.qmd) applied at its simplest: instead of the government deciding what you need, you decide what you need. The government's track record on this question is a trillion dollars a year on missiles and zero dollars a year on the diseases that will probably kill you. Your track record on this question is that you would rather not die. The data favors your judgment.
 
 ## The Funniness of This Loving Takeover, Mathematically
 

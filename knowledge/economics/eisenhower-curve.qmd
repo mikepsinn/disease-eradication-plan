@@ -78,10 +78,10 @@ The clearest way to see the curve at work is to compare the two end states of th
 | | **1939** | **2026** |
 |---|---|---|
 | Military spending (real) | ~{{< var us_military_spending_1939_annual_2024usd >}} | {{< var us_military_spending_2024_annual >}} ({{< var us_military_spending_current_vs_prewar_multiplier >}} the 1939 level) |
-| What the spending bought | A peacetime military that scaled 83x in five years and won the largest war in human history | A peacetime military that cannot produce enough munitions for a proxy war or scale chip fabrication without Taiwan |
+| What the spending bought | A peacetime military that scaled 83x in five years and won the largest war in human history | A peacetime military that cannot produce enough munitions for a proxy war, scale chip fabrication without Taiwan, or keep the Strait of Hormuz open despite spending roughly 30x the 1939 baseline |
 | What the productive economy looked like | Ford, Boeing, GM, US Steel, Bethlehem, DuPont. Largest industrial base on Earth | Manufacturing employment down from ~28% of workforce in 1960 to ~8% today. Leading-edge chips fabricated abroad. Most precision shipbuilding capacity outside the US |
 | What the procurement system rewarded | Competence in production. Henry Ford reached the top of Ford by building cars | Competence in bribery. Talent rises by capturing earmarks, navigating clearance pipelines, and managing congressional staff |
-| Pentagon audit failures | Not applicable (no modern audit framework) | {{< var pentagon_unaccounted_funds >}} in unaccounted transactions; failed every audit since one was required |
+| Pentagon audit failures | Not applicable (no modern audit framework) | {{< var pentagon_unaccounted_funds >}} in unaccounted transactions; seven consecutive failed audits since one was required |
 | Cost per unit of capability | Civilian-comparable | 5-20x civilian comparable; F-35 program lifetime cost >$1.5T |
 | Time to convert civilian factory to wartime production | Months (Willow Run: 1 B-24 per hour at peak) | Years to decades, if at all (no civilian factory base to draw on) |
 | Strategic outcome | Won WW2; longest sustained economic expansion in American history followed | Losing strategic competition to a country that spends a third as much in absolute terms |
@@ -98,11 +98,11 @@ Most precision manufacturing capacity now sits outside the United States. Chips 
 
 ### Defense procurement at five to twenty times civilian cost
 
-The F-35 program has accumulated lifetime cost projections exceeding $1.5 trillion. The Constellation-class frigate program is years behind schedule and over budget by orders of magnitude. The Sentinel ICBM program has experienced a Nunn-McCurdy breach. Cost-plus contracting reliably produces products that cost an order of magnitude more than civilian equivalents while delivering less. The defense industry has become, by civilian production standards, structurally bad at production.
+The F-35 program has accumulated lifetime cost projections exceeding $1.5 trillion. The Constellation-class frigate program is years behind schedule and over budget by orders of magnitude. The Sentinel ICBM program has experienced a Nunn-McCurdy breach. Cost-plus contracting reliably produces products that cost an order of magnitude more than civilian equivalents while delivering less. The thousand-dollar screw is not an urban legend; it is the predictable output of a system that reimburses costs plus a percentage. When your profit is a fixed markup on whatever you spend, spending more is the business model. The defense industry has become, by civilian production standards, structurally bad at production.
 
 ### Pentagon audit failures totaling {{< var pentagon_unaccounted_funds >}}
 
-The Department of Defense has failed every audit since auditing was required. Approximately {{< var pentagon_unaccounted_funds >}} in unaccounted transactions and assets are missing from the public ledger. This is not "waste" in the colloquial sense. It is money that exists nowhere, produced nothing, and is mathematically unrecoverable. The country built it, spent it, and cannot find it.
+The Department of Defense has failed seven consecutive audits since auditing was required. Approximately {{< var pentagon_unaccounted_funds >}} in unaccounted transactions and assets are missing from the public ledger. This is not "waste" in the colloquial sense. It is money that exists nowhere, produced nothing, and is mathematically unrecoverable. The country built it, spent it, and cannot find it.
 
 ### The selection function has inverted
 
