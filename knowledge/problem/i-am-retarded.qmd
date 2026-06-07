@@ -32,7 +32,10 @@ clean fallback via a _quarto-*.yml title override. Keep the slur OUT of frontmat
 VOICE: per author instruction ("use my exact language"), this chapter is written
 first-person as the translator (Mike) stepping forward, since the source material is
 first-person and personal. This is the one deliberate break from the Wishonia (alien)
-voice used elsewhere. The opening italic frame is optional/removable.
+voice used elsewhere. No meta-frame announces the hand-off (the old italic "Wishonia
+has agreed to let the translator speak" line and the "Why I need you" personal preamble
+were cut as too self-focused); the chapter just opens in first person. The mother
+references are kept deliberately: they establish standing/compassion for the title word.
 
 PROFANITY DIAL: "wash your goddamn hands" is kept as an intentional refrain; one
 "fucking" is kept in the "everyone thinks they're right" line. Both are author's exact
@@ -50,23 +53,9 @@ are common-knowledge history, illustrative, uncited -- harden if a reviewer asks
 -->
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 
-*For one chapter, Wishonia has agreed to let the translator speak in his own voice.*
-
 I am retarded.
 
 I want to be precise about what I mean, because it's one of the two most important sentences in this book, and you're going to want to argue with it.
-
-## Why I need you
-
-I can prove, mathematically, through [Love's Wager](../proof/loves-wager.qmd), that the stakes of what you are about to read are literally infinite. That you and everyone you love might suffer forever if nobody acts.
-
-And I have convinced almost no one of almost anything.
-
-I am terrified of talking to people. I do not know the right words to make someone act on something, even when the math is clear and the suffering is real and the solution is sitting right there. I can see where the problem is. I can tell you exactly what would fix it. And I cannot get a single person to help me fix it.
-
-This is my specific retardation. Everyone has one. Mine is that the thing I am worst at in the world is the thing that matters most: getting other humans to do the thing that would make every human, including them, infinitely better off. I do not have the voice, or the courage, or whatever the thing is that makes a person capable of walking up to another person and saying "please read this, your life depends on it" without their hands shaking.
-
-So this chapter is a request. I need your help.
 
 ## There's this thing called information, and this thing called logic
 
@@ -112,7 +101,11 @@ Take the Ethyl Gasoline Corporation. In 1924 they had cars. They put gasoline in
 
 The advantage of the lead was that the Ethyl Gasoline Corporation, a joint venture of General Motors and DuPont, held the patent on it, and you cannot patent alcohol. So they made a great deal of money licensing the lead. The disadvantage of the lead was that it made everyone increasingly retarded. The best measurement we have estimates it cost Americans a cumulative 824 million IQ points, an average of nearly three per person, and closer to six for the worst-hit generation, while exposing more than half the country to dangerous lead levels as children [@mcfarland-lead-iq-2022]. It is also widely linked to a great deal of crime, which is enormously expensive to a society. A scientist named Clair Patterson worked this out and suggested it might be preferable not to give everyone brain damage, and to use ethanol instead. In response, millions of dollars, possibly billions in today's money, were spent lobbying and controlling the government so they could keep putting lead in the gasoline and giving themselves, and everyone they ever loved, brain damage. They kept it up for about seventy years, until 1996 [@mcfarland-lead-iq-2022], when human retardation had finally declined just enough to stop.
 
+Why did it persist for seventy years? The smart-sounding answer is the one everyone reaches for: the benefit (patent profits) was concentrated among a few shareholders while the cost (brain damage) was smeared across everyone, and concentrated interests organize and lobby while diffuse victims do not. That is the textbook story, and it describes the *mechanics* of how the dysfunction kept its grip. But it is not the real reason, because it quietly assumes the shareholders were winning. They were not, which is the whole point of this chapter, and the reason the [Loving Takeover](../solution/earth-optimization-services.qmd) works: there is no greedy winner to defeat here, only a roomful of people too retarded to notice they were losing too.
+
 Here is the lesson people miss. Everyone blames selfishness and greed. But if you do the math, even the shareholders of the Ethyl Gasoline Corporation would have been twenty to sixty percent richer if they had spent that money on something useful, like biomedical research, instead of on making everyone retarded and bribing the government to let them continue. They had to make the switch eventually anyway. In the long run, even they would have been vastly richer for never having done it. The only reason they did it was that everyone, including them, assumed the people in charge were not retarded.
+
+Now imagine if someone had bought enough Ethyl Gasoline Corp shares to change the board in 1930. The switch to ethanol happens sixty-six years earlier. 824 million IQ points saved. That is what [Earth Optimization Services](../solution/earth-optimization-services.qmd) does to the defense industry. The precedent already exists: Engine No. 1 did exactly this to ExxonMobil in 2021, holding 0.02% of its shares, won three board seats, and the stock went up. You do not need a majority. You need a proxy fight and a better argument.
 
 ## The doctors who would not wash their goddamn hands
 
@@ -123,6 +116,16 @@ The reason I tell you these two stories is that you need to calibrate your expec
 ## The pattern is the decades
 
 These two are not flukes. They are the shape of the whole story. Pick almost any example and you find the same machine running: somebody turns out to be right, everybody punishes them for it, and the fix arrives a lifetime later anyway. A naval surgeon proved in 1747 that citrus cured scurvy, and the British navy took more than forty years to act on it, having killed more of its own sailors with scurvy than any enemy ever managed. A man proposed in 1912 that the continents drift, and was laughed at for fifty years until it turned out he was right. Two scientists showed in the 1980s that a bacterium causes most stomach ulcers, and were so disbelieved that one of them drank a vial of it to prove the point, won a Nobel Prize, and *still* had to wait years for doctors to stop being wrong. The discovery is never the hard part. The hard part is the decades we spend defending the thing we already had every reason to drop.
+
+The measured delay between scientific discovery and clinical practice is seventeen to seventy years. Azoulay and colleagues validated Planck's observation that science advances one funeral at a time: when a star scientist dies, younger researchers are more likely to enter the field and take it in new directions, and the field produces more high-impact work [@azoulay-planck-2019]. The old guard does not update. The old guard dies. Then things change.
+
+This is not a metaphor. It is a measurable cognitive phenomenon. The decision-makers in government, medicine, and industry are fifty to seventy years old. Their mental models crystallized decades ago, when they were young enough to learn. Neuroplasticity, the brain's ability to rewire itself in response to new information, declines with age. The neural networks that run their worldview are, in a meaningful physiological sense, frozen. They are not choosing to ignore new evidence. They are, at a neurological level, less capable of integrating it. The frozen network is not a character flaw. It is a hardware limitation.
+
+So science advances one funeral at a time because the funerals are what clear the frozen networks from the decision-making positions. The scurvy delay was forty years. Continental drift was fifty. H. pylori was about twenty. Semmelweis: decades. Lead in gasoline: seventy. In every case the people who were wrong held power until they stopped holding power, by dying.
+
+Now do the cost. At {{< var global_annual_deaths_curable_diseases >}} per year from diseases and aging, every year of delay costs {{< var global_annual_deaths_curable_diseases >}} lives. A fifty-year delay, the median of that range, costs something like 2.7 billion lives. That is not a war. It is not a famine. It is the quiet, distributed consequence of old men in conference rooms being neurologically incapable of updating their priors. The delay is the genocide. It just does not look like one because it happens slowly, across many diseases, in hospitals instead of battlefields, one grandmother at a time.
+
+This is why [Earth Optimization Services](../solution/earth-optimization-services.qmd) and AI tools matter beyond efficiency. They compress the delay by routing around the frozen networks entirely. You do not wait for the funeral. You buy the company. You replace the board. You hand the data to an AI that does not have a hippocampus to calcify and let it recommend the policy that the data supports, instead of the policy that a seventy-year-old's pattern-matched worldview from 1985 supports. The [Loving Takeover](../appendix/loving-takeover.qmd) is a Planck's-funeral accelerator. It does what death does to bad ideas, but without waiting for the death.
 
 ## Every human defect is curable
 
