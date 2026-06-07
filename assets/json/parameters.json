@@ -3467,6 +3467,21 @@
       "computeExpr": "(PRIZE_POOL_SIZE / GLOBAL_REGISTERED_VOTERS)",
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/strategy/earth-optimization-prize.html"
     },
+    "EARTH_OPTIMIZATION_TWO_POINTS_PAYOUT": {
+      "value": 13341.465762766025,
+      "formatted": "$13,341",
+      "unit": "USD",
+      "description": "Payout for a depositor who recruits 2 verified participants (earning 2 Earth Optimization Points). CI range reflects participation uncertainty.",
+      "sourceType": "calculated",
+      "sourceRef": null,
+      "confidence": "high",
+      "formula": "2 × EARTH_OPTIMIZATION_POINT_VALUE",
+      "inputs": [
+        "EARTH_OPTIMIZATION_POINT_VALUE"
+      ],
+      "computeExpr": "(2.0 * EARTH_OPTIMIZATION_POINT_VALUE)",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/strategy/earth-optimization-prize.html"
+    },
     "ECONOMIC_MULTIPLIER_EDUCATION_INVESTMENT": {
       "value": 2.1,
       "formatted": "2.1x",
@@ -10525,21 +10540,6 @@
       ],
       "computeExpr": "(DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_SUFFERING_HOURS / GLOBAL_REGISTERED_VOTERS)",
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/strategy/nonprofit-coalition-strategy.html"
-    },
-    "VOTE_2_CLAIMS_PAYOUT": {
-      "value": 13341.465762766025,
-      "formatted": "$13,341",
-      "unit": "USD",
-      "description": "Payout for a depositor who recruits 2 verified participants (earning 2 Earth Optimization Points). CI range reflects participation uncertainty.",
-      "sourceType": "calculated",
-      "sourceRef": null,
-      "confidence": "high",
-      "formula": "2 × EARTH_OPTIMIZATION_POINT_VALUE",
-      "inputs": [
-        "EARTH_OPTIMIZATION_POINT_VALUE"
-      ],
-      "computeExpr": "(2.0 * EARTH_OPTIMIZATION_POINT_VALUE)",
-      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/strategy/earth-optimization-prize.html"
     },
     "WAR_AVG_YEARS_LIFE_LOST_PER_DEATH": {
       "value": 27.0,

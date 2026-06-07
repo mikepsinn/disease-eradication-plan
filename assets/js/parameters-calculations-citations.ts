@@ -5587,6 +5587,22 @@ export const EARTH_OPTIMIZATION_POINT_VALUE: Parameter = {
   manualPageTitle: "The Earth Optimization Prize",
 };
 
+export const EARTH_OPTIMIZATION_TWO_POINTS_PAYOUT: Parameter = {
+  value: 13341.465762766025,
+  parameterName: "EARTH_OPTIMIZATION_TWO_POINTS_PAYOUT",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-earth_optimization_two_points_payout",
+  unit: "USD",
+  displayName: "Earth Optimization Points Payout (2 Claims)",
+  description: "Payout for a depositor who recruits 2 verified participants (earning 2 Earth Optimization Points). CI range reflects participation uncertainty.",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "2 × EARTH_OPTIMIZATION_POINT_VALUE",
+  latex: "\\begin{gathered}\nV_{2claims} = V_{vote} \\times 2 = \\$6.67K \\times 2 = \\$13.3K\n\\\\[0.5em]\n\\text{where } V_{vote} = \\frac{Pool}{N_{voters,global}} = \\frac{\\$27.5T}{4.13B} = \\$6.67K\n\\\\[0.5em]\n\\text{where } Pool = Assets_{invest} \\times R_{pool} \\times M_{pool} = \\$305T \\times 1\\% \\times 9.03 = \\$27.5T\n\\\\[0.5em]\n\\text{where } M_{pool} = (1 + r_{pool}) ^{Y_{50\\%} - Y_0}\n\\\\[0.5em]\n\\text{where } r_{pool} = r_{VC,gross} + \\Delta r_{scale} + \\alpha_{crowd} + \\alpha_{home} = 17\\% + -2.5\\% + 0.5\\% + 0.8\\% = 15.8\\%\n\\\\[0.5em]\n\\text{where } Y_{50\\%} = Y_0 + \\frac{\\ln\\left(0.50 / \\text{DESTRUCTIVE\\_PCT\\_GDP}\\right)}{\\ln\\left(1 + \\text{DESTRUCTIVE\\_GROWTH} - \\text{GDP\\_GROWTH}\\right)}\n\\\\[0.5em]\n\\text{where } r_{destruct:GDP} = \\frac{Cost_{destruct}}{GDP_{global}} = \\frac{\\$13.2T}{\\$115T} = 11.5\\%\n\\\\[0.5em]\n\\text{where } Cost_{destruct} = Spending_{mil} + Cost_{cyber} = \\$2.72T + \\$10.5T = \\$13.2T\n\\end{gathered}",
+  confidenceInterval: [556.9126523129366, 112307.1984210392],
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/strategy/earth-optimization-prize.html",
+  manualPageTitle: "The Earth Optimization Prize",
+};
+
 export const EFFICACY_LAG_CUMULATIVE_EXCESS_COST: Parameter = {
   value: 4836000000000.0,
   parameterName: "EFFICACY_LAG_CUMULATIVE_EXCESS_COST",
@@ -9063,22 +9079,6 @@ export const VOTER_SUFFERING_HOURS_PREVENTED: Parameter = {
   manualPageTitle: "How to Coordinate 10 Million Nonprofits",
 };
 
-export const VOTE_2_CLAIMS_PAYOUT: Parameter = {
-  value: 13341.465762766025,
-  parameterName: "VOTE_2_CLAIMS_PAYOUT",
-  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-vote_2_claims_payout",
-  unit: "USD",
-  displayName: "Earth Optimization Points Payout (2 Claims)",
-  description: "Payout for a depositor who recruits 2 verified participants (earning 2 Earth Optimization Points). CI range reflects participation uncertainty.",
-  sourceType: "calculated",
-  confidence: "high",
-  formula: "2 × EARTH_OPTIMIZATION_POINT_VALUE",
-  latex: "\\begin{gathered}\nV_{2claims} = V_{vote} \\times 2 = \\$6.67K \\times 2 = \\$13.3K\n\\\\[0.5em]\n\\text{where } V_{vote} = \\frac{Pool}{N_{voters,global}} = \\frac{\\$27.5T}{4.13B} = \\$6.67K\n\\\\[0.5em]\n\\text{where } Pool = Assets_{invest} \\times R_{pool} \\times M_{pool} = \\$305T \\times 1\\% \\times 9.03 = \\$27.5T\n\\\\[0.5em]\n\\text{where } M_{pool} = (1 + r_{pool}) ^{Y_{50\\%} - Y_0}\n\\\\[0.5em]\n\\text{where } r_{pool} = r_{VC,gross} + \\Delta r_{scale} + \\alpha_{crowd} + \\alpha_{home} = 17\\% + -2.5\\% + 0.5\\% + 0.8\\% = 15.8\\%\n\\\\[0.5em]\n\\text{where } Y_{50\\%} = Y_0 + \\frac{\\ln\\left(0.50 / \\text{DESTRUCTIVE\\_PCT\\_GDP}\\right)}{\\ln\\left(1 + \\text{DESTRUCTIVE\\_GROWTH} - \\text{GDP\\_GROWTH}\\right)}\n\\\\[0.5em]\n\\text{where } r_{destruct:GDP} = \\frac{Cost_{destruct}}{GDP_{global}} = \\frac{\\$13.2T}{\\$115T} = 11.5\\%\n\\\\[0.5em]\n\\text{where } Cost_{destruct} = Spending_{mil} + Cost_{cyber} = \\$2.72T + \\$10.5T = \\$13.2T\n\\end{gathered}",
-  confidenceInterval: [556.9126523129366, 112307.1984210392],
-  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/strategy/earth-optimization-prize.html",
-  manualPageTitle: "The Earth Optimization Prize",
-};
-
 export const WAR_CHILDREN_KILLED_SINCE_1900: Parameter = {
   value: 102300000.0,
   parameterName: "WAR_CHILDREN_KILLED_SINCE_1900",
@@ -12326,6 +12326,7 @@ export const parameters = {
   DRUG_COST_INCREASE_PRE1962_TO_CURRENT_MULTIPLIER,
   DRUG_DISEASE_COMBINATIONS_POSSIBLE,
   EARTH_OPTIMIZATION_POINT_VALUE,
+  EARTH_OPTIMIZATION_TWO_POINTS_PAYOUT,
   EFFICACY_LAG_CUMULATIVE_EXCESS_COST,
   EFFICACY_LAG_DEATHS_911_EQUIVALENTS,
   EFFICACY_LAG_TREATMENT_DELAY_YLD_ANNUAL,
@@ -12543,7 +12544,6 @@ export const parameters = {
   VICTORY_BOND_ANNUAL_RETURN_PCT,
   VOTER_LIVES_SAVED,
   VOTER_SUFFERING_HOURS_PREVENTED,
-  VOTE_2_CLAIMS_PAYOUT,
   WAR_CHILDREN_KILLED_SINCE_1900,
   WAR_COSTS_CUMULATIVE_20YR_CURRENT_TRAJECTORY,
   WAR_COSTS_SAVED_PEACE_TRAJECTORY_20YR,

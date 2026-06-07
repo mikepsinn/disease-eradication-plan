@@ -74,7 +74,7 @@ The pool makes money regardless of whether the targets are met. The only questio
 **Worked example: $100 deposit + 2 Earth Optimization Points.**
 
 - *Targets missed:* You get back `$100 × {{< var prize_pool_horizon_multiple >}}` = $1,110 from the pool. Your Earth Optimization Points pay nothing. You still beat a conventional retirement account (`$100 × {{< var conventional_retirement_horizon_multiple >}}` = $257).
-- *Targets met:* Your $100 deposit goes to Earth Optimization Points holders. Your 2 Earth Optimization Points pay `2 × {{< var earth_optimization_point_value >}} = {{< var vote_2_claims_payout >}}`. Plus you live in a world where people are {{< var treaty_personal_upside_blend >}} to {{< var wishonia_personal_upside_blend >}} richer and diseases get cured.
+- *Targets met:* Your $100 deposit goes to Earth Optimization Points holders. Your 2 Earth Optimization Points pay `2 × {{< var earth_optimization_point_value >}} = {{< var earth_optimization_two_points_payout >}}`. Plus you live in a world where people are {{< var treaty_personal_upside_blend >}} to {{< var wishonia_personal_upside_blend >}} richer and diseases get cured.
 
 Two Earth Optimization Points turn a small deposit into a large payout.
 

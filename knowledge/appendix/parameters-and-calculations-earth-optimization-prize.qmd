@@ -3053,6 +3053,95 @@ $$
 
 :::
 
+### Earth Optimization Points Payout (2 Claims): $13,341 {#sec-earth_optimization_two_points_payout}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Payout for a depositor who recruits 2 verified participants (earning 2 Earth Optimization Points). CI range reflects participation uncertainty.
+
+**Inputs**:
+
+- [Earth Optimization Point Value](#sec-earth_optimization_point_value) 🔢: $6,671
+
+$$
+V_{2claims} = V_{vote} \times 2 = \$6.67K \times 2 = \$13.3K
+$$
+where:
+$$
+\begin{gathered}
+V_{vote} \\
+= \frac{Pool}{N_{voters,global}} \\
+= \frac{\$27.5T}{4.13B} \\
+= \$6.67K
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Pool \\
+= Assets_{invest} \times R_{pool} \times M_{pool} \\
+= \$305T \times 1\% \times 9.03 \\
+= \$27.5T
+\end{gathered}
+$$
+where:
+$$
+M_{pool} = (1 + r_{pool}) ^{Y_{50\%} - Y_0}
+$$
+where:
+$$
+\begin{gathered}
+r_{pool} \\
+= r_{VC,gross} + \Delta r_{scale} + \alpha_{crowd} \\
++ \alpha_{home} \\
+= 17\% + -2.5\% + 0.5\% + 0.8\% \\
+= 15.8\%
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Y_{50\%} \\
+= Y_0 \\
++ \frac{\ln\left(0.50 / \text{DESTRUCTIVE\_PCT\_GDP}\right)}{\ln\left(1 + \text{DESTRUCTIVE\_GROWTH} - \text{GDP\_GROWTH}\right)}
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+r_{destruct:GDP} \\
+= \frac{Cost_{destruct}}{GDP_{global}} \\
+= \frac{\$13.2T}{\$115T} \\
+= 11.5\%
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{destruct} \\
+= Spending_{mil} + Cost_{cyber} \\
+= \$2.72T + \$10.5T \\
+= \$13.2T
+\end{gathered}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-earth_optimization_two_points_payout.qmd >}}
+
+{{< include ../figures/sensitivity-table-earth_optimization_two_points_payout.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-earth_optimization_two_points_payout.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-earth_optimization_two_points_payout.qmd >}}
+
+:::
+
 ### Total Deaths from Historical Progress Delays: 102 million deaths {#sec-existing_drugs_efficacy_lag_deaths_total}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -9298,95 +9387,6 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-victory_bond_annual_return_pct.qmd >}}
-
-:::
-
-### Earth Optimization Points Payout (2 Claims): $13,341 {#sec-vote_2_claims_payout}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Payout for a depositor who recruits 2 verified participants (earning 2 Earth Optimization Points). CI range reflects participation uncertainty.
-
-**Inputs**:
-
-- [Earth Optimization Point Value](#sec-earth_optimization_point_value) 🔢: $6,671
-
-$$
-V_{2claims} = V_{vote} \times 2 = \$6.67K \times 2 = \$13.3K
-$$
-where:
-$$
-\begin{gathered}
-V_{vote} \\
-= \frac{Pool}{N_{voters,global}} \\
-= \frac{\$27.5T}{4.13B} \\
-= \$6.67K
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Pool \\
-= Assets_{invest} \times R_{pool} \times M_{pool} \\
-= \$305T \times 1\% \times 9.03 \\
-= \$27.5T
-\end{gathered}
-$$
-where:
-$$
-M_{pool} = (1 + r_{pool}) ^{Y_{50\%} - Y_0}
-$$
-where:
-$$
-\begin{gathered}
-r_{pool} \\
-= r_{VC,gross} + \Delta r_{scale} + \alpha_{crowd} \\
-+ \alpha_{home} \\
-= 17\% + -2.5\% + 0.5\% + 0.8\% \\
-= 15.8\%
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Y_{50\%} \\
-= Y_0 \\
-+ \frac{\ln\left(0.50 / \text{DESTRUCTIVE\_PCT\_GDP}\right)}{\ln\left(1 + \text{DESTRUCTIVE\_GROWTH} - \text{GDP\_GROWTH}\right)}
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-r_{destruct:GDP} \\
-= \frac{Cost_{destruct}}{GDP_{global}} \\
-= \frac{\$13.2T}{\$115T} \\
-= 11.5\%
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Cost_{destruct} \\
-= Spending_{mil} + Cost_{cyber} \\
-= \$2.72T + \$10.5T \\
-= \$13.2T
-\end{gathered}
-$$
-*✓ High confidence*
-
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-vote_2_claims_payout.qmd >}}
-
-{{< include ../figures/sensitivity-table-vote_2_claims_payout.qmd >}}
-
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-vote_2_claims_payout.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-vote_2_claims_payout.qmd >}}
 
 :::
 

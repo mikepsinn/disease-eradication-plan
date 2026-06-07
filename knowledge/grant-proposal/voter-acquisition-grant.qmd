@@ -24,7 +24,7 @@ This chapter is a grant proposal template. It is designed to be handed to funder
 
 **The cost-effectiveness.** Each verified voter is attributable to {{< var voter_lives_saved >}} saved and {{< var voter_suffering_hours_prevented >}} of suffering prevented. Per-dollar, probability-discounted, this is the highest-expected-value intervention a global-health funder can support.
 
-**Why a coordinator, not direct ads.** A coordinator grant unlocks roughly ten to fifty times more ad spend than a direct-ads grant of the same size, by activating the dormant Google Ad Grants that every qualifying nonprofit partner already has but under-uses.
+**Why a coordinator, not direct ads.** A coordinator grant gets roughly ten to fifty times more ad spend than a direct-ads grant of the same size, by using the dormant Google Ad Grants that every qualifying nonprofit partner already has but under-uses.
 
 **Year 1 ask: $100,000 to $250,000.** Covers one coordinator salary, partnership outreach tooling, campaign templates partners clone, embed widget hosting, attribution infrastructure, and a small direct-ads baseline. Year 1 target: 100,000 voters acquired.
 
@@ -89,7 +89,7 @@ Per-voter impact (from the book's parameter system):
 | Cost per voter, coordinator model | $0.05-0.50 |
 | Probability-weighted return vs. bed nets | {{< var treaty_expected_vs_bed_nets_multiplier >}} better |
 
-At a pessimistic 1% probability of treaty passage, the coordinator model's expected cost-per-life-saved is below $0.50. Against Malaria Foundation's cost-per-life-saved is approximately $5,500 (GiveWell estimate). Probability-weighted, this intervention is between three and four orders of magnitude more cost-effective than the current best-in-class global-health intervention.
+At a pessimistic 1% probability of treaty passage, the coordinator model's expected cost-per-life-saved is below $0.50. Against Malaria Foundation's cost-per-life-saved is approximately $5,500 (GiveWell estimate). Probability-weighted, this intervention is between three and four orders of magnitude more cost-effective than the best current global-health intervention.
 
 This is not a claim that should be accepted without scrutiny. The math is published in full at [1% Treaty Impact](/knowledge/economics/1-pct-treaty-impact.qmd). Every parameter links to its source. Any funder should audit the assumptions before funding. The audit has already been invited.
 

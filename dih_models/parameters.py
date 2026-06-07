@@ -10536,7 +10536,7 @@ EARTH_OPTIMIZATION_POINT_VALUE = Parameter(
     latex_symbol=r"V_{vote}",
 )
 
-VOTE_2_CLAIMS_PAYOUT = Parameter(
+EARTH_OPTIMIZATION_TWO_POINTS_PAYOUT = Parameter(
     2 * float(PRIZE_POOL_SIZE) / float(GLOBAL_REGISTERED_VOTERS),
     manual_ref="knowledge/strategy/earth-optimization-prize.qmd",
     source_type="calculated",
