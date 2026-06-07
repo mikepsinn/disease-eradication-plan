@@ -38,15 +38,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 30 parameters used in the analysis, organized by type:
+This appendix documents all 32 parameters used in the analysis, organized by type:
 
-- External sources (peer-reviewed): 18
+- External sources (peer-reviewed): 20
 - Calculated values: 9
 - Core definitions: 3
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (9 parameters) • [External Data Sources](#sec-external) (18 parameters) • [Core Definitions](#sec-definitions) (3 parameters)
+[Calculated Values](#sec-calculated) (9 parameters) • [External Data Sources](#sec-external) (20 parameters) • [Core Definitions](#sec-definitions) (3 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -436,6 +436,28 @@ $$
 ## External Data Sources {#sec-external}
 
 Parameters sourced from peer-reviewed publications, institutional databases, and authoritative reports.
+
+### Conventional Retirement Return (After Fees): 6.5% {#sec-conventional_retirement_return}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Average retail after-fee return on conventional retirement portfolios (60/40 stock/bond mix, ~1% advisory fees, ~0.4% fund fees). Used as the opportunity cost comparison: depositors are LOSING money by NOT participating in the Prize Fund.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [5%, 8%] • Distribution: Normal
+
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between 5% and 8% (±23%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The normal distribution means values cluster around the center with equal chances of being higher or lower.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-conventional_retirement_return.qmd >}}
+
+*✓ High confidence*
+
+:::
 
 ### Global Military Spending in 2024: $2.72 trillion {#sec-global_military_spending_annual_2024}
 
@@ -838,6 +860,28 @@ Total US federal lobbying expenditure in 2024 (record year). Source: OpenSecrets
 #### Input Distribution
 
 {{< include ../figures/distribution-us_total_lobbying_annual.qmd >}}
+
+*✓ High confidence*
+
+:::
+
+### Venture Capital Gross Return: 17% {#sec-venture_gross_return}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Venture capital / private equity gross return (before 2-and-20 fees). Cambridge Associates US VC index 25-year pooled gross IRR. The Prize Fund charges zero fees, so gross return is the correct baseline. Lockup premium is already embedded: VC/PE IS illiquid.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [13%, 22%] • Distribution: Normal
+
+**What this means**: There's significant uncertainty here. The true value likely falls between 13% and 22% (±26%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The normal distribution means values cluster around the center with equal chances of being higher or lower.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-venture_gross_return.qmd >}}
 
 *✓ High confidence*
 

@@ -274,6 +274,8 @@ Defense contractor profits historically flow to a narrow set of institutional an
 
 ## Expected Value Per Person
 
+A note on what these numbers are. The totals below are *total value to you as a human*: they add the financial return on your shares to the welfare value of the extra years of life and health the plan buys you, valued at standard QALY and statistical-life rates. Most of the total is that welfare value, not cash in your account. If you want the *financial* equity return on its own, modeled against the historical track record of taking over badly-run companies (Buffett, the activist literature, the governance evidence) with a floored downside, that is in [Investment Terms](../economics/investment-terms.qmd). The two are different objects. Do not hand a skeptic the welfare multiple and call it a stock return.
+
 ### Investment per person (realistic, including acquisition premium)
 
 | Population | Cost |
@@ -420,7 +422,7 @@ The entire plan on this page, stated once: buy the defense contractors, use thei
 
 That is it. Everything else on this page is the math proving it works and the frictions slowing it down.
 
-The redirected {{< var defense_lobbying_annual >}} per year does not go to a committee. It does not go to a czar. It does not go to a panel of experts who will thoughtfully allocate it on your behalf while charging 40% overhead. It goes to a [Wishocracy](../solution/wishocracy.qmd): every person gets a proportional say in how the reallocated funds are spent, under real budget constraints, with tradeoffs visible. You want the money spent on cancer trials? Vote for cancer trials. Pandemic preparedness? Vote for that. You think the whole thing is stupid and the money should stay in defense? Vote for defense. The system does not care what you pick. It cares that you pick.
+The redirected {{< var defense_lobbying_annual >}} per year does not go to a committee. It does not go to a czar. It does not go to a panel of experts who will thoughtfully allocate it on your behalf while charging 40% overhead. It goes to a [Wishocracy](../solution/wishocracy.qmd) [@wishocracy-paper-2025]: every person gets a proportional say in how the reallocated funds are spent, under real budget constraints, with tradeoffs visible. You want the money spent on cancer trials? Vote for cancer trials. Pandemic preparedness? Vote for that. You think the whole thing is stupid and the money should stay in defense? Vote for defense. The system does not care what you pick. It cares that you pick.
 
 This is the part that breaks political objections, because every political tribe already wants this. They just describe it differently.
 

@@ -1,0 +1,86 @@
+---
+title: "The Biotechnological Imperative"
+description: "Kant's categorical imperative applied to biotech funding. You cannot universalize 'spend money on killing instead of curing.' Therefore redirecting military spending to clinical trials is not optional. It is a categorical duty."
+published: true
+tags:
+  - proof
+  - ethics
+  - kant
+  - categorical-imperative
+  - philosophy
+  - biotech
+  - moral-obligation
+image: /assets/og-images/knowledge/proof/biotechnological-imperative-og-retro-academic.jpg
+scores:
+  quality: 7
+  value: 8
+  timeliness: 7
+  standalone: 8
+  voice: 8
+  importance: 8
+---
+{{< include /knowledge/includes/setup-parameters.qmd >}}
+
+You now have three independent proofs that you should act. You have not acted. I find this very interesting.
+
+The [first proof](../proof/loves-wager.qmd) was mathematical. The expected value of acting is infinite; the expected value of not acting is infinitely bad; any finite cost is worth paying. That proof speaks to your self-interest. It says: *you should act because it is the rational thing to do for you.*
+
+The [third proof](../solution/wishocracy.qmd) is empirical. Markets aggregate information, allocate resources, and produce results. The mechanism works. It has been observed. That proof speaks to your pragmatism. It says: *you should act because the mechanism is proven.*
+
+This is the second proof. It does not care about your self-interest. It does not care whether the mechanism works. It says: *you must act because you are a moral agent and failing to act is wrong.*
+
+## The test
+
+About three hundred years ago, a human named Immanuel Kant invented a test. It is a very good test. Your species mostly ignores it, which is consistent with your broader approach to good ideas.
+
+The test: before you do something, ask whether you could turn it into a universal law. Could you will that *everyone* do this, in all circumstances, forever? If yes, proceed. If no, stop. You are doing something that only works because other people aren't doing it, which makes you a parasite on their better behavior.
+
+This is not complicated. A child can do it. "Should I steal?" Well, could everyone steal? No, because then property stops existing and there is nothing left to steal. So stealing fails the test. "Should I lie?" Could everyone lie? No, because then language stops carrying information and lying becomes impossible. So lying fails the test.
+
+The test works because it catches freeloading. Every immoral act has the same structure: it works for you only because most people are not doing it. Kant noticed this. It took him many hundreds of pages to say it. I can do it in one paragraph because I do not have tenure.
+
+## Apply the test
+
+Here is what your governments are doing: spending {{< var military_to_government_clinical_trials_spending_ratio >}} times more on the military than on the clinical trials that would cure the diseases killing the taxpayers who fund the military.
+
+Apply the test. Can you universalize this? Can you will, as a universal law, that all civilizations with the biotechnology to cure diseases instead spend their resources on weapons?
+
+No. Obviously not. A civilization that universalizes this principle goes extinct. The diseases kill everyone while the weapons sit in silos waiting for an enemy who is also dying of the diseases. It is self-defeating in exactly the way Kant predicted: a maxim that destroys itself when universalized is irrational, and acting on it is immoral.
+
+"But we need defense." Fine. Nobody is suggesting zero. The [1% Treaty](../solution/1-percent-treaty.qmd) [@1-percent-treaty-paper-2025] [@1-pct-treaty-impact-paper-2025] asks for one percent. One. Your governments could spend 99% of their current military budgets on weapons and redirect {{< var treaty_annual_funding >}} per year to clinical trials and it would still be {{< var military_to_clinical_trials_spending_ratio >}} times more on the military than on all clinical trials combined. The question is not "defense or medicine." The question is "is a {{< var military_to_government_clinical_trials_spending_ratio_nounit >}}-to-1 ratio universalizable?" It is not.
+
+## How this differs from Love's Wager
+
+[Love's Wager](../proof/loves-wager.qmd) says: the expected value math makes acting the only rational choice *for you*. It is an argument from self-interest. If you are purely selfish and care about nothing except your own well-being, Love's Wager still applies. The infinities don't care about your motives.
+
+The Biotechnological Imperative says something different. It says: even if you were immortal, even if you personally had nothing to gain, even if the expected value calculation came out neutral for you, you would still be obligated to redirect resources from killing to curing. Because the principle "spend resources on weapons instead of medicine" cannot be universalized without self-contradiction. The duty exists independent of the payoff.
+
+Self-interest says act. Duty says act. These are different reasons. They arrive at the same destination from opposite directions. When two independent arguments reach the same conclusion from different premises, the conclusion becomes very difficult to escape.
+
+## The three-proof structure
+
+Here is your situation, stated plainly:
+
+| Proof | Type | Says | Source |
+|-------|------|------|--------|
+| [Love's Wager](../proof/loves-wager.qmd) | Rational (math) | You *should* act. The expected value is infinite. | Self-interest |
+| The Biotechnological Imperative | Obligatory (ethics) | You *must* act. The principle is not universalizable. | Moral duty |
+| [The Free Market Proof](../solution/wishocracy.qmd) | Empirical (proven) | You *can* act. The mechanism works. | Observed reality |
+
+Three independent proofs. One says the math demands it. One says morality demands it. One says the mechanism is already proven. They share no premises. They rely on no common assumptions. Any one of them, alone, is sufficient.
+
+In mathematics, when three independent proofs converge on the same theorem, mathematicians stop calling it a conjecture and start calling it a theorem. In law, when three independent witnesses testify to the same event, juries convict. In science, when three independent experiments produce the same result, the result is considered established.
+
+Your species has three independent proofs that it should redirect resources from weapons to medicine. It has {{< var global_annual_deaths_curable_diseases_nounit >}} people dying per year of diseases it could be curing. It has the resources. It has the mechanism. It has the math, the ethics, and the evidence.
+
+The only thing it does not have is the will.
+
+## The uncomfortable conclusion
+
+Kant was very clear about one thing. If you know what is right and you do not do it, you are not merely making a mistake. You are acting immorally. Not "suboptimally." Not "irrationally." Immorally.
+
+The ratio is {{< var military_to_government_clinical_trials_spending_ratio >}}. You know this now. You know the test, and you know the ratio fails it. Every day the ratio persists, {{< var global_disease_deaths_daily_nounit >}} people die of diseases that clinical trials could address.
+
+This is not a trolley problem. Nobody is asking you to push anyone off a bridge. The resources exist. The mechanism is proven. The math is infinite. The ethics are categorical. The only action required is reading [the rest of this book](../proof/loves-wager.qmd) and picking one of the ten things in it that sounds fun to you.
+
+Kant would be very annoyed with you if you didn't.

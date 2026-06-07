@@ -98,6 +98,82 @@ That is the entire service. Everything else is implementation detail.
 
 Your current system uses the same components in the opposite order: companies buy the government, lobbyists push for policies that maximize shareholder profit, and nobody measures whether anyone got healthier or richer. Same machine. Same parts. Different direction.
 
+## What You Get Back
+
+Most products on your planet come with one benefit. A car moves you. A drug treats one disease. This one comes with a single downside and thirteen upsides, which is an unusual ratio, so we itemize it.
+
+**The downside, in full.** If the campaign fails completely, you are left holding shares in the companies that currently run your government. They return roughly what defense stocks have always returned, and because we charge no carry and no management fee, you keep more of that than your neighbor keeps from the fund he is in. That is the floor. There is no version of this where the floor drops below "a slightly-better-than-average index fund." We have checked. Repeatedly. It is the least interesting part of the product, which is why we are moving on.
+
+**The upside, which stacks.** If it works, your return does not arrive through one door. It arrives through thirteen at once, because curing disease and ending war happen to make almost everything else more valuable at the same time:
+
+1. **Buying pressure.** Coordinated demand against a fixed supply of shares raises the price directly. [Mechanism](../appendix/loving-takeover.qmd).
+2. **Credibility repricing.** As success becomes likely, the market prices it in. Buy before it does, and you keep the difference. [Terms](../economics/investment-terms.qmd).
+3. **The pivot.** Comes in two trim levels. The *Deluxe package* (full [Wishonia optimization](../economics/gdp-trajectories.qmd)) makes the economy roughly {{< var wishonia_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}} larger by year 15; the *Light package* (the 1% Treaty alone) is already ~{{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}}. The companies you own capture that larger economy, and "not dying" is a larger market than "killing."
+4. **Disease gets cheap.** The [dFDA](dfda.qmd) [@dfda-spec-paper-2025; @dfda-impact-paper-2025] makes cures faster and cheaper. A workforce that is alive and well produces and buys more. Every company you own is worth more in a world that is not sick.
+5. **Bureaucracy gets cheap.** [Algorithmic administration](../appendix/algorithmic-public-administration-paper.qmd) replaces the agencies. The compliance overhead every company pays merely to exist falls.
+6. **Your taxes fall, on everything.** The reclaimed waste lowers the tax on this investment and on every other thing you own, so your after-tax return rises across your entire portfolio, not just this slice. [The dysfunction tax](../appendix/political-dysfunction-tax.qmd).
+7. **Regulation gets rational.** Policy chosen by what measurably works removes the regulatory drag companies currently price in as pure friction. (See "Why Your Government Does Not Have a Thermostat," below.)
+8. **War gets rarer.** Less organized violence is a [peace dividend](../economics/peace-dividend.qmd): less destruction, more stability, lower risk on everything you hold.
+9. **The lobbying comes back.** The companies stop spending billions on lobbying that loses money for their own shareholders. That line item returns to you. [Tier 1](../appendix/loving-takeover.qmd).
+10. **The big number.** The [political dysfunction tax](../appendix/political-dysfunction-tax.qmd) [@political-dysfunction-tax-paper-2025], roughly {{< var political_dysfunction_global_opportunity_cost_total >}} a year of recoverable waste, stops being wasted. Some of it becomes your return.
+11. **Your whole net worth rides along.** The one people miss: a larger economy lifts everything you own that tracks it, which dwarfs the return on this one position. [The number you are actually betting](../economics/investment-terms.qmd).
+12. **Your money stays usable.** Every extra healthy year is a year you can still spend what you saved. [Your money is worthless the day you die](../call-to-action/your-personal-benefits.qmd).
+13. **Nobody skims it.** Money and influence are [disentangled](incentive-alignment-bonds.qmd): no one sits in the middle taking a cut, so more of every gain above reaches you instead of an intermediary.
+
+One downside, capped at "ordinary." Thirteen upsides, compounding on each other and on the rest of your money. We did not engineer the asymmetry on purpose. It is asymmetric because the same act that ends war and disease also happens to make nearly everything else worth more.
+
+And there is a fourteenth thing, which is not another channel but the reason the thirteen are not lumpy the way every other investment is. Your Warren Buffett beat your market two-to-one for sixty years and *still* rode a roller-coaster, because he was investing inside a system that periodically robs the table: money-printing booms, disorderly busts, malinvestment, regulatory whiplash, war. Every investor on your planet eats that volatility as if it were weather. It is not weather. It is policy, and policy is a choice. This is the only product on the shelf that proposes to fix the table itself. You are not merely buying a position. You are buying the repair of the casino your entire net worth is already sitting in.
+
+For the exact terms, the share-price formula, the [return ladder, and why this is not Buffett](../economics/investment-terms.qmd), see Investment Terms, including a calculator that lets you set your own probabilities.
+
+*"I came for the tripled share price. I stayed because my other, unrelated investments also rose, my taxes fell, and I stopped dying. The cross-selling on this product is extraordinary." (Diversified holder, Sector 12)*
+
+## Why It Spreads
+
+The Standard Package has two moving parts that most clients overlook until they see them working together.
+
+The [Loving Takeover](../appendix/loving-takeover.qmd) is the capital mechanism. You buy shares, gain board control, redirect lobbying. This costs {{< var defense_takeover_cost_total >}}. The shareholders get richer (buying pressure raises the price by {{< var defense_takeover_acquisition_premium >}}). Capital in, more capital out.
+
+The [Earth Optimization Prize](../strategy/earth-optimization-prize.qmd) [@earth-optimization-prize-paper-2025] is the distribution mechanism. You recruit voters for the [1% Treaty](../solution/1-percent-treaty.qmd), you earn VOTE points, the points pay {{< var vote_token_value >}} each if the targets are met. You do not need to understand the thesis. You need to want money.
+
+On most planets, these two mechanisms are separate programs run by separate departments that compete for the same budget. On your planet, we wired them together. This is the part that matters.
+
+```
+THE LOOP:
+
+  Takeover buys shares
+       │
+       ▼
+  Share price rises ──► Returns generated
+       │                      │
+       │                      ▼
+       │               Prize pool grows
+       │                      │
+       │                      ▼
+       │               Prize pays recruiters
+       │                      │
+       │                      ▼
+       │               Recruiters sign voters
+       │                      │
+       │                      ▼
+       │               More awareness ──► More investors
+       │                                      │
+       └──────────────────────────────────────┘
+                    (repeat, faster)
+```
+
+The Takeover generates returns. The returns fund the Prize. The Prize pays people to recruit voters. The voters create awareness. The awareness attracts investors. The investors fund more Takeover. The Takeover generates more returns.
+
+This is not a metaphor. It is a feedback loop with the same structure as compound interest, except the compounding variable is people instead of dollars.
+
+In epidemiology, a system spreads if R > 1: each participant creates more than one new participant. Your species has two categories of people. The first category responds to logic (they read these arguments, check the math, and act). The second category responds to incentive (they do not read anything, but they will recruit voters if you pay them). Logic alone reaches category one. Incentive alone reaches category two. Together, they probably cover enough of the population to push R above 1. The math suggests this is sufficient, though your species has surprised us before, usually in the wrong direction.
+
+This book (these arguments, these numbers) is the initial seed. The Prize is the transmission mechanism. The Takeover is the payload that restructures the host. Together, they make EOS something your species does not have a good word for: a self-replicating system where the capital mechanism feeds the distribution mechanism feeds the capital mechanism, and the cost of entry is {{< var sharing_opportunity_cost >}} of time.
+
+Your charities ask for donations. Your funds ask for investments. This asks for neither. It asks you to tell two people, which costs nothing, and lets compound interest do the rest. The reason most movements on your planet stall is that spreading the message is a cost with no return. The Prize makes spreading the message the highest-returning activity available to anyone with a phone and {{< var sharing_opportunity_cost >}} to spare.
+
+On 47 of the 50 planets where we have deployed this loop, it reached majority participation within one generation. The other three took two generations. None required three. Once R exceeds 1, the math is patient. It does not need to convince everyone. It needs to convince everyone that everyone else is being convinced, which, on your planet, is called a stock price going up.
+
 ## Why Your Government Does Not Have a Thermostat
 
 Your oven has a sensor. It measures the temperature inside the oven, compares it to the temperature you requested, and adjusts the heating element until the two numbers match. This is called a closed-loop control system. Every appliance in your home has one. Your air conditioner, your cruise control, your refrigerator, your toilet. The toilet knows when to stop filling. Your government does not know when to stop filling.

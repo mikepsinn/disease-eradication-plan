@@ -377,6 +377,40 @@ The [Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd) [@iab
 
 The lobbying industry's return on investment is extraordinary because the intermediary it purchases is cheap. Remove the intermediary and the investment has no target. You cannot bribe an algorithm. You can try, but the algorithm does not have a post-office career to protect.
 
+## Capital Formation and Investor Protection
+
+### The Problem
+
+The Securities and Exchange Commission protects investors primarily by deciding who is permitted to invest. Under the accredited-investor rule, you may buy into private companies and the highest-return early-stage deals only if you earn over $200,000 a year ($300,000 with a spouse) or hold over $1 million in net worth excluding your home [@sec-accredited-investor-definition]. Most households fail that test, and are therefore barred by law from the best-performing asset class. Early-stage and venture investments have returned roughly {{< var venture_gross_return >}} a year; the retirement accounts ordinary people *are* allowed to hold return about {{< var conventional_retirement_return >}}. The gap is not skill. It is a permission slip.
+
+The thresholds are written in 1982 dollars and have never been indexed [@accredited-investor-thresholds-history]. Inflation has quietly enlarged the excluded class for four decades: a sum that marked the genuinely rich in 1982 now describes a two-income household with a paid-off house, who are nonetheless deemed too unsophisticated to risk their own money.
+
+The stated justification is fraud protection. But a wealth test does not prevent fraud; it decides who is permitted to be defrauded, and who collects the returns. Fraud is already separately illegal: the SEC brought 583 enforcement actions and collected a record $8.2 billion in FY2024 alone [@sec-enforcement-fy2024]. And the wealth screen fails on its own terms. Every victim of Bernie Madoff's $64.8 billion Ponzi (the wealthy individuals, the feeder funds, the banks, the university endowments and charities) was accredited [@madoff-investment-scandal]. The rule did not stop the largest investment fraud in history. It pre-screened the victims as qualified.
+
+The wealth proxy is, on inspection, absurd. Net worth measures how much a person can afford to lose, not whether they can evaluate a deal. And the same government that forbids a nurse a $1,000 stake in a startup will happily sell her lottery tickets and sports bets: U.S. commercial gambling took in a record $66.5 billion in 2023 [@aga-commercial-gaming-2023]. You may legally gamble your paycheck. You may not legally invest it.
+
+When access has actually been opened, the predicted catastrophe did not arrive. Regulation Crowdfunding, effective 2016, lets non-accredited people invest in startups; through 2024 it channeled roughly $1.3 billion across some 8,500 offerings, and the SEC's own review found "a low incidence of fraud" [@sec-reg-cf-data-2024]. So the rule's ledger reads: a small, visible, headline-generating quantity of averted fraud (most of which it does not actually avert), set against an enormous, invisible, permanent cost: most households walled out of the highest returns, with those returns compounding to the already-wealthy by operation of law. It is the same accounting error diagnosed in [I Am Retarded](../problem/i-am-retarded.qmd): the concentrated, visible harm gets the news story, while the diffuse, uncounted harm (here, the [invisible graveyard](invisible-graveyard.qmd) [@invisible-graveyard-paper-2025] of wealth never built) sets policy by never being seen.
+
+### The Protocol
+
+Replace gatekeeping-by-wealth with protection-by-transparency. Three primitives, all properties of the public ledger rather than offices full of reviewers:
+
+1. **Disclosure by default.** Every issuer's filings, capitalization table, use of funds, and ongoing results are published to the ledger in standardized, machine-readable form. The thing the accredited rule assumes ordinary people cannot obtain (information) is simply made public.
+2. **Algorithmic fraud detection.** Pattern analysis runs continuously over the ledger and flags the statistical signatures of fraud (impossible returns, circular flows, undisclosed related-party transfers) in real time, instead of after the collapse and the press conference.
+3. **Access by competence, not wealth.** Anyone may invest. A standardized risk disclosure and an optional competence check replace the net-worth test, so the question becomes whether you understand the instrument, not whether you can afford to lose the money.
+
+Investor protection becomes a property of the system (transparency plus detection) instead of a wall built around the people with the least capital and the most to gain.
+
+### What This Replaces
+
+| Current System | Replacement | Mechanism |
+|---|---|---|
+| Accredited-investor wealth gate | Open access + standardized disclosure + competence check | Protect by information, not by exclusion |
+| SEC disclosure review (~$2.1-2.4B/year, ~5,000 staff [@sec-budget-fy2024]) | Disclosure-by-default on a public ledger | Filings public and machine-readable by construction |
+| Post-hoc fraud enforcement | Continuous algorithmic detection | Fraud flagged as it happens, not litigated after |
+
+The accredited rule protects the public from investing the way a locked library protects the public from misreading. Madoff's victims all cleared the wealth test; the non-accredited crowd that Regulation Crowdfunding finally let in did not produce a fraud wave. The wall was never the protection. The disclosure was.
+
 ## Identity and Census
 
 ### The Problem

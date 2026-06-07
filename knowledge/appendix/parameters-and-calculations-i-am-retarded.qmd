@@ -38,15 +38,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 8 parameters used in the analysis, organized by type:
+This appendix documents all 9 parameters used in the analysis, organized by type:
 
-- External sources (peer-reviewed): 4
+- External sources (peer-reviewed): 5
 - Calculated values: 2
 - Core definitions: 2
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (2 parameters) • [External Data Sources](#sec-external) (4 parameters) • [Core Definitions](#sec-definitions) (2 parameters)
+[Calculated Values](#sec-calculated) (2 parameters) • [External Data Sources](#sec-external) (5 parameters) • [Core Definitions](#sec-definitions) (2 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -132,6 +132,26 @@ $$
 ## External Data Sources {#sec-external}
 
 Parameters sourced from peer-reviewed publications, institutional databases, and authoritative reports.
+
+### Annual Deaths from All Diseases and Aging Globally: 55 million deaths/year {#sec-global_annual_deaths_curable_diseases}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual deaths from all diseases and aging globally
+
+**Source**: [@who-global-health-estimates-2024]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Normal (SE: 5 million deaths/year)
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_annual_deaths_curable_diseases.qmd >}}
+
+*✓ High confidence*
+
+:::
 
 ### Annual Global Government Spending on Clinical Trials: $4.5 billion {#sec-global_government_clinical_trials_spending_annual}
 

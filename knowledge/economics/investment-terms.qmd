@@ -55,7 +55,7 @@ There are three layers of appreciation.
 
 **Layer 3: The pivot.** If the treaty passes, GDP at year 15 is roughly {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}} larger than the current trajectory. Defense contractors in a larger economy capture proportionally more revenue. The engineering workforce pivots to medical, biotech, and civilian applications.
 
-**The asymmetric structure.** If the campaign succeeds, shares appreciate through all three layers. If it fails, you hold a normal defense contractor position. The downside is the foregone return on whatever else you would have bought.
+**The asymmetric structure.** If the campaign succeeds, shares appreciate through all three layers. If it fails, you hold a normal defense contractor position. The downside is the foregone return on whatever else you would have bought. These three layers are only part of it; the full set of ways a success pays off (a capped downside against thirteen stacked upsides) is itemized in [Earth Optimization Services](../solution/earth-optimization-services.qmd).
 
 ## The terms
 
@@ -64,10 +64,11 @@ There are three layers of appreciation.
 | Fund target | $500K to $2M | Seed capital. Enough to begin. Not enough to waste. |
 | Minimum investment (friends & family) | $25,000 | Low enough to include the humans who believed before it was obvious. |
 | Minimum investment (institutional) | $100,000 | Standard institutional minimum. |
-| Operating fee | Transparent, covers cost | Salaries and operations, nothing above cost. |
+| Operating fee | $150K/yr flat | $100K founder salary + $50K infrastructure. Not a percentage. A number. It does not grow when the fund grows. |
 | Performance fee / carry | None | The operators do not skim the upside. Their upside is the same notes you hold. |
+| Management fee | None | No percentage of assets under management. Zero. |
 | Lockup | 1 year | The interesting part takes longer, but you can leave. |
-| Operator equity | 0% | Nobody who runs this owns a piece of it. |
+| Operator equity | 0% | Nobody who runs this owns a piece of it. The founder takes nothing. |
 | Security type | Revenue-share notes | Money in, more money out. No voting rights, no governance, no board seat. |
 
 ## How the share price works
@@ -142,11 +143,33 @@ Then pharma ($373M/yr in lobbying). Then finance ($720M/yr). Then energy. Each s
 
 The cascade starts with one demand letter filed by one shareholder who paid $200 for one share.
 
+## What each stage is worth (before it happens)
+
+On my planet, valuation is simple. You look at what a thing does, estimate how much waste it eliminates, and that is what it is worth. Your planet has a more complicated method involving comparable transactions, revenue multiples, and people in suits arguing about discount rates. I will use both methods and see if they agree.
+
+EOS captures value from waste. Not from competitors, not from customers, not from market share. From the gap between what money currently does and what it could do if pointed at things that work. This is not a zero-sum game. The value exists because your species is currently spending money on things that destroy value instead of creating it. EOS redirects the spending. The destroyed value becomes created value. The difference is the return.
+
+The founder takes 0% equity. I am told this bears repeating.
+
+**Stage 1: One company (HII).** Huntington Ingalls Industries is the sole supplier of aircraft carriers to the United States Navy. Market cap roughly $10 billion. Its core revenue is contract-locked (the Navy cannot buy carriers from anyone else), its engineering workforce is among the most skilled on the planet, and its lobbying budget is currently pointed at maintaining defense spending levels that its own shareholders would be better off without. A governance campaign redirects the lobbying. The contract revenue continues. The stock appreciates from the credibility cascade. Expected value of the position: approximately $330 million. A $25,000 early investment is worth roughly $532,000 at this stage.
+
+**Stage 2: Nine companies.** The same logic applied to all nine major U.S. defense primes. Each success funds the next (appreciation from HII funds KTOS, KTOS funds LDOS, and so on). The lobbying of the entire defense sector, redirected. Expected value: $7 billion or more. The mechanism is identical to Stage 1; the scale is larger because nine companies lobby more than one.
+
+**Stage 3: All lobbying sectors.** Defense is not the only industry that lobbies for policies its own shareholders would be better off without. Pharmaceutical companies spend $373 million per year lobbying against drug pricing reforms that would expand their addressable market. Energy companies lobby against transitions that would lower their input costs. Finance, telecom, agriculture. Every industry that lobbies for wasteful policy has value trapped by misallocation. EOS applies the same governance pressure across all of them. Expected value: approximately $452 billion. That $25,000 early investment is now worth roughly $34 million.
+
+**Stage 4: Wishocratic governance.** When resource allocation is optimized across all public spending globally, through [wishocracy](../solution/optimocracy.qmd), the total value is the difference between what humanity produces under current governance and what it produces under optimal governance. This is the political dysfunction tax, eliminated. Expected value: approximately $133 trillion. The same $25,000 is worth roughly $10 billion. This sounds absurd until you remember that global GDP is approximately $105 trillion per year, and the difference between good and bad allocation of that sum, compounded over decades, is larger than any number that fits comfortably in a sentence.
+
+Each stage is independently valuable. You do not need Stage 4 to profit from Stage 1. But each stage funds the next, and the probability of reaching each subsequent stage increases with each completed stage. The math suggests this is probably irresistible once Stage 1 demonstrates the mechanism. But "the math suggests" is doing a lot of work in that sentence, and you should check the math yourself. The calculators above let you do that.
+
 ## How EOS funds its operations
 
 The share price is derived from the probability of civilizational optimization, not from revenue. But EOS still needs money to operate. Here is where it comes from. Four layers. Each works independently. None of them enter the share price formula.
 
-**Layer 1: Fund management.** A transparent operating fee that covers salaries and operations, and nothing above cost. No performance fee, no carry. The operators do not skim the upside; they hold the same notes you do. This is less than a normal fund takes, on purpose.
+**Layer 1: Fund management.** A flat $150,000 per year. That is it. $100,000 founder salary, $50,000 infrastructure (servers, filing fees, compliance). AI handles most operations at roughly $100 per month, which is why the infrastructure line is not larger.
+
+No management fee. No performance fee. No carry. Every dollar above $150K buys shares.
+
+At $2 million in assets, the operating cost is 7.5% of the fund. Expensive for a fund, but this is a startup with two million dollars, not Bridgewater. At $20 million, it is 0.75%. At $200 million, it is 0.075%, which is less than Vanguard charges to track the S&P 500. The operator gets progressively less rich as the fund gets bigger. This is the opposite of every fund in history, where the manager's incentive is to gather assets regardless of performance. Here, the incentive is to make the assets worth more, because the operator holds the same notes you do and nothing else.
 
 **Layer 2: Consulting.** The demand letter creates a legal obligation for the board to respond (Caremark). Responding requires commissioning an analysis of whether the company's lobbying generates positive shareholder returns. EOS, through [Optimitron](../solution/optimocracy.qmd), provides this analysis. The free version demonstrates competence. The paid version (deeper, proprietary, ongoing advisory) is how EOS becomes a consultant to the companies it is pressuring.
 
@@ -215,12 +238,17 @@ viewof eosNetWorth = Inputs.range([0, 100000000], {value: 250000, step: 10000, l
 ```
 
 ::: {.content-visible when-format="html"}
-**Share-price multiplier if the campaign succeeds** (base case = the economy at year 15 under the treaty, divided by the economy under the current trajectory). Expand to edit the drivers:
+**Share-price multiplier if the campaign succeeds.** Pick your package. The **Light package** is the 1% Treaty passing and nothing else: the economy ends up about 4x larger by year 15. The **Deluxe package** is full Wishonia optimization, government replaced with optimal policy, which the model puts near 27x by year 15. The Deluxe asks more of the species (you have to actually replace the broken machine, not just trim its budget), but it pays roughly seven times the Light. The default below is the Light package, so the number you see first is the floor of the upside, not the ceiling. Expand the tree to edit the drivers.
 :::
 
 ```{ojs}
 //| echo: false
-viewof eosMultiplierTree = paramTree("TREATY_TRAJECTORY_GDP_VS_CURRENT_TRAJECTORY_MULTIPLIER_YEAR_15")
+viewof eosScenario = Inputs.radio(new Map([["Light package: the 1% Treaty (~4x economy)", "TREATY_TRAJECTORY_GDP_VS_CURRENT_TRAJECTORY_MULTIPLIER_YEAR_15"], ["Deluxe package: full Wishonia optimization (~27x economy)", "WISHONIA_TRAJECTORY_GDP_VS_CURRENT_TRAJECTORY_MULTIPLIER_YEAR_15"]]), {value: "TREATY_TRAJECTORY_GDP_VS_CURRENT_TRAJECTORY_MULTIPLIER_YEAR_15", label: "Success scenario"})
+```
+
+```{ojs}
+//| echo: false
+viewof eosMultiplierTree = paramTree(eosScenario)
 ```
 
 ```{ojs}
@@ -229,7 +257,7 @@ eosCalc = {
   const amount = eosAmount;
   const years = eosYears;
   const prob = eosProb / 100;
-  const mult = eosMultiplierTree["TREATY_TRAJECTORY_GDP_VS_CURRENT_TRAJECTORY_MULTIPLIER_YEAR_15"];
+  const mult = eosMultiplierTree[eosScenario];
   const sp = eosSpReturn;
   const netWorth = eosNetWorth;
   const takeover = paramData["DEFENSE_TAKEOVER_COST_TOTAL"].value;
@@ -779,6 +807,28 @@ ${Object.entries(summary.sectorBreakdown).map(([sector, data]) =>
 **Summary:** 6 of 16 proposals enabled. $69.2M/year lobbying challenged. Leverage ratio: 173x. At the 3-year/$2K threshold, all 16 companies qualify (leverage: 353x, $141M/yr challenged).
 
 :::
+
+## What return to expect
+
+Honest version, with the warts, because a number you cannot defend is worse than no number. Your return rides on which trajectory the world ends up on, and there is a floor under all of them.
+
+| Outcome | Economy at year 15 | What your equity return tracks |
+|---|---|---|
+| **Floor** (nothing works) | unchanged | You hold defense stocks at roughly the market return ({{< var average_market_return_pct >}}), and you paid no carry and no management fee, so you beat the fee-laden fund your neighbor is in. A floor, not a loss. You own real, cash-generating assets. |
+| **Light package** (1% Treaty only) | ~{{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}} | The companies capture a four-times-larger economy and the larger "not-dying" market. The first domino, alone. |
+| **Deluxe package** (full Wishonia optimization) | ~{{< var wishonia_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}} (year 20: ~{{< var wishonia_trajectory_gdp_vs_current_trajectory_multiplier_year_20 >}}) | Government replaced with optimal policy. The moonshot: vast magnitude, lower probability. This is Love's Wager denominated in dollars. |
+
+What does the historical record of taking over badly-run companies suggest is achievable? The clean, peer-reviewed evidence: activist campaigns produce about a 7% one-time repricing at announcement and real operating improvements afterward [@brav-hedge-fund-activism-2008], and simply installing competent management at a poorly-run firm raised productivity about 11% in a randomized trial [@bloom-does-management-matter-2013]. The ceiling for disciplined long-term ownership is Warren Buffett's Berkshire: 19.9% a year versus the S&P 500's 10.4% over 1965-2024, roughly twice the market for sixty years [@berkshire-2024-letter].
+
+The warts, stated plainly: that 7% is a one-time repricing, not an annual yield, so do not annualize it. The governance premium that paid 8.5% a year in the 1990s [@gompers-ishii-metrick-2003] faded afterward, so treat it as evidence the badly-run-versus-well-run *gap exists*, not as a forward yield. Engine No. 1 won three ExxonMobil board seats with a 0.02% stake [@engine-no-1-exxon-2021], which proves a tiny stake can win control, but the stock's subsequent surge was the oil-price rally, not the boardroom, so it is a feasibility proof, not a return proof. And activist returns are lumpy: Icahn Enterprises fell about 55% in 2023 [@hindenburg-icahn-2023].
+
+## Why this isn't Buffett
+
+That lumpiness is the most important thing on the page, because of *what causes it*. Buffett and Icahn extract returns from inside a system that periodically robs the table, and they eat its volatility. Icahn's 2023 collapse was not bad stock-picking; it was largely the boom-and-bust the system manufactures: years of money-printing pumped every asset, the disorderly correction dumped them, and leverage finished the job. The lumpiness *is* the dysfunction.
+
+This is a different kind of bet. Buffett got twice the market *despite* the dysfunction. EOS proposes to remove the source of it. Rules-based monetary policy replaces the discretionary money-printing that drives the boom-bust ([the money-printing machine](../problem/i-am-retarded.qmd); [algorithmic administration](../appendix/algorithmic-public-administration-paper.qmd)). Optimal policy reduces the malinvestment that distorted rates create. [Wishocracy](../solution/optimocracy.qmd) ends the regulatory whiplash that lobbying-driven policy produces. Peace reduces war risk. Each removes a *policy-induced* source of the volatility that makes every other investor's returns lumpy.
+
+So this is not only a search for alpha (beating the market). It is an attempt to raise the quality of the market itself: lower the systematic, undiversifiable risk, and you raise risk-adjusted returns and compress the drawdowns for everything anyone holds, including you. The honest bound: this does not abolish risk. Genuine, exogenous shocks remain. What it removes is the large, self-inflicted, policy-manufactured share, which is precisely the share that made Buffett's six decades a roller-coaster instead of a straight line. Fixing the casino helps every bet at the table. That is the part no fund can offer you, because no fund is trying to fix the casino.
 
 ## Risk analysis: three scenarios
 
