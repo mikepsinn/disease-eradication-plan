@@ -7392,7 +7392,7 @@ IAB_VS_DEFENSE_LOBBY_RATIO_AT_1PCT = Parameter(
     latex_symbol=r"k_{IAB:defense}",
 )
 
-# PRIZE pool resolution horizon is tied to the destructive economy 50% threshold year
+# prize pool resolution horizon is tied to the destructive economy 50% threshold year
 # (DESTRUCTIVE_ECONOMY_50PCT_YEAR). The pool resolves at the collapse deadline.
 # Duration for compounding: _years_to_50pct (private var, currently 15 years).
 
@@ -10258,7 +10258,7 @@ CONVENTIONAL_RETIREMENT_HORIZON_MULTIPLE = Parameter(
     (1 + float(CONVENTIONAL_RETIREMENT_RETURN)) ** round(_years_to_50pct),
     manual_ref="knowledge/economics/earth-optimization-prize-fund.qmd",
     source_type="calculated",
-    description="Compound multiple for conventional retirement investing over the PRIZE pool resolution horizon "
+    description="Compound multiple for conventional retirement investing over the prize pool resolution horizon "
                 "(tied to the destructive economy 50% threshold year).",
     display_name="Conventional Retirement Horizon Multiple",
     unit="x",
@@ -10292,13 +10292,13 @@ WISHOCRATIC_CROWD_ALPHA = Parameter(
     latex_symbol=r"\alpha_{crowd}",
 )
 
-# --- Calculated: canonical PRIZE pool return and multiple ---
+# --- Calculated: canonical prize pool return and multiple ---
 
 PRIZE_POOL_ANNUAL_RETURN = Parameter(
     float(VENTURE_GROSS_RETURN) + float(SCALE_COMPRESSION_FACTOR) + float(WISHOCRATIC_CROWD_ALPHA) + float(HOME_BIAS_ALPHA),
     manual_ref="knowledge/strategy/earth-optimization-prize.qmd",
     source_type="calculated",
-    description="Canonical annual return used for PRIZE pool growth. "
+    description="Canonical annual return used for prize pool growth. "
                 "Venture gross return + scale compression + crowd allocation alpha + home bias elimination. "
                 "This is the structural pool return before contingent macro feedback loops.",
     display_name="PRIZE Pool Annual Return",
@@ -10314,7 +10314,7 @@ PRIZE_POOL_HORIZON_MULTIPLE = Parameter(
     (1 + float(PRIZE_POOL_ANNUAL_RETURN)) ** round(_years_to_50pct),
     manual_ref="knowledge/strategy/earth-optimization-prize.qmd",
     source_type="calculated",
-    description="Compound multiple for PRIZE pool growth over the resolution horizon "
+    description="Compound multiple for prize pool growth over the resolution horizon "
                 "(tied to the destructive economy 50% threshold year).",
     display_name="PRIZE Pool Horizon Multiple",
     unit="x",
@@ -10331,7 +10331,7 @@ GLOBAL_INVESTABLE_ASSETS = Parameter(
     source_type="external",
     description="Total global financial wealth (2024): equities, bonds, cash/deposits, and "
                 "investment funds. Excludes real estate and physical assets. This is the "
-                "addressable capital pool for PRIZE deposits.",
+                "addressable capital pool for Prize deposits.",
     display_name="Global Investable Financial Assets",
     unit="USD",
     distribution="fixed",
@@ -10343,10 +10343,10 @@ PRIZE_POOL_PARTICIPATION_RATE = Parameter(
     0.01,
     manual_ref="knowledge/strategy/earth-optimization-prize.qmd",
     source_type="definition",
-    description="Fraction of global investable financial assets that flow into the PRIZE pool. "
+    description="Fraction of global investable financial assets that flow into the prize pool. "
                 "1% central estimate parallels the 1% Treaty ask: 1% of your weapons money, "
                 "1% of your savings.",
-    display_name="PRIZE Pool Participation Rate",
+    display_name="Prize Pool Participation Rate",
     unit="percent",
     distribution="lognormal",
     confidence_interval=(0.001, 0.10),
@@ -10358,9 +10358,9 @@ PRIZE_POOL_SIZE = Parameter(
     float(GLOBAL_INVESTABLE_ASSETS) * float(PRIZE_POOL_PARTICIPATION_RATE) * float(PRIZE_POOL_HORIZON_MULTIPLE),
     manual_ref="knowledge/strategy/earth-optimization-protocol-v1.qmd",
     source_type="calculated",
-    description="Terminal PRIZE pool size: global investable assets × participation rate × "
+    description="Terminal prize pool size: global investable assets × participation rate × "
                 "compound multiple over the resolution horizon.",
-    display_name="PRIZE Pool Size",
+    display_name="Prize Pool Size",
     unit="USD",
     formula="GLOBAL_INVESTABLE_ASSETS × PRIZE_POOL_PARTICIPATION_RATE × PRIZE_POOL_HORIZON_MULTIPLE",
     inputs=["GLOBAL_INVESTABLE_ASSETS", "PRIZE_POOL_PARTICIPATION_RATE", "PRIZE_POOL_HORIZON_MULTIPLE"],
@@ -10462,7 +10462,7 @@ GLOBAL_COORDINATION_ACTIVATION_BUDGET = Parameter(
     description="Canonical institutional activation threshold: capital required to make participation by the "
                 "majority-of-humanity coordination target credible through direct referral incentives, verification, "
                 "payment rails, and global launch operations. "
-                "This is the main institutional ask, not the PRIZE pool seed benchmark.",
+                "This is the main institutional ask, not the prize pool seed benchmark.",
     display_name="Global Coordination Activation Budget",
     unit="USD",
     formula="GLOBAL_REGISTERED_VOTERS × GLOBAL_COORDINATION_ACTIVATION_COST_PER_PARTICIPANT + GLOBAL_COORDINATION_PLATFORM_AND_OPERATIONS_COST",
@@ -10520,14 +10520,14 @@ PRIZE_POOL_RETIREMENT_EQUIVALENT_PRINCIPAL = Parameter(
 )
 
 # VOTE token value (pool size ÷ majority-of-humanity coordination target)
-VOTE_TOKEN_VALUE = Parameter(
+EARTH_OPTIMIZATION_POINT_VALUE = Parameter(
     float(PRIZE_POOL_SIZE) / float(GLOBAL_REGISTERED_VOTERS),
     manual_ref="knowledge/strategy/earth-optimization-prize.qmd",
     source_type="calculated",
-    description="Value of a single VOTE claim based on the modeled PRIZE pool size "
+    description="Value of a single Earth Optimization Point based on the modeled prize pool size "
                 "(investable assets × participation rate × horizon multiple). "
                 "CI range reflects participation uncertainty (0.1%-10%).",
-    display_name="VOTE Point Value",
+    display_name="Earth Optimization Point Value",
     unit="USD",
     formula="PRIZE_POOL_SIZE / GLOBAL_REGISTERED_VOTERS",
     inputs=["PRIZE_POOL_SIZE", "GLOBAL_REGISTERED_VOTERS"],
@@ -10541,12 +10541,12 @@ VOTE_2_CLAIMS_PAYOUT = Parameter(
     manual_ref="knowledge/strategy/earth-optimization-prize.qmd",
     source_type="calculated",
     description="Payout for a depositor who recruits 2 verified participants "
-                "(earning 2 VOTE claims). CI range reflects participation uncertainty.",
-    display_name="VOTE Payout for 2 Claims",
+                "(earning 2 Earth Optimization Points). CI range reflects participation uncertainty.",
+    display_name="Earth Optimization Points Payout (2 Claims)",
     unit="USD",
-    formula="2 × VOTE_TOKEN_VALUE",
-    inputs=["VOTE_TOKEN_VALUE"],
-    compute=lambda ctx: 2 * ctx["VOTE_TOKEN_VALUE"],
+    formula="2 × EARTH_OPTIMIZATION_POINT_VALUE",
+    inputs=["EARTH_OPTIMIZATION_POINT_VALUE"],
+    compute=lambda ctx: 2 * ctx["EARTH_OPTIMIZATION_POINT_VALUE"],
     keywords=["vote", "2 claims", "payout", "recruit", "two", "deposit"],
     latex_symbol=r"V_{2claims}",
 )

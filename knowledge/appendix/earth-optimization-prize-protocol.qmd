@@ -1,11 +1,11 @@
 ---
 title: 'Earth Optimization Protocol: Technical Specification'
 subtitle: Identity, Pooling, Settlement, and Oracle Design for Interoperable Outcome Prizes
-description: 'Technical specification for interoperable outcome prize pools using one shared pool model. Two targets by 2040: global HALE and median income matching the 1% Treaty projections. Covers cross-pool proof-of-personhood, a permissionless pool registry, VOTE and PRIZE token mechanics, direct cross-pool claims, tamper-evident scoreboard aggregation, and a terminal metric oracle.'
+description: 'Technical specification for interoperable outcome prize pools using one shared pool model. Two targets by 2040: global HALE and median income matching the 1% Treaty projections. Covers cross-pool proof-of-personhood, a permissionless pool registry, vote, points, and deposit mechanics, direct cross-pool claims, tamper-evident scoreboard aggregation, and a terminal metric oracle.'
 abstract: |
-  The Earth Optimization Prize [@earth-optimization-prize-paper-2025] is a pool of money. Two numbers on a Scoreboard: how long people live, how much they earn. By {{< var destructive_economy_50pct_year >}}, if global HALE reaches {{< var treaty_projected_hale_year_15 >}} and median income reaches {{< var treaty_trajectory_avg_income_year_15 >}}, VOTE point-holders split the pool. If not, depositors divide the pool pro rata (still beats a retirement account). Registration asks two questions: yes or no on the 1% Treaty, and how much military vs. clinical trials (with Optimitron evidence so the voter sees what each dollar actually buys). Anyone can start a second pool. It joins the network automatically, because all pools measure the same two numbers.
+  The Earth Optimization Prize [@earth-optimization-prize-paper-2025] is a pool of money. Two numbers on a Scoreboard: how long people live, how much they earn. By {{< var destructive_economy_50pct_year >}}, if global HALE reaches {{< var treaty_projected_hale_year_15 >}} and median income reaches {{< var treaty_trajectory_avg_income_year_15 >}}, Earth Optimization Points holders split the pool. If not, depositors divide the pool pro rata (still beats a retirement account). Registration asks two questions: yes or no on the 1% Treaty, and how much military vs. clinical trials (with Optimitron evidence so the voter sees what each dollar actually buys). Anyone can start a second pool. It joins the network automatically, because all pools measure the same two numbers.
 
-  That "automatically" requires six things this paper specifies: (1) verify each person is real and only counts once (identity layer with proof-of-personhood); (2) register pools so metric commitments are checkable, not promises (pool registry); (3) VOTE and PRIZE tokens with rules that work across pools (token mechanics); (4) any verified voter can claim from any pool directly, no netting, no settlement (cross-pool claims); (5) every front-end shows the same combined voter count and pool size (scoreboard aggregation); and (6) an oracle that reads the WHO and World Bank reports and triggers treasury release when the numbers are met (terminal metric oracle), with decentralized surveys as a cross-check. The goal is a protocol simple enough that a second pool can launch without asking the first pool's permission.
+  That "automatically" requires six things this paper specifies: (1) verify each person is real and only counts once (identity layer with proof-of-personhood); (2) register pools so metric commitments are checkable, not promises (pool registry); (3) a vote, Earth Optimization Points, and deposit claims with rules that work across pools (token mechanics); (4) any verified voter can claim from any pool directly, no netting, no settlement (cross-pool claims); (5) every front-end shows the same combined voter count and pool size (scoreboard aggregation); and (6) an oracle that reads the WHO and World Bank reports and triggers treasury release when the numbers are met (terminal metric oracle), with decentralized surveys as a cross-check. The goal is a protocol simple enough that a second pool can launch without asking the first pool's permission.
 author:
   - name: Mike P. Sinn
     affiliations:
@@ -54,7 +54,7 @@ image: /assets/og-images/knowledge/appendix/earth-optimization-prize-protocol-og
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 
-![Technical specification for interoperable outcome prize pools using one shared pool model. Two targets by 2040: global HALE and median income matching the 1% Treaty projections. Covers cross-pool proof-of-personhood, a permissionless pool registry, VOTE and PRIZE token mechanics, direct cross-pool claims, tamper-evident scoreboard aggregation, and a terminal metric oracle.](/assets/infographics/knowledge/appendix/earth-optimization-prize-protocol-infographic-bw-academic.jpg)
+![Technical specification for interoperable outcome prize pools using one shared pool model. Two targets by 2040: global HALE and median income matching the 1% Treaty projections. Covers cross-pool proof-of-personhood, a permissionless pool registry, vote, points, and deposit mechanics, direct cross-pool claims, tamper-evident scoreboard aggregation, and a terminal metric oracle.](/assets/infographics/knowledge/appendix/earth-optimization-prize-protocol-infographic-bw-academic.jpg)
 
 
 ## Introduction
@@ -65,7 +65,7 @@ The [Earth Optimization Prize](../strategy/earth-optimization-prize.qmd) [@earth
 
 Registration asks two questions:
 
-1. **Yes or no on the [1% Treaty](../solution/1-percent-treaty.qmd) [@1-percent-treaty-paper-2025] [@1-pct-treaty-impact-paper-2025].** "Should 1% of military spending be redirected to clinical trials?" Binary, concrete, the specific political demand that politicians can act on. Public-facingly, this produces the VOTE point/game score; formally, it produces the VOTE claim eligibility and the scoreboard headcount (political pressure). The [1% Treaty](../solution/1-percent-treaty.qmd) is also the thing that [IABs](../solution/incentive-alignment-bonds.qmd) [@iab-paper-2025] fund the lobbying campaign for, so the voter count directly feeds the financial instrument's value.
+1. **Yes or no on the [1% Treaty](../solution/1-percent-treaty.qmd) [@1-percent-treaty-paper-2025] [@1-pct-treaty-impact-paper-2025].** "Should 1% of military spending be redirected to clinical trials?" Binary, concrete, the specific political demand that politicians can act on. Public-facingly, this is the game score; formally, it produces the vote (the scoreboard headcount, which is the political pressure) and eligibility to earn Earth Optimization Points. The [1% Treaty](../solution/1-percent-treaty.qmd) is also the thing that [IABs](../solution/incentive-alignment-bonds.qmd) [@iab-paper-2025] fund the lobbying campaign for, so the voter count directly feeds the financial instrument's value.
 
 2. **How much military vs. clinical trials?** The core reallocation question, shown with Optimitron [@optimocracy-paper-2025] evidence: cost per DALY for military spending vs. clinical trials, lives saved per dollar, economic returns per dollar. The voter sees the data and picks an allocation. The aggregate result from millions of people is a global citizen preferred split between war and medicine, generated by the evidence-informed [wishocratic](../solution/wishocracy.qmd) mechanism the book proposes [@wishocracy-paper-2025]. The user does not need to understand "[Wishocracy](../solution/wishocracy.qmd)" or "Optimitron" as concepts. They see what each dollar buys in each category and choose how to split it.
 
@@ -77,7 +77,7 @@ The mechanism paper demonstrates that independently operated pools sharing these
 
 1. A person verified in one pool cannot re-register in another (identity layer).
 2. Any pool committing to the standard metrics is automatically interoperable (pool registry).
-3. VOTE and PRIZE tokens have defined rules that work across pool boundaries (token mechanics).
+3. The vote, Earth Optimization Points, and deposit claims have defined rules that work across pool boundaries (token mechanics).
 4. A verified voter can claim their share from any pool directly (cross-pool claims).
 5. Every front-end displays the same combined voter count and pool size (scoreboard aggregation).
 6. Treasury release is triggered by independently verified welfare improvements (terminal metric oracle).
@@ -133,7 +133,7 @@ The global nullifier set is the critical shared state. It must be append-only, p
 
 **Sybil via multiple providers.** If a person verifies with World ID in Pool A and BrightID in Pool B, they get two entries. Mitigation: the protocol should launch with a single approved provider and add cross-provider bridging as providers develop interop standards.
 
-**Coercion.** An employer or government forces citizens to register and surrender their VOTE tokens. Mitigation: coercion to vote a particular way is already illegal in every democracy. The registration headcount matters more than which way any individual votes; the exposure to evidence during registration is what shifts preferences. Transferable tokens incentivize voluntary recruitment, which is the primary bottleneck (pluralistic ignorance).
+**Coercion.** An employer or government forces citizens to register and vote a particular way. Mitigation: coercion to vote a particular way is already illegal in every democracy, and because the vote cannot be sold or surrendered for value, there is no transferable asset to extract. The registration headcount matters more than which way any individual votes; the exposure to evidence during registration is what shifts preferences. Voluntary recruitment, the primary bottleneck (pluralistic ignorance), is rewarded through Earth Optimization Points.
 
 ### Governance of the Identity Layer
 
@@ -141,7 +141,7 @@ The identity provider (the Bouncer, in the [system roles](../strategy/earth-opti
 
 **Provider selection.** The initial provider is chosen by the [Launch Host](../strategy/initiating-node-memo.qmd) during the first 90-day cycle, subject to review panel approval. Adding or removing providers after launch requires a bonded proposal (to prevent frivolous churn) and majority approval from existing verified voters. This prevents the Launch Host from unilaterally switching to a captured provider after the game has started.
 
-**Provider compromise.** If a provider is compromised (Sybil attack detected, provider ceases operations, or privacy breach), the protocol suspends attestations from that provider, freezes affected VOTE tokens pending re-verification, and opens a migration window for affected voters to re-verify through an alternative provider. The global nullifier set remains intact; only the attestation linkage changes. This is the digital equivalent of reissuing passports after a printing press is stolen, except faster and without the queue at the post office.
+**Provider compromise.** If a provider is compromised (Sybil attack detected, provider ceases operations, or privacy breach), the protocol suspends attestations from that provider, freezes affected votes and points pending re-verification, and opens a migration window for affected voters to re-verify through an alternative provider. The global nullifier set remains intact; only the attestation linkage changes. This is the digital equivalent of reissuing passports after a printing press is stolen, except faster and without the queue at the post office.
 
 ## Pool Registry
 
@@ -188,46 +188,61 @@ The protocol should specify the data model and validation rules, not the impleme
 
 ### Overview
 
-The prize mechanism uses two token types:
+The prize mechanism keeps three things deliberately separate. Conflating any two of them is how earlier drafts of this protocol accidentally built a market in votes.
 
-- **VOTE tokens** represent verified support for the outcome. They determine claim eligibility when the treasury releases.
-- **PRIZE tokens** represent deposits into the prize pool. They are deposit claims on the same treasury that stays with depositors on failure and routes to VOTE point-holders on success.
+- **The vote** is a civic act: one per verified human, non-transferable, never for sale. It is the yes/no on the [1% Treaty](../solution/1-percent-treaty.qmd) plus the military-vs-clinical-trials allocation. It produces the coalition headcount (political pressure) and establishes who is eligible to earn points.
+- **Earth Optimization Points** are the reward claim. They are *earned* by verified humans for participating (registering and voting, recruiting other verified humans, completing the wishocratic allocation). They cannot be bought, and they cannot be traded. On success, the pool is distributed to points-holders.
+- **Deposits** are money contributed to grow the pool. On failure, depositors recover the realized pool pro rata to their deposits. On success, deposits fund the points payout.
 
-These are protocol primitives. Other instruments (bonds, revenue-share contracts, campaign financing vehicles) are tools that participants, implementers, or supporting institutions might use to cause implementation. They are outside the scope of this protocol.
+These are protocol primitives. Other instruments (bonds, revenue-share contracts, EOS shares, campaign financing vehicles) are separate tools that supporting institutions might use; they are outside the scope of this protocol. The vote in particular is never any of those things: not equity, not a token you can sell, not a claim you can buy. Money and influence are kept on separate tables by construction.
 
-### VOTE Tokens
+### The Vote
 
-**What the vote means.** A VOTE token represents two things: (1) a verified human counted in the coalition demanding the [1% Treaty](../solution/1-percent-treaty.qmd), and (2) a claim on the prize pool if global median health and wealth improve. Registration includes the [1% Treaty](../solution/1-percent-treaty.qmd) referendum (yes/no) and the military-vs-clinical-trials allocation (with Optimitron evidence). The VOTE token is minted on completion of both questions.
+**What it means.** A vote records one verified human, counted once, as (1) a member of the coalition demanding the [1% Treaty](../solution/1-percent-treaty.qmd) and (2) an evidence-informed allocation between military and clinical trials. The headcount is the political pressure; the allocation is the citizen mandate. Registration includes the [1% Treaty](../solution/1-percent-treaty.qmd) referendum (yes/no) and the allocation question (with Optimitron evidence).
 
-**Minting.** One VOTE token is minted when a person completes proof-of-personhood verification, answers the two registration questions, and registers with a participating pool. One person, one token, across all pools. The token is minted by the registration pool but recognized by all pools via the global nullifier set.
+**Recording.** One vote is recorded when a person completes proof-of-personhood verification and answers the two registration questions. One person, one vote, across all pools, deduplicated via the global nullifier set.
 
-**Transferable.** VOTE tokens are transferable with secondary market pricing. One person, one token minted (one-person-one-vote at issuance), but tokens can be sold after minting. The secondary market price is a real-time signal of what coalition membership is worth, which incentivizes recruitment. A dead voter's token is burned on liveness expiry. Coercion (forcing someone to register and surrender their token) is already illegal in every democracy; transferability incentivizes voluntary recruitment, which is the primary bottleneck.
+**Non-transferable.** A vote cannot be sold, lent, or transferred. There is no secondary market in votes, by design: a market in votes is a market in influence, the exact thing this system exists to abolish. (An earlier draft of this protocol made the vote a tradeable token with secondary-market pricing. That was a mistake, and it is corrected here: recruitment is rewarded by earning Earth Optimization Points, not by selling votes.) Coercion to vote a particular way is already illegal in every democracy, and since the vote cannot be surrendered for value, there is nothing to coerce a sale of.
 
-**Expiry.** VOTE tokens expire when the underlying identity attestation expires (12 months). Holders must re-verify annually. Expired tokens are excluded from claim calculations.
+**Expiry.** A vote's eligibility expires when the underlying identity attestation expires (12 months). Voters re-verify annually to keep earning and claiming. Expired votes are excluded from the headcount and from claims until renewed.
 
-### PRIZE Tokens
+### Earth Optimization Points
 
-**Minting.** PRIZE tokens are minted when a depositor sends funds to a participating pool's treasury. One PRIZE token per unit of currency deposited.
+**What they are.** Earth Optimization Points are the claim on the prize pool: the answer to "what do I get for helping?" You earn points for the work that moves the outcome. Voting earns a point; recruiting other verified humans earns more; completing the deeper wishocratic allocation earns more. On success, the pool is distributed in proportion to points: your share is your points divided by the total points earned across the network. Nobody is handed a share for merely existing; everyone earns it by acting, and the people who built the coalition are paid the most, without anyone ever buying or selling a vote.
 
-**On failure.** If the terminal metrics are not met by the prize deadline, the depositor redeems PRIZE tokens for their pro-rata share of the realized pool, relative to deposits. The protocol does not promise a fixed bonus or a fixed nominal floor; it routes the same realized treasury back to depositors instead of to VOTE point-holders.
+**Earned, not bought.** Points cannot be purchased with money. The only way to obtain them is to do the work: register and vote, recruit other verified humans, complete the deeper wishocratic allocation. This is what keeps them on the rewards-program side of the line (earned through behavior, like frequent-flyer miles) rather than the security side (bought as an investment).
 
-**Where the pool value comes from.** During the lock-up period, the treasury follows the pool's published allocation policy. In the canonical model, that is the Prize Fund allocation described in the economics chapter. Pool operators or custodians must publish the policy and the treasury state so depositors can evaluate risk before depositing. The protocol does not promise a fixed rate. If the underlying portfolio gains value, the realized pool grows; if it loses value, the failure-branch payout shrinks. The protocol requires that treasury investments and current balances be published transparently so depositors and auditors can verify the treasury's real value.
+**Non-tradeable.** Points cannot be sold or traded on a secondary market. They are redeemed from the pool when the targets are met. Starting non-tradeable is deliberate: it preserves the option to add regulated tradeability later, with proper exemptions, without first having to unwind a live market.
 
-**On success.** When the terminal metric oracle triggers treasury release, PRIZE token deposits are distributed to VOTE point-holders. Each verified voter can claim an equal share from each pool (see §5). PRIZE tokens are burned. The depositor's principal is gone; it has been redistributed to the people who caused the outcome.
+**Borrowing from the future.** Points are issued now against a pool whose final size is unknown and grows with participation. This is the engine: a movement with almost no money today can pay people out of the world it builds tomorrow, and because every new participant enlarges the pool, the earlier you earn points, the more each one is ultimately worth. The reward is real but contingent. If the targets are missed, points pay nothing and the pool returns to depositors.
 
-**Recruiter attribution.** Individual pools may offer recruitment bonuses (e.g., a share of the pool's own allocation to voters who bring in new registrants). This is a pool-level marketing decision, not a protocol requirement. The protocol tracks only the one-person-one-vote base layer.
+**Expiry.** Points follow the same liveness rule as the vote: the holder must keep a current identity attestation to remain eligible to claim. Points do not accrue to deceased or unverified identities.
+
+> **Settlement note.** Because the payout is weighted by points rather than split evenly per head, cross-pool settlement aggregates a global total-points figure and each claimant's global point count, instead of a simple headcount (§5). The system already records points per person in order to credit recruitment, so this is one more shared quantity, not a new kind of coordination. Since points are earned only through verified action, a large share reflects a large contribution, never purchased influence.
+
+### Deposits
+
+**What they are.** Deposits are money contributed to grow the prize pool. One deposit claim is recorded per unit of currency deposited.
+
+**On failure.** If the targets are not met by the deadline, depositors redeem their claims for a pro-rata share of the realized pool, relative to deposits. The protocol promises no fixed rate. During the lock-up the treasury follows the pool's published allocation policy (in the canonical model, the Prize Fund allocation described in the economics chapter). If the portfolio gains value, the realized pool grows; if it loses value, the failure-branch payout shrinks. Investments and balances must be published so depositors and auditors can verify real value before depositing.
+
+**On success.** When the oracle triggers release, deposits fund the distribution to Earth Optimization Points holders. The depositor's principal is gone; it has been spent buying the outcome (a world with measurably more health and income), which was the deposit's stated purpose.
+
+**This is a security, and is treated as one.** A deposit is money paid in with an expectation of a return on the failure branch, from a pooled and managed investment. That is a security under any honest reading, so the deposit instrument is offered through a real exemption, not dressed up as a "utility" anything. See the economics chapter for the offering structure.
+
+**Recruiter attribution.** Points are credited to the verified human who earned them and recorded on the shared points ledger. There is no recruiting middleman and no side market in votes: the only way to accumulate points is verified action, and the only thing the ledger tracks is who did what.
 
 ### Inheritance and Estate Transfer
 
 A 15-year lock-up means depositors will die during the accumulation period. The protocol must handle this without creating ghost claims or orphaned funds.
 
-**PRIZE tokens (deposits).** PRIZE tokens are transferable assets. A depositor may designate a beneficiary address or account at the time of deposit (or update it at any time before death). On the depositor's death, PRIZE tokens transfer to the designated beneficiary, who inherits the same claim: pro-rata share of the realized pool on failure, or nothing on success (the deposit routes to VOTE point-holders). If no beneficiary is designated, the pool's custodian follows the applicable jurisdiction's intestacy rules, the same way a brokerage account does. The pool operator must support beneficiary designation as a core feature, not an afterthought.
+**Deposit claims.** A deposit claim is inheritable. A depositor designates a beneficiary at the time of deposit (or updates it any time before death). On the depositor's death, the claim passes to the beneficiary on the same terms: pro-rata share of the realized pool on failure, or nothing on success (the deposit funds the points payout). If no beneficiary is designated, the custodian follows the applicable intestacy rules, the same way a brokerage account does. Beneficiary designation is a core feature, not an afterthought. A deposit claim is not traded on a secondary market; it is transferred only by inheritance.
 
-**VOTE tokens (recruitment credit).** VOTE tokens expire on liveness re-verification failure (12 months). A dead voter's VOTE token is burned when their identity attestation expires and is not renewed. VOTE tokens are not inheritable as claims, because the claim depends on continued proof-of-personhood (the whole point is that each claim represents one verified living human). However, VOTE tokens are transferable before death, so a voter who knows they are dying can sell or transfer their VOTE token while still alive, and the recipient holds it until their own liveness re-verification is due.
+**Votes and points.** A vote, and the Earth Optimization Points earned with it, are tied to a living, verified human and are not inheritable. They expire when the identity attestation expires (12 months) and is not renewed. The claim depends on continued proof-of-personhood, because the whole point is that each claim represents one verified living person. Points cannot be passed to a successor, because they cannot be transferred at all.
 
-**Unclaimed funds.** If a depositor dies without a designated beneficiary and the pool operator cannot identify an heir within a jurisdiction-specified period (typically 3-5 years), the unclaimed PRIZE tokens remain in the pool. On the failure branch, unclaimed deposits increase the pro-rata share for all other depositors. On the success branch, the deposits route to VOTE point-holders like all other deposits. The protocol does not create a separate "unclaimed" category; unclaimed deposits simply stay in the pool and follow the same rules as all other deposits.
+**Unclaimed funds.** If a depositor dies without a designated beneficiary and no heir can be identified within the jurisdiction's window (typically 3-5 years), the deposit stays in the pool and follows the same rules as every other deposit: on failure it increases the pro-rata share for all other depositors, on success it funds the points payout. The protocol does not create a separate "unclaimed" category.
 
-**Tax treatment.** Estate tax treatment of PRIZE tokens varies by jurisdiction. The protocol cannot standardize tax law. Pool operators should publish guidance for their jurisdiction and advise depositors to consult estate planning professionals. For most jurisdictions, PRIZE tokens will be treated as a financial asset included in the decedent's estate at fair market value (secondary market price or pro-rata pool share, whichever is determinable).
+**Tax treatment.** Estate treatment of a deposit claim varies by jurisdiction; the protocol cannot standardize tax law. Pool operators should publish local guidance and advise depositors to consult estate-planning professionals. In most jurisdictions a deposit claim is a financial asset included in the decedent's estate at fair value (pro-rata pool share).
 
 ## Cross-Pool Claims
 
@@ -237,23 +252,23 @@ Voter V registered in Pool A. Pools A, B, and C all hold treasury funds. When th
 
 ### Direct Claims (No Netting)
 
-Each pool independently divides its treasury by $N$ (total unique verified voters across all pools) and allows any verified voter to claim:
+Let $p_i$ be the Earth Optimization Points earned by claimant $i$ across the whole network, and $P$ the total points earned by everyone. Each pool independently pays each claimant a share of its own treasury proportional to that claimant's points:
 
 $$
-\text{claim from pool } p = \frac{T_p}{N}
+\text{claim from pool } p = T_p \cdot \frac{p_i}{P}
 $$
 
-The voter visits each pool (or a front-end that aggregates claims), proves they are a verified unique human via their identity attestation, and collects $T_p / N$ from each pool. The voter's total payout is:
+The claimant visits each pool (or a front-end that aggregates claims), proves they are a verified unique human via their identity attestation, and collects $T_p \cdot p_i / P$ from each pool. Their total payout is:
 
 $$
-\text{total}_i = \sum_{p \in \text{pools}} \frac{T_p}{N} = \frac{1}{N} \sum_{p \in \text{pools}} T_p
+\text{total}_i = \sum_{p \in \text{pools}} T_p \cdot \frac{p_i}{P} = \frac{p_i}{P} \sum_{p \in \text{pools}} T_p
 $$
 
-No inter-pool fund transfers. No netting. No settlement window. Each pool manages its own treasury and pays out independently. The only shared state is $N$ (the global voter count from the nullifier set) and the identity attestation that proves the claimant is one of those $N$ people.
+No inter-pool fund transfers. No netting. No settlement window. Each pool manages its own treasury and pays out independently. The shared state is $P$ (the global total points) and each claimant's $p_i$ (their global point count), both recorded on the points ledger the system already maintains in order to credit recruitment.
 
 ### Why This Works
 
-Since every voter gets the same share ($1/N$) from each pool, and each pool knows its own $T_p$ and can read $N$ from the global nullifier set, every pool can pay out independently. The voter's total is identical. The only coordination is agreeing on $N$, which the identity layer already provides.
+Each pool knows its own treasury $T_p$ and can read $P$ and the claimant's $p_i$ from the shared points ledger, so every pool can pay its share independently. The claimant's total is identical whether they claim pool by pool or all at once. The only coordination is agreeing on $P$ and on each person's $p_i$, exactly as the earlier headcount design relied on the global voter count $N$.
 
 ### Failure Modes
 
@@ -346,7 +361,7 @@ Two metrics, matching the [Earth Optimization Prize](../strategy/earth-optimizat
 
 Binary. By {{< var destructive_economy_50pct_year >}}, both metrics must meet or exceed the targets above. Both metrics must improve for release; improvement in only one triggers nothing. This prevents gaming by, for example, increasing income through policies that reduce health.
 
-If both targets are met, the treasury releases to VOTE point-holders. If either target is missed, depositors divide the realized pool pro rata.
+If both targets are met, the treasury releases to Earth Optimization Points holders. If either target is missed, depositors divide the realized pool pro rata.
 
 ### Gaming Resistance
 
@@ -362,7 +377,7 @@ If both targets are met, the treasury releases to VOTE point-holders. If either 
 
 **State.** One canonical pool with proof-of-personhood registration and a single treasury. No interoperability needed because there is only one pool.
 
-**Deliverables.** Identity attestation interface (§2), VOTE and PRIZE token contracts (§4), basic scoreboard (just one pool's numbers), manual oracle reporting (Tier 1 institutional data published by the pool operator with a dispute email address), treasury invested in government bonds with published investment policy.
+**Deliverables.** Identity attestation interface (§2), vote, points, and deposit contracts (§4), basic scoreboard (just one pool's numbers), manual oracle reporting (Tier 1 institutional data published by the pool operator with a dispute email address), treasury invested in government bonds with published investment policy.
 
 **Success criterion.** 10,000+ verified voters, treasury > $1M.
 

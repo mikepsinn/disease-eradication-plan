@@ -137,6 +137,7 @@ book:
     - part: "For Skeptics"
       chapters:
         - knowledge/proof.qmd # ✅ Part III Intro + Historical Precedents (merged) ~20p
+        - knowledge/proof/biotechnological-imperative.qmd # Kant's categorical imperative applied to biotech funding; three-proof structure with Love's Wager (rational) and Free Market Proof (empirical)
         - knowledge/proof/body-as-repairable-machine.qmd # ✅ The Body as a Machine ~7p
         - knowledge/proof/why-hasnt-anyone-done-this.qmd # ✅ Why Hasn't Anyone Done This? ~3p
         - knowledge/proof/delusion-of-insignificance.qmd # The Grandeur Proof: you ARE the universe experiencing itself; insignificance is the delusion, not grandeur ~4p
@@ -220,6 +221,7 @@ book:
         - knowledge/economics/health-dividend.qmd # ✅ (good voice) ~3p
         - knowledge/economics/financial-plan.qmd # ✅ (IMPROVED - added personality to opening) ~10p
         - knowledge/economics/investment-terms.qmd # EOS Fund I terms in Wishonia voice + interactive investment calculator
+        - knowledge/economics/investment-thesis.qmd # Founder's unfiltered 15-minute investment thesis pitch
         - knowledge/economics/earth-optimization-prize-fund.qmd # ✅ (prize fund model) ~8p
         - knowledge/economics/campaign-budget.qmd # ✅ (IMPROVED - "On How to Buy a Planet for $1B") ~7p
         - knowledge/appendix/investor-risk-analysis.qmd # ✅ (risk analysis, appropriate) ~5p
@@ -255,6 +257,7 @@ book:
         - knowledge/appendix/drug-development-cost-analysis.qmd # Standalone paper config: _quarto-drug-development-cost.yml
         - knowledge/appendix/algorithmic-public-administration-paper.qmd # Standalone paper config: _quarto-algorithmic-public-administration.yml
         - knowledge/appendix/correcting-the-ais.qmd # LLM correction templates; chapter-only
+        - knowledge/appendix/catsoline.qmd # Easter-egg parody: EOS "product" technical disclosure for a cat-powered car (Purple Cow / remarkable-as-marketing); linked from the EOS brochure Accessories table
         - knowledge/proof/loves-wager.qmd # Standalone paper config: _quarto-loves-wager.yml (also listed in "For Skeptics")
         # MOVED to "Repair Procedures" part above:
         # - knowledge/appendix/handout.qmd

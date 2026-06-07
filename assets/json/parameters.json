@@ -1212,7 +1212,7 @@
       "value": 2.5718410065633592,
       "formatted": "2.57x",
       "unit": "x",
-      "description": "Compound multiple for conventional retirement investing over the PRIZE pool resolution horizon (tied to the destructive economy 50% threshold year).",
+      "description": "Compound multiple for conventional retirement investing over the prize pool resolution horizon (tied to the destructive economy 50% threshold year).",
       "sourceType": "calculated",
       "sourceRef": null,
       "confidence": "high",
@@ -3451,6 +3451,22 @@
       "formula": null,
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/dfda-impact-paper.html"
     },
+    "EARTH_OPTIMIZATION_POINT_VALUE": {
+      "value": 6670.732881383013,
+      "formatted": "$6,671",
+      "unit": "USD",
+      "description": "Value of a single Earth Optimization Point based on the modeled prize pool size (investable assets × participation rate × horizon multiple). CI range reflects participation uncertainty (0.1%-10%).",
+      "sourceType": "calculated",
+      "sourceRef": null,
+      "confidence": "high",
+      "formula": "PRIZE_POOL_SIZE / GLOBAL_REGISTERED_VOTERS",
+      "inputs": [
+        "GLOBAL_REGISTERED_VOTERS",
+        "PRIZE_POOL_SIZE"
+      ],
+      "computeExpr": "(PRIZE_POOL_SIZE / GLOBAL_REGISTERED_VOTERS)",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/strategy/earth-optimization-prize.html"
+    },
     "ECONOMIC_MULTIPLIER_EDUCATION_INVESTMENT": {
       "value": 2.1,
       "formatted": "2.1x",
@@ -4518,7 +4534,7 @@
       "value": 30832926217.5,
       "formatted": "$30.8 billion",
       "unit": "USD",
-      "description": "Canonical institutional activation threshold: capital required to make participation by the majority-of-humanity coordination target credible through direct referral incentives, verification, payment rails, and global launch operations. This is the main institutional ask, not the PRIZE pool seed benchmark.",
+      "description": "Canonical institutional activation threshold: capital required to make participation by the majority-of-humanity coordination target credible through direct referral incentives, verification, payment rails, and global launch operations. This is the main institutional ask, not the prize pool seed benchmark.",
       "sourceType": "calculated",
       "sourceRef": null,
       "confidence": "high",
@@ -4887,7 +4903,7 @@
       "value": 305000000000000.0,
       "formatted": "$305 trillion",
       "unit": "USD",
-      "description": "Total global financial wealth (2024): equities, bonds, cash/deposits, and investment funds. Excludes real estate and physical assets. This is the addressable capital pool for PRIZE deposits.",
+      "description": "Total global financial wealth (2024): equities, bonds, cash/deposits, and investment funds. Excludes real estate and physical assets. This is the addressable capital pool for Prize deposits.",
       "sourceType": "external",
       "sourceRef": null,
       "confidence": "high",
@@ -7501,7 +7517,7 @@
       "value": 0.15800000000000003,
       "formatted": "15.8%",
       "unit": "percent",
-      "description": "Canonical annual return used for PRIZE pool growth. Venture gross return + scale compression + crowd allocation alpha + home bias elimination. This is the structural pool return before contingent macro feedback loops.",
+      "description": "Canonical annual return used for prize pool growth. Venture gross return + scale compression + crowd allocation alpha + home bias elimination. This is the structural pool return before contingent macro feedback loops.",
       "sourceType": "calculated",
       "sourceRef": null,
       "confidence": "high",
@@ -7519,7 +7535,7 @@
       "value": 9.028765862436396,
       "formatted": "9.03x",
       "unit": "x",
-      "description": "Compound multiple for PRIZE pool growth over the resolution horizon (tied to the destructive economy 50% threshold year).",
+      "description": "Compound multiple for prize pool growth over the resolution horizon (tied to the destructive economy 50% threshold year).",
       "sourceType": "calculated",
       "sourceRef": null,
       "confidence": "high",
@@ -7536,7 +7552,7 @@
       "value": 0.01,
       "formatted": "1%",
       "unit": "percent",
-      "description": "Fraction of global investable financial assets that flow into the PRIZE pool. 1% central estimate parallels the 1% Treaty ask: 1% of your weapons money, 1% of your savings.",
+      "description": "Fraction of global investable financial assets that flow into the prize pool. 1% central estimate parallels the 1% Treaty ask: 1% of your weapons money, 1% of your savings.",
       "sourceType": "definition",
       "sourceRef": null,
       "confidence": "high",
@@ -7569,7 +7585,7 @@
       "value": 27537735880431.008,
       "formatted": "$27.5 trillion",
       "unit": "USD",
-      "description": "Terminal PRIZE pool size: global investable assets × participation rate × compound multiple over the resolution horizon.",
+      "description": "Terminal prize pool size: global investable assets × participation rate × compound multiple over the resolution horizon.",
       "sourceType": "calculated",
       "sourceRef": null,
       "confidence": "high",
@@ -10514,31 +10530,15 @@
       "value": 13341.465762766025,
       "formatted": "$13,341",
       "unit": "USD",
-      "description": "Payout for a depositor who recruits 2 verified participants (earning 2 VOTE claims). CI range reflects participation uncertainty.",
+      "description": "Payout for a depositor who recruits 2 verified participants (earning 2 Earth Optimization Points). CI range reflects participation uncertainty.",
       "sourceType": "calculated",
       "sourceRef": null,
       "confidence": "high",
-      "formula": "2 × VOTE_TOKEN_VALUE",
+      "formula": "2 × EARTH_OPTIMIZATION_POINT_VALUE",
       "inputs": [
-        "VOTE_TOKEN_VALUE"
+        "EARTH_OPTIMIZATION_POINT_VALUE"
       ],
-      "computeExpr": "(2.0 * VOTE_TOKEN_VALUE)",
-      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/strategy/earth-optimization-prize.html"
-    },
-    "VOTE_TOKEN_VALUE": {
-      "value": 6670.732881383013,
-      "formatted": "$6,671",
-      "unit": "USD",
-      "description": "Value of a single VOTE claim based on the modeled PRIZE pool size (investable assets × participation rate × horizon multiple). CI range reflects participation uncertainty (0.1%-10%).",
-      "sourceType": "calculated",
-      "sourceRef": null,
-      "confidence": "high",
-      "formula": "PRIZE_POOL_SIZE / GLOBAL_REGISTERED_VOTERS",
-      "inputs": [
-        "GLOBAL_REGISTERED_VOTERS",
-        "PRIZE_POOL_SIZE"
-      ],
-      "computeExpr": "(PRIZE_POOL_SIZE / GLOBAL_REGISTERED_VOTERS)",
+      "computeExpr": "(2.0 * EARTH_OPTIMIZATION_POINT_VALUE)",
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/strategy/earth-optimization-prize.html"
     },
     "WAR_AVG_YEARS_LIFE_LOST_PER_DEATH": {

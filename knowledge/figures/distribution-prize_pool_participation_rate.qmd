@@ -1,6 +1,6 @@
 ```{python}
 #| echo: false
-#| fig-cap: "Probability Distribution: PRIZE Pool Participation Rate"
+#| fig-cap: "Probability Distribution: Prize Pool Participation Rate"
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -21,7 +21,7 @@ central_value = 0.01
 low = 0.001
 high = 0.1
 dist_type = "lognormal"
-display_name = "PRIZE Pool Participation Rate"
+display_name = "Prize Pool Participation Rate"
 unit = "percent"
 
 # Calculate distribution parameters

@@ -16,7 +16,7 @@ setup_chart_style()
 
 # Display name for chart title
 
-display_name = "VOTE Point Value"
+display_name = "Earth Optimization Point Value"
 
 # Baseline and units
 
@@ -25,7 +25,7 @@ baseline = 6670.732881383013
 # Tornado data from sensitivity analysis
 
 drivers = ['PRIZE_POOL_PARTICIPATION_RATE', 'VENTURE_GROSS_RETURN', 'SCALE_COMPRESSION_FACTOR', 'WISHOCRATIC_CROWD_ALPHA', 'HOME_BIAS_ALPHA']
-driver_labels = ['PRIZE Pool Participation Rate', 'Venture Capital Gross Return', 'Scale Compression Factor', 'Wishocratic Crowd Allocation Alpha', 'Home Bias Return Drag']
+driver_labels = ['Prize Pool Participation Rate', 'Venture Capital Gross Return', 'Scale Compression Factor', 'Wishocratic Crowd Allocation Alpha', 'Home Bias Return Drag']
 impacts_low = [-6003.659593244712, -2733.6712553143225, -1862.407958489437, -419.22520297876054, -419.22520297876054]
 impacts_high = [60036.59593244712, 5905.459544216713, 1420.5119247702505, 918.323881263148, 631.1361652102687]
 
@@ -96,7 +96,7 @@ add_watermark(fig)
 # Save PNG to knowledge/figures/ regardless of where Quarto renders from
 # Use 96 DPI for web-optimized output (reduced from 150 DPI to minimize file size)
 
-output_path = get_figure_output_path('tornado-vote_token_value.png')
+output_path = get_figure_output_path('tornado-earth_optimization_point_value.png')
 plt.savefig(output_path, dpi=96, bbox_inches=None, facecolor=COLOR_WHITE)
 
 add_png_metadata(

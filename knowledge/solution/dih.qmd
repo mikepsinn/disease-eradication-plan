@@ -226,14 +226,14 @@ On Wishonia, this protocol is 4,297 years old. Disease-free for 4,296 of them. T
 
 Everything above describes what the [Decentralized Institutes of Health](../solution/dih.qmd) does with money. This section describes who holds it and why that question matters more than it sounds.
 
-The Pool Custodian (the Vault) is the organization with legal custody of PRIZE deposits and treaty funds. It receives deposits, invests them according to a published allocation policy, tracks the realized pool value, and disburses funds when triggered by the Measurement Authority (the Referee). On the failure branch, depositors get their pro-rata share of the realized pool. On the success branch, the pool routes to VOTE point-holders. The Vault executes both.
+The Pool Custodian (the Vault) is the organization with legal custody of Prize deposits and treaty funds. It receives deposits, invests them according to a published allocation policy, tracks the realized pool value, and disburses funds when triggered by the Measurement Authority (the Referee). On the failure branch, depositors get their pro-rata share of the realized pool. On the success branch, the pool routes to Earth Optimization Points holders. The Vault executes both.
 
 **What the Vault does:**
 
-1. Holds PRIZE deposits in escrow during the lock-up period.
+1. Holds Prize deposits in escrow during the lock-up period.
 2. Invests according to the published allocation policy (transparent, auditable).
 3. Publishes daily balance attestations so anyone can verify the pool size.
-4. Executes failure-branch disbursement (pro-rata to depositors) or success-branch disbursement (to VOTE point-holders) when the Referee triggers release.
+4. Executes failure-branch disbursement (pro-rata to depositors) or success-branch disbursement (to Earth Optimization Points holders) when the Referee triggers release.
 5. Maintains fiduciary duty and submits to independent audits.
 
 **What the Vault does not do:**

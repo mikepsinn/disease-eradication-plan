@@ -1,6 +1,6 @@
 ```{python}
 #| echo: false
-#| fig-cap: "Monte Carlo Distribution: VOTE Point Value (10,000 simulations)"
+#| fig-cap: "Monte Carlo Distribution: Earth Optimization Point Value (10,000 simulations)"
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -23,7 +23,7 @@ std = 27448.271298047
 p5 = 278.4563261564683
 p50 = 2394.123388666042
 p95 = 56153.5992105196
-display_name = "VOTE Point Value"
+display_name = "Earth Optimization Point Value"
 units = "USD"
 
 # Create figure with two subplots
@@ -101,7 +101,7 @@ add_watermark(fig)
 
 # Save PNG to knowledge/figures/ regardless of where Quarto renders from
 
-output_path = get_figure_output_path('mc-distribution-vote_token_value.png')
+output_path = get_figure_output_path('mc-distribution-earth_optimization_point_value.png')
 plt.savefig(output_path, dpi=96, bbox_inches=None, facecolor=COLOR_WHITE)
 
 add_png_metadata(
@@ -113,7 +113,7 @@ add_png_metadata(
 plt.show()
 ```
 
-**Simulation Results Summary: VOTE Point Value**
+**Simulation Results Summary: Earth Optimization Point Value**
 
 | Statistic | Value |
 |:----------|------:|
@@ -123,4 +123,4 @@ plt.show()
 | Standard Deviation | $27,448 |
 | 90% Range (5th-95th percentile) | [$278, $56,154] |
 
-*The histogram shows the distribution of VOTE Point Value across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*
+*The histogram shows the distribution of Earth Optimization Point Value across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

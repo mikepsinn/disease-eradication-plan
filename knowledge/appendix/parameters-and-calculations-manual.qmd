@@ -2059,7 +2059,7 @@ $$
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Compound multiple for conventional retirement investing over the PRIZE pool resolution horizon (tied to the destructive economy 50% threshold year).
+Compound multiple for conventional retirement investing over the prize pool resolution horizon (tied to the destructive economy 50% threshold year).
 
 **Inputs**:
 
@@ -8774,6 +8774,92 @@ $$
 
 :::
 
+### Earth Optimization Point Value: $6,671 {#sec-earth_optimization_point_value}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Value of a single Earth Optimization Point based on the modeled prize pool size (investable assets × participation rate × horizon multiple). CI range reflects participation uncertainty (0.1%-10%).
+
+**Inputs**:
+
+- [Prize Pool Size](#sec-prize_pool_size) 🔢: $27.5 trillion
+- [Global Registered Voters](#sec-global_registered_voters) 📊: 4.13 billion of people
+
+$$
+\begin{gathered}
+V_{vote} \\
+= \frac{Pool}{N_{voters,global}} \\
+= \frac{\$27.5T}{4.13B} \\
+= \$6.67K
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Pool \\
+= Assets_{invest} \times R_{pool} \times M_{pool} \\
+= \$305T \times 1\% \times 9.03 \\
+= \$27.5T
+\end{gathered}
+$$
+where:
+$$
+M_{pool} = (1 + r_{pool}) ^{Y_{50\%} - Y_0}
+$$
+where:
+$$
+\begin{gathered}
+r_{pool} \\
+= r_{VC,gross} + \Delta r_{scale} + \alpha_{crowd} \\
++ \alpha_{home} \\
+= 17\% + -2.5\% + 0.5\% + 0.8\% \\
+= 15.8\%
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Y_{50\%} \\
+= Y_0 \\
++ \frac{\ln\left(0.50 / \text{DESTRUCTIVE\_PCT\_GDP}\right)}{\ln\left(1 + \text{DESTRUCTIVE\_GROWTH} - \text{GDP\_GROWTH}\right)}
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+r_{destruct:GDP} \\
+= \frac{Cost_{destruct}}{GDP_{global}} \\
+= \frac{\$13.2T}{\$115T} \\
+= 11.5\%
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{destruct} \\
+= Spending_{mil} + Cost_{cyber} \\
+= \$2.72T + \$10.5T \\
+= \$13.2T
+\end{gathered}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-earth_optimization_point_value.qmd >}}
+
+{{< include ../figures/sensitivity-table-earth_optimization_point_value.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-earth_optimization_point_value.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-earth_optimization_point_value.qmd >}}
+
+:::
+
 ### Cumulative Efficacy Testing Cost (1962-2024): $4.84 trillion {#sec-efficacy_lag_cumulative_excess_cost}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -9914,7 +10000,7 @@ $$
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Canonical institutional activation threshold: capital required to make participation by the majority-of-humanity coordination target credible through direct referral incentives, verification, payment rails, and global launch operations. This is the main institutional ask, not the PRIZE pool seed benchmark.
+Canonical institutional activation threshold: capital required to make participation by the majority-of-humanity coordination target credible through direct referral incentives, verification, payment rails, and global launch operations. This is the main institutional ask, not the prize pool seed benchmark.
 
 **Inputs**:
 
@@ -14063,7 +14149,7 @@ $$
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Canonical annual return used for PRIZE pool growth. Venture gross return + scale compression + crowd allocation alpha + home bias elimination. This is the structural pool return before contingent macro feedback loops.
+Canonical annual return used for prize pool growth. Venture gross return + scale compression + crowd allocation alpha + home bias elimination. This is the structural pool return before contingent macro feedback loops.
 
 **Inputs**:
 
@@ -14104,7 +14190,7 @@ $$
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Compound multiple for PRIZE pool growth over the resolution horizon (tied to the destructive economy 50% threshold year).
+Compound multiple for prize pool growth over the resolution horizon (tied to the destructive economy 50% threshold year).
 
 **Inputs**:
 
@@ -14285,16 +14371,16 @@ $$
 
 :::
 
-### PRIZE Pool Size: $27.5 trillion {#sec-prize_pool_size}
+### Prize Pool Size: $27.5 trillion {#sec-prize_pool_size}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Terminal PRIZE pool size: global investable assets × participation rate × compound multiple over the resolution horizon.
+Terminal prize pool size: global investable assets × participation rate × compound multiple over the resolution horizon.
 
 **Inputs**:
 
 - [Global Investable Financial Assets](#sec-global_investable_assets) 📊: $305 trillion
-- [PRIZE Pool Participation Rate](#sec-prize_pool_participation_rate): 1% (95% CI: 0.1% - 10%)
+- [Prize Pool Participation Rate](#sec-prize_pool_participation_rate): 1% (95% CI: 0.1% - 10%)
 - [PRIZE Pool Horizon Multiple](#sec-prize_pool_horizon_multiple) 🔢: 9.03x
 
 $$
@@ -24188,15 +24274,15 @@ $$
 
 :::
 
-### VOTE Payout for 2 Claims: $13,341 {#sec-vote_2_claims_payout}
+### Earth Optimization Points Payout (2 Claims): $13,341 {#sec-vote_2_claims_payout}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Payout for a depositor who recruits 2 verified participants (earning 2 VOTE claims). CI range reflects participation uncertainty.
+Payout for a depositor who recruits 2 verified participants (earning 2 Earth Optimization Points). CI range reflects participation uncertainty.
 
 **Inputs**:
 
-- [VOTE Point Value](#sec-vote_token_value) 🔢: $6,671
+- [Earth Optimization Point Value](#sec-earth_optimization_point_value) 🔢: $6,671
 
 $$
 V_{2claims} = V_{vote} \times 2 = \$6.67K \times 2 = \$13.3K
@@ -24274,92 +24360,6 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-vote_2_claims_payout.qmd >}}
-
-:::
-
-### VOTE Point Value: $6,671 {#sec-vote_token_value}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Value of a single VOTE claim based on the modeled PRIZE pool size (investable assets × participation rate × horizon multiple). CI range reflects participation uncertainty (0.1%-10%).
-
-**Inputs**:
-
-- [PRIZE Pool Size](#sec-prize_pool_size) 🔢: $27.5 trillion
-- [Global Registered Voters](#sec-global_registered_voters) 📊: 4.13 billion of people
-
-$$
-\begin{gathered}
-V_{vote} \\
-= \frac{Pool}{N_{voters,global}} \\
-= \frac{\$27.5T}{4.13B} \\
-= \$6.67K
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Pool \\
-= Assets_{invest} \times R_{pool} \times M_{pool} \\
-= \$305T \times 1\% \times 9.03 \\
-= \$27.5T
-\end{gathered}
-$$
-where:
-$$
-M_{pool} = (1 + r_{pool}) ^{Y_{50\%} - Y_0}
-$$
-where:
-$$
-\begin{gathered}
-r_{pool} \\
-= r_{VC,gross} + \Delta r_{scale} + \alpha_{crowd} \\
-+ \alpha_{home} \\
-= 17\% + -2.5\% + 0.5\% + 0.8\% \\
-= 15.8\%
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Y_{50\%} \\
-= Y_0 \\
-+ \frac{\ln\left(0.50 / \text{DESTRUCTIVE\_PCT\_GDP}\right)}{\ln\left(1 + \text{DESTRUCTIVE\_GROWTH} - \text{GDP\_GROWTH}\right)}
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-r_{destruct:GDP} \\
-= \frac{Cost_{destruct}}{GDP_{global}} \\
-= \frac{\$13.2T}{\$115T} \\
-= 11.5\%
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Cost_{destruct} \\
-= Spending_{mil} + Cost_{cyber} \\
-= \$2.72T + \$10.5T \\
-= \$13.2T
-\end{gathered}
-$$
-*✓ High confidence*
-
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-vote_token_value.qmd >}}
-
-{{< include ../figures/sensitivity-table-vote_token_value.qmd >}}
-
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-vote_token_value.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-vote_token_value.qmd >}}
 
 :::
 
@@ -30328,7 +30328,7 @@ Total global household wealth (2022/2023 estimate)
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Total global financial wealth (2024): equities, bonds, cash/deposits, and investment funds. Excludes real estate and physical assets. This is the addressable capital pool for PRIZE deposits.
+Total global financial wealth (2024): equities, bonds, cash/deposits, and investment funds. Excludes real estate and physical assets. This is the addressable capital pool for Prize deposits.
 
 #### Uncertainty Range
 
@@ -34060,11 +34060,11 @@ Years of empirical validation for physician-led pragmatic trials (1883-1960)
 
 :::
 
-### PRIZE Pool Participation Rate: 1% {#sec-prize_pool_participation_rate}
+### Prize Pool Participation Rate: 1% {#sec-prize_pool_participation_rate}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Fraction of global investable financial assets that flow into the PRIZE pool. 1% central estimate parallels the 1% Treaty ask: 1% of your weapons money, 1% of your savings.
+Fraction of global investable financial assets that flow into the prize pool. 1% central estimate parallels the 1% Treaty ask: 1% of your weapons money, 1% of your savings.
 
 #### Uncertainty Range
 

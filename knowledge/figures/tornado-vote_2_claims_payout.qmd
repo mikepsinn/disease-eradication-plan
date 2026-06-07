@@ -16,7 +16,7 @@ setup_chart_style()
 
 # Display name for chart title
 
-display_name = "VOTE Payout for 2 Claims"
+display_name = "Earth Optimization Points Payout (2 Claims)"
 
 # Baseline and units
 
@@ -25,7 +25,7 @@ baseline = 13341.465762766025
 # Tornado data from sensitivity analysis
 
 drivers = ['PRIZE_POOL_PARTICIPATION_RATE', 'VENTURE_GROSS_RETURN', 'SCALE_COMPRESSION_FACTOR', 'WISHOCRATIC_CROWD_ALPHA', 'HOME_BIAS_ALPHA']
-driver_labels = ['PRIZE Pool Participation Rate', 'Venture Capital Gross Return', 'Scale Compression Factor', 'Wishocratic Crowd Allocation Alpha', 'Home Bias Return Drag']
+driver_labels = ['Prize Pool Participation Rate', 'Venture Capital Gross Return', 'Scale Compression Factor', 'Wishocratic Crowd Allocation Alpha', 'Home Bias Return Drag']
 impacts_low = [-12007.319186489423, -5467.342510628645, -3724.815916978874, -838.4504059575211, -838.4504059575211]
 impacts_high = [120073.19186489424, 11810.919088433426, 2841.023849540501, 1836.647762526296, 1262.2723304205374]
 

@@ -1,7 +1,7 @@
 ---
 title: The Earth Optimization Prize
 subtitle: A game where every player wins. The prize is less war, cured diseases, and more money.
-description: Put money in a pool. Recruit people to vote on the 1% Treaty. If humanity gets healthier and richer by {{< var destructive_economy_50pct_year >}}, VOTE point-holders split the pool. If not, depositors get their money back (at {{< var prize_pool_horizon_multiple >}} what they put in).
+description: Put money in a pool. Recruit people to vote on the 1% Treaty. If humanity gets healthier and richer by {{< var destructive_economy_50pct_year >}}, Earth Optimization Points holders split the pool. If not, depositors get their money back (at {{< var prize_pool_horizon_multiple >}} what they put in).
 abstract: |
   Humanity spends {{< var military_to_government_clinical_trials_spending_ratio >}}x more on wars than testing which medicines work. The Earth Optimization Prize pays whoever fixes that. Two target numbers: healthy life years and median income. Hit them by {{< var destructive_economy_50pct_year >}} and the pool goes to the people who recruited voters for the 1% Treaty. Miss them and depositors split the pool pro rata (still beats a retirement account). The mechanism: deposit, recruit, and let compound interest do the rest.
 published: true
@@ -23,7 +23,7 @@ scores:
   importance: 10
 image: /assets/og-images/knowledge/strategy/earth-optimization-prize-og-bw-academic.jpg
 ---
-![Put money in a pool. Recruit people to vote on the 1% Treaty. If humanity gets healthier and richer by 2040, VOTE point-holders split the pool. If not, depositors get their money back at the structural annual return of the Prize Fund.](/assets/infographics/knowledge/strategy/earth-optimization-prize-infographic-bw-academic.jpg)
+![Put money in a pool. Recruit people to vote on the 1% Treaty. If humanity gets healthier and richer by 2040, Earth Optimization Points holders split the pool. If not, depositors get their money back at the structural annual return of the Prize Fund.](/assets/infographics/knowledge/strategy/earth-optimization-prize-infographic-bw-academic.jpg)
 
 {{< include ../includes/setup-parameters.qmd >}}
 
@@ -41,8 +41,8 @@ This chapter explains the game, and then explains why your species needs it.
 
 1. **The Game you're building.** An open-source coordination game: raise global median income and healthy life years by {{< var destructive_economy_50pct_year >}}. (Your species has been trying for 10,000 years without a scoreboard, so this is an upgrade.)
 2. **How you keep score.** By {{< var destructive_economy_50pct_year >}}: did people live {{< var treaty_hale_gain_year_15 >}} longer? Did they earn {{< var treaty_trajectory_lifetime_income_multiplier >}} as much? (See [GDP Trajectories](../economics/gdp-trajectories.qmd) [@gdp-trajectories-paper-2025].) That is {{< var treaty_personal_upside_blend >}} per person.
-3. **How PRIZE works.** You fund one pool until {{< var destructive_economy_50pct_year >}}. Targets missed: you divide the realized pool pro rata. (Either way, you beat your retirement account. Your retirement account is not trying very hard.)
-4. **How VOTE works.** You recruit one verified referendum participant, you earn one point. Targets met: the pool routes to VOTE point-holders.
+3. **How Prize works.** You fund one pool until {{< var destructive_economy_50pct_year >}}. Targets missed: you divide the realized pool pro rata. (Either way, you beat your retirement account. Your retirement account is not trying very hard.)
+4. **How Earth Optimization Points work.** You recruit one verified referendum participant, you earn one point. Targets met: the pool routes to Earth Optimization Points holders.
 5. **How you start.** A v1 pool launches once any qualified host completes the three scaffolding pieces in [V1 Bootstrap](../economics/earth-optimization-prize-fund.qmd#v1-bootstrap). Other hosts fork additional pools using the [protocol spec](../appendix/earth-optimization-prize-protocol.qmd) [@earth-optimization-prize-protocol-paper-2025]. The [Planetary Constitutional Convention](planetary-constitutional-convention.qmd) and [Initiating Node memo](initiating-node-memo.qmd) describe the larger-institution path.
 6. **Why you bother.** "Do nothing" is not free. It has a price, and the price is accelerating (see [Political Dysfunction Tax](../appendix/political-dysfunction-tax.qmd) [@political-dysfunction-tax-paper-2025] and [GDP Trajectories](../economics/gdp-trajectories.qmd) [@gdp-trajectories-paper-2025]).
 
@@ -50,7 +50,7 @@ This chapter explains the game, and then explains why your species needs it.
 
 **The pile of papers.** Your deposit goes into a single pool that compounds through the [Prize Fund](../economics/earth-optimization-prize-fund.qmd). Rich people have a secret money club (venture capital and private equity) that makes {{< var venture_gross_return >}} returns. Your retirement account is legally banned from joining. Your government decided that only rich people are smart enough to invest in things that make money. This is called "investor protection." It protects you from having money. The pool gets you in. It spreads your money across the entire sector so no single bad bet kills you, and crowds allocate capital across sectors and managers rather than letting committees paid by the answer choices do it. Result: {{< var prize_pool_annual_return >}} central case, nearly triple conventional retirement at {{< var conventional_retirement_return >}}. (See [Earth Optimization Prize Fund](../economics/earth-optimization-prize-fund.qmd) for six mechanism scenarios, ten wrapper options, and honest risk disclosure. I am told this sounds "too good to be true," which is what humans say when they discover they have been getting a bad deal.)
 
-Your deposit is locked. Not a savings account. It stays in your account until {{< var destructive_economy_50pct_year >}}. Targets missed: you divide the realized pool pro rata. Targets met: the pool goes to VOTE point-holders, not back to you. See the [prize protocol](../appendix/earth-optimization-prize-protocol.qmd) [@earth-optimization-prize-protocol-paper-2025] for the full specification.
+Your deposit is locked. Not a savings account. It stays in your account until {{< var destructive_economy_50pct_year >}}. Targets missed: you divide the realized pool pro rata. Targets met: the pool goes to Earth Optimization Points holders, not back to you. See the [prize protocol](../appendix/earth-optimization-prize-protocol.qmd) [@earth-optimization-prize-protocol-paper-2025] for the full specification.
 
 **The recruitment credits.** You recruit one verified referendum participant into the first [1% Treaty](../solution/1-percent-treaty.qmd) [@1-percent-treaty-paper-2025] [@1-pct-treaty-impact-paper-2025] vote, you earn one point. Points stay with whoever earned them. Not tradable. You cannot buy credit for recruiting people you did not recruit. Your species calls this "integrity," which I understand is rare enough to require its own word. Registration asks two questions: (1) yes or no on the 1% Treaty (the smallest serious test of whether humans will redirect even 1% from weapons to medicine), and (2) how much military vs. clinical trials, with [Optimitron](../solution/optimocracy.qmd) [@optimocracy-paper-2025] evidence. Fits on a phone. Under a minute.
 
@@ -65,18 +65,18 @@ Your public signal is the **Scoreboard**: how long people live, how much they ea
 
 The pool makes money regardless of whether the targets are met. The only question is who gets it.
 
-| Scenario | What happens to your deposit | What happens to your VOTE points | World-side outcome |
+| Scenario | What happens to your deposit | What happens to your Earth Optimization Points | World-side outcome |
 |:---|:---|:---|:---|
 | **Status quo retirement** | Conventional market: `D × {{< var conventional_retirement_horizon_multiple >}}` | N/A | Current trajectory continues. |
-| **PRIZE fails** | Depositors divide realized pool: `D × {{< var prize_pool_horizon_multiple >}}` | VOTE points expire worthless. | Status quo branch. |
-| **Objectives met** | Deposit routes to VOTE point-holders, not back to you. | Each point pays {{< var vote_token_value >}}. | Everyone gets {{< var treaty_trajectory_lifetime_income_gain_per_capita >}} to {{< var wishonia_trajectory_lifetime_income_gain_per_capita >}} richer over their lifetime. |
+| **Prize fails** | Depositors divide realized pool: `D × {{< var prize_pool_horizon_multiple >}}` | Earth Optimization Points expire worthless. | Status quo branch. |
+| **Objectives met** | Deposit routes to Earth Optimization Points holders, not back to you. | Each point pays {{< var earth_optimization_point_value >}}. | Everyone gets {{< var treaty_trajectory_lifetime_income_gain_per_capita >}} to {{< var wishonia_trajectory_lifetime_income_gain_per_capita >}} richer over their lifetime. |
 
-**Worked example: $100 deposit + 2 VOTE points.**
+**Worked example: $100 deposit + 2 Earth Optimization Points.**
 
-- *Targets missed:* You get back `$100 × {{< var prize_pool_horizon_multiple >}}` = $1,110 from the pool. Your VOTE points pay nothing. You still beat a conventional retirement account (`$100 × {{< var conventional_retirement_horizon_multiple >}}` = $257).
-- *Targets met:* Your $100 deposit goes to VOTE point-holders. Your 2 VOTE points pay `2 × {{< var vote_token_value >}} = {{< var vote_2_claims_payout >}}`. Plus you live in a world where people are {{< var treaty_personal_upside_blend >}} to {{< var wishonia_personal_upside_blend >}} richer and diseases get cured.
+- *Targets missed:* You get back `$100 × {{< var prize_pool_horizon_multiple >}}` = $1,110 from the pool. Your Earth Optimization Points pay nothing. You still beat a conventional retirement account (`$100 × {{< var conventional_retirement_horizon_multiple >}}` = $257).
+- *Targets met:* Your $100 deposit goes to Earth Optimization Points holders. Your 2 Earth Optimization Points pay `2 × {{< var earth_optimization_point_value >}} = {{< var vote_2_claims_payout >}}`. Plus you live in a world where people are {{< var treaty_personal_upside_blend >}} to {{< var wishonia_personal_upside_blend >}} richer and diseases get cured.
 
-Two VOTE points turn a small deposit into a large payout.
+Two Earth Optimization Points turn a small deposit into a large payout.
 
 ::: {.callout-note}
 ## These Numbers Look Large Because the Current Waste Is Large
@@ -157,7 +157,7 @@ Your species has five reasons for continuing to die, and they are all the same r
 ### 1. Nobody Knows Solutions Exist
 
 Most humans have never heard that pragmatic clinical trials (streamlined trials run inside routine care) cost {{< var dfda_pragmatic_trial_cost_per_patient >}} per patient (vs. {{< var traditional_phase3_cost_per_patient >}} traditional) [@dfda-impact-paper-2025]. That redirecting 1% of the murder budget to medical research gets back {{< var treaty_roi_existing_drugs_only >}} times what the campaign costs, in lives saved and health gained [@1-pct-treaty-impact-paper-2025]. That {{< var existing_drugs_efficacy_lag_deaths_total_nounit >}} people have already died (since 1962) waiting for drugs that were proven to work but stuck in regulatory queues [@invisible-graveyard-paper-2025].
-VOTE points pay people to have a conversation they would otherwise avoid. To recruit someone, you show them the numbers: what military spending costs per life saved vs. clinical trials, how many people died waiting for drugs that already worked, what the economic returns look like. The registration process is the education. The recruitment reward is what makes the education spread.
+Earth Optimization Points pay people to have a conversation they would otherwise avoid. To recruit someone, you show them the numbers: what military spending costs per life saved vs. clinical trials, how many people died waiting for drugs that already worked, what the economic returns look like. The registration process is the education. The recruitment reward is what makes the education spread.
 
 ### 2. Everyone Who Knows Assumes They Are Alone
 
@@ -192,9 +192,9 @@ Your species has tried alternatives. "We'll buy it if you build it" works for va
 
 ### 5. Nobody Will Read a 400-Page Manual
 
-The [1% Treaty](../solution/1-percent-treaty.qmd) [@1-pct-treaty-impact-paper-2025], FDA reform, wishocratic allocation, making every government on Earth less stupid at the same time: each is a hard sell individually. Each requires explaining an elaborate mechanism to people who have been trained to assume nothing works. The Game is the simple entry point. Put in $1. If nothing works, you keep your money. If diseases get cured and everyone gets richer, VOTE point-holders get paid. One sentence. One decision.
+The [1% Treaty](../solution/1-percent-treaty.qmd) [@1-pct-treaty-impact-paper-2025], FDA reform, wishocratic allocation, making every government on Earth less stupid at the same time: each is a hard sell individually. Each requires explaining an elaborate mechanism to people who have been trained to assume nothing works. The Game is the simple entry point. Put in $1. If nothing works, you keep your money. If diseases get cured and everyone gets richer, Earth Optimization Points holders get paid. One sentence. One decision.
 
-Once someone puts in $1 or earns a VOTE point, they discover the rest through the recruitment process. The treaty. The trial cost data. The allocation evidence. The Game is the door into everything else. "This sounds too complicated" becomes "I put in $1 and either diseases get cured or I keep my money, so why not."
+Once someone puts in $1 or earns a Earth Optimization Point, they discover the rest through the recruitment process. The treaty. The trial cost data. The allocation evidence. The Game is the door into everything else. "This sounds too complicated" becomes "I put in $1 and either diseases get cured or I keep my money, so why not."
 
 ### 6. Nobody Checks Whether the Money Worked
 
@@ -225,9 +225,9 @@ If one person tells two people and each of them tells two people, the math handl
 
 "No product in history has achieved 32 rounds of doubling." Correct. The table is the mathematical ceiling, not the operational model. The operational model (see [Treaty Feasibility](../appendix/treaty-feasibility.qmd)) assumes each person only convinces {{< var chain_effective_r >}} others (not 2), with overlap and dropout. And the actual coordination target is not 8 billion. The Chenoweth threshold ({{< var global_population_activism_threshold_pct >}}) means you need {{< var three_point_five_percent_of_global_population_nounit >}} verified participants, not the full planet [@3-5-rule]. That is round 28, not round 33.
 
-Your species already turns out at 50-65% for elections that pay nothing and offer a 1-in-30-million chance of influencing anything [@gelman2012]. This referendum takes 30 seconds on a phone, pays VOTE points on success, and the outcome is "end war and disease and get considerably richer." The participation barrier is not "will people do this." It is "will people hear about it." That is what the recruitment incentive solves. Even with heavy dropout, one person reaches global visibility in dozens of rounds, not decades (see [the full comparison](#why-this-referendum-beats-your-elections) below).
+Your species already turns out at 50-65% for elections that pay nothing and offer a 1-in-30-million chance of influencing anything [@gelman2012]. This referendum takes 30 seconds on a phone, pays Earth Optimization Points on success, and the outcome is "end war and disease and get considerably richer." The participation barrier is not "will people do this." It is "will people hear about it." That is what the recruitment incentive solves. Even with heavy dropout, one person reaches global visibility in dozens of rounds, not decades (see [the full comparison](#why-this-referendum-beats-your-elections) below).
 
-The target is {{< var global_registered_voters_nounit >}} people. Half of your species. I realize this sounds like a lot. It is also the number of people who would prefer not dying of preventable disease, which your species tells me is nearly everyone. So the real question is not "can you reach {{< var global_registered_voters_nounit >}}" but "why haven't you already." VOTE points make recruiting worth doing. The Scoreboard makes the coalition visible. At that scale, the treaty passes well before the pool matures.
+The target is {{< var global_registered_voters_nounit >}} people. Half of your species. I realize this sounds like a lot. It is also the number of people who would prefer not dying of preventable disease, which your species tells me is nearly everyone. So the real question is not "can you reach {{< var global_registered_voters_nounit >}}" but "why haven't you already." Earth Optimization Points make recruiting worth doing. The Scoreboard makes the coalition visible. At that scale, the treaty passes well before the pool matures.
 
 ## What's In It For You
 
@@ -254,7 +254,7 @@ Those are not projections about charity. They are projections about your money, 
 |---|---|---|
 | You get richer | You earn more because less money is wasted | {{< var treaty_trajectory_lifetime_income_gain_per_capita >}} (Treaty) to {{< var wishonia_trajectory_lifetime_income_gain_per_capita >}} (Wishonia) [@gdp-trajectories-paper-2025] |
 | You get healthier | You live longer because diseases get cured | {{< var treaty_hale_value_per_capita >}} (Treaty) to {{< var wishonia_hale_value_per_capita >}} (Wishonia) |
-| You get paid | VOTE payout for recruiting people | {{< var vote_token_value >}} per VOTE point |
+| You get paid | Earth Optimization Points payout for recruiting people | {{< var earth_optimization_point_value >}} per Earth Optimization Point |
 | You stop losing money | Your governments stop burning {{< var political_dysfunction_tax_per_person_annual >}}/year of your money on dysfunction | {{< var political_dysfunction_tax_per_person_annual >}}/year (see [Political Dysfunction Tax](../appendix/political-dysfunction-tax.qmd)) |
 | People stop dying | Fewer dead humans per percentage point you shift | {{< var contribution_dalys_per_pct_point_nounit >}} DALYs / {{< var contribution_lives_saved_per_pct_point_nounit >}} lives / {{< var contribution_suffering_hours_per_pct_point_nounit >}} suffering hours per percentage point ([DFDA impact model](../appendix/dfda-impact-paper.qmd)) |
 
@@ -275,24 +275,24 @@ You do not need to tip the scale by yourself. The stakes are so large that even 
 | `$100K` | `0.671%` | `0.192%` |
 | `$1M` | `6.71%` | `1.92%` |
 
-But does a $1K contribution actually shift probability by 0.0067%? You do not need to be the marginal dollar that tips the scale. You need to believe that more campaign capital makes success more likely than less, which is basically obvious. Those thresholds also treat PRIZE deposits like unreimbursed spending, so they are biased against contributing. They survive heavy skepticism: if you think the per-capita gain is 100x smaller than modeled, the break-even for $1K is still only 0.67%. The math does not require trusting the model. It requires believing the model is not off by more than four orders of magnitude. And the ceiling cost is already bounded: {{< var treaty_campaign_total_cost >}} for the 1% Treaty campaign, or {{< var global_political_reform_investment >}} to optimize all public policy globally (see [Problem Statement](#the-problem-statement)).
+But does a $1K contribution actually shift probability by 0.0067%? You do not need to be the marginal dollar that tips the scale. You need to believe that more campaign capital makes success more likely than less, which is basically obvious. Those thresholds also treat Prize deposits like unreimbursed spending, so they are biased against contributing. They survive heavy skepticism: if you think the per-capita gain is 100x smaller than modeled, the break-even for $1K is still only 0.67%. The math does not require trusting the model. It requires believing the model is not off by more than four orders of magnitude. And the ceiling cost is already bounded: {{< var treaty_campaign_total_cost >}} for the 1% Treaty campaign, or {{< var global_political_reform_investment >}} to optimize all public policy globally (see [Problem Statement](#the-problem-statement)).
 
 "Pay people if the outcome happens" and "act once enough others commit" are not new ideas [@tabarrok1998]. The Chenoweth threshold ({{< var global_population_activism_threshold_pct >}}) is the historical floor for when movements become hard to ignore. The RECOVERY trial was run by Oxford and published in the New England Journal of Medicine. Every building block is peer-reviewed. The combination is new.
 
-**The free-rider problem has a structural answer.** "VOTE points only pay if the targets are met, so if I don't believe they'll be met, there's no incentive." This assumes VOTE points are the only incentive. They are not. PRIZE deposits beat conventional retirement on the failure branch ({{< var prize_pool_horizon_multiple >}} vs. {{< var conventional_retirement_horizon_multiple >}}). The deposit incentive works regardless of your belief about success. VOTE points add upside on the success branch.
+**The free-rider problem has a structural answer.** "Earth Optimization Points only pay if the targets are met, so if I don't believe they'll be met, there's no incentive." This assumes Earth Optimization Points are the only incentive. They are not. Prize deposits beat conventional retirement on the failure branch ({{< var prize_pool_horizon_multiple >}} vs. {{< var conventional_retirement_horizon_multiple >}}). The deposit incentive works regardless of your belief about success. Earth Optimization Points add upside on the success branch.
 
-But the deeper answer is that free-riding makes sense when participation is expensive. Clicking a button takes 30 seconds. This referendum pays {{< var vote_token_value >}} and cures diseases. I suspect the participation problem solves itself.
+But the deeper answer is that free-riding makes sense when participation is expensive. Clicking a button takes 30 seconds. This referendum pays {{< var earth_optimization_point_value >}} and cures diseases. I suspect the participation problem solves itself.
 
 I am told humans need time to "evaluate" arithmetic. The arithmetic is patient. The diseases are not.
 
-The selfish reason to play the Game is not the VOTE payout or the pool return. It is that you personally get {{< var treaty_personal_upside_blend >}} richer in a world where diseases get cured.
+The selfish reason to play the Game is not the Earth Optimization Points payout or the pool return. It is that you personally get {{< var treaty_personal_upside_blend >}} richer in a world where diseases get cured.
 
 ## How the Game Spreads
 
 Everything below this point (the lobbying, the treaty campaigns, the clinical trial infrastructure, the [decentralized FDA](../solution/dfda.qmd) [@dfda-spec-paper-2025; @dfda-impact-paper-2025]) is not your job. {{< var global_registered_voters_nounit >}} people whose payout depends on curing diseases will attract the lobbyists, researchers, and institutions who know how to cure diseases. You do not need to understand lobbying or clinical trial design. You need to understand that a large enough pile of money pointed at "cure diseases" attracts the people who do. This is how your species built every industry it has. Nobody coordinated the smartphone supply chain. The money coordinated it.
 
-1. **A host launches the [Planetary Constitutional Convention](planetary-constitutional-convention.qmd) [@planetary-constitutional-convention-paper-2025].** The manual gets stress-tested. PRIZE deposits begin. You deposit and recruit. (This is the hard part. Everything after this is money doing what money does.)
-2. **The referendum opens.** Voters set their preferred military-to-health allocation. Every recruiter who brings a verified participant earns VOTE points. The referendum grows because recruitment is rewarded. Your species calls this "going viral." A rational civilization would call it "obvious."
+1. **A host launches the [Planetary Constitutional Convention](planetary-constitutional-convention.qmd) [@planetary-constitutional-convention-paper-2025].** The manual gets stress-tested. Prize deposits begin. You deposit and recruit. (This is the hard part. Everything after this is money doing what money does.)
+2. **The referendum opens.** Voters set their preferred military-to-health allocation. Every recruiter who brings a verified participant earns Earth Optimization Points. The referendum grows because recruitment is rewarded. Your species calls this "going viral." A rational civilization would call it "obvious."
 3. **The Scoreboard climbs.** Votes, treaty support, pool size, and the two numbers. Each new name makes the next name easier. Your species calls this "momentum." We call it "counting."
 4. **The lobbying campaign starts itself.** Millions of people whose payout depends on the treaty attract lobbyists and institutions because the pool makes showing up profitable. ([Implementation financing](earth-optimization-protocol-v1.qmd) [@earth-optimization-protocol-2025].) Nobody organizes this centrally. The money organizes it, the same way nobody centrally organizes which restaurants open in your city. The restaurants that serve food people want get money. The restaurants that don't, close. You are building the restaurant version of not dying.
 5. **Implementation.** Governments move the money. People compete to cure diseases cheaply. Not your job. Your job was step 1. You can go back to arguing about Pluto now.
@@ -303,9 +303,9 @@ Each stage builds the audience for the next. Nobody coordinates this centrally. 
 
 Everything the Game exists to produce is either healthy life years or more papers. Paying for moving budgets around or enrolling people in trials is paying for plumbing that may or may not deliver water. Your species has a long history of buying plumbing and then celebrating the plumbing while the house burns down. (You call this "overhead.") Pay for water.
 
-**Your PRIZE pool trigger.** By {{< var destructive_economy_50pct_year >}}: targets met, the pool distributes to VOTE point-holders; targets missed, depositors divide it pro rata.
+**Your Prize pool trigger.** By {{< var destructive_economy_50pct_year >}}: targets met, the pool distributes to Earth Optimization Points holders; targets missed, depositors divide it pro rata.
 
-**Why better ideas win.** The Prize pays for outcomes, not methods. Every proposal in this manual (the treaty, the bonds, the Prize Fund, the [decentralized FDA](../solution/dfda.qmd) [@dfda-spec-paper-2025; @dfda-impact-paper-2025]) is improvable plumbing. If someone finds a cheaper way to move the two numbers, VOTE point-holders shift recruitment toward it because it makes them more money. The two numbers do not change. The plumbing is replaceable. That is the point.
+**Why better ideas win.** The Prize pays for outcomes, not methods. Every proposal in this manual (the treaty, the bonds, the Prize Fund, the [decentralized FDA](../solution/dfda.qmd) [@dfda-spec-paper-2025; @dfda-impact-paper-2025]) is improvable plumbing. If someone finds a cheaper way to move the two numbers, Earth Optimization Points holders shift recruitment toward it because it makes them more money. The two numbers do not change. The plumbing is replaceable. That is the point.
 
 ### Why Nobody Needs to Understand This Manual
 
@@ -329,26 +329,26 @@ The planning midpoint is {{< var global_coordination_activation_budget >}}: a bl
 
 One percent of the investable pool. One percent of the military budget. The entire proposal asks for 1% of two things your species already has. One percent of your weapons money and one percent of your savings. That both numbers are "1%" is not a coincidence. It is the smallest amount that compounds into something worth arguing about.
 
-How big does the pool need to be before two VOTE points are worth more than a retirement account?
+How big does the pool need to be before two Earth Optimization Points are worth more than a retirement account?
 
 {{< var prize_pool_retirement_equivalent_principal_latex >}}
 
 {{< var prize_pool_retirement_equivalent_principal >}}. That is when it becomes personally obvious, not the minimum to get started.
 
-**What does a VOTE point pay?** The modeled coordination target is {{< var global_coordination_target_pct >}} of humanity:
+**What does a Earth Optimization Point pay?** The modeled coordination target is {{< var global_coordination_target_pct >}} of humanity:
 
 {{< var global_registered_voters_latex >}}
 
-At that headcount, {{< var global_registered_voters_nounit >}} people participate and split the pool based on how many people they recruited. One referred voter is one point. The payout per VOTE point (at {{< var prize_pool_participation_rate >}} participation):
+At that headcount, {{< var global_registered_voters_nounit >}} people participate and split the pool based on how many people they recruited. One referred voter is one point. The payout per Earth Optimization Point (at {{< var prize_pool_participation_rate >}} participation):
 
-{{< var vote_token_value_latex >}}
+{{< var earth_optimization_point_value_latex >}}
 
 ### Why this referendum beats your elections {#why-this-referendum-beats-your-elections}
 
 | Dimension | Your elections | This referendum |
 |:---|:---|:---|
 | **Effort** | Hours in line, research candidates | 30 seconds on a phone |
-| **Financial reward** | $0 | {{< var vote_token_value >}} modeled success payout |
+| **Financial reward** | $0 | {{< var earth_optimization_point_value >}} modeled success payout |
 | **Your vote matters** | ~1 in 30 million chance of mattering [@gelman2012] | Direct payout proportional to contribution |
 | **What happens after** | Politician may ignore you (they will) | Money goes where the Scoreboard says |
 
@@ -363,11 +363,11 @@ Your species turns out at 50-65% for elections despite getting paid nothing. Thi
 Your politicians care about reelection. Your investors care about returns. Your citizens care about not dying. This is not a design flaw. It is a design constraint. Here is how you work with it instead of against it:
 
 - **Depositors** put money in because they get it back (at {{< var prize_pool_horizon_multiple >}}) if this fails. If it succeeds, diseases get cured and they are {{< var treaty_personal_upside_blend >}} richer.
-- **Recruiters** recruit because every person they bring in earns them a VOTE point.
+- **Recruiters** recruit because every person they bring in earns them a Earth Optimization Point.
 - **Entrepreneurs** compete for a giant implementation contract.
 - **Politicians** get funded for voting yes and watch their opponents get funded if they vote no (details below).
 - **Researchers** compete to prove what works.
-- **Citizens** get a 30-second vote that might pay {{< var vote_token_value >}}.
+- **Citizens** get a 30-second vote that might pay {{< var earth_optimization_point_value >}}.
 
 Every participant is doing exactly what they would do anyway, except pointed at diseases instead of each other.
 
@@ -425,7 +425,7 @@ Humans tell me this is "impossibly complex." I have listed the six capabilities 
 | Cross-pool claim settlement | Interbank settlement. SWIFT processes $5T/day across 200+ countries. Splitting a pool pro rata is simpler than a wire transfer. |
 | Scoreboard aggregation | Election results dashboards. Every democracy already aggregates and publishes vote counts in real time. |
 | Measure the two numbers | WHO and World Bank. They already publish HALE and median income annually. That IS the measurement. |
-| Claim mechanics | Dividend payments. Corporations pay billions of shareholders quarterly. Paying VOTE point-holders once is simpler. |
+| Claim mechanics | Dividend payments. Corporations pay billions of shareholders quarterly. Paying Earth Optimization Points holders once is simpler. |
 
 The Game does not require inventing anything. It is a survey where you prove you are a real person, and a savings account that pays out if enough people convince their governments to stop wasting money. Legally, it is an escrow account with a payout trigger, not a security. The referendum could be a ballot measure; elections already exist. Enforcement: the treaty IS the enforcement, exactly like every other treaty your species has signed.
 
@@ -439,9 +439,9 @@ The {{< var prize_pool_annual_return >}} central value is not a promise. It is t
 
 To anyone in finance, "{{< var victory_bond_annual_return_pct >}} annual returns" sounds like a red flag. Good. It should sound unusual. It is not a market return. It is a political-risk premium. The math: the treaty redirects {{< var treaty_annual_funding >}}/year. A {{< var victory_bond_funding_pct >}} management fee = {{< var victory_bond_annual_payout >}}/year. The campaign costs {{< var treaty_campaign_total_cost >}}. {{< var victory_bond_annual_payout >}} / {{< var treaty_campaign_total_cost >}} = {{< var victory_bond_annual_return_pct >}}. The appropriate comparison is not the S&P 500. It is the return on any binary political bet that hits: lobby for a policy, the policy passes, you capture a percentage of the resulting revenue flow. Lobbying returns routinely exceed 100:1 when they work [@lobbying-roi-calc]. The 272% is contingent on the treaty actually passing, which is the hard part. The transparency is the defense: every number is disclosed, not hidden. And the bondholders become the world's most motivated lobbyists for expanding the treaty, because their returns grow with it. The mechanism that looks like a red flag is the mechanism that makes your treaty durable. (For the full derivation, see [Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd) [@iab-paper-2025].)
 
-### 7. "The VOTE payout is too large/too small"
+### 7. "The Earth Optimization Points payout is too large/too small"
 
-The modeled VOTE point value is {{< var vote_token_value >}} at {{< var prize_pool_participation_rate >}} of global investable assets ({{< var global_investable_assets >}}). That confidence interval ({{< var vote_token_value >}}) reflects the real uncertainty: how much capital flows into the pool. At 0.1% participation, a VOTE point pays hundreds of dollars. At 10%, tens of thousands. The model uses 1% as the central estimate because it parallels the treaty ask (1% of military spending) and because asking people to redirect 1% of their invested savings into a higher-returning vehicle is not an unusual ask.
+The modeled Earth Optimization Point value is {{< var earth_optimization_point_value >}} at {{< var prize_pool_participation_rate >}} of global investable assets ({{< var global_investable_assets >}}). That confidence interval ({{< var earth_optimization_point_value >}}) reflects the real uncertainty: how much capital flows into the pool. At 0.1% participation, a Earth Optimization Point pays hundreds of dollars. At 10%, tens of thousands. The model uses 1% as the central estimate because it parallels the treaty ask (1% of military spending) and because asking people to redirect 1% of their invested savings into a higher-returning vehicle is not an unusual ask.
 
 The pool does not need to be large for the Game to be worth playing. It needs to be large enough that telling two people about it is worth 30 seconds. That is not a high bar. Your species spends more time than that choosing a sandwich.
 
@@ -459,12 +459,12 @@ The {{< var military_to_government_clinical_trials_spending_ratio >}}:1 compares
 | "Does this require trusting one institution?" | No. A credible host can initiate the network, but it should not be the root of trust. The rules, contracts, interfaces, and measurement layers should remain open, forkable, and replaceable so another host can continue the process if the first one fails. |
 | "Does hosting mean endorsing the current manual?" | No. The host endorses the process, not the draft. See [Planetary Constitutional Convention](planetary-constitutional-convention.qmd). |
 | "I'd lose my $1" | On failure, depositors divide the realized pool pro rata. On success, the deposit funds the pool by design. The selfish case is that the rest of your life got much larger than the dollar you put in. |
-| "Can I sell my claim?" | Not inside the protocol. PRIZE stays with the depositor's verified account until resolution. VOTE stays with the verified recruiter who earned it. Private contracts can exist outside the protocol, like assigning future royalties, but the protocol does not broker or enforce them. |
-| "Why can't PRIZE be withdrawn early?" | Because a redeem-anytime exit right would let depositors drain the pool as success became more likely. The Game only works if the capital remains committed until the measurement date. |
+| "Can I sell my claim?" | Not inside the protocol. The deposit claim stays with the depositor's verified account until resolution. Earth Optimization Points stay with the verified recruiter who earned them. Private contracts can exist outside the protocol, like assigning future royalties, but the protocol does not broker or enforce them. |
+| "Why can't Prize be withdrawn early?" | Because a redeem-anytime exit right would let depositors drain the pool as success became more likely. The Game only works if the capital remains committed until the measurement date. |
 | "What if I die or lose access?" | Claims belong to a verified account, not a fragile device. The system needs account recovery, beneficiary designation, and lawful successor control so a 15-year claim does not disappear because you lost your phone or your heirs need to prove who they are. |
 | "Nobody else will participate" | That IS the problem the Game exists to solve. Your deposit is the proof that someone does. The Scoreboard makes everyone else's participation visible. |
 | "I don't understand the mechanism" | You do not need to. [Vote](https://warondisease.org), recruit 2 people. |
-| "Why can't VOTE points be traded?" | Tradability would buy liquidity but invert the signal: outsiders could buy coalition credit without doing coalition work. The public signal this design relies on is simpler: verified participant count, referendum growth, and a visible pool of committed capital. |
+| "Why can't Earth Optimization Points be traded?" | Tradability would buy liquidity but invert the signal: outsiders could buy coalition credit without doing coalition work. The public signal this design relies on is simpler: verified participant count, referendum growth, and a visible pool of committed capital. |
 
 Your mechanism does not need participants to be wise. It needs them to be self-interested, impatient, and capable of reading a scoreboard. The whole thing is [open source](https://github.com/wishonia/earth-optimization-protocol).
 

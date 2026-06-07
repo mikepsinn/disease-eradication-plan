@@ -55,20 +55,20 @@ You've swapped market and competition risk for a single, concentrated political 
 
 Your risk is specific. So you can engineer specific tools to neutralize it.
 
-Your ecosystem has two instruments with two risk profiles. **PRIZE tokens** are claims on the same prize pool: if the plan fails to hit its year 15 targets (global HALE {{< var wishonia_projected_hale_year_15 >}}, median income {{< var wishonia_trajectory_avg_income_year_15 >}}), depositors divide the realized pool pro rata by deposits; if it succeeds, the same pool routes to VOTE claimants. **[IABs](../solution/incentive-alignment-bonds.qmd) [@iab-paper-2025]** fund the lobbying campaign with real capital at risk.
+Your ecosystem has two instruments with two risk profiles. A **Prize deposit** is a claim on the prize pool: if the plan fails to hit its year 15 targets (global HALE {{< var wishonia_projected_hale_year_15 >}}, median income {{< var wishonia_trajectory_avg_income_year_15 >}}), depositors divide the realized pool pro rata by deposits; if it succeeds, the same pool routes to Earth Optimization Points holders. **[IABs](../solution/incentive-alignment-bonds.qmd) [@iab-paper-2025]** fund the lobbying campaign with real capital at risk.
 
-### The Built-In Prediction Market (PRIZE vs. VOTE)
+### Two Ways to Express Your Belief (Without a Vote Market)
 
-The two-token design creates an implicit probability signal with no additional infrastructure:
+The two-instrument design lets people on both sides of the bet participate, without ever creating a tradeable market in votes:
 
 | Belief about treaty success | Rational action | Why |
 | :--- | :--- | :--- |
-| **Likely to succeed** | Earn VOTE tokens (recruit referendum participants) | VOTE tokens allocate the PRIZE pool on success. Higher probability = higher expected value. |
-| **Likely to fail** | Buy PRIZE tokens | Failure leaves depositors with a pro-rata claim on the realized pool. You keep exposure to the pool without needing treaty success for your branch to matter. |
+| **Likely to succeed** | Recruit voters and earn Earth Optimization Points | Points pay out of the pool on success. Higher probability = higher expected value. |
+| **Likely to fail** | Make a Prize deposit | On failure, depositors divide the realized pool pro rata. Your downside is protected whether or not the treaty passes. |
 
-The price ratio between PRIZE and VOTE tokens is a live estimate of treaty probability. No prediction market needed; the financial architecture *is* the prediction market.
+The mix of deposits and recruitment activity is a coarse public signal of how the crowd reads the odds. But note what it is not: there is no tradeable token and no secondary-market price, by design. Earth Optimization Points are earned, never bought, and cannot be sold; deposits are redeemed, not traded. We deliberately did not build a market where votes or coalition membership can be priced and purchased, because a market in votes is a market in influence. The signal is coarser than a live prediction market would be. That is the cost of keeping money and votes on separate tables, and it is worth paying.
 
-This also means every participant is hedged. PRIZE holders retain the failure-branch claim on the pool, while VOTE holders are financially better off if the treaty succeeds. Both still contribute to the referendum and coalition-building process either way. Your species calls this "mechanism design." It's just making sure everyone has a reason to show up regardless of their priors.
+This also means every participant is hedged. Depositors keep the failure-branch claim on the pool, while recruiters are financially better off if the treaty succeeds. Both still contribute to the referendum and coalition-building either way. Your species calls this "mechanism design." It is just making sure everyone has a reason to show up regardless of their priors.
 
 Three additional mechanisms mitigate IAB-specific risk:
 

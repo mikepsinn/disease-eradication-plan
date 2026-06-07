@@ -1,6 +1,6 @@
 ```{python}
 #| echo: false
-#| fig-cap: "Monte Carlo Distribution: PRIZE Pool Size (10,000 simulations)"
+#| fig-cap: "Monte Carlo Distribution: Prize Pool Size (10,000 simulations)"
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -23,7 +23,7 @@ std = 113310375159756.62
 p5 = 1149507393008.097
 p50 = 9883282499025.69
 p95 = 231810059148144.4
-display_name = "PRIZE Pool Size"
+display_name = "Prize Pool Size"
 units = "USD"
 
 # Create figure with two subplots
@@ -113,7 +113,7 @@ add_png_metadata(
 plt.show()
 ```
 
-**Simulation Results Summary: PRIZE Pool Size**
+**Simulation Results Summary: Prize Pool Size**
 
 | Statistic | Value |
 |:----------|------:|
@@ -123,4 +123,4 @@ plt.show()
 | Standard Deviation | $113 trillion |
 | 90% Range (5th-95th percentile) | [$1.15 trillion, $232 trillion] |
 
-*The histogram shows the distribution of PRIZE Pool Size across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*
+*The histogram shows the distribution of Prize Pool Size across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

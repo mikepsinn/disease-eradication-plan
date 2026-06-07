@@ -16,7 +16,7 @@ setup_chart_style()
 
 # Display name for chart title
 
-display_name = "PRIZE Pool Size"
+display_name = "Prize Pool Size"
 
 # Baseline and units
 
@@ -25,7 +25,7 @@ baseline = 27537735880431.008
 # Tornado data from sensitivity analysis
 
 drivers = ['PRIZE_POOL_PARTICIPATION_RATE', 'VENTURE_GROSS_RETURN', 'SCALE_COMPRESSION_FACTOR', 'WISHOCRATIC_CROWD_ALPHA', 'HOME_BIAS_ALPHA']
-driver_labels = ['PRIZE Pool Participation Rate', 'Venture Capital Gross Return', 'Scale Compression Factor', 'Wishocratic Crowd Allocation Alpha', 'Home Bias Return Drag']
+driver_labels = ['Prize Pool Participation Rate', 'Venture Capital Gross Return', 'Scale Compression Factor', 'Wishocratic Crowd Allocation Alpha', 'Home Bias Return Drag']
 impacts_low = [-24783962292387.906, -11284984476423.049, -7688285436466.441, -1730621375391.621, -1730621375391.621]
 impacts_high = [247839622923879.1, 24378578496984.344, 5864075641298.316, 3790971838415.7383, 2605420023735.8516]
 

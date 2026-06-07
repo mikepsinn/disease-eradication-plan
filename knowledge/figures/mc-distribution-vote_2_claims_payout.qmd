@@ -1,6 +1,6 @@
 ```{python}
 #| echo: false
-#| fig-cap: "Monte Carlo Distribution: VOTE Payout for 2 Claims (10,000 simulations)"
+#| fig-cap: "Monte Carlo Distribution: Earth Optimization Points Payout (2 Claims) (10,000 simulations)"
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -23,7 +23,7 @@ std = 54896.542596094
 p5 = 556.9126523129366
 p50 = 4788.246777332084
 p95 = 112307.1984210392
-display_name = "VOTE Payout for 2 Claims"
+display_name = "Earth Optimization Points Payout (2 Claims)"
 units = "USD"
 
 # Create figure with two subplots
@@ -113,7 +113,7 @@ add_png_metadata(
 plt.show()
 ```
 
-**Simulation Results Summary: VOTE Payout for 2 Claims**
+**Simulation Results Summary: Earth Optimization Points Payout (2 Claims)**
 
 | Statistic | Value |
 |:----------|------:|
@@ -123,4 +123,4 @@ plt.show()
 | Standard Deviation | $54,897 |
 | 90% Range (5th-95th percentile) | [$557, $112,307] |
 
-*The histogram shows the distribution of VOTE Payout for 2 Claims across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*
+*The histogram shows the distribution of Earth Optimization Points Payout (2 Claims) across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*
