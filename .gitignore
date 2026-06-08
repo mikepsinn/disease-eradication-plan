@@ -146,6 +146,7 @@ README.html
 
 # Claude hooks cache/logs
 .claude/hooks/__pycache__/
+.claude/hooks/.voice-review-state.json
 !institute-header.tex
 
 

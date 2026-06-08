@@ -82,7 +82,7 @@ If you know some mathematics, you may object that two infinities are no larger t
 
 The wonderful outcome runs on biotechnology, biotechnology runs on [clinical trials](../solution/dfda.qmd), and your governments spend {{< var military_to_government_clinical_trials_spending_ratio >}} times more on the military than on the trials that would cure the diseases killing the taxpayers who pay for the military. So every solution in this book does one basic thing: it moves resources from being really good at killing people toward being good at curing them.
 
-Here are some fun ways to do that. Some of them will work by themselves. Some are complementary and will end war and disease more quickly if you do several at the same time. You only need one to work. Pick whichever one sounds fun to you. (There are ten mechanisms on this list. If each has even a 10% independent probability of working, the chance that at least one works is 1 minus 0.9 to the tenth power, which is 65%. At 20% each, it is 89%. The question was never whether one of these works. The question is whether you will do any of them.) If you have a better idea than any of the ones listed below, please email wishonia@gmail.com and I will add it to this list.
+Here are some fun ways to do that. Some of them will work by themselves. Some are complementary and will end war and disease more quickly if you do several at the same time. You only need one to work. Pick whichever one sounds fun to you. (There are ten mechanisms on this list. If each has even a 10% independent probability of working, the chance that at least one works is 1 minus 0.9 to the tenth power, which is 65%. At 20% each, it is 89%. The question was never whether one of these works. The question is whether you will do any of them.) If you have a better idea than any of the ones listed below, please email {{< var contact_email >}} and I will add it to this list.
 
 - **[The 1% Treaty](../solution/1-percent-treaty.qmd)** [@1-percent-treaty-paper-2025] [@1-pct-treaty-impact-paper-2025] asks governments that own enough nuclear weapons to end civilization {{< var nuclear_winter_overkill_factor_nounit >}} times over, and have cured Alzheimer's zero times, to be one percent more rational.
 - **[The Loving Takeover](../appendix/loving-takeover.qmd)** is humanity buying a controlling stake in every missile company on Earth, for about {{< var defense_takeover_cost_per_human >}} a head, and pointing its lobbyists the other way. It's loving because everyone you buy out ends up richer and lives longer.
@@ -133,6 +133,22 @@ In the short term this is the worse offer. In the long term it is the best trade
 
 Three centuries ago a Frenchman named Pascal noticed the same shape: a small bet for an infinite prize. His version is famous, and broken. This is the same machine with the broken parts replaced.
 
+Here is the bet he drew, for anyone who has not seen it:
+
+| You... | ...and God exists | ...and God does not |
+|---|---|---|
+| **Believe** | Infinite reward | You wasted some Sundays |
+| **Don't believe** | Infinite punishment | You slept in |
+
+Infinity beats Sundays, so he said believe. Here is the same shape with the bugs removed:
+
+| You... | ...and the infinities are real | ...and they are not |
+|---|---|---|
+| **Act** (a share, an afternoon) | Your odds shift toward forever-flourishing and away from forever-suffering | You hold a real asset that does not go to zero and buy some healthy years. A gain on its own. |
+| **Don't act** | You leave two infinities on the table | You keep the afternoon |
+
+There is no losing box on the Act row. That is the whole repair. Pascal's bet had a cost cell (believe, then find there is no god, and the Sundays were for nothing); this one does not, because it is backed by assets and added years instead of faith. The four specific bugs:
+
 | Pascal's wager breaks because | Love's Wager doesn't |
 |---|---|
 | You have to pick one god out of thousands, and might pick wrong | One diagnosis, about ten non-competing fixes. Back them all. Only one has to land. |
@@ -140,7 +156,7 @@ Three centuries ago a Frenchman named Pascal noticed the same shape: a small bet
 | Believing doesn't change the outcome | Funding trials demonstrably produces treatments. |
 | The stake is your eternal soul | The stake is some evenings you were going to waste anyway. |
 
-The "pick one god" problem is worse than picking wrong. Your species has invented thousands of religions, and a great many of them promise damnation specifically for backing the wrong one. So Pascal's bet was never a free lottery ticket. It was one that might detonate: choose the wrong god and you may be punished precisely for choosing, when sitting still would have cost you nothing. And since every one of those thousands dangles the same infinite prize, the arithmetic cannot tell you which to take. Infinity times one option is infinity; infinity times thousands of mutually exclusive options is a number that points nowhere. Pascal's wager does not even resolve to an action. Love's Wager has no wrong door: the ten fixes do not compete, none of them damns you for backing another, and you may back all of them at once. And here is the part no theologian ever got: where nobody can compute which god is least wrong, you can. These mechanisms have probabilities and costs you can actually estimate, rank, and argue about, so even the "which one" question, the one that broke Pascal, is just arithmetic here. You do not go to hell for picking the wrong biotech god. You do the math, pick the least wrong one, and back the others too as insurance. You are not choosing one god out of thousands. You are funding a hospital, and the hospital does not care what you believe.
+The "pick one god" problem is worse than picking wrong. Christianity alone runs about 47,000 separate denominations [@zurlo-christian-denominations-2024], never mind the thousands of other religions, and a great many of them promise damnation specifically for backing the wrong one. Pick a church at random and your odds of the correct one, if a correct one exists, are roughly 1 in 47,000, with a healthy share of the other 46,999 holding an eternity of punishment in reserve for whoever guessed wrong. So Pascal's bet was never a free lottery ticket. It was one that might detonate: choose the wrong god and you may be punished precisely for choosing, when sitting still would have cost you nothing. And since every one of those options dangles the same infinite prize, the arithmetic cannot tell you which to take. Infinity times one option is infinity; infinity times tens of thousands of mutually exclusive options is a number that points nowhere. Pascal's wager does not even resolve to an action. Love's Wager has no wrong door: the ten fixes do not compete, none of them damns you for backing another, and you may back all of them at once. And here is the part no theologian ever got: where nobody can compute which god is least wrong, you can. These mechanisms have probabilities and costs you can actually estimate, rank, and argue about, so even the "which one" question, the one that broke Pascal, is just arithmetic here. You do not go to hell for picking the wrong biotech god. You do the math, pick the least wrong one, and back the others too as insurance. You are not choosing one god out of thousands. You are funding a hospital, and the hospital does not care what you believe.
 
 Pascal asked you to believe something you can't check, hoping to please something you can't detect. This asks you to read a book and do one of the ten things in it.
 
@@ -180,6 +196,6 @@ If you are **greedy**, you can invest in Earth Optimization Services, LLC. The [
 
 ## Welcome aboard
 
-Congratulations. You are now a Humanity Manager at Earth Optimization Services. You are entitled to a vote in how it is run, and to a better world every time it succeeds. You cannot buy that vote and you cannot sell it; it is yours because you live here. As a Humanity Manager, we would appreciate it if you would be nice and helpful to the other humans in the workplace, which is Earth.
+Congratulations. You are now a Humanity Manager at Earth Optimization Services. Your title is President of Earth Optimization Services, and the correct way to address you is Your Excellency. You are entitled to a vote in how it is run, and to a better world every time it succeeds. You cannot buy that vote and you cannot sell it; it is yours because you live here. As a Humanity Manager, we would appreciate it if you would be nice and helpful to the other humans in the workplace, which is Earth.
 
 Thank you.

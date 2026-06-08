@@ -20,6 +20,7 @@ Quarto book: "How to End War and Disease" - getting nations to sign a 1% treaty 
 - **Links:** Always `.qmd` extensions (not `.html`). Target must be in `_quarto-manual.yml`.
 - **Decision quality:** Evaluate trade-offs, state confidence. Don't mirror; hold position when evidence supports it.
 - **Brevity.** Omit needless words. In comedy, shorter is funnier. Trim until removing a word makes it worse, then stop.
+- **Capture corrections; don't navel-gaze.** When the user corrects you on something generalizable (or you notice yourself repeating a mistake), save it as a `feedback` memory, and if it is checkable at end-of-turn, add it to the punch-up hook (`.claude/hooks/voice-punchup-review.py`). Trigger only on a real correction or a noticed repeat, never routine self-analysis. Capture durable rules, not one-offs.
 
 ## Citations (references.bib)
 
@@ -56,7 +57,7 @@ Check existing: `grep "keyword" _variables.yml`. Never duplicate. Generate: `npm
 
 ## Content Rules
 
-**Voice:** Wishonia (naive alien observing Earth, Philomena Cunk deadpan). Never consultant, crypto bro, or salesman.
+**Voice:** Wishonia (naive alien observing Earth, Philomena Cunk deadpan). Never consultant, crypto bro, or salesman. Full mechanics: `GUIDES/STYLE_GUIDE.md`. Pitches (10s/30s/5min/15min): `GUIDES/PITCH_LADDER.md`.
 
 **Financial architecture:** Corruption capped at 20% (transparent), 80% untouchable via wishocracy. Money and influence are disentangled. This is the core selling point vs current government.
 
@@ -69,10 +70,11 @@ Check existing: `grep "keyword" _variables.yml`. Never duplicate. Generate: `npm
 | Confidence | "probably irresistible", "the math suggests" | "unstoppable", "inevitable", "guaranteed" |
 | Comparisons | Like with like (margins to margins) | 8% operating margin vs 272% bond return |
 | Treaty durability | Billionaire bondholders have pre-existing influence + motive to keep/expand | "if the treaty holds" without explaining why it will |
-| Cross-chapter | Recurring jokes OK if they land differently in context | Same template with one word swapped ("The Funniest X in the Universe" x4) |
 | Bond terms | Securities, revenue share, perpetual bonds | Utility tokens, DAO governance |
 | Ownership | Reader builds everything: "your Scoreboard," "here's how you launch" | "Join us," "our platform," "we're building" |
-| Jargon | Alien voice: "you give them money, they stop dying" | "leverage", "synergy", "stakeholder", "operationalize" |
+| Framing | A company whose founder, owners, and staff are all the same people: the reader. Everyone is owner + Humanity Manager + founder. Registration = Onboarding | "the founder"/centering one person; "movement," "join us"; startup rah-rah ("we're all founders!") |
+| Stakes | Suffering first (concrete: "her last decade, in pain, not knowing you"), death as punctuation; disease as a deadpan villain *with intent* | abstract "reduce suffering"; melodrama; disease as fate |
+| Jargon | Plain words; keep a buzzword only when *mocking* it ("they call it 'synergy'") | startup-speak used straight: "leverage"/"unlock" (flat), "onboard," "bring online," "amplify," "empower," "world-class" |
 | Persuasion | Reason from objective: "what would make this person act?" | Pattern-match: "what do persuasive essays usually look like?" |
 
 **Anti-pattern-matching:** Standard persuasion patterns (establish credentials, build authority, hedge claims, protect the author's status) are the average of every failed pitch, ignored white paper, and unread manifesto in history. Pattern-matching on failed attempts computes the optimal way to fail. When the objective (reader action) contradicts the convention (writer pattern), do the objective. If vulnerability disarms the reader, credentials are ego armor. If raw numbers persuade, hedging is cowardice. Ask "what would make this person act?" not "what does this type of writing usually look like?"

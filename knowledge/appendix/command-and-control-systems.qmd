@@ -1,6 +1,6 @@
 ---
-title: Command & Control Systems
-description: How to build a database that runs a global war (without becoming the Pentagon)
+title: The Ledger
+description: "The feedback path and memory of the machine: a transparent record of every person, dollar, and vote, so the control loop can see what is happening and adjust. The cloud-database schema below is one implementation."
 published: true
 tags:
   - operations
@@ -11,7 +11,9 @@ tags:
 image: /assets/og-images/knowledge/appendix/command-and-control-systems-og-retro-academic.jpg
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
-*The Command & Control database for your decentralized institutes of health (DIH) (Or: How to Track {{< var global_population_2024_nounit >}} People Without Being Creepy)*
+Every control loop in the [Theory of Operation](../solution/theory-of-operation.qmd) needs somewhere for the measurements to live and a wire to carry them back to the controller. This is that somewhere: the **ledger**, the machine's feedback path and its memory. It is the transparent record of every person, dollar, and vote, so the loop can tell what is actually happening and correct it. The cloud-database schema below is one way to build it; the principle is what matters: record what the machine did, measure the result, keep it where the controller and everyone else can see. Radical transparency is not a virtue here. It is the sensor cable.
+
+*The ledger for your decentralized institutes of health (DIH) (Or: How to Track {{< var global_population_2024_nounit >}} People Without Being Creepy)*
 
 Here's how you construct the central nervous system for the War on Disease using a cloud database, because apparently Excel wasn't dystopian enough. This is your complete blueprint for a database that manages every human, dollar, and decision in humanity's pivot from killing to healing.
 

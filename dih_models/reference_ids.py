@@ -1291,3 +1291,4 @@ class ReferenceID(str, Enum):
     YANG_2024 = "yang-2024"
     YOUNG_EARTH_CREATIONISM_POLL = "young-earth-creationism-poll"
     ZINC_22_DATABASE = "zinc-22-database"
+    ZURLO_CHRISTIAN_DENOMINATIONS_2024 = "zurlo-christian-denominations-2024"

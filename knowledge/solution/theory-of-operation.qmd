@@ -1,0 +1,85 @@
+---
+title: "Theory of Operation"
+description: "Civilization is a machine with a job: maximize health and wealth. It is broken because nobody wired the feedback loop. Here is the schematic, the way a repair manual draws one, so you can see which part failed."
+published: true
+tags:
+  - control-systems
+  - feedback
+  - optimocracy
+  - architecture
+  - root-cause
+scores:
+  quality: 8
+  value: 9
+  timeliness: 7
+  standalone: 8
+  voice: 8
+  importance: 9
+---
+{{< include /knowledge/includes/setup-parameters.qmd >}}
+
+Every appliance ships with a page called Theory of Operation. It draws the machine as one diagram so that when the machine stops working, you can find the part that failed instead of arguing about it. Civilization did not ship with this page. So here it is. It is the most important page in this manual, because once you can see the machine, the rest of the book is just the parts list.
+
+## What a working machine has
+
+A machine that works has six parts and one habit.
+
+The six parts: a **target**, a **controller** that decides what to do, **actuators** that do it, the **plant** (the thing being acted on), an **output** (the result), and a **sensor** that measures the result. The habit: a **wire from the sensor back to the start**, so the machine compares the result to the target and adjusts. That feedback wire is the entire difference between a thermostat and a fire. Your oven has it. Your government does not.
+
+## The schematic
+
+```
+            ┌──────── feedback: the measured result, carried by the LEDGER ───────┐
+            │                                                                      │
+            ▼                                                                      │
+  SETPOINT ─► (−) ─► OPTIMITRON ─► ACTUATORS ──► PLANT ──► OUTPUT ──► SENSORS ─────┘
+  target    error    controller    modules       economy   actual     measure
+  (median   signal   (fund what    (dFDA,        (gov't    welfare    the result
+  HALE +    = the    works,        Loving        + firms)
+  median    dysfunc- defund what   Takeover,
+  income)   tion tax what fails)   IABs, DIH)
+
+  Set by:   HUMANITY (Wishocracy) sets the target and holds the override.
+  From outside: disturbances (wars, plagues) strike the PLANT.
+  Corruption:  noise (propaganda, gamed statistics) fouls the SENSORS.
+  Not in the loop: WISHONIA is the display panel. She reads the gauges aloud.
+```
+
+## The parts, named
+
+| In the schematic | What it is | The part on your planet |
+|---|---|---|
+| Setpoint | the target the machine aims for | promote the general welfare: maximize median HALE and median after-tax, inflation-adjusted income |
+| Comparator | computes target minus result | the step that asks "is it working?" |
+| Error signal | the gap to close | the [political dysfunction tax](../appendix/political-dysfunction-tax.qmd): the distance between how you live and how you could |
+| Controller | decides the correction | [Optimitron](optimocracy.qmd): fund what moves the numbers, defund what does not |
+| Actuators | apply the correction | the modules: [dFDA](dfda.qmd), [Loving Takeover](../appendix/loving-takeover.qmd), [Incentive Alignment Bonds](incentive-alignment-bonds.qmd), [DIH](dih.qmd) |
+| Plant | the system being run | government, companies, the economy |
+| Output | the result you actually get | real human welfare |
+| Sensor | the instrument that measures | outcome measurement (the [efficiency audit](../appendix/us-efficiency-audit.qmd), dFDA outcome tracking) |
+| Feedback signal | the data the sensor emits | the HALE and income numbers (not the sensor: the reading) |
+| Feedback path | the wire home | the ledger that carries the reading back to the comparator |
+| Operator | sets the target, can hit stop | humanity, through [Wishocracy](optimocracy.qmd) |
+| Display | reads the machine aloud | Wishonia, the narrator. Outside the loop |
+
+## The two parts your government is missing
+
+Your civilization has a target, a plant, and an output. It is missing the rest, and two omissions do the killing.
+
+**No sensor it reads.** The War on Drugs ran for fifty-three years while overdoses rose roughly eighteenfold, and the budget never once consulted the result. A machine that does not measure its own output is operating with less instrumentation than a toaster.
+
+**No way to turn anything down.** Even where a number exists, government has no mechanism to pull money from a thing that is failing its objective. It can only spend more. A thermostat that can only turn the heat up is not a thermostat. It is a fire with a budget.
+
+The gap between the target and the result already has a name in this book: the [political dysfunction tax](../appendix/political-dysfunction-tax.qmd) [@political-dysfunction-tax-paper-2025]. In a working machine that gap is the **error signal**, the single most useful number there is, because it tells the controller exactly what to fix. Your government does not compute it. [Optimitron](optimocracy.qmd) does, and then it does the thing a fire cannot: it turns the failing part down.
+
+## You do not need a perfect sensor
+
+The usual objection: "you cannot measure human welfare precisely, so this cannot work." Correct, and you also cannot measure a spacecraft's position precisely, and you reached the Moon anyway. Apollo's sensors were noisy. The trick was never perfect measurement; it was a loop that corrects faster than the errors pile up. A loop with a blurry sensor lands on the Moon. An open pipe with a perfect sensor that nobody reads lands wherever it was pointed, forever. The requirement was never a flawless gauge. The requirement is a wire back.
+
+## Warning (the part in red ink)
+
+The controller computes the correction. It does **not** choose the target, and it cannot make itself the boss. The target is set by humanity, and the controller is transparent, forkable, and overridable on purpose. A controller that sets its own target is not a thermostat. It is a king, and the whole machine exists to throw kings into the fire, not to forge a nicer one. The controller, [Optimitron](optimocracy.qmd), is built transparent, forkable, and overridable for exactly this reason.
+
+## How to read the rest of the manual
+
+Every module in the parts list is the same six parts at smaller scale. The [decentralized FDA](dfda.qmd) [@dfda-spec-paper-2025; @dfda-impact-paper-2025] is a loop (sensor: patient outcomes; controller: which treatment to try next). The [Loving Takeover](../appendix/loving-takeover.qmd) is a loop (actuator: a board seat; output: a redirected lobbying budget). Each module's chapter carries its own schematic at higher resolution and links back to this page, the way a repair manual's subsystem diagrams all reference the master. If a module ever stops making sense, come back here and find which of the six parts it is.
