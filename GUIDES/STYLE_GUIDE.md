@@ -46,7 +46,7 @@ We're writing "How to End War and Disease" - a book that uses dark humor, absurd
 
 ### DON'T
 
--   **Use corporate buzzwords or academic jargon.** Avoid "synergy," "paradigm shift," "stakeholder," "utilize," "facilitate."
+-   **Use corporate buzzwords, startup-speak, or academic jargon.** Avoid "synergy," "paradigm shift," "stakeholder," "utilize," "facilitate," and the startup family used flat: "leverage"/"unlock" (when it's not the literal key/vault image), "onboard," "bring online," "sign on," "amplify," "empower," "world-class," "best-in-class," "activate." **Exception, and it matters: keep a buzzword when the book is mocking it** ("they call it 'synergy,'" "your species called it 'a robust recovery'"), and keep real meanings ("leverage" the finance term, "mobilization" the WW2 term, a literal "ecosystem"). The test: are we *using* the buzzword (kill it) or *quoting it to laugh at it* (keep it)?
 -   **Try to sound important.** Write like a human, not a textbook.
 -   **Be earnest or evangelical.** Don't write "This will SAVE HUMANITY!" Write "This typically prevents dying, which humans claim to dislike."
 -   **Use euphemisms.** Call things by their real names. Just say "die" or "death."
@@ -142,6 +142,33 @@ Build from reasonable to insane:
 - "271.8% is more than 100%, which shouldn't be possible but is"
 - "After the first few hundred nuclear warheads, you're just showing off"
 
+### The Wrong Adjective on a Grave Noun
+
+Attach a mundane, trivial, or off-register adjective to something grave. The category error is the joke.
+
+- "fewer boring funerals" (death, recategorized as tedium)
+- "the heartbreak of being slowly murdered by your own organs"
+
+### Childlike Excess
+
+Borrow the ad-brochure's gee-whiz over-enthusiasm. Replace flat quantifiers with gleeful repetition.
+
+- "lots and lots of money" (not "more money")
+- "300 planets optimized!"
+
+### The Throwaway Reveal
+
+Bury the single biggest fact in a casual aside, as if it barely merits mention. The anticlimax is the joke.
+
+- "...and lots and lots of money. Also, you own the company."
+- "You have been employed here since birth. (Nobody told you.)"
+
+### The Punch-Up Pass
+
+Funny rarely arrives in the first draft; the first draft is just *clear*, and clear is not funny. After the meaning is right, do one pass that *only* adds funny: find the grave noun and give it the wrong adjective; swap a flat quantifier for childlike excess; turn the biggest reveal into a throwaway; then cut. Do not settle for the first competent version. This is the difference between safe-funny and the funnier version a human with taste would punch up to. Spend it on the lines that matter most: hooks, openers, closers.
+
+**Then run the kill-test on every clause: is it funny OR informative? If neither, cut it.** A joke that isn't funny is just wasted words ("the paperwork was lost in the mail"). And never *announce* a joke ("which is the funny part," "this is the fun bit") — state the thing flat and trust the deadpan. The waste class of error is a rule, not a matter of taste: ship zero of it.
+
 ## Common Voice Failures
 
 | Failure | Example | Fix |
@@ -175,6 +202,22 @@ This is a DIY guide. The reader is the one building, funding, and running every 
 | Join the decentralized FDA | Here's how you build your decentralized FDA |
 | Our platform connects patients to trials | Your decentralized FDA connects patients to trials |
 | We're launching the Scoreboard | Here's how you launch the Scoreboard |
+
+## Earth Optimization Services: Company, Managers, Enemy
+
+Recent binding refinements (2026). They extend "The Reader Owns Everything"; they do not replace it.
+
+**A company, never a movement.** EOS is a company, not a movement, cause, or thing-you-join. "Movement" is the vocabulary of efforts that failed; never call our own work "the movement" (referencing *other* movements, e.g. the 3.5% rule, is fine). Same instinct as the "never pitch / join us" ban: a company gets its owners to do their jobs; a movement begs strangers to believe.
+
+**Everyone is a Humanity Manager (owner-operator, not subordinate).** "Humanity Manager" is a capitalized proper-noun title every human already holds. It is the comic frame for "you own and run this" (consistent with reader-owns-everything), not "you work for us." Registering and voting = completing **Humanity Manager Onboarding** (the orientation film plus the 20 Questions). The job: clear your own items on the **To-Do List for Humanity**, and get the Managers you bring on to clear theirs. Capitalize the title and the program names. The "employed since birth" joke lives ONLY in the educational film; do not repeat it elsewhere.
+
+**No special founder, no boss, no overlord; everyone is all three roles at once.** In a normal company the founder, the owners, and the workers are different people with different power. EOS collapses them: every human is the owner (one equal vote), the staff (a Humanity Manager), and the founder (you are building it; it did not exist until people like you started). So never center an individual founder, and never write "we" or "our" as an entity the reader joins; the reader owns, runs, and founded the thing. Deadpan only: "You founded Earth Optimization Services; you were busy and missed the meeting" is the voice. "We're all founders here!" is death. (Even in *investor* documents, frame it as equal ownership: "you own as much of it as the people who run it do" (one equal civic vote, operators included), with the financial notes kept separate (investors buy a return, not control). Never say "nobody owns it"; that contradicts everyone-owns-it.)
+
+**The pitch ladder and the brochure are the allowed "pitch" exceptions.** "Never pitch" means don't beg the reader to join. But a Humanity Manager's job includes recruiting two more people, so a *recruiting script* ("here is how you explain this in ten seconds") is instructional, not a sales pitch aimed at the reader. The ladder lives in `GUIDES/PITCH_LADDER.md`. The EOS brochure's "How to Order" register is a deliberate genre parody (Universe Optimization Services). Outside those two, the ban stands.
+
+**Suffering first; death is the punctuation.** The product is healthy years (HALE), so most of what it delivers is *less suffering*, not just *less death*. Lead with concrete suffering ("your mother's last decade, in pain, not knowing your name"), never the abstract noun ("reduce suffering"). Use death as the sharp final beat. People fear a prolonged, undignified decline (and a loved one's) more than a clean death; suffering is the fear they cannot rationalize away. This refines "just say die": still say die, but make suffering the body and death the punchline.
+
+**Disease is an active villain, but a cheerfully-described one.** The biggest obstacle is fatalism ("disease is just life"). Beat it by giving disease *intent*, then describe its crimes in the bright ad voice rather than as a threat: "Say goodbye to the heartbreak of being slowly murdered by your own organs!" or "the diseases hard at work on your family as we speak (how rude)." That converts fate (accept it) into an enemy (fight it), without tipping into a horror-movie trailer. One strong verb, never verb-plus-adverb ("murder," not "brutally murder"). A hook, not every line.
 
 ## Remember: Conciseness Above All
 

@@ -376,6 +376,11 @@ def generate_variables_yml(
     if citation_mode in ("separate", "both"):
         variables["total_citation_count"] = str(cite_count)
 
+    # Static (non-numeric) project variable: the public contact email.
+    # Defined here (not in parameters.py, which is numeric-only) so {{< var contact_email >}}
+    # resolves everywhere and survives regeneration. Single source of truth.
+    variables["contact_email"] = "wishonia@warondisease.org"
+
     # Write YAML file
     with open(output_path, "w", encoding="utf-8", newline='\n') as f:
         # Add header comment
