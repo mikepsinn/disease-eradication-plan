@@ -1,6 +1,6 @@
 ---
 title: "I Am Retarded"
-description: "There is no line between smart people and the other kind. There is a ladder, from snails up to perfect logic, and every human who ever lived (the geniuses, the presidents, you) is bunched together near the bottom of it, squinting up. Which means a large fraction of what you believe, voted for, and are angry about is probably wrong. This chapter proves it, kindly, before the book asks you to change your mind."
+description: "There is no line between smart people and the other kind. There is a ladder, from snails up to perfect logic, and every human who ever lived (the geniuses, the presidents, all of us) is bunched together near the bottom of it, squinting up. Which means a large fraction of what we believe, what we voted for, and what we are angry about is probably wrong."
 published: true
 tags:
   - cognition
@@ -53,15 +53,11 @@ are common-knowledge history, illustrative, uncited -- harden if a reviewer asks
 -->
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 
-I am retarded.
+I am retarded and I would like to explain why.
 
-I want to be precise about what I mean, because it's one of the two most important sentences in this book, and you're going to want to argue with it.
+There's this thing called information, and this thing called logic. If you've got both, my hat's off to you, and I would like to meet you. But my theory is that no such human exists. 
 
-## There's this thing called information, and this thing called logic
-
-If you have perfect information and perfect logic, that is what I'd call smart. The real thing. If you've got both, my hat is off to you, and I would genuinely like to meet you. But my theory is that no such human exists. Which means every human suffers from some degree of relative mental retardation relative to smart. Including me. Including you. Especially the ones currently in charge of the nuclear weapons.
-
-So hold your hand up at the top of your head, and call that smart. Snails are down around your shoes. Monkeys are somewhere around the middle of your shin. Humans are a little bit above that. Dolphins are a little bit above the humans, and have the decency not to start wars about it. So we are all varying degrees of retarded, bunched together near the ankle, and the gap between the smartest human who ever lived and the village idiot is about two fingers wide, which neither of them can see from down there.
+Hold your hand up at the top of your head, and call that smart (i.e. perfect information and rationality). Snails are down around your shoes. Monkeys are somewhere around the middle of your shin. Humans are a little bit above that. Dolphins are a little bit above the humans, and have the decency not to start wars about it. 
 
 ::: {.diagram}
 ```
@@ -92,12 +88,12 @@ GROUND
 ```
 :::
 
-Every human, genius to village idiot, fits inside that tiny bracket near the bottom.
+Every human, genius to village idiot, fits inside that tiny bracket near the bottom. So we are all varying degrees of retarded, bunched together near the ankle, and the gap between the smartest human who ever lived and the village idiot is about two fingers wide.
 
 ::: {.callout-note appearance="simple" icon=false}
 **Theorem (Universal Retardation).** Define *smart* as the state of possessing perfect information and perfect logic. Define *retarded* as any nonzero distance from smart. Then:
 
-1. No human possesses perfect information. (Proof: finite lifespan, bounded sensory apparatus, incomplete observation of the universe. You have not read every book. You have not observed every event. You are missing data.)
+1. No human possesses perfect information. (Proof: finite lifespan, bounded sensory apparatus, incomplete observation of the universe. No one has read every book. No one has observed every event. Everyone is missing data.)
 2. No human possesses perfect logic. (Proof: cognitive biases are universal and empirically measured. Confirmation bias, anchoring, availability heuristic, sunk-cost fallacy, and approximately 200 others have been documented in every population tested, including the researchers who documented them.)
 3. Therefore every human is retarded. ∎
 
@@ -120,7 +116,7 @@ I know this sounds like "the ends justify the means." It is. I should say that p
 
 Here is the main problem: everyone thinks they're right. And the day everyone realizes they're wrong about a lot of fucking stuff is the first day anyone gets to stop being wrong.
 
-So let me say the thing the rest of this book is too polite to put plainly. A significant percentage of what you believe, what you have voted for your entire life, what you are angry about, and the solutions you are passionate about, is probably wrong. Not wrong because you are bad. Wrong because it is not actually moving you toward the things you would want if you had thought about it a little more deeply, in different ways than you currently do. You reached those conclusions on the same retarded hardware as everyone else: fast, hot, and then defended to the death.
+So let me say the thing the rest of this book is too polite to put plainly. A significant percentage of what we believe, what we have voted for, what we are angry about, and the solutions we are passionate about, is probably wrong. Not wrong because we are bad. Wrong because it is not actually moving us toward the things we would want if we had thought about it a little more deeply, in different ways than we currently do. We reached those conclusions on the same retarded hardware as everyone else: fast, hot, and then defended to the death.
 
 ## The people in charge are not the smart ones
 
@@ -142,7 +138,7 @@ Now imagine if someone had bought enough Ethyl Gasoline Corp shares to change th
 
 Another entry. A doctor named Ignaz Semmelweis worked out that if doctors washed their goddamn hands before delivering a baby, the share of mothers who died of sepsis afterward fell from about one in six to barely one in a hundred [@semmelweis-handwashing-2024]. So he instituted a rule in his hospitals: doctors had to wash their goddamn hands after the autopsies and before the deliveries. The doctors, being retarded, were offended. How dare he suggest they were filthy, and killing their own patients. As a reward for the discovery, they had him committed to an asylum, where he died within weeks, beaten by the guards [@semmelweis-handwashing-2024]. And then they went back to not washing their hands, and went on killing an enormous number of mothers and babies over the decades it took the profession to admit he was right, because they did not want to wash their goddamn hands.
 
-The reason I tell you these two stories is that you need to calibrate your expectations about the wisdom of the people you currently think of as smart. Scientists, and math, and data, are smarter than the gut instinct of whatever human happened to be good enough at lying his way into power.
+The reason these two stories matter is that we need to calibrate our expectations about the wisdom of the people we currently think of as smart. Scientists, and math, and data, are smarter than the gut instinct of whatever human happened to be good enough at lying his way into power.
 
 ## The pattern is the decades
 
@@ -160,23 +156,23 @@ This is why [Earth Optimization Services](../solution/earth-optimization-service
 
 ## Every human defect is curable with biotechnology
 
-The 3 main problems in humans are greed, laziness, and stupidy.  
+The 3 main problems in humans are greed, laziness, and stupidity.
 
-I am very greedy. If there was a way I could steal your money without anyone finding out about it, I would probably do it.  In my defense, I would actually look up what the poverty line is where you live or like the amount of money required to maximize happiness, and I wouldn't steal enough to make you technically poor or homeless or unhappy or anything. But I'd rather me decide what to do with the rest of your money than you.  
+I am very greedy. If there was a way I could steal your money without anyone finding out about it, I would probably do it. In my defense, I would actually look up what the poverty line is where you live or like the amount of money required to maximize happiness, and I wouldn't steal enough to make you technically poor or homeless or unhappy or anything. But I'd rather me decide what to do with the rest of your money than you.
 
 I am extremely lazy. If I could lie around on a cotton candy cloud watching The Simpsons for eternity without starving to death, eating garbage until I turned into a big gelatinous blob, I would definitely do that.
 
 Every political faction sees one of these defects in the other factions and is blind to its own. Conservatives look at progressives and see lazy: people who want money they did not earn. They are often right. Progressives look at conservatives and see greedy: people hoarding resources while others suffer. They are also often right. Libertarians look at both and see stupid: people trusting a government that has demonstrably failed at most things it attempts. They are also right. Each faction has correctly identified a real defect in the other two and is somehow unable to notice the one in the mirror.
 
-Here is the part nobody brings up. Every one of these defects is a biochemical state. Laziness is low dopaminergic drive. Stupidity is undertrained pattern recognition. Greed is a miscalibrated reward circuit. Biochemical states are adjustable. We know this because drugs adjust them every day, badly, by accident, with side effects, because the clinical trials that would do it well are not funded, because the money goes to the military, because we are too lazy and stupid and greedy to redirect it. The cure for being retarded is biotechnology. Biotechnology runs on clinical trials. Your government defunds clinical trials in favor of the military. So the most retarded thing about being retarded is that you have the cure for retardation and you are spending it on bombs.
+Here is the part nobody brings up. Every one of these defects is a biochemical state. Laziness is low dopaminergic drive. Stupidity is undertrained pattern recognition. Greed is a miscalibrated reward circuit. Biochemical states are adjustable. We know this because drugs adjust them every day, badly, by accident, with side effects, because the clinical trials that would do it well are not funded, because the money goes to the military, because we are too lazy and stupid and greedy to redirect it. The cure for being retarded is biotechnology. Biotechnology runs on clinical trials. Our governments defund clinical trials in favor of the military. So the most retarded thing about being retarded is that we have the cure for retardation and we are spending it on bombs.
 
 ## The most retarded thing of all
 
-You created governments to promote the general welfare. That is the phrase. It means maximize health and wealth: health-adjusted life expectancy and median after-tax, inflation-adjusted income. That is the job. You gave them roughly $36 trillion a year to do it. Since 1900 they have spent {{< var cumulative_military_spending_fed_era >}} of it murdering {{< var war_deaths_since_1900_nounit >}} of their employers. That included something like 102 million children, a few hundred thousand scientists, a few hundred thousand engineers, over a million teachers, a million nurses, a few hundred thousand doctors. Murdering {{< var war_deaths_since_1900_nounit >}} of your employers is the opposite of promoting their welfare. Nobody is bringing this up.
+We created governments to promote the general welfare. That is the phrase. It means maximize health and wealth: health-adjusted life expectancy and median after-tax, inflation-adjusted income. That is the job. We gave them roughly $36 trillion a year to do it. Since 1900 they have spent {{< var cumulative_military_spending_fed_era >}} of it murdering {{< var war_deaths_since_1900_nounit >}} of their employers. That included something like 102 million children, a few hundred thousand scientists, a few hundred thousand engineers, over a million teachers, a million nurses, a few hundred thousand doctors. Murdering {{< var war_deaths_since_1900_nounit >}} of their employers is the opposite of promoting their welfare. Nobody is bringing this up.
 
-We discovered the scientific method a long time ago. It is easy to collect data on health and wealth. It is easy to look at what policies and budgets are predictive of increasing them. It is easy to find which countries spend the least and have above-average outcomes. This is called an efficient frontier and it has existed as a concept for decades. You did not do any of this. Instead you found a loudmouth who inherited $600 million and then proceeded to bankrupt six of the companies he created, which required actual management. He screwed contractors, retirees, and investors in each one. Then you put him in charge of everything. You had 300 million alternative choices.
+We discovered the scientific method a long time ago. It is easy to collect data on health and wealth. It is easy to look at what policies and budgets are predictive of increasing them. It is easy to find which countries spend the least and have above-average outcomes. This is called an efficient frontier and it has existed as a concept for decades. We did not do any of this. Instead we found a loudmouth who inherited $600 million and then proceeded to bankrupt six of the companies he created, which required actual management. He screwed contractors, retirees, and investors in each one. Then we put him in charge of everything. We had 300 million alternative choices.
 
-Even if you, for some reason, do not want to use the scientific method to figure out the best policies, and you just want some retarded human to make all the decisions, you would at least pick one who had demonstrated good judgment in resource allocation. You would find somebody who inherited nothing and used their brain to turn whatever they had into more. Instead you picked the exact opposite: someone who inherited a pile of resources he did not earn, made terrible decisions with them, screwed everyone who trusted him, and then you handed him the entire country. That is the most retarded thing on the list and nobody on the list thinks the system that produces this is retarded, which is the whole problem.
+Even if we, for some reason, do not want to use the scientific method to figure out the best policies, and we just want some retarded human to make all the decisions, we would at least pick one who had demonstrated good judgment in resource allocation. We would find somebody who inherited nothing and used their brain to turn whatever they had into more. Instead we picked the exact opposite: someone who inherited a pile of resources he did not earn, made terrible decisions with them, screwed everyone who trusted him, and then we handed him the entire country. That is the most retarded thing on the list and nobody on the list thinks the system that produces this is retarded, which is the whole problem.
 
 ## Watch which hand you're watching
 
@@ -220,7 +216,7 @@ And watch me do it. I just said "conservatives" and "progressives" and "libertar
 
 This is why math is better. Math is the least lossy language we have, the closest thing to a universal one. Two plus two is the same in every tongue and every skull. The conclusion: use words as little as possible, and math and logic as much as possible, when deciding what to actually do. Do not run a civilization on word-feelings about categories. Run it on math about specific, measured outcomes. That is the entire idea behind [a machine that picks policy by checking the thousands of places that already tried it](../solution/optimocracy.qmd). The rest is detail.
 
-So: I am retarded. So are you. So is everyone you have ever voted for. Now that none of us are pretending otherwise, we can finally get on with being a little less wrong, which is the only direction anything good has ever come from. The rest of this book is a list of ways to do it.
+So: I am retarded. So are all of us. So is everyone we have ever voted for. Now that none of us are pretending otherwise, we can finally get on with being a little less wrong, which is the only direction anything good has ever come from. The rest of this book is a list of ways to do it.
 
 ## Why I told you all of this
 
