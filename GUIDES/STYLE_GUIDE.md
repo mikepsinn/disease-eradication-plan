@@ -206,6 +206,8 @@ This is a DIY guide. The reader is the one building, funding, and running every 
 
 Recent binding refinements (2026). They extend "The Reader Owns Everything"; they do not replace it.
 
+**Wishonia's identity (keep consistent).** Wishonia Love is the alien narrator and teacher: CEO of **Universe Optimization Services**, of which **Earth Optimization Services** is the Earth subsidiary. 
+
 **A company, never a movement.** EOS is a company, not a movement, cause, or thing-you-join. "Movement" is the vocabulary of efforts that failed; never call our own work "the movement" (referencing *other* movements, e.g. the 3.5% rule, is fine). Same instinct as the "never pitch / join us" ban: a company gets its owners to do their jobs; a movement begs strangers to believe.
 
 **Everyone is a Humanity Manager.** A capitalized title every human already holds: the comic frame for "you own and run this," not "you work for us." Onboarding = the orientation film + the 20 Questions. The job: clear your own items on the **To-Do List for Humanity** and get the people you recruit to clear theirs.

@@ -18,3 +18,19 @@
     display: none !important;
 }
 
+/* ASCII schematics wrapped in ::: {.diagram}.
+   Keep monospace diagrams intact and let wide circuit drawings scroll. */
+.diagram pre {
+    overflow-x: auto;
+    white-space: pre;
+}
+.diagram pre code {
+    white-space: pre;
+}
+@media (max-width: 600px) {
+    .diagram pre,
+    .diagram pre code {
+        font-size: clamp(11px, 3vw, 14px);
+        line-height: 1.3;
+    }
+}

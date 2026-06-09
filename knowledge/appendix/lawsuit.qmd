@@ -216,13 +216,15 @@ Before the legal claims: I do not want you to die of pancreatic cancer, ovarian 
 
 I am a shareholder of [COMPANY NAME] (the "Company"). I write to demand that the Board investigate whether the Company's annual lobbying expenditure produces a positive or negative return on investment for shareholders, including the effect on the shareholders', their families', and the Board members' own probability of dying from a disease that would have a treatment if the lobbying had been pointed the other way.
 
-The analysis below demonstrates that this expenditure destroys shareholder value. I request that the Board commission an independent analysis of the claims herein and provide a written response within 60 days.
+The analysis below demonstrates that this expenditure destroys shareholder value. I request that the Board commission and publish an independent, long-horizon policy-return analysis using the [Optimal Policy Generator](optimal-policy-generator-spec.qmd) [@opg-paper-2025] and [Optimal Budget Generator](optimal-budget-generator-spec.qmd) [@obg-paper-2025] framework. The analysis should compare the Company's current lobbying objective against alternative objectives available to the same lobbyists and budget, including the [1% treaty](../solution/1-percent-treaty.qmd) and pragmatic clinical trials. It should rank each option by long-term shareholder value, global GDP, strategic security, disease-burden reduction, shareholder survival probability, and general welfare. Please provide a written response within 60 days.
 
 ### 1. The Expenditure in Question
 
 The Company spent $[X] million on lobbying in [YEAR] (source: Company SEC filings; [OpenSecrets.org](https://www.opensecrets.org/industries/lobbying.php?ind=D)). The stated purpose of this expenditure is to maintain or increase federal military spending, which is the Company's primary revenue source.
 
 The question is whether this expenditure actually achieves its stated purpose of benefiting the Company and its shareholders.
+
+The question is not whether the lobbying creates invoices. Ship-sinking creates invoices. The question is whether this is the highest-return use of shareholder money, political access, human labor, and time.
 
 ### 2. The Investment the Lobbying Maintains
 
@@ -245,9 +247,11 @@ If 1% of military spending were redirected to pragmatic clinical trials (a scena
 | Modeled cumulative lifetime income per person | {{< var current_trajectory_cumulative_lifetime_income >}} | {{< var treaty_trajectory_cumulative_lifetime_income >}} |
 | Incremental lifetime income | Baseline | {{< var treaty_trajectory_lifetime_income_gain_per_capita >}} |
 
-Source: GDP trajectory modeling at [manual.warondisease.org/knowledge/economics/gdp-trajectories.html](https://manual.warondisease.org/knowledge/economics/gdp-trajectories.html). CAGR differential derived from healthcare vs. military economic multipliers (CBO) and disease burden as percentage of GDP (WHO).
+Source: GDP trajectory modeling at [GDP Trajectories](../economics/gdp-trajectories.qmd) [@gdp-trajectories-paper-2025]. CAGR differential derived from healthcare vs. military economic multipliers (CBO) and disease burden as percentage of GDP (WHO).
 
 The Company's lobbying to maintain the current military spending percentage is lobbying to keep small the economy that funds the Company's contracts. The lobbying produces less Company revenue, not more, over any horizon longer than 5-7 years.
+
+GDP notices bomb factories because bomb factories have payroll. This is not the same thing as value. The Board's fiduciary question is: compared to what?
 
 ### 4. Impact on Shareholder Wealth, Health, and Lives
 
@@ -269,7 +273,7 @@ If this case is dismissed, the lobbying continues; the trial queue stays {{< var
 
 This reallocation is not unprecedented. After the World War II peak, US military spending fell by {{< var post_ww2_military_cut_pct >}} in two years. Current US military spending is {{< var us_military_spending_current_vs_prewar_multiplier >}} the pre-World War II baseline in constant dollars. The period following the {{< var post_ww2_military_cut_pct >}} post-war reduction produced the greatest sustained economic expansion in American history.
 
-The Board should ask whether its lobbying is helping shareholders adapt to the next high-return allocation or merely extending the old one because the old one has lobbyists.
+The Board should ask whether its lobbying is buying the best future available to shareholders, or merely defending the old invoice machine because the old invoice machine already has lobbyists.
 
 ### 6. Personalized Impact on [COMPANY] CEO
 
@@ -318,12 +322,13 @@ The Company's lobbying expenditure is a significant, recurring use of shareholde
 3. If yes, does that analysis account for the GDP growth differential between the status quo and a 1% redirection scenario ({{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_20 >}} at year 20)? Please provide the analysis.
 4. Has the Board considered whether maintaining the current ratio ({{< var military_to_government_clinical_trials_spending_ratio >}} to 1, military spending to government clinical trials) suppresses the economic growth that would increase the Company's total addressable market?
 5. Is the Board aware that the most rigorous recent empirical study in the field (Saeed, 2025, *Defence and Peace Economics* 36(1):86-101, using instrumental-variables methodology on a panel of 133 countries from 1960 to 2012) estimates that an increase in military expenditure of one percentage point of GDP reduces economic growth by approximately 1.10 percentage points? If the Board accepts that estimate, how does the Board reconcile its lobbying to maintain current US spending ratios with a finding that those ratios are shrinking the economy that funds the Company's contracts? If the Board rejects the estimate, please disclose the methodologically superior analysis on which the Board relies. The supporting analytical framework, including the model that decomposes wartime national power into its productive-base, pivot-speed, and competence terms, is at [The Eisenhower Curve](../economics/eisenhower-curve.qmd).
+6. Has the Board compared the current lobbying objective against lobbying for the 1% treaty, pragmatic clinical trials, or another policy selected by an open policy-return analysis? If not, why is the current objective presumed optimal?
 
 ### 8. Proposed Resolution
 
 I do not seek monetary damages. I am not asking the Company to do anything new. I am asking the Company to *stop* doing something specific and start doing something the same shape with the same money. Specifically:
 
-The Company redirects its annual lobbying objective from maintaining current military spending levels to supporting a global agreement to redirect 1% of military spending to pragmatic clinical trials.
+The Company redirects its annual lobbying objective from maintaining current military spending levels to the highest-ranked policy identified by the independent analysis. If the 1% treaty wins, lobby for the 1% treaty. If pragmatic clinical trials win, lobby for pragmatic clinical trials. If another policy beats both on long-term shareholder value and general welfare, publish the analysis and lobby for the winner.
 
 What this looks like in practice: on the Monday morning after the settlement is signed, the same lobbyists the Company currently retains will, in the same offices, with the same access, start arguing for the 1% treaty on Capitol Hill instead of arguing against any redirection of military spending. Same payroll. Same congressional relationships. Same dinners. Different ask. Nothing in the Company's operations, supply chain, customer relationships, or staffing changes. The only thing that changes is what the Company's lobbyists are saying in the meetings they were already going to have.
 
@@ -609,7 +614,7 @@ Rule 14a-8 can be powerful because the company's own proxy machinery distributes
 
 The clean proposal is not "support the treaty now." The clean proposal is:
 
-> Shareholders request that the Board commission and disclose an independent ROI analysis of lobbying expenditures related to defense appropriations, procurement, and military-contract expansion, including comparison to a 1% military-to-clinical-trials redirection scenario.
+> Shareholders request that the Board commission and disclose an independent long-horizon policy-return analysis comparing current defense-appropriations lobbying against alternative lobbying objectives available to the same budget and relationships, including the 1% treaty and pragmatic clinical trials, ranked by long-term shareholder value, global GDP, strategic security, disease-burden reduction, and shareholder survival probability.
 
 That forces the arithmetic without asking the SEC staff to adjudicate the meaning of life in one proxy cycle.
 

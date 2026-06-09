@@ -1104,6 +1104,7 @@ class ReferenceID(str, Enum):
     STIGLITZ2010 = "stiglitz2010"
     STRATMANN2002 = "stratmann2002"
     STRATMANN2005 = "stratmann2005"
+    STROKE_YOUNG_ADULTS_RISING_2025 = "stroke-young-adults-rising-2025"
     SUGAR_SUBSIDIES_COST = "sugar-subsidies-cost"
     SUICIDE_DEATHS_VS_WAR_DEATHS = "suicide-deaths-vs-war-deaths"
     SUMNER2007 = "sumner2007"

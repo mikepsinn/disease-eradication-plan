@@ -38,20 +38,59 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 9 parameters used in the analysis, organized by type:
+This appendix documents all 12 parameters used in the analysis, organized by type:
 
-- External sources (peer-reviewed): 5
-- Calculated values: 2
+- External sources (peer-reviewed): 7
+- Calculated values: 3
 - Core definitions: 2
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (2 parameters) • [External Data Sources](#sec-external) (5 parameters) • [Core Definitions](#sec-definitions) (2 parameters)
+[Calculated Values](#sec-calculated) (3 parameters) • [External Data Sources](#sec-external) (7 parameters) • [Core Definitions](#sec-definitions) (2 parameters)
 
 
 ## Calculated Values {#sec-calculated}
 
 Parameters derived from mathematical formulas and economic models.
+
+### Diseases Without Effective Treatment: 6,650 diseases {#sec-diseases_without_effective_treatment}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Number of diseases without effective treatment. 95% of 7,000 rare diseases lack FDA-approved treatment (per Orphanet 2024). This represents the therapeutic search space that remains unexplored.
+
+**Inputs**:
+
+- [Total Number of Rare Diseases Globally](#sec-rare_diseases_count_global) 📊: 7,000 diseases (95% CI: 6,000 diseases - 10,000 diseases)
+
+$$
+\begin{gathered}
+N_{untreated} \\
+= N_{rare} \times 0.95 \\
+= 7{,}000 \times 0.95 \\
+= 6{,}650
+\end{gathered}
+$$
+
+**Methodology**: [@rare-disease-only-5pct-have-treatment]
+
+*~ Medium confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-diseases_without_effective_treatment.qmd >}}
+
+{{< include ../figures/sensitivity-table-diseases_without_effective_treatment.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-diseases_without_effective_treatment.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-diseases_without_effective_treatment.qmd >}}
+
+:::
 
 ### Ratio of Military to Government Clinical Trials Spending: 604:1 {#sec-military_to_government_clinical_trials_spending_ratio}
 
@@ -132,6 +171,22 @@ $$
 ## External Data Sources {#sec-external}
 
 Parameters sourced from peer-reviewed publications, institutional databases, and authoritative reports.
+
+### Annual Terrorism Death Risk (1 in X): 30 million people {#sec-annual_terrorism_death_risk_denominator}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual probability of being killed by terrorism expressed as '1 in X'. An American's annual odds of dying in a terrorist attack are approximately 1 in 30 million.
+
+**Source**: [@chance-of-dying-from-terrorism-1-in-30m]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*✓ High confidence*
+
+:::
 
 ### Annual Deaths from All Diseases and Aging Globally: 55 million deaths/year {#sec-global_annual_deaths_curable_diseases}
 
@@ -230,6 +285,30 @@ Approximate number of warheads needed to trigger a regional-scale nuclear winter
 {{< include ../figures/distribution-nuclear_winter_warhead_threshold.qmd >}}
 
 *~ Medium confidence*
+
+:::
+
+### Total Number of Rare Diseases Globally: 7,000 diseases {#sec-rare_diseases_count_global}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Total number of rare diseases globally
+
+**Source**: [@95-pct-diseases-no-treatment]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [6,000 diseases, 10,000 diseases] • Distribution: Normal
+
+**What this means**: There's significant uncertainty here. The true value likely falls between 6,000 diseases and 10,000 diseases (±29%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The normal distribution means values cluster around the center with equal chances of being higher or lower.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-rare_diseases_count_global.qmd >}}
+
+*✓ High confidence*
 
 :::
 

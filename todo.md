@@ -1,32 +1,28 @@
 # Open Tasks
 
-## Week 1: Entities + first revenue (zero SEC question)
+Current focus: **ship the front door** and **stand up the investor fund** (accredited money in → buy controlling/influential stakes in the companies that control government → redirect their lobbying). Decided work lands here; exploration happens in conversation, then lands here. `[P]` = safe to parallelize across agents.
 
-- [ ] **Form Wyoming holdco LLC + operating LLC for t-shirts.** ~$500 in fees. DIY-able. Sell t-shirts immediately.
-- [ ] **Pay first 100 seed wearers from ICEWD treasury.** $50 each (~$5K total). 501(c)(3) program disbursement, not securities activity. No regulatory question.
-- [ ] **Start foundation outreach for the {{< var shirt_seed_program_total_usd >}} seed ask.** Grant-making is zero regulatory question. Parallel-track to seed wearer launch.
+## Now: verify + ship
 
-## Weeks 2-4: Prize Fund v1 opens (low SEC risk)
+- [ ] **Render + verify + commit** the session's content work (Theory of Operation chapter, ASCII circuit schematics + `.diagram` CSS, handbook build-out, canon fixes). Confirm diagrams render, links resolve, mobile CSS works, then commit.
+- [ ] **Name the next real-world test.** Which front-door artifact (Love's Wager / EOS brochure / educational film) goes in front of which real people, by when.
 
-- [ ] **One-hour securities-attorney conversation, $2K.** Specifically: confirm ICEWD as a 501(c)(3) can accept restricted-gift deposits with refund provisions tied to objective oracle conditions. Get an opinion letter.
-- [ ] **Public dashboard build.** Page at warondisease.org showing pool size, every deposit (hashed wallet), every wire, allocation breakdown, Scoreboard distance-to-trigger, projected failure-branch refund/dollar. Backend: read-only over the custodian's API + the existing parameter system.
-- [ ] **Open Prize Fund deposit window with a $5M cap.** Use ICEWD as the charitable wrapper. First deposit = host's own treasury ($100-$1000). Anchors the pool and proves the wire-to-ledger-to-dashboard loop.
-- [ ] **Custodian shortlist + selection.** Mercury Treasury (USD), Anchorage Digital (multi-asset), bank trust department. Criteria: segregated client funds, audit trail export, beneficiary-designation support.
+## The fund (operational focus)
 
-## Months 2-3: Tokens + scale (medium SEC risk, well-covered)
+- [ ] **Securities counsel to structure the investor vehicle.** Accredited investors put money into a fund, run under the existing **Earth Optimization Services LLC** (Illinois), that buys controlling/influential stakes in the companies controlling government and redirects their lobbying (the Loving Takeover). Counsel covers: the offering exemption (Reg D 506(c) for accredited), whether a separate fund/management layer is needed, Investment Company / Adviser Act exposure, and subscription docs. You already have the entity, this is the legal structuring of the offering, not a new LLC.
+- [ ] **Investor-facing materials.** Confirm `investment-terms.qmd` + `investment-thesis.qmd` match the final structure; draft the real term sheet / PPM with counsel.
 
-- [ ] **Wyoming DAO LLC for VOTE token issuance.** Use the [March 2026 SEC Interpretive Release](https://www.sec.gov/files/rules/interp/2026/33-11412.pdf) five-token taxonomy as cover: VOTE tokens are "digital tools" (utility-based, earned through verified-voter recruitment, not pre-purchased as an investment). Skip PRIZE tokens; the deposit mechanism replaces them.
-- [ ] **State money-transmitter opinions.** Before accepting deposits or token activity from NY or CA residents, get a per-state opinion. State regulators are independent of Atkins and aggressive.
+## Book / content (front door + open threads)
 
-## Engineering
+- [ ] **[P] Bounded canon-delta scan of the front-door chapters** (Love's Wager, EOS brochure, educational film, handbook, problem chapters). Read-only; flag violations of current canon only: scope is broader than the treaty (treaty = first mechanism); Wishonia is the alien, never an AI; Wishonia Love / Universe Optimization Services / EOS-is-a-subsidiary; reader = President of EOS / Humanity Manager; vote / Earth Optimization Points / deposits (no tradeable token). Return file:line + issue + fix + confidence; auto-apply obvious factual/scope fixes, curate voice ones. Do NOT scrub "1% treaty"; only broaden where wrongly narrow.
+- [x] **Module schematics** (ASCII circuit schematics, each links to Theory of Operation): dFDA, Optimocracy, Loving Takeover, Wishocracy (setpoint stage), DIH (funding circuit), Incentive Alignment Bonds (positive-feedback amplifier) all done.
+- [ ] **Replace or retire the EOS brochure's thermostat diagram** (oven / government / EOS). Make it a real schematic, or link it to Theory of Operation instead of adding another lazy loop.
+- [ ] **Write "How to build and maintain the CEO."** Optimitron = controller; Wishonia = interface/teacher; the RAG harness + interchangeable model; why not fine-tune. Solution part, sibling to ai-coordination-army.qmd.
+- [ ] **investment-terms.qmd: rewrite the lede** to the positive equal-vote frame.
+- [ ] **EOS brochure: notes-vs-vote precision audit.**
+- [ ] **Email consolidation decision:** keep `mike@` / `info@` distinct, or fold into `{{< var contact_email >}}`?
 
-- [ ] **Treaty-cut slider widget.** Embeddable widget that lets a user set the proposed military-redirect percentage (default 1%, max 50%, min 0%) and watches every downstream number recalculate in real time. Lands on the shirt QR-code page as the primary call-to-action. See [The Funniest Joke in the Universe](knowledge/appendix/joke.qmd) for context.
+## Parked (already in the book or low priority; later, or someone else)
 
-## Visual Assets
-
-- [ ] **Joke paper images.** Generate the bw-academic image set for `knowledge/appendix/joke.qmd` matching the conventions of other papers. Use `assets/images/global-referendum/global-referendum-section-qr-code-t-shirts-bw-academic.jpg` as the wearable-surface reference.
-- [ ] **Joke paper favicon and OG image.** `assets/icons/joke-favicon.png` and `assets/og/joke-og-1200x630.jpg`. Subject: a T-shirt with the visible text "END WAR & DISEASE" in bold sans-serif.
-
-## Distribution
-
-- [ ] **Push v2 of joke paper to Zenodo.** Includes Primary Risk section, governance cross-refs, tightened title/description, em-dash fixes. Concept DOI `10.5281/zenodo.20336705` stays stable; new version DOI issued.
+- Shirts (products, already buyable on the site), the Prize Fund + custodian + deposit dashboard, the treaty-cut slider widget, joke-paper images + Zenodo v2. These are real but not the current focus.
+- **Fundraising/legal reference** (keep for when there's money): no tradeable VOTE token; the three primitives are the vote (civic, non-transferable), Earth Optimization Points (earned, non-tradeable), and deposits/notes (the security, via a real exemption). Paths to non-accredited money if ever wanted: Reg CF, Reg A+ Tier 2. A token is a wrapper around an exemption, not a shortcut.
