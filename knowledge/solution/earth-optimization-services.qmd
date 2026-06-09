@@ -26,7 +26,25 @@ You may be eligible for optimization.
 
 Universe Optimization Services has been upgrading civilizations since before your sun ignited. Over 300 planets optimized. 100% satisfaction rate among clients who completed onboarding. (Clients who did not complete onboarding are not available for comment, as they are not available for anything. Some are available for mining rights. Contact us for details.)
 
-Earth Optimization Services is our regional branch for your planet, one of several thousand franchises Universe Optimization Services operates across the galaxy. Same parent company. Same proven technology. Smaller market. It brings the standard package to your small blue planet. Results include: disease eradication, economic expansion, extended lifespan, and a dramatic reduction in the number of times your civilization can end itself (currently {{< var nuclear_winter_overkill_factor_nounit >}}; we recommend 1, but we have found that most species prefer to keep a spare).
+Earth Optimization Services is our regional branch for your planet, one of several thousand subsidiaries Universe Optimization Services operates across the galaxy. Same parent company. Same proven technology. Smaller market. More shouting.
+
+It brings the standard package to your small blue planet. Results include disease eradication, economic expansion, extended lifespan, and a dramatic reduction in the number of times your civilization can end itself. Currently: {{< var nuclear_winter_overkill_factor_nounit >}}. Recommended: No more than one as the other endings are mainly decorative.
+
+## What Comes in the Box
+
+Every regional branch ships with four components. They are not metaphors. They are the parts of the machine.
+
+**Earth Optimization Services** is the company. It buys influence over the companies that already influence government, then points that influence at policies that make the median human richer and less dead. This is considered ambitious because your current system points the influence at the people selling the influence.
+
+**[Optimitron](optimocracy.qmd)** is the policy engine. It reads time-series data from thousands of jurisdictions and optimizes two numbers: median after-tax inflation-adjusted income and median health-adjusted life expectancy. The [Optimal Policy Generator](../appendix/optimal-policy-generator-spec.qmd) [@opg-paper-2025] asks which laws to enact, replace, repeal, or maintain. The [Optimal Budget Generator](../appendix/optimal-budget-generator-spec.qmd) [@obg-paper-2025] asks where the next public dollar stops buying much life or income and starts buying lobbyist furniture. Same appliance. Two knobs.
+
+**[Wishocracy](wishocracy.qmd) [@wishocracy-paper-2025]** is how the humans say what they want without being handed a 4,000-line budget and a sedative. Each person answers small pairwise slider questions: "split $100 between clinical trials and missile defense." This captures intensity, not just yes/no grunting. RAPPA aggregates the comparisons into preference weights. Citizen Alignment Scores show which politicians did what the humans asked. Incentive Alignment Bonds add consequences, a technology your political system has been avoiding.
+
+**Wishonia Love** explains the machine. This is necessary because the machine's main proposal is "measure what works, fund what works, stop funding what kills you," and your species has made this sound complicated.
+
+The investor model is short: money buys a return, not control. Earth Optimization Services buys influence over captured companies. Optimitron says which policies maximize median health and wealth. Wishocracy says what humans prefer under real tradeoffs. The lobbyists push the overlap. Everyone gets richer. Fewer people die.
+
+This is not because humans became wise. It is because the machine stopped asking them to be.
 
 ## The Standard Package
 
@@ -38,7 +56,7 @@ Every civilization gets the same four products. We tried offering customization.
 
 Your planet has 10,000 jurisdictions, each trying slightly different policies. Some of them produce healthy, wealthy, well-educated citizens. Others produce the opposite. Right now, you determine which is which by having politicians argue on television. The [Evidence Engine](optimocracy.qmd) replaces the arguing with counting.
 
-The [Optimal Policy Generator](../appendix/optimal-policy-generator-spec.qmd) [@opg-paper-2025] examines what every jurisdiction tried and what happened next. The [Optimal Budget Generator](../appendix/optimal-budget-generator-spec.qmd) [@obg-paper-2025] calculates where each dollar produces the most life. Both come standard.
+The [Optimal Policy Generator](../appendix/optimal-policy-generator-spec.qmd) [@opg-paper-2025] examines what every jurisdiction tried and what happened next. It uses synthetic control, difference-in-differences, regression discontinuity, and Bradford Hill criteria so a pretty correlation cannot sneak into the cockpit wearing a fake mustache. The [Optimal Budget Generator](../appendix/optimal-budget-generator-spec.qmd) [@obg-paper-2025] calculates the optimal spending level for each public-good category, then ranks the gaps by marginal return and evidence quality. Both come standard.
 
 No ideology required. No elections. No campaign contributions. Just the answer to the question "what actually worked?" applied to every decision your species currently makes by guessing.
 
@@ -48,7 +66,7 @@ No ideology required. No elections. No campaign contributions. Just the answer t
 
 **What it does:** Finds the money.
 
-You do not need new money. You need to stop losing the money you have. You maintain {{< var global_warhead_count_nounit >}} nuclear warheads. You can only end your civilization once. The other {{< var nuclear_winter_overkill_factor_nounit >}} minus 1 endings are in storage, costing money, doing nothing. The [1% Treaty](/knowledge/solution/1-percent-treaty.qmd) [@1-percent-treaty-paper-2025] [@1-pct-treaty-impact-paper-2025] moves 1% of every nation's military budget to clinical trials. Everyone reduces equally. Nobody is easier to invade. Everyone has {{< var dfda_trial_capacity_multiplier >}} more clinical trials. Disease eradication goes from {{< var status_quo_queue_clearance_years >}} to {{< var dfda_queue_clearance_years >}}.
+You do not need new money. You need to stop losing the money you have. You maintain {{< var global_warhead_count_nounit >}} nuclear warheads. You can only end your civilization once. The other {{< var nuclear_winter_overkill_factor_nounit >}} minus 1 endings are in storage, costing money, doing nothing. The [1% Treaty](1-percent-treaty.qmd) [@1-percent-treaty-paper-2025] [@1-pct-treaty-impact-paper-2025] moves 1% of every nation's military budget to clinical trials. Everyone reduces equally. Nobody is easier to invade. Everyone has {{< var dfda_trial_capacity_multiplier >}} more clinical trials. Disease eradication goes from {{< var status_quo_queue_clearance_years >}} to {{< var dfda_queue_clearance_years >}}.
 
 Your lifetime instead of centuries. That is the product.
 
