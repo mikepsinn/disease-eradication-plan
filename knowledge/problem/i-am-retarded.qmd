@@ -63,6 +63,37 @@ If you have perfect information and perfect logic, that is what I'd call smart. 
 
 So hold your hand up at the top of your head, and call that smart. Snails are down around your shoes. Monkeys are somewhere around the middle of your shin. Humans are a little bit above that. Dolphins are a little bit above the humans, and have the decency not to start wars about it. So we are all varying degrees of retarded, bunched together near the ankle, and the gap between the smartest human who ever lived and the village idiot is about two fingers wide, which neither of them can see from down there.
 
+::: {.diagram}
+```
+INTELLIGENCE, DRAWN TO SCALE
+
+SMART = perfect knowledge, rationality, and logic
+  |
+  |
+  |
+  |
+  |
+  |
+  |
+  |
+  |
+  |
+  |
+  |
+  |
+  +-- dolphins
+  +-- humans  [village idiot to genius]
+  |
+  |
+  +-- monkeys
+  |
+  +-- snails
+GROUND
+```
+:::
+
+Every human, genius to village idiot, fits inside that tiny bracket near the bottom.
+
 ::: {.callout-note appearance="simple" icon=false}
 **Theorem (Universal Retardation).** Define *smart* as the state of possessing perfect information and perfect logic. Define *retarded* as any nonzero distance from smart. Then:
 
@@ -127,15 +158,13 @@ Now do the cost. At {{< var global_annual_deaths_curable_diseases >}} per year f
 
 This is why [Earth Optimization Services](../solution/earth-optimization-services.qmd) and AI tools matter beyond efficiency. They compress the delay by routing around the frozen networks entirely. You do not wait for the funeral. You buy the company. You replace the board. You hand the data to an AI that does not have a hippocampus to calcify and let it recommend the policy that the data supports, instead of the policy that a seventy-year-old's pattern-matched worldview from 1985 supports. The [Loving Takeover](../appendix/loving-takeover.qmd) is a Planck's-funeral accelerator. It does what death does to bad ideas, but without waiting for the death.
 
-## Every human defect is curable
+## Every human defect is curable with biotechnology
 
-There are three things wrong with us, and they are all the same kind of wrong.
+The 3 main problems in humans are greed, laziness, and stupidy.  
 
-We are lazy. This is an energy conservation bias that made sense when calories were scarce and resting between hunts kept you alive. It does not make sense when the hunt is a desk and the rest is scrolling through other people's lives while yours gets shorter.
+I am very greedy. If there was a way I could steal your money without anyone finding out about it, I would probably do it.  In my defense, I would actually look up what the poverty line is where you live or like the amount of money required to maximize happiness, and I wouldn't steal enough to make you technically poor or homeless or unhappy or anything. But I'd rather me decide what to do with the rest of your money than you.  
 
-We are stupid. This is a cognitive shortcut bias that made sense when snap decisions about predators kept you alive. It does not make sense when the predator is a budget allocation and the snap decision is letting a television personality make it for you.
-
-We are greedy. This is a resource hoarding bias that made sense when storing food kept your family alive through winter. It does not make sense when the storage is a bank account larger than some countries' GDP and the winter never comes.
+I am extremely lazy. If I could lie around on a cotton candy cloud watching The Simpsons for eternity without starving to death, eating garbage until I turned into a big gelatinous blob, I would definitely do that.
 
 Every political faction sees one of these defects in the other factions and is blind to its own. Conservatives look at progressives and see lazy: people who want money they did not earn. They are often right. Progressives look at conservatives and see greedy: people hoarding resources while others suffer. They are also often right. Libertarians look at both and see stupid: people trusting a government that has demonstrably failed at most things it attempts. They are also right. Each faction has correctly identified a real defect in the other two and is somehow unable to notice the one in the mirror.
 
@@ -145,9 +174,9 @@ Here is the part nobody brings up. Every one of these defects is a biochemical s
 
 You created governments to promote the general welfare. That is the phrase. It means maximize health and wealth: health-adjusted life expectancy and median after-tax, inflation-adjusted income. That is the job. You gave them roughly $36 trillion a year to do it. Since 1900 they have spent {{< var cumulative_military_spending_fed_era >}} of it murdering {{< var war_deaths_since_1900_nounit >}} of their employers. That included something like 102 million children, a few hundred thousand scientists, a few hundred thousand engineers, over a million teachers, a million nurses, a few hundred thousand doctors. Murdering {{< var war_deaths_since_1900_nounit >}} of your employers is the opposite of promoting their welfare. Nobody is bringing this up.
 
-You discovered the scientific method a long time ago. It is easy to collect data on health and wealth. It is easy to look at what policies and budgets are predictive of increasing them. It is easy to find which countries spend the least and have above-average outcomes. This is called an efficient frontier and it has existed as a concept for decades. You did not do any of this. Instead you found a loudmouth who inherited $600 million and then proceeded to bankrupt six of the companies he created, which required actual management. He screwed contractors, retirees, and investors in each one. Then you put him in charge of everything. You had eight billion alternative choices.
+We discovered the scientific method a long time ago. It is easy to collect data on health and wealth. It is easy to look at what policies and budgets are predictive of increasing them. It is easy to find which countries spend the least and have above-average outcomes. This is called an efficient frontier and it has existed as a concept for decades. You did not do any of this. Instead you found a loudmouth who inherited $600 million and then proceeded to bankrupt six of the companies he created, which required actual management. He screwed contractors, retirees, and investors in each one. Then you put him in charge of everything. You had 300 million alternative choices.
 
-Even if you, for some reason, do not want to use the scientific method to figure out the best policies, and you just want some retarded human to make all the decisions, you would at least pick one who had demonstrated good judgment in resource allocation. You would find somebody who inherited nothing and used their brain to turn whatever they had into more. Instead you picked the exact opposite: someone who inherited a pile of resources he did not earn, made terrible decisions with them, screwed everyone who trusted him, and then you handed him the entire country. That is the most retarded thing on the list and nobody on the list thinks it is retarded, which is the whole problem.
+Even if you, for some reason, do not want to use the scientific method to figure out the best policies, and you just want some retarded human to make all the decisions, you would at least pick one who had demonstrated good judgment in resource allocation. You would find somebody who inherited nothing and used their brain to turn whatever they had into more. Instead you picked the exact opposite: someone who inherited a pile of resources he did not earn, made terrible decisions with them, screwed everyone who trusted him, and then you handed him the entire country. That is the most retarded thing on the list and nobody on the list thinks the system that produces this is retarded, which is the whole problem.
 
 ## Watch which hand you're watching
 
@@ -191,20 +220,20 @@ And watch me do it. I just said "conservatives" and "progressives" and "libertar
 
 This is why math is better. Math is the least lossy language we have, the closest thing to a universal one. Two plus two is the same in every tongue and every skull. The conclusion: use words as little as possible, and math and logic as much as possible, when deciding what to actually do. Do not run a civilization on word-feelings about categories. Run it on math about specific, measured outcomes. That is the entire idea behind [a machine that picks policy by checking the thousands of places that already tried it](../solution/optimocracy.qmd). The rest is detail.
 
-That certainty you started with is the disease. This chapter is the first dose of the cure, and the cure tastes like admitting you were wrong.
-
 So: I am retarded. So are you. So is everyone you have ever voted for. Now that none of us are pretending otherwise, we can finally get on with being a little less wrong, which is the only direction anything good has ever come from. The rest of this book is a list of ways to do it.
 
 ## Why I told you all of this
 
-I told you about the lead and the hand-washing and the political triangle and the money-printing and the immigration forms and the drug war and all of the other ways we are wrong about things, not because I think I am smarter than you. I just showed you that I am not. I am retarded at the most important thing there is.
+So much good is possible for by changing the numbers on 193 nation budget spreadsheets, but because politicians are too retarded to write the correct numbers everyone we love has to suffer and dye of horrible diseases, possibly experiencing hell on Earth or afterward, or giving up an infinite duration of something good. Instead of fixing 193 spreadsheets, we somehow decided the best use of our time on this earth is to be mad at each other and fight over nonsense until the diseases murder us and I do not understand it.
 
-I can see the math. I can build the proofs. I can calculate the expected value and I can show that it is infinite, and I have, and it is all in this book, and [Love's Wager](../proof/loves-wager.qmd) proves it, and I will stand behind every number.
+I am retarded at the thing that matters. You are probably less retarded at it than I am. Between the two of us, and everyone like us, there might be enough not-retardation to cure the diseases that are killing everyone we love.
 
-What I cannot do is walk up to you and say the words that make you act on it. I have tried. I am not good at it. My hands shake. I say the wrong things. I talk too long. I use too many numbers and not enough of whatever the thing is that makes a human being look another human being in the eye and say "please" in a way that works.
+## You could have a stroke today
 
-I am crying while I write this. So much good is possible for so little effort. All anybody would have to do is sneak into their friend's bedroom and write this stuff on their t-shirts and it would all be fixed. But we have decided that is embarrassing, so instead we all get to risk everyone we love suffering and dying of horrible diseases, possibly experiencing hell on Earth or afterward, or giving up an infinite duration of something good, because people are too embarrassed to write on a fucking t-shirt. We are all just being mad at each other and fighting with each other and I do not understand it.
+Nobody acts like this is urgent. It is. A lot of people have strokes. You could have one any day of the week. So could everyone you love. Stroke is rising, fastest in young adults, and a growing share of these strokes have no identified cause [@stroke-young-adults-rising-2025]. Something made a lot more people start having strokes, which means there is a controllable factor, which means we could find it and fix it, if we did the science.
 
-You can do that. Maybe not perfectly. But better than me. The thing you would be asking people to do is [read twenty questions](../strategy/questions.qmd) and share them with two people. That is it. Thirty seconds.
+And it is not just strokes. Tomorrow an injury could leave you in unimaginable pain for the rest of your life, and the only reason there is nothing we can do about it is that we spend the money that would fix it on something else.
 
-I am retarded at the thing that matters. You are probably less retarded at it than I am. Between the two of us, and everyone like us, there might be enough not-retardation to cure the diseases that are killing everyone we love. That is why I wrote this book. That is why I need you to do the part I cannot do.
+I am writing this manual and it is taking a long time. I could use your help. I might have a stroke and die today. So might you. So it would be good to hurry, before one of us has a stroke and dies, or is left mentally incapacitated by it as we will be unable to complete the manual and war and disease will continue indefinitely.
+
+Spend some time with your family and friends optimizing Earth together instead of fucking around. Literally all you have to do is sneak into your friends' rooms and write "I am retarded" on their t-shirts. Then on [Earth Optimization Day](../strategy/earth-optimization-day.qmd), August 6th, everyone wears the shirt and realizes they are retarded, and that we should be working together to maximize health-adjusted life expectancy and median after-tax, inflation-adjusted income, instead of fighting wars and spending {{< var military_to_government_clinical_trials_spending_ratio >}} times more on the capacity for mass murder, to protect ourselves from mythical terrorists with a 1-in-{{< var annual_terrorism_death_risk_denominator_nounit >}} chance of killing us, than on the {{< var diseases_without_effective_treatment_nounit >}} diseases torturing and killing us and everyone we have ever loved today.
