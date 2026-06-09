@@ -93,7 +93,7 @@ book:
     - text: "Listen"
       href: knowledge/podcast.qmd
 
-    - text: "Love's Wager"
+    - text: "Wishonia's Wager"
       href: knowledge/proof/loves-wager.qmd # Opening chapter / introduction: the reader's wager (act on infinite stakes), the ten-solution overview, attention-as-cost, Pascal debugged, and the "Wishonia's wager" coda (author's bet on humanity + revenue-funds-takeover flywheel + price gag). Standalone paper config: _quarto-loves-wager.yml
 
     - part: "Failure Analysis"
@@ -139,7 +139,7 @@ book:
     - part: "For Skeptics"
       chapters:
         - knowledge/proof.qmd # ✅ Part III Intro + Historical Precedents (merged) ~20p
-        - knowledge/proof/biotechnological-imperative.qmd # Kant's categorical imperative applied to biotech funding; three-proof structure with Love's Wager (rational) and Free Market Proof (empirical)
+        - knowledge/proof/biotechnological-imperative.qmd # Kant's categorical imperative applied to biotech funding; three-proof structure with Wishonia's Wager (rational) and Free Market Proof (empirical)
         - knowledge/proof/body-as-repairable-machine.qmd # ✅ The Body as a Machine ~7p
         - knowledge/proof/why-hasnt-anyone-done-this.qmd # ✅ Why Hasn't Anyone Done This? ~3p
         - knowledge/proof/delusion-of-insignificance.qmd # The Grandeur Proof: you ARE the universe experiencing itself; insignificance is the delusion, not grandeur ~4p
@@ -199,6 +199,7 @@ book:
         # ── Direct action (any reader, today) ──
         - knowledge/appendix/handout.qmd # Single-sheet flyer tucked in the collar of vandalized shirts; recipient-facing explainer
         - knowledge/appendix/joke.qmd # The shirt; lives on the manual site; _quarto-joke.yml exists for PDF/Zenodo build only (no subdomain)
+        - knowledge/appendix/president-notification-letter.qmd # 1950s HR-style notification letter for newly recognized EOS Presidents; scheduling CTA, Peace assistant, compensation upside, onboarding links
         - knowledge/appendix/humanity-manager-employment-agreement.qmd # Parody employment contract + printable Certificate of Humanity Management + the qualifying exam (onboarding artifact; pairs with educational-film.qmd)
         - knowledge/appendix/notice-of-termination.qmd # HR-format termination letter for all politicians with authority over military spending
         # ── Lawsuit kit ──
