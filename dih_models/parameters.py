@@ -14000,7 +14000,7 @@ DEFENSE_TAKEOVER_COST_PER_HUMAN = Parameter(
 # -- Assumed opportunity cost rate for capital deployment mechanisms --
 MECHANISM_OPPORTUNITY_COST_RATE = Parameter(
     0.02,
-    manual_ref="knowledge/proof/loves-wager.qmd",
+    manual_ref="knowledge/proof/wishonias-wager.qmd",
     source_type="definition",
     description="Annual opportunity cost rate for capital deployment mechanisms (forgone excess return vs market). Defense stocks historically return near-market, so excess opportunity cost is low.",
     display_name="Mechanism Opportunity Cost Rate",
@@ -14015,7 +14015,7 @@ MECHANISM_OPPORTUNITY_COST_RATE = Parameter(
 MECHANISM_LOVING_TAKEOVER_CAPITAL = DEFENSE_TAKEOVER_COST_TOTAL
 MECHANISM_LOVING_TAKEOVER_NET_COST = Parameter(
     DEFENSE_TAKEOVER_COST_TOTAL * 0.02,
-    manual_ref="knowledge/proof/loves-wager.qmd",
+    manual_ref="knowledge/proof/wishonias-wager.qmd",
     source_type="calculated",
     description="Net annual cost of the Loving Takeover: opportunity cost only (capital deployed into shares is retained, not spent). At 2% annual opportunity cost rate.",
     display_name="Loving Takeover Net Cost (Annual)",
@@ -14028,7 +14028,7 @@ MECHANISM_LOVING_TAKEOVER_NET_COST = Parameter(
 )
 MECHANISM_LOVING_TAKEOVER_P_SUCCESS = Parameter(
     0.95,
-    manual_ref="knowledge/proof/loves-wager.qmd",
+    manual_ref="knowledge/proof/wishonias-wager.qmd",
     source_type="definition",
     description="Probability of treaty passage given full funding of the Loving Takeover (mechanical: money buys shares, shares buy board control, board redirects lobbying)",
     display_name="P(Success | Loving Takeover Funded)",
@@ -14042,7 +14042,7 @@ MECHANISM_LOVING_TAKEOVER_P_SUCCESS = Parameter(
 MECHANISM_TREATY_CAMPAIGN_NET_COST = TREATY_CAMPAIGN_TOTAL_COST
 MECHANISM_TREATY_CAMPAIGN_P_SUCCESS = Parameter(
     0.40,
-    manual_ref="knowledge/proof/loves-wager.qmd",
+    manual_ref="knowledge/proof/wishonias-wager.qmd",
     source_type="definition",
     description="Probability of treaty passage given full funding of the lobbying + referendum campaign ($1B). Depends on political will after lobbying and public pressure.",
     display_name="P(Success | Treaty Campaign Funded)",
@@ -14060,7 +14060,7 @@ MECHANISM_SHIRT_CASCADE_P_SUCCESS = SHIRT_CASCADE_PROBABILITY_GIVEN_SEED
 MECHANISM_COURT_OF_HUMANITY_NET_COST = COURT_BUILD_COST
 MECHANISM_COURT_OF_HUMANITY_P_SUCCESS = Parameter(
     0.10,
-    manual_ref="knowledge/proof/loves-wager.qmd",
+    manual_ref="knowledge/proof/wishonias-wager.qmd",
     source_type="definition",
     description="Probability of treaty passage given Court of Humanity operational. Lowest direct causal link: court rulings are non-binding but create political pressure.",
     display_name="P(Success | Court of Humanity Funded)",
@@ -14074,7 +14074,7 @@ MECHANISM_COURT_OF_HUMANITY_P_SUCCESS = Parameter(
 # Net cost to EOS is bond administration, estimated at 5% of principal
 MECHANISM_IAB_ADMIN_RATE = Parameter(
     0.05,
-    manual_ref="knowledge/proof/loves-wager.qmd",
+    manual_ref="knowledge/proof/wishonias-wager.qmd",
     source_type="definition",
     description="Annual administrative cost of IABs as fraction of principal (legal, compliance, reporting). The principal itself is investor capital returned with interest, not EOS expenditure.",
     display_name="IAB Admin Cost Rate",
@@ -14085,7 +14085,7 @@ MECHANISM_IAB_ADMIN_RATE = Parameter(
 )
 MECHANISM_IAB_NET_COST = Parameter(
     TREATY_CAMPAIGN_TOTAL_COST * 0.05,
-    manual_ref="knowledge/proof/loves-wager.qmd",
+    manual_ref="knowledge/proof/wishonias-wager.qmd",
     source_type="calculated",
     description="Net annual cost of IABs to EOS: administration only (investor capital is returned, not spent)",
     display_name="IAB Net Cost (Annual)",
@@ -14098,7 +14098,7 @@ MECHANISM_IAB_NET_COST = Parameter(
 )
 MECHANISM_IAB_P_SUCCESS = Parameter(
     0.60,
-    manual_ref="knowledge/proof/loves-wager.qmd",
+    manual_ref="knowledge/proof/wishonias-wager.qmd",
     source_type="definition",
     description="Probability of treaty passage given full IAB issuance. High because lobbying is a proven mechanism and IABs align politician incentives directly.",
     display_name="P(Success | IABs Funded)",
@@ -14111,7 +14111,7 @@ MECHANISM_IAB_P_SUCCESS = Parameter(
 # -- dFDA (expenditure: platform build + initial operations) --
 MECHANISM_DFDA_NET_COST = Parameter(
     500_000_000,
-    manual_ref="knowledge/proof/loves-wager.qmd",
+    manual_ref="knowledge/proof/wishonias-wager.qmd",
     source_type="definition",
     description="Net cost to build and deploy the dFDA to operational scale (expenditure; platform generates revenue after deployment but initial build is sunk cost)",
     display_name="dFDA Deployment Net Cost",
@@ -14122,7 +14122,7 @@ MECHANISM_DFDA_NET_COST = Parameter(
 )
 MECHANISM_DFDA_P_SUCCESS = Parameter(
     0.70,
-    manual_ref="knowledge/proof/loves-wager.qmd",
+    manual_ref="knowledge/proof/wishonias-wager.qmd",
     source_type="definition",
     description="Probability that a funded dFDA produces sufficient cures to create political momentum for the treaty. High because clinical trials mechanically produce treatments; the platform reduces cost per trial.",
     display_name="P(Success | dFDA Funded)",
@@ -14136,7 +14136,7 @@ MECHANISM_DFDA_P_SUCCESS = Parameter(
 MECHANISM_REFERENDUM_NET_COST = TREATY_CAMPAIGN_VIRAL_REFERENDUM_BASE_CASE
 MECHANISM_REFERENDUM_P_SUCCESS = Parameter(
     0.30,
-    manual_ref="knowledge/proof/loves-wager.qmd",
+    manual_ref="knowledge/proof/wishonias-wager.qmd",
     source_type="definition",
     description="Probability of treaty passage given a successful global referendum demonstrating majority support. Non-binding but creates political pressure.",
     display_name="P(Success | Referendum Funded)",
@@ -14163,7 +14163,7 @@ MECHANISM_REFERENDUM_P_SUCCESS = Parameter(
 
 MECHANISM_LOVING_TAKEOVER_EV = Parameter(
     MECHANISM_LOVING_TAKEOVER_P_SUCCESS * PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT,
-    manual_ref="knowledge/proof/loves-wager.qmd",
+    manual_ref="knowledge/proof/wishonias-wager.qmd",
     source_type="calculated",
     description="Expected annual social value from the Loving Takeover: P(success) * annual peace dividend. Capital is deployed into shares (retained and appreciating), not spent.",
     display_name="Loving Takeover Expected Social Value",
@@ -14177,7 +14177,7 @@ MECHANISM_LOVING_TAKEOVER_EV = Parameter(
 
 MECHANISM_IAB_EV = Parameter(
     MECHANISM_IAB_P_SUCCESS * PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT,
-    manual_ref="knowledge/proof/loves-wager.qmd",
+    manual_ref="knowledge/proof/wishonias-wager.qmd",
     source_type="calculated",
     description="Expected annual social value from IABs: P(success) * annual peace dividend. Investor capital is returned with interest, not spent.",
     display_name="IAB Expected Social Value",
@@ -14191,7 +14191,7 @@ MECHANISM_IAB_EV = Parameter(
 
 MECHANISM_DFDA_EV = Parameter(
     MECHANISM_DFDA_P_SUCCESS * PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT,
-    manual_ref="knowledge/proof/loves-wager.qmd",
+    manual_ref="knowledge/proof/wishonias-wager.qmd",
     source_type="calculated",
     description="Expected annual social value from the dFDA: P(success) * annual peace dividend. Platform build is expenditure ($500M).",
     display_name="dFDA Expected Social Value",
@@ -14205,7 +14205,7 @@ MECHANISM_DFDA_EV = Parameter(
 
 MECHANISM_TREATY_CAMPAIGN_EV = Parameter(
     MECHANISM_TREATY_CAMPAIGN_P_SUCCESS * PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT,
-    manual_ref="knowledge/proof/loves-wager.qmd",
+    manual_ref="knowledge/proof/wishonias-wager.qmd",
     source_type="calculated",
     description="Expected annual social value from the treaty campaign: P(success) * annual peace dividend. Lobbying + referendum is expenditure ($1B).",
     display_name="Treaty Campaign Expected Social Value",
@@ -14219,7 +14219,7 @@ MECHANISM_TREATY_CAMPAIGN_EV = Parameter(
 
 MECHANISM_REFERENDUM_EV = Parameter(
     MECHANISM_REFERENDUM_P_SUCCESS * PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT,
-    manual_ref="knowledge/proof/loves-wager.qmd",
+    manual_ref="knowledge/proof/wishonias-wager.qmd",
     source_type="calculated",
     description="Expected annual social value from the global referendum: P(success) * annual peace dividend. Expenditure ($250M).",
     display_name="Referendum Expected Social Value",
@@ -14233,7 +14233,7 @@ MECHANISM_REFERENDUM_EV = Parameter(
 
 MECHANISM_SHIRT_CASCADE_EV = Parameter(
     MECHANISM_SHIRT_CASCADE_P_SUCCESS * PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT,
-    manual_ref="knowledge/proof/loves-wager.qmd",
+    manual_ref="knowledge/proof/wishonias-wager.qmd",
     source_type="calculated",
     description="Expected annual social value from the shirt cascade: P(success) * annual peace dividend. Expenditure ($50M).",
     display_name="Shirt Cascade Expected Social Value",
@@ -14247,7 +14247,7 @@ MECHANISM_SHIRT_CASCADE_EV = Parameter(
 
 MECHANISM_COURT_EV = Parameter(
     MECHANISM_COURT_OF_HUMANITY_P_SUCCESS * PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT,
-    manual_ref="knowledge/proof/loves-wager.qmd",
+    manual_ref="knowledge/proof/wishonias-wager.qmd",
     source_type="calculated",
     description="Expected annual social value from the Court of Humanity: P(success) * annual peace dividend. Expenditure ($30M).",
     display_name="Court of Humanity Expected Social Value",

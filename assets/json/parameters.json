@@ -5804,7 +5804,7 @@
         "PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT"
       ],
       "computeExpr": "(MECHANISM_COURT_OF_HUMANITY_P_SUCCESS * PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT)",
-      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/proof/loves-wager.html"
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/proof/wishonias-wager.html"
     },
     "MECHANISM_COURT_OF_HUMANITY_NET_COST": {
       "value": 30000000.0,
@@ -5835,7 +5835,7 @@
         0.03,
         0.25
       ],
-      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/proof/loves-wager.html"
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/proof/wishonias-wager.html"
     },
     "MECHANISM_DFDA_EV": {
       "value": 79499700000.0,
@@ -5851,7 +5851,7 @@
         "PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT"
       ],
       "computeExpr": "(MECHANISM_DFDA_P_SUCCESS * PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT)",
-      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/proof/loves-wager.html"
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/proof/wishonias-wager.html"
     },
     "MECHANISM_DFDA_NET_COST": {
       "value": 500000000.0,
@@ -5866,7 +5866,7 @@
         200000000.0,
         1000000000.0
       ],
-      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/proof/loves-wager.html"
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/proof/wishonias-wager.html"
     },
     "MECHANISM_DFDA_P_SUCCESS": {
       "value": 0.7,
@@ -5881,7 +5881,7 @@
         0.4,
         0.9
       ],
-      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/proof/loves-wager.html"
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/proof/wishonias-wager.html"
     },
     "MECHANISM_IAB_ADMIN_RATE": {
       "value": 0.05,
@@ -5893,7 +5893,7 @@
       "confidence": "high",
       "formula": null,
       "distribution": "fixed",
-      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/proof/loves-wager.html"
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/proof/wishonias-wager.html"
     },
     "MECHANISM_IAB_EV": {
       "value": 68142600000.0,
@@ -5909,7 +5909,7 @@
         "PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT"
       ],
       "computeExpr": "(MECHANISM_IAB_P_SUCCESS * PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT)",
-      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/proof/loves-wager.html"
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/proof/wishonias-wager.html"
     },
     "MECHANISM_IAB_NET_COST": {
       "value": 50000000.0,
@@ -5925,7 +5925,7 @@
         "TREATY_CAMPAIGN_TOTAL_COST"
       ],
       "computeExpr": "(TREATY_CAMPAIGN_TOTAL_COST * MECHANISM_IAB_ADMIN_RATE)",
-      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/proof/loves-wager.html"
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/proof/wishonias-wager.html"
     },
     "MECHANISM_IAB_P_SUCCESS": {
       "value": 0.6,
@@ -5940,7 +5940,7 @@
         0.3,
         0.85
       ],
-      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/proof/loves-wager.html"
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/proof/wishonias-wager.html"
     },
     "MECHANISM_LOVING_TAKEOVER_CAPITAL": {
       "value": 722341800000.0,
@@ -5974,7 +5974,7 @@
         "PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT"
       ],
       "computeExpr": "(MECHANISM_LOVING_TAKEOVER_P_SUCCESS * PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT)",
-      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/proof/loves-wager.html"
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/proof/wishonias-wager.html"
     },
     "MECHANISM_LOVING_TAKEOVER_NET_COST": {
       "value": 14446836000.0,
@@ -5990,7 +5990,7 @@
         "MECHANISM_OPPORTUNITY_COST_RATE"
       ],
       "computeExpr": "(DEFENSE_TAKEOVER_COST_TOTAL * MECHANISM_OPPORTUNITY_COST_RATE)",
-      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/proof/loves-wager.html"
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/proof/wishonias-wager.html"
     },
     "MECHANISM_LOVING_TAKEOVER_P_SUCCESS": {
       "value": 0.95,
@@ -6005,7 +6005,7 @@
         0.8,
         0.99
       ],
-      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/proof/loves-wager.html"
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/proof/wishonias-wager.html"
     },
     "MECHANISM_OPPORTUNITY_COST_RATE": {
       "value": 0.02,
@@ -6021,7 +6021,7 @@
         0.05
       ],
       "distribution": "fixed",
-      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/proof/loves-wager.html"
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/proof/wishonias-wager.html"
     },
     "MECHANISM_REFERENDUM_EV": {
       "value": 34071300000.0,
@@ -6037,7 +6037,7 @@
         "PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT"
       ],
       "computeExpr": "(MECHANISM_REFERENDUM_P_SUCCESS * PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT)",
-      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/proof/loves-wager.html"
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/proof/wishonias-wager.html"
     },
     "MECHANISM_REFERENDUM_NET_COST": {
       "value": 250000000.0,
@@ -6067,7 +6067,7 @@
         0.1,
         0.55
       ],
-      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/proof/loves-wager.html"
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/proof/wishonias-wager.html"
     },
     "MECHANISM_SHIRT_CASCADE_EV": {
       "value": 28392750000.0,
@@ -6083,7 +6083,7 @@
         "PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT"
       ],
       "computeExpr": "(MECHANISM_SHIRT_CASCADE_P_SUCCESS * PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT)",
-      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/proof/loves-wager.html"
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/proof/wishonias-wager.html"
     },
     "MECHANISM_SHIRT_CASCADE_NET_COST": {
       "value": 50000000.0,
@@ -6131,7 +6131,7 @@
         "PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT"
       ],
       "computeExpr": "(MECHANISM_TREATY_CAMPAIGN_P_SUCCESS * PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT)",
-      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/proof/loves-wager.html"
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/proof/wishonias-wager.html"
     },
     "MECHANISM_TREATY_CAMPAIGN_NET_COST": {
       "value": 1000000000.0,
@@ -6163,7 +6163,7 @@
         0.15,
         0.7
       ],
-      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/proof/loves-wager.html"
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/proof/wishonias-wager.html"
     },
     "MEDICAL_QALY_THRESHOLD": {
       "value": 100000.0,
@@ -24117,15 +24117,15 @@
       "pages": "",
       "number": ""
     },
-    "loves-wager-paper-2025": {
-      "id": "loves-wager-paper-2025",
-      "title": "Love's Wager: Any Finite Action Is Rational When the Stakes Are Infinite",
+    "wishonias-wager-paper-2025": {
+      "id": "wishonias-wager-paper-2025",
+      "title": "Wishonia's Wager: Any Finite Action Is Rational When the Stakes Are Infinite",
       "author": "Sinn, Mike P.",
       "year": "2025",
       "source": "International Campaign to End War and Disease",
-      "url": "https://manual.warondisease.org/knowledge/proof/loves-wager.html",
+      "url": "https://manual.warondisease.org/knowledge/proof/wishonias-wager.html",
       "urls": [
-        "https://manual.warondisease.org/knowledge/proof/loves-wager.html"
+        "https://manual.warondisease.org/knowledge/proof/wishonias-wager.html"
       ],
       "quote": "A reconstruction of Pascal's Wager with its defects removed. Two propositions cannot be disproven: that a conscious being may suffer without end, and that it may flourish without end. Both carry nonzero probability and infinite magnitude, so any finite action that shifts probability from the first toward the second has unbounded expected value. Unlike Pascal's, the wagered action is empirical, not theological: funding the clinical trials that extend healthy lifespan and modify conscious experience.",
       "note": "Working Paper",

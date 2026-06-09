@@ -1,6 +1,6 @@
 project:
   type: website
-  output-dir: _site/loves-wager
+  output-dir: _site/wishonias-wager
   execute-dir: project
   resources:
     - knowledge/data/
@@ -16,10 +16,10 @@ project:
 # Custom fields for render-quarto.py
 dih-render:
   emoji: "♾️"
-  index-source: knowledge/proof/loves-wager.qmd
+  index-source: knowledge/proof/wishonias-wager.qmd
   redirect-from: https://wager.warondisease.org
   fallback-404-redirect-domain: https://manual.WarOnDisease.org  # Redirects here if path doesn't exist on this site
-  pdf-output-file: loves-wager.pdf
+  pdf-output-file: wishonias-wager.pdf
   # TODO: create a dedicated Netlify site and replace this ID before first deploy.
   # Until then this points at the shared manual site app so local renders succeed.
   netlify-site-id: "REPLACE_WITH_NEW_NETLIFY_SITE_ID"
@@ -44,12 +44,12 @@ author:
 website:
   title: "Wishonia's Wager: Any Finite Action Is Rational When the Stakes Are Infinite"
   description: "A reconstruction of Pascal's Wager with its defects removed. Two propositions cannot be disproven: that a conscious being may suffer without end, and that it may flourish without end. Both carry nonzero probability and infinite magnitude, so any finite action that shifts probability from the first toward the second has unbounded expected value. Unlike Pascal's, the wagered action is empirical, not theological: funding the clinical trials that extend healthy lifespan and modify conscious experience."
-  site-url: https://manual.warondisease.org/knowledge/proof/loves-wager.html
-  favicon: assets/icons/loves-wager-favicon.png
+  site-url: https://manual.warondisease.org/knowledge/proof/wishonias-wager.html
+  favicon: assets/icons/wishonias-wager-favicon.png
   page-navigation: true
   page-footer:
     left: "© 2025 [International Campaign to End War and Disease](https://warondisease.org) | [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)"
-    center: "[PDF](/loves-wager.pdf) | [All Papers](https://manual.warondisease.org/knowledge/papers.html)"
+    center: "[PDF](/wishonias-wager.pdf) | [All Papers](https://manual.warondisease.org/knowledge/papers.html)"
     right: "[VOTE](https://WarOnDisease.org)"
   navbar:
     right:
@@ -132,12 +132,12 @@ metadata:
 
   # Open Graph metadata
   open-graph: true
-  image: "https://manual.warondisease.org/assets/og/loves-wager-og-1200x630.jpg"
+  image: "https://manual.warondisease.org/assets/og/wishonias-wager-og-1200x630.jpg"
 
   # Publication tracking
   publishing:
     own-site:
-      url: "https://manual.warondisease.org/knowledge/proof/loves-wager.html"
+      url: "https://manual.warondisease.org/knowledge/proof/wishonias-wager.html"
       status: pending
     preprints:
       - platform: zenodo
@@ -197,7 +197,7 @@ format:
       - file: assets/html/generated-footer.html
     include-in-header:
       - text: |
-          <!-- Icons (project-specific) - TODO: Generate loves-wager-specific icons -->
+          <!-- Icons (project-specific) - TODO: Generate wishonias-wager-specific icons -->
           <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
           <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
           <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png">
@@ -213,7 +213,7 @@ format:
     code-tools: false
     filters: [assets/filters/live-version-note.lua]
   pdf:
-    output-file: "loves-wager.pdf"
+    output-file: "wishonias-wager.pdf"
     documentclass: article
     institute: "International Campaign to End War and Disease"
     echo: false
@@ -226,7 +226,7 @@ format:
       - callout-bw.tex
       - institute-header.tex
       - text: |
-          \paperurl{https://manual.warondisease.org/knowledge/proof/loves-wager.html}
+          \paperurl{https://manual.warondisease.org/knowledge/proof/wishonias-wager.html}
     geometry:
       - top=1in
       - bottom=1in

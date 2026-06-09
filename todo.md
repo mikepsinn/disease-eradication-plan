@@ -5,7 +5,7 @@ Current focus: **ship the front door** and **stand up the investor fund** (accre
 ## Now: verify + ship
 
 - [ ] **Render + verify + commit** the session's content work (Theory of Operation chapter, ASCII circuit schematics + `.diagram` CSS, handbook build-out, canon fixes). Confirm diagrams render, links resolve, mobile CSS works, then commit.
-- [ ] **Name the next real-world test.** Which front-door artifact (Love's Wager / EOS brochure / educational film) goes in front of which real people, by when.
+- [ ] **Name the next real-world test.** Which front-door artifact (Wishonia's Wager / EOS brochure / educational film) goes in front of which real people, by when.
 
 ## The fund (operational focus)
 
@@ -14,7 +14,7 @@ Current focus: **ship the front door** and **stand up the investor fund** (accre
 
 ## Book / content (front door + open threads)
 
-- [ ] **[P] Bounded canon-delta scan of the front-door chapters** (Love's Wager, EOS brochure, educational film, handbook, problem chapters). Read-only; flag violations of current canon only: scope is broader than the treaty (treaty = first mechanism); Wishonia is the alien, never an AI; Wishonia Love / Universe Optimization Services / EOS-is-a-subsidiary; reader = President of EOS / Humanity Manager; vote / Earth Optimization Points / deposits (no tradeable token). Return file:line + issue + fix + confidence; auto-apply obvious factual/scope fixes, curate voice ones. Do NOT scrub "1% treaty"; only broaden where wrongly narrow.
+- [ ] **[P] Bounded canon-delta scan of the front-door chapters** (Wishonia's Wager, EOS brochure, educational film, handbook, problem chapters). Read-only; flag violations of current canon only: scope is broader than the treaty (treaty = first mechanism); Wishonia is the alien, never an AI; Wishonia Love / Universe Optimization Services / EOS-is-a-subsidiary; reader = President of EOS / Humanity Manager; vote / Earth Optimization Points / deposits (no tradeable token). Return file:line + issue + fix + confidence; auto-apply obvious factual/scope fixes, curate voice ones. Do NOT scrub "1% treaty"; only broaden where wrongly narrow.
 - [x] **Module schematics** (ASCII circuit schematics, each links to Theory of Operation): dFDA, Optimocracy, Loving Takeover, Wishocracy (setpoint stage), DIH (funding circuit), Incentive Alignment Bonds (positive-feedback amplifier) all done.
 - [ ] **Replace or retire the EOS brochure's thermostat diagram** (oven / government / EOS). Make it a real schematic, or link it to Theory of Operation instead of adding another lazy loop.
 - [ ] **Write "How to build and maintain the CEO."** Optimitron = controller; Wishonia = interface/teacher; the RAG harness + interchangeable model; why not fine-tune. Solution part, sibling to ai-coordination-army.qmd.

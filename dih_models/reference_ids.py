@@ -702,7 +702,7 @@ class ReferenceID(str, Enum):
     LONGEVITY_ESCAPE_VELOCITY = "longevity-escape-velocity"
     LOST_HUMAN_CAPITAL_WAR_COST = "lost-human-capital-war-cost"
     LOST_IN_TRANSLATION_VALLEY_OF_DEATH = "lost-in-translation-valley-of-death"
-    LOVES_WAGER_PAPER_2025 = "loves-wager-paper-2025"
+    WISHONIAS_WAGER_PAPER_2025 = "wishonias-wager-paper-2025"
     LSHTM_EVERY_MONTH_DELAYED_CANCER_TREATMENT_CAN_RAISE_RISK_DE = "lshtm-every-month-delayed-cancer-treatment-can-raise-risk-de"
     MACKAY_MADNESS_OF_CROWDS = "mackay-madness-of-crowds"
     MACROTRENDS_GOLD_HISTORY = "macrotrends-gold-history"

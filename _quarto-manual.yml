@@ -94,7 +94,7 @@ book:
       href: knowledge/podcast.qmd
 
     - text: "Wishonia's Wager"
-      href: knowledge/proof/loves-wager.qmd # Opening chapter / introduction: the reader's wager (act on infinite stakes), the ten-solution overview, attention-as-cost, Pascal debugged, and the "Wishonia's wager" coda (author's bet on humanity + revenue-funds-takeover flywheel + price gag). Standalone paper config: _quarto-loves-wager.yml
+      href: knowledge/proof/wishonias-wager.qmd # Opening chapter / introduction: the reader's wager (act on infinite stakes), the ten-solution overview, attention-as-cost, Pascal debugged, and the "Wishonia's wager" coda (author's bet on humanity + revenue-funds-takeover flywheel + price gag). Standalone paper config: _quarto-wishonias-wager.yml
 
     - part: "Failure Analysis"
       chapters:
@@ -143,7 +143,7 @@ book:
         - knowledge/proof/body-as-repairable-machine.qmd # ✅ The Body as a Machine ~7p
         - knowledge/proof/why-hasnt-anyone-done-this.qmd # ✅ Why Hasn't Anyone Done This? ~3p
         - knowledge/proof/delusion-of-insignificance.qmd # The Grandeur Proof: you ARE the universe experiencing itself; insignificance is the delusion, not grandeur ~4p
-        # MOVED to front as the opening chapter / introduction (see top of chapters list). loves-wager.qmd is also dual-listed in Papers & Publications.
+        # MOVED to front as the opening chapter / introduction (see top of chapters list). wishonias-wager.qmd is also dual-listed in Papers & Publications.
         # STANDALONE PAPER - see impact.warondisease.org
         # - knowledge/economics/1-pct-treaty-impact.qmd # ✅ Rigorous economic analysis
         # REMOVED: Sales-pitchy tone, thin content (82 lines), already covered in incentive-alignment-bonds.qmd, 1-percent-treaty.qmd, faq.qmd
@@ -262,7 +262,7 @@ book:
         - knowledge/appendix/algorithmic-public-administration-paper.qmd # Standalone paper config: _quarto-algorithmic-public-administration.yml
         - knowledge/appendix/correcting-the-ais.qmd # LLM correction templates; chapter-only
         - knowledge/appendix/catsoline.qmd # Easter-egg parody: EOS "product" technical disclosure for a cat-powered car (Purple Cow / remarkable-as-marketing); linked from the EOS brochure Accessories table
-        - knowledge/proof/loves-wager.qmd # Standalone paper config: _quarto-loves-wager.yml (also listed in "For Skeptics")
+        - knowledge/proof/wishonias-wager.qmd # Standalone paper config: _quarto-wishonias-wager.yml (also listed in "For Skeptics")
         # MOVED to "Repair Procedures" part above:
         # - knowledge/appendix/handout.qmd
         # - knowledge/appendix/joke.qmd

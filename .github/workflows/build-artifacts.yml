@@ -1934,8 +1934,8 @@ jobs:
 
 
 
-  build-loves-wager:
-    name: "Build Love's Wager: Any Finite Action Is Rational When t"
+  build-wishonias-wager:
+    name: "Build Wishonia's Wager: Any Finite Action Is Rational Wh"
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
@@ -1945,9 +1945,9 @@ jobs:
         uses: actions/cache@v4
         with:
           path: _freeze
-          key: quarto-freeze-loves-wager-${{ hashFiles('**/*.qmd', '**/*.ipynb') }}
+          key: quarto-freeze-wishonias-wager-${{ hashFiles('**/*.qmd', '**/*.ipynb') }}
           restore-keys: |
-            quarto-freeze-loves-wager-
+            quarto-freeze-wishonias-wager-
             quarto-freeze-
 
       - name: Set up Quarto
@@ -2002,8 +2002,8 @@ jobs:
           ~/.TinyTeX/bin/*/tlmgr update --self || true
           ~/.TinyTeX/bin/*/tlmgr install fontspec unicode-math lualatex-math luaotfload || true
 
-      - name: "Render Build Love's Wager: Any Finite Action Is Rational When t"
-        run: python scripts/render-quarto.py loves-wager --to pdf
+      - name: "Render Build Wishonia's Wager: Any Finite Action Is Rational Wh"
+        run: python scripts/render-quarto.py wishonias-wager --to pdf
         env:
           GOOGLE_GENERATIVE_AI_API_KEY: ${{ (secrets.LLM_VALIDATION == 'true' || github.ref == 'refs/heads/master') && secrets.GOOGLE_GENERATIVE_AI_API_KEY || '' }}
         timeout-minutes: 30
@@ -2012,8 +2012,8 @@ jobs:
       - name: Upload PDFs artifact
         uses: actions/upload-artifact@v4
         with:
-          name: pdfs-loves-wager
-          path: _build_temp/loves-wager/**/*.pdf
+          name: pdfs-wishonias-wager
+          path: _build_temp/wishonias-wager/**/*.pdf
           if-no-files-found: error
 
 
@@ -2024,7 +2024,7 @@ jobs:
       - name: Upload validation checklists
         uses: actions/upload-artifact@v4
         with:
-          name: validation-checklists-loves-wager
+          name: validation-checklists-wishonias-wager
           path: pdf-validation-checklist-*.md
           if-no-files-found: ignore
 
@@ -2032,25 +2032,25 @@ jobs:
         if: failure()
         uses: actions/upload-artifact@v4
         with:
-          name: latex-logs-loves-wager
+          name: latex-logs-wishonias-wager
           path: |
-            logs/build-loves-wager.log
-            _build_temp/loves-wager/*.log
-            _build_temp/loves-wager/**/*.log
-            _build_temp/loves-wager/*.aux
-            _build_temp/loves-wager/**/*.aux
-            _build_temp/loves-wager/*.toc
-            _build_temp/loves-wager/**/*.toc
-            _build_temp/loves-wager/*.out
-            _build_temp/loves-wager/**/*.out
+            logs/build-wishonias-wager.log
+            _build_temp/wishonias-wager/*.log
+            _build_temp/wishonias-wager/**/*.log
+            _build_temp/wishonias-wager/*.aux
+            _build_temp/wishonias-wager/**/*.aux
+            _build_temp/wishonias-wager/*.toc
+            _build_temp/wishonias-wager/**/*.toc
+            _build_temp/wishonias-wager/*.out
+            _build_temp/wishonias-wager/**/*.out
           retention-days: 7
 
 
-      - name: "Upload Build Love's Wager: Any Finite Action Is Rational When t PDF to Zenodo (draft)"
+      - name: "Upload Build Wishonia's Wager: Any Finite Action Is Rational Wh PDF to Zenodo (draft)"
         if: github.event_name == 'push' && github.ref == 'refs/heads/master'
         env:
           ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
-        run: python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild loves-wager
+        run: python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild wishonias-wager
 
 
 
@@ -3053,7 +3053,7 @@ jobs:
 
       - build-joke
 
-      - build-loves-wager
+      - build-wishonias-wager
 
       - build-obg
 

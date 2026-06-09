@@ -6595,8 +6595,8 @@ export const MECHANISM_COURT_EV: Parameter = {
   formula: "MECHANISM_COURT_OF_HUMANITY_P_SUCCESS * PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT",
   latex: "\\begin{gathered}\nEV_{court} = P_{court} \\times Benefit_{peace,soc} = 0.1 \\times \\$114B = \\$11.4B\n\\\\[0.5em]\n\\text{where } Benefit_{peace,soc} = Cost_{war,total} \\times Reduce_{treaty} = \\$11.4T \\times 1\\% = \\$114B\n\\\\[0.5em]\n\\text{where } Cost_{war,total} = Cost_{war,direct} + Cost_{war,indirect} = \\$7.66T + \\$3.7T = \\$11.4T\n\\\\[0.5em]\n\\text{where } Cost_{war,direct} = Loss_{life,conflict} + Damage_{infra,total} + Disruption_{trade} + Spending_{mil} = \\$2.45T + \\$1.88T + \\$616B + \\$2.72T = \\$7.66T\n\\\\[0.5em]\n\\text{where } Loss_{life,conflict} = Cost_{combat,human} + Cost_{state,human} + Cost_{terror,human} = \\$2.34T + \\$27B + \\$83B = \\$2.45T\n\\\\[0.5em]\n\\text{where } Cost_{combat,human} = Deaths_{combat} \\times VSL = 234{,}000 \\times \\$10M = \\$2.34T\n\\\\[0.5em]\n\\text{where } Cost_{state,human} = Deaths_{state} \\times VSL = 2{,}700 \\times \\$10M = \\$27B\n\\\\[0.5em]\n\\text{where } Cost_{terror,human} = Deaths_{terror} \\times VSL = 8{,}300 \\times \\$10M = \\$83B\n\\\\[0.5em]\n\\text{where } Damage_{infra,total} = Damage_{comms} + Damage_{edu} + Damage_{energy} + Damage_{health} + Damage_{transport} + Damage_{water} = \\$298B + \\$234B + \\$422B + \\$166B + \\$487B + \\$268B = \\$1.88T\n\\\\[0.5em]\n\\text{where } Disruption_{trade} = Disruption_{currency} + Disruption_{energy} + Disruption_{shipping} + Disruption_{supply} = \\$57.4B + \\$125B + \\$247B + \\$187B = \\$616B\n\\\\[0.5em]\n\\text{where } Cost_{war,indirect} = Damage_{env} + Loss_{growth,mil} + Loss_{capital,conflict} + Cost_{psych} + Cost_{refugee} + Cost_{vet} = \\$100B + \\$2.72T + \\$300B + \\$232B + \\$150B + \\$200B = \\$3.7T\n\\end{gathered}",
   confidenceInterval: [9012680402.351702, 14057421275.330286],
-  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/proof/loves-wager.html",
-  manualPageTitle: "Love's Wager",
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/proof/wishonias-wager.html",
+  manualPageTitle: "Wishonia's Wager",
 };
 
 export const MECHANISM_DFDA_EV: Parameter = {
@@ -6611,8 +6611,8 @@ export const MECHANISM_DFDA_EV: Parameter = {
   formula: "MECHANISM_DFDA_P_SUCCESS * PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT",
   latex: "\\begin{gathered}\nEV_{dFDA} = P_{dFDA} \\times Benefit_{peace,soc} = 0.7 \\times \\$114B = \\$79.5B\n\\\\[0.5em]\n\\text{where } Benefit_{peace,soc} = Cost_{war,total} \\times Reduce_{treaty} = \\$11.4T \\times 1\\% = \\$114B\n\\\\[0.5em]\n\\text{where } Cost_{war,total} = Cost_{war,direct} + Cost_{war,indirect} = \\$7.66T + \\$3.7T = \\$11.4T\n\\\\[0.5em]\n\\text{where } Cost_{war,direct} = Loss_{life,conflict} + Damage_{infra,total} + Disruption_{trade} + Spending_{mil} = \\$2.45T + \\$1.88T + \\$616B + \\$2.72T = \\$7.66T\n\\\\[0.5em]\n\\text{where } Loss_{life,conflict} = Cost_{combat,human} + Cost_{state,human} + Cost_{terror,human} = \\$2.34T + \\$27B + \\$83B = \\$2.45T\n\\\\[0.5em]\n\\text{where } Cost_{combat,human} = Deaths_{combat} \\times VSL = 234{,}000 \\times \\$10M = \\$2.34T\n\\\\[0.5em]\n\\text{where } Cost_{state,human} = Deaths_{state} \\times VSL = 2{,}700 \\times \\$10M = \\$27B\n\\\\[0.5em]\n\\text{where } Cost_{terror,human} = Deaths_{terror} \\times VSL = 8{,}300 \\times \\$10M = \\$83B\n\\\\[0.5em]\n\\text{where } Damage_{infra,total} = Damage_{comms} + Damage_{edu} + Damage_{energy} + Damage_{health} + Damage_{transport} + Damage_{water} = \\$298B + \\$234B + \\$422B + \\$166B + \\$487B + \\$268B = \\$1.88T\n\\\\[0.5em]\n\\text{where } Disruption_{trade} = Disruption_{currency} + Disruption_{energy} + Disruption_{shipping} + Disruption_{supply} = \\$57.4B + \\$125B + \\$247B + \\$187B = \\$616B\n\\\\[0.5em]\n\\text{where } Cost_{war,indirect} = Damage_{env} + Loss_{growth,mil} + Loss_{capital,conflict} + Cost_{psych} + Cost_{refugee} + Cost_{vet} = \\$100B + \\$2.72T + \\$300B + \\$232B + \\$150B + \\$200B = \\$3.7T\n\\end{gathered}",
   confidenceInterval: [63088762816.461914, 98401948927.31198],
-  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/proof/loves-wager.html",
-  manualPageTitle: "Love's Wager",
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/proof/wishonias-wager.html",
+  manualPageTitle: "Wishonia's Wager",
 };
 
 export const MECHANISM_IAB_EV: Parameter = {
@@ -6627,8 +6627,8 @@ export const MECHANISM_IAB_EV: Parameter = {
   formula: "MECHANISM_IAB_P_SUCCESS * PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT",
   latex: "\\begin{gathered}\nEV_{IAB} = P_{IAB} \\times Benefit_{peace,soc} = 0.6 \\times \\$114B = \\$68.1B\n\\\\[0.5em]\n\\text{where } Benefit_{peace,soc} = Cost_{war,total} \\times Reduce_{treaty} = \\$11.4T \\times 1\\% = \\$114B\n\\\\[0.5em]\n\\text{where } Cost_{war,total} = Cost_{war,direct} + Cost_{war,indirect} = \\$7.66T + \\$3.7T = \\$11.4T\n\\\\[0.5em]\n\\text{where } Cost_{war,direct} = Loss_{life,conflict} + Damage_{infra,total} + Disruption_{trade} + Spending_{mil} = \\$2.45T + \\$1.88T + \\$616B + \\$2.72T = \\$7.66T\n\\\\[0.5em]\n\\text{where } Loss_{life,conflict} = Cost_{combat,human} + Cost_{state,human} + Cost_{terror,human} = \\$2.34T + \\$27B + \\$83B = \\$2.45T\n\\\\[0.5em]\n\\text{where } Cost_{combat,human} = Deaths_{combat} \\times VSL = 234{,}000 \\times \\$10M = \\$2.34T\n\\\\[0.5em]\n\\text{where } Cost_{state,human} = Deaths_{state} \\times VSL = 2{,}700 \\times \\$10M = \\$27B\n\\\\[0.5em]\n\\text{where } Cost_{terror,human} = Deaths_{terror} \\times VSL = 8{,}300 \\times \\$10M = \\$83B\n\\\\[0.5em]\n\\text{where } Damage_{infra,total} = Damage_{comms} + Damage_{edu} + Damage_{energy} + Damage_{health} + Damage_{transport} + Damage_{water} = \\$298B + \\$234B + \\$422B + \\$166B + \\$487B + \\$268B = \\$1.88T\n\\\\[0.5em]\n\\text{where } Disruption_{trade} = Disruption_{currency} + Disruption_{energy} + Disruption_{shipping} + Disruption_{supply} = \\$57.4B + \\$125B + \\$247B + \\$187B = \\$616B\n\\\\[0.5em]\n\\text{where } Cost_{war,indirect} = Damage_{env} + Loss_{growth,mil} + Loss_{capital,conflict} + Cost_{psych} + Cost_{refugee} + Cost_{vet} = \\$100B + \\$2.72T + \\$300B + \\$232B + \\$150B + \\$200B = \\$3.7T\n\\end{gathered}",
   confidenceInterval: [54076082414.11022, 84344527651.9817],
-  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/proof/loves-wager.html",
-  manualPageTitle: "Love's Wager",
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/proof/wishonias-wager.html",
+  manualPageTitle: "Wishonia's Wager",
 };
 
 export const MECHANISM_IAB_NET_COST: Parameter = {
@@ -6643,8 +6643,8 @@ export const MECHANISM_IAB_NET_COST: Parameter = {
   formula: "TREATY_CAMPAIGN_TOTAL_COST * MECHANISM_IAB_ADMIN_RATE",
   latex: "\\begin{gathered}\nC_{IAB,net} = Cost_{campaign} \\times r_{IAB,admin} = \\$1B \\times 0.05 = \\$50M\n\\\\[0.5em]\n\\text{where } Cost_{campaign} = Budget_{viral,base} + Budget_{lobby,treaty} + Budget_{reserve} = \\$250M + \\$650M + \\$100M = \\$1B\n\\end{gathered}",
   confidenceInterval: [31611001.881421994, 75710489.57011917],
-  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/proof/loves-wager.html",
-  manualPageTitle: "Love's Wager",
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/proof/wishonias-wager.html",
+  manualPageTitle: "Wishonia's Wager",
 };
 
 export const MECHANISM_LOVING_TAKEOVER_CAPITAL: Parameter = {
@@ -6674,8 +6674,8 @@ export const MECHANISM_LOVING_TAKEOVER_EV: Parameter = {
   formula: "MECHANISM_LOVING_TAKEOVER_P_SUCCESS * PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT",
   latex: "\\begin{gathered}\nEV_{takeover} = P_{takeover} \\times Benefit_{peace,soc} = 0.95 \\times \\$114B = \\$108B\n\\\\[0.5em]\n\\text{where } Benefit_{peace,soc} = Cost_{war,total} \\times Reduce_{treaty} = \\$11.4T \\times 1\\% = \\$114B\n\\\\[0.5em]\n\\text{where } Cost_{war,total} = Cost_{war,direct} + Cost_{war,indirect} = \\$7.66T + \\$3.7T = \\$11.4T\n\\\\[0.5em]\n\\text{where } Cost_{war,direct} = Loss_{life,conflict} + Damage_{infra,total} + Disruption_{trade} + Spending_{mil} = \\$2.45T + \\$1.88T + \\$616B + \\$2.72T = \\$7.66T\n\\\\[0.5em]\n\\text{where } Loss_{life,conflict} = Cost_{combat,human} + Cost_{state,human} + Cost_{terror,human} = \\$2.34T + \\$27B + \\$83B = \\$2.45T\n\\\\[0.5em]\n\\text{where } Cost_{combat,human} = Deaths_{combat} \\times VSL = 234{,}000 \\times \\$10M = \\$2.34T\n\\\\[0.5em]\n\\text{where } Cost_{state,human} = Deaths_{state} \\times VSL = 2{,}700 \\times \\$10M = \\$27B\n\\\\[0.5em]\n\\text{where } Cost_{terror,human} = Deaths_{terror} \\times VSL = 8{,}300 \\times \\$10M = \\$83B\n\\\\[0.5em]\n\\text{where } Damage_{infra,total} = Damage_{comms} + Damage_{edu} + Damage_{energy} + Damage_{health} + Damage_{transport} + Damage_{water} = \\$298B + \\$234B + \\$422B + \\$166B + \\$487B + \\$268B = \\$1.88T\n\\\\[0.5em]\n\\text{where } Disruption_{trade} = Disruption_{currency} + Disruption_{energy} + Disruption_{shipping} + Disruption_{supply} = \\$57.4B + \\$125B + \\$247B + \\$187B = \\$616B\n\\\\[0.5em]\n\\text{where } Cost_{war,indirect} = Damage_{env} + Loss_{growth,mil} + Loss_{capital,conflict} + Cost_{psych} + Cost_{refugee} + Cost_{vet} = \\$100B + \\$2.72T + \\$300B + \\$232B + \\$150B + \\$200B = \\$3.7T\n\\end{gathered}",
   confidenceInterval: [85620463822.34119, 133545502115.6377],
-  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/proof/loves-wager.html",
-  manualPageTitle: "Love's Wager",
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/proof/wishonias-wager.html",
+  manualPageTitle: "Wishonia's Wager",
 };
 
 export const MECHANISM_LOVING_TAKEOVER_NET_COST: Parameter = {
@@ -6689,8 +6689,8 @@ export const MECHANISM_LOVING_TAKEOVER_NET_COST: Parameter = {
   confidence: "high",
   formula: "DEFENSE_TAKEOVER_COST_TOTAL * MECHANISM_OPPORTUNITY_COST_RATE",
   latex: "\\begin{gathered}\nC_{takeover,net} = C_{takeover} \\times r_{opp} = \\$722B \\times 0.02 = \\$14.4B\n\\\\[0.5em]\n\\text{where } C_{takeover} = (MarketCap_{US} + MarketCap_{allied}) \\times f_{control} \\times m_{premium}\n\\end{gathered}",
-  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/proof/loves-wager.html",
-  manualPageTitle: "Love's Wager",
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/proof/wishonias-wager.html",
+  manualPageTitle: "Wishonia's Wager",
 };
 
 export const MECHANISM_REFERENDUM_EV: Parameter = {
@@ -6705,8 +6705,8 @@ export const MECHANISM_REFERENDUM_EV: Parameter = {
   formula: "MECHANISM_REFERENDUM_P_SUCCESS * PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT",
   latex: "\\begin{gathered}\nEV_{referendum} = P_{referendum} \\times Benefit_{peace,soc} = 0.3 \\times \\$114B = \\$34.1B\n\\\\[0.5em]\n\\text{where } Benefit_{peace,soc} = Cost_{war,total} \\times Reduce_{treaty} = \\$11.4T \\times 1\\% = \\$114B\n\\\\[0.5em]\n\\text{where } Cost_{war,total} = Cost_{war,direct} + Cost_{war,indirect} = \\$7.66T + \\$3.7T = \\$11.4T\n\\\\[0.5em]\n\\text{where } Cost_{war,direct} = Loss_{life,conflict} + Damage_{infra,total} + Disruption_{trade} + Spending_{mil} = \\$2.45T + \\$1.88T + \\$616B + \\$2.72T = \\$7.66T\n\\\\[0.5em]\n\\text{where } Loss_{life,conflict} = Cost_{combat,human} + Cost_{state,human} + Cost_{terror,human} = \\$2.34T + \\$27B + \\$83B = \\$2.45T\n\\\\[0.5em]\n\\text{where } Cost_{combat,human} = Deaths_{combat} \\times VSL = 234{,}000 \\times \\$10M = \\$2.34T\n\\\\[0.5em]\n\\text{where } Cost_{state,human} = Deaths_{state} \\times VSL = 2{,}700 \\times \\$10M = \\$27B\n\\\\[0.5em]\n\\text{where } Cost_{terror,human} = Deaths_{terror} \\times VSL = 8{,}300 \\times \\$10M = \\$83B\n\\\\[0.5em]\n\\text{where } Damage_{infra,total} = Damage_{comms} + Damage_{edu} + Damage_{energy} + Damage_{health} + Damage_{transport} + Damage_{water} = \\$298B + \\$234B + \\$422B + \\$166B + \\$487B + \\$268B = \\$1.88T\n\\\\[0.5em]\n\\text{where } Disruption_{trade} = Disruption_{currency} + Disruption_{energy} + Disruption_{shipping} + Disruption_{supply} = \\$57.4B + \\$125B + \\$247B + \\$187B = \\$616B\n\\\\[0.5em]\n\\text{where } Cost_{war,indirect} = Damage_{env} + Loss_{growth,mil} + Loss_{capital,conflict} + Cost_{psych} + Cost_{refugee} + Cost_{vet} = \\$100B + \\$2.72T + \\$300B + \\$232B + \\$150B + \\$200B = \\$3.7T\n\\end{gathered}",
   confidenceInterval: [27038041207.05511, 42172263825.99085],
-  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/proof/loves-wager.html",
-  manualPageTitle: "Love's Wager",
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/proof/wishonias-wager.html",
+  manualPageTitle: "Wishonia's Wager",
 };
 
 export const MECHANISM_SHIRT_CASCADE_EV: Parameter = {
@@ -6721,8 +6721,8 @@ export const MECHANISM_SHIRT_CASCADE_EV: Parameter = {
   formula: "MECHANISM_SHIRT_CASCADE_P_SUCCESS * PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT",
   latex: "\\begin{gathered}\nEV_{shirt} = P_{cascade,shirt} \\times Benefit_{peace,soc} = 25\\% \\times \\$114B = \\$28.4B\n\\\\[0.5em]\n\\text{where } Benefit_{peace,soc} = Cost_{war,total} \\times Reduce_{treaty} = \\$11.4T \\times 1\\% = \\$114B\n\\\\[0.5em]\n\\text{where } Cost_{war,total} = Cost_{war,direct} + Cost_{war,indirect} = \\$7.66T + \\$3.7T = \\$11.4T\n\\\\[0.5em]\n\\text{where } Cost_{war,direct} = Loss_{life,conflict} + Damage_{infra,total} + Disruption_{trade} + Spending_{mil} = \\$2.45T + \\$1.88T + \\$616B + \\$2.72T = \\$7.66T\n\\\\[0.5em]\n\\text{where } Loss_{life,conflict} = Cost_{combat,human} + Cost_{state,human} + Cost_{terror,human} = \\$2.34T + \\$27B + \\$83B = \\$2.45T\n\\\\[0.5em]\n\\text{where } Cost_{combat,human} = Deaths_{combat} \\times VSL = 234{,}000 \\times \\$10M = \\$2.34T\n\\\\[0.5em]\n\\text{where } Cost_{state,human} = Deaths_{state} \\times VSL = 2{,}700 \\times \\$10M = \\$27B\n\\\\[0.5em]\n\\text{where } Cost_{terror,human} = Deaths_{terror} \\times VSL = 8{,}300 \\times \\$10M = \\$83B\n\\\\[0.5em]\n\\text{where } Damage_{infra,total} = Damage_{comms} + Damage_{edu} + Damage_{energy} + Damage_{health} + Damage_{transport} + Damage_{water} = \\$298B + \\$234B + \\$422B + \\$166B + \\$487B + \\$268B = \\$1.88T\n\\\\[0.5em]\n\\text{where } Disruption_{trade} = Disruption_{currency} + Disruption_{energy} + Disruption_{shipping} + Disruption_{supply} = \\$57.4B + \\$125B + \\$247B + \\$187B = \\$616B\n\\\\[0.5em]\n\\text{where } Cost_{war,indirect} = Damage_{env} + Loss_{growth,mil} + Loss_{capital,conflict} + Cost_{psych} + Cost_{refugee} + Cost_{vet} = \\$100B + \\$2.72T + \\$300B + \\$232B + \\$150B + \\$200B = \\$3.7T\n\\end{gathered}",
   confidenceInterval: [6443951974.770861, 59235182078.35295],
-  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/proof/loves-wager.html",
-  manualPageTitle: "Love's Wager",
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/proof/wishonias-wager.html",
+  manualPageTitle: "Wishonia's Wager",
 };
 
 export const MECHANISM_SHIRT_CASCADE_NET_COST: Parameter = {
@@ -6753,8 +6753,8 @@ export const MECHANISM_TREATY_CAMPAIGN_EV: Parameter = {
   formula: "MECHANISM_TREATY_CAMPAIGN_P_SUCCESS * PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT",
   latex: "\\begin{gathered}\nEV_{campaign} = P_{campaign} \\times Benefit_{peace,soc} = 0.4 \\times \\$114B = \\$45.4B\n\\\\[0.5em]\n\\text{where } Benefit_{peace,soc} = Cost_{war,total} \\times Reduce_{treaty} = \\$11.4T \\times 1\\% = \\$114B\n\\\\[0.5em]\n\\text{where } Cost_{war,total} = Cost_{war,direct} + Cost_{war,indirect} = \\$7.66T + \\$3.7T = \\$11.4T\n\\\\[0.5em]\n\\text{where } Cost_{war,direct} = Loss_{life,conflict} + Damage_{infra,total} + Disruption_{trade} + Spending_{mil} = \\$2.45T + \\$1.88T + \\$616B + \\$2.72T = \\$7.66T\n\\\\[0.5em]\n\\text{where } Loss_{life,conflict} = Cost_{combat,human} + Cost_{state,human} + Cost_{terror,human} = \\$2.34T + \\$27B + \\$83B = \\$2.45T\n\\\\[0.5em]\n\\text{where } Cost_{combat,human} = Deaths_{combat} \\times VSL = 234{,}000 \\times \\$10M = \\$2.34T\n\\\\[0.5em]\n\\text{where } Cost_{state,human} = Deaths_{state} \\times VSL = 2{,}700 \\times \\$10M = \\$27B\n\\\\[0.5em]\n\\text{where } Cost_{terror,human} = Deaths_{terror} \\times VSL = 8{,}300 \\times \\$10M = \\$83B\n\\\\[0.5em]\n\\text{where } Damage_{infra,total} = Damage_{comms} + Damage_{edu} + Damage_{energy} + Damage_{health} + Damage_{transport} + Damage_{water} = \\$298B + \\$234B + \\$422B + \\$166B + \\$487B + \\$268B = \\$1.88T\n\\\\[0.5em]\n\\text{where } Disruption_{trade} = Disruption_{currency} + Disruption_{energy} + Disruption_{shipping} + Disruption_{supply} = \\$57.4B + \\$125B + \\$247B + \\$187B = \\$616B\n\\\\[0.5em]\n\\text{where } Cost_{war,indirect} = Damage_{env} + Loss_{growth,mil} + Loss_{capital,conflict} + Cost_{psych} + Cost_{refugee} + Cost_{vet} = \\$100B + \\$2.72T + \\$300B + \\$232B + \\$150B + \\$200B = \\$3.7T\n\\end{gathered}",
   confidenceInterval: [36050721609.40681, 56229685101.321144],
-  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/proof/loves-wager.html",
-  manualPageTitle: "Love's Wager",
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/proof/wishonias-wager.html",
+  manualPageTitle: "Wishonia's Wager",
 };
 
 export const MECHANISM_TREATY_CAMPAIGN_NET_COST: Parameter = {
@@ -11088,8 +11088,8 @@ export const MECHANISM_COURT_OF_HUMANITY_P_SUCCESS: Parameter = {
   sourceType: "definition",
   confidence: "high",
   confidenceInterval: [0.03, 0.25],
-  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/proof/loves-wager.html",
-  manualPageTitle: "Love's Wager",
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/proof/wishonias-wager.html",
+  manualPageTitle: "Wishonia's Wager",
 };
 
 export const MECHANISM_DFDA_NET_COST: Parameter = {
@@ -11102,8 +11102,8 @@ export const MECHANISM_DFDA_NET_COST: Parameter = {
   sourceType: "definition",
   confidence: "high",
   confidenceInterval: [200000000.0, 1000000000.0],
-  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/proof/loves-wager.html",
-  manualPageTitle: "Love's Wager",
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/proof/wishonias-wager.html",
+  manualPageTitle: "Wishonia's Wager",
 };
 
 export const MECHANISM_DFDA_P_SUCCESS: Parameter = {
@@ -11116,8 +11116,8 @@ export const MECHANISM_DFDA_P_SUCCESS: Parameter = {
   sourceType: "definition",
   confidence: "high",
   confidenceInterval: [0.4, 0.9],
-  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/proof/loves-wager.html",
-  manualPageTitle: "Love's Wager",
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/proof/wishonias-wager.html",
+  manualPageTitle: "Wishonia's Wager",
 };
 
 export const MECHANISM_IAB_ADMIN_RATE: Parameter = {
@@ -11129,8 +11129,8 @@ export const MECHANISM_IAB_ADMIN_RATE: Parameter = {
   description: "Annual administrative cost of IABs as fraction of principal (legal, compliance, reporting). The principal itself is investor capital returned with interest, not EOS expenditure.",
   sourceType: "definition",
   confidence: "high",
-  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/proof/loves-wager.html",
-  manualPageTitle: "Love's Wager",
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/proof/wishonias-wager.html",
+  manualPageTitle: "Wishonia's Wager",
 };
 
 export const MECHANISM_IAB_P_SUCCESS: Parameter = {
@@ -11143,8 +11143,8 @@ export const MECHANISM_IAB_P_SUCCESS: Parameter = {
   sourceType: "definition",
   confidence: "high",
   confidenceInterval: [0.3, 0.85],
-  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/proof/loves-wager.html",
-  manualPageTitle: "Love's Wager",
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/proof/wishonias-wager.html",
+  manualPageTitle: "Wishonia's Wager",
 };
 
 export const MECHANISM_LOVING_TAKEOVER_P_SUCCESS: Parameter = {
@@ -11157,8 +11157,8 @@ export const MECHANISM_LOVING_TAKEOVER_P_SUCCESS: Parameter = {
   sourceType: "definition",
   confidence: "high",
   confidenceInterval: [0.8, 0.99],
-  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/proof/loves-wager.html",
-  manualPageTitle: "Love's Wager",
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/proof/wishonias-wager.html",
+  manualPageTitle: "Wishonia's Wager",
 };
 
 export const MECHANISM_OPPORTUNITY_COST_RATE: Parameter = {
@@ -11171,8 +11171,8 @@ export const MECHANISM_OPPORTUNITY_COST_RATE: Parameter = {
   sourceType: "definition",
   confidence: "high",
   confidenceInterval: [0.0, 0.05],
-  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/proof/loves-wager.html",
-  manualPageTitle: "Love's Wager",
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/proof/wishonias-wager.html",
+  manualPageTitle: "Wishonia's Wager",
 };
 
 export const MECHANISM_REFERENDUM_NET_COST: Parameter = {
@@ -11200,8 +11200,8 @@ export const MECHANISM_REFERENDUM_P_SUCCESS: Parameter = {
   sourceType: "definition",
   confidence: "high",
   confidenceInterval: [0.1, 0.55],
-  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/proof/loves-wager.html",
-  manualPageTitle: "Love's Wager",
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/proof/wishonias-wager.html",
+  manualPageTitle: "Wishonia's Wager",
 };
 
 export const MECHANISM_SHIRT_CASCADE_P_SUCCESS: Parameter = {
@@ -11228,8 +11228,8 @@ export const MECHANISM_TREATY_CAMPAIGN_P_SUCCESS: Parameter = {
   sourceType: "definition",
   confidence: "high",
   confidenceInterval: [0.15, 0.7],
-  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/proof/loves-wager.html",
-  manualPageTitle: "Love's Wager",
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/proof/wishonias-wager.html",
+  manualPageTitle: "Wishonia's Wager",
 };
 
 export const MILITARY_REDIRECT_GDP_BOOST_AT_30PCT: Parameter = {

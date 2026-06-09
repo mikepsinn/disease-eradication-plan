@@ -27,7 +27,7 @@
   "prize.warondisease.org": "https://manual.warondisease.org/knowledge/strategy/earth-optimization-prize.html",
   "right-to-trial.warondisease.org": "https://manual.warondisease.org/knowledge/appendix/right-to-trial-fda-upgrade-act.html",
   "us-efficiency-audit.warondisease.org": "https://manual.warondisease.org/knowledge/appendix/us-efficiency-audit.html",
-  "wager.warondisease.org": "https://manual.warondisease.org/knowledge/proof/loves-wager.html",
+  "wager.warondisease.org": "https://manual.warondisease.org/knowledge/proof/wishonias-wager.html",
   "wishocracy.warondisease.org": "https://manual.warondisease.org/knowledge/appendix/wishocracy-paper.html"
 };
   var hostname = (window.location.hostname || "").toLowerCase();
