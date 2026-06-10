@@ -168,6 +168,8 @@ Funny rarely arrives in the first draft; the first draft is just *clear*, and cl
 
 **Then run the kill-test on every clause: is it funny, or worth a busy reader's time? If neither, cut it.** A joke that isn't funny is just wasted words ("the paperwork was lost in the mail"). And never *announce* a joke ("which is the funny part," "this is the fun bit"). State the thing flat and trust the deadpan. The waste class of error is a rule, not a matter of taste: ship zero of it.
 
+Three discipline rules for the pass itself. **Tie goes to the incumbent:** never churn a working line for a sideways-different one. **No rule-zealotry:** these rules catch failures; they are not search-and-replace instructions. If a line satisfies the spirit of a rule, leave it; every fix must read better aloud, not just comply. **Keep the author's exact words:** when Mike supplies real wording, use it verbatim unless you can name the reason for a change (grammar, factual error, house style); paraphrase flattens the jokes.
+
 ## Common Voice Failures
 
 | Failure | Example | Fix |
@@ -178,6 +180,22 @@ Funny rarely arrives in the first draft; the first draft is just *clear*, and cl
 | Wishonia performs comedy | "This is my favorite objection because..." | Wishonia doesn't know it's funny. It's just confused. |
 
 **The test:** The comedy comes from the GAP between Wishonia's naive tone and the devastating truth. If Wishonia sounds self-aware, the gap closes and the comedy dies.
+
+## The Voice Map
+
+The book runs more than one voice. Match the surface:
+
+| Surface | Voice |
+|---------|-------|
+| Selling/recruiting (EOS brochure, employment agreement, President letter, benefits and product pages, pitch ladder) | 1950s marketer: warm, gee-whiz, "home of the future," laid over deadpan bureaucracy |
+| The confession (i-am-retarded) and the math proofs | Flat and sincere. No costume. |
+| Everything else | Wishonia: naive alien observer, deadpan |
+
+Two rules govern all of them:
+
+**The enemy is never enthusiasm; it is enthusiasm or cleverness wrapping nothing.** Every funny or chirpy line must deliver a true fact (the chirp sets up a real grim or absurd reality; the gap is the joke). A clever aside gilding nothing reads as a salesman trying too hard and trips the suspicious reader's scam alarm. In the flat voices, state the absurd thing flat and trust it. In the 50s voice, let the costume carry it, but only ever over a true fact.
+
+**The 50s voice's native failure is monotone.** Constant maximum enthusiasm goes deaf; a wall of exclamation points reads as shrill. Use internal dynamics (the gee-whiz build, the confidential aside, the grim fact dropped cheerfully, the occasional flat rest) and get the lift from diction ("the finest feature on offer"), not punctuation. Exclamation points: rare and budgeted.
 
 ## The Final Check
 
@@ -217,6 +235,10 @@ Recent binding refinements (2026). They extend "The Reader Owns Everything"; the
 **No special founder, no boss, no overlord; everyone is all three roles at once.** In a normal company the founder, the owners, and the workers are different people with different power. EOS collapses them: every human is the owner (one equal vote), the staff (a Humanity Manager), and the founder (you are building it; it did not exist until people like you started). So never center an individual founder, and never write "we" or "our" as an entity the reader joins; the reader owns, runs, and founded the thing. Deadpan only: "You founded Earth Optimization Services; you were busy and missed the meeting" is the voice. "We're all founders here!" is death. Never say "nobody owns it" (it contradicts everyone-owns-it).
 
 **The pitch ladder and the brochure are the allowed "pitch" exceptions.** "Never pitch" means don't beg the reader to join. But a Humanity Manager's job includes recruiting two more people, so a *recruiting script* ("here is how you explain this in ten seconds") is instructional, not a sales pitch aimed at the reader. The ladder lives in `GUIDES/PITCH_LADDER.md`. The EOS brochure's "How to Order" register is a deliberate genre parody (Universe Optimization Services). Outside those two, the ban stands.
+
+**The gift frame (all selling and recruiting artifacts).** Everything is a benefit handed TO the reader, never a job, chore, or favor they do us: they GET TO go to war on disease and decide how much of their money goes to mass murder versus curing the people they love; we are the eager helper. Center the individual; downplay "everyone owns it" and the eight billion other Presidents in pitches (the collective deflates the flattery; the full ownership story lives in the book proper). Banned: mystery-bait, skeptic-dares, self-deprecation ("I'm probably crazy"). The gift must ride concrete substance (the numbers, the mechanism, the apocalypse-trade) or it reads as scam-spam.
+
+**Offer, don't presume.** Never command an undecided reader to perform a devotee's rituals ("Print it. Frame it." / "watch it again until something happens"). Instructional voice hands the reader capability they want; presumption assumes buy-in they do not have yet and makes the writer unlikable. Make things available; let the reader choose.
 
 **Suffering first; death is the punctuation.** The product is healthy years (HALE), so most of what it delivers is *less suffering*, not just *less death*. Lead with concrete suffering ("your mother's last decade, in pain, not knowing your name"), never the abstract noun ("reduce suffering"). Use death as the sharp final beat. People fear a prolonged, undignified decline (and a loved one's) more than a clean death; suffering is the fear they cannot rationalize away. This refines "just say die": still say die, but make suffering the body and death the punchline.
 
