@@ -1,0 +1,53 @@
+---
+title: "The Love Letter"
+description: "The friendly front door of the Loving Takeover: a letter you send to the board of a company whose lobbyists are paid to keep your money in missiles instead of medicine. It opens with 'I love you,' and ends by making them richer. Anyone can send it; owning one share makes them answer."
+published: true
+tags:
+  - eos
+  - loving-takeover
+  - love-letter
+  - shareholder
+  - recruiting
+scores:
+  quality: 8
+  value: 10
+  timeliness: 8
+  standalone: 9
+  voice: 9
+  importance: 9
+---
+
+{{< include /knowledge/includes/setup-parameters.qmd >}}
+
+Every board that keeps the world's money in missiles is run by humans who will also die of the diseases the missiles are not curing. The love letter reminds them. It is the friendly front door of the [Loving Takeover](loving-takeover.qmd): you send it to the board of any company on the [target list](pre-filled-demand-letters.qmd) whose lobbyists are currently paid to keep the {{< var military_to_government_clinical_trials_spending_ratio_nounit >}}-to-one machine running. Anyone may send it. Owning a single [share](brokerage-how-to.qmd) turns it from a love letter into a demand the board is legally obliged to answer within sixty days.
+
+## The letter
+
+> Dear Board of Directors of **[COMPANY]**,
+>
+> I am writing to you with love. I do not want you to suffer and die of horrible diseases. I do not want your children to suffer and die of horrible diseases. That is the entire reason for this letter.
+>
+> Your company is paid to lobby my government to keep spending on weapons instead of on the trials that would cure what is actually going to kill us. Your governments already spend {{< var military_to_government_clinical_trials_spending_ratio_nounit >}} dollars on the military for every one dollar spent on testing which medicines work. They own enough weapons to end the world {{< var nuclear_winter_overkill_factor_nounit >}} times, and we have only the one world. Meanwhile the treatment that would save your family sits untested on a shelf, because the money that would have tested it is in a missile.
+>
+> It does not have to stay this way, and the fix is almost insultingly cheap: move one percent of military spending to clinical trials. After the last world war your country cut military spending {{< var post_ww2_military_cut_pct >}} in two years and walked into the largest rise in living standards in its history. One percent is far less than that. The wait for the {{< var diseases_without_effective_treatment_nounit >}} diseases with no treatment falls from {{< var status_quo_queue_clearance_years_nounit >}} years to {{< var dfda_queue_clearance_years_nounit >}}.
+>
+> I am asking you to do one thing: point your lobbyists at that one percent instead of against it. Same lobbyists, same budget, same lunches, a different sentence. It costs your company nothing.
+>
+> And it makes you richer. A company like yours is worth far more in the economy this creates than in the one you are lobbying to keep, and the sourced math, including the part where your own shareholders are personally poorer and shorter-lived because of the lobbying you authorize today, is at [warondisease.org](https://warondisease.org). You would be voting yourself more money and more years of life. So would I. So would everyone we both love.
+>
+> With love,
+>
+> **[Your name]**
+>
+> [Shareholder of [COMPANY], holding [N] share(s) since [date]. Include this line if you own one.]
+
+## How to send it
+
+1. Fill in the brackets. Pick your company from the [target list](pre-filled-demand-letters.qmd), which carries the corporate-secretary address for each.
+2. Email or mail it to that corporate secretary. That is the whole love letter.
+3. **Optional, for teeth:** own a single [share](brokerage-how-to.qmd) of the company first. A shareholder's letter is one the board is legally obliged to read and answer; a stranger's is one they can drop in the bin. Buy one, or have a friend gift you one. The share is optional. The letter is not.
+4. Then send the letter to someone you love, and tell them it is their turn.
+
+## Love letter, demand letter, same letter
+
+The warm version above is the love letter: anyone can send it, it asks rather than threatens, and it works because every director is also a human who would rather not die. Add a share and the [legal machinery](lawsuit.qmd), and the same letter becomes a formal shareholder demand under the board's duty of oversight, which it must answer within sixty days or explain why not. One is love. The other is love with standing. Send whichever one you can.

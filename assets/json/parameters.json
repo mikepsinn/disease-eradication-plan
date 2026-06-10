@@ -24117,24 +24117,6 @@
       "pages": "",
       "number": ""
     },
-    "wishonias-wager-paper-2025": {
-      "id": "wishonias-wager-paper-2025",
-      "title": "Wishonia's Wager: Any Finite Action Is Rational When the Stakes Are Infinite",
-      "author": "Sinn, Mike P.",
-      "year": "2025",
-      "source": "International Campaign to End War and Disease",
-      "url": "https://manual.warondisease.org/knowledge/proof/wishonias-wager.html",
-      "urls": [
-        "https://manual.warondisease.org/knowledge/proof/wishonias-wager.html"
-      ],
-      "quote": "A reconstruction of Pascal's Wager with its defects removed. Two propositions cannot be disproven: that a conscious being may suffer without end, and that it may flourish without end. Both carry nonzero probability and infinite magnitude, so any finite action that shifts probability from the first toward the second has unbounded expected value. Unlike Pascal's, the wagered action is empirical, not theological: funding the clinical trials that extend healthy lifespan and modify conscious experience.",
-      "note": "Working Paper",
-      "type": "techreport",
-      "doi": "10.5281/zenodo.20574512",
-      "volume": "",
-      "pages": "",
-      "number": ""
-    },
     "lshtm-every-month-delayed-cancer-treatment-can-raise-risk-de": {
       "id": "lshtm-every-month-delayed-cancer-treatment-can-raise-risk-de",
       "title": "Every month delayed in cancer treatment can raise risk of death by around 10%",
@@ -34524,6 +34506,24 @@
       "note": "Aggregated Pairwise Preference Allocation (APPA) system using pairwise comparisons to determine resource allocation; can use Bradley-Terry model to aggregate millions of pairwise comparisons into global rankings",
       "type": "misc",
       "doi": "",
+      "volume": "",
+      "pages": "",
+      "number": ""
+    },
+    "wishonias-wager-paper-2025": {
+      "id": "wishonias-wager-paper-2025",
+      "title": "Wishonia's Wager: Any Finite Action Is Rational When the Stakes Are Infinite",
+      "author": "Sinn, Mike P.",
+      "year": "2025",
+      "source": "International Campaign to End War and Disease",
+      "url": "https://manual.warondisease.org/knowledge/proof/wishonias-wager.html",
+      "urls": [
+        "https://manual.warondisease.org/knowledge/proof/wishonias-wager.html"
+      ],
+      "quote": "A reconstruction of Pascal's Wager with its defects removed. Two propositions cannot be disproven: that a conscious being may suffer without end, and that it may flourish without end. Both carry nonzero probability and infinite magnitude, so any finite action that shifts probability from the first toward the second has unbounded expected value. Unlike Pascal's, the wagered action is empirical, not theological: funding the clinical trials that extend healthy lifespan and modify conscious experience.",
+      "note": "Working Paper",
+      "type": "techreport",
+      "doi": "10.5281/zenodo.20574512",
       "volume": "",
       "pages": "",
       "number": ""

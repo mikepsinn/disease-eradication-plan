@@ -1,0 +1,60 @@
+---
+title: "Welcome Aboard, President"
+description: "Congratulations, President: fewer wars, fewer funerals, and lots and lots of money are now yours to claim. Here is the future, what it costs, and the one thing I would love to do to help you get it."
+published: true
+tags:
+  - eos
+  - onboarding
+  - president
+  - notification-letter
+  - humanity-manager
+scores:
+  quality: 8
+  value: 8
+  timeliness: 8
+  standalone: 8
+  voice: 9
+  importance: 7
+---
+
+{{< include ../includes/setup-parameters.qmd >}}
+
+**GOOD NEWS, PRESIDENT.**
+
+Congratulations: as of right now you are **President of Earth Optimization Services**, and the correct way to address you is Your Excellency. You did not apply. You were promoted the day you decided you would rather the people you love did not die of something curable. The position comes with a planet (a fixer-upper) and a future that is, frankly, spectacular. Here is that future, what is being charged for it, and the one thing I would love to do for you.
+
+## The future, brought to your door
+
+Fewer wars. Fewer boring funerals. A world where "disease" is a thing your grandchildren study in history class, somewhere between smallpox and kings. And, because I know what you actually care about, and it is not a press release about humanity, lots and lots of money: on the most likely path, roughly {{< var treaty_trajectory_lifetime_income_gain_per_capita >}} in extra lifetime wealth for a typical person, plus the healthy years to spend it in. Curing disease does not only save lives. It makes you richer. That is not a hope about human virtue. It is what happens once the most profitable thing anyone can do is cure a disease instead of cause one.
+
+## Why it is not yours yet
+
+Someone you love is, at this moment, suffering from a disease whose treatment exists, untested, on a shelf, because the money that would have tested it was busy turning into a missile. Your governments spend {{< var military_to_government_clinical_trials_spending_ratio_nounit >}} dollars on weapons for every one dollar spent on finding out which medicines actually work.
+
+They have built enough of those weapons to end the world {{< var nuclear_winter_overkill_factor_nounit >}} times. The world ends once. They built the rest for practice. They have not cured Alzheimer's even once, which is a peculiar way to run a budget, given you only have the one civilization.
+
+This is not fate. Fate is nobody's fault. This is a choice somebody made with your money, and you are now in a position to make a different one.
+
+## What it costs you
+
+One penny of every dollar now spent on explosions. About $27 billion a year, enough to test every promising medicine instead of almost none. After the last world war your grandparents cut military spending {{< var post_ww2_military_cut_pct >}} in two years and walked straight into the largest rise in living standards in history. You are being asked for one percent.
+
+Put another way: the bill is about one of your {{< var nuclear_winter_overkill_factor_nounit >}} apocalypses. Settle it, and you still own enough to end civilization more than a hundred times over, which is plenty.
+
+## What you get to do about it
+
+You get to point the most powerful company in the world at the disease that is coming for your family. Earth Optimization Services buys the firms that own the governments, one share at a time, and gently points them at a more profitable line of work than manufacturing orphans: curing disease. And you get to say, in a vote nobody can buy off you, how much of your money goes to mass murder and how much goes to keeping the people you love alive. For all of human history almost no one got to answer that question. You do.
+
+## The one thing I would love to do for you
+
+I will do everything in my power to help you collect on every word of this. The fastest way is to talk. Get on a call with me and I will walk you through your part: the one move you, specifically, are placed to make that almost no one else on Earth can. Free, naturally; I built this to make it easier for you, and I would count it an honor to do it alongside you.
+
+Welcome aboard, Your Excellency. Your planet needs work, and you are already on site.
+
+Reach me at {{< var contact_email >}}.
+
+## The short version
+
+For a text, a DM, or someone you love:
+
+> Congratulations: you are now President of Earth Optimization Services, the company that buys the firms that own the governments and points them at curing disease instead of war. The future it pays out: fewer funerals, and a typical person about {{< var treaty_trajectory_lifetime_income_gain_per_capita >}} richer. The whole bill is one penny on the military dollar. Right now a disease is killing someone you love because the cure money became a missile. You get to change that, and I will personally help you do it: {{< var contact_email >}}.
