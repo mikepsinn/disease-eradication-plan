@@ -5806,22 +5806,6 @@
       "computeExpr": "(MECHANISM_COURT_OF_HUMANITY_P_SUCCESS * PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT)",
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/proof/wishonias-wager.html"
     },
-    "MECHANISM_COURT_OF_HUMANITY_NET_COST": {
-      "value": 30000000.0,
-      "formatted": "$30 million",
-      "unit": "USD",
-      "description": "One-time cost to build the Court of Humanity. Range reflects digital-first institutional design (no physical courtrooms, no detention, AI-assisted evidence triage, cryptographic provenance, stratified random jury infrastructure). Lower bound: minimal viable institution. Upper bound: fully-staffed initial operations, roughly 27% of one year of ICC operating budget (the ICC funds physical courtrooms, detention, and 425+ staff).",
-      "sourceType": "definition",
-      "sourceRef": null,
-      "confidence": "estimated",
-      "formula": null,
-      "confidenceInterval": [
-        10000000.0,
-        50000000.0
-      ],
-      "distribution": "lognormal",
-      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/solution/court-of-humanity.html"
-    },
     "MECHANISM_COURT_OF_HUMANITY_P_SUCCESS": {
       "value": 0.1,
       "formatted": "0.1:1",
@@ -5942,24 +5926,6 @@
       ],
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/proof/wishonias-wager.html"
     },
-    "MECHANISM_LOVING_TAKEOVER_CAPITAL": {
-      "value": 722341800000.0,
-      "formatted": "$722 billion",
-      "unit": "USD",
-      "description": "Total realistic cost to acquire controlling stakes in all major Western defense contractors, including acquisition premium from coordinated buying pressure",
-      "sourceType": "calculated",
-      "sourceRef": null,
-      "confidence": "high",
-      "formula": "(DEFENSE_PRIMES_MARKET_CAP_US + DEFENSE_PRIMES_MARKET_CAP_ALLIED) * DEFENSE_TAKEOVER_CONTROL_FRACTION * DEFENSE_TAKEOVER_ACQUISITION_PREMIUM",
-      "inputs": [
-        "DEFENSE_PRIMES_MARKET_CAP_ALLIED",
-        "DEFENSE_PRIMES_MARKET_CAP_US",
-        "DEFENSE_TAKEOVER_ACQUISITION_PREMIUM",
-        "DEFENSE_TAKEOVER_CONTROL_FRACTION"
-      ],
-      "computeExpr": "(((DEFENSE_PRIMES_MARKET_CAP_US + DEFENSE_PRIMES_MARKET_CAP_ALLIED) * DEFENSE_TAKEOVER_CONTROL_FRACTION) * DEFENSE_TAKEOVER_ACQUISITION_PREMIUM)",
-      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/loving-takeover.html"
-    },
     "MECHANISM_LOVING_TAKEOVER_EV": {
       "value": 107892450000.0,
       "formatted": "$108 billion",
@@ -6039,21 +6005,6 @@
       "computeExpr": "(MECHANISM_REFERENDUM_P_SUCCESS * PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT)",
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/proof/wishonias-wager.html"
     },
-    "MECHANISM_REFERENDUM_NET_COST": {
-      "value": 250000000.0,
-      "formatted": "$250 million",
-      "unit": "USD",
-      "description": "Viral referendum budget for 280M verified votes (base: $250M realistic with $0.50/vote avg, range: $150M optimistic $0.20/vote to $410M worst-case $1.05/vote). Components: platform ($35M), verification infrastructure (280M × friction × $0.18-0.20), tiered referral payments (varies by virality and marginal cost curve per diffusion theory), marketing seed ($5-15M). Based on PayPal referral economics ($18-36 inflation-adjusted) and biometric verification pricing ($0.15-0.25 at 300M+ scale).",
-      "sourceType": "definition",
-      "sourceRef": null,
-      "confidence": "medium",
-      "formula": "PLATFORM + VERIFICATION + PAYMENTS (tiered by adopter segment) + MARKETING",
-      "confidenceInterval": [
-        150000000.0,
-        410000000.0
-      ],
-      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/economics/1-pct-treaty-impact.html"
-    },
     "MECHANISM_REFERENDUM_P_SUCCESS": {
       "value": 0.3,
       "formatted": "0.3:1",
@@ -6085,37 +6036,20 @@
       "computeExpr": "(MECHANISM_SHIRT_CASCADE_P_SUCCESS * PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT)",
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/proof/wishonias-wager.html"
     },
-    "MECHANISM_SHIRT_CASCADE_NET_COST": {
-      "value": 50000000.0,
-      "formatted": "$50 million",
-      "unit": "USD",
-      "description": "Total foundation escrow required to fund the seed-wearer program: threshold of visible humans multiplied by blended cost per wearer. Held in Earth Optimization Prize assurance contract; refunded at structural EOP return rate if neither treaty passage nor target hit.",
-      "sourceType": "calculated",
-      "sourceRef": null,
-      "confidence": "high",
-      "formula": "SHIRT_SEED_WEARERS_THRESHOLD × SHIRT_SEED_COST_PER_WEARER_USD",
-      "inputs": [
-        "SHIRT_SEED_COST_PER_WEARER_USD",
-        "SHIRT_SEED_WEARERS_THRESHOLD"
-      ],
-      "computeExpr": "(SHIRT_SEED_WEARERS_THRESHOLD * SHIRT_SEED_COST_PER_WEARER_USD)",
-      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/joke.html"
-    },
     "MECHANISM_SHIRT_CASCADE_P_SUCCESS": {
       "value": 0.25,
-      "formatted": "25%",
-      "unit": "rate",
-      "description": "Subjective probability that the seed program triggers a viral cascade to majority-of-humanity participation, conditional on the seed threshold being met. Deliberately conservative: even at 25% the expected-value math beats every conventional foundation intervention. Sensitivity range covers skeptic and base-case scenarios.",
-      "sourceType": "definition",
+      "formatted": "0.25:1",
+      "unit": "ratio",
+      "description": "Probability of treaty passage given full funding of the shirt cascade seed program.",
+      "sourceType": "calculated",
       "sourceRef": null,
       "confidence": "low",
-      "formula": null,
-      "confidenceInterval": [
-        0.05,
-        0.6
+      "formula": "SHIRT_CASCADE_PROBABILITY_GIVEN_SEED",
+      "inputs": [
+        "SHIRT_CASCADE_PROBABILITY_GIVEN_SEED"
       ],
-      "distribution": "beta",
-      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/joke.html"
+      "computeExpr": "SHIRT_CASCADE_PROBABILITY_GIVEN_SEED",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/proof/wishonias-wager.html"
     },
     "MECHANISM_TREATY_CAMPAIGN_EV": {
       "value": 45428400000.0,
@@ -6132,23 +6066,6 @@
       ],
       "computeExpr": "(MECHANISM_TREATY_CAMPAIGN_P_SUCCESS * PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT)",
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/proof/wishonias-wager.html"
-    },
-    "MECHANISM_TREATY_CAMPAIGN_NET_COST": {
-      "value": 1000000000.0,
-      "formatted": "$1 billion",
-      "unit": "USD",
-      "description": "Total treaty campaign cost (100% VICTORY Incentive Alignment Bonds)",
-      "sourceType": "calculated",
-      "sourceRef": null,
-      "confidence": "high",
-      "formula": "REFERENDUM + LOBBYING + RESERVE",
-      "inputs": [
-        "TREATY_CAMPAIGN_BUDGET_LOBBYING",
-        "TREATY_CAMPAIGN_BUDGET_RESERVE",
-        "TREATY_CAMPAIGN_VIRAL_REFERENDUM_BASE_CASE"
-      ],
-      "computeExpr": "((TREATY_CAMPAIGN_VIRAL_REFERENDUM_BASE_CASE + TREATY_CAMPAIGN_BUDGET_LOBBYING) + TREATY_CAMPAIGN_BUDGET_RESERVE)",
-      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/economics/1-pct-treaty-impact.html"
     },
     "MECHANISM_TREATY_CAMPAIGN_P_SUCCESS": {
       "value": 0.4,
@@ -7881,7 +7798,7 @@
     },
     "SHARING_BREAKEVEN_PROBABILITY_TREATY": {
       "value": 1.721136132636184e-08,
-      "formatted": "1.72e-08 probability",
+      "formatted": "1 in 58.1 million",
       "unit": "probability",
       "description": "Minimum probability that the plan works for forwarding to have positive expected value. EV > 0 when P(works) > cost_of_sharing / gain_if_works. Below this probability, not forwarding is rational. Above it, forwarding dominates. For context, the odds of being struck by lightning are ~1 in 1.2 million.",
       "sourceType": "calculated",
@@ -10344,7 +10261,7 @@
     },
     "US_VOTE_DECISIVE_PROBABILITY": {
       "value": 1.6666666666666667e-08,
-      "formatted": "1.67e-08 probability",
+      "formatted": "1 in 60 million",
       "unit": "probability",
       "description": "Probability of a single vote being decisive in a US presidential election. Gelman, Silver, and Edlin (2012) estimate roughly 1 in 60 million on average, varying by state from 1 in 10 million (swing states) to 1 in 1 billion (safe states).",
       "sourceType": "external",

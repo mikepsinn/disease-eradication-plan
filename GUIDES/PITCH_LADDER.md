@@ -28,6 +28,8 @@ Pick by audience. One breath.
 - **Heartbreak (default for the public):** "Say goodbye to the heartbreak of suffering and dying slowly! Earth Optimization Services brings the Civilization of Tomorrow straight to your door: fewer wars, fewer boring funerals, and lots and lots of money. Also, you own the company." (Social/web variant: "fewer boring funerals 🥱". In print, let "boring" carry it. Strong alternate button: "Operators are standing by. The operator is you.")
 - **Gee-whiz:** "Friends! Are you and everyone you love still dying of disease? In the Civilization of Tomorrow, that is a thing of the past, and you already own a share of the company that builds it."
 - **Power transfer (anti-government / jaded):** "Tired of your government spending your money frightening strangers instead of keeping your family alive? Earth Optimization Services buys it out and hands the decision back to you. The future: now under new management."
+- **Carnival bark:** "Friends! The war machine is sold to anyone with money! Congratulations: you're anyone!"
+- **Product-claim button:** "Now with lobbyists who work for you. They're confused, but the checks clear."
 
 ## 30 seconds (the mechanism, with a wink)
 

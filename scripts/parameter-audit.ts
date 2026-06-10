@@ -17,7 +17,7 @@
 
 import * as fs from 'fs';
 import * as path from 'path';
-import { fileURLToPath } from 'url';
+import { fileURLToPath, pathToFileURL } from 'url';
 import { glob } from 'glob';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -103,6 +103,12 @@ interface ParameterInfo {
   dependentParams: string[];
 }
 
+interface ClassifiedUsage {
+  unused: string[];
+  intermediate: { name: string; codeCount: number; deps: string[] }[];
+  used: { name: string; totalRefs: number; files: string[] }[];
+}
+
 function toQuartoVariable(paramName: string): string {
   return paramName.toLowerCase();
 }
@@ -117,7 +123,6 @@ async function getAllFiles(): Promise<string[]> {
       nodir: true,
       absolute: true,
       dot: false,
-      followSymbolicLinks: false,
     });
     allFiles.push(...files);
   }
@@ -317,10 +322,7 @@ ${usage.context.join('\n')}
 
 // ==================== UNUSED PARAMETERS MODE ====================
 
-function getAllParameters(): Set<string> {
-  const paramsFile = path.join(PROJECT_ROOT, 'dih_models', 'parameters.py');
-  const content = fs.readFileSync(paramsFile, 'utf-8');
-
+export function extractParameterNames(content: string): Set<string> {
   const params = new Set<string>();
   const paramRegex = /^([A-Z][A-Z0-9_]+)\s*=\s*Parameter\(/gm;
   let match;
@@ -329,12 +331,39 @@ function getAllParameters(): Set<string> {
     params.add(match[1]);
   }
 
+  const aliasRegex = /^([A-Z][A-Z0-9_]+)\s*=\s*([A-Z][A-Z0-9_]+)\b/gm;
+  let changed = true;
+  while (changed) {
+    changed = false;
+    aliasRegex.lastIndex = 0;
+    while ((match = aliasRegex.exec(content)) !== null) {
+      const aliasName = match[1];
+      const targetName = match[2];
+      if (!params.has(aliasName) && params.has(targetName)) {
+        params.add(aliasName);
+        changed = true;
+      }
+    }
+  }
+
   return params;
 }
 
-function findDependents(allParams: Set<string>): Map<string, string[]> {
+function getAllParameters(): Set<string> {
   const paramsFile = path.join(PROJECT_ROOT, 'dih_models', 'parameters.py');
   const content = fs.readFileSync(paramsFile, 'utf-8');
+  return extractParameterNames(content);
+}
+
+function addDependent(dependents: Map<string, string[]>, inputParam: string, dependentParam: string): void {
+  const existing = dependents.get(inputParam) || [];
+  if (!existing.includes(dependentParam)) {
+    existing.push(dependentParam);
+  }
+  dependents.set(inputParam, existing);
+}
+
+export function findDependentsInSource(content: string, allParams: Set<string>): Map<string, string[]> {
   const lines = content.split('\n');
 
   const dependents = new Map<string, string[]>();
@@ -377,11 +406,7 @@ function findDependents(allParams: Set<string>): Map<string, string[]> {
       for (const otherParam of allParams) {
         if (otherParam === paramName) continue;
         if (new RegExp(`\\b${otherParam}\\b`).test(blockText)) {
-          const existing = dependents.get(otherParam) || [];
-          if (!existing.includes(paramName)) {
-            existing.push(paramName);
-          }
-          dependents.set(otherParam, existing);
+          addDependent(dependents, otherParam, paramName);
         }
       }
     } else {
@@ -389,26 +414,95 @@ function findDependents(allParams: Set<string>): Map<string, string[]> {
     }
   }
 
+  const aliasRegex = /^([A-Z][A-Z0-9_]+)\s*=\s*([A-Z][A-Z0-9_]+)\b/gm;
+  let match;
+  while ((match = aliasRegex.exec(content)) !== null) {
+    const aliasName = match[1];
+    const targetName = match[2];
+    if (allParams.has(aliasName) && allParams.has(targetName) && aliasName !== targetName) {
+      addDependent(dependents, targetName, aliasName);
+    }
+  }
+
   return dependents;
 }
 
+function findDependents(allParams: Set<string>): Map<string, string[]> {
+  const paramsFile = path.join(PROJECT_ROOT, 'dih_models', 'parameters.py');
+  const content = fs.readFileSync(paramsFile, 'utf-8');
+  return findDependentsInSource(content, allParams);
+}
+
+export function classifyParameterUsage({
+  allParams,
+  dependents,
+  qmdRefs,
+  scriptRefs,
+  codeRefs,
+}: {
+  allParams: Set<string>;
+  dependents: Map<string, string[]>;
+  qmdRefs: Map<string, string[]>;
+  scriptRefs: Map<string, string[]>;
+  codeRefs: Map<string, number>;
+}): ClassifiedUsage {
+  const unused: string[] = [];
+  const intermediate: { name: string; codeCount: number; deps: string[] }[] = [];
+  const used: { name: string; totalRefs: number; files: string[] }[] = [];
+
+  for (const param of allParams) {
+    const codeCount = codeRefs.get(param) || 0;
+    const qmdFiles = qmdRefs.get(param) || [];
+    const pyFiles = scriptRefs.get(param) || [];
+    const deps = dependents.get(param) || [];
+
+    const allExternal = [...new Set([...qmdFiles, ...pyFiles])];
+    const totalExternal = allExternal.length;
+    const dependencyCount = deps.length > 0 ? deps.length : codeCount;
+
+    if (dependencyCount === 0 && totalExternal === 0) {
+      unused.push(param);
+    } else if (totalExternal === 0) {
+      intermediate.push({ name: param, codeCount: dependencyCount, deps });
+    } else {
+      used.push({ name: param, totalRefs: totalExternal, files: allExternal.slice(0, 5) });
+    }
+  }
+
+  unused.sort();
+  intermediate.sort((a, b) => a.codeCount - b.codeCount);
+  used.sort((a, b) => b.totalRefs - a.totalRefs);
+
+  return { unused, intermediate, used };
+}
+
 async function findUnusedParameters(jsonOutput: boolean = false): Promise<void> {
-  console.log('=' .repeat(80));
-  console.log('PARAMETER USAGE ANALYSIS');
-  console.log('='.repeat(80));
-  console.log();
+  const log = (...args: unknown[]) => {
+    const message = args.map(String).join(' ');
+    if (jsonOutput) {
+      console.error(message);
+    } else {
+      console.log(message);
+    }
+  };
+  const progressOutput = jsonOutput ? process.stderr : process.stdout;
 
-  console.log('[1/4] Extracting all parameters from parameters.py...');
+  log('=' .repeat(80));
+  log('PARAMETER USAGE ANALYSIS');
+  log('='.repeat(80));
+  log();
+
+  log('[1/4] Extracting all parameters from parameters.py...');
   const allParams = getAllParameters();
-  console.log(`      Found ${allParams.size} parameters`);
-  console.log();
+  log(`      Found ${allParams.size} parameters`);
+  log();
 
-  console.log('[2/4] Analyzing parameter dependencies...');
+  log('[2/4] Analyzing parameter dependencies...');
   const dependents = findDependents(allParams);
-  console.log('      Dependency analysis complete!');
-  console.log();
+  log('      Dependency analysis complete!');
+  log();
 
-  console.log('[3/4] Scanning for parameter usages...');
+  log('[3/4] Scanning for parameter usages...');
   const files = await getAllFiles();
 
   // Track usages
@@ -442,7 +536,7 @@ async function findUnusedParameters(jsonOutput: boolean = false): Promise<void> 
 
     scannedCount++;
     if (scannedCount % 100 === 0) {
-      process.stdout.write(`      Scanned ${scannedCount} files...\r`);
+      progressOutput.write(`      Scanned ${scannedCount} files...\r`);
     }
 
     try {
@@ -492,43 +586,24 @@ async function findUnusedParameters(jsonOutput: boolean = false): Promise<void> 
       // Skip unreadable files
     }
   }
-  console.log(`      Scanned ${scannedCount} files                `);
-  console.log();
+  log(`      Scanned ${scannedCount} files                `);
+  log();
 
   // Categorize parameters
-  console.log('[4/4] Categorizing parameters...');
+  log('[4/4] Categorizing parameters...');
 
-  const unused: string[] = [];
-  const intermediate: { name: string; codeCount: number; deps: string[] }[] = [];
-  const used: { name: string; totalRefs: number; files: string[] }[] = [];
-
-  for (const param of allParams) {
-    const codeCount = codeRefs.get(param) || 0;
-    const qmdFiles = qmdRefs.get(param) || [];
-    const pyFiles = scriptRefs.get(param) || [];
-    const deps = dependents.get(param) || [];
-
-    const allExternal = [...new Set([...qmdFiles, ...pyFiles])];
-    const totalExternal = allExternal.length;
-
-    if (codeCount === 0 && totalExternal === 0) {
-      unused.push(param);
-    } else if (totalExternal === 0) {
-      intermediate.push({ name: param, codeCount, deps });
-    } else {
-      used.push({ name: param, totalRefs: totalExternal, files: allExternal.slice(0, 5) });
-    }
-  }
-
-  // Sort
-  unused.sort();
-  intermediate.sort((a, b) => a.codeCount - b.codeCount);
-  used.sort((a, b) => b.totalRefs - a.totalRefs);
+  const { unused, intermediate, used } = classifyParameterUsage({
+    allParams,
+    dependents,
+    qmdRefs,
+    scriptRefs,
+    codeRefs,
+  });
 
   // Output results
-  console.log();
-  console.log('RESULTS:');
-  console.log();
+  log();
+  log('RESULTS:');
+  log();
 
   if (jsonOutput) {
     const result = {
@@ -542,7 +617,7 @@ async function findUnusedParameters(jsonOutput: boolean = false): Promise<void> 
         used: used.length,
       }
     };
-    console.log(JSON.stringify(result, null, 2));
+    process.stdout.write(`${JSON.stringify(result, null, 2)}\n`);
     return;
   }
 
@@ -692,4 +767,6 @@ async function main() {
   console.log(`  Both: ${usages.filter(u => u.matchType === 'both').length}`);
 }
 
-main().catch(console.error);
+if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
+  main().catch(console.error);
+}

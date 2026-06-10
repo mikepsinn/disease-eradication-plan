@@ -1,5 +1,6 @@
 ---
 title: "Earth Optimization Services"
+subtitle: "The future: now under new management."
 description: "Universe Optimization Services has helped over 300 civilizations upgrade from 'actively self-destructing' to 'surprisingly pleasant.' Earth is now accepting applications."
 published: true
 tags:
@@ -60,11 +61,15 @@ The [Optimal Policy Generator](../appendix/optimal-policy-generator-spec.qmd) [@
 
 No ideology required. No elections. No campaign contributions. Just the answer to the question "what actually worked?" applied to every decision your species currently makes by guessing.
 
+Policy by regression discontinuity. The previous method was "whoever paid the most."
+
 *"We spent 4,000 years debating education policy. The Evidence Engine resolved it in an afternoon. Our main regret is the 4,000 years." (Planet Keth-7, client since 8,000 BCE)*
 
 ### Product 2: The Budget Redirect
 
 **What it does:** Finds the money.
+
+Our flagship feature: knowing where the trillions went.
 
 You do not need new money. You need to stop losing the money you have. You maintain {{< var global_warhead_count_nounit >}} nuclear warheads. You can only end your civilization once. The other {{< var nuclear_winter_overkill_factor_nounit >}} minus 1 endings are in storage, costing money, doing nothing. The [1% Treaty](1-percent-treaty.qmd) [@1-percent-treaty-paper-2025] [@1-pct-treaty-impact-paper-2025] moves 1% of every nation's military budget to clinical trials. Everyone reduces equally. Nobody is easier to invade. Everyone has {{< var dfda_trial_capacity_multiplier >}} more clinical trials. Disease eradication goes from {{< var status_quo_queue_clearance_years >}} to {{< var dfda_queue_clearance_years >}}.
 
@@ -75,6 +80,8 @@ Your lifetime instead of centuries. That is the product.
 ### Product 3: The Loving Takeover
 
 **What it does:** Buys the opposition and makes it richer.
+
+Congratulations on your purchase: the companies that own your government.
 
 The companies that build your weapons also employ your best engineers and your most effective lobbyists. Destroying them would be wasteful. Fighting them would be expensive. [Buying them](../appendix/loving-takeover.qmd) is more fun.
 
@@ -339,6 +346,12 @@ For planets ready for the full upgrade. Each module replaces one agency with an 
 | The [Earth Optimization Prize](../economics/earth-optimization-prize-fund.qmd) | Employee performance bonuses. Cash prizes for the researchers, organizers, and citizens who contribute most to optimization. Because your species responds to prizes the way dogs respond to treats, and with approximately the same dignity. |
 | [Catsoline](../appendix/catsoline.qmd) | A feline-actuated propulsion system. Runs your vehicle on a single startled cat at 340% thermal efficiency, no fossil fuel, no patent. We include it because it proves your species can optimize literally anything when sufficiently motivated. Anything except its own government. |
 
+## Reviews from the Competition
+
+*"One star. They started checking which medicines work."* (Cancer)
+
+*"They outspent their own cures {{< var military_to_government_clinical_trials_spending_ratio_nounit >}} to 1. We assumed it was a tribute."* (The Diseases)
+
 ## Customer Reviews
 
 **Planet Keth-7** ★★★★★
@@ -378,6 +391,8 @@ The fund pools investments to buy defense contractor shares and coordinate gover
 Same fund, larger position. The [terms page](../economics/investment-terms.qmd) has a calculator showing expected value at various probability estimates.
 
 All three produce the same outcome at different speeds.
+
+The guarantee: full refund if the world ends more than once.
 
 ---
 

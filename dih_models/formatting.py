@@ -36,6 +36,20 @@ def format_parameter_value(param: Union[float, int, str, "Parameter"], unit: str
     
     # Normalize unit for checking
     unit_check = unit.lower() if unit else ""
+
+    # Probability parameters are best displayed as odds for tiny values.
+    # Raw scientific notation like "1.67e-08 probability" is technically valid
+    # but useless in prose.
+    if unit_check == "probability":
+        if value == 0:
+            return "0"
+        if 0 < abs(value) < 0.001:
+            denominator = 1 / abs(value)
+            return f"1 in {format_parameter_value(denominator, '', include_unit=False)}"
+        pct_val = value * 100
+        pct_formatted = f"{pct_val:.1f}" if abs(pct_val) >= 1 else f"{pct_val:.3g}"
+        pct_formatted = pct_formatted.rstrip("0").rstrip(".")
+        return f"{pct_formatted}%"
     
     # Detect currency parameters
     is_currency = "usd" in unit_check or "dollar" in unit_check or "$" in unit_check

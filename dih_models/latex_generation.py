@@ -806,20 +806,49 @@ def round_to_n_sigfigs(value: float, n: int = 3) -> str:
     formatted = f"{value:.{n}g}"
     # Clean up scientific notation if present
     if 'e' in formatted.lower():
-        # Convert back to regular notation if reasonable
-        return f"{float(formatted):.{n-1}f}".rstrip('0').rstrip('.')
+        mantissa, exponent = formatted.lower().split('e')
+        mantissa = mantissa.rstrip('0').rstrip('.')
+        exponent_int = int(exponent)
+        if exponent_int >= 0 and exponent_int < 6:
+            return f"{float(formatted):.0f}"
+        if -3 <= exponent_int < 0:
+            decimals = abs(exponent_int) + n - 1
+            return f"{float(formatted):.{decimals}f}".rstrip('0').rstrip('.')
+        return f"{mantissa} \\times 10^{{{exponent_int}}}"
     return formatted
+
+
+def _format_latex_compact_number(value: float) -> str:
+    abs_val = abs(value)
+    sign = "-" if value < 0 else ""
+    if abs_val >= 1e12:
+        return f"{sign}{round_to_n_sigfigs(abs_val / 1e12, 3)}T"
+    if abs_val >= 1e9:
+        return f"{sign}{round_to_n_sigfigs(abs_val / 1e9, 3)}B"
+    if abs_val >= 1e6:
+        return f"{sign}{round_to_n_sigfigs(abs_val / 1e6, 3)}M"
+    if abs_val >= 1e3:
+        return f"{sign}{round_to_n_sigfigs(abs_val / 1e3, 3)}K"
+    return f"{sign}{round_to_n_sigfigs(abs_val, 3)}"
 
 
 def format_latex_value(value: float, unit: str) -> str:
     """Format a numeric value for LaTeX display with proper units and scaling (3 sig figs)."""
-    is_currency = "USD" in unit or "usd" in unit or "dollar" in unit.lower()
-    is_percentage = "%" in unit or "percent" in unit.lower() or "rate" in unit.lower()
-    is_in_billions = "billion" in unit.lower()
+    unit_lower = unit.lower()
+    is_currency = "USD" in unit or "usd" in unit or "dollar" in unit_lower
+    is_probability = unit_lower == "probability"
+    is_percentage = "%" in unit or "percent" in unit_lower or "rate" in unit_lower
+    is_in_billions = "billion" in unit_lower
 
     abs_val = abs(value)
 
-    if is_currency:
+    if is_probability:
+        if value == 0:
+            return "0"
+        if 0 < abs_val < 0.001:
+            return f"1\\text{{ in }}{_format_latex_compact_number(1 / abs_val)}"
+        return f"{round_to_n_sigfigs(value * 100, 3)}\\%"
+    elif is_currency:
         if is_in_billions:
             if abs_val >= 1000:
                 scaled = value / 1000

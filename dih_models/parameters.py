@@ -14011,8 +14011,10 @@ MECHANISM_OPPORTUNITY_COST_RATE = Parameter(
     distribution="fixed",
 )
 
+# Use canonical cost parameters directly. Do not alias the same Parameter object
+# just to fit the mechanism comparison naming pattern.
+
 # -- LOVING TAKEOVER (capital deployment: shares retained) --
-MECHANISM_LOVING_TAKEOVER_CAPITAL = DEFENSE_TAKEOVER_COST_TOTAL
 MECHANISM_LOVING_TAKEOVER_NET_COST = Parameter(
     DEFENSE_TAKEOVER_COST_TOTAL * 0.02,
     manual_ref="knowledge/proof/wishonias-wager.qmd",
@@ -14039,7 +14041,6 @@ MECHANISM_LOVING_TAKEOVER_P_SUCCESS = Parameter(
 )
 
 # -- TREATY CAMPAIGN (expenditure: lobbying + political spending) --
-MECHANISM_TREATY_CAMPAIGN_NET_COST = TREATY_CAMPAIGN_TOTAL_COST
 MECHANISM_TREATY_CAMPAIGN_P_SUCCESS = Parameter(
     0.40,
     manual_ref="knowledge/proof/wishonias-wager.qmd",
@@ -14053,11 +14054,22 @@ MECHANISM_TREATY_CAMPAIGN_P_SUCCESS = Parameter(
 )
 
 # -- SHIRT CASCADE (expenditure: seed program) --
-MECHANISM_SHIRT_CASCADE_NET_COST = SHIRT_SEED_PROGRAM_TOTAL_USD
-MECHANISM_SHIRT_CASCADE_P_SUCCESS = SHIRT_CASCADE_PROBABILITY_GIVEN_SEED
+MECHANISM_SHIRT_CASCADE_P_SUCCESS = Parameter(
+    float(SHIRT_CASCADE_PROBABILITY_GIVEN_SEED),
+    manual_ref="knowledge/proof/wishonias-wager.qmd",
+    source_type="calculated",
+    description="Probability of treaty passage given full funding of the shirt cascade seed program.",
+    display_name="P(Success | Shirt Cascade Funded)",
+    unit="ratio",
+    formula="SHIRT_CASCADE_PROBABILITY_GIVEN_SEED",
+    inputs=["SHIRT_CASCADE_PROBABILITY_GIVEN_SEED"],
+    compute=lambda ctx: ctx["SHIRT_CASCADE_PROBABILITY_GIVEN_SEED"],
+    confidence="low",
+    keywords=["mechanism", "probability", "shirt cascade", "cost-effectiveness"],
+    latex_symbol=r"P_{shirt}",
+)
 
 # -- COURT OF HUMANITY (expenditure: platform build) --
-MECHANISM_COURT_OF_HUMANITY_NET_COST = COURT_BUILD_COST
 MECHANISM_COURT_OF_HUMANITY_P_SUCCESS = Parameter(
     0.10,
     manual_ref="knowledge/proof/wishonias-wager.qmd",
@@ -14133,7 +14145,6 @@ MECHANISM_DFDA_P_SUCCESS = Parameter(
 )
 
 # -- GLOBAL REFERENDUM (expenditure: platform + voter acquisition) --
-MECHANISM_REFERENDUM_NET_COST = TREATY_CAMPAIGN_VIRAL_REFERENDUM_BASE_CASE
 MECHANISM_REFERENDUM_P_SUCCESS = Parameter(
     0.30,
     manual_ref="knowledge/proof/wishonias-wager.qmd",

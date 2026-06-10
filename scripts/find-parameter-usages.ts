@@ -112,7 +112,6 @@ async function getAllFiles(): Promise<string[]> {
       nodir: true,
       absolute: true,
       dot: false,          // Exclude hidden files
-      followSymbolicLinks: false,
     });
     allFiles.push(...files);
   }

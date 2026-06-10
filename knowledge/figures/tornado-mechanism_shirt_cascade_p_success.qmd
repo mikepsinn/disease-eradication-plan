@@ -16,18 +16,18 @@ setup_chart_style()
 
 # Display name for chart title
 
-display_name = "Defense Takeover Total Cost"
+display_name = "P(Success | Shirt Cascade Funded)"
 
 # Baseline and units
 
-baseline = 722341800000.0
+baseline = 0.25
 
 # Tornado data from sensitivity analysis
 
-drivers = ['DEFENSE_TAKEOVER_ACQUISITION_PREMIUM']
-driver_labels = ['Acquisition Premium Multiplier']
-impacts_low = [-120390300000.0]
-impacts_high = [481561200000.0]
+drivers = ['SHIRT_CASCADE_PROBABILITY_GIVEN_SEED']
+driver_labels = ['Shirt Cascade Probability Given Seed']
+impacts_low = [-0.2]
+impacts_high = [0.35]
 
 # Convert deltas to absolute values (baseline + delta)
 
@@ -71,7 +71,7 @@ ax.set_title(f'Sensitivity Analysis: {display_name}', fontsize=16, weight='bold'
 
 # X-axis label with units
 
-units_label = "USD"
+units_label = "ratio"
 if units_label:
     ax.set_xlabel(f'{display_name} ({units_label})', fontsize=12)
 else:
@@ -96,7 +96,7 @@ add_watermark(fig)
 # Save PNG to knowledge/figures/ regardless of where Quarto renders from
 # Use 96 DPI for web-optimized output (reduced from 150 DPI to minimize file size)
 
-output_path = get_figure_output_path('tornado-mechanism_loving_takeover_capital.png')
+output_path = get_figure_output_path('tornado-mechanism_shirt_cascade_p_success.png')
 plt.savefig(output_path, dpi=96, bbox_inches=None, facecolor=COLOR_WHITE)
 
 add_png_metadata(

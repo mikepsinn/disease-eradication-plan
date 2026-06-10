@@ -7529,10 +7529,10 @@ Breakeven probability expressed as '1 in N'. Forwarding has positive expected va
 
 **Inputs**:
 
-- [Sharing Breakeven Probability](#sec-sharing_breakeven_probability_treaty) 🔢: 1.72e-08 probability
+- [Sharing Breakeven Probability](#sec-sharing_breakeven_probability_treaty) 🔢: 1 in 58.1 million
 
 $$
-N_{breakeven} = P_{breakeven} = 0 = 58.1M
+N_{breakeven} = P_{breakeven} = 1\text{ in }58.1M = 58.1M
 $$
 where:
 $$
@@ -7540,7 +7540,7 @@ $$
 P_{breakeven} \\
 = \frac{C_{share}}{\Delta Y_{lifetime,treaty}} \\
 = \frac{\$0.0599}{\$3.48M} \\
-= 0
+= 1\text{ in }58.1M
 \end{gathered}
 $$
 where:
@@ -7839,7 +7839,7 @@ $$
 
 :::
 
-### Sharing Breakeven Probability: 1.72e-08 probability {#sec-sharing_breakeven_probability_treaty}
+### Sharing Breakeven Probability: 1 in 58.1 million {#sec-sharing_breakeven_probability_treaty}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -7855,7 +7855,7 @@ $$
 P_{breakeven} \\
 = \frac{C_{share}}{\Delta Y_{lifetime,treaty}} \\
 = \frac{\$0.0599}{\$3.48M} \\
-= 0
+= 1\text{ in }58.1M
 \end{gathered}
 $$
 where:
@@ -13929,14 +13929,14 @@ Expected monetary value of a single vote in a US presidential election. Calculat
 
 **Inputs**:
 
-- [Probability of Decisive Vote (US)](#sec-us_vote_decisive_probability) 📊: 1.67e-08 probability
+- [Probability of Decisive Vote (US)](#sec-us_vote_decisive_probability) 📊: 1 in 60 million
 - [US Federal Spending per Capita](#sec-us_federal_spending_per_capita) 🔢: $20,299
 
 $$
 \begin{gathered}
 EV_{vote} \\
 = P_{decisive} \times Spend_{fed,pc} \\
-= 0 \times \$20.3K \\
+= 1\text{ in }60M \times \$20.3K \\
 = \$0.000338
 \end{gathered}
 $$
@@ -19863,7 +19863,7 @@ Total US federal lobbying expenditure in 2024 (record year). Source: OpenSecrets
 
 :::
 
-### Probability of Decisive Vote (US): 1.67e-08 probability {#sec-us_vote_decisive_probability}
+### Probability of Decisive Vote (US): 1 in 60 million {#sec-us_vote_decisive_probability}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 

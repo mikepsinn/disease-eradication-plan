@@ -38,15 +38,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 771 parameters used in the analysis, organized by type:
+This appendix documents all 766 parameters used in the analysis, organized by type:
 
 - External sources (peer-reviewed): 228
-- Calculated values: 384
-- Core definitions: 159
+- Calculated values: 382
+- Core definitions: 156
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (384 parameters) • [External Data Sources](#sec-external) (228 parameters) • [Core Definitions](#sec-definitions) (159 parameters)
+[Calculated Values](#sec-calculated) (382 parameters) • [External Data Sources](#sec-external) (228 parameters) • [Core Definitions](#sec-definitions) (156 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -14987,43 +14987,6 @@ $$
 
 :::
 
-### Defense Takeover Total Cost: $722 billion {#sec-mechanism_loving_takeover_capital}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Total realistic cost to acquire controlling stakes in all major Western defense contractors, including acquisition premium from coordinated buying pressure
-
-**Inputs**:
-
-- [US Defense Primes Market Cap](#sec-defense_primes_market_cap_us) 📊: $670 billion
-- [Allied Defense Primes Market Cap](#sec-defense_primes_market_cap_allied) 📊: $131 billion
-- [Control Fraction](#sec-defense_takeover_control_fraction): 0.501:1
-- [Acquisition Premium Multiplier](#sec-defense_takeover_acquisition_premium): 1.8x (95% CI: 1.5x - 3x)
-
-$$
-\begin{gathered}
-C_{takeover} \\
-= (MarketCap_{US} \\
-+ MarketCap_{allied}) \times f_{control} \times m_{premium}
-\end{gathered}
-$$
-
-*✓ High confidence*
-
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-mechanism_loving_takeover_capital.qmd >}}
-
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-mechanism_loving_takeover_capital.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-mechanism_loving_takeover_capital.qmd >}}
-
-:::
-
 ### Loving Takeover Expected Social Value: $108 billion {#sec-mechanism_loving_takeover_ev}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -15339,16 +15302,20 @@ Expected annual social value from the shirt cascade: P(success) * annual peace d
 
 **Inputs**:
 
-- [Shirt Cascade Probability Given Seed](#sec-mechanism_shirt_cascade_p_success): 25% (95% CI: 5% - 60%)
+- [P(Success | Shirt Cascade Funded)](#sec-mechanism_shirt_cascade_p_success) 🔢: 0.25:1
 - [Annual Peace Dividend from 1% Reduction in Total War Costs](#sec-peace_dividend_annual_societal_benefit) 🔢: $114 billion
 
 $$
 \begin{gathered}
 EV_{shirt} \\
-= P_{cascade,shirt} \times Benefit_{peace,soc} \\
-= 25\% \times \$114B \\
+= P_{shirt} \times Benefit_{peace,soc} \\
+= 0.25 \times \$114B \\
 = \$28.4B
 \end{gathered}
+$$
+where:
+$$
+P_{shirt} = P_{cascade,shirt} = 25\% = 0.25
 $$
 where:
 $$
@@ -15463,41 +15430,35 @@ $$
 
 :::
 
-### Shirt Seed Program Total Cost: $50 million {#sec-mechanism_shirt_cascade_net_cost}
+### P(Success | Shirt Cascade Funded): 0.25:1 {#sec-mechanism_shirt_cascade_p_success}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Total foundation escrow required to fund the seed-wearer program: threshold of visible humans multiplied by blended cost per wearer. Held in Earth Optimization Prize assurance contract; refunded at structural EOP return rate if neither treaty passage nor target hit.
+Probability of treaty passage given full funding of the shirt cascade seed program.
 
 **Inputs**:
 
-- [Shirt Seed Wearers Threshold](#sec-shirt_seed_wearers_threshold): 1 million of people (95% CI: 100 thousand of people - 5 million of people)
-- [Shirt Seed Cost per Wearer](#sec-shirt_seed_cost_per_wearer_usd): $50 (95% CI: $10 - $200)
+- [Shirt Cascade Probability Given Seed](#sec-shirt_cascade_probability_given_seed): 25% (95% CI: 5% - 60%)
 
 $$
-\begin{gathered}
-C_{seed,total} \\
-= N_{seed,shirt} \times C_{seed,wearer} \\
-= 1M \times \$50 \\
-= \$50M
-\end{gathered}
+P_{shirt} = P_{cascade,shirt} = 25\% = 0.25
 $$
 
-*✓ High confidence*
+*? Low confidence*
 
 #### Sensitivity Analysis
 
-{{< include ../figures/tornado-mechanism_shirt_cascade_net_cost.qmd >}}
+{{< include ../figures/tornado-mechanism_shirt_cascade_p_success.qmd >}}
 
-{{< include ../figures/sensitivity-table-mechanism_shirt_cascade_net_cost.qmd >}}
+{{< include ../figures/sensitivity-table-mechanism_shirt_cascade_p_success.qmd >}}
 
 #### Monte Carlo Distribution
 
-{{< include ../figures/mc-distribution-mechanism_shirt_cascade_net_cost.qmd >}}
+{{< include ../figures/mc-distribution-mechanism_shirt_cascade_p_success.qmd >}}
 
 #### Exceedance Probability
 
-{{< include ../figures/exceedance-mechanism_shirt_cascade_net_cost.qmd >}}
+{{< include ../figures/exceedance-mechanism_shirt_cascade_p_success.qmd >}}
 
 :::
 
@@ -15630,46 +15591,6 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-mechanism_treaty_campaign_ev.qmd >}}
-
-:::
-
-### Total 1% Treaty Campaign Cost: $1 billion {#sec-mechanism_treaty_campaign_net_cost}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Total treaty campaign cost (100% VICTORY Incentive Alignment Bonds)
-
-**Inputs**:
-
-- [Viral Referendum Budget](#sec-treaty_campaign_viral_referendum_base_case): $250 million (95% CI: $150 million - $410 million)
-- [Political Lobbying Campaign: Direct Lobbying, Super Pacs, Opposition Research, Staff, Legal/Compliance](#sec-treaty_campaign_budget_lobbying): $650 million (95% CI: $325 million - $1.3 billion)
-- [Reserve Fund / Contingency Buffer](#sec-treaty_campaign_budget_reserve): $100 million (95% CI: $20 million - $150 million)
-
-$$
-\begin{gathered}
-Cost_{campaign} \\
-= Budget_{viral,base} + Budget_{lobby,treaty} \\
-+ Budget_{reserve} \\
-= \$250M + \$650M + \$100M \\
-= \$1B
-\end{gathered}
-$$
-
-*✓ High confidence*
-
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-mechanism_treaty_campaign_net_cost.qmd >}}
-
-{{< include ../figures/sensitivity-table-mechanism_treaty_campaign_net_cost.qmd >}}
-
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-mechanism_treaty_campaign_net_cost.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-mechanism_treaty_campaign_net_cost.qmd >}}
 
 :::
 
@@ -19393,10 +19314,10 @@ Breakeven probability expressed as '1 in N'. Forwarding has positive expected va
 
 **Inputs**:
 
-- [Sharing Breakeven Probability](#sec-sharing_breakeven_probability_treaty) 🔢: 1.72e-08 probability
+- [Sharing Breakeven Probability](#sec-sharing_breakeven_probability_treaty) 🔢: 1 in 58.1 million
 
 $$
-N_{breakeven} = P_{breakeven} = 0 = 58.1M
+N_{breakeven} = P_{breakeven} = 1\text{ in }58.1M = 58.1M
 $$
 where:
 $$
@@ -19404,7 +19325,7 @@ $$
 P_{breakeven} \\
 = \frac{C_{share}}{\Delta Y_{lifetime,treaty}} \\
 = \frac{\$0.0599}{\$3.48M} \\
-= 0
+= 1\text{ in }58.1M
 \end{gathered}
 $$
 where:
@@ -19707,7 +19628,7 @@ $$
 
 :::
 
-### Sharing Breakeven Probability: 1.72e-08 probability {#sec-sharing_breakeven_probability_treaty}
+### Sharing Breakeven Probability: 1 in 58.1 million {#sec-sharing_breakeven_probability_treaty}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -19723,7 +19644,7 @@ $$
 P_{breakeven} \\
 = \frac{C_{share}}{\Delta Y_{lifetime,treaty}} \\
 = \frac{\$0.0599}{\$3.48M} \\
-= 0
+= 1\text{ in }58.1M
 \end{gathered}
 $$
 where:
@@ -29457,14 +29378,14 @@ Expected monetary value of a single vote in a US presidential election. Calculat
 
 **Inputs**:
 
-- [Probability of Decisive Vote (US)](#sec-us_vote_decisive_probability) 📊: 1.67e-08 probability
+- [Probability of Decisive Vote (US)](#sec-us_vote_decisive_probability) 📊: 1 in 60 million
 - [US Federal Spending per Capita](#sec-us_federal_spending_per_capita) 🔢: $20,299
 
 $$
 \begin{gathered}
 EV_{vote} \\
 = P_{decisive} \times Spend_{fed,pc} \\
-= 0 \times \$20.3K \\
+= 1\text{ in }60M \times \$20.3K \\
 = \$0.000338
 \end{gathered}
 $$
@@ -39869,7 +39790,7 @@ Total US federal lobbying expenditure in 2024 (record year). Source: OpenSecrets
 
 :::
 
-### Probability of Decisive Vote (US): 1.67e-08 probability {#sec-us_vote_decisive_probability}
+### Probability of Decisive Vote (US): 1 in 60 million {#sec-us_vote_decisive_probability}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -42003,28 +41924,6 @@ Maximum bond investment for lobbyist incentives
 
 :::
 
-### Court of Humanity Build Cost: $30 million {#sec-mechanism_court_of_humanity_net_cost}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-One-time cost to build the Court of Humanity. Range reflects digital-first institutional design (no physical courtrooms, no detention, AI-assisted evidence triage, cryptographic provenance, stratified random jury infrastructure). Lower bound: minimal viable institution. Upper bound: fully-staffed initial operations, roughly 27% of one year of ICC operating budget (the ICC funds physical courtrooms, detention, and 425+ staff).
-
-#### Uncertainty Range
-
-**Technical**: 95% CI: [$10 million, $50 million] • Distribution: Lognormal
-
-**What this means**: This estimate is highly uncertain. The true value likely falls between $10 million and $50 million (±67%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
-
-*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
-
-#### Input Distribution
-
-{{< include ../figures/distribution-mechanism_court_of_humanity_net_cost.qmd >}}
-
-*Core definition*
-
-:::
-
 ### P(Success | Court of Humanity Funded): 0.1:1 {#sec-mechanism_court_of_humanity_p_success}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -42157,26 +42056,6 @@ Annual opportunity cost rate for capital deployment mechanisms (forgone excess r
 
 :::
 
-### Viral Referendum Budget: $250 million {#sec-mechanism_referendum_net_cost}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Viral referendum budget for 280M verified votes (base: $250M realistic with $0.50/vote avg, range: $150M optimistic $0.20/vote to $410M worst-case $1.05/vote). Components: platform ($35M), verification infrastructure (280M × friction × $0.18-0.20), tiered referral payments (varies by virality and marginal cost curve per diffusion theory), marketing seed ($5-15M). Based on PayPal referral economics ($18-36 inflation-adjusted) and biometric verification pricing ($0.15-0.25 at 300M+ scale).
-
-#### Uncertainty Range
-
-**Technical**: 95% CI: [$150 million, $410 million]
-
-**What this means**: This estimate is highly uncertain. The true value likely falls between $150 million and $410 million (±52%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
-
-#### Input Distribution
-
-{{< include ../figures/distribution-mechanism_referendum_net_cost.qmd >}}
-
-*Core definition*
-
-:::
-
 ### P(Success | Referendum Funded): 0.3:1 {#sec-mechanism_referendum_p_success}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -42192,28 +42071,6 @@ Probability of treaty passage given a successful global referendum demonstrating
 #### Input Distribution
 
 {{< include ../figures/distribution-mechanism_referendum_p_success.qmd >}}
-
-*Core definition*
-
-:::
-
-### Shirt Cascade Probability Given Seed: 25% {#sec-mechanism_shirt_cascade_p_success}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Subjective probability that the seed program triggers a viral cascade to majority-of-humanity participation, conditional on the seed threshold being met. Deliberately conservative: even at 25% the expected-value math beats every conventional foundation intervention. Sensitivity range covers skeptic and base-case scenarios.
-
-#### Uncertainty Range
-
-**Technical**: 95% CI: [5%, 60%] • Distribution: Beta
-
-**What this means**: This estimate is highly uncertain. The true value likely falls between 5% and 60% (±110%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
-
-*The beta distribution means values are bounded and can skew toward one end.*
-
-#### Input Distribution
-
-{{< include ../figures/distribution-mechanism_shirt_cascade_p_success.qmd >}}
 
 *Core definition*
 
