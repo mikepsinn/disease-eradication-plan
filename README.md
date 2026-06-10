@@ -460,7 +460,7 @@ The five steps above are the machinery. You do not need to build the machinery. 
 
 ### The Earth Optimization Game
 
-A pool of money. Two numbers on a Scoreboard: how long people live, how much they earn. By [2040](https://manual.warondisease.org/knowledge/strategy/earth-optimization-prize.html), if the numbers went up, VOTE point-holders split the pool. If they didn't, depositors divide it pro rata (still beats your retirement account). You earn VOTE points by getting friends to play. Nobody loses. The only losing move is not playing.
+A pool of money. Two numbers on a Scoreboard: how long people live, how much they earn. By [2040](https://manual.warondisease.org/knowledge/strategy/earth-optimization-prize.html), if the numbers went up, Earth Optimization Points holders split the pool. If they didn't, depositors divide it pro rata (still beats your retirement account). You earn Earth Optimization Points by getting friends to play. Nobody loses. The only losing move is not playing.
 
 Your job was never to understand the five steps. Your job is to [vote](https://warondisease.org) and get two friends to play. Four billion humans whose payout depends on curing diseases will attract the lobbyists, researchers, and institutions who know how to do the rest. The greed handles it. It always has. You just never pointed it at anything useful before.
 
