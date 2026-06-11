@@ -96,6 +96,9 @@ book:
     - text: "Wishonia's Wager"
       href: knowledge/proof/wishonias-wager.qmd # Opening chapter / introduction: the reader's wager (act on infinite stakes), the ten-solution overview, attention-as-cost, Pascal debugged, and the "Wishonia's wager" coda (author's bet on humanity + revenue-funds-takeover flywheel + price gag). Standalone paper config: _quarto-wishonias-wager.yml
 
+    - text: "What Matters"
+      href: knowledge/proof/what-matters.qmd # Terminal values: pleasant consciousness and unpleasant consciousness; terminal general-welfare metrics: HALE and median income.
+
     - part: "Failure Analysis"
       chapters:
         - knowledge/problem.qmd  # ✅ Part I Intro ~8p

@@ -7682,7 +7682,7 @@ export const PRIZE_TARGET_HALE_YEAR_15: Parameter = {
   calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-prize_target_hale_year_15",
   unit: "years",
   displayName: "Prize Settlement Target: Global HALE (Year 15)",
-  description: "The Earth Optimization Prize settlement target for global HALE at year 15. Set to the Treaty-trajectory projection (the achievable floor). The terminal-metric oracle compares measured global HALE against this value.",
+  description: "The Earth Optimization Prize settlement target for global HALE at year 15. Set to the Treaty-trajectory projection (the achievable floor). The terminal general-welfare metric oracle compares measured global HALE against this value.",
   sourceType: "calculated",
   confidence: "high",
   formula: "TREATY_PROJECTED_HALE_YEAR_15",

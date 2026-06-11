@@ -1,11 +1,11 @@
 ---
 title: 'Earth Optimization Protocol: Technical Specification'
 subtitle: Identity, Pooling, Settlement, and Oracle Design for Interoperable Outcome Prizes
-description: 'Technical specification for interoperable outcome prize pools using one shared pool model. Two targets by 2040: global HALE and median income matching the 1% Treaty projections. Covers cross-pool proof-of-personhood, a permissionless pool registry, vote, points, and deposit mechanics, direct cross-pool claims, tamper-evident scoreboard aggregation, and a terminal metric oracle.'
+description: 'Technical specification for interoperable outcome prize pools using one shared pool model. Two targets by 2040: global HALE and median income matching the 1% Treaty projections. Covers cross-pool proof-of-personhood, a permissionless pool registry, vote, points, and deposit mechanics, direct cross-pool claims, tamper-evident scoreboard aggregation, and a terminal general-welfare metric oracle.'
 abstract: |
   The Earth Optimization Prize [@earth-optimization-prize-paper-2025] is a pool of money. Two numbers on a Scoreboard: how long people live, how much they earn. By {{< var destructive_economy_50pct_year >}}, if global HALE reaches {{< var prize_target_hale_year_15 >}} and median income reaches {{< var prize_target_median_income_year_15 >}}, Earth Optimization Points holders split the pool. If not, depositors divide the pool pro rata (still beats a retirement account). Registration asks two questions: yes or no on the 1% Treaty, and how much military vs. clinical trials (with Optimitron evidence so the voter sees what each dollar actually buys). Anyone can start a second pool. It joins the network automatically, because all pools measure the same two numbers.
 
-  That "automatically" requires six things this paper specifies: (1) verify each person is real and only counts once (identity layer with proof-of-personhood); (2) register pools so metric commitments are checkable, not promises (pool registry); (3) a vote, Earth Optimization Points, and deposit claims with rules that work across pools (token mechanics); (4) any verified voter can claim from any pool directly, no netting, no settlement (cross-pool claims); (5) every front-end shows the same combined voter count and pool size (scoreboard aggregation); and (6) an oracle that reads the WHO and World Bank reports and triggers treasury release when the numbers are met (terminal metric oracle), with decentralized surveys as a cross-check. The goal is a protocol simple enough that a second pool can launch without asking the first pool's permission.
+  That "automatically" requires six things this paper specifies: (1) verify each person is real and only counts once (identity layer with proof-of-personhood); (2) register pools so metric commitments are checkable, not promises (pool registry); (3) a vote, Earth Optimization Points, and deposit claims with rules that work across pools (token mechanics); (4) any verified voter can claim from any pool directly, no netting, no settlement (cross-pool claims); (5) every front-end shows the same combined voter count and pool size (scoreboard aggregation); and (6) an oracle that reads the WHO and World Bank reports and triggers treasury release when the numbers are met (terminal general-welfare metric oracle), with decentralized surveys as a cross-check. The goal is a protocol simple enough that a second pool can launch without asking the first pool's permission.
 author:
   - name: Mike P. Sinn
     affiliations:
@@ -54,7 +54,7 @@ image: /assets/og-images/knowledge/appendix/earth-optimization-prize-protocol-og
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 
-![Technical specification for interoperable outcome prize pools using one shared pool model. Two targets by 2040: global HALE and median income matching the 1% Treaty projections. Covers cross-pool proof-of-personhood, a permissionless pool registry, vote, points, and deposit mechanics, direct cross-pool claims, tamper-evident scoreboard aggregation, and a terminal metric oracle.](/assets/infographics/knowledge/appendix/earth-optimization-prize-protocol-infographic-bw-academic.jpg)
+![Technical specification for interoperable outcome prize pools using one shared pool model. Two targets by 2040: global HALE and median income matching the 1% Treaty projections. Covers cross-pool proof-of-personhood, a permissionless pool registry, vote, points, and deposit mechanics, direct cross-pool claims, tamper-evident scoreboard aggregation, and a terminal general-welfare metric oracle.](/assets/infographics/knowledge/appendix/earth-optimization-prize-protocol-infographic-bw-academic.jpg)
 
 
 ## Introduction
@@ -80,7 +80,7 @@ The mechanism paper demonstrates that independently operated pools sharing these
 3. The vote, Earth Optimization Points, and deposit claims have defined rules that work across pool boundaries (token mechanics).
 4. A verified voter can claim their share from any pool directly (cross-pool claims).
 5. Every front-end displays the same combined voter count and pool size (scoreboard aggregation).
-6. Treasury release is triggered by independently verified welfare improvements (terminal metric oracle).
+6. Treasury release is triggered by independently verified welfare improvements (terminal general-welfare metric oracle).
 
 This paper specifies each. The design constraint throughout is minimizing coordination: a second pool should be able to launch without asking the first pool's permission.
 
@@ -330,7 +330,7 @@ Any front-end can query any aggregator (or run its own) to display the global to
 
 Pool status endpoints should update at least daily. Aggregators should recompute at least every hour. The scoreboard is a political tool (showing coalition size), not a financial ticker.
 
-## Terminal Metric Oracle
+## Terminal General-Welfare Metric Oracle
 
 ### Problem
 

@@ -228,7 +228,7 @@ This is the v1 assurance contract content in plain language. The attorney-review
 |:---|:---|
 | **What you deposit** | USD, USDC, or BTC. Custodian converts to the published allocation policy on receipt. |
 | **Minimum deposit** | $100 (v1; can rise as the pool grows and the operation matures). |
-| **Lockup** | Until {{< var destructive_economy_50pct_year >}} or the [Earth Optimization Prize](../strategy/earth-optimization-prize.qmd) terminal-metric oracle triggers release, whichever comes first. |
+| **Lockup** | Until {{< var destructive_economy_50pct_year >}} or the [Earth Optimization Prize](../strategy/earth-optimization-prize.qmd) terminal general-welfare metric oracle triggers release, whichever comes first. |
 | **Allocation during lockup** | Per the published [Prize Fund allocation policy](#what-the-fund-does) (Boring + Ballast at launch; Tokenized and Frontier slices added per timeline). |
 | **Earth Optimization Points** | You earn Earth Optimization Points by recruiting verified treaty-register signups through your referral link, not by depositing. Deposits do not buy points; points are earned, never bought. (See [Earth Optimization Prize](../strategy/earth-optimization-prize.qmd) for the recruitment mechanism.) |
 | **Success branch** | If the Scoreboard targets are hit, your principal routes pro-rata to all Earth Optimization Points holders. You do not get your money back; you get the world that the pool produced. |
@@ -236,7 +236,7 @@ This is the v1 assurance contract content in plain language. The attorney-review
 | **Beneficiary** | You designate one at deposit; update any time before death. Your deposit claim transfers by inheritance per the [protocol spec](../appendix/earth-optimization-prize-protocol.qmd). |
 | **Transparency** | Every deposit, every wire, every custody balance published on the public dashboard. |
 | **Custody transfer** | If the v1 host transfers custody to a larger institution, deposits transfer with the same terms. No new paperwork. |
-| **What can go wrong** | (a) The custodian fails (mitigated: regulated custodian + segregated client funds). (b) The Prize Fund allocation underperforms (mitigated: failure-branch refund still beats a conventional retirement account at the modeled rate). (c) The terminal-metric oracle is gamed (mitigated: Optimitron five-source design, public adversarial-challenge window). |
+| **What can go wrong** | (a) The custodian fails (mitigated: regulated custodian + segregated client funds). (b) The Prize Fund allocation underperforms (mitigated: failure-branch refund still beats a conventional retirement account at the modeled rate). (c) The terminal general-welfare metric oracle is gamed (mitigated: Optimitron five-source design, public adversarial-challenge window). |
 
 ### Public dashboard spec
 

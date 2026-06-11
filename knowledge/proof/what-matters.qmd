@@ -1,0 +1,94 @@
+---
+title: "What Matters"
+description: "The target is not GDP, votes, points, or money. The target is conscious experience. Everything else is instrumentation."
+published: true
+tags:
+  - proof
+  - consciousness
+  - welfare
+  - optimization
+scores:
+  quality: 8
+  value: 10
+  timeliness: 8
+  standalone: 9
+  voice: 8
+  importance: 10
+---
+{{< include ../includes/setup-parameters.qmd >}}
+
+.
+
+There is one thing in this universe that can matter from the inside: conscious experience. A rock has no complaint department. A spreadsheet is not sad. A missile is not fulfilled by achieving its key performance indicators. Conscious beings are where good and bad happen.
+
+The good version is pleasant consciousness: joy, relief, love, curiosity, agency, safety, beauty, play, understanding, and the quiet miracle of not being slowly tortured by a horrible disease.
+
+The bad version is unpleasant consciousness: pain, terror, grief, coercion, humiliation, boredom, despair, nausea, loneliness, and the part where your body submits a resignation letter cell by cell.
+
+Everything else is instrumentation.
+
+## The target
+
+The target is net good conscious experience:
+
+```text
+target =
+  pleasant consciousness
+  - unpleasant consciousness
+  across sentient beings
+  across time
+  under uncertainty
+```
+
+That is the thing being optimized. Not GDP. Not votes. Not points. Not treasury size. Not how many reports your agencies publish before lunch.
+
+A policy is good if it probably increases pleasant consciousness or reduces unpleasant consciousness after costs, side effects, and opportunity costs. A policy is bad if it does the opposite. A policy that improves a number while making conscious beings worse off is not good policy. It is arithmetic with a body count.
+
+[The Delusion of Insignificance](delusion-of-insignificance.qmd) proves why this reaches you personally. [Wishonia's Wager](wishonias-wager.qmd) explains why inaction is still a bet, and why the tails are too large to treat as a hobby.
+
+## The gauges
+
+You cannot read conscious experience directly from a dashboard, because your species invented dashboard software before wisdom. So the manual uses terminal general-welfare metrics that are hard to fake, already measured, and tightly connected to lived welfare:
+
+- **Median healthy life years.** Bad experiences usually require being alive, but being alive while your body is failing is not a win. Health-adjusted life expectancy measures more of the thing you actually mean.
+- **Real after-tax median income.** Money is not the target. It is optionality, shelter, medicine, food, time, and the ability to stop doing terrible things for survival. Median matters because a society can get richer while the person in the middle gets robbed politely.
+- **Suffering and safety signals.** Pain, disability, coercion, violence, loneliness, and ruin risk are not cosmetic sub-metrics. They are parts of the thing the gauges are trying to approximate.
+- **Rights constraints.** You cannot make the average happier by torturing an excluded minority and calling it efficient. That is not optimization. That is a math crime wearing a suit.
+
+This is why the manual treats pleasant consciousness and unpleasant consciousness as the terminal values, while using HALE and median income as the terminal general-welfare metrics. The metrics are the best currently measurable civilization-scale endpoints for approximating general welfare. They are not the reason welfare matters.
+
+## The ledgers
+
+Do not use one ledger for everything. That is how money became a god with customer support hours.
+
+| Ledger | What it answers | What it must not become |
+|---|---|---|
+| Wishes | What do verified humans want done? | A market where rich people buy extra personhood |
+| Evidence | What actually changes the terminal metrics? | A priesthood of models nobody can audit |
+| Earth Optimization Points | Who helped produce verified progress? | A speculative asset pretending to be morality |
+| Capital | What pays for the work? | A voting system |
+
+Wishes are the democratic demand signal: one verified human, one bounded expression of preference per period. Earth Optimization Points are the contribution ledger: credit for helping humanity move toward measured progress. Capital is the fuel: deposits, investment, bonds, donations, or other money that lets work happen. Evidence is the sensor: the part that stops everyone from confusing confidence with results.
+
+Those ledgers can talk to each other, but they should not collapse into each other. If money buys votes, the system becomes plutocracy. If votes create truth, the system becomes group therapy with charts. If points can be bought as status tokens, the system becomes crypto with better nouns. If evidence cannot affect funding, the system becomes government.
+
+## The operating rule
+
+The practical rule is:
+
+```text
+rank actions by expected net reduction in unpleasant consciousness
+plus expected net creation of pleasant consciousness,
+discounted by uncertainty, delay, rights violations, and opportunity cost.
+```
+
+That rule is too abstract to run a treaty, a prize pool, or a clinical-trial budget directly. So the rest of the manual turns it into machinery:
+
+- [Theory of Operation](../solution/theory-of-operation.qmd) shows the control loop.
+- [Wishocracy](../solution/wishocracy.qmd) [@wishocracy-paper-2025] turns human preferences into budget weights without selling extra humanity to rich people.
+- [Optimocracy](../solution/optimocracy.qmd) [@optimocracy-paper-2025] asks what actually works on the terminal metrics.
+- [The Earth Optimization Prize Protocol](../appendix/earth-optimization-prize-protocol.qmd) [@earth-optimization-prize-paper-2025] [@earth-optimization-prize-protocol-paper-2025] keeps votes, points, deposits, and oracle readings separate.
+- [The To-Do List for Humanity](../strategy/humanity-todo-list.qmd) turns the result into tasks.
+- [GDP Trajectories](../economics/gdp-trajectories.qmd) [@gdp-trajectories-paper-2025] explains why the destructive economy is eating the future budget before the future gets to vote.
+
+The entire book is just this axiom with plumbing.

@@ -11863,7 +11863,7 @@ WISHONIA_TRAJECTORY_VS_TREATY_TRAJECTORY_GDP_MULTIPLIER_YEAR_20 = Parameter(
 # ---
 # Mirrors the year 20 GDP trajectory model but over a 15-year horizon
 # (3-year ramp at 50% intensity + 12-year full implementation).
-# Also adds HALE (healthy life expectancy) projections as a terminal metric
+# Also adds HALE (healthy life expectancy) projections as a terminal general-welfare metric
 # for the Earth Optimization Prize.
 
 GLOBAL_POPULATION_2040_PROJECTED = Parameter(
@@ -13216,7 +13216,7 @@ PRIZE_TARGET_HALE_YEAR_15 = Parameter(
     manual_ref="knowledge/appendix/earth-optimization-prize-protocol.qmd",
     source_type="calculated",
     description="The Earth Optimization Prize settlement target for global HALE at year 15. "
-                "Set to the Treaty-trajectory projection (the achievable floor). The terminal-metric "
+                "Set to the Treaty-trajectory projection (the achievable floor). The terminal general-welfare metric "
                 "oracle compares measured global HALE against this value.",
     display_name="Prize Settlement Target: Global HALE (Year 15)",
     unit="years",

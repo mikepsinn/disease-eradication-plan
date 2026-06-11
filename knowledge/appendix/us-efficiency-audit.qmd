@@ -99,7 +99,7 @@ The efficiency gap represents capital that could fund the [1% Treaty](../solutio
 
 ### Designed Function
 
-The federal government's designed function is to convert fiscal inputs (federal outlays and imposed compliance burdens) into citizen welfare. It is, in engineering terms, a machine that takes in money and produces quality of life. Any engineer looking at a machine that converts inputs to outputs at {{< var us_fed_discretionary_efficiency >}} efficiency would replace the machine. Your species instead feeds the machine more money. We measure this conversion efficiency using two terminal outcomes:
+The federal government's designed function is to convert fiscal inputs (federal outlays and imposed compliance burdens) into citizen welfare. The terminal values are [pleasant consciousness and unpleasant consciousness](../proof/what-matters.qmd); the audit cannot measure those directly because Congress has not yet discovered feelings. So, in engineering terms, this is a machine that takes in money and produces quality of life. Any engineer looking at a machine that converts inputs to outputs at {{< var us_fed_discretionary_efficiency >}} efficiency would replace the machine. Your species instead feeds the machine more money. We measure this conversion efficiency using two terminal general-welfare outcomes:
 
 1. **After-tax real median income growth**: measures economic welfare delivery
 2. **Median healthy life years (HALE)**: measures health and longevity delivery
@@ -117,7 +117,7 @@ These two outputs capture all upstream factors that matter:
 | Education | Human capital, productivity | Health literacy |
 | Infrastructure | Productivity, opportunity | Access to care, environmental health |
 
-These are not omissions. They are *upstream variables* that manifest in terminal outcomes. Measuring income + health implicitly captures everything that affects citizen welfare.
+These are not omissions. They are *upstream variables* that manifest in terminal outcomes. Measuring income + health captures most large-scale changes in citizen welfare while remaining hard enough to fake that the machine can use them.
 
 ### Input-Output Measurement
 

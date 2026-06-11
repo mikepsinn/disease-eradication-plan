@@ -1,14 +1,14 @@
 ---
 title: 'The Optimal Budget Generator: A Causal Inference Protocol for Maximizing Median Health and Wealth Through Public Goods Funding'
 subtitle: Generating Integrated Public Budget Recommendations Using Diminishing Returns Modeling and Cost-Effectiveness Analysis
-description: 'The Optimal Budget Generator (OBG) uses causal inference, diminishing returns modeling, and cost-effectiveness evidence to determine optimal public goods funding levels that maximize two welfare metrics: real after-tax median income growth and median healthy life years. For each spending category, OBG estimates an Optimal Spending Level (OSL) and produces a gap analysis showing where current government budgets are over- or underfunded relative to evidence-based benchmarks. The Budget Impact Score (BIS) measures confidence in each recommendation based on the quality of causal evidence.'
+description: 'The Optimal Budget Generator (OBG) uses causal inference, diminishing returns modeling, and cost-effectiveness evidence to determine optimal public goods funding levels that maximize two terminal general-welfare metrics: real after-tax median income growth and median healthy life years. For each spending category, OBG estimates an Optimal Spending Level (OSL) and produces a gap analysis showing where current government budgets are over- or underfunded relative to evidence-based benchmarks. The Budget Impact Score (BIS) measures confidence in each recommendation based on the quality of causal evidence.'
 abstract: |
   20-40% of public goods funding is misallocated relative to outcome-maximizing benchmarks, representing
   trillions annually in foregone welfare gains. Budget processes respond to lobbying intensity and historical
   precedent rather than causal evidence of effectiveness.
 
   The Optimal Budget Generator (OBG) applies causal inference, diminishing returns modeling, and
-  cost-effectiveness analysis to determine optimal public goods funding levels that maximize two welfare
+  cost-effectiveness analysis to determine optimal public goods funding levels that maximize two terminal general-welfare
   metrics: real after-tax median income growth and median healthy life years. For each spending category,
   OBG estimates an Optimal Spending Level (OSL) identifying where marginal returns equal opportunity cost.
 
@@ -78,7 +78,7 @@ scores:
 
 Your government decides how much to spend on each category the same way it has for decades: last year's number, plus whatever the loudest lobbyist got added, minus whatever the latest crisis forced a cut on. This is called "the budget process." It has no optimization function. It has no feedback loop. It has no measurable objective. It is, in the technical sense, not a process at all. It is an accident that repeats annually.
 
-This specification describes the **Optimal Budget Generator (OBG)** framework, a systematic approach to generating integrated budget recommendations that maximize welfare as measured by two metrics: **real after-tax median income growth** and **median healthy life years**.
+This specification describes the **Optimal Budget Generator (OBG)** framework, a systematic approach to generating integrated budget recommendations that maximize welfare as measured by two terminal general-welfare metrics: **real after-tax median income growth** and **median healthy life years**.
 
 ![Three ways to figure out optimal spending combine to show the gap between what you spend and what you should spend. The gap is filled with lobbyists.](/assets/images/optimal-budget-generator-spec/optimal-budget-generator-spec-section-abstract-unnumbered-bw-academic.jpg)
 
@@ -205,7 +205,7 @@ Budget allocation should work the same way. For each spending category:
 
 ### Outcome Metrics: What We're Optimizing
 
-All OBG recommendations ultimately aim to maximize two welfare metrics:
+All OBG recommendations ultimately aim to maximize two terminal general-welfare metrics:
 
 1. **Real after-tax median income growth** (pp/year): Year-over-year percentage change in inflation-adjusted, post-tax median household income. Sources: Census Bureau, BLS.
 
@@ -217,7 +217,7 @@ $$
 W = 0.5 \cdot \text{IncomeGrowth} + 0.5 \cdot \text{HealthyYears}
 $$
 
-**Why these two metrics?** Most policy effects eventually show up in one or both. Economic policies (taxes, regulations, trade) primarily affect income growth. Health policies (healthcare access, public health, safety) primarily affect healthy life years. Education and infrastructure affect both. See [Two-Metric Welfare Function](optimocracy-paper.qmd#sec-two-metric-welfare) for the complete framework.
+**Why these two metrics?** They are the terminal general-welfare metrics: the best currently measurable civilization-scale endpoints for approximating the terminal values defined in [What Matters](../proof/what-matters.qmd), pleasant consciousness and unpleasant consciousness. Most policy effects eventually show up in one or both. Economic policies (taxes, regulations, trade) primarily affect income growth. Health policies (healthcare access, public health, safety) primarily affect healthy life years. Education and infrastructure affect both. See [Two-Metric Welfare Function](optimocracy-paper.qmd#sec-two-metric-welfare) for the complete framework.
 
 Every spending category's OSL is ultimately justified by its expected impact on these two metrics. The gap analysis and priority rankings reflect which reallocations would most improve the combined welfare function.
 

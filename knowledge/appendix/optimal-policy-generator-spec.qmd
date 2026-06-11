@@ -9,7 +9,7 @@ abstract: |
 
   The Optimal Policy Generator (OPG) applies causal inference methods (synthetic control,
   difference-in-differences, regression discontinuity) and Bradford Hill criteria to this cross-jurisdictional
-  data, measuring policy impact on two welfare metrics: real after-tax median income growth and median
+  data, measuring policy impact on two terminal general-welfare metrics: real after-tax median income growth and median
   healthy life years.
 
   For any jurisdiction, OPG produces four categories of public policy recommendations: ENACT
@@ -82,7 +82,7 @@ scores:
 
 Thousands of jurisdictions have been running different policies for centuries. Some of them got richer. Some of them got healthier. Some of them did both. The data to figure out which policies worked already exists. Nobody has systematically harvested it. This is like having centuries of clinical trial data in a filing cabinet and never opening the cabinet.
 
-This specification describes the **Optimal Policy Generator (OPG)**, a framework for producing jurisdiction-specific policy recommendations from quasi-experimental evidence. OPG measures policy impact on two fundamental welfare dimensions: **real after-tax median income growth** (economic welfare) and **median healthy life years** (health welfare). These metrics capture the primary welfare effects of most policies while remaining directly interpretable.
+This specification describes the **Optimal Policy Generator (OPG)**, a framework for producing jurisdiction-specific policy recommendations from quasi-experimental evidence. OPG measures policy impact on two terminal general-welfare metrics: **real after-tax median income growth** (economic welfare) and **median healthy life years** (health welfare). These metrics capture the primary welfare effects of most policies while remaining directly interpretable.
 
 > **OPG output classes:** ENACT (add policy), REPLACE (adjust policy level), REPEAL (remove harmful policy), MAINTAIN (retain evidence-aligned policy).
 
@@ -101,16 +101,16 @@ Each recommendation includes expected effects on both metrics, confidence grades
 
 H10 (Public Finance, Structure and Scope), D72 (Political Economy), C54 (Quantitative Policy Modeling), I18 (Health Policy), D61 (Allocative Efficiency; Cost-Benefit Analysis)
 
-## The Two Welfare Metrics {#sec-two-metrics}
+## The Two Terminal General-Welfare Metrics {#sec-two-metrics}
 
-OPG measures policy impact using the [two-metric welfare function](optimocracy-paper.qmd#sec-two-metric-welfare) defined in the [Optimocracy](https://optimocracy.warondisease.org) [@optimocracy-paper-2025] Framework:
+OPG measures policy impact using the [two-metric welfare function](optimocracy-paper.qmd#sec-two-metric-welfare) defined in the [Optimocracy](https://optimocracy.warondisease.org) [@optimocracy-paper-2025] Framework. These are the terminal general-welfare metrics, while the terminal values are pleasant consciousness and unpleasant consciousness:
 
 1. **Real after-tax median income growth** (pp/year) - economic welfare
 2. **Median healthy life years** (years) - health welfare
 
 See the [Optimocracy](../solution/optimocracy.qmd) paper for full justification of these metric choices, data sources, and the welfare function formula.
 
-![The two things that matter: having money and being alive to spend it. You'd think this would be obvious, but governments often forget the second bit.](/assets/images/optimal-policy-generator-spec/optimal-policy-generator-spec-section-the-two-welfare-metrics-sec-two-metrics-bw-academic.jpg)
+![The two terminal general-welfare metrics: having money and being alive to spend it. You'd think this would be obvious, but governments often forget the second bit.](/assets/images/optimal-policy-generator-spec/optimal-policy-generator-spec-section-the-two-welfare-metrics-sec-two-metrics-bw-academic.jpg)
 
 ### Why Only Two Metrics?
 

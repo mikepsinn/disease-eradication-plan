@@ -270,7 +270,7 @@ The federal layer should therefore do only four things in distribution: guarante
 
 ### The Objective Function
 
-If this system is serious, it should be designed for how people actually behave, not how you wish they would. The terminal objective is the same one used in [Optimocracy](../solution/optimocracy.qmd): maximize **real after-tax median income** and **median healthy life years**. Those are the scoreboard metrics. Everything else here is mechanism design in service of those two numbers.
+If this system is serious, it should be designed for how people actually behave, not how you wish they would. The terminal values are stated in [What Matters](../proof/what-matters.qmd): increase pleasant consciousness and reduce unpleasant consciousness. The protocol cannot measure those directly, because your agencies struggle to count office chairs. Its terminal general-welfare metrics are the same two used in [Optimocracy](../solution/optimocracy.qmd): **real after-tax median income** and **median healthy life years**. Everything else here is mechanism design in service of moving those metrics without letting people game them.
 
 At the protocol-design level, the target can be written as:
 

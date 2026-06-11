@@ -994,7 +994,7 @@ def main():
         import shutil
         ts_copy_targets = [
             Path(r"E:\code\obsidian\websites\dih-earth\lib\parameters-calculations-citations.ts"),
-            Path(r"E:\code\optimitron\packages\data\src\parameters\parameters-calculations-citations.ts"),
+            project_root.parent / "optimitron" / "packages" / "data" / "src" / "parameters" / "parameters-calculations-citations.ts",
         ]
         for copy_dest in ts_copy_targets:
             if copy_dest.parent.exists():
@@ -1519,7 +1519,7 @@ def main():
         import shutil
         ts_copy_targets = [
             Path(r"E:\code\obsidian\websites\dih-earth\lib\parameters-calculations-citations.ts"),
-            Path(r"E:\code\optimitron\packages\data\src\parameters\parameters-calculations-citations.ts"),
+            project_root.parent / "optimitron" / "packages" / "data" / "src" / "parameters" / "parameters-calculations-citations.ts",
         ]
         for copy_dest in ts_copy_targets:
             if copy_dest.parent.exists():

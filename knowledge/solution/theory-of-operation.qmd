@@ -1,6 +1,6 @@
 ---
 title: "Theory of Operation"
-description: "Civilization is a machine with a job: maximize health and wealth. It is broken because nobody wired the feedback loop. Here is the schematic, the way a repair manual draws one, so you can see which part failed."
+description: "Civilization is a machine with a job: increase pleasant conscious experience and reduce unpleasant conscious experience. HALE and median income are the terminal general-welfare metrics. Here is the schematic, the way a repair manual draws one, so you can see which part failed."
 published: true
 tags:
   - control-systems
@@ -29,19 +29,23 @@ The six parts: a **target**, a **controller** that decides what to do, **actuato
 ## The schematic
 
 ```
-            ┌──────── feedback: the measured result, carried by the LEDGER ───────┐
-            │                                                                      │
-            ▼                                                                      │
-  SETPOINT ─► (−) ─► OPTIMITRON ─► ACTUATORS ──► PLANT ──► OUTPUT ──► SENSORS ─────┘
-  target    error    controller    modules       economy   actual     measure
-  (median   signal   (fund what    (dFDA,        (gov't    welfare    the result
-  HALE +    = the    works,        Loving        + firms)
-  median    dysfunc- defund what   Takeover,
-  income)   tion tax what fails)   IABs, DIH)
+       feedback: terminal metric readings carried by the evidence ledger
+       +-------------------------------------------------------------------+
+       |                                                                   |
+       v                                                                   |
+  TARGET -> ERROR -> OPTIMITRON -> ACTUATORS -> PLANT -> OUTPUT -> SENSORS -+
+  true      gap      controller   modules     economy  welfare   measure
+  target             (fund what   (dFDA,      (gov't             HALE,
+  (pleasant          works,       IABs,       + firms)           income,
+  minus              defund what  DIH, etc.)                     safety
+  unpleasant         fails)
+  consciousness)
 
-  Set by:   HUMANITY (Wishocracy) sets the target and holds the override.
-  From outside: disturbances (wars, plagues) strike the PLANT.
-  Corruption:  noise (propaganda, gamed statistics) fouls the SENSORS.
+  Human override:   Wishocracy sets priorities and rights constraints.
+  Terminal metrics: HALE and median after-tax income.
+  Supplementary:    suffering, safety, rights, and distribution signals.
+  From outside:   disturbances (wars, plagues) strike the PLANT.
+  Corruption:     noise (propaganda, gamed statistics) fouls the SENSORS.
   Not in the loop: WISHONIA is the display panel. She reads the gauges aloud.
 ```
 
@@ -49,28 +53,41 @@ The six parts: a **target**, a **controller** that decides what to do, **actuato
 
 | In the schematic | What it is | The part on your planet |
 |---|---|---|
-| Setpoint | the target the machine aims for | promote the general welfare: maximize HALE and median after-tax, inflation-adjusted income |
+| Setpoint | the target the machine aims for | the [What Matters](../proof/what-matters.qmd) terminal values: increase pleasant consciousness and reduce unpleasant consciousness |
 | Comparator | computes target minus result | the step that asks "is it working?" |
 | Error signal | the gap to close | the [political dysfunction tax](../appendix/political-dysfunction-tax.qmd): the distance between how you live and how you could |
-| Controller | decides the correction | [Optimitron](optimocracy.qmd): fund what moves the numbers, defund what does not |
+| Controller | decides the correction | [Optimitron](optimocracy.qmd): fund what moves the terminal metrics, defund what does not |
 | Actuators | apply the correction | the modules: [dFDA](dfda.qmd), [Loving Takeover](../appendix/loving-takeover.qmd), [Incentive Alignment Bonds](incentive-alignment-bonds.qmd), [DIH](dih.qmd) |
 | Plant | the system being run | government, companies, the economy |
 | Output | the result you actually get | real human welfare |
 | Sensor | the instrument that measures | outcome measurement (the [efficiency audit](../appendix/us-efficiency-audit.qmd), dFDA outcome tracking) |
-| Feedback signal | the data the sensor emits | the HALE and income numbers (not the sensor: the reading) |
+| Feedback signal | the data the sensor emits | the HALE and income terminal metric readings (not the sensor: the reading) |
 | Feedback path | the wire home | the ledger that carries the reading back to the comparator |
-| Operator | sets the target, can hit stop | humanity, through [Wishocracy](optimocracy.qmd) |
+| Operator | sets the target, can hit stop | humanity, through [Wishocracy](wishocracy.qmd) |
 | Display | reads the machine aloud | Wishonia, the narrator. Outside the loop |
 
-## The two numbers, precisely
+## The terminal general-welfare metrics, precisely
 
-The setpoint deserves an exact definition, because every instrument in the machine is calibrated against it.
+The true target is conscious experience. The terminal general-welfare metrics deserve an exact definition, because every instrument in the machine is calibrated against them.
 
 **Median after-tax, inflation-adjusted income.** The income of the person in the middle, after taxes and including transfers (your economists call this real median disposable income), in constant purchasing power. The middle, not the average: the average is GDP per capita, which goes up when an arsonist and a firefighter invoice each other. Your statisticians already publish this number country by country (the OECD, the World Bank's poverty platform), and a commission of your own Nobel laureates told your governments in 2009 to steer by it instead of GDP [@nolan-gdp-vs-median-income-2019]. They declined. The machine does not decline.
 
 **Health-adjusted life expectancy (HALE).** Years of full health a person born today can expect, as the WHO already measures it. Not life expectancy, which counts the years spent dying as if they were living.
 
-The sensor reads both numbers by aggregating the published country-level figures under a methodology locked at baseline, cross-checked by surveys of the verified voter base (details in [the protocol spec](../appendix/earth-optimization-prize-protocol.qmd)). The [Earth Optimization Prize](../strategy/earth-optimization-prize.qmd) [@earth-optimization-prize-paper-2025] settles on exactly these two numbers, and any future pricing of tasks on the [To-Do List for Humanity](../strategy/humanity-todo-list.qmd) is denominated in their expected movement. One setpoint; every instrument calibrated to it.
+The sensor reads both numbers by aggregating the published country-level figures under a methodology locked at baseline, cross-checked by surveys of the verified voter base (details in [the protocol spec](../appendix/earth-optimization-prize-protocol.qmd)). The [Earth Optimization Prize](../strategy/earth-optimization-prize.qmd) [@earth-optimization-prize-paper-2025] settles on exactly these two numbers, and any future pricing of tasks on the [To-Do List for Humanity](../strategy/humanity-todo-list.qmd) is denominated in their expected movement. One terminal metric set; every instrument calibrated to it.
+
+## The four ledgers
+
+The machine needs separate ledgers because different questions require different proofs. Collapsing them is how you accidentally reinvent the Federal Reserve, Congress, and a casino in one afternoon.
+
+| Ledger | Question | Rule |
+|---|---|---|
+| Wishes | What do verified humans want done? | Equal personhood signal; not for sale |
+| Evidence | What actually changes the terminal metrics? | Public, auditable, uncertainty-aware |
+| Earth Optimization Points | Who helped produce verified progress? | Earned by contribution; not bought as votes |
+| Capital | What pays for the work? | Funds execution; does not buy extra humanity |
+
+Wishes tell the controller what humans want prioritized. Evidence tells it what works. Earth Optimization Points record useful contribution. Capital funds the work. They interact, but they are not the same thing, because the same thing cannot be a vote, a sensor, a receipt, and a bank account without becoming nonsense.
 
 ## The two parts your government is missing
 
