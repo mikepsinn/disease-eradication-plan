@@ -6100,6 +6100,99 @@ POLITICAL_DYSFUNCTION_GLOBAL_LEAD_OPPORTUNITY_COST = Parameter(
     latex_symbol=r"O_{lead}",
 )
 
+# ---------------------------------------------------------------------------
+# The Ethyl Gasoline Corporation counterfactual (i-am-retarded.qmd)
+#
+# How much richer would Ethyl's own shareholders have been if the board had
+# switched to ethanol in 1923 instead of lobbying for seventy years to keep
+# tetraethyl lead in gasoline?
+#
+# Mechanism: leaded gasoline lowered average US IQ (McFarland 2022: 824M
+# cumulative points, ~2.6/person, 5.9 for peak cohorts). National average IQ
+# raises GDP growth (~0.11pp/point/year, Jones & Schneider 2006). A
+# diversified shareholder's terminal wealth scales with the economy, so the
+# counterfactual wealth gain is the compounded growth differential over the
+# TEL era (1923-1996). Foregone TEL royalties are second-order against an
+# economy-wide compounding effect and are ignored.
+# ---------------------------------------------------------------------------
+
+LEADED_GASOLINE_US_AVG_IQ_LOSS_POINTS = Parameter(
+    2.6,
+    manual_ref="knowledge/problem/i-am-retarded.qmd",
+    source_ref=ReferenceID.MCFARLAND_LEAD_IQ_2022,
+    source_type="external",
+    confidence="medium",
+    description="Average IQ points lost per person from childhood leaded-gasoline exposure "
+                "(McFarland et al. 2022: 824M cumulative points across the 2015 US population, "
+                "average 2.6/person, 5.9 for the worst-hit 1966-1970 birth cohorts). Used as the "
+                "era-average workforce IQ deficit: lower in the 1930s, higher by the 1980s.",
+    display_name="US Average IQ Loss from Leaded Gasoline",
+    unit="IQ points",
+    distribution=DistributionType.LOGNORMAL,
+    confidence_interval=(1.5, 5.9),
+    keywords=["lead", "IQ", "ethyl", "leaded gasoline", "McFarland", "brain damage"],
+    latex_symbol=r"\Delta IQ_{lead}",
+)
+
+NATIONAL_IQ_GDP_GROWTH_EFFECT_PER_POINT = Parameter(
+    0.0011,
+    manual_ref="knowledge/problem/i-am-retarded.qmd",
+    source_ref=ReferenceID.JONES_SCHNEIDER_IQ_GROWTH_2006,
+    source_type="external",
+    confidence="low",
+    description="Jones & Schneider (2006) BACE estimate: one national-IQ point is associated with "
+                "a persistent 0.11 percentage-point higher annual GDP per capita growth rate "
+                "(significant in 99.8% of 1,330 growth regressions). Wide CI reflects the contested "
+                "cross-country IQ data underlying the estimate and the authors' own caveat that "
+                "transitory vs steady-state growth cannot be distinguished.",
+    display_name="GDP Growth Effect per National IQ Point",
+    unit="rate",
+    distribution=DistributionType.NORMAL,
+    confidence_interval=(0.0004, 0.0018),
+    keywords=["IQ", "GDP growth", "human capital", "Jones", "Schneider", "BACE"],
+    latex_symbol=r"\beta_{IQ}",
+)
+
+LEADED_GASOLINE_ERA_YEARS = Parameter(
+    73,
+    manual_ref="knowledge/problem/i-am-retarded.qmd",
+    source_ref=ReferenceID.KOVARIK_LEADED_GASOLINE_HISTORY_2005,
+    source_type="definition",
+    description="Duration of the US leaded-gasoline era: first commercial TEL sale (February 1923) "
+                "to the completed on-road ban (January 1, 1996).",
+    display_name="Leaded Gasoline Era Duration",
+    unit="years",
+    distribution="fixed",
+    keywords=["lead", "ethyl", "TEL", "era", "1923", "1996"],
+    latex_symbol=r"T_{lead}",
+)
+
+ETHYL_SHAREHOLDER_COUNTERFACTUAL_WEALTH_GAIN = Parameter(
+    (1 + LEADED_GASOLINE_US_AVG_IQ_LOSS_POINTS * NATIONAL_IQ_GDP_GROWTH_EFFECT_PER_POINT)
+    ** LEADED_GASOLINE_ERA_YEARS - 1,
+    manual_ref="knowledge/problem/i-am-retarded.qmd",
+    source_type="calculated",
+    description="How much richer a diversified Ethyl Gasoline Corporation shareholder would have been "
+                "by 1996 had the board switched to ethanol in 1923: the economy compounds faster without "
+                "the lead-induced IQ loss, and diversified shareholder wealth scales with the economy. "
+                "Central ~23%; the Monte Carlo range spans roughly 'twenty to sixty percent richer'. "
+                "Foregone TEL royalties are second-order against the economy-wide effect.",
+    display_name="Ethyl Shareholder Counterfactual Wealth Gain (Ethanol Switch, 1923)",
+    unit="percent",
+    formula="(1 + LEADED_GASOLINE_US_AVG_IQ_LOSS_POINTS * NATIONAL_IQ_GDP_GROWTH_EFFECT_PER_POINT) ** LEADED_GASOLINE_ERA_YEARS - 1",
+    inputs=[
+        "LEADED_GASOLINE_US_AVG_IQ_LOSS_POINTS",
+        "NATIONAL_IQ_GDP_GROWTH_EFFECT_PER_POINT",
+        "LEADED_GASOLINE_ERA_YEARS",
+    ],
+    compute=lambda ctx: (
+        (1 + ctx["LEADED_GASOLINE_US_AVG_IQ_LOSS_POINTS"] * ctx["NATIONAL_IQ_GDP_GROWTH_EFFECT_PER_POINT"])
+        ** ctx["LEADED_GASOLINE_ERA_YEARS"] - 1
+    ),
+    keywords=["ethyl", "counterfactual", "shareholder", "lead", "ethanol", "20-60%", "wealth"],
+    latex_symbol=r"\Delta W_{Ethyl}",
+)
+
 POLITICAL_DYSFUNCTION_GLOBAL_MIGRATION_OPPORTUNITY_COST = Parameter(
     57_000_000_000_000,  # $57T annually (conservative lower bound)
     manual_ref="knowledge/appendix/political-dysfunction-tax.qmd",

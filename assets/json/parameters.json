@@ -3689,6 +3689,23 @@
       "distribution": "uniform",
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/problem/untapped-therapeutic-frontier.html"
     },
+    "ETHYL_SHAREHOLDER_COUNTERFACTUAL_WEALTH_GAIN": {
+      "value": 0.23180677289426121,
+      "formatted": "23.2%",
+      "unit": "percent",
+      "description": "How much richer a diversified Ethyl Gasoline Corporation shareholder would have been by 1996 had the board switched to ethanol in 1923: the economy compounds faster without the lead-induced IQ loss, and diversified shareholder wealth scales with the economy. Central ~23%; the Monte Carlo range spans roughly 'twenty to sixty percent richer'. Foregone TEL royalties are second-order against the economy-wide effect.",
+      "sourceType": "calculated",
+      "sourceRef": null,
+      "confidence": "high",
+      "formula": "(1 + LEADED_GASOLINE_US_AVG_IQ_LOSS_POINTS * NATIONAL_IQ_GDP_GROWTH_EFFECT_PER_POINT) ** LEADED_GASOLINE_ERA_YEARS - 1",
+      "inputs": [
+        "LEADED_GASOLINE_ERA_YEARS",
+        "LEADED_GASOLINE_US_AVG_IQ_LOSS_POINTS",
+        "NATIONAL_IQ_GDP_GROWTH_EFFECT_PER_POINT"
+      ],
+      "computeExpr": "(Math.pow((1.0 + (LEADED_GASOLINE_US_AVG_IQ_LOSS_POINTS * NATIONAL_IQ_GDP_GROWTH_EFFECT_PER_POINT)), LEADED_GASOLINE_ERA_YEARS) - 1.0)",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/problem/i-am-retarded.html"
+    },
     "EVENTUALLY_AVOIDABLE_DALY_PCT": {
       "value": 0.9262780790085205,
       "formatted": "92.6%",
@@ -5785,6 +5802,34 @@
       "formula": null,
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/solution/incentive-alignment-bonds.html"
     },
+    "LEADED_GASOLINE_ERA_YEARS": {
+      "value": 73.0,
+      "formatted": "73 years",
+      "unit": "years",
+      "description": "Duration of the US leaded-gasoline era: first commercial TEL sale (February 1923) to the completed on-road ban (January 1, 1996).",
+      "sourceType": "definition",
+      "sourceRef": "kovarik-leaded-gasoline-history-2005",
+      "confidence": "high",
+      "formula": null,
+      "distribution": "fixed",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/problem/i-am-retarded.html"
+    },
+    "LEADED_GASOLINE_US_AVG_IQ_LOSS_POINTS": {
+      "value": 2.6,
+      "formatted": "2.6 IQ points",
+      "unit": "IQ points",
+      "description": "Average IQ points lost per person from childhood leaded-gasoline exposure (McFarland et al. 2022: 824M cumulative points across the 2015 US population, average 2.6/person, 5.9 for the worst-hit 1966-1970 birth cohorts). Used as the era-average workforce IQ deficit: lower in the 1930s, higher by the 1980s.",
+      "sourceType": "external",
+      "sourceRef": "mcfarland-lead-iq-2022",
+      "confidence": "medium",
+      "formula": null,
+      "confidenceInterval": [
+        1.5,
+        5.9
+      ],
+      "distribution": "lognormal",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/problem/i-am-retarded.html"
+    },
     "LIFE_EXPECTANCY_GAIN_1883_1962_YEARS_PER_DECADE": {
       "value": 3.8802531645569616,
       "formatted": "3.88 years/decade",
@@ -6497,6 +6542,22 @@
       ],
       "computeExpr": "(HUMAN_PROTEIN_CODING_GENES * TRIAL_RELEVANT_DISEASES_COUNT)",
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/problem/untapped-therapeutic-frontier.html"
+    },
+    "NATIONAL_IQ_GDP_GROWTH_EFFECT_PER_POINT": {
+      "value": 0.0011,
+      "formatted": "0.11%",
+      "unit": "rate",
+      "description": "Jones & Schneider (2006) BACE estimate: one national-IQ point is associated with a persistent 0.11 percentage-point higher annual GDP per capita growth rate (significant in 99.8% of 1,330 growth regressions). Wide CI reflects the contested cross-country IQ data underlying the estimate and the authors' own caveat that transitory vs steady-state growth cannot be distinguished.",
+      "sourceType": "external",
+      "sourceRef": "jones-schneider-iq-growth-2006",
+      "confidence": "low",
+      "formula": null,
+      "confidenceInterval": [
+        0.0004,
+        0.0018
+      ],
+      "distribution": "normal",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/problem/i-am-retarded.html"
     },
     "NATO_DEFENSE_SPENDING_ANNUAL": {
       "value": 1506000000000.0,
@@ -11825,7 +11886,7 @@
   },
   "shareableSnippets": {
     "whyOptimizationIsNecessary": {
-      "markdown": "Governments were created to promote the general welfare (i.e. median health and wealth).\n\nInstead, since 1913, these governments have [printed](https://manual.WarOnDisease.org/knowledge/economics/central-banks.html) [$170 trillion](https://manual.WarOnDisease.org/knowledge/problem/cost-of-war.html) and used it to murder [310 million](https://manual.WarOnDisease.org/knowledge/problem/cost-of-war.html) humans and destroy many of the valuable things those humans spent their entire lives building.\n\nThese murdered humans [include](https://manual.WarOnDisease.org/knowledge/problem/cost-of-war.html) approximately 930,000 physicians, 310,000 scientists, 620,000 engineers, 1.24 million nurses, 3.1 million teachers, and [102 million](https://manual.WarOnDisease.org/knowledge/problem/cost-of-war.html) children who will never grow up to replace them.\n\nThat [$170 trillion](https://manual.WarOnDisease.org/knowledge/problem/cost-of-war.html) could have funded [37,778 years](https://manual.WarOnDisease.org/knowledge/strategy/declaration-of-optimization.html) of clinical trials.  They bought the other thing.\n\nThese governments have enough weapons to end civilization [122](https://manual.WarOnDisease.org/knowledge/appendix/extinction-surplus.html) times over. Current military spending is enough money to buy [850](https://manual.WarOnDisease.org/knowledge/appendix/extinction-surplus.html) bullets for every person alive every single year. You only need to kill everyone once for everyone to be dead. (I checked.) The remaining murder capacity is sheer waste.\n\nSeven consecutive failed audits have found that the Pentagon has \"misplaced\" [$2.46 trillion](https://manual.WarOnDisease.org/knowledge/appendix/humanity-v-government.html). They then requested additional trillions without explanation or apology. This \"misplaced\" money could have funded [547](https://manual.WarOnDisease.org/knowledge/solution/1-percent-treaty.html) years of clinical trials at current government spending.\n\nFor every [604](https://manual.WarOnDisease.org/knowledge/solution/1-percent-treaty.html) dollars they spend on the capacity for orphan manufacturing, they only spend one on clinical trials that might cure the diseases you and everyone you love will suffer and die from.\n\nYour chance of being killed by a terrorist? 1 in [30 million](https://manual.WarOnDisease.org/knowledge/solution/1-percent-treaty.html). Your chance of dying of a disease? 100%.\n\nAt the current discovery rate, finding treatments for all known diseases takes ~[443 years](https://manual.WarOnDisease.org/knowledge/economics/1-pct-treaty-impact.html). One percent of the explosions budget could increase clinical trial capacity by [12.3x](https://manual.WarOnDisease.org/knowledge/economics/1-pct-treaty-impact.html) and compress that wait to ~[36 years](https://manual.WarOnDisease.org/knowledge/economics/1-pct-treaty-impact.html). The average cure arrives [212](https://manual.WarOnDisease.org/knowledge/economics/1-pct-treaty-impact.html) years sooner.\n\nThis is important because you personally will be dead within 80 years. (I mention this not to be rude but because you seem weirdly calm about it.)\n\nHad someone properly aligned your governments to maximize median healthy life years and median after-tax inflation-adjusted income in 1900, the average human would earn [$333,636](https://manual.WarOnDisease.org/knowledge/problem/cost-of-war.html) a year instead of [$14,375](https://manual.WarOnDisease.org/knowledge/appendix/political-dysfunction-tax.html).\n\nThey did not. So that is what you are going to do.\n\nThis Declaration asks every nation on Earth to sign a [treaty](https://manual.WarOnDisease.org/knowledge/solution/1-percent-treaty.html) redirecting one percent of military spending to clinical trials. One percent.\n\nHere is why this is not clinically insane.  Even adjusting for inflation, governments now spend [30.6](https://manual.WarOnDisease.org/knowledge/problem/cost-of-war.html) times more than they did immediately before winning World War II.\n\nAfter that war, governments cut military spending by [87.6%](https://manual.WarOnDisease.org/knowledge/economics/peace-dividend.html) and produced the greatest economic expansion in human history.\n\nUnless the human genome has degraded significantly in the last two generations, one percent should be manageable.\n\nThese governments have already signed multiple global treaties banning entire weapons industries. This one just asks them to buy one percent fewer of them.\n\nThink about someone you love who is suffering right now. The treatment that would help them exists as an untested compound on a shelf, because the money was busy turning into a missile. That missile incinerated a child who might have grown up to discover the cure. You lose the treatment. You lose the scientist. You get the inflation. You get the tax bill. You get to pay for her murder.\n\nThis is suboptimal.\n",
+      "markdown": "Governments were created to promote the general welfare (i.e. median health and wealth).\n\nInstead, since 1913, these governments have [printed](https://manual.WarOnDisease.org/knowledge/economics/central-banks.html) [$170 trillion](https://manual.WarOnDisease.org/knowledge/problem/cost-of-war.html) and used it to murder [310 million](https://manual.WarOnDisease.org/knowledge/problem/cost-of-war.html) humans and destroy many of the valuable things those humans spent their entire lives building.\n\nThese murdered humans [include](https://manual.WarOnDisease.org/knowledge/problem/cost-of-war.html) approximately 930,000 physicians, 310,000 scientists, 620,000 engineers, 1.24 million nurses, 3.1 million teachers, and [102 million](https://manual.WarOnDisease.org/knowledge/problem/cost-of-war.html) children who will never grow up to replace them.\n\nThat [$170 trillion](https://manual.WarOnDisease.org/knowledge/problem/cost-of-war.html) could have funded [37,778 years](https://manual.WarOnDisease.org/knowledge/strategy/declaration-of-optimization.html) of clinical trials.  They bought the other thing.\n\nThese governments have enough weapons to end civilization [122](https://manual.WarOnDisease.org/knowledge/appendix/extinction-surplus.html) times over. Current military spending is enough money to buy [850](https://manual.WarOnDisease.org/knowledge/appendix/extinction-surplus.html) bullets for every person alive every single year. You only need to kill everyone once for everyone to be dead. (I checked.) The remaining murder capacity is sheer waste.\n\nSeven consecutive failed audits have found that the Pentagon has \"misplaced\" [$2.46 trillion](https://manual.WarOnDisease.org/knowledge/appendix/humanity-v-government.html). They then requested additional trillions without explanation or apology. This \"misplaced\" money could have funded [547](https://manual.WarOnDisease.org/knowledge/solution/1-percent-treaty.html) years of clinical trials at current government spending.\n\nFor every [604](https://manual.WarOnDisease.org/knowledge/solution/1-percent-treaty.html) dollars they spend on the capacity for orphan manufacturing, they only spend one on clinical trials that might cure the diseases that will slowly torture and brutally murder you and everyone you have ever loved.\n\nYour chance of being killed by a terrorist? 1 in [30 million](https://manual.WarOnDisease.org/knowledge/solution/1-percent-treaty.html). Your chance of dying of a disease? 100%.\n\nAt the current discovery rate, finding treatments for all known diseases takes ~[443 years](https://manual.WarOnDisease.org/knowledge/economics/1-pct-treaty-impact.html). One percent of the explosions budget could increase clinical trial capacity by [12.3x](https://manual.WarOnDisease.org/knowledge/economics/1-pct-treaty-impact.html) and compress that wait to ~[36 years](https://manual.WarOnDisease.org/knowledge/economics/1-pct-treaty-impact.html). The average cure arrives [212](https://manual.WarOnDisease.org/knowledge/economics/1-pct-treaty-impact.html) years sooner.\n\nThis is important because you personally will be dead within 80 years. (I mention this not to be rude but because you seem weirdly calm about it.)\n\nHad someone properly aligned your governments to maximize median healthy life years and median after-tax inflation-adjusted income in 1900, the average human would earn [$333,636](https://manual.WarOnDisease.org/knowledge/problem/cost-of-war.html) a year instead of [$14,375](https://manual.WarOnDisease.org/knowledge/appendix/political-dysfunction-tax.html).\n\nThey did not. So that is what you are going to do.\n\nThis Declaration asks every nation on Earth to sign a [treaty](https://manual.WarOnDisease.org/knowledge/solution/1-percent-treaty.html) redirecting one percent of military spending to clinical trials. One percent.\n\nHere is why this is not clinically insane.  Even adjusting for inflation, governments now spend [30.6](https://manual.WarOnDisease.org/knowledge/problem/cost-of-war.html) times more than they did immediately before winning World War II.\n\nAfter that war, governments cut military spending by [87.6%](https://manual.WarOnDisease.org/knowledge/economics/peace-dividend.html) and produced the greatest economic expansion in human history.\n\nUnless the human genome has degraded significantly in the last two generations, one percent should be manageable.\n\nThese governments have already signed multiple global treaties banning entire weapons industries. This one just asks them to buy one percent fewer of them.\n\nThink about someone you love who is suffering right now. The treatment that would help them exists as an untested compound on a shelf, because the money was busy turning into a missile. That missile incinerated a child who might have grown up to discover the cure. You lose the treatment. You lose the scientist. You get the inflation. You get the tax bill. You get to pay for her murder.\n\nThis is suboptimal.\n",
       "sourceFile": "knowledge/strategy/declaration-of-optimization.qmd",
       "originalName": "why-optimization-is-necessary"
     },
@@ -23403,6 +23464,25 @@
       "pages": "",
       "number": ""
     },
+    "jones-schneider-iq-growth-2006": {
+      "id": "jones-schneider-iq-growth-2006",
+      "title": "Intelligence, Human Capital, and Economic Growth: A Bayesian Averaging of Classical Estimates (BACE) Approach",
+      "author": "Jones, Garett and Schneider, W. Joel",
+      "year": "2006",
+      "source": "Journal of Economic Growth",
+      "url": "https://doi.org/10.1007/s10887-006-7407-2",
+      "urls": [
+        "https://doi.org/10.1007/s10887-006-7407-2",
+        "https://mason.gmu.edu/~gjonesb/JonesSchneIQ"
+      ],
+      "quote": "IQ was significant at the 95% level in 99.8% of 1,330 BACE growth regressions. A 1 point increase in a nation's average IQ is associated with a persistent 0.11% annual increase in GDP per capita.",
+      "note": "Free full text: https://mason.gmu.edu/~gjonesb/JonesSchneIQ. The underlying cross-country IQ data (Lynn and Vanhanen) is contested (Wicherts et al. 2010); treated here as a wide-uncertainty elasticity.",
+      "type": "article",
+      "doi": "10.1007/s10887-006-7407-2",
+      "volume": "11",
+      "pages": "71--93",
+      "number": "1"
+    },
     "june-2024-amendments": {
       "id": "june-2024-amendments",
       "title": "Detailed revisions to the subordinate regulation following the amendment of the Act on the Safety of Regenerative Medicine in Japan",
@@ -23519,6 +23599,25 @@
       "pages": "",
       "number": ""
     },
+    "kitman-secret-history-lead-2000": {
+      "id": "kitman-secret-history-lead-2000",
+      "title": "The Secret History of Lead",
+      "author": "Kitman, Jamie Lincoln",
+      "year": "2000",
+      "source": "The Nation",
+      "url": "https://www.thenation.com/article/archive/secret-history-lead/",
+      "urls": [
+        "https://www.thenation.com/article/archive/secret-history-lead/",
+        "https://www.typeinvestigations.org/investigation/2000/03/02/secret-history-lead/"
+      ],
+      "quote": "On the choice of tetraethyl lead over ethanol: \"GM couldn't dictate an infrastructure that could supply ethanol... any idiot with a still could make it at home... And ethanol, unlike TEL, couldn't be patented; it offered no profits for GM.\" On DuPont's role: \"By 1920 it controlled more than 35 percent of GM shares and moved to pack the board.\"",
+      "note": "March 20, 2000 issue. Mirror: https://www.typeinvestigations.org/investigation/2000/03/02/secret-history-lead/",
+      "type": "article",
+      "doi": "",
+      "volume": "",
+      "pages": "",
+      "number": ""
+    },
     "kleiner2006": {
       "id": "kleiner2006",
       "title": "Licensing Occupations: Ensuring Quality or Restricting Competition?",
@@ -23570,6 +23669,24 @@
       "volume": "",
       "pages": "",
       "number": ""
+    },
+    "kovarik-leaded-gasoline-history-2005": {
+      "id": "kovarik-leaded-gasoline-history-2005",
+      "title": "Ethyl-leaded Gasoline: How a Classic Occupational Disease Became an International Public Health Disaster",
+      "author": "Kovarik, William",
+      "year": "2005",
+      "source": "International Journal of Occupational and Environmental Health",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/16350473/",
+      "urls": [
+        "https://pubmed.ncbi.nlm.nih.gov/16350473/"
+      ],
+      "quote": "TEL introduced commercially February 1923; Ethyl Gasoline Corporation formed 1924 as a 50/50 joint venture of General Motors and Standard Oil of New Jersey, with DuPont manufacturing the additive. \"In efforts to protect their profits, industry executives falsely claimed there was no alternative to leaded gasoline. Fifty years passed before scientific, court, and regulatory challenges had any influence.\"",
+      "note": "",
+      "type": "article",
+      "doi": "10.1179/oeh.2005.11.4.384",
+      "volume": "11",
+      "pages": "384--397",
+      "number": "4"
     },
     "kpmg2018": {
       "id": "kpmg2018",

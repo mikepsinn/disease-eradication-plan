@@ -1555,7 +1555,7 @@ Compound multiple for conventional retirement investing over the prize pool reso
 - [Destructive Economy Base Year](#sec-destructive_economy_base_year): 2025
 
 $$
-M_{retire} = (1 + r_{retire}) ^{Y_{50\%} - Y_0}
+M_{retire} = (1 + r_{retire})^{Y_{50\%} - Y_0}
 $$
 where:
 $$
@@ -2979,7 +2979,7 @@ Pool \\
 $$
 where:
 $$
-M_{pool} = (1 + r_{pool}) ^{Y_{50\%} - Y_0}
+M_{pool} = (1 + r_{pool})^{Y_{50\%} - Y_0}
 $$
 where:
 $$
@@ -3068,7 +3068,7 @@ Pool \\
 $$
 where:
 $$
-M_{pool} = (1 + r_{pool}) ^{Y_{50\%} - Y_0}
+M_{pool} = (1 + r_{pool})^{Y_{50\%} - Y_0}
 $$
 where:
 $$
@@ -4791,7 +4791,7 @@ Compound multiple for prize pool growth over the resolution horizon (tied to the
 - [Destructive Economy Base Year](#sec-destructive_economy_base_year): 2025
 
 $$
-M_{pool} = (1 + r_{pool}) ^{Y_{50\%} - Y_0}
+M_{pool} = (1 + r_{pool})^{Y_{50\%} - Y_0}
 $$
 where:
 $$
@@ -4903,7 +4903,7 @@ S_{annual} \\
 $$
 where:
 $$
-M_{retire} = (1 + r_{retire}) ^{Y_{50\%} - Y_0}
+M_{retire} = (1 + r_{retire})^{Y_{50\%} - Y_0}
 $$
 where:
 $$
@@ -4933,7 +4933,7 @@ Cost_{destruct} \\
 $$
 where:
 $$
-M_{pool} = (1 + r_{pool}) ^{Y_{50\%} - Y_0}
+M_{pool} = (1 + r_{pool})^{Y_{50\%} - Y_0}
 $$
 where:
 $$
@@ -4985,7 +4985,7 @@ Pool \\
 $$
 where:
 $$
-M_{pool} = (1 + r_{pool}) ^{Y_{50\%} - Y_0}
+M_{pool} = (1 + r_{pool})^{Y_{50\%} - Y_0}
 $$
 where:
 $$
@@ -5522,7 +5522,7 @@ S_{annual} \\
 $$
 where:
 $$
-M_{retire} = (1 + r_{retire}) ^{Y_{50\%} - Y_0}
+M_{retire} = (1 + r_{retire})^{Y_{50\%} - Y_0}
 $$
 where:
 $$
@@ -5615,7 +5615,7 @@ S_{annual} \\
 $$
 where:
 $$
-M_{retire} = (1 + r_{retire}) ^{Y_{50\%} - Y_0}
+M_{retire} = (1 + r_{retire})^{Y_{50\%} - Y_0}
 $$
 where:
 $$

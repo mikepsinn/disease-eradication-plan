@@ -657,6 +657,12 @@ def formula_to_latex(formula: str, parameters: dict, lhs: str) -> str | None:
     s = s.replace('\u00f7', '/')  # ÷
     s = s.replace(' x ', '*')     # informal "x" multiplication
 
+    # Exponentiation: Python ** -> ^ (BEFORE step 3 turns each * into \times),
+    # then brace placeholder exponents so "A ** PARAM" renders as A^{symbol}
+    s = s.replace('**', '^')
+    s = _re.sub(r'\s*\^\s*', '^', s)
+    s = _re.sub(r'\^(\x00\d+\x00)', r'^{\1}', s)
+
     # Step 1: Functions (min, max, ln) - convert BEFORE other transforms
     # so parentheses inside are handled correctly
     def _convert_functions(s):
