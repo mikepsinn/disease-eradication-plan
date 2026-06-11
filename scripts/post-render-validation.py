@@ -578,6 +578,7 @@ def check_meta_description_match(content, file_path):
         return errors
     
     # Both exist - normalize and check if they match
+    assert name_desc_match is not None and og_desc_match is not None
     name_desc_value = name_desc_match.group(1)
     og_desc_value = og_desc_match.group(1)
 

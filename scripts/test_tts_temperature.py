@@ -9,7 +9,7 @@ import os
 import time
 
 if sys.platform == 'win32':
-    sys.stdout.reconfigure(encoding='utf-8')
+    sys.stdout.reconfigure(encoding='utf-8')  # pyright: ignore[reportAttributeAccessIssue]
 
 sys.path.insert(0, os.path.dirname(__file__))
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
@@ -58,7 +58,7 @@ def generate_test(text: str, voice: str, speaking: str, temperature: float, labe
         t0 = time.time()
         try:
             for chunk in client.models.generate_content_stream(
-                model=TTS_MODEL_ID, contents=contents, config=config,
+                model=TTS_MODEL_ID, contents=contents, config=config,  # pyright: ignore[reportArgumentType]
             ):
                 if chunk.candidates and chunk.candidates[0].content and chunk.candidates[0].content.parts:
                     part = chunk.candidates[0].content.parts[0]

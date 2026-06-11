@@ -33,11 +33,14 @@ def _make_mp3(path: Path, duration_ms: int = 1000, tags: dict | None = None) -> 
         mp3 = MP3(str(path))
         if mp3.tags is None:
             mp3.add_tags()
+        tags_obj = mp3.tags
+        if tags_obj is None:
+            raise RuntimeError(f"Could not initialize ID3 tags for {path}")
         for key, val in tags.items():
             if key == 'title':
-                mp3.tags.add(TIT2(encoding=3, text=[val]))
+                tags_obj.add(TIT2(encoding=3, text=[val]))
             elif key == 'artist':
-                mp3.tags.add(TPE1(encoding=3, text=[val]))
+                tags_obj.add(TPE1(encoding=3, text=[val]))
         mp3.save()
     return path
 
@@ -92,6 +95,7 @@ class TestWrapMp3WithIntroOutro:
 
         # First wrap
         result1 = wrap_mp3_with_intro_outro(raw_mp3, out_dir, intro_path=intro, outro_path=outro)
+        assert result1 is not None
         duration_after_first = _mp3_duration_ms(result1)
 
         # Force cache miss by touching raw file
@@ -100,6 +104,7 @@ class TestWrapMp3WithIntroOutro:
 
         # Second wrap (reads from raw again, not from wrapped output)
         result2 = wrap_mp3_with_intro_outro(raw_mp3, out_dir, intro_path=intro, outro_path=outro)
+        assert result2 is not None
         duration_after_second = _mp3_duration_ms(result2)
 
         # Durations should be equal (no double-wrapping)
@@ -116,10 +121,12 @@ class TestWrapMp3WithIntroOutro:
 
         # First wrap creates the output
         result1 = wrap_mp3_with_intro_outro(raw_mp3, out_dir, intro_path=intro)
+        assert result1 is not None
         mtime1 = result1.stat().st_mtime
 
         # Second wrap should skip (output is newer)
         result2 = wrap_mp3_with_intro_outro(raw_mp3, out_dir, intro_path=intro)
+        assert result2 is not None
         mtime2 = result2.stat().st_mtime
 
         # Output file should not have been rewritten
@@ -136,6 +143,7 @@ class TestWrapMp3WithIntroOutro:
 
         # First wrap
         result1 = wrap_mp3_with_intro_outro(raw_mp3, out_dir, intro_path=intro)
+        assert result1 is not None
         duration1 = _mp3_duration_ms(result1)
 
         # Modify intro (longer duration, newer mtime)
@@ -144,6 +152,7 @@ class TestWrapMp3WithIntroOutro:
 
         # Second wrap should rebuild
         result2 = wrap_mp3_with_intro_outro(raw_mp3, out_dir, intro_path=intro)
+        assert result2 is not None
         duration2 = _mp3_duration_ms(result2)
 
         # Duration should reflect the new, longer intro

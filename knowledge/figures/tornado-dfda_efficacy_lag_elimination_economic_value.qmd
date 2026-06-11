@@ -20,14 +20,14 @@ display_name = "Total Economic Loss from Disease Eradication Delay"
 
 # Baseline and units
 
-baseline = 1191417535695000.0
+baseline = 1316173298595000.0
 
 # Tornado data from sensitivity analysis
 
-drivers = ['EFFICACY_LAG_YEARS', 'STANDARD_ECONOMIC_QALY_VALUE_USD', 'REGULATORY_DELAY_MEAN_AGE_OF_DEATH', 'GLOBAL_LIFE_EXPECTANCY_2024', 'GLOBAL_DISEASE_DEATHS_DAILY', 'REGULATORY_DELAY_SUFFERING_PERIOD_YEARS', 'CHRONIC_DISEASE_DISABILITY_WEIGHT']
-driver_labels = ['Regulatory Delay for Efficacy Testing Post-Safety Verification', 'Standard Economic Value per QALY', 'Mean Age of Preventable Death from Post-Safety Efficacy Delay', 'Global Life Expectancy (2024)', 'Global Daily Deaths from Disease and Aging', 'Pre-Death Suffering Period During Post-Safety Efficacy Delay', 'Disability Weight for Untreated Chronic Conditions']
-impacts_low = [-290589641615798.1, -238283505830553.88, 187133646242451.5, -124755761435704.88, -59570875230970.25, -43664515439384.25, -26198708609407.5]
-impacts_high = [290589644886913.5, 238283509101669.25, -187133642971336.12, 124755764706820.25, 59570878502085.75, 65496777247970.5, 26198711880522.75]
+drivers = ['EFFICACY_LAG_YEARS', 'STANDARD_ECONOMIC_QALY_VALUE_USD', 'REGULATORY_DELAY_MEAN_AGE_OF_DEATH', 'GLOBAL_LIFE_EXPECTANCY_REMAINING_AT_AGE_60', 'GLOBAL_DISEASE_DEATHS_DAILY', 'REGULATORY_DELAY_SUFFERING_PERIOD_YEARS', 'CHRONIC_DISEASE_DISABILITY_WEIGHT']
+driver_labels = ['Regulatory Delay for Efficacy Testing Post-Safety Verification', 'Standard Economic Value per QALY', 'Mean Age of Preventable Death from Post-Safety Efficacy Delay', 'Remaining Life Expectancy at Age 60 (Global)', 'Global Daily Deaths from Disease and Aging', 'Pre-Death Suffering Period During Post-Safety Efficacy Delay', 'Disability Weight for Untreated Chronic Conditions']
+impacts_low = [-321017876339965.4, -263234658273543.75, 187133646413714.0, -87329032343063.5, -65808663213270.75, -43664515268121.75, -26198708438145.0]
+impacts_high = [321017879953605.75, 263234661887184.25, -187133642800073.5, 62377883342451.5, 65808666826911.25, 65496777419233.0, 26198712051785.25]
 
 # Convert deltas to absolute values (baseline + delta)
 

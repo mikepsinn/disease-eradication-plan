@@ -55,7 +55,7 @@ You've swapped market and competition risk for a single, concentrated political 
 
 Your risk is specific. So you can engineer specific tools to neutralize it.
 
-Your ecosystem has two instruments with two risk profiles. A **Prize deposit** is a claim on the prize pool: if the plan fails to hit its year 15 targets (global HALE {{< var wishonia_projected_hale_year_15 >}}, median income {{< var wishonia_trajectory_avg_income_year_15 >}}), depositors divide the realized pool pro rata by deposits; if it succeeds, the same pool routes to Earth Optimization Points holders. **[IABs](../solution/incentive-alignment-bonds.qmd) [@iab-paper-2025]** fund the lobbying campaign with real capital at risk.
+Your ecosystem has two instruments with two risk profiles. A **Prize deposit** is a claim on the prize pool: if the plan fails to hit its year 15 targets (global HALE {{< var prize_target_hale_year_15 >}}, median income {{< var prize_target_median_income_year_15 >}}), depositors divide the realized pool pro rata by deposits; if it succeeds, the same pool routes to Earth Optimization Points holders. **[IABs](../solution/incentive-alignment-bonds.qmd) [@iab-paper-2025]** fund the lobbying campaign with real capital at risk.
 
 ### Two Ways to Express Your Belief (Without a Vote Market)
 

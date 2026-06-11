@@ -3,7 +3,7 @@ title: 'Earth Optimization Protocol: Technical Specification'
 subtitle: Identity, Pooling, Settlement, and Oracle Design for Interoperable Outcome Prizes
 description: 'Technical specification for interoperable outcome prize pools using one shared pool model. Two targets by 2040: global HALE and median income matching the 1% Treaty projections. Covers cross-pool proof-of-personhood, a permissionless pool registry, vote, points, and deposit mechanics, direct cross-pool claims, tamper-evident scoreboard aggregation, and a terminal metric oracle.'
 abstract: |
-  The Earth Optimization Prize [@earth-optimization-prize-paper-2025] is a pool of money. Two numbers on a Scoreboard: how long people live, how much they earn. By {{< var destructive_economy_50pct_year >}}, if global HALE reaches {{< var treaty_projected_hale_year_15 >}} and median income reaches {{< var treaty_trajectory_avg_income_year_15 >}}, Earth Optimization Points holders split the pool. If not, depositors divide the pool pro rata (still beats a retirement account). Registration asks two questions: yes or no on the 1% Treaty, and how much military vs. clinical trials (with Optimitron evidence so the voter sees what each dollar actually buys). Anyone can start a second pool. It joins the network automatically, because all pools measure the same two numbers.
+  The Earth Optimization Prize [@earth-optimization-prize-paper-2025] is a pool of money. Two numbers on a Scoreboard: how long people live, how much they earn. By {{< var destructive_economy_50pct_year >}}, if global HALE reaches {{< var prize_target_hale_year_15 >}} and median income reaches {{< var prize_target_median_income_year_15 >}}, Earth Optimization Points holders split the pool. If not, depositors divide the pool pro rata (still beats a retirement account). Registration asks two questions: yes or no on the 1% Treaty, and how much military vs. clinical trials (with Optimitron evidence so the voter sees what each dollar actually buys). Anyone can start a second pool. It joins the network automatically, because all pools measure the same two numbers.
 
   That "automatically" requires six things this paper specifies: (1) verify each person is real and only counts once (identity layer with proof-of-personhood); (2) register pools so metric commitments are checkable, not promises (pool registry); (3) a vote, Earth Optimization Points, and deposit claims with rules that work across pools (token mechanics); (4) any verified voter can claim from any pool directly, no netting, no settlement (cross-pool claims); (5) every front-end shows the same combined voter count and pool size (scoreboard aggregation); and (6) an oracle that reads the WHO and World Bank reports and triggers treasury release when the numbers are met (terminal metric oracle), with decentralized surveys as a cross-check. The goal is a protocol simple enough that a second pool can launch without asking the first pool's permission.
 author:
@@ -61,7 +61,7 @@ image: /assets/og-images/knowledge/appendix/earth-optimization-prize-protocol-og
 
 This is the wiring diagram. If the [Earth Optimization Prize](../strategy/earth-optimization-prize.qmd) [@earth-optimization-prize-paper-2025] is the promise ("make the world measurably better and collect money"), this paper is the plumbing that makes multiple independent prize pools work together without trusting each other. If you are not building software for this system, you can safely skip to the mechanism paper. If you are, everything below is load-bearing.
 
-The [Earth Optimization Prize](../strategy/earth-optimization-prize.qmd) [@earth-optimization-prize-paper-2025] is a same-pool outcome prize that rewards humanity for hitting two targets by {{< var destructive_economy_50pct_year >}}: global HALE reaching {{< var treaty_projected_hale_year_15 >}} and global median income reaching {{< var treaty_trajectory_avg_income_year_15 >}}. If the targets are not met, depositors divide the realized pool pro rata by deposits. If both targets are met, that same treasury releases to participants proportionally.
+The [Earth Optimization Prize](../strategy/earth-optimization-prize.qmd) [@earth-optimization-prize-paper-2025] is a same-pool outcome prize that rewards humanity for hitting two targets by {{< var destructive_economy_50pct_year >}}: global HALE reaching {{< var prize_target_hale_year_15 >}} and global median income reaching {{< var prize_target_median_income_year_15 >}}. If the targets are not met, depositors divide the realized pool pro rata by deposits. If both targets are met, that same treasury releases to participants proportionally.
 
 Registration asks two questions:
 
@@ -334,7 +334,7 @@ Pool status endpoints should update at least daily. Aggregators should recompute
 
 ### Problem
 
-The entire mechanism depends on a single trigger: did global median HALE and global median real after-tax income actually improve? If this measurement is wrong, gameable, or disputed, the treasury either releases when it should not (rewarding failure) or refuses to release when it should (punishing success). Oracle design is the credibility bottleneck of the entire system.
+The entire mechanism depends on a single trigger: did global HALE and global median real after-tax income actually improve? If this measurement is wrong, gameable, or disputed, the treasury either releases when it should not (rewarding failure) or refuses to release when it should (punishing success). Oracle design is the credibility bottleneck of the entire system.
 
 ### What Is Measured
 
@@ -342,8 +342,8 @@ Two metrics, matching the [Earth Optimization Prize](../strategy/earth-optimizat
 
 | Metric | Baseline | Target by {{< var destructive_economy_50pct_year >}} |
 |:---|:---|:---|
-| **Global HALE** | {{< var global_hale_current >}} | {{< var treaty_projected_hale_year_15 >}} (+{{< var treaty_hale_gain_year_15_nounit >}} healthy years) |
-| **Global median income** | {{< var current_trajectory_avg_income_year_15 >}} (status quo at year 15) | {{< var treaty_trajectory_avg_income_year_15 >}} ({{< var treaty_trajectory_lifetime_income_multiplier >}} current lifetime earnings) |
+| **Global HALE** | {{< var global_hale_current >}} | {{< var prize_target_hale_year_15 >}} (+{{< var treaty_hale_gain_year_15_nounit >}} healthy years) |
+| **Global median income** | {{< var global_median_after_tax_income_2025 >}} (measured today) | {{< var prize_target_median_income_year_15 >}} (treaty-trajectory median; see [GDP Trajectories](../economics/gdp-trajectories.qmd)) |
 
 **Global HALE (Healthy Life Expectancy).** Years a person born anywhere on Earth can expect to live in full health, as measured by the WHO's HALE methodology. Not life expectancy (which counts years lived in poor health). Global, not per-country: the prize rewards improving the species-level number, not cherry-picking which countries count.
 
@@ -351,7 +351,7 @@ Two metrics, matching the [Earth Optimization Prize](../strategy/earth-optimizat
 
 ### Who Measures
 
-**Institutional data.** WHO, World Bank, and OECD already publish global HALE and income figures with established methodologies. The oracle accepts their published figures directly. These are the most-measured numbers on Earth. The oracle's primary job is reading an annual report, not building novel measurement infrastructure.
+**Institutional data.** The WHO publishes global HALE; the World Bank's poverty platform and the OECD publish country-level median income figures with established methodologies. No institution publishes a single global median income number, so the oracle aggregates the published country medians into the global figure under the methodology locked at baseline. These are among the most-measured numbers on Earth; the oracle's job is aggregation under locked rules, not building novel measurement infrastructure.
 
 **Decentralized surveys.** Institutional data has two weaknesses: it lags by 1-3 years, and it depends on national statistical offices with uneven quality. The protocol should also support decentralized surveys collected by the same verified voter base. The identity layer already provides a global network of verified humans. Periodic health and income surveys (phone-based, app-based, or integrated into the voter re-verification process) would provide an independent, near-real-time data source that does not depend on any government or institution. This is not a replacement for institutional data; it is a cross-check and a gap-filler for countries with weak statistical infrastructure. Over time, as the voter base grows, decentralized survey data may become more comprehensive than institutional sources for the specific metrics the prize cares about.
 

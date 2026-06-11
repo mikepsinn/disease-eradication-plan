@@ -554,6 +554,16 @@ def infer_operation_from_compute(param_value: Any, inputs: list) -> tuple[str, s
         return 'complex', None
 
 
+def _as_float(value: str | float | None) -> float | None:
+    """Convert numeric operation metadata to float."""
+    if value is None:
+        return None
+    try:
+        return float(value)
+    except (TypeError, ValueError):
+        return None
+
+
 def extract_lambda_body_from_file(param_name: str, params_file: Path) -> str | None:
     """Extract the lambda body from parameters.py for a given parameter."""
     content = params_file.read_text(encoding="utf-8")
@@ -1303,8 +1313,10 @@ def generate_expanded_latex(
     if this_level is None:
         # Try to use hardcoded latex if available
         this_level = getattr(param_value, 'latex', None)
-    
-    if this_level is None:
+
+    # Guard against empty/whitespace latex (Parameter.latex defaults to ''):
+    # an empty first block would render as a blank $$ $$ pair and fail validation.
+    if not this_level or not this_level.strip():
         return None
     
     # Find calculated inputs that need expansion
@@ -1604,7 +1616,9 @@ def generate_auto_latex(
     elif operation == 'diff_first_second_times_constant' and len(input_data) == 2:
         # (A - B) × constant or (A - B) / divisor
         a, b = input_data[0], input_data[1]
-        constant = float(order)
+        constant = _as_float(order)
+        if constant is None:
+            return None
         # If constant < 1, display as division (more readable)
         if abs(constant) < 1.0 and abs(constant) > 0.001:
             divisor = round_to_n_sigfigs(1.0 / constant, 3)
@@ -1619,7 +1633,9 @@ def generate_auto_latex(
     elif operation == 'diff_second_first_times_constant' and len(input_data) == 2:
         # (B - A) × constant or (B - A) / divisor
         a, b = input_data[0], input_data[1]
-        constant = float(order)
+        constant = _as_float(order)
+        if constant is None:
+            return None
         if abs(constant) < 1.0 and abs(constant) > 0.001:
             divisor = round_to_n_sigfigs(1.0 / constant, 3)
             symbolic = f"\\frac{{{b['symbolic']} - {a['symbolic']}}}{{{divisor}}}"
@@ -1633,7 +1649,9 @@ def generate_auto_latex(
     elif operation == 'multiply_constant' and len(input_data) == 1:
         # Multiply by constant: X = A × c = val × const = result
         inp = input_data[0]
-        constant = float(order)  # The constant value is stored in order parameter
+        constant = _as_float(order)  # The constant value is stored in order parameter
+        if constant is None:
+            return None
         # Format constant as plain number (no units)
         const_formatted = round_to_n_sigfigs(constant, 3)
         latex = f"{lhs_short} = {inp['symbolic']} \\times {const_formatted} = {inp['formatted']} \\times {const_formatted} = {result_formatted}"
@@ -1641,7 +1659,9 @@ def generate_auto_latex(
     elif operation == 'multiply_constant_2input' and len(input_data) == 2:
         # Multiply two inputs by a constant: X = A × B × c = val1 × val2 × const = result
         a, b = input_data[0], input_data[1]
-        constant = float(order)  # The constant value is stored in order parameter
+        constant = _as_float(order)  # The constant value is stored in order parameter
+        if constant is None:
+            return None
         const_formatted = round_to_n_sigfigs(constant, 3)
         symbolic = f"{a['symbolic']} \\times {b['symbolic']} \\times {const_formatted}"
         numeric = f"{a['formatted']} \\times {b['formatted']} \\times {const_formatted}"
@@ -1649,7 +1669,9 @@ def generate_auto_latex(
 
     elif operation == 'multiply_constant_multi':
         # Multiply multiple inputs by a constant: X = A × B × ... × c
-        constant = float(order)
+        constant = _as_float(order)
+        if constant is None:
+            return None
         const_formatted = round_to_n_sigfigs(constant, 3)
         symbolic_terms = ' \\times '.join(d['symbolic'] for d in input_data)
         numeric_terms = ' \\times '.join(d['formatted'] for d in input_data)
@@ -1660,7 +1682,9 @@ def generate_auto_latex(
     elif operation == 'divide_constant' and len(input_data) == 1:
         # Divide by constant: X = A / c = val / const = result
         inp = input_data[0]
-        constant = float(order)
+        constant = _as_float(order)
+        if constant is None:
+            return None
         const_formatted = round_to_n_sigfigs(constant, 3)
         symbolic = f"\\frac{{{inp['symbolic']}}}{{{const_formatted}}}"
         numeric = f"\\frac{{{inp['formatted']}}}{{{const_formatted}}}"
@@ -1670,7 +1694,9 @@ def generate_auto_latex(
         # Add constant: X = A + c = val + const = result
         # Handle negative constants as subtraction for cleaner display
         inp = input_data[0]
-        constant = float(order)
+        constant = _as_float(order)
+        if constant is None:
+            return None
         if constant < 0:
             # Negative constant: show as subtraction
             const_formatted = round_to_n_sigfigs(abs(constant), 3)
@@ -1683,7 +1709,9 @@ def generate_auto_latex(
         # Subtract constant: X = A - c = val - const = result
         # Handle negative constants (subtracting negative = adding)
         inp = input_data[0]
-        constant = float(order)
+        constant = _as_float(order)
+        if constant is None:
+            return None
         if constant < 0:
             # Subtracting negative: show as addition
             const_formatted = round_to_n_sigfigs(abs(constant), 3)
@@ -1695,7 +1723,9 @@ def generate_auto_latex(
     elif operation == 'constant_minus_var' and len(input_data) == 1:
         # Constant minus variable: X = c - A = const - val = result
         inp = input_data[0]
-        constant = float(order)
+        constant = _as_float(order)
+        if constant is None:
+            return None
         if constant < 0:
             # Negative constant minus var: (-c) - A = -(c + A)
             # Show as: -c - A for clarity
@@ -1707,10 +1737,15 @@ def generate_auto_latex(
 
     elif operation in ('identity', 'transform') and len(input_data) == 1:
         # Single input transformation: X = A = val = result
-        # BUT: Check if formula suggests a binary operation - if so, inputs metadata is incomplete
+        # BUT: Check if formula suggests a binary operation - if so, the lambda mixes
+        # the input with constants (e.g. min(1.0, 20 / X)). Try converting the formula
+        # string directly before giving up.
         formula = getattr(param_value, 'formula', '') or ''
         if '÷' in formula or '×' in formula or '+' in formula or '-' in formula:
-            # Formula suggests binary op but only 1 input - skip auto-generation
+            if formula and parameters:
+                formula_latex = formula_to_latex(formula, parameters, lhs_short)
+                if formula_latex:
+                    return formula_latex
             return None
         inp = input_data[0]
         latex = f"{lhs_short} = {inp['symbolic']} = {inp['formatted']} = {result_formatted}"

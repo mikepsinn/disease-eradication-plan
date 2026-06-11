@@ -91,12 +91,13 @@ def main() -> int:
             ok += 1
         except Exception as e:
             msg = str(e)
-            if hasattr(e, "response") and e.response is not None:
+            response = getattr(e, "response", None)
+            if response is not None:
                 try:
-                    body = e.response.json()
-                    msg = f"{e.response.status_code} {body}"
+                    body = response.json()
+                    msg = f"{response.status_code} {body}"
                 except Exception:
-                    msg = f"{e.response.status_code} {e.response.text[:200]}"
+                    msg = f"{response.status_code} {response.text[:200]}"
             print(f"  [FAIL] {did}: {msg}")
             fail += 1
 

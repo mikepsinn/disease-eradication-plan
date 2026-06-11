@@ -22,7 +22,30 @@ from dih_models.formatting import format_parameter_value
 from dih_models.reference_parser import parse_references_bib
 
 if sys.platform == 'win32':
-    sys.stdout.reconfigure(encoding='utf-8')
+    sys.stdout.reconfigure(encoding='utf-8')  # pyright: ignore[reportAttributeAccessIssue]
+
+
+def _value_text(value: Any) -> str:
+    raw = getattr(value, "value", value)
+    return "" if raw is None else str(raw)
+
+
+def _source_type_text(value: Any) -> str:
+    return _value_text(getattr(value, "source_type", ""))
+
+
+def _parameter_inputs(value: Any) -> list[str]:
+    return list(getattr(value, "inputs", None) or [])
+
+
+def _load_parameter_dict() -> Dict[str, Dict[str, Any]]:
+    from dih_models import parameters as parameters_module
+
+    return {
+        name: {"value": value}
+        for name, value in vars(parameters_module).items()
+        if hasattr(value, "source_type")
+    }
 
 
 class QuestionType(str, Enum):
@@ -41,16 +64,21 @@ class SurveyQuestion:
     question_id: str
     question_text: str
     question_type: QuestionType
-    options: List[str] = None
-    context: Dict[str, Any] = None
+    options: List[str] | None = None
+    context: Dict[str, Any] | None = None
     required: bool = True
-    conditional_on: str = None  # Show only if another question meets condition
+    conditional_on: str | None = None  # Show only if another question meets condition
 
 
 class QuestionGenerator:
     """Generate survey questions from parameter metadata"""
 
-    def __init__(self, sensitivity_data: Dict = None, usage_data: Dict = None, all_parameters: Dict = None):
+    def __init__(
+        self,
+        sensitivity_data: Dict[str, Any] | None = None,
+        usage_data: Dict[str, Any] | None = None,
+        all_parameters: Dict[str, Any] | None = None,
+    ):
         """
         Args:
             sensitivity_data: From _analysis/sensitivity.json
@@ -75,9 +103,7 @@ class QuestionGenerator:
         value = param_data.get("value")
 
         # Get source_type from value object
-        source_type_str = ""
-        if hasattr(value, "source_type"):
-            source_type_str = str(value.source_type.value) if hasattr(value.source_type, 'value') else str(value.source_type)
+        source_type_str = _source_type_text(value)
 
         # Generate type-specific questions
         if source_type_str == "external":
@@ -374,7 +400,7 @@ class QuestionGenerator:
 
         return questions
 
-    def _format_value(self, value: Any, unit: str = None) -> str:
+    def _format_value(self, value: Any, unit: str | None = None) -> str:
         """Format parameter value for display using official formatter"""
         # Use the official formatter which handles all cases correctly
         return format_parameter_value(value, unit=unit, include_unit=True)
@@ -481,7 +507,12 @@ class QuestionGenerator:
 
         return ", ".join(readable_inputs)
 
-    def _format_calculation_example(self, formula: str, result_value: float, inputs: List[str] = None) -> str:
+    def _format_calculation_example(
+        self,
+        formula: str,
+        result_value: float,
+        inputs: List[str] | None = None,
+    ) -> str:
         """
         Generate calculation example with actual values.
         Replaces ALL parameter names in formula with their formatted values.
@@ -577,7 +608,7 @@ def _calculate_parameter_impact(
 
 def select_validation_parameters(
     parameters: Dict[str, Dict[str, Any]],
-    usage_data: Dict[str, Any] = None
+    usage_data: Dict[str, Any] | None = None
 ) -> Dict[str, Dict[str, Any]]:
     """
     Select only calculated parameters (in economics.qmd) and their fundamental inputs.
@@ -596,11 +627,9 @@ def select_validation_parameters(
         from dih_models.uncertainty import get_fundamental_inputs
     except ImportError:
         # Fallback: just use direct inputs if uncertainty module not available
-        def get_fundamental_inputs(params, param_name):
-            value = params[param_name].get("value")
-            if hasattr(value, "inputs") and value.inputs:
-                return value.inputs
-            return []
+        def get_fundamental_inputs(parameters, param_name, visited=None):
+            value = parameters[param_name].get("value")
+            return set(_parameter_inputs(value))
 
     selected = {}
 
@@ -611,7 +640,7 @@ def select_validation_parameters(
         if not hasattr(value, "source_type"):
             continue
 
-        source_type_str = str(value.source_type.value) if hasattr(value.source_type, 'value') else str(value.source_type)
+        source_type_str = _source_type_text(value)
 
         # Only include calculated parameters that are in economics.qmd
         if source_type_str == "calculated":
@@ -628,8 +657,7 @@ def select_validation_parameters(
         except Exception:
             # If we can't get fundamental inputs, at least include direct inputs
             value = parameters[calc_param].get("value")
-            if hasattr(value, "inputs") and value.inputs:
-                inputs_needed.update(value.inputs)
+            inputs_needed.update(_parameter_inputs(value))
 
     # Add all needed inputs to selected
     for input_param in inputs_needed:
@@ -641,8 +669,8 @@ def select_validation_parameters(
 
 def generate_survey(
     parameters: Dict[str, Dict[str, Any]],
-    sensitivity_data: Dict[str, Any] = None,
-    usage_data: Dict[str, Any] = None,
+    sensitivity_data: Dict[str, Any] | None = None,
+    usage_data: Dict[str, Any] | None = None,
     top_n: int = 50,
     calculate_sensitivity: bool = True,
     focused: bool = True
@@ -793,7 +821,7 @@ def generate_survey(
             affected_outcomes = [out.get("outcome", "") for out in top_outcomes if "outcome" in out]
 
         # Generate context card
-        source_type_str = str(value.source_type.value) if hasattr(value.source_type, 'value') else str(value.source_type)
+        source_type_str = _source_type_text(value)
 
         context_card = {
             "what": description,
@@ -802,8 +830,9 @@ def generate_survey(
         }
 
         # Add dependencies: what this parameter depends on (inputs) and what depends on it (affects)
-        if hasattr(value, "inputs") and value.inputs:
-            context_card["inputs"] = value.inputs[:5]  # Limit to top 5 for readability
+        inputs = _parameter_inputs(value)
+        if inputs:
+            context_card["inputs"] = inputs[:5]  # Limit to top 5 for readability
 
         # Only include affects if we have data
         if affected_outcomes:
@@ -814,7 +843,7 @@ def generate_survey(
         citation = None
         if source_ref:
             # Extract reference ID from enum or string
-            ref_id = source_ref.value if hasattr(source_ref, 'value') else str(source_ref)
+            ref_id = _value_text(source_ref)
 
             # Look up citation data
             if ref_id in citation_data:
@@ -889,8 +918,8 @@ def generate_survey(
 
 def rank_parameters(
     parameters: Dict[str, Dict[str, Any]],
-    sensitivity_data: Dict[str, Any] = None,
-    usage_data: Dict[str, Any] = None
+    sensitivity_data: Dict[str, Any] | None = None,
+    usage_data: Dict[str, Any] | None = None
 ) -> List[Tuple[str, float, Dict]]:
     """
     Rank parameters by composite importance score.
@@ -907,7 +936,7 @@ def rank_parameters(
             continue
 
         # Skip calculated parameters not used in economics.qmd
-        source_type_str = str(value.source_type.value) if hasattr(value.source_type, 'value') else str(value.source_type)
+        source_type_str = _source_type_text(value)
         if source_type_str == "calculated":
             if usage_data and param_name not in usage_data:
                 # Calculated parameter not in economics.qmd - skip it
@@ -939,7 +968,7 @@ def rank_parameters(
             breakdown["usage"] = min(30, usage_score)
 
         # 3. Type score (0-20 points)
-        source_type_str = str(value.source_type.value) if hasattr(value.source_type, 'value') else str(value.source_type)
+        source_type_str = _source_type_text(value)
         if source_type_str == "calculated":
             breakdown["type"] = 20  # Highest priority
         elif source_type_str == "external":
@@ -967,8 +996,8 @@ def rank_parameters(
 
 def rank_parameters_with_dependencies(
     parameters: Dict[str, Dict[str, Any]],
-    sensitivity_data: Dict[str, Any] = None,
-    usage_data: Dict[str, Any] = None
+    sensitivity_data: Dict[str, Any] | None = None,
+    usage_data: Dict[str, Any] | None = None
 ) -> List[Tuple[str, float, Dict]]:
     """
     Rank parameters by importance, but respect dependency order.
@@ -989,9 +1018,10 @@ def rank_parameters_with_dependencies(
             continue  # Skip non-Parameters
 
         value = param_data.get("value")
-        if hasattr(value, "inputs") and value.inputs:
+        inputs = _parameter_inputs(value)
+        if inputs:
             # Filter to only include inputs that are in the survey
-            deps = [inp for inp in value.inputs if inp in score_map]
+            deps = [inp for inp in inputs if inp in score_map]
             dependencies[param_name] = deps
         else:
             dependencies[param_name] = []
@@ -1035,7 +1065,7 @@ if __name__ == "__main__":
     import json
 
     # Load parameters
-    from dih_models.parameters import PARAMETERS
+    PARAMETERS = _load_parameter_dict()
 
     # Load sensitivity data (if available)
     sensitivity_path = Path("_analysis/sensitivity.json")

@@ -24,10 +24,10 @@ baseline = 0.005295652173913044
 
 # Tornado data from sensitivity analysis
 
-drivers = ['PEACE_DIVIDEND_CONFLICT_ELASTICITY']
-driver_labels = ['Peace Dividend Conflict Elasticity']
-impacts_low = [-0.003971739130434783]
-impacts_high = [0.0026478260869565217]
+drivers = ['TREATY_RATCHET_TERMINAL_SHARE', 'PEACE_DIVIDEND_CONFLICT_ELASTICITY']
+driver_labels = ['Treaty Ratchet Terminal Redirect Share', 'Peace Dividend Conflict Elasticity']
+impacts_low = [-0.004382608695652174, -0.003971739130434783]
+impacts_high = [0.003286956521739129, 0.0026478260869565217]
 
 # Convert deltas to absolute values (baseline + delta)
 

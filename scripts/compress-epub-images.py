@@ -49,7 +49,7 @@ def compress_image(data: bytes, filename: str, max_px: int, quality: int, is_cov
     # Only resize if larger than target
     needs_resize = max(orig_w, orig_h) > target_max
     if needs_resize:
-        img.thumbnail((target_max, target_max), Image.LANCZOS)
+        img.thumbnail((target_max, target_max), Image.Resampling.LANCZOS)
 
     # Convert RGBA PNGs to RGB for JPEG output (smaller)
     output_format = "JPEG"

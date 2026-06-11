@@ -31,6 +31,7 @@ import os
 import sys
 import time
 from pathlib import Path
+from urllib.parse import quote
 
 if sys.platform == 'win32':
     sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace', line_buffering=True)
@@ -195,7 +196,7 @@ def patch_license(token: str, preprint_id: str, license_name: str) -> None:
     if not text:
         return
     try:
-        data = osf_request("GET", f"{OSF_API}/licenses/?filter[name]={requests.utils.quote(text)}", token)
+        data = osf_request("GET", f"{OSF_API}/licenses/?filter[name]={quote(text)}", token)
         if not data.get("data"):
             return
         lic_id = data["data"][0]["id"]

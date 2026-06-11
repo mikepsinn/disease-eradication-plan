@@ -842,7 +842,13 @@ class PDFValidator:
             "total_token_count": 0.0,
         }
 
-        doc_len = len(self.doc)
+        doc = self.doc
+        if doc is None:
+            return all_issues, combined_usage
+        if llm is None:
+            return all_issues, combined_usage
+
+        doc_len = len(doc)
         print(f"[LLM] PDF is large (>15MB). Splitting {doc_len} pages into chunks...", flush=True)
 
         with tempfile.TemporaryDirectory() as temp_dir:
@@ -861,7 +867,7 @@ class PDFValidator:
                     chunk_files.append((c_path, start_p))
 
             for i in range(doc_len):
-                current_chunk.insert_pdf(self.doc, from_page=i, to_page=i)
+                current_chunk.insert_pdf(doc, from_page=i, to_page=i)
                 
                 # Check size periodically (every 10 pages) or on last page
                 if (i - current_start_page + 1) % 10 == 0 or i == doc_len - 1:
@@ -874,7 +880,7 @@ class PDFValidator:
                             
                             # Start new chunk with the page we just removed
                             current_chunk = fitz.open()
-                            current_chunk.insert_pdf(self.doc, from_page=i, to_page=i)
+                            current_chunk.insert_pdf(doc, from_page=i, to_page=i)
                             current_start_page = i
                         else:
                             # Single huge page, just save it

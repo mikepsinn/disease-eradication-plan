@@ -25,7 +25,7 @@ import argparse
 from pathlib import Path
 
 if sys.platform == 'win32':
-    sys.stdout.reconfigure(encoding='utf-8')
+    sys.stdout.reconfigure(encoding='utf-8')  # pyright: ignore[reportAttributeAccessIssue]
 
 # Add parent directory to path
 sys.path.insert(0, str(Path(__file__).parent.parent))

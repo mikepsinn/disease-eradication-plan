@@ -20,14 +20,14 @@ display_name = "Lost-Prosperity-Only Lifetime Damages Total (Cohort Horizon)"
 
 # Baseline and units
 
-baseline = 2.0177277677129405e+17
+baseline = 1.874698963925694e+17
 
 # Tornado data from sensitivity analysis
 
 drivers = ['WAR_COUNTERFACTUAL_ANNUAL_GROWTH_BOOST', 'GLOBAL_LIFE_EXPECTANCY_2024', 'GLOBAL_GDP_PER_CAPITA_1900', 'GLOBAL_POPULATION_2024']
 driver_labels = ['Peace Growth Boost (8 Channels, Overlap-Corrected)', 'Global Life Expectancy (2024)', 'Global GDP per Capita in 1900', 'Global Population in 2024']
-impacts_low = [-1.4340454108177323e+17, -5108171563830240.0, -910018110049248.0, -133621968326304.0]
-impacts_high = [4.414734683461773e+17, 5108171563830240.0, 779761127978272.0, 130429587193792.0]
+impacts_low = [-1.3323915589116651e+17, -5108171563830208.0, -845510497184992.0, -124150031331008.0]
+impacts_high = [4.101791465393597e+17, 5108171563830240.0, 724486921438048.0, 121183945569952.0]
 
 # Convert deltas to absolute values (baseline + delta)
 

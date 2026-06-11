@@ -10,7 +10,7 @@ Usage:
 """
 import sys
 if sys.platform == 'win32':
-    sys.stdout.reconfigure(encoding='utf-8')
+    sys.stdout.reconfigure(encoding='utf-8')  # pyright: ignore[reportAttributeAccessIssue]
 
 import inspect
 from dih_models.parameters import Parameter

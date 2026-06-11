@@ -39,4 +39,5 @@ Purpose: measure which model writes the funniest lines, calibrate auto-judges ag
 
 ### Results log
 
-- 2026-06-10, v1 run: arms haiku-4-5 / sonnet-4-6 / opus-4-8 (pinned), 9 agents. Scores: PENDING author ratings.
+- 2026-06-10, v1 run: arms haiku-4-5 / sonnet-4-6 / opus-4-8 (pinned), 9 agents, 27 lines, blind-rated by the author. **Survivors: 4/27** (haiku 2, sonnet 1, opus 1). Findings: (1) no model dominated; (2) the models' self-selected "top 3" had an ~85% kill rate under the author's bar, so self-judging flatters; (3) the archetype tournament with independent judges (10/10 author-approved finalists) decisively outperforms self-judged arms: **process beats model**. Surviving lines (calibration corpus): "We turned the war machine around. It's pointed at cancer now." (opus); "BENEFICIARY: everyone you know who doesn't die this Thursday" (haiku; not installed, Thursday-collision with the letter); Alzheimer's "Five stars. You forgot to fund us. Still waiting." (haiku); Malaria's "I'm leaving a review while I still can." (sonnet).
+- 2026-06-10: the author paused generative comedy work; he edits for funny himself. This protocol is retained as reference for if/when that changes.

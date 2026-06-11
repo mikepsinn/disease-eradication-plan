@@ -189,6 +189,8 @@ def convert_to_audible_mp3(
     if audio.tags is None:
         audio.add_tags()
     tags = audio.tags
+    if tags is None:
+        raise RuntimeError(f"Could not initialize ID3 tags for {mp3_path}")
     tags.add(TIT2(encoding=3, text=[title]))
     tags.add(TALB(encoding=3, text=[album]))
     tags.add(TPE1(encoding=3, text=[artist]))
@@ -469,6 +471,7 @@ def main():
         artist = authors[0].get("name") if isinstance(authors[0], dict) else str(authors[0])
     else:
         artist = config.get("metadata", {}).get("creator", "Unknown")
+    artist = str(artist or "Unknown")
     year = str(config.get("metadata", {}).get("copyright-year", datetime.now().year))
 
     output_dir = paths.root / "audible-export"

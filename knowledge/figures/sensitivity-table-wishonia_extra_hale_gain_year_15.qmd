@@ -4,7 +4,7 @@ Regression-based sensitivity showing which inputs explain the most variance in t
 
 | Input Parameter | Sensitivity Coefficient | Interpretation |
 |:----------------|------------------------:|:---------------|
-| Life Extension from Treaty Research Acceleration (years) | 1.3125 | Strong driver |
-| Best-Practice Life Expectancy Gain (years) | 0.4053 | Moderate driver |
+| Life Extension from Treaty Research Acceleration (years) | 1.3111 | Strong driver |
+| Best-Practice Life Expectancy Gain (years) | 0.3886 | Moderate driver |
 
 *Interpretation*: Standardized coefficients show the change in output (in SD units) per 1 SD change in input. Values near ±1 indicate strong influence; values exceeding ±1 may occur with correlated inputs.

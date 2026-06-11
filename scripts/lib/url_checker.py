@@ -29,7 +29,7 @@ from urllib.error import HTTPError, URLError
 # Set UTF-8 encoding for stdout on Windows
 if sys.platform == "win32":
     if hasattr(sys.stdout, "reconfigure"):
-        sys.stdout.reconfigure(encoding="utf-8")
+        sys.stdout.reconfigure(encoding="utf-8")  # pyright: ignore[reportAttributeAccessIssue]
 
 # Default cache location
 CACHE_DIR = Path(__file__).parent.parent.parent / ".cache"

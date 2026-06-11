@@ -48,4 +48,4 @@ def post(content: Dict) -> bool:
         text = f"{text}\n\n{tags}"
 
     response = client.create_tweet(text=text)
-    return response.data is not None
+    return getattr(response, "data", None) is not None

@@ -64,8 +64,6 @@ A drug is proven safe. It might cure your disease. The FDA says you cannot have 
 
 This study quantifies the cumulative mortality and morbidity costs associated with the **Unitary Pre-Market Approval (UPMA)** model mandated by the 1962 Kefauver-Harris Amendments. By enforcing efficacy testing prior to market entry, the current regulatory framework imposes an average "Efficacy Lag" of **{{< var efficacy_lag_years >}}** post-safety verification.
 
-![Two bars. The short bar is deaths from approving bad drugs. The tall bar is deaths from delaying good drugs. The tall bar is 3,070 times taller. We built our entire regulatory system around the short bar.](/assets/images/invisible-graveyard/invisible-graveyard-section-abstract-bw-academic.jpg)
-
 Using data from the Tufts Center for the Study of Drug Development (CSDD) and the WHO Global Burden of Disease (GBD) database, we estimate two distinct mortality costs:
 
 1. **Historical mortality (1962-2024):** Approximately **{{< var existing_drugs_efficacy_lag_deaths_total_nounit >}} people** died waiting for approved drugs during their {{< var efficacy_lag_years >}} approval delays. This is a **lower bound** - it excludes drugs never developed due to cost barriers.
@@ -345,10 +343,10 @@ Mortality counts fail to capture the suffering of patients living with untreated
 
 ### Years of Life Lost (YLL)
 
-![You die at 62 from something preventable. You were supposed to live to 79. The math is simple but the crying takes longer.](/assets/images/invisible-graveyard/invisible-graveyard-section-years-of-life-lost-yll-bw-academic.jpg)
+![You die at 62 from something preventable. The actuarial tables say you had 19 more years coming. The math is simple but the crying takes longer.](/assets/images/invisible-graveyard/invisible-graveyard-section-years-of-life-lost-yll-bw-academic.jpg)
 
 - **Mean Age of Preventable Death:** {{< var regulatory_delay_mean_age_of_death >}}
-- **Actuarial Expectancy:** {{< var global_life_expectancy_2024 >}}
+- **Remaining Life Expectancy at 60 (WHO life tables):** {{< var global_life_expectancy_remaining_at_age_60 >}} (conditional on having reached 60; life expectancy *at birth* minus age would understate the loss, because it counts child mortality the deceased already survived)
 - **YLL Total:**
 
 {{< var dfda_efficacy_lag_elimination_yll_latex >}}

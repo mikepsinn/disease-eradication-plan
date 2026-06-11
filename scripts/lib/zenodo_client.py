@@ -631,7 +631,7 @@ def resolve_quarto_variables(text: str, project_root: Path) -> str:
     return substitute_quarto_variables(text, variables)
 
 
-def extract_zenodo_metadata(quarto_config: dict, paper_key: str, project_root: Path = None) -> dict:
+def extract_zenodo_metadata(quarto_config: dict, paper_key: str, project_root: Path | None = None) -> dict:
     """
     Convert Quarto metadata to Zenodo metadata format.
 

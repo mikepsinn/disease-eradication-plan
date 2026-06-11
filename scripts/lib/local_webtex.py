@@ -27,7 +27,7 @@ from typing import Optional
 
 # Set UTF-8 encoding for stdout on Windows
 if sys.platform == 'win32' and hasattr(sys.stdout, 'reconfigure'):
-    sys.stdout.reconfigure(encoding='utf-8')
+    sys.stdout.reconfigure(encoding='utf-8')  # pyright: ignore[reportAttributeAccessIssue]
 
 CODECOGS_BASE = "https://latex.codecogs.com/svg.latex?"
 FETCH_TIMEOUT = 15  # seconds per equation fetch (vs Pandoc's ~30s default)
@@ -89,7 +89,12 @@ class _WebtexHandler(BaseHTTPRequestHandler):
 
         equation = urllib.parse.unquote(self.path[idx + 1:])
 
-        svg = _get_svg(equation, _cache_dir)
+        cache_dir = _cache_dir
+        if cache_dir is None:
+            self.send_error(500, "Cache directory not initialized")
+            return
+
+        svg = _get_svg(equation, cache_dir)
         if svg is None:
             self.send_error(502, "Failed to render equation (codecogs unreachable)")
             return

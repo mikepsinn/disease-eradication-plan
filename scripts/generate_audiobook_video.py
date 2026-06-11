@@ -704,7 +704,7 @@ def _ken_burns_scene_clip(
 
     # Step 1: PIL pre-scale to canvas with Lanczos
     src = PILImage.open(image_path).convert("RGB")
-    canvas = src.resize((canvas_w, canvas_h), PILImage.LANCZOS)
+    canvas = src.resize((canvas_w, canvas_h), PILImage.Resampling.LANCZOS)
 
     # Save pre-scaled canvas to temp file
     tmp_fd, tmp_path = tempfile.mkstemp(suffix=".png", prefix="kb-canvas-")
@@ -1306,7 +1306,8 @@ def run_pipeline(
     text_file = find_prepared_text(chapter, paths=paths)
     text = text_file.read_text(encoding='utf-8') if text_file else ""
     if text:
-        print(f"  Text: {len(text):,} chars ({text_file.name})")
+        text_name = text_file.name if text_file else "unknown"
+        print(f"  Text: {len(text):,} chars ({text_name})")
 
     # Filter to single scene if requested
     if scene_index is not None:

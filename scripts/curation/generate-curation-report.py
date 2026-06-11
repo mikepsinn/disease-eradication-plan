@@ -349,12 +349,12 @@ def collect_metrics_for_chapter(file_path: Path, chapter_info: dict) -> dict:
     hedge_count = 0
 
     if clean_prose.strip():
-        fk_grade = round(max(textstat.flesch_kincaid_grade(clean_prose), 0.0), 1)
-        flesch_ease = round(textstat.flesch_reading_ease(clean_prose), 1)
-        gunning_fog = round(textstat.gunning_fog(clean_prose), 1)
-        dale_chall = round(textstat.dale_chall_readability_score(clean_prose), 1)
-        avg_sentence_length = round(textstat.words_per_sentence(clean_prose), 1)
-        difficult_word_count = textstat.difficult_words(clean_prose)
+        fk_grade = round(max(textstat.flesch_kincaid_grade(clean_prose), 0.0), 1)  # pyright: ignore[reportAttributeAccessIssue]
+        flesch_ease = round(textstat.flesch_reading_ease(clean_prose), 1)  # pyright: ignore[reportAttributeAccessIssue]
+        gunning_fog = round(textstat.gunning_fog(clean_prose), 1)  # pyright: ignore[reportAttributeAccessIssue]
+        dale_chall = round(textstat.dale_chall_readability_score(clean_prose), 1)  # pyright: ignore[reportAttributeAccessIssue]
+        avg_sentence_length = round(textstat.words_per_sentence(clean_prose), 1)  # pyright: ignore[reportAttributeAccessIssue]
+        difficult_word_count = textstat.difficult_words(clean_prose)  # pyright: ignore[reportAttributeAccessIssue]
         passive_count = count_passive_voice(sentences)
         hedge_count = count_hedging(clean_prose)
 

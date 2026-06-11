@@ -95,7 +95,7 @@ def add_watermark_to_png(png_path, text="WarOnDisease.org"):
 
             # Also get font metrics for more accurate descent measurement
             try:
-                ascent, descent = font.getmetrics()
+                ascent, descent = font.getmetrics()  # pyright: ignore[reportAttributeAccessIssue]
                 # Use the larger of text_height or (ascent + descent) to ensure we account for all descenders
                 # Sometimes textbbox doesn't fully capture descenders, so use font metrics as backup
                 text_height_with_metrics = ascent + descent

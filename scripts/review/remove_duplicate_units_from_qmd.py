@@ -187,7 +187,7 @@ def get_all_qmd_files(project_root: Path) -> list[Path]:
 
 def main() -> None:
     if sys.platform == "win32":
-        sys.stdout.reconfigure(encoding="utf-8")
+        sys.stdout.reconfigure(encoding="utf-8")  # pyright: ignore[reportAttributeAccessIssue]
 
     preview = "--preview" in sys.argv
 

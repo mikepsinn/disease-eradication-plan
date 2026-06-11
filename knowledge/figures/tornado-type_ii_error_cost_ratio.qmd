@@ -20,14 +20,14 @@ display_name = "Ratio of Type II Error Cost to Type I Error Benefit"
 
 # Baseline and units
 
-baseline = 3067.7541293180693
+baseline = 3388.9849281995425
 
 # Tornado data from sensitivity analysis
 
-drivers = ['THALIDOMIDE_CASES_WORLDWIDE', 'EFFICACY_LAG_YEARS', 'REGULATORY_DELAY_MEAN_AGE_OF_DEATH', 'GLOBAL_LIFE_EXPECTANCY_2024', 'THALIDOMIDE_US_POPULATION_SHARE_1960', 'THALIDOMIDE_DISABILITY_WEIGHT', 'THALIDOMIDE_MORTALITY_RATE', 'THALIDOMIDE_SURVIVOR_LIFESPAN', 'GLOBAL_DISEASE_DEATHS_DAILY', 'REGULATORY_DELAY_SUFFERING_PERIOD_YEARS', 'CHRONIC_DISEASE_DISABILITY_WEIGHT']
-driver_labels = ['Thalidomide Cases Worldwide', 'Regulatory Delay for Efficacy Testing Post-Safety Verification', 'Mean Age of Preventable Death from Post-Safety Efficacy Delay', 'Global Life Expectancy (2024)', 'US Population Share 1960', 'Thalidomide Disability Weight', 'Thalidomide Mortality Rate', 'Thalidomide Survivor Lifespan', 'Global Daily Deaths from Disease and Aging', 'Pre-Death Suffering Period During Post-Safety Efficacy Delay', 'Disability Weight for Untreated Chronic Conditions']
-impacts_low = [1533.8770709760756, -748.2327112836228, 481.84620319504074, -321.23079511109245, 278.88674362312713, 203.0131454008083, 197.0117375572877, 167.33204785842054, -153.38770246511103, -112.43077555149785, -67.45846364635463]
-impacts_high = [-766.9385291709968, 748.2327197063441, -481.846194772319, 321.2308035338142, -235.98108298321085, -179.28432826763174, -174.587629404135, -150.873149896644, 153.38771088783278, 168.6461738556486, 67.45847206907592]
+drivers = ['THALIDOMIDE_CASES_WORLDWIDE', 'EFFICACY_LAG_YEARS', 'REGULATORY_DELAY_MEAN_AGE_OF_DEATH', 'THALIDOMIDE_US_POPULATION_SHARE_1960', 'THALIDOMIDE_DISABILITY_WEIGHT', 'THALIDOMIDE_MORTALITY_RATE', 'GLOBAL_LIFE_EXPECTANCY_REMAINING_AT_AGE_60', 'THALIDOMIDE_SURVIVOR_LIFESPAN', 'GLOBAL_DISEASE_DEATHS_DAILY', 'REGULATORY_DELAY_SUFFERING_PERIOD_YEARS', 'CHRONIC_DISEASE_DISABILITY_WEIGHT']
+driver_labels = ['Thalidomide Cases Worldwide', 'Regulatory Delay for Efficacy Testing Post-Safety Verification', 'Mean Age of Preventable Death from Post-Safety Efficacy Delay', 'US Population Share 1960', 'Thalidomide Disability Weight', 'Thalidomide Mortality Rate', 'Remaining Life Expectancy at Age 60 (Global)', 'Thalidomide Survivor Lifespan', 'Global Daily Deaths from Disease and Aging', 'Pre-Death Suffering Period During Post-Safety Efficacy Delay', 'Disability Weight for Untreated Chronic Conditions']
+impacts_low = [1694.492471078283, -826.5816862871434, 481.8462036360211, 308.08954400251196, 224.27106638518626, 217.64123887218648, -224.861554873376, 184.85372826244384, -169.44924199025354, -112.43077511051797, -67.45846320537476]
+impacts_high = [-847.2462285606298, 826.5816955918249, -481.8461943313391, -260.69114402857304, -198.05755635848345, -192.86905656687213, 160.61540431356752, -166.6713854879158, 169.44925129493504, 168.6461742966285, 67.4584725100558]
 
 # Convert deltas to absolute values (baseline + delta)
 

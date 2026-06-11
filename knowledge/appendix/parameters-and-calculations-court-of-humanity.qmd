@@ -701,7 +701,7 @@ $$
 
 :::
 
-### Lost-Prosperity-Only Lifetime Damages, Representative Full-Life Cohort: $25.2 million {#sec-lost_prosperity_lifetime_damages_per_capita}
+### Lost-Prosperity-Only Lifetime Damages, Representative Full-Life Cohort: $23.4 million {#sec-lost_prosperity_lifetime_damages_per_capita}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -710,14 +710,14 @@ Representative full-life cohort exposure: lifetime lost earnings under the 8-cha
 **Inputs**:
 
 - [Annual Lost GDP per Capita from War](#sec-war_counterfactual_lost_gdp_per_capita) 🔢: $319,261
-- [Global Life Expectancy (2024)](#sec-global_life_expectancy_2024) 📊: 79 years (SE: ±2 years)
+- [Global Life Expectancy (2024)](#sec-global_life_expectancy_2024) 📊: 73.4 years (SE: ±2 years)
 
 $$
 \begin{gathered}
 D_{prosperity,life,pc} \\
 = GDP_{pc,lost} \times LE_{global} \\
-= \$319K \times 79 \\
-= \$25.2M
+= \$319K \times 73.4 \\
+= \$23.4M
 \end{gathered}
 $$
 where:
@@ -1613,11 +1613,11 @@ Global GDP per capita in 1900 in constant 2024 USD. Maddison Project: ~$1,260 in
 
 :::
 
-### Global Life Expectancy (2024): 79 years {#sec-global_life_expectancy_2024}
+### Global Life Expectancy (2024): 73.4 years {#sec-global_life_expectancy_2024}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Global life expectancy (2024)
+Global life expectancy at birth (2024), WHO global figure. Was previously set to 79 (developed-country treatment access), which the adversarial review flagged: a measured external parameter must carry the measured value; access optimism belongs in explicit forward-looking parameters, not in a present-day data point.
 
 **Source**: [@who-global-health-estimates-2024]
 

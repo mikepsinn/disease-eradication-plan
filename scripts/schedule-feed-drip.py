@@ -23,7 +23,7 @@ from datetime import datetime, timedelta
 from pathlib import Path
 
 if sys.platform == "win32":
-    sys.stdout.reconfigure(encoding="utf-8")
+    sys.stdout.reconfigure(encoding="utf-8")  # pyright: ignore[reportAttributeAccessIssue]
 
 PROJECT_ROOT = Path(__file__).parent.parent.absolute()
 

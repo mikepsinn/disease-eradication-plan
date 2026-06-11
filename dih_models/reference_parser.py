@@ -151,7 +151,7 @@ def parse_references_bib(bib_path: Path) -> Dict[str, Dict[str, Any]]:
 
     # Parse with unicode conversion
     parser = BibTexParser(common_strings=True)
-    parser.customization = convert_to_unicode
+    parser.customization = convert_to_unicode  # pyright: ignore[reportAttributeAccessIssue]
     bib_database = bibtexparser.loads(bib_content, parser=parser)
 
     references = {}

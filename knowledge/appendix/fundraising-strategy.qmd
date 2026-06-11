@@ -552,7 +552,7 @@ For sophisticated investors, use efficient market mechanisms:
 
 The primary risk elimination mechanism for the **referendum campaign** (distinct from IAB-funded lobbying):
 
-- **Smart Contract Escrow:** Prize deposit funds locked until year 15 global targets met (HALE {{< var wishonia_projected_hale_year_15 >}}, median income {{< var wishonia_trajectory_avg_income_year_15 >}})
+- **Smart Contract Escrow:** Prize deposit funds locked until year 15 global targets met (HALE {{< var prize_target_hale_year_15 >}}, median income {{< var prize_target_median_income_year_15 >}})
 - **Automatic Refunds:** If targets are not met at year 15, Prize deposits return automatically
 - **No Collective Action Problem:** Zero-risk on-ramp eliminates the "but what if nobody else joins" hesitation
 - **Dominant Assurance Contract:** VOTE holders who recruited referendum participants allocate the PRIZE pool on success

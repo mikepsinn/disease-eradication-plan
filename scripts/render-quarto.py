@@ -1316,7 +1316,7 @@ def get_available_configs() -> List[str]:
     return sorted(configs)
 
 
-def render_quarto(
+def render_quarto(  # pyright: ignore[reportGeneralTypeIssues]
     config_name: str,
     format_override: Optional[str] = None,
     verify: bool = False,

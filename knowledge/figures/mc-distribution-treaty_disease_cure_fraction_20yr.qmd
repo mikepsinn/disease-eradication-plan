@@ -1,4 +1,4 @@
-**Monte Carlo note:** Treaty Disease Cure Fraction (20yr, Take-Hold Path) is effectively deterministic across the current sampled inputs, so a histogram would mostly visualize floating-point residue instead of real uncertainty. (range 0.000e+00 <= tolerance 1.000e-12)
+**Monte Carlo note:** Treaty Disease Cure Fraction (20yr, Ratchet Schedule) is effectively deterministic across the current sampled inputs, so a histogram would mostly visualize floating-point residue instead of real uncertainty. (range 0.000e+00 <= tolerance 1.000e-12)
 
 | Statistic | Value |
 |:----------|------:|

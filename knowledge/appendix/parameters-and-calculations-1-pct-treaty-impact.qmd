@@ -38,15 +38,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 251 parameters used in the analysis, organized by type:
+This appendix documents all 248 parameters used in the analysis, organized by type:
 
-- External sources (peer-reviewed): 96
-- Calculated values: 119
+- External sources (peer-reviewed): 95
+- Calculated values: 117
 - Core definitions: 36
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (119 parameters) • [External Data Sources](#sec-external) (96 parameters) • [Core Definitions](#sec-definitions) (36 parameters)
+[Calculated Values](#sec-calculated) (117 parameters) • [External Data Sources](#sec-external) (95 parameters) • [Core Definitions](#sec-definitions) (36 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -697,7 +697,7 @@ $$
 
 :::
 
-### Total DALYs Lost from Disease Eradication Delay: 7.94 billion DALYs {#sec-dfda_efficacy_lag_elimination_dalys}
+### Total DALYs Lost from Disease Eradication Delay: 8.77 billion DALYs {#sec-dfda_efficacy_lag_elimination_dalys}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -705,19 +705,17 @@ Total Disability-Adjusted Life Years lost from disease eradication delay (PRIMAR
 
 **Inputs**:
 
-- [Years of Life Lost from Disease Eradication Delay](#sec-dfda_efficacy_lag_elimination_yll) 🔢: 7.07 billion years
+- [Years of Life Lost from Disease Eradication Delay](#sec-dfda_efficacy_lag_elimination_yll) 🔢: 7.9 billion years
 - [Years Lived with Disability During Disease Eradication Delay](#sec-dfda_efficacy_lag_elimination_yld) 🔢: 873 million years
 
 $$
-DALYs_{lag} = YLL_{lag} + YLD_{lag} = 7.07B + 873M = 7.94B
+DALYs_{lag} = YLL_{lag} + YLD_{lag} = 7.9B + 873M = 8.77B
 $$
 where:
 $$
 \begin{gathered}
 YLL_{lag} \\
-= Deaths_{lag} \times (LE_{global} - Age_{death,delay}) \\
-= 416M \times (79 - 62) \\
-= 7.07B
+= \text{DEATHS\_TOTAL} \times (REMAINING_LIFE_EXPECTANCY_AT_60 - (\text{MEAN\_AGE\_OF\_DEATH} - 60))
 \end{gathered}
 $$
 where:
@@ -794,7 +792,7 @@ $$
 
 :::
 
-### Total Economic Loss from Disease Eradication Delay: $1.19 quadrillion {#sec-dfda_efficacy_lag_elimination_economic_value}
+### Total Economic Loss from Disease Eradication Delay: $1.32 quadrillion {#sec-dfda_efficacy_lag_elimination_economic_value}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -802,28 +800,26 @@ Total economic loss from delaying disease eradication by 8.2 years (PRIMARY esti
 
 **Inputs**:
 
-- [Total DALYs Lost from Disease Eradication Delay](#sec-dfda_efficacy_lag_elimination_dalys) 🔢: 7.94 billion DALYs
+- [Total DALYs Lost from Disease Eradication Delay](#sec-dfda_efficacy_lag_elimination_dalys) 🔢: 8.77 billion DALYs
 - [Standard Economic Value per QALY](#sec-standard_economic_qaly_value_usd) 📊: $150,000 (SE: ±$30,000)
 
 $$
 \begin{gathered}
 Value_{lag} \\
 = DALYs_{lag} \times Value_{QALY} \\
-= 7.94B \times \$150K \\
-= \$1190T
+= 8.77B \times \$150K \\
+= \$1320T
 \end{gathered}
 $$
 where:
 $$
-DALYs_{lag} = YLL_{lag} + YLD_{lag} = 7.07B + 873M = 7.94B
+DALYs_{lag} = YLL_{lag} + YLD_{lag} = 7.9B + 873M = 8.77B
 $$
 where:
 $$
 \begin{gathered}
 YLL_{lag} \\
-= Deaths_{lag} \times (LE_{global} - Age_{death,delay}) \\
-= 416M \times (79 - 62) \\
-= 7.07B
+= \text{DEATHS\_TOTAL} \times (REMAINING_LIFE_EXPECTANCY_AT_60 - (\text{MEAN\_AGE\_OF\_DEATH} - 60))
 \end{gathered}
 $$
 where:
@@ -909,24 +905,22 @@ $$
 
 :::
 
-### Years of Life Lost from Disease Eradication Delay: 7.07 billion years {#sec-dfda_efficacy_lag_elimination_yll}
+### Years of Life Lost from Disease Eradication Delay: 7.9 billion years {#sec-dfda_efficacy_lag_elimination_yll}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Years of Life Lost from disease eradication delay deaths (PRIMARY estimate)
+Years of Life Lost from disease eradication delay deaths (PRIMARY estimate). Years lost per death = WHO conditional remaining life expectancy at 60, adjusted down to the mean lag-death age of 62 (~19 years/death). Replaces life-expectancy-at-birth minus age, which mixed an at-birth measure (carrying child mortality the deceased already survived) with a conditional question and understated the loss by ~40%. The linear age adjustment slightly understates remaining years (conditional life expectancy falls by less than one year per year of age).
 
 **Inputs**:
 
 - [Total Deaths from Disease Eradication Delay](#sec-dfda_efficacy_lag_elimination_deaths_averted) 🔢: 416 million deaths
-- [Global Life Expectancy (2024)](#sec-global_life_expectancy_2024) 📊: 79 years (SE: ±2 years)
+- [Remaining Life Expectancy at Age 60 (Global)](#sec-global_life_expectancy_remaining_at_age_60) 📊: 21 years (95% CI: 19.6 years - 22 years)
 - [Mean Age of Preventable Death from Post-Safety Efficacy Delay](#sec-regulatory_delay_mean_age_of_death) 📊: 62 years (SE: ±3 years)
 
 $$
 \begin{gathered}
 YLL_{lag} \\
-= Deaths_{lag} \times (LE_{global} - Age_{death,delay}) \\
-= 416M \times (79 - 62) \\
-= 7.07B
+= \text{DEATHS\_TOTAL} \times (REMAINING_LIFE_EXPECTANCY_AT_60 - (\text{MEAN\_AGE\_OF\_DEATH} - 60))
 \end{gathered}
 $$
 where:
@@ -3411,109 +3405,6 @@ $$
 
 :::
 
-### Total Deaths from Historical Progress Delays: 102 million deaths {#sec-existing_drugs_efficacy_lag_deaths_total}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Total deaths from delaying existing drugs over 8.2-year efficacy lag. One-time impact of eliminating Phase 2-4 testing delay for drugs already approved 1962-2024. Based on Lichtenberg (2019) estimate of 12M lives saved annually × 8.2 years efficacy lag. Excludes innovation acceleration effects.
-
-**Inputs**:
-
-- [Annual Lives Saved by Pharmaceuticals](#sec-pharma_lives_saved_annual) 🔢: 12.4 million deaths
-- [Regulatory Delay for Efficacy Testing Post-Safety Verification](#sec-efficacy_lag_years) 📊: 8.2 years (SE: ±2 years)
-
-$$
-\begin{gathered}
-Deaths_{lag,total} \\
-= Lives_{saved,annual} \times T_{lag} \\
-= 12.4M \times 8.2 \\
-= 102M
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Lives_{saved,annual} \\
-= \frac{LY_{saved,annual}}{T_{ext}} \\
-= \frac{149M}{12} \\
-= 12.4M
-\end{gathered}
-$$
-*~ Medium confidence*
-
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-existing_drugs_efficacy_lag_deaths_total.qmd >}}
-
-{{< include ../figures/sensitivity-table-existing_drugs_efficacy_lag_deaths_total.qmd >}}
-
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-existing_drugs_efficacy_lag_deaths_total.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-existing_drugs_efficacy_lag_deaths_total.qmd >}}
-
-:::
-
-### Total Economic Loss from Historical Progress Delays: $259 trillion {#sec-existing_drugs_efficacy_lag_economic_loss}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Total economic loss from delaying existing drugs over 8.2-year efficacy lag. One-time benefit of eliminating Phase 2-4 delay. Excludes innovation acceleration effects.
-
-**Inputs**:
-
-- [Global Life Expectancy (2024)](#sec-global_life_expectancy_2024) 📊: 79 years (SE: ±2 years)
-- [Total Deaths from Historical Progress Delays](#sec-existing_drugs_efficacy_lag_deaths_total) 🔢: 102 million deaths
-- [Mean Age of Preventable Death from Post-Safety Efficacy Delay](#sec-regulatory_delay_mean_age_of_death) 📊: 62 years (SE: ±3 years)
-- [Standard Economic Value per QALY](#sec-standard_economic_qaly_value_usd) 📊: $150,000 (SE: ±$30,000)
-
-$$
-\begin{gathered}
-Loss_{lag} \\
-= Deaths_{lag,total} \times (LE_{global} - Age_{death,delay}) \times Value_{QALY} \\
-= 102M \times (79 - 62) \times \$150K \\
-= \$259T
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Deaths_{lag,total} \\
-= Lives_{saved,annual} \times T_{lag} \\
-= 12.4M \times 8.2 \\
-= 102M
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Lives_{saved,annual} \\
-= \frac{LY_{saved,annual}}{T_{ext}} \\
-= \frac{149M}{12} \\
-= 12.4M
-\end{gathered}
-$$
-*~ Medium confidence*
-
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-existing_drugs_efficacy_lag_economic_loss.qmd >}}
-
-{{< include ../figures/sensitivity-table-existing_drugs_efficacy_lag_economic_loss.qmd >}}
-
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-existing_drugs_efficacy_lag_economic_loss.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-existing_drugs_efficacy_lag_economic_loss.qmd >}}
-
-:::
-
 ### Therapeutic Frontier Exploration Ratio: 0.342% {#sec-exploration_ratio}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -4811,46 +4702,6 @@ $$
 
 :::
 
-### Annual Lives Saved by Pharmaceuticals: 12.4 million deaths {#sec-pharma_lives_saved_annual}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Annual lives saved by pharmaceutical interventions globally. Derived from Lichtenberg (2019) finding of 148.7M life-years saved, divided by assumed 12-year average life extension per beneficiary. Note: Life-years is the primary metric; lives is an approximation for intuitive communication.
-
-**Inputs**:
-
-- [Annual Life-Years Saved by Pharmaceuticals](#sec-pharma_life_years_saved_annual) 📊: 149 million life-years (95% CI: 79.4 million life-years - 240 million life-years)
-- [Average Life Extension per Beneficiary](#sec-avg_life_extension_per_beneficiary): 12 years (95% CI: 8 years - 18 years)
-
-$$
-\begin{gathered}
-Lives_{saved,annual} \\
-= \frac{LY_{saved,annual}}{T_{ext}} \\
-= \frac{149M}{12} \\
-= 12.4M
-\end{gathered}
-$$
-
-**Methodology**: [@lichtenberg-life-years-saved-2019]
-
-*? Low confidence*
-
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-pharma_lives_saved_annual.qmd >}}
-
-{{< include ../figures/sensitivity-table-pharma_lives_saved_annual.qmd >}}
-
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-pharma_lives_saved_annual.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-pharma_lives_saved_annual.qmd >}}
-
-:::
-
 ### Percentage Military Spending Cut After WW2: 87.6% {#sec-post_ww2_military_cut_pct}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -5847,7 +5698,7 @@ Annual GDP growth bonus by year 20 from reducing cybercrime drag as the treaty w
 
 - [Global Cybercrime Costs (2025)](#sec-global_cybercrime_cost_annual_2025) 📊: $10.5 trillion
 - [Global GDP (2025)](#sec-global_gdp_2025) 📊: $115 trillion
-- [Treaty Effective Reallocation Share (Year 20)](#sec-treaty_effective_reallocation_share_year_20): 5.8%
+- [Treaty Effective Reallocation Share (Year 20)](#sec-treaty_effective_reallocation_share_year_20) 🔢: 5.8%
 - [Peace Dividend Conflict Elasticity](#sec-peace_dividend_conflict_elasticity): 1:1 (95% CI: 0.25:1 - 1.5:1)
 
 $$
@@ -5856,12 +5707,22 @@ g_{cyber,treaty,20} \\
 = \left(\frac{Cost_{cyber}}{GDP_{global}}\right) \times \bar{s}_{treaty,20} \times \varepsilon_{conflict}
 \end{gathered}
 $$
-
+where:
+$$
+\begin{gathered}
+\bar{s}_{treaty,20} \\
+= s_{ratchet} \times 0.409 \\
+= 10\% \times 0.409 \\
+= 5.8\%
+\end{gathered}
+$$
 *✓ High confidence*
 
 #### Sensitivity Analysis
 
 {{< include ../figures/tornado-treaty_cybercrime_recovery_gdp_growth_bonus_year_20.qmd >}}
+
+{{< include ../figures/sensitivity-table-treaty_cybercrime_recovery_gdp_growth_bonus_year_20.qmd >}}
 
 #### Monte Carlo Distribution
 
@@ -5873,23 +5734,23 @@ $$
 
 :::
 
-### Treaty Disease Cure Fraction (20yr, Take-Hold Path): 100% {#sec-treaty_disease_cure_fraction_20yr}
+### Treaty Disease Cure Fraction (20yr, Ratchet Schedule): 100% {#sec-treaty_disease_cure_fraction_20yr}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Treaty disease-cure fraction over 20 years under the optimistic treaty take-hold path. The initial 1% treaty expands to 2%, then 5%, then 10%, with trial-throughput scaling linearly with treaty funding until it hits the physical participant ceiling. Cumulative throughput is capped by the physical participant ceiling.
+Fraction of currently untreatable diseases with a first effective treatment by year 20 under the treaty: queue progress integrated over the ratchet schedule, with trial capacity scaling linearly with funding up to the physical participant ceiling. Binds the single ratchet knob: at TREATY_RATCHET_TERMINAL_SHARE = 0.01 (ratchet off) this degrades to 20/36 of the queue (~56%); on the central schedule the queue clears around year 12, so the central is 100%. The ~36-year queue-clearance figure quoted elsewhere is the flat-1% case by construction.
 
 **Inputs**:
 
-- [Diseases Getting First Treatment Per Year](#sec-new_disease_first_treatments_per_year) 📊: 15 diseases/year (95% CI: 8 diseases/year - 30 diseases/year)
 - [Pragmatic Trial Capacity Multiplier at Treaty-Scale Funding](#sec-dfda_trial_capacity_multiplier) 🔢: 12.3x
 - [Maximum Trial Capacity Multiplier (Physical Limit)](#sec-dfda_max_trial_capacity_multiplier_physical) 🔢: 566x
-- [Diseases Without Effective Treatment](#sec-diseases_without_effective_treatment) 🔢: 6,650 diseases
+- [Treaty Ratchet Terminal Redirect Share](#sec-treaty_ratchet_terminal_share): 10% (95% CI: 1% - 19%)
+- [Status Quo Therapeutic Space Exploration Time](#sec-status_quo_queue_clearance_years) 🔢: 443 years
 
 $$
 \begin{gathered}
 f_{cure,20,treaty} \\
-= \min\left(1.0, Treatments_{new,ann} \times (3 \times min(\text{TRIAL\_CAPACITY\_MULTIPLIER} \times 1, \text{MAX\_TRIAL\_CAPACITY\_MULTIPLIER\_PHYSICAL}) + 4 \times min(\text{TRIAL\_CAPACITY\_MULTIPLIER} \times 2, \text{MAX\_TRIAL\_CAPACITY\_MULTIPLIER\_PHYSICAL}) + 5 \times min(\text{TRIAL\_CAPACITY\_MULTIPLIER} \times 5, \text{MAX\_TRIAL\_CAPACITY\_MULTIPLIER\_PHYSICAL}) + 8 \times min(\text{TRIAL\_CAPACITY\_MULTIPLIER} \times 10, \text{MAX\_TRIAL\_CAPACITY\_MULTIPLIER\_PHYSICAL})) / N_{untreated}\right)
+= \min\left(1.0, (3 \times min(k_{capacity} \times \left(\frac{0.01}{0.01}\right), k_{capacity,max}) + 4 \times min(k_{capacity} \times (min(0.02, s_{ratchet})/0.01), k_{capacity,max}) + 5 \times min(k_{capacity} \times (min(0.05, s_{ratchet})/0.01), k_{capacity,max}) + 8 \times min(k_{capacity} \times \left(\frac{s_{ratchet}}{0.01}\right), k_{capacity,max})) / T_{queue,SQ}\right)
 \end{gathered}
 $$
 where:
@@ -5950,16 +5811,21 @@ $$
 where:
 $$
 \begin{gathered}
+T_{queue,SQ} \\
+= \frac{N_{untreated}}{Treatments_{new,ann}} \\
+= \frac{6{,}650}{15} \\
+= 443
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
 N_{untreated} \\
 = N_{rare} \times 0.95 \\
 = 7{,}000 \times 0.95 \\
 = 6{,}650
 \end{gathered}
 $$
-#### Uncertainty Range
-
-**Technical**: Distribution: Fixed
-
 *✓ High confidence*
 
 #### Sensitivity Analysis
@@ -5973,6 +5839,43 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-treaty_disease_cure_fraction_20yr.qmd >}}
+
+:::
+
+### Treaty Effective Reallocation Share (Year 20): 5.8% {#sec-treaty_effective_reallocation_share_year_20}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Average military-to-medicine reallocation share over 20 years under the treaty take-hold path (1% for 3 years, 2% for 4 years, 5% for 5 years, terminal ratchet share for 8 years). Binds the single ratchet knob: at TREATY_RATCHET_TERMINAL_SHARE = 0.01 this degrades to a flat 1%.
+
+**Inputs**:
+
+- [Treaty Ratchet Terminal Redirect Share](#sec-treaty_ratchet_terminal_share): 10% (95% CI: 1% - 19%)
+
+$$
+\begin{gathered}
+\bar{s}_{treaty,20} \\
+= s_{ratchet} \times 0.409 \\
+= 10\% \times 0.409 \\
+= 5.8\%
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-treaty_effective_reallocation_share_year_20.qmd >}}
+
+{{< include ../figures/sensitivity-table-treaty_effective_reallocation_share_year_20.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-treaty_effective_reallocation_share_year_20.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-treaty_effective_reallocation_share_year_20.qmd >}}
 
 :::
 
@@ -6422,31 +6325,30 @@ $$
 
 :::
 
-### Treaty Health Recovery GDP Growth Bonus (Year 20): 6.28% {#sec-treaty_health_recovery_gdp_growth_bonus_year_20}
+### Treaty Health Recovery GDP Growth Bonus (Year 20): 0.613% {#sec-treaty_health_recovery_gdp_growth_bonus_year_20}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Annualized GDP growth bonus by year 20 from lower disease burden plus eliminating existing-drug efficacy lag under the treaty path.
+Annualized GDP growth bonus by year 20 from lower disease burden under the treaty path.
 
 **Inputs**:
 
-- [Treaty Disease Cure Fraction (20yr, Take-Hold Path)](#sec-treaty_disease_cure_fraction_20yr) 🔢: 100%
+- [Treaty Disease Cure Fraction (20yr, Ratchet Schedule)](#sec-treaty_disease_cure_fraction_20yr) 🔢: 100%
 - [Disease Burden as % of GDP](#sec-disease_burden_gdp_drag_pct) 📊: 13%
-- [Total Economic Loss from Historical Progress Delays](#sec-existing_drugs_efficacy_lag_economic_loss) 🔢: $259 trillion
-- [Global GDP (2025)](#sec-global_gdp_2025) 📊: $115 trillion
+- [Treaty Health Recovery Annualization Horizon](#sec-treaty_health_recovery_annualization_years): 20 years
 
 $$
 \begin{gathered}
 g_{health,treaty,20} \\
-= ((1 + f_{cure,20,treaty} \times d_{disease} \\
-+ \left(\frac{Loss_{lag}}{GDP_{global}}\right))^{\frac{1}{20}}) - 1
+= ((1 \\
++ f_{cure,20,treaty} \times d_{disease})^{\frac{1}{H_{health,treaty}}}) - 1
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
 f_{cure,20,treaty} \\
-= \min\left(1.0, Treatments_{new,ann} \times (3 \times min(\text{TRIAL\_CAPACITY\_MULTIPLIER} \times 1, \text{MAX\_TRIAL\_CAPACITY\_MULTIPLIER\_PHYSICAL}) + 4 \times min(\text{TRIAL\_CAPACITY\_MULTIPLIER} \times 2, \text{MAX\_TRIAL\_CAPACITY\_MULTIPLIER\_PHYSICAL}) + 5 \times min(\text{TRIAL\_CAPACITY\_MULTIPLIER} \times 5, \text{MAX\_TRIAL\_CAPACITY\_MULTIPLIER\_PHYSICAL}) + 8 \times min(\text{TRIAL\_CAPACITY\_MULTIPLIER} \times 10, \text{MAX\_TRIAL\_CAPACITY\_MULTIPLIER\_PHYSICAL})) / N_{untreated}\right)
+= \min\left(1.0, (3 \times min(k_{capacity} \times \left(\frac{0.01}{0.01}\right), k_{capacity,max}) + 4 \times min(k_{capacity} \times (min(0.02, s_{ratchet})/0.01), k_{capacity,max}) + 5 \times min(k_{capacity} \times (min(0.05, s_{ratchet})/0.01), k_{capacity,max}) + 8 \times min(k_{capacity} \times \left(\frac{s_{ratchet}}{0.01}\right), k_{capacity,max})) / T_{queue,SQ}\right)
 \end{gathered}
 $$
 where:
@@ -6507,37 +6409,19 @@ $$
 where:
 $$
 \begin{gathered}
+T_{queue,SQ} \\
+= \frac{N_{untreated}}{Treatments_{new,ann}} \\
+= \frac{6{,}650}{15} \\
+= 443
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
 N_{untreated} \\
 = N_{rare} \times 0.95 \\
 = 7{,}000 \times 0.95 \\
 = 6{,}650
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Loss_{lag} \\
-= Deaths_{lag,total} \times (LE_{global} - Age_{death,delay}) \times Value_{QALY} \\
-= 102M \times (79 - 62) \times \$150K \\
-= \$259T
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Deaths_{lag,total} \\
-= Lives_{saved,annual} \times T_{lag} \\
-= 12.4M \times 8.2 \\
-= 102M
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Lives_{saved,annual} \\
-= \frac{LY_{saved,annual}}{T_{ext}} \\
-= \frac{149M}{12} \\
-= 12.4M
 \end{gathered}
 $$
 *✓ High confidence*
@@ -6545,8 +6429,6 @@ $$
 #### Sensitivity Analysis
 
 {{< include ../figures/tornado-treaty_health_recovery_gdp_growth_bonus_year_20.qmd >}}
-
-{{< include ../figures/sensitivity-table-treaty_health_recovery_gdp_growth_bonus_year_20.qmd >}}
 
 #### Monte Carlo Distribution
 
@@ -6718,7 +6600,7 @@ Annual GDP growth bonus by year 20 from explicit avoided war-cost drag under the
 
 - [Annual Peace Dividend from 1% Reduction in Total War Costs](#sec-peace_dividend_annual_societal_benefit) 🔢: $114 billion
 - [Global GDP (2025)](#sec-global_gdp_2025) 📊: $115 trillion
-- [Treaty Effective Reallocation Share (Year 20)](#sec-treaty_effective_reallocation_share_year_20): 5.8%
+- [Treaty Effective Reallocation Share (Year 20)](#sec-treaty_effective_reallocation_share_year_20) 🔢: 5.8%
 - [1% Reduction in Military Spending/War Costs from Treaty](#sec-treaty_reduction_pct): 1%
 - [Peace Dividend Conflict Elasticity](#sec-peace_dividend_conflict_elasticity): 1:1 (95% CI: 0.25:1 - 1.5:1)
 
@@ -6823,6 +6705,15 @@ Cost_{war,indirect} \\
 = \$3.7T
 \end{gathered}
 $$
+where:
+$$
+\begin{gathered}
+\bar{s}_{treaty,20} \\
+= s_{ratchet} \times 0.409 \\
+= 10\% \times 0.409 \\
+= 5.8\%
+\end{gathered}
+$$
 *✓ High confidence*
 
 #### Sensitivity Analysis
@@ -6849,7 +6740,7 @@ Annual GDP growth bonus by year 20 from redirecting military spending to medical
 
 **Inputs**:
 
-- [Treaty Effective Reallocation Share (Year 20)](#sec-treaty_effective_reallocation_share_year_20): 5.8%
+- [Treaty Effective Reallocation Share (Year 20)](#sec-treaty_effective_reallocation_share_year_20) 🔢: 5.8%
 - [GDP Growth Boost at 30% Military Reallocation](#sec-military_redirect_gdp_boost_at_30pct): 5.5% (95% CI: 3.5% - 7.5%)
 - [R&D Spillover Multiplier](#sec-rd_spillover_multiplier): 2x (95% CI: 1.5x - 2.5x)
 
@@ -6861,7 +6752,15 @@ g_{redirect,treaty,20} \\
 = 1.06\%
 \end{gathered}
 $$
-
+where:
+$$
+\begin{gathered}
+\bar{s}_{treaty,20} \\
+= s_{ratchet} \times 0.409 \\
+= 10\% \times 0.409 \\
+= 5.8\%
+\end{gathered}
+$$
 *✓ High confidence*
 
 #### Sensitivity Analysis
@@ -7022,7 +6921,7 @@ $$
 
 :::
 
-### Treaty Trajectory Average Income at Year 20: $99,861 {#sec-treaty_trajectory_avg_income_year_20}
+### Treaty Trajectory Average Income at Year 20: $34,972 {#sec-treaty_trajectory_avg_income_year_20}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -7030,15 +6929,15 @@ Average income (GDP per capita) at year 20 under the Treaty Trajectory.
 
 **Inputs**:
 
-- [Treaty Trajectory GDP at Year 20](#sec-treaty_trajectory_gdp_year_20) 🔢: $919 trillion
+- [Treaty Trajectory GDP at Year 20](#sec-treaty_trajectory_gdp_year_20) 🔢: $322 trillion
 - [Global Population 2045 (Projected)](#sec-global_population_2045_projected) 📊: 9.2 billion of people
 
 $$
 \begin{gathered}
 \bar{y}_{treaty,20} \\
 = \frac{GDP_{treaty,20}}{Pop_{2045}} \\
-= \frac{\$919T}{9.2B} \\
-= \$99.9K
+= \frac{\$322T}{9.2B} \\
+= \$35K
 \end{gathered}
 $$
 where:
@@ -7057,6 +6956,15 @@ g_{redirect,treaty,20} \\
 = \bar{s}_{treaty,20} \times \Delta g_{30\%} \times m_{spillover} \times 1.67 \\
 = 5.8\% \times 5.5\% \times 2 \times 1.67 \\
 = 1.06\%
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+\bar{s}_{treaty,20} \\
+= s_{ratchet} \times 0.409 \\
+= 10\% \times 0.409 \\
+= 5.8\%
 \end{gathered}
 $$
 where:
@@ -7172,15 +7080,15 @@ where:
 $$
 \begin{gathered}
 g_{health,treaty,20} \\
-= ((1 + f_{cure,20,treaty} \times d_{disease} \\
-+ \left(\frac{Loss_{lag}}{GDP_{global}}\right))^{\frac{1}{20}}) - 1
+= ((1 \\
++ f_{cure,20,treaty} \times d_{disease})^{\frac{1}{H_{health,treaty}}}) - 1
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
 f_{cure,20,treaty} \\
-= \min\left(1.0, Treatments_{new,ann} \times (3 \times min(\text{TRIAL\_CAPACITY\_MULTIPLIER} \times 1, \text{MAX\_TRIAL\_CAPACITY\_MULTIPLIER\_PHYSICAL}) + 4 \times min(\text{TRIAL\_CAPACITY\_MULTIPLIER} \times 2, \text{MAX\_TRIAL\_CAPACITY\_MULTIPLIER\_PHYSICAL}) + 5 \times min(\text{TRIAL\_CAPACITY\_MULTIPLIER} \times 5, \text{MAX\_TRIAL\_CAPACITY\_MULTIPLIER\_PHYSICAL}) + 8 \times min(\text{TRIAL\_CAPACITY\_MULTIPLIER} \times 10, \text{MAX\_TRIAL\_CAPACITY\_MULTIPLIER\_PHYSICAL})) / N_{untreated}\right)
+= \min\left(1.0, (3 \times min(k_{capacity} \times \left(\frac{0.01}{0.01}\right), k_{capacity,max}) + 4 \times min(k_{capacity} \times (min(0.02, s_{ratchet})/0.01), k_{capacity,max}) + 5 \times min(k_{capacity} \times (min(0.05, s_{ratchet})/0.01), k_{capacity,max}) + 8 \times min(k_{capacity} \times \left(\frac{s_{ratchet}}{0.01}\right), k_{capacity,max})) / T_{queue,SQ}\right)
 \end{gathered}
 $$
 where:
@@ -7241,37 +7149,19 @@ $$
 where:
 $$
 \begin{gathered}
+T_{queue,SQ} \\
+= \frac{N_{untreated}}{Treatments_{new,ann}} \\
+= \frac{6{,}650}{15} \\
+= 443
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
 N_{untreated} \\
 = N_{rare} \times 0.95 \\
 = 7{,}000 \times 0.95 \\
 = 6{,}650
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Loss_{lag} \\
-= Deaths_{lag,total} \times (LE_{global} - Age_{death,delay}) \times Value_{QALY} \\
-= 102M \times (79 - 62) \times \$150K \\
-= \$259T
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Deaths_{lag,total} \\
-= Lives_{saved,annual} \times T_{lag} \\
-= 12.4M \times 8.2 \\
-= 102M
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Lives_{saved,annual} \\
-= \frac{LY_{saved,annual}}{T_{ext}} \\
-= \frac{149M}{12} \\
-= 12.4M
 \end{gathered}
 $$
 *✓ High confidence*
@@ -7292,7 +7182,7 @@ $$
 
 :::
 
-### Treaty Trajectory vs Current Trajectory GDP Multiplier (Year 20): 4.88x {#sec-treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_20}
+### Treaty Trajectory vs Current Trajectory GDP Multiplier (Year 20): 1.71x {#sec-treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_20}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -7300,15 +7190,15 @@ Treaty Trajectory GDP at year 20 as a multiple of current trajectory GDP at year
 
 **Inputs**:
 
-- [Treaty Trajectory GDP at Year 20](#sec-treaty_trajectory_gdp_year_20) 🔢: $919 trillion
+- [Treaty Trajectory GDP at Year 20](#sec-treaty_trajectory_gdp_year_20) 🔢: $322 trillion
 - [Current Trajectory GDP at Year 20](#sec-current_trajectory_gdp_year_20) 🔢: $188 trillion
 
 $$
 \begin{gathered}
 k_{treaty:base,20} \\
 = \frac{GDP_{treaty,20}}{GDP_{base,20}} \\
-= \frac{\$919T}{\$188T} \\
-= 4.88
+= \frac{\$322T}{\$188T} \\
+= 1.71
 \end{gathered}
 $$
 where:
@@ -7327,6 +7217,15 @@ g_{redirect,treaty,20} \\
 = \bar{s}_{treaty,20} \times \Delta g_{30\%} \times m_{spillover} \times 1.67 \\
 = 5.8\% \times 5.5\% \times 2 \times 1.67 \\
 = 1.06\%
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+\bar{s}_{treaty,20} \\
+= s_{ratchet} \times 0.409 \\
+= 10\% \times 0.409 \\
+= 5.8\%
 \end{gathered}
 $$
 where:
@@ -7442,15 +7341,15 @@ where:
 $$
 \begin{gathered}
 g_{health,treaty,20} \\
-= ((1 + f_{cure,20,treaty} \times d_{disease} \\
-+ \left(\frac{Loss_{lag}}{GDP_{global}}\right))^{\frac{1}{20}}) - 1
+= ((1 \\
++ f_{cure,20,treaty} \times d_{disease})^{\frac{1}{H_{health,treaty}}}) - 1
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
 f_{cure,20,treaty} \\
-= \min\left(1.0, Treatments_{new,ann} \times (3 \times min(\text{TRIAL\_CAPACITY\_MULTIPLIER} \times 1, \text{MAX\_TRIAL\_CAPACITY\_MULTIPLIER\_PHYSICAL}) + 4 \times min(\text{TRIAL\_CAPACITY\_MULTIPLIER} \times 2, \text{MAX\_TRIAL\_CAPACITY\_MULTIPLIER\_PHYSICAL}) + 5 \times min(\text{TRIAL\_CAPACITY\_MULTIPLIER} \times 5, \text{MAX\_TRIAL\_CAPACITY\_MULTIPLIER\_PHYSICAL}) + 8 \times min(\text{TRIAL\_CAPACITY\_MULTIPLIER} \times 10, \text{MAX\_TRIAL\_CAPACITY\_MULTIPLIER\_PHYSICAL})) / N_{untreated}\right)
+= \min\left(1.0, (3 \times min(k_{capacity} \times \left(\frac{0.01}{0.01}\right), k_{capacity,max}) + 4 \times min(k_{capacity} \times (min(0.02, s_{ratchet})/0.01), k_{capacity,max}) + 5 \times min(k_{capacity} \times (min(0.05, s_{ratchet})/0.01), k_{capacity,max}) + 8 \times min(k_{capacity} \times \left(\frac{s_{ratchet}}{0.01}\right), k_{capacity,max})) / T_{queue,SQ}\right)
 \end{gathered}
 $$
 where:
@@ -7511,37 +7410,19 @@ $$
 where:
 $$
 \begin{gathered}
+T_{queue,SQ} \\
+= \frac{N_{untreated}}{Treatments_{new,ann}} \\
+= \frac{6{,}650}{15} \\
+= 443
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
 N_{untreated} \\
 = N_{rare} \times 0.95 \\
 = 7{,}000 \times 0.95 \\
 = 6{,}650
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Loss_{lag} \\
-= Deaths_{lag,total} \times (LE_{global} - Age_{death,delay}) \times Value_{QALY} \\
-= 102M \times (79 - 62) \times \$150K \\
-= \$259T
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Deaths_{lag,total} \\
-= Lives_{saved,annual} \times T_{lag} \\
-= 12.4M \times 8.2 \\
-= 102M
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Lives_{saved,annual} \\
-= \frac{LY_{saved,annual}}{T_{ext}} \\
-= \frac{149M}{12} \\
-= 12.4M
 \end{gathered}
 $$
 where:
@@ -7566,11 +7447,11 @@ $$
 
 :::
 
-### Treaty Trajectory GDP at Year 20: $919 trillion {#sec-treaty_trajectory_gdp_year_20}
+### Treaty Trajectory GDP at Year 20: $322 trillion {#sec-treaty_trajectory_gdp_year_20}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Projected global GDP at year 20 under the optimistic treaty take-hold path. Compounds baseline growth plus explicit military redirect spillovers, peace dividend recovery, cybercrime drag recovery, and health recovery from disease cures and faster deployment.
+Projected global GDP at year 20 under the optimistic treaty take-hold path. Compounds baseline growth plus explicit military redirect spillovers, peace dividend recovery, cybercrime drag recovery, and health recovery from lower disease burden.
 
 **Inputs**:
 
@@ -7579,7 +7460,7 @@ Projected global GDP at year 20 under the optimistic treaty take-hold path. Comp
 - [Treaty Redirect GDP Growth Bonus (Year 20)](#sec-treaty_redirect_gdp_growth_bonus_year_20) 🔢: 1.06%
 - [Treaty Peace Recovery GDP Growth Bonus (Year 20)](#sec-treaty_peace_recovery_gdp_growth_bonus_year_20) 🔢: 0.573%
 - [Treaty Cybercrime Recovery GDP Growth Bonus (Year 20)](#sec-treaty_cybercrime_recovery_gdp_growth_bonus_year_20) 🔢: 0.53%
-- [Treaty Health Recovery GDP Growth Bonus (Year 20)](#sec-treaty_health_recovery_gdp_growth_bonus_year_20) 🔢: 6.28%
+- [Treaty Health Recovery GDP Growth Bonus (Year 20)](#sec-treaty_health_recovery_gdp_growth_bonus_year_20) 🔢: 0.613%
 
 $$
 \begin{gathered}
@@ -7596,6 +7477,15 @@ g_{redirect,treaty,20} \\
 = \bar{s}_{treaty,20} \times \Delta g_{30\%} \times m_{spillover} \times 1.67 \\
 = 5.8\% \times 5.5\% \times 2 \times 1.67 \\
 = 1.06\%
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+\bar{s}_{treaty,20} \\
+= s_{ratchet} \times 0.409 \\
+= 10\% \times 0.409 \\
+= 5.8\%
 \end{gathered}
 $$
 where:
@@ -7711,15 +7601,15 @@ where:
 $$
 \begin{gathered}
 g_{health,treaty,20} \\
-= ((1 + f_{cure,20,treaty} \times d_{disease} \\
-+ \left(\frac{Loss_{lag}}{GDP_{global}}\right))^{\frac{1}{20}}) - 1
+= ((1 \\
++ f_{cure,20,treaty} \times d_{disease})^{\frac{1}{H_{health,treaty}}}) - 1
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
 f_{cure,20,treaty} \\
-= \min\left(1.0, Treatments_{new,ann} \times (3 \times min(\text{TRIAL\_CAPACITY\_MULTIPLIER} \times 1, \text{MAX\_TRIAL\_CAPACITY\_MULTIPLIER\_PHYSICAL}) + 4 \times min(\text{TRIAL\_CAPACITY\_MULTIPLIER} \times 2, \text{MAX\_TRIAL\_CAPACITY\_MULTIPLIER\_PHYSICAL}) + 5 \times min(\text{TRIAL\_CAPACITY\_MULTIPLIER} \times 5, \text{MAX\_TRIAL\_CAPACITY\_MULTIPLIER\_PHYSICAL}) + 8 \times min(\text{TRIAL\_CAPACITY\_MULTIPLIER} \times 10, \text{MAX\_TRIAL\_CAPACITY\_MULTIPLIER\_PHYSICAL})) / N_{untreated}\right)
+= \min\left(1.0, (3 \times min(k_{capacity} \times \left(\frac{0.01}{0.01}\right), k_{capacity,max}) + 4 \times min(k_{capacity} \times (min(0.02, s_{ratchet})/0.01), k_{capacity,max}) + 5 \times min(k_{capacity} \times (min(0.05, s_{ratchet})/0.01), k_{capacity,max}) + 8 \times min(k_{capacity} \times \left(\frac{s_{ratchet}}{0.01}\right), k_{capacity,max})) / T_{queue,SQ}\right)
 \end{gathered}
 $$
 where:
@@ -7780,37 +7670,19 @@ $$
 where:
 $$
 \begin{gathered}
+T_{queue,SQ} \\
+= \frac{N_{untreated}}{Treatments_{new,ann}} \\
+= \frac{6{,}650}{15} \\
+= 443
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
 N_{untreated} \\
 = N_{rare} \times 0.95 \\
 = 7{,}000 \times 0.95 \\
 = 6{,}650
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Loss_{lag} \\
-= Deaths_{lag,total} \times (LE_{global} - Age_{death,delay}) \times Value_{QALY} \\
-= 102M \times (79 - 62) \times \$150K \\
-= \$259T
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Deaths_{lag,total} \\
-= Lives_{saved,annual} \times T_{lag} \\
-= 12.4M \times 8.2 \\
-= 102M
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Lives_{saved,annual} \\
-= \frac{LY_{saved,annual}}{T_{ext}} \\
-= \frac{149M}{12} \\
-= 12.4M
 \end{gathered}
 $$
 *✓ High confidence*
@@ -8215,7 +8087,7 @@ $$
 
 :::
 
-### Ratio of Type II Error Cost to Type I Error Benefit: 3,068:1 {#sec-type_ii_error_cost_ratio}
+### Ratio of Type II Error Cost to Type I Error Benefit: 3,389:1 {#sec-type_ii_error_cost_ratio}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -8223,28 +8095,26 @@ Ratio of Type II error cost to Type I error benefit (harm from delay vs. harm pr
 
 **Inputs**:
 
-- [Total DALYs Lost from Disease Eradication Delay](#sec-dfda_efficacy_lag_elimination_dalys) 🔢: 7.94 billion DALYs
+- [Total DALYs Lost from Disease Eradication Delay](#sec-dfda_efficacy_lag_elimination_dalys) 🔢: 8.77 billion DALYs
 - [Maximum DALYs Saved by FDA Preventing Unsafe Drugs (1962-2024)](#sec-type_i_error_benefit_dalys) 🔢: 2.59 million DALYs
 
 $$
 \begin{gathered}
 Ratio_{TypeII} \\
 = \frac{DALYs_{lag}}{DALY_{TypeI}} \\
-= \frac{7.94B}{2.59M} \\
-= 3{,}070
+= \frac{8.77B}{2.59M} \\
+= 3{,}390
 \end{gathered}
 $$
 where:
 $$
-DALYs_{lag} = YLL_{lag} + YLD_{lag} = 7.07B + 873M = 7.94B
+DALYs_{lag} = YLL_{lag} + YLD_{lag} = 7.9B + 873M = 8.77B
 $$
 where:
 $$
 \begin{gathered}
 YLL_{lag} \\
-= Deaths_{lag} \times (LE_{global} - Age_{death,delay}) \\
-= 416M \times (79 - 62) \\
-= 7.07B
+= \text{DEATHS\_TOTAL} \times (REMAINING_LIFE_EXPECTANCY_AT_60 - (\text{MEAN\_AGE\_OF\_DEATH} - 60))
 \end{gathered}
 $$
 where:
@@ -10151,23 +10021,27 @@ Annual global government spending on interventional clinical trials (~5-10% of t
 
 :::
 
-### Global Life Expectancy (2024): 79 years {#sec-global_life_expectancy_2024}
+### Remaining Life Expectancy at Age 60 (Global): 21 years {#sec-global_life_expectancy_remaining_at_age_60}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Global life expectancy (2024)
+Additional years a person alive at age 60 can expect to live, global both-sexes (WHO life tables: 21.0 years in 2019; 19.6 in COVID-depressed 2021). This is CONDITIONAL remaining life expectancy, not life-expectancy-at-birth minus age: at-birth figures carry child mortality that someone who reached 60 already survived, so subtracting an age from them understates remaining years by roughly 40% at this age. Used for years-of-life-lost per efficacy-lag death. The GBD reference life table would give more (~23 years at 60); WHO period tables are the lower of the two standard choices.
 
-**Source**: [@who-global-health-estimates-2024]
+**Source**: [@who-gho-life-expectancy-age-60-2021]
 
 #### Uncertainty Range
 
-**Technical**: Distribution: Normal (SE: 2 years)
+**Technical**: 95% CI: [19.6 years, 22 years] • Distribution: Normal
+
+**What this means**: We're quite confident in this estimate. The true value likely falls between 19.6 years and 22 years (±6%). This represents a narrow range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The normal distribution means values cluster around the center with equal chances of being higher or lower.*
 
 #### Input Distribution
 
-{{< include ../figures/distribution-global_life_expectancy_2024.qmd >}}
+{{< include ../figures/distribution-global_life_expectancy_remaining_at_age_60.qmd >}}
 
-*✓ High confidence • 📊 Peer-reviewed • Updated 2024*
+*✓ High confidence*
 
 :::
 
@@ -10424,30 +10298,6 @@ Average cost to develop one drug in current system
 {{< include ../figures/distribution-pharma_drug_development_cost_current.qmd >}}
 
 *✓ High confidence • 📊 Peer-reviewed*
-
-:::
-
-### Annual Life-Years Saved by Pharmaceuticals: 149 million life-years {#sec-pharma_life_years_saved_annual}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Annual life-years saved by pharmaceutical innovations globally. Lichtenberg (2019, NBER WP 25483) found that drugs launched after 1981 saved 148.7M life-years in 2013 across 22 countries using 3-way fixed-effects regression (disease-country-year). 95% CI [79.4M, 239.8M] propagated from Table 2 regression standard errors (β₀₋₁₁=-0.031±0.008, β₁₂₊=-0.057±0.013).
-
-**Source**: [@lichtenberg-life-years-saved-2019]
-
-#### Uncertainty Range
-
-**Technical**: 95% CI: [79.4 million life-years, 240 million life-years] • Distribution: Lognormal
-
-**What this means**: This estimate is highly uncertain. The true value likely falls between 79.4 million life-years and 240 million life-years (±54%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
-
-*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
-
-#### Input Distribution
-
-{{< include ../figures/distribution-pharma_life_years_saved_annual.qmd >}}
-
-*~ Medium confidence*
 
 :::
 
@@ -11081,28 +10931,6 @@ Patients enrolled in ADAPTABLE trial (PCORnet 2016-2019). Enrolled across 40 cli
 
 :::
 
-### Average Life Extension per Beneficiary: 12 years {#sec-avg_life_extension_per_beneficiary}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Average years of life extension per person saved by pharmaceutical interventions. Assumption used to convert life-years saved to approximate lives saved. Based on Lichtenberg's methodology where life-years are calculated from Years of Life Lost (YLL) reductions.
-
-#### Uncertainty Range
-
-**Technical**: 95% CI: [8 years, 18 years] • Distribution: Triangular
-
-**What this means**: There's significant uncertainty here. The true value likely falls between 8 years and 18 years (±42%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
-
-*The triangular distribution means values cluster around a most-likely point but can range higher or lower.*
-
-#### Input Distribution
-
-{{< include ../figures/distribution-avg_life_extension_per_beneficiary.qmd >}}
-
-*Core definition*
-
-:::
-
 ### Percentage of Budget Defense Sector Keeps Under 1% treaty: 99% {#sec-defense_sector_retention_pct}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -11661,15 +11489,37 @@ Viral referendum budget for 280M verified votes (base: $250M realistic with $0.5
 
 :::
 
-### Treaty Effective Reallocation Share (Year 20): 5.8% {#sec-treaty_effective_reallocation_share_year_20}
+### Treaty Health Recovery Annualization Horizon: 20 years {#sec-treaty_health_recovery_annualization_years}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Average military-to-medicine reallocation share over 20 years under the optimistic treaty take-hold path (1% for 3 years, 2% for 4 years, 5% for 5 years, 10% for 8 years).
+Annualization horizon for the treaty health recovery GDP-drag term.
 
 #### Uncertainty Range
 
 **Technical**: Distribution: Fixed
+
+*Core definition*
+
+:::
+
+### Treaty Ratchet Terminal Redirect Share: 10% {#sec-treaty_ratchet_terminal_share}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Terminal share of military spending redirected under the IAB-ratchet take-hold schedule (1% for 3 years, 2% for 4, 5% for 5, terminal thereafter). The single ratchet knob: every treaty-trajectory parameter binds it, so setting it to 0.01 switches ratcheting off everywhere (the treaty stays at its initial 1% forever) and every treaty number degrades to its flat-1% bound. Uncertainty spans never-expands (0.01, the 95% lower bound) to overshooting the schedule (0.19): expansion is driven by bondholder lobbying incentives, which do not stop at 10% if they work at all.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [1%, 19%] • Distribution: Normal
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between 1% and 19% (±90%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The normal distribution means values cluster around the center with equal chances of being higher or lower.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-treaty_ratchet_terminal_share.qmd >}}
 
 *Core definition*
 

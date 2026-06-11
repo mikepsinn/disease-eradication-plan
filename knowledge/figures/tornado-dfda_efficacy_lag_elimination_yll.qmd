@@ -20,14 +20,14 @@ display_name = "Years of Life Lost from Disease Eradication Delay"
 
 # Baseline and units
 
-baseline = 7069493231.0
+baseline = 7901198317.0
 
 # Tornado data from sensitivity analysis
 
-drivers = ['EFFICACY_LAG_YEARS', 'REGULATORY_DELAY_MEAN_AGE_OF_DEATH', 'GLOBAL_LIFE_EXPECTANCY_2024', 'GLOBAL_DISEASE_DEATHS_DAILY']
-driver_labels = ['Regulatory Delay for Efficacy Testing Post-Safety Verification', 'Mean Age of Preventable Death from Post-Safety Efficacy Delay', 'Global Life Expectancy (2024)', 'Global Daily Deaths from Disease and Aging']
-impacts_low = [-1724266634.369482, 1247557640.4175053, -831705077.4368706, -353474652.3303642]
-impacts_high = [1724266653.7792416, -1247557621.0077457, 831705096.8466301, 353474671.7401247]
+drivers = ['EFFICACY_LAG_YEARS', 'REGULATORY_DELAY_MEAN_AGE_OF_DEATH', 'GLOBAL_LIFE_EXPECTANCY_REMAINING_AT_AGE_60', 'GLOBAL_DISEASE_DEATHS_DAILY']
+driver_labels = ['Regulatory Delay for Efficacy Testing Post-Safety Verification', 'Mean Age of Preventable Death from Post-Safety Efficacy Delay', 'Remaining Life Expectancy at Age 60 (Global)', 'Global Daily Deaths from Disease and Aging']
+impacts_low = [-1927121532.5305977, 1247557641.5592556, -582193550.1525946, -395059905.545701]
+impacts_high = [1927121554.2238579, -1247557619.8659954, 415852554.41750526, 395059927.2389631]
 
 # Convert deltas to absolute values (baseline + delta)
 

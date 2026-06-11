@@ -165,6 +165,8 @@ def tag_mp3(
     if audio.tags is None:
         audio.add_tags()
     tags = audio.tags
+    if tags is None:
+        raise RuntimeError(f"Could not initialize ID3 tags for {mp3_path}")
 
     # Remove junk tags from external sources (Suno, etc.)
     for key in list(tags.keys()):
@@ -205,9 +207,9 @@ def print_acx_report(path: Path) -> None:
 
     from mutagen.mp3 import MP3
     audio = MP3(str(path))
-    channels = audio.info.channels
-    sample_rate = audio.info.sample_rate
-    bitrate = audio.info.bitrate
+    channels = getattr(audio.info, "channels", 0)
+    sample_rate = getattr(audio.info, "sample_rate", 0)
+    bitrate = getattr(audio.info, "bitrate", 0)
 
     rms_ok = ACX_RMS_MIN <= (rms or -99) <= ACX_RMS_MAX
     peak_ok = (peak or 0) <= ACX_PEAK_MAX

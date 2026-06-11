@@ -18,7 +18,7 @@ Usage:
 """
 import sys
 if sys.platform == 'win32':
-    sys.stdout.reconfigure(encoding='utf-8')
+    sys.stdout.reconfigure(encoding='utf-8')  # pyright: ignore[reportAttributeAccessIssue]
 
 import json
 import hashlib
@@ -94,7 +94,8 @@ class HashStore:
 
         try:
             with open(self.hash_file, 'r', encoding='utf-8') as f:
-                self._cache = json.load(f)
+                loaded = json.load(f)
+                self._cache = loaded if isinstance(loaded, dict) else {}
         except (json.JSONDecodeError, IOError):
             self._cache = {}
 

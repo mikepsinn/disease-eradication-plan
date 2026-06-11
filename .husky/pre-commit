@@ -26,7 +26,6 @@ exec > >(tee -a "$LOG_FILE") 2>&1
 # Note: WISHONIA review is not run automatically on commit
 # Run manually with: npm run wishonia
 
-echo "Running pre-render validation..."
 # Use venv Python to ensure consistent NumPy version for reproducible Monte Carlo
 if [ -f ".venv/Scripts/python.exe" ]; then
     PYTHON_CMD=".venv/Scripts/python.exe"
@@ -36,6 +35,13 @@ else
     PYTHON_CMD="python"
 fi
 
+echo "Running Python type check..."
+if ! npx --yes pyright dih_models scripts; then
+    echo "Python type check failed. Fix Pyright/Pylance errors before committing."
+    exit 1
+fi
+
+echo "Running pre-render validation..."
 if ! $PYTHON_CMD scripts/pre-render-validation.py; then
     echo "Pre-render validation failed. Fix issues before committing."
     exit 1

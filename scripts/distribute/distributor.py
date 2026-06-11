@@ -30,7 +30,7 @@ from pathlib import Path
 from typing import Dict, List, Optional
 
 if sys.platform == "win32":
-    sys.stdout.reconfigure(encoding="utf-8")
+    sys.stdout.reconfigure(encoding="utf-8")  # pyright: ignore[reportAttributeAccessIssue]
 
 PROJECT_ROOT = Path(__file__).parent.parent.parent.absolute()
 FEED_PATH = PROJECT_ROOT / "assets" / "feed.xml"
@@ -44,6 +44,8 @@ def _load_platform(name: str):
     """Load a platform module by name."""
     mod_path = PLATFORMS_DIR / f"{name}.py"
     spec = importlib.util.spec_from_file_location(f"platforms.{name}", mod_path)
+    if spec is None or spec.loader is None:
+        raise ImportError(f"Could not load platform module: {mod_path}")
     mod = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(mod)
     return mod

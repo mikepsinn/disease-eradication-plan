@@ -2,8 +2,8 @@
 Formatting utilities for economic parameters.
 Separated to avoid circular dependencies between generation scripts and parameters.py.
 """
-from typing import Union, Any, TYPE_CHECKING
 import math
+from typing import Any, TYPE_CHECKING, Union
 
 if TYPE_CHECKING:
     # Use string forward reference to avoid importing Parameter
@@ -31,8 +31,10 @@ def format_parameter_value(param: Union[float, int, str, "Parameter"], unit: str
     value = float(param)
     
     # Auto-detect unit from Parameter object if not provided
-    if unit is None and hasattr(param, "unit"):
-        unit = param.unit
+    if unit is None:
+        unit_attr = getattr(param, "unit", None)
+        if unit_attr:
+            unit = str(unit_attr)
     
     # Normalize unit for checking
     unit_check = unit.lower() if unit else ""

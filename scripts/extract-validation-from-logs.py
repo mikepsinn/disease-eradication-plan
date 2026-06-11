@@ -14,7 +14,7 @@ from pathlib import Path
 
 # Set UTF-8 encoding for stdout on Windows
 if sys.platform == 'win32' and hasattr(sys.stdout, 'reconfigure'):
-    sys.stdout.reconfigure(encoding='utf-8')
+    sys.stdout.reconfigure(encoding='utf-8')  # pyright: ignore[reportAttributeAccessIssue]
 
 
 def parse_error_line(line: str) -> dict | None:

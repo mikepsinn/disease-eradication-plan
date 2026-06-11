@@ -65,7 +65,8 @@ def generate_video(
     output_path = Path(output_path)
     output_path.parent.mkdir(parents=True, exist_ok=True)
 
-    has_refs = reference_image_paths and len(reference_image_paths) > 0
+    reference_paths = reference_image_paths or []
+    has_refs = len(reference_paths) > 0
     mode = "img2vid" if first_frame_path else ("ref2vid" if has_refs else "txt2vid")
     print(f"  Generating video [{mode}] ({aspect_ratio}, {duration_seconds}s): {prompt[:80]}...")
 
@@ -78,7 +79,7 @@ def generate_video(
         config_kwargs["negative_prompt"] = negative_prompt
     if has_refs:
         config_kwargs["reference_images"] = [
-            types.Image.from_file(location=str(p)) for p in reference_image_paths
+            types.Image.from_file(location=str(p)) for p in reference_paths
         ]
 
     gen_kwargs: dict = {

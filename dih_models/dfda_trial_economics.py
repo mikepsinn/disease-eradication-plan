@@ -118,11 +118,12 @@ def compute_across_funding_levels(
     p = _params()
     if funding_array is None:
         funding_array = np.logspace(np.log10(1e8), np.log10(2e11), 200)
+    funding_levels = np.asarray(funding_array, dtype=float)
 
-    cost_per_daly = np.full_like(funding_array, np.nan)
-    dalys_averted = np.full_like(funding_array, np.nan)
+    cost_per_daly = np.full_like(funding_levels, np.nan)
+    dalys_averted = np.full_like(funding_levels, np.nan)
 
-    for i, funding in enumerate(funding_array):
+    for i, funding in enumerate(funding_levels):
         subsidy = funding - p["opex"]
         if subsidy <= 0:
             continue
@@ -142,7 +143,7 @@ def compute_across_funding_levels(
         cost_per_daly[i] = total_cost / d
 
     return dict(
-        funding_levels=funding_array,
+        funding_levels=funding_levels,
         cost_per_daly=cost_per_daly,
         dalys_averted=dalys_averted,
     )

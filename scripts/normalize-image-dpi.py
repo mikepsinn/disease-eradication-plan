@@ -24,6 +24,7 @@ import io
 import math
 import os
 import shutil
+from typing import Any
 from pathlib import Path
 
 from PIL import Image
@@ -101,7 +102,7 @@ def normalize_image(path: Path, apply: bool = False) -> dict | None:
         fmt = img.format or ("JPEG" if ext in (".jpg", ".jpeg") else "PNG")
 
         buf = io.BytesIO()
-        save_kwargs = {"dpi": save_dpi}
+        save_kwargs: dict[str, Any] = {"dpi": save_dpi}
 
         if fmt == "JPEG":
             # Preserve JPEG quality by using high quality

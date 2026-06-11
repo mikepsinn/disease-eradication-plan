@@ -1,0 +1,10 @@
+**Sensitivity Indices for Global Median-to-Mean Income Ratio**
+
+Regression-based sensitivity showing which inputs explain the most variance in the output.
+
+| Input Parameter | Sensitivity Coefficient | Interpretation |
+|:----------------|------------------------:|:---------------|
+| Gallup Global Median Per-Capita Income (2013, PPP) (USD) | 1.0832 | Strong driver |
+| Global Average Income (2025 Baseline) (USD) | 0.0834 | Minimal effect |
+
+*Interpretation*: Standardized coefficients show the change in output (in SD units) per 1 SD change in input. Values near ±1 indicate strong influence; values exceeding ±1 may occur with correlated inputs.

@@ -17,7 +17,7 @@ from pathlib import Path
 from typing import Any
 
 if sys.platform == 'win32':
-    sys.stdout.reconfigure(encoding='utf-8')
+    sys.stdout.reconfigure(encoding='utf-8')  # pyright: ignore[reportAttributeAccessIssue]
 
 
 def parse_yaml_frontmatter(content: str) -> tuple[dict[str, Any], int]:

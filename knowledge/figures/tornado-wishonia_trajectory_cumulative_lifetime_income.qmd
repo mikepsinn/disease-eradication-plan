@@ -20,14 +20,14 @@ display_name = "Wishonia Trajectory Cumulative Lifetime Income (Per Capita)"
 
 # Baseline and units
 
-baseline = 48302885.96346817
+baseline = 37349287.68581682
 
 # Tornado data from sensitivity analysis
 
 drivers = ['MILITARY_REDIRECT_GDP_BOOST_AT_30PCT', 'RD_SPILLOVER_MULTIPLIER', 'POLITICAL_DYSFUNCTION_GLOBAL_MIGRATION_OPPORTUNITY_COST', 'ECONOMIC_MULTIPLIER_MILITARY_SPENDING', 'ECONOMIC_MULTIPLIER_HEALTHCARE_INVESTMENT', 'GLOBAL_LIFE_EXPECTANCY_2024', 'POLITICAL_DYSFUNCTION_GLOBAL_SCIENCE_OPPORTUNITY_COST', 'POLITICAL_DYSFUNCTION_GLOBAL_LEAD_OPPORTUNITY_COST', 'GLOBAL_POPULATION_2024', 'CURRENT_DISEASE_PATIENTS_GLOBAL', 'CURRENT_TRIAL_SLOTS_AVAILABLE', 'DFDA_OPEX_COMMUNITY', 'DFDA_OPEX_INFRASTRUCTURE', 'DFDA_OPEX_PLATFORM_MAINTENANCE', 'DFDA_OPEX_REGULATORY', 'DFDA_OPEX_STAFF', 'DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT', 'NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR', 'PATIENT_WILLINGNESS_TRIAL_PARTICIPATION_PCT', 'RARE_DISEASES_COUNT_GLOBAL']
 driver_labels = ['GDP Growth Boost at 30% Military Reallocation', 'R&D Spillover Multiplier', 'Global Migration Opportunity Cost', 'Economic Multiplier for Military Spending', 'Economic Multiplier for Healthcare Investment', 'Global Life Expectancy (2024)', 'Global Science Opportunity Cost', 'Global Lead Poisoning Cost', 'Global Population in 2024', 'Global Population with Chronic Diseases', 'Annual Global Clinical Trial Participants', 'Pragmatic Trial Platform Community Support Costs', 'Pragmatic Trial Platform Infrastructure Costs', 'Pragmatic Trial Platform Maintenance Costs', 'Pragmatic Trial Platform Regulatory Coordination Costs', 'Pragmatic Trial Platform Staff Costs', 'Pragmatic Trial Cost per Patient', 'Diseases Getting First Treatment Per Year', 'Patient Willingness to Participate in Clinical Trials', 'Total Number of Rare Diseases Globally']
-impacts_low = [-27697685.0122431, -21324934.80636255, 0.0, 17361333.46475093, -11055310.48402258, -3781220.5899038315, -919708.2033680528, -919708.2033680528, -802945.6256319284, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-impacts_high = [61528125.37289309, 36940706.115185, 48430002.67516027, -12221846.060004078, 13802278.33793103, 3917508.6208023205, 2740465.333621122, 916540.0048025027, 803674.9207562879, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+impacts_low = [-21305979.54181341, -16395263.29495925, 0.0, 13322353.309509724, -8494015.215811282, -3400150.760832593, -706262.7821965143, -706262.7821965143, -454338.8527580425, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+impacts_high = [47157187.59820963, 28329578.596086092, 37129568.41849742, -9390919.410049323, 10592632.742688425, 3522703.740997039, 2104113.3125207424, 703770.8398912475, 452590.29028666764, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
 
 # Convert deltas to absolute values (baseline + delta)
 

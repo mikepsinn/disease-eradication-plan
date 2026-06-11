@@ -446,7 +446,12 @@ def sensitivity_analysis(
     lines = [header, separator]
 
     for name, params in scenarios:
-        result = calculate_allocations(estimates, total_budget, **params)
+        result = calculate_allocations(
+            estimates,
+            total_budget,
+            exploration_fraction=params["exploration_fraction"],
+            min_confidence=params["min_confidence"],
+        )
         allocs = {c.category: c.allocation_pct for c in result.categories}
         row = f"| {name} | " + " | ".join(f"{allocs.get(c, 0):.1%}" for c in categories) + " |"
         lines.append(row)

@@ -92,7 +92,7 @@ $$
 
 :::
 
-### Total DALYs Lost from Disease Eradication Delay: 7.94 billion DALYs {#sec-dfda_efficacy_lag_elimination_dalys}
+### Total DALYs Lost from Disease Eradication Delay: 8.77 billion DALYs {#sec-dfda_efficacy_lag_elimination_dalys}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -100,19 +100,17 @@ Total Disability-Adjusted Life Years lost from disease eradication delay (PRIMAR
 
 **Inputs**:
 
-- [Years of Life Lost from Disease Eradication Delay](#sec-dfda_efficacy_lag_elimination_yll) 🔢: 7.07 billion years
+- [Years of Life Lost from Disease Eradication Delay](#sec-dfda_efficacy_lag_elimination_yll) 🔢: 7.9 billion years
 - [Years Lived with Disability During Disease Eradication Delay](#sec-dfda_efficacy_lag_elimination_yld) 🔢: 873 million years
 
 $$
-DALYs_{lag} = YLL_{lag} + YLD_{lag} = 7.07B + 873M = 7.94B
+DALYs_{lag} = YLL_{lag} + YLD_{lag} = 7.9B + 873M = 8.77B
 $$
 where:
 $$
 \begin{gathered}
 YLL_{lag} \\
-= Deaths_{lag} \times (LE_{global} - Age_{death,delay}) \\
-= 416M \times (79 - 62) \\
-= 7.07B
+= \text{DEATHS\_TOTAL} \times (REMAINING_LIFE_EXPECTANCY_AT_60 - (\text{MEAN\_AGE\_OF\_DEATH} - 60))
 \end{gathered}
 $$
 where:
@@ -189,7 +187,7 @@ $$
 
 :::
 
-### Total Economic Loss from Disease Eradication Delay: $1.19 quadrillion {#sec-dfda_efficacy_lag_elimination_economic_value}
+### Total Economic Loss from Disease Eradication Delay: $1.32 quadrillion {#sec-dfda_efficacy_lag_elimination_economic_value}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -197,28 +195,26 @@ Total economic loss from delaying disease eradication by 8.2 years (PRIMARY esti
 
 **Inputs**:
 
-- [Total DALYs Lost from Disease Eradication Delay](#sec-dfda_efficacy_lag_elimination_dalys) 🔢: 7.94 billion DALYs
+- [Total DALYs Lost from Disease Eradication Delay](#sec-dfda_efficacy_lag_elimination_dalys) 🔢: 8.77 billion DALYs
 - [Standard Economic Value per QALY](#sec-standard_economic_qaly_value_usd) 📊: $150,000 (SE: ±$30,000)
 
 $$
 \begin{gathered}
 Value_{lag} \\
 = DALYs_{lag} \times Value_{QALY} \\
-= 7.94B \times \$150K \\
-= \$1190T
+= 8.77B \times \$150K \\
+= \$1320T
 \end{gathered}
 $$
 where:
 $$
-DALYs_{lag} = YLL_{lag} + YLD_{lag} = 7.07B + 873M = 7.94B
+DALYs_{lag} = YLL_{lag} + YLD_{lag} = 7.9B + 873M = 8.77B
 $$
 where:
 $$
 \begin{gathered}
 YLL_{lag} \\
-= Deaths_{lag} \times (LE_{global} - Age_{death,delay}) \\
-= 416M \times (79 - 62) \\
-= 7.07B
+= \text{DEATHS\_TOTAL} \times (REMAINING_LIFE_EXPECTANCY_AT_60 - (\text{MEAN\_AGE\_OF\_DEATH} - 60))
 \end{gathered}
 $$
 where:
@@ -304,24 +300,22 @@ $$
 
 :::
 
-### Years of Life Lost from Disease Eradication Delay: 7.07 billion years {#sec-dfda_efficacy_lag_elimination_yll}
+### Years of Life Lost from Disease Eradication Delay: 7.9 billion years {#sec-dfda_efficacy_lag_elimination_yll}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Years of Life Lost from disease eradication delay deaths (PRIMARY estimate)
+Years of Life Lost from disease eradication delay deaths (PRIMARY estimate). Years lost per death = WHO conditional remaining life expectancy at 60, adjusted down to the mean lag-death age of 62 (~19 years/death). Replaces life-expectancy-at-birth minus age, which mixed an at-birth measure (carrying child mortality the deceased already survived) with a conditional question and understated the loss by ~40%. The linear age adjustment slightly understates remaining years (conditional life expectancy falls by less than one year per year of age).
 
 **Inputs**:
 
 - [Total Deaths from Disease Eradication Delay](#sec-dfda_efficacy_lag_elimination_deaths_averted) 🔢: 416 million deaths
-- [Global Life Expectancy (2024)](#sec-global_life_expectancy_2024) 📊: 79 years (SE: ±2 years)
+- [Remaining Life Expectancy at Age 60 (Global)](#sec-global_life_expectancy_remaining_at_age_60) 📊: 21 years (95% CI: 19.6 years - 22 years)
 - [Mean Age of Preventable Death from Post-Safety Efficacy Delay](#sec-regulatory_delay_mean_age_of_death) 📊: 62 years (SE: ±3 years)
 
 $$
 \begin{gathered}
 YLL_{lag} \\
-= Deaths_{lag} \times (LE_{global} - Age_{death,delay}) \\
-= 416M \times (79 - 62) \\
-= 7.07B
+= \text{DEATHS\_TOTAL} \times (REMAINING_LIFE_EXPECTANCY_AT_60 - (\text{MEAN\_AGE\_OF\_DEATH} - 60))
 \end{gathered}
 $$
 where:
@@ -1063,7 +1057,7 @@ $$
 
 :::
 
-### Ratio of Type II Error Cost to Type I Error Benefit: 3,068:1 {#sec-type_ii_error_cost_ratio}
+### Ratio of Type II Error Cost to Type I Error Benefit: 3,389:1 {#sec-type_ii_error_cost_ratio}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -1071,28 +1065,26 @@ Ratio of Type II error cost to Type I error benefit (harm from delay vs. harm pr
 
 **Inputs**:
 
-- [Total DALYs Lost from Disease Eradication Delay](#sec-dfda_efficacy_lag_elimination_dalys) 🔢: 7.94 billion DALYs
+- [Total DALYs Lost from Disease Eradication Delay](#sec-dfda_efficacy_lag_elimination_dalys) 🔢: 8.77 billion DALYs
 - [Maximum DALYs Saved by FDA Preventing Unsafe Drugs (1962-2024)](#sec-type_i_error_benefit_dalys) 🔢: 2.59 million DALYs
 
 $$
 \begin{gathered}
 Ratio_{TypeII} \\
 = \frac{DALYs_{lag}}{DALY_{TypeI}} \\
-= \frac{7.94B}{2.59M} \\
-= 3{,}070
+= \frac{8.77B}{2.59M} \\
+= 3{,}390
 \end{gathered}
 $$
 where:
 $$
-DALYs_{lag} = YLL_{lag} + YLD_{lag} = 7.07B + 873M = 7.94B
+DALYs_{lag} = YLL_{lag} + YLD_{lag} = 7.9B + 873M = 8.77B
 $$
 where:
 $$
 \begin{gathered}
 YLL_{lag} \\
-= Deaths_{lag} \times (LE_{global} - Age_{death,delay}) \\
-= 416M \times (79 - 62) \\
-= 7.07B
+= \text{DEATHS\_TOTAL} \times (REMAINING_LIFE_EXPECTANCY_AT_60 - (\text{MEAN\_AGE\_OF\_DEATH} - 60))
 \end{gathered}
 $$
 where:
@@ -1468,23 +1460,27 @@ Total global deaths per day from all disease and aging (WHO Global Burden of Dis
 
 :::
 
-### Global Life Expectancy (2024): 79 years {#sec-global_life_expectancy_2024}
+### Remaining Life Expectancy at Age 60 (Global): 21 years {#sec-global_life_expectancy_remaining_at_age_60}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Global life expectancy (2024)
+Additional years a person alive at age 60 can expect to live, global both-sexes (WHO life tables: 21.0 years in 2019; 19.6 in COVID-depressed 2021). This is CONDITIONAL remaining life expectancy, not life-expectancy-at-birth minus age: at-birth figures carry child mortality that someone who reached 60 already survived, so subtracting an age from them understates remaining years by roughly 40% at this age. Used for years-of-life-lost per efficacy-lag death. The GBD reference life table would give more (~23 years at 60); WHO period tables are the lower of the two standard choices.
 
-**Source**: [@who-global-health-estimates-2024]
+**Source**: [@who-gho-life-expectancy-age-60-2021]
 
 #### Uncertainty Range
 
-**Technical**: Distribution: Normal (SE: 2 years)
+**Technical**: 95% CI: [19.6 years, 22 years] • Distribution: Normal
+
+**What this means**: We're quite confident in this estimate. The true value likely falls between 19.6 years and 22 years (±6%). This represents a narrow range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The normal distribution means values cluster around the center with equal chances of being higher or lower.*
 
 #### Input Distribution
 
-{{< include ../figures/distribution-global_life_expectancy_2024.qmd >}}
+{{< include ../figures/distribution-global_life_expectancy_remaining_at_age_60.qmd >}}
 
-*✓ High confidence • 📊 Peer-reviewed • Updated 2024*
+*✓ High confidence*
 
 :::
 

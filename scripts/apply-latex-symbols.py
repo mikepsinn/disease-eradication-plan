@@ -13,7 +13,7 @@ Options:
 """
 import sys
 if sys.platform == 'win32':
-    sys.stdout.reconfigure(encoding='utf-8')
+    sys.stdout.reconfigure(encoding='utf-8')  # pyright: ignore[reportAttributeAccessIssue]
 
 import os
 import re
@@ -34,6 +34,8 @@ def load_symbols_from_review():
         sys.exit(1)
     
     spec = importlib.util.spec_from_file_location("review", review_path)
+    if spec is None or spec.loader is None:
+        raise ImportError(f"Could not load review file: {review_path}")
     module = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(module)
     

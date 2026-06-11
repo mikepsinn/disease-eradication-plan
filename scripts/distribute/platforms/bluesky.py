@@ -69,5 +69,5 @@ def post(content: Dict) -> bool:
         },
     }
 
-    client.send_post(text=text, facets=facets if facets else None, embed=embed)
+    client.send_post(text=text, facets=facets if facets else None, embed=embed)  # pyright: ignore[reportArgumentType]
     return True

@@ -27,7 +27,13 @@ from dih_models.reference_parser import (
 )
 
 
-def generate_bibtex(parameters: Dict[str, Dict[str, Any]], output_path: Path, available_refs: set = None, references_path: Path = None, export_all: bool = True):
+def generate_bibtex(
+    parameters: Dict[str, Dict[str, Any]],
+    output_path: Path,
+    available_refs: set[str] | None = None,
+    references_path: Path | None = None,
+    export_all: bool = True,
+):
     """
     Generate references.bib BibTeX file from references.qmd.
 
@@ -101,7 +107,7 @@ def generate_bibtex(parameters: Dict[str, Dict[str, Any]], output_path: Path, av
 
         if ref_data and ref_data.get('title'):
             # Create proper BibTeX entry with real data
-            entry_type = ref_data.get('type', 'misc')
+            entry_type = str(ref_data.get('type', 'misc') or 'misc')
             
             # Sanitize entry type: map multi-word types to valid BibTeX types
             # BibTeX entry types cannot contain spaces

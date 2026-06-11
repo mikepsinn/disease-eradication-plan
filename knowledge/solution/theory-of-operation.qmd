@@ -49,7 +49,7 @@ The six parts: a **target**, a **controller** that decides what to do, **actuato
 
 | In the schematic | What it is | The part on your planet |
 |---|---|---|
-| Setpoint | the target the machine aims for | promote the general welfare: maximize median HALE and median after-tax, inflation-adjusted income |
+| Setpoint | the target the machine aims for | promote the general welfare: maximize HALE and median after-tax, inflation-adjusted income |
 | Comparator | computes target minus result | the step that asks "is it working?" |
 | Error signal | the gap to close | the [political dysfunction tax](../appendix/political-dysfunction-tax.qmd): the distance between how you live and how you could |
 | Controller | decides the correction | [Optimitron](optimocracy.qmd): fund what moves the numbers, defund what does not |
@@ -61,6 +61,16 @@ The six parts: a **target**, a **controller** that decides what to do, **actuato
 | Feedback path | the wire home | the ledger that carries the reading back to the comparator |
 | Operator | sets the target, can hit stop | humanity, through [Wishocracy](optimocracy.qmd) |
 | Display | reads the machine aloud | Wishonia, the narrator. Outside the loop |
+
+## The two numbers, precisely
+
+The setpoint deserves an exact definition, because every instrument in the machine is calibrated against it.
+
+**Median after-tax, inflation-adjusted income.** The income of the person in the middle, after taxes and including transfers (your economists call this real median disposable income), in constant purchasing power. The middle, not the average: the average is GDP per capita, which goes up when an arsonist and a firefighter invoice each other. Your statisticians already publish this number country by country (the OECD, the World Bank's poverty platform), and a commission of your own Nobel laureates told your governments in 2009 to steer by it instead of GDP [@nolan-gdp-vs-median-income-2019]. They declined. The machine does not decline.
+
+**Health-adjusted life expectancy (HALE).** Years of full health a person born today can expect, as the WHO already measures it. Not life expectancy, which counts the years spent dying as if they were living.
+
+The sensor reads both numbers by aggregating the published country-level figures under a methodology locked at baseline, cross-checked by surveys of the verified voter base (details in [the protocol spec](../appendix/earth-optimization-prize-protocol.qmd)). The [Earth Optimization Prize](../strategy/earth-optimization-prize.qmd) [@earth-optimization-prize-paper-2025] settles on exactly these two numbers, and any future pricing of tasks on the [To-Do List for Humanity](../strategy/humanity-todo-list.qmd) is denominated in their expected movement. One setpoint; every instrument calibrated to it.
 
 ## The two parts your government is missing
 

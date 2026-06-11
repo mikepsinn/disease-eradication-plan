@@ -20,14 +20,14 @@ display_name = "Total Economic Loss from Historical Progress Delays"
 
 # Baseline and units
 
-baseline = 259109750000000.0
+baseline = 289593250000000.0
 
 # Tornado data from sensitivity analysis
 
-drivers = ['PHARMA_LIFE_YEARS_SAVED_ANNUAL', 'AVG_LIFE_EXTENSION_PER_BENEFICIARY', 'EFFICACY_LAG_YEARS', 'STANDARD_ECONOMIC_QALY_VALUE_USD', 'REGULATORY_DELAY_MEAN_AGE_OF_DEATH', 'GLOBAL_LIFE_EXPECTANCY_2024']
-driver_labels = ['Annual Life-Years Saved by Pharmaceuticals', 'Average Life Extension per Beneficiary', 'Regulatory Delay for Efficacy Testing Post-Safety Verification', 'Standard Economic Value per QALY', 'Mean Age of Preventable Death from Post-Safety Efficacy Delay', 'Global Life Expectancy (2024)']
-impacts_low = [-120755250000000.02, 129554875000000.0, -63197500000000.06, -51821950000000.0, 45725249999999.94, -30483500000000.03]
-impacts_high = [158741750000000.0, -86369916666666.69, 63197499999999.94, 51821950000000.0, -45725250000000.0, 30483500000000.0]
+drivers = ['PHARMA_LIFE_YEARS_SAVED_ANNUAL', 'AVG_LIFE_EXTENSION_PER_BENEFICIARY', 'EFFICACY_LAG_YEARS', 'STANDARD_ECONOMIC_QALY_VALUE_USD', 'REGULATORY_DELAY_MEAN_AGE_OF_DEATH', 'GLOBAL_LIFE_EXPECTANCY_REMAINING_AT_AGE_60']
+driver_labels = ['Annual Life-Years Saved by Pharmaceuticals', 'Average Life Extension per Beneficiary', 'Regulatory Delay for Efficacy Testing Post-Safety Verification', 'Standard Economic Value per QALY', 'Mean Age of Preventable Death from Post-Safety Efficacy Delay', 'Remaining Life Expectancy at Age 60 (Global)']
+impacts_low = [-134961750000000.0, 144796625000000.0, -70632500000000.06, -57918650000000.03, 45725250000000.0, -21338450000000.0]
+impacts_high = [177417249999999.94, -96531083333333.38, 70632499999999.94, 57918650000000.0, -45725250000000.03, 15241749999999.938]
 
 # Convert deltas to absolute values (baseline + delta)
 

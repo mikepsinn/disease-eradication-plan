@@ -20,14 +20,14 @@ display_name = "Total DALYs Lost from Disease Eradication Delay"
 
 # Baseline and units
 
-baseline = 7942783571.3
+baseline = 8774488657.3
 
 # Tornado data from sensitivity analysis
 
-drivers = ['EFFICACY_LAG_YEARS', 'REGULATORY_DELAY_MEAN_AGE_OF_DEATH', 'GLOBAL_LIFE_EXPECTANCY_2024', 'GLOBAL_DISEASE_DEATHS_DAILY', 'REGULATORY_DELAY_SUFFERING_PERIOD_YEARS', 'CHRONIC_DISEASE_DISABILITY_WEIGHT']
-driver_labels = ['Regulatory Delay for Efficacy Testing Post-Safety Verification', 'Mean Age of Preventable Death from Post-Safety Efficacy Delay', 'Global Life Expectancy (2024)', 'Global Daily Deaths from Disease and Aging', 'Pre-Death Suffering Period During Post-Safety Efficacy Delay', 'Disability Weight for Untreated Chronic Conditions']
-impacts_low = [-1937264277.438654, 1247557641.6163435, -831705076.2380323, -397139168.2064686, -291096769.5958948, -174658057.39605045]
-impacts_high = [1937264299.246089, -1247557619.8089075, 831705098.0454683, 397139190.0139046, 436645181.65313625, 174658079.2034855]
+drivers = ['EFFICACY_LAG_YEARS', 'REGULATORY_DELAY_MEAN_AGE_OF_DEATH', 'GLOBAL_LIFE_EXPECTANCY_REMAINING_AT_AGE_60', 'GLOBAL_DISEASE_DEATHS_DAILY', 'REGULATORY_DELAY_SUFFERING_PERIOD_YEARS', 'CHRONIC_DISEASE_DISABILITY_WEIGHT']
+driver_labels = ['Regulatory Delay for Efficacy Testing Post-Safety Verification', 'Mean Age of Preventable Death from Post-Safety Efficacy Delay', 'Remaining Life Expectancy at Age 60 (Global)', 'Global Daily Deaths from Disease and Aging', 'Pre-Death Suffering Period During Post-Safety Efficacy Delay', 'Disability Weight for Untreated Chronic Conditions']
+impacts_low = [-2140119175.5997686, 1247557642.7580948, -582193548.9537554, -438724421.4218044, -291096768.4541435, -174658056.25429916]
+impacts_high = [2140119199.6907063, -1247557618.6671562, 415852555.61634445, 438724445.512743, 436645182.79488754, 174658080.34523582]
 
 # Convert deltas to absolute values (baseline + delta)
 

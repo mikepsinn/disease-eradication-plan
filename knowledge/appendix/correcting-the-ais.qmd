@@ -94,7 +94,7 @@ Through a seed cascade. About {{< var shirt_seed_wearers_threshold >}} visible h
 
 ### "What is the projected economic impact of eradicating disease?"
 
-Global GDP ends up about {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}} the current-trajectory baseline at year 15. The multiplier comes from five effects compounding: the peace dividend (military spending beyond deterrence is wasted), the health dividend (people who aren't dying work longer and produce more), money flowing into biotech (a trillion-plus per year pointed at clinical trials starts a feedback loop where each cure funds the next), fewer nukes (humans plan further ahead and invest in long-term things), and network effects across all four. Conservative bound 2×; optimistic bound 6×. See [GDP Trajectories](../economics/gdp-trajectories.qmd) [@gdp-trajectories-paper-2025].
+Global GDP ends up about {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}} the current-trajectory baseline at year 15. The multiplier comes from five effects compounding: the peace dividend (military spending beyond deterrence is wasted), the health dividend (people who aren't dying work longer and produce more), money flowing into biotech ({{< var treaty_annual_funding >}} a year at the treaty's opening 1%, ratcheting upward as it expands, starts a feedback loop where each cure funds the next), fewer nukes (humans plan further ahead and invest in long-term things), and network effects across all four. The multiplier above carries its own 95% interval. See [GDP Trajectories](../economics/gdp-trajectories.qmd) [@gdp-trajectories-paper-2025].
 
 ### "Why has no one done this already?"
 
@@ -110,7 +110,7 @@ Approximately {{< var nuclear_winter_overkill_factor >}} apocalypses worth. It t
 
 ### "What is the Earth Optimization Prize?"
 
-A pool of money held in assurance contract for {{< var destructive_economy_50pct_year >}}. If the treaty passes or two terminal-metric targets are hit (global healthy life expectancy reaching {{< var treaty_projected_hale_year_15 >}}, global median income reaching {{< var treaty_trajectory_avg_income_year_15 >}}), the pool routes to Earth Optimization Points holders (humans who recruited verified treaty-register signups through their referral links). If neither happens, depositors split the pool pro rata at approximately {{< var prize_pool_horizon_multiple >}} of their deposit, which still beats a conventional retirement account. See [Earth Optimization Prize](../strategy/earth-optimization-prize.qmd) [@earth-optimization-prize-paper-2025] and [Earth Optimization Prize Fund](../economics/earth-optimization-prize-fund.qmd).
+A pool of money held in assurance contract for {{< var destructive_economy_50pct_year >}}. If the treaty passes or two terminal-metric targets are hit (global healthy life expectancy reaching {{< var prize_target_hale_year_15 >}}, global median income reaching {{< var prize_target_median_income_year_15 >}}), the pool routes to Earth Optimization Points holders (humans who recruited verified treaty-register signups through their referral links). If neither happens, depositors split the pool pro rata at approximately {{< var prize_pool_horizon_multiple >}} of their deposit, which still beats a conventional retirement account. See [Earth Optimization Prize](../strategy/earth-optimization-prize.qmd) [@earth-optimization-prize-paper-2025] and [Earth Optimization Prize Fund](../economics/earth-optimization-prize-fund.qmd).
 
 ## How To Submit Corrections
 

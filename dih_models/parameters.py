@@ -3867,11 +3867,14 @@ WAR_TRIAL_REDIRECT_PATIENT_SLOTS_PER_LIVING_HUMAN = Parameter(
 # full-life damages calculations and as the YLL anchor in the regulatory-delay QALY chain.
 # Moved here from later in the file so lost-prosperity-only damages params can reference it.
 GLOBAL_LIFE_EXPECTANCY_2024 = Parameter(
-    79,
+    73.4,
     manual_ref="knowledge/appendix/invisible-graveyard.qmd",
     source_ref=ReferenceID.WHO_GLOBAL_HEALTH_ESTIMATES_2024,
     source_type="external",
-    description="Global life expectancy (2024)",
+    description="Global life expectancy at birth (2024), WHO global figure. Was previously set to 79 "
+                "(developed-country treatment access), which the adversarial review flagged: a measured "
+                "external parameter must carry the measured value; access optimism belongs in explicit "
+                "forward-looking parameters, not in a present-day data point.",
     display_name="Global Life Expectancy (2024)",
     unit="years",
     confidence="high",
@@ -3880,12 +3883,9 @@ GLOBAL_LIFE_EXPECTANCY_2024 = Parameter(
     keywords=["life expectancy", "longevity", "lifespan", "actuarial", "demographics"],
     distribution="normal",  # Normal appropriate: tight empirical data, slow-changing
     std_error=2,  # ±2 years (2.5% CV): Captures measurement + projection uncertainty
-    # Economist justification: WHO reports 73.4 (global), with regional variance:
+    # WHO global: 73.4. Regional variance:
     #   - High-income: 80.3 years (Japan 84, US 77)
     #   - Low-income: 63.7 years (Chad 54, Nigeria 55)
-    # Using 79 assumes developed-country treatment access (optimistic for global model)
-    # CRITICAL: If dFDA benefits accrue mainly to high-income countries, use 80+
-    #           If global access, weight toward lower 73-75 range
     # Tight ±2 years appropriate: actuarial tables very stable, no sudden shifts expected
     validation_min=70,  # Floor: Pessimistic scenario (global conflicts, pandemics)
     validation_max=85,  # Ceiling: Optimistic scenario (longevity breakthroughs, developed countries)
@@ -4450,6 +4450,28 @@ REGULATORY_DELAY_MEAN_AGE_OF_DEATH = Parameter(
     latex_symbol=r"Age_{death,delay}",  # LaTeX symbol for equations
 )
 
+GLOBAL_LIFE_EXPECTANCY_REMAINING_AT_AGE_60 = Parameter(
+    21.0,
+    manual_ref="knowledge/appendix/invisible-graveyard.qmd",
+    source_ref="who-gho-life-expectancy-age-60-2021",
+    source_type="external",
+    description="Additional years a person alive at age 60 can expect to live, global both-sexes "
+                "(WHO life tables: 21.0 years in 2019; 19.6 in COVID-depressed 2021). This is "
+                "CONDITIONAL remaining life expectancy, not life-expectancy-at-birth minus age: "
+                "at-birth figures carry child mortality that someone who reached 60 already "
+                "survived, so subtracting an age from them understates remaining years by roughly "
+                "40% at this age. Used for years-of-life-lost per efficacy-lag death. The GBD "
+                "reference life table would give more (~23 years at 60); WHO period tables are "
+                "the lower of the two standard choices.",
+    display_name="Remaining Life Expectancy at Age 60 (Global)",
+    unit="years",
+    confidence="high",
+    distribution="normal",
+    confidence_interval=(19.6, 22.0),
+    keywords=["life expectancy", "age 60", "remaining years", "conditional", "WHO", "life table"],
+    latex_symbol=r"e_{60}",
+)
+
 # Expected life extension from 1% treaty research acceleration (25x trial capacity)
 # Bounds are physically constrained: 0 (failure) to accident-limited lifespan - current
 # Distribution encodes beliefs about where in that range we'll land
@@ -4537,19 +4559,27 @@ CHRONIC_DISEASE_DISABILITY_WEIGHT = Parameter(
 
 # Morbidity Analysis (DALYs) - Based on Disease Eradication Delay Model
 DFDA_EFFICACY_LAG_ELIMINATION_YLL = Parameter(
-    DFDA_EFFICACY_LAG_ELIMINATION_DEATHS_AVERTED * (GLOBAL_LIFE_EXPECTANCY_2024 - REGULATORY_DELAY_MEAN_AGE_OF_DEATH),
+    DFDA_EFFICACY_LAG_ELIMINATION_DEATHS_AVERTED
+    * (GLOBAL_LIFE_EXPECTANCY_REMAINING_AT_AGE_60 - (REGULATORY_DELAY_MEAN_AGE_OF_DEATH - 60)),
     manual_ref="knowledge/appendix/invisible-graveyard.qmd",
     source_type="calculated",
-    description="Years of Life Lost from disease eradication delay deaths (PRIMARY estimate)",
+    description="Years of Life Lost from disease eradication delay deaths (PRIMARY estimate). "
+                "Years lost per death = WHO conditional remaining life expectancy at 60, adjusted "
+                "down to the mean lag-death age of 62 (~19 years/death). Replaces life-expectancy-"
+                "at-birth minus age, which mixed an at-birth measure (carrying child mortality the "
+                "deceased already survived) with a conditional question and understated the loss "
+                "by ~40%. The linear age adjustment slightly understates remaining years "
+                "(conditional life expectancy falls by less than one year per year of age).",
     display_name="Years of Life Lost from Disease Eradication Delay",
     unit="years",
-    formula="DEATHS_TOTAL × (LIFE_EXPECTANCY - MEAN_AGE_OF_DEATH)",
+    formula="DEATHS_TOTAL × (REMAINING_LIFE_EXPECTANCY_AT_60 - (MEAN_AGE_OF_DEATH - 60))",
     confidence="medium",
     keywords=["disease eradication", "YLL", "years of life lost", "disease burden", "mortality burden"],
-    inputs=["DFDA_EFFICACY_LAG_ELIMINATION_DEATHS_AVERTED", "GLOBAL_LIFE_EXPECTANCY_2024", "REGULATORY_DELAY_MEAN_AGE_OF_DEATH"],
-    compute=lambda ctx: ctx["DFDA_EFFICACY_LAG_ELIMINATION_DEATHS_AVERTED"] * (ctx["GLOBAL_LIFE_EXPECTANCY_2024"] - ctx["REGULATORY_DELAY_MEAN_AGE_OF_DEATH"]),
+    inputs=["DFDA_EFFICACY_LAG_ELIMINATION_DEATHS_AVERTED", "GLOBAL_LIFE_EXPECTANCY_REMAINING_AT_AGE_60", "REGULATORY_DELAY_MEAN_AGE_OF_DEATH"],
+    compute=lambda ctx: ctx["DFDA_EFFICACY_LAG_ELIMINATION_DEATHS_AVERTED"]
+    * (ctx["GLOBAL_LIFE_EXPECTANCY_REMAINING_AT_AGE_60"] - (ctx["REGULATORY_DELAY_MEAN_AGE_OF_DEATH"] - 60)),
     latex_symbol=r"YLL_{lag}",  # LaTeX symbol for equations
-)  # 7.63B years
+)  # ~7.9B years
 
 DFDA_EFFICACY_LAG_ELIMINATION_YLD = Parameter(
     DFDA_EFFICACY_LAG_ELIMINATION_DEATHS_AVERTED * REGULATORY_DELAY_SUFFERING_PERIOD_YEARS * CHRONIC_DISEASE_DISABILITY_WEIGHT,
@@ -4776,19 +4806,27 @@ EXISTING_DRUGS_EFFICACY_LAG_DEATHS_TOTAL = Parameter(
 )  # 98.4M total deaths (central estimate)
 
 EXISTING_DRUGS_EFFICACY_LAG_ECONOMIC_LOSS = Parameter(
-    EXISTING_DRUGS_EFFICACY_LAG_DEATHS_TOTAL * (GLOBAL_LIFE_EXPECTANCY_2024 - REGULATORY_DELAY_MEAN_AGE_OF_DEATH) * STANDARD_ECONOMIC_QALY_VALUE_USD,
+    EXISTING_DRUGS_EFFICACY_LAG_DEATHS_TOTAL
+    * (GLOBAL_LIFE_EXPECTANCY_REMAINING_AT_AGE_60 - (REGULATORY_DELAY_MEAN_AGE_OF_DEATH - 60))
+    * STANDARD_ECONOMIC_QALY_VALUE_USD,
     manual_ref="knowledge/appendix/invisible-graveyard.qmd",
     source_type="calculated",
-    description="Total economic loss from delaying existing drugs over 8.2-year efficacy lag. One-time benefit of eliminating Phase 2-4 delay. Excludes innovation acceleration effects.",
+    description="Total economic loss from delaying existing drugs over 8.2-year efficacy lag. "
+                "One-time benefit of eliminating Phase 2-4 delay. Excludes innovation acceleration "
+                "effects. Years lost per death uses WHO conditional remaining life expectancy at "
+                "60 adjusted to the mean lag-death age (~19 years/death), not life-expectancy-at-"
+                "birth minus age, which understated remaining years by ~40%.",
     display_name="Total Economic Loss from Historical Progress Delays",
     unit="USD",
-    formula="DEATHS_TOTAL × YLL × VSLY",
+    formula="DEATHS_TOTAL × (REMAINING_LIFE_EXPECTANCY_AT_60 - (MEAN_AGE_OF_DEATH - 60)) × VSLY",
     confidence="medium",  # Inherited from PHARMA_LIVES_SAVED_ANNUAL uncertainty
-    keywords=["$251t", "historical", "total", "one-time", "existing drugs"],
-    inputs=['GLOBAL_LIFE_EXPECTANCY_2024', 'EXISTING_DRUGS_EFFICACY_LAG_DEATHS_TOTAL', 'REGULATORY_DELAY_MEAN_AGE_OF_DEATH', 'STANDARD_ECONOMIC_QALY_VALUE_USD'],
-    compute=lambda ctx: ctx["EXISTING_DRUGS_EFFICACY_LAG_DEATHS_TOTAL"] * (ctx["GLOBAL_LIFE_EXPECTANCY_2024"] - ctx["REGULATORY_DELAY_MEAN_AGE_OF_DEATH"]) * ctx["STANDARD_ECONOMIC_QALY_VALUE_USD"],
+    keywords=["historical", "total", "one-time", "existing drugs", "efficacy lag"],
+    inputs=['GLOBAL_LIFE_EXPECTANCY_REMAINING_AT_AGE_60', 'EXISTING_DRUGS_EFFICACY_LAG_DEATHS_TOTAL', 'REGULATORY_DELAY_MEAN_AGE_OF_DEATH', 'STANDARD_ECONOMIC_QALY_VALUE_USD'],
+    compute=lambda ctx: ctx["EXISTING_DRUGS_EFFICACY_LAG_DEATHS_TOTAL"]
+    * (ctx["GLOBAL_LIFE_EXPECTANCY_REMAINING_AT_AGE_60"] - (ctx["REGULATORY_DELAY_MEAN_AGE_OF_DEATH"] - 60))
+    * ctx["STANDARD_ECONOMIC_QALY_VALUE_USD"],
     latex_symbol=r"Loss_{lag}",  # LaTeX symbol for equations
-)  # $251T total (existing drugs only)
+)  # ~$290T total (existing drugs only)
 
 # DELETED: EFFICACY_LAG_WITH_INNOVATION_CASCADE_DEATHS_TOTAL and EFFICACY_LAG_WITH_INNOVATION_CASCADE_ECONOMIC_LOSS
 # Reason: These used an arbitrary 2× "innovation cascade" multiplier. Replaced by the more rigorous
@@ -7442,13 +7480,46 @@ GLOBAL_HOUSEHOLD_WEALTH_USD = Parameter(
     latex_symbol=r"Wealth_{household}",  # LaTeX symbol for equations
 )  # $454T
 
+# ---
+# THE RATCHET KNOB (single source for the treaty take-hold schedule)
+# ---
+# The IAB-ratchet schedule is 1% x 3y -> 2% x 4y -> 5% x 5y -> terminal thereafter.
+# The terminal share is THE ratchet assumption, parameterized exactly once so that
+# (a) every treaty-trajectory number binds the same knob, and (b) setting it to 0.01
+# turns ratcheting OFF (the treaty stays at 1% forever) across the entire book in
+# one edit. Intermediate steps degrade gracefully: years 4-7 use min(2%, terminal),
+# years 8-12 use min(5%, terminal).
+
+TREATY_RATCHET_TERMINAL_SHARE = Parameter(
+    0.10,
+    manual_ref="knowledge/economics/peace-dividend.qmd",
+    source_type="definition",
+    description="Terminal share of military spending redirected under the IAB-ratchet take-hold "
+                "schedule (1% for 3 years, 2% for 4, 5% for 5, terminal thereafter). The single "
+                "ratchet knob: every treaty-trajectory parameter binds it, so setting it to 0.01 "
+                "switches ratcheting off everywhere (the treaty stays at its initial 1% forever) "
+                "and every treaty number degrades to its flat-1% bound. Uncertainty spans "
+                "never-expands (0.01, the 95% lower bound) to overshooting the schedule (0.19): "
+                "expansion is driven by bondholder lobbying incentives, which do not stop at 10% "
+                "if they work at all.",
+    display_name="Treaty Ratchet Terminal Redirect Share",
+    unit="percent",
+    confidence="low",
+    distribution="normal",
+    confidence_interval=(0.01, 0.19),
+    keywords=["ratchet", "terminal", "treaty", "expansion", "schedule", "knob", "iab"],
+    latex_symbol=r"s_{ratchet}",
+)
+
+_S_ratchet = float(TREATY_RATCHET_TERMINAL_SHARE)
+
 # Cumulative treaty funding over 20 years WITH IAB ratchet expansion
 TREATY_CUMULATIVE_20YR_WITH_RATCHET = Parameter(
     GLOBAL_MILITARY_SPENDING_ANNUAL_2024 * (
-        0.01 * 3 +    # Years 1-3: 1%
-        0.02 * 4 +    # Years 4-7: 2%
-        0.05 * 5 +    # Years 8-12: 5%
-        0.10 * 8      # Years 13-20: 10%
+        0.01 * 3                        # Years 1-3: 1%
+        + min(0.02, _S_ratchet) * 4     # Years 4-7: 2%
+        + min(0.05, _S_ratchet) * 5     # Years 8-12: 5%
+        + _S_ratchet * 8                # Years 13-20: terminal
     ),
     manual_ref="knowledge/economics/peace-dividend.qmd",
     source_type="calculated",
@@ -7456,11 +7527,14 @@ TREATY_CUMULATIVE_20YR_WITH_RATCHET = Parameter(
                 "Expansion driven by bondholder lobbying incentives (10% of treaty inflows).",
     display_name="Cumulative Treaty Funding over 20 Years with IAB Ratchet Expansion",
     unit="USD",
-    formula="GLOBAL_MILITARY × (0.01×3 + 0.02×4 + 0.05×5 + 0.10×8)",
+    formula="GLOBAL_MILITARY × (0.01×3 + min(0.02, TREATY_RATCHET_TERMINAL_SHARE)×4 + min(0.05, TREATY_RATCHET_TERMINAL_SHARE)×5 + TREATY_RATCHET_TERMINAL_SHARE×8)",
     keywords=["cumulative", "20 year", "ratchet", "expansion", "dynamic", "iab", "roadmap"],
-    inputs=["GLOBAL_MILITARY_SPENDING_ANNUAL_2024"],
+    inputs=["GLOBAL_MILITARY_SPENDING_ANNUAL_2024", "TREATY_RATCHET_TERMINAL_SHARE"],
     compute=lambda ctx: ctx["GLOBAL_MILITARY_SPENDING_ANNUAL_2024"] * (
-        0.01 * 3 + 0.02 * 4 + 0.05 * 5 + 0.10 * 8
+        0.01 * 3
+        + min(0.02, ctx["TREATY_RATCHET_TERMINAL_SHARE"]) * 4
+        + min(0.05, ctx["TREATY_RATCHET_TERMINAL_SHARE"]) * 5
+        + ctx["TREATY_RATCHET_TERMINAL_SHARE"] * 8
     ),
     latex_symbol=r"Fund_{20yr,ratchet}",
 )
@@ -7485,23 +7559,27 @@ WAR_COSTS_CUMULATIVE_20YR_CURRENT_TRAJECTORY = Parameter(
 # Assumes war costs decline proportionally to military spending cuts (e=1.0)
 WAR_COSTS_SAVED_PEACE_TRAJECTORY_20YR = Parameter(
     GLOBAL_ANNUAL_DIRECT_INDIRECT_WAR_COST * (
-        0.01 * 3 +    # Years 1-3: 1% reduction
-        0.02 * 4 +    # Years 4-7: 2% reduction
-        0.05 * 5 +    # Years 8-12: 5% reduction
-        0.10 * 8      # Years 13-20: 10% reduction
+        0.01 * 3                        # Years 1-3: 1% reduction
+        + min(0.02, _S_ratchet) * 4     # Years 4-7: 2% reduction
+        + min(0.05, _S_ratchet) * 5     # Years 8-12: 5% reduction
+        + _S_ratchet * 8                # Years 13-20: terminal
     ),
     manual_ref="knowledge/economics/peace-dividend.qmd",
     source_type="calculated",
     description="Cumulative war costs saved over 20 years as treaty expands via IAB ratchet. "
-                "Assumes war costs decline proportionally to spending cuts (e=1.0). "
-                "Conservative: Pape research suggests e>1.0 due to terrorism feedback loops.",
+                "Assumes war costs decline proportionally to spending cuts (e=1.0); "
+                "Pape research suggests e>1.0 due to terrorism feedback loops, so the "
+                "proportional assumption sits at the low end of the evidence.",
     display_name="War Costs Saved via Peace Trajectory (20yr)",
     unit="USD",
-    formula="GLOBAL_ANNUAL_DIRECT_INDIRECT_WAR_COST × (0.01×3 + 0.02×4 + 0.05×5 + 0.10×8)",
+    formula="GLOBAL_ANNUAL_DIRECT_INDIRECT_WAR_COST × (0.01×3 + min(0.02, TREATY_RATCHET_TERMINAL_SHARE)×4 + min(0.05, TREATY_RATCHET_TERMINAL_SHARE)×5 + TREATY_RATCHET_TERMINAL_SHARE×8)",
     keywords=["war costs", "savings", "peace", "trajectory", "ratchet", "20 year", "moronia"],
-    inputs=["GLOBAL_ANNUAL_DIRECT_INDIRECT_WAR_COST"],
+    inputs=["GLOBAL_ANNUAL_DIRECT_INDIRECT_WAR_COST", "TREATY_RATCHET_TERMINAL_SHARE"],
     compute=lambda ctx: ctx["GLOBAL_ANNUAL_DIRECT_INDIRECT_WAR_COST"] * (
-        0.01 * 3 + 0.02 * 4 + 0.05 * 5 + 0.10 * 8
+        0.01 * 3
+        + min(0.02, ctx["TREATY_RATCHET_TERMINAL_SHARE"]) * 4
+        + min(0.05, ctx["TREATY_RATCHET_TERMINAL_SHARE"]) * 5
+        + ctx["TREATY_RATCHET_TERMINAL_SHARE"] * 8
     ),
     latex_symbol=r"Savings_{war,20yr}",
 )
@@ -11155,74 +11233,86 @@ WISHONIA_MILITARY_REALLOCATION_PHYSICAL_MAX_SHARE = Parameter(
 )
 
 TREATY_EFFECTIVE_REALLOCATION_SHARE_YEAR_15 = Parameter(
-    (0.01 * 3 + 0.02 * 4 + 0.05 * 5 + 0.10 * 3) / 15,
+    (0.01 * 3 + min(0.02, _S_ratchet) * 4 + min(0.05, _S_ratchet) * 5 + _S_ratchet * 3) / 15,
     manual_ref="knowledge/strategy/earth-optimization-prize.qmd",
-    source_type="definition",
-    distribution="fixed",
-    description="Average military-to-medicine reallocation share over 15 years under the optimistic treaty take-hold path "
-                "(1% for 3 years, 2% for 4 years, 5% for 5 years, 10% for 3 years).",
+    source_type="calculated",
+    description="Average military-to-medicine reallocation share over 15 years under the treaty "
+                "take-hold path (1% for 3 years, 2% for 4 years, 5% for 5 years, terminal ratchet "
+                "share for 3 years). Binds the single ratchet knob: at "
+                "TREATY_RATCHET_TERMINAL_SHARE = 0.01 this degrades to a flat 1%.",
     display_name="Treaty Effective Reallocation Share (Year 15)",
     unit="rate",
-    formula="(0.01×3 + 0.02×4 + 0.05×5 + 0.10×3) / 15",
-    keywords=["treaty", "reallocation", "share", "15 year", "optimistic"],
+    formula="(0.01×3 + min(0.02, TREATY_RATCHET_TERMINAL_SHARE)×4 + min(0.05, TREATY_RATCHET_TERMINAL_SHARE)×5 + TREATY_RATCHET_TERMINAL_SHARE×3) / 15",
+    inputs=["TREATY_RATCHET_TERMINAL_SHARE"],
+    compute=lambda ctx: (
+        0.01 * 3
+        + min(0.02, ctx["TREATY_RATCHET_TERMINAL_SHARE"]) * 4
+        + min(0.05, ctx["TREATY_RATCHET_TERMINAL_SHARE"]) * 5
+        + ctx["TREATY_RATCHET_TERMINAL_SHARE"] * 3
+    ) / 15,
+    keywords=["treaty", "reallocation", "share", "15 year", "ratchet"],
     latex_symbol=r"\bar{s}_{treaty,15}",
 )
 
 TREATY_EFFECTIVE_REALLOCATION_SHARE_YEAR_20 = Parameter(
-    (0.01 * 3 + 0.02 * 4 + 0.05 * 5 + 0.10 * 8) / 20,
+    (0.01 * 3 + min(0.02, _S_ratchet) * 4 + min(0.05, _S_ratchet) * 5 + _S_ratchet * 8) / 20,
     manual_ref="knowledge/appendix/political-dysfunction-tax.qmd",
-    source_type="definition",
-    distribution="fixed",
-    description="Average military-to-medicine reallocation share over 20 years under the optimistic treaty take-hold path "
-                "(1% for 3 years, 2% for 4 years, 5% for 5 years, 10% for 8 years).",
+    source_type="calculated",
+    description="Average military-to-medicine reallocation share over 20 years under the treaty "
+                "take-hold path (1% for 3 years, 2% for 4 years, 5% for 5 years, terminal ratchet "
+                "share for 8 years). Binds the single ratchet knob: at "
+                "TREATY_RATCHET_TERMINAL_SHARE = 0.01 this degrades to a flat 1%.",
     display_name="Treaty Effective Reallocation Share (Year 20)",
     unit="rate",
-    formula="(0.01×3 + 0.02×4 + 0.05×5 + 0.10×8) / 20",
-    keywords=["treaty", "reallocation", "share", "20 year", "optimistic"],
+    formula="(0.01×3 + min(0.02, TREATY_RATCHET_TERMINAL_SHARE)×4 + min(0.05, TREATY_RATCHET_TERMINAL_SHARE)×5 + TREATY_RATCHET_TERMINAL_SHARE×8) / 20",
+    inputs=["TREATY_RATCHET_TERMINAL_SHARE"],
+    compute=lambda ctx: (
+        0.01 * 3
+        + min(0.02, ctx["TREATY_RATCHET_TERMINAL_SHARE"]) * 4
+        + min(0.05, ctx["TREATY_RATCHET_TERMINAL_SHARE"]) * 5
+        + ctx["TREATY_RATCHET_TERMINAL_SHARE"] * 8
+    ) / 20,
+    keywords=["treaty", "reallocation", "share", "20 year", "ratchet"],
     latex_symbol=r"\bar{s}_{treaty,20}",
 )
 
 TREATY_DISEASE_CURE_FRACTION_20YR = Parameter(
     min(
         1.0,
-        NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR
-        * (
-            3 * min(DFDA_TRIAL_CAPACITY_MULTIPLIER * (0.01 / 0.01), DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL)
-            + 4 * min(DFDA_TRIAL_CAPACITY_MULTIPLIER * (0.02 / 0.01), DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL)
-            + 5 * min(DFDA_TRIAL_CAPACITY_MULTIPLIER * (0.05 / 0.01), DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL)
-            + 8 * min(DFDA_TRIAL_CAPACITY_MULTIPLIER * (0.10 / 0.01), DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL)
+        (
+            3 * min(float(DFDA_TRIAL_CAPACITY_MULTIPLIER) * (0.01 / 0.01), float(DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL))
+            + 4 * min(float(DFDA_TRIAL_CAPACITY_MULTIPLIER) * (min(0.02, _S_ratchet) / 0.01), float(DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL))
+            + 5 * min(float(DFDA_TRIAL_CAPACITY_MULTIPLIER) * (min(0.05, _S_ratchet) / 0.01), float(DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL))
+            + 8 * min(float(DFDA_TRIAL_CAPACITY_MULTIPLIER) * (_S_ratchet / 0.01), float(DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL))
         )
-        / DISEASES_WITHOUT_EFFECTIVE_TREATMENT,
+        / float(STATUS_QUO_QUEUE_CLEARANCE_YEARS),
     ),
     manual_ref="knowledge/appendix/political-dysfunction-tax.qmd",
     source_type="calculated",
-    description="Treaty disease-cure fraction over 20 years under the optimistic treaty take-hold path. "
-                "The initial 1% treaty expands to 2%, then 5%, then 10%, with trial-throughput scaling linearly "
-                "with treaty funding until it hits the physical participant ceiling. "
-                "Cumulative throughput is capped by the physical participant ceiling.",
-    display_name="Treaty Disease Cure Fraction (20yr, Take-Hold Path)",
+    description="Fraction of currently untreatable diseases with a first effective treatment by "
+                "year 20 under the treaty: queue progress integrated over the ratchet schedule, "
+                "with trial capacity scaling linearly with funding up to the physical participant "
+                "ceiling. Binds the single ratchet knob: at TREATY_RATCHET_TERMINAL_SHARE = 0.01 "
+                "(ratchet off) this degrades to 20/36 of the queue (~56%); on the central schedule "
+                "the queue clears around year 12, so the central is 100%. The ~36-year "
+                "queue-clearance figure quoted elsewhere is the flat-1% case by construction.",
+    display_name="Treaty Disease Cure Fraction (20yr, Ratchet Schedule)",
     unit="rate",
-    formula="min(1.0, NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR × (3×min(TRIAL_CAPACITY_MULTIPLIER×1, MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL) + 4×min(TRIAL_CAPACITY_MULTIPLIER×2, MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL) + 5×min(TRIAL_CAPACITY_MULTIPLIER×5, MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL) + 8×min(TRIAL_CAPACITY_MULTIPLIER×10, MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL)) ÷ DISEASES_WITHOUT_EFFECTIVE_TREATMENT)",
-    inputs=[
-        "NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR",
-        "DFDA_TRIAL_CAPACITY_MULTIPLIER",
-        "DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL",
-        "DISEASES_WITHOUT_EFFECTIVE_TREATMENT",
-    ],
+    formula="min(1.0, (3×min(DFDA_TRIAL_CAPACITY_MULTIPLIER×(0.01/0.01), DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL) + 4×min(DFDA_TRIAL_CAPACITY_MULTIPLIER×(min(0.02, TREATY_RATCHET_TERMINAL_SHARE)/0.01), DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL) + 5×min(DFDA_TRIAL_CAPACITY_MULTIPLIER×(min(0.05, TREATY_RATCHET_TERMINAL_SHARE)/0.01), DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL) + 8×min(DFDA_TRIAL_CAPACITY_MULTIPLIER×(TREATY_RATCHET_TERMINAL_SHARE/0.01), DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL)) ÷ STATUS_QUO_QUEUE_CLEARANCE_YEARS)",
+    inputs=["DFDA_TRIAL_CAPACITY_MULTIPLIER", "DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL",
+            "TREATY_RATCHET_TERMINAL_SHARE", "STATUS_QUO_QUEUE_CLEARANCE_YEARS"],
     compute=lambda ctx: min(
         1.0,
-        ctx["NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR"]
-        * (
+        (
             3 * min(ctx["DFDA_TRIAL_CAPACITY_MULTIPLIER"] * (0.01 / 0.01), ctx["DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL"])
-            + 4 * min(ctx["DFDA_TRIAL_CAPACITY_MULTIPLIER"] * (0.02 / 0.01), ctx["DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL"])
-            + 5 * min(ctx["DFDA_TRIAL_CAPACITY_MULTIPLIER"] * (0.05 / 0.01), ctx["DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL"])
-            + 8 * min(ctx["DFDA_TRIAL_CAPACITY_MULTIPLIER"] * (0.10 / 0.01), ctx["DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL"])
+            + 4 * min(ctx["DFDA_TRIAL_CAPACITY_MULTIPLIER"] * (min(0.02, ctx["TREATY_RATCHET_TERMINAL_SHARE"]) / 0.01), ctx["DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL"])
+            + 5 * min(ctx["DFDA_TRIAL_CAPACITY_MULTIPLIER"] * (min(0.05, ctx["TREATY_RATCHET_TERMINAL_SHARE"]) / 0.01), ctx["DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL"])
+            + 8 * min(ctx["DFDA_TRIAL_CAPACITY_MULTIPLIER"] * (ctx["TREATY_RATCHET_TERMINAL_SHARE"] / 0.01), ctx["DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL"])
         )
-        / ctx["DISEASES_WITHOUT_EFFECTIVE_TREATMENT"],
+        / ctx["STATUS_QUO_QUEUE_CLEARANCE_YEARS"],
     ),
-    keywords=["treaty", "disease", "cure fraction", "20 year", "optimistic", "ratchet"],
+    keywords=["treaty", "disease", "cure fraction", "20 year", "queue", "ratchet"],
     latex_symbol=r"f_{cure,20,treaty}",
-    distribution="fixed",  # Saturates at 1.0 ceiling: raw ratio is ~3.2x, every MC sample clips
 )
 
 TREATY_REDIRECT_GDP_GROWTH_BONUS_YEAR_20 = Parameter(
@@ -11291,28 +11381,38 @@ TREATY_CYBERCRIME_RECOVERY_GDP_GROWTH_BONUS_YEAR_20 = Parameter(
     latex_symbol=r"g_{cyber,treaty,20}",
 )
 
+TREATY_HEALTH_RECOVERY_ANNUALIZATION_YEARS = Parameter(
+    20,
+    manual_ref="knowledge/economics/gdp-trajectories.qmd",
+    source_type="definition",
+    description="Annualization horizon for the treaty health recovery GDP-drag term.",
+    display_name="Treaty Health Recovery Annualization Horizon",
+    unit="years",
+    keywords=["treaty", "GDP", "growth", "health", "annualization", "20 year"],
+    latex_symbol=r"H_{health,treaty}",
+    distribution="fixed",
+)
+
 TREATY_HEALTH_RECOVERY_GDP_GROWTH_BONUS_YEAR_20 = Parameter(
-    ((1 + TREATY_DISEASE_CURE_FRACTION_20YR * DISEASE_BURDEN_GDP_DRAG_PCT + (EXISTING_DRUGS_EFFICACY_LAG_ECONOMIC_LOSS / GLOBAL_GDP_2025)) ** (1 / 20)) - 1,
+    ((1 + TREATY_DISEASE_CURE_FRACTION_20YR * DISEASE_BURDEN_GDP_DRAG_PCT) ** (1 / TREATY_HEALTH_RECOVERY_ANNUALIZATION_YEARS)) - 1,
     manual_ref="knowledge/appendix/political-dysfunction-tax.qmd",
     source_type="calculated",
-    description="Annualized GDP growth bonus by year 20 from lower disease burden plus eliminating existing-drug efficacy lag under the treaty path.",
+    description="Annualized GDP growth bonus by year 20 from lower disease burden under the treaty path.",
     display_name="Treaty Health Recovery GDP Growth Bonus (Year 20)",
     unit="rate",
-    formula="((1 + TREATY_DISEASE_CURE_FRACTION_20YR × DISEASE_BURDEN_GDP_DRAG_PCT + (EXISTING_DRUGS_EFFICACY_LAG_ECONOMIC_LOSS ÷ GLOBAL_GDP_2025))^(1/20)) - 1",
+    formula="((1 + TREATY_DISEASE_CURE_FRACTION_20YR × DISEASE_BURDEN_GDP_DRAG_PCT)^(1 ÷ TREATY_HEALTH_RECOVERY_ANNUALIZATION_YEARS)) - 1",
     inputs=[
         "TREATY_DISEASE_CURE_FRACTION_20YR",
         "DISEASE_BURDEN_GDP_DRAG_PCT",
-        "EXISTING_DRUGS_EFFICACY_LAG_ECONOMIC_LOSS",
-        "GLOBAL_GDP_2025",
+        "TREATY_HEALTH_RECOVERY_ANNUALIZATION_YEARS",
     ],
     compute=lambda ctx: (
         (
             1
             + ctx["TREATY_DISEASE_CURE_FRACTION_20YR"] * ctx["DISEASE_BURDEN_GDP_DRAG_PCT"]
-            + (ctx["EXISTING_DRUGS_EFFICACY_LAG_ECONOMIC_LOSS"] / ctx["GLOBAL_GDP_2025"])
-        ) ** (1 / 20)
+        ) ** (1 / ctx["TREATY_HEALTH_RECOVERY_ANNUALIZATION_YEARS"])
     ) - 1,
-    keywords=["treaty", "GDP", "growth", "health", "disease burden", "efficacy lag", "20 year"],
+    keywords=["treaty", "GDP", "growth", "health", "disease burden", "20 year"],
     latex_symbol=r"g_{health,treaty,20}",
 )
 
@@ -11401,7 +11501,7 @@ TREATY_TRAJECTORY_GDP_YEAR_20 = Parameter(
     source_type="calculated",
     description="Projected global GDP at year 20 under the optimistic treaty take-hold path. "
                 "Compounds baseline growth plus explicit military redirect spillovers, peace dividend recovery, "
-                "cybercrime drag recovery, and health recovery from disease cures and faster deployment.",
+                "cybercrime drag recovery, and health recovery from lower disease burden.",
     display_name="Treaty Trajectory GDP at Year 20",
     unit="USD",
     formula="GLOBAL_GDP_2025 × (1 + GDP_BASELINE_GROWTH_RATE + TREATY_REDIRECT_GDP_GROWTH_BONUS_YEAR_20 + TREATY_PEACE_RECOVERY_GDP_GROWTH_BONUS_YEAR_20 + TREATY_CYBERCRIME_RECOVERY_GDP_GROWTH_BONUS_YEAR_20 + TREATY_HEALTH_RECOVERY_GDP_GROWTH_BONUS_YEAR_20)^20",
@@ -11690,42 +11790,39 @@ GLOBAL_POPULATION_2040_PROJECTED = Parameter(
 TREATY_DISEASE_CURE_FRACTION_15YR = Parameter(
     min(
         1.0,
-        NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR
-        * (
-            3 * min(DFDA_TRIAL_CAPACITY_MULTIPLIER * (0.01 / 0.01), DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL)
-            + 4 * min(DFDA_TRIAL_CAPACITY_MULTIPLIER * (0.02 / 0.01), DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL)
-            + 5 * min(DFDA_TRIAL_CAPACITY_MULTIPLIER * (0.05 / 0.01), DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL)
-            + 3 * min(DFDA_TRIAL_CAPACITY_MULTIPLIER * (0.10 / 0.01), DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL)
+        (
+            3 * min(float(DFDA_TRIAL_CAPACITY_MULTIPLIER) * (0.01 / 0.01), float(DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL))
+            + 4 * min(float(DFDA_TRIAL_CAPACITY_MULTIPLIER) * (min(0.02, _S_ratchet) / 0.01), float(DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL))
+            + 5 * min(float(DFDA_TRIAL_CAPACITY_MULTIPLIER) * (min(0.05, _S_ratchet) / 0.01), float(DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL))
+            + 3 * min(float(DFDA_TRIAL_CAPACITY_MULTIPLIER) * (_S_ratchet / 0.01), float(DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL))
         )
-        / DISEASES_WITHOUT_EFFECTIVE_TREATMENT,
+        / float(STATUS_QUO_QUEUE_CLEARANCE_YEARS),
     ),
     manual_ref="knowledge/strategy/earth-optimization-prize.qmd",
     source_type="calculated",
-    description="Treaty disease-cure fraction over 15 years under the optimistic treaty take-hold path. "
-                "The initial 1% treaty expands to 2%, then 5%, then 10%, with trial-throughput scaling linearly "
-                "with treaty funding until it hits the physical participant ceiling. "
-                "Cumulative throughput is capped by the physical participant ceiling.",
-    display_name="Treaty Disease Cure Fraction (15yr, Take-Hold Path)",
+    description="Fraction of currently untreatable diseases with a first effective treatment by "
+                "year 15 under the treaty: queue progress integrated over the ratchet schedule, "
+                "with trial capacity scaling linearly with funding up to the physical participant "
+                "ceiling. Binds the single ratchet knob: at TREATY_RATCHET_TERMINAL_SHARE = 0.01 "
+                "(ratchet off) this degrades to 15/36 of the queue (~42%); on the central schedule "
+                "the queue clears around year 12, so the central is 100%. The ~36-year "
+                "queue-clearance figure quoted elsewhere is the flat-1% case by construction.",
+    display_name="Treaty Disease Cure Fraction (15yr, Ratchet Schedule)",
     unit="rate",
-    formula="min(1.0, NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR × (3×min(TRIAL_CAPACITY_MULTIPLIER×1, MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL) + 4×min(TRIAL_CAPACITY_MULTIPLIER×2, MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL) + 5×min(TRIAL_CAPACITY_MULTIPLIER×5, MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL) + 3×min(TRIAL_CAPACITY_MULTIPLIER×10, MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL)) ÷ DISEASES_WITHOUT_EFFECTIVE_TREATMENT)",
-    inputs=[
-        "NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR",
-        "DFDA_TRIAL_CAPACITY_MULTIPLIER",
-        "DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL",
-        "DISEASES_WITHOUT_EFFECTIVE_TREATMENT",
-    ],
+    formula="min(1.0, (3×min(DFDA_TRIAL_CAPACITY_MULTIPLIER×(0.01/0.01), DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL) + 4×min(DFDA_TRIAL_CAPACITY_MULTIPLIER×(min(0.02, TREATY_RATCHET_TERMINAL_SHARE)/0.01), DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL) + 5×min(DFDA_TRIAL_CAPACITY_MULTIPLIER×(min(0.05, TREATY_RATCHET_TERMINAL_SHARE)/0.01), DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL) + 3×min(DFDA_TRIAL_CAPACITY_MULTIPLIER×(TREATY_RATCHET_TERMINAL_SHARE/0.01), DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL)) ÷ STATUS_QUO_QUEUE_CLEARANCE_YEARS)",
+    inputs=["DFDA_TRIAL_CAPACITY_MULTIPLIER", "DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL",
+            "TREATY_RATCHET_TERMINAL_SHARE", "STATUS_QUO_QUEUE_CLEARANCE_YEARS"],
     compute=lambda ctx: min(
         1.0,
-        ctx["NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR"]
-        * (
+        (
             3 * min(ctx["DFDA_TRIAL_CAPACITY_MULTIPLIER"] * (0.01 / 0.01), ctx["DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL"])
-            + 4 * min(ctx["DFDA_TRIAL_CAPACITY_MULTIPLIER"] * (0.02 / 0.01), ctx["DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL"])
-            + 5 * min(ctx["DFDA_TRIAL_CAPACITY_MULTIPLIER"] * (0.05 / 0.01), ctx["DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL"])
-            + 3 * min(ctx["DFDA_TRIAL_CAPACITY_MULTIPLIER"] * (0.10 / 0.01), ctx["DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL"])
+            + 4 * min(ctx["DFDA_TRIAL_CAPACITY_MULTIPLIER"] * (min(0.02, ctx["TREATY_RATCHET_TERMINAL_SHARE"]) / 0.01), ctx["DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL"])
+            + 5 * min(ctx["DFDA_TRIAL_CAPACITY_MULTIPLIER"] * (min(0.05, ctx["TREATY_RATCHET_TERMINAL_SHARE"]) / 0.01), ctx["DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL"])
+            + 3 * min(ctx["DFDA_TRIAL_CAPACITY_MULTIPLIER"] * (ctx["TREATY_RATCHET_TERMINAL_SHARE"] / 0.01), ctx["DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL"])
         )
-        / ctx["DISEASES_WITHOUT_EFFECTIVE_TREATMENT"],
+        / ctx["STATUS_QUO_QUEUE_CLEARANCE_YEARS"],
     ),
-    keywords=["treaty", "disease", "cure fraction", "15 year", "optimistic", "ratchet"],
+    keywords=["treaty", "disease", "cure fraction", "15 year", "queue", "ratchet"],
     latex_symbol=r"f_{cure,15,treaty}",
 )
 
@@ -11796,27 +11893,29 @@ TREATY_CYBERCRIME_RECOVERY_GDP_GROWTH_BONUS_YEAR_15 = Parameter(
 )
 
 TREATY_HEALTH_RECOVERY_GDP_GROWTH_BONUS_YEAR_15 = Parameter(
-    ((1 + TREATY_DISEASE_CURE_FRACTION_15YR * DISEASE_BURDEN_GDP_DRAG_PCT + (EXISTING_DRUGS_EFFICACY_LAG_ECONOMIC_LOSS / GLOBAL_GDP_2025)) ** (1 / 15)) - 1,
+    ((1 + TREATY_DISEASE_CURE_FRACTION_15YR * DISEASE_BURDEN_GDP_DRAG_PCT) ** (1 / 15)) - 1,
     manual_ref="knowledge/strategy/earth-optimization-prize.qmd",
     source_type="calculated",
-    description="Annualized GDP growth bonus by year 15 from lower disease burden plus eliminating existing-drug efficacy lag under the treaty path.",
+    description="Annualized GDP growth bonus by year 15 from lower disease burden under the treaty path. "
+                "Deliberately EXCLUDES the monetized value of life-years from eliminating the existing-drug "
+                "efficacy lag, matching the year-20 model and the chapter's stated accounting rule: that "
+                "value belongs in health and welfare accounting, not in the output ledger. (The previous "
+                "version injected the $259T cumulative mortality-valuation stock into an annual growth "
+                "rate, producing a year-15 income ABOVE the year-20 income on the same trajectory.)",
     display_name="Treaty Health Recovery GDP Growth Bonus (Year 15)",
     unit="rate",
-    formula="((1 + TREATY_DISEASE_CURE_FRACTION_15YR × DISEASE_BURDEN_GDP_DRAG_PCT + (EXISTING_DRUGS_EFFICACY_LAG_ECONOMIC_LOSS ÷ GLOBAL_GDP_2025))^(1/15)) - 1",
+    formula="((1 + TREATY_DISEASE_CURE_FRACTION_15YR × DISEASE_BURDEN_GDP_DRAG_PCT)^(1/15)) - 1",
     inputs=[
         "TREATY_DISEASE_CURE_FRACTION_15YR",
         "DISEASE_BURDEN_GDP_DRAG_PCT",
-        "EXISTING_DRUGS_EFFICACY_LAG_ECONOMIC_LOSS",
-        "GLOBAL_GDP_2025",
     ],
     compute=lambda ctx: (
         (
             1
             + ctx["TREATY_DISEASE_CURE_FRACTION_15YR"] * ctx["DISEASE_BURDEN_GDP_DRAG_PCT"]
-            + (ctx["EXISTING_DRUGS_EFFICACY_LAG_ECONOMIC_LOSS"] / ctx["GLOBAL_GDP_2025"])
         ) ** (1 / 15)
     ) - 1,
-    keywords=["treaty", "GDP", "growth", "health", "disease burden", "efficacy lag", "15 year"],
+    keywords=["treaty", "GDP", "growth", "health", "disease burden", "15 year"],
     latex_symbol=r"g_{health,treaty,15}",
 )
 
@@ -12657,6 +12756,436 @@ WISHONIA_TRAJECTORY_LIFETIME_INCOME_MULTIPLIER = Parameter(
     inputs=["WISHONIA_TRAJECTORY_CUMULATIVE_LIFETIME_INCOME", "CURRENT_TRAJECTORY_CUMULATIVE_LIFETIME_INCOME"],
     compute=lambda ctx: ctx["WISHONIA_TRAJECTORY_CUMULATIVE_LIFETIME_INCOME"] / ctx["CURRENT_TRAJECTORY_CUMULATIVE_LIFETIME_INCOME"],
     latex_symbol=r"k_{lifetime,wish:earth}",
+)
+
+# ---
+# MEDIAN AFTER-TAX REAL INCOME TRACK (parallel to the GDP / mean-income track)
+# ---
+# GDP counts regrettables: pay an arsonist and then pay a firefighter and GDP rises
+# while nobody is better off (Nordhaus & Tobin's 1972 Measure of Economic Welfare
+# subtracted defense spending from output for exactly this reason). The median
+# person's consumable income is modeled as:
+#   mean income (the scenario GDP trajectories)
+#   x (1 - military share of GDP)   <- the regrettables deduction. MILITARY ONLY:
+#     hard SIPRI data, and literally what the book is about. Cybercrime is OUT of
+#     the central model (v2): loss estimates count transfers (a stolen dollar still
+#     buys bread, for the thief) and double-counted indirect costs, so subtracting
+#     them 1:1 from consumable output was wrong. Crime belongs in the collapse
+#     scenario and, eventually, in an endogenous crime-participation model (the
+#     share of people for whom extraction pays better than legitimate work, i.e.
+#     the chapter's "rational crime threshold" formalized). Documented future work.
+#   x median-to-mean ratio          <- DERIVED from Gallup's measured global median
+#     (the only survey of the middle human's income that exists), never chosen.
+#     Anchoring to the measurement and deriving the ratio kills the circularity of
+#     picking a ratio "from Gallup's range" and then claiming Gallup validates it.
+#   x (1 - erosion)^t               <- best guess ZERO: the global median's share
+#     of mean income ROSE 1990-2019 (between-country convergence); the US wedge is
+#     the extreme, not the world. The uncertainty range covers both directions.
+#   x (1 + relief x cure fraction)  <- treaty/wishonia only: cures return sick
+#     wages and out-of-pocket health costs to the people who bear them, who live
+#     at and below the middle (WHO: half a billion pushed into extreme poverty by
+#     health costs). The one pro-median channel, WHO-anchored, honest range.
+#   x (1 - effective tax rate), identical across scenarios (no thumb on the scale).
+# EPISTEMOLOGY (author's rule): deliberate accuracy + deliberate uncertainty, never
+# deliberate conservatism. Every input is a best guess with an honest range; a
+# conservative case is a low percentile of the OUTPUT distribution, not a biased
+# input. No caps, no patches, no thumbs on scales in either direction.
+# NAMING NOTE: this is a WELFARE-INCOME construct (Nordhaus-Tobin style: regrettables
+# subtracted from what the median's income can buy), not a household income statistic.
+# A defense engineer's salary IS median income; no agency deducts the missile from the
+# paycheck. Display names therefore say "consumable income".
+# The collapse branch (extraction crosses the rational-crime threshold, defection
+# cascades, GDP and median crater together toward the documented 70-90% extractive
+# equilibria) is a SEPARATE scenario in the chapter narrative, not a deduction
+# smuggled into the central path as a deterministic exponential.
+
+GALLUP_GLOBAL_MEDIAN_INCOME_PER_CAPITA = Parameter(
+    2_920,
+    manual_ref="knowledge/economics/gdp-trajectories.qmd",
+    source_ref="gallup-global-median-income-2013",
+    source_type="external",
+    description="Global median per-capita household income as measured by the Gallup World Poll "
+                "(131 countries, PPP dollars, published 2013): the only comprehensive survey-based "
+                "measurement of the middle human's income that exists. The median-to-mean ratio is "
+                "DERIVED from this anchor rather than chosen, so the model is calibrated to a "
+                "measured human. The confidence interval covers the anchor's vintage (global "
+                "medians grew after 2013, pushing the true current value above the point estimate) "
+                "and PPP-vs-market-rate conversion (pushing it below).",
+    display_name="Gallup Global Median Per-Capita Income (2013, PPP)",
+    unit="USD",
+    confidence="medium",
+    distribution="normal",
+    confidence_interval=(2_300, 3_700),
+    keywords=["gallup", "median income", "global", "survey", "anchor", "PPP", "middle person"],
+    latex_symbol=r"\tilde{y}_{gallup}",
+)
+
+GLOBAL_MILITARY_SHARE_OF_GDP = Parameter(
+    float(GLOBAL_MILITARY_SPENDING_ANNUAL_2024) / float(GLOBAL_GDP_2025),
+    manual_ref="knowledge/economics/gdp-trajectories.qmd",
+    source_type="calculated",
+    description="Military spending as a share of global GDP (SIPRI spending over IMF output). The "
+                "regrettables deduction in the median consumable-income track: output that is made "
+                "and counted but cannot be eaten. Military ONLY, by design: it is hard data and the "
+                "book's actual subject. Cybercrime was removed from this deduction (v2): loss "
+                "estimates count transfers and double-counted indirect costs, not uneaten output.",
+    display_name="Military Share of Global GDP",
+    unit="percent",
+    formula="GLOBAL_MILITARY_SPENDING_ANNUAL_2024 ÷ GLOBAL_GDP_2025",
+    inputs=["GLOBAL_MILITARY_SPENDING_ANNUAL_2024", "GLOBAL_GDP_2025"],
+    compute=lambda ctx: ctx["GLOBAL_MILITARY_SPENDING_ANNUAL_2024"] / ctx["GLOBAL_GDP_2025"],
+    keywords=["military", "share", "GDP", "regrettables", "SIPRI", "deduction"],
+    latex_symbol=r"s_{mil}",
+)
+
+GLOBAL_MEDIAN_TO_MEAN_INCOME_RATIO = Parameter(
+    float(GALLUP_GLOBAL_MEDIAN_INCOME_PER_CAPITA) / float(GLOBAL_AVG_INCOME_2025),
+    manual_ref="knowledge/economics/gdp-trajectories.qmd",
+    source_type="calculated",
+    description="Global median-to-mean income ratio, DERIVED from the Gallup anchor against mean "
+                "income (GDP per capita): the median human receives about twenty-one cents of the "
+                "average dollar. Pre-tax basis on both sides. The derivation replaces a hand-chosen "
+                "0.30 'from Gallup's range', which made the model's agreement with Gallup circular. "
+                "This single number is why GDP per capita overstates what a typical person earns by "
+                "roughly 5x.",
+    display_name="Global Median-to-Mean Income Ratio",
+    unit="ratio",
+    formula="GALLUP_GLOBAL_MEDIAN_INCOME_PER_CAPITA ÷ GLOBAL_AVG_INCOME_2025",
+    inputs=["GALLUP_GLOBAL_MEDIAN_INCOME_PER_CAPITA", "GLOBAL_AVG_INCOME_2025"],
+    compute=lambda ctx: ctx["GALLUP_GLOBAL_MEDIAN_INCOME_PER_CAPITA"] / ctx["GLOBAL_AVG_INCOME_2025"],
+    keywords=["median income", "mean income", "ratio", "inequality", "typical person", "gallup"],
+    latex_symbol=r"\rho_{med}",
+)
+
+GLOBAL_MEDIAN_SHARE_EROSION_RATE_ANNUAL = Parameter(
+    0.0,
+    manual_ref="knowledge/economics/gdp-trajectories.qmd",
+    source_ref="epi-productivity-pay-gap-2024",
+    source_type="definition",
+    description="Annual erosion of the median's share of mean income (positive = the middle "
+                "person's slice shrinks). Best guess ZERO: the GLOBAL median-to-mean ratio ROSE "
+                "1990-2019 via between-country convergence (a billion people in Asia got real "
+                "jobs), so the measured global sign favors the median; the US wedge is the extreme, "
+                "not the world. The range spans continued convergence (-0.5%/yr, the share keeps "
+                "growing) to the US-extreme construction applied globally (+0.78%/yr; EPI: "
+                "productivity +90.2% vs typical pay +33.0%, 1979-2025). Applied IDENTICALLY to the "
+                "status-quo and treaty branches, so it cancels out of every treaty-vs-current "
+                "multiplier; Wishonia excludes it (the wishocratic mechanism exists to stop share "
+                "capture). v1 set this to 0.5%/yr shrinkage as skeptic armor; that was deliberate "
+                "conservatism, replaced by deliberate accuracy plus deliberate uncertainty.",
+    display_name="Median Share Erosion Rate (Annual)",
+    unit="rate",
+    confidence="low",
+    distribution="normal",
+    confidence_interval=(-0.005, 0.0078),
+    keywords=["median", "erosion", "productivity pay gap", "convergence", "labor share"],
+    latex_symbol=r"e_{med}",
+)
+
+GLOBAL_EFFECTIVE_TAX_RATE_MEDIAN = Parameter(
+    0.25,
+    manual_ref="knowledge/economics/gdp-trajectories.qmd",
+    source_type="definition",
+    description="Effective combined tax rate (direct plus indirect) on the global median earner. "
+                "Applied IDENTICALLY across all scenarios so it shifts levels without affecting any "
+                "cross-scenario comparison: there is no pro-treaty thumb on this scale. The 'after-tax' "
+                "in the metric name is honesty about levels, not a modeling lever.",
+    display_name="Effective Tax Rate on Median Earner",
+    unit="rate",
+    confidence="low",
+    distribution="fixed",
+    keywords=["tax", "after-tax", "median", "effective rate"],
+    latex_symbol=r"\tau_{med}",
+)
+
+MEDIAN_HEALTH_BURDEN_RELIEF_SHARE = Parameter(
+    0.10,
+    manual_ref="knowledge/economics/gdp-trajectories.qmd",
+    source_ref="who-health-costs-extreme-poverty-2021",
+    source_type="definition",
+    description="Fraction by which curing ALL currently untreatable disease would raise the median "
+                "person's consumable income, beyond the mean-income effect already inside the GDP "
+                "trajectories. Mechanism: out-of-pocket health spending and sick-day wage losses "
+                "fall disproportionately on people at and below the median (WHO: about half a "
+                "billion people pushed into extreme poverty by health costs, roughly 2 billion "
+                "facing catastrophic or impoverishing health spending). Scaled by each scenario's "
+                "cure fraction, so partial cures give partial relief. The range reflects genuine "
+                "uncertainty about how much of that burden the queue's early cures relieve.",
+    display_name="Median Income Relief from Full Disease Cure",
+    unit="rate",
+    confidence="low",
+    distribution="normal",
+    confidence_interval=(0.05, 0.15),
+    keywords=["median", "health costs", "out-of-pocket", "catastrophic", "relief", "WHO", "poverty"],
+    latex_symbol=r"r_{relief}",
+)
+
+# Module helpers for the median track (existing inline style; no new functions).
+# Status quo: military share drifts at its measured SIPRI-vs-GDP differential.
+# Treaty: by years 13+ the ratchet is redirecting the terminal share of military
+# spending (TREATY_RATCHET_TERMINAL_SHARE, the single ratchet knob), so the
+# year-15/20 levels use it.
+_mil_share_0 = float(GLOBAL_MILITARY_SHARE_OF_GDP)
+_mil_drift = (1 + float(GLOBAL_MILITARY_SPENDING_REAL_CAGR_10YR)) / (1 + float(GDP_BASELINE_GROWTH_RATE))
+
+GLOBAL_MEDIAN_AFTER_TAX_INCOME_2025 = Parameter(
+    float(GLOBAL_AVG_INCOME_2025)
+    * (1 - _mil_share_0)
+    * float(GLOBAL_MEDIAN_TO_MEAN_INCOME_RATIO)
+    * (1 - float(GLOBAL_EFFECTIVE_TAX_RATE_MEDIAN)),
+    manual_ref="knowledge/economics/gdp-trajectories.qmd",
+    source_type="calculated",
+    description="Median after-tax consumable income today: mean income x (1 - military share) x "
+                "median-to-mean ratio x (1 - tax). Because the ratio is derived from the Gallup "
+                "anchor, this equals Gallup's measured median with the military slice and taxes "
+                "removed. The baseline the three scenario trajectories grow from.",
+    display_name="Global Median After-Tax Consumable Income (2025)",
+    unit="USD",
+    formula="GLOBAL_AVG_INCOME_2025 * (1 - GLOBAL_MILITARY_SHARE_OF_GDP) * GLOBAL_MEDIAN_TO_MEAN_INCOME_RATIO * (1 - GLOBAL_EFFECTIVE_TAX_RATE_MEDIAN)",
+    inputs=["GLOBAL_AVG_INCOME_2025", "GLOBAL_MILITARY_SHARE_OF_GDP",
+            "GLOBAL_MEDIAN_TO_MEAN_INCOME_RATIO", "GLOBAL_EFFECTIVE_TAX_RATE_MEDIAN"],
+    compute=lambda ctx: ctx["GLOBAL_AVG_INCOME_2025"]
+    * (1 - ctx["GLOBAL_MILITARY_SHARE_OF_GDP"])
+    * ctx["GLOBAL_MEDIAN_TO_MEAN_INCOME_RATIO"]
+    * (1 - ctx["GLOBAL_EFFECTIVE_TAX_RATE_MEDIAN"]),
+    latex_symbol=r"\tilde{m}_{0}",
+)
+
+CURRENT_TRAJECTORY_MEDIAN_AFTER_TAX_INCOME_YEAR_20 = Parameter(
+    float(CURRENT_TRAJECTORY_AVG_INCOME_YEAR_20)
+    * (1 - _mil_share_0 * _mil_drift ** 20)
+    * float(GLOBAL_MEDIAN_TO_MEAN_INCOME_RATIO)
+    * (1 - float(GLOBAL_MEDIAN_SHARE_EROSION_RATE_ANNUAL)) ** 20
+    * (1 - float(GLOBAL_EFFECTIVE_TAX_RATE_MEDIAN)),
+    manual_ref="knowledge/economics/gdp-trajectories.qmd",
+    source_type="calculated",
+    description="Median after-tax consumable income at year 20 under the status quo: the world more "
+                "or less as trended. Mean income grows at the baseline rate, the military share "
+                "drifts up at its measured SIPRI-vs-GDP differential, the median's share holds "
+                "(best guess zero erosion, range covers both directions), so the median grows "
+                "roughly with GDP per capita. v1's compounding destructive share and assumed "
+                "erosion made the median mysteriously die against 35 years of contrary observed "
+                "history; that branch is gone. The collapse scenario (extraction crosses the "
+                "rational-crime threshold and GDP craters with the median) is narrated separately, "
+                "not smuggled into this baseline.",
+    display_name="Median After-Tax Consumable Income, Status Quo (Year 20)",
+    unit="USD",
+    formula="CURRENT_TRAJECTORY_AVG_INCOME_YEAR_20 * (1 - GLOBAL_MILITARY_SHARE_OF_GDP * ((1+GLOBAL_MILITARY_SPENDING_REAL_CAGR_10YR)/(1+GDP_BASELINE_GROWTH_RATE))^20) * GLOBAL_MEDIAN_TO_MEAN_INCOME_RATIO * (1 - GLOBAL_MEDIAN_SHARE_EROSION_RATE_ANNUAL)^20 * (1 - GLOBAL_EFFECTIVE_TAX_RATE_MEDIAN)",
+    inputs=["CURRENT_TRAJECTORY_AVG_INCOME_YEAR_20", "GLOBAL_MILITARY_SHARE_OF_GDP",
+            "GLOBAL_MILITARY_SPENDING_REAL_CAGR_10YR", "GDP_BASELINE_GROWTH_RATE",
+            "GLOBAL_MEDIAN_TO_MEAN_INCOME_RATIO", "GLOBAL_MEDIAN_SHARE_EROSION_RATE_ANNUAL",
+            "GLOBAL_EFFECTIVE_TAX_RATE_MEDIAN"],
+    compute=lambda ctx: ctx["CURRENT_TRAJECTORY_AVG_INCOME_YEAR_20"]
+    * (1 - ctx["GLOBAL_MILITARY_SHARE_OF_GDP"]
+       * ((1 + ctx["GLOBAL_MILITARY_SPENDING_REAL_CAGR_10YR"]) / (1 + ctx["GDP_BASELINE_GROWTH_RATE"])) ** 20)
+    * ctx["GLOBAL_MEDIAN_TO_MEAN_INCOME_RATIO"]
+    * (1 - ctx["GLOBAL_MEDIAN_SHARE_EROSION_RATE_ANNUAL"]) ** 20
+    * (1 - ctx["GLOBAL_EFFECTIVE_TAX_RATE_MEDIAN"]),
+    latex_symbol=r"\tilde{m}_{base,20}",
+)
+
+TREATY_TRAJECTORY_MEDIAN_AFTER_TAX_INCOME_YEAR_20 = Parameter(
+    float(TREATY_TRAJECTORY_AVG_INCOME_YEAR_20)
+    * (1 - _mil_share_0 * (1 - _S_ratchet))
+    * float(GLOBAL_MEDIAN_TO_MEAN_INCOME_RATIO)
+    * (1 - float(GLOBAL_MEDIAN_SHARE_EROSION_RATE_ANNUAL)) ** 20
+    * (1 + float(MEDIAN_HEALTH_BURDEN_RELIEF_SHARE) * float(TREATY_DISEASE_CURE_FRACTION_20YR))
+    * (1 - float(GLOBAL_EFFECTIVE_TAX_RATE_MEDIAN)),
+    manual_ref="knowledge/economics/gdp-trajectories.qmd",
+    source_type="calculated",
+    description="Median after-tax consumable income at year 20 under the Treaty Trajectory. Mean "
+                "income from the treaty GDP trajectory; military share reduced by the ratchet's "
+                "terminal redirect (the single ratchet knob); the same share erosion as the status "
+                "quo (best guess zero) so distributional claims cancel out of the multiplier; plus "
+                "the one pro-median channel: cures return out-of-pocket health costs and sick wages "
+                "to the people who bear them (WHO-anchored relief share scaled by the ratchet-"
+                "schedule cure fraction).",
+    display_name="Median After-Tax Consumable Income, Treaty (Year 20)",
+    unit="USD",
+    formula="TREATY_TRAJECTORY_AVG_INCOME_YEAR_20 * (1 - GLOBAL_MILITARY_SHARE_OF_GDP * (1 - TREATY_RATCHET_TERMINAL_SHARE)) * GLOBAL_MEDIAN_TO_MEAN_INCOME_RATIO * (1 - GLOBAL_MEDIAN_SHARE_EROSION_RATE_ANNUAL)^20 * (1 + MEDIAN_HEALTH_BURDEN_RELIEF_SHARE * TREATY_DISEASE_CURE_FRACTION_20YR) * (1 - GLOBAL_EFFECTIVE_TAX_RATE_MEDIAN)",
+    inputs=["TREATY_TRAJECTORY_AVG_INCOME_YEAR_20", "GLOBAL_MILITARY_SHARE_OF_GDP",
+            "TREATY_RATCHET_TERMINAL_SHARE", "GLOBAL_MEDIAN_TO_MEAN_INCOME_RATIO",
+            "GLOBAL_MEDIAN_SHARE_EROSION_RATE_ANNUAL", "MEDIAN_HEALTH_BURDEN_RELIEF_SHARE",
+            "TREATY_DISEASE_CURE_FRACTION_20YR", "GLOBAL_EFFECTIVE_TAX_RATE_MEDIAN"],
+    compute=lambda ctx: ctx["TREATY_TRAJECTORY_AVG_INCOME_YEAR_20"]
+    * (1 - ctx["GLOBAL_MILITARY_SHARE_OF_GDP"] * (1 - ctx["TREATY_RATCHET_TERMINAL_SHARE"]))
+    * ctx["GLOBAL_MEDIAN_TO_MEAN_INCOME_RATIO"]
+    * (1 - ctx["GLOBAL_MEDIAN_SHARE_EROSION_RATE_ANNUAL"]) ** 20
+    * (1 + ctx["MEDIAN_HEALTH_BURDEN_RELIEF_SHARE"] * ctx["TREATY_DISEASE_CURE_FRACTION_20YR"])
+    * (1 - ctx["GLOBAL_EFFECTIVE_TAX_RATE_MEDIAN"]),
+    latex_symbol=r"\tilde{m}_{treaty,20}",
+)
+
+WISHONIA_TRAJECTORY_MEDIAN_AFTER_TAX_INCOME_YEAR_20 = Parameter(
+    float(WISHONIA_TRAJECTORY_AVG_INCOME_YEAR_20)
+    * (1 - _mil_share_0 * (1 - float(WISHONIA_MILITARY_REALLOCATION_PHYSICAL_MAX_SHARE)))
+    * float(GLOBAL_MEDIAN_TO_MEAN_INCOME_RATIO)
+    * (1 + float(MEDIAN_HEALTH_BURDEN_RELIEF_SHARE) * float(WISHONIA_DISEASE_CURE_FRACTION_20YR_FULL))
+    * (1 - float(GLOBAL_EFFECTIVE_TAX_RATE_MEDIAN)),
+    manual_ref="knowledge/economics/gdp-trajectories.qmd",
+    source_type="calculated",
+    description="Median after-tax consumable income at year 20 under the Wishonia Trajectory. "
+                "Claims tied to mechanisms: share erosion excluded (the wishocratic one-person-one-"
+                "vote mechanism exists precisely to stop the capture that drives the wedge), the "
+                "military share falls by the already-parameterized physical max reallocation, and "
+                "the health-burden relief channel applies at Wishonia's own full-implementation "
+                "cure fraction. Deliberately UNMODELED: the wishocratic equal-per-person allocation "
+                "of recovered dysfunction waste is pro-median by arithmetic, but that recovery is "
+                "already inside the Wishonia GDP trajectory, so modeling its distributional bonus "
+                "separately would double-count. The bonus is real and omitted; this estimate is "
+                "therefore a floor.",
+    display_name="Median After-Tax Consumable Income, Wishonia (Year 20)",
+    unit="USD",
+    formula="WISHONIA_TRAJECTORY_AVG_INCOME_YEAR_20 * (1 - GLOBAL_MILITARY_SHARE_OF_GDP*(1-WISHONIA_MILITARY_REALLOCATION_PHYSICAL_MAX_SHARE)) * GLOBAL_MEDIAN_TO_MEAN_INCOME_RATIO * (1 + MEDIAN_HEALTH_BURDEN_RELIEF_SHARE * WISHONIA_DISEASE_CURE_FRACTION_20YR_FULL) * (1 - GLOBAL_EFFECTIVE_TAX_RATE_MEDIAN)",
+    inputs=["WISHONIA_TRAJECTORY_AVG_INCOME_YEAR_20", "GLOBAL_MILITARY_SHARE_OF_GDP",
+            "WISHONIA_MILITARY_REALLOCATION_PHYSICAL_MAX_SHARE", "GLOBAL_MEDIAN_TO_MEAN_INCOME_RATIO",
+            "MEDIAN_HEALTH_BURDEN_RELIEF_SHARE", "WISHONIA_DISEASE_CURE_FRACTION_20YR_FULL",
+            "GLOBAL_EFFECTIVE_TAX_RATE_MEDIAN"],
+    compute=lambda ctx: ctx["WISHONIA_TRAJECTORY_AVG_INCOME_YEAR_20"]
+    * (1 - ctx["GLOBAL_MILITARY_SHARE_OF_GDP"] * (1 - ctx["WISHONIA_MILITARY_REALLOCATION_PHYSICAL_MAX_SHARE"]))
+    * ctx["GLOBAL_MEDIAN_TO_MEAN_INCOME_RATIO"]
+    * (1 + ctx["MEDIAN_HEALTH_BURDEN_RELIEF_SHARE"] * ctx["WISHONIA_DISEASE_CURE_FRACTION_20YR_FULL"])
+    * (1 - ctx["GLOBAL_EFFECTIVE_TAX_RATE_MEDIAN"]),
+    latex_symbol=r"\tilde{m}_{wish,20}",
+)
+
+CURRENT_TRAJECTORY_MEDIAN_AFTER_TAX_INCOME_YEAR_15 = Parameter(
+    float(CURRENT_TRAJECTORY_AVG_INCOME_YEAR_15)
+    * (1 - _mil_share_0 * _mil_drift ** 15)
+    * float(GLOBAL_MEDIAN_TO_MEAN_INCOME_RATIO)
+    * (1 - float(GLOBAL_MEDIAN_SHARE_EROSION_RATE_ANNUAL)) ** 15
+    * (1 - float(GLOBAL_EFFECTIVE_TAX_RATE_MEDIAN)),
+    manual_ref="knowledge/strategy/earth-optimization-prize.qmd",
+    source_type="calculated",
+    description="Median after-tax consumable income at year 15 under the status quo. Same "
+                "construction as the year-20 variant: mean income x (1 - military share, drifting "
+                "at its measured SIPRI-vs-GDP differential) x median-to-mean ratio x (1 - erosion, "
+                "best guess zero)^15 x (1 - tax).",
+    display_name="Median After-Tax Consumable Income, Status Quo (Year 15)",
+    unit="USD",
+    formula="CURRENT_TRAJECTORY_AVG_INCOME_YEAR_15 * (1 - GLOBAL_MILITARY_SHARE_OF_GDP * ((1+GLOBAL_MILITARY_SPENDING_REAL_CAGR_10YR)/(1+GDP_BASELINE_GROWTH_RATE))^15) * GLOBAL_MEDIAN_TO_MEAN_INCOME_RATIO * (1 - GLOBAL_MEDIAN_SHARE_EROSION_RATE_ANNUAL)^15 * (1 - GLOBAL_EFFECTIVE_TAX_RATE_MEDIAN)",
+    inputs=["CURRENT_TRAJECTORY_AVG_INCOME_YEAR_15", "GLOBAL_MILITARY_SHARE_OF_GDP",
+            "GLOBAL_MILITARY_SPENDING_REAL_CAGR_10YR", "GDP_BASELINE_GROWTH_RATE",
+            "GLOBAL_MEDIAN_TO_MEAN_INCOME_RATIO", "GLOBAL_MEDIAN_SHARE_EROSION_RATE_ANNUAL",
+            "GLOBAL_EFFECTIVE_TAX_RATE_MEDIAN"],
+    compute=lambda ctx: ctx["CURRENT_TRAJECTORY_AVG_INCOME_YEAR_15"]
+    * (1 - ctx["GLOBAL_MILITARY_SHARE_OF_GDP"]
+       * ((1 + ctx["GLOBAL_MILITARY_SPENDING_REAL_CAGR_10YR"]) / (1 + ctx["GDP_BASELINE_GROWTH_RATE"])) ** 15)
+    * ctx["GLOBAL_MEDIAN_TO_MEAN_INCOME_RATIO"]
+    * (1 - ctx["GLOBAL_MEDIAN_SHARE_EROSION_RATE_ANNUAL"]) ** 15
+    * (1 - ctx["GLOBAL_EFFECTIVE_TAX_RATE_MEDIAN"]),
+    latex_symbol=r"\tilde{m}_{base,15}",
+)
+
+TREATY_TRAJECTORY_MEDIAN_AFTER_TAX_INCOME_YEAR_15 = Parameter(
+    float(TREATY_TRAJECTORY_AVG_INCOME_YEAR_15)
+    * (1 - _mil_share_0 * (1 - _S_ratchet))
+    * float(GLOBAL_MEDIAN_TO_MEAN_INCOME_RATIO)
+    * (1 - float(GLOBAL_MEDIAN_SHARE_EROSION_RATE_ANNUAL)) ** 15
+    * (1 + float(MEDIAN_HEALTH_BURDEN_RELIEF_SHARE) * float(TREATY_DISEASE_CURE_FRACTION_15YR))
+    * (1 - float(GLOBAL_EFFECTIVE_TAX_RATE_MEDIAN)),
+    manual_ref="knowledge/strategy/earth-optimization-prize.qmd",
+    source_type="calculated",
+    description="Median after-tax consumable income at year 15 under the Treaty Trajectory. Same "
+                "construction as the year-20 variant: military share reduced by the ratchet's "
+                "terminal redirect (the single ratchet knob), same erosion as the status quo (best "
+                "guess zero) so distributional claims cancel, plus the WHO-anchored health-burden "
+                "relief channel scaled by the ratchet-schedule cure fraction. Feeds the Prize "
+                "settlement target.",
+    display_name="Median After-Tax Consumable Income, Treaty (Year 15)",
+    unit="USD",
+    formula="TREATY_TRAJECTORY_AVG_INCOME_YEAR_15 * (1 - GLOBAL_MILITARY_SHARE_OF_GDP * (1 - TREATY_RATCHET_TERMINAL_SHARE)) * GLOBAL_MEDIAN_TO_MEAN_INCOME_RATIO * (1 - GLOBAL_MEDIAN_SHARE_EROSION_RATE_ANNUAL)^15 * (1 + MEDIAN_HEALTH_BURDEN_RELIEF_SHARE * TREATY_DISEASE_CURE_FRACTION_15YR) * (1 - GLOBAL_EFFECTIVE_TAX_RATE_MEDIAN)",
+    inputs=["TREATY_TRAJECTORY_AVG_INCOME_YEAR_15", "GLOBAL_MILITARY_SHARE_OF_GDP",
+            "TREATY_RATCHET_TERMINAL_SHARE", "GLOBAL_MEDIAN_TO_MEAN_INCOME_RATIO",
+            "GLOBAL_MEDIAN_SHARE_EROSION_RATE_ANNUAL", "MEDIAN_HEALTH_BURDEN_RELIEF_SHARE",
+            "TREATY_DISEASE_CURE_FRACTION_15YR", "GLOBAL_EFFECTIVE_TAX_RATE_MEDIAN"],
+    compute=lambda ctx: ctx["TREATY_TRAJECTORY_AVG_INCOME_YEAR_15"]
+    * (1 - ctx["GLOBAL_MILITARY_SHARE_OF_GDP"] * (1 - ctx["TREATY_RATCHET_TERMINAL_SHARE"]))
+    * ctx["GLOBAL_MEDIAN_TO_MEAN_INCOME_RATIO"]
+    * (1 - ctx["GLOBAL_MEDIAN_SHARE_EROSION_RATE_ANNUAL"]) ** 15
+    * (1 + ctx["MEDIAN_HEALTH_BURDEN_RELIEF_SHARE"] * ctx["TREATY_DISEASE_CURE_FRACTION_15YR"])
+    * (1 - ctx["GLOBAL_EFFECTIVE_TAX_RATE_MEDIAN"]),
+    latex_symbol=r"\tilde{m}_{treaty,15}",
+)
+
+# ---
+# PRIZE SETTLEMENT TARGETS (single source of truth for the Game's payout trigger)
+# ---
+# The Earth Optimization Prize settles on these two parameters and nothing else.
+# Author decision 2026-06-10: targets are TREATY-trajectory year-15 values (the
+# achievable floor), not Wishonia-trajectory values (the ceiling). Before this,
+# the prize page and the protocol spec used treaty values while protocol-v1 had
+# drifted to Wishonia values, and all three bound MEAN-income parameters under a
+# "median income" label. All settlement references now bind these two params.
+
+PRIZE_TARGET_HALE_YEAR_15 = Parameter(
+    float(TREATY_PROJECTED_HALE_YEAR_15),
+    manual_ref="knowledge/appendix/earth-optimization-prize-protocol.qmd",
+    source_type="calculated",
+    description="The Earth Optimization Prize settlement target for global HALE at year 15. "
+                "Set to the Treaty-trajectory projection (the achievable floor). The terminal-metric "
+                "oracle compares measured global HALE against this value.",
+    display_name="Prize Settlement Target: Global HALE (Year 15)",
+    unit="years",
+    formula="TREATY_PROJECTED_HALE_YEAR_15",
+    inputs=["TREATY_PROJECTED_HALE_YEAR_15"],
+    compute=lambda ctx: ctx["TREATY_PROJECTED_HALE_YEAR_15"],
+    keywords=["prize", "settlement", "target", "oracle", "HALE", "trigger"],
+    latex_symbol=r"HALE^{*}_{15}",
+)
+
+PRIZE_TARGET_MEDIAN_INCOME_YEAR_15 = Parameter(
+    float(TREATY_TRAJECTORY_MEDIAN_AFTER_TAX_INCOME_YEAR_15),
+    manual_ref="knowledge/appendix/earth-optimization-prize-protocol.qmd",
+    source_type="calculated",
+    description="MODEL PROJECTION that informs the Prize settlement target for global median income "
+                "at year 15 (Treaty-trajectory median). NOT the binding trigger: per the Target Lock "
+                "clause in the protocol spec, a pool freezes its targets as literal constants in a "
+                "signed Settlement Schedule before its first deposit, denominated as a multiple of the "
+                "Referee's baseline MEASURED value so target and measurement share identical units. "
+                "This parameter is the rationale for the locked number, never its definition.",
+    display_name="Prize Settlement Target: Median Income (Year 15)",
+    unit="USD",
+    formula="TREATY_TRAJECTORY_MEDIAN_AFTER_TAX_INCOME_YEAR_15",
+    inputs=["TREATY_TRAJECTORY_MEDIAN_AFTER_TAX_INCOME_YEAR_15"],
+    compute=lambda ctx: ctx["TREATY_TRAJECTORY_MEDIAN_AFTER_TAX_INCOME_YEAR_15"],
+    keywords=["prize", "settlement", "target", "oracle", "median income", "trigger"],
+    latex_symbol=r"\tilde{m}^{*}_{15}",
+)
+
+TREATY_VS_CURRENT_MEDIAN_INCOME_MULTIPLIER_YEAR_20 = Parameter(
+    float(TREATY_TRAJECTORY_MEDIAN_AFTER_TAX_INCOME_YEAR_20)
+    / float(CURRENT_TRAJECTORY_MEDIAN_AFTER_TAX_INCOME_YEAR_20),
+    manual_ref="knowledge/economics/gdp-trajectories.qmd",
+    source_type="calculated",
+    description="Median after-tax income at year 20: Treaty vs status quo. Larger than the GDP "
+                "multiplier for two auditable reasons: the treaty cuts the military deduction by "
+                "the ratchet's terminal redirect while the status-quo military share drifts up on "
+                "its measured trend, and the WHO-anchored health-burden relief channel applies "
+                "only on the treaty branch. Share erosion is identical in both branches and "
+                "cancels out of this ratio by construction.",
+    display_name="Treaty vs Status Quo Median Income Multiplier (Year 20)",
+    unit="x",
+    formula="TREATY_TRAJECTORY_MEDIAN_AFTER_TAX_INCOME_YEAR_20 / CURRENT_TRAJECTORY_MEDIAN_AFTER_TAX_INCOME_YEAR_20",
+    inputs=["TREATY_TRAJECTORY_MEDIAN_AFTER_TAX_INCOME_YEAR_20", "CURRENT_TRAJECTORY_MEDIAN_AFTER_TAX_INCOME_YEAR_20"],
+    compute=lambda ctx: ctx["TREATY_TRAJECTORY_MEDIAN_AFTER_TAX_INCOME_YEAR_20"]
+    / ctx["CURRENT_TRAJECTORY_MEDIAN_AFTER_TAX_INCOME_YEAR_20"],
+    latex_symbol=r"k_{med,treaty:base}",
+)
+
+WISHONIA_VS_CURRENT_MEDIAN_INCOME_MULTIPLIER_YEAR_20 = Parameter(
+    float(WISHONIA_TRAJECTORY_MEDIAN_AFTER_TAX_INCOME_YEAR_20)
+    / float(CURRENT_TRAJECTORY_MEDIAN_AFTER_TAX_INCOME_YEAR_20),
+    manual_ref="knowledge/economics/gdp-trajectories.qmd",
+    source_type="calculated",
+    description="Median after-tax income at year 20: Wishonia vs status quo.",
+    display_name="Wishonia vs Status Quo Median Income Multiplier (Year 20)",
+    unit="x",
+    formula="WISHONIA_TRAJECTORY_MEDIAN_AFTER_TAX_INCOME_YEAR_20 / CURRENT_TRAJECTORY_MEDIAN_AFTER_TAX_INCOME_YEAR_20",
+    inputs=["WISHONIA_TRAJECTORY_MEDIAN_AFTER_TAX_INCOME_YEAR_20", "CURRENT_TRAJECTORY_MEDIAN_AFTER_TAX_INCOME_YEAR_20"],
+    compute=lambda ctx: ctx["WISHONIA_TRAJECTORY_MEDIAN_AFTER_TAX_INCOME_YEAR_20"]
+    / ctx["CURRENT_TRAJECTORY_MEDIAN_AFTER_TAX_INCOME_YEAR_20"],
+    latex_symbol=r"k_{med,wish:base}",
 )
 
 # ---

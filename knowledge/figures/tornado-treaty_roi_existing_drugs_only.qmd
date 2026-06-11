@@ -20,14 +20,14 @@ display_name = "Treaty ROI - Historical Rate (Existing Drugs)"
 
 # Baseline and units
 
-baseline = 259109.75
+baseline = 289593.25
 
 # Tornado data from sensitivity analysis
 
-drivers = ['PHARMA_LIFE_YEARS_SAVED_ANNUAL', 'TREATY_CAMPAIGN_BUDGET_LOBBYING', 'AVG_LIFE_EXTENSION_PER_BENEFICIARY', 'EFFICACY_LAG_YEARS', 'STANDARD_ECONOMIC_QALY_VALUE_USD', 'REGULATORY_DELAY_MEAN_AGE_OF_DEATH', 'TREATY_CAMPAIGN_VIRAL_REFERENDUM_BASE_CASE', 'GLOBAL_LIFE_EXPECTANCY_2024', 'TREATY_CAMPAIGN_BUDGET_RESERVE']
-driver_labels = ['Annual Life-Years Saved by Pharmaceuticals', 'Political Lobbying Campaign: Direct Lobbying, Super Pacs, Opposition Research, Staff, Legal/Compliance', 'Average Life Extension per Beneficiary', 'Regulatory Delay for Efficacy Testing Post-Safety Verification', 'Standard Economic Value per QALY', 'Mean Age of Preventable Death from Post-Safety Efficacy Delay', 'Viral Referendum Budget', 'Global Life Expectancy (2024)', 'Reserve Fund / Contingency Buffer']
-impacts_low = [-120755.25000000003, 124756.54629629629, 129554.875, -63197.50000000006, -51821.95000000001, 45725.24999999994, 28789.972222222248, -30483.50000000003, 22531.282608695677]
-impacts_high = [158741.75, -102073.53787878787, -86369.91666666669, 63197.49999999994, 51821.95000000001, -45725.25, -35739.27586206896, 30483.5, -12338.559523809527]
+drivers = ['PHARMA_LIFE_YEARS_SAVED_ANNUAL', 'TREATY_CAMPAIGN_BUDGET_LOBBYING', 'AVG_LIFE_EXTENSION_PER_BENEFICIARY', 'EFFICACY_LAG_YEARS', 'STANDARD_ECONOMIC_QALY_VALUE_USD', 'REGULATORY_DELAY_MEAN_AGE_OF_DEATH', 'TREATY_CAMPAIGN_VIRAL_REFERENDUM_BASE_CASE', 'TREATY_CAMPAIGN_BUDGET_RESERVE', 'GLOBAL_LIFE_EXPECTANCY_REMAINING_AT_AGE_60']
+driver_labels = ['Annual Life-Years Saved by Pharmaceuticals', 'Political Lobbying Campaign: Direct Lobbying, Super Pacs, Opposition Research, Staff, Legal/Compliance', 'Average Life Extension per Beneficiary', 'Regulatory Delay for Efficacy Testing Post-Safety Verification', 'Standard Economic Value per QALY', 'Mean Age of Preventable Death from Post-Safety Efficacy Delay', 'Viral Referendum Budget', 'Reserve Fund / Contingency Buffer', 'Remaining Life Expectancy at Age 60 (Global)']
+impacts_low = [-134961.75, 139433.78703703702, 144796.625, -70632.50000000006, -57918.65000000002, 45725.25, 32177.027777777752, 25182.021739130432, -21338.45000000001]
+impacts_high = [177417.24999999994, -114082.18939393939, -96531.08333333337, 70632.49999999994, 57918.65000000002, -45725.25000000003, -39943.896551724145, -13790.154761904734, 15241.749999999942]
 
 # Convert deltas to absolute values (baseline + delta)
 

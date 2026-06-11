@@ -31,7 +31,7 @@ from typing import Optional
 
 # Set UTF-8 encoding for stdout on Windows
 if sys.platform == 'win32':
-    sys.stdout.reconfigure(encoding='utf-8')
+    sys.stdout.reconfigure(encoding='utf-8')  # pyright: ignore[reportAttributeAccessIssue]
 
 PROJECT_ROOT = Path(__file__).parent.parent
 BUILD_TEMP = PROJECT_ROOT / "_build_temp"

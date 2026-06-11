@@ -24,10 +24,10 @@ baseline = 0.010633333333333337
 
 # Tornado data from sensitivity analysis
 
-drivers = ['MILITARY_REDIRECT_GDP_BOOST_AT_30PCT', 'RD_SPILLOVER_MULTIPLIER']
-driver_labels = ['GDP Growth Boost at 30% Military Reallocation', 'R&D Spillover Multiplier']
-impacts_low = [-0.0038666666666666676, -0.0026583333333333355]
-impacts_high = [0.003866666666666666, 0.0026583333333333337]
+drivers = ['TREATY_RATCHET_TERMINAL_SHARE', 'MILITARY_REDIRECT_GDP_BOOST_AT_30PCT', 'RD_SPILLOVER_MULTIPLIER']
+driver_labels = ['Treaty Ratchet Terminal Redirect Share', 'GDP Growth Boost at 30% Military Reallocation', 'R&D Spillover Multiplier']
+impacts_low = [-0.008800000000000002, -0.0038666666666666676, -0.0026583333333333355]
+impacts_high = [0.0065999999999999965, 0.003866666666666666, 0.0026583333333333337]
 
 # Convert deltas to absolute values (baseline + delta)
 

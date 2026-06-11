@@ -12,7 +12,7 @@ from pathlib import Path
 
 # Set UTF-8 encoding for stdout on Windows
 if sys.platform == 'win32':
-    sys.stdout.reconfigure(encoding='utf-8')
+    sys.stdout.reconfigure(encoding='utf-8')  # pyright: ignore[reportAttributeAccessIssue]
 
 from google import genai
 from google.genai import types
@@ -243,7 +243,7 @@ def _generate_speech_single(
         try:
             for chunk in google_client.models.generate_content_stream(
                 model=TTS_MODEL_ID,
-                contents=contents,
+                contents=contents,  # pyright: ignore[reportArgumentType]
                 config=generate_content_config,
             ):
                 if (
@@ -282,7 +282,9 @@ def _generate_speech_single(
             else:
                 print(f"  [FAILED] All {MAX_TTS_RETRIES} attempts failed. Last error: {e}")
 
-    raise last_error
+    if last_error is not None:
+        raise last_error
+    raise RuntimeError("TTS generation failed without an exception")
 
 
 def generate_speech(
@@ -413,7 +415,7 @@ def generate_speech_multi_speaker(
 
     for chunk in google_client.models.generate_content_stream(
         model=TTS_MODEL_ID,
-        contents=contents,
+        contents=contents,  # pyright: ignore[reportArgumentType]
         config=generate_content_config,
     ):
         if (

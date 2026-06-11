@@ -10,7 +10,7 @@ Usage:
     python scripts/analyze-docx-images.py --fix  # resize in-place
 """
 import sys
-sys.stdout.reconfigure(encoding='utf-8')
+sys.stdout.reconfigure(encoding='utf-8')  # pyright: ignore[reportAttributeAccessIssue]
 
 import argparse
 import io

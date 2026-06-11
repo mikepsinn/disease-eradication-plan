@@ -34,6 +34,8 @@ _spec = _ilu.spec_from_file_location(
     "osf_upload_module",
     str(Path(__file__).parent / "upload-all-osf-and-save-urls.py"),
 )
+if _spec is None or _spec.loader is None:
+    raise ImportError("Could not load OSF upload module")
 upload_mod = _ilu.module_from_spec(_spec)
 _spec.loader.exec_module(upload_mod)
 

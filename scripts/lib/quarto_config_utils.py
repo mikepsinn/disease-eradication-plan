@@ -382,17 +382,17 @@ def discover_syncable_configs(
 
 def is_paper_config(config_name: str) -> bool:
     """Check if a config name represents a paper (vs book/test/etc)."""
-    return config_name not in NON_PAPER_CONFIGS and config_name and config_name != "quarto"
+    return bool(config_name and config_name != "quarto" and config_name not in NON_PAPER_CONFIGS)
 
 
 def is_deployable_config(config_name: str) -> bool:
     """Check if a config name can be deployed to Netlify."""
-    return config_name not in NON_DEPLOYABLE_CONFIGS and config_name and config_name != "quarto"
+    return bool(config_name and config_name != "quarto" and config_name not in NON_DEPLOYABLE_CONFIGS)
 
 
 def is_syncable_config(config_name: str) -> bool:
     """Check if a config name should be synced with shared defaults."""
-    return config_name not in NON_SYNCABLE_CONFIGS and config_name and config_name != "quarto"
+    return bool(config_name and config_name != "quarto" and config_name not in NON_SYNCABLE_CONFIGS)
 
 
 # =============================================================================

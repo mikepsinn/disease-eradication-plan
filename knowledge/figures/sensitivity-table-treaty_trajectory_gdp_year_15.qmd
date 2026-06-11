@@ -4,8 +4,9 @@ Regression-based sensitivity showing which inputs explain the most variance in t
 
 | Input Parameter | Sensitivity Coefficient | Interpretation |
 |:----------------|------------------------:|:---------------|
-| Treaty Redirect GDP Growth Bonus (Year 15) (rate) | 3.9417 | Strong driver |
-| Treaty Health Recovery GDP Growth Bonus (Year 15) (rate) | -2.9834 | Strong driver |
-| Treaty Peace Recovery GDP Growth Bonus (Year 15) (rate) | 0.0228 | Minimal effect |
+| Treaty Redirect GDP Growth Bonus (Year 15) (rate) | 0.7785 | Strong driver |
+| Treaty Peace Recovery GDP Growth Bonus (Year 15) (rate) | 0.2462 | Weak driver |
+| Treaty Cybercrime Recovery GDP Growth Bonus (Year 15) (rate) | -0.0215 | Minimal effect |
+| Treaty Health Recovery GDP Growth Bonus (Year 15) (rate) | -0.0004 | Minimal effect |
 
 *Interpretation*: Standardized coefficients show the change in output (in SD units) per 1 SD change in input. Values near ±1 indicate strong influence; values exceeding ±1 may occur with correlated inputs.
