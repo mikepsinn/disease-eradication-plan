@@ -118,9 +118,9 @@ We are not asking you to do something. We are asking you to *stop* doing somethi
 
 What that looks like concretely: on the Monday morning after you sign the settlement, the same defense-industry lobbyists who currently spend their days arguing against any redirection of military spending will, in the same offices, with the same access, start arguing for the 1% treaty. Nothing in your operations changes. Nothing in your supply chain changes. Nothing in your customer relationships changes. The only thing that changes is what your lobbyists are saying on Capitol Hill. That is the entire change. That is what saves you, your family, your shareholders, and us.
 
-The known-safe pharmaceutical compounds that would cure the diseases that will kill you are sitting in the trial queue right now, waiting for funding. **Metformin** for Alzheimer's. **Rapamycin** for biological aging. **Low-dose naltrexone** for autoimmune conditions and certain cancers. These three molecules alone have public research support; {{< var safe_compounds_count_nounit >}} known-safe compounds total are in the same queue, with {{< var unexplored_ratio >}} of their potential disease indications never tested. The 1% redirection funds those trials. The current lobbying blocks them.
+The known-safe pharmaceutical compounds that would cure the diseases that will kill you are sitting in the trial queue right now, waiting for funding. **Metformin** for Alzheimer's. **Rapamycin** for biological aging. **Low-dose naltrexone** for autoimmune conditions and certain cancers. These three molecules alone have public research support; {{< var safe_compounds_count_nounit >}} known-safe compounds total are in the same queue, with {{< var unexplored_ratio >}} of their potential disease indications never tested. The 1% redirection funds those trials. The current lobbying keeps the money pointed somewhere else.
 
-This is not adversarial. The lawsuit is the only mechanism we have to put the math in front of you in a form you are legally required to read. If you read it and we are wrong, please tell us how. If you read it and we are right, please act on it. Either way, we love you.
+The lawsuit is the only mechanism we have to put the math in front of you in a form you are legally required to read. If you read it and we are wrong, please tell us how. If you read it and we are right, please act on it. Either way, we love you.
 
 If you are inclined to defend the current allocation on national-security grounds, please read [The Eisenhower Curve](../economics/eisenhower-curve.qmd) before responding. The short version: the current allocation is the mechanism by which the United States is losing strategic competition to China. The treaty is the most pro-defense action available. The country that won World War II had {{< var us_1939_military_spending_pct_lower_than_current >}} less defense spending than the United States has today, and the reason it won is that its productive economy had not been cannibalized to fund a peacetime military.
 
@@ -144,7 +144,7 @@ To the judge: if you are still leaning toward throwing this case out on a techni
 
 The defense lobby is the most effective political-influence operation on Earth. It spends approximately {{< var defense_lobbying_annual >}} per year buying politicians and receives close to a trillion dollars in defense contracts in return. The standard mistake is to try to defeat this lobby by outbidding it. That is charming, like trying to drown the ocean with a cup. The standard outcome is a fundraising treadmill that never reaches the budget.
 
-The lawsuit does something different. It does not try to defeat the defense lobby. It tries to flip it.
+The lawsuit does something different. It does not try to defeat the defense lobby. It redirects it.
 
 The defense industry's lobbying machine produces negative ROI for its own shareholders. Defense contractors are humans who die of the same diseases as everyone else. They live in the same economy that their lobbying is keeping small. They are not a sophisticated adversary defending a rational interest. They are an unsupervised line item on a corporate budget that nobody has ever ROI-analyzed because nobody had to.
 
@@ -387,7 +387,7 @@ Every possible board response benefits the plaintiff.
 
 ### If they accept the settlement
 
-The defense industry's lobbying machine flips from blocking the treaty to pushing for it. The most effective political-influence operation on Earth is now working for disease eradication. Cost: $3,000.
+The defense industry's lobbying machine is now pointed at disease eradication instead of away from it. The most effective political-influence operation on Earth is working for the treaty. Cost: $3,000.
 
 ### If they fight
 
@@ -631,7 +631,7 @@ A normal lawsuit produces zero laughs. The defendants do not laugh, the plaintif
 The chain:
 
 - Average human laughter rate: {{< var human_laughs_per_day_average_nounit >}} laughs per day, or {{< var human_laughs_per_healthy_life_year_nounit >}} per healthy life-year.
-- The lawsuit's purpose is to force the math into the boardroom and the public record, redirecting the {{< var defense_lobbying_annual >}} per year of defense lobbying from blocking the 1% treaty to championing it.
+- The lawsuit's purpose is to force the math into the boardroom and the public record, redirecting the {{< var defense_lobbying_annual >}} per year of defense lobbying toward the 1% treaty.
 - The treaty compresses the disease eradication queue from {{< var status_quo_queue_clearance_years_nounit >}} years to {{< var dfda_queue_clearance_years_nounit >}} years, recovering approximately 565 billion healthy life-years across humanity.
 - 565 billion recovered healthy life-years × {{< var human_laughs_per_healthy_life_year_nounit >}} laughs per year = **{{< var shirt_induced_laughs_gained_nounit >}} laughs.**
 

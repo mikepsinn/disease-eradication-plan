@@ -76,6 +76,9 @@ Check existing: `grep "keyword" _variables.yml`. Never duplicate. Generate: `npm
 | Stakes | Suffering first (concrete: "her last decade, in pain, not knowing you"), death as punctuation; disease as a deadpan villain *with intent* | abstract "reduce suffering"; melodrama; disease as fate |
 | Jargon | Plain words; keep a buzzword only when *mocking* it ("they call it 'synergy'") | startup-speak used straight: "leverage"/"unlock" (flat), "onboard," "bring online," "amplify," "empower," "world-class" |
 | Persuasion | Reason from objective: "what would make this person act?" | Pattern-match: "what do persuasive essays usually look like?" |
+| Natural speech | One breath = one sentence ("I love you and I do not want X") | Splitting natural speech into separate formal sentences |
+| Self-narration | Just do the thing | Announcing what you are doing ("That is the entire reason for this letter") |
+| Disease framing | "horrible diseases" (we fund research to FIND cures) | "diseases we already know how to cure" (we don't; that's the point) |
 
 **Anti-pattern-matching:** Standard persuasion patterns (establish credentials, build authority, hedge claims, protect the author's status) are the average of every failed pitch, ignored white paper, and unread manifesto in history. Pattern-matching on failed attempts computes the optimal way to fail. When the objective (reader action) contradicts the convention (writer pattern), do the objective. If vulnerability disarms the reader, credentials are ego armor. If raw numbers persuade, hedging is cowardice. Ask "what would make this person act?" not "what does this type of writing usually look like?"
 

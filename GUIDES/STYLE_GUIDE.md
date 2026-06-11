@@ -172,6 +172,15 @@ Funny rarely arrives in the first draft; the first draft is just *clear*, and cl
 
 Three discipline rules for the pass itself. **Tie goes to the incumbent:** never churn a working line for a sideways-different one. **No rule-zealotry:** these rules catch failures; they are not search-and-replace instructions. If a line satisfies the spirit of a rule, leave it; every fix must read better aloud, not just comply. **Keep the author's exact words:** when Mike supplies real wording, use it verbatim unless you can name the reason for a change (grammar, factual error, house style); paraphrase flattens the jokes.
 
+## Directness Failures
+
+| Failure | Example | Fix |
+|---------|---------|-----|
+| Splitting one-breath statements | "I love you very much. I do not want you to die." | "I love you very much and I do not want you to die." A kid says it in one breath. So should you. |
+| Narrating your own document | "That is the entire reason for this letter." | Delete it. The letter already shows why it exists. Same failure as "let me explain" before explaining. |
+| Claiming cures we don't have | "diseases we already know how to cure" | "horrible diseases." The book is about funding research to FIND cures. We don't have them yet. |
+| Formalizing emotion | "I am writing to you with love." | "I love you very much and..." Direct. A kid would never say "I am writing to you with love." |
+
 ## Common Voice Failures
 
 | Failure | Example | Fix |
