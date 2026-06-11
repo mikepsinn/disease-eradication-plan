@@ -38,15 +38,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 12 parameters used in the analysis, organized by type:
+This appendix documents all 16 parameters used in the analysis, organized by type:
 
-- External sources (peer-reviewed): 7
-- Calculated values: 3
-- Core definitions: 2
+- External sources (peer-reviewed): 9
+- Calculated values: 4
+- Core definitions: 3
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (3 parameters) • [External Data Sources](#sec-external) (7 parameters) • [Core Definitions](#sec-definitions) (2 parameters)
+[Calculated Values](#sec-calculated) (4 parameters) • [External Data Sources](#sec-external) (9 parameters) • [Core Definitions](#sec-definitions) (3 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -89,6 +89,43 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-diseases_without_effective_treatment.qmd >}}
+
+:::
+
+### Ethyl Shareholder Counterfactual Wealth Gain (Ethanol Switch, 1923): 23.2% {#sec-ethyl_shareholder_counterfactual_wealth_gain}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+How much richer a diversified Ethyl Gasoline Corporation shareholder would have been by 1996 had the board switched to ethanol in 1923: the economy compounds faster without the lead-induced IQ loss, and diversified shareholder wealth scales with the economy. Central ~23%; the Monte Carlo range spans roughly 'twenty to sixty percent richer'. Foregone TEL royalties are second-order against the economy-wide effect.
+
+**Inputs**:
+
+- [US Average IQ Loss from Leaded Gasoline](#sec-leaded_gasoline_us_avg_iq_loss_points) 📊: 2.6 IQ points (95% CI: 1.5 IQ points - 5.9 IQ points)
+- [GDP Growth Effect per National IQ Point](#sec-national_iq_gdp_growth_effect_per_point) 📊: 0.11% (95% CI: 0.04% - 0.18%)
+- [Leaded Gasoline Era Duration](#sec-leaded_gasoline_era_years): 73 years
+
+$$
+\begin{gathered}
+\Delta W_{Ethyl} \\
+= (1 + \Delta IQ_{lead} \times \beta_{IQ})^{T_{lead}} - 1
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-ethyl_shareholder_counterfactual_wealth_gain.qmd >}}
+
+{{< include ../figures/sensitivity-table-ethyl_shareholder_counterfactual_wealth_gain.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-ethyl_shareholder_counterfactual_wealth_gain.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-ethyl_shareholder_counterfactual_wealth_gain.qmd >}}
 
 :::
 
@@ -264,6 +301,54 @@ Total global nuclear warhead inventory across nine nuclear-armed states. Include
 
 :::
 
+### US Average IQ Loss from Leaded Gasoline: 2.6 IQ points {#sec-leaded_gasoline_us_avg_iq_loss_points}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Average IQ points lost per person from childhood leaded-gasoline exposure (McFarland et al. 2022: 824M cumulative points across the 2015 US population, average 2.6/person, 5.9 for the worst-hit 1966-1970 birth cohorts). Used as the era-average workforce IQ deficit: lower in the 1930s, higher by the 1980s.
+
+**Source**: [@mcfarland-lead-iq-2022]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [1.5 IQ points, 5.9 IQ points] • Distribution: Lognormal
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between 1.5 IQ points and 5.9 IQ points (±85%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-leaded_gasoline_us_avg_iq_loss_points.qmd >}}
+
+*~ Medium confidence*
+
+:::
+
+### GDP Growth Effect per National IQ Point: 0.11% {#sec-national_iq_gdp_growth_effect_per_point}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Jones & Schneider (2006) BACE estimate: one national-IQ point is associated with a persistent 0.11 percentage-point higher annual GDP per capita growth rate (significant in 99.8% of 1,330 growth regressions). Wide CI reflects the contested cross-country IQ data underlying the estimate and the authors' own caveat that transitory vs steady-state growth cannot be distinguished.
+
+**Source**: [@jones-schneider-iq-growth-2006]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [0.04%, 0.18%] • Distribution: Normal
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between 0.04% and 0.18% (±64%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The normal distribution means values cluster around the center with equal chances of being higher or lower.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-national_iq_gdp_growth_effect_per_point.qmd >}}
+
+*? Low confidence*
+
+:::
+
 ### Nuclear Winter Warhead Threshold: 100 warheads {#sec-nuclear_winter_warhead_threshold}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -321,6 +406,20 @@ Fundamental parameters and constants used throughout the analysis.
 ::: {.callout-note collapse="true" title="📊 Details"}
 
 Cumulative global military spending since 1913 (Fed era) in constant 2024 dollars. Built from: SIPRI 1988-2024 ($65-72T), Cold War 1946-1987 ($50-70T reconstructed), WWI+WWII+interwar ($33T from Harrison). Range: $150-190T.
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*Core definition*
+
+:::
+
+### Leaded Gasoline Era Duration: 73 years {#sec-leaded_gasoline_era_years}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Duration of the US leaded-gasoline era: first commercial TEL sale (February 1923) to the completed on-road ban (January 1, 1996).
 
 #### Uncertainty Range
 
