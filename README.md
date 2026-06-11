@@ -376,7 +376,7 @@ That's [280 million](https://manual.warondisease.org/knowledge/economics/campaig
 
 ### Step 3: Bribe the Bribers
 
-*[Professional Briber Conversion Therapy](https://manual.warondisease.org/knowledge/solution/aligning-incentives.html#defense-contractors-teaching-merchants-of-death-to-love-life)*
+*[Professional Briber Conversion Therapy](https://manual.warondisease.org/knowledge/solution/aligning-incentives.html#military-contractors-teaching-merchants-of-death-to-love-life)*
 
 Military lobbyists currently get $1,813 back per dollar invested in democracy corruption. Show them a spreadsheet:
 

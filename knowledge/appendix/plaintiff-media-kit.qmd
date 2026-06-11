@@ -1,6 +1,6 @@
 ---
 title: 'The Plaintiff Media Kit'
-description: 'Op-ed template, social media kit (tweet thread, LinkedIn post, video script), interview Q&A with the 20 most likely reporter questions, and the T+60d follow-up press release. Everything the plaintiff needs to handle the media side of the filing without freelancing each piece.'
+description: 'Op-ed template, social media kit (tweet thread, LinkedIn post, video script), interview Q&A with the most likely reporter questions, and the T+60d follow-up press release. Everything the plaintiff needs to handle the media side of the filing without freelancing each piece.'
 aliases:
   - /plaintiff-media-kit.html
   - /media-kit.html
@@ -44,7 +44,7 @@ Pitch at T+7d. 800-1,200 words. Headline and subhead are placeholders; the outle
 
 ---
 
-**Headline:** I sued the board of a defense contractor because I love them.
+**Headline:** I sued the board of a military contractor because I love them.
 
 **Subhead:** The math says the Company's lobbying is killing the people who own the shares. I bought one share to put the math in front of them. So can you.
 
@@ -54,9 +54,9 @@ Last week I mailed a shareholder demand letter to the Board of [COMPANY]. I own 
 
 I love them the way you love anyone who is about to die of something preventable while pretending they are not. The Board of [COMPANY] is making a recurring corporate decision that, in actuarial terms, is shortening their own lives, the lives of their spouses and children, the lives of the company's shareholders, and the lives of every human in the economy the company operates in. The Board has not, as far as anyone knows, ever sat down to ask whether that decision is actually good for the people who own the shares. The lawsuit asks them to do that.
 
-The mechanism is small. [COMPANY] spends approximately $[X] million a year on federal lobbying. The lobbying is pointed at maintaining the ratio of US military spending to government clinical-trial spending, currently {{< var military_to_government_clinical_trials_spending_ratio >}} to 1. The treatments that would cure pancreatic cancer, Alzheimer's, ALS, and cardiovascular disease are not being developed because the trials are not being funded because the funding ratio is what it is because the lobby tells Congress to keep it that way.
+The mechanism is small. [COMPANY] spends approximately $[X] million a year on federal lobbying. The lobbying is pointed at maintaining the ratio of US military spending to government clinical-trial spending, currently {{< var military_to_government_clinical_trials_spending_ratio >}} to 1. The trials that would tell us which compounds cure pancreatic cancer, Alzheimer's, ALS, and cardiovascular disease are not being funded because the funding ratio is what it is because the lobby tells Congress to keep it that way.
 
-Three molecules sitting in the untested-compound queue right now, with public research support and no funded large-scale trials: metformin for Alzheimer's. Rapamycin for biological aging. Low-dose naltrexone for autoimmune conditions and certain cancers. The 1% redirection funds those trials. The current lobbying blocks them. The blocking is what is going to kill us.
+Three molecules sitting in the untested-compound queue right now, with public research support and no funded large-scale trials: metformin for Alzheimer's. Rapamycin for biological aging. Low-dose naltrexone for autoimmune conditions and certain cancers. The 1% redirection funds those trials. The current lobbying keeps the money pointed somewhere else. That is what is going to kill us.
 
 I am not asking the Company to do anything new. I am asking the Company to *stop* doing something specific. The settlement is non-monetary. The Board redirects the same lobbying budget, in the same offices, with the same lobbyists, to argue for the [1% treaty](../solution/1-percent-treaty.qmd) [@1-percent-treaty-paper-2025] [@1-pct-treaty-impact-paper-2025] on Capitol Hill instead of arguing against it. Nothing in the Company's operations changes. The only thing that changes is what the Company's lobbyists are saying in the meetings they were already going to have.
 
@@ -66,7 +66,7 @@ I want to be clear about who this lawsuit hurts. It does not hurt [COMPANY]. The
 
 As far as anyone can tell, this is the first lawsuit in legal history where the defendants are radically better off losing than winning. Settle and the Board members and their shareholders are roughly {{< var treaty_trajectory_lifetime_income_gain_per_capita >}} richer over a lifetime and roughly {{< var avg_life_extension_per_beneficiary >}} longer-lived. Fight and win and they stay on the trajectory that, on average, kills them and their families earlier than the math says they could have lived. That is not metaphor. That is the actuarial table.
 
-If you are a shareholder of any major defense contractor, you can do exactly what I did. One share. Two hundred dollars. The template is at [warondisease.org/lawsuit](https://warondisease.org/lawsuit). There are eight pre-filled demand letters ready to print. The Board has to respond to whoever sent the letter, regardless of who sent it.
+If you are a shareholder of any major military contractor, you can do exactly what I did. One share. Two hundred dollars. The template is at [warondisease.org/lawsuit](https://warondisease.org/lawsuit). There are eight pre-filled demand letters ready to print. The Board has to respond to whoever sent the letter, regardless of who sent it.
 
 The lobbying that has caused American policy to drift this far from any honest cost-benefit calculation is built on the assumption that no one is doing the math. I did the math. So can you. The math is in the public record. The compounds are in the public record. The diseases are in your family. The cost of telling the Board is a marker, an evening, and the price of one share of stock.
 
@@ -96,7 +96,7 @@ Reshare the op-ed link with a 2-sentence framing: "Today I filed a shareholder d
 
 ### Video script (optional, 60-90 seconds vertical for TikTok/Reels/Shorts)
 
-If you want to shoot one: open with "Today I sued a defense contractor for $200" on camera holding the share, hit the {{< var military_to_government_clinical_trials_spending_ratio >}}:1 ratio + the 443→36 years compression + the 4× GDP point, close with "1 share, ~$200, template at warondisease.org/lawsuit."
+If you want to shoot one: open with "Today I sued a military contractor for $200" on camera holding the share, hit the {{< var military_to_government_clinical_trials_spending_ratio >}}:1 ratio + the {{< var status_quo_queue_clearance_years_nounit >}}→{{< var dfda_queue_clearance_years_nounit >}} years compression + the {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}} GDP point, close with "1 share, ~$200, template at warondisease.org/lawsuit."
 
 ## Interview Prep Q&A
 
@@ -112,7 +112,7 @@ I'm not suing for damages personally. I'm asking the Board of [COMPANY] to commi
 
 ### Q3: Why do you think the lobbying is bad for shareholders?
 
-The company's revenue is denominated in a fraction of US federal spending. US federal spending is denominated in a fraction of US GDP. Independent modeling shows that redirecting 1% of military spending to pragmatic clinical trials produces global GDP at year 15 of approximately 4× the current trajectory, through reduced disease burden and accelerated productivity. So the 1% they're "protecting" through lobbying is dominated by the gain they'd get from operating in a 4× larger economy.
+The company's revenue is denominated in a fraction of US federal spending. US federal spending is denominated in a fraction of US GDP. The campaign's published model, built on SIPRI, WHO, NIH, and OpenSecrets data and anchored to peer-reviewed instrumental-variables estimates of military spending's growth effect, projects global GDP at year 15 of approximately {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}} the current trajectory, through reduced disease burden and accelerated productivity. Every derivation is public. So the 1% they're "protecting" through lobbying is dominated by the gain they'd get from operating in that larger economy.
 
 ### Q4: This sounds like a stunt. Is this serious?
 
@@ -144,9 +144,9 @@ Distribute the day the Board's response (or non-response) becomes public. Use th
 
 ### If the Board commissions the analysis
 
-> [CITY, DATE]: [COMPANY]'s Board of Directors has agreed to commission an independent ROI analysis of the company's federal lobbying expenditure, in response to a shareholder demand letter filed sixty days ago. [PLAINTIFF NAME] welcomed the response: "This is the right move. The Board has chosen to let their own grandchildren live longer. I hope every defense contractor board does the same." The analysis is scheduled for [TIMELINE] and will be published on the company's investor relations website. The same demand letter template has now been filed against [N] other defense contractors.
+> [CITY, DATE]: [COMPANY]'s Board of Directors has agreed to commission an independent ROI analysis of the company's federal lobbying expenditure, in response to a shareholder demand letter filed sixty days ago. [PLAINTIFF NAME] welcomed the response: "This is the right move. The Board has chosen to let their own grandchildren live longer. I hope every military contractor board does the same." The analysis is scheduled for [TIMELINE] and will be published on the company's investor relations website. The same demand letter template has now been filed against [N] other military contractors.
 
 ### If the Board declines or doesn't respond
 
-> [CITY, DATE]: [COMPANY]'s Board of Directors today declined to investigate whether the company's $[X] million annual lobbying expenditure is shortening the lives of its own shareholders, their families, and its own directors. Sixty days after receiving a shareholder demand letter setting out the math, the Board's response addressed every procedural question and none of the substantive ones. [PLAINTIFF NAME] today filed a derivative action in [Delaware Chancery / Maryland circuit] plus a Rule 14a-8 shareholder proposal under *Caremark*, *Marchand*, and *Stone v. Ritter*. "I would have preferred a phone call," [PLAINTIFF NAME] said. "I love the Board. The Board's response shows the Board has not yet read the math. The lawsuit is the procedural mechanism that requires them to." Counsel: [FIRM NAME].
+> [CITY, DATE]: [COMPANY]'s Board of Directors today declined to investigate whether the company's $[X] million annual lobbying expenditure is shortening the lives of its own shareholders, their families, and its own directors. Sixty days after receiving a shareholder demand letter setting out the math, the Board's response addressed every procedural question and none of the substantive ones. [PLAINTIFF NAME] today filed a derivative action in [Delaware Chancery / Maryland circuit] under *Caremark*, *Marchand*, and *Stone v. Ritter*, and will submit a Rule 14a-8 shareholder proposal requiring an independent ROI analysis in the next proxy cycle. "I would have preferred a phone call," [PLAINTIFF NAME] said. "I love the Board. The Board's response shows the Board has not yet read the math. The lawsuit is the procedural mechanism that requires them to." Counsel: [FIRM NAME].
 

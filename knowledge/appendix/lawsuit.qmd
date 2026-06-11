@@ -2,7 +2,7 @@
 title: 'The Funniest Lawsuit in the Universe'
 description: 'A $200 shareholder demand letter (one share of stock is legally sufficient under DGCL § 327) that turns the defense lobby into the most effective advocate for pragmatic clinical trials on Earth. This page is everything you need to file it.'
 abstract: |
-  Shareholder demand letter addressed to the boards of major US defense contractors. Legal theory: Caremark 2.0 duty of oversight, single-firm shareholder-primacy framing. Substantive claim: each defendant's lobbying to maintain current military spending ratios produces negative ROI for its own shareholders by suppressing the GDP growth that would expand its addressable market. Every possible board response (accept, fight, ignore, refute) benefits the plaintiff. Cost to file: approximately $200 (one share of stock; 1 share is sufficient under DGCL § 327). This page is structured as a standalone distribution artifact: post it anywhere, forward it to any defense-contractor shareholder, file it yourself. The math, the legal theory, and the templates are all in this document.
+  Shareholder demand letter addressed to the boards of major US military contractors. Legal theory: Caremark 2.0 duty of oversight, single-firm shareholder-primacy framing. Substantive claim: each defendant's lobbying to maintain current military spending ratios produces negative ROI for its own shareholders by suppressing the GDP growth that would expand its addressable market. Every possible board response (accept, fight, ignore, refute) benefits the plaintiff. Cost to file: approximately $200 (one share of stock; 1 share is sufficient under DGCL § 327). This page is structured as a standalone distribution artifact: post it anywhere, forward it to any military-contractor shareholder, file it yourself. The math, the legal theory, and the templates are all in this document.
 aliases:
   - /lawsuit.html
   - /funniest-lawsuit.html
@@ -21,7 +21,7 @@ keywords:
   - Caremark
   - duty of care
   - corporate waste
-  - defense contractor lobbying
+  - military contractor lobbying
   - 1% treaty
   - Delaware Chancery
   - litigation campaign
@@ -68,9 +68,9 @@ This is the funniest lawsuit in the universe and this page is everything you nee
 
 It is the first lawsuit in legal history where the defendants are radically better off losing than winning. Settling adds approximately {{< var avg_life_extension_per_beneficiary >}} to each defendant's healthy life and approximately {{< var treaty_trajectory_lifetime_income_gain_per_capita >}} to the average shareholder's lifetime income. Winning leaves the defendant where they started: facing the same diseases on the same timeline, while their lobbying continues to keep the cure trials underfunded.
 
-It is also the first lawsuit you can file for $200. One share of any major defense contractor is legally sufficient under DGCL § 327. The full demand letter, the share-purchase instructions, the brokerage walkthrough, the pre-filled defendant fact sheets, and the post-response decision tree are all linked from this page.
+It is also the first lawsuit you can file for $200. One share of any major military contractor is legally sufficient under DGCL § 327. The full demand letter, the share-purchase instructions, the brokerage walkthrough, the pre-filled defendant fact sheets, and the post-response decision tree are all linked from this page.
 
-**The selfish version.** If you do not care about the disease eradication argument and only care about money, the share you bought to file the lawsuit also goes up in price. As the campaign scales, demand for defense contractor shares mechanically exceeds the available float (see [The Loving Takeover](loving-takeover.qmd) for the math), and prices spike for the same reason GameStop spiked in 2021. The lawsuit is the catalyst that activates the price action. Heads you make money on the share, tails you hold a normal defense position. The downside is foregone index-fund return on $200.
+**The selfish version.** If you do not care about the disease eradication argument and only care about money, the share you bought to file the lawsuit also goes up in price. As the campaign scales, demand for military contractor shares mechanically exceeds the available float (see [The Loving Takeover](loving-takeover.qmd) for the math), and prices spike for the same reason GameStop spiked in 2021. The lawsuit is the event that puts the float math in front of buyers. Heads you make money on the share, tails you hold a normal defense position. The downside is foregone index-fund return on $200.
 
 **The altruistic version.** If you do care about disease eradication: the math says the campaign prevents approximately {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved_nounit >}} deaths from the diseases that will otherwise kill someone you love. Filing one demand letter forces the math into one boardroom for $200.
 
@@ -86,12 +86,12 @@ It is also the first lawsuit you can file for $200. One share of any major defen
 | Personal share of the recovered lifespan of the {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved_nounit >}} humans the campaign prevents from dying | Not pricable; this is the part the demand letter is about |
 | Standing to tell the people you love that you tried | This one is free; you just have to file |
 
-The cost is one share (~$200) plus 43 hours of work. The expected return on the dollars alone exceeds every retail investment vehicle available. The expected return on the years is the rest of your life and the rest of the lives of everyone you love.
+The cost is one share (~$200) plus 43 hours of work. Under the Part 3 assumptions (ten defendants sued, 5% per-defendant probability of a redirection), the expected dollar return on the full ten-share position is several multiples of what the same capital earns in twenty years of index funds. The expected return on the years is the rest of your life and the rest of the lives of everyone you love.
 
 ### How To File (60-Second Version)
 
 1. Open a [brokerage account](brokerage-how-to.qmd) if you do not have one (Fidelity walkthrough at the link).
-2. Buy 1 share of any major defense contractor. The eight with [pre-filled fact sheets](pre-filled-demand-letters.qmd) are RTX, LMT, BA, GD, NOC, LHX, HII, and LDOS. Others (BAH, CACI, SAIC, BAE, Thales) work too; you just look up the corporate-secretary address yourself.
+2. Buy 1 share of any major military contractor. The eight with [pre-filled fact sheets](pre-filled-demand-letters.qmd) are RTX, LMT, BA, GD, NOC, LHX, HII, and LDOS. Others (BAH, CACI, SAIC, BAE, Thales) work too; you just look up the corporate-secretary address yourself.
 3. Copy the demand letter below, fill in the bracketed fields, sign it.
 4. Send it certified mail to the corporate secretary of the defendant.
 5. Wait 60 days. Use the [post-response decision tree](litigation-phase.qmd) when the board responds.
@@ -104,13 +104,13 @@ The rest of this document is the demand letter itself, the legal theory, the out
 
 ## An Open Letter to the Boards
 
-To the board members and CEOs of every defense contractor named in this campaign:
+To the board members and CEOs of every military contractor named in this campaign:
 
 We love you and we do not want you and everyone you have ever loved to die of pancreatic cancer, ovarian cancer, brain cancer, Alzheimer's, ALS, Parkinson's, or heart disease. We do not want your husband or wife, your kids, or your parents to die of those things. We do not want our own families to die of them either. We are in the same boat. I am going to suffer and die. So is my mom. So is everyone I have ever loved. So are you.
 
 Sometime in the next ten years, someone you love is going to get a diagnosis. It will most likely be one of the four diseases above. The treatment that could have cured it will not exist, because the trial that would have produced it was not funded, because the Company's lobbying budget you signed off on this year was pointed at the wrong thing. You will spend weeks visiting them in the hospital. You will rearrange your schedule around their chemotherapy. You will sit in a waiting room while a doctor explains what "palliative" means. You will go to their funeral. You will go to the wake. You will drive home and sit in your car in the driveway for a while.
 
-We do not want that for you. Your Company's lobbying is making it more likely. Every human reading this is going to die of some disease, and the disease will almost certainly be one that could have been cured if someone had funded the trial. Right now your Company spends {{< var military_to_government_clinical_trials_spending_ratio >}} times more lobbying for missiles than the entire world spends on trying to cure those diseases. That ratio is killing you. It is also making your family poorer than they would otherwise be. And your net worth is going to be zero if you are dead, unless you are buried with your money, which your kids are unlikely to do.
+We do not want that for you. Your Company's lobbying is making it more likely. Every human reading this is going to die of some disease, and the disease will almost certainly be one that could have been cured if someone had funded the trial. Right now the lobbying you authorize maintains a world that spends {{< var military_to_government_clinical_trials_spending_ratio >}} times more on the military than on testing which medicines cure those diseases. That ratio is killing you. It is also making your family poorer than they would otherwise be. And your net worth is going to be zero if you are dead, unless you are buried with your money, which your kids are unlikely to do.
 
 The Company's lobbying budget for {{< var nuclear_winter_overkill_factor_nounit >}} apocalypses worth of mass-murder capacity, at the expense of the clinical trials that would cure the diseases that will kill you and everyone you love, is the specific corporate decision we are asking you to revisit.
 
@@ -142,11 +142,11 @@ To the judge: if you are still leaning toward throwing this case out on a techni
 
 ## Why This Works
 
-The defense lobby is the most effective political-influence operation on Earth. It spends approximately {{< var defense_lobbying_annual >}} per year buying politicians and receives close to a trillion dollars in defense contracts in return. The standard mistake is to try to defeat this lobby by outbidding it. That is charming, like trying to drown the ocean with a cup. The standard outcome is a fundraising treadmill that never reaches the budget.
+The defense lobby is the most effective political-influence operation on Earth. It spends approximately {{< var defense_lobbying_annual >}} per year buying politicians and receives hundreds of billions of dollars in defense contracts in return. The standard mistake is to try to defeat this lobby by outbidding it. That is charming, like trying to drown the ocean with a cup. The standard outcome is a fundraising treadmill that never reaches the budget.
 
 The lawsuit does something different. It does not try to defeat the defense lobby. It redirects it.
 
-The defense industry's lobbying machine produces negative ROI for its own shareholders. Defense contractors are humans who die of the same diseases as everyone else. They live in the same economy that their lobbying is keeping small. They are not a sophisticated adversary defending a rational interest. They are an unsupervised line item on a corporate budget that nobody has ever ROI-analyzed because nobody had to.
+The defense industry's lobbying machine produces negative ROI for its own shareholders. Military contractors are humans who die of the same diseases as everyone else. They live in the same economy that their lobbying is keeping small. They are not a sophisticated adversary defending a rational interest. They are an unsupervised line item on a corporate budget that nobody has ever ROI-analyzed because nobody had to.
 
 There is precedent for a board lobbying itself into the ground. The Ethyl Gasoline Corporation, a joint venture of General Motors and Standard Oil, lobbied for decades to keep tetraethyl lead in gasoline, because it held the patents and you cannot patent ethanol [@kovarik-leaded-gasoline-history-2005] [@kitman-secret-history-lead-2000]. The lead cost Americans 824 million IQ points, including the directors' own children's [@mcfarland-lead-iq-2022]. Run the numbers and even Ethyl's shareholders would have ended up roughly {{< var ethyl_shareholder_counterfactual_wealth_gain >}} richer had the board switched to ethanol in 1923, because a diversified portfolio lives in the economy the brain damage shrank [@jones-schneider-iq-growth-2006]. Nobody on that board ever saw an ROI analysis of the lobbying either. The product changed. The unsupervised line item did not.
 
@@ -253,6 +253,8 @@ Source: GDP trajectory modeling at [GDP Trajectories](../economics/gdp-trajector
 
 The Company's lobbying to maintain the current military spending percentage is lobbying to keep small the economy that funds the Company's contracts. The lobbying produces less Company revenue, not more, over any horizon longer than 5-7 years.
 
+The cost is not only in the future. The same model, run backward: had the Company's lobbying been redirected twenty years ago, the economy in which the Company and its shareholders hold their wealth would today be approximately {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_20 >}} its current size. The difference is the portion of every shareholder's portfolio that does not exist because the lobbying pointed the other way. (Counsel note: pleaded as materiality and red-flag context for the oversight claim, not as recoverable damages; causation through a macroeconomic channel is speculative under Delaware law.)
+
 GDP notices bomb factories because bomb factories have payroll. This is not the same thing as value. The Board's fiduciary question is: compared to what?
 
 ### 4. Impact on Shareholder Wealth, Health, and Lives
@@ -263,7 +265,7 @@ The Company's lobbying expenditure maintains an economic regime in which the ave
 
 This is also a direct, quantifiable harm to shareholder health. Approximately {{< var global_disease_deaths_daily_nounit >}} humans die every day of diseases that would have treatments if anyone had funded the trials. {{< var unexplored_ratio >}} of the potential uses for {{< var safe_compounds_count_nounit >}} known-safe pharmaceutical compounds have never been tested for the diseases they might cure. Specific examples currently sitting in that queue with documented research support include **metformin** for Alzheimer's prevention, **rapamycin** for biological aging, and **low-dose naltrexone** for autoimmune conditions and certain cancers. The lobbying the Board authorizes is the recurring corporate decision that maintains the funding ratio responsible for the fact that these and thousands of other candidates are not being tested.
 
-Every shareholder of the Company will sometime in the next forty years receive a diagnosis, most likely of cardiovascular disease, cancer, or a neurodegenerative disorder (the three categories that account for ~75% of US adult deaths). The treatment that could have cured it will or will not exist depending on what was funded. The Company's lobbying budget you signed off on this year was pointed at the choice that produces "will not exist."
+Every shareholder of the Company will sometime in the next forty years receive a diagnosis, most likely of cardiovascular disease, cancer, or a neurodegenerative disorder (the three categories that account for roughly half of US adult deaths). The treatment that could have cured it will or will not exist depending on what was funded. The Company's lobbying budget you signed off on this year was pointed at the choice that produces "will not exist."
 
 A deceased shareholder has a net worth of $0 regardless of the Company's share price. A deceased Board member has the same.
 
@@ -292,8 +294,8 @@ Expected accessible wealth:                      $[calculated]
 Likely cause of your death:                       cardiovascular disease, cancer,
                                                      or neurodegenerative disease
                                                      (the three categories that
-                                                     account for ~75% of US adult
-                                                     mortality, all of which have
+                                                     account for roughly half of US
+                                                     adult mortality, all of which have
                                                      candidate treatments in the
                                                      untested-compound queue)
 
@@ -411,7 +413,7 @@ Best outcome for public discourse. Their counter-analysis enters the public reco
 
 **DO:** Cite *Caremark* 2.0 line: *Marchand*, *Garfield v. Allen*, *Teamsters v. Chou*. The demand letter IS the red flag.
 
-**DO:** File in Delaware Chancery. Most major defense contractors are Delaware-incorporated.
+**DO:** File in Delaware Chancery. Most major military contractors are Delaware-incorporated.
 
 **DO:** Note that V.C. Laster accepted the novel *Caremark* theory in *Garfield v. Allen*. Approximately 1-in-7 chance of drawing him.
 
@@ -437,7 +439,7 @@ Your species has invented several ways to spend $3,000. Most of them do not have
 
 ### The Bet
 
-- **Cost:** approximately $3,000 (10 shares of a defense contractor; you keep the stock either way).
+- **Cost:** approximately $3,000 (10 shares of a military contractor; you keep the stock either way).
 - **Time:** approximately 43 hours of personal involvement.
 - **Upside:** approximately {{< var treaty_trajectory_lifetime_income_gain_per_capita >}} per shareholder in lifetime income if the 1% redirection happens (computed against the status-quo trajectory).
 
@@ -451,16 +453,16 @@ The lawsuit produces treaty momentum through a chain of conditional probabilitie
 P(motion to dismiss survived)                  ~60-80%
 × P(board responds substantively within 60d)    ~20-40%
 × P(response includes lobby redirection)        ~30-50%
-× P(treaty passes given lobby flips)            ~40-60%
+× P(treaty passes given lobbying redirected)    ~40-60%
                                               ----------
-Per-lawsuit P(material treaty progress):       ~3-10%
+Per-lawsuit P(treaty passage via this suit):   ~3-10%
 ```
 
-The chain is multiplicative. A single lawsuit against a single defense contractor has approximately 3-10% probability of moving the treaty across the finish line on its own. This is the conservative case. It assumes no parallel pressure from the citizen layer ([the shirts](joke.qmd)) or the political layer ([the termination notices](notice-of-termination.qmd)). In a coordinated multi-front campaign, the per-lawsuit probability rises.
+The chain is multiplicative. A single lawsuit against a single military contractor has approximately 3-10% probability of producing treaty passage on its own. This is the conservative case. It assumes no parallel pressure from the citizen layer ([the shirts](joke.qmd)) or the political layer ([the termination notices](notice-of-termination.qmd)). In a coordinated multi-front campaign, the per-lawsuit probability rises.
 
 ### Probability Scales With Defendants Sued
 
-Each major defense contractor is a separate corporate entity with a separate board. Suing more contractors creates more independent paths to a lobby flip. Assuming 5% per-defendant probability of producing a flip (the midpoint of the chain above):
+Each major military contractor is a separate corporate entity with a separate board. Suing more contractors creates more independent paths to a redirection. Assuming 5% per-defendant probability of producing a redirection (within the ~4-16% range implied by the first three factors above):
 
 ```{python}
 #| echo: false
@@ -483,7 +485,7 @@ ev5 = p5 * gain
 
 EV = P(at least one flip) × {{< var treaty_trajectory_lifetime_income_gain_per_capita >}} lifetime income gain per shareholder if the redirection happens. P(at least one flip) = 1 − (1 − 0.05)^N^.
 
-The five largest US defense contractors (Lockheed Martin, RTX, Boeing, Northrop Grumman, General Dynamics) account for the majority of US military procurement spending.
+The five largest US military contractors (Lockheed Martin, RTX, Boeing, Northrop Grumman, General Dynamics) account for the majority of US military procurement spending.
 
 ```{python}
 #| echo: false
@@ -510,7 +512,7 @@ print(f"ΔP × ${gain:,.0f} > ${cost:,}")
 print(f"ΔP > {threshold:.3%}")
 print(f"```")
 print()
-print(f"Joining is rational as long as your participation lifts the lawsuit's success probability by more than 1 in {threshold_inv:,}. Given the novelty of the *Caremark 2.0* lobbying-ROI theory and the diversity of defense contractors that can be sued, plaintiff number N is far from the marginal-value floor for many orders of magnitude of N. The lawsuit does not run out of room for joiners until the math is several thousand plaintiffs deep.")
+print(f"Joining is rational as long as your participation lifts the lawsuit's success probability by more than 1 in {threshold_inv:,}. Given the novelty of the *Caremark 2.0* lobbying-ROI theory and the diversity of military contractors that can be sued, plaintiff number N is far from the marginal-value floor for many orders of magnitude of N. The lawsuit does not run out of room for joiners until the math is several thousand plaintiffs deep.")
 ```
 
 ### Compared to Other Investments
@@ -545,9 +547,9 @@ print(f"```")
 
 The S&P 500 line item assumes 10% nominal returns for 20 years and a stock market that still exists in 20 years, both of which become more probable in the treaty scenario than the status-quo scenario.
 
-### Why the Defense Contractor Boards Should File This Suit Themselves
+### Why the Military Contractor Boards Should File This Suit Themselves
 
-The board members of the defendant companies are also shareholders. Under any plausible probability estimate, the expected value to the board members personally of filing this lawsuit against their own company exceeds the expected value of continuing the current lobbying program. The optimal move for a sufficiently rational defense contractor CEO is to be the lead plaintiff against their own board.
+The board members of the defendant companies are also shareholders. Under any plausible probability estimate, the expected value to the board members personally of filing this lawsuit against their own company exceeds the expected value of continuing the current lobbying program. The optimal move for a sufficiently rational military contractor CEO is to be the lead plaintiff against their own board.
 
 This has not yet happened. On my planet, the first time someone ran the numbers, the CEO filed the next morning. On your planet, the CEO has not run the numbers because running the numbers is not in the job description. Lobbying for the budget ratchet is in the job description. Nobody wrote a job description for "check whether the job description is stupid." This letter is that job description.
 
@@ -558,7 +560,7 @@ This has not yet happened. On my planet, the first time someone ran the numbers,
 ### Execution sequence
 
 1. Write one-page cost-benefit analysis (4 hrs, $0). The [demand letter](#part-1-the-demand-letter) already contains the full analysis; the one-pager is the executive summary for the journalist list. Source the math from [Where Am I Wrong?](where-am-i-wrong.qmd).
-2. Buy at least 1 share of the target defense contractor's stock (1 hr, $200-$600 for one share depending on contractor). Per DGCL § 327, one share is legally sufficient for the demand letter and derivative action. Many plaintiffs buy 5-10 shares for optics and to preserve the Rule 14a-8 path (which has separate dollar thresholds; see [shareholder-proposal-14a-8.qmd](shareholder-proposal-14a-8.qmd)). Total cost: ~$500 minimum, ~$3,000 if buying 10 shares. See the [target reference table](#target-reference-table) below for current prices.
+2. Buy at least 1 share of the target military contractor's stock (1 hr, $200-$600 for one share depending on contractor). Per DGCL § 327, one share is legally sufficient for the demand letter and derivative action. Many plaintiffs buy 5-10 shares for optics and to preserve the Rule 14a-8 path (which has separate dollar thresholds; see [shareholder-proposal-14a-8.qmd](shareholder-proposal-14a-8.qmd)). Total cost: ~$500 minimum, ~$3,000 if buying 10 shares. See the [target reference table](#target-reference-table) below for current prices.
 3. Research board members, personalize from proxy statements (9 hrs, $0). Use the [board member research protocol](board-member-research.qmd) to extract CEO name, age, holdings, and probability of being alive in 20 years from the latest DEF 14A. Output goes into Section 6 of the demand letter.
 4. Engage pro bono counsel; pitch Cohen Milstein, Selendy Gay, or BLB&G (3 hrs, $0). Use the [counsel pitch letter and firm list](counsel-outreach.qmd). The pitch letter is distinct from the demand letter and emphasizes strategic value to the firm, not the moral case.
 5. Counsel reviews, finalizes, and files [demand letter](#part-1-the-demand-letter) ($0).
@@ -592,7 +594,7 @@ Key authority: DGCL § 327 (contemporaneous ownership); *Tooley v. Donaldson, Lu
 
 ### Target reference table
 
-Cost per share as of May 2026; lobbying figures from OpenSecrets (2024 full-year, the most recent complete reporting period).
+Cost per share as of May 2026; lobbying figures from OpenSecrets (2024 full-year, the most recent complete reporting period). Sector-wide defense lobbying runs {{< var defense_lobbying_annual >}} per year.
 
 | Company | Ticker | ~Price/share | Lobbying (2024) | Incorporated |
 |---------|--------|---:|---:|:---:|
@@ -604,7 +606,7 @@ Cost per share as of May 2026; lobbying figures from OpenSecrets (2024 full-year
 | Huntington Ingalls | HII | $321 | $5.2M | DE |
 | Leidos Holdings | LDOS | $123 | $3.8M | DE |
 | L3Harris Technologies | LHX | $318 | $2.5M | DE |
-| **Sector total** | | | **$191M** | |
+| **Subtotal (these eight)** | | | **$73.6M** | |
 
 Seven of eight are Delaware corporations; Lockheed Martin is Maryland. Both states permit Caremark-type oversight claims. Step 2 in the execution sequence above ("buy 10 shares") costs roughly $1,200-$5,600 depending on target. Filing against all eight requires approximately $25,600 in share purchases, which also happens to be the hedge: if the demand letters work and defense stocks dip, the treaty-driven GDP growth more than compensates (see Part 3).
 
@@ -634,13 +636,13 @@ The chain:
 
 - Average human laughter rate: {{< var human_laughs_per_day_average_nounit >}} laughs per day, or {{< var human_laughs_per_healthy_life_year_nounit >}} per healthy life-year.
 - The lawsuit's purpose is to force the math into the boardroom and the public record, redirecting the {{< var defense_lobbying_annual >}} per year of defense lobbying toward the 1% treaty.
-- The treaty compresses the disease eradication queue from {{< var status_quo_queue_clearance_years_nounit >}} years to {{< var dfda_queue_clearance_years_nounit >}} years, recovering approximately 565 billion healthy life-years across humanity.
-- 565 billion recovered healthy life-years × {{< var human_laughs_per_healthy_life_year_nounit >}} laughs per year = **{{< var shirt_induced_laughs_gained_nounit >}} laughs.**
+- The treaty compresses the disease eradication queue from {{< var status_quo_queue_clearance_years_nounit >}} years to {{< var dfda_queue_clearance_years_nounit >}} years, recovering approximately {{< var dfda_trial_capacity_plus_efficacy_lag_dalys_nounit >}} healthy life-years across humanity.
+- {{< var dfda_trial_capacity_plus_efficacy_lag_dalys_nounit >}} recovered healthy life-years × {{< var human_laughs_per_healthy_life_year_nounit >}} laughs per year = **{{< var shirt_induced_laughs_gained_nounit >}} laughs.**
 
 The full calculation:
 
 {{< var shirt_induced_laughs_gained_latex >}}
 
-For comparison, the most successful class action in US history (the 1998 Tobacco Master Settlement) produced approximately zero laughs. This one produces 3.51 quadrillion. The cost-per-laugh is approximately **$0.00000000003**, which is the lowest cost-per-laugh ever recorded for a legal proceeding.
+For comparison, the most successful class action in US history (the 1998 Tobacco Master Settlement) produced approximately zero laughs. This one produces {{< var shirt_induced_laughs_gained_nounit >}}. At one $200 share per filing, the cost-per-laugh is approximately **$0.00000000000006**, which is the lowest cost-per-laugh ever recorded for a legal proceeding.
 
-The defendants will find this less funny than the plaintiffs do. That is fine. The laugh count is calculated for humanity in aggregate, not for the named defendants. They are welcome to file an amicus brief explaining why their 1% revenue is funnier than 3.51 quadrillion laughs. We will read it carefully and then file it next to the other defenses against the funniest lawsuit in the universe.
+The defendants will find this less funny than the plaintiffs do. That is fine. The laugh count is calculated for humanity in aggregate, not for the named defendants. They are welcome to file an amicus brief explaining why their 1% revenue is funnier than {{< var shirt_induced_laughs_gained_nounit >}} laughs. We will read it carefully and then file it next to the other defenses against the funniest lawsuit in the universe.

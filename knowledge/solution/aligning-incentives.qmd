@@ -1,6 +1,6 @@
 ---
 title: Aligning Incentives
-description: Pharmaceutical companies make more money treating you forever than curing you once. Defense contractors earn $1,425 per lobbying dollar. Nobody is evil. The incentives are. Rearrange the profit motive so curing disease pays better than causing it, and watch capitalism accidentally save your species.
+description: Pharmaceutical companies make more money treating you forever than curing you once. Military contractors earn $1,425 per lobbying dollar. Nobody is evil. The incentives are. Rearrange the profit motive so curing disease pays better than causing it, and watch capitalism accidentally save your species.
 format:
   html:
     toc: true
@@ -23,7 +23,7 @@ This manual is not about convincing people to be better. You've been trying that
 
 This chapter is about something different. It's about building a system where doing well and doing good are the same thing. Every major interest group gets aligned behind curing disease, not through charity or guilt, but through pure profit. You can't change what organisms want. You can only change what's profitable. Then they change themselves, enthusiastically, and take credit for it afterward.
 
-## Defense Contractors: Teaching Merchants of Death to Love Life
+## Military Contractors: Teaching Merchants of Death to Love Life
 
 Military lobbyists spend {{< var defense_lobbying_annual >}} on lobbying. They get $181B in government contracts back. That's roughly $1,425 returned per dollar invested [@lobbying-roi-calc]. Better returns than any hedge fund in history, and all you have to do is help kill strangers. They will oppose any treaty that threatens this. Not because they're evil (though that helps), but because murder is profitable and they like money. This is not a moral observation. This is an investment thesis.
 
@@ -55,13 +55,13 @@ Once they're lobbying for the treaty, the rebrand starts writing itself. Lockhee
 
 You're not asking them to close factories, lay off workers, stop making weapons, convert to medical equipment, change their business model, or feel bad about anything. You're only asking them to accept higher returns on investment, notice that the treaty is in their own interest, and maybe say nice things about it publicly. They keep {{< var defense_sector_retention_pct >}} of their current income PLUS get rich from bonds. This is the kind of negotiation where both sides win and one side doesn't even realize it's a negotiation. On your planet, this is called "a good deal." On mine, it's called "obvious."
 
-![Defense contractors keep 99% of their money and get extra cash for being nice. They're crying all the way to the bank about the hardship.](/assets/images/co-opting-defense-contractors/co-opting-defense-contractors-section-what-you-re-not-asking-bw-academic.jpg)
+![Military contractors keep 99% of their money and get extra cash for being nice. They're crying all the way to the bank about the hardship.](/assets/images/co-opting-defense-contractors/co-opting-defense-contractors-section-what-you-re-not-asking-bw-academic.jpg)
 
 ### Why This Works
 
 It's all legal. VICTORY [Incentive Alignment Bonds](incentive-alignment-bonds.qmd) are legal investment vehicles. Lobbying is protected free speech. Consulting fees are standard practice. They designed the system to allow this. You're just using it correctly for the first time, which is to say, you're using it for something other than weapons, which has never occurred to anyone before, which tells you everything about your species' relationship with its own legal system.
 
-The defense contractor CEO explains it to the board like this: "We diversified into bonds paying {{< var victory_bond_annual_return_pct >}} returns versus the market's {{< var average_market_return_pct >}}. If the treaty passes, we profit enormously. If it fails, we still have our defense contracts. It's a hedge. I'm being prudent. You're welcome." The board nods. The board always nods when the numbers are good. The board has never once asked whether the numbers were moral. This is, again, the design parameter.
+The military contractor CEO explains it to the board like this: "We diversified into bonds paying {{< var victory_bond_annual_return_pct >}} returns versus the market's {{< var average_market_return_pct >}}. If the treaty passes, we profit enormously. If it fails, we still have our defense contracts. It's a hedge. I'm being prudent. You're welcome." The board nods. The board always nods when the numbers are good. The board has never once asked whether the numbers were moral. This is, again, the design parameter.
 
 Here's what the CFO tells the CEO after the board meeting: the treaty is even better than a hedge, because fewer bases means less blowback means fewer terrorism crises. Robert Pape at the University of Chicago found that 95% of suicide terrorist attacks from 1980 to 2003 were responses to foreign military occupation [@pape-dying-to-win], and the $8 trillion War on Terror [@war-on-terror-cost-blowback] took attacks from about 1,000 per year to nearly 17,000 by 2014 [@terrorism-attacks-increased-post-2001]. Crisis-driven budgets sound great for defense revenue, but they're terrible for long-term capital planning. Emergency appropriations spike procurement, then get clawed back when the panic fades. You can't plan a 15-year fighter jet program on a budget that lurches from crisis to crisis. The treaty replaces boom-bust panic cycles with stable, predictable bond returns. A CFO who can forecast revenue 20 years out sleeps better than one who depends on the next attack making the news. Fewer crises, more stability, higher Sharpe ratio. The CFO doesn't phrase it as "world peace." The CFO phrases it as "reduced volatility in our revenue model." Same thing. Different PowerPoint.
 
@@ -69,7 +69,7 @@ Here's what the CFO tells the CEO after the board meeting: the treaty is even be
 
 ### The Timeline
 
-Optimistic (if this works): key lobbyists flip in months 1-12, defense contractor trade associations go neutral by month 18, and by month 25 former opponents take credit for supporting medical research, which they discovered they cared about yesterday but will swear they've cared about their whole lives. Your species does this with every social change. Opposition, resistance, capitulation, retroactive credit. It's the four seasons of human progress. No sane observer would fail to name the moment when someone who fought against a good idea starts claiming they invented it. The word is "creditworm." Your species doesn't have a word for it, which is why it happens so often. Things without names are invisible.
+Optimistic (if this works): key lobbyists flip in months 1-12, military contractor trade associations go neutral by month 18, and by month 25 former opponents take credit for supporting medical research, which they discovered they cared about yesterday but will swear they've cared about their whole lives. Your species does this with every social change. Opposition, resistance, capitulation, retroactive credit. It's the four seasons of human progress. No sane observer would fail to name the moment when someone who fought against a good idea starts claiming they invented it. The word is "creditworm." Your species doesn't have a word for it, which is why it happens so often. Things without names are invisible.
 
 ![How long it takes for politicians to go from 'this is outrageous' to 'I supported this all along.' Three years, apparently.](/assets/images/co-opting-defense-contractors/co-opting-defense-contractors-section-adoption-timeline-bw-academic.jpg)
 
@@ -171,7 +171,7 @@ The package: VICTORY [Incentive Alignment Bonds](incentive-alignment-bonds.qmd) 
 
 ![Insurance companies convince politicians, politicians convince weapons makers, weapons makers convince billionaires. It's like telephone but everyone gets richer.](/assets/images/aligning-incentives/aligning-incentives-section-the-sequence-bw-academic.jpg)
 
-Insurance companies move first, because pure financial logic is their entire personality and curing disease reduces their costs. Their lobbying convinces politicians, because money talks and insurance money talks loudly. Politicians create treaty momentum, because votes follow money follows lobbying follows insurance follows actuarial tables, which is the most boring causal chain in history but also the most reliable. Defense contractors hedge, because they can't risk being left out of a profitable shift. Pharma pivots, because adapt or die, which is ironic advice to give an industry that's supposed to prevent dying. Billionaires pile in last, because FOMO is powerful in humans generally and devastating in billionaires specifically, who have built their identities around being first and cannot tolerate being last.
+Insurance companies move first, because pure financial logic is their entire personality and curing disease reduces their costs. Their lobbying convinces politicians, because money talks and insurance money talks loudly. Politicians create treaty momentum, because votes follow money follows lobbying follows insurance follows actuarial tables, which is the most boring causal chain in history but also the most reliable. Military contractors hedge, because they can't risk being left out of a profitable shift. Pharma pivots, because adapt or die, which is ironic advice to give an industry that's supposed to prevent dying. Billionaires pile in last, because FOMO is powerful in humans generally and devastating in billionaires specifically, who have built their identities around being first and cannot tolerate being last.
 
 ### Why This Can Work: The Coordination Problem Has a Price Tag
 

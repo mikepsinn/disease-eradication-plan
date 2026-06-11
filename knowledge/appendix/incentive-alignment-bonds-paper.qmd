@@ -143,7 +143,7 @@ A natural question: why insist on *redirecting* resources from harmful programs 
 
 ![Spending more money doesn't work because there aren't more doctors. Moving money from bombs to medicine does work because doctors already exist.](/assets/images/incentive-alignment-bonds-paper/incentive-alignment-bonds-paper-section-why-reallocation-not-addition-bw-academic.jpg)
 
-When advocates successfully lobby for *more* spending on a good program, governments rarely cut a bad program to pay for it. They just spend more total. Between 2000 and 2024, U.S. federal spending on both military and healthcare increased. Neither "lost." Total federal spending grew from \$1.8 trillion to \$6.1 trillion. The national debt expanded from \$5.6 trillion to \$34 trillion. The real constraint (finite engineers, scientists, and productive capacity) was diluted across an ever-expanding pile of nominal claims. Defense contractors kept their share of real resources. Healthcare advocates won nominal victories diluted by inflation and competing claims.
+When advocates successfully lobby for *more* spending on a good program, governments rarely cut a bad program to pay for it. They just spend more total. Between 2000 and 2024, U.S. federal spending on both military and healthcare increased. Neither "lost." Total federal spending grew from \$1.8 trillion to \$6.1 trillion. The national debt expanded from \$5.6 trillion to \$34 trillion. The real constraint (finite engineers, scientists, and productive capacity) was diluted across an ever-expanding pile of nominal claims. Military contractors kept their share of real resources. Healthcare advocates won nominal victories diluted by inflation and competing claims.
 
 This is not a failure of advocacy. It is what happens when concentrated interests protect their programs absolutely while diffuse interests win symbolic increases funded by debt. The budget grows in nominal terms while each program's claim on real resources remains contested.
 
@@ -213,13 +213,13 @@ The 90:1 capital advantage cannot currently be deployed because diffuse benefici
 3. **Massive capital mobilization:** Even 0.1% of global household wealth ({{< var global_household_wealth_usd >}} 0.1%) exceeds total annual global lobbying spending by 100×
 4. **Self-interest alignment:** Investors profit directly from policy success, creating concentrated financial incentives on the welfare-improving side
 
-**This reverses the Olsonian asymmetry.** Defense contractors spend \$100M+ annually lobbying because each firm captures concentrated benefits.
+**This reverses the Olsonian asymmetry.** Military contractors spend \$100M+ annually lobbying because each firm captures concentrated benefits.
 
 But the IAB mechanism allows millions of diffuse beneficiaries to collectively deploy billions while each capturing a proportional return.
 
 The concentrated opposition ($100M-$1B annually) becomes outmatched by newly-coordinated diffuse support ($10B-$100B+ available capital).
 
-We're not inventing lobbying. Defense contractors proved it works decades ago. We're just making it available to everyone whose lives depend on cures instead of bombs. Turns out there are more of us, and we're much richer. The political change ROI (100-10,000x) that currently accrues only to concentrated industries becomes accessible to everyone who benefits from public goods.
+We're not inventing lobbying. Military contractors proved it works decades ago. We're just making it available to everyone whose lives depend on cures instead of bombs. Turns out there are more of us, and we're much richer. The political change ROI (100-10,000x) that currently accrues only to concentrated industries becomes accessible to everyone who benefits from public goods.
 
 ### Quantifying Net Societal Value of Funding Sources
 
@@ -691,7 +691,7 @@ where $\tau: \mathbb{R} \to \{1, 2, 3\}$ is a tier function and $Y(1) > Y(2) > Y
 |:-----|:----------|:-----------------------|:---------|
 | 1 | $\theta_i \geq 75$ | \$500K+ | WHO Advisory Board, Aspen Fellowships |
 | 2 | $60 \leq \theta_i < 75$ | \$200-400K | Brookings, RAND, university chairs |
-| 3 | $\theta_i < 60$ | \$150-300K | Defense contractor boards, lobbying firms |
+| 3 | $\theta_i < 60$ | \$150-300K | Military contractor boards, lobbying firms |
 
 : Post-Office Income by Public Good Score Tier {#tbl-postoffice}
 
@@ -769,7 +769,7 @@ Consider the decision calculus for a hypothetical Senator Smith facing a vote on
 
 | Without IABs | With IABs |
 |:-------------|:----------|
-| Defense contractors fund opponent if YES | Treaty Support Score rises 25 points |
+| Military contractors fund opponent if YES | Treaty Support Score rises 25 points |
 | Attack ads: "Smith weakened our military" | Independent campaigns spend \$2M supporting Smith |
 | Benefits (cures) arrive in 10+ years | Post-office eligibility: Tier 3 → Tier 1 |
 | Diffuse beneficiaries cannot coordinate | Expected post-office income: \$200K → \$400K/yr |
@@ -784,7 +784,7 @@ To assess whether IABs can achieve incentive compatibility, we calibrate the mod
 
 | Parameter | Symbol | Empirical Range | Source |
 |:----------|:-------|:----------------|:-------|
-| Defense contractor opposition spending | $c_i$ | \$0.5–5M per race | OpenSecrets 2020 |
+| Military contractor opposition spending | $c_i$ | \$0.5–5M per race | OpenSecrets 2020 |
 | Independent expenditure effect on vote share | $\epsilon_i$ | 0.5–2 pp per \$1M | Spenkuch & Toniatti 2018 |
 | Value of 1 pp reelection probability | $\alpha_i$ | \$0.5–2M | Implied by campaign spending |
 | Post-office income differential (Tier 1 vs 3) | $\Delta Y$ | \$150–300K/yr | Industry salary data |
@@ -918,7 +918,7 @@ The most powerful evidence that IABs are legal is that their core components hav
 
 **Post-office benefits tied to policy positions:**
 
-- Defense contractors hire former Pentagon officials who supported procurement programs
+- Military contractors hire former Pentagon officials who supported procurement programs
 - Pharmaceutical companies hire former FDA officials who approved their drugs
 - Think tanks hire former legislators who championed their policy priorities
 
@@ -995,7 +995,7 @@ This criticism deserves a careful response, as it goes to the heart of whether I
 
 **What makes IABs structurally different from corporate lobbying:**
 
-1. **Comparative welfare criterion:** IABs fund reallocation from $NSV_{source} < NSV_{target}$ programs. Corporate lobbying seeks absolute budget increases for the lobbying firm's industry, regardless of comparative value. Defense contractors lobby for *more military spending* without specifying what gets cut. IABs specify *both* the source (lower-NSV) and target (higher-NSV), creating a welfare-improving constraint.
+1. **Comparative welfare criterion:** IABs fund reallocation from $NSV_{source} < NSV_{target}$ programs. Corporate lobbying seeks absolute budget increases for the lobbying firm's industry, regardless of comparative value. Military contractors lobby for *more military spending* without specifying what gets cut. IABs specify *both* the source (lower-NSV) and target (higher-NSV), creating a welfare-improving constraint.
 
 2. **Public good vs. private good alignment:** Corporate lobbying aligns politician incentives with excludable private benefits (military contracts flow to specific firms). IAB-supported policies produce non-excludable public goods (cures, climate stability). Investors cannot capture the primary benefits. They accrue to the general public. Investors capture only a fraction of the funding flow, not the end-state benefit.
 
@@ -1121,7 +1121,7 @@ We briefly survey three domains where IABs are applicable; Appendix B provides d
 
 **Climate change.** Verified emissions reductions (UNFCCC reporting) provide a measurable metric. Politicians can be scored on climate legislation votes, treaty ratification, and budget allocations. The concentrated-diffuse asymmetry is stark: fossil fuel producers face concentrated losses while climate benefits are globally diffuse.
 
-**Nuclear disarmament.** Verified warhead reductions under START-type treaties provide objective metrics. The scoring function would weight votes on arms control treaties, military authorization amendments, and non-proliferation funding. Defense contractor opposition creates concentrated costs; security benefits are diffuse.
+**Nuclear disarmament.** Verified warhead reductions under START-type treaties provide objective metrics. The scoring function would weight votes on arms control treaties, military authorization amendments, and non-proliferation funding. Military contractor opposition creates concentrated costs; security benefits are diffuse.
 
 **Pandemic preparedness.** WHO Joint External Evaluation scores and pandemic preparedness funding levels are measurable. Health security appropriations votes provide a scoring basis. Pharmaceutical incumbent opposition and budget competition create concentrated resistance; pandemic prevention benefits the global population.
 
@@ -1260,7 +1260,7 @@ The 90:1 capital advantage means that **even if concentrated interests attempt c
 4. Momentum builds (even partial progress increases bond value through demonstrated efficacy)
 5. Retail offering opens to millions of diffuse beneficiaries for the remaining campaign funding
 
-...then the mechanism reaches escape velocity before regulatory capture becomes feasible. Defense contractors cannot outspend \$50B+ in mobilized retail capital without bankrupting themselves.
+...then the mechanism reaches escape velocity before regulatory capture becomes feasible. Military contractors cannot outspend \$50B+ in mobilized retail capital without bankrupting themselves.
 
 **Conclusion:** The initial fundraising challenge is solvable because **(a)** ROI economics make early investment rational for risk-tolerant capital, and **(b)** capital asymmetry ensures that once traction is demonstrated, scaling capital to the full {{< var treaty_campaign_total_cost >}} exceeds any plausible counter-lobbying budget. The binding constraint is execution speed, not capital availability.
 
@@ -1630,9 +1630,9 @@ where:
 
 - Tier 1: Arms control advisory positions, security fellowships at peace-oriented institutions, disarmament diplomacy roles
 - Tier 2: General foreign policy positions
-- Tier 3: Defense contractor positions remain available but arms control positions closed
+- Tier 3: Military contractor positions remain available but arms control positions closed
 
-**Calibration notes.** Defense contractor opposition is substantial (over \$100M annually in lobbying). However, the concentrated-diffuse asymmetry is extreme: nuclear war risks affect all humanity. IAB funding levels comparable to current defense lobbying would create countervailing incentives.
+**Calibration notes.** Military contractor opposition is substantial (over \$100M annually in lobbying). However, the concentrated-diffuse asymmetry is extreme: nuclear war risks affect all humanity. IAB funding levels comparable to current defense lobbying would create countervailing incentives.
 
 ### Pandemic Preparedness
 

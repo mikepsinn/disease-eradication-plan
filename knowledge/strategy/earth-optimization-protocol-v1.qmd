@@ -164,7 +164,7 @@ The system does not require anyone to become a better person. It requires each a
 
 | Actor | What they want | What the system gives them |
 |:---|:---|:---|
-| Defense contractors | Revenue | Keep 99% of budget + new health market worth {{< var treaty_annual_funding >}}/year. The main difference is whether the end user survives. |
+| Military contractors | Revenue | Keep 99% of budget + new health market worth {{< var treaty_annual_funding >}}/year. The main difference is whether the end user survives. |
 | Pharma | Cheaper trials, more revenue | Trials become revenue instead of cost; cost drops {{< var dfda_trial_cost_reduction_factor >}} |
 | Insurance companies | Fewer claims | Cured patients stop filing; their lobbyists become your lobbyists |
 | Politicians | Reelection + career | Super PAC funding + post-office careers proportional to treaty support |
@@ -172,7 +172,7 @@ The system does not require anyone to become a better person. It requires each a
 | Lobbyists | Clients + salary | Same job, same salary, different client; Wikipedia page improves |
 | Regular humans | Health + income | Diseases cured + {{< var treaty_trajectory_lifetime_income_gain_per_capita >}} lifetime income gain |
 
-The Olsonian problem (concentrated interests beat diffuse beneficiaries) is solved by creating concentrated interests on the pro-health side. Bondholders, politicians receiving PAC funding, defense contractors accessing the new health market: all now have per-capita stakes in the treaty's survival that match or exceed the defense lobby's per-capita stakes in the status quo.
+The Olsonian problem (concentrated interests beat diffuse beneficiaries) is solved by creating concentrated interests on the pro-health side. Bondholders, politicians receiving PAC funding, military contractors accessing the new health market: all now have per-capita stakes in the treaty's survival that match or exceed the defense lobby's per-capita stakes in the status quo.
 
 ## The Information Engine
 

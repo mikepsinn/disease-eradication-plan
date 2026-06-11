@@ -105,7 +105,7 @@ Researchers set their own price. Patients choose which trials to join. Money flo
 
 The solution only works if [everyone wins by winning](solution/aligning-incentives.qmd). Here's who gets what:
 
-**[Defense contractors](solution/aligning-incentives.qmd#defense-contractors-teaching-merchants-of-death-to-love-life):** Keep {{< var defense_sector_retention_pct >}} of budget + {{< var victory_bond_annual_return_pct >}} returns on bonds
+**[Military contractors](solution/aligning-incentives.qmd#military-contractors-teaching-merchants-of-death-to-love-life):** Keep {{< var defense_sector_retention_pct >}} of budget + {{< var victory_bond_annual_return_pct >}} returns on bonds
 **Pharmaceutical companies:** Patients pay them instead of vice versa
 **Politicians:** Campaign donations + not losing elections
 **Insurance companies:** They want you either dead or immortal, anything but expensively lingering. Cures help.

@@ -1306,8 +1306,9 @@ def upload_paper(
 
     except requests.HTTPError as e:
         print(f"ERROR: Zenodo API error: {e}", file=sys.stderr)
-        if hasattr(e, 'response'):
-            print(f"  Response: {e.response.text}", file=sys.stderr)
+        response = e.response
+        if response is not None:
+            print(f"  Response: {response.text}", file=sys.stderr)
         return None
     except requests.RequestException as e:
         print(f"ERROR: Zenodo request failed: {e}", file=sys.stderr)

@@ -18,7 +18,7 @@ with dot.subgraph(name='cluster_spiral') as spiral:
     spiral.node('Cures1', 'Oops, we\ncured cancer\n(sorry pharma)')
     spiral.node('Media1', 'Media loses their minds:\n"HOLY SHIT IT\nACTUALLY WORKED"')
     spiral.node('Votes1', '500M people:\n"Do that again\nbut more"')
-    spiral.node('Treaty2', 'Year 3:\n2% ($54B)\nDefense contractors\nslightly annoyed', shape='box', penwidth='2')
+    spiral.node('Treaty2', 'Year 3:\n2% ($54B)\nMilitary contractors\nslightly annoyed', shape='box', penwidth='2')
     spiral.node('Cures2', 'Accidentally\nreverse aging\n(Botox industry\nin shambles)')
     spiral.node('Media2', 'Headlines:\n"Death now\ntechnically\noptional"')
     spiral.node('Votes2', '2B humans:\n"Why weren\'t we\ndoing this before?"')

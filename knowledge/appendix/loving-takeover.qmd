@@ -1,8 +1,8 @@
 ---
 title: 'The Loving Takeover'
-description: 'For roughly $90 per global human, humanity can buy a controlling stake in every major defense contractor on Earth and redirect their lobbying budgets toward the 1% treaty. The takeover is loving because the people being bought out are made richer and longer-lived by it. The math is on this page.'
+description: 'For roughly $90 per global human, humanity can buy a controlling stake in every major military contractor on Earth and redirect their lobbying budgets toward the 1% treaty. The takeover is loving because the people being bought out are made richer and longer-lived by it. The math is on this page.'
 abstract: |
-  The Western military-industrial complex has a combined market capitalization of approximately $670 billion across the major US primes, plus another $50 billion across allied European primes. A majority shareholding requires roughly $385 billion nominal (and far more after price inflation during a coordinated buy-up, which is the point: the upside accrues to the early buyers). Distributed across the global population, the per-person ante is approximately $48-$90. Once humanity holds the majority, the single highest-leverage action is to redirect the ~$127 million per year of defense lobbying toward the 1% treaty. Expected return per global human: ~3,500x-11,000x at base case; ~35x-110x even after a 99% pessimistic haircut. The takeover is structurally loving: existing shareholders are made richer by the demand that buys their shares, defense-contractor employees keep their jobs (and gain new ones in the medical pivot), and the directors and officers who settle gain personal life expectancy alongside everyone else.
+  The Western military-industrial complex has a combined market capitalization of approximately $670 billion across the major US primes, plus another $131 billion across allied European primes. A majority shareholding requires roughly $400 billion nominal (and far more after price inflation during a coordinated buy-up, which is the point: the upside accrues to the early buyers). Distributed across the global population, the per-person ante is approximately $90. Once humanity holds the majority, the single highest-leverage action is to redirect the ~$127 million per year of defense lobbying toward the 1% treaty. Expected total value per global human: ~6,000x-22,000x the contribution at base case (mostly welfare value, not cash); ~60x-220x even after a 99% pessimistic haircut. The takeover is structurally loving: existing shareholders are made richer by the demand that buys their shares, military-contractor employees keep their jobs (and gain new ones in the medical pivot), and the directors and officers who settle gain personal life expectancy alongside everyone else.
 aliases:
   - /loving-takeover.html
   - /funniest-loving-takeover.html
@@ -23,7 +23,7 @@ keywords:
   - friendly takeover
   - shareholder coalition
   - military industrial complex
-  - defense contractors
+  - military contractors
   - 1% treaty
   - coordinated share purchase
   - lobbying redirection
@@ -52,9 +52,9 @@ scores:
 
 **ANNUAL LOBBYING BUDGET YOU GET TO REDIRECT:** {{< var defense_lobbying_annual >}}, not yet pointed at the [1% treaty](../solution/1-percent-treaty.qmd) [@1-percent-treaty-paper-2025] [@1-pct-treaty-impact-paper-2025]. After the takeover, it is.
 
-**EXPECTED VALUE PER GLOBAL HUMAN PARTICIPANT:** ~$310,000-$1,000,000 in base case, or ~$3,500-$11,000 in ROI multiple. Even after a 99% pessimism haircut, ~$3,000-$10,000 in expected return per {{< var defense_takeover_cost_per_human >}} contributed.
+**EXPECTED VALUE PER GLOBAL HUMAN PARTICIPANT:** ~$530,000-$2,000,000 in total expected value at base case (~6,000x-22,000x the contribution; mostly welfare value, not cash). Even after a 99% pessimism haircut, ~$5,000-$20,000 in expected total value per {{< var defense_takeover_cost_per_human >}} contributed.
 
-This is the [lawsuit](lawsuit.qmd) escalated. The lawsuit campaign is the cheap version: own one share, file a demand letter, force the math into the boardroom. The takeover is the maximalist version: own enough shares to vote out the board, redirect the lobbying budget, and point the most effective political-influence operation on Earth at the treaty. Same mechanism, larger surface area.
+This is the [lawsuit](lawsuit.qmd) escalated. The lawsuit is the cheap version: own one share, send the board a love letter (the law calls it a demand letter), and the board is required to read the math. The takeover is the full version: own enough shares to choose the board, and the best lobbyists money can buy start working on keeping their shareholders alive.
 
 ## Why "Loving," Not "Hostile"
 
@@ -62,10 +62,10 @@ A normal hostile takeover is hostile to the people being acquired. The acquirer 
 
 This takeover does the opposite of all four.
 
-1. **Existing shareholders make money on the way in.** A coordinated humanity-wide buy-up is roughly $300B-{{< var defense_takeover_cost_total >}} of net new demand against a tradeable float of ~$460B. The mathematical consequence is that share prices rise. Anyone who held defense contractor stock before the campaign started is wealthier because of the campaign. The takeover is the largest voluntary wealth transfer to existing defense-contractor shareholders in history.
-2. **Defense-contractor employees keep their jobs.** The companies are not liquidated. The engineering workforce is redirected toward medical, biotech, and dual-use civilian applications that compound at higher rates in the post-treaty economy. Headcount goes up, not down.
+1. **Existing shareholders make money on the way in.** A coordinated humanity-wide buy-up is roughly $400 billion-{{< var defense_takeover_cost_total >}} of net new demand against a tradeable float of roughly $200-320 billion. The mathematical consequence is that share prices rise. Anyone who held military contractor stock before the campaign started is wealthier because of the campaign. The takeover is the largest voluntary wealth transfer to existing military-contractor shareholders in history.
+2. **Military-contractor employees keep their jobs.** The companies are not liquidated. The engineering workforce is redirected toward medical, biotech, and dual-use civilian applications that compound at higher rates in the post-treaty economy. Headcount goes up, not down.
 3. **Directors and officers gain personal life expectancy.** The settlement adds approximately {{< var avg_life_extension_per_beneficiary >}} to the average beneficiary's healthy life, including the directors and officers themselves and their families. The same directors who currently face the same age-stratified disease risk as everyone else gain measurable additional years of life from the company they direct settling rather than fighting.
-4. **The acquirers are everyone.** The campaign has no central acquirer extracting value at the expense of others. The "control premium" is paid by humanity to humanity. The early buyers (who fund the campaign by accepting the early risk) capture some upside. The later buyers (who join once the campaign has scale) capture the policy benefits. Existing holders capture the price appreciation. Defense contractors capture an addressable market roughly {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}} larger than the current trajectory. There is no party that loses.
+4. **The acquirers are everyone.** The campaign has no central acquirer extracting value at the expense of others. The "control premium" is paid by humanity to humanity. The early buyers (who fund the campaign by accepting the early risk) capture some upside. The later buyers (who join once the campaign has scale) capture the policy benefits. Existing holders capture the price appreciation. Military contractors capture an addressable market roughly {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}} larger than the current trajectory. There is no party that loses.
 
 The only thing the takeover changes is a budget line item: the {{< var defense_lobbying_annual >}}/year of lobbying that is not yet directed at the [1% treaty](../solution/1-percent-treaty.qmd). The humans associated with that line item are not the problem. The direction is.
 
@@ -73,30 +73,30 @@ The only thing the takeover changes is a budget line item: the {{< var defense_l
 
 The campaign does not require altruism. It requires self-interest correctly calculated.
 
-A defense contractor's share price today reflects its current business model: sell weapons, lobby for more weapons spending, repeat. If the campaign succeeds, two things happen mechanically:
+A military contractor's share price today reflects its current business model: sell weapons, lobby for more weapons spending, repeat. If the campaign succeeds, two things happen mechanically:
 
-1. **The addressable market grows.** Under the treaty trajectory, GDP at year 15 is roughly {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}} the current trajectory. Even if military spending stays at the same fraction of GDP, the absolute defense budget grows in proportion. A defense contractor operating in a bigger economy captures proportionally more absolute revenue, with no change in its market share.
+1. **The addressable market grows.** Under the treaty trajectory, GDP at year 15 is roughly {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}} the current trajectory. Even if military spending stays at the same fraction of GDP, the absolute defense budget grows in proportion. A military contractor operating in a bigger economy captures proportionally more absolute revenue, with no change in its market share.
 2. **The pivot opportunity opens.** Defense engineering talent applied to medical, biotech, AI-augmented drug discovery, [decentralized FDA](../solution/dfda.qmd) [@dfda-spec-paper-2025; @dfda-impact-paper-2025] infrastructure, sensors, imaging, materials, and dual-use civilian applications compounds at substantially higher rates than current cost-plus defense work. The same workforce produces more value per engineer-year in the medical pivot than in the weapons-system status quo.
 
-**The asymmetric upside.** If the campaign succeeds, defense contractor shares appreciate substantially through both channels above. If the campaign fails, the shares stay roughly where they are (a normal defense contractor position). Heads you make money; tails you hold a normal defense position. The downside is the foregone return on whatever the share purchase displaced (typically index funds at ~7-10% annualized).
+**The asymmetric upside.** If the campaign succeeds, military contractor shares appreciate substantially through both channels above. If the campaign fails, the shares stay roughly where they are (a normal military contractor position). The downside is the foregone return on whatever the share purchase displaced (typically index funds at ~7-10% annualized).
 
 **The self-financing cascade.** As the campaign builds credibility, the upside above starts to price in. Early buyers see appreciation, which attracts more buyers, which drives prices higher, which makes early buyers wealthier, which validates the strategy, which attracts the next wave. The lawsuit (and the demand-letter pipeline it sits inside) is the catalyst that activates this cycle: every demand letter filed, every board response received, every press article covering the math is a credibility-step that shifts probability mass toward "campaign succeeds" and pulls the future upside into the present share price.
 
-This is not speculation. It is the same mechanism that prices any value-event into a stock: M&A announcements, FDA approvals, regulatory rulings, earnings revisions. The campaign supplies the value-event (a structural shift in the defense contractor's long-term addressable market and pivot optionality) and the market prices it in as the probability of success rises.
+This is not speculation. It is the same mechanism that prices any value-event into a stock: M&A announcements, FDA approvals, regulatory rulings, earnings revisions. The campaign supplies the value-event (a structural shift in the military contractor's long-term addressable market and pivot optionality) and the market prices it in as the probability of success rises.
 
 **Selfish and altruistic converge.** A reader who does not care about disease eradication and wants only to make money has the same correct action as a reader who cares about disease eradication and would buy the shares purely to redirect the lobbying. Both buy the shares. The campaign requires no shared motivation, only shared action.
 
 ## What Happens to the Share Price When Demand Exceeds Float
 
-The share-price upside above assumes the value-event is the campaign succeeding. There is a second, more mechanical reason prices rise: if the participation rate is high, **demand for defense contractor shares exceeds available float**, and prices spike for the same reason any constrained-supply asset spikes when buyers pile in.
+The share-price upside above assumes the value-event is the campaign succeeding. There is a second, more mechanical reason prices rise: if the participation rate is high, **demand for military contractor shares exceeds available float**, and prices spike for the same reason any constrained-supply asset spikes when buyers pile in.
 
 The math:
 
 ### Float dynamics
 
-The major Western defense primes have a combined market capitalization of approximately $765 billion. Institutional ownership (Vanguard, BlackRock, State Street, other index funds, pension funds, sovereign wealth funds) holds roughly 60-75% of outstanding shares across this universe. Those institutional positions are not actively for sale at any reasonable price; index funds hold market-cap-weighted positions because their mandates require it, not because they want to sell at a particular price.
+The major Western defense primes have a combined market capitalization of approximately {{< var defense_primes_market_cap_us >}} across the US primes plus {{< var defense_primes_market_cap_allied >}} across the allied European primes. Institutional ownership (Vanguard, BlackRock, State Street, other index funds, pension funds, sovereign wealth funds) holds roughly 60-75% of outstanding shares across this universe. Those institutional positions are not actively for sale at any reasonable price; index funds hold market-cap-weighted positions because their mandates require it, not because they want to sell at a particular price.
 
-The freely tradeable float (shares that change hands at market prices on a normal trading day) is roughly 25-40% of total market cap, or **approximately $200-300 billion across all major Western defense primes combined**.
+The freely tradeable float (shares that change hands at market prices on a normal trading day) is roughly 25-40% of total market cap, or **approximately $200-320 billion across all major Western defense primes combined**.
 
 Daily trading volume in this universe is roughly $5-8 billion. Total annual turnover is roughly 1-2x the float. The market is not built to absorb a multi-hundred-billion-dollar coordinated buy without significant price impact.
 
@@ -121,7 +121,7 @@ In scenarios C and D, **early buyers see price appreciation before the campaign 
 
 This is the structural reason the campaign is selfish-rational: the price spike happens whether or not the treaty passes, because it is caused by the demand for the shares, not by the eventual policy outcome.
 
-The combination of (1) asymmetric upside from the policy outcome and (2) mechanical price appreciation from float-constrained demand is, per dollar deployed, plausibly the highest expected-return investment available to a retail buyer in the current market.
+The combination of (1) asymmetric upside from the policy outcome and (2) mechanical price appreciation from float-constrained demand produces modeled expected returns well above standard retail alternatives under the scenarios above.
 
 ### Caveats
 
@@ -129,7 +129,7 @@ Three honest caveats apply:
 
 1. **Circuit breakers and trading halts** will trigger in scenarios C and D. Buyers will not be able to fill orders at every desired price point. Some demand will displace into options markets, ETFs, and adjacent securities.
 2. **Some institutional holders will sell** at high prices to capture the spike, providing partial supply relief. This dampens the peak but does not eliminate the rise; rebalancing flows are bounded by mandate constraints.
-3. **Regulatory intervention is possible.** The SEC may scrutinize a coordinated buy-up. Posture matters: "long-term shareholders aligning lobbying with shareholder interests" is defensible; "coordinated market manipulation" is not. The substance is the same; the framing determines how regulators respond.
+3. **Regulatory intervention is possible.** The SEC may scrutinize a coordinated buy-up. The substance differs from manipulation, and the difference is what protects the campaign: manipulation requires deceptive intent and artificial pricing, while transparent, fully disclosed, long-horizon accumulation by shareholders who intend to vote their shares is lawful shareholder coordination. The campaign's obligation is to make that substance legible to regulators through disclosure and posture.
 
 None of these caveats undo the basic dynamic. They shape the trajectory and the volatility, not the direction.
 
@@ -137,7 +137,7 @@ None of these caveats undo the basic dynamic. They shape the trajectory and the 
 
 The military-industrial complex is not a sovereign power. It is a collection of publicly traded corporations whose shares are for sale to anyone with a brokerage account. The lobby that has driven defense budget expansion for eighty years is a line item in those corporations' SG&A. The line item is controllable by whoever holds the board. The board is electable by whoever holds 50%+1 of the shares. The shares are for sale.
 
-Stated as a chain: the diseases that will kill you and your family stay in the trial queue because the trials are not funded. The trials are not funded because the federal budget pays for missiles instead of cures. The federal budget pays for missiles instead of cures because the defense lobby tells Congress to. The defense lobby tells Congress to because the defense contractors authorize and pay for it. The defense contractors authorize and pay for it because their boards vote to. The boards vote to because their shareholders elect them. The shareholders elect them because nobody has yet pointed out that they could elect a different board for the price of a coffee per global human.
+Stated as a chain: the diseases that will kill you and your family stay in the trial queue because the trials are not funded. The trials are not funded because the federal budget pays for missiles instead of cures. The federal budget pays for missiles instead of cures because the defense lobby tells Congress to. The defense lobby tells Congress to because the military contractors authorize and pay for it. The military contractors authorize and pay for it because their boards vote to. The boards vote to because their shareholders elect them. The shareholders elect them because nobody has yet pointed out that they could elect a different board for the price of a coffee per global human.
 
 This page points it out.
 
@@ -159,19 +159,19 @@ This page points it out.
 | Huntington Ingalls | HII | ~$10B | ~$5B |
 | SAIC | SAIC | ~$8B | ~$4B |
 | **US primes subtotal** | | **~$670B** | **~$336B** |
-| BAE Systems (UK) | BA.L | ~$60B | ~$30B |
-| Thales (France) | HO.PA | ~$35B | ~$18B |
-| **Allied primes** | | **~$95B** | **~$48B** |
-| **Total Western primes** | | **~$765B** | **~$384B** |
+| BAE Systems (UK) | BA.L | ~$76B | ~$38B |
+| Thales (France) | HO.PA | ~$55B | ~$28B |
+| **Allied primes** | | **~$131B** | **~$66B** |
+| **Total Western primes** | | **~$801B** | **~$401B** |
 
 Numbers are approximate and require verification against current filings before any campaign acts on them.
 
 ### Realistic cost after price inflation
 
-A coordinated purchase of half the float of every major defense prime simultaneously would push prices up sharply. Realistic effective cost after a 1.5x-3x acquisition premium:
+A coordinated purchase of half the float of every major defense prime simultaneously would push prices up sharply. Realistic effective cost after a {{< var defense_takeover_acquisition_premium >}} acquisition premium:
 
-- Nominal: **~$385 billion**
-- Realistic with acquisition premium: **~$600 billion to $1 trillion**
+- Nominal: **~$401 billion**
+- Realistic with acquisition premium: **{{< var defense_takeover_cost_total >}}**
 
 The premium is the upside captured by the early buyers. It is the campaign's self-financing mechanism, not a cost overrun.
 
@@ -196,7 +196,7 @@ Ranked by leverage. The first action is the entire game; the rest are bonus.
 
 ### Tier 1: Redirect the lobbying budget (highest leverage, zero cost)
 
-Defense contractors currently spend {{< var defense_lobbying_annual >}} per year lobbying Congress to expand defense appropriations. This is the most effective political-influence operation on Earth. It has driven US military spending from its 1939 baseline to current levels and prevented every serious proposal for reallocation.
+Military contractors currently spend {{< var defense_lobbying_annual >}} per year lobbying Congress to expand defense appropriations. This is the most effective political-influence operation on Earth. It has driven US military spending from its 1939 baseline to current levels and prevented every serious proposal for reallocation.
 
 After the takeover, the same budget is reallocated to lobby for the [1% treaty](../solution/1-percent-treaty.qmd). Same lobbyists. Same senators. Same lunches. The only difference is that the murder-money machine starts asking for medicine money.
 
@@ -208,7 +208,7 @@ After the takeover, the same budget is reallocated to lobby for the [1% treaty](
 
 ### Tier 2: Public corporate endorsement
 
-Every major defense contractor publicly endorses the 1% treaty. The most common political argument against the treaty ("industry opposes it") evaporates overnight. Senators lose cover. Editorial boards reverse positions. The Overton window shifts by a decade in a week.
+Every major military contractor publicly endorses the 1% treaty. The most common political argument against the treaty ("industry opposes it") evaporates overnight. Senators lose cover. Editorial boards reverse positions. The Overton window shifts by a decade in a week.
 
 **Cost:** $0.
 
@@ -234,7 +234,7 @@ The new analyses will reach the conclusion the demand letters have been forcing 
 
 ### Tier 5: Pivot R&D toward medical and biotech applications
 
-Defense contractors already produce technologies with direct medical applications: imaging, sensors, materials, AI, robotics, encryption. R&D budgets can be partially redirected toward [decentralized FDA](../solution/dfda.qmd) [@dfda-spec-paper-2025; @dfda-impact-paper-2025] infrastructure, AI-augmented drug discovery, and clinical trial logistics. The existing engineering workforce is well suited to this pivot; many of these companies already have biotech-adjacent product lines.
+Military contractors already produce technologies with direct medical applications: imaging, sensors, materials, AI, robotics, encryption. R&D budgets can be partially redirected toward [decentralized FDA](../solution/dfda.qmd) [@dfda-spec-paper-2025; @dfda-impact-paper-2025] infrastructure, AI-augmented drug discovery, and clinical trial logistics. The existing engineering workforce is well suited to this pivot; many of these companies already have biotech-adjacent product lines.
 
 **Cost:** Capital reallocation, no new spending required.
 
@@ -266,7 +266,7 @@ Defense factories have precision manufacturing, supply chain, and quality system
 
 ### Tier 9: Distribute dividends directly to the {{< var global_population_2024_nounit >}} shareholders
 
-Defense contractor profits historically flow to a narrow set of institutional and high-net-worth shareholders. After the takeover, profits flow to the {{< var global_population_2024_nounit >}} humans who own the shares. Per-capita this is small (~$10-50 per global human per year) but it is the first direct income transfer from the military industrial complex to humanity in history.
+Military contractor profits historically flow to a narrow set of institutional and high-net-worth shareholders. After the takeover, profits flow to the {{< var global_population_2024_nounit >}} humans who own the shares. Per-capita this is small (~$10-50 per global human per year) but it is the first direct income transfer from the military industrial complex to humanity in history.
 
 **Cost:** Negative (just redistributes existing profits).
 
@@ -290,27 +290,27 @@ For a global human contributing ~{{< var defense_takeover_cost_per_human >}}:
 
 | Benefit | Approx value per person |
 |---:|---:|
-| Personal share of global GDP growth from reduced disease burden | ~$10,000-$50,000 |
-| Disease eradication value: ~10-20 extra healthy life-years × global VSL (~$30-50K/year) | ~$300,000-$1,000,000 |
+| Lifetime income gain from the treaty trajectory | ~{{< var treaty_trajectory_lifetime_income_gain_per_capita >}} |
+| Disease eradication value: ~{{< var avg_life_extension_per_beneficiary >}} of extra healthy life × global value per healthy life-year (~$30-50K/year) | ~$360,000-$600,000 |
 | Lower lifetime apocalypse risk | ~$1,000-$10,000 |
-| Defense-contractor dividends now flowing to humanity | ~$10-50/year ongoing |
+| Military-contractor dividends now flowing to humanity | ~$10-50/year ongoing |
 | Direct share-price appreciation from float-constrained demand | ~$200-$2,000 on the initial purchase |
-| **Total EV per global human (base case)** | **~$310,000-$1,000,000** |
+| **Total EV per global human (base case)** | **~$530,000-$2,000,000** |
 
-**Base case ROI multiple per global human: ~3,500x to 11,000x.**
+**Base case ROI multiple per global human: ~6,000x to 22,000x.**
 
 For a US adult contributing ~$2,700:
 
 | Benefit | Approx value per person |
 |---:|---:|
-| Personal share of GDP-doubling at year 15 (US median net worth ~$190K → ~$380-570K) | ~$190,000-$380,000 |
-| Disease eradication: ~10-20 extra healthy life-years × US QALY threshold ({{< var medical_qaly_threshold >}}/year) | ~$1,000,000-$2,000,000 |
+| Personal net-worth gain at year 15 (US median net worth ~$190K, economy at {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}} the current trajectory) | ~$40,000-$140,000 |
+| Disease eradication: ~{{< var avg_life_extension_per_beneficiary >}} of extra healthy life × US QALY threshold ({{< var medical_qaly_threshold >}}/year) | ~$800,000-$1,800,000 |
 | Lower lifetime apocalypse risk | ~$10,000-$100,000 |
 | Direct defense-industry dividends | ~$500-$2,000/year ongoing |
 | Direct share-price appreciation from float-constrained demand | ~$5,000-$50,000 on the initial purchase |
-| **Total EV per US adult (base case)** | **~$1,200,000-$2,500,000** |
+| **Total EV per US adult (base case)** | **~$850,000-$2,100,000** |
 
-**Base case ROI multiple per US adult: ~450x to 900x.**
+**Base case ROI multiple per US adult: ~300x to 800x.**
 
 ### Pessimism-adjusted expected value
 
@@ -318,14 +318,12 @@ Apply a 99% pessimism haircut to every line item above (treaty fails to pass, mu
 
 | Population | Discounted EV | Discounted ROI |
 |---|---:|---:|
-| Global human (~{{< var defense_takeover_cost_per_human >}} in) | ~$3,000-$10,000 | **~35x-110x** |
-| US adult (~$2,700 in) | ~$12,000-$25,000 | **~4.5x-9x** |
+| Global human (~{{< var defense_takeover_cost_per_human >}} in) | ~$5,000-$20,000 | **~60x-220x** |
+| US adult (~$2,700 in) | ~$8,500-$21,000 | **~3x-8x** |
 
-Even with a brutally pessimistic discount, the per-person expected return on this single one-time purchase exceeds the lifetime return of any standard investment vehicle available to a retail buyer.
+Even with a 99% haircut, the expected total value remains roughly 60x-220x the contribution. Most of that is welfare value (extra healthy life-years at standard rates), not cash; the financial-only return is modeled in [Investment Terms](../economics/investment-terms.qmd).
 
-This is per-unit-money the highest-EV investment a human can make.
-
-## How It Finances Itself (Not a $385 Billion Bonfire)
+## How It Finances Itself (Not a Bonfire)
 
 The numbers above are the price if you paid all cash and then set the money on fire. You would do neither.
 
@@ -345,7 +343,7 @@ These are real, and they shape how the campaign is structured. They do not elimi
 
 ### Price inflation during a coordinated buy-up
 
-Defense stock floats are not infinitely liquid. A coordinated purchase of half the float of every prime would push prices up sharply. Estimates range from 1.5x to 3x premium during acquisition, and potentially much higher in the scenarios modeled above.
+Defense stock floats are not infinitely liquid. A coordinated purchase of half the float of every prime would push prices up sharply. The modeled premium is {{< var defense_takeover_acquisition_premium >}} during acquisition, and potentially much higher in the scenarios modeled above.
 
 **Mitigation:** Phased buying across multiple quarters, distributed across many small purchasers rather than concentrated, public communication of intent to acquire long positions rather than to flip them. Index fund or trust vehicle that aggregates small purchases without telegraphing the buy to the market. The price inflation is also the upside captured by the early buyers, so the "mitigation" framing is partial: the campaign benefits from the inflation it causes.
 
@@ -353,7 +351,7 @@ Defense stock floats are not infinitely liquid. A coordinated purchase of half t
 
 Any large or unusual ownership change in a US defense prime triggers Committee on Foreign Investment in the United States review. A coalition of US citizens buying shares is domestic and falls outside CFIUS, but the Department of Defense has informal mechanisms to slow or block ownership changes it considers adversarial to national security. This is a real obstacle, not a fatal one.
 
-**Mitigation:** The public framing matters. "Long-term shareholders organized to align defense industry lobbying with shareholder interests" is a defensible CFIUS posture. The "loving takeover" framing is more defensible than "hostile" but still requires careful presentation. The substance is the same; the framing is what CFIUS reviews.
+**Mitigation:** CFIUS reviews substance: domestic ownership, disclosed intent, no foreign control, and classified programs left under existing cleared management. The campaign has all four. The presentation's job is to make that substance legible.
 
 **The deeper argument runs the other way.** The current base is itself the national-security problem: it rewards competence in lobbying over competence in production, which is how a system spending close to a trillion dollars a year still cannot surge artillery shells and has failed its audit every year it has been tried. A takeover that turns these companies from buyers of influence back into builders of things, and stands up a health-security industrial base alongside the defense one, is the pro-security move, not the adversarial one. The single piece to keep off the table is the weapons themselves: the actual munitions and classified programs stay under existing cleared control. Humanity votes on the lobbying and the capital allocation. It does not vote on the nuclear codes.
 
@@ -385,7 +383,7 @@ So the real question is narrower than it sounds: does the marginal ROI on lobbyi
 
 If this sounds theoretical, it has already happened. In 2021, a twelve-person hedge fund called Engine No. 1 won three board seats at ExxonMobil, one of the largest companies on Earth, on a platform of accelerating the energy transition. The stock did not crash. It went up. Shareholder activism that aligns a company with long-term secular trends makes the company more valuable, not less. The market is not confused about this. The market prices it in, which is why Engine No. 1's investors made money.
 
-The sole-supplier argument is not a reason the takeover fails. It is a reason the takeover is structurally safe. You are buying monopolies whose customers cannot leave, and redirecting their discretionary spending toward higher-return opportunities. The downside is "you own a monopoly defense contractor." The upside is "you own a monopoly defense contractor that also does health tech in a substantially bigger economy." This is not a hard trade.
+The sole-supplier argument is not a reason the takeover fails. It is a reason the takeover is structurally safe. You are buying monopolies whose customers cannot leave, and redirecting their discretionary spending toward higher-return opportunities. The downside is "you own a monopoly military contractor." The upside is "you own a monopoly military contractor that also does health tech in a substantially bigger economy." This is not a hard trade.
 
 ## Relationship to the Lawsuit Campaign
 
@@ -418,7 +416,7 @@ For the underlying argument for why this is necessary, see [Where Am I Wrong?](w
 
 ## Your Money, Your Choice
 
-The entire plan on this page, stated once: buy the defense contractors, use their lobbyists to give the money back to the people, let the people decide what to spend it on.
+The entire plan on this page, stated once: buy the military contractors, use their lobbyists to give the money back to the people, let the people decide what to spend it on.
 
 That is it. Everything else on this page is the math proving it works and the frictions slowing it down.
 
@@ -440,7 +438,7 @@ This is [Wishocracy](../solution/wishocracy.qmd) applied at its simplest: instea
 
 ## The Funniness of This Loving Takeover, Mathematically
 
-The financial ROI is obvious: ~{{< var defense_takeover_cost_per_human >}} in, ~$310,000-$1,000,000 out. The financial ROI is also not the point. The point is that this is the funniest loving takeover in the universe, and the funniness is also calculable.
+The financial ROI is obvious: ~{{< var defense_takeover_cost_per_human >}} in, ~$530,000-$2,000,000 out. The financial ROI is also not the point. The point is that this is the funniest loving takeover in the universe, and the funniness is also calculable.
 
 A normal hostile takeover produces one laugh: the laugh of the acquirer counting their gains. This one produces approximately {{< var shirt_induced_laughs_gained >}}.
 
@@ -448,14 +446,14 @@ The chain:
 
 - Average human laughter rate: {{< var human_laughs_per_day_average_nounit >}} laughs per day, or {{< var human_laughs_per_healthy_life_year_nounit >}} per healthy life-year.
 - The takeover redirects the {{< var defense_lobbying_annual >}} per year of defense lobbying toward the 1% treaty.
-- The treaty compresses the disease eradication queue from {{< var status_quo_queue_clearance_years_nounit >}} years to {{< var dfda_queue_clearance_years_nounit >}} years, recovering approximately 565 billion healthy life-years across humanity.
-- 565 billion recovered healthy life-years × {{< var human_laughs_per_healthy_life_year_nounit >}} laughs per year = **{{< var shirt_induced_laughs_gained_nounit >}} laughs.**
+- The treaty compresses the disease eradication queue from {{< var status_quo_queue_clearance_years_nounit >}} years to {{< var dfda_queue_clearance_years_nounit >}} years, recovering approximately {{< var dfda_trial_capacity_plus_efficacy_lag_dalys_nounit >}} healthy life-years across humanity.
+- {{< var dfda_trial_capacity_plus_efficacy_lag_dalys_nounit >}} recovered healthy life-years × {{< var human_laughs_per_healthy_life_year_nounit >}} laughs per year = **{{< var shirt_induced_laughs_gained_nounit >}} laughs.**
 
 The full calculation:
 
 {{< var shirt_induced_laughs_gained_latex >}}
 
-The ratio of laughs produced to laughs generated by a typical joke is approximately **3.51 quadrillion to 1**. The ratio of laughs produced to the ~{{< var defense_takeover_cost_per_human >}} per-human cost is approximately **39 trillion laughs per dollar**. The cost-per-laugh is approximately **$0.00000000003**.
+The ratio of laughs produced to laughs generated by a typical joke is approximately **{{< var shirt_induced_laughs_gained_nounit >}} to 1**. The ratio of laughs produced to the ~{{< var defense_takeover_cost_per_human >}} per-human cost is approximately **39 trillion laughs per dollar**. The cost-per-laugh is approximately **$0.000000000000026**.
 
 Carl Linnaeus, Charles Darwin, and the entire history of biology never had a sample size large enough to measure a joke this funny. This page contains the first known calculation of a joke at quadrillion-laugh scale. The other contenders (the ozone treaty, the eradication of smallpox, the Marshall Plan) all produced fewer than 10^12 laughs each. This one produces more than 10^15.
 

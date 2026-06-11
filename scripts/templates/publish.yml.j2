@@ -75,7 +75,7 @@ jobs:
           uv pip install --python .venv/bin/python -r requirements.txt
 
       - name: Install dih_models package
-        run: uv pip install --python .venv/bin/python -e .
+        run: uv pip install --python .venv/bin/python -e ".[dev]"
 
       - name: Run Python type check
         run: npx --yes pyright dih_models scripts

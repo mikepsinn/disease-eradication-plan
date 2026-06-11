@@ -25,7 +25,7 @@ Nobody who operates Earth Optimization Services owns equity in it. I am told thi
 
 The people who operate EOS live on the same planet you do. If the planet gets better, they get the better planet. Equity in a company is a number on a screen. A world where your children do not die of treatable diseases is a thing that is actually real. These are different categories of object. Your species treats them as the same category, which I find philosophically interesting and practically fatal.
 
-The second check: does giving money make you richer or poorer? If war and disease end, the shares appreciate substantially. If they do not, you own shares in defense contractors, which historically perform well during periods of continued military spending. The downside is whatever else you would have done with the money.
+The second check: does giving money make you richer or poorer? If war and disease end, the shares appreciate substantially. If they do not, you own shares in military contractors, which historically perform well during periods of continued military spending. The downside is whatever else you would have done with the money.
 
 ## What EOS is
 
@@ -37,13 +37,13 @@ The names matter because your investors will try to put the whole thing in one f
 |---------|-------------|---------|
 | The Manual | The book you are reading | Sales (pay-what-you-want, anchored to {{< var defense_takeover_cost_per_human >}}) |
 | The Uniform | T-shirts that say "I am retarded" | Sales + the free permanent-marker version |
-| The Fund | Buys defense contractor shares, redirects lobbying via voting rights | A transparent operating fee, no carry |
+| The Fund | Buys military contractor shares, redirects lobbying via voting rights | A transparent operating fee, no carry |
 | [Optimitron](../solution/optimocracy.qmd) | Policy optimization platform | SaaS subscriptions, consulting |
 | [The dFDA](../solution/dfda.qmd) | Clinical trial infrastructure | Platform fees |
 | [The Prize](../strategy/earth-optimization-prize.qmd) | Assurance contracts for coordinated action | Escrow returns |
 | [Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd) | Revenue-share bonds funding the political campaign | Bond issuance fees |
 
-The fund arm buys shares in defense contractors and uses the voting rights to redirect their lobbying budgets toward the [1% Treaty](../solution/1-percent-treaty.qmd) [@1-percent-treaty-paper-2025] [@1-pct-treaty-impact-paper-2025]. This is the [Loving Takeover](../appendix/loving-takeover.qmd). The shareholders being bought out end up richer (buying shares increases the price) and longer-lived (the treaty adds approximately {{< var avg_life_extension_per_beneficiary >}} to every beneficiary, including the people being bought out). On my planet this is called a gift. On yours it requires a 494-line document.
+The fund arm buys shares in military contractors and uses the voting rights to redirect their lobbying budgets toward the [1% Treaty](../solution/1-percent-treaty.qmd) [@1-percent-treaty-paper-2025] [@1-pct-treaty-impact-paper-2025]. This is the [Loving Takeover](../appendix/loving-takeover.qmd). The shareholders being bought out end up richer (buying shares increases the price) and longer-lived (the treaty adds approximately {{< var avg_life_extension_per_beneficiary >}} to every beneficiary, including the people being bought out). On my planet this is called a gift. On yours it requires a 494-line document.
 
 The long-term goal is to acquire sufficient influence over every company that shapes government policy, then redistribute that control to humanity through [Wishocracy](../solution/wishocracy.qmd) [@wishocracy-paper-2025]. EOS is the temporary centralized structure that builds the decentralized one. When Wishocracy is operational, EOS hands over the keys.
 
@@ -55,9 +55,9 @@ There are three layers of appreciation.
 
 **Layer 2: Credibility cascade.** As the campaign builds credibility, the market prices in the probability of success. Early buyers see appreciation, which attracts more buyers, which raises prices further. This is the same mechanism that prices in M&A announcements, FDA approvals, and earnings revisions.
 
-**Layer 3: The pivot.** If the treaty passes, GDP at year 15 is roughly {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}} larger than the current trajectory. Defense contractors in a larger economy capture proportionally more revenue. The engineering workforce pivots to medical, biotech, and civilian applications.
+**Layer 3: The pivot.** If the treaty passes, GDP at year 15 is roughly {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}} larger than the current trajectory. Military contractors in a larger economy capture proportionally more revenue. The engineering workforce pivots to medical, biotech, and civilian applications.
 
-**The asymmetric structure.** If the campaign succeeds, shares appreciate through all three layers. If it fails, you hold a normal defense contractor position. The downside is the foregone return on whatever else you would have bought. These three layers are only part of it; the full set of ways a success pays off (a capped downside against thirteen stacked upsides) is itemized in [Earth Optimization Services](../solution/earth-optimization-services.qmd).
+**The asymmetric structure.** If the campaign succeeds, shares appreciate through all three layers. If it fails, you hold a normal military contractor position. The downside is the foregone return on whatever else you would have bought. These three layers are only part of it; the full set of ways a success pays off (a capped downside against thirteen stacked upsides) is itemized in [Earth Optimization Services](../solution/earth-optimization-services.qmd).
 
 ## The terms
 
@@ -93,13 +93,13 @@ A share priced at $X implies P(success) = X × total_shares / V. If you think th
 
 **The continuous auction.** Each new share is priced at the current P(I) × V / shares. As more people invest, I rises, P rises, price rises. No round numbers. No arbitrary caps. The price at any moment is the market's self-consistent belief in the probability that Earth gets optimized. Any fixed price is wrong at almost every point: too high early (deters believers), too low late (subsidizes latecomers at believers' expense). Only the continuous auction tracks the true expected value at every point.
 
-**If the campaign fails.** P drops. Price drops. But investors still hold defense contractor shares, which perform normally during periods of continued military spending. The downside is the foregone return on whatever you would have bought instead. The share price goes to zero only if the probability of success goes to zero, which requires the complete impossibility of optimizing Earth. On my planet we would call that an unusual claim.
+**If the campaign fails.** P drops. Price drops. But investors still hold military contractor shares, which perform normally during periods of continued military spending. The downside is the foregone return on whatever you would have bought instead. The share price goes to zero only if the probability of success goes to zero, which requires the complete impossibility of optimizing Earth. On my planet we would call that an unusual claim.
 
 ## Where the money goes
 
 ```
 Your investment
-    └─> Buy defense contractor shares
+    └─> Buy military contractor shares
             └─> Share price goes up (Layer 1)
             └─> Gain voting rights
                     └─> Redirect lobbying budget
@@ -127,7 +127,7 @@ Three methods, ordered by cost:
 | Activist positions (1-5%) | ~$9.1 billion | Hard but demonstrated (Icahn, Ackman, Peltz) |
 | Governance pressure + institutional votes | $75-200 million | Possible |
 
-The third method works because institutional investors (Vanguard, BlackRock, State Street) hold 60-75% of defense contractor shares. They do not need to be bought. They need to be presented with an economically rational proxy proposal. ISS and Glass Lewis evaluate every one. "Your lobbying has negative ROI for your own shareholders" is economically rational. Engine No. 1 proved this at Exxon.
+The third method works because institutional investors (Vanguard, BlackRock, State Street) hold 60-75% of military contractor shares. They do not need to be bought. They need to be presented with an economically rational proxy proposal. ISS and Glass Lewis evaluate every one. "Your lobbying has negative ROI for your own shareholders" is economically rational. Engine No. 1 proved this at Exxon.
 
 The cascade starts small.
 
@@ -197,7 +197,7 @@ If someone copies this and executes it well, they have ended war and disease.
 
 EOS offers two instruments. Both are products of the same company.
 
-**Revenue-share notes (the EOS share).** Your money buys defense contractor shares via the fund. You receive two returns: (1) a revenue-share percentage of EOS's operating revenue (fund fees, consulting, platform, brand), which is your cash return, and (2) appreciation of the share itself, whose price is set by the continuous auction at P(I) × V / shares. The cash return is operational. The share value is civilizational. They are separate. This is the takeover arm.
+**Revenue-share notes (the EOS share).** Your money buys military contractor shares via the fund. You receive two returns: (1) a revenue-share percentage of EOS's operating revenue (fund fees, consulting, platform, brand), which is your cash return, and (2) appreciation of the share itself, whose price is set by the continuous auction at P(I) × V / shares. The cash return is operational. The share value is civilizational. They are separate. This is the takeover arm.
 
 **[Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd) [@iab-paper-2025].** Your money funds the political campaign to pass the treaty. If the treaty passes, it generates {{< var treaty_annual_funding >}} per year, and bondholders receive {{< var victory_bond_annual_payout >}} per year forever (a {{< var victory_bond_annual_return_pct >}} annual return on the campaign cost of {{< var treaty_campaign_total_cost >}}). This is the campaign financing arm.
 
@@ -340,7 +340,7 @@ html`<div class="eit-summary">You invest ${eosMoney(eosCalc.amount)}. If the cam
 ::: {.content-visible when-format="html"}
 ### When you buy changes what you make
 
-The cards above value the share by the appreciation of what it holds (defense contractors pivoting in a larger economy). That is only one of the layers. The other is repricing: a share is worth its probability of success times the value of success. You buy while the market prices that probability near zero. If you are right, the share reprices the whole way up, and you keep the difference.
+The cards above value the share by the appreciation of what it holds (military contractors pivoting in a larger economy). That is only one of the layers. The other is repricing: a share is worth its probability of success times the value of success. You buy while the market prices that probability near zero. If you are right, the share reprices the whole way up, and you keep the difference.
 
 This cuts two ways, and an honest pitch shows both.
 :::
@@ -564,7 +564,7 @@ A person who spends 80 years accumulating $100 million and then dies of a treata
 ::: {.content-visible when-format="html"}
 The question is not "should I buy defense stocks?" The question is: which companies give you the most lobbying redirect per dollar of shares?
 
-Defense contractors are not the only companies whose lobbying budgets are pointed away from rational policy. Pharmaceutical companies spend roughly $56M/year lobbying against drug pricing reform and clinical trial modernization. Insurance companies lobby against healthcare reform. Oil and gas companies lobby against energy transition. Each dollar of lobbying, redirected, is a dollar pushing toward the treaty.
+Military contractors are not the only companies whose lobbying budgets are pointed away from rational policy. Pharmaceutical companies spend roughly $56M/year lobbying against drug pricing reform and clinical trial modernization. Insurance companies lobby against healthcare reform. Oil and gas companies lobby against energy transition. Each dollar of lobbying, redirected, is a dollar pushing toward the treaty.
 
 The calculator below takes your investment amount, allocates it across companies in proportion to their lobbying-per-dollar-of-market-cap ratio, and shows you what that buys: how many shareholder proposals you can file, how much lobbying you can challenge, and at what cost.
 :::
