@@ -79,6 +79,7 @@ Check existing: `grep "keyword" _variables.yml`. Never duplicate. Generate: `npm
 | Natural speech | One breath = one sentence ("I love you and I do not want X") | Splitting natural speech into separate formal sentences |
 | Self-narration | Just do the thing | Announcing what you are doing ("That is the entire reason for this letter") |
 | Disease framing | "horrible diseases" (we fund research to FIND cures) | "diseases we already know how to cure" (we don't; that's the point) |
+| Canonical love line | "I love you very much and I do not want you and everyone you have ever loved to be slowly tortured and brutally murdered by horrible diseases" | weaker variants: "anyone you love" (too narrow), "suffer and die" (too soft), split into separate sentences |
 
 **Anti-pattern-matching:** Standard persuasion patterns (establish credentials, build authority, hedge claims, protect the author's status) are the average of every failed pitch, ignored white paper, and unread manifesto in history. Pattern-matching on failed attempts computes the optimal way to fail. When the objective (reader action) contradicts the convention (writer pattern), do the objective. If vulnerability disarms the reader, credentials are ego armor. If raw numbers persuade, hedging is cowardice. Ask "what would make this person act?" not "what does this type of writing usually look like?"
 
