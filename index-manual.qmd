@@ -104,7 +104,7 @@ Building a nuclear bomb requires mass spectrometers, centrifuge cascades, and so
 
 But somehow "stop" is the unrealistic part.
 
-You already admitted improvement is physically possible. You know "stop" isn't the unrealistic part. Getting one billionaire to read a PDF is.
+Improvement is physically possible. "Stop" isn't the unrealistic part. Getting one billionaire to read a PDF is.
 
 ### The Sacred Order of Paper Distribution
 
@@ -359,7 +359,7 @@ This raises the {{< var treaty_campaign_total_cost >}} needed to fuel the rest o
 
 #### How the Money Loop Works
 
-Here's the part where humans usually stop reading because it involves following money through more than one step. Try to keep up:
+Here's the part where humans usually stop reading because it involves following money through more than one step:
 
 1. You sell {{< var treaty_campaign_total_cost >}} in VICTORY [Incentive Alignment Bonds](knowledge/solution/incentive-alignment-bonds.qmd) [@iab-paper-2025] to investors. This funds the campaign.
 2. The campaign succeeds. Your treaty redirects 1% of military spending: {{< var treaty_annual_funding >}}/year flows from the murder budget to clinical trials.
@@ -470,7 +470,7 @@ Everything is designed to work WITH human dysfunction, not against it. I'm not a
 
 ### But You Don't Need to Understand Any of That
 
-You just read five steps involving bonds, lobbyists, Super PACs, a decentralized FDA, and an appliance that optimizes government policy. You are thinking: "Nobody can coordinate all of that."
+You just read five steps involving bonds, lobbyists, Super PACs, a decentralized FDA, and an appliance that optimizes government policy. The obvious objection: "Nobody can coordinate all of that."
 
 Correct. Nobody coordinates a pencil either.
 
@@ -535,11 +535,11 @@ There are {{< var chain_global_billionaire_count_nounit >}} billionaires on your
 
 And here is the part that should bother you: the [incentive structure](knowledge/appendix/treaty-feasibility.qmd#sec-dominant-strategy-proof) makes acting the selfish move. If others act too, you get rich together. If nobody else acts, you still own a piece of the only serious attempt to fix the problem. Either way, you win. The only way to reject this is to identify [which assumption breaks](knowledge/appendix/treaty-feasibility.qmd#what-would-have-to-be-wrong), and you are welcome to try.
 
-Count what you didn't object to. Improvement is physically possible (you said so at the top). The benefits compound (healthier workers produce more, which funds more cures, which you just read). Politicians respond to money (that's the Super PAC). Rich people prefer not dying (that's the bonds). And the only bottleneck is humans in the chain choosing "later" over 30 seconds. Five premises. You let every one of them pass unchallenged, because each one is individually obvious. The conclusion is just what happens when you add them up.
+Count the premises. Improvement is physically possible (not building a bomb requires nothing). The benefits compound (healthier workers produce more, which funds more cures). Politicians respond to money (that's the Super PAC). Rich people prefer not dying (that's the bonds). And the only bottleneck is humans in the chain choosing "later" over 30 seconds. Five premises. Each one is individually obvious. The conclusion is just what happens when you add them up.
 
-That's the [Logical Inevitability Theorem](/knowledge/appendix/recruitment-and-propaganda-plan.qmd#logical-inevitability-theorem) with numbers attached. Try rejecting any one of those five premises out loud and see how it sounds.
+That's the [Logical Inevitability Theorem](/knowledge/appendix/recruitment-and-propaganda-plan.qmd#logical-inevitability-theorem) with numbers attached. Rejecting the conclusion means rejecting at least one of the five premises.
 
-Forwarding this takes 30 seconds. At the global average wage, that costs you {{< var sharing_opportunity_cost >}}. If the treaty path works, your lifetime income goes up by {{< var treaty_trajectory_lifetime_income_gain_per_capita >}}. The ratio is {{< var sharing_upside_downside_ratio_treaty >}} to one. For not forwarding to be rational, the probability of success has to fall below 1 in {{< var sharing_breakeven_one_in_treaty >}}. You just let all five premises pass. You cannot simultaneously hold those premises and a probability that low. Not forwarding this is not caution. It is the single failure mode the math can't route around.
+Forwarding this takes 30 seconds. At the global average wage, that costs you {{< var sharing_opportunity_cost >}}. If the treaty path works, your lifetime income goes up by {{< var treaty_trajectory_lifetime_income_gain_per_capita >}}. The ratio is {{< var sharing_upside_downside_ratio_treaty >}} to one. For not forwarding to be rational, the probability of success has to fall below 1 in {{< var sharing_breakeven_one_in_treaty >}}. Five obvious premises do not add up to a probability that low. Choosing "later" is the single failure mode the math can't route around.
 
 You don't need to know a billionaire. You're six degrees of separation from one. Forward this to one person with more reach than you. They forward to one person with more reach than them. Even with {{< var chain_dismiss_probability >}} of the chain dismissing it, the [model](knowledge/appendix/treaty-feasibility.qmd#sec-chain-reaction-model) shows it reaches someone who can act within {{< var chain_horizon_years_nounit >}} years. Not because anyone in the chain is brave. Because each one is selfish, and the math rewards forwarding.
 

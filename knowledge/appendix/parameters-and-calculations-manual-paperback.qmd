@@ -38,15 +38,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 430 parameters used in the analysis, organized by type:
+This appendix documents all 431 parameters used in the analysis, organized by type:
 
 - External sources (peer-reviewed): 149
-- Calculated values: 213
+- Calculated values: 214
 - Core definitions: 68
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (213 parameters) • [External Data Sources](#sec-external) (149 parameters) • [Core Definitions](#sec-definitions) (68 parameters)
+[Calculated Values](#sec-calculated) (214 parameters) • [External Data Sources](#sec-external) (149 parameters) • [Core Definitions](#sec-definitions) (68 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -5906,7 +5906,7 @@ $$
 
 :::
 
-### IAB vs Defense Lobbying Ratio at 1% Treaty: 21.4x {#sec-iab_vs_defense_lobby_ratio_at_1pct}
+### IAB vs Defense Lobbying Ratio at 1% Treaty: 13.7x {#sec-iab_vs_defense_lobby_ratio_at_1pct}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -5915,14 +5915,14 @@ Ratio of IAB political incentive funding to defense industry lobbying at 1% trea
 **Inputs**:
 
 - [Annual IAB Political Incentive Funding](#sec-iab_political_incentive_funding_annual) 🔢: $2.72 billion
-- [Annual Defense Industry Lobbying Spending](#sec-defense_lobbying_annual) 📊: $127 million (95% CI: $100 million - $160 million)
+- [Annual Military Sector Lobbying](#sec-defense_lobbying_annual) 📊: $198 million (95% CI: $190 million - $210 million)
 
 $$
 \begin{gathered}
 k_{IAB:defense} \\
 = \frac{Funding_{political,ann}}{Lobby_{def,ann}} \\
-= \frac{\$2.72B}{\$127M} \\
-= 21.4
+= \frac{\$2.72B}{\$198M} \\
+= 13.7
 \end{gathered}
 $$
 where:
@@ -6107,6 +6107,46 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-nuclear_winter_overkill_factor.qmd >}}
+
+:::
+
+### Spare Apocalypses (Overkill Factor Minus One): 121 apocalypses {#sec-nuclear_winter_spare_apocalypses}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Spare apocalypses: how many civilization-ending nuclear winters the global arsenal can trigger beyond the one that would already end civilization. The nuclear winter overkill factor minus one. Used wherever the manual jokes about the surplus (the apocalypses kept in case the first does not take).
+
+**Inputs**:
+
+- [Nuclear Winter Overkill Factor](#sec-nuclear_winter_overkill_factor) 🔢: 122x
+
+$$
+Overkill_{spare} = Overkill_{winter} - 1 = 122 - 1 = 121
+$$
+where:
+$$
+\begin{gathered}
+Overkill_{winter} \\
+= \frac{W_{global}}{W_{winter}} \\
+= \frac{12{,}200}{100} \\
+= 122
+\end{gathered}
+$$
+*~ Medium confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-nuclear_winter_spare_apocalypses.qmd >}}
+
+{{< include ../figures/sensitivity-table-nuclear_winter_spare_apocalypses.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-nuclear_winter_spare_apocalypses.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-nuclear_winter_spare_apocalypses.qmd >}}
 
 :::
 
@@ -18100,25 +18140,25 @@ Annual global clinical trial participants (IQVIA 2022: 1.9M post-COVID normaliza
 
 :::
 
-### Annual Defense Industry Lobbying Spending: $127 million {#sec-defense_lobbying_annual}
+### Annual Military Sector Lobbying: $198 million {#sec-defense_lobbying_annual}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Annual defense industry lobbying spending
+Annual military sector lobbying spending. OpenSecrets reports the 2025 actual at $198.0 million, the top of a three-year climb: $142.9M (2023), $159.5M (2024), $198.0M (2025)
 
 **Source**: [@lobbying-spend-defense]
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$100 million, $160 million]
+**Technical**: 95% CI: [$190 million, $210 million]
 
-**What this means**: This estimate has moderate uncertainty. The true value likely falls between $100 million and $160 million (±24%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: We're quite confident in this estimate. The true value likely falls between $190 million and $210 million (±5%). This represents a narrow range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 #### Input Distribution
 
 {{< include ../figures/distribution-defense_lobbying_annual.qmd >}}
 
-*✓ High confidence • 📊 Peer-reviewed • Updated 2024*
+*✓ High confidence • 📊 Peer-reviewed • Updated 2025*
 
 :::
 
@@ -20998,11 +21038,11 @@ Cumulative global military spending since 1913 (Fed era) in constant 2024 dollar
 
 :::
 
-### Percentage of Budget Defense Sector Keeps Under 1% treaty: 99% {#sec-defense_sector_retention_pct}
+### Percentage of Budget Military Sector Keeps Under 1% Treaty: 99% {#sec-defense_sector_retention_pct}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Percentage of budget defense sector keeps under 1% treaty
+Percentage of budget the military sector keeps under 1% treaty
 
 *Core definition*
 

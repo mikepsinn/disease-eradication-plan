@@ -38,15 +38,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 660 parameters used in the analysis, organized by type:
+This appendix documents all 662 parameters used in the analysis, organized by type:
 
 - External sources (peer-reviewed): 198
-- Calculated values: 338
-- Core definitions: 124
+- Calculated values: 339
+- Core definitions: 125
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (338 parameters) • [External Data Sources](#sec-external) (198 parameters) • [Core Definitions](#sec-definitions) (124 parameters)
+[Calculated Values](#sec-calculated) (339 parameters) • [External Data Sources](#sec-external) (198 parameters) • [Core Definitions](#sec-definitions) (125 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -5212,7 +5212,7 @@ $$
 
 :::
 
-### Defense Takeover Cost per Human: $90 {#sec-defense_takeover_cost_per_human}
+### Military Takeover Cost per Human: $109 {#sec-defense_takeover_cost_per_human}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -5220,15 +5220,15 @@ Per-person cost of the military takeover distributed across global population
 
 **Inputs**:
 
-- [Defense Takeover Total Cost](#sec-defense_takeover_cost_total) 🔢: $722 billion
+- [Military Takeover Total Cost](#sec-defense_takeover_cost_total) 🔢: $873 billion
 - [Global Population in 2024](#sec-global_population_2024) 📊: 8 billion of people (95% CI: 7.8 billion of people - 8.2 billion of people)
 
 $$
 \begin{gathered}
 C_{takeover,pp} \\
 = \frac{C_{takeover}}{Pop_{global}} \\
-= \frac{\$722B}{8B} \\
-= \$90.3
+= \frac{\$873B}{8B} \\
+= \$109
 \end{gathered}
 $$
 where:
@@ -5257,7 +5257,7 @@ $$
 
 :::
 
-### Defense Takeover Total Cost: $722 billion {#sec-defense_takeover_cost_total}
+### Military Takeover Total Cost: $873 billion {#sec-defense_takeover_cost_total}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -5265,8 +5265,8 @@ Total realistic cost to acquire controlling stakes in all major Western military
 
 **Inputs**:
 
-- [US Defense Primes Market Cap](#sec-defense_primes_market_cap_us) 📊: $670 billion
-- [Allied Defense Primes Market Cap](#sec-defense_primes_market_cap_allied) 📊: $131 billion
+- [US Military Primes Market Cap](#sec-defense_primes_market_cap_us) 📊: $836 billion
+- [Allied Military Primes Market Cap](#sec-defense_primes_market_cap_allied) 📊: $132 billion
 - [Control Fraction](#sec-defense_takeover_control_fraction): 0.501:1
 - [Acquisition Premium Multiplier](#sec-defense_takeover_acquisition_premium): 1.8x (95% CI: 1.5x - 3x)
 
@@ -12065,7 +12065,7 @@ $$
 
 :::
 
-### IAB vs Defense Lobbying Ratio at 1% Treaty: 21.4x {#sec-iab_vs_defense_lobby_ratio_at_1pct}
+### IAB vs Defense Lobbying Ratio at 1% Treaty: 13.7x {#sec-iab_vs_defense_lobby_ratio_at_1pct}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -12074,14 +12074,14 @@ Ratio of IAB political incentive funding to defense industry lobbying at 1% trea
 **Inputs**:
 
 - [Annual IAB Political Incentive Funding](#sec-iab_political_incentive_funding_annual) 🔢: $2.72 billion
-- [Annual Defense Industry Lobbying Spending](#sec-defense_lobbying_annual) 📊: $127 million (95% CI: $100 million - $160 million)
+- [Annual Military Sector Lobbying](#sec-defense_lobbying_annual) 📊: $198 million (95% CI: $190 million - $210 million)
 
 $$
 \begin{gathered}
 k_{IAB:defense} \\
 = \frac{Funding_{political,ann}}{Lobby_{def,ann}} \\
-= \frac{\$2.72B}{\$127M} \\
-= 21.4
+= \frac{\$2.72B}{\$198M} \\
+= 13.7
 \end{gathered}
 $$
 where:
@@ -12759,6 +12759,46 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-nuclear_winter_overkill_factor.qmd >}}
+
+:::
+
+### Spare Apocalypses (Overkill Factor Minus One): 121 apocalypses {#sec-nuclear_winter_spare_apocalypses}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Spare apocalypses: how many civilization-ending nuclear winters the global arsenal can trigger beyond the one that would already end civilization. The nuclear winter overkill factor minus one. Used wherever the manual jokes about the surplus (the apocalypses kept in case the first does not take).
+
+**Inputs**:
+
+- [Nuclear Winter Overkill Factor](#sec-nuclear_winter_overkill_factor) 🔢: 122x
+
+$$
+Overkill_{spare} = Overkill_{winter} - 1 = 122 - 1 = 121
+$$
+where:
+$$
+\begin{gathered}
+Overkill_{winter} \\
+= \frac{W_{global}}{W_{winter}} \\
+= \frac{12{,}200}{100} \\
+= 122
+\end{gathered}
+$$
+*~ Medium confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-nuclear_winter_spare_apocalypses.qmd >}}
+
+{{< include ../figures/sensitivity-table-nuclear_winter_spare_apocalypses.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-nuclear_winter_spare_apocalypses.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-nuclear_winter_spare_apocalypses.qmd >}}
 
 :::
 
@@ -30985,35 +31025,35 @@ Annual global clinical trial participants (IQVIA 2022: 1.9M post-COVID normaliza
 
 :::
 
-### Annual Defense Industry Lobbying Spending: $127 million {#sec-defense_lobbying_annual}
+### Annual Military Sector Lobbying: $198 million {#sec-defense_lobbying_annual}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Annual defense industry lobbying spending
+Annual military sector lobbying spending. OpenSecrets reports the 2025 actual at $198.0 million, the top of a three-year climb: $142.9M (2023), $159.5M (2024), $198.0M (2025)
 
 **Source**: [@lobbying-spend-defense]
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$100 million, $160 million]
+**Technical**: 95% CI: [$190 million, $210 million]
 
-**What this means**: This estimate has moderate uncertainty. The true value likely falls between $100 million and $160 million (±24%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: We're quite confident in this estimate. The true value likely falls between $190 million and $210 million (±5%). This represents a narrow range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 #### Input Distribution
 
 {{< include ../figures/distribution-defense_lobbying_annual.qmd >}}
 
-*✓ High confidence • 📊 Peer-reviewed • Updated 2024*
+*✓ High confidence • 📊 Peer-reviewed • Updated 2025*
 
 :::
 
-### Allied Defense Primes Market Cap: $131 billion {#sec-defense_primes_market_cap_allied}
+### Allied Military Primes Market Cap: $132 billion {#sec-defense_primes_market_cap_allied}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Combined market capitalization of major allied European defense primes (BAE Systems approx $75.6B + Thales approx $55.0B), approx as of June 2026
+Combined market capitalization of major allied European military primes (BAE Systems approx $75.8B + Thales approx $56.7B), as of June 2026
 
-**Source**: [@defense-primes-market-cap-2026]
+**Source**: [@companiesmarketcap-eu-primes-2026]
 
 #### Uncertainty Range
 
@@ -31023,13 +31063,13 @@ Combined market capitalization of major allied European defense primes (BAE Syst
 
 :::
 
-### US Defense Primes Market Cap: $670 billion {#sec-defense_primes_market_cap_us}
+### US Military Primes Market Cap: $836 billion {#sec-defense_primes_market_cap_us}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Combined market capitalization of major US defense primes (RTX, LMT, GD, NOC, LHX, HII plus IT primes LDOS, BAH, CACI, SAIC), approx as of June 2026; Boeing is largely commercial and only partially attributable
+Combined market capitalization of the 11 major US military primes at the June 2026 close: RTX $248.1B, Boeing $174.7B, Lockheed Martin $126.5B, General Dynamics $96.9B, Northrop Grumman $78.5B, L3Harris $58.2B, Leidos $15.4B, Huntington Ingalls $11.9B, CACI $11.6B, Booz Allen Hamilton $9.2B, SAIC $4.9B
 
-**Source**: [@defense-primes-market-cap-2026]
+**Source**: [@stockanalysis-military-prime-caps-2026]
 
 #### Uncertainty Range
 
@@ -35233,11 +35273,11 @@ Cumulative global military spending since 1913 (Fed era) in constant 2024 dollar
 
 :::
 
-### Percentage of Budget Defense Sector Keeps Under 1% treaty: 99% {#sec-defense_sector_retention_pct}
+### Percentage of Budget Military Sector Keeps Under 1% Treaty: 99% {#sec-defense_sector_retention_pct}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Percentage of budget defense sector keeps under 1% treaty
+Percentage of budget the military sector keeps under 1% treaty
 
 *Core definition*
 
@@ -35862,6 +35902,26 @@ Duration of the US leaded-gasoline era: first commercial TEL sale (February 1923
 ::: {.callout-note collapse="true" title="📊 Details"}
 
 Maximum bond investment for lobbyist incentives
+
+*Core definition*
+
+:::
+
+### P(Success | Loving Takeover Funded): 0.95:1 {#sec-mechanism_loving_takeover_p_success}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Probability of treaty passage given full funding of the Loving Takeover (mechanical: money buys shares, shares buy board control, board redirects lobbying)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [0.8:1, 0.99:1]
+
+**What this means**: We're quite confident in this estimate. The true value likely falls between 0.8:1 and 0.99:1 (±10%). This represents a narrow range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+#### Input Distribution
+
+{{< include ../figures/distribution-mechanism_loving_takeover_p_success.qmd >}}
 
 *Core definition*
 

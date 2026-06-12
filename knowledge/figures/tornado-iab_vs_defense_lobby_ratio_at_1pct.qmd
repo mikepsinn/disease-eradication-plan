@@ -20,14 +20,14 @@ display_name = "IAB vs Defense Lobbying Ratio at 1% Treaty"
 
 # Baseline and units
 
-baseline = 21.41732283464567
+baseline = 13.737373737373737
 
 # Tornado data from sensitivity analysis
 
 drivers = ['DEFENSE_LOBBYING_ANNUAL']
-driver_labels = ['Annual Defense Industry Lobbying Spending']
-impacts_low = [5.782677165354329]
-impacts_high = [-4.41732283464567]
+driver_labels = ['Annual Military Sector Lobbying']
+impacts_low = [0.5784157363104736]
+impacts_high = [-0.7849927849927845]
 
 # Convert deltas to absolute values (baseline + delta)
 

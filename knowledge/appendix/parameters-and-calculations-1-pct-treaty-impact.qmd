@@ -9223,25 +9223,25 @@ Annual global clinical trial participants (IQVIA 2022: 1.9M post-COVID normaliza
 
 :::
 
-### Annual Defense Industry Lobbying Spending: $127 million {#sec-defense_lobbying_annual}
+### Annual Military Sector Lobbying: $198 million {#sec-defense_lobbying_annual}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Annual defense industry lobbying spending
+Annual military sector lobbying spending. OpenSecrets reports the 2025 actual at $198.0 million, the top of a three-year climb: $142.9M (2023), $159.5M (2024), $198.0M (2025)
 
 **Source**: [@lobbying-spend-defense]
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$100 million, $160 million]
+**Technical**: 95% CI: [$190 million, $210 million]
 
-**What this means**: This estimate has moderate uncertainty. The true value likely falls between $100 million and $160 million (±24%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: We're quite confident in this estimate. The true value likely falls between $190 million and $210 million (±5%). This represents a narrow range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 #### Input Distribution
 
 {{< include ../figures/distribution-defense_lobbying_annual.qmd >}}
 
-*✓ High confidence • 📊 Peer-reviewed • Updated 2024*
+*✓ High confidence • 📊 Peer-reviewed • Updated 2025*
 
 :::
 
@@ -10931,11 +10931,11 @@ Patients enrolled in ADAPTABLE trial (PCORnet 2016-2019). Enrolled across 40 cli
 
 :::
 
-### Percentage of Budget Defense Sector Keeps Under 1% treaty: 99% {#sec-defense_sector_retention_pct}
+### Percentage of Budget Military Sector Keeps Under 1% Treaty: 99% {#sec-defense_sector_retention_pct}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Percentage of budget defense sector keeps under 1% treaty
+Percentage of budget the military sector keeps under 1% treaty
 
 *Core definition*
 

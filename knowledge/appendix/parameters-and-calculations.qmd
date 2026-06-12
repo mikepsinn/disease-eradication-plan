@@ -38,15 +38,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 789 parameters used in the analysis, organized by type:
+This appendix documents all 793 parameters used in the analysis, organized by type:
 
-- External sources (peer-reviewed): 232
-- Calculated values: 397
+- External sources (peer-reviewed): 234
+- Calculated values: 399
 - Core definitions: 160
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (397 parameters) • [External Data Sources](#sec-external) (232 parameters) • [Core Definitions](#sec-definitions) (160 parameters)
+[Calculated Values](#sec-calculated) (399 parameters) • [External Data Sources](#sec-external) (234 parameters) • [Core Definitions](#sec-definitions) (160 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -5748,7 +5748,7 @@ $$
 
 :::
 
-### Defense Takeover Cost per Human: $90 {#sec-defense_takeover_cost_per_human}
+### Military Takeover Cost per Human: $109 {#sec-defense_takeover_cost_per_human}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -5756,15 +5756,15 @@ Per-person cost of the military takeover distributed across global population
 
 **Inputs**:
 
-- [Defense Takeover Total Cost](#sec-defense_takeover_cost_total) 🔢: $722 billion
+- [Military Takeover Total Cost](#sec-defense_takeover_cost_total) 🔢: $873 billion
 - [Global Population in 2024](#sec-global_population_2024) 📊: 8 billion of people (95% CI: 7.8 billion of people - 8.2 billion of people)
 
 $$
 \begin{gathered}
 C_{takeover,pp} \\
 = \frac{C_{takeover}}{Pop_{global}} \\
-= \frac{\$722B}{8B} \\
-= \$90.3
+= \frac{\$873B}{8B} \\
+= \$109
 \end{gathered}
 $$
 where:
@@ -5799,7 +5799,7 @@ $$
 
 :::
 
-### Defense Takeover Total Cost: $722 billion {#sec-defense_takeover_cost_total}
+### Military Takeover Total Cost: $873 billion {#sec-defense_takeover_cost_total}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -5807,8 +5807,8 @@ Total realistic cost to acquire controlling stakes in all major Western military
 
 **Inputs**:
 
-- [US Defense Primes Market Cap](#sec-defense_primes_market_cap_us) 📊: $670 billion
-- [Allied Defense Primes Market Cap](#sec-defense_primes_market_cap_allied) 📊: $131 billion
+- [US Military Primes Market Cap](#sec-defense_primes_market_cap_us) 📊: $836 billion
+- [Allied Military Primes Market Cap](#sec-defense_primes_market_cap_allied) 📊: $132 billion
 - [Control Fraction](#sec-defense_takeover_control_fraction): 0.501:1
 - [Acquisition Premium Multiplier](#sec-defense_takeover_acquisition_premium): 1.8x (95% CI: 1.5x - 3x)
 
@@ -10065,6 +10065,7 @@ $$
 - [Financial Plan](../economics/financial-plan.html)
 - [Decentralized Institutes of Health](../solution/dih.html)
 - [Incentive Alignment Bonds](../solution/incentive-alignment-bonds.html)
+- [The Loving Takeover](../appendix/loving-takeover.html)
 - [Health Dividend](../economics/health-dividend.html)
 
 :::
@@ -10303,8 +10304,9 @@ $$
 - [Where Am I Wrong?](../appendix/where-am-i-wrong.html)
 - [Voter Acquisition Grant Proposal](../grant-proposal/voter-acquisition-grant.html)
 - [The Most Important Secret in the World: 20 Questions to End War and Disease](../strategy/questions.html)
-- [Welcome Aboard, President](../appendix/president-notification-letter.html)
+- [Your Desk Is Ready, President](../appendix/president-notification-letter.html)
 - [The Love Letter](../appendix/love-letter.html)
+- [The Loving Takeover](../appendix/loving-takeover.html)
 - [Please Select an Earth: A) Everyone Gets Rich B) Somalia, but Everywhere](../economics/gdp-trajectories.html)
 - [The Invisible Graveyard: Quantifying the Mortality Cost of FDA Efficacy Lag](../appendix/invisible-graveyard.html)
 
@@ -11337,6 +11339,47 @@ $$
 
 - [Your FDA Is Unsafe and Ineffective](../problem/fda-is-unsafe-and-ineffective.html)
 - [Real-World Evidence Historical Success (Pre-1962)](../appendix/real-world-evidence-historical-success.html)
+
+:::
+
+### Full Influence Package Cost: $1.71 trillion {#sec-full_influence_cost_activist}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Full control of the military primes (50.1% plus acquisition premium) plus 5% activist positions in the top-5 lobbying firms of the other four government-controlling sectors. The activist tier follows the Engine No. 1 precedent: a 0.02% stake won three Exxon board seats, so 5% is a loud voice at every table
+
+**Inputs**:
+
+- [Military Takeover Total Cost](#sec-defense_takeover_cost_total) 🔢: $873 billion
+- [Government-Controlling Sectors Top-5 Market Cap](#sec-gov_controlling_sectors_top5_market_cap) 📊: $16.7 trillion (95% CI: $15 trillion - $18 trillion)
+
+$$
+\begin{gathered}
+C_{influence} \\
+= C_{takeover} + 0.05 \times MarketCap_{sectors}
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+C_{takeover} \\
+= (MarketCap_{US} \\
++ MarketCap_{allied}) \times f_{control} \times m_{premium}
+\end{gathered}
+$$
+*~ Medium confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-full_influence_cost_activist.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-full_influence_cost_activist.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-full_influence_cost_activist.qmd >}}
 
 :::
 
@@ -13044,6 +13087,7 @@ $$
 
 - [How Much Does It Cost to Buy All the Governments?](../appendix/cost-of-change-analysis.html)
 - [The Earth Optimization Prize](../strategy/earth-optimization-prize.html)
+- [The Loving Takeover](../appendix/loving-takeover.html)
 
 :::
 
@@ -14399,7 +14443,7 @@ $$
 
 :::
 
-### IAB vs Defense Lobbying Ratio at 1% Treaty: 21.4x {#sec-iab_vs_defense_lobby_ratio_at_1pct}
+### IAB vs Defense Lobbying Ratio at 1% Treaty: 13.7x {#sec-iab_vs_defense_lobby_ratio_at_1pct}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -14408,14 +14452,14 @@ Ratio of IAB political incentive funding to defense industry lobbying at 1% trea
 **Inputs**:
 
 - [Annual IAB Political Incentive Funding](#sec-iab_political_incentive_funding_annual) 🔢: $2.72 billion
-- [Annual Defense Industry Lobbying Spending](#sec-defense_lobbying_annual) 📊: $127 million (95% CI: $100 million - $160 million)
+- [Annual Military Sector Lobbying](#sec-defense_lobbying_annual) 📊: $198 million (95% CI: $190 million - $210 million)
 
 $$
 \begin{gathered}
 k_{IAB:defense} \\
 = \frac{Funding_{political,ann}}{Lobby_{def,ann}} \\
-= \frac{\$2.72B}{\$127M} \\
-= 21.4
+= \frac{\$2.72B}{\$198M} \\
+= 13.7
 \end{gathered}
 $$
 where:
@@ -15451,7 +15495,7 @@ $$
 
 :::
 
-### Loving Takeover Net Cost (Annual): $14.4 billion {#sec-mechanism_loving_takeover_net_cost}
+### Loving Takeover Net Cost (Annual): $17.5 billion {#sec-mechanism_loving_takeover_net_cost}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -15459,15 +15503,15 @@ Net annual cost of the Loving Takeover: opportunity cost only (capital deployed 
 
 **Inputs**:
 
-- [Defense Takeover Total Cost](#sec-defense_takeover_cost_total) 🔢: $722 billion
+- [Military Takeover Total Cost](#sec-defense_takeover_cost_total) 🔢: $873 billion
 - [Mechanism Opportunity Cost Rate](#sec-mechanism_opportunity_cost_rate): 0.02:1 (95% CI: 0:1 - 0.05:1)
 
 $$
 \begin{gathered}
 C_{takeover,net} \\
 = C_{takeover} \times r_{opp} \\
-= \$722B \times 0.02 \\
-= \$14.4B
+= \$873B \times 0.02 \\
+= \$17.5B
 \end{gathered}
 $$
 where:
@@ -16224,7 +16268,7 @@ $$
 - [Earth Optimization Protocol v1](../strategy/earth-optimization-protocol-v1.html)
 - [Pre-Built Google Ads Campaign for Coalition Partners](../appendix/google-ads-campaign-template.html)
 - [How to End War and Disease](../educational-film.html)
-- [Welcome Aboard, President](../appendix/president-notification-letter.html)
+- [Your Desk Is Ready, President](../appendix/president-notification-letter.html)
 - [The Humanity Manager Employment Agreement](../appendix/humanity-manager-employment-agreement.html)
 - [The Counsel Pitch](../appendix/counsel-outreach.html)
 - [The Press Release and Journalist List](../appendix/press-release.html)
@@ -16541,14 +16585,61 @@ $$
 - [Wishonia's Wager](../proof/wishonias-wager.html)
 - [The 1% Treaty](../solution/1-percent-treaty.html)
 - [Earth Optimization Services](../solution/earth-optimization-services.html)
-- [Welcome Aboard, President](../appendix/president-notification-letter.html)
+- [Your Desk Is Ready, President](../appendix/president-notification-letter.html)
 - [The Love Letter](../appendix/love-letter.html)
 - [The Funniest Lawsuit in the Universe](../appendix/lawsuit.html)
 - [Humanity v. Government](../appendix/humanity-v-government.html)
+- [Genetic Slavery](../problem/genetic-slavery.html)
+- [Frequently Asked Objections](../appendix/faq.html)
 - [Declaration of Optimization](../strategy/declaration-of-optimization.html)
+- [How to End War and Disease](../educational-film.html)
 - [The Humanity Manager Employment Agreement](../appendix/humanity-manager-employment-agreement.html)
 - [Correcting the AIs](../appendix/correcting-the-ais.html)
 - [About This Manual](../appendix/back-cover.html)
+
+:::
+
+### Spare Apocalypses (Overkill Factor Minus One): 121 apocalypses {#sec-nuclear_winter_spare_apocalypses}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Spare apocalypses: how many civilization-ending nuclear winters the global arsenal can trigger beyond the one that would already end civilization. The nuclear winter overkill factor minus one. Used wherever the manual jokes about the surplus (the apocalypses kept in case the first does not take).
+
+**Inputs**:
+
+- [Nuclear Winter Overkill Factor](#sec-nuclear_winter_overkill_factor) 🔢: 122x
+
+$$
+Overkill_{spare} = Overkill_{winter} - 1 = 122 - 1 = 121
+$$
+where:
+$$
+\begin{gathered}
+Overkill_{winter} \\
+= \frac{W_{global}}{W_{winter}} \\
+= \frac{12{,}200}{100} \\
+= 122
+\end{gathered}
+$$
+*~ Medium confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-nuclear_winter_spare_apocalypses.qmd >}}
+
+{{< include ../figures/sensitivity-table-nuclear_winter_spare_apocalypses.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-nuclear_winter_spare_apocalypses.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-nuclear_winter_spare_apocalypses.qmd >}}
+
+**Used in:**
+
+- [Frequently Asked Objections](../appendix/faq.html)
 
 :::
 
@@ -18934,7 +19025,7 @@ $$
 - [How to Coordinate 10 Million Nonprofits](../strategy/nonprofit-coalition-strategy.html)
 - [Treaty Feasibility & Cost Analysis](../appendix/treaty-feasibility.html)
 - [The Vandalism Handout](../appendix/handout.html)
-- [Welcome Aboard, President](../appendix/president-notification-letter.html)
+- [Your Desk Is Ready, President](../appendix/president-notification-letter.html)
 - [The Humanity Manager Employment Agreement](../appendix/humanity-manager-employment-agreement.html)
 - [The Love Letter](../appendix/love-letter.html)
 - [The 1% Treaty: Harnessing Greed to Eradicate Disease](../economics/1-pct-treaty-impact.html)
@@ -22481,6 +22572,7 @@ $$
 - [Where Am I Wrong?](../appendix/where-am-i-wrong.html)
 - [The Planetary Constitutional Convention](../strategy/planetary-constitutional-convention.html)
 - [The Funniest Joke in the Universe](../appendix/joke.html)
+- [The Loving Takeover](../appendix/loving-takeover.html)
 - [Health Dividend](../economics/health-dividend.html)
 - [Investment Terms](../economics/investment-terms.html)
 - [Humanity v. Government](../appendix/humanity-v-government.html)
@@ -26967,8 +27059,8 @@ $$
 **Used in:**
 
 - [The Funniest Joke in the Universe](../appendix/joke.html)
-- [Investment Terms](../economics/investment-terms.html)
 - [The Loving Takeover](../appendix/loving-takeover.html)
+- [Investment Terms](../economics/investment-terms.html)
 - [The Press Release and Journalist List](../appendix/press-release.html)
 - [The Plaintiff Media Kit](../appendix/plaintiff-media-kit.html)
 - [Where Am I Wrong?](../appendix/where-am-i-wrong.html)
@@ -28102,7 +28194,8 @@ $$
 - [The Press Release and Journalist List](../appendix/press-release.html)
 - [Your Personal Benefits](../call-to-action/your-personal-benefits.html)
 - [Earth Optimization Protocol v1](../strategy/earth-optimization-protocol-v1.html)
-- [Welcome Aboard, President](../appendix/president-notification-letter.html)
+- [Your Desk Is Ready, President](../appendix/president-notification-letter.html)
+- [The Loving Takeover](../appendix/loving-takeover.html)
 - [Peace Dividend](../economics/peace-dividend.html)
 - [Frequently Asked Objections](../appendix/faq.html)
 - [The Initiating Node Memo](../strategy/initiating-node-memo.html)
@@ -28112,7 +28205,6 @@ $$
 - [The Humanity Manager Employment Agreement](../appendix/humanity-manager-employment-agreement.html)
 - [The Plaintiff Media Kit](../appendix/plaintiff-media-kit.html)
 - [The Rule 14a-8 Shareholder Proposal](../appendix/shareholder-proposal-14a-8.html)
-- [The Loving Takeover](../appendix/loving-takeover.html)
 - [Please Select an Earth: A) Everyone Gets Rich B) Somalia, but Everywhere](../economics/gdp-trajectories.html)
 - [Health Dividend](../economics/health-dividend.html)
 - [Humanity v. Government](../appendix/humanity-v-government.html)
@@ -31086,6 +31178,7 @@ $$
 **Used in:**
 
 - [How Much Does It Cost to Buy All the Governments?](../appendix/cost-of-change-analysis.html)
+- [The Loving Takeover](../appendix/loving-takeover.html)
 
 :::
 
@@ -31222,6 +31315,7 @@ $$
 - [The Earth Optimization Prize](../strategy/earth-optimization-prize.html)
 - [Decentralized Institutes of Health](../solution/dih.html)
 - [Earth Optimization Protocol v1](../strategy/earth-optimization-protocol-v1.html)
+- [The Loving Takeover](../appendix/loving-takeover.html)
 - [Peace Dividend](../economics/peace-dividend.html)
 - [Investment Terms](../economics/investment-terms.html)
 - [Incentive Alignment Bonds: Making Public Goods Financially and Politically Profitable](../appendix/incentive-alignment-bonds-paper.html)
@@ -31312,6 +31406,7 @@ $$
 - [Financial Plan](../economics/financial-plan.html)
 - [Investment Terms](../economics/investment-terms.html)
 - [The Earth Optimization Prize Fund](../economics/earth-optimization-prize-fund.html)
+- [Investor Risk Analysis](../appendix/investor-risk-analysis.html)
 
 :::
 
@@ -35840,7 +35935,7 @@ $$
 - [The Initiating Node Memo](../strategy/initiating-node-memo.html)
 - [Earth Optimization Prize 90-Day Pilot](../grant-proposal/earth-optimization-prize-90-day-pilot.html)
 - [Institution Outreach Email Templates](../strategy/institution-outreach-email.html)
-- [Welcome Aboard, President](../appendix/president-notification-letter.html)
+- [Your Desk Is Ready, President](../appendix/president-notification-letter.html)
 - [The Humanity Manager Employment Agreement](../appendix/humanity-manager-employment-agreement.html)
 - [Please Select an Earth: A) Everyone Gets Rich B) Somalia, but Everywhere](../economics/gdp-trajectories.html)
 
@@ -37336,25 +37431,25 @@ Annual global clinical trial participants (IQVIA 2022: 1.9M post-COVID normaliza
 
 :::
 
-### Annual Defense Industry Lobbying Spending: $127 million {#sec-defense_lobbying_annual}
+### Annual Military Sector Lobbying: $198 million {#sec-defense_lobbying_annual}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Annual defense industry lobbying spending
+Annual military sector lobbying spending. OpenSecrets reports the 2025 actual at $198.0 million, the top of a three-year climb: $142.9M (2023), $159.5M (2024), $198.0M (2025)
 
 **Source**: [@lobbying-spend-defense]
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$100 million, $160 million]
+**Technical**: 95% CI: [$190 million, $210 million]
 
-**What this means**: This estimate has moderate uncertainty. The true value likely falls between $100 million and $160 million (±24%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: We're quite confident in this estimate. The true value likely falls between $190 million and $210 million (±5%). This represents a narrow range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 #### Input Distribution
 
 {{< include ../figures/distribution-defense_lobbying_annual.qmd >}}
 
-*✓ High confidence • 📊 Peer-reviewed • Updated 2024*
+*✓ High confidence • 📊 Peer-reviewed • Updated 2025*
 
 **Used in:**
 
@@ -37375,13 +37470,13 @@ Annual defense industry lobbying spending
 
 :::
 
-### Allied Defense Primes Market Cap: $131 billion {#sec-defense_primes_market_cap_allied}
+### Allied Military Primes Market Cap: $132 billion {#sec-defense_primes_market_cap_allied}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Combined market capitalization of major allied European defense primes (BAE Systems approx $75.6B + Thales approx $55.0B), approx as of June 2026
+Combined market capitalization of major allied European military primes (BAE Systems approx $75.8B + Thales approx $56.7B), as of June 2026
 
-**Source**: [@defense-primes-market-cap-2026]
+**Source**: [@companiesmarketcap-eu-primes-2026]
 
 #### Uncertainty Range
 
@@ -37395,13 +37490,13 @@ Combined market capitalization of major allied European defense primes (BAE Syst
 
 :::
 
-### US Defense Primes Market Cap: $670 billion {#sec-defense_primes_market_cap_us}
+### US Military Primes Market Cap: $836 billion {#sec-defense_primes_market_cap_us}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Combined market capitalization of major US defense primes (RTX, LMT, GD, NOC, LHX, HII plus IT primes LDOS, BAH, CACI, SAIC), approx as of June 2026; Boeing is largely commercial and only partially attributable
+Combined market capitalization of the 11 major US military primes at the June 2026 close: RTX $248.1B, Boeing $174.7B, Lockheed Martin $126.5B, General Dynamics $96.9B, Northrop Grumman $78.5B, L3Harris $58.2B, Leidos $15.4B, Huntington Ingalls $11.9B, CACI $11.6B, Booz Allen Hamilton $9.2B, SAIC $4.9B
 
-**Source**: [@defense-primes-market-cap-2026]
+**Source**: [@stockanalysis-military-prime-caps-2026]
 
 #### Uncertainty Range
 
@@ -37412,6 +37507,28 @@ Combined market capitalization of major US defense primes (RTX, LMT, GD, NOC, LH
 **Used in:**
 
 - [The Loving Takeover](../appendix/loving-takeover.html)
+
+:::
+
+### Military Primes Tradeable Float: $880 billion {#sec-defense_primes_tradeable_float}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Tradeable float of the 13 Western military primes, approx 91% of their combined market cap. Method: per-company float and shares-outstanding from stockanalysis.com statistics pages; big-5 floats verified individually (RTX 92.6%, BA 96.0%, LMT 85.7%, GD 94.2%, NOC 99.7%). Thales is the outlier at approx 45% float because the French State (26.60%) and Dassault Aviation (26.59%) stakes are locked
+
+**Source**: [@stockanalysis-military-prime-caps-2026]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$850 billion, $900 billion]
+
+**What this means**: We're quite confident in this estimate. The true value likely falls between $850 billion and $900 billion (±3%). This represents a narrow range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+#### Input Distribution
+
+{{< include ../figures/distribution-defense_primes_tradeable_float.qmd >}}
+
+*~ Medium confidence*
 
 :::
 
@@ -39353,10 +39470,14 @@ Total global nuclear warhead inventory across nine nuclear-armed states. Include
 
 **Used in:**
 
+- [Diagnostic Summary](../problem.html)
 - [Earth Optimization Services](../solution/earth-optimization-services.html)
 - [The Delusion of Insignificance](../proof/delusion-of-insignificance.html)
+- [Frequently Asked Objections](../appendix/faq.html)
 - [Where Am I Wrong?](../appendix/where-am-i-wrong.html)
 - [The Most Important Secret in the World: 20 Questions to End War and Disease](../strategy/questions.html)
+- [How to End War and Disease](../educational-film.html)
+- [Campaign Budget: The Legal Bribery Machine](../economics/campaign-budget.html)
 
 :::
 
@@ -39377,6 +39498,28 @@ Proportion of global DALYs that are YLD (years lived with disability) vs YLL (ye
 {{< include ../figures/distribution-global_yld_proportion_of_dalys.qmd >}}
 
 *✓ High confidence • 📊 Peer-reviewed*
+
+:::
+
+### Government-Controlling Sectors Top-5 Market Cap: $16.7 trillion {#sec-gov_controlling_sectors_top5_market_cap}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Combined market capitalization of the top-5 US public lobbying spenders in each of the four other government-controlling sectors: pharmaceuticals $1.79T, technology $13.28T, insurance $0.39T, oil and gas $1.25T. Caveats: Meta (Zuckerberg 60.8% voting) and Alphabet (Page and Brin 52.3%) cannot be majority-acquired; Ellison owns 40.6% of Oracle; the largest insurance lobbyists are mutuals with no shares; trade associations (PhRMA, AHIP, SIFMA, API) are not acquirable
+
+**Source**: [@opensecrets-top-lobbying-industries-2025]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$15 trillion, $18 trillion]
+
+**What this means**: We're quite confident in this estimate. The true value likely falls between $15 trillion and $18 trillion (±9%). This represents a narrow range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+#### Input Distribution
+
+{{< include ../figures/distribution-gov_controlling_sectors_top5_market_cap.qmd >}}
+
+*~ Medium confidence*
 
 :::
 
@@ -39892,6 +40035,7 @@ Approximate number of warheads needed to trigger a regional-scale nuclear winter
 
 **Used in:**
 
+- [Diagnostic Summary](../problem.html)
 - [Where Am I Wrong?](../appendix/where-am-i-wrong.html)
 
 :::
@@ -43274,11 +43418,11 @@ Mid-range funding for commercial DCT platform
 
 :::
 
-### Percentage of Budget Defense Sector Keeps Under 1% treaty: 99% {#sec-defense_sector_retention_pct}
+### Percentage of Budget Military Sector Keeps Under 1% Treaty: 99% {#sec-defense_sector_retention_pct}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Percentage of budget defense sector keeps under 1% treaty
+Percentage of budget the military sector keeps under 1% treaty
 
 *Core definition*
 
@@ -43292,6 +43436,7 @@ Percentage of budget defense sector keeps under 1% treaty
 - [The Most Important Secret in the World: 20 Questions to End War and Disease](../strategy/questions.html)
 - [How to Coordinate 10 Million Nonprofits](../strategy/nonprofit-coalition-strategy.html)
 - [The Funniest Joke in the Universe](../appendix/joke.html)
+- [The Loving Takeover](../appendix/loving-takeover.html)
 
 :::
 
@@ -44306,6 +44451,10 @@ Probability of treaty passage given full funding of the Loving Takeover (mechani
 {{< include ../figures/distribution-mechanism_loving_takeover_p_success.qmd >}}
 
 *Core definition*
+
+**Used in:**
+
+- [Wishonia's Wager](../proof/wishonias-wager.html)
 
 :::
 

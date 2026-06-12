@@ -1,6 +1,6 @@
 ```{python}
 #| echo: false
-#| fig-cap: "Probability Distribution: Annual Military Sector Lobbying"
+#| fig-cap: "Probability Distribution: Military Primes Tradeable Float"
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -17,12 +17,12 @@ setup_chart_style()
 
 # Parameter values
 
-central_value = 198000000.0
-low = 190000000
-high = 210000000
+central_value = 880000000000.0
+low = 850000000000
+high = 900000000000
 dist_type = "normal"
-display_name = "Annual Military Sector Lobbying"
-unit = "USD/year"
+display_name = "Military Primes Tradeable Float"
+unit = "USD"
 
 # Calculate distribution parameters
 
@@ -143,7 +143,7 @@ add_watermark(fig)
 
 # Save PNG to knowledge/figures/ regardless of where Quarto renders from
 
-output_path = get_figure_output_path('distribution-defense_lobbying_annual.png')
+output_path = get_figure_output_path('distribution-defense_primes_tradeable_float.png')
 plt.savefig(output_path, dpi=96, bbox_inches=None, facecolor=COLOR_WHITE)
 
 add_png_metadata(

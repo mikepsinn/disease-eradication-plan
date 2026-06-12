@@ -37,15 +37,17 @@ You raise {{< var treaty_campaign_total_cost >}} in 12-24 months. Donations woul
 
 Why {{< var treaty_campaign_total_cost >}}? Your opposition spends $450M/year to keep things exactly as terrible as they are (pharma lobbying at roughly $300M/year plus the military-industrial complex at roughly $150M/year). A subscription to suffering. You raise {{< var treaty_campaign_total_cost >}} ONCE to pass a treaty that generates {{< var treaty_annual_funding >}}/year FOREVER. Over a 10-year campaign, opposition spends roughly $4.5B to your $1B. But their $450M/year is spread across thousands of contracts and dozens of incumbents. Your $1B is aimed at a single treaty. Concentrated offense beats diffuse defense. This is military strategy, which is ironic, and also the only kind of strategy your species respects.
 
-Nobody gets the upside unless it works. Lawyers can take success-based compensation. Team compensation is modest cash plus mostly equity. This is how you know it's not a government program.
+Nobody gets the upside unless it works. Lawyers can take success-based compensation. Team compensation is modest cash plus the same [EOS Investor Shares](investment-terms.qmd) the investors hold. This is how you know it's not a government program.
 
-| Phase | Amount | Activities | Milestone | Difficulty Level |
+These are tranches of the bond raise (the [Incentive Alignment Bond](../solution/incentive-alignment-bonds.qmd) product), not [EOS Investor Shares](investment-terms.qmd), which are a different product for a different job: bonds fund the campaign, investor shares buy the companies. The campaign borrows like a war effort, not like a startup.
+
+| Tranche | Amount | Activities | Milestone | Difficulty Level |
 |-------|--------|------------|-----------|-----------------|
-| Seed | $250-400M | Platform, policy frameworks, pilots | 50M verified participants | "Convince a few billionaires" |
-| Series A | $500M-1B | Scale to G7 nations | Majority-of-humanity path credible ({{< var global_coordination_target_pct >}} target, {{< var global_population_activism_threshold_pct >}} benchmark) | "Convince several countries" |
-| Growth | $500M-1.1B | Ratification push in major powers | First $1B disbursement | "Convince the countries with nukes" |
+| First | $250-400M | Platform, policy frameworks, pilots | 50M verified participants | "Convince a few billionaires" |
+| Second | $500M-1B | Scale to G7 nations | Majority-of-humanity path credible ({{< var global_coordination_target_pct >}} target, {{< var global_population_activism_threshold_pct >}} benchmark) | "Convince several countries" |
+| Third | $500M-1.1B | Ratification push in major powers | First $1B disbursement | "Convince the countries with nukes" |
 
-Ranges cover best to worst case. The {{< var treaty_campaign_total_cost >}} target is the base case; upper bounds cover contingencies because convincing nuclear powers to behave rationally occasionally requires overtime.
+Ranges cover best to worst case. The {{< var treaty_campaign_total_cost >}} target is the base case; upper bounds cover contingencies because convincing nuclear powers to behave rationally occasionally requires overtime. The tranches are not fully additive: the {{< var treaty_campaign_total_cost >}} base case is the first tranche at its floor plus the second at its floor, with the third as the contingency path and the reserve absorbing overlap.
 
 ### Who Funds What
 

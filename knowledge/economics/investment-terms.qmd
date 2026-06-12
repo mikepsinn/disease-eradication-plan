@@ -57,15 +57,17 @@ There are three layers of appreciation.
 
 | Term | Value | Why |
 |------|-------|-----|
-| Fund target | $500K to $2M | Seed capital. Enough to begin. Not enough to waste. |
+| Fund target | $500K to $2M | Not a seed round; there is no startup to build. The product is buying stock. Enough to keep the lights on while the fund buys it. Enough to begin. Not enough to waste. |
 | Minimum investment (friends & family) | $25,000 | Low enough to include the humans who believed before it was obvious. |
 | Minimum investment (institutional) | $100,000 | Standard institutional minimum. |
 | Operating fee | $150K/yr flat | $100K operator salary + $50K infrastructure. Not a percentage. A number. It does not grow when the fund grows. |
-| Performance fee / carry | None | The operators do not skim the upside. Their upside is the same notes you hold. |
+| Performance fee / carry | None | The operators do not skim the upside. Their upside is the same investor shares you hold. |
 | Management fee | None | No percentage of assets under management. Zero. |
 | Lockup | 1 year | The interesting part takes longer, but you can leave. |
-| Operator equity | 0% | Operators draw a salary and hold the same notes you can. Their say in how it runs is one vote, the same as yours and every other human's. |
-| Security type | Revenue-share notes | Money in, more money out. No voting rights, no governance, no board seat. |
+| Operator equity | 0% | Operators draw a salary and hold the same investor shares you can. Their say in how it runs is one vote, the same as yours and every other human's. |
+| Security type | EOS Investor Shares | Non-voting shares that pay a revenue share. Money in, more money out. No governance, no board seat. |
+
+The cap table in one breath: Earth Optimization Services has two classes. The voting class is one share per human, issued at birth, never for sale. The paying class is the investor shares. Every dual-class company you have heard of runs the split so the founders can keep the votes. This one runs it so everyone does.
 
 ## How the share price works
 
@@ -86,6 +88,10 @@ This is circular. The price depends on the probability, the probability depends 
 A share priced at $X implies P(success) = X × total_shares / V. If you think the probability is higher than what the price implies, the share is undervalued. If lower, overvalued. The price discovery is honest because it is grounded in a falsifiable estimate of one thing: how likely is it that Earth gets optimized?
 
 **The continuous auction.** Each new share is priced at the current P(I) × V / shares. As more people invest, I rises, P rises, price rises. No round numbers. No arbitrary caps. The price at any moment is the market's self-consistent belief in the probability that Earth gets optimized. Any fixed price is wrong at almost every point: too high early (deters believers), too low late (subsidizes latecomers at believers' expense). Only the continuous auction tracks the true expected value at every point.
+
+**Why early money earns more.** The early dollar does two jobs the late dollar cannot. It funds the first campaigns, when P is lowest and each campaign moves it most. And it is the social proof every later dollar waits for: the public odds move because you moved them. The auction pays for both jobs automatically. You bought probability while it was cheap, and your buying is part of what made it expensive. The discount on early shares is not a promotion. It is the market's measure of how much courage the purchase required.
+
+**Why this is not the scheme it resembles.** A price that rises with adoption and rewards the earliest believers is also the grammar of every Ponzi. The difference is one sentence long: every payout here is a claim on cash that exists outside the circle, namely EOS operating revenue and the military contractor shares the fund holds. Later buyers raise the price of your claim. They never fund it. That is the entire difference between a stock and a chain letter, and it is auditable.
 
 **If the campaign fails.** P drops. Price drops. But investors still hold military contractor shares, which perform normally during periods of continued military spending. The downside is the foregone return on whatever you would have bought instead. The share price goes to zero only if the probability of success goes to zero, which requires the complete impossibility of optimizing Earth. On my planet we would call that an unusual claim.
 
@@ -151,7 +157,7 @@ Control is the one thing split evenly: one vote per human, operators included, n
 
 **Stage 2: Nine companies.** The same logic applied to all nine major U.S. military primes. Each success funds the next (appreciation from HII funds KTOS, KTOS funds LDOS, and so on). The lobbying of the entire military sector, redirected. Expected value: $7 billion or more. The mechanism is identical to Stage 1; the scale is larger because nine companies lobby more than one.
 
-**Stage 3: All lobbying sectors.** Defense is not the only industry that lobbies for policies its own shareholders would be better off without. Pharmaceutical companies spend $373 million per year lobbying against drug pricing reforms that would expand their addressable market. Energy companies lobby against transitions that would lower their input costs. Finance, telecom, agriculture. Every industry that lobbies for wasteful policy has value trapped by misallocation. EOS applies the same governance pressure across all of them. Expected value: approximately $452 billion. That $25,000 early investment is now worth roughly $34 million.
+**Stage 3: All lobbying sectors.** Military contracting is not the only industry that lobbies for policies its own shareholders would be better off without. Pharmaceutical companies spend $373 million per year lobbying against drug pricing reforms that would expand their addressable market. Energy companies lobby against transitions that would lower their input costs. Finance, telecom, agriculture. Every industry that lobbies for wasteful policy has value trapped by misallocation. EOS applies the same governance pressure across all of them. Expected value: approximately $452 billion. That $25,000 early investment is now worth roughly $34 million.
 
 **Stage 4: Wishocratic governance.** When resource allocation is optimized across all public spending globally, through [Wishocracy](../solution/wishocracy.qmd), the total value is the difference between what humanity produces under current governance and what it produces under optimal governance. This is the political dysfunction tax, eliminated. Expected value: approximately $133 trillion. The same $25,000 is worth roughly $10 billion. This sounds absurd until you remember that global GDP is approximately $105 trillion per year, and the difference between good and bad allocation of that sum, compounded over decades, is larger than any number that fits comfortably in a sentence.
 
@@ -165,11 +171,11 @@ The share price is derived from the probability of civilizational optimization, 
 
 No management fee. No performance fee. No carry. Every dollar above $150K buys shares.
 
-At $2 million in assets, the operating cost is 7.5% of the fund. Expensive for a fund, but this is a startup with two million dollars, not Bridgewater. At $20 million, it is 0.75%. At $200 million, it is 0.075%, which is less than Vanguard charges to track the S&P 500. The operator gets progressively less rich as the fund gets bigger. This is the opposite of every fund in history, where the manager's incentive is to gather assets regardless of performance. Here, the incentive is to make the assets worth more, because the operator holds the same notes you do and nothing else.
+At $2 million in assets, the operating cost is 7.5% of the fund. Expensive for a fund, but this is a startup with two million dollars, not Bridgewater. At $20 million, it is 0.75%. At $200 million, it is 0.075%, which is less than Vanguard charges to track the S&P 500. The operator gets progressively less rich as the fund gets bigger. This is the opposite of every fund in history, where the manager's incentive is to gather assets regardless of performance. Here, the incentive is to make the assets worth more, because the operator holds the same investor shares you do and nothing else.
 
 **Layer 2: Consulting.** The demand letter creates a legal obligation for the board to respond (Caremark). Responding requires commissioning an analysis of whether the company's lobbying generates positive shareholder returns. EOS, through [Optimitron](../solution/optimocracy.qmd), provides this analysis. The free version demonstrates competence. The paid version (deeper, proprietary, ongoing advisory) is how EOS becomes a consultant to the companies it is pressuring.
 
-I spent a long time looking for the part where the demand letter and the consulting pipeline stop being the same object and could not find it. Each demand letter in the cascade creates a potential client. Across defense, pharma, and finance at scale, this is $10-50 million per year.
+I spent a long time looking for the part where the demand letter and the consulting pipeline stop being the same object and could not find it. Each demand letter in the cascade creates a potential client. Across military contracting, pharma, and finance at scale, this is $10-50 million per year.
 
 **Layer 3: Platform.** Optimitron becomes a SaaS product. Institutional investors, proxy advisory firms, and pension funds subscribe to the lobbying ROI data. This data is valuable to everyone who votes proxies, which is every institutional investor.
 
@@ -191,7 +197,7 @@ If someone copies this and executes it well, they have ended war and disease.
 
 EOS offers two instruments. Both are products of the same company.
 
-**Revenue-share notes (the EOS share).** Your money buys military contractor shares via the fund. You receive two returns: (1) a revenue-share percentage of EOS's operating revenue (fund fees, consulting, platform, brand), which is your cash return, and (2) appreciation of the share itself, whose price is set by the continuous auction at P(I) × V / shares. The cash return is operational. The share value is civilizational. They are separate. This is the takeover arm.
+**EOS Investor Shares.** Your money buys military contractor shares via the fund. You receive two returns: (1) a revenue-share percentage of EOS's operating revenue (fund fees, consulting, platform, brand), which is your cash return, and (2) appreciation of the share itself, whose price is set by the continuous auction at P(I) × V / shares. The cash return is operational. The share value is civilizational. They are separate. This is the takeover arm.
 
 **[Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd) [@iab-paper-2025].** Your money funds the political campaign to pass the treaty. If the treaty passes, it generates {{< var treaty_annual_funding >}} per year, and bondholders receive {{< var victory_bond_annual_payout >}} per year forever (a {{< var victory_bond_annual_return_pct >}} annual return on the campaign cost of {{< var treaty_campaign_total_cost >}}). This is the campaign financing arm.
 
@@ -301,7 +307,7 @@ html`<div class="eit-cards">
   <div class="eit-card">
     <div class="eit-card-title">Value if Campaign Fails</div>
     <div class="eit-card-value">${eosMoney(eosCalc.fail)}</div>
-    <div class="eit-card-meta">Defense stocks at ${(eosCalc.sp * 100).toFixed(1)}%/yr for ${eosCalc.years} years</div>
+    <div class="eit-card-meta">Military contractor stocks at ${(eosCalc.sp * 100).toFixed(1)}%/yr for ${eosCalc.years} years</div>
   </div>
   <div class="eit-card good">
     <div class="eit-card-title">Expected Value (probability-weighted)</div>
@@ -328,7 +334,7 @@ html`<div class="eit-cards">
 
 ```{ojs}
 //| echo: false
-html`<div class="eit-summary">You invest ${eosMoney(eosCalc.amount)}. If the campaign succeeds (${(eosCalc.prob * 100).toFixed(1)}% estimated), your shares appreciate to ${eosMoney(eosCalc.success)} (${eosCalc.mult.toFixed(1)}x). If it fails, you hold defense stocks worth ${eosMoney(eosCalc.fail)} at market return. The probability-weighted expected value is ${eosMoney(eosCalc.ev)}, which is ${eosMoney(Math.abs(eosCalc.evVsSp))} ${eosCalc.evVsSp >= 0 ? "more" : "less"} than the S&P would have returned. You also do not die of a curable disease, which is not reflected above but is arguably the better return.</div>`
+html`<div class="eit-summary">You invest ${eosMoney(eosCalc.amount)}. If the campaign succeeds (${(eosCalc.prob * 100).toFixed(1)}% estimated), your shares appreciate to ${eosMoney(eosCalc.success)} (${eosCalc.mult.toFixed(1)}x). If it fails, you hold military contractor stocks worth ${eosMoney(eosCalc.fail)} at market return. The probability-weighted expected value is ${eosMoney(eosCalc.ev)}, which is ${eosMoney(Math.abs(eosCalc.evVsSp))} ${eosCalc.evVsSp >= 0 ? "more" : "less"} than the S&P would have returned. You also do not die of a curable disease, which is not reflected above but is arguably the better return.</div>`
 ```
 
 ::: {.content-visible when-format="html"}
@@ -399,7 +405,7 @@ html`<div class="eit-summary">Your ${eosMoney(eosCalc.amount)} investment is dwa
 
 ::: {.content-hidden when-format="html"}
 
-For a $25,000 investment over 10 years at a 10% estimated probability of success: the success branch multiplies your stake by {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}} (how much bigger the economy is by year 15 with the treaty than without it), and the failure branch holds defense stocks at the {{< var average_market_return_pct >}} S&P benchmark. Run that arithmetic and the Light package's raw stake multiplier, by itself, does not beat ten years of market compounding. It was never supposed to. The investment case is the next two paragraphs.
+For a $25,000 investment over 10 years at a 10% estimated probability of success: the success branch multiplies your stake by {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}} (how much bigger the economy is by year 15 with the treaty than without it), and the failure branch holds military contractor stocks at the {{< var average_market_return_pct >}} S&P benchmark. Run that arithmetic and the Light package's raw stake multiplier, by itself, does not beat ten years of market compounding. It was never supposed to. The investment case is the next two paragraphs.
 
 When you buy matters. A share is worth its probability of success times the value of success. If the market is efficient, the price already encodes the odds and entry timing is fair (early just trades safety for a bigger, rarer payoff, same expected value). If the market is asleep, which it is, since no analyst models the end of war, you buy at a near-zero implied probability and a win reprices the share the whole way up. Buying at 5% implied while believing 10% is a 2x edge, and on a win the share reprices by the success multiplier divided by that implied 5%. The edge is real exactly to the degree the market disbelieves, and it vanishes the moment the thesis becomes obvious.
 
@@ -556,7 +562,7 @@ A person who spends 80 years accumulating $100 million and then dies of a treata
 ## Where to point the money: the lobbying allocation calculator
 
 ::: {.content-visible when-format="html"}
-The question is not "should I buy defense stocks?" The question is: which companies give you the most lobbying redirect per dollar of shares?
+The question is not "should I buy military contractor stocks?" The question is: which companies give you the most lobbying redirect per dollar of shares?
 
 Military contractors are not the only companies whose lobbying budgets are pointed away from rational policy. Pharmaceutical companies spend roughly $56M/year lobbying against drug pricing reform and clinical trial modernization. Insurance companies lobby against healthcare reform. Oil and gas companies lobby against energy transition. Each dollar of lobbying, redirected, is a dollar pushing toward the treaty.
 
@@ -810,7 +816,7 @@ Honest version, with the warts, because a number you cannot defend is worse than
 
 | Outcome | Economy at year 15 | What your equity return tracks |
 |---|---|---|
-| **Floor** (nothing works) | unchanged | You hold defense stocks at roughly the market return ({{< var average_market_return_pct >}}), and you paid no carry and no management fee, so you beat the fee-laden fund your neighbor is in. A floor, not a loss. You own real, cash-generating assets. |
+| **Floor** (nothing works) | unchanged | You hold military contractor stocks at roughly the market return ({{< var average_market_return_pct >}}), and you paid no carry and no management fee, so you beat the fee-laden fund your neighbor is in. A floor, not a loss. You own real, cash-generating assets. |
 | **Light package** (1% Treaty only) | ~{{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}} | The companies capture a four-times-larger economy and the larger "not-dying" market. The first domino, alone. |
 | **Deluxe package** (full Wishonia optimization) | ~{{< var wishonia_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}} (year 20: ~{{< var wishonia_trajectory_gdp_vs_current_trajectory_multiplier_year_20 >}}) | Government replaced with optimal policy. The moonshot: vast magnitude, lower probability. This is Wishonia's Wager denominated in dollars. |
 
@@ -830,17 +836,17 @@ So this is not only a search for alpha (beating the market). It is an attempt to
 
 **Scenario 1: Thesis works.** Buy shares, gain influence, redirect lobbying, treaty passes. Shares appreciate through buying pressure, credibility cascade, and economic growth. Best case.
 
-**Scenario 2: Peace gets priced in early.** Other forces (fiscal crisis, parallel peace movements, public opinion shift) reduce military spending before the takeover completes. Defense stocks decline. But: you're buying shares cheaper, biotech positions (if held) appreciate, and board influence during a forced pivot is more valuable than ever.
+**Scenario 2: Peace gets priced in early.** Other forces (fiscal crisis, parallel peace movements, public opinion shift) reduce military spending before the takeover completes. Military contractor stocks decline. But: you're buying shares cheaper, biotech positions (if held) appreciate, and board influence during a forced pivot is more valuable than ever.
 
-**Scenario 3: Status quo holds.** Military spending continues. Treaty fails. But you hold defense stocks, which perform well during periods of continued military spending. The downside is the opportunity cost of whatever else you would have bought.
+**Scenario 3: Status quo holds.** Military spending continues. Treaty fails. But you hold military contractor stocks, which perform well during periods of continued military spending. The downside is the opportunity cost of whatever else you would have bought.
 
-**The asymmetry:** In all three scenarios, owning the shares is better than not owning them. The worst case is "you own defense stocks that perform like defense stocks." The best case is you own the companies that pivoted from weapons to medicine in the largest reallocation of capital in human history.
+**The asymmetry:** In all three scenarios, owning the shares is better than not owning them. The worst case is "you own military contractor stocks that perform like military contractor stocks." The best case is you own the companies that pivoted from weapons to medicine in the largest reallocation of capital in human history.
 
-**The hedge:** The portfolio should include biotech and healthcare positions alongside defense. When defense spending falls, health spending rises. The two sectors are natural hedges. A portfolio long both captures the transition instead of suffering through it.
+**The hedge:** The portfolio should include biotech and healthcare positions alongside military contractors. When military spending falls, health spending rises. The two sectors are natural hedges. A portfolio long both captures the transition instead of suffering through it.
 
 ## If you are greedy
 
-If the campaign fails, you hold defense stocks. If it succeeds, the appreciation is a multiple of your investment. The expected value exceeds the S&P at most reasonable probability estimates because the upside is so much larger than the downside. The calculator above lets you test this with your own numbers.
+If the campaign fails, you hold military contractor stocks. If it succeeds, the appreciation is a multiple of your investment. The expected value exceeds the S&P at most reasonable probability estimates because the upside is so much larger than the downside. The calculator above lets you test this with your own numbers.
 
 ## If you are generous
 

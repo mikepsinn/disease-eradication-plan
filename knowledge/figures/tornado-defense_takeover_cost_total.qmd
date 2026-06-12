@@ -20,14 +20,14 @@ display_name = "Military Takeover Total Cost"
 
 # Baseline and units
 
-baseline = 722341800000.0
+baseline = 872942400000.0
 
 # Tornado data from sensitivity analysis
 
 drivers = ['DEFENSE_TAKEOVER_ACQUISITION_PREMIUM']
 driver_labels = ['Acquisition Premium Multiplier']
-impacts_low = [-120390300000.0]
-impacts_high = [481561200000.0]
+impacts_low = [-145490400000.0]
+impacts_high = [581961600000.0]
 
 # Convert deltas to absolute values (baseline + delta)
 

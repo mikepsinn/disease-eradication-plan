@@ -1,9 +1,9 @@
-**Monte Carlo note:** Loving Takeover Net Cost (Annual) is effectively deterministic across the current sampled inputs, so a histogram would mostly visualize floating-point residue instead of real uncertainty. (range 0.000e+00 <= tolerance 1.445e-02)
+**Monte Carlo note:** Loving Takeover Net Cost (Annual) is effectively deterministic across the current sampled inputs, so a histogram would mostly visualize floating-point residue instead of real uncertainty. (range 0.000e+00 <= tolerance 1.746e-02)
 
 | Statistic | Value |
 |:----------|------:|
-| Baseline (deterministic) | $14.4 billion |
-| Mean (expected value) | $14.4 billion |
-| Median (50th percentile) | $14.4 billion |
+| Baseline (deterministic) | $17.5 billion |
+| Mean (expected value) | $17.5 billion |
+| Median (50th percentile) | $17.5 billion |
 | Standard Deviation | $0 |
-| 90% Range (5th-95th percentile) | [$14.4 billion, $14.4 billion] |
+| 90% Range (5th-95th percentile) | [$17.5 billion, $17.5 billion] |

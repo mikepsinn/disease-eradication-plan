@@ -16,18 +16,18 @@ setup_chart_style()
 
 # Display name for chart title
 
-display_name = "Loving Takeover Net Cost (Annual)"
+display_name = "Full Influence Package Cost"
 
 # Baseline and units
 
-baseline = 17458848000.0
+baseline = 1708442400000.0
 
 # Tornado data from sensitivity analysis
 
-drivers = ['MECHANISM_OPPORTUNITY_COST_RATE', 'DEFENSE_TAKEOVER_ACQUISITION_PREMIUM']
-driver_labels = ['Mechanism Opportunity Cost Rate', 'Acquisition Premium Multiplier']
-impacts_low = [-17458848000.0, -2909808000.0]
-impacts_high = [26188272000.0, 11639232000.0]
+drivers = ['DEFENSE_TAKEOVER_ACQUISITION_PREMIUM', 'GOV_CONTROLLING_SECTORS_TOP5_MARKET_CAP']
+driver_labels = ['Acquisition Premium Multiplier', 'Government-Controlling Sectors Top-5 Market Cap']
+impacts_low = [-145490400000.0, -85500000000.0]
+impacts_high = [581961600000.0, 64500000000.0]
 
 # Convert deltas to absolute values (baseline + delta)
 
@@ -96,7 +96,7 @@ add_watermark(fig)
 # Save PNG to knowledge/figures/ regardless of where Quarto renders from
 # Use 96 DPI for web-optimized output (reduced from 150 DPI to minimize file size)
 
-output_path = get_figure_output_path('tornado-mechanism_loving_takeover_net_cost.png')
+output_path = get_figure_output_path('tornado-full_influence_cost_activist.png')
 plt.savefig(output_path, dpi=96, bbox_inches=None, facecolor=COLOR_WHITE)
 
 add_png_metadata(

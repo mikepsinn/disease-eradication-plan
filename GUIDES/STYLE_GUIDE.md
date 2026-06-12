@@ -86,7 +86,7 @@ Wishonia doesn't debate. Wishonia describes what humans do, and the description 
 
 Short asides in parentheses (2-8 words) that land harder than the main sentence. This is the voice's secret weapon.
 
-- "(just in case the first 12 apocalypses don't take)"
+- "(just in case the first 121 apocalypses don't take)"
 - "(as a bonus)"
 - "(this is correct)"
 - "(they're very greedy)"
@@ -172,6 +172,8 @@ Funny rarely arrives in the first draft; the first draft is just *clear*, and cl
 **The kill-test applies to serious prose too: every sentence must move a reader toward an action that ends war and disease.** Defensive rigor is author-performance in a lab coat. Do not preempt objections nobody has raised ("why these metrics and not others," "this can't be gamed by X"): an unprompted defense manufactures the objection it answers, and an unprompted reassurance raises the worry it soothes. If the honest answer to "what does this sentence make the reader do" is "it makes the author look careful," cut it.
 
 Three discipline rules for the pass itself. **Tie goes to the incumbent:** never churn a working line for a sideways-different one. **No rule-zealotry:** these rules catch failures; they are not search-and-replace instructions. If a line satisfies the spirit of a rule, leave it; every fix must read better aloud, not just comply. **Keep the author's exact words:** when Mike supplies real wording, use it verbatim unless you can name the reason for a change (grammar, factual error, house style); paraphrase flattens the jokes.
+
+**The deletion bar is higher than the rewrite bar.** Deleting a funny line is worse than keeping an imperfect one. Redundancy alone never justifies cutting a joke: a point already made can land again if the second telling is funny. A full cut is justified only when the line fails the kill-test outright (not funny AND not informative) or its premise is factually broken. Deletions are allowed in any pass, same as rewrites; the review happens in the git diff before commit. But a deletion is invisible in review (nothing bad replaces it, so nothing catches the eye), so every cut must be logged in the pass's BEFORE/AFTER record with a one-line case for what it failed.
 
 ## Directness Failures
 

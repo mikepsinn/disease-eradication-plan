@@ -1,9 +1,9 @@
-**Monte Carlo note:** IAB vs Defense Lobbying Ratio at 1% Treaty is effectively deterministic across the current sampled inputs, so a histogram would mostly visualize floating-point residue instead of real uncertainty. (range 0.000e+00 <= tolerance 2.142e-11)
+**Monte Carlo note:** IAB vs Defense Lobbying Ratio at 1% Treaty is effectively deterministic across the current sampled inputs, so a histogram would mostly visualize floating-point residue instead of real uncertainty. (range 0.000e+00 <= tolerance 1.374e-11)
 
 | Statistic | Value |
 |:----------|------:|
-| Baseline (deterministic) | 21.4x |
-| Mean (expected value) | 21.4x |
-| Median (50th percentile) | 21.4x |
+| Baseline (deterministic) | 13.7x |
+| Mean (expected value) | 13.7x |
+| Median (50th percentile) | 13.7x |
 | Standard Deviation | 3.55e-15x |
-| 90% Range (5th-95th percentile) | [21.4x, 21.4x] |
+| 90% Range (5th-95th percentile) | [13.7x, 13.7x] |

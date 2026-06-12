@@ -38,22 +38,22 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 42 parameters used in the analysis, organized by type:
+This appendix documents all 43 parameters used in the analysis, organized by type:
 
 - External sources (peer-reviewed): 15
 - Calculated values: 17
-- Core definitions: 10
+- Core definitions: 11
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (17 parameters) • [External Data Sources](#sec-external) (15 parameters) • [Core Definitions](#sec-definitions) (10 parameters)
+[Calculated Values](#sec-calculated) (17 parameters) • [External Data Sources](#sec-external) (15 parameters) • [Core Definitions](#sec-definitions) (11 parameters)
 
 
 ## Calculated Values {#sec-calculated}
 
 Parameters derived from mathematical formulas and economic models.
 
-### Defense Takeover Cost per Human: $90 {#sec-defense_takeover_cost_per_human}
+### Military Takeover Cost per Human: $109 {#sec-defense_takeover_cost_per_human}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -61,15 +61,15 @@ Per-person cost of the military takeover distributed across global population
 
 **Inputs**:
 
-- [Defense Takeover Total Cost](#sec-defense_takeover_cost_total) 🔢: $722 billion
+- [Military Takeover Total Cost](#sec-defense_takeover_cost_total) 🔢: $873 billion
 - [Global Population in 2024](#sec-global_population_2024) 📊: 8 billion of people (95% CI: 7.8 billion of people - 8.2 billion of people)
 
 $$
 \begin{gathered}
 C_{takeover,pp} \\
 = \frac{C_{takeover}}{Pop_{global}} \\
-= \frac{\$722B}{8B} \\
-= \$90.3
+= \frac{\$873B}{8B} \\
+= \$109
 \end{gathered}
 $$
 where:
@@ -98,7 +98,7 @@ $$
 
 :::
 
-### Defense Takeover Total Cost: $722 billion {#sec-defense_takeover_cost_total}
+### Military Takeover Total Cost: $873 billion {#sec-defense_takeover_cost_total}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -106,8 +106,8 @@ Total realistic cost to acquire controlling stakes in all major Western military
 
 **Inputs**:
 
-- [US Defense Primes Market Cap](#sec-defense_primes_market_cap_us) 📊: $670 billion
-- [Allied Defense Primes Market Cap](#sec-defense_primes_market_cap_allied) 📊: $131 billion
+- [US Military Primes Market Cap](#sec-defense_primes_market_cap_us) 📊: $836 billion
+- [Allied Military Primes Market Cap](#sec-defense_primes_market_cap_allied) 📊: $132 billion
 - [Control Fraction](#sec-defense_takeover_control_fraction): 0.501:1
 - [Acquisition Premium Multiplier](#sec-defense_takeover_acquisition_premium): 1.8x (95% CI: 1.5x - 3x)
 
@@ -1106,13 +1106,13 @@ Annual global clinical trial participants (IQVIA 2022: 1.9M post-COVID normaliza
 
 :::
 
-### Allied Defense Primes Market Cap: $131 billion {#sec-defense_primes_market_cap_allied}
+### Allied Military Primes Market Cap: $132 billion {#sec-defense_primes_market_cap_allied}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Combined market capitalization of major allied European defense primes (BAE Systems approx $75.6B + Thales approx $55.0B), approx as of June 2026
+Combined market capitalization of major allied European military primes (BAE Systems approx $75.8B + Thales approx $56.7B), as of June 2026
 
-**Source**: [@defense-primes-market-cap-2026]
+**Source**: [@companiesmarketcap-eu-primes-2026]
 
 #### Uncertainty Range
 
@@ -1122,13 +1122,13 @@ Combined market capitalization of major allied European defense primes (BAE Syst
 
 :::
 
-### US Defense Primes Market Cap: $670 billion {#sec-defense_primes_market_cap_us}
+### US Military Primes Market Cap: $836 billion {#sec-defense_primes_market_cap_us}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Combined market capitalization of major US defense primes (RTX, LMT, GD, NOC, LHX, HII plus IT primes LDOS, BAH, CACI, SAIC), approx as of June 2026; Boeing is largely commercial and only partially attributable
+Combined market capitalization of the 11 major US military primes at the June 2026 close: RTX $248.1B, Boeing $174.7B, Lockheed Martin $126.5B, General Dynamics $96.9B, Northrop Grumman $78.5B, L3Harris $58.2B, Leidos $15.4B, Huntington Ingalls $11.9B, CACI $11.6B, Booz Allen Hamilton $9.2B, SAIC $4.9B
 
-**Source**: [@defense-primes-market-cap-2026]
+**Source**: [@stockanalysis-military-prime-caps-2026]
 
 #### Uncertainty Range
 
@@ -1577,6 +1577,26 @@ Percentage of DALYs that are eventually avoidable with sufficient biomedical res
 #### Input Distribution
 
 {{< include ../figures/distribution-eventually_avoidable_daly_pct.qmd >}}
+
+*Core definition*
+
+:::
+
+### P(Success | Loving Takeover Funded): 0.95:1 {#sec-mechanism_loving_takeover_p_success}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Probability of treaty passage given full funding of the Loving Takeover (mechanical: money buys shares, shares buy board control, board redirects lobbying)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [0.8:1, 0.99:1]
+
+**What this means**: We're quite confident in this estimate. The true value likely falls between 0.8:1 and 0.99:1 (±10%). This represents a narrow range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+#### Input Distribution
+
+{{< include ../figures/distribution-mechanism_loving_takeover_p_success.qmd >}}
 
 *Core definition*
 

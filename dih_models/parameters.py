@@ -3343,6 +3343,25 @@ NUCLEAR_WINTER_OVERKILL_FACTOR = Parameter(
     latex_symbol=r"Overkill_{winter}",
 )
 
+NUCLEAR_WINTER_SPARE_APOCALYPSES = Parameter(
+    (12_241 / 100) - 1,
+    manual_ref="knowledge/appendix/extinction-surplus.qmd",
+    source_type=SourceType.CALCULATED,
+    confidence="medium",
+    description="Spare apocalypses: how many civilization-ending nuclear winters the global "
+                "arsenal can trigger beyond the one that would already end civilization. "
+                "The nuclear winter overkill factor minus one. Used wherever the manual "
+                "jokes about the surplus (the apocalypses kept in case the first does not "
+                "take).",
+    display_name="Spare Apocalypses (Overkill Factor Minus One)",
+    unit="apocalypses",
+    formula="NUCLEAR_WINTER_OVERKILL_FACTOR - 1",
+    inputs=["NUCLEAR_WINTER_OVERKILL_FACTOR"],
+    compute=lambda ctx: ctx["NUCLEAR_WINTER_OVERKILL_FACTOR"] - 1,
+    keywords=["nuclear", "winter", "overkill", "spare", "apocalypse", "surplus"],
+    latex_symbol=r"Overkill_{spare}",
+)
+
 # Price of Apocalypse and Apocalypse Markup
 # The cost of triggering one nuclear winter, and the markup above it
 PRICE_OF_APOCALYPSE = Parameter(
@@ -5341,18 +5360,20 @@ CAMPAIGN_DEFENSE_LOBBYIST_BUDGET = Parameter(
 )
 
 DEFENSE_LOBBYING_ANNUAL = Parameter(
-    127_000_000,
+    198_000_000,
     manual_ref="knowledge/appendix/faq.qmd",
     source_ref=ReferenceID.LOBBYING_SPEND_DEFENSE,
     source_type="external",
     confidence="high",
-    description="Annual defense industry lobbying spending",
-    display_name="Annual Defense Industry Lobbying Spending",
+    description="Annual military sector lobbying spending. OpenSecrets reports the 2025 actual at "
+                "$198.0 million, the top of a three-year climb: $142.9M (2023), $159.5M (2024), "
+                "$198.0M (2025)",
+    display_name="Annual Military Sector Lobbying",
     unit="USD/year",
     peer_reviewed=True,
-    last_updated="2024",
-    confidence_interval=(100_000_000, 160_000_000),  # ±~25% year-to-year variation in reported lobbying
-    keywords=["127.0m", "armed forces", "yearly", "conflict", "costs", "funding", "investment"],
+    last_updated="2025",
+    confidence_interval=(190_000_000, 210_000_000),  # 2025 actual; narrow band around reported figure
+    keywords=["198.0m", "armed forces", "yearly", "conflict", "costs", "funding", "investment"],
     latex_symbol=r"Lobby_{def,ann}",  # LaTeX symbol for equations
 )
 
@@ -9210,8 +9231,8 @@ DEFENSE_SECTOR_RETENTION_PCT = Parameter(
     manual_ref="knowledge/solution.qmd",
     source_ref="",
     source_type="definition",
-    description="Percentage of budget defense sector keeps under 1% treaty",
-    display_name="Percentage of Budget Defense Sector Keeps Under 1% treaty",
+    description="Percentage of budget the military sector keeps under 1% treaty",
+    display_name="Percentage of Budget Military Sector Keeps Under 1% Treaty",
     unit="rate",
     keywords=["99%", "armed forces", "international agreement", "peace treaty", "conflict", "sector", "retention"],
     latex_symbol=r"Retain_{def}",  # LaTeX symbol for equations
@@ -14523,12 +14544,15 @@ CONTRIBUTION_SUFFERING_HOURS_PER_PCT_POINT = Parameter(
 # ============================================================================
 
 DEFENSE_PRIMES_MARKET_CAP_US = Parameter(
-    670_000_000_000,
+    836_000_000_000,
     manual_ref="knowledge/appendix/loving-takeover.qmd",
-    source_ref="defense-primes-market-cap-2026",
+    source_ref=ReferenceID.STOCKANALYSIS_MILITARY_PRIME_CAPS_2026,
     source_type="external",
-    description="Combined market capitalization of major US defense primes (RTX, LMT, GD, NOC, LHX, HII plus IT primes LDOS, BAH, CACI, SAIC), approx as of June 2026; Boeing is largely commercial and only partially attributable",
-    display_name="US Defense Primes Market Cap",
+    description="Combined market capitalization of the 11 major US military primes at the June 2026 close: "
+                "RTX $248.1B, Boeing $174.7B, Lockheed Martin $126.5B, General Dynamics $96.9B, "
+                "Northrop Grumman $78.5B, L3Harris $58.2B, Leidos $15.4B, Huntington Ingalls $11.9B, "
+                "CACI $11.6B, Booz Allen Hamilton $9.2B, SAIC $4.9B",
+    display_name="US Military Primes Market Cap",
     unit="USD",
     keywords=["military contractor", "market cap", "US primes"],
     latex_symbol=r"MarketCap_{US}",
@@ -14536,12 +14560,13 @@ DEFENSE_PRIMES_MARKET_CAP_US = Parameter(
 )
 
 DEFENSE_PRIMES_MARKET_CAP_ALLIED = Parameter(
-    131_000_000_000,
+    132_000_000_000,
     manual_ref="knowledge/appendix/loving-takeover.qmd",
-    source_ref="defense-primes-market-cap-2026",
+    source_ref=ReferenceID.COMPANIESMARKETCAP_EU_PRIMES_2026,
     source_type="external",
-    description="Combined market capitalization of major allied European defense primes (BAE Systems approx $75.6B + Thales approx $55.0B), approx as of June 2026",
-    display_name="Allied Defense Primes Market Cap",
+    description="Combined market capitalization of major allied European military primes "
+                "(BAE Systems approx $75.8B + Thales approx $56.7B), as of June 2026",
+    display_name="Allied Military Primes Market Cap",
     unit="USD",
     keywords=["military contractor", "market cap", "European primes", "BAE", "Thales"],
     latex_symbol=r"MarketCap_{allied}",
@@ -14600,6 +14625,61 @@ DEFENSE_TAKEOVER_COST_PER_HUMAN = Parameter(
     latex_symbol=r"C_{takeover,pp}",
 )
 
+DEFENSE_PRIMES_TRADEABLE_FLOAT = Parameter(
+    880_000_000_000,
+    manual_ref="knowledge/appendix/loving-takeover.qmd",
+    source_ref=ReferenceID.STOCKANALYSIS_MILITARY_PRIME_CAPS_2026,
+    source_type="external",
+    confidence="medium",
+    confidence_interval=(850_000_000_000, 900_000_000_000),
+    description="Tradeable float of the 13 Western military primes, approx 91% of their combined "
+                "market cap. Method: per-company float and shares-outstanding from stockanalysis.com "
+                "statistics pages; big-5 floats verified individually (RTX 92.6%, BA 96.0%, LMT 85.7%, "
+                "GD 94.2%, NOC 99.7%). Thales is the outlier at approx 45% float because the French "
+                "State (26.60%) and Dassault Aviation (26.59%) stakes are locked",
+    display_name="Military Primes Tradeable Float",
+    unit="USD",
+    keywords=["military contractor", "float", "tradeable shares", "loving takeover"],
+    latex_symbol=r"Float_{primes}",
+)
+
+GOV_CONTROLLING_SECTORS_TOP5_MARKET_CAP = Parameter(
+    16_710_000_000_000,
+    manual_ref="knowledge/appendix/loving-takeover.qmd",
+    source_ref=ReferenceID.OPENSECRETS_TOP_LOBBYING_INDUSTRIES_2025,
+    source_type="external",
+    confidence="medium",
+    confidence_interval=(15_000_000_000_000, 18_000_000_000_000),
+    description="Combined market capitalization of the top-5 US public lobbying spenders in each of "
+                "the four other government-controlling sectors: pharmaceuticals $1.79T, technology "
+                "$13.28T, insurance $0.39T, oil and gas $1.25T. Caveats: Meta (Zuckerberg 60.8% voting) "
+                "and Alphabet (Page and Brin 52.3%) cannot be majority-acquired; Ellison owns 40.6% of "
+                "Oracle; the largest insurance lobbyists are mutuals with no shares; trade associations "
+                "(PhRMA, AHIP, SIFMA, API) are not acquirable",
+    display_name="Government-Controlling Sectors Top-5 Market Cap",
+    unit="USD",
+    keywords=["lobbying", "market cap", "pharma", "tech", "insurance", "oil and gas", "influence"],
+    latex_symbol=r"MarketCap_{sectors}",
+)
+
+FULL_INFLUENCE_COST_ACTIVIST = Parameter(
+    DEFENSE_TAKEOVER_COST_TOTAL + 0.05 * GOV_CONTROLLING_SECTORS_TOP5_MARKET_CAP,
+    manual_ref="knowledge/appendix/loving-takeover.qmd",
+    source_type="calculated",
+    confidence="medium",
+    description="Full control of the military primes (50.1% plus acquisition premium) plus 5% activist "
+                "positions in the top-5 lobbying firms of the other four government-controlling sectors. "
+                "The activist tier follows the Engine No. 1 precedent: a 0.02% stake won three Exxon "
+                "board seats, so 5% is a loud voice at every table",
+    display_name="Full Influence Package Cost",
+    unit="USD",
+    formula="DEFENSE_TAKEOVER_COST_TOTAL + 0.05 * GOV_CONTROLLING_SECTORS_TOP5_MARKET_CAP",
+    inputs=["DEFENSE_TAKEOVER_COST_TOTAL", "GOV_CONTROLLING_SECTORS_TOP5_MARKET_CAP"],
+    compute=lambda ctx: ctx["DEFENSE_TAKEOVER_COST_TOTAL"] + 0.05 * ctx["GOV_CONTROLLING_SECTORS_TOP5_MARKET_CAP"],
+    keywords=["loving takeover", "activist investor", "influence", "lobbying", "acquisition"],
+    latex_symbol=r"C_{influence}",
+)
+
 # ============================================================================
 # MECHANISM COST-EFFECTIVENESS RANKING
 # ============================================================================
@@ -14612,7 +14692,7 @@ DEFENSE_TAKEOVER_COST_PER_HUMAN = Parameter(
 #   - EV per dollar: P(success) * annual peace dividend / net cost.
 #
 # The distinction between expenditure and capital deployment is critical.
-# The Loving Takeover deploys $690B into shares the fund retains. The net cost
+# The Loving Takeover deploys ~$873B into shares the fund retains. The net cost
 # is the opportunity cost: forgone return from an alternative investment.
 # At market-rate returns on defense stocks, opportunity cost approaches zero.
 # IABs deploy investor capital that is returned at 272%. Net cost to EOS is

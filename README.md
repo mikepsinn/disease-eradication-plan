@@ -85,7 +85,7 @@ Building a nuclear bomb requires mass spectrometers, centrifuge cascades, and so
 
 But somehow "stop" is the unrealistic part.
 
-You already admitted improvement is physically possible. You know "stop" isn't the unrealistic part. Getting one billionaire to read a PDF is.
+Improvement is physically possible. "Stop" isn't the unrealistic part. Getting one billionaire to read a PDF is.
 
 ### The Sacred Order of Paper Distribution
 
@@ -172,7 +172,7 @@ There are [9,500 compounds](https://manual.warondisease.org/knowledge/problem/un
 
 Humans spend **[$2.72 trillion](https://manual.warondisease.org/knowledge/economics/1-pct-treaty-impact.html)** every year on stuff designed specifically to make humans stop being alive:
 
-- [13,000 nuclear warheads](https://manual.warondisease.org/knowledge/problem/cost-of-war.html) (enough to end civilization 13 times, just in case the first 12 apocalypses don't take)
+- [12,241](https://manual.warondisease.org/knowledge/appendix/extinction-surplus.html) nuclear warheads (enough to end civilization [122](https://manual.warondisease.org/knowledge/appendix/extinction-surplus.html) times, just in case the first [121](https://manual.warondisease.org/knowledge/appendix/extinction-surplus.html) apocalypses don't take)
 - AI murder-bots
 - Invisible jets that cost more than hospitals
 - Space Force (to fight the zero aliens attacking you)
@@ -235,7 +235,7 @@ This is suboptimal.
 This is going to sound crazy. But you're going to use those papers to persuade the leader of every country on Earth to simultaneously redirect 1% of its military budget to clinical trials. That's it. That's the treaty.
 
 After the craziness objection, the second objection every human has: "But if we cut our military budget, our enemies will invade us!"
-Everyone cuts 1% at the same time. Your national security actually *increases*, because everyone has 1% fewer missiles pointed at them. And if you still feel like doing war, you keep the capacity for [122](https://manual.warondisease.org/knowledge/appendix/extinction-surplus.html) minus 1 nuclear apocalypses. Since [100](https://manual.warondisease.org/knowledge/appendix/extinction-surplus.html) warheads is the threshold for ending civilization and you have 12,200, you are settling for 121 civilizational collapses instead of 122. This should be more than sufficient.
+Everyone cuts 1% at the same time. Your national security actually *increases*, because everyone has 1% fewer missiles pointed at them. And if you still feel like doing war, you keep the capacity for [122](https://manual.warondisease.org/knowledge/appendix/extinction-surplus.html) minus 1 nuclear apocalypses. Since [100](https://manual.warondisease.org/knowledge/appendix/extinction-surplus.html) warheads is the threshold for ending civilization and you have [12,241](https://manual.warondisease.org/knowledge/appendix/extinction-surplus.html), you are settling for [121](https://manual.warondisease.org/knowledge/appendix/extinction-surplus.html) civilizational collapses instead of [122](https://manual.warondisease.org/knowledge/appendix/extinction-surplus.html). This should be more than sufficient.
 
 "But humans would never agree to a treaty!" you say. You already have. Multiple times. You banned chemical weapons (1993, 193 countries). You banned biological weapons (1975, 187 countries). You banned landmines (1997, 164 countries). You've signed treaties banning weapons you actually like using. This one just asks you to buy 1% fewer of them.
 
@@ -333,7 +333,7 @@ This raises the [$1 billion](https://manual.warondisease.org/knowledge/economics
 
 #### How the Money Loop Works
 
-Here's the part where humans usually stop reading because it involves following money through more than one step. Try to keep up:
+Here's the part where humans usually stop reading because it involves following money through more than one step:
 
 1. You sell [$1 billion](https://manual.warondisease.org/knowledge/economics/1-pct-treaty-impact.html) in VICTORY [Incentive Alignment Bonds](https://manual.warondisease.org/knowledge/solution/incentive-alignment-bonds.html) to investors. This funds the campaign.
 2. The campaign succeeds. Your treaty redirects 1% of military spending: [$27.2 billion](https://manual.warondisease.org/knowledge/economics/1-pct-treaty-impact.html)/year flows from the murder budget to clinical trials.
@@ -400,7 +400,7 @@ They won't even need convincing. Lobbyists don't have beliefs. They have clients
 
 Politicians need papers and votes to keep their jobs. Currently, weapons manufacturers provide both. You're going to outbid them. Not because they're the enemy (they die of the same diseases you do), but because politicians do not do things for free, and the clock is running.
 
-Your explosion manufacturers spend [$127 million](https://manual.warondisease.org/knowledge/appendix/faq.html)/year buying politicians. Your one-time bribery budget is [$1 billion](https://manual.warondisease.org/knowledge/economics/1-pct-treaty-impact.html), which is 8 times their annual spend (and about twice what they spend over a full election cycle). Politicians are surprisingly affordable.
+Your explosion manufacturers spend [$198 million](https://manual.warondisease.org/knowledge/appendix/faq.html)/year buying politicians. Your one-time bribery budget is [$1 billion](https://manual.warondisease.org/knowledge/economics/1-pct-treaty-impact.html), which is 8 times their annual spend (and about twice what they spend over a full election cycle). Politicians are surprisingly affordable.
 
 It's not corruption if you corrupt the corruption.
 
@@ -444,7 +444,7 @@ Everything is designed to work WITH human dysfunction, not against it. I'm not a
 
 ### But You Don't Need to Understand Any of That
 
-You just read five steps involving bonds, lobbyists, Super PACs, a decentralized FDA, and an appliance that optimizes government policy. You are thinking: "Nobody can coordinate all of that."
+You just read five steps involving bonds, lobbyists, Super PACs, a decentralized FDA, and an appliance that optimizes government policy. The obvious objection: "Nobody can coordinate all of that."
 
 Correct. Nobody coordinates a pencil either.
 
@@ -509,11 +509,11 @@ There are [2,781](https://manual.warondisease.org/knowledge/appendix/treaty-feas
 
 And here is the part that should bother you: the [incentive structure](https://manual.warondisease.org/knowledge/appendix/treaty-feasibility.html#sec-dominant-strategy-proof) makes acting the selfish move. If others act too, you get rich together. If nobody else acts, you still own a piece of the only serious attempt to fix the problem. Either way, you win. The only way to reject this is to identify [which assumption breaks](https://manual.warondisease.org/knowledge/appendix/treaty-feasibility.html#what-would-have-to-be-wrong), and you are welcome to try.
 
-Count what you didn't object to. Improvement is physically possible (you said so at the top). The benefits compound (healthier workers produce more, which funds more cures, which you just read). Politicians respond to money (that's the Super PAC). Rich people prefer not dying (that's the bonds). And the only bottleneck is humans in the chain choosing "later" over 30 seconds. Five premises. You let every one of them pass unchallenged, because each one is individually obvious. The conclusion is just what happens when you add them up.
+Count the premises. Improvement is physically possible (not building a bomb requires nothing). The benefits compound (healthier workers produce more, which funds more cures). Politicians respond to money (that's the Super PAC). Rich people prefer not dying (that's the bonds). And the only bottleneck is humans in the chain choosing "later" over 30 seconds. Five premises. Each one is individually obvious. The conclusion is just what happens when you add them up.
 
-That's the [Logical Inevitability Theorem](https://manual.warondisease.org/knowledge/appendix/recruitment-and-propaganda-plan.html#logical-inevitability-theorem) with numbers attached. Try rejecting any one of those five premises out loud and see how it sounds.
+That's the [Logical Inevitability Theorem](https://manual.warondisease.org/knowledge/appendix/recruitment-and-propaganda-plan.html#logical-inevitability-theorem) with numbers attached. Rejecting the conclusion means rejecting at least one of the five premises.
 
-Forwarding this takes 30 seconds. At the global average wage, that costs you [$0.06](https://manual.warondisease.org/knowledge/appendix/recruitment-and-propaganda-plan.html). If the treaty path works, your lifetime income goes up by [$518,879](https://manual.warondisease.org/knowledge/appendix/recruitment-and-propaganda-plan.html). The ratio is [8.7Mx](https://manual.warondisease.org/knowledge/appendix/recruitment-and-propaganda-plan.html) to one. For not forwarding to be rational, the probability of success has to fall below 1 in [8.66 million](https://manual.warondisease.org/knowledge/appendix/recruitment-and-propaganda-plan.html). You just let all five premises pass. You cannot simultaneously hold those premises and a probability that low. Not forwarding this is not caution. It is the single failure mode the math can't route around.
+Forwarding this takes 30 seconds. At the global average wage, that costs you [$0.06](https://manual.warondisease.org/knowledge/appendix/recruitment-and-propaganda-plan.html). If the treaty path works, your lifetime income goes up by [$518,879](https://manual.warondisease.org/knowledge/appendix/recruitment-and-propaganda-plan.html). The ratio is [8.7Mx](https://manual.warondisease.org/knowledge/appendix/recruitment-and-propaganda-plan.html) to one. For not forwarding to be rational, the probability of success has to fall below 1 in [8.66 million](https://manual.warondisease.org/knowledge/appendix/recruitment-and-propaganda-plan.html). Five obvious premises do not add up to a probability that low. Choosing "later" is the single failure mode the math can't route around.
 
 You don't need to know a billionaire. You're six degrees of separation from one. Forward this to one person with more reach than you. They forward to one person with more reach than them. Even with [90%](https://manual.warondisease.org/knowledge/appendix/treaty-feasibility.html) of the chain dismissing it, the [model](https://manual.warondisease.org/knowledge/appendix/treaty-feasibility.html#sec-chain-reaction-model) shows it reaches someone who can act within [3](https://manual.warondisease.org/knowledge/strategy/earth-optimization-protocol-v1.html) years. Not because anyone in the chain is brave. Because each one is selfish, and the math rewards forwarding.
 
@@ -554,7 +554,7 @@ This is why aliens don't visit.
 
 [![The 1 percent Treaty](https://manual.warondisease.org/assets/og/1-percent-treaty-og-1200x630.jpg)](https://manual.warondisease.org/knowledge/solution/1-percent-treaty.html)
 
-> Your public servants used $170 trillion of their salary to murder approximately 310 million humans over the last century of their employment. The murdered included 930,000 doctors, 310,000 scientists, 620,000 engineers, and 102 million children who will never grow up to replace them. They spend 604 dollars on the capacity for orphan manufacturing for every one dollar spent on the trials that might cure what is actually going to kill their citizens. Someone you love is, at this moment, suffering from a disease because the treatment that would help them exists untested on a shelf, because the money that would have tested it was busy turning into a missile. This treaty asks the undersigned nations to be 1% more rational. Each signatory redirects exactly one percent of its military budget to pragmatic clinical trials, perpetual Incentive Alignment Bond returns, and a Political Incentive Fund that scores legislators on compliance. Every nation cuts equally, so no country gets weaker. Trial capacity scales 12.3x. The backlog of 6,650 diseases untreated diseases drops from 443 years to 36 years. Treatments arrive 212 years sooner. 10.7 billion deaths preventable deaths averted, valued at $84.8 quadrillion. The percentage can go up. It never goes down. The Treaty is the settlement offer for the liability established in Humanity v. Government, adjudicated through the Court of Humanity, with the economic case quantified in 1% Treaty Impact.
+> Your public servants used $170 trillion of their salary to murder approximately 310 million humans over the last century of their employment. The murdered included 930,000 doctors, 310,000 scientists, 620,000 engineers, and 102 million children who will never grow up to replace them. They spend 604 dollars on the capacity for orphan manufacturing for every one dollar spent on the trials that might cure what is actually going to kill their citizens. Someone you love is, at this moment, suffering from a disease because the treatment that would help them exists untested on a shelf, because the money that would have tested it was busy turning into a missile. This treaty requires the undersigned nations to be 1% more rational. Each signatory redirects exactly one percent of its military budget to pragmatic clinical trials, perpetual Incentive Alignment Bond returns, and a Political Incentive Fund that scores legislators on compliance. Every nation cuts equally, so no country gets weaker. Trial capacity scales 12.3x. The backlog of 6,650 diseases untreated diseases drops from 443 years to 36 years. Treatments arrive 212 years sooner. 10.7 billion deaths preventable deaths averted, valued at $84.8 quadrillion. The percentage can go up. It never goes down. The Treaty is the settlement offer for the liability established in Humanity v. Government, adjudicated through the Court of Humanity, with the economic case quantified in 1% Treaty Impact.
 
 ### [Ubiquitous Pragmatic Trial Impact Analysis: How to Prevent a Year of Death and Suffering for 84 Cents](https://manual.warondisease.org/knowledge/appendix/dfda-impact-paper.html)
 

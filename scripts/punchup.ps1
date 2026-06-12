@@ -24,7 +24,7 @@ BEFORE: <the exact current text>
 AFTER: <your version>
 WHY: <one line>
 
-Rules: never rewrite the whole passage; pick the lines that matter most (hooks, openers, closers). Keep Quarto syntax ({{< var ... >}}, [@citations], [links](.qmd)) byte-identical inside your AFTER text. Never invent or hardcode a number: every numeric value comes from an existing {{< var ... >}} parameter or stays out of the line. If nothing should change, say so in one line. Do not explain the style guide back; just apply it.
+Rules: never rewrite the whole passage; pick the lines that matter most (hooks, openers, closers). Keep Quarto syntax ({{< var ... >}}, [@citations], [links](.qmd)) byte-identical inside your AFTER text. Never invent or hardcode a number: every numeric value comes from an existing {{< var ... >}} parameter or stays out of the line. The deletion bar is higher than the rewrite bar: deleting a funny line is worse than keeping an imperfect one, and redundancy alone never justifies removing a joke; a cut is justified only when the line fails the kill-test outright (not funny AND not informative) or its premise is factually broken. For a cut, output AFTER: (delete) and make the case in WHY. If nothing should change, say so in one line. Do not explain the style guide back; just apply it.
 "@
 
 $systemPrompt = $preamble + "`n`n---`n`nSTYLE GUIDE (binding):`n`n" + $styleGuide

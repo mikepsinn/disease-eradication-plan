@@ -273,7 +273,7 @@ Computers that store everything:
 
 ### Co-opting the Opposition (part of {{< var treaty_campaign_budget_lobbying >}} Lobbying Budget)
 
-![Budget allocation across defense, healthcare, tech, and endorsements. The confidence intervals show the uncertainty. Unlike your Pentagon budgets, which are always exactly wrong but never uncertain.](/assets/images/campaign-budget/campaign-budget-section-co-opting-the-opposition-part-of-bw-academic.jpg)
+![Budget allocation across the military sector, healthcare, tech, and endorsements. The confidence intervals show the uncertainty. Unlike your Pentagon budgets, which are always exactly wrong but never uncertain.](/assets/images/campaign-budget/campaign-budget-section-co-opting-the-opposition-part-of-bw-academic.jpg)
 
 **Military Industry Conversion**: {{< var campaign_defense_conversion >}}
 
@@ -296,11 +296,11 @@ Turn your enemies into allies through superior returns. On your planet, loyalty 
 - Cloud credits (free computers from companies with too many computers)
 - Open source (programmers work for free if you ask nicely)
 
-**Celebrity Endorsements**: {{< var campaign_celebrity_endorsement >}}. Your species will ignore a spreadsheet but rearrange its life for a celebrity. Scientists willing to say "this math is correct" on camera. Disease survivors with public profiles willing to say "this math is personal."
+**Celebrity Endorsements**: {{< var campaign_celebrity_endorsement >}}. Your species will ignore a spreadsheet but rearrange its life for a celebrity. Scientists willing to say "this math is correct" on camera. Disease survivors willing to say "this math is personal."
 
 ### Operations (overhead across all categories)
 
-![Operational budget for Core Team, Infrastructure, and Contingency. The Contingency fund is for when things go wrong. It's smaller than the Defense budget's 'things they lost in the couch cushions' category.](/assets/images/campaign-budget/campaign-budget-section-operations-overhead-across-all-categories-bw-academic.jpg)
+![Operational budget for Core Team, Infrastructure, and Contingency. The Contingency fund is for when things go wrong. It's smaller than the military budget's 'things they lost in the couch cushions' category.](/assets/images/campaign-budget/campaign-budget-section-operations-overhead-across-all-categories-bw-academic.jpg)
 
 **Core Team**: {{< var campaign_staff_budget >}}
 
@@ -434,6 +434,6 @@ But the real return is better than that:
 
 - Your bondholders: {{< var victory_bond_annual_payout >}}/year forever ({{< var victory_bond_annual_return_pct >}} annually)
 - Your society: {{< var treaty_roi_trial_capacity_plus_efficacy_lag >}}:1 per dollar (cures, wealth, fewer dead people)
-- Your species: Optional death by 2050
+- Your species: Death optional by 2050
 
 You spend more than this on Super Bowl ads. Those don't cure anything either, but at least yours will.
