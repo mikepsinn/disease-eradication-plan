@@ -80,7 +80,7 @@ The legal theory, based on Delaware's *Caremark* duty of oversight doctrine as e
 
 "I love the board members of [COMPANY] and I do not want them and everyone they have ever loved to be slowly tortured and brutally murdered by horrible diseases," said [PLAINTIFF NAME]. "The lawsuit is the only way to make them read the math. Their lobbying is increasing the probability that every person in this case, on both sides, dies earlier than the math says they had to. We are asking them to redirect the same lobbying budget so that none of us has to die of a disease we could cure if we funded the trial. This is the first lawsuit in history where the defendants are radically better off losing than winning. Settle and the Board members and their families are roughly {{< var treaty_trajectory_lifetime_income_gain_per_capita >}} richer over a lifetime and roughly {{< var avg_life_extension_per_beneficiary >}} longer-lived. Fight and win and everyone in the courtroom stays on the trajectory that kills them earlier. We are asking everyone in the case to please let us help them."
 
-The proposed resolution is non-monetary: [COMPANY] would redirect its annual lobbying objective from maintaining current military spending levels to supporting a global agreement to redirect 1% of military spending to pragmatic clinical trials. Per the demand letter, this resolution costs [COMPANY] $0 in additional expenditure, expands its long-term addressable market by a factor of approximately {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}}, and increases shareholder lifetime wealth by approximately {{< var treaty_trajectory_lifetime_income_gain_per_capita >}} per shareholder.
+The proposed resolution is non-monetary: [COMPANY] would redirect its annual lobbying objective from maintaining current military spending levels to supporting a global agreement to redirect 1% of military spending to pragmatic clinical trials. Per the demand letter, this resolution costs [COMPANY] $0 in additional expenditure, expands its long-term addressable market by a factor of approximately {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}} by year 15, and increases shareholder lifetime wealth by approximately {{< var treaty_trajectory_lifetime_income_gain_per_capita >}} per shareholder.
 
 "This is a frontier *Caremark* theory," said [COUNSEL NAME], partner at [LAW FIRM] and counsel for [PLAINTIFF NAME]. "The duty of oversight has historically focused on backward-looking harm: failed acquisitions, accounting fraud, product safety. We are arguing it extends to forward-looking value destruction through recurring expenditures that the board has never scrutinized. The pleading is sourced entirely from public data."
 
@@ -116,7 +116,7 @@ Reporters and outlets are organized by beat. Each row needs a verified current r
 
 | Beat | Priority outlets |
 |---|---|
-| Defense | Defense News, Breaking Defense, Politico Defense, Roll Call, The Hill |
+| Military | Defense News, Breaking Defense, Politico Defense, Roll Call, The Hill |
 | Business / finance | Wall Street Journal, Bloomberg, Reuters, Financial Times, CNBC |
 | Legal trade | Reuters Legal, Bloomberg Law, Law360 |
 | Healthcare / science | STAT News, Vox Future Perfect, MIT Technology Review |

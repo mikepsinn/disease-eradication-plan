@@ -21,11 +21,9 @@ scores:
   importance: 5
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
-Your investors will ask: "Is this riskier than a normal startup investment?" The answer is no. The risk isn't greater; it's fundamentally _different_. And different, here, means better.
+Your investors will ask: "Is this riskier than a normal startup investment?" The answer is no. The risk is not greater. It is fundamentally _different_. And different, here, means better.
 
-## Political Arbitrage vs. Venture Capital
-
-The most critical distinction is where the risk lives.
+## Where the risk lives.
 
 ![Venture capital: risk money on inventing something new. Political arbitrage: risk money on convincing politicians to stop buying bombs. One of these is considered the risky option.](/assets/images/investor-risk-analysis/investor-risk-analysis-section-1-the-core-thesis-political-arbitrage-vs-venture-capital-bw-academic.jpg)
 
@@ -35,7 +33,7 @@ The most critical distinction is where the risk lives.
 
 **Your payback:** Returns don't depend on product-market fit, user adoption, or competitive dynamics. They depend on treaty ratification. That unlocks direct, recurring government payments.
 
-**The precedent:** Your military-industrial complex has proven this model for decades. It spends ~$1.1 billion on lobbying to secure $2.02 trillion in contracts [@lobbying-roi-calc]. That's an ROI of 1,813:1. You're just reversing the cash flow. Same game, opposite direction.
+**The precedent:** Your military-industrial complex has proven this model for decades. Over the twenty years of the Afghan War, its top five firms spent ~$1.1 billion on lobbying and collected $2.02 trillion in contracts [@lobbying-roi-calc]. That's an ROI of 1,813:1. You're just reversing the cash flow. Same game, opposite direction.
 
 ## Risk Comparison
 
@@ -70,7 +68,7 @@ The mix of deposits and recruitment activity is a coarse public signal of how th
 
 This also means every participant is hedged. Depositors keep the failure-branch claim on the pool, while recruiters are financially better off if the treaty succeeds. Both still contribute to the referendum and coalition-building either way. Your species calls this "mechanism design." It is just making sure everyone has a reason to show up regardless of their priors.
 
-Three additional mechanisms mitigate IAB-specific risk:
+Two additional mechanisms mitigate IAB-specific risk:
 
 ### Prediction Markets & Dynamic Pricing (Political Risk)
 
@@ -88,22 +86,12 @@ Three additional mechanisms mitigate IAB-specific risk:
 
 ![Pay investors early so they stop worrying early. Turns out the main risk in saving the world is having to think about it for ten years.](/assets/images/investor-risk-analysis/investor-risk-analysis-section-c-front-loaded-payouts-mitigates-timeline-risk-bw-academic.jpg)
 
-### First-Loss Capital (Financial Risk)
-
-**Problem:** If everything fails, investors could lose their principal. This makes them nervous. Nervous investors don't invest.
-
-**Solution:** Your capital stack includes a first-loss tranche funded by philanthropic sources. This money absorbs losses before senior investors lose a cent. Philanthropists take the risk. They were going to donate the money anyway. Institutional investors get a buffer. Everyone's happy. Your species calls this "blended finance." It's just common sense with a fancy name.
-
-![Some investors lose money first so other investors feel safe. It's like a financial human shield but everyone agreed to it.](/assets/images/investor-risk-analysis/investor-risk-analysis-section-engineered-risk-mitigation-bw-academic.jpg)
-
 ## Conclusion: Is This Less Risky Than VC?
 
 ![Venture capital: 50 things can go wrong. Political arbitrage: one thing can go wrong, but that thing is democracy.](/assets/images/investor-risk-analysis/investor-risk-analysis-section-conclusion-is-it-less-risky-than-a-vc-investment-bw-academic.jpg)
 
 On a risk-adjusted expected value basis? **Yes.**
 
-A typical VC portfolio bets on a chaotic sea of variables: market, team, product, competition. Your [VICTORY Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd) [@iab-paper-2025] bet on one variable (political will). They come with four safety nets and transparent pricing.
+A typical VC portfolio bets on a chaotic sea of variables: market, team, product, competition. Your [VICTORY Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd) [@iab-paper-2025] bet on one variable (political will). They come with three safety nets and transparent pricing.
 
-One variable. Four safety nets. Cleaner bet. Clearer path. And if you win, you also save millions of lives. Your species has a word for investments that are both profitable and moral. You call them "rare." Time to make them common.
-
-If you've read this far and your brain is pattern-matching to "too good to be true," try [five questions](/knowledge/appendix/recruitment-and-propaganda-plan.qmd#logical-inevitability-theorem). Each is individually undeniable. The sequence is inescapable. The short version: Is it physically possible to improve how your species allocates resources? (Yes.) Does the math compound for everyone? (Yes.) Do you have a better plan? (You don't.) Then the only question is whether you act on it or wait for someone else to, which is the coordination failure the financing architecture was designed to solve. Every day you wait is a day the math still works and nobody acts on it.
+One variable. Three safety nets. Cleaner bet. Clearer path. And if you win, you also save millions of lives. Your species has a word for investments that are both profitable and moral. You call them "rare." Time to make them common.

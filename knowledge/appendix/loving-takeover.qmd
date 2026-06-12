@@ -65,7 +65,7 @@ This takeover does the opposite of all four.
 1. **Existing shareholders make money on the way in.** A coordinated humanity-wide buy-up is roughly $400 billion-{{< var defense_takeover_cost_total >}} of net new demand against a tradeable float of roughly $200-320 billion. The mathematical consequence is that share prices rise. Anyone who held military contractor stock before the campaign started is wealthier because of the campaign. The takeover is the largest voluntary wealth transfer to existing military-contractor shareholders in history.
 2. **Military-contractor employees keep their jobs.** The companies are not liquidated. The engineering workforce is redirected toward medical, biotech, and dual-use civilian applications that compound at higher rates in the post-treaty economy. Headcount goes up, not down.
 3. **Directors and officers gain personal life expectancy.** The settlement adds approximately {{< var avg_life_extension_per_beneficiary >}} to the average beneficiary's healthy life, including the directors and officers themselves and their families. The same directors who currently face the same age-stratified disease risk as everyone else gain measurable additional years of life from the company they direct settling rather than fighting.
-4. **The acquirers are everyone.** The campaign has no central acquirer extracting value at the expense of others. The "control premium" is paid by humanity to humanity. The early buyers (who fund the campaign by accepting the early risk) capture some upside. The later buyers (who join once the campaign has scale) capture the policy benefits. Existing holders capture the price appreciation. Military contractors capture an addressable market roughly {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}} larger than the current trajectory. There is no party that loses.
+4. **The acquirers are everyone.** The campaign has no central acquirer extracting value at the expense of others. The "control premium" is paid by humanity to humanity. The early buyers (who fund the campaign by accepting the early risk) capture some upside. The later buyers (who join once the campaign has scale) capture the policy benefits. Existing holders capture the price appreciation. Military contractors capture an addressable market roughly {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}} larger than the current trajectory at year 15. There is no party that loses.
 
 The only thing the takeover changes is a budget line item: the {{< var defense_lobbying_annual >}}/year of lobbying that is not yet directed at the [1% treaty](../solution/1-percent-treaty.qmd). The humans associated with that line item are not the problem. The direction is.
 
@@ -83,6 +83,51 @@ A military contractor's share price today reflects its current business model: s
 **The self-financing cascade.** As the campaign builds credibility, the upside above starts to price in. Early buyers see appreciation, which attracts more buyers, which drives prices higher, which makes early buyers wealthier, which validates the strategy, which attracts the next wave. The lawsuit (and the demand-letter pipeline it sits inside) is the catalyst that activates this cycle: every demand letter filed, every board response received, every press article covering the math is a credibility-step that shifts probability mass toward "campaign succeeds" and pulls the future upside into the present share price.
 
 This is not speculation. It is the same mechanism that prices any value-event into a stock: M&A announcements, FDA approvals, regulatory rulings, earnings revisions. The campaign supplies the value-event (a structural shift in the military contractor's long-term addressable market and pivot optionality) and the market prices it in as the probability of success rises.
+
+::: {.diagram}
+```
+THE FLYWHEEL: THREE LOOPS, ONE MACHINE
+
+   HUMANITY BUYS MILITARY PRIME SHARES
+   (~{{< var defense_takeover_cost_per_human >}} per human buys all of them)
+        |
+        v
+   SHARE PRICES RISE  (fixed float, new demand)
+        |        \
+        |         early buyers get richer,
+        |         which attracts more buyers
+        |         [LOOP A: prices rise again]
+        v
+   BOARD CONTROL ACCUMULATES
+        |
+        v
+   LOBBYING REDIRECTED TO THE 1% TREATY
+   ({{< var defense_lobbying_annual >}}/year changes sides)
+        |
+        v
+   TREATY PASSES  ({{< var treaty_annual_funding >}}/year, forever)
+        |        \
+        |         bondholders collect
+        |         {{< var victory_bond_annual_payout >}}/year, and the
+        |         investor lobby pushes for 2%, then 5%
+        |         [LOOP B: the lobbying gets stronger]
+        v
+   CLINICAL TRIALS FUNDED
+   ({{< var dih_treasury_to_medical_research_annual >}}/year, 80% of every treaty dollar)
+        |
+        v
+   DISEASES START FALLING
+        |
+        v
+   ECONOMY GROWS
+   ({{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}} the current path at year 15)
+        |
+        \--> military primes are worth more
+             [LOOP C: share prices rise again]
+```
+:::
+
+Three reinforcing loops, one machine. Each lap makes the next lap cheaper.
 
 **Selfish and altruistic converge.** A reader who does not care about disease eradication and wants only to make money has the same correct action as a reader who cares about disease eradication and would buy the shares purely to redirect the lobbying. Both buy the shares. The campaign requires no shared motivation, only shared action.
 
@@ -190,6 +235,19 @@ The entire Western military-industrial lobbying apparatus can be brought under c
 
 This number is calculable. It is not a fantasy.
 
+### How much you actually need
+
+{{< var defense_takeover_cost_total >}} is the price of certainty, not the price of victory. It is what it costs to own 50.1% and need nobody's agreement. Board control usually arrives much earlier:
+
+| Tier | Stake | What it gets you |
+|---|---|---|
+| One share (~$200) | A letter the board is obliged to read | The [lawsuit campaign](lawsuit.qmd) |
+| A fraction of a percent, plus a proxy campaign | Board seats, if the financial case persuades the index funds | Engine No. 1 won three ExxonMobil seats with 0.02% of the shares |
+| 1-5% across the primes | Agenda-setting positions at every annual meeting | The [activist tier](../economics/investment-terms.qmd) |
+| 50.1% | Nobody has to agree with you | {{< var defense_takeover_cost_total >}} |
+
+Three institutional investors hold 60-75% of every military prime, and their job is to vote for whatever makes the shares worth more. The pitch to them is the one this chapter already made: the treaty makes the companies more valuable. Each tier is insurance against the cheaper tier failing. You climb only as far as the persuasion fails.
+
 ## What Humanity Does Once It Owns the Companies
 
 Ranked by leverage. The first action is the entire game; the rest are bonus.
@@ -242,7 +300,7 @@ Military contractors already produce technologies with direct medical applicatio
 
 ### Tier 6: Cancel weapons systems with no defensive justification
 
-Some defense programs have negative externalities exceeding their revenue (autonomous weapons, cluster munitions, certain export-only programs). The board can wind these down without compromising the company's defensive product lines.
+Some military programs have negative externalities exceeding their revenue (autonomous weapons, cluster munitions, certain export-only programs). The board can wind these down without compromising the company's military product lines.
 
 **Cost:** Negative (eliminates loss-making or marginal programs).
 
@@ -327,7 +385,7 @@ Even with a 99% haircut, the expected total value remains roughly 60x-220x the c
 
 The numbers above are the price if you paid all cash and then set the money on fire. You would do neither.
 
-Start with the cash. Defense cash flows are about as steady as cash flows get, which is precisely what lets you borrow against them. A leveraged buyout of something this stable can carry 50% to 65% debt, so taking a company private costs an equity slice, not the whole sticker. The acquisition premium pushes the price up and the leverage pushes the cash-down requirement back down; they roughly cancel. You need an equity check, plus debt the company itself carries.
+Start with the cash. Military contractor cash flows are about as steady as cash flows get, which is precisely what lets you borrow against them. A leveraged buyout of something this stable can carry 50% to 65% debt, so taking a company private costs an equity slice, not the whole sticker. The acquisition premium pushes the price up and the leverage pushes the cash-down requirement back down; they roughly cancel. You need an equity check, plus debt the company itself carries.
 
 Then comes the good objection: if the debt is serviced by the company's cash flows, and you are redirecting the company, do you not strangle the thing you just bought? In today's world, yes. That is the trap.
 
@@ -343,13 +401,13 @@ These are real, and they shape how the campaign is structured. They do not elimi
 
 ### Price inflation during a coordinated buy-up
 
-Defense stock floats are not infinitely liquid. A coordinated purchase of half the float of every prime would push prices up sharply. The modeled premium is {{< var defense_takeover_acquisition_premium >}} during acquisition, and potentially much higher in the scenarios modeled above.
+Military contractor stock floats are not infinitely liquid. A coordinated purchase of half the float of every prime would push prices up sharply. The modeled premium is {{< var defense_takeover_acquisition_premium >}} during acquisition, and potentially much higher in the scenarios modeled above.
 
 **Mitigation:** Phased buying across multiple quarters, distributed across many small purchasers rather than concentrated, public communication of intent to acquire long positions rather than to flip them. Index fund or trust vehicle that aggregates small purchases without telegraphing the buy to the market. The price inflation is also the upside captured by the early buyers, so the "mitigation" framing is partial: the campaign benefits from the inflation it causes.
 
 ### CFIUS and national security review
 
-Any large or unusual ownership change in a US defense prime triggers Committee on Foreign Investment in the United States review. A coalition of US citizens buying shares is domestic and falls outside CFIUS, but the Department of Defense has informal mechanisms to slow or block ownership changes it considers adversarial to national security. This is a real obstacle, not a fatal one.
+Any large or unusual ownership change in a US military prime triggers Committee on Foreign Investment in the United States review. A coalition of US citizens buying shares is domestic and falls outside CFIUS, but the Department of Defense has informal mechanisms to slow or block ownership changes it considers adversarial to national security. This is a real obstacle, not a fatal one.
 
 **Mitigation:** CFIUS reviews substance: domestic ownership, disclosed intent, no foreign control, and classified programs left under existing cleared management. The campaign has all four. The presentation's job is to make that substance legible.
 
@@ -379,7 +437,7 @@ Huntington Ingalls Industries is the sole builder of nuclear aircraft carriers o
 
 The government does not contract with these companies because the companies lobby well. The government contracts with them because nobody else on the planet can build what they build. The lobbying wins marginal contracts, cost-plus expansions, and favorable terms on the next procurement cycle. It does not win the core work. The core work exists because a nuclear submarine requires roughly 10 million person-hours of specialized labor, and exactly one company has the workforce, the facilities, and the security clearances to deliver it.
 
-So the real question is narrower than it sounds: does the marginal ROI on lobbying (winning the next cost-plus expansion) exceed the marginal ROI on diversification (pivoting that same money into health tech, renewable energy, AI-augmented drug discovery)? For a company operating in a post-treaty economy where GDP at year 15 is roughly {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}} larger, the diversification bet is obviously better. You are not choosing between revenue and no revenue. You are choosing between a slow-growth monopoly and a fast-growth monopoly that also has new product lines.
+So the real question is narrower than it sounds: does the marginal ROI on lobbying (winning the next cost-plus expansion) exceed the marginal ROI on diversification (pivoting that same money into health tech, renewable energy, AI-augmented drug discovery)? For a company operating in a post-treaty economy where GDP at year 15 is roughly {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}} larger, the diversification bet is better. You are not choosing between revenue and no revenue. You are choosing between a slow-growth monopoly and a fast-growth monopoly that also has new product lines.
 
 If this sounds theoretical, it has already happened. In 2021, a twelve-person hedge fund called Engine No. 1 won three board seats at ExxonMobil, one of the largest companies on Earth, on a platform of accelerating the energy transition. The stock did not crash. It went up. Shareholder activism that aligns a company with long-term secular trends makes the company more valuable, not less. The market is not confused about this. The market prices it in, which is why Engine No. 1's investors made money.
 
@@ -401,6 +459,10 @@ The two campaigns are complementary, not alternative.
 
 The lawsuit campaign generates the public attention and shareholder organization that makes the takeover financially feasible. The takeover, in turn, locks in the lawsuit's asks against backsliding by ensuring the board itself supports the treaty. Run them together.
 
+## Relationship to Buying Politicians Directly
+
+There is also the rent-versus-own question. You can [buy the politicians directly](cost-of-change-analysis.qmd): roughly {{< var us_political_reform_investment_total >}} for the American set, {{< var global_political_reform_investment >}} for the world's. It works, but it is rent. The money is spent, the politicians need re-buying every election cycle, and the other side can outbid you at the next auction. Shares are different. If the campaign works, you own the machine that buys the politicians, permanently. If it never works, you still own the shares and whatever they gained along the way. Buying politicians is an expense. Buying their owners is an asset. This is why the more expensive path is the cheaper one.
+
 ## Next Steps
 
 This page is a draft. Before any campaign acts on the math:
@@ -420,7 +482,7 @@ The entire plan on this page, stated once: buy the military contractors, use the
 
 That is it. Everything else on this page is the math proving it works and the frictions slowing it down.
 
-The redirected {{< var defense_lobbying_annual >}} per year does not go to a committee. It does not go to a czar. It does not go to a panel of experts who will thoughtfully allocate it on your behalf while charging 40% overhead. It goes to a [Wishocracy](../solution/wishocracy.qmd) [@wishocracy-paper-2025]: every person gets a proportional say in how the reallocated funds are spent, under real budget constraints, with tradeoffs visible. You want the money spent on cancer trials? Vote for cancer trials. Pandemic preparedness? Vote for that. You think the whole thing is stupid and the money should stay in defense? Vote for defense. The system does not care what you pick. It cares that you pick.
+The redirected {{< var defense_lobbying_annual >}} per year does not go to a committee. It does not go to a czar. It does not go to a panel of experts who will thoughtfully allocate it on your behalf while charging 40% overhead. It goes to a [Wishocracy](../solution/wishocracy.qmd) [@wishocracy-paper-2025]: every person gets a proportional say in how the reallocated funds are spent, under real budget constraints, with tradeoffs visible. You want the money spent on cancer trials? Vote for cancer trials. Pandemic preparedness? Vote for that. You think the whole thing is stupid and the money should stay in military spending? Vote for military spending. The system does not care what you pick. It cares that you pick.
 
 This is the part that breaks political objections, because every political tribe already wants this. They just describe it differently.
 
@@ -432,7 +494,29 @@ If you are libertarian: this is individual choice replacing government planning.
 
 If you are religious: this is what "love thy neighbor" looks like when you write it into the budget. Your neighbor is dying of a disease that has a cure stuck in a trial queue. You take the money currently pointed at building the next missile and point it at finishing the trial. You do not need to use the word "love." You just move the decimal point.
 
-The only people who lose under this arrangement are the current recipients of the lobbying: the members of Congress who receive defense PAC contributions in exchange for voting to expand the budget, and the lobbyists whose fees depend on the budget they are expanding. That is roughly 2,000 people. The number of people who benefit is roughly {{< var global_population_2024 >}}.
+The closest thing to a loser is the roughly 2,000 people currently paid to keep the budget pointed at missiles: the members of Congress collecting military PAC contributions, and the lobbyists whose fees depend on the budget growing. The plan's response to them is a raise. The lobbyists get a client with a bigger budget asking for medicine instead of missiles (same firms, same lunches, better wine). The politicians get the [Senator Smith arithmetic](../solution/incentive-alignment-bonds.qmd): more campaign money and a better post-office career, for voting yes. The only way to lose under this arrangement is to be offered more money to stop helping kill people, and refuse. Some will refuse. That is a decision, not a casualty. The number of people who benefit is roughly {{< var global_population_2024 >}}.
+
+### The Ledger
+
+Every stakeholder, before and after. This is the no-adversaries claim in auditable form.
+
+| Who | Status quo | After the takeover |
+|---|---|---|
+| Existing shareholders | Hold military prime stock | Same stock, repriced upward by the buy-up |
+| Employees of the primes | Build weapons on cost-plus | Same desks plus the medical pivot; headcount up |
+| Directors and officers | The same disease risk as everyone | ~{{< var avg_life_extension_per_beneficiary >}} of additional healthy life |
+| Early buyers | Hold cash | Bought probability while it was cheap |
+| Every other human | The disease queue | ~{{< var treaty_trajectory_lifetime_income_gain_per_capita >}} in lifetime income, plus the healthy years to spend it |
+| Pharma | Casino: 90% failure on its own money | Salary: trials become treaty-funded revenue |
+| Insurers | Pay chronic-disease claims forever | Claims fall as cures land |
+| Doctors | Paid to argue with insurers | Paid per [trial participant](../solution/dfda.qmd) |
+| Soldiers | Deployed to defend budget lines | Same paycheck ({{< var defense_sector_retention_pct >}} of the budget stays), fewer occasions to die for it |
+| Politicians who vote yes | Military PAC money | More money: campaign support now, a better career after |
+| Lobbyists | A {{< var defense_lobbying_annual >}}/year client | A richer client asking for medicine |
+| Anyone who refuses the raise | Paid to expand the budget | Outbid and replaced. Self-inflicted. |
+| The diseases | {{< var diseases_without_effective_treatment_nounit >}} of them, operating freely | Eradication queue, fully funded |
+
+The plan has exactly one structural adversary, and it is on the last row.
 
 This is [Wishocracy](../solution/wishocracy.qmd) applied at its simplest: instead of the government deciding what you need, you decide what you need. The government's track record on this question is a trillion dollars a year on missiles and zero dollars a year on the diseases that will probably kill you. Your track record on this question is that you would rather not die. The data favors your judgment.
 
@@ -457,4 +541,4 @@ The ratio of laughs produced to laughs generated by a typical joke is approximat
 
 Carl Linnaeus, Charles Darwin, and the entire history of biology never had a sample size large enough to measure a joke this funny. This page contains the first known calculation of a joke at quadrillion-laugh scale. The other contenders (the ozone treaty, the eradication of smallpox, the Marshall Plan) all produced fewer than 10^12 laughs each. This one produces more than 10^15.
 
-If you have any remaining objections, please weigh them against {{< var shirt_induced_laughs_gained_nounit >}} laughs and proceed accordingly.
+Any remaining objection has to outweigh {{< var shirt_induced_laughs_gained_nounit >}} laughs.

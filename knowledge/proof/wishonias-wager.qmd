@@ -99,9 +99,9 @@ There is also [a shirt](../appendix/joke.qmd), [a lawsuit](../appendix/lawsuit.q
 
 ### Why some of these are not probabilistic
 
-The 10%-per-mechanism estimate above is deliberately conservative, and for several mechanisms it is wrong in a useful direction. Some of these are not bets. They are purchases.
+The 10%-per-mechanism estimate above is deliberately conservative: the mechanism-by-mechanism estimates [in the back](../appendix/parameters-and-calculations.qmd) run from 10% to 95%, and for several mechanisms the conservative number is wrong in a useful direction. Some of these are not bets. They are purchases.
 
-Shares are for sale. Money buys shares. Enough shares give you board control. The board controls the lobbying budget. Given {{< var defense_takeover_cost_total >}}, the [Loving Takeover](../appendix/loving-takeover.qmd) succeeds with near-certainty. The uncertainty is whether the money gets allocated, not whether the mechanism works once funded. The mechanism is arithmetic.
+Shares are for sale. Money buys shares. Enough shares give you board control. The board controls the lobbying budget. Given {{< var defense_takeover_cost_total >}}, the [Loving Takeover](../appendix/loving-takeover.qmd) succeeds with probability {{< var mechanism_loving_takeover_p_success >}}. The uncertainty is whether the money gets allocated, not whether the mechanism works once funded. The mechanism is arithmetic.
 
 Clinical trials produce cures. This is not a hypothesis. It is the observed base rate of the last century of medicine. Given {{< var treaty_annual_funding >}} per year pointed at a [trial infrastructure](../solution/dfda.qmd) that runs at {{< var dfda_trial_cost_reduction_factor >}} the current cost, diseases get cured faster. The uncertainty is the timeline, not the outcome.
 
@@ -113,7 +113,7 @@ The probability math applies to the coordination problem (getting the resources 
 
 The primary obstacle to ending war and disease is the belief that ending war and disease is hard. It is not. It is expensive, in the same way that buying a house is expensive: the money exists, the mechanism is known, and the only question is whether the entity that has the money decides to use the mechanism. That decision is the only hard part, and it is the part this book is about.
 
-## The conclusion you are now stuck with
+## The conclusion the arithmetic is stuck with
 
 Run the argument forward and it ends in one sentence. The good infinity runs on biotechnology; biotechnology runs on resources; and the resources are not missing, they are misallocated, parked in the things that manufacture the bad infinity instead of the good one: the weapons, the waste, the {{< var military_to_government_clinical_trials_spending_ratio >}}-to-one machine. So the rational act, the one the arithmetic forces, is not to *find* money. It is to *move* it: identify the waste and the harm in how your species currently spends, and point it at the thing that buys you out of hell and into the long pleasant stretch. That is the entire program. Everything else in this book is one way of doing that one thing.
 
