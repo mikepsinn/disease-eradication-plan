@@ -141,7 +141,7 @@ Your species cut military spending {{< var post_ww2_military_cut_pct >}} after W
 
 [Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd) [@iab-paper-2025] are tradable securities held by rich and powerful people whose income scales directly with treaty expansion. At 1%, bondholder payouts are {{< var victory_bond_annual_payout >}}/year. At 2%, they double. At 10%, they collect ten times as much. These aren't activists you can ignore at a dinner party. They're investors with Bloomberg terminals, lobbyists, and the same tools your weapons manufacturers currently use to expand military budgets, except pointed at curing diseases.
 
-At just 1%, the IAB political incentive pool ({{< var iab_political_incentive_funding_annual >}}/year) already outguns your entire defense industry's lobbying budget ({{< var defense_lobbying_annual >}}/year) by {{< var iab_vs_defense_lobby_ratio_at_1pct >}}. Every expansion multiplies this. You've built a [defense lobby in reverse](../solution/aligning-incentives.qmd#why-this-scales-the-ratchet-effect), and it's {{< var iab_vs_defense_lobby_ratio_at_1pct >}} stronger than the original on day one.
+At just 1%, the IAB political incentive pool ({{< var iab_political_incentive_funding_annual >}}/year) already outguns your entire military industry's lobbying budget ({{< var defense_lobbying_annual >}}/year) by {{< var iab_vs_defense_lobby_ratio_at_1pct >}}. Every expansion multiplies this. You've built a [military lobby in reverse](../solution/aligning-incentives.qmd#why-this-scales-the-ratchet-effect), and it's {{< var iab_vs_defense_lobby_ratio_at_1pct >}} stronger than the original on day one.
 
 ### Two Futures
 

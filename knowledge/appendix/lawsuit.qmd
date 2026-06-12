@@ -142,7 +142,7 @@ To the judge: if you are still leaning toward throwing this case out on a techni
 
 ## Why This Works
 
-The defense lobby is the most effective political-influence operation on Earth. It spends approximately {{< var defense_lobbying_annual >}} per year buying politicians and receives hundreds of billions of dollars in defense contracts in return. The standard mistake is to try to defeat this lobby by outbidding it. That is charming, like trying to drown the ocean with a cup. The standard outcome is a fundraising treadmill that never reaches the budget.
+The military lobby is the most effective political-influence operation on Earth. It spends approximately {{< var defense_lobbying_annual >}} per year buying politicians and receives hundreds of billions of dollars in military contracts in return. The standard mistake is to try to defeat this lobby by outbidding it. That is charming, like trying to drown the ocean with a cup. The standard outcome is a fundraising treadmill that never reaches the budget.
 
 The lawsuit does something different. It does not try to defeat the military lobby. It redirects it.
 
@@ -158,7 +158,7 @@ In either path, the lobby has to switch sides. The cost to make it happen is $20
 
 The military industry does not merely defend an existing line item. It lobbies to protect and expand the military budget ratchet: more appropriations, more procurement, more threat inflation, more programs, more contracts, and fewer budget conversations where clinical trials are allowed into the room.
 
-The ratchet is visible in the numbers. Defense lobbying is {{< var defense_lobbying_annual >}} per year. Global military spending has grown at a real {{< var global_military_spending_real_cagr_20yr >}} annual rate over the last two decades. Current US military spending is {{< var us_military_spending_current_vs_prewar_multiplier >}} the pre-World War II baseline. This is not an accident. It is the political economy Dwight Eisenhower warned about when he described the military-industrial complex in his farewell address. Humanity then performed the traditional Earth ceremony where it hears an accurate warning, nods solemnly, and funds the problem for several more generations. See [Eisenhower and the Military-Industrial Complex](../proof.qmd#eisenhower).
+The ratchet is visible in the numbers. Military lobbying is {{< var defense_lobbying_annual >}} per year. Global military spending has grown at a real {{< var global_military_spending_real_cagr_20yr >}} annual rate over the last two decades. Current US military spending is {{< var us_military_spending_current_vs_prewar_multiplier >}} the pre-World War II baseline. This is not an accident. It is the political economy Dwight Eisenhower warned about when he described the military-industrial complex in his farewell address. Humanity then performed the traditional Earth ceremony where it hears an accurate warning, nods solemnly, and funds the problem for several more generations. See [Eisenhower and the Military-Industrial Complex](../proof.qmd#eisenhower).
 
 The lawsuit's causal claim is simple: if boards fund lobbying whose entire purpose is budget expansion, then boards should have a defensible answer when shareholders ask whether bigger military budgets are actually good for shareholders. So far, nobody has asked. This letter asks.
 
@@ -594,7 +594,7 @@ Key authority: DGCL § 327 (contemporaneous ownership); *Tooley v. Donaldson, Lu
 
 ### Target reference table
 
-Cost per share as of May 2026; lobbying figures from OpenSecrets (2024 full-year, the most recent complete reporting period). Sector-wide defense lobbying runs {{< var defense_lobbying_annual >}} per year.
+Cost per share as of May 2026; lobbying figures from OpenSecrets (2024 full-year, the most recent complete reporting period). Sector-wide military lobbying runs {{< var defense_lobbying_annual >}} per year.
 
 | Company | Ticker | ~Price/share | Lobbying (2024) | Incorporated |
 |---------|--------|---:|---:|:---:|
@@ -635,7 +635,7 @@ A normal lawsuit produces zero laughs. The defendants do not laugh, the plaintif
 The chain:
 
 - Average human laughter rate: {{< var human_laughs_per_day_average_nounit >}} laughs per day, or {{< var human_laughs_per_healthy_life_year_nounit >}} per healthy life-year.
-- The lawsuit's purpose is to force the math into the boardroom and the public record, redirecting the {{< var defense_lobbying_annual >}} per year of defense lobbying toward the 1% treaty.
+- The lawsuit's purpose is to force the math into the boardroom and the public record, redirecting the {{< var defense_lobbying_annual >}} per year of military lobbying toward the 1% treaty.
 - The treaty compresses the disease eradication queue from {{< var status_quo_queue_clearance_years_nounit >}} years to {{< var dfda_queue_clearance_years_nounit >}} years, recovering approximately {{< var dfda_trial_capacity_plus_efficacy_lag_dalys_nounit >}} healthy life-years across humanity.
 - {{< var dfda_trial_capacity_plus_efficacy_lag_dalys_nounit >}} recovered healthy life-years × {{< var human_laughs_per_healthy_life_year_nounit >}} laughs per year = **{{< var shirt_induced_laughs_gained_nounit >}} laughs.**
 

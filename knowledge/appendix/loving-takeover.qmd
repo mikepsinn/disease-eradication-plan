@@ -94,7 +94,7 @@ The math:
 
 ### Float dynamics
 
-The major Western defense primes have a combined market capitalization of approximately {{< var defense_primes_market_cap_us >}} across the US primes plus {{< var defense_primes_market_cap_allied >}} across the allied European primes. Institutional ownership (Vanguard, BlackRock, State Street, other index funds, pension funds, sovereign wealth funds) holds roughly 60-75% of outstanding shares across this universe. Those institutional positions are not actively for sale at any reasonable price; index funds hold market-cap-weighted positions because their mandates require it, not because they want to sell at a particular price.
+The major Western military primes have a combined market capitalization of approximately {{< var defense_primes_market_cap_us >}} across the US primes plus {{< var defense_primes_market_cap_allied >}} across the allied European primes. Institutional ownership (Vanguard, BlackRock, State Street, other index funds, pension funds, sovereign wealth funds) holds roughly 60-75% of outstanding shares across this universe. Those institutional positions are not actively for sale at any reasonable price; index funds hold market-cap-weighted positions because their mandates require it, not because they want to sell at a particular price.
 
 The freely tradeable float (shares that change hands at market prices on a normal trading day) is roughly 25-40% of total market cap, or **approximately $200-320 billion across all major Western military primes combined**.
 
@@ -168,7 +168,7 @@ Numbers are approximate and require verification against current filings before 
 
 ### Realistic cost after price inflation
 
-A coordinated purchase of half the float of every major defense prime simultaneously would push prices up sharply. Realistic effective cost after a {{< var defense_takeover_acquisition_premium >}} acquisition premium:
+A coordinated purchase of half the float of every major military prime simultaneously would push prices up sharply. Realistic effective cost after a {{< var defense_takeover_acquisition_premium >}} acquisition premium:
 
 - Nominal: **~$401 billion**
 - Realistic with acquisition premium: **{{< var defense_takeover_cost_total >}}**
@@ -196,7 +196,7 @@ Ranked by leverage. The first action is the entire game; the rest are bonus.
 
 ### Tier 1: Redirect the lobbying budget (highest leverage, zero cost)
 
-Military contractors currently spend {{< var defense_lobbying_annual >}} per year lobbying Congress to expand defense appropriations. This is the most effective political-influence operation on Earth. It has driven US military spending from its 1939 baseline to current levels and prevented every serious proposal for reallocation.
+Military contractors currently spend {{< var defense_lobbying_annual >}} per year lobbying Congress to expand military appropriations. This is the most effective political-influence operation on Earth. It has driven US military spending from its 1939 baseline to current levels and prevented every serious proposal for reallocation.
 
 After the takeover, the same budget is reallocated to lobby for the [1% treaty](../solution/1-percent-treaty.qmd). Same lobbyists. Same senators. Same lunches. The only difference is that the murder-money machine starts asking for medicine money.
 
@@ -445,7 +445,7 @@ A normal hostile takeover produces one laugh: the laugh of the acquirer counting
 The chain:
 
 - Average human laughter rate: {{< var human_laughs_per_day_average_nounit >}} laughs per day, or {{< var human_laughs_per_healthy_life_year_nounit >}} per healthy life-year.
-- The takeover redirects the {{< var defense_lobbying_annual >}} per year of defense lobbying toward the 1% treaty.
+- The takeover redirects the {{< var defense_lobbying_annual >}} per year of military lobbying toward the 1% treaty.
 - The treaty compresses the disease eradication queue from {{< var status_quo_queue_clearance_years_nounit >}} years to {{< var dfda_queue_clearance_years_nounit >}} years, recovering approximately {{< var dfda_trial_capacity_plus_efficacy_lag_dalys_nounit >}} healthy life-years across humanity.
 - {{< var dfda_trial_capacity_plus_efficacy_lag_dalys_nounit >}} recovered healthy life-years × {{< var human_laughs_per_healthy_life_year_nounit >}} laughs per year = **{{< var shirt_induced_laughs_gained_nounit >}} laughs.**
 

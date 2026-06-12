@@ -124,7 +124,7 @@ Your species responds to four things: anger, fear, hope, and greed. The content 
 - "Cost of one F-35 [@f35-cost-vs-rare-disease-research] = ~160 Oxford-style trials"
 - "Days to approve weapons: 1. Days to approve cancer cure: 6,205 [@research-to-practice-gap]"
 - "{{< var global_military_spending_per_capita_annual >}}/year on killing people, $8/year on curing them"
-- "13,000 nukes [@world-warheads] but no cure for your kid's cancer"
+- "{{< var global_warhead_count_nounit >}} nukes [@world-warheads] but no cure for your kid's cancer"
 
 **Influencer targets:** Health/wellness creators (100M+ combined followers, already care). Finance/investment creators ({{< var victory_bond_annual_return_pct >}} returns makes compelling content). Gaming/tech audiences (young, internet-native, hate bureaucracy). Political voices (bipartisan message, career-making position). One video explaining the arithmetic reaches more humans than a year of congressional testimony.
 
@@ -275,7 +275,7 @@ Computers that store everything:
 
 ![Budget allocation across defense, healthcare, tech, and endorsements. The confidence intervals show the uncertainty. Unlike your Pentagon budgets, which are always exactly wrong but never uncertain.](/assets/images/campaign-budget/campaign-budget-section-co-opting-the-opposition-part-of-bw-academic.jpg)
 
-**Defense Industry Conversion**: {{< var campaign_defense_conversion >}}
+**Military Industry Conversion**: {{< var campaign_defense_conversion >}}
 
 Turn your enemies into allies through superior returns. On your planet, loyalty follows money:
 

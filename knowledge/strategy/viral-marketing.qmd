@@ -23,7 +23,7 @@ Historical analysis shows: Every peaceful movement that gets **{{< var global_po
 
 ![You're really good at destroying things and really bad at fixing things. The sweet spot is when destroying and fixing both make money. That's the intersection you've been looking for.](/assets/images/viral-marketing/viral-marketing-section-what-does-go-viral-bw-academic.jpg)
 
-- "Humanity has 13,000 nukes [@world-warheads] but no cure for your kid's cancer" (rage-inducing)
+- "Humanity has {{< var global_warhead_count_nounit >}} nukes [@world-warheads] but no cure for your kid's cancer" (rage-inducing)
 - "You're spending {{< var global_military_spending_per_capita_annual >}}/year on killing people, $8/year on curing them" (shocking)
 - "{{< var victory_bond_annual_return_pct >}} investment returns while saving humanity" (greed + altruism)
 
@@ -136,7 +136,7 @@ $$
 
 - "Raytheon CEO salary vs rare disease research funding"
 - "Cost of one F-35 [@f35-cost-vs-rare-disease-research] = ~160 Oxford-style trials"
-- "We have money for 13,000 nukes but not your insulin"
+- "We have money for {{< var global_warhead_count_nounit >}} nukes but not your insulin"
 
 ![One F-35 fighter jet costs the same as 160 clinical trials. The jet can bomb 160 targets. The trials can cure 160 diseases. Both are technically 160 things, if you're keeping score.](/assets/images/viral-marketing/viral-marketing-section-economic-memes-bw-academic.jpg)
 

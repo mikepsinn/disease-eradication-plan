@@ -136,7 +136,7 @@ Say "no" to any of these premises out loud and listen to how it sounds:
 
 1. Is a 1% military spending cut physically possible? (You cut {{< var post_ww2_military_cut_pct >}} after WWII.)
 2. Do the benefits compound? (Healthier people work more, earn more, pay more taxes, fund more research.)
-3. Do politicians respond to money? (The defense industry spends {{< var defense_lobbying_annual >}} on lobbying and gets nearly $1T back.)
+3. Do politicians respond to money? (The military industry spends {{< var defense_lobbying_annual >}} on lobbying and gets nearly $1T back.)
 4. Do rich people prefer living? (2,800 billionaires, each with a 100% chance of dying from disease.)
 5. Can the plan reach one willing billionaire? (Six degrees of separation. Facebook measured 3.57 in 2016.)
 
@@ -179,7 +179,7 @@ Money isn't the only constraint. You can't print more physicists. (You've tried.
 
 "Politically impossible" is a phrase that means "the bribes currently flow in a direction I'm comfortable with." The small pieces of paper with presidents on them go to people who build missiles instead of people who cure diseases. You need the papers to go the other way. This is called "lobbying," which is bribery but with a business card and a 501(c)(4).
 
-The military-industrial complex spends {{< var defense_lobbying_annual >}} yearly on lobbyists. You can't beat them with moral arguments (they're immune; moral arguments have a $0 budget and no K Street address). Beat them at their own game. Raise {{< var treaty_campaign_total_cost >}} through [VICTORY Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd) [@iab-paper-2025]. Allocate {{< var treaty_campaign_budget_lobbying >}} for [lobbying](../economics/campaign-budget.qmd#ai-assisted-lobbying-250m-25). That overwhelms the defense industry's {{< var defense_lobbying_annual >}} spend. Go to the same K Street firms. Outbid them. Lobbyists work for the highest bidder. They always have. This is the one area where your species' mercenary instincts are genuinely helpful.
+The military-industrial complex spends {{< var defense_lobbying_annual >}} yearly on lobbyists. You can't beat them with moral arguments (they're immune; moral arguments have a $0 budget and no K Street address). Beat them at their own game. Raise {{< var treaty_campaign_total_cost >}} through [VICTORY Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd) [@iab-paper-2025]. Allocate {{< var treaty_campaign_budget_lobbying >}} for [lobbying](../economics/campaign-budget.qmd#ai-assisted-lobbying-250m-25). That overwhelms the military industry's {{< var defense_lobbying_annual >}} spend. Go to the same K Street firms. Outbid them. Lobbyists work for the highest bidder. They always have. This is the one area where your species' mercenary instincts are genuinely helpful.
 
 Once {{< var three_point_five_percent_of_global_population_nounit >}} voters demand it and the money is behind it, refusal becomes career suicide. Politicians are extremely good at not committing career suicide. It's their primary skill. Several have no other skills.
 
@@ -202,7 +202,7 @@ Things that were "unrealistic":
 
 Things that are actually unrealistic:
 
-- Spending {{< var global_military_spending_annual_2024 >}} on weapons while sitting on 13,000 nuclear warheads. That's enough for 130 extinction events. You only need one. The other 129 are for what, exactly?
+- Spending {{< var global_military_spending_annual_2024 >}} on weapons while sitting on {{< var global_warhead_count_nounit >}} nuclear warheads. That's enough for {{< var nuclear_winter_overkill_factor_nounit >}} extinction events. You only need one. The other {{< var nuclear_winter_spare_apocalypses_nounit >}} are for what, exactly?
 - Expecting different results from the same broken system
 - Thinking you'll survive the AI revolution without fixing incentives
 
@@ -235,7 +235,7 @@ Several countries tested this hypothesis and got different results.
 - 200+ years avoiding major wars
 - Surrounded by both World Wars (literally in the middle; made chocolate, stayed alive)
 - GDP per capita: {{< var switzerland_gdp_per_capita_k >}} (not killing people is profitable)
-- Defense spending: {{< var switzerland_defense_spending_pct >}} of GDP
+- Military spending: {{< var switzerland_defense_spending_pct >}} of GDP
 - Life expectancy: {{< var switzerland_life_expectancy_nounit >}} years ({{< var us_vs_switzerland_life_expectancy_gap_nounit >}} years longer than Americans who spend 5x more on "defense")
 
 **Costa Rica**:
