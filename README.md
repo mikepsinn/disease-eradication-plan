@@ -418,7 +418,7 @@ Your treaty passes because money defeats morality, as is tradition.
 
 The [$27.2 billion](https://manual.warondisease.org/knowledge/economics/1-pct-treaty-impact.html)/year money volcano erupts:
 
-- **Defense Contractors**: Keep [99%](https://manual.warondisease.org/knowledge/solution.html) of their murder budget PLUS get [272%](https://manual.warondisease.org/knowledge/strategy/earth-optimization-protocol-v1.html) returns.
+- **Military Contractors**: Keep [99%](https://manual.warondisease.org/knowledge/solution.html) of their murder budget PLUS get [272%](https://manual.warondisease.org/knowledge/strategy/earth-optimization-protocol-v1.html) returns.
 - **Big Pharma**: Instead of paying [$41,000](https://manual.warondisease.org/knowledge/economics/1-pct-treaty-impact.html) for phase 2 and 3 trials, the treaty pays THEM for each patient that joins their trials.
 - **Insurance Companies**: Healthy people file fewer claims than dead people (dead people file zero claims, which is the ideal customer except they also pay zero premiums, creating a revenue problem).
 - **Investors**: [272%](https://manual.warondisease.org/knowledge/strategy/earth-optimization-protocol-v1.html) returns. Returns scale with every treaty expansion, so investors become the world's most aggressive pro-health and anti-war lobbying force. Not a sentence anyone expected to write.
@@ -484,7 +484,7 @@ Over an average remaining lifespan, reallocation from the destructive economy to
 
 #### Future B: You Follow Instructions
 
-- Year 2028: Treaty passes. Murder money becomes medicine money. Investors confused by returns that aren't a typo. Defense contractors discover that alive customers buy more things than dead ones.
+- Year 2028: Treaty passes. Murder money becomes medicine money. Investors confused by returns that aren't a typo. Military contractors discover that alive customers buy more things than dead ones.
 - Year 2032: First treatments from the accelerated pipeline reach patients. Diseases that would have waited centuries for trials are getting tested now. Nobody is cured of everything, but the queue is finally moving. Humans experience the novel sensation of progress. Several publish op-eds arguing it's happening too fast.
 - Year 2035: Turns out when you stop spending money on destruction and start spending it on production, things get produced. Your economists publish papers explaining why this was obvious in retrospect.
 - Year 2040: The compounding kicks in. Healthier people work more, earn more, spend more, fund more research, which cures more diseases, which makes more people healthier. Humans begin to suspect that not killing each other was the missing variable.

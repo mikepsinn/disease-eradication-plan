@@ -1,6 +1,6 @@
 ```{python}
 #| echo: false
-#| fig-cap: "Monte Carlo Distribution: Defense Takeover Cost per Human (10,000 simulations)"
+#| fig-cap: "Monte Carlo Distribution: Military Takeover Cost per Human (10,000 simulations)"
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -23,7 +23,7 @@ std = 1.1042319838969452
 p5 = 88.42774412636044
 p50 = 90.31523649247097
 p95 = 92.24892197295307
-display_name = "Defense Takeover Cost per Human"
+display_name = "Military Takeover Cost per Human"
 units = "USD"
 
 # Create figure with two subplots
@@ -113,7 +113,7 @@ add_png_metadata(
 plt.show()
 ```
 
-**Simulation Results Summary: Defense Takeover Cost per Human**
+**Simulation Results Summary: Military Takeover Cost per Human**
 
 | Statistic | Value |
 |:----------|------:|
@@ -123,4 +123,4 @@ plt.show()
 | Standard Deviation | $1.1 |
 | 90% Range (5th-95th percentile) | [$88, $92] |
 
-*The histogram shows the distribution of Defense Takeover Cost per Human across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*
+*The histogram shows the distribution of Military Takeover Cost per Human across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

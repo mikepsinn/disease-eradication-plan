@@ -2,7 +2,7 @@
 title: 'The Loving Takeover'
 description: 'For roughly $90 per global human, humanity can buy a controlling stake in every major military contractor on Earth and redirect their lobbying budgets toward the 1% treaty. The takeover is loving because the people being bought out are made richer and longer-lived by it. The math is on this page.'
 abstract: |
-  The Western military-industrial complex has a combined market capitalization of approximately $670 billion across the major US primes, plus another $131 billion across allied European primes. A majority shareholding requires roughly $400 billion nominal (and far more after price inflation during a coordinated buy-up, which is the point: the upside accrues to the early buyers). Distributed across the global population, the per-person ante is approximately $90. Once humanity holds the majority, the single highest-leverage action is to redirect the ~$127 million per year of defense lobbying toward the 1% treaty. Expected total value per global human: ~6,000x-22,000x the contribution at base case (mostly welfare value, not cash); ~60x-220x even after a 99% pessimistic haircut. The takeover is structurally loving: existing shareholders are made richer by the demand that buys their shares, military-contractor employees keep their jobs (and gain new ones in the medical pivot), and the directors and officers who settle gain personal life expectancy alongside everyone else.
+  The Western military-industrial complex has a combined market capitalization of approximately $670 billion across the major US primes, plus another $131 billion across allied European primes. A majority shareholding requires roughly $400 billion nominal (and far more after price inflation during a coordinated buy-up, which is the point: the upside accrues to the early buyers). Distributed across the global population, the per-person ante is approximately $90. Once humanity holds the majority, the single highest-leverage action is to redirect the ~$127 million per year of military lobbying toward the 1% treaty. Expected total value per global human: ~6,000x-22,000x the contribution at base case (mostly welfare value, not cash); ~60x-220x even after a 99% pessimistic haircut. The takeover is structurally loving: existing shareholders are made richer by the demand that buys their shares, military-contractor employees keep their jobs (and gain new ones in the medical pivot), and the directors and officers who settle gain personal life expectancy alongside everyone else.
 aliases:
   - /loving-takeover.html
   - /funniest-loving-takeover.html
@@ -75,8 +75,8 @@ The campaign does not require altruism. It requires self-interest correctly calc
 
 A military contractor's share price today reflects its current business model: sell weapons, lobby for more weapons spending, repeat. If the campaign succeeds, two things happen mechanically:
 
-1. **The addressable market grows.** Under the treaty trajectory, GDP at year 15 is roughly {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}} the current trajectory. Even if military spending stays at the same fraction of GDP, the absolute defense budget grows in proportion. A military contractor operating in a bigger economy captures proportionally more absolute revenue, with no change in its market share.
-2. **The pivot opportunity opens.** Defense engineering talent applied to medical, biotech, AI-augmented drug discovery, [decentralized FDA](../solution/dfda.qmd) [@dfda-spec-paper-2025; @dfda-impact-paper-2025] infrastructure, sensors, imaging, materials, and dual-use civilian applications compounds at substantially higher rates than current cost-plus defense work. The same workforce produces more value per engineer-year in the medical pivot than in the weapons-system status quo.
+1. **The addressable market grows.** Under the treaty trajectory, GDP at year 15 is roughly {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}} the current trajectory. Even if military spending stays at the same fraction of GDP, the absolute military budget grows in proportion. A military contractor operating in a bigger economy captures proportionally more absolute revenue, with no change in its market share.
+2. **The pivot opportunity opens.** Military engineering talent applied to medical, biotech, AI-augmented drug discovery, [decentralized FDA](../solution/dfda.qmd) [@dfda-spec-paper-2025; @dfda-impact-paper-2025] infrastructure, sensors, imaging, materials, and dual-use civilian applications compounds at substantially higher rates than current cost-plus military work. The same workforce produces more value per engineer-year in the medical pivot than in the weapons-system status quo.
 
 **The asymmetric upside.** If the campaign succeeds, military contractor shares appreciate substantially through both channels above. If the campaign fails, the shares stay roughly where they are (a normal military contractor position). The downside is the foregone return on whatever the share purchase displaced (typically index funds at ~7-10% annualized).
 
@@ -96,7 +96,7 @@ The math:
 
 The major Western defense primes have a combined market capitalization of approximately {{< var defense_primes_market_cap_us >}} across the US primes plus {{< var defense_primes_market_cap_allied >}} across the allied European primes. Institutional ownership (Vanguard, BlackRock, State Street, other index funds, pension funds, sovereign wealth funds) holds roughly 60-75% of outstanding shares across this universe. Those institutional positions are not actively for sale at any reasonable price; index funds hold market-cap-weighted positions because their mandates require it, not because they want to sell at a particular price.
 
-The freely tradeable float (shares that change hands at market prices on a normal trading day) is roughly 25-40% of total market cap, or **approximately $200-320 billion across all major Western defense primes combined**.
+The freely tradeable float (shares that change hands at market prices on a normal trading day) is roughly 25-40% of total market cap, or **approximately $200-320 billion across all major Western military primes combined**.
 
 Daily trading volume in this universe is roughly $5-8 billion. Total annual turnover is roughly 1-2x the float. The market is not built to absorb a multi-hundred-billion-dollar coordinated buy without significant price impact.
 
@@ -111,9 +111,9 @@ Daily trading volume in this universe is roughly $5-8 billion. Total annual turn
 
 ### Reference point: GameStop, January 2021
 
-The GameStop short squeeze offers an empirical anchor. GameStop had approximately 50 million shares outstanding and a tradeable float comparable to a single mid-sized defense prime. Coordinated retail buying (millions of participants, no institutional coordination) drove the price from approximately $20 to approximately $483 over several weeks: a **~24x increase**. The squeeze was amplified by ~140% short interest (a dynamic that does not apply meaningfully to defense primes), but the basic mechanism (float-constrained demand from coordinated retail) is identical to what scenarios C and D model.
+The GameStop short squeeze offers an empirical anchor. GameStop had approximately 50 million shares outstanding and a tradeable float comparable to a single mid-sized military prime. Coordinated retail buying (millions of participants, no institutional coordination) drove the price from approximately $20 to approximately $483 over several weeks: a **~24x increase**. The squeeze was amplified by ~140% short interest (a dynamic that does not apply meaningfully to military primes), but the basic mechanism (float-constrained demand from coordinated retail) is identical to what scenarios C and D model.
 
-Defense primes have lower short interest, which removes the squeeze-amplification, but they also have larger market caps and smaller proportional float, which increases the price sensitivity to large demand shocks. Net: a coordinated global buy-up plausibly produces price moves in the same order of magnitude as GameStop did, distributed across a basket of contractors rather than concentrated in one.
+Military primes have lower short interest, which removes the squeeze-amplification, but they also have larger market caps and smaller proportional float, which increases the price sensitivity to large demand shocks. Net: a coordinated global buy-up plausibly produces price moves in the same order of magnitude as GameStop did, distributed across a basket of contractors rather than concentrated in one.
 
 ### What this means for early buyers
 
@@ -135,15 +135,15 @@ None of these caveats undo the basic dynamic. They shape the trajectory and the 
 
 ## Why This Works
 
-The military-industrial complex is not a sovereign power. It is a collection of publicly traded corporations whose shares are for sale to anyone with a brokerage account. The lobby that has driven defense budget expansion for eighty years is a line item in those corporations' SG&A. The line item is controllable by whoever holds the board. The board is electable by whoever holds 50%+1 of the shares. The shares are for sale.
+The military-industrial complex is not a sovereign power. It is a collection of publicly traded corporations whose shares are for sale to anyone with a brokerage account. The lobby that has driven military budget expansion for eighty years is a line item in those corporations' SG&A. The line item is controllable by whoever holds the board. The board is electable by whoever holds 50%+1 of the shares. The shares are for sale.
 
-Stated as a chain: the diseases that will kill you and your family stay in the trial queue because the trials are not funded. The trials are not funded because the federal budget pays for missiles instead of cures. The federal budget pays for missiles instead of cures because the defense lobby tells Congress to. The defense lobby tells Congress to because the military contractors authorize and pay for it. The military contractors authorize and pay for it because their boards vote to. The boards vote to because their shareholders elect them. The shareholders elect them because nobody has yet pointed out that they could elect a different board for the price of a coffee per global human.
+Stated as a chain: the diseases that will kill you and your family stay in the trial queue because the trials are not funded. The trials are not funded because the federal budget pays for missiles instead of cures. The federal budget pays for missiles instead of cures because the military lobby tells Congress to. The military lobby tells Congress to because the military contractors authorize and pay for it. The military contractors authorize and pay for it because their boards vote to. The boards vote to because their shareholders elect them. The shareholders elect them because nobody has yet pointed out that they could elect a different board for the price of a coffee per global human.
 
 This page points it out.
 
 ## The Math
 
-### Major Western defense primes (approximate market caps)
+### Major Western military primes (approximate market caps)
 
 | Contractor | Ticker | Approx market cap | 50%+1 control cost |
 |---|---|---:|---:|
@@ -204,7 +204,7 @@ After the takeover, the same budget is reallocated to lobby for the [1% treaty](
 
 **Time to effect:** Immediate. The first quarter's lobbying disclosures will show the new direction.
 
-**Why this is the entire game:** US military and foreign policy follows defense-industry lobbying with high fidelity. Flip the lobby, and the senators who depend on defense PAC money to keep their seats follow within one election cycle. China and Russia become the only remaining holdouts, and they are easier holdouts to address with the US lobby championing the treaty than with the US lobby blocking it.
+**Why this is the entire game:** US military and foreign policy follows military-industry lobbying with high fidelity. Flip the lobby, and the senators who depend on military PAC money to keep their seats follow within one election cycle. China and Russia become the only remaining holdouts, and they are easier holdouts to address with the US lobby championing the treaty than with the US lobby blocking it.
 
 ### Tier 2: Public corporate endorsement
 
@@ -216,7 +216,7 @@ Every major military contractor publicly endorses the 1% treaty. The most common
 
 ### Tier 3: Stop opposing donations
 
-Defense PACs currently donate to candidates who oppose the treaty. After the takeover, those donations stop. They can also reverse direction: donate to candidates who support the treaty. Per cycle this redirects roughly $30-50 million across all defense PACs.
+Military PACs currently donate to candidates who oppose the treaty. After the takeover, those donations stop. They can also reverse direction: donate to candidates who support the treaty. Per cycle this redirects roughly $30-50 million across all military PACs.
 
 **Cost:** $0 (reallocates existing political spending).
 
@@ -248,7 +248,7 @@ Some defense programs have negative externalities exceeding their revenue (auton
 
 **Time to effect:** 1-3 years.
 
-### Tier 7: Open-source defense IP for medical use
+### Tier 7: Open-source military IP for medical use
 
 Patents on technologies with dual-use applications (imaging, sensors, AI models, materials, manufacturing processes) can be licensed for free for medical applications. This accelerates DFDA infrastructure and drug discovery without requiring active R&D pivot.
 
@@ -258,7 +258,7 @@ Patents on technologies with dual-use applications (imaging, sensors, AI models,
 
 ### Tier 8: Partial manufacturing conversion to medical devices and vaccines
 
-Defense factories have precision manufacturing, supply chain, and quality systems that translate well to medical device and vaccine production. Reverse-WW2 industrial mobilization: instead of converting consumer factories to military, convert military to consumer and medical.
+Military factories have precision manufacturing, supply chain, and quality systems that translate well to medical device and vaccine production. Reverse-WW2 industrial mobilization: instead of converting consumer factories to military, convert military to consumer and medical.
 
 **Cost:** Capex investment, typically pays back within 5-7 years.
 
@@ -306,7 +306,7 @@ For a US adult contributing ~$2,700:
 | Personal net-worth gain at year 15 (US median net worth ~$190K, economy at {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}} the current trajectory) | ~$40,000-$140,000 |
 | Disease eradication: ~{{< var avg_life_extension_per_beneficiary >}} of extra healthy life × US QALY threshold ({{< var medical_qaly_threshold >}}/year) | ~$800,000-$1,800,000 |
 | Lower lifetime apocalypse risk | ~$10,000-$100,000 |
-| Direct defense-industry dividends | ~$500-$2,000/year ongoing |
+| Direct military-industry dividends | ~$500-$2,000/year ongoing |
 | Direct share-price appreciation from float-constrained demand | ~$5,000-$50,000 on the initial purchase |
 | **Total EV per US adult (base case)** | **~$850,000-$2,100,000** |
 
@@ -353,17 +353,17 @@ Any large or unusual ownership change in a US defense prime triggers Committee o
 
 **Mitigation:** CFIUS reviews substance: domestic ownership, disclosed intent, no foreign control, and classified programs left under existing cleared management. The campaign has all four. The presentation's job is to make that substance legible.
 
-**The deeper argument runs the other way.** The current base is itself the national-security problem: it rewards competence in lobbying over competence in production, which is how a system spending close to a trillion dollars a year still cannot surge artillery shells and has failed its audit every year it has been tried. A takeover that turns these companies from buyers of influence back into builders of things, and stands up a health-security industrial base alongside the defense one, is the pro-security move, not the adversarial one. The single piece to keep off the table is the weapons themselves: the actual munitions and classified programs stay under existing cleared control. Humanity votes on the lobbying and the capital allocation. It does not vote on the nuclear codes.
+**The deeper argument runs the other way.** The current base is itself the national-security problem: it rewards competence in lobbying over competence in production, which is how a system spending close to a trillion dollars a year still cannot surge artillery shells and has failed its audit every year it has been tried. A takeover that turns these companies from buyers of influence back into builders of things, and stands up a health-security industrial base alongside the military one, is the pro-security move, not the adversarial one. The single piece to keep off the table is the weapons themselves: the actual munitions and classified programs stay under existing cleared control. Humanity votes on the lobbying and the capital allocation. It does not vote on the nuclear codes.
 
 ### Staggered boards and poison pills
 
-Most defense primes have anti-takeover provisions that delay control even with majority ownership. Staggered boards can be replaced only one-third per year. Poison pills can dilute acquirers the board deems hostile.
+Most military primes have anti-takeover provisions that delay control even with majority ownership. Staggered boards can be replaced only one-third per year. Poison pills can dilute acquirers the board deems hostile.
 
 **Mitigation:** Practical control takes 2-3 years post-acquisition rather than immediate. Shareholder resolutions and demand letters operate in parallel during the transition period and produce most of the lobbying-redirection benefit before formal board control is achieved. The "loving" framing also matters here: poison pills are designed to deter acquirers who plan to extract value at the expense of existing shareholders. They are harder to justify against an acquirer mathematically demonstrating that existing shareholders are richer under the takeover than under the status quo.
 
 ### Coordination capacity
 
-Buying half the float of every Western defense prime requires coordinating millions of purchasers. This is a real operational challenge, though not the corporate-campaign kind. It is closer to the chain-letter or viral-meme kind: distributed, opt-in, low-friction per participant.
+Buying half the float of every Western military prime requires coordinating millions of purchasers. This is a real operational challenge, though not the corporate-campaign kind. It is closer to the chain-letter or viral-meme kind: distributed, opt-in, low-friction per participant.
 
 **Mitigation:** A standardized acquisition vehicle (e.g., an index fund or trust dedicated to the takeover) that anyone can buy into for the price of one share. Open-source coordination of which contractors are being targeted in which quarter. The same recruitment funnel as the [shirts campaign](handout.qmd) and the [lawsuit campaign](lawsuit.qmd).
 
@@ -371,7 +371,7 @@ Buying half the float of every Western defense prime requires coordinating milli
 
 This is the objection that sounds serious. It is not.
 
-The objection goes: if a shareholder coalition takes over defense companies and redirects their lobbying, the government will punish them by canceling their contracts. The companies go bankrupt. You bought an expensive pile of nothing. Congratulations.
+The objection goes: if a shareholder coalition takes over military companies and redirects their lobbying, the government will punish them by canceling their contracts. The companies go bankrupt. You bought an expensive pile of nothing. Congratulations.
 
 The problem with this objection is that it assumes the Pentagon has options. It does not.
 
@@ -424,7 +424,7 @@ The redirected {{< var defense_lobbying_annual >}} per year does not go to a com
 
 This is the part that breaks political objections, because every political tribe already wants this. They just describe it differently.
 
-If you are conservative: this is smaller government. The money currently disappears into a defense bureaucracy that has failed its own audit every single year it has been tried. Giving it back to the people who earned it and letting them choose is the most conservative fiscal policy available. Less bureaucracy, more accountability, your money back.
+If you are conservative: this is smaller government. The money currently disappears into a military bureaucracy that has failed its own audit every single year it has been tried. Giving it back to the people who earned it and letting them choose is the most conservative fiscal policy available. Less bureaucracy, more accountability, your money back.
 
 If you are progressive: this is direct democratic allocation of public resources to healthcare, education, climate, and poverty reduction. No intermediary. No lobbying. The people who need the services choose the services.
 

@@ -290,21 +290,21 @@ The {{< var iab_political_incentive_funding_pct >}} allocation creates a **polit
 | Treaty Level | Bondholder Payouts ({{< var victory_bond_funding_pct >}}) | Political Incentives ({{< var iab_political_incentive_funding_pct >}}) | Research Funding ({{< var dih_treasury_medical_research_pct >}}) | Effect |
 |:-------------|:-------------------------|:---------------------------|:-----------------------|:-------|
 | 1% | {{< var victory_bond_annual_payout >}}/year | {{< var iab_political_incentive_funding_annual >}}/year | {{< var dih_treasury_to_medical_research_annual >}}/year | Politicians rewarded for passage |
-| 5% | $13.6B/year | $13.6B/year | $108.8B/year | Defense industry pivots to health |
-| 10% | $27.2B/year | $27.2B/year | $218B/year | Health lobbying starts to rival defense lobbying |
+| 5% | $13.6B/year | $13.6B/year | $108.8B/year | Military industry pivots to health |
+| 10% | $27.2B/year | $27.2B/year | $218B/year | Health lobbying starts to rival military lobbying |
 | 50% | $136B/year | $136B/year | $1.09T/year | Global transformation |
 | 100% | $272B/year | $272B/year | $2.18T/year | Full redirection achieved |
 
 Every expansion multiplies the political incentive budget, the research funding, *and* bondholder payouts. "Support pragmatic clinical trials" becomes the single most profitable opinion a politician can hold. That's how you change what politicians believe: make the belief profitable.
 
-**The bondholder constituency.** IABs create the defense lobby's mirror image: a permanent class of wealthy investors whose income scales with treaty expansion. At 1%, bondholders collect {{< var victory_bond_annual_payout >}}/year. At full redirection, $272B/year. Perpetual bonds mean a perpetual incentive to lobby for expansion, every year, forever. Except these lobbyists have better math and a more popular product ("not dying" polls well).
+**The bondholder constituency.** IABs create the military lobby's mirror image: a permanent class of wealthy investors whose income scales with treaty expansion. At 1%, bondholders collect {{< var victory_bond_annual_payout >}}/year. At full redirection, $272B/year. Perpetual bonds mean a perpetual incentive to lobby for expansion, every year, forever. Except these lobbyists have better math and a more popular product ("not dying" polls well).
 
 **Without IABs:**
 
 ![What happens over fifty years if we do nothing special versus if we pay politicians to care. One line stays flat, the other goes up like a rocket.](/assets/images/incentive-alignment-bonds/incentive-alignment-bonds-section-the-alternative-is-stagnation-bw-academic.jpg)
 
 - Year 1-3: Treaty passes. Celebration. Champagne.
-- Year 4-7: Defense lobby regroups. No expansion. Champagne goes flat.
+- Year 4-7: Military lobby regroups. No expansion. Champagne goes flat.
 - Year 16+: Treaty becomes another Paris Agreement. Nice symbol. Everyone ignores it. Champagne was wasted.
 
 **With IABs:**
